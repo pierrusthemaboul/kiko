@@ -1,7 +1,7 @@
 // app/(tabs)/index.tsx
 import React from 'react';
 import { Image, StyleSheet, Platform, View } from 'react-native';
-import { BannerAd, BannerAdSize, TestIds } from 'react-native-google-mobile-ads';
+import { BannerAd, BannerAdSize } from 'react-native-google-mobile-ads';
 
 import { HelloWave } from '@/components/HelloWave';
 import ParallaxScrollView from '@/components/ParallaxScrollView';
@@ -61,7 +61,7 @@ export default function HomeScreen() {
       {/* Affichage de la bannière de test AdMob */}
       <View style={styles.adContainer}>
         <BannerAd
-          unitId={TestIds.BANNER} // Utilise l'ID de test fourni par Google
+          unitId="ca-app-pub-3940256099942544/6300978111" // Identifiant de test pour une bannière Android
           size={BannerAdSize.SMART_BANNER}
           requestOptions={{ requestNonPersonalizedAdsOnly: true }}
           onAdFailedToLoad={(error) =>
