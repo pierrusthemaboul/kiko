@@ -1,0 +1,30 @@
+diff --git a/node_modules/expo-modules-core/android/ExpoModulesCorePlugin.gradle b/node_modules/expo-modules-core/android/ExpoModulesCorePlugin.gradle
+index d57967c..ae8df40 100644
+--- a/node_modules/expo-modules-core/android/ExpoModulesCorePlugin.gradle
++++ b/node_modules/expo-modules-core/android/ExpoModulesCorePlugin.gradle
+@@ -43,11 +43,8 @@ class KotlinExpoModulesCorePlugin implements Plugin<Project> {
+ ext.applyKotlinExpoModulesCorePlugin = {
+   try {
+     // Tries to apply the kotlin-android plugin if the client project does not apply yet.
+-    // On previous `applyKotlinExpoModulesCorePlugin`, it is inside the `project.buildscript` block.
+-    // We cannot use `project.plugins.hasPlugin()` yet but only to try-catch instead.
+     apply plugin: 'kotlin-android'
+   } catch (e) {}
+-
+   apply plugin: KotlinExpoModulesCorePlugin
+ }
+ 
+@@ -90,8 +87,11 @@ ext.useExpoPublishing = {
+   project.afterEvaluate {
+     publishing {
+       publications {
+-        release(MavenPublication) {
+-          from components.release
++        def releaseComponent = components.findByName("release")
++        if (releaseComponent != null) {
++          release(MavenPublication) {
++            from releaseComponent
++          }
+         }
+       }
+       repositories {

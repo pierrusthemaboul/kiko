@@ -1,7 +1,7 @@
 // app/(tabs)/index.tsx
 import React from 'react';
 import { Image, StyleSheet, Platform, View } from 'react-native';
-import { AdMobBanner } from 'expo-ads-admob';
+import { BannerAd, BannerAdSize, TestIds } from 'react-native-google-mobile-ads';
 
 import { HelloWave } from '@/components/HelloWave';
 import ParallaxScrollView from '@/components/ParallaxScrollView';
@@ -23,6 +23,7 @@ export default function HomeScreen() {
         <ThemedText type="title">Welcome!</ThemedText>
         <HelloWave />
       </ThemedView>
+
       <ThemedView style={styles.stepContainer}>
         <ThemedText type="subtitle">Step 1: Try it</ThemedText>
         <ThemedText>
@@ -38,12 +39,14 @@ export default function HomeScreen() {
           to open developer tools.
         </ThemedText>
       </ThemedView>
+
       <ThemedView style={styles.stepContainer}>
         <ThemedText type="subtitle">Step 2: Explore</ThemedText>
         <ThemedText>
           Tap the Explore tab to learn more about what's included in this starter app.
         </ThemedText>
       </ThemedView>
+
       <ThemedView style={styles.stepContainer}>
         <ThemedText type="subtitle">Step 3: Get a fresh start</ThemedText>
         <ThemedText>
@@ -57,26 +60,14 @@ export default function HomeScreen() {
 
       {/* Affichage de la bannière de test AdMob */}
       <View style={styles.adContainer}>
-        {/**
-          Pour le moment, si tu es sur Android et que tu rencontres des problèmes, 
-          tu peux afficher cette bannière uniquement sur iOS.
-          Pour tester sur Android, il te faudra un build de développement personnalisé.
-        */}
-        {Platform.OS === 'ios' ? (
-          <AdMobBanner
-            bannerSize="smartBannerPortrait"
-            // ID de test pour une bannière fourni par Google
-            adUnitID="ca-app-pub-3940256099942544/6300978111"
-            servePersonalizedAds={true}
-            onDidFailToReceiveAdWithError={(error) =>
-              console.error("Erreur lors du chargement de l'annonce :", error)
-            }
-          />
-        ) : (
-          <ThemedText type="default">
-            La bannière AdMob nécessite un build de développement sur Android.
-          </ThemedText>
-        )}
+        <BannerAd
+          unitId={TestIds.BANNER} // Utilise l'ID de test fourni par Google
+          size={BannerAdSize.SMART_BANNER}
+          requestOptions={{ requestNonPersonalizedAdsOnly: true }}
+          onAdFailedToLoad={(error) =>
+            console.error("Erreur lors du chargement de l'annonce :", error)
+          }
+        />
       </View>
     </ParallaxScrollView>
   );
