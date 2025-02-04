@@ -1,105 +1,343 @@
-// app/(tabs)/index.tsx
-import React, { useEffect } from 'react';
-import { Image, StyleSheet, Platform, View } from 'react-native';
+import React, { useEffect, useState, useRef } from 'react';
+import {
+  View,
+  Text,
+  Image,
+  StyleSheet,
+  StatusBar,
+  Alert,
+  Animated,
+  Easing,
+  Dimensions,
+  Platform,
+} from 'react-native';
+import { useRouter } from 'expo-router';
+import { supabase } from '../../lib/supabase/supabaseClients';
+import { Audio } from 'expo-av';
+import { LinearGradient } from 'expo-linear-gradient';
+import { User } from '@supabase/supabase-js';
+import { Pressable } from 'react-native';
+import { Ionicons } from '@expo/vector-icons';
 import { BannerAd, BannerAdSize, TestIds } from 'react-native-google-mobile-ads';
 
-import { HelloWave } from '@/components/HelloWave';
-import ParallaxScrollView from '@/components/ParallaxScrollView';
-import { ThemedText } from '@/components/ThemedText';
-import { ThemedView } from '@/components/ThemedView';
+const { width, height } = Dimensions.get('window');
 
-export default function HomeScreen() {
-  // Sélection de l'ID de test approprié selon la plateforme
-  const adUnitId = Platform.select({
-    ios: TestIds.BANNER,
-    android: TestIds.BANNER,
-  });
-
-  if (!adUnitId) {
-    return null;
+// Theme configuration
+const THEME = {
+  primary: '#050B1F',    // Très sombre Navy Blue
+  secondary: '#0A173D',  // Navy Blue profond
+  accent: '#FFCC00',     // Or Métallique
+  text: '#FFFFFF',
+  background: {
+    dark: '#020817',     // Presque noir avec une teinte bleue
+    medium: '#050B1F',   // Très sombre
+    light: '#0A173D'     // Navy Blue profond
+  },
+  button: {
+    primary: ['#1D5F9E', '#0A173D'],    // Gradient Blue to Dark
+    secondary: ['#FFBF00', '#CC9900'],   // Gradient Gold to Dark Gold
+    tertiary: ['#0A173D', '#1D5F9E']     // Dark to Blue
   }
+};
+
+const AnimatedButton = React.memo(({ 
+  onPress, 
+  label, 
+  icon, 
+  variant = 'primary',
+  disabled = false,
+  style = {} 
+}) => {
+  const scale = useRef(new Animated.Value(1)).current;
+  const translateY = useRef(new Animated.Value(0)).current;
+
+  const animatePress = (pressed) => {
+    Animated.parallel([
+      Animated.spring(scale, {
+        toValue: pressed ? 0.95 : 1,
+        tension: 100,
+        friction: 5,
+        useNativeDriver: true
+      }),
+      Animated.spring(translateY, {
+        toValue: pressed ? 2 : 0,
+        tension: 100,
+        friction: 5,
+        useNativeDriver: true
+      })
+    ]).start();
+  };
+
+  const getGradientColors = () => {
+    switch (variant) {
+      case 'primary': return THEME.button.primary;
+      case 'secondary': return THEME.button.secondary;
+      default: return THEME.button.tertiary;
+    }
+  };
 
   return (
-    <ParallaxScrollView
-      headerBackgroundColor={{ light: '#A1CEDC', dark: '#1D3D47' }}
-      headerImage={
-        <Image
-          source={require('@/assets/images/partial-react-logo.png')}
-          style={styles.reactLogo}
-        />
-      }
+    <Pressable
+      onPressIn={() => animatePress(true)}
+      onPressOut={() => animatePress(false)}
+      onPress={onPress}
+      disabled={disabled}
     >
-      <ThemedView style={styles.titleContainer}>
-        <ThemedText type="title">Welcome!</ThemedText>
-        <HelloWave />
-      </ThemedView>
+      <Animated.View style={[
+        styles.buttonWrapper,
+        {
+          transform: [
+            { scale },
+            { translateY }
+          ],
+          opacity: disabled ? 0.6 : 1
+        },
+        style
+      ]}>
+        <LinearGradient
+          colors={getGradientColors()}
+          start={{ x: 0, y: 0 }}
+          end={{ x: 1, y: 1 }}
+          style={styles.buttonContainer}
+        >
+          {icon && (
+            <Ionicons 
+              name={icon} 
+              size={24} 
+              color="white" 
+              style={styles.buttonIcon}
+            />
+          )}
+          <Text style={styles.buttonText}>{label}</Text>
+        </LinearGradient>
+      </Animated.View>
+    </Pressable>
+  );
+});
 
-      <ThemedView style={styles.stepContainer}>
-        <ThemedText type="subtitle">Step 1: Try it</ThemedText>
-        <ThemedText>
-          Edit <ThemedText type="defaultSemiBold">app/(tabs)/index.tsx</ThemedText> to see changes.
-          Press{' '}
-          <ThemedText type="defaultSemiBold">
-            {Platform.select({
-              ios: 'cmd + d',
-              android: 'cmd + m',
-              web: 'F12'
-            })}
-          </ThemedText>{' '}
-          to open developer tools.
-        </ThemedText>
-      </ThemedView>
+export default function HomeScreen() {
+  const router = useRouter();
+  const [user, setUser] = useState<User | null>(null);
+  const [displayName, setDisplayName] = useState('');
+  const [guestDisplayName, setGuestDisplayName] = useState<string | null>(null);
 
-      <ThemedView style={styles.stepContainer}>
-        <ThemedText type="subtitle">Step 2: Explore</ThemedText>
-        <ThemedText>
-          Tap the Explore tab to learn more about what's included in this starter app. bala bala ade.
-        </ThemedText>
-      </ThemedView>
+  // Animation refs
+  const mainContentAnimation = {
+    opacity: useRef(new Animated.Value(0)).current,
+    translateY: useRef(new Animated.Value(50)).current
+  };
 
-      <ThemedView style={styles.stepContainer}>
-        <ThemedText type="subtitle">Step 3: Get a fresh start</ThemedText>
-        <ThemedText>
-          When you're ready, run{' '}
-          <ThemedText type="defaultSemiBold">npm run reset-project</ThemedText> to get a fresh{' '}
-          <ThemedText type="defaultSemiBold">app</ThemedText> directory. This will move the current{' '}
-          <ThemedText type="defaultSemiBold">app</ThemedText> to{' '}
-          <ThemedText type="defaultSemiBold">app-example</ThemedText>.
-        </ThemedText>
-      </ThemedView>
+  // Sélection de l'ID de test approprié selon la plateforme
+  const adUnitId = Platform.select({
+    android: TestIds.BANNER,
+    ios: TestIds.BANNER,
+    default: TestIds.BANNER,
+  });
 
-      <View style={styles.adContainer}>
-        <BannerAd
-          unitId={adUnitId}
-          size={BannerAdSize.BANNER}
-          requestOptions={{
-            requestNonPersonalizedAdsOnly: true,
-          }}
-        />
-      </View>
-    </ParallaxScrollView>
+  useEffect(() => {
+    checkUser();
+    animateMainContent();
+  }, []);
+
+  const animateMainContent = () => {
+    Animated.parallel([
+      Animated.spring(mainContentAnimation.opacity, {
+        toValue: 1,
+        friction: 8,
+        useNativeDriver: true
+      }),
+      Animated.spring(mainContentAnimation.translateY, {
+        toValue: 0,
+        friction: 8,
+        tension: 40,
+        useNativeDriver: true
+      })
+    ]).start();
+  };
+
+  const checkUser = async () => {
+    const { data: { session } } = await supabase.auth.getSession();
+    if (session?.user) {
+      setUser(session.user);
+      await fetchUserProfile(session.user.id);
+    }
+  };
+
+  const fetchUserProfile = async (userId: string) => {
+    const { data, error } = await supabase
+      .from('profiles')
+      .select('display_name')
+      .eq('id', userId)
+      .single();
+      
+    if (data) setDisplayName(data.display_name);
+  };
+
+  const handleLogout = async () => {
+    try {
+      await supabase.auth.signOut();
+      setGuestDisplayName(null);
+      setDisplayName('');
+      setUser(null);
+    } catch (error) {
+      Alert.alert('Erreur', 'Impossible de se déconnecter');
+    }
+  };
+
+  const handlePlayAsGuest = () => {
+    const guestId = Math.floor(Math.random() * 10000);
+    const name = `Voyageur-${guestId}`;
+    setGuestDisplayName(name);
+    Alert.alert(
+      'Mode Découverte', 
+      `Bienvenue, ${name} ! En mode découverte, votre progression ne sera pas sauvegardée.`,
+      [{ text: "OK" }]
+    );
+  };
+
+  return (
+    <View style={styles.container}>
+      <StatusBar translucent backgroundColor="transparent" barStyle="light-content" />
+
+      <LinearGradient
+        colors={[THEME.background.dark, THEME.background.medium]}
+        style={styles.mainContainer}
+      >
+        <Animated.View style={[
+          styles.contentContainer,
+          {
+            opacity: mainContentAnimation.opacity,
+            transform: [{ translateY: mainContentAnimation.translateY }]
+          }
+        ]}>
+          <View style={styles.headerContainer}>
+            <Text style={styles.welcomeTitle}>
+              {guestDisplayName || displayName 
+                ? `Bienvenue, ${guestDisplayName || displayName}`
+                : "L'Histoire vous Attend"}
+            </Text>
+            <Text style={styles.welcomeSubtitle}>
+              {(user || guestDisplayName)
+                ? "Prêt pour votre prochaine aventure ?"
+                : "Embarquez pour un voyage fascinant"}
+            </Text>
+          </View>
+
+          {(user || guestDisplayName) ? (
+            <>
+              <AnimatedButton
+                label="Commencer l'Aventure"
+                icon="rocket-outline"
+                onPress={() => router.push('/vue1')}
+                variant="primary"
+              />
+              <AnimatedButton
+                label="Déconnexion"
+                icon="log-out-outline"
+                onPress={handleLogout}
+                variant="secondary"
+              />
+            </>
+          ) : (
+            <>
+              <AnimatedButton
+                label="Se Connecter"
+                icon="log-in-outline"
+                onPress={() => router.push('/auth/login')}
+                variant="primary"
+              />
+              <AnimatedButton
+                label="Créer un Compte"
+                icon="person-add-outline"
+                onPress={() => router.push('/auth/signup')}
+                variant="secondary"
+              />
+              <AnimatedButton
+                label="Mode Découverte"
+                icon="compass-outline"
+                onPress={handlePlayAsGuest}
+                variant="tertiary"
+              />
+            </>
+          )}
+
+          {/* Bannière publicitaire en bas */}
+          <View style={styles.adContainer}>
+            <BannerAd
+              unitId={adUnitId}
+              size={BannerAdSize.BANNER}
+              requestOptions={{
+                requestNonPersonalizedAdsOnly: true,
+              }}
+            />
+          </View>
+        </Animated.View>
+      </LinearGradient>
+    </View>
   );
 }
 
 const styles = StyleSheet.create({
-  titleContainer: {
+  container: {
+    flex: 1,
+    backgroundColor: THEME.background.dark,
+  },
+  mainContainer: {
+    flex: 1,
+  },
+  contentContainer: {
+    flex: 1,
+    paddingTop: Platform.OS === 'ios' ? 60 : 40,
+    paddingHorizontal: 20,
+    justifyContent: 'center',
+  },
+  headerContainer: {
+    alignItems: 'center',
+    marginBottom: 50,
+  },
+  welcomeTitle: {
+    fontSize: 32,
+    fontFamily: 'Montserrat-Bold',
+    color: THEME.text,
+    textAlign: 'center',
+    marginBottom: 10,
+  },
+  welcomeSubtitle: {
+    fontSize: 18,
+    fontFamily: 'Montserrat-Regular',
+    color: THEME.text,
+    opacity: 0.8,
+    textAlign: 'center',
+  },
+  buttonWrapper: {
+    marginVertical: 10,
+    width: '100%',
+    alignSelf: 'center',
+  },
+  buttonContainer: {
     flexDirection: 'row',
     alignItems: 'center',
-    gap: 8,
+    justifyContent: 'center',
+    paddingVertical: 16,
+    borderRadius: 15,
+    elevation: 5,
+    shadowColor: '#000',
+    shadowOffset: { width: 0, height: 4 },
+    shadowOpacity: 0.3,
+    shadowRadius: 4,
   },
-  stepContainer: {
-    gap: 8,
-    marginBottom: 8,
+  buttonIcon: {
+    marginRight: 10,
   },
-  reactLogo: {
-    height: 178,
-    width: 290,
-    bottom: 0,
-    left: 0,
-    position: 'absolute',
+  buttonText: {
+    color: THEME.text,
+    fontSize: 18,
+    fontFamily: 'Montserrat-Bold',
   },
   adContainer: {
-    marginVertical: 20,
     alignItems: 'center',
+    justifyContent: 'center',
+    marginTop: 20,
+    marginBottom: Platform.OS === 'ios' ? 40 : 20,
   },
 });
