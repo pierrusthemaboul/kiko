@@ -1,4 +1,5 @@
 .
+├── all_in_one.txt
 ├── app
 │   ├── auth
 │   │   ├── _layout.tsx
@@ -86,6 +87,61 @@
 │   ├── useGameLogicA.ts
 │   ├── useRewards.ts
 │   └── useThemeColor.ts
+├── kiko-files
+│   ├── all-in-one-1.txt
+│   ├── app
+│   │   ├── auth
+│   │   │   ├── _layout.tsx
+│   │   │   ├── login.tsx
+│   │   │   └── signup.tsx
+│   │   ├── game
+│   │   │   └── page.tsx
+│   │   ├── _layout.tsx
+│   │   ├── +not-found.tsx
+│   │   └── (tabs)
+│   │       ├── explore.tsx
+│   │       ├── index.tsx
+│   │       ├── _layout.tsx
+│   │       ├── vue1.tsx
+│   │       ├── vue2a.tsx
+│   │       ├── vue2b.tsx
+│   │       ├── vue3.tsx
+│   │       ├── vue4.tsx
+│   │       ├── vue5.tsx
+│   │       └── vue6.tsx
+│   ├── app-components-list.txt
+│   ├── app.json
+│   ├── babel.config.js
+│   ├── components
+│   │   ├── game
+│   │   │   ├── AnimatedEventCardA.tsx
+│   │   │   ├── Countdown.tsx
+│   │   │   ├── EventLayoutA.tsx
+│   │   │   ├── GameContentA.tsx
+│   │   │   ├── OverlayChoiceButtonsA.tsx
+│   │   │   └── UserInfo.tsx
+│   │   └── ui
+│   │       ├── IconSymbol.ios.tsx
+│   │       ├── IconSymbol.tsx
+│   │       ├── linear-gradient.tsx
+│   │       ├── TabBarBackground.ios.tsx
+│   │       └── TabBarBackground.tsx
+│   ├── constants
+│   │   ├── colors.ts
+│   │   ├── Colors.ts
+│   │   └── theme.ts
+│   ├── game-components-list.txt
+│   ├── hooks
+│   │   ├── levelConfigs.ts
+│   │   ├── types
+│   │   │   └── index.ts
+│   │   ├── useAudio.ts
+│   │   ├── useGameLogicA.ts
+│   │   └── useRewards.ts
+│   ├── package.json
+│   ├── styles
+│   ├── tsconfig.json
+│   └── ui-components-list.txt
 ├── lib
 │   └── supabase
 │       ├── database.types.ts
@@ -107,4 +163,4 @@
 ├── vue5.tsx
 └── vue6.tsx
 
-22 directories, 86 files
+34 directories, 130 files
