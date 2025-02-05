@@ -79,6 +79,22 @@ export interface User {
     amount: number;
     reason: string;
   }
+
+  // 2.B.1 Système de Bonus
+export enum BonusType {
+  TIME = "TIME",
+  STREAK = "STREAK",
+  PERIOD = "PERIOD",
+  MASTERY = "MASTERY",
+  COMBO = "COMBO"
+}
+
+export interface ActiveBonus {
+  type: BonusType;
+  multiplier: number;
+  duration: number;
+  expiresAt: number;
+}
   
   // 2.C. Système de Niveaux
   export enum SpecialRules {
