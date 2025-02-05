@@ -17,7 +17,7 @@ import {
   Dimensions,
 } from 'react-native';
 import { Ionicons } from '@expo/vector-icons';
-import { LinearGradient } from '@/components/ui/linear-gradient';
+import { LinearGradient } from 'expo-linear-gradient';
 import { colors } from '@/constants/colors';
 import type { LevelEventSummary, SpecialRules } from '@/hooks/types';
 

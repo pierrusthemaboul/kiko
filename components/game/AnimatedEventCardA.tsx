@@ -19,7 +19,7 @@
 // 1.C. Imports
 import React, { useEffect, useRef } from 'react';
 import { View, Image, Text, StyleSheet, Animated } from 'react-native';
-import { LinearGradient } from '@/components/ui/linear-gradient';
+import { LinearGradient } from 'expo-linear-gradient';
 import { colors } from '@/constants/colors';
 
 /************************************************************************************
