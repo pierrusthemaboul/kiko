@@ -1,7 +1,8 @@
 import React, { useEffect, useState, useRef } from 'react';
 import { View, TouchableOpacity, Text, StyleSheet, Animated, Dimensions } from 'react-native';
 import { LinearGradient } from 'expo-linear-gradient';
-import { colors } from '@/constants/colors';
+import { colors } from '../../constants/Colors';
+
 
 const { width } = Dimensions.get('window');
 

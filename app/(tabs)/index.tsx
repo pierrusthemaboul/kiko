@@ -228,7 +228,8 @@ export default function HomeScreen() {
               <AnimatedButton
                 label="Commencer l'Aventure"
                 icon="rocket-outline"
-                onPress={() => router.push('/vue1')}
+                // Passage du chemin en relatif (sans le slash initial) pour accéder à vue1.tsx dans le même dossier (tabs)
+                onPress={() => router.push('vue1')}
                 variant="primary"
               />
               <AnimatedButton

@@ -1,7 +1,7 @@
 import React, { forwardRef, useImperativeHandle, useEffect, useRef, useState } from 'react';
 import { View, Text, StyleSheet, Platform, Animated } from 'react-native';
 import { Ionicons } from '@expo/vector-icons';
-import { colors } from '../../constants/colors';
+import { colors } from '../../constants/Colors';
 import { MAX_LIVES, ActiveBonus, BonusType } from '../../hooks/types';
 
 // Interface des props

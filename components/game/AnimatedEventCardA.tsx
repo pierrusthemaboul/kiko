@@ -20,7 +20,8 @@
 import React, { useEffect, useRef } from 'react';
 import { View, Image, Text, StyleSheet, Animated } from 'react-native';
 import { LinearGradient } from 'expo-linear-gradient';
-import { colors } from '@/constants/colors';
+import { colors } from '../../constants/Colors';
+
 
 /************************************************************************************
  * 1.D. Interface des Props

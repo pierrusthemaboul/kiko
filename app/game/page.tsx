@@ -1,6 +1,5 @@
 import React, { useEffect, useRef } from 'react';
 import {
-  View,
   StyleSheet,
   Animated,
   StatusBar,
@@ -11,27 +10,21 @@ import { useRouter } from 'expo-router';
 import { SafeAreaView } from 'react-native-safe-area-context';
 
 // Components
-import GameContentA from '@/components/game/GameContentA';
+import GameContentA from "../../components/game/GameContentA";
+
 
 // Hooks
-import { useGameLogicA } from '@/hooks/useGameLogicA';
+import { useGameLogicA } from '@/hooks/useGameLogicA';  // Correction ici
 
 export default function GamePage() {
-  // Router
   const router = useRouter();
-
-  // Animations
   const fadeAnim = useRef(new Animated.Value(0)).current;
+  const gameLogic = useGameLogicA();
 
-  // Game Logic
-  const gameLogic = useGameLogicA('');
-
-  // Gestion du retour à la page d'accueil
   const handleRestartGame = () => {
     router.replace('/');
   };
 
-  // Animation d'entrée
   useEffect(() => {
     Animated.sequence([
       Animated.timing(fadeAnim, {
@@ -51,9 +44,13 @@ export default function GamePage() {
     };
   }, []);
 
+  if (!gameLogic) {
+    return null;
+  }
+
   return (
     <ImageBackground
-      source={require('@/assets/images/bgvue2.webp')}
+      source={require('../../assets/images/bgvue2.webp')}
       style={styles.backgroundImage}
       resizeMode="cover"
     >
@@ -65,7 +62,6 @@ export default function GamePage() {
 
       <SafeAreaView style={styles.container}>
         <GameContentA
-          // Props de base
           user={gameLogic.user}
           previousEvent={gameLogic.previousEvent}
           newEvent={gameLogic.newEvent}
@@ -78,28 +74,20 @@ export default function GamePage() {
           isImageLoaded={gameLogic.isImageLoaded}
           handleChoice={gameLogic.handleChoice}
           handleImageLoad={gameLogic.onImageLoad}
+          handleRestart={handleRestartGame}
           streak={gameLogic.streak}
           highScore={gameLogic.highScore}
           level={gameLogic.user.level}
-
-          // Animations et modales
           fadeAnim={fadeAnim}
           showLevelModal={gameLogic.showLevelModal}
           isLevelPaused={gameLogic.isLevelPaused}
           startLevel={gameLogic.startLevel}
           currentLevelConfig={gameLogic.currentLevelConfig}
-
-          // Récompenses et stats
           currentReward={gameLogic.currentReward}
           completeRewardAnimation={gameLogic.completeRewardAnimation}
           updateRewardPosition={gameLogic.updateRewardPosition}
           leaderboards={gameLogic.leaderboards}
-
-          // Historique
           levelCompletedEvents={gameLogic.levelCompletedEvents}
-
-          // Navigation
-          handleRestart={handleRestartGame}
         />
       </SafeAreaView>
     </ImageBackground>

@@ -18,21 +18,21 @@ import { useFonts } from '@/hooks/useFonts';
 
 const { width } = Dimensions.get('window');
 
-// Theme qui correspond à l'index
+// Thème pour cette vue
 const THEME = {
-  primary: '#050B1F',    // Très sombre Navy Blue
-  secondary: '#0A173D',  // Navy Blue profond
-  accent: '#FFCC00',     // Or Métallique
+  primary: '#050B1F',
+  secondary: '#0A173D',
+  accent: '#FFCC00',
   text: '#FFFFFF',
   background: {
-    dark: '#020817',     // Presque noir avec une teinte bleue
-    medium: '#050B1F',   // Très sombre
-    light: '#0A173D'     // Navy Blue profond
+    dark: '#020817',
+    medium: '#050B1F',
+    light: '#0A173D'
   },
   button: {
-    primary: ['#1D5F9E', '#0A173D'],    // Gradient Blue to Dark
-    secondary: ['#FFBF00', '#CC9900'],   // Gradient Gold to Dark Gold
-    tertiary: ['#0A173D', '#1D5F9E']     // Dark to Blue
+    primary: ['#1D5F9E', '#0A173D'],
+    secondary: ['#FFBF00', '#CC9900'],
+    tertiary: ['#0A173D', '#1D5F9E']
   }
 };
 
@@ -43,14 +43,12 @@ const AnimatedTimeline = () => {
   const opacityAnim = useRef(new Animated.Value(0)).current;
 
   useEffect(() => {
-    // Fade in initial
     Animated.timing(opacityAnim, {
       toValue: 1,
       duration: 800,
       useNativeDriver: true,
     }).start();
 
-    // Animation de pulsation continue
     Animated.loop(
       Animated.sequence([
         Animated.timing(pulseAnim, {
@@ -66,7 +64,6 @@ const AnimatedTimeline = () => {
       ])
     ).start();
 
-    // Animation de la flèche
     Animated.loop(
       Animated.sequence([
         Animated.timing(rotateAnim, {
@@ -86,27 +83,21 @@ const AnimatedTimeline = () => {
   return (
     <Animated.View style={[styles.timelineContainer, { opacity: opacityAnim }]}>
       <View style={styles.timelineLine} />
-      
-      {/* Événement de référence */}
       <Animated.View style={[styles.eventContainer, { transform: [{ scale: pulseAnim }] }]}>
         <View style={styles.eventIcon}>
           <Ionicons name="flag" size={24} color={THEME.accent} />
         </View>
         <Text style={styles.eventText}>Événement de référence</Text>
       </Animated.View>
-
-      {/* Choix et nouvel événement */}
       <Animated.View style={[styles.eventContainer, { transform: [{ scale: pulseAnim }] }]}>
         <View style={styles.choiceButtons}>
           <TouchableOpacity style={styles.choiceButton}>
             <Ionicons name="arrow-back" size={20} color={THEME.accent} />
             <Text style={styles.choiceText}>AVANT</Text>
           </TouchableOpacity>
-
           <View style={styles.eventIcon}>
             <Ionicons name="help" size={24} color={THEME.accent} />
           </View>
-
           <TouchableOpacity style={styles.choiceButton}>
             <Text style={styles.choiceText}>APRÈS</Text>
             <Ionicons name="arrow-forward" size={20} color={THEME.accent} />
@@ -125,7 +116,7 @@ const AnimatedButton = ({
   icon, 
   variant = "primary",
   disabled = false 
-}) => {
+}: { onPress: () => void; label: string; icon?: string; variant?: string; disabled?: boolean }) => {
   const scale = useRef(new Animated.Value(1)).current;
 
   const handlePressIn = () => {
@@ -162,10 +153,7 @@ const AnimatedButton = ({
       disabled={disabled}
       style={styles.buttonWrapper}
     >
-      <Animated.View style={[
-        styles.buttonContainer,
-        { transform: [{ scale }] }
-      ]}>
+      <Animated.View style={[styles.buttonContainer, { transform: [{ scale }] }]}>
         <LinearGradient
           colors={getGradientColors()}
           start={{ x: 0, y: 0 }}
@@ -185,7 +173,6 @@ export default function Vue1() {
   const { isAdmin } = useAdminStatus();
   const fontsLoaded = useFonts();
   
-  // Animations d'entrée
   const fadeAnim = useRef(new Animated.Value(0)).current;
   const slideAnim = useRef(new Animated.Value(50)).current;
 
@@ -213,12 +200,10 @@ export default function Vue1() {
   return (
     <SafeAreaView style={styles.safeArea}>
       <StatusBar translucent backgroundColor="transparent" barStyle="light-content" />
-      
       <LinearGradient
         colors={[THEME.background.dark, THEME.background.medium, THEME.background.light]}
         style={styles.container}
       >
-        {/* Header avec boutons admin */}
         {isAdmin && (
           <View style={styles.header}>
             <AnimatedButton
@@ -235,26 +220,16 @@ export default function Vue1() {
             />
           </View>
         )}
-
-        <Animated.View style={[
-          styles.content,
-          {
-            opacity: fadeAnim,
-            transform: [{ translateY: slideAnim }]
-          }
-        ]}>
+        <Animated.View style={[styles.content, { opacity: fadeAnim, transform: [{ translateY: slideAnim }] }]}>
           <Text style={styles.title}>Comment jouer ?</Text>
           <Text style={styles.subtitle}>
             Testez vos connaissances historiques en replaçant les événements dans leur contexte temporel
           </Text>
-
-          {/* Timeline explicative */}
           <AnimatedTimeline />
-
-          {/* Bouton de démarrage */}
+          {/* Navigation vers la page de jeu, ici la route enregistrée est "/game/page" */}
           <TouchableOpacity
             style={styles.startButton}
-            onPress={() => router.push('/vue2a')}
+            onPress={() => router.push('/game/page')}
           >
             <LinearGradient
               colors={THEME.button.secondary}
@@ -290,7 +265,7 @@ const styles = StyleSheet.create({
     flex: 1,
     paddingHorizontal: 20,
     paddingTop: 30,
-    justifyContent: 'center', // Centrer verticalement le contenu restant
+    justifyContent: 'center',
   },
   title: {
     fontSize: 32,

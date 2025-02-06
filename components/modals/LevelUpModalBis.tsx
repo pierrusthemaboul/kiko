@@ -18,7 +18,7 @@ import {
 } from 'react-native';
 import { Ionicons } from '@expo/vector-icons';
 import { LinearGradient } from 'expo-linear-gradient';
-import { colors } from '@/constants/colors';
+import { colors } from '../../constants/Colors';
 import type { LevelEventSummary, SpecialRules } from '@/hooks/types';
 
 const { width } = Dimensions.get('window');
@@ -515,3 +515,5 @@ const styles = StyleSheet.create({
     fontWeight: 'bold',
   },
 });
+
+export default LevelUpModalBis;

@@ -1,14 +1,3 @@
-/************************************************************************************
- * 4. COMPOSANT : GameContentA
- *
- * 4.A. Description
- *     Enveloppe générale de l'interface de jeu :
- *       - Header (UserInfo, Countdown)
- *       - Zone centrale (EventLayoutA)
- *       - Modales (LevelUpModalBis, ScoreboardModal)
- *       - Gestion des récompenses (RewardAnimation)
- ************************************************************************************/
-
 import React, { useState, useRef, useEffect } from 'react';
 import {
   View,
@@ -27,11 +16,12 @@ import UserInfo, { UserInfoHandle } from './UserInfo';
 import Countdown from './Countdown';
 import EventLayoutA from './EventLayoutA';
 import LevelUpModalBis from '../modals/LevelUpModalBis';
+
 import ScoreboardModal from '../modals/ScoreboardModal';
 import RewardAnimation from './RewardAnimation';
 
 // Types & Constants
-import { colors } from '@/constants/colors';
+import { colors } from '@/constants/Colors';
 import type {
   User,
   Event,
@@ -73,7 +63,7 @@ interface GameContentAProps {
   levelCompletedEvents: LevelEventSummary[];
 }
 
-const GameContentA: React.FC<GameContentAProps> = ({
+function GameContentA({
   user,
   timeLeft,
   loading,
@@ -100,14 +90,12 @@ const GameContentA: React.FC<GameContentAProps> = ({
   updateRewardPosition,
   leaderboards,
   levelCompletedEvents
-}) => {
-  // Hooks & refs
+}: GameContentAProps) {
   const router = useRouter();
   const userInfoRef = useRef<UserInfoHandle>(null);
   const contentOpacity = useRef(new Animated.Value(1)).current;
   const [isRewardPositionSet, setIsRewardPositionSet] = useState(false);
 
-  // Position de la reward
   useEffect(() => {
     let mounted = true;
 
@@ -146,7 +134,6 @@ const GameContentA: React.FC<GameContentAProps> = ({
     };
   }, [currentReward?.type]);
 
-  // Fade du contenu quand le LevelUpModal apparaît
   useEffect(() => {
     if (showLevelModal) {
       Animated.sequence([
@@ -165,12 +152,10 @@ const GameContentA: React.FC<GameContentAProps> = ({
     }
   }, [showLevelModal]);
 
-  // Wrapper pour handleChoice
   const onChoiceWrapper = (choice: string) => {
     handleChoice(choice);
   };
 
-  // Rendu conditionnel du contenu principal
   const renderContent = () => {
     if (loading) {
       return (
@@ -276,7 +261,7 @@ const GameContentA: React.FC<GameContentAProps> = ({
       </Animated.View>
     </SafeAreaView>
   );
-};
+}
 
 const styles = StyleSheet.create({
   safeArea: {

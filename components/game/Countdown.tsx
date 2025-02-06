@@ -1,6 +1,7 @@
 import React, { useEffect, useRef } from 'react';
 import { View, Text, StyleSheet, Animated } from 'react-native';
-import { colors } from '@/constants/colors';
+import { colors } from '@/constants/Colors';
+
 
 interface CountdownProps {
   timeLeft: number;

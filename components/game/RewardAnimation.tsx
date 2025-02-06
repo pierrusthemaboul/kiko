@@ -3,7 +3,7 @@ import React, { useEffect, useRef } from 'react';
 import { View, Text, StyleSheet, Animated, Platform } from 'react-native';
 import { Ionicons } from '@expo/vector-icons';
 import { RewardType } from '@/hooks/types';
-import { colors } from '@/constants/colors';
+import { colors } from '../../constants/Colors';
 
 
 

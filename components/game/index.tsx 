@@ -1,0 +1,8 @@
+# Créer un fichier index.tsx pour exporter tous les composants
+echo "export { default as GameContentA } from './GameContentA';
+export { default as UserInfo } from './UserInfo';
+export { default as Countdown } from './Countdown';
+export { default as EventLayoutA } from './EventLayoutA';
+export { default as OverlayChoiceButtonsA } from './OverlayChoiceButtonsA';
+export { default as RewardAnimation } from './RewardAnimation';
+export { default as AnimatedEventCardA } from './AnimatedEventCardA';" > components/game/index.tsx

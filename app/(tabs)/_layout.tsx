@@ -1,7 +1,7 @@
 import 'react-native-reanimated';
 import { Stack } from 'expo-router';
 
-export default function RootLayout() {
+export default function TabLayout() {
   return (
     <Stack 
       screenOptions={{ 
@@ -9,18 +9,10 @@ export default function RootLayout() {
         animation: 'slide_from_right'
       }}
     >
-      <Stack.Screen 
-        name="(tabs)" 
-        options={{
-          headerShown: false,
-        }}
-      />
-      <Stack.Screen 
-        name="auth" 
-        options={{
-          headerShown: false,
-        }}
-      />
+      <Stack.Screen name="index" />
+      <Stack.Screen name="explore" />
+      <Stack.Screen name="vue1" />
+      <Stack.Screen name="auth" options={{ headerShown: false }} />
     </Stack>
   );
 }

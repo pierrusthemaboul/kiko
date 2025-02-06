@@ -10,7 +10,8 @@
     "web": "expo start --web",
     "test": "jest --watchAll",
     "lint": "expo lint",
-    "postinstall": "patch-package"
+    "postinstall": "patch-package",
+    "check-exports": "find . -name '*.tsx' -exec grep -l 'export' {} \\; | xargs -I {} sh -c 'echo \"Checking {}\"; grep \"export\" {}'"
   },
   "jest": {
     "preset": "jest-expo"
