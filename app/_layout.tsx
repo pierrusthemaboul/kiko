@@ -28,12 +28,26 @@ export default function RootLayout() {
 
   return (
     <ThemeProvider value={colorScheme === 'dark' ? DarkTheme : DefaultTheme}>
-      <Stack>
+      <Stack screenOptions={{ 
+        headerShown: false,
+        animation: 'slide_from_right',
+        // Désactiver complètement l'en-tête pour toutes les routes
+        header: () => null
+      }}>
         <Stack.Screen name="(tabs)" options={{ headerShown: false }} />
-        <Stack.Screen name="game" options={{ headerShown: false }} />
+        <Stack.Screen 
+          name="game" 
+          options={{ 
+            headerShown: false,
+            // Écran de jeu en plein écran, sans en-tête
+            presentation: 'fullScreenModal' 
+          }} 
+        />
         <Stack.Screen name="+not-found" options={{ headerShown: false }} />
       </Stack>
       <StatusBar style="auto" />
     </ThemeProvider>
   );
 }
+
+// app/_layout.tsx

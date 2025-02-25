@@ -157,7 +157,7 @@ const LevelUpModalBis: React.FC<LevelUpModalBisProps> = ({
         ]}
       >
         <LinearGradient
-          colors={[colors.warningYellow, colors.primary]}
+          colors={['#3A7BD5', '#1D4E89']} // Nouveau dégradé bleu élégant
           start={{ x: 0, y: 0 }}
           end={{ x: 1, y: 0 }}
           style={styles.bannerGradient}
@@ -178,12 +178,22 @@ const LevelUpModalBis: React.FC<LevelUpModalBisProps> = ({
     return (
       <View style={styles.eventsSummaryContainer}>
         <Text style={styles.sectionTitle}>Événements du niveau</Text>
+        
+        {/* Texte d'indication pour toucher les événements */}
+        <View style={styles.touchHintContainer}>
+          <Ionicons name="information-circle-outline" size={18} color={colors.primary} />
+          <Text style={styles.touchHintText}>
+            Touchez une carte pour plus de détails
+          </Text>
+        </View>
+        
         <ScrollView horizontal showsHorizontalScrollIndicator={false}>
           {eventsSummary.map((event, index) => (
             <TouchableOpacity
               key={event.id ?? index}
               onPress={() => setSelectedEvent(event)}
               activeOpacity={0.7}
+              style={styles.eventCardTouchable}
             >
               <View style={styles.eventCard}>
                 <Image
@@ -239,17 +249,20 @@ const LevelUpModalBis: React.FC<LevelUpModalBisProps> = ({
       >
         <View style={styles.modalOverlay}>
           <View style={styles.eventDetailsModal}>
-            <ScrollView>
+            <View style={styles.eventDetailsHeader}>
               <Text style={styles.eventDetailsTitle}>
                 {selectedEvent.titre}
               </Text>
               <Text style={styles.eventDetailsDate}>
                 {extractYearFromDateString(selectedEvent.date_formatee)}
               </Text>
+            </View>
+            
+            <ScrollView style={styles.eventDetailsContent}>
               <Text style={styles.eventDetailsDescription}>
                 {selectedEvent.description_detaillee
                   ? selectedEvent.description_detaillee
-                  : '[Aucune description détaillée]'}
+                  : 'Aucune description détaillée disponible pour cet événement historique.'}
               </Text>
             </ScrollView>
 
@@ -311,7 +324,7 @@ const LevelUpModalBis: React.FC<LevelUpModalBisProps> = ({
                 activeOpacity={0.8}
               >
                 <LinearGradient
-                  colors={[colors.primary, colors.accent]}
+                  colors={['#3A7BD5', '#1D4E89']} // Nouveau dégradé bleu élégant
                   start={{ x: 0, y: 0 }}
                   end={{ x: 1, y: 0 }}
                   style={styles.buttonGradient}
@@ -347,8 +360,8 @@ const styles = StyleSheet.create({
     shadowOffset: { width: 0, height: 2 },
     shadowOpacity: 0.25,
     shadowRadius: 3.84,
-    borderWidth: 2,
-    borderColor: colors.primary,
+    borderWidth: 1,
+    borderColor: '#3A7BD5', // Couleur de bordure plus subtile
   },
   scrollView: {
     paddingHorizontal: 20,
@@ -356,9 +369,14 @@ const styles = StyleSheet.create({
   levelUpBanner: {
     width: '100%',
     marginBottom: 20,
-    borderRadius: 10,
+    borderRadius: 15,
     overflow: 'hidden',
     minHeight: 60,
+    elevation: 3,
+    shadowColor: '#000',
+    shadowOffset: { width: 0, height: 1 },
+    shadowOpacity: 0.2,
+    shadowRadius: 2,
   },
   bannerGradient: {
     flexDirection: 'row',
@@ -375,39 +393,60 @@ const styles = StyleSheet.create({
     marginHorizontal: 10,
     textAlign: 'center',
     flexShrink: 1,
+    textShadowColor: 'rgba(0,0,0,0.3)',
+    textShadowOffset: { width: 1, height: 1 },
+    textShadowRadius: 2,
   },
   eventsInfo: {
-    fontSize: 16,
-    color: colors.text,
+    fontSize: 18,
+    fontWeight: '600',
+    color: '#333',
     textAlign: 'center',
     marginVertical: 15,
   },
   sectionTitle: {
     fontSize: 20,
     fontWeight: '600',
-    color: colors.text,
-    marginBottom: 15,
+    color: '#333',
+    marginBottom: 10,
     textAlign: 'center',
+  },
+  touchHintContainer: {
+    flexDirection: 'row',
+    alignItems: 'center',
+    justifyContent: 'center',
+    backgroundColor: 'rgba(58, 123, 213, 0.1)',
+    paddingVertical: 8,
+    paddingHorizontal: 12,
+    borderRadius: 20,
+    marginBottom: 15,
+  },
+  touchHintText: {
+    color: '#555',
+    fontSize: 14,
+    marginLeft: 8,
+    fontStyle: 'italic',
   },
   eventsSummaryContainer: {
     marginVertical: 20,
     width: '100%',
   },
+  eventCardTouchable: {
+    transform: [{ scale: 1 }],
+    marginRight: 10,
+    borderRadius: 12,
+    elevation: 4,
+    shadowColor: '#000',
+    shadowOffset: { width: 0, height: 2 },
+    shadowOpacity: 0.2,
+    shadowRadius: 3,
+  },
   eventCard: {
     width: 200,
     height: 150,
-    marginRight: 10,
-    borderRadius: 10,
+    borderRadius: 12,
     overflow: 'hidden',
-    backgroundColor: colors.cardBackground,
-    elevation: 3,
-    shadowColor: '#000',
-    shadowOffset: {
-      width: 0,
-      height: 2,
-    },
-    shadowOpacity: 0.25,
-    shadowRadius: 3.84,
+    backgroundColor: '#f5f5f5',
   },
   eventImage: {
     width: '100%',
@@ -448,10 +487,7 @@ const styles = StyleSheet.create({
     alignItems: 'center',
     elevation: 4,
     shadowColor: '#000',
-    shadowOffset: {
-      width: 0,
-      height: 2,
-    },
+    shadowOffset: { width: 0, height: 2 },
     shadowOpacity: 0.25,
     shadowRadius: 3.84,
   },
@@ -459,10 +495,18 @@ const styles = StyleSheet.create({
     width: '100%',
     alignItems: 'center',
     marginTop: 15,
+    marginBottom: 10,
   },
   startButton: {
     width: '80%',
     maxWidth: 250,
+    borderRadius: 30,
+    overflow: 'hidden',
+    elevation: 5,
+    shadowColor: '#000',
+    shadowOffset: { width: 0, height: 2 },
+    shadowOpacity: 0.3,
+    shadowRadius: 4,
   },
   buttonGradient: {
     flexDirection: 'row',
@@ -470,7 +514,7 @@ const styles = StyleSheet.create({
     justifyContent: 'center',
     paddingVertical: 15,
     paddingHorizontal: 30,
-    borderRadius: 25,
+    borderRadius: 30,
   },
   startButtonText: {
     color: 'white',
@@ -478,41 +522,68 @@ const styles = StyleSheet.create({
     fontWeight: 'bold',
     marginLeft: 10,
     letterSpacing: 2,
+    textShadowColor: 'rgba(0,0,0,0.2)',
+    textShadowOffset: { width: 1, height: 1 },
+    textShadowRadius: 1,
   },
   eventDetailsModal: {
     backgroundColor: 'white',
-    borderRadius: 10,
-    padding: 20,
-    width: '80%',
+    borderRadius: 15,
+    width: '85%',
     maxWidth: 400,
-    maxHeight: '70%',
+    maxHeight: '75%',
+    overflow: 'hidden',
+    elevation: 6,
+    shadowColor: '#000',
+    shadowOffset: { width: 0, height: 3 },
+    shadowOpacity: 0.3,
+    shadowRadius: 5,
+  },
+  eventDetailsHeader: {
+    padding: 20,
+    paddingBottom: 15,
+    borderBottomWidth: 1,
+    borderBottomColor: '#eee',
+    backgroundColor: '#f9f9f9',
   },
   eventDetailsTitle: {
     fontSize: 18,
     fontWeight: 'bold',
     marginBottom: 5,
-    color: colors.text,
+    color: '#333',
   },
   eventDetailsDate: {
     fontSize: 16,
     fontWeight: 'bold',
-    marginBottom: 10,
-    color: colors.primary,
+    color: '#3A7BD5',
+  },
+  eventDetailsContent: {
+    padding: 20,
+    maxHeight: '60%',
   },
   eventDetailsDescription: {
-    fontSize: 14,
-    marginBottom: 20,
-    color: colors.text,
+    fontSize: 15,
+    lineHeight: 22,
+    color: '#444',
   },
   closeButton: {
-    backgroundColor: colors.primary,
-    padding: 10,
-    borderRadius: 5,
+    backgroundColor: '#3A7BD5',
+    padding: 12,
     alignItems: 'center',
+    marginTop: 5,
+    marginHorizontal: 20,
+    marginBottom: 20,
+    borderRadius: 10,
+    elevation: 2,
+    shadowColor: '#000',
+    shadowOffset: { width: 0, height: 1 },
+    shadowOpacity: 0.2,
+    shadowRadius: 2,
   },
   closeButtonText: {
     color: 'white',
     fontWeight: 'bold',
+    fontSize: 16,
   },
 });
 
