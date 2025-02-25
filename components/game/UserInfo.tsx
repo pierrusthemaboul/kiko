@@ -2,7 +2,7 @@ import React, { forwardRef, useImperativeHandle, useEffect, useRef, useState } f
 import { View, Text, StyleSheet, Platform, Animated } from 'react-native';
 import { Ionicons } from '@expo/vector-icons';
 import { colors } from '../../constants/Colors';
-import { MAX_LIVES, ActiveBonus, BonusType } from '../../hooks/types';
+import { MAX_LIVES, ActiveBonus, BonusType } from '@/hooks/types';
 
 // Interface des props
 interface UserInfoProps {
@@ -23,13 +23,14 @@ export interface UserInfoHandle {
 // Composant UserInfo
 const UserInfo = forwardRef<UserInfoHandle, UserInfoProps>(
   ({ name, points, lives, level, streak, activeBonus = [] }, ref) => {
-    const pointsRef = useRef<Text>(null);
+    const pointsRef = useRef<View>(null);
     const livesRef = useRef<View>(null);
     const bounceAnim = useRef(new Animated.Value(1)).current;
 
     // State pour stocker les positions
     const [pointsPosition, setPointsPosition] = useState<{ x: number; y: number }>({ x: 0, y: 0 });
     const [livesPosition, setLivesPosition] = useState<{ x: number; y: number }>({ x: 0, y: 0 });
+    const [positionsCalculated, setPositionsCalculated] = useState(false);
 
     // Animation des points
     useEffect(() => {
@@ -46,12 +47,42 @@ const UserInfo = forwardRef<UserInfoHandle, UserInfoProps>(
           useNativeDriver: true,
         }),
       ]).start();
-    }, [points]);
+    }, [points, lives]);
 
     // Calcul des positions après le rendu
     useEffect(() => {
-      const measurePositions = () => {
-        requestAnimationFrame(() => {
+      const calculatePositions = () => {
+        console.log('UserInfo: Calculating element positions');
+        
+        // Délai pour s'assurer que le composant est monté et mesuré
+        setTimeout(() => {
+          if (pointsRef.current) {
+            pointsRef.current.measure((x, y, width, height, pageX, pageY) => {
+              const position = { x: pageX + width / 2, y: pageY + height / 2 };
+              console.log('Points position measured:', position);
+              setPointsPosition(position);
+            });
+          }
+
+          if (livesRef.current) {
+            livesRef.current.measure((x, y, width, height, pageX, pageY) => {
+              const position = { x: pageX + width / 2, y: pageY + height / 2 };
+              console.log('Lives position measured:', position);
+              setLivesPosition(position);
+            });
+          }
+          
+          setPositionsCalculated(true);
+        }, 300);
+      };
+
+      calculatePositions();
+    }, []);
+
+    // Recalculer les positions si les points ou vies changent
+    useEffect(() => {
+      if (positionsCalculated) {
+        setTimeout(() => {
           if (pointsRef.current) {
             pointsRef.current.measure((x, y, width, height, pageX, pageY) => {
               const position = { x: pageX + width / 2, y: pageY + height / 2 };
@@ -65,27 +96,61 @@ const UserInfo = forwardRef<UserInfoHandle, UserInfoProps>(
               setLivesPosition(position);
             });
           }
-        });
-      };
-
-      measurePositions();
-    }, [lives, points]); // Dépendances
+        }, 100);
+      }
+    }, [points, lives, positionsCalculated]);
 
     // Exposition des méthodes pour obtenir les positions
     useImperativeHandle(ref, () => ({
       getPointsPosition: () => {
-        if (!pointsRef.current) {
-          return Promise.resolve({ x: 0, y: 0 });
-        }
-        return Promise.resolve(pointsPosition);
+        return new Promise((resolve) => {
+          if (!pointsRef.current) {
+            console.log('Points ref not available');
+            resolve({ x: 0, y: 0 });
+            return;
+          }
+          
+          // Si on a déjà calculé la position, on la retourne
+          if (pointsPosition.x !== 0 || pointsPosition.y !== 0) {
+            console.log('Returning cached points position:', pointsPosition);
+            resolve(pointsPosition);
+            return;
+          }
+          
+          // Sinon on la calcule
+          pointsRef.current.measure((x, y, width, height, pageX, pageY) => {
+            const position = { x: pageX + width / 2, y: pageY + height / 2 };
+            console.log('Getting points position on demand:', position);
+            setPointsPosition(position);
+            resolve(position);
+          });
+        });
       },
       getLifePosition: () => {
-        if (!livesRef.current) {
-          return Promise.resolve({ x: 0, y: 0 });
-        }
-        return Promise.resolve(livesPosition);
+        return new Promise((resolve) => {
+          if (!livesRef.current) {
+            console.log('Lives ref not available');
+            resolve({ x: 0, y: 0 });
+            return;
+          }
+          
+          // Si on a déjà calculé la position, on la retourne
+          if (livesPosition.x !== 0 || livesPosition.y !== 0) {
+            console.log('Returning cached lives position:', livesPosition);
+            resolve(livesPosition);
+            return;
+          }
+          
+          // Sinon on la calcule
+          livesRef.current.measure((x, y, width, height, pageX, pageY) => {
+            const position = { x: pageX + width / 2, y: pageY + height / 2 };
+            console.log('Getting lives position on demand:', position);
+            setLivesPosition(position);
+            resolve(position);
+          });
+        });
       },
-    }));
+    }), [pointsPosition, livesPosition]);
 
     // Fonctions utilitaires (getBonusColor, getBonusIcon)
     const getBonusColor = (type: BonusType) => {
@@ -179,7 +244,7 @@ const UserInfo = forwardRef<UserInfoHandle, UserInfoProps>(
             >
               <Ionicons
                 name={i < lives ? 'heart' : 'heart-outline'}
-                size={18}
+                size={20}
                 color={i < lives ? colors.incorrectRed : colors.lightText}
                 style={styles.heart}
               />
@@ -217,7 +282,9 @@ const UserInfo = forwardRef<UserInfoHandle, UserInfoProps>(
         <View style={styles.mainSection}>
           <View style={styles.userInfo}>
             <Text style={styles.userName}>{name || ''}</Text>
-            <Text ref={pointsRef} style={styles.score}>{points}</Text>
+            <View ref={pointsRef} style={styles.scoreContainer}>
+              <Text style={styles.score}>{points}</Text>
+            </View>
           </View>
           <View style={styles.statsContainer}>
             {renderLives()}
@@ -264,16 +331,24 @@ const styles = StyleSheet.create({
     color: colors.darkText,
     marginRight: 6,
   },
-  score: {
-    fontSize: 14,
-    color: colors.primary,
-    fontWeight: '600',
+  scoreContainer: {
     paddingHorizontal: 6,
     paddingVertical: 3,
+  },
+  score: {
+    fontSize: 15,
+    color: colors.primary,
+    fontWeight: '600',
   },
   livesContainer: {
     flexDirection: 'row',
     alignItems: 'center',
+  },
+  heartContainer: {
+    marginHorizontal: 1,
+  },
+  heart: {
+    marginHorizontal: 1,
   },
   levelBadge: {
     paddingHorizontal: 8,

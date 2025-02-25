@@ -1,5 +1,5 @@
-import { useState, useCallback } from 'react';
-import { RewardType, User, MAX_LIVES } from './types/index';
+import { useState, useCallback, useEffect } from 'react';
+import { RewardType, User, MAX_LIVES } from './types';
 import { LEVEL_CONFIGS } from './levelConfigs';
 
 interface Position {
@@ -22,8 +22,6 @@ interface UseRewardsProps {
   onRewardAnimationComplete?: () => void;
 }
 
-const debugLogs = { /* ... invariable, comme avant ... */ };
-
 export const useRewards = ({
   onRewardEarned,
   onRewardAnimationComplete
@@ -31,19 +29,19 @@ export const useRewards = ({
 
   const [currentReward, setCurrentReward] = useState<Reward | null>(null);
   const [isAnimating, setIsAnimating] = useState(false);
-
-  // 1) On va plus se servir de la file d’attente : on la supprime ou la met en commentaire
-  // Pour vraiment empêcher les enchaînements multiples, on refuse toute nouvelle reward si isAnimating est true
-  // const [pendingRewards, setPendingRewards] = useState<Reward[]>([]);
+  const [lastProcessedTrigger, setLastProcessedTrigger] = useState<string | null>(null);
 
   // A. Calcul Streak (multiples de 10)
   const calculateStreakReward = useCallback((streak: number, user: User): Reward | null => {
-    if (streak % 10 !== 0) return null;
+    if (streak % 10 !== 0 || streak === 0) return null;
+    
     const multiplier = Math.floor(streak / 10);
     const basePoints = 100;
     const pointsAmount = basePoints * multiplier;
 
     const canGiveLife = user.lives < MAX_LIVES;
+
+    console.log(`Calculating streak reward: streak=${streak}, canGiveLife=${canGiveLife}, amount=${canGiveLife ? 1 : pointsAmount}`);
 
     return {
       type: canGiveLife ? RewardType.EXTRA_LIFE : RewardType.POINTS,
@@ -54,24 +52,35 @@ export const useRewards = ({
 
   // B. Calcul Level
   const calculateLevelReward = useCallback((newLevel: number, user: User): Reward | null => {
-    if (isNaN(newLevel) || newLevel <= 0) return null;
+    if (isNaN(newLevel) || newLevel <= 0 || newLevel === 1) return null;
+    
     const levelConfig = LEVEL_CONFIGS[newLevel];
     if (!levelConfig) return null;
 
     const canGiveLife = user.lives < MAX_LIVES;
+    const rewardAmount = canGiveLife ? 1 : (levelConfig.pointsReward || 1000);
+    
+    console.log(`Calculating level reward: level=${newLevel}, canGiveLife=${canGiveLife}, amount=${rewardAmount}`);
+    
     return {
       type: canGiveLife ? RewardType.EXTRA_LIFE : RewardType.POINTS,
-      amount: canGiveLife ? 1 : (levelConfig.pointsReward || 1000),
+      amount: rewardAmount,
       reason: `Niveau ${newLevel} atteint !`
     };
   }, []);
 
-  // C. “processNextReward” n’est plus utile si on n’a pas de file d’attente
-
   // D. checkRewards
   const checkRewards = useCallback((trigger: RewardTrigger, user: User) => {
-    // Si on est déjà en train d’animer => on ignore
+    // Protection contre les appels répétés avec le même trigger
+    const triggerKey = `${trigger.type}-${trigger.value}`;
+    if (triggerKey === lastProcessedTrigger) {
+      console.log(`Trigger ${triggerKey} already processed, skipping`);
+      return;
+    }
+    
+    // Si on est déjà en train d'animer => on ignore
     if (isAnimating) {
+      console.log('Animation in progress, ignoring new reward');
       return;
     }
 
@@ -89,12 +98,16 @@ export const useRewards = ({
     }
 
     if (!reward) {
+      console.log(`No reward calculated for trigger ${trigger.type}-${trigger.value}`);
       return;
     }
 
-    // On commence direct l’animation
+    console.log(`Setting current reward: ${reward.type}, amount: ${reward.amount}`);
+    
+    // On commence direct l'animation
     setCurrentReward(reward);
     setIsAnimating(true);
+    setLastProcessedTrigger(triggerKey);
 
     // On notifie immédiatement le parent
     if (onRewardEarned) {
@@ -103,6 +116,7 @@ export const useRewards = ({
 
   }, [
     isAnimating,
+    lastProcessedTrigger,
     calculateStreakReward,
     calculateLevelReward,
     onRewardEarned
@@ -110,6 +124,7 @@ export const useRewards = ({
 
   // E. completeRewardAnimation
   const completeRewardAnimation = useCallback(() => {
+    console.log('Animation completed, resetting state');
     setCurrentReward(null);
     setIsAnimating(false);
 
@@ -121,8 +136,28 @@ export const useRewards = ({
   // F. updateRewardPosition
   const updateRewardPosition = useCallback((position: Position) => {
     if (!currentReward) return;
-    setCurrentReward(prev => prev ? { ...prev, targetPosition: position } : null);
+    
+    console.log(`Updating reward position to x=${position.x}, y=${position.y}`);
+    
+    setCurrentReward(prev => prev ? {
+      ...prev,
+      targetPosition: position
+    } : null);
   }, [currentReward]);
+
+  // Cleanup timer pour éviter les blocages
+  useEffect(() => {
+    if (isAnimating) {
+      const timer = setTimeout(() => {
+        if (isAnimating) {
+          console.log('Animation timeout reached, forcing completion');
+          completeRewardAnimation();
+        }
+      }, 5000); // 5 secondes maximum pour l'animation
+      
+      return () => clearTimeout(timer);
+    }
+  }, [isAnimating, completeRewardAnimation]);
 
   return {
     currentReward,
