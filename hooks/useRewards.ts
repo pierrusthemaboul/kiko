@@ -32,12 +32,17 @@ export const useRewards = ({
   const [lastProcessedTrigger, setLastProcessedTrigger] = useState<string | null>(null);
 
   // A. Calcul Streak (multiples de 10)
+  // Modification : ajustement de la formule pour correspondre à 2000, 8000, 16 000, etc.
   const calculateStreakReward = useCallback((streak: number, user: User): Reward | null => {
     if (streak % 10 !== 0 || streak === 0) return null;
     
-    const multiplier = Math.floor(streak / 10);
-    const basePoints = 100;
-    const pointsAmount = basePoints * multiplier;
+    let pointsAmount;
+    if (streak === 10) {
+      pointsAmount = 2000;
+    } else {
+      // Pour 20, 30, 40, etc., on applique un facteur exponentiel :
+      pointsAmount = 2000 * Math.pow(2, streak / 10);
+    }
 
     const canGiveLife = user.lives < MAX_LIVES;
 

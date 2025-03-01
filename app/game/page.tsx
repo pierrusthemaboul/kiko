@@ -4,14 +4,16 @@ import {
   Animated,
   StatusBar,
   ImageBackground,
-  Platform,
   View,
 } from 'react-native';
 import { useRouter } from 'expo-router';
 import { SafeAreaView } from 'react-native-safe-area-context';
 
-// Components
+// Composants
 import GameContentA from "../../components/game/GameContentA";
+import RewardAnimation from "../../components/game/RewardAnimation"; 
+// Assurez-vous que le chemin d'import est correct 
+// selon l'emplacement de votre fichier RewardAnimation.tsx
 
 // Hooks
 import { useGameLogicA } from '@/hooks/useGameLogicA';
@@ -19,31 +21,30 @@ import { useGameLogicA } from '@/hooks/useGameLogicA';
 export default function GamePage() {
   const router = useRouter();
   const fadeAnim = useRef(new Animated.Value(0)).current;
-  const gameLogic = useGameLogicA();
+  const gameLogic = useGameLogicA(''); 
+  // <-- Ajoutez un éventuel paramètre si nécessaire
 
   const handleRestartGame = () => {
     router.replace('/');
   };
 
+  // Effet d'animation de fade-in au montage
   useEffect(() => {
     Animated.sequence([
       Animated.timing(fadeAnim, {
         toValue: 0,
         duration: 0,
-        useNativeDriver: true
+        useNativeDriver: true,
       }),
       Animated.timing(fadeAnim, {
         toValue: 1,
         duration: 500,
-        useNativeDriver: true
-      })
+        useNativeDriver: true,
+      }),
     ]).start();
-
-    return () => {
-      // Cleanup si nécessaire
-    };
   }, []);
 
+  // Sécurité : si gameLogic n’est pas prêt, on n’affiche rien
   if (!gameLogic) {
     return null;
   }
@@ -62,6 +63,10 @@ export default function GamePage() {
         />
 
         <SafeAreaView style={styles.container} edges={['bottom']}>
+          {/* 
+            GameContentA contient déjà l’UI du jeu, 
+            y compris la barre de score/vies si vous l’y avez intégrée 
+          */}
           <GameContentA
             user={gameLogic.user}
             previousEvent={gameLogic.previousEvent}
@@ -84,12 +89,28 @@ export default function GamePage() {
             isLevelPaused={gameLogic.isLevelPaused}
             startLevel={gameLogic.startLevel}
             currentLevelConfig={gameLogic.currentLevelConfig}
+            leaderboards={gameLogic.leaderboards}
+            levelCompletedEvents={gameLogic.levelCompletedEvents}
+
+            /* Props pour la récompense/animation */
             currentReward={gameLogic.currentReward}
             completeRewardAnimation={gameLogic.completeRewardAnimation}
             updateRewardPosition={gameLogic.updateRewardPosition}
-            leaderboards={gameLogic.leaderboards}
-            levelCompletedEvents={gameLogic.levelCompletedEvents}
           />
+
+          {/*
+            Affichage conditionnel de l’animation de récompense.
+            - On vérifie que currentReward est défini 
+            - On vérifie aussi que targetPosition est présente (définie via updateRewardPosition)
+          */}
+          {gameLogic.currentReward && gameLogic.currentReward.targetPosition && (
+            <RewardAnimation
+              type={gameLogic.currentReward.type}
+              amount={gameLogic.currentReward.amount}
+              targetPosition={gameLogic.currentReward.targetPosition}
+              onComplete={gameLogic.completeRewardAnimation}
+            />
+          )}
         </SafeAreaView>
       </ImageBackground>
     </View>
@@ -99,7 +120,7 @@ export default function GamePage() {
 const styles = StyleSheet.create({
   fullScreenContainer: {
     flex: 1,
-    // S'assurer que le contenu remplit tout l'écran
+    // S’assurer que le contenu remplit tout l’écran
     position: 'absolute',
     top: 0,
     left: 0,
@@ -114,9 +135,6 @@ const styles = StyleSheet.create({
   container: {
     flex: 1,
     backgroundColor: 'rgba(255, 255, 255, 0.85)',
-    // Ne pas ajouter de padding supérieur pour éviter l'espace gris
-    // Utiliser edges pour n'appliquer la zone de sécurité qu'en bas
+    // edges={['bottom']} évite le padding en haut
   },
 });
-
-// app/game/page.tsx

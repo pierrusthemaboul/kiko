@@ -1,8 +1,22 @@
-import React, { forwardRef, useImperativeHandle, useEffect, useRef, useState } from 'react';
-import { View, Text, StyleSheet, Platform, Animated } from 'react-native';
+import React, {
+  forwardRef,
+  useImperativeHandle,
+  useRef,
+  useState
+} from 'react';
+import {
+  View,
+  Text,
+  StyleSheet,
+  Animated,
+  LayoutChangeEvent
+} from 'react-native';
 import { Ionicons } from '@expo/vector-icons';
 import { colors } from '../../constants/Colors';
-import { MAX_LIVES, ActiveBonus, BonusType } from '@/hooks/types';
+import { ActiveBonus, BonusType } from '@/hooks/types';
+
+// Définition locale de MAX_LIVES au cas où l'import ne fonctionne pas
+const MAX_LIVES = 3;
 
 interface UserInfoProps {
   name: string;
@@ -11,8 +25,8 @@ interface UserInfoProps {
   level: number;
   streak: number;
   activeBonus?: ActiveBonus[];
-  currentQuestion?: number;  // Numéro de la question en cours
-  totalQuestions?: number;   // Nombre total d’événements attendus pour le niveau
+  currentQuestion?: number;
+  totalQuestions?: number;
 }
 
 export interface UserInfoHandle {
@@ -25,112 +39,94 @@ const UserInfo = forwardRef<UserInfoHandle, UserInfoProps>(
     { name, points, lives, level, streak, activeBonus = [], currentQuestion, totalQuestions },
     ref
   ) => {
+    // Références sur les conteneurs pour les mesures
     const pointsRef = useRef<View>(null);
     const livesRef = useRef<View>(null);
+
+    // Animation "bounce" lors du changement de points ou de vies
     const bounceAnim = useRef(new Animated.Value(1)).current;
 
+    // Positions mesurées (centre de chaque conteneur)
     const [pointsPosition, setPointsPosition] = useState<{ x: number; y: number }>({ x: 0, y: 0 });
     const [livesPosition, setLivesPosition] = useState<{ x: number; y: number }>({ x: 0, y: 0 });
-    const [positionsCalculated, setPositionsCalculated] = useState(false);
 
-    // Animation "bounce" lorsqu'on gagne des points ou perd des vies
-    useEffect(() => {
+    // Animation "bounce" quand points ou vies changent
+    React.useEffect(() => {
       Animated.sequence([
         Animated.spring(bounceAnim, {
           toValue: 1.1,
           friction: 3,
           tension: 40,
-          useNativeDriver: true,
+          useNativeDriver: true
         }),
         Animated.spring(bounceAnim, {
           toValue: 1,
           friction: 3,
-          useNativeDriver: true,
-        }),
+          useNativeDriver: true
+        })
       ]).start();
     }, [points, lives]);
 
-    // Calcul initial des positions (pour l'animation de récompense)
-    useEffect(() => {
-      const calculatePositions = () => {
-        setTimeout(() => {
-          if (pointsRef.current) {
-            pointsRef.current.measure((x, y, width, height, pageX, pageY) => {
-              const position = { x: pageX + width / 2, y: pageY + height / 2 };
-              setPointsPosition(position);
-            });
-          }
-          if (livesRef.current) {
-            livesRef.current.measure((x, y, width, height, pageX, pageY) => {
-              const position = { x: pageX + width / 2, y: pageY + height / 2 };
-              setLivesPosition(position);
-            });
-          }
-          setPositionsCalculated(true);
-        }, 300);
-      };
-      calculatePositions();
-    }, []);
-
-    // Recalcul des positions si points ou vies changent
-    useEffect(() => {
-      if (positionsCalculated) {
-        setTimeout(() => {
-          if (pointsRef.current) {
-            pointsRef.current.measure((x, y, width, height, pageX, pageY) => {
-              const position = { x: pageX + width / 2, y: pageY + height / 2 };
-              setPointsPosition(position);
-            });
-          }
-          if (livesRef.current) {
-            livesRef.current.measure((x, y, width, height, pageX, pageY) => {
-              const position = { x: pageX + width / 2, y: pageY + height / 2 };
-              setLivesPosition(position);
-            });
-          }
-        }, 100);
+    // Handler onLayout pour mettre à jour la position du conteneur des points
+    const handlePointsLayout = () => {
+      if (pointsRef.current) {
+        pointsRef.current.measureInWindow((x, y, width, height) => {
+          setPointsPosition({
+            x: x + width / 2,
+            y: y + height / 2
+          });
+        });
       }
-    }, [points, lives, positionsCalculated]);
+    };
 
-    // Méthodes exposées (pour RewardAnimation)
+    // Handler onLayout pour mettre à jour la position du conteneur des vies
+    const handleLivesLayout = () => {
+      if (livesRef.current) {
+        livesRef.current.measureInWindow((x, y, width, height) => {
+          setLivesPosition({
+            x: x + width / 2,
+            y: y + height / 2
+          });
+        });
+      }
+    };
+
+    // Exposition des méthodes pour récupérer les positions
     useImperativeHandle(ref, () => ({
-      getPointsPosition: () => {
-        return new Promise((resolve) => {
-          if (!pointsRef.current) {
-            resolve({ x: 0, y: 0 });
-            return;
-          }
+      getPointsPosition: () =>
+        new Promise((resolve) => {
           if (pointsPosition.x !== 0 || pointsPosition.y !== 0) {
             resolve(pointsPosition);
-            return;
+          } else {
+            if (pointsRef.current) {
+              pointsRef.current.measureInWindow((x, y, width, height) => {
+                const pos = { x: x + width / 2, y: y + height / 2 };
+                setPointsPosition(pos);
+                resolve(pos);
+              });
+            } else {
+              resolve({ x: 0, y: 0 });
+            }
           }
-          pointsRef.current.measure((x, y, width, height, pageX, pageY) => {
-            const position = { x: pageX + width / 2, y: pageY + height / 2 };
-            setPointsPosition(position);
-            resolve(position);
-          });
-        });
-      },
-      getLifePosition: () => {
-        return new Promise((resolve) => {
-          if (!livesRef.current) {
-            resolve({ x: 0, y: 0 });
-            return;
-          }
+        }),
+      getLifePosition: () =>
+        new Promise((resolve) => {
           if (livesPosition.x !== 0 || livesPosition.y !== 0) {
             resolve(livesPosition);
-            return;
+          } else {
+            if (livesRef.current) {
+              livesRef.current.measureInWindow((x, y, width, height) => {
+                const pos = { x: x + width / 2, y: y + height / 2 };
+                setLivesPosition(pos);
+                resolve(pos);
+              });
+            } else {
+              resolve({ x: 0, y: 0 });
+            }
           }
-          livesRef.current.measure((x, y, width, height, pageX, pageY) => {
-            const position = { x: pageX + width / 2, y: pageY + height / 2 };
-            setLivesPosition(position);
-            resolve(position);
-          });
-        });
-      },
+        })
     }), [pointsPosition, livesPosition]);
 
-    // Bonus actifs (multiplicateurs, etc.)
     const getBonusColor = (type: BonusType) => {
       switch (type) {
         case BonusType.TIME:
@@ -191,8 +187,8 @@ const UserInfo = forwardRef<UserInfoHandle, UserInfoProps>(
                     styles.bonusProgress,
                     {
                       width: `${((bonus.expiresAt - currentTime) / bonus.duration) * 100}%`,
-                      backgroundColor: getBonusColor(bonus.type),
-                    },
+                      backgroundColor: getBonusColor(bonus.type)
+                    }
                   ]}
                 />
               </View>
@@ -202,9 +198,8 @@ const UserInfo = forwardRef<UserInfoHandle, UserInfoProps>(
       );
     };
 
-    // Vies
     const renderLives = () => (
-      <View ref={livesRef} style={styles.livesContainer}>
+      <View ref={livesRef} style={styles.livesContainer} onLayout={handleLivesLayout}>
         {Array(MAX_LIVES)
           .fill(0)
           .map((_, i) => (
@@ -212,7 +207,7 @@ const UserInfo = forwardRef<UserInfoHandle, UserInfoProps>(
               key={i}
               style={[
                 styles.heartContainer,
-                i < lives && { transform: [{ scale: bounceAnim }] },
+                i < lives && { transform: [{ scale: bounceAnim }] }
               ]}
             >
               <Ionicons
@@ -226,7 +221,6 @@ const UserInfo = forwardRef<UserInfoHandle, UserInfoProps>(
       </View>
     );
 
-    // Série de bonnes réponses (streak)
     const renderStreak = () => (
       <View style={styles.streakContainer}>
         <Text style={styles.streakText}>
@@ -235,7 +229,6 @@ const UserInfo = forwardRef<UserInfoHandle, UserInfoProps>(
       </View>
     );
 
-    // Couleur du badge de niveau
     const getLevelColor = (lvl: number): string => {
       if (lvl <= 5) return colors.primary;
       if (lvl <= 10) return colors.accent;
@@ -246,15 +239,15 @@ const UserInfo = forwardRef<UserInfoHandle, UserInfoProps>(
     return (
       <View style={styles.container}>
         <View style={styles.mainSection}>
-          {/* Nom + Points */}
+          {/* Nom du joueur + score */}
           <View style={styles.userInfo}>
             <Text style={styles.userName}>{name || ''}</Text>
-            <View ref={pointsRef} style={styles.scoreContainer}>
+            <View ref={pointsRef} style={styles.scoreContainer} onLayout={handlePointsLayout}>
               <Text style={styles.score}>{points}</Text>
             </View>
           </View>
 
-          {/* Indicateur Q: x/y si on a currentQuestion et totalQuestions */}
+          {/* Indicateur de progression (questions) */}
           {typeof currentQuestion === 'number' && typeof totalQuestions === 'number' && (
             <View style={styles.questionIndicator}>
               <Text style={styles.questionText}>
@@ -263,7 +256,7 @@ const UserInfo = forwardRef<UserInfoHandle, UserInfoProps>(
             </View>
           )}
 
-          {/* Vies, Niveau, Streak, Bonus */}
+          {/* Vies, niveau, streak et bonus */}
           <View style={styles.statsContainer}>
             {renderLives()}
             <View style={[styles.levelBadge, { backgroundColor: getLevelColor(level) }]}>
@@ -283,117 +276,117 @@ const styles = StyleSheet.create({
     flexDirection: 'row',
     alignItems: 'center',
     paddingHorizontal: 10,
-    backgroundColor: 'transparent', // Conserve le fond transparent
+    backgroundColor: 'transparent',
     flex: 1,
-    zIndex: 1200, // Élevé pour rester au-dessus des animations
+    zIndex: 1200
   },
   mainSection: {
     flexDirection: 'row',
     alignItems: 'center',
-    flex: 1,
+    flex: 1
   },
   userInfo: {
     flexDirection: 'row',
     alignItems: 'center',
-    marginRight: 8,
+    marginRight: 8
   },
   userName: {
     fontSize: 14,
     fontWeight: 'bold',
     color: colors.darkText,
-    marginRight: 6,
+    marginRight: 6
   },
   scoreContainer: {
     paddingHorizontal: 6,
-    paddingVertical: 3,
+    paddingVertical: 3
   },
   score: {
     fontSize: 15,
     color: colors.primary,
-    fontWeight: '600',
+    fontWeight: '600'
   },
   questionIndicator: {
     paddingHorizontal: 6,
     paddingVertical: 3,
     backgroundColor: 'rgba(255,255,255,0.2)',
     borderRadius: 5,
-    marginHorizontal: 8,
+    marginHorizontal: 8
   },
   questionText: {
     fontSize: 14,
     color: colors.white,
-    fontWeight: '600',
+    fontWeight: '600'
   },
   statsContainer: {
     flexDirection: 'row',
     alignItems: 'center',
     marginLeft: 'auto',
-    gap: 8,
+    gap: 8
   },
   livesContainer: {
     flexDirection: 'row',
-    alignItems: 'center',
+    alignItems: 'center'
   },
   heartContainer: {
-    marginHorizontal: 1,
+    marginHorizontal: 1
   },
   heart: {
-    marginHorizontal: 1,
+    marginHorizontal: 1
   },
   levelBadge: {
     paddingHorizontal: 8,
     paddingVertical: 2,
     borderRadius: 10,
     flexDirection: 'row',
-    alignItems: 'center',
+    alignItems: 'center'
   },
   levelText: {
     color: 'white',
     fontSize: 12,
-    fontWeight: 'bold',
+    fontWeight: 'bold'
   },
   streakContainer: {
     minWidth: 60,
     alignItems: 'center',
     justifyContent: 'center',
-    paddingHorizontal: 4,
+    paddingHorizontal: 4
   },
   streakText: {
     color: colors.darkText,
     fontSize: 14,
-    fontWeight: 'bold',
+    fontWeight: 'bold'
   },
   bonusContainer: {
     flexDirection: 'row',
     alignItems: 'center',
-    marginLeft: 10,
+    marginLeft: 10
   },
   bonusItem: {
     flexDirection: 'row',
     alignItems: 'center',
-    marginRight: 5,
+    marginRight: 5
   },
   bonusIconContainer: {
     flexDirection: 'row',
     alignItems: 'center',
-    marginRight: 2,
+    marginRight: 2
   },
   bonusMultiplier: {
     fontSize: 14,
     fontWeight: 'bold',
-    marginLeft: 2,
+    marginLeft: 2
   },
   bonusProgressContainer: {
     height: 6,
     width: 50,
     backgroundColor: colors.lightGrey,
     borderRadius: 3,
-    overflow: 'hidden',
+    overflow: 'hidden'
   },
   bonusProgress: {
     height: '100%',
-    borderRadius: 3,
-  },
+    borderRadius: 3
+  }
 });
 
 export default UserInfo;
