@@ -1,148 +1,164 @@
-// RewardAnimation.tsx
 import React, { useEffect, useRef } from 'react';
-import { View, Text, StyleSheet, Animated, Platform } from 'react-native';
+import { View, Text, StyleSheet, Animated, Dimensions } from 'react-native';
 import { Ionicons } from '@expo/vector-icons';
-import { RewardType } from '@/hooks/types';
-import { colors } from '../../constants/Colors';
 
-// 1. Définition des props
 interface RewardAnimationProps {
-  type: RewardType;
+  type: string;
   amount: number;
-  targetPosition?: { x: number; y: number };
+  targetPosition?: { x: number; y: number }; // Utilisée si fournie
   onComplete?: () => void;
 }
 
 const RewardAnimation: React.FC<RewardAnimationProps> = ({
   type,
   amount,
-  targetPosition = { x: 0, y: 0 },
+  targetPosition,
   onComplete,
 }) => {
-  // Réfs animées
+  // Réfs pour les animations
   const opacity = useRef(new Animated.Value(0)).current;
   const translateY = useRef(new Animated.Value(0)).current;
-  const scale = useRef(new Animated.Value(1)).current;
+  const translateX = useRef(new Animated.Value(0)).current;
+  const scale = useRef(new Animated.Value(0.3)).current;
 
-  // Log de debug pour tracer le cycle de vie
-  console.log(`RewardAnimation rendered: type=${type}, amount=${amount}, target=(${targetPosition?.x},${targetPosition?.y})`);
+  // Dimensions de l'écran
+  const { width: screenWidth, height: screenHeight } = Dimensions.get('window');
 
   useEffect(() => {
     let isMounted = true;
 
-    // Si la position est invalide ou manquante, on skip l'animation
-    if (!targetPosition || typeof targetPosition.x !== 'number' || typeof targetPosition.y !== 'number') {
-      console.log('Invalid target position, skipping animation');
-      opacity.setValue(0);
-      translateY.setValue(0);
-      scale.setValue(1);
-      onComplete?.();
-      return;
+    // Déterminer la position finale en fonction du type et de la cible
+    let destinationX: number, destinationY: number;
+    
+    // Si une position cible est fournie ET que ses valeurs sont valides (non NaN), on l'utilise
+    if (targetPosition && !isNaN(targetPosition.x) && !isNaN(targetPosition.y)) {
+      destinationX = targetPosition.x;
+      destinationY = targetPosition.y;
+    } else {
+      // Sinon, utiliser des positions par défaut en fonction du type de récompense
+      if (type === "EXTRA_LIFE") {
+        // Pour les vies : coin supérieur droit (cœurs)
+        destinationX = screenWidth - 30;
+        destinationY = 30;
+      } else {
+        // Pour les points : coin supérieur gauche (score)
+        destinationX = 80;
+        destinationY = 30;
+      }
     }
 
-    console.log(`Starting animation to target=(${targetPosition.x},${targetPosition.y})`);
+    // Calcul des décalages par rapport au centre de l'écran
+    const offsetX = destinationX - (screenWidth / 2);
+    const offsetY = destinationY - (screenHeight / 2);
 
-    // On lance la séquence d'animation
-    requestAnimationFrame(() => {
-      if (!isMounted) return;
+    const startAnimation = () => {
+      // Réinitialisation des valeurs
+      translateX.setValue(0);
+      translateY.setValue(0);
+      opacity.setValue(0);
+      scale.setValue(0.3);
 
-      // 1) Apparition
-      const appear = Animated.parallel([
-        Animated.timing(opacity, {
-          toValue: 1,
-          duration: 300, // Légèrement plus long pour mieux voir l'apparition
-          useNativeDriver: true,
-        }),
-        Animated.spring(scale, {
-          toValue: 1.3, // Légèrement plus grand pour plus d'impact
-          friction: 4,
-          useNativeDriver: true,
-        }),
-      ]);
+      Animated.sequence([
+        // 1. Apparition au centre
+        Animated.parallel([
+          Animated.timing(opacity, {
+            toValue: 1,
+            duration: 300,
+            useNativeDriver: true,
+          }),
+          Animated.spring(scale, {
+            toValue: 1.3,
+            friction: 6,
+            useNativeDriver: true,
+          }),
+        ]),
 
-      // 2) On fait "flotter" et disparaître
-      const floatAndFade = Animated.parallel([
-        Animated.timing(translateY, {
-          toValue: -70, // Plus loin pour un meilleur effet
-          duration: 1000, // Plus long pour voir le mouvement
-          useNativeDriver: true,
-        }),
+        // 2. Petit délai
+        Animated.delay(200),
+
+        // 3. Déplacement vers la position finale
+        Animated.parallel([
+          Animated.timing(translateX, {
+            toValue: offsetX,
+            duration: 800,
+            useNativeDriver: true,
+          }),
+          Animated.timing(translateY, {
+            toValue: offsetY,
+            duration: 800,
+            useNativeDriver: true,
+          }),
+          Animated.timing(scale, {
+            toValue: 0.7,
+            duration: 800,
+            useNativeDriver: true,
+          }),
+        ]),
+
+        // 4. Effet "pop" à l'arrivée
+        Animated.sequence([
+          Animated.timing(scale, {
+            toValue: 0.9,
+            duration: 150,
+            useNativeDriver: true,
+          }),
+          Animated.timing(scale, {
+            toValue: 0.7,
+            duration: 150,
+            useNativeDriver: true,
+          }),
+        ]),
+
+        // 5. Disparition
         Animated.timing(opacity, {
           toValue: 0,
-          duration: 500,
-          delay: 500, // Plus de délai pour voir l'animation
+          duration: 300,
           useNativeDriver: true,
         }),
-        Animated.timing(scale, {
-          toValue: 0.8,
-          duration: 1000,
-          useNativeDriver: true,
-        }),
-      ]);
-
-      Animated.sequence([appear, floatAndFade]).start(({ finished }) => {
-        if (finished && isMounted) {
-          console.log('Animation sequence completed');
-          // On reset les valeurs
-          opacity.setValue(0);
-          translateY.setValue(0);
-          scale.setValue(1);
-          if (onComplete) {
-            console.log('Calling onComplete callback');
-            onComplete();
-          }
+      ]).start(({ finished }) => {
+        if (finished && isMounted && onComplete) {
+          onComplete();
         }
       });
-    });
+    };
 
-    // Cleanup
+    // Lancer l'animation après un court délai
+    const timer = setTimeout(startAnimation, 100);
+
     return () => {
       isMounted = false;
+      clearTimeout(timer);
     };
-  }, [type, amount, targetPosition?.x, targetPosition?.y, onComplete]);
+  }, [type, amount, targetPosition, screenWidth, screenHeight, onComplete]);
 
-  // Gestion du style en fonction du type de reward
+  // Configuration de l'icône et de la couleur en fonction du type de récompense
   const getConfig = () => {
     switch (type) {
-      case RewardType.POINTS:
-        return {
-          icon: 'star',
-          color: colors.warningYellow,
-        };
-      case RewardType.EXTRA_LIFE:
-        return {
-          icon: 'heart',
-          color: colors.incorrectRed,
-        };
-      case RewardType.STREAK_BONUS:
-        return {
-          icon: 'flame',
-          color: colors.primary,
-        };
+      case "POINTS":
+        return { icon: 'star', color: '#FFD700' }; // Or
+      case "EXTRA_LIFE":
+        return { icon: 'heart', color: '#FF4757' }; // Rouge
+      case "STREAK_BONUS":
+        return { icon: 'flame', color: '#4169E1' }; // Bleu royal
       default:
-        return {
-          icon: 'star',
-          color: colors.primary,
-        };
+        return { icon: 'star', color: '#1E88E5' }; // Bleu
     }
   };
 
   const config = getConfig();
 
-  // Rendu
   return (
     <Animated.View
       style={[
         styles.container,
         {
+          opacity,
           transform: [
+            { translateX },
             { translateY },
             { scale }
           ],
-          opacity,
-          left: targetPosition.x - 35, // Ajusté pour mieux centrer
-          top: targetPosition.y - 35,  // Ajusté pour mieux centrer
-        },
+        }
       ]}
     >
       <View style={[styles.bubble, { backgroundColor: config.color }]}>
@@ -153,41 +169,35 @@ const RewardAnimation: React.FC<RewardAnimationProps> = ({
   );
 };
 
-// Styles
 const styles = StyleSheet.create({
   container: {
     position: 'absolute',
-    width: 70,  // Plus grand pour plus d'impact
-    height: 70, // Plus grand pour plus d'impact
-    justifyContent: 'center',
-    alignItems: 'center',
-    zIndex: 1000,
-    pointerEvents: 'none',
+    width: 70,
+    height: 70,
+    // Centre de l'écran comme point de départ
+    left: Dimensions.get('window').width / 2 - 35,
+    top: Dimensions.get('window').height / 2 - 35,
+    zIndex: 9999,
+    elevation: 9999,
   },
   bubble: {
     width: '100%',
     height: '100%',
-    borderRadius: 35, // Ajusté pour le nouveau size
+    borderRadius: 35,
     justifyContent: 'center',
     alignItems: 'center',
-    ...Platform.select({
-      ios: {
-        shadowColor: '#000',
-        shadowOffset: { width: 0, height: 3 },
-        shadowOpacity: 0.3,
-        shadowRadius: 4.5,
-      },
-      android: {
-        elevation: 6,
-      },
-    }),
+    elevation: 6,
+    shadowColor: '#000',
+    shadowOffset: { width: 0, height: 3 },
+    shadowOpacity: 0.3,
+    shadowRadius: 4.5,
   },
   icon: {
     marginBottom: 3,
   },
   amount: {
     color: 'white',
-    fontSize: 16,  // Plus grand
+    fontSize: 16,
     fontWeight: 'bold',
     position: 'absolute',
     bottom: 10,
@@ -197,23 +207,4 @@ const styles = StyleSheet.create({
   },
 });
 
-export default React.memo(RewardAnimation, (prevProps, nextProps) => {
-  // Vérification explicite des props pour debugger 
-  const positionChanged = 
-    prevProps.targetPosition?.x !== nextProps.targetPosition?.x || 
-    prevProps.targetPosition?.y !== nextProps.targetPosition?.y;
-  
-  const otherPropsChanged = 
-    prevProps.type !== nextProps.type ||
-    prevProps.amount !== nextProps.amount ||
-    prevProps.onComplete !== nextProps.onComplete;
-  
-  // Si une prop a changé, on rerender
-  const shouldUpdate = positionChanged || otherPropsChanged;
-  
-  if (shouldUpdate) {
-    console.log('RewardAnimation will update due to prop changes');
-  }
-  
-  return !shouldUpdate;
-});
+export default RewardAnimation;

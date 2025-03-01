@@ -17,11 +17,13 @@
  ************************************************************************************/
 
 // 1.C. Imports
-import React, { useEffect, useRef } from 'react';
-import { View, Image, Text, StyleSheet, Animated } from 'react-native';
+import React, { useEffect, useRef, useState } from 'react';
+import { View, Image, Text, StyleSheet, Animated, Dimensions } from 'react-native';
 import { LinearGradient } from 'expo-linear-gradient';
 import { colors } from '../../constants/Colors';
 
+// Obtenir la largeur de l'écran pour les calculs adaptatifs
+const { width: SCREEN_WIDTH } = Dimensions.get('window');
 
 /************************************************************************************
  * 1.D. Interface des Props
@@ -50,6 +52,9 @@ const AnimatedEventCardA: React.FC<AnimatedEventCardAProps> = ({
 }) => {
   // 1.E.1. Référence pour l'animation de la date
   const dateScale = useRef(new Animated.Value(1)).current;
+  
+  // État pour suivre si le titre est long
+  const [isTitleLong, setIsTitleLong] = useState(false);
 
   // 1.E.2. Effet d'animation pour la date
   useEffect(() => {
@@ -108,6 +113,20 @@ const AnimatedEventCardA: React.FC<AnimatedEventCardAProps> = ({
     return null;
   };
 
+  // Fonction pour déterminer si le titre est long
+  const checkTitleLength = (title: string) => {
+    if (!title) return false;
+    // Considérer un titre comme long s'il dépasse 40 caractères ou contient plus de 4 mots
+    return title.length > 40 || title.split(' ').length > 4;
+  };
+
+  // Effet pour vérifier la longueur du titre au montage du composant
+  useEffect(() => {
+    if (event?.titre) {
+      setIsTitleLong(checkTitleLength(event.titre));
+    }
+  }, [event?.titre]);
+
   // 1.E.5. Rendu principal du composant
   return (
     <View style={styles.container}>
@@ -124,17 +143,25 @@ const AnimatedEventCardA: React.FC<AnimatedEventCardAProps> = ({
             colors={['transparent', 'rgba(0,0,0,0.9)']}
             style={[
               styles.gradient,
-              position === 'bottom' && styles.gradientBottom
+              position === 'bottom' && styles.gradientBottom,
+              // Augmenter la hauteur du gradient si le titre est long
+              isTitleLong && (position === 'bottom' ? styles.gradientBottomLongTitle : styles.gradientLongTitle)
             ]}
           >
             <View style={[
               styles.titleContainer,
-              position === 'bottom' && styles.titleContainerBottom
+              position === 'bottom' && styles.titleContainerBottom,
+              // Ajuster le padding pour les titres longs
+              isTitleLong && styles.titleContainerLong
             ]}>
               <Text style={[
                 styles.title,
-                position === 'top' ? styles.titleTop : styles.titleBottom
-              ]} numberOfLines={2}>
+                position === 'top' ? styles.titleTop : styles.titleBottom,
+                // Adapter la taille de la police et augmenter le nombre de lignes pour les titres longs
+                isTitleLong && (position === 'top' ? styles.titleTopLong : styles.titleBottomLong)
+              ]} 
+              // Augmenter le nombre de lignes pour les titres longs
+              numberOfLines={isTitleLong ? 3 : 2}>
                 {event?.titre}
               </Text>
             </View>
@@ -189,11 +216,21 @@ const styles = StyleSheet.create({
   gradientBottom: {
     height: '65%',
   },
+  // Styles pour les titres longs
+  gradientLongTitle: {
+    height: '55%',
+  },
+  gradientBottomLongTitle: {
+    height: '70%',
+  },
   titleContainer: {
     padding: 16,
   },
   titleContainerBottom: {
     paddingBottom: 90,
+  },
+  titleContainerLong: {
+    paddingBottom: 100, // Plus d'espace en bas pour les titres longs
   },
   title: {
     fontWeight: 'bold',
@@ -212,6 +249,13 @@ const styles = StyleSheet.create({
     textShadowColor: 'rgba(0, 0, 0, 0.75)',
     textShadowOffset: { width: 1, height: 1 },
     textShadowRadius: 3,
+  },
+  // Styles adaptés pour les titres longs
+  titleTopLong: {
+    fontSize: 20, // Réduire la taille pour les titres longs
+  },
+  titleBottomLong: {
+    fontSize: 18, // Réduire la taille pour les titres longs
   },
   dateOverlay: {
     ...StyleSheet.absoluteFillObject,

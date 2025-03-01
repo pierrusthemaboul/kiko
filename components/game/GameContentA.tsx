@@ -1,11 +1,10 @@
-import React, { useState, useRef, useEffect } from 'react';
+import React, { useState, useRef } from 'react';
 import {
   View,
   Text,
   ActivityIndicator,
   Animated,
   StyleSheet,
-  Platform,
   StatusBar,
   SafeAreaView,
 } from 'react-native';
@@ -21,11 +20,10 @@ import RewardAnimation from './RewardAnimation';
 
 // Types & Constants
 import { colors } from '@/constants/Colors';
-import type {
+import { 
   User,
   Event,
   ExtendedLevelConfig,
-  RewardType,
   LevelEventSummary,
 } from '@/hooks/types';
 
@@ -52,7 +50,7 @@ interface GameContentAProps {
   startLevel: () => void;
   currentLevelConfig: ExtendedLevelConfig;
   currentReward: {
-    type: RewardType;
+    type: string;
     amount: number;
     targetPosition?: { x: number; y: number };
   } | null;
@@ -97,47 +95,10 @@ function GameContentA({
   const router = useRouter();
   const userInfoRef = useRef<UserInfoHandle>(null);
   const contentOpacity = useRef(new Animated.Value(1)).current;
-  const [isRewardPositionSet, setIsRewardPositionSet] = useState(false);
-
-  // Gère la position de la RewardAnimation (points / vie)
-  useEffect(() => {
-    let mounted = true;
-
-    const updateRewardPositionSafely = async () => {
-      if (!currentReward || !userInfoRef.current || !mounted) return;
-
-      try {
-        const position =
-          currentReward.type === RewardType.EXTRA_LIFE
-            ? await userInfoRef.current.getLifePosition()
-            : await userInfoRef.current.getPointsPosition();
-
-        if (!mounted) return;
-
-        if (position && typeof position.x === 'number' && typeof position.y === 'number') {
-          if (
-            !currentReward.targetPosition ||
-            currentReward.targetPosition.x !== position.x ||
-            currentReward.targetPosition.y !== position.y
-          ) {
-            updateRewardPosition(position);
-            setIsRewardPositionSet(true);
-          }
-        }
-      } catch {
-        setIsRewardPositionSet(false);
-      }
-    };
-
-    updateRewardPositionSafely();
-
-    return () => {
-      mounted = false;
-    };
-  }, [currentReward?.type]);
+  const [isRewardPositionSet, setIsRewardPositionSet] = useState(true); // Toujours true maintenant
 
   // Animation du contenu lorsque le modal de niveau s'affiche
-  useEffect(() => {
+  React.useEffect(() => {
     if (showLevelModal) {
       Animated.sequence([
         Animated.timing(contentOpacity, {
@@ -231,6 +192,7 @@ function GameContentA({
     );
   };
 
+  // Rendu principal
   return (
     <SafeAreaView style={styles.safeArea}>
       {/* Barre du téléphone : sombre, texte blanc */}
@@ -258,22 +220,21 @@ function GameContentA({
               isActive={!isLevelPaused && isImageLoaded}
             />
           </View>
-
-          {/* Animation de reward */}
-          {currentReward && currentReward.targetPosition && isRewardPositionSet && (
-            <RewardAnimation
-              type={currentReward.type}
-              amount={currentReward.amount}
-              targetPosition={currentReward.targetPosition}
-              onComplete={completeRewardAnimation}
-            />
-          )}
         </View>
 
         {/* Contenu principal */}
         <Animated.View style={[styles.content, { opacity: contentOpacity }]}>
           {renderContent()}
         </Animated.View>
+
+        {/* Animation de récompense */}
+        {currentReward && (
+          <RewardAnimation
+            type={currentReward.type}
+            amount={currentReward.amount}
+            onComplete={completeRewardAnimation}
+          />
+        )}
       </Animated.View>
     </SafeAreaView>
   );
@@ -282,7 +243,6 @@ function GameContentA({
 const styles = StyleSheet.create({
   safeArea: {
     flex: 1,
-    // On enlève le paddingTop pour éviter l'espace entre la barre du téléphone et la barre UserInfo
     backgroundColor: 'transparent',
   },
   container: {

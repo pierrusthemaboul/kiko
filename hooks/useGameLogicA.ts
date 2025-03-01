@@ -229,7 +229,7 @@ export function useGameLogicA(initialEvent: string) {
     return () => {
       if (timer) clearInterval(timer);
     };
-  }, [isCountdownActive, isLevelPaused, isGameOver, timeLeft]); // Dépendances optimisées
+  }, [isCountdownActive, isLevelPaused, isGameOver, timeLeft]);
 
   /* 1.H. Regroupement des fonctions internes */
 
@@ -1033,10 +1033,9 @@ export function useGameLogicA(initialEvent: string) {
       // 5) On bloque temporairement les boutons (isWaitingForCountdown)
       setIsWaitingForCountdown(true);
 
-      // ─────────────────────────────────────────────────────────────────────
-      // CAS A : Réponse correcte
-      // ─────────────────────────────────────────────────────────────────────
       if (isAnswerCorrect) {
+
+        // CAS A : Réponse correcte
 
         // a) Son, streak, animation
         playCorrectSound();
@@ -1047,9 +1046,7 @@ export function useGameLogicA(initialEvent: string) {
           toValue: newStreak,
           duration: 500,
           useNativeDriver: false,
-        }).start(() => {
-          // Barre de progression mise à jour
-        });
+        }).start();
 
         // b) Update performance stats
         updatePerformanceStats(
@@ -1069,33 +1066,36 @@ export function useGameLogicA(initialEvent: string) {
         // d) Check des rewards (streak)
         checkRewards({ type: 'streak', value: newStreak }, user);
 
-        // e) Mise à jour du user avec les points (si >0)
+        // IMPORTANT : Calcul de l'array mis à jour des événements de niveau
+        const updatedEventSummary = [...currentLevelEvents, eventSummaryItem];
+
+        // e) Mise à jour du user avec les points (si >0) et gestion du niveau
         setUser((prev) => {
           const currentPoints = Math.max(0, Number(prev.points) || 0);
           const updatedPoints = currentPoints + pts;
-          // On build un nouvel "user" local
+          const eventsCount = prev.eventsCompletedInLevel + 1;
           const updatedUser = {
             ...prev,
             points: updatedPoints,
             streak: newStreak,
             maxStreak: Math.max(prev.maxStreak, newStreak),
-            eventsCompletedInLevel: prev.eventsCompletedInLevel + 1,
+            eventsCompletedInLevel: eventsCount,
           };
 
           // Vérifier s'il faut monter de niveau
-          if (updatedUser.eventsCompletedInLevel >= LEVEL_CONFIGS[prev.level].eventsNeeded) {
+          if (eventsCount >= LEVEL_CONFIGS[prev.level].eventsNeeded) {
             const nextLevel = prev.level + 1;
             updatedUser.level = nextLevel;
             updatedUser.eventsCompletedInLevel = 0;
 
-            // On marque la progression du niveau courant
+            // On marque la progression du niveau courant en intégrant tous les événements, y compris le dernier
             setPreviousEvent(newEvent);
             setLevelCompletedEvents((prevEvents) => [
               ...prevEvents,
-              ...currentLevelEvents,
+              ...updatedEventSummary,
             ]);
             // On bascule sur la config du nouveau niveau
-            setCurrentLevelConfig((prevConf) => ({
+            setCurrentLevelConfig(() => ({
               ...LEVEL_CONFIGS[nextLevel],
               eventsSummary: [],
             }));
@@ -1104,25 +1104,21 @@ export function useGameLogicA(initialEvent: string) {
             setIsLevelPaused(true);
             playLevelUpSound();
 
-            // ******* INTÉGRATION PUBLICITÉ *******
-            // Désormais, on affiche la publicité après le niveau 6 et après le niveau 10
+            // INTÉGRATION PUBLICITÉ : Affichage de la pub après certains niveaux
             if (prev.level === 6 && adLoaded) {
               interstitialAd.show();
             }
-            // On en ajoute une autre après le niveau 10
             if (prev.level === 10 && adLoaded) {
               interstitialAd.show();
             }
-            // ******* FIN INTÉGRATION PUBLICITÉ *******
-
             // On check la reward (changement de level)
             checkRewards({ type: 'level', value: nextLevel }, updatedUser);
 
           } else {
-            // Sinon, on stocke l'eventSummaryItem
-            setCurrentLevelEvents((prevEvents) => [...prevEvents, eventSummaryItem]);
+            // Sinon, on met à jour le state des événements de niveau avec le tableau mis à jour
+            setCurrentLevelEvents(updatedEventSummary);
 
-            // Au bout de 1.5s, on repasse isWaitingForCountdown à false, et on enchaîne
+            // Au bout de 750ms, on repasse isWaitingForCountdown à false, et on enchaîne
             setTimeout(() => {
               setIsWaitingForCountdown(false);
 
@@ -1135,12 +1131,10 @@ export function useGameLogicA(initialEvent: string) {
           return updatedUser;
         });
 
-      // ─────────────────────────────────────────────────────────────────────
-      // CAS B : Réponse incorrecte
-      // ─────────────────────────────────────────────────────────────────────
       } else {
+        // CAS B : Réponse incorrecte
 
-        // a) Son, streak=0, animation
+        // a) Son, remise à zéro du streak, animation
         playIncorrectSound();
         setStreak(0);
 
@@ -1148,9 +1142,7 @@ export function useGameLogicA(initialEvent: string) {
           toValue: 0,
           duration: 500,
           useNativeDriver: false,
-        }).start(() => {
-          // Barre de progression remise à 0
-        });
+        }).start();
 
         // b) Stats
         updatePerformanceStats(
@@ -1159,7 +1151,7 @@ export function useGameLogicA(initialEvent: string) {
           false
         );
 
-        // c) On retire une vie
+        // c) Retrait d'une vie
         setUser((prev) => {
           const updatedLives = prev.lives - 1;
 
@@ -1173,10 +1165,10 @@ export function useGameLogicA(initialEvent: string) {
           };
         });
 
-        // d) On stocke l'eventSummaryItem
+        // d) Stockage de l'eventSummaryItem
         setCurrentLevelEvents((prev) => [...prev, eventSummaryItem]);
 
-        // e) Au bout de 1.5s, on repasse isWaitingForCountdown à false et on enchaîne
+        // e) Au bout de 1.5s, on réactive les boutons et on enchaîne
         setTimeout(() => {
           setIsWaitingForCountdown(false);
 
