@@ -157,7 +157,8 @@ const LevelUpModalBis: React.FC<LevelUpModalBisProps> = ({
         ]}
       >
         <LinearGradient
-          colors={['#3A7BD5', '#1D4E89']} // Nouveau dégradé bleu élégant
+          // Nouveau dégradé plus dynamique
+          colors={['#ff9966', '#ff5e62']}
           start={{ x: 0, y: 0 }}
           end={{ x: 1, y: 0 }}
           style={styles.bannerGradient}
@@ -324,7 +325,8 @@ const LevelUpModalBis: React.FC<LevelUpModalBisProps> = ({
                 activeOpacity={0.8}
               >
                 <LinearGradient
-                  colors={['#3A7BD5', '#1D4E89']} // Nouveau dégradé bleu élégant
+                  // Nouveau dégradé plus dynamique
+                  colors={['#ff9966', '#ff5e62']}
                   start={{ x: 0, y: 0 }}
                   end={{ x: 1, y: 0 }}
                   style={styles.buttonGradient}
@@ -360,8 +362,9 @@ const styles = StyleSheet.create({
     shadowOffset: { width: 0, height: 2 },
     shadowOpacity: 0.25,
     shadowRadius: 3.84,
+    // Nouvelle couleur de bordure assortie au dégradé
     borderWidth: 1,
-    borderColor: '#3A7BD5', // Couleur de bordure plus subtile
+    borderColor: '#ff5e62',
   },
   scrollView: {
     paddingHorizontal: 20,
@@ -555,7 +558,8 @@ const styles = StyleSheet.create({
   eventDetailsDate: {
     fontSize: 16,
     fontWeight: 'bold',
-    color: '#3A7BD5',
+    // Nouvelle couleur plus cohérente avec le dégradé
+    color: '#ff5e62',
   },
   eventDetailsContent: {
     padding: 20,
@@ -567,7 +571,8 @@ const styles = StyleSheet.create({
     color: '#444',
   },
   closeButton: {
-    backgroundColor: '#3A7BD5',
+    // Même couleur que le dégradé pour cohérence
+    backgroundColor: '#ff5e62',
     padding: 12,
     alignItems: 'center',
     marginTop: 5,
