@@ -21,6 +21,7 @@
 
 // 1.D.1. Librairies / Modules
 import { useState, useEffect, useCallback } from 'react';
+import { AppState, Animated } from 'react-native';
 import { supabase } from '../lib/supabase/supabaseClients';
 import useRewards from './useRewards';
 // Modification : on étend l'import de useAudio pour récupérer les fonctions loadSounds et unloadSounds
@@ -39,7 +40,6 @@ import {
   ActiveBonus
 } from './types';
 import { LEVEL_CONFIGS } from './levelConfigs';
-import { Animated } from 'react-native';
 // ------------------ INTÉGRATION DE LA PUBLICITÉ ------------------
 // Import des modules de publicité de react-native-google-mobile-ads
 import { InterstitialAd, AdEventType, TestIds } from 'react-native-google-mobile-ads';
@@ -125,6 +125,8 @@ export function useGameLogicA(initialEvent: string) {
 
   /* 1.E.6. (Interface utilisateur) */
   const [timeLeft, setTimeLeft] = useState(20);
+  // Nouvelle variable pour le timestamp de fin de compte à rebours
+  const [endTime, setEndTime] = useState<number>(Date.now() + 20 * 1000);
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState<string | null>(null);
   const [isGameOver, setIsGameOver] = useState(false);
@@ -206,34 +208,54 @@ export function useGameLogicA(initialEvent: string) {
   }, []);
   /* ******* FIN INTÉGRATION PUBLICITÉ ******* */
 
+  /* ******* NOUVELLE LOGIQUE : Gestion du temps en arrière-plan ******* */
+  useEffect(() => {
+    const subscription = AppState.addEventListener("change", (nextAppState) => {
+      if (nextAppState !== "active") {
+        // Lorsque l'application passe en arrière-plan, on applique une pénalité de 5 secondes
+        setEndTime(prev => prev - 5000);
+      }
+      // On ne force pas de pause/résumé ici afin que le compte à rebours continue de s'écouler
+    });
+    return () => {
+      subscription.remove();
+    };
+  }, []);
+
   /* 1.F. Effet d'initialisation */
   useEffect(() => {
     initGame();
   }, []);
 
-  // 1.G. Compte à rebours
+  // Fonction utilitaire pour réinitialiser le compte à rebours
+  const resetTimer = useCallback((seconds: number = 20) => {
+    setTimeLeft(seconds);
+    setEndTime(Date.now() + seconds * 1000);
+  }, []);
+
+  // 1.G. Compte à rebours basé sur endTime
   useEffect(() => {
     let timer: NodeJS.Timeout | undefined;
-
-    if (isCountdownActive && timeLeft > 0 && !isLevelPaused && !isGameOver) {
+    if (isCountdownActive && !isLevelPaused && !isGameOver) {
       timer = setInterval(() => {
-        setTimeLeft((prevTime) => {
-          if (prevTime <= 1) {
-            handleTimeout();
-            return 0;
-          }
-          if (prevTime <= 5) {
+        const remaining = Math.round((endTime - Date.now()) / 1000);
+        if (remaining <= 0) {
+          setTimeLeft(0);
+          handleTimeout();
+          clearInterval(timer);
+        } else {
+          setTimeLeft(remaining);
+          if (remaining <= 5) {
             playCountdownSound();
           }
-          return prevTime - 1;
-        });
+        }
       }, 1000);
     }
 
     return () => {
       if (timer) clearInterval(timer);
     };
-  }, [isCountdownActive, isLevelPaused, isGameOver, timeLeft]);
+  }, [isCountdownActive, isLevelPaused, isGameOver, endTime, playCountdownSound, handleTimeout]);
 
   /* 1.H. Regroupement des fonctions internes */
 
@@ -319,7 +341,7 @@ export function useGameLogicA(initialEvent: string) {
 
       setIsLevelPaused(false);
       setIsCountdownActive(true);
-      setTimeLeft(20);
+      resetTimer(20);
 
     } catch (err) {
       const errorMsg = err instanceof Error ? err.message : "Erreur d'initialisation";
@@ -435,7 +457,7 @@ export function useGameLogicA(initialEvent: string) {
 
       setIsCountdownActive(false);
 
-      setTimeLeft(20);
+      resetTimer(20);
 
       const period = getPeriod(selectedEvent.date);
       setEventHistory((prev) => [
@@ -450,7 +472,7 @@ export function useGameLogicA(initialEvent: string) {
     } catch (err) {
       // Gestion des erreurs si nécessaire
     }
-  }, [getPeriod]);
+  }, [getPeriod, resetTimer]);
 
   // 1.H.4.d.0 getNextForcedJumpIncrement
   /**
@@ -1336,14 +1358,14 @@ export function useGameLogicA(initialEvent: string) {
     setShowLevelModal(false);
     setIsLevelPaused(false);
     setIsCountdownActive(true);
-    setTimeLeft(20);
+    resetTimer(20);
 
     setLevelCompletedEvents([]);
 
     if (previousEvent) {
       selectNewEvent(allEvents, previousEvent);
     }
-  }, [allEvents, previousEvent, selectNewEvent]);
+  }, [allEvents, previousEvent, selectNewEvent, resetTimer]);
 
   /* ******* NOUVELLE FONCTION : restartGame ******* */
   /**
