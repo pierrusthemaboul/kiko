@@ -39,6 +39,15 @@ import {
 } from './types';
 import { LEVEL_CONFIGS } from './levelConfigs';
 import { Animated } from 'react-native';
+// ------------------ INTÉGRATION DE LA PUBLICITÉ ------------------
+// Import des modules de publicité de react-native-google-mobile-ads
+import { InterstitialAd, AdEventType, TestIds } from 'react-native-google-mobile-ads';
+
+// Création de l'annonce interstitielle en mode test
+const interstitialAd = InterstitialAd.createForAdRequest(TestIds.INTERSTITIAL, {
+  requestNonPersonalizedAdsOnly: true,
+});
+// ------------------------------------------------------------------
 
 /* 1.E. Hook : useGameLogicA */
 
@@ -173,6 +182,25 @@ export function useGameLogicA(initialEvent: string) {
     return Math.floor(Math.random() * (19 - 12 + 1)) + 12;
   });
 
+  /* ******* INTÉGRATION DE LA PUBLICITÉ ******* */
+  // État pour suivre le chargement de l'annonce interstitielle
+  const [adLoaded, setAdLoaded] = useState(false);
+
+  useEffect(() => {
+    const adLoadedListener = interstitialAd.addAdEventListener(AdEventType.LOADED, () => {
+      setAdLoaded(true);
+      console.log("Interstitial ad loaded");
+    });
+    const adErrorListener = interstitialAd.addAdEventListener(AdEventType.ERROR, (error) => {
+      console.log("Interstitial ad error: ", error);
+    });
+    interstitialAd.load();
+    return () => {
+      adLoadedListener();
+      adErrorListener();
+    };
+  }, []);
+  /* ******* FIN INTÉGRATION PUBLICITÉ ******* */
 
   /* 1.F. Effet d'initialisation */
   useEffect(() => {
@@ -1042,62 +1070,66 @@ export function useGameLogicA(initialEvent: string) {
         checkRewards({ type: 'streak', value: newStreak }, user);
 
         // e) Mise à jour du user avec les points (si >0)
-        if (Number.isFinite(pts) && pts > 0) {
-          setUser((prev) => {
-            const currentPoints = Math.max(0, Number(prev.points) || 0);
-            const newPoints = currentPoints + pts;
+        setUser((prev) => {
+          const currentPoints = Math.max(0, Number(prev.points) || 0);
+          const updatedPoints = currentPoints + pts;
+          // On build un nouvel "user" local
+          const updatedUser = {
+            ...prev,
+            points: updatedPoints,
+            streak: newStreak,
+            maxStreak: Math.max(prev.maxStreak, newStreak),
+            eventsCompletedInLevel: prev.eventsCompletedInLevel + 1,
+          };
 
-            // On build un nouvel "user" local
-            const updatedUser = {
-              ...prev,
-              points: newPoints,
-              streak: newStreak,
-              maxStreak: Math.max(prev.maxStreak, newStreak),
-              eventsCompletedInLevel: prev.eventsCompletedInLevel + 1,
-            };
+          // Vérifier s'il faut monter de niveau
+          if (updatedUser.eventsCompletedInLevel >= LEVEL_CONFIGS[prev.level].eventsNeeded) {
+            const nextLevel = prev.level + 1;
+            updatedUser.level = nextLevel;
+            updatedUser.eventsCompletedInLevel = 0;
 
-            // Vérifier s'il faut monter de niveau
-            if (updatedUser.eventsCompletedInLevel >= LEVEL_CONFIGS[prev.level].eventsNeeded) {
-              const nextLevel = prev.level + 1;
-              updatedUser.level = nextLevel;
-              updatedUser.eventsCompletedInLevel = 0;
+            // On marque la progression du niveau courant
+            setPreviousEvent(newEvent);
+            setLevelCompletedEvents((prevEvents) => [
+              ...prevEvents,
+              ...currentLevelEvents,
+            ]);
+            // On bascule sur la config du nouveau niveau
+            setCurrentLevelConfig((prevConf) => ({
+              ...LEVEL_CONFIGS[nextLevel],
+              eventsSummary: [],
+            }));
+            setCurrentLevelEvents([]);
+            setShowLevelModal(true);
+            setIsLevelPaused(true);
+            playLevelUpSound();
 
-              // On marque la progression du niveau courant
-              setPreviousEvent(newEvent);
-              setLevelCompletedEvents((prevEvents) => [
-                ...prevEvents,
-                ...currentLevelEvents,
-              ]);
-              // On bascule sur la config du nouveau niveau
-              setCurrentLevelConfig((prevConf) => ({
-                ...LEVEL_CONFIGS[nextLevel],
-                eventsSummary: [],
-              }));
-              setCurrentLevelEvents([]);
-              setShowLevelModal(true);
-              setIsLevelPaused(true);
-              playLevelUpSound();
-
-              // On check la reward (changement de level)
-              checkRewards({ type: 'level', value: nextLevel }, updatedUser);
-
-            } else {
-              // Sinon, on stocke l'eventSummaryItem
-              setCurrentLevelEvents((prevEvents) => [...prevEvents, eventSummaryItem]);
-
-              // Au bout de 1.5s, on repasse isWaitingForCountdown à false, et on enchaîne
-              setTimeout(() => {
-                setIsWaitingForCountdown(false);
-
-                if (!isGameOver && !showLevelModal) {
-                  setPreviousEvent(newEvent);
-                  selectNewEvent(allEvents, newEvent);
-                }
-              }, 750);
+            // ******* INTÉGRATION PUBLICITÉ *******
+            // Si le niveau complété est le niveau 1, on affiche la publicité test
+            if (prev.level === 1 && adLoaded) {
+              interstitialAd.show();
             }
-            return updatedUser;
-          });
-        }
+            // ******* FIN INTÉGRATION PUBLICITÉ *******
+
+            // On check la reward (changement de level)
+            checkRewards({ type: 'level', value: nextLevel }, updatedUser);
+
+          } else {
+            // Sinon, on stocke l'eventSummaryItem
+            setCurrentLevelEvents((prevEvents) => [...prevEvents, eventSummaryItem]);
+
+            // Au bout de 1.5s, on repasse isWaitingForCountdown à false, et on enchaîne
+            setTimeout(() => {
+              setIsWaitingForCountdown(false);
+
+              if (!isGameOver && !showLevelModal) {
+                setPreviousEvent(newEvent);
+                selectNewEvent(allEvents, newEvent);
+              }
+            }, 750);
+          }
+          return updatedUser;
+        });
 
       // ─────────────────────────────────────────────────────────────────────
       // CAS B : Réponse incorrecte
