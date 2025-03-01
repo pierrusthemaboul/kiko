@@ -16,7 +16,6 @@ import UserInfo, { UserInfoHandle } from './UserInfo';
 import Countdown from './Countdown';
 import EventLayoutA from './EventLayoutA';
 import LevelUpModalBis from '../modals/LevelUpModalBis';
-
 import ScoreboardModal from '../modals/ScoreboardModal';
 import RewardAnimation from './RewardAnimation';
 
@@ -52,7 +51,11 @@ interface GameContentAProps {
   isLevelPaused: boolean;
   startLevel: () => void;
   currentLevelConfig: ExtendedLevelConfig;
-  currentReward: { type: RewardType; amount: number; targetPosition?: { x: number; y: number } } | null;
+  currentReward: {
+    type: RewardType;
+    amount: number;
+    targetPosition?: { x: number; y: number };
+  } | null;
   completeRewardAnimation: () => void;
   updateRewardPosition: (position: { x: number; y: number }) => void;
   leaderboards?: {
@@ -89,26 +92,25 @@ function GameContentA({
   completeRewardAnimation,
   updateRewardPosition,
   leaderboards,
-  levelCompletedEvents
+  levelCompletedEvents,
 }: GameContentAProps) {
   const router = useRouter();
   const userInfoRef = useRef<UserInfoHandle>(null);
   const contentOpacity = useRef(new Animated.Value(1)).current;
   const [isRewardPositionSet, setIsRewardPositionSet] = useState(false);
 
+  // Gère la position de la RewardAnimation (points / vie)
   useEffect(() => {
     let mounted = true;
 
     const updateRewardPositionSafely = async () => {
-      if (!currentReward || !userInfoRef.current || !mounted) {
-        return;
-      }
+      if (!currentReward || !userInfoRef.current || !mounted) return;
 
       try {
-        const position = await (currentReward.type === RewardType.EXTRA_LIFE 
-          ? userInfoRef.current.getLifePosition()
-          : userInfoRef.current.getPointsPosition()
-        );
+        const position =
+          currentReward.type === RewardType.EXTRA_LIFE
+            ? await userInfoRef.current.getLifePosition()
+            : await userInfoRef.current.getPointsPosition();
 
         if (!mounted) return;
 
@@ -122,7 +124,7 @@ function GameContentA({
             setIsRewardPositionSet(true);
           }
         }
-      } catch (err) {
+      } catch {
         setIsRewardPositionSet(false);
       }
     };
@@ -134,6 +136,7 @@ function GameContentA({
     };
   }, [currentReward?.type]);
 
+  // Animation du contenu lorsque le modal de niveau s'affiche
   useEffect(() => {
     if (showLevelModal) {
       Animated.sequence([
@@ -184,6 +187,7 @@ function GameContentA({
 
     return (
       <>
+        {/* Cartes : événement précédent + nouvel événement */}
         <EventLayoutA
           previousEvent={previousEvent}
           newEvent={newEvent}
@@ -197,6 +201,7 @@ function GameContentA({
           isLevelPaused={isLevelPaused}
         />
 
+        {/* Modal de fin de niveau */}
         <LevelUpModalBis
           visible={showLevelModal}
           level={level}
@@ -210,6 +215,7 @@ function GameContentA({
           eventsSummary={levelCompletedEvents}
         />
 
+        {/* Modal de fin de partie (scoreboard) */}
         <ScoreboardModal
           isVisible={isGameOver}
           currentScore={user.points}
@@ -227,7 +233,15 @@ function GameContentA({
 
   return (
     <SafeAreaView style={styles.safeArea}>
+      {/* Barre du téléphone : sombre, texte blanc */}
+      <StatusBar
+        barStyle="light-content"
+        backgroundColor="#050B1F"
+        translucent={false}
+      />
+
       <Animated.View style={[styles.container, { opacity: fadeAnim }]}>
+        {/* Barre supérieure : infos joueur + timer */}
         <View style={styles.header}>
           <UserInfo
             ref={userInfoRef}
@@ -245,6 +259,7 @@ function GameContentA({
             />
           </View>
 
+          {/* Animation de reward */}
           {currentReward && currentReward.targetPosition && isRewardPositionSet && (
             <RewardAnimation
               type={currentReward.type}
@@ -255,6 +270,7 @@ function GameContentA({
           )}
         </View>
 
+        {/* Contenu principal */}
         <Animated.View style={[styles.content, { opacity: contentOpacity }]}>
           {renderContent()}
         </Animated.View>
@@ -266,8 +282,8 @@ function GameContentA({
 const styles = StyleSheet.create({
   safeArea: {
     flex: 1,
+    // On enlève le paddingTop pour éviter l'espace entre la barre du téléphone et la barre UserInfo
     backgroundColor: 'transparent',
-    paddingTop: Platform.OS === 'android' ? StatusBar.currentHeight : 0,
   },
   container: {
     flex: 1,

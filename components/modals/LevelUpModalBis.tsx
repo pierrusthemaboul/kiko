@@ -37,13 +37,26 @@ interface LevelUpModalBisProps {
 }
 
 /**
- * Utilitaire pour n'afficher que l'année
- * depuis la string date_formatee (ex: "01 October 2022" -> "2022")
+ * Récupère l'année depuis l'événement.
+ * On priorise le champ date_formatee puis date.
+ * Si possible, on parse la date pour extraire l'année ; sinon, on tente un découpage.
  */
-function extractYearFromDateString(dateString: string | undefined): string {
-  if (!dateString) return '';
-  const parts = dateString.split(' ');
-  return parts[2] ?? dateString;
+function getEventYear(event: LevelEventSummary): string {
+  // On priorise la date formattée, sinon la date brute
+  const rawDate = event.date_formatee || event.date;
+  if (!rawDate) return '';
+
+  const parsedDate = new Date(rawDate);
+  if (!isNaN(parsedDate.getTime())) {
+    return parsedDate.getFullYear().toString();
+  }
+
+  // Si le parsing échoue, on tente un découpage (ex: "01 October 2022")
+  const parts = rawDate.split(' ');
+  if (parts.length >= 2) {
+    return parts[parts.length - 1];
+  }
+  return rawDate;
 }
 
 const LevelUpModalBis: React.FC<LevelUpModalBisProps> = ({
@@ -66,7 +79,7 @@ const LevelUpModalBis: React.FC<LevelUpModalBisProps> = ({
   const levelNumberAnim = useRef(new Animated.Value(0)).current;
   const contentTranslateY = useRef(new Animated.Value(50)).current;
 
-  // State pour le popup événement
+  // State pour le popup d’un événement en particulier
   const [selectedEvent, setSelectedEvent] = useState<LevelEventSummary | null>(null);
 
   // Animation d'entrée
@@ -96,7 +109,7 @@ const LevelUpModalBis: React.FC<LevelUpModalBisProps> = ({
             toValue: 1,
             friction: 8,
             tension: 40,
-            useNativeDriver: true
+            useNativeDriver: true,
           }),
           Animated.timing(opacityAnim, {
             toValue: 1,
@@ -107,22 +120,22 @@ const LevelUpModalBis: React.FC<LevelUpModalBisProps> = ({
             toValue: 0,
             friction: 8,
             tension: 40,
-            useNativeDriver: true
+            useNativeDriver: true,
           }),
           Animated.spring(levelNumberAnim, {
             toValue: 1,
             friction: 8,
             tension: 40,
-            useNativeDriver: true
-          })
-        ])
+            useNativeDriver: true,
+          }),
+        ]),
       ]).start(() => {
         startButtonAnimation();
       });
     }
   }, [visible]);
 
-  // Animation du bouton
+  // Animation du bouton "GO!"
   const startButtonAnimation = () => {
     Animated.loop(
       Animated.sequence([
@@ -135,7 +148,7 @@ const LevelUpModalBis: React.FC<LevelUpModalBisProps> = ({
           toValue: 1,
           duration: 1000,
           useNativeDriver: true,
-        })
+        }),
       ])
     ).start();
   };
@@ -151,13 +164,12 @@ const LevelUpModalBis: React.FC<LevelUpModalBisProps> = ({
           {
             transform: [
               { scale: levelNumberAnim },
-              { translateY: contentTranslateY }
-            ]
-          }
+              { translateY: contentTranslateY },
+            ],
+          },
         ]}
       >
         <LinearGradient
-          // Nouveau dégradé plus dynamique
           colors={['#ff9966', '#ff5e62']}
           start={{ x: 0, y: 0 }}
           end={{ x: 1, y: 0 }}
@@ -179,15 +191,19 @@ const LevelUpModalBis: React.FC<LevelUpModalBisProps> = ({
     return (
       <View style={styles.eventsSummaryContainer}>
         <Text style={styles.sectionTitle}>Événements du niveau</Text>
-        
+
         {/* Texte d'indication pour toucher les événements */}
         <View style={styles.touchHintContainer}>
-          <Ionicons name="information-circle-outline" size={18} color={colors.primary} />
+          <Ionicons
+            name="information-circle-outline"
+            size={18}
+            color={colors.primary}
+          />
           <Text style={styles.touchHintText}>
             Touchez une carte pour plus de détails
           </Text>
         </View>
-        
+
         <ScrollView horizontal showsHorizontalScrollIndicator={false}>
           {eventsSummary.map((event, index) => (
             <TouchableOpacity
@@ -206,9 +222,7 @@ const LevelUpModalBis: React.FC<LevelUpModalBisProps> = ({
                   colors={['transparent', 'rgba(0,0,0,0.8)']}
                   style={styles.eventGradient}
                 >
-                  <Text style={styles.eventDate}>
-                    {extractYearFromDateString(event.date_formatee)}
-                  </Text>
+                  <Text style={styles.eventDate}>{getEventYear(event)}</Text>
                   <Text style={styles.eventTitle} numberOfLines={2}>
                     {event.titre}
                   </Text>
@@ -237,7 +251,7 @@ const LevelUpModalBis: React.FC<LevelUpModalBisProps> = ({
     );
   };
 
-  // Rendu du modal de détails d'événement
+  // Rendu du modal de détails d'un événement
   const renderEventDetailsModal = () => {
     if (!selectedEvent) return null;
 
@@ -255,15 +269,15 @@ const LevelUpModalBis: React.FC<LevelUpModalBisProps> = ({
                 {selectedEvent.titre}
               </Text>
               <Text style={styles.eventDetailsDate}>
-                {extractYearFromDateString(selectedEvent.date_formatee)}
+                {getEventYear(selectedEvent)}
               </Text>
             </View>
-            
+
             <ScrollView style={styles.eventDetailsContent}>
               <Text style={styles.eventDetailsDescription}>
                 {selectedEvent.description_detaillee
                   ? selectedEvent.description_detaillee
-                  : 'Aucune description détaillée disponible pour cet événement historique.'}
+                  : "Aucune description détaillée disponible pour cet événement historique."}
               </Text>
             </ScrollView>
 
@@ -285,28 +299,23 @@ const LevelUpModalBis: React.FC<LevelUpModalBisProps> = ({
       visible={visible}
       animationType="none"
       statusBarTranslucent
+      key={eventsSummary?.length} // Forcer le remontage du Modal si le tableau change
     >
       <Animated.View
-        style={[
-          styles.modalOverlay,
-          { opacity: backgroundOpacityAnim }
-        ]}
+        style={[styles.modalOverlay, { opacity: backgroundOpacityAnim }]}
       >
         <Animated.View
           style={[
             styles.modalContent,
             {
               opacity: opacityAnim,
-              transform: [
-                { scale: scaleAnim },
-                { translateY: contentTranslateY }
-              ]
-            }
+              transform: [{ scale: scaleAnim }, { translateY: contentTranslateY }],
+            },
           ]}
         >
           <ScrollView style={styles.scrollView}>
             {renderLevelUpBanner()}
-            
+
             <Text style={styles.eventsInfo}>
               Niveau {level} : objectif {requiredEvents} événements
             </Text>
@@ -316,7 +325,7 @@ const LevelUpModalBis: React.FC<LevelUpModalBisProps> = ({
             <Animated.View
               style={[
                 styles.startButtonContainer,
-                { transform: [{ scale: buttonScaleAnim }] }
+                { transform: [{ scale: buttonScaleAnim }] },
               ]}
             >
               <TouchableOpacity
@@ -325,7 +334,6 @@ const LevelUpModalBis: React.FC<LevelUpModalBisProps> = ({
                 activeOpacity={0.8}
               >
                 <LinearGradient
-                  // Nouveau dégradé plus dynamique
                   colors={['#ff9966', '#ff5e62']}
                   start={{ x: 0, y: 0 }}
                   end={{ x: 1, y: 0 }}
@@ -362,7 +370,6 @@ const styles = StyleSheet.create({
     shadowOffset: { width: 0, height: 2 },
     shadowOpacity: 0.25,
     shadowRadius: 3.84,
-    // Nouvelle couleur de bordure assortie au dégradé
     borderWidth: 1,
     borderColor: '#ff5e62',
   },
@@ -558,7 +565,6 @@ const styles = StyleSheet.create({
   eventDetailsDate: {
     fontSize: 16,
     fontWeight: 'bold',
-    // Nouvelle couleur plus cohérente avec le dégradé
     color: '#ff5e62',
   },
   eventDetailsContent: {
@@ -571,7 +577,6 @@ const styles = StyleSheet.create({
     color: '#444',
   },
   closeButton: {
-    // Même couleur que le dégradé pour cohérence
     backgroundColor: '#ff5e62',
     padding: 12,
     alignItems: 'center',

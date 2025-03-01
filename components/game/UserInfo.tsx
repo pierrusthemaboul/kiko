@@ -4,7 +4,6 @@ import { Ionicons } from '@expo/vector-icons';
 import { colors } from '../../constants/Colors';
 import { MAX_LIVES, ActiveBonus, BonusType } from '@/hooks/types';
 
-// Interface des props
 interface UserInfoProps {
   name: string;
   points: number;
@@ -12,27 +11,29 @@ interface UserInfoProps {
   level: number;
   streak: number;
   activeBonus?: ActiveBonus[];
+  currentQuestion?: number;  // Numéro de la question en cours
+  totalQuestions?: number;   // Nombre total d’événements attendus pour le niveau
 }
 
-// Interface des méthodes exposées
 export interface UserInfoHandle {
   getPointsPosition: () => Promise<{ x: number; y: number }>;
   getLifePosition: () => Promise<{ x: number; y: number }>;
 }
 
-// Composant UserInfo
 const UserInfo = forwardRef<UserInfoHandle, UserInfoProps>(
-  ({ name, points, lives, level, streak, activeBonus = [] }, ref) => {
+  (
+    { name, points, lives, level, streak, activeBonus = [], currentQuestion, totalQuestions },
+    ref
+  ) => {
     const pointsRef = useRef<View>(null);
     const livesRef = useRef<View>(null);
     const bounceAnim = useRef(new Animated.Value(1)).current;
 
-    // State pour stocker les positions
     const [pointsPosition, setPointsPosition] = useState<{ x: number; y: number }>({ x: 0, y: 0 });
     const [livesPosition, setLivesPosition] = useState<{ x: number; y: number }>({ x: 0, y: 0 });
     const [positionsCalculated, setPositionsCalculated] = useState(false);
 
-    // Animation des points
+    // Animation "bounce" lorsqu'on gagne des points ou perd des vies
     useEffect(() => {
       Animated.sequence([
         Animated.spring(bounceAnim, {
@@ -49,37 +50,29 @@ const UserInfo = forwardRef<UserInfoHandle, UserInfoProps>(
       ]).start();
     }, [points, lives]);
 
-    // Calcul des positions après le rendu
+    // Calcul initial des positions (pour l'animation de récompense)
     useEffect(() => {
       const calculatePositions = () => {
-        console.log('UserInfo: Calculating element positions');
-        
-        // Délai pour s'assurer que le composant est monté et mesuré
         setTimeout(() => {
           if (pointsRef.current) {
             pointsRef.current.measure((x, y, width, height, pageX, pageY) => {
               const position = { x: pageX + width / 2, y: pageY + height / 2 };
-              console.log('Points position measured:', position);
               setPointsPosition(position);
             });
           }
-
           if (livesRef.current) {
             livesRef.current.measure((x, y, width, height, pageX, pageY) => {
               const position = { x: pageX + width / 2, y: pageY + height / 2 };
-              console.log('Lives position measured:', position);
               setLivesPosition(position);
             });
           }
-          
           setPositionsCalculated(true);
         }, 300);
       };
-
       calculatePositions();
     }, []);
 
-    // Recalculer les positions si les points ou vies changent
+    // Recalcul des positions si points ou vies changent
     useEffect(() => {
       if (positionsCalculated) {
         setTimeout(() => {
@@ -89,7 +82,6 @@ const UserInfo = forwardRef<UserInfoHandle, UserInfoProps>(
               setPointsPosition(position);
             });
           }
-
           if (livesRef.current) {
             livesRef.current.measure((x, y, width, height, pageX, pageY) => {
               const position = { x: pageX + width / 2, y: pageY + height / 2 };
@@ -100,27 +92,20 @@ const UserInfo = forwardRef<UserInfoHandle, UserInfoProps>(
       }
     }, [points, lives, positionsCalculated]);
 
-    // Exposition des méthodes pour obtenir les positions
+    // Méthodes exposées (pour RewardAnimation)
     useImperativeHandle(ref, () => ({
       getPointsPosition: () => {
         return new Promise((resolve) => {
           if (!pointsRef.current) {
-            console.log('Points ref not available');
             resolve({ x: 0, y: 0 });
             return;
           }
-          
-          // Si on a déjà calculé la position, on la retourne
           if (pointsPosition.x !== 0 || pointsPosition.y !== 0) {
-            console.log('Returning cached points position:', pointsPosition);
             resolve(pointsPosition);
             return;
           }
-          
-          // Sinon on la calcule
           pointsRef.current.measure((x, y, width, height, pageX, pageY) => {
             const position = { x: pageX + width / 2, y: pageY + height / 2 };
-            console.log('Getting points position on demand:', position);
             setPointsPosition(position);
             resolve(position);
           });
@@ -129,22 +114,15 @@ const UserInfo = forwardRef<UserInfoHandle, UserInfoProps>(
       getLifePosition: () => {
         return new Promise((resolve) => {
           if (!livesRef.current) {
-            console.log('Lives ref not available');
             resolve({ x: 0, y: 0 });
             return;
           }
-          
-          // Si on a déjà calculé la position, on la retourne
           if (livesPosition.x !== 0 || livesPosition.y !== 0) {
-            console.log('Returning cached lives position:', livesPosition);
             resolve(livesPosition);
             return;
           }
-          
-          // Sinon on la calcule
           livesRef.current.measure((x, y, width, height, pageX, pageY) => {
             const position = { x: pageX + width / 2, y: pageY + height / 2 };
-            console.log('Getting lives position on demand:', position);
             setLivesPosition(position);
             resolve(position);
           });
@@ -152,7 +130,7 @@ const UserInfo = forwardRef<UserInfoHandle, UserInfoProps>(
       },
     }), [pointsPosition, livesPosition]);
 
-    // Fonctions utilitaires (getBonusColor, getBonusIcon)
+    // Bonus actifs (multiplicateurs, etc.)
     const getBonusColor = (type: BonusType) => {
       switch (type) {
         case BonusType.TIME:
@@ -187,15 +165,12 @@ const UserInfo = forwardRef<UserInfoHandle, UserInfoProps>(
       }
     };
 
-    // Rendu des indicateurs de bonus
     const renderBonusIndicators = () => {
       const currentTime = Date.now();
       const activeMultipliers = activeBonus.filter(
         (bonus) => bonus.expiresAt > currentTime
       );
-
       if (activeMultipliers.length === 0) return null;
-
       return (
         <View style={styles.bonusContainer}>
           {activeMultipliers.map((bonus, index) => (
@@ -227,7 +202,7 @@ const UserInfo = forwardRef<UserInfoHandle, UserInfoProps>(
       );
     };
 
-    // Rendu des vies
+    // Vies
     const renderLives = () => (
       <View ref={livesRef} style={styles.livesContainer}>
         {Array(MAX_LIVES)
@@ -237,9 +212,7 @@ const UserInfo = forwardRef<UserInfoHandle, UserInfoProps>(
               key={i}
               style={[
                 styles.heartContainer,
-                i < lives && {
-                  transform: [{ scale: bounceAnim }],
-                },
+                i < lives && { transform: [{ scale: bounceAnim }] },
               ]}
             >
               <Ionicons
@@ -253,39 +226,44 @@ const UserInfo = forwardRef<UserInfoHandle, UserInfoProps>(
       </View>
     );
 
-    // Rendu du streak
+    // Série de bonnes réponses (streak)
     const renderStreak = () => (
       <View style={styles.streakContainer}>
-        <Text style={[
-          styles.streakText,
-          streak >= 20 ? styles.streakUltra :
-          streak >= 15 ? styles.streakMaster : 
-          streak >= 10 ? styles.streakExpert :
-          streak >= 5 ? styles.streakPro : null
-        ]}>
-          {streak > 0 ? `×${streak}` : ''}
+        <Text style={styles.streakText}>
+          {streak > 0 ? `Série : ${streak}` : ''}
         </Text>
       </View>
     );
 
-    // Gestion des couleurs de niveau
-    const getLevelColor = (level: number): string => {
-      if (level <= 5) return colors.primary;
-      if (level <= 10) return colors.accent;
-      if (level <= 15) return colors.warningYellow;
+    // Couleur du badge de niveau
+    const getLevelColor = (lvl: number): string => {
+      if (lvl <= 5) return colors.primary;
+      if (lvl <= 10) return colors.accent;
+      if (lvl <= 15) return colors.warningYellow;
       return colors.incorrectRed;
     };
 
-    // Rendu principal
     return (
       <View style={styles.container}>
         <View style={styles.mainSection}>
+          {/* Nom + Points */}
           <View style={styles.userInfo}>
             <Text style={styles.userName}>{name || ''}</Text>
             <View ref={pointsRef} style={styles.scoreContainer}>
               <Text style={styles.score}>{points}</Text>
             </View>
           </View>
+
+          {/* Indicateur Q: x/y si on a currentQuestion et totalQuestions */}
+          {typeof currentQuestion === 'number' && typeof totalQuestions === 'number' && (
+            <View style={styles.questionIndicator}>
+              <Text style={styles.questionText}>
+                {currentQuestion}/{totalQuestions}
+              </Text>
+            </View>
+          )}
+
+          {/* Vies, Niveau, Streak, Bonus */}
           <View style={styles.statsContainer}>
             {renderLives()}
             <View style={[styles.levelBadge, { backgroundColor: getLevelColor(level) }]}>
@@ -300,25 +278,19 @@ const UserInfo = forwardRef<UserInfoHandle, UserInfoProps>(
   }
 );
 
-// Styles
 const styles = StyleSheet.create({
   container: {
     flexDirection: 'row',
     alignItems: 'center',
     paddingHorizontal: 10,
-    backgroundColor: 'transparent',
+    backgroundColor: 'transparent', // Conserve le fond transparent
     flex: 1,
+    zIndex: 1200, // Élevé pour rester au-dessus des animations
   },
   mainSection: {
     flexDirection: 'row',
     alignItems: 'center',
     flex: 1,
-  },
-  statsContainer: {
-    flexDirection: 'row',
-    alignItems: 'center',
-    marginLeft: 'auto',
-    gap: 8,
   },
   userInfo: {
     flexDirection: 'row',
@@ -339,6 +311,24 @@ const styles = StyleSheet.create({
     fontSize: 15,
     color: colors.primary,
     fontWeight: '600',
+  },
+  questionIndicator: {
+    paddingHorizontal: 6,
+    paddingVertical: 3,
+    backgroundColor: 'rgba(255,255,255,0.2)',
+    borderRadius: 5,
+    marginHorizontal: 8,
+  },
+  questionText: {
+    fontSize: 14,
+    color: colors.white,
+    fontWeight: '600',
+  },
+  statsContainer: {
+    flexDirection: 'row',
+    alignItems: 'center',
+    marginLeft: 'auto',
+    gap: 8,
   },
   livesContainer: {
     flexDirection: 'row',
@@ -363,7 +353,7 @@ const styles = StyleSheet.create({
     fontWeight: 'bold',
   },
   streakContainer: {
-    minWidth: 24,
+    minWidth: 60,
     alignItems: 'center',
     justifyContent: 'center',
     paddingHorizontal: 4,
@@ -373,32 +363,20 @@ const styles = StyleSheet.create({
     fontSize: 14,
     fontWeight: 'bold',
   },
-  streakPro: {
-    color: colors.primary,
-  },
-  streakExpert: {
-    color: colors.accent,
-  },
-  streakMaster: {
-    color: colors.warningYellow,
-  },
-  streakUltra: {
-    color: colors.incorrectRed,
-  },
   bonusContainer: {
     flexDirection: 'row',
     alignItems: 'center',
-    marginLeft: 10, // Espacement à gauche pour séparer des autres éléments
+    marginLeft: 10,
   },
   bonusItem: {
     flexDirection: 'row',
     alignItems: 'center',
-    marginRight: 5, // Espacement entre les bonus
+    marginRight: 5,
   },
   bonusIconContainer: {
     flexDirection: 'row',
     alignItems: 'center',
-    marginRight: 2, // Espacement entre l'icône et le multiplicateur
+    marginRight: 2,
   },
   bonusMultiplier: {
     fontSize: 14,
@@ -406,15 +384,15 @@ const styles = StyleSheet.create({
     marginLeft: 2,
   },
   bonusProgressContainer: {
-    height: 6, // Hauteur de la barre de progression
-    width: 50, // Largeur de la barre de progression
-    backgroundColor: colors.lightGrey, // Couleur de fond de la barre
-    borderRadius: 3, // Bords arrondis pour la barre
-    overflow: 'hidden', // Assure que la barre de progression ne dépasse pas les bords
+    height: 6,
+    width: 50,
+    backgroundColor: colors.lightGrey,
+    borderRadius: 3,
+    overflow: 'hidden',
   },
   bonusProgress: {
-    height: '100%', // La barre de progression remplit la hauteur du conteneur
-    borderRadius: 3, // Bords arrondis pour la barre
+    height: '100%',
+    borderRadius: 3,
   },
 });
 

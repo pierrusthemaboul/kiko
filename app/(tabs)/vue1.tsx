@@ -1,4 +1,4 @@
-import React, { useEffect, useRef } from 'react';
+import React, { useEffect, useRef, useState } from 'react';
 import {
   View,
   Text,
@@ -9,16 +9,22 @@ import {
   StyleSheet,
   Dimensions,
   Platform,
+  ScrollView,
+  Modal,
 } from 'react-native';
 import { useRouter } from 'expo-router';
 import { Ionicons } from '@expo/vector-icons';
 import { LinearGradient } from 'expo-linear-gradient';
+
+// Import Supabase (chemin actuel)
+import { supabase } from '../../lib/supabase/supabaseClients';
+
 import useAdminStatus from '@/hooks/useAdminStatus';
 import { useFonts } from '@/hooks/useFonts';
 
 const { width } = Dimensions.get('window');
 
-// Thème pour cette vue
+// Thème pour cette vue (identique au design principal)
 const THEME = {
   primary: '#050B1F',
   secondary: '#0A173D',
@@ -27,13 +33,13 @@ const THEME = {
   background: {
     dark: '#020817',
     medium: '#050B1F',
-    light: '#0A173D'
+    light: '#0A173D',
   },
   button: {
     primary: ['#1D5F9E', '#0A173D'],
     secondary: ['#FFBF00', '#CC9900'],
-    tertiary: ['#0A173D', '#1D5F9E']
-  }
+    tertiary: ['#0A173D', '#1D5F9E'],
+  },
 };
 
 // Composant du timeline animé
@@ -110,19 +116,25 @@ const AnimatedTimeline = () => {
 };
 
 // Composant du bouton animé
-const AnimatedButton = ({ 
-  onPress, 
-  label, 
-  icon, 
-  variant = "primary",
-  disabled = false 
-}: { onPress: () => void; label: string; icon?: string; variant?: string; disabled?: boolean }) => {
+const AnimatedButton = ({
+  onPress,
+  label,
+  icon,
+  variant = 'primary',
+  disabled = false,
+}: {
+  onPress: () => void;
+  label: string;
+  icon?: string;
+  variant?: string;
+  disabled?: boolean;
+}) => {
   const scale = useRef(new Animated.Value(1)).current;
 
   const handlePressIn = () => {
     Animated.spring(scale, {
       toValue: 0.95,
-      useNativeDriver: true
+      useNativeDriver: true,
     }).start();
   };
 
@@ -130,15 +142,15 @@ const AnimatedButton = ({
     Animated.spring(scale, {
       toValue: 1,
       friction: 3,
-      useNativeDriver: true
+      useNativeDriver: true,
     }).start();
   };
 
   const getGradientColors = () => {
-    switch(variant) {
-      case "secondary":
+    switch (variant) {
+      case 'secondary':
         return THEME.button.secondary;
-      case "tertiary":
+      case 'tertiary':
         return THEME.button.tertiary;
       default:
         return THEME.button.primary;
@@ -172,26 +184,59 @@ export default function Vue1() {
   const router = useRouter();
   const { isAdmin } = useAdminStatus();
   const fontsLoaded = useFonts();
-  
+
+  // Animation d'apparition
   const fadeAnim = useRef(new Animated.Value(0)).current;
   const slideAnim = useRef(new Animated.Value(50)).current;
 
+  // État pour afficher le modal des disclaimers
+  const [showDisclaimer, setShowDisclaimer] = useState(false);
+
+  // État local pour stocker le meilleur score du joueur
+  const [bestScore, setBestScore] = useState<number | null>(null);
+
+  // Chargement des polices
   useEffect(() => {
     if (fontsLoaded) {
       Animated.parallel([
         Animated.timing(fadeAnim, {
           toValue: 1,
           duration: 800,
-          useNativeDriver: true
+          useNativeDriver: true,
         }),
         Animated.spring(slideAnim, {
           toValue: 0,
           friction: 8,
-          useNativeDriver: true
-        })
+          useNativeDriver: true,
+        }),
       ]).start();
     }
   }, [fontsLoaded]);
+
+  // Récupération du meilleur score du joueur (filtré par user_id)
+  useEffect(() => {
+    const fetchBestScore = async () => {
+      try {
+        const { data: { user: authUser } } = await supabase.auth.getUser();
+        if (authUser?.id) {
+          const { data, error } = await supabase
+            .from('game_scores')
+            .select('score')
+            .eq('user_id', authUser.id)
+            .order('score', { ascending: false })
+            .limit(1)
+            .single();
+
+          if (!error && data) {
+            setBestScore(data.score);
+          }
+        }
+      } catch (err) {
+        // En cas d'erreur, bestScore reste null
+      }
+    };
+    fetchBestScore();
+  }, []);
 
   if (!fontsLoaded) {
     return null;
@@ -220,27 +265,84 @@ export default function Vue1() {
             />
           </View>
         )}
-        <Animated.View style={[styles.content, { opacity: fadeAnim, transform: [{ translateY: slideAnim }] }]}>
-          <Text style={styles.title}>Comment jouer ?</Text>
-          <Text style={styles.subtitle}>
-            Testez vos connaissances historiques en replaçant les événements dans leur contexte temporel
-          </Text>
-          <AnimatedTimeline />
-          {/* Navigation vers la page de jeu, ici la route enregistrée est "/game/page" */}
-          <TouchableOpacity
-            style={styles.startButton}
-            onPress={() => router.push('/game/page')}
-          >
-            <LinearGradient
-              colors={THEME.button.secondary}
-              style={styles.startButtonGradient}
+
+        <ScrollView contentContainerStyle={styles.scrollContent}>
+          <Animated.View style={[styles.content, { opacity: fadeAnim, transform: [{ translateY: slideAnim }] }]}>
+            <Text style={styles.title}>Comment jouer ?</Text>
+            <Text style={styles.subtitle}>
+              Testez vos connaissances historiques en replaçant les événements dans leur contexte temporel.
+            </Text>
+
+            {/* Indication du compte à rebours */}
+            <View style={styles.countdownInfo}>
+              <Ionicons name="time-outline" size={20} color={THEME.accent} />
+              <Text style={styles.countdownText}>
+                Attention, un compte à rebours de 20 secondes se déclenche pour chaque question !
+              </Text>
+            </View>
+
+            <AnimatedTimeline />
+
+            {/* Section pour afficher le meilleur score du joueur au-dessus de l'icône d'info */}
+            <View style={styles.infoContainer}>
+              {bestScore !== null && (
+                <Text style={styles.bestScoreText}>Votre meilleur score: {bestScore}</Text>
+              )}
+              <TouchableOpacity onPress={() => setShowDisclaimer(true)} style={styles.infoButton}>
+                <Ionicons name="information-circle-outline" size={28} color={THEME.accent} />
+              </TouchableOpacity>
+            </View>
+          </Animated.View>
+
+          {/* Bouton COMMENCER */}
+          <View style={styles.footer}>
+            <TouchableOpacity
+              style={styles.startButton}
+              onPress={() => router.push('/game/page')}
             >
-              <Text style={styles.startButtonText}>COMMENCER</Text>
-              <Ionicons name="arrow-forward" size={24} color={THEME.text} />
-            </LinearGradient>
-          </TouchableOpacity>
-        </Animated.View>
+              <LinearGradient
+                colors={THEME.button.secondary}
+                style={styles.startButtonGradient}
+              >
+                <Text style={styles.startButtonText}>COMMENCER</Text>
+                <Ionicons name="arrow-forward" size={24} color={THEME.text} />
+              </LinearGradient>
+            </TouchableOpacity>
+          </View>
+        </ScrollView>
       </LinearGradient>
+
+      {/* Modal Disclaimers */}
+      <Modal
+        transparent
+        visible={showDisclaimer}
+        animationType="fade"
+        onRequestClose={() => setShowDisclaimer(false)}
+      >
+        <View style={styles.modalOverlay}>
+          <View style={styles.disclaimerModal}>
+            <ScrollView contentContainerStyle={styles.disclaimerContent}>
+              <Text style={styles.disclaimerTitle}>Avertissement</Text>
+              <Text style={styles.disclaimerText}>
+                Malgré une grande attention portée à la vérification des dates, il est possible que quelques approximations ou erreurs subsistent. Ce jeu a vocation ludique et pédagogique et ne doit pas être considéré comme une source officielle d’informations historiques.
+              </Text>
+
+              <Text style={styles.disclaimerTitle}>Illustrations générées par DALL·E</Text>
+              <Text style={styles.disclaimerText}>
+                Les images du jeu sont générées par DALL·E, ce qui peut entraîner des anachronismes ou des incohérences visuelles. Nous remercions DALL·E pour cette technologie innovante.
+              </Text>
+
+              <Text style={styles.disclaimerTitle}>Compte à rebours</Text>
+              <Text style={styles.disclaimerText}>
+                Pour chaque question, un compte à rebours de 20 secondes se déclenche afin de stimuler votre réactivité. Veillez à répondre dans les délais pour maximiser votre score.
+              </Text>
+            </ScrollView>
+            <TouchableOpacity style={styles.closeDisclaimerButton} onPress={() => setShowDisclaimer(false)}>
+              <Text style={styles.closeDisclaimerText}>Fermer</Text>
+            </TouchableOpacity>
+          </View>
+        </View>
+      </Modal>
     </SafeAreaView>
   );
 }
@@ -254,6 +356,11 @@ const styles = StyleSheet.create({
     flex: 1,
     paddingTop: Platform.OS === 'ios' ? 60 : 40,
   },
+  scrollContent: {
+    paddingHorizontal: 20,
+    // Réduction du paddingBottom pour que le bouton apparaisse un peu plus haut
+    paddingBottom: 20,
+  },
   header: {
     flexDirection: 'row',
     justifyContent: 'flex-end',
@@ -262,10 +369,8 @@ const styles = StyleSheet.create({
     gap: 10,
   },
   content: {
-    flex: 1,
-    paddingHorizontal: 20,
-    paddingTop: 30,
-    justifyContent: 'center',
+    width: '100%',
+    marginTop: 30,
   },
   title: {
     fontSize: 32,
@@ -284,6 +389,19 @@ const styles = StyleSheet.create({
     textAlign: 'center',
     opacity: 0.8,
     marginBottom: 40,
+    paddingHorizontal: 10,
+  },
+  countdownInfo: {
+    flexDirection: 'row',
+    alignItems: 'center',
+    justifyContent: 'center',
+    marginBottom: 20,
+  },
+  countdownText: {
+    color: THEME.text,
+    fontSize: 14,
+    marginLeft: 8,
+    fontFamily: 'Montserrat-Regular',
   },
   timelineContainer: {
     width: '100%',
@@ -344,11 +462,38 @@ const styles = StyleSheet.create({
     fontFamily: 'Montserrat-Bold',
     marginHorizontal: 5,
   },
+
+  // Zone info: meilleur score du joueur affiché au-dessus de l'icône d'info
+  infoContainer: {
+    flexDirection: 'column',
+    alignItems: 'center',
+    justifyContent: 'center',
+    // On réduit un peu le marginTop global et on conserve un marginBottom
+    marginTop: 10,
+    marginBottom: 20,
+  },
+  // On augmente l'espace entre le texte du score et l'icône d'info
+  bestScoreText: {
+    marginBottom: 15,
+    fontFamily: 'Montserrat-Bold',
+    color: THEME.accent,
+    fontSize: 16,
+  },
+  infoButton: {
+    width: 40,
+    height: 40,
+    borderRadius: 20,
+    borderWidth: 1,
+    borderColor: THEME.accent,
+    justifyContent: 'center',
+    alignItems: 'center',
+  },
+
+  footer: {
+    // On diminue la marge top pour remonter le bouton
+    marginTop: 10,
+  },
   startButton: {
-    position: 'absolute',
-    bottom: 30,
-    left: 20,
-    right: 20,
     borderRadius: 25,
     overflow: 'hidden',
     elevation: 5,
@@ -356,6 +501,7 @@ const styles = StyleSheet.create({
     shadowOffset: { width: 0, height: 2 },
     shadowOpacity: 0.3,
     shadowRadius: 4,
+    alignSelf: 'center',
   },
   startButtonGradient: {
     flexDirection: 'row',
@@ -391,5 +537,48 @@ const styles = StyleSheet.create({
     color: THEME.text,
     fontSize: 16,
     fontFamily: 'Montserrat-Bold',
+  },
+  modalOverlay: {
+    flex: 1,
+    backgroundColor: 'rgba(0, 0, 0, 0.7)',
+    justifyContent: 'center',
+    alignItems: 'center',
+    paddingHorizontal: 20,
+  },
+  disclaimerModal: {
+    width: '100%',
+    maxWidth: 400,
+    backgroundColor: THEME.background.medium,
+    borderRadius: 15,
+    padding: 20,
+    borderWidth: 1,
+    borderColor: THEME.accent,
+  },
+  disclaimerContent: {
+    paddingBottom: 20,
+  },
+  disclaimerTitle: {
+    fontFamily: 'Montserrat-Bold',
+    fontSize: 16,
+    color: THEME.accent,
+    marginBottom: 5,
+  },
+  disclaimerText: {
+    fontFamily: 'Montserrat-Regular',
+    fontSize: 14,
+    color: THEME.text,
+    marginBottom: 15,
+    lineHeight: 20,
+  },
+  closeDisclaimerButton: {
+    backgroundColor: THEME.button.secondary[0],
+    paddingVertical: 10,
+    borderRadius: 10,
+    alignItems: 'center',
+  },
+  closeDisclaimerText: {
+    fontFamily: 'Montserrat-Bold',
+    fontSize: 16,
+    color: THEME.text,
   },
 });

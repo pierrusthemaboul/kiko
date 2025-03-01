@@ -39,8 +39,8 @@ export const useAudio = () => {
 
   // 2.B. Configuration
   // ----------------
-// 2.B.a. Chemins des sons
-const soundPaths = {
+  // 2.B.a. Chemins des sons
+  const soundPaths = {
     correct: require('../assets/sounds/corectok.wav'),
     incorrect: require('../assets/sounds/361260__japanyoshithegamer__8-bit-wrong-sound.wav'),
     levelUp: require('../assets/sounds/423455__ohforheavensake__trumpet-brass-fanfare.wav'),
@@ -73,7 +73,7 @@ const soundPaths = {
 
         isInitialized.current = true;
       } catch (error) {
-        // Handle initialization error if needed
+        // Gestion d'erreur d'initialisation si besoin
       }
     };
 
@@ -88,7 +88,7 @@ const soundPaths = {
           try {
             await soundObj.sound.unloadAsync();
           } catch (error) {
-            // Handle unloading error if needed
+            // Gestion de l'erreur lors du déchargement si besoin
           }
         }
       });
@@ -116,7 +116,7 @@ const soundPaths = {
             reloadSound(soundKey);
           }
           if (status.didJustFinish) {
-            // Handle sound finish if needed
+            // Gérer la fin du son si besoin
           }
         });
 
@@ -146,7 +146,7 @@ const soundPaths = {
       }
       await loadSound(soundKey);
     } catch (error) {
-      // Handle reloading error if needed
+      // Gestion de l'erreur lors du rechargement si besoin
     }
   };
 
@@ -156,36 +156,33 @@ const soundPaths = {
     if (!isSoundEnabled || !isInitialized.current) return;
 
     try {
-      // 1. Décharger l'ancien son s'il existe
+      // Décharger l'ancien son s'il existe
       if (sounds[soundKey]?.sound) {
         try {
           await sounds[soundKey].sound.unloadAsync();
         } catch (err) {
-          // Handle unloading error if needed
+          // Gestion de l'erreur si besoin
         }
       }
 
-      // 2. Créer une nouvelle instance du son
+      // Créer une nouvelle instance du son
       const { sound, status } = await Audio.Sound.createAsync(
         soundPaths[soundKey],
         { volume: volume * 0.5, shouldPlay: false }
       );
 
-      // 3. Mettre à jour l'état avec le nouveau son
       setSounds(prev => ({
         ...prev,
         [soundKey]: { sound, status, lastPlayed: Date.now() }
       }));
 
-      // 4. Jouer le son
       await sound.setVolumeAsync(Math.min(volume * 0.5, 0.5));
       await sound.playAsync();
 
-      // 5. Configuration du nettoyage après lecture
       sound.setOnPlaybackStatusUpdate(status => {
         if (status.didJustFinish) {
           sound.unloadAsync().catch(err => {
-            // Handle unloading error if needed
+            // Gestion de l'erreur si besoin
           });
         }
       });
@@ -196,7 +193,7 @@ const soundPaths = {
         try {
           await soundToClean.unloadAsync();
         } catch (err) {
-          // Handle unloading error if needed
+          // Gestion de l'erreur si besoin
         }
       }
     }
@@ -237,12 +234,12 @@ const soundPaths = {
         soundVolumeRef.current = safeVolume;
         setSoundVolume(safeVolume);
         await Promise.all(
-          Object.entries(sounds).map(async ([_, soundObj]) => {
+          Object.entries(sounds).map(async ([, soundObj]) => {
             if (soundObj?.sound) {
               try {
                 await soundObj.sound.setVolumeAsync(safeVolume);
               } catch (error) {
-                // Handle setting volume error if needed
+                // Gestion de l'erreur si besoin
               }
             }
           })
@@ -252,7 +249,7 @@ const soundPaths = {
         setMusicVolume(safeVolume);
       }
     } catch (error) {
-      // Handle setting volume error if needed
+      // Gestion de l'erreur si besoin
     }
   };
 
@@ -266,7 +263,34 @@ const soundPaths = {
     setIsMusicEnabled(enabled);
   };
 
-  // 7. Interface Publique
+  // 7. Fonctions pour charger/décharger l'ensemble des sons
+  // ========================================================
+  const loadSounds = async () => {
+    for (const key of Object.keys(soundPaths)) {
+      await loadSound(key);
+    }
+  };
+
+  const unloadSounds = async () => {
+    for (const key of Object.keys(sounds)) {
+      if (sounds[key]?.sound) {
+        try {
+          await sounds[key]!.sound.unloadAsync();
+        } catch (error) {
+          // Gestion de l'erreur si besoin
+        }
+      }
+    }
+    setSounds({
+      correct: null,
+      incorrect: null,
+      levelUp: null,
+      countdown: null,
+      gameover: null,
+    });
+  };
+
+  // 8. Interface Publique
   // ===================
   return {
     playCorrectSound,
@@ -281,7 +305,9 @@ const soundPaths = {
     isSoundEnabled,
     isMusicEnabled,
     soundVolume,
-    musicVolume
+    musicVolume,
+    loadSounds,    // Exposition de loadSounds
+    unloadSounds,  // Exposition de unloadSounds
   };
 };
 

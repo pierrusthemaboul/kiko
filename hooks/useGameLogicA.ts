@@ -23,6 +23,7 @@
 import { useState, useEffect, useCallback } from 'react';
 import { supabase } from '../lib/supabase/supabaseClients';
 import useRewards from './useRewards';
+// Modification : on étend l'import de useAudio pour récupérer les fonctions loadSounds et unloadSounds
 import useAudio from './useAudio';
 import {
   Event,
@@ -72,12 +73,15 @@ export function useGameLogicA(initialEvent: string) {
   });
 
   /* 1.E.2. (Audio - sons) */
+  // Modification : récupération des fonctions loadSounds et unloadSounds pour réinitialiser les sons
   const {
     playCorrectSound,
     playIncorrectSound,
     playLevelUpSound,
     playCountdownSound,
     playGameOverSound,
+    loadSounds,
+    unloadSounds
   } = useAudio();
 
   /* 1.E.3. (Profil utilisateur de base) */
@@ -229,7 +233,7 @@ export function useGameLogicA(initialEvent: string) {
     return () => {
       if (timer) clearInterval(timer);
     };
-  }, [isCountdownActive, isLevelPaused, isGameOver, timeLeft]); // Dépendances optimisées
+  }, [isCountdownActive, isLevelPaused, isGameOver, timeLeft]);
 
   /* 1.H. Regroupement des fonctions internes */
 
@@ -585,8 +589,6 @@ export function useGameLogicA(initialEvent: string) {
             mainDirection === "past"
               ? getFutureEvents(timeJump)
               : getPastEvents(timeJump);
-          // Si des événements sont trouvés dans l'autre direction
-          // Vous pouvez ajouter une logique supplémentaire ici si nécessaire
         }
 
         // 5.3. Sélection finale s'il existe des événements possibles
@@ -609,66 +611,47 @@ export function useGameLogicA(initialEvent: string) {
 
           // 5.4. Gestion du recalcul du prochain saut forcé
           if (isForcedJump) {
-            // Si c'était le tout premier saut forcé
             if (!hasFirstForcedJumpHappened) {
               setHasFirstForcedJumpHappened(true);
             }
 
-            // Déterminer la période d'atterrissage de l'événement choisi
             const landingYear = new Date(chosen.date).getFullYear();
 
-            // Calculer l'incrément du prochain saut forcé selon la période d'atterrissage
             let nextIncrement = 0;
             if (landingYear < 500) {
-              // Sauts forcés suivants => +[1..5]
               nextIncrement = Math.floor(Math.random() * (5 - 1 + 1)) + 1;
             } else if (landingYear >= 500 && landingYear < 700) {
-              // +[6..9]
               nextIncrement = Math.floor(Math.random() * (9 - 6 + 1)) + 6;
             } else if (landingYear >= 700 && landingYear < 1000) {
-              // +[6..9]
               nextIncrement = Math.floor(Math.random() * (9 - 6 + 1)) + 6;
             } else if (landingYear >= 1000 && landingYear < 1500) {
-              // +[6..9]
               nextIncrement = Math.floor(Math.random() * (9 - 6 + 1)) + 6;
             } else if (landingYear >= 1500 && landingYear < 1800) {
-              // +[7..11]
               nextIncrement = Math.floor(Math.random() * (11 - 7 + 1)) + 7;
             } else if (landingYear >= 1800 && landingYear <= 2024) {
-              // +[12..19]
               nextIncrement = Math.floor(Math.random() * (19 - 12 + 1)) + 12;
             } else {
-              // Au-delà de 2024 => à adapter selon vos besoins
-              nextIncrement = 15; // arbitraire
+              nextIncrement = 15;
             }
 
-            // Mise à jour de forcedJumpEventCount
             const newForcedCount = localEventCount + nextIncrement;
             setForcedJumpEventCount(newForcedCount);
           }
 
-          // On retourne l'événement spécial sélectionné
           return chosen;
         }
+      }
 
-        // Si aucun événement n'est trouvé, on poursuit en logique normale
-      } // fin if (timeJump > 0)
-
-      // 6) Logique normale (pas de saut forcé ou échec de recherche d'événements lointains)
+      // 6) Logique normale
       const config = LEVEL_CONFIGS[user.level];
       if (!config) {
         return null;
       }
 
-      /**
-       * Calcule l'écart de temps dynamique (min / base / max) en fonction 
-       * de la distance à l'année actuelle
-       */
       const calculateDynamicTimeGap = (referenceDate: string) => {
         const nowY = new Date().getFullYear();
         const refY = new Date(referenceDate).getFullYear();
         const yearsFromPresent = nowY - refY;
-        // proportionnel : plus on est loin de l'époque moderne, plus on élargit les gaps
         const proximityFactor = Math.max(0.2, Math.min(1, yearsFromPresent / 500));
 
         const baseGap = config.timeGap.base * proximityFactor;
@@ -680,46 +663,30 @@ export function useGameLogicA(initialEvent: string) {
 
       const timeGap = calculateDynamicTimeGap(referenceEvent.date);
 
-      /**
-       * scoreEvent : calcule un score pour un événement donné
-       */
       const scoreEvent = (evt: Event, diff: number): number => {
         const randomFactor = 0.85 + Math.random() * 0.3;
         const idealGap = timeGap.base;
-
-        // Score basé sur l'écart par rapport à l'idealGap
         const gapScore =
           35 * (1 - Math.abs(diff - idealGap) / idealGap) * randomFactor;
-
-        // Score basé sur la difficulté (cible : difficulté ~2)
         const idealDifficulty = 2;
         const difficultyScore =
-          25 *
-          (1 - Math.abs(evt.niveau_difficulte - idealDifficulty) / 2) *
-          randomFactor;
-
-        // Petit bonus aléatoire
+          25 * (1 - Math.abs(evt.niveau_difficulte - idealDifficulty) / 2) * randomFactor;
         const variationBonus = Math.random() * 10;
 
         return gapScore + difficultyScore + variationBonus;
       };
 
-      // 6.1. Filtrage des événements non utilisés
       const availableEvents = events.filter((e) => !usedEvents.has(e.id));
 
-      // 6.2. Score et tri
       const scoredEvents = availableEvents
         .map((e) => {
           const diff = getTimeDifference(e.date, referenceEvent.date);
           const s = scoreEvent(e, diff);
           return { event: e, timeDiff: diff, score: s };
         })
-        .filter(
-          ({ timeDiff }) => timeDiff >= timeGap.min && timeDiff <= timeGap.max
-        )
+        .filter(({ timeDiff }) => timeDiff >= timeGap.min && timeDiff <= timeGap.max)
         .sort((a, b) => b.score - a.score);
 
-      // 6.3. Si aucun événement ne rentre dans la plage stricte => on fait une recherche relaxée
       if (scoredEvents.length === 0) {
         const relaxed = availableEvents
           .map((e) => {
@@ -727,10 +694,7 @@ export function useGameLogicA(initialEvent: string) {
             const s = scoreEvent(e, diff);
             return { event: e, timeDiff: diff, score: s };
           })
-          .filter(
-            ({ timeDiff }) =>
-              timeDiff >= timeGap.min * 0.5 && timeDiff <= timeGap.max * 2
-          )
+          .filter(({ timeDiff }) => timeDiff >= timeGap.min * 0.5 && timeDiff <= timeGap.max * 2)
           .sort((a, b) => b.score - a.score);
 
         if (relaxed.length > 0) {
@@ -751,7 +715,6 @@ export function useGameLogicA(initialEvent: string) {
           return chosen;
         }
 
-        // 6.4. Sinon => on prend un événement aléatoire
         const randomEvt =
           availableEvents[Math.floor(Math.random() * availableEvents.length)];
         if (randomEvt) {
@@ -773,7 +736,6 @@ export function useGameLogicA(initialEvent: string) {
         return null;
       }
 
-      // 6.5. S’il y a des événements dans la plage stricte => sélection par difficulté [min..max]
       const { minDifficulty, maxDifficulty } = config.eventSelection;
       let selectedEvent: Event | null = null;
       let attempts = 0;
@@ -781,7 +743,6 @@ export function useGameLogicA(initialEvent: string) {
       let currentMin = minDifficulty;
       let currentMax = maxDifficulty;
 
-      // Boucle de recherche selon la difficulté (on élargit si on ne trouve rien)
       while (!selectedEvent && attempts < maxAttempts) {
         attempts++;
 
@@ -799,18 +760,16 @@ export function useGameLogicA(initialEvent: string) {
           currentMax = Math.min(3, currentMax + 1);
 
           if (currentMin === 1 && currentMax === 3) {
-            break; // on arrête si tout est déjà élargi
+            break;
           }
         }
       }
 
-      // Si toujours rien trouvé, on pioche au hasard dans la liste scoredEvents
       if (!selectedEvent) {
         selectedEvent =
           scoredEvents[Math.floor(Math.random() * scoredEvents.length)].event;
       }
 
-      // Mise à jour du jeu avec l’événement sélectionné
       await updateGameState(selectedEvent);
       setIsCountdownActive(true);
 
@@ -822,7 +781,6 @@ export function useGameLogicA(initialEvent: string) {
         })
         .eq("id", selectedEvent.id);
 
-      // On décrémente le fallbackCountdown (mécanisme secondaire)
       setFallbackCountdown((prev) => prev - 1);
 
       return selectedEvent;
@@ -907,7 +865,7 @@ export function useGameLogicA(initialEvent: string) {
           3.0
         );
 
-        const phaseMultiplier = 1; // Non utilisé pour l’instant
+        const phaseMultiplier = 1;
 
         const calculatedPoints = Math.floor(
           basePoints * timeMultiplier * streakMultiplier * phaseMultiplier
@@ -993,32 +951,22 @@ export function useGameLogicA(initialEvent: string) {
   const handleChoice = useCallback(
     (choice: 'avant' | 'après') => {
 
-      // 1) Vérifications préliminaires
-      if (!previousEvent) {
-        return;
-      }
-      if (!newEvent) {
-        return;
-      }
-      if (isLevelPaused) {
-        return;
-      }
+      if (!previousEvent) return;
+      if (!newEvent) return;
+      if (isLevelPaused) return;
 
-      // 2) Déterminer si la réponse est correcte (avant ou après)
       const previousDate = new Date(previousEvent.date);
       const newDate = new Date(newEvent.date);
-      const newIsBefore = newDate < previousDate;  // "nouvel événement avant l'ancien ?"
-      const newIsAfter = newDate > previousDate;   // "nouvel événement après l'ancien ?"
+      const newIsBefore = newDate < previousDate;
+      const newIsAfter = newDate > previousDate;
 
       const isAnswerCorrect =
         (choice === 'avant' && newIsBefore) ||
         (choice === 'après' && newIsAfter);
 
-      // 3) On met à jour l'affichage : la date et le statut correct/incorrect
       setIsCorrect(isAnswerCorrect);
       setShowDates(true);
 
-      // 4) Préparation de l'EventSummary
       const eventSummaryItem: LevelEventSummary = {
         id: newEvent.id,
         titre: newEvent.titre,
@@ -1030,15 +978,10 @@ export function useGameLogicA(initialEvent: string) {
         description_detaillee: newEvent.description_detaillee,
       };
 
-      // 5) On bloque temporairement les boutons (isWaitingForCountdown)
       setIsWaitingForCountdown(true);
 
-      // ─────────────────────────────────────────────────────────────────────
-      // CAS A : Réponse correcte
-      // ─────────────────────────────────────────────────────────────────────
       if (isAnswerCorrect) {
 
-        // a) Son, streak, animation
         playCorrectSound();
         const newStreak = streak + 1;
         setStreak(newStreak);
@@ -1047,18 +990,14 @@ export function useGameLogicA(initialEvent: string) {
           toValue: newStreak,
           duration: 500,
           useNativeDriver: false,
-        }).start(() => {
-          // Barre de progression mise à jour
-        });
+        }).start();
 
-        // b) Update performance stats
         updatePerformanceStats(
           newEvent.types_evenement?.[0] || 'default',
           getPeriod(newEvent.date),
           true
         );
 
-        // c) Calcul des points
         const pts = calculatePoints(
           timeLeft,
           newEvent.niveau_difficulte || 1,
@@ -1066,14 +1005,11 @@ export function useGameLogicA(initialEvent: string) {
           'default'
         );
 
-        // d) Check des rewards (streak)
         checkRewards({ type: 'streak', value: newStreak }, user);
 
-        // e) Mise à jour du user avec les points (si >0)
         setUser((prev) => {
           const currentPoints = Math.max(0, Number(prev.points) || 0);
           const updatedPoints = currentPoints + pts;
-          // On build un nouvel "user" local
           const updatedUser = {
             ...prev,
             points: updatedPoints,
@@ -1082,19 +1018,16 @@ export function useGameLogicA(initialEvent: string) {
             eventsCompletedInLevel: prev.eventsCompletedInLevel + 1,
           };
 
-          // Vérifier s'il faut monter de niveau
           if (updatedUser.eventsCompletedInLevel >= LEVEL_CONFIGS[prev.level].eventsNeeded) {
             const nextLevel = prev.level + 1;
             updatedUser.level = nextLevel;
             updatedUser.eventsCompletedInLevel = 0;
 
-            // On marque la progression du niveau courant
             setPreviousEvent(newEvent);
             setLevelCompletedEvents((prevEvents) => [
               ...prevEvents,
               ...currentLevelEvents,
             ]);
-            // On bascule sur la config du nouveau niveau
             setCurrentLevelConfig((prevConf) => ({
               ...LEVEL_CONFIGS[nextLevel],
               eventsSummary: [],
@@ -1104,21 +1037,14 @@ export function useGameLogicA(initialEvent: string) {
             setIsLevelPaused(true);
             playLevelUpSound();
 
-            // ******* INTÉGRATION PUBLICITÉ *******
-            // Si le niveau complété est le niveau 1, on affiche la publicité test
             if (prev.level === 1 && adLoaded) {
               interstitialAd.show();
             }
-            // ******* FIN INTÉGRATION PUBLICITÉ *******
-
-            // On check la reward (changement de level)
             checkRewards({ type: 'level', value: nextLevel }, updatedUser);
 
           } else {
-            // Sinon, on stocke l'eventSummaryItem
             setCurrentLevelEvents((prevEvents) => [...prevEvents, eventSummaryItem]);
 
-            // Au bout de 1.5s, on repasse isWaitingForCountdown à false, et on enchaîne
             setTimeout(() => {
               setIsWaitingForCountdown(false);
 
@@ -1131,12 +1057,8 @@ export function useGameLogicA(initialEvent: string) {
           return updatedUser;
         });
 
-      // ─────────────────────────────────────────────────────────────────────
-      // CAS B : Réponse incorrecte
-      // ─────────────────────────────────────────────────────────────────────
       } else {
 
-        // a) Son, streak=0, animation
         playIncorrectSound();
         setStreak(0);
 
@@ -1144,18 +1066,14 @@ export function useGameLogicA(initialEvent: string) {
           toValue: 0,
           duration: 500,
           useNativeDriver: false,
-        }).start(() => {
-          // Barre de progression remise à 0
-        });
+        }).start();
 
-        // b) Stats
         updatePerformanceStats(
           newEvent.types_evenement?.[0] || 'default',
           getPeriod(newEvent.date),
           false
         );
 
-        // c) On retire une vie
         setUser((prev) => {
           const updatedLives = prev.lives - 1;
 
@@ -1169,10 +1087,8 @@ export function useGameLogicA(initialEvent: string) {
           };
         });
 
-        // d) On stocke l'eventSummaryItem
         setCurrentLevelEvents((prev) => [...prev, eventSummaryItem]);
 
-        // e) Au bout de 1.5s, on repasse isWaitingForCountdown à false et on enchaîne
         setTimeout(() => {
           setIsWaitingForCountdown(false);
 
@@ -1255,7 +1171,6 @@ export function useGameLogicA(initialEvent: string) {
     try {
       const { data: { user: authUser } } = await supabase.auth.getUser();
       
-      // Mode invité
       if (!authUser?.id) {
         const guestScores = {
           daily: [{
@@ -1280,7 +1195,6 @@ export function useGameLogicA(initialEvent: string) {
         return;
       }
 
-      // Mode utilisateur connecté
       const today = new Date().toISOString().split('T')[0];
       const firstDayOfMonth = `${today.substring(0, 7)}-01`;
 
@@ -1329,7 +1243,6 @@ export function useGameLogicA(initialEvent: string) {
       }
       await saveProgress();
     } catch (error) {
-      // En cas d'erreur, afficher au moins les scores de l'invité
       const fallbackScores = {
         daily: [{
           name: user.name || 'Voyageur',
@@ -1425,15 +1338,31 @@ export function useGameLogicA(initialEvent: string) {
     setIsCountdownActive(true);
     setTimeLeft(20);
 
-    setLevelCompletedEvents([]); // On vide les événements du niveau terminé
+    setLevelCompletedEvents([]);
 
     if (previousEvent) {
       selectNewEvent(allEvents, previousEvent);
-    } else {
-      // Aucun événement précédent, aucune action spécifique définie
     }
   }, [allEvents, previousEvent, selectNewEvent]);
 
+  /* ******* NOUVELLE FONCTION : restartGame ******* */
+  /**
+   * restartGame
+   * Réinitialise l'ensemble de la logique du jeu en rechargeant les sons et la publicité,
+   * puis en relançant l'initialisation du jeu.
+   */
+  const restartGame = async () => {
+    // Réinitialiser les sons
+    await unloadSounds();
+    await loadSounds();
+
+    // Réinitialiser la publicité interstitielle
+    setAdLoaded(false);
+    interstitialAd.load();
+
+    // Relancer l'initialisation du jeu
+    await initGame();
+  };
 
   /* 1.I. Retour du hook */
   return {
@@ -1465,6 +1394,7 @@ export function useGameLogicA(initialEvent: string) {
     handleChoice,
     startLevel,
     handleLevelUp,
+    restartGame, // Retour de la fonction de redémarrage
 
     remainingEvents: allEvents.length - usedEvents.size,
 
@@ -1472,7 +1402,6 @@ export function useGameLogicA(initialEvent: string) {
 
     onImageLoad: handleImageLoad,
 
-    /* ******* NOUVELLE VALEUR RETOURNÉE ******* */
     levelCompletedEvents,
   };
 }
