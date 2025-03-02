@@ -5,9 +5,9 @@ import {
   ActivityIndicator,
   Animated,
   StyleSheet,
+  Platform,
   StatusBar,
   SafeAreaView,
-  TouchableOpacity
 } from 'react-native';
 import { useRouter } from 'expo-router';
 
@@ -19,15 +19,13 @@ import LevelUpModalBis from '../modals/LevelUpModalBis';
 import ScoreboardModal from '../modals/ScoreboardModal';
 import RewardAnimation from './RewardAnimation';
 
-// IMPORTATION DE LA PUBLICITÉ statique (bannière) -- Cette importation a été retirée de l'affichage
-// import { BannerAd, BannerAdSize, TestIds } from 'react-native-google-mobile-ads';
-
 // Types & Constants
 import { colors } from '@/constants/Colors';
-import { 
+import type {
   User,
   Event,
   ExtendedLevelConfig,
+  RewardType,
   LevelEventSummary,
 } from '@/hooks/types';
 
@@ -54,7 +52,7 @@ interface GameContentAProps {
   startLevel: () => void;
   currentLevelConfig: ExtendedLevelConfig;
   currentReward: {
-    type: string;
+    type: RewardType;
     amount: number;
     targetPosition?: { x: number; y: number };
   } | null;
@@ -66,7 +64,6 @@ interface GameContentAProps {
     allTime: Array<{ name: string; score: number; rank: number }>;
   };
   levelCompletedEvents: LevelEventSummary[];
-  // Les propriétés relatives à la pub statique ont été retirées
 }
 
 function GameContentA({
@@ -102,6 +99,43 @@ function GameContentA({
   const contentOpacity = useRef(new Animated.Value(1)).current;
   const [isRewardPositionSet, setIsRewardPositionSet] = useState(false);
 
+  // Gère la position de la RewardAnimation (points / vie)
+  useEffect(() => {
+    let mounted = true;
+
+    const updateRewardPositionSafely = async () => {
+      if (!currentReward || !userInfoRef.current || !mounted) return;
+
+      try {
+        const position =
+          currentReward.type === RewardType.EXTRA_LIFE
+            ? await userInfoRef.current.getLifePosition()
+            : await userInfoRef.current.getPointsPosition();
+
+        if (!mounted) return;
+
+        if (position && typeof position.x === 'number' && typeof position.y === 'number') {
+          if (
+            !currentReward.targetPosition ||
+            currentReward.targetPosition.x !== position.x ||
+            currentReward.targetPosition.y !== position.y
+          ) {
+            updateRewardPosition(position);
+            setIsRewardPositionSet(true);
+          }
+        }
+      } catch {
+        setIsRewardPositionSet(false);
+      }
+    };
+
+    updateRewardPositionSafely();
+
+    return () => {
+      mounted = false;
+    };
+  }, [currentReward?.type]);
+
   // Animation du contenu lorsque le modal de niveau s'affiche
   useEffect(() => {
     if (showLevelModal) {
@@ -120,55 +154,6 @@ function GameContentA({
       ]).start();
     }
   }, [showLevelModal]);
-
-  // Mise à jour de la position de la récompense
-  useEffect(() => {
-    let mounted = true;
-
-    const updateRewardPositionSafely = async () => {
-      if (!currentReward || !userInfoRef.current || !mounted) {
-        return;
-      }
-
-      try {
-        const position = await (currentReward.type === "EXTRA_LIFE" 
-          ? userInfoRef.current.getLifePosition()
-          : userInfoRef.current.getPointsPosition()
-        );
-
-        if (!mounted) return;
-
-        if (
-          position &&
-          typeof position.x === 'number' &&
-          typeof position.y === 'number' &&
-          !isNaN(position.x) &&
-          !isNaN(position.y)
-        ) {
-          if (
-            !currentReward.targetPosition ||
-            currentReward.targetPosition.x !== position.x ||
-            currentReward.targetPosition.y !== position.y
-          ) {
-            console.log(`Setting reward position for ${currentReward.type} to:`, position);
-            updateRewardPosition(position);
-            setIsRewardPositionSet(true);
-          }
-        }
-      } catch (err) {
-        console.error('Error updating reward position:', err);
-        setIsRewardPositionSet(false);
-      }
-    };
-
-    updateRewardPositionSafely();
-    const timer = setTimeout(updateRewardPositionSafely, 100);
-
-    return () => {
-      mounted = false;
-      clearTimeout(timer);
-    };
-  }, [currentReward?.type, updateRewardPosition]);
 
   const onChoiceWrapper = (choice: string) => {
     handleChoice(choice);
@@ -202,6 +187,7 @@ function GameContentA({
 
     return (
       <>
+        {/* Cartes : événement précédent + nouvel événement */}
         <EventLayoutA
           previousEvent={previousEvent}
           newEvent={newEvent}
@@ -215,6 +201,7 @@ function GameContentA({
           isLevelPaused={isLevelPaused}
         />
 
+        {/* Modal de fin de niveau */}
         <LevelUpModalBis
           visible={showLevelModal}
           level={level}
@@ -228,6 +215,7 @@ function GameContentA({
           eventsSummary={levelCompletedEvents}
         />
 
+        {/* Modal de fin de partie (scoreboard) */}
         <ScoreboardModal
           isVisible={isGameOver}
           currentScore={user.points}
@@ -245,6 +233,7 @@ function GameContentA({
 
   return (
     <SafeAreaView style={styles.safeArea}>
+      {/* Barre du téléphone : sombre, texte blanc */}
       <StatusBar
         barStyle="light-content"
         backgroundColor="#050B1F"
@@ -252,6 +241,7 @@ function GameContentA({
       />
 
       <Animated.View style={[styles.container, { opacity: fadeAnim }]}>
+        {/* Barre supérieure : infos joueur + timer */}
         <View style={styles.header}>
           <UserInfo
             ref={userInfoRef}
@@ -268,20 +258,22 @@ function GameContentA({
               isActive={!isLevelPaused && isImageLoaded}
             />
           </View>
+
+          {/* Animation de reward */}
+          {currentReward && currentReward.targetPosition && isRewardPositionSet && (
+            <RewardAnimation
+              type={currentReward.type}
+              amount={currentReward.amount}
+              targetPosition={currentReward.targetPosition}
+              onComplete={completeRewardAnimation}
+            />
+          )}
         </View>
 
+        {/* Contenu principal */}
         <Animated.View style={[styles.content, { opacity: contentOpacity }]}>
           {renderContent()}
         </Animated.View>
-
-        {currentReward && (
-          <RewardAnimation
-            type={currentReward.type}
-            amount={currentReward.amount}
-            targetPosition={currentReward.targetPosition}
-            onComplete={completeRewardAnimation}
-          />
-        )}
       </Animated.View>
     </SafeAreaView>
   );
@@ -290,6 +282,7 @@ function GameContentA({
 const styles = StyleSheet.create({
   safeArea: {
     flex: 1,
+    // On enlève le paddingTop pour éviter l'espace entre la barre du téléphone et la barre UserInfo
     backgroundColor: 'transparent',
   },
   container: {

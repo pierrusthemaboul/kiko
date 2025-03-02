@@ -1,19 +1,11 @@
-import { Stack } from 'expo-router';
+// app/_layout.tsx
+import { Slot } from 'expo-router';
+import { SafeAreaProvider } from 'react-native-safe-area-context';
 
-export default function GameLayout() {
+export default function RootLayout() {
   return (
-    <Stack
-      screenOptions={{
-        headerShown: false,
-        // Masquer complètement l'en-tête dans le groupe game
-        header: () => null,
-        // Assurer qu'il n'y a pas de padding ou de marge
-        contentStyle: {
-          backgroundColor: 'transparent'
-        }
-      }}
-    />
+    <SafeAreaProvider>
+      <Slot />
+    </SafeAreaProvider>
   );
 }
-
-// app/game/_layout.tsx

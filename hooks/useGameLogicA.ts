@@ -841,6 +841,9 @@ export function useGameLogicA(initialEvent: string) {
       setIsWaitingForCountdown(true);
 
       if (isAnswerCorrect) {
+        // CAS A : Réponse correcte
+
+        // a) Son, streak, animation
         playCorrectSound();
         const newStreak = streak + 1;
         setStreak(newStreak);
@@ -866,8 +869,10 @@ export function useGameLogicA(initialEvent: string) {
 
         checkRewards({ type: 'streak', value: newStreak }, user);
 
+        // IMPORTANT : Calcul de l'array mis à jour des événements de niveau
         const updatedEventSummary = [...currentLevelEvents, eventSummaryItem];
 
+        // e) Mise à jour du user avec les points (si >0) et gestion du niveau
         setUser((prev) => {
           const currentPoints = Math.max(0, Number(prev.points) || 0);
           const updatedPoints = currentPoints + pts;
@@ -880,17 +885,20 @@ export function useGameLogicA(initialEvent: string) {
             eventsCompletedInLevel: eventsCount,
           };
 
+          // Vérifier s'il faut monter de niveau
           if (eventsCount >= LEVEL_CONFIGS[prev.level].eventsNeeded) {
             const nextLevel = prev.level + 1;
             updatedUser.level = nextLevel;
             updatedUser.eventsCompletedInLevel = 0;
 
+            // On marque la progression du niveau courant en intégrant tous les événements, y compris le dernier
             setPreviousEvent(newEvent);
             setLevelCompletedEvents((prevEvents) => [
               ...prevEvents,
               ...updatedEventSummary,
             ]);
 
+            // On bascule sur la config du nouveau niveau
             setCurrentLevelConfig(() => ({
               ...LEVEL_CONFIGS[nextLevel],
               eventsSummary: [],
@@ -900,17 +908,21 @@ export function useGameLogicA(initialEvent: string) {
             setIsLevelPaused(true);
             playLevelUpSound();
 
+            // INTÉGRATION PUBLICITÉ : Affichage de la pub après certains niveaux
             if (adLoaded) {
               if (prev.level === 6 || prev.level === 10) {
                 setPendingAdDisplay("interstitial");
               }
             }
 
+            // On check la reward (changement de level)
             checkRewards({ type: 'level', value: nextLevel }, updatedUser);
 
           } else {
+            // Sinon, on met à jour le state des événements de niveau avec le tableau mis à jour
             setCurrentLevelEvents(updatedEventSummary);
 
+            // Au bout de 750ms, on repasse isWaitingForCountdown à false, et on enchaîne
             setTimeout(() => {
               setIsWaitingForCountdown(false);
               if (!isGameOver && !showLevelModal) {
@@ -921,7 +933,11 @@ export function useGameLogicA(initialEvent: string) {
           }
           return updatedUser;
         });
+
       } else {
+        // CAS B : Réponse incorrecte
+
+        // a) Son, remise à zéro du streak, animation
         playIncorrectSound();
         setStreak(0);
 
@@ -937,6 +953,7 @@ export function useGameLogicA(initialEvent: string) {
           false
         );
 
+        // c) Retrait d'une vie
         setUser((prev) => {
           const updatedLives = prev.lives - 1;
           if (updatedLives <= 0) {
@@ -949,8 +966,10 @@ export function useGameLogicA(initialEvent: string) {
           };
         });
 
+        // d) Stockage de l'eventSummaryItem
         setCurrentLevelEvents((prev) => [...prev, eventSummaryItem]);
 
+        // e) Au bout de 1.5s, on réactive les boutons et on enchaîne
         setTimeout(() => {
           setIsWaitingForCountdown(false);
 
@@ -985,41 +1004,28 @@ export function useGameLogicA(initialEvent: string) {
       adLoaded
     ]
   );
-
-  // 1.H.10. handleLevelUp
+  
+  // Ajout de handleLevelUp pour corriger l'erreur constatée dans GameContentA.tsx
   const handleLevelUp = useCallback(() => {
-    setUser(prevUser => {
-      const nextLevel = prevUser.level + 1;
-      const config = LEVEL_CONFIGS[nextLevel];
-      if (!config) {
-        return prevUser;
-      }
-
-      setCurrentLevelConfig(prevConf => ({
-        ...config,
-        eventsSummary: [...(prevConf?.eventsSummary || []), ...currentLevelEvents]
-      }));
-
-      setShowLevelModal(true);
-      setIsLevelPaused(true);
-      setIsCountdownActive(false);
-      setCurrentLevelEvents([]);
-
-      const reward: { type: RewardType; amount: number } = {
-        type: RewardType.POINTS,
-        amount: config.pointsReward || 500
-      };
-      applyReward(reward);
-      saveProgress();
-
-      return {
-        ...prevUser,
-        level: nextLevel
-      };
+    // Incrémente le niveau de l'utilisateur et réinitialise le compteur d'événements du niveau
+    setUser((prev) => {
+      const nextLevel = prev.level + 1;
+      return { ...prev, level: nextLevel, eventsCompletedInLevel: 0 };
     });
-  }, [currentLevelEvents, applyReward, saveProgress]);
+    // Mise à jour de la configuration pour le nouveau niveau
+    setCurrentLevelConfig(() => ({
+      ...LEVEL_CONFIGS[user.level + 1],
+      eventsSummary: []
+    }));
+    // Réinitialisation des événements de niveau et affichage du modal de montée de niveau
+    setCurrentLevelEvents([]);
+    setShowLevelModal(true);
+    setIsLevelPaused(true);
+    playLevelUpSound();
+    // Vérification des récompenses liées au passage de niveau
+    checkRewards({ type: 'level', value: user.level + 1 }, user);
+  }, [user, playLevelUpSound, checkRewards]);
 
-  // 1.H.11. endGame
   const endGame = useCallback(async () => {
     setIsGameOver(true);
     playGameOverSound();
