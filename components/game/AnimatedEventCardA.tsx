@@ -20,10 +20,10 @@
 import React, { useEffect, useRef, useState } from 'react';
 import { View, Image, Text, StyleSheet, Animated, Dimensions } from 'react-native';
 import { LinearGradient } from 'expo-linear-gradient';
-import { colors } from '../../constants/Colors';
+import { colors } from '../styles/colors';
 
-// Obtenir la largeur de l'écran pour les calculs adaptatifs
-const { width: SCREEN_WIDTH } = Dimensions.get('window');
+// Obtenir les dimensions de l'écran pour les calculs de style adaptatif
+const { width: SCREEN_WIDTH, height: SCREEN_HEIGHT } = Dimensions.get('window');
 
 /************************************************************************************
  * 1.D. Interface des Props
@@ -50,15 +50,15 @@ const AnimatedEventCardA: React.FC<AnimatedEventCardAProps> = ({
   streak,
   level
 }) => {
-  // 1.E.1. Référence pour l'animation de la date
+  // 1.E.1. Animations et états
   const dateScale = useRef(new Animated.Value(1)).current;
-  
-  // État pour suivre si le titre est long
+  const fadeAnim = useRef(new Animated.Value(0)).current;
   const [isTitleLong, setIsTitleLong] = useState(false);
-
-  // 1.E.2. Effet d'animation pour la date
+  
+  // 1.E.2. Effet pour l'animation de la date
   useEffect(() => {
-    if (position === 'bottom' && showDate) {
+    if (showDate) {
+      // Animation de pulsation pour la date
       Animated.sequence([
         Animated.timing(dateScale, {
           toValue: 1.2,
@@ -71,14 +71,59 @@ const AnimatedEventCardA: React.FC<AnimatedEventCardAProps> = ({
           useNativeDriver: true,
         })
       ]).start();
+      
+      // Animation de fondu pour l'ensemble
+      Animated.timing(fadeAnim, {
+        toValue: 1,
+        duration: 300,
+        useNativeDriver: true,
+      }).start();
+    } else {
+      // Reset de l'animation quand la date est cachée
+      fadeAnim.setValue(position === 'top' ? 1 : 0);
     }
   }, [showDate, position]);
 
-  // 1.E.3. Fonction pour extraire l'année d'une date
+  // Animation initiale au chargement pour la carte supérieure
+  useEffect(() => {
+    if (position === 'top') {
+      Animated.timing(fadeAnim, {
+        toValue: 1,
+        duration: 500,
+        useNativeDriver: true,
+      }).start();
+    }
+  }, [position]);
+
+  // 1.E.3. Vérification de la longueur du titre
+  useEffect(() => {
+    if (event?.titre) {
+      // Un titre est considéré long s'il dépasse 40 caractères ou contient plus de 4 mots
+      setIsTitleLong(
+        event.titre.length > 40 || 
+        event.titre.split(' ').length > 4
+      );
+    }
+  }, [event?.titre]);
+
+  // 1.E.4. Fonction pour extraire l'année d'une date
   const getYearFromDate = (dateString: string): string => {
     try {
+      // Si c'est déjà une année à 4 chiffres, on la retourne directement
       if (/^\d{4}$/.test(dateString)) return dateString;
+      
+      // Si c'est une date formatée "YYYY-MM-DD", on extrait l'année
       if (dateString.includes('-')) return dateString.split('-')[0];
+      
+      // Si c'est une date formatée localisée, on tente d'extraire l'année
+      if (event.date_formatee) {
+        const parts = event.date_formatee.split(' ');
+        for (const part of parts) {
+          if (/^\d{4}$/.test(part)) return part;
+        }
+      }
+      
+      // Fallback: retour de la chaîne originale
       return dateString;
     } catch (error) {
       console.error('Error extracting year from date:', error);
@@ -86,52 +131,46 @@ const AnimatedEventCardA: React.FC<AnimatedEventCardAProps> = ({
     }
   };
 
-  // 1.E.4. Fonction pour rendre la date avec overlay
+  // 1.E.5. Rendu de la date
   const renderDate = () => {
-    if ((position === 'top' || showDate) && event?.date) {
-      const overlayStyle = [
-        styles.dateOverlay,
-        position === 'top' ? styles.topOverlay : null,
-        position === 'bottom' && isCorrect !== undefined && (
-          isCorrect ? styles.correctOverlay : styles.incorrectOverlay
-        )
-      ];
+    if (!showDate || !event?.date) return null;
 
-      return (
-        <Animated.View style={overlayStyle}>
-          <Animated.Text 
-            style={[
-              styles.date,
-              { transform: [{ scale: dateScale }] }
-            ]}
-          >
-            {getYearFromDate(event.date)}
-          </Animated.Text>
-        </Animated.View>
-      );
-    }
-    return null;
+    const dateOverlayStyle = [
+      styles.dateOverlay,
+      position === 'top' ? styles.topDateOverlay : styles.bottomDateOverlay,
+      position === 'bottom' && isCorrect !== undefined && (
+        isCorrect ? styles.correctOverlay : styles.incorrectOverlay
+      )
+    ];
+
+    return (
+      <Animated.View 
+        style={[
+          dateOverlayStyle,
+          { 
+            opacity: fadeAnim,
+          }
+        ]}
+      >
+        <Animated.Text 
+          style={[
+            styles.dateText,
+            position === 'top' ? styles.topDateText : styles.bottomDateText,
+            { transform: [{ scale: dateScale }] }
+          ]}
+        >
+          {getYearFromDate(event.date)}
+        </Animated.Text>
+      </Animated.View>
+    );
   };
 
-  // Fonction pour déterminer si le titre est long
-  const checkTitleLength = (title: string) => {
-    if (!title) return false;
-    // Considérer un titre comme long s'il dépasse 40 caractères ou contient plus de 4 mots
-    return title.length > 40 || title.split(' ').length > 4;
-  };
-
-  // Effet pour vérifier la longueur du titre au montage du composant
-  useEffect(() => {
-    if (event?.titre) {
-      setIsTitleLong(checkTitleLength(event.titre));
-    }
-  }, [event?.titre]);
-
-  // 1.E.5. Rendu principal du composant
+  // 1.E.6. Rendu principal du composant
   return (
     <View style={styles.container}>
       <View style={styles.cardFrame}>
         <View style={styles.cardContent}>
+          {/* Image d'arrière-plan */}
           <Image
             source={{ uri: event?.illustration_url }}
             style={styles.image}
@@ -139,34 +178,50 @@ const AnimatedEventCardA: React.FC<AnimatedEventCardAProps> = ({
             resizeMode="cover"
           />
           
+          {/* Dégradé pour le texte */}
           <LinearGradient
-            colors={['transparent', 'rgba(0,0,0,0.9)']}
+            colors={position === 'bottom' ? 
+              ['transparent', 'transparent', 'rgba(0,0,0,0.5)', 'rgba(0,0,0,0.7)'] : 
+              ['transparent', 'rgba(0,0,0,0.9)']}
+            locations={position === 'bottom' ? [0, 0.6, 0.8, 1] : [0.5, 1]}
             style={[
               styles.gradient,
-              position === 'bottom' && styles.gradientBottom,
-              // Augmenter la hauteur du gradient si le titre est long
-              isTitleLong && (position === 'bottom' ? styles.gradientBottomLongTitle : styles.gradientLongTitle)
+              position === 'bottom' ? styles.gradientBottom : styles.gradientTop,
+              isTitleLong && styles.gradientLong
             ]}
           >
-            <View style={[
-              styles.titleContainer,
-              position === 'bottom' && styles.titleContainerBottom,
-              // Ajuster le padding pour les titres longs
-              isTitleLong && styles.titleContainerLong
-            ]}>
+            {position === 'top' && (
+              <View style={[
+                styles.titleContainer,
+                styles.titleContainerTop,
+                isTitleLong && styles.titleContainerLong,
+                showDate && styles.titleContainerWithDate
+              ]}>
+                <Text style={[
+                  styles.title,
+                  styles.titleTop,
+                  isTitleLong && styles.titleTopLong
+                ]} numberOfLines={3}>
+                  {event?.titre}
+                </Text>
+              </View>
+            )}
+          </LinearGradient>
+
+          {/* Titre pour l'événement du bas */}
+          {position === 'bottom' && (
+            <View style={styles.bottomTitleWrapper}>
               <Text style={[
                 styles.title,
-                position === 'top' ? styles.titleTop : styles.titleBottom,
-                // Adapter la taille de la police et augmenter le nombre de lignes pour les titres longs
-                isTitleLong && (position === 'top' ? styles.titleTopLong : styles.titleBottomLong)
-              ]} 
-              // Augmenter le nombre de lignes pour les titres longs
-              numberOfLines={isTitleLong ? 3 : 2}>
+                styles.titleBottom,
+                isTitleLong && styles.titleBottomLong
+              ]} numberOfLines={2}>
                 {event?.titre}
               </Text>
             </View>
-          </LinearGradient>
+          )}
 
+          {/* Rendu de la date */}
           {renderDate()}
         </View>
       </View>
@@ -205,80 +260,117 @@ const styles = StyleSheet.create({
     width: '100%',
     height: '100%',
   },
+  
+  // Styles pour le dégradé
   gradient: {
     position: 'absolute',
-    bottom: 0,
     left: 0,
     right: 0,
-    height: '50%',
     justifyContent: 'flex-end',
   },
+  gradientTop: {
+    bottom: 0,
+    height: '50%',
+  },
   gradientBottom: {
-    height: '65%',
+    bottom: 0,
+    height: '40%', // Limité à la partie basse pour les boutons
   },
-  // Styles pour les titres longs
-  gradientLongTitle: {
-    height: '55%',
+  gradientLong: {
+    height: '45%', // Un peu plus haut pour les titres longs
   },
-  gradientBottomLongTitle: {
-    height: '70%',
-  },
+  
+  // Styles pour le conteneur de titre
   titleContainer: {
-    padding: 16,
+    padding: 10,
+    justifyContent: 'flex-end',
+  },
+  titleContainerTop: {
+    paddingBottom: 15,
   },
   titleContainerBottom: {
-    paddingBottom: 90,
+    paddingBottom: 80, // Augmenté pour éviter le chevauchement avec les boutons
+    paddingTop: 5,     // Réduit le padding en haut pour garder plus de visibilité sur l'image
   },
   titleContainerLong: {
-    paddingBottom: 100, // Plus d'espace en bas pour les titres longs
+    paddingBottom: 20,
   },
+  titleContainerWithDate: {
+    paddingBottom: 70, // Espace pour la date
+  },
+  // Wrapper pour le titre du bas - position juste au-dessus des boutons
+  bottomTitleWrapper: {
+    position: 'absolute',
+    bottom: 90,         // Augmenté pour plus d'espace entre le titre et les boutons
+    left: 0,
+    right: 0,
+    padding: 10,
+    zIndex: 100,        // Pour être au-dessus de tout
+  },
+  
+  // Styles pour le titre
   title: {
     fontWeight: 'bold',
-    color: colors.white,
+    color: 'white',
     textAlign: 'center',
-  },
-  titleTop: {
-    fontSize: 24,
-    letterSpacing: 0.5,
-    textShadowColor: '#000',
-    textShadowOffset: { width: -1, height: -1 },
-    textShadowRadius: 0,
-  },
-  titleBottom: {
-    fontSize: 20,
     textShadowColor: 'rgba(0, 0, 0, 0.75)',
     textShadowOffset: { width: 1, height: 1 },
     textShadowRadius: 3,
   },
-  // Styles adaptés pour les titres longs
+  titleTop: {
+    fontSize: 24,
+    letterSpacing: 0.5,
+  },
+  titleBottom: {
+    fontSize: 20,
+    textShadowColor: 'rgba(0, 0, 0, 1)', // Ombre plus prononcée pour lisibilité
+    textShadowOffset: { width: 1, height: 1 },
+    textShadowRadius: 4,
+  },
   titleTopLong: {
-    fontSize: 20, // Réduire la taille pour les titres longs
+    fontSize: 20, // Taille réduite pour les titres longs
   },
   titleBottomLong: {
-    fontSize: 18, // Réduire la taille pour les titres longs
+    fontSize: 18, // Taille encore plus réduite pour les titres longs sur la carte du bas
   },
+  
+  // Styles pour l'overlay de date
   dateOverlay: {
-    ...StyleSheet.absoluteFillObject,
-    backgroundColor: 'rgba(0, 0, 0, 0.7)',
+    position: 'absolute',
+    bottom: 0,
+    left: 0,
+    right: 0,
+    height: 70,
     justifyContent: 'center',
     alignItems: 'center',
+    backgroundColor: 'rgba(0, 0, 0, 0.7)',
   },
-  topOverlay: {
-    backgroundColor: 'rgba(0, 0, 0, 0.5)',
+  topDateOverlay: {
+    backgroundColor: 'rgba(0, 0, 0, 0.5)', // Plus transparent pour la carte du haut
+  },
+  bottomDateOverlay: {
+    height: 80, // Plus haut pour la carte du bas
   },
   correctOverlay: {
-    backgroundColor: `${colors.correctGreen}cc`,
+    backgroundColor: 'rgba(39, 174, 96, 0.8)',
   },
   incorrectOverlay: {
-    backgroundColor: `${colors.incorrectRed}cc`,
+    backgroundColor: 'rgba(231, 76, 60, 0.8)',
   },
-  date: {
-    color: colors.white,
-    fontSize: 48,
+  
+  // Styles pour le texte de date
+  dateText: {
+    color: 'white',
     fontWeight: 'bold',
     textShadowColor: 'rgba(0, 0, 0, 0.75)',
     textShadowOffset: { width: 2, height: 2 },
     textShadowRadius: 4,
+  },
+  topDateText: {
+    fontSize: 48,
+  },
+  bottomDateText: {
+    fontSize: 42, // Légèrement plus petit pour la carte du bas
   }
 });
 

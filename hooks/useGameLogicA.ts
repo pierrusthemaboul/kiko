@@ -16,6 +16,7 @@
 
 // 1.D.1. Librairies / Modules
 import { useState, useEffect, useCallback } from 'react';
+import { AppState } from 'react-native'; // Ajout pour le malus lors du changement d'état de l'app
 import { supabase } from '../lib/supabase/supabaseClients';
 import useRewards from './useRewards';
 import useAudio from './useAudio';
@@ -199,6 +200,19 @@ export function useGameLogicA(initialEvent: string) {
   // Et nous conservons uniquement la gestion des interstitielles
   const [pendingAdDisplay, setPendingAdDisplay] = useState<"interstitial" | null>(null);
   /* ******* FIN INTÉGRATION PUBLICITÉ ******* */
+
+  /* Effet pour appliquer un malus si l'utilisateur quitte l'application */
+  useEffect(() => {
+    const subscription = AppState.addEventListener('change', (nextAppState) => {
+      if (nextAppState === 'background') {
+        // Appliquer un malus : on retire 5 secondes au compte à rebours
+        setTimeLeft((prevTime) => Math.max(prevTime - 5, 0));
+      }
+    });
+    return () => {
+      subscription.remove();
+    };
+  }, []);
 
   /* 1.F. Effet d'initialisation */
   useEffect(() => {
@@ -815,6 +829,9 @@ export function useGameLogicA(initialEvent: string) {
         return;
       }
 
+      // Désactivation immédiate du compte à rebours pour éviter les interférences
+      setIsCountdownActive(false);
+
       const previousDate = new Date(previousEvent.date);
       const newDate = new Date(newEvent.date);
       const newIsBefore = newDate < previousDate;
@@ -1193,6 +1210,13 @@ export function useGameLogicA(initialEvent: string) {
       selectNewEvent(allEvents, previousEvent);
     }
   }, [allEvents, previousEvent, selectNewEvent, pendingAdDisplay]);
+
+  // --- Nouvelle useEffect pour réinitialiser l'audio au montage (pour éviter le problème de son après un replay) ---
+  useEffect(() => {
+    // Cette instruction permet de relancer la lecture d'un son de compte à rebours
+    // afin de forcer la réinitialisation du module audio lors d'un nouveau jeu.
+    playCountdownSound();
+  }, []);
 
   /* 1.I. Retour du hook */
   return {
