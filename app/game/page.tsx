@@ -52,7 +52,7 @@ export default function GamePage() {
   return (
     <View style={styles.fullScreenContainer}>
       <ImageBackground
-        source={require('../../assets/images/bgvue2.webp')}
+        source={require('../../assets/images/quipasse.webp')}
         style={styles.backgroundImage}
         resizeMode="cover"
       >
