@@ -29,6 +29,11 @@ import type {
   LevelEventSummary,
 } from '@/hooks/types';
 
+interface LevelHistory {
+  level: number;
+  events: LevelEventSummary[];
+}
+
 interface GameContentAProps {
   user: User;
   timeLeft: number;
@@ -64,6 +69,9 @@ interface GameContentAProps {
     allTime: Array<{ name: string; score: number; rank: number }>;
   };
   levelCompletedEvents: LevelEventSummary[];
+
+  // On ajoute la prop pour l’historique complet
+  levelsHistory: LevelHistory[];
 }
 
 function GameContentA({
@@ -93,13 +101,42 @@ function GameContentA({
   updateRewardPosition,
   leaderboards,
   levelCompletedEvents,
+  levelsHistory, // <-- On le reçoit
 }: GameContentAProps) {
   const router = useRouter();
   const userInfoRef = useRef<UserInfoHandle>(null);
   const contentOpacity = useRef(new Animated.Value(1)).current;
   const [isRewardPositionSet, setIsRewardPositionSet] = useState(false);
 
-  // Gère la position de la RewardAnimation (points / vie)
+  // [ADDED LOG]
+  useEffect(() => {
+    console.log('[GameContentA] Mounted or updated');
+    console.log('[GameContentA] isGameOver:', isGameOver);
+    console.log('[GameContentA] user.lives:', user.lives);
+    console.log('[GameContentA] levelCompletedEvents:', levelCompletedEvents);
+    console.log('[GameContentA] levelsHistory:', levelsHistory);
+  }, [
+    isGameOver,
+    user.lives,
+    levelCompletedEvents,
+    levelsHistory,
+  ]);
+
+  // [ADDED LOG]
+  useEffect(() => {
+    console.log('[GameContentA] levelsHistory changed => length:', levelsHistory?.length || 0);
+  }, [levelsHistory]);
+
+  // [ADDED LOG]
+  useEffect(() => {
+    console.log('[GameContentA] levelCompletedEvents changed => length:', levelCompletedEvents?.length || 0);
+  }, [levelCompletedEvents]);
+
+  // [ADDED LOG]
+  useEffect(() => {
+    console.log('[GameContentA] isGameOver changed:', isGameOver);
+  }, [isGameOver]);
+
   useEffect(() => {
     let mounted = true;
 
@@ -130,13 +167,11 @@ function GameContentA({
     };
 
     updateRewardPositionSafely();
-
     return () => {
       mounted = false;
     };
   }, [currentReward?.type]);
 
-  // Animation du contenu lorsque le modal de niveau s'affiche
   useEffect(() => {
     if (showLevelModal) {
       Animated.sequence([
@@ -156,10 +191,15 @@ function GameContentA({
   }, [showLevelModal]);
 
   const onChoiceWrapper = (choice: string) => {
+    // [ADDED LOG]
+    console.log('[GameContentA] onChoiceWrapper => user chose:', choice);
     handleChoice(choice);
   };
 
   const renderContent = () => {
+    // [ADDED LOG]
+    console.log('[GameContentA] renderContent => loading:', loading, ', error:', error);
+
     if (loading) {
       return (
         <View style={styles.loadingContainer}>
@@ -187,7 +227,6 @@ function GameContentA({
 
     return (
       <>
-        {/* Cartes : événement précédent + nouvel événement */}
         <EventLayoutA
           previousEvent={previousEvent}
           newEvent={newEvent}
@@ -201,7 +240,6 @@ function GameContentA({
           isLevelPaused={isLevelPaused}
         />
 
-        {/* Modal de fin de niveau */}
         <LevelUpModalBis
           visible={showLevelModal}
           level={level}
@@ -215,7 +253,6 @@ function GameContentA({
           eventsSummary={levelCompletedEvents}
         />
 
-        {/* Modal de fin de partie (scoreboard) */}
         <ScoreboardModal
           isVisible={isGameOver}
           currentScore={user.points}
@@ -226,6 +263,8 @@ function GameContentA({
           onRestart={handleRestart}
           onMenuPress={() => router.replace('/')}
           playerName={user.name}
+          // --- On passe levelsHistory ---
+          levelsHistory={levelsHistory}
         />
       </>
     );
@@ -233,15 +272,9 @@ function GameContentA({
 
   return (
     <SafeAreaView style={styles.safeArea}>
-      {/* Barre du téléphone : sombre, texte blanc */}
-      <StatusBar
-        barStyle="light-content"
-        backgroundColor="#050B1F"
-        translucent={false}
-      />
+      <StatusBar barStyle="light-content" backgroundColor="#050B1F" translucent={false} />
 
       <Animated.View style={[styles.container, { opacity: fadeAnim }]}>
-        {/* Barre supérieure : infos joueur + timer */}
         <View style={styles.header}>
           <UserInfo
             ref={userInfoRef}
@@ -253,13 +286,9 @@ function GameContentA({
           />
 
           <View style={styles.countdownContainer}>
-            <Countdown
-              timeLeft={timeLeft}
-              isActive={!isLevelPaused && isImageLoaded}
-            />
+            <Countdown timeLeft={timeLeft} isActive={!isLevelPaused && isImageLoaded} />
           </View>
 
-          {/* Animation de reward */}
           {currentReward && currentReward.targetPosition && isRewardPositionSet && (
             <RewardAnimation
               type={currentReward.type}
@@ -270,7 +299,6 @@ function GameContentA({
           )}
         </View>
 
-        {/* Contenu principal */}
         <Animated.View style={[styles.content, { opacity: contentOpacity }]}>
           {renderContent()}
         </Animated.View>
@@ -282,7 +310,6 @@ function GameContentA({
 const styles = StyleSheet.create({
   safeArea: {
     flex: 1,
-    // On enlève le paddingTop pour éviter l'espace entre la barre du téléphone et la barre UserInfo
     backgroundColor: 'transparent',
   },
   container: {

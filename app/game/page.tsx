@@ -24,6 +24,13 @@ export default function GamePage() {
   const gameLogic = useGameLogicA(''); 
   // <-- Ajoutez un éventuel paramètre si nécessaire
 
+  // Log initial des valeurs récupérées depuis le hook
+  useEffect(() => {
+    console.log('[GamePage] gameLogic.user:', gameLogic.user);
+    console.log('[GamePage] gameLogic.levelsHistory:', gameLogic.levelsHistory);
+    console.log('[GamePage] gameLogic.levelCompletedEvents:', gameLogic.levelCompletedEvents);
+  }, [gameLogic.user, gameLogic.levelsHistory, gameLogic.levelCompletedEvents]);
+
   const handleRestartGame = () => {
     router.replace('/');
   };
@@ -91,11 +98,11 @@ export default function GamePage() {
             currentLevelConfig={gameLogic.currentLevelConfig}
             leaderboards={gameLogic.leaderboards}
             levelCompletedEvents={gameLogic.levelCompletedEvents}
-
-            /* Props pour la récompense/animation */
             currentReward={gameLogic.currentReward}
             completeRewardAnimation={gameLogic.completeRewardAnimation}
             updateRewardPosition={gameLogic.updateRewardPosition}
+            // <-- Passage de la prop levelsHistory
+            levelsHistory={gameLogic.levelsHistory}
           />
 
           {/*
@@ -138,3 +145,5 @@ const styles = StyleSheet.create({
     // edges={['bottom']} évite le padding en haut
   },
 });
+
+export default GamePage;

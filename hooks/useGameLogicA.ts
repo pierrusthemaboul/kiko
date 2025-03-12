@@ -16,7 +16,7 @@
 
 // 1.D.1. Librairies / Modules
 import { useState, useEffect, useCallback } from 'react';
-import { AppState } from 'react-native'; // Ajout pour le malus lors du changement d'état de l'app
+import { AppState, Animated } from 'react-native'; // Ajout pour le malus lors du changement d'état de l'app
 import { supabase } from '../lib/supabase/supabaseClients';
 import useRewards from './useRewards';
 import useAudio from './useAudio';
@@ -33,16 +33,20 @@ import {
   ActiveBonus
 } from './types';
 import { LEVEL_CONFIGS } from './levelConfigs';
-import { Animated } from 'react-native';
-// ------------------ INTÉGRATION DE LA PUBLICITÉ ------------------
-// Import des modules de publicité de react-native-google-mobile-ads
-import { InterstitialAd, AdEventType, TestIds } from 'react-native-google-mobile-ads';
 
+// ------------------ INTÉGRATION DE LA PUBLICITÉ ------------------
+import { InterstitialAd, AdEventType, TestIds } from 'react-native-google-mobile-ads';
 // Création de l'annonce interstitielle en mode test
 const interstitialAd = InterstitialAd.createForAdRequest(TestIds.INTERSTITIAL, {
   requestNonPersonalizedAdsOnly: true,
 });
 // ------------------------------------------------------------------
+
+// Nouvelle interface pour l'historique des événements par niveau
+interface LevelHistory {
+  level: number;
+  events: LevelEventSummary[];
+}
 
 /* 1.E. Hook : useGameLogicA */
 
@@ -158,6 +162,10 @@ export function useGameLogicA(initialEvent: string) {
 
   const [levelCompletedEvents, setLevelCompletedEvents] = useState<LevelEventSummary[]>([]);
 
+  /* ---- Nouveau : Historique des niveaux complet ---- */
+  const [levelsHistory, setLevelsHistory] = useState<LevelHistory[]>([]);
+  /* ----------------------------------------------------- */
+
   const [forcedJumpEventCount, setForcedJumpEventCount] = useState<number>(() => {
     return Math.floor(Math.random() * (19 - 12 + 1)) + 12;
   });
@@ -178,7 +186,6 @@ export function useGameLogicA(initialEvent: string) {
   });
 
   /* ******* INTÉGRATION DE LA PUBLICITÉ ******* */
-  // État pour suivre le chargement de l'annonce interstitielle
   const [adLoaded, setAdLoaded] = useState(false);
 
   useEffect(() => {
@@ -196,8 +203,6 @@ export function useGameLogicA(initialEvent: string) {
     };
   }, []);
 
-  // Nous supprimons ici la gestion de la publicité statique
-  // Et nous conservons uniquement la gestion des interstitielles
   const [pendingAdDisplay, setPendingAdDisplay] = useState<"interstitial" | null>(null);
   /* ******* FIN INTÉGRATION PUBLICITÉ ******* */
 
@@ -243,7 +248,48 @@ export function useGameLogicA(initialEvent: string) {
     };
   }, [isCountdownActive, isLevelPaused, isGameOver, timeLeft]);
 
+  /* 
+   *  Ajout d'un effet pour suivre l'évolution de levelsHistory.
+   *  Utile pour voir si l'état se met bien à jour.
+   */
+  useEffect(() => {
+    console.log('[useGameLogicA] levelsHistory updated:', levelsHistory);
+  }, [levelsHistory]);
+
   /* 1.H. Regroupement des fonctions internes */
+
+  // ---------------------- Nouvelle fonction : finalizeCurrentLevelHistory ----------------------
+  // Modifiée pour accepter en paramètre les événements à finaliser et mettre à jour l'historique global
+  const finalizeCurrentLevelHistory = (eventsToFinalize: LevelEventSummary[]) => {
+    console.log('[useGameLogicA] finalizeCurrentLevelHistory called, eventsToFinalize:', eventsToFinalize);
+    console.log('[useGameLogicA] finalizeCurrentLevelHistory => eventsToFinalize length:', eventsToFinalize.length);
+
+    if (eventsToFinalize.length === 0) {
+      console.log('[useGameLogicA] No events to finalize; returning.');
+      return;
+    }
+    const currentLvl = user.level;
+    setLevelsHistory((prev) => {
+      console.log('[useGameLogicA] old levelsHistory:', prev);
+      const existingIndex = prev.findIndex((lh) => lh.level === currentLvl);
+      if (existingIndex >= 0) {
+        const updated = [...prev];
+        updated[existingIndex] = {
+          level: currentLvl,
+          events: [...updated[existingIndex].events, ...eventsToFinalize],
+        };
+        console.log('[useGameLogicA] updating existing levelHistory index:', existingIndex, ', new array =', updated);
+        return updated;
+      } else {
+        const newArray = [...prev, { level: currentLvl, events: eventsToFinalize }];
+        console.log('[useGameLogicA] adding a new levelHistory entry for level', currentLvl, ', new array =', newArray);
+        return newArray;
+      }
+    });
+    // IMPORTANT : Nous ne vidons pas levelCompletedEvents ici pour conserver le tableau de récapitulatif du niveau fini
+    console.log('[useGameLogicA] finalizeCurrentLevelHistory completed (levelCompletedEvents preserved)');
+  };
+  // ---------------------------------------------------------------------------------------------
 
   // 1.H.1. initGame
   const initGame = async () => {
@@ -794,7 +840,9 @@ export function useGameLogicA(initialEvent: string) {
 
     setUser((prev) => {
       const newLives = prev.lives - 1;
+      console.log('[useGameLogicA] handleTimeout => user.lives going from', prev.lives, 'to', newLives);
       if (newLives <= 0) {
+        console.log('[useGameLogicA] handleTimeout => user.lives = 0 => endGame() called.');
         endGame();
         return { ...prev, lives: newLives, streak: 0 };
       }
@@ -841,6 +889,8 @@ export function useGameLogicA(initialEvent: string) {
         (choice === 'avant' && newIsBefore) ||
         (choice === 'après' && newIsAfter);
 
+      console.log(`[useGameLogicA] handleChoice => choice = ${choice}, isAnswerCorrect = ${isAnswerCorrect}`);
+
       setIsCorrect(isAnswerCorrect);
       setShowDates(true);
 
@@ -886,10 +936,16 @@ export function useGameLogicA(initialEvent: string) {
 
         checkRewards({ type: 'streak', value: newStreak }, user);
 
-        // IMPORTANT : Calcul de l'array mis à jour des événements de niveau
+        // IMPORTANT : Construction du tableau mis à jour des événements de niveau
         const updatedEventSummary = [...currentLevelEvents, eventSummaryItem];
 
-        // e) Mise à jour du user avec les points (si >0) et gestion du niveau
+        // [ADDED LOG]
+        console.log('[useGameLogicA] handleChoice => adding eventSummaryItem to updatedEventSummary (correct), new length =', updatedEventSummary.length);
+
+        // Mise à jour de levelCompletedEvents pour le récapitulatif du niveau terminé (pour LevelUpModalBis)
+        setLevelCompletedEvents(updatedEventSummary);
+
+        // e) Mise à jour du user avec les points et gestion du niveau
         setUser((prev) => {
           const currentPoints = Math.max(0, Number(prev.points) || 0);
           const updatedPoints = currentPoints + pts;
@@ -910,10 +966,8 @@ export function useGameLogicA(initialEvent: string) {
 
             // On marque la progression du niveau courant en intégrant tous les événements, y compris le dernier
             setPreviousEvent(newEvent);
-            setLevelCompletedEvents((prevEvents) => [
-              ...prevEvents,
-              ...updatedEventSummary,
-            ]);
+            // Mise à jour de l'historique global avec une copie des événements du niveau terminé
+            finalizeCurrentLevelHistory(updatedEventSummary);
 
             // On bascule sur la config du nouveau niveau
             setCurrentLevelConfig(() => ({
@@ -973,7 +1027,9 @@ export function useGameLogicA(initialEvent: string) {
         // c) Retrait d'une vie
         setUser((prev) => {
           const updatedLives = prev.lives - 1;
+          console.log('[useGameLogicA] handleChoice => user.lives was decremented => newLives:', updatedLives);
           if (updatedLives <= 0) {
+            console.log('[useGameLogicA] handleChoice => user.lives = 0 => endGame() called.');
             endGame();
           }
           return {
@@ -984,7 +1040,12 @@ export function useGameLogicA(initialEvent: string) {
         });
 
         // d) Stockage de l'eventSummaryItem
-        setCurrentLevelEvents((prev) => [...prev, eventSummaryItem]);
+        setCurrentLevelEvents((prev) => {
+          const newArray = [...prev, eventSummaryItem];
+          // [ADDED LOG]
+          console.log('[useGameLogicA] handleChoice => adding eventSummaryItem to currentLevelEvents (incorrect), new length =', newArray.length);
+          return newArray;
+        });
 
         // e) Au bout de 1.5s, on réactive les boutons et on enchaîne
         setTimeout(() => {
@@ -1018,11 +1079,12 @@ export function useGameLogicA(initialEvent: string) {
       progressAnim,
       user,
       playLevelUpSound,
-      adLoaded
+      adLoaded,
+      finalizeCurrentLevelHistory
     ]
   );
-  
-  // Ajout de handleLevelUp pour corriger l'erreur constatée dans GameContentA.tsx
+
+  // 1.H.10. handleLevelUp
   const handleLevelUp = useCallback(() => {
     // Incrémente le niveau de l'utilisateur et réinitialise le compteur d'événements du niveau
     setUser((prev) => {
@@ -1043,8 +1105,17 @@ export function useGameLogicA(initialEvent: string) {
     checkRewards({ type: 'level', value: user.level + 1 }, user);
   }, [user, playLevelUpSound, checkRewards]);
 
+  // 1.H.11. endGame
   const endGame = useCallback(async () => {
+    console.log('[useGameLogicA] endGame called => finalizing current level history');
+    // Si levelCompletedEvents est vide, on utilise currentLevelEvents
+    const eventsToFinalize = levelCompletedEvents.length > 0 ? levelCompletedEvents : currentLevelEvents;
+    console.log('[useGameLogicA] endGame => eventsToFinalize:', eventsToFinalize);
+    finalizeCurrentLevelHistory(eventsToFinalize);
+    console.log('[useGameLogicA] endGame => finalizeCurrentLevelHistory has been called, levelsHistory should be updated soon.');
+
     setIsGameOver(true);
+    console.log('[useGameLogicA] endGame => setIsGameOver(true) now');
     playGameOverSound();
     setLeaderboardsReady(false);
 
@@ -1144,7 +1215,7 @@ export function useGameLogicA(initialEvent: string) {
       setLeaderboards(fallbackScores);
       setLeaderboardsReady(true);
     }
-  }, [user, playGameOverSound, saveProgress]);
+  }, [user, playGameOverSound, saveProgress, finalizeCurrentLevelHistory, levelCompletedEvents, currentLevelEvents]);
 
   // 1.H.12. saveProgress
   const saveProgress = useCallback(async () => {
@@ -1198,7 +1269,7 @@ export function useGameLogicA(initialEvent: string) {
     setIsLevelPaused(false);
     setIsCountdownActive(true);
     setTimeLeft(20);
-    setLevelCompletedEvents([]);
+    setLevelCompletedEvents([]); // Réinitialisation du récapitulatif du niveau en cours
 
     // Affichage de l'interstitial ad si en attente
     if (pendingAdDisplay === "interstitial") {
@@ -1213,8 +1284,6 @@ export function useGameLogicA(initialEvent: string) {
 
   // --- Nouvelle useEffect pour réinitialiser l'audio au montage (pour éviter le problème de son après un replay) ---
   useEffect(() => {
-    // Cette instruction permet de relancer la lecture d'un son de compte à rebours
-    // afin de forcer la réinitialisation du module audio lors d'un nouveau jeu.
     playCountdownSound();
   }, []);
 
@@ -1256,6 +1325,7 @@ export function useGameLogicA(initialEvent: string) {
     onImageLoad: handleImageLoad,
 
     levelCompletedEvents,
+    levelsHistory, // Historique complet des niveaux (utilisé pour le game over)
   };
 }
 
