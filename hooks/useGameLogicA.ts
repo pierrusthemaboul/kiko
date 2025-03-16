@@ -1,5 +1,5 @@
 /************************************************************************************
- * 1. HOOK PRINCIPAL : useGameLogicA
+ * 1. HOOK PRINCIPAL entier : useGameLogicA
  *
  * 1.A. Description
  *     Hook de logique de jeu principal. Gère la logique de sélection d'événements,
