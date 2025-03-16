@@ -16,7 +16,7 @@
 
 // 1.D.1. Librairies / Modules
 import { useState, useEffect, useCallback } from 'react';
-import { AppState, Animated } from 'react-native'; // Ajout pour le malus lors du changement d'état de l'app
+import { AppState, Animated, Dimensions } from 'react-native'; // Ajout de Dimensions
 import { supabase } from '../lib/supabase/supabaseClients';
 import useRewards from './useRewards';
 import useAudio from './useAudio';
@@ -48,6 +48,8 @@ interface LevelHistory {
   events: LevelEventSummary[];
 }
 
+const screenWidth = Dimensions.get('window').width;
+
 /* 1.E. Hook : useGameLogicA */
 
 /**
@@ -66,6 +68,14 @@ export function useGameLogicA(initialEvent: string) {
     updateRewardPosition
   } = useRewards({
     onRewardEarned: (reward) => {
+      // Si la targetPosition n'est pas définie, on lui attribue une valeur par défaut selon le type de récompense
+      if (!reward.targetPosition) {
+        if (reward.type === RewardType.EXTRA_LIFE) {
+          reward.targetPosition = { x: screenWidth * 0.45, y: 50 }; // Pour EXTRA_LIFE : 33% de la largeur de l'écran
+        } else {
+          reward.targetPosition = { x: 80, y: 30 }; // Exemple pour POINTS ou autres types
+        }
+      }
       applyReward(reward);
     },
   });

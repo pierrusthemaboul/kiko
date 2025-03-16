@@ -152,6 +152,9 @@ const AnimatedEventCardA: React.FC<AnimatedEventCardAProps> = ({
           }
         ]}
       >
+        {position === 'top' && (
+          <View style={styles.separator} />
+        )}
         <Animated.Text 
           style={[
             styles.dateText,
@@ -296,7 +299,7 @@ const styles = StyleSheet.create({
     paddingBottom: 20,
   },
   titleContainerWithDate: {
-    paddingBottom: 70, // Espace pour la date
+    paddingBottom: 80, // Augmenté pour éviter le chevauchement avec la date
   },
   // Wrapper pour le titre du bas - position juste au-dessus des boutons
   bottomTitleWrapper: {
@@ -346,7 +349,8 @@ const styles = StyleSheet.create({
     backgroundColor: 'rgba(0, 0, 0, 0.7)',
   },
   topDateOverlay: {
-    backgroundColor: 'rgba(0, 0, 0, 0.5)', // Plus transparent pour la carte du haut
+    backgroundColor: 'rgba(0, 0, 0, 0.7)', // Renforcé pour meilleure lisibilité
+    height: 80, // Un peu plus de hauteur pour l'événement du haut aussi
   },
   bottomDateOverlay: {
     height: 80, // Plus haut pour la carte du bas
@@ -371,6 +375,14 @@ const styles = StyleSheet.create({
   },
   bottomDateText: {
     fontSize: 42, // Légèrement plus petit pour la carte du bas
+  },
+  // Séparateur visuel
+  separator: {
+    height: 2,
+    backgroundColor: 'rgba(255, 255, 255, 0.3)',
+    width: '80%',
+    alignSelf: 'center',
+    marginBottom: 10
   }
 });
 

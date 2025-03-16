@@ -32,24 +32,30 @@ const RewardAnimation: React.FC<RewardAnimationProps> = ({
     
     // Si une position cible est fournie ET que ses valeurs sont valides (non NaN), on l'utilise
     if (targetPosition && !isNaN(targetPosition.x) && !isNaN(targetPosition.y)) {
+      console.log("Using provided target position:", targetPosition);
       destinationX = targetPosition.x;
       destinationY = targetPosition.y;
     } else {
+      console.log("Using default position for type:", type);
       // Sinon, utiliser des positions par défaut en fonction du type de récompense
       if (type === "EXTRA_LIFE") {
-        // Pour les vies : coin supérieur droit (cœurs)
-        destinationX = screenWidth - 30;
-        destinationY = 30;
+        // Pour les vies : 30% de la largeur de l'écran (zone des cœurs)
+        // D'après la capture d'écran, les cœurs sont en haut à gauche
+        destinationX = screenWidth * 0.30; // Ajusté selon l'image
+        destinationY = 20; // Position Y plus haute
+        console.log("Default EXTRA_LIFE position:", { x: destinationX, y: destinationY });
       } else {
-        // Pour les points : coin supérieur gauche (score)
-        destinationX = 80;
-        destinationY = 30;
+        // Pour les points : près du score (à côté de "Pierrot")
+        destinationX = screenWidth * 0.20; // Ajusté selon l'image
+        destinationY = 20;
+        console.log("Default POINTS position:", { x: destinationX, y: destinationY });
       }
     }
 
     // Calcul des décalages par rapport au centre de l'écran
     const offsetX = destinationX - (screenWidth / 2);
     const offsetY = destinationY - (screenHeight / 2);
+    console.log("Animation offsets:", { offsetX, offsetY });
 
     const startAnimation = () => {
       // Réinitialisation des valeurs
@@ -137,7 +143,7 @@ const RewardAnimation: React.FC<RewardAnimationProps> = ({
       case "POINTS":
         return { icon: 'star', color: '#FFD700' }; // Or
       case "EXTRA_LIFE":
-        return { icon: 'heart', color: '#FF4757' }; // Rouge
+        return { icon: 'heart', color: '#FF4757' }; // Rouge vif pour correspondre aux cœurs
       case "STREAK_BONUS":
         return { icon: 'flame', color: '#4169E1' }; // Bleu royal
       default:

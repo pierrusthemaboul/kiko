@@ -7,8 +7,10 @@ import {
   StyleSheet,
   Animated,
   ScrollView,
+  Image,
 } from 'react-native';
 import { Ionicons } from '@expo/vector-icons';
+import { LinearGradient } from 'expo-linear-gradient';
 import { colors } from '../../constants/Colors';
 import type { LevelEventSummary } from '@/hooks/types';
 
@@ -37,17 +39,39 @@ const ScoreboardModal: React.FC<ScoreboardModalProps> = ({
   allTimeScores = [],
   levelsHistory = [],
 }) => {
+  // État pour l’onglet des scores (jour, mois, total)
   const [activeTab, setActiveTab] = useState<'daily' | 'monthly' | 'allTime'>('daily');
+  // État pour l’affichage du bloc "Voir les événements"
+  const [showEvents, setShowEvents] = useState(false);
+  // État pour le niveau sélectionné (si null => liste des niveaux)
+  const [selectedLevel, setSelectedLevel] = useState<number | null>(null);
+  // État pour l’événement sélectionné (sous-modal de détails)
+  const [selectedEvent, setSelectedEvent] = useState<LevelEventSummary | null>(null);
+
+  // Animation d’apparition du modal principal
   const scaleAnim = useRef(new Animated.Value(0)).current;
 
-  // État pour savoir si on affiche la liste des événements
-  const [showEvents, setShowEvents] = useState(false);
-  // État pour gérer le niveau sélectionné
-  const [selectedLevel, setSelectedLevel] = useState<number | null>(null);
-
+  // Indique si c’est un nouveau record
   const isNewHighScore = currentScore > personalBest;
 
-  // LOGS pour debug
+  /**
+   * Fonction utilitaire pour extraire l'année d'un événement.
+   * On priorise `date_formatee`, sinon on tente de parser `date`.
+   */
+  function getEventYear(event: LevelEventSummary): string {
+    const rawDate = (event.date_formatee || event.date) ?? '';
+    if (!rawDate) return '';
+    const parsedDate = new Date(rawDate);
+    if (!isNaN(parsedDate.getTime())) {
+      return parsedDate.getFullYear().toString();
+    }
+    const parts = rawDate.split(' ');
+    if (parts.length >= 2) {
+      return parts[parts.length - 1];
+    }
+    return rawDate;
+  }
+
   useEffect(() => {
     console.log('[ScoreboardModal] isVisible changed to:', isVisible);
   }, [isVisible]);
@@ -61,6 +85,7 @@ const ScoreboardModal: React.FC<ScoreboardModalProps> = ({
     }
   }, [levelsHistory]);
 
+  // Gère l’animation d’ouverture/fermeture du modal
   useEffect(() => {
     if (isVisible) {
       Animated.spring(scaleAnim, {
@@ -74,10 +99,11 @@ const ScoreboardModal: React.FC<ScoreboardModalProps> = ({
       setShowEvents(false);
       setSelectedLevel(null);
       setActiveTab('daily');
+      setSelectedEvent(null);
     }
   }, [isVisible]);
 
-  // Sélection des scores selon l'onglet actif
+  // Sélectionne la liste de scores en fonction de l’onglet actif
   const getCurrentScores = () => {
     switch (activeTab) {
       case 'daily':
@@ -91,7 +117,7 @@ const ScoreboardModal: React.FC<ScoreboardModalProps> = ({
     }
   };
 
-  // Rendu d'une ligne de score
+  // Rendu d’une ligne du tableau de scores
   const renderScoreRow = (
     score: { name: string; score: number; rank: number },
     index: number
@@ -105,7 +131,10 @@ const ScoreboardModal: React.FC<ScoreboardModalProps> = ({
         <View style={styles.rankContainer}>
           <Text style={styles.rankText}>#{score.rank || index + 1}</Text>
         </View>
-        <Text style={[styles.playerName, isCurrentPlayer && styles.currentPlayerText]} numberOfLines={1}>
+        <Text
+          style={[styles.playerName, isCurrentPlayer && styles.currentPlayerText]}
+          numberOfLines={1}
+        >
           {score.name}
         </Text>
         <Text style={[styles.scoreValue, isCurrentPlayer && styles.currentPlayerText]}>
@@ -115,7 +144,7 @@ const ScoreboardModal: React.FC<ScoreboardModalProps> = ({
     );
   };
 
-  // Affichage principal (scores)
+  // Rendu du tableau des scores (score actuel + high score + top 5)
   const renderScoreboardContent = () => {
     const currentScores = getCurrentScores();
     return (
@@ -188,9 +217,46 @@ const ScoreboardModal: React.FC<ScoreboardModalProps> = ({
     );
   };
 
-  // Affichage de la liste des niveaux, ou des événements du niveau
+  // Rendu d’un sous-modal affichant les détails d’un événement
+  const renderEventDetailsModal = () => {
+    if (!selectedEvent) return null;
+    return (
+      <Modal
+        transparent
+        visible={!!selectedEvent}
+        onRequestClose={() => setSelectedEvent(null)}
+        animationType="fade"
+      >
+        <View style={styles.modalOverlay}>
+          <View style={styles.eventDetailsModal}>
+            <View style={styles.eventDetailsHeader}>
+              <Text style={styles.eventDetailsTitle}>{selectedEvent.titre}</Text>
+              <Text style={styles.eventDetailsDate}>{getEventYear(selectedEvent)}</Text>
+            </View>
+
+            <ScrollView style={styles.eventDetailsContent}>
+              <Text style={styles.eventDetailsDescription}>
+                {selectedEvent.description_detaillee
+                  ? selectedEvent.description_detaillee
+                  : "Aucune description détaillée disponible pour cet événement historique."}
+              </Text>
+            </ScrollView>
+
+            <TouchableOpacity
+              style={styles.closeButton}
+              onPress={() => setSelectedEvent(null)}
+            >
+              <Text style={styles.closeButtonText}>Fermer</Text>
+            </TouchableOpacity>
+          </View>
+        </View>
+      </Modal>
+    );
+  };
+
+  // Rendu du contenu "Voir les événements" (liste des niveaux ou événements d’un niveau)
   const renderEventsContent = () => {
-    // Si pas de niveau sélectionné => liste des niveaux
+    // Si aucun niveau sélectionné => liste des niveaux
     if (selectedLevel === null) {
       return (
         <View style={styles.eventsContainer}>
@@ -212,36 +278,105 @@ const ScoreboardModal: React.FC<ScoreboardModalProps> = ({
               <Text style={styles.noScoresText}>Aucun événement enregistré</Text>
             )}
           </ScrollView>
+
+          {/* Bouton pour fermer la vue des événements */}
+          <View style={styles.buttonContainer}>
+            <TouchableOpacity
+              style={[styles.button, styles.menuButton]}
+              onPress={() => {
+                setShowEvents(false);
+                setSelectedLevel(null);
+              }}
+            >
+              <Text style={styles.buttonText}>Fermer</Text>
+            </TouchableOpacity>
+          </View>
         </View>
       );
     } else {
-      // Sinon => liste des événements du niveau sélectionné
+      // Sinon => affichage des cartes défilantes pour le niveau sélectionné
       const currentLevelData = levelsHistory.find((lh) => lh.level === selectedLevel);
       return (
         <View style={styles.eventsContainer}>
-          <TouchableOpacity
-            onPress={() => setSelectedLevel(null)}
-            style={styles.backButton}
+          <View style={styles.selectedLevelHeader}>
+            <TouchableOpacity
+              onPress={() => setSelectedLevel(null)}
+              style={styles.backButton}
+            >
+              <Ionicons name="arrow-back" size={24} color={colors.primary} />
+              <Text style={styles.backButtonText}>Retour</Text>
+            </TouchableOpacity>
+            <Text style={styles.eventsTitle}>Événements - Niveau {selectedLevel}</Text>
+          </View>
+
+          <ScrollView
+            horizontal
+            showsHorizontalScrollIndicator={false}
+            contentContainerStyle={styles.eventsCardsContainer}
           >
-            <Ionicons name="arrow-back" size={24} color={colors.primary} />
-            <Text style={styles.backButtonText}>Retour</Text>
-          </TouchableOpacity>
-          <Text style={styles.eventsTitle}>Événements - Niveau {selectedLevel}</Text>
-          <ScrollView contentContainerStyle={styles.eventsListContainer}>
             {currentLevelData && currentLevelData.events.length > 0 ? (
               currentLevelData.events.map((evt, index) => (
-                <View key={`${evt.id}-${index}`} style={styles.eventItem}>
-                  <Text style={styles.eventTitle}>{evt.titre}</Text>
-                  <Text style={styles.eventDate}>{evt.date}</Text>
-                  <Text style={styles.eventResult}>
-                    {evt.wasCorrect ? 'Correct' : 'Incorrect'}
-                  </Text>
-                </View>
+                <TouchableOpacity
+                  key={`${evt.id}-${index}`}
+                  activeOpacity={0.7}
+                  style={styles.eventCardTouchable}
+                  onPress={() => setSelectedEvent(evt)}  // <-- On ouvre le sous-modal
+                >
+                  <View style={styles.eventCard}>
+                    {evt.illustration_url ? (
+                      <Image
+                        source={{ uri: evt.illustration_url }}
+                        style={styles.eventImage}
+                        resizeMode="cover"
+                      />
+                    ) : (
+                      <View style={[styles.eventImage, { backgroundColor: '#ccc' }]} />
+                    )}
+                    <LinearGradient
+                      colors={['transparent', 'rgba(0,0,0,0.8)']}
+                      style={styles.eventGradient}
+                    >
+                      <Text style={styles.eventDate}>{getEventYear(evt)}</Text>
+                      <Text style={styles.eventTitle} numberOfLines={2}>
+                        {evt.titre}
+                      </Text>
+                      <View
+                        style={[
+                          styles.responseIndicator,
+                          {
+                            backgroundColor: evt.wasCorrect
+                              ? colors.correctGreen
+                              : colors.incorrectRed,
+                          },
+                        ]}
+                      >
+                        <Ionicons
+                          name={evt.wasCorrect ? 'checkmark' : 'close'}
+                          size={20}
+                          color="white"
+                        />
+                      </View>
+                    </LinearGradient>
+                  </View>
+                </TouchableOpacity>
               ))
             ) : (
               <Text style={styles.noScoresText}>Aucun événement pour ce niveau</Text>
             )}
           </ScrollView>
+
+          {/* Bouton pour fermer la vue des événements */}
+          <View style={styles.buttonContainer}>
+            <TouchableOpacity
+              style={[styles.button, styles.menuButton]}
+              onPress={() => {
+                setShowEvents(false);
+                setSelectedLevel(null);
+              }}
+            >
+              <Text style={styles.buttonText}>Fermer</Text>
+            </TouchableOpacity>
+          </View>
         </View>
       );
     }
@@ -270,7 +405,7 @@ const ScoreboardModal: React.FC<ScoreboardModalProps> = ({
                 </TouchableOpacity>
               </View>
 
-              {/* Bouton "Voir les événements" en bas */}
+              {/* Bouton "Voir les événements" */}
               <View style={styles.eventsButtonContainer}>
                 <TouchableOpacity
                   style={[styles.button, styles.eventsButton]}
@@ -283,21 +418,12 @@ const ScoreboardModal: React.FC<ScoreboardModalProps> = ({
           ) : (
             <>
               {renderEventsContent()}
-
-              <View style={styles.buttonContainer}>
-                <TouchableOpacity
-                  style={[styles.button, styles.menuButton]}
-                  onPress={() => {
-                    setShowEvents(false);
-                    setSelectedLevel(null);
-                  }}
-                >
-                  <Text style={styles.buttonText}>Fermer</Text>
-                </TouchableOpacity>
-              </View>
             </>
           )}
         </Animated.View>
+
+        {/* Sous-modal pour les détails d’un événement */}
+        {renderEventDetailsModal()}
       </View>
     </Modal>
   );
@@ -458,7 +584,6 @@ const styles = StyleSheet.create({
     borderRadius: 25,
     minWidth: 180,
   },
-  // Événements
   eventsContainer: {
     width: '100%',
     marginBottom: 15,
@@ -469,6 +594,7 @@ const styles = StyleSheet.create({
     fontWeight: 'bold',
     color: colors.text,
     marginBottom: 10,
+    textAlign: 'center',
   },
   levelButtonsContainer: {
     flexDirection: 'row',
@@ -488,6 +614,10 @@ const styles = StyleSheet.create({
     fontSize: 14,
     fontWeight: '600',
   },
+  selectedLevelHeader: {
+    width: '100%',
+    marginBottom: 10,
+  },
   backButton: {
     flexDirection: 'row',
     alignItems: 'center',
@@ -499,31 +629,135 @@ const styles = StyleSheet.create({
     color: colors.primary,
     marginLeft: 5,
   },
-  eventsListContainer: {
+  eventsCardsContainer: {
     paddingHorizontal: 10,
+  },
+  eventCardTouchable: {
+    transform: [{ scale: 1 }],
+    marginRight: 10,
+    borderRadius: 12,
+    elevation: 4,
+    shadowColor: '#000',
+    shadowOffset: { width: 0, height: 2 },
+    shadowOpacity: 0.2,
+    shadowRadius: 3,
+  },
+  eventCard: {
+    width: 200,
+    height: 150,
+    borderRadius: 12,
+    overflow: 'hidden',
+    backgroundColor: '#f5f5f5',
+  },
+  eventImage: {
     width: '100%',
+    height: '100%',
   },
-  eventItem: {
-    backgroundColor: colors.transparencies.light,
+  eventGradient: {
+    position: 'absolute',
+    bottom: 0,
+    left: 0,
+    right: 0,
     padding: 10,
-    borderRadius: 10,
-    marginBottom: 8,
-  },
-  eventTitle: {
-    fontSize: 16,
-    fontWeight: 'bold',
-    color: colors.text,
+    height: '60%',
   },
   eventDate: {
+    color: 'white',
     fontSize: 14,
-    color: colors.text,
-    marginTop: 4,
+    fontWeight: 'bold',
+    marginBottom: 4,
+    textShadowColor: 'rgba(0, 0, 0, 0.75)',
+    textShadowOffset: { width: 1, height: 1 },
+    textShadowRadius: 2,
   },
-  eventResult: {
-    fontSize: 14,
-    fontStyle: 'italic',
-    color: colors.primary,
-    marginTop: 2,
+  eventTitle: {
+    color: 'white',
+    fontSize: 12,
+    textShadowColor: 'rgba(0, 0, 0, 0.75)',
+    textShadowOffset: { width: 1, height: 1 },
+    textShadowRadius: 2,
+  },
+  responseIndicator: {
+    position: 'absolute',
+    top: 10,
+    right: 10,
+    width: 30,
+    height: 30,
+    borderRadius: 15,
+    justifyContent: 'center',
+    alignItems: 'center',
+    elevation: 4,
+    shadowColor: '#000',
+    shadowOffset: { width: 0, height: 2 },
+    shadowOpacity: 0.25,
+    shadowRadius: 3.84,
+  },
+
+  /* Sous-modal pour les détails d'un événement */
+  modalOverlay: {
+    flex: 1,
+    backgroundColor: 'rgba(0, 0, 0, 0.7)',
+    justifyContent: 'center',
+    alignItems: 'center',
+  },
+  eventDetailsModal: {
+    backgroundColor: 'white',
+    borderRadius: 15,
+    width: '85%',
+    maxWidth: 400,
+    maxHeight: '75%',
+    overflow: 'hidden',
+    elevation: 6,
+    shadowColor: '#000',
+    shadowOffset: { width: 0, height: 3 },
+    shadowOpacity: 0.3,
+    shadowRadius: 5,
+  },
+  eventDetailsHeader: {
+    padding: 20,
+    paddingBottom: 15,
+    borderBottomWidth: 1,
+    borderBottomColor: '#eee',
+    backgroundColor: '#f9f9f9',
+  },
+  eventDetailsTitle: {
+    fontSize: 18,
+    fontWeight: 'bold',
+    marginBottom: 5,
+    color: '#333',
+  },
+  eventDetailsDate: {
+    fontSize: 16,
+    fontWeight: 'bold',
+    color: '#ff5e62',
+  },
+  eventDetailsContent: {
+    padding: 20,
+    maxHeight: '60%',
+  },
+  eventDetailsDescription: {
+    fontSize: 15,
+    lineHeight: 22,
+    color: '#444',
+  },
+  closeButton: {
+    backgroundColor: '#ff5e62',
+    padding: 12,
+    alignItems: 'center',
+    marginTop: 5,
+    marginHorizontal: 20,
+    marginBottom: 20,
+    borderRadius: 10,
+    elevation: 2,
+    shadowColor: '#000',
+    shadowOffset: { width: 0, height: 1 },
+    shadowOpacity: 0.2,
+    shadowRadius: 2,
+  },
+  closeButtonText: {
+    color: 'white',
+    fontWeight: 'bold',
+    fontSize: 16,
   },
 });
 
