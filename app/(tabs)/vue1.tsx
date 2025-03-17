@@ -189,13 +189,18 @@ export default function Vue1() {
   const fadeAnim = useRef(new Animated.Value(0)).current;
   const slideAnim = useRef(new Animated.Value(50)).current;
 
-  // État pour afficher le modal des disclaimers
+  // États pour les modals
   const [showDisclaimer, setShowDisclaimer] = useState(false);
+  const [showScoreboard, setShowScoreboard] = useState(false);
 
-  // État local pour stocker le meilleur score du joueur
+  // État pour stocker le nom du joueur et son meilleur score
+  const [playerName, setPlayerName] = useState<string>('Voyageur');
   const [bestScore, setBestScore] = useState<number | null>(null);
+  const [dailyScores, setDailyScores] = useState<Array<any>>([]);
+  const [monthlyScores, setMonthlyScores] = useState<Array<any>>([]);
+  const [allTimeScores, setAllTimeScores] = useState<Array<any>>([]);
 
-  // Chargement des polices
+  // Chargement des polices et animation
   useEffect(() => {
     if (fontsLoaded) {
       Animated.parallel([
@@ -213,34 +218,168 @@ export default function Vue1() {
     }
   }, [fontsLoaded]);
 
-  // Récupération du meilleur score du joueur (filtré par user_id)
+  // Récupération des infos du joueur et des scores
   useEffect(() => {
-    const fetchBestScore = async () => {
+    const fetchUserData = async () => {
       try {
+        // 1. Récupérer l'utilisateur connecté
         const { data: { user: authUser } } = await supabase.auth.getUser();
+        
         if (authUser?.id) {
-          const { data, error } = await supabase
-            .from('game_scores')
-            .select('score')
-            .eq('user_id', authUser.id)
-            .order('score', { ascending: false })
-            .limit(1)
+          // 2. Récupérer le profil du joueur
+          const { data: profile } = await supabase
+            .from('profiles')
+            .select('display_name, high_score')
+            .eq('id', authUser.id)
             .single();
 
-          if (!error && data) {
-            setBestScore(data.score);
+          if (profile) {
+            setPlayerName(profile.display_name || 'Joueur');
+            setBestScore(profile.high_score || 0);
+          }
+
+          // 3. Récupérer les scores quotidiens
+          const today = new Date().toISOString().split('T')[0];
+          const { data: dailyData } = await supabase
+            .from('game_scores')
+            .select('display_name, score')
+            .gte('created_at', today)
+            .order('score', { ascending: false })
+            .limit(5);
+
+          if (dailyData) {
+            setDailyScores(dailyData.map((item, index) => ({
+              name: item.display_name,
+              score: item.score,
+              rank: index + 1
+            })));
+          }
+
+          // 4. Récupérer les scores mensuels
+          const firstDayOfMonth = `${today.substring(0, 7)}-01`;
+          const { data: monthlyData } = await supabase
+            .from('game_scores')
+            .select('display_name, score')
+            .gte('created_at', firstDayOfMonth)
+            .order('score', { ascending: false })
+            .limit(5);
+
+          if (monthlyData) {
+            setMonthlyScores(monthlyData.map((item, index) => ({
+              name: item.display_name,
+              score: item.score,
+              rank: index + 1
+            })));
+          }
+
+          // 5. Récupérer les meilleurs scores de tous les temps
+          const { data: allTimeData } = await supabase
+            .from('profiles')
+            .select('display_name, high_score')
+            .order('high_score', { ascending: false })
+            .limit(5);
+
+          if (allTimeData) {
+            setAllTimeScores(allTimeData.map((item, index) => ({
+              name: item.display_name,
+              score: item.high_score || 0,
+              rank: index + 1
+            })));
           }
         }
       } catch (err) {
-        // En cas d'erreur, bestScore reste null
+        console.error('Erreur lors de la récupération des données:', err);
       }
     };
-    fetchBestScore();
+
+    fetchUserData();
   }, []);
+
+  // Rendu du modal des disclaimers
+  const renderDisclaimerModal = () => (
+    <Modal
+      transparent
+      visible={showDisclaimer}
+      animationType="fade"
+      onRequestClose={() => setShowDisclaimer(false)}
+    >
+      <View style={styles.modalOverlay}>
+        <View style={styles.disclaimerModal}>
+          <ScrollView contentContainerStyle={styles.disclaimerContent}>
+            <Text style={styles.disclaimerTitle}>Avertissement</Text>
+            <Text style={styles.disclaimerText}>
+              Malgré une grande attention portée à la vérification des dates, il est possible que quelques approximations ou erreurs subsistent. Ce jeu a vocation ludique et pédagogique.
+            </Text>
+
+            <Text style={styles.disclaimerTitle}>Illustrations générées par DALL·E</Text>
+            <Text style={styles.disclaimerText}>
+              Les images du jeu sont générées par DALL·E, ce qui peut entraîner des anachronismes ou des incohérences visuelles.
+            </Text>
+
+            <Text style={styles.disclaimerTitle}>Compte à rebours</Text>
+            <Text style={styles.disclaimerText}>
+              Pour chaque question, un compte à rebours de 20 secondes se déclenche afin de stimuler votre réactivité.
+            </Text>
+          </ScrollView>
+          <TouchableOpacity style={styles.closeModalButton} onPress={() => setShowDisclaimer(false)}>
+            <Text style={styles.closeModalText}>Fermer</Text>
+          </TouchableOpacity>
+        </View>
+      </View>
+    </Modal>
+  );
+
+  // Rendu du modal du tableau des scores
+  const renderScoreboardModal = () => (
+    <Modal
+      transparent
+      visible={showScoreboard}
+      animationType="fade"
+      onRequestClose={() => setShowScoreboard(false)}
+    >
+      <View style={styles.modalOverlay}>
+        <View style={styles.scoreboardModal}>
+          <Text style={styles.scoreboardTitle}>Tableau des scores</Text>
+          
+          {/* Onglets (simplifiés, juste pour montrer la structure) */}
+          <View style={styles.tabsContainer}>
+            <Text style={[styles.tabText, styles.activeTabText]}>Meilleurs scores</Text>
+          </View>
+          
+          {/* Liste des scores */}
+          <ScrollView style={styles.scoresListContainer}>
+            {allTimeScores.length > 0 ? 
+              allTimeScores.map((score, index) => (
+                <View key={index} style={styles.scoreRow}>
+                  <View style={styles.rankContainer}>
+                    <Text style={styles.rankText}>#{score.rank}</Text>
+                  </View>
+                  <Text style={styles.playerNameScore} numberOfLines={1}>
+                    {score.name}
+                  </Text>
+                  <Text style={styles.scoreValue}>{score.score.toLocaleString()}</Text>
+                </View>
+              )) : 
+              <Text style={styles.noScoresText}>Aucun score disponible</Text>
+            }
+          </ScrollView>
+          
+          <TouchableOpacity style={styles.closeModalButton} onPress={() => setShowScoreboard(false)}>
+            <Text style={styles.closeModalText}>Fermer</Text>
+          </TouchableOpacity>
+        </View>
+      </View>
+    </Modal>
+  );
 
   if (!fontsLoaded) {
     return null;
   }
+
+  // Tronquer le nom du joueur si nécessaire
+  const truncatedName = playerName.length > 15 
+    ? playerName.substring(0, 12) + '...' 
+    : playerName;
 
   return (
     <SafeAreaView style={styles.safeArea}>
@@ -269,28 +408,43 @@ export default function Vue1() {
         <ScrollView contentContainerStyle={styles.scrollContent}>
           <Animated.View style={[styles.content, { opacity: fadeAnim, transform: [{ translateY: slideAnim }] }]}>
             <Text style={styles.title}>Comment jouer ?</Text>
-            <Text style={styles.subtitle}>
-              Testez vos connaissances historiques en replaçant les événements dans leur contexte temporel.
-            </Text>
-
-            {/* Indication du compte à rebours */}
+            
+            {/* Compteur et info */}
             <View style={styles.countdownInfo}>
               <Ionicons name="time-outline" size={20} color={THEME.accent} />
               <Text style={styles.countdownText}>
-                Attention, un compte à rebours de 20 secondes se déclenche pour chaque question !
+                Compte à rebours de 20 secondes par question
               </Text>
             </View>
 
             <AnimatedTimeline />
 
-            {/* Section pour afficher le meilleur score du joueur au-dessus de l'icône d'info */}
-            <View style={styles.infoContainer}>
-              {bestScore !== null && (
-                <Text style={styles.bestScoreText}>Votre meilleur score: {bestScore}</Text>
-              )}
-              <TouchableOpacity onPress={() => setShowDisclaimer(true)} style={styles.infoButton}>
-                <Ionicons name="information-circle-outline" size={28} color={THEME.accent} />
-              </TouchableOpacity>
+            {/* Section avec le nom du joueur et les boutons d'action */}
+            <View style={styles.actionsContainer}>
+              {/* Nom du joueur */}
+              <View style={styles.playerContainer}>
+                <Ionicons name="person" size={20} color={THEME.accent} />
+                <Text style={styles.playerName}>Bonjour, {truncatedName}</Text>
+              </View>
+              
+              {/* Boutons d'action */}
+              <View style={styles.actionButtons}>
+                <TouchableOpacity 
+                  style={styles.actionButton} 
+                  onPress={() => setShowScoreboard(true)}
+                >
+                  <Ionicons name="trophy-outline" size={24} color={THEME.accent} />
+                  <Text style={styles.actionButtonText}>Scores</Text>
+                </TouchableOpacity>
+                
+                <TouchableOpacity 
+                  style={styles.actionButton} 
+                  onPress={() => setShowDisclaimer(true)}
+                >
+                  <Ionicons name="information-circle-outline" size={24} color={THEME.accent} />
+                  <Text style={styles.actionButtonText}>Info</Text>
+                </TouchableOpacity>
+              </View>
             </View>
           </Animated.View>
 
@@ -312,37 +466,9 @@ export default function Vue1() {
         </ScrollView>
       </LinearGradient>
 
-      {/* Modal Disclaimers */}
-      <Modal
-        transparent
-        visible={showDisclaimer}
-        animationType="fade"
-        onRequestClose={() => setShowDisclaimer(false)}
-      >
-        <View style={styles.modalOverlay}>
-          <View style={styles.disclaimerModal}>
-            <ScrollView contentContainerStyle={styles.disclaimerContent}>
-              <Text style={styles.disclaimerTitle}>Avertissement</Text>
-              <Text style={styles.disclaimerText}>
-                Malgré une grande attention portée à la vérification des dates, il est possible que quelques approximations ou erreurs subsistent. Ce jeu a vocation ludique et pédagogique et ne doit pas être considéré comme une source officielle d’informations historiques.
-              </Text>
-
-              <Text style={styles.disclaimerTitle}>Illustrations générées par DALL·E</Text>
-              <Text style={styles.disclaimerText}>
-                Les images du jeu sont générées par DALL·E, ce qui peut entraîner des anachronismes ou des incohérences visuelles. Nous remercions DALL·E pour cette technologie innovante.
-              </Text>
-
-              <Text style={styles.disclaimerTitle}>Compte à rebours</Text>
-              <Text style={styles.disclaimerText}>
-                Pour chaque question, un compte à rebours de 20 secondes se déclenche afin de stimuler votre réactivité. Veillez à répondre dans les délais pour maximiser votre score.
-              </Text>
-            </ScrollView>
-            <TouchableOpacity style={styles.closeDisclaimerButton} onPress={() => setShowDisclaimer(false)}>
-              <Text style={styles.closeDisclaimerText}>Fermer</Text>
-            </TouchableOpacity>
-          </View>
-        </View>
-      </Modal>
+      {/* Modals */}
+      {renderDisclaimerModal()}
+      {renderScoreboardModal()}
     </SafeAreaView>
   );
 }
@@ -358,8 +484,8 @@ const styles = StyleSheet.create({
   },
   scrollContent: {
     paddingHorizontal: 20,
-    // Réduction du paddingBottom pour que le bouton apparaisse un peu plus haut
     paddingBottom: 20,
+    flexGrow: 1,
   },
   header: {
     flexDirection: 'row',
@@ -382,20 +508,15 @@ const styles = StyleSheet.create({
     textShadowOffset: { width: 0, height: 2 },
     textShadowRadius: 4,
   },
-  subtitle: {
-    fontSize: 16,
-    fontFamily: 'Montserrat-Regular',
-    color: THEME.text,
-    textAlign: 'center',
-    opacity: 0.8,
-    marginBottom: 40,
-    paddingHorizontal: 10,
-  },
   countdownInfo: {
     flexDirection: 'row',
     alignItems: 'center',
     justifyContent: 'center',
     marginBottom: 20,
+    backgroundColor: `${THEME.accent}15`,
+    paddingVertical: 8,
+    paddingHorizontal: 12,
+    borderRadius: 15,
   },
   countdownText: {
     color: THEME.text,
@@ -462,35 +583,55 @@ const styles = StyleSheet.create({
     fontFamily: 'Montserrat-Bold',
     marginHorizontal: 5,
   },
-
-  // Zone info: meilleur score du joueur affiché au-dessus de l'icône d'info
-  infoContainer: {
-    flexDirection: 'column',
-    alignItems: 'center',
-    justifyContent: 'center',
-    // On réduit un peu le marginTop global et on conserve un marginBottom
+  
+  // Conteneur pour le nom du joueur et les boutons d'action
+  actionsContainer: {
     marginTop: 10,
     marginBottom: 20,
-  },
-  // On augmente l'espace entre le texte du score et l'icône d'info
-  bestScoreText: {
-    marginBottom: 15,
-    fontFamily: 'Montserrat-Bold',
-    color: THEME.accent,
-    fontSize: 16,
-  },
-  infoButton: {
-    width: 40,
-    height: 40,
-    borderRadius: 20,
+    paddingVertical: 12,
+    paddingHorizontal: 15,
+    backgroundColor: `${THEME.accent}10`,
+    borderRadius: 15,
     borderWidth: 1,
-    borderColor: THEME.accent,
-    justifyContent: 'center',
+    borderColor: `${THEME.accent}30`,
+  },
+  
+  // Section pour le nom du joueur
+  playerContainer: {
+    flexDirection: 'row',
     alignItems: 'center',
+    justifyContent: 'center',
+    marginBottom: 12,
+    paddingBottom: 10,
+    borderBottomWidth: 1,
+    borderBottomColor: `${THEME.accent}20`
+  },
+  playerName: {
+    fontFamily: 'Montserrat-Bold',
+    fontSize: 16,
+    color: THEME.text,
+    marginLeft: 8,
+  },
+  
+  // Section pour les boutons d'action (Scores et Info)
+  actionButtons: {
+    flexDirection: 'row',
+    justifyContent: 'space-around',
+    alignItems: 'center',
+  },
+  actionButton: {
+    flexDirection: 'column',
+    alignItems: 'center',
+    padding: 6,
+  },
+  actionButtonText: {
+    color: THEME.text,
+    fontSize: 12,
+    fontFamily: 'Montserrat-Medium',
+    marginTop: 4,
   },
 
   footer: {
-    // On diminue la marge top pour remonter le bouton
     marginTop: 10,
   },
   startButton: {
@@ -538,6 +679,8 @@ const styles = StyleSheet.create({
     fontSize: 16,
     fontFamily: 'Montserrat-Bold',
   },
+  
+  // Styles pour les modals (disclaimer et scoreboard)
   modalOverlay: {
     flex: 1,
     backgroundColor: 'rgba(0, 0, 0, 0.7)',
@@ -553,6 +696,7 @@ const styles = StyleSheet.create({
     padding: 20,
     borderWidth: 1,
     borderColor: THEME.accent,
+    maxHeight: '80%',
   },
   disclaimerContent: {
     paddingBottom: 20,
@@ -570,15 +714,93 @@ const styles = StyleSheet.create({
     marginBottom: 15,
     lineHeight: 20,
   },
-  closeDisclaimerButton: {
-    backgroundColor: THEME.button.secondary[0],
+  
+  // Modal du tableau des scores
+  scoreboardModal: {
+    width: '100%',
+    maxWidth: 400,
+    backgroundColor: THEME.background.medium,
+    borderRadius: 15,
+    padding: 20,
+    borderWidth: 1,
+    borderColor: THEME.accent,
+    maxHeight: '80%',
+  },
+  scoreboardTitle: {
+    fontFamily: 'Montserrat-Bold',
+    fontSize: 20,
+    color: THEME.accent,
+    marginBottom: 15,
+    textAlign: 'center',
+  },
+  tabsContainer: {
+    flexDirection: 'row',
+    justifyContent: 'center',
+    backgroundColor: 'rgba(255, 255, 255, 0.1)',
+    paddingVertical: 8,
+    borderRadius: 10,
+    marginBottom: 15,
+  },
+  tabText: {
+    fontSize: 14,
+    color: THEME.text,
+    fontFamily: 'Montserrat-Medium',
+  },
+  activeTabText: {
+    color: THEME.accent,
+    fontFamily: 'Montserrat-Bold',
+  },
+  scoresListContainer: {
+    maxHeight: 300,
+    marginBottom: 15,
+  },
+  scoreRow: {
+    flexDirection: 'row',
+    alignItems: 'center',
+    padding: 10,
+    borderRadius: 10,
+    backgroundColor: 'rgba(255, 255, 255, 0.05)',
+    marginBottom: 8,
+  },
+  rankContainer: {
+    width: 40,
+    alignItems: 'center',
+  },
+  rankText: {
+    fontSize: 16,
+    fontWeight: 'bold',
+    color: THEME.accent,
+  },
+  playerNameScore: {
+    flex: 1,
+    fontSize: 16,
+    color: THEME.text,
+    marginLeft: 10,
+  },
+  scoreValue: {
+    fontSize: 16,
+    fontWeight: 'bold',
+    color: THEME.accent,
+    marginLeft: 10,
+  },
+  noScoresText: {
+    color: THEME.text,
+    textAlign: 'center',
+    marginTop: 20,
+    fontFamily: 'Montserrat-Regular',
+  },
+  
+  // Bouton de fermeture pour les modals
+  closeModalButton: {
+    backgroundColor: THEME.accent,
     paddingVertical: 10,
     borderRadius: 10,
     alignItems: 'center',
+    marginTop: 5,
   },
-  closeDisclaimerText: {
+  closeModalText: {
     fontFamily: 'Montserrat-Bold',
     fontSize: 16,
-    color: THEME.text,
+    color: THEME.background.dark,
   },
 });

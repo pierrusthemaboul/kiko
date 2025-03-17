@@ -22,91 +22,56 @@ interface OverlayChoiceButtonsAProps {
   transitioning?: boolean;
 }
 
+/**
+ * Composant de boutons de choix simplifié - élimine les états complexes
+ * pour se concentrer sur la simplicité et répondre au problème d'affichage.
+ */
 const OverlayChoiceButtonsA: React.FC<OverlayChoiceButtonsAProps> = ({
   onChoice,
   isLevelPaused,
   isWaitingForCountdown = false,
   transitioning = false
 }) => {
-  // États
-  const [buttonClicked, setButtonClicked] = useState(false);
-  const [justAnswered, setJustAnswered] = useState(false);
+  // États simples
   const [pressedButton, setPressedButton] = useState<'avant' | 'après' | null>(null);
   
   // Animations
-  const fadeAnim = useRef(new Animated.Value(1)).current;
+  const fadeAnim = useRef(new Animated.Value(0)).current;
   const leftButtonScale = useRef(new Animated.Value(1)).current;
   const rightButtonScale = useRef(new Animated.Value(1)).current;
   const leftButtonRotate = useRef(new Animated.Value(0)).current;
   const rightButtonRotate = useRef(new Animated.Value(0)).current;
   const pulseAnim = useRef(new Animated.Value(1)).current;
 
-  // Gérer le clic sur un bouton
-  const handlePress = (choice: 'avant' | 'après') => {
-    if (!isLevelPaused && !transitioning && !isWaitingForCountdown && !buttonClicked && !justAnswered) {
-      setPressedButton(choice);
-      setButtonClicked(true);
-      setJustAnswered(true);
-      
-      // Animation de pression
-      Animated.sequence([
-        Animated.parallel([
-          Animated.spring(choice === 'avant' ? leftButtonScale : rightButtonScale, {
-            toValue: 0.9,
-            useNativeDriver: true,
-            friction: 3,
-          }),
-          Animated.timing(choice === 'avant' ? leftButtonRotate : rightButtonRotate, {
-            toValue: choice === 'avant' ? -1 : 1,
-            duration: 150,
-            useNativeDriver: true,
-          })
-        ]),
-        Animated.parallel([
-          Animated.spring(choice === 'avant' ? leftButtonScale : rightButtonScale, {
-            toValue: 1,
-            useNativeDriver: true,
-            friction: 5,
-          }),
-          Animated.timing(choice === 'avant' ? leftButtonRotate : rightButtonRotate, {
-            toValue: 0,
-            duration: 150,
-            useNativeDriver: true,
-          })
-        ])
-      ]).start();
-
-      // Déclencher l'action
-      onChoice(choice);
-
-      // Prolonger le verrou justAnswered
-      setTimeout(() => {
-        setJustAnswered(false);
-        setPressedButton(null);
-      }, 750);
-    }
-  };
-
-  // Animation de pulsation continue
+  // Animation de fade-in dès le montage
   useEffect(() => {
+    Animated.timing(fadeAnim, {
+      toValue: 1,
+      duration: 200,
+      useNativeDriver: true,
+    }).start();
+
+    // Animation de pulsation
     startPulseAnimation();
+
     return () => {
       pulseAnim.stopAnimation();
     };
   }, []);
 
+  // Animation de pulsation
   const startPulseAnimation = () => {
     Animated.loop(
       Animated.sequence([
         Animated.timing(pulseAnim, {
           toValue: 1.05,
-          duration: 1000,
+          duration: 1200,
           easing: Easing.inOut(Easing.ease),
           useNativeDriver: true,
         }),
         Animated.timing(pulseAnim, {
           toValue: 1,
-          duration: 1000,
+          duration: 1200,
           easing: Easing.inOut(Easing.ease),
           useNativeDriver: true,
         }),
@@ -114,31 +79,41 @@ const OverlayChoiceButtonsA: React.FC<OverlayChoiceButtonsAProps> = ({
     ).start();
   };
 
-  // Reset buttonClicked après 500ms
-  useEffect(() => {
-    if (buttonClicked) {
-      const timer = setTimeout(() => {
-        setButtonClicked(false);
-      }, 500);
-      return () => clearTimeout(timer);
-    }
-  }, [buttonClicked]);
+  // Gérer le clic sur un bouton
+  const handlePress = (choice: 'avant' | 'après') => {
+    setPressedButton(choice);
+    
+    // Animation de pression
+    Animated.sequence([
+      Animated.parallel([
+        Animated.spring(choice === 'avant' ? leftButtonScale : rightButtonScale, {
+          toValue: 0.9,
+          useNativeDriver: true,
+          friction: 3,
+        }),
+        Animated.timing(choice === 'avant' ? leftButtonRotate : rightButtonRotate, {
+          toValue: choice === 'avant' ? -1 : 1,
+          duration: 150,
+          useNativeDriver: true,
+        })
+      ]),
+      Animated.parallel([
+        Animated.timing(fadeAnim, {
+          toValue: 0,
+          duration: 150,
+          useNativeDriver: true,
+        }),
+        Animated.spring(choice === 'avant' ? leftButtonScale : rightButtonScale, {
+          toValue: 1,
+          useNativeDriver: true,
+          friction: 5,
+        }),
+      ])
+    ]).start();
 
-  // Fade OUT si l'une des conditions est vraie
-  useEffect(() => {
-    const shouldFadeOut = isLevelPaused || isWaitingForCountdown || transitioning || buttonClicked || justAnswered;
-
-    Animated.timing(fadeAnim, {
-      toValue: shouldFadeOut ? 0 : 1,
-      duration: 300,
-      useNativeDriver: true,
-    }).start();
-  }, [isLevelPaused, isWaitingForCountdown, transitioning, buttonClicked, justAnswered]);
-
-  const pointerEvents =
-    !isLevelPaused && !isWaitingForCountdown && !transitioning && !buttonClicked && !justAnswered
-      ? 'auto'
-      : 'none';
+    // Appeler la fonction parent avec le choix
+    onChoice(choice);
+  };
 
   // Transformations pour la rotation des boutons
   const leftRotate = leftButtonRotate.interpolate({
@@ -152,7 +127,10 @@ const OverlayChoiceButtonsA: React.FC<OverlayChoiceButtonsAProps> = ({
   });
 
   return (
-    <Animated.View style={[styles.container, { opacity: fadeAnim }]} pointerEvents={pointerEvents}>
+    <Animated.View 
+      style={[styles.container, { opacity: fadeAnim }]} 
+      pointerEvents="auto"
+    >
       <Animated.View 
         style={[
           styles.buttonWrapper,

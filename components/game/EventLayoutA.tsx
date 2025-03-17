@@ -38,42 +38,69 @@ const EventLayoutA: React.FC<EventLayoutAProps> = ({
   level,
   isLevelPaused,
 }) => {
-  // 1) États locaux
+  // 1) États de base
   const [transitioning, setTransitioning] = useState(false);
-  const [hasNewEventArrived, setHasNewEventArrived] = useState(false);
   const [isWaitingForCountdown, setIsWaitingForCountdown] = useState(false);
+  const [showButtons, setShowButtons] = useState(true);
+  const [uniqueKey, setUniqueKey] = useState(`event-${Date.now()}`);
 
   // 2) Cartes actuelles
   const [currentTop, setCurrentTop] = useState(previousEvent);
   const [currentBottom, setCurrentBottom] = useState(newEvent);
-
+  
   // 3) Animations
   const topCardTranslateY = useRef(new Animated.Value(0)).current;
   const bottomCardTranslateY = useRef(new Animated.Value(0)).current;
   const topCardScale = useRef(new Animated.Value(1)).current;
 
   // ─────────────────────────────────────────────────────────────────────
-  // 4) Sur changement de newEvent => lancer l'animation
+  // Effet pour suivre l'événement actuel
   // ─────────────────────────────────────────────────────────────────────
   useEffect(() => {
-    if (!newEvent) {
-      return;
-    }
-
+    if (!newEvent) return;
+    
+    // Si c'est un nouvel événement, lancer l'animation
     if (!currentBottom || newEvent.id !== currentBottom.id) {
-      setHasNewEventArrived(true);
+      // Masquer les boutons pendant la transition
+      setShowButtons(false);
+      
+      // Déclencher l'animation
       animateCards();
     }
-  }, [newEvent]);
+  }, [newEvent?.id]);
 
   // ─────────────────────────────────────────────────────────────────────
-  // 5) Fonction d'animation des cartes (si un nouvel event est arrivé)
+  // Effet pour réafficher les boutons quand l'image est chargée
+  // ─────────────────────────────────────────────────────────────────────
+  useEffect(() => {
+    if (isImageLoaded && !showDate && !isLevelPaused) {
+      // Générer une nouvelle clé unique pour le remontage
+      setUniqueKey(`buttons-${newEvent?.id || currentBottom?.id}-${Date.now()}`);
+      
+      // Afficher les boutons avec un léger délai
+      const timer = setTimeout(() => {
+        setShowButtons(true);
+      }, 100);
+      
+      return () => clearTimeout(timer);
+    }
+  }, [isImageLoaded, showDate, isLevelPaused, newEvent?.id, currentBottom?.id]);
+
+  // ─────────────────────────────────────────────────────────────────────
+  // Effet pour masquer les boutons quand on montre la date
+  // ─────────────────────────────────────────────────────────────────────
+  useEffect(() => {
+    if (showDate) {
+      setShowButtons(false);
+    }
+  }, [showDate]);
+
+  // ─────────────────────────────────────────────────────────────────────
+  // Animation des cartes
   // ─────────────────────────────────────────────────────────────────────
   const animateCards = () => {
-    if (!transitioning) {
-      setTransitioning(true);
-    }
-
+    setTransitioning(true);
+    
     const moveDistance = -(height * 0.42);
 
     Animated.parallel([
@@ -93,41 +120,34 @@ const EventLayoutA: React.FC<EventLayoutAProps> = ({
         useNativeDriver: true,
       }),
     ]).start(() => {
-      // On swap : la carte du haut devient la carte du bas, etc.
+      // Swap cards
       setCurrentTop(currentBottom);
       setCurrentBottom(newEvent);
 
-      // Reset des valeurs
+      // Reset animation values
       topCardTranslateY.setValue(0);
       bottomCardTranslateY.setValue(0);
       topCardScale.setValue(1);
 
-      // Fin de transition
+      // End transition
       setTransitioning(false);
-      setHasNewEventArrived(false);
     });
   };
 
   // ─────────────────────────────────────────────────────────────────────
-  // 6) handleChoice => clic sur "avant" / "après"
+  // Gestionnaire de choix utilisateur
   // ─────────────────────────────────────────────────────────────────────
   const handleChoice = (choice: string) => {
-    // On force transitioning = true
-    setTransitioning(true);
-    setHasNewEventArrived(false);
-
+    // Masquer les boutons dès le clic
+    setShowButtons(false);
+    setIsWaitingForCountdown(true);
+    
+    // Propager le choix au parent
     onChoice(choice);
-
-    // Après 600ms, si hasNewEventArrived est resté false => aucun newEvent
-    setTimeout(() => {
-      if (!hasNewEventArrived) {
-        setTransitioning(false);
-      }
-    }, 600);
   };
 
   // ─────────────────────────────────────────────────────────────────────
-  // 7) Rendu
+  // Rendu
   // ─────────────────────────────────────────────────────────────────────
   return (
     <View style={styles.container}>
@@ -173,12 +193,15 @@ const EventLayoutA: React.FC<EventLayoutAProps> = ({
           />
 
           <View style={styles.buttonsContainer}>
-            <OverlayChoiceButtonsA
-              onChoice={handleChoice}
-              isLevelPaused={isLevelPaused}
-              isWaitingForCountdown={isWaitingForCountdown}
-              transitioning={transitioning}
-            />
+            {showButtons && !showDate && isImageLoaded && !isLevelPaused && (
+              <OverlayChoiceButtonsA
+                key={uniqueKey}
+                onChoice={handleChoice}
+                isLevelPaused={false}
+                isWaitingForCountdown={false}
+                transitioning={false}
+              />
+            )}
           </View>
         </View>
       </Animated.View>

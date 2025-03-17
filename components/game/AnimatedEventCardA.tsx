@@ -20,7 +20,6 @@
 import React, { useEffect, useRef, useState } from 'react';
 import { View, Image, Text, StyleSheet, Animated, Dimensions } from 'react-native';
 import { LinearGradient } from 'expo-linear-gradient';
-import { colors } from '../styles/colors';
 
 // Obtenir les dimensions de l'écran pour les calculs de style adaptatif
 const { width: SCREEN_WIDTH, height: SCREEN_HEIGHT } = Dimensions.get('window');
@@ -55,8 +54,8 @@ const AnimatedEventCardA: React.FC<AnimatedEventCardAProps> = ({
   const fadeAnim = useRef(new Animated.Value(0)).current;
   const [isTitleLong, setIsTitleLong] = useState(false);
   
-  // Nouvel état pour la taille adaptative du texte (uniquement pour la carte du bas)
-  const [titleFontSize, setTitleFontSize] = useState(position === 'bottom' ? 24 : 24);
+  // État pour adapter la taille du texte en fonction de la longueur du titre
+  const [titleFontSize, setTitleFontSize] = useState(position === 'top' ? 24 : 22);
   
   // 1.E.2. Effet pour l'animation de la date
   useEffect(() => {
@@ -98,35 +97,37 @@ const AnimatedEventCardA: React.FC<AnimatedEventCardAProps> = ({
     }
   }, [position]);
 
-  // 1.E.3. Vérification de la longueur du titre
+  // 1.E.3. Vérification et ajustement pour la longueur du titre
   useEffect(() => {
     if (event?.titre) {
-      // Un titre est considéré long s'il dépasse 40 caractères ou contient plus de 4 mots
-      setIsTitleLong(
-        event.titre.length > 40 || 
-        event.titre.split(' ').length > 4
-      );
+      const titleLength = event.titre.length;
+      const wordCount = event.titre.split(' ').length;
       
-      // Ajustement dynamique de la taille de police pour la carte du bas
-      if (position === 'bottom') {
-        const titleLength = event.titre.length;
-        const wordCount = event.titre.split(' ').length;
-        
-        let newSize = 24; // Taille de base pour le bas
-        
-        if (titleLength > 30 || wordCount > 4) {
-          newSize = 22;
-        }
-        
-        if (titleLength > 50 || wordCount > 6) {
-          newSize = 20;
-        }
-        
+      // Déterminer si c'est un titre long
+      setIsTitleLong(titleLength > 40 || wordCount > 4);
+      
+      // Ajuster la taille de police en fonction de la longueur et position
+      if (position === 'top') {
         if (titleLength > 70 || wordCount > 8) {
-          newSize = 18;
+          setTitleFontSize(18);
+        } else if (titleLength > 50 || wordCount > 6) {
+          setTitleFontSize(20);
+        } else if (titleLength > 30 || wordCount > 4) {
+          setTitleFontSize(22);
+        } else {
+          setTitleFontSize(24);
         }
-        
-        setTitleFontSize(newSize);
+      } else {
+        // Pour la carte du bas
+        if (titleLength > 70 || wordCount > 8) {
+          setTitleFontSize(16);
+        } else if (titleLength > 50 || wordCount > 6) {
+          setTitleFontSize(18);
+        } else if (titleLength > 30 || wordCount > 4) {
+          setTitleFontSize(20);
+        } else {
+          setTitleFontSize(22);
+        }
       }
     }
   }, [event?.titre, position]);
@@ -156,7 +157,53 @@ const AnimatedEventCardA: React.FC<AnimatedEventCardAProps> = ({
     }
   };
 
-  // 1.E.5. Rendu de la date
+  // 1.E.5. Rendu du titre avec ou sans effet d'ombre
+  const renderTitle = () => {
+    // Titre pour la carte du haut
+    if (position === 'top') {
+      return (
+        <View style={[
+          styles.titleContainer,
+          styles.titleContainerTop,
+          isTitleLong && styles.titleContainerLong,
+          showDate && styles.titleContainerWithDate
+        ]}>
+          <Text style={[
+            styles.title,
+            styles.titleTop,
+            { fontSize: titleFontSize }
+          ]} numberOfLines={3}>
+            {event?.titre}
+          </Text>
+        </View>
+      );
+    } 
+    
+    // Titre pour la carte du bas avec effet d'ombre amélioré
+    return (
+      <View style={styles.bottomTitleWrapper}>
+        <Text 
+          style={[
+            styles.titleBottom,
+            { 
+              fontSize: titleFontSize,
+              color: 'white',
+              fontWeight: 'bold',
+              textAlign: 'center',
+              textShadowColor: 'rgba(0, 0, 0, 0.8)',
+              textShadowOffset: { width: 1, height: 1 },
+              textShadowRadius: 3
+            }
+          ]} 
+          numberOfLines={3}
+        >
+          {event?.titre}
+        </Text>
+      </View>
+    );
+  };
+
+  // 1.E.6. Rendu de l'overlay de date
   const renderDate = () => {
     if (!showDate || !event?.date) return null;
 
@@ -169,14 +216,7 @@ const AnimatedEventCardA: React.FC<AnimatedEventCardAProps> = ({
     ];
 
     return (
-      <Animated.View 
-        style={[
-          dateOverlayStyle,
-          { 
-            opacity: fadeAnim,
-          }
-        ]}
-      >
+      <Animated.View style={[dateOverlayStyle, { opacity: fadeAnim }]}>
         {position === 'top' && (
           <View style={styles.separator} />
         )}
@@ -193,7 +233,7 @@ const AnimatedEventCardA: React.FC<AnimatedEventCardAProps> = ({
     );
   };
 
-  // 1.E.6. Rendu principal du composant
+  // 1.E.7. Rendu principal du composant
   return (
     <View style={styles.container}>
       <View style={styles.cardFrame}>
@@ -206,59 +246,25 @@ const AnimatedEventCardA: React.FC<AnimatedEventCardAProps> = ({
             resizeMode="cover"
           />
           
-          {/* Dégradé pour le texte */}
+          {/* Dégradé pour améliorer la lisibilité du texte */}
           <LinearGradient
-            colors={position === 'bottom' ? 
-              ['transparent', 'transparent', 'rgba(0,0,0,0.5)', 'rgba(0,0,0,0.7)'] : 
-              ['transparent', 'rgba(0,0,0,0.9)']}
-            locations={position === 'bottom' ? [0, 0.6, 0.8, 1] : [0.5, 1]}
+            colors={position === 'top' ? 
+              ['transparent', 'rgba(0,0,0,0.7)', 'rgba(0,0,0,0.9)'] : 
+              ['transparent', 'transparent', 'rgba(0,0,0,0.6)', 'rgba(0,0,0,0.8)']
+            }
+            locations={position === 'top' ? [0.4, 0.7, 1] : [0, 0.6, 0.8, 1]}
             style={[
               styles.gradient,
-              position === 'bottom' ? styles.gradientBottom : styles.gradientTop,
-              isTitleLong && styles.gradientLong
+              position === 'top' ? styles.gradientTop : styles.gradientBottom
             ]}
           >
-            {position === 'top' && (
-              <View style={[
-                styles.titleContainer,
-                styles.titleContainerTop,
-                isTitleLong && styles.titleContainerLong,
-                showDate && styles.titleContainerWithDate
-              ]}>
-                <Text style={[
-                  styles.title,
-                  styles.titleTop,
-                  isTitleLong && styles.titleTopLong
-                ]} numberOfLines={3}>
-                  {event?.titre}
-                </Text>
-              </View>
-            )}
+            {position === 'top' && renderTitle()}
           </LinearGradient>
-
-          {/* Titre pour l'événement du bas - AMÉLIORÉ */}
-          {position === 'bottom' && (
-            <View style={styles.bottomTitleWrapper}>
-              <View style={styles.textOutlineContainer}>
-                {/* Effet de contour pour le titre du bas - AJUSTÉ POUR TOUS LES TITRES */}
-                <Text style={[styles.titleOutline, { top: -0.3, left: -0.3, fontSize: titleFontSize }]} numberOfLines={3}>{event?.titre}</Text>
-                <Text style={[styles.titleOutline, { top: -0.3, left: 0.3, fontSize: titleFontSize }]} numberOfLines={3}>{event?.titre}</Text>
-                <Text style={[styles.titleOutline, { top: 0.3, left: -0.3, fontSize: titleFontSize }]} numberOfLines={3}>{event?.titre}</Text>
-                <Text style={[styles.titleOutline, { top: 0.3, left: 0.3, fontSize: titleFontSize }]} numberOfLines={3}>{event?.titre}</Text>
-                
-                {/* Texte principal */}
-                <Text style={[
-                  styles.title,
-                  styles.titleBottom,
-                  { fontSize: titleFontSize }
-                ]} numberOfLines={3}>
-                  {event?.titre}
-                </Text>
-              </View>
-            </View>
-          )}
-
-          {/* Rendu de la date */}
+          
+          {/* Titre pour la carte du bas (placé au-dessus du gradient pour un meilleur contrôle) */}
+          {position === 'bottom' && renderTitle()}
+          
+          {/* Overlay de date */}
           {renderDate()}
         </View>
       </View>
@@ -307,59 +313,26 @@ const styles = StyleSheet.create({
   },
   gradientTop: {
     bottom: 0,
-    height: '50%',
+    height: '60%', // Augmenté pour couvrir plus d'espace
   },
   gradientBottom: {
     bottom: 0,
-    height: '40%', // Limité à la partie basse pour les boutons
-  },
-  gradientLong: {
-    height: '45%', // Un peu plus haut pour les titres longs
+    height: '50%', // Augmenté pour la carte du bas
   },
   
   // Styles pour le conteneur de titre
   titleContainer: {
-    padding: 10,
+    padding: 15,
     justifyContent: 'flex-end',
   },
   titleContainerTop: {
-    paddingBottom: 15,
-  },
-  titleContainerBottom: {
-    paddingBottom: 80, // Augmenté pour éviter le chevauchement avec les boutons
-    paddingTop: 5,     // Réduit le padding en haut pour garder plus de visibilité sur l'image
+    paddingBottom: 20,
   },
   titleContainerLong: {
     paddingBottom: 20,
   },
   titleContainerWithDate: {
-    paddingBottom: 80, // Augmenté pour éviter le chevauchement avec la date
-  },
-  
-  // Wrapper pour le titre du bas - position juste au-dessus des boutons
-  bottomTitleWrapper: {
-    position: 'absolute',
-    bottom: 90,         // Augmenté pour plus d'espace entre le titre et les boutons
-    left: 0,
-    right: 0,
-    padding: 10,
-    zIndex: 100,        // Pour être au-dessus de tout
-  },
-  
-  // Container pour l'effet d'outline du texte
-  textOutlineContainer: {
-    position: 'relative',
-    alignItems: 'center',
-    justifyContent: 'center',
-  },
-  
-  // Texte pour l'effet de contour
-  titleOutline: {
-    position: 'absolute',
-    fontWeight: 'bold',
-    color: 'rgba(30, 30, 30, 0.9)',
-    textAlign: 'center',
-    width: '100%',
+    paddingBottom: 80, // Plus grand quand la date est affichée
   },
   
   // Styles pour le titre
@@ -372,21 +345,28 @@ const styles = StyleSheet.create({
     textShadowRadius: 3,
   },
   titleTop: {
-    fontSize: 24,
     letterSpacing: 0.5,
   },
+  
+  // Styles pour le wrapper du titre du bas
+  bottomTitleWrapper: {
+    position: 'absolute',
+    bottom: 90,
+    left: 20,
+    right: 20,
+    zIndex: 100,
+    padding: 10,
+    alignItems: 'center',
+    justifyContent: 'center',
+  },
+  
+  // Styles pour le titre du bas
   titleBottom: {
-    fontSize: 20,
-    textShadowColor: 'rgba(0, 0, 0, 0.9)',
-    textShadowOffset: { width: 0.6, height: 0.6 },
-    textShadowRadius: 3.5,
+    fontWeight: 'bold',
+    color: 'white',
+    textAlign: 'center',
+    fontSize: 22,
     letterSpacing: 0.3,
-  },
-  titleTopLong: {
-    fontSize: 20, // Taille réduite pour les titres longs
-  },
-  titleBottomLong: {
-    fontSize: 18, // Taille encore plus réduite pour les titres longs sur la carte du bas
   },
   
   // Styles pour l'overlay de date
@@ -395,17 +375,15 @@ const styles = StyleSheet.create({
     bottom: 0,
     left: 0,
     right: 0,
-    height: 70,
     justifyContent: 'center',
     alignItems: 'center',
     backgroundColor: 'rgba(0, 0, 0, 0.7)',
   },
   topDateOverlay: {
-    backgroundColor: 'rgba(0, 0, 0, 0.7)', // Renforcé pour meilleure lisibilité
-    height: 80, // Un peu plus de hauteur pour l'événement du haut aussi
+    height: 80,
   },
   bottomDateOverlay: {
-    height: 80, // Plus haut pour la carte du bas
+    height: 80,
   },
   correctOverlay: {
     backgroundColor: 'rgba(39, 174, 96, 0.8)',
@@ -419,15 +397,16 @@ const styles = StyleSheet.create({
     color: 'white',
     fontWeight: 'bold',
     textShadowColor: 'rgba(0, 0, 0, 0.75)',
-    textShadowOffset: { width: 2, height: 2 },
-    textShadowRadius: 4,
+    textShadowOffset: { width: 1, height: 1 },
+    textShadowRadius: 3,
   },
   topDateText: {
     fontSize: 48,
   },
   bottomDateText: {
-    fontSize: 42, // Légèrement plus petit pour la carte du bas
+    fontSize: 42,
   },
+  
   // Séparateur visuel
   separator: {
     height: 2,
