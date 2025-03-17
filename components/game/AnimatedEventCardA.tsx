@@ -55,6 +55,9 @@ const AnimatedEventCardA: React.FC<AnimatedEventCardAProps> = ({
   const fadeAnim = useRef(new Animated.Value(0)).current;
   const [isTitleLong, setIsTitleLong] = useState(false);
   
+  // Nouvel état pour la taille adaptative du texte (uniquement pour la carte du bas)
+  const [titleFontSize, setTitleFontSize] = useState(position === 'bottom' ? 24 : 24);
+  
   // 1.E.2. Effet pour l'animation de la date
   useEffect(() => {
     if (showDate) {
@@ -103,8 +106,30 @@ const AnimatedEventCardA: React.FC<AnimatedEventCardAProps> = ({
         event.titre.length > 40 || 
         event.titre.split(' ').length > 4
       );
+      
+      // Ajustement dynamique de la taille de police pour la carte du bas
+      if (position === 'bottom') {
+        const titleLength = event.titre.length;
+        const wordCount = event.titre.split(' ').length;
+        
+        let newSize = 24; // Taille de base pour le bas
+        
+        if (titleLength > 30 || wordCount > 4) {
+          newSize = 22;
+        }
+        
+        if (titleLength > 50 || wordCount > 6) {
+          newSize = 20;
+        }
+        
+        if (titleLength > 70 || wordCount > 8) {
+          newSize = 18;
+        }
+        
+        setTitleFontSize(newSize);
+      }
     }
-  }, [event?.titre]);
+  }, [event?.titre, position]);
 
   // 1.E.4. Fonction pour extraire l'année d'une date
   const getYearFromDate = (dateString: string): string => {
@@ -211,16 +236,25 @@ const AnimatedEventCardA: React.FC<AnimatedEventCardAProps> = ({
             )}
           </LinearGradient>
 
-          {/* Titre pour l'événement du bas */}
+          {/* Titre pour l'événement du bas - AMÉLIORÉ */}
           {position === 'bottom' && (
             <View style={styles.bottomTitleWrapper}>
-              <Text style={[
-                styles.title,
-                styles.titleBottom,
-                isTitleLong && styles.titleBottomLong
-              ]} numberOfLines={2}>
-                {event?.titre}
-              </Text>
+              <View style={styles.textOutlineContainer}>
+                {/* Effet de contour pour le titre du bas - AJUSTÉ POUR TOUS LES TITRES */}
+                <Text style={[styles.titleOutline, { top: -0.3, left: -0.3, fontSize: titleFontSize }]} numberOfLines={3}>{event?.titre}</Text>
+                <Text style={[styles.titleOutline, { top: -0.3, left: 0.3, fontSize: titleFontSize }]} numberOfLines={3}>{event?.titre}</Text>
+                <Text style={[styles.titleOutline, { top: 0.3, left: -0.3, fontSize: titleFontSize }]} numberOfLines={3}>{event?.titre}</Text>
+                <Text style={[styles.titleOutline, { top: 0.3, left: 0.3, fontSize: titleFontSize }]} numberOfLines={3}>{event?.titre}</Text>
+                
+                {/* Texte principal */}
+                <Text style={[
+                  styles.title,
+                  styles.titleBottom,
+                  { fontSize: titleFontSize }
+                ]} numberOfLines={3}>
+                  {event?.titre}
+                </Text>
+              </View>
             </View>
           )}
 
@@ -301,6 +335,7 @@ const styles = StyleSheet.create({
   titleContainerWithDate: {
     paddingBottom: 80, // Augmenté pour éviter le chevauchement avec la date
   },
+  
   // Wrapper pour le titre du bas - position juste au-dessus des boutons
   bottomTitleWrapper: {
     position: 'absolute',
@@ -309,6 +344,22 @@ const styles = StyleSheet.create({
     right: 0,
     padding: 10,
     zIndex: 100,        // Pour être au-dessus de tout
+  },
+  
+  // Container pour l'effet d'outline du texte
+  textOutlineContainer: {
+    position: 'relative',
+    alignItems: 'center',
+    justifyContent: 'center',
+  },
+  
+  // Texte pour l'effet de contour
+  titleOutline: {
+    position: 'absolute',
+    fontWeight: 'bold',
+    color: 'rgba(30, 30, 30, 0.9)',
+    textAlign: 'center',
+    width: '100%',
   },
   
   // Styles pour le titre
@@ -326,9 +377,10 @@ const styles = StyleSheet.create({
   },
   titleBottom: {
     fontSize: 20,
-    textShadowColor: 'rgba(0, 0, 0, 1)', // Ombre plus prononcée pour lisibilité
-    textShadowOffset: { width: 1, height: 1 },
-    textShadowRadius: 4,
+    textShadowColor: 'rgba(0, 0, 0, 0.9)',
+    textShadowOffset: { width: 0.6, height: 0.6 },
+    textShadowRadius: 3.5,
+    letterSpacing: 0.3,
   },
   titleTopLong: {
     fontSize: 20, // Taille réduite pour les titres longs
