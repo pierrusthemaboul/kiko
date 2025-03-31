@@ -134,7 +134,7 @@ export function useGameLogicA(initialEvent: string) {
   const [error, setError] = useState<string | null>(null);
   const [isGameOver, setIsGameOver] = useState(false);
 
-  /* 1.E.7. (Chargement d’image) */
+  /* 1.E.7. (Chargement d'image) */
   const [isImageLoaded, setIsImageLoaded] = useState(false);
 
   /* 1.E.8. (Affichage de dates, correctitude) */
@@ -197,23 +197,49 @@ export function useGameLogicA(initialEvent: string) {
 
   /* ******* INTÉGRATION DE LA PUBLICITÉ ******* */
   const [adLoaded, setAdLoaded] = useState(false);
+  const [pendingAdDisplay, setPendingAdDisplay] = useState<"interstitial" | null>(null);
 
+  // Gestionnaire d'événements amélioré pour les publicités
   useEffect(() => {
-    const adLoadedListener = interstitialAd.addAdEventListener(AdEventType.LOADED, () => {
-      setAdLoaded(true);
-    });
-    const adErrorListener = interstitialAd.addAdEventListener(AdEventType.ERROR, (error) => {
-      // Gestion de l'erreur de l'annonce
-    });
+    const unsubscribeLoaded = interstitialAd.addAdEventListener(
+      AdEventType.LOADED, 
+      () => {
+        console.log('Interstitial ad loaded successfully');
+        setAdLoaded(true);
+      }
+    );
+    
+    const unsubscribeFailed = interstitialAd.addAdEventListener(
+      AdEventType.ERROR,
+      error => {
+        console.error('Interstitial ad failed to load', error);
+        setAdLoaded(false);
+        // Recharger la publicité en cas d'erreur après un court délai
+        setTimeout(() => {
+          interstitialAd.load();
+        }, 5000);
+      }
+    );
+    
+    const unsubscribeClosed = interstitialAd.addAdEventListener(
+      AdEventType.CLOSED,
+      () => {
+        console.log('Interstitial ad closed');
+        // Rechargez une nouvelle pub quand l'utilisateur ferme la pub actuelle
+        interstitialAd.load();
+        setAdLoaded(false);
+      }
+    );
+
+    // Chargement initial
     interstitialAd.load();
 
     return () => {
-      adLoadedListener();
-      adErrorListener();
+      unsubscribeLoaded();
+      unsubscribeFailed();
+      unsubscribeClosed();
     };
   }, []);
-
-  const [pendingAdDisplay, setPendingAdDisplay] = useState<"interstitial" | null>(null);
   /* ******* FIN INTÉGRATION PUBLICITÉ ******* */
 
   /* Effet pour appliquer un malus si l'utilisateur quitte l'application */
@@ -334,7 +360,7 @@ export function useGameLogicA(initialEvent: string) {
       setAllEvents(validEvents);
 
       if (validEvents.length < 2) {
-        throw new Error("Pas assez d'événements disponibles");
+        throw new Error("Pas assez d\'événements disponibles");
       }
 
       // --- Sélection des événements de niveau 1 uniquement ---
@@ -363,7 +389,7 @@ export function useGameLogicA(initialEvent: string) {
       );
 
       if (validSecondEvents.length === 0) {
-        throw new Error('Aucun second événement ne répond à l’écart minimal de 500 ans');
+        throw new Error('Aucun second événement ne répond à l\'écart minimal de 500 ans');
       }
 
       // Sélection du second événement dans ce sous-ensemble
@@ -408,6 +434,7 @@ export function useGameLogicA(initialEvent: string) {
         }
       }
     } catch (error) {
+      // Gestion silencieuse des erreurs
     }
   };
 
@@ -468,6 +495,7 @@ export function useGameLogicA(initialEvent: string) {
         }
       ]);
     } catch (err) {
+      // Gestion silencieuse des erreurs
     }
   }, [getPeriod]);
 
@@ -811,7 +839,7 @@ export function useGameLogicA(initialEvent: string) {
           3.0
         );
 
-        const phaseMultiplier = 1; // Non utilisé pour l’instant
+        const phaseMultiplier = 1; // Non utilisé pour l'instant
 
         const calculatedPoints = Math.floor(
           basePoints * timeMultiplier * streakMultiplier * phaseMultiplier
@@ -841,6 +869,7 @@ export function useGameLogicA(initialEvent: string) {
         };
       });
     } catch (error) {
+      // Gestion silencieuse des erreurs
     }
   }, []);
 
@@ -990,10 +1019,8 @@ export function useGameLogicA(initialEvent: string) {
             playLevelUpSound();
 
             // INTÉGRATION PUBLICITÉ : Affichage de la pub après certains niveaux
-            if (adLoaded) {
-              if (prev.level === 6 || prev.level === 10) {
-                setPendingAdDisplay("interstitial");
-              }
+            if (prev.level === 1 || prev.level === 6) {
+              setPendingAdDisplay("interstitial");
             }
 
             // On check la reward (changement de level)
@@ -1089,7 +1116,6 @@ export function useGameLogicA(initialEvent: string) {
       progressAnim,
       user,
       playLevelUpSound,
-      adLoaded,
       finalizeCurrentLevelHistory
     ]
   );
@@ -1243,6 +1269,7 @@ export function useGameLogicA(initialEvent: string) {
       };
       await supabase.from('profiles').update(saveData).eq('id', authUser.id);
     } catch (error) {
+      // Gestion silencieuse des erreurs
     }
   }, [user.points, user.level, user.totalEventsCompleted, highScore]);
 
@@ -1273,7 +1300,7 @@ export function useGameLogicA(initialEvent: string) {
     setLeaderboardsReady(true);
   };
 
-  // 1.H.15. startLevel
+  // 1.H.15. startLevel - MODIFICATION IMPORTANTE ICI POUR LA GESTION DES PUBLICITÉS
   const startLevel = useCallback(() => {
     setShowLevelModal(false);
     setIsLevelPaused(false);
@@ -1281,9 +1308,21 @@ export function useGameLogicA(initialEvent: string) {
     setTimeLeft(20);
     setLevelCompletedEvents([]); // Réinitialisation du récapitulatif du niveau en cours
 
-    // Affichage de l'interstitial ad si en attente
+    // Affichage de l'interstitial ad si en attente - CODE CORRIGÉ
     if (pendingAdDisplay === "interstitial") {
-      interstitialAd.show();
+      if (interstitialAd.loaded) {
+        try {
+          console.log('Showing interstitial ad, it is loaded');
+          interstitialAd.show();
+        } catch (error) {
+          console.error('Error showing interstitial ad:', error);
+          // Recharger l'annonce en cas d'erreur
+          interstitialAd.load();
+        }
+      } else {
+        console.log('Interstitial ad not loaded, trying to load a new one');
+        interstitialAd.load();
+      }
       setPendingAdDisplay(null);
     }
 
@@ -1335,7 +1374,7 @@ export function useGameLogicA(initialEvent: string) {
     onImageLoad: handleImageLoad,
 
     levelCompletedEvents,
-    levelsHistory, // Historique complet des niveaux (utilisé pour le game over)
+    levelsHistory, // Historique complete des niveaux (utilisé pour le game over)
   };
 }
 
