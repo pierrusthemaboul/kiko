@@ -110,11 +110,7 @@ function GameContentA({
 
   // [ADDED LOG]
   useEffect(() => {
-    console.log('[GameContentA] Mounted or updated');
-    console.log('[GameContentA] isGameOver:', isGameOver);
-    console.log('[GameContentA] user.lives:', user.lives);
-    console.log('[GameContentA] levelCompletedEvents:', levelCompletedEvents);
-    console.log('[GameContentA] levelsHistory:', levelsHistory);
+    
   }, [
     isGameOver,
     user.lives,

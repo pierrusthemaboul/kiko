@@ -3,23 +3,24 @@
  *
  * 1.A. Description
  *     Hook de logique de jeu principal. Gère la logique de sélection d'événements,
- *     le scoring, la gestion du niveau, l'audio, les récompenses et la fin de partie.
+ *     le scoring, la gestion du niveau, l'audio, les récompenses, la fin de partie
+ *     et désormais l'intégration d'un système publicitaire complet.
  *
  * 1.B. Paramètres
  *     @param {string} initialEvent - Identifiant éventuel d'un événement initial.
  *
  * 1.C. Retour
- *     {object} - Ensemble d'états et de fonctions utiles au jeu (user, événements, etc.).
+ *     {object} - Ensemble d'états et de fonctions utiles au jeu (user, événements, pub, etc.).
  ************************************************************************************/
 
-/* 1.D. Imports et Types */
+/* 1.D. Imports et Types (TOUS les imports sont ici, au niveau supérieur) */
 
 // 1.D.1. Librairies / Modules
 import { useState, useEffect, useCallback } from 'react';
-import { AppState, Animated, Dimensions } from 'react-native'; // Ajout de Dimensions
-import { supabase } from '../lib/supabase/supabaseClients';
-import useRewards from './useRewards';
-import useAudio from './useAudio';
+import { AppState, Animated, Dimensions } from 'react-native';
+import { supabase } from '../lib/supabase/supabaseClients'; // Assurez-vous que ce chemin est correct
+import useRewards from './useRewards'; // Assurez-vous que ce chemin est correct
+import useAudio from './useAudio'; // Assurez-vous que ce chemin est correct
 import {
   Event,
   User,
@@ -31,34 +32,63 @@ import {
   CategoryMastery,
   HistoricalPeriodStats,
   ActiveBonus
-} from './types';
-import { LEVEL_CONFIGS } from './levelConfigs';
+} from './types'; // Assurez-vous que ce chemin et les types sont corrects
+import { LEVEL_CONFIGS } from './levelConfigs'; // Assurez-vous que ce chemin est correct
 
-// ------------------ INTÉGRATION DE LA PUBLICITÉ ------------------
-import { InterstitialAd, AdEventType, TestIds } from 'react-native-google-mobile-ads';
-// Création de l'annonce interstitielle en mode test
-const interstitialAd = InterstitialAd.createForAdRequest(TestIds.INTERSTITIAL, {
+// ------------------ INTÉGRATION DE LA PUBLICITÉ AVANCÉE (Importations ici) ------------------
+import {
+  InterstitialAd,
+  RewardedAd,
+  AdEventType, // Pour Interstitial et certains Rewarded ?
+  RewardedAdEventType, // Pour certains événements Rewarded spécifiques
+  TestIds
+} from 'react-native-google-mobile-ads';
+
+// Création d'instances (Déclarations de constantes ici, au niveau supérieur)
+const genericInterstitial = InterstitialAd.createForAdRequest(TestIds.INTERSTITIAL, {
   requestNonPersonalizedAdsOnly: true,
 });
+const levelUpInterstitial = InterstitialAd.createForAdRequest(TestIds.INTERSTITIAL, {
+  requestNonPersonalizedAdsOnly: true,
+});
+const gameOverInterstitial = InterstitialAd.createForAdRequest(TestIds.INTERSTITIAL, {
+  requestNonPersonalizedAdsOnly: true,
+});
+const rewardedAd = RewardedAd.createForAdRequest(TestIds.REWARDED, {
+  requestNonPersonalizedAdsOnly: true,
+});
+
+// Interface pour l'état publicitaire (Définition d'interface ici)
+interface AdState {
+  interstitialLoaded: boolean;
+  gameOverInterstitialLoaded: boolean;
+  levelUpInterstitialLoaded: boolean;
+  rewardedLoaded: boolean;
+  lastInterstitialTime: number;
+  adFreeUntil: number;
+}
 // ------------------------------------------------------------------
 
-// Nouvelle interface pour l'historique des événements par niveau
+// Nouvelle interface pour l'historique des événements par niveau (Définition d'interface ici)
 interface LevelHistory {
   level: number;
   events: LevelEventSummary[];
 }
 
+// Constante globale (Déclaration ici)
 const screenWidth = Dimensions.get('window').width;
 
-/* 1.E. Hook : useGameLogicA */
+/* 1.E. Hook : useGameLogicA (Début de la fonction hook) */
 
 /**
- * Hook de logique de jeu (quiz historique).
+ * Hook de logique de jeu (quiz historique) intégrant le système publicitaire.
  * @function useGameLogicA
  * @param {string} initialEvent - Optionnel, événement de départ.
  * @returns {Object} - Toutes les données et fonctions nécessaires au jeu.
  */
-export function useGameLogicA(initialEvent: string) {
+export function useGameLogicA(initialEvent?: string) { // Rendu initialEvent optionnel
+
+  /* --- Début des déclarations INTERNES au hook (useState, hooks custom, etc.) --- */
 
   /* 1.E.1. (Récompenses - système) */
   const {
@@ -68,14 +98,14 @@ export function useGameLogicA(initialEvent: string) {
     updateRewardPosition
   } = useRewards({
     onRewardEarned: (reward) => {
-      // Si la targetPosition n'est pas définie, on lui attribue une valeur par défaut selon le type de récompense
       if (!reward.targetPosition) {
         if (reward.type === RewardType.EXTRA_LIFE) {
-          reward.targetPosition = { x: screenWidth * 0.45, y: 50 }; // Pour EXTRA_LIFE : 33% de la largeur de l'écran
+          reward.targetPosition = { x: screenWidth * 0.45, y: 50 };
         } else {
-          reward.targetPosition = { x: 80, y: 30 }; // Exemple pour POINTS ou autres types
+          reward.targetPosition = { x: 80, y: 30 };
         }
       }
+      // Note: 'applyReward' est définie plus bas mais accessible grâce au hoisting
       applyReward(reward);
     },
   });
@@ -181,66 +211,203 @@ export function useGameLogicA(initialEvent: string) {
   });
 
   const [eventCount, setEventCount] = useState<number>(0);
-
   const [hasInitialJumped, setHasInitialJumped] = useState<boolean>(false);
-
   const [hasFirstForcedJumpHappened, setHasFirstForcedJumpHappened] = useState<boolean>(false);
-
   const [initialJumpDistance, setInitialJumpDistance] = useState<number>(() => {
     const distances = [500, 750, 1000];
     return distances[Math.floor(Math.random() * distances.length)];
   });
-
   const [initialJumpEventCount, setInitialJumpEventCount] = useState<number>(() => {
     return Math.floor(Math.random() * (19 - 12 + 1)) + 12;
   });
 
-  /* ******* INTÉGRATION DE LA PUBLICITÉ ******* */
-  const [adLoaded, setAdLoaded] = useState(false);
-  const [pendingAdDisplay, setPendingAdDisplay] = useState<"interstitial" | null>(null);
+  /* ******* INTÉGRATION DE LA PUBLICITÉ AVANCÉE (Logique INTERNE au hook ici) ******* */
+  // Nouvel état publicitaire et type d'annonce en attente d'affichage
+  const [adState, setAdState] = useState<AdState>({
+    interstitialLoaded: false,
+    gameOverInterstitialLoaded: false,
+    levelUpInterstitialLoaded: false,
+    rewardedLoaded: false,
+    lastInterstitialTime: 0,
+    adFreeUntil: 0,
+  });
+  const [pendingAdDisplay, setPendingAdDisplay] = useState<"interstitial" | "rewarded" | "gameOver" | "levelUp" | null>(null);
 
   // Gestionnaire d'événements amélioré pour les publicités
   useEffect(() => {
-    const unsubscribeLoaded = interstitialAd.addAdEventListener(
-      AdEventType.LOADED, 
+    // --- LOGS POUR VÉRIFIER LES VALEURS DES TYPES D'ÉVÉNEMENTS ---
+    console.log('--- [useGameLogicA] Ad Event Type Values ---');
+    console.log('AdEventType.LOADED:', AdEventType.LOADED);
+    console.log('AdEventType.ERROR:', AdEventType.ERROR);
+    console.log('AdEventType.CLOSED:', AdEventType.CLOSED);
+    console.log('RewardedAdEventType.LOADED:', RewardedAdEventType.LOADED);
+    console.log('RewardedAdEventType.ERROR:', RewardedAdEventType.ERROR);
+    console.log('RewardedAdEventType.CLOSED:', RewardedAdEventType.CLOSED);
+    console.log('RewardedAdEventType.EARNED_REWARD:', RewardedAdEventType.EARNED_REWARD);
+    console.log('---------------------------------------------');
+
+    // --- Generic Interstitial ---
+    console.log('[useGameLogicA] Setting up Generic Interstitial listeners using AdEventType');
+    const unsubscribeGenericLoaded = genericInterstitial.addAdEventListener(AdEventType.LOADED, () => {
+      console.log('[useGameLogicA] Generic interstitial loaded successfully');
+      setAdState(prev => ({ ...prev, interstitialLoaded: true }));
+    });
+    const unsubscribeGenericError = genericInterstitial.addAdEventListener(AdEventType.ERROR, error => {
+      console.error('[useGameLogicA] Generic interstitial error:', error);
+      setAdState(prev => ({ ...prev, interstitialLoaded: false }));
+      setTimeout(() => { genericInterstitial.load(); }, 5000);
+    });
+    const unsubscribeGenericClosed = genericInterstitial.addAdEventListener(AdEventType.CLOSED, () => {
+      console.log('[useGameLogicA] Generic interstitial closed');
+      genericInterstitial.load();
+      setAdState(prev => ({ ...prev, interstitialLoaded: false, lastInterstitialTime: Date.now() }));
+    });
+
+    // --- LevelUp Interstitial ---
+    console.log('[useGameLogicA] Setting up LevelUp Interstitial listeners using AdEventType');
+    const unsubscribeLevelUpLoaded = levelUpInterstitial.addAdEventListener(AdEventType.LOADED, () => {
+       console.log('[useGameLogicA] LevelUp interstitial loaded successfully');
+       setAdState(prev => ({ ...prev, levelUpInterstitialLoaded: true }));
+    });
+    const unsubscribeLevelUpError = levelUpInterstitial.addAdEventListener(AdEventType.ERROR, error => {
+       console.error('[useGameLogicA] LevelUp interstitial error:', error);
+       setAdState(prev => ({ ...prev, levelUpInterstitialLoaded: false }));
+       setTimeout(() => { levelUpInterstitial.load(); }, 5000);
+    });
+    const unsubscribeLevelUpClosed = levelUpInterstitial.addAdEventListener(AdEventType.CLOSED, () => {
+       console.log('[useGameLogicA] LevelUp interstitial closed');
+       levelUpInterstitial.load();
+       setAdState(prev => ({ ...prev, levelUpInterstitialLoaded: false, lastInterstitialTime: Date.now() }));
+    });
+
+    // --- GameOver Interstitial ---
+    console.log('[useGameLogicA] Setting up GameOver Interstitial listeners using AdEventType');
+    const unsubscribeGameOverLoaded = gameOverInterstitial.addAdEventListener(AdEventType.LOADED, () => {
+       console.log('[useGameLogicA] GameOver interstitial loaded successfully');
+       setAdState(prev => ({ ...prev, gameOverInterstitialLoaded: true }));
+    });
+    const unsubscribeGameOverError = gameOverInterstitial.addAdEventListener(AdEventType.ERROR, error => {
+       console.error('[useGameLogicA] GameOver interstitial error:', error);
+       setAdState(prev => ({ ...prev, gameOverInterstitialLoaded: false }));
+       setTimeout(() => { gameOverInterstitial.load(); }, 5000);
+    });
+    const unsubscribeGameOverClosed = gameOverInterstitial.addAdEventListener(AdEventType.CLOSED, () => {
+       console.log('[useGameLogicA] GameOver interstitial closed');
+       gameOverInterstitial.load();
+       setAdState(prev => ({ ...prev, gameOverInterstitialLoaded: false, lastInterstitialTime: Date.now() }));
+    });
+
+    // --- Rewarded Ad (Approche Hybride) ---
+    console.log('[useGameLogicA] Setting up Rewarded Ad LOADED listener using:', RewardedAdEventType.LOADED);
+    const unsubscribeRewardedLoaded = rewardedAd.addAdEventListener(
+      RewardedAdEventType.LOADED, // << Tentative basée sur le 1er log
       () => {
-        console.log('Interstitial ad loaded successfully');
-        setAdLoaded(true);
+        console.log('[useGameLogicA] Rewarded ad loaded successfully (using RewardedAdEventType)');
+        setAdState(prev => ({ ...prev, rewardedLoaded: true }));
       }
     );
-    
-    const unsubscribeFailed = interstitialAd.addAdEventListener(
-      AdEventType.ERROR,
+
+    console.log('[useGameLogicA] Setting up Rewarded Ad ERROR listener using:', AdEventType.ERROR);
+    const unsubscribeRewardedError = rewardedAd.addAdEventListener(
+      AdEventType.ERROR,  // << Retour à AdEventType basé sur le 2ème log
       error => {
-        console.error('Interstitial ad failed to load', error);
-        setAdLoaded(false);
-        // Recharger la publicité en cas d'erreur après un court délai
-        setTimeout(() => {
-          interstitialAd.load();
-        }, 5000);
+        console.error('[useGameLogicA] Rewarded ad error (using AdEventType):', error);
+        setAdState(prev => ({ ...prev, rewardedLoaded: false }));
+        setTimeout(() => { rewardedAd.load(); }, 5000);
       }
     );
-    
-    const unsubscribeClosed = interstitialAd.addAdEventListener(
-      AdEventType.CLOSED,
+
+    console.log('[useGameLogicA] Setting up Rewarded Ad CLOSED listener using:', AdEventType.CLOSED);
+    const unsubscribeRewardedClosed = rewardedAd.addAdEventListener(
+      AdEventType.CLOSED, // << Retour à AdEventType basé sur le 2ème log
       () => {
-        console.log('Interstitial ad closed');
-        // Rechargez une nouvelle pub quand l'utilisateur ferme la pub actuelle
-        interstitialAd.load();
-        setAdLoaded(false);
+        console.log('[useGameLogicA] Rewarded ad closed (using AdEventType)');
+        rewardedAd.load(); // Recharger après fermeture
+        setAdState(prev => ({ ...prev, rewardedLoaded: false }));
       }
     );
 
-    // Chargement initial
-    interstitialAd.load();
+    console.log('[useGameLogicA] Setting up Rewarded Ad EARNED_REWARD listener using:', RewardedAdEventType.EARNED_REWARD);
+    const unsubscribeRewardedEarned = rewardedAd.addAdEventListener(
+      RewardedAdEventType.EARNED_REWARD,  // << Spécifique, probablement correct
+      reward => {
+        console.log('[useGameLogicA] User earned reward:', reward);
+        setUser(prev => ({
+          ...prev,
+          lives: Math.min(prev.lives + 1, MAX_LIVES)
+        }));
+        setAdState(prev => ({ ...prev, adFreeUntil: Date.now() + 5 * 60 * 1000 }));
+      }
+    );
 
+    // Chargement initial des publicités
+    console.log('[useGameLogicA] Initial ad loading...');
+    genericInterstitial.load();
+    levelUpInterstitial.load();
+    gameOverInterstitial.load();
+    rewardedAd.load();
+
+    // Fonction de nettoyage
     return () => {
-      unsubscribeLoaded();
-      unsubscribeFailed();
-      unsubscribeClosed();
+      console.log('[useGameLogicA] Cleaning up ad listeners...');
+      unsubscribeGenericLoaded();
+      unsubscribeGenericError();
+      unsubscribeGenericClosed();
+      unsubscribeLevelUpLoaded();
+      unsubscribeLevelUpError();
+      unsubscribeLevelUpClosed();
+      unsubscribeGameOverLoaded();
+      unsubscribeGameOverError();
+      unsubscribeGameOverClosed();
+      unsubscribeRewardedLoaded();
+      unsubscribeRewardedError();
+      unsubscribeRewardedClosed();
+      unsubscribeRewardedEarned();
     };
-  }, []);
-  /* ******* FIN INTÉGRATION PUBLICITÉ ******* */
+  }, []); // Le tableau de dépendances vide est correct ici
+
+  // Vérifie si une pub peut être affichée
+  const canShowAd = useCallback(() => {
+    const now = Date.now();
+    if (now < adState.adFreeUntil) {
+      console.log('[useGameLogicA] canShowAd: false - in ad-free period');
+      return false;
+    }
+    if (now - adState.lastInterstitialTime < 3 * 60 * 1000) { // 3 minutes
+      console.log('[useGameLogicA] canShowAd: false - last ad shown too recently');
+      return false;
+    }
+    console.log('[useGameLogicA] canShowAd: true');
+    return true;
+  }, [adState.adFreeUntil, adState.lastInterstitialTime]);
+
+  // Affiche une publicité récompensée si disponible
+  const showRewardedAd = useCallback(() => {
+    console.log('[useGameLogicA] showRewardedAd called - rewardedLoaded:', adState.rewardedLoaded);
+    try {
+      if (adState.rewardedLoaded) {
+        console.log('[useGameLogicA] Attempting to show rewarded ad');
+        rewardedAd.show();
+        return true;
+      } else if (adState.interstitialLoaded) { // Fallback vers interstitiel générique
+        console.log('[useGameLogicA] Rewarded ad not loaded, falling back to generic interstitial');
+        genericInterstitial.show();
+        return true;
+      } else {
+        console.log('[useGameLogicA] No rewarded or generic interstitial ad available to show');
+        return false;
+      }
+    } catch (error) {
+      console.error('[useGameLogicA] Error showing ad in showRewardedAd:', error);
+      if (adState.rewardedLoaded) rewardedAd.load(); // Tentative de rechargement
+      else if (adState.interstitialLoaded) genericInterstitial.load();
+      return false;
+    }
+  }, [adState.rewardedLoaded, adState.interstitialLoaded]); // Dépendances importantes ici
+  /* ******* FIN INTÉGRATION PUBLICITÉ AVANCÉE ******* */
+
+
+
 
   /* Effet pour appliquer un malus si l'utilisateur quitte l'application */
   useEffect(() => {
@@ -360,7 +527,7 @@ export function useGameLogicA(initialEvent: string) {
       setAllEvents(validEvents);
 
       if (validEvents.length < 2) {
-        throw new Error("Pas assez d\'événements disponibles");
+        throw new Error("Pas assez d'événements disponibles");
       }
 
       // --- Sélection des événements de niveau 1 uniquement ---
@@ -1020,7 +1187,7 @@ export function useGameLogicA(initialEvent: string) {
 
             // INTÉGRATION PUBLICITÉ : Affichage de la pub après certains niveaux
             if (prev.level === 1 || prev.level === 6) {
-              setPendingAdDisplay("interstitial");
+              setPendingAdDisplay("levelUp");
             }
 
             // On check la reward (changement de level)
@@ -1155,6 +1322,28 @@ export function useGameLogicA(initialEvent: string) {
     playGameOverSound();
     setLeaderboardsReady(false);
 
+    // Affichage d'une publicité de fin de jeu si les conditions sont remplies
+    setTimeout(() => {
+      if (canShowAd()) {
+        if (adState.gameOverInterstitialLoaded) {
+          try {
+            console.log('Showing game over interstitial ad');
+            gameOverInterstitial.show();
+          } catch (error) {
+            console.error('Error showing game over ad:', error);
+            gameOverInterstitial.load();
+          }
+        } else if (adState.interstitialLoaded) {
+          console.log('No game over ad loaded, showing generic interstitial instead');
+          genericInterstitial.show();
+        } else {
+          console.log('No ads available for game over');
+        }
+      } else {
+        console.log('Cannot show ad at game over due to ad-free period or frequency cap');
+      }
+    }, 2000); // Délai de 2 secondes avant d'afficher la pub de fin de jeu
+
     try {
       const { data: { user: authUser } } = await supabase.auth.getUser();
       
@@ -1251,7 +1440,17 @@ export function useGameLogicA(initialEvent: string) {
       setLeaderboards(fallbackScores);
       setLeaderboardsReady(true);
     }
-  }, [user, playGameOverSound, saveProgress, finalizeCurrentLevelHistory, levelCompletedEvents, currentLevelEvents]);
+  }, [
+    user, 
+    playGameOverSound, 
+    saveProgress, 
+    finalizeCurrentLevelHistory, 
+    levelCompletedEvents, 
+    currentLevelEvents,
+    adState.gameOverInterstitialLoaded,
+    adState.interstitialLoaded,
+    canShowAd
+  ]);
 
   // 1.H.12. saveProgress
   const saveProgress = useCallback(async () => {
@@ -1308,20 +1507,22 @@ export function useGameLogicA(initialEvent: string) {
     setTimeLeft(20);
     setLevelCompletedEvents([]); // Réinitialisation du récapitulatif du niveau en cours
 
-    // Affichage de l'interstitial ad si en attente - CODE CORRIGÉ
-    if (pendingAdDisplay === "interstitial") {
-      if (interstitialAd.loaded) {
+    // Affichage de l'interstitial ad si en attente et si les conditions sont remplies
+    if (pendingAdDisplay === "levelUp" && canShowAd()) {
+      if (adState.levelUpInterstitialLoaded) {
         try {
-          console.log('Showing interstitial ad, it is loaded');
-          interstitialAd.show();
+          console.log('Showing level up interstitial ad');
+          levelUpInterstitial.show();
         } catch (error) {
-          console.error('Error showing interstitial ad:', error);
+          console.error('Error showing level up ad:', error);
           // Recharger l'annonce en cas d'erreur
-          interstitialAd.load();
+          levelUpInterstitial.load();
         }
+      } else if (adState.interstitialLoaded) {
+        console.log('Level up ad not loaded, showing generic interstitial instead');
+        genericInterstitial.show();
       } else {
-        console.log('Interstitial ad not loaded, trying to load a new one');
-        interstitialAd.load();
+        console.log('No ads available to show for level up');
       }
       setPendingAdDisplay(null);
     }
@@ -1329,7 +1530,15 @@ export function useGameLogicA(initialEvent: string) {
     if (previousEvent) {
       selectNewEvent(allEvents, previousEvent);
     }
-  }, [allEvents, previousEvent, selectNewEvent, pendingAdDisplay]);
+  }, [
+    allEvents, 
+    previousEvent, 
+    selectNewEvent, 
+    pendingAdDisplay, 
+    canShowAd, 
+    adState.levelUpInterstitialLoaded, 
+    adState.interstitialLoaded
+  ]);
 
   // --- Nouvelle useEffect pour réinitialiser l'audio au montage (pour éviter le problème de son après un replay) ---
   useEffect(() => {
@@ -1366,6 +1575,7 @@ export function useGameLogicA(initialEvent: string) {
     handleChoice,
     startLevel,
     handleLevelUp,
+    showRewardedAd, // Nouvelle fonction exposée pour montrer des pubs récompensées
 
     remainingEvents: allEvents.length - usedEvents.size,
 
@@ -1374,7 +1584,14 @@ export function useGameLogicA(initialEvent: string) {
     onImageLoad: handleImageLoad,
 
     levelCompletedEvents,
-    levelsHistory, // Historique complete des niveaux (utilisé pour le game over)
+    levelsHistory, // Historique complet des niveaux (utilisé pour le game over)
+    
+    // Nouvelles propriétés pour l'état publicitaire
+    adState: {
+      hasRewardedAd: adState.rewardedLoaded,
+      isAdFree: Date.now() < adState.adFreeUntil,
+      adFreeTimeRemaining: Math.max(0, (adState.adFreeUntil - Date.now()) / 1000)
+    }
   };
 }
 
