@@ -1,45 +1,25 @@
-// 1. Configuration Audio
-// ==================
-// 1.A. Imports et Types
-// -------------------
 import { useState, useCallback, useEffect, useRef } from 'react';
 import { Audio } from 'expo-av';
-// No longer using gameLogger, using console directly
+import { FirebaseAnalytics } from '../lib/firebase';
 
-// 1.B. Interfaces
-// -------------
 interface CachedSound {
   sound: Audio.Sound;
   status: Audio.PlaybackStatus;
   lastPlayed?: number;
 }
 
-// 2. Hook Principal
-// ===============
 export const useAudio = () => {
-  // 2.A. États
-  // ---------
-  // 2.A.a. États des sons
   const [sounds, setSounds] = useState<{ [key: string]: CachedSound | null }>({
-    correct: null,
-    incorrect: null,
-    levelUp: null,
-    countdown: null,
-    gameover: null,
+    correct: null, incorrect: null, levelUp: null, countdown: null, gameover: null,
   });
-
-  // 2.A.b. États de contrôle
-  const soundVolumeRef = useRef(0.80);
-  const musicVolumeRef = useRef(0.80);
-  const [soundVolume, setSoundVolume] = useState(0.80);
-  const [musicVolume, setMusicVolume] = useState(0.80);
+  const soundVolumeRef = useRef(0.24); // 0.48 * 0.5
+  const musicVolumeRef = useRef(0.24);
+  const [soundVolume, setSoundVolume] = useState(0.24);
+  const [musicVolume, setMusicVolume] = useState(0.24);
   const [isSoundEnabled, setIsSoundEnabled] = useState(true);
   const [isMusicEnabled, setIsMusicEnabled] = useState(true);
   const isInitialized = useRef(false);
 
-  // 2.B. Configuration
-  // ----------------
-  // 2.B.a. Chemins des sons
   const soundPaths = {
     correct: require('../assets/sounds/corectok.wav'),
     incorrect: require('../assets/sounds/361260__japanyoshithegamer__8-bit-wrong-sound.wav'),
@@ -48,250 +28,120 @@ export const useAudio = () => {
     gameover: require('../assets/sounds/242208__wagna__failfare.mp3')
   };
 
-  // 3. Initialisation
-  // ===============
-  // 3.A. Configuration Initiale
-  // -------------------------
   useEffect(() => {
     const initAudio = async () => {
       try {
-        // 3.A.a. Configuration système
-        const audioConfig = {
+        await Audio.setAudioModeAsync({
           allowsRecordingIOS: false,
-          staysActiveInBackground: true,
           playsInSilentModeIOS: true,
           shouldDuckAndroid: true,
           playThroughEarpieceAndroid: false
-        };
-
-        await Audio.setAudioModeAsync(audioConfig);
-
-        // 3.A.b. Chargement initial des sons
-        for (const [key, path] of Object.entries(soundPaths)) {
-          await loadSound(key);
-        }
-
+        });
         isInitialized.current = true;
+        console.log('[useAudio] Audio system initialized.');
       } catch (error) {
-        // Gestion d'erreur d'initialisation si besoin
+        console.error('[useAudio] Error initializing audio system:', error);
+        FirebaseAnalytics.error('audio_init_error', error instanceof Error ? error.message : 'Unknown', 'useAudioInit');
       }
     };
-
     initAudio();
 
-    // 3.B. Nettoyage
-    // -------------
     return () => {
+      console.log('[useAudio] Cleaning up audio resources...');
       isInitialized.current = false;
-      Object.entries(sounds).forEach(async ([_, soundObj]) => {
+      Object.values(sounds).forEach(async (soundObj) => {
         if (soundObj?.sound) {
           try {
             await soundObj.sound.unloadAsync();
-          } catch (error) {
-            // Gestion de l'erreur lors du déchargement si besoin
-          }
+          } catch (_) {}
         }
       });
+      setSounds({});
     };
   }, []);
 
-  // 4. Gestion des Sons
-  // =================
-  // 4.A. Chargement des Sons
-  // ----------------------
-  const loadSound = async (soundKey: string): Promise<Audio.Sound | null> => {
-    try {
-      if (!sounds[soundKey]) {
-        const { sound, status } = await Audio.Sound.createAsync(
-          soundPaths[soundKey],
-          { 
-            volume: soundVolumeRef.current * 0.1,
-            shouldPlay: false,
-            progressUpdateIntervalMillis: 50
-          }
-        );
-
-        sound.setOnPlaybackStatusUpdate(status => {
-          if (!status.isLoaded) {
-            reloadSound(soundKey);
-          }
-          if (status.didJustFinish) {
-            // Gérer la fin du son si besoin
-          }
-        });
-
-        setSounds(prev => ({
-          ...prev,
-          [soundKey]: { 
-            sound, 
-            status,
-            lastPlayed: Date.now()
-          }
-        }));
-
-        return sound;
-      }
-      return sounds[soundKey]?.sound || null;
-    } catch (error) {
-      return null;
-    }
-  };
-
-  // 4.B. Rechargement des Sons
-  // ------------------------
-  const reloadSound = async (soundKey: string) => {
-    try {
-      if (sounds[soundKey]?.sound) {
-        await sounds[soundKey]?.sound.unloadAsync();
-      }
-      await loadSound(soundKey);
-    } catch (error) {
-      // Gestion de l'erreur lors du rechargement si besoin
-    }
-  };
-
-  // 4.C. Lecture des Sons
-  // -------------------
-  const playSound = async (soundKey: string, volume: number = soundVolumeRef.current) => {
+  const playSound = async (soundKey: string, volumeMultiplier: number = 1.0) => {
     if (!isSoundEnabled || !isInitialized.current) return;
 
+    const finalVolume = Math.max(0, Math.min(soundVolumeRef.current * volumeMultiplier, 1.0));
+
+    let soundObject: Audio.Sound | null = null;
     try {
-      // Décharger l'ancien son s'il existe
-      if (sounds[soundKey]?.sound) {
-        try {
-          await sounds[soundKey].sound.unloadAsync();
-        } catch (err) {
-          // Gestion de l'erreur si besoin
-        }
-      }
-
-      // Créer une nouvelle instance du son
-      const { sound, status } = await Audio.Sound.createAsync(
+      const { sound } = await Audio.Sound.createAsync(
         soundPaths[soundKey],
-        { volume: volume * 0.5, shouldPlay: false }
-      );
-
-      setSounds(prev => ({
-        ...prev,
-        [soundKey]: { sound, status, lastPlayed: Date.now() }
-      }));
-
-      await sound.setVolumeAsync(Math.min(volume * 0.5, 0.5));
-      await sound.playAsync();
-
-      sound.setOnPlaybackStatusUpdate(status => {
-        if (status.didJustFinish) {
-          sound.unloadAsync().catch(err => {
-            // Gestion de l'erreur si besoin
-          });
+        {
+          volume: finalVolume,
+          shouldPlay: true,
+        },
+        (status) => {
+          if (status.didJustFinish) {
+            soundObject?.unloadAsync().catch(() => {});
+          }
         }
-      });
+      );
+      soundObject = sound;
+
+      if (['correct', 'incorrect', 'levelUp', 'gameover'].includes(soundKey)) {
+        FirebaseAnalytics.logEvent('sound_played', { sound_name: soundKey });
+      }
 
     } catch (error) {
-      const soundToClean = sounds[soundKey]?.sound;
-      if (soundToClean) {
-        try {
-          await soundToClean.unloadAsync();
-        } catch (err) {
-          // Gestion de l'erreur si besoin
-        }
-      }
+      console.error(`[useAudio] Error playing sound '${soundKey}':`, error);
+      FirebaseAnalytics.error('audio_playback_error', `Sound: ${soundKey}, Error: ${error instanceof Error ? error.message : 'Unknown'}`, 'playSound');
+      soundObject?.unloadAsync().catch(() => {});
     }
   };
 
-  // 5. Fonctions de Lecture Spécifiques
-  // =================================
-  // 5.A. Sons du Jeu
-  // --------------
   const playCorrectSound = useCallback(() => {
-    return playSound('correct', soundVolumeRef.current * 0.2);
+    playSound('correct', 1.0);
   }, [isSoundEnabled]);
 
   const playIncorrectSound = useCallback(() => {
-    return playSound('incorrect', soundVolumeRef.current * 0.15);
+    playSound('incorrect', 0.7);
   }, [isSoundEnabled]);
 
   const playLevelUpSound = useCallback(() => {
-    return playSound('levelUp', soundVolumeRef.current * 0.1);
+    playSound('levelUp', 0.8);
   }, [isSoundEnabled]);
 
   const playCountdownSound = useCallback(() => {
-    return playSound('countdown', soundVolumeRef.current * 0.1);
+    playSound('countdown', 0.5);
   }, [isSoundEnabled]);
 
   const playGameOverSound = useCallback(() => {
-    return playSound('gameover', soundVolumeRef.current * 0.15);
+    playSound('gameover', 0.8);
   }, [isSoundEnabled]);
 
-  // 6. Contrôles Audio
-  // ================
-  // 6.A. Gestion du Volume
-  // -------------------
   const setVolume = async (volume: number, type: 'sound' | 'music') => {
     try {
-      const safeVolume = Math.min(volume, 0.1);
+      const safeVolume = Math.max(0, Math.min(1.0, volume));
       if (type === 'sound') {
+        console.log(`[useAudio] Setting sound effect volume to ${safeVolume.toFixed(2)}`);
         soundVolumeRef.current = safeVolume;
         setSoundVolume(safeVolume);
-        await Promise.all(
-          Object.entries(sounds).map(async ([, soundObj]) => {
-            if (soundObj?.sound) {
-              try {
-                await soundObj.sound.setVolumeAsync(safeVolume);
-              } catch (error) {
-                // Gestion de l'erreur si besoin
-              }
-            }
-          })
-        );
       } else {
+        console.log(`[useAudio] Setting music volume to ${safeVolume.toFixed(2)}`);
         musicVolumeRef.current = safeVolume;
         setMusicVolume(safeVolume);
       }
     } catch (error) {
-      // Gestion de l'erreur si besoin
+      console.error(`[useAudio] Error setting ${type} volume:`, error);
+      FirebaseAnalytics.error('audio_volume_error', `Type: ${type}, Error: ${error instanceof Error ? error.message : 'Unknown'}`, 'setVolume');
     }
   };
 
-  // 6.B. Contrôles de l'Audio
-  // -----------------------
   const toggleSound = (enabled: boolean) => {
+    console.log(`[useAudio] Toggling sound effects to: ${enabled}`);
     setIsSoundEnabled(enabled);
+    FirebaseAnalytics.logEvent('sound_toggled', { enabled, type: 'effects' });
   };
 
   const toggleMusic = (enabled: boolean) => {
+    console.log(`[useAudio] Toggling music to: ${enabled}`);
     setIsMusicEnabled(enabled);
+    FirebaseAnalytics.logEvent('sound_toggled', { enabled, type: 'music' });
   };
 
-  // 7. Fonctions pour charger/décharger l'ensemble des sons
-  // ========================================================
-  const loadSounds = async () => {
-    for (const key of Object.keys(soundPaths)) {
-      await loadSound(key);
-    }
-  };
-
-  const unloadSounds = async () => {
-    for (const key of Object.keys(sounds)) {
-      if (sounds[key]?.sound) {
-        try {
-          await sounds[key]!.sound.unloadAsync();
-        } catch (error) {
-          // Gestion de l'erreur si besoin
-        }
-      }
-    }
-    setSounds({
-      correct: null,
-      incorrect: null,
-      levelUp: null,
-      countdown: null,
-      gameover: null,
-    });
-  };
-
-  // 8. Interface Publique
-  // ===================
   return {
     playCorrectSound,
     playIncorrectSound,
@@ -306,8 +156,6 @@ export const useAudio = () => {
     isMusicEnabled,
     soundVolume,
     musicVolume,
-    loadSounds,    // Exposition de loadSounds
-    unloadSounds,  // Exposition de unloadSounds
   };
 };
 

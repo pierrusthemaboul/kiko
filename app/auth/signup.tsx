@@ -1,4 +1,6 @@
-import React, { useState } from 'react';
+// /home/pierre/sword/kiko/app/auth/signup.tsx
+
+import React, { useState, useEffect, useLayoutEffect, useCallback } from 'react'; // Ajout useEffect, useLayoutEffect, useCallback
 import {
   View,
   Text,
@@ -6,29 +8,27 @@ import {
   TouchableOpacity,
   ScrollView,
   StyleSheet,
-  Platform
+  Platform,
+  SafeAreaView, // Utiliser SafeAreaView
+  StatusBar,    // Pour le style de la barre
+  ActivityIndicator
 } from 'react-native';
 import { supabase } from '../../lib/supabase/supabaseClients';
-import { router } from 'expo-router';
+import { router, useFocusEffect, useNavigation } from 'expo-router'; // Ajout useFocusEffect, useNavigation
+import { FirebaseAnalytics } from '../../lib/firebase'; // <-- AJOUT: Importer FirebaseAnalytics
 
-const THEME = {
+const THEME = { /* ... (votre thème) ... */
   primary: '#050B1F',
   secondary: '#0A173D',
   accent: '#FFCC00',
   text: '#FFFFFF',
-  background: {
-    dark: '#020817',
-    medium: '#050B1F',
-    light: '#0A173D'
-  },
-  button: {
-    primary: ['#1D5F9E', '#0A173D'],
-    secondary: ['#FFBF00', '#CC9900'],
-    tertiary: ['#0A173D', '#1D5F9E']
-  }
+  background: { dark: '#020817', medium: '#050B1F', light: '#0A173D' },
+  button: { primary: ['#1D5F9E', '#0A173D'], secondary: ['#FFBF00', '#CC9900'], tertiary: ['#0A173D', '#1D5F9E'] }
 };
 
 export default function SignUp() {
+  const navigation = useNavigation(); // Pour options header
+
   const [nickname, setNickname] = useState('');
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
@@ -36,250 +36,247 @@ export default function SignUp() {
   const [successMessage, setSuccessMessage] = useState('');
   const [isSigningUp, setIsSigningUp] = useState(false);
 
+  // --- AJOUT: Suivi de l'écran ---
+  useFocusEffect(
+    useCallback(() => {
+      FirebaseAnalytics.screen('SignUpScreen', 'SignUp');
+      // Optionnel: réinitialiser les champs/messages
+      // setErrorMessage('');
+      // setSuccessMessage('');
+      // setEmail('');
+      // setPassword('');
+      // setNickname('');
+    }, [])
+  );
+  // --- FIN AJOUT ---
+
+  useLayoutEffect(() => {
+    navigation.setOptions({ headerShown: false }); // Cacher header si besoin
+    StatusBar.setBarStyle('light-content');
+    if (Platform.OS === 'android') {
+      StatusBar.setBackgroundColor(THEME.background.dark);
+    }
+  }, [navigation]);
+
   const handleSignUp = async () => {
     if (isSigningUp) return;
 
     console.log('🔐 Starting signup process...');
+    // --- AJOUT: Log Tentative ---
+    FirebaseAnalytics.logEvent('signup_attempt');
+    // --------------------------
     setIsSigningUp(true);
     setErrorMessage('');
     setSuccessMessage('');
 
-    // 1. Validation de base des champs
-    if (!nickname.trim()) {
-      setErrorMessage('Le pseudonyme est obligatoire.');
+    // Fonction interne pour logger les échecs et retourner
+    const failSignup = (reason: string, message: string, logMessage?: string) => {
+      setErrorMessage(message);
+      // --- AJOUT: Log Échec ---
+      FirebaseAnalytics.logEvent('signup_failed', {
+        reason: reason,
+        message: (logMessage || message).substring(0, 100)
+      });
+      // --------------------
       setIsSigningUp(false);
-      return;
-    }
+    };
 
-    // 2. Vérification de la longueur du pseudonyme (max 12 caractères)
-    if (nickname.trim().length > 12) {
-      setErrorMessage('Le pseudonyme ne peut pas dépasser 12 caractères.');
-      setIsSigningUp(false);
-      return;
-    }
-
-    // (Optionnel) Vérification de certains caractères spéciaux interdits
+    // 1. Validation Client
+    if (!nickname.trim()) return failSignup('validation_nickname', 'Le pseudonyme est obligatoire.');
+    if (nickname.trim().length > 12) return failSignup('validation_nickname_length', 'Le pseudonyme ne peut pas dépasser 12 caractères.');
     const forbiddenChars = /[\\\/]/g;
-    if (forbiddenChars.test(nickname)) {
-      setErrorMessage('Le pseudonyme contient des caractères interdits (\\ ou /).');
-      setIsSigningUp(false);
-      return;
-    }
-
-    if (!email.trim()) {
-      setErrorMessage("L'email est obligatoire.");
-      setIsSigningUp(false);
-      return;
-    }
-
-    if (!password || password.length < 6) {
-      setErrorMessage('Le mot de passe doit contenir au moins 6 caractères.');
-      setIsSigningUp(false);
-      return;
-    }
+    if (forbiddenChars.test(nickname)) return failSignup('validation_nickname_chars', 'Le pseudonyme contient des caractères interdits (\\ ou /).');
+    if (!email.trim()) return failSignup('validation_email', "L'email est obligatoire.");
+    // Ajouter une validation regex simple pour l'email
+    const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+    if (!emailRegex.test(email.trim())) return failSignup('validation_email_format', "Le format de l'email est invalide.");
+    if (!password || password.length < 6) return failSignup('validation_password', 'Le mot de passe doit contenir au moins 6 caractères.');
 
     try {
-      // 3. Vérification si le pseudo est déjà utilisé en base
-      //    (Requiert que ta table "profiles" ait une colonne "display_name".)
+      // 3. Vérification Pseudo Existant
+      console.log('🔍 Checking if nickname exists:', nickname.trim());
       const { data: existingProfile, error: checkProfileError } = await supabase
         .from('profiles')
-        .select('id')
-        .eq('display_name', nickname.trim())
-        .single();
+        .select('id', { count: 'exact', head: true }) // Plus efficace: juste vérifier l'existence
+        .eq('display_name', nickname.trim());
 
-      // Erreur inattendue lors de la vérification du pseudo
-      if (checkProfileError && checkProfileError.code !== 'PGRST116') {
-        console.error('❌ Check nickname error:', checkProfileError.message);
-        setErrorMessage('Erreur lors de la vérification du pseudonyme.');
-        setIsSigningUp(false);
-        return;
+      if (checkProfileError && checkProfileError.code !== 'PGRST116') { // PGRST116 = 0 rows found, pas une erreur ici
+        console.error('❌ Check nickname error:', checkProfileError);
+        return failSignup('nickname_check_error', 'Erreur lors de la vérification du pseudonyme.', checkProfileError.message);
       }
 
-      // Si un profil existe déjà avec ce pseudo
-      if (existingProfile) {
-        setErrorMessage('Ce pseudonyme est déjà utilisé. Veuillez en choisir un autre.');
-        setIsSigningUp(false);
-        return;
+      if (existingProfile?.count && existingProfile.count > 0) {
+        return failSignup('nickname_exists', 'Ce pseudonyme est déjà utilisé. Veuillez en choisir un autre.');
       }
+      console.log('✅ Nickname available.');
 
-      // 4. Inscription de l'utilisateur (Supabase se charge de vérifier l’unicité de l’email)
-      const { data, error: signUpError } = await supabase.auth.signUp({
+      // 4. Inscription Supabase
+      console.log('📧 Attempting Supabase signup for email:', email.trim());
+      const { data: signUpData, error: signUpError } = await supabase.auth.signUp({
         email: email.trim(),
         password: password,
         options: {
-          data: {
-            display_name: nickname.trim(),
-          },
+          // On ne met PAS display_name ici, on le met dans la table profiles
+          // data: { display_name: nickname.trim() } // A ENLEVER
         },
       });
 
       if (signUpError) {
-        console.error('❌ Signup error:', signUpError.message);
-        // Supabase renvoie une erreur si l'email est déjà utilisée
-        if (signUpError.message.includes('Email')) {
-          setErrorMessage('Cet email est invalide ou déjà utilisé.');
-        } else {
-          setErrorMessage(signUpError.message);
+        console.error('❌ Signup error:', signUpError);
+        let reason = 'supabase_signup_error';
+        let message = signUpError.message;
+        if (signUpError.message.toLowerCase().includes('user already registered') || signUpError.message.toLowerCase().includes('email address is already registered')) {
+           reason = 'email_exists';
+           message = 'Cet email est déjà utilisé pour un compte.';
+        } else if (signUpError.message.toLowerCase().includes('valid email')) {
+           reason = 'email_invalid_supabase';
+           message = "L'adresse email fournie est invalide selon le serveur.";
         }
-        return;
+        return failSignup(reason, message, signUpError.message);
       }
 
-      if (!data.user) {
-        setErrorMessage('Erreur lors de la création du compte.');
-        return;
+      if (!signUpData?.user) {
+        console.error('❌ Signup response missing user data.');
+        return failSignup('no_user_data', 'Erreur lors de la création du compte (données utilisateur manquantes).');
       }
 
-      // 5. Création du profil utilisateur avec des valeurs par défaut
+      const userId = signUpData.user.id;
+      console.log('👤 User created in Supabase Auth:', userId);
+
+      // 5. Création du profil (Simplifié)
+      console.log('✍️ Creating user profile...');
       const { error: profileError } = await supabase
         .from('profiles')
-        .insert([
-          {
-            id: data.user.id,
-            display_name: nickname.trim(),
-            high_score: 0,
-            games_played: 0,
-            current_level: 1,
-            events_completed: 0,
-            mastery_levels: {},
-            is_admin: false
-          }
-        ]);
+        .insert({
+            id: userId, // Obligatoire: lie à l'utilisateur auth
+            display_name: nickname.trim(), // Obligatoire ou optionnel selon votre schéma
+            // Ajoutez d'autres champs obligatoires ici avec des valeurs par défaut si nécessaire
+            // high_score: 0,
+            // games_played: 0,
+            // etc.
+          });
 
       if (profileError) {
-        console.error('❌ Profile creation error:', profileError.message);
-        setErrorMessage('Erreur lors de la création du profil. Veuillez réessayer.');
-        return;
+        console.error('❌ Profile creation error:', profileError);
+        // Important: Essayer de supprimer l'utilisateur auth créé pour éviter un compte orphelin
+        await supabase.auth.admin.deleteUser(userId).catch(delErr => console.error("Failed to delete orphaned auth user:", delErr));
+        return failSignup('profile_creation_error', 'Erreur lors de la finalisation de l\'inscription.', profileError.message);
       }
+      console.log('✅ Profile created successfully.');
 
-      // 6. Succès et navigation
-      setSuccessMessage('Compte créé avec succès!');
+      // 6. Succès
+      setSuccessMessage('Compte créé avec succès! Redirection...');
+      // --- AJOUT: Log Succès ---
+      FirebaseAnalytics.logEvent('sign_up', { method: 'password' }); // Événement standard Firebase
+      // Mettre à jour l'ID utilisateur dans Analytics
+      FirebaseAnalytics.initialize(userId, false);
+      // -------------------------
 
-      // Attendre un peu pour que l'utilisateur voie le message de succès
       setTimeout(() => {
         try {
-          router.push('/(tabs)');
+          router.replace('/(tabs)'); // Remplacer pour ne pas revenir à signup
         } catch (navError) {
-          console.error('❌ Navigation error:', navError);
-          // Le compte est créé, on ne montre pas d'erreur supplémentaire
+          console.error('❌ Navigation error after signup:', navError);
+          // Informer l'utilisateur qu'il peut se connecter manuellement
+          setSuccessMessage('Compte créé! Veuillez vous connecter.');
+          // Optionnel: rediriger vers login après un délai supplémentaire
+          // setTimeout(() => router.replace('/auth/login'), 2000);
         }
-      }, 1500);
+      }, 1500); // Délai pour voir le message
 
     } catch (error) {
-      console.error('❌ Unexpected error:', error);
-      setErrorMessage('Une erreur inattendue est survenue.');
+      console.error('❌ Unexpected error during signup:', error);
+      failSignup('unexpected', 'Une erreur inattendue est survenue.', error instanceof Error ? error.message : String(error));
     } finally {
-      setIsSigningUp(false);
+      // Assurer que isSigningUp est remis à false même si failSignup n'est pas appelé dans le catch
+      if (isSigningUp) {
+          // setIsSigningUp(false); // Géré par failSignup ou après le timeout de succès
+      }
     }
   };
 
   return (
-    <ScrollView
-      contentContainerStyle={styles.container}
-      keyboardShouldPersistTaps="handled"
-    >
-      <Text style={styles.title}>Inscription</Text>
-
-      <TextInput
-        style={styles.input}
-        placeholder="Pseudonyme"
-        placeholderTextColor={`${THEME.text}66`}
-        value={nickname}
-        onChangeText={setNickname}
-        autoCapitalize="none"
-        autoComplete="username"
-      />
-
-      <TextInput
-        style={styles.input}
-        placeholder="Email"
-        placeholderTextColor={`${THEME.text}66`}
-        value={email}
-        onChangeText={setEmail}
-        keyboardType="email-address"
-        autoCapitalize="none"
-        autoComplete="email"
-      />
-
-      <TextInput
-        style={styles.input}
-        placeholder="Mot de passe"
-        placeholderTextColor={`${THEME.text}66`}
-        secureTextEntry
-        value={password}
-        onChangeText={setPassword}
-        autoComplete="password-new"
-      />
-
-      {errorMessage ? (
-        <Text style={styles.error}>{errorMessage}</Text>
-      ) : null}
-
-      {successMessage ? (
-        <Text style={styles.success}>{successMessage}</Text>
-      ) : null}
-
-      <TouchableOpacity
-        style={[styles.button, isSigningUp && styles.buttonDisabled]}
-        onPress={handleSignUp}
-        disabled={isSigningUp}
+    <SafeAreaView style={styles.safeArea}>
+      <ScrollView
+        contentContainerStyle={styles.container}
+        keyboardShouldPersistTaps="handled"
       >
-        <Text style={styles.buttonText}>
-          {isSigningUp ? "Création du compte..." : "S'inscrire"}
-        </Text>
-      </TouchableOpacity>
-    </ScrollView>
+        <Text style={styles.title}>Inscription</Text>
+
+        <TextInput
+          style={styles.input}
+          placeholder="Pseudonyme (12 caractères max)" // Indiquer la limite
+          placeholderTextColor={`${THEME.text}66`}
+          value={nickname}
+          onChangeText={setNickname}
+          autoCapitalize="none"
+          maxLength={12} // Limiter la saisie
+          editable={!isSigningUp}
+        />
+
+        <TextInput
+          style={styles.input}
+          placeholder="Email"
+          placeholderTextColor={`${THEME.text}66`}
+          value={email}
+          onChangeText={(text) => setEmail(text.trim())} // Trim au changement
+          keyboardType="email-address"
+          autoCapitalize="none"
+          autoComplete="email"
+          editable={!isSigningUp}
+        />
+
+        <TextInput
+          style={styles.input}
+          placeholder="Mot de passe (6 caractères min)" // Indiquer la limite
+          placeholderTextColor={`${THEME.text}66`}
+          secureTextEntry
+          value={password}
+          onChangeText={setPassword}
+          autoComplete="new-password" // Utiliser new-password
+          editable={!isSigningUp}
+        />
+
+        {errorMessage ? <Text style={styles.error}>{errorMessage}</Text> : null}
+        {successMessage ? <Text style={styles.success}>{successMessage}</Text> : null}
+
+        <TouchableOpacity
+          style={[styles.button, isSigningUp && styles.buttonDisabled]}
+          onPress={handleSignUp}
+          disabled={isSigningUp || !nickname || !email || !password || password.length < 6} // Désactiver si champs vides/invalides ou en cours
+        >
+          {isSigningUp ? (
+            <ActivityIndicator color={THEME.text} />
+          ) : (
+            <Text style={styles.buttonText}>S'inscrire</Text>
+          )}
+        </TouchableOpacity>
+
+         {/* Optionnel: Ajouter un bouton pour retourner au login */}
+         <TouchableOpacity
+            style={[styles.goBackButton, isSigningUp && styles.buttonDisabled]}
+            onPress={() => !isSigningUp && router.push('/auth/login')}
+            disabled={isSigningUp}
+         >
+            <Text style={styles.goBackText}>Déjà un compte ? Se connecter</Text>
+         </TouchableOpacity>
+
+      </ScrollView>
+    </SafeAreaView>
   );
 }
 
 const styles = StyleSheet.create({
-  container: {
-    flexGrow: 1,
-    backgroundColor: THEME.background.dark,
-    padding: 20,
-    justifyContent: 'center',
-    paddingTop: Platform.OS === 'ios' ? 60 : 40,
-  },
-  title: {
-    fontSize: 28,
-    color: THEME.accent,
-    fontWeight: 'bold',
-    textAlign: 'center',
-    marginBottom: 30,
-  },
-  input: {
-    backgroundColor: THEME.secondary,
-    color: THEME.text,
-    fontSize: 16,
-    padding: 12,
-    marginBottom: 15,
-    borderRadius: 8,
-    width: '100%',
-  },
-  button: {
-    backgroundColor: THEME.button.secondary[0],
-    padding: 15,
-    borderRadius: 8,
-    alignItems: 'center',
-    marginTop: 15,
-    width: '100%',
-  },
-  buttonDisabled: {
-    opacity: 0.7,
-  },
-  buttonText: {
-    color: THEME.text,
-    fontSize: 16,
-    fontWeight: 'bold',
-  },
-  error: {
-    color: 'red',
-    marginVertical: 10,
-    textAlign: 'center',
-  },
-  success: {
-    color: '#4CAF50',
-    marginVertical: 10,
-    textAlign: 'center',
-    fontWeight: 'bold',
-  },
+  // ... (styles login adaptés) ...
+  safeArea: { flex: 1, backgroundColor: THEME.background.dark },
+  container: { flexGrow: 1, backgroundColor: THEME.background.dark, padding: 20, justifyContent: 'center', paddingTop: Platform.OS === 'ios' ? 60 : 40, paddingBottom: 40 }, // Padding bottom
+  title: { fontSize: 28, color: THEME.accent, fontWeight: 'bold', textAlign: 'center', marginBottom: 30 },
+  input: { backgroundColor: THEME.secondary, color: THEME.text, fontSize: 16, padding: 12, marginBottom: 15, borderRadius: 8, width: '100%' },
+  button: { backgroundColor: THEME.button.secondary[0], padding: 15, borderRadius: 8, alignItems: 'center', marginTop: 15, width: '100%', minHeight: 50, justifyContent: 'center'},
+  buttonDisabled: { opacity: 0.6 },
+  buttonText: { color: THEME.primary, fontSize: 16, fontWeight: 'bold' }, // Texte bouton contrasté
+  error: { color: '#FF6B6B', marginVertical: 10, textAlign: 'center', fontSize: 14 },
+  success: { color: '#4CAF50', marginVertical: 10, textAlign: 'center', fontWeight: 'bold', fontSize: 14 },
+  goBackButton: { marginTop: 20, alignItems: 'center', padding: 10 },
+  goBackText: { color: THEME.accent, fontSize: 16, textDecorationLine: 'underline' },
 });

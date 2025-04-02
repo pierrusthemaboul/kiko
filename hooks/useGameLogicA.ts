@@ -1059,39 +1059,50 @@ export function useGameLogicA(initialEvent?: string) { // Rendu initialEvent opt
       const timeGap = calculateDynamicTimeGap(referenceEvent.date);
 
       // Fonction de scoring pour évaluer les événements candidats
-      const scoreEvent = (evt: Event, timeDiff: number): number => {
-          const randomFactor = 0.9 + Math.random() * 0.2; // Légère randomisation (0.9 - 1.1)
+const scoreEvent = (evt: Event, timeDiff: number): number => {
+  const randomFactor = 0.9 + Math.random() * 0.2; // Légère randomisation (0.9 - 1.1)
 
-          // Score basé sur l'écart temporel (proche de l'idéal = mieux)
-          const idealGap = timeGap.base;
-          let gapScore = 0;
-          if (idealGap > 0) { // Éviter division par zéro
-              // Pénalise plus si on est TROP loin que si on est TROP près
-              const diffRatio = Math.abs(timeDiff - idealGap) / idealGap;
-              gapScore = 35 * Math.max(0, 1 - diffRatio) * randomFactor;
-          }
+  // Score basé sur l'écart temporel (proche de l'idéal = mieux)
+  const idealGap = timeGap.base;
+  let gapScore = 0;
+  if (idealGap > 0) { // Éviter division par zéro
+      // Pénalise plus si on est TROP loin que si on est TROP près
+      const diffRatio = Math.abs(timeDiff - idealGap) / idealGap;
+      gapScore = 35 * Math.max(0, 1 - diffRatio) * randomFactor;
+  }
 
-          // Score basé sur la difficulté (proche de l'idéal = mieux)
-          const idealDifficulty = Math.min(3, Math.max(1, Math.round(user.level / 3) + 1)); // Difficulté cible augmente avec les niveaux
-          let difficultyScore = 0;
-          if(evt.niveau_difficulte !== null && evt.niveau_difficulte !== undefined){
-              difficultyScore = 25 * (1 - Math.abs(evt.niveau_difficulte - idealDifficulty) / 3) * randomFactor; // Max diff = 3
-          }
+  // Score basé sur la difficulté (proche de l'idéal = mieux)
+  // MODIFICATION: Adapter l'échelle pour 7 niveaux de difficulté au lieu de 3
+  const idealDifficulty = Math.min(7, Math.max(1, Math.ceil(user.level / 2)));
+  // Cette formule donne:
+  // - Niveau 1-2: difficulté idéale = 1
+  // - Niveau 3-4: difficulté idéale = 2
+  // - Niveau 5-6: difficulté idéale = 3
+  // - Niveau 7-8: difficulté idéale = 4
+  // - Niveau 9-10: difficulté idéale = 5
+  // - Niveau 11-12: difficulté idéale = 6
+  // - Niveau 13+: difficulté idéale = 7
+  
+  let difficultyScore = 0;
+  if(evt.niveau_difficulte !== null && evt.niveau_difficulte !== undefined){
+      // MODIFICATION: Diviseur 7 au lieu de 3 pour répartir sur l'ensemble des niveaux
+      difficultyScore = 25 * (1 - Math.abs(evt.niveau_difficulte - idealDifficulty) / 7) * randomFactor;
+  }
 
-          // NOUVEAU: Bonus inversement proportionnel à la fréquence d'utilisation
-          const frequencyScore = (evt as any).frequency_score || 0;
-          // Plus le frequency_score est élevé, plus le malus est important (jusqu'à -20 points)
-          const frequencyMalus = Math.min(20, frequencyScore * 2);
-          
-          // Bonus de variation (pour éviter de répéter les mêmes types/périodes ?) - Simple pour l'instant
-          const variationBonus = Math.random() * 10;
+  // NOUVEAU: Bonus inversement proportionnel à la fréquence d'utilisation
+  const frequencyScore = (evt as any).frequency_score || 0;
+  // Plus le frequency_score est élevé, plus le malus est important (jusqu'à -20 points)
+  const frequencyMalus = Math.min(20, frequencyScore * 2);
+  
+  // Bonus de variation (pour éviter de répéter les mêmes types/périodes ?) - Simple pour l'instant
+  const variationBonus = Math.random() * 10;
 
-          // Malus pour les événements antiques si on approche de la limite
-          const antiqueLimit = user.level <= 5 ? ANTIQUE_EVENTS_LIMITS[user.level as keyof typeof ANTIQUE_EVENTS_LIMITS] : 5;
-          const antiqueMalus = isAntiqueEvent(evt) && antiqueEventsCount >= (antiqueLimit - 1) ? 50 : 0;
+  // Malus pour les événements antiques si on approche de la limite
+  const antiqueLimit = user.level <= 5 ? ANTIQUE_EVENTS_LIMITS[user.level as keyof typeof ANTIQUE_EVENTS_LIMITS] : 5;
+  const antiqueMalus = isAntiqueEvent(evt) && antiqueEventsCount >= (antiqueLimit - 1) ? 50 : 0;
 
-          return Math.max(0, gapScore + difficultyScore + variationBonus - frequencyMalus - antiqueMalus);
-      };
+  return Math.max(0, gapScore + difficultyScore + variationBonus - frequencyMalus - antiqueMalus);
+};
 
 
       const availableEvents = events.filter((e) => !usedEvents.has(e.id));
@@ -1270,15 +1281,7 @@ export function useGameLogicA(initialEvent?: string) { // Rendu initialEvent opt
             ? Math.min(prev.lives + 1, MAX_LIVES)
             : prev.lives;
 
-        // Tracker la récompense AVANT de retourner le nouvel état
-        FirebaseAnalytics.reward(
-            reward.type, // Ex: 'POINTS', 'EXTRA_LIFE'
-            reward.type === RewardType.POINTS ? safeAmount : 1, // Montant ou 1 pour la vie
-            'system_reward', // Trigger générique pour les récompenses internes
-            `level_${prev.level}`, // Valeur du trigger (le niveau actuel)
-            prev.level,
-            updatedPoints // Score *après* application des points (si applicable)
-        );
+    
 
         return {
           ...prev,
