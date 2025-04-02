@@ -409,7 +409,7 @@ export function useGameLogicA(initialEvent?: string) { // Rendu initialEvent opt
 
 
 
-  /* Effet pour appliquer un malus si l'utilisateur quitte l'application */
+  /* Effet pour appliquer un malus si l'utilisateur quitte l'application truc */
   useEffect(() => {
     const subscription = AppState.addEventListener('change', (nextAppState) => {
       if (nextAppState === 'background') {
