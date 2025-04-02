@@ -1,3 +1,5 @@
+// /home/pierre/sword/kiko/app/(tabs)/vue1.tsx
+
 import React, { useEffect, useRef, useState } from 'react';
 import {
   View,
@@ -11,7 +13,7 @@ import {
   Platform,
   Modal,
   Image, // Keep Image if needed elsewhere, but not used in the provided snippet directly
-  ScrollView, // Added for Modal content if it gets long
+  ScrollView,
 } from 'react-native';
 import { useRouter } from 'expo-router';
 import { Ionicons } from '@expo/vector-icons';
@@ -19,6 +21,9 @@ import { LinearGradient } from 'expo-linear-gradient';
 
 // Import Supabase (chemin actuel)
 import { supabase } from '../../lib/supabase/supabaseClients';
+
+// Import Firebase Analytics utility
+import { FirebaseAnalytics } from '../../lib/firebase'; // <-- AJOUTÉ
 
 import useAdminStatus from '@/hooks/useAdminStatus';
 import { useFonts } from '@/hooks/useFonts';
@@ -147,8 +152,10 @@ export default function Vue1() {
         duration: 600,
         useNativeDriver: true,
       }).start();
+      // Suivre la vue de l'écran une fois les polices chargées et l'animation démarrée
+      FirebaseAnalytics.screen('HowToPlay', 'Vue1'); // <-- AJOUTÉ: Suivi de l'écran
     }
-  }, [fontsLoaded]);
+  }, [fontsLoaded, fadeAnim]); // fadeAnim ajouté aux dépendances pour lier le tracking à l'animation
 
    useEffect(() => {
     const fetchUserData = async () => {
@@ -262,6 +269,8 @@ export default function Vue1() {
         }
       } catch (err) {
         console.error('Erreur lors de la récupération des données:', err);
+        // Log error to Firebase
+        FirebaseAnalytics.error('fetch_user_data_vue1', err instanceof Error ? err.message : 'Unknown error', 'Vue1'); // <-- AJOUTÉ: Suivi d'erreur
         // Reset state or show error message
            setPlayerName('Voyageur');
            setAllTimeBestScore(null); // Indicate error or loading state?
@@ -406,7 +415,14 @@ export default function Vue1() {
                 <TouchableOpacity
                   key={tab}
                   style={[styles.tab, activeScoreTab === tab && styles.activeTab]}
-                  onPress={() => setActiveScoreTab(tab as 'daily' | 'monthly' | 'allTime')}
+                  onPress={() => {
+                    const newTab = tab as 'daily' | 'monthly' | 'allTime';
+                    // Seulement tracker si l'onglet change VRAIMENT
+                    if (newTab !== activeScoreTab) {
+                      FirebaseAnalytics.leaderboard(newTab); // <-- AJOUTÉ: Suivi du changement d'onglet
+                    }
+                    setActiveScoreTab(newTab);
+                  }}
                 >
                   <Ionicons
                     name={tab === 'daily' ? "today-outline" : tab === 'monthly' ? "calendar-outline" : "trophy-outline"}
@@ -526,14 +542,21 @@ export default function Vue1() {
                <View style={styles.actionButtonsRow}>
                   <TouchableOpacity
                     style={styles.actionButton}
-                    onPress={() => setShowScoreboard(true)}
+                    onPress={() => {
+                        // Tracker la vue initiale du classement (qui est 'allTime' par défaut)
+                        FirebaseAnalytics.leaderboard('allTime'); // <-- AJOUTÉ: Suivi ouverture classement
+                        setShowScoreboard(true);
+                    }}
                   >
                     <Ionicons name="trophy-outline" size={22} color={SALMON_THEME.secondaryAccent} />
                     <Text style={styles.actionButtonText}>Scores</Text>
                   </TouchableOpacity>
                   <TouchableOpacity
                     style={styles.actionButton}
-                    onPress={() => setShowDisclaimer(true)}
+                    onPress={() => {
+                        FirebaseAnalytics.disclaimer(); // <-- AJOUTÉ: Suivi vue disclaimer
+                        setShowDisclaimer(true);
+                    }}
                   >
                     <Ionicons name="information-circle-outline" size={22} color={SALMON_THEME.secondaryAccent} />
                     <Text style={styles.actionButtonText}>Infos</Text>
@@ -547,7 +570,12 @@ export default function Vue1() {
         <View style={styles.footer}>
           <TouchableOpacity
             style={styles.startButton}
-            onPress={() => router.push('/game/page')} // Assurez-vous que la route est correcte
+            onPress={() => {
+                const isGuestPlayer = !playerName || playerName === 'Voyageur' || playerName.startsWith('Voyageur-'); // Vérif si invité
+                const nameToSend = playerName || 'Anonymous';
+                FirebaseAnalytics.gameStarted(nameToSend, isGuestPlayer, 1); // <-- AJOUTÉ: Suivi début de partie (niv 1)
+                router.push('/game/page'); // Assurez-vous que la route est correcte
+            }}
           >
             <Text style={styles.startButtonText}>COMMENCER</Text>
             <Ionicons name="play-circle-outline" size={24} color={SALMON_THEME.textLight} />
@@ -696,7 +724,7 @@ const styles = StyleSheet.create({
     justifyContent: 'space-around', // Space between buttons and central icon
     width: '90%', // Limit width slightly
     marginTop: 10,
-    
+
   },
   // Style pour les boutons AVANT/APRES dans la démo (inspiré du jeu)
   demoChoiceButton: {
