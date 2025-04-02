@@ -54,7 +54,7 @@ interface GameContentAProps {
   fadeAnim: Animated.Value;
   showLevelModal: boolean;
   isLevelPaused: boolean;
-  startLevel: () => void;
+  handleLevelUp: () => void; // Changé de startLevel à handleLevelUp
   currentLevelConfig: ExtendedLevelConfig;
   currentReward: {
     type: RewardType;
@@ -70,7 +70,7 @@ interface GameContentAProps {
   };
   levelCompletedEvents: LevelEventSummary[];
 
-  // On ajoute la prop pour l’historique complet
+  // On ajoute la prop pour l'historique complet
   levelsHistory: LevelHistory[];
 }
 
@@ -94,7 +94,7 @@ function GameContentA({
   fadeAnim,
   showLevelModal,
   isLevelPaused,
-  startLevel,
+  handleLevelUp, // Changé de startLevel à handleLevelUp
   currentLevelConfig,
   currentReward,
   completeRewardAnimation,
@@ -120,17 +120,17 @@ function GameContentA({
 
   // [ADDED LOG]
   useEffect(() => {
-    console.log('[GameContentA] levelsHistory changed => length:', levelsHistory?.length || 0);
+    
   }, [levelsHistory]);
 
   // [ADDED LOG]
   useEffect(() => {
-    console.log('[GameContentA] levelCompletedEvents changed => length:', levelCompletedEvents?.length || 0);
+    
   }, [levelCompletedEvents]);
 
   // [ADDED LOG]
   useEffect(() => {
-    console.log('[GameContentA] isGameOver changed:', isGameOver);
+    
   }, [isGameOver]);
 
   useEffect(() => {
@@ -188,13 +188,13 @@ function GameContentA({
 
   const onChoiceWrapper = (choice: string) => {
     // [ADDED LOG]
-    console.log('[GameContentA] onChoiceWrapper => user chose:', choice);
+    
     handleChoice(choice);
   };
 
   const renderContent = () => {
     // [ADDED LOG]
-    console.log('[GameContentA] renderContent => loading:', loading, ', error:', error);
+    
 
     if (loading) {
       return (
@@ -239,7 +239,7 @@ function GameContentA({
         <LevelUpModalBis
           visible={showLevelModal}
           level={level}
-          onStart={startLevel}
+          onStart={handleLevelUp} // Changé de startLevel à handleLevelUp
           name={currentLevelConfig.name}
           description={currentLevelConfig.description}
           requiredEvents={currentLevelConfig.eventsNeeded}

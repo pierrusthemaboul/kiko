@@ -1,3 +1,5 @@
+// /home/pierre/sword/kiko/app/(tabs)/index.tsx
+
 import React, { useEffect, useState, useRef } from 'react';
 import {
   View,
@@ -10,16 +12,21 @@ import {
   Easing,
   Dimensions,
   Platform,
+  Pressable, // Assurez-vous que Pressable est importé
 } from 'react-native';
 import { useRouter } from 'expo-router';
 import { supabase } from '../../lib/supabase/supabaseClients';
 import { Audio } from 'expo-av';
 import { LinearGradient } from 'expo-linear-gradient';
 import { User } from '@supabase/supabase-js';
-import { Pressable } from 'react-native';
 import { Ionicons } from '@expo/vector-icons';
 import { BannerAd, BannerAdSize, TestIds } from 'react-native-google-mobile-ads';
 import { useFonts } from '../../hooks/useFonts';
+// Import corrigé pour utiliser l'objet exporté
+import { FirebaseAnalytics } from '../../lib/firebase'; // <- Chemin vérifié
+
+// PAS D'IMPORT DIRECT DE analytics ici:
+// import analytics from '@react-native-firebase/analytics'; // <-- S'assurer que cette ligne est supprimée ou commentée
 
 const { width, height } = Dimensions.get('window');
 
@@ -27,7 +34,7 @@ const { width, height } = Dimensions.get('window');
 const SPLASH_DURATION = 3000;
 const ANIMATION_DURATION = 800;
 
-// Theme configuration
+// Theme configuration (Identique)
 const THEME = {
   primary: '#050B1F',    // Très sombre Navy Blue
   secondary: '#0A173D',  // Navy Blue profond
@@ -45,6 +52,7 @@ const THEME = {
   }
 };
 
+// SplashLogo (Identique)
 const SplashLogo = () => {
   const rotation = useRef(new Animated.Value(0)).current;
   const scale = useRef(new Animated.Value(0.3)).current;
@@ -96,13 +104,14 @@ const SplashLogo = () => {
   );
 };
 
-const AnimatedButton = React.memo(({ 
-  onPress, 
-  label, 
-  icon, 
+// AnimatedButton (Identique, simplifié)
+const AnimatedButton = React.memo(({
+  onPress,
+  label,
+  icon,
   variant = 'primary',
   disabled = false,
-  style = {} 
+  style = {}
 }) => {
   const scale = useRef(new Animated.Value(1)).current;
   const translateY = useRef(new Animated.Value(0)).current;
@@ -157,10 +166,10 @@ const AnimatedButton = React.memo(({
           style={styles.buttonContainer}
         >
           {icon && (
-            <Ionicons 
-              name={icon} 
-              size={24} 
-              color="white" 
+            <Ionicons
+              name={icon}
+              size={24}
+              color="white"
               style={styles.buttonIcon}
             />
           )}
@@ -179,24 +188,31 @@ export default function HomeScreen() {
   const [guestDisplayName, setGuestDisplayName] = useState<string | null>(null);
   const fontsLoaded = useFonts();
 
-  // Animation refs
+  // Animation refs (Identiques)
   const splashAnimation = {
     opacity: useRef(new Animated.Value(1)).current,
     scale: useRef(new Animated.Value(1)).current
   };
-
   const mainContentAnimation = {
     opacity: useRef(new Animated.Value(0)).current,
     translateY: useRef(new Animated.Value(50)).current
   };
 
-  // Sélection de l'ID de test approprié selon la plateforme
+  // Ad Unit ID (Identique)
   const adUnitId = Platform.select({
     android: TestIds.BANNER,
     ios: TestIds.BANNER,
     default: TestIds.BANNER,
   });
 
+  // Firebase Analytics - track screen view
+  useEffect(() => {
+    if (!showSplash) {
+      FirebaseAnalytics.screen('Home', 'HomeScreen');
+    }
+  }, [showSplash]);
+
+  // Initialisation quand les polices sont chargées
   useEffect(() => {
     if (fontsLoaded) {
       initializeApp();
@@ -216,7 +232,7 @@ export default function HomeScreen() {
       );
       await sound.playAsync();
     } catch (error) {
-      // Gestion des erreurs audio si nécessaire
+      console.warn('Audio playback error:', error);
     }
 
     setTimeout(() => {
@@ -232,6 +248,11 @@ export default function HomeScreen() {
           useNativeDriver: true,
         })
       ]).start(() => {
+        // --- APPEL CORRIGÉ ---
+        FirebaseAnalytics.logEvent('splash_complete', {
+           time_shown: SPLASH_DURATION
+        });
+        // --------------------
         setShowSplash(false);
         animateMainContent();
       });
@@ -255,57 +276,153 @@ export default function HomeScreen() {
   };
 
   const checkUser = async () => {
-    const { data: { session } } = await supabase.auth.getSession();
-    if (session?.user) {
-      setUser(session.user);
-      await fetchUserProfile(session.user.id);
+    try {
+      const { data: { session } } = await supabase.auth.getSession();
+      if (session?.user) {
+        setUser(session.user);
+        await fetchUserProfile(session.user.id);
+
+        // --- APPEL CORRIGÉ ---
+        FirebaseAnalytics.logEvent('user_login', {
+          method: 'auto',
+          is_returning_user: true
+        });
+        // --------------------
+        await FirebaseAnalytics.initialize(session.user.id, false);
+
+      } else {
+        await FirebaseAnalytics.initialize(undefined, true);
+      }
+    } catch (error) {
+        console.error("Error checking user session:", error);
+        FirebaseAnalytics.error('session_check_error', error instanceof Error ? error.message : 'Unknown error', 'HomeScreen');
+        await FirebaseAnalytics.initialize(undefined, true);
     }
   };
 
+
   const fetchUserProfile = async (userId: string) => {
-    const { data, error } = await supabase
-      .from('profiles')
-      .select('display_name')
-      .eq('id', userId)
-      .single();
-      
-    if (data) setDisplayName(data.display_name);
+    try {
+        const { data, error } = await supabase
+          .from('profiles')
+          .select('display_name')
+          .eq('id', userId)
+          .single();
+
+        if (error) throw error;
+
+        if (data) {
+          setDisplayName(data.display_name);
+          // --- APPEL CORRIGÉ ---
+          FirebaseAnalytics.setUserProperty('display_name', data.display_name);
+          // --------------------
+        }
+    } catch (error) {
+        console.error("Error fetching user profile:", error);
+        FirebaseAnalytics.error('profile_fetch_error', error instanceof Error ? error.message : 'Unknown error', 'HomeScreen');
+    }
   };
 
   const handleLogout = async () => {
     try {
+      // --- APPEL CORRIGÉ ---
+      FirebaseAnalytics.logEvent('user_logout', {
+        user_type: guestDisplayName ? 'guest' : 'registered'
+      });
+      // --------------------
+
       await supabase.auth.signOut();
       setGuestDisplayName(null);
       setDisplayName('');
       setUser(null);
+      await FirebaseAnalytics.initialize(undefined, true);
+
     } catch (error) {
       Alert.alert('Erreur', 'Impossible de se déconnecter');
+      FirebaseAnalytics.error('logout_error', error instanceof Error ? error.message : 'Unknown error', 'HomeScreen');
     }
   };
 
   const handlePlayAsGuest = () => {
     const guestId = Math.floor(Math.random() * 10000);
     const name = `Voyageur-${guestId}`;
-    
+
     setGuestDisplayName(name);
     setDisplayName(name);
-    
+
+    // --- APPEL CORRIGÉ ---
+    FirebaseAnalytics.logEvent('guest_login', {
+      guest_id: guestId,
+      guest_name: name
+    });
+    // --------------------
+    FirebaseAnalytics.initialize(undefined, true);
+
     Alert.alert(
-      'Mode Découverte', 
+      'Mode Découverte',
       `Bienvenue, ${name} ! En mode découverte, votre progression ne sera pas sauvegardée. Créez un compte pour participer aux classements et garder vos scores !`,
       [
-        { text: "Continuer en mode découverte" },
-        { 
-          text: "Créer un compte", 
-          onPress: () => router.push('/auth/signup'),
+        {
+          text: "Continuer en mode découverte",
+          onPress: () => {
+            // --- APPEL CORRIGÉ ---
+            FirebaseAnalytics.logEvent('guest_mode_confirmed', {
+              guest_name: name
+            });
+            // --------------------
+          }
+        },
+        {
+          text: "Créer un compte",
+          onPress: () => {
+            // --- APPEL CORRIGÉ ---
+            FirebaseAnalytics.logEvent('guest_to_signup', {
+              from_screen: 'home',
+              guest_name: name
+            });
+            // --------------------
+            router.push('/auth/signup');
+          },
           style: "default"
         }
       ]
     );
   };
 
+  // --- Handlers spécifiques pour les boutons AVEC tracking ---
+  const handleStartGame = () => {
+    // --- APPEL CORRIGÉ ---
+    FirebaseAnalytics.logEvent('start_game_button_clicked', {
+        player_name: guestDisplayName || displayName || 'Anonymous',
+        is_guest: !!guestDisplayName,
+        user_type: guestDisplayName ? 'guest' : (user ? 'registered' : 'unknown'),
+        from_screen: 'home'
+    });
+    // --------------------
+    router.push('vue1');
+  };
+
+  const handleLoginPress = () => {
+    // --- APPEL CORRIGÉ ---
+    FirebaseAnalytics.logEvent('login_button_clicked', {
+      from_screen: 'home'
+    });
+    // --------------------
+    router.push('/auth/login');
+  };
+
+  const handleSignupPress = () => {
+    // --- APPEL CORRIGÉ ---
+    FirebaseAnalytics.logEvent('signup_button_clicked', {
+      from_screen: 'home'
+    });
+    // --------------------
+    router.push('/auth/signup');
+  };
+  // ---------------------------------------------------------
+
   if (!fontsLoaded) {
-    return null;
+    return null; // Ou un loader simple
   }
 
   return (
@@ -313,6 +430,7 @@ export default function HomeScreen() {
       <StatusBar translucent backgroundColor="transparent" barStyle="light-content" />
 
       {showSplash ? (
+        // Splash Screen JSX (Identique)
         <Animated.View style={[
           styles.splashContainer,
           {
@@ -335,6 +453,7 @@ export default function HomeScreen() {
           </LinearGradient>
         </Animated.View>
       ) : (
+        // Main Content JSX
         <LinearGradient
           colors={[THEME.background.dark, THEME.background.medium]}
           style={styles.mainContainer}
@@ -349,12 +468,9 @@ export default function HomeScreen() {
             <View style={styles.headerContainer}>
               <Text style={styles.welcomeTitle}>
                 {(() => {
-                  if (guestDisplayName) {
-                    return `Bienvenue, ${guestDisplayName}`;
-                  }
-                  if (user?.name || displayName) {
-                    return `Bienvenue, ${user?.name || displayName}`;
-                  }
+                  if (guestDisplayName) return `Bienvenue, ${guestDisplayName}`;
+                  if (displayName) return `Bienvenue, ${displayName}`;
+                  if (user) return `Bienvenue`;
                   return "L'Histoire vous Attend";
                 })()}
               </Text>
@@ -365,12 +481,13 @@ export default function HomeScreen() {
               </Text>
             </View>
 
+            {/* Utilisation des handlers spécifiques */}
             {(user || guestDisplayName) ? (
               <>
                 <AnimatedButton
                   label="Commencer l'Aventure"
                   icon="rocket-outline"
-                  onPress={() => router.push('vue1')}
+                  onPress={handleStartGame}
                   variant="primary"
                 />
                 <AnimatedButton
@@ -385,13 +502,13 @@ export default function HomeScreen() {
                 <AnimatedButton
                   label="Se Connecter"
                   icon="log-in-outline"
-                  onPress={() => router.push('/auth/login')}
+                  onPress={handleLoginPress}
                   variant="primary"
                 />
                 <AnimatedButton
                   label="Créer un Compte"
                   icon="person-add-outline"
-                  onPress={() => router.push('/auth/signup')}
+                  onPress={handleSignupPress}
                   variant="secondary"
                 />
                 <AnimatedButton
@@ -403,13 +520,24 @@ export default function HomeScreen() {
               </>
             )}
 
-            {/* Bannière publicitaire en bas */}
+            {/* Bannière publicitaire avec tracking corrigé */}
             <View style={styles.adContainer}>
               <BannerAd
                 unitId={adUnitId}
                 size={BannerAdSize.BANNER}
                 requestOptions={{
                   requestNonPersonalizedAdsOnly: true,
+                }}
+                onAdLoaded={() => {
+                  FirebaseAnalytics.ad('banner', 'loaded', 'home_banner', 0);
+                }}
+                onAdFailedToLoad={(error) => {
+                   FirebaseAnalytics.ad('banner', 'failed', 'home_banner', 0);
+                   FirebaseAnalytics.error(
+                      'ad_load_failed',
+                      `Banner Ad Error: ${error.message} (Code: ${error.code})`,
+                      'HomeScreen'
+                   );
                 }}
               />
             </View>
@@ -420,6 +548,7 @@ export default function HomeScreen() {
   );
 }
 
+// Styles (Identiques)
 const styles = StyleSheet.create({
   container: {
     flex: 1,
@@ -530,6 +659,6 @@ const styles = StyleSheet.create({
     alignItems: 'center',
     justifyContent: 'center',
     marginTop: 20,
-    marginBottom: Platform.OS === 'ios' ? 40 : 20,
+    marginBottom: Platform.OS === 'ios' ? 40 : 20, // Espace pour la bannière
   },
 });

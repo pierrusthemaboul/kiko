@@ -2,7 +2,6 @@ package com.pierretulle.kiko
 
 import android.app.Application
 import android.content.res.Configuration
-import com.google.android.gms.ads.MobileAds
 
 import com.facebook.react.PackageList
 import com.facebook.react.ReactApplication
@@ -20,21 +19,22 @@ import expo.modules.ReactNativeHostWrapper
 class MainApplication : Application(), ReactApplication {
 
   override val reactNativeHost: ReactNativeHost = ReactNativeHostWrapper(
-    this,
-    object : DefaultReactNativeHost(this) {
-      override fun getPackages(): List<ReactPackage> {
-        val packages = PackageList(this).packages
-        // Ajoutez ici les packages qui ne sont pas autolinkés, si nécessaire.
-        return packages
+        this,
+        object : DefaultReactNativeHost(this) {
+          override fun getPackages(): List<ReactPackage> {
+            val packages = PackageList(this).packages
+            // Packages that cannot be autolinked yet can be added manually here, for example:
+            // packages.add(new MyReactNativePackage());
+            return packages
+          }
+
+          override fun getJSMainModuleName(): String = ".expo/.virtual-metro-entry"
+
+          override fun getUseDeveloperSupport(): Boolean = BuildConfig.DEBUG
+
+          override val isNewArchEnabled: Boolean = BuildConfig.IS_NEW_ARCHITECTURE_ENABLED
+          override val isHermesEnabled: Boolean = BuildConfig.IS_HERMES_ENABLED
       }
-
-      override fun getJSMainModuleName(): String = ".expo/.virtual-metro-entry"
-
-      override fun getUseDeveloperSupport(): Boolean = BuildConfig.DEBUG
-
-      override val isNewArchEnabled: Boolean = BuildConfig.IS_NEW_ARCHITECTURE_ENABLED
-      override val isHermesEnabled: Boolean = BuildConfig.IS_HERMES_ENABLED
-    }
   )
 
   override val reactHost: ReactHost
@@ -42,12 +42,9 @@ class MainApplication : Application(), ReactApplication {
 
   override fun onCreate() {
     super.onCreate()
-    // Initialisation du SDK Google Mobile Ads (pour react-native-google-mobile-ads)
-    MobileAds.initialize(this) {}
-
     SoLoader.init(this, OpenSourceMergedSoMapping)
     if (BuildConfig.IS_NEW_ARCHITECTURE_ENABLED) {
-      // Chargement du point d'entrée natif pour la nouvelle architecture.
+      // If you opted-in for the New Architecture, we load the native entry point for this app.
       load()
     }
     ApplicationLifecycleDispatcher.onApplicationCreate(this)

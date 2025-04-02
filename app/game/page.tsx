@@ -51,7 +51,7 @@ export default function GamePage() {
     ]).start();
   }, []);
 
-  // Sécurité : si gameLogic n’est pas prêt, on n’affiche rien
+  // Sécurité : si gameLogic n'est pas prêt, on n'affiche rien
   if (!gameLogic) {
     return null;
   }
@@ -71,8 +71,8 @@ export default function GamePage() {
 
         <SafeAreaView style={styles.container} edges={['bottom']}>
           {/* 
-            GameContentA contient déjà l’UI du jeu, 
-            y compris la barre de score/vies si vous l’y avez intégrée 
+            GameContentA contient déjà l'UI du jeu, 
+            y compris la barre de score/vies si vous l'y avez intégrée 
           */}
           <GameContentA
             user={gameLogic.user}
@@ -94,7 +94,7 @@ export default function GamePage() {
             fadeAnim={fadeAnim}
             showLevelModal={gameLogic.showLevelModal}
             isLevelPaused={gameLogic.isLevelPaused}
-            startLevel={gameLogic.startLevel}
+            handleLevelUp={gameLogic.handleLevelUp}
             currentLevelConfig={gameLogic.currentLevelConfig}
             leaderboards={gameLogic.leaderboards}
             levelCompletedEvents={gameLogic.levelCompletedEvents}
@@ -106,7 +106,7 @@ export default function GamePage() {
           />
 
           {/*
-            Affichage conditionnel de l’animation de récompense.
+            Affichage conditionnel de l'animation de récompense.
             - On vérifie que currentReward est défini 
             - On vérifie aussi que targetPosition est présente (définie via updateRewardPosition)
           */}
@@ -127,7 +127,7 @@ export default function GamePage() {
 const styles = StyleSheet.create({
   fullScreenContainer: {
     flex: 1,
-    // S’assurer que le contenu remplit tout l’écran
+    // S'assurer que le contenu remplit tout l'écran
     position: 'absolute',
     top: 0,
     left: 0,
@@ -145,5 +145,3 @@ const styles = StyleSheet.create({
     // edges={['bottom']} évite le padding en haut
   },
 });
-
-export default GamePage;
