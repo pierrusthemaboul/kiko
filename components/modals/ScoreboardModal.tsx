@@ -577,7 +577,7 @@ const styles = StyleSheet.create({
     marginTop: 15,
   },
   eventsButton: {
-    backgroundColor: colors.primary,
+    backgroundColor: '#FF8C69',
     alignSelf: 'center',
     paddingVertical: 12,
     paddingHorizontal: 30,
