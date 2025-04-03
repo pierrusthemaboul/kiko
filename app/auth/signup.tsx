@@ -1,6 +1,6 @@
 // /home/pierre/sword/kiko/app/auth/signup.tsx
 
-import React, { useState, useEffect, useLayoutEffect, useCallback } from 'react'; // Ajout useEffect, useLayoutEffect, useCallback
+import React, { useState, useEffect, useLayoutEffect, useCallback } from 'react';
 import {
   View,
   Text,
@@ -9,13 +9,13 @@ import {
   ScrollView,
   StyleSheet,
   Platform,
-  SafeAreaView, // Utiliser SafeAreaView
-  StatusBar,    // Pour le style de la barre
+  SafeAreaView,
+  StatusBar,
   ActivityIndicator
 } from 'react-native';
 import { supabase } from '../../lib/supabase/supabaseClients';
-import { router, useFocusEffect, useNavigation } from 'expo-router'; // Ajout useFocusEffect, useNavigation
-import { FirebaseAnalytics } from '../../lib/firebase'; // <-- AJOUT: Importer FirebaseAnalytics
+import { router, useFocusEffect, useNavigation } from 'expo-router';
+import { FirebaseAnalytics } from '../../lib/firebase';
 
 const THEME = { /* ... (votre thème) ... */
   primary: '#050B1F',
@@ -27,7 +27,7 @@ const THEME = { /* ... (votre thème) ... */
 };
 
 export default function SignUp() {
-  const navigation = useNavigation(); // Pour options header
+  const navigation = useNavigation();
 
   const [nickname, setNickname] = useState('');
   const [email, setEmail] = useState('');
@@ -36,22 +36,14 @@ export default function SignUp() {
   const [successMessage, setSuccessMessage] = useState('');
   const [isSigningUp, setIsSigningUp] = useState(false);
 
-  // --- AJOUT: Suivi de l'écran ---
   useFocusEffect(
     useCallback(() => {
       FirebaseAnalytics.screen('SignUpScreen', 'SignUp');
-      // Optionnel: réinitialiser les champs/messages
-      // setErrorMessage('');
-      // setSuccessMessage('');
-      // setEmail('');
-      // setPassword('');
-      // setNickname('');
     }, [])
   );
-  // --- FIN AJOUT ---
 
   useLayoutEffect(() => {
-    navigation.setOptions({ headerShown: false }); // Cacher header si besoin
+    navigation.setOptions({ headerShown: false });
     StatusBar.setBarStyle('light-content');
     if (Platform.OS === 'android') {
       StatusBar.setBackgroundColor(THEME.background.dark);
@@ -62,32 +54,26 @@ export default function SignUp() {
     if (isSigningUp) return;
 
     console.log('🔐 Starting signup process...');
-    // --- AJOUT: Log Tentative ---
     FirebaseAnalytics.logEvent('signup_attempt');
-    // --------------------------
     setIsSigningUp(true);
     setErrorMessage('');
     setSuccessMessage('');
 
-    // Fonction interne pour logger les échecs et retourner
     const failSignup = (reason: string, message: string, logMessage?: string) => {
       setErrorMessage(message);
-      // --- AJOUT: Log Échec ---
       FirebaseAnalytics.logEvent('signup_failed', {
         reason: reason,
         message: (logMessage || message).substring(0, 100)
       });
-      // --------------------
       setIsSigningUp(false);
     };
 
     // 1. Validation Client
     if (!nickname.trim()) return failSignup('validation_nickname', 'Le pseudonyme est obligatoire.');
-    if (nickname.trim().length > 12) return failSignup('validation_nickname_length', 'Le pseudonyme ne peut pas dépasser 12 caractères.');
+    // La validation > 20 est redondante car gérée par maxLength={20}
     const forbiddenChars = /[\\\/]/g;
     if (forbiddenChars.test(nickname)) return failSignup('validation_nickname_chars', 'Le pseudonyme contient des caractères interdits (\\ ou /).');
     if (!email.trim()) return failSignup('validation_email', "L'email est obligatoire.");
-    // Ajouter une validation regex simple pour l'email
     const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
     if (!emailRegex.test(email.trim())) return failSignup('validation_email_format', "Le format de l'email est invalide.");
     if (!password || password.length < 6) return failSignup('validation_password', 'Le mot de passe doit contenir au moins 6 caractères.');
@@ -97,10 +83,10 @@ export default function SignUp() {
       console.log('🔍 Checking if nickname exists:', nickname.trim());
       const { data: existingProfile, error: checkProfileError } = await supabase
         .from('profiles')
-        .select('id', { count: 'exact', head: true }) // Plus efficace: juste vérifier l'existence
+        .select('id', { count: 'exact', head: true })
         .eq('display_name', nickname.trim());
 
-      if (checkProfileError && checkProfileError.code !== 'PGRST116') { // PGRST116 = 0 rows found, pas une erreur ici
+      if (checkProfileError && checkProfileError.code !== 'PGRST116') {
         console.error('❌ Check nickname error:', checkProfileError);
         return failSignup('nickname_check_error', 'Erreur lors de la vérification du pseudonyme.', checkProfileError.message);
       }
@@ -115,10 +101,7 @@ export default function SignUp() {
       const { data: signUpData, error: signUpError } = await supabase.auth.signUp({
         email: email.trim(),
         password: password,
-        options: {
-          // On ne met PAS display_name ici, on le met dans la table profiles
-          // data: { display_name: nickname.trim() } // A ENLEVER
-        },
+        options: {},
       });
 
       if (signUpError) {
@@ -143,55 +126,43 @@ export default function SignUp() {
       const userId = signUpData.user.id;
       console.log('👤 User created in Supabase Auth:', userId);
 
-      // 5. Création du profil (Simplifié)
+      // 5. Création du profil
       console.log('✍️ Creating user profile...');
       const { error: profileError } = await supabase
         .from('profiles')
         .insert({
-            id: userId, // Obligatoire: lie à l'utilisateur auth
-            display_name: nickname.trim(), // Obligatoire ou optionnel selon votre schéma
+            id: userId,
+            display_name: nickname.trim(),
             // Ajoutez d'autres champs obligatoires ici avec des valeurs par défaut si nécessaire
-            // high_score: 0,
-            // games_played: 0,
-            // etc.
           });
 
       if (profileError) {
         console.error('❌ Profile creation error:', profileError);
-        // Important: Essayer de supprimer l'utilisateur auth créé pour éviter un compte orphelin
-        await supabase.auth.admin.deleteUser(userId).catch(delErr => console.error("Failed to delete orphaned auth user:", delErr));
-        return failSignup('profile_creation_error', 'Erreur lors de la finalisation de l\'inscription.', profileError.message);
+        console.error("Orphaned user might exist:", userId);
+        return failSignup('profile_creation_error', "Erreur lors de la finalisation de l'inscription. Contactez le support si le problème persiste.", profileError.message);
       }
       console.log('✅ Profile created successfully.');
 
       // 6. Succès
       setSuccessMessage('Compte créé avec succès! Redirection...');
-      // --- AJOUT: Log Succès ---
-      FirebaseAnalytics.logEvent('sign_up', { method: 'password' }); // Événement standard Firebase
-      // Mettre à jour l'ID utilisateur dans Analytics
+      FirebaseAnalytics.logEvent('sign_up', { method: 'password' });
       FirebaseAnalytics.initialize(userId, false);
-      // -------------------------
 
       setTimeout(() => {
         try {
-          router.replace('/(tabs)'); // Remplacer pour ne pas revenir à signup
+          router.replace('/(tabs)');
         } catch (navError) {
           console.error('❌ Navigation error after signup:', navError);
-          // Informer l'utilisateur qu'il peut se connecter manuellement
           setSuccessMessage('Compte créé! Veuillez vous connecter.');
-          // Optionnel: rediriger vers login après un délai supplémentaire
-          // setTimeout(() => router.replace('/auth/login'), 2000);
+          setIsSigningUp(false);
         }
-      }, 1500); // Délai pour voir le message
+      }, 1500);
 
     } catch (error) {
       console.error('❌ Unexpected error during signup:', error);
       failSignup('unexpected', 'Une erreur inattendue est survenue.', error instanceof Error ? error.message : String(error));
     } finally {
-      // Assurer que isSigningUp est remis à false même si failSignup n'est pas appelé dans le catch
-      if (isSigningUp) {
-          // setIsSigningUp(false); // Géré par failSignup ou après le timeout de succès
-      }
+       console.log('🏁 Signup process potentially finished (check logs for success/failure/redirect)');
     }
   };
 
@@ -205,12 +176,12 @@ export default function SignUp() {
 
         <TextInput
           style={styles.input}
-          placeholder="Pseudonyme (12 caractères max)" // Indiquer la limite
+          placeholder="Pseudonyme (20 caractères max)" // Modifié ici
           placeholderTextColor={`${THEME.text}66`}
           value={nickname}
           onChangeText={setNickname}
           autoCapitalize="none"
-          maxLength={12} // Limiter la saisie
+          maxLength={20} // Modifié ici
           editable={!isSigningUp}
         />
 
@@ -219,7 +190,7 @@ export default function SignUp() {
           placeholder="Email"
           placeholderTextColor={`${THEME.text}66`}
           value={email}
-          onChangeText={(text) => setEmail(text.trim())} // Trim au changement
+          onChangeText={(text) => setEmail(text.trim())}
           keyboardType="email-address"
           autoCapitalize="none"
           autoComplete="email"
@@ -228,12 +199,12 @@ export default function SignUp() {
 
         <TextInput
           style={styles.input}
-          placeholder="Mot de passe (6 caractères min)" // Indiquer la limite
+          placeholder="Mot de passe (6 caractères min)"
           placeholderTextColor={`${THEME.text}66`}
           secureTextEntry
           value={password}
           onChangeText={setPassword}
-          autoComplete="new-password" // Utiliser new-password
+          autoComplete="new-password"
           editable={!isSigningUp}
         />
 
@@ -243,7 +214,7 @@ export default function SignUp() {
         <TouchableOpacity
           style={[styles.button, isSigningUp && styles.buttonDisabled]}
           onPress={handleSignUp}
-          disabled={isSigningUp || !nickname || !email || !password || password.length < 6} // Désactiver si champs vides/invalides ou en cours
+          disabled={isSigningUp || !nickname.trim() || !email.trim() || !password || password.length < 6}
         >
           {isSigningUp ? (
             <ActivityIndicator color={THEME.text} />
@@ -252,7 +223,6 @@ export default function SignUp() {
           )}
         </TouchableOpacity>
 
-         {/* Optionnel: Ajouter un bouton pour retourner au login */}
          <TouchableOpacity
             style={[styles.goBackButton, isSigningUp && styles.buttonDisabled]}
             onPress={() => !isSigningUp && router.push('/auth/login')}
@@ -267,14 +237,13 @@ export default function SignUp() {
 }
 
 const styles = StyleSheet.create({
-  // ... (styles login adaptés) ...
   safeArea: { flex: 1, backgroundColor: THEME.background.dark },
-  container: { flexGrow: 1, backgroundColor: THEME.background.dark, padding: 20, justifyContent: 'center', paddingTop: Platform.OS === 'ios' ? 60 : 40, paddingBottom: 40 }, // Padding bottom
+  container: { flexGrow: 1, backgroundColor: THEME.background.dark, padding: 20, justifyContent: 'center', paddingTop: Platform.OS === 'ios' ? 60 : 40, paddingBottom: 40 },
   title: { fontSize: 28, color: THEME.accent, fontWeight: 'bold', textAlign: 'center', marginBottom: 30 },
   input: { backgroundColor: THEME.secondary, color: THEME.text, fontSize: 16, padding: 12, marginBottom: 15, borderRadius: 8, width: '100%' },
   button: { backgroundColor: THEME.button.secondary[0], padding: 15, borderRadius: 8, alignItems: 'center', marginTop: 15, width: '100%', minHeight: 50, justifyContent: 'center'},
   buttonDisabled: { opacity: 0.6 },
-  buttonText: { color: THEME.primary, fontSize: 16, fontWeight: 'bold' }, // Texte bouton contrasté
+  buttonText: { color: THEME.primary, fontSize: 16, fontWeight: 'bold' },
   error: { color: '#FF6B6B', marginVertical: 10, textAlign: 'center', fontSize: 14 },
   success: { color: '#4CAF50', marginVertical: 10, textAlign: 'center', fontWeight: 'bold', fontSize: 14 },
   goBackButton: { marginTop: 20, alignItems: 'center', padding: 10 },

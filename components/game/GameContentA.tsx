@@ -279,6 +279,8 @@ function GameContentA({
             lives={user.lives}
             level={level}
             streak={streak}
+            eventsCompletedInLevel={user.eventsCompletedInLevel}
+            eventsNeededForLevel={currentLevelConfig.eventsNeeded}
           />
 
           <View style={styles.countdownContainer}>

@@ -30,6 +30,9 @@ interface UserInfoProps {
   activeBonus?: ActiveBonus[];
   currentQuestion?: number;
   totalQuestions?: number;
+  // Ajout des propriétés pour tracking des événements du niveau
+  eventsCompletedInLevel?: number;
+  eventsNeededForLevel?: number;
 }
 
 export interface UserInfoHandle {
@@ -39,7 +42,18 @@ export interface UserInfoHandle {
 
 const UserInfo = forwardRef<UserInfoHandle, UserInfoProps>(
   (
-    { name, points, lives, level, streak, activeBonus = [], currentQuestion, totalQuestions },
+    { 
+      name, 
+      points, 
+      lives, 
+      level, 
+      streak, 
+      activeBonus = [], 
+      currentQuestion, 
+      totalQuestions,
+      eventsCompletedInLevel = 0,  // Valeur par défaut
+      eventsNeededForLevel = 5     // Valeur par défaut
+    },
     ref
   ) => {
     // Références sur le conteneur des points
@@ -230,11 +244,15 @@ const UserInfo = forwardRef<UserInfoHandle, UserInfoProps>(
       </View>
     );
 
+    // Modifié: Utilisation d'une icône pour la série au lieu du texte "Série : "
     const renderStreak = () => (
       <View style={styles.streakContainer}>
-        <Text style={styles.streakText}>
-          {streak > 0 ? `Série : ${streak}` : ''}
-        </Text>
+        {streak > 0 && (
+          <View style={styles.streakWrapper}>
+            <Ionicons name="flame" size={14} color={colors.warningYellow} style={styles.streakIcon} />
+            <Text style={styles.streakText}>{streak}</Text>
+          </View>
+        )}
       </View>
     );
 
@@ -270,8 +288,12 @@ const UserInfo = forwardRef<UserInfoHandle, UserInfoProps>(
           {/* Vies, niveau, streak et bonus */}
           <View style={styles.statsContainer}>
             {renderLives()}
-            <View style={[styles.levelBadge, { backgroundColor: getLevelColor(level) }]}>
-              <Text style={styles.levelText}>{level}</Text>
+            <View style={styles.levelBadgeContainer}>
+              <View style={[styles.levelBadge, { backgroundColor: getLevelColor(level) }]}>
+                <Text style={styles.levelText}>{level}</Text>
+              </View>
+              {/* Affichage du compteur de progression x/y sans le texte "niveau" */}
+              <Text style={styles.levelProgress}>{eventsCompletedInLevel}/{eventsNeededForLevel}</Text>
             </View>
             {renderStreak()}
             {renderBonusIndicators()}
@@ -345,23 +367,45 @@ const styles = StyleSheet.create({
   heart: {
     marginHorizontal: 1,
   },
+  // Conteneur pour le badge de niveau et son étiquette
+  levelBadgeContainer: {
+    alignItems: 'center',
+    justifyContent: 'center',
+  },
   levelBadge: {
     paddingHorizontal: 8,
-    paddingVertical: 2,
+    paddingVertical: 4,
     borderRadius: 10,
-    flexDirection: 'row',
     alignItems: 'center',
+    justifyContent: 'center',
   },
   levelText: {
     color: 'white',
     fontSize: 12,
     fontWeight: 'bold',
   },
+  levelProgress: {
+    color: '#000000',
+    fontSize: 7,
+    textAlign: 'center',
+    marginTop: 1,
+  },
   streakContainer: {
-    minWidth: 60,
+    minWidth: 30, // Réduit de 60 à 30 pour économiser l'espace
     alignItems: 'center',
     justifyContent: 'center',
-    paddingHorizontal: 4,
+    paddingHorizontal: 2, // Réduit de 4 à 2
+  },
+  streakWrapper: {
+    flexDirection: 'row',
+    alignItems: 'center',
+    backgroundColor: 'rgba(255, 193, 7, 0.15)', // Fond léger pour la série
+    borderRadius: 10,
+    paddingHorizontal: 5,
+    paddingVertical: 2,
+  },
+  streakIcon: {
+    marginRight: 2,
   },
   streakText: {
     color: colors.darkText,

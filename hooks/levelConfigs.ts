@@ -16,6 +16,11 @@ export const LEVEL_CONFIGS: Record<number, LevelConfig> = {
       maxDifficulty: 1,
       universalOnly: true,
       specialEventChance: 0,
+      // Nouvelles propriétés pour contrôler la préférence d'époque
+      preferModernEvents: true,          // Privilégier les événements récents
+      modernEventThreshold: 1900,        // Considérer comme "moderne" après 1900 (20e siècle)
+      modernEventPreference: 0.9,        // Probabilité très forte (90%) de choisir un événement moderne
+      balancePeriods: true               // Équilibrer les périodes (ne pas rester bloqué dans une époque)
     },
     scoring: {
       basePoints: 100,
@@ -41,6 +46,11 @@ export const LEVEL_CONFIGS: Record<number, LevelConfig> = {
       maxDifficulty: 2,
       universalOnly: false,
       specialEventChance: 0.05,
+      // Niv 2: Toujours préférer mais moins fortement
+      preferModernEvents: true,
+      modernEventThreshold: 1850,         // Élargir à partir de la 2e moitié du 19e siècle
+      modernEventPreference: 0.8,         // 80% de chance
+      balancePeriods: true
     },
     scoring: {
       basePoints: 110,
@@ -66,6 +76,11 @@ export const LEVEL_CONFIGS: Record<number, LevelConfig> = {
       maxDifficulty: 3,
       universalOnly: false,
       specialEventChance: 0.1,
+      // Niv 3: Préférence réduite
+      preferModernEvents: true,
+      modernEventThreshold: 1800,         // Élargir à partir du 19e siècle
+      modernEventPreference: 0.7,         // 70% de chance
+      balancePeriods: true
     },
     scoring: {
       basePoints: 120,
@@ -91,6 +106,11 @@ export const LEVEL_CONFIGS: Record<number, LevelConfig> = {
       maxDifficulty: 3,
       universalOnly: false,
       specialEventChance: 0.15,
+      // Niv 4: Préférence encore plus réduite
+      preferModernEvents: true,
+      modernEventThreshold: 1700,         // Élargir à partir du 18e siècle
+      modernEventPreference: 0.6,         // 60% de chance
+      balancePeriods: true
     },
     scoring: {
       basePoints: 130,
@@ -116,6 +136,11 @@ export const LEVEL_CONFIGS: Record<number, LevelConfig> = {
       maxDifficulty: 4,
       universalOnly: false,
       specialEventChance: 0.2,
+      // Niv 5: Légère préférence finale
+      preferModernEvents: true,
+      modernEventThreshold: 1600,         // Élargir à partir de la Renaissance
+      modernEventPreference: 0.4,         // 40% de chance (presque équilibré)
+      balancePeriods: true
     },
     scoring: {
       basePoints: 140,
@@ -141,6 +166,9 @@ export const LEVEL_CONFIGS: Record<number, LevelConfig> = {
       maxDifficulty: 4,
       universalOnly: false,
       specialEventChance: 0.25,
+      // À partir du niveau 6: pas de préférence d'époque
+      preferModernEvents: false,
+      balancePeriods: true
     },
     scoring: {
       basePoints: 150,
@@ -166,6 +194,9 @@ export const LEVEL_CONFIGS: Record<number, LevelConfig> = {
       maxDifficulty: 5,
       universalOnly: false,
       specialEventChance: 0.3,
+      // Pas de préférence
+      preferModernEvents: false,
+      balancePeriods: true
     },
     scoring: {
       basePoints: 160,
@@ -191,6 +222,8 @@ export const LEVEL_CONFIGS: Record<number, LevelConfig> = {
       maxDifficulty: 5,
       universalOnly: false,
       specialEventChance: 0.35,
+      preferModernEvents: false,
+      balancePeriods: true
     },
     scoring: {
       basePoints: 170,
@@ -216,6 +249,8 @@ export const LEVEL_CONFIGS: Record<number, LevelConfig> = {
       maxDifficulty: 6,
       universalOnly: false,
       specialEventChance: 0.4,
+      preferModernEvents: false,
+      balancePeriods: true
     },
     scoring: {
       basePoints: 180,
@@ -241,6 +276,8 @@ export const LEVEL_CONFIGS: Record<number, LevelConfig> = {
       maxDifficulty: 6,
       universalOnly: false,
       specialEventChance: 0.45,
+      preferModernEvents: false,
+      balancePeriods: true
     },
     scoring: {
       basePoints: 190,
@@ -266,6 +303,8 @@ export const LEVEL_CONFIGS: Record<number, LevelConfig> = {
       maxDifficulty: 7,
       universalOnly: false,
       specialEventChance: 0.5,
+      preferModernEvents: false,
+      balancePeriods: true
     },
     scoring: {
       basePoints: 200,
@@ -291,6 +330,8 @@ export const LEVEL_CONFIGS: Record<number, LevelConfig> = {
       maxDifficulty: 7,
       universalOnly: false,
       specialEventChance: 0.55,
+      preferModernEvents: false,
+      balancePeriods: true
     },
     scoring: {
       basePoints: 210,
@@ -316,6 +357,8 @@ export const LEVEL_CONFIGS: Record<number, LevelConfig> = {
       maxDifficulty: 7,
       universalOnly: false,
       specialEventChance: 0.6,
+      preferModernEvents: false,
+      balancePeriods: true
     },
     scoring: {
       basePoints: 220,
@@ -341,6 +384,8 @@ export const LEVEL_CONFIGS: Record<number, LevelConfig> = {
       maxDifficulty: 7,
       universalOnly: false,
       specialEventChance: 0.65,
+      preferModernEvents: false,
+      balancePeriods: true
     },
     scoring: {
       basePoints: 230,
@@ -366,6 +411,8 @@ export const LEVEL_CONFIGS: Record<number, LevelConfig> = {
       maxDifficulty: 7,
       universalOnly: false,
       specialEventChance: 0.7,
+      preferModernEvents: false,
+      balancePeriods: true
     },
     scoring: {
       basePoints: 1000,
