@@ -1979,174 +1979,196 @@ const selectNewEvent = useCallback(
 
 
  // --- MODIFICATION : Utilisation de FirebaseAnalytics dans endGame ---
+  // --- MODIFICATION : Utilisation de FirebaseAnalytics dans endGame ---
  // 1.H.11. endGame
  const endGame = useCallback(async () => {
-   // S'assurer qu'on ne déclenche pas endGame plusieurs fois
-   if (isGameOver) {
-       console.log("[useGameLogicA] endGame called but already game over. Skipping.");
-       return;
-   }
-   console.log('[useGameLogicA] endGame called.');
+  // S'assurer qu'on ne déclenche pas endGame plusieurs fois
+  if (isGameOver) {
+      console.log("[useGameLogicA] endGame called but already game over. Skipping.");
+      return;
+  }
+  console.log('[useGameLogicA] endGame called.');
 
-   setIsGameOver(true); // Mettre l'état immédiatement
-   setIsCountdownActive(false); // Arrêter tout compte à rebours
-   setIsLevelPaused(true); // Mettre en pause
-   playGameOverSound();
-   setLeaderboardsReady(false); // Préparer l'attente des scores
+  setIsGameOver(true); // Mettre l'état immédiatement
+  setIsCountdownActive(false); // Arrêter tout compte à rebours
+  setIsLevelPaused(true); // Mettre en pause
+  playGameOverSound();
+  setLeaderboardsReady(false); // Préparer l'attente des scores
 
-   // --- Utilisation de FirebaseAnalytics ---
-   // Tracker l'événement game_over AVANT les appels asynchrones
-   FirebaseAnalytics.gameOver(
-       user.points,
-       user.level, // Le niveau maximum atteint
-       user.totalEventsCompleted,
-       user.maxStreak,
-       user.points > highScore // Si c'est un nouveau high score perso
-   );
-   // --- Fin Utilisation ---
+  // --- Utilisation de FirebaseAnalytics ---
+  // Tracker l'événement game_over AVANT les appels asynchrones
+  FirebaseAnalytics.gameOver(
+      user.points,
+      user.level, // Le niveau maximum atteint
+      user.totalEventsCompleted,
+      user.maxStreak,
+      user.points > highScore // Si c'est un nouveau high score perso
+  );
+  // --- Fin Utilisation ---
 
-   // Finaliser l'historique du dernier niveau joué (potentiellement incomplet)
-   console.log('[useGameLogicA] Finalizing history for last level played:', user.level);
-   // Utiliser currentLevelEvents car le niveau n'a peut-être pas été complété
-   finalizeCurrentLevelHistory(currentLevelEvents);
+  // Finaliser l'historique du dernier niveau joué (potentiellement incomplet)
+  console.log('[useGameLogicA] Finalizing history for last level played:', user.level);
+  // Utiliser currentLevelEvents car le niveau n'a peut-être pas été complété
+  finalizeCurrentLevelHistory(currentLevelEvents);
 
-   // Affichage de la pub de fin de jeu après un délai
-   setTimeout(() => {
-     if (canShowAd()) {
-       FirebaseAnalytics.ad('interstitial', 'triggered', 'game_over', user.level); // Track trigger
-       if (adState.gameOverInterstitialLoaded) {
-         try {
-           console.log('[useGameLogicA] Showing game over interstitial ad');
-           gameOverInterstitial.show();
-         } catch (error) {
-           console.error('Error showing game over ad:', error);
-           FirebaseAnalytics.ad('interstitial', 'error_show', 'game_over', user.level);
-           FirebaseAnalytics.error('ad_show_error', `GameOver Interstitial: ${error.message}`, 'endGame');
-           gameOverInterstitial.load(); // Recharger
-         }
-       } else if (adState.interstitialLoaded) { // Fallback
-         console.log('[useGameLogicA] Game over ad not loaded, showing generic interstitial fallback');
-         FirebaseAnalytics.ad('interstitial', 'triggered', 'game_over_fallback', user.level);
-         genericInterstitial.show();
-       } else {
-         console.log('[useGameLogicA] No ads available for game over');
-         FirebaseAnalytics.ad('interstitial', 'not_available', 'game_over', user.level);
-       }
-     } else {
-       console.log('[useGameLogicA] Cannot show ad at game over due to ad-free period or frequency cap');
-     }
-   }, 1500); // Délai pour laisser l'écran de fin apparaître un peu
+  // Affichage de la pub de fin de jeu après un délai
+  setTimeout(() => {
+    if (canShowAd()) {
+      FirebaseAnalytics.ad('interstitial', 'triggered', 'game_over', user.level); // Track trigger
+      if (adState.gameOverInterstitialLoaded) {
+        try {
+          console.log('[useGameLogicA] Showing game over interstitial ad');
+          gameOverInterstitial.show();
+        } catch (error) {
+          console.error('Error showing game over ad:', error);
+          FirebaseAnalytics.ad('interstitial', 'error_show', 'game_over', user.level);
+          FirebaseAnalytics.error('ad_show_error', `GameOver Interstitial: ${error.message}`, 'endGame');
+          gameOverInterstitial.load(); // Recharger
+        }
+      } else if (adState.interstitialLoaded) { // Fallback
+        console.log('[useGameLogicA] Game over ad not loaded, showing generic interstitial fallback');
+        FirebaseAnalytics.ad('interstitial', 'triggered', 'game_over_fallback', user.level);
+        genericInterstitial.show();
+      } else {
+        console.log('[useGameLogicA] No ads available for game over');
+        FirebaseAnalytics.ad('interstitial', 'not_available', 'game_over', user.level);
+      }
+    } else {
+      console.log('[useGameLogicA] Cannot show ad at game over due to ad-free period or frequency cap');
+    }
+  }, 1500); // Délai pour laisser l'écran de fin apparaître un peu
 
-   // --- Chargement des classements et sauvegarde ---
-   try {
-     const { data: { user: authUser } } = await supabase.auth.getUser();
+  // --- Chargement des classements et sauvegarde ---
+  try {
+    // --- AJOUT LOG: Vérifier l'état d'authentification ---
+    const { data: { user: authUser }, error: authError } = await supabase.auth.getUser();
+    console.log('[useGameLogicA - endGame] Auth Check:', { authUserId: authUser?.id, authError: authError?.message });
+    // --- FIN AJOUT LOG ---
 
-     // Si joueur invité, afficher des scores fictifs/locaux
-     if (!authUser?.id) {
-       console.log("[useGameLogicA] Guest player detected in endGame. Showing placeholder scores.");
-       const guestScores = {
-         daily: [{ name: user.name || 'Voyageur', score: user.points, rank: 1 }],
-         monthly: [{ name: "👑 Meilleur score", score: highScore || user.points, rank: 1 }], // Utilise le high score local si dispo
-         allTime: [{ name: "🏆 Record", score: highScore || user.points, rank: 1 }]
-       };
-       setLeaderboards(guestScores);
-       setLeaderboardsReady(true); // Prêt à afficher
-       return; // Pas de sauvegarde pour invité
-     }
+    // --- MODIFICATION CONDITION: Vérifier aussi authError ---
+    // Si joueur invité OU erreur d'authentification, afficher des scores fictifs/locaux
+    if (authError || !authUser?.id) {
+      // --- AJOUT LOG: Indiquer pourquoi on utilise les scores placeholder ---
+      console.log("[useGameLogicA] Guest player OR Auth Error detected in endGame. Using placeholder scores.");
+      // --- FIN AJOUT LOG ---
+      const guestScores = {
+        daily: [{ name: user.name || 'Voyageur', score: user.points, rank: 1 }],
+        monthly: [{ name: "👑 Meilleur score", score: highScore || user.points, rank: 1 }], // Utilise le high score local si dispo
+        allTime: [{ name: "🏆 Record", score: highScore || user.points, rank: 1 }] // <-- Nom fixe pour invité/erreur
+      };
+      setLeaderboards(guestScores);
+      setLeaderboardsReady(true); // Prêt à afficher
+      return; // Pas de sauvegarde pour invité
+    }
+    // --- FIN MODIFICATION CONDITION ---
 
-     // Joueur connecté : sauvegarder le score et charger les classements
-     console.log("[useGameLogicA] Registered player. Saving score and fetching leaderboards...");
-     const userId = authUser.id;
-     const currentDisplayName = user.name || 'Joueur'; // Utiliser le nom du state `user`
+    // Joueur connecté : sauvegarder le score et charger les classements
+    console.log("[useGameLogicA] Registered player. Saving score and fetching leaderboards...");
+    const userId = authUser.id;
+    const currentDisplayName = user.name || 'Joueur'; // Utiliser le nom du state `user`
 
-     // 1. Insérer le nouveau score
-     await supabase.from('game_scores').insert({
-       user_id: userId,
-       display_name: currentDisplayName,
-       score: user.points,
-       // created_at est géré par Supabase
-     });
-     console.log("[useGameLogicA] New score inserted.");
+    // 1. Insérer le nouveau score
+    await supabase.from('game_scores').insert({
+      user_id: userId,
+      display_name: currentDisplayName, // Sauvegarde le nom actuel du user state
+      score: user.points,
+      // created_at est géré par Supabase
+    });
+    console.log("[useGameLogicA] New score inserted.");
 
-     // 2. Vérifier et mettre à jour le high score personnel dans 'profiles'
-     const { data: currentProfile, error: profileError } = await supabase
-       .from('profiles')
-       .select('high_score')
-       .eq('id', userId)
-       .single();
+    // 2. Vérifier et mettre à jour le high score personnel dans 'profiles'
+    const { data: currentProfile, error: profileError } = await supabase
+      .from('profiles')
+      .select('high_score') // On pourrait aussi sélectionner display_name ici si besoin
+      .eq('id', userId)
+      .single();
 
-     if (profileError) {
-         console.error("Error fetching current high score:", profileError);
-         FirebaseAnalytics.error('profile_fetch_error', profileError.message, 'endGame');
-         // Continuer sans mise à jour du high score
-     } else if (currentProfile && user.points > (currentProfile.high_score || 0)) {
-         console.log(`[useGameLogicA] New high score! ${user.points} > ${currentProfile.high_score || 0}`);
-         const { error: updateError } = await supabase
+    if (profileError) {
+        console.error("Error fetching current high score:", profileError);
+        FirebaseAnalytics.error('profile_fetch_error', profileError.message, 'endGame');
+        // Continuer sans mise à jour du high score mais charger les classements quand même
+    } else if (currentProfile && user.points > (currentProfile.high_score || 0)) {
+        console.log(`[useGameLogicA] New high score! ${user.points} > ${currentProfile.high_score || 0}`);
+        const { error: updateError } = await supabase
            .from('profiles')
-           .update({ high_score: user.points, last_played: new Date().toISOString() }) // Mettre à jour aussi last_played
+           // --- CORRECTION: Ne pas mettre updated_at ici si un trigger s'en occupe ---
+           .update({ high_score: user.points /*, updated_at: new Date().toISOString() */ })
            .eq('id', userId);
 
-         if (updateError) {
-             console.error("Error updating high score:", updateError);
-             FirebaseAnalytics.error('profile_update_error', updateError.message, 'endGame');
-         } else {
-             // --- Utilisation de FirebaseAnalytics ---
-             FirebaseAnalytics.highScore(currentProfile.high_score || 0, user.points);
-             // Mettre à jour le high score local pour l'affichage immédiat
-             setHighScore(user.points);
-             // --- Fin Utilisation ---
-         }
-     } else if (currentProfile) {
-         // Si pas de nouveau high score, juste mettre à jour last_played
-         await supabase.from('profiles').update({ last_played: new Date().toISOString() }).eq('id', userId);
-     }
+        if (updateError) {
+            console.error("Error updating high score:", updateError);
+            FirebaseAnalytics.error('profile_update_error', updateError.message, 'endGame');
+        } else {
+            // --- CORRECTION : Remplacer highScore par logEvent ---
+            FirebaseAnalytics.logEvent('new_high_score', {
+               score: user.points,
+               previous_high_score: currentProfile.high_score || 0,
+            });
+            // --- FIN CORRECTION ---
+            // Mettre à jour le high score local pour l'affichage immédiat
+            setHighScore(user.points);
+        }
+    } else if (currentProfile) {
+        // Si pas de nouveau high score, le trigger updated_at devrait s'activer si d'autres champs sont mis à jour.
+        // Si aucune autre mise à jour n'est prévue, on pourrait forcer ici si besoin.
+        // await supabase.from('profiles').update({ updated_at: new Date().toISOString() }).eq('id', userId); // Probablement pas nécessaire
+        console.log(`[useGameLogicA] Score ${user.points} did not beat high score ${currentProfile.high_score || 0}.`);
+    }
 
-     // 3. Charger les classements (peut être optimisé avec des RPC Supabase)
-     console.log("[useGameLogicA] Fetching leaderboards...");
-     const today = new Date().toISOString().split('T')[0]; // YYYY-MM-DD
-     const firstDayOfMonth = `${today.substring(0, 7)}-01`; // YYYY-MM-01
+    // 3. Charger les classements (peut être optimisé avec des RPC Supabase)
+    console.log("[useGameLogicA] Fetching leaderboards...");
+    const today = new Date().toISOString().split('T')[0]; // YYYY-MM-DD
+    const firstDayOfMonth = `${today.substring(0, 7)}-01`; // YYYY-MM-01
 
-     // Paralléliser les requêtes de classement
-     const [dailyRes, monthlyRes, allTimeRes] = await Promise.all([
-       supabase.from('game_scores').select('display_name, score').gte('created_at', `${today}T00:00:00.000Z`).order('score', { ascending: false }).limit(5),
-       supabase.from('game_scores').select('display_name, score').gte('created_at', `${firstDayOfMonth}T00:00:00.000Z`).order('score', { ascending: false }).limit(5),
-       // Pour allTime, on prend les high_scores des profils
-       supabase.from('profiles').select('display_name, high_score').not('high_score', 'is', null).order('high_score', { ascending: false }).limit(5)
-     ]);
+    // Paralléliser les requêtes de classement
+    const [dailyRes, monthlyRes, allTimeRes] = await Promise.all([
+      supabase.from('game_scores').select('display_name, score').gte('created_at', `${today}T00:00:00.000Z`).order('score', { ascending: false }).limit(5),
+      supabase.from('game_scores').select('display_name, score').gte('created_at', `${firstDayOfMonth}T00:00:00.000Z`).order('score', { ascending: false }).limit(5),
+      // Pour allTime, on prend les high_scores des profils
+      supabase.from('profiles').select('display_name, high_score').not('high_score', 'is', null).order('high_score', { ascending: false }).limit(5)
+    ]);
 
-     // Vérifier les erreurs potentielles (non bloquant pour l'affichage partiel)
-     if(dailyRes.error) { console.error("Error fetching daily scores:", dailyRes.error); FirebaseAnalytics.error('leaderboard_fetch_error', `Daily: ${dailyRes.error.message}`, 'endGame'); }
-     if(monthlyRes.error) { console.error("Error fetching monthly scores:", monthlyRes.error); FirebaseAnalytics.error('leaderboard_fetch_error', `Monthly: ${monthlyRes.error.message}`, 'endGame'); }
-     if(allTimeRes.error) { console.error("Error fetching allTime scores:", allTimeRes.error); FirebaseAnalytics.error('leaderboard_fetch_error', `AllTime: ${allTimeRes.error.message}`, 'endGame'); }
+    // Vérifier les erreurs potentielles (non bloquant pour l'affichage partiel)
+    if(dailyRes.error) { console.error("Error fetching daily scores:", dailyRes.error); FirebaseAnalytics.error('leaderboard_fetch_error', `Daily: ${dailyRes.error.message}`, 'endGame'); }
+    if(monthlyRes.error) { console.error("Error fetching monthly scores:", monthlyRes.error); FirebaseAnalytics.error('leaderboard_fetch_error', `Monthly: ${monthlyRes.error.message}`, 'endGame'); }
+    if(allTimeRes.error) { console.error("Error fetching allTime scores:", allTimeRes.error); FirebaseAnalytics.error('leaderboard_fetch_error', `AllTime: ${allTimeRes.error.message}`, 'endGame'); }
 
-     console.log("[useGameLogicA] Leaderboards fetched.");
-     // Afficher les scores même si certains ont échoué
-     setScoresAndShow(dailyRes.data || [], monthlyRes.data || [], allTimeRes.data || []);
+    console.log("[useGameLogicA] Leaderboards fetched.");
+    // Afficher les scores même si certains ont échoué
+    // Utilise les données de profiles (display_name, high_score) pour allTime
+    setScoresAndShow(dailyRes.data || [], monthlyRes.data || [], allTimeRes.data || []);
 
-     // La fonction saveProgress n'est plus nécessaire car on sauvegarde ici
+    // La fonction saveProgress n'est plus nécessaire car on sauvegarde ici
 
-   } catch (error) {
-     // Erreur générale pendant la sauvegarde/chargement des scores
-     console.error('[useGameLogicA] Error during endGame score processing:', error);
-     FirebaseAnalytics.error('endgame_processing_error', error instanceof Error ? error.message : 'Unknown', 'endGame');
+  } catch (error) {
+    // Erreur générale pendant la sauvegarde/chargement des scores
+    console.error('[useGameLogicA] Error during endGame score processing:', error);
+    // --- CORRECTION: Log l'erreur spécifique si possible ---
+    const errorMessage = error instanceof Error ? error.message : 'Unknown endGame processing error';
+    FirebaseAnalytics.error('endgame_processing_error', errorMessage, 'endGame');
+    // --- FIN CORRECTION ---
 
-     // Afficher des scores fallback même en cas d'erreur
-     const fallbackScores = {
-       daily: [{ name: user.name || 'Voyageur', score: user.points, rank: 1 }],
-       monthly: [{ name: "👑 Meilleur score", score: highScore || user.points, rank: 1 }],
-       allTime: [{ name: "🏆 Record", score: highScore || user.points, rank: 1 }]
-     };
-     setLeaderboards(fallbackScores);
-     setLeaderboardsReady(true); // Afficher les fallbacks
-   }
- }, [
-     isGameOver, // Pour éviter exécutions multiples
-     user.points, user.level, user.totalEventsCompleted, user.maxStreak, user.name, // Données user pour score et tracking
-     highScore, // Pour comparer et tracker nouveau record
-     playGameOverSound, finalizeCurrentLevelHistory, currentLevelEvents, // Fonctions internes / état
-     canShowAd, adState.gameOverInterstitialLoaded, adState.interstitialLoaded, // Logique pub
-     setScoresAndShow // Fonction interne
- ]);
+    // Afficher des scores fallback même en cas d'erreur
+    const fallbackScores = {
+      daily: [{ name: user.name || 'Voyageur', score: user.points, rank: 1 }],
+      monthly: [{ name: "👑 Meilleur score", score: highScore || user.points, rank: 1 }],
+      allTime: [{ name: "🏆 Record", score: highScore || user.points, rank: 1 }]
+    };
+    setLeaderboards(fallbackScores);
+    setLeaderboardsReady(true); // Afficher les fallbacks
+  }
+}, [
+    // Dépendances (vérifiez si elles sont toutes nécessaires)
+    isGameOver,
+    user.points, user.level, user.totalEventsCompleted, user.maxStreak, user.name,
+    highScore,
+    playGameOverSound, finalizeCurrentLevelHistory, currentLevelEvents,
+    canShowAd, adState.gameOverInterstitialLoaded, adState.interstitialLoaded,
+    setScoresAndShow, // Assurez-vous que setScoresAndShow est stable ou inclus ici
+    // Ajoutez FirebaseAnalytics si votre linter le demande, bien qu'il soit généralement stable
+]);
+// --- FIN MODIFICATION endGame ---
+
  // --- FIN MODIFICATION endGame ---
 
  // 1.H.12. saveProgress (DEPRECATED - La logique est maintenant dans endGame)
