@@ -88,10 +88,7 @@ export default function RootLayout() {
             console.log('[AdMob Config] Starting AdMob configuration...');
             // Liste des IDs d'appareils de test (hashés)
             const myTestDeviceIds = [
-                TestIds.EMULATOR, // ID spécial pour les émulateurs/simulateurs
-                '3D55CC0D2A3E4E6EB5D0F1231DE2E59C', // <-- Ton ID Android trouvé dans les logs
-                // Ajoute ici l'ID de ton iPhone/iPad si tu en obtiens un plus tard
-                // 'YOUR_HASHED_DEVICE_ID_IOS_PHONE'
+                              '3D55CC0D2A3E4E6EB5D0F1231DE2E59C', 
             ];
 
             console.log('[AdMob Config] Configuring test devices:', myTestDeviceIds);
