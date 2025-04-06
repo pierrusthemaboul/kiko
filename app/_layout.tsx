@@ -5,39 +5,37 @@ import { Stack, SplashScreen } from 'expo-router';
 import { useFonts } from 'expo-font';
 import * as Application from 'expo-application';
 import AsyncStorage from '@react-native-async-storage/async-storage';
-import { Platform } from 'react-native'; // Ajout pour Platform si besoin (non utilisé ici mais bonne pratique)
+import { Platform } from 'react-native';
 
 // Import Firebase Analytics utility
 import { FirebaseAnalytics } from '../lib/firebase';
-// Import Supabase pour vérifier l'utilisateur au démarrage
+// Import Supabase
 import { supabase } from '../lib/supabase/supabaseClients';
 
 // --- AJOUT: Imports pour AdMob ---
-import MobileAds, { RequestConfiguration, TestIds } from 'react-native-google-mobile-ads';
+import MobileAds, { RequestConfiguration, TestIds, MaxAdContentRating } from 'react-native-google-mobile-ads';
 // ---------------------------------
 
-// --- Configuration pour la vérification de la version de l'App ---
+// --- Config Version App ---
 const CURRENT_APP_VERSION = Application.nativeApplicationVersion || '1.0.0';
 const APP_VERSION_STORAGE_KEY = '@app_version';
-// -------------------------------------------------------------
+// ----------------------------
 
-// Empêche le splash screen de se cacher avant qu'on le décide
 SplashScreen.preventAutoHideAsync();
 
 export default function RootLayout() {
-  // États pour gérer le chargement
   const [appReady, setAppReady] = useState(false);
   const [initialSetupDone, setInitialSetupDone] = useState(false);
 
-  // --- Chargement des Polices Globales ---
+  // --- Chargement Polices ---
   const [fontsLoaded, fontError] = useFonts({
     'Montserrat-Regular': require('../assets/fonts/Montserrat-Regular.ttf'),
     'Montserrat-Medium': require('../assets/fonts/Montserrat-Medium.ttf'),
     'Montserrat-Bold': require('../assets/fonts/Montserrat-Bold.ttf'),
   });
-  // ------------------------------------
+  // ---------------------------
 
-  // --- Initialisation Globale (Firebase, Version, Auth Check) ---
+  // --- Initialisation Globale (Firebase, Version, Auth) ---
   useEffect(() => {
     const initializeApp = async () => {
       try {
@@ -61,101 +59,117 @@ export default function RootLayout() {
           await AsyncStorage.setItem(APP_VERSION_STORAGE_KEY, CURRENT_APP_VERSION);
            console.log(`Analytics: First time storing app version: ${CURRENT_APP_VERSION}`);
         }
-
         console.log('RootLayout: Initial App Setup Done.');
         setInitialSetupDone(true);
-
       } catch (e) {
         console.error("RootLayout: Failed during initial app setup:", e);
-        FirebaseAnalytics.error(
-            'app_initialization_error',
-             e instanceof Error ? e.message : 'Unknown setup error',
-            'RootLayout'
-        );
-        setInitialSetupDone(true); // Continue même si erreur
+        FirebaseAnalytics.error('app_initialization_error', e instanceof Error ? e.message : 'Unknown setup error', 'RootLayout');
+        setInitialSetupDone(true);
       }
     };
-
     initializeApp();
+  }, []);
+  // ---------------------------------------------------------
 
-  }, []); // Exécuté une seule fois
-  // ----------------------------------------------------------
-
-  // --- AJOUT: Initialisation et Configuration AdMob ---
+  // --- Initialisation et Configuration AdMob (Test avec seulement initialize) ---
   useEffect(() => {
     const configureAdMobTestDevices = async () => {
+      console.log('[AdMob Debug] useEffect for AdMob started.');
+
+      if (!MobileAds) {
+          console.error('[AdMob Debug] FATAL: MobileAds object is not imported or available!');
+          FirebaseAnalytics.error('admob_fatal_import', 'MobileAds object is null/undefined', 'RootLayout AdMob Setup');
+          return;
+      }
+      console.log('[AdMob Debug] MobileAds object seems available.');
+
+      try {
+        console.log('[AdMob Debug] Attempting AdMob setup (only initialize)...');
+
+        // --- Configuration des appareils de test (commentée pour ce test) ---
+        // const myTestDeviceIds = [
+        //   '3D55CC0D2A3E4E6EB5D0F1231DE2E59C'
+        // ];
+        // console.log('[AdMob Debug] Test device IDs defined:', myTestDeviceIds);
+        // const requestConfig = new RequestConfiguration({
+        //   testDeviceIdentifiers: myTestDeviceIds,
+        // });
+        // console.log('[AdMob Debug] RequestConfiguration object created:', JSON.stringify(requestConfig));
+        // --- Fin Configuration commentée ---
+
+
+        // --- LIGNE COMMENTÉE ---
+        // console.log('[AdMob Debug] >> SKIPPING MobileAds().setRequestConfiguration() for this test...');
+        // try {
+        //     await MobileAds().setRequestConfiguration(requestConfig);
+        //     console.log('[AdMob Debug] << MobileAds().setRequestConfiguration() SUCCEEDED.');
+        // } catch (configError) {
+        //     console.error('[AdMob Debug] !! ERROR during setRequestConfiguration:', configError);
+        //     FirebaseAnalytics.error('admob_setconfig_error', configError instanceof Error ? configError.message : 'Unknown setRequestConfiguration error', 'RootLayout AdMob Setup - setRequestConfiguration');
+        // }
+        // --- FIN LIGNE COMMENTÉE ---
+
+
+        // --- Essayer JUSTE initialize ---
         try {
-            console.log('[AdMob Config] Starting AdMob configuration...');
-            // Liste des IDs d'appareils de test (hashés)
-            const myTestDeviceIds = [
-                              '3D55CC0D2A3E4E6EB5D0F1231DE2E59C', 
-            ];
-
-            console.log('[AdMob Config] Configuring test devices:', myTestDeviceIds);
-
-            const requestConfig = new RequestConfiguration({
-                testDeviceIdentifiers: myTestDeviceIds,
-                // Autres configurations globales possibles :
-                // maxAdContentRating: MaxAdContentRating.G, // Exemple
-            });
-
-            // Appliquer la configuration des appareils de test
-            await MobileAds().setRequestConfiguration(requestConfig);
-
-            // Initialiser le SDK AdMob (important, doit être fait une fois)
-            await MobileAds().initialize();
-
-            console.log('[AdMob Config] AdMob SDK Initialized and Test Devices Configured successfully.');
-
-        } catch (error) {
-            console.error("[AdMob Config] Failed to configure/initialize AdMob:", error);
-            // Optionnel: Log l'erreur à Firebase
-            FirebaseAnalytics.error(
-                'admob_init_error',
-                error instanceof Error ? error.message : 'Unknown AdMob init error',
-                'RootLayout AdMob Setup'
-            );
+            console.log('[AdMob Debug] >> Calling MobileAds().initialize()...');
+            await MobileAds().initialize(); // On essaie seulement ça
+            console.log('[AdMob Debug] << MobileAds().initialize() SUCCEEDED.');
+        } catch (initError) {
+            // C'est ici que l'erreur se produisait probablement
+            console.error('[AdMob Debug] !! ERROR during initialize:', initError);
+            FirebaseAnalytics.error('admob_init_error', initError instanceof Error ? initError.message : 'Unknown initialize error', 'RootLayout AdMob Setup - initialize');
         }
+        // --- Fin Essai initialize ---
+
+        console.log('[AdMob Debug] AdMob initialization attempt finished.');
+
+      } catch (error) {
+        console.error("[AdMob Debug] !! UNEXPECTED GLOBAL ERROR in configureAdMobTestDevices:", error);
+        FirebaseAnalytics.error(
+            'admob_global_catch_error',
+            error instanceof Error ? error.message : 'Unknown AdMob global catch error',
+            'RootLayout AdMob Setup - Global Catch'
+        );
+      }
     };
 
     configureAdMobTestDevices();
 
-  }, []); // Ce useEffect ne s'exécute qu'une fois au montage, en parallèle des autres inits
-  // ------------------------------------------------------
+  }, []); // Exécuté une seule fois
+  // -------------------------------------------------------------
 
-  // --- Gestion Erreur Polices ---
+  // --- Gestion Erreur Polices (inchangé) ---
    useEffect(() => {
     if (fontError) {
       console.error("RootLayout: Font loading error:", fontError);
       FirebaseAnalytics.error('font_load_error', fontError.message, 'RootLayout');
     }
-  }, [fontError]);
-  // -----------------------------
+   }, [fontError]);
+  // ----------------------------------------
 
-  // --- Décider quand l'application est prête à être affichée ---
+  // --- Décider quand l'app est prête (inchangé) ---
   useEffect(() => {
-    // App prête si polices OK (chargées ou erreur gérée) ET initialisation Firebase/Version OK
     if ((fontsLoaded || fontError) && initialSetupDone) {
       setAppReady(true);
     }
   }, [fontsLoaded, fontError, initialSetupDone]);
-  // -----------------------------------------------------------
+  // -----------------------------------------------
 
-  // --- Cacher le Splash Screen une fois que l'app est prête ---
+  // --- Cacher Splash Screen (inchangé) ---
   useEffect(() => {
     if (appReady) {
       SplashScreen.hideAsync();
       console.log('RootLayout: App is ready, hiding splash screen.');
     }
   }, [appReady]);
-  // ------------------------------------------------------
+  // ----------------------------------------
 
-  // Tant que l'app n'est pas prête, on n'affiche rien (le splash screen natif est visible)
   if (!appReady) {
     return null;
   }
 
-  // --- Rendu de la Structure de Navigation Principale ---
+  // --- Rendu Navigation (inchangé) ---
   return (
     <Stack screenOptions={{ headerShown: false }}>
       <Stack.Screen name="(tabs)" />
@@ -164,5 +178,5 @@ export default function RootLayout() {
       <Stack.Screen name="+not-found" />
     </Stack>
   );
-  // ------------------------------------------------------
+  // -----------------------------------
 }
