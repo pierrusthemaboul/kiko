@@ -1,7 +1,7 @@
 {
   "expo": {
     "name": "Quandi",
-    "slug": "quandi",
+    "slug": "kiko",
     "version": "1.0.0",
     "orientation": "portrait",
     "icon": "./assets/images/icon.png",
@@ -49,15 +49,16 @@
           "resizeMode": "contain",
           "backgroundColor": "#020817"
         }
-      ],
-      [
+      ], // <-- Virgule ajoutée
+      [ // <-- Début plugin AdMob
         "react-native-google-mobile-ads",
-        {
-          "androidAppId": "ca-app-pub-XXXXXXXXXXXXXXXX/YYYYYYYYYY",
-          "iosAppId": "ca-app-pub-XXXXXXXXXXXXXXXX/ZZZZZZZZZZ"
-        }
-      ],
-      "@react-native-firebase/app"
+        { // <-- Début objet config AdMob
+          // !!! REMPLACE LES X/Y/Z PAR TES VRAIS APP IDs AdMob !!!
+          "androidAppId": "ca-app-pub-XXXXXXXXXXXXXXXX~YYYYYYYYYY",
+          "iosAppId": "ca-app-pub-XXXXXXXXXXXXXXXX~ZZZZZZZZZZ"
+        } // <-- Accolade fermante ajoutée ici
+      ], // <-- Fermeture plugin AdMob, Virgule ajoutée ici
+      "@react-native-firebase/app" // <-- Dernier plugin
     ],
     "experiments": {
       "typedRoutes": true
