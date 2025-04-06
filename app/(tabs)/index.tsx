@@ -227,7 +227,7 @@ export default function HomeScreen() {
   const startSplashSequence = async () => {
     try {
       const { sound } = await Audio.Sound.createAsync(
-        require('../../assets/sounds/countdown.wav'),
+        require('../../assets/sounds/361261__japanyoshithegamer__8-bit-spaceship-startup.wav'),
         { volume: 0.2 }
       );
       await sound.playAsync();

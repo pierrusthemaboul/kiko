@@ -470,7 +470,7 @@ export function useGameLogicA(initialEvent?: string) { // Rendu initialEvent opt
             handleTimeout();
             return 0;
           }
-          if (nextTime === 4) { // Jouer le son à 4 secondes restantes (car il dure 1s)
+          if (nextTime <=5) { // Jouer le son à 4 secondes restantes (car il dure 1s)
             playCountdownSound();
           }
           return nextTime;
