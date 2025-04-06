@@ -17,6 +17,7 @@
 
 // 1.D.1. Librairies / Modules
 import { useState, useEffect, useCallback, useRef } from 'react'; // Ajout de useRef ici
+import { getAdUnitId } from '../lib/config/adConfig';
 import { AppState, Animated, Dimensions, Platform } from 'react-native'; // Ajout de Platform
 import { supabase } from '../lib/supabase/supabaseClients'; // Assurez-vous que ce chemin est correct
 import useRewards from './useRewards'; // Assurez-vous que ce chemin est correct
@@ -50,16 +51,19 @@ import {
 } from 'react-native-google-mobile-ads';
 
 // Création d'instances (Déclarations de constantes ici, au niveau supérieur)
-const genericInterstitial = InterstitialAd.createForAdRequest(TestIds.INTERSTITIAL, {
+// Nouveau code avec adConfig
+
+
+const genericInterstitial = InterstitialAd.createForAdRequest(getAdUnitId('INTERSTITIAL_GENERIC'), {
   requestNonPersonalizedAdsOnly: true,
 });
-const levelUpInterstitial = InterstitialAd.createForAdRequest(TestIds.INTERSTITIAL, {
+const levelUpInterstitial = InterstitialAd.createForAdRequest(getAdUnitId('INTERSTITIAL_LEVEL_UP'), {
   requestNonPersonalizedAdsOnly: true,
 });
-const gameOverInterstitial = InterstitialAd.createForAdRequest(TestIds.INTERSTITIAL, {
+const gameOverInterstitial = InterstitialAd.createForAdRequest(getAdUnitId('INTERSTITIAL_GAME_OVER'), {
   requestNonPersonalizedAdsOnly: true,
 });
-const rewardedAd = RewardedAd.createForAdRequest(TestIds.REWARDED, {
+const rewardedAd = RewardedAd.createForAdRequest(getAdUnitId('REWARDED_EXTRA_LIFE'), {
   requestNonPersonalizedAdsOnly: true,
 });
 

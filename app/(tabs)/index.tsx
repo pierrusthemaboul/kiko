@@ -20,10 +20,12 @@ import { Audio } from 'expo-av';
 import { LinearGradient } from 'expo-linear-gradient';
 import { User } from '@supabase/supabase-js';
 import { Ionicons } from '@expo/vector-icons';
-import { BannerAd, BannerAdSize, TestIds } from 'react-native-google-mobile-ads';
+import { BannerAd, BannerAdSize } from 'react-native-google-mobile-ads';
 import { useFonts } from '../../hooks/useFonts';
 // Import corrigé pour utiliser l'objet exporté
 import { FirebaseAnalytics } from '../../lib/firebase'; // <- Chemin vérifié
+// Import de la configuration des annonces
+import { getAdUnitId } from '../../lib/config/adConfig';
 
 // PAS D'IMPORT DIRECT DE analytics ici:
 // import analytics from '@react-native-firebase/analytics'; // <-- S'assurer que cette ligne est supprimée ou commentée
@@ -197,13 +199,6 @@ export default function HomeScreen() {
     opacity: useRef(new Animated.Value(0)).current,
     translateY: useRef(new Animated.Value(50)).current
   };
-
-  // Ad Unit ID (Identique)
-  const adUnitId = Platform.select({
-    android: TestIds.BANNER,
-    ios: TestIds.BANNER,
-    default: TestIds.BANNER,
-  });
 
   // Firebase Analytics - track screen view
   useEffect(() => {
@@ -520,10 +515,10 @@ export default function HomeScreen() {
               </>
             )}
 
-            {/* Bannière publicitaire avec tracking corrigé */}
+            {/* Bannière publicitaire avec adConfig */}
             <View style={styles.adContainer}>
               <BannerAd
-                unitId={adUnitId}
+                unitId={getAdUnitId('BANNER_HOME')}
                 size={BannerAdSize.BANNER}
                 requestOptions={{
                   requestNonPersonalizedAdsOnly: true,
