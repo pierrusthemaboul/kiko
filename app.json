@@ -1,23 +1,37 @@
 {
   "expo": {
-    "name": "kiko",
-    "slug": "kiko",
+    "name": "Quandi",
+    "slug": "quandi",
     "version": "1.0.0",
     "orientation": "portrait",
     "icon": "./assets/images/icon.png",
-    "scheme": "myapp",
+    "scheme": "quandi",
     "userInterfaceStyle": "automatic",
     "newArchEnabled": false,
+    "splash": {
+      "image": "./assets/images/splash-icon.png",
+      "resizeMode": "contain",
+      "backgroundColor": "#020817"
+    },
+    "assetBundlePatterns": [
+      "**/*"
+    ],
     "ios": {
       "supportsTablet": true,
-      "bundleIdentifier": "com.pierretulle.kiko"
+      "bundleIdentifier": "com.pierretulle.quandi",
+      "buildNumber": "1"
     },
     "android": {
       "adaptiveIcon": {
         "foregroundImage": "./assets/images/adaptive-icon.png",
-        "backgroundColor": "#ffffff"
+        "backgroundColor": "#020817"
       },
-      "package": "com.pierretulle.kiko",
+      "package": "com.pierretulle.quandi",
+      "versionCode": 10000,
+      "permissions": [
+        "INTERNET",
+        "VIBRATE"
+      ],
       "googleServicesFile": "./google-services.json"
     },
     "web": {
@@ -33,14 +47,14 @@
           "image": "./assets/images/splash-icon.png",
           "imageWidth": 200,
           "resizeMode": "contain",
-          "backgroundColor": "#ffffff"
+          "backgroundColor": "#020817"
         }
       ],
       [
         "react-native-google-mobile-ads",
         {
-          "androidAppId": "ca-app-pub-3940256099942544~3347511713",
-          "iosAppId": "ca-app-pub-3940256099942544~1458002511"
+          "androidAppId": "ca-app-pub-XXXXXXXXXXXXXXXX/YYYYYYYYYY",
+          "iosAppId": "ca-app-pub-XXXXXXXXXXXXXXXX/ZZZZZZZZZZ"
         }
       ],
       "@react-native-firebase/app"
@@ -55,6 +69,22 @@
       "eas": {
         "projectId": "3cbda57c-1ec1-4949-af06-9e933dbc0050"
       }
+    },
+    "owner": "pierretulle",
+    "description": "Découvrez l'histoire en devinant l'ordre chronologique des événements. Un jeu ludique et éducatif pour tous âges.",
+    "primaryColor": "#1D5F9E",
+    "privacy": "public",
+    "platforms": [
+      "android",
+      "ios"
+    ],
+    "githubUrl": "https://github.com/pierretulle/quandi",
+    "updates": {
+      "fallbackToCacheTimeout": 0,
+      "url": "https://u.expo.dev/3cbda57c-1ec1-4949-af06-9e933dbc0050"
+    },
+    "runtimeVersion": {
+      "policy": "sdkVersion"
     }
   }
 }
