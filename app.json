@@ -5,7 +5,7 @@
     "version": "1.0.0",
     "orientation": "portrait",
     "icon": "./assets/images/icon.png",
-    "scheme": "quandi",
+    "scheme": "kiko",
     "userInterfaceStyle": "automatic",
     "newArchEnabled": false,
     "splash": {
@@ -18,7 +18,7 @@
     ],
     "ios": {
       "supportsTablet": true,
-      "bundleIdentifier": "com.pierretulle.quandi",
+      "bundleIdentifier": "com.pierretulle.kiko",
       "buildNumber": "1"
     },
     "android": {
@@ -26,7 +26,7 @@
         "foregroundImage": "./assets/images/adaptive-icon.png",
         "backgroundColor": "#020817"
       },
-      "package": "com.pierretulle.quandi",
+      "package": "com.pierretulle.kiko",
       "versionCode": 10000,
       "permissions": [
         "INTERNET",
@@ -49,16 +49,15 @@
           "resizeMode": "contain",
           "backgroundColor": "#020817"
         }
-      ], 
-      [ 
+      ],
+      [
         "react-native-google-mobile-ads",
-        { 
+        {
           "androidAppId": "ca-app-pub-7809209690404525~1711130974",
-          "iosAppId": "ca-app-pub-7809209690404525~1711130974" 
-          
-        } 
-      ], 
-      "@react-native-firebase/app" 
+          "iosAppId": "ca-app-pub-7809209690404525~1711130974"
+        }
+      ],
+      "@react-native-firebase/app"
     ],
     "experiments": {
       "typedRoutes": true
