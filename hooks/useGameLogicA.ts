@@ -1983,9 +1983,9 @@ const selectNewEvent = useCallback(
 
 
  // --- MODIFICATION : Utilisation de FirebaseAnalytics dans endGame ---
-  // --- MODIFICATION : Utilisation de FirebaseAnalytics dans endGame ---
- // 1.H.11. endGame
- const endGame = useCallback(async () => {
+  
+// 1.H.11. endGame
+const endGame = useCallback(async () => {
   // S'assurer qu'on ne déclenche pas endGame plusieurs fois
   if (isGameOver) {
       console.log("[useGameLogicA] endGame called but already game over. Skipping.");
@@ -2169,7 +2169,6 @@ const selectNewEvent = useCallback(
     playGameOverSound, finalizeCurrentLevelHistory, currentLevelEvents,
     canShowAd, adState.gameOverInterstitialLoaded, adState.interstitialLoaded,
     setScoresAndShow, // Assurez-vous que setScoresAndShow est stable ou inclus ici
-    // Ajoutez FirebaseAnalytics si votre linter le demande, bien qu'il soit généralement stable
 ]);
 // --- FIN MODIFICATION endGame ---
 

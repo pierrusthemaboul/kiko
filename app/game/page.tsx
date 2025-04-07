@@ -123,6 +123,7 @@ export default function GamePage() {
             completeRewardAnimation={gameLogic.completeRewardAnimation}
             updateRewardPosition={gameLogic.updateRewardPosition}
             levelsHistory={gameLogic.levelsHistory}
+            showRewardedAd={gameLogic.showRewardedAd}
           />
           {gameLogic.currentReward && gameLogic.currentReward.targetPosition && (
             <RewardAnimation

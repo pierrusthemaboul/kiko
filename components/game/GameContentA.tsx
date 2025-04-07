@@ -8,8 +8,11 @@ import {
   Platform,
   StatusBar,
   SafeAreaView,
+  TouchableOpacity,
+  Alert,
 } from 'react-native';
 import { useRouter } from 'expo-router';
+import { Ionicons } from '@expo/vector-icons';
 
 // Components
 import UserInfo, { UserInfoHandle } from './UserInfo';
@@ -54,7 +57,7 @@ interface GameContentAProps {
   fadeAnim: Animated.Value;
   showLevelModal: boolean;
   isLevelPaused: boolean;
-  handleLevelUp: () => void; // Changé de startLevel à handleLevelUp
+  handleLevelUp: () => void;
   currentLevelConfig: ExtendedLevelConfig;
   currentReward: {
     type: RewardType;
@@ -69,9 +72,8 @@ interface GameContentAProps {
     allTime: Array<{ name: string; score: number; rank: number }>;
   };
   levelCompletedEvents: LevelEventSummary[];
-
-  // On ajoute la prop pour l'historique complet
   levelsHistory: LevelHistory[];
+  showRewardedAd?: () => boolean;
 }
 
 function GameContentA({
@@ -94,44 +96,52 @@ function GameContentA({
   fadeAnim,
   showLevelModal,
   isLevelPaused,
-  handleLevelUp, // Changé de startLevel à handleLevelUp
+  handleLevelUp,
   currentLevelConfig,
   currentReward,
   completeRewardAnimation,
   updateRewardPosition,
   leaderboards,
   levelCompletedEvents,
-  levelsHistory, // <-- On le reçoit
+  levelsHistory,
+  showRewardedAd,
 }: GameContentAProps) {
   const router = useRouter();
   const userInfoRef = useRef<UserInfoHandle>(null);
   const contentOpacity = useRef(new Animated.Value(1)).current;
   const [isRewardPositionSet, setIsRewardPositionSet] = useState(false);
+  
+  // État pour l'affichage d'un bouton d'urgence pour la publicité récompensée
+  const [showWatchAdButton, setShowWatchAdButton] = useState(false);
+  
+  // État pour bloquer temporairement l'affichage du tableau des scores
+  // jusqu'à ce que l'utilisateur réponde à la proposition de pub
+  const [showScoreboardDelayed, setShowScoreboardDelayed] = useState(false);
 
-  // [ADDED LOG]
+  // Surveillance de la vie de l'utilisateur
   useEffect(() => {
-    
-  }, [
-    isGameOver,
-    user.lives,
-    levelCompletedEvents,
-    levelsHistory,
-  ]);
+    // Détection de la dernière vie perdue
+    if (user.lives === 0 && !showScoreboardDelayed) {
+      console.log('[GameContentA] User lost last life. Showing rewarded ad button');
+      
+      // Si une fonction de pub récompensée est disponible, on propose la pub
+      if (showRewardedAd) {
+        setShowWatchAdButton(true);
+        
+        // On ne montre pas encore le tableau des scores
+        // même si isGameOver devient true
+        setShowScoreboardDelayed(false);
+      } else {
+        // Sinon on passe directement au tableau des scores
+        setShowScoreboardDelayed(true);
+      }
+    }
+  }, [user.lives, showRewardedAd]);
 
-  // [ADDED LOG]
+  // Moniteur pour isGameOver
   useEffect(() => {
-    
-  }, [levelsHistory]);
-
-  // [ADDED LOG]
-  useEffect(() => {
-    
-  }, [levelCompletedEvents]);
-
-  // [ADDED LOG]
-  useEffect(() => {
-    
-  }, [isGameOver]);
+    console.log("[GameContentA] isGameOver:", isGameOver, "showWatchAdButton:", showWatchAdButton);
+  }, [isGameOver, showWatchAdButton]);
 
   useEffect(() => {
     let mounted = true;
@@ -186,16 +196,41 @@ function GameContentA({
     }
   }, [showLevelModal]);
 
-  const onChoiceWrapper = (choice: string) => {
-    // [ADDED LOG]
+  const handleWatchAd = () => {
+    console.log('[GameContentA] User clicked watch ad button');
+    if (showRewardedAd) {
+      const adShown = showRewardedAd();
+      
+      if (!adShown) {
+        console.log('[GameContentA] Failed to show rewarded ad');
+        Alert.alert(
+          "Oups !",
+          "Aucune publicité n'est disponible pour le moment. Réessayez plus tard.",
+          [{ text: "OK" }]
+        );
+      } else {
+        // La pub est affichée, on masque le bouton
+        setShowWatchAdButton(false);
+        
+        // Le callback de la pub gèrera l'ajout de vie
+        // Si la vie reste à 0 après la pub, l'écran de scores apparaîtra automatiquement
+      }
+    }
+  };
+
+  const handleDeclineWatchAd = () => {
+    console.log('[GameContentA] User declined to watch ad');
+    setShowWatchAdButton(false);
     
+    // L'utilisateur a décliné, on peut maintenant afficher le tableau des scores
+    setShowScoreboardDelayed(true);
+  };
+
+  const onChoiceWrapper = (choice: string) => {
     handleChoice(choice);
   };
 
   const renderContent = () => {
-    // [ADDED LOG]
-    
-
     if (loading) {
       return (
         <View style={styles.loadingContainer}>
@@ -239,7 +274,7 @@ function GameContentA({
         <LevelUpModalBis
           visible={showLevelModal}
           level={level}
-          onStart={handleLevelUp} // Changé de startLevel à handleLevelUp
+          onStart={handleLevelUp}
           name={currentLevelConfig.name}
           description={currentLevelConfig.description}
           requiredEvents={currentLevelConfig.eventsNeeded}
@@ -249,8 +284,14 @@ function GameContentA({
           eventsSummary={levelCompletedEvents}
         />
 
+        {/* 
+          ScoreboardModal: doit être visible seulement si:
+          1. isGameOver est true (fin de jeu officielle)
+          2. ET soit l'utilisateur a décliné la pub (showScoreboardDelayed true)
+             OU il n'y a pas de proposition de pub (showWatchAdButton false)
+        */}
         <ScoreboardModal
-          isVisible={isGameOver}
+          isVisible={isGameOver && (showScoreboardDelayed || !showWatchAdButton)}
           currentScore={user.points}
           personalBest={highScore}
           dailyScores={leaderboards?.daily || []}
@@ -259,9 +300,42 @@ function GameContentA({
           onRestart={handleRestart}
           onMenuPress={() => router.replace('/')}
           playerName={user.name}
-          // --- On passe levelsHistory ---
           levelsHistory={levelsHistory}
         />
+        
+        {/* Overlay pour regarder une pub et obtenir une vie supplémentaire */}
+        {showWatchAdButton && (
+          <View style={styles.watchAdOverlay}>
+            <View style={styles.watchAdContainer}>
+              <View style={styles.watchAdIconContainer}>
+                <Ionicons name="heart" size={50} color={colors.incorrectRed} />
+              </View>
+              
+              <Text style={styles.watchAdTitle}>Dernière vie perdue!</Text>
+              
+              <Text style={styles.watchAdDescription}>
+                Regardez une courte publicité pour obtenir une vie supplémentaire et continuer votre partie.
+              </Text>
+              
+              <View style={styles.watchAdButtonsContainer}>
+                <TouchableOpacity
+                  style={[styles.watchAdButton, styles.watchAdDeclineButton]}
+                  onPress={handleDeclineWatchAd}
+                >
+                  <Text style={styles.watchAdDeclineText}>Non, merci</Text>
+                </TouchableOpacity>
+                
+                <TouchableOpacity
+                  style={[styles.watchAdButton, styles.watchAdAcceptButton]}
+                  onPress={handleWatchAd}
+                >
+                  <Ionicons name="play-circle-outline" size={20} color="white" style={styles.watchAdButtonIcon} />
+                  <Text style={styles.watchAdAcceptText}>Obtenir une vie</Text>
+                </TouchableOpacity>
+              </View>
+            </View>
+          </View>
+        )}
       </>
     );
   };
@@ -361,6 +435,90 @@ const styles = StyleSheet.create({
     backgroundColor: 'rgba(255, 255, 255, 0.9)',
     padding: 20,
     borderRadius: 10,
+  },
+  
+  // Styles pour le bouton de publicité récompensée
+  watchAdOverlay: {
+    position: 'absolute',
+    top: 0,
+    left: 0,
+    right: 0,
+    bottom: 0,
+    backgroundColor: 'rgba(0, 0, 0, 0.7)',
+    justifyContent: 'center',
+    alignItems: 'center',
+    zIndex: 2000,
+  },
+  watchAdContainer: {
+    width: '85%',
+    backgroundColor: 'white',
+    borderRadius: 15,
+    padding: 20,
+    alignItems: 'center',
+    elevation: 5,
+    shadowColor: '#000',
+    shadowOffset: { width: 0, height: 3 },
+    shadowOpacity: 0.25,
+    shadowRadius: 3.84,
+  },
+  watchAdIconContainer: {
+    width: 80,
+    height: 80,
+    borderRadius: 40,
+    backgroundColor: 'rgba(231, 76, 60, 0.2)',
+    justifyContent: 'center',
+    alignItems: 'center',
+    marginBottom: 15,
+  },
+  watchAdTitle: {
+    fontSize: 22,
+    fontWeight: 'bold',
+    color: colors.text,
+    marginBottom: 15,
+    textAlign: 'center',
+  },
+  watchAdDescription: {
+    fontSize: 16,
+    color: colors.text,
+    textAlign: 'center',
+    marginBottom: 25,
+    lineHeight: 22,
+  },
+  watchAdButtonsContainer: {
+    flexDirection: 'row',
+    justifyContent: 'space-between',
+    width: '100%',
+  },
+  watchAdButton: {
+    paddingVertical: 12,
+    paddingHorizontal: 15,
+    borderRadius: 25,
+    alignItems: 'center',
+    justifyContent: 'center',
+    minWidth: 130,
+  },
+  watchAdDeclineButton: {
+    backgroundColor: '#f5f5f5',
+    borderWidth: 1,
+    borderColor: '#ddd',
+  },
+  watchAdAcceptButton: {
+    backgroundColor: colors.correctGreen,
+    flexDirection: 'row',
+    alignItems: 'center',
+  },
+  watchAdDeclineText: {
+    color: '#888',
+    fontSize: 16,
+    fontWeight: '500',
+  },
+  watchAdAcceptText: {
+    color: 'white',
+    fontSize: 16,
+    fontWeight: 'bold',
+  },
+  watchAdButtonIcon: {
+    marginRight: 8,
   },
 });
 
