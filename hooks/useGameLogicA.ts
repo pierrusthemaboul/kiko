@@ -342,17 +342,43 @@ export function useGameLogicA(initialEvent?: string) { // Rendu initialEvent opt
         FirebaseAnalytics.ad('rewarded', 'closed', 'generic', user.level);
     });
     const unsubscribeRewardedEarned = rewardedAd.addAdEventListener(RewardedAdEventType.EARNED_REWARD, reward => {
-        console.log('[useGameLogicA] User earned reward:', reward);
-        // Appliquer la récompense (vie supplémentaire)
-        setUser(prev => ({
-          ...prev,
-          lives: Math.min(prev.lives + 1, MAX_LIVES)
-        }));
-        setAdState(prev => ({ ...prev, adFreeUntil: Date.now() + 5 * 60 * 1000 })); // 5 min sans pub
-        FirebaseAnalytics.ad('rewarded', 'earned_reward', 'generic', user.level);
-        // Tracker aussi la récompense spécifique obtenue
-        FirebaseAnalytics.reward('EXTRA_LIFE', 1, 'ad_reward', 'completed', user.level, user.points);
-    });
+      console.log('[useGameLogicA] User earned reward:', reward);
+
+      // 1. Appliquer la récompense (vie supplémentaire)
+      setUser(prev => ({
+        ...prev,
+        lives: Math.min(prev.lives + 1, MAX_LIVES) // Vie ajoutée
+      }));
+
+      // 2. Annuler l'état de Game Over et la pause
+      console.log('[useGameLogicA - Rewarded] Resetting game over and pause states.');
+      setIsGameOver(false);
+      setIsLevelPaused(false);
+      setIsWaitingForCountdown(false); // Important pour permettre le prochain handleChoice
+      setIsCountdownActive(false); // Sera réactivé par handleImageLoad
+
+      // 3. Mettre à jour l'état AdMob (période sans pub, etc.)
+      setAdState(prev => ({ ...prev, adFreeUntil: Date.now() + 5 * 60 * 1000 })); // 5 min sans pub
+
+      // 4. Log Analytics
+      FirebaseAnalytics.ad('rewarded', 'earned_reward', 'generic', user.level); // Attention: user.level/points ici sont ceux AVANT setUser. C'est ok.
+      FirebaseAnalytics.reward('EXTRA_LIFE', 1, 'ad_reward', 'completed', user.level, user.points);
+
+      // 5. Relancer le jeu en sélectionnant un nouvel événement
+      // Il faut utiliser l'événement qui était 'previousEvent' AVANT que le jeu ne se termine.
+      // Cet état devrait toujours être conservé dans le hook.
+      if (previousEvent) {
+           console.log('[useGameLogicA - Rewarded] Resuming game. Selecting new event based on previous:', previousEvent.id);
+           // On relance la sélection d'événement pour continuer la partie
+           selectNewEvent(allEvents, previousEvent); // Utilise l'état previousEvent qui était la référence avant la perte de la dernière vie
+      } else {
+           // Cas d'erreur : si previousEvent est null, on ne peut pas continuer proprement.
+           console.error('[useGameLogicA - Rewarded] CRITICAL: Cannot resume game because previousEvent is null after reward!');
+           setError("Erreur critique lors de la reprise de la partie après la publicité.");
+           setIsGameOver(true); // Remettre en game over si on ne peut pas continuer
+           setIsLevelPaused(true);
+      }
+  });
 
     // Chargement initial des publicités
     console.log('[useGameLogicA] Initial ad loading...');
