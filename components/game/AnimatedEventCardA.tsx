@@ -18,7 +18,7 @@
 
 // 1.C. Imports
 import React, { useEffect, useRef, useState } from 'react';
-import { View, Image, Text, StyleSheet, Animated, Dimensions } from 'react-native';
+import { View, Image, Text, StyleSheet, Dimensions, Animated } from 'react-native';
 import { LinearGradient } from 'expo-linear-gradient';
 
 // Obtenir les dimensions de l'écran pour les calculs de style adaptatif
@@ -56,6 +56,9 @@ const AnimatedEventCardA: React.FC<AnimatedEventCardAProps> = ({
   
   // État pour adapter la taille du texte en fonction de la longueur du titre
   const [titleFontSize, setTitleFontSize] = useState(position === 'top' ? 24 : 22);
+  
+  // Animation pour la couleur du titre
+  const titleColorAnim = useRef(new Animated.Value(0)).current;
   
   // 1.E.2. Effet pour l'animation de la date
   useEffect(() => {
@@ -96,6 +99,33 @@ const AnimatedEventCardA: React.FC<AnimatedEventCardAProps> = ({
       }).start();
     }
   }, [position]);
+  
+  // Animation de variation de couleur pour le titre
+  useEffect(() => {
+    // Réinitialiser l'animation à chaque changement d'événement
+    titleColorAnim.setValue(0);
+    
+    // Animation en boucle pour faire varier la couleur du titre
+    Animated.loop(
+      Animated.sequence([
+        Animated.timing(titleColorAnim, {
+          toValue: 1,
+          duration: 20000,
+          useNativeDriver: false
+        }),
+        Animated.timing(titleColorAnim, {
+          toValue: 0,
+          duration: 20000,
+          useNativeDriver: false
+        })
+      ])
+    ).start();
+    
+    // Nettoyer l'animation quand le composant est démonté ou l'événement change
+    return () => {
+      titleColorAnim.stopAnimation();
+    };
+  }, [event?.id]); // Ajouter event?.id comme dépendance
 
   // 1.E.3. Vérification et ajustement pour la longueur du titre
   useEffect(() => {
@@ -159,6 +189,17 @@ const AnimatedEventCardA: React.FC<AnimatedEventCardAProps> = ({
 
   // 1.E.5. Rendu du titre avec ou sans effet d'ombre
   const renderTitle = () => {
+    // Création des couleurs interpolées pour le titre
+    const textColor = titleColorAnim.interpolate({
+      inputRange: [0, 0.5, 1],
+      outputRange: ['rgba(255, 255, 255, 1)', 'rgba(220, 240, 255, 1)', 'rgba(255, 255, 255, 1)']
+    });
+    
+    const shadowColor = titleColorAnim.interpolate({
+      inputRange: [0, 0.5, 1],
+      outputRange: ['rgba(0, 0, 0, 0.9)', 'rgba(0, 0, 0, 0.7)', 'rgba(0, 0, 0, 0.9)']
+    });
+    
     // Titre pour la carte du haut
     if (position === 'top') {
       return (
@@ -168,13 +209,21 @@ const AnimatedEventCardA: React.FC<AnimatedEventCardAProps> = ({
           isTitleLong && styles.titleContainerLong,
           showDate && styles.titleContainerWithDate
         ]}>
-          <Text style={[
-            styles.title,
-            styles.titleTop,
-            { fontSize: titleFontSize }
-          ]} numberOfLines={3}>
+          <Animated.Text 
+            style={[
+              styles.title,
+              styles.titleTop,
+              styles.textOutline,
+              { 
+                fontSize: titleFontSize,
+                color: textColor,
+                textShadowColor: shadowColor
+              }
+            ]} 
+            numberOfLines={3}
+          >
             {event?.titre}
-          </Text>
+          </Animated.Text>
         </View>
       );
     } 
@@ -182,23 +231,24 @@ const AnimatedEventCardA: React.FC<AnimatedEventCardAProps> = ({
     // Titre pour la carte du bas avec effet d'ombre amélioré
     return (
       <View style={styles.bottomTitleWrapper}>
-        <Text 
+        <Animated.Text 
           style={[
             styles.titleBottom,
+            styles.textOutline,
             { 
               fontSize: titleFontSize,
-              color: 'white',
               fontWeight: 'bold',
               textAlign: 'center',
-              textShadowColor: 'rgba(0, 0, 0, 0.8)',
               textShadowOffset: { width: 1, height: 1 },
-              textShadowRadius: 3
+              textShadowRadius: 3,
+              color: textColor,
+              textShadowColor: shadowColor
             }
           ]} 
           numberOfLines={3}
         >
           {event?.titre}
-        </Text>
+        </Animated.Text>
       </View>
     );
   };
@@ -339,14 +389,29 @@ const styles = StyleSheet.create({
   // Styles pour le titre
   title: {
     fontWeight: 'bold',
-    color: 'white',
     textAlign: 'center',
-    textShadowColor: 'rgba(0, 0, 0, 0.75)',
     textShadowOffset: { width: 1, height: 1 },
     textShadowRadius: 3,
   },
   titleTop: {
     letterSpacing: 0.5,
+  },
+  
+  // Styles pour le contour du texte et l'effet de glow
+  textOutline: {
+    // Effet de contour multiple avec des ombres dans différentes directions
+    textShadowOffset: { width: 0, height: 0 },
+    textShadowRadius: 4,
+    // Le style de base inclut déjà textShadowColor qui est animé
+    
+    // On ajoute un effet supplémentaire avec backgroundColor
+    backgroundColor: 'rgba(0, 0, 0, 0.25)',
+    paddingHorizontal: 8,
+    paddingVertical: 3,
+    borderRadius: 8,
+    overflow: 'hidden',
+    borderWidth: 1,
+    borderColor: 'rgba(255, 255, 255, 0.3)',
   },
   
   // Styles pour le wrapper du titre du bas
@@ -364,7 +429,6 @@ const styles = StyleSheet.create({
   // Styles pour le titre du bas
   titleBottom: {
     fontWeight: 'bold',
-    color: 'white',
     textAlign: 'center',
     fontSize: 22,
     letterSpacing: 0.3,
