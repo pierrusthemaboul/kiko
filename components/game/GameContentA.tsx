@@ -422,7 +422,8 @@ const styles = StyleSheet.create({
     flexDirection: 'row',
     justifyContent: 'space-between',
     alignItems: 'center',
-    backgroundColor: 'rgba(5, 11, 31, 0.85)',
+    backgroundColor: 'rgba(250, 245, 235, 0.85)', // beige doux transparent
+borderBottomColor: 'rgba(0, 0, 0, 0.05)', // ligne légère pour différencier
     zIndex: 1000,
     paddingHorizontal: 15,
     paddingVertical: 10,

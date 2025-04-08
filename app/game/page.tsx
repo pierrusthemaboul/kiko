@@ -94,7 +94,7 @@ export default function GamePage() {
   return (
     <View style={styles.fullScreenContainer}>
       <ImageBackground
-        source={require('../../assets/images/quipasse.webp')}
+        source={require('../../assets/images/quipasse3.png')}
         style={styles.backgroundImage}
         resizeMode="cover"
       >

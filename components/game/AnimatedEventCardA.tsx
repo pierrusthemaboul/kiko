@@ -284,15 +284,16 @@ const styles = StyleSheet.create({
     flex: 1,
     borderRadius: 20,
     borderWidth: 3,
-    borderColor: 'rgba(255, 255, 255, 0.2)',
-    backgroundColor: 'rgba(0, 0, 0, 0.3)',
+    borderColor: 'rgba(255, 255, 255, 0.3)', // un peu plus lumineux
+    backgroundColor: 'rgba(0, 0, 0, 0.2)', // fond légèrement plus clair pour effet de lumière
     overflow: 'hidden',
-    elevation: 8,
-    shadowColor: '#000',
-    shadowOffset: { width: 0, height: 4 },
-    shadowOpacity: 0.3,
-    shadowRadius: 5,
+    elevation: 12, // augmenté pour Android
+    shadowColor: '#FFD700', // Couleur lumineuse or doux
+    shadowOffset: { width: 0, height: 0 },
+    shadowOpacity: 0.9, // augmenté pour un glow visible
+    shadowRadius: 10, // légèrement augmenté pour l'effet "glow"
   },
+  
   cardContent: {
     flex: 1,
     borderRadius: 16,
