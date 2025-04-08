@@ -1,91 +1,96 @@
-// /app/game/page.tsx
-
-import React, { useEffect, useRef, useCallback } from 'react';
+import React, { useEffect, useRef, useCallback, useState } from 'react';
 import {
   StyleSheet,
   Animated,
   StatusBar,
   ImageBackground,
   View,
-  ActivityIndicator // Importer pour l'indicateur de chargement
+  ActivityIndicator
 } from 'react-native';
 import { useRouter, useFocusEffect } from 'expo-router';
 import { SafeAreaView } from 'react-native-safe-area-context';
 
 // Composants
 import GameContentA from "../../components/game/GameContentA";
-import RewardAnimation from "../../components/game/RewardAnimation";
 
 // Hooks
 import { useGameLogicA } from '@/hooks/useGameLogicA';
 
 // Libs
-import * as FirebaseAnalytics from '@/lib/firebase'; // L'import est correct, le problème est probablement lié au build/cache
+import * as FirebaseAnalytics from '@/lib/firebase';
 
 export default function GamePage() {
   const router = useRouter();
   const fadeAnim = useRef(new Animated.Value(0)).current;
+  const [gameKey, setGameKey] = useState(0);
+  // Ajout d'un état pour gérer le chargement pendant le redémarrage
+  const [isRestarting, setIsRestarting] = useState(false);
+
   const gameLogic = useGameLogicA('');
 
-  // Log initial (peut être retiré en prod)
-  /*
-  useEffect(() => {
-    console.log('[GamePage] Initial gameLogic state:', {
-      user: gameLogic.user,
-      levelsHistory: gameLogic.levelsHistory,
-      levelCompletedEvents: gameLogic.levelCompletedEvents,
-    });
-  }, [gameLogic.user, gameLogic.levelsHistory, gameLogic.levelCompletedEvents]);
-  */
-
-  // Suivi de l'écran de jeu
   useFocusEffect(
     useCallback(() => {
-      // Utiliser un try...catch pour isoler l'erreur si elle persiste
+      // ... (code focus effect inchangé)
       try {
-        // Vérifier si FirebaseAnalytics et FirebaseAnalytics.screen sont définis avant d'appeler
         if (FirebaseAnalytics && typeof FirebaseAnalytics.screen === 'function') {
           FirebaseAnalytics.screen('GameScreen', 'GamePage');
         } else {
-          // Logguer si la fonction n'est toujours pas trouvée après le nettoyage du cache
+          // Gardé car lié directement à l'échec de l'appel analytics
           console.warn('FirebaseAnalytics.screen n\'est pas une fonction au moment de l\'appel dans useFocusEffect.');
-          // Vous pourriez vouloir logger l'objet FirebaseAnalytics entier pour voir ce qu'il contient
-          // console.log('Contenu actuel de FirebaseAnalytics:', FirebaseAnalytics);
         }
       } catch (error) {
-         // Log l'erreur pour mieux comprendre si elle persiste
+        // Gardé car lié directement à l'erreur de l'appel analytics
         console.error("Erreur lors de l'appel à FirebaseAnalytics.screen :", error);
       }
-
-      // Optionnel : Code à exécuter si l'écran perd le focus
-      // return () => { console.log('GameScreen lost focus'); };
     }, [])
   );
 
-  const handleRestartGame = () => {
-    router.replace('/');
-  };
+  const handleRestartGame = useCallback(async () => { // Rendre la fonction async
+    setIsRestarting(true); // Indiquer qu'on redémarre
 
-  // Effet d'animation de fade-in au montage
+    // 1. Forcer la réinitialisation de l'état logique D'ABORD
+    if (gameLogic.initGame) {
+      try {
+        await gameLogic.initGame(); // Attend que l'initialisation de base soit faite
+      } catch (error) {
+        // Gérer l'erreur si nécessaire, peut-être afficher un message
+      }
+    }
+
+    // 2. Changer la clé pour forcer le remontage UI APRES réinitialisation logique
+    setGameKey(prevKey => prevKey + 1);
+
+    // 3. Gérer l'animation et l'état de redémarrage
+    fadeAnim.setValue(0);
+    Animated.timing(fadeAnim, { toValue: 1, duration: 500, useNativeDriver: true }).start();
+    // On remet isRestarting à false après un court délai pour laisser le temps au rendu
+    setTimeout(() => setIsRestarting(false), 100);
+
+  }, [gameLogic.initGame, fadeAnim]);
+
+
   useEffect(() => {
-    Animated.sequence([
-      Animated.timing(fadeAnim, { toValue: 0, duration: 0, useNativeDriver: true }),
-      Animated.timing(fadeAnim, { toValue: 1, duration: 500, useNativeDriver: true }),
-    ]).start();
-  }, []);
+    // Joue l'animation au montage initial ET quand la clé change
+    fadeAnim.setValue(0);
+    Animated.timing(fadeAnim, { toValue: 1, duration: 500, useNativeDriver: true }).start();
+  }, [gameKey, fadeAnim]);
 
-  // Affichage pendant le chargement initial de la logique de jeu
-  if (!gameLogic || !gameLogic.user) {
-    // Retourne un indicateur de chargement centré
-    return (
-      <View style={[styles.fullScreenContainer, styles.loadingContainer]}>
+  // --- Condition de Chargement Améliorée ---
+  // Afficher indicateur si:
+  // - Chargement initial du hook ET c'est la première clé (gameKey === 0)
+  // - OU si on est en train de redémarrer explicitement (isRestarting === true)
+  const showLoading = (gameKey === 0 && gameLogic.loading) || isRestarting;
+
+  if (showLoading || !gameLogic || !gameLogic.user || !gameLogic.currentLevelConfig || !gameLogic.adState) {
+     return (
+       <View style={[styles.fullScreenContainer, styles.loadingContainer]}>
          <StatusBar translucent backgroundColor="transparent" barStyle="light-content" />
          <ActivityIndicator size="large" color="#FFFFFF" />
-      </View>
-    );
-  }
+       </View>
+     );
+   }
 
-  // Affichage principal du jeu
+  // --- Affichage principal du jeu ---
   return (
     <View style={styles.fullScreenContainer}>
       <ImageBackground
@@ -96,13 +101,15 @@ export default function GamePage() {
         <StatusBar translucent backgroundColor="transparent" barStyle="light-content" />
         <SafeAreaView style={styles.container} edges={['bottom']}>
           <GameContentA
+            key={gameKey}
             user={gameLogic.user}
             previousEvent={gameLogic.previousEvent}
             newEvent={gameLogic.newEvent}
             timeLeft={gameLogic.timeLeft}
-            loading={gameLogic.loading}
+            // Le loading interne du hook sera géré par sa propre logique après remontage
+            loading={false} // On a passé l'étape de chargement de GamePage
             error={gameLogic.error}
-            isGameOver={gameLogic.isGameOver}
+            isGameOver={gameLogic.isGameOver} // Sera false car initGame l'a remis à false
             showDates={gameLogic.showDates}
             isCorrect={gameLogic.isCorrect}
             isImageLoaded={gameLogic.isImageLoaded}
@@ -124,37 +131,32 @@ export default function GamePage() {
             updateRewardPosition={gameLogic.updateRewardPosition}
             levelsHistory={gameLogic.levelsHistory}
             showRewardedAd={gameLogic.showRewardedAd}
+            isAdFreePeriod={gameLogic.adState.isAdFree}
           />
-          {gameLogic.currentReward && gameLogic.currentReward.targetPosition && (
-            <RewardAnimation
-              type={gameLogic.currentReward.type}
-              amount={gameLogic.currentReward.amount}
-              targetPosition={gameLogic.currentReward.targetPosition}
-              onComplete={gameLogic.completeRewardAnimation}
-            />
-          )}
         </SafeAreaView>
       </ImageBackground>
     </View>
   );
 }
 
+// Styles (inchangés)
 const styles = StyleSheet.create({
   fullScreenContainer: {
     flex: 1,
-    position: 'absolute', top: 0, left: 0, right: 0, bottom: 0,
   },
   backgroundImage: {
     flex: 1, width: '100%', height: '100%',
   },
   container: {
     flex: 1,
-    backgroundColor: 'rgba(255, 255, 255, 0.85)',
+    backgroundColor: 'transparent',
   },
-  // Style pour le conteneur de chargement
   loadingContainer: {
+    flex: 1,
     justifyContent: 'center',
     alignItems: 'center',
-    backgroundColor: 'rgba(0, 0, 0, 0.6)', // Fond semi-transparent pendant le chargement
+    backgroundColor: 'rgba(0, 0, 0, 0.6)',
+    // Assurer qu'il est au-dessus de tout si besoin (si zIndex pose problème ailleurs)
+    // position: 'absolute', top: 0, left: 0, right: 0, bottom: 0, zIndex: 9999
   },
 });
