@@ -3,7 +3,7 @@ import { useEffect, useState } from 'react';
 import * as Font from 'expo-font';
 
 const fontsToLoad = {
-    // ... (vos polices comme avant) ...
+    // Définissez ici vos polices comme vous le faisiez
     'Montserrat-Regular': require('../assets/fonts/Montserrat-Regular.ttf'),
     'Montserrat-Medium': require('../assets/fonts/Montserrat-Medium.ttf'),
     'Montserrat-SemiBold': require('../assets/fonts/Montserrat-SemiBold.ttf'),
@@ -16,35 +16,29 @@ export const useFonts = () => {
 
   useEffect(() => {
     let isMounted = true;
-    console.log("useFonts: useEffect triggered."); // Log 1
 
     async function loadFontsAsync() {
-      console.log("useFonts: loadFontsAsync called."); // Log 2
       try {
-        console.log("useFonts: Attempting Font.loadAsync..."); // Log 3
         await Font.loadAsync(fontsToLoad);
-        // SI VOUS VOYEZ CE LOG, loadAsync a réussi !
-        console.log(">>> useFonts: Font.loadAsync SUCCEEDED! <<<"); // Log 4
         if (isMounted) {
-          console.log("useFonts: Setting fontsLoaded to true."); // Log 5
           setFontsLoaded(true);
-        } else {
-          console.log("useFonts: Component unmounted before fonts loaded."); // Log 6
         }
       } catch (error) {
-        // SI VOUS VOYEZ CE LOG, loadAsync a échoué.
-        console.error('>>> useFonts: Font.loadAsync FAILED! <<<', error); // Log 7
+        // Le chargement des polices a échoué.
+        // Vous pourriez vouloir gérer cette erreur autrement ici,
+        // par exemple en définissant un état d'erreur.
+        // Pour l'instant, l'erreur est juste ignorée silencieusement.
+        console.error('Erreur lors du chargement des polices:', error); // Gardé un console.error minimal, mais peut être enlevé si besoin absolu.
+        // Si vous voulez enlever TOUS les logs, même les erreurs, enlevez la ligne ci-dessus.
       }
     }
 
     loadFontsAsync();
 
     return () => {
-      console.log("useFonts: Cleanup function ran (component unmounted?)."); // Log 8
       isMounted = false;
     };
-  }, []);
+  }, []); // Le tableau vide assure que l'effet ne s'exécute qu'au montage
 
-  console.log("useFonts: Hook returning fontsLoaded =", fontsLoaded); // Log 9
   return fontsLoaded;
 };
