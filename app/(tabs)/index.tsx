@@ -1,5 +1,6 @@
 // /home/pierre/sword/kiko/app/(tabs)/index.tsx
 // Refonte Radicale - Thème Clair, Épuré et Percutant
+// ----- FICHIER COMPLET CORRIGÉ (Chemins Relatifs '../../') -----
 
 import React, { useEffect, useState, useRef } from 'react';
 import {
@@ -16,14 +17,14 @@ import {
   Pressable,
 } from 'react-native';
 import { useRouter } from 'expo-router';
-import { supabase } from '../../lib/supabase/supabaseClients';
+import { supabase } from '../../lib/supabase/supabaseClients'; // Chemin relatif vers supabase
 import { Audio } from 'expo-av';
 import { User } from '@supabase/supabase-js';
 import { Ionicons } from '@expo/vector-icons';
 import { BannerAd, BannerAdSize } from 'react-native-google-mobile-ads';
-import { useFonts } from '../../hooks/useFonts';
-import { FirebaseAnalytics } from '../../lib/firebase';
-import { getAdUnitId } from '../../lib/config/adConfig';
+import { useFonts } from '../../hooks/useFonts'; // Chemin relatif vers useFonts
+import { FirebaseAnalytics } from '../../lib/firebase'; // Chemin relatif vers firebase
+import { getAdUnitId } from '../../lib/config/adConfig'; // Chemin relatif vers adConfig
 
 const { width, height } = Dimensions.get('window');
 
@@ -55,7 +56,7 @@ const SPLASH_TEXT_FADE_DURATION = 600;
 const SPLASH_TEXT_DELAY = 200; // Délai après le logo scale
 const SPLASH_EXIT_DURATION = 400;
 const SPLASH_TOTAL_VIEW_DURATION = SPLASH_SCALE_DURATION + SPLASH_TEXT_DELAY + SPLASH_TEXT_FADE_DURATION + 800; // Durée totale *visible*;
-const MAIN_CONTENT_ANIM_DURATION = 500; 
+const MAIN_CONTENT_ANIM_DURATION = 500;
 // ---------------------------------------------
 
 // --- Nouveau Splash Screen Animé - Impact sur Fond Clair ---
@@ -109,22 +110,36 @@ const AnimatedSplashScreen = ({ onAnimationEnd }) => {
       });
     }, SPLASH_TOTAL_VIEW_DURATION);
 
+    // Nettoyer le timer si le composant est démonté avant la fin
     return () => clearTimeout(endTimer);
 
-  }, [onAnimationEnd]);
+  }, [onAnimationEnd]); // Ne dépend que de onAnimationEnd, ne devrait s'exécuter qu'une fois au montage
 
     // Fonction pour jouer le son (remise)
     const playSplashSound = async () => {
+        let soundObject = null; // Garder une référence pour le déchargement
         try {
           const { sound } = await Audio.Sound.createAsync(
-             // Chemin original fourni par l'utilisateur
-             require('/home/pierre/sword/kiko/assets/sounds/361261__japanyoshithegamer__8-bit-spaceship-startup.wav'),
+             // --- CHEMIN CORRIGÉ (../../) basé sur l'arborescence fournie ---
+             require('../../assets/sounds/361261__japanyoshithegamer__8-bit-spaceship-startup.wav'),
+             // -------------------------------------------------------------
              { volume: 0.15 } // Volume ajusté
            );
-          await sound.playAsync();
+          soundObject = sound; // Assigner la référence
+          await soundObject.playAsync();
+          // Optionnel : Décharger le son après lecture pour libérer la mémoire
+          soundObject.setOnPlaybackStatusUpdate((status) => {
+            if (status.isLoaded && status.didJustFinish) {
+              soundObject?.unloadAsync(); // Utilise l'optional chaining au cas où
+            }
+          });
         } catch (error) {
           console.warn('Audio playback error:', error);
           FirebaseAnalytics.error('audio_playback_error', error instanceof Error ? error.message : 'Unknown error', 'SplashScreen');
+          // Assurer le déchargement même en cas d'erreur de lecture (si l'objet a été créé)
+          if (soundObject) {
+            await soundObject.unloadAsync();
+          }
         }
     };
 
@@ -134,9 +149,9 @@ const AnimatedSplashScreen = ({ onAnimationEnd }) => {
     <Animated.View style={[styles.splashContainer, { opacity: containerOpacity }]}>
       <Animated.View style={{ opacity: logoOpacity, transform: [{ scale: logoScale }] }}>
         <Image
-          // --- CHEMIN CORRIGÉ ---
-          source={require('/home/pierre/sword/kiko/assets/images/logo3.png')}
-          // --------------------
+          // --- CHEMIN CORRIGÉ (../../) basé sur l'arborescence fournie ---
+          source={require('../../assets/images/logo3.png')}
+          // -------------------------------------------------------------
           style={styles.splashLogo}
           resizeMode="contain"
         />
@@ -178,16 +193,12 @@ const MinimalButton = React.memo(({
   const getButtonStyle = () => {
     switch (variant) {
       case 'primary':
-        // Bouton Bleu Nuit
         return { backgroundColor: COLORS.primary, borderColor: 'transparent', borderWidth: 0 };
       case 'secondary':
-        // Bouton Corail Doux (Saumon)
         return { backgroundColor: COLORS.accentSecondary, borderColor: 'transparent', borderWidth: 0 };
       case 'ghost':
-        // Ghost avec bordure Bleu Nuit (plus visible)
         return { backgroundColor: 'transparent', borderColor: COLORS.borderFocus, borderWidth: 1.5 };
        case 'ghostSecondary':
-         // Ghost avec bordure Grise (pour actions moins importantes)
          return { backgroundColor: 'transparent', borderColor: COLORS.textSecondary, borderWidth: 1 };
       default:
         return { backgroundColor: COLORS.primary, borderColor: 'transparent', borderWidth: 0 };
@@ -196,10 +207,10 @@ const MinimalButton = React.memo(({
 
   const getTextStyle = () => {
     switch (variant) {
-        case 'primary': return { color: COLORS.textOnPrimary }; // Blanc sur Bleu
-        case 'secondary': return { color: COLORS.textOnAccent }; // Foncé sur Saumon
-        case 'ghost': return { color: COLORS.borderFocus }; // Bleu Nuit
-        case 'ghostSecondary': return { color: COLORS.textSecondary }; // Gris
+        case 'primary': return { color: COLORS.textOnPrimary };
+        case 'secondary': return { color: COLORS.textOnAccent };
+        case 'ghost': return { color: COLORS.borderFocus };
+        case 'ghostSecondary': return { color: COLORS.textSecondary };
         default: return { color: COLORS.textOnPrimary };
     }
   };
@@ -225,8 +236,8 @@ const MinimalButton = React.memo(({
       style={({ pressed }) => [
           styles.buttonWrapper,
           buttonStyle,
-          { opacity: disabled ? 0.6 : 1 }, // Opacité standard pour désactivé
-          style
+          { opacity: disabled ? 0.6 : 1 },
+          style,
       ]}
     >
       <Animated.View style={[
@@ -236,7 +247,7 @@ const MinimalButton = React.memo(({
         {icon && (
           <Ionicons
             name={icon}
-            size={18} // Taille icône ajustée
+            size={18}
             color={getIconColor()}
             style={styles.buttonIcon}
           />
@@ -254,21 +265,22 @@ export default function HomeScreen() {
   const [displayName, setDisplayName] = useState('');
   const [showSplash, setShowSplash] = useState(true);
   const [guestDisplayName, setGuestDisplayName] = useState<string | null>(null);
-  const fontsLoaded = useFonts();
+  const fontsLoaded = useFonts(); // Hook pour charger les polices
 
   // Animation refs pour le contenu principal
   const mainContentAnimation = {
     opacity: useRef(new Animated.Value(0)).current,
-    translateY: useRef(new Animated.Value(25)).current // Départ légèrement plus bas
+    translateY: useRef(new Animated.Value(25)).current
   };
 
-  // Firebase Analytics (inchangé fonctionnellement)
+  // Firebase Analytics : Log l'écran une fois les polices chargées et le splash caché
   useEffect(() => {
     if (!showSplash && fontsLoaded) {
       FirebaseAnalytics.screen('Home', 'HomeScreen');
     }
   }, [showSplash, fontsLoaded]);
 
+  // Initialisation : Vérifie l'utilisateur dès que les polices sont prêtes
   useEffect(() => {
     if (fontsLoaded) {
       initializeApp();
@@ -286,25 +298,25 @@ export default function HomeScreen() {
     animateMainContentIn();
   };
 
+  // Animation d'apparition du contenu principal
   const animateMainContentIn = () => {
     Animated.parallel([
       Animated.timing(mainContentAnimation.opacity, {
         toValue: 1,
-        duration: MAIN_CONTENT_ANIM_DURATION, // Utiliser constante définie plus haut
+        duration: MAIN_CONTENT_ANIM_DURATION,
         easing: Easing.out(Easing.ease),
         useNativeDriver: true,
       }),
       Animated.timing(mainContentAnimation.translateY, {
         toValue: 0,
         duration: MAIN_CONTENT_ANIM_DURATION,
-        easing: Easing.out(Easing.ease), // Moins de rebond pour un style épuré
+        easing: Easing.out(Easing.ease),
         useNativeDriver: true,
       }),
     ]).start();
   };
 
   // --- Logique Utilisateur & Handlers ---
-  // ... (checkUser, fetchUserProfile, handleLogout sont identiques fonctionnellement)
   const checkUser = async () => {
     try {
       const { data: { session } } = await supabase.auth.getSession();
@@ -341,7 +353,7 @@ export default function HomeScreen() {
     }
   };
 
-    const handleLogout = async () => {
+  const handleLogout = async () => {
     try {
       FirebaseAnalytics.logEvent('user_logout', { user_type: guestDisplayName ? 'guest' : 'registered' });
       await supabase.auth.signOut();
@@ -355,33 +367,30 @@ export default function HomeScreen() {
     }
   };
 
-  // --- Correction handlePlayAsGuest ---
   const handlePlayAsGuest = () => {
     const guestId = Math.floor(Math.random() * 10000);
     const name = `Explorateur-${guestId}`;
     setGuestDisplayName(name);
-    setDisplayName(name); // Met à jour l'affichage localement aussi
+    setDisplayName(name); // Met à jour l'affichage localement
     FirebaseAnalytics.logEvent('guest_login', { guest_id: guestId, guest_name: name });
-    FirebaseAnalytics.initialize(undefined, true);
+    FirebaseAnalytics.initialize(undefined, true); // Assure le mode anonyme pour Firebase
 
     Alert.alert(
       'Mode Exploration',
-      `Bienvenue, ${name} ! En mode exploration, votre progression ne sera pas sauvegardée. Créez un compte pour accéder aux classements et enregistrer vos scores !`,
+      `Bienvenue, ${name.split('-')[0]} ! En mode exploration, votre progression ne sera pas sauvegardée. Créez un compte pour accéder aux classements et enregistrer vos scores !`,
       [
         {
           text: "Continuer l'exploration",
           onPress: () => {
             FirebaseAnalytics.logEvent('guest_mode_confirmed', { guest_name: name });
-            // --- AJOUT DE LA NAVIGATION ---
-            router.push('vue1');
-            // -----------------------------
+            router.push('vue1'); // Navigue vers la vue du jeu
           }
         },
         {
           text: "Créer un compte",
           onPress: () => {
             FirebaseAnalytics.logEvent('guest_to_signup', { from_screen: 'home', guest_name: name });
-            router.push('/auth/signup');
+            router.push('/auth/signup'); // Navigue vers l'inscription
           },
           style: "default"
         }
@@ -390,29 +399,31 @@ export default function HomeScreen() {
   };
   // ------------------------------------
 
-  // --- Handlers Navigation (inchangés fonctionnellement) ---
-    const handleStartGame = () => {
+  // --- Handlers Navigation ---
+  const handleStartGame = () => {
     FirebaseAnalytics.logEvent('start_game_button_clicked', {
         player_name: guestDisplayName || displayName || 'Anonymous',
         is_guest: !!guestDisplayName,
         user_type: guestDisplayName ? 'guest' : (user ? 'registered' : 'unknown'),
         from_screen: 'home'
     });
-    router.push('vue1');
+    router.push('vue1'); // Navigue vers la vue du jeu
   };
 
   const handleLoginPress = () => {
     FirebaseAnalytics.logEvent('login_button_clicked', { from_screen: 'home' });
-    router.push('/auth/login');
+    router.push('/auth/login'); // Navigue vers la page de connexion
   };
 
   const handleSignupPress = () => {
     FirebaseAnalytics.logEvent('signup_button_clicked', { from_screen: 'home' });
-    router.push('/auth/signup');
+    router.push('/auth/signup'); // Navigue vers la page d'inscription
   };
   // ----------------------------------------------------------
 
+  // Affiche un écran de chargement si les polices ne sont pas prêtes
   if (!fontsLoaded) {
+    // Vous pourriez mettre un indicateur de chargement ici si vous le souhaitez
     return <View style={styles.loadingContainer} />;
   }
 
@@ -424,6 +435,7 @@ export default function HomeScreen() {
       {showSplash ? (
         <AnimatedSplashScreen onAnimationEnd={handleSplashAnimationEnd} />
       ) : (
+        // Conteneur principal qui apparaît après le splash
         <View style={styles.mainContainer}>
           <Animated.View style={[
             styles.contentContainer,
@@ -432,7 +444,7 @@ export default function HomeScreen() {
               transform: [{ translateY: mainContentAnimation.translateY }]
             }
           ]}>
-            {/* --- Header sur Fond Clair --- */}
+            {/* --- Header --- */}
             <View style={styles.headerContainer}>
               <Text style={styles.welcomeTitle}>
                 {(() => {
@@ -448,11 +460,11 @@ export default function HomeScreen() {
               </Text>
             </View>
 
-            {/* --- Section Boutons Thème Clair --- */}
+            {/* --- Section Boutons --- */}
             <View style={styles.buttonSection}>
               {(user || guestDisplayName) ? (
+                // Si connecté ou en mode invité
                 <>
-                  {/* Bouton principal (Bleu Nuit) */}
                   <MinimalButton
                     label="Nouvelle Partie"
                     icon="play-outline"
@@ -460,36 +472,33 @@ export default function HomeScreen() {
                     variant="primary"
                     style={styles.mainActionButton}
                   />
-                   {/* Bouton secondaire (Ghost Bleu - Déconnexion) */}
                   <MinimalButton
                     label="Déconnexion"
                     icon="log-out-outline"
                     onPress={handleLogout}
-                    variant="ghost" // Plus visible que ghostSecondary
+                    variant="ghost"
                   />
                 </>
               ) : (
+                // Si déconnecté
                 <>
-                  {/* Bouton principal (Bleu Nuit) */}
                   <MinimalButton
                     label="Se Connecter"
                     icon="log-in-outline"
                     onPress={handleLoginPress}
                     variant="primary"
                   />
-                   {/* Bouton secondaire (CORAIL DOUX / SAUMON) */}
                   <MinimalButton
                     label="Créer un Compte"
                     icon="person-add-outline"
                     onPress={handleSignupPress}
-                    variant="secondary" // Utilisation du Saumon
+                    variant="secondary"
                   />
-                   {/* Bouton tertiaire (Ghost Gris - Mode Exploration) */}
                    <MinimalButton
                     label="Mode Exploration"
                     icon="compass-outline"
                     onPress={handlePlayAsGuest}
-                    variant="ghostSecondary" // Moins prioritaire, bordure grise
+                    variant="ghostSecondary"
                   />
                 </>
               )}
@@ -498,13 +507,14 @@ export default function HomeScreen() {
             {/* --- Bannière Publicitaire --- */}
             <View style={styles.adContainer}>
               <BannerAd
-                unitId={getAdUnitId('BANNER_HOME')}
+                unitId={getAdUnitId('BANNER_HOME')} // Utilise la fonction pour obtenir l'ID d'annonce
                 size={BannerAdSize.BANNER}
-                requestOptions={{ requestNonPersonalizedAdsOnly: true }}
+                requestOptions={{ requestNonPersonalizedAdsOnly: true }} // Pour GDPR/CCPA
                 onAdLoaded={() => { FirebaseAnalytics.ad('banner', 'loaded', 'home_banner', 0); }}
                 onAdFailedToLoad={(error) => {
                    FirebaseAnalytics.ad('banner', 'failed', 'home_banner', 0);
                    FirebaseAnalytics.error('ad_load_failed', `Banner Ad Error: ${error.message} (Code: ${error.code})`, 'HomeScreen');
+                   console.warn(`Ad failed to load: ${error.message}`); // Log console pour le dev
                 }}
               />
             </View>
@@ -534,9 +544,10 @@ const styles = StyleSheet.create({
     backgroundColor: COLORS.background, // Fond clair
     justifyContent: 'center',
     alignItems: 'center',
+    zIndex: 10, // Au-dessus du contenu
   },
   splashLogo: {
-    width: width * 0.6, // Taille logo ajustée
+    width: width * 0.6,
     height: width * 0.6,
     marginBottom: 25,
   },
@@ -544,60 +555,60 @@ const styles = StyleSheet.create({
     alignItems: 'center',
   },
   splashTitle: {
-    fontSize: 52, // Taille impactante
-    fontFamily: 'Montserrat-Bold',
-    color: COLORS.accentPrimary, // ORANGE VIF sur fond clair
+    fontSize: 52,
+    fontFamily: 'Montserrat-Bold', // Police personnalisée (doit être chargée)
+    color: COLORS.accentPrimary, // Orange Vif
     letterSpacing: 1.5,
     marginBottom: 6,
   },
   splashSubtitle: {
     fontSize: 16,
-    fontFamily: 'Montserrat-Regular',
+    fontFamily: 'Montserrat-Regular', // Police personnalisée (doit être chargée)
     color: COLORS.textSecondary, // Gris secondaire
   },
   // --- Contenu Principal ---
   mainContainer: {
     flex: 1,
-    paddingTop: Platform.OS === 'ios' ? 60 : 40,
+    paddingTop: Platform.OS === 'ios' ? (height > 800 ? 60 : 40) : StatusBar.currentHeight || 40, // Gère la status bar/notch
   },
   contentContainer: {
     flex: 1,
-    paddingHorizontal: 25, // Padding latéral standard
-    justifyContent: 'space-between', // Header/Boutons en haut, Pub en bas
-    paddingBottom: 20,
+    paddingHorizontal: 25,
+    justifyContent: 'space-between', // Pousse header/boutons vers le haut, pub vers le bas
+    paddingBottom: 20, // Espace sous la pub
   },
   headerContainer: {
     alignItems: 'center',
-    marginTop: height * 0.08, // Moins de marge en haut
-    marginBottom: height * 0.12, // Plus d'espace avant les boutons
+    marginTop: height * 0.06,
+    marginBottom: height * 0.1,
   },
   welcomeTitle: {
     fontSize: 26,
-    fontFamily: 'Montserrat-Bold',
+    fontFamily: 'Montserrat-Bold', // Police personnalisée
     color: COLORS.textPrimary, // Texte foncé
     textAlign: 'center',
     marginBottom: 8,
   },
   welcomeSubtitle: {
     fontSize: 17,
-    fontFamily: 'Montserrat-Regular',
+    fontFamily: 'Montserrat-Regular', // Police personnalisée
     color: COLORS.textSecondary, // Texte gris secondaire
     textAlign: 'center',
   },
   // --- Section et Styles des Boutons ---
   buttonSection: {
      width: '100%',
-     marginBottom: 20,
+     alignItems: 'center', // Centre les boutons (utiles si leur width n'est pas 100%)
   },
   buttonWrapper: {
-    width: '100%',
+    width: '95%', // Légèrement moins que 100% pour l'aération
+    maxWidth: 400, // Limite sur écrans larges
     marginVertical: 8,
-    borderRadius: 10, // Arrondi standard
+    borderRadius: 10,
     justifyContent: 'center',
     alignItems: 'center',
-    paddingVertical: 13, // Hauteur bouton standard
+    paddingVertical: 13,
     paddingHorizontal: 15,
-    // Pas d'ombres pour le style épuré
   },
   buttonInnerWrapper: {
       flexDirection: 'row',
@@ -605,12 +616,13 @@ const styles = StyleSheet.create({
       justifyContent: 'center',
   },
   buttonIcon: {
-    marginRight: 8, // Espace icône/texte
+    marginRight: 10, // Espace icône/texte
   },
   buttonText: {
     fontSize: 16,
-    fontFamily: 'Montserrat-Bold',
+    fontFamily: 'Montserrat-Bold', // Police personnalisée
     textAlign: 'center',
+    lineHeight: 20, // Pour l'alignement vertical
   },
   mainActionButton: {
     paddingVertical: 15, // Bouton principal légèrement plus grand
@@ -620,6 +632,7 @@ const styles = StyleSheet.create({
     width: '100%',
     alignItems: 'center',
     justifyContent: 'center',
-    minHeight: 50,
+    minHeight: 50, // Pour la bannière standard
+    marginTop: 15, // Espace au-dessus
   },
 });
