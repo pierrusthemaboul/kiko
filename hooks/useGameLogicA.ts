@@ -71,7 +71,7 @@ interface AdState {
   levelUpInterstitialLoaded: boolean;
   rewardedLoaded: boolean;
   lastInterstitialTime: number;
-  adFreeUntil: number;
+  hasWatchedRewardedAd: boolean;
 }
 // ------------------------------------------------------------------
 
@@ -242,6 +242,7 @@ export function useGameLogicA(initialEvent?: string) { // Rendu initialEvent opt
     rewardedLoaded: false,
     lastInterstitialTime: 0,
     adFreeUntil: 0,
+    rewardedWatchedThisGame: false // Nouvel état
   });
   const [pendingAdDisplay, setPendingAdDisplay] = useState<"interstitial" | "rewarded" | "gameOver" | "levelUp" | null>(null);
 
@@ -329,19 +330,17 @@ export function useGameLogicA(initialEvent?: string) { // Rendu initialEvent opt
       setIsWaitingForCountdown(false); // Important pour permettre le prochain handleChoice
       setIsCountdownActive(false); // Sera réactivé par handleImageLoad
 
-      // 3. Mettre à jour l'état AdMob (période sans pub, etc.)
-      setAdState(prev => ({ ...prev, adFreeUntil: Date.now() + 5 * 60 * 1000 })); // 5 min sans pub
+      // 3. Mettre à jour l'état AdMob pour limiter la publicité récompensée à une seule fois par partie
+      setAdState(prev => ({ ...prev, hasWatchedRewardedAd: true }));
 
       // 4. Log Analytics
       FirebaseAnalytics.ad('rewarded', 'earned_reward', 'generic', user.level); // Attention: user.level/points ici sont ceux AVANT setUser. C'est ok.
       FirebaseAnalytics.reward('EXTRA_LIFE', 1, 'ad_reward', 'completed', user.level, user.points);
 
       // 5. Relancer le jeu en sélectionnant un nouvel événement
-      // Il faut utiliser l'événement qui était 'previousEvent' AVANT que le jeu ne se termine.
-      // Cet état devrait toujours être conservé dans le hook.
       if (previousEvent) {
            // On relance la sélection d'événement pour continuer la partie
-           selectNewEvent(allEvents, previousEvent); // Utilise l'état previousEvent qui était la référence avant la perte de la dernière vie
+           selectNewEvent(allEvents, previousEvent);
       } else {
            // Cas d'erreur : si previousEvent est null, on ne peut pas continuer proprement.
            setError("Erreur critique lors de la reprise de la partie après la publicité.");
@@ -381,16 +380,15 @@ export function useGameLogicA(initialEvent?: string) { // Rendu initialEvent opt
 
   // Vérifie si une pub peut être affichée
   const canShowAd = useCallback(() => {
-    const now = Date.now();
-    if (now < adState.adFreeUntil) {
+    if (adState.hasWatchedRewardedAd) {
       return false;
     }
     // 3 minutes minimum entre les interstitiels
-    if (now - adState.lastInterstitialTime < 3 * 60 * 1000) {
+    if (Date.now() - adState.lastInterstitialTime < 3 * 60 * 1000) {
       return false;
     }
     return true;
-  }, [adState.adFreeUntil, adState.lastInterstitialTime]);
+  }, [adState.hasWatchedRewardedAd, adState.lastInterstitialTime]);
 
   // Affiche une publicité récompensée si disponible
   const showRewardedAd = useCallback(() => {
@@ -567,6 +565,10 @@ export function useGameLogicA(initialEvent?: string) { // Rendu initialEvent opt
 // 1.H.1. initGame
 const initGame = useCallback(async () => {
   console.log('[useGameLogicA] initGame started'); // Gardons ce log pour confirmer l'appel
+  
+  // Réinitialiser la propriété pour la publicité récompensée
+  setAdState(prev => ({ ...prev, hasWatchedRewardedAd: false }));
+
   try {
     // ---> AJOUTS IMPORTANTS ICI <---
     setIsImageLoaded(false);     // Assure que l'état de chargement image est reset
@@ -1289,9 +1291,6 @@ const selectNewEvent = useCallback(
   ]
 );
 
-
-
-
   // 1.H.5. updatePerformanceStats (Peut être déprécié si non utilisé pour l'UI)
   const updatePerformanceStats = useCallback((type: string, period: string, success: boolean) => {
     setPerformanceStats((prev) => {
@@ -1520,25 +1519,18 @@ const selectNewEvent = useCallback(
       };
 
       // Mettre à jour l'historique local (peut être déprécié si non utilisé ailleurs)
-      // (La logique ici peut être simplifiée ou supprimée si eventHistory n'est plus utilisé ailleurs)
       setEventHistory(prev => {
          const lastEntryIndex = prev.length - 1;
-         // Essayer de trouver l'événement correspondant dans l'historique pour mettre à jour 'success'
-         // Si on se base sur updateGameState qui l'ajoute avant, on met à jour le dernier.
-         if (lastEntryIndex >= 0 && prev[lastEntryIndex].success === false) { // Assume le dernier ajouté est celui joué
+         if (lastEntryIndex >= 0 && prev[lastEntryIndex].success === false) { 
              const updatedHistory = [...prev];
              updatedHistory[lastEntryIndex] = { ...prev[lastEntryIndex], success: isAnswerCorrect };
              return updatedHistory;
          }
-         // Fallback: ajouter si non trouvé (devrait être rare avec le flux actuel)
-         // Removed console.warn
          return [...prev, { type: newEvent.types_evenement?.[0] || 'unknown', period: getPeriod(newEvent.date), success: isAnswerCorrect }];
       });
 
       // --- MODIFICATION CLÉ : Mettre à jour previousEvent IMMÉDIATEMENT ---
-      // L'événement actuel (`newEvent`) devient la référence (`previousEvent`) pour la *prochaine* question ou pour `handleLevelUp`.
-      const eventJustPlayed = newEvent; // Garde une référence claire pour les logs et la sélection suivante
-      // Removed console.log
+      const eventJustPlayed = newEvent;
       setPreviousEvent(eventJustPlayed);
       // ---------------------------------------------------------------------
 
@@ -1563,7 +1555,6 @@ const selectNewEvent = useCallback(
         setCurrentLevelEvents(updatedLevelEventsSummary);
         setLevelCompletedEvents(updatedLevelEventsSummary);
 
-        // Mise à jour de l'état utilisateur (points, streak, niveau?)
         setUser((prev) => {
           const updatedPoints = prev.points + pointsEarned;
           const eventsCompleted = prev.eventsCompletedInLevel + 1;
@@ -1577,12 +1568,9 @@ const selectNewEvent = useCallback(
           };
 
           const currentLevelConfig = LEVEL_CONFIGS[prev.level];
-          // Vérifier si le niveau est terminé
           if (currentLevelConfig && eventsCompleted >= currentLevelConfig.eventsNeeded) {
-            // --- LEVEL UP ---
             const nextLevel = prev.level + 1;
             const nextLevelConfig = LEVEL_CONFIGS[nextLevel];
-            // Removed console.log
 
             updatedUser = {
               ...updatedUser,
@@ -1597,20 +1585,14 @@ const selectNewEvent = useCallback(
             setAntiqueEventsCount(0);
 
             if (nextLevelConfig) {
-                // Removed console.log
                 setCurrentLevelConfig({ ...nextLevelConfig, eventsSummary: [] });
-            } else {
-                // Removed console.warn
-                // endGame(); // Envisager d'appeler endGame ici si c'est la fin définitive
             }
             setCurrentLevelEvents([]);
             setShowLevelModal(true); // Afficher le modal de succès
-            setIsLevelPaused(true); // Mettre en pause EN ATTENTE de handleLevelUp
+            setIsLevelPaused(true); // Mise en pause en attendant handleLevelUp
             playLevelUpSound();
 
-            // Logique pub pour level up
             if (prev.level === 1 || prev.level === 6 || prev.level % 5 === 0) {
-              // Removed console.log
               setPendingAdDisplay("levelUp");
               FirebaseAnalytics.ad('interstitial', 'triggered', 'level_up', prev.level);
             }
@@ -1619,22 +1601,15 @@ const selectNewEvent = useCallback(
             if (nextLevelConfig?.pointsReward) {
                FirebaseAnalytics.reward('LEVEL_UP_BONUS', nextLevelConfig.pointsReward, 'level_up', nextLevel, prev.level, updatedPoints);
             }
-            // PAS D'APPEL à selectNewEvent ici, handleLevelUp s'en chargera
 
           } else {
             // --- NIVEAU NON TERMINÉ ---
-            // Removed console.log
-            // Planifier la sélection du prochain événement après un délai
             setTimeout(() => {
-              setIsWaitingForCountdown(false); // Fin de l'attente
-              if (!isGameOver && !showLevelModal) { // Double check (surtout !showLevelModal)
-                // Removed console.log
-                // previousEvent est déjà à jour. eventJustPlayed est la référence correcte.
+              setIsWaitingForCountdown(false);
+              if (!isGameOver && !showLevelModal) {
                 selectNewEvent(allEvents, eventJustPlayed);
-              } else {
-                // Removed console.log
               }
-            }, 750); // Délai court pour bonne réponse
+            }, 750);
          }
          return updatedUser;
        });
@@ -1642,7 +1617,7 @@ const selectNewEvent = useCallback(
      } else {
        // --- MAUVAISE RÉPONSE ---
        playIncorrectSound();
-       setStreak(0); // Réinitialiser la série
+       setStreak(0);
 
        Animated.timing(progressAnim, { toValue: 0, duration: 300, useNativeDriver: false }).start();
        updatePerformanceStats(newEvent.types_evenement?.[0] || 'default', getPeriod(newEvent.date), false);
@@ -1650,60 +1625,37 @@ const selectNewEvent = useCallback(
        setCurrentLevelEvents((prev) => [...prev, eventSummaryItem]);
        setLevelCompletedEvents((prev) => [...prev, eventSummaryItem]);
 
-       // Perdre une vie
        setUser((prev) => {
          const newLives = prev.lives - 1;
-         // Removed console.log
          FirebaseAnalytics.logEvent('life_lost', { reason: 'incorrect_answer', remaining_lives: newLives, level_id: prev.level, event_id: newEvent.id });
 
          if (newLives <= 0) {
-           // Removed console.log
            return { ...prev, lives: 0, streak: 0 };
          }
          return { ...prev, lives: newLives, streak: 0 };
        });
 
-       // Vérifier si le jeu est terminé APRES la mise à jour de l'état (via lecture de user.lives qui sera mis à jour)
-        if (user.lives <= 1) { // Condition: si la vie VA passer à 0 (était à 1 avant setUser)
-           // Déclencher endGame après un court délai pour voir la réponse
-           // Removed console.log
+        if (user.lives <= 1) {
            setTimeout(() => {
-               if (!isGameOver) { // Vérifier à nouveau au cas où
+               if (!isGameOver) {
                   endGame();
                }
-           }, 500); // Délai avant game over
+           }, 500);
         } else {
-           // --- CONTINUER APRÈS MAUVAISE RÉPONSE (S'IL RESTE DES VIES) ---
-            // Removed console.log
-            // Planifier la sélection du prochain événement après un délai plus long
            setTimeout(() => {
-               setIsWaitingForCountdown(false); // Fin de l'attente
-               if (!isGameOver && !showLevelModal) { // Double check
-                   // Removed console.log
-                   // previousEvent est déjà à jour. eventJustPlayed est la référence correcte.
+               setIsWaitingForCountdown(false);
+               if (!isGameOver && !showLevelModal) {
                    selectNewEvent(allEvents, eventJustPlayed);
-               } else {
-                    // Removed console.log
                }
-           }, 1500); // Délai plus long pour mauvaise réponse
+           }, 1500);
         }
      }
-
-     // L'appel à endGame si 0 vies est géré dans le bloc "Mauvaise Réponse" ci-dessus.
-
    },
-   [ // --- Dépendances de handleChoice ---
-     // États lus directement :
+   [
      previousEvent, newEvent, isLevelPaused, isGameOver, isWaitingForCountdown,
-     timeLeft, streak, user, // L'objet user entier inclut level, points, lives, eventsCompletedInLevel etc.
-     allEvents, progressAnim, currentLevelEvents,
-
-     // Fonctions appelées :
+     timeLeft, streak, user, allEvents, progressAnim, currentLevelEvents,
      getPeriod, calculatePoints, checkRewards, selectNewEvent, finalizeCurrentLevelHistory,
-     playCorrectSound, playIncorrectSound, playLevelUpSound, // Sons
-     updatePerformanceStats, // Fonction interne (si utilisée)
-     endGame, // Fonction interne
-     setAntiqueEventsCount // Fonction pour réinitialiser le compteur d'événements antiques
+     playCorrectSound, playIncorrectSound, playLevelUpSound, updatePerformanceStats, endGame, setAntiqueEventsCount
    ]
  );
  // --- FIN MODIFICATION handleChoice ---
@@ -1712,145 +1664,94 @@ const selectNewEvent = useCallback(
  // --- MODIFICATION : Utilisation de FirebaseAnalytics dans handleLevelUp ---
  // 1.H.10. handleLevelUp (Appelé par le Modal de fin de niveau pour démarrer le suivant)
  const handleLevelUp = useCallback(() => {
-   // Removed debug logs
-
    const currentLevelState = user.level;
    const currentPointsState = user.points;
-   const referenceEvent = previousEvent; // Capture la référence ACTUELLE
+   const referenceEvent = previousEvent;
 
-   // Removed debug logs
-
-   // --- Vérification CRITIQUE de l'événement de référence ---
    if (!referenceEvent) {
-       // Removed console.error
        setError("Erreur interne critique: impossible de démarrer le niveau suivant (référence manquante).");
        FirebaseAnalytics.error('levelup_null_prev_event', 'previousEvent was null when handleLevelUp called', 'handleLevelUp');
-       setIsGameOver(true); // Mettre fin au jeu immédiatement
-       // On ne peut pas continuer sans référence
+       setIsGameOver(true);
        return;
    }
-   // Removed debug logs
-   // --- Fin Vérification ---
 
-   // Removed debug logs
-
-   const nextLevel = currentLevelState; // Utilise la valeur capturée
+   const nextLevel = currentLevelState;
    const nextLevelConfig = LEVEL_CONFIGS[nextLevel];
 
    if (!nextLevelConfig) {
-       // Removed console.error
        setError(`Félicitations ! Vous avez terminé tous les niveaux disponibles !`);
        FirebaseAnalytics.error('config_missing_on_levelup', `Level ${nextLevel} config missing`, 'handleLevelUp');
-       endGame(); // Terminer le jeu si pas de niveau suivant
+       endGame();
        return;
    }
 
-   // Removed console.log
-
-   // Préparer l'UI pour le nouveau niveau
    setShowLevelModal(false);
-   setIsLevelPaused(false);      // <-- Le jeu REDÉMARRE ici logiquement
-   setIsCountdownActive(true);   // <-- Le compte à rebours est prêt à démarrer (démarrera vraiment après chargement image)
+   setIsLevelPaused(false);
+   setIsCountdownActive(true);
    setTimeLeft(20);
    setLevelCompletedEvents([]);
-   setIsWaitingForCountdown(false); // <-- Autorise handleChoice (après chargement image)
+   setIsWaitingForCountdown(false);
    setShowDates(false);
    setIsCorrect(undefined);
-   setIsImageLoaded(false);      // <-- Important: attendre le chargement de la nouvelle image
-   // Removed console.log
-
-   // Réinitialiser le compteur d'événements antiques pour le nouveau niveau
+   setIsImageLoaded(false);
    setAntiqueEventsCount(0);
-   // Removed console.log
 
-   // --- Utilisation de FirebaseAnalytics ---
    FirebaseAnalytics.levelStarted(
        nextLevel,
        nextLevelConfig.name || `Niveau ${nextLevel}`,
        nextLevelConfig.eventsNeeded,
-       currentPointsState // Utilise les points capturés
+       currentPointsState
    );
-   // --- Fin Utilisation ---
 
-   // Afficher la pub LevelUp si elle est en attente
    if (pendingAdDisplay === "levelUp" && canShowAd()) {
-     // Removed console.log
      if (adState.levelUpInterstitialLoaded) {
        try {
-         // Removed console.log
          levelUpInterstitial.show();
        } catch (error) {
-         // Removed console.error
-         FirebaseAnalytics.ad('interstitial', 'error_show', 'level_up', nextLevel -1); // Log error for previous level completion
+         FirebaseAnalytics.ad('interstitial', 'error_show', 'level_up', nextLevel -1);
          FirebaseAnalytics.error('ad_show_error', `LevelUp Interstitial: ${error.message}`, 'handleLevelUp');
-         levelUpInterstitial.load(); // Attempt reload
+         levelUpInterstitial.load();
        }
      } else if (adState.interstitialLoaded) {
-       // Removed console.log
        FirebaseAnalytics.ad('interstitial', 'triggered', 'level_up_fallback', nextLevel -1);
        try {
            genericInterstitial.show();
        } catch (error) {
-           // Removed console.error
            FirebaseAnalytics.ad('interstitial', 'error_show', 'level_up_fallback', nextLevel -1);
            FirebaseAnalytics.error('ad_show_error', `Generic Fallback Ad: ${error.message}`, 'handleLevelUp');
-           genericInterstitial.load(); // Attempt reload
+           genericInterstitial.load();
        }
      } else {
-       // Removed console.log
        FirebaseAnalytics.ad('interstitial', 'not_available', 'level_up', nextLevel -1);
      }
    } else {
-       // Removed console.log
+       // Aucun affichage de pub requis
    }
-   setPendingAdDisplay(null); // Toujours réinitialiser l'intention d'afficher la pub
+   setPendingAdDisplay(null);
 
-   // Sélectionner le premier événement du nouveau niveau en utilisant la référence capturée
-   // Removed console.log
-   selectNewEvent(allEvents, referenceEvent) // Utilise la référence capturée plus tôt
+   selectNewEvent(allEvents, referenceEvent)
      .then(selectedEvent => {
-       // Removed debug logs
        if (!selectedEvent) {
-         // selectNewEvent a échoué à trouver un événement (potentiellement fin de partie ou erreur)
-         // Removed console.warn
-         if (!isGameOver && !error) { // Si le jeu n'est pas déjà marqué comme terminé par selectNewEvent
+         if (!isGameOver && !error) {
             setError("Impossible de trouver un événement valide pour continuer le jeu.");
-            setIsGameOver(true); // Forcer Game Over ici si selectNewEvent échoue silencieusement
+            setIsGameOver(true);
             FirebaseAnalytics.error('select_event_null_levelup', 'selectNewEvent returned null unexpectedly after level up', 'handleLevelUp');
          }
        }
-       // Removed debug logs
      })
      .catch(err => {
-       // Removed debug logs
        setError(`Erreur critique lors du chargement du niveau suivant: ${err.message}`);
        FirebaseAnalytics.error('select_event_error_levelup', err instanceof Error ? err.message : 'Unknown', 'handleLevelUp');
-       setIsGameOver(true); // Mettre fin au jeu si selectNewEvent lance une exception
-       // Removed debug logs
+       setIsGameOver(true);
      });
 
-   // Removed console.log
-
  }, [
-     // Dépendances directes lues au début ou utilisées dans la logique:
-     user.level, user.points, // Pour lecture initiale et logs/Firebase
-     previousEvent, // CRUCIAL comme référence
-     pendingAdDisplay, // Pour logique pub
-     adState.levelUpInterstitialLoaded, adState.interstitialLoaded, // Pour logique pub
-     allEvents, // Pour selectNewEvent
-
-     // Fonctions appelées :
-     canShowAd, // Pour logique pub
-     endGame, // Pour gérer fin si pas de config / erreur critique
-     selectNewEvent, // Pour sélectionner le prochain event
-     setAntiqueEventsCount, // Pour réinitialiser le compteur d'événements antiques
-
-     // Fonctions setState (normalement stables, mais listées pour clarté)
+     user.level, user.points, previousEvent, pendingAdDisplay,
+     adState.levelUpInterstitialLoaded, adState.interstitialLoaded, allEvents,
+     canShowAd, endGame, selectNewEvent, setAntiqueEventsCount,
      setError, setIsGameOver, setShowLevelModal, setIsLevelPaused, setIsCountdownActive,
      setTimeLeft, setLevelCompletedEvents, setIsWaitingForCountdown, setShowDates,
-     setIsCorrect, setIsImageLoaded, setPendingAdDisplay
-
-     // Note: FirebaseAnalytics est stable. LEVEL_CONFIGS est une constante.
+     setIsCorrect, setIsImageLoaded
  ]);
  // --- FIN MODIFICATION handleLevelUp ---
 
@@ -1859,185 +1760,129 @@ const selectNewEvent = useCallback(
 
 // 1.H.11. endGame
 const endGame = useCallback(async () => {
-  // S'assurer qu'on ne déclenche pas endGame plusieurs fois
   if (isGameOver) {
-      // Removed console.log
       return;
   }
-  // Removed console.log
 
-  setIsGameOver(true); // Mettre l'état immédiatement
-  setIsCountdownActive(false); // Arrêter tout compte à rebours
-  setIsLevelPaused(true); // Mettre en pause
+  setIsGameOver(true);
+  setIsCountdownActive(false);
+  setIsLevelPaused(true);
   playGameOverSound();
-  setLeaderboardsReady(false); // Préparer l'attente des scores
+  setLeaderboardsReady(false);
 
-  // --- Utilisation de FirebaseAnalytics ---
-  // Tracker l'événement game_over AVANT les appels asynchrones
   FirebaseAnalytics.gameOver(
       user.points,
-      user.level, // Le niveau maximum atteint
+      user.level,
       user.totalEventsCompleted,
       user.maxStreak,
-      user.points > highScore // Si c'est un nouveau high score perso
+      user.points > highScore
   );
-  // --- Fin Utilisation ---
 
-  // Finaliser l'historique du dernier niveau joué (potentiellement incomplet)
-  // Removed console.log
-  // Utiliser currentLevelEvents car le niveau n'a peut-être pas été complété
   finalizeCurrentLevelHistory(currentLevelEvents);
 
-  // Affichage de la pub de fin de jeu après un délai
   setTimeout(() => {
     if (canShowAd()) {
-      FirebaseAnalytics.ad('interstitial', 'triggered', 'game_over', user.level); // Track trigger
+      FirebaseAnalytics.ad('interstitial', 'triggered', 'game_over', user.level);
       if (adState.gameOverInterstitialLoaded) {
         try {
-          // Removed console.log
           gameOverInterstitial.show();
         } catch (error) {
-          // Removed console.error
           FirebaseAnalytics.ad('interstitial', 'error_show', 'game_over', user.level);
           FirebaseAnalytics.error('ad_show_error', `GameOver Interstitial: ${error.message}`, 'endGame');
-          gameOverInterstitial.load(); // Recharger
+          gameOverInterstitial.load();
         }
-      } else if (adState.interstitialLoaded) { // Fallback
-        // Removed console.log
+      } else if (adState.interstitialLoaded) {
         FirebaseAnalytics.ad('interstitial', 'triggered', 'game_over_fallback', user.level);
         genericInterstitial.show();
       } else {
-        // Removed console.log
         FirebaseAnalytics.ad('interstitial', 'not_available', 'game_over', user.level);
       }
-    } else {
-      // Removed console.log
     }
-  }, 1500); // Délai pour laisser l'écran de fin apparaître un peu
+  }, 1500);
 
-  // --- Chargement des classements et sauvegarde ---
   try {
-    // Removed Auth Check log
     const { data: { user: authUser }, error: authError } = await supabase.auth.getUser();
-    // Removed Auth Check log
 
-    // --- MODIFICATION CONDITION: Vérifier aussi authError ---
-    // Si joueur invité OU erreur d'authentification, afficher des scores fictifs/locaux
     if (authError || !authUser?.id) {
-      // Removed log indicating placeholder usage
       const guestScores = {
         daily: [{ name: user.name || 'Voyageur', score: user.points, rank: 1 }],
-        monthly: [{ name: "👑 Meilleur score", score: highScore || user.points, rank: 1 }], // Utilise le high score local si dispo
-        allTime: [{ name: "🏆 Record", score: highScore || user.points, rank: 1 }] // <-- Nom fixe pour invité/erreur
+        monthly: [{ name: "👑 Meilleur score", score: highScore || user.points, rank: 1 }],
+        allTime: [{ name: "🏆 Record", score: highScore || user.points, rank: 1 }]
       };
       setLeaderboards(guestScores);
-      setLeaderboardsReady(true); // Prêt à afficher
-      return; // Pas de sauvegarde pour invité
+      setLeaderboardsReady(true);
+      return;
     }
-    // --- FIN MODIFICATION CONDITION ---
 
-    // Joueur connecté : sauvegarder le score et charger les classements
-    // Removed console.log
     const userId = authUser.id;
-    const currentDisplayName = user.name || 'Joueur'; // Utiliser le nom du state `user`
+    const currentDisplayName = user.name || 'Joueur';
 
-    // 1. Insérer le nouveau score
     await supabase.from('game_scores').insert({
       user_id: userId,
-      display_name: currentDisplayName, // Sauvegarde le nom actuel du user state
+      display_name: currentDisplayName,
       score: user.points,
-      // created_at est géré par Supabase
     });
-    // Removed console.log
 
-    // 2. Vérifier et mettre à jour le high score personnel dans 'profiles'
     const { data: currentProfile, error: profileError } = await supabase
       .from('profiles')
-      .select('high_score') // On pourrait aussi sélectionner display_name ici si besoin
+      .select('high_score')
       .eq('id', userId)
       .single();
 
     if (profileError) {
-        // Removed console.error
         FirebaseAnalytics.error('profile_fetch_error', profileError.message, 'endGame');
-        // Continuer sans mise à jour du high score mais charger les classements quand même
     } else if (currentProfile && user.points > (currentProfile.high_score || 0)) {
-        // Removed console.log
         const { error: updateError } = await supabase
            .from('profiles')
-           // --- CORRECTION: Ne pas mettre updated_at ici si un trigger s'en occupe ---
-           .update({ high_score: user.points /*, updated_at: new Date().toISOString() */ })
+           .update({ high_score: user.points })
            .eq('id', userId);
 
         if (updateError) {
-            // Removed console.error
             FirebaseAnalytics.error('profile_update_error', updateError.message, 'endGame');
         } else {
-            // --- CORRECTION : Remplacer highScore par logEvent ---
             FirebaseAnalytics.logEvent('new_high_score', {
                score: user.points,
                previous_high_score: currentProfile.high_score || 0,
             });
-            // --- FIN CORRECTION ---
-            // Mettre à jour le high score local pour l'affichage immédiat
             setHighScore(user.points);
         }
-    } else if (currentProfile) {
-        // Removed console.log
     }
 
-    // 3. Charger les classements (peut être optimisé avec des RPC Supabase)
-    // Removed console.log
-    const today = new Date().toISOString().split('T')[0]; // YYYY-MM-DD
-    const firstDayOfMonth = `${today.substring(0, 7)}-01`; // YYYY-MM-01
+    const today = new Date().toISOString().split('T')[0];
+    const firstDayOfMonth = `${today.substring(0, 7)}-01`;
 
-    // Paralléliser les requêtes de classement
     const [dailyRes, monthlyRes, allTimeRes] = await Promise.all([
       supabase.from('game_scores').select('display_name, score').gte('created_at', `${today}T00:00:00.000Z`).order('score', { ascending: false }).limit(5),
       supabase.from('game_scores').select('display_name, score').gte('created_at', `${firstDayOfMonth}T00:00:00.000Z`).order('score', { ascending: false }).limit(5),
-      // Pour allTime, on prend les high_scores des profils
       supabase.from('profiles').select('display_name, high_score').not('high_score', 'is', null).order('high_score', { ascending: false }).limit(5)
     ]);
 
-    // Vérifier les erreurs potentielles (non bloquant pour l'affichage partiel)
-    if(dailyRes.error) { /* Removed console.error */ FirebaseAnalytics.error('leaderboard_fetch_error', `Daily: ${dailyRes.error.message}`, 'endGame'); }
-    if(monthlyRes.error) { /* Removed console.error */ FirebaseAnalytics.error('leaderboard_fetch_error', `Monthly: ${monthlyRes.error.message}`, 'endGame'); }
-    if(allTimeRes.error) { /* Removed console.error */ FirebaseAnalytics.error('leaderboard_fetch_error', `AllTime: ${allTimeRes.error.message}`, 'endGame'); }
+    if(dailyRes.error) { FirebaseAnalytics.error('leaderboard_fetch_error', `Daily: ${dailyRes.error.message}`, 'endGame'); }
+    if(monthlyRes.error) { FirebaseAnalytics.error('leaderboard_fetch_error', `Monthly: ${monthlyRes.error.message}`, 'endGame'); }
+    if(allTimeRes.error) { FirebaseAnalytics.error('leaderboard_fetch_error', `AllTime: ${allTimeRes.error.message}`, 'endGame'); }
 
-    // Removed console.log
-    // Afficher les scores même si certains ont échoué
-    // Utilise les données de profiles (display_name, high_score) pour allTime
     setScoresAndShow(dailyRes.data || [], monthlyRes.data || [], allTimeRes.data || []);
 
-    // La fonction saveProgress n'est plus nécessaire car on sauvegarde ici
-
   } catch (error) {
-    // Erreur générale pendant la sauvegarde/chargement des scores
-    // Removed console.error
-    // --- CORRECTION: Log l'erreur spécifique si possible ---
     const errorMessage = error instanceof Error ? error.message : 'Unknown endGame processing error';
     FirebaseAnalytics.error('endgame_processing_error', errorMessage, 'endGame');
-    // --- FIN CORRECTION ---
 
-    // Afficher des scores fallback même en cas d'erreur
     const fallbackScores = {
       daily: [{ name: user.name || 'Voyageur', score: user.points, rank: 1 }],
       monthly: [{ name: "👑 Meilleur score", score: highScore || user.points, rank: 1 }],
       allTime: [{ name: "🏆 Record", score: highScore || user.points, rank: 1 }]
     };
     setLeaderboards(fallbackScores);
-    setLeaderboardsReady(true); // Afficher les fallbacks
+    setLeaderboardsReady(true);
   }
 }, [
-    // Dépendances (vérifiez si elles sont toutes nécessaires)
     isGameOver,
     user.points, user.level, user.totalEventsCompleted, user.maxStreak, user.name,
     highScore,
     playGameOverSound, finalizeCurrentLevelHistory, currentLevelEvents,
     canShowAd, adState.gameOverInterstitialLoaded, adState.interstitialLoaded,
-    setScoresAndShow, // Assurez-vous que setScoresAndShow est stable ou inclus ici
+    setScoresAndShow,
 ]);
-// --- FIN MODIFICATION endGame ---
 
  // --- MODIFICATION : Utilisation de FirebaseAnalytics.leaderboard dans setScoresAndShow ---
  // 1.H.13. setScoresAndShow
@@ -2056,17 +1901,14 @@ const endGame = useCallback(async () => {
    const formatted = {
      daily: formatScores(dailyScores, 'score'),
      monthly: formatScores(monthlyScores, 'score'),
-     allTime: formatScores(allTimeScores, 'high_score') // Utilise high_score pour allTime
+     allTime: formatScores(allTimeScores, 'high_score')
    };
    setLeaderboards(formatted);
    setLeaderboardsReady(true);
 
-   // --- Utilisation de FirebaseAnalytics ---
-   // Tracker que les classements sont affichés (on pourrait être plus spécifique)
-   FirebaseAnalytics.leaderboard('summary'); // Indique que l'écran résumé est montré
-   // --- Fin Utilisation ---
+   FirebaseAnalytics.leaderboard('summary');
+ }, []);
 
- }, []); // Pas de dépendances externes nécessaires
   // --- FIN MODIFICATION setScoresAndShow ---
 
  // 1.H.15. startLevel (DEPRECATED - Remplacé par handleLevelUp qui est appelé par le modal)
@@ -2080,18 +1922,17 @@ const endGame = useCallback(async () => {
     timeLeft,
     loading,
     error,
-    // isGameOver: isGameOver && leaderboardsReady, // <--- Supprime ou commente cette ligne
-    isGameOver, // <--- Retourne directement l'état interne isGameOver
-    leaderboardsReady, // <--- Retourne l'état leaderboardsReady séparément
+    isGameOver,
+    leaderboardsReady,
     showDates,
     isCorrect,
     isImageLoaded,
     streak,
-    highScore, // Le high score perso (mis à jour après endGame)
+    highScore,
     showLevelModal,
     isLevelPaused,
     currentLevelConfig,
-    leaderboards, // Classements formatés pour affichage
+    leaderboards,
  
     // Récompenses
     currentReward,
@@ -2115,11 +1956,10 @@ const endGame = useCallback(async () => {
     levelCompletedEvents,
     levelsHistory,
  
-    // État publicitaire simplifié pour l'UI
+    // État publicitaire simplifié pour l'UI avec la nouvelle propriété
     adState: {
       hasRewardedAd: adState.rewardedLoaded,
-      isAdFree: Date.now() < adState.adFreeUntil,
-      adFreeTimeRemaining: Math.max(0, Math.round((adState.adFreeUntil - Date.now()) / 1000))
+      hasWatchedRewardedAd: adState.hasWatchedRewardedAd,
     }
   };
 }
