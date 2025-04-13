@@ -241,8 +241,7 @@ export function useGameLogicA(initialEvent?: string) { // Rendu initialEvent opt
     levelUpInterstitialLoaded: false,
     rewardedLoaded: false,
     lastInterstitialTime: 0,
-    adFreeUntil: 0,
-    rewardedWatchedThisGame: false // Nouvel état
+    hasWatchedRewardedAd: false
   });
   const [pendingAdDisplay, setPendingAdDisplay] = useState<"interstitial" | "rewarded" | "gameOver" | "levelUp" | null>(null);
 
@@ -251,7 +250,7 @@ export function useGameLogicA(initialEvent?: string) { // Rendu initialEvent opt
   useEffect(() => {
     // --- Generic Interstitial ---
     const unsubscribeGenericLoaded = genericInterstitial.addAdEventListener(AdEventType.LOADED, () => {
-      setAdState(prev => ({ ...prev, interstitialLoaded: true }));
+      setAdState(prev => ({ ...prev, interstitialLoaded: true, hasWatchedRewardedAd: false }));
       FirebaseAnalytics.ad('interstitial', 'loaded', 'generic', user.level); // Track ad loaded
     });
     const unsubscribeGenericError = genericInterstitial.addAdEventListener(AdEventType.ERROR, error => {
@@ -392,6 +391,13 @@ export function useGameLogicA(initialEvent?: string) { // Rendu initialEvent opt
 
   // Affiche une publicité récompensée si disponible
   const showRewardedAd = useCallback(() => {
+    if (adState.hasWatchedRewardedAd) {
+      console.log("Rewarded ad already watched this game session."); // Log facultatif
+      // Vous pouvez logger un événement analytics si besoin :
+      // FirebaseAnalytics.ad('rewarded', 'skipped', 'already_watched_this_game', user.level);
+      return false; // Ne pas montrer la pub car déjà vue
+    }
+
     try {
       if (adState.rewardedLoaded) {
         FirebaseAnalytics.ad('rewarded', 'triggered', 'user_requested', user.level); // Track trigger
@@ -413,7 +419,7 @@ export function useGameLogicA(initialEvent?: string) { // Rendu initialEvent opt
       else if (adState.interstitialLoaded) genericInterstitial.load();
       return false;
     }
-  }, [adState.rewardedLoaded, adState.interstitialLoaded, user.level]); // dépend de user.level pour le tracking
+  }, [adState.rewardedLoaded, adState.interstitialLoaded, adState.hasWatchedRewardedAd, user.level]); // dépend de user.level pour le tracking
   /* ******* FIN INTÉGRATION PUBLICITÉ AVANCÉE ******* */
 
   // --- MODIFICATION : Utilisation de FirebaseAnalytics.appState dans useEffect ---
