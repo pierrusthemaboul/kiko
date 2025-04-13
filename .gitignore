@@ -35,4 +35,8 @@ yarn-error.*
 # typescript
 *.tsbuildinfo
 
+# Firebase / Google Services
+# Ignore the Google Services config file for Android (contains API keys)
+android/app/google-services.json
+
 app-example
