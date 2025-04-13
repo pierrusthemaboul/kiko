@@ -40,3 +40,10 @@ yarn-error.*
 android/app/google-services.json
 
 app-example
+
+# IDE configuration files (JetBrains / Android Studio)
+.idea/
+
+# Log files
+*.log
+#
