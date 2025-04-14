@@ -1,16 +1,29 @@
 // /home/pierre/sword/kiko/lib/firebase.ts
 
 /**
- * Utilitaires Firebase Analytics pour l'application ChronoLeap (kiko)
+ * Utilitaires Firebase Analytics pour l'application ChronoLeap (kiko) - VERSION MODULAIRE
  *
  * Ce fichier centralise les fonctions d'analytics pour faciliter
  * leur utilisation cohérente à travers l'application.
  */
 
-import analytics from '@react-native-firebase/analytics';
-import { Platform } from 'react-native'; // N'oublie pas d'importer Platform
+// ---- IMPORTS MODULAIRES ----
+import {
+  getAnalytics,           // Pour obtenir l'instance Analytics
+  setUserId,              // Pour définir l'ID utilisateur
+  setUserProperties,      // Pour définir plusieurs propriétés utilisateur
+  logScreenView,          // Pour suivre les vues d'écran
+  logAppOpen,             // Pour suivre l'ouverture de l'application
+  logEvent,               // Pour tous les événements personnalisés
+  setUserProperty         // Pour définir une propriété utilisateur unique
+} from '@react-native-firebase/analytics';
+import { Platform } from 'react-native';
 
-// ---- Fonctions de Tracking Spécifiques ----
+// ---- OBTENIR L'INSTANCE ANALYTICS ----
+// Obtenue une seule fois au chargement du module
+const analyticsInstance = getAnalytics();
+
+// ---- Fonctions de Tracking Spécifiques (Modifiées) ----
 
 /**
  * Configuration initiale et suivi des propriétés utilisateur
@@ -21,15 +34,18 @@ export const initializeAnalytics = async (userId?: string, isGuest: boolean = fa
   try {
     // ID utilisateur si connecté
     if (userId) {
-      await analytics().setUserId(userId);
+      // Appel modulaire : setUserId(instance, valeur)
+      await setUserId(analyticsInstance, userId);
       console.log(`Analytics: User ID set to '${userId}'`);
     } else {
-      await analytics().setUserId(null); // Important de le mettre à null pour les invités
+      // Appel modulaire : setUserId(instance, null)
+      await setUserId(analyticsInstance, null); // Important de le mettre à null pour les invités
       console.log('Analytics: User ID cleared (guest)');
     }
 
     // Propriétés utilisateur communes
-    await analytics().setUserProperties({
+    // Appel modulaire : setUserProperties(instance, { proprietes })
+    await setUserProperties(analyticsInstance, {
       is_guest: isGuest ? 'true' : 'false',
       // TODO: Remplacer par la vraie version de l'application (depuis package.json ou expo-constants)
       app_version: '1.0.0',
@@ -40,6 +56,7 @@ export const initializeAnalytics = async (userId?: string, isGuest: boolean = fa
     console.log('Firebase Analytics initialized/updated successfully');
   } catch (error) {
     console.error('Error initializing/updating Firebase Analytics:', error);
+    // Optionnel : vous pourriez logguer l'erreur ici aussi avec trackError si l'instance est valide
   }
 };
 
@@ -50,7 +67,8 @@ export const trackNavigation = async (screenName: string, screenClass?: string) 
   try {
     const name = screenName || 'UnknownScreen';
     const className = screenClass || name;
-    await analytics().logScreenView({
+    // Appel modulaire : logScreenView(instance, { details })
+    await logScreenView(analyticsInstance, {
       screen_name: name,
       screen_class: className,
     });
@@ -62,7 +80,8 @@ export const trackNavigation = async (screenName: string, screenClass?: string) 
 
 export const trackAppOpen = async () => {
   try {
-    await analytics().logAppOpen();
+    // Appel modulaire : logAppOpen(instance)
+    await logAppOpen(analyticsInstance);
     console.log('Analytics: App open event logged');
   } catch (error) {
     console.error('Error tracking app open:', error);
@@ -74,7 +93,8 @@ export const trackAppOpen = async () => {
  */
 export const trackGameStarted = async (playerName: string | null, isGuest: boolean, initialLevel: number) => {
   try {
-    await analytics().logEvent('game_started', {
+    // Appel modulaire : logEvent(instance, nomEvenement, parametres)
+    await logEvent(analyticsInstance, 'game_started', {
       player_name: playerName || 'Anonymous',
       is_guest: isGuest,
       initial_level: initialLevel
@@ -87,7 +107,8 @@ export const trackGameStarted = async (playerName: string | null, isGuest: boole
 
 export const trackLevelStarted = async (levelId: number, levelName: string, eventsNeeded: number, currentScore: number) => {
   try {
-    await analytics().logEvent('level_started', {
+    // Appel modulaire
+    await logEvent(analyticsInstance, 'level_started', {
       level_id: levelId,
       level_name: levelName || `Niveau ${levelId}`,
       events_needed: eventsNeeded,
@@ -108,7 +129,8 @@ export const trackLevelCompleted = async (
   maxStreak: number
 ) => {
   try {
-    await analytics().logEvent('level_completed', {
+    // Appel modulaire
+    await logEvent(analyticsInstance, 'level_completed', {
       level_id: levelId,
       level_name: levelName || `Niveau ${levelId}`,
       events_completed: eventsCompleted,
@@ -134,7 +156,8 @@ export const trackQuestionAnswered = async (
   currentStreak: number
 ) => {
   try {
-    await analytics().logEvent('question_answered', {
+    // Appel modulaire
+    await logEvent(analyticsInstance, 'question_answered', {
       event_id: eventId,
       event_title: eventTitle?.substring(0, 100), // Limiter la longueur
       event_period: eventPeriod,
@@ -152,11 +175,11 @@ export const trackQuestionAnswered = async (
 };
 
 export const trackStreakAchieved = async (streakCount: number, levelId: number) => {
-  // On traque seulement les paliers (ex: tous les 5) pour éviter le bruit
   if (streakCount === 0 || streakCount % 5 !== 0) return;
 
   try {
-    await analytics().logEvent('streak_achieved', {
+    // Appel modulaire
+    await logEvent(analyticsInstance, 'streak_achieved', {
       streak_count: streakCount,
       level_id: levelId
     });
@@ -174,7 +197,8 @@ export const trackGameOver = async (
   isHighScore: boolean
 ) => {
   try {
-    await analytics().logEvent('game_over', {
+    // Appel modulaire
+    await logEvent(analyticsInstance, 'game_over', {
       final_score: finalScore,
       max_level: maxLevel,
       total_events_completed: totalEventsCompleted,
@@ -193,14 +217,15 @@ export const trackGameOver = async (
 export const trackRewardEarned = async (
   rewardType: string,
   rewardAmount: number,
-  trigger: string, // Ex: 'correct_answer', 'level_up', 'streak_5', 'ad_reward'
-  triggerValue: number | string, // Ex: niveau de difficulté, niveau atteint, streak, 'ad_completed'
+  trigger: string,
+  triggerValue: number | string,
   levelId: number,
   currentScore: number
 ) => {
   try {
-    await analytics().logEvent('reward_earned', {
-      reward_type: rewardType, // 'POINTS', 'EXTRA_LIFE', etc.
+    // Appel modulaire
+    await logEvent(analyticsInstance, 'reward_earned', {
+      reward_type: rewardType,
       reward_amount: rewardAmount,
       trigger_event: trigger,
       trigger_value: triggerValue,
@@ -214,13 +239,14 @@ export const trackRewardEarned = async (
 };
 
 export const trackAdEvent = async (
-  adType: string, // 'interstitial', 'rewarded', 'banner'
-  adAction: string, // 'triggered', 'loaded', 'failed', 'viewed', 'closed', 'earned_reward', 'not_available'
-  adPlacement: string, // 'game_over', 'level_up', 'user_requested', 'home_banner', 'generic', etc.
-  levelId: number // Mettre 0 si hors jeu (ex: accueil)
+  adType: string,
+  adAction: string,
+  adPlacement: string,
+  levelId: number
 ) => {
   try {
-    await analytics().logEvent('ad_event', {
+    // Appel modulaire
+    await logEvent(analyticsInstance, 'ad_event', {
       ad_type: adType,
       ad_action: adAction,
       ad_placement: adPlacement,
@@ -237,15 +263,16 @@ export const trackAdEvent = async (
  */
 export const trackError = async (errorType: string, errorMessage: string, screen: string) => {
   try {
-    // Limiter la longueur du message d'erreur
     const limitedMessage = errorMessage?.substring(0, 100) || 'Unknown error message';
-    await analytics().logEvent('error_occurred', {
+    // Appel modulaire
+    await logEvent(analyticsInstance, 'error_occurred', {
       error_type: errorType,
       error_message: limitedMessage,
-      screen_context: screen // Utiliser un nom de paramètre différent de 'screen_name'
+      screen_context: screen
     });
     console.warn(`Analytics: error_occurred event logged (type: ${errorType}, screen: ${screen})`);
   } catch (error) {
+    // Attention : Si logEvent échoue ici, on ne peut pas le logguer lui-même facilement
     console.error('Error tracking error_occurred event itself:', error);
   }
 };
@@ -253,9 +280,10 @@ export const trackError = async (errorType: string, errorMessage: string, screen
 /**
  * Engagement utilisateur et autres événements personnalisés
  */
-export const trackLeaderboardViewed = async (leaderboardType: string) => { // 'daily', 'monthly', 'allTime', 'summary'
+export const trackLeaderboardViewed = async (leaderboardType: string) => {
   try {
-    await analytics().logEvent('leaderboard_viewed', {
+    // Appel modulaire
+    await logEvent(analyticsInstance, 'leaderboard_viewed', {
       leaderboard_type: leaderboardType
     });
     console.log(`Analytics: leaderboard_viewed event logged (type: ${leaderboardType})`);
@@ -266,7 +294,8 @@ export const trackLeaderboardViewed = async (leaderboardType: string) => { // 'd
 
 export const trackDisclaimerViewed = async () => {
   try {
-    await analytics().logEvent('disclaimer_viewed');
+    // Appel modulaire
+    await logEvent(analyticsInstance, 'disclaimer_viewed');
     console.log('Analytics: disclaimer_viewed event logged');
   } catch (error) {
     console.error('Error tracking disclaimer_viewed:', error);
@@ -275,11 +304,9 @@ export const trackDisclaimerViewed = async () => {
 
 export const trackNewHighScore = async (oldScore: number, newScore: number) => {
   try {
-    await analytics().logEvent('new_high_score', {
-      // Ne pas envoyer old_score si c'était le premier score (0)
-      // previous_score: oldScore > 0 ? oldScore : undefined,
-      score: newScore, // Paramètre standard pour la valeur associée à l'événement
-      // improvement: newScore - oldScore // Peut être calculé dans Firebase/BigQuery
+    // Appel modulaire
+    await logEvent(analyticsInstance, 'new_high_score', {
+      score: newScore,
     });
     console.log(`Analytics: new_high_score event logged (score: ${newScore})`);
   } catch (error) {
@@ -292,21 +319,21 @@ export const trackAppState = async (state: 'background' | 'active', timeLeft?: n
     const eventName = state === 'background' ? 'app_backgrounded' : 'app_foregrounded';
     const params: Record<string, any> = {};
 
-    // N'ajouter les paramètres que s'ils sont définis et pertinents
     if (state === 'background') {
         if (timeLeft !== undefined) params.time_left = Math.round(timeLeft);
         if (currentLevel !== undefined) params.current_level = currentLevel;
         if (currentScore !== undefined) params.current_score = currentScore;
     }
 
-    await analytics().logEvent(eventName, params);
+    // Appel modulaire
+    await logEvent(analyticsInstance, eventName, params);
     console.log(`Analytics: ${eventName} event logged`, params);
   } catch (error) {
     console.error(`Error tracking app state (${state}):`, error);
   }
 };
 
-// ---- Fonctions de Tracking Génériques ----
+// ---- Fonctions de Tracking Génériques (Modifiées) ----
 
 /**
  * Enregistre un événement personnalisé non couvert par les fonctions spécifiques.
@@ -315,25 +342,20 @@ export const trackAppState = async (state: 'background' | 'active', timeLeft?: n
  */
 export const logCustomEvent = async (name: string, params: Record<string, any> = {}) => {
   try {
-    // Nettoyer les paramètres : s'assurer que les valeurs sont des types supportés
     const sanitizedParams: Record<string, string | number | boolean | null> = {};
     for (const key in params) {
       if (Object.prototype.hasOwnProperty.call(params, key)) {
         const value = params[key];
         if (typeof value === 'string' || typeof value === 'number' || typeof value === 'boolean' || value === null) {
-           // Limiter la longueur des strings pour éviter les erreurs Firebase
            sanitizedParams[key] = typeof value === 'string' ? value.substring(0, 100) : value;
-        } else if (typeof value === 'undefined') {
-           // Ignorer les undefined
-        }
-         else {
-           // Convertir d'autres types en string (ex: objets, arrays - attention, perte d'info)
+        } else if (typeof value !== 'undefined') {
            sanitizedParams[key] = String(value).substring(0, 100);
         }
       }
     }
 
-    await analytics().logEvent(name, sanitizedParams);
+    // Appel modulaire
+    await logEvent(analyticsInstance, name, sanitizedParams);
     console.log(`Analytics: Custom event '${name}' logged`, sanitizedParams);
   } catch (error) {
     console.error(`Analytics error tracking custom event '${name}':`, error);
@@ -347,10 +369,9 @@ export const logCustomEvent = async (name: string, params: Record<string, any> =
  */
 export const setUserProp = async (key: string, value: any) => {
   try {
-    // Firebase attend une string ou null pour les user properties.
-    // Convertir explicitement et gérer le null.
     const stringValue = value === null || typeof value === 'undefined' ? null : String(value);
-    await analytics().setUserProperty(key, stringValue);
+    // Appel modulaire : setUserProperty(instance, cle, valeur)
+    await setUserProperty(analyticsInstance, key, stringValue);
     console.log(`Analytics: User property '${key}' set to '${stringValue}'`);
   } catch (error) {
     console.error(`Analytics error setting user property '${key}':`, error);
@@ -358,7 +379,7 @@ export const setUserProp = async (key: string, value: any) => {
 };
 
 
-// ---- Objet Exporté ----
+// ---- Objet Exporté (Inchangé - Interface publique préservée) ----
 
 /**
  * Export centralisé de toutes les fonctions d'analytics.
@@ -381,7 +402,7 @@ export const FirebaseAnalytics = {
   streak: trackStreakAchieved,
   levelCompleted: trackLevelCompleted,
   gameOver: trackGameOver,
-  newHighScore: trackNewHighScore, // Déplacé ici car lié à la fin de partie
+  newHighScore: trackNewHighScore,
 
   // Récompenses & Monétisation
   reward: trackRewardEarned,
