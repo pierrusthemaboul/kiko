@@ -130,3 +130,11 @@ Nous utilisons divers services Firebase (comme Analytics) pour comprendre commen
 
 Nous utilisons Supabase comme solution backend pour des fonctionnalités telles que l'authentification et le stockage de données (profils, scores, progression). Les données que vous fournissez ou qui sont générées dans ce contexte sont stockées sur les serveurs de Supabase.
 *   Politique de confidentialité de Supabase : [https://supabase.com/privacy](https://supabase.com/privacy)
+
+### Comment demander la suppression de votre compte et de vos données
+
+Si vous souhaitez demander la suppression de votre compte Quandi et des données personnelles associées que nous détenons, veuillez envoyer un e-mail à l'adresse suivante :
+
+**quandiappli@proton.me**
+
+Merci d'indiquer clairement dans l'objet ou le corps de votre e-mail qu'il s'agit d'une "Demande de suppression de compte Quandi". Nous traiterons votre demande conformément à nos obligations légales et nous vous confirmerons la suppression une fois effectuée. Veuillez noter que certaines données anonymisées ou agrégées peuvent être conservées à des fins statistiques ou d'analyse, et que certaines données peuvent être conservées plus longtemps si la loi l'exige.
