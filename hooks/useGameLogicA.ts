@@ -262,6 +262,7 @@ export function useGameLogicA(initialEvent?: string) { // Rendu initialEvent opt
     const unsubscribeGenericClosed = genericInterstitial.addAdEventListener(AdEventType.CLOSED, () => {
       genericInterstitial.load();
       setAdState(prev => ({ ...prev, interstitialLoaded: false, lastInterstitialTime: Date.now() }));
+      setTimeLeft(20);
       FirebaseAnalytics.ad('interstitial', 'closed', 'generic', user.level); // Track ad closed
     });
 
@@ -371,6 +372,7 @@ export function useGameLogicA(initialEvent?: string) { // Rendu initialEvent opt
       unsubscribeRewardedClosed();
       unsubscribeRewardedEarned();
     };
+  
   // La dépendance à user.level et user.points est ajoutée car ces valeurs sont utilisées
   // dans les appels FirebaseAnalytics.ad et FirebaseAnalytics.reward à l'intérieur de l'effet.
   }, [user.level, user.points, previousEvent, allEvents, selectNewEvent]); // Ajout de previousEvent, allEvents, selectNewEvent pour la relance post-reward
@@ -425,25 +427,38 @@ export function useGameLogicA(initialEvent?: string) { // Rendu initialEvent opt
   // --- MODIFICATION : Utilisation de FirebaseAnalytics.appState dans useEffect ---
   /* Effet pour suivre l'état de l'application */
   useEffect(() => {
+    console.log("Initialisation de l'écouteur AppState");
+    
     const subscription = AppState.addEventListener('change', (nextAppState) => {
+      console.log(`État de l'app changé: ${nextAppState}`);
+      
       if (nextAppState.match(/inactive|background/)) {
-        // Appliquer un malus : on retire 5 secondes au compte à rebours si l'app va en arrière-plan
-        // Note: 'inactive' sur iOS précède souvent 'background'
-        if(nextAppState === 'background') {
-            setTimeLeft((prevTime) => Math.max(prevTime - 10, 0));
+        if (nextAppState === 'background') {
+          console.log(`Application en arrière-plan. Temps actuel: ${timeLeft}s`);
+          
+          if (!isLevelPaused && !isGameOver) {
+            console.log("Application activement en jeu, application du malus");
+            
+            // CORRECTION ICI: Utilisez currentTime au lieu de prevTime
+            setTimeLeft(currentTime => {
+              const newTime = Math.max(currentTime - 18, 0);
+              console.log(`Malus appliqué: ${currentTime}s -> ${newTime}s`);
+              return newTime;
+            });
+            
+            FirebaseAnalytics.appState('background', timeLeft, user.level, user.points);
+          } else {
+            console.log("Pas de malus: niveau en pause ou jeu terminé");
+          }
         }
-        // Tracking de la mise en arrière-plan
-        FirebaseAnalytics.appState('background', timeLeft, user.level, user.points);
       } else if (nextAppState === 'active') {
-        // Tracking du retour au premier plan
+        console.log("Application revenue au premier plan");
         FirebaseAnalytics.appState('active', undefined, user.level, user.points);
       }
     });
-    return () => {
-      subscription.remove();
-    };
-  // timeLeft, user.level, user.points sont nécessaires pour les paramètres de FirebaseAnalytics.appState
-  }, [timeLeft, user.level, user.points]);
+    
+    return () => subscription.remove();
+  }, [timeLeft, user.level, user.points, isLevelPaused, isGameOver]);
   // --- FIN MODIFICATION useEffect AppState ---
 
   /* 1.F. Effet d'initialisation */
@@ -777,7 +792,11 @@ const initGame = useCallback(async () => {
   const handleImageLoad = useCallback(() => {
     // Cette fonction est purement UI, pas de tracking nécessaire ici en général.
     setIsImageLoaded(true);
+    if (user.eventsCompletedInLevel === 0) {
+      setTimeLeft(20);
+    }
     if (!isLevelPaused) {
+      console.log("Application activement en jeu, application du malus");
       setIsCountdownActive(true); // Réactive le compte à rebours si l'image est chargée et le jeu n'est pas en pause
     }
   }, [isLevelPaused]);
@@ -1786,97 +1805,98 @@ const selectNewEvent = useCallback(
 
 
  // --- MODIFICATION : Utilisation de FirebaseAnalytics dans handleLevelUp ---
- // 1.H.10. handleLevelUp (Appelé par le Modal de fin de niveau pour démarrer le suivant)
- const handleLevelUp = useCallback(() => {
-   const currentLevelState = user.level;
-   const currentPointsState = user.points;
-   const referenceEvent = previousEvent;
+// Version corrigée de handleLevelUp pour ne pas démarrer le timer immédiatement
+const handleLevelUp = useCallback(() => {
+  const currentLevelState = user.level;
+  const currentPointsState = user.points;
+  const referenceEvent = previousEvent;
 
-   if (!referenceEvent) {
-       setError("Erreur interne critique: impossible de démarrer le niveau suivant (référence manquante).");
-       FirebaseAnalytics.error('levelup_null_prev_event', 'previousEvent was null when handleLevelUp called', 'handleLevelUp');
-       setIsGameOver(true);
-       return;
-   }
+  if (!referenceEvent) {
+      setError("Erreur interne critique: impossible de démarrer le niveau suivant (référence manquante).");
+      FirebaseAnalytics.error('levelup_null_prev_event', 'previousEvent was null when handleLevelUp called', 'handleLevelUp');
+      setIsGameOver(true);
+      return;
+  }
 
-   const nextLevel = currentLevelState;
-   const nextLevelConfig = LEVEL_CONFIGS[nextLevel];
+  const nextLevel = currentLevelState;
+  const nextLevelConfig = LEVEL_CONFIGS[nextLevel];
 
-   if (!nextLevelConfig) {
-       setError(`Félicitations ! Vous avez terminé tous les niveaux disponibles !`);
-       FirebaseAnalytics.error('config_missing_on_levelup', `Level ${nextLevel} config missing`, 'handleLevelUp');
-       endGame();
-       return;
-   }
+  if (!nextLevelConfig) {
+      setError(`Félicitations ! Vous avez terminé tous les niveaux disponibles !`);
+      FirebaseAnalytics.error('config_missing_on_levelup', `Level ${nextLevel} config missing`, 'handleLevelUp');
+      endGame();
+      return;
+  }
 
-   setShowLevelModal(false);
-   setIsLevelPaused(false);
-   setIsCountdownActive(true);
-   setTimeLeft(20);
-   setLevelCompletedEvents([]);
-   setIsWaitingForCountdown(false);
-   setShowDates(false);
-   setIsCorrect(undefined);
-   setIsImageLoaded(false);
-   setAntiqueEventsCount(0);
+  setShowLevelModal(false);
+  setIsLevelPaused(false);
+  // Ne pas activer le compte à rebours immédiatement
+  setIsCountdownActive(false); // MODIFIÉ: Passe à false plutôt que true
+  setTimeLeft(20);
+  setLevelCompletedEvents([]);
+  setIsWaitingForCountdown(false);
+  setShowDates(false);
+  setIsCorrect(undefined);
+  setIsImageLoaded(false); // Cette ligne réinitialise l'état de chargement d'image
+  setAntiqueEventsCount(0);
 
-   FirebaseAnalytics.levelStarted(
-       nextLevel,
-       nextLevelConfig.name || `Niveau ${nextLevel}`,
-       nextLevelConfig.eventsNeeded,
-       currentPointsState
-   );
+  FirebaseAnalytics.levelStarted(
+      nextLevel,
+      nextLevelConfig.name || `Niveau ${nextLevel}`,
+      nextLevelConfig.eventsNeeded,
+      currentPointsState
+  );
 
-   if (pendingAdDisplay === "levelUp" && canShowAd()) {
-     if (adState.levelUpInterstitialLoaded) {
-       try {
-         levelUpInterstitial.show();
-       } catch (error) {
-         FirebaseAnalytics.ad('interstitial', 'error_show', 'level_up', nextLevel -1);
-         FirebaseAnalytics.error('ad_show_error', `LevelUp Interstitial: ${error.message}`, 'handleLevelUp');
-         levelUpInterstitial.load();
-       }
-     } else if (adState.interstitialLoaded) {
-       FirebaseAnalytics.ad('interstitial', 'triggered', 'level_up_fallback', nextLevel -1);
-       try {
-           genericInterstitial.show();
-       } catch (error) {
-           FirebaseAnalytics.ad('interstitial', 'error_show', 'level_up_fallback', nextLevel -1);
-           FirebaseAnalytics.error('ad_show_error', `Generic Fallback Ad: ${error.message}`, 'handleLevelUp');
-           genericInterstitial.load();
-       }
-     } else {
-       FirebaseAnalytics.ad('interstitial', 'not_available', 'level_up', nextLevel -1);
-     }
-   } else {
-       // Aucun affichage de pub requis
-   }
-   setPendingAdDisplay(null);
+  if (pendingAdDisplay === "levelUp" && canShowAd()) {
+    if (adState.levelUpInterstitialLoaded) {
+      try {
+        levelUpInterstitial.show();
+      } catch (error) {
+        FirebaseAnalytics.ad('interstitial', 'error_show', 'level_up', nextLevel -1);
+        FirebaseAnalytics.error('ad_show_error', `LevelUp Interstitial: ${error.message}`, 'handleLevelUp');
+        levelUpInterstitial.load();
+      }
+    } else if (adState.interstitialLoaded) {
+      FirebaseAnalytics.ad('interstitial', 'triggered', 'level_up_fallback', nextLevel -1);
+      try {
+          genericInterstitial.show();
+      } catch (error) {
+          FirebaseAnalytics.ad('interstitial', 'error_show', 'level_up_fallback', nextLevel -1);
+          FirebaseAnalytics.error('ad_show_error', `Generic Fallback Ad: ${error.message}`, 'handleLevelUp');
+          genericInterstitial.load();
+      }
+    } else {
+      FirebaseAnalytics.ad('interstitial', 'not_available', 'level_up', nextLevel -1);
+    }
+  } else {
+      // Aucun affichage de pub requis
+  }
+  setPendingAdDisplay(null);
 
-   selectNewEvent(allEvents, referenceEvent)
-     .then(selectedEvent => {
-       if (!selectedEvent) {
-         if (!isGameOver && !error) {
-            setError("Impossible de trouver un événement valide pour continuer le jeu.");
-            setIsGameOver(true);
-            FirebaseAnalytics.error('select_event_null_levelup', 'selectNewEvent returned null unexpectedly after level up', 'handleLevelUp');
-         }
-       }
-     })
-     .catch(err => {
-       setError(`Erreur critique lors du chargement du niveau suivant: ${err.message}`);
-       FirebaseAnalytics.error('select_event_error_levelup', err instanceof Error ? err.message : 'Unknown', 'handleLevelUp');
-       setIsGameOver(true);
-     });
+  selectNewEvent(allEvents, referenceEvent)
+    .then(selectedEvent => {
+      if (!selectedEvent) {
+        if (!isGameOver && !error) {
+           setError("Impossible de trouver un événement valide pour continuer le jeu.");
+           setIsGameOver(true);
+           FirebaseAnalytics.error('select_event_null_levelup', 'selectNewEvent returned null unexpectedly after level up', 'handleLevelUp');
+        }
+      }
+    })
+    .catch(err => {
+      setError(`Erreur critique lors du chargement du niveau suivant: ${err.message}`);
+      FirebaseAnalytics.error('select_event_error_levelup', err instanceof Error ? err.message : 'Unknown', 'handleLevelUp');
+      setIsGameOver(true);
+    });
 
- }, [
-     user.level, user.points, previousEvent, pendingAdDisplay,
-     adState.levelUpInterstitialLoaded, adState.interstitialLoaded, allEvents,
-     canShowAd, endGame, selectNewEvent, setAntiqueEventsCount,
-     setError, setIsGameOver, setShowLevelModal, setIsLevelPaused, setIsCountdownActive,
-     setTimeLeft, setLevelCompletedEvents, setIsWaitingForCountdown, setShowDates,
-     setIsCorrect, setIsImageLoaded
- ]);
+}, [
+    user.level, user.points, previousEvent, pendingAdDisplay,
+    adState.levelUpInterstitialLoaded, adState.interstitialLoaded, allEvents,
+    canShowAd, endGame, selectNewEvent, setAntiqueEventsCount,
+    setError, setIsGameOver, setShowLevelModal, setIsLevelPaused, setIsCountdownActive,
+    setTimeLeft, setLevelCompletedEvents, setIsWaitingForCountdown, setShowDates,
+    setIsCorrect, setIsImageLoaded
+]);
  // --- FIN MODIFICATION handleLevelUp ---
 
 
