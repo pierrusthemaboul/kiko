@@ -40,6 +40,7 @@
       "favicon": "./assets/images/favicon.png"
     },
     "plugins": [
+      "./plugins/withAdmobManifest",
       "expo-router",
       [
         "expo-splash-screen",
@@ -58,7 +59,7 @@
         }
       ],
       "@react-native-firebase/app",
-      "expo-build-properties"
+      
     ],
     "experiments": {
       "typedRoutes": true
