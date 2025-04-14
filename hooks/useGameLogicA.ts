@@ -840,19 +840,48 @@ const initGame = useCallback(async () => {
 
 // 1.H.4.d.0 getNextForcedJumpIncrement (Logique interne, pas de tracking)
 function getNextForcedJumpIncrement(year: number): number {
-  if (year < 500) return Math.floor(Math.random() * (5 - 1 + 1)) + 1;
-  if (year < 700) return Math.floor(Math.random() * (9 - 6 + 1)) + 6;
-  if (year < 1000) return Math.floor(Math.random() * (9 - 6 + 1)) + 6;
-  if (year < 1500) return Math.floor(Math.random() * (9 - 6 + 1)) + 6;
-  if (year < 1800) return Math.floor(Math.random() * (11 - 7 + 1)) + 7;
-  if (year <= 2024) return Math.floor(Math.random() * (19 - 12 + 1)) + 12;
+  console.log("[DEBUG][getNextForcedJumpIncrement] Appel avec year:", year);
+  if (year < 500) {
+    const result = Math.floor(Math.random() * (5 - 1 + 1)) + 1;
+    console.log("[DEBUG][getNextForcedJumpIncrement] Année < 500, résultat généré:", result);
+    return result;
+  }
+  if (year < 700) {
+    const result = Math.floor(Math.random() * (9 - 6 + 1)) + 6;
+    console.log("[DEBUG][getNextForcedJumpIncrement] Année < 700, résultat généré:", result);
+    return result;
+  }
+  if (year < 1000) {
+    const result = Math.floor(Math.random() * (9 - 6 + 1)) + 6;
+    console.log("[DEBUG][getNextForcedJumpIncrement] Année < 1000, résultat généré:", result);
+    return result;
+  }
+  if (year < 1500) {
+    const result = Math.floor(Math.random() * (9 - 6 + 1)) + 6;
+    console.log("[DEBUG][getNextForcedJumpIncrement] Année < 1500, résultat généré:", result);
+    return result;
+  }
+  if (year < 1800) {
+    const result = Math.floor(Math.random() * (11 - 7 + 1)) + 7;
+    console.log("[DEBUG][getNextForcedJumpIncrement] Année < 1800, résultat généré:", result);
+    return result;
+  }
+  if (year <= 2024) {
+    const result = Math.floor(Math.random() * (19 - 12 + 1)) + 12;
+    console.log("[DEBUG][getNextForcedJumpIncrement] Année <= 2024, résultat généré:", result);
+    return result;
+  }
+  console.log("[DEBUG][getNextForcedJumpIncrement] Aucune condition remplie, retour du fallback (15).");
   return 15; // Fallback
 }
 
 // 1.H.4.d. selectNewEvent (Logique complexe de sélection, avec intégration de la logique de limitation d'événements antiques)
 const selectNewEvent = useCallback(
   async (events: Event[], referenceEvent: Event | null) => {
+    console.log("[DEBUG][selectNewEvent] Fonction appelée avec", events?.length || 0, "événements et referenceEvent:", referenceEvent);
+
     if (!events || events.length === 0) {
+      console.error("[ERROR][selectNewEvent] Aucun événement disponible pour continuer.");
       setError("Aucun événement disponible pour continuer.");
       setIsGameOver(true);
       FirebaseAnalytics.error(
@@ -863,6 +892,7 @@ const selectNewEvent = useCallback(
       return null;
     }
     if (!referenceEvent) {
+      console.error("[ERROR][selectNewEvent] Événement de référence manquant.");
       setError("Erreur interne: événement de référence manquant.");
       setIsGameOver(true);
       FirebaseAnalytics.error(
@@ -873,11 +903,18 @@ const selectNewEvent = useCallback(
       return null;
     }
 
-    setEventCount((prev) => prev + 1);
+    setEventCount((prev) => {
+      const newCount = prev + 1;
+      console.log("[DEBUG][selectNewEvent] Incrémentation du compteur d'événements:", newCount);
+      return newCount;
+    });
     const localEventCount = eventCount + 1;
+    console.log("[DEBUG][selectNewEvent] Valeur locale de eventCount:", localEventCount);
 
     const referenceYear = new Date(referenceEvent.date).getFullYear();
+    console.log("[DEBUG][selectNewEvent] Année de référence extraite:", referenceYear);
     if (isNaN(referenceYear)) {
+      console.error("[ERROR][selectNewEvent] Date de référence invalide:", referenceEvent.date);
       setError("Erreur interne: date de référence invalide.");
       setIsGameOver(true);
       FirebaseAnalytics.error(
@@ -890,16 +927,20 @@ const selectNewEvent = useCallback(
 
     // --- Logique de saut temporel forcé ---
     const checkTimeJump = (): number => {
+      console.log("[DEBUG][selectNewEvent][checkTimeJump] Début de l'exécution.");
       let jumpDistance = 0;
       const isForcedJumpTriggered = localEventCount === forcedJumpEventCount;
+      console.log("[DEBUG][selectNewEvent][checkTimeJump] localEventCount:", localEventCount, "forcedJumpEventCount:", forcedJumpEventCount, "isForcedJumpTriggered:", isForcedJumpTriggered);
 
       if (isForcedJumpTriggered) {
         const forcedDistances = [500, 750, 1000];
         jumpDistance = forcedDistances[Math.floor(Math.random() * forcedDistances.length)];
+        console.log("[DEBUG][selectNewEvent][checkTimeJump] Saut forcé déclenché, jumpDistance initialisé à:", jumpDistance);
       }
       if (referenceYear < 500 && localEventCount <= 5) {
         const chosen = [750, 1000][Math.floor(Math.random() * 2)];
         jumpDistance = Math.max(jumpDistance, chosen);
+        console.log("[DEBUG][selectNewEvent][checkTimeJump] Cas referenceYear < 500 et localEventCount <= 5, valeur choisie:", chosen, "jumpDistance après comparaison:", jumpDistance);
       } else if (
         referenceYear >= 500 &&
         referenceYear < 1000 &&
@@ -908,6 +949,7 @@ const selectNewEvent = useCallback(
       ) {
         const chosen = [500, 1000][Math.random() < 0.5 ? 0 : 1];
         jumpDistance = Math.max(jumpDistance, chosen);
+        console.log("[DEBUG][selectNewEvent][checkTimeJump] Cas referenceYear entre 500 et 1000 et eventCount entre 7 et 12, valeur choisie:", chosen, "jumpDistance après comparaison:", jumpDistance);
       } else if (
         referenceYear >= 1000 &&
         referenceYear < 1800 &&
@@ -916,41 +958,58 @@ const selectNewEvent = useCallback(
       ) {
         const chosen = [400, 750][Math.random() < 0.5 ? 0 : 1];
         jumpDistance = Math.max(jumpDistance, chosen);
+        console.log("[DEBUG][selectNewEvent][checkTimeJump] Cas referenceYear entre 1000 et 1800 et eventCount entre 7 et 12, valeur choisie:", chosen, "jumpDistance après comparaison:", jumpDistance);
       }
+      console.log("[DEBUG][selectNewEvent][checkTimeJump] jumpDistance final:", jumpDistance);
       return jumpDistance;
     };
 
     const timeJump = checkTimeJump();
+    console.log("[DEBUG][selectNewEvent] Valeur de timeJump calculée:", timeJump);
 
     if (timeJump > 0) {
+      console.log("[DEBUG][selectNewEvent] Saut temporel déclenché avec timeJump:", timeJump);
       const isForcedJump = localEventCount === forcedJumpEventCount;
+      console.log("[DEBUG][selectNewEvent] isForcedJump:", isForcedJump);
+
       let mainDirection: "past" | "future" = Math.random() < 0.5 ? "past" : "future";
+      console.log("[DEBUG][selectNewEvent] Direction initiale choisie:", mainDirection);
       if (isForcedJump && !hasFirstForcedJumpHappened) {
         mainDirection = "past";
+        console.log("[DEBUG][selectNewEvent] Saut forcé sans précédent, mainDirection forcée à 'past'");
       }
+
       const getTargetEvents = (direction: "past" | "future", dist: number): Event[] => {
         const targetYear = direction === "past" ? referenceYear - dist : referenceYear + dist;
+        console.log(`[DEBUG][selectNewEvent][getTargetEvents] Direction: ${direction}, distance: ${dist}, targetYear: ${targetYear}`);
         const comparison =
           direction === "past" ? (y: number) => y <= targetYear : (y: number) => y >= targetYear;
         const unusedEvents = events.filter((evt) => !usedEvents.has(evt.id));
+        console.log("[DEBUG][selectNewEvent][getTargetEvents] Nombre d'événements non utilisés:", unusedEvents.length);
         const filteredEvents = unusedEvents.filter((evt) => {
           if (isAntiqueEvent(evt) && !canAddAntiqueEvent(user.level)) {
+            console.log(`[DEBUG][selectNewEvent][getTargetEvents] Événement antique ignoré (id: ${evt.id}) pour user.level ${user.level}`);
             return false;
           }
           try {
             const y = new Date(evt.date).getFullYear();
             return !isNaN(y) && comparison(y);
-          } catch {
+          } catch (err) {
+            console.error("[DEBUG][selectNewEvent][getTargetEvents] Erreur lors du parsing de la date pour l'événement id:", evt.id);
             return false;
           }
         });
+        console.log("[DEBUG][selectNewEvent][getTargetEvents] Nombre d'événements après filtrage:", filteredEvents.length);
         return filteredEvents;
       };
 
       let possibleEvents = getTargetEvents(mainDirection, timeJump);
+      console.log("[DEBUG][selectNewEvent] possibleEvents dans la direction principale:", possibleEvents.length);
       if (possibleEvents.length === 0) {
         const alternateDirection = mainDirection === "past" ? "future" : "past";
+        console.log("[DEBUG][selectNewEvent] Aucun événement trouvé en direction", mainDirection, "- tentative avec la direction alternative:", alternateDirection);
         possibleEvents = getTargetEvents(alternateDirection, timeJump);
+        console.log("[DEBUG][selectNewEvent] possibleEvents dans la direction alternative:", possibleEvents.length);
       }
       if (possibleEvents.length > 0) {
         const eventsWithFrequencyScore = possibleEvents.map((evt) => ({
@@ -959,22 +1018,36 @@ const selectNewEvent = useCallback(
           year: new Date(evt.date).getFullYear(),
           difficulty: evt.niveau_difficulte || 0,
         }));
+        console.log("[DEBUG][selectNewEvent] Nombre d'événements candidats après ajout du score de fréquence:", eventsWithFrequencyScore.length);
         eventsWithFrequencyScore.sort((a, b) => a.frequencyScore - b.frequencyScore);
         const topPercentage = 0.3;
         const numTopEvents = Math.max(1, Math.ceil(eventsWithFrequencyScore.length * topPercentage));
         const topEvents = eventsWithFrequencyScore.slice(0, numTopEvents);
+        console.log("[DEBUG][selectNewEvent] Nombre d'événements dans le top", numTopEvents);
         const selectedEventWithScore = topEvents[Math.floor(Math.random() * topEvents.length)];
         const chosenEvent = selectedEventWithScore.event;
+        console.log("[DEBUG][selectNewEvent] Événement choisi après filtrage:", chosenEvent);
 
         let finalEvent = chosenEvent;
         if (user.level <= 5) {
           try {
             const chosenYear = new Date(chosenEvent.date).getFullYear();
             const modernThresholdYearJump =
-              user.level === 1 ? 1900 : user.level === 2 ? 1800 : user.level === 3 ? 1600 : user.level === 4 ? 1400 : 1000;
+              user.level === 1
+                ? 1900
+                : user.level === 2
+                ? 1800
+                : user.level === 3
+                ? 1600
+                : user.level === 4
+                ? 1400
+                : 1000;
+            console.log("[DEBUG][selectNewEvent] Vérification de modernité: chosenYear =", chosenYear, ", modernThresholdYearJump =", modernThresholdYearJump);
             if (referenceYear < modernThresholdYearJump && chosenYear < modernThresholdYearJump) {
               const modernEventsForJump = events.filter((evt) => {
-                if (usedEvents.has(evt.id)) return false;
+                if (usedEvents.has(evt.id)) {
+                  return false;
+                }
                 try {
                   const evtYear = new Date(evt.date).getFullYear();
                   return !isNaN(evtYear) && evtYear >= modernThresholdYearJump;
@@ -982,18 +1055,21 @@ const selectNewEvent = useCallback(
                   return false;
                 }
               });
+              console.log("[DEBUG][selectNewEvent] Nombre d'événements modernes disponibles pour le saut:", modernEventsForJump.length);
               if (modernEventsForJump.length > 0) {
                 const replacement =
                   modernEventsForJump[Math.floor(Math.random() * modernEventsForJump.length)];
                 finalEvent = replacement;
+                console.log("[DEBUG][selectNewEvent] Remplacement par un événement moderne sélectionné:", replacement);
                 FirebaseAnalytics.logEvent("forced_modern_in_time_jump", { /*...*/ });
               }
             }
           } catch (e) {
-            /* gestion de l'erreur */
+            console.error("[ERROR][selectNewEvent] Erreur dans le bloc de remplacement par événement moderne:", e);
           }
         }
         await updateGameState(finalEvent);
+        console.log("[DEBUG][selectNewEvent] État du jeu mis à jour avec l'événement:", finalEvent);
         const newFreqScore = ((finalEvent as any).frequency_score || 0) + 1;
         supabase
           .from("evenements")
@@ -1004,16 +1080,23 @@ const selectNewEvent = useCallback(
           .eq("id", finalEvent.id)
           .then(({ error }) => {
             if (error) {
+              console.error("[ERROR][selectNewEvent] Erreur lors de la mise à jour de l'événement dans Supabase:", error);
               /* traitement éventuel de l'erreur */
+            } else {
+              console.log("[DEBUG][selectNewEvent] Mise à jour réussie de l'événement dans Supabase");
             }
           });
         if (isForcedJump) {
           if (!hasFirstForcedJumpHappened) {
             setHasFirstForcedJumpHappened(true);
+            console.log("[DEBUG][selectNewEvent] Premier saut forcé enregistré.");
           }
           const landingYear = new Date(finalEvent.date).getFullYear();
+          console.log("[DEBUG][selectNewEvent] Année d'atterrissage de l'événement sélectionné:", landingYear);
           const nextIncrement = getNextForcedJumpIncrement(landingYear);
+          console.log("[DEBUG][selectNewEvent] Prochain incrément de saut forcé calculé:", nextIncrement);
           const newForcedCount = localEventCount + nextIncrement;
+          console.log("[DEBUG][selectNewEvent] Nouveau forcedJumpEventCount calculé:", newForcedCount);
           setForcedJumpEventCount(newForcedCount);
         }
         return finalEvent;
@@ -1021,13 +1104,16 @@ const selectNewEvent = useCallback(
     }
 
     // --- Sélection Normale (si pas de saut temporel réussi ou pas de saut tenté) ---
+    console.log("[DEBUG][selectNewEvent] Aucune condition de saut temporel n'a abouti. Passage à la sélection normale.");
     const config = LEVEL_CONFIGS[user.level];
     if (!config) {
+      console.error("[ERROR][selectNewEvent] Configuration manquante pour le niveau", user.level);
       setError(`Configuration manquante pour le niveau ${user.level}`);
       setIsGameOver(true);
       FirebaseAnalytics.error("missing_level_config", `Config not found for level ${user.level}`, "selectNewEvent");
       return null;
     }
+    console.log("[DEBUG][selectNewEvent] Configuration trouvée pour le niveau", user.level);
 
     const calculateDynamicTimeGap = (refDate: string) => {
       const nowY = new Date().getFullYear();
@@ -1036,12 +1122,15 @@ const selectNewEvent = useCallback(
       const baseGap = config.timeGap.base * proximityFactor;
       const minGap = Math.max(10, config.timeGap.minimum * proximityFactor);
       const maxGap = Math.max(minGap + 50, baseGap * 1.5);
+      console.log("[DEBUG][selectNewEvent] Calcul de gap temporel dynamique pour refDate:", refDate, "=>", { base: baseGap, min: minGap, max: maxGap });
       return { base: baseGap, min: minGap, max: maxGap };
     };
 
     const timeGap = calculateDynamicTimeGap(referenceEvent.date);
     const availableEvents = events.filter((e) => !usedEvents.has(e.id));
+    console.log("[DEBUG][selectNewEvent] Nombre d'événements disponibles après filtrage:", availableEvents.length);
     if (availableEvents.length === 0) {
+      console.error("[ERROR][selectNewEvent] Tous les événements disponibles ont été explorés.");
       setError("Vous avez exploré tous les événements disponibles !");
       setIsGameOver(true);
       FirebaseAnalytics.error("no_more_available_events", "All events have been used", "selectNewEvent");
@@ -1053,6 +1142,7 @@ const selectNewEvent = useCallback(
       acc[diff] = (acc[diff] || 0) + 1;
       return acc;
     }, {} as Record<number, number>);
+    console.log("[DEBUG][selectNewEvent] Comptage des niveaux de difficulté dans availableEvents:", diffCounts);
 
     let modernEventsForFallback: Event[] = [];
     const modernThresholdYear =
@@ -1067,6 +1157,7 @@ const selectNewEvent = useCallback(
         : user.level === 5
         ? 1000
         : 0;
+    console.log("[DEBUG][selectNewEvent] modernThresholdYear calculé pour user.level", user.level, ":", modernThresholdYear);
     if (user.level <= 5 && referenceYear < modernThresholdYear) {
       modernEventsForFallback = availableEvents.filter((evt) => {
         try {
@@ -1076,6 +1167,7 @@ const selectNewEvent = useCallback(
           return false;
         }
       });
+      console.log("[DEBUG][selectNewEvent] Nombre d'événements modernes disponibles pour fallback:", modernEventsForFallback.length);
     }
 
     let filteredForRecentLogic = [...availableEvents];
@@ -1092,17 +1184,22 @@ const selectNewEvent = useCallback(
         });
         if (modernEvents.length > 0) {
           filteredForRecentLogic = modernEvents;
+          console.log("[DEBUG][selectNewEvent] Filtrage recent appliqué avec modernEvents, nombre d'événements:", modernEvents.length);
           FirebaseAnalytics.logEvent("modern_events_forced", { /*...*/ });
         }
       }
     }
 
     const canAddMoreAntiques = canAddAntiqueEvent(user.level);
+    console.log("[DEBUG][selectNewEvent] Peut ajouter des antiques ?", canAddMoreAntiques);
     const filteredAvailableEvents = canAddMoreAntiques
       ? filteredForRecentLogic
       : filteredForRecentLogic.filter((e) => !isAntiqueEvent(e));
+    console.log("[DEBUG][selectNewEvent] Nombre d'événements disponibles après filtrage des antiques:", filteredAvailableEvents.length);
 
     const eventsToScore = filteredAvailableEvents.length > 0 ? filteredAvailableEvents : availableEvents;
+    console.log("[DEBUG][selectNewEvent] Nombre d'événements à scorer:", eventsToScore.length);
+
     const scoreEvent = (evt: Event, timeDiff: number): number => {
       const randomFactor = 0.9 + Math.random() * 0.2;
       const idealGap = timeGap.base;
@@ -1181,8 +1278,10 @@ const selectNewEvent = useCallback(
       })
       .filter(({ timeDiff }) => timeDiff >= timeGap.min && timeDiff <= timeGap.max)
       .sort((a, b) => b.score - a.score);
+    console.log("[DEBUG][selectNewEvent] Nombre d'événements scorés (filtre initial):", scoredEvents.length);
 
     if (scoredEvents.length === 0) {
+      console.log("[DEBUG][selectNewEvent] Aucun événement ne correspond aux critères initiaux, élargissement des bornes.");
       const relaxedMin = timeGap.min * 0.5;
       const relaxedMax = timeGap.max * 1.5;
       scoredEvents = eventsToScore
@@ -1200,9 +1299,11 @@ const selectNewEvent = useCallback(
         })
         .filter(({ timeDiff }) => timeDiff >= relaxedMin && timeDiff <= relaxedMax)
         .sort((a, b) => b.score - a.score);
+      console.log("[DEBUG][selectNewEvent] Nombre d'événements scorés (avec bornes relaxées):", scoredEvents.length);
     }
 
     if (scoredEvents.length === 0) {
+      console.log("[DEBUG][selectNewEvent] Aucune correspondance trouvée, utilisation de tous les événements disponibles pour scorer.");
       scoredEvents = availableEvents
         .map((e) => {
           const diff = getTimeDifference(e.date, referenceEvent.date);
@@ -1229,10 +1330,12 @@ const selectNewEvent = useCallback(
             scoreDetails: { totalScore: 1000, modernBonus: 1000 },
           };
         });
+        console.log("[DEBUG][selectNewEvent] Insertion d'un score élevé pour les événements modernes disponibles en fallback.");
         scoredEvents = [...modernScored, ...scoredEvents];
       }
 
       if (scoredEvents.length === 0) {
+        console.error("[ERROR][selectNewEvent] Erreur critique: Impossible de sélectionner un nouvel événement.");
         setError("Erreur critique: Impossible de sélectionner un nouvel événement.");
         setIsGameOver(true);
         FirebaseAnalytics.error("event_selection_failed", "No scorable events left", "selectNewEvent");
@@ -1242,12 +1345,15 @@ const selectNewEvent = useCallback(
 
     const selectionPoolSize = Math.min(5, scoredEvents.length);
     const topEvents = scoredEvents.slice(0, selectionPoolSize);
+    console.log("[DEBUG][selectNewEvent] Pool de sélection final composé de", topEvents.length, "événements.");
     const selectedScoredEvent = topEvents[Math.floor(Math.random() * topEvents.length)];
     let selectedEvent = selectedScoredEvent.event;
+    console.log("[DEBUG][selectNewEvent] Événement initialement sélectionné:", selectedEvent);
 
     if (user.level <= 5 && modernEventsForFallback.length > 0) {
       try {
         const selectedYear = new Date(selectedEvent.date).getFullYear();
+        console.log("[DEBUG][selectNewEvent] Vérification du filtrage moderne pour remplacement, selectedYear:", selectedYear);
         if (referenceYear < modernThresholdYear && selectedYear < modernThresholdYear) {
           const sortedFallbacks = [...modernEventsForFallback].sort(
             (a, b) => ((a as any).frequency_score || 0) - ((b as any).frequency_score || 0)
@@ -1255,15 +1361,18 @@ const selectNewEvent = useCallback(
           const lowFreqPoolSize = Math.max(1, Math.ceil(sortedFallbacks.length * 0.3));
           const lowFreqPool = sortedFallbacks.slice(0, lowFreqPoolSize);
           const replacement = lowFreqPool[Math.floor(Math.random() * lowFreqPool.length)];
+          console.log("[DEBUG][selectNewEvent] Remplacement par un événement moderne de fallback:", replacement);
           selectedEvent = replacement;
           FirebaseAnalytics.logEvent("absolute_force_modern", { /*...*/ });
         }
       } catch (e) {
+        console.error("[ERROR][selectNewEvent] Erreur lors du remplacement par fallback moderne:", e);
         /* traitement éventuel de l'erreur */
       }
     }
 
     await updateGameState(selectedEvent);
+    console.log("[DEBUG][selectNewEvent] État du jeu mis à jour avec l'événement sélectionné final:", selectedEvent);
     const newFrequencyScore = ((selectedEvent as any).frequency_score || 0) + 1;
     supabase
       .from("evenements")
@@ -1274,10 +1383,18 @@ const selectNewEvent = useCallback(
       .eq("id", selectedEvent.id)
       .then(({ error }) => {
         if (error) {
+          console.error("[ERROR][selectNewEvent] Erreur lors de la mise à jour de l'événement dans Supabase:", error);
           /* traitement éventuel de l'erreur */
+        } else {
+          console.log("[DEBUG][selectNewEvent] Mise à jour réussie pour l'événement id:", selectedEvent.id);
         }
       });
-    setFallbackCountdown((prev) => Math.max(0, prev - 1));
+    setFallbackCountdown((prev) => {
+      const newCountdown = Math.max(0, prev - 1);
+      console.log("[DEBUG][selectNewEvent] Mise à jour du fallbackCountdown:", newCountdown);
+      return newCountdown;
+    });
+    console.log("[DEBUG][selectNewEvent] Fin de la fonction, événement sélectionné retourné:", selectedEvent);
     return selectedEvent;
   },
   [
@@ -1296,6 +1413,7 @@ const selectNewEvent = useCallback(
     streak,
   ]
 );
+
 
   // 1.H.5. updatePerformanceStats (Peut être déprécié si non utilisé pour l'UI)
   const updatePerformanceStats = useCallback((type: string, period: string, success: boolean) => {
