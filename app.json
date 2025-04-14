@@ -40,7 +40,6 @@
       "favicon": "./assets/images/favicon.png"
     },
     "plugins": [
-      "./plugins/withAdmobManifest",
       "expo-router",
       [
         "expo-splash-screen",
