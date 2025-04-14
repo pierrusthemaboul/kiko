@@ -157,6 +157,6 @@ const styles = StyleSheet.create({
     alignItems: 'center',
     backgroundColor: 'rgba(0, 0, 0, 0.6)',
     // Assurer qu'il est au-dessus de tout si besoin (si zIndex pose problème ailleurs)
-    // position: 'absolute', top: 0, left: 0, right: 0, bottom: 0, zIndex: 9999
+    // positions: 'absolute', top: 0, left: 0, right: 0, bottom: 0, zIndex: 9999
   },
 });
