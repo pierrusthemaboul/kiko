@@ -5,7 +5,7 @@ import { RewardType, User, MAX_LIVES } from './types';
 import { LEVEL_CONFIGS } from './levelConfigs';
 import { FirebaseAnalytics } from '../lib/firebase'; // <-- AJOUTER L'IMPORT (Vérifier le chemin)
 
-// ... (Interfaces Position, Reward, RewardTrigger, UseRewardsProps restent inchangées) ...
+// ... (Interfaces Position, Reward, RewardTrigger, UseRewardsProps restent inchangées et) ...
 interface Position {
   x: number;
   y: number;
