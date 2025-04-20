@@ -120,6 +120,18 @@ function GameContentA({
   const [showWatchAdButton, setShowWatchAdButton] = useState(false);
   const [showScoreboardDelayed, setShowScoreboardDelayed] = useState(false);
 
+  // Log pour débogage des animations
+  useEffect(() => {
+    if (currentReward) {
+      console.log('[GameContentA] Récompense détectée:', { 
+        type: currentReward.type, 
+        amount: currentReward.amount,
+        hasTargetPosition: !!currentReward.targetPosition,
+        targetPosition: currentReward.targetPosition
+      });
+    }
+  }, [currentReward]);
+
   // Surveillance de la vie de l'utilisateur pour proposer la pub
   useEffect(() => {
     if (user.lives === 0 && !isGameOver && !showWatchAdButton && !isAdFreePeriod) {
@@ -146,23 +158,40 @@ function GameContentA({
     let mounted = true;
     const updateRewardPositionSafely = async () => {
       if (!currentReward || !userInfoRef.current || !mounted) return;
+      
       try {
         const position = currentReward.type === RewardType.EXTRA_LIFE
           ? await userInfoRef.current.getLifePosition()
           : await userInfoRef.current.getPointsPosition();
+          
         if (mounted && position && typeof position.x === 'number' && typeof position.y === 'number') {
+          console.log('[GameContentA] Position récupérée:', position);
           if (!currentReward.targetPosition || currentReward.targetPosition.x !== position.x || currentReward.targetPosition.y !== position.y) {
             updateRewardPosition(position);
             setIsRewardPositionSet(true);
           }
         }
       } catch (e){
-        // console.error('[GameContentA] Error getting reward position:', e); // Gardé commenté
+        console.log('[GameContentA] Erreur lors de la récupération de la position:', e);
         setIsRewardPositionSet(false);
       }
     };
+    
+    // Appel immédiat
     updateRewardPositionSafely();
-    return () => { mounted = false; };
+    
+    // Deuxième tentative après un délai pour s'assurer que les mesures sont correctes
+    const timer = setTimeout(() => {
+      if (mounted && currentReward && !isRewardPositionSet) {
+        console.log('[GameContentA] Seconde tentative de récupération de position');
+        updateRewardPositionSafely();
+      }
+    }, 200);
+    
+    return () => { 
+      mounted = false; 
+      clearTimeout(timer);
+    };
   }, [currentReward, updateRewardPosition]);
 
   // Animation d'opacité pour le modal de niveau
@@ -327,7 +356,9 @@ function GameContentA({
           <View style={styles.countdownContainer}>
             <Countdown timeLeft={timeLeft} isActive={!isLevelPaused && isImageLoaded} />
           </View>
-          {currentReward && currentReward.targetPosition && isRewardPositionSet && (
+          
+          {/* MODIFICATION: Simplifier la condition pour afficher l'animation */}
+          {currentReward && (
             <RewardAnimation
               type={currentReward.type}
               amount={currentReward.amount}
