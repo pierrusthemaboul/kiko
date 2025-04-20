@@ -42,14 +42,14 @@ export interface UserInfoHandle {
 
 const UserInfo = forwardRef<UserInfoHandle, UserInfoProps>(
   (
-    { 
-      name, 
-      points, 
-      lives, 
-      level, 
-      streak, 
-      activeBonus = [], 
-      currentQuestion, 
+    {
+      name,
+      points,
+      lives,
+      level,
+      streak,
+      activeBonus = [],
+      currentQuestion,
       totalQuestions,
       eventsCompletedInLevel = 0,  // Valeur par défaut
       eventsNeededForLevel = 5     // Valeur par défaut
@@ -91,7 +91,7 @@ const UserInfo = forwardRef<UserInfoHandle, UserInfoProps>(
       if (containerRef.current) {
         containerRef.current.measureInWindow((x, y, width, height) => {
           setContainerPosition({ x, y });
-          console.log('Container position measured:', { x, y });
+          // console.log('Container position measured:', { x, y }); // Log supprimé
         });
       }
     };
@@ -100,11 +100,9 @@ const UserInfo = forwardRef<UserInfoHandle, UserInfoProps>(
     const handlePointsLayout = () => {
       if (pointsRef.current) {
         pointsRef.current.measureInWindow((x, y, width, height) => {
-          setPointsPosition({
-            x: x + width / 2,
-            y: y + height / 2
-          });
-          console.log('Points position measured:', { x: x + width / 2, y: y + height / 2 });
+          const measuredPos = { x: x + width / 2, y: y + height / 2 };
+          setPointsPosition(measuredPos);
+          // console.log('Points position measured:', measuredPos); // Log supprimé
         });
       }
     };
@@ -139,12 +137,12 @@ const UserInfo = forwardRef<UserInfoHandle, UserInfoProps>(
       // Utiliser une position fixe basée sur la largeur de l'écran (33%)
       getLifePosition: () =>
         new Promise((resolve) => {
-          // Position calculée: 33% de la largeur de l'écran
+          // Position calculée: 80% de la largeur de l'écran
           // et même hauteur que le conteneur principal + offset pour être au niveau des cœurs
           const lifeX = width * 0.80; // 80% de la largeur de l'écran
           const lifeY = containerPosition.y + 15; // Hauteur du conteneur + offset pour les cœurs
-          
-          console.log('Using fixed life position:', { x: lifeX, y: lifeY });
+
+          // console.log('Using fixed life position:', { x: lifeX, y: lifeY }); // Log supprimé
           resolve({ x: lifeX, y: lifeY });
         })
     }), [pointsPosition, containerPosition]);
@@ -264,8 +262,8 @@ const UserInfo = forwardRef<UserInfoHandle, UserInfoProps>(
     };
 
     return (
-      <View 
-        ref={containerRef} 
+      <View
+        ref={containerRef}
         style={styles.container}
         onLayout={handleContainerLayout}
       >

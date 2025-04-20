@@ -1,12 +1,8 @@
 // types.ts
 // Types partagés pour les hooks du jeu
 
-// Log de chargement du module
-console.log('[types] Module types.ts chargé');
-
 // Nombre maximum de vies du joueur
 export const MAX_LIVES = 3;
-console.log('[types] MAX_LIVES =', MAX_LIVES);
 
 // Types de récompenses
 export enum RewardType {
@@ -15,7 +11,6 @@ export enum RewardType {
   STREAK_BONUS = 'STREAK_BONUS',
   LEVEL_UP = 'LEVEL_UP'
 }
-console.log('[types] RewardType chargé :', RewardType);
 
 // Périodes historiques
 export enum HistoricalPeriod {
@@ -26,7 +21,6 @@ export enum HistoricalPeriod {
   TWENTIETH = 'TWENTIETH',        // 1900-2000
   TWENTYFIRST = 'TWENTYFIRST'     // > 2000
 }
-console.log('[types] HistoricalPeriod chargé :', HistoricalPeriod);
 
 // Interface pour un événement historique
 export interface Event {

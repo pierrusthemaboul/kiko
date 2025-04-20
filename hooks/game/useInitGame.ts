@@ -1,20 +1,19 @@
-import { useState, useCallback } from 'react';
-import { supabase } from '../../lib/supabase/supabaseClients';
-import { FirebaseAnalytics } from '../../lib/firebase';
-import { Event, User, MAX_LIVES, HistoricalPeriod, LevelHistory } from '../types';
-import { LEVEL_CONFIGS } from '../levelConfigs';
+import { useState, useCallback, useEffect, useRef } from 'react';
+import { supabase } from '../../lib/supabase/supabaseClients'; // Ajuste le chemin si nécessaire
+import { FirebaseAnalytics } from '../../lib/firebase'; // Ajuste le chemin si nécessaire
+import { Event, User, MAX_LIVES, LevelHistory } from '../types'; // Ajuste le chemin si nécessaire
+import { LEVEL_CONFIGS } from '../levelConfigs'; // Ajuste le chemin si nécessaire
+import { useEventSelector } from './useEventSelector'; // Ajuste le chemin si nécessaire
 
 /**
  * Hook pour initialiser et gérer les états de base du jeu
  */
 export function useInitGame() {
-  console.log('[useInitGame] Hook initialisation');
-
   // États d'initialisation et de chargement
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState<string | null>(null);
   const [highScore, setHighScore] = useState(0);
-  
+
   // États du jeu
   const [user, setUser] = useState<User>({
     name: '',
@@ -32,63 +31,73 @@ export function useInitGame() {
       averageResponseTime: 0
     }
   });
-  
+
   // États des événements
   const [allEvents, setAllEvents] = useState<Event[]>([]);
   const [previousEvent, setPreviousEvent] = useState<Event | null>(null);
   const [newEvent, setNewEvent] = useState<Event | null>(null);
   const [usedEvents, setUsedEvents] = useState<Set<string>>(new Set());
-  
-  // État pour suivre l'événement actuellement affiché (pour éviter les transitions instables)
   const [displayedEvent, setDisplayedEvent] = useState<Event | null>(null);
-  
-  // Historique des niveaux
   const [levelsHistory, setLevelsHistory] = useState<LevelHistory[]>([]);
 
+  // --- AJOUT : Refs pour rendre initGame idempotent ---
+  const isInitializingRef = useRef(false); // Pour suivre si l'init est déjà en cours
+  const hasInitializedSuccessfullyRef = useRef(false); // Pour suivre si l'init a réussi au moins une fois
+
+  // --- Intégration de useEventSelector ---
+  const dummyUpdateStateCallback = useCallback(async (_event: Event) => {}, []);
+  const dummySetError = useCallback((_error: string) => {}, []);
+  const dummySetIsGameOver = useCallback((_isGameOver: boolean) => {}, []);
+
+  const {
+    isAntiqueEvent,
+    updateAntiqueCount,
+    resetAntiqueCount
+  } = useEventSelector({
+    setError: dummySetError,
+    setIsGameOver: dummySetIsGameOver,
+    updateStateCallback: dummyUpdateStateCallback,
+  });
+  // --- Fin de l'intégration ---
+
   /**
-   * Récupération des données utilisateur (nom + high score)
+   * Récupération des données utilisateur
    */
   const fetchUserData = useCallback(async () => {
-    console.log('[useInitGame] fetchUserData: Récupération des données utilisateur');
-    
+    console.log("[FetchUserData] Fetching user data...");
     try {
       const { data: { user: authUser }, error: authError } = await supabase.auth.getUser();
-
       if (authError || !authUser) {
-        console.log('[useInitGame] Utilisateur non authentifié ou erreur:', authError?.message);
+        console.log("[FetchUserData] No authenticated user found or error.", authError?.message);
         setUser(prev => ({ ...prev, name: prev.name || '' }));
         setHighScore(0);
         return;
       }
-
-      console.log('[useInitGame] Utilisateur authentifié:', authUser.id);
-
+      console.log(`[FetchUserData] User found: ${authUser.id}. Fetching profile...`);
       const { data: profileData, error: profileError } = await supabase
         .from('profiles')
         .select('display_name, high_score')
         .eq('id', authUser.id)
         .single();
-
       if (profileError) {
-        console.error('[useInitGame] Erreur récupération profil:', profileError.message);
-        setUser(prev => ({ ...prev, name: prev.name || '' }));
+        console.error("[FetchUserData] Error fetching profile:", profileError.message);
+        setUser(prev => ({ ...prev, name: prev.name || authUser.email || '' }));
         setHighScore(0);
         FirebaseAnalytics.error('profile_fetch_error', profileError.message, 'fetchUserData');
       } else if (profileData) {
-        console.log('[useInitGame] Profil récupéré:', profileData.display_name, 'high score:', profileData.high_score);
-        setUser(prev => ({
-          ...prev,
-          name: profileData.display_name || authUser.email || ''
-        }));
-        setHighScore(profileData.high_score || 0);
-        FirebaseAnalytics.setUserProperty('display_name', profileData.display_name);
+        console.log("[FetchUserData] Profile data found:", profileData);
+        const displayName = profileData.display_name || authUser.email || '';
+        const userHighScore = profileData.high_score || 0;
+        setUser(prev => ({ ...prev, name: displayName }));
+        setHighScore(userHighScore);
+        FirebaseAnalytics.setUserProperty('display_name', displayName);
       } else {
-        console.log('[useInitGame] Profil non trouvé, utilisation email comme nom');
-        setUser(prev => ({ ...prev, name: authUser.email || '' }));
+        console.warn("[FetchUserData] User exists in auth but no profile found.");
+        setUser(prev => ({ ...prev, name: prev.name || authUser.email || '' }));
         setHighScore(0);
       }
     } catch (err) {
-      console.error('[useInitGame] Erreur inattendue:', err);
+      console.error("[FetchUserData] Unexpected error:", err);
       setUser(prev => ({ ...prev, name: prev.name || '' }));
       setHighScore(0);
       FirebaseAnalytics.error('unexpected_fetch_user', err instanceof Error ? err.message : 'Unknown', 'fetchUserData');
@@ -96,145 +105,143 @@ export function useInitGame() {
   }, []);
 
   /**
-   * Fonction principale d'initialisation du jeu
-   * CORRECTION: Assurer une configuration stable des événements initiaux
+   * Fonction principale d'initialisation du jeu (Version Simplifiée et Idempotente)
    */
   const initGame = useCallback(async () => {
-    console.log('[useInitGame] Initialisation du jeu');
-    
-    try {
-      setLoading(true);
-      setError(null);
-      setLevelsHistory([]);
-      setUsedEvents(new Set());
-      
-      // Réinitialiser l'utilisateur mais garder son nom et high score
-      setUser(prev => ({
-        ...prev,
-        points: 0,
-        lives: MAX_LIVES,
-        level: 1,
-        eventsCompletedInLevel: 0,
-        totalEventsCompleted: 0,
-        streak: 0,
-        maxStreak: 0,
-      }));
+    // --- AJOUT : Protection contre les appels multiples / redondants ---
+    if (isInitializingRef.current) {
+      console.log("[InitGame - Simplified] Already initializing, skipping call.");
+      return; // Déjà en cours, ne rien faire
+    }
+    // Si l'initialisation a déjà réussi une fois, on ne la relance pas automatiquement
+    // (sauf si appelée explicitement par un redémarrage par exemple)
+    // Le useEffect ci-dessous gérera le premier appel.
+    // On pourrait ajouter une vérification ici aussi si on veut être très strict.
+    // Exemple: if (hasInitializedSuccessfullyRef.current) { console.log(...); return; }
+    // Mais laissons le useEffect gérer le premier appel pour l'instant.
+    // -----------------------------------------------------------------
 
+    console.log("[InitGame - Simplified] Starting game initialization...");
+    isInitializingRef.current = true; // Marquer comme en cours
+    hasInitializedSuccessfullyRef.current = false; // Réinitialiser le flag de succès pour CET essai
+    setLoading(true); // Indiquer le début du chargement (important pour la logique UI)
+    setError(null); // Réinitialiser les erreurs
+
+    // Réinitialiser les états du jeu
+    setLevelsHistory([]);
+    setUsedEvents(new Set());
+    resetAntiqueCount();
+    setUser(prev => ({
+      name: prev.name, // Garder le nom déjà récupéré
+      points: 0,
+      lives: MAX_LIVES,
+      level: 1,
+      eventsCompletedInLevel: 0,
+      totalEventsCompleted: 0,
+      streak: 0,
+      maxStreak: 0,
+      performanceStats: { typeSuccess: {}, periodSuccess: {}, overallAccuracy: 0, averageResponseTime: 0 }
+    }));
+    // Reset des events pour éviter un flash de l'ancien contenu si l'init échoue
+    setPreviousEvent(null);
+    setNewEvent(null);
+    setDisplayedEvent(null);
+
+    try {
+      // Récupérer/Mettre à jour les infos utilisateur
       await fetchUserData();
 
       const initialConfig = LEVEL_CONFIGS[1];
-      if (!initialConfig) {
-        throw new Error('Configuration du niveau 1 manquante');
-      }
+      if (!initialConfig) throw new Error('Configuration du niveau 1 manquante');
 
-      console.log('[useInitGame] Récupération des événements depuis Supabase');
-      
-      const { data: events, error: eventsError } = await supabase
+      console.log("[InitGame - Simplified] Fetching ALL events...");
+      const { data: allEventsData, error: eventsError } = await supabase
         .from('evenements')
-        .select('*')
-        .order('date', { ascending: true });
+        .select('*');
 
-      if (eventsError) {
-        console.error('[useInitGame] Erreur récupération événements:', eventsError.message);
-        throw eventsError;
-      }
-      
-      if (!events?.length) {
-        console.error('[useInitGame] Aucun événement disponible');
-        throw new Error('Aucun événement disponible dans la base');
-      }
+      if (eventsError) throw eventsError;
+      if (!allEventsData?.length) throw new Error('Aucun événement disponible dans la base de données');
 
-      console.log('[useInitGame] Récupéré', events.length, 'événements');
-
-      // Filtrage des événements valides
-      const validEvents = events.filter((event): event is Event =>
-        !!event.id &&
-        !!event.date &&
-        !!event.titre &&
-        !!event.illustration_url &&
-        event.niveau_difficulte != null &&
-        Array.isArray(event.types_evenement)
+      const validEvents = allEventsData.filter((event): event is Event =>
+        !!event.id && !!event.date && !!event.titre &&
+        (event.illustration_url === null || event.illustration_url === undefined || typeof event.illustration_url === 'string') &&
+        event.niveau_difficulte != null && Array.isArray(event.types_evenement)
       );
-      
-      console.log('[useInitGame] Filtré', validEvents.length, 'événements valides');
+      console.log(`[InitGame - Simplified] Found ${validEvents.length} total valid events.`);
+      if (validEvents.length < 2) throw new Error("Pas assez d'événements valides disponibles (besoin d'au moins 2).");
+
       setAllEvents(validEvents);
 
-      if (validEvents.length < 2) {
-        console.error('[useInitGame] Pas assez d\'événements valides');
-        throw new Error("Pas assez d'événements valides disponibles");
-      }
-
-      // Sélection des événements de niveau 1
+      console.log("[InitGame - Simplified] Selecting initial pair...");
       const level1Events = validEvents.filter(e => e.niveau_difficulte === 1);
-      console.log('[useInitGame] Événements de niveau 1:', level1Events.length);
-      
-      if (level1Events.length < 2) {
-        console.error('[useInitGame] Pas assez d\'événements de niveau 1');
-        throw new Error("Pas assez d'événements de niveau 1");
-      }
+      console.log(`[InitGame - Simplified] Found ${level1Events.length} level 1 events.`);
+      if (level1Events.length < 2) throw new Error(`Pas assez d'événements de niveau 1 (besoin d'au moins 2, trouvé ${level1Events.length}).`);
 
-      // --- CORRECTION: Sélection des événements initiaux de façon plus soignée ---
-      
-      // Sélection du premier événement
-      const firstIndex = Math.floor(Math.random() * level1Events.length);
-      const firstEvent = level1Events[firstIndex];
-      console.log('[useInitGame] Premier événement sélectionné:', firstEvent.titre, 'date:', firstEvent.date);
-      
-      // Tenter de trouver un second événement avec une différence temporelle significative
-      const referenceYear = new Date(firstEvent.date).getFullYear();
-      console.log('[useInitGame] Année de référence pour le premier événement:', referenceYear);
-      
-      // Trier les événements selon leur différence temporelle
-      const otherEvents = level1Events.filter(e => e.id !== firstEvent.id);
-      
-      const eventsWithTimeDiff = otherEvents.map(event => {
-        const eventYear = new Date(event.date).getFullYear();
-        const diff = Math.abs(eventYear - referenceYear);
-        return { event, diff };
-      }).sort((a, b) => b.diff - a.diff); // Plus grande différence d'abord
-      
-      console.log('[useInitGame] Événements triés par différence temporelle:', 
-        eventsWithTimeDiff.slice(0, 3).map(e => ({
-          titre: e.event.titre, 
-          diff: e.diff,
-          year: new Date(e.event.date).getFullYear()
-        }))
-      );
-      
-      // Sélectionner l'événement avec la plus grande différence temporelle (ou un fallback si nécessaire)
-      const secondEvent = eventsWithTimeDiff.length > 0 
-        ? eventsWithTimeDiff[0].event  // Événement avec la plus grande différence
-        : otherEvents[Math.floor(Math.random() * otherEvents.length)]; // Fallback aléatoire
-      
-      console.log('[useInitGame] Second événement sélectionné:', secondEvent.titre, 'date:', secondEvent.date);
-      console.log('[useInitGame] Différence entre événements en années:', 
-        Math.abs(new Date(secondEvent.date).getFullYear() - referenceYear));
-      
-      // IMPORTANT: Configurer les événements de manière stable pour éviter les transitions confuses
+      const sortedLevel1Events = [...level1Events].sort((a, b) => (a.frequency_score || 0) - (b.frequency_score || 0));
+      const initialSelectionPoolSize = Math.min(20, sortedLevel1Events.length);
+      const selectionPool = sortedLevel1Events.slice(0, initialSelectionPoolSize);
+      console.log(`[InitGame - Simplified] Selecting initial pair from a pool of ${selectionPool.length} low-frequency level 1 events.`);
+
+      const indices = [...Array(selectionPool.length).keys()];
+      const shuffledIndices = indices.sort(() => 0.5 - Math.random());
+      if (shuffledIndices.length < 2) throw new Error("Erreur interne: impossible de sélectionner deux indices distincts.");
+
+      const firstEvent = selectionPool[shuffledIndices[0]];
+      const secondEvent = selectionPool[shuffledIndices[1]];
+      if (!firstEvent || !secondEvent) throw new Error("Erreur interne: échec de la sélection des événements initiaux.");
+
+      console.log(`[InitGame - Simplified] Selected Initial Pair:`);
+      console.log(`  Event 1: ${firstEvent.titre} (ID: ${firstEvent.id}, Date: ${firstEvent.date}, Freq: ${firstEvent.frequency_score || 0})`);
+      console.log(`  Event 2: ${secondEvent.titre} (ID: ${secondEvent.id}, Date: ${secondEvent.date}, Freq: ${secondEvent.frequency_score || 0})`);
+
+      // Mettre à jour l'état SEULEMENT après succès de toutes les étapes précédentes
       setPreviousEvent(firstEvent);
       setNewEvent(secondEvent);
-      setDisplayedEvent(secondEvent); // Stabiliser l'affichage
-      
-      // Marquer les deux événements comme utilisés
+      setDisplayedEvent(secondEvent);
       setUsedEvents(new Set([firstEvent.id, secondEvent.id]));
+      if (isAntiqueEvent(firstEvent)) updateAntiqueCount(firstEvent);
+      if (isAntiqueEvent(secondEvent)) updateAntiqueCount(secondEvent);
 
-      console.log('[useInitGame] Configuration initiale terminée');
-
-      // Tracking analytics
-      FirebaseAnalytics.gameStarted(user.name, !user.name || user.name.startsWith('Voyageur'), 1);
+      // Log Analytics
+      const currentUserName = user.name || 'Anonymous'; // Utilise le nom mis à jour ou fallback
+      FirebaseAnalytics.gameStarted(currentUserName, !user.name, 1);
       FirebaseAnalytics.levelStarted(1, initialConfig.name || 'Niveau 1', initialConfig.eventsNeeded, 0);
 
+      console.log("[InitGame - Simplified] Initialization complete.");
+      hasInitializedSuccessfullyRef.current = true; // --- Marquer comme réussi ---
+
     } catch (err) {
-      console.error('[useInitGame] Erreur critique:', err);
-      const errorMsg = err instanceof Error ? err.message : "Erreur inconnue lors de l'init";
+      const errorMsg = err instanceof Error ? err.message : "Erreur inconnue lors de l'initialisation";
+      console.error("[InitGame - Simplified] Initialization failed:", errorMsg, err);
       setError(errorMsg);
       FirebaseAnalytics.error('game_initialization', errorMsg, 'initGame');
+      hasInitializedSuccessfullyRef.current = false; // --- Marquer comme échoué ---
     } finally {
-      setLoading(false);
-      console.log('[useInitGame] Initialisation terminée, état loading:', false);
+      isInitializingRef.current = false; // --- Marquer comme terminé (succès ou échec) ---
+      setLoading(false); // Assurer que l'indicateur de chargement est désactivé
     }
-  }, [fetchUserData, user.name]);
+  }, [ // Dépendances de useCallback
+      fetchUserData,
+      resetAntiqueCount,
+      updateAntiqueCount,
+      isAntiqueEvent,
+      // Pas besoin de lister les setters (setLoading, setError, setUser, etc.)
+      // Pas besoin de lister user.name car il est lu DANS fetchUserData ou utilisé après.
+    ]
+  );
 
+  // Exécuter initGame une seule fois au montage initial
+  useEffect(() => {
+    // Cet effet ne s'exécute qu'une fois grâce au tableau de dépendances vide.
+    // On appelle initGame() qui contient maintenant la logique pour éviter les exécutions multiples.
+    console.log("[InitGame Hook] useEffect[] triggered. Calling initGame().");
+    initGame();
+
+    // Laisser le tableau de dépendances vide [] pour exécuter seulement au montage du hook.
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, []); // ATTENTION: garder les deps vides est crucial ici pour que CE useEffect ne cause pas de rappels. initGame est stable grâce à useCallback.
+
+  // Retourner les états et fonctions
   return {
     loading,
     error,
@@ -245,16 +252,17 @@ export function useInitGame() {
     newEvent,
     usedEvents,
     levelsHistory,
-    displayedEvent, // Nouvel état exporté
+    displayedEvent,
     setUser,
     setPreviousEvent,
     setNewEvent,
     setUsedEvents,
     setLevelsHistory,
-    setDisplayedEvent, // Nouveau setter exporté
+    setDisplayedEvent,
     setError,
     setLoading,
-    initGame,
-    fetchUserData
+    initGame, // Fonction pour (re)démarrer le jeu (maintenant idempotente)
+    fetchUserData,
+    setHighScore
   };
 }
