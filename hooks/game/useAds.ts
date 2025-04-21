@@ -236,6 +236,12 @@ export function useAds({
       const shouldGrantLife = reward?.type === RewardType.EXTRA_LIFE || reward?.type === 'coins';
       console.log(`[useAds] Should grant life based on reward type? ${shouldGrantLife}`);
 
+      // Marquer explicitement que le jeu n'est plus en état de "Game Over"
+      // avant d'ajouter la vie - CORRECTION CRUCIAL ICI
+      if (shouldGrantLife) {
+        setIsGameOver(false); // Annuler l'état de Game Over avant de donner la vie
+      }
+
       // Utilise une fonction async pour garantir l'ordre et les délais
       const continueGameAfterReward = async () => {
         console.log('[useAds] Applying reward and continuing game (async)...');
@@ -272,8 +278,7 @@ export function useAds({
         setAdState(prev => ({ ...prev, hasWatchedRewardedAd: true, rewardedLoaded: false }));
 
         // 3. Mettre à jour l'état du jeu
-        console.log(`[useAds] Setting isGameOver=false, isLevelPaused=false`);
-        setIsGameOver(false); // Important: annule le game over
+        console.log(`[useAds] Setting isLevelPaused=false`);
         setIsLevelPaused(false); // Reprend le jeu
         setIsWaitingForCountdown(false); // Assure qu'on n'attend pas
 

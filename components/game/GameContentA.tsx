@@ -137,6 +137,16 @@ function GameContentA({
 
   const isInitialRenderRef = useRef(true); // Pour l'animation d'EventLayoutA
 
+  // --- LOGS DE DÉBOGAGE ---
+  useEffect(() => {
+    console.log("[DEBUG GameContentA] Component (re)mounted or key props changed");
+    console.log("[DEBUG GameContentA] isGameOver:", isGameOver);
+    console.log("[DEBUG GameContentA] user:", user ? `${user.name} (lives: ${user.lives})` : "null");
+    console.log("[DEBUG GameContentA] adState:", adState);
+    console.log("[DEBUG GameContentA] showWatchAdOffer:", showWatchAdOffer);
+    console.log("[DEBUG GameContentA] showScoreboard:", showScoreboard);
+  }, [isGameOver, user, adState, showWatchAdOffer, showScoreboard]);
+
   // --- Effet pour obtenir la position des éléments pour l'animation de récompense ---
   useEffect(() => {
     // (Logique inchangée pour la position de la récompense)
@@ -192,33 +202,69 @@ function GameContentA({
 
   // --- Effet pour gérer la fin de partie et l'offre de publicité ---
   useEffect(() => {
+    console.log("[DEBUG GameContentA] ===== Game Over Effect Triggered =====");
+    console.log("[DEBUG GameContentA] isGameOver:", isGameOver);
+    console.log("[DEBUG GameContentA] user:", user ? `Name: ${user.name}, Lives: ${user.lives}, Points: ${user.points}` : "null");
+    console.log("[DEBUG GameContentA] adState:", JSON.stringify(adState));
+    
     // Conditions pour déclencher la logique de fin : le jeu est terminé ET l'utilisateur est défini
     if (isGameOver && user) {
-      console.log("[GameContentA] Game Over detected. Checking ad offer conditions...");
-      console.log("[GameContentA] Ad State:", adState);
+      console.log("[DEBUG GameContentA] Game Over detected with valid user");
 
       // Vérifier si on peut proposer une pub récompensée
+      // (seulement si l'utilisateur n'a pas déjà regardé une pub dans cette partie)
       const canOfferAd =
         user.lives === 0 &&               // A 0 vie
         showRewardedAd &&                 // La fonction existe
         adState.hasRewardedAd &&          // La pub est chargée
         !adState.hasWatchedRewardedAd;    // Pas déjà regardée
+      
+      console.log("[DEBUG GameContentA] Can offer ad?", canOfferAd);
+      console.log("[DEBUG GameContentA] - Lives === 0?", user.lives === 0);
+      console.log("[DEBUG GameContentA] - showRewardedAd exists?", !!showRewardedAd);
+      console.log("[DEBUG GameContentA] - hasRewardedAd?", adState.hasRewardedAd);
+      console.log("[DEBUG GameContentA] - !hasWatchedRewardedAd?", !adState.hasWatchedRewardedAd);
 
       if (canOfferAd) {
-        console.log("[GameContentA] Conditions met: Showing Watch Ad Offer.");
-        setShowWatchAdOffer(true);  // Afficher l'offre "Regarder la pub ?"
-        setShowScoreboard(false); // Masquer le scoreboard pendant l'offre
+        console.log("[DEBUG GameContentA] CONDITIONS MET: Showing watch ad offer dialog");
+        setShowWatchAdOffer(true);  
+        setShowScoreboard(false); 
+      } else if (user.lives === 0) { // On affiche le scoreboard si le joueur n'a plus de vie, même s'il a déjà vu une pub
+        console.log("[DEBUG GameContentA] No more lives. Showing Scoreboard directly");
+        console.log("[DEBUG GameContentA] Current leaderboardsReady state:", leaderboardsReady);
+        console.log("[DEBUG GameContentA] Has leaderboards data?", !!leaderboards);
+        setShowWatchAdOffer(false);
+        setShowScoreboard(true);
       } else {
-        console.log("[GameContentA] Conditions not met or ad unavailable/watched. Showing Scoreboard directly.");
-        setShowWatchAdOffer(false); // Ne pas montrer l'offre
-        setShowScoreboard(true);  // Afficher directement le scoreboard
+        // Si l'utilisateur a encore des vies (cas qui ne devrait pas arriver)
+        console.log("[DEBUG GameContentA] EDGE CASE: User still has lives but game is over? Hiding both ad offer and scoreboard.");
+        setShowWatchAdOffer(false);
+        setShowScoreboard(false);
       }
-    } else {
+    } else if (!isGameOver) {
       // Si le jeu n'est pas terminé, s'assurer que l'offre et le scoreboard sont cachés
+      console.log("[DEBUG GameContentA] Game NOT over - hiding watch ad offer and scoreboard");
       setShowWatchAdOffer(false);
       setShowScoreboard(false);
+    } else {
+      console.log("[DEBUG GameContentA] Game over but no valid user - cannot proceed with end game logic");
     }
-  }, [isGameOver, user, adState, showRewardedAd]); // Dépend de l'état de fin de partie, user, et adState
+    
+    console.log("[DEBUG GameContentA] ===== End of Game Over Effect =====");
+  }, [isGameOver, user, adState, showRewardedAd, leaderboardsReady, leaderboards]); // Ajout des dépendances pour le log
+
+  // --- EFFET DE SURVEILLANCE pour le changement d'état des flags d'affichage ---
+  useEffect(() => {
+    console.log("[DEBUG GameContentA] Display flags changed:");
+    console.log("[DEBUG GameContentA] - showWatchAdOffer:", showWatchAdOffer);
+    console.log("[DEBUG GameContentA] - showScoreboard:", showScoreboard);
+  }, [showWatchAdOffer, showScoreboard]);
+
+  // --- Effet pour surveiller ScoreboardModal ---
+  useEffect(() => {
+    console.log("[DEBUG GameContentA] ScoreboardModal visibility condition changed:");
+    console.log("[DEBUG GameContentA] - isGameOver && showScoreboard:", isGameOver && showScoreboard);
+  }, [isGameOver, showScoreboard]);
 
   // --- Effet pour marquer la fin du premier rendu significatif ---
   useEffect(() => {
@@ -239,15 +285,16 @@ function GameContentA({
 
   // --- Fonctions pour gérer l'interaction avec l'offre de publicité ---
   const handleWatchAd = () => {
-    console.log("[GameContentA] User accepted watch ad offer.");
+    console.log("[DEBUG GameContentA] User accepted watch ad offer");
     if (showRewardedAd) {
       const adTriggered = showRewardedAd(); // Tente d'afficher la pub
+      console.log("[DEBUG GameContentA] showRewardedAd() returned:", adTriggered);
       if (adTriggered) {
         // Si la tentative est faite, on cache l'offre. La reprise est gérée par useAds.
         setShowWatchAdOffer(false);
       } else {
         // Si showRewardedAd retourne false (ex: erreur interne, pub déchargée entre temps)
-        console.log("[GameContentA] showRewardedAd() returned false. Ad could not be shown.");
+        console.log("[DEBUG GameContentA] showRewardedAd() returned false. Ad could not be shown.");
         Alert.alert("Oups !", "Impossible de lancer la publicité pour le moment.", [{ text: "OK" }]);
         // On cache l'offre et on affiche le scoreboard car la pub n'a pas pu être lancée
         setShowWatchAdOffer(false);
@@ -255,14 +302,14 @@ function GameContentA({
       }
     } else {
        // Cas où showRewardedAd n'est pas défini (ne devrait pas arriver si les conditions sont bonnes)
-       console.error("[GameContentA] handleWatchAd called but showRewardedAd is undefined!");
+       console.error("[DEBUG GameContentA] handleWatchAd called but showRewardedAd is undefined!");
        setShowWatchAdOffer(false);
        setShowScoreboard(true);
     }
   };
 
   const handleDeclineWatchAd = () => {
-    console.log("[GameContentA] User declined watch ad offer.");
+    console.log("[DEBUG GameContentA] User declined watch ad offer");
     setShowWatchAdOffer(false); // Cacher l'offre
     setShowScoreboard(true);  // Afficher le scoreboard
     // Pas besoin de gérer isGameOver ici, il est déjà true.
