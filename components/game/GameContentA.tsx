@@ -130,26 +130,13 @@ function GameContentA({
   const [isRewardPositionSet, setIsRewardPositionSet] = useState(false);
 
   // --- États pour gérer l'affichage conditionnel de fin de partie ---
-  // 1. Faut-il montrer l'offre "Regarder une pub ?"
   const [showWatchAdOffer, setShowWatchAdOffer] = useState(false);
-  // 2. Faut-il montrer le tableau des scores final ?
   const [showScoreboard, setShowScoreboard] = useState(false);
 
   const isInitialRenderRef = useRef(true); // Pour l'animation d'EventLayoutA
 
-  // --- LOGS DE DÉBOGAGE ---
-  useEffect(() => {
-    console.log("[DEBUG GameContentA] Component (re)mounted or key props changed");
-    console.log("[DEBUG GameContentA] isGameOver:", isGameOver);
-    console.log("[DEBUG GameContentA] user:", user ? `${user.name} (lives: ${user.lives})` : "null");
-    console.log("[DEBUG GameContentA] adState:", adState);
-    console.log("[DEBUG GameContentA] showWatchAdOffer:", showWatchAdOffer);
-    console.log("[DEBUG GameContentA] showScoreboard:", showScoreboard);
-  }, [isGameOver, user, adState, showWatchAdOffer, showScoreboard]);
-
   // --- Effet pour obtenir la position des éléments pour l'animation de récompense ---
   useEffect(() => {
-    // (Logique inchangée pour la position de la récompense)
     let mounted = true;
     const updateRewardPositionSafely = async () => {
       if (!currentReward || !userInfoRef.current || !mounted || !user) return; // Ajout check user
@@ -157,39 +144,36 @@ function GameContentA({
         const position = currentReward.type === RewardType.EXTRA_LIFE
           ? await userInfoRef.current.getLifePosition()
           : await userInfoRef.current.getPointsPosition();
-        // Vérifie explicitement que position et ses coordonnées sont valides
         if (mounted && position && typeof position.x === 'number' && typeof position.y === 'number') {
           if (!currentReward.targetPosition || currentReward.targetPosition.x !== position.x || currentReward.targetPosition.y !== position.y) {
             updateRewardPosition(position);
             setIsRewardPositionSet(true);
           }
         } else if (mounted) {
-             console.warn("[GameContentA] getPosition returned invalid value:", position);
-             setIsRewardPositionSet(false); // Marquer comme non défini si la position est invalide
+             // console.warn("[GameContentA] getPosition returned invalid value:", position); // Log supprimé
+             setIsRewardPositionSet(false);
         }
       } catch (e){
-          console.warn("[GameContentA] Could not get element position for reward animation:", e);
+          // console.warn("[GameContentA] Could not get element position for reward animation:", e); // Log supprimé
         setIsRewardPositionSet(false);
       }
     };
 
-    // Tenter immédiatement et après un court délai si la première tentative échoue
     updateRewardPositionSafely();
     const timer = setTimeout(() => {
       if (mounted && currentReward && !isRewardPositionSet) {
         updateRewardPositionSafely();
       }
-    }, 250); // Léger délai augmenté
+    }, 250);
 
     return () => {
       mounted = false;
       clearTimeout(timer);
     };
-  }, [currentReward, updateRewardPosition, user]); // Ajout de user car userInfoRef dépend de son rendu
+  }, [currentReward, updateRewardPosition, user]);
 
   // --- Animation d'opacité pour le modal de niveau ---
   useEffect(() => {
-    // (Logique inchangée)
     if (showLevelModal) {
       Animated.sequence([
         Animated.timing(contentOpacity, { toValue: 0.3, duration: 300, useNativeDriver: true }),
@@ -202,127 +186,73 @@ function GameContentA({
 
   // --- Effet pour gérer la fin de partie et l'offre de publicité ---
   useEffect(() => {
-    console.log("[DEBUG GameContentA] ===== Game Over Effect Triggered =====");
-    console.log("[DEBUG GameContentA] isGameOver:", isGameOver);
-    console.log("[DEBUG GameContentA] user:", user ? `Name: ${user.name}, Lives: ${user.lives}, Points: ${user.points}` : "null");
-    console.log("[DEBUG GameContentA] adState:", JSON.stringify(adState));
-    
-    // Conditions pour déclencher la logique de fin : le jeu est terminé ET l'utilisateur est défini
     if (isGameOver && user) {
-      console.log("[DEBUG GameContentA] Game Over detected with valid user");
-
-      // Vérifier si on peut proposer une pub récompensée
-      // (seulement si l'utilisateur n'a pas déjà regardé une pub dans cette partie)
       const canOfferAd =
-        user.lives === 0 &&               // A 0 vie
-        showRewardedAd &&                 // La fonction existe
-        adState.hasRewardedAd &&          // La pub est chargée
-        !adState.hasWatchedRewardedAd;    // Pas déjà regardée
-      
-      console.log("[DEBUG GameContentA] Can offer ad?", canOfferAd);
-      console.log("[DEBUG GameContentA] - Lives === 0?", user.lives === 0);
-      console.log("[DEBUG GameContentA] - showRewardedAd exists?", !!showRewardedAd);
-      console.log("[DEBUG GameContentA] - hasRewardedAd?", adState.hasRewardedAd);
-      console.log("[DEBUG GameContentA] - !hasWatchedRewardedAd?", !adState.hasWatchedRewardedAd);
+        user.lives === 0 &&
+        showRewardedAd &&
+        adState.hasRewardedAd &&
+        !adState.hasWatchedRewardedAd;
 
       if (canOfferAd) {
-        console.log("[DEBUG GameContentA] CONDITIONS MET: Showing watch ad offer dialog");
-        setShowWatchAdOffer(true);  
-        setShowScoreboard(false); 
-      } else if (user.lives === 0) { // On affiche le scoreboard si le joueur n'a plus de vie, même s'il a déjà vu une pub
-        console.log("[DEBUG GameContentA] No more lives. Showing Scoreboard directly");
-        console.log("[DEBUG GameContentA] Current leaderboardsReady state:", leaderboardsReady);
-        console.log("[DEBUG GameContentA] Has leaderboards data?", !!leaderboards);
+        setShowWatchAdOffer(true);
+        setShowScoreboard(false);
+      } else if (user.lives === 0) {
         setShowWatchAdOffer(false);
         setShowScoreboard(true);
       } else {
-        // Si l'utilisateur a encore des vies (cas qui ne devrait pas arriver)
-        console.log("[DEBUG GameContentA] EDGE CASE: User still has lives but game is over? Hiding both ad offer and scoreboard.");
         setShowWatchAdOffer(false);
         setShowScoreboard(false);
       }
     } else if (!isGameOver) {
-      // Si le jeu n'est pas terminé, s'assurer que l'offre et le scoreboard sont cachés
-      console.log("[DEBUG GameContentA] Game NOT over - hiding watch ad offer and scoreboard");
       setShowWatchAdOffer(false);
       setShowScoreboard(false);
-    } else {
-      console.log("[DEBUG GameContentA] Game over but no valid user - cannot proceed with end game logic");
     }
-    
-    console.log("[DEBUG GameContentA] ===== End of Game Over Effect =====");
-  }, [isGameOver, user, adState, showRewardedAd, leaderboardsReady, leaderboards]); // Ajout des dépendances pour le log
-
-  // --- EFFET DE SURVEILLANCE pour le changement d'état des flags d'affichage ---
-  useEffect(() => {
-    console.log("[DEBUG GameContentA] Display flags changed:");
-    console.log("[DEBUG GameContentA] - showWatchAdOffer:", showWatchAdOffer);
-    console.log("[DEBUG GameContentA] - showScoreboard:", showScoreboard);
-  }, [showWatchAdOffer, showScoreboard]);
-
-  // --- Effet pour surveiller ScoreboardModal ---
-  useEffect(() => {
-    console.log("[DEBUG GameContentA] ScoreboardModal visibility condition changed:");
-    console.log("[DEBUG GameContentA] - isGameOver && showScoreboard:", isGameOver && showScoreboard);
-  }, [isGameOver, showScoreboard]);
+  }, [isGameOver, user, adState, showRewardedAd, leaderboardsReady, leaderboards]);
 
   // --- Effet pour marquer la fin du premier rendu significatif ---
   useEffect(() => {
-    // (Logique inchangée)
     if (previousEvent && displayedEvent && isInitialRenderRef.current) {
       const timer = setTimeout(() => {
-        console.log("[GameContentA] Premier set d'événements chargé. Marqué comme non-initial pour les suivants.");
+        // console.log("[GameContentA] Premier set d'événements chargé. Marqué comme non-initial pour les suivants."); // Log supprimé
         isInitialRenderRef.current = false;
       }, 0);
       return () => clearTimeout(timer);
     }
-    // Optionnel: Réinitialiser si les événements disparaissent (ex: redémarrage)
-    if (!previousEvent && !displayedEvent && !error && user) { // Vérifier user pour éviter reset prématuré
-       // console.log("[GameContentA] Événements remis à zéro. Réinitialisation de isInitialRenderRef à true.");
-       // isInitialRenderRef.current = true; // Attention, cela pourrait causer des animations non désirées si mal géré
+    if (!previousEvent && !displayedEvent && !error && user) {
+       // isInitialRenderRef.current = true; // Logique commentée conservée si nécessaire
     }
-  }, [previousEvent, displayedEvent, error, user]); // 'loading' enlevé car géré par parent
+  }, [previousEvent, displayedEvent, error, user]);
 
   // --- Fonctions pour gérer l'interaction avec l'offre de publicité ---
   const handleWatchAd = () => {
-    console.log("[DEBUG GameContentA] User accepted watch ad offer");
     if (showRewardedAd) {
-      const adTriggered = showRewardedAd(); // Tente d'afficher la pub
-      console.log("[DEBUG GameContentA] showRewardedAd() returned:", adTriggered);
+      const adTriggered = showRewardedAd();
       if (adTriggered) {
-        // Si la tentative est faite, on cache l'offre. La reprise est gérée par useAds.
         setShowWatchAdOffer(false);
       } else {
-        // Si showRewardedAd retourne false (ex: erreur interne, pub déchargée entre temps)
-        console.log("[DEBUG GameContentA] showRewardedAd() returned false. Ad could not be shown.");
+        // console.log("[DEBUG GameContentA] showRewardedAd() returned false. Ad could not be shown."); // Log supprimé
         Alert.alert("Oups !", "Impossible de lancer la publicité pour le moment.", [{ text: "OK" }]);
-        // On cache l'offre et on affiche le scoreboard car la pub n'a pas pu être lancée
         setShowWatchAdOffer(false);
         setShowScoreboard(true);
       }
     } else {
-       // Cas où showRewardedAd n'est pas défini (ne devrait pas arriver si les conditions sont bonnes)
-       console.error("[DEBUG GameContentA] handleWatchAd called but showRewardedAd is undefined!");
+       // console.error("[DEBUG GameContentA] handleWatchAd called but showRewardedAd is undefined!"); // Log supprimé
        setShowWatchAdOffer(false);
        setShowScoreboard(true);
     }
   };
 
   const handleDeclineWatchAd = () => {
-    console.log("[DEBUG GameContentA] User declined watch ad offer");
-    setShowWatchAdOffer(false); // Cacher l'offre
-    setShowScoreboard(true);  // Afficher le scoreboard
-    // Pas besoin de gérer isGameOver ici, il est déjà true.
+    setShowWatchAdOffer(false);
+    setShowScoreboard(true);
   };
 
   // --- Rendu Principal du Contenu ---
   const renderContent = () => {
-    // 'loading' est géré par GamePage, on vérifie juste les erreurs ou l'absence d'événements/user
     if (error) {
       return (
         <View style={styles.errorContainer}>
           <Text style={styles.errorText}>{error}</Text>
-          {/* Ajouter un bouton pour réessayer ou retourner au menu ? */}
           <TouchableOpacity onPress={handleRestartOrClose} style={styles.errorButton}>
               <Text style={styles.errorButtonText}>Retour</Text>
           </TouchableOpacity>
@@ -330,9 +260,7 @@ function GameContentA({
       );
     }
 
-    // Attendre que l'utilisateur et les premiers événements soient prêts
     if (!user || (!previousEvent && !displayedEvent)) {
-      // Devrait être couvert par le loader de GamePage, mais sécurité supplémentaire
       return (
         <View style={styles.loadingContainer}>
           <ActivityIndicator size="large" color={colors.white} />
@@ -341,22 +269,21 @@ function GameContentA({
       );
     }
 
-    // Si on arrive ici, user, previousEvent et displayedEvent sont valides
     return (
       <>
         {/* --- Layout Principal des Événements --- */}
         <EventLayoutA
           previousEvent={previousEvent}
-          newEvent={displayedEvent} // Utilise displayedEvent pour l'événement de droite
+          newEvent={displayedEvent}
           onImageLoad={handleImageLoad}
-          onChoice={handleChoice} // Passe directement la fonction typée
+          onChoice={handleChoice}
           showDate={showDates}
           isCorrect={isCorrect}
           isImageLoaded={isImageLoaded}
           streak={streak}
           level={level}
           isLevelPaused={isLevelPaused}
-          isInitialRender={isInitialRenderRef.current} // Passe l'état initial
+          isInitialRender={isInitialRenderRef.current}
         />
 
         {/* --- Modal de Level Up --- */}
@@ -374,27 +301,24 @@ function GameContentA({
         />
 
         {/* --- Modal Tableau des Scores --- */}
-        {/* S'affiche si le jeu est terminé ET qu'on a décidé d'afficher le scoreboard */}
         <ScoreboardModal
-          isVisible={isGameOver && showScoreboard} // Condition d'affichage
+          isVisible={isGameOver && showScoreboard}
           currentScore={user.points}
           personalBest={highScore}
-          isLoadingScores={!leaderboardsReady && isGameOver} // Loader si gameover mais scores pas prêts
+          isLoadingScores={!leaderboardsReady && isGameOver}
           dailyScores={leaderboards?.daily || []}
           monthlyScores={leaderboards?.monthly || []}
           allTimeScores={leaderboards?.allTime || []}
-          onRestart={handleRestartOrClose} // Action "Rejouer" -> Navigue vers vue1
-          onMenuPress={handleRestartOrClose} // Action "Menu" -> Navigue aussi vers vue1
+          onRestart={handleRestartOrClose}
+          onMenuPress={handleRestartOrClose}
           playerName={user.name}
           levelsHistory={levelsHistory}
         />
 
         {/* --- Overlay pour l'offre de Publicité Récompensée --- */}
-        {/* S'affiche si le jeu est terminé ET qu'on a décidé d'afficher l'offre */}
         {isGameOver && showWatchAdOffer && (
           <View style={styles.watchAdOverlay}>
             <View style={styles.watchAdContainer}>
-              {/* ... (contenu de l'overlay inchangé) ... */}
               <View style={styles.watchAdIconContainer}>
                 <Ionicons name="heart" size={50} color={colors.incorrectRed} />
               </View>
@@ -405,19 +329,18 @@ function GameContentA({
               <View style={styles.watchAdButtonsContainer}>
                 <TouchableOpacity
                   style={[styles.watchAdButton, styles.watchAdDeclineButton]}
-                  onPress={handleDeclineWatchAd} // Action refuser
+                  onPress={handleDeclineWatchAd}
                 >
                   <Text style={styles.watchAdDeclineText}>Non, merci</Text>
                 </TouchableOpacity>
                 <TouchableOpacity
                   style={[styles.watchAdButton, styles.watchAdAcceptButton]}
-                  onPress={handleWatchAd} // Action accepter
+                  onPress={handleWatchAd}
                 >
                   <Ionicons name="play-circle-outline" size={20} color="white" style={styles.watchAdButtonIcon} />
                   <Text style={styles.watchAdAcceptText}>D'accord !</Text>
                 </TouchableOpacity>
               </View>
-              {/* ... */}
             </View>
           </View>
         )}
@@ -426,18 +349,12 @@ function GameContentA({
   };
 
   // --- Rendu du Composant Principal ---
-  // Utiliser un fragment ou un View si SafeAreaView n'est pas le container principal
   return (
-    // SafeAreaView déplacé au niveau parent (GamePage), donc on utilise un View ici
     <View style={styles.container}>
-       {/* La barre de statut est maintenant gérée par GamePage */}
        {/* <StatusBar barStyle="light-content" backgroundColor="#050B1F" translucent={false} /> */}
 
-       {/* Animation de fondu appliquée au contenu */}
        <Animated.View style={[styles.container, { opacity: fadeAnim }]}>
-         {/* Header avec Infos Joueur et Countdown */}
          <View style={styles.header}>
-           {/* S'assurer que user n'est pas null avant de rendre UserInfo */}
            {user && (
               <UserInfo
                 ref={userInfoRef}
@@ -451,14 +368,12 @@ function GameContentA({
               />
            )}
            <View style={styles.countdownContainer}>
-             {/* Condition pour activer le Countdown */}
              <Countdown
                 timeLeft={timeLeft}
                 isActive={!isLevelPaused && isImageLoaded && !!user && !!previousEvent && !!displayedEvent && !isGameOver && !showLevelModal}
              />
            </View>
 
-           {/* Animation de Récompense */}
            {currentReward && isRewardPositionSet && (
              <RewardAnimation
                type={currentReward.type}
@@ -469,7 +384,6 @@ function GameContentA({
            )}
          </View>
 
-         {/* Contenu Principal (Événements, Modals, Offre de Pub) */}
          <Animated.View style={[styles.content, { opacity: contentOpacity }]}>
            {renderContent()}
          </Animated.View>
@@ -479,12 +393,7 @@ function GameContentA({
 }
 
 // --- Styles ---
-// (Styles existants, ajout d'un style pour le bouton d'erreur)
 const styles = StyleSheet.create({
-  // safeArea: { // Déplacé au parent
-  //   flex: 1,
-  //   backgroundColor: 'transparent',
-  // },
   container: {
     flex: 1,
     backgroundColor: 'transparent',
@@ -494,8 +403,8 @@ const styles = StyleSheet.create({
     flexDirection: 'row',
     justifyContent: 'space-between',
     alignItems: 'center',
-    backgroundColor: 'rgba(250, 245, 235, 0.85)', // beige doux transparent
-    borderBottomColor: 'rgba(0, 0, 0, 0.05)', // ligne légère pour différencier
+    backgroundColor: 'rgba(250, 245, 235, 0.85)',
+    borderBottomColor: 'rgba(0, 0, 0, 0.05)',
     zIndex: 1000,
     paddingHorizontal: 15,
     paddingVertical: Platform.OS === 'android' ? 8 : 10,
@@ -536,7 +445,7 @@ const styles = StyleSheet.create({
     padding: 20,
     borderRadius: 10,
     overflow: 'hidden',
-    marginBottom: 20, // Espace avant le bouton
+    marginBottom: 20,
   },
   errorButton: {
       backgroundColor: colors.white,

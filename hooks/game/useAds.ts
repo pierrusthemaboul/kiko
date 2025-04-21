@@ -11,11 +11,9 @@ import { FirebaseAnalytics } from '../../lib/firebase';
 import { MAX_LIVES, User, Event, RewardType } from '../types';
 
 // --- Configuration ---
-// Mettre à true pour utiliser les ID de test pendant le développement
 const USE_TEST_IDS = __DEV__; // Utilise la variable globale de Metro Bundler
 
 // --- Création d'instances (au niveau supérieur) ---
-// Utilise les ID de test si USE_TEST_IDS est true, sinon les ID réels
 const genericInterstitial = InterstitialAd.createForAdRequest(
   USE_TEST_IDS ? TestIds.INTERSTITIAL : getAdUnitId('INTERSTITIAL_GENERIC'),
   { requestNonPersonalizedAdsOnly: true }
@@ -43,41 +41,34 @@ interface AdState {
   levelUpInterstitialLoaded: boolean;
   rewardedLoaded: boolean;
   lastInterstitialTime: number;
-  hasWatchedRewardedAd: boolean; // A-t-il regardé une pub récompensée DANS CETTE PARTIE ?
+  hasWatchedRewardedAd: boolean;
 }
 
-// Interface pour les props attendues par le hook
 interface UseAdsProps {
-  // Données utilisateur et jeu
   user: User;
   previousEvent: Event | null;
   allEvents: Event[] | null;
   pendingAdDisplay?: "interstitial" | "rewarded" | "gameOver" | "levelUp" | null;
-  
-  // Setters pour modifier l'état du jeu
   setUser: (updater: (prev: User) => User) => void;
-  resetTimer: (time?: number, skipNextMalus?: boolean) => void; // Ajout du paramètre skipNextMalus
+  resetTimer: (time?: number, skipNextMalus?: boolean) => void;
   setIsGameOver: (isGameOver: boolean) => void;
   setIsLevelPaused: (isPaused: boolean) => void;
   setIsWaitingForCountdown: (isWaiting: boolean) => void;
   setError?: (error: string) => void;
   setPendingAdDisplay?: (display: "interstitial" | "rewarded" | "gameOver" | "levelUp" | null) => void;
-
-  // Fonction pour sélectionner un nouvel événement
   selectNewEvent: (events: Event[], referenceEvent: Event | null) => Promise<Event | null>;
+  // --- AJOUT DU CALLBACK ---
+  onLevelUpAdClosed?: () => void;
 }
 
 /**
  * Hook pour gérer les publicités dans le jeu (interstitiels et récompensées).
  */
 export function useAds({
-  // Données utilisateur et jeu
   user,
   previousEvent,
   allEvents,
   pendingAdDisplay,
-  
-  // Setters
   setUser,
   resetTimer,
   setIsGameOver,
@@ -85,9 +76,9 @@ export function useAds({
   setIsWaitingForCountdown,
   setError,
   setPendingAdDisplay,
-  
-  // Fonction de sélection d'événement
-  selectNewEvent
+  selectNewEvent,
+  // --- RÉCUPÉRATION DU CALLBACK ---
+  onLevelUpAdClosed
 }: UseAdsProps) {
 
   const [adState, setAdState] = useState<AdState>({
@@ -101,8 +92,6 @@ export function useAds({
 
   // --- Gestion des Événements Publicitaires ---
   useEffect(() => {
-    console.log('[useAds] Initializing ad listeners...');
-
     // Fonction pour obtenir le niveau actuel pour les logs
     const getCurrentLevelForLog = (): number => {
         return user?.level || 0;
@@ -110,86 +99,82 @@ export function useAds({
 
     // --- Generic Interstitial Listeners ---
     const unsubGenericLoaded = genericInterstitial.addAdEventListener(AdEventType.LOADED, () => {
-      console.log('[useAds] Generic Interstitial Loaded');
       setAdState(prev => ({ ...prev, interstitialLoaded: true }));
       FirebaseAnalytics.ad('interstitial', 'loaded', 'generic', getCurrentLevelForLog());
     });
-    
+
     const unsubGenericError = genericInterstitial.addAdEventListener(AdEventType.ERROR, error => {
-      console.error('[useAds] Generic Interstitial Load Error:', error);
       setAdState(prev => ({ ...prev, interstitialLoaded: false }));
       FirebaseAnalytics.ad('interstitial', 'failed', 'generic', getCurrentLevelForLog());
       FirebaseAnalytics.error('ad_load_error', `Generic Interstitial: ${error.message}`, 'useAds');
-      setTimeout(() => genericInterstitial.load(), 15000); // Délai plus long pour éviter spam
+      setTimeout(() => genericInterstitial.load(), 15000);
     });
-    
+
     const unsubGenericOpened = genericInterstitial.addAdEventListener(AdEventType.OPENED, () => {
-        console.log('[useAds] Generic Interstitial Opened');
-        setIsLevelPaused(true); // Mettre en pause quand la pub s'ouvre
+        setIsLevelPaused(true);
         FirebaseAnalytics.ad('interstitial', 'opened', 'generic', getCurrentLevelForLog());
     });
-    
+
     const unsubGenericClosed = genericInterstitial.addAdEventListener(AdEventType.CLOSED, () => {
-      console.log('[useAds] Generic Interstitial Closed');
-      setIsLevelPaused(false); // Reprendre le jeu
-      genericInterstitial.load(); // Recharger pour la prochaine fois
+      // Pour les pubs génériques, on peut probablement garder la reprise ici si c'est le comportement souhaité
+      setIsLevelPaused(false);
+      genericInterstitial.load();
       setAdState(prev => ({ ...prev, interstitialLoaded: false, lastInterstitialTime: Date.now() }));
-      resetTimer(20); // Réinitialiser le timer
+      resetTimer(20);
       FirebaseAnalytics.ad('interstitial', 'closed', 'generic', getCurrentLevelForLog());
     });
 
     // --- LevelUp Interstitial Listeners ---
     const unsubLevelUpLoaded = levelUpInterstitial.addAdEventListener(AdEventType.LOADED, () => {
-        console.log('[useAds] LevelUp Interstitial Loaded');
         setAdState(prev => ({ ...prev, levelUpInterstitialLoaded: true }));
         FirebaseAnalytics.ad('interstitial', 'loaded', 'level_up', getCurrentLevelForLog());
     });
-    
+
     const unsubLevelUpError = levelUpInterstitial.addAdEventListener(AdEventType.ERROR, error => {
-        console.error('[useAds] LevelUp Interstitial Load Error:', error);
         setAdState(prev => ({ ...prev, levelUpInterstitialLoaded: false }));
         FirebaseAnalytics.ad('interstitial', 'failed', 'level_up', getCurrentLevelForLog());
         FirebaseAnalytics.error('ad_load_error', `LevelUp Interstitial: ${error.message}`, 'useAds');
         setTimeout(() => levelUpInterstitial.load(), 15000);
     });
-    
+
     const unsubLevelUpOpened = levelUpInterstitial.addAdEventListener(AdEventType.OPENED, () => {
-        console.log('[useAds] LevelUp Interstitial Opened');
-        setIsLevelPaused(true); // Mettre en pause
+        setIsLevelPaused(true); // <-- Pause quand la pub s'ouvre
         FirebaseAnalytics.ad('interstitial', 'opened', 'level_up', getCurrentLevelForLog());
     });
-    
+
     const unsubLevelUpClosed = levelUpInterstitial.addAdEventListener(AdEventType.CLOSED, () => {
-        console.log('[useAds] LevelUp Interstitial Closed');
-        setIsLevelPaused(false); // Reprendre
+        console.log("[useAds] LevelUp Ad Closed - Calling onLevelUpAdClosed callback if provided."); // Log ajouté
+        // NE PAS retirer la pause ici
+        // NE PAS reset le timer ici
         levelUpInterstitial.load();
         setAdState(prev => ({ ...prev, levelUpInterstitialLoaded: false, lastInterstitialTime: Date.now() }));
-        resetTimer(20);
         FirebaseAnalytics.ad('interstitial', 'closed', 'level_up', getCurrentLevelForLog());
+        // --- APPEL DU CALLBACK ---
+        if (onLevelUpAdClosed) {
+          onLevelUpAdClosed();
+        }
     });
 
     // --- GameOver Interstitial Listeners ---
     const unsubGameOverLoaded = gameOverInterstitial.addAdEventListener(AdEventType.LOADED, () => {
-        console.log('[useAds] GameOver Interstitial Loaded');
         setAdState(prev => ({ ...prev, gameOverInterstitialLoaded: true }));
         FirebaseAnalytics.ad('interstitial', 'loaded', 'game_over', getCurrentLevelForLog());
     });
-    
+
     const unsubGameOverError = gameOverInterstitial.addAdEventListener(AdEventType.ERROR, error => {
-        console.error('[useAds] GameOver Interstitial Load Error:', error);
         setAdState(prev => ({ ...prev, gameOverInterstitialLoaded: false }));
         FirebaseAnalytics.ad('interstitial', 'failed', 'game_over', getCurrentLevelForLog());
         FirebaseAnalytics.error('ad_load_error', `GameOver Interstitial: ${error.message}`, 'useAds');
         setTimeout(() => gameOverInterstitial.load(), 15000);
     });
-    
+
     const unsubGameOverOpened = gameOverInterstitial.addAdEventListener(AdEventType.OPENED, () => {
-        console.log('[useAds] GameOver Interstitial Opened');
+         // Pas besoin de mettre en pause ici, endGame le fait déjà
         FirebaseAnalytics.ad('interstitial', 'opened', 'game_over', getCurrentLevelForLog());
     });
-    
+
     const unsubGameOverClosed = gameOverInterstitial.addAdEventListener(AdEventType.CLOSED, () => {
-        console.log('[useAds] GameOver Interstitial Closed');
+        // Pas besoin de retirer la pause ici, le jeu est terminé
         gameOverInterstitial.load();
         setAdState(prev => ({ ...prev, gameOverInterstitialLoaded: false, lastInterstitialTime: Date.now() }));
         FirebaseAnalytics.ad('interstitial', 'closed', 'game_over', getCurrentLevelForLog());
@@ -197,90 +182,70 @@ export function useAds({
 
     // --- Rewarded Ad Listeners ---
     const unsubRewardedLoaded = rewardedAd.addAdEventListener(RewardedAdEventType.LOADED, () => {
-      console.log('[useAds] Rewarded Ad Loaded');
       setAdState(prev => ({ ...prev, rewardedLoaded: true }));
       FirebaseAnalytics.ad('rewarded', 'loaded', 'extra_life', getCurrentLevelForLog());
     });
-    
+
     const unsubRewardedError = rewardedAd.addAdEventListener(AdEventType.ERROR, error => {
-      console.error('[useAds] Rewarded Ad Load Error:', error);
       setAdState(prev => ({ ...prev, rewardedLoaded: false }));
       FirebaseAnalytics.ad('rewarded', 'failed', 'extra_life', getCurrentLevelForLog());
       FirebaseAnalytics.error('ad_load_error', `Rewarded Ad: ${error.message}`, 'useAds');
       setTimeout(() => rewardedAd.load(), 15000);
     });
-    
+
     const unsubRewardedOpened = rewardedAd.addAdEventListener(AdEventType.OPENED, () => {
-        console.log('[useAds] Rewarded Ad Opened');
-        setIsLevelPaused(true); // Mettre en pause pendant l'affichage
+        setIsLevelPaused(true); // <-- Pause quand la pub s'ouvre
         FirebaseAnalytics.ad('rewarded', 'opened', 'extra_life', getCurrentLevelForLog());
     });
-    
+
     const unsubRewardedClosed = rewardedAd.addAdEventListener(AdEventType.CLOSED, () => {
-      console.log('[useAds] Rewarded Ad Closed');
-      // Si la pub est fermée SANS avoir donné de récompense
-      // On reprend le jeu et on réinitialise le timer.
-      setIsLevelPaused(false);
+      // Si fermée SANS obtenir la récompense
+      // On doit vérifier si la récompense a été donnée (via un flag peut-être) ou simplement retirer la pause
+      // Pour l'instant, on retire la pause, mais la logique EARNED_REWARD prévaut si elle est appelée.
+      setIsLevelPaused(false); // <-- A vérifier si c'est le comportement voulu si fermée tôt
       resetTimer(20);
-      
-      rewardedAd.load(); // Recharger pour la prochaine fois
+      rewardedAd.load();
       setAdState(prev => ({ ...prev, rewardedLoaded: false }));
       FirebaseAnalytics.ad('rewarded', 'closed', 'extra_life', getCurrentLevelForLog());
     });
 
     // --- Callback quand la récompense est obtenue ---
     const unsubRewardedEarned = rewardedAd.addAdEventListener(RewardedAdEventType.EARNED_REWARD, reward => {
-      console.log(`[useAds] Rewarded Ad Earned Reward: ${JSON.stringify(reward)}`);
-
-      // Détermine si la récompense doit donner une vie
       const shouldGrantLife = reward?.type === RewardType.EXTRA_LIFE || reward?.type === 'coins';
-      console.log(`[useAds] Should grant life based on reward type? ${shouldGrantLife}`);
 
-      // Marquer explicitement que le jeu n'est plus en état de "Game Over"
-      // avant d'ajouter la vie - CORRECTION CRUCIAL ICI
       if (shouldGrantLife) {
-        setIsGameOver(false); // Annuler l'état de Game Over avant de donner la vie
+        setIsGameOver(false); // Annuler l'état de Game Over AVANT de donner la vie
       }
 
-      // Utilise une fonction async pour garantir l'ordre et les délais
       const continueGameAfterReward = async () => {
-        console.log('[useAds] Applying reward and continuing game (async)...');
         const currentLevel = user?.level || 0;
         const currentPoints = user?.points || 0;
 
-        // 1. METTRE À JOUR L'ÉTAT USER (vie) EN PREMIER
-        console.log(`[useAds] Attempting to update user state...`);
+        // 1. Mettre à jour l'état USER (vie)
         try {
             await new Promise<void>((resolve) => {
                 setUser(prevUser => {
                     const currentLives = prevUser.lives;
                     const livesToAdd = shouldGrantLife ? 1 : 0;
-                    console.log(`[useAds] SETTER: Adding ${livesToAdd} life to ${currentLives} lives.`);
-
                     return {
                         ...prevUser,
                         lives: Math.min(currentLives + livesToAdd, MAX_LIVES),
                     };
                 });
-                // Délai pour laisser React traiter la mise à jour
-                setTimeout(resolve, 100);
+                setTimeout(resolve, 100); // Laisser le temps à React de traiter
             });
-            console.log(`[useAds] User state update processed.`);
-
         } catch(updateError) {
-            console.error("[useAds] Failed to update user state:", updateError);
             if (setError) setError("Erreur lors de l'application de la récompense.");
-            setIsLevelPaused(false); // Libérer la pause
-            return; // Arrêter ici
+            setIsLevelPaused(false);
+            return; // Ne pas continuer
         }
 
-        // 2. Mettre à jour l'état local AdMob
+        // 2. Mettre à jour l'état AdMob
         setAdState(prev => ({ ...prev, hasWatchedRewardedAd: true, rewardedLoaded: false }));
 
         // 3. Mettre à jour l'état du jeu
-        console.log(`[useAds] Setting isLevelPaused=false`);
-        setIsLevelPaused(false); // Reprend le jeu
-        setIsWaitingForCountdown(false); // Assure qu'on n'attend pas
+        setIsLevelPaused(false); // <-- Reprise ici DANS le flux récompensé
+        setIsWaitingForCountdown(false);
 
         // 4. Log Analytics
         FirebaseAnalytics.ad('rewarded', 'earned_reward', 'extra_life', currentLevel);
@@ -290,57 +255,44 @@ export function useAds({
              FirebaseAnalytics.reward(reward?.type || 'unknown', reward?.amount || 0, 'ad_reward_unexpected', 'completed', currentLevel, currentPoints);
         }
 
-        // 5. Réinitialiser le timer avec skipNextMalus=true pour éviter le malus de temps
-        console.log(`[useAds] Resetting timer with skipNextMalus=true to avoid time penalty`);
-        resetTimer(20, true);  // MODIFICATION ICI: ajout du paramètre skipNextMalus=true
+        // 5. Réinitialiser le timer sans malus
+        resetTimer(20, true);
 
         // 6. Déclencher la sélection du nouvel événement
-        console.log(`[useAds] Triggering new event selection with ref: ${previousEvent?.id}`);
         try {
           if (!allEvents || !previousEvent) {
-            throw new Error("Missing required data for event selection");
+            throw new Error("Missing required data for event selection after reward");
           }
-          
           const result = await selectNewEvent(allEvents, previousEvent);
-          
           if (result === null) {
-             console.error("[useAds] selectNewEvent failed after reward.");
              throw new Error("Failed to select next event after reward.");
           }
-          console.log("[useAds] Game resumed successfully after reward.");
         } catch (err) {
-          // Erreur critique pendant la reprise
-          console.error("[useAds] Error resuming game after rewarded ad:", err);
-          setIsGameOver(true); // Remettre en Game Over
-          setIsLevelPaused(true); // Garder en pause
+          setIsGameOver(true);
+          setIsLevelPaused(true);
           if (setError) setError('Erreur lors de la reprise du jeu après la publicité.');
           FirebaseAnalytics.error('rewarded_resume_error', err instanceof Error ? err.message : 'Unknown error', 'useAds:EARNED_REWARD');
         }
       };
 
-      // Exécuter la fonction de reprise après récompense
       continueGameAfterReward();
     });
 
     // --- Chargement initial des publicités ---
-    console.log('[useAds] Loading initial ads...');
     if (!genericInterstitial.loaded) genericInterstitial.load();
     if (!levelUpInterstitial.loaded) levelUpInterstitial.load();
     if (!gameOverInterstitial.loaded) gameOverInterstitial.load();
     if (!rewardedAd.loaded) rewardedAd.load();
 
-    // --- Fonction de nettoyage (désabonnements) ---
+    // --- Fonction de nettoyage ---
     return () => {
-      console.log('[useAds] Cleaning up ad listeners...');
-      // Interstitiels
       unsubGenericLoaded(); unsubGenericError(); unsubGenericOpened(); unsubGenericClosed();
       unsubLevelUpLoaded(); unsubLevelUpError(); unsubLevelUpOpened(); unsubLevelUpClosed();
       unsubGameOverLoaded(); unsubGameOverError(); unsubGameOverOpened(); unsubGameOverClosed();
-      // Récompensée
       unsubRewardedLoaded(); unsubRewardedError(); unsubRewardedOpened(); unsubRewardedClosed(); unsubRewardedEarned();
     };
   }, [
-    user,
+    user, // Inclure user directement ici pour getCurrentLevelForLog
     previousEvent,
     allEvents,
     setUser,
@@ -349,53 +301,42 @@ export function useAds({
     setIsLevelPaused,
     setIsWaitingForCountdown,
     setError,
-    selectNewEvent
+    selectNewEvent,
+    // --- AJOUT DE LA DÉPENDANCE ---
+    onLevelUpAdClosed
+    // Ne pas inclure adState ici pour éviter les re-créations de listeners inutiles
   ]);
 
   // --- Fonctions pour afficher les publicités ---
 
-  // Vérifie si un interstitiel peut être montré
   const canShowAd = useCallback(() => {
-    const canShow = Date.now() - adState.lastInterstitialTime >= 3 * 60 * 1000;
-    if (!canShow) {
-        console.log(`[useAds] Interstitial blocked: Too soon since last ad (last: ${adState.lastInterstitialTime}, now: ${Date.now()})`);
-    }
-    return canShow;
+    return Date.now() - adState.lastInterstitialTime >= 3 * 60 * 1000;
   }, [adState.lastInterstitialTime]);
 
-  // Affiche la pub récompensée si possible
   const showRewardedAd = useCallback(() => {
     const currentLevel = user?.level || 0;
-
     if (adState.hasWatchedRewardedAd) {
-      console.log('[useAds] Rewarded ad blocked: Already watched in this session.');
       FirebaseAnalytics.ad('rewarded', 'blocked', 'already_watched', currentLevel);
       return false;
     }
-
     try {
       if (adState.rewardedLoaded) {
-        console.log('[useAds] Showing Rewarded Ad...');
         FirebaseAnalytics.ad('rewarded', 'triggered', 'user_request_extra_life', currentLevel);
         rewardedAd.show();
-        return true; // Tentative faite
+        return true;
       } else {
-        console.log('[useAds] Rewarded ad requested but not loaded.');
         FirebaseAnalytics.ad('rewarded', 'not_available', 'user_request_extra_life', currentLevel);
-        // Tenter de recharger explicitement si non chargé
         rewardedAd.load();
         return false;
       }
     } catch (error) {
-      console.error('[useAds] Error trying to show Rewarded Ad:', error);
       FirebaseAnalytics.ad('rewarded', 'error_show', 'user_request_extra_life', currentLevel);
       FirebaseAnalytics.error('ad_show_error', `Rewarded Ad: ${error instanceof Error ? error.message : 'Unknown error'}`, 'useAds');
-      rewardedAd.load(); // Recharger après erreur
+      rewardedAd.load();
       return false;
     }
   }, [adState.rewardedLoaded, adState.hasWatchedRewardedAd, user?.level]);
 
-  // Affiche l'interstitiel générique
   const showGenericInterstitial = useCallback(() => {
     const currentLevel = user?.level || 0;
     if (!canShowAd()) {
@@ -404,18 +345,15 @@ export function useAds({
     }
     try {
       if (adState.interstitialLoaded) {
-        console.log('[useAds] Showing Generic Interstitial...');
         FirebaseAnalytics.ad('interstitial', 'triggered', 'generic', currentLevel);
         genericInterstitial.show();
         return true;
       } else {
-        console.log('[useAds] Generic Interstitial requested but not loaded.');
         FirebaseAnalytics.ad('interstitial', 'not_available', 'generic', currentLevel);
         genericInterstitial.load();
         return false;
       }
     } catch (error) {
-      console.error('[useAds] Error trying to show Generic Interstitial:', error);
       FirebaseAnalytics.ad('interstitial', 'error_show', 'generic', currentLevel);
       FirebaseAnalytics.error('ad_show_error', `Generic Interstitial: ${error instanceof Error ? error.message : 'Unknown error'}`, 'useAds');
       genericInterstitial.load();
@@ -423,7 +361,6 @@ export function useAds({
     }
   }, [adState.interstitialLoaded, canShowAd, user?.level]);
 
- // Affiche l'interstitiel de level up (avec fallback générique)
  const showLevelUpInterstitial = useCallback(() => {
   const currentLevel = user?.level || 0;
   if (!canShowAd()) {
@@ -432,23 +369,19 @@ export function useAds({
   }
   try {
     if (adState.levelUpInterstitialLoaded) {
-      console.log('[useAds] Showing LevelUp Interstitial...');
       FirebaseAnalytics.ad('interstitial', 'triggered', 'level_up', currentLevel);
       levelUpInterstitial.show();
       return true;
     } else if (adState.interstitialLoaded) {
-      console.log('[useAds] LevelUp Interstitial not loaded, falling back to Generic...');
       FirebaseAnalytics.ad('interstitial', 'triggered', 'level_up_fallback', currentLevel);
       genericInterstitial.show();
       return true;
     } else {
-      console.log('[useAds] LevelUp/Generic Interstitial requested but none loaded.');
       FirebaseAnalytics.ad('interstitial', 'not_available', 'level_up', currentLevel);
-      levelUpInterstitial.load(); genericInterstitial.load(); // Tenter de recharger les deux
+      levelUpInterstitial.load(); genericInterstitial.load();
       return false;
     }
   } catch (error) {
-    console.error('[useAds] Error trying to show LevelUp/Generic Interstitial:', error);
     FirebaseAnalytics.ad('interstitial', 'error_show', 'level_up', currentLevel);
     FirebaseAnalytics.error('ad_show_error', `LevelUp/Generic Interstitial: ${error instanceof Error ? error.message : 'Unknown error'}`, 'useAds');
     if (adState.levelUpInterstitialLoaded) levelUpInterstitial.load(); else genericInterstitial.load();
@@ -456,29 +389,24 @@ export function useAds({
   }
 }, [adState.levelUpInterstitialLoaded, adState.interstitialLoaded, canShowAd, user?.level]);
 
-// Affiche l'interstitiel de game over (avec fallback générique)
 const showGameOverInterstitial = useCallback(() => {
   const currentLevel = user?.level || 0;
-  // Pour le Game Over, on n'applique pas le rate limit
+  // Pas de rate limit pour Game Over
   try {
     if (adState.gameOverInterstitialLoaded) {
-      console.log('[useAds] Showing GameOver Interstitial...');
       FirebaseAnalytics.ad('interstitial', 'triggered', 'game_over', currentLevel);
       gameOverInterstitial.show();
       return true;
     } else if (adState.interstitialLoaded) {
-      console.log('[useAds] GameOver Interstitial not loaded, falling back to Generic...');
       FirebaseAnalytics.ad('interstitial', 'triggered', 'game_over_fallback', currentLevel);
       genericInterstitial.show();
       return true;
     } else {
-      console.log('[useAds] GameOver/Generic Interstitial requested but none loaded.');
       FirebaseAnalytics.ad('interstitial', 'not_available', 'game_over', currentLevel);
       gameOverInterstitial.load(); genericInterstitial.load();
       return false;
     }
   } catch (error) {
-    console.error('[useAds] Error trying to show GameOver/Generic Interstitial:', error);
     FirebaseAnalytics.ad('interstitial', 'error_show', 'game_over', currentLevel);
     FirebaseAnalytics.error('ad_show_error', `GameOver/Generic Interstitial: ${error instanceof Error ? error.message : 'Unknown error'}`, 'useAds');
     if (adState.gameOverInterstitialLoaded) gameOverInterstitial.load(); else genericInterstitial.load();
@@ -489,53 +417,53 @@ const showGameOverInterstitial = useCallback(() => {
 // Pour gérer pendingAdDisplay
 useEffect(() => {
   if (pendingAdDisplay && setPendingAdDisplay) {
-    if (pendingAdDisplay === 'levelUp' && canShowAd()) {
-      showLevelUpInterstitial();
-      setPendingAdDisplay(null);
-    } else if (pendingAdDisplay === 'gameOver' && canShowAd()) {
-      showGameOverInterstitial();
-      setPendingAdDisplay(null);
-    } else if (pendingAdDisplay === 'interstitial' && canShowAd()) {
-      showGenericInterstitial();
-      setPendingAdDisplay(null);
+    let adShown = false;
+    if (pendingAdDisplay === 'levelUp') {
+        adShown = showLevelUpInterstitial(); // Appelle directement la fonction qui gère le fallback et le canShowAd
+    } else if (pendingAdDisplay === 'gameOver') {
+        adShown = showGameOverInterstitial(); // Appelle la fonction qui gère le fallback (pas de canShowAd ici)
+    } else if (pendingAdDisplay === 'interstitial') {
+        adShown = showGenericInterstitial(); // Appelle la fonction qui gère le canShowAd
     } else if (pendingAdDisplay === 'rewarded') {
-      showRewardedAd();
-      setPendingAdDisplay(null);
+        adShown = showRewardedAd(); // Appelle la fonction qui gère la vérification 'hasWatched' etc.
     }
+
+    if (adShown || pendingAdDisplay === 'rewarded') { // Pour rewarded, on reset même si la pub n'est pas montrée (ex: pas chargée)
+        setPendingAdDisplay(null);
+    }
+    // Si une pub interstitielle n'a pas été montrée à cause du rate limit, pendingAdDisplay restera actif
+    // jusqu'à ce que la condition change ou qu'un autre déclencheur le modifie.
   }
 }, [
   pendingAdDisplay,
   setPendingAdDisplay,
-  canShowAd,
   showLevelUpInterstitial,
   showGameOverInterstitial,
   showGenericInterstitial,
   showRewardedAd
 ]);
 
-// --- Fonction pour réinitialiser l'état pour une nouvelle partie ---
+
 const resetAdsState = useCallback(() => {
-  console.log('[useAds] Resetting ad session state (hasWatchedRewardedAd).');
   setAdState(prev => ({
     ...prev,
-    hasWatchedRewardedAd: false, // Permet de revoir une pub récompensée
+    hasWatchedRewardedAd: false,
   }));
-  // Relancer le chargement des pubs
+  // Relancer le chargement si nécessaire
   if (!genericInterstitial.loaded) genericInterstitial.load();
   if (!levelUpInterstitial.loaded) levelUpInterstitial.load();
   if (!gameOverInterstitial.loaded) gameOverInterstitial.load();
   if (!rewardedAd.loaded) rewardedAd.load();
 }, []);
 
-// --- Retour du Hook ---
 return {
-  adState, // État complet pour debugging
-  canShowAd, // Utile pour vérifier avant de déclencher une pub
+  adState, // Gardé pour fournir l'état détaillé si besoin ailleurs
+  canShowAd,
   showRewardedAd,
   showGenericInterstitial,
   showLevelUpInterstitial,
   showGameOverInterstitial,
-  resetAdsState, // Pour réinitialiser entre les parties
+  resetAdsState,
 };
 }
 
