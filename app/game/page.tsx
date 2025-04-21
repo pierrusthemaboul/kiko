@@ -1,3 +1,5 @@
+// /home/pierre/sword/kiko/app/(tabs)/page.tsx (ou le chemin correct de votre page)
+
 import React, { useEffect, useRef, useCallback, useState } from 'react';
 import {
   StyleSheet,
@@ -20,7 +22,9 @@ import GameContentA from "../../components/game/GameContentA"; // Vérifie le ch
 import { useGameLogicA } from '@/hooks/useGameLogicA'; // Vérifie le chemin
 
 // Libs
-import * as FirebaseAnalytics from '@/lib/firebase'; // Vérifie le chemin
+// --- CORRECTION DE L'IMPORT ---
+// Utilise l'importation nommée pour obtenir l'objet FirebaseAnalytics exporté
+import { FirebaseAnalytics } from '@/lib/firebase'; // Vérifie le chemin
 
 export default function GamePage() {
   const router = useRouter();
@@ -28,17 +32,21 @@ export default function GamePage() {
   const [gameKey, setGameKey] = useState(0);
   const [isRestarting, setIsRestarting] = useState(false);
 
-  const gameLogic = useGameLogicA('');
+  const gameLogic = useGameLogicA(''); // Assure-toi que '' est le paramètre attendu si nécessaire
 
   useFocusEffect(
     useCallback(() => {
       try {
+        // Cet appel devrait maintenant fonctionner correctement
         FirebaseAnalytics.screen('GameScreen', 'GamePage');
       } catch (error) {
         console.error("Erreur lors de l'appel à FirebaseAnalytics.screen :", error);
+        // Optionnel : Tu pourrais aussi tracker cette erreur avec Firebase si besoin
+        // FirebaseAnalytics.error('analytics_call_failed', `Error calling screen: ${error.message}`, 'GamePage');
       }
+      // La fonction de nettoyage est correcte
       return () => {};
-    }, [])
+    }, []) // Pas de dépendances nécessaires ici car FirebaseAnalytics et les strings sont stables
   );
 
   // Fonction pour relancer sur la MÊME page (gardée pour référence)
@@ -56,8 +64,8 @@ export default function GamePage() {
     setGameKey(prevKey => prevKey + 1);
     fadeAnim.setValue(0);
     Animated.timing(fadeAnim, { toValue: 1, duration: 500, useNativeDriver: true }).start();
-    setTimeout(() => setIsRestarting(false), 150);
-  }, [gameLogic.initGame, fadeAnim]);
+    setTimeout(() => setIsRestarting(false), 150); // Court délai pour laisser le rendu se faire
+  }, [gameLogic.initGame, fadeAnim]); // S'assurer que gameLogic.initGame est stable ou inclus
 
 
   // Fonction pour naviguer vers vue1 (utilisée pour "Rejouer" / "Menu")
@@ -65,22 +73,29 @@ export default function GamePage() {
     // (Logique inchangée)
     console.log("[GamePage] 'Rejouer'/'Menu' clicked: Navigating to /vue1");
     try {
+       // Utilise replace pour éviter d'empiler les écrans de jeu dans l'historique
        router.replace('/vue1');
     } catch (e) {
       console.error("[GamePage] Error navigating to /vue1:", e);
     }
-  }, [router]);
+  }, [router]); // router est généralement stable
 
   useEffect(() => {
-    // (Logique inchangée)
+    // Animation d'entrée initiale ou après redémarrage
     fadeAnim.setValue(0);
     Animated.timing(fadeAnim, { toValue: 1, duration: 500, useNativeDriver: true }).start();
-  }, [gameKey, fadeAnim]);
+  }, [gameKey, fadeAnim]); // Déclenché par gameKey pour le redémarrage
 
+  // Condition pour afficher l'indicateur de chargement
+  // - Au premier chargement (gameKey === 0) pendant que gameLogic charge
+  // - Pendant le redémarrage manuel (isRestarting)
   const showLoadingIndicator = (gameKey === 0 && gameLogic.loading) || isRestarting;
 
-  // --- Vérification de chargement (inchangée) ---
+  // --- Vérification de chargement plus robuste ---
+  // S'assurer que les données essentielles sont là avant de tenter le rendu du jeu
   if (showLoadingIndicator || !gameLogic || !gameLogic.user || !gameLogic.currentLevelConfig || !gameLogic.adState) {
+     // Log pour débogage si nécessaire
+     // console.log("GamePage Loading State:", { showLoadingIndicator, gameLogicExists: !!gameLogic, userExists: !!gameLogic?.user, configExists: !!gameLogic?.currentLevelConfig, adStateExists: !!gameLogic?.adState });
      return (
        <View style={[styles.fullScreenContainer, styles.loadingContainer]}>
          <StatusBar translucent backgroundColor="transparent" barStyle="light-content" />
@@ -93,38 +108,35 @@ export default function GamePage() {
   return (
     <View style={styles.fullScreenContainer}>
       <ImageBackground
-        source={require('../../assets/images/quipasse3.png')}
+        source={require('../../assets/images/quipasse3.png')} // Vérifie le chemin de l'image
         style={styles.backgroundImage}
         resizeMode="cover"
       >
         <StatusBar translucent backgroundColor="transparent" barStyle="light-content" />
 
-        {/* ========== MODIFICATION POUR LE LAYOUT ========== */}
-        {/* Ajoute 'top' aux edges pour prendre en compte la barre de statut */}
+        {/* Utilisation de SafeAreaView pour gérer les encoches et barres système */}
         <SafeAreaView style={styles.container} edges={['top', 'bottom']}>
-          {/* ================================================= */}
+          {/* GameContentA reçoit toutes les props nécessaires depuis useGameLogicA */}
           <GameContentA
-            key={gameKey}
-            // Props passées (inchangées par rapport à la version précédente demandée)
+            key={gameKey} // Force le re-rendu complet lors du redémarrage
             user={gameLogic.user}
             previousEvent={gameLogic.previousEvent}
-            // newEvent={gameLogic.newEvent} // Moins utile maintenant
             displayedEvent={gameLogic.displayedEvent}
             timeLeft={gameLogic.timeLeft}
-            // loading={false} // Géré au dessus
             error={gameLogic.error}
             isGameOver={gameLogic.isGameOver}
-            leaderboardsReady={gameLogic.leaderboardsReady} // Ajouté précédemment
+            leaderboardsReady={gameLogic.leaderboardsReady}
             showDates={gameLogic.showDates}
             isCorrect={gameLogic.isCorrect}
             isImageLoaded={gameLogic.isImageLoaded}
             handleChoice={gameLogic.handleChoice}
             handleImageLoad={gameLogic.onImageLoad}
-            handleRestartOrClose={handleNavigateToVue1} // Renommé précédemment
+            // Utilise la navigation vers vue1 pour rejouer/menu
+            handleRestartOrClose={handleNavigateToVue1}
             streak={gameLogic.streak}
             highScore={gameLogic.highScore}
             level={gameLogic.user.level}
-            fadeAnim={fadeAnim}
+            fadeAnim={fadeAnim} // Passe l'animation pour le contenu
             showLevelModal={gameLogic.showLevelModal}
             isLevelPaused={gameLogic.isLevelPaused}
             handleLevelUp={gameLogic.handleLevelUp}
@@ -136,7 +148,7 @@ export default function GamePage() {
             updateRewardPosition={gameLogic.updateRewardPosition}
             levelsHistory={gameLogic.levelsHistory}
             showRewardedAd={gameLogic.showRewardedAd}
-            adState={gameLogic.adState} // Ajouté précédemment
+            adState={gameLogic.adState}
           />
         </SafeAreaView>
       </ImageBackground>
@@ -154,12 +166,12 @@ const styles = StyleSheet.create({
   },
   container: {
     flex: 1,
-    backgroundColor: 'transparent',
+    backgroundColor: 'transparent', // Important pour voir le fond d'écran
   },
   loadingContainer: {
     flex: 1,
     justifyContent: 'center',
     alignItems: 'center',
-    backgroundColor: 'rgba(0, 0, 0, 0.7)',
+    backgroundColor: 'rgba(0, 0, 0, 0.7)', // Fond semi-transparent pour le chargement
   },
 });

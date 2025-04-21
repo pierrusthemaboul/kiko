@@ -12,16 +12,16 @@ export function useTimer({
   isLevelPaused,
   isGameOver,
   handleTimeout,
-  isImageLoaded: initialImageLoaded = false
+  isImageLoaded: initialImageLoaded = false,
+  isFromRewardedAd = false
 }: {
   user: { level: number; points: number; lives: number; };
   isLevelPaused: boolean;
   isGameOver: boolean;
   handleTimeout: () => void;
   isImageLoaded?: boolean;
+  isFromRewardedAd?: boolean;
 }) {
-  // console.log('[useTimer] Initialisation du hook'); // Supprimé
-
   const [timeLeft, setTimeLeft] = useState(20);
   const [isCountdownActive, setIsCountdownActive] = useState(false);
   const [isImageLoaded, setIsImageLoaded] = useState(initialImageLoaded);
@@ -29,27 +29,29 @@ export function useTimer({
 
   // Référence pour suivre si l'application vient d'une publicité
   const comingFromAdRef = useRef(false);
+  // Référence pour suivre si l'application vient spécifiquement d'une pub récompensée
+  const fromRewardedAdRef = useRef(isFromRewardedAd);
   // Référence pour suivre l'état de l'application
   const appStateRef = useRef(AppState.currentState);
   // Référence pour le dernier temps enregistré avant mise en arrière-plan
   const lastTimeRef = useRef(20);
 
+  // Mettre à jour la référence si la prop change
+  useEffect(() => {
+    fromRewardedAdRef.current = isFromRewardedAd;
+  }, [isFromRewardedAd]);
+
   // Gestion du compte à rebours
   useEffect(() => {
-    // console.log('[useTimer] Effet de compte à rebours, actif:', isCountdownActive, 'pause:', isLevelPaused, 'gameover:', isGameOver); // Supprimé
-
     let timer: NodeJS.Timeout | undefined;
 
     if (isCountdownActive && timeLeft > 0 && !isLevelPaused && !isGameOver) {
-      // console.log('[useTimer] Démarrage du compte à rebours à partir de', timeLeft, 'secondes'); // Supprimé
-
       timer = setInterval(() => {
         setTimeLeft((prevTime) => {
           const nextTime = prevTime - 1;
 
           if (nextTime <= 0) {
             clearInterval(timer);
-            // console.log('[useTimer] Fin du temps, déclenchement du timeout'); // Supprimé
             handleTimeout();
             return 0;
           }
@@ -62,14 +64,12 @@ export function useTimer({
         });
       }, 1000);
     } else if (!isCountdownActive && timer) {
-      // console.log('[useTimer] Arrêt du compte à rebours'); // Supprimé
       clearInterval(timer);
     }
 
     // Nettoyage si le timer est actif mais les conditions ne sont plus remplies
     return () => {
       if (timer) {
-        // console.log('[useTimer] Nettoyage du timer'); // Supprimé
         clearInterval(timer);
       }
     };
@@ -77,88 +77,71 @@ export function useTimer({
 
   // Surveillance de l'état de l'application (premier plan / arrière-plan)
   useEffect(() => {
-    // console.log('[useTimer] Configuration de la surveillance AppState'); // Supprimé
-
     const subscription = AppState.addEventListener('change', (nextAppState) => {
       const previousAppState = appStateRef.current;
       appStateRef.current = nextAppState;
-
-      // console.log('[useTimer] Changement AppState:', previousAppState, '->', nextAppState); // Supprimé
 
       if (nextAppState.match(/inactive|background/)) {
         if (nextAppState === 'background') {
           // Sauvegarde du temps actuel pour appliquer le malus au retour
           lastTimeRef.current = timeLeft;
-          // console.log('[useTimer] Application mise en arrière-plan, temps sauvegardé:', lastTimeRef.current); // Supprimé
 
           // Marquer que l'application est potentiellement en train d'afficher une publicité
           comingFromAdRef.current = true;
-
-          if (!isLevelPaused && !isGameOver) {
-            // CORRECTION: On ne modifie pas directement le temps ici, on le fera au retour
-            // pour appliquer le malus de manière visible
-
-            // L'appel à FirebaseAnalytics.appState a été supprimé ici
-            // FirebaseAnalytics.appState('background', timeLeft, user.level, user.points);
-          }
         }
       } else if (nextAppState === 'active') {
-        // console.log('[useTimer] Application revenue au premier plan'); // Supprimé
-
         // Si l'app revient au premier plan après une mise en arrière-plan,
-        // et que le jeu est actif, appliquer le malus
+        // et que le jeu est actif, appliquer le malus SAUF si on revient d'une pub récompensée
         if (comingFromAdRef.current && !isLevelPaused && !isGameOver) {
-          const savedTime = lastTimeRef.current;
-
-          // CORRECTION: Application du malus au retour, avec un temps minimal de 1 seconde
-          // pour donner une chance au joueur de voir le changement
-          setTimeLeft(prevTime => {
-            // Appliquer un malus de 18 secondes (ou jusqu'à 1 seconde restante)
+          if (!fromRewardedAdRef.current) {
+            // Application du malus normal si ce n'est pas une pub récompensée
+            const savedTime = lastTimeRef.current;
             const newTime = Math.max(1, savedTime - 18);
-            // console.log('[useTimer] Application du malus:', savedTime, '->', newTime); // Supprimé
-            return newTime;
-          });
+            setTimeLeft(newTime);
+            console.log('[useTimer] Applying background penalty:', savedTime, '->', newTime);
+          } else {
+            // Si on revient d'une pub récompensée, pas de malus
+            console.log('[useTimer] Skipping penalty - returning from rewarded ad');
+            // Réinitialisation du flag après usage
+            fromRewardedAdRef.current = false;
+          }
         }
 
-        // Réinitialiser le flag
+        // Réinitialiser le flag de retour
         comingFromAdRef.current = false;
-
-        // L'appel à FirebaseAnalytics.appState a été supprimé ici
-        // FirebaseAnalytics.appState('active', undefined, user.level, user.points);
       }
     });
 
     return () => {
-      // console.log('[useTimer] Nettoyage des listeners AppState'); // Supprimé
       subscription.remove();
     };
-  }, [timeLeft, user.level, user.points, isLevelPaused, isGameOver]); // user.level et user.points peuvent être retirés des dépendances si plus utilisés ici
+  }, [timeLeft, isLevelPaused, isGameOver]);
 
   // Fonction pour initialiser ou réinitialiser le timer
-  const resetTimer = useCallback((time: number = 20) => {
-    // console.log('[useTimer] Réinitialisation du timer à', time, 'secondes'); // Supprimé
+  const resetTimer = useCallback((time: number = 20, skipNextMalus: boolean = false) => {
     setTimeLeft(time);
     setIsCountdownActive(false);
+    
+    // Si skipNextMalus est true, désactiver le prochain malus
+    if (skipNextMalus) {
+      fromRewardedAdRef.current = true;
+    }
+    
     // Réinitialiser aussi le flag comingFromAd
     comingFromAdRef.current = false;
   }, []);
 
   // Fonction pour démarrer le timer quand l'image est chargée
   const handleImageLoad = useCallback(() => {
-    // console.log('[useTimer] Image chargée'); // Supprimé
     setIsImageLoaded(true);
 
     if (!isLevelPaused && !isGameOver) {
-      // console.log('[useTimer] Activation du compte à rebours après chargement image'); // Supprimé
       setIsCountdownActive(true);
-    } else {
-      // console.log('[useTimer] Compte à rebours non activé (jeu en pause ou terminé)'); // Supprimé
     }
   }, [isLevelPaused, isGameOver]);
 
   // Fonction pour mettre en pause ou reprendre le timer
   const toggleTimer = useCallback((active: boolean) => {
-    // console.log('[useTimer] Toggle timer:', active); // Supprimé
     setIsCountdownActive(active);
   }, []);
 
@@ -171,6 +154,6 @@ export function useTimer({
     handleImageLoad,
     isImageLoaded,
     setIsImageLoaded,
-    toggleTimer // Nouvelle fonction pour contrôler le timer
+    toggleTimer // Fonction pour contrôler le timer
   };
 }
