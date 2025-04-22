@@ -1,6 +1,4 @@
-// /home/pierre/sword/kiko/app/auth/login.tsx
-
-import React, { useState, useEffect, useLayoutEffect, useCallback } from 'react'; // Ajout de useCallback
+import React, { useState, useEffect, useLayoutEffect, useCallback } from 'react';
 import {
   View,
   Text,
@@ -12,20 +10,35 @@ import {
   SafeAreaView,
   StatusBar,
   Dimensions,
-  ActivityIndicator // Optionnel pour l'indicateur
+  ActivityIndicator
 } from 'react-native';
 import { supabase } from '../../lib/supabase/supabaseClients';
-import { router, useFocusEffect, useNavigation, usePathname, useSegments } from 'expo-router'; // Ajout de useFocusEffect
-import { FirebaseAnalytics } from '../../lib/firebase'; // <-- AJOUT: Importer FirebaseAnalytics
+import { router, useFocusEffect, useNavigation, usePathname, useSegments } from 'expo-router';
+import { FirebaseAnalytics } from '../../lib/firebase';
 
-const THEME = { /* ... (votre thème) ... */
-  primary: '#050B1F',
-  secondary: '#0A173D',
-  accent: '#FFCC00',
-  text: '#FFFFFF',
-  background: { dark: '#020817', medium: '#050B1F', light: '#0A173D' },
-  button: { primary: ['#1D5F9E', '#0A173D'], secondary: ['#FFBF00', '#CC9900'], tertiary: ['#0A173D', '#1D5F9E'] }
+// --- NOUVEAU THÈME CLAIR (Basé sur logo Quandi) ---
+const THEME = {
+  primary: '#0A173D',       // Bleu foncé (Texte principal, éléments importants)
+  secondary: '#F0F0F0',     // Gris clair (Fond des inputs)
+  accent: '#F57C00',       // Orange (Boutons principaux, titres, liens)
+  text: '#0A173D',           // Couleur de texte par défaut (Bleu foncé)
+  textSecondary: '#666666',   // Gris moyen (Placeholders, textes secondaires)
+  textOnAccent: '#FFFFFF',   // Blanc (Texte sur boutons orange)
+  background: {
+    main: '#FFFFFF',        // Fond principal blanc
+  },
+  button: {
+    primary: {
+      background: '#F57C00', // Orange
+      text: '#FFFFFF',       // Blanc
+    },
+    secondary: { // Pour les liens/boutons textuels
+      text: '#F57C00',       // Orange
+    },
+  },
+  border: '#DDDDDD'          // Couleur de bordure subtile pour inputs
 };
+// --- FIN NOUVEAU THÈME ---
 
 export default function Login() {
   const navigation = useNavigation();
@@ -39,28 +52,23 @@ export default function Login() {
   const [stayConnected, setStayConnected] = useState(false);
   const [isLoggingIn, setIsLoggingIn] = useState(false);
 
-  // --- AJOUT: Suivi de l'écran ---
   useFocusEffect(
     useCallback(() => {
       FirebaseAnalytics.screen('LoginScreen', 'Login');
-      // Vous pourriez vouloir réinitialiser les champs/erreurs quand l'écran réapparaît
-      // setErrorMessage('');
-      // setEmail('');
-      // setPassword('');
+      // Style de la barre de statut pour fond clair
+      StatusBar.setBarStyle('dark-content');
+      if (Platform.OS === 'android') {
+        StatusBar.setBackgroundColor(THEME.background.main);
+      }
     }, [])
   );
-  // --- FIN AJOUT ---
 
   useLayoutEffect(() => {
     navigation.setOptions({ headerShown: false });
   }, [navigation]);
 
+  // useEffect pour les logs (optionnel en prod)
   useEffect(() => {
-    StatusBar.setBarStyle('light-content');
-    if (Platform.OS === 'android') {
-      StatusBar.setBackgroundColor(THEME.background.dark);
-    }
-    // Les logs console peuvent être retirés en prod
     // console.log('🔍 Login Screen Mounted');
     // console.log('📍 Current pathname:', pathname);
     // console.log('🔀 Current segments:', segments);
@@ -69,9 +77,7 @@ export default function Login() {
 
   const handleLogin = async () => {
     console.log('🔐 Starting login process...');
-    // --- AJOUT: Log Tentative ---
     FirebaseAnalytics.logEvent('login_attempt');
-    // --------------------------
     setIsLoggingIn(true);
     setErrorMessage('');
 
@@ -82,8 +88,7 @@ export default function Login() {
         password: password,
       });
 
-      console.log('📊 Login response:', { /* ... */ });
-
+      // ... (reste de la logique handleLogin, inchangée) ...
       if (error) {
         console.error('❌ Login error:', error.message);
         let reason = 'supabase_error';
@@ -93,59 +98,48 @@ export default function Login() {
         } else {
           setErrorMessage(error.message);
         }
-        // --- AJOUT: Log Échec (Erreur Supabase) ---
         FirebaseAnalytics.logEvent('login_failed', {
             reason: reason,
-            message: error.message.substring(0, 100) // Limiter longueur message
+            message: error.message.substring(0, 100)
         });
-        // ----------------------------------------
-        return; // Important de retourner ici
+        setIsLoggingIn(false); // Important de remettre à false ici
+        return;
       }
 
-      if (data?.session && data.user) { // Vérifier aussi data.user
+      if (data?.session && data.user) {
         console.log('✅ Session created successfully for user:', data.user.id);
-        // --- AJOUT: Log Succès ---
-        FirebaseAnalytics.logEvent('login', { method: 'password' }); // Événement standard Firebase
-        // Mettre à jour l'ID utilisateur dans Analytics (peut être redondant si fait dans _layout)
+        FirebaseAnalytics.logEvent('login', { method: 'password' });
         FirebaseAnalytics.initialize(data.user.id, false);
-        // -------------------------
 
         if (stayConnected) {
-          console.log('🔄 Setting persistent session');
-          // Note: setSession est pour les refresh tokens, la session initiale est déjà gérée par Supabase client
-          // await supabase.auth.setSession(data.session); // Vérifier si c'est nécessaire avec le client JS v2
+          console.log('🔄 Setting persistent session (handled by Supabase client)');
         }
 
         console.log('🚀 Attempting navigation...');
-        router.replace('/(tabs)'); // Utiliser replace pour ne pas pouvoir revenir à l'écran de login
+        router.replace('/(tabs)');
         console.log('✅ Navigation completed via router.replace');
+        // Note: setIsLoggingIn(false) n'est pas nécessaire ici car l'écran est remplacé
 
       } else {
         console.error('❌ No session created or user data missing');
         setErrorMessage("Erreur lors de la connexion. Veuillez réessayer.");
-        // --- AJOUT: Log Échec (Pas de session) ---
         FirebaseAnalytics.logEvent('login_failed', { reason: 'no_session_or_user' });
-        // --------------------------------------
+        setIsLoggingIn(false); // Remettre à false
       }
     } catch (err) {
       console.error('❌ Unexpected error:', err);
       setErrorMessage('Une erreur est survenue. Veuillez réessayer.');
-      // --- AJOUT: Log Échec (Erreur Inattendue) ---
       FirebaseAnalytics.logEvent('login_failed', {
           reason: 'unexpected',
           message: (err instanceof Error ? err.message : String(err)).substring(0, 100)
       });
-      // ------------------------------------------
-    } finally {
-      console.log('🏁 Login process completed');
-      setIsLoggingIn(false);
+      setIsLoggingIn(false); // Remettre à false
     }
+    // Retiré le finally car on gère setIsLoggingIn(false) dans chaque branche d'erreur
   };
 
   const handleGoToSignUp = () => {
-    // --- AJOUT: Log Navigation vers Signup ---
     FirebaseAnalytics.logEvent('navigate_to_signup');
-    // -------------------------------------
     router.push('/auth/signup');
   };
 
@@ -157,31 +151,33 @@ export default function Login() {
         <TextInput
           style={styles.input}
           placeholder="Email"
-          placeholderTextColor={`${THEME.text}66`}
+          placeholderTextColor={THEME.textSecondary} // Utilisation de la couleur secondaire pour placeholder
           value={email}
-          onChangeText={(text) => setEmail(text.trim())} // Trim au changement
+          onChangeText={(text) => setEmail(text.trim())}
           keyboardType="email-address"
           autoCapitalize="none"
           autoComplete="email"
-          editable={!isLoggingIn} // Désactiver pendant la connexion
+          editable={!isLoggingIn}
         />
 
         <TextInput
           style={styles.input}
           placeholder="Mot de passe"
-          placeholderTextColor={`${THEME.text}66`}
+          placeholderTextColor={THEME.textSecondary} // Utilisation de la couleur secondaire pour placeholder
           secureTextEntry
           value={password}
           onChangeText={(text) => setPassword(text)}
-          autoComplete="current-password" // Utiliser current-password
-          editable={!isLoggingIn} // Désactiver pendant la connexion
+          autoComplete="current-password"
+          editable={!isLoggingIn}
         />
 
         <View style={styles.stayConnectedContainer}>
           <Switch
-            // ... (props switch) ...
-            value={stayConnected}
+            trackColor={{ false: '#CCCCCC', true: THEME.accent + 'AA' }} // Orange semi-transparent quand actif
+            thumbColor={stayConnected ? THEME.accent : '#f4f3f4'}
+            ios_backgroundColor="#CCCCCC"
             onValueChange={setStayConnected}
+            value={stayConnected}
             disabled={isLoggingIn}
           />
           <Text style={styles.stayConnectedText}>Rester connecté</Text>
@@ -190,19 +186,19 @@ export default function Login() {
         {errorMessage ? <Text style={styles.errorText}>{errorMessage}</Text> : null}
 
         <TouchableOpacity
-          style={[styles.button, isLoggingIn && styles.buttonDisabled]}
+          style={[styles.button, (isLoggingIn || !email || !password) && styles.buttonDisabled]} // Appliquer style disabled aussi si champs vides
           onPress={handleLogin}
-          disabled={isLoggingIn || !email || !password} // Désactiver si champs vides ou en cours
+          disabled={isLoggingIn || !email || !password}
         >
           {isLoggingIn ? (
-            <ActivityIndicator color={THEME.text} />
+            <ActivityIndicator color={THEME.button.primary.text} /> // Couleur texte du bouton
           ) : (
             <Text style={styles.buttonText}>Se connecter</Text>
           )}
         </TouchableOpacity>
 
         <TouchableOpacity
-          style={[styles.createAccountButton, isLoggingIn && styles.buttonDisabled]}
+          style={[styles.createAccountButton, isLoggingIn && styles.buttonDisabled]} // Désactiver visuellement si en cours de login
           onPress={handleGoToSignUp}
           disabled={isLoggingIn}
         >
@@ -214,17 +210,84 @@ export default function Login() {
 }
 
 const styles = StyleSheet.create({
-  // ... (vos styles) ...
-  safeArea: { flex: 1, backgroundColor: THEME.background.dark },
-  container: { flex: 1, backgroundColor: THEME.background.dark, padding: 20, justifyContent: 'center' },
-  title: { fontSize: 28, color: THEME.accent, fontWeight: 'bold', textAlign: 'center', marginBottom: 30 },
-  input: { backgroundColor: THEME.secondary, color: THEME.text, fontSize: 16, padding: 12, marginBottom: 15, borderRadius: 8, width: '100%' },
-  stayConnectedContainer: { flexDirection: 'row', alignItems: 'center', marginBottom: 10 },
-  stayConnectedText: { color: THEME.text, marginLeft: 8, fontSize: 16 },
-  errorText: { color: '#FF6B6B', marginVertical: 10, textAlign: 'center', fontSize: 14 }, // Rouge plus visible
-  button: { backgroundColor: THEME.button.secondary[0], padding: 15, borderRadius: 8, alignItems: 'center', marginTop: 15, width: '100%', minHeight: 50, justifyContent: 'center' }, // Hauteur minimale
-  buttonDisabled: { opacity: 0.6 }, // Opacité standard pour désactivé
-  buttonText: { color: THEME.primary, fontSize: 16, fontWeight: 'bold' }, // Texte du bouton plus contrasté
-  createAccountButton: { marginTop: 20, alignItems: 'center', padding: 10 }, // Zone cliquable plus grande
-  createAccountText: { color: THEME.accent, fontSize: 16, textDecorationLine: 'underline' },
+  safeArea: {
+    flex: 1,
+    backgroundColor: THEME.background.main // Fond blanc
+  },
+  container: {
+    flex: 1,
+    backgroundColor: THEME.background.main, // Fond blanc
+    padding: 20,
+    justifyContent: 'center'
+  },
+  title: {
+    fontSize: 28,
+    color: THEME.accent, // Orange
+    fontWeight: 'bold',
+    textAlign: 'center',
+    marginBottom: 30
+  },
+  input: {
+    backgroundColor: THEME.secondary, // Fond gris clair
+    color: THEME.text, // Texte bleu foncé
+    fontSize: 16,
+    paddingVertical: 14, // Padding vertical pour hauteur
+    paddingHorizontal: 12,
+    marginBottom: 15,
+    borderRadius: 8,
+    width: '100%',
+    minHeight: 48, // Hauteur minimale pour accessibilité
+    borderWidth: 1, // Bordure subtile
+    borderColor: THEME.border // Couleur bordure
+  },
+  stayConnectedContainer: {
+    flexDirection: 'row',
+    alignItems: 'center',
+    marginBottom: 20, // Marge augmentée
+    alignSelf: 'flex-start', // Aligner à gauche
+    paddingVertical: 5 // Petit padding vertical pour zone tactile
+  },
+  stayConnectedText: {
+    color: THEME.text, // Texte bleu foncé
+    marginLeft: 10,
+    fontSize: 16
+  },
+  errorText: {
+    color: '#D32F2F', // Rouge plus standard
+    marginVertical: 15, // Marge augmentée
+    textAlign: 'center',
+    fontSize: 14
+  },
+  button: {
+    backgroundColor: THEME.button.primary.background, // Fond Orange
+    paddingVertical: 14, // Padding vertical
+    paddingHorizontal: 15,
+    borderRadius: 8,
+    alignItems: 'center',
+    marginTop: 15,
+    width: '100%',
+    minHeight: 50, // Hauteur minimale bouton
+    justifyContent: 'center'
+  },
+  buttonDisabled: {
+     opacity: 0.6 // Opacité pour état désactivé
+   },
+  buttonText: {
+    color:'#0A173D', // Texte Blanc
+    fontSize: 17, // Police légèrement plus grande
+    fontWeight: 'bold'
+  },
+  createAccountButton: {
+    marginTop: 25, // Marge augmentée
+    alignItems: 'center',
+    paddingVertical: 15, // Augmenter PADDING vertical pour zone tactile
+    paddingHorizontal: 10,
+    minHeight: 48, // Assurer taille minimale zone tactile
+    width: '100%', // Prendre toute la largeur pour faciliter le clic
+  },
+  createAccountText: {
+    color: THEME.button.secondary.text, // Texte Orange
+    fontSize: 16,
+    textDecorationLine: 'underline'
+  },
 });

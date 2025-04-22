@@ -108,7 +108,7 @@ export default function GamePage() {
      // console.log("GamePage Loading State:", { showLoadingIndicator, gameLogicExists: !!gameLogic, userExists: !!gameLogic?.user, configExists: !!gameLogic?.currentLevelConfig, adStateExists: !!gameLogic?.adState });
      return (
        <View style={[styles.fullScreenContainer, styles.loadingContainer]}>
-         <StatusBar translucent backgroundColor="transparent" barStyle="light-content" />
+         <StatusBar translucent backgroundColor="black" barStyle="light-content" />
          <ActivityIndicator size="large" color="#FFFFFF" />
        </View>
      );
@@ -122,7 +122,7 @@ export default function GamePage() {
         style={styles.backgroundImage}
         resizeMode="cover"
       >
-        <StatusBar translucent backgroundColor="transparent" barStyle="light-content" />
+        <StatusBar translucent backgroundColor="black" barStyle="light-content" />
 
         {/* Utilisation de SafeAreaView pour gérer les encoches et barres système */}
         <SafeAreaView style={styles.container} edges={['top', 'bottom']}>
