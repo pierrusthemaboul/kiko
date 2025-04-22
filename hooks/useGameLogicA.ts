@@ -516,7 +516,7 @@ export function useGameLogicA(initialEvent?: string) {
 
             playLevelUpSound();
 
-            if ([1, 6].includes(prev.level) || prev.level % 5 === 0) {
+            if ([2, 6].includes(prev.level) || prev.level % 5 === 0) {
                 console.log(`[useGameLogicA] Scheduling level up ad.`);
               setPendingAdDisplay('levelUp');
               FirebaseAnalytics.ad('interstitial', 'triggered', 'level_up', prev.level);
