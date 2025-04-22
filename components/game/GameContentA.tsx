@@ -10,6 +10,7 @@ import {
   SafeAreaView,
   TouchableOpacity,
   Alert,
+  Dimensions
 } from 'react-native';
 import { useRouter } from 'expo-router';
 import { Ionicons } from '@expo/vector-icons';
@@ -51,10 +52,10 @@ interface AdStateForContent {
 interface GameContentAProps {
   user: User | null; // Peut être null pendant le chargement initial
   timeLeft: number;
-  loading: boolean; // Chargement global (géré par GamePage maintenant)
+  loading?: boolean; // Chargement global (géré par GamePage maintenant)
   error: string | null;
   previousEvent: Event | null;
-  newEvent: Event | null; // Event potentiel (peut-être moins utile ici maintenant)
+  newEvent?: Event | null; // Event potentiel (peut-être moins utile ici maintenant)
   displayedEvent: Event | null; // Événement ACTUELLEMENT affiché à droite
   isGameOver: boolean;
   leaderboardsReady: boolean; // Ajouté
@@ -150,39 +151,98 @@ function GameContentA({
   // --- Effet pour obtenir la position des éléments pour l'animation de récompense ---
   useEffect(() => {
     let mounted = true;
+    let attempts = 0;
+    const MAX_ATTEMPTS = 3;
+    
     const updateRewardPositionSafely = async () => {
-      if (!currentReward || !userInfoRef.current || !mounted || !user) return; // Ajout check user
+      if (!currentReward || !userInfoRef.current || !mounted || !user) {
+        console.log("[GameContentA] Cannot update reward position - prerequisites not met", {
+          hasReward: !!currentReward,
+          hasRef: !!userInfoRef.current,
+          isMounted: mounted,
+          hasUser: !!user
+        });
+        return;
+      }
+      
       try {
+        console.log(`[GameContentA] Getting position for reward type: ${currentReward.type}`);
+        
         const position = currentReward.type === RewardType.EXTRA_LIFE
           ? await userInfoRef.current.getLifePosition()
           : await userInfoRef.current.getPointsPosition();
+        
         if (mounted && position && typeof position.x === 'number' && typeof position.y === 'number') {
-          if (!currentReward.targetPosition || currentReward.targetPosition.x !== position.x || currentReward.targetPosition.y !== position.y) {
+          console.log(`[GameContentA] Got valid position: x=${position.x}, y=${position.y}`);
+          
+          // Vérifier si la position est déjà définie et identique
+          const positionChanged = 
+            !currentReward.targetPosition || 
+            Math.abs(currentReward.targetPosition.x - position.x) > 5 || 
+            Math.abs(currentReward.targetPosition.y - position.y) > 5;
+            
+          if (positionChanged) {
+            console.log(`[GameContentA] Updating reward position`);
             updateRewardPosition(position);
             setIsRewardPositionSet(true);
+          } else {
+            console.log("[GameContentA] Position unchanged, no update needed");
+            setIsRewardPositionSet(true);  // Confirmer quand même que la position est définie
           }
-        } else if (mounted) {
-             // console.warn("[GameContentA] getPosition returned invalid value:", position); // Log supprimé
-             setIsRewardPositionSet(false);
+        } else {
+          console.warn("[GameContentA] getPosition returned invalid position:", position);
+          if (attempts < MAX_ATTEMPTS) {
+            attempts++;
+          } else {
+            // Après plusieurs tentatives, utiliser une position de secours
+            console.log("[GameContentA] Using fallback position after failed attempts");
+            const fallbackPosition = currentReward.type === RewardType.EXTRA_LIFE
+              ? { x: Dimensions.get('window').width * 0.80, y: 50 }
+              : { x: Dimensions.get('window').width * 0.20, y: 50 };
+              
+            updateRewardPosition(fallbackPosition);
+            setIsRewardPositionSet(true);
+          }
         }
-      } catch (e){
-          // console.warn("[GameContentA] Could not get element position for reward animation:", e); // Log supprimé
-        setIsRewardPositionSet(false);
+      } catch (e) {
+        console.warn("[GameContentA] Error getting element position:", e);
+        
+        if (attempts < MAX_ATTEMPTS) {
+          attempts++;
+        } else {
+          // Après plusieurs tentatives, utiliser une position de secours
+          console.log("[GameContentA] Using fallback position after error");
+          const fallbackPosition = currentReward.type === RewardType.EXTRA_LIFE
+            ? { x: Dimensions.get('window').width * 0.80, y: 50 }
+            : { x: Dimensions.get('window').width * 0.20, y: 50 };
+            
+          updateRewardPosition(fallbackPosition);
+          setIsRewardPositionSet(true);
+        }
       }
     };
-
+    
+    // Première tentative immédiate
     updateRewardPositionSafely();
-    const timer = setTimeout(() => {
-      if (mounted && currentReward && !isRewardPositionSet) {
-        updateRewardPositionSafely();
-      }
-    }, 250);
-
+    
+    // Planifier plusieurs tentatives avec intervalles croissants
+    const timers = [];
+    for (let i = 1; i <= MAX_ATTEMPTS; i++) {
+      const timer = setTimeout(() => {
+        if (mounted && currentReward && !isRewardPositionSet) {
+          console.log(`[GameContentA] Retry ${i}/${MAX_ATTEMPTS} for position update`);
+          updateRewardPositionSafely();
+        }
+      }, i * 300); // Intervalle croissant: 300ms, 600ms, 900ms
+      
+      timers.push(timer);
+    }
+    
     return () => {
       mounted = false;
-      clearTimeout(timer);
+      timers.forEach(timer => clearTimeout(timer));
     };
-  }, [currentReward, updateRewardPosition, user]);
+  }, [currentReward, updateRewardPosition, user, isRewardPositionSet]);
 
   // --- Animation d'opacité pour le modal de niveau ---
   useEffect(() => {
@@ -386,7 +446,7 @@ function GameContentA({
              />
            </View>
 
-           {currentReward && isRewardPositionSet && (
+           {currentReward && (isRewardPositionSet || currentReward.targetPosition) && (
              <RewardAnimation
                type={currentReward.type}
                amount={currentReward.amount}

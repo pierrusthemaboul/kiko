@@ -1,4 +1,4 @@
-import React, { useEffect, useRef } from 'react';
+import React, { useEffect, useRef, useCallback } from 'react';
 import { View, Text, StyleSheet, Animated, Dimensions } from 'react-native';
 import { Ionicons } from '@expo/vector-icons';
 
@@ -20,116 +20,174 @@ const RewardAnimation: React.FC<RewardAnimationProps> = ({
   const translateY = useRef(new Animated.Value(0)).current;
   const translateX = useRef(new Animated.Value(0)).current;
   const scale = useRef(new Animated.Value(0.3)).current;
+  const isAnimationStarted = useRef(false);
+  const isMountedRef = useRef(true);
 
   // Dimensions de l'écran
   const { width: screenWidth, height: screenHeight } = Dimensions.get('window');
 
-  useEffect(() => {
-    let isMounted = true;
+  // Fonction pour démarrer l'animation
+  const startAnimation = useCallback(() => {
+    // Éviter de lancer plusieurs animations
+    if (isAnimationStarted.current || !isMountedRef.current) return;
+    
+    console.log(`[RewardAnimation] Starting animation for ${type}, amount: ${amount}`);
+    isAnimationStarted.current = true;
 
     // Déterminer la position finale en fonction du type et de la cible
     let destinationX: number, destinationY: number;
 
     // Si une position cible est fournie ET que ses valeurs sont valides (non NaN), on l'utilise
     if (targetPosition && !isNaN(targetPosition.x) && !isNaN(targetPosition.y)) {
+      console.log(`[RewardAnimation] Using provided target position: x=${targetPosition.x}, y=${targetPosition.y}`);
       destinationX = targetPosition.x;
       destinationY = targetPosition.y;
     } else {
       // Sinon, utiliser des positions par défaut en fonction du type de récompense
       if (type === "EXTRA_LIFE") {
-        // Pour les vies : 30% de la largeur de l'écran (zone des cœurs)
-        destinationX = screenWidth * 0.30; // Ajusté selon l'image
-        destinationY = 20; // Position Y plus haute
+        destinationX = screenWidth * 0.80; // Position par défaut pour les vies
+        destinationY = 40;
       } else {
-        // Pour les points : près du score (à côté de "Pierrot")
-        destinationX = screenWidth * 0.20; // Ajusté selon l'image
-        destinationY = 20;
+        destinationX = screenWidth * 0.20; // Position par défaut pour les points
+        destinationY = 40;
       }
+      console.log(`[RewardAnimation] Using default position: x=${destinationX}, y=${destinationY}`);
     }
 
     // Calcul des décalages par rapport au centre de l'écran
     const offsetX = destinationX - (screenWidth / 2);
     const offsetY = destinationY - (screenHeight / 2);
+    console.log(`[RewardAnimation] Calculated offsets for animation: x=${offsetX}, y=${offsetY}`);
 
-    const startAnimation = () => {
-      // Réinitialisation des valeurs
-      translateX.setValue(0);
-      translateY.setValue(0);
-      opacity.setValue(0);
-      scale.setValue(0.3);
+    // Réinitialisation des valeurs
+    translateX.setValue(0);
+    translateY.setValue(0);
+    opacity.setValue(0);
+    scale.setValue(0.3);
 
-      Animated.sequence([
-        // 1. Apparition au centre
-        Animated.parallel([
-          Animated.timing(opacity, {
-            toValue: 1,
-            duration: 300,
-            useNativeDriver: true,
-          }),
-          Animated.spring(scale, {
-            toValue: 1.3,
-            friction: 6,
-            useNativeDriver: true,
-          }),
-        ]),
-
-        // 2. Petit délai
-        Animated.delay(200),
-
-        // 3. Déplacement vers la position finale
-        Animated.parallel([
-          Animated.timing(translateX, {
-            toValue: offsetX,
-            duration: 800,
-            useNativeDriver: true,
-          }),
-          Animated.timing(translateY, {
-            toValue: offsetY,
-            duration: 800,
-            useNativeDriver: true,
-          }),
-          Animated.timing(scale, {
-            toValue: 0.7,
-            duration: 800,
-            useNativeDriver: true,
-          }),
-        ]),
-
-        // 4. Effet "pop" à l'arrivée
-        Animated.sequence([
-          Animated.timing(scale, {
-            toValue: 0.9,
-            duration: 150,
-            useNativeDriver: true,
-          }),
-          Animated.timing(scale, {
-            toValue: 0.7,
-            duration: 150,
-            useNativeDriver: true,
-          }),
-        ]),
-
-        // 5. Disparition
+    const animationSequence = Animated.sequence([
+      // 1. Apparition au centre
+      Animated.parallel([
         Animated.timing(opacity, {
-          toValue: 0,
+          toValue: 1,
           duration: 300,
           useNativeDriver: true,
         }),
-      ]).start(({ finished }) => {
-        if (finished && isMounted && onComplete) {
+        Animated.spring(scale, {
+          toValue: 1.3,
+          friction: 6,
+          useNativeDriver: true,
+        }),
+      ]),
+
+      // 2. Petit délai
+      Animated.delay(300),
+
+      // 3. Déplacement vers la position finale
+      Animated.parallel([
+        Animated.timing(translateX, {
+          toValue: offsetX,
+          duration: 800,
+          useNativeDriver: true,
+        }),
+        Animated.timing(translateY, {
+          toValue: offsetY,
+          duration: 800,
+          useNativeDriver: true,
+        }),
+        Animated.timing(scale, {
+          toValue: 0.7,
+          duration: 800,
+          useNativeDriver: true,
+        }),
+      ]),
+
+      // 4. Effet "pop" à l'arrivée
+      Animated.sequence([
+        Animated.timing(scale, {
+          toValue: 0.9,
+          duration: 150,
+          useNativeDriver: true,
+        }),
+        Animated.timing(scale, {
+          toValue: 0.7,
+          duration: 150,
+          useNativeDriver: true,
+        }),
+      ]),
+
+      // 5. Disparition
+      Animated.timing(opacity, {
+        toValue: 0,
+        duration: 300,
+        useNativeDriver: true,
+      }),
+    ]);
+
+    animationSequence.start(({ finished }) => {
+      if (!isMountedRef.current) return;
+      
+      if (finished) {
+        console.log(`[RewardAnimation] Animation completed successfully`);
+      } else {
+        console.log(`[RewardAnimation] Animation interrupted, still calling onComplete`);
+      }
+      
+      // Appeler onComplete dans tous les cas pour éviter les blocages
+      if (onComplete) {
+        onComplete();
+      }
+    });
+  }, [
+    type, amount, targetPosition, screenWidth, screenHeight, 
+    opacity, translateX, translateY, scale, onComplete
+  ]);
+
+  // Effet pour gérer le cycle de vie du composant et lancer l'animation
+  useEffect(() => {
+    isMountedRef.current = true;
+    
+    // Démarrer l'animation avec un court délai pour s'assurer que le composant est bien monté
+    const timer = setTimeout(() => {
+      if (isMountedRef.current) {
+        startAnimation();
+      }
+    }, 100);
+    
+    // Assurer que l'animation se termine après un certain temps, même en cas de problème
+    const safetyTimer = setTimeout(() => {
+      if (isMountedRef.current) {
+        console.log('[RewardAnimation] Safety timeout reached, forcing completion');
+        if (onComplete) {
           onComplete();
         }
-      });
-    };
-
-    // Lancer l'animation après un court délai
-    const timer = setTimeout(startAnimation, 100);
+      }
+    }, 3000); // 3 secondes max pour l'animation
 
     return () => {
-      isMounted = false;
+      isMountedRef.current = false;
       clearTimeout(timer);
+      clearTimeout(safetyTimer);
     };
-  }, [type, amount, targetPosition, screenWidth, screenHeight, onComplete]);
+  }, [startAnimation, onComplete]);
+  
+  // Effet pour réagir aux changements de targetPosition
+  useEffect(() => {
+    // Si l'animation n'a pas encore été lancée et que la position a été mise à jour,
+    // essayer de lancer l'animation
+    if (!isAnimationStarted.current && targetPosition && 
+        !isNaN(targetPosition.x) && !isNaN(targetPosition.y)) {
+      console.log(`[RewardAnimation] Target position updated, trying to start animation`);
+      
+      const timer = setTimeout(() => {
+        if (isMountedRef.current && !isAnimationStarted.current) {
+          startAnimation();
+        }
+      }, 50);
+      
+      return () => clearTimeout(timer);
+    }
+  }, [targetPosition, startAnimation]);
 
   // Configuration de l'icône et de la couleur en fonction du type de récompense
   const getConfig = () => {

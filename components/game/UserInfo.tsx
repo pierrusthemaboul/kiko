@@ -58,6 +58,8 @@ const UserInfo = forwardRef<UserInfoHandle, UserInfoProps>(
   ) => {
     // Références sur le conteneur des points
     const pointsRef = useRef<View>(null);
+    // Référence pour le conteneur des vies
+    const livesRef = useRef<View>(null);
 
     // Animation "bounce" lors du changement de points ou de vies
     const bounceAnim = useRef(new Animated.Value(1)).current;
@@ -68,6 +70,8 @@ const UserInfo = forwardRef<UserInfoHandle, UserInfoProps>(
 
     // Position mesurée pour les points
     const [pointsPosition, setPointsPosition] = useState<{ x: number; y: number }>({ x: 0, y: 0 });
+    // Position mesurée pour les vies
+    const [livesPosition, setLivesPosition] = useState<{ x: number; y: number }>({ x: 0, y: 0 });
 
     // Animation de bounce quand les points ou vies changent
     useEffect(() => {
@@ -107,15 +111,28 @@ const UserInfo = forwardRef<UserInfoHandle, UserInfoProps>(
       }
     };
 
-    // Remesurer quand les points changent
+    // Fonction pour mesurer la position des vies
+    const handleLivesLayout = () => {
+      if (livesRef.current) {
+        livesRef.current.measureInWindow((x, y, width, height) => {
+          const measuredPos = { x: x + width / 2, y: y + height / 2 };
+          setLivesPosition(measuredPos);
+          console.log('Lives position measured:', measuredPos);
+        });
+      }
+    };
+
+    // Remesurer quand les points ou vies changent
     useEffect(() => {
       handlePointsLayout();
-    }, [points]);
+      handleLivesLayout();
+    }, [points, lives]);
 
     // Mesurer après le premier rendu
     useEffect(() => {
       handleContainerLayout();
       handlePointsLayout();
+      handleLivesLayout();
     }, []);
 
     // Exposition des méthodes pour récupérer les positions (pour l'animation de récompense)
@@ -123,29 +140,53 @@ const UserInfo = forwardRef<UserInfoHandle, UserInfoProps>(
       getPointsPosition: () =>
         new Promise((resolve) => {
           if (pointsPosition.x !== 0 || pointsPosition.y !== 0) {
+            console.log('[UserInfo] Using cached points position:', pointsPosition);
             resolve(pointsPosition);
           } else if (pointsRef.current) {
             pointsRef.current.measureInWindow((x, y, width, height) => {
               const pos = { x: x + width / 2, y: y + height / 2 };
+              console.log('[UserInfo] Measured points position:', pos);
               setPointsPosition(pos);
               resolve(pos);
             });
           } else {
-            resolve({ x: 0, y: 0 });
+            console.log('[UserInfo] Fallback points position used');
+            const fallbackPos = { x: width * 0.25, y: 40 };
+            resolve(fallbackPos);
           }
         }),
-      // Utiliser une position fixe basée sur la largeur de l'écran (33%)
       getLifePosition: () =>
         new Promise((resolve) => {
-          // Position calculée: 80% de la largeur de l'écran
-          // et même hauteur que le conteneur principal + offset pour être au niveau des cœurs
-          const lifeX = width * 0.80; // 80% de la largeur de l'écran
-          const lifeY = containerPosition.y + 15; // Hauteur du conteneur + offset pour les cœurs
-
-          // console.log('Using fixed life position:', { x: lifeX, y: lifeY }); // Log supprimé
-          resolve({ x: lifeX, y: lifeY });
+          if (livesPosition.x !== 0 || livesPosition.y !== 0) {
+            console.log('[UserInfo] Using cached lives position:', livesPosition);
+            resolve(livesPosition);
+          } else if (livesRef.current) {
+            livesRef.current.measureInWindow((x, y, width, height) => {
+              const pos = { x: x + width / 2, y: y + height / 2 };
+              console.log('[UserInfo] Measured lives position:', pos);
+              setLivesPosition(pos);
+              resolve(pos);
+            });
+          } else if (containerRef.current) {
+            // Utiliser measureInWindow pour obtenir la position absolue
+            containerRef.current.measureInWindow((x, y, containerWidth, containerHeight) => {
+              // Position calculée: 80% de la largeur de l'écran pour être au niveau des coeurs
+              // et même hauteur que le conteneur principal + offset
+              const lifeX = width * 0.80; // 80% de la largeur de l'écran
+              // Ajouter un offset Y pour cibler le centre des coeurs
+              const lifeY = y + (containerHeight / 2);
+              
+              console.log('[UserInfo] Calculated life position:', { x: lifeX, y: lifeY });
+              resolve({ x: lifeX, y: lifeY });
+            });
+          } else {
+            // Fallback si aucune référence n'est disponible
+            console.log('[UserInfo] Fallback lives position used');
+            const fallbackPos = { x: width * 0.80, y: 40 };
+            resolve(fallbackPos);
+          }
         })
-    }), [pointsPosition, containerPosition]);
+    }), [pointsPosition, livesPosition, containerPosition]);
 
     const getBonusColor = (type: BonusType) => {
       switch (type) {
@@ -220,7 +261,7 @@ const UserInfo = forwardRef<UserInfoHandle, UserInfoProps>(
 
     // Rendu des vies
     const renderLives = () => (
-      <View style={styles.livesContainer}>
+      <View ref={livesRef} style={styles.livesContainer} onLayout={handleLivesLayout}>
         {Array(MAX_LIVES)
           .fill(0)
           .map((_, i) => (
