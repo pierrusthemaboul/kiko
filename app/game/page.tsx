@@ -57,6 +57,11 @@ export default function GamePage() {
     if (gameLogic.initGame) {
       try {
         await gameLogic.initGame();
+        // Si resetAdsState existe, l'appeler pour réinitialiser l'état des pubs
+        if (gameLogic.resetAdsState) {
+          gameLogic.resetAdsState();
+          console.log("[GamePage] Ads state has been reset for new game");
+        }
       } catch (error) {
          console.error("[GamePage] Error during initGame on restart:", error);
       }
@@ -65,20 +70,25 @@ export default function GamePage() {
     fadeAnim.setValue(0);
     Animated.timing(fadeAnim, { toValue: 1, duration: 500, useNativeDriver: true }).start();
     setTimeout(() => setIsRestarting(false), 150); // Court délai pour laisser le rendu se faire
-  }, [gameLogic.initGame, fadeAnim]); // S'assurer que gameLogic.initGame est stable ou inclus
+  }, [gameLogic.initGame, gameLogic.resetAdsState, fadeAnim]); // S'assurer que gameLogic.resetAdsState est dans les dépendances
 
 
   // Fonction pour naviguer vers vue1 (utilisée pour "Rejouer" / "Menu")
   const handleNavigateToVue1 = useCallback(() => {
-    // (Logique inchangée)
+    // Modification pour réinitialiser l'état des pubs avant de naviguer
     console.log("[GamePage] 'Rejouer'/'Menu' clicked: Navigating to /vue1");
     try {
+       // Réinitialisation des publicités avant de quitter la page
+       if (gameLogic.resetAdsState) {
+         gameLogic.resetAdsState();
+         console.log("[GamePage] Ads state has been reset before navigation");
+       }
        // Utilise replace pour éviter d'empiler les écrans de jeu dans l'historique
        router.replace('/vue1');
     } catch (e) {
       console.error("[GamePage] Error navigating to /vue1:", e);
     }
-  }, [router]); // router est généralement stable
+  }, [router, gameLogic.resetAdsState]); // Ajout de gameLogic.resetAdsState dans les dépendances
 
   useEffect(() => {
     // Animation d'entrée initiale ou après redémarrage
@@ -149,6 +159,7 @@ export default function GamePage() {
             levelsHistory={gameLogic.levelsHistory}
             showRewardedAd={gameLogic.showRewardedAd}
             adState={gameLogic.adState}
+            resetAdsState={gameLogic.resetAdsState} // Ajouter cette prop pour permettre à GameContentA de réinitialiser les pubs
           />
         </SafeAreaView>
       </ImageBackground>

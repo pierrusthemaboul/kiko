@@ -87,8 +87,8 @@ interface GameContentAProps {
   levelCompletedEvents: LevelEventSummary[];
   levelsHistory: LevelHistory[];
   showRewardedAd?: () => boolean; // La fonction pour déclencher la pub
-  adState: AdStateForContent; // AJOUTÉ : L'état publicitaire simplifié
-  // isAdFreePeriod?: boolean; // Supprimé, car inclus dans adState
+  adState: AdStateForContent; // L'état publicitaire simplifié
+  resetAdsState?: () => void; // AJOUTÉ: Fonction pour réinitialiser l'état des publicités
 }
 
 function GameContentA({
@@ -122,7 +122,8 @@ function GameContentA({
   levelCompletedEvents,
   levelsHistory,
   showRewardedAd,
-  adState, // NOUVEAU
+  adState,
+  resetAdsState, // NOUVEAU: récupération de la fonction resetAdsState
 }: GameContentAProps) {
   const router = useRouter();
   const userInfoRef = useRef<UserInfoHandle>(null);
@@ -134,6 +135,17 @@ function GameContentA({
   const [showScoreboard, setShowScoreboard] = useState(false);
 
   const isInitialRenderRef = useRef(true); // Pour l'animation d'EventLayoutA
+
+  // Fonction wrapper qui appelle resetAdsState (si disponible) et handleRestartOrClose
+  const handleRestart = useCallback(() => {
+    // Réinitialiser l'état des publicités avant de naviguer/redémarrer
+    if (resetAdsState) {
+      resetAdsState();
+      console.log("[GameContentA] Ads state reset before restarting game");
+    }
+    // Appeler la fonction de navigation originale
+    handleRestartOrClose();
+  }, [handleRestartOrClose, resetAdsState]);
 
   // --- Effet pour obtenir la position des éléments pour l'animation de récompense ---
   useEffect(() => {
@@ -253,7 +265,7 @@ function GameContentA({
       return (
         <View style={styles.errorContainer}>
           <Text style={styles.errorText}>{error}</Text>
-          <TouchableOpacity onPress={handleRestartOrClose} style={styles.errorButton}>
+          <TouchableOpacity onPress={handleRestart} style={styles.errorButton}>
               <Text style={styles.errorButtonText}>Retour</Text>
           </TouchableOpacity>
         </View>
@@ -306,13 +318,13 @@ function GameContentA({
           currentScore={user.points}
           personalBest={highScore}
           isLoadingScores={!leaderboardsReady && isGameOver}
+          onRestart={handleRestart} // Utiliser handleRestart au lieu de handleRestartOrClose
+          onMenuPress={handleRestart}  // Utiliser handleRestart au lieu de handleRestartOrClose
+          playerName={user.name}
+          levelsHistory={levelsHistory}
           dailyScores={leaderboards?.daily || []}
           monthlyScores={leaderboards?.monthly || []}
           allTimeScores={leaderboards?.allTime || []}
-          onRestart={handleRestartOrClose}
-          onMenuPress={handleRestartOrClose}
-          playerName={user.name}
-          levelsHistory={levelsHistory}
         />
 
         {/* --- Overlay pour l'offre de Publicité Récompensée --- */}

@@ -331,6 +331,7 @@ export function useGameLogicA(initialEvent?: string) {
     showGenericInterstitial,
     showLevelUpInterstitial,
     showGameOverInterstitial,
+    resetAdsState,
   } = useAds({
     user,
     setUser,
@@ -862,43 +863,47 @@ export function useGameLogicA(initialEvent?: string) {
     console.log(`[useGameLogicA] State change monitored: showLevelModal = ${showLevelModal}`);
   }, [showLevelModal]);
 
-  return {
-    user,
-    previousEvent,
-    newEvent,
-    displayedEvent,
-    timeLeft,
-    loading,
-    error,
-    isGameOver,
-    leaderboardsReady,
-    showDates,
-    isCorrect,
-    isImageLoaded,
-    streak,
-    highScore,
-    showLevelModal,
-    isLevelPaused,
-    currentLevelConfig,
-    leaderboards,
-    currentReward,
-    handleChoice,
-    handleLevelUp,
-    showRewardedAd,
-    initGame,
-    completeRewardAnimation,
-    updateRewardPosition,
-    remainingEvents: allEvents ? allEvents.length - usedEvents.size : 0,
-    progressAnim,
-    onImageLoad: handleImageLoad,
-    levelCompletedEvents,
-    levelsHistory,
-    adState: {
-      hasRewardedAd: adState.rewardedLoaded,
-      hasWatchedRewardedAd: adState.hasWatchedRewardedAd,
-      // isAdFreePeriod: adState.isAdFreePeriod,
-    }
-  };
+ // Dans hooks/useGameLogicA.ts
+// Modifiez la section return à la fin de la fonction (vers la ligne ~1630):
+
+return {
+  user,
+  previousEvent,
+  newEvent,
+  displayedEvent,
+  timeLeft,
+  loading,
+  error,
+  isGameOver,
+  leaderboardsReady,
+  showDates,
+  isCorrect,
+  isImageLoaded,
+  streak,
+  highScore,
+  showLevelModal,
+  isLevelPaused,
+  currentLevelConfig,
+  leaderboards,
+  currentReward,
+  handleChoice,
+  handleLevelUp,
+  showRewardedAd,
+  initGame,
+  completeRewardAnimation,
+  updateRewardPosition,
+  remainingEvents: allEvents ? allEvents.length - usedEvents.size : 0,
+  progressAnim,
+  onImageLoad: handleImageLoad,
+  levelCompletedEvents,
+  levelsHistory,
+  resetAdsState, // Ajoutez cette ligne ici (au niveau racine, pas dans adState)
+  adState: {
+    hasRewardedAd: adState.rewardedLoaded,
+    hasWatchedRewardedAd: adState.hasWatchedRewardedAd,
+    // isAdFreePeriod: adState.isAdFreePeriod,
+  }
+};
 }
 
 export default useGameLogicA;
