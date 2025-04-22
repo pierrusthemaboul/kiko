@@ -63,7 +63,6 @@ const EventLayoutA: React.FC<EventLayoutAProps> = ({
     if (!newEvent || isInitialRender) {
       // Si c'est le rendu initial, s'assurer que les positions sont bonnes
       if (isInitialRender) {
-          console.log("[EventLayoutA] Initial render detected, setting static positions.");
           topCardTranslateY.setValue(0);
           bottomCardTranslateY.setValue(0);
           topCardScale.setValue(1);
@@ -77,7 +76,6 @@ const EventLayoutA: React.FC<EventLayoutAProps> = ({
 
     // Vérifier si l'ID de l'événement a réellement changé depuis le dernier effet
     if (newEvent.id !== prevNewEventIdRef.current) {
-      console.log("[EventLayoutA] New event ID detected, starting transition.");
       prevNewEventIdRef.current = newEvent.id; // Mettre à jour la ref AVANT l'animation
       animateCards(); // Lancer l'animation seulement si l'ID a changé et ce n'est pas le rendu initial
     }
@@ -115,7 +113,6 @@ const EventLayoutA: React.FC<EventLayoutAProps> = ({
     ]).start(({ finished }) => {
       // Cette callback s'exécute APRÈS la fin de l'animation
       if (finished) {
-        console.log("[EventLayoutA] Animation finished. Swapping events and resetting transforms.");
         // Mettre à jour l'état local des cartes affichées :
         // L'ancien 'currentBottom' devient le nouveau 'currentTop'
         setCurrentTop(currentBottom);
@@ -131,7 +128,6 @@ const EventLayoutA: React.FC<EventLayoutAProps> = ({
 
         setTransitioning(false); // Fin de l'état de transition
       } else {
-         console.log("[EventLayoutA] Animation interrupted.");
          // Si l'animation est interrompue, on pourrait vouloir forcer la réinitialisation
          // ou laisser l'état tel quel selon le comportement désiré.
          // Forcer la réinitialisation est plus sûr :
