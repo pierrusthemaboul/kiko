@@ -1,4 +1,4 @@
-// /home/pierre/sword/kiko/app/(tabs)/page.tsx (ou le chemin correct de votre page)
+// /home/pierre/sword/kiko/app/game/page.tsx
 
 import React, { useEffect, useRef, useCallback, useState } from 'react';
 import {
@@ -11,101 +11,105 @@ import {
   Platform,
 } from 'react-native';
 import { useRouter, useFocusEffect } from 'expo-router';
-// --- MODIFICATION IMPORT ---
-// Assure-toi que l'import vient bien de la librairie installée
 import { SafeAreaView } from 'react-native-safe-area-context';
 
 // Composants
-import GameContentA from "../../components/game/GameContentA"; // Vérifie le chemin
+import GameContentA from "../../components/game/GameContentA"; // Chemin OK
 
 // Hooks
-import { useGameLogicA } from '@/hooks/useGameLogicA'; // Vérifie le chemin
+import { useGameLogicA } from '@/hooks/useGameLogicA'; // Chemin OK
 
 // Libs
-// --- CORRECTION DE L'IMPORT ---
-// Utilise l'importation nommée pour obtenir l'objet FirebaseAnalytics exporté
-import { FirebaseAnalytics } from '@/lib/firebase'; // Vérifie le chemin
+import { FirebaseAnalytics } from '@/lib/firebase'; // Chemin OK
 
-export default function GamePage() {
+export default function GameScreenPage() { // Renommé pour clarté, mais le nom exporté doit être default
   const router = useRouter();
   const fadeAnim = useRef(new Animated.Value(0)).current;
   const [gameKey, setGameKey] = useState(0);
   const [isRestarting, setIsRestarting] = useState(false);
 
-  const gameLogic = useGameLogicA(''); // Assure-toi que '' est le paramètre attendu si nécessaire
+  const gameLogic = useGameLogicA(''); // Paramètre OK si attendu
 
   useFocusEffect(
     useCallback(() => {
       try {
-        // Cet appel devrait maintenant fonctionner correctement
-        FirebaseAnalytics.screen('GameScreen', 'GamePage');
+        FirebaseAnalytics.screen('GameScreen', 'GameScreenPage'); // Nom du fichier/écran
       } catch (error) {
         console.error("Erreur lors de l'appel à FirebaseAnalytics.screen :", error);
-        // Optionnel : Tu pourrais aussi tracker cette erreur avec Firebase si besoin
-        // FirebaseAnalytics.error('analytics_call_failed', `Error calling screen: ${error.message}`, 'GamePage');
       }
-      // La fonction de nettoyage est correcte
       return () => {};
-    }, []) // Pas de dépendances nécessaires ici car FirebaseAnalytics et les strings sont stables
+    }, [])
   );
 
-  // Fonction pour relancer sur la MÊME page (gardée pour référence)
-  const handleRestartGameOnSameScreen = useCallback(async () => {
-    // (Logique inchangée)
-    console.log("[GamePage] Restarting game on the same screen...");
-    setIsRestarting(true);
+  // --- FONCTION POUR "REJOUER" ---
+  // Renommée et logique ajustée (reset ads avant initGame)
+  const handleActualRestart = useCallback(async () => {
+    console.log("[GameScreenPage] ACTION: Restarting game state (Rejouer)...");
+    setIsRestarting(true); // Affiche le chargement
+
+    // Réinitialise l'état des pubs D'ABORD
+    if (gameLogic.resetAdsState) {
+      gameLogic.resetAdsState();
+      console.log("[GameScreenPage] Ads state reset before restarting game logic");
+    } else {
+       console.log("[GameScreenPage] resetAdsState function not available.");
+    }
+
+    // Réinitialise la logique du jeu
     if (gameLogic.initGame) {
       try {
-        await gameLogic.initGame();
-        // Si resetAdsState existe, l'appeler pour réinitialiser l'état des pubs
-        if (gameLogic.resetAdsState) {
-          gameLogic.resetAdsState();
-          console.log("[GamePage] Ads state has been reset for new game");
-        }
+        await gameLogic.initGame(); // Réinitialise l'état interne du hook
+        console.log("[GameScreenPage] Game logic re-initialized.");
       } catch (error) {
-         console.error("[GamePage] Error during initGame on restart:", error);
+         console.error("[GameScreenPage] Error during initGame on restart:", error);
       }
+    } else {
+      console.warn("[GameScreenPage] gameLogic.initGame function not found!");
     }
+
+    // Force le re-rendu de GameContentA et réinitialise l'animation
     setGameKey(prevKey => prevKey + 1);
     fadeAnim.setValue(0);
     Animated.timing(fadeAnim, { toValue: 1, duration: 500, useNativeDriver: true }).start();
-    setTimeout(() => setIsRestarting(false), 150); // Court délai pour laisser le rendu se faire
-  }, [gameLogic.initGame, gameLogic.resetAdsState, fadeAnim]); // S'assurer que gameLogic.resetAdsState est dans les dépendances
 
+    setTimeout(() => setIsRestarting(false), 150); // Cache le chargement
 
-  // Fonction pour naviguer vers vue1 (utilisée pour "Rejouer" / "Menu")
-  const handleNavigateToVue1 = useCallback(() => {
-    // Modification pour réinitialiser l'état des pubs avant de naviguer
-    console.log("[GamePage] 'Rejouer'/'Menu' clicked: Navigating to /vue1");
-    try {
-       // Réinitialisation des publicités avant de quitter la page
-       if (gameLogic.resetAdsState) {
-         gameLogic.resetAdsState();
-         console.log("[GamePage] Ads state has been reset before navigation");
-       }
-       // Utilise replace pour éviter d'empiler les écrans de jeu dans l'historique
-       router.replace('/vue1');
-    } catch (e) {
-      console.error("[GamePage] Error navigating to /vue1:", e);
+  }, [gameLogic.initGame, gameLogic.resetAdsState, fadeAnim]); // Dépendances
+
+  // --- FONCTION POUR "MENU" ---
+  // Navigue vers l'écran d'accueil (index.tsx dans le groupe (tabs))
+  const handleActualMenu = useCallback(() => {
+    console.log("[GameScreenPage] ACTION: Navigating to Home Screen (Menu)...");
+
+    // Réinitialise l'état des pubs AVANT de quitter
+    if (gameLogic.resetAdsState) {
+      gameLogic.resetAdsState();
+      console.log("[GameScreenPage] Ads state reset before navigating to home");
+    } else {
+        console.log("[GameScreenPage] resetAdsState function not available.");
     }
-  }, [router, gameLogic.resetAdsState]); // Ajout de gameLogic.resetAdsState dans les dépendances
+
+    try {
+      // Navigue vers la racine du groupe (tabs), qui correspond à /app/(tabs)/index.tsx
+      // Utilise replace pour une meilleure navigation (pas de retour vers le jeu)
+      router.replace('/(tabs)/');
+    } catch (e) {
+      console.error("[GameScreenPage] Error navigating to Home Screen:", e);
+    }
+  }, [router, gameLogic.resetAdsState]); // Dépendances
+
+  // --- Supprimer l'ancienne fonction ---
+  // const handleNavigateToVue1 = useCallback(() => { ... }); // Supprimée ou commentée
 
   useEffect(() => {
-    // Animation d'entrée initiale ou après redémarrage
+    // Animation d'entrée
     fadeAnim.setValue(0);
     Animated.timing(fadeAnim, { toValue: 1, duration: 500, useNativeDriver: true }).start();
-  }, [gameKey, fadeAnim]); // Déclenché par gameKey pour le redémarrage
+  }, [gameKey, fadeAnim]);
 
-  // Condition pour afficher l'indicateur de chargement
-  // - Au premier chargement (gameKey === 0) pendant que gameLogic charge
-  // - Pendant le redémarrage manuel (isRestarting)
   const showLoadingIndicator = (gameKey === 0 && gameLogic.loading) || isRestarting;
 
-  // --- Vérification de chargement plus robuste ---
-  // S'assurer que les données essentielles sont là avant de tenter le rendu du jeu
   if (showLoadingIndicator || !gameLogic || !gameLogic.user || !gameLogic.currentLevelConfig || !gameLogic.adState) {
-     // Log pour débogage si nécessaire
-     // console.log("GamePage Loading State:", { showLoadingIndicator, gameLogicExists: !!gameLogic, userExists: !!gameLogic?.user, configExists: !!gameLogic?.currentLevelConfig, adStateExists: !!gameLogic?.adState });
      return (
        <View style={[styles.fullScreenContainer, styles.loadingContainer]}>
          <StatusBar translucent backgroundColor="black" barStyle="light-content" />
@@ -114,21 +118,17 @@ export default function GamePage() {
      );
    }
 
-  // --- Rendu Principal ---
   return (
     <View style={styles.fullScreenContainer}>
       <ImageBackground
-        source={require('../../assets/images/quipasse3.png')} // Vérifie le chemin de l'image
+        source={require('../../assets/images/quipasse3.png')} // Chemin OK
         style={styles.backgroundImage}
         resizeMode="cover"
       >
         <StatusBar translucent backgroundColor="black" barStyle="light-content" />
-
-        {/* Utilisation de SafeAreaView pour gérer les encoches et barres système */}
         <SafeAreaView style={styles.container} edges={['top', 'bottom']}>
-          {/* GameContentA reçoit toutes les props nécessaires depuis useGameLogicA */}
           <GameContentA
-            key={gameKey} // Force le re-rendu complet lors du redémarrage
+            key={gameKey}
             user={gameLogic.user}
             previousEvent={gameLogic.previousEvent}
             displayedEvent={gameLogic.displayedEvent}
@@ -140,13 +140,17 @@ export default function GamePage() {
             isCorrect={gameLogic.isCorrect}
             isImageLoaded={gameLogic.isImageLoaded}
             handleChoice={gameLogic.handleChoice}
-            handleImageLoad={gameLogic.onImageLoad}
-            // Utilise la navigation vers vue1 pour rejouer/menu
-            handleRestartOrClose={handleNavigateToVue1}
+            handleImageLoad={gameLogic.onImageLoad} // OK
+
+            // --- PASSER LES NOUVELLES FONCTIONS SPÉCIFIQUES ---
+            onActualRestart={handleActualRestart} // Pour l'action REJOUER
+            onActualMenu={handleActualMenu}       // Pour l'action MENU
+            // handleRestartOrClose={...} // Supprimer cette ligne
+
             streak={gameLogic.streak}
             highScore={gameLogic.highScore}
             level={gameLogic.user.level}
-            fadeAnim={fadeAnim} // Passe l'animation pour le contenu
+            fadeAnim={fadeAnim}
             showLevelModal={gameLogic.showLevelModal}
             isLevelPaused={gameLogic.isLevelPaused}
             handleLevelUp={gameLogic.handleLevelUp}
@@ -159,7 +163,7 @@ export default function GamePage() {
             levelsHistory={gameLogic.levelsHistory}
             showRewardedAd={gameLogic.showRewardedAd}
             adState={gameLogic.adState}
-            resetAdsState={gameLogic.resetAdsState} // Ajouter cette prop pour permettre à GameContentA de réinitialiser les pubs
+            resetAdsState={gameLogic.resetAdsState} // Garder cette prop
           />
         </SafeAreaView>
       </ImageBackground>
@@ -167,7 +171,7 @@ export default function GamePage() {
   );
 }
 
-// --- Styles (inchangés) ---
+// --- Styles ---
 const styles = StyleSheet.create({
   fullScreenContainer: {
     flex: 1,
@@ -177,12 +181,12 @@ const styles = StyleSheet.create({
   },
   container: {
     flex: 1,
-    backgroundColor: 'transparent', // Important pour voir le fond d'écran
+    backgroundColor: 'transparent',
   },
   loadingContainer: {
     flex: 1,
     justifyContent: 'center',
     alignItems: 'center',
-    backgroundColor: 'rgba(0, 0, 0, 0.7)', // Fond semi-transparent pour le chargement
+    backgroundColor: 'rgba(0, 0, 0, 0.7)',
   },
 });

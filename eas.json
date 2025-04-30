@@ -6,13 +6,25 @@
   "build": {
     "development": {
       "developmentClient": true,
-      "distribution": "internal"
+      "distribution": "internal",
+      "env": {
+        // Optionnel: Si vous voulez être explicite pour le dev client
+        "EXPO_PUBLIC_APP_VARIANT": "development"
+      }
     },
     "preview": {
-      "distribution": "internal"
+      "distribution": "internal",
+      // ICI : On dit que ce build 'preview' est pour le test interne/fermé
+      "env": {
+        "EXPO_PUBLIC_APP_VARIANT": "internalTesting"
+      }
     },
     "production": {
-      "autoIncrement": true
+      "autoIncrement": true,
+      // ICI : On dit que ce build est la production finale
+      "env": {
+        "EXPO_PUBLIC_APP_VARIANT": "production"
+      }
     }
   },
   "submit": {
