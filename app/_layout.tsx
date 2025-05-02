@@ -1,11 +1,9 @@
 // /home/pierre/sword/kiko/app/_layout.tsx
-// ----- FICHIER CORRIGÉ AVEC LOGIQUE DE REDIRECTION ET LOGS DE DEBUG -----
+// ----- FICHIER CORRIGÉ AVEC LOGIQUE DE REDIRECTION AJUSTÉE -----
 
 import React, { useEffect, useState } from 'react';
-// --- AJOUT: Imports pour la redirection ---
 import { useRouter, useSegments } from 'expo-router';
 import { Session } from '@supabase/supabase-js';
-// -----------------------------------------
 import { Stack, SplashScreen } from 'expo-router';
 import { useFonts } from 'expo-font';
 import * as Application from 'expo-application';
@@ -25,10 +23,8 @@ export default function RootLayout() {
   const [appReady, setAppReady] = useState(false);
   const [initialSetupDone, setInitialSetupDone] = useState(false);
   const [session, setSession] = useState<Session | null>(null);
-  // --- AJOUT: Hooks de navigation DANS le composant ---
   const router = useRouter();
-  const segments = useSegments();
-  // --------------------------------------------------
+  const segments = useSegments(); // Donne les parties de l'URL actuelle
 
   const [fontsLoaded, fontError] = useFonts({
     'Montserrat-Regular': require('../assets/fonts/Montserrat-Regular.ttf'),
@@ -36,17 +32,12 @@ export default function RootLayout() {
     'Montserrat-Bold': require('../assets/fonts/Montserrat-Bold.ttf'),
   });
 
-  // Log initial pour vérifier l'état du module MobileAds
-  useEffect(() => {
-    console.log('[DEBUG] MobileAds module:', MobileAds);
-  }, []);
-
-  // Effet pour l'initialisation (Firebase, Version Check)
+  // --- Initialisation (Firebase, Version Check) ---
   useEffect(() => {
     const initializeApp = async () => {
       console.log('[RootLayout] Initializing App Setup (Firebase, Version)...');
       try {
-        await FirebaseAnalytics.initialize(undefined, true); // Init anonyme au début
+        await FirebaseAnalytics.initialize(undefined, true);
         await FirebaseAnalytics.appOpen();
         const previousVersion = await AsyncStorage.getItem(APP_VERSION_STORAGE_KEY);
         if (previousVersion && previousVersion !== CURRENT_APP_VERSION) {
@@ -68,33 +59,24 @@ export default function RootLayout() {
     initializeApp();
   }, []);
 
-  // Effet pour AdMob avec délai et logs de debug supplémentaires
+  // --- Configuration AdMob ---
   useEffect(() => {
     const configureAdMob = async () => {
+      // ... (code AdMob inchangé) ...
       try {
         console.log('[AdMob Config] Starting AdMob initialization...');
         await MobileAds().initialize();
         console.log('[AdMob Config] AdMob SDK Initialized successfully.');
-
-        // Attendre 2000ms pour que le module natif ait le temps de se charger complètement
-        console.log('[AdMob Config] Waiting 2000ms before calling setRequestConfiguration()');
-        await new Promise(resolve => setTimeout(resolve, 2000));
-
-        // --- ATTENTION: IDs de test - À supprimer/conditionner pour la production ---
+        await new Promise(resolve => setTimeout(resolve, 2000)); // Délai
         try {
-          if (__DEV__) { // Pour le développement uniquement
+          if (__DEV__) {
             const myTestDeviceIds = ['3D55CC0D2A3E4E6EB5D0F1231DE2E59C'];
             console.log('[AdMob Config] DEV MODE - Configuring test devices:', myTestDeviceIds);
-            // On passe directement l'objet de configuration
             const requestConfig = { testDeviceIdentifiers: myTestDeviceIds };
-            console.log('[AdMob Config] RequestConfiguration object (plain object):', requestConfig);
-            console.log('[AdMob Config] Calling setRequestConfiguration()...');
             await MobileAds().setRequestConfiguration(requestConfig);
             console.log('[AdMob Config] Test Devices Configured successfully.');
           } else {
             console.log('[AdMob Config] PROD MODE - Skipping test device configuration.');
-            // Optionnel: Configurer les paramètres de production ici si nécessaire
-            // Exemple : await MobileAds().setRequestConfiguration({ maxAdContentRating: 'G', tagForChildDirectedTreatment: false });
           }
         } catch (configError) {
           console.warn('[AdMob Config] Failed to set AdMob request configuration:', configError);
@@ -108,7 +90,7 @@ export default function RootLayout() {
     configureAdMob();
   }, []);
 
-  // Effet pour écouter les changements d'état d'authentification
+  // --- Écoute de l'état d'authentification ---
   useEffect(() => {
     supabase.auth.getSession()
       .then(({ data: { session: initialSession } }) => {
@@ -135,7 +117,7 @@ export default function RootLayout() {
     };
   }, []);
 
-  // Gestion des erreurs de chargement des polices
+  // --- Gestion Erreur Polices ---
   useEffect(() => {
     if (fontError) {
       console.error("RootLayout: Font loading error:", fontError);
@@ -143,7 +125,7 @@ export default function RootLayout() {
     }
   }, [fontError]);
 
-  // Décider quand l'app est prête (polices + setup initial)
+  // --- Décision App Prête ---
   useEffect(() => {
     if ((fontsLoaded || fontError) && initialSetupDone) {
       setAppReady(true);
@@ -151,29 +133,49 @@ export default function RootLayout() {
     }
   }, [fontsLoaded, fontError, initialSetupDone]);
 
-  // --- AJOUT: Effet pour la redirection (Auth Guard) ---
+
+  // --- CORRECTION DE LA LOGIQUE DE REDIRECTION (Auth Guard) ---
   useEffect(() => {
+    // Ne rien faire tant que l'app n'est pas prête ou que les infos de route ne sont pas dispo
     if (!appReady || !router || !segments || segments.length === 0) {
       return;
     }
+
     const inAuthGroup = segments[0] === '(auth)';
-    const isProtectedGroup = segments[0] === '(tabs)' || segments[0] === 'game';
 
-    console.log(`[Auth Guard] Checking: Session=${session ? 'Yes' : 'No'}, Segments=${segments.join('/')}, InAuth=${inAuthGroup}, InProtected=${isProtectedGroup}`);
+    // Vérifier si on essaie d'accéder à un groupe protégé
+    const isTryingProtectedGroup = segments[0] === '(tabs)' || segments[0] === 'game';
 
-    if (!session && isProtectedGroup) {
-      console.log('[Auth Guard] Condition Met: No session & in protected area -> Redirecting to /auth/login');
+    // Vérifier si on essaie d'accéder SPÉCIFIQUEMENT à l'écran d'accueil (index) dans (tabs)
+    // segments = ['(tabs)'] ou ['(tabs)', 'index'] pour l'écran d'accueil
+    const isTryingTabsIndex = segments[0] === '(tabs)' && (segments.length === 1 || segments[1] === 'index');
+
+    console.log(`[Auth Guard] Checking: Session=${session ? 'Yes' : 'No'}, Segments=${segments.join('/')}, InAuth=${inAuthGroup}, IsTryingProtected=${isTryingProtectedGroup}, IsTryingTabsIndex=${isTryingTabsIndex}`);
+
+    // Condition de redirection vers Login :
+    // 1. PAS de session
+    // 2. ET on essaie d'accéder à un groupe protégé ((tabs) ou game)
+    // 3. ET ce n'est PAS l'écran d'accueil (tabs)/index
+    if (!session && isTryingProtectedGroup && !isTryingTabsIndex) {
+      console.log('[Auth Guard] Condition Met: No session & trying protected area (NOT index) -> Redirecting to /auth/login');
       router.replace('/auth/login');
-    } else if (session && inAuthGroup) {
+    }
+    // Condition de redirection vers l'accueil si on est connecté et dans le groupe (auth)
+    else if (session && inAuthGroup) {
       console.log('[Auth Guard] Condition Met: Session exists & in auth area -> Redirecting to /(tabs)');
+      // Redirige vers l'écran d'accueil par défaut du groupe (tabs)
       router.replace('/(tabs)');
-    } else {
+    }
+    // Dans tous les autres cas (session existe et on est dans (tabs), ou pas de session et on est sur (tabs)/index), on ne fait rien.
+    else {
       console.log('[Auth Guard] Condition Not Met: No redirect needed.');
     }
-  }, [appReady, session, segments, router]);
-  // -------------------------------------------------------
 
-  // Cacher le Splash Screen une fois l'app prête
+  }, [appReady, session, segments, router]); // Dépendances de l'effet
+  // --- FIN CORRECTION REDIRECTION ---
+
+
+  // --- Cacher Splash Screen ---
   useEffect(() => {
     if (appReady) {
       SplashScreen.hideAsync().catch(e => console.warn("[SplashScreen] Error hiding splash screen:", e));
@@ -181,13 +183,14 @@ export default function RootLayout() {
     }
   }, [appReady]);
 
-  // Tant que l'app n'est pas prête, afficher null
+  // --- Rendu ---
   if (!appReady) {
     console.log('[RootLayout] Rendering null (App not ready)');
-    return null;
+    return null; // Affiche le splash screen natif tant que pas prêt
   }
 
   console.log('[RootLayout] Rendering Stack Navigator');
+  // Le Stack Navigator principal
   return (
     <Stack screenOptions={{ headerShown: false }}>
       <Stack.Screen name="(tabs)" />

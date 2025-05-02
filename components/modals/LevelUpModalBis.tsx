@@ -18,8 +18,8 @@ import {
 } from 'react-native';
 import { Ionicons } from '@expo/vector-icons';
 import { LinearGradient } from 'expo-linear-gradient';
-import { colors } from '../../constants/Colors';
-import type { LevelEventSummary, SpecialRules } from '@/hooks/types';
+import { colors } from '../../constants/Colors'; // Ajuster le chemin si besoin
+import type { LevelEventSummary, SpecialRules } from '@/hooks/types'; // Ajuster le chemin si besoin
 
 const { width } = Dimensions.get('window');
 
@@ -79,7 +79,7 @@ const LevelUpModalBis: React.FC<LevelUpModalBisProps> = ({
   const levelNumberAnim = useRef(new Animated.Value(0)).current;
   const contentTranslateY = useRef(new Animated.Value(50)).current;
 
-  // State pour le popup d’un événement en particulier
+  // State pour le popup d'un événement en particulier
   const [selectedEvent, setSelectedEvent] = useState<LevelEventSummary | null>(null);
 
   // Animation d'entrée
@@ -133,7 +133,7 @@ const LevelUpModalBis: React.FC<LevelUpModalBisProps> = ({
         startButtonAnimation();
       });
     }
-  }, [visible]);
+  }, [visible, scaleAnim, opacityAnim, backgroundOpacityAnim, levelNumberAnim, contentTranslateY, buttonScaleAnim]); // Ajout des dépendances anim
 
   // Animation du bouton "GO!"
   const startButtonAnimation = () => {
@@ -184,7 +184,7 @@ const LevelUpModalBis: React.FC<LevelUpModalBisProps> = ({
     );
   };
 
-  // Rendu du récapitulatif des événements
+  // Rendu du récapitulatif des événements (AVEC CLÉ CORRIGÉE)
   const renderEventsSummary = () => {
     if (!eventsSummary?.length) return null;
 
@@ -207,7 +207,7 @@ const LevelUpModalBis: React.FC<LevelUpModalBisProps> = ({
         <ScrollView horizontal showsHorizontalScrollIndicator={false}>
           {eventsSummary.map((event, index) => (
             <TouchableOpacity
-              key={event.id ?? index}
+              key={`event-summary-${event.id ?? 'no-id'}-${index}`}
               onPress={() => setSelectedEvent(event)}
               activeOpacity={0.7}
               style={styles.eventCardTouchable}
@@ -299,7 +299,6 @@ const LevelUpModalBis: React.FC<LevelUpModalBisProps> = ({
       visible={visible}
       animationType="none"
       statusBarTranslucent
-      key={eventsSummary?.length} // Forcer le remontage du Modal si le tableau change
     >
       <Animated.View
         style={[styles.modalOverlay, { opacity: backgroundOpacityAnim }]}

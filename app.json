@@ -23,7 +23,7 @@
     },
     "android": {
       "adaptiveIcon": {
-        "foregroundImage": "./assets/images/adaptive-icon.png",
+        "foregroundImage": "./assets/images/logo3.png",
         "backgroundColor": "#020817"
       },
       "package": "com.pierretulle.kiko",
@@ -32,7 +32,7 @@
         "INTERNET",
         "VIBRATE"
       ],
-      "googleServicesFile": "./google-services.json"
+      "googleServicesFile": "./google-services.json" 
     },
     "web": {
       "bundler": "metro",
@@ -56,10 +56,9 @@
           "androidAppId": "ca-app-pub-7809209690404525~1711130974",
           "iosAppId": "ca-app-pub-7809209690404525~1711130974"
         }
-      ],
-      "@react-native-firebase/app",
-      
-    ],
+      ], 
+      "@react-native-firebase/app" 
+    ], 
     "experiments": {
       "typedRoutes": true
     },
