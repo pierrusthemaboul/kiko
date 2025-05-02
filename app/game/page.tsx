@@ -58,7 +58,7 @@ export default function GameScreenPage() { // Renommé pour clarté, mais le nom
       console.warn("[GameScreenPage] resetAdsState function not available in gameLogic.");
     }
 
-    // 2. Réinitialise l'état de contrôle du jeu (isGameOver, isPaused, streak, etc.) (si la fonction existe)
+    // 2. Réinitialise l'état de contrôle du jeu (isGameOver, isPaused, streak, etc.)
     if (gameLogic.resetGameFlowState) {
       gameLogic.resetGameFlowState();
       console.log("[GameScreenPage] Game flow state reset.");
@@ -66,7 +66,7 @@ export default function GameScreenPage() { // Renommé pour clarté, mais le nom
       console.warn("[GameScreenPage] resetGameFlowState function not found in gameLogic!");
     }
 
-    // 3. Réinitialise les données du jeu et sélectionne les événements initiaux (si la fonction existe)
+    // 3. Réinitialise les données du jeu et sélectionne les événements initiaux
     if (gameLogic.initGame) {
       try {
         await gameLogic.initGame(); // Réinitialise user, events, etc.
@@ -88,7 +88,7 @@ export default function GameScreenPage() { // Renommé pour clarté, mais le nom
     // Cache l'indicateur de chargement après un court délai pour laisser le temps au re-rendu
     setTimeout(() => setIsRestarting(false), 150);
 
-  }, [gameLogic.initGame, gameLogic.resetAdsState, gameLogic.resetGameFlowState, fadeAnim]); // <-- Inclure resetGameFlowState dans les dépendances
+  }, [gameLogic.initGame, gameLogic.resetAdsState, gameLogic.resetGameFlowState, fadeAnim]);
 
   // --- FONCTION POUR "MENU" ---
   // Navigue vers l'écran d'accueil (index.tsx dans le groupe (tabs))
@@ -131,77 +131,77 @@ export default function GameScreenPage() { // Renommé pour clarté, mais le nom
      );
    }
 
-  // Rendu principal de l'écran de jeu
-  return (
-    <View style={styles.fullScreenContainer}>
-      <ImageBackground
-        source={require('../../assets/images/quipasse3.png')} // Chemin relatif OK
-        style={styles.backgroundImage}
-        resizeMode="cover"
-      >
-        <StatusBar translucent backgroundColor="black" barStyle="light-content" />
-        {/* SafeAreaView pour gérer les encoches et barres système */}
-        <SafeAreaView style={styles.container} edges={['top', 'bottom']}>
-          {/* Composant qui contient l'UI et la logique d'affichage du jeu */}
-          <GameContentA
-            key={gameKey} // La clé change pour forcer le re-montage/re-rendu au redémarrage
-            // Props d'état du jeu
-            user={gameLogic.user}
-            previousEvent={gameLogic.previousEvent}
-            displayedEvent={gameLogic.displayedEvent}
-            timeLeft={gameLogic.timeLeft}
-            error={gameLogic.error}
-            isGameOver={gameLogic.isGameOver}
-            leaderboardsReady={gameLogic.leaderboardsReady}
-            showDates={gameLogic.showDates}
-            isCorrect={gameLogic.isCorrect}
-            isImageLoaded={gameLogic.isImageLoaded}
-            streak={gameLogic.streak}
-            highScore={gameLogic.highScore}
-            level={gameLogic.user.level}
-            isLevelPaused={gameLogic.isLevelPaused}
-            currentLevelConfig={gameLogic.currentLevelConfig}
-            leaderboards={gameLogic.leaderboards}
-            levelCompletedEvents={gameLogic.levelCompletedEvents}
-            levelsHistory={gameLogic.levelsHistory}
-            currentReward={gameLogic.currentReward}
-            adState={gameLogic.adState} // État des pubs
-            // Props de callbacks (actions)
-            handleChoice={gameLogic.handleChoice}
-            handleImageLoad={gameLogic.onImageLoad} // Fonction du useTimer
-            handleLevelUp={gameLogic.handleLevelUp}
-            onActualRestart={handleActualRestart} // <- Fonction Rejouer corrigée
-            onActualMenu={handleActualMenu}       // <- Fonction Menu
-            showRewardedAd={gameLogic.showRewardedAd}
-            resetAdsState={gameLogic.resetAdsState} // Fonction reset pubs
-            completeRewardAnimation={gameLogic.completeRewardAnimation}
-            updateRewardPosition={gameLogic.updateRewardPosition}
-            // Props d'animation/modales
-            fadeAnim={fadeAnim}
-            showLevelModal={gameLogic.showLevelModal}
-          />
-        </SafeAreaView>
-      </ImageBackground>
-    </View>
-  );
+// Rendu principal de l'écran de jeu
+return (
+  <View style={styles.fullScreenContainer}>
+    <ImageBackground
+      source={require('../../assets/images/quipasse3.png')} // Chemin relatif OK
+      style={styles.backgroundImage}
+      resizeMode="cover"
+    >
+      <StatusBar translucent backgroundColor="black" barStyle="light-content" />
+      {/* SafeAreaView pour gérer les encoches et barres système */}
+      <SafeAreaView style={styles.container} edges={['top', 'bottom']}>
+        {/* Composant qui contient l'UI et la logique d'affichage du jeu */}
+        <GameContentA
+          key={gameKey} // La clé change pour forcer le re-montage/re-rendu au redémarrage
+          // Props d'état du jeu
+          user={gameLogic.user}
+          previousEvent={gameLogic.previousEvent}
+          displayedEvent={gameLogic.displayedEvent}
+          timeLeft={gameLogic.timeLeft}
+          error={gameLogic.error}
+          isGameOver={gameLogic.isGameOver}
+          leaderboardsReady={gameLogic.leaderboardsReady}
+          showDates={gameLogic.showDates}
+          isCorrect={gameLogic.isCorrect}
+          isImageLoaded={gameLogic.isImageLoaded}
+          streak={gameLogic.streak}
+          highScore={gameLogic.highScore}
+          level={gameLogic.user.level}
+          isLevelPaused={gameLogic.isLevelPaused}
+          currentLevelConfig={gameLogic.currentLevelConfig}
+          leaderboards={gameLogic.leaderboards}
+          levelCompletedEvents={gameLogic.levelCompletedEvents}
+          levelsHistory={gameLogic.levelsHistory}
+          currentReward={gameLogic.currentReward}
+          adState={gameLogic.adState} // État des pubs
+          // Props de callbacks (actions)
+          handleChoice={gameLogic.handleChoice}
+          handleImageLoad={gameLogic.onImageLoad} // Fonction du useTimer
+          handleLevelUp={gameLogic.handleLevelUp}
+          onActualRestart={handleActualRestart} // <- Fonction Rejouer corrigée
+          onActualMenu={handleActualMenu}       // <- Fonction Menu
+          showRewardedAd={gameLogic.showRewardedAd}
+          resetAdsState={gameLogic.resetAdsState} // Fonction reset pubs
+          completeRewardAnimation={gameLogic.completeRewardAnimation}
+          updateRewardPosition={gameLogic.updateRewardPosition}
+          // Props d'animation/modales
+          fadeAnim={fadeAnim}
+          showLevelModal={gameLogic.showLevelModal}
+        />
+      </SafeAreaView>
+    </ImageBackground>
+  </View>
+);
 }
 
 // --- Styles ---
 const styles = StyleSheet.create({
-  fullScreenContainer: {
-    flex: 1,
-  },
-  backgroundImage: {
-    flex: 1, width: '100%', height: '100%',
-  },
-  container: {
-    flex: 1,
-    backgroundColor: 'transparent', // Important pour voir l'image de fond
-  },
-  loadingContainer: {
-    flex: 1,
-    justifyContent: 'center',
-    alignItems: 'center',
-    backgroundColor: 'rgba(0, 0, 0, 0.7)', // Fond semi-transparent pour le chargement
-  },
+fullScreenContainer: {
+  flex: 1,
+},
+backgroundImage: {
+  flex: 1, width: '100%', height: '100%',
+},
+container: {
+  flex: 1,
+  backgroundColor: 'transparent', // Important pour voir l'image de fond
+},
+loadingContainer: {
+  flex: 1,
+  justifyContent: 'center',
+  alignItems: 'center',
+  backgroundColor: 'rgba(0, 0, 0, 0.7)', // Fond semi-transparent pour le chargement
+},
 });

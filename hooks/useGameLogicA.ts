@@ -117,13 +117,17 @@ export function useGameLogicA(initialEvent?: string) {
     setError(null); // Nettoyer les erreurs précédentes
     // Réinitialiser aussi l'état des sous-hooks si nécessaire
     resetCurrentLevelEvents(); // Réinitialise les events du niveau en cours
+    resetLevelCompletedEvents(); // Réinitialise les events du niveau complété
     resetAntiqueCount(); // Réinitialise le compteur d'events antiques
     setLeaderboardsReady(false); // Masquer les classements précédents
-    // resetTimer(20); // Le timer se réinitialise normalement avec le nouvel event, mais on pourrait forcer si besoin
-
-  }, [progressAnim, resetCurrentLevelEvents, resetAntiqueCount, setLeaderboardsReady]); // Ajouter d'autres dépendances si nécessaire (setters sont stables)
+  }, [
+    progressAnim, 
+    resetCurrentLevelEvents, 
+    resetLevelCompletedEvents,
+    resetAntiqueCount, 
+    setLeaderboardsReady
+  ]);
   // --- FIN AJOUT ---
-
 
   const handleTimeout = useCallback(() => {
     // console.log(`[useGameLogicA] handleTimeout called. isLevelPaused: ${isLevelPaused}, isGameOver: ${isGameOver}`);
@@ -730,7 +734,7 @@ export function useGameLogicA(initialEvent?: string) {
 
       if (profileError) {
         FirebaseAnalytics.error('profile_fetch_error', profileError.message, 'endGame');
-         // console.error("[useGameLogicA] Error fetching profile:", profileError.message);
+        // console.error("[useGameLogicA] Error fetching profile:", profileError.message);
       } else if (currentProfile && user.points > (currentProfile.high_score || 0)) {
          // console.log(`[useGameLogicA] New high score! ${user.points} > ${currentProfile.high_score || 0}`);
         const { error: updateError } = await supabase
@@ -809,7 +813,7 @@ export function useGameLogicA(initialEvent?: string) {
        }
     }
   }, [
-    isGameOver, user.points, user.level, user.totalEventsCompleted, user.maxStreak, user.name, highScore, playGameOverSound, trackGameOver, finalizeCurrentLevelHistory, currentLevelEvents, canShowAd, showGameOverInterstitial, setScoresAndShow, setIsGameOver, setIsCountdownActive, setIsLevelPaused, setLeaderboardsReady, setPendingAdDisplay, setLevelsHistory, pendingAdDisplay // Added pendingAdDisplay dependency
+    isGameOver, user.points, user.level, user.totalEventsCompleted, user.maxStreak, user.name, highScore, playGameOverSound, trackGameOver, finalizeCurrentLevelHistory, currentLevelEvents, canShowAd, showGameOverInterstitial, setScoresAndShow, setIsGameOver, setIsCountdownActive, setIsLevelPaused, setLeaderboardsReady, setPendingAdDisplay, setLevelsHistory, pendingAdDisplay
   ]);
 
   const handleLevelUp = useCallback(() => {
@@ -932,8 +936,8 @@ export function useGameLogicA(initialEvent?: string) {
   }, [showLevelModal]);
 
 
- // --- MODIFIER LA SECTION RETURN (tout à la fin du hook) ---
- return {
+  // --- MODIFIER LA SECTION RETURN (tout à la fin du hook) ---
+  return {
     user,
     previousEvent,
     newEvent,

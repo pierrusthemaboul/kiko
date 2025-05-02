@@ -624,35 +624,75 @@ export function useAds({
       setError
       ]);
 
-      const resetAdsState = useCallback(() => {
-      // console.log("[useAds] Resetting ads state (clearing lastInterstitialTime, hasWatchedRewardedAd, and pending ads)");
-      setAdState(prev => ({
-        ...prev,
-        interstitialLoaded: false,
-        gameOverInterstitialLoaded: false,
-        levelUpInterstitialLoaded: false,
-        rewardedLoaded: false,
-        hasWatchedRewardedAd: false,
-        lastInterstitialTime: 0,
-        pendingAds: [],
-        isShowingAd: false,
-        processingAdRequest: false
-      }));
+  // --- DÉBUT MODIFICATION DE resetAdsState ---
+  const resetAdsState = useCallback(() => {
+    console.log("[useAds] Resetting ads state (clearing lastInterstitialTime, hasWatchedRewardedAd, and pending ads)");
+    
+    // Réinitialiser tous les états liés aux publicités
+    setAdState(prev => ({
+      ...prev,
+      interstitialLoaded: false,
+      gameOverInterstitialLoaded: false,
+      levelUpInterstitialLoaded: false,
+      rewardedLoaded: false,
+      hasWatchedRewardedAd: false,
+      lastInterstitialTime: 0,
+      pendingAds: [],
+      isShowingAd: false,
+      processingAdRequest: false
+    }));
 
-      try {
-        // console.log("[useAds] Forcing reload of all ad instances after reset...");
-        genericInterstitial.load();
-        levelUpInterstitial.load();
-        gameOverInterstitial.load();
-        rewardedAd.load();
-        // console.log("[useAds] All ad instances explicitly triggered to reload.");
-      } catch (error) {
-        // console.error("[useAds] Error attempting to reload ads during reset:", error);
-        FirebaseAnalytics.error('ad_reset_reload_error', error instanceof Error ? error.message : String(error), 'useAds:resetAdsState');
+    try {
+      // Force le rechargement de toutes les instances d'annonces
+      console.log("[useAds] Forcing reload of all ad instances after reset...");
+      
+      // Tenter de vider les pubs actuellement chargées
+      // Note: ces tentatives peuvent échouer, d'où le try/catch et l'utilisation de .catch(() => {})
+      if (genericInterstitial.loaded) {
+        try { genericInterstitial.show().catch(() => {}); } catch (e) {}
       }
-      }, []);
+      if (levelUpInterstitial.loaded) {
+        try { levelUpInterstitial.show().catch(() => {}); } catch (e) {}
+      }
+      if (gameOverInterstitial.loaded) {
+        try { gameOverInterstitial.show().catch(() => {}); } catch (e) {}
+      }
+      if (rewardedAd.loaded) {
+        try { rewardedAd.show().catch(() => {}); } catch (e) {}
+      }
+      
+      // Recharge toutes les pubs après un délai pour permettre aux précédentes de se terminer
+      setTimeout(() => {
+        try {
+          genericInterstitial.load();
+          levelUpInterstitial.load();
+          gameOverInterstitial.load();
+          rewardedAd.load();
+          console.log("[useAds] All ad instances explicitly triggered to reload.");
+        } catch (reloadError) {
+          console.error("[useAds] Error in delayed ad reload:", reloadError);
+        }
+      }, 500);
+    } catch (error) {
+      console.error("[useAds] Error attempting to reload ads during reset:", error);
+      FirebaseAnalytics.error('ad_reset_reload_error', error instanceof Error ? error.message : String(error), 'useAds:resetAdsState');
+      
+      // Même en cas d'erreur, tenter quand même de recharger les pubs après un délai
+      setTimeout(() => {
+        try {
+          genericInterstitial.load();
+          levelUpInterstitial.load();
+          gameOverInterstitial.load();
+          rewardedAd.load();
+        } catch (e) {
+          // Ignorer silencieusement les erreurs ici
+        }
+      }, 1000);
+    }
+  }, []);
+  // --- FIN MODIFICATION DE resetAdsState ---
 
-      return {
+  return {
       adState: {
         interstitialLoaded: adState.interstitialLoaded,
         levelUpInterstitialLoaded: adState.levelUpInterstitialLoaded,
@@ -667,7 +707,5 @@ export function useAds({
       showLevelUpInterstitial,
       showGameOverInterstitial,
       resetAdsState,
-      };
-      }
-
-      export default useAds;
+  };
+}

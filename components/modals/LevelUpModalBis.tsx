@@ -18,8 +18,8 @@ import {
 } from 'react-native';
 import { Ionicons } from '@expo/vector-icons';
 import { LinearGradient } from 'expo-linear-gradient';
-import { colors } from '../../constants/Colors'; // Ajuster le chemin si besoin
-import type { LevelEventSummary, SpecialRules } from '@/hooks/types'; // Ajuster le chemin si besoin
+import { colors } from '../../constants/Colors'; 
+import type { LevelEventSummary, SpecialRules } from '@/hooks/types'; 
 
 const { width } = Dimensions.get('window');
 
@@ -42,6 +42,8 @@ interface LevelUpModalBisProps {
  * Si possible, on parse la date pour extraire l'année ; sinon, on tente un découpage.
  */
 function getEventYear(event: LevelEventSummary): string {
+  if (!event) return '';
+  
   // On priorise la date formattée, sinon la date brute
   const rawDate = event.date_formatee || event.date;
   if (!rawDate) return '';
@@ -81,6 +83,29 @@ const LevelUpModalBis: React.FC<LevelUpModalBisProps> = ({
 
   // State pour le popup d'un événement en particulier
   const [selectedEvent, setSelectedEvent] = useState<LevelEventSummary | null>(null);
+
+  // State pour stocker uniquement les événements du niveau actuel/précédent
+  const [filteredEvents, setFilteredEvents] = useState<LevelEventSummary[]>([]);
+
+  // Effect pour filtrer les événements spécifiques au niveau
+  useEffect(() => {
+    if (visible && eventsSummary && eventsSummary.length > 0) {
+      // On filtre les événements pour n'afficher que ceux du niveau qui vient d'être terminé
+      // Dans un level-up, previousLevel contient le niveau qui vient d'être terminé
+      const targetLevel = previousLevel || (level > 1 ? level - 1 : level);
+      
+      // Limitons le nombre d'événements à afficher pour ce niveau
+      // Une façon simple est de prendre seulement le nombre requis pour ce niveau
+      const eventsLimit = Math.min(eventsSummary.length, requiredEvents);
+      const recentEvents = eventsSummary.slice(-eventsLimit);
+      
+      console.log(`[LevelUpModalBis] Visible=${visible}, targetLevel=${targetLevel}, EventsTotal=${eventsSummary.length}, Filtered=${recentEvents.length}`);
+      
+      setFilteredEvents(recentEvents);
+    } else {
+      setFilteredEvents([]);
+    }
+  }, [visible, eventsSummary, level, previousLevel, requiredEvents]);
 
   // Animation d'entrée
   useEffect(() => {
@@ -133,7 +158,7 @@ const LevelUpModalBis: React.FC<LevelUpModalBisProps> = ({
         startButtonAnimation();
       });
     }
-  }, [visible, scaleAnim, opacityAnim, backgroundOpacityAnim, levelNumberAnim, contentTranslateY, buttonScaleAnim]); // Ajout des dépendances anim
+  }, [visible, scaleAnim, opacityAnim, backgroundOpacityAnim, levelNumberAnim, contentTranslateY, buttonScaleAnim]);
 
   // Animation du bouton "GO!"
   const startButtonAnimation = () => {
@@ -184,9 +209,19 @@ const LevelUpModalBis: React.FC<LevelUpModalBisProps> = ({
     );
   };
 
-  // Rendu du récapitulatif des événements (AVEC CLÉ CORRIGÉE)
+  // Rendu du récapitulatif des événements 
   const renderEventsSummary = () => {
-    if (!eventsSummary?.length) return null;
+    // Si pas d'événements, afficher un message explicite
+    if (!filteredEvents || filteredEvents.length === 0) {
+      return (
+        <View style={styles.eventsSummaryContainer}>
+          <Text style={styles.sectionTitle}>Événements du niveau</Text>
+          <Text style={styles.noEventsText}>
+            Aucun événement à afficher pour ce niveau.
+          </Text>
+        </View>
+      );
+    }
 
     return (
       <View style={styles.eventsSummaryContainer}>
@@ -205,47 +240,54 @@ const LevelUpModalBis: React.FC<LevelUpModalBisProps> = ({
         </View>
 
         <ScrollView horizontal showsHorizontalScrollIndicator={false}>
-          {eventsSummary.map((event, index) => (
-            <TouchableOpacity
-              key={`event-summary-${event.id ?? 'no-id'}-${index}`}
-              onPress={() => setSelectedEvent(event)}
-              activeOpacity={0.7}
-              style={styles.eventCardTouchable}
-            >
-              <View style={styles.eventCard}>
-                <Image
-                  source={{ uri: event.illustration_url }}
-                  style={styles.eventImage}
-                  resizeMode="cover"
-                />
-                <LinearGradient
-                  colors={['transparent', 'rgba(0,0,0,0.8)']}
-                  style={styles.eventGradient}
-                >
-                  <Text style={styles.eventDate}>{getEventYear(event)}</Text>
-                  <Text style={styles.eventTitle} numberOfLines={2}>
-                    {event.titre}
-                  </Text>
-                  <View
-                    style={[
-                      styles.responseIndicator,
-                      {
-                        backgroundColor: event.wasCorrect
-                          ? colors.correctGreen
-                          : colors.incorrectRed,
-                      },
-                    ]}
+          {filteredEvents.map((event, index) => {
+            // Créer une clé vraiment unique
+            const eventKey = `event-level-${previousLevel || level}-id-${event.id || 'unknown'}-index-${index}`;
+            
+            return (
+              <TouchableOpacity
+                key={eventKey}
+                onPress={() => setSelectedEvent(event)}
+                activeOpacity={0.7}
+                style={styles.eventCardTouchable}
+              >
+                <View style={styles.eventCard}>
+                  <Image
+                    source={{ uri: event.illustration_url }}
+                    style={styles.eventImage}
+                    resizeMode="cover"
+                    // Fallback pour les images qui ne se chargent pas
+                    onError={() => console.log(`[LevelUpModalBis] Image error for: ${event.illustration_url}`)}
+                  />
+                  <LinearGradient
+                    colors={['transparent', 'rgba(0,0,0,0.8)']}
+                    style={styles.eventGradient}
                   >
-                    <Ionicons
-                      name={event.wasCorrect ? 'checkmark' : 'close'}
-                      size={20}
-                      color="white"
-                    />
-                  </View>
-                </LinearGradient>
-              </View>
-            </TouchableOpacity>
-          ))}
+                    <Text style={styles.eventDate}>{getEventYear(event)}</Text>
+                    <Text style={styles.eventTitle} numberOfLines={2}>
+                      {event.titre}
+                    </Text>
+                    <View
+                      style={[
+                        styles.responseIndicator,
+                        {
+                          backgroundColor: event.wasCorrect
+                            ? colors.correctGreen
+                            : colors.incorrectRed,
+                        },
+                      ]}
+                    >
+                      <Ionicons
+                        name={event.wasCorrect ? 'checkmark' : 'close'}
+                        size={20}
+                        color="white"
+                      />
+                    </View>
+                  </LinearGradient>
+                </View>
+              </TouchableOpacity>
+            );
+          })}
         </ScrollView>
       </View>
     );
@@ -593,6 +635,14 @@ const styles = StyleSheet.create({
     color: 'white',
     fontWeight: 'bold',
     fontSize: 16,
+  },
+  // Style pour le message quand il n'y a pas d'événements
+  noEventsText: {
+    fontSize: 16,
+    color: '#777',
+    textAlign: 'center',
+    fontStyle: 'italic',
+    padding: 20,
   },
 });
 
