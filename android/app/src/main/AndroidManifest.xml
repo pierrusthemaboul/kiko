@@ -1,6 +1,5 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
-          xmlns:tools="http://schemas.android.com/tools"
-          package="com.pierretulle.juno2">
+          xmlns:tools="http://schemas.android.com/tools">
 
   <!-- Permissions -->
   <uses-permission android:name="android.permission.INTERNET"/>
@@ -82,7 +81,7 @@
         <action android:name="android.intent.action.VIEW"/>
         <category android:name="android.intent.category.DEFAULT"/>
         <category android:name="android.intent.category.BROWSABLE"/>
-        <!-- Schemes alignés sur ton app.json (scheme: "juno2") et package -->
+        <!-- Schemes alignés sur ton app.json (scheme: "juno2") -->
         <data android:scheme="juno2"/>
         <data android:scheme="com.pierretulle.juno2"/>
         <data android:scheme="exp+juno2"/>
