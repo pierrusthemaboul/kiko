@@ -10,7 +10,7 @@
   <uses-permission android:name="android.permission.VIBRATE"/>
   <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE"/>
 
-  <!-- Queries (Android 11+) -->
+  <!-- Queries (pour Android 11+) -->
   <queries>
     <intent>
       <action android:name="android.intent.action.VIEW"/>
@@ -28,7 +28,7 @@
       android:theme="@style/AppTheme"
       android:supportsRtl="true">
 
-    <!-- Google Mobile Ads config -->
+    <!-- Google Mobile Ads & Expo Updates -->
     <meta-data
         android:name="android.adservices.AD_SERVICES_CONFIG"
         android:resource="@xml/gma_ad_services_config"
@@ -45,8 +45,6 @@
         android:name="com.google.android.gms.ads.flag.OPTIMIZE_INITIALIZATION"
         android:value="true"
         tools:replace="android:value"/>
-
-    <!-- Expo Updates -->
     <meta-data
         android:name="expo.modules.updates.ENABLED"
         android:value="true"/>
@@ -83,11 +81,11 @@
         <action android:name="android.intent.action.VIEW"/>
         <category android:name="android.intent.category.DEFAULT"/>
         <category android:name="android.intent.category.BROWSABLE"/>
+        <!-- Schemes alignés sur ton app.json (scheme: "juno2") -->
         <data android:scheme="juno2"/>
         <data android:scheme="com.pierretulle.juno2"/>
         <data android:scheme="exp+juno2"/>
       </intent-filter>
-
     </activity>
   </application>
 </manifest>

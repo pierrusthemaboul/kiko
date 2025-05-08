@@ -17,7 +17,8 @@
         "EXPO_PUBLIC_APP_VARIANT": "internalTesting"
       },
       "android": {
-        "buildType": "app-bundle" // CORRIGÉ : Utilise "app-bundle"
+        "buildType": "app-bundle",
+        "credentialsSource": "remote"
       }
     },
     "production": {
@@ -26,7 +27,8 @@
         "EXPO_PUBLIC_APP_VARIANT": "production"
       },
       "android": {
-        "buildType": "app-bundle" // CORRIGÉ : Utilise "app-bundle"
+        "buildType": "app-bundle",
+        "credentialsSource": "remote"
       }
     }
   },

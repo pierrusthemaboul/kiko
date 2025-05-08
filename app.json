@@ -28,9 +28,14 @@
       },
       "package": "com.pierretulle.juno2",
       "versionCode": 10000,
-      "permissions": [
+      "permissions": [ // MODIFIÉ ICI
         "INTERNET",
-        "VIBRATE"
+        "VIBRATE",
+        "MODIFY_AUDIO_SETTINGS",
+        "READ_EXTERNAL_STORAGE",
+        "RECORD_AUDIO",
+        "SYSTEM_ALERT_WINDOW",
+        "WRITE_EXTERNAL_STORAGE"
       ],
       "googleServicesFile": "./google-services.json"
     },
@@ -84,7 +89,7 @@
       "url": "https://u.expo.dev/3cbda57c-1ec1-4949-af06-9e933dbc0050"
     },
     "runtimeVersion": {
-      "policy": "sdkVersion"
+      "policy": "appVersion"
     }
   }
 }
