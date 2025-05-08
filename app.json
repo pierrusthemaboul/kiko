@@ -28,7 +28,7 @@
       },
       "package": "com.pierretulle.juno2",
       "versionCode": 10000,
-      "permissions": [ // MODIFIÉ ICI
+      "permissions": [
         "INTERNET",
         "VIBRATE",
         "MODIFY_AUDIO_SETTINGS",
@@ -45,6 +45,16 @@
       "favicon": "./assets/images/favicon.png"
     },
     "plugins": [
+      // --- MODIFICATION ICI ---
+      [ // expo-build-properties doit être dans sa propre "paire" [pluginName, options]
+        "expo-build-properties",
+        {
+          "android": {
+            "kotlinVersion": "1.9.25"
+          }
+        }
+      ],
+      // --- FIN DE LA MODIFICATION ---
       "expo-router",
       [
         "expo-splash-screen",
@@ -63,6 +73,7 @@
         }
       ],
       "@react-native-firebase/app"
+      // Vous aviez "expo-build-properties" une deuxième fois ici, je l'ai enlevé car il est déjà configuré au-dessus
     ],
     "experiments": {
       "typedRoutes": true
