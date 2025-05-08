@@ -92,7 +92,7 @@ export const useAudio = () => {
 
     } catch (error) {
       FirebaseAnalytics.error('audio_playback_error', `Sound: ${soundKey}, Error: ${error instanceof Error ? error.message : 'Unknown'}`, 'playSound');
-      soundObject?.unloadAsync().catch(() => {}); // Essayer de décharger même en cas d'erreur
+      soundObject?.unloadAsync().catch(() => {}); // Essayer de  décharger même en cas d'erreur
     }
   };
 
