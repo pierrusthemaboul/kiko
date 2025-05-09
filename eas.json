@@ -1,6 +1,6 @@
 {
   "cli": {
-    "version": ">= 14.7.1",
+    "version": ">=14.7.1",
     "appVersionSource": "remote"
   },
   "build": {
@@ -13,22 +13,24 @@
     },
     "preview": {
       "distribution": "internal",
+      "autoIncrement": true,
+      "credentialsSource": "remote",
       "env": {
         "EXPO_PUBLIC_APP_VARIANT": "internalTesting"
       },
       "android": {
-        "buildType": "app-bundle",
-        "credentialsSource": "remote"
+        "buildType": "app-bundle"
       }
     },
     "production": {
+      "distribution": "internal",
       "autoIncrement": true,
+      "credentialsSource": "remote",
       "env": {
         "EXPO_PUBLIC_APP_VARIANT": "production"
       },
       "android": {
-        "buildType": "app-bundle",
-        "credentialsSource": "remote"
+        "buildType": "app-bundle"
       }
     }
   },
