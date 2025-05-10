@@ -27,7 +27,7 @@
       "autoIncrement": true,
       "credentialsSource": "remote",
       "env": {
-        "EXPO_PUBLIC_APP_VARIANT": "production"
+        "EXPO_PUBLIC_APP_VARIANT": "internalTesting"
       },
       "android": {
         "buildType": "app-bundle"
