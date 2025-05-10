@@ -24,7 +24,8 @@ import { Ionicons } from '@expo/vector-icons';
 import { BannerAd, BannerAdSize } from 'react-native-google-mobile-ads';
 import { useFonts } from '../../hooks/useFonts'; // Chemin relatif vers useFonts
 import { FirebaseAnalytics } from '../../lib/firebase'; // Chemin relatif vers firebase
-import { getAdUnitId } from '../../lib/config/adConfig'; // Chemin relatif vers adConfig
+// MODIFIÉ: IS_TEST_BUILD ajouté à l'import
+import { getAdUnitId, IS_TEST_BUILD } from '../../lib/config/adConfig'; // Chemin relatif vers adConfig
 
 const { width, height } = Dimensions.get('window');
 
@@ -444,6 +445,24 @@ export default function HomeScreen() {
               transform: [{ translateY: mainContentAnimation.translateY }]
             }
           ]}>
+            {/* ============================================================ */}
+            {/* ========= AJOUT DU TEXTE DE DÉBOGAGE ICI ========= */}
+            <Text style={{
+              position: 'absolute',
+              top: Platform.OS === 'ios' ? (height > 800 ? 50 : 30) : (StatusBar.currentHeight || 20) + 10, // Ajusté pour la status bar
+              left: 10,
+              color: 'red',
+              fontSize: 12,
+              fontWeight: 'bold',
+              backgroundColor: 'rgba(255,255,255,0.85)',
+              padding: 4,
+              borderRadius: 3,
+              zIndex: 9999 
+            }}>
+              Mode Test Build: {IS_TEST_BUILD ? 'OUI (Forcé)' : 'NON'}
+            </Text>
+            {/* ============================================================ */}
+
             {/* --- Header --- */}
             <View style={styles.headerContainer}>
               <Text style={styles.welcomeTitle}>
