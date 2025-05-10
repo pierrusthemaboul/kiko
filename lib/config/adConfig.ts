@@ -1,18 +1,12 @@
 // lib/config/adConfig.ts
 import { TestIds } from 'react-native-google-mobile-ads';
 
-// Récupération automatique du profil de build EAS (preview, production, etc.)
-const BUILD_PROFILE = process.env.EAS_BUILD_PROFILE;
-
-// On force les TestIds si on est en DEV, ou en preview, ou si on a explicitement passé APP_VARIANT=internalTesting
-const USE_TEST_IDS =
-  __DEV__ ||
-  BUILD_PROFILE === 'preview' ||
-  process.env.EXPO_PUBLIC_APP_VARIANT === 'internalTesting';
+// FORCÉ : Toujours utiliser les TestIds, quel que soit le build
+const USE_TEST_IDS = true;
 
 console.log(
   `[adConfig] Using Test Ads: ${USE_TEST_IDS}`
-  + ` (DEV=${__DEV__}, EAS_PROFILE=${BUILD_PROFILE}, APP_VARIANT=${process.env.EXPO_PUBLIC_APP_VARIANT})`
+  + ` (FORCED)`
 );
 
 // Tes vrais IDs de prod
