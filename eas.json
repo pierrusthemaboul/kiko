@@ -1,7 +1,7 @@
 {
   "cli": {
-    "version": ">=14.7.1",
-    "appVersionSource": "remote"
+    "version": ">=7.6.0", // Assure-toi d'avoir une version récente d'EAS CLI installée. Ceci est une contrainte.
+    "appVersionSource": "local" // MODIFICATION CLÉ : Utilise app.config.js pour les versions
   },
   "build": {
     "development": {
@@ -10,10 +10,11 @@
       "env": {
         "EXPO_PUBLIC_APP_VARIANT": "development"
       }
+      // "autoIncrement" n'est généralement pas utilisé/nécessaire pour "development" avec "local"
     },
     "preview": {
       "distribution": "internal",
-      "autoIncrement": true,
+      "autoIncrement": false, // MODIFICATION : Mieux vaut false si appVersionSource est local et que tu gères en manuel
       "credentialsSource": "remote",
       "env": {
         "EXPO_PUBLIC_APP_VARIANT": "internalTesting"
@@ -22,15 +23,15 @@
         "buildType": "app-bundle"
       }
     },
-    "production": {
+    "production": { // C'est le profil que tu utilises
       "distribution": "internal",
-      "autoIncrement": true,
+      "autoIncrement": false, // MODIFICATION : Mieux vaut false si appVersionSource est local et que tu gères en manuel
       "credentialsSource": "remote",
       "env": {
         "EXPO_PUBLIC_APP_VARIANT": "internalTesting"
       },
       "android": {
-        "buildType": "app-bundle"
+        "buildType": "app-bundle" // Tu buildes un AAB
       }
     }
   },
