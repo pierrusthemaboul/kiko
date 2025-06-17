@@ -40,22 +40,36 @@ export const useRewards = ({
   const timeoutRef = useRef<NodeJS.Timeout | null>(null);
   const isProcessingReward = useRef(false);
 
-  // A. Calcul Streak (multiples de 10)
+  // A. Calcul Streak RÉÉQUILIBRÉ (multiples de 10)
   const calculateStreakReward = useCallback((streak: number, user: User): Reward | null => {
     if (streak % 10 !== 0 || streak === 0) return null;
 
     let pointsAmount;
+    
+    // NOUVEAU SYSTÈME - Progression modérée et plafonnée
     if (streak === 10) {
-      pointsAmount = 2000;
-    } else {
-      pointsAmount = 2000 * Math.pow(2, streak / 10);
+      pointsAmount = 300; // Base réduite de 2000 → 300
+    } else if (streak === 20) {
+      pointsAmount = 500; // Progression modérée
+    } else if (streak === 30) {
+      pointsAmount = 750; // Encore modérée
+    } else if (streak === 40) {
+      pointsAmount = 1000; // Équivalent à un gros niveau
+    } else if (streak === 50) {
+      pointsAmount = 1500; // Récompense pour l'excellence
+    } else if (streak >= 60) {
+      // PLAFOND à partir de 60+ : progression très lente
+      const extraStreaks = Math.floor((streak - 50) / 10);
+      pointsAmount = 1500 + (extraStreaks * 200); // +200 par tranche de 10
+      // Exemple: 70 = 1500 + 400 = 1900, 100 = 1500 + 1000 = 2500
     }
 
+    // Priorité aux vies si possible
     const canGiveLife = user.lives < MAX_LIVES;
     const finalAmount = canGiveLife ? 1 : pointsAmount;
     const finalType = canGiveLife ? RewardType.EXTRA_LIFE : RewardType.POINTS;
 
-    console.log(`Calculating streak reward: streak=${streak}, canGiveLife=${canGiveLife}, type=${finalType}, amount=${finalAmount}`);
+    console.log(`Calculating BALANCED streak reward: streak=${streak}, canGiveLife=${canGiveLife}, type=${finalType}, amount=${finalAmount}`);
 
     return {
       type: finalType,
@@ -66,200 +80,213 @@ export const useRewards = ({
     };
   }, []);
 
-  // B. Calcul Level
-const calculateLevelReward = useCallback((newLevel: number, user: User): Reward | null => {
-  if (isNaN(newLevel) || newLevel <= 0 || newLevel === 1) return null;
+  // B. Calcul Level LÉGÈREMENT AUGMENTÉ
+  const calculateLevelReward = useCallback((newLevel: number, user: User): Reward | null => {
+    if (isNaN(newLevel) || newLevel <= 0 || newLevel === 1) return null;
 
-  const levelConfig = LEVEL_CONFIGS[newLevel];
-  if (!levelConfig) return null;
+    const levelConfig = LEVEL_CONFIGS[newLevel];
+    if (!levelConfig) return null;
 
-  const canGiveLife = user.lives < MAX_LIVES;
-  const rewardAmount = canGiveLife ? 1 : (levelConfig.pointsReward || 1000);
-  const finalType = canGiveLife ? RewardType.EXTRA_LIFE : RewardType.POINTS;
-
-  console.log(`Calculating level reward: level=${newLevel}, canGiveLife=${canGiveLife}, type=${finalType}, amount=${rewardAmount}`);
-
-  return {
-    type: finalType,
-    amount: rewardAmount,
-    reason: `Niveau ${newLevel} atteint !`,
-    triggerType: 'level',
-    triggerValue: newLevel,
-  };
-}, []);
-
-// completeRewardAnimation - Version améliorée
-const completeRewardAnimation = useCallback(() => {
-  console.log('[useRewards] Animation completed, resetting state');
-  
-  // Nettoyer le timeout de sécurité
-  if (timeoutRef.current) {
-    clearTimeout(timeoutRef.current);
-    timeoutRef.current = null;
-  }
-  
-  setCurrentReward(null);
-  setIsAnimating(false);
-  isProcessingReward.current = false;
-
-  if (onRewardAnimationComplete) {
-    onRewardAnimationComplete();
-  }
-}, [onRewardAnimationComplete]);
-
-// updateRewardPosition - Version améliorée
-const updateRewardPosition = useCallback((position: Position) => {
-  if (!currentReward) {
-    console.log('[useRewards] No current reward to update position');
-    return;
-  }
-
-  // Vérifier que la position est valide
-  if (isNaN(position.x) || isNaN(position.y)) {
-    console.warn(`[useRewards] Invalid position coordinates: x=${position.x}, y=${position.y}`);
-    return;
-  }
-  
-  // Valeurs trop faibles probablement incorrectes
-  if (position.x < 10 || position.y < 10) {
-    console.warn(`[useRewards] Position too close to origin, might be incorrect: x=${position.x}, y=${position.y}`);
-    return;
-  }
-
-  console.log(`[useRewards] Updating reward position to x=${position.x}, y=${position.y}`);
-
-  setCurrentReward(prev => {
-    if (!prev) return null;
+    // Priorité aux vies si possible
+    const canGiveLife = user.lives < MAX_LIVES;
     
-    // Si la position a changé de manière significative
-    const positionChanged = 
-      !prev.targetPosition || 
-      Math.abs(prev.targetPosition.x - position.x) > 5 || 
-      Math.abs(prev.targetPosition.y - position.y) > 5;
-      
-    if (positionChanged) {
+    // Si on peut donner une vie, on la donne
+    if (canGiveLife) {
       return {
-        ...prev,
-        targetPosition: position
+        type: RewardType.EXTRA_LIFE,
+        amount: 1,
+        reason: `Niveau ${newLevel} atteint !`,
+        triggerType: 'level',
+        triggerValue: newLevel,
       };
     }
+
+    // Sinon, donner les points du niveau (déjà équilibrés dans levelConfigs.ts)
+    const rewardAmount = levelConfig.pointsReward || 1000;
+
+    console.log(`Calculating level reward: level=${newLevel}, type=POINTS, amount=${rewardAmount}`);
+
+    return {
+      type: RewardType.POINTS,
+      amount: rewardAmount,
+      reason: `Niveau ${newLevel} atteint !`,
+      triggerType: 'level',
+      triggerValue: newLevel,
+    };
+  }, []);
+
+  // completeRewardAnimation - Version améliorée
+  const completeRewardAnimation = useCallback(() => {
+    console.log('[useRewards] Animation completed, resetting state');
     
-    return prev; // Pas de changement significatif
-  });
-}, [currentReward]);
-
-// checkRewards - Version améliorée
-const checkRewards = useCallback((trigger: RewardTrigger, user: User) => {
-  // Éviter le traitement concurrent des récompenses
-  if (isProcessingReward.current) {
-    console.log('[useRewards] Already processing a reward, skipping this check');
-    return;
-  }
-
-  isProcessingReward.current = true;
-  const triggerKey = `${trigger.type}-${trigger.value}`;
-  
-  // Éviter les doublons
-  if (triggerKey === lastProcessedTrigger) {
-    console.log(`[useRewards] Trigger ${triggerKey} already processed, skipping`);
-    isProcessingReward.current = false;
-    return;
-  }
-
-  // Si une animation est déjà en cours, on peut soit:
-  // 1. Ignorer la nouvelle récompense (approche actuelle)
-  // 2. Terminer l'animation en cours et passer à la suivante (alternative)
-  if (isAnimating) {
-    console.log('[useRewards] Animation in progress, ignoring new reward');
-    isProcessingReward.current = false;
-    return;
-  }
-
-  let reward: Reward | null = null;
-
-  switch (trigger.type) {
-    case 'streak':
-      reward = calculateStreakReward(trigger.value, user);
-      break;
-    case 'level':
-      reward = calculateLevelReward(trigger.value, user);
-      break;
-    default:
-      break;
-  }
-
-  if (!reward) {
-    console.log(`[useRewards] No reward calculated for trigger ${trigger.type}-${trigger.value}`);
-    isProcessingReward.current = false;
-    return;
-  }
-
-  console.log(`[useRewards] Reward calculated: ${reward.type}, amount: ${reward.amount} for trigger ${trigger.type}-${trigger.value}`);
-
-  // Tracking Firebase
-  try {
-    const currentLevelForLog = trigger.type === 'level' ? trigger.value - 1 : user.level;
-    const triggerValueForLog = trigger.type === 'streak' ? `streak-${trigger.value}` : `level-${trigger.value}`;
-
-    FirebaseAnalytics.reward(
-      reward.type,
-      reward.amount,
-      trigger.type,
-      triggerValueForLog,
-      currentLevelForLog,
-      user.points
-    );
-    console.log(`[useRewards] FirebaseAnalytics.reward logged successfully.`);
-  } catch (error) {
-    console.error("[useRewards] Error logging FirebaseAnalytics.reward:", error);
-  }
-
-  // Mettre en place l'animation et notifier le parent
-  setCurrentReward(reward);
-  setIsAnimating(true);
-  setLastProcessedTrigger(triggerKey);
-
-  // Mettre en place un timeout de sécurité pour s'assurer que l'animation se termine
-  if (timeoutRef.current) {
-    clearTimeout(timeoutRef.current);
-  }
-  
-  timeoutRef.current = setTimeout(() => {
-    if (isAnimating) {
-      console.warn('[useRewards] Animation timeout reached, forcing completion');
-      completeRewardAnimation();
+    // Nettoyer le timeout de sécurité
+    if (timeoutRef.current) {
+      clearTimeout(timeoutRef.current);
+      timeoutRef.current = null;
     }
-  }, 5000); // 5 secondes max pour l'animation complète
+    
+    setCurrentReward(null);
+    setIsAnimating(false);
+    isProcessingReward.current = false;
 
-  if (onRewardEarned) {
-    onRewardEarned(reward);
-  }
+    if (onRewardAnimationComplete) {
+      onRewardAnimationComplete();
+    }
+  }, [onRewardAnimationComplete]);
 
-}, [
-  isAnimating,
-  lastProcessedTrigger,
-  calculateStreakReward,
-  calculateLevelReward,
-  onRewardEarned,
-  completeRewardAnimation
-]);
+  // updateRewardPosition - Version améliorée
+  const updateRewardPosition = useCallback((position: Position) => {
+    if (!currentReward) {
+      console.log('[useRewards] No current reward to update position');
+      return;
+    }
 
-// Nettoyage au démontage
-useEffect(() => {
-  return () => {
+    // Vérifier que la position est valide
+    if (isNaN(position.x) || isNaN(position.y)) {
+      console.warn(`[useRewards] Invalid position coordinates: x=${position.x}, y=${position.y}`);
+      return;
+    }
+    
+    // Valeurs trop faibles probablement incorrectes
+    if (position.x < 10 || position.y < 10) {
+      console.warn(`[useRewards] Position too close to origin, might be incorrect: x=${position.x}, y=${position.y}`);
+      return;
+    }
+
+    console.log(`[useRewards] Updating reward position to x=${position.x}, y=${position.y}`);
+
+    setCurrentReward(prev => {
+      if (!prev) return null;
+      
+      // Si la position a changé de manière significative
+      const positionChanged = 
+        !prev.targetPosition || 
+        Math.abs(prev.targetPosition.x - position.x) > 5 || 
+        Math.abs(prev.targetPosition.y - position.y) > 5;
+        
+      if (positionChanged) {
+        return {
+          ...prev,
+          targetPosition: position
+        };
+      }
+      
+      return prev; // Pas de changement significatif
+    });
+  }, [currentReward]);
+
+  // checkRewards - Version améliorée
+  const checkRewards = useCallback((trigger: RewardTrigger, user: User) => {
+    // Éviter le traitement concurrent des récompenses
+    if (isProcessingReward.current) {
+      console.log('[useRewards] Already processing a reward, skipping this check');
+      return;
+    }
+
+    isProcessingReward.current = true;
+    const triggerKey = `${trigger.type}-${trigger.value}`;
+    
+    // Éviter les doublons
+    if (triggerKey === lastProcessedTrigger) {
+      console.log(`[useRewards] Trigger ${triggerKey} already processed, skipping`);
+      isProcessingReward.current = false;
+      return;
+    }
+
+    // Si une animation est déjà en cours, on peut soit:
+    // 1. Ignorer la nouvelle récompense (approche actuelle)
+    // 2. Terminer l'animation en cours et passer à la suivante (alternative)
+    if (isAnimating) {
+      console.log('[useRewards] Animation in progress, ignoring new reward');
+      isProcessingReward.current = false;
+      return;
+    }
+
+    let reward: Reward | null = null;
+
+    switch (trigger.type) {
+      case 'streak':
+        reward = calculateStreakReward(trigger.value, user);
+        break;
+      case 'level':
+        reward = calculateLevelReward(trigger.value, user);
+        break;
+      default:
+        break;
+    }
+
+    if (!reward) {
+      console.log(`[useRewards] No reward calculated for trigger ${trigger.type}-${trigger.value}`);
+      isProcessingReward.current = false;
+      return;
+    }
+
+    console.log(`[useRewards] BALANCED reward calculated: ${reward.type}, amount: ${reward.amount} for trigger ${trigger.type}-${trigger.value}`);
+
+    // Tracking Firebase
+    try {
+      const currentLevelForLog = trigger.type === 'level' ? trigger.value - 1 : user.level;
+      const triggerValueForLog = trigger.type === 'streak' ? `streak-${trigger.value}` : `level-${trigger.value}`;
+
+      FirebaseAnalytics.reward(
+        reward.type,
+        reward.amount,
+        trigger.type,
+        triggerValueForLog,
+        currentLevelForLog,
+        user.points
+      );
+      console.log(`[useRewards] FirebaseAnalytics.reward logged successfully.`);
+    } catch (error) {
+      console.error("[useRewards] Error logging FirebaseAnalytics.reward:", error);
+    }
+
+    // Mettre en place l'animation et notifier le parent
+    setCurrentReward(reward);
+    setIsAnimating(true);
+    setLastProcessedTrigger(triggerKey);
+
+    // Mettre en place un timeout de sécurité pour s'assurer que l'animation se termine
     if (timeoutRef.current) {
       clearTimeout(timeoutRef.current);
     }
-  };
-}, []);
+    
+    timeoutRef.current = setTimeout(() => {
+      if (isAnimating) {
+        console.warn('[useRewards] Animation timeout reached, forcing completion');
+        completeRewardAnimation();
+      }
+    }, 5000); // 5 secondes max pour l'animation complète
 
-return {
-  currentReward,
-  isAnimating,
-  checkRewards,
-  completeRewardAnimation,
-  updateRewardPosition,
-};
+    if (onRewardEarned) {
+      onRewardEarned(reward);
+    }
+
+  }, [
+    isAnimating,
+    lastProcessedTrigger,
+    calculateStreakReward,
+    calculateLevelReward,
+    onRewardEarned,
+    completeRewardAnimation
+  ]);
+
+  // Nettoyage au démontage
+  useEffect(() => {
+    return () => {
+      if (timeoutRef.current) {
+        clearTimeout(timeoutRef.current);
+      }
+    };
+  }, []);
+
+  return {
+    currentReward,
+    isAnimating,
+    checkRewards,
+    completeRewardAnimation,
+    updateRewardPosition,
+  };
 };
 
 export default useRewards;

@@ -70,7 +70,7 @@ export function usePerformance() {
   }, [eventHistory]);
 
   /**
-   * Calcule les points gagnés pour une réponse correcte
+   * Calcule les points gagnés pour une réponse correcte - VERSION ÉQUILIBRÉE
    */
   const calculatePoints = useCallback(
     (timeLeft: number, difficulty: number, currentStreak: number, userLevel: number): number => {
@@ -80,14 +80,15 @@ export function usePerformance() {
           return 0; // Sécurité
         }
 
-        // Points de base augmentent avec la difficulté
-        const basePoints = (config.scoring.basePoints || 50) * (difficulty || 1);
+        // Points de base RÉDUITS pour éviter l'inflation
+        const basePoints = Math.max(30, (config.scoring.basePoints || 50) * 0.6); // Réduction de 40%
 
-        // Multiplicateur temps (max 2.5)
-        const timeMultiplier = Math.max(1, Math.min(1 + (timeLeft / 20) * (config.scoring.timeMultiplier || 1), 2.5));
+        // Multiplicateur temps (max 1.8 au lieu de 2.5)
+        const timeMultiplier = Math.max(1, Math.min(1 + (timeLeft / 20) * (config.scoring.timeMultiplier || 1) * 0.8, 1.8));
 
-        // Multiplicateur streak (max 3.0)
-        const streakMultiplier = Math.max(1, Math.min(1 + Math.floor(currentStreak / (config.scoring.comboThreshold || 5)) * (config.scoring.streakMultiplier || 0.2), 3.0));
+        // Multiplicateur streak RÉDUIT (max 1.5 au lieu de 3.0)
+        const streakBonus = Math.min(currentStreak * 0.05, 0.5); // Max +50% au lieu de +200%
+        const streakMultiplier = 1 + streakBonus;
 
         const calculatedPoints = Math.floor(basePoints * timeMultiplier * streakMultiplier);
         

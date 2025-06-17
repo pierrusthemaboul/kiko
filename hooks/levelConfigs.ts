@@ -1,7 +1,7 @@
 import { LevelConfig, SpecialRules } from "./types";
 
 export const LEVEL_CONFIGS: Record<number, LevelConfig> = {
-  // --- Niveaux 1 à 14 inchangés ---
+  // --- Niveaux 1 à 14 avec récompenses équilibrées ---
   1: {
     level: 1,
     name: "Novice",
@@ -13,7 +13,7 @@ export const LEVEL_CONFIGS: Record<number, LevelConfig> = {
       preferModernEvents: true, modernEventThreshold: 1900, modernEventPreference: 0.9, balancePeriods: true
     },
     scoring: { basePoints: 100, streakMultiplier: 1.0, timeMultiplier: 1.0, comboThreshold: 2 },
-    pointsReward: 100,
+    pointsReward: 200, // Augmenté de 100 → 200
   },
   2: {
     level: 2, name: "Explorateur", description: "Découverte des événements faciles", eventsNeeded: 6,
@@ -23,7 +23,7 @@ export const LEVEL_CONFIGS: Record<number, LevelConfig> = {
       preferModernEvents: true, modernEventThreshold: 1850, modernEventPreference: 0.8, balancePeriods: true
     },
     scoring: { basePoints: 110, streakMultiplier: 1.1, timeMultiplier: 1.05, comboThreshold: 2 },
-    pointsReward: 150,
+    pointsReward: 250, // Augmenté de 150 → 250
   },
   3: {
     level: 3, name: "Initié", description: "Introduction aux événements moyens", eventsNeeded: 7,
@@ -33,7 +33,7 @@ export const LEVEL_CONFIGS: Record<number, LevelConfig> = {
       preferModernEvents: true, modernEventThreshold: 1800, modernEventPreference: 0.7, balancePeriods: true
     },
     scoring: { basePoints: 120, streakMultiplier: 1.2, timeMultiplier: 1.1, comboThreshold: 3 },
-    pointsReward: 200,
+    pointsReward: 300, // Augmenté de 200 → 300
   },
   4: {
     level: 4, name: "Voyageur Temporel", description: "Événements faciles et moyens mélangés", eventsNeeded: 8,
@@ -43,7 +43,7 @@ export const LEVEL_CONFIGS: Record<number, LevelConfig> = {
       preferModernEvents: true, modernEventThreshold: 1700, modernEventPreference: 0.6, balancePeriods: true
     },
     scoring: { basePoints: 130, streakMultiplier: 1.2, timeMultiplier: 1.15, comboThreshold: 3 },
-    pointsReward: 250,
+    pointsReward: 350, // Augmenté de 250 → 350
   },
   5: {
     level: 5, name: "Chroniqueur", description: "Principalement des événements moyens", eventsNeeded: 9,
@@ -53,7 +53,7 @@ export const LEVEL_CONFIGS: Record<number, LevelConfig> = {
       preferModernEvents: true, modernEventThreshold: 1600, modernEventPreference: 0.4, balancePeriods: true
     },
     scoring: { basePoints: 140, streakMultiplier: 1.3, timeMultiplier: 1.2, comboThreshold: 4 },
-    pointsReward: 300,
+    pointsReward: 400, // Augmenté de 300 → 400
   },
   6: {
     level: 6, name: "Historien Amateur", description: "Introduction aux événements difficiles", eventsNeeded: 10,
@@ -63,7 +63,7 @@ export const LEVEL_CONFIGS: Record<number, LevelConfig> = {
       preferModernEvents: false, balancePeriods: true
     },
     scoring: { basePoints: 150, streakMultiplier: 1.4, timeMultiplier: 1.25, comboThreshold: 4 },
-    pointsReward: 350,
+    pointsReward: 450, // Augmenté de 350 → 450
   },
   7: {
     level: 7, name: "Historien Éclairé", description: "Événements moyens et difficiles", eventsNeeded: 11,
@@ -73,7 +73,7 @@ export const LEVEL_CONFIGS: Record<number, LevelConfig> = {
       preferModernEvents: false, balancePeriods: true
     },
     scoring: { basePoints: 160, streakMultiplier: 1.5, timeMultiplier: 1.3, comboThreshold: 5 },
-    pointsReward: 400,
+    pointsReward: 500, // Augmenté de 400 → 500
   },
   8: {
     level: 8, name: "Maître du Temps", description: "Tous types d'événements commencent à apparaître", eventsNeeded: 12,
@@ -83,7 +83,7 @@ export const LEVEL_CONFIGS: Record<number, LevelConfig> = {
       preferModernEvents: false, balancePeriods: true
     },
     scoring: { basePoints: 170, streakMultiplier: 1.6, timeMultiplier: 1.35, comboThreshold: 5 },
-    pointsReward: 450,
+    pointsReward: 550, // Augmenté de 450 → 550
   },
   9: {
     level: 9, name: "Savant Historique", description: "Événements complexes à démêler", eventsNeeded: 13,
@@ -93,7 +93,7 @@ export const LEVEL_CONFIGS: Record<number, LevelConfig> = {
       preferModernEvents: false, balancePeriods: true
     },
     scoring: { basePoints: 180, streakMultiplier: 1.7, timeMultiplier: 1.4, comboThreshold: 6 },
-    pointsReward: 500,
+    pointsReward: 600, // Augmenté de 500 → 600
   },
   10: {
     level: 10, name: "Expert Historien", description: "Principalement des événements difficiles", eventsNeeded: 14,
@@ -103,7 +103,7 @@ export const LEVEL_CONFIGS: Record<number, LevelConfig> = {
       preferModernEvents: false, balancePeriods: true
     },
     scoring: { basePoints: 190, streakMultiplier: 1.8, timeMultiplier: 1.45, comboThreshold: 6 },
-    pointsReward: 550,
+    pointsReward: 650, // Augmenté de 550 → 650
   },
   11: {
     level: 11, name: "Grand Historien", description: "Un défi pour les érudits", eventsNeeded: 15,
@@ -113,7 +113,7 @@ export const LEVEL_CONFIGS: Record<number, LevelConfig> = {
       preferModernEvents: false, balancePeriods: true
     },
     scoring: { basePoints: 200, streakMultiplier: 1.9, timeMultiplier: 1.5, comboThreshold: 7 },
-    pointsReward: 600,
+    pointsReward: 700, // Augmenté de 600 → 700
   },
   12: {
     level: 12, name: "Historien Légendaire", description: "Seuls les plus grands réussissent", eventsNeeded: 16,
@@ -123,7 +123,7 @@ export const LEVEL_CONFIGS: Record<number, LevelConfig> = {
       preferModernEvents: false, balancePeriods: true
     },
     scoring: { basePoints: 210, streakMultiplier: 2.0, timeMultiplier: 1.55, comboThreshold: 7 },
-    pointsReward: 650,
+    pointsReward: 750, // Augmenté de 650 → 750
   },
   13: {
     level: 13, name: "Maître Historien", description: "Ultime épreuve de connaissance", eventsNeeded: 17,
@@ -133,7 +133,7 @@ export const LEVEL_CONFIGS: Record<number, LevelConfig> = {
       preferModernEvents: false, balancePeriods: true
     },
     scoring: { basePoints: 220, streakMultiplier: 2.1, timeMultiplier: 1.6, comboThreshold: 8 },
-    pointsReward: 700,
+    pointsReward: 800, // Augmenté de 700 → 800
   },
   14: {
     level: 14, name: "Oracle du Temps", description: "Seul le temps nous le dira", eventsNeeded: 18,
@@ -143,53 +143,52 @@ export const LEVEL_CONFIGS: Record<number, LevelConfig> = {
       preferModernEvents: false, balancePeriods: true
     },
     scoring: { basePoints: 230, streakMultiplier: 2.2, timeMultiplier: 1.65, comboThreshold: 8 },
-    pointsReward: 750,
+    pointsReward: 850, // Augmenté de 750 → 850
   },
   15: {
-    // Ancien niveau 15 "Dieu", maintenant une étape avant la fin
     level: 15,
-    name: "Gardien des Époques", // Nouveau nom
-    description: "Aux portes de l'éternité...", // Nouvelle description
-    eventsNeeded: 19, // Légère augmentation
+    name: "Gardien des Époques",
+    description: "Aux portes de l'éternité...",
+    eventsNeeded: 19,
     timeGap: {
-      base: 15, // Encore plus serré
+      base: 15,
       variance: 5,
       minimum: 5,
     },
     eventSelection: {
-      minDifficulty: 6, // Maintien de la difficulté
+      minDifficulty: 6,
       maxDifficulty: 7,
       universalOnly: false,
-      specialEventChance: 0.7, // Maintien de la chance
+      specialEventChance: 0.7,
       preferModernEvents: false,
       balancePeriods: true
     },
     scoring: {
-      basePoints: 240, // Augmentation
-      streakMultiplier: 2.3, // Augmentation
-      timeMultiplier: 1.7, // Augmentation
-      comboThreshold: 9, // Augmentation
+      basePoints: 240,
+      streakMultiplier: 2.3,
+      timeMultiplier: 1.7,
+      comboThreshold: 9,
     },
     specialRules: [],
-    pointsReward: 800, // Augmentation
+    pointsReward: 900, // Augmenté de 800 → 900
   },
 
-  // --- NOUVEAUX NIVEAUX ---
+  // --- NIVEAUX 16-19 avec récompenses équilibrées ---
   16: {
     level: 16,
     name: "Architecte du Temps",
     description: "Façonnez votre propre légende",
-    eventsNeeded: 20, // +1
+    eventsNeeded: 20,
     timeGap: {
-      base: 12, // Très serré
+      base: 12,
       variance: 4,
       minimum: 4,
     },
     eventSelection: {
-      minDifficulty: 6, // On reste sur les plus durs
+      minDifficulty: 6,
       maxDifficulty: 7,
       universalOnly: false,
-      specialEventChance: 0.72, // Légère augmentation
+      specialEventChance: 0.72,
       preferModernEvents: false,
       balancePeriods: true
     },
@@ -200,20 +199,20 @@ export const LEVEL_CONFIGS: Record<number, LevelConfig> = {
       comboThreshold: 9,
     },
     specialRules: [],
-    pointsReward: 850,
+    pointsReward: 950, // Augmenté de 850 → 950
   },
   17: {
     level: 17,
     name: "Entité Temporelle",
     description: "Vous transcendez les âges",
-    eventsNeeded: 21, // +1
+    eventsNeeded: 21,
     timeGap: {
-      base: 10, // Extrêmement serré
+      base: 10,
       variance: 3,
       minimum: 3,
     },
     eventSelection: {
-      minDifficulty: 6, // On force quasiment que les plus durs
+      minDifficulty: 6,
       maxDifficulty: 7,
       universalOnly: false,
       specialEventChance: 0.74,
@@ -224,23 +223,23 @@ export const LEVEL_CONFIGS: Record<number, LevelConfig> = {
       basePoints: 260,
       streakMultiplier: 2.4,
       timeMultiplier: 1.8,
-      comboThreshold: 10, // Seuil de combo plus élevé
+      comboThreshold: 10,
     },
     specialRules: [],
-    pointsReward: 900,
+    pointsReward: 1000, // Augmenté de 900 → 1000
   },
   18: {
     level: 18,
     name: "Conscience Cosmique",
     description: "L'histoire n'a plus de secrets",
-    eventsNeeded: 22, // +1
+    eventsNeeded: 22,
     timeGap: {
-      base: 8, // Quasi adjacent
+      base: 8,
       variance: 2,
       minimum: 2,
     },
     eventSelection: {
-      minDifficulty: 7, // Que les plus difficiles
+      minDifficulty: 7,
       maxDifficulty: 7,
       universalOnly: false,
       specialEventChance: 0.76,
@@ -254,20 +253,20 @@ export const LEVEL_CONFIGS: Record<number, LevelConfig> = {
       comboThreshold: 10,
     },
     specialRules: [],
-    pointsReward: 950,
+    pointsReward: 1100, // Augmenté de 950 → 1100
   },
   19: {
     level: 19,
     name: "Maître de l'Univers Historique",
     description: "Le défi ultime avant l'infini",
-    eventsNeeded: 23, // +1, dernière étape finie
+    eventsNeeded: 23,
     timeGap: {
-      base: 5, // Très très proche
+      base: 5,
       variance: 1,
-      minimum: 1, // Minimum absolu
+      minimum: 1,
     },
     eventSelection: {
-      minDifficulty: 7, // Que difficulté max
+      minDifficulty: 7,
       maxDifficulty: 7,
       universalOnly: false,
       specialEventChance: 0.78,
@@ -276,39 +275,39 @@ export const LEVEL_CONFIGS: Record<number, LevelConfig> = {
     },
     scoring: {
       basePoints: 290,
-      streakMultiplier: 2.5, // Cap du multiplicateur de série
-      timeMultiplier: 1.9, // Presque le double pour le temps
+      streakMultiplier: 2.5,
+      timeMultiplier: 1.9,
       comboThreshold: 11,
     },
     specialRules: [],
-    pointsReward: 1000, // Grosse récompense avant le dernier
+    pointsReward: 1200, // Augmenté de 1000 → 1200
   },
   20: {
     level: 20,
-    name: "Le Flux Éternel", // Nom évoquant l'infini
-    description: "Combien de temps tiendrez-vous ?", // Description pour l'endurance
-    eventsNeeded: 99999, // Nombre virtuellement infini
+    name: "Le Flux Éternel",
+    description: "Combien de temps tiendrez-vous ?",
+    eventsNeeded: 99999, // Niveau infini
     timeGap: {
-      base: 1, // Minimum absolu
-      variance: 0, // Aucune variance
-      minimum: 1, // Minimum absolu
+      base: 1,
+      variance: 0,
+      minimum: 1,
     },
     eventSelection: {
-      minDifficulty: 7, // Que le plus dur
+      minDifficulty: 7,
       maxDifficulty: 7,
       universalOnly: false,
-      specialEventChance: 0.8, // Très forte chance d'événement spécial (si définis)
+      specialEventChance: 0.8,
       preferModernEvents: false,
-      balancePeriods: false // Ne plus forcer l'équilibre, peut rester longtemps dans une période difficile
+      balancePeriods: false
     },
     scoring: {
-      basePoints: 300, // Points de base élevés
-      streakMultiplier: 2.5, // Cap maintenu
-      timeMultiplier: 2.0, // Cap du multiplicateur de temps
-      comboThreshold: 12, // Seuil de combo très élevé
+      basePoints: 300,
+      streakMultiplier: 2.5,
+      timeMultiplier: 2.0,
+      comboThreshold: 12,
     },
-    specialRules: [], // Possibilité d'ajouter des règles spéciales ici plus tard
-    pointsReward: 5000, // Récompense symbolique très élevée si jamais atteint (improbable)
+    specialRules: [],
+    pointsReward: 2000, // Récompense symbolique élevée (mais niveau infini)
   },
 };
 
