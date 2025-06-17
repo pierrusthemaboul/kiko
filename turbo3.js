@@ -223,4 +223,101 @@ async function main() {
             console.log(`\n▶️  Tentative ${attempt}/${MAX_RETRIES} pour "${event.titre}"`);
             
             try {
-                // Étape
+                // Étape 1: Générer l'image
+                const imageUrl = await genererImage(currentPrompt);
+                if (!imageUrl) throw new Error("Replicate n'a pas retourné d'URL.");
+                console.log(`   ✅ Image générée temporairement : ${imageUrl}`);
+
+                // Étape 2: Valider l'image (optionnel)
+                const isValid = await validateImage(imageUrl);
+                
+                if (isValid) {
+                    // Étape 3: Si valide, upload et insertion
+                    finalImageUrl = await uploadImage(imageUrl, event.titre);
+                    event.illustration_url = finalImageUrl;
+                    const dbResult = await insererEvenement(event);
+                    success = true;
+                    stats.success++;
+                    console.log(`🎉 SUCCÈS pour "${event.titre}" (ID: ${dbResult.id})`);
+                } else {
+                    lastError = `Échec de la validation à la tentative ${attempt}.`;
+                    console.log(`   ❌ Image rejetée. Tentative de correction du prompt...`);
+                    // Étape 4: Si invalide, on corrige le prompt pour la prochaine tentative
+                    currentPrompt = await correctPrompt(currentPrompt, imageUrl);
+                }
+
+            } catch (error) {
+                lastError = `Erreur à la tentative ${attempt}: ${error.message}`;
+                console.error(`   ❌ ${lastError}`);
+            }
+            
+            if (!success && attempt < MAX_RETRIES) {
+                console.log(`   ⏳ Pause de 2 secondes avant la prochaine tentative...`);
+                await new Promise(resolve => setTimeout(resolve, 2000));
+            }
+        }
+        
+        if (!success) {
+            stats.failed++;
+            permanentFailures.push(event.titre);
+            console.error(`\n🚨 ÉCHEC DÉFINITIF pour "${event.titre}" après ${MAX_RETRIES} tentatives.`);
+        }
+
+        reportData.push({
+            titre: event.titre,
+            status: success ? "SUCCESS" : "FAILED_AFTER_RETRIES",
+            attempts: attempt,
+            image_url: finalImageUrl || 'N/A',
+            error: success ? "" : lastError
+        });
+
+        // Petite pause entre chaque événement pour éviter de surcharger l'API
+        if (i < events.length - 1) {
+            console.log(`   ⏳ Pause de 1 seconde avant l'événement suivant...`);
+            await new Promise(resolve => setTimeout(resolve, 1000));
+        }
+    }
+    
+    // Rapport final
+    const duration = (Date.now() - startTime) / 1000;
+    const reportFile = path.join(OUTPUT_REPORT_DIR, `turbo3_report_${new Date().toISOString().replace(/[:.]/g, '-')}.csv`);
+    
+    let csvReport = "titre,status,attempts,image_url,error\n";
+    reportData.forEach(r => {
+      csvReport += `"${r.titre}","${r.status}",${r.attempts},"${r.image_url}","${r.error.replace(/"/g, '""')}"\n`;
+    });
+    fs.writeFileSync(reportFile, csvReport);
+
+    console.log(`\n\n🏭 === RAPPORT FINAL "Contrôle Qualité CORRIGÉ" ===`);
+    console.log(`⏱️  Durée totale: ${Math.floor(duration / 60)}m ${(duration % 60).toFixed(1)}s`);
+    console.log(`✅ Succès: ${stats.success}/${stats.total} (${((stats.success/stats.total)*100).toFixed(1)}%)`);
+    console.log(`❌ Échecs définitifs: ${stats.failed}/${stats.total} (${((stats.failed/stats.total)*100).toFixed(1)}%)`);
+    
+    if (stats.success > 0) {
+        const avgTimePerSuccess = duration / stats.success;
+        console.log(`📊 Temps moyen par succès: ${avgTimePerSuccess.toFixed(1)}s`);
+        
+        // Estimation pour 10 000 événements
+        const estimatedTimeFor10k = (avgTimePerSuccess * 10000) / 3600; // en heures
+        const estimatedCostFor10k = 10000 * 0.003; // $0.003 par image avec Flux Schnell
+        console.log(`📈 Estimation pour 10 000 événements:`);
+        console.log(`   ⏱️  Temps: ~${estimatedTimeFor10k.toFixed(1)} heures`);
+        console.log(`   💰 Coût: ~${estimatedCostFor10k.toFixed(0)}`);
+    }
+    
+    if (stats.failed > 0) {
+        console.log("📋 Événements échoués:", permanentFailures.slice(0, 5).join(', ') + (permanentFailures.length > 5 ? '...' : ''));
+    }
+    console.log(`📄 Rapport détaillé sauvegardé: ${reportFile}`);
+    
+    console.log(`\n💡 RECOMMANDATIONS:`);
+    if (stats.failed > stats.success * 0.2) {
+        console.log(`   - Taux d'échec élevé (${((stats.failed/stats.total)*100).toFixed(1)}%) - vérifiez vos prompts`);
+    }
+    if (!USE_VALIDATION) {
+        console.log(`   - Validation IA désactivée - vérifiez manuellement un échantillon`);
+    }
+    console.log(`   - Pour la production massive, activez la parallélisation par lots`);
+}
+
+main().catch(console.error);
