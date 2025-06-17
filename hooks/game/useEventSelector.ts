@@ -1,490 +1,490 @@
-import { useState, useCallback } from 'react';
-import { supabase } from '../../lib/supabase/supabaseClients'; // Ajuste le chemin si nécessaire
-import { FirebaseAnalytics } from '../../lib/firebase'; // Ajuste le chemin si nécessaire
-import { Event, HistoricalPeriod } from '../types'; // Ajuste le chemin si nécessaire
-import { LEVEL_CONFIGS } from '../levelConfigs'; // Ajuste le chemin si nécessaire
+import { useState, useCallback, useMemo } from 'react';
+import { supabase } from '../../lib/supabase/supabaseClients';
+import { FirebaseAnalytics } from '../../lib/firebase';
+import { Event, HistoricalPeriod } from '../types';
+import { LEVEL_CONFIGS } from '../levelConfigs';
 
 // Constantes pour limiter les événements antiques
 const ANTIQUE_EVENTS_LIMITS = {
-  1: 1, // Niveau 1: max 1 événement antique
-  2: 2, // Niveau 2: max 2 événements antiques
-  3: 3, // Niveau 3: max 3 événements antiques
-  4: 4, // Niveau 4: max 4 événements antiques
-  5: 5, // Niveau 5 et plus: max 5 événements antiques
+  1: 1, 2: 2, 3: 3, 4: 4, 5: 5,
 };
 
-// Année limite pour les événements "antiques"
+// Constantes d'optimisation
 const ANTIQUE_YEAR_THRESHOLD = 500;
+const MAX_EVENTS_TO_PROCESS = 150; // Limite critique pour éviter les gels
+const MAX_SCORING_POOL = 100; // Pool encore plus restreint pour le scoring
+const DEBOUNCE_DELAY = 200; // ms pour éviter les appels multiples
+
+// Cache global pour les calculs de dates (évite les re-calculs)
+const dateCache = new Map<string, { year: number, timestamp: number }>();
+const scoringCache = new Map<string, any>(); // Cache pour les scores
 
 /**
- * Hook pour gérer la sélection des événements et les sauts temporels
+ * Cache optimisé pour les calculs de dates
+ */
+const getCachedDateInfo = (dateStr: string) => {
+  if (!dateCache.has(dateStr)) {
+    try {
+      const date = new Date(dateStr);
+      const year = date.getFullYear();
+      const timestamp = date.getTime();
+      if (!isNaN(year) && !isNaN(timestamp)) {
+        dateCache.set(dateStr, { year, timestamp });
+      } else {
+        return { year: 2000, timestamp: new Date('2000-01-01').getTime() }; // Fallback
+      }
+    } catch {
+      return { year: 2000, timestamp: new Date('2000-01-01').getTime() }; // Fallback
+    }
+  }
+  return dateCache.get(dateStr)!;
+};
+
+/**
+ * Hook optimisé pour gérer la sélection des événements
  */
 export function useEventSelector({
   setError,
   setIsGameOver,
-  updateStateCallback // Callback pour mettre à jour l'état du jeu principal
+  updateStateCallback
 }: {
   setError: (error: string) => void;
   setIsGameOver: (isGameOver: boolean) => void;
-  updateStateCallback: (selectedEvent: Event) => Promise<void>; // Important pour la synchro
+  updateStateCallback: (selectedEvent: Event) => Promise<void>;
 }) {
-  // Compteur pour limiter les événements antiques
   const [antiqueEventsCount, setAntiqueEventsCount] = useState<number>(0);
-
-  // État pour les sauts temporels forcés
   const [eventCount, setEventCount] = useState<number>(0);
   const [forcedJumpEventCount, setForcedJumpEventCount] = useState<number>(() => {
-    const initialJumpCount = Math.floor(Math.random() * (19 - 12 + 1)) + 12;
-    return initialJumpCount;
+    return Math.floor(Math.random() * (19 - 12 + 1)) + 12;
   });
   const [hasFirstForcedJumpHappened, setHasFirstForcedJumpHappened] = useState<boolean>(false);
-
-  // État pour le fallback (gardé, même si son usage direct semble limité maintenant)
   const [fallbackCountdown, setFallbackCountdown] = useState<number>(() => {
-    const initialFallback = Math.floor(Math.random() * (25 - 12 + 1)) + 12;
-    return initialFallback;
+    return Math.floor(Math.random() * (25 - 12 + 1)) + 12;
   });
+  const [lastSelectionTime, setLastSelectionTime] = useState<number>(0);
 
   /**
-   * Détermine la période historique d'un événement à partir de sa date
+   * Détermine la période historique - Version optimisée avec cache
    */
   const getPeriod = useCallback((date: string): HistoricalPeriod => {
-    try {
-      const year = new Date(date).getFullYear();
-      if (year < 500) return HistoricalPeriod.ANTIQUITY;
-      if (year < 1500) return HistoricalPeriod.MIDDLE_AGES;
-      if (year < 1800) return HistoricalPeriod.RENAISSANCE;
-      if (year < 1900) return HistoricalPeriod.NINETEENTH;
-      if (year < 2000) return HistoricalPeriod.TWENTIETH;
-      return HistoricalPeriod.TWENTYFIRST;
-    } catch {
-      // Error logged internally if needed, but fallback provided
-      return HistoricalPeriod.TWENTIETH; // Default fallback
-    }
+    const { year } = getCachedDateInfo(date);
+    if (year < 500) return HistoricalPeriod.ANTIQUITY;
+    if (year < 1500) return HistoricalPeriod.MIDDLE_AGES;
+    if (year < 1800) return HistoricalPeriod.RENAISSANCE;
+    if (year < 1900) return HistoricalPeriod.NINETEENTH;
+    if (year < 2000) return HistoricalPeriod.TWENTIETH;
+    return HistoricalPeriod.TWENTYFIRST;
   }, []);
 
   /**
-   * Vérifie si un événement est antique (avant ANTIQUE_YEAR_THRESHOLD)
+   * Vérifie si un événement est antique - Version optimisée
    */
   const isAntiqueEvent = useCallback((event: Event | null): boolean => {
-    // Ajout d'une vérification pour event null
-    if (!event || !event.date) {
-        return false;
-    }
-    try {
-      const year = new Date(event.date).getFullYear();
-      // Vérifier si l'année est valide avant la comparaison
-      return !isNaN(year) && year < ANTIQUE_YEAR_THRESHOLD;
-    } catch {
-      // Error logged internally if needed
-      return false;
-    }
-  }, []); // Pas de dépendances externes stables
+    if (!event?.date) return false;
+    const { year } = getCachedDateInfo(event.date);
+    return year < ANTIQUE_YEAR_THRESHOLD;
+  }, []);
 
   /**
-   * Vérifie si on peut encore ajouter un événement antique en fonction du niveau
+   * Vérifie si on peut encore ajouter un événement antique
    */
   const canAddAntiqueEvent = useCallback((level: number): boolean => {
-    // S'assurer que level est un nombre valide, sinon utiliser 1 par défaut
-    const safeLevel = (typeof level === 'number' && !isNaN(level) && level > 0) ? level : 1;
-    // Calculer la limite, en utilisant 5 comme max même pour les niveaux > 5
-    const currentLimit = safeLevel <= 5 ? ANTIQUE_EVENTS_LIMITS[safeLevel as keyof typeof ANTIQUE_EVENTS_LIMITS] : 5;
-    const canAdd = antiqueEventsCount < currentLimit;
-    return canAdd;
-  }, [antiqueEventsCount]); // Dépend de l'état antiqueEventsCount
+    const safeLevel = Math.max(1, Math.min(5, level));
+    const currentLimit = ANTIQUE_EVENTS_LIMITS[safeLevel as keyof typeof ANTIQUE_EVENTS_LIMITS] || 5;
+    return antiqueEventsCount < currentLimit;
+  }, [antiqueEventsCount]);
 
   /**
-   * Calcule la différence de temps entre deux dates en années
-   */
-  const getTimeDifference = useCallback((date1: string | null, date2: string | null): number => {
-    // Vérifier si les dates sont valides
-    if (!date1 || !date2) {
-        return Infinity; // Retourner Infini si une date est manquante
-    }
-    try {
-      const d1Time = new Date(date1).getTime();
-      const d2Time = new Date(date2).getTime();
-
-      // Vérifier si les dates sont valides après conversion
-      if (isNaN(d1Time) || isNaN(d2Time)) {
-        return Infinity;
-      }
-
-      // Vérifier si les résultats sont finis
-      if (!isFinite(d1Time) || !isFinite(d2Time)) {
-        return Infinity;
-      }
-
-      const diffInMilliseconds = Math.abs(d1Time - d2Time);
-      // Calculer la différence en années
-      const diffInYears = diffInMilliseconds / (365.25 * 24 * 60 * 60 * 1000);
-      return diffInYears;
-
-    } catch (error) {
-      // Error logged internally if needed
-      return Infinity; // Retourner Infini en cas d'erreur
-    }
-  }, []); // Pas de dépendances externes stables
-
-  /**
-   * Calcule l'incrément pour le prochain saut temporel forcé en fonction de l'année
+   * Calcule l'incrément pour le prochain saut temporel en fonction de l'année
    */
   const getNextForcedJumpIncrement = useCallback((year: number): number => {
-    let increment;
     if (year < 500) {
-      increment = Math.floor(Math.random() * (5 - 1 + 1)) + 1; // 1-5
-    } else if (year < 700) { // Ajusté pour couvrir 500-699
-      increment = Math.floor(Math.random() * (9 - 6 + 1)) + 6; // 6-9
-    } else if (year < 1000) { // Couvre 700-999
-      increment = Math.floor(Math.random() * (9 - 6 + 1)) + 6; // 6-9
-    } else if (year < 1500) { // Couvre 1000-1499
-      increment = Math.floor(Math.random() * (9 - 6 + 1)) + 6; // 6-9
-    } else if (year < 1800) { // Couvre 1500-1799
-      increment = Math.floor(Math.random() * (11 - 7 + 1)) + 7; // 7-11
-    } else if (year <= 2024) { // Couvre 1800-2024 (Adapter si besoin)
-      increment = Math.floor(Math.random() * (19 - 12 + 1)) + 12; // 12-19
+      return Math.floor(Math.random() * (5 - 1 + 1)) + 1; // 1-5
+    } else if (year < 700) {
+      return Math.floor(Math.random() * (9 - 6 + 1)) + 6; // 6-9
+    } else if (year < 1000) {
+      return Math.floor(Math.random() * (9 - 6 + 1)) + 6; // 6-9
+    } else if (year < 1500) {
+      return Math.floor(Math.random() * (9 - 6 + 1)) + 6; // 6-9
+    } else if (year < 1800) {
+      return Math.floor(Math.random() * (11 - 7 + 1)) + 7; // 7-11
+    } else if (year <= 2024) {
+      return Math.floor(Math.random() * (19 - 12 + 1)) + 12; // 12-19
     } else {
-      increment = 15; // Valeur par défaut pour années futures ou invalides
+      return 15; // Valeur par défaut
     }
-    return increment;
-  }, []); // Pas de dépendances externes stables
+  }, []);
+  /**
+   * Calcule la différence de temps optimisée avec cache
+   */
+  const getTimeDifference = useCallback((date1: string | null, date2: string | null): number => {
+    if (!date1 || !date2) return Infinity;
+    
+    const info1 = getCachedDateInfo(date1);
+    const info2 = getCachedDateInfo(date2);
+    
+    const diffInMilliseconds = Math.abs(info1.timestamp - info2.timestamp);
+    return diffInMilliseconds / (365.25 * 24 * 60 * 60 * 1000);
+  }, []);
 
   /**
-   * Sélectionne un nouvel événement basé sur l'événement de référence, le niveau et les événements utilisés.
+   * PRÉ-FILTRAGE INTELLIGENT - Réduit drastiquement le nombre d'événements à traiter
+   */
+  const preFilterEvents = useCallback((
+    events: Event[],
+    usedEvents: Set<string>,
+    userLevel: number,
+    referenceEvent: Event
+  ): Event[] => {
+    const config = LEVEL_CONFIGS[userLevel];
+    if (!config) return [];
+
+    const { year: refYear } = getCachedDateInfo(referenceEvent.date);
+    const canAddMoreAntiques = canAddAntiqueEvent(userLevel);
+
+    // 1. Filtrage de base
+    let filtered = events.filter(e => 
+      !usedEvents.has(e.id) && 
+      e.date && 
+      e.id !== referenceEvent.id
+    );
+
+    // 2. Filtrage par difficulté (plus restrictif)
+    const maxDifficulty = Math.min(7, Math.ceil(userLevel / 2) + 1);
+    const minDifficulty = Math.max(1, Math.ceil(userLevel / 3));
+    filtered = filtered.filter(e => {
+      const diff = e.niveau_difficulte || 1;
+      return diff >= minDifficulty && diff <= maxDifficulty;
+    });
+
+    // 3. Filtrage temporel préliminaire (large)
+    const timeGapBase = config.timeGap?.base || 100;
+    const preTimeLimit = timeGapBase * 3; // Limite large pour le pré-filtrage
+    filtered = filtered.filter(e => {
+      const timeDiff = getTimeDifference(e.date, referenceEvent.date);
+      return timeDiff <= preTimeLimit;
+    });
+
+    // 4. Filtrage antique
+    if (!canAddMoreAntiques) {
+      filtered = filtered.filter(e => !isAntiqueEvent(e));
+    }
+
+    // 5. Prioriser les événements moins utilisés
+    filtered.sort((a, b) => {
+      const freqA = (a as any).frequency_score || 0;
+      const freqB = (b as any).frequency_score || 0;
+      return freqA - freqB; // Moins utilisés en premier
+    });
+
+    // 6. Limite drastique pour éviter les gels
+    return filtered.slice(0, MAX_EVENTS_TO_PROCESS);
+  }, [canAddAntiqueEvent, getTimeDifference, isAntiqueEvent]);
+
+  /**
+   * Fonction de scoring optimisée avec cache
+   */
+  const scoreEventOptimized = useCallback((
+    evt: Event,
+    referenceEvent: Event,
+    userLevel: number,
+    timeGap: any
+  ): number => {
+    const cacheKey = `${evt.id}-${referenceEvent.id}-${userLevel}`;
+    
+    if (scoringCache.has(cacheKey)) {
+      return scoringCache.get(cacheKey);
+    }
+
+    const timeDiff = getTimeDifference(evt.date, referenceEvent.date);
+    if (!isFinite(timeDiff)) return -Infinity;
+
+    const randomFactor = 0.9 + Math.random() * 0.2;
+    const idealGap = timeGap.base || 100;
+
+    // Score de proximité temporelle
+    let gapScore = 0;
+    if (idealGap > 0 && isFinite(timeDiff)) {
+      const diffRatio = Math.abs(timeDiff - idealGap) / idealGap;
+      gapScore = 35 * Math.max(0, 1 - diffRatio) * randomFactor;
+    }
+
+    // Score de difficulté
+    const idealDifficulty = Math.min(7, Math.max(1, Math.ceil(userLevel / 2)));
+    let difficultyScore = 0;
+    if (evt.niveau_difficulte != null) {
+      difficultyScore = 25 * (1 - Math.abs(evt.niveau_difficulte - idealDifficulty) / 7) * randomFactor;
+    }
+
+    // Malus de fréquence (simplifié)
+    const frequencyScore = (evt as any).frequency_score || 0;
+    const frequencyMalus = Math.min(500, frequencyScore * 10); // Malus plafonné
+
+    // Bonus de variété
+    const variationBonus = Math.random() * 10;
+
+    const totalScore = Math.max(0, gapScore + difficultyScore + variationBonus - frequencyMalus);
+    
+    scoringCache.set(cacheKey, totalScore);
+    return totalScore;
+  }, [getTimeDifference]);
+
+  /**
+   * SÉLECTION OPTIMISÉE avec sauts temporels et debouncing
    */
   const selectNewEvent = useCallback(async (
-    events: Event[], // Liste de tous les événements disponibles
-    referenceEvent: Event | null, // L'événement précédent/actuel
-    userLevel: number, // Niveau actuel de l'utilisateur
-    usedEvents: Set<string>, // Ensemble des IDs des événements déjà utilisés
+    events: Event[],
+    referenceEvent: Event | null,
+    userLevel: number,
+    usedEvents: Set<string>,
   ): Promise<Event | null> => {
-
-    // Vérifications initiales des arguments
-    if (!events || events.length === 0) {
-      setError("Erreur interne: Liste d'événements manquante.");
-      setIsGameOver(true);
-      FirebaseAnalytics.error("no_events_available", "Event list was empty or null", "selectNewEvent");
+    
+    // Debouncing pour éviter les appels multiples rapprochés
+    const now = Date.now();
+    if (now - lastSelectionTime < DEBOUNCE_DELAY) {
+      console.warn('[useEventSelector] Debounced - too many rapid calls');
       return null;
     }
-    if (!referenceEvent || !referenceEvent.date) { // Vérifier aussi la date de référence
-       setError("Erreur interne: événement de référence invalide ou manquant.");
-       setIsGameOver(true);
-       FirebaseAnalytics.error("null_reference_event", `Reference event was null or missing date: ${referenceEvent?.id}`, "selectNewEvent");
-       return null;
+    setLastSelectionTime(now);
+
+    // Validations de base
+    if (!events?.length || !referenceEvent?.date) {
+      setError("Erreur interne: données manquantes.");
+      setIsGameOver(true);
+      FirebaseAnalytics.error("invalid_selection_params", "Missing events or reference", "selectNewEvent");
+      return null;
     }
 
-    // Incrémenter le compteur d'événements
-    const localEventCount = eventCount + 1;
-    setEventCount(prev => prev + 1);
-
-    // Obtenir l'année de référence (déjà vérifié que referenceEvent.date existe)
-    let referenceYear: number;
-    try {
-        referenceYear = new Date(referenceEvent.date).getFullYear();
-        if (isNaN(referenceYear)) throw new Error('getFullYear resulted in NaN');
-    } catch (e) {
-        setError("Erreur interne: format de date de référence invalide.");
-        setIsGameOver(true);
-        FirebaseAnalytics.error("invalid_reference_date", `Invalid date format: ${referenceEvent.date}`, "selectNewEvent");
-        return null;
-    }
-
-    // --- Logique de Saut Temporel Forcé (Time Jump) ---
-    const isForcedJumpTriggered = localEventCount === forcedJumpEventCount;
-    let timeJump = 0; // Calculer timeJump basé sur isForcedJumpTriggered et bonusJumpDistance...
-    // [Code de calcul de timeJump...]
-
-    if (timeJump > 0) {
-        // [Code pour getTargetEvents, sélection, substitution, etc.]
-        // Exemple: const possibleEvents = getTargetEvents(...);
-        // Si possibleEvents.length > 0
-        //   const finalEvent = ... // Sélectionner l'événement
-        //   await updateStateCallback(finalEvent); // Mise à jour état parent
-        //   // Mettre à jour Supabase...
-        //   // Mettre à jour forcedJumpEventCount si nécessaire...
-        //   return finalEvent;
-        // else
-        //   // Fallback si échec du saut, continue vers la sélection normale
-    } else {
-      // Pas de saut
-    }
-    // --- Fin Logique Time Jump ---
-
-
-    // --- Sélection Normale (si pas de saut temporel ou si échec) ---
     const config = LEVEL_CONFIGS[userLevel];
     if (!config) {
       setError(`Configuration manquante pour le niveau ${userLevel}`);
       setIsGameOver(true);
-      FirebaseAnalytics.error("missing_level_config", `Config not found for level ${userLevel}`, "selectNewEvent");
       return null;
     }
 
-    // Calcul de l'intervalle de temps dynamique
-    const calculateDynamicTimeGap = (refDate: string) => {
-      const nowY = new Date().getFullYear();
-      const refY = new Date(refDate).getFullYear();
-      const proximityFactor = Math.max(0.2, Math.min(1, 1 - (nowY - refY) / 2000));
-      const baseGap = config.timeGap.base * proximityFactor;
-      const minGap = Math.max(10, config.timeGap.minimum * proximityFactor);
-      const maxGap = Math.max(minGap + 50, baseGap * 1.5);
-      return { base: baseGap, min: minGap, max: maxGap };
-    };
-    const timeGap = calculateDynamicTimeGap(referenceEvent.date);
+    // Incrémenter le compteur d'événements pour les sauts temporels
+    const localEventCount = eventCount + 1;
+    setEventCount(localEventCount);
 
-    // Filtrer les événements déjà utilisés
-    const availableEvents = events.filter((e) => !usedEvents.has(e.id));
-    if (availableEvents.length === 0) {
-      setError("Vous avez exploré tous les événements disponibles !");
+    // --- LOGIQUE DE SAUT TEMPOREL FORCÉ ---
+    const isForcedJumpTriggered = localEventCount === forcedJumpEventCount;
+    
+    if (isForcedJumpTriggered) {
+      console.log(`[useEventSelector] 🚀 SAUT TEMPOREL déclenché ! Event ${localEventCount}/${forcedJumpEventCount}`);
+      
+      const { year: refYear } = getCachedDateInfo(referenceEvent.date);
+      
+      // Calculer la distance du saut selon l'époque
+      let jumpDistance;
+      if (refYear < 500) {
+        jumpDistance = Math.floor(Math.random() * 800) + 200; // 200-1000 ans
+      } else if (refYear < 1000) {
+        jumpDistance = Math.floor(Math.random() * 600) + 400; // 400-1000 ans
+      } else if (refYear < 1500) {
+        jumpDistance = Math.floor(Math.random() * 400) + 300; // 300-700 ans
+      } else if (refYear < 1800) {
+        jumpDistance = Math.floor(Math.random() * 300) + 200; // 200-500 ans
+      } else {
+        jumpDistance = Math.floor(Math.random() * 150) + 50;  // 50-200 ans
+      }
+
+      // Direction aléatoire du saut
+      const jumpForward = Math.random() > 0.5;
+      const targetYear = jumpForward ? refYear + jumpDistance : refYear - jumpDistance;
+      
+      console.log(`[useEventSelector] Saut de ${refYear} vers ~${targetYear} (${jumpForward ? 'futur' : 'passé'})`);
+
+      // Pré-filtrage pour le saut temporel
+      const jumpCandidates = preFilterEvents(events, usedEvents, userLevel, referenceEvent)
+        .filter(e => {
+          const { year: eventYear } = getCachedDateInfo(e.date);
+          const timeDiffFromTarget = Math.abs(eventYear - targetYear);
+          return timeDiffFromTarget <= jumpDistance * 0.5; // Tolérance de 50%
+        })
+        .slice(0, 20); // Limite pour performance
+
+      if (jumpCandidates.length > 0) {
+        // Sélection aléatoire pour le saut temporel
+        const jumpEvent = jumpCandidates[Math.floor(Math.random() * jumpCandidates.length)];
+        
+        // Mettre à jour le prochain saut
+        const nextIncrement = getNextForcedJumpIncrement(targetYear);
+        setForcedJumpEventCount(localEventCount + nextIncrement);
+        setHasFirstForcedJumpHappened(true);
+        
+        console.log(`[useEventSelector] ✅ Saut réussi vers: ${jumpEvent.titre} (${jumpEvent.date_formatee})`);
+        console.log(`[useEventSelector] Prochain saut dans ${nextIncrement} événements`);
+        
+        // Mise à jour de l'état et retour
+        await updateStateCallback(jumpEvent);
+        
+        // Analytics pour le saut temporel
+        FirebaseAnalytics.logEvent('temporal_jump', {
+          from_year: refYear,
+          to_year: getCachedDateInfo(jumpEvent.date).year,
+          jump_distance: jumpDistance,
+          jump_direction: jumpForward ? 'forward' : 'backward',
+          user_level: userLevel
+        });
+
+        return jumpEvent;
+      } else {
+        console.warn(`[useEventSelector] ⚠️ Échec du saut temporel - aucun candidat trouvé`);
+        // Continuer vers sélection normale si échec
+      }
+    }
+    // --- FIN LOGIQUE SAUT TEMPOREL ---
+
+    // 🚀 PRÉ-FILTRAGE INTELLIGENT (réduit de 896 à ~150 événements max)
+    console.time('preFilter');
+    const preFilteredEvents = preFilterEvents(events, usedEvents, userLevel, referenceEvent);
+    console.timeEnd('preFilter');
+
+    if (preFilteredEvents.length === 0) {
+      setError("Plus d'événements disponibles pour ce niveau !");
       setIsGameOver(true);
-      FirebaseAnalytics.error("no_more_available_events", "All events have been used", "selectNewEvent");
       return null;
     }
 
-    // Déterminer le pool d'événements à scorer (incluant logique moderne/antique)
-    let eventsToScore = availableEvents;
-    const canAddMoreAntiques = canAddAntiqueEvent(userLevel);
-    if (!canAddMoreAntiques) {
-        eventsToScore = eventsToScore.filter(e => !isAntiqueEvent(e));
-    }
+    console.log(`[useEventSelector] Pré-filtrage: ${events.length} → ${preFilteredEvents.length} événements`);
 
-
-    // --- Fonction de scoring (définie ici pour avoir accès à timeGap, userLevel etc.) ---
-    const scoreEvent = (evt: Event, timeDiff: number): any => {
-      const randomFactor = 0.9 + Math.random() * 0.2;
-      const idealGap = timeGap.base;
-      let gapScore = 0;
-      if (idealGap > 0 && isFinite(timeDiff)) {
-          const diffRatio = Math.abs(timeDiff - idealGap) / idealGap;
-          gapScore = 35 * Math.max(0, 1 - diffRatio) * randomFactor;
-      }
-
-      const idealDifficulty = Math.min(7, Math.max(1, Math.ceil(userLevel / 2)));
-      let difficultyScore = 0;
-      if (evt.niveau_difficulte != null) { // Simplifié, != null couvre undefined aussi
-          difficultyScore = 25 * (1 - Math.abs(evt.niveau_difficulte - idealDifficulty) / 7) * randomFactor;
-      }
-
-      let modernBonus = 0;
-      const modernThresholdYear = userLevel <= 5 ? [0, 1900, 1800, 1600, 1400, 1000][userLevel] : 0;
-      if (userLevel <= 5 && referenceYear < modernThresholdYear) {
-          try {
-              const eventYear = new Date(evt.date).getFullYear();
-              if (!isNaN(eventYear) && eventYear >= modernThresholdYear) {
-                  modernBonus = [0, 1000, 800, 600, 400, 200][userLevel];
-              }
-          } catch {}
-      }
-
-      const frequencyScore = (evt as any).frequency_score || 0;
-      let frequencyMalus = 0;
-      if (frequencyScore <= 10) frequencyMalus = frequencyScore * 20;
-      else if (frequencyScore <= 30) frequencyMalus = 200 + (frequencyScore - 10) * 15;
-      else if (frequencyScore <= 60) frequencyMalus = 500 + (frequencyScore - 30) * 30;
-      else frequencyMalus = 1400 + (frequencyScore - 60) * 50;
-
-      const variationBonus = Math.random() * 10;
-      const antiqueLimit = userLevel <= 5 ? ANTIQUE_EVENTS_LIMITS[userLevel as keyof typeof ANTIQUE_EVENTS_LIMITS] : 5;
-      const antiqueMalus = isAntiqueEvent(evt) && antiqueEventsCount >= (antiqueLimit -1) ? 50 : 0; // Malus si on est sur le point d'atteindre la limite
-
-      const totalScore = Math.max(0, gapScore + difficultyScore + variationBonus + modernBonus - frequencyMalus - antiqueMalus);
-
-      return { totalScore, gapScore, difficultyScore, variationBonus, modernBonus, frequencyMalus, antiqueMalus, randomFactor, idealGap, idealDifficulty, frequencyScore };
+    // Configuration du gap temporel
+    const { year: refYear } = getCachedDateInfo(referenceEvent.date);
+    const proximityFactor = Math.max(0.2, Math.min(1, 1 - (new Date().getFullYear() - refYear) / 2000));
+    const timeGap = {
+      base: (config.timeGap?.base || 100) * proximityFactor,
+      min: Math.max(10, (config.timeGap?.minimum || 50) * proximityFactor),
+      max: Math.max(200, (config.timeGap?.base || 100) * 1.5 * proximityFactor)
     };
-    const processDetailedScores = (detailedScore: any) => { return detailedScore.totalScore; };
-    // --- Fin Fonction de scoring ---
 
+    // 🚀 SCORING LIMITÉ (encore plus restreint pour les calculs lourds)
+    console.time('scoring');
+    const scoringPool = preFilteredEvents.slice(0, MAX_SCORING_POOL);
+    
+    const scoredEvents = scoringPool
+      .map(evt => ({
+        event: evt,
+        score: scoreEventOptimized(evt, referenceEvent, userLevel, timeGap),
+        timeDiff: getTimeDifference(evt.date, referenceEvent.date)
+      }))
+      .filter(({ score, timeDiff }) => 
+        isFinite(score) && 
+        score > 0 && 
+        timeDiff >= timeGap.min && 
+        timeDiff <= timeGap.max
+      )
+      .sort((a, b) => b.score - a.score);
+    
+    console.timeEnd('scoring');
 
-    // --- Scoring et Filtrage avec Logs et Try/Catch Améliorés ---
-    let mappedEvents: any[] = [];
-    let mapErrorOccurred = false;
-
-    try {
-        mappedEvents = eventsToScore.map((e, index) => {
-            let diff = Infinity;
-            let scoreDetails: any = { totalScore: -Infinity };
-            let score = -Infinity;
-            let year = NaN;
-            try {
-                diff = getTimeDifference(e.date, referenceEvent.date); // referenceEvent est non-null ici
-                scoreDetails = scoreEvent(e, diff);
-                score = processDetailedScores(scoreDetails);
-                try { year = new Date(e.date).getFullYear(); } catch {}
-                if (!isFinite(score) || isNaN(score)) {
-                    score = -Infinity;
-                    scoreDetails.totalScore = score;
-                }
-            } catch (mapError) {
-                mapErrorOccurred = true;
-            }
-            return { event: e, timeDiff: diff, score: score, year: year, scoreDetails };
-        });
-        if (mapErrorOccurred) {/* Log internal warning if needed */}
-
-    } catch (globalMappingError) {
-        setError("Erreur critique pendant le traitement des événements."); setIsGameOver(true);
-        FirebaseAnalytics.error("map_operation_failed", globalMappingError instanceof Error ? globalMappingError.message : "Unknown", "selectNewEvent");
-        return null;
+    // Relâchement des contraintes si nécessaire
+    let finalEvents = scoredEvents;
+    if (finalEvents.length === 0) {
+      console.log('[useEventSelector] Relâchement des contraintes temporelles');
+      const relaxedMin = timeGap.min * 0.3;
+      const relaxedMax = timeGap.max * 2;
+      
+      finalEvents = scoringPool
+        .map(evt => ({
+          event: evt,
+          score: scoreEventOptimized(evt, referenceEvent, userLevel, timeGap),
+          timeDiff: getTimeDifference(evt.date, referenceEvent.date)
+        }))
+        .filter(({ score, timeDiff }) => 
+          isFinite(score) && 
+          score > 0 && 
+          timeDiff >= relaxedMin && 
+          timeDiff <= relaxedMax
+        )
+        .sort((a, b) => b.score - a.score);
     }
 
-    let filteredEvents = [];
-    try {
-        filteredEvents = mappedEvents.filter(({ timeDiff }) => {
-            const isDiffValid = typeof timeDiff === 'number' && isFinite(timeDiff);
-            const areBoundsValid = typeof timeGap.min === 'number' && isFinite(timeGap.min) && typeof timeGap.max === 'number' && isFinite(timeGap.max);
-            if (!isDiffValid || !areBoundsValid) { return false; }
-            return timeDiff >= timeGap.min && timeDiff <= timeGap.max;
-        });
-    } catch(filterError) {
-        setError("Erreur critique pendant le filtrage."); setIsGameOver(true);
-        FirebaseAnalytics.error("filter_operation_failed", filterError instanceof Error ? filterError.message : "Unknown", "selectNewEvent");
-        return null;
+    // Fallback ultime si toujours vide
+    if (finalEvents.length === 0) {
+      console.warn('[useEventSelector] Fallback - sélection aléatoire');
+      finalEvents = preFilteredEvents.slice(0, 10).map(evt => ({
+        event: evt,
+        score: Math.random() * 100,
+        timeDiff: getTimeDifference(evt.date, referenceEvent.date)
+      }));
     }
 
-    // --- Relâchement des contraintes si nécessaire ---
-    if (filteredEvents.length === 0) {
-        const relaxedMin = timeGap.min * 0.5;
-        const relaxedMax = timeGap.max * 1.5;
-        try {
-            filteredEvents = mappedEvents.filter(({ timeDiff }) => { // Re-filtrer mappedEvents
-                 const isDiffValid = typeof timeDiff === 'number' && isFinite(timeDiff);
-                 const areBoundsValid = typeof relaxedMin === 'number' && isFinite(relaxedMin) && typeof relaxedMax === 'number' && isFinite(relaxedMax);
-                 if (!isDiffValid || !areBoundsValid) return false;
-                 return timeDiff >= relaxedMin && timeDiff <= relaxedMax;
-             });
-        } catch(relaxedFilterError) {
-             setError("Erreur critique pendant le filtrage relaxé."); setIsGameOver(true);
-             FirebaseAnalytics.error("relaxed_filter_failed", relaxedFilterError instanceof Error ? relaxedFilterError.message : "Unknown", "selectNewEvent");
-             return null;
-         }
-    }
-
-    // --- Fallback complet si toujours vide ---
-    if (filteredEvents.length === 0) {
-        FirebaseAnalytics.logEvent("event_selection_fallback_all", { userLevel, referenceYear });
-        try {
-            // Utiliser mappedEvents (qui contient tous les scores calculés) mais sans filtre de temps
-            filteredEvents = mappedEvents;
-            // (Ici, on pourrait ajouter la logique de boost moderne si nécessaire, sur `filteredEvents`)
-        } catch(fallbackError) {
-             setError("Erreur critique pendant le fallback."); setIsGameOver(true);
-             FirebaseAnalytics.error("fallback_assign_failed", fallbackError instanceof Error ? fallbackError.message : "Unknown", "selectNewEvent");
-             return null;
-         }
-    }
-
-    // --- Tri final des événements candidats ---
-    let scoredEvents = [];
-     try {
-        scoredEvents = filteredEvents.sort((a, b) => {
-            const scoreA = (typeof a.score === 'number' && isFinite(a.score)) ? a.score : -Infinity;
-            const scoreB = (typeof b.score === 'number' && isFinite(b.score)) ? b.score : -Infinity;
-            return scoreB - scoreA;
-        });
-    } catch(sortError) {
-        setError("Erreur critique pendant le tri final."); setIsGameOver(true);
-        FirebaseAnalytics.error("final_sort_failed", sortError instanceof Error ? sortError.message : "Unknown", "selectNewEvent");
-        return null;
-    }
-    // --- Fin Scoring et Filtrage Améliorés ---
-
-
-    // Vérification finale avant sélection
-    if (scoredEvents.length === 0) {
-      setError("Erreur critique: Impossible de sélectionner un événement.");
+    if (finalEvents.length === 0) {
+      setError("Impossible de sélectionner un événement valide.");
       setIsGameOver(true);
-      FirebaseAnalytics.error("event_selection_failed", "No scorable events left after final sort", "selectNewEvent");
       return null;
     }
 
-    // --- Sélection finale ---
-    const selectionPoolSize = Math.min(5, scoredEvents.length);
-    const topEvents = scoredEvents.slice(0, selectionPoolSize);
+    // Sélection finale (top 5 pour la variété)
+    const topEvents = finalEvents.slice(0, Math.min(5, finalEvents.length));
+    const selectedEvent = topEvents[Math.floor(Math.random() * topEvents.length)].event;
 
-    const selectedScoredEvent = topEvents[Math.floor(Math.random() * topEvents.length)];
-    let selectedEvent = selectedScoredEvent.event;
+    console.log(`[useEventSelector] Sélectionné: ${selectedEvent.titre} (${selectedEvent.date_formatee})`);
 
-    // Vérifier si selectedEvent est valide avant de continuer
-    if (!selectedEvent || !selectedEvent.id) {
-        setError("Erreur critique: Sélection aléatoire invalide.");
-        setIsGameOver(true);
-        FirebaseAnalytics.error("random_selection_invalid", `Selected invalid event from pool of ${topEvents.length}`, "selectNewEvent");
-        return null;
-    }
-
-
-    // (Logique optionnelle de remplacement forcé par événement moderne)
-    // ... [Code omis, mais à insérer si utilisé] ...
-
-    // --- Mise à jour Finale ---
-
-    // *** APPEL CRUCIAL pour mettre à jour l'état du JEU ***
+    // Mise à jour de l'état
+    setEventCount(prev => prev + 1);
     await updateStateCallback(selectedEvent);
-    // *** FIN APPEL CRUCIAL ***
 
-    // Mise à jour Supabase (peut être faite ici ou dans updateStateCallback)
-    try {
-      const currentFrequency = (selectedEvent as any).frequency_score || 0;
-      const newFrequencyScore = currentFrequency + 1;
-      // Ne pas attendre (await) si ce n'est pas critique pour la suite immédiate
-      supabase
-        .from("evenements")
-        .update({ frequency_score: newFrequencyScore, last_used: new Date().toISOString() })
-        .eq("id", selectedEvent.id)
-        .then(({ error }) => { // Gérer l'erreur potentielle de manière asynchrone
-            if (error) {
-                 // Log internal error if needed
-            } else {
-                 // Log internal success if needed
-            }
-        });
+    // Mise à jour Supabase (non-bloquante)
+    const currentFrequency = (selectedEvent as any).frequency_score || 0;
+    supabase
+      .from("evenements")
+      .update({ 
+        frequency_score: currentFrequency + 1, 
+        last_used: new Date().toISOString() 
+      })
+      .eq("id", selectedEvent.id)
+      .then(({ error }) => {
+        if (error) console.warn('[useEventSelector] Supabase update error:', error.message);
+      });
 
-    } catch (error) { // Attrape les erreurs synchrones (peu probable ici avec .then)
-       // Log internal error if needed
-    }
-
-    return selectedEvent; // Retourner l'événement sélectionné
+    return selectedEvent;
 
   }, [
-    // Lister explicitement toutes les dépendances utilisées dans useCallback
-    setError, setIsGameOver, updateStateCallback, eventCount, forcedJumpEventCount,
-    hasFirstForcedJumpHappened, fallbackCountdown, antiqueEventsCount, // Etats du hook
-    getTimeDifference, isAntiqueEvent, canAddAntiqueEvent, getPeriod, // Callbacks internes (définis avec useCallback)
-    getNextForcedJumpIncrement
-    // userLevel est passé en argument, pas besoin ici
-    // referenceEvent est passé en argument, pas besoin ici
-    // events est passé en argument, pas besoin ici
-    // usedEvents est passé en argument, pas besoin ici
+    setError, setIsGameOver, updateStateCallback, lastSelectionTime,
+    preFilterEvents, scoreEventOptimized, getTimeDifference
   ]);
 
-  // --- Callbacks pour update/reset antique count (Identiques) ---
+  /**
+   * Callbacks pour la gestion des événements antiques
+   */
   const updateAntiqueCount = useCallback((event: Event) => {
-      if (isAntiqueEvent(event)) {
-        setAntiqueEventsCount(prev => prev + 1);
-      }
-  }, [isAntiqueEvent]); // Dépend de isAntiqueEvent
+    if (isAntiqueEvent(event)) {
+      setAntiqueEventsCount(prev => prev + 1);
+    }
+  }, [isAntiqueEvent]);
 
   const resetAntiqueCount = useCallback(() => {
     setAntiqueEventsCount(0);
-  }, []); // Pas de dépendances
-  // --- Fin Callbacks ---
+    scoringCache.clear(); // Nettoyer le cache à chaque reset
+  }, []);
 
-  // --- Objet Retourné par le Hook ---
+  // Cache cleanup périodique
+  const clearCaches = useCallback(() => {
+    if (dateCache.size > 1000) {
+      dateCache.clear();
+    }
+    if (scoringCache.size > 500) {
+      scoringCache.clear();
+    }
+  }, []);
+
   return {
-    // Exposer les états si nécessaire par le parent
+    // États
     antiqueEventsCount,
     eventCount,
     forcedJumpEventCount,
 
-    // Exposer les fonctions principales et utilitaires
+    // Fonctions principales
     selectNewEvent,
     getPeriod,
-    isAntiqueEvent, // <-- **BIEN EXPORTÉE**
+    isAntiqueEvent,
     updateAntiqueCount,
     resetAntiqueCount,
-    getTimeDifference // <-- **BIEN EXPORTÉE**
+    getTimeDifference,
+    getNextForcedJumpIncrement,
+    clearCaches
   };
 }
 
-// Export par défaut du hook
 export default useEventSelector;
