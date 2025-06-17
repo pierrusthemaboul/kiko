@@ -109,7 +109,7 @@ const DemoAnimation = () => {
       </View>
 
       <Text style={styles.explanationText}>
-        Devinez si l’Événement B est arrivé avant ou après l’Événement A.
+        Devinez si l'Événement B est arrivé avant ou après l'Événement A.
       </Text>
     </View>
   );
@@ -129,12 +129,13 @@ export default function Vue1() {
   const [showScoreboard, setShowScoreboard] = useState(false);
 
   const [playerName, setPlayerName] = useState<string>('Voyageur');
-  const [dailyBestScore, setDailyBestScore] = useState<number | null>(null);
+  const [playerHighScore, setPlayerHighScore] = useState<number | null>(null); // ✅ RENOMMÉ pour clarté
+  
+  // ✅ NOUVEAU : États pour les rangs du joueur dans chaque classement
   const [dailyRank, setDailyRank] = useState<number | null>(null);
-  const [monthlyBestScore, setMonthlyBestScore] = useState<number | null>(null);
   const [monthlyRank, setMonthlyRank] = useState<number | null>(null);
-  const [allTimeBestScore, setAllTimeBestScore] = useState<number | null>(null);
   const [allTimeRank, setAllTimeRank] = useState<number | null>(null);
+  
   const [totalPlayers, setTotalPlayers] = useState<{ daily: number, monthly: number, allTime: number }>({
     daily: 0,
     monthly: 0,
@@ -163,6 +164,7 @@ export default function Vue1() {
         const { data: { user: authUser } } = await supabase.auth.getUser();
 
         if (authUser?.id) {
+          // ✅ RÉCUPÉRATION DU PROFIL UTILISATEUR (high_score = meilleur score)
           const { data: profile } = await supabase
             .from('profiles')
             .select('display_name, high_score')
@@ -171,63 +173,140 @@ export default function Vue1() {
 
           if (profile) {
             setPlayerName(profile.display_name || 'Joueur');
-            setAllTimeBestScore(profile.high_score || 0);
+            setPlayerHighScore(profile.high_score || 0); // ✅ MEILLEUR SCORE du joueur
           } else {
             setPlayerName('Joueur'); // Default name if profile not found
-            setAllTimeBestScore(0);
+            setPlayerHighScore(0);
           }
 
-
-          // Fetch Daily Scores
+          // ✅ RÉCUPÉRATION DES CLASSEMENTS (Top 10 + position du joueur)
+          
+          // --- CLASSEMENT QUOTIDIEN ---
           const todayStart = new Date();
           todayStart.setHours(0, 0, 0, 0);
-          const { data: dailyData, count: dailyCount } = await supabase
+          
+          // Récupérer les meilleurs scores du jour (game_scores)
+          const { data: dailyTopScores } = await supabase
             .from('game_scores')
-            .select('display_name, score, user_id', { count: 'exact' })
+            .select('display_name, score, user_id')
             .gte('created_at', todayStart.toISOString())
             .order('score', { ascending: false })
             .limit(100);
 
-          if (dailyData) {
-            const userDailyEntry = dailyData.find(item => item.user_id === authUser.id);
-            setDailyBestScore(userDailyEntry?.score || null);
-            setDailyRank(userDailyEntry ? dailyData.findIndex(item => item.user_id === authUser.id) + 1 : null);
-            setDailyScores(dailyData.slice(0, 10).map((item, index) => ({
-              name: item.display_name, score: item.score, rank: index + 1, isCurrentUser: item.user_id === authUser.id
-            })));
-            setTotalPlayers(prev => ({ ...prev, daily: dailyCount || 0 }));
+          if (dailyTopScores) {
+            // Trouver le meilleur score du joueur aujourd'hui
+            const userDailyScores = dailyTopScores.filter(score => score.user_id === authUser.id);
+            const userBestDaily = userDailyScores.length > 0 
+              ? Math.max(...userDailyScores.map(s => s.score))
+              : null;
+
+            // Calculer le rang basé sur le meilleur score du joueur
+            let userDailyRank = null;
+            if (userBestDaily !== null) {
+              // Créer un classement unique par utilisateur (meilleur score de chaque utilisateur)
+              const userBestScores = new Map();
+              dailyTopScores.forEach(score => {
+                const current = userBestScores.get(score.user_id);
+                if (!current || score.score > current.score) {
+                  userBestScores.set(score.user_id, score);
+                }
+              });
+              
+              const rankedUsers = Array.from(userBestScores.values()).sort((a, b) => b.score - a.score);
+              userDailyRank = rankedUsers.findIndex(user => user.user_id === authUser.id) + 1;
+              userDailyRank = userDailyRank > 0 ? userDailyRank : null;
+            }
+
+            setDailyRank(userDailyRank);
+            
+            // Top 10 pour affichage (meilleur score par utilisateur)
+            const userBestScores = new Map();
+            dailyTopScores.forEach(score => {
+              const current = userBestScores.get(score.user_id);
+              if (!current || score.score > current.score) {
+                userBestScores.set(score.user_id, score);
+              }
+            });
+            
+            const topDailyScores = Array.from(userBestScores.values())
+              .sort((a, b) => b.score - a.score)
+              .slice(0, 10)
+              .map((item, index) => ({
+                name: item.display_name,
+                score: item.score,
+                rank: index + 1,
+                isCurrentUser: item.user_id === authUser.id
+              }));
+
+            setDailyScores(topDailyScores);
+            setTotalPlayers(prev => ({ ...prev, daily: userBestScores.size }));
           } else {
-              setDailyScores([]);
-              setDailyBestScore(null);
-              setDailyRank(null);
-              setTotalPlayers(prev => ({ ...prev, daily: 0 }));
+            setDailyScores([]);
+            setDailyRank(null);
+            setTotalPlayers(prev => ({ ...prev, daily: 0 }));
           }
 
-          // Fetch Monthly Scores
+          // --- CLASSEMENT MENSUEL ---
           const monthStart = new Date(todayStart.getFullYear(), todayStart.getMonth(), 1);
-          const { data: monthlyData, count: monthlyCount } = await supabase
+          
+          const { data: monthlyTopScores } = await supabase
             .from('game_scores')
-            .select('display_name, score, user_id', { count: 'exact' })
+            .select('display_name, score, user_id')
             .gte('created_at', monthStart.toISOString())
             .order('score', { ascending: false })
             .limit(100);
 
-          if (monthlyData) {
-             const userMonthlyEntry = monthlyData.find(item => item.user_id === authUser.id);
-             setMonthlyBestScore(userMonthlyEntry?.score || null);
-             setMonthlyRank(userMonthlyEntry ? monthlyData.findIndex(item => item.user_id === authUser.id) + 1 : null);
-             setMonthlyScores(monthlyData.slice(0, 10).map((item, index) => ({
-               name: item.display_name, score: item.score, rank: index + 1, isCurrentUser: item.user_id === authUser.id
-             })));
-             setTotalPlayers(prev => ({ ...prev, monthly: monthlyCount || 0 }));
+          if (monthlyTopScores) {
+            // Même logique que pour le quotidien
+            const userMonthlyScores = monthlyTopScores.filter(score => score.user_id === authUser.id);
+            const userBestMonthly = userMonthlyScores.length > 0 
+              ? Math.max(...userMonthlyScores.map(s => s.score))
+              : null;
+
+            let userMonthlyRank = null;
+            if (userBestMonthly !== null) {
+              const userBestScores = new Map();
+              monthlyTopScores.forEach(score => {
+                const current = userBestScores.get(score.user_id);
+                if (!current || score.score > current.score) {
+                  userBestScores.set(score.user_id, score);
+                }
+              });
+              
+              const rankedUsers = Array.from(userBestScores.values()).sort((a, b) => b.score - a.score);
+              userMonthlyRank = rankedUsers.findIndex(user => user.user_id === authUser.id) + 1;
+              userMonthlyRank = userMonthlyRank > 0 ? userMonthlyRank : null;
+            }
+
+            setMonthlyRank(userMonthlyRank);
+            
+            const userBestScores = new Map();
+            monthlyTopScores.forEach(score => {
+              const current = userBestScores.get(score.user_id);
+              if (!current || score.score > current.score) {
+                userBestScores.set(score.user_id, score);
+              }
+            });
+            
+            const topMonthlyScores = Array.from(userBestScores.values())
+              .sort((a, b) => b.score - a.score)
+              .slice(0, 10)
+              .map((item, index) => ({
+                name: item.display_name,
+                score: item.score,
+                rank: index + 1,
+                isCurrentUser: item.user_id === authUser.id
+              }));
+
+            setMonthlyScores(topMonthlyScores);
+            setTotalPlayers(prev => ({ ...prev, monthly: userBestScores.size }));
           } else {
-              setMonthlyScores([]);
-              setMonthlyBestScore(null);
-              setMonthlyRank(null);
-              setTotalPlayers(prev => ({ ...prev, monthly: 0 }));
+            setMonthlyScores([]);
+            setMonthlyRank(null);
+            setTotalPlayers(prev => ({ ...prev, monthly: 0 }));
           }
 
-          // Fetch All-Time Scores (from profiles)
+          // --- CLASSEMENT GLOBAL (All-Time) ---
           const { data: allTimeData, count: allTimeCount } = await supabase
             .from('profiles')
             .select('id, display_name, high_score', { count: 'exact' })
@@ -237,28 +316,26 @@ export default function Vue1() {
             .limit(100);
 
           if (allTimeData) {
-            // Find rank based on fetched ordered data
+            // Trouver le rang du joueur dans le classement global
             const currentUserAllTimeRank = allTimeData.findIndex(item => item.id === authUser.id) + 1;
             setAllTimeRank(currentUserAllTimeRank > 0 ? currentUserAllTimeRank : null);
-            // Use the high_score from the profile table, already fetched
-            // setAllTimeBestScore is already set from profile data
 
             setAllTimeScores(allTimeData.slice(0, 10).map((item, index) => ({
-              name: item.display_name, score: item.high_score, rank: index + 1, isCurrentUser: item.id === authUser.id
+              name: item.display_name,
+              score: item.high_score,
+              rank: index + 1,
+              isCurrentUser: item.id === authUser.id
             })));
             setTotalPlayers(prev => ({ ...prev, allTime: allTimeCount || 0 }));
           } else {
-              setAllTimeScores([]);
-              // Keep allTimeBestScore from profile if exists, otherwise it's 0
-              setAllTimeRank(null);
-              setTotalPlayers(prev => ({ ...prev, allTime: 0 }));
+            setAllTimeScores([]);
+            setAllTimeRank(null);
+            setTotalPlayers(prev => ({ ...prev, allTime: 0 }));
           }
         } else {
            // Handle case where user is not logged in
            setPlayerName('Voyageur');
-           setAllTimeBestScore(null);
-           setDailyBestScore(null);
-           setMonthlyBestScore(null);
+           setPlayerHighScore(null);
            setDailyRank(null);
            setMonthlyRank(null);
            setAllTimeRank(null);
@@ -273,8 +350,7 @@ export default function Vue1() {
         FirebaseAnalytics.error('fetch_user_data_vue1', err instanceof Error ? err.message : 'Unknown error', 'Vue1'); // <-- AJOUTÉ: Suivi d'erreur
         // Reset state or show error message
            setPlayerName('Voyageur');
-           setAllTimeBestScore(null); // Indicate error or loading state?
-           // Reset other scores as well
+           setPlayerHighScore(null);
            setDailyScores([]); setMonthlyScores([]); setAllTimeScores([]);
            setTotalPlayers({ daily: 0, monthly: 0, allTime: 0 });
       }
@@ -369,10 +445,32 @@ export default function Vue1() {
 
   const renderScoreboardModal = () => {
     const currentScores = getScoresToDisplay();
-    const userScore = activeScoreTab === 'daily' ? dailyBestScore : activeScoreTab === 'monthly' ? monthlyBestScore : allTimeBestScore;
-    const userRank = activeScoreTab === 'daily' ? dailyRank : activeScoreTab === 'monthly' ? monthlyRank : allTimeRank;
+    
+    // ✅ CORRIGÉ : Affichage des informations du joueur selon l'onglet actif
+    let userDisplayScore: number | null = null;
+    let userDisplayRank: number | null = null;
+    let scoreLabel: string = "";
+
+    if (activeScoreTab === 'daily') {
+      // Pour le quotidien : rechercher le meilleur score du joueur dans les scores quotidiens
+      const userDailyScore = dailyScores.find(score => score.isCurrentUser);
+      userDisplayScore = userDailyScore ? userDailyScore.score : null;
+      userDisplayRank = dailyRank;
+      scoreLabel = "Votre meilleur score du jour";
+    } else if (activeScoreTab === 'monthly') {
+      // Pour le mensuel : rechercher le meilleur score du joueur dans les scores mensuels
+      const userMonthlyScore = monthlyScores.find(score => score.isCurrentUser);
+      userDisplayScore = userMonthlyScore ? userMonthlyScore.score : null;
+      userDisplayRank = monthlyRank;
+      scoreLabel = "Votre meilleur score du mois";
+    } else { // allTime
+      // Pour le global : utiliser le high_score du profil
+      userDisplayScore = playerHighScore;
+      userDisplayRank = allTimeRank;
+      scoreLabel = "Votre meilleur score total";
+    }
+
     const total = activeScoreTab === 'daily' ? totalPlayers.daily : activeScoreTab === 'monthly' ? totalPlayers.monthly : totalPlayers.allTime;
-    const scoreLabel = activeScoreTab === 'daily' ? "Votre meilleur score du jour" : activeScoreTab === 'monthly' ? "Votre meilleur score du mois" : "Votre meilleur score total";
 
     return (
       <Modal
@@ -392,14 +490,14 @@ export default function Vue1() {
 
             {/* User's score summary */}
             <View style={styles.playerScoreContainer}>
-              {userScore !== null && userScore >= 0 ? ( // Check includes 0
+              {userDisplayScore !== null && userDisplayScore >= 0 ? ( // Check includes 0
                 <>
                   <Text style={styles.scoreLabel}>{scoreLabel}</Text>
-                  <Text style={styles.playerScoreValue}>{userScore.toLocaleString()}</Text>
-                  {userRank !== null && userRank > 0 && total > 0 && (
+                  <Text style={styles.playerScoreValue}>{userDisplayScore.toLocaleString()}</Text>
+                  {userDisplayRank !== null && userDisplayRank > 0 && total > 0 && (
                     <View style={styles.playerRankBadge}>
                       <Text style={styles.playerRankText}>
-                        Rang # {userRank} / {total} {/* Added space here too */}
+                        Rang # {userDisplayRank} / {total} {/* Added space here too */}
                       </Text>
                     </View>
                   )}
@@ -531,12 +629,23 @@ export default function Vue1() {
                   <Ionicons name="person-circle-outline" size={24} color={SALMON_THEME.primaryAccent} />
                   <Text style={styles.playerName}>Bienvenue, {truncatedName || 'Joueur'}</Text>
               </View>
-              {allTimeBestScore !== null && allTimeBestScore >= 0 && ( // Allow 0 score display
+              {/* ✅ CORRIGÉ : Affichage du VRAI meilleur score avec classement */}
+              {playerHighScore !== null && playerHighScore >= 0 && ( // Allow 0 score display
                 <View style={styles.bestScoreContainer}>
                   <Ionicons name="ribbon-outline" size={20} color={SALMON_THEME.primaryAccent} />
-                  <Text style={styles.bestScoreText}>
-                    Meilleur score : {allTimeBestScore.toLocaleString()}
-                  </Text>
+                  <View style={styles.scoreAndRankContainer}>
+                    <Text style={styles.bestScoreText}>
+                      Meilleur score : {playerHighScore.toLocaleString()}
+                    </Text>
+                    {/* Affichage du classement global si disponible */}
+                    {allTimeRank !== null && allTimeRank > 0 && totalPlayers.allTime > 0 && (
+                      <Text style={styles.globalRankText}>
+                        {allTimeRank}
+                        <Text style={styles.rankSuperscript}>e</Text>
+                        {' '}sur {totalPlayers.allTime.toLocaleString()}
+                      </Text>
+                    )}
+                  </View>
                 </View>
               )}
                <View style={styles.actionButtonsRow}>
@@ -783,15 +892,29 @@ const styles = StyleSheet.create({
      alignItems: 'center',
      marginBottom: 15,
      backgroundColor: SALMON_THEME.primaryAccent + '1A',
-     paddingVertical: 6,
-     paddingHorizontal: 12,
+     paddingVertical: 8,
+     paddingHorizontal: 15,
      borderRadius: 15,
+   },
+   scoreAndRankContainer: {
+     marginLeft: 8,
+     alignItems: 'flex-start',
    },
    bestScoreText: {
      fontFamily: 'Montserrat-Medium',
      fontSize: 14,
      color: SALMON_THEME.primaryAccent,
-     marginLeft: 8,
+     marginBottom: 2,
+   },
+   globalRankText: {
+     fontFamily: 'Montserrat-SemiBold',
+     fontSize: 12,
+     color: SALMON_THEME.secondaryAccent, // Couleur différente pour se démarquer
+   },
+   rankSuperscript: {
+     fontSize: 10, // Plus petit pour l'effet exposant
+     fontFamily: 'Montserrat-Medium',
+     textAlignVertical: 'top',
    },
    actionButtonsRow: {
      flexDirection: 'row',
