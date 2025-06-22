@@ -17,6 +17,7 @@
     "preset": "jest-expo"
   },
   "dependencies": {
+    "@anthropic-ai/sdk": "^0.54.0",
     "@expo-google-fonts/montserrat": "^0.2.3",
     "@expo/config-plugins": "~9.0.0",
     "@expo/vector-icons": "^14.0.2",
