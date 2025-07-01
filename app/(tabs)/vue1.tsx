@@ -49,6 +49,7 @@ const SALMON_THEME = {
   gold: "#E1AD01",          // Or légèrement mat
   silver: "#BDBDBD",        // Argent mat
   bronze: "#D39C7E",        // Bronze/Cuivre doux
+  validationGreen: "#22C55E", // Vert vif pour le bouton validation
 };
 
 
@@ -130,6 +131,7 @@ export default function Vue1() {
 
   const [playerName, setPlayerName] = useState<string>('Voyageur');
   const [playerHighScore, setPlayerHighScore] = useState<number | null>(null); // ✅ RENOMMÉ pour clarté
+  const [userEmail, setUserEmail] = useState<string | null>(null); // ✅ NOUVEAU : Email de l'utilisateur
   
   // ✅ NOUVEAU : États pour les rangs du joueur dans chaque classement
   const [dailyRank, setDailyRank] = useState<number | null>(null);
@@ -145,6 +147,10 @@ export default function Vue1() {
   const [monthlyScores, setMonthlyScores] = useState<Array<any>>([]);
   const [allTimeScores, setAllTimeScores] = useState<Array<any>>([]);
   const [activeScoreTab, setActiveScoreTab] = useState<'daily' | 'monthly' | 'allTime'>('allTime');
+
+  // ✅ NOUVEAU : Constante pour l'utilisateur autorisé à la validation
+  const AUTHORIZED_EMAIL = "pierrecousin2@proton.me";
+  const isPierreUser = userEmail === AUTHORIZED_EMAIL;
 
   useEffect(() => {
     if (fontsLoaded) {
@@ -164,6 +170,9 @@ export default function Vue1() {
         const { data: { user: authUser } } = await supabase.auth.getUser();
 
         if (authUser?.id) {
+          // ✅ STOCKER L'EMAIL DEPUIS L'AUTH USER (pas le profil)
+          setUserEmail(authUser.email || null);
+          
           // ✅ RÉCUPÉRATION DU PROFIL UTILISATEUR (high_score = meilleur score)
           const { data: profile } = await supabase
             .from('profiles')
@@ -336,6 +345,7 @@ export default function Vue1() {
            // Handle case where user is not logged in
            setPlayerName('Voyageur');
            setPlayerHighScore(null);
+           setUserEmail(null);
            setDailyRank(null);
            setMonthlyRank(null);
            setAllTimeRank(null);
@@ -351,6 +361,7 @@ export default function Vue1() {
         // Reset state or show error message
            setPlayerName('Voyageur');
            setPlayerHighScore(null);
+           setUserEmail(null);
            setDailyScores([]); setMonthlyScores([]); setAllTimeScores([]);
            setTotalPlayers({ daily: 0, monthly: 0, allTime: 0 });
       }
@@ -677,6 +688,20 @@ export default function Vue1() {
 
         {/* Section Footer (toujours en bas) */}
         <View style={styles.footer}>
+          {/* ✅ NOUVEAU : Bouton Validation pour Pierre uniquement */}
+          {isPierreUser && (
+            <TouchableOpacity
+              style={styles.validationButton}
+              onPress={() => {
+                FirebaseAnalytics.screen('ValidationPage', 'VueValid'); // Track validation page access
+                router.push('/(tabs)/vuevalid');
+              }}
+            >
+              <Ionicons name="checkmark-done-outline" size={24} color={SALMON_THEME.textLight} />
+              <Text style={styles.validationButtonText}>🔍 VALIDATION</Text>
+            </TouchableOpacity>
+          )}
+
           <TouchableOpacity
             style={styles.startButton}
             onPress={() => {
@@ -944,7 +969,34 @@ const styles = StyleSheet.create({
   footer: {
     paddingTop: 10,
     alignItems: 'center',
+    gap: 12, // ✅ NOUVEAU : Espace entre les boutons
   },
+  
+  /* ✅ NOUVEAU : Bouton Validation pour Pierre */
+  validationButton: {
+    backgroundColor: SALMON_THEME.validationGreen,
+    borderRadius: 25,
+    paddingVertical: 14,
+    paddingHorizontal: 40,
+    flexDirection: 'row',
+    alignItems: 'center',
+    justifyContent: 'center',
+    minWidth: '80%',
+    elevation: 6,
+    shadowColor: SALMON_THEME.shadow,
+    shadowOffset: { width: 0, height: 4 },
+    shadowOpacity: 1,
+    shadowRadius: 6,
+    marginBottom: 8,
+  },
+  validationButtonText: {
+    fontSize: 18,
+    fontFamily: 'Montserrat-Bold',
+    color: SALMON_THEME.textLight,
+    marginLeft: 10,
+    textTransform: 'uppercase',
+  },
+
   startButton: {
     backgroundColor: SALMON_THEME.primaryAccent,
     borderRadius: 25,
