@@ -41,18 +41,178 @@ interface ValidationStats {
   rejected: number;
 }
 
-interface RegenerationState {
-  isRegenerating: boolean;
-  progress: number;
-  currentStep: string;
+interface PromptGenerationState {
+  isGenerating: boolean;
+  generatedPrompt: string;
+  isEditing: boolean;
+  isSending: boolean;
   error: string | null;
+  success: boolean;
 }
 
 // ==============================================================================
-// COMPOSANT DE RÉGÉNÉRATION D'IMAGE
+// COMPOSANT D'ÉVALUATION IA DE L'IMAGE
 // ==============================================================================
 
-function RegenerationButton({ 
+interface ImageEvaluation {
+  score: number;
+  explanation: string;
+  isLoading: boolean;
+  error: string | null;
+}
+
+function ImageEvaluator({ 
+  titre, 
+  year, 
+  currentImageUrl 
+}: {
+  titre: string;
+  year: number;
+  currentImageUrl: string;
+}) {
+  const [evaluation, setEvaluation] = useState<ImageEvaluation>({
+    score: 0,
+    explanation: '',
+    isLoading: false,
+    error: null
+  });
+
+  // Évaluer l'image au chargement
+  useEffect(() => {
+    if (currentImageUrl) {
+      evaluateImage();
+    }
+  }, [currentImageUrl, titre, year]);
+
+  const evaluateImage = async () => {
+    setEvaluation(prev => ({ ...prev, isLoading: true, error: null }));
+
+    try {
+      console.log(`🔍 [UI] Démarrage évaluation IA pour "${titre}" (${year})`);
+      console.log(`🖼️ [UI] URL image: ${currentImageUrl.substring(0, 100)}...`);
+
+      const response = await fetch('/api/validation', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({ 
+          action: 'evaluate',
+          imageUrl: currentImageUrl,
+          titre,
+          year
+        })
+      });
+
+      if (!response.ok) {
+        const errorData = await response.json();
+        throw new Error(errorData.error || `HTTP ${response.status}`);
+      }
+      
+      const data = await response.json();
+      
+      console.log(`✅ [UI] Évaluation reçue: ${data.score}/10 - ${data.isValid ? 'VALIDÉE' : 'REJETÉE'}`);
+      console.log(`📝 [UI] Explication: "${data.explanation}"`);
+      
+      // Utiliser les vraies données de l'API GPT-4o-mini
+      setEvaluation({
+        score: data.score,
+        explanation: data.explanation,
+        isLoading: false,
+        error: null
+      });
+
+      // Log des détails de validation pour debug
+      if (data.detailedAnalysis) {
+        console.log(`📊 [UI] Analyse détaillée:`, {
+          texteForbidden: data.detailedAnalysis.hasForbiddenText,
+          texteAcceptable: data.detailedAnalysis.hasAcceptableText,
+          representsEvent: data.detailedAnalysis.representsEvent,
+          wings: data.detailedAnalysis.hasWingsOrSupernatural,
+          modern: data.detailedAnalysis.hasModernObjects,
+          anatomy: data.detailedAnalysis.anatomyRealistic,
+          clothing: data.detailedAnalysis.periodClothing,
+          historical: data.detailedAnalysis.historicalAccuracy
+        });
+      }
+
+    } catch (error: any) {
+      console.error(`❌ [UI] Erreur évaluation:`, error.message);
+      
+      setEvaluation({
+        score: 0,
+        explanation: `Erreur de validation: ${error.message}`,
+        isLoading: false,
+        error: error.message
+      });
+    }
+  };
+
+  if (!currentImageUrl) return null;
+
+  const getScoreColor = (score: number) => {
+    if (score >= 8) return { bg: '#dcfce7', text: '#15803d', border: '#86efac' };
+    if (score >= 6) return { bg: '#fef3c7', text: '#a16207', border: '#fcd34d' };
+    return { bg: '#fef2f2', text: '#dc2626', border: '#fca5a5' };
+  };
+
+  const scoreColors = getScoreColor(evaluation.score);
+
+  return (
+    <View style={{ 
+      backgroundColor: scoreColors.bg, 
+      borderWidth: 1, 
+      borderColor: scoreColors.border, 
+      borderRadius: 8, 
+      padding: 12, 
+      marginBottom: 16 
+    }}>
+      <View style={{ flexDirection: 'row', alignItems: 'center', justifyContent: 'space-between' }}>
+        <View style={{ flexDirection: 'row', alignItems: 'center' }}>
+          <MaterialIcons 
+            name={evaluation.score >= 8 ? "check-circle" : evaluation.score >= 6 ? "info" : "warning"} 
+            size={20} 
+            color={scoreColors.text} 
+          />
+          <Text style={{ marginLeft: 8, fontWeight: '600', color: scoreColors.text }}>
+            Évaluation IA
+          </Text>
+        </View>
+        
+        {evaluation.isLoading ? (
+          <MaterialIcons name="hourglass-empty" size={20} color={scoreColors.text} />
+        ) : (
+          <View style={{ flexDirection: 'row', alignItems: 'center' }}>
+            <Text style={{ fontSize: 18, fontWeight: 'bold', color: scoreColors.text }}>
+              {evaluation.score}
+            </Text>
+            <Text style={{ fontSize: 14, color: scoreColors.text }}>/10</Text>
+          </View>
+        )}
+      </View>
+      
+      {evaluation.explanation && (
+        <Text style={{ 
+          fontSize: 14, 
+          color: scoreColors.text, 
+          marginTop: 8
+        }}>
+          {evaluation.explanation}
+        </Text>
+      )}
+      
+      {evaluation.error && (
+        <Text style={{ fontSize: 12, color: scoreColors.text, marginTop: 4, opacity: 0.8 }}>
+          ⚠️ {evaluation.error}
+        </Text>
+      )}
+    </View>
+  );
+}
+
+// ==============================================================================
+// COMPOSANT DE GÉNÉRATION DE PROMPT ET IMAGE
+// ==============================================================================
+
+function PromptGenerator({ 
   eventId, 
   titre, 
   year, 
@@ -65,194 +225,268 @@ function RegenerationButton({
   currentImageUrl: string;
   onImageUpdated: (newImageUrl: string) => void;
 }) {
-  const [state, setState] = useState<RegenerationState>({
-    isRegenerating: false,
-    progress: 0,
-    currentStep: '',
-    error: null
+  const [state, setState] = useState<PromptGenerationState>({
+    isGenerating: false,
+    generatedPrompt: '',
+    isEditing: false,
+    isSending: false,
+    error: null,
+    success: false
   });
-  const [lastResult, setLastResult] = useState<any>(null);
 
-  // Régénération en un seul appel
-  const regenerateImageOneCall = async (imageUrl: string, titre: string, year: number) => {
+  // Générer le prompt avec GPT
+  const generatePrompt = async () => {
+    setState(prev => ({ ...prev, isGenerating: true, error: null }));
+
+    try {
+      // Simuler l'appel API pour générer le prompt
+      // En réalité, cela devrait appeler votre API
+      const response = await fetch('/api/validation', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({ 
+          action: 'generatePrompt',
+          titre,
+          year,
+          currentImageUrl
+        })
+      });
+
+      if (!response.ok) throw new Error('Erreur génération prompt');
+      
+      const data = await response.json();
+      
+      setState(prev => ({ 
+        ...prev, 
+        isGenerating: false,
+        generatedPrompt: data.prompt,
+        isEditing: true
+      }));
+
+    } catch (error) {
+      // Fallback avec prompt généré localement si l'API n'est pas disponible
+      const fallbackPrompt = `A historical illustration depicting "${titre}" from year ${year}. Professional historical artwork style, detailed and accurate representation, muted historical colors, educational quality. No text, no modern elements, historically accurate scene.`;
+      
+      setState(prev => ({ 
+        ...prev, 
+        isGenerating: false,
+        generatedPrompt: fallbackPrompt,
+        isEditing: true,
+        error: 'API non disponible - prompt généré localement'
+      }));
+    }
+  };
+
+  // Envoyer le prompt à Flux-schnell
+  const sendToFlux = async () => {
+    if (!state.generatedPrompt.trim()) return;
+
+    setState(prev => ({ ...prev, isSending: true, error: null }));
+
     try {
       const response = await fetch('/api/validation', {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify({ 
-          action: 'regenerate',
-          imageUrl,
-          titre,
-          year,
+          action: 'generateImage',
+          prompt: state.generatedPrompt,
           model: 'flux-schnell',
           num_inference_steps: 8,
           output_quality: 90
         })
       });
 
-      if (!response.ok) throw new Error('Erreur régénération');
-      const result = await response.json();
+      if (!response.ok) throw new Error('Erreur génération image');
       
-      return {
-        success: true,
-        newImageUrl: result.newImageUrl,
-        improvedPrompt: result.improvedPrompt,
-        validation: result.validation,
-        analysis: result.analysis
-      };
-    } catch (error) {
-      console.error('Erreur régénération:', error);
-      throw new Error('Impossible de régénérer l\'image');
-    }
-  };
-
-  // Fonction de régénération simplifiée
-  const regenerateImage = async () => {
-    setState(prev => ({ ...prev, isRegenerating: true, error: null, progress: 0 }));
-
-    try {
-      setState(prev => ({ ...prev, currentStep: 'Régénération complète en cours...', progress: 50 }));
-      
-      // Un seul appel API qui fait tout !
-      const result = await regenerateImageOneCall(currentImageUrl, titre, year);
-      
-      setState(prev => ({ ...prev, currentStep: 'Sauvegarde...', progress: 90 }));
+      const data = await response.json();
       
       // Sauvegarder en base
       const { error } = await supabase
         .from('goju')
         .update({
-          illustration_url: result.newImageUrl,
-          prompt_flux: result.improvedPrompt,
-          validation_status: result.validation.overallValid ? 'validated' : 'needs_image_change',
-          validation_notes: `Régénérée: ${result.validation.feedback}`,
+          illustration_url: data.imageUrl,
+          prompt_flux: state.generatedPrompt,
+          validation_notes: `Image régénérée avec prompt IA`,
           validated_at: new Date().toISOString()
         })
         .eq('id', eventId);
 
       if (error) throw error;
 
-      setState(prev => ({ ...prev, currentStep: 'Terminé !', progress: 100 }));
+      setState(prev => ({ 
+        ...prev, 
+        isSending: false,
+        success: true
+      }));
       
-      setLastResult(result);
-      onImageUpdated(result.newImageUrl);
+      onImageUpdated(data.imageUrl);
 
-      return result;
+      // Reset après succès
+      setTimeout(() => {
+        setState(prev => ({ 
+          ...prev, 
+          success: false,
+          isEditing: false,
+          generatedPrompt: ''
+        }));
+      }, 3000);
 
     } catch (error) {
       setState(prev => ({ 
         ...prev, 
-        error: error.message, 
-        isRegenerating: false 
+        isSending: false,
+        error: error.message
       }));
-      return { success: false, error: error.message };
-    } finally {
-      setTimeout(() => {
-        setState(prev => ({ ...prev, isRegenerating: false, progress: 0, currentStep: '' }));
-      }, 2000);
     }
   };
 
-  if (state.isRegenerating) {
-    return (
-      <View style={{ backgroundColor: '#dbeafe', borderColor: '#93c5fd', borderWidth: 1, borderRadius: 8, padding: 16, marginTop: 16 }}>
-        <View style={{ flexDirection: 'row', alignItems: 'center', marginBottom: 12 }}>
-          <MaterialIcons name="refresh" size={20} color="#3b82f6" />
-          <Text style={{ marginLeft: 8, fontWeight: '600', color: '#1e40af' }}>Régénération en cours...</Text>
-        </View>
-        
-        {/* Barre de progression */}
-        <View style={{ width: '100%', backgroundColor: '#e5e7eb', borderRadius: 4, height: 8, marginBottom: 12 }}>
-          <View 
-            style={{ 
-              backgroundColor: '#3b82f6', 
-              height: 8, 
-              borderRadius: 4, 
-              width: `${state.progress}%`,
-              transition: 'width 0.3s ease'
-            }}
-          />
-        </View>
-        
-        <Text style={{ fontSize: 14, color: '#4b5563' }}>{state.currentStep}</Text>
-      </View>
-    );
-  }
-
-  if (state.error) {
-    return (
-      <View style={{ backgroundColor: '#fef2f2', borderColor: '#fca5a5', borderWidth: 1, borderRadius: 8, padding: 16, marginTop: 16 }}>
-        <View style={{ flexDirection: 'row', alignItems: 'center', marginBottom: 8 }}>
-          <MaterialIcons name="error" size={20} color="#ef4444" />
-          <Text style={{ marginLeft: 8, fontWeight: '600', color: '#991b1b' }}>Erreur de régénération</Text>
-        </View>
-        <Text style={{ fontSize: 14, color: '#dc2626', marginBottom: 8 }}>{state.error}</Text>
-        <Pressable
-          onPress={regenerateImage}
-          style={{ paddingHorizontal: 12, paddingVertical: 4, backgroundColor: '#fef2f2', borderRadius: 4 }}
-        >
-          <Text style={{ color: '#dc2626', fontSize: 14 }}>Réessayer</Text>
-        </Pressable>
-      </View>
-    );
-  }
-
-  if (lastResult?.success) {
-    return (
-      <View style={{ backgroundColor: '#f0fdf4', borderColor: '#86efac', borderWidth: 1, borderRadius: 8, padding: 16, marginTop: 16 }}>
-        <View style={{ flexDirection: 'row', alignItems: 'center', marginBottom: 12 }}>
-          <Ionicons name="checkmark-circle" size={20} color="#22c55e" />
-          <Text style={{ marginLeft: 8, fontWeight: '600', color: '#15803d' }}>Image régénérée avec succès !</Text>
-        </View>
-        
-        <View style={{ marginBottom: 12 }}>
-          <Text style={{ fontSize: 14, color: '#166534' }}>
-            <Text style={{ fontWeight: 'bold' }}>Score IA:</Text> {lastResult.validation.score}/10
-          </Text>
-          <Text style={{ fontSize: 14, color: '#166534' }}>
-            <Text style={{ fontWeight: 'bold' }}>Feedback:</Text> {lastResult.validation.feedback}
-          </Text>
-          {lastResult.analysis.problems.length > 0 && (
-            <Text style={{ fontSize: 14, color: '#166534' }}>
-              <Text style={{ fontWeight: 'bold' }}>Problèmes corrigés:</Text> {lastResult.analysis.problems.join(', ')}
-            </Text>
-          )}
-        </View>
-        
-        <Pressable
-          onPress={regenerateImage}
-          style={{ paddingHorizontal: 12, paddingVertical: 4, backgroundColor: '#dcfce7', borderRadius: 4 }}
-        >
-          <Text style={{ color: '#166534', fontSize: 14 }}>Régénérer à nouveau</Text>
-        </Pressable>
-      </View>
-    );
-  }
+  // Réinitialiser
+  const reset = () => {
+    setState({
+      isGenerating: false,
+      generatedPrompt: '',
+      isEditing: false,
+      isSending: false,
+      error: null,
+      success: false
+    });
+  };
 
   return (
-    <Pressable
-      onPress={regenerateImage}
-      style={{ 
-        flexDirection: 'row', 
-        alignItems: 'center', 
-        justifyContent: 'center', 
-        paddingHorizontal: 16, 
-        paddingVertical: 12, 
-        backgroundColor: '#7c3aed', 
-        borderRadius: 8, 
-        marginTop: 16,
-        shadowColor: '#000',
-        shadowOffset: { width: 0, height: 2 },
-        shadowOpacity: 0.25,
-        shadowRadius: 3.84,
-        elevation: 5
-      }}
-    >
-      <MaterialCommunityIcons name="lightning-bolt" size={20} color="white" />
-      <Text style={{ color: 'white', fontWeight: '600', marginLeft: 8 }}>
-        Régénérer Image IA (Flux-schnell)
-      </Text>
-    </Pressable>
+    <View style={{ 
+      backgroundColor: '#f8fafc', 
+      borderWidth: 1, 
+      borderColor: '#e2e8f0', 
+      borderRadius: 12, 
+      padding: 16, 
+      marginBottom: 24 
+    }}>
+      <View style={{ flexDirection: 'row', alignItems: 'center', marginBottom: 16 }}>
+        <MaterialCommunityIcons name="lightning-bolt" size={20} color="#7c3aed" />
+        <Text style={{ marginLeft: 8, fontSize: 16, fontWeight: '600', color: '#1f2937' }}>
+          Génération d'image IA
+        </Text>
+      </View>
+
+      {!state.isEditing && !state.success && (
+        <Pressable
+          onPress={generatePrompt}
+          disabled={state.isGenerating}
+          style={{ 
+            flexDirection: 'row', 
+            alignItems: 'center', 
+            justifyContent: 'center', 
+            paddingHorizontal: 16, 
+            paddingVertical: 12, 
+            backgroundColor: state.isGenerating ? '#e5e7eb' : '#7c3aed', 
+            borderRadius: 8
+          }}
+        >
+          {state.isGenerating ? (
+            <MaterialIcons name="hourglass-empty" size={20} color="#6b7280" />
+          ) : (
+            <MaterialCommunityIcons name="magic-staff" size={20} color="white" />
+          )}
+          <Text style={{ 
+            color: state.isGenerating ? '#6b7280' : 'white', 
+            fontWeight: '600', 
+            marginLeft: 8 
+          }}>
+            {state.isGenerating ? 'Génération du prompt...' : 'Générer un prompt IA'}
+          </Text>
+        </Pressable>
+      )}
+
+      {state.isEditing && (
+        <View>
+          <Text style={{ fontSize: 14, fontWeight: '600', color: '#374151', marginBottom: 8 }}>
+            Prompt généré (modifiable)
+          </Text>
+          <TextInput
+            value={state.generatedPrompt}
+            onChangeText={(text) => setState(prev => ({ ...prev, generatedPrompt: text }))}
+            style={{ 
+              borderWidth: 1, 
+              borderColor: '#d1d5db', 
+              borderRadius: 8, 
+              padding: 12, 
+              minHeight: 100, 
+              textAlignVertical: 'top',
+              fontSize: 14,
+              backgroundColor: 'white'
+            }}
+            multiline={true}
+            placeholder="Modifiez le prompt avant l'envoi..."
+            placeholderTextColor="#9ca3af"
+          />
+          
+          <View style={{ flexDirection: 'row', gap: 12, marginTop: 12 }}>
+            <Pressable
+              onPress={sendToFlux}
+              disabled={state.isSending || !state.generatedPrompt.trim()}
+              style={{ 
+                flex: 1,
+                flexDirection: 'row', 
+                alignItems: 'center', 
+                justifyContent: 'center', 
+                paddingHorizontal: 16, 
+                paddingVertical: 10, 
+                backgroundColor: state.isSending ? '#e5e7eb' : '#059669', 
+                borderRadius: 8
+              }}
+            >
+              {state.isSending ? (
+                <MaterialIcons name="hourglass-empty" size={18} color="#6b7280" />
+              ) : (
+                <Ionicons name="send" size={18} color="white" />
+              )}
+              <Text style={{ 
+                color: state.isSending ? '#6b7280' : 'white', 
+                fontWeight: '600', 
+                marginLeft: 8,
+                fontSize: 14
+              }}>
+                {state.isSending ? 'Génération...' : 'Envoyer à Flux'}
+              </Text>
+            </Pressable>
+
+            <Pressable
+              onPress={reset}
+              style={{ 
+                paddingHorizontal: 16, 
+                paddingVertical: 10, 
+                backgroundColor: '#6b7280', 
+                borderRadius: 8
+              }}
+            >
+              <Text style={{ color: 'white', fontWeight: '600', fontSize: 14 }}>Annuler</Text>
+            </Pressable>
+          </View>
+        </View>
+      )}
+
+      {state.success && (
+        <View style={{ backgroundColor: '#dcfce7', borderColor: '#86efac', borderWidth: 1, borderRadius: 8, padding: 12 }}>
+          <View style={{ flexDirection: 'row', alignItems: 'center' }}>
+            <Ionicons name="checkmark-circle" size={20} color="#22c55e" />
+            <Text style={{ marginLeft: 8, fontWeight: '600', color: '#15803d' }}>
+              Image générée avec succès !
+            </Text>
+          </View>
+        </View>
+      )}
+
+      {state.error && (
+        <View style={{ backgroundColor: '#fef2f2', borderColor: '#fca5a5', borderWidth: 1, borderRadius: 8, padding: 12, marginTop: 12 }}>
+          <View style={{ flexDirection: 'row', alignItems: 'center' }}>
+            <MaterialIcons name="error" size={20} color="#ef4444" />
+            <Text style={{ marginLeft: 8, fontWeight: '600', color: '#991b1b', flex: 1 }}>
+              {state.error}
+            </Text>
+          </View>
+        </View>
+      )}
+    </View>
   );
 }
 
@@ -324,7 +558,7 @@ export default function VueValid() {
     loadUserProfile();
   }, []);
 
-  // Charger tous les événements de goju
+  // Charger tous les événements et aller au premier non traité
   const loadEvents = async () => {
     try {
       setLoading(true);
@@ -337,6 +571,19 @@ export default function VueValid() {
 
       setEvents(data || []);
       calculateStats(data || []);
+
+      // Trouver le premier événement non traité
+      const firstPendingIndex = (data || []).findIndex(event => 
+        !event.validation_status || event.validation_status === 'pending'
+      );
+      
+      if (firstPendingIndex !== -1) {
+        setCurrentIndex(firstPendingIndex);
+      } else {
+        // Si tous sont traités, aller au premier
+        setCurrentIndex(0);
+      }
+
     } catch (error) {
       console.error('Erreur chargement événements:', error);
       Alert.alert('Erreur', 'Impossible de charger les événements');
@@ -349,7 +596,8 @@ export default function VueValid() {
   const calculateStats = (eventsList: ValidationEvent[]) => {
     const newStats = eventsList.reduce((acc, event) => {
       acc.total++;
-      switch (event.validation_status) {
+      const status = event.validation_status || 'pending';
+      switch (status) {
         case 'pending':
           acc.pending++;
           break;
@@ -421,17 +669,31 @@ export default function VueValid() {
       );
       calculateStats(updatedEvents);
 
-      // Réinitialiser les notes et passer au suivant
+      // Réinitialiser les notes et passer au suivant non traité
       setNotes('');
-      if (currentIndex < events.length - 1) {
-        setCurrentIndex(prev => prev + 1);
-      }
+      goToNextPending();
 
       return true;
     } catch (error) {
       console.error('Erreur validation:', error);
       Alert.alert('Erreur', 'Impossible de valider l\'événement');
       return false;
+    }
+  };
+
+  // Navigation vers le suivant non traité
+  const goToNextPending = () => {
+    const nextPendingIndex = events.findIndex((event, index) => 
+      index > currentIndex && (!event.validation_status || event.validation_status === 'pending')
+    );
+    
+    if (nextPendingIndex !== -1) {
+      setCurrentIndex(nextPendingIndex);
+    } else {
+      // Si pas de suivant, aller au prochain dans l'ordre
+      if (currentIndex < events.length - 1) {
+        setCurrentIndex(prev => prev + 1);
+      }
     }
   };
 
@@ -450,15 +712,20 @@ export default function VueValid() {
 
   // Filtrer par statut
   const filterByStatus = (status: ValidationEvent['validation_status']) => {
-    const filteredEvents = events.filter(event => event.validation_status === status);
+    const filteredEvents = events.filter(event => 
+      (event.validation_status || 'pending') === status
+    );
     if (filteredEvents.length > 0) {
-      const firstIndex = events.findIndex(event => event.validation_status === status);
+      const firstIndex = events.findIndex(event => 
+        (event.validation_status || 'pending') === status
+      );
       setCurrentIndex(firstIndex);
     }
   };
 
   // Obtenir le badge de statut
   const getStatusBadge = (status: string) => {
+    const actualStatus = status || 'pending';
     const statusConfig = {
       pending: { bg: '#fef3c7', text: '#92400e', label: 'En attente' },
       validated: { bg: '#d1fae5', text: '#065f46', label: 'Validé' },
@@ -467,7 +734,7 @@ export default function VueValid() {
       rejected: { bg: '#fecaca', text: '#991b1b', label: 'Rejeté' }
     };
 
-    const config = statusConfig[status] || statusConfig.pending;
+    const config = statusConfig[actualStatus] || statusConfig.pending;
     
     return (
       <View style={{ 
@@ -623,8 +890,23 @@ export default function VueValid() {
 
           {/* Contenu de l'événement */}
           <View style={{ padding: 24 }}>
+            {/* Statut et titre */}
+            <View style={{ flexDirection: 'row', justifyContent: 'space-between', alignItems: 'center', marginBottom: 24 }}>
+              <Text style={{ fontSize: 20, fontWeight: '600', color: '#1f2937', flex: 1 }}>
+                {currentEvent.titre}
+              </Text>
+              {getStatusBadge(currentEvent.validation_status)}
+            </View>
+
             {/* Image et métadonnées */}
             <View style={{ marginBottom: 32 }}>
+              {/* Évaluation IA de l'image */}
+              <ImageEvaluator
+                titre={currentEvent.titre}
+                year={parseInt(currentEvent.date_formatee)}
+                currentImageUrl={currentEvent.illustration_url}
+              />
+              
               <View style={{ aspectRatio: 16/9, backgroundColor: '#f3f4f6', borderRadius: 8, overflow: 'hidden', marginBottom: 16 }}>
                 {currentEvent.illustration_url ? (
                   <Image
@@ -636,25 +918,6 @@ export default function VueValid() {
                       console.log('Titre:', currentEvent.titre);
                       console.log('URL:', currentEvent.illustration_url);
                       console.log('Erreur complète:', error);
-                      
-                      // Test HTTP pour diagnostiquer
-                      fetch(currentEvent.illustration_url, { method: 'HEAD' })
-                        .then(response => {
-                          console.log('📊 Status HTTP:', response.status);
-                          console.log('📊 OK:', response.ok);
-                          if (!response.ok) {
-                            console.log('❌ Problème d\'accès - vérifiez l\'URL');
-                          }
-                        })
-                        .catch(err => {
-                          console.log('❌ Erreur réseau:', err.message);
-                        });
-                    }}
-                    onLoad={() => {
-                      console.log('✅ Image chargée avec succès:', currentEvent.titre);
-                    }}
-                    onLoadStart={() => {
-                      console.log('🔄 Début chargement image:', currentEvent.titre);
                     }}
                   />
                 ) : (
@@ -672,93 +935,35 @@ export default function VueValid() {
                     }}>
                       Pas d'image disponible
                     </Text>
-                    <Text style={{ 
-                      textAlign: 'center', 
-                      color: '#9ca3af',
-                      fontSize: 12,
-                      marginTop: 4 
-                    }}>
-                      {currentEvent.titre}
-                    </Text>
                   </View>
                 )}
               </View>
               
               {/* Métadonnées */}
-              <View style={{ marginBottom: 16 }}>
-                <Text style={{ fontSize: 14, color: '#6b7280', marginBottom: 8 }}>
+              <View>
+                <Text style={{ fontSize: 18, fontWeight: '600', color: '#1f2937', marginBottom: 8 }}>
+                  {currentEvent.date_formatee}
+                </Text>
+                <Text style={{ fontSize: 14, color: '#6b7280', marginBottom: 4 }}>
                   <Text style={{ fontWeight: 'bold' }}>Époque:</Text> {currentEvent.epoque}
                 </Text>
-                <Text style={{ fontSize: 14, color: '#6b7280', marginBottom: 8 }}>
+                <Text style={{ fontSize: 14, color: '#6b7280', marginBottom: 12 }}>
                   <Text style={{ fontWeight: 'bold' }}>Types:</Text> {currentEvent.types_evenement?.join(', ') || 'Non défini'}
                 </Text>
-                {currentEvent.validation_notes && (
-                  <Text style={{ fontSize: 14, color: '#6b7280', marginBottom: 8 }}>
-                    <Text style={{ fontWeight: 'bold' }}>Notes:</Text> {currentEvent.validation_notes}
+                
+                {currentEvent.description_detaillee && (
+                  <Text style={{ fontSize: 14, color: '#374151', lineHeight: 20 }}>
+                    {currentEvent.description_detaillee}
                   </Text>
                 )}
               </View>
-
-              {/* Bouton de régénération */}
-              <RegenerationButton
-                eventId={currentEvent.id}
-                titre={currentEvent.titre}
-                year={parseInt(currentEvent.date_formatee)}
-                currentImageUrl={currentEvent.illustration_url}
-                onImageUpdated={handleImageUpdated}
-              />
             </View>
 
-            {/* Informations et validation */}
-            <View>
-              {/* Statut actuel */}
-              <View style={{ flexDirection: 'row', justifyContent: 'space-between', alignItems: 'center', marginBottom: 24 }}>
-                <Text style={{ fontSize: 20, fontWeight: '600', color: '#1f2937' }}>Validation</Text>
-                {getStatusBadge(currentEvent.validation_status)}
-              </View>
-
-              {/* Titre et date */}
-              <View style={{ marginBottom: 24 }}>
-                <View style={{ marginBottom: 12 }}>
-                  <Text style={{ fontSize: 14, fontWeight: '600', color: '#374151', marginBottom: 4 }}>Titre</Text>
-                  <Text style={{ fontSize: 18, fontWeight: '600', color: '#1f2937' }}>{currentEvent.titre}</Text>
-                </View>
-                
-                <View style={{ marginBottom: 12 }}>
-                  <Text style={{ fontSize: 14, fontWeight: '600', color: '#374151', marginBottom: 4 }}>Date</Text>
-                  <Text style={{ fontSize: 18, color: '#1f2937' }}>{currentEvent.date_formatee}</Text>
-                </View>
-
-                {currentEvent.description_detaillee && (
-                  <View style={{ marginBottom: 12 }}>
-                    <Text style={{ fontSize: 14, fontWeight: '600', color: '#374151', marginBottom: 4 }}>Description</Text>
-                    <Text style={{ fontSize: 16, color: '#374151' }}>{currentEvent.description_detaillee}</Text>
-                  </View>
-                )}
-              </View>
-
-              {/* Notes de validation */}
-              <View style={{ marginBottom: 24 }}>
-                <Text style={{ fontSize: 14, fontWeight: '600', color: '#374151', marginBottom: 4 }}>Notes (optionnel)</Text>
-                <TextInput
-                  value={notes}
-                  onChangeText={setNotes}
-                  style={{ 
-                    borderWidth: 1, 
-                    borderColor: '#d1d5db', 
-                    borderRadius: 8, 
-                    padding: 12, 
-                    minHeight: 80, 
-                    textAlignVertical: 'top',
-                    fontSize: 16
-                  }}
-                  multiline={true}
-                  placeholder="Ajoutez des notes pour expliquer votre décision..."
-                  placeholderTextColor="#9ca3af"
-                />
-              </View>
-
-              {/* Boutons de validation */}
+            {/* Boutons de validation - Maintenant en premier */}
+            <View style={{ marginBottom: 32 }}>
+              <Text style={{ fontSize: 18, fontWeight: '600', marginBottom: 16, color: '#1f2937' }}>
+                Décision de validation
+              </Text>
               <View style={{ flexDirection: 'row', flexWrap: 'wrap', gap: 12 }}>
                 <Pressable
                   onPress={() => validateEvent('validated')}
@@ -769,9 +974,14 @@ export default function VueValid() {
                     alignItems: 'center', 
                     justifyContent: 'center', 
                     paddingHorizontal: 16, 
-                    paddingVertical: 12, 
+                    paddingVertical: 14, 
                     backgroundColor: '#059669', 
-                    borderRadius: 8 
+                    borderRadius: 10,
+                    shadowColor: '#000',
+                    shadowOffset: { width: 0, height: 2 },
+                    shadowOpacity: 0.1,
+                    shadowRadius: 4,
+                    elevation: 3
                   }}
                 >
                   <Ionicons name="checkmark" size={20} color="white" />
@@ -787,9 +997,14 @@ export default function VueValid() {
                     alignItems: 'center', 
                     justifyContent: 'center', 
                     paddingHorizontal: 16, 
-                    paddingVertical: 12, 
+                    paddingVertical: 14, 
                     backgroundColor: '#ea580c', 
-                    borderRadius: 8 
+                    borderRadius: 10,
+                    shadowColor: '#000',
+                    shadowOffset: { width: 0, height: 2 },
+                    shadowOpacity: 0.1,
+                    shadowRadius: 4,
+                    elevation: 3
                   }}
                 >
                   <MaterialIcons name="image" size={20} color="white" />
@@ -805,9 +1020,14 @@ export default function VueValid() {
                     alignItems: 'center', 
                     justifyContent: 'center', 
                     paddingHorizontal: 16, 
-                    paddingVertical: 12, 
+                    paddingVertical: 14, 
                     backgroundColor: '#7c3aed', 
-                    borderRadius: 8 
+                    borderRadius: 10,
+                    shadowColor: '#000',
+                    shadowOffset: { width: 0, height: 2 },
+                    shadowOpacity: 0.1,
+                    shadowRadius: 4,
+                    elevation: 3
                   }}
                 >
                   <MaterialIcons name="edit" size={20} color="white" />
@@ -823,28 +1043,71 @@ export default function VueValid() {
                     alignItems: 'center', 
                     justifyContent: 'center', 
                     paddingHorizontal: 16, 
-                    paddingVertical: 12, 
+                    paddingVertical: 14, 
                     backgroundColor: '#dc2626', 
-                    borderRadius: 8 
+                    borderRadius: 10,
+                    shadowColor: '#000',
+                    shadowOffset: { width: 0, height: 2 },
+                    shadowOpacity: 0.1,
+                    shadowRadius: 4,
+                    elevation: 3
                   }}
                 >
                   <Ionicons name="close" size={20} color="white" />
                   <Text style={{ color: 'white', fontWeight: '600', marginLeft: 8 }}>Rejeter</Text>
                 </Pressable>
               </View>
-
-              {/* Informations de validation existante */}
-              {currentEvent.validated_by && (
-                <View style={{ marginTop: 16, padding: 12, backgroundColor: '#f8fafc', borderRadius: 8 }}>
-                  <Text style={{ fontSize: 14, color: '#374151' }}>
-                    <Text style={{ fontWeight: 'bold' }}>Validé par:</Text> {currentEvent.validated_by}
-                  </Text>
-                  <Text style={{ fontSize: 14, color: '#374151' }}>
-                    <Text style={{ fontWeight: 'bold' }}>Le:</Text> {new Date(currentEvent.validated_at!).toLocaleString('fr-FR')}
-                  </Text>
-                </View>
-              )}
             </View>
+
+            {/* Génération de prompt IA - Maintenant après les boutons */}
+            <PromptGenerator
+              eventId={currentEvent.id}
+              titre={currentEvent.titre}
+              year={parseInt(currentEvent.date_formatee)}
+              currentImageUrl={currentEvent.illustration_url}
+              onImageUpdated={handleImageUpdated}
+            />
+
+            {/* Notes de validation */}
+            <View style={{ marginBottom: 24 }}>
+              <Text style={{ fontSize: 14, fontWeight: '600', color: '#374151', marginBottom: 8 }}>
+                Notes (optionnel)
+              </Text>
+              <TextInput
+                value={notes}
+                onChangeText={setNotes}
+                style={{ 
+                  borderWidth: 1, 
+                  borderColor: '#d1d5db', 
+                  borderRadius: 8, 
+                  padding: 12, 
+                  minHeight: 80, 
+                  textAlignVertical: 'top',
+                  fontSize: 16,
+                  backgroundColor: 'white'
+                }}
+                multiline={true}
+                placeholder="Ajoutez des notes pour expliquer votre décision..."
+                placeholderTextColor="#9ca3af"
+              />
+            </View>
+
+            {/* Informations de validation existante */}
+            {currentEvent.validated_by && (
+              <View style={{ padding: 12, backgroundColor: '#f8fafc', borderRadius: 8 }}>
+                <Text style={{ fontSize: 14, color: '#374151' }}>
+                  <Text style={{ fontWeight: 'bold' }}>Validé par:</Text> {currentEvent.validated_by}
+                </Text>
+                <Text style={{ fontSize: 14, color: '#374151' }}>
+                  <Text style={{ fontWeight: 'bold' }}>Le:</Text> {new Date(currentEvent.validated_at!).toLocaleString('fr-FR')}
+                </Text>
+                {currentEvent.validation_notes && (
+                  <Text style={{ fontSize: 14, color: '#374151', marginTop: 4 }}>
+                    <Text style={{ fontWeight: 'bold' }}>Notes:</Text> {currentEvent.validation_notes}
+                  </Text>
+                )}
+              </View>
+            )}
           </View>
         </View>
 
@@ -855,7 +1118,7 @@ export default function VueValid() {
             <Pressable
               onPress={() => {
                 const nextPending = events.findIndex((e, i) => 
-                  i > currentIndex && e.validation_status === 'pending'
+                  i > currentIndex && (!e.validation_status || e.validation_status === 'pending')
                 );
                 if (nextPending !== -1) setCurrentIndex(nextPending);
               }}
@@ -876,7 +1139,13 @@ export default function VueValid() {
             </Pressable>
 
             <Pressable
-              onPress={() => setCurrentIndex(0)}
+              onPress={() => {
+                const firstPending = events.findIndex(e => 
+                  !e.validation_status || e.validation_status === 'pending'
+                );
+                if (firstPending !== -1) setCurrentIndex(firstPending);
+                else setCurrentIndex(0);
+              }}
               style={{ 
                 flex: 1, 
                 minWidth: 120,
@@ -890,18 +1159,8 @@ export default function VueValid() {
               }}
             >
               <MaterialIcons name="refresh" size={16} color="#475569" />
-              <Text style={{ fontSize: 12, fontWeight: '600', color: '#475569', marginLeft: 4 }}>Retour début</Text>
+              <Text style={{ fontSize: 12, fontWeight: '600', color: '#475569', marginLeft: 4 }}>Premier en attente</Text>
             </Pressable>
-          </View>
-        </View>
-
-        {/* Raccourcis mobile */}
-        <View style={{ marginTop: 16, backgroundColor: '#dbeafe', borderColor: '#93c5fd', borderWidth: 1, borderRadius: 8, padding: 16 }}>
-          <Text style={{ fontWeight: '600', color: '#1e3a8a', marginBottom: 8 }}>💡 Raccourcis mobiles</Text>
-          <View>
-            <Text style={{ fontSize: 14, color: '#1e40af', marginBottom: 4 }}>• <Text style={{ fontWeight: 'bold' }}>Swipe gauche/droite</Text> : Navigation</Text>
-            <Text style={{ fontSize: 14, color: '#1e40af', marginBottom: 4 }}>• <Text style={{ fontWeight: 'bold' }}>Tap long sur image</Text> : Zoom</Text>
-            <Text style={{ fontSize: 14, color: '#1e40af', marginBottom: 4 }}>• <Text style={{ fontWeight: 'bold' }}>Stats colorées</Text> : Tap pour filtrer</Text>
           </View>
         </View>
       </View>

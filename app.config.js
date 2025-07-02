@@ -1,6 +1,6 @@
 export default ({ config }) => ({
   ...config,
-  name: "Juno2",
+  name: "Quandi",
   slug: "kiko",
   version: "1.5.1",
   orientation: "portrait",
@@ -23,7 +23,7 @@ export default ({ config }) => ({
     ...config.android,
     adaptiveIcon: {
       foregroundImage: "./assets/images/logo3.png",
-      backgroundColor: "#020817"
+      backgroundColor: "#FFFFFF"
     },
     package: "com.pierretulle.juno2",
     permissions: [
@@ -36,7 +36,9 @@ export default ({ config }) => ({
       "android.permission.WRITE_EXTERNAL_STORAGE",
       "com.google.android.gms.permission.AD_ID"
     ],
-    versionCode: 27,
+    versionCode: 28, // ✅ AUGMENTÉ pour le nouveau build
+    compileSdkVersion: 35, // ✅ AJOUTÉ : Version de compilation
+    targetSdkVersion: 35,  // ✅ AJOUTÉ : Version cible (Android 15)
     googleServicesFile: process.env.GOOGLE_SERVICES_JSON || "./google-services.json"
   },
   web: {
@@ -49,7 +51,9 @@ export default ({ config }) => ({
       "expo-build-properties",
       {
         android: {
-          kotlinVersion: "1.9.25"
+          kotlinVersion: "1.9.25",
+          compileSdkVersion: 35, // ✅ AJOUTÉ : Cohérence avec le config principal
+          targetSdkVersion: 35   // ✅ AJOUTÉ : Cohérence avec le config principal
         }
       }
     ],

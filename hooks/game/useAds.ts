@@ -10,27 +10,29 @@ import { getAdUnitId } from '../../lib/config/adConfig';
 import { FirebaseAnalytics } from '../../lib/firebase';
 import { MAX_LIVES, User, Event, RewardType } from '../types';
 
-const USE_TEST_IDS = __DEV__;
+// ✅ SUPPRIMÉ : const USE_TEST_IDS = __DEV__;
+// On utilise maintenant getAdUnitId() qui gère déjà cette logique !
 
 const genericInterstitial = InterstitialAd.createForAdRequest(
-  USE_TEST_IDS ? TestIds.INTERSTITIAL : getAdUnitId('INTERSTITIAL_GENERIC'),
+  getAdUnitId('INTERSTITIAL_GENERIC'), // ✅ CORRIGÉ : utilise getAdUnitId
   { requestNonPersonalizedAdsOnly: true }
 );
 
 const levelUpInterstitial = InterstitialAd.createForAdRequest(
-  USE_TEST_IDS ? TestIds.INTERSTITIAL : getAdUnitId('INTERSTITIAL_LEVEL_UP'),
+  getAdUnitId('INTERSTITIAL_LEVEL_UP'), // ✅ CORRIGÉ : utilise getAdUnitId
   { requestNonPersonalizedAdsOnly: true }
 );
 
 const gameOverInterstitial = InterstitialAd.createForAdRequest(
-  USE_TEST_IDS ? TestIds.INTERSTITIAL : getAdUnitId('INTERSTITIAL_GAME_OVER'),
+  getAdUnitId('INTERSTITIAL_GAME_OVER'), // ✅ CORRIGÉ : utilise getAdUnitId
   { requestNonPersonalizedAdsOnly: true }
 );
 
 const rewardedAd = RewardedAd.createForAdRequest(
-  USE_TEST_IDS ? TestIds.REWARDED : getAdUnitId('REWARDED_EXTRA_LIFE'),
+  getAdUnitId('REWARDED_EXTRA_LIFE'), // ✅ CORRIGÉ : utilise getAdUnitId
   { requestNonPersonalizedAdsOnly: true }
 );
+
 
 interface AdState {
   interstitialLoaded: boolean;

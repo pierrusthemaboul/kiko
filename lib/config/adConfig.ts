@@ -1,12 +1,10 @@
 // lib/config/adConfig.ts
 import { TestIds } from 'react-native-google-mobile-ads';
 
-// FORCÉ : Toujours utiliser les TestIds, quel que soit le build
-const USE_TEST_IDS = true;
+const USE_TEST_IDS = __DEV__;
 
 console.log(
   `[adConfig] Using Test Ads: ${USE_TEST_IDS}`
-  + ` (FORCED)`
 );
 
 // Tes vrais IDs de prod
