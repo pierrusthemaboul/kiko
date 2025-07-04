@@ -426,10 +426,10 @@ export default function Vue1() {
             <View style={styles.disclaimerSection}>
               <View style={styles.disclaimerTitleContainer}>
                 <Ionicons name="image-outline" size={22} color={SALMON_THEME.secondaryAccent} />
-                <Text style={[styles.disclaimerTitle, {color: SALMON_THEME.secondaryAccent}]}>Illustrations DALL·E</Text>
+                <Text style={[styles.disclaimerTitle, {color: SALMON_THEME.secondaryAccent}]}>Illustrations IA</Text>
               </View>
               <Text style={styles.modalText}>
-                Les images du jeu sont générées par DALL·E, ce qui peut entraîner quelques incohérences visuelles.
+                Les images du jeu sont générées par DALL·E et par Flux, ce qui peut entraîner quelques incohérences visuelles.
               </Text>
             </View>
              <View style={styles.modalDivider} />

@@ -1,11 +1,12 @@
 // ==============================================================================
-// sayon2_gemini.mjs - VERSION GEMINI COMPLÈTE - TOUTES FONCTIONNALITÉS + ÉCONOMIES 90%
-// MODIFICATION MAJEURE : Claude/GPT → Gemini 2.0 Flash + Liste complète événements période
-// CONSERVATION : Toutes les fonctionnalités, retry logic, monitoring, diagnostics
-// OBJECTIF : Mêmes performances, 90-95% d'économies, anti-doublons renforcé
+// sayon2_claude_prompts.mjs - VERSION HYBRIDE OPTIMALE CLAUDE + GEMINI
+// GÉNÉRATION PROMPTS : Claude 3.5 Sonnet (Excellence créative)
+// AUTRES FONCTIONS : Gemini 2.0 Flash (Économies 90%)
+// CONSERVATION : Toutes fonctionnalités + retry logic + monitoring + diagnostics
 // ==============================================================================
 
 import { GoogleGenerativeAI } from '@google/generative-ai';
+import Anthropic from '@anthropic-ai/sdk';
 import Replicate from 'replicate';
 import { createClient } from '@supabase/supabase-js';
 import fetch from 'node-fetch';
@@ -13,13 +14,16 @@ import sharp from 'sharp';
 import readline from 'readline';
 import 'dotenv/config';
 
-// --- Configuration GEMINI (Remplace Claude + GPT) ---
-const GEMINI_CONFIG = {
-    eventGeneration: "gemini-2.0-flash",        // Remplace claude-3-5-sonnet-20241022
-    historicalVerification: "gemini-2.0-flash", // Remplace claude-3-5-sonnet-20241022
-    contextEnrichment: "gemini-2.0-flash",      // Remplace claude-3-5-sonnet-20241022
-    promptGeneration: "gemini-2.0-flash",       // Remplace gpt-4o
-    imageValidation: "gemini-2.0-flash"         // Remplace gpt-4o-mini
+// --- Configuration HYBRIDE (Claude pour prompts + Gemini pour le reste) ---
+const AI_CONFIG = {
+    // CLAUDE pour génération prompts Flux (Excellence créative)
+    promptGeneration: "claude-3-5-sonnet-20241022",
+    
+    // GEMINI pour le reste (Économies)
+    eventGeneration: "gemini-2.0-flash",
+    historicalVerification: "gemini-2.0-flash", 
+    contextEnrichment: "gemini-2.0-flash",
+    imageValidation: "gemini-2.0-flash"
 };
 
 const MAX_IMAGE_ATTEMPTS = 4; 
@@ -43,17 +47,61 @@ const FLUX_SCHNELL_CONFIG = {
 
 // --- Initialisation APIs ---
 const genAI = new GoogleGenerativeAI(process.env.GEMINI_API_KEY);
+const anthropic = new Anthropic({ apiKey: process.env.ANTHROPIC_API_KEY });
 const replicate = new Replicate({ auth: process.env.REPLICATE_API_TOKEN });
 const supabase = createClient(process.env.SUPABASE_URL, process.env.SUPABASE_SERVICE_KEY);
 const rl = readline.createInterface({ input: process.stdin, output: process.stdout });
 
 // ==============================================================================
-// WRAPPERS GEMINI ROBUSTES (REMPLACENT CLAUDE + OPENAI)
+// WRAPPER CLAUDE ROBUSTE (POUR GÉNÉRATION PROMPTS FLUX)
+// ==============================================================================
+
+async function callClaude(prompt, options = {}) {
+    const {
+        model = AI_CONFIG.promptGeneration,
+        maxTokens = 300,
+        temperature = 0.7,
+        retryAttempt = 1
+    } = options;
+    
+    console.log(`      🎨 [CLAUDE] Appel ${model} (${prompt.length} chars)${retryAttempt > 1 ? ` - Retry ${retryAttempt}/3` : ''}`);
+    
+    try {
+        const response = await anthropic.messages.create({
+            model,
+            max_tokens: maxTokens,
+            temperature,
+            messages: [{ role: 'user', content: prompt }]
+        });
+        
+        const text = response.content[0].text;
+        console.log(`      ✅ [CLAUDE] Réponse reçue (${text.length} chars)`);
+        return text;
+        
+    } catch (error) {
+        console.error(`      ❌ [CLAUDE] Erreur:`, error.message);
+        
+        // Retry automatique pour erreurs temporaires
+        if ((error.message.includes('rate_limit') || 
+             error.message.includes('overloaded') ||
+             error.message.includes('timeout')) && retryAttempt < 3) {
+            const waitTime = retryAttempt * 5000;
+            console.log(`      🔄 [CLAUDE] Retry automatique dans ${waitTime/1000}s...`);
+            await new Promise(resolve => setTimeout(resolve, waitTime));
+            return await callClaude(prompt, { ...options, retryAttempt: retryAttempt + 1 });
+        }
+        
+        throw error;
+    }
+}
+
+// ==============================================================================
+// WRAPPERS GEMINI ROBUSTES (POUR TOUTES LES AUTRES FONCTIONS)
 // ==============================================================================
 
 async function callGemini(prompt, options = {}) {
     const {
-        model = GEMINI_CONFIG.eventGeneration,
+        model = AI_CONFIG.eventGeneration,
         maxOutputTokens = 1000,
         temperature = 0.3,
         responseFormat = null,
@@ -81,7 +129,7 @@ async function callGemini(prompt, options = {}) {
     } catch (error) {
         console.error(`      ❌ [GEMINI] Erreur:`, error.message);
         
-        // CONSERVATION: Retry automatique pour erreurs temporaires (comme Claude)
+        // Retry automatique pour erreurs temporaires
         if ((error.message.includes('quota') || 
              error.message.includes('rate_limit') || 
              error.message.includes('overloaded') ||
@@ -98,7 +146,7 @@ async function callGemini(prompt, options = {}) {
 
 async function callGeminiWithImage(prompt, imageUrl, options = {}) {
     const {
-        model = GEMINI_CONFIG.imageValidation,
+        model = AI_CONFIG.imageValidation,
         maxOutputTokens = 350,
         temperature = 0.05,
         retryAttempt = 1
@@ -136,7 +184,7 @@ async function callGeminiWithImage(prompt, imageUrl, options = {}) {
     } catch (error) {
         console.error(`      ❌ [GEMINI-VISION] Erreur:`, error.message);
         
-        // CONSERVATION: Retry automatique (comme OpenAI)
+        // Retry automatique
         if ((error.message.includes('quota') || 
              error.message.includes('rate_limit')) && retryAttempt < 3) {
             const waitTime = retryAttempt * 3000;
@@ -248,8 +296,7 @@ function isDuplicate(titre) {
         return true;
     }
     
-    // CONSERVATION: Vérification stricte mais intelligente pour éviter rejets excessifs
-    if (normalized.length < 10) { // Seulement titres très courts
+    if (normalized.length < 10) {
         for (const existingNormalized of existingNormalizedTitles) {
             if (existingNormalized.length < 10 && existingNormalized === normalized) {
                 console.log(`   ⚠️ Similarité exacte détectée: "${titre}" = "${existingNormalized}"`);
@@ -272,13 +319,12 @@ function addToCache(titre) {
 }
 
 // ==============================================================================
-// GÉNÉRATION D'ÉVÉNEMENTS OPTIMISÉE (GEMINI + LISTE COMPLÈTE)
+// GÉNÉRATION D'ÉVÉNEMENTS OPTIMISÉE (GEMINI)
 // ==============================================================================
 
 async function generateEventBatchWithGemini(startYear, endYear, count, attemptNumber = 1) {
     console.log(`   📦 [GEMINI] Génération de ${count} événements (tentative ${attemptNumber})...`);
     
-    // 🎯 MODIFICATION UTILISATEUR: Prendre TOUS les événements de la période (pas seulement 15)
     const periodExistingTitles = [];
     titleMappings.forEach((originals, normalized) => {
         originals.forEach(original => {
@@ -289,12 +335,10 @@ async function generateEventBatchWithGemini(startYear, endYear, count, attemptNu
         });
     });
     
-    // 🎯 CHANGEMENT MAJEUR: Utiliser TOUS les événements existants dans la période
     const allExistingInPeriod = periodExistingTitles.join('", "');
     console.log(`      🚫 Événements interdits dans période: ${periodExistingTitles.length} titres`);
     console.log(`      📏 Longueur liste interdite: ${allExistingInPeriod.length} caractères`);
     
-    // CONSERVATION: Variations de prompts pour diversité
     const promptVariations = [
         "événements politiques et diplomatiques documentés",
         "inventions techniques et découvertes scientifiques vérifiées", 
@@ -315,7 +359,6 @@ async function generateEventBatchWithGemini(startYear, endYear, count, attemptNu
     
     const focusArea = promptVariations[attemptNumber % promptVariations.length];
     
-    // 🎯 MODIFICATION: Utiliser la liste complète au lieu d'un échantillon
     const prompt = `Tu es un historien expert reconnu. Génère EXACTEMENT ${count} événements historiques DOCUMENTÉS et VÉRIFIABLES entre ${startYear}-${endYear}.
 
 🚫 ÉVÉNEMENTS STRICTEMENT INTERDITS (TOUS ceux de la période ${startYear}-${endYear}) :
@@ -357,13 +400,12 @@ PRIORITÉ ABSOLUE : Précision historique + DIVERSITÉ GÉOGRAPHIQUE + ZÉRO res
 
     try {
         const responseText = await callGemini(prompt, {
-            model: GEMINI_CONFIG.eventGeneration,
+            model: AI_CONFIG.eventGeneration,
             maxOutputTokens: 2200,
             temperature: 0.25,
             responseFormat: 'json'
         });
         
-        // CONSERVATION: Extraction JSON intelligente
         let jsonText = responseText;
         if (responseText.includes('```json')) {
             const match = responseText.match(/```json\s*([\s\S]*?)\s*```/);
@@ -397,13 +439,11 @@ PRIORITÉ ABSOLUE : Précision historique + DIVERSITÉ GÉOGRAPHIQUE + ZÉRO res
                 return;
             }
             
-            // CONSERVATION: Regex complète pour caractères français
             if (!event.titre.match(/^[a-zA-Z0-9\s\-àáâäèéêëìíîïòóôöùúûüçñÀÁÂÄÈÉÊËÌÍÎÏÒÓÔÖÙÚÛÜÇÑ'():.,]+$/) || event.titre.includes('undefined')) {
                 rejectedEvents.push({ event: event.titre, reason: 'Caractères invalides' });
                 return;
             }
             
-            // Vérification doublons AVANT validation
             if (isDuplicate(event.titre)) {
                 rejectedEvents.push({ event: event.titre, reason: 'Doublon détecté (pré-vérification)' });
                 return;
@@ -478,13 +518,12 @@ PRIORITÉ : Précision historique absolue avec dates vérifiées.`;
 
     try {
         const responseText = await callGemini(prompt, {
-            model: GEMINI_CONFIG.historicalVerification,
+            model: AI_CONFIG.historicalVerification,
             maxOutputTokens: 1000,
             temperature: 0.1,
             responseFormat: 'json'
         });
         
-        // CONSERVATION: Extraction JSON
         let jsonText = responseText;
         if (responseText.includes('```json')) {
             const match = responseText.match(/```json\s*([\s\S]*?)\s*```/);
@@ -519,7 +558,6 @@ PRIORITÉ : Précision historique absolue avec dates vérifiées.`;
         
     } catch (error) {
         console.error(`      ❌ [GEMINI] Erreur vérification:`, error.message);
-        // CONSERVATION: Fallback conservateur
         return { validEvents: events, invalidEvents: [] };
     }
 }
@@ -563,13 +601,12 @@ EXIGENCE : Exactitude historique absolue pour ${event.year}.`;
 
     try {
         const responseText = await callGemini(prompt, {
-            model: GEMINI_CONFIG.contextEnrichment,
+            model: AI_CONFIG.contextEnrichment,
             maxOutputTokens: 600,
             temperature: 0.3,
             responseFormat: 'json'
         });
         
-        // CONSERVATION: Extraction JSON
         let jsonText = responseText;
         if (responseText.includes('```json')) {
             const match = responseText.match(/```json\s*([\s\S]*?)\s*```/);
@@ -599,7 +636,6 @@ EXIGENCE : Exactitude historique absolue pour ${event.year}.`;
     } catch (error) {
         console.error(`      ❌ [GEMINI] Erreur enrichissement:`, error.message);
         
-        // CONSERVATION: Retry automatique pour erreurs de connexion
         if (error.message.includes('Connection error') && attemptNumber < 2) {
             console.log(`      🔄 [GEMINI] Retry enrichissement (erreur connexion)...`);
             await new Promise(resolve => setTimeout(resolve, 3000));
@@ -621,7 +657,7 @@ EXIGENCE : Exactitude historique absolue pour ${event.year}.`;
 }
 
 // ==============================================================================
-// GÉNÉRATION PROMPTS OPTIMISÉE POUR FLUX-SCHNELL (GEMINI)
+// GÉNÉRATION PROMPTS OPTIMISÉE POUR FLUX-SCHNELL (CLAUDE 3.5 SONNET)
 // ==============================================================================
 
 function countWords(text) {
@@ -631,7 +667,7 @@ function countWords(text) {
 function optimizePromptIntelligently(prompt) {
     console.log(`      🔧 Optimisation intelligente de ${countWords(prompt)} mots:`);
     
-    // CONSERVATION: Extraire et préserver les éléments critiques AVANT optimisation
+    // Extraire et préserver les éléments critiques AVANT optimisation
     const yearMatch = prompt.match(/\b(1\d{3}|20\d{2})\b/);
     const periodMatch = prompt.match(/\b(ancient|medieval|renaissance|industrial|modern)\s+period\b/i);
     
@@ -646,7 +682,7 @@ function optimizePromptIntelligently(prompt) {
         .replace(/\.\s*/g, ' ')
         .trim();
     
-    // CONSERVATION: RESTAURER les éléments critiques si supprimés par l'optimisation
+    // RESTAURER les éléments critiques si supprimés par l'optimisation
     if (yearMatch && !optimized.includes(yearMatch[0])) {
         optimized = `${optimized}, ${yearMatch[0]}`;
         console.log(`      🔧 Année ${yearMatch[0]} restaurée`);
@@ -664,8 +700,8 @@ function optimizePromptIntelligently(prompt) {
     return optimized;
 }
 
-async function generateOptimizedFluxPromptWithGemini(enrichedEvent) {
-    console.log(`      🎨 [GEMINI] Génération prompt visuel optimisé pour "${enrichedEvent.titre}"...`);
+async function generateOptimizedFluxPromptWithClaude(enrichedEvent) {
+    console.log(`      🎨 [CLAUDE] Génération prompt visuel optimisé pour "${enrichedEvent.titre}"...`);
     
     const enrichissement = enrichedEvent.enrichissement;
     const epoch = enrichedEvent.year < 476 ? 'ancient' : 
@@ -673,9 +709,9 @@ async function generateOptimizedFluxPromptWithGemini(enrichedEvent) {
                   enrichedEvent.year < 1789 ? 'renaissance' : 
                   enrichedEvent.year < 1914 ? 'industrial' : 'modern';
     
-    const promptForGemini = `Tu es un expert en prompts pour Flux-schnell. Génère le MEILLEUR prompt possible pour illustrer cet événement historique.
+    const promptForClaude = `Tu es l'expert mondial en prompts pour Flux-schnell. Ta mission : créer le prompt PARFAIT pour illustrer cet événement historique.
 
-ÉVÉNEMENT À ILLUSTRER :
+🎯 ÉVÉNEMENT À ILLUSTRER :
 - Titre : "${enrichedEvent.titre}"
 - Année : ${enrichedEvent.year} (période ${epoch})
 - Contexte : ${enrichissement.contextHistorique}
@@ -683,14 +719,14 @@ async function generateOptimizedFluxPromptWithGemini(enrichedEvent) {
 - Éléments visuels : ${enrichissement.elementsVisuelsEssentiels.join(', ')}
 - Atmosphère : ${enrichissement.atmosphere}
 
-🎯 MISSION CRITIQUE : Créer un prompt Flux-schnell qui génère une illustration PARFAITE de cet événement historique.
+🚀 EXCELLENCE CLAUDE : Utilise ta créativité légendaire pour créer un prompt qui génère une illustration ÉPOUSTOUFLANTE de cet événement.
 
-📋 RÈGLES ABSOLUES FLUX-SCHNELL :
+📋 CONTRAINTES TECHNIQUES FLUX-SCHNELL (CRITIQUES) :
 1. INCLURE OBLIGATOIREMENT : "${enrichedEvent.year}" ET "${epoch} period" dans le prompt
 2. ZÉRO TEXTE dans l'image : Aucun mot, chiffre, panneau, inscription visible
 3. MAXIMUM ${FLUX_SCHNELL_LIMITS.TARGET_WORDS} mots (limite T5 : ${FLUX_SCHNELL_LIMITS.TARGET_T5_TOKENS} tokens)
 4. Mots-clés CONCRETS et visuellement PRÉCIS
-5. Structure : [Personnages période] [action] [objets époque] [environnement] [style]
+5. Structure optimale : [Personnages période] [action] [objets époque] [environnement] [style]
 
 🎨 OPTIMISATIONS FLUX-SCHNELL :
 - Utiliser "cinematic", "detailed", "realistic" (mots-clés Flux performants)
@@ -703,28 +739,29 @@ async function generateOptimizedFluxPromptWithGemini(enrichedEvent) {
 - wings, angel, flying, supernatural, god, deity, magical, glowing, divine
 - modern objects, cars, phones, contemporary clothing
 
-📐 STRUCTURE OPTIMALE RÉALISTE :
-[People in ${enrichedEvent.year} clothing] [specific action] [period objects] [${epoch} environment], cinematic, detailed
+💡 EXCELLENCE CRÉATIVE CLAUDE :
+- Trouve des détails visuels uniques et saisissants
+- Crée une composition qui raconte l'histoire
+- Utilise ta compréhension nuancée pour des choix visuels parfaits
+- Équilibre historique + impact visuel maximal
 
-🎯 EXEMPLES PERFORMANTS :
-- "Soldiers in 1798 blue uniforms firing muskets, battlefield smoke, ${epoch} period, cinematic, detailed"
-- "Man in 1752 colonial coat holding brass key, stormy sky, wooden shelter, ${epoch} period, realistic"
+⚡ RÉPONDS UNIQUEMENT avec le prompt Flux-schnell PARFAIT incluant "${enrichedEvent.year}" et "${epoch} period", MAXIMUM ${FLUX_SCHNELL_LIMITS.TARGET_WORDS} MOTS.
 
-⚡ RÉPONDS UNIQUEMENT avec le prompt Flux-schnell OPTIMAL incluant "${enrichedEvent.year}" et "${epoch} period", MAXIMUM ${FLUX_SCHNELL_LIMITS.TARGET_WORDS} MOTS.`;
+Montre-moi pourquoi Claude est le ROI de la génération de prompts pour flux !`;
 
     try {
-        const fluxPrompt = await callGemini(promptForGemini, {
-            model: GEMINI_CONFIG.promptGeneration,
-            maxOutputTokens: 120,
-            temperature: 0.7
+        const fluxPrompt = await callClaude(promptForClaude, {
+            model: AI_CONFIG.promptGeneration,
+            maxTokens: 150,
+            temperature: 0.8  // Plus de créativité pour Claude
         });
         
         let cleanPrompt = fluxPrompt.trim().replace(/^["']|["']$/g, '');
         
         const initialWords = countWords(cleanPrompt);
-        console.log(`      📊 [GEMINI] Prompt initial: "${cleanPrompt}" (${initialWords} mots)`);
+        console.log(`      📊 [CLAUDE] Prompt initial: "${cleanPrompt}" (${initialWords} mots)`);
         
-        // CONSERVATION: VÉRIFICATION CRITIQUE : Année et période présentes
+        // VÉRIFICATION CRITIQUE : Année et période présentes
         const epoch = enrichedEvent.year < 476 ? 'ancient' : 
                      enrichedEvent.year < 1492 ? 'medieval' : 
                      enrichedEvent.year < 1789 ? 'renaissance' : 
@@ -736,7 +773,7 @@ async function generateOptimizedFluxPromptWithGemini(enrichedEvent) {
         console.log(`      🔍 Vérification année ${enrichedEvent.year}: ${hasYear ? '✅' : '❌'}`);
         console.log(`      🔍 Vérification période ${epoch}: ${hasPeriod ? '✅' : '❌'}`);
         
-        // CONSERVATION: CORRECTION AUTOMATIQUE si manquants
+        // CORRECTION AUTOMATIQUE si manquants
         if (!hasYear || !hasPeriod) {
             console.log(`      🔧 Correction automatique: ajout année/période manquante`);
             let corrections = [];
@@ -746,7 +783,7 @@ async function generateOptimizedFluxPromptWithGemini(enrichedEvent) {
             console.log(`      ✅ Prompt corrigé: "${cleanPrompt}"`);
         }
         
-        // CONSERVATION: Optimisation si nécessaire
+        // Optimisation si nécessaire
         if (countWords(cleanPrompt) > FLUX_SCHNELL_LIMITS.TARGET_WORDS) {
             console.log(`      ⚠️ Dépassement limite, optimisation intelligente...`);
             cleanPrompt = optimizePromptIntelligently(cleanPrompt);
@@ -760,7 +797,7 @@ async function generateOptimizedFluxPromptWithGemini(enrichedEvent) {
             }
         }
         
-        // CONSERVATION: Ajout enhancers optimisés pour Flux-schnell
+        // Ajout enhancers optimisés pour Flux-schnell
         const finalWords = countWords(cleanPrompt);
         const remainingWords = FLUX_SCHNELL_LIMITS.TARGET_WORDS - finalWords;
         
@@ -772,18 +809,18 @@ async function generateOptimizedFluxPromptWithGemini(enrichedEvent) {
         const finalPrompt = enhancers.length > 0 ? `${cleanPrompt}, ${enhancers.join(', ')}` : cleanPrompt;
         const finalWordCount = countWords(finalPrompt);
         
-        console.log(`      📊 [GEMINI] Prompt final OPTIMISÉ: "${finalPrompt}"`);
+        console.log(`      📊 [CLAUDE] Prompt final CRÉATIF: "${finalPrompt}"`);
         console.log(`      📏 Longueur: ${finalWordCount} mots (~${Math.round(finalWordCount * 4)} tokens T5)`);
         console.log(`      ✅ Limite respectée: ${finalWordCount <= FLUX_SCHNELL_LIMITS.TARGET_WORDS ? 'OUI' : 'NON'}`);
         console.log(`      📅 Année ${enrichedEvent.year}: ${finalPrompt.includes(enrichedEvent.year.toString()) ? '✅' : '❌'}`);
         console.log(`      🏛️ Période ${epoch}: ${finalPrompt.includes('period') || finalPrompt.includes(epoch) ? '✅' : '❌'}`);
-        console.log(`      🛡️ Anti-texte/surnaturel: ACTIVÉ`);
+        console.log(`      🎨 Excellence Claude: Créativité + Contraintes techniques respectées`);
         
         return finalPrompt;
         
     } catch (error) {
-        console.error(`      ❌ [GEMINI] Erreur génération prompt:`, error.message);
-        // CONSERVATION: Fallback intelligent avec année et période OBLIGATOIRES
+        console.error(`      ❌ [CLAUDE] Erreur génération prompt:`, error.message);
+        // Fallback intelligent avec année et période OBLIGATOIRES
         const epoch = enrichedEvent.year < 476 ? 'ancient' : 
                      enrichedEvent.year < 1492 ? 'medieval' : 
                      enrichedEvent.year < 1789 ? 'renaissance' : 
@@ -803,7 +840,6 @@ async function generateImageEnhanced(prompt, event) {
     console.log(`      🖼️ [FLUX] Génération optimisée: ${prompt.substring(0, 60)}...`);
     console.log(`      📊 Analyse: ${countWords(prompt)} mots (~${Math.round(countWords(prompt) * 4)} tokens)`);
     
-    // CONSERVATION: Configuration Flux-schnell OPTIMISÉE pour événements historiques
     const fluxConfig = {
         prompt,
         negative_prompt: `modern text, dates, titles, large inscriptions, contemporary writing, modern typography, ${event.year}, "${event.titre}", wings, angel, flying, supernatural, mythological, god, deity, magical, glowing, divine, fantasy creature, unrealistic anatomy, modern objects, smartphones, cars, phones, computers, electronics, contemporary clothing, jeans, t-shirt, sneakers, digital art, cartoon, anime, manga, abstract, blurry, low quality, science fiction, alien, spaceship, robot, cyberpunk`,
@@ -812,7 +848,7 @@ async function generateImageEnhanced(prompt, event) {
         output_format: "webp",
         output_quality: FLUX_SCHNELL_CONFIG.quality,
         seed: FLUX_SCHNELL_CONFIG.seed(),
-        guidance_scale: 2.5  // Optimisé pour Flux-schnell historique
+        guidance_scale: 2.5
     };
     
     console.log(`      🛡️ [FLUX] Protection intelligente activée (évite date ${event.year} et titre)`);
@@ -828,7 +864,7 @@ async function generateImageEnhanced(prompt, event) {
             return output[0];
         }
 
-        // CONSERVATION: Fallback avec predictions pour monitoring avancé
+        // Fallback avec predictions pour monitoring avancé
         console.log(`      🔄 [FLUX] Passage en mode prediction pour monitoring...`);
         const model = await replicate.models.get("black-forest-labs", "flux-schnell");
         const prediction = await replicate.predictions.create({
@@ -870,7 +906,7 @@ async function generateImageEnhanced(prompt, event) {
 }
 
 // ==============================================================================
-// VALIDATION INTELLIGENTE GEMINI VISION (REMPLACE GPT-4O-MINI)
+// VALIDATION INTELLIGENTE GEMINI VISION
 // ==============================================================================
 
 async function validateImageWithGemini(event, imageUrl) {
@@ -928,7 +964,7 @@ JSON OBLIGATOIRE:
 
     try {
         const responseText = await callGeminiWithImage(prompt, imageUrl, {
-            model: GEMINI_CONFIG.imageValidation,
+            model: AI_CONFIG.imageValidation,
             maxOutputTokens: 350,
             temperature: 0.05
         });
@@ -953,7 +989,6 @@ JSON OBLIGATOIRE:
         console.log(`      📊 Score: ${result.score}/10`);
         console.log(`      💭 Raison: "${result.reason}"`);
         
-        // CONSERVATION: REJET SEULEMENT SI TEXTE VRAIMENT INTERDIT
         const isValid = !result.hasForbiddenText && 
                        !result.hasWingsOrSupernatural && 
                        !result.hasModernObjects && 
@@ -975,7 +1010,6 @@ JSON OBLIGATOIRE:
             console.log(`      ❌ [GEMINI-VISION] Validation échouée - Score/critères insuffisants`);
         }
         
-        // CONSERVATION: Retourner les données complètes au lieu d'un simple booléen
         return {
             isValid,
             score: result.score,
@@ -1018,27 +1052,27 @@ JSON OBLIGATOIRE:
 }
 
 // ==============================================================================
-// TRAITEMENT STRATÉGIE HYBRIDE OPTIMALE (CONSERVATION + GEMINI)
+// TRAITEMENT STRATÉGIE HYBRIDE OPTIMALE (CLAUDE + GEMINI)
 // ==============================================================================
 
 async function processEventWithHybridStrategy(event) {
     console.log(`\n   🖼️ [HYBRID] Traitement: "${event.titre}" (${event.year})`);
     
-    // Phase 1: Enrichissement avec Gemini (remplace Claude 3.5 Sonnet)
+    // Phase 1: Enrichissement avec Gemini
     console.log(`      📚 Phase 1: [GEMINI] Enrichissement contextuel...`);
     const enrichedEvent = await enrichEventWithGemini(event);
     
     let successfullyCreated = false;
-    let validationData = null; // CONSERVATION: Variable pour stocker les données de validation
+    let validationData = null;
     
     for (let attempt = 1; attempt <= MAX_IMAGE_ATTEMPTS && !successfullyCreated; attempt++) {
         console.log(`      🎨 Phase 2: Génération image - Tentative ${attempt}/${MAX_IMAGE_ATTEMPTS}`);
         
         try {
-            // Phase 2a: Génération prompt avec Gemini (remplace GPT-4o)
-            const optimizedPrompt = await generateOptimizedFluxPromptWithGemini(enrichedEvent);
+            // Phase 2a: Génération prompt avec CLAUDE (Excellence créative)
+            const optimizedPrompt = await generateOptimizedFluxPromptWithClaude(enrichedEvent);
             
-            // Phase 2b: Génération image avec Flux-schnell (CONSERVÉ)
+            // Phase 2b: Génération image avec Flux-schnell
             const imageUrl = await generateImageEnhanced(optimizedPrompt, enrichedEvent);
             
             if (!imageUrl) {
@@ -1046,22 +1080,21 @@ async function processEventWithHybridStrategy(event) {
                 continue;
             }
             
-            // Phase 3: Validation avec Gemini Vision (remplace GPT-4o-mini)
+            // Phase 3: Validation avec Gemini Vision
             const validationResult = await validateImageWithGemini(enrichedEvent, imageUrl);
-            validationData = validationResult; // Sauvegarder les données de validation
+            validationData = validationResult;
             
             if (validationResult.isValid) {
                 try {
                     console.log(`      📤 [HYBRID] Upload vers Supabase...`);
                     const uploadedUrl = await uploadImageToSupabase(imageUrl, event.titre);
                     
-                    // CONSERVATION: Passer les données de validation à enrichAndFinalizeEvent
                     const finalEvent = enrichAndFinalizeEvent(enrichedEvent, uploadedUrl, optimizedPrompt, validationData);
                     await insertValidatedEvent(finalEvent);
                     
                     addToCache(event.titre);
                     console.log(`      ✅ [HYBRID] Événement créé avec succès !`);
-                    console.log(`      📊 Stratégie: Gemini→Gemini→Flux→Gemini-Vision (ÉCONOMIES 90%+)`);
+                    console.log(`      📊 Stratégie: Gemini→Gemini→CLAUDE→Flux→Gemini-Vision (CRÉATIVITÉ CLAUDE)`);
                     console.log(`      🤖 Validation IA sauvegardée: Score ${validationData.score}/10`);
                     successfullyCreated = true;
                     return finalEvent;
@@ -1096,12 +1129,11 @@ async function processEventWithHybridStrategy(event) {
         }
     }
     
-    // CONSERVATION: Fallback
+    // Fallback
     console.log(`      🔄 FALLBACK: Image par défaut...`);
     try {
         const defaultImageUrl = `https://via.placeholder.com/800x450/8B4513/FFFFFF?text=${encodeURIComponent(event.year + ' - ' + event.type)}`;
         
-        // CONSERVATION: Utiliser les dernières données de validation même en fallback
         const finalEvent = enrichAndFinalizeEvent(enrichedEvent, defaultImageUrl, "Image par défaut", validationData);
         await insertValidatedEvent(finalEvent);
         
@@ -1130,7 +1162,7 @@ async function uploadImageToSupabase(imageUrl, eventTitle) {
         .resize(800, 450, { fit: 'cover' })
         .toBuffer();
         
-    const fileName = `gemini_${eventTitle.toLowerCase().replace(/[^a-z0-9]/g, '_').substring(0, 30)}_${Date.now()}.webp`;
+    const fileName = `claude_${eventTitle.toLowerCase().replace(/[^a-z0-9]/g, '_').substring(0, 30)}_${Date.now()}.webp`;
     
     const { error } = await supabase.storage
         .from('evenements-image')
@@ -1148,7 +1180,6 @@ async function uploadImageToSupabase(imageUrl, eventTitle) {
     return publicUrl;
 }
 
-// CONSERVATION: Fonction modifiée pour inclure les données de validation IA
 function enrichAndFinalizeEvent(enrichedEvent, imageUrl, illustrationPrompt, validationData = null) {
     const year = parseInt(enrichedEvent.year);
     const epoch = year < 476 ? 'Antiquité' : 
@@ -1171,7 +1202,7 @@ function enrichAndFinalizeEvent(enrichedEvent, imageUrl, illustrationPrompt, val
         epoque: epoch,
         mots_cles: enrichedEvent.titre.toLowerCase().replace(/[^\w\s]/g, '').split(' ').filter(w => w.length > 3),
         date_formatee: enrichedEvent.year.toString(),
-        code: `gem${Date.now().toString().slice(-6)}`,
+        code: `cld${Date.now().toString().slice(-6)}`,
         date_precision: 'year',
         ecart_temps_min: 50,
         frequency_score: 0,
@@ -1179,7 +1210,7 @@ function enrichAndFinalizeEvent(enrichedEvent, imageUrl, illustrationPrompt, val
         prompt_flux: illustrationPrompt
     };
 
-    // CONSERVATION: Ajouter les données de validation IA si disponibles
+    // Ajouter les données de validation IA si disponibles
     if (validationData) {
         finalEvent.validation_score = validationData.score;
         finalEvent.validation_explanation = validationData.explanation;
@@ -1200,7 +1231,7 @@ async function insertValidatedEvent(finalEvent) {
     const { data, error } = await supabase.from('goju').insert([finalEvent]).select();
     if (error) {
         if (error.code === '23505') {
-            finalEvent.code = `gem${Date.now().toString().slice(-6)}${Math.floor(Math.random()*100)}`;
+            finalEvent.code = `cld${Date.now().toString().slice(-6)}${Math.floor(Math.random()*100)}`;
             return await insertValidatedEvent(finalEvent);
         }
         throw error;
@@ -1209,20 +1240,20 @@ async function insertValidatedEvent(finalEvent) {
 }
 
 // ==============================================================================
-// TRAITEMENT PRINCIPAL HYBRIDE OPTIMAL (CONSERVATION + GEMINI)
+// TRAITEMENT PRINCIPAL HYBRIDE OPTIMAL (CLAUDE + GEMINI)
 // ==============================================================================
 
 async function processBatchHybrid(startYear, endYear, batchSize, batchNumber) {
-    console.log(`\n📦 === LOT ${batchNumber} GEMINI OPTIMAL (${batchSize} événements) ===`);
+    console.log(`\n📦 === LOT ${batchNumber} HYBRIDE CLAUDE+GEMINI (${batchSize} événements) ===`);
     
-    // Phase 1: Génération avec Gemini (remplace Claude 3.5 Sonnet)
+    // Phase 1: Génération avec Gemini
     const events = await generateEventBatchWithGemini(startYear, endYear, batchSize, batchNumber);
     if (events.length === 0) {
         console.log("❌ [GEMINI] Échec génération");
         return [];
     }
     
-    // Phase 2: Vérification avec Gemini (remplace Claude 3.5 Sonnet)
+    // Phase 2: Vérification avec Gemini
     const { validEvents } = await verifyEventBatchWithGemini(events);
     if (validEvents.length === 0) {
         console.log("❌ [GEMINI] Aucun événement validé");
@@ -1238,7 +1269,6 @@ async function processBatchHybrid(startYear, endYear, batchSize, batchNumber) {
         if (result) {
             completedEvents.push(result);
             console.log(`      ✅ [HYBRID] "${event.titre}" traité avec succès`);
-            // CONSERVATION: Log de confirmation de sauvegarde des données IA
             if (result.validation_score) {
                 console.log(`      🤖 [HYBRID] Validation IA: ${result.validation_score}/10 sauvegardée en base`);
             }
@@ -1251,7 +1281,6 @@ async function processBatchHybrid(startYear, endYear, batchSize, batchNumber) {
     
     console.log(`\n   📊 [HYBRID] Bilan lot ${batchNumber}: ${completedEvents.length}/${validEvents.length} réussis`);
     
-    // CONSERVATION: Statistiques de validation IA pour le lot
     const validationStats = completedEvents.filter(e => e.validation_score).length;
     if (validationStats > 0) {
         const avgScore = completedEvents
@@ -1264,40 +1293,37 @@ async function processBatchHybrid(startYear, endYear, batchSize, batchNumber) {
 }
 
 // ==============================================================================
-// SCRIPT PRINCIPAL OPTIMAL (CONSERVATION + GEMINI)
+// SCRIPT PRINCIPAL OPTIMAL (CLAUDE + GEMINI)
 // ==============================================================================
 
 async function main() {
-    console.log("\n🚀 === SAYON GEMINI VERSION COMPLÈTE - ÉCONOMIES 90%+ ===");
-    console.log("🎯 Configuration IA GEMINI:");
-    console.log("   🧠 Gemini 2.0 Flash: Génération + Vérification + Enrichissement + Prompts");
-    console.log("   👁️ Gemini 2.0 Flash Vision: Validation images");
+    console.log("\n🚀 === SAYON HYBRIDE CLAUDE+GEMINI VERSION OPTIMALE ===");
+    console.log("🎯 Configuration IA HYBRIDE:");
+    console.log("   🎨 Claude 3.5 Sonnet: Génération prompts Flux (Excellence créative)");
+    console.log("   🧠 Gemini 2.0 Flash: Génération + Vérification + Enrichissement + Validation images");
     console.log("   🖼️ Flux-schnell: Génération images (CONSERVÉ)");
     console.log("📊 Objectifs:");
     console.log("   📈 Taux de réussite: 36% → 70-90% (+200-300%)");
-    console.log("   💰 Réduction coûts: 90-95% vs Claude/GPT");
+    console.log("   💰 Coût optimisé: Claude seulement pour prompts + Gemini pour le reste");
     console.log("   ⏱️ Temps optimisé: Moins de retry, plus d'efficacité");
-    console.log("   🎯 Qualité maintenue: 8-9/10");
+    console.log("   🎯 Qualité maximale: Excellence créative Claude + Économie Gemini");
     console.log("   🤖 CONSERVÉ: Sauvegarde automatique validation IA en base");
     console.log("   🚫 NOUVEAU: Liste COMPLÈTE événements période (anti-doublons renforcé)");
     
-    console.log("\n🎯 FONCTIONNALITÉS CONSERVÉES + AMÉLIORÉES:");
-    console.log("   ✅ 1. Validation intelligente (score min: 4, texte d'époque toléré)");
-    console.log("   ✅ 2. Regex complète pour caractères français");
-    console.log("   ✅ 3. Instructions dates renforcées");
-    console.log("   ✅ 4. ANNÉE + PÉRIODE obligatoires dans prompts Flux");
-    console.log("   ✅ 5. Lots optimaux (4 événements, équilibre qualité/quantité)");
-    console.log("   ✅ 6. Retry automatique (Gemini, robustesse maximale)");
-    console.log("   ✅ 7. Diversité géographique maximale (15 types d'événements)");
-    console.log("   ✅ 8. Limite lots étendue (75 au lieu de 25)");
-    console.log("   ✅ 9. Gestion erreurs complète (continuation forcée)");
-    console.log("   ✅ 10. Diagnostic intelligent (identification des blocages)");
-    console.log("   ✅ 11. Sauvegarde validation IA (score, explication, analyse détaillée)");
-    console.log("   🆕 12. LISTE COMPLÈTE événements période (VOTRE MODIFICATION)");
-    console.log("   🆕 13. ÉCONOMIES 90-95% avec Gemini 2.0 Flash");
+    console.log("\n🎯 STRATÉGIE HYBRIDE OPTIMALE:");
+    console.log("   ✅ 1. Génération événements: Gemini (économique)");
+    console.log("   ✅ 2. Vérification historique: Gemini (économique)");
+    console.log("   ✅ 3. Enrichissement contextuel: Gemini (économique)");
+    console.log("   🎨 4. Génération prompts Flux: CLAUDE (excellence créative)");
+    console.log("   ✅ 5. Validation images: Gemini Vision (économique)");
+    console.log("   💡 RÉSULTAT: Qualité Claude pour prompts + Économies Gemini pour le reste");
     
-    // CONSERVATION: Vérification APIs
+    // Vérification APIs
     console.log("\n🔧 === VÉRIFICATION DES APIS ===");
+    if (!process.env.ANTHROPIC_API_KEY) {
+        console.error("❌ ANTHROPIC_API_KEY manquante dans .env");
+        process.exit(1);
+    }
     if (!process.env.GEMINI_API_KEY) {
         console.error("❌ GEMINI_API_KEY manquante dans .env");
         process.exit(1);
@@ -1310,7 +1336,7 @@ async function main() {
         console.error("❌ SUPABASE_URL manquante dans .env");
         process.exit(1);
     }
-    console.log("✅ APIs configurées: Gemini + Replicate + Supabase");
+    console.log("✅ APIs configurées: Claude + Gemini + Replicate + Supabase");
     
     const startYear = parseInt(await askQuestion('📅 Année de DÉBUT : '));
     const endYear = parseInt(await askQuestion('📅 Année de FIN : '));
@@ -1345,17 +1371,16 @@ async function main() {
     let totalValidationCount = 0;
     let totalValidationScoreSum = 0;
     
-    while (createdCount < targetCount && batchNumber < 75) { // CONSERVATION: Limite augmentée
+    while (createdCount < targetCount && batchNumber < 75) {
         batchNumber++;
         const remainingEvents = targetCount - createdCount;
         const currentBatchSize = Math.min(BATCH_SIZE, remainingEvents);
         
         try {
-            console.log(`\n🚀 [GEMINI] Début lot ${batchNumber} avec stratégie Gemini optimale...`);
+            console.log(`\n🚀 [HYBRID] Début lot ${batchNumber} avec stratégie Claude+Gemini optimale...`);
             const completedEvents = await processBatchHybrid(startYear, endYear, currentBatchSize, batchNumber);
             createdCount += completedEvents.length;
             
-            // CONSERVATION: Statistiques de validation IA globales
             const batchValidations = completedEvents.filter(e => e.validation_score);
             totalValidationCount += batchValidations.length;
             totalValidationScoreSum += batchValidations.reduce((sum, e) => sum + e.validation_score, 0);
@@ -1365,25 +1390,23 @@ async function main() {
             const lotSuccessRate = ((createdCount / (batchNumber * BATCH_SIZE)) * 100).toFixed(1);
             const realSuccessRate = ((createdCount / targetCount) * 100).toFixed(1);
             
-            console.log(`\n📊 BILAN LOT ${batchNumber} GEMINI OPTIMAL:`);
+            console.log(`\n📊 BILAN LOT ${batchNumber} HYBRIDE CLAUDE+GEMINI:`);
             console.log(`   ✅ Créés: ${completedEvents.length}/${currentBatchSize}`);
             console.log(`   📈 Total: ${createdCount}/${targetCount} (${realSuccessRate}% de l'objectif)`);
             console.log(`   🎯 Taux de réussite lot: ${lotSuccessRate}%`);
             console.log(`   ⏱️ Rate: ${rate.toFixed(1)} événements/min`);
-            console.log(`   💰 Économies Gemini: 90-95%`);
-            console.log(`   🤖 Stratégie: Gemini→Gemini→Flux→Gemini-Vision`);
-            console.log(`   🎯 Qualité maintenue: 8-9/10 avec validation intelligente`);
+            console.log(`   💰 Stratégie: Claude pour prompts + Gemini pour le reste`);
+            console.log(`   🎨 Qualité: Excellence créative Claude + Économie Gemini`);
+            console.log(`   🎯 Précision: Contraintes Flux respectées`);
             
-            // CONSERVATION: Stats validation IA
             if (batchValidations.length > 0) {
                 const batchAvgScore = batchValidations.reduce((sum, e) => sum + e.validation_score, 0) / batchValidations.length;
                 console.log(`   🤖 Validation IA lot: ${batchValidations.length}/${completedEvents.length} analysés (score moyen: ${batchAvgScore.toFixed(1)}/10)`);
             }
             
         } catch (error) {
-            console.error(`❌ [GEMINI] Erreur lot ${batchNumber}:`, error.message);
-            // CONSERVATION: Continue même en cas d'erreur de lot
-            console.log(`🔄 [GEMINI] Continuation malgré l'erreur du lot ${batchNumber}...`);
+            console.error(`❌ [HYBRID] Erreur lot ${batchNumber}:`, error.message);
+            console.log(`🔄 [HYBRID] Continuation malgré l'erreur du lot ${batchNumber}...`);
         }
         
         if (createdCount < targetCount) {
@@ -1398,26 +1421,24 @@ async function main() {
     const realFinalSuccessRate = ((createdCount / targetCount) * 100).toFixed(1);
     const globalAvgValidationScore = totalValidationCount > 0 ? (totalValidationScoreSum / totalValidationCount).toFixed(1) : 'N/A';
     
-    console.log(`\n🎉 === TRAITEMENT GEMINI OPTIMAL TERMINÉ ===`);
+    console.log(`\n🎉 === TRAITEMENT HYBRIDE CLAUDE+GEMINI TERMINÉ ===`);
     console.log(`✅ Événements créés: ${createdCount}/${targetCount} (${realFinalSuccessRate}% de l'objectif)`);
     console.log(`📦 Lots traités: ${batchNumber}`);
     console.log(`🎯 Taux de réussite par lot: ${finalLotSuccessRate}%`);
     console.log(`🎯 Taux de réussite global: ${realFinalSuccessRate}%`);
     console.log(`⏱️ Temps total: ${Math.floor(totalTime/60)}min ${(totalTime%60).toFixed(0)}s`);
     console.log(`📈 Rate finale: ${finalRate.toFixed(1)} événements/min`);
-    console.log(`💰 Économies Gemini: 90-95% vs Claude/GPT`);
-    console.log(`🤖 Stratégie Gemini: 100% Gemini 2.0 Flash + Flux-schnell`);
-    console.log(`🎯 Qualité: Précision Gemini + Économie maximale + Validation intelligente`);
+    console.log(`💡 Stratégie: Claude 3.5 Sonnet (prompts) + Gemini 2.0 Flash (reste)`);
+    console.log(`🎨 Qualité: Excellence créative Claude + Économie Gemini`);
+    console.log(`🎯 Innovation: Meilleur des deux mondes - Créativité + Efficacité`);
     console.log(`🆕 Anti-doublons: Liste COMPLÈTE ${loadResult.periodEvents.length} événements période`);
     
-    // CONSERVATION: Stats finales validation IA
     console.log(`🤖 Validation IA globale: ${totalValidationCount}/${createdCount} événements analysés (${((totalValidationCount/createdCount)*100).toFixed(1)}%)`);
     if (totalValidationCount > 0) {
         console.log(`📊 Score moyen validation IA: ${globalAvgValidationScore}/10`);
         console.log(`💾 Données IA sauvegardées en base pour utilisation dans l'interface de validation`);
     }
     
-    // CONSERVATION: Diagnostic si taux faible
     if (realFinalSuccessRate < 60) {
         console.log(`\n⚠️ DIAGNOSTIC - Taux < 60% :`);
         console.log(`   • Période ${startYear}-${endYear} déjà bien couverte (${loadResult.periodEvents.length} événements existants)`);
@@ -1425,7 +1446,8 @@ async function main() {
         console.log(`   • Vérifiez les logs pour identifier les blocages principaux`);
         console.log(`   • Réessayez avec une période différente pour de meilleurs résultats`);
     } else {
-        console.log(`\n🎊 EXCELLENT RÉSULTAT ! Taux > 60% atteint avec économies 90%+`);
+        console.log(`\n🎊 EXCELLENT RÉSULTAT ! Taux > 60% atteint avec stratégie hybride optimale`);
+        console.log(`🎨 Bonus: Excellence créative Claude pour prompts Flux-schnell`);
         if (totalValidationCount > 0) {
             console.log(`🤖 Bonus: ${totalValidationCount} événements avec validation IA complète sauvegardée`);
         }
@@ -1443,6 +1465,6 @@ function askQuestion(query) {
 // ==============================================================================
 
 main().catch(error => { 
-    console.error("\n💥 [GEMINI] Erreur fatale:", error); 
+    console.error("\n💥 [HYBRID] Erreur fatale:", error); 
     rl.close(); 
 });

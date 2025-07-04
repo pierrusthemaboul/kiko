@@ -1,8 +1,9 @@
 // ==============================================================================
-// sayon2_gemini.mjs - VERSION GEMINI COMPLÈTE - TOUTES FONCTIONNALITÉS + ÉCONOMIES 90%
-// MODIFICATION MAJEURE : Claude/GPT → Gemini 2.0 Flash + Liste complète événements période
-// CONSERVATION : Toutes les fonctionnalités, retry logic, monitoring, diagnostics
-// OBJECTIF : Mêmes performances, 90-95% d'économies, anti-doublons renforcé
+// sayon5.mjs - VERSION GEMINI COMPLÈTE + GESTION NIVEAUX PAR POURCENTAGES
+// MODIFICATION MAJEURE : Claude/GPT → Gemini 2.0 Flash + Gestion intelligente des niveaux
+// CONSERVATION : Toutes les fonctionnalités + NOUVEAU : Répartition niveaux par %
+// OBJECTIF : Mêmes performances, 90-95% d'économies + équilibrage parfait des niveaux
+// AMÉLIORATIONS : Descriptions de niveaux renforcées pour Gemini
 // ==============================================================================
 
 import { GoogleGenerativeAI } from '@google/generative-ai';
@@ -272,11 +273,271 @@ function addToCache(titre) {
 }
 
 // ==============================================================================
-// GÉNÉRATION D'ÉVÉNEMENTS OPTIMISÉE (GEMINI + LISTE COMPLÈTE)
+// NOUVEAU : FONCTIONS GESTION NIVEAUX PAR POURCENTAGES
 // ==============================================================================
 
-async function generateEventBatchWithGemini(startYear, endYear, count, attemptNumber = 1) {
-    console.log(`   📦 [GEMINI] Génération de ${count} événements (tentative ${attemptNumber})...`);
+function getPresetDistributions() {
+    return {
+        "equilibre": { 1: 15, 2: 20, 3: 20, 4: 20, 5: 15, 6: 10, 7: 0 },
+        "debutant": { 1: 30, 2: 30, 3: 25, 4: 15, 5: 0, 6: 0, 7: 0 },
+        "avance": { 1: 5, 2: 10, 3: 15, 4: 20, 5: 25, 6: 20, 7: 5 },
+        "expert": { 1: 0, 2: 5, 3: 10, 4: 15, 5: 25, 6: 30, 7: 15 },
+        "lacunes": { 1: 20, 2: 0, 3: 0, 4: 0, 5: 20, 6: 30, 7: 30 }
+    };
+}
+
+async function askDifficultyDistribution() {
+    console.log("\n🎯 === CONFIGURATION RÉPARTITION NIVEAUX DE DIFFICULTÉ ===");
+    console.log("📊 Définissez les pourcentages pour chaque niveau (total = 100%)");
+    console.log("\n📋 Rappel des niveaux :");
+    console.log("   Niveau 1 : Événements universels très connus");
+    console.log("   Niveau 2 : Événements connus, accessibles");
+    console.log("   Niveau 3 : Événements moyennement connus");
+    console.log("   Niveau 4 : Événements moins connus, spécialisés");
+    console.log("   Niveau 5 : Événements spécialisés avancés");
+    console.log("   Niveau 6 : Événements très spécialisés");
+    console.log("   Niveau 7 : Événements d'experts, très pointus");
+    
+    const distribution = {};
+    let totalPercentage = 0;
+    
+    // Demander les pourcentages pour chaque niveau
+    for (let level = 1; level <= 7; level++) {
+        let percentage;
+        do {
+            const remaining = 100 - totalPercentage;
+            percentage = parseInt(await askQuestion(`   📊 Niveau ${level} (reste ${remaining}%) : `));
+            
+            if (isNaN(percentage) || percentage < 0 || percentage > remaining) {
+                console.log(`   ❌ Erreur : Entrez un nombre entre 0 et ${remaining}`);
+                percentage = null;
+            }
+        } while (percentage === null);
+        
+        distribution[level] = percentage;
+        totalPercentage += percentage;
+        
+        if (totalPercentage === 100) {
+            // Auto-compléter les niveaux restants à 0
+            for (let remainingLevel = level + 1; remainingLevel <= 7; remainingLevel++) {
+                distribution[remainingLevel] = 0;
+            }
+            break;
+        }
+    }
+    
+    // Vérification finale
+    if (totalPercentage !== 100) {
+        console.log(`❌ Erreur : Total = ${totalPercentage}% (doit être 100%)`);
+        return await askDifficultyDistribution(); // Recommencer
+    }
+    
+    console.log("\n✅ === RÉPARTITION VALIDÉE ===");
+    Object.entries(distribution).forEach(([level, percentage]) => {
+        if (percentage > 0) {
+            console.log(`   Niveau ${level}: ${percentage}%`);
+        }
+    });
+    
+    return distribution;
+}
+
+async function askDistributionChoice() {
+    console.log("\n🎯 === CHOIX RÉPARTITION NIVEAUX ===");
+    console.log("1. ⚖️  Équilibrée (polyvalente)");
+    console.log("2. 🌱 Débutant (niveaux faciles)");
+    console.log("3. 🎓 Avancée (niveaux moyens-élevés)");
+    console.log("4. 👨‍🔬 Expert (niveaux difficiles)");
+    console.log("5. 🔧 Combler lacunes (niveaux sous-représentés)");
+    console.log("6. ✏️  Personnalisée");
+    
+    const choice = await askQuestion("Votre choix (1-6) : ");
+    const presets = getPresetDistributions();
+    
+    switch (choice) {
+        case '1': return presets.equilibre;
+        case '2': return presets.debutant;
+        case '3': return presets.avance;
+        case '4': return presets.expert;
+        case '5': return presets.lacunes;
+        case '6': return await askDifficultyDistribution();
+        default:
+            console.log("❌ Choix invalide, répartition équilibrée sélectionnée");
+            return presets.equilibre;
+    }
+}
+
+function calculateBatchDistribution(batchSize, globalDistribution) {
+    const batchDistribution = {};
+    let totalAssigned = 0;
+    
+    // Calculer le nombre d'événements par niveau
+    for (let level = 1; level <= 7; level++) {
+        if (globalDistribution[level] > 0) {
+            const exactCount = (batchSize * globalDistribution[level]) / 100;
+            batchDistribution[level] = Math.round(exactCount);
+            totalAssigned += batchDistribution[level];
+        } else {
+            batchDistribution[level] = 0;
+        }
+    }
+    
+    // Ajuster si nécessaire pour respecter exactement batchSize
+    const difference = batchSize - totalAssigned;
+    if (difference !== 0) {
+        // Trouver le niveau avec le plus grand pourcentage pour ajuster
+        const maxLevel = Object.entries(globalDistribution)
+            .filter(([_, percentage]) => percentage > 0)
+            .sort((a, b) => b[1] - a[1])[0]?.[0];
+        
+        if (maxLevel) {
+            batchDistribution[maxLevel] += difference;
+        }
+    }
+    
+    return batchDistribution;
+}
+
+// ==============================================================================
+// AMÉLIORATIONS DESCRIPTIONS NIVEAUX POUR GEMINI
+// ==============================================================================
+
+function createDifficultyPromptSection(batchDistribution) {
+    const targetLevels = Object.entries(batchDistribution)
+        .filter(([level, count]) => count > 0)
+        .map(([level, count]) => ({ level: parseInt(level), count }));
+    
+    if (targetLevels.length === 0) return "";
+    
+    let promptSection = "\n🎯 NIVEAUX DE DIFFICULTÉ CIBLÉS AVEC EXEMPLES CONCRETS :\n";
+    
+    targetLevels.forEach(({ level, count }) => {
+        const difficultyDescriptions = {
+            1: {
+                description: "NIVEAU 1 (UNIVERSELS) : Événements dans TOUS les manuels scolaires",
+                criteria: "• Enseignés au collège/lycée partout dans le monde\n• Dates mémorisées par la plupart des gens\n• Événements fondateurs de civilisations",
+                examples: "Exemples : Chute de Rome (476), Découverte Amérique (1492), Révolution française (1789), 1ère/2ème Guerre mondiale, Révolution russe (1917)"
+            },
+            2: {
+                description: "NIVEAU 2 (ACCESSIBLES) : Culture générale standard, documentaires TV",
+                criteria: "• Vus dans documentaires grand public\n• Connus par personnes avec culture générale\n• Événements nationaux majeurs",
+                examples: "Exemples : Bataille Hastings (1066), Peste noire (1347), Guerre de 100 ans, Renaissance italienne, Réforme protestante (1517)"
+            },
+            3: {
+                description: "NIVEAU 3 (MOYENS) : Passionnés d'histoire, étudiants universitaires",
+                criteria: "• Nécessite passion pour l'histoire\n• Études supérieures en histoire\n• Événements régionaux importants",
+                examples: "Exemples : Bataille Poitiers (732), Croisades spécifiques, Guerres de religion France, Jacqueries médiévales, Schisme d'Occident"
+            },
+            4: {
+                description: "NIVEAU 4 (SPÉCIALISÉS) : Connaisseurs, guides touristiques spécialisés",
+                criteria: "• Lecture de livres spécialisés requise\n• Événements locaux/régionaux précis\n• Dates secondaires d'événements majeurs",
+                examples: "Exemples : Bataille Pavie (1525), Paix Augsbourg (1555), Fondations villes coloniales, Révoltes paysannes locales, Traités mineurs"
+            },
+            5: {
+                description: "NIVEAU 5 (AVANCÉS) : Étudiants master/doctorat, historiens amateurs",
+                criteria: "• Recherches académiques nécessaires\n• Événements administratifs/institutionnels\n• Personnages secondaires mais importants",
+                examples: "Exemples : Réformes administratives précises, Créations d'institutions, Nominations d'évêques influents, Édits royaux spécialisés"
+            },
+            6: {
+                description: "NIVEAU 6 (TRÈS SPÉCIALISÉS) : Historiens professionnels, chercheurs",
+                criteria: "• Sources primaires et archives\n• Événements micro-historiques\n• Détails chronologiques précis",
+                examples: "Exemples : Sessions parlementaires précises, Nominations administratives, Fondations monastères, Accords commerciaux locaux"
+            },
+            7: {
+                description: "NIVEAU 7 (EXPERTS) : Spécialistes de période, historiens pointus",
+                criteria: "• Expertise ultra-pointue requise\n• Événements dans thèses de doctorat\n• Sources rares et peu connues",
+                examples: "Exemples : Décisions de conseils municipaux, Nominations ecclésiastiques mineures, Accords entre guildes, Révoltes hyperlocales"
+            }
+        };
+        
+        const desc = difficultyDescriptions[level];
+        promptSection += `\n${count}x ${desc.description}\n`;
+        promptSection += `${desc.criteria}\n`;
+        promptSection += `${desc.examples}\n`;
+    });
+    
+    promptSection += `\n🔧 CONSIGNE CRITIQUE POUR GEMINI :\n`;
+    promptSection += `- NIVEAU 1-2 : Si c'est dans Wikipédia avec page détaillée = OK\n`;
+    promptSection += `- NIVEAU 3-4 : Si c'est dans livres d'histoire spécialisés = OK\n`;
+    promptSection += `- NIVEAU 5-7 : Si c'est dans archives/sources académiques = OK\n`;
+    promptSection += `- TOUJOURS vérifier : "Est-ce que quelqu'un du niveau ciblé connaîtrait cet événement ?"\n`;
+    
+    return promptSection;
+}
+
+// ==============================================================================
+// VALIDATION AMÉLIORÉE DES NIVEAUX
+// ==============================================================================
+
+function validateEventLevel(event) {
+    const levelValidation = {
+        1: {
+            keywords: ["révolution", "guerre mondiale", "découverte amérique", "chute rome", "renaissance"],
+            avoid: ["local", "régional", "municipal", "administratif"]
+        },
+        2: {
+            keywords: ["bataille", "traité", "peste", "croisade", "réforme"],
+            avoid: ["nomination", "conseil", "accord mineur"]
+        },
+        3: {
+            keywords: ["guerre", "siège", "alliance", "schisme"],
+            avoid: ["édit mineur", "fondation monastère"]
+        },
+        4: {
+            keywords: ["fondation", "révolte", "paix", "création"],
+            avoid: ["session", "nomination évêque"]
+        },
+        5: {
+            keywords: ["réforme administrative", "création institution", "édit"],
+            avoid: ["décision municipale"]
+        },
+        6: {
+            keywords: ["nomination", "accord commercial", "session"],
+            avoid: ["querelle locale"]
+        },
+        7: {
+            keywords: ["conseil municipal", "décision administrative", "accord guildes"],
+            avoid: []
+        }
+    };
+    
+    const level = event.difficultyLevel;
+    const title = event.titre.toLowerCase();
+    const validation = levelValidation[level];
+    
+    if (validation) {
+        // Vérifier mots-clés appropriés
+        const hasGoodKeywords = validation.keywords.some(keyword => 
+            title.includes(keyword)
+        );
+        
+        // Vérifier absence de mots à éviter
+        const hasAvoidKeywords = validation.avoid.some(avoid => 
+            title.includes(avoid)
+        );
+        
+        return hasGoodKeywords && !hasAvoidKeywords;
+    }
+    
+    return true; // Par défaut, accepter
+}
+
+// ==============================================================================
+// GÉNÉRATION D'ÉVÉNEMENTS OPTIMISÉE AVEC NIVEAUX (GEMINI + LISTE COMPLÈTE)
+// ==============================================================================
+
+async function generateEventBatchWithGeminiLevels(startYear, endYear, batchDistribution, attemptNumber = 1) {
+    const totalCount = Object.values(batchDistribution).reduce((sum, count) => sum + count, 0);
+    
+    console.log(`   📦 [GEMINI] Génération de ${totalCount} événements avec niveaux ciblés (tentative ${attemptNumber})...`);
+    
+    // Afficher la répartition du lot
+    console.log(`      📊 Répartition du lot :`);
+    Object.entries(batchDistribution).forEach(([level, count]) => {
+        if (count > 0) {
+            console.log(`         Niveau ${level}: ${count} événements`);
+        }
+    });
     
     // 🎯 MODIFICATION UTILISATEUR: Prendre TOUS les événements de la période (pas seulement 15)
     const periodExistingTitles = [];
@@ -314,16 +575,44 @@ async function generateEventBatchWithGemini(startYear, endYear, count, attemptNu
     ];
     
     const focusArea = promptVariations[attemptNumber % promptVariations.length];
+    const difficultyPromptSection = createDifficultyPromptSection(batchDistribution);
     
-    // 🎯 MODIFICATION: Utiliser la liste complète au lieu d'un échantillon
-    const prompt = `Tu es un historien expert reconnu. Génère EXACTEMENT ${count} événements historiques DOCUMENTÉS et VÉRIFIABLES entre ${startYear}-${endYear}.
+    // Instructions renforcées pour Gemini
+    const enhancedLevelInstructions = `
+🔧 INSTRUCTIONS NIVEAUX RENFORCÉES :
+- NIVEAU 1 : "Grand-mère française/anglaise/allemande connaît" → Événements dans manuels scolaires mondiaux
+- NIVEAU 2 : "Présentateur TV culture générale connaît" → Documentaires Histoire grand public  
+- NIVEAU 3 : "Professeur lycée histoire connaît" → Spécialisation régionale requise
+- NIVEAU 4 : "Guide touristique château/musée connaît" → Lecture livres spécialisés
+- NIVEAU 5 : "Étudiant master histoire connaît" → Recherche académique nécessaire
+- NIVEAU 6 : "Historien professionnel connaît" → Sources primaires et archives  
+- NIVEAU 7 : "Spécialiste période précise connaît" → Expertise ultra-pointue
+
+🎯 TEST GEMINI : Avant de proposer un événement, demande-toi :
+"Une personne du niveau X ciblé connaîtrait-elle cet événement ?"
+- Si OUI → Bon niveau
+- Si NON → Ajuster vers niveau supérieur
+- Si TROP FACILE → Ajuster vers niveau inférieur
+
+🚫 PIÈGES À ÉVITER :
+- Ne pas confondre "importance historique" et "niveau de connaissance"
+- Guerres mondiales = Niveau 1 même si très importantes
+- Détails administratifs = Niveau 6-7 même si moins "importants"
+- Toujours penser : "Qui connaît cet événement dans la vraie vie ?"`;
+    
+    // 🎯 MODIFICATION: Utiliser la liste complète au lieu d'un échantillon + niveaux ciblés
+    const prompt = `Tu es un historien expert reconnu. Génère EXACTEMENT ${totalCount} événements historiques DOCUMENTÉS et VÉRIFIABLES entre ${startYear}-${endYear}.
 
 🚫 ÉVÉNEMENTS STRICTEMENT INTERDITS (TOUS ceux de la période ${startYear}-${endYear}) :
 "${allExistingInPeriod}"
 
 🎯 FOCUS SPÉCIALISÉ : ${focusArea}
 
-🔧 STRATÉGIE ANTI-DOUBLONS : Privilégie des événements MOINS CONNUS mais historiquement vérifiables. Varie ABSOLUMENT les régions géographiques.
+${difficultyPromptSection}
+
+${enhancedLevelInstructions}
+
+🔧 STRATÉGIE ANTI-DOUBLONS : Privilégie des événements adaptés au niveau ET géographiquement variés.
 
 RÈGLES CRITIQUES :
 1. DATES EXACTES obligatoires - VÉRIFIE CHAQUE DATE avec précision absolue
@@ -331,12 +620,13 @@ RÈGLES CRITIQUES :
 3. ZÉRO DOUBLON avec les ${periodExistingTitles.length} événements interdits ci-dessus
 4. DIVERSITÉ GÉOGRAPHIQUE MAXIMALE (Europe, Asie, Amérique, Afrique)
 5. TITRES précis (max 60 caractères) SANS l'année
+6. RESPECTER les niveaux de difficulté demandés
 
 CONSIGNE QUALITÉ :
-- Privilégie des événements MOINS connus mais historiquement importants
+- Privilégie des événements adaptés au niveau ET géographiquement variés
 - VARIE absolument les régions : au moins 2 continents différents
 - Assure-toi de la précision des dates (±0 tolérance d'erreur)
-- Évite les "grands classiques" probablement déjà pris
+- Évite les "grands classiques" pour niveaux élevés
 
 FORMAT JSON STRICT :
 {
@@ -348,17 +638,18 @@ FORMAT JSON STRICT :
       "type": "Militaire|Architecture|Invention|Institution|Découverte|Catastrophe|Exploration|Religion|Économie",
       "region": "Europe|Asie|Afrique|Amérique",
       "specificLocation": "Pays/région précise",
+      "difficultyLevel": number (1-7, selon la répartition demandée),
       "confidence": "high|medium" (niveau de certitude historique)
     }
   ]
 }
 
-PRIORITÉ ABSOLUE : Précision historique + DIVERSITÉ GÉOGRAPHIQUE + ZÉRO ressemblance avec les ${periodExistingTitles.length} événements interdits.`;
+PRIORITÉ ABSOLUE : Précision historique + NIVEAUX DE DIFFICULTÉ RESPECTÉS + DIVERSITÉ GÉOGRAPHIQUE + ZÉRO ressemblance avec les ${periodExistingTitles.length} événements interdits.`;
 
     try {
         const responseText = await callGemini(prompt, {
             model: GEMINI_CONFIG.eventGeneration,
-            maxOutputTokens: 2200,
+            maxOutputTokens: 2500,
             temperature: 0.25,
             responseFormat: 'json'
         });
@@ -383,7 +674,7 @@ PRIORITÉ ABSOLUE : Précision historique + DIVERSITÉ GÉOGRAPHIQUE + ZÉRO res
         if (!batchData.events || !Array.isArray(batchData.events)) {
             console.log(`      ❌ Structure invalide, tentative ${attemptNumber + 1}...`);
             if (attemptNumber < 3) {
-                return await generateEventBatchWithGemini(startYear, endYear, count, attemptNumber + 1);
+                return await generateEventBatchWithGeminiLevels(startYear, endYear, batchDistribution, attemptNumber + 1);
             }
             return [];
         }
@@ -409,10 +700,38 @@ PRIORITÉ ABSOLUE : Précision historique + DIVERSITÉ GÉOGRAPHIQUE + ZÉRO res
                 return;
             }
             
+            // NOUVEAU : Vérification niveau de difficulté
+            if (!event.difficultyLevel || event.difficultyLevel < 1 || event.difficultyLevel > 7) {
+                // Assigner un niveau par défaut si manquant
+                event.difficultyLevel = 4; // Niveau moyen par défaut
+            }
+            
+            // Validation du niveau avec la nouvelle fonction
+            if (!validateEventLevel(event)) {
+                console.log(`      ⚠️ [GEMINI] Niveau possiblement inapproprié pour "${event.titre}" (Niveau ${event.difficultyLevel})`);
+                // Ne pas rejeter, mais noter pour amélioration future
+            }
+            
             validEvents.push(event);
         });
         
+        // Vérification de la répartition obtenue
+        const actualDistribution = {};
+        for (let i = 1; i <= 7; i++) actualDistribution[i] = 0;
+        
+        validEvents.forEach(event => {
+            actualDistribution[event.difficultyLevel]++;
+        });
+        
         console.log(`      ✅ [GEMINI] Lot généré: ${validEvents.length} événements uniques après pré-vérification`);
+        console.log(`      📊 Répartition obtenue:`);
+        Object.entries(actualDistribution).forEach(([level, count]) => {
+            if (count > 0) {
+                const expected = batchDistribution[level] || 0;
+                const status = count === expected ? '✅' : (count > expected ? '⬆️' : '⬇️');
+                console.log(`         Niveau ${level}: ${count}/${expected} ${status}`);
+            }
+        });
         console.log(`      🔍 [GEMINI] Pré-vérification: ${batchData.events.length - validEvents.length} doublons évités`);
         
         if (rejectedEvents.length > 0) {
@@ -423,7 +742,7 @@ PRIORITÉ ABSOLUE : Précision historique + DIVERSITÉ GÉOGRAPHIQUE + ZÉRO res
         }
         
         validEvents.forEach(event => {
-            console.log(`        ✅ "${event.titre}" (${event.year}) [${event.type}|${event.region}] - Confiance: ${event.confidence || 'N/A'}`);
+            console.log(`        ✅ "${event.titre}" (${event.year}) [Niveau ${event.difficultyLevel}|${event.type}|${event.region}] - Confiance: ${event.confidence || 'N/A'}`);
         });
         
         return validEvents;
@@ -433,7 +752,7 @@ PRIORITÉ ABSOLUE : Précision historique + DIVERSITÉ GÉOGRAPHIQUE + ZÉRO res
         
         if (attemptNumber < 3) {
             console.log(`      🔄 Retry avec paramètres modifiés...`);
-            return await generateEventBatchWithGemini(startYear, endYear, count, attemptNumber + 1);
+            return await generateEventBatchWithGeminiLevels(startYear, endYear, batchDistribution, attemptNumber + 1);
         }
         return [];
     }
@@ -446,7 +765,7 @@ PRIORITÉ ABSOLUE : Précision historique + DIVERSITÉ GÉOGRAPHIQUE + ZÉRO res
 async function verifyEventBatchWithGemini(events) {
     console.log(`   🕵️ [GEMINI] Vérification historique approfondie...`);
     
-    const eventsText = events.map(e => `"${e.titre}" (${e.year})`).join('\n');
+    const eventsText = events.map(e => `"${e.titre}" (${e.year}) [Niveau ${e.difficultyLevel || 'N/A'}]`).join('\n');
     
     const prompt = `Tu es un historien expert. VÉRIFIE RIGOUREUSEMENT ces événements historiques :
 
@@ -456,6 +775,7 @@ Pour chaque événement, VALIDE :
 1. EXISTENCE dans l'histoire documentée (sources primaires/secondaires)
 2. DATE EXACTE (tolérance ±1 an maximum) - VÉRIFIE CHAQUE DATE avec précision absolue
 3. TITRE cohérent avec les faits historiques
+4. NIVEAU DE DIFFICULTÉ approprié
 
 🎯 OPTIMAL: VÉRIFIE CHAQUE DATE avec précision absolue avant validation.
 
@@ -468,6 +788,7 @@ FORMAT JSON REQUIS :
       "titre": "titre exact",
       "isValid": true/false,
       "dateCorrect": true/false,
+      "difficultyAppropriate": true/false,
       "reason": "explication détaillée si rejeté",
       "confidence": "high|medium|low"
     }
@@ -479,7 +800,7 @@ PRIORITÉ : Précision historique absolue avec dates vérifiées.`;
     try {
         const responseText = await callGemini(prompt, {
             model: GEMINI_CONFIG.historicalVerification,
-            maxOutputTokens: 1000,
+            maxOutputTokens: 1200,
             temperature: 0.1,
             responseFormat: 'json'
         });
@@ -506,10 +827,10 @@ PRIORITÉ : Précision historique absolue avec dates vérifiées.`;
             const validation = verification.validations?.[index];
             if (validation && validation.isValid && validation.dateCorrect) {
                 validEvents.push(event);
-                console.log(`      ✅ [GEMINI] "${event.titre}" (${event.year}) - Validé (${validation.confidence})`);
+                console.log(`      ✅ [GEMINI] "${event.titre}" (${event.year}) [Niveau ${event.difficultyLevel || 'N/A'}] - Validé (${validation.confidence})`);
             } else {
                 invalidEvents.push({ event, reason: validation?.reason || 'Non vérifié par Gemini' });
-                console.log(`      ❌ [GEMINI] "${event.titre}" (${event.year}) - ${validation?.reason || 'Erreur validation'}`);
+                console.log(`      ❌ [GEMINI] "${event.titre}" (${event.year}) [Niveau ${event.difficultyLevel || 'N/A'}] - ${validation?.reason || 'Erreur validation'}`);
             }
         });
         
@@ -529,7 +850,7 @@ PRIORITÉ : Précision historique absolue avec dates vérifiées.`;
 // ==============================================================================
 
 async function enrichEventWithGemini(event, attemptNumber = 1) {
-    console.log(`      🔍 [GEMINI] Enrichissement contextuel: "${event.titre}" (${event.year})...`);
+    console.log(`      🔍 [GEMINI] Enrichissement contextuel: "${event.titre}" (${event.year}) [Niveau ${event.difficultyLevel || 'N/A'}]...`);
     
     if (attemptNumber > 1) {
         console.log(`      🔄 [GEMINI] Tentative ${attemptNumber}/2 après erreur connexion`);
@@ -541,6 +862,7 @@ async function enrichEventWithGemini(event, attemptNumber = 1) {
 TYPE : ${event.type}
 RÉGION : ${event.region}
 LIEU : ${event.specificLocation}
+NIVEAU DIFFICULTÉ : ${event.difficultyLevel || 'N/A'}
 
 MISSION : Fournir contexte historique précis et éléments visuels essentiels pour Flux-schnell.
 
@@ -678,6 +1000,7 @@ async function generateOptimizedFluxPromptWithGemini(enrichedEvent) {
 ÉVÉNEMENT À ILLUSTRER :
 - Titre : "${enrichedEvent.titre}"
 - Année : ${enrichedEvent.year} (période ${epoch})
+- Niveau : ${enrichedEvent.difficultyLevel || 'N/A'}
 - Contexte : ${enrichissement.contextHistorique}
 - Scène idéale : ${enrichissement.sceneIdeale}
 - Éléments visuels : ${enrichissement.elementsVisuelsEssentiels.join(', ')}
@@ -874,7 +1197,7 @@ async function generateImageEnhanced(prompt, event) {
 // ==============================================================================
 
 async function validateImageWithGemini(event, imageUrl) {
-    console.log(`   🔍 [GEMINI-VISION] Validation intelligente pour ${event.year}...`);
+    console.log(`   🔍 [GEMINI-VISION] Validation intelligente pour ${event.year} [Niveau ${event.difficultyLevel || 'N/A'}]...`);
     
     const prompt = `Évalue cette image pour l'événement "${event.titre}" (${event.year}).
 
@@ -1022,7 +1345,7 @@ JSON OBLIGATOIRE:
 // ==============================================================================
 
 async function processEventWithHybridStrategy(event) {
-    console.log(`\n   🖼️ [HYBRID] Traitement: "${event.titre}" (${event.year})`);
+    console.log(`\n   🖼️ [HYBRID] Traitement: "${event.titre}" (${event.year}) [Niveau ${event.difficultyLevel || 'N/A'}]`);
     
     // Phase 1: Enrichissement avec Gemini (remplace Claude 3.5 Sonnet)
     console.log(`      📚 Phase 1: [GEMINI] Enrichissement contextuel...`);
@@ -1063,6 +1386,7 @@ async function processEventWithHybridStrategy(event) {
                     console.log(`      ✅ [HYBRID] Événement créé avec succès !`);
                     console.log(`      📊 Stratégie: Gemini→Gemini→Flux→Gemini-Vision (ÉCONOMIES 90%+)`);
                     console.log(`      🤖 Validation IA sauvegardée: Score ${validationData.score}/10`);
+                    console.log(`      🎯 Niveau de difficulté: ${event.difficultyLevel || 'N/A'}`);
                     successfullyCreated = true;
                     return finalEvent;
                     
@@ -1076,6 +1400,7 @@ async function processEventWithHybridStrategy(event) {
                             addToCache(event.titre);
                             console.log(`      ✅ [HYBRID] Créé avec URL directe !`);
                             console.log(`      🤖 Validation IA sauvegardée: Score ${validationData.score}/10`);
+                            console.log(`      🎯 Niveau de difficulté: ${event.difficultyLevel || 'N/A'}`);
                             return finalEvent;
                         } catch (directError) {
                             console.error(`      ❌ Échec URL directe:`, directError.message);
@@ -1107,6 +1432,7 @@ async function processEventWithHybridStrategy(event) {
         
         addToCache(event.titre);
         console.log(`      ✅ [HYBRID] Créé avec fallback !`);
+        console.log(`      🎯 Niveau de difficulté: ${event.difficultyLevel || 'N/A'}`);
         if (validationData) {
             console.log(`      🤖 Validation IA sauvegardée: Score ${validationData.score}/10`);
         }
@@ -1148,7 +1474,7 @@ async function uploadImageToSupabase(imageUrl, eventTitle) {
     return publicUrl;
 }
 
-// CONSERVATION: Fonction modifiée pour inclure les données de validation IA
+// CONSERVATION: Fonction modifiée pour inclure les données de validation IA + niveau
 function enrichAndFinalizeEvent(enrichedEvent, imageUrl, illustrationPrompt, validationData = null) {
     const year = parseInt(enrichedEvent.year);
     const epoch = year < 476 ? 'Antiquité' : 
@@ -1165,7 +1491,7 @@ function enrichAndFinalizeEvent(enrichedEvent, imageUrl, illustrationPrompt, val
         facteur_variation: 1.5,
         illustration_url: imageUrl,
         region: enrichedEvent.region || enrichedEvent.specificLocation,
-        niveau_difficulte: Math.min(6, Math.max(2, Math.floor((year - 1400) / 100) + 2)),
+        niveau_difficulte: enrichedEvent.difficultyLevel || Math.min(6, Math.max(2, Math.floor((year - 1400) / 100) + 2)),
         types_evenement: [enrichedEvent.type],
         pays: [enrichedEvent.specificLocation || enrichedEvent.region],
         epoque: epoch,
@@ -1193,6 +1519,9 @@ function enrichAndFinalizeEvent(enrichedEvent, imageUrl, illustrationPrompt, val
         console.log(`      ⚠️ [HYBRID] Aucune donnée de validation IA à sauvegarder`);
     }
 
+    // NOUVEAU: Log niveau de difficulté
+    console.log(`      🎯 [HYBRID] Niveau de difficulté assigné: ${finalEvent.niveau_difficulte}`);
+
     return finalEvent;
 }
 
@@ -1209,20 +1538,30 @@ async function insertValidatedEvent(finalEvent) {
 }
 
 // ==============================================================================
-// TRAITEMENT PRINCIPAL HYBRIDE OPTIMAL (CONSERVATION + GEMINI)
+// TRAITEMENT PRINCIPAL HYBRIDE OPTIMAL AVEC NIVEAUX (CONSERVATION + GEMINI)
 // ==============================================================================
 
-async function processBatchHybrid(startYear, endYear, batchSize, batchNumber) {
-    console.log(`\n📦 === LOT ${batchNumber} GEMINI OPTIMAL (${batchSize} événements) ===`);
+async function processBatchHybridWithLevels(startYear, endYear, batchSize, batchNumber, globalDistribution) {
+    console.log(`\n📦 === LOT ${batchNumber} GEMINI AVEC NIVEAUX CIBLÉS (${batchSize} événements) ===`);
     
-    // Phase 1: Génération avec Gemini (remplace Claude 3.5 Sonnet)
-    const events = await generateEventBatchWithGemini(startYear, endYear, batchSize, batchNumber);
+    // Calculer la répartition pour ce lot
+    const batchDistribution = calculateBatchDistribution(batchSize, globalDistribution);
+    
+    console.log(`   🎯 Répartition ciblée pour ce lot:`);
+    Object.entries(batchDistribution).forEach(([level, count]) => {
+        if (count > 0) {
+            console.log(`      Niveau ${level}: ${count} événements`);
+        }
+    });
+    
+    // Phase 1: Génération avec niveaux ciblés
+    const events = await generateEventBatchWithGeminiLevels(startYear, endYear, batchDistribution, batchNumber);
     if (events.length === 0) {
         console.log("❌ [GEMINI] Échec génération");
         return [];
     }
     
-    // Phase 2: Vérification avec Gemini (remplace Claude 3.5 Sonnet)
+    // Phase 2: Vérification (CONSERVÉE)
     const { validEvents } = await verifyEventBatchWithGemini(events);
     if (validEvents.length === 0) {
         console.log("❌ [GEMINI] Aucun événement validé");
@@ -1236,8 +1575,10 @@ async function processBatchHybrid(startYear, endYear, batchSize, batchNumber) {
     for (const event of validEvents) {
         const result = await processEventWithHybridStrategy(event);
         if (result) {
+            // NOUVEAU : Assurer que le niveau de difficulté est préservé
+            result.niveau_difficulte = event.difficultyLevel || result.niveau_difficulte;
             completedEvents.push(result);
-            console.log(`      ✅ [HYBRID] "${event.titre}" traité avec succès`);
+            console.log(`      ✅ [HYBRID] "${event.titre}" traité avec succès (Niveau ${result.niveau_difficulte})`);
             // CONSERVATION: Log de confirmation de sauvegarde des données IA
             if (result.validation_score) {
                 console.log(`      🤖 [HYBRID] Validation IA: ${result.validation_score}/10 sauvegardée en base`);
@@ -1249,7 +1590,25 @@ async function processBatchHybrid(startYear, endYear, batchSize, batchNumber) {
         await new Promise(resolve => setTimeout(resolve, 1500));
     }
     
+    // Statistiques finales du lot avec niveaux
     console.log(`\n   📊 [HYBRID] Bilan lot ${batchNumber}: ${completedEvents.length}/${validEvents.length} réussis`);
+    
+    const finalDistribution = {};
+    for (let i = 1; i <= 7; i++) finalDistribution[i] = 0;
+    completedEvents.forEach(event => {
+        if (event.niveau_difficulte >= 1 && event.niveau_difficulte <= 7) {
+            finalDistribution[event.niveau_difficulte]++;
+        }
+    });
+    
+    console.log(`   📊 Répartition finale du lot:`);
+    Object.entries(finalDistribution).forEach(([level, count]) => {
+        if (count > 0) {
+            const expected = batchDistribution[level] || 0;
+            const status = count === expected ? '✅' : (count > expected ? '⬆️' : '⬇️');
+            console.log(`      Niveau ${level}: ${count}/${expected} ${status}`);
+        }
+    });
     
     // CONSERVATION: Statistiques de validation IA pour le lot
     const validationStats = completedEvents.filter(e => e.validation_score).length;
@@ -1264,22 +1623,24 @@ async function processBatchHybrid(startYear, endYear, batchSize, batchNumber) {
 }
 
 // ==============================================================================
-// SCRIPT PRINCIPAL OPTIMAL (CONSERVATION + GEMINI)
+// SCRIPT PRINCIPAL OPTIMAL AVEC NIVEAUX (CONSERVATION + GEMINI)
 // ==============================================================================
 
-async function main() {
-    console.log("\n🚀 === SAYON GEMINI VERSION COMPLÈTE - ÉCONOMIES 90%+ ===");
-    console.log("🎯 Configuration IA GEMINI:");
+async function mainWithLevels() {
+    console.log("\n🚀 === SAYON GEMINI VERSION COMPLÈTE - GESTION NIVEAUX PAR POURCENTAGES ===");
+    console.log("🎯 Configuration IA GEMINI + Répartition intelligente des niveaux:");
     console.log("   🧠 Gemini 2.0 Flash: Génération + Vérification + Enrichissement + Prompts");
     console.log("   👁️ Gemini 2.0 Flash Vision: Validation images");
     console.log("   🖼️ Flux-schnell: Génération images (CONSERVÉ)");
+    console.log("   📊 NOUVEAU: Gestion des niveaux de difficulté par pourcentages");
     console.log("📊 Objectifs:");
     console.log("   📈 Taux de réussite: 36% → 70-90% (+200-300%)");
     console.log("   💰 Réduction coûts: 90-95% vs Claude/GPT");
     console.log("   ⏱️ Temps optimisé: Moins de retry, plus d'efficacité");
     console.log("   🎯 Qualité maintenue: 8-9/10");
     console.log("   🤖 CONSERVÉ: Sauvegarde automatique validation IA en base");
-    console.log("   🚫 NOUVEAU: Liste COMPLÈTE événements période (anti-doublons renforcé)");
+    console.log("   🚫 CONSERVÉ: Liste COMPLÈTE événements période (anti-doublons renforcé)");
+    console.log("   🆕 NOUVEAU: Équilibrage parfait des niveaux de difficulté");
     
     console.log("\n🎯 FONCTIONNALITÉS CONSERVÉES + AMÉLIORÉES:");
     console.log("   ✅ 1. Validation intelligente (score min: 4, texte d'époque toléré)");
@@ -1293,8 +1654,10 @@ async function main() {
     console.log("   ✅ 9. Gestion erreurs complète (continuation forcée)");
     console.log("   ✅ 10. Diagnostic intelligent (identification des blocages)");
     console.log("   ✅ 11. Sauvegarde validation IA (score, explication, analyse détaillée)");
-    console.log("   🆕 12. LISTE COMPLÈTE événements période (VOTRE MODIFICATION)");
+    console.log("   ✅ 12. Liste COMPLÈTE événements période (anti-doublons renforcé)");
     console.log("   🆕 13. ÉCONOMIES 90-95% avec Gemini 2.0 Flash");
+    console.log("   🆕 14. GESTION NIVEAUX par pourcentages avec presets intelligents");
+    console.log("   🆕 15. DESCRIPTIONS NIVEAUX renforcées avec exemples concrets pour Gemini");
     
     // CONSERVATION: Vérification APIs
     console.log("\n🔧 === VÉRIFICATION DES APIS ===");
@@ -1316,13 +1679,24 @@ async function main() {
     const endYear = parseInt(await askQuestion('📅 Année de FIN : '));
     const targetCount = parseInt(await askQuestion('🎯 Nombre d\'événements : '));
     
+    // NOUVEAU: Choix de la répartition des niveaux
+    const globalDistribution = await askDistributionChoice();
+    
+    console.log("\n📊 === RÉPARTITION SÉLECTIONNÉE ===");
+    Object.entries(globalDistribution).forEach(([level, percentage]) => {
+        if (percentage > 0) {
+            const estimatedCount = Math.round((targetCount * percentage) / 100);
+            console.log(`   Niveau ${level}: ${percentage}% (~${estimatedCount} événements)`);
+        }
+    });
+    
     const loadResult = await loadExistingTitles(startYear, endYear);
     
     console.log(`\n🚫 === PROTECTION ANTI-DOUBLONS RENFORCÉE ===`);
     console.log(`📊 Total événements en base: ${existingNormalizedTitles.size}`);
     console.log(`🎯 Période ciblée: ${startYear}-${endYear}`);
     console.log(`⚠️ Défi: ${loadResult.periodEvents.length} événements déjà présents dans cette période`);
-    console.log(`🆕 NOUVEAU: TOUS les ${loadResult.periodEvents.length} événements seront listés (au lieu de 15)`);
+    console.log(`🆕 CONSERVÉ: TOUS les ${loadResult.periodEvents.length} événements seront listés (au lieu de 15)`);
     
     if (loadResult.periodEvents.length > targetCount) {
         console.log(`🔥 PÉRIODE TRÈS COUVERTE: ${loadResult.periodEvents.length} existants vs ${targetCount} demandés`);
@@ -1344,6 +1718,8 @@ async function main() {
     const startTime = Date.now();
     let totalValidationCount = 0;
     let totalValidationScoreSum = 0;
+    let globalLevelStats = {};
+    for (let i = 1; i <= 7; i++) globalLevelStats[i] = 0;
     
     while (createdCount < targetCount && batchNumber < 75) { // CONSERVATION: Limite augmentée
         batchNumber++;
@@ -1351,9 +1727,16 @@ async function main() {
         const currentBatchSize = Math.min(BATCH_SIZE, remainingEvents);
         
         try {
-            console.log(`\n🚀 [GEMINI] Début lot ${batchNumber} avec stratégie Gemini optimale...`);
-            const completedEvents = await processBatchHybrid(startYear, endYear, currentBatchSize, batchNumber);
+            console.log(`\n🚀 [GEMINI] Début lot ${batchNumber} avec niveaux ciblés...`);
+            const completedEvents = await processBatchHybridWithLevels(startYear, endYear, currentBatchSize, batchNumber, globalDistribution);
             createdCount += completedEvents.length;
+            
+            // Mise à jour des statistiques de niveaux
+            completedEvents.forEach(event => {
+                if (event.niveau_difficulte >= 1 && event.niveau_difficulte <= 7) {
+                    globalLevelStats[event.niveau_difficulte]++;
+                }
+            });
             
             // CONSERVATION: Statistiques de validation IA globales
             const batchValidations = completedEvents.filter(e => e.validation_score);
@@ -1365,7 +1748,7 @@ async function main() {
             const lotSuccessRate = ((createdCount / (batchNumber * BATCH_SIZE)) * 100).toFixed(1);
             const realSuccessRate = ((createdCount / targetCount) * 100).toFixed(1);
             
-            console.log(`\n📊 BILAN LOT ${batchNumber} GEMINI OPTIMAL:`);
+            console.log(`\n📊 BILAN LOT ${batchNumber} GEMINI AVEC NIVEAUX:`);
             console.log(`   ✅ Créés: ${completedEvents.length}/${currentBatchSize}`);
             console.log(`   📈 Total: ${createdCount}/${targetCount} (${realSuccessRate}% de l'objectif)`);
             console.log(`   🎯 Taux de réussite lot: ${lotSuccessRate}%`);
@@ -1373,6 +1756,17 @@ async function main() {
             console.log(`   💰 Économies Gemini: 90-95%`);
             console.log(`   🤖 Stratégie: Gemini→Gemini→Flux→Gemini-Vision`);
             console.log(`   🎯 Qualité maintenue: 8-9/10 avec validation intelligente`);
+            
+            // Statistiques de niveaux globales
+            console.log(`   📊 Répartition niveaux actuelle:`);
+            Object.entries(globalLevelStats).forEach(([level, count]) => {
+                if (count > 0) {
+                    const percentage = ((count / createdCount) * 100).toFixed(1);
+                    const target = globalDistribution[level];
+                    const status = Math.abs(percentage - target) <= 5 ? '✅' : '📊';
+                    console.log(`      Niveau ${level}: ${count} (${percentage}% vs ${target}% ciblé) ${status}`);
+                }
+            });
             
             // CONSERVATION: Stats validation IA
             if (batchValidations.length > 0) {
@@ -1398,7 +1792,7 @@ async function main() {
     const realFinalSuccessRate = ((createdCount / targetCount) * 100).toFixed(1);
     const globalAvgValidationScore = totalValidationCount > 0 ? (totalValidationScoreSum / totalValidationCount).toFixed(1) : 'N/A';
     
-    console.log(`\n🎉 === TRAITEMENT GEMINI OPTIMAL TERMINÉ ===`);
+    console.log(`\n🎉 === TRAITEMENT GEMINI AVEC NIVEAUX TERMINÉ ===`);
     console.log(`✅ Événements créés: ${createdCount}/${targetCount} (${realFinalSuccessRate}% de l'objectif)`);
     console.log(`📦 Lots traités: ${batchNumber}`);
     console.log(`🎯 Taux de réussite par lot: ${finalLotSuccessRate}%`);
@@ -1409,9 +1803,23 @@ async function main() {
     console.log(`🤖 Stratégie Gemini: 100% Gemini 2.0 Flash + Flux-schnell`);
     console.log(`🎯 Qualité: Précision Gemini + Économie maximale + Validation intelligente`);
     console.log(`🆕 Anti-doublons: Liste COMPLÈTE ${loadResult.periodEvents.length} événements période`);
+    console.log(`🆕 Niveaux: Gestion intelligente par pourcentages`);
+    
+    // Bilan final des niveaux
+    console.log(`\n📊 === BILAN FINAL RÉPARTITION NIVEAUX ===`);
+    Object.entries(globalLevelStats).forEach(([level, count]) => {
+        if (count > 0) {
+            const actualPercentage = ((count / createdCount) * 100).toFixed(1);
+            const targetPercentage = globalDistribution[level];
+            const difference = (actualPercentage - targetPercentage).toFixed(1);
+            const status = Math.abs(difference) <= 5 ? '✅ OBJECTIF ATTEINT' : 
+                          difference > 0 ? `⬆️ +${difference}%` : `⬇️ ${difference}%`;
+            console.log(`   Niveau ${level}: ${count} événements (${actualPercentage}% vs ${targetPercentage}% ciblé) ${status}`);
+        }
+    });
     
     // CONSERVATION: Stats finales validation IA
-    console.log(`🤖 Validation IA globale: ${totalValidationCount}/${createdCount} événements analysés (${((totalValidationCount/createdCount)*100).toFixed(1)}%)`);
+    console.log(`\n🤖 Validation IA globale: ${totalValidationCount}/${createdCount} événements analysés (${((totalValidationCount/createdCount)*100).toFixed(1)}%)`);
     if (totalValidationCount > 0) {
         console.log(`📊 Score moyen validation IA: ${globalAvgValidationScore}/10`);
         console.log(`💾 Données IA sauvegardées en base pour utilisation dans l'interface de validation`);
@@ -1424,11 +1832,21 @@ async function main() {
         console.log(`   • Essayez une période moins couverte ou augmentez la diversité géographique`);
         console.log(`   • Vérifiez les logs pour identifier les blocages principaux`);
         console.log(`   • Réessayez avec une période différente pour de meilleurs résultats`);
+        console.log(`   • Ajustez la répartition des niveaux selon les besoins`);
     } else {
-        console.log(`\n🎊 EXCELLENT RÉSULTAT ! Taux > 60% atteint avec économies 90%+`);
+        console.log(`\n🎊 EXCELLENT RÉSULTAT ! Taux > 60% atteint avec économies 90%+ ET niveaux équilibrés`);
         if (totalValidationCount > 0) {
             console.log(`🤖 Bonus: ${totalValidationCount} événements avec validation IA complète sauvegardée`);
         }
+        
+        // Bilan des niveaux réussis
+        const successfulLevels = Object.entries(globalLevelStats).filter(([level, count]) => {
+            const actualPercentage = (count / createdCount) * 100;
+            const targetPercentage = globalDistribution[level];
+            return Math.abs(actualPercentage - targetPercentage) <= 5;
+        }).length;
+        
+        console.log(`🎯 Bonus Niveaux: ${successfulLevels}/${Object.keys(globalDistribution).filter(k => globalDistribution[k] > 0).length} niveaux dans la cible (±5%)`);
     }
     
     rl.close();
@@ -1439,10 +1857,10 @@ function askQuestion(query) {
 }
 
 // ==============================================================================
-// LANCEMENT DU SCRIPT
+// LANCEMENT DU SCRIPT AVEC GESTION NIVEAUX
 // ==============================================================================
 
-main().catch(error => { 
+mainWithLevels().catch(error => { 
     console.error("\n💥 [GEMINI] Erreur fatale:", error); 
     rl.close(); 
 });

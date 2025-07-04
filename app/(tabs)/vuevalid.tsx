@@ -30,6 +30,10 @@ interface ValidationEvent {
   needs_image_change: boolean;
   needs_title_change: boolean;
   prompt_flux?: string;
+  // Nouvelles colonnes pour la validation IA
+  validation_score?: number;
+  validation_explanation?: string;
+  validation_detailed_analysis?: any;
 }
 
 interface ValidationStats {
@@ -54,107 +58,26 @@ interface PromptGenerationState {
 // COMPOSANT D'ÉVALUATION IA DE L'IMAGE
 // ==============================================================================
 
-interface ImageEvaluation {
-  score: number;
-  explanation: string;
-  isLoading: boolean;
-  error: string | null;
-}
-
 function ImageEvaluator({ 
-  titre, 
-  year, 
-  currentImageUrl 
+  currentEvent
 }: {
-  titre: string;
-  year: number;
-  currentImageUrl: string;
+  currentEvent: ValidationEvent;
 }) {
-  const [evaluation, setEvaluation] = useState<ImageEvaluation>({
-    score: 0,
-    explanation: '',
-    isLoading: false,
-    error: null
-  });
+  // Utiliser les données de validation stockées en base
+  const score = currentEvent.validation_score || 0;
+  const explanation = currentEvent.validation_explanation || 'Aucune évaluation IA disponible';
+  const hasValidation = currentEvent.validation_score !== null;
 
-  // Évaluer l'image au chargement
-  useEffect(() => {
-    if (currentImageUrl) {
-      evaluateImage();
-    }
-  }, [currentImageUrl, titre, year]);
-
-  const evaluateImage = async () => {
-    setEvaluation(prev => ({ ...prev, isLoading: true, error: null }));
-
-    try {
-      console.log(`🔍 [UI] Démarrage évaluation IA pour "${titre}" (${year})`);
-      console.log(`🖼️ [UI] URL image: ${currentImageUrl.substring(0, 100)}...`);
-
-      const response = await fetch('/api/validation', {
-        method: 'POST',
-        headers: { 'Content-Type': 'application/json' },
-        body: JSON.stringify({ 
-          action: 'evaluate',
-          imageUrl: currentImageUrl,
-          titre,
-          year
-        })
-      });
-
-      if (!response.ok) {
-        const errorData = await response.json();
-        throw new Error(errorData.error || `HTTP ${response.status}`);
-      }
-      
-      const data = await response.json();
-      
-      console.log(`✅ [UI] Évaluation reçue: ${data.score}/10 - ${data.isValid ? 'VALIDÉE' : 'REJETÉE'}`);
-      console.log(`📝 [UI] Explication: "${data.explanation}"`);
-      
-      // Utiliser les vraies données de l'API GPT-4o-mini
-      setEvaluation({
-        score: data.score,
-        explanation: data.explanation,
-        isLoading: false,
-        error: null
-      });
-
-      // Log des détails de validation pour debug
-      if (data.detailedAnalysis) {
-        console.log(`📊 [UI] Analyse détaillée:`, {
-          texteForbidden: data.detailedAnalysis.hasForbiddenText,
-          texteAcceptable: data.detailedAnalysis.hasAcceptableText,
-          representsEvent: data.detailedAnalysis.representsEvent,
-          wings: data.detailedAnalysis.hasWingsOrSupernatural,
-          modern: data.detailedAnalysis.hasModernObjects,
-          anatomy: data.detailedAnalysis.anatomyRealistic,
-          clothing: data.detailedAnalysis.periodClothing,
-          historical: data.detailedAnalysis.historicalAccuracy
-        });
-      }
-
-    } catch (error: any) {
-      console.error(`❌ [UI] Erreur évaluation:`, error.message);
-      
-      setEvaluation({
-        score: 0,
-        explanation: `Erreur de validation: ${error.message}`,
-        isLoading: false,
-        error: error.message
-      });
-    }
-  };
-
-  if (!currentImageUrl) return null;
+  if (!currentEvent.illustration_url) return null;
 
   const getScoreColor = (score: number) => {
     if (score >= 8) return { bg: '#dcfce7', text: '#15803d', border: '#86efac' };
     if (score >= 6) return { bg: '#fef3c7', text: '#a16207', border: '#fcd34d' };
-    return { bg: '#fef2f2', text: '#dc2626', border: '#fca5a5' };
+    if (score >= 1) return { bg: '#fef2f2', text: '#dc2626', border: '#fca5a5' };
+    return { bg: '#f1f5f9', text: '#64748b', border: '#cbd5e1' }; // Pas d'évaluation
   };
 
-  const scoreColors = getScoreColor(evaluation.score);
+  const scoreColors = getScoreColor(score);
 
   return (
     <View style={{ 
@@ -168,40 +91,34 @@ function ImageEvaluator({
       <View style={{ flexDirection: 'row', alignItems: 'center', justifyContent: 'space-between' }}>
         <View style={{ flexDirection: 'row', alignItems: 'center' }}>
           <MaterialIcons 
-            name={evaluation.score >= 8 ? "check-circle" : evaluation.score >= 6 ? "info" : "warning"} 
+            name={!hasValidation ? "help" : score >= 8 ? "check-circle" : score >= 6 ? "info" : "warning"} 
             size={20} 
             color={scoreColors.text} 
           />
           <Text style={{ marginLeft: 8, fontWeight: '600', color: scoreColors.text }}>
-            Évaluation IA
+            {hasValidation ? 'Évaluation IA (sayon2.mjs)' : 'Pas d\'évaluation IA'}
           </Text>
         </View>
         
-        {evaluation.isLoading ? (
-          <MaterialIcons name="hourglass-empty" size={20} color={scoreColors.text} />
-        ) : (
-          <View style={{ flexDirection: 'row', alignItems: 'center' }}>
-            <Text style={{ fontSize: 18, fontWeight: 'bold', color: scoreColors.text }}>
-              {evaluation.score}
-            </Text>
-            <Text style={{ fontSize: 14, color: scoreColors.text }}>/10</Text>
-          </View>
-        )}
+        <View style={{ flexDirection: 'row', alignItems: 'center' }}>
+          <Text style={{ fontSize: 18, fontWeight: 'bold', color: scoreColors.text }}>
+            {hasValidation ? score : '?'}
+          </Text>
+          <Text style={{ fontSize: 14, color: scoreColors.text }}>/10</Text>
+        </View>
       </View>
       
-      {evaluation.explanation && (
-        <Text style={{ 
-          fontSize: 14, 
-          color: scoreColors.text, 
-          marginTop: 8
-        }}>
-          {evaluation.explanation}
-        </Text>
-      )}
+      <Text style={{ 
+        fontSize: 14, 
+        color: scoreColors.text, 
+        marginTop: 8
+      }}>
+        {explanation}
+      </Text>
       
-      {evaluation.error && (
+      {hasValidation && currentEvent.validation_detailed_analysis && (
         <Text style={{ fontSize: 12, color: scoreColors.text, marginTop: 4, opacity: 0.8 }}>
-          ⚠️ {evaluation.error}
+          📊 Validation automatique lors de la génération
         </Text>
       )}
     </View>
@@ -239,9 +156,8 @@ function PromptGenerator({
     setState(prev => ({ ...prev, isGenerating: true, error: null }));
 
     try {
-      // Simuler l'appel API pour générer le prompt
-      // En réalité, cela devrait appeler votre API
-      const response = await fetch('/api/validation', {
+      // Pointer vers le serveur Express avec IP locale
+      const response = await fetch('http://192.168.1.18:3001/api/validation', {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify({ 
@@ -284,7 +200,7 @@ function PromptGenerator({
     setState(prev => ({ ...prev, isSending: true, error: null }));
 
     try {
-      const response = await fetch('/api/validation', {
+      const response = await fetch('http://192.168.1.18:3001/api/validation', {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify({ 
@@ -902,9 +818,7 @@ export default function VueValid() {
             <View style={{ marginBottom: 32 }}>
               {/* Évaluation IA de l'image */}
               <ImageEvaluator
-                titre={currentEvent.titre}
-                year={parseInt(currentEvent.date_formatee)}
-                currentImageUrl={currentEvent.illustration_url}
+                currentEvent={currentEvent}
               />
               
               <View style={{ aspectRatio: 16/9, backgroundColor: '#f3f4f6', borderRadius: 8, overflow: 'hidden', marginBottom: 16 }}>
