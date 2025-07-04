@@ -1,7 +1,7 @@
 {
   "name": "kiko",
   "main": "expo-router/entry",
-  "version": "1.5.1",
+  "version": "1.5.2",
   "scripts": {
     "start": "expo start",
     "reset-project": "node ./scripts/reset-project.js",
@@ -13,7 +13,8 @@
     "postinstall": "patch-package",
     "check-exports": "find . -name '*.tsx' -exec grep -l 'export' {} \\; | xargs -I {} sh -c 'echo \"Checking {}\"; grep \"export\" {}'",
     "android:fix-manifest": "node scripts/fix-manifest.js",
-    "prebuild:android": "expo prebuild --platform android && npm run android:fix-manifest",
+    "android:fix-kotlin": "node scripts/fix-kotlin-version.js",
+    "prebuild:android": "npx expo prebuild --platform android --clear && npm run android:fix-manifest && npm run android:fix-kotlin",
     "build:android:production": "npm run prebuild:android && eas build --platform android --profile production --clear-cache"
   },
   "jest": {
