@@ -37,7 +37,7 @@ export default ({ config }) => ({
       "com.google.android.gms.permission.AD_ID",
       "android.permission.ACCESS_ADSERVICES_AD_ID"
     ],
-    versionCode: 10104,
+    versionCode: 10105,
     compileSdkVersion: 35,
     targetSdkVersion: 35,
     googleServicesFile: process.env.GOOGLE_SERVICES_JSON || "./google-services.json"
