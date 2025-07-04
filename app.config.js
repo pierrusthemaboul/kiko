@@ -33,9 +33,11 @@ export default ({ config }) => ({
       "android.permission.READ_EXTERNAL_STORAGE",
       "android.permission.RECORD_AUDIO",
       "android.permission.SYSTEM_ALERT_WINDOW",
-      "android.permission.WRITE_EXTERNAL_STORAGE"
+      "android.permission.WRITE_EXTERNAL_STORAGE",
+      // AJOUT IMPORTANT : Permission AD_ID
+      "com.google.android.gms.permission.AD_ID"
     ],
-    versionCode: 10100,
+    versionCode: 10101,
     compileSdkVersion: 35,
     targetSdkVersion: 35,
     googleServicesFile: process.env.GOOGLE_SERVICES_JSON || "./google-services.json"
@@ -70,8 +72,7 @@ export default ({ config }) => ({
     ],
     "@react-native-firebase/app",
     
-    // ✅ CORRECTION FINALE : Notre plugin est déplacé ici, à la toute fin de la liste.
-    // Cela garantit qu'il s'exécute en dernier et a la priorité pour modifier le manifeste.
+    // Notre plugin custom en dernier pour avoir la priorité
     "./plugins/withAdmobManifest.js" 
   ],
   experiments: {

@@ -11,7 +11,10 @@
     "test": "jest --watchAll",
     "lint": "expo lint",
     "postinstall": "patch-package",
-    "check-exports": "find . -name '*.tsx' -exec grep -l 'export' {} \\; | xargs -I {} sh -c 'echo \"Checking {}\"; grep \"export\" {}'"
+    "check-exports": "find . -name '*.tsx' -exec grep -l 'export' {} \\; | xargs -I {} sh -c 'echo \"Checking {}\"; grep \"export\" {}'",
+    "android:fix-manifest": "node scripts/fix-manifest.js",
+    "prebuild:android": "expo prebuild --platform android && npm run android:fix-manifest",
+    "build:android:production": "npm run prebuild:android && eas build --platform android --profile production --clear-cache"
   },
   "jest": {
     "preset": "jest-expo"
