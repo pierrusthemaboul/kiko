@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ad-services-config>
+    <topics-api>
+        <allow-sdk>true</allow-sdk>
+    </topics-api>
+    <attribution-api>
+        <allow-sdk>true</allow-sdk>
+    </attribution-api>
+    <custom-audiences-api>
+        <allow-sdk>true</allow-sdk>
+    </custom-audiences-api>
+</ad-services-config>

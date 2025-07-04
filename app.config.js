@@ -17,7 +17,7 @@ export default ({ config }) => ({
     ...config.ios,
     supportsTablet: true,
     bundleIdentifier: "com.pierretulle.juno2",
-    buildNumber: "6"
+    buildNumber: "7"
   },
   android: {
     ...config.android,
@@ -37,7 +37,7 @@ export default ({ config }) => ({
       "com.google.android.gms.permission.AD_ID", // Important pour AdMob
       "android.permission.ACCESS_ADSERVICES_AD_ID" // Android 13+
     ],
-    versionCode: 10106, // Incrémenté
+    versionCode: 10107, // Incrémenté
     googleServicesFile: process.env.GOOGLE_SERVICES_JSON || "./google-services.json"
   },
   web: {
@@ -72,6 +72,7 @@ export default ({ config }) => ({
     "@react-native-firebase/app",
     
     // Plugin unique pour gérer AD_ID correctement
+    "./plugins/withKotlinVersion",
     "./plugins/withAdIdPermission"
   ],
   experiments: {
