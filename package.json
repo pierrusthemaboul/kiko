@@ -14,7 +14,7 @@
     "check-exports": "find . -name '*.tsx' -exec grep -l 'export' {} \\; | xargs -I {} sh -c 'echo \"Checking {}\"; grep \"export\" {}'",
     "android:fix-manifest": "node scripts/fix-manifest.js",
     "android:fix-kotlin": "node scripts/fix-kotlin-version.js",
-    "prebuild:android": "npx expo prebuild --platform android --clear && npm run android:fix-manifest && npm run android:fix-kotlin",
+    "prebuild:android": "npx expo prebuild --platform android --clean && npm run android:fix-manifest && npm run android:fix-kotlin",
     "build:android:production": "npm run prebuild:android && eas build --platform android --profile production --clear-cache"
   },
   "jest": {
@@ -75,7 +75,7 @@
     "@babel/core": "^7.25.2",
     "@types/jest": "^29.5.12",
     "@types/react": "~18.3.12",
-    "@types/react-test-renderer": "^18.3.0",
+    "@types.react-test-renderer": "^18.3.0",
     "babel-plugin-module-resolver": "^5.0.2",
     "babel-plugin-transform-remove-console": "^6.9.4",
     "csv-writer": "^1.6.0",
