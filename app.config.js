@@ -36,7 +36,7 @@ export default ({ config }) => ({
       "android.permission.WRITE_EXTERNAL_STORAGE",
       "com.google.android.gms.permission.AD_ID"
     ],
-    versionCode: 10090, // ✅ AUGMENTÉ pour le nouveau build
+    versionCode: 10096, // ✅ AUGMENTÉ pour le nouveau build
     compileSdkVersion: 35, // ✅ AJOUTÉ : Version de compilation
     targetSdkVersion: 35,  // ✅ AJOUTÉ : Version cible (Android 15)
     googleServicesFile: process.env.GOOGLE_SERVICES_JSON || "./google-services.json"

@@ -84,15 +84,15 @@ android {
     ndkVersion rootProject.ext.ndkVersion
 
     buildToolsVersion rootProject.ext.buildToolsVersion
-    compileSdk rootProject.ext.compileSdkVersion
+    compileSdk 35  // ✅ MODIFIÉ : Android 15 (API 35) au lieu de rootProject.ext.compileSdkVersion
 
     namespace 'com.pierretulle.juno2'
     defaultConfig {
         applicationId 'com.pierretulle.juno2'
         minSdkVersion rootProject.ext.minSdkVersion
-        targetSdkVersion rootProject.ext.targetSdkVersion
-        versionCode 10090
-        versionName "1.5.1"
+        targetSdkVersion 35  // ✅ MODIFIÉ : Android 15 (API 35) au lieu de rootProject.ext.targetSdkVersion
+        versionCode 10096    // ✅ MODIFIÉ : Incrémenté de 10095 à 10096
+        versionName "1.5.3"  // ✅ MODIFIÉ : Incrémenté de "1.5.2" à "1.5.3"
     }
     signingConfigs {
         debug {
