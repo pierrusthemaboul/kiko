@@ -91,8 +91,8 @@ android {
         applicationId 'com.pierretulle.juno2'
         minSdkVersion rootProject.ext.minSdkVersion
         targetSdkVersion 35  // ✅ MODIFIÉ : Android 15 (API 35) au lieu de rootProject.ext.targetSdkVersion
-        versionCode 10097    // ✅ MODIFIÉ : Incrémenté de 10095 à 10096
-        versionName "1.5.4"  // ✅ MODIFIÉ : Incrémenté de "1.5.2" à "1.5.3"
+        versionCode 10098    // ✅ MODIFIÉ : Incrémenté de 10095 à 10096
+        versionName "1.5.5"  // ✅ MODIFIÉ : Incrémenté de "1.5.2" à "1.5.3"
     }
     signingConfigs {
         debug {

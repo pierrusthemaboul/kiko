@@ -3,29 +3,23 @@ const { withAndroidManifest, createRunOncePlugin } = require('@expo/config-plugi
 function withAdmobManifest(config) {
   return withAndroidManifest(config, config => {
     const androidManifest = config.modResults;
-    if (
-      androidManifest?.manifest?.application &&
-      androidManifest.manifest.application.length > 0
-    ) {
-      // On prend le premier tag <application>
-      const application = androidManifest.manifest.application[0];
-      // Assurez-vous qu'il y a un tableau meta-data
+    const application = androidManifest?.manifest?.application?.[0];
+    const manifest = androidManifest.manifest;
+
+    // ----- PARTIE 1 : VOTRE CODE EXISTANT (pour la balise meta-data) -----
+    // On ne change rien ici, on s'assure juste qu'il est bien là.
+    if (application) {
       if (!application['meta-data']) {
         application['meta-data'] = [];
       }
-
-      // Vérifier si une entrée pour 'android.adservices.AD_SERVICES_CONFIG' existe déjà
       const existingEntry = application['meta-data'].find(
         meta =>
           meta.$ &&
           meta.$['android:name'] === 'android.adservices.AD_SERVICES_CONFIG'
       );
-
       if (existingEntry) {
-        // Mettre à jour l'entrée existante en ajoutant tools:replace si elle n'existe pas déjà
         existingEntry.$['tools:replace'] = 'android:resource';
       } else {
-        // Ajouter la balise meta-data pour AdMob
         application['meta-data'].push({
           $: {
             'android:name': 'android.adservices.AD_SERVICES_CONFIG',
@@ -35,6 +29,24 @@ function withAdmobManifest(config) {
         });
       }
     }
+
+    // ----- PARTIE 2 : NOUVEAU CODE (pour la permission AD_ID) -----
+    // C'est la partie que nous ajoutons pour résoudre notre problème.
+    if (!Array.isArray(manifest['uses-permission'])) {
+      manifest['uses-permission'] = [];
+    }
+    // On retire une éventuelle ancienne déclaration pour éviter les conflits
+    manifest['uses-permission'] = manifest['uses-permission'].filter(
+      (p) => p.$['android:name'] !== 'com.google.android.gms.permission.AD_ID'
+    );
+    // On ajoute notre permission avec l'instruction pour forcer son inclusion
+    manifest['uses-permission'].push({
+      $: {
+        'android:name': 'com.google.android.gms.permission.AD_ID',
+        'tools:node': 'replace', // L'instruction magique !
+      },
+    });
+
     return config;
   });
 }

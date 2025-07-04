@@ -33,12 +33,12 @@ export default ({ config }) => ({
       "android.permission.READ_EXTERNAL_STORAGE",
       "android.permission.RECORD_AUDIO",
       "android.permission.SYSTEM_ALERT_WINDOW",
-      "android.permission.WRITE_EXTERNAL_STORAGE",
-      "com.google.android.gms.permission.AD_ID"
+      "android.permission.WRITE_EXTERNAL_STORAGE"
+      // La permission AD_ID est maintenant gérée par notre plugin personnalisé pour plus de fiabilité.
     ],
-    versionCode: 10097, // ✅ AUGMENTÉ pour le nouveau build
-    compileSdkVersion: 35, // ✅ AJOUTÉ : Version de compilation
-    targetSdkVersion: 35,  // ✅ AJOUTÉ : Version cible (Android 15)
+    versionCode: 10098,
+    compileSdkVersion: 35,
+    targetSdkVersion: 35,
     googleServicesFile: process.env.GOOGLE_SERVICES_JSON || "./google-services.json"
   },
   web: {
@@ -52,8 +52,8 @@ export default ({ config }) => ({
       {
         android: {
           kotlinVersion: "1.9.25",
-          compileSdkVersion: 35, // ✅ AJOUTÉ : Cohérence avec le config principal
-          targetSdkVersion: 35   // ✅ AJOUTÉ : Cohérence avec le config principal
+          compileSdkVersion: 35,
+          targetSdkVersion: 35
         }
       }
     ],
@@ -69,7 +69,10 @@ export default ({ config }) => ({
         iosAppId: "ca-app-pub-7809209690404525~1711130974"
       }
     ],
-    "@react-native-firebase/app"
+    "@react-native-firebase/app",
+    
+    // ✅ MODIFICATION LA PLUS IMPORTANTE : On ajoute notre plugin ici.
+    "./plugins/withAdmobManifest.js"
   ],
   experiments: {
     typedRoutes: true
