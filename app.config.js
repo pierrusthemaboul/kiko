@@ -27,6 +27,16 @@ export default ({ config }) => {
         backgroundColor: "#FFFFFF"
       },
       package: "com.pierretulle.juno2",
+      navigationBar: {
+        visible: false,
+        backgroundColor: "#020817"
+      },
+      softwareKeyboardLayoutMode: "pan",
+      statusBar: {
+        barStyle: "light-content",
+        backgroundColor: "#020817",
+        translucent: false
+      },
       permissions: [
         "android.permission.INTERNET",
         "android.permission.VIBRATE",
@@ -65,6 +75,19 @@ export default ({ config }) => {
       [
         "expo-splash-screen",
         {}
+      ],
+      [
+        "expo-system-ui",
+        {
+          androidNavigationBar: {
+            visible: false,
+            backgroundColor: "#020817"
+          },
+          androidStatusBar: {
+            barStyle: "light-content",
+            backgroundColor: "#020817"
+          }
+        }
       ],
       [
         "react-native-google-mobile-ads",

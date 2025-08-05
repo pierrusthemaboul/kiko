@@ -445,23 +445,7 @@ export default function HomeScreen() {
               transform: [{ translateY: mainContentAnimation.translateY }]
             }
           ]}>
-            {/* ============================================================ */}
-            {/* ========= AJOUT DU TEXTE DE DÉBOGAGE ICI ========= */}
-            <Text style={{
-              position: 'absolute',
-              top: Platform.OS === 'ios' ? (height > 800 ? 50 : 30) : (StatusBar.currentHeight || 20) + 10, // Ajusté pour la status bar
-              left: 10,
-              color: 'red',
-              fontSize: 12,
-              fontWeight: 'bold',
-              backgroundColor: 'rgba(255,255,255,0.85)',
-              padding: 4,
-              borderRadius: 3,
-              zIndex: 9999 
-            }}>
-              Mode Test Build: {IS_TEST_BUILD ? 'OUI (Forcé)' : 'NON'}
-            </Text>
-            {/* ============================================================ */}
+            
 
             {/* --- Header --- */}
             <View style={styles.headerContainer}>
