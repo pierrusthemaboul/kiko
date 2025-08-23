@@ -1,5 +1,5 @@
 // /home/pierre/sword/kiko/app/_layout.tsx
-// ----- FICHIER CORRIGÉ AVEC LOGIQUE DE REDIRECTION AJUSTÉE -----
+// ----- FICHIER CORRIGÉ AVEC LOGIQUE DE REDIRECTION AJUSTÉE + NAVBAR -----
 
 import React, { useEffect, useState } from 'react';
 import { useRouter, useSegments } from 'expo-router';
@@ -9,6 +9,7 @@ import { useFonts } from 'expo-font';
 import * as Application from 'expo-application';
 import AsyncStorage from '@react-native-async-storage/async-storage';
 import { Platform } from 'react-native';
+import * as SystemUI from 'expo-system-ui';
 
 import { FirebaseAnalytics } from '../lib/firebase';
 import { supabase } from '../lib/supabase/supabaseClients';
@@ -31,6 +32,22 @@ export default function RootLayout() {
     'Montserrat-Medium': require('../assets/fonts/Montserrat-Medium.ttf'),
     'Montserrat-Bold': require('../assets/fonts/Montserrat-Bold.ttf'),
   });
+
+  // --- NOUVEAU: Cacher la barre de navigation Android ---
+  useEffect(() => {
+    const hideNavigationBar = async () => {
+      if (Platform.OS === 'android') {
+        try {
+          console.log('🔧 [NAVBAR] Tentative avec SystemUI...');
+          await SystemUI.setBackgroundColorAsync('#020817');
+          console.log('✅ [NAVBAR] SystemUI background color set');
+        } catch (error) {
+          console.log('❌ [NAVBAR] Erreur SystemUI:', error);
+        }
+      }
+    };
+    hideNavigationBar();
+  }, []);
 
   // --- Initialisation (Firebase, Version Check) ---
   useEffect(() => {
