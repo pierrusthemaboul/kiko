@@ -998,7 +998,7 @@ const styles = StyleSheet.create({
   },
 
   startButton: {
-    backgroundColor: SALMON_THEME.primaryAccent,
+    backgroundColor: '#22C55E',
     borderRadius: 25,
     paddingVertical: 12,
     paddingHorizontal: 35,
