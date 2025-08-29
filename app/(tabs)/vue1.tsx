@@ -190,152 +190,65 @@ export default function Vue1() {
 
           // ✅ RÉCUPÉRATION DES CLASSEMENTS (Top 10 + position du joueur)
           
-          // --- CLASSEMENT QUOTIDIEN ---
-          const todayStart = new Date();
-          todayStart.setHours(0, 0, 0, 0);
-          
-          // Récupérer les meilleurs scores du jour (game_scores)
-          const { data: dailyTopScores } = await supabase
-            .from('game_scores')
-            .select('display_name, score, user_id')
-            .gte('created_at', todayStart.toISOString())
-            .order('score', { ascending: false })
-            .limit(100);
-
-          if (dailyTopScores) {
-            // Trouver le meilleur score du joueur aujourd'hui
-            const userDailyScores = dailyTopScores.filter(score => score.user_id === authUser.id);
-            const userBestDaily = userDailyScores.length > 0 
-              ? Math.max(...userDailyScores.map(s => s.score))
-              : null;
-
-            // Calculer le rang basé sur le meilleur score du joueur
-            let userDailyRank = null;
-            if (userBestDaily !== null) {
-              // Créer un classement unique par utilisateur (meilleur score de chaque utilisateur)
-              const userBestScores = new Map();
-              dailyTopScores.forEach(score => {
-                const current = userBestScores.get(score.user_id);
-                if (!current || score.score > current.score) {
-                  userBestScores.set(score.user_id, score);
-                }
-              });
-              
-              const rankedUsers = Array.from(userBestScores.values()).sort((a, b) => b.score - a.score);
-              userDailyRank = rankedUsers.findIndex(user => user.user_id === authUser.id) + 1;
-              userDailyRank = userDailyRank > 0 ? userDailyRank : null;
-            }
-
+          // --- CLASSEMENT QUOTIDIEN (RPC) ---
+          const { data: dailyTop } = await supabase.rpc('get_daily_top', { limit_n: 100 });
+          if (dailyTop) {
+            const rankedDaily = [...dailyTop].sort((a: any, b: any) => b.score - a.score);
+            const userDailyIndex = rankedDaily.findIndex((u: any) => u.user_id === authUser.id);
+            const userDailyRank = userDailyIndex >= 0 ? userDailyIndex + 1 : null;
             setDailyRank(userDailyRank);
-            
-            // Top 10 pour affichage (meilleur score par utilisateur)
-            const userBestScores = new Map();
-            dailyTopScores.forEach(score => {
-              const current = userBestScores.get(score.user_id);
-              if (!current || score.score > current.score) {
-                userBestScores.set(score.user_id, score);
-              }
-            });
-            
-            const topDailyScores = Array.from(userBestScores.values())
-              .sort((a, b) => b.score - a.score)
-              .slice(0, 10)
-              .map((item, index) => ({
-                name: item.display_name,
-                score: item.score,
-                rank: index + 1,
-                isCurrentUser: item.user_id === authUser.id
-              }));
 
+            const topDailyScores = rankedDaily.slice(0, 10).map((item: any, index: number) => ({
+              name: item.display_name,
+              score: item.score,
+              rank: index + 1,
+              isCurrentUser: item.user_id === authUser.id
+            }));
             setDailyScores(topDailyScores);
-            setTotalPlayers(prev => ({ ...prev, daily: userBestScores.size }));
+            setTotalPlayers(prev => ({ ...prev, daily: rankedDaily.length }));
           } else {
             setDailyScores([]);
             setDailyRank(null);
             setTotalPlayers(prev => ({ ...prev, daily: 0 }));
           }
 
-          // --- CLASSEMENT MENSUEL ---
-          const monthStart = new Date(todayStart.getFullYear(), todayStart.getMonth(), 1);
-          
-          const { data: monthlyTopScores } = await supabase
-            .from('game_scores')
-            .select('display_name, score, user_id')
-            .gte('created_at', monthStart.toISOString())
-            .order('score', { ascending: false })
-            .limit(100);
-
-          if (monthlyTopScores) {
-            // Même logique que pour le quotidien
-            const userMonthlyScores = monthlyTopScores.filter(score => score.user_id === authUser.id);
-            const userBestMonthly = userMonthlyScores.length > 0 
-              ? Math.max(...userMonthlyScores.map(s => s.score))
-              : null;
-
-            let userMonthlyRank = null;
-            if (userBestMonthly !== null) {
-              const userBestScores = new Map();
-              monthlyTopScores.forEach(score => {
-                const current = userBestScores.get(score.user_id);
-                if (!current || score.score > current.score) {
-                  userBestScores.set(score.user_id, score);
-                }
-              });
-              
-              const rankedUsers = Array.from(userBestScores.values()).sort((a, b) => b.score - a.score);
-              userMonthlyRank = rankedUsers.findIndex(user => user.user_id === authUser.id) + 1;
-              userMonthlyRank = userMonthlyRank > 0 ? userMonthlyRank : null;
-            }
-
+          // --- CLASSEMENT MENSUEL (RPC) ---
+          const { data: monthlyTop } = await supabase.rpc('get_monthly_top', { limit_n: 100 });
+          if (monthlyTop) {
+            const rankedMonthly = [...monthlyTop].sort((a: any, b: any) => b.score - a.score);
+            const userMonthlyIndex = rankedMonthly.findIndex((u: any) => u.user_id === authUser.id);
+            const userMonthlyRank = userMonthlyIndex >= 0 ? userMonthlyIndex + 1 : null;
             setMonthlyRank(userMonthlyRank);
-            
-            const userBestScores = new Map();
-            monthlyTopScores.forEach(score => {
-              const current = userBestScores.get(score.user_id);
-              if (!current || score.score > current.score) {
-                userBestScores.set(score.user_id, score);
-              }
-            });
-            
-            const topMonthlyScores = Array.from(userBestScores.values())
-              .sort((a, b) => b.score - a.score)
-              .slice(0, 10)
-              .map((item, index) => ({
-                name: item.display_name,
-                score: item.score,
-                rank: index + 1,
-                isCurrentUser: item.user_id === authUser.id
-              }));
 
+            const topMonthlyScores = rankedMonthly.slice(0, 10).map((item: any, index: number) => ({
+              name: item.display_name,
+              score: item.score,
+              rank: index + 1,
+              isCurrentUser: item.user_id === authUser.id
+            }));
             setMonthlyScores(topMonthlyScores);
-            setTotalPlayers(prev => ({ ...prev, monthly: userBestScores.size }));
+            setTotalPlayers(prev => ({ ...prev, monthly: rankedMonthly.length }));
           } else {
             setMonthlyScores([]);
             setMonthlyRank(null);
             setTotalPlayers(prev => ({ ...prev, monthly: 0 }));
           }
 
-          // --- CLASSEMENT GLOBAL (All-Time) ---
-          const { data: allTimeData, count: allTimeCount } = await supabase
-            .from('profiles')
-            .select('id, display_name, high_score', { count: 'exact' })
-            .not('high_score', 'is', null)
-            .gt('high_score', 0)
-            .order('high_score', { ascending: false })
-            .limit(100);
+          // --- CLASSEMENT GLOBAL (All-Time, RPC) ---
+          const { data: allTimeTop } = await supabase.rpc('get_all_time_top', { limit_n: 100 });
+          if (allTimeTop) {
+            const rankedAllTime = [...allTimeTop].sort((a: any, b: any) => b.score - a.score);
+            const userAllTimeIndex = rankedAllTime.findIndex((u: any) => u.user_id === authUser.id);
+            const userAllTimeRank = userAllTimeIndex >= 0 ? userAllTimeIndex + 1 : null;
+            setAllTimeRank(userAllTimeRank);
 
-          if (allTimeData) {
-            // Trouver le rang du joueur dans le classement global
-            const currentUserAllTimeRank = allTimeData.findIndex(item => item.id === authUser.id) + 1;
-            setAllTimeRank(currentUserAllTimeRank > 0 ? currentUserAllTimeRank : null);
-
-            setAllTimeScores(allTimeData.slice(0, 10).map((item, index) => ({
+            setAllTimeScores(rankedAllTime.slice(0, 10).map((item: any, index: number) => ({
               name: item.display_name,
-              score: item.high_score,
+              score: item.score,
               rank: index + 1,
-              isCurrentUser: item.id === authUser.id
+              isCurrentUser: item.user_id === authUser.id
             })));
-            setTotalPlayers(prev => ({ ...prev, allTime: allTimeCount || 0 }));
+            setTotalPlayers(prev => ({ ...prev, allTime: rankedAllTime.length }));
           } else {
             setAllTimeScores([]);
             setAllTimeRank(null);

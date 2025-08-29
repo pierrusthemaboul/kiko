@@ -2,6 +2,7 @@
 // ----- VERSION COMPLÈTE AVEC PLUS DE LOGS DANS INITGAME ET USEEFFECT -----
 
 import { useState, useCallback, useEffect, useRef } from 'react';
+import AsyncStorage from '@react-native-async-storage/async-storage';
 import { supabase } from '../../lib/supabase/supabaseClients'; // Ajuste le chemin si nécessaire
 import { FirebaseAnalytics } from '../../lib/firebase'; // Ajuste le chemin si nécessaire
 import { Event, User, MAX_LIVES, LevelHistory } from '../types'; // Ajuste le chemin si nécessaire
@@ -145,12 +146,38 @@ export function useInitGame() {
       const initialConfig = LEVEL_CONFIGS[1];
       if (!initialConfig) throw new Error('Configuration du niveau 1 manquante');
 
-      console.log(`[InitGame - Instance ${currentInstanceId}] Fetching ALL events...`);
-      const { data: allEventsData, error: eventsError } = await supabase
-        .from('evenements')
-        .select('*');
+      console.log(`[InitGame - Instance ${currentInstanceId}] Loading events (cache first)...`);
 
-      if (eventsError) throw eventsError;
+      const CACHE_KEY = 'events_cache_v1';
+      const TTL_MS = 24 * 60 * 60 * 1000; // 24h
+      let allEventsData: any[] | null = null;
+
+      try {
+        const cachedRaw = await AsyncStorage.getItem(CACHE_KEY);
+        if (cachedRaw) {
+          const cached = JSON.parse(cachedRaw);
+          if (cached && cached.ts && Array.isArray(cached.data) && (Date.now() - cached.ts) < TTL_MS) {
+            console.log(`[InitGame - Instance ${currentInstanceId}] Using cached events (${cached.data.length})`);
+            allEventsData = cached.data;
+          }
+        }
+      } catch (e) {
+        console.warn('[InitGame] Failed reading cache:', e);
+      }
+
+      if (!allEventsData) {
+        console.log(`[InitGame - Instance ${currentInstanceId}] Cache miss/expired. Fetching events from Supabase...`);
+        const { data, error: eventsError } = await supabase
+          .from('evenements')
+          .select('id, titre, date, date_formatee, niveau_difficulte, types_evenement, illustration_url, frequency_score');
+        if (eventsError) throw eventsError;
+        allEventsData = data || [];
+        try {
+          await AsyncStorage.setItem(CACHE_KEY, JSON.stringify({ ts: Date.now(), data: allEventsData }));
+        } catch (e) {
+          console.warn('[InitGame] Failed writing cache:', e);
+        }
+      }
       if (!allEventsData?.length) throw new Error('Aucun événement disponible');
 
       const validEvents = allEventsData.filter((event): event is Event =>

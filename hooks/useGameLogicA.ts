@@ -246,13 +246,8 @@ export function useGameLogicA(initialEvent?: string) {
         setTimeLeft(20);
         // console.log(`[useGameLogicA] updateGameState completed. isImageLoaded: false, isCountdownActive: false, timeLeft: 20`);
 
-        await supabase
-          .from("evenements")
-          .update({
-            frequency_score: ((selectedEvent as any).frequency_score || 0) + 1,
-            last_used: new Date().toISOString(),
-          })
-          .eq("id", selectedEvent.id);
+        // Atomic increment via RPC to avoid lost updates
+        await supabase.rpc('increment_event_usage', { event_id: selectedEvent.id });
 
         if (selectedEvent && isAntiqueEvent(selectedEvent)) {
           updateAntiqueCount(selectedEvent);
@@ -758,35 +753,18 @@ export function useGameLogicA(initialEvent?: string) {
       const today = new Date().toISOString().split('T')[0];
       const firstDayOfMonth = `${today.substring(0, 7)}-01`;
 
-      // console.log("[useGameLogicA] Fetching leaderboards...");
+      // console.log("[useGameLogicA] Fetching leaderboards via RPC...");
       const [dailyRes, monthlyRes, allTimeRes] = await Promise.all([
-        supabase
-          .from('game_scores')
-          .select('display_name, score')
-          .gte('created_at', `${today}T00:00:00.000Z`)
-          .order('score', { ascending: false })
-          .limit(5),
-        supabase
-          .from('game_scores')
-          .select('display_name, score')
-          .gte('created_at', `${firstDayOfMonth}T00:00:00.000Z`)
-          .order('score', { ascending: false })
-          .limit(5),
-        supabase
-          .from('profiles')
-          .select('display_name, high_score')
-          .not('high_score', 'is', null)
-          .order('high_score', { ascending: false })
-          .limit(5),
+        supabase.rpc('get_daily_top', { limit_n: 5 }),
+        supabase.rpc('get_monthly_top', { limit_n: 5 }),
+        supabase.rpc('get_all_time_top', { limit_n: 5 }),
       ]);
 
-      if (dailyRes.error) FirebaseAnalytics.error('leaderboard_fetch_error', `Daily: ${dailyRes.error.message}`, 'endGame');
-      if (monthlyRes.error) FirebaseAnalytics.error('leaderboard_fetch_error', `Monthly: ${monthlyRes.error.message}`, 'endGame');
-      if (allTimeRes.error) FirebaseAnalytics.error('leaderboard_fetch_error', `AllTime: ${allTimeRes.error.message}`, 'endGame');
+      if ((dailyRes as any).error) FirebaseAnalytics.error('leaderboard_fetch_error', `Daily: ${(dailyRes as any).error.message}`, 'endGame');
+      if ((monthlyRes as any).error) FirebaseAnalytics.error('leaderboard_fetch_error', `Monthly: ${(monthlyRes as any).error.message}`, 'endGame');
+      if ((allTimeRes as any).error) FirebaseAnalytics.error('leaderboard_fetch_error', `AllTime: ${(allTimeRes as any).error.message}`, 'endGame');
 
-      // console.log("[useGameLogicA] Leaderboards fetched:", { daily: dailyRes.data?.length, monthly: monthlyRes.data?.length, allTime: allTimeRes.data?.length });
-
-      setScoresAndShow(dailyRes.data || [], monthlyRes.data || [], allTimeRes.data || []);
+      setScoresAndShow((dailyRes as any).data || [], (monthlyRes as any).data || [], (allTimeRes as any).data || []);
 
        if (pendingAdDisplay === 'gameOver') {
           showGameOverInterstitial(); // Show ad now after fetching scores

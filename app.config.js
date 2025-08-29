@@ -1,4 +1,17 @@
+// Load environment variables from .env for local builds
+try { require('dotenv').config(); } catch {}
+
 export default ({ config }) => {
+  const supabaseUrl = process.env.EXPO_PUBLIC_SUPABASE_URL || process.env.SUPABASE_URL || '';
+  const supabaseKey = process.env.EXPO_PUBLIC_SUPABASE_ANON_KEY || process.env.SUPABASE_ANON_KEY || '';
+  if (!supabaseUrl || !supabaseKey) {
+    // Build-time visibility only (does not crash the build)
+    // eslint-disable-next-line no-console
+    console.warn('[app.config] Missing Supabase env: ', {
+      hasUrl: !!supabaseUrl,
+      hasAnonKey: !!supabaseKey,
+    });
+  }
   return {
     ...config,
     name: "Quandi",
@@ -168,6 +181,9 @@ export default ({ config }) => {
       eas: {
         projectId: "3cbda57c-1ec1-4949-af06-9e933dbc0050"
       },
+      // Runtime config consumed by the mobile app (anon only)
+      supabaseUrl,
+      supabaseKey,
       APP_VARIANT: process.env.EXPO_PUBLIC_APP_VARIANT
     }
   };

@@ -425,18 +425,7 @@ export function useEventSelector({
     setEventCount(prev => prev + 1);
     await updateStateCallback(selectedEvent);
 
-    // Mise à jour Supabase (non-bloquante)
-    const currentFrequency = (selectedEvent as any).frequency_score || 0;
-    supabase
-      .from("evenements")
-      .update({ 
-        frequency_score: currentFrequency + 1, 
-        last_used: new Date().toISOString() 
-      })
-      .eq("id", selectedEvent.id)
-      .then(({ error }) => {
-        if (error) console.warn('[useEventSelector] Supabase update error:', error.message);
-      });
+    // Mise à jour Supabase déplacée côté RPC atomique dans useGameLogicA.updateGameState
 
     return selectedEvent;
 
