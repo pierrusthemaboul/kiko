@@ -1,30 +1,13 @@
-import 'react-native-url-polyfill/auto';
-import AsyncStorage from '@react-native-async-storage/async-storage';
-import { createClient } from '@supabase/supabase-js';
-import Constants from 'expo-constants';
-import { Database } from './database.types';
+// lib/supabase/supabaseClients.ts
+import Constants from "expo-constants";
+import { createClient } from "@supabase/supabase-js";
 
-const extra = (Constants as any)?.expoConfig?.extra ?? (Constants as any)?.manifest?.extra ?? {};
+const extra: any = Constants.expoConfig?.extra ?? Constants.manifest?.extra ?? {};
 const supabaseUrl: string | undefined = extra.supabaseUrl;
 const supabaseKey: string | undefined = extra.supabaseKey;
 
-// Debug visibility at runtime
-console.log(`[supabaseClients] url set: ${!!supabaseUrl}, key set: ${!!supabaseKey}`);
+console.log("[supabaseClients] url set:", !!supabaseUrl, "key set:", !!supabaseKey);
+if (!supabaseUrl) throw new Error("supabaseUrl is required.");
+if (!supabaseKey) throw new Error("supabaseKey is required.");
 
-if (!supabaseUrl) {
-  console.error('[supabaseClients] Missing supabaseUrl in Expo extra.');
-  throw new Error('supabaseUrl is required.');
-}
-if (!supabaseKey) {
-  console.error('[supabaseClients] Missing supabaseKey in Expo extra.');
-  throw new Error('supabaseKey is required.');
-}
-
-export const supabase = createClient<Database>(supabaseUrl, supabaseKey, {
-  auth: {
-    storage: AsyncStorage,
-    autoRefreshToken: true,
-    persistSession: true,
-    detectSessionInUrl: false,
-  },
-});
+export const supabase = createClient(supabaseUrl, supabaseKey);
