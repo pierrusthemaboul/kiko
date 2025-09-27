@@ -1,8 +1,10 @@
 import { useState, useCallback, useMemo } from 'react';
-import { supabase } from '../../lib/supabase/supabaseClients';
 import { FirebaseAnalytics } from '../../lib/firebase';
 import { Event, HistoricalPeriod } from '../types';
+import { devLog } from '../../utils/devLog';
 import { LEVEL_CONFIGS } from '../levelConfigs';
+import { explainEnabled, explainLog, createExclusionAccumulator } from '../../utils/explain';
+import { getWeightsForLevel } from '../../lib/selectionWeights';
 
 // Constantes pour limiter les événements antiques
 const ANTIQUE_EVENTS_LIMITS = {
@@ -18,6 +20,14 @@ const DEBOUNCE_DELAY = 200; // ms pour éviter les appels multiples
 // Cache global pour les calculs de dates (évite les re-calculs)
 const dateCache = new Map<string, { year: number, timestamp: number }>();
 const scoringCache = new Map<string, any>(); // Cache pour les scores
+const scorePartsCache = new Map<string, any>(); // Cache pour les composantes de score
+
+const notorieteProfileForLevel = (level: number) => {
+  if (level <= 3) return { target: 0.85, tolerance: 0.3 };
+  if (level <= 6) return { target: 0.65, tolerance: 0.35 };
+  if (level <= 10) return { target: 0.5, tolerance: 0.4 };
+  return { target: 0.35, tolerance: 0.45 };
+};
 
 /**
  * Cache optimisé pour les calculs de dates
@@ -134,7 +144,8 @@ export function useEventSelector({
     events: Event[],
     usedEvents: Set<string>,
     userLevel: number,
-    referenceEvent: Event
+    referenceEvent: Event,
+    explain?: { logExclusion: (evt: any, rule: string, reason: string) => void }
   ): Event[] => {
     const config = LEVEL_CONFIGS[userLevel];
     if (!config) return [];
@@ -143,38 +154,55 @@ export function useEventSelector({
     const canAddMoreAntiques = canAddAntiqueEvent(userLevel);
 
     // 1. Filtrage de base
-    let filtered = events.filter(e => 
-      !usedEvents.has(e.id) && 
-      e.date && 
-      e.id !== referenceEvent.id
-    );
+    if (explainEnabled()) {
+      const baseExcluded = events.filter(e => usedEvents.has(e.id) || !e.date || e.id === referenceEvent.id);
+      baseExcluded.forEach(e => {
+        const reason = usedEvents.has(e.id)
+          ? 'used'
+          : (!e.date ? 'missing_date' : (e.id === referenceEvent.id ? 'same_as_reference' : 'other'));
+        explain?.logExclusion(e, 'BASE_FILTER', reason);
+      });
+    }
+    let filtered = events.filter(e => !usedEvents.has(e.id) && e.date && e.id !== referenceEvent.id);
 
-    // 2. Filtrage par difficulté (plus restrictif)
-    const maxDifficulty = Math.min(7, Math.ceil(userLevel / 2) + 1);
-    const minDifficulty = Math.max(1, Math.ceil(userLevel / 3));
-    filtered = filtered.filter(e => {
-      const diff = e.niveau_difficulte || 1;
-      return diff >= minDifficulty && diff <= maxDifficulty;
-    });
+    // 2. (Supprimé) Filtrage par niveau_difficulte — la sélection s'appuie désormais sur notoriete
 
     // 3. Filtrage temporel préliminaire (large)
     const timeGapBase = config.timeGap?.base || 100;
     const preTimeLimit = timeGapBase * 3; // Limite large pour le pré-filtrage
-    filtered = filtered.filter(e => {
+    const afterTime = filtered.filter(e => {
       const timeDiff = getTimeDifference(e.date, referenceEvent.date);
       return timeDiff <= preTimeLimit;
     });
+    if (explainEnabled()) {
+      const excluded = filtered.filter(e => !afterTime.includes(e));
+      excluded.forEach(e => explain?.logExclusion(e, 'PRE_TIME_LIMIT', 'time_diff_gt_limit'));
+    }
+    filtered = afterTime;
 
     // 4. Filtrage antique
     if (!canAddMoreAntiques) {
-      filtered = filtered.filter(e => !isAntiqueEvent(e));
+      const afterAntique = filtered.filter(e => !isAntiqueEvent(e));
+      if (explainEnabled()) {
+        const excluded = filtered.filter(e => !afterAntique.includes(e));
+        excluded.forEach(e => explain?.logExclusion(e, 'ANTIQUE_LIMIT', 'is_antique'));
+      }
+      filtered = afterAntique;
     }
 
     // 5. Prioriser les événements moins utilisés
+    const now = Date.now();
     filtered.sort((a, b) => {
       const freqA = (a as any).frequency_score || 0;
       const freqB = (b as any).frequency_score || 0;
-      return freqA - freqB; // Moins utilisés en premier
+      if (freqA !== freqB) return freqA - freqB;
+
+      const lastATs = (a as any).last_used ? new Date((a as any).last_used as string).getTime() : NaN;
+      const lastBTs = (b as any).last_used ? new Date((b as any).last_used as string).getTime() : NaN;
+      const ageA = Number.isFinite(lastATs) ? now - lastATs : Number.POSITIVE_INFINITY;
+      const ageB = Number.isFinite(lastBTs) ? now - lastBTs : Number.POSITIVE_INFINITY;
+
+      return ageB - ageA; // Plus ancien en premier
     });
 
     // 6. Limite drastique pour éviter les gels
@@ -193,39 +221,81 @@ export function useEventSelector({
     const cacheKey = `${evt.id}-${referenceEvent.id}-${userLevel}`;
     
     if (scoringCache.has(cacheKey)) {
-      return scoringCache.get(cacheKey);
+      const cached = scoringCache.get(cacheKey);
+      try {
+        const parts = scorePartsCache.get(cacheKey);
+        if (parts) {
+          (evt as any)._score = cached;
+          (evt as any)._scoreParts = parts;
+        }
+      } catch {}
+      return cached;
     }
 
     const timeDiff = getTimeDifference(evt.date, referenceEvent.date);
     if (!isFinite(timeDiff)) return -Infinity;
 
+    const weights = getWeightsForLevel(userLevel);
     const randomFactor = 0.9 + Math.random() * 0.2;
     const idealGap = timeGap.base || 100;
 
-    // Score de proximité temporelle
+    // Score de proximité temporelle pondéré
     let gapScore = 0;
     if (idealGap > 0 && isFinite(timeDiff)) {
       const diffRatio = Math.abs(timeDiff - idealGap) / idealGap;
-      gapScore = 35 * Math.max(0, 1 - diffRatio) * randomFactor;
+      const baseGapScore = 35 * Math.max(0, 1 - diffRatio) * randomFactor;
+      gapScore = baseGapScore * weights.alphaProximity;
     }
 
-    // Score de difficulté
-    const idealDifficulty = Math.min(7, Math.max(1, Math.ceil(userLevel / 2)));
-    let difficultyScore = 0;
-    if (evt.niveau_difficulte != null) {
-      difficultyScore = 25 * (1 - Math.abs(evt.niveau_difficulte - idealDifficulty) / 7) * randomFactor;
+    // Pondération par notoriété pour contrôler la difficulté
+    const notorieteValue = Math.max(0, Math.min(100, Number((evt as any).notoriete ?? 60)));
+    const notorieteNormalized = notorieteValue / 100;
+    const { target, tolerance } = notorieteProfileForLevel(userLevel);
+    const notorieteDistance = Math.abs(notorieteNormalized - target);
+    const notorieteFactor = Math.max(0, 1 - (notorieteDistance / Math.max(tolerance, 0.01)));
+    const notorieteScore = notorieteFactor * weights.gammaNotoriete * 30;
+
+    // Malus de fréquence plus marqué sur les événements surjoués
+    const frequencyScore = Math.max(0, Number((evt as any).frequency_score) || 0);
+    const frequencyMalus = Math.min(weights.thetaFrequencyCap, frequencyScore * weights.thetaFrequencyMalus);
+
+    // Malus de récence pour éviter de rejouer un événement trop vite
+    let recencyPenalty = 0;
+    const lastUsedRaw = (evt as any).last_used;
+    if (lastUsedRaw) {
+      const lastUsedTs = new Date(lastUsedRaw).getTime();
+      if (isFinite(lastUsedTs)) {
+        const hoursSince = (Date.now() - lastUsedTs) / (60 * 60 * 1000);
+        if (hoursSince >= 0) {
+          const recencyWindow = userLevel <= 4 ? 12 : userLevel <= 8 ? 24 : 48;
+          if (hoursSince < recencyWindow) {
+            const recencyFactor = 1 - (hoursSince / recencyWindow);
+            recencyPenalty = recencyFactor * 60;
+          }
+        }
+      }
     }
 
-    // Malus de fréquence (simplifié)
-    const frequencyScore = (evt as any).frequency_score || 0;
-    const frequencyMalus = Math.min(500, frequencyScore * 10); // Malus plafonné
+    // Jitter léger pour éviter des patterns trop rigides
+    const variationBonus = Math.random() * 12;
 
-    // Bonus de variété
-    const variationBonus = Math.random() * 10;
+    const totalScore = Math.max(0, gapScore + notorieteScore + variationBonus - frequencyMalus - recencyPenalty);
 
-    const totalScore = Math.max(0, gapScore + difficultyScore + variationBonus - frequencyMalus);
-    
+    const parts = {
+      difficulty: 0,
+      notorieteBonus: notorieteScore,
+      timeGap: gapScore,
+      recencyPenalty: -recencyPenalty,
+      freqPenalty: -frequencyMalus,
+      jitter: variationBonus,
+    };
+    try {
+      (evt as any)._score = totalScore;
+      (evt as any)._scoreParts = parts;
+    } catch {}
+
     scoringCache.set(cacheKey, totalScore);
+    scorePartsCache.set(cacheKey, parts);
     return totalScore;
   }, [getTimeDifference]);
 
@@ -238,6 +308,24 @@ export function useEventSelector({
     userLevel: number,
     usedEvents: Set<string>,
   ): Promise<Event | null> => {
+    const explainOn = explainEnabled();
+    const explainStartTs = Date.now();
+    const exclusionAcc = createExclusionAccumulator(50);
+    if (explainOn) {
+      try {
+        explainLog('SELECTOR_START', {
+          seed: null,
+          level: userLevel,
+          previousEventId: referenceEvent?.id ?? null,
+          previousEpoch: (referenceEvent as any)?.epoque ?? null,
+          nowISO: new Date().toISOString(),
+        });
+        explainLog('CANDIDATES_RAW', {
+          count: Array.isArray(events) ? events.length : 0,
+          sample: (events || []).slice(0, 30).map((e: any) => ({ id: e?.id, titre: e?.titre, notoriete: e?.notoriete ?? null, epoque: e?.epoque ?? null, frequency_score: e?.frequency_score ?? 0, last_used: e?.last_used ?? null })),
+        });
+      } catch {}
+    }
     
     // Debouncing pour éviter les appels multiples rapprochés
     const now = Date.now();
@@ -337,7 +425,7 @@ export function useEventSelector({
 
     // 🚀 PRÉ-FILTRAGE INTELLIGENT (réduit de 896 à ~150 événements max)
     console.time('preFilter');
-    const preFilteredEvents = preFilterEvents(events, usedEvents, userLevel, referenceEvent);
+    const preFilteredEvents = preFilterEvents(events, usedEvents, userLevel, referenceEvent, explainOn ? { logExclusion: exclusionAcc.logExclusion } : undefined);
     console.timeEnd('preFilter');
 
     if (preFilteredEvents.length === 0) {
@@ -359,7 +447,54 @@ export function useEventSelector({
 
     // 🚀 SCORING LIMITÉ (encore plus restreint pour les calculs lourds)
     console.time('scoring');
-    const scoringPool = preFilteredEvents.slice(0, MAX_SCORING_POOL);
+    const notorieteConstrainedPool = userLevel <= 3
+      ? preFilteredEvents.filter(evt => ((evt as any).notoriete ?? 0) >= 70)
+      : preFilteredEvents;
+    if (explainOn) {
+      try {
+        const excluded = preFilteredEvents.filter(e => !notorieteConstrainedPool.includes(e)).slice(0, 50);
+        excluded.forEach(e => exclusionAcc.logExclusion(e as any, 'NOTORIETE_MIN', 'below_threshold'));
+      } catch {}
+    }
+
+    // Diversité: exclure seulement même époque que l'événement de référence
+    const prevEpoch = (referenceEvent as any)?.epoque;
+
+    let excludedByEpoch = 0;
+    const diversityFilteredPool = notorieteConstrainedPool.filter(evt => {
+      const epoch = (evt as any)?.epoque;
+      const sameEpoch = prevEpoch != null && epoch != null && epoch === prevEpoch;
+      if (sameEpoch) excludedByEpoch++;
+      if (sameEpoch && explainOn) exclusionAcc.logExclusion(evt as any, 'DIVERSITY_EPOQUE', 'same_epoch_as_previous');
+      return !sameEpoch;
+    });
+
+    try {
+      devLog('DIVERSITY_CHECK', {
+        prevId: referenceEvent?.id ?? null,
+        excludedByEpoch,
+        kept: diversityFilteredPool.length,
+      });
+    } catch {}
+
+    const scoringPool = diversityFilteredPool.slice(0, MAX_SCORING_POOL);
+    try {
+      devLog('FILTER_COUNTS', {
+        prefilter: preFilteredEvents.length,
+        afterNotoriete: notorieteConstrainedPool.length,
+      });
+    } catch {}
+    if (explainOn) {
+      try {
+        const { truncated } = exclusionAcc.flush('EXCLUSION');
+        explainLog('CANDIDATES_AFTER_FILTER', {
+          count: scoringPool.length,
+          kept_sample: scoringPool.slice(0, 30).map((e: any) => ({ id: e?.id, titre: e?.titre, notoriete: e?.notoriete ?? null })),
+          excluded_total: exclusionAcc.size(),
+          excluded_truncated_count: truncated,
+        });
+      } catch {}
+    }
     
     const scoredEvents = scoringPool
       .map(evt => ({
@@ -376,9 +511,24 @@ export function useEventSelector({
       .sort((a, b) => b.score - a.score);
     
     console.timeEnd('scoring');
+    if (explainOn) {
+      try {
+        const weights = { timeGapWeight: 35, freqMalusPerUnit: 10, freqMalusCap: 500, jitterRange: 10 };
+        const topDetails = scoredEvents.slice(0, 30).map(({ event, score, timeDiff }: any) => ({
+          id: event?.id,
+          notoriete: (event as any)?.notoriete ?? null,
+          frequency_score: (event as any)?.frequency_score ?? 0,
+          timeDiffYears: timeDiff,
+          baseScore: ((event as any)?._scoreParts?.timeGap ?? 0) + ((event as any)?._scoreParts?.jitter ?? 0),
+          weightedScore: (event as any)?._score ?? score,
+        }));
+        explainLog('SCORING_INPUT', { weights, candidates_top: topDetails });
+      } catch {}
+    }
 
     // Relâchement des contraintes si nécessaire
     let finalEvents = scoredEvents;
+    let selectionPath: 'normal' | 'relax' | 'ultimate_fallback' = 'normal';
     if (finalEvents.length === 0) {
       console.log('[useEventSelector] Relâchement des contraintes temporelles');
       const relaxedMin = timeGap.min * 0.3;
@@ -397,16 +547,24 @@ export function useEventSelector({
           timeDiff <= relaxedMax
         )
         .sort((a, b) => b.score - a.score);
+      if (finalEvents.length > 0) selectionPath = 'relax';
     }
 
     // Fallback ultime si toujours vide
     if (finalEvents.length === 0) {
+      try { devLog('FALLBACK_REASON', { level: userLevel, reason: 'empty_pool_after_constraints' }); } catch {}
       console.warn('[useEventSelector] Fallback - sélection aléatoire');
-      finalEvents = preFilteredEvents.slice(0, 10).map(evt => ({
-        event: evt,
-        score: Math.random() * 100,
-        timeDiff: getTimeDifference(evt.date, referenceEvent.date)
-      }));
+      finalEvents = preFilteredEvents.slice(0, 10).map(evt => {
+        const score = Math.random() * 100;
+        const parts = { difficulty: 0, notorieteBonus: 0, timeGap: 0, recencyPenalty: 0, freqPenalty: 0, jitter: score };
+        try { (evt as any)._score = score; (evt as any)._scoreParts = parts; } catch {}
+        return {
+          event: evt,
+          score,
+          timeDiff: getTimeDifference(evt.date, referenceEvent.date)
+        };
+      });
+      selectionPath = 'ultimate_fallback';
     }
 
     if (finalEvents.length === 0) {
@@ -417,7 +575,21 @@ export function useEventSelector({
 
     // Sélection finale (top 5 pour la variété)
     const topEvents = finalEvents.slice(0, Math.min(5, finalEvents.length));
-    const selectedEvent = topEvents[Math.floor(Math.random() * topEvents.length)].event;
+    const topK = topEvents.map(x => x.event);
+    try {
+      devLog('TOPK', topK.map((e: any) => ({
+        id: e?.id,
+        titre: e?.titre,
+        notoriete: e?.notoriete ?? null,
+        score: e?._score,
+        parts: e?._scoreParts,
+      })));
+    } catch {}
+    let pickedIndex = Math.floor(Math.random() * topEvents.length);
+    const selectedEvent = topEvents[pickedIndex].event;
+    if (explainOn) {
+      try { explainLog('RNG', { method: 'native', seed: null, poolSize: topEvents.length, indexPicked: pickedIndex }); } catch {}
+    }
 
     console.log(`[useEventSelector] Sélectionné: ${selectedEvent.titre} (${selectedEvent.date_formatee})`);
 
@@ -438,7 +610,26 @@ export function useEventSelector({
         if (error) console.warn('[useEventSelector] Supabase update error:', error.message);
       });
 
-    return selectedEvent;
+    const selected = { ...(selectedEvent as any) } as Event;
+    try {
+      if ((selected as any)?.notoriete == null) {
+        devLog('MISSING_FIELD', { where: 'selected', id: (selected as any)?.id });
+      }
+      devLog('WHY_SELECTED', {
+        id: (selected as any)?.id,
+        titre: (selected as any)?.titre,
+        notoriete: (selected as any)?.notoriete ?? null,
+        level: userLevel,
+        path: selectionPath,
+        parts: (selected as any)?._scoreParts,
+      });
+    } catch {}
+
+    if (explainOn) {
+      try { explainLog('SELECTOR_END', { idPicked: (selected as any)?.id ?? null, durationMs: Date.now() - explainStartTs }); } catch {}
+    }
+
+    return selected;
 
   }, [
     setError, setIsGameOver, updateStateCallback, lastSelectionTime,
@@ -457,6 +648,16 @@ export function useEventSelector({
   const resetAntiqueCount = useCallback(() => {
     setAntiqueEventsCount(0);
     scoringCache.clear(); // Nettoyer le cache à chaque reset
+  }, []);
+
+  const invalidateEventCaches = useCallback((eventId: string) => {
+    const prefix = `${eventId}-`;
+    for (const key of Array.from(scoringCache.keys())) {
+      if (key.startsWith(prefix)) {
+        scoringCache.delete(key);
+        scorePartsCache.delete(key);
+      }
+    }
   }, []);
 
   // Cache cleanup périodique
@@ -481,6 +682,7 @@ export function useEventSelector({
     isAntiqueEvent,
     updateAntiqueCount,
     resetAntiqueCount,
+    invalidateEventCaches,
     getTimeDifference,
     getNextForcedJumpIncrement,
     clearCaches

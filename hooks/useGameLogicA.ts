@@ -3,6 +3,7 @@ import { useState, useCallback, useEffect } from 'react';
 import { Animated, Dimensions } from 'react-native';
 import { supabase } from '../lib/supabase/supabaseClients';
 import { FirebaseAnalytics } from '../lib/firebase';
+import { devLog } from '../utils/devLog';
 import {
   Event,
   User,
@@ -64,6 +65,7 @@ export function useGameLogicA(initialEvent?: string) {
     setDisplayedEvent,
     setError,
     setLoading,
+    markEventUsageLocal,
     initGame,
     fetchUserData,
   } = useInitGame();
@@ -244,6 +246,13 @@ export function useGameLogicA(initialEvent?: string) {
         setIsCorrect(undefined);
         setIsCountdownActive(false);
         setTimeLeft(20);
+        if (selectedEvent) {
+          devLog('EVENT_PLAYED', {
+            date: selectedEvent.date,
+            titre: selectedEvent.titre,
+            notoriete: (selectedEvent as any)?.notoriete ?? null,
+          });
+        }
         // console.log(`[useGameLogicA] updateGameState completed. isImageLoaded: false, isCountdownActive: false, timeLeft: 20`);
 
         await supabase
@@ -253,6 +262,9 @@ export function useGameLogicA(initialEvent?: string) {
             last_used: new Date().toISOString(),
           })
           .eq("id", selectedEvent.id);
+
+        markEventUsageLocal(selectedEvent.id);
+        invalidateEventCaches(selectedEvent.id);
 
         if (selectedEvent && isAntiqueEvent(selectedEvent)) {
           updateAntiqueCount(selectedEvent);
@@ -274,6 +286,8 @@ export function useGameLogicA(initialEvent?: string) {
       setTimeLeft,
       isAntiqueEvent, // from useEventSelector
       updateAntiqueCount, // from useEventSelector
+      markEventUsageLocal,
+      invalidateEventCaches,
       setError
     ]
   );
@@ -287,7 +301,8 @@ export function useGameLogicA(initialEvent?: string) {
     getPeriod,
     isAntiqueEvent,
     updateAntiqueCount,
-    resetAntiqueCount
+    resetAntiqueCount,
+    invalidateEventCaches,
   } = useEventSelector({
     setError,
     setIsGameOver,
@@ -447,7 +462,7 @@ export function useGameLogicA(initialEvent?: string) {
         newEvent.id,
         newEvent.titre,
         getPeriod(newEvent.date),
-        newEvent.niveau_difficulte,
+        Math.max(0, Math.round(((newEvent as any)?.notoriete ?? 0))),
         choice,
         isAnswerCorrect,
         responseTime,
@@ -493,7 +508,7 @@ export function useGameLogicA(initialEvent?: string) {
 
         const pointsEarned = calculatePoints(
           timeLeft,
-          newEvent.niveau_difficulte || 1,
+          1,
           newStreak,
           user.level
         );
@@ -503,7 +518,7 @@ export function useGameLogicA(initialEvent?: string) {
           'POINTS',
           pointsEarned,
           'correct_answer',
-          newEvent.niveau_difficulte || 1,
+          'correct_answer',
           user.level,
           user.points + pointsEarned
         );

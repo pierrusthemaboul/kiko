@@ -2,11 +2,17 @@
 // ----- VERSION COMPLÈTE AVEC PLUS DE LOGS DANS INITGAME ET USEEFFECT -----
 
 import { useState, useCallback, useEffect, useRef } from 'react';
+import AsyncStorage from '@react-native-async-storage/async-storage';
 import { supabase } from '../../lib/supabase/supabaseClients'; // Ajuste le chemin si nécessaire
 import { FirebaseAnalytics } from '../../lib/firebase'; // Ajuste le chemin si nécessaire
 import { Event, User, MAX_LIVES, LevelHistory } from '../types'; // Ajuste le chemin si nécessaire
+import { devLog } from '../../utils/devLog';
 import { LEVEL_CONFIGS } from '../levelConfigs'; // Ajuste le chemin si nécessaire
 import { useEventSelector } from './useEventSelector'; // Ajuste le chemin si nécessaire
+
+const EVENTS_CACHE_KEY = 'events_cache_v1';
+const EVENTS_CACHE_VERSION = 4;
+const EVENTS_CACHE_TTL_MS = 24 * 60 * 60 * 1000; // 24h
 
 /**
  * Hook pour initialiser et gérer les états de base du jeu
@@ -145,18 +151,47 @@ export function useInitGame() {
       const initialConfig = LEVEL_CONFIGS[1];
       if (!initialConfig) throw new Error('Configuration du niveau 1 manquante');
 
-      console.log(`[InitGame - Instance ${currentInstanceId}] Fetching ALL events...`);
-      const { data: allEventsData, error: eventsError } = await supabase
-        .from('evenements')
-        .select('*');
+      console.log(`[InitGame - Instance ${currentInstanceId}] Loading events (cache first)...`);
 
-      if (eventsError) throw eventsError;
+      let allEventsData: any[] | null = null;
+
+      try {
+        const cachedRaw = await AsyncStorage.getItem(EVENTS_CACHE_KEY);
+        if (cachedRaw) {
+          const cached = JSON.parse(cachedRaw);
+          const isFresh = cached && cached.ts && (Date.now() - cached.ts) < EVENTS_CACHE_TTL_MS;
+          const isRightVersion = cached?.version === EVENTS_CACHE_VERSION;
+          // Force MISS if version is not the expected one
+          if (isRightVersion && isFresh && Array.isArray(cached.data)) {
+            console.log(`[InitGame - Instance ${currentInstanceId}] Using cached events (${cached.data.length})`);
+            try { devLog('CACHE', { used: 'hit', version: EVENTS_CACHE_VERSION, count: Array.isArray(cached.data) ? cached.data.length : 0 }); } catch {}
+            allEventsData = cached.data;
+          }
+        }
+      } catch (e) {
+        console.warn('[InitGame] Failed reading cache:', e);
+      }
+
+      if (!allEventsData) {
+        console.log(`[InitGame - Instance ${currentInstanceId}] Cache miss/expired. Fetching events from Supabase...`);
+        const { data, error: eventsError } = await supabase
+          .from('evenements')
+          .select('id, titre, date, date_formatee, types_evenement, illustration_url, frequency_score, notoriete, description_detaillee, last_used');
+        if (eventsError) throw eventsError;
+        allEventsData = data || [];
+        try {
+          await AsyncStorage.setItem(EVENTS_CACHE_KEY, JSON.stringify({ version: EVENTS_CACHE_VERSION, ts: Date.now(), data: allEventsData }));
+        } catch (e) {
+          console.warn('[InitGame] Failed writing cache:', e);
+        }
+        try { devLog('CACHE', { used: 'miss', version: EVENTS_CACHE_VERSION }); } catch {}
+      }
       if (!allEventsData?.length) throw new Error('Aucun événement disponible');
 
       const validEvents = allEventsData.filter((event): event is Event =>
         !!event.id && !!event.date && !!event.titre &&
         (event.illustration_url === null || event.illustration_url === undefined || typeof event.illustration_url === 'string') &&
-        event.niveau_difficulte != null && Array.isArray(event.types_evenement)
+        Array.isArray(event.types_evenement)
       );
       console.log(`[InitGame - Instance ${currentInstanceId}] Found ${validEvents.length} total valid events.`);
       if (validEvents.length < 2) throw new Error("Pas assez d'événements valides (min 2).");
@@ -164,17 +199,12 @@ export function useInitGame() {
       setAllEvents(validEvents);
 
       console.log(`[InitGame - Instance ${currentInstanceId}] Selecting initial pair RANDOMLY...`);
-      const level1Events = validEvents.filter(e => e.niveau_difficulte === 1);
-      console.log(`[InitGame - Instance ${currentInstanceId}] Found ${level1Events.length} level 1 events.`);
-      if (level1Events.length < 2) throw new Error(`Pas assez d'événements de niveau 1 (min 2, trouvé ${level1Events.length}).`);
+      // Sélection aléatoire sur l'ensemble des événements valides (niveau_difficulte obsolète)
+      const shuffledAll = [...validEvents].sort(() => 0.5 - Math.random());
+      console.log(`[InitGame - Instance ${currentInstanceId}] Shuffled IDs (first 5):`, shuffledAll.slice(0, 5).map(e => e.id));
 
-      // --- MODIFICATION : Sélection Aléatoire ---
-      const shuffledLevel1Events = [...level1Events].sort(() => 0.5 - Math.random());
-      // Log pour voir le résultat du mélange aléatoire
-      console.log(`[InitGame - Instance ${currentInstanceId}] Shuffled Level 1 IDs (first 5):`, shuffledLevel1Events.slice(0, 5).map(e => e.id));
-
-      const firstEvent = shuffledLevel1Events[0];
-      const secondEvent = shuffledLevel1Events[1];
+      const firstEvent = shuffledAll[0];
+      const secondEvent = shuffledAll[1];
       // --- FIN MODIFICATION ---
 
       if (!firstEvent || !secondEvent) throw new Error("Erreur interne: échec de la sélection aléatoire des événements initiaux.");
@@ -227,6 +257,32 @@ export function useInitGame() {
     ]
   );
 
+  const markEventUsageLocal = useCallback((eventId: string) => {
+    let didUpdate = false;
+    const timestamp = new Date().toISOString();
+
+    setAllEvents(prev => {
+      if (!prev?.length) return prev;
+      const updated = prev.map(event => {
+        if (event.id !== eventId) return event;
+        didUpdate = true;
+        const nextFrequency = (event.frequency_score ?? 0) + 1;
+        return {
+          ...event,
+          frequency_score: nextFrequency,
+          last_used: timestamp,
+        };
+      });
+      return didUpdate ? updated : prev;
+    });
+
+    if (didUpdate) {
+      AsyncStorage.removeItem(EVENTS_CACHE_KEY).catch(() => {
+        console.warn('[useInitGame] Unable to invalidate events cache after usage update.');
+      });
+    }
+  }, []);
+
   // Exécuter initGame une seule fois au montage initial de chaque instance du hook
   useEffect(() => {
     const currentInstanceId = instanceIdRef.current; // Récupère l'ID unique de cette instance
@@ -263,6 +319,7 @@ export function useInitGame() {
     setError,
     setLoading,
     setHighScore, // Exposer si nécessaire
+    markEventUsageLocal,
     // Actions
     initGame, // Exposer pour réinitialisation manuelle si VRAIMENT nécessaire (préférer la clé)
     fetchUserData, // Exposer si nécessaire

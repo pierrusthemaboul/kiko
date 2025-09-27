@@ -29,6 +29,7 @@ export interface User {
     universel: boolean;
     niveau_difficulte: number;
     types_evenement: string[];
+    notoriete?: number | null;
     description?: string;
     period: HistoricalPeriod;
   }

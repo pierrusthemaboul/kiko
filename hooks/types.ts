@@ -31,6 +31,7 @@ export interface Event {
   illustration_url: string;
   niveau_difficulte: number;
   types_evenement: string[];
+  notoriete?: number | null;
   description?: string;
   description_detaillee?: string;
   frequency_score?: number;
