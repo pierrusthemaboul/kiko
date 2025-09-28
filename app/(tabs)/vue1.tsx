@@ -891,7 +891,7 @@ const styles = StyleSheet.create({
     backgroundColor: SALMON_THEME.cardBackground,
     borderRadius: 12,
     padding: 20,
-    marginBottom: 20,
+    marginBottom: 21,
     alignItems: 'center',
     borderWidth: 1,
     borderColor: SALMON_THEME.border,
