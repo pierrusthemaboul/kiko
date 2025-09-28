@@ -22,6 +22,17 @@
         "buildType": "app-bundle"
       }
     },
+    "apk": {
+      "distribution": "internal",
+      "autoIncrement": false,
+      "credentialsSource": "remote",
+      "env": {
+        "EXPO_PUBLIC_APP_VARIANT": "apkTesting"
+      },
+      "android": {
+        "buildType": "apk"
+      }
+    },
     "production": {
       "distribution": "store",
       "autoIncrement": false,

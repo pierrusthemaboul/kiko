@@ -36,7 +36,7 @@ const screenWidth = Dimensions.get('window').width;
  * @param {string} initialEvent - Identifiant éventuel d'un événement initial.
  * @returns {object} - Ensemble d'états et de fonctions utiles au jeu.
  */
-export function useGameLogicA(initialEvent?: string) {
+export function useGameLogicA(initialEvent?: string, _modeId?: string) {
   // ===== États internes =====
   
   // UI et contrôle

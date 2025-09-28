@@ -16,8 +16,6 @@ import { Ionicons } from '@expo/vector-icons';
 import { colors } from '../../constants/Colors';
 import { ActiveBonus, BonusType } from '@/hooks/types';
 
-const MAX_LIVES = 3;
-
 // Obtenir les dimensions de l'écran
 const { width, height } = Dimensions.get('window');
 
@@ -33,6 +31,7 @@ interface UserInfoProps {
   // Ajout des propriétés pour tracking des événements du niveau
   eventsCompletedInLevel?: number;
   eventsNeededForLevel?: number;
+  maxLives?: number;
 }
 
 export interface UserInfoHandle {
@@ -52,7 +51,8 @@ const UserInfo = forwardRef<UserInfoHandle, UserInfoProps>(
       currentQuestion,
       totalQuestions,
       eventsCompletedInLevel = 0,  // Valeur par défaut
-      eventsNeededForLevel = 5     // Valeur par défaut
+      eventsNeededForLevel = 5,    // Valeur par défaut
+      maxLives = 3
     },
     ref
   ) => {
@@ -262,24 +262,22 @@ const UserInfo = forwardRef<UserInfoHandle, UserInfoProps>(
     // Rendu des vies
     const renderLives = () => (
       <View ref={livesRef} style={styles.livesContainer} onLayout={handleLivesLayout}>
-        {Array(MAX_LIVES)
-          .fill(0)
-          .map((_, i) => (
-            <Animated.View
-              key={i}
-              style={[
-                styles.heartContainer,
-                i < lives && { transform: [{ scale: bounceAnim }] }
-              ]}
-            >
-              <Ionicons
-                name={i < lives ? 'heart' : 'heart-outline'}
-                size={20}
-                color={i < lives ? colors.incorrectRed : colors.lightText}
-                style={styles.heart}
-              />
-            </Animated.View>
-          ))}
+        {Array.from({ length: Math.max(1, maxLives) }, (_, i) => (
+          <Animated.View
+            key={i}
+            style={[
+              styles.heartContainer,
+              i < lives && { transform: [{ scale: bounceAnim }] }
+            ]}
+          >
+            <Ionicons
+              name={i < lives ? 'heart' : 'heart-outline'}
+              size={20}
+              color={i < lives ? colors.incorrectRed : colors.lightText}
+              style={styles.heart}
+            />
+          </Animated.View>
+        ))}
       </View>
     );
 

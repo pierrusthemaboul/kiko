@@ -11,8 +11,12 @@ import { LEVEL_CONFIGS } from '../levelConfigs'; // Ajuste le chemin si nécessa
 import { useEventSelector } from './useEventSelector'; // Ajuste le chemin si nécessaire
 
 const EVENTS_CACHE_KEY = 'events_cache_v1';
-const EVENTS_CACHE_VERSION = 4;
+const EVENTS_CACHE_VERSION = 5;
 const EVENTS_CACHE_TTL_MS = 24 * 60 * 60 * 1000; // 24h
+
+interface InitGameOptions {
+  initialLives?: number;
+}
 
 /**
  * Hook pour initialiser et gérer les états de base du jeu
@@ -117,7 +121,7 @@ export function useInitGame() {
   /**
    * Fonction principale d'initialisation du jeu (AVEC SELECTION INITIALE ALÉATOIRE ET LOGS)
    */
-  const initGame = useCallback(async () => {
+  const initGame = useCallback(async (options: InitGameOptions = {}) => {
     const currentInstanceId = instanceIdRef.current; // Utilise l'ID constant de cette instance
     console.log(`[InitGame - Random Initial - Instance ${currentInstanceId}] STARTING initGame`);
 
@@ -132,6 +136,8 @@ export function useInitGame() {
     setLoading(true);
     setError(null);
 
+    const targetLives = Math.max(1, options.initialLives ?? MAX_LIVES);
+
     // Réinitialiser les états du jeu - IMPORTANT: préserve le nom si déjà récupéré
     setLevelsHistory([]);
     setUsedEvents(new Set());
@@ -139,6 +145,7 @@ export function useInitGame() {
     setUser(prev => ({
       ...initialUserState, // Reset toutes les stats de jeu
       name: prev.name, // Garde le nom potentiellement déjà défini par fetchUserData
+      lives: targetLives,
     }));
     setPreviousEvent(null);
     setNewEvent(null);

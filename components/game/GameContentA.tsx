@@ -28,6 +28,7 @@ import RewardAnimation from './RewardAnimation';
 
 // Types & Constants
 import { colors } from '@/constants/Colors';
+import { GameModeConfig } from '@/constants/gameModes';
 import type {
   User,
   Event,
@@ -95,6 +96,8 @@ interface GameContentAProps {
   onActualRestart: () => void;     // NOUVELLE prop pour REJOUER
   onActualMenu: () => void;        // NOUVELLE prop pour MENU
   // ----------------------------------------------------
+  gameMode: GameModeConfig;
+  timeLimit: number;
 }
 
 function GameContentA({
@@ -134,6 +137,8 @@ function GameContentA({
   onActualMenu,
   // handleRestartOrClose, // Ne plus récupérer
   // ----------------------------------------------------
+  gameMode,
+  timeLimit,
 }: GameContentAProps) {
   const router = useRouter(); // Gardé, même si non utilisé directement ici
   const userInfoRef = useRef<UserInfoHandle>(null);
@@ -442,16 +447,17 @@ function GameContentA({
       {/* Header avec UserInfo, Countdown, RewardAnimation */}
       <View style={styles.header}>
         {user && (
-           <UserInfo
-             ref={userInfoRef}
-             name={user.name}
-             points={user.points}
-             lives={user.lives}
-             level={level}
-             streak={streak}
-             eventsCompletedInLevel={user.eventsCompletedInLevel}
-             eventsNeededForLevel={currentLevelConfig.eventsNeeded}
-           />
+          <UserInfo
+            ref={userInfoRef}
+            name={user.name}
+            points={user.points}
+            lives={user.lives}
+            level={level}
+            streak={streak}
+            eventsCompletedInLevel={user.eventsCompletedInLevel}
+            eventsNeededForLevel={currentLevelConfig.eventsNeeded}
+            maxLives={gameMode.maxLives}
+          />
         )}
         <View style={styles.countdownContainer}>
           <Countdown
@@ -500,6 +506,7 @@ const styles = StyleSheet.create({
     },
     countdownContainer: {
       marginLeft: 15, // Espace entre UserInfo et Countdown
+      alignItems: 'flex-end',
     },
     content: {
       flex: 1,

@@ -179,6 +179,8 @@ return (
           // Props d'animation/modales
           fadeAnim={fadeAnim}
           showLevelModal={gameLogic.showLevelModal}
+          gameMode={gameLogic.gameMode}
+          timeLimit={gameLogic.timeLimit}
         />
       </SafeAreaView>
     </ImageBackground>

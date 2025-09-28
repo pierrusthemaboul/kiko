@@ -28,17 +28,20 @@ interface RewardTrigger {
 interface UseRewardsProps {
   onRewardEarned?: (reward: Reward) => void;
   onRewardAnimationComplete?: () => void;
+  maxLives?: number;
 }
 
 export const useRewards = ({
   onRewardEarned,
-  onRewardAnimationComplete
+  onRewardAnimationComplete,
+  maxLives,
 }: UseRewardsProps = {}) => {
   const [currentReward, setCurrentReward] = useState<Reward | null>(null);
   const [isAnimating, setIsAnimating] = useState(false);
   const [lastProcessedTrigger, setLastProcessedTrigger] = useState<string | null>(null);
   const timeoutRef = useRef<NodeJS.Timeout | null>(null);
   const isProcessingReward = useRef(false);
+  const effectiveMaxLives = Math.max(1, maxLives ?? MAX_LIVES);
 
   // A. Calcul Streak RÉÉQUILIBRÉ (multiples de 10)
   const calculateStreakReward = useCallback((streak: number, user: User): Reward | null => {
@@ -65,7 +68,7 @@ export const useRewards = ({
     }
 
     // Priorité aux vies si possible
-    const canGiveLife = user.lives < MAX_LIVES;
+    const canGiveLife = user.lives < effectiveMaxLives;
     const finalAmount = canGiveLife ? 1 : pointsAmount;
     const finalType = canGiveLife ? RewardType.EXTRA_LIFE : RewardType.POINTS;
 
@@ -88,7 +91,7 @@ export const useRewards = ({
     if (!levelConfig) return null;
 
     // Priorité aux vies si possible
-    const canGiveLife = user.lives < MAX_LIVES;
+    const canGiveLife = user.lives < effectiveMaxLives;
     
     // Si on peut donner une vie, on la donne
     if (canGiveLife) {

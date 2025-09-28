@@ -12,6 +12,9 @@ import {
   Dimensions,
   ActivityIndicator
 } from 'react-native';
+import * as AuthSession from 'expo-auth-session';
+import * as WebBrowser from 'expo-web-browser';
+import { FontAwesome } from '@expo/vector-icons';
 import { supabase } from '../../lib/supabase/supabaseClients';
 import { router, useFocusEffect, useNavigation, usePathname, useSegments } from 'expo-router';
 import { FirebaseAnalytics } from '../../lib/firebase';
@@ -40,6 +43,11 @@ const THEME = {
 };
 // --- FIN NOUVEAU THÈME ---
 
+WebBrowser.maybeCompleteAuthSession();
+
+const APP_AUTH_SCHEME = 'juno2';
+const GOOGLE_REDIRECT_PATH = 'auth/callback';
+
 export default function Login() {
   const navigation = useNavigation();
   const pathname = usePathname();
@@ -51,6 +59,7 @@ export default function Login() {
   const [errorMessage, setErrorMessage] = useState('');
   const [stayConnected, setStayConnected] = useState(false);
   const [isLoggingIn, setIsLoggingIn] = useState(false);
+  const [isGoogleLoggingIn, setIsGoogleLoggingIn] = useState(false);
 
   useFocusEffect(
     useCallback(() => {
@@ -138,6 +147,99 @@ export default function Login() {
     // Retiré le finally car on gère setIsLoggingIn(false) dans chaque branche d'erreur
   };
 
+  const handleGoogleLogin = async () => {
+    console.log('🔐 Starting Google login process...');
+    FirebaseAnalytics.logEvent('login_attempt', { method: 'google' });
+    setErrorMessage('');
+    setIsGoogleLoggingIn(true);
+
+    try {
+      const redirectTo = AuthSession.makeRedirectUri({
+        scheme: APP_AUTH_SCHEME,
+        path: GOOGLE_REDIRECT_PATH,
+        useProxy: false,
+      });
+
+      const { data, error } = await supabase.auth.signInWithOAuth({
+        provider: 'google',
+        options: {
+          queryParams: {
+            access_type: 'offline',
+            prompt: 'consent',
+          },
+          redirectTo,
+          skipBrowserRedirect: true,
+        },
+      });
+
+      if (error) {
+        console.error('❌ Google login error:', error.message);
+        FirebaseAnalytics.logEvent('login_failed', {
+          reason: 'google_oauth_error',
+          message: error.message.substring(0, 100),
+        });
+        setErrorMessage('Connexion Google indisponible pour le moment. Veuillez réessayer.');
+        return;
+      }
+
+      if (!data?.url) {
+        console.error('❌ Google login error: No redirect URL returned from Supabase.');
+        FirebaseAnalytics.logEvent('login_failed', {
+          reason: 'google_no_url',
+        });
+        setErrorMessage('Connexion Google indisponible pour le moment. Veuillez réessayer.');
+        return;
+      }
+
+      const authResult = await AuthSession.startAsync({
+        authUrl: data.url,
+        returnUrl: redirectTo,
+      });
+
+      const extractParam = (key: string) =>
+        'params' in authResult && authResult.params ? authResult.params[key] : undefined;
+
+      switch (authResult.type) {
+        case 'success':
+          console.log('✅ Google OAuth success, awaiting Supabase session callback.');
+          FirebaseAnalytics.logEvent('login', { method: 'google' });
+          break;
+        case 'dismiss':
+        case 'cancel':
+          console.log('ℹ️ Google OAuth cancelled by user.');
+          FirebaseAnalytics.logEvent('login_failed', { reason: 'google_cancelled' });
+          setErrorMessage('Connexion Google annulée.');
+          break;
+        case 'locked':
+          console.warn('⚠️ Google OAuth flow is already in progress.');
+          setErrorMessage('Une autre tentative de connexion est déjà en cours.');
+          break;
+        case 'error': {
+          const description = extractParam('error_description') ?? extractParam('error') ?? '';
+          console.error('❌ Google OAuth returned an error:', description || authResult);
+          FirebaseAnalytics.logEvent('login_failed', {
+            reason: 'google_oauth_result_error',
+            message: description.substring(0, 100),
+          });
+          setErrorMessage(description || 'Erreur lors de la connexion avec Google.');
+          break;
+        }
+        default:
+          console.warn('🔁 Google OAuth ended with unexpected result type:', authResult.type);
+      }
+    } catch (err) {
+      console.error('❌ Unexpected Google login error:', err);
+      const message = err instanceof Error ? err.message : String(err);
+      FirebaseAnalytics.logEvent('login_failed', {
+        reason: 'google_unexpected_error',
+        message: message.substring(0, 100),
+      });
+      setErrorMessage('Une erreur est survenue avec Google. Veuillez réessayer.');
+    } finally {
+      setIsGoogleLoggingIn(false);
+    }
+  };
+
   const handleGoToSignUp = () => {
     FirebaseAnalytics.logEvent('navigate_to_signup');
     router.push('/auth/signup');
@@ -147,6 +249,21 @@ export default function Login() {
     <SafeAreaView style={styles.safeArea}>
       <View style={styles.container}>
         <Text style={styles.title}>Connexion</Text>
+
+        <TouchableOpacity
+          style={[styles.googleButton, (isLoggingIn || isGoogleLoggingIn) && styles.buttonDisabled]}
+          onPress={handleGoogleLogin}
+          disabled={isLoggingIn || isGoogleLoggingIn}
+        >
+          {isGoogleLoggingIn ? (
+            <ActivityIndicator color={THEME.text} />
+          ) : (
+            <View style={styles.googleButtonContent}>
+              <FontAwesome name="google" size={20} color={THEME.text} />
+              <Text style={styles.googleButtonText}>Continuer avec Google</Text>
+            </View>
+          )}
+        </TouchableOpacity>
 
         <TextInput
           style={styles.input}
@@ -186,9 +303,9 @@ export default function Login() {
         {errorMessage ? <Text style={styles.errorText}>{errorMessage}</Text> : null}
 
         <TouchableOpacity
-          style={[styles.button, (isLoggingIn || !email || !password) && styles.buttonDisabled]} // Appliquer style disabled aussi si champs vides
+          style={[styles.button, (isLoggingIn || isGoogleLoggingIn || !email || !password) && styles.buttonDisabled]} // Appliquer style disabled aussi si champs vides
           onPress={handleLogin}
-          disabled={isLoggingIn || !email || !password}
+          disabled={isLoggingIn || isGoogleLoggingIn || !email || !password}
         >
           {isLoggingIn ? (
             <ActivityIndicator color={THEME.button.primary.text} /> // Couleur texte du bouton
@@ -272,6 +389,29 @@ const styles = StyleSheet.create({
   buttonDisabled: {
      opacity: 0.6 // Opacité pour état désactivé
    },
+  googleButton: {
+    backgroundColor: THEME.background.main,
+    borderColor: THEME.border,
+    borderWidth: 1,
+    borderRadius: 8,
+    paddingVertical: 14,
+    paddingHorizontal: 15,
+    alignItems: 'center',
+    justifyContent: 'center',
+    flexDirection: 'row',
+    marginBottom: 20,
+  },
+  googleButtonContent: {
+    flexDirection: 'row',
+    alignItems: 'center',
+    justifyContent: 'center',
+  },
+  googleButtonText: {
+    color: THEME.text,
+    fontSize: 16,
+    fontWeight: '600',
+    marginLeft: 12,
+  },
   buttonText: {
     color:'#0A173D', // Texte Blanc
     fontSize: 17, // Police légèrement plus grande

@@ -1,5 +1,5 @@
 // hooks/useGameLogicA.ts
-import { useState, useCallback, useEffect } from 'react';
+import { useState, useCallback, useEffect, useMemo } from 'react';
 import { Animated, Dimensions } from 'react-native';
 import { supabase } from '../lib/supabase/supabaseClients';
 import { FirebaseAnalytics } from '../lib/firebase';
@@ -9,7 +9,6 @@ import {
   User,
   ExtendedLevelConfig,
   RewardType,
-  MAX_LIVES,
   LevelEventSummary,
 } from './types';
 import { LEVEL_CONFIGS } from './levelConfigs';
@@ -24,13 +23,16 @@ import {
   useRewards,
   useEventSelector,
 } from './game';
+import { getGameModeConfig, GameModeConfig } from '../constants/gameModes';
 
 const screenWidth = Dimensions.get('window').width;
 
-export function useGameLogicA(initialEvent?: string) {
+export function useGameLogicA(initialEvent?: string, modeId?: string) {
+  const gameMode = useMemo<GameModeConfig>(() => getGameModeConfig(modeId), [modeId]);
+  const timeLimit = Math.max(1, gameMode.timeLimit);
   const [streak, setStreak] = useState(0);
   const [isGameOver, setIsGameOver] = useState(false);
-  const [showDates, setShowDates] = useState(false);
+  const [showDates, setShowDates] = useState(!!gameMode.showDatesByDefault);
   const [isCorrect, setIsCorrect] = useState<boolean | undefined>(undefined);
   const [isWaitingForCountdown, setIsWaitingForCountdown] = useState(false);
   const [showLevelModal, setShowLevelModal] = useState(false);
@@ -45,6 +47,10 @@ export function useGameLogicA(initialEvent?: string) {
   const [pendingAdDisplay, setPendingAdDisplay] = useState<"interstitial" | "rewarded" | "gameOver" | "levelUp" | null>(null);
 
   const [progressAnim] = useState(() => new Animated.Value(0));
+
+  useEffect(() => {
+    setShowDates(!!gameMode.showDatesByDefault);
+  }, [gameMode.showDatesByDefault]);
 
   const {
     loading,
@@ -66,9 +72,12 @@ export function useGameLogicA(initialEvent?: string) {
     setError,
     setLoading,
     markEventUsageLocal,
-    initGame,
-    fetchUserData,
+    initGame: baseInitGame,
   } = useInitGame();
+
+  const initGame = useCallback(async () => {
+    await baseInitGame({ initialLives: gameMode.initialLives });
+  }, [baseInitGame, gameMode.initialLives]);
 
   const {
     periodStats,
@@ -109,7 +118,7 @@ export function useGameLogicA(initialEvent?: string) {
     setIsGameOver(false);
     setIsLevelPaused(false);
     setShowLevelModal(false);
-    setShowDates(false);
+    setShowDates(!!gameMode.showDatesByDefault);
     setIsCorrect(undefined);
     setIsWaitingForCountdown(false);
     setStreak(0);
@@ -127,7 +136,8 @@ export function useGameLogicA(initialEvent?: string) {
     resetCurrentLevelEvents, 
     resetLevelCompletedEvents,
     resetAntiqueCount, 
-    setLeaderboardsReady
+    setLeaderboardsReady,
+    gameMode.showDatesByDefault
   ]);
   // --- FIN AJOUT ---
 
@@ -232,6 +242,7 @@ export function useGameLogicA(initialEvent?: string) {
     isGameOver,
     handleTimeout,
     isImageLoaded: false,
+    initialTime: timeLimit,
   });
 
   const updateGameState = useCallback(
@@ -242,10 +253,10 @@ export function useGameLogicA(initialEvent?: string) {
         setNewEvent(selectedEvent);
         setDisplayedEvent(selectedEvent);
         setIsImageLoaded(false);
-        setShowDates(false);
+        setShowDates(!!gameMode.showDatesByDefault);
         setIsCorrect(undefined);
         setIsCountdownActive(false);
-        setTimeLeft(20);
+        setTimeLeft(timeLimit);
         if (selectedEvent) {
           devLog('EVENT_PLAYED', {
             date: selectedEvent.date,
@@ -255,13 +266,17 @@ export function useGameLogicA(initialEvent?: string) {
         }
         // console.log(`[useGameLogicA] updateGameState completed. isImageLoaded: false, isCountdownActive: false, timeLeft: 20`);
 
-        await supabase
-          .from("evenements")
-          .update({
-            frequency_score: ((selectedEvent as any).frequency_score || 0) + 1,
-            last_used: new Date().toISOString(),
-          })
-          .eq("id", selectedEvent.id);
+        const { error: usageError } = await supabase.rpc('increment_event_usage', {
+          event_id: selectedEvent.id,
+        });
+
+        if (usageError) {
+          devLog('SUPABASE_INCREMENT_ERROR', {
+            id: selectedEvent.id,
+            message: usageError.message,
+            details: (usageError as any)?.details ?? null,
+          });
+        }
 
         markEventUsageLocal(selectedEvent.id);
         invalidateEventCaches(selectedEvent.id);
@@ -288,7 +303,9 @@ export function useGameLogicA(initialEvent?: string) {
       updateAntiqueCount, // from useEventSelector
       markEventUsageLocal,
       invalidateEventCaches,
-      setError
+      setError,
+      gameMode.showDatesByDefault,
+      timeLimit
     ]
   );
 
@@ -332,10 +349,10 @@ export function useGameLogicA(initialEvent?: string) {
         setUser((prev) => {
           const currentPoints = Math.max(0, Number(prev.points) || 0);
           const updatedPoints = currentPoints + (reward.type === RewardType.POINTS ? safeAmount : 0);
-          const updatedLives =
-            reward.type === RewardType.EXTRA_LIFE
-              ? Math.min(prev.lives + 1, MAX_LIVES)
-              : prev.lives;
+        const updatedLives =
+          reward.type === RewardType.EXTRA_LIFE
+            ? Math.min(prev.lives + 1, gameMode.maxLives)
+            : prev.lives;
 
           FirebaseAnalytics.logEvent('reward_applied', {
             reward_type: reward.type,
@@ -353,7 +370,7 @@ export function useGameLogicA(initialEvent?: string) {
         // console.error(`[useGameLogicA] Error applying reward:`, err);
       }
     },
-    [setUser, setError]
+    [setUser, setError, gameMode.maxLives]
   );
 
   const { currentReward, checkRewards, completeRewardAnimation, updateRewardPosition } = useRewards({
@@ -366,6 +383,7 @@ export function useGameLogicA(initialEvent?: string) {
       }
       applyReward(reward);
     },
+    maxLives: gameMode.maxLives,
   });
 
   const {
@@ -389,6 +407,7 @@ export function useGameLogicA(initialEvent?: string) {
     setError,
     pendingAdDisplay,
     setPendingAdDisplay,
+    maxLives: gameMode.maxLives,
   });
 
   useEffect(() => {
@@ -436,7 +455,7 @@ export function useGameLogicA(initialEvent?: string) {
         return;
       }
 
-      const responseTime = 20 - timeLeft;
+      const responseTime = timeLimit - timeLeft;
       // console.log(`[useGameLogicA] handleChoice: Stopping countdown. Response time: ${responseTime}`);
       setIsCountdownActive(false);
 
@@ -506,12 +525,15 @@ export function useGameLogicA(initialEvent?: string) {
           useNativeDriver: false
         }).start();
 
-        const pointsEarned = calculatePoints(
-          timeLeft,
+        const normalizedTimeLeft = Math.round((timeLeft / Math.max(1, timeLimit)) * 20);
+        const safeNormalizedTime = Math.max(0, Math.min(20, normalizedTimeLeft));
+        const basePoints = calculatePoints(
+          safeNormalizedTime,
           1,
           newStreak,
           user.level
         );
+        const pointsEarned = Math.max(10, Math.round(basePoints * gameMode.scoreMultiplier));
         // console.log(`[useGameLogicA] Correct answer. Points earned: ${pointsEarned}, New streak: ${newStreak}`);
 
         trackReward(
@@ -631,7 +653,7 @@ export function useGameLogicA(initialEvent?: string) {
       }
     },
     [
-      previousEvent, newEvent, isLevelPaused, isGameOver, isWaitingForCountdown, timeLeft, streak, user, allEvents, progressAnim, levelCompletedEvents, getPeriod, calculatePoints, checkRewards, selectNewEvent, finalizeCurrentLevelHistory, playCorrectSound, playIncorrectSound, playLevelUpSound, updatePerformanceStats, trackQuestion, trackStreak, trackReward, trackLevelCompleted, addEventToLevel, resetCurrentLevelEvents, resetAntiqueCount, endGame, setPreviousEvent, setError, setIsCorrect, setShowDates, setIsWaitingForCountdown, setIsCountdownActive, setStreak, setUser, setLevelsHistory, setCurrentLevelConfig, setShowLevelModal, setIsLevelPaused, setPendingAdDisplay
+      previousEvent, newEvent, isLevelPaused, isGameOver, isWaitingForCountdown, timeLeft, streak, user, allEvents, progressAnim, levelCompletedEvents, getPeriod, calculatePoints, checkRewards, selectNewEvent, finalizeCurrentLevelHistory, playCorrectSound, playIncorrectSound, playLevelUpSound, updatePerformanceStats, trackQuestion, trackStreak, trackReward, trackLevelCompleted, addEventToLevel, resetCurrentLevelEvents, resetAntiqueCount, endGame, setPreviousEvent, setError, setIsCorrect, setShowDates, setIsWaitingForCountdown, setIsCountdownActive, setStreak, setUser, setLevelsHistory, setCurrentLevelConfig, setShowLevelModal, setIsLevelPaused, setPendingAdDisplay, gameMode.scoreMultiplier, timeLimit
     ]
   );
 
@@ -864,7 +886,7 @@ export function useGameLogicA(initialEvent?: string) {
     setShowLevelModal(false); // Hide the modal first
 
     // console.log(`[useGameLogicA] handleLevelUp: Resetting states - Timer, Events, Waiting, Dates, Correct, ImageLoaded, DisplayedEvent`);
-    resetTimer(20); // Reset timer for the new level
+    resetTimer(timeLimit); // Reset timer for the new level
     // resetLevelCompletedEvents(); // Already done when finalizing history
     // resetCurrentLevelEvents(); // Already done when user state was updated
     setIsWaitingForCountdown(false); // Not waiting for next event yet
@@ -927,6 +949,7 @@ export function useGameLogicA(initialEvent?: string) {
     pendingAdDisplay, canShowAd, showLevelUpInterstitial, // Ad logic
     selectNewEvent, // Event selection logic
     resetTimer, // Timer logic
+    timeLimit,
     trackLevelStarted, // Analytics
     setDisplayedEvent, setError, setIsGameOver, endGame, // State setters & core actions
     setShowLevelModal, setIsLevelPaused, setIsWaitingForCountdown, // UI/Flow state setters
@@ -989,7 +1012,9 @@ export function useGameLogicA(initialEvent?: string) {
       hasRewardedAd: adState.rewardedLoaded,
       hasWatchedRewardedAd: adState.hasWatchedRewardedAd,
       // Consider adding isAdFreePeriod if needed by UI
-    }
+    },
+    gameMode,
+    timeLimit,
     // --- FIN MODIFICATION RETURN ---
   };
 }

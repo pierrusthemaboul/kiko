@@ -23,10 +23,10 @@ const scoringCache = new Map<string, any>(); // Cache pour les scores
 const scorePartsCache = new Map<string, any>(); // Cache pour les composantes de score
 
 const notorieteProfileForLevel = (level: number) => {
-  if (level <= 3) return { target: 0.85, tolerance: 0.3 };
-  if (level <= 6) return { target: 0.65, tolerance: 0.35 };
-  if (level <= 10) return { target: 0.5, tolerance: 0.4 };
-  return { target: 0.35, tolerance: 0.45 };
+  if (level <= 3) return { target: 0.6, tolerance: 0.45 };
+  if (level <= 6) return { target: 0.5, tolerance: 0.45 };
+  if (level <= 10) return { target: 0.4, tolerance: 0.45 };
+  return { target: 0.35, tolerance: 0.5 };
 };
 
 /**
@@ -150,6 +150,8 @@ export function useEventSelector({
     const config = LEVEL_CONFIGS[userLevel];
     if (!config) return [];
 
+    const originalCount = events.length;
+
     const { year: refYear } = getCachedDateInfo(referenceEvent.date);
     const canAddMoreAntiques = canAddAntiqueEvent(userLevel);
 
@@ -189,7 +191,6 @@ export function useEventSelector({
       }
       filtered = afterAntique;
     }
-
     // 5. Prioriser les événements moins utilisés
     const now = Date.now();
     filtered.sort((a, b) => {
@@ -206,7 +207,16 @@ export function useEventSelector({
     });
 
     // 6. Limite drastique pour éviter les gels
-    return filtered.slice(0, MAX_EVENTS_TO_PROCESS);
+    const limited = filtered.slice(0, MAX_EVENTS_TO_PROCESS);
+
+    devLog('PREFILTER_COUNTS', {
+      original: originalCount,
+      limited: limited.length,
+      level: userLevel,
+      reference: referenceEvent?.id ?? null,
+    });
+
+    return limited;
   }, [canAddAntiqueEvent, getTimeDifference, isAntiqueEvent]);
 
   /**
@@ -358,8 +368,6 @@ export function useEventSelector({
     const isForcedJumpTriggered = localEventCount === forcedJumpEventCount;
     
     if (isForcedJumpTriggered) {
-      console.log(`[useEventSelector] 🚀 SAUT TEMPOREL déclenché ! Event ${localEventCount}/${forcedJumpEventCount}`);
-      
       const { year: refYear } = getCachedDateInfo(referenceEvent.date);
       
       // Calculer la distance du saut selon l'époque
@@ -380,8 +388,6 @@ export function useEventSelector({
       const jumpForward = Math.random() > 0.5;
       const targetYear = jumpForward ? refYear + jumpDistance : refYear - jumpDistance;
       
-      console.log(`[useEventSelector] Saut de ${refYear} vers ~${targetYear} (${jumpForward ? 'futur' : 'passé'})`);
-
       // Pré-filtrage pour le saut temporel
       const jumpCandidates = preFilterEvents(events, usedEvents, userLevel, referenceEvent)
         .filter(e => {
@@ -400,8 +406,6 @@ export function useEventSelector({
         setForcedJumpEventCount(localEventCount + nextIncrement);
         setHasFirstForcedJumpHappened(true);
         
-        console.log(`[useEventSelector] ✅ Saut réussi vers: ${jumpEvent.titre} (${jumpEvent.date_formatee})`);
-        console.log(`[useEventSelector] Prochain saut dans ${nextIncrement} événements`);
         
         // Mise à jour de l'état et retour
         await updateStateCallback(jumpEvent);
@@ -424,17 +428,13 @@ export function useEventSelector({
     // --- FIN LOGIQUE SAUT TEMPOREL ---
 
     // 🚀 PRÉ-FILTRAGE INTELLIGENT (réduit de 896 à ~150 événements max)
-    console.time('preFilter');
     const preFilteredEvents = preFilterEvents(events, usedEvents, userLevel, referenceEvent, explainOn ? { logExclusion: exclusionAcc.logExclusion } : undefined);
-    console.timeEnd('preFilter');
 
     if (preFilteredEvents.length === 0) {
       setError("Plus d'événements disponibles pour ce niveau !");
       setIsGameOver(true);
       return null;
     }
-
-    console.log(`[useEventSelector] Pré-filtrage: ${events.length} → ${preFilteredEvents.length} événements`);
 
     // Configuration du gap temporel
     const { year: refYear } = getCachedDateInfo(referenceEvent.date);
@@ -446,10 +446,27 @@ export function useEventSelector({
     };
 
     // 🚀 SCORING LIMITÉ (encore plus restreint pour les calculs lourds)
-    console.time('scoring');
-    const notorieteConstrainedPool = userLevel <= 3
-      ? preFilteredEvents.filter(evt => ((evt as any).notoriete ?? 0) >= 70)
-      : preFilteredEvents;
+    const computeMinNotoriete = (level: number) => {
+      if (level <= 1) return 45;
+      if (level === 2) return 50;
+      if (level === 3) return 55;
+      if (level <= 5) return 40;
+      return 0;
+    };
+
+    const minNotoriete = computeMinNotoriete(userLevel);
+    let notorieteConstrainedPool = preFilteredEvents;
+
+    if (minNotoriete > 0) {
+      const filteredByNotoriete = preFilteredEvents.filter(
+        evt => ((evt as any).notoriete ?? 0) >= minNotoriete
+      );
+
+      // Si le filtre est trop strict, on revient au set initial pour garder de la diversité
+      notorieteConstrainedPool = filteredByNotoriete.length >= 25
+        ? filteredByNotoriete
+        : preFilteredEvents;
+    }
     if (explainOn) {
       try {
         const excluded = preFilteredEvents.filter(e => !notorieteConstrainedPool.includes(e)).slice(0, 50);
@@ -460,30 +477,14 @@ export function useEventSelector({
     // Diversité: exclure seulement même époque que l'événement de référence
     const prevEpoch = (referenceEvent as any)?.epoque;
 
-    let excludedByEpoch = 0;
     const diversityFilteredPool = notorieteConstrainedPool.filter(evt => {
       const epoch = (evt as any)?.epoque;
       const sameEpoch = prevEpoch != null && epoch != null && epoch === prevEpoch;
-      if (sameEpoch) excludedByEpoch++;
       if (sameEpoch && explainOn) exclusionAcc.logExclusion(evt as any, 'DIVERSITY_EPOQUE', 'same_epoch_as_previous');
       return !sameEpoch;
     });
 
-    try {
-      devLog('DIVERSITY_CHECK', {
-        prevId: referenceEvent?.id ?? null,
-        excludedByEpoch,
-        kept: diversityFilteredPool.length,
-      });
-    } catch {}
-
     const scoringPool = diversityFilteredPool.slice(0, MAX_SCORING_POOL);
-    try {
-      devLog('FILTER_COUNTS', {
-        prefilter: preFilteredEvents.length,
-        afterNotoriete: notorieteConstrainedPool.length,
-      });
-    } catch {}
     if (explainOn) {
       try {
         const { truncated } = exclusionAcc.flush('EXCLUSION');
@@ -510,7 +511,16 @@ export function useEventSelector({
       )
       .sort((a, b) => b.score - a.score);
     
-    console.timeEnd('scoring');
+    try {
+      devLog('SCORING_COUNTS', {
+        level: userLevel,
+        pool: scoringPool.length,
+        passed: scoredEvents.length,
+        minGap: timeGap.min,
+        maxGap: timeGap.max,
+      });
+    } catch {}
+
     if (explainOn) {
       try {
         const weights = { timeGapWeight: 35, freqMalusPerUnit: 10, freqMalusCap: 500, jitterRange: 10 };
@@ -530,7 +540,6 @@ export function useEventSelector({
     let finalEvents = scoredEvents;
     let selectionPath: 'normal' | 'relax' | 'ultimate_fallback' = 'normal';
     if (finalEvents.length === 0) {
-      console.log('[useEventSelector] Relâchement des contraintes temporelles');
       const relaxedMin = timeGap.min * 0.3;
       const relaxedMax = timeGap.max * 2;
       
@@ -576,54 +585,31 @@ export function useEventSelector({
     // Sélection finale (top 5 pour la variété)
     const topEvents = finalEvents.slice(0, Math.min(5, finalEvents.length));
     const topK = topEvents.map(x => x.event);
-    try {
-      devLog('TOPK', topK.map((e: any) => ({
-        id: e?.id,
-        titre: e?.titre,
-        notoriete: e?.notoriete ?? null,
-        score: e?._score,
-        parts: e?._scoreParts,
-      })));
-    } catch {}
+    devLog('SELECTION_PATH', {
+      level: userLevel,
+      selectionPath,
+      finalCandidates: finalEvents.length,
+      topSample: topEvents.map(e => e.event?.id ?? null),
+    });
     let pickedIndex = Math.floor(Math.random() * topEvents.length);
     const selectedEvent = topEvents[pickedIndex].event;
     if (explainOn) {
       try { explainLog('RNG', { method: 'native', seed: null, poolSize: topEvents.length, indexPicked: pickedIndex }); } catch {}
     }
 
-    console.log(`[useEventSelector] Sélectionné: ${selectedEvent.titre} (${selectedEvent.date_formatee})`);
-
     // Mise à jour de l'état
     setEventCount(prev => prev + 1);
     await updateStateCallback(selectedEvent);
 
-    // Mise à jour Supabase (non-bloquante)
-    const currentFrequency = (selectedEvent as any).frequency_score || 0;
-    supabase
-      .from("evenements")
-      .update({ 
-        frequency_score: currentFrequency + 1, 
-        last_used: new Date().toISOString() 
-      })
-      .eq("id", selectedEvent.id)
-      .then(({ error }) => {
-        if (error) console.warn('[useEventSelector] Supabase update error:', error.message);
-      });
-
     const selected = { ...(selectedEvent as any) } as Event;
-    try {
-      if ((selected as any)?.notoriete == null) {
-        devLog('MISSING_FIELD', { where: 'selected', id: (selected as any)?.id });
-      }
-      devLog('WHY_SELECTED', {
-        id: (selected as any)?.id,
-        titre: (selected as any)?.titre,
-        notoriete: (selected as any)?.notoriete ?? null,
-        level: userLevel,
-        path: selectionPath,
-        parts: (selected as any)?._scoreParts,
-      });
-    } catch {}
+    devLog('WHY_SELECTED', {
+      id: (selected as any)?.id,
+      titre: (selected as any)?.titre,
+      notoriete: (selected as any)?.notoriete ?? null,
+      level: userLevel,
+      path: selectionPath,
+      parts: (selected as any)?._scoreParts,
+    });
 
     if (explainOn) {
       try { explainLog('SELECTOR_END', { idPicked: (selected as any)?.id ?? null, durationMs: Date.now() - explainStartTs }); } catch {}

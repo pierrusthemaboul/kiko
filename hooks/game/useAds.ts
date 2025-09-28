@@ -10,6 +10,21 @@ import { getAdUnitId } from '../../lib/config/adConfig';
 import { FirebaseAnalytics } from '../../lib/firebase';
 import { MAX_LIVES, User, Event, RewardType } from '../types';
 
+const ADS_LOG_ENABLED = (() => {
+  try {
+    if (typeof process !== 'undefined' && process.env) {
+      const flag = process.env.EXPO_PUBLIC_ADS_LOGS ?? process.env.ADS_DEBUG_LOGS;
+      return flag === '1' || flag === 'true';
+    }
+  } catch {}
+  return false;
+})();
+
+const adLog = (level: 'log' | 'warn' | 'error', message: string, ...args: unknown[]) => {
+  if (!ADS_LOG_ENABLED) return;
+  console[level](`[useAds] ${message}`, ...args);
+};
+
 // ✅ SUPPRIMÉ : const USE_TEST_IDS = __DEV__;
 // On utilise maintenant getAdUnitId() qui gère déjà cette logique !
 
@@ -62,6 +77,7 @@ interface UseAdsProps {
   setPendingAdDisplay?: (display: "interstitial" | "rewarded" | "gameOver" | "levelUp" | null) => void;
   selectNewEvent: (events: Event[], referenceEvent: Event | null) => Promise<Event | null>;
   onLevelUpAdClosed?: () => void;
+  maxLives?: number;
 }
 
 export function useAds({
@@ -77,8 +93,10 @@ export function useAds({
   setError,
   setPendingAdDisplay,
   selectNewEvent,
-  onLevelUpAdClosed
+  onLevelUpAdClosed,
+  maxLives,
 }: UseAdsProps) {
+  const effectiveMaxLives = Math.max(1, maxLives ?? MAX_LIVES);
 
   const [adState, setAdState] = useState<AdState>({
     interstitialLoaded: false,
@@ -104,28 +122,28 @@ export function useAds({
   const initCheckPendingAds = useCallback(() => {
     return () => {
       if (adState.isShowingAd || adState.processingAdRequest) {
-        console.log("[useAds] checkPendingAds: Skipping, ad is showing or request is being processed.");
+        adLog('log', "checkPendingAds: Skipping, ad is showing or request is being processed.");
         return;
       }
 
       setAdState(prev => {
         if (prev.pendingAds.length === 0) {
-          console.log("[useAds] checkPendingAds: No pending ads.");
+          adLog('log', "checkPendingAds: No pending ads.");
           return prev;
         }
 
         const nextAd = prev.pendingAds[0];
         const remaining = prev.pendingAds.slice(1);
-        console.log(`[useAds] Processing next ad in queue: ${nextAd}. Remaining: ${remaining.length}`);
+        adLog('log', `Processing next ad in queue: ${nextAd}. Remaining: ${remaining.length}`);
 
         if (setPendingAdDisplay) {
           setTimeout(() => {
-            console.log(`[useAds] Setting pendingAdDisplay to: ${nextAd}`);
+            adLog('log', `Setting pendingAdDisplay to: ${nextAd}`);
             setPendingAdDisplay(nextAd);
           }, 750);
           return { ...prev, pendingAds: remaining, processingAdRequest: true };
         } else {
-          console.warn("[useAds] setPendingAdDisplay is not provided, cannot process ad queue.");
+          adLog('warn', "setPendingAdDisplay is not provided, cannot process ad queue.");
           return prev;
         }
       });
@@ -146,26 +164,26 @@ export function useAds({
       if (checkPendingAdsRef.current) {
         checkPendingAdsRef.current();
       } else {
-        console.warn('[useAds] safeCheckPendingAds called but checkPendingAdsRef.current is null');
+        adLog('warn', 'safeCheckPendingAds called but checkPendingAdsRef.current is null');
       }
     }, 500);
   }, []);
 
   const canShowAd = useCallback((adType: 'levelUp' | 'gameOver' | 'generic' = 'generic') => {
     if (adState.isShowingAd) {
-      console.log(`[useAds] canShowAd (${adType}): Blocked, an ad is already showing.`);
+      adLog('log', `canShowAd (${adType}): Blocked, an ad is already showing.`);
       return false;
     }
 
     const currentLevel = user?.level || 0;
 
     if (adType === 'gameOver') {
-      console.log(`[useAds] canShowAd (${adType}): Always true for game over (level: ${currentLevel})`);
+      adLog('log', `canShowAd (${adType}): Always true for game over (level: ${currentLevel})`);
       return true;
     }
 
     if (adType === 'levelUp' && (currentLevel === 1 || currentLevel === 6 || currentLevel % 5 === 0)) {
-      console.log(`[useAds] canShowAd (${adType}): True for special level (level: ${currentLevel})`);
+      adLog('log', `canShowAd (${adType}): True for special level (level: ${currentLevel})`);
       return true;
     }
 
@@ -173,14 +191,14 @@ export function useAds({
     const MIN_INTERVAL_MS = 3 * 60 * 1000;
     const timeLimitPassed = timeSinceLastAd >= MIN_INTERVAL_MS;
 
-    console.log(`[useAds] canShowAd (${adType}): ${timeLimitPassed} (Time since last ad: ${Math.round(timeSinceLastAd/1000)}s, Level: ${currentLevel})`);
+    adLog('log', `canShowAd (${adType}): ${timeLimitPassed} (Time since last ad: ${Math.round(timeSinceLastAd/1000)}s, Level: ${currentLevel})`);
     return timeLimitPassed;
   }, [adState.lastInterstitialTime, adState.isShowingAd, user?.level]);
 
   // Fonction pour appliquer la récompense après l'avoir gagnée
   const applyRewardAndContinue = useCallback(async () => {
     if (processingRewardRef.current) {
-      console.log("[useAds] Already processing reward, skipping duplicate call");
+      adLog('log', "Already processing reward, skipping duplicate call");
       return;
     }
     
@@ -188,7 +206,7 @@ export function useAds({
     const currentLevel = user?.level || 0;
     const currentPoints = user?.points || 0;
     
-    console.log("[useAds] Applying reward and resuming game...");
+    adLog('log', "Applying reward and resuming game...");
     setIsGameOver(false);
     
     try {
@@ -200,13 +218,13 @@ export function useAds({
           }
           const currentLives = prevUser.lives;
           const livesToAdd = 1;
-          console.log(`[useAds] Granting life. Current: ${currentLives}, New: ${Math.min(currentLives + livesToAdd, MAX_LIVES)}`);
-          return { ...prevUser, lives: Math.min(currentLives + livesToAdd, MAX_LIVES) };
+          adLog('log', `Granting life. Current: ${currentLives}, New: ${Math.min(currentLives + livesToAdd, effectiveMaxLives)}`);
+          return { ...prevUser, lives: Math.min(currentLives + livesToAdd, effectiveMaxLives) };
         });
         setTimeout(resolve, 150);
       });
     } catch (updateError) {
-      console.error("[useAds] Error updating user state after reward:", updateError);
+      adLog('warn', "Error updating user state after reward:", updateError);
       if (setError) setError("Erreur lors de l'application de la récompense.");
       setIsLevelPaused(false);
       processingRewardRef.current = false;
@@ -215,33 +233,33 @@ export function useAds({
 
     setIsLevelPaused(false);
     setIsWaitingForCountdown(false);
-    console.log("[useAds] Resetting timer without penalty after reward.");
+    adLog('log', "Resetting timer without penalty after reward.");
     resetTimer(20, true);
 
     if (allEvents && previousEvent) {
-      console.log("[useAds] Selecting new event after reward.");
+      adLog('log', "Selecting new event after reward.");
       try {
         const nextEvent = await selectNewEvent(allEvents, previousEvent);
         if (!nextEvent) {
-          console.warn("[useAds] Failed to select next event after reward, potentially end of game.");
+          adLog('warn', "Failed to select next event after reward, potentially end of game.");
           setIsGameOver(true);
           setIsLevelPaused(true);
           if (setError) setError('Impossible de sélectionner l\'événement suivant après la récompense.');
         } else {
-          console.log("[useAds] New event selected successfully after reward.");
+          adLog('log', "New event selected successfully after reward.");
         }
       } catch (err) {
-        console.error("[useAds] Error selecting next event after reward:", err);
+        adLog('warn', "Error selecting next event after reward:", err);
         setIsGameOver(true);
         setIsLevelPaused(true);
         if (setError) setError('Erreur lors de la reprise du jeu après la publicité.');
         FirebaseAnalytics.error('rewarded_resume_error', err instanceof Error ? err.message : String(err), 'useAds:EARNED_REWARD');
       }
     } else {
-      console.warn("[useAds] Missing allEvents or previousEvent, cannot select new event after reward.");
+      adLog('warn', "Missing allEvents or previousEvent, cannot select new event after reward.");
     }
 
-    console.log("[useAds] Reloading rewarded ad after reward process.");
+    adLog('log', "Reloading rewarded ad after reward process.");
     rewardedAd.load();
     processingRewardRef.current = false;
     
@@ -272,13 +290,13 @@ export function useAds({
     };
 
     const unsubGenericLoaded = genericInterstitial.addAdEventListener(AdEventType.LOADED, () => {
-      console.log("[useAds] Generic Interstitial loaded successfully");
+      adLog('log', "Generic Interstitial loaded successfully");
       setAdState(prev => ({ ...prev, interstitialLoaded: true }));
       FirebaseAnalytics.ad('interstitial', 'loaded', 'generic', getCurrentLevelForLog());
     });
 
     const unsubGenericError = genericInterstitial.addAdEventListener(AdEventType.ERROR, error => {
-      console.error(`[useAds] Generic Interstitial failed to load: ${error.message}`);
+      adLog('warn', `Generic Interstitial failed to load: ${error.message}`);
       setAdState(prev => ({ ...prev, interstitialLoaded: false }));
       FirebaseAnalytics.ad('interstitial', 'failed', 'generic', getCurrentLevelForLog());
       FirebaseAnalytics.error('ad_load_error', `Generic Interstitial: ${error.message}`, 'useAds');
@@ -286,13 +304,13 @@ export function useAds({
     });
 
     const unsubGenericOpened = genericInterstitial.addAdEventListener(AdEventType.OPENED, () => {
-      console.log("[useAds] Generic Interstitial opened");
+      adLog('log', "Generic Interstitial opened");
       setIsLevelPaused(true);
       FirebaseAnalytics.ad('interstitial', 'opened', 'generic', getCurrentLevelForLog());
     });
 
     const unsubGenericClosed = genericInterstitial.addAdEventListener(AdEventType.CLOSED, () => {
-      console.log("[useAds] Generic Interstitial closed");
+      adLog('log', "Generic Interstitial closed");
       setAdState(prev => ({
         ...prev,
         interstitialLoaded: false,
@@ -307,13 +325,13 @@ export function useAds({
     });
 
     const unsubLevelUpLoaded = levelUpInterstitial.addAdEventListener(AdEventType.LOADED, () => {
-      console.log("[useAds] LevelUp Interstitial loaded successfully");
+      adLog('log', "LevelUp Interstitial loaded successfully");
       setAdState(prev => ({ ...prev, levelUpInterstitialLoaded: true }));
       FirebaseAnalytics.ad('interstitial', 'loaded', 'level_up', getCurrentLevelForLog());
     });
 
     const unsubLevelUpError = levelUpInterstitial.addAdEventListener(AdEventType.ERROR, error => {
-      console.error(`[useAds] LevelUp Interstitial failed to load: ${error.message}`);
+      adLog('warn', `LevelUp Interstitial failed to load: ${error.message}`);
       setAdState(prev => ({ ...prev, levelUpInterstitialLoaded: false }));
       FirebaseAnalytics.ad('interstitial', 'failed', 'level_up', getCurrentLevelForLog());
       FirebaseAnalytics.error('ad_load_error', `LevelUp Interstitial: ${error.message}`, 'useAds');
@@ -321,13 +339,13 @@ export function useAds({
     });
 
     const unsubLevelUpOpened = levelUpInterstitial.addAdEventListener(AdEventType.OPENED, () => {
-      console.log("[useAds] LevelUp Interstitial opened");
+      adLog('log', "LevelUp Interstitial opened");
       setIsLevelPaused(true);
       FirebaseAnalytics.ad('interstitial', 'opened', 'level_up', getCurrentLevelForLog());
     });
 
     const unsubLevelUpClosed = levelUpInterstitial.addAdEventListener(AdEventType.CLOSED, () => {
-      console.log("[useAds] LevelUp Ad Closed");
+      adLog('log', "LevelUp Ad Closed");
       setAdState(prev => ({
         ...prev,
         levelUpInterstitialLoaded: false,
@@ -337,22 +355,22 @@ export function useAds({
       levelUpInterstitial.load();
       FirebaseAnalytics.ad('interstitial', 'closed', 'level_up', getCurrentLevelForLog());
       if (onLevelUpAdClosed) {
-        console.log("[useAds] Calling onLevelUpAdClosed callback.");
+        adLog('log', "Calling onLevelUpAdClosed callback.");
         onLevelUpAdClosed();
       } else {
-        console.warn("[useAds] LevelUp Ad Closed, but no onLevelUpAdClosed callback provided.");
+        adLog('warn', "LevelUp Ad Closed, but no onLevelUpAdClosed callback provided.");
       }
       setTimeout(safeCheckPendingAds, 500);
     });
 
     const unsubGameOverLoaded = gameOverInterstitial.addAdEventListener(AdEventType.LOADED, () => {
-      console.log("[useAds] GameOver Interstitial loaded successfully");
+      adLog('log', "GameOver Interstitial loaded successfully");
       setAdState(prev => ({ ...prev, gameOverInterstitialLoaded: true }));
       FirebaseAnalytics.ad('interstitial', 'loaded', 'game_over', getCurrentLevelForLog());
     });
 
     const unsubGameOverError = gameOverInterstitial.addAdEventListener(AdEventType.ERROR, error => {
-      console.error(`[useAds] GameOver Interstitial failed to load: ${error.message}`);
+      adLog('warn', `GameOver Interstitial failed to load: ${error.message}`);
       setAdState(prev => ({ ...prev, gameOverInterstitialLoaded: false }));
       FirebaseAnalytics.ad('interstitial', 'failed', 'game_over', getCurrentLevelForLog());
       FirebaseAnalytics.error('ad_load_error', `GameOver Interstitial: ${error.message}`, 'useAds');
@@ -360,12 +378,12 @@ export function useAds({
     });
 
     const unsubGameOverOpened = gameOverInterstitial.addAdEventListener(AdEventType.OPENED, () => {
-      console.log("[useAds] GameOver Interstitial opened");
+      adLog('log', "GameOver Interstitial opened");
       FirebaseAnalytics.ad('interstitial', 'opened', 'game_over', getCurrentLevelForLog());
     });
 
     const unsubGameOverClosed = gameOverInterstitial.addAdEventListener(AdEventType.CLOSED, () => {
-      console.log("[useAds] GameOver Interstitial closed");
+      adLog('log', "GameOver Interstitial closed");
       setAdState(prev => ({
         ...prev,
         gameOverInterstitialLoaded: false,
@@ -378,13 +396,13 @@ export function useAds({
     });
 
     const unsubRewardedLoaded = rewardedAd.addAdEventListener(RewardedAdEventType.LOADED, () => {
-      console.log("[useAds] Rewarded ad loaded successfully");
+      adLog('log', "Rewarded ad loaded successfully");
       setAdState(prev => ({ ...prev, rewardedLoaded: true }));
       FirebaseAnalytics.ad('rewarded', 'loaded', 'extra_life', getCurrentLevelForLog());
     });
 
     const unsubRewardedError = rewardedAd.addAdEventListener(AdEventType.ERROR, error => {
-      console.error(`[useAds] Rewarded ad failed to load: ${error.message}`);
+      adLog('warn', `Rewarded ad failed to load: ${error.message}`);
       setAdState(prev => ({ ...prev, rewardedLoaded: false }));
       FirebaseAnalytics.ad('rewarded', 'failed', 'extra_life', getCurrentLevelForLog());
       FirebaseAnalytics.error('ad_load_error', `Rewarded Ad: ${error.message}`, 'useAds');
@@ -392,7 +410,7 @@ export function useAds({
     });
 
     const unsubRewardedOpened = rewardedAd.addAdEventListener(AdEventType.OPENED, () => {
-      console.log("[useAds] Rewarded ad opened");
+      adLog('log', "Rewarded ad opened");
       // Réinitialiser le flag rewardEarned au moment où la pub s'ouvre
       setAdState(prev => ({ ...prev, rewardEarned: false }));
       setIsLevelPaused(true);
@@ -401,7 +419,7 @@ export function useAds({
 
     // CORRECTION: Modification du handler de fermeture de pub récompensée
     const unsubRewardedClosed = rewardedAd.addAdEventListener(AdEventType.CLOSED, () => {
-      console.log("[useAds] Rewarded ad closed");
+      adLog('log', "Rewarded ad closed");
       
       // Enregistrer le timestamp de fermeture
       adClosedTimeRef.current = Date.now();
@@ -410,7 +428,7 @@ export function useAds({
       setAdState(prev => {
         // Vérifier si la récompense a été gagnée
         if (prev.rewardEarned) {
-          console.log("[useAds] Closed after reward earned, setting hasWatchedRewardedAd to true");
+          adLog('log', "Closed after reward earned, setting hasWatchedRewardedAd to true");
           return {
             ...prev,
             rewardedLoaded: false,
@@ -418,7 +436,7 @@ export function useAds({
             hasWatchedRewardedAd: true // Marquer comme récompense vue
           };
         } else {
-          console.log("[useAds] Rewarded ad closed WITHOUT earning reward.");
+          adLog('log', "Rewarded ad closed WITHOUT earning reward.");
           FirebaseAnalytics.ad('rewarded', 'closed_without_reward', 'extra_life', getCurrentLevelForLog());
           
           // Pas de récompense gagnée, réinitialiser l'état de jeu
@@ -445,7 +463,7 @@ export function useAds({
         setAdState(prev => {
           // Si la récompense a été gagnée entre-temps (par l'événement EARNED_REWARD après CLOSED)
           if (prev.rewardEarned && !processingRewardRef.current) {
-            console.log("[useAds] Applying reward after delayed check (reward earned after close)");
+            adLog('log', "Applying reward after delayed check (reward earned after close)");
             applyRewardAndContinue();
           }
           return prev;
@@ -455,7 +473,7 @@ export function useAds({
 
     // CORRECTION: Modification du handler de récompense gagnée
     const unsubRewardedEarned = rewardedAd.addAdEventListener(RewardedAdEventType.EARNED_REWARD, reward => {
-      console.log("[useAds] User earned reward:", reward);
+      adLog('log', "User earned reward:", reward);
       const currentLevel = getCurrentLevelForLog();
       const currentPoints = user?.points || 0;
       
@@ -473,7 +491,7 @@ export function useAds({
         FirebaseAnalytics.reward(RewardType.EXTRA_LIFE, 1, 'ad_reward', 'completed', currentLevel, currentPoints);
       } else {
         FirebaseAnalytics.reward(rewardType, rewardAmount, 'ad_reward_unexpected', 'completed', currentLevel, currentPoints);
-        console.warn(`[useAds] Unexpected reward type or amount: ${rewardType}, ${rewardAmount}`);
+        adLog('warn', `Unexpected reward type or amount: ${rewardType}, ${rewardAmount}`);
       }
 
       // Vérifier si l'événement de fermeture s'est déjà produit
@@ -481,7 +499,7 @@ export function useAds({
       
       if (adClosedTimeRef.current > 0 && timeSinceClosed < 1000) {
         // Le CLOSED a déjà été déclenché juste avant, appliquer la récompense maintenant
-        console.log(`[useAds] Ad already closed ${timeSinceClosed}ms ago, applying reward now`);
+        adLog('log', `Ad already closed ${timeSinceClosed}ms ago, applying reward now`);
         
         // Mettre à jour hasWatchedRewardedAd avant d'appliquer la récompense
         setAdState(prev => ({ 
@@ -493,18 +511,18 @@ export function useAds({
       } else {
         // Le CLOSED n'a pas encore été appelé ou a été appelé il y a longtemps
         // La logique sera gérée dans le handler CLOSED ou dans le setTimeout après CLOSED
-        console.log("[useAds] Reward earned but waiting for close event before processing");
+        adLog('log', "Reward earned but waiting for close event before processing");
       }
     });
 
-    console.log("[useAds] Initializing ad listeners and loading ads if needed...");
-    if (!genericInterstitial.loaded && !adState.interstitialLoaded) { console.log("[useAds] Loading initial Generic Interstitial."); genericInterstitial.load(); }
-    if (!levelUpInterstitial.loaded && !adState.levelUpInterstitialLoaded) { console.log("[useAds] Loading initial LevelUp Interstitial."); levelUpInterstitial.load(); }
-    if (!gameOverInterstitial.loaded && !adState.gameOverInterstitialLoaded) { console.log("[useAds] Loading initial GameOver Interstitial."); gameOverInterstitial.load(); }
-    if (!rewardedAd.loaded && !adState.rewardedLoaded) { console.log("[useAds] Loading initial Rewarded Ad."); rewardedAd.load(); }
+    adLog('log', "Initializing ad listeners and loading ads if needed...");
+    if (!genericInterstitial.loaded && !adState.interstitialLoaded) { adLog('log', "Loading initial Generic Interstitial."); genericInterstitial.load(); }
+    if (!levelUpInterstitial.loaded && !adState.levelUpInterstitialLoaded) { adLog('log', "Loading initial LevelUp Interstitial."); levelUpInterstitial.load(); }
+    if (!gameOverInterstitial.loaded && !adState.gameOverInterstitialLoaded) { adLog('log', "Loading initial GameOver Interstitial."); gameOverInterstitial.load(); }
+    if (!rewardedAd.loaded && !adState.rewardedLoaded) { adLog('log', "Loading initial Rewarded Ad."); rewardedAd.load(); }
 
     return () => {
-      console.log("[useAds] Cleaning up ad listeners.");
+      adLog('log', "Cleaning up ad listeners.");
       unsubGenericLoaded(); unsubGenericError(); unsubGenericOpened(); unsubGenericClosed();
       unsubLevelUpLoaded(); unsubLevelUpError(); unsubLevelUpOpened(); unsubLevelUpClosed();
       unsubGameOverLoaded(); unsubGameOverError(); unsubGameOverOpened(); unsubGameOverClosed();
@@ -526,13 +544,13 @@ export function useAds({
       return;
     }
 
-    console.log(`[useAds Effect] Processing pendingAdDisplay: ${pendingAdDisplay}. Current state: isShowingAd=${adState.isShowingAd}, pendingAds=${adState.pendingAds.length}`);
+    adLog('log', `[useAds Effect] Processing pendingAdDisplay: ${pendingAdDisplay}. Current state: isShowingAd=${adState.isShowingAd}, pendingAds=${adState.pendingAds.length}`);
 
     if (adState.isShowingAd) {
-      console.log(`[useAds Effect] Ad already showing, ignoring trigger for ${pendingAdDisplay}. It might be queued.`);
+      adLog('log', `[useAds Effect] Ad already showing, ignoring trigger for ${pendingAdDisplay}. It might be queued.`);
       setAdState(prev => {
         if (!prev.pendingAds.includes(pendingAdDisplay)) {
-          console.log(`[useAds Effect] Adding ${pendingAdDisplay} to pendingAds queue.`);
+          adLog('log', `[useAds Effect] Adding ${pendingAdDisplay} to pendingAds queue.`);
           return { ...prev, pendingAds: [...prev.pendingAds, pendingAdDisplay] };
         }
         return prev;
@@ -547,78 +565,78 @@ export function useAds({
 
     try {
       setAdState(prev => ({ ...prev, isShowingAd: true, processingAdRequest: false }));
-      console.log(`[useAds Effect] Set isShowingAd = true for ${adTypeToClear}`);
+      adLog('log', `[useAds Effect] Set isShowingAd = true for ${adTypeToClear}`);
 
       if (adTypeToClear === 'levelUp') {
         if (canShowAd('levelUp')) {
           if (adState.levelUpInterstitialLoaded) {
-            console.log("[useAds Effect] Showing LevelUp Interstitial.");
+            adLog('log', "[useAds Effect] Showing LevelUp Interstitial.");
             FirebaseAnalytics.ad('interstitial', 'triggered', 'level_up', currentLevel);
             levelUpInterstitial.show();
             adShown = true;
           } else if (adState.interstitialLoaded) {
-            console.log("[useAds Effect] LevelUp not loaded, showing Generic Interstitial as fallback.");
+            adLog('log', "[useAds Effect] LevelUp not loaded, showing Generic Interstitial as fallback.");
             FirebaseAnalytics.ad('interstitial', 'triggered', 'level_up_fallback', currentLevel);
             genericInterstitial.show();
             adShown = true;
           } else {
-            console.warn("[useAds Effect] No LevelUp or Generic ad loaded for LevelUp trigger.");
+            adLog('warn', "[useAds Effect] No LevelUp or Generic ad loaded for LevelUp trigger.");
             FirebaseAnalytics.ad('interstitial', 'not_available', 'level_up', currentLevel);
             if (!levelUpInterstitial.loaded) levelUpInterstitial.load();
             if (!genericInterstitial.loaded) genericInterstitial.load();
           }
         } else {
-          console.log("[useAds Effect] LevelUp Interstitial blocked by rate limit/condition.");
+          adLog('log', "[useAds Effect] LevelUp Interstitial blocked by rate limit/condition.");
           FirebaseAnalytics.ad('interstitial', 'blocked', 'rate_limit_level_up', currentLevel);
           adTypeToClear = null;
         }
       } else if (adTypeToClear === 'gameOver') {
         if (canShowAd('gameOver')) {
           if (adState.gameOverInterstitialLoaded) {
-            console.log("[useAds Effect] Showing GameOver Interstitial.");
+            adLog('log', "[useAds Effect] Showing GameOver Interstitial.");
             FirebaseAnalytics.ad('interstitial', 'triggered', 'game_over', currentLevel);
             gameOverInterstitial.show();
             adShown = true;
           } else if (adState.interstitialLoaded) {
-            console.log("[useAds Effect] GameOver not loaded, showing Generic Interstitial as fallback.");
+            adLog('log', "[useAds Effect] GameOver not loaded, showing Generic Interstitial as fallback.");
             FirebaseAnalytics.ad('interstitial', 'triggered', 'game_over_fallback', currentLevel);
             genericInterstitial.show();
             adShown = true;
           } else {
-            console.warn("[useAds Effect] No GameOver or Generic ad loaded for GameOver trigger.");
+            adLog('warn', "[useAds Effect] No GameOver or Generic ad loaded for GameOver trigger.");
             FirebaseAnalytics.ad('interstitial', 'not_available', 'game_over', currentLevel);
             if (!gameOverInterstitial.loaded) gameOverInterstitial.load();
             if (!genericInterstitial.loaded) genericInterstitial.load();
           }
         } else {
-          console.error("[useAds Effect] GameOver Interstitial blocked unexpectedly!");
+          adLog('warn', "[useAds Effect] GameOver Interstitial blocked unexpectedly!");
           adTypeToClear = null;
         }
       } else if (adTypeToClear === 'interstitial') {
         if (canShowAd('generic')) {
           if (adState.interstitialLoaded) {
-            console.log("[useAds Effect] Showing Generic Interstitial.");
+            adLog('log', "[useAds Effect] Showing Generic Interstitial.");
             FirebaseAnalytics.ad('interstitial', 'triggered', 'generic', currentLevel);
             genericInterstitial.show();
             adShown = true;
           } else {
-            console.warn("[useAds Effect] Generic Interstitial not loaded for generic trigger.");
+            adLog('warn', "[useAds Effect] Generic Interstitial not loaded for generic trigger.");
             FirebaseAnalytics.ad('interstitial', 'not_available', 'generic', currentLevel);
             if (!genericInterstitial.loaded) genericInterstitial.load();
           }
         } else {
-          console.log("[useAds Effect] Generic Interstitial blocked by rate limit/condition.");
+          adLog('log', "[useAds Effect] Generic Interstitial blocked by rate limit/condition.");
           FirebaseAnalytics.ad('interstitial', 'blocked', 'rate_limit_generic', currentLevel);
           adTypeToClear = null;
         }
       } else if (adTypeToClear === 'rewarded') {
         if (adState.rewardedLoaded) {
-          console.log("[useAds Effect] Showing Rewarded Ad.");
+          adLog('log', "[useAds Effect] Showing Rewarded Ad.");
           FirebaseAnalytics.ad('rewarded', 'triggered', 'user_request_extra_life', currentLevel);
           rewardedAd.show();
           adShown = true;
         } else {
-          console.warn("[useAds Effect] Rewarded Ad was requested but is not loaded anymore.");
+          adLog('warn', "[useAds Effect] Rewarded Ad was requested but is not loaded anymore.");
           FirebaseAnalytics.ad('rewarded', 'not_available', 'user_request_extra_life', currentLevel);
           if (!rewardedAd.loaded) rewardedAd.load();
           if (setError) setError("L'aide vidéo n'a pas pu être chargée à temps.");
@@ -626,12 +644,12 @@ export function useAds({
       }
 
       if (!adShown) {
-        console.log(`[useAds Effect] Ad ${pendingAdDisplay} could not be shown. Resetting isShowingAd.`);
+        adLog('log', `[useAds Effect] Ad ${pendingAdDisplay} could not be shown. Resetting isShowingAd.`);
         setAdState(prev => ({ ...prev, isShowingAd: false, processingAdRequest: false }));
         setTimeout(safeCheckPendingAds, 300);
       }
       } catch (error) {
-        console.error(`[useAds Effect] Error showing ad ${pendingAdDisplay}:`, error);
+        adLog('warn', `[useAds Effect] Error showing ad ${pendingAdDisplay}:`, error);
         const adName = pendingAdDisplay === 'rewarded' ? 'Rewarded Ad' : `${pendingAdDisplay} Interstitial`;
         FirebaseAnalytics.ad(pendingAdDisplay === 'rewarded' ? 'rewarded' : 'interstitial', 'error_show', pendingAdDisplay, currentLevel);
         FirebaseAnalytics.error('ad_show_error', `${adName}: ${error instanceof Error ? error.message : String(error)}`, 'useAds:Effect');
@@ -643,14 +661,14 @@ export function useAds({
           else if (pendingAdDisplay === 'interstitial' && !genericInterstitial.loaded) genericInterstitial.load();
           else if (pendingAdDisplay === 'rewarded' && !rewardedAd.loaded) rewardedAd.load();
         } catch (loadError) {
-          console.error(`[useAds Effect] Error trying to reload ad after show error:`, loadError);
+          adLog('warn', `[useAds Effect] Error trying to reload ad after show error:`, loadError);
         }
 
         setTimeout(safeCheckPendingAds, 300);
         adTypeToClear = pendingAdDisplay;
       } finally {
         if (adTypeToClear && setPendingAdDisplay) {
-          console.log(`[useAds Effect] Clearing pendingAdDisplay: ${adTypeToClear}`);
+          adLog('log', `[useAds Effect] Clearing pendingAdDisplay: ${adTypeToClear}`);
           setPendingAdDisplay(null);
         }
       }
@@ -671,13 +689,13 @@ export function useAds({
   const showRewardedAd = useCallback(() => {
     const currentLevel = user?.level || 0;
     if (adState.hasWatchedRewardedAd) {
-      console.warn("[useAds] Rewarded ad request blocked: already watched in this session/level.");
+      adLog('warn', "Rewarded ad request blocked: already watched in this session/level.");
       FirebaseAnalytics.ad('rewarded', 'blocked', 'already_watched', currentLevel);
       if(setError) setError("Vous avez déjà utilisé l'aide pour ce niveau.");
       return false;
     }
     if (!adState.rewardedLoaded) {
-      console.warn("[useAds] Rewarded ad request: Ad not loaded yet. Attempting to load.");
+      adLog('warn', "Rewarded ad request: Ad not loaded yet. Attempting to load.");
       FirebaseAnalytics.ad('rewarded', 'not_available', 'user_request_extra_life', currentLevel);
       rewardedAd.load();
       if(setError) setError("L'aide vidéo n'est pas encore prête. Réessayez dans quelques instants.");
@@ -729,7 +747,7 @@ export function useAds({
   }, [setPendingAdDisplay, user?.level]);
 
   const resetAdsState = useCallback(() => {
-    console.log("[useAds] Resetting ads state (clearing lastInterstitialTime, hasWatchedRewardedAd, and pending ads)");
+    adLog('log', "Resetting ads state (clearing lastInterstitialTime, hasWatchedRewardedAd, and pending ads)");
     setAdState({
       interstitialLoaded: false,
       gameOverInterstitialLoaded: false,
@@ -748,14 +766,14 @@ export function useAds({
     processingRewardRef.current = false;
 
     try {
-      console.log("[useAds] Forcing reload of all ad instances after reset...");
+      adLog('log', "Forcing reload of all ad instances after reset...");
       genericInterstitial.load();
       levelUpInterstitial.load();
       gameOverInterstitial.load();
       rewardedAd.load();
-      console.log("[useAds] All ad instances explicitly triggered to reload.");
+      adLog('log', "All ad instances explicitly triggered to reload.");
     } catch (error) {
-      console.error("[useAds] Error attempting to reload ads during reset:", error);
+      adLog('warn', "Error attempting to reload ads during reset:", error);
       FirebaseAnalytics.error('ad_reset_reload_error', error instanceof Error ? error.message : String(error), 'useAds:resetAdsState');
     }
   }, []);

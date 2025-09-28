@@ -13,7 +13,8 @@ export function useTimer({
   isGameOver,
   handleTimeout,
   isImageLoaded: initialImageLoaded = false,
-  isFromRewardedAd = false
+  isFromRewardedAd = false,
+  initialTime = 20,
 }: {
   user: { level: number; points: number; lives: number; };
   isLevelPaused: boolean;
@@ -21,8 +22,9 @@ export function useTimer({
   handleTimeout: () => void;
   isImageLoaded?: boolean;
   isFromRewardedAd?: boolean;
+  initialTime?: number;
 }) {
-  const [timeLeft, setTimeLeft] = useState(20);
+  const [timeLeft, setTimeLeft] = useState(initialTime);
   const [isCountdownActive, setIsCountdownActive] = useState(false);
   const [isImageLoaded, setIsImageLoaded] = useState(initialImageLoaded);
   const { playCountdownSound } = useAudio();
@@ -33,13 +35,21 @@ export function useTimer({
   const fromRewardedAdRef = useRef(isFromRewardedAd);
   // Référence pour suivre l'état de l'application
   const appStateRef = useRef(AppState.currentState);
+  // Références pour conserver les paramètres initiaux du timer
+  const defaultTimeRef = useRef(initialTime);
   // Référence pour le dernier temps enregistré avant mise en arrière-plan
-  const lastTimeRef = useRef(20);
+  const lastTimeRef = useRef(initialTime);
 
   // Mettre à jour la référence si la prop change
   useEffect(() => {
     fromRewardedAdRef.current = isFromRewardedAd;
   }, [isFromRewardedAd]);
+
+  useEffect(() => {
+    defaultTimeRef.current = initialTime;
+    setTimeLeft(initialTime);
+    lastTimeRef.current = initialTime;
+  }, [initialTime]);
 
   // Gestion du compte à rebours
   useEffect(() => {
@@ -96,7 +106,8 @@ export function useTimer({
           if (!fromRewardedAdRef.current) {
             // Application du malus normal si ce n'est pas une pub récompensée
             const savedTime = lastTimeRef.current;
-            const newTime = Math.max(1, savedTime - 18);
+            const penalty = Math.max(1, Math.ceil(defaultTimeRef.current * 0.9));
+            const newTime = Math.max(1, savedTime - penalty);
             setTimeLeft(newTime);
             console.log('[useTimer] Applying background penalty:', savedTime, '->', newTime);
           } else {
@@ -118,7 +129,7 @@ export function useTimer({
   }, [timeLeft, isLevelPaused, isGameOver]);
 
   // Fonction pour initialiser ou réinitialiser le timer
-  const resetTimer = useCallback((time: number = 20, skipNextMalus: boolean = false) => {
+  const resetTimer = useCallback((time: number = defaultTimeRef.current, skipNextMalus: boolean = false) => {
     setTimeLeft(time);
     setIsCountdownActive(false);
     
@@ -129,6 +140,7 @@ export function useTimer({
     
     // Réinitialiser aussi le flag comingFromAd
     comingFromAdRef.current = false;
+    lastTimeRef.current = time;
   }, []);
 
   // Fonction pour démarrer le timer quand l'image est chargée

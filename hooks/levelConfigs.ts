@@ -7,7 +7,7 @@ export const LEVEL_CONFIGS: Record<number, LevelConfig> = {
     name: "Novice",
     description: "Premiers pas dans l'histoire",
     eventsNeeded: 5,
-    timeGap: { base: 500, variance: 200, minimum: 300 },
+    timeGap: { base: 320, variance: 180, minimum: 150 },
     eventSelection: {
       minDifficulty: 1, maxDifficulty: 1, universalOnly: true, specialEventChance: 0,
       preferModernEvents: true, modernEventThreshold: 1900, modernEventPreference: 0.9, balancePeriods: true
@@ -17,7 +17,7 @@ export const LEVEL_CONFIGS: Record<number, LevelConfig> = {
   },
   2: {
     level: 2, name: "Explorateur", description: "Découverte des événements faciles", eventsNeeded: 6,
-    timeGap: { base: 450, variance: 200, minimum: 250 },
+    timeGap: { base: 300, variance: 160, minimum: 130 },
     eventSelection: {
       minDifficulty: 1, maxDifficulty: 2, universalOnly: false, specialEventChance: 0.05,
       preferModernEvents: true, modernEventThreshold: 1850, modernEventPreference: 0.8, balancePeriods: true
@@ -27,7 +27,7 @@ export const LEVEL_CONFIGS: Record<number, LevelConfig> = {
   },
   3: {
     level: 3, name: "Initié", description: "Introduction aux événements moyens", eventsNeeded: 7,
-    timeGap: { base: 400, variance: 150, minimum: 200 },
+    timeGap: { base: 260, variance: 140, minimum: 110 },
     eventSelection: {
       minDifficulty: 1, maxDifficulty: 3, universalOnly: false, specialEventChance: 0.1,
       preferModernEvents: true, modernEventThreshold: 1800, modernEventPreference: 0.7, balancePeriods: true

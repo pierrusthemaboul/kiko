@@ -2,7 +2,7 @@
 // Refonte Radicale - Thème Clair, Épuré et Percutant
 // ----- FICHIER COMPLET CORRIGÉ (Chemins Relatifs '../../') -----
 
-import React, { useEffect, useState, useRef } from 'react';
+import React, { useEffect, useState, useRef, useCallback } from 'react';
 import {
   View,
   Text,
@@ -26,6 +26,7 @@ import { useFonts } from '../../hooks/useFonts'; // Chemin relatif vers useFonts
 import { FirebaseAnalytics } from '../../lib/firebase'; // Chemin relatif vers firebase
 // MODIFIÉ: IS_TEST_BUILD ajouté à l'import
 import { getAdUnitId, IS_TEST_BUILD } from '../../lib/config/adConfig'; // Chemin relatif vers adConfig
+import { LinearGradient } from 'expo-linear-gradient';
 
 const { width, height } = Dimensions.get('window');
 
@@ -51,53 +52,106 @@ const COLORS = {
 };
 // ---------------------------
 
-// --- Constantes d'Animation Splash Repensées ---
-const SPLASH_SCALE_DURATION = 700;
+// --- Splash Fullscreen Constants ---
 const SPLASH_TEXT_FADE_DURATION = 600;
-const SPLASH_TEXT_DELAY = 200; // Délai après le logo scale
-const SPLASH_EXIT_DURATION = 400;
-const SPLASH_TOTAL_VIEW_DURATION = SPLASH_SCALE_DURATION + SPLASH_TEXT_DELAY + SPLASH_TEXT_FADE_DURATION + 800; // Durée totale *visible*;
+const SPLASH_TEXT_DELAY = 200;
+const SPLASH_VISIBLE_DURATION = 2600;
+const SPLASH_EXIT_DURATION = 450;
+const SPLASH_TOTAL_VIEW_DURATION = SPLASH_VISIBLE_DURATION + SPLASH_EXIT_DURATION; // Durée totale visible
 const MAIN_CONTENT_ANIM_DURATION = 500;
+const SPLASH_COLORS = {
+  overlayTop: 'rgba(3, 8, 18, 0.15)',
+  overlayBottom: 'rgba(3, 8, 18, 0.75)',
+  accent: 'rgba(255, 208, 122, 0.9)',
+  textPrimary: '#FFE6B3',
+  textSecondary: 'rgba(255, 230, 179, 0.75)',
+};
 // ---------------------------------------------
 
 // --- Nouveau Splash Screen Animé - Impact sur Fond Clair ---
 const AnimatedSplashScreen = ({ onAnimationEnd }) => {
-  const logoScale = useRef(new Animated.Value(0.7)).current; // Commence plus petit
-  const logoOpacity = useRef(new Animated.Value(0)).current;
-  const textOpacity = useRef(new Animated.Value(0)).current;
   const containerOpacity = useRef(new Animated.Value(1)).current;
+  const imageOpacity = useRef(new Animated.Value(0)).current;
+  const imageScale = useRef(new Animated.Value(1.08)).current;
+  const vignetteOpacity = useRef(new Animated.Value(0)).current;
+  const textOpacity = useRef(new Animated.Value(0)).current;
+  const textTranslateY = useRef(new Animated.Value(12)).current;
+  const accentWidth = useRef(new Animated.Value(0)).current;
+  const soundRef = useRef<Audio.Sound | null>(null);
+
+  const playSplashSound = useCallback(async () => {
+    try {
+      const playbackVolume = IS_TEST_BUILD ? 0 : 0.18;
+      const { sound } = await Audio.Sound.createAsync(
+        require('../../assets/sounds/361261__japanyoshithegamer__8-bit-spaceship-startup.wav'),
+        { volume: playbackVolume }
+      );
+      soundRef.current = sound;
+      await soundRef.current.playAsync();
+      soundRef.current.setOnPlaybackStatusUpdate((status) => {
+        if (status.isLoaded && status.didJustFinish) {
+          soundRef.current?.unloadAsync();
+          soundRef.current = null;
+        }
+      });
+    } catch (error) {
+      console.warn('Audio playback error:', error);
+      FirebaseAnalytics.error('audio_playback_error', error instanceof Error ? error.message : 'Unknown error', 'SplashScreen');
+      if (soundRef.current) {
+        await soundRef.current.unloadAsync();
+        soundRef.current = null;
+      }
+    }
+  }, []);
 
   useEffect(() => {
-    // Jouer le son dès le début
     playSplashSound();
 
-    // Séquence d'animation d'entrée
-    Animated.sequence([
-      // 1. Logo apparaît et "grandit" avec un effet ressort
-      Animated.parallel([
-          Animated.timing(logoOpacity, {
-              toValue: 1,
-              duration: SPLASH_SCALE_DURATION * 0.6, // Apparition rapide
-              useNativeDriver: true,
-          }),
-          Animated.spring(logoScale, {
-              toValue: 1,
-              tension: 40, // Moins tendu pour un effet plus doux
-              friction: 5,  // Plus de friction
-              useNativeDriver: true,
-          }),
-      ]),
-      // 2. Texte apparaît en fondu après un délai
-      Animated.delay(SPLASH_TEXT_DELAY),
-      Animated.timing(textOpacity, {
+    Animated.parallel([
+      Animated.timing(imageOpacity, {
         toValue: 1,
-        duration: SPLASH_TEXT_FADE_DURATION,
-        easing: Easing.out(Easing.ease),
+        duration: 700,
+        easing: Easing.out(Easing.cubic),
+        useNativeDriver: true,
+      }),
+      Animated.timing(vignetteOpacity, {
+        toValue: 1,
+        duration: 900,
+        easing: Easing.out(Easing.cubic),
+        useNativeDriver: true,
+      }),
+      Animated.timing(accentWidth, {
+        toValue: 1,
+        duration: 1400,
+        easing: Easing.out(Easing.quad),
+        useNativeDriver: false,
+      }),
+      Animated.timing(imageScale, {
+        toValue: 1,
+        duration: SPLASH_VISIBLE_DURATION + 600,
+        easing: Easing.out(Easing.quad),
         useNativeDriver: true,
       }),
     ]).start();
 
-    // Planification du fondu de sortie
+    Animated.sequence([
+      Animated.delay(SPLASH_TEXT_DELAY),
+      Animated.parallel([
+        Animated.timing(textOpacity, {
+          toValue: 1,
+          duration: SPLASH_TEXT_FADE_DURATION,
+          easing: Easing.out(Easing.cubic),
+          useNativeDriver: true,
+        }),
+        Animated.spring(textTranslateY, {
+          toValue: 0,
+          tension: 35,
+          friction: 7,
+          useNativeDriver: true,
+        })
+      ])
+    ]).start();
+
     const endTimer = setTimeout(() => {
       Animated.timing(containerOpacity, {
         toValue: 0,
@@ -105,65 +159,53 @@ const AnimatedSplashScreen = ({ onAnimationEnd }) => {
         easing: Easing.in(Easing.ease),
         useNativeDriver: true,
       }).start(() => {
-        if (onAnimationEnd) {
-          onAnimationEnd();
-        }
+        onAnimationEnd?.();
       });
-    }, SPLASH_TOTAL_VIEW_DURATION);
+    }, SPLASH_VISIBLE_DURATION);
 
-    // Nettoyer le timer si le composant est démonté avant la fin
-    return () => clearTimeout(endTimer);
-
-  }, [onAnimationEnd]); // Ne dépend que de onAnimationEnd, ne devrait s'exécuter qu'une fois au montage
-
-    // Fonction pour jouer le son (remise)
-    const playSplashSound = async () => {
-        let soundObject = null; // Garder une référence pour le déchargement
-        try {
-          const { sound } = await Audio.Sound.createAsync(
-             // --- CHEMIN CORRIGÉ (../../) basé sur l'arborescence fournie ---
-             require('../../assets/sounds/361261__japanyoshithegamer__8-bit-spaceship-startup.wav'),
-             // -------------------------------------------------------------
-             { volume: 0.15 } // Volume ajusté
-           );
-          soundObject = sound; // Assigner la référence
-          await soundObject.playAsync();
-          // Optionnel : Décharger le son après lecture pour libérer la mémoire
-          soundObject.setOnPlaybackStatusUpdate((status) => {
-            if (status.isLoaded && status.didJustFinish) {
-              soundObject?.unloadAsync(); // Utilise l'optional chaining au cas où
-            }
-          });
-        } catch (error) {
-          console.warn('Audio playback error:', error);
-          FirebaseAnalytics.error('audio_playback_error', error instanceof Error ? error.message : 'Unknown error', 'SplashScreen');
-          // Assurer le déchargement même en cas d'erreur de lecture (si l'objet a été créé)
-          if (soundObject) {
-            await soundObject.unloadAsync();
-          }
-        }
+    return () => {
+      clearTimeout(endTimer);
+      if (soundRef.current) {
+        soundRef.current.unloadAsync().catch(() => undefined);
+        soundRef.current = null;
+      }
     };
+  }, [playSplashSound, onAnimationEnd]);
 
+  const animatedAccentWidth = accentWidth.interpolate({
+    inputRange: [0, 1],
+    outputRange: ['20%', '72%'],
+  });
 
   return (
-    // Fond clair pour le splash
-    <Animated.View style={[styles.splashContainer, { opacity: containerOpacity }]}>
-      <Animated.View style={{ opacity: logoOpacity, transform: [{ scale: logoScale }] }}>
-        <Image
-          // --- CHEMIN CORRIGÉ (../../) basé sur l'arborescence fournie ---
-          source={require('../../assets/images/logo3.png')}
-          // -------------------------------------------------------------
-          style={styles.splashLogo}
-          resizeMode="contain"
+    <Animated.View style={[styles.splashContainer, { opacity: containerOpacity }] }>
+      <Animated.Image
+        source={require('../../assets/images/splash-abbey.png')}
+        style={[styles.splashBackground, { opacity: imageOpacity, transform: [{ scale: imageScale }] }]}
+        resizeMode="cover"
+      />
+
+      <Animated.View style={[styles.splashVignette, { opacity: vignetteOpacity }]}>
+        <LinearGradient
+          colors={[SPLASH_COLORS.overlayTop, SPLASH_COLORS.overlayBottom]}
+          start={{ x: 0.5, y: 0 }}
+          end={{ x: 0.5, y: 1 }}
+          style={StyleSheet.absoluteFillObject}
         />
       </Animated.View>
+
+      <Animated.View
+        style={[styles.splashAccent, { width: animatedAccentWidth }]}
+      />
+
       <Animated.View style={[
-          styles.splashTextContainer,
-          { opacity: textOpacity } // Simple fondu pour le texte
+        styles.splashTextContainer,
+        {
+          opacity: textOpacity,
+          transform: [{ translateY: textTranslateY }],
+        }
       ]}>
-        {/* Titre en Orange pour l'impact sur fond clair */}
         <Text style={styles.splashTitle}>Quandi</Text>
-        {/* Sous-titre en gris secondaire */}
         <Text style={styles.splashSubtitle}>Explorez le Temps</Text>
       </Animated.View>
     </Animated.View>
@@ -544,30 +586,42 @@ const styles = StyleSheet.create({
   // --- Splash Screen ---
   splashContainer: {
     ...StyleSheet.absoluteFillObject,
-    backgroundColor: COLORS.background, // Fond clair
+    backgroundColor: '#000',
     justifyContent: 'center',
     alignItems: 'center',
-    zIndex: 10, // Au-dessus du contenu
+    zIndex: 10,
   },
-  splashLogo: {
-    width: width * 0.6,
-    height: width * 0.6,
-    marginBottom: 25,
+  splashBackground: {
+    ...StyleSheet.absoluteFillObject,
+  },
+  splashVignette: {
+    ...StyleSheet.absoluteFillObject,
+  },
+  splashAccent: {
+    position: 'absolute',
+    bottom: height * 0.18,
+    height: 1,
+    backgroundColor: SPLASH_COLORS.accent,
+    borderRadius: 999,
+    alignSelf: 'center',
   },
   splashTextContainer: {
     alignItems: 'center',
+    position: 'absolute',
+    bottom: height * 0.12,
+    width: '100%',
   },
   splashTitle: {
-    fontSize: 52,
+    fontSize: 44,
     fontFamily: 'Montserrat-Bold', // Police personnalisée (doit être chargée)
-    color: COLORS.accentPrimary, // Orange Vif
-    letterSpacing: 1.5,
+    color: SPLASH_COLORS.textPrimary,
+    letterSpacing: 1.2,
     marginBottom: 6,
   },
   splashSubtitle: {
-    fontSize: 16,
+    fontSize: 15,
     fontFamily: 'Montserrat-Regular', // Police personnalisée (doit être chargée)
-    color: COLORS.textSecondary, // Gris secondaire
+    color: SPLASH_COLORS.textSecondary,
   },
   // --- Contenu Principal ---
   mainContainer: {
