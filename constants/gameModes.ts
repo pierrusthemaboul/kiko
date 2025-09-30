@@ -1,4 +1,4 @@
-export type GameModeId = 'classic' | 'chrono' | 'relax';
+export type GameModeId = 'classic' | 'chrono' | 'relax' | 'precision';
 
 export interface GameModeConfig {
   id: GameModeId;
@@ -10,6 +10,7 @@ export interface GameModeConfig {
   scoreMultiplier: number;
   showDatesByDefault?: boolean;
   icon: string;
+  variant?: 'beforeAfter' | 'precision';
 }
 
 export const DEFAULT_GAME_MODE_ID: GameModeId = 'classic';
@@ -25,6 +26,7 @@ export const GAME_MODES: Record<GameModeId, GameModeConfig> = {
     scoreMultiplier: 1,
     showDatesByDefault: false,
     icon: 'play-circle-outline',
+    variant: 'beforeAfter',
   },
   chrono: {
     id: 'chrono',
@@ -36,6 +38,7 @@ export const GAME_MODES: Record<GameModeId, GameModeConfig> = {
     scoreMultiplier: 1.5,
     showDatesByDefault: false,
     icon: 'flash-outline',
+    variant: 'beforeAfter',
   },
   relax: {
     id: 'relax',
@@ -47,6 +50,19 @@ export const GAME_MODES: Record<GameModeId, GameModeConfig> = {
     scoreMultiplier: 0.75,
     showDatesByDefault: true,
     icon: 'leaf-outline',
+    variant: 'beforeAfter',
+  },
+  precision: {
+    id: 'precision',
+    label: 'Précision',
+    description: 'Devinez la date exacte avant de vider votre barre de vitalité.',
+    timeLimit: 0,
+    initialLives: 0,
+    maxLives: 0,
+    scoreMultiplier: 1,
+    showDatesByDefault: false,
+    icon: 'target-outline',
+    variant: 'precision',
   },
 };
 

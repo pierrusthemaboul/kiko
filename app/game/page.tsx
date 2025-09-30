@@ -11,32 +11,36 @@ import {
   ActivityIndicator,
   Platform,
 } from 'react-native';
-import { useRouter, useFocusEffect } from 'expo-router';
+import { useRouter, useFocusEffect, useLocalSearchParams } from 'expo-router';
 import { SafeAreaView } from 'react-native-safe-area-context';
 
 // Composants
 import GameContentA from "../../components/game/GameContentA"; // Chemin OK
+import PrecisionGameContent from "../../components/game/PrecisionGameContent";
 
 // Hooks
 import { useGameLogicA } from '@/hooks/useGameLogicA'; // Chemin OK
+import { usePrecisionGame } from '@/hooks/game/usePrecisionGame';
 
 // Libs
 import { FirebaseAnalytics } from '@/lib/firebase'; // Chemin OK
+import * as NavigationBar from 'expo-navigation-bar';
 
-export default function GameScreenPage() { // Renommé pour clarté, mais le nom exporté doit être default
+function ClassicGameScreen({ requestedMode }: { requestedMode?: string }) {
   const router = useRouter();
   const fadeAnim = useRef(new Animated.Value(0)).current;
   const [gameKey, setGameKey] = useState(0); // Utilisé pour forcer le re-rendu du contenu du jeu
   const [isRestarting, setIsRestarting] = useState(false); // État pour afficher l'indicateur lors du redémarrage
 
   // Initialise la logique du jeu via le hook personnalisé
-  const gameLogic = useGameLogicA(''); // Passe une chaîne vide ou l'initialEvent si nécessaire
+  const gameLogic = useGameLogicA('', requestedMode); // Passe une chaîne vide ou l'initialEvent si nécessaire
 
   // Log analytics quand l'écran prend le focus
   useFocusEffect(
     useCallback(() => {
       try {
         FirebaseAnalytics.screen('GameScreen', 'GameScreenPage'); // Nom du fichier/écran
+        NavigationBar.setVisibilityAsync('hidden').catch(() => undefined);
       } catch (error) {
         console.error("Erreur lors de l'appel à FirebaseAnalytics.screen :", error);
       }
@@ -131,61 +135,163 @@ export default function GameScreenPage() { // Renommé pour clarté, mais le nom
      );
    }
 
-// Rendu principal de l'écran de jeu
-return (
-  <View style={styles.fullScreenContainer}>
-    <ImageBackground
-      source={require('../../assets/images/quipasse3.png')} // Chemin relatif OK
-      style={styles.backgroundImage}
-      resizeMode="cover"
-    >
-      <StatusBar translucent backgroundColor="black" barStyle="light-content" />
-      {/* SafeAreaView pour gérer les encoches et barres système */}
-      <SafeAreaView style={styles.container} edges={['top', 'bottom']}>
-        {/* Composant qui contient l'UI et la logique d'affichage du jeu */}
-        <GameContentA
-          key={gameKey} // La clé change pour forcer le re-montage/re-rendu au redémarrage
-          // Props d'état du jeu
-          user={gameLogic.user}
-          previousEvent={gameLogic.previousEvent}
-          displayedEvent={gameLogic.displayedEvent}
-          timeLeft={gameLogic.timeLeft}
-          error={gameLogic.error}
-          isGameOver={gameLogic.isGameOver}
-          leaderboardsReady={gameLogic.leaderboardsReady}
-          showDates={gameLogic.showDates}
-          isCorrect={gameLogic.isCorrect}
-          isImageLoaded={gameLogic.isImageLoaded}
-          streak={gameLogic.streak}
-          highScore={gameLogic.highScore}
-          level={gameLogic.user.level}
-          isLevelPaused={gameLogic.isLevelPaused}
-          currentLevelConfig={gameLogic.currentLevelConfig}
-          leaderboards={gameLogic.leaderboards}
-          levelCompletedEvents={gameLogic.levelCompletedEvents}
-          levelsHistory={gameLogic.levelsHistory}
-          currentReward={gameLogic.currentReward}
-          adState={gameLogic.adState} // État des pubs
-          // Props de callbacks (actions)
-          handleChoice={gameLogic.handleChoice}
-          handleImageLoad={gameLogic.onImageLoad} // Fonction du useTimer
-          handleLevelUp={gameLogic.handleLevelUp}
-          onActualRestart={handleActualRestart} // <- Fonction Rejouer corrigée
-          onActualMenu={handleActualMenu}       // <- Fonction Menu
-          showRewardedAd={gameLogic.showRewardedAd}
-          resetAdsState={gameLogic.resetAdsState} // Fonction reset pubs
-          completeRewardAnimation={gameLogic.completeRewardAnimation}
-          updateRewardPosition={gameLogic.updateRewardPosition}
-          // Props d'animation/modales
-          fadeAnim={fadeAnim}
-          showLevelModal={gameLogic.showLevelModal}
-          gameMode={gameLogic.gameMode}
-          timeLimit={gameLogic.timeLimit}
-        />
-      </SafeAreaView>
-    </ImageBackground>
-  </View>
-);
+  // Rendu principal de l'écran de jeu
+  return (
+    <View style={styles.fullScreenContainer}>
+      <ImageBackground
+        source={require('../../assets/images/quipasse3.png')} // Chemin relatif OK
+        style={styles.backgroundImage}
+        resizeMode="cover"
+      >
+        <StatusBar translucent backgroundColor="black" barStyle="light-content" />
+        {/* SafeAreaView pour gérer les encoches et barres système */}
+        <SafeAreaView style={styles.container} edges={['top', 'bottom']}>
+          {/* Composant qui contient l'UI et la logique d'affichage du jeu */}
+          <GameContentA
+            key={gameKey} // La clé change pour forcer le re-montage/re-rendu au redémarrage
+            // Props d'état du jeu
+            user={gameLogic.user}
+            previousEvent={gameLogic.previousEvent}
+            displayedEvent={gameLogic.displayedEvent}
+            timeLeft={gameLogic.timeLeft}
+            error={gameLogic.error}
+            isGameOver={gameLogic.isGameOver}
+            leaderboardsReady={gameLogic.leaderboardsReady}
+            showDates={gameLogic.showDates}
+            isCorrect={gameLogic.isCorrect}
+            isImageLoaded={gameLogic.isImageLoaded}
+            streak={gameLogic.streak}
+            highScore={gameLogic.highScore}
+            level={gameLogic.user.level}
+            isLevelPaused={gameLogic.isLevelPaused}
+            currentLevelConfig={gameLogic.currentLevelConfig}
+            leaderboards={gameLogic.leaderboards}
+            levelCompletedEvents={gameLogic.levelCompletedEvents}
+            levelsHistory={gameLogic.levelsHistory}
+            currentReward={gameLogic.currentReward}
+            adState={gameLogic.adState} // État des pubs
+            // Props de callbacks (actions)
+            handleChoice={gameLogic.handleChoice}
+            handleImageLoad={gameLogic.onImageLoad} // Fonction du useTimer
+            handleLevelUp={gameLogic.handleLevelUp}
+            onActualRestart={handleActualRestart} // <- Fonction Rejouer corrigée
+            onActualMenu={handleActualMenu}       // <- Fonction Menu
+            showRewardedAd={gameLogic.showRewardedAd}
+            resetAdsState={gameLogic.resetAdsState} // Fonction reset pubs
+            completeRewardAnimation={gameLogic.completeRewardAnimation}
+            updateRewardPosition={gameLogic.updateRewardPosition}
+            // Props d'animation/modales
+            fadeAnim={fadeAnim}
+            showLevelModal={gameLogic.showLevelModal}
+            gameMode={gameLogic.gameMode}
+            timeLimit={gameLogic.timeLimit}
+          />
+        </SafeAreaView>
+      </ImageBackground>
+    </View>
+  );
+}
+
+function PrecisionGameScreen() {
+  const router = useRouter();
+  const fadeAnim = useRef(new Animated.Value(0)).current;
+  const {
+    loading,
+    error,
+    currentEvent,
+    score,
+    hp,
+    hpMax,
+    level,
+    levelProgress,
+    lastResult,
+    isGameOver,
+    timeLeft,
+    timerProgress,
+    pauseTimer,
+    resumeTimer,
+    submitGuess,
+    loadNextEvent,
+    restart,
+    reload,
+  } = usePrecisionGame();
+
+  useFocusEffect(
+    useCallback(() => {
+      try {
+        FirebaseAnalytics.screen('PrecisionGameScreen', 'PrecisionGameScreen');
+        NavigationBar.setVisibilityAsync('hidden').catch(() => undefined);
+      } catch (error) {
+        console.error('Erreur lors du tracking écran précision :', error);
+      }
+      return () => {};
+    }, [])
+  );
+
+  useEffect(() => {
+    fadeAnim.setValue(0);
+    Animated.timing(fadeAnim, { toValue: 1, duration: 400, useNativeDriver: true }).start();
+  }, [fadeAnim, currentEvent?.id, lastResult?.event.id]);
+
+  const handleMenu = useCallback(() => {
+    router.replace('/(tabs)/');
+  }, [router]);
+
+  const showBlockingLoader = loading && !currentEvent && !error;
+
+  return (
+    <View style={styles.fullScreenContainer}>
+      <ImageBackground
+        source={require('../../assets/images/quipasse3.png')}
+        style={styles.backgroundImage}
+        resizeMode="cover"
+      >
+        <StatusBar translucent backgroundColor="black" barStyle="light-content" />
+        <SafeAreaView style={styles.container} edges={['top', 'bottom']}>
+          {showBlockingLoader ? (
+            <View style={[styles.flexFill, styles.loadingContainer]}>
+              <ActivityIndicator size="large" color="#FFFFFF" />
+            </View>
+          ) : (
+            <Animated.View style={[styles.flexFill, { opacity: fadeAnim }] }>
+              <PrecisionGameContent
+                loading={loading}
+                error={error}
+                currentEvent={currentEvent}
+                score={score}
+                hp={hp}
+                hpMax={hpMax}
+                levelLabel={level.label}
+                levelId={level.id}
+                levelProgress={levelProgress}
+                lastResult={lastResult}
+                isGameOver={isGameOver}
+                timeLeft={timeLeft}
+                timerProgress={timerProgress}
+                pauseTimer={pauseTimer}
+                resumeTimer={resumeTimer}
+                onSubmitGuess={submitGuess}
+                onContinue={loadNextEvent}
+                onReload={reload}
+                onRestart={restart}
+                onExit={handleMenu}
+              />
+            </Animated.View>
+          )}
+        </SafeAreaView>
+      </ImageBackground>
+    </View>
+  );
+}
+
+export default function GameScreenPage() {
+  const { mode } = useLocalSearchParams<{ mode?: string }>();
+  if (mode === 'precision') {
+    return <PrecisionGameScreen />;
+  }
+
+  const requestedMode = typeof mode === 'string' ? mode : undefined;
+  return <ClassicGameScreen requestedMode={requestedMode} />;
 }
 
 // --- Styles ---
@@ -199,6 +305,9 @@ backgroundImage: {
 container: {
   flex: 1,
   backgroundColor: 'transparent', // Important pour voir l'image de fond
+},
+flexFill: {
+  flex: 1,
 },
 loadingContainer: {
   flex: 1,

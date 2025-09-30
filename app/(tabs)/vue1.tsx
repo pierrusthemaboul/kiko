@@ -1,6 +1,6 @@
 // /home/pierre/sword/kiko/app/(tabs)/vue1.tsx
 
-import React, { useEffect, useRef, useState } from 'react';
+import React, { useCallback, useEffect, useRef, useState } from 'react';
 import {
   View,
   Text,
@@ -595,6 +595,22 @@ export default function Vue1() {
     ? playerName.substring(0, 12) + '...'
     : playerName;
 
+  const handleStartClassic = useCallback(() => {
+    const isGuestPlayer = !playerName || playerName === 'Voyageur' || playerName.startsWith('Voyageur-');
+    const nameToSend = playerName || 'Anonymous';
+    FirebaseAnalytics.gameStarted(nameToSend, isGuestPlayer, 1);
+    FirebaseAnalytics.logEvent('mode_selected', { mode: 'classic', source: 'vue1' });
+    router.push('/game/page');
+  }, [playerName, router]);
+
+  const handleStartPrecision = useCallback(() => {
+    const isGuestPlayer = !playerName || playerName === 'Voyageur' || playerName.startsWith('Voyageur-');
+    const nameToSend = playerName || 'Anonymous';
+    FirebaseAnalytics.gameStarted(nameToSend, isGuestPlayer, 1);
+    FirebaseAnalytics.logEvent('mode_selected', { mode: 'precision', source: 'vue1' });
+    router.push('/game/page?mode=precision');
+  }, [playerName, router]);
+
   if (!fontsLoaded) {
      return null; // Or loading indicator
   }
@@ -702,18 +718,22 @@ export default function Vue1() {
             </TouchableOpacity>
           )}
 
-          <TouchableOpacity
-            style={styles.startButton}
-            onPress={() => {
-                const isGuestPlayer = !playerName || playerName === 'Voyageur' || playerName.startsWith('Voyageur-'); // Vérif si invité
-                const nameToSend = playerName || 'Anonymous';
-                FirebaseAnalytics.gameStarted(nameToSend, isGuestPlayer, 1); // <-- AJOUTÉ: Suivi début de partie (niv 1)
-                router.push('/game/page'); // Assurez-vous que la route est correcte
-            }}
-          >
-            <Text style={styles.startButtonText}>COMMENCER</Text>
-            <Ionicons name="play-circle-outline" size={24} color={SALMON_THEME.textLight} />
-          </TouchableOpacity>
+          <View style={styles.modeButtonsWrapper}>
+            <TouchableOpacity
+              style={styles.startButton}
+              onPress={handleStartClassic}
+            >
+              <Text style={styles.startButtonText}>MODE CLASSIQUE</Text>
+              <Ionicons name="play-circle-outline" size={24} color={SALMON_THEME.textLight} />
+            </TouchableOpacity>
+            <TouchableOpacity
+              style={[styles.startButton, styles.precisionButton]}
+              onPress={handleStartPrecision}
+            >
+              <Text style={styles.startButtonText}>MODE PRÉCISION</Text>
+              <Ionicons name="target-outline" size={24} color={SALMON_THEME.textLight} />
+            </TouchableOpacity>
+          </View>
         </View>
 
       </Animated.View>
@@ -997,6 +1017,12 @@ const styles = StyleSheet.create({
     textTransform: 'uppercase',
   },
 
+  modeButtonsWrapper: {
+    width: '100%',
+    alignItems: 'center',
+    marginTop: 16,
+  },
+
   startButton: {
     backgroundColor: SALMON_THEME.primaryAccent,
     borderRadius: 25,
@@ -1011,6 +1037,10 @@ const styles = StyleSheet.create({
     shadowOffset: { width: 0, height: 3 },
     shadowOpacity: 1,
     shadowRadius: 5,
+  },
+  precisionButton: {
+    backgroundColor: SALMON_THEME.secondaryAccent,
+    marginTop: 12,
   },
   startButtonText: {
     fontSize: 18,

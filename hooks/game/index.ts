@@ -7,6 +7,7 @@ export { useAds } from './useAds';
 export { useAnalytics } from './useAnalytics'; // Ce hook contiendra probablement les logs Firebase Analytics
 export { usePerformance } from './usePerformance';
 export { useEventSelector } from './useEventSelector';  // Important - export du hook d'événements
+export { usePrecisionGame } from './usePrecisionGame';
 
 // Réexport des hooks existants
 export { default as useAudio } from '../useAudio';

@@ -10,6 +10,7 @@ import * as Application from 'expo-application';
 import AsyncStorage from '@react-native-async-storage/async-storage';
 import { Platform } from 'react-native';
 import * as SystemUI from 'expo-system-ui';
+import * as NavigationBar from 'expo-navigation-bar';
 
 import { FirebaseAnalytics } from '../lib/firebase';
 import { supabase } from '../lib/supabase/supabaseClients';
@@ -41,6 +42,10 @@ export default function RootLayout() {
           console.log('🔧 [NAVBAR] Tentative avec SystemUI...');
           await SystemUI.setBackgroundColorAsync('#020817');
           console.log('✅ [NAVBAR] SystemUI background color set');
+          await NavigationBar.setVisibilityAsync('hidden');
+          await NavigationBar.setBehaviorAsync('overlay-swipe');
+          await NavigationBar.setBackgroundColorAsync('#020817');
+          console.log('✅ [NAVBAR] Navigation bar hidden');
         } catch (error) {
           console.log('❌ [NAVBAR] Erreur SystemUI:', error);
         }
