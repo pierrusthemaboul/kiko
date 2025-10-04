@@ -36,11 +36,11 @@ export const initializeAnalytics = async (userId?: string, isGuest: boolean = fa
     if (userId) {
       // Appel modulaire : setUserId(instance, valeur)
       await setUserId(analyticsInstance, userId);
-      console.log(`Analytics: User ID set to '${userId}'`);
+      // console.log(`Analytics: User ID set to '${userId}'`);
     } else {
       // Appel modulaire : setUserId(instance, null)
       await setUserId(analyticsInstance, null); // Important de le mettre à null pour les invités
-      console.log('Analytics: User ID cleared (guest)');
+      // console.log('Analytics: User ID cleared (guest)');
     }
 
     // Propriétés utilisateur communes
@@ -51,9 +51,9 @@ export const initializeAnalytics = async (userId?: string, isGuest: boolean = fa
       app_version: '1.0.0',
       platform: Platform.OS,
     });
-    console.log(`Analytics: User properties set (is_guest: ${isGuest}, platform: ${Platform.OS})`);
+    // console.log(`Analytics: User properties set (is_guest: ${isGuest}, platform: ${Platform.OS})`);
 
-    console.log('Firebase Analytics initialized/updated successfully');
+    // console.log('Firebase Analytics initialized/updated successfully');
   } catch (error) {
     console.error('Error initializing/updating Firebase Analytics:', error);
     // Optionnel : vous pourriez logguer l'erreur ici aussi avec trackError si l'instance est valide
@@ -72,9 +72,9 @@ export const trackNavigation = async (screenName: string, screenClass?: string) 
       screen_name: name,
       screen_class: className,
     });
-    console.log(`Analytics: Screen view logged: ${name} (${className})`);
+    // console.log(`Analytics: Screen view logged: ${name} (${className})`);
   } catch (error) {
-    console.error('Error tracking screen view:', error);
+    // console.error('Error tracking screen view:', error);
   }
 };
 
@@ -82,9 +82,9 @@ export const trackAppOpen = async () => {
   try {
     // Appel modulaire : logAppOpen(instance)
     await logAppOpen(analyticsInstance);
-    console.log('Analytics: App open event logged');
+    // console.log('Analytics: App open event logged');
   } catch (error) {
-    console.error('Error tracking app open:', error);
+    // console.error('Error tracking app open:', error);
   }
 };
 
@@ -99,9 +99,9 @@ export const trackGameStarted = async (playerName: string | null, isGuest: boole
       is_guest: isGuest,
       initial_level: initialLevel
     });
-    console.log(`Analytics: game_started event logged (player: ${playerName || 'Anonymous'}, guest: ${isGuest}, level: ${initialLevel})`);
+    // console.log(`Analytics: game_started event logged (player: ${playerName || 'Anonymous'}, guest: ${isGuest}, level: ${initialLevel})`);
   } catch (error) {
-    console.error('Error tracking game_started:', error);
+    // console.error('Error tracking game_started:', error);
   }
 };
 
@@ -114,9 +114,9 @@ export const trackLevelStarted = async (levelId: number, levelName: string, even
       events_needed: eventsNeeded,
       current_score: currentScore
     });
-    console.log(`Analytics: level_started event logged (level: ${levelId}, score: ${currentScore})`);
+    // console.log(`Analytics: level_started event logged (level: ${levelId}, score: ${currentScore})`);
   } catch (error) {
-    console.error('Error tracking level_started:', error);
+    // console.error('Error tracking level_started:', error);
   }
 };
 
@@ -138,9 +138,9 @@ export const trackLevelCompleted = async (
       score: score,
       max_streak: maxStreak
     });
-    console.log(`Analytics: level_completed event logged (level: ${levelId}, score: ${score}, streak: ${maxStreak})`);
+    // console.log(`Analytics: level_completed event logged (level: ${levelId}, score: ${score}, streak: ${maxStreak})`);
   } catch (error) {
-    console.error('Error tracking level_completed:', error);
+    // console.error('Error tracking level_completed:', error);
   }
 };
 
@@ -168,9 +168,9 @@ export const trackQuestionAnswered = async (
       level_id: levelId,
       current_streak: currentStreak
     });
-    console.log(`Analytics: question_answered event logged (correct: ${isCorrect}, streak: ${currentStreak})`);
+    // console.log(`Analytics: question_answered event logged (correct: ${isCorrect}, streak: ${currentStreak})`);
   } catch (error) {
-    console.error('Error tracking question_answered:', error);
+    // console.error('Error tracking question_answered:', error);
   }
 };
 
@@ -183,9 +183,9 @@ export const trackStreakAchieved = async (streakCount: number, levelId: number) 
       streak_count: streakCount,
       level_id: levelId
     });
-    console.log(`Analytics: streak_achieved event logged (streak: ${streakCount}, level: ${levelId})`);
+    // console.log(`Analytics: streak_achieved event logged (streak: ${streakCount}, level: ${levelId})`);
   } catch (error) {
-    console.error('Error tracking streak_achieved:', error);
+    // console.error('Error tracking streak_achieved:', error);
   }
 };
 
@@ -205,9 +205,9 @@ export const trackGameOver = async (
       max_streak: maxStreak,
       is_high_score: isHighScore
     });
-    console.log(`Analytics: game_over event logged (score: ${finalScore}, level: ${maxLevel}, high_score: ${isHighScore})`);
+    // console.log(`Analytics: game_over event logged (score: ${finalScore}, level: ${maxLevel}, high_score: ${isHighScore})`);
   } catch (error) {
-    console.error('Error tracking game_over:', error);
+    // console.error('Error tracking game_over:', error);
   }
 };
 
@@ -232,9 +232,9 @@ export const trackRewardEarned = async (
       level_id: levelId,
       current_score: currentScore
     });
-    console.log(`Analytics: reward_earned event logged (type: ${rewardType}, amount: ${rewardAmount}, trigger: ${trigger})`);
+    // console.log(`Analytics: reward_earned event logged (type: ${rewardType}, amount: ${rewardAmount}, trigger: ${trigger})`);
   } catch (error) {
-    console.error('Error tracking reward_earned:', error);
+    // console.error('Error tracking reward_earned:', error);
   }
 };
 
@@ -252,9 +252,9 @@ export const trackAdEvent = async (
       ad_placement: adPlacement,
       level_id: levelId
     });
-    console.log(`Analytics: ad_event logged (type: ${adType}, action: ${adAction}, placement: ${adPlacement})`);
+    // console.log(`Analytics: ad_event logged (type: ${adType}, action: ${adAction}, placement: ${adPlacement})`);
   } catch (error) {
-    console.error('Error tracking ad_event:', error);
+    // console.error('Error tracking ad_event:', error);
   }
 };
 
@@ -270,7 +270,7 @@ export const trackError = async (errorType: string, errorMessage: string, screen
       error_message: limitedMessage,
       screen_context: screen
     });
-    console.warn(`Analytics: error_occurred event logged (type: ${errorType}, screen: ${screen})`);
+    // console.warn(`Analytics: error_occurred event logged (type: ${errorType}, screen: ${screen})`);
   } catch (error) {
     // Attention : Si logEvent échoue ici, on ne peut pas le logguer lui-même facilement
     console.error('Error tracking error_occurred event itself:', error);
@@ -286,9 +286,9 @@ export const trackLeaderboardViewed = async (leaderboardType: string) => {
     await logEvent(analyticsInstance, 'leaderboard_viewed', {
       leaderboard_type: leaderboardType
     });
-    console.log(`Analytics: leaderboard_viewed event logged (type: ${leaderboardType})`);
+    // console.log(`Analytics: leaderboard_viewed event logged (type: ${leaderboardType})`);
   } catch (error) {
-    console.error('Error tracking leaderboard_viewed:', error);
+    // console.error('Error tracking leaderboard_viewed:', error);
   }
 };
 
@@ -296,9 +296,9 @@ export const trackDisclaimerViewed = async () => {
   try {
     // Appel modulaire
     await logEvent(analyticsInstance, 'disclaimer_viewed');
-    console.log('Analytics: disclaimer_viewed event logged');
+    // console.log('Analytics: disclaimer_viewed event logged');
   } catch (error) {
-    console.error('Error tracking disclaimer_viewed:', error);
+    // console.error('Error tracking disclaimer_viewed:', error);
   }
 };
 
@@ -308,9 +308,9 @@ export const trackNewHighScore = async (oldScore: number, newScore: number) => {
     await logEvent(analyticsInstance, 'new_high_score', {
       score: newScore,
     });
-    console.log(`Analytics: new_high_score event logged (score: ${newScore})`);
+    // console.log(`Analytics: new_high_score event logged (score: ${newScore})`);
   } catch (error) {
-    console.error('Error tracking new_high_score:', error);
+    // console.error('Error tracking new_high_score:', error);
   }
 };
 
@@ -327,9 +327,9 @@ export const trackAppState = async (state: 'background' | 'active', timeLeft?: n
 
     // Appel modulaire
     await logEvent(analyticsInstance, eventName, params);
-    console.log(`Analytics: ${eventName} event logged`, params);
+    // console.log(`Analytics: ${eventName} event logged`, params);
   } catch (error) {
-    console.error(`Error tracking app state (${state}):`, error);
+    // console.error(`Error tracking app state (${state}):`, error);
   }
 };
 
@@ -356,9 +356,9 @@ export const logCustomEvent = async (name: string, params: Record<string, any> =
 
     // Appel modulaire
     await logEvent(analyticsInstance, name, sanitizedParams);
-    console.log(`Analytics: Custom event '${name}' logged`, sanitizedParams);
+    // console.log(`Analytics: Custom event '${name}' logged`, sanitizedParams);
   } catch (error) {
-    console.error(`Analytics error tracking custom event '${name}':`, error);
+    // console.error(`Analytics error tracking custom event '${name}':`, error);
   }
 };
 
@@ -372,9 +372,9 @@ export const setUserProp = async (key: string, value: any) => {
     const stringValue = value === null || typeof value === 'undefined' ? null : String(value);
     // Appel modulaire : setUserProperty(instance, cle, valeur)
     await setUserProperty(analyticsInstance, key, stringValue);
-    console.log(`Analytics: User property '${key}' set to '${stringValue}'`);
+    // console.log(`Analytics: User property '${key}' set to '${stringValue}'`);
   } catch (error) {
-    console.error(`Analytics error setting user property '${key}':`, error);
+    // console.error(`Analytics error setting user property '${key}':`, error);
   }
 };
 

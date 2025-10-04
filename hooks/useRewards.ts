@@ -3,6 +3,7 @@
 import { useState, useCallback, useEffect, useRef } from 'react';
 import { RewardType, User, MAX_LIVES } from './types';
 import { LEVEL_CONFIGS } from './levelConfigs';
+import { logger } from '../utils/logger';
 import { FirebaseAnalytics } from '../lib/firebase';
 
 interface Position {
@@ -72,7 +73,7 @@ export const useRewards = ({
     const finalAmount = canGiveLife ? 1 : pointsAmount;
     const finalType = canGiveLife ? RewardType.EXTRA_LIFE : RewardType.POINTS;
 
-    console.log(`Calculating BALANCED streak reward: streak=${streak}, canGiveLife=${canGiveLife}, type=${finalType}, amount=${finalAmount}`);
+    // logger.log(`Calculating BALANCED streak reward: streak=${streak}, canGiveLife=${canGiveLife}, type=${finalType}, amount=${finalAmount}`);
 
     return {
       type: finalType,
@@ -107,7 +108,7 @@ export const useRewards = ({
     // Sinon, donner les points du niveau (déjà équilibrés dans levelConfigs.ts)
     const rewardAmount = levelConfig.pointsReward || 1000;
 
-    console.log(`Calculating level reward: level=${newLevel}, type=POINTS, amount=${rewardAmount}`);
+    // logger.log(`Calculating level reward: level=${newLevel}, type=POINTS, amount=${rewardAmount}`);
 
     return {
       type: RewardType.POINTS,
@@ -120,7 +121,7 @@ export const useRewards = ({
 
   // completeRewardAnimation - Version améliorée
   const completeRewardAnimation = useCallback(() => {
-    console.log('[useRewards] Animation completed, resetting state');
+    // logger.log('[useRewards] Animation completed, resetting state');
     
     // Nettoyer le timeout de sécurité
     if (timeoutRef.current) {
@@ -140,23 +141,23 @@ export const useRewards = ({
   // updateRewardPosition - Version améliorée
   const updateRewardPosition = useCallback((position: Position) => {
     if (!currentReward) {
-      console.log('[useRewards] No current reward to update position');
+      // logger.log('[useRewards] No current reward to update position');
       return;
     }
 
     // Vérifier que la position est valide
     if (isNaN(position.x) || isNaN(position.y)) {
-      console.warn(`[useRewards] Invalid position coordinates: x=${position.x}, y=${position.y}`);
+      logger.warn(`[useRewards] Invalid position coordinates: x=${position.x}, y=${position.y}`);
       return;
     }
     
     // Valeurs trop faibles probablement incorrectes
     if (position.x < 10 || position.y < 10) {
-      console.warn(`[useRewards] Position too close to origin, might be incorrect: x=${position.x}, y=${position.y}`);
+      // logger.warn(`[useRewards] Position too close to origin, might be incorrect: x=${position.x}, y=${position.y}`);
       return;
     }
 
-    console.log(`[useRewards] Updating reward position to x=${position.x}, y=${position.y}`);
+    // console.log(`[useRewards] Updating reward position to x=${position.x}, y=${position.y}`);
 
     setCurrentReward(prev => {
       if (!prev) return null;
@@ -182,7 +183,7 @@ export const useRewards = ({
   const checkRewards = useCallback((trigger: RewardTrigger, user: User) => {
     // Éviter le traitement concurrent des récompenses
     if (isProcessingReward.current) {
-      console.log('[useRewards] Already processing a reward, skipping this check');
+      // logger.log('[useRewards] Already processing a reward, skipping this check');
       return;
     }
 
@@ -191,7 +192,7 @@ export const useRewards = ({
     
     // Éviter les doublons
     if (triggerKey === lastProcessedTrigger) {
-      console.log(`[useRewards] Trigger ${triggerKey} already processed, skipping`);
+      // logger.log(`[useRewards] Trigger ${triggerKey} already processed, skipping`);
       isProcessingReward.current = false;
       return;
     }
@@ -200,7 +201,7 @@ export const useRewards = ({
     // 1. Ignorer la nouvelle récompense (approche actuelle)
     // 2. Terminer l'animation en cours et passer à la suivante (alternative)
     if (isAnimating) {
-      console.log('[useRewards] Animation in progress, ignoring new reward');
+      // logger.log('[useRewards] Animation in progress, ignoring new reward');
       isProcessingReward.current = false;
       return;
     }
@@ -219,12 +220,12 @@ export const useRewards = ({
     }
 
     if (!reward) {
-      console.log(`[useRewards] No reward calculated for trigger ${trigger.type}-${trigger.value}`);
+      // logger.log(`[useRewards] No reward calculated for trigger ${trigger.type}-${trigger.value}`);
       isProcessingReward.current = false;
       return;
     }
 
-    console.log(`[useRewards] BALANCED reward calculated: ${reward.type}, amount: ${reward.amount} for trigger ${trigger.type}-${trigger.value}`);
+    // logger.log(`[useRewards] BALANCED reward calculated: ${reward.type}, amount: ${reward.amount} for trigger ${trigger.type}-${trigger.value}`);
 
     // Tracking Firebase
     try {
@@ -239,7 +240,7 @@ export const useRewards = ({
         currentLevelForLog,
         user.points
       );
-      console.log(`[useRewards] FirebaseAnalytics.reward logged successfully.`);
+      // console.log(`[useRewards] FirebaseAnalytics.reward logged successfully.`);
     } catch (error) {
       console.error("[useRewards] Error logging FirebaseAnalytics.reward:", error);
     }
@@ -256,7 +257,7 @@ export const useRewards = ({
     
     timeoutRef.current = setTimeout(() => {
       if (isAnimating) {
-        console.warn('[useRewards] Animation timeout reached, forcing completion');
+        // logger.warn('[useRewards] Animation timeout reached, forcing completion');
         completeRewardAnimation();
       }
     }, 5000); // 5 secondes max pour l'animation complète

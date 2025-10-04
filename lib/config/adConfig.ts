@@ -2,10 +2,10 @@
 import { TestIds } from 'react-native-google-mobile-ads';
 
 const USE_TEST_IDS = __DEV__;
-
-console.log(
-  `[adConfig] Using Test Ads: ${USE_TEST_IDS}`
-);
+// 
+// console.log(
+//   `[adConfig] Using Test Ads: ${USE_TEST_IDS}`
+// );
 
 // Tes vrais IDs de prod
 const PRODUCTION_AD_UNITS = {
@@ -18,7 +18,7 @@ const PRODUCTION_AD_UNITS = {
 
 export const getAdUnitId = (type: keyof typeof PRODUCTION_AD_UNITS): string => {
   if (USE_TEST_IDS) {
-    console.log(`[adConfig] Providing TEST AdUnitId for type: ${type}`);
+    // console.log(`[adConfig] Providing TEST AdUnitId for type: ${type}`);
     switch (type) {
       case 'BANNER_HOME':
         return TestIds.BANNER;
@@ -32,7 +32,7 @@ export const getAdUnitId = (type: keyof typeof PRODUCTION_AD_UNITS): string => {
     // Fallback
     return TestIds.BANNER;
   } else {
-    console.log(`[adConfig] Providing PRODUCTION AdUnitId for type: ${type}`);
+    // console.log(`[adConfig] Providing PRODUCTION AdUnitId for type: ${type}`);
     return PRODUCTION_AD_UNITS[type];
   }
 };

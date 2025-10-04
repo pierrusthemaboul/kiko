@@ -1,6 +1,7 @@
 // hooks/game/index.ts - Point d'entrée pour les hooks du jeu
 
 // Export de tous les hooks individuels
+export { usePlays } from '../usePlays';
 export { useInitGame } from './useInitGame';
 export { useTimer } from './useTimer';
 export { useAds } from './useAds';

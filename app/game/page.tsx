@@ -34,10 +34,42 @@ function ClassicGameScreen({ requestedMode }: { requestedMode?: string }) {
   const fadeAnim = useRef(new Animated.Value(0)).current;
   const [gameKey, setGameKey] = useState(0); // Utilisé pour forcer le re-rendu du contenu du jeu
   const [isRestarting, setIsRestarting] = useState(false); // État pour afficher l'indicateur lors du redémarrage
+  const [runState, setRunState] = useState<'pending' | 'ready' | 'error'>('pending');
 
   // Initialise la logique du jeu via le hook personnalisé
   const gameLogic = useGameLogicA('', requestedMode); // Passe une chaîne vide ou l'initialEvent si nécessaire
   const { endSummary, startRun, canStartRun, playsInfo, clearEndSummary } = gameLogic;
+
+  useEffect(() => {
+    const initializeRun = async () => {
+      if (typeof startRun !== 'function') {
+        setRunState('error');
+        Alert.alert('Erreur', 'La fonction de démarrage du jeu est indisponible.');
+        return;
+      }
+
+      try {
+        const economyMode: 'classic' | 'date' = gameLogic.gameMode?.variant === 'precision' ? 'date' : 'classic';
+        const res = await startRun(economyMode);
+
+        if (res.ok) {
+          setRunState('ready');
+        } else {
+          setRunState('error');
+          Alert.alert('Démarrage impossible', res.message, [
+            { text: 'OK', onPress: () => router.back() },
+          ]);
+        }
+      } catch (err) {
+        setRunState('error');
+        Alert.alert('Erreur', err instanceof Error ? err.message : 'Erreur inconnue', [
+          { text: 'OK', onPress: () => router.back() },
+        ]);
+      }
+    };
+
+    initializeRun();
+  }, []);
 
   const handleCloseEndSummary = useCallback(() => {
     clearEndSummary?.();
@@ -60,75 +92,45 @@ function ClassicGameScreen({ requestedMode }: { requestedMode?: string }) {
   useFocusEffect(
     useCallback(() => {
       try {
-        FirebaseAnalytics.screen('GameScreen', 'GameScreenPage'); // Nom du fichier/écran
+        FirebaseAnalytics.screen('GameScreen', 'GameScreenPage');
         NavigationBar.setVisibilityAsync('hidden').catch(() => undefined);
       } catch (error) {
-        console.error("Erreur lors de l'appel à FirebaseAnalytics.screen :", error);
       }
-      return () => {}; // Fonction de nettoyage (optionnelle)
+      return () => {};
     }, [])
   );
 
-  // --- FONCTION POUR "REJOUER" ---
-  // Appelle les fonctions de réinitialisation du hook useGameLogicA
   const handleActualRestart = useCallback(async () => {
-    console.log("[GameScreenPage] ACTION: Restarting game state (Rejouer)...");
-    setIsRestarting(true); // Affiche l'indicateur de chargement
+    setIsRestarting(true);
 
+    // La logique de vérification et de démarrage est maintenant dans le useEffect principal
     if (typeof startRun === 'function') {
       const economyMode: 'classic' | 'date' = gameLogic.gameMode?.variant === 'precision' ? 'date' : 'classic';
-      if (!canStartRun) {
-        console.warn('[GameScreenPage] Plus de parties disponibles aujourd\'hui.', playsInfo);
-        const remainingInfo = playsInfo
-          ? `Il vous reste ${Math.max(0, playsInfo.remaining)} partie(s) sur ${playsInfo.allowed}.`
-          : "Vous n'avez plus de parties disponibles aujourd'hui.";
-        Alert.alert('Plus de parties disponibles', remainingInfo);
-        setIsRestarting(false);
-        return;
-      }
       try {
-        await startRun(economyMode);
+        const res = await startRun(economyMode);
+        if (!res.ok) throw new Error(res.message);
       } catch (runError) {
-        console.error('[GameScreenPage] Échec de réservation du run:', runError);
       }
     }
 
-    // 1. Réinitialise l'état des publicités (si la fonction existe)
     if (gameLogic.resetAdsState) {
       gameLogic.resetAdsState();
-      console.log("[GameScreenPage] Ads state reset.");
-    } else {
-      console.warn("[GameScreenPage] resetAdsState function not available in gameLogic.");
     }
 
-    // 2. Réinitialise l'état de contrôle du jeu (isGameOver, isPaused, streak, etc.)
     if (gameLogic.resetGameFlowState) {
       gameLogic.resetGameFlowState();
-      console.log("[GameScreenPage] Game flow state reset.");
-    } else {
-      console.warn("[GameScreenPage] resetGameFlowState function not found in gameLogic!");
     }
 
-    // 3. Réinitialise les données du jeu et sélectionne les événements initiaux
     if (gameLogic.initGame) {
       try {
-        await gameLogic.initGame(); // Réinitialise user, events, etc.
-        console.log("[GameScreenPage] Game logic data re-initialized.");
+        await gameLogic.initGame();
       } catch (error) {
-         console.error("[GameScreenPage] Error during initGame on restart:", error);
-         // Vous pourriez vouloir afficher une erreur à l'utilisateur ici via gameLogic.setError ou un état local
-         // gameLogic.setError("Impossible de redémarrer la partie."); // Exemple
       }
-    } else {
-      console.warn("[GameScreenPage] gameLogic.initGame function not found!");
     }
 
-    // 4. Force le re-rendu du composant GameContentA via la clé et réinitialise l'animation d'entrée
     setGameKey(prevKey => prevKey + 1);
-    fadeAnim.setValue(0); // Remet l'opacité à 0 pour l'animation d'entrée
+    fadeAnim.setValue(0);
     Animated.timing(fadeAnim, { toValue: 1, duration: 500, useNativeDriver: true }).start();
-
-    // Cache l'indicateur de chargement après un court délai pour laisser le temps au re-rendu
     setTimeout(() => setIsRestarting(false), 150);
 
   }, [
@@ -142,27 +144,16 @@ function ClassicGameScreen({ requestedMode }: { requestedMode?: string }) {
     fadeAnim,
   ]);
 
-  // --- FONCTION POUR "MENU" ---
-  // Navigue vers l'écran d'accueil (index.tsx dans le groupe (tabs))
   const handleActualMenu = useCallback(() => {
-    console.log("[GameScreenPage] ACTION: Navigating to Home Screen (Menu)...");
-
-    // Réinitialise l'état des pubs AVANT de quitter l'écran de jeu (bonne pratique)
     if (gameLogic.resetAdsState) {
       gameLogic.resetAdsState();
-      console.log("[GameScreenPage] Ads state reset before navigating to home");
-    } else {
-        console.warn("[GameScreenPage] resetAdsState function not available.");
     }
 
     try {
-      // Navigue vers la racine du groupe (tabs), qui est généralement gérée par /app/(tabs)/_layout.tsx et pointe vers index.tsx
-      // Utilise 'replace' pour enlever l'écran de jeu de l'historique de navigation (l'utilisateur ne pourra pas "revenir" au jeu terminé)
       router.replace('/(tabs)/');
     } catch (e) {
-      console.error("[GameScreenPage] Error navigating to Home Screen:", e);
     }
-  }, [router, gameLogic.resetAdsState]); // Dépendances
+  }, [router, gameLogic.resetAdsState]);
 
   // Animation d'entrée initiale et lors du changement de clé (redémarrage)
   useEffect(() => {
@@ -171,10 +162,10 @@ function ClassicGameScreen({ requestedMode }: { requestedMode?: string }) {
   }, [gameKey, fadeAnim]); // Se déclenche au montage et quand gameKey change
 
   // Détermine quand afficher l'indicateur de chargement principal
-  const showLoadingIndicator = (gameKey === 0 && gameLogic.loading) || isRestarting;
+  const showLoadingIndicator = runState === 'pending' || (gameKey === 0 && gameLogic.loading) || isRestarting;
 
   // Affiche l'indicateur de chargement si le jeu s'initialise, redémarre, ou si des données essentielles manquent
-  if (showLoadingIndicator || !gameLogic || !gameLogic.user || !gameLogic.currentLevelConfig || !gameLogic.adState) {
+  if (showLoadingIndicator || runState !== 'ready' || !gameLogic || !gameLogic.user || !gameLogic.currentLevelConfig || !gameLogic.adState) {
      return (
        <View style={[styles.fullScreenContainer, styles.loadingContainer]}>
          <StatusBar translucent backgroundColor="black" barStyle="light-content" />
@@ -285,7 +276,6 @@ function PrecisionGameScreen() {
         FirebaseAnalytics.screen('PrecisionGameScreen', 'PrecisionGameScreen');
         NavigationBar.setVisibilityAsync('hidden').catch(() => undefined);
       } catch (error) {
-        console.error('Erreur lors du tracking écran précision :', error);
       }
       return () => {};
     }, [])

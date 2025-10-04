@@ -7,7 +7,7 @@ const isEnabled = (() => {
   try {
     if (typeof process !== 'undefined' && process.env) {
       const flag = process.env.EXPO_PUBLIC_DEBUG_LOGS ?? process.env.DEBUG_LOGS;
-      return flag === '1' || flag === 'true';
+      return false; // flag === '1' || flag === 'true';
     }
   } catch (err) {
     // noop – fall back to disabled

@@ -25,6 +25,7 @@ import EventLayoutA from './EventLayoutA'; // Assurez-vous que ce chemin est cor
 import LevelUpModalBis from '../modals/LevelUpModalBis';
 import ScoreboardModal from '../modals/ScoreboardModal';
 import RewardAnimation from './RewardAnimation';
+import { logger } from '@/utils/logger';
 
 // Types & Constants
 import { colors } from '@/constants/Colors';
@@ -158,7 +159,7 @@ function GameContentA({
   // --- MODIFICATION : Nouveaux handlers internes pour les boutons du modal ---
   // Handler pour le bouton "Rejouer" du modal
   const handleModalRestart = useCallback(() => {
-    console.log("[GameContentA] Modal 'Rejouer' clicked. Resetting ads and calling parent restart logic.");
+    logger.log("[GameContentA] Modal 'Rejouer' clicked. Resetting ads and calling parent restart logic.");
     if (resetAdsState) {
       resetAdsState(); // Réinitialise les pubs si la fonction existe
     }
@@ -167,7 +168,7 @@ function GameContentA({
 
   // Handler pour le bouton "Menu" du modal
   const handleModalMenu = useCallback(() => {
-    console.log("[GameContentA] Modal 'Menu' clicked. Resetting ads and calling parent menu logic.");
+    logger.log("[GameContentA] Modal 'Menu' clicked. Resetting ads and calling parent menu logic.");
     if (resetAdsState) {
       resetAdsState(); // Réinitialise les pubs si la fonction existe
     }
@@ -184,37 +185,37 @@ function GameContentA({
 
     const updateRewardPositionSafely = async () => {
       if (!currentReward || !userInfoRef.current || !mounted || !user) {
-        // console.log("[GameContentA] Cannot update reward position - prerequisites not met"); // Log original
+        // console.log("[GameContentA] Cannot update reward position - prerequisites not met");
         return;
       }
 
       try {
-        // console.log(`[GameContentA] Getting position for reward type: ${currentReward.type}`); // Log original
+        // console.log(`[GameContentA] Getting position for reward type: ${currentReward.type}`);
         const position = currentReward.type === RewardType.EXTRA_LIFE
           ? await userInfoRef.current.getLifePosition()
           : await userInfoRef.current.getPointsPosition();
 
         if (mounted && position && typeof position.x === 'number' && typeof position.y === 'number') {
-          // console.log(`[GameContentA] Got valid position: x=${position.x}, y=${position.y}`); // Log original
+          // console.log(`[GameContentA] Got valid position: x=${position.x}, y=${position.y}`);
           const positionChanged =
             !currentReward.targetPosition ||
             Math.abs(currentReward.targetPosition.x - position.x) > 5 ||
             Math.abs(currentReward.targetPosition.y - position.y) > 5;
 
           if (positionChanged) {
-             // console.log(`[GameContentA] Updating reward position`); // Log original
+             // console.log(`[GameContentA] Updating reward position`);
              updateRewardPosition(position);
              setIsRewardPositionSet(true);
           } else {
-             // console.log("[GameContentA] Position unchanged, no update needed"); // Log original
+             // console.log("[GameContentA] Position unchanged, no update needed");
              setIsRewardPositionSet(true);
           }
         } else {
-          // console.warn("[GameContentA] getPosition returned invalid position:", position); // Log original
+          // console.warn("[GameContentA] getPosition returned invalid position:", position);
           if (attempts < MAX_ATTEMPTS) {
             attempts++;
           } else {
-             // console.log("[GameContentA] Using fallback position after failed attempts"); // Log original
+             // console.log("[GameContentA] Using fallback position after failed attempts");
              const fallbackPosition = currentReward.type === RewardType.EXTRA_LIFE
               ? { x: Dimensions.get('window').width * 0.80, y: 50 }
               : { x: Dimensions.get('window').width * 0.20, y: 50 };
@@ -223,11 +224,11 @@ function GameContentA({
           }
         }
       } catch (e) {
-        // console.warn("[GameContentA] Error getting element position:", e); // Log original
+        // console.warn("[GameContentA] Error getting element position:", e);
         if (attempts < MAX_ATTEMPTS) {
             attempts++;
         } else {
-           // console.log("[GameContentA] Using fallback position after error"); // Log original
+           // console.log("[GameContentA] Using fallback position after error");
            const fallbackPosition = currentReward.type === RewardType.EXTRA_LIFE
             ? { x: Dimensions.get('window').width * 0.80, y: 50 }
             : { x: Dimensions.get('window').width * 0.20, y: 50 };
@@ -241,8 +242,8 @@ function GameContentA({
     const timers = [];
     for (let i = 1; i <= MAX_ATTEMPTS; i++) {
       const timer = setTimeout(() => {
-        if (mounted && currentReward && !isRewardPositionSet) {
-          // console.log(`[GameContentA] Retry ${i}/${MAX_ATTEMPTS} for position update`); // Log original
+        if (mounted && currentReward && !isRewardPositionSet) { // eslint-disable-line @typescript-eslint/no-unnecessary-condition
+          // console.log(`[GameContentA] Retry ${i}/${MAX_ATTEMPTS} for position update`);
           updateRewardPositionSafely();
         }
       }, i * 300);

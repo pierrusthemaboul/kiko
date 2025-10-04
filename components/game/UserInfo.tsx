@@ -106,7 +106,7 @@ const UserInfo = forwardRef<UserInfoHandle, UserInfoProps>(
         pointsRef.current.measureInWindow((x, y, width, height) => {
           const measuredPos = { x: x + width / 2, y: y + height / 2 };
           setPointsPosition(measuredPos);
-          // console.log('Points position measured:', measuredPos); // Log supprimé
+          // console.log('Points position measured:', measuredPos);
         });
       }
     };
@@ -117,7 +117,7 @@ const UserInfo = forwardRef<UserInfoHandle, UserInfoProps>(
         livesRef.current.measureInWindow((x, y, width, height) => {
           const measuredPos = { x: x + width / 2, y: y + height / 2 };
           setLivesPosition(measuredPos);
-          console.log('Lives position measured:', measuredPos);
+          // console.log('Lives position measured:', measuredPos);
         });
       }
     };
@@ -139,31 +139,33 @@ const UserInfo = forwardRef<UserInfoHandle, UserInfoProps>(
     useImperativeHandle(ref, () => ({
       getPointsPosition: () =>
         new Promise((resolve) => {
-          if (pointsPosition.x !== 0 || pointsPosition.y !== 0) {
-            console.log('[UserInfo] Using cached points position:', pointsPosition);
-            resolve(pointsPosition);
-          } else if (pointsRef.current) {
+          // if (pointsPosition.x !== 0 || pointsPosition.y !== 0) {
+          //   console.log('[UserInfo] Using cached points position:', pointsPosition);
+          //   resolve(pointsPosition);
+          // } else 
+          if (pointsRef.current) {
             pointsRef.current.measureInWindow((x, y, width, height) => {
               const pos = { x: x + width / 2, y: y + height / 2 };
-              console.log('[UserInfo] Measured points position:', pos);
+              // console.log('[UserInfo] Measured points position:', pos);
               setPointsPosition(pos);
               resolve(pos);
             });
           } else {
-            console.log('[UserInfo] Fallback points position used');
+            // console.log('[UserInfo] Fallback points position used');
             const fallbackPos = { x: width * 0.25, y: 40 };
             resolve(fallbackPos);
           }
         }),
       getLifePosition: () =>
         new Promise((resolve) => {
-          if (livesPosition.x !== 0 || livesPosition.y !== 0) {
-            console.log('[UserInfo] Using cached lives position:', livesPosition);
-            resolve(livesPosition);
-          } else if (livesRef.current) {
+          // if (livesPosition.x !== 0 || livesPosition.y !== 0) {
+          //   console.log('[UserInfo] Using cached lives position:', livesPosition);
+          //   resolve(livesPosition);
+          // } else 
+          if (livesRef.current) {
             livesRef.current.measureInWindow((x, y, width, height) => {
               const pos = { x: x + width / 2, y: y + height / 2 };
-              console.log('[UserInfo] Measured lives position:', pos);
+              // console.log('[UserInfo] Measured lives position:', pos);
               setLivesPosition(pos);
               resolve(pos);
             });
@@ -176,12 +178,12 @@ const UserInfo = forwardRef<UserInfoHandle, UserInfoProps>(
               // Ajouter un offset Y pour cibler le centre des coeurs
               const lifeY = y + (containerHeight / 2);
               
-              console.log('[UserInfo] Calculated life position:', { x: lifeX, y: lifeY });
+              // console.log('[UserInfo] Calculated life position:', { x: lifeX, y: lifeY });
               resolve({ x: lifeX, y: lifeY });
             });
           } else {
             // Fallback si aucune référence n'est disponible
-            console.log('[UserInfo] Fallback lives position used');
+            // console.log('[UserInfo] Fallback lives position used');
             const fallbackPos = { x: width * 0.80, y: 40 };
             resolve(fallbackPos);
           }

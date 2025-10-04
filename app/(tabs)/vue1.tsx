@@ -13,6 +13,7 @@ import { useRouter } from 'expo-router';
 import { Ionicons } from '@expo/vector-icons';
 import { FirebaseAnalytics } from '@/lib/firebase';
 import { useGameLogicA } from '@/hooks/useGameLogicA';
+import { usePlays } from '@/hooks/usePlays'; // Importer le nouveau hook
 import { rankFromXP } from '@/lib/economy/ranks';
 
 const COLORS = {
@@ -35,23 +36,22 @@ const QUESTS = [
 
 export default function Vue1() {
   const router = useRouter();
-  const gameLogic = useGameLogicA();
-  const { profile, playsInfo, startRun, canStartRun, leaderboards } = gameLogic;
+  // On utilise useGameLogicA principalement pour le profil et les classements
+  const { profile, leaderboards } = useGameLogicA();
+  // On utilise usePlays spécifiquement pour les infos de parties
+  const { playsInfo, canStartRun, loadingPlays } = usePlays();
 
   const xp = profile?.xp_total ?? 0;
   const rank = useMemo(() => rankFromXP(xp), [xp]);
   const playerName = profile?.display_name ?? 'Voyageur';
-  const partiesPerDay = profile?.parties_per_day ?? 3;
-  const used = playsInfo?.used ?? 0;
-  const remainingSessions = playsInfo?.remaining ?? Math.max(0, partiesPerDay - used);
 
   const headerSubtitle = useMemo(
     () => `Titre : ${rank.label} · ${xp.toLocaleString('fr-FR')} XP`,
     [rank.label, xp]
   );
   const headerPlays = useMemo(
-    () => `${remainingSessions} parties restantes`,
-    [remainingSessions]
+    () => `${playsInfo?.remaining ?? 0} parties restantes`,
+    [playsInfo?.remaining]
   );
 
   const topPlayers = useMemo(() => {
@@ -67,41 +67,20 @@ export default function Vue1() {
   }, []);
 
   const handleModePress = useCallback(
-    async (mode: 'classic' | 'precision') => {
-      console.log('[vue1] handleModePress called, mode=', mode);
-      console.log('[vue1] canStartRun=', canStartRun);
-      console.log('[vue1] playsInfo=', playsInfo);
-
-      if (!canStartRun) {
-        const info = playsInfo
-          ? `Il vous reste ${Math.max(0, playsInfo.remaining)} partie(s) sur ${playsInfo.allowed}.`
-          : "Vous n'avez plus de parties disponibles aujourd'hui.";
-        Alert.alert('Plus de parties disponibles', info);
-        return;
-      }
-
-      const economyMode: 'classic' | 'date' = mode === 'precision' ? 'date' : 'classic';
-      const res = await startRun?.(economyMode);
-      console.log('[vue1] startRun result =', res);
-
-      if (!res?.ok) {
-        Alert.alert('Démarrage impossible', res?.message || 'Erreur inconnue.');
+    (mode: 'classic' | 'precision') => {
+      if (!canStartRun && !loadingPlays) { // Vérifier aussi que le chargement est terminé
+        Alert.alert('Plus de parties disponibles', "Vous avez utilisé toutes vos parties pour aujourd'hui.");
         return;
       }
 
       router.push(`/game?mode=${mode}`);
     },
-    [router, startRun, canStartRun, playsInfo],
+    [router, canStartRun, loadingPlays],
   );
 
   const handleViewLeaderboard = useCallback(() => {
     router.push('/leaderboard');
   }, [router]);
-
-  console.log('[vue1] profile =', profile);
-console.log('[vue1] playsInfo =', playsInfo);
-console.log('[vue1] leaderboards =', leaderboards);
-
 
   return (
     <ImageBackground source={require('@/assets/images/sablier.png')} style={styles.background} resizeMode="cover">

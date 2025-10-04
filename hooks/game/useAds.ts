@@ -16,7 +16,7 @@ const ADS_LOG_ENABLED = (() => {
       const flag = process.env.EXPO_PUBLIC_ADS_LOGS ?? process.env.ADS_DEBUG_LOGS;
       return flag === '1' || flag === 'true';
     }
-  } catch {}
+  } catch {} // eslint-disable-line no-empty
   return false;
 })();
 
@@ -121,7 +121,7 @@ export function useAds({
 
   const initCheckPendingAds = useCallback(() => {
     return () => {
-      if (adState.isShowingAd || adState.processingAdRequest) {
+      if (adState.isShowingAd || adState.processingAdRequest) { // eslint-disable-line @typescript-eslint/no-unnecessary-condition
         adLog('log', "checkPendingAds: Skipping, ad is showing or request is being processed.");
         return;
       }
@@ -298,7 +298,7 @@ export function useAds({
     const unsubGenericError = genericInterstitial.addAdEventListener(AdEventType.ERROR, error => {
       adLog('warn', `Generic Interstitial failed to load: ${error.message}`);
       setAdState(prev => ({ ...prev, interstitialLoaded: false }));
-      FirebaseAnalytics.ad('interstitial', 'failed', 'generic', getCurrentLevelForLog());
+      FirebaseAnalytics.ad('interstitial', 'failed', 'generic', getCurrentLevelForLog()); // eslint-disable-line @typescript-eslint/no-floating-promises
       FirebaseAnalytics.error('ad_load_error', `Generic Interstitial: ${error.message}`, 'useAds');
       setTimeout(() => { genericInterstitial.load(); }, 30000);
     });
@@ -306,7 +306,7 @@ export function useAds({
     const unsubGenericOpened = genericInterstitial.addAdEventListener(AdEventType.OPENED, () => {
       adLog('log', "Generic Interstitial opened");
       setIsLevelPaused(true);
-      FirebaseAnalytics.ad('interstitial', 'opened', 'generic', getCurrentLevelForLog());
+      FirebaseAnalytics.ad('interstitial', 'opened', 'generic', getCurrentLevelForLog()); // eslint-disable-line @typescript-eslint/no-floating-promises
     });
 
     const unsubGenericClosed = genericInterstitial.addAdEventListener(AdEventType.CLOSED, () => {
@@ -319,7 +319,7 @@ export function useAds({
       }));
       genericInterstitial.load();
       setIsLevelPaused(false);
-      resetTimer(20);
+      resetTimer(20); // eslint-disable-line @typescript-eslint/no-floating-promises
       FirebaseAnalytics.ad('interstitial', 'closed', 'generic', getCurrentLevelForLog());
       setTimeout(safeCheckPendingAds, 500);
     });
@@ -333,7 +333,7 @@ export function useAds({
     const unsubLevelUpError = levelUpInterstitial.addAdEventListener(AdEventType.ERROR, error => {
       adLog('warn', `LevelUp Interstitial failed to load: ${error.message}`);
       setAdState(prev => ({ ...prev, levelUpInterstitialLoaded: false }));
-      FirebaseAnalytics.ad('interstitial', 'failed', 'level_up', getCurrentLevelForLog());
+      FirebaseAnalytics.ad('interstitial', 'failed', 'level_up', getCurrentLevelForLog()); // eslint-disable-line @typescript-eslint/no-floating-promises
       FirebaseAnalytics.error('ad_load_error', `LevelUp Interstitial: ${error.message}`, 'useAds');
       setTimeout(() => { levelUpInterstitial.load(); }, 30000);
     });
@@ -341,7 +341,7 @@ export function useAds({
     const unsubLevelUpOpened = levelUpInterstitial.addAdEventListener(AdEventType.OPENED, () => {
       adLog('log', "LevelUp Interstitial opened");
       setIsLevelPaused(true);
-      FirebaseAnalytics.ad('interstitial', 'opened', 'level_up', getCurrentLevelForLog());
+      FirebaseAnalytics.ad('interstitial', 'opened', 'level_up', getCurrentLevelForLog()); // eslint-disable-line @typescript-eslint/no-floating-promises
     });
 
     const unsubLevelUpClosed = levelUpInterstitial.addAdEventListener(AdEventType.CLOSED, () => {
@@ -372,7 +372,7 @@ export function useAds({
     const unsubGameOverError = gameOverInterstitial.addAdEventListener(AdEventType.ERROR, error => {
       adLog('warn', `GameOver Interstitial failed to load: ${error.message}`);
       setAdState(prev => ({ ...prev, gameOverInterstitialLoaded: false }));
-      FirebaseAnalytics.ad('interstitial', 'failed', 'game_over', getCurrentLevelForLog());
+      FirebaseAnalytics.ad('interstitial', 'failed', 'game_over', getCurrentLevelForLog()); // eslint-disable-line @typescript-eslint/no-floating-promises
       FirebaseAnalytics.error('ad_load_error', `GameOver Interstitial: ${error.message}`, 'useAds');
       setTimeout(() => { gameOverInterstitial.load(); }, 30000);
     });
@@ -404,7 +404,7 @@ export function useAds({
     const unsubRewardedError = rewardedAd.addAdEventListener(AdEventType.ERROR, error => {
       adLog('warn', `Rewarded ad failed to load: ${error.message}`);
       setAdState(prev => ({ ...prev, rewardedLoaded: false }));
-      FirebaseAnalytics.ad('rewarded', 'failed', 'extra_life', getCurrentLevelForLog());
+      FirebaseAnalytics.ad('rewarded', 'failed', 'extra_life', getCurrentLevelForLog()); // eslint-disable-line @typescript-eslint/no-floating-promises
       FirebaseAnalytics.error('ad_load_error', `Rewarded Ad: ${error.message}`, 'useAds');
       setTimeout(() => { rewardedAd.load(); }, 30000);
     });
@@ -441,7 +441,7 @@ export function useAds({
           
           // Pas de récompense gagnée, réinitialiser l'état de jeu
           setIsLevelPaused(false);
-          resetTimer(20);
+          resetTimer(20); // eslint-disable-line @typescript-eslint/no-floating-promises
           rewardedAd.load();
           
           if (setPendingAdDisplay) {
@@ -463,7 +463,7 @@ export function useAds({
         setAdState(prev => {
           // Si la récompense a été gagnée entre-temps (par l'événement EARNED_REWARD après CLOSED)
           if (prev.rewardEarned && !processingRewardRef.current) {
-            adLog('log', "Applying reward after delayed check (reward earned after close)");
+            adLog('log', "Applying reward after delayed check (reward earned after close)"); // eslint-disable-line @typescript-eslint/no-floating-promises
             applyRewardAndContinue();
           }
           return prev;
@@ -483,7 +483,7 @@ export function useAds({
         rewardEarned: true
       }));
 
-      FirebaseAnalytics.ad('rewarded', 'earned_reward', 'extra_life', currentLevel);
+      FirebaseAnalytics.ad('rewarded', 'earned_reward', 'extra_life', currentLevel); // eslint-disable-line @typescript-eslint/no-floating-promises
       const rewardType = reward?.type || 'unknown_reward_type';
       const rewardAmount = reward?.amount || 0;
       
@@ -506,7 +506,7 @@ export function useAds({
           ...prev, 
           hasWatchedRewardedAd: true 
         }));
-        
+        // eslint-disable-next-line @typescript-eslint/no-floating-promises
         applyRewardAndContinue();
       } else {
         // Le CLOSED n'a pas encore été appelé ou a été appelé il y a longtemps

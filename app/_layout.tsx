@@ -39,15 +39,15 @@ export default function RootLayout() {
     const hideNavigationBar = async () => {
       if (Platform.OS === 'android') {
         try {
-          console.log('🔧 [NAVBAR] Tentative avec SystemUI...');
+          // console.log('🔧 [NAVBAR] Tentative avec SystemUI...');
           await SystemUI.setBackgroundColorAsync('#020817');
-          console.log('✅ [NAVBAR] SystemUI background color set');
+          // console.log('✅ [NAVBAR] SystemUI background color set');
           await NavigationBar.setVisibilityAsync('hidden');
           await NavigationBar.setBehaviorAsync('overlay-swipe');
           await NavigationBar.setBackgroundColorAsync('#020817');
-          console.log('✅ [NAVBAR] Navigation bar hidden');
+          // console.log('✅ [NAVBAR] Navigation bar hidden');
         } catch (error) {
-          console.log('❌ [NAVBAR] Erreur SystemUI:', error);
+          // console.log('❌ [NAVBAR] Erreur SystemUI:', error);
         }
       }
     };
@@ -57,24 +57,24 @@ export default function RootLayout() {
   // --- Initialisation (Firebase, Version Check) ---
   useEffect(() => {
     const initializeApp = async () => {
-      console.log('[RootLayout] Initializing App Setup (Firebase, Version)...');
+      // console.log('[RootLayout] Initializing App Setup (Firebase, Version)...');
       try {
         await FirebaseAnalytics.initialize(undefined, true);
         await FirebaseAnalytics.appOpen();
         const previousVersion = await AsyncStorage.getItem(APP_VERSION_STORAGE_KEY);
         if (previousVersion && previousVersion !== CURRENT_APP_VERSION) {
           await FirebaseAnalytics.logEvent('app_update', {});
-          console.log(`[RootLayout] Analytics: app_update detected from ${previousVersion} to ${CURRENT_APP_VERSION}`);
+          // console.log(`[RootLayout] Analytics: app_update detected from ${previousVersion} to ${CURRENT_APP_VERSION}`);
           await AsyncStorage.setItem(APP_VERSION_STORAGE_KEY, CURRENT_APP_VERSION);
         } else if (!previousVersion) {
           await AsyncStorage.setItem(APP_VERSION_STORAGE_KEY, CURRENT_APP_VERSION);
-          console.log(`[RootLayout] Analytics: First time storing app version: ${CURRENT_APP_VERSION}`);
+          // console.log(`[RootLayout] Analytics: First time storing app version: ${CURRENT_APP_VERSION}`);
         }
       } catch (e) {
         console.error("[RootLayout] Failed during initial app setup:", e);
         FirebaseAnalytics.error('app_initialization_error', e instanceof Error ? e.message : 'Unknown setup error', 'RootLayout');
       } finally {
-        console.log('[RootLayout] Initial App Setup Done.');
+        // console.log('[RootLayout] Initial App Setup Done.');
         setInitialSetupDone(true);
       }
     };
@@ -86,19 +86,19 @@ export default function RootLayout() {
     const configureAdMob = async () => {
       // ... (code AdMob inchangé) ...
       try {
-        console.log('[AdMob Config] Starting AdMob initialization...');
+        // console.log('[AdMob Config] Starting AdMob initialization...');
         await MobileAds().initialize();
-        console.log('[AdMob Config] AdMob SDK Initialized successfully.');
+        // console.log('[AdMob Config] AdMob SDK Initialized successfully.');
         await new Promise(resolve => setTimeout(resolve, 2000)); // Délai
         try {
           if (__DEV__) {
             const myTestDeviceIds = ['3D55CC0D2A3E4E6EB5D0F1231DE2E59C'];
-            console.log('[AdMob Config] DEV MODE - Configuring test devices:', myTestDeviceIds);
+            // console.log('[AdMob Config] DEV MODE - Configuring test devices:', myTestDeviceIds);
             const requestConfig = { testDeviceIdentifiers: myTestDeviceIds };
             await MobileAds().setRequestConfiguration(requestConfig);
-            console.log('[AdMob Config] Test Devices Configured successfully.');
+            // console.log('[AdMob Config] Test Devices Configured successfully.');
           } else {
-            console.log('[AdMob Config] PROD MODE - Skipping test device configuration.');
+            // console.log('[AdMob Config] PROD MODE - Skipping test device configuration.');
           }
         } catch (configError) {
           console.warn('[AdMob Config] Failed to set AdMob request configuration:', configError);
@@ -116,7 +116,7 @@ export default function RootLayout() {
   useEffect(() => {
     supabase.auth.getSession()
       .then(({ data: { session: initialSession } }) => {
-        console.log('[Auth Listener] Initial session check:', initialSession ? 'Exists' : 'Null');
+        // console.log('[Auth Listener] Initial session check:', initialSession ? 'Exists' : 'Null');
         setSession(initialSession);
         FirebaseAnalytics.initialize(initialSession?.user?.id, !initialSession);
       })
@@ -128,14 +128,14 @@ export default function RootLayout() {
       });
 
     const { data: authListener } = supabase.auth.onAuthStateChange((_event, session) => {
-      console.log(`[Auth Listener] Auth state changed: Event=${_event}, Session=${session ? `Exists (User: ${session.user.id})` : 'Null'}`);
+      // console.log(`[Auth Listener] Auth state changed: Event=${_event}, Session=${session ? `Exists (User: ${session.user.id})` : 'Null'}`);
       setSession(session);
       FirebaseAnalytics.initialize(session?.user?.id, !session);
     });
 
     return () => {
       authListener?.subscription.unsubscribe();
-      console.log('[Auth Listener] Unsubscribed.');
+      // console.log('[Auth Listener] Unsubscribed.');
     };
   }, []);
 
@@ -151,7 +151,7 @@ export default function RootLayout() {
   useEffect(() => {
     if ((fontsLoaded || fontError) && initialSetupDone) {
       setAppReady(true);
-      console.log('[RootLayout] App is marked as ready.');
+      // console.log('[RootLayout] App is marked as ready.');
     }
   }, [fontsLoaded, fontError, initialSetupDone]);
 
@@ -172,25 +172,25 @@ export default function RootLayout() {
     // segments = ['(tabs)'] ou ['(tabs)', 'index'] pour l'écran d'accueil
     const isTryingTabsIndex = segments[0] === '(tabs)' && (segments.length === 1 || segments[1] === 'index');
 
-    console.log(`[Auth Guard] Checking: Session=${session ? 'Yes' : 'No'}, Segments=${segments.join('/')}, InAuth=${inAuthGroup}, IsTryingProtected=${isTryingProtectedGroup}, IsTryingTabsIndex=${isTryingTabsIndex}`);
+    // console.log(`[Auth Guard] Checking: Session=${session ? 'Yes' : 'No'}, Segments=${segments.join('/')}, InAuth=${inAuthGroup}, IsTryingProtected=${isTryingProtectedGroup}, IsTryingTabsIndex=${isTryingTabsIndex}`);
 
     // Condition de redirection vers Login :
     // 1. PAS de session
     // 2. ET on essaie d'accéder à un groupe protégé ((tabs) ou game)
     // 3. ET ce n'est PAS l'écran d'accueil (tabs)/index
     if (!session && isTryingProtectedGroup && !isTryingTabsIndex) {
-      console.log('[Auth Guard] Condition Met: No session & trying protected area (NOT index) -> Redirecting to /auth/login');
+      // console.log('[Auth Guard] Condition Met: No session & trying protected area (NOT index) -> Redirecting to /auth/login');
       router.replace('/auth/login');
     }
     // Condition de redirection vers l'accueil si on est connecté et dans le groupe (auth)
     else if (session && inAuthGroup) {
-      console.log('[Auth Guard] Condition Met: Session exists & in auth area -> Redirecting to /(tabs)');
+      // console.log('[Auth Guard] Condition Met: Session exists & in auth area -> Redirecting to /(tabs)');
       // Redirige vers l'écran d'accueil par défaut du groupe (tabs)
       router.replace('/(tabs)');
     }
     // Dans tous les autres cas (session existe et on est dans (tabs), ou pas de session et on est sur (tabs)/index), on ne fait rien.
     else {
-      console.log('[Auth Guard] Condition Not Met: No redirect needed.');
+      // console.log('[Auth Guard] Condition Not Met: No redirect needed.');
     }
 
   }, [appReady, session, segments, router]); // Dépendances de l'effet
@@ -201,17 +201,17 @@ export default function RootLayout() {
   useEffect(() => {
     if (appReady) {
       SplashScreen.hideAsync().catch(e => console.warn("[SplashScreen] Error hiding splash screen:", e));
-      console.log('[RootLayout] App is ready, hiding splash screen.');
+      // console.log('[RootLayout] App is ready, hiding splash screen.');
     }
   }, [appReady]);
 
   // --- Rendu ---
   if (!appReady) {
-    console.log('[RootLayout] Rendering null (App not ready)');
+    // console.log('[RootLayout] Rendering null (App not ready)');
     return null; // Affiche le splash screen natif tant que pas prêt
   }
 
-  console.log('[RootLayout] Rendering Stack Navigator');
+  // console.log('[RootLayout] Rendering Stack Navigator');
   // Le Stack Navigator principal
   return (
     <Stack screenOptions={{ headerShown: false }}>

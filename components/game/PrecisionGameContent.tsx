@@ -195,13 +195,6 @@ const PrecisionGameContent: React.FC<PrecisionGameContentProps> = ({
 
   const handleDigitPress = (digit: string) => {
     if (lastResult || isGameOver) {
-      if (__DEV__) {
-        console.log('[Precision][keypad] press ignored', {
-          digit,
-          hasResult: !!lastResult,
-          isGameOver,
-        });
-      }
       return;
     }
 
@@ -210,15 +203,9 @@ const PrecisionGameContent: React.FC<PrecisionGameContentProps> = ({
       const isNegative = prev.startsWith('-');
       const digits = isNegative ? prev.slice(1) : prev;
       if (digits.length >= MAX_DIGITS) {
-        if (__DEV__) {
-          console.log('[Precision][keypad] max digits reached', { digit, prev });
-        }
         return prev;
       }
       const nextDigits = digits + digit;
-      if (__DEV__) {
-        console.log('[Precision][keypad] digit committed', { digit, nextDigits });
-      }
       return (isNegative ? '-' : '') + nextDigits;
     });
   };
@@ -278,7 +265,6 @@ const PrecisionGameContent: React.FC<PrecisionGameContentProps> = ({
     const handlePressIn = () => {
       if (disabled) return;
       setIsPressed(true);
-      console.log('[Keypad] Button pressed:', label);
 
       Animated.parallel([
         Animated.spring(scaleAnim, {

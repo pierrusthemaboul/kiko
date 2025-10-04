@@ -108,11 +108,11 @@ export function useTimer({
             const savedTime = lastTimeRef.current;
             const penalty = Math.max(1, Math.ceil(defaultTimeRef.current * 0.9));
             const newTime = Math.max(1, savedTime - penalty);
-            setTimeLeft(newTime);
-            console.log('[useTimer] Applying background penalty:', savedTime, '->', newTime);
+            // setTimeLeft(newTime);
+            // console.log('[useTimer] Applying background penalty:', savedTime, '->', newTime);
           } else {
             // Si on revient d'une pub récompensée, pas de malus
-            console.log('[useTimer] Skipping penalty - returning from rewarded ad');
+            // console.log('[useTimer] Skipping penalty - returning from rewarded ad');
             // Réinitialisation du flag après usage
             fromRewardedAdRef.current = false;
           }

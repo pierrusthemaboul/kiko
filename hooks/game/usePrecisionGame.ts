@@ -153,7 +153,6 @@ export function usePrecisionGame() {
 
       setEvents(validEvents as Event[]);
     } catch (err) {
-      console.error('[usePrecisionGame] Failed to load events:', err);
       setError('Impossible de charger les événements.');
     } finally {
       setLoading(false);

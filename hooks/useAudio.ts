@@ -97,7 +97,7 @@ export const useAudio = () => {
   };
 
   const playCountdownSound = useCallback(() => {
-    playSound('countdown', 1);
+    // playSound('countdown', 1); // Commenté pour réduire le bruit
   }, [isSoundEnabled]); // Note: la dépendance est isSoundEnabled via playSound
 
   const playCorrectSound = useCallback(() => {
