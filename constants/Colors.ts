@@ -42,3 +42,30 @@ export const colors = {
   } as const;
   
   export default colors;
+
+export const steampunkTheme = {
+  mainBg: '#0B0A0A',
+  cardPanel: '#141218',
+  goldBorder: '#C8A04A',
+  goldAccent: '#E0B457',
+  goldGlow: '#8C6B2B',
+  primaryText: '#E8D9A8',
+  secondaryText: '#B7A88A',
+  error: '#C04D3A',
+  progressTrack: '#2A262F',
+  inputSlot: '#1A1720',
+  buttonGradientStart: '#1C1922',
+  buttonGradientEnd: '#0F0E13',
+  cardGradient: {
+    start: '#1A171F',
+    end: '#0F0E12',
+  },
+  goldGradient: {
+    start: '#E0B457',
+    end: '#8C6B2B',
+  },
+  pressedOverlay: 'rgba(224, 180, 87, 0.12)',
+  glassBg: 'rgba(20, 18, 24, 0.6)',
+  goldBorderTransparent: 'rgba(200, 160, 74, 0.25)',
+  inputGlow: 'rgba(224, 180, 87, 0.25)',
+};
