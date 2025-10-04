@@ -1,7 +1,7 @@
 // hooks/useGameLogicA.ts
-import { useState, useCallback, useEffect, useMemo } from 'react';
+import { useState, useCallback, useEffect, useMemo, useRef } from 'react';
 import { Animated, Dimensions } from 'react-native';
-import { supabase } from '../lib/supabase/supabaseClients';
+import { supabase } from '@/lib/supabase/supabaseClients';
 import { FirebaseAnalytics } from '../lib/firebase';
 import { devLog } from '../utils/devLog';
 import {
@@ -24,6 +24,103 @@ import {
   useEventSelector,
 } from './game';
 import { getGameModeConfig, GameModeConfig } from '../constants/gameModes';
+import { applyEndOfRunEconomy } from 'lib/economy/apply';
+
+const PARIS_TIMEZONE = 'Europe/Paris';
+
+function getTimeZoneOffsetMs(date: Date, timeZone: string): number {
+  const dtf = new Intl.DateTimeFormat('en-US', {
+    timeZone,
+    hour12: false,
+    year: 'numeric',
+    month: '2-digit',
+    day: '2-digit',
+    hour: '2-digit',
+    minute: '2-digit',
+    second: '2-digit',
+  });
+
+  const parts: Record<string, string> = {};
+  for (const part of dtf.formatToParts(date)) {
+    if (part.type !== 'literal') {
+      parts[part.type] = part.value;
+    }
+  }
+
+  const asUTC = Date.UTC(
+    Number(parts.year),
+    Number(parts.month) - 1,
+    Number(parts.day),
+    Number(parts.hour),
+    Number(parts.minute),
+    Number(parts.second),
+  );
+
+  return asUTC - date.getTime();
+}
+
+function zonedDateTimeToUtc(
+  parts: { year: number; month: number; day: number; hour?: number; minute?: number; second?: number },
+  timeZone: string,
+): Date {
+  const { year, month, day, hour = 0, minute = 0, second = 0 } = parts;
+  const utcGuess = Date.UTC(year, month - 1, day, hour, minute, second);
+  const offset = getTimeZoneOffsetMs(new Date(utcGuess), timeZone);
+  return new Date(utcGuess - offset);
+}
+
+function shiftLocalDay(
+  parts: { year: number; month: number; day: number },
+  delta: number,
+): { year: number; month: number; day: number } {
+  const date = new Date(Date.UTC(parts.year, parts.month - 1, parts.day, 12, 0, 0));
+  date.setUTCDate(date.getUTCDate() + delta);
+  return {
+    year: date.getUTCFullYear(),
+    month: date.getUTCMonth() + 1,
+    day: date.getUTCDate(),
+  };
+}
+
+export function todayWindow(resetHour = 4): { startISO: string; endISO: string } {
+  const now = new Date();
+  const dtf = new Intl.DateTimeFormat('en-US', {
+    timeZone: PARIS_TIMEZONE,
+    hour12: false,
+    year: 'numeric',
+    month: '2-digit',
+    day: '2-digit',
+    hour: '2-digit',
+    minute: '2-digit',
+    second: '2-digit',
+  });
+
+  const parts: Record<string, string> = {};
+  for (const part of dtf.formatToParts(now)) {
+    if (part.type !== 'literal') {
+      parts[part.type] = part.value;
+    }
+  }
+
+  const currentHour = Number(parts.hour);
+  let dayParts = {
+    year: Number(parts.year),
+    month: Number(parts.month),
+    day: Number(parts.day),
+  };
+
+  if (currentHour < resetHour) {
+    dayParts = shiftLocalDay(dayParts, -1);
+  }
+
+  const start = zonedDateTimeToUtc({ ...dayParts, hour: resetHour }, PARIS_TIMEZONE);
+  const end = new Date(start.getTime() + 24 * 60 * 60 * 1000);
+
+  return {
+    startISO: start.toISOString(),
+    endISO: end.toISOString(),
+  };
+}
 
 const screenWidth = Dimensions.get('window').width;
 
@@ -46,7 +143,31 @@ export function useGameLogicA(initialEvent?: string, modeId?: string) {
 
   const [pendingAdDisplay, setPendingAdDisplay] = useState<"interstitial" | "rewarded" | "gameOver" | "levelUp" | null>(null);
 
+  // ---------- PROFIL UTILISATEUR (affichage pseudo / xp / parties) ----------
+  type ProfileLite = {
+    id: string;
+    display_name: string | null;
+    xp_total: number;
+    title_key?: string | null;
+    parties_per_day: number;
+    high_score?: number | null;
+  };
+  const [profile, setProfile] = useState<ProfileLite | null>(null);
+
   const [progressAnim] = useState(() => new Animated.Value(0));
+  const isApplyingEconomyRef = useRef(false);
+  const [endSummary, setEndSummary] = useState<{
+    mode: 'classic' | 'date';
+    points: number;
+    xpEarned: number;
+    newXp: number;
+    rank: { key: string; label: string; partiesPerDay: number };
+    leveledUp: boolean;
+  } | null>(null);
+  const [endSummaryError, setEndSummaryError] = useState<string | null>(null);
+  const [playsInfo, setPlaysInfo] = useState<{ allowed: number; used: number; remaining: number } | null>(null);
+  const [canStartRun, setCanStartRun] = useState<boolean>(true);
+  const currentRunIdRef = useRef<string | null>(null);
 
   useEffect(() => {
     setShowDates(!!gameMode.showDatesByDefault);
@@ -75,7 +196,67 @@ export function useGameLogicA(initialEvent?: string, modeId?: string) {
     initGame: baseInitGame,
   } = useInitGame();
 
+  const refreshProfile = useCallback(async () => {
+    try {
+      const { data: auth } = await supabase.auth.getUser();
+      const userId = auth.user?.id;
+      if (!userId) {
+        setProfile(null);
+        console.log('[useGameLogicA] refreshProfile: no auth user');
+        return;
+      }
+
+      const { data, error } = await supabase
+        .from('profiles')
+        .select('id, display_name, xp_total, title_key, parties_per_day, high_score')
+        .eq('id', userId)
+        .maybeSingle();
+
+      if (error) {
+        console.error('[useGameLogicA] profile fetch error', error);
+        setProfile(null);
+        return;
+      }
+      if (!data) {
+        console.warn('[useGameLogicA] profile fetch: no row for user', userId);
+        setProfile(null);
+        return;
+      }
+      setProfile({
+        id: data.id,
+        display_name: data.display_name ?? null,
+        xp_total: data.xp_total ?? 0,
+        title_key: data.title_key ?? 'page',
+        parties_per_day: data.parties_per_day ?? 3,
+        high_score: data.high_score ?? 0,
+      });
+      console.log('[useGameLogicA] profile =', {
+        display_name: data.display_name,
+        xp_total: data.xp_total,
+        title_key: data.title_key,
+        parties_per_day: data.parties_per_day,
+        high_score: data.high_score,
+      });
+    } catch (err) {
+      console.error('[useGameLogicA] profile fetch exception', err);
+      setProfile(null);
+    }
+  }, []);
+
+  // Charger au montage et sur changement d'auth
+  useEffect(() => {
+    refreshProfile();
+    const { data: sub } = supabase.auth.onAuthStateChange(() => {
+      refreshProfile();
+    });
+    return () => {
+      try { sub?.subscription?.unsubscribe?.(); } catch {}
+    };
+  }, [refreshProfile]);
+
   const initGame = useCallback(async () => {
+    setEndSummary(null);
+    setEndSummaryError(null);
     await baseInitGame({ initialLives: gameMode.initialLives });
   }, [baseInitGame, gameMode.initialLives]);
 
@@ -126,20 +307,33 @@ export function useGameLogicA(initialEvent?: string, modeId?: string) {
     setCurrentLevelConfig({ ...LEVEL_CONFIGS[1], eventsSummary: [] }); // Revenir à la config niveau 1
     setPendingAdDisplay(null); // Annuler les pubs en attente
     setError(null); // Nettoyer les erreurs précédentes
+    setEndSummary(null);
+    setEndSummaryError(null);
+    isApplyingEconomyRef.current = false;
+    currentRunIdRef.current = null;
     // Réinitialiser aussi l'état des sous-hooks si nécessaire
     resetCurrentLevelEvents(); // Réinitialise les events du niveau en cours
     resetLevelCompletedEvents(); // Réinitialise les events du niveau complété
     resetAntiqueCount(); // Réinitialise le compteur d'events antiques
     setLeaderboardsReady(false); // Masquer les classements précédents
   }, [
-    progressAnim, 
-    resetCurrentLevelEvents, 
+    progressAnim,
+    resetCurrentLevelEvents,
     resetLevelCompletedEvents,
-    resetAntiqueCount, 
+    resetAntiqueCount,
     setLeaderboardsReady,
-    gameMode.showDatesByDefault
+    gameMode.showDatesByDefault,
+    setEndSummary,
+    setEndSummaryError,
   ]);
   // --- FIN AJOUT ---
+
+  const clearEndSummary = useCallback(() => {
+    setEndSummary(null);
+    setEndSummaryError(null);
+  }, []);
+
+  const getPlaysInfo = useCallback(() => playsInfo, [playsInfo]);
 
   const handleTimeout = useCallback(() => {
     // console.log(`[useGameLogicA] handleTimeout called. isLevelPaused: ${isLevelPaused}, isGameOver: ${isGameOver}`);
@@ -683,6 +877,177 @@ export function useGameLogicA(initialEvent?: string, modeId?: string) {
     [setLeaderboards, setLeaderboardsReady]
   );
 
+  type StartRunSuccess = {
+    ok: true;
+    runId: string;
+    window: { startISO: string; endISO: string };
+    allowed: number;
+    used: number;
+  };
+
+  type StartRunFailure = {
+    ok: false;
+    reason: 'NO_PLAYS_LEFT' | 'DB_ERROR' | 'AUTH_REQUIRED' | 'UNKNOWN';
+    message: string;
+  };
+
+  const startRun = useCallback(
+    async (mode: 'classic' | 'date'): Promise<StartRunSuccess | StartRunFailure> => {
+      try {
+        console.log('[startRun] requested mode =', mode);
+        currentRunIdRef.current = null;
+
+        const {
+          data: { user: authUser },
+          error: authError,
+        } = await supabase.auth.getUser();
+
+        console.log('[startRun] auth user id =', authUser?.id);
+
+        if (authError || !authUser?.id) {
+          console.warn('[startRun] no auth user', authError);
+          setCanStartRun(false);
+          setPlaysInfo(null);
+          currentRunIdRef.current = null;
+          return {
+            ok: false,
+            reason: 'AUTH_REQUIRED',
+            message: 'Veuillez vous (re)connecter.'
+          };
+        }
+
+        const { data: profile, error: profileError } = await supabase
+          .from('profiles')
+          .select('id, parties_per_day')
+          .eq('id', authUser.id)
+          .maybeSingle();
+
+        if (profileError) {
+          console.error('[startRun] profile error', { code: profileError.code, message: profileError.message });
+          setCanStartRun(false);
+          currentRunIdRef.current = null;
+          return {
+            ok: false,
+            reason: 'DB_ERROR',
+            message: profileError.message || 'Erreur de chargement du profil.'
+          };
+        }
+
+        const allowed = Math.max(1, profile?.parties_per_day ?? 3);
+        const window = todayWindow();
+
+        console.log('[startRun] window =', window);
+        console.log('[startRun] allowed =', allowed);
+
+        const { count: runsToday, error: runsCountError } = await supabase
+          .from('runs')
+          .select('id', { count: 'exact', head: true })
+          .eq('user_id', authUser.id)
+          .gte('created_at', window.startISO)
+          .lt('created_at', window.endISO);
+
+        if (runsCountError) {
+          console.error('[startRun] runs count error', { code: runsCountError.code, message: runsCountError.message });
+          setCanStartRun(false);
+          currentRunIdRef.current = null;
+          return {
+            ok: false,
+            reason: 'DB_ERROR',
+            message: runsCountError.message || 'Erreur de vérification des parties.'
+          };
+        }
+
+        const usedToday = runsToday ?? 0;
+        const remaining = Math.max(0, allowed - usedToday);
+
+        console.log('[startRun] usedToday =', usedToday, 'remaining =', remaining);
+
+        if (usedToday >= allowed) {
+          const info = {
+            allowed,
+            used: usedToday,
+            remaining: 0,
+          };
+          setPlaysInfo(info);
+          setCanStartRun(false);
+          currentRunIdRef.current = null;
+          return {
+            ok: false,
+            reason: 'NO_PLAYS_LEFT',
+            message: "Plus de parties disponibles aujourd'hui."
+          };
+        }
+
+        const insertPayload = { user_id: authUser.id, mode, points: 0 };
+        console.log('[startRun] inserting run payload =', insertPayload);
+
+        // Test avec response brute d'abord
+        const rawResponse = await supabase
+          .from('runs')
+          .insert(insertPayload)
+          .select('*');
+
+        console.log('[startRun] raw insert response =', JSON.stringify(rawResponse, null, 2));
+
+        const { data: inserted, error: insertError } = await supabase
+          .from('runs')
+          .insert(insertPayload)
+          .select('id, created_at')
+          .single();
+
+        console.log('[startRun] insert result data =', inserted);
+        console.log('[startRun] insert result error =', JSON.stringify(insertError, null, 2));
+
+        if (insertError || !inserted) {
+          console.error('[startRun] insert error details', {
+            code: insertError?.code,
+            message: insertError?.message,
+            details: insertError?.details,
+            hint: insertError?.hint
+          });
+          setCanStartRun(false);
+          currentRunIdRef.current = null;
+          return {
+            ok: false,
+            reason: 'DB_ERROR',
+            message: insertError?.message || 'Insert failed (runs).'
+          };
+        }
+
+        const used = usedToday + 1;
+        const info = {
+          allowed,
+          used,
+          remaining: Math.max(0, allowed - used),
+        };
+        setPlaysInfo(info);
+        setCanStartRun(info.remaining > 0);
+        currentRunIdRef.current = inserted.id;
+
+        console.log('[startRun] reserved run id =', inserted.id);
+        console.log('[useGameLogicA] playsInfo =', info);
+
+        return {
+          ok: true,
+          runId: inserted.id,
+          window,
+          allowed,
+          used,
+        };
+      } catch (e: any) {
+        console.error('[startRun] exception', e);
+        currentRunIdRef.current = null;
+        setCanStartRun(false);
+        return {
+          ok: false,
+          reason: 'UNKNOWN',
+          message: e?.message || 'Erreur inconnue.'
+        };
+      }
+    },
+    [setCanStartRun, setPlaysInfo],
+  );
+
   const endGame = useCallback(async () => {
     if (isGameOver) {
        // console.log(`[useGameLogicA] endGame called but already game over.`);
@@ -728,6 +1093,8 @@ export function useGameLogicA(initialEvent?: string, modeId?: string) {
       if (authError || !authUser?.id) {
         // console.log("[useGameLogicA] Game Over - User not logged in or auth error:", authError?.message);
         // For guests, show their score and the current high score
+        setEndSummary(null);
+        setEndSummaryError(null);
         const guestScores = {
           daily: [{ name: user.name || 'Voyageur', score: user.points, rank: 1 }],
           monthly: [{ name: '👑 Meilleur score', score: highScore || user.points, rank: 1 }],
@@ -746,6 +1113,42 @@ export function useGameLogicA(initialEvent?: string, modeId?: string) {
       // Logged-in user logic
       const userId = authUser.id;
       const currentDisplayName = user.name || 'Joueur'; // Use fetched name or default
+      const finalPoints = user.points;
+      const economyMode: 'classic' | 'date' = gameMode.variant === 'precision' ? 'date' : 'classic';
+      const runId = currentRunIdRef.current;
+
+      if (!runId) {
+        console.error('[endOfRun economy] Missing runId, skipping economy application.');
+      } else if (!isApplyingEconomyRef.current) {
+        isApplyingEconomyRef.current = true;
+        try {
+          const summary = await applyEndOfRunEconomy({
+            runId,
+            userId,
+            mode: economyMode,
+            points: finalPoints,
+          });
+
+          setEndSummary({
+            mode: economyMode,
+            points: finalPoints,
+            xpEarned: summary.xpEarned,
+            newXp: summary.newXp,
+            rank: summary.rank,
+            leveledUp: summary.leveledUp,
+          });
+          setEndSummaryError(null);
+          currentRunIdRef.current = null;
+        } catch (economyError) {
+          console.error('[endOfRun economy]', economyError);
+          setEndSummaryError(
+            economyError instanceof Error ? economyError.message : String(economyError),
+          );
+          currentRunIdRef.current = null;
+        } finally {
+          isApplyingEconomyRef.current = false;
+        }
+      }
 
       // console.log(`[useGameLogicA] Game Over - User ${userId} logged in. Score: ${user.points}`);
 
@@ -850,7 +1253,30 @@ export function useGameLogicA(initialEvent?: string, modeId?: string) {
        }
     }
   }, [
-    isGameOver, user.points, user.level, user.totalEventsCompleted, user.maxStreak, user.name, highScore, playGameOverSound, trackGameOver, finalizeCurrentLevelHistory, currentLevelEvents, canShowAd, showGameOverInterstitial, setScoresAndShow, setIsGameOver, setIsCountdownActive, setIsLevelPaused, setLeaderboardsReady, setPendingAdDisplay, setLevelsHistory, pendingAdDisplay
+    isGameOver,
+    user.points,
+    user.level,
+    user.totalEventsCompleted,
+    user.maxStreak,
+    user.name,
+    highScore,
+    playGameOverSound,
+    trackGameOver,
+    finalizeCurrentLevelHistory,
+    currentLevelEvents,
+    canShowAd,
+    showGameOverInterstitial,
+    setScoresAndShow,
+    setIsGameOver,
+    setIsCountdownActive,
+    setIsLevelPaused,
+    setLeaderboardsReady,
+    setPendingAdDisplay,
+    setLevelsHistory,
+    pendingAdDisplay,
+    gameMode.variant,
+    setEndSummary,
+    setEndSummaryError,
   ]);
 
   const handleLevelUp = useCallback(() => {
@@ -975,7 +1401,7 @@ export function useGameLogicA(initialEvent?: string, modeId?: string) {
 
 
   // --- MODIFIER LA SECTION RETURN (tout à la fin du hook) ---
-  return {
+    return {
     user,
     previousEvent,
     newEvent,
@@ -1011,12 +1437,21 @@ export function useGameLogicA(initialEvent?: string, modeId?: string) {
     adState: {
       hasRewardedAd: adState.rewardedLoaded,
       hasWatchedRewardedAd: adState.hasWatchedRewardedAd,
-      // Consider adding isAdFreePeriod if needed by UI
     },
+    startRun,
+    canStartRun,
+    playsInfo,
+    getPlaysInfo,
+    clearEndSummary,
     gameMode,
     timeLimit,
-    // --- FIN MODIFICATION RETURN ---
+    endSummary,
+    endSummaryError,
+    // --- Profil exposé pour la Home (vue1) ---
+    profile,
+    refreshProfile,
   };
 }
+
 
 export default useGameLogicA;

@@ -10,6 +10,7 @@ import {
   View,
   ActivityIndicator,
   Platform,
+  Alert,
 } from 'react-native';
 import { useRouter, useFocusEffect, useLocalSearchParams } from 'expo-router';
 import { SafeAreaView } from 'react-native-safe-area-context';
@@ -17,6 +18,8 @@ import { SafeAreaView } from 'react-native-safe-area-context';
 // Composants
 import GameContentA from "../../components/game/GameContentA"; // Chemin OK
 import PrecisionGameContent from "../../components/game/PrecisionGameContent";
+import EndRunSummary from '@/components/game/EndRunSummary';
+import { nextRankProgress } from '@/lib/economy/ranks';
 
 // Hooks
 import { useGameLogicA } from '@/hooks/useGameLogicA'; // Chemin OK
@@ -34,6 +37,24 @@ function ClassicGameScreen({ requestedMode }: { requestedMode?: string }) {
 
   // Initialise la logique du jeu via le hook personnalisé
   const gameLogic = useGameLogicA('', requestedMode); // Passe une chaîne vide ou l'initialEvent si nécessaire
+  const { endSummary, startRun, canStartRun, playsInfo, clearEndSummary } = gameLogic;
+
+  const handleCloseEndSummary = useCallback(() => {
+    clearEndSummary?.();
+  }, [clearEndSummary]);
+
+  const next = endSummary
+    ? (() => {
+        const prog = nextRankProgress(endSummary.newXp);
+        if (!prog.next) return null;
+        const denom = Math.max(1, prog.progress + prog.needed);
+        return {
+          label: prog.next.label,
+          xpNeeded: Math.max(0, prog.needed),
+          pct: Math.round((prog.progress / denom) * 100),
+        };
+      })()
+    : null;
 
   // Log analytics quand l'écran prend le focus
   useFocusEffect(
@@ -53,6 +74,24 @@ function ClassicGameScreen({ requestedMode }: { requestedMode?: string }) {
   const handleActualRestart = useCallback(async () => {
     console.log("[GameScreenPage] ACTION: Restarting game state (Rejouer)...");
     setIsRestarting(true); // Affiche l'indicateur de chargement
+
+    if (typeof startRun === 'function') {
+      const economyMode: 'classic' | 'date' = gameLogic.gameMode?.variant === 'precision' ? 'date' : 'classic';
+      if (!canStartRun) {
+        console.warn('[GameScreenPage] Plus de parties disponibles aujourd\'hui.', playsInfo);
+        const remainingInfo = playsInfo
+          ? `Il vous reste ${Math.max(0, playsInfo.remaining)} partie(s) sur ${playsInfo.allowed}.`
+          : "Vous n'avez plus de parties disponibles aujourd'hui.";
+        Alert.alert('Plus de parties disponibles', remainingInfo);
+        setIsRestarting(false);
+        return;
+      }
+      try {
+        await startRun(economyMode);
+      } catch (runError) {
+        console.error('[GameScreenPage] Échec de réservation du run:', runError);
+      }
+    }
 
     // 1. Réinitialise l'état des publicités (si la fonction existe)
     if (gameLogic.resetAdsState) {
@@ -92,7 +131,16 @@ function ClassicGameScreen({ requestedMode }: { requestedMode?: string }) {
     // Cache l'indicateur de chargement après un court délai pour laisser le temps au re-rendu
     setTimeout(() => setIsRestarting(false), 150);
 
-  }, [gameLogic.initGame, gameLogic.resetAdsState, gameLogic.resetGameFlowState, fadeAnim]);
+  }, [
+    gameLogic.initGame,
+    gameLogic.resetAdsState,
+    gameLogic.resetGameFlowState,
+    gameLogic.gameMode,
+    startRun,
+    canStartRun,
+    playsInfo,
+    fadeAnim,
+  ]);
 
   // --- FONCTION POUR "MENU" ---
   // Navigue vers l'écran d'accueil (index.tsx dans le groupe (tabs))
@@ -186,6 +234,21 @@ function ClassicGameScreen({ requestedMode }: { requestedMode?: string }) {
             gameMode={gameLogic.gameMode}
             timeLimit={gameLogic.timeLimit}
           />
+
+          {endSummary && (
+            <EndRunSummary
+              mode={endSummary.mode}
+              points={endSummary.points}
+              result={{
+                xpEarned: endSummary.xpEarned,
+                newXp: endSummary.newXp,
+                rank: endSummary.rank,
+                leveledUp: endSummary.leveledUp,
+              }}
+              next={next}
+              onClose={handleCloseEndSummary}
+            />
+          )}
         </SafeAreaView>
       </ImageBackground>
     </View>
