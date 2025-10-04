@@ -15,6 +15,9 @@ export interface Database {
           xp_total: number;
           title_key: string;
           parties_per_day: number;
+          current_streak: number;
+          best_streak: number;
+          last_play_date: string | null;
         };
         Insert: {
           id: string;
@@ -27,6 +30,9 @@ export interface Database {
           xp_total?: number;
           title_key?: string;
           parties_per_day?: number;
+          current_streak?: number;
+          best_streak?: number;
+          last_play_date?: string | null;
         };
         Update: {
           id?: string;
@@ -39,6 +45,9 @@ export interface Database {
           xp_total?: number;
           title_key?: string;
           parties_per_day?: number;
+          current_streak?: number;
+          best_streak?: number;
+          last_play_date?: string | null;
         };
       };
       runs: {
@@ -95,6 +104,128 @@ export interface Database {
           economy_applied_at?: string | null;
           metadata?: Record<string, unknown> | null;
           processed_at?: string | null;
+        };
+      };
+      achievements: {
+        Row: {
+          id: string;
+          user_id: string;
+          achievement_key: string;
+          achievement_type: string;
+          unlocked_at: string;
+          xp_bonus: number;
+          metadata: any;
+        };
+        Insert: {
+          id?: string;
+          user_id: string;
+          achievement_key: string;
+          achievement_type: string;
+          unlocked_at?: string;
+          xp_bonus?: number;
+          metadata?: any;
+        };
+        Update: {
+          id?: string;
+          user_id?: string;
+          achievement_key?: string;
+          achievement_type?: string;
+          unlocked_at?: string;
+          xp_bonus?: number;
+          metadata?: any;
+        };
+      };
+      daily_quests: {
+        Row: {
+          id: string;
+          quest_key: string;
+          quest_type: string;
+          title: string;
+          description: string;
+          target_value: number;
+          xp_reward: number;
+          is_active: boolean;
+          created_at?: string;
+        };
+        Insert: {
+          id?: string;
+          quest_key: string;
+          quest_type: string;
+          title: string;
+          description: string;
+          target_value: number;
+          xp_reward?: number;
+          is_active?: boolean;
+          created_at?: string;
+        };
+        Update: {
+          id?: string;
+          quest_key?: string;
+          quest_type?: string;
+          title?: string;
+          description?: string;
+          target_value?: number;
+          xp_reward?: number;
+          is_active?: boolean;
+          created_at?: string;
+        };
+      };
+      quest_progress: {
+        Row: {
+          id: string;
+          user_id: string;
+          quest_key: string;
+          current_value: number;
+          completed: boolean;
+          completed_at: string | null;
+          reset_at: string;
+          created_at?: string;
+          updated_at?: string;
+        };
+        Insert: {
+          id?: string;
+          user_id: string;
+          quest_key: string;
+          current_value?: number;
+          completed?: boolean;
+          completed_at?: string | null;
+          reset_at: string;
+          created_at?: string;
+          updated_at?: string;
+        };
+        Update: {
+          id?: string;
+          user_id?: string;
+          quest_key?: string;
+          current_value?: number;
+          completed?: boolean;
+          completed_at?: string | null;
+          reset_at?: string;
+          created_at?: string;
+          updated_at?: string;
+        };
+      };
+      user_achievements: {
+        Row: {
+          id: string;
+          user_id: string;
+          achievement_key: string;
+          unlocked_at: string;
+          created_at?: string;
+        };
+        Insert: {
+          id?: string;
+          user_id: string;
+          achievement_key: string;
+          unlocked_at?: string;
+          created_at?: string;
+        };
+        Update: {
+          id?: string;
+          user_id?: string;
+          achievement_key?: string;
+          unlocked_at?: string;
+          created_at?: string;
         };
       };
     };

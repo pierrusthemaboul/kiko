@@ -166,7 +166,7 @@ export default function RootLayout() {
     const inAuthGroup = segments[0] === '(auth)';
 
     // Vérifier si on essaie d'accéder à un groupe protégé
-    const isTryingProtectedGroup = segments[0] === '(tabs)' || segments[0] === 'game';
+    const isTryingProtectedGroup = segments[0] === '(tabs)' || segments[0] === 'play';
 
     // Vérifier si on essaie d'accéder SPÉCIFIQUEMENT à l'écran d'accueil (index) dans (tabs)
     // segments = ['(tabs)'] ou ['(tabs)', 'index'] pour l'écran d'accueil
@@ -217,7 +217,7 @@ export default function RootLayout() {
     <Stack screenOptions={{ headerShown: false }}>
       <Stack.Screen name="(tabs)" />
       <Stack.Screen name="(auth)" />
-      <Stack.Screen name="game" />
+      <Stack.Screen name="play" />
       <Stack.Screen name="+not-found" />
     </Stack>
   );

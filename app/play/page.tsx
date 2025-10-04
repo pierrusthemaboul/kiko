@@ -338,11 +338,16 @@ function PrecisionGameScreen() {
 }
 
 export default function GameScreenPage() {
-  const { mode } = useLocalSearchParams<{ mode?: string }>();
+  const params = useLocalSearchParams();
+  console.log(`[GameScreenPage] Received params: ${JSON.stringify(params)}`);
+  const { mode } = params as { mode?: string };
+  console.log(`[GameScreenPage] Received mode: ${mode}, type: ${typeof mode}`);
   if (mode === 'precision') {
+    console.log('[GameScreenPage] Rendering PrecisionGameScreen');
     return <PrecisionGameScreen />;
   }
 
+  console.log('[GameScreenPage] Rendering ClassicGameScreen');
   const requestedMode = typeof mode === 'string' ? mode : undefined;
   return <ClassicGameScreen requestedMode={requestedMode} />;
 }

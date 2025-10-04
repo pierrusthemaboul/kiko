@@ -15,6 +15,8 @@ import { FirebaseAnalytics } from '@/lib/firebase';
 import { useGameLogicA } from '@/hooks/useGameLogicA';
 import { usePlays } from '@/hooks/usePlays'; // Importer le nouveau hook
 import { rankFromXP } from '@/lib/economy/ranks';
+import { useQuests } from '@/hooks/useQuests';
+import { getQuestProgressPercentage } from '@/lib/economy/quests';
 
 const COLORS = {
   background: '#050505',
@@ -27,19 +29,14 @@ const COLORS = {
   divider: '#2a2a2a',
 };
 
-const QUESTS = [
-  { id: 'streak', label: "Réussir 5 réponses d'affilée", done: false },
-  { id: 'precision', label: "Atteindre 80% de précision du jour", done: true },
-  { id: 'games', label: "Jouer 3 parties aujourd'hui", done: false },
-];
-
-
 export default function Vue1() {
   const router = useRouter();
   // On utilise useGameLogicA principalement pour le profil et les classements
   const { profile, leaderboards } = useGameLogicA();
   // On utilise usePlays spécifiquement pour les infos de parties
   const { playsInfo, canStartRun, loadingPlays } = usePlays();
+  // Récupérer les quêtes quotidiennes
+  const { quests, loading: questsLoading } = useQuests(profile?.id);
 
   const xp = profile?.xp_total ?? 0;
   const rank = useMemo(() => rankFromXP(xp), [xp]);
@@ -57,6 +54,7 @@ export default function Vue1() {
   const topPlayers = useMemo(() => {
     const src = (leaderboards?.daily ?? leaderboards?.allTime ?? []) as any[];
     return src.slice(0, 5).map((row) => ({
+      id: row.id ?? row.user_id ?? Math.random().toString(),
       name: row.display_name ?? row.username ?? 'Anonyme',
       score: row.points ?? row.high_score ?? 0,
     }));
@@ -68,12 +66,13 @@ export default function Vue1() {
 
   const handleModePress = useCallback(
     (mode: 'classic' | 'precision') => {
+      console.log(`[vue1] handleModePress: Navigating with pathname: /play, params: { mode: ${mode} }`);
       if (!canStartRun && !loadingPlays) { // Vérifier aussi que le chargement est terminé
         Alert.alert('Plus de parties disponibles', "Vous avez utilisé toutes vos parties pour aujourd'hui.");
         return;
       }
 
-      router.push(`/game?mode=${mode}`);
+      router.push({ pathname: '/play', params: { mode } });
     },
     [router, canStartRun, loadingPlays],
   );
@@ -130,12 +129,34 @@ export default function Vue1() {
         <View style={styles.section}>
           <Text style={styles.sectionTitle}>Quêtes du jour</Text>
           <View style={styles.card}>
-            {QUESTS.map((quest, index) => (
-              <View key={quest.id} style={[styles.questRow, index < QUESTS.length - 1 && styles.questDivider]}>
-                <Text style={styles.questIcon}>{quest.done ? '✅' : '🔒'}</Text>
-                <Text style={[styles.questText, quest.done && styles.questTextDone]}>{quest.label}</Text>
-              </View>
-            ))}
+            {questsLoading ? (
+              <Text style={{ color: COLORS.textMuted, paddingVertical: 12 }}>Chargement...</Text>
+            ) : quests.length === 0 ? (
+              <Text style={{ color: COLORS.textMuted, paddingVertical: 12 }}>Aucune quête disponible</Text>
+            ) : (
+              quests.map((quest, index) => {
+                const currentValue = quest.progress?.current_value ?? 0;
+                const isCompleted = quest.progress?.completed ?? false;
+                const progressPercent = getQuestProgressPercentage(currentValue, quest.target_value);
+
+                return (
+                  <View key={quest.id} style={[styles.questRow, index < quests.length - 1 && styles.questDivider]}>
+                    <Text style={styles.questIcon}>{quest.icon || (isCompleted ? '✅' : '🔒')}</Text>
+                    <View style={{ flex: 1 }}>
+                      <Text style={[styles.questText, isCompleted && styles.questTextDone]}>
+                        {quest.title}
+                      </Text>
+                      <View style={styles.questProgressBar}>
+                        <View style={[styles.questProgressFill, { width: `${progressPercent}%` }]} />
+                      </View>
+                      <Text style={styles.questProgressText}>
+                        {currentValue} / {quest.target_value} · +{quest.xp_reward} XP
+                      </Text>
+                    </View>
+                  </View>
+                );
+              })
+            )}
           </View>
         </View>
 
@@ -146,7 +167,7 @@ export default function Vue1() {
               <Text style={{ color: COLORS.textMuted, paddingVertical: 12 }}>Pas encore de classement</Text>
             ) : (
               topPlayers.map((player, index) => (
-                <View key={`${player.name}-${index}`} style={[styles.leaderRow, index < topPlayers.length - 1 && styles.questDivider]}>
+                <View key={player.id} style={[styles.leaderRow, index < topPlayers.length - 1 && styles.questDivider]}>
                   <View style={styles.leaderRank}>
                     <Text style={styles.leaderRankText}>{index + 1}</Text>
                   </View>
@@ -278,6 +299,24 @@ const styles = StyleSheet.create({
   },
   questTextDone: {
     color: COLORS.gold,
+  },
+  questProgressBar: {
+    height: 6,
+    backgroundColor: COLORS.surfaceAlt,
+    borderRadius: 3,
+    marginTop: 6,
+    marginBottom: 4,
+    overflow: 'hidden',
+  },
+  questProgressFill: {
+    height: '100%',
+    backgroundColor: COLORS.gold,
+    borderRadius: 3,
+  },
+  questProgressText: {
+    fontSize: 12,
+    color: COLORS.textMuted,
+    marginTop: 2,
   },
   leaderRow: {
     flexDirection: 'row',

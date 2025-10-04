@@ -2,6 +2,8 @@ import { supabase } from 'lib/supabase/supabaseClients';
 import type { Database } from 'lib/supabase/database.types';
 import { pointsToXP } from 'lib/economy/convert';
 import { partiesPerDayFromXP, rankFromXP } from 'lib/economy/ranks';
+import { calculateNewStreak, getTodayDateString } from '@/utils/questHelpers';
+import { shouldUnlockAchievement, ACHIEVEMENTS } from './quests';
 
 type GameMode = 'classic' | 'date';
 
@@ -16,6 +18,8 @@ type ApplySummary = {
   newXp: number;
   rank: { key: string; label: string; partiesPerDay: number };
   leveledUp: boolean;
+  newStreak?: number;
+  unlockedAchievements?: string[];
 };
 
 function ensureProfile(profile: ProfileRow | null, userId: string): ProfileRow {
@@ -120,7 +124,7 @@ export async function applyEndOfRunEconomy({ runId, userId, mode, points }: Appl
 
   const { data: profile, error: profileError } = await supabase
     .from('profiles')
-    .select('xp_total, title_key, parties_per_day')
+    .select('xp_total, title_key, parties_per_day, current_streak, best_streak, last_play_date, games_played, high_score')
     .eq('id', userId)
     .maybeSingle();
 
@@ -153,12 +157,26 @@ export async function applyEndOfRunEconomy({ runId, userId, mode, points }: Appl
   const leveledUp = rank.label !== previousRank.label;
   const timestamp = new Date().toISOString();
 
+  // Calculer le nouveau streak
+  const currentStreak = safeProfile.current_streak ?? 0;
+  const bestStreak = safeProfile.best_streak ?? 0;
+  const lastPlayDate = safeProfile.last_play_date;
+  const newStreak = calculateNewStreak(lastPlayDate, currentStreak);
+  const newBestStreak = Math.max(newStreak, bestStreak);
+  const todayDate = getTodayDateString();
+
+  // Mettre à jour le profil avec XP, rang, et streak
   const { error: profileUpdateError } = await supabase
     .from('profiles')
     .update({
       xp_total: newXp,
       title_key: rank.key,
       parties_per_day: newPartiesPerDay,
+      current_streak: newStreak,
+      best_streak: newBestStreak,
+      last_play_date: todayDate,
+      games_played: (safeProfile.games_played ?? 0) + 1,
+      high_score: Math.max(safeProfile.high_score ?? 0, safePoints),
       updated_at: timestamp,
     })
     .eq('id', userId);
@@ -166,6 +184,20 @@ export async function applyEndOfRunEconomy({ runId, userId, mode, points }: Appl
   if (profileUpdateError) {
     throw new Error(`Failed to update profile: ${profileUpdateError.message}`);
   }
+
+  // Mettre à jour les quêtes quotidiennes
+  await updateDailyQuests(userId, {
+    points: safePoints,
+    streak: newStreak,
+  });
+
+  // Vérifier et débloquer les achievements
+  const unlockedAchievements = await checkAndUnlockAchievements(userId, {
+    title_key: rank.key,
+    current_streak: newStreak,
+    games_played: (safeProfile.games_played ?? 0) + 1,
+    high_score: Math.max(safeProfile.high_score ?? 0, safePoints),
+  });
 
   const runPayload = buildRunPayload({
     existingRun: runRecord ?? null,
@@ -210,5 +242,205 @@ export async function applyEndOfRunEconomy({ runId, userId, mode, points }: Appl
       partiesPerDay: newPartiesPerDay,
     },
     leveledUp,
+    newStreak,
+    unlockedAchievements,
   };
+}
+
+/**
+ * Met à jour les quêtes quotidiennes basées sur la partie jouée
+ */
+async function updateDailyQuests(
+  userId: string,
+  gameData: {
+    points: number;
+    streak: number;
+  }
+): Promise<void> {
+  try {
+    // Récupérer la progression des quêtes
+    const { data: questProgress, error: fetchError } = await supabase
+      .from('quest_progress')
+      .select('*')
+      .eq('user_id', userId)
+      .eq('completed', false);
+
+    if (fetchError) {
+      console.error('Erreur récupération quest_progress:', fetchError);
+      return;
+    }
+
+    if (!questProgress || questProgress.length === 0) return;
+
+    const updates: Array<{ id: string; current_value: number; completed: boolean; completed_at: string | null }> = [];
+    const timestamp = new Date().toISOString();
+
+    // Récupérer les templates de quêtes pour les target_value
+    const { data: dailyQuests, error: questsError } = await supabase
+      .from('daily_quests')
+      .select('*');
+
+    if (questsError) {
+      console.error('Erreur récupération daily_quests:', questsError);
+      return;
+    }
+
+    for (const progress of questProgress) {
+      const questTemplate = dailyQuests?.find(q => q.quest_key === progress.quest_key);
+      if (!questTemplate) continue;
+
+      let shouldUpdate = false;
+      let newValue = progress.current_value;
+
+      // Incrémenter les quêtes selon leur type
+      if (progress.quest_key === 'daily_play_3') {
+        // +1 partie jouée
+        newValue = progress.current_value + 1;
+        shouldUpdate = true;
+      } else if (progress.quest_key === 'daily_streak_5' && gameData.streak >= 5) {
+        // Marquer comme complète si streak >= 5
+        newValue = questTemplate.target_value;
+        shouldUpdate = true;
+      } else if (progress.quest_key === 'daily_precision_80') {
+        // Calculer la précision (points / max_points_possible)
+        // Note: cette logique dépend de votre jeu, à adapter
+        const precision = Math.min(100, (gameData.points / 1000) * 100);
+        if (precision >= 80) {
+          newValue = questTemplate.target_value;
+          shouldUpdate = true;
+        }
+      } else if (progress.quest_key === 'daily_score_500' && gameData.points >= 500) {
+        // Marquer comme complète si score >= 500
+        newValue = questTemplate.target_value;
+        shouldUpdate = true;
+      }
+
+      if (shouldUpdate) {
+        const isCompleted = newValue >= questTemplate.target_value;
+        updates.push({
+          id: progress.id,
+          current_value: newValue,
+          completed: isCompleted,
+          completed_at: isCompleted ? timestamp : null,
+        });
+      }
+    }
+
+    // Appliquer les mises à jour
+    for (const update of updates) {
+      const { error: updateError } = await supabase
+        .from('quest_progress')
+        .update({
+          current_value: update.current_value,
+          completed: update.completed,
+          completed_at: update.completed_at,
+          updated_at: timestamp,
+        })
+        .eq('id', update.id);
+
+      if (updateError) {
+        console.error('Erreur mise à jour quest_progress:', updateError);
+      }
+
+      // Si la quête est complétée, ajouter l'XP
+      if (update.completed && !questProgress.find(q => q.id === update.id)?.completed) {
+        const quest = dailyQuests?.find(q => q.key === questProgress.find(qp => qp.id === update.id)?.quest_key);
+        if (quest) {
+          await awardQuestXP(userId, quest.xp_reward);
+        }
+      }
+    }
+  } catch (error) {
+    console.error('Erreur dans updateDailyQuests:', error);
+  }
+}
+
+/**
+ * Attribue l'XP d'une quête à l'utilisateur
+ */
+async function awardQuestXP(userId: string, xpAmount: number): Promise<void> {
+  try {
+    const { data: profile, error: fetchError } = await supabase
+      .from('profiles')
+      .select('xp_total')
+      .eq('id', userId)
+      .single();
+
+    if (fetchError) throw fetchError;
+
+    const newXP = (profile?.xp_total || 0) + xpAmount;
+
+    const { error: updateError } = await supabase
+      .from('profiles')
+      .update({ xp_total: newXP })
+      .eq('id', userId);
+
+    if (updateError) throw updateError;
+
+    console.log(`🎯 Quête complétée! +${xpAmount} XP`);
+  } catch (error) {
+    console.error('Erreur attribution XP quête:', error);
+  }
+}
+
+/**
+ * Vérifie et débloque les achievements
+ */
+async function checkAndUnlockAchievements(
+  userId: string,
+  userData: {
+    title_key: string;
+    current_streak: number;
+    games_played: number;
+    high_score: number;
+  }
+): Promise<string[]> {
+  const unlockedKeys: string[] = [];
+
+  try {
+    // Récupérer les achievements déjà débloqués
+    const { data: userAchievements, error: fetchError } = await supabase
+      .from('user_achievements')
+      .select('achievement_key')
+      .eq('user_id', userId);
+
+    if (fetchError) {
+      console.error('Erreur récupération achievements:', fetchError);
+      return unlockedKeys;
+    }
+
+    const alreadyUnlocked = new Set(userAchievements?.map(a => a.achievement_key) || []);
+
+    // Parcourir tous les achievements
+    for (const [key, achievement] of Object.entries(ACHIEVEMENTS)) {
+      if (alreadyUnlocked.has(key)) continue;
+
+      if (shouldUnlockAchievement(key, userData)) {
+        // Débloquer l'achievement
+        const { error: insertError } = await supabase
+          .from('user_achievements')
+          .insert({
+            user_id: userId,
+            achievement_key: key,
+            unlocked_at: new Date().toISOString(),
+          });
+
+        if (insertError) {
+          console.error('Erreur débloquage achievement:', insertError);
+          continue;
+        }
+
+        // Ajouter l'XP
+        await awardQuestXP(userId, achievement.xp_bonus);
+
+        unlockedKeys.push(key);
+        console.log(`🏆 Achievement débloqué: ${achievement.title} (+${achievement.xp_bonus} XP)`);
+      }
+    }
+
+    return unlockedKeys;
+  } catch (error) {
+    console.error('Erreur dans checkAndUnlockAchievements:', error);
+    return unlockedKeys;
+  }
 }
