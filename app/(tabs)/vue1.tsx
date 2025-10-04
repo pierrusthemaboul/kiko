@@ -66,13 +66,13 @@ export default function Vue1() {
 
   const handleModePress = useCallback(
     (mode: 'classic' | 'precision') => {
-      console.log(`[vue1] handleModePress: Navigating with pathname: /play, params: { mode: ${mode} }`);
+      console.log(`[Vue1] handleModePress -> mode=${mode}`);
       if (!canStartRun && !loadingPlays) { // Vérifier aussi que le chargement est terminé
         Alert.alert('Plus de parties disponibles', "Vous avez utilisé toutes vos parties pour aujourd'hui.");
         return;
       }
 
-      router.push({ pathname: '/play', params: { mode } });
+      router.push(`/game/${mode}`);
     },
     [router, canStartRun, loadingPlays],
   );
