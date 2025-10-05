@@ -15,7 +15,8 @@ import * as NavigationBar from 'expo-navigation-bar';
 import { FirebaseAnalytics } from '../lib/firebase';
 import { supabase } from '../lib/supabase/supabaseClients';
 import MobileAds from 'react-native-google-mobile-ads';
-import { AudioProvider } from '../hooks/useAudio';
+import { useAdConsent } from '../hooks/useAdConsent';
+import { setAdPersonalization } from '../lib/config/adConfig';
 
 const CURRENT_APP_VERSION = Application.nativeApplicationVersion || '1.0.0';
 const APP_VERSION_STORAGE_KEY = '@app_version';
@@ -29,6 +30,9 @@ export default function RootLayout() {
   const [splashShown, setSplashShown] = useState(false);
   const router = useRouter();
   const segments = useSegments(); // Donne les parties de l'URL actuelle
+
+  // Gérer le consentement RGPD pour les pubs
+  const { canShowPersonalizedAds, isLoading: consentLoading } = useAdConsent();
 
   const [fontsLoaded, fontError] = useFonts({
     'Montserrat-Regular': require('../assets/fonts/Montserrat-Regular.ttf'),
@@ -89,7 +93,6 @@ export default function RootLayout() {
   // --- Configuration AdMob ---
   useEffect(() => {
     const configureAdMob = async () => {
-      // ... (code AdMob inchangé) ...
       try {
         // console.log('[AdMob Config] Starting AdMob initialization...');
         await MobileAds().initialize();
@@ -116,6 +119,14 @@ export default function RootLayout() {
     };
     configureAdMob();
   }, []);
+
+  // --- Appliquer le consentement RGPD ---
+  useEffect(() => {
+    if (!consentLoading) {
+      setAdPersonalization(canShowPersonalizedAds);
+      console.log('[RootLayout] RGPD Consent applied:', canShowPersonalizedAds ? 'Personalized Ads' : 'Non-Personalized Ads');
+    }
+  }, [canShowPersonalizedAds, consentLoading]);
 
   // --- Écoute de l'état d'authentification ---
   useEffect(() => {
@@ -247,13 +258,12 @@ export default function RootLayout() {
   // console.log('[RootLayout] Rendering Stack Navigator');
   // Le Stack Navigator principal
   return (
-    <AudioProvider>
-      <Stack screenOptions={{ headerShown: false }}>
-        <Stack.Screen name="(tabs)" />
-        <Stack.Screen name="(auth)" />
-        <Stack.Screen name="game" />
-        <Stack.Screen name="+not-found" />
-      </Stack>
-    </AudioProvider>
+    <Stack screenOptions={{ headerShown: false }}>
+      <Stack.Screen name="(tabs)" />
+      <Stack.Screen name="(auth)" />
+      <Stack.Screen name="game" />
+      <Stack.Screen name="+not-found" />
+    </Stack>
   );
 }
+

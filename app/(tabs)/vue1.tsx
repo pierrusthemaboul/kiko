@@ -11,6 +11,7 @@ import {
 } from 'react-native';
 import { useRouter } from 'expo-router';
 import { Ionicons } from '@expo/vector-icons';
+import { BannerAd, BannerAdSize } from 'react-native-google-mobile-ads';
 import { FirebaseAnalytics } from '@/lib/firebase';
 import { useGameLogicA } from '@/hooks/useGameLogicA';
 import { usePlays } from '@/hooks/usePlays'; // Importer le nouveau hook
@@ -21,6 +22,8 @@ import QuestCarousel from '@/components/QuestCarousel';
 import LeaderboardCarousel from '@/components/LeaderboardCarousel';
 import { getAllQuestsWithProgress } from '@/utils/questSelection';
 import { supabase } from '@/lib/supabase/supabaseClients';
+import { getAdUnitId } from '@/lib/config/adConfig';
+import { useRewardedPlayAd } from '@/hooks/useRewardedPlayAd';
 
 const COLORS = {
   background: '#050505',
@@ -38,9 +41,11 @@ export default function Vue1() {
   // On utilise useGameLogicA principalement pour le profil
   const { profile } = useGameLogicA();
   // On utilise usePlays spécifiquement pour les infos de parties
-  const { playsInfo, canStartRun, loadingPlays } = usePlays();
+  const { playsInfo, canStartRun, loadingPlays, refreshPlaysInfo } = usePlays();
   // On utilise useLeaderboards pour les classements
   const { leaderboards, loading: leaderboardsLoading } = useLeaderboards();
+  // Hook pour la pub récompensée (gagner 1 partie)
+  const { isLoaded: adLoaded, rewardEarned, showAd, resetReward } = useRewardedPlayAd();
 
   // État pour les quêtes (daily, weekly, monthly)
   const [quests, setQuests] = React.useState<{
@@ -113,6 +118,56 @@ export default function Vue1() {
     }
   }, [router]);
 
+  const handleWatchAdForPlay = useCallback(() => {
+    if (!adLoaded) {
+      Alert.alert('Publicité non disponible', 'La publicité n\'est pas encore chargée. Réessayez dans quelques instants.');
+      return;
+    }
+    const success = showAd();
+    if (!success) {
+      Alert.alert('Erreur', 'Impossible de lancer la publicité pour le moment.');
+    }
+  }, [adLoaded, showAd]);
+
+  // Gérer la récompense gagnée
+  useEffect(() => {
+    if (rewardEarned && profile?.id) {
+      // Incrémenter parties_per_day dans la base de données
+      const grantExtraPlay = async () => {
+        try {
+          const { data: currentProfile } = await supabase
+            .from('profiles')
+            .select('parties_per_day')
+            .eq('id', profile.id)
+            .single();
+
+          if (currentProfile) {
+            const newPartiesPerDay = (currentProfile.parties_per_day ?? 3) + 1;
+            const { error } = await supabase
+              .from('profiles')
+              .update({ parties_per_day: newPartiesPerDay })
+              .eq('id', profile.id);
+
+            if (!error) {
+              Alert.alert('Partie gagnée ! 🎉', 'Vous avez gagné 1 partie supplémentaire !');
+              refreshPlaysInfo(); // Rafraîchir les infos de parties
+            } else {
+              console.error('[RewardedPlay] Error updating profile:', error);
+              Alert.alert('Erreur', 'Impossible d\'ajouter la partie. Contactez le support.');
+            }
+          }
+        } catch (error) {
+          console.error('[RewardedPlay] Error granting play:', error);
+          Alert.alert('Erreur', 'Une erreur est survenue.');
+        } finally {
+          resetReward();
+        }
+      };
+
+      grantExtraPlay();
+    }
+  }, [rewardEarned, profile?.id, refreshPlaysInfo, resetReward]);
+
 
   return (
     <ImageBackground source={require('@/assets/images/sablier.png')} style={styles.background} resizeMode="cover">
@@ -130,6 +185,19 @@ export default function Vue1() {
               <Ionicons name="log-out-outline" size={22} color={COLORS.textMuted} />
             </TouchableOpacity>
           </View>
+        </View>
+
+        <View style={styles.adButtonContainer}>
+          <TouchableOpacity
+            style={[styles.rewardedAdButton, !adLoaded && styles.rewardedAdButtonDisabled]}
+            onPress={handleWatchAdForPlay}
+            disabled={!adLoaded}
+          >
+            <Ionicons name="play-circle" size={20} color={adLoaded ? COLORS.gold : COLORS.textMuted} />
+            <Text style={[styles.rewardedAdButtonText, !adLoaded && styles.rewardedAdButtonTextDisabled]}>
+              Gagner 1 partie
+            </Text>
+          </TouchableOpacity>
         </View>
 
         <View style={styles.section}>
@@ -164,6 +232,16 @@ export default function Vue1() {
               <Ionicons name="chevron-forward" size={22} color={COLORS.gold} />
             </TouchableOpacity>
           </View>
+        </View>
+
+        <View style={styles.bannerContainer}>
+          <BannerAd
+            unitId={getAdUnitId('BANNER_HOME')}
+            size={BannerAdSize.ANCHORED_ADAPTIVE_BANNER}
+            requestOptions={{
+              requestNonPersonalizedAdsOnly: true,
+            }}
+          />
         </View>
 
         <View style={styles.section}>
@@ -377,5 +455,46 @@ const styles = StyleSheet.create({
   loadingText: {
     color: COLORS.textMuted,
     paddingVertical: 12,
+  },
+  bannerContainer: {
+    alignItems: 'center',
+    marginBottom: 24,
+    overflow: 'hidden',
+    borderRadius: 12,
+  },
+  adButtonContainer: {
+    alignItems: 'flex-end',
+    marginBottom: 16,
+    paddingHorizontal: 4,
+  },
+  rewardedAdButton: {
+    flexDirection: 'row',
+    alignItems: 'center',
+    backgroundColor: COLORS.goldSoft,
+    borderRadius: 12,
+    paddingVertical: 10,
+    paddingHorizontal: 16,
+    borderWidth: 1,
+    borderColor: COLORS.gold,
+    shadowColor: COLORS.gold,
+    shadowOpacity: 0.3,
+    shadowRadius: 8,
+    shadowOffset: { width: 0, height: 4 },
+    elevation: 4,
+    gap: 8,
+  },
+  rewardedAdButtonDisabled: {
+    backgroundColor: COLORS.surfaceAlt,
+    borderColor: COLORS.divider,
+    opacity: 0.6,
+  },
+  rewardedAdButtonText: {
+    fontSize: 14,
+    fontWeight: '600',
+    color: COLORS.gold,
+    letterSpacing: 0.3,
+  },
+  rewardedAdButtonTextDisabled: {
+    color: COLORS.textMuted,
   },
 });

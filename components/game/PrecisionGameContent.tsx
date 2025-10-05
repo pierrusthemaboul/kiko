@@ -21,6 +21,7 @@ import { PrecisionResult } from '../../hooks/game/usePrecisionGame';
 import { useSafeAreaInsets } from 'react-native-safe-area-context';
 import * as Haptics from 'expo-haptics';
 import { Ionicons } from '@expo/vector-icons';
+import PrecisionContinueModal from '../modals/PrecisionContinueModal';
 
 // --- PROPS INTERFACE ---
 interface PrecisionGameContentProps {
@@ -44,6 +45,10 @@ interface PrecisionGameContentProps {
   onReload: () => void;
   onRestart: () => void;
   onExit: () => void;
+  showContinueOffer?: boolean;
+  onContinueWithAd?: () => void;
+  onDeclineContinue?: () => void;
+  continueAdLoaded?: boolean;
 }
 
 // --- HELPER FUNCTIONS ---
@@ -79,6 +84,10 @@ const PrecisionGameContent: React.FC<PrecisionGameContentProps> = ({
   onReload,
   onRestart,
   onExit,
+  showContinueOffer = false,
+  onContinueWithAd,
+  onDeclineContinue,
+  continueAdLoaded = false,
 }) => {
   // --- STATE & REFS ---
   const [guessValue, setGuessValue] = useState('');
@@ -576,6 +585,15 @@ const PrecisionGameContent: React.FC<PrecisionGameContentProps> = ({
           </Pressable>
         </Modal>
       )}
+
+      {/* Modal Continue avec pub récompensée */}
+      <PrecisionContinueModal
+        isVisible={showContinueOffer}
+        currentScore={score}
+        onWatchAd={() => onContinueWithAd?.()}
+        onDecline={() => onDeclineContinue?.()}
+        adLoaded={continueAdLoaded}
+      />
     </View>
   );
 };

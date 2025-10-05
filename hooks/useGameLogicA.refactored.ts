@@ -13,7 +13,6 @@ import {
   LevelHistory
 } from './types';
 import { LEVEL_CONFIGS } from './levelConfigs';
-import type { MusicTheme } from './useAudio';
 
 // Hooks importés depuis le dossier game/
 import {
@@ -107,44 +106,7 @@ export function useGameLogicA(initialEvent?: string, _modeId?: string) {
     playLevelUpSound,
     playCountdownSound,
     playGameOverSound,
-    playTimePortalSound,
-    playParchmentSound,
-    playMusicTheme,
-    stopMusic,
   } = useAudio();
-
-  const getThemeForLevel = useCallback((level: number): MusicTheme => {
-    if (level >= 7) {
-      return 'scifi';
-    }
-    if (level >= 4) {
-      return 'western';
-    }
-    return 'mystery';
-  }, []);
-
-  const userLevel = user.level || 1;
-
-  useEffect(() => {
-    if (isGameOver) {
-      return;
-    }
-    if (userLevel > 0) {
-      void playMusicTheme(getThemeForLevel(userLevel));
-    }
-  }, [userLevel, isGameOver, playMusicTheme, getThemeForLevel]);
-
-  useEffect(() => {
-    if (isGameOver) {
-      void stopMusic();
-    }
-  }, [isGameOver, stopMusic]);
-
-  useEffect(() => {
-    return () => {
-      void stopMusic();
-    };
-  }, [stopMusic]);
 
   // Analytics
   const {
@@ -456,8 +418,7 @@ export function useGameLogicA(initialEvent?: string, _modeId?: string) {
       checkRewards({ type: 'streak', value: newStreak }, user);
       
       addEventToLevel(eventSummaryItem);
-      playParchmentSound();
-      
+
       setUser((prev) => {
         const updatedPoints = prev.points + pointsEarned;
         const eventsCompleted = prev.eventsCompletedInLevel + 1;
@@ -492,9 +453,7 @@ export function useGameLogicA(initialEvent?: string, _modeId?: string) {
           setShowLevelModal(true);
           setIsLevelPaused(true);
           console.log('[Audio] GameLogicA.refactored: level up – triggering SFX', { level: updatedUser.level });
-          playTimePortalSound();
           playLevelUpSound();
-          void playMusicTheme(getThemeForLevel(updatedUser.level));
           
           if (prev.level === 1 || prev.level === 6 || prev.level % 5 === 0) {
             setPendingAdDisplay("levelUp");
@@ -524,8 +483,7 @@ export function useGameLogicA(initialEvent?: string, _modeId?: string) {
       Animated.timing(progressAnim, { toValue: 0, duration: 300, useNativeDriver: false }).start();
       
       addEventToLevel(eventSummaryItem);
-      playParchmentSound();
-      
+
       setUser((prev) => {
         const newLives = prev.lives - 1;
         FirebaseAnalytics.logEvent('life_lost', { 

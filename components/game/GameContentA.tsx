@@ -46,7 +46,7 @@ interface LevelHistory {
 
 // --- Interface pour l'état publicitaire attendu ---
 interface AdStateForContent {
-    hasRewardedAd: boolean;
+    rewardedLoaded: boolean;
     hasWatchedRewardedAd: boolean;
     isAdFree?: boolean;
 }
@@ -97,6 +97,7 @@ interface GameContentAProps {
   onActualRestart: () => void;     // NOUVELLE prop pour REJOUER
   onActualMenu: () => void;        // NOUVELLE prop pour MENU
   // ----------------------------------------------------
+  isAdLoaded: (adType: 'rewarded' | 'interstitial' | 'levelUp' | 'gameOver') => boolean;
   gameMode: GameModeConfig;
   timeLimit: number;
 }
@@ -138,6 +139,7 @@ function GameContentA({
   onActualMenu,
   // handleRestartOrClose, // Ne plus récupérer
   // ----------------------------------------------------
+  isAdLoaded,
   gameMode,
   timeLimit,
 }: GameContentAProps) {
@@ -270,13 +272,13 @@ function GameContentA({
   }, [showLevelModal, contentOpacity]);
 
   // --- Effet pour gérer la fin de partie et l'offre de publicité ---
-  // (Logique inchangée)
+  // Utilise isAdLoaded pour vérifier directement l'instance native
   useEffect(() => {
     if (isGameOver && user) {
       const canOfferAd =
         user.lives === 0 &&
         showRewardedAd &&
-        adState.hasRewardedAd &&
+        isAdLoaded('rewarded') &&
         !adState.hasWatchedRewardedAd;
 
       if (canOfferAd) {
@@ -295,7 +297,7 @@ function GameContentA({
       setShowWatchAdOffer(false);
       setShowScoreboard(false);
     }
-  }, [isGameOver, user, adState, showRewardedAd]); // Dépendances leaderboards retirées car non nécessaires pour cette logique
+  }, [isGameOver, user, adState, showRewardedAd, isAdLoaded]); // Ajout de isAdLoaded aux dépendances
 
   // --- Effet pour marquer la fin du premier rendu significatif ---
   // (Logique inchangée)

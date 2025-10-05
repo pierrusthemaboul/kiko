@@ -98,6 +98,32 @@ export function useAds({
 }: UseAdsProps) {
   const effectiveMaxLives = Math.max(1, maxLives ?? MAX_LIVES);
 
+  // Utiliser des refs pour stocker les fonctions et éviter les re-renders constants
+  const setIsLevelPausedRef = useRef(setIsLevelPaused);
+  const resetTimerRef = useRef(resetTimer);
+  const selectNewEventRef = useRef(selectNewEvent);
+  const setUserRef = useRef(setUser);
+  const setIsGameOverRef = useRef(setIsGameOver);
+  const setIsWaitingForCountdownRef = useRef(setIsWaitingForCountdown);
+  const setErrorRef = useRef(setError);
+  const userRef = useRef(user);
+  const allEventsRef = useRef(allEvents);
+  const previousEventRef = useRef(previousEvent);
+
+  // Synchroniser les refs avec les props
+  useEffect(() => {
+    setIsLevelPausedRef.current = setIsLevelPaused;
+    resetTimerRef.current = resetTimer;
+    selectNewEventRef.current = selectNewEvent;
+    setUserRef.current = setUser;
+    setIsGameOverRef.current = setIsGameOver;
+    setIsWaitingForCountdownRef.current = setIsWaitingForCountdown;
+    setErrorRef.current = setError;
+    userRef.current = user;
+    allEventsRef.current = allEvents;
+    previousEventRef.current = previousEvent;
+  });
+
   const [adState, setAdState] = useState<AdState>({
     interstitialLoaded: false,
     gameOverInterstitialLoaded: false,
@@ -201,17 +227,17 @@ export function useAds({
       adLog('log', "Already processing reward, skipping duplicate call");
       return;
     }
-    
+
     processingRewardRef.current = true;
-    const currentLevel = user?.level || 0;
-    const currentPoints = user?.points || 0;
-    
+    const currentLevel = userRef.current?.level || 0;
+    const currentPoints = userRef.current?.points || 0;
+
     adLog('log', "Applying reward and resuming game...");
-    setIsGameOver(false);
-    
+    setIsGameOverRef.current(false);
+
     try {
       await new Promise<void>((resolve, reject) => {
-        setUser(prevUser => {
+        setUserRef.current(prevUser => {
           if (!prevUser) {
             reject(new Error("User state is null, cannot grant reward."));
             return prevUser;
@@ -225,34 +251,34 @@ export function useAds({
       });
     } catch (updateError) {
       adLog('warn', "Error updating user state after reward:", updateError);
-      if (setError) setError("Erreur lors de l'application de la récompense.");
-      setIsLevelPaused(false);
+      if (setErrorRef.current) setErrorRef.current("Erreur lors de l'application de la récompense.");
+      setIsLevelPausedRef.current(false);
       processingRewardRef.current = false;
       return;
     }
 
-    setIsLevelPaused(false);
-    setIsWaitingForCountdown(false);
+    setIsLevelPausedRef.current(false);
+    setIsWaitingForCountdownRef.current(false);
     adLog('log', "Resetting timer without penalty after reward.");
-    resetTimer(20, true);
+    resetTimerRef.current(20, true);
 
-    if (allEvents && previousEvent) {
+    if (allEventsRef.current && previousEventRef.current) {
       adLog('log', "Selecting new event after reward.");
       try {
-        const nextEvent = await selectNewEvent(allEvents, previousEvent);
+        const nextEvent = await selectNewEventRef.current(allEventsRef.current, previousEventRef.current);
         if (!nextEvent) {
           adLog('warn', "Failed to select next event after reward, potentially end of game.");
-          setIsGameOver(true);
-          setIsLevelPaused(true);
-          if (setError) setError('Impossible de sélectionner l\'événement suivant après la récompense.');
+          setIsGameOverRef.current(true);
+          setIsLevelPausedRef.current(true);
+          if (setErrorRef.current) setErrorRef.current('Impossible de sélectionner l\'événement suivant après la récompense.');
         } else {
           adLog('log', "New event selected successfully after reward.");
         }
       } catch (err) {
         adLog('warn', "Error selecting next event after reward:", err);
-        setIsGameOver(true);
-        setIsLevelPaused(true);
-        if (setError) setError('Erreur lors de la reprise du jeu après la publicité.');
+        setIsGameOverRef.current(true);
+        setIsLevelPausedRef.current(true);
+        if (setErrorRef.current) setErrorRef.current('Erreur lors de la reprise du jeu après la publicité.');
         FirebaseAnalytics.error('rewarded_resume_error', err instanceof Error ? err.message : String(err), 'useAds:EARNED_REWARD');
       }
     } else {
@@ -262,24 +288,14 @@ export function useAds({
     adLog('log', "Reloading rewarded ad after reward process.");
     rewardedAd.load();
     processingRewardRef.current = false;
-    
+
     if (setPendingAdDisplay) {
       setPendingAdDisplay(null);
     }
-    
+
     setTimeout(safeCheckPendingAds, 500);
   }, [
-    user?.level,
-    user?.points, 
-    setUser, 
-    setIsGameOver, 
-    setIsLevelPaused, 
-    setIsWaitingForCountdown, 
-    resetTimer, 
-    allEvents, 
-    previousEvent, 
-    selectNewEvent, 
-    setError,
+    effectiveMaxLives,
     setPendingAdDisplay,
     safeCheckPendingAds
   ]);
@@ -305,7 +321,7 @@ export function useAds({
 
     const unsubGenericOpened = genericInterstitial.addAdEventListener(AdEventType.OPENED, () => {
       adLog('log', "Generic Interstitial opened");
-      setIsLevelPaused(true);
+      setIsLevelPausedRef.current(true);
       FirebaseAnalytics.ad('interstitial', 'opened', 'generic', getCurrentLevelForLog()); // eslint-disable-line @typescript-eslint/no-floating-promises
     });
 
@@ -318,8 +334,8 @@ export function useAds({
         isShowingAd: false
       }));
       genericInterstitial.load();
-      setIsLevelPaused(false);
-      resetTimer(20); // eslint-disable-line @typescript-eslint/no-floating-promises
+      setIsLevelPausedRef.current(false);
+      resetTimerRef.current(20); // eslint-disable-line @typescript-eslint/no-floating-promises
       FirebaseAnalytics.ad('interstitial', 'closed', 'generic', getCurrentLevelForLog());
       setTimeout(safeCheckPendingAds, 500);
     });
@@ -340,7 +356,7 @@ export function useAds({
 
     const unsubLevelUpOpened = levelUpInterstitial.addAdEventListener(AdEventType.OPENED, () => {
       adLog('log', "LevelUp Interstitial opened");
-      setIsLevelPaused(true);
+      setIsLevelPausedRef.current(true);
       FirebaseAnalytics.ad('interstitial', 'opened', 'level_up', getCurrentLevelForLog()); // eslint-disable-line @typescript-eslint/no-floating-promises
     });
 
@@ -413,7 +429,7 @@ export function useAds({
       adLog('log', "Rewarded ad opened");
       // Réinitialiser le flag rewardEarned au moment où la pub s'ouvre
       setAdState(prev => ({ ...prev, rewardEarned: false }));
-      setIsLevelPaused(true);
+      setIsLevelPausedRef.current(true);
       FirebaseAnalytics.ad('rewarded', 'opened', 'extra_life', getCurrentLevelForLog());
     });
 
@@ -438,10 +454,10 @@ export function useAds({
         } else {
           adLog('log', "Rewarded ad closed WITHOUT earning reward.");
           FirebaseAnalytics.ad('rewarded', 'closed_without_reward', 'extra_life', getCurrentLevelForLog());
-          
+
           // Pas de récompense gagnée, réinitialiser l'état de jeu
-          setIsLevelPaused(false);
-          resetTimer(20); // eslint-disable-line @typescript-eslint/no-floating-promises
+          setIsLevelPausedRef.current(false);
+          resetTimerRef.current(20); // eslint-disable-line @typescript-eslint/no-floating-promises
           rewardedAd.load();
           
           if (setPendingAdDisplay) {
@@ -533,10 +549,11 @@ export function useAds({
       }
     };
   }, [
-    user,
-    allEvents, previousEvent,
-    setUser, resetTimer, setIsGameOver, setIsLevelPaused, setIsWaitingForCountdown, setError, selectNewEvent, onLevelUpAdClosed,
-    safeCheckPendingAds, setPendingAdDisplay, applyRewardAndContinue
+    // Minimal dependencies - les fonctions utilisent des refs maintenant
+    safeCheckPendingAds,
+    setPendingAdDisplay,
+    applyRewardAndContinue,
+    onLevelUpAdClosed
   ]);
 
   useEffect(() => {
@@ -569,12 +586,13 @@ export function useAds({
 
       if (adTypeToClear === 'levelUp') {
         if (canShowAd('levelUp')) {
-          if (adState.levelUpInterstitialLoaded) {
+          // Vérifier directement l'instance native au lieu du state React
+          if (levelUpInterstitial.loaded) {
             adLog('log', "[useAds Effect] Showing LevelUp Interstitial.");
             FirebaseAnalytics.ad('interstitial', 'triggered', 'level_up', currentLevel);
             levelUpInterstitial.show();
             adShown = true;
-          } else if (adState.interstitialLoaded) {
+          } else if (genericInterstitial.loaded) {
             adLog('log', "[useAds Effect] LevelUp not loaded, showing Generic Interstitial as fallback.");
             FirebaseAnalytics.ad('interstitial', 'triggered', 'level_up_fallback', currentLevel);
             genericInterstitial.show();
@@ -592,12 +610,13 @@ export function useAds({
         }
       } else if (adTypeToClear === 'gameOver') {
         if (canShowAd('gameOver')) {
-          if (adState.gameOverInterstitialLoaded) {
+          // Vérifier directement l'instance native
+          if (gameOverInterstitial.loaded) {
             adLog('log', "[useAds Effect] Showing GameOver Interstitial.");
             FirebaseAnalytics.ad('interstitial', 'triggered', 'game_over', currentLevel);
             gameOverInterstitial.show();
             adShown = true;
-          } else if (adState.interstitialLoaded) {
+          } else if (genericInterstitial.loaded) {
             adLog('log', "[useAds Effect] GameOver not loaded, showing Generic Interstitial as fallback.");
             FirebaseAnalytics.ad('interstitial', 'triggered', 'game_over_fallback', currentLevel);
             genericInterstitial.show();
@@ -614,7 +633,8 @@ export function useAds({
         }
       } else if (adTypeToClear === 'interstitial') {
         if (canShowAd('generic')) {
-          if (adState.interstitialLoaded) {
+          // Vérifier directement l'instance native
+          if (genericInterstitial.loaded) {
             adLog('log', "[useAds Effect] Showing Generic Interstitial.");
             FirebaseAnalytics.ad('interstitial', 'triggered', 'generic', currentLevel);
             genericInterstitial.show();
@@ -630,7 +650,8 @@ export function useAds({
           adTypeToClear = null;
         }
       } else if (adTypeToClear === 'rewarded') {
-        if (adState.rewardedLoaded) {
+        // Vérifier directement l'instance native
+        if (rewardedAd.loaded) {
           adLog('log', "[useAds Effect] Showing Rewarded Ad.");
           FirebaseAnalytics.ad('rewarded', 'triggered', 'user_request_extra_life', currentLevel);
           rewardedAd.show();
@@ -694,7 +715,8 @@ export function useAds({
       if(setError) setError("Vous avez déjà utilisé l'aide pour ce niveau.");
       return false;
     }
-    if (!adState.rewardedLoaded) {
+    // Vérifier directement l'instance native
+    if (!rewardedAd.loaded) {
       adLog('warn', "Rewarded ad request: Ad not loaded yet. Attempting to load.");
       FirebaseAnalytics.ad('rewarded', 'not_available', 'user_request_extra_life', currentLevel);
       rewardedAd.load();
@@ -713,7 +735,6 @@ export function useAds({
     return false;
   }, [
     adState.hasWatchedRewardedAd,
-    adState.rewardedLoaded,
     user?.level,
     setError,
     setPendingAdDisplay
@@ -778,6 +799,22 @@ export function useAds({
     }
   }, []);
 
+  // Helper pour vérifier si une pub est chargée (utilise l'instance native)
+  const isAdLoaded = useCallback((adType: 'rewarded' | 'interstitial' | 'levelUp' | 'gameOver') => {
+    switch (adType) {
+      case 'rewarded':
+        return rewardedAd.loaded;
+      case 'interstitial':
+        return genericInterstitial.loaded;
+      case 'levelUp':
+        return levelUpInterstitial.loaded;
+      case 'gameOver':
+        return gameOverInterstitial.loaded;
+      default:
+        return false;
+    }
+  }, [rewardedAd, genericInterstitial, levelUpInterstitial, gameOverInterstitial]);
+
   return {
     adState: {
       interstitialLoaded: adState.interstitialLoaded,
@@ -793,6 +830,7 @@ export function useAds({
     showLevelUpInterstitial,
     showGameOverInterstitial,
     resetAdsState,
+    isAdLoaded, // Nouvelle fonction helper
   };
 }
 

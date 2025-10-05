@@ -222,6 +222,7 @@ function ClassicGameScreen({ requestedMode }: { requestedMode?: string }) {
             onActualMenu={handleActualMenu}       // <- Fonction Menu
             showRewardedAd={gameLogic.showRewardedAd}
             resetAdsState={gameLogic.resetAdsState} // Fonction reset pubs
+            isAdLoaded={gameLogic.isAdLoaded} // Vérification native de chargement des pubs
             completeRewardAnimation={gameLogic.completeRewardAnimation}
             updateRewardPosition={gameLogic.updateRewardPosition}
             // Props d'animation/modales
@@ -326,6 +327,10 @@ function PrecisionGameScreen() {
                 onReload={reload}
                 onRestart={restart}
                 onExit={handleMenu}
+                showContinueOffer={showContinueOffer}
+                onContinueWithAd={handleContinueWithAd}
+                onDeclineContinue={handleDeclineContinue}
+                continueAdLoaded={adState?.continueLoaded}
               />
 
               {/* Game Over Modal */}

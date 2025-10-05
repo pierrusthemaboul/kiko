@@ -2,6 +2,7 @@ import { useCallback, useEffect, useMemo, useRef, useState } from 'react';
 import { supabase } from '../../lib/supabase/supabaseClients';
 import { FirebaseAnalytics } from '../../lib/firebase';
 import { Event } from '../types';
+import { usePrecisionAds } from './usePrecisionAds';
 
 const MAX_HP = 1000;
 const LEVEL_UP_BONUS_HP = 150;
@@ -124,10 +125,14 @@ export function usePrecisionGame() {
     allTime: Array<{ name: string; score: number; rank: number }>;
   }>({ daily: [], monthly: [], allTime: [] });
   const [leaderboardsReady, setLeaderboardsReady] = useState(false);
+  const [showContinueOffer, setShowContinueOffer] = useState(false);
 
   const usedIdsRef = useRef<Set<string>>(new Set());
   const initializingRef = useRef(false);
   const timerRef = useRef<NodeJS.Timeout | null>(null);
+
+  // Hook pour les pubs du mode Précision
+  const { adState, showGameOverAd, showContinueAd, resetContinueReward, resetAdsState } = usePrecisionAds();
 
   const clearTimer = useCallback(() => {
     if (timerRef.current) {
@@ -444,13 +449,23 @@ export function usePrecisionGame() {
       setTotalAnswered((prev) => prev + 1);
 
       if (nextHp <= 0) {
-        setIsGameOver(true);
-        setLeaderboardsReady(false);
-        loadLeaderboards(nextScore);
-        FirebaseAnalytics.logEvent('precision_game_over', {
-          total_events: totalAnswered + 1,
-          final_score: nextScore,
-        });
+        // Proposer le Continue si dispo, sinon Game Over direct
+        if (adState.continueLoaded && !adState.hasContinued) {
+          setShowContinueOffer(true);
+          setIsTimerPaused(true);
+        } else {
+          setIsGameOver(true);
+          setLeaderboardsReady(false);
+          loadLeaderboards(nextScore);
+          FirebaseAnalytics.logEvent('precision_game_over', {
+            total_events: totalAnswered + 1,
+            final_score: nextScore,
+          });
+          // Afficher la pub game over après un délai
+          setTimeout(() => {
+            showGameOverAd();
+          }, 1500);
+        }
       } else {
         FirebaseAnalytics.logEvent('precision_guess', {
           event_id: currentEvent.id,
@@ -500,13 +515,23 @@ export function usePrecisionGame() {
     setTotalAnswered((prev) => prev + 1);
 
     if (nextHp <= 0) {
-      setIsGameOver(true);
-      setLeaderboardsReady(false);
-      loadLeaderboards(nextScore);
-      FirebaseAnalytics.logEvent('precision_game_over', {
-        total_events: totalAnswered + 1,
-        final_score: nextScore,
-      });
+      // Proposer le Continue si dispo, sinon Game Over direct
+      if (adState.continueLoaded && !adState.hasContinued) {
+        setShowContinueOffer(true);
+        setIsTimerPaused(true);
+      } else {
+        setIsGameOver(true);
+        setLeaderboardsReady(false);
+        loadLeaderboards(nextScore);
+        FirebaseAnalytics.logEvent('precision_game_over', {
+          total_events: totalAnswered + 1,
+          final_score: nextScore,
+        });
+        // Afficher la pub game over après un délai
+        setTimeout(() => {
+          showGameOverAd();
+        }, 1500);
+      }
     } else {
       FirebaseAnalytics.logEvent('precision_timeout', {
         event_id: currentEvent.id,
@@ -558,8 +583,48 @@ export function usePrecisionGame() {
   }, [isGameOver, pickEventForLevel, score]);
 
   const restart = useCallback(() => {
+    resetAdsState();
     startRun();
-  }, [startRun]);
+  }, [startRun, resetAdsState]);
+
+  // Fonctions pour gérer le Continue
+  const handleContinueWithAd = useCallback(() => {
+    const success = showContinueAd();
+    if (!success) {
+      console.error('[PrecisionGame] Failed to show continue ad');
+      // Fallback : passer au game over
+      setShowContinueOffer(false);
+      setIsGameOver(true);
+      setLeaderboardsReady(false);
+      loadLeaderboards(score);
+    }
+  }, [showContinueAd, score, loadLeaderboards]);
+
+  const handleDeclineContinue = useCallback(() => {
+    setShowContinueOffer(false);
+    setIsGameOver(true);
+    setLeaderboardsReady(false);
+    loadLeaderboards(score);
+    FirebaseAnalytics.logEvent('precision_continue_declined', { score });
+    // Afficher la pub game over après un délai
+    setTimeout(() => {
+      showGameOverAd();
+    }, 1500);
+  }, [score, loadLeaderboards, showGameOverAd]);
+
+  // Gérer la récompense du Continue
+  useEffect(() => {
+    if (adState.continueRewardEarned) {
+      // Redonner de la vie et continuer
+      const bonusHp = 500; // Redonner 500 HP
+      setHp(prev => Math.min(MAX_HP, prev + bonusHp));
+      setShowContinueOffer(false);
+      setIsTimerPaused(false);
+      resetContinueReward();
+      loadNextEvent();
+      FirebaseAnalytics.logEvent('precision_continued', { score, hp_restored: bonusHp });
+    }
+  }, [adState.continueRewardEarned, score, resetContinueReward, loadNextEvent]);
 
   const levelProgress = useMemo(() => {
     const threshold = level.nextThreshold ?? Infinity;
@@ -597,6 +662,13 @@ export function usePrecisionGame() {
     playerName,
     leaderboards,
     leaderboardsReady,
+    showContinueOffer,
+    handleContinueWithAd,
+    handleDeclineContinue,
+    adState: {
+      continueLoaded: adState.continueLoaded,
+      hasContinued: adState.hasContinued,
+    },
   };
 }
 
