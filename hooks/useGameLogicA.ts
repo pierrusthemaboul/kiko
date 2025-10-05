@@ -13,6 +13,7 @@ import {
   LevelEventSummary,
 } from './types';
 import { LEVEL_CONFIGS } from './levelConfigs';
+import type { MusicTheme } from './useAudio';
 
 import {
   useInitGame,
@@ -156,6 +157,16 @@ export function useGameLogicA(initialEvent?: string, modeId?: string) {
     await baseInitGame({ initialLives: gameMode.initialLives });
   }, [baseInitGame, gameMode.initialLives]);
 
+  const getThemeForLevel = useCallback((level: number): MusicTheme => {
+    if (level >= 7) {
+      return 'scifi';
+    }
+    if (level >= 4) {
+      return 'western';
+    }
+    return 'mystery';
+  }, []);
+
   const {
     periodStats,
     categoryMastery,
@@ -176,7 +187,34 @@ export function useGameLogicA(initialEvent?: string, modeId?: string) {
     playLevelUpSound,
     playCountdownSound,
     playGameOverSound,
+    playTimePortalSound,
+    playParchmentSound,
+    playMusicTheme,
+    stopMusic,
   } = useAudio();
+
+  const userLevel = user?.level ?? 1;
+
+  useEffect(() => {
+    if (isGameOver) {
+      return;
+    }
+    if (userLevel > 0) {
+      void playMusicTheme(getThemeForLevel(userLevel));
+    }
+  }, [userLevel, isGameOver, playMusicTheme, getThemeForLevel]);
+
+  useEffect(() => {
+    if (isGameOver) {
+      void stopMusic();
+    }
+  }, [isGameOver, stopMusic]);
+
+  useEffect(() => {
+    return () => {
+      void stopMusic();
+    };
+  }, [stopMusic]);
 
   const {
     trackGameStarted,
@@ -568,6 +606,7 @@ export function useGameLogicA(initialEvent?: string, modeId?: string) {
       setIsWaitingForCountdown(true);
 
       if (isAnswerCorrect) {
+        console.log('[Audio] GameLogicA: correct answer – triggering SFX', { eventId: newEvent.id, streak });
         playCorrectSound();
         const newStreak = streak + 1;
         setStreak(newStreak);
@@ -600,6 +639,7 @@ export function useGameLogicA(initialEvent?: string, modeId?: string) {
 
         checkRewards({ type: 'streak', value: newStreak }, user);
         addEventToLevel(eventSummaryItem);
+        playParchmentSound();
 
         setUser((prev) => {
           const updatedPoints = prev.points + pointsEarned;
@@ -629,7 +669,10 @@ export function useGameLogicA(initialEvent?: string, modeId?: string) {
             setShowLevelModal(true);
             setIsLevelPaused(true);
 
+            console.log('[Audio] GameLogicA: level up – triggering SFX', { level: updated.level });
+            playTimePortalSound();
             playLevelUpSound();
+            void playMusicTheme(getThemeForLevel(updated.level));
 
             if ([2, 6].includes(prev.level) || prev.level % 5 === 0) {
               setPendingAdDisplay('levelUp');
@@ -649,6 +692,7 @@ export function useGameLogicA(initialEvent?: string, modeId?: string) {
           return updated;
         });
       } else { // Incorrect Answer
+        console.log('[Audio] GameLogicA: incorrect answer – triggering SFX', { eventId: newEvent.id, livesBefore: user.lives });
         playIncorrectSound();
         setStreak(0);
 
@@ -659,6 +703,7 @@ export function useGameLogicA(initialEvent?: string, modeId?: string) {
         }).start();
 
         addEventToLevel(eventSummaryItem); // Still add the incorrect event to the level summary
+        playParchmentSound();
 
         setUser((prev) => {
           const newLives = prev.lives - 1;
@@ -842,6 +887,7 @@ export function useGameLogicA(initialEvent?: string, modeId?: string) {
     setIsGameOver(true);
     setIsCountdownActive(false);
     setIsLevelPaused(true); // Pause the game logic
+    console.log('[Audio] GameLogicA: game over – triggering SFX', { points: user.points, level: user.level });
     playGameOverSound();
     setLeaderboardsReady(false);
 
@@ -863,12 +909,13 @@ export function useGameLogicA(initialEvent?: string, modeId?: string) {
 
 
     try {
-      const {
-        data: { user: authUser },
-        error: authError,
-      } = await supabase.auth.getUser();
+      // Vérifier si l'utilisateur est connecté via le profil déjà chargé
+      const userId = profile?.id;
 
-      if (authError || !authUser?.id) {
+      console.log('[END GAME] User check:', { userId, hasProfile: !!profile });
+
+      if (!userId) {
+        console.log('[END GAME] ⚠️ Mode invité détecté - Quêtes NON mises à jour');
         // For guests, show their score and the current high score
         setEndSummary(null);
         setEndSummaryError(null);
@@ -887,7 +934,7 @@ export function useGameLogicA(initialEvent?: string, modeId?: string) {
       }
 
       // Logged-in user logic
-      const userId = authUser.id;
+      console.log('[END GAME] ✅ Utilisateur connecté:', userId);
       const currentDisplayName = user.name || 'Joueur'; // Use fetched name or default
       const finalPoints = user.points;
       const economyMode: 'classic' | 'date' = gameMode.variant === 'precision' ? 'date' : 'classic';
@@ -897,12 +944,33 @@ export function useGameLogicA(initialEvent?: string, modeId?: string) {
       } else if (!isApplyingEconomyRef.current) {
         isApplyingEconomyRef.current = true;
         try {
+          // Calculer les stats de jeu
+          const gameStats = {
+            totalAnswers: user.totalEventsCompleted,
+            correctAnswers: user.totalEventsCompleted, // Approximation, à améliorer
+            perfectRound: user.lives === 3, // Partie parfaite si aucune vie perdue
+            fastWin: false, // À implémenter avec un timer
+            speedMaster: false, // À implémenter
+            noMistakes: user.lives === 3 ? user.totalEventsCompleted : 0,
+            maxAnswerStreak: user.maxStreak, // Meilleur streak de réponses dans la partie
+          };
+
+          console.log('[useGameLogicA] Appel applyEndOfRunEconomy avec stats:', {
+            runId,
+            mode: economyMode,
+            points: finalPoints,
+            gameStats,
+          });
+
           const summary = await applyEndOfRunEconomy({
             runId,
             userId,
             mode: economyMode,
             points: finalPoints,
+            gameStats,
           });
+
+          console.log('[useGameLogicA] applyEndOfRunEconomy réussi:', summary);
 
           setEndSummary({
             mode: economyMode,
@@ -915,6 +983,7 @@ export function useGameLogicA(initialEvent?: string, modeId?: string) {
           setEndSummaryError(null);
           currentRunIdRef.current = null;
         } catch (economyError) {
+          console.error('[useGameLogicA] Erreur applyEndOfRunEconomy:', economyError);
           setEndSummaryError(
             economyError instanceof Error ? economyError.message : String(economyError),
           );

@@ -7,11 +7,12 @@ export interface ConvertConfig {
 }
 
 export const DEFAULT_CONVERT: ConvertConfig = {
-  basePerMode: { classic: 30, date: 40 },
-  kPerMode: { classic: 0.6, date: 0.7 },
+  // Augmentation de la base XP et des coefficients (+50% environ)
+  basePerMode: { classic: 50, date: 60 },
+  kPerMode: { classic: 0.8, date: 0.9 },
   alphaPerMode: { classic: 0.72, date: 0.7 },
-  softcap: { threshold: 800, slope: 0.5 },
-  clamp: { min: 10, max: 400 },
+  softcap: { threshold: 1000, slope: 0.6 }, // Softcap plus haut et plus doux
+  clamp: { min: 20, max: 600 }, // Limites augmentées
 };
 
 function clampValue(value: number, min: number, max: number): number {

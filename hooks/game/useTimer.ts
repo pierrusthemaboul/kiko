@@ -67,6 +67,7 @@ export function useTimer({
           }
 
           if (nextTime <= 5) {
+            console.log('[Audio] Timer: requesting countdown cue', { nextTime });
             playCountdownSound();
           }
 

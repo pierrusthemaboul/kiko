@@ -116,6 +116,14 @@ export function usePrecisionGame() {
   const [totalAnswered, setTotalAnswered] = useState(0);
   const [timeLeft, setTimeLeft] = useState(MAX_TIME_SECONDS);
   const [isTimerPaused, setIsTimerPaused] = useState(false);
+  const [personalBest, setPersonalBest] = useState(0);
+  const [playerName, setPlayerName] = useState('Joueur');
+  const [leaderboards, setLeaderboards] = useState<{
+    daily: Array<{ name: string; score: number; rank: number }>;
+    monthly: Array<{ name: string; score: number; rank: number }>;
+    allTime: Array<{ name: string; score: number; rank: number }>;
+  }>({ daily: [], monthly: [], allTime: [] });
+  const [leaderboardsReady, setLeaderboardsReady] = useState(false);
 
   const usedIdsRef = useRef<Set<string>>(new Set());
   const initializingRef = useRef(false);
@@ -127,6 +135,98 @@ export function usePrecisionGame() {
       timerRef.current = null;
     }
   }, []);
+
+  const loadPlayerProfile = useCallback(async () => {
+    try {
+      const { data: { user } } = await supabase.auth.getUser();
+      if (!user) {
+        setPlayerName('Invité');
+        setPersonalBest(0);
+        return;
+      }
+
+      const { data: profile } = await supabase
+        .from('profiles')
+        .select('display_name, high_score_precision')
+        .eq('id', user.id)
+        .maybeSingle();
+
+      if (profile) {
+        setPlayerName(profile.display_name || 'Joueur');
+        setPersonalBest(profile.high_score_precision || 0);
+      }
+    } catch (err) {
+      console.error('[usePrecisionGame] Error loading profile:', err);
+    }
+  }, []);
+
+  const loadLeaderboards = useCallback(async (finalScore: number) => {
+    try {
+      const { data: { user } } = await supabase.auth.getUser();
+      const currentDisplayName = playerName || 'Joueur';
+
+      if (user) {
+        // Insert current score
+        await supabase.from('precision_scores').insert({
+          user_id: user.id,
+          display_name: currentDisplayName,
+          score: finalScore,
+        });
+
+        // Update high score if needed
+        if (finalScore > personalBest) {
+          await supabase
+            .from('profiles')
+            .update({ high_score_precision: finalScore })
+            .eq('id', user.id);
+          setPersonalBest(finalScore);
+        }
+      }
+
+      // Fetch leaderboards
+      const today = new Date().toISOString().split('T')[0];
+      const firstDayOfMonth = `${today.substring(0, 7)}-01`;
+
+      const [dailyRes, monthlyRes, allTimeRes] = await Promise.all([
+        supabase
+          .from('precision_scores')
+          .select('display_name, score')
+          .gte('created_at', `${today}T00:00:00.000Z`)
+          .order('score', { ascending: false })
+          .limit(5),
+        supabase
+          .from('precision_scores')
+          .select('display_name, score')
+          .gte('created_at', `${firstDayOfMonth}T00:00:00.000Z`)
+          .order('score', { ascending: false })
+          .limit(5),
+        supabase
+          .from('profiles')
+          .select('display_name, high_score_precision')
+          .not('high_score_precision', 'is', null)
+          .order('high_score_precision', { ascending: false })
+          .limit(5),
+      ]);
+
+      const formatScores = (scores: any[], scoreField: string = 'score') =>
+        (scores || []).map((s, index) => ({
+          name: s.display_name?.trim() || 'Joueur Anonyme',
+          score: Number(s[scoreField]) || 0,
+          rank: index + 1,
+        }));
+
+      setLeaderboards({
+        daily: formatScores(dailyRes.data || [], 'score'),
+        monthly: formatScores(monthlyRes.data || [], 'score'),
+        allTime: formatScores(allTimeRes.data || [], 'high_score_precision'),
+      });
+      setLeaderboardsReady(true);
+    } catch (err) {
+      console.error('[usePrecisionGame] Error loading leaderboards:', err);
+      setLeaderboards({ daily: [], monthly: [], allTime: [] });
+      setLeaderboardsReady(true);
+    }
+  }, [personalBest, playerName]);
 
   const loadEvents = useCallback(async () => {
     setLoading(true);
@@ -162,7 +262,8 @@ export function usePrecisionGame() {
 
   useEffect(() => {
     loadEvents();
-  }, [loadEvents]);
+    loadPlayerProfile();
+  }, [loadEvents, loadPlayerProfile]);
 
   const pickEventForLevel = useCallback(
     (targetLevel: PrecisionLevel): Event | null => {
@@ -344,6 +445,8 @@ export function usePrecisionGame() {
 
       if (nextHp <= 0) {
         setIsGameOver(true);
+        setLeaderboardsReady(false);
+        loadLeaderboards(nextScore);
         FirebaseAnalytics.logEvent('precision_game_over', {
           total_events: totalAnswered + 1,
           final_score: nextScore,
@@ -359,7 +462,7 @@ export function usePrecisionGame() {
         });
       }
     },
-    [currentEvent, finalizeResult, hp, isGameOver, level, score, totalAnswered],
+    [currentEvent, finalizeResult, hp, isGameOver, level, score, totalAnswered, loadLeaderboards],
   );
 
   const handleTimeout = useCallback(() => {
@@ -398,6 +501,8 @@ export function usePrecisionGame() {
 
     if (nextHp <= 0) {
       setIsGameOver(true);
+      setLeaderboardsReady(false);
+      loadLeaderboards(nextScore);
       FirebaseAnalytics.logEvent('precision_game_over', {
         total_events: totalAnswered + 1,
         final_score: nextScore,
@@ -408,7 +513,7 @@ export function usePrecisionGame() {
         level: previousLevel.id,
       });
     }
-  }, [currentEvent, finalizeResult, hp, isGameOver, lastResult, level, score, totalAnswered]);
+  }, [currentEvent, finalizeResult, hp, isGameOver, lastResult, level, score, totalAnswered, loadLeaderboards]);
 
   useEffect(() => {
     if (!currentEvent || isGameOver) {
@@ -488,6 +593,10 @@ export function usePrecisionGame() {
     loadNextEvent,
     restart,
     reload: loadEvents,
+    personalBest,
+    playerName,
+    leaderboards,
+    leaderboardsReady,
   };
 }
 

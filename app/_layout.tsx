@@ -15,6 +15,7 @@ import * as NavigationBar from 'expo-navigation-bar';
 import { FirebaseAnalytics } from '../lib/firebase';
 import { supabase } from '../lib/supabase/supabaseClients';
 import MobileAds from 'react-native-google-mobile-ads';
+import { AudioProvider } from '../hooks/useAudio';
 
 const CURRENT_APP_VERSION = Application.nativeApplicationVersion || '1.0.0';
 const APP_VERSION_STORAGE_KEY = '@app_version';
@@ -25,6 +26,7 @@ export default function RootLayout() {
   const [appReady, setAppReady] = useState(false);
   const [initialSetupDone, setInitialSetupDone] = useState(false);
   const [session, setSession] = useState<Session | null>(null);
+  const [splashShown, setSplashShown] = useState(false);
   const router = useRouter();
   const segments = useSegments(); // Donne les parties de l'URL actuelle
 
@@ -59,6 +61,9 @@ export default function RootLayout() {
     const initializeApp = async () => {
       // console.log('[RootLayout] Initializing App Setup (Firebase, Version)...');
       try {
+        // Réinitialiser le flag splash à chaque démarrage
+        await AsyncStorage.removeItem('@splash_shown_session');
+
         await FirebaseAnalytics.initialize(undefined, true);
         await FirebaseAnalytics.appOpen();
         const previousVersion = await AsyncStorage.getItem(APP_VERSION_STORAGE_KEY);
@@ -139,6 +144,26 @@ export default function RootLayout() {
     };
   }, []);
 
+  // --- Vérifier si le splash a été montré ---
+  useEffect(() => {
+    const checkSplashShown = async () => {
+      try {
+        const shown = await AsyncStorage.getItem('@splash_shown_session');
+        if (shown === 'true') {
+          setSplashShown(true);
+        }
+      } catch (e) {
+        console.warn('Failed to check splash shown state:', e);
+      }
+    };
+
+    // Vérifier régulièrement si le splash a été montré
+    const interval = setInterval(checkSplashShown, 500);
+    checkSplashShown();
+
+    return () => clearInterval(interval);
+  }, []);
+
   // --- Gestion Erreur Polices ---
   useEffect(() => {
     if (fontError) {
@@ -163,37 +188,45 @@ export default function RootLayout() {
       return;
     }
 
-    const inAuthGroup = segments[0] === '(auth)';
+    const inAuthGroup = segments[0] === 'auth';
 
     // Vérifier si on essaie d'accéder à un groupe protégé
     const isTryingProtectedGroup = segments[0] === '(tabs)' || segments[0] === 'game';
 
-    // Vérifier si on essaie d'accéder SPÉCIFIQUEMENT à l'écran d'accueil (index) dans (tabs)
-    // segments = ['(tabs)'] ou ['(tabs)', 'index'] pour l'écran d'accueil
+    // Vérifier si on essaie d'accéder à l'écran d'accueil (index) dans (tabs)
     const isTryingTabsIndex = segments[0] === '(tabs)' && (segments.length === 1 || segments[1] === 'index');
 
     // console.log(`[Auth Guard] Checking: Session=${session ? 'Yes' : 'No'}, Segments=${segments.join('/')}, InAuth=${inAuthGroup}, IsTryingProtected=${isTryingProtectedGroup}, IsTryingTabsIndex=${isTryingTabsIndex}`);
 
-    // Condition de redirection vers Login :
-    // 1. PAS de session
-    // 2. ET on essaie d'accéder à un groupe protégé ((tabs) ou game)
-    // 3. ET ce n'est PAS l'écran d'accueil (tabs)/index
-    if (!session && isTryingProtectedGroup && !isTryingTabsIndex) {
-      // console.log('[Auth Guard] Condition Met: No session & trying protected area (NOT index) -> Redirecting to /auth/login');
-      router.replace('/auth/login');
-    }
-    // Condition de redirection vers l'accueil si on est connecté et dans le groupe (auth)
-    else if (session && inAuthGroup) {
-      // console.log('[Auth Guard] Condition Met: Session exists & in auth area -> Redirecting to /(tabs)');
-      // Redirige vers l'écran d'accueil par défaut du groupe (tabs)
-      router.replace('/(tabs)');
-    }
-    // Dans tous les autres cas (session existe et on est dans (tabs), ou pas de session et on est sur (tabs)/index), on ne fait rien.
-    else {
-      // console.log('[Auth Guard] Condition Not Met: No redirect needed.');
+    // Si connecté et sur index, attendre que le splash soit montré puis rediriger vers vue1
+    if (session && isTryingTabsIndex && splashShown) {
+      // console.log('[Auth Guard] Session exists & on index & splash shown -> Redirecting to vue1');
+      router.replace('/(tabs)/vue1');
+      return;
     }
 
-  }, [appReady, session, segments, router]); // Dépendances de l'effet
+    // Si connecté et dans auth, rediriger vers vue1
+    if (session && inAuthGroup) {
+      // console.log('[Auth Guard] Session exists & in auth area -> Redirecting to vue1');
+      router.replace('/(tabs)/vue1');
+      return;
+    }
+
+    // Si pas de session et essai d'accéder à une zone protégée (sauf index)
+    if (!session && isTryingProtectedGroup && !isTryingTabsIndex) {
+      // console.log('[Auth Guard] No session & trying protected area -> Redirecting to /auth/login');
+      router.replace('/auth/login');
+      return;
+    }
+
+    // Si pas de session et pas sur auth, rediriger vers login
+    if (!session && !inAuthGroup && !isTryingTabsIndex) {
+      // console.log('[Auth Guard] No session & not on auth/index -> Redirecting to /auth/login');
+      router.replace('/auth/login');
+      return;
+    }
+
+  }, [appReady, session, segments, router, splashShown]);
   // --- FIN CORRECTION REDIRECTION ---
 
 
@@ -214,11 +247,13 @@ export default function RootLayout() {
   // console.log('[RootLayout] Rendering Stack Navigator');
   // Le Stack Navigator principal
   return (
-    <Stack screenOptions={{ headerShown: false }}>
-      <Stack.Screen name="(tabs)" />
-      <Stack.Screen name="(auth)" />
-      <Stack.Screen name="game" />
-      <Stack.Screen name="+not-found" />
-    </Stack>
+    <AudioProvider>
+      <Stack screenOptions={{ headerShown: false }}>
+        <Stack.Screen name="(tabs)" />
+        <Stack.Screen name="(auth)" />
+        <Stack.Screen name="game" />
+        <Stack.Screen name="+not-found" />
+      </Stack>
+    </AudioProvider>
   );
 }

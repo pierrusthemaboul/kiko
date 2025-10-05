@@ -191,13 +191,10 @@ export default function Login() {
         return;
       }
 
-      const authResult = await AuthSession.startAsync({
-        authUrl: data.url,
-        returnUrl: redirectTo,
-      });
-
-      const extractParam = (key: string) =>
-        'params' in authResult && authResult.params ? authResult.params[key] : undefined;
+      const authResult = await WebBrowser.openAuthSessionAsync(
+        data.url,
+        redirectTo
+      );
 
       switch (authResult.type) {
         case 'success':
@@ -214,16 +211,6 @@ export default function Login() {
           console.warn('⚠️ Google OAuth flow is already in progress.');
           setErrorMessage('Une autre tentative de connexion est déjà en cours.');
           break;
-        case 'error': {
-          const description = extractParam('error_description') ?? extractParam('error') ?? '';
-          console.error('❌ Google OAuth returned an error:', description || authResult);
-          FirebaseAnalytics.logEvent('login_failed', {
-            reason: 'google_oauth_result_error',
-            message: description.substring(0, 100),
-          });
-          setErrorMessage(description || 'Erreur lors de la connexion avec Google.');
-          break;
-        }
         default:
           console.warn('🔁 Google OAuth ended with unexpected result type:', authResult.type);
       }

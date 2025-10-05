@@ -14,9 +14,13 @@ import { Ionicons } from '@expo/vector-icons';
 import { FirebaseAnalytics } from '@/lib/firebase';
 import { useGameLogicA } from '@/hooks/useGameLogicA';
 import { usePlays } from '@/hooks/usePlays'; // Importer le nouveau hook
+import { useLeaderboards } from '@/hooks/useLeaderboards';
 import { rankFromXP } from '@/lib/economy/ranks';
-import { useQuests } from '@/hooks/useQuests';
 import { getQuestProgressPercentage } from '@/lib/economy/quests';
+import QuestCarousel from '@/components/QuestCarousel';
+import LeaderboardCarousel from '@/components/LeaderboardCarousel';
+import { getAllQuestsWithProgress } from '@/utils/questSelection';
+import { supabase } from '@/lib/supabase/supabaseClients';
 
 const COLORS = {
   background: '#050505',
@@ -31,12 +35,20 @@ const COLORS = {
 
 export default function Vue1() {
   const router = useRouter();
-  // On utilise useGameLogicA principalement pour le profil et les classements
-  const { profile, leaderboards } = useGameLogicA();
+  // On utilise useGameLogicA principalement pour le profil
+  const { profile } = useGameLogicA();
   // On utilise usePlays spécifiquement pour les infos de parties
   const { playsInfo, canStartRun, loadingPlays } = usePlays();
-  // Récupérer les quêtes quotidiennes
-  const { quests, loading: questsLoading } = useQuests(profile?.id);
+  // On utilise useLeaderboards pour les classements
+  const { leaderboards, loading: leaderboardsLoading } = useLeaderboards();
+
+  // État pour les quêtes (daily, weekly, monthly)
+  const [quests, setQuests] = React.useState<{
+    daily: any[];
+    weekly: any[];
+    monthly: any[];
+  }>({ daily: [], weekly: [], monthly: [] });
+  const [questsLoading, setQuestsLoading] = React.useState(true);
 
   const xp = profile?.xp_total ?? 0;
   const rank = useMemo(() => rankFromXP(xp), [xp]);
@@ -51,22 +63,35 @@ export default function Vue1() {
     [playsInfo?.remaining]
   );
 
-  const topPlayers = useMemo(() => {
-    const src = (leaderboards?.daily ?? leaderboards?.allTime ?? []) as any[];
-    return src.slice(0, 5).map((row) => ({
-      id: row.id ?? row.user_id ?? Math.random().toString(),
-      name: row.display_name ?? row.username ?? 'Anonyme',
-      score: row.points ?? row.high_score ?? 0,
-    }));
-  }, [leaderboards]);
 
   useEffect(() => {
     FirebaseAnalytics.screen('HomeLuxury', 'Vue1');
   }, []);
 
+  // Charger les quêtes au montage et quand le profil change
+  useEffect(() => {
+    async function loadQuests() {
+      if (!profile?.id) {
+        setQuestsLoading(false);
+        return;
+      }
+
+      setQuestsLoading(true);
+      try {
+        const allQuests = await getAllQuestsWithProgress(profile.id);
+        setQuests(allQuests);
+      } catch (err) {
+        console.error('[QUESTS ERROR] Erreur chargement:', err);
+      } finally {
+        setQuestsLoading(false);
+      }
+    }
+
+    loadQuests();
+  }, [profile?.id]);
+
   const handleModePress = useCallback(
     (mode: 'classic' | 'precision') => {
-      console.log(`[Vue1] handleModePress -> mode=${mode}`);
       if (!canStartRun && !loadingPlays) { // Vérifier aussi que le chargement est terminé
         Alert.alert('Plus de parties disponibles', "Vous avez utilisé toutes vos parties pour aujourd'hui.");
         return;
@@ -77,9 +102,17 @@ export default function Vue1() {
     [router, canStartRun, loadingPlays],
   );
 
-  const handleViewLeaderboard = useCallback(() => {
-    router.push('/leaderboard');
+  const handleLogout = useCallback(async () => {
+    try {
+      FirebaseAnalytics.logEvent('user_logout', { from_screen: 'vue1' });
+      await supabase.auth.signOut();
+      router.replace('/auth/login');
+    } catch (error) {
+      Alert.alert('Erreur', 'Impossible de se déconnecter');
+      FirebaseAnalytics.error('logout_error', error instanceof Error ? error.message : 'Unknown error', 'Vue1');
+    }
   }, [router]);
+
 
   return (
     <ImageBackground source={require('@/assets/images/sablier.png')} style={styles.background} resizeMode="cover">
@@ -87,9 +120,16 @@ export default function Vue1() {
       <View style={styles.overlay} />
       <ScrollView contentContainerStyle={styles.scrollContent} showsVerticalScrollIndicator={false}>
         <View style={styles.section}>
-          <Text style={styles.welcome}>Bienvenue, {playerName}</Text>
-          <Text style={styles.subtitle}>{headerSubtitle}</Text>
-          <Text style={styles.subtitle}>{headerPlays}</Text>
+          <View style={styles.headerRow}>
+            <View style={styles.headerTextContainer}>
+              <Text style={styles.welcome}>Bienvenue, {playerName}</Text>
+              <Text style={styles.subtitle}>{headerSubtitle}</Text>
+              <Text style={styles.subtitle}>{headerPlays}</Text>
+            </View>
+            <TouchableOpacity style={styles.logoutButton} onPress={handleLogout}>
+              <Ionicons name="log-out-outline" size={22} color={COLORS.textMuted} />
+            </TouchableOpacity>
+          </View>
         </View>
 
         <View style={styles.section}>
@@ -127,62 +167,20 @@ export default function Vue1() {
         </View>
 
         <View style={styles.section}>
-          <Text style={styles.sectionTitle}>Quêtes du jour</Text>
-          <View style={styles.card}>
-            {questsLoading ? (
-              <Text style={{ color: COLORS.textMuted, paddingVertical: 12 }}>Chargement...</Text>
-            ) : quests.length === 0 ? (
-              <Text style={{ color: COLORS.textMuted, paddingVertical: 12 }}>Aucune quête disponible</Text>
-            ) : (
-              quests.map((quest, index) => {
-                const currentValue = quest.progress?.current_value ?? 0;
-                const isCompleted = quest.progress?.completed ?? false;
-                const progressPercent = getQuestProgressPercentage(currentValue, quest.target_value);
-
-                return (
-                  <View key={quest.id} style={[styles.questRow, index < quests.length - 1 && styles.questDivider]}>
-                    <Text style={styles.questIcon}>{quest.icon || (isCompleted ? '✅' : '🔒')}</Text>
-                    <View style={{ flex: 1 }}>
-                      <Text style={[styles.questText, isCompleted && styles.questTextDone]}>
-                        {quest.title}
-                      </Text>
-                      <View style={styles.questProgressBar}>
-                        <View style={[styles.questProgressFill, { width: `${progressPercent}%` }]} />
-                      </View>
-                      <Text style={styles.questProgressText}>
-                        {currentValue} / {quest.target_value} · +{quest.xp_reward} XP
-                      </Text>
-                    </View>
-                  </View>
-                );
-              })
-            )}
-          </View>
+          {questsLoading ? (
+            <Text style={styles.loadingText}>Chargement des quêtes...</Text>
+          ) : (
+            <QuestCarousel
+              dailyQuests={quests.daily || []}
+              weeklyQuests={quests.weekly || []}
+              monthlyQuests={quests.monthly || []}
+            />
+          )}
         </View>
 
         <View style={styles.section}>
           <Text style={styles.sectionTitle}>Classement</Text>
-          <View style={styles.card}>
-            {topPlayers.length === 0 ? (
-              <Text style={{ color: COLORS.textMuted, paddingVertical: 12 }}>Pas encore de classement</Text>
-            ) : (
-              topPlayers.map((player, index) => (
-                <View key={player.id} style={[styles.leaderRow, index < topPlayers.length - 1 && styles.questDivider]}>
-                  <View style={styles.leaderRank}>
-                    <Text style={styles.leaderRankText}>{index + 1}</Text>
-                  </View>
-                  <View style={styles.leaderInfo}>
-                    <Text style={styles.leaderName}>{player.name}</Text>
-                    <Text style={styles.leaderScore}>{player.score.toLocaleString('fr-FR')} pts</Text>
-                  </View>
-                  <Ionicons name="trophy-outline" size={20} color={COLORS.gold} />
-                </View>
-              ))
-            )}
-            <TouchableOpacity style={styles.leaderButton} onPress={handleViewLeaderboard}>
-              <Text style={styles.leaderButtonText}>Voir tout le classement</Text>
-            </TouchableOpacity>
-          </View>
+          <LeaderboardCarousel leaderboards={leaderboards} loading={leaderboardsLoading} />
         </View>
       </ScrollView>
     </ImageBackground>
@@ -205,6 +203,18 @@ const styles = StyleSheet.create({
   },
   section: {
     marginBottom: 32,
+  },
+  headerRow: {
+    flexDirection: 'row',
+    justifyContent: 'space-between',
+    alignItems: 'flex-start',
+  },
+  headerTextContainer: {
+    flex: 1,
+  },
+  logoutButton: {
+    padding: 8,
+    marginTop: 4,
   },
   welcome: {
     fontSize: 28,
@@ -363,5 +373,9 @@ const styles = StyleSheet.create({
     fontSize: 15,
     fontWeight: '600',
     letterSpacing: 0.3,
+  },
+  loadingText: {
+    color: COLORS.textMuted,
+    paddingVertical: 12,
   },
 });

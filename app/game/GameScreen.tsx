@@ -18,6 +18,7 @@ import { SafeAreaView } from 'react-native-safe-area-context';
 // Composants
 import GameContentA from "../../components/game/GameContentA"; // Chemin OK
 import PrecisionGameContent from "../../components/game/PrecisionGameContent";
+import PrecisionGameOverModal from "../../components/modals/PrecisionGameOverModal";
 import EndRunSummary from '@/components/game/EndRunSummary';
 import { nextRankProgress } from '@/lib/economy/ranks';
 
@@ -230,20 +231,6 @@ function ClassicGameScreen({ requestedMode }: { requestedMode?: string }) {
             timeLimit={gameLogic.timeLimit}
           />
 
-          {endSummary && (
-            <EndRunSummary
-              mode={endSummary.mode}
-              points={endSummary.points}
-              result={{
-                xpEarned: endSummary.xpEarned,
-                newXp: endSummary.newXp,
-                rank: endSummary.rank,
-                leveledUp: endSummary.leveledUp,
-              }}
-              next={next}
-              onClose={handleCloseEndSummary}
-            />
-          )}
         </SafeAreaView>
       </ImageBackground>
     </View>
@@ -275,6 +262,10 @@ function PrecisionGameScreen() {
     loadNextEvent,
     restart,
     reload,
+    personalBest,
+    playerName,
+    leaderboards,
+    leaderboardsReady,
   } = usePrecisionGame();
 
   useFocusEffect(
@@ -335,6 +326,21 @@ function PrecisionGameScreen() {
                 onReload={reload}
                 onRestart={restart}
                 onExit={handleMenu}
+              />
+
+              {/* Game Over Modal */}
+              <PrecisionGameOverModal
+                isVisible={isGameOver && leaderboardsReady}
+                finalScore={score}
+                personalBest={personalBest}
+                levelReached={level.label}
+                levelId={level.id}
+                onRestart={restart}
+                onMenuPress={handleMenu}
+                playerName={playerName}
+                dailyScores={leaderboards.daily}
+                monthlyScores={leaderboards.monthly}
+                allTimeScores={leaderboards.allTime}
               />
             </Animated.View>
           )}

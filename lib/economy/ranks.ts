@@ -38,7 +38,8 @@ const rawRanks: Array<Omit<Rank, 'xpTotalRequired'>> = [
 ];
 
 function xpCurve(index: number): number {
-  return Math.round(250 * index * index + 150 * index + 200);
+  // Nouvelle courbe plus généreuse (-25% XP requis environ)
+  return Math.round(180 * index * index + 120 * index + 150);
 }
 
 export const RANKS: Rank[] = rawRanks.map((rank) => ({

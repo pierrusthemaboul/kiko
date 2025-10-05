@@ -27,6 +27,7 @@ import { FirebaseAnalytics } from '../../lib/firebase'; // Chemin relatif vers f
 // MODIFIÉ: IS_TEST_BUILD ajouté à l'import
 import { getAdUnitId, IS_TEST_BUILD } from '../../lib/config/adConfig'; // Chemin relatif vers adConfig
 import { LinearGradient } from 'expo-linear-gradient';
+import AsyncStorage from '@react-native-async-storage/async-storage';
 
 const { width, height } = Dimensions.get('window');
 
@@ -82,23 +83,29 @@ const AnimatedSplashScreen = ({ onAnimationEnd }) => {
   const playSplashSound = useCallback(async () => {
     try {
       const playbackVolume = IS_TEST_BUILD ? 0 : 0.18;
+      console.log('[Audio] Splash: preparing sound', { playbackVolume, isTestBuild: IS_TEST_BUILD });
       const { sound } = await Audio.Sound.createAsync(
         require('../../assets/sounds/361261__japanyoshithegamer__8-bit-spaceship-startup.wav'),
         { volume: playbackVolume }
       );
       soundRef.current = sound;
+      console.log('[Audio] Splash: playback starting');
       await soundRef.current.playAsync();
       soundRef.current.setOnPlaybackStatusUpdate((status) => {
         if (status.isLoaded && status.didJustFinish) {
-          soundRef.current?.unloadAsync();
+          console.log('[Audio] Splash: playback finished, unloading');
+          soundRef.current?.unloadAsync().catch((unloadError) => {
+            console.warn('[Audio] Splash: unload failed', unloadError);
+          });
           soundRef.current = null;
         }
       });
     } catch (error) {
       console.warn('Audio playback error:', error);
+      console.error('[Audio] Splash: playback error', error);
       FirebaseAnalytics.error('audio_playback_error', error instanceof Error ? error.message : 'Unknown error', 'SplashScreen');
       if (soundRef.current) {
-        await soundRef.current.unloadAsync();
+        await soundRef.current.unloadAsync().catch(() => undefined);
         soundRef.current = null;
       }
     }
@@ -335,10 +342,16 @@ export default function HomeScreen() {
   };
 
   // Callback pour masquer le splash et animer le contenu principal
-  const handleSplashAnimationEnd = () => {
+  const handleSplashAnimationEnd = async () => {
     FirebaseAnalytics.logEvent('splash_complete', { time_shown: SPLASH_TOTAL_VIEW_DURATION });
     setShowSplash(false);
     animateMainContentIn();
+    // Marquer que le splash a été montré pour cette session
+    try {
+      await AsyncStorage.setItem('@splash_shown_session', 'true');
+    } catch (e) {
+      console.warn('Failed to save splash shown state:', e);
+    }
   };
 
   // Animation d'apparition du contenu principal

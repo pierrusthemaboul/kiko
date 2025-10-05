@@ -1,8 +1,8 @@
 import { Database } from '../supabase/database.types';
 
 // Types pour les quêtes et achievements
-export type QuestType = 'daily_play' | 'daily_streak' | 'daily_precision' | 'daily_speed' | 'daily_score';
-export type AchievementType = 'rank' | 'streak' | 'games' | 'score';
+export type QuestType = 'volume' | 'streak' | 'precision' | 'skill' | 'score';
+export type AchievementType = 'rank' | 'streak' | 'games' | 'score' | 'skill';
 
 export type AchievementRecord = Database['public']['Tables']['achievements']['Row'];
 export type DailyQuest = Database['public']['Tables']['daily_quests']['Row'];
@@ -24,73 +24,73 @@ export interface AchievementTemplate {
   icon: string;
 }
 
-// Configuration des achievements disponibles
+// Configuration des achievements disponibles (synchronisé avec la base de données)
 export const ACHIEVEMENTS: Record<string, AchievementTemplate> = {
-  // Achievements de rang
+  // Achievements de rang (réduits car automatiques)
   reach_baron: {
     achievement_key: 'reach_baron',
     achievement_type: 'rank',
-    title: 'Baron',
+    title: 'Baron Accompli',
     description: 'Atteindre le rang de Baron',
-    xp_bonus: 500,
+    xp_bonus: 300,
     icon: '👑',
   },
   reach_vicomte: {
     achievement_key: 'reach_vicomte',
     achievement_type: 'rank',
-    title: 'Vicomte',
+    title: 'Vicomte Émérite',
     description: 'Atteindre le rang de Vicomte',
-    xp_bonus: 1000,
+    xp_bonus: 500,
     icon: '👑',
   },
   reach_comte: {
     achievement_key: 'reach_comte',
     achievement_type: 'rank',
-    title: 'Comte',
+    title: 'Comte Prestigieux',
     description: 'Atteindre le rang de Comte',
-    xp_bonus: 2000,
+    xp_bonus: 1000,
     icon: '👑',
   },
   reach_marquis: {
     achievement_key: 'reach_marquis',
     achievement_type: 'rank',
-    title: 'Marquis',
+    title: 'Marquis Illustre',
     description: 'Atteindre le rang de Marquis',
-    xp_bonus: 3000,
+    xp_bonus: 2000,
     icon: '👑',
   },
   reach_duc: {
     achievement_key: 'reach_duc',
     achievement_type: 'rank',
-    title: 'Duc',
+    title: 'Duc Magnifique',
     description: 'Atteindre le rang de Duc',
-    xp_bonus: 5000,
+    xp_bonus: 3000,
     icon: '👑',
   },
 
-  // Achievements de streak
+  // Achievements de streak (augmentés car difficiles)
   streak_7: {
     achievement_key: 'streak_7',
     achievement_type: 'streak',
-    title: 'Semaine parfaite',
+    title: 'Semaine Parfaite',
     description: 'Jouer 7 jours d\'affilée',
-    xp_bonus: 1500,
+    xp_bonus: 2000,
     icon: '🔥',
   },
   streak_30: {
     achievement_key: 'streak_30',
     achievement_type: 'streak',
-    title: 'Mois légendaire',
+    title: 'Mois Légendaire',
     description: 'Jouer 30 jours d\'affilée',
-    xp_bonus: 5000,
+    xp_bonus: 8000,
     icon: '🔥',
   },
 
-  // Achievements de parties
+  // Achievements de parties (rééquilibrés)
   games_50: {
     achievement_key: 'games_50',
     achievement_type: 'games',
-    title: 'Joueur assidu',
+    title: 'Joueur Assidu',
     description: 'Jouer 50 parties',
     xp_bonus: 1000,
     icon: '🎮',
@@ -100,7 +100,7 @@ export const ACHIEVEMENTS: Record<string, AchievementTemplate> = {
     achievement_type: 'games',
     title: 'Centurion',
     description: 'Jouer 100 parties',
-    xp_bonus: 2500,
+    xp_bonus: 2000,
     icon: '🎮',
   },
   games_500: {
@@ -108,34 +108,68 @@ export const ACHIEVEMENTS: Record<string, AchievementTemplate> = {
     achievement_type: 'games',
     title: 'Vétéran',
     description: 'Jouer 500 parties',
-    xp_bonus: 10000,
+    xp_bonus: 5000,
     icon: '🎮',
   },
 
-  // Achievements de score
-  high_score_1000: {
-    achievement_key: 'high_score_1000',
-    achievement_type: 'score',
-    title: 'Millier',
-    description: 'Atteindre 1000 points en une partie',
-    xp_bonus: 500,
-    icon: '⭐',
-  },
-  high_score_2000: {
-    achievement_key: 'high_score_2000',
-    achievement_type: 'score',
-    title: 'Double millier',
-    description: 'Atteindre 2000 points en une partie',
-    xp_bonus: 1500,
-    icon: '⭐',
-  },
+  // Achievements de score (ajustés pour le nouveau système)
   high_score_5000: {
     achievement_key: 'high_score_5000',
     achievement_type: 'score',
-    title: 'Maître absolu',
+    title: 'Première Étape',
     description: 'Atteindre 5000 points en une partie',
+    xp_bonus: 300,
+    icon: '⭐',
+  },
+  high_score_10000: {
+    achievement_key: 'high_score_10000',
+    achievement_type: 'score',
+    title: 'Expert',
+    description: 'Atteindre 10000 points en une partie',
+    xp_bonus: 800,
+    icon: '⭐',
+  },
+  high_score_20000: {
+    achievement_key: 'high_score_20000',
+    achievement_type: 'score',
+    title: 'Virtuose',
+    description: 'Atteindre 20000 points en une partie',
+    xp_bonus: 2000,
+    icon: '⭐',
+  },
+  high_score_50000: {
+    achievement_key: 'high_score_50000',
+    achievement_type: 'score',
+    title: 'Maître Absolu',
+    description: 'Atteindre 50000 points en une partie',
     xp_bonus: 5000,
     icon: '⭐',
+  },
+
+  // Achievements de skill
+  speed_demon: {
+    achievement_key: 'speed_demon',
+    achievement_type: 'skill',
+    title: 'Éclair',
+    description: 'Répondre à 20 questions en moins de 3s chacune',
+    xp_bonus: 1000,
+    icon: '⚡',
+  },
+  ancient_master: {
+    achievement_key: 'ancient_master',
+    achievement_type: 'skill',
+    title: 'Maître Antique',
+    description: 'Répondre correctement à 50 événements avant l\'an 0',
+    xp_bonus: 1200,
+    icon: '🏛️',
+  },
+  precision_master: {
+    achievement_key: 'precision_master',
+    achievement_type: 'skill',
+    title: 'Précision Absolue',
+    description: 'Deviner 10 dates à ±5 ans (mode Précision)',
+    xp_bonus: 2000,
+    icon: '🎯',
   },
 };
 
@@ -188,9 +222,10 @@ export function shouldUnlockAchievement(
   if (achievementKey === 'games_500' && (userData.games_played || 0) >= 500) return true;
 
   // Achievements de score
-  if (achievementKey === 'high_score_1000' && (userData.high_score || 0) >= 1000) return true;
-  if (achievementKey === 'high_score_2000' && (userData.high_score || 0) >= 2000) return true;
   if (achievementKey === 'high_score_5000' && (userData.high_score || 0) >= 5000) return true;
+  if (achievementKey === 'high_score_10000' && (userData.high_score || 0) >= 10000) return true;
+  if (achievementKey === 'high_score_20000' && (userData.high_score || 0) >= 20000) return true;
+  if (achievementKey === 'high_score_50000' && (userData.high_score || 0) >= 50000) return true;
 
   return false;
 }

@@ -11,7 +11,20 @@ type ProfileRow = Database['public']['Tables']['profiles']['Row'];
 type RunsRow = Database['public']['Tables']['runs']['Row'];
 type RunsInsert = Database['public']['Tables']['runs']['Insert'];
 
-type ApplyParams = { runId: string; userId: string; mode: GameMode; points: number };
+type ApplyParams = {
+  runId: string;
+  userId: string;
+  mode: GameMode;
+  points: number;
+  gameStats?: {
+    totalAnswers?: number;
+    correctAnswers?: number;
+    perfectRound?: boolean;
+    speedMaster?: boolean;
+    noMistakes?: number;
+    maxAnswerStreak?: number;
+  };
+};
 
 type ApplySummary = {
   xpEarned: number;
@@ -87,7 +100,13 @@ function buildRunPayload(params: {
   return payload;
 }
 
-export async function applyEndOfRunEconomy({ runId, userId, mode, points }: ApplyParams): Promise<ApplySummary> {
+export async function applyEndOfRunEconomy({ runId, userId, mode, points, gameStats }: ApplyParams): Promise<ApplySummary> {
+  console.log('[ECONOMY] ===== DEBUT applyEndOfRunEconomy =====');
+  console.log('[ECONOMY] Params:', { runId, userId, mode, points, gameStats });
+  console.log('[ECONOMY] 📍 User ID:', userId);
+  console.log('[ECONOMY] 🎮 Mode:', mode);
+  console.log('[ECONOMY] 🎯 Points:', points);
+
   const safePoints = Number.isFinite(points) ? points : 0;
   const xpEarned = pointsToXP(safePoints, mode);
 
@@ -186,10 +205,19 @@ export async function applyEndOfRunEconomy({ runId, userId, mode, points }: Appl
   }
 
   // Mettre à jour les quêtes quotidiennes
+  console.log('[ECONOMY] 📋 ===== APPEL updateDailyQuests =====');
+  console.log('[ECONOMY] 📋 User ID:', userId);
+  console.log('[ECONOMY] 📋 Points partie:', safePoints);
+  console.log('[ECONOMY] 📋 Streak:', newStreak);
+  console.log('[ECONOMY] 📋 Mode:', mode);
+  console.log('[ECONOMY] 📋 Game stats:', gameStats);
   await updateDailyQuests(userId, {
     points: safePoints,
     streak: newStreak,
+    mode,
+    gameStats,
   });
+  console.log('[ECONOMY] ✅ updateDailyQuests terminé');
 
   // Vérifier et débloquer les achievements
   const unlockedAchievements = await checkAndUnlockAchievements(userId, {
@@ -248,6 +276,61 @@ export async function applyEndOfRunEconomy({ runId, userId, mode, points }: Appl
 }
 
 /**
+ * Vérifie combien de modes différents ont été joués dans une période
+ * @returns Le nombre de modes différents joués (0, 1, ou 2)
+ */
+async function checkModesPlayed(
+  userId: string,
+  period: 'daily' | 'weekly',
+  currentMode: GameMode
+): Promise<number> {
+  try {
+    // Calculer la date de début selon la période
+    const now = new Date();
+    let startDate: Date;
+
+    if (period === 'daily') {
+      // Début de la journée
+      startDate = new Date(now);
+      startDate.setHours(0, 0, 0, 0);
+    } else {
+      // Début de la semaine (lundi)
+      startDate = new Date(now);
+      const day = startDate.getDay();
+      const diff = startDate.getDate() - day + (day === 0 ? -6 : 1);
+      startDate.setDate(diff);
+      startDate.setHours(0, 0, 0, 0);
+    }
+
+    // Récupérer les runs de la période
+    const { data: runs, error } = await supabase
+      .from('runs')
+      .select('mode')
+      .eq('user_id', userId)
+      .gte('created_at', startDate.toISOString());
+
+    if (error) {
+      console.error('[QUESTS] Erreur checkModesPlayed:', error);
+      return 0;
+    }
+
+    if (!runs || runs.length === 0) {
+      // Première partie de la période, on compte le mode actuel
+      return 1;
+    }
+
+    // Extraire les modes uniques (incluant le mode actuel)
+    const modes = new Set<string>(runs.map(r => r.mode));
+    modes.add(currentMode);
+
+    return modes.size;
+  } catch (error) {
+    console.error('[QUESTS] Erreur checkModesPlayed:', error);
+    return 0;
+  }
+}
+
+/**
  * Met à jour les quêtes quotidiennes basées sur la partie jouée
  */
 async function updateDailyQuests(
@@ -255,22 +338,111 @@ async function updateDailyQuests(
   gameData: {
     points: number;
     streak: number;
+    mode: GameMode;
+    gameStats?: {
+      totalAnswers?: number;
+      correctAnswers?: number;
+      perfectRound?: boolean;
+      fastWin?: boolean;
+      speedMaster?: boolean;
+      noMistakes?: number;
+    };
   }
 ): Promise<void> {
   try {
+    console.log('[QUESTS] 🔍 ===== DEBUT updateDailyQuests =====');
+    console.log('[QUESTS] 🔍 User ID:', userId);
+    console.log('[QUESTS] 🔍 Game data:', gameData);
+
     // Récupérer la progression des quêtes
-    const { data: questProgress, error: fetchError } = await supabase
+    console.log('[QUESTS] 📊 Récupération de quest_progress...');
+    const { data: questProgressData, error: fetchError } = await supabase
       .from('quest_progress')
       .select('*')
       .eq('user_id', userId)
       .eq('completed', false);
 
+    let questProgress = questProgressData;
+
+    console.log('[QUESTS] 📊 Résultat fetch:', {
+      count: questProgress?.length,
+      error: fetchError?.message,
+      data: questProgress
+    });
+
     if (fetchError) {
-      console.error('Erreur récupération quest_progress:', fetchError);
+      console.error('[QUESTS] ❌ Erreur fetch progress:', fetchError);
       return;
     }
 
-    if (!questProgress || questProgress.length === 0) return;
+    if (!questProgress || questProgress.length === 0) {
+      console.log('[QUESTS] ⚠️ ===== AUCUNE PROGRESSION TROUVÉE =====');
+      console.log('[QUESTS] ⚠️ User ID recherché:', userId);
+      console.log('[QUESTS] 🔧 Tentative de création automatique des quest_progress...');
+
+      // Récupérer toutes les quêtes actives
+      const { data: allActiveQuests, error: allQuestsErr } = await supabase
+        .from('daily_quests')
+        .select('*')
+        .eq('is_active', true);
+
+      if (allQuestsErr) {
+        console.error('[QUESTS] ❌ Erreur récupération daily_quests:', allQuestsErr);
+        return;
+      }
+
+      if (!allActiveQuests || allActiveQuests.length === 0) {
+        console.log('[QUESTS] ⚠️ Aucune quête active dans daily_quests');
+        return;
+      }
+
+      console.log(`[QUESTS] 📋 Trouvé ${allActiveQuests.length} quêtes actives, création de quest_progress...`);
+
+      // Calculer la date de reset (lendemain à minuit)
+      const tomorrow = new Date();
+      tomorrow.setHours(24, 0, 0, 0);
+      const resetAt = tomorrow.toISOString();
+
+      // Créer les entrées quest_progress
+      const progressToCreate = allActiveQuests.map(quest => ({
+        user_id: userId,
+        quest_key: quest.quest_key,
+        current_value: 0,
+        completed: false,
+        reset_at: resetAt,
+      }));
+
+      const { data: createdProgress, error: createErr } = await supabase
+        .from('quest_progress')
+        .insert(progressToCreate)
+        .select();
+
+      if (createErr) {
+        console.error('[QUESTS] ❌ Erreur création quest_progress:', createErr);
+        console.log('[QUESTS] ⚠️ Impossible de créer les quêtes - vérifiez les politiques RLS');
+        return;
+      }
+
+      console.log(`[QUESTS] ✅ Créé ${createdProgress?.length || 0} quest_progress`);
+
+      // Récupérer à nouveau les quest_progress non complétés
+      const { data: newQuestProgress, error: refetchErr } = await supabase
+        .from('quest_progress')
+        .select('*')
+        .eq('user_id', userId)
+        .eq('completed', false);
+
+      if (refetchErr || !newQuestProgress || newQuestProgress.length === 0) {
+        console.error('[QUESTS] ❌ Impossible de récupérer quest_progress après création');
+        return;
+      }
+
+      // Continuer avec les nouvelles données
+      questProgress = newQuestProgress;
+      console.log(`[QUESTS] ✅ Continuation avec ${questProgress.length} quêtes non complétées`);
+    }
+
+    console.log('[QUESTS] ✅ Progress trouvé:', questProgress.length, 'quêtes non complétées');
 
     const updates: Array<{ id: string; current_value: number; completed: boolean; completed_at: string | null }> = [];
     const timestamp = new Date().toISOString();
@@ -281,53 +453,133 @@ async function updateDailyQuests(
       .select('*');
 
     if (questsError) {
-      console.error('Erreur récupération daily_quests:', questsError);
+      console.error('[QUESTS] Erreur fetch templates:', questsError);
       return;
     }
 
+    console.log('[QUESTS] Données partie:', { points: gameData.points, streak: gameData.streak, mode: gameData.mode });
+
     for (const progress of questProgress) {
+      console.log(`[QUESTS] 🎯 Traitement quête: ${progress.quest_key}`);
       const questTemplate = dailyQuests?.find(q => q.quest_key === progress.quest_key);
-      if (!questTemplate) continue;
+      if (!questTemplate) {
+        console.warn('[QUESTS] ⚠️ Template non trouvé pour:', progress.quest_key);
+        continue;
+      }
 
       let shouldUpdate = false;
       let newValue = progress.current_value;
+      const key = progress.quest_key;
+      console.log(`[QUESTS] 📝 ${key}: valeur actuelle=${progress.current_value}, target=${questTemplate.target_value}`);
 
-      // Incrémenter les quêtes selon leur type
-      if (progress.quest_key === 'daily_play_3') {
-        // +1 partie jouée
+      // === QUÊTES DE JEU (incrémenter +1 à chaque partie) ===
+      if (key.startsWith('daily_play_') || key.startsWith('weekly_play_') || key.startsWith('monthly_play_')) {
         newValue = progress.current_value + 1;
         shouldUpdate = true;
-      } else if (progress.quest_key === 'daily_streak_5' && gameData.streak >= 5) {
-        // Marquer comme complète si streak >= 5
-        newValue = questTemplate.target_value;
-        shouldUpdate = true;
-      } else if (progress.quest_key === 'daily_precision_80') {
-        // Calculer la précision (points / max_points_possible)
-        // Note: cette logique dépend de votre jeu, à adapter
-        const precision = Math.min(100, (gameData.points / 1000) * 100);
-        if (precision >= 80) {
+        console.log(`[QUESTS] ✓ Type: PLAY - ${progress.current_value} → ${newValue}`);
+      }
+      // === QUÊTES DE SCORE ONE-SHOT (daily_score_XXXX - atteindre le score en une partie) ===
+      else if (key.startsWith('daily_score_')) {
+        if (gameData.points >= questTemplate.target_value) {
           newValue = questTemplate.target_value;
           shouldUpdate = true;
+          console.log(`[QUESTS] ✓ Type: DAILY_SCORE - Score ${gameData.points} >= target ${questTemplate.target_value} - COMPLÉTÉE!`);
+        } else {
+          console.log(`[QUESTS] ⏭️ Type: DAILY_SCORE - Score ${gameData.points} < target ${questTemplate.target_value} - Pas encore atteint`);
         }
-      } else if (progress.quest_key === 'daily_score_500' && gameData.points >= 500) {
-        // Marquer comme complète si score >= 500
+      }
+      // === QUÊTES DE SCORE (cumul de points sur plusieurs parties) ===
+      else if (key.includes('_score_') && !key.includes('high_score')) {
+        newValue = progress.current_value + gameData.points;
+        shouldUpdate = true;
+        console.log(`[QUESTS] ✓ Type: SCORE_CUMUL - Ajout de ${gameData.points} points: ${progress.current_value} → ${newValue}`);
+      }
+      // === QUÊTES DE SCORE HIGH (meilleur score) ===
+      else if (key.includes('high_score') && gameData.points >= questTemplate.target_value) {
         newValue = questTemplate.target_value;
         shouldUpdate = true;
+        console.log(`[QUESTS] ✓ Type: HIGH_SCORE - Score ${gameData.points} >= target ${questTemplate.target_value}`);
+      }
+      // === QUÊTES DE STREAK (réponses correctes dans la partie) ===
+      else if (key.includes('_streak_') || key === 'daily_high_streak' || key === 'weekly_long_streak' || key === 'monthly_streak_master') {
+        const maxAnswerStreak = gameData.gameStats?.maxAnswerStreak || 0;
+        console.log(`[QUESTS] 📊 Type: STREAK - maxAnswerStreak=${maxAnswerStreak}, target=${questTemplate.target_value}`);
+        if (maxAnswerStreak >= questTemplate.target_value) {
+          newValue = questTemplate.target_value;
+          shouldUpdate = true;
+          console.log(`[QUESTS] ✓ Type: STREAK - Streak atteint!`);
+        } else {
+          console.log(`[QUESTS] ⏭️ Type: STREAK - Pas encore atteint`);
+        }
+      }
+      // === QUÊTES SPÉCIFIQUES ===
+      else if (key === 'daily_both_modes' || key === 'weekly_both_modes') {
+        // Vérifier qu'on a joué les 2 modes différents
+        const period = key.startsWith('daily') ? 'daily' : 'weekly';
+        const modesPlayed = await checkModesPlayed(userId, period, gameData.mode);
+
+        if (modesPlayed >= 2) {
+          newValue = 2; // Complété
+          shouldUpdate = true;
+          console.log(`[QUESTS] ✓ Type: BOTH_MODES - Les 2 modes ont été joués (${period})`);
+        } else if (modesPlayed === 1) {
+          newValue = 1; // Un seul mode joué pour l'instant
+          shouldUpdate = true;
+          console.log(`[QUESTS] ⏳ Type: BOTH_MODES - 1/2 modes joués (${period})`);
+        }
+      }
+      else if (key === 'daily_speed_master') {
+        // TEMPORAIRE: speedMaster est un boolean, pas implémenté correctement
+        // Pour l'instant on ignore cette quête jusqu'à ce que speedMaster soit un compteur
+        console.log(`[QUESTS] ⚠️ Type: SPEED_MASTER - Non implémenté (speedMaster est boolean)`);
+      }
+      else if (key === 'daily_no_mistake_5') {
+        // Vérifie si le streak de la partie est >= 5 (one-shot)
+        const maxStreak = gameData.gameStats?.maxAnswerStreak || 0;
+        if (maxStreak >= 5) {
+          newValue = questTemplate.target_value;
+          shouldUpdate = true;
+          console.log(`[QUESTS] ✓ Type: NO_MISTAKE - Streak de ${maxStreak} >= 5 - COMPLÉTÉE!`);
+        }
+      }
+      else if (key === 'daily_precision_perfect' || key === 'weekly_precision_master') {
+        if (gameData.mode === 'date' && gameData.gameStats?.perfectRound) {
+          newValue = progress.current_value + 1;
+          shouldUpdate = true;
+        }
+      }
+      else if (key === 'monthly_daily_login') {
+        // Géré ailleurs (connexion quotidienne)
+      }
+      else if (key === 'monthly_weekly_quests' || key === 'weekly_daily_quests') {
+        // Géré par un trigger côté base ou via un système séparé
       }
 
       if (shouldUpdate) {
         const isCompleted = newValue >= questTemplate.target_value;
+        console.log(`[QUESTS] ✏️ MISE À JOUR: ${key}: ${progress.current_value} → ${newValue}/${questTemplate.target_value} ${isCompleted ? '✅ COMPLÉTÉE' : '⏳ En cours'}`);
+
         updates.push({
           id: progress.id,
           current_value: newValue,
           completed: isCompleted,
           completed_at: isCompleted ? timestamp : null,
         });
+      } else {
+        console.log(`[QUESTS] ⏭️ PAS DE MISE À JOUR pour ${key}`);
       }
     }
 
+    console.log(`[QUESTS] 📊 ===== RÉSUMÉ DES MISES À JOUR =====`);
+    console.log(`[QUESTS] 📊 Total mises à jour à appliquer:`, updates.length);
+    if (updates.length > 0) {
+      console.log(`[QUESTS] 📊 Détails:`, updates.map(u => `ID=${u.id.substring(0, 8)}..., value=${u.current_value}, completed=${u.completed}`));
+    }
+
     // Appliquer les mises à jour
+    console.log(`[QUESTS] 💾 ===== APPLICATION DES MISES À JOUR EN BASE =====`);
     for (const update of updates) {
+      console.log(`[QUESTS] 💾 Updating quest_progress ID=${update.id.substring(0, 8)}...`);
       const { error: updateError } = await supabase
         .from('quest_progress')
         .update({
@@ -339,19 +591,27 @@ async function updateDailyQuests(
         .eq('id', update.id);
 
       if (updateError) {
-        console.error('Erreur mise à jour quest_progress:', updateError);
+        console.error('[QUESTS] ❌ Erreur update DB pour ID', update.id, ':', updateError);
+      } else {
+        console.log(`[QUESTS] ✅ Mise à jour réussie pour ID=${update.id.substring(0, 8)}...`);
       }
 
       // Si la quête est complétée, ajouter l'XP
-      if (update.completed && !questProgress.find(q => q.id === update.id)?.completed) {
-        const quest = dailyQuests?.find(q => q.key === questProgress.find(qp => qp.id === update.id)?.quest_key);
-        if (quest) {
+      const progressBefore = questProgress.find(q => q.id === update.id);
+      if (update.completed && !progressBefore?.completed) {
+        const quest = dailyQuests?.find(q => q.quest_key === progressBefore?.quest_key);
+        if (quest?.xp_reward) {
+          console.log(`[QUESTS] 🎉 QUÊTE COMPLÉTÉE: ${quest.title} - Attribution de ${quest.xp_reward} XP`);
           await awardQuestXP(userId, quest.xp_reward);
+          console.log(`[QUESTS] ✅ XP attribué avec succès`);
         }
       }
     }
+
+    console.log(`[QUESTS] ✅ ===== FIN updateDailyQuests =====`);
   } catch (error) {
-    console.error('Erreur dans updateDailyQuests:', error);
+    console.error('[QUESTS] ❌ ===== ERREUR CRITIQUE dans updateDailyQuests =====');
+    console.error('[QUESTS] ❌', error);
   }
 }
 

@@ -11,9 +11,17 @@ import {
   StatusBar,
   ActivityIndicator
 } from 'react-native';
+import * as AuthSession from 'expo-auth-session';
+import * as WebBrowser from 'expo-web-browser';
+import { FontAwesome } from '@expo/vector-icons';
 import { supabase } from '../../lib/supabase/supabaseClients';
 import { router, useFocusEffect, useNavigation } from 'expo-router';
 import { FirebaseAnalytics } from '../../lib/firebase';
+
+WebBrowser.maybeCompleteAuthSession();
+
+const APP_AUTH_SCHEME = 'juno2';
+const GOOGLE_REDIRECT_PATH = 'auth/callback';
 
 // --- NOUVEAU THÈME CLAIR (Basé sur logo Quandi) ---
 const THEME = {
@@ -48,6 +56,7 @@ export default function SignUp() {
   const [errorMessage, setErrorMessage] = useState('');
   const [successMessage, setSuccessMessage] = useState('');
   const [isSigningUp, setIsSigningUp] = useState(false);
+  const [isGoogleSigningUp, setIsGoogleSigningUp] = useState(false);
 
   useFocusEffect(
     useCallback(() => {
@@ -209,6 +218,87 @@ export default function SignUp() {
     // Retiré le finally car setIsSigningUp(false) est géré dans failSignup et après la redirection/timeout
   };
 
+  const handleGoogleSignUp = async () => {
+    console.log('🔐 Starting Google signup process...');
+    FirebaseAnalytics.logEvent('signup_attempt', { method: 'google' });
+    setErrorMessage('');
+    setSuccessMessage('');
+    setIsGoogleSigningUp(true);
+
+    try {
+      const redirectTo = AuthSession.makeRedirectUri({
+        scheme: APP_AUTH_SCHEME,
+        path: GOOGLE_REDIRECT_PATH,
+        useProxy: false,
+      });
+
+      const { data, error } = await supabase.auth.signInWithOAuth({
+        provider: 'google',
+        options: {
+          queryParams: {
+            access_type: 'offline',
+            prompt: 'consent',
+          },
+          redirectTo,
+          skipBrowserRedirect: true,
+        },
+      });
+
+      if (error) {
+        console.error('❌ Google signup error:', error.message);
+        FirebaseAnalytics.logEvent('signup_failed', {
+          reason: 'google_oauth_error',
+          message: error.message.substring(0, 100),
+        });
+        setErrorMessage('Inscription Google indisponible pour le moment. Veuillez réessayer.');
+        return;
+      }
+
+      if (!data?.url) {
+        console.error('❌ Google signup error: No redirect URL returned from Supabase.');
+        FirebaseAnalytics.logEvent('signup_failed', {
+          reason: 'google_no_url',
+        });
+        setErrorMessage('Inscription Google indisponible pour le moment. Veuillez réessayer.');
+        return;
+      }
+
+      const authResult = await WebBrowser.openAuthSessionAsync(
+        data.url,
+        redirectTo
+      );
+
+      switch (authResult.type) {
+        case 'success':
+          console.log('✅ Google OAuth success, awaiting Supabase session callback.');
+          FirebaseAnalytics.logEvent('sign_up', { method: 'google' });
+          break;
+        case 'dismiss':
+        case 'cancel':
+          console.log('ℹ️ Google OAuth cancelled by user.');
+          FirebaseAnalytics.logEvent('signup_failed', { reason: 'google_cancelled' });
+          setErrorMessage('Inscription Google annulée.');
+          break;
+        case 'locked':
+          console.warn('⚠️ Google OAuth flow is already in progress.');
+          setErrorMessage('Une autre tentative de connexion est déjà en cours.');
+          break;
+        default:
+          console.warn('🔁 Google OAuth ended with unexpected result type:', authResult.type);
+      }
+    } catch (err) {
+      console.error('❌ Unexpected Google signup error:', err);
+      const message = err instanceof Error ? err.message : String(err);
+      FirebaseAnalytics.logEvent('signup_failed', {
+        reason: 'google_unexpected_error',
+        message: message.substring(0, 100),
+      });
+      setErrorMessage('Une erreur est survenue avec Google. Veuillez réessayer.');
+    } finally {
+      setIsGoogleSigningUp(false);
+    }
+  };
+
 
   return (
     <SafeAreaView style={styles.safeArea}>
@@ -217,6 +307,21 @@ export default function SignUp() {
         keyboardShouldPersistTaps="handled" // Important pour que le tap sur le bouton fonctionne même si clavier ouvert
       >
         <Text style={styles.title}>Inscription</Text>
+
+        <TouchableOpacity
+          style={[styles.googleButton, (isSigningUp || isGoogleSigningUp) && styles.buttonDisabled]}
+          onPress={handleGoogleSignUp}
+          disabled={isSigningUp || isGoogleSigningUp}
+        >
+          {isGoogleSigningUp ? (
+            <ActivityIndicator color={THEME.text} />
+          ) : (
+            <View style={styles.googleButtonContent}>
+              <FontAwesome name="google" size={20} color={THEME.text} />
+              <Text style={styles.googleButtonText}>S'inscrire avec Google</Text>
+            </View>
+          )}
+        </TouchableOpacity>
 
         <TextInput
           style={styles.input}
@@ -256,9 +361,9 @@ export default function SignUp() {
         {successMessage ? <Text style={styles.success}>{successMessage}</Text> : null}
 
         <TouchableOpacity
-          style={[styles.button, (isSigningUp || !nickname.trim() || !email.trim() || !password || password.length < 6) && styles.buttonDisabled]}
+          style={[styles.button, (isSigningUp || isGoogleSigningUp || !nickname.trim() || !email.trim() || !password || password.length < 6) && styles.buttonDisabled]}
           onPress={handleSignUp}
-          disabled={isSigningUp || !nickname.trim() || !email.trim() || !password || password.length < 6}
+          disabled={isSigningUp || isGoogleSigningUp || !nickname.trim() || !email.trim() || !password || password.length < 6}
         >
           {isSigningUp ? (
             <ActivityIndicator color={THEME.button.primary.text} />
@@ -268,9 +373,9 @@ export default function SignUp() {
         </TouchableOpacity>
 
          <TouchableOpacity
-            style={[styles.goBackButton, isSigningUp && styles.buttonDisabled]} // Désactiver visuellement si en cours
-            onPress={() => !isSigningUp && router.push('/auth/login')}
-            disabled={isSigningUp}
+            style={[styles.goBackButton, (isSigningUp || isGoogleSigningUp) && styles.buttonDisabled]} // Désactiver visuellement si en cours
+            onPress={() => !(isSigningUp || isGoogleSigningUp) && router.push('/auth/login')}
+            disabled={isSigningUp || isGoogleSigningUp}
          >
             <Text style={styles.goBackText}>Déjà un compte ? Se connecter</Text>
          </TouchableOpacity>
@@ -326,6 +431,30 @@ const styles = StyleSheet.create({
   },
   buttonDisabled: {
     opacity: 0.6 // Opacité pour état désactivé
+  },
+  googleButton: {
+    backgroundColor: THEME.background.main,
+    borderColor: THEME.border,
+    borderWidth: 1,
+    borderRadius: 8,
+    paddingVertical: 14,
+    paddingHorizontal: 15,
+    alignItems: 'center',
+    justifyContent: 'center',
+    flexDirection: 'row',
+    marginBottom: 20,
+    minHeight: 50,
+  },
+  googleButtonContent: {
+    flexDirection: 'row',
+    alignItems: 'center',
+    justifyContent: 'center',
+  },
+  googleButtonText: {
+    color: THEME.text,
+    fontSize: 16,
+    fontWeight: '600',
+    marginLeft: 12,
   },
   buttonText: {
     color:'#0A173D', // Texte Blanc

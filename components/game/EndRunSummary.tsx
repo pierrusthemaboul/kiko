@@ -35,7 +35,6 @@ export default function EndRunSummary({ mode, points, result, next, onClose }: E
           <View style={{ height: 8, borderRadius: 8, backgroundColor: '#eee' }}>
             <View style={{ width: `${Math.max(0, Math.min(100, next.pct))}%`, height: 8, borderRadius: 8, backgroundColor: '#999' }} />
           </View>
-          <Text style={{ fontSize: 12 }}>{next.xpNeeded} XP restants</Text>
         </View>
       )}
 
