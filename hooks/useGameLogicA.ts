@@ -53,8 +53,7 @@ export function useGameLogicA(initialEvent?: string, modeId?: string) {
   const pendingAdDisplayRef = useRef<"interstitial" | "rewarded" | "gameOver" | "levelUp" | null>(null);
 
   const setPendingAdDisplay = useCallback((value: "interstitial" | "rewarded" | "gameOver" | "levelUp" | null) => {
-    setPendingAdDisplayState((prev) => {
-      console.log(`[PENDING AD] Setting to: ${value} (was: ${prev})`);
+    setPendingAdDisplayState(prev => {
       pendingAdDisplayRef.current = value; // Sync ref
       return value;
     });
@@ -585,7 +584,6 @@ export function useGameLogicA(initialEvent?: string, modeId?: string) {
       setIsWaitingForCountdown(true);
 
       if (isAnswerCorrect) {
-        console.log('[Audio] GameLogicA: correct answer – triggering SFX', { eventId: newEvent.id, streak });
         playCorrectSound();
         const newStreak = streak + 1;
         setStreak(newStreak);
@@ -620,7 +618,6 @@ export function useGameLogicA(initialEvent?: string, modeId?: string) {
         addEventToLevel(eventSummaryItem);
 
         setUser((prev) => {
-          console.log(`[SET USER] Called for level up check. Current level: ${prev.level}, events done: ${prev.eventsCompletedInLevel + 1}`);
           const updatedPoints = prev.points + pointsEarned;
           const eventsDone = prev.eventsCompletedInLevel + 1;
 
@@ -635,8 +632,6 @@ export function useGameLogicA(initialEvent?: string, modeId?: string) {
 
           const config = LEVEL_CONFIGS[prev.level];
           if (config && eventsDone >= config.eventsNeeded) {
-            console.log(`[LEVEL UP] 🎉 Completing level ${prev.level}, advancing to level ${prev.level + 1}`);
-            console.log(`[LEVEL UP] Current state - Points: ${updatedPoints}, Events done: ${eventsDone}/${config.eventsNeeded}`);
 
             trackLevelCompleted(prev.level, config.name || `Niveau ${prev.level}`, eventsDone, updatedPoints);
             finalizeCurrentLevelHistory(levelCompletedEvents); // Use levelCompletedEvents here
@@ -644,30 +639,23 @@ export function useGameLogicA(initialEvent?: string, modeId?: string) {
             updated.level += 1;
             updated.eventsCompletedInLevel = 0;
 
-            console.log(`[LEVEL UP] New level: ${updated.level}, resetting events counter to 0`);
-
             setCurrentLevelConfig({ ...LEVEL_CONFIGS[updated.level], eventsSummary: [] });
             resetCurrentLevelEvents(); // Reset events for the *new* level
             resetAntiqueCount(); // Reset antique count for the new level
 
             setShowLevelModal(true);
             setIsLevelPaused(true);
-
-            console.log('[Audio] GameLogicA: level up – triggering SFX', { level: updated.level });
             playLevelUpSound();
 
             // Pub après avoir complété le niveau 1 (passage au niveau 2), puis tous les 5 niveaux
             const completedLevel = prev.level; // Le niveau qui vient d'être complété
             const newLevel = updated.level; // Le nouveau niveau qu'on atteint
             const shouldShowAd = completedLevel === 1 || completedLevel % 5 === 0;
-            console.log(`[LEVEL UP AD] Completed level: ${completedLevel}, new level: ${newLevel}, should show ad: ${shouldShowAd}`);
 
             if (shouldShowAd) {
-              console.log(`[LEVEL UP AD] ✅ Triggering levelUp ad (completed level ${completedLevel})`);
               setPendingAdDisplay('levelUp');
               FirebaseAnalytics.ad('interstitial', 'triggered', 'level_up', newLevel);
             } else {
-              console.log(`[LEVEL UP AD] ❌ No ad (completed level ${completedLevel})`);
             }
 
             checkRewards({ type: 'level', value: updated.level }, updated);
@@ -680,12 +668,9 @@ export function useGameLogicA(initialEvent?: string, modeId?: string) {
             }, 750); // Shorter delay for correct answers
           }
 
-          console.log(`[SET USER] Returning updated user - level: ${updated.level}, points: ${updated.points}`);
           return updated;
         });
-        console.log(`[SET USER] setUser callback completed`);
       } else { // Incorrect Answer
-        console.log('[Audio] GameLogicA: incorrect answer – triggering SFX', { eventId: newEvent.id, livesBefore: user.lives });
         playIncorrectSound();
         setStreak(0);
 
@@ -879,7 +864,6 @@ export function useGameLogicA(initialEvent?: string, modeId?: string) {
     setIsGameOver(true);
     setIsCountdownActive(false);
     setIsLevelPaused(true); // Pause the game logic
-    console.log('[Audio] GameLogicA: game over – triggering SFX', { points: user.points, level: user.level });
     playGameOverSound();
     setLeaderboardsReady(false);
 
@@ -904,10 +888,7 @@ export function useGameLogicA(initialEvent?: string, modeId?: string) {
       // Vérifier si l'utilisateur est connecté via le profil déjà chargé
       const userId = profile?.id;
 
-      console.log('[END GAME] User check:', { userId, hasProfile: !!profile });
-
       if (!userId) {
-        console.log('[END GAME] ⚠️ Mode invité détecté - Quêtes NON mises à jour');
         // For guests, show their score and the current high score
         setEndSummary(null);
         setEndSummaryError(null);
@@ -926,7 +907,6 @@ export function useGameLogicA(initialEvent?: string, modeId?: string) {
       }
 
       // Logged-in user logic
-      console.log('[END GAME] ✅ Utilisateur connecté:', userId);
       const currentDisplayName = user.name || 'Joueur'; // Use fetched name or default
       const finalPoints = user.points;
       const economyMode: 'classic' | 'date' = gameMode.variant === 'precision' ? 'date' : 'classic';
@@ -947,13 +927,6 @@ export function useGameLogicA(initialEvent?: string, modeId?: string) {
             maxAnswerStreak: user.maxStreak, // Meilleur streak de réponses dans la partie
           };
 
-          console.log('[useGameLogicA] Appel applyEndOfRunEconomy avec stats:', {
-            runId,
-            mode: economyMode,
-            points: finalPoints,
-            gameStats,
-          });
-
           const summary = await applyEndOfRunEconomy({
             runId,
             userId,
@@ -961,8 +934,6 @@ export function useGameLogicA(initialEvent?: string, modeId?: string) {
             points: finalPoints,
             gameStats,
           });
-
-          console.log('[useGameLogicA] applyEndOfRunEconomy réussi:', summary);
 
           setEndSummary({
             mode: economyMode,
@@ -1108,8 +1079,6 @@ export function useGameLogicA(initialEvent?: string, modeId?: string) {
     const currentPointsState = user.points;
     const referenceEvent = previousEvent; // Use the event just answered correctly
 
-    console.log(`[HANDLE LEVEL UP] 🎮 Starting for level ${currentLevelState}, points: ${currentPointsState}`);
-
     // --- Pre-computation and validation ---
     if (!referenceEvent) {
       console.error('[HANDLE LEVEL UP] ❌ No reference event!');
@@ -1121,21 +1090,16 @@ export function useGameLogicA(initialEvent?: string, modeId?: string) {
 
     const nextConfig = LEVEL_CONFIGS[currentLevelState]; // Config for the level *just completed* (user.level was already incremented)
     if (!nextConfig) {
-      console.log('[HANDLE LEVEL UP] 🏆 No more levels!');
       setError('Félicitations ! Vous avez terminé tous les niveaux disponibles !');
       FirebaseAnalytics.error('config_missing_on_levelup', `Level ${currentLevelState} config missing`, 'handleLevelUp');
       endGame(); // Treat as game end if no next level config
       return; // Stop execution
     }
 
-    console.log(`[HANDLE LEVEL UP] Config found: ${nextConfig.name}, need ${nextConfig.eventsNeeded} events`);
-
     // --- State Resets for New Level ---
     setShowLevelModal(false); // Hide the modal first
-    console.log('[HANDLE LEVEL UP] Modal hidden');
 
     resetTimer(timeLimit); // Reset timer for the new level
-    console.log(`[HANDLE LEVEL UP] Timer reset to ${timeLimit}s`);
     // resetLevelCompletedEvents(); // Already done when finalizing history
     // resetCurrentLevelEvents(); // Already done when user state was updated
     setIsWaitingForCountdown(false); // Not waiting for next event yet
@@ -1155,13 +1119,10 @@ export function useGameLogicA(initialEvent?: string, modeId?: string) {
     // --- Ad Handling ---
     // Utiliser la ref pour avoir la valeur la plus récente
     const currentPendingAd = pendingAdDisplayRef.current;
-    console.log(`[HANDLE LEVEL UP] Ad check - pendingAdDisplay: ${currentPendingAd}, canShowAd: ${canShowAd()}`);
     if (currentPendingAd === 'levelUp' && canShowAd()) {
-      console.log('[HANDLE LEVEL UP] ✅ Showing levelUp interstitial ad');
       showLevelUpInterstitial(); // Show the ad *after* resetting state but *before* selecting the next event
       // DO NOT clear pendingAdDisplay here! It will be cleared by the ad system after showing
     } else {
-      console.log('[HANDLE LEVEL UP] ❌ No ad to show');
       setPendingAdDisplay(null); // Clear only if we're NOT showing an ad
     }
 

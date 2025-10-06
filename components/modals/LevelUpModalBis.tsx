@@ -98,9 +98,6 @@ const LevelUpModalBis: React.FC<LevelUpModalBisProps> = ({
       // Une façon simple est de prendre seulement le nombre requis pour ce niveau
       const eventsLimit = Math.min(eventsSummary.length, requiredEvents);
       const recentEvents = eventsSummary.slice(-eventsLimit);
-      
-      console.log(`[LevelUpModalBis] Visible=${visible}, targetLevel=${targetLevel}, EventsTotal=${eventsSummary.length}, Filtered=${recentEvents.length}`);
-      
       setFilteredEvents(recentEvents);
     } else {
       setFilteredEvents([]);
@@ -257,7 +254,6 @@ const LevelUpModalBis: React.FC<LevelUpModalBisProps> = ({
                     style={styles.eventImage}
                     resizeMode="cover"
                     // Fallback pour les images qui ne se chargent pas
-                    onError={() => console.log(`[LevelUpModalBis] Image error for: ${event.illustration_url}`)}
                   />
                   <LinearGradient
                     colors={['transparent', 'rgba(0,0,0,0.8)']}

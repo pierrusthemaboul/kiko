@@ -3,6 +3,29 @@ import { RewardedAd, RewardedAdEventType, AdEventType } from 'react-native-googl
 import { getAdUnitId } from '@/lib/config/adConfig';
 import { FirebaseAnalytics } from '@/lib/firebase';
 
+const REWARDED_PLAY_LOG_ENABLED = (() => {
+  try {
+    if (typeof process !== 'undefined' && process.env) {
+      const flag = process.env.EXPO_PUBLIC_ADS_LOGS ?? process.env.ADS_DEBUG_LOGS;
+      return flag === 'verbose';
+    }
+  } catch {}
+  return false;
+})();
+
+const rewardedLog = (level: 'log' | 'warn' | 'error', message: string, ...args: unknown[]) => {
+  if (level === 'error') {
+    console.error(`[RewardedPlayAd] ${message}`, ...args);
+    return;
+  }
+  if (!REWARDED_PLAY_LOG_ENABLED) return;
+  if (level === 'warn') {
+    console.warn(`[RewardedPlayAd] ${message}`, ...args);
+    return;
+  }
+  console.log(`[RewardedPlayAd] ${message}`, ...args);
+};
+
 const rewardedPlayAd = RewardedAd.createForAdRequest(
   getAdUnitId('REWARDED_EXTRA_PLAY'),
   { requestNonPersonalizedAdsOnly: true }
@@ -17,7 +40,7 @@ export function useRewardedPlayAd() {
     const loadedListener = rewardedPlayAd.addAdEventListener(
       RewardedAdEventType.LOADED,
       () => {
-        console.log('[RewardedPlayAd] Ad loaded');
+        rewardedLog('log', 'Ad loaded');
         setIsLoaded(true);
         FirebaseAnalytics.ad('rewarded', 'loaded', 'extra_play', 0);
       }
@@ -26,7 +49,7 @@ export function useRewardedPlayAd() {
     const errorListener = rewardedPlayAd.addAdEventListener(
       AdEventType.ERROR,
       (error) => {
-        console.warn('[RewardedPlayAd] Failed to load:', error);
+        rewardedLog('warn', 'Failed to load:', error);
         setIsLoaded(false);
         FirebaseAnalytics.ad('rewarded', 'failed', 'extra_play', 0);
         // Retry after 30s
@@ -37,7 +60,7 @@ export function useRewardedPlayAd() {
     const openedListener = rewardedPlayAd.addAdEventListener(
       AdEventType.OPENED,
       () => {
-        console.log('[RewardedPlayAd] Ad opened');
+        rewardedLog('log', 'Ad opened');
         setIsShowing(true);
         setRewardEarned(false);
         FirebaseAnalytics.ad('rewarded', 'opened', 'extra_play', 0);
@@ -47,7 +70,7 @@ export function useRewardedPlayAd() {
     const closedListener = rewardedPlayAd.addAdEventListener(
       AdEventType.CLOSED,
       () => {
-        console.log('[RewardedPlayAd] Ad closed');
+        rewardedLog('log', 'Ad closed');
         setIsLoaded(false);
         setIsShowing(false);
         FirebaseAnalytics.ad('rewarded', 'closed', 'extra_play', 0);
@@ -59,7 +82,7 @@ export function useRewardedPlayAd() {
     const earnedListener = rewardedPlayAd.addAdEventListener(
       RewardedAdEventType.EARNED_REWARD,
       (reward) => {
-        console.log('[RewardedPlayAd] Reward earned:', reward);
+        rewardedLog('log', 'Reward earned:', reward);
         setRewardEarned(true);
         FirebaseAnalytics.ad('rewarded', 'earned_reward', 'extra_play', 0);
         FirebaseAnalytics.reward('EXTRA_PLAY', 1, 'ad_reward', 'completed', 0, 0);
@@ -80,11 +103,11 @@ export function useRewardedPlayAd() {
 
   const showAd = useCallback(() => {
     if (!isLoaded) {
-      console.warn('[RewardedPlayAd] Ad not loaded yet');
+      rewardedLog('warn', 'Ad not loaded yet');
       return false;
     }
     if (isShowing) {
-      console.warn('[RewardedPlayAd] Ad already showing');
+      rewardedLog('warn', 'Ad already showing');
       return false;
     }
     try {
@@ -92,7 +115,7 @@ export function useRewardedPlayAd() {
       rewardedPlayAd.show();
       return true;
     } catch (error) {
-      console.error('[RewardedPlayAd] Error showing ad:', error);
+      rewardedLog('error', 'Error showing ad:', error);
       FirebaseAnalytics.error('ad_show_error', error instanceof Error ? error.message : 'Unknown', 'useRewardedPlayAd');
       return false;
     }

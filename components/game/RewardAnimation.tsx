@@ -30,8 +30,6 @@ const RewardAnimation: React.FC<RewardAnimationProps> = ({
   const startAnimation = useCallback(() => {
     // Éviter de lancer plusieurs animations
     if (isAnimationStarted.current || !isMountedRef.current) return;
-    
-    console.log(`[RewardAnimation] Starting animation for ${type}, amount: ${amount}`);
     isAnimationStarted.current = true;
 
     // Déterminer la position finale en fonction du type et de la cible
@@ -39,7 +37,6 @@ const RewardAnimation: React.FC<RewardAnimationProps> = ({
 
     // Si une position cible est fournie ET que ses valeurs sont valides (non NaN), on l'utilise
     if (targetPosition && !isNaN(targetPosition.x) && !isNaN(targetPosition.y)) {
-      console.log(`[RewardAnimation] Using provided target position: x=${targetPosition.x}, y=${targetPosition.y}`);
       destinationX = targetPosition.x;
       destinationY = targetPosition.y;
     } else {
@@ -51,13 +48,11 @@ const RewardAnimation: React.FC<RewardAnimationProps> = ({
         destinationX = screenWidth * 0.20; // Position par défaut pour les points
         destinationY = 40;
       }
-      console.log(`[RewardAnimation] Using default position: x=${destinationX}, y=${destinationY}`);
     }
 
     // Calcul des décalages par rapport au centre de l'écran
     const offsetX = destinationX - (screenWidth / 2);
     const offsetY = destinationY - (screenHeight / 2);
-    console.log(`[RewardAnimation] Calculated offsets for animation: x=${offsetX}, y=${offsetY}`);
 
     // Réinitialisation des valeurs
     translateX.setValue(0);
@@ -127,12 +122,6 @@ const RewardAnimation: React.FC<RewardAnimationProps> = ({
     animationSequence.start(({ finished }) => {
       if (!isMountedRef.current) return;
       
-      if (finished) {
-        console.log(`[RewardAnimation] Animation completed successfully`);
-      } else {
-        console.log(`[RewardAnimation] Animation interrupted, still calling onComplete`);
-      }
-      
       // Appeler onComplete dans tous les cas pour éviter les blocages
       if (onComplete) {
         onComplete();
@@ -157,7 +146,6 @@ const RewardAnimation: React.FC<RewardAnimationProps> = ({
     // Assurer que l'animation se termine après un certain temps, même en cas de problème
     const safetyTimer = setTimeout(() => {
       if (isMountedRef.current) {
-        console.log('[RewardAnimation] Safety timeout reached, forcing completion');
         if (onComplete) {
           onComplete();
         }
@@ -177,8 +165,6 @@ const RewardAnimation: React.FC<RewardAnimationProps> = ({
     // essayer de lancer l'animation
     if (!isAnimationStarted.current && targetPosition && 
         !isNaN(targetPosition.x) && !isNaN(targetPosition.y)) {
-      console.log(`[RewardAnimation] Target position updated, trying to start animation`);
-      
       const timer = setTimeout(() => {
         if (isMountedRef.current && !isAnimationStarted.current) {
           startAnimation();

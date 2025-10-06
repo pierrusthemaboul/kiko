@@ -340,7 +340,12 @@ export function useEventSelector({
     // Debouncing pour éviter les appels multiples rapprochés
     const now = Date.now();
     if (now - lastSelectionTime < DEBOUNCE_DELAY) {
-      console.warn('[useEventSelector] Debounced - too many rapid calls');
+      if (explainOn) {
+        explainLog('SELECTOR_DEBOUNCED', {
+          elapsed: now - lastSelectionTime,
+          threshold: DEBOUNCE_DELAY,
+        });
+      }
       return null;
     }
     setLastSelectionTime(now);
@@ -421,7 +426,12 @@ export function useEventSelector({
 
         return jumpEvent;
       } else {
-        console.warn(`[useEventSelector] ⚠️ Échec du saut temporel - aucun candidat trouvé`);
+        if (explainOn) {
+          explainLog('FORCED_JUMP_NO_CANDIDATE', {
+            referenceYear: refYear,
+            attemptedJumpDistance: jumpDistance,
+          });
+        }
         // Continuer vers sélection normale si échec
       }
     }
@@ -562,7 +572,11 @@ export function useEventSelector({
     // Fallback ultime si toujours vide
     if (finalEvents.length === 0) {
       try { devLog('FALLBACK_REASON', { level: userLevel, reason: 'empty_pool_after_constraints' }); } catch {}
-      console.warn('[useEventSelector] Fallback - sélection aléatoire');
+      if (explainOn) {
+        explainLog('SELECTOR_FALLBACK_RANDOM', {
+          exclusions: exclusionAcc.size(),
+        });
+      }
       finalEvents = preFilteredEvents.slice(0, 10).map(evt => {
         const score = Math.random() * 100;
         const parts = { difficulty: 0, notorieteBonus: 0, timeGap: 0, recencyPenalty: 0, freqPenalty: 0, jitter: score };

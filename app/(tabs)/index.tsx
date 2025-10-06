@@ -83,17 +83,14 @@ const AnimatedSplashScreen = ({ onAnimationEnd }) => {
   const playSplashSound = useCallback(async () => {
     try {
       const playbackVolume = IS_TEST_BUILD ? 0 : 0.18;
-      console.log('[Audio] Splash: preparing sound', { playbackVolume, isTestBuild: IS_TEST_BUILD });
       const { sound } = await Audio.Sound.createAsync(
         require('../../assets/sounds/361261__japanyoshithegamer__8-bit-spaceship-startup.wav'),
         { volume: playbackVolume }
       );
       soundRef.current = sound;
-      console.log('[Audio] Splash: playback starting');
       await soundRef.current.playAsync();
       soundRef.current.setOnPlaybackStatusUpdate((status) => {
         if (status.isLoaded && status.didJustFinish) {
-          console.log('[Audio] Splash: playback finished, unloading');
           soundRef.current?.unloadAsync().catch((unloadError) => {
             console.warn('[Audio] Splash: unload failed', unloadError);
           });

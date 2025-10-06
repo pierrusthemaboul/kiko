@@ -5,6 +5,26 @@ import { partiesPerDayFromXP, rankFromXP } from 'lib/economy/ranks';
 import { calculateNewStreak, getTodayDateString } from '@/utils/questHelpers';
 import { shouldUnlockAchievement, ACHIEVEMENTS } from './quests';
 
+const ECONOMY_LOG_ENABLED = (() => {
+  try {
+    if (typeof process !== 'undefined' && process.env) {
+      const flag = process.env.EXPO_PUBLIC_ECONOMY_LOGS ?? process.env.ECONOMY_LOGS;
+      return flag === 'verbose';
+    }
+  } catch {}
+  return false;
+})();
+
+const economyLog = (...args: unknown[]) => {
+  if (!ECONOMY_LOG_ENABLED) return;
+  console.log(...args);
+};
+
+const economyWarn = (...args: unknown[]) => {
+  if (!ECONOMY_LOG_ENABLED) return;
+  console.warn(...args);
+};
+
 type GameMode = 'classic' | 'date';
 
 type ProfileRow = Database['public']['Tables']['profiles']['Row'];
@@ -101,11 +121,11 @@ function buildRunPayload(params: {
 }
 
 export async function applyEndOfRunEconomy({ runId, userId, mode, points, gameStats }: ApplyParams): Promise<ApplySummary> {
-  console.log('[ECONOMY] ===== DEBUT applyEndOfRunEconomy =====');
-  console.log('[ECONOMY] Params:', { runId, userId, mode, points, gameStats });
-  console.log('[ECONOMY] 📍 User ID:', userId);
-  console.log('[ECONOMY] 🎮 Mode:', mode);
-  console.log('[ECONOMY] 🎯 Points:', points);
+  economyLog('[ECONOMY] ===== DEBUT applyEndOfRunEconomy =====');
+  economyLog('[ECONOMY] Params:', { runId, userId, mode, points, gameStats });
+  economyLog('[ECONOMY] 📍 User ID:', userId);
+  economyLog('[ECONOMY] 🎮 Mode:', mode);
+  economyLog('[ECONOMY] 🎯 Points:', points);
 
   const safePoints = Number.isFinite(points) ? points : 0;
   const xpEarned = pointsToXP(safePoints, mode);
@@ -205,19 +225,19 @@ export async function applyEndOfRunEconomy({ runId, userId, mode, points, gameSt
   }
 
   // Mettre à jour les quêtes quotidiennes
-  console.log('[ECONOMY] 📋 ===== APPEL updateDailyQuests =====');
-  console.log('[ECONOMY] 📋 User ID:', userId);
-  console.log('[ECONOMY] 📋 Points partie:', safePoints);
-  console.log('[ECONOMY] 📋 Streak:', newStreak);
-  console.log('[ECONOMY] 📋 Mode:', mode);
-  console.log('[ECONOMY] 📋 Game stats:', gameStats);
+  economyLog('[ECONOMY] 📋 ===== APPEL updateDailyQuests =====');
+  economyLog('[ECONOMY] 📋 User ID:', userId);
+  economyLog('[ECONOMY] 📋 Points partie:', safePoints);
+  economyLog('[ECONOMY] 📋 Streak:', newStreak);
+  economyLog('[ECONOMY] 📋 Mode:', mode);
+  economyLog('[ECONOMY] 📋 Game stats:', gameStats);
   await updateDailyQuests(userId, {
     points: safePoints,
     streak: newStreak,
     mode,
     gameStats,
   });
-  console.log('[ECONOMY] ✅ updateDailyQuests terminé');
+  economyLog('[ECONOMY] ✅ updateDailyQuests terminé');
 
   // Vérifier et débloquer les achievements
   const unlockedAchievements = await checkAndUnlockAchievements(userId, {
@@ -350,12 +370,12 @@ async function updateDailyQuests(
   }
 ): Promise<void> {
   try {
-    console.log('[QUESTS] 🔍 ===== DEBUT updateDailyQuests =====');
-    console.log('[QUESTS] 🔍 User ID:', userId);
-    console.log('[QUESTS] 🔍 Game data:', gameData);
+    economyLog('[QUESTS] 🔍 ===== DEBUT updateDailyQuests =====');
+    economyLog('[QUESTS] 🔍 User ID:', userId);
+    economyLog('[QUESTS] 🔍 Game data:', gameData);
 
     // Récupérer la progression des quêtes
-    console.log('[QUESTS] 📊 Récupération de quest_progress...');
+    economyLog('[QUESTS] 📊 Récupération de quest_progress...');
     const { data: questProgressData, error: fetchError } = await supabase
       .from('quest_progress')
       .select('*')
@@ -364,7 +384,7 @@ async function updateDailyQuests(
 
     let questProgress = questProgressData;
 
-    console.log('[QUESTS] 📊 Résultat fetch:', {
+    economyLog('[QUESTS] 📊 Résultat fetch:', {
       count: questProgress?.length,
       error: fetchError?.message,
       data: questProgress
@@ -376,9 +396,9 @@ async function updateDailyQuests(
     }
 
     if (!questProgress || questProgress.length === 0) {
-      console.log('[QUESTS] ⚠️ ===== AUCUNE PROGRESSION TROUVÉE =====');
-      console.log('[QUESTS] ⚠️ User ID recherché:', userId);
-      console.log('[QUESTS] 🔧 Tentative de création automatique des quest_progress...');
+      economyLog('[QUESTS] ⚠️ ===== AUCUNE PROGRESSION TROUVÉE =====');
+      economyLog('[QUESTS] ⚠️ User ID recherché:', userId);
+      economyLog('[QUESTS] 🔧 Tentative de création automatique des quest_progress...');
 
       // Récupérer toutes les quêtes actives
       const { data: allActiveQuests, error: allQuestsErr } = await supabase
@@ -392,11 +412,11 @@ async function updateDailyQuests(
       }
 
       if (!allActiveQuests || allActiveQuests.length === 0) {
-        console.log('[QUESTS] ⚠️ Aucune quête active dans daily_quests');
+        economyLog('[QUESTS] ⚠️ Aucune quête active dans daily_quests');
         return;
       }
 
-      console.log(`[QUESTS] 📋 Trouvé ${allActiveQuests.length} quêtes actives, création de quest_progress...`);
+      economyLog(`[QUESTS] 📋 Trouvé ${allActiveQuests.length} quêtes actives, création de quest_progress...`);
 
       // Calculer la date de reset (lendemain à minuit)
       const tomorrow = new Date();
@@ -419,11 +439,11 @@ async function updateDailyQuests(
 
       if (createErr) {
         console.error('[QUESTS] ❌ Erreur création quest_progress:', createErr);
-        console.log('[QUESTS] ⚠️ Impossible de créer les quêtes - vérifiez les politiques RLS');
+        economyLog('[QUESTS] ⚠️ Impossible de créer les quêtes - vérifiez les politiques RLS');
         return;
       }
 
-      console.log(`[QUESTS] ✅ Créé ${createdProgress?.length || 0} quest_progress`);
+      economyLog(`[QUESTS] ✅ Créé ${createdProgress?.length || 0} quest_progress`);
 
       // Récupérer à nouveau les quest_progress non complétés
       const { data: newQuestProgress, error: refetchErr } = await supabase
@@ -439,10 +459,10 @@ async function updateDailyQuests(
 
       // Continuer avec les nouvelles données
       questProgress = newQuestProgress;
-      console.log(`[QUESTS] ✅ Continuation avec ${questProgress.length} quêtes non complétées`);
+      economyLog(`[QUESTS] ✅ Continuation avec ${questProgress.length} quêtes non complétées`);
     }
 
-    console.log('[QUESTS] ✅ Progress trouvé:', questProgress.length, 'quêtes non complétées');
+    economyLog('[QUESTS] ✅ Progress trouvé:', questProgress.length, 'quêtes non complétées');
 
     const updates: Array<{ id: string; current_value: number; completed: boolean; completed_at: string | null }> = [];
     const timestamp = new Date().toISOString();
@@ -457,59 +477,59 @@ async function updateDailyQuests(
       return;
     }
 
-    console.log('[QUESTS] Données partie:', { points: gameData.points, streak: gameData.streak, mode: gameData.mode });
+    economyLog('[QUESTS] Données partie:', { points: gameData.points, streak: gameData.streak, mode: gameData.mode });
 
     for (const progress of questProgress) {
-      console.log(`[QUESTS] 🎯 Traitement quête: ${progress.quest_key}`);
+      economyLog(`[QUESTS] 🎯 Traitement quête: ${progress.quest_key}`);
       const questTemplate = dailyQuests?.find(q => q.quest_key === progress.quest_key);
       if (!questTemplate) {
-        console.warn('[QUESTS] ⚠️ Template non trouvé pour:', progress.quest_key);
+        economyWarn('[QUESTS] ⚠️ Template non trouvé pour:', progress.quest_key);
         continue;
       }
 
       let shouldUpdate = false;
       let newValue = progress.current_value;
       const key = progress.quest_key;
-      console.log(`[QUESTS] 📝 ${key}: valeur actuelle=${progress.current_value}, target=${questTemplate.target_value}`);
+      economyLog(`[QUESTS] 📝 ${key}: valeur actuelle=${progress.current_value}, target=${questTemplate.target_value}`);
 
       // === QUÊTES DE JEU (incrémenter +1 à chaque partie) ===
       if (key.startsWith('daily_play_') || key.startsWith('weekly_play_') || key.startsWith('monthly_play_')) {
         newValue = progress.current_value + 1;
         shouldUpdate = true;
-        console.log(`[QUESTS] ✓ Type: PLAY - ${progress.current_value} → ${newValue}`);
+        economyLog(`[QUESTS] ✓ Type: PLAY - ${progress.current_value} → ${newValue}`);
       }
       // === QUÊTES DE SCORE ONE-SHOT (daily_score_XXXX - atteindre le score en une partie) ===
       else if (key.startsWith('daily_score_')) {
         if (gameData.points >= questTemplate.target_value) {
           newValue = questTemplate.target_value;
           shouldUpdate = true;
-          console.log(`[QUESTS] ✓ Type: DAILY_SCORE - Score ${gameData.points} >= target ${questTemplate.target_value} - COMPLÉTÉE!`);
+          economyLog(`[QUESTS] ✓ Type: DAILY_SCORE - Score ${gameData.points} >= target ${questTemplate.target_value} - COMPLÉTÉE!`);
         } else {
-          console.log(`[QUESTS] ⏭️ Type: DAILY_SCORE - Score ${gameData.points} < target ${questTemplate.target_value} - Pas encore atteint`);
+          economyLog(`[QUESTS] ⏭️ Type: DAILY_SCORE - Score ${gameData.points} < target ${questTemplate.target_value} - Pas encore atteint`);
         }
       }
       // === QUÊTES DE SCORE (cumul de points sur plusieurs parties) ===
       else if (key.includes('_score_') && !key.includes('high_score')) {
         newValue = progress.current_value + gameData.points;
         shouldUpdate = true;
-        console.log(`[QUESTS] ✓ Type: SCORE_CUMUL - Ajout de ${gameData.points} points: ${progress.current_value} → ${newValue}`);
+        economyLog(`[QUESTS] ✓ Type: SCORE_CUMUL - Ajout de ${gameData.points} points: ${progress.current_value} → ${newValue}`);
       }
       // === QUÊTES DE SCORE HIGH (meilleur score) ===
       else if (key.includes('high_score') && gameData.points >= questTemplate.target_value) {
         newValue = questTemplate.target_value;
         shouldUpdate = true;
-        console.log(`[QUESTS] ✓ Type: HIGH_SCORE - Score ${gameData.points} >= target ${questTemplate.target_value}`);
+        economyLog(`[QUESTS] ✓ Type: HIGH_SCORE - Score ${gameData.points} >= target ${questTemplate.target_value}`);
       }
       // === QUÊTES DE STREAK (réponses correctes dans la partie) ===
       else if (key.includes('_streak_') || key === 'daily_high_streak' || key === 'weekly_long_streak' || key === 'monthly_streak_master') {
         const maxAnswerStreak = gameData.gameStats?.maxAnswerStreak || 0;
-        console.log(`[QUESTS] 📊 Type: STREAK - maxAnswerStreak=${maxAnswerStreak}, target=${questTemplate.target_value}`);
+        economyLog(`[QUESTS] 📊 Type: STREAK - maxAnswerStreak=${maxAnswerStreak}, target=${questTemplate.target_value}`);
         if (maxAnswerStreak >= questTemplate.target_value) {
           newValue = questTemplate.target_value;
           shouldUpdate = true;
-          console.log(`[QUESTS] ✓ Type: STREAK - Streak atteint!`);
+          economyLog(`[QUESTS] ✓ Type: STREAK - Streak atteint!`);
         } else {
-          console.log(`[QUESTS] ⏭️ Type: STREAK - Pas encore atteint`);
+          economyLog(`[QUESTS] ⏭️ Type: STREAK - Pas encore atteint`);
         }
       }
       // === QUÊTES SPÉCIFIQUES ===
@@ -521,17 +541,17 @@ async function updateDailyQuests(
         if (modesPlayed >= 2) {
           newValue = 2; // Complété
           shouldUpdate = true;
-          console.log(`[QUESTS] ✓ Type: BOTH_MODES - Les 2 modes ont été joués (${period})`);
+          economyLog(`[QUESTS] ✓ Type: BOTH_MODES - Les 2 modes ont été joués (${period})`);
         } else if (modesPlayed === 1) {
           newValue = 1; // Un seul mode joué pour l'instant
           shouldUpdate = true;
-          console.log(`[QUESTS] ⏳ Type: BOTH_MODES - 1/2 modes joués (${period})`);
+          economyLog(`[QUESTS] ⏳ Type: BOTH_MODES - 1/2 modes joués (${period})`);
         }
       }
       else if (key === 'daily_speed_master') {
         // TEMPORAIRE: speedMaster est un boolean, pas implémenté correctement
         // Pour l'instant on ignore cette quête jusqu'à ce que speedMaster soit un compteur
-        console.log(`[QUESTS] ⚠️ Type: SPEED_MASTER - Non implémenté (speedMaster est boolean)`);
+        economyLog(`[QUESTS] ⚠️ Type: SPEED_MASTER - Non implémenté (speedMaster est boolean)`);
       }
       else if (key === 'daily_no_mistake_5') {
         // Vérifie si le streak de la partie est >= 5 (one-shot)
@@ -539,7 +559,7 @@ async function updateDailyQuests(
         if (maxStreak >= 5) {
           newValue = questTemplate.target_value;
           shouldUpdate = true;
-          console.log(`[QUESTS] ✓ Type: NO_MISTAKE - Streak de ${maxStreak} >= 5 - COMPLÉTÉE!`);
+          economyLog(`[QUESTS] ✓ Type: NO_MISTAKE - Streak de ${maxStreak} >= 5 - COMPLÉTÉE!`);
         }
       }
       else if (key === 'daily_precision_perfect' || key === 'weekly_precision_master') {
@@ -557,7 +577,7 @@ async function updateDailyQuests(
 
       if (shouldUpdate) {
         const isCompleted = newValue >= questTemplate.target_value;
-        console.log(`[QUESTS] ✏️ MISE À JOUR: ${key}: ${progress.current_value} → ${newValue}/${questTemplate.target_value} ${isCompleted ? '✅ COMPLÉTÉE' : '⏳ En cours'}`);
+        economyLog(`[QUESTS] ✏️ MISE À JOUR: ${key}: ${progress.current_value} → ${newValue}/${questTemplate.target_value} ${isCompleted ? '✅ COMPLÉTÉE' : '⏳ En cours'}`);
 
         updates.push({
           id: progress.id,
@@ -566,20 +586,20 @@ async function updateDailyQuests(
           completed_at: isCompleted ? timestamp : null,
         });
       } else {
-        console.log(`[QUESTS] ⏭️ PAS DE MISE À JOUR pour ${key}`);
+        economyLog(`[QUESTS] ⏭️ PAS DE MISE À JOUR pour ${key}`);
       }
     }
 
-    console.log(`[QUESTS] 📊 ===== RÉSUMÉ DES MISES À JOUR =====`);
-    console.log(`[QUESTS] 📊 Total mises à jour à appliquer:`, updates.length);
+    economyLog(`[QUESTS] 📊 ===== RÉSUMÉ DES MISES À JOUR =====`);
+    economyLog(`[QUESTS] 📊 Total mises à jour à appliquer:`, updates.length);
     if (updates.length > 0) {
-      console.log(`[QUESTS] 📊 Détails:`, updates.map(u => `ID=${u.id.substring(0, 8)}..., value=${u.current_value}, completed=${u.completed}`));
+      economyLog(`[QUESTS] 📊 Détails:`, updates.map(u => `ID=${u.id.substring(0, 8)}..., value=${u.current_value}, completed=${u.completed}`));
     }
 
     // Appliquer les mises à jour
-    console.log(`[QUESTS] 💾 ===== APPLICATION DES MISES À JOUR EN BASE =====`);
+    economyLog(`[QUESTS] 💾 ===== APPLICATION DES MISES À JOUR EN BASE =====`);
     for (const update of updates) {
-      console.log(`[QUESTS] 💾 Updating quest_progress ID=${update.id.substring(0, 8)}...`);
+      economyLog(`[QUESTS] 💾 Updating quest_progress ID=${update.id.substring(0, 8)}...`);
       const { error: updateError } = await supabase
         .from('quest_progress')
         .update({
@@ -593,7 +613,7 @@ async function updateDailyQuests(
       if (updateError) {
         console.error('[QUESTS] ❌ Erreur update DB pour ID', update.id, ':', updateError);
       } else {
-        console.log(`[QUESTS] ✅ Mise à jour réussie pour ID=${update.id.substring(0, 8)}...`);
+        economyLog(`[QUESTS] ✅ Mise à jour réussie pour ID=${update.id.substring(0, 8)}...`);
       }
 
       // Si la quête est complétée, ajouter l'XP
@@ -601,14 +621,14 @@ async function updateDailyQuests(
       if (update.completed && !progressBefore?.completed) {
         const quest = dailyQuests?.find(q => q.quest_key === progressBefore?.quest_key);
         if (quest?.xp_reward) {
-          console.log(`[QUESTS] 🎉 QUÊTE COMPLÉTÉE: ${quest.title} - Attribution de ${quest.xp_reward} XP`);
+          economyLog(`[QUESTS] 🎉 QUÊTE COMPLÉTÉE: ${quest.title} - Attribution de ${quest.xp_reward} XP`);
           await awardQuestXP(userId, quest.xp_reward);
-          console.log(`[QUESTS] ✅ XP attribué avec succès`);
+          economyLog(`[QUESTS] ✅ XP attribué avec succès`);
         }
       }
     }
 
-    console.log(`[QUESTS] ✅ ===== FIN updateDailyQuests =====`);
+    economyLog(`[QUESTS] ✅ ===== FIN updateDailyQuests =====`);
   } catch (error) {
     console.error('[QUESTS] ❌ ===== ERREUR CRITIQUE dans updateDailyQuests =====');
     console.error('[QUESTS] ❌', error);
@@ -637,7 +657,7 @@ async function awardQuestXP(userId: string, xpAmount: number): Promise<void> {
 
     if (updateError) throw updateError;
 
-    console.log(`🎯 Quête complétée! +${xpAmount} XP`);
+    economyLog(`🎯 Quête complétée! +${xpAmount} XP`);
   } catch (error) {
     console.error('Erreur attribution XP quête:', error);
   }
@@ -694,7 +714,7 @@ async function checkAndUnlockAchievements(
         await awardQuestXP(userId, achievement.xp_bonus);
 
         unlockedKeys.push(key);
-        console.log(`🏆 Achievement débloqué: ${achievement.title} (+${achievement.xp_bonus} XP)`);
+        economyLog(`🏆 Achievement débloqué: ${achievement.title} (+${achievement.xp_bonus} XP)`);
       }
     }
 

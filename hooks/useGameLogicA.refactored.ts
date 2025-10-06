@@ -405,7 +405,6 @@ export function useGameLogicA(initialEvent?: string, _modeId?: string) {
     
     if (isAnswerCorrect) {
       // === BONNE RÉPONSE ===
-      console.log('[Audio] GameLogicA.refactored: correct answer – triggering SFX', { eventId: newEvent.id, streak });
       playCorrectSound();
       const newStreak = streak + 1;
       setStreak(newStreak);
@@ -452,7 +451,6 @@ export function useGameLogicA(initialEvent?: string, _modeId?: string) {
           resetCurrentLevelEvents();
           setShowLevelModal(true);
           setIsLevelPaused(true);
-          console.log('[Audio] GameLogicA.refactored: level up – triggering SFX', { level: updatedUser.level });
           playLevelUpSound();
           
           if (prev.level === 1 || prev.level === 6 || prev.level % 5 === 0) {
@@ -476,7 +474,6 @@ export function useGameLogicA(initialEvent?: string, _modeId?: string) {
       
     } else {
       // === MAUVAISE RÉPONSE ===
-      console.log('[Audio] GameLogicA.refactored: incorrect answer – triggering SFX', { eventId: newEvent.id, livesBefore: user.lives });
       playIncorrectSound();
       setStreak(0);
       
@@ -629,7 +626,6 @@ export function useGameLogicA(initialEvent?: string, _modeId?: string) {
     setIsGameOver(true);
     setIsCountdownActive(false);
     setIsLevelPaused(true);
-    console.log('[Audio] GameLogicA.refactored: game over – triggering SFX', { points: user.points, level: user.level });
     playGameOverSound();
     setLeaderboardsReady(false);
     

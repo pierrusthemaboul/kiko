@@ -2,13 +2,24 @@
 import { TestIds } from 'react-native-google-mobile-ads';
 
 const USE_TEST_IDS = __DEV__;
+const AD_CONFIG_LOG_ENABLED = (() => {
+  try {
+    if (typeof process !== 'undefined' && process.env) {
+      const flag = process.env.EXPO_PUBLIC_AD_CONFIG_LOGS ?? process.env.AD_CONFIG_LOGS;
+      return flag === 'verbose';
+    }
+  } catch {}
+  return false;
+})();
 
 // Variable globale pour stocker le consentement
 let _canShowPersonalizedAds = false;
 
 export function setAdPersonalization(canPersonalize: boolean) {
   _canShowPersonalizedAds = canPersonalize;
-  console.log('[adConfig] Ad personalization:', canPersonalize ? 'ENABLED' : 'DISABLED');
+  if (AD_CONFIG_LOG_ENABLED) {
+    console.log('[adConfig] Ad personalization:', canPersonalize ? 'ENABLED' : 'DISABLED');
+  }
 }
 
 export function getAdRequestOptions() {

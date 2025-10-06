@@ -1,6 +1,21 @@
 import { supabase } from '@/lib/supabase/supabaseClients';
 import type { DailyQuest } from '@/lib/economy/quests';
 
+const QUEST_LOG_ENABLED = (() => {
+  try {
+    if (typeof process !== 'undefined' && process.env) {
+      const flag = process.env.EXPO_PUBLIC_QUEST_LOGS ?? process.env.QUEST_LOGS;
+      return flag === 'verbose';
+    }
+  } catch {}
+  return false;
+})();
+
+const questLog = (...args: unknown[]) => {
+  if (!QUEST_LOG_ENABLED) return;
+  console.log(...args);
+};
+
 /**
  * Génère une seed basée sur la date du jour
  * Permet d'avoir les mêmes quêtes pour tous les utilisateurs un jour donné
@@ -160,7 +175,7 @@ export async function getAllQuestsWithProgress(userId: string) {
 
     // Si aucune progression n'existe, initialiser les quêtes
     if (!progressData || progressData.length === 0) {
-      console.log('[QUESTS INIT] 🚀 Initialisation pour user:', userId);
+      questLog('[QUESTS INIT] 🚀 Initialisation pour user:', userId);
       await initializeQuestProgress(userId, [...dailyQuests, ...weeklyQuests, ...monthlyQuests]);
 
       // Récupérer à nouveau après initialisation
@@ -169,7 +184,7 @@ export async function getAllQuestsWithProgress(userId: string) {
         .select('*')
         .eq('user_id', userId);
 
-      console.log('[QUESTS INIT] ✅ Créé:', newProgressData?.length || 0, 'entrées');
+      questLog('[QUESTS INIT] ✅ Créé:', newProgressData?.length || 0, 'entrées');
 
       const mapQuestsWithProgress = (quests: DailyQuest[]) =>
         quests.map((quest) => ({

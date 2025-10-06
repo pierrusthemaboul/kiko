@@ -256,7 +256,6 @@ export function usePrecisionGame() {
           niveau_difficulte: typeof event.niveau_difficulte === 'number' ? event.niveau_difficulte : 4,
         }));
 
-      console.log(`[usePrecisionGame] Loaded ${validEvents.length} events from Supabase`);
       setEvents(validEvents as Event[]);
     } catch (err) {
       setError('Impossible de charger les événements.');
@@ -294,9 +293,6 @@ export function usePrecisionGame() {
       }
 
       const picked = candidates[Math.floor(Math.random() * candidates.length)];
-      console.log(
-        `[usePrecisionGame] pickEventForLevel level=${targetLevel.label} candidates=${candidates.length} picked=${picked?.id}`
-      );
       used.add(picked.id);
       return picked;
     },
@@ -305,7 +301,6 @@ export function usePrecisionGame() {
 
   const startRun = useCallback(() => {
     if (initializingRef.current) return;
-    console.log('[usePrecisionGame] startRun called');
     initializingRef.current = true;
 
     clearTimer();

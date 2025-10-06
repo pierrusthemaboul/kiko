@@ -78,7 +78,6 @@ export default function SignUp() {
   const handleSignUp = async () => {
     if (isSigningUp) return;
 
-    console.log('🔐 Starting signup process...');
     FirebaseAnalytics.logEvent('signup_attempt');
     setIsSigningUp(true);
     setErrorMessage('');
@@ -104,7 +103,6 @@ export default function SignUp() {
 
     try {
       // 3. Vérification Pseudo Existant (inchangée)
-      console.log('🔍 Checking if nickname exists:', nickname.trim());
       const { count, error: checkProfileError } = await supabase
         .from('profiles')
         .select('id', { count: 'exact', head: true })
@@ -118,11 +116,7 @@ export default function SignUp() {
       if (count !== null && count > 0) { // Vérifier count explicitement
         return failSignup('nickname_exists', 'Ce pseudonyme est déjà utilisé. Veuillez en choisir un autre.');
       }
-      console.log('✅ Nickname available.');
-
-
       // 4. Inscription Supabase (inchangée)
-      console.log('📧 Attempting Supabase signup for email:', email.trim());
       const { data: signUpData, error: signUpError } = await supabase.auth.signUp({
         email: email.trim(),
         password: password,
@@ -174,10 +168,8 @@ export default function SignUp() {
       }
 
       const userId = user.id;
-      console.log('👤 User created/found in Supabase Auth:', userId);
 
       // 5. Création du profil (inchangée)
-      console.log('✍️ Creating user profile...');
       const { error: profileError } = await supabase
         .from('profiles')
         .insert({
@@ -192,7 +184,6 @@ export default function SignUp() {
         console.error("Orphaned user might exist:", userId);
         return failSignup('profile_creation_error', "Erreur lors de la finalisation de l'inscription. Contactez le support si le problème persiste.", profileError.message);
       }
-      console.log('✅ Profile created successfully.');
 
       // 6. Succès (si la confirmation email n'est PAS requise ou déjà faite)
       setSuccessMessage('Compte créé avec succès! Redirection...');
@@ -219,7 +210,6 @@ export default function SignUp() {
   };
 
   const handleGoogleSignUp = async () => {
-    console.log('🔐 Starting Google signup process...');
     FirebaseAnalytics.logEvent('signup_attempt', { method: 'google' });
     setErrorMessage('');
     setSuccessMessage('');
@@ -270,12 +260,10 @@ export default function SignUp() {
 
       switch (authResult.type) {
         case 'success':
-          console.log('✅ Google OAuth success, awaiting Supabase session callback.');
           FirebaseAnalytics.logEvent('sign_up', { method: 'google' });
           break;
         case 'dismiss':
         case 'cancel':
-          console.log('ℹ️ Google OAuth cancelled by user.');
           FirebaseAnalytics.logEvent('signup_failed', { reason: 'google_cancelled' });
           setErrorMessage('Inscription Google annulée.');
           break;

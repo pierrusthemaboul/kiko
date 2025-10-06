@@ -5,6 +5,29 @@ import {
   AdsConsentDebugGeography,
 } from 'react-native-google-mobile-ads';
 
+const AD_CONSENT_LOG_ENABLED = (() => {
+  try {
+    if (typeof process !== 'undefined' && process.env) {
+      const flag = process.env.EXPO_PUBLIC_ADS_LOGS ?? process.env.ADS_DEBUG_LOGS;
+      return flag === 'verbose';
+    }
+  } catch {}
+  return false;
+})();
+
+const consentLog = (level: 'log' | 'warn' | 'error', message: string, ...args: unknown[]) => {
+  if (level === 'error') {
+    console.error(`[AdConsent] ${message}`, ...args);
+    return;
+  }
+  if (!AD_CONSENT_LOG_ENABLED) return;
+  if (level === 'warn') {
+    console.warn(`[AdConsent] ${message}`, ...args);
+    return;
+  }
+  console.log(`[AdConsent] ${message}`, ...args);
+};
+
 /**
  * Hook pour gérer le consentement RGPD (UMP - User Messaging Platform)
  *
@@ -32,7 +55,7 @@ export function useAdConsent() {
         testDeviceIdentifiers: __DEV__ ? ['TEST_DEVICE_ID'] : [],
       });
 
-      console.log('[AdConsent] Consent info:', {
+      consentLog('log', 'Consent info:', {
         isConsentFormAvailable: consentInfo.isConsentFormAvailable,
         status: consentInfo.status,
       });
@@ -42,13 +65,13 @@ export function useAdConsent() {
         consentInfo.isConsentFormAvailable &&
         consentInfo.status === AdsConsentStatus.REQUIRED
       ) {
-        console.log('[AdConsent] Showing consent form...');
+        consentLog('log', 'Showing consent form...');
         const { status } = await AdsConsent.showForm();
-        console.log('[AdConsent] Consent form result:', status);
+        consentLog('log', 'Consent form result:', status);
         setConsentStatus(status);
       } else {
         // Pas besoin de formulaire (hors EU ou déjà donné)
-        console.log('[AdConsent] No form needed, status:', consentInfo.status);
+        consentLog('log', 'No form needed, status:', consentInfo.status);
         setConsentStatus(consentInfo.status);
       }
     } catch (err) {
@@ -66,7 +89,7 @@ export function useAdConsent() {
   const resetConsent = useCallback(async () => {
     try {
       await AdsConsent.reset();
-      console.log('[AdConsent] Consent reset');
+      consentLog('log', 'Consent reset');
       setConsentStatus(null);
       await requestConsent();
     } catch (err) {

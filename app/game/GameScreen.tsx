@@ -32,9 +32,6 @@ import * as NavigationBar from 'expo-navigation-bar';
 
 function ClassicGameScreen({ requestedMode }: { requestedMode?: string }) {
   const router = useRouter();
-  useEffect(() => {
-    console.log(`[ClassicGameScreen] Mounted with requestedMode=${requestedMode ?? 'undefined'}`);
-  }, [requestedMode]);
   const fadeAnim = useRef(new Animated.Value(0)).current;
   const [gameKey, setGameKey] = useState(0); // Utilisé pour forcer le re-rendu du contenu du jeu
   const [isRestarting, setIsRestarting] = useState(false); // État pour afficher l'indicateur lors du redémarrage
@@ -54,7 +51,6 @@ function ClassicGameScreen({ requestedMode }: { requestedMode?: string }) {
 
       try {
         const economyMode: 'classic' | 'date' = gameLogic.gameMode?.variant === 'precision' ? 'date' : 'classic';
-        console.log(`[ClassicGameScreen] Calling startRun with economyMode=${economyMode}`);
         const res = await startRun(economyMode);
 
         if (res.ok) {
@@ -240,9 +236,6 @@ function ClassicGameScreen({ requestedMode }: { requestedMode?: string }) {
 
 function PrecisionGameScreen() {
   const router = useRouter();
-  useEffect(() => {
-    console.log('[PrecisionGameScreen] Mounted');
-  }, []);
   const fadeAnim = useRef(new Animated.Value(0)).current;
   const {
     loading,
@@ -358,22 +351,14 @@ function PrecisionGameScreen() {
 export default function GameScreenPage() {
   const params = useLocalSearchParams();
   const segments = useSegments();
-  console.log(
-    `[GameScreenPage] Segments=${JSON.stringify(segments)} Received params: ${JSON.stringify(params)}`
-  );
-
   const rawMode = (params as { mode?: string | string[] }).mode;
   const resolvedMode = Array.isArray(rawMode) ? rawMode[rawMode.length - 1] : rawMode;
   const mode = typeof resolvedMode === 'string' ? resolvedMode.toLowerCase() : undefined;
 
-  console.log(`[GameScreenPage] Resolved mode: ${mode ?? 'undefined'} (raw: ${resolvedMode ?? 'undefined'})`);
-
   if (mode === 'precision') {
-    console.log('[GameScreenPage] Rendering PrecisionGameScreen');
     return <PrecisionGameScreen />;
   }
 
-  console.log('[GameScreenPage] Rendering ClassicGameScreen');
   const requestedMode = mode;
   return <ClassicGameScreen requestedMode={requestedMode} />;
 }

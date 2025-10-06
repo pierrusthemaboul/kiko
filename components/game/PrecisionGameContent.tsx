@@ -132,25 +132,20 @@ const PrecisionGameContent: React.FC<PrecisionGameContentProps> = ({
   }, []);
 
   const handleDigitPress = useCallback((digit: string) => {
-    console.log('[DIGIT-HANDLER] Called with digit:', digit);
     setInputError(null);
     setGuessValue((prev) => {
-      console.log('[DIGIT-HANDLER] Previous value:', prev, '| Adding:', digit);
       const isNegative = prev.startsWith('-');
       const digits = isNegative ? prev.slice(1) : prev;
       if (digits.length >= MAX_DIGITS) {
-        console.log('[DIGIT-HANDLER] Max digits reached, ignoring');
         return prev;
       }
       const nextDigits = digits + digit;
       const newValue = (isNegative ? '-' : '') + nextDigits;
-      console.log('[DIGIT-HANDLER] New value:', newValue);
       return newValue;
     });
   }, []);
 
   const handleBackspace = useCallback(() => {
-    console.log('[BACKSPACE] Called');
     setInputError(null);
     setGuessValue((prev) => {
       if (prev.length === 0) return prev;
@@ -161,7 +156,6 @@ const PrecisionGameContent: React.FC<PrecisionGameContentProps> = ({
   }, []);
 
   const handleSubmit = useCallback(() => {
-    console.log('[SUBMIT] Called, guessValue:', guessValue);
     if (submitLockRef.current) return;
     const parsed = parseInt(guessValue, 10);
     if (!guessValue || Number.isNaN(parsed)) {
@@ -178,7 +172,6 @@ const PrecisionGameContent: React.FC<PrecisionGameContentProps> = ({
   }, [guessValue, clearAutoAdvance, onSubmitGuess]);
 
   const handleContinue = () => {
-    console.log('[CONTINUE] Continuing to next event');
     if (!lastResult || isGameOver) return;
     clearAutoAdvance();
     if (showDescription) setShowDescription(false);
@@ -188,14 +181,12 @@ const PrecisionGameContent: React.FC<PrecisionGameContentProps> = ({
   };
 
   const handleResultClick = () => {
-    console.log('[EXPAND] Expanding result panel | current:', resultExpanded);
     if (resultExpanded) return;
     clearAutoAdvance();
     setResultExpanded(true);
   };
 
   const toggleResultImageLightbox = () => {
-    console.log('[LIGHTBOX] Toggling image lightbox | current:', resultImageLightbox);
     setResultImageLightbox(!resultImageLightbox);
   };
   
@@ -238,7 +229,6 @@ const PrecisionGameContent: React.FC<PrecisionGameContentProps> = ({
       setResultExpanded(false);
       resultFadeAnim.setValue(0);
     } else {
-      console.log('[RESULT] Expanded state reset to false');
       setResultExpanded(false);
       resultFadeAnim.setValue(0);
       Animated.timing(resultFadeAnim, {
@@ -304,7 +294,6 @@ const PrecisionGameContent: React.FC<PrecisionGameContentProps> = ({
       if (disabled) return;
       setIsPressed(true);
       Haptics.impactAsync(Haptics.ImpactFeedbackStyle.Medium).catch(() => {});
-      console.log('[KEYPAD-PRESS] Button', label || iconName, 'pressed');
 
       // Execute immediately on press in for ALL buttons
       if (isIcon) {

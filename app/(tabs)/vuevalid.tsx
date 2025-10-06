@@ -828,10 +828,11 @@ export default function VueValid() {
                     style={{ width: '100%', height: '100%' }}
                     resizeMode="cover"
                     onError={(error) => {
-                      console.log('=== 🚨 ERREUR IMAGE ===');
-                      console.log('Titre:', currentEvent.titre);
-                      console.log('URL:', currentEvent.illustration_url);
-                      console.log('Erreur complète:', error);
+                      console.error('[vuevalid] Image load error', {
+                        title: currentEvent.titre,
+                        url: currentEvent.illustration_url,
+                        error,
+                      });
                     }}
                   />
                 ) : (

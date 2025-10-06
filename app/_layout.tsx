@@ -124,7 +124,6 @@ export default function RootLayout() {
   useEffect(() => {
     if (!consentLoading) {
       setAdPersonalization(canShowPersonalizedAds);
-      console.log('[RootLayout] RGPD Consent applied:', canShowPersonalizedAds ? 'Personalized Ads' : 'Non-Personalized Ads');
     }
   }, [canShowPersonalizedAds, consentLoading]);
 
@@ -266,4 +265,3 @@ export default function RootLayout() {
     </Stack>
   );
 }
-

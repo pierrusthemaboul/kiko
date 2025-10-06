@@ -14,15 +14,23 @@ const ADS_LOG_ENABLED = (() => {
   try {
     if (typeof process !== 'undefined' && process.env) {
       const flag = process.env.EXPO_PUBLIC_ADS_LOGS ?? process.env.ADS_DEBUG_LOGS;
-      return flag === '1' || flag === 'true';
+      return flag === 'verbose'; // opt-in only when explicitly set to "verbose"
     }
   } catch {} // eslint-disable-line no-empty
   return false;
 })();
 
 const adLog = (level: 'log' | 'warn' | 'error', message: string, ...args: unknown[]) => {
+  if (level === 'error') {
+    console.error(`[useAds] ${message}`, ...args);
+    return;
+  }
   if (!ADS_LOG_ENABLED) return;
-  console[level](`[useAds] ${message}`, ...args);
+  if (level === 'warn') {
+    console.warn(`[useAds] ${message}`, ...args);
+    return;
+  }
+  console.log(`[useAds] ${message}`, ...args);
 };
 
 // ✅ SUPPRIMÉ : const USE_TEST_IDS = __DEV__;

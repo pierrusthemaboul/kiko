@@ -3,6 +3,29 @@ import { InterstitialAd, RewardedAd, AdEventType, RewardedAdEventType } from 're
 import { getAdUnitId } from '@/lib/config/adConfig';
 import { FirebaseAnalytics } from '@/lib/firebase';
 
+const PRECISION_AD_LOG_ENABLED = (() => {
+  try {
+    if (typeof process !== 'undefined' && process.env) {
+      const flag = process.env.EXPO_PUBLIC_ADS_LOGS ?? process.env.ADS_DEBUG_LOGS;
+      return flag === 'verbose';
+    }
+  } catch {}
+  return false;
+})();
+
+const precisionAdLog = (level: 'log' | 'warn' | 'error', message: string, ...args: unknown[]) => {
+  if (level === 'error') {
+    console.error(`[PrecisionAds] ${message}`, ...args);
+    return;
+  }
+  if (!PRECISION_AD_LOG_ENABLED) return;
+  if (level === 'warn') {
+    console.warn(`[PrecisionAds] ${message}`, ...args);
+    return;
+  }
+  console.log(`[PrecisionAds] ${message}`, ...args);
+};
+
 // Instances des pubs pour le mode Précision
 const gameOverInterstitial = InterstitialAd.createForAdRequest(
   getAdUnitId('INTERSTITIAL_PRECISION_GAME_OVER'),
@@ -39,7 +62,7 @@ export function usePrecisionAds() {
     const gameOverLoaded = gameOverInterstitial.addAdEventListener(
       AdEventType.LOADED,
       () => {
-        console.log('[PrecisionAds] Game Over Interstitial loaded');
+        precisionAdLog('log', 'Game Over Interstitial loaded');
         setAdState(prev => ({ ...prev, gameOverLoaded: true }));
         FirebaseAnalytics.ad('interstitial', 'loaded', 'precision_game_over', 0);
       }
@@ -48,7 +71,7 @@ export function usePrecisionAds() {
     const gameOverError = gameOverInterstitial.addAdEventListener(
       AdEventType.ERROR,
       (error) => {
-        console.warn('[PrecisionAds] Game Over failed to load:', error);
+        precisionAdLog('warn', 'Game Over failed to load:', error);
         setAdState(prev => ({ ...prev, gameOverLoaded: false }));
         FirebaseAnalytics.ad('interstitial', 'failed', 'precision_game_over', 0);
         setTimeout(() => gameOverInterstitial.load(), 30000);
@@ -58,7 +81,7 @@ export function usePrecisionAds() {
     const gameOverOpened = gameOverInterstitial.addAdEventListener(
       AdEventType.OPENED,
       () => {
-        console.log('[PrecisionAds] Game Over Interstitial opened');
+        precisionAdLog('log', 'Game Over Interstitial opened');
         setAdState(prev => ({ ...prev, isShowingAd: true }));
         FirebaseAnalytics.ad('interstitial', 'opened', 'precision_game_over', 0);
       }
@@ -67,7 +90,7 @@ export function usePrecisionAds() {
     const gameOverClosed = gameOverInterstitial.addAdEventListener(
       AdEventType.CLOSED,
       () => {
-        console.log('[PrecisionAds] Game Over Interstitial closed');
+        precisionAdLog('log', 'Game Over Interstitial closed');
         setAdState(prev => ({ ...prev, gameOverLoaded: false, isShowingAd: false }));
         gameOverInterstitial.load();
         FirebaseAnalytics.ad('interstitial', 'closed', 'precision_game_over', 0);
@@ -78,7 +101,7 @@ export function usePrecisionAds() {
     const continueLoaded = continueRewardedAd.addAdEventListener(
       RewardedAdEventType.LOADED,
       () => {
-        console.log('[PrecisionAds] Continue Rewarded loaded');
+        precisionAdLog('log', 'Continue Rewarded loaded');
         setAdState(prev => ({ ...prev, continueLoaded: true }));
         FirebaseAnalytics.ad('rewarded', 'loaded', 'precision_continue', 0);
       }
@@ -87,7 +110,7 @@ export function usePrecisionAds() {
     const continueError = continueRewardedAd.addAdEventListener(
       AdEventType.ERROR,
       (error) => {
-        console.warn('[PrecisionAds] Continue Rewarded failed to load:', error);
+        precisionAdLog('warn', 'Continue Rewarded failed to load:', error);
         setAdState(prev => ({ ...prev, continueLoaded: false }));
         FirebaseAnalytics.ad('rewarded', 'failed', 'precision_continue', 0);
         setTimeout(() => continueRewardedAd.load(), 30000);
@@ -97,7 +120,7 @@ export function usePrecisionAds() {
     const continueOpened = continueRewardedAd.addAdEventListener(
       AdEventType.OPENED,
       () => {
-        console.log('[PrecisionAds] Continue Rewarded opened');
+        precisionAdLog('log', 'Continue Rewarded opened');
         setAdState(prev => ({ ...prev, isShowingAd: true, continueRewardEarned: false }));
         FirebaseAnalytics.ad('rewarded', 'opened', 'precision_continue', 0);
       }
@@ -106,7 +129,7 @@ export function usePrecisionAds() {
     const continueClosed = continueRewardedAd.addAdEventListener(
       AdEventType.CLOSED,
       () => {
-        console.log('[PrecisionAds] Continue Rewarded closed');
+        precisionAdLog('log', 'Continue Rewarded closed');
         continueRewardTimeRef.current = Date.now();
 
         setAdState(prev => {
@@ -127,7 +150,7 @@ export function usePrecisionAds() {
     const continueEarned = continueRewardedAd.addAdEventListener(
       RewardedAdEventType.EARNED_REWARD,
       (reward) => {
-        console.log('[PrecisionAds] Continue Reward earned:', reward);
+        precisionAdLog('log', 'Continue Reward earned:', reward);
         setAdState(prev => ({ ...prev, continueRewardEarned: true }));
         FirebaseAnalytics.ad('rewarded', 'earned_reward', 'precision_continue', 0);
         FirebaseAnalytics.reward('CONTINUE_PRECISION', 1, 'ad_reward', 'completed', 0, 0);
@@ -153,11 +176,11 @@ export function usePrecisionAds() {
 
   const showGameOverAd = useCallback(() => {
     if (!adState.gameOverLoaded) {
-      console.warn('[PrecisionAds] Game Over ad not loaded');
+      precisionAdLog('warn', 'Game Over ad not loaded');
       return false;
     }
     if (adState.isShowingAd) {
-      console.warn('[PrecisionAds] Ad already showing');
+      precisionAdLog('warn', 'Ad already showing');
       return false;
     }
     try {
@@ -165,7 +188,7 @@ export function usePrecisionAds() {
       gameOverInterstitial.show();
       return true;
     } catch (error) {
-      console.error('[PrecisionAds] Error showing game over ad:', error);
+      precisionAdLog('error', 'Error showing game over ad:', error);
       FirebaseAnalytics.error('ad_show_error', error instanceof Error ? error.message : 'Unknown', 'usePrecisionAds');
       return false;
     }
@@ -173,15 +196,15 @@ export function usePrecisionAds() {
 
   const showContinueAd = useCallback(() => {
     if (!adState.continueLoaded) {
-      console.warn('[PrecisionAds] Continue ad not loaded');
+      precisionAdLog('warn', 'Continue ad not loaded');
       return false;
     }
     if (adState.isShowingAd) {
-      console.warn('[PrecisionAds] Ad already showing');
+      precisionAdLog('warn', 'Ad already showing');
       return false;
     }
     if (adState.hasContinued) {
-      console.warn('[PrecisionAds] Player already continued once');
+      precisionAdLog('warn', 'Player already continued once');
       return false;
     }
     try {
@@ -190,7 +213,7 @@ export function usePrecisionAds() {
       continueRewardedAd.show();
       return true;
     } catch (error) {
-      console.error('[PrecisionAds] Error showing continue ad:', error);
+      precisionAdLog('error', 'Error showing continue ad:', error);
       FirebaseAnalytics.error('ad_show_error', error instanceof Error ? error.message : 'Unknown', 'usePrecisionAds');
       return false;
     }
@@ -202,7 +225,7 @@ export function usePrecisionAds() {
   }, []);
 
   const resetAdsState = useCallback(() => {
-    console.log('[PrecisionAds] Resetting ads state for new game');
+    precisionAdLog('log', 'Resetting ads state for new game');
     setAdState({
       gameOverLoaded: false,
       continueLoaded: false,
@@ -215,7 +238,7 @@ export function usePrecisionAds() {
       gameOverInterstitial.load();
       continueRewardedAd.load();
     } catch (error) {
-      console.error('[PrecisionAds] Error reloading ads:', error);
+      precisionAdLog('error', 'Error reloading ads:', error);
     }
   }, []);
 

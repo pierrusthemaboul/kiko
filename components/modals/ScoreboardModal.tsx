@@ -72,19 +72,6 @@ const ScoreboardModal: React.FC<ScoreboardModalProps> = ({
     return rawDate;
   }
 
-  useEffect(() => {
-    console.log('[ScoreboardModal] isVisible changed to:', isVisible);
-  }, [isVisible]);
-
-  useEffect(() => {
-    console.log('[ScoreboardModal] levelsHistory:', levelsHistory);
-    if (levelsHistory.length > 0) {
-      levelsHistory.forEach((lh) => {
-        console.log(`--> Niveau ${lh.level} : ${lh.events.length} événement(s)`);
-      });
-    }
-  }, [levelsHistory]);
-
   // Gère l’animation d’ouverture/fermeture du modal
   useEffect(() => {
     if (isVisible) {

@@ -85,13 +85,11 @@ export default function Login() {
   }, [pathname, segments]);
 
   const handleLogin = async () => {
-    console.log('🔐 Starting login process...');
     FirebaseAnalytics.logEvent('login_attempt');
     setIsLoggingIn(true);
     setErrorMessage('');
 
     try {
-      console.log('📧 Attempting login with email:', email.trim());
       const { data, error } = await supabase.auth.signInWithPassword({
         email: email.trim(),
         password: password,
@@ -116,17 +114,13 @@ export default function Login() {
       }
 
       if (data?.session && data.user) {
-        console.log('✅ Session created successfully for user:', data.user.id);
         FirebaseAnalytics.logEvent('login', { method: 'password' });
         FirebaseAnalytics.initialize(data.user.id, false);
 
         if (stayConnected) {
-          console.log('🔄 Setting persistent session (handled by Supabase client)');
         }
 
-        console.log('🚀 Attempting navigation...');
         router.replace('/(tabs)');
-        console.log('✅ Navigation completed via router.replace');
         // Note: setIsLoggingIn(false) n'est pas nécessaire ici car l'écran est remplacé
 
       } else {
@@ -148,7 +142,6 @@ export default function Login() {
   };
 
   const handleGoogleLogin = async () => {
-    console.log('🔐 Starting Google login process...');
     FirebaseAnalytics.logEvent('login_attempt', { method: 'google' });
     setErrorMessage('');
     setIsGoogleLoggingIn(true);
@@ -198,12 +191,10 @@ export default function Login() {
 
       switch (authResult.type) {
         case 'success':
-          console.log('✅ Google OAuth success, awaiting Supabase session callback.');
           FirebaseAnalytics.logEvent('login', { method: 'google' });
           break;
         case 'dismiss':
         case 'cancel':
-          console.log('ℹ️ Google OAuth cancelled by user.');
           FirebaseAnalytics.logEvent('login_failed', { reason: 'google_cancelled' });
           setErrorMessage('Connexion Google annulée.');
           break;
