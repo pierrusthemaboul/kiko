@@ -4,6 +4,7 @@ import { FirebaseAnalytics } from '../../lib/firebase';
 import { Event } from '../types';
 import { usePrecisionAds } from './usePrecisionAds';
 import { applyEndOfRunEconomy } from '../../lib/economy/apply';
+import { useAppStateDetection } from './useAppStateDetection';
 
 // Générateur d'UUID compatible React Native
 function generateUUID(): string {
@@ -636,7 +637,7 @@ export function usePrecisionGame() {
     const actualYear = extractYear(currentEvent.date);
     if (actualYear === null) return;
 
-    // Pénalité de timeout réduite de 350 à 250 HP
+    // Pénalité de timeout : 250 HP
     const hpLoss = 250;
     const scoreGain = 0;
 
@@ -677,6 +678,54 @@ export function usePrecisionGame() {
     }
   }, [currentEvent, finalizeResult, hp, isGameOver, lastResult, level, score, totalAnswered, loadLeaderboards]);
 
+  // Callback pour gérer la sortie de l'application (même pénalité que timeout)
+  const handleAppBackgrounded = useCallback(() => {
+    if (!currentEvent || isGameOver || lastResult) return;
+
+    console.log('[PrecisionGame] App backgrounded during active game - applying penalty');
+
+    const actualYear = extractYear(currentEvent.date);
+    if (actualYear === null) return;
+
+    // Même pénalité qu'un timeout : 250 HP
+    const hpLoss = 250;
+    const scoreGain = 0;
+
+    const previousLevel = level;
+    const nextLevel = getLevelForScore(score);
+    const nextHp = Math.max(0, hp - hpLoss);
+    const nextScore = score;
+
+    setHp(nextHp);
+    setScore(nextScore);
+    finalizeResult({
+      event: currentEvent,
+      guessYear: actualYear,
+      actualYear,
+      difference: 0,
+      absDifference: 0,
+      hpLoss,
+      scoreGain,
+      scoreAfter: nextScore,
+      hpAfter: nextHp,
+      levelBefore: previousLevel.id,
+      levelAfter: nextLevel.id,
+      leveledUp: false,
+      timedOut: true, // Traité comme un timeout
+    });
+
+    setTotalAnswered((prev) => prev + 1);
+
+    if (nextHp <= 0) {
+      setIsTimerPaused(true);
+    } else {
+      FirebaseAnalytics.logEvent('precision_app_backgrounded', {
+        event_id: currentEvent.id,
+        level: previousLevel.id,
+      });
+    }
+  }, [currentEvent, finalizeResult, hp, isGameOver, lastResult, level, score, totalAnswered]);
+
   useEffect(() => {
     if (!currentEvent || isGameOver) {
       clearTimer();
@@ -699,6 +748,14 @@ export function usePrecisionGame() {
       handleTimeout();
     }
   }, [timeLeft, lastResult, isGameOver, handleTimeout]);
+
+  // Détecter la sortie de l'application pendant une partie active
+  const isDetectionActive = !isGameOver && !lastResult && !isTimerPaused && !!currentEvent;
+  useAppStateDetection({
+    onAppBackgrounded: handleAppBackgrounded,
+    isActive: isDetectionActive,
+    currentEventId: currentEvent?.id,
+  });
 
   const timerProgress = useMemo(() => Math.max(0, Math.min(1, timeLeft / MAX_TIME_SECONDS)), [timeLeft]);
 

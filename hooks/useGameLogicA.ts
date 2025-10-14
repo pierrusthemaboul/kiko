@@ -25,6 +25,7 @@ import {
   useEventSelector,
   usePlays, // Importer le nouveau hook
 } from './game';
+import { useAppStateDetection } from './game/useAppStateDetection';
 import { getGameModeConfig, GameModeConfig } from '../constants/gameModes';
 import { applyEndOfRunEconomy } from 'lib/economy/apply';
 
@@ -317,6 +318,85 @@ export function useGameLogicA(initialEvent?: string, modeId?: string) {
     setIsWaitingForCountdown,
   ]);
 
+  // Callback pour gérer la sortie de l'application (même comportement qu'un timeout)
+  const handleAppBackgrounded = useCallback(() => {
+    if (isLevelPaused || isGameOver || isWaitingForCountdown) {
+      return;
+    }
+
+    console.log('[ClassicGame] App backgrounded during active game - applying penalty');
+
+    FirebaseAnalytics.logEvent('app_backgrounded_during_game', {
+      level_id: user.level,
+      events_completed_in_level: user.eventsCompletedInLevel,
+      current_streak: streak,
+      event_id: newEvent?.id || 'unknown',
+    });
+
+    playIncorrectSound();
+    setStreak(0);
+
+    Animated.timing(progressAnim, {
+      toValue: 0,
+      duration: 300,
+      useNativeDriver: false,
+    }).start();
+
+    setUser((prev) => {
+      const newLives = prev.lives - 1;
+      FirebaseAnalytics.logEvent('life_lost', {
+        reason: 'app_backgrounded',
+        remaining_lives: newLives,
+        level_id: prev.level,
+        event_id: newEvent?.id || 'unknown',
+      });
+
+      return newLives <= 0
+        ? { ...prev, lives: 0, streak: 0 }
+        : { ...prev, lives: newLives, streak: 0 };
+    });
+
+    if (user.lives <= 1) {
+      endGame();
+    } else if (newEvent) {
+      setIsCorrect(false);
+      setShowDates(true);
+      setTimeout(() => {
+        if (!isGameOver) {
+          setPreviousEvent(newEvent);
+          setDisplayedEvent(null);
+          selectNewEvent(allEvents, newEvent);
+        }
+      }, 1500);
+    } else {
+      setError('Erreur interne: impossible de charger l\'événement suivant.');
+      setIsGameOver(true);
+      FirebaseAnalytics.error('app_backgrounded_null_event', 'newEvent was null in handleAppBackgrounded', 'handleAppBackgrounded');
+    }
+  }, [
+    isLevelPaused,
+    isGameOver,
+    isWaitingForCountdown,
+    user.level,
+    user.lives,
+    user.eventsCompletedInLevel,
+    streak,
+    newEvent,
+    allEvents,
+    playIncorrectSound,
+    progressAnim,
+    endGame,
+    selectNewEvent,
+    setPreviousEvent,
+    setDisplayedEvent,
+    setError,
+    setIsGameOver,
+    setIsCorrect,
+    setShowDates,
+    setUser,
+    setStreak,
+  ]);
+
   const {
     timeLeft,
     isCountdownActive,
@@ -333,6 +413,14 @@ export function useGameLogicA(initialEvent?: string, modeId?: string) {
     handleTimeout,
     isImageLoaded: false,
     initialTime: timeLimit,
+  });
+
+  // Détecter la sortie de l'application pendant une partie active
+  const isDetectionActive = !isGameOver && !isLevelPaused && !isWaitingForCountdown && !!newEvent && isImageLoaded;
+  useAppStateDetection({
+    onAppBackgrounded: handleAppBackgrounded,
+    isActive: isDetectionActive,
+    currentEventId: newEvent?.id,
   });
 
   const updateGameState = useCallback(
