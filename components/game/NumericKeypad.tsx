@@ -5,6 +5,8 @@ import { Ionicons } from '@expo/vector-icons';
 import { steampunkTheme } from '../../constants/Colors';
 
 const HIT_SLOP = { top: 12, bottom: 12, left: 12, right: 12 };
+const KEY_HEIGHT_RATIO = 1.02;
+export const NUMERIC_KEYPAD_HEIGHT_RATIO = KEY_HEIGHT_RATIO;
 
 type DigitLabel = '0' | '1' | '2' | '3' | '4' | '5' | '6' | '7' | '8' | '9';
 
@@ -17,6 +19,7 @@ interface NumericKeypadProps {
   style?: StyleProp<ViewStyle>;
   keySize?: number;
   gap?: number;
+  keyHeightRatio?: number; // Ratio hauteur/largeur des touches (par défaut KEY_HEIGHT_RATIO)
 }
 
 interface KeyConfig {
@@ -107,7 +110,11 @@ const KeyButton = memo<KeyButtonProps>(({ config, disabled, hasGuess, onDigit, o
       )}
       <View style={styles.keyContent} pointerEvents="none">
         {isDelete ? (
-          <Ionicons name="backspace-outline" size={32} color={steampunkTheme.secondaryText} />
+          <Ionicons
+            name="backspace-outline"
+            size={Math.max(20, Math.round(labelFontSize * 1.1))}
+            color={steampunkTheme.secondaryText}
+          />
         ) : (
           <Text
             style={[
@@ -135,20 +142,30 @@ const NumericKeypadComponent: React.FC<NumericKeypadProps> = ({
   style,
   keySize,
   gap = 8,
+  keyHeightRatio,
 }) => {
   const spacing = typeof gap === 'number' && gap >= 0 ? gap : 8;
-  const verticalPadding = Math.max(2, Math.floor(spacing / 2));
+  const verticalPadding = Math.max(1, Math.floor(spacing / 3));
+  const effectiveHeightRatio = keyHeightRatio ?? KEY_HEIGHT_RATIO;
   const derivedKeyStyle =
     keySize && keySize > 0
-      ? { width: keySize, height: keySize, flex: 0 }
+      ? {
+          width: keySize,
+          height: Math.round(keySize * effectiveHeightRatio),
+          flex: 0,
+        }
       : styles.keyFlexible;
-  const labelFontSize = keySize && keySize > 0 ? Math.max(20, Math.round(keySize * 0.45)) : 28;
+  const labelFontSize = keySize && keySize > 0 ? Math.max(14, Math.round(keySize * 0.42)) : 22;
 
   return (
     <View
       style={[
         styles.container,
-        { paddingHorizontal: spacing, paddingVertical: verticalPadding, gap: spacing },
+        {
+          paddingHorizontal: 0,
+          paddingVertical: verticalPadding,
+          gap: spacing,
+        },
         style,
       ]}
     >
@@ -179,14 +196,16 @@ NumericKeypad.displayName = 'NumericKeypad';
 
 const styles = StyleSheet.create({
   container: {
-    width: '100%',
+    alignSelf: 'center',
+    alignItems: 'stretch',
   },
   row: {
     flexDirection: 'row',
-    justifyContent: 'space-between',
+    justifyContent: 'center',
+    width: '100%',
   },
   keyBase: {
-    borderRadius: 20,
+    borderRadius: 14,
     justifyContent: 'center',
     alignItems: 'center',
     overflow: 'hidden',
@@ -199,21 +218,21 @@ const styles = StyleSheet.create({
   },
   keyLabel: {
     color: '#E8D9A8',
-    fontSize: 28,
+    fontSize: 24,
     fontWeight: 'bold',
     textAlign: 'center',
     includeFontPadding: false,
   },
   keyFlexible: {
     flex: 1,
-    aspectRatio: 1,
+    aspectRatio: 1 / KEY_HEIGHT_RATIO,
   },
   submitKey: {
     backgroundColor: '#E0B457',
   },
   submitKeyLabel: {
     color: '#0B0A0A',
-    fontSize: 18,
+    fontSize: 14,
     fontWeight: 'bold',
   },
   deleteKey: {
