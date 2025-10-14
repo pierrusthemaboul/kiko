@@ -1,4 +1,4 @@
-import React, { useEffect, useRef } from 'react';
+import React, { useEffect, useRef, useState } from 'react';
 import { View, Text, Modal, StyleSheet, Animated, Pressable, Platform } from 'react-native';
 import { Ionicons } from '@expo/vector-icons';
 import { LinearGradient } from 'expo-linear-gradient';
@@ -13,6 +13,8 @@ interface PrecisionContinueModalProps {
   adLoaded: boolean;
 }
 
+const AD_TIMEOUT_MS = 15000; // 15 secondes
+
 const PrecisionContinueModal: React.FC<PrecisionContinueModalProps> = ({
   isVisible,
   currentScore,
@@ -21,20 +23,54 @@ const PrecisionContinueModal: React.FC<PrecisionContinueModalProps> = ({
   adLoaded,
 }) => {
   const scaleAnim = useRef(new Animated.Value(0)).current;
+  const [adTimedOut, setAdTimedOut] = useState(false);
+  const timeoutRef = useRef<NodeJS.Timeout | null>(null);
 
   useEffect(() => {
     if (isVisible) {
       scaleAnim.setValue(0);
+      setAdTimedOut(false);
+
       Animated.spring(scaleAnim, {
         toValue: 1,
         useNativeDriver: true,
         tension: 50,
         friction: 7,
       }).start();
+
+      // Timeout : si la pub ne charge pas après 15s, afficher un message
+      if (!adLoaded) {
+        timeoutRef.current = setTimeout(() => {
+          if (!adLoaded) {
+            setAdTimedOut(true);
+          }
+        }, AD_TIMEOUT_MS);
+      }
+
+      return () => {
+        if (timeoutRef.current) {
+          clearTimeout(timeoutRef.current);
+          timeoutRef.current = null;
+        }
+      };
     } else {
       scaleAnim.setValue(0);
+      setAdTimedOut(false);
+      if (timeoutRef.current) {
+        clearTimeout(timeoutRef.current);
+        timeoutRef.current = null;
+      }
     }
-  }, [isVisible, scaleAnim]);
+  }, [isVisible, scaleAnim, adLoaded]);
+
+  // Clear timeout si la pub se charge avant la fin du timeout
+  useEffect(() => {
+    if (adLoaded && timeoutRef.current) {
+      clearTimeout(timeoutRef.current);
+      timeoutRef.current = null;
+      setAdTimedOut(false);
+    }
+  }, [adLoaded]);
 
   return (
     <Modal transparent visible={isVisible} animationType="none" statusBarTranslucent>
@@ -62,6 +98,16 @@ const PrecisionContinueModal: React.FC<PrecisionContinueModalProps> = ({
               <Text style={styles.message}>
                 Vos HP sont épuisés ! Regardez une publicité pour récupérer 500 HP et continuer votre partie.
               </Text>
+              {!adLoaded && !adTimedOut && (
+                <Text style={styles.loadingHint}>
+                  ⏳ Chargement de la publicité en cours...
+                </Text>
+              )}
+              {!adLoaded && adTimedOut && (
+                <Text style={styles.errorHint}>
+                  ⚠️ Aucune publicité disponible pour le moment. Vous pouvez réessayer dans une prochaine partie.
+                </Text>
+              )}
               <View style={styles.rewardBox}>
                 <Ionicons name="gift" size={24} color={steampunkTheme.goldAccent} />
                 <Text style={styles.rewardText}>+500 HP</Text>
@@ -143,8 +189,9 @@ const styles = StyleSheet.create({
   },
   scoreLabel: {
     fontSize: 14,
-    color: steampunkTheme.textMuted,
+    color: steampunkTheme.goldAccent,
     marginBottom: 4,
+    opacity: 0.8,
   },
   scoreValue: {
     fontSize: 36,
@@ -156,7 +203,7 @@ const styles = StyleSheet.create({
   },
   message: {
     fontSize: 16,
-    color: steampunkTheme.textPrimary,
+    color: steampunkTheme.primaryText,
     textAlign: 'center',
     lineHeight: 24,
     marginBottom: 16,
@@ -174,6 +221,20 @@ const styles = StyleSheet.create({
     fontSize: 18,
     fontWeight: '600',
     color: steampunkTheme.goldAccent,
+  },
+  loadingHint: {
+    fontSize: 13,
+    color: steampunkTheme.secondaryText,
+    textAlign: 'center',
+    fontStyle: 'italic',
+    marginBottom: 8,
+  },
+  errorHint: {
+    fontSize: 13,
+    color: '#C04D3A',
+    textAlign: 'center',
+    fontStyle: 'italic',
+    marginBottom: 8,
   },
   buttonsContainer: {
     gap: 12,
@@ -205,16 +266,16 @@ const styles = StyleSheet.create({
     color: '#0a0a0a',
   },
   declineButton: {
-    backgroundColor: 'rgba(255, 255, 255, 0.1)',
+    backgroundColor: 'rgba(192, 77, 58, 0.2)',
     borderWidth: 1,
-    borderColor: steampunkTheme.textMuted,
+    borderColor: steampunkTheme.error,
     paddingVertical: 14,
     alignItems: 'center',
   },
   declineButtonText: {
     fontSize: 15,
     fontWeight: '600',
-    color: steampunkTheme.textMuted,
+    color: steampunkTheme.error,
   },
 });
 

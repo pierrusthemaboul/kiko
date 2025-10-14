@@ -3,6 +3,16 @@ import { supabase } from '../../lib/supabase/supabaseClients';
 import { FirebaseAnalytics } from '../../lib/firebase';
 import { Event } from '../types';
 import { usePrecisionAds } from './usePrecisionAds';
+import { applyEndOfRunEconomy } from '../../lib/economy/apply';
+
+// Générateur d'UUID compatible React Native
+function generateUUID(): string {
+  return 'xxxxxxxx-xxxx-4xxx-yxxx-xxxxxxxxxxxx'.replace(/[xy]/g, (c) => {
+    const r = Math.random() * 16 | 0;
+    const v = c === 'x' ? r : (r & 0x3 | 0x8);
+    return v.toString(16);
+  });
+}
 
 const MAX_HP = 1000;
 const LEVEL_UP_BONUS_HP = 150;
@@ -132,7 +142,7 @@ export function usePrecisionGame() {
   const timerRef = useRef<NodeJS.Timeout | null>(null);
 
   // Hook pour les pubs du mode Précision
-  const { adState, showGameOverAd, showContinueAd, resetContinueReward, resetAdsState } = usePrecisionAds();
+  const { adState, showGameOverAd, showContinueAd, resetContinueReward, resetAdsState, forceContinueAdLoad } = usePrecisionAds();
 
   const clearTimer = useCallback(() => {
     if (timerRef.current) {
@@ -165,26 +175,63 @@ export function usePrecisionGame() {
     }
   }, []);
 
-  const loadLeaderboards = useCallback(async (finalScore: number) => {
+  const loadLeaderboards = useCallback(async (finalScore: number, answeredCount: number = 0) => {
     try {
       const { data: { user } } = await supabase.auth.getUser();
       const currentDisplayName = playerName || 'Joueur';
 
+      console.log('[usePrecisionGame] Loading leaderboards, user:', user?.id, 'displayName:', currentDisplayName);
+
       if (user) {
-        // Insert current score
-        await supabase.from('precision_scores').insert({
+        // Insert current score in precision_scores (legacy table)
+        const { error: insertError } = await supabase.from('precision_scores').insert({
           user_id: user.id,
           display_name: currentDisplayName,
           score: finalScore,
         });
 
-        // Update high score if needed
+        if (insertError) {
+          console.error('[usePrecisionGame] Error inserting score in precision_scores:', insertError);
+        } else {
+          console.log('[usePrecisionGame] Score inserted successfully in precision_scores:', finalScore);
+        }
+
+        // Insert current score in game_scores with mode 'precision' for unified leaderboards
+        const { error: gameScoresError } = await supabase.from('game_scores').insert({
+          user_id: user.id,
+          display_name: currentDisplayName,
+          score: finalScore,
+          mode: 'precision',
+        });
+
+        if (gameScoresError) {
+          console.error('[usePrecisionGame] Error inserting score in game_scores:', gameScoresError);
+        } else {
+          console.log('[usePrecisionGame] Score inserted successfully in game_scores with mode precision:', finalScore);
+        }
+
+        // High score mis à jour automatiquement par le trigger DB
+        // (voir scripts/APPLY_THIS_IN_SUPABASE_SQL_EDITOR.sql)
         if (finalScore > personalBest) {
-          await supabase
-            .from('profiles')
-            .update({ high_score_precision: finalScore })
-            .eq('id', user.id);
           setPersonalBest(finalScore);
+        }
+
+        // Apply economy (XP, quests, etc.)
+        try {
+          const runId = generateUUID();
+          await applyEndOfRunEconomy({
+            runId,
+            userId: user.id,
+            mode: 'precision',
+            points: finalScore,
+            gameStats: {
+              totalAnswers: answeredCount,
+              correctAnswers: answeredCount,
+            },
+          });
+          console.log('[usePrecisionGame] Economy applied successfully');
+        } catch (economyError) {
+          console.error('[usePrecisionGame] Error applying economy:', economyError);
         }
       }
 
@@ -212,6 +259,10 @@ export function usePrecisionGame() {
           .order('high_score_precision', { ascending: false })
           .limit(5),
       ]);
+
+      console.log('[usePrecisionGame] Daily scores:', dailyRes.data, 'error:', dailyRes.error);
+      console.log('[usePrecisionGame] Monthly scores:', monthlyRes.data, 'error:', monthlyRes.error);
+      console.log('[usePrecisionGame] All-time scores:', allTimeRes.data, 'error:', allTimeRes.error);
 
       const formatScores = (scores: any[], scoreField: string = 'score') =>
         (scores || []).map((s, index) => ({
@@ -406,13 +457,35 @@ export function usePrecisionGame() {
 
       const difference = guessYear - actualYear;
       const absDifference = Math.abs(difference);
-      const hpLoss = Math.min(200, Math.floor(absDifference / 2));
-      const scoreGain = Math.max(50, 400 - hpLoss * 2);
+      const hpLoss = Math.min(500, Math.floor(absDifference * 2));
+      // Calcul progressif des points : décroissance plus forte pour les grands écarts
+      let scoreGain = 0;
+      if (absDifference > 500) {
+        scoreGain = 0;
+      } else if (absDifference > 250) {
+        // Entre 251-500 ans : 1-5 points
+        scoreGain = Math.max(1, Math.floor((500 - absDifference) / 50));
+      } else if (absDifference > 175) {
+        // Entre 176-250 ans : 6-15 points
+        scoreGain = Math.max(6, Math.floor(15 + (250 - absDifference) / 10));
+      } else if (absDifference > 100) {
+        // Entre 101-175 ans : 16-50 points
+        scoreGain = Math.max(16, Math.floor(50 + (175 - absDifference) / 2));
+      } else {
+        // 0-100 ans : 51-400 points (formule originale)
+        scoreGain = Math.max(51, 400 - hpLoss * 2);
+      }
 
       const scoreBefore = score;
       const hpBefore = hp;
 
       let nextHp = Math.max(0, hpBefore - hpLoss);
+
+      // Bonus de 100 HP si la réponse est exacte
+      if (absDifference === 0) {
+        nextHp = Math.min(MAX_HP, nextHp + 100);
+      }
+
       let nextScore = scoreBefore + scoreGain;
       const previousLevel = level;
       const nextLevel = getLevelForScore(nextScore);
@@ -420,7 +493,6 @@ export function usePrecisionGame() {
 
       if (nextLevel.id !== previousLevel.id) {
         leveledUp = true;
-        nextHp = Math.min(MAX_HP, nextHp + LEVEL_UP_BONUS_HP);
         setLevel(nextLevel);
       }
 
@@ -444,14 +516,14 @@ export function usePrecisionGame() {
       setTotalAnswered((prev) => prev + 1);
 
       if (nextHp <= 0) {
-        // Proposer le Continue si dispo, sinon Game Over direct
-        if (adState.continueLoaded && !adState.hasContinued) {
+        // Toujours proposer le Continue si le joueur ne l'a pas déjà utilisé
+        if (!adState.hasContinued) {
           setShowContinueOffer(true);
           setIsTimerPaused(true);
         } else {
           setIsGameOver(true);
           setLeaderboardsReady(false);
-          loadLeaderboards(nextScore);
+          loadLeaderboards(nextScore, totalAnswered + 1);
           FirebaseAnalytics.logEvent('precision_game_over', {
             total_events: totalAnswered + 1,
             final_score: nextScore,
@@ -481,7 +553,7 @@ export function usePrecisionGame() {
     const actualYear = extractYear(currentEvent.date);
     if (actualYear === null) return;
 
-    const hpLoss = 500;
+    const hpLoss = 350;
     const scoreGain = 0;
 
     const previousLevel = level;
@@ -510,14 +582,14 @@ export function usePrecisionGame() {
     setTotalAnswered((prev) => prev + 1);
 
     if (nextHp <= 0) {
-      // Proposer le Continue si dispo, sinon Game Over direct
-      if (adState.continueLoaded && !adState.hasContinued) {
+      // Toujours proposer le Continue si le joueur ne l'a pas déjà utilisé
+      if (!adState.hasContinued) {
         setShowContinueOffer(true);
         setIsTimerPaused(true);
       } else {
         setIsGameOver(true);
         setLeaderboardsReady(false);
-        loadLeaderboards(nextScore);
+        loadLeaderboards(nextScore, totalAnswered + 1);
         FirebaseAnalytics.logEvent('precision_game_over', {
           total_events: totalAnswered + 1,
           final_score: nextScore,
@@ -591,21 +663,21 @@ export function usePrecisionGame() {
       setShowContinueOffer(false);
       setIsGameOver(true);
       setLeaderboardsReady(false);
-      loadLeaderboards(score);
+      loadLeaderboards(score, totalAnswered);
     }
-  }, [showContinueAd, score, loadLeaderboards]);
+  }, [showContinueAd, score, totalAnswered, loadLeaderboards]);
 
   const handleDeclineContinue = useCallback(() => {
     setShowContinueOffer(false);
     setIsGameOver(true);
     setLeaderboardsReady(false);
-    loadLeaderboards(score);
+    loadLeaderboards(score, totalAnswered);
     FirebaseAnalytics.logEvent('precision_continue_declined', { score });
     // Afficher la pub game over après un délai
     setTimeout(() => {
       showGameOverAd();
     }, 1500);
-  }, [score, loadLeaderboards, showGameOverAd]);
+  }, [score, totalAnswered, loadLeaderboards, showGameOverAd]);
 
   // Gérer la récompense du Continue
   useEffect(() => {
@@ -620,6 +692,13 @@ export function usePrecisionGame() {
       FirebaseAnalytics.logEvent('precision_continued', { score, hp_restored: bonusHp });
     }
   }, [adState.continueRewardEarned, score, resetContinueReward, loadNextEvent]);
+
+  // Forcer le chargement de la pub Continue quand le modal s'affiche
+  useEffect(() => {
+    if (showContinueOffer && !adState.continueLoaded) {
+      forceContinueAdLoad();
+    }
+  }, [showContinueOffer, adState.continueLoaded, forceContinueAdLoad]);
 
   const levelProgress = useMemo(() => {
     const threshold = level.nextThreshold ?? Infinity;

@@ -15,11 +15,11 @@ import { BannerAd, BannerAdSize } from 'react-native-google-mobile-ads';
 import { FirebaseAnalytics } from '@/lib/firebase';
 import { useGameLogicA } from '@/hooks/useGameLogicA';
 import { usePlays } from '@/hooks/usePlays'; // Importer le nouveau hook
-import { useLeaderboards } from '@/hooks/useLeaderboards';
+import { useLeaderboardsByMode } from '@/hooks/useLeaderboardsByMode';
 import { rankFromXP } from '@/lib/economy/ranks';
 import { getQuestProgressPercentage } from '@/lib/economy/quests';
 import QuestCarousel from '@/components/QuestCarousel';
-import LeaderboardCarousel from '@/components/LeaderboardCarousel';
+import DualLeaderboardCarousel from '@/components/DualLeaderboardCarousel';
 import { getAllQuestsWithProgress } from '@/utils/questSelection';
 import { supabase } from '@/lib/supabase/supabaseClients';
 import { getAdUnitId } from '@/lib/config/adConfig';
@@ -42,8 +42,8 @@ export default function Vue1() {
   const { profile } = useGameLogicA();
   // On utilise usePlays spécifiquement pour les infos de parties
   const { playsInfo, canStartRun, loadingPlays, refreshPlaysInfo } = usePlays();
-  // On utilise useLeaderboards pour les classements
-  const { leaderboards, loading: leaderboardsLoading } = useLeaderboards();
+  // On utilise useLeaderboardsByMode pour les classements séparés par mode
+  const { leaderboards, loading: leaderboardsLoading } = useLeaderboardsByMode();
   // Hook pour la pub récompensée (gagner 1 partie)
   const { isLoaded: adLoaded, rewardEarned, showAd, resetReward } = useRewardedPlayAd();
 
@@ -257,8 +257,12 @@ export default function Vue1() {
         </View>
 
         <View style={styles.section}>
-          <Text style={styles.sectionTitle}>Classement</Text>
-          <LeaderboardCarousel leaderboards={leaderboards} loading={leaderboardsLoading} />
+          <Text style={styles.sectionTitle}>Classements</Text>
+          <DualLeaderboardCarousel
+            classicLeaderboards={leaderboards.classic}
+            precisionLeaderboards={leaderboards.precision}
+            loading={leaderboardsLoading}
+          />
         </View>
       </ScrollView>
     </ImageBackground>

@@ -18,6 +18,7 @@ import {
   setUserProperty         // Pour définir une propriété utilisateur unique
 } from '@react-native-firebase/analytics';
 import { Platform } from 'react-native';
+import Constants from 'expo-constants';
 
 // ---- OBTENIR L'INSTANCE ANALYTICS ----
 // Obtenue une seule fois au chargement du module
@@ -47,8 +48,7 @@ export const initializeAnalytics = async (userId?: string, isGuest: boolean = fa
     // Appel modulaire : setUserProperties(instance, { proprietes })
     await setUserProperties(analyticsInstance, {
       is_guest: isGuest ? 'true' : 'false',
-      // TODO: Remplacer par la vraie version de l'application (depuis package.json ou expo-constants)
-      app_version: '1.0.0',
+      app_version: Constants.expoConfig?.version || '1.5.1',
       platform: Platform.OS,
     });
     // console.log(`Analytics: User properties set (is_guest: ${isGuest}, platform: ${Platform.OS})`);

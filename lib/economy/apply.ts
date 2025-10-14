@@ -15,17 +15,22 @@ const ECONOMY_LOG_ENABLED = (() => {
   return false;
 })();
 
+const shouldSkipQuestLog = (args: unknown[]) => {
+  const [first] = args;
+  return typeof first === 'string' && first.toLowerCase().includes('[quests]');
+};
+
 const economyLog = (...args: unknown[]) => {
-  if (!ECONOMY_LOG_ENABLED) return;
+  if (!ECONOMY_LOG_ENABLED || shouldSkipQuestLog(args)) return;
   console.log(...args);
 };
 
 const economyWarn = (...args: unknown[]) => {
-  if (!ECONOMY_LOG_ENABLED) return;
+  if (!ECONOMY_LOG_ENABLED || shouldSkipQuestLog(args)) return;
   console.warn(...args);
 };
 
-type GameMode = 'classic' | 'date';
+type GameMode = 'classic' | 'date' | 'precision';
 
 type ProfileRow = Database['public']['Tables']['profiles']['Row'];
 type RunsRow = Database['public']['Tables']['runs']['Row'];
@@ -205,22 +210,28 @@ export async function applyEndOfRunEconomy({ runId, userId, mode, points, gameSt
   const todayDate = getTodayDateString();
 
   // Mettre à jour le profil avec XP, rang, et streak
+  const updatePayload = {
+    xp_total: newXp,
+    title_key: rank.key,
+    parties_per_day: newPartiesPerDay,
+    current_streak: newStreak,
+    best_streak: newBestStreak,
+    last_play_date: todayDate,
+    games_played: (safeProfile.games_played ?? 0) + 1,
+    high_score: Math.max(safeProfile.high_score ?? 0, safePoints),
+    updated_at: timestamp,
+  };
+
+  economyLog('[ECONOMY] 📝 UPDATE payload:', JSON.stringify(updatePayload, null, 2));
+  economyLog('[ECONOMY] 📝 newXp value:', newXp, 'type:', typeof newXp, 'isNaN:', Number.isNaN(newXp));
+
   const { error: profileUpdateError } = await supabase
     .from('profiles')
-    .update({
-      xp_total: newXp,
-      title_key: rank.key,
-      parties_per_day: newPartiesPerDay,
-      current_streak: newStreak,
-      best_streak: newBestStreak,
-      last_play_date: todayDate,
-      games_played: (safeProfile.games_played ?? 0) + 1,
-      high_score: Math.max(safeProfile.high_score ?? 0, safePoints),
-      updated_at: timestamp,
-    })
+    .update(updatePayload)
     .eq('id', userId);
 
   if (profileUpdateError) {
+    economyLog('[ECONOMY] ❌ Profile update error:', profileUpdateError);
     throw new Error(`Failed to update profile: ${profileUpdateError.message}`);
   }
 
@@ -499,6 +510,7 @@ async function updateDailyQuests(
         economyLog(`[QUESTS] ✓ Type: PLAY - ${progress.current_value} → ${newValue}`);
       }
       // === QUÊTES DE SCORE ONE-SHOT (daily_score_XXXX - atteindre le score en une partie) ===
+      // IMPORTANT: Cette condition doit être AVANT le cumul de score pour éviter les doublons
       else if (key.startsWith('daily_score_')) {
         if (gameData.points >= questTemplate.target_value) {
           newValue = questTemplate.target_value;
@@ -508,17 +520,22 @@ async function updateDailyQuests(
           economyLog(`[QUESTS] ⏭️ Type: DAILY_SCORE - Score ${gameData.points} < target ${questTemplate.target_value} - Pas encore atteint`);
         }
       }
-      // === QUÊTES DE SCORE (cumul de points sur plusieurs parties) ===
-      else if (key.includes('_score_') && !key.includes('high_score')) {
+      // === QUÊTES DE SCORE HIGH (meilleur score - one-shot aussi) ===
+      else if (key.includes('high_score')) {
+        if (gameData.points >= questTemplate.target_value) {
+          newValue = questTemplate.target_value;
+          shouldUpdate = true;
+          economyLog(`[QUESTS] ✓ Type: HIGH_SCORE - Score ${gameData.points} >= target ${questTemplate.target_value}`);
+        } else {
+          economyLog(`[QUESTS] ⏭️ Type: HIGH_SCORE - Score ${gameData.points} < target ${questTemplate.target_value}`);
+        }
+      }
+      // === QUÊTES DE SCORE CUMULATIF (weekly_score_XXXX, monthly_score_XXXX) ===
+      // Cumule les points sur plusieurs parties
+      else if (key.includes('_score_') || key.includes('_champion') || key.includes('_points')) {
         newValue = progress.current_value + gameData.points;
         shouldUpdate = true;
-        economyLog(`[QUESTS] ✓ Type: SCORE_CUMUL - Ajout de ${gameData.points} points: ${progress.current_value} → ${newValue}`);
-      }
-      // === QUÊTES DE SCORE HIGH (meilleur score) ===
-      else if (key.includes('high_score') && gameData.points >= questTemplate.target_value) {
-        newValue = questTemplate.target_value;
-        shouldUpdate = true;
-        economyLog(`[QUESTS] ✓ Type: HIGH_SCORE - Score ${gameData.points} >= target ${questTemplate.target_value}`);
+        economyLog(`[QUESTS] ✓ Type: SCORE_CUMUL - Ajout de ${gameData.points} points: ${progress.current_value} → ${newValue} (target: ${questTemplate.target_value})`);
       }
       // === QUÊTES DE STREAK (réponses correctes dans la partie) ===
       else if (key.includes('_streak_') || key === 'daily_high_streak' || key === 'weekly_long_streak' || key === 'monthly_streak_master') {

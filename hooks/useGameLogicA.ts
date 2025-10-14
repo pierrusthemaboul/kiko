@@ -78,7 +78,7 @@ export function useGameLogicA(initialEvent?: string, modeId?: string) {
   const [progressAnim] = useState(() => new Animated.Value(0));
   const isApplyingEconomyRef = useRef(false);
   const [endSummary, setEndSummary] = useState<{
-    mode: 'classic' | 'date';
+    mode: 'classic' | 'date' | 'precision';
     points: number;
     xpEarned: number;
     newXp: number;
@@ -755,7 +755,7 @@ export function useGameLogicA(initialEvent?: string, modeId?: string) {
   };
 
   const startRun = useCallback(
-    async (mode: 'classic' | 'date'): Promise<StartRunSuccess | StartRunFailure> => {
+    async (mode: 'classic' | 'date' | 'precision'): Promise<StartRunSuccess | StartRunFailure> => {
       try {
         currentRunIdRef.current = null;
 
@@ -909,7 +909,7 @@ export function useGameLogicA(initialEvent?: string, modeId?: string) {
       // Logged-in user logic
       const currentDisplayName = user.name || 'Joueur'; // Use fetched name or default
       const finalPoints = user.points;
-      const economyMode: 'classic' | 'date' = gameMode.variant === 'precision' ? 'date' : 'classic';
+      const economyMode: 'classic' | 'date' | 'precision' = gameMode.variant === 'precision' ? 'precision' : 'classic';
       const runId = runIdForThisEndGame;
 
       if (!runId) {
@@ -961,6 +961,7 @@ export function useGameLogicA(initialEvent?: string, modeId?: string) {
         user_id: userId,
         display_name: currentDisplayName,
         score: user.points,
+        mode: economyMode, // 'classic' or 'precision'
       });
       if (insertError) {
         FirebaseAnalytics.error('score_insert_error', insertError.message, 'endGame');

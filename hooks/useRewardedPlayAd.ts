@@ -31,17 +31,34 @@ const rewardedPlayAd = RewardedAd.createForAdRequest(
   { requestNonPersonalizedAdsOnly: true }
 );
 
+// État global pour partager entre toutes les instances du hook
+let globalIsLoaded = false;
+let globalIsShowing = false;
+const stateListeners = new Set<() => void>();
+
 export function useRewardedPlayAd() {
-  const [isLoaded, setIsLoaded] = useState(false);
-  const [isShowing, setIsShowing] = useState(false);
+  const [isLoaded, setIsLoaded] = useState(globalIsLoaded);
+  const [isShowing, setIsShowing] = useState(globalIsShowing);
   const [rewardEarned, setRewardEarned] = useState(false);
 
   useEffect(() => {
+    // Sync with global state on mount
+    setIsLoaded(globalIsLoaded);
+    setIsShowing(globalIsShowing);
+
+    // Subscribe to state changes
+    const updateState = () => {
+      setIsLoaded(globalIsLoaded);
+      setIsShowing(globalIsShowing);
+    };
+    stateListeners.add(updateState);
+
     const loadedListener = rewardedPlayAd.addAdEventListener(
       RewardedAdEventType.LOADED,
       () => {
         rewardedLog('log', 'Ad loaded');
-        setIsLoaded(true);
+        globalIsLoaded = true;
+        stateListeners.forEach(listener => listener());
         FirebaseAnalytics.ad('rewarded', 'loaded', 'extra_play', 0);
       }
     );
@@ -50,7 +67,8 @@ export function useRewardedPlayAd() {
       AdEventType.ERROR,
       (error) => {
         rewardedLog('warn', 'Failed to load:', error);
-        setIsLoaded(false);
+        globalIsLoaded = false;
+        stateListeners.forEach(listener => listener());
         FirebaseAnalytics.ad('rewarded', 'failed', 'extra_play', 0);
         // Retry after 30s
         setTimeout(() => rewardedPlayAd.load(), 30000);
@@ -61,7 +79,8 @@ export function useRewardedPlayAd() {
       AdEventType.OPENED,
       () => {
         rewardedLog('log', 'Ad opened');
-        setIsShowing(true);
+        globalIsShowing = true;
+        stateListeners.forEach(listener => listener());
         setRewardEarned(false);
         FirebaseAnalytics.ad('rewarded', 'opened', 'extra_play', 0);
       }
@@ -71,8 +90,9 @@ export function useRewardedPlayAd() {
       AdEventType.CLOSED,
       () => {
         rewardedLog('log', 'Ad closed');
-        setIsLoaded(false);
-        setIsShowing(false);
+        globalIsLoaded = false;
+        globalIsShowing = false;
+        stateListeners.forEach(listener => listener());
         FirebaseAnalytics.ad('rewarded', 'closed', 'extra_play', 0);
         // Reload for next time
         rewardedPlayAd.load();
@@ -89,10 +109,17 @@ export function useRewardedPlayAd() {
       }
     );
 
-    // Load initial ad
-    rewardedPlayAd.load();
+    // Try to load the ad, but it may already be loaded or loading
+    // The load() method is safe to call even if already loading
+    try {
+      rewardedPlayAd.load();
+    } catch (error) {
+      // Ignore if already loading
+      rewardedLog('log', 'Ad already loading or loaded');
+    }
 
     return () => {
+      stateListeners.delete(updateState);
       loadedListener();
       errorListener();
       openedListener();

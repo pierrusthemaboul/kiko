@@ -31,8 +31,10 @@ export default function RootLayout() {
   const router = useRouter();
   const segments = useSegments(); // Donne les parties de l'URL actuelle
 
-  // Gérer le consentement RGPD pour les pubs
-  const { canShowPersonalizedAds, isLoading: consentLoading } = useAdConsent();
+  // Gérer le consentement RGPD pour les pubs - DÉSACTIVÉ TEMPORAIREMENT
+  // const { canShowPersonalizedAds, isLoading: consentLoading } = useAdConsent();
+  const canShowPersonalizedAds = false;
+  const consentLoading = false;
 
   const [fontsLoaded, fontError] = useFonts({
     'Montserrat-Regular': require('../assets/fonts/Montserrat-Regular.ttf'),

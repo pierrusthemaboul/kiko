@@ -11,9 +11,9 @@ const QUEST_LOG_ENABLED = (() => {
   return false;
 })();
 
-const questLog = (...args: unknown[]) => {
+const questLog = (..._args: unknown[]) => {
   if (!QUEST_LOG_ENABLED) return;
-  console.log(...args);
+  // Quest logs intentionally disabled to avoid noisy output.
 };
 
 /**
@@ -127,21 +127,49 @@ export async function getMonthlyQuests(): Promise<DailyQuest[]> {
 }
 
 /**
+ * Calcule la date de reset en fonction du type de quête
+ */
+function getResetDate(questType: 'daily' | 'weekly' | 'monthly'): string {
+  const now = new Date();
+
+  if (questType === 'daily') {
+    // Reset demain à minuit
+    const tomorrow = new Date(now);
+    tomorrow.setHours(24, 0, 0, 0);
+    return tomorrow.toISOString();
+  } else if (questType === 'weekly') {
+    // Reset lundi prochain à minuit
+    const nextMonday = new Date(now);
+    const dayOfWeek = nextMonday.getDay();
+    const daysUntilMonday = dayOfWeek === 0 ? 1 : 8 - dayOfWeek; // Si dimanche, +1, sinon jours jusqu'au prochain lundi
+    nextMonday.setDate(nextMonday.getDate() + daysUntilMonday);
+    nextMonday.setHours(0, 0, 0, 0);
+    return nextMonday.toISOString();
+  } else {
+    // Reset le 1er du mois prochain à minuit
+    const nextMonth = new Date(now);
+    nextMonth.setMonth(nextMonth.getMonth() + 1);
+    nextMonth.setDate(1);
+    nextMonth.setHours(0, 0, 0, 0);
+    return nextMonth.toISOString();
+  }
+}
+
+/**
  * Initialise la progression pour toutes les quêtes
  */
 async function initializeQuestProgress(userId: string, quests: DailyQuest[]): Promise<void> {
-  const tomorrow = new Date();
-  tomorrow.setHours(0, 0, 0, 0);
-  tomorrow.setDate(tomorrow.getDate() + 1);
-  const tomorrowISO = tomorrow.toISOString();
+  const progressEntries = quests.map(quest => {
+    const resetAt = getResetDate(quest.quest_type as 'daily' | 'weekly' | 'monthly');
 
-  const progressEntries = quests.map(quest => ({
-    user_id: userId,
-    quest_key: quest.quest_key,
-    current_value: 0,
-    completed: false,
-    reset_at: tomorrowISO,
-  }));
+    return {
+      user_id: userId,
+      quest_key: quest.quest_key,
+      current_value: 0,
+      completed: false,
+      reset_at: resetAt,
+    };
+  });
 
   const { error } = await supabase
     .from('quest_progress')
@@ -154,16 +182,46 @@ async function initializeQuestProgress(userId: string, quests: DailyQuest[]): Pr
 }
 
 /**
+ * Vérifie et nettoie les quêtes expirées (reset quotidien/hebdomadaire/mensuel)
+ */
+async function cleanExpiredQuests(userId: string): Promise<void> {
+  try {
+    const now = new Date();
+
+    // Supprimer les progressions expirées (reset_at < maintenant)
+    const { error: deleteError } = await supabase
+      .from('quest_progress')
+      .delete()
+      .eq('user_id', userId)
+      .lt('reset_at', now.toISOString());
+
+    if (deleteError) {
+      console.error('[QUESTS CLEAN] Erreur suppression quêtes expirées:', deleteError);
+    } else {
+      questLog('[QUESTS CLEAN] ✅ Nettoyage des quêtes expirées effectué');
+    }
+  } catch (error) {
+    console.error('[QUESTS CLEAN] Erreur:', error);
+  }
+}
+
+/**
  * Récupère toutes les quêtes (daily, weekly, monthly) avec leur progression
+ * OPTIMISÉ: Lazy loading - crée les quêtes uniquement à la demande
  */
 export async function getAllQuestsWithProgress(userId: string) {
   try {
+    // Nettoyer les quêtes expirées avant de récupérer
+    await cleanExpiredQuests(userId);
+
     // Récupérer les quêtes sélectionnées
     const [dailyQuests, weeklyQuests, monthlyQuests] = await Promise.all([
       selectDailyQuests(),
       getWeeklyQuests(),
       getMonthlyQuests(),
     ]);
+
+    const allQuests = [...dailyQuests, ...weeklyQuests, ...monthlyQuests];
 
     // Récupérer la progression de l'utilisateur
     const { data: progressData, error: progressError } = await supabase
@@ -173,23 +231,26 @@ export async function getAllQuestsWithProgress(userId: string) {
 
     if (progressError) throw progressError;
 
-    // Si aucune progression n'existe, initialiser les quêtes
-    if (!progressData || progressData.length === 0) {
-      questLog('[QUESTS INIT] 🚀 Initialisation pour user:', userId);
-      await initializeQuestProgress(userId, [...dailyQuests, ...weeklyQuests, ...monthlyQuests]);
+    // LAZY LOADING: Créer les quêtes manquantes (nouvelles quêtes ajoutées ou premier accès)
+    const existingQuestKeys = new Set(progressData?.map(p => p.quest_key) || []);
+    const missingQuests = allQuests.filter(q => !existingQuestKeys.has(q.quest_key));
 
-      // Récupérer à nouveau après initialisation
-      const { data: newProgressData } = await supabase
+    if (missingQuests.length > 0) {
+      questLog('[QUESTS LAZY] 🔄 Création de', missingQuests.length, 'quêtes manquantes pour user:', userId);
+      await initializeQuestProgress(userId, missingQuests);
+
+      // Récupérer à nouveau après ajout
+      const { data: updatedProgressData } = await supabase
         .from('quest_progress')
         .select('*')
         .eq('user_id', userId);
 
-      questLog('[QUESTS INIT] ✅ Créé:', newProgressData?.length || 0, 'entrées');
+      questLog('[QUESTS LAZY] ✅ Total:', updatedProgressData?.length || 0, 'quêtes');
 
       const mapQuestsWithProgress = (quests: DailyQuest[]) =>
         quests.map((quest) => ({
           ...quest,
-          progress: newProgressData?.find((p) => p.quest_key === quest.quest_key) || null,
+          progress: updatedProgressData?.find((p) => p.quest_key === quest.quest_key) || null,
         }));
 
       return {

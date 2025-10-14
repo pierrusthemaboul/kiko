@@ -1,25 +1,25 @@
 export interface ConvertConfig {
-  basePerMode: { classic: number; date: number };
-  kPerMode: { classic: number; date: number };
-  alphaPerMode: { classic: number; date: number };
+  basePerMode: { classic: number; date: number; precision: number };
+  kPerMode: { classic: number; date: number; precision: number };
+  alphaPerMode: { classic: number; date: number; precision: number };
   softcap: { threshold: number; slope: number };
   clamp: { min: number; max: number };
 }
 
 export const DEFAULT_CONVERT: ConvertConfig = {
-  // Augmentation de la base XP et des coefficients (+50% environ)
-  basePerMode: { classic: 50, date: 60 },
-  kPerMode: { classic: 0.8, date: 0.9 },
-  alphaPerMode: { classic: 0.72, date: 0.7 },
-  softcap: { threshold: 1000, slope: 0.6 }, // Softcap plus haut et plus doux
-  clamp: { min: 20, max: 600 }, // Limites augmentées
+  // Rééquilibrage v3 : récompenser les gros scores tout en ralentissant la progression
+  basePerMode: { classic: 25, date: 30, precision: 35 },
+  kPerMode: { classic: 0.45, date: 0.50, precision: 0.55 },
+  alphaPerMode: { classic: 0.68, date: 0.66, precision: 0.70 },
+  softcap: { threshold: 20000, slope: 0.45 }, // Softcap après 20k
+  clamp: { min: 15, max: 800 }, // Max à 800 pour 50k+
 };
 
 function clampValue(value: number, min: number, max: number): number {
   return Math.min(Math.max(value, min), max);
 }
 
-export function pointsToXP(points: number, mode: 'classic' | 'date', cfg: ConvertConfig = DEFAULT_CONVERT): number {
+export function pointsToXP(points: number, mode: 'classic' | 'date' | 'precision', cfg: ConvertConfig = DEFAULT_CONVERT): number {
   const x = Math.max(points, 0);
   const xpBase = cfg.basePerMode[mode];
   const k = cfg.kPerMode[mode];
@@ -37,7 +37,7 @@ export function pointsToXP(points: number, mode: 'classic' | 'date', cfg: Conver
 }
 
 export function previewTable(
-  modes: Array<'classic' | 'date'>,
+  modes: Array<'classic' | 'date' | 'precision'>,
   pointsSamples: number[],
 ): Array<{ mode: string; points: number; xp: number }> {
   const table: Array<{ mode: string; points: number; xp: number }> = [];

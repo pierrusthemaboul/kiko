@@ -40,6 +40,7 @@ const continueRewardedAd = RewardedAd.createForAdRequest(
 interface PrecisionAdState {
   gameOverLoaded: boolean;
   continueLoaded: boolean;
+  continueLoading: boolean; // Nouveau : indique si la pub est en train de charger
   isShowingAd: boolean;
   hasContinued: boolean; // Si le joueur a déjà utilisé le continue
   continueRewardEarned: boolean;
@@ -49,6 +50,7 @@ export function usePrecisionAds() {
   const [adState, setAdState] = useState<PrecisionAdState>({
     gameOverLoaded: false,
     continueLoaded: false,
+    continueLoading: false,
     isShowingAd: false,
     hasContinued: false,
     continueRewardEarned: false,
@@ -102,7 +104,7 @@ export function usePrecisionAds() {
       RewardedAdEventType.LOADED,
       () => {
         precisionAdLog('log', 'Continue Rewarded loaded');
-        setAdState(prev => ({ ...prev, continueLoaded: true }));
+        setAdState(prev => ({ ...prev, continueLoaded: true, continueLoading: false }));
         FirebaseAnalytics.ad('rewarded', 'loaded', 'precision_continue', 0);
       }
     );
@@ -111,9 +113,13 @@ export function usePrecisionAds() {
       AdEventType.ERROR,
       (error) => {
         precisionAdLog('warn', 'Continue Rewarded failed to load:', error);
-        setAdState(prev => ({ ...prev, continueLoaded: false }));
+        setAdState(prev => ({ ...prev, continueLoaded: false, continueLoading: false }));
         FirebaseAnalytics.ad('rewarded', 'failed', 'precision_continue', 0);
-        setTimeout(() => continueRewardedAd.load(), 30000);
+        // Retry plus rapidement (5s au lieu de 30s)
+        setTimeout(() => {
+          setAdState(prev => ({ ...prev, continueLoading: true }));
+          continueRewardedAd.load();
+        }, 5000);
       }
     );
 
@@ -159,6 +165,7 @@ export function usePrecisionAds() {
 
     // Chargement initial
     gameOverInterstitial.load();
+    setAdState(prev => ({ ...prev, continueLoading: true }));
     continueRewardedAd.load();
 
     return () => {
@@ -229,6 +236,7 @@ export function usePrecisionAds() {
     setAdState({
       gameOverLoaded: false,
       continueLoaded: false,
+      continueLoading: true, // Mise directement à true ici
       isShowingAd: false,
       hasContinued: false,
       continueRewardEarned: false,
@@ -239,13 +247,30 @@ export function usePrecisionAds() {
       continueRewardedAd.load();
     } catch (error) {
       precisionAdLog('error', 'Error reloading ads:', error);
+      setAdState(prev => ({ ...prev, continueLoading: false }));
     }
   }, []);
+
+  const forceContinueAdLoad = useCallback(() => {
+    if (adState.continueLoaded || adState.isShowingAd || adState.continueLoading) {
+      precisionAdLog('log', 'Continue ad already loaded, showing, or loading');
+      return;
+    }
+    try {
+      precisionAdLog('log', 'Force loading continue ad');
+      setAdState(prev => ({ ...prev, continueLoading: true }));
+      continueRewardedAd.load();
+    } catch (error) {
+      precisionAdLog('error', 'Error force loading continue ad:', error);
+      setAdState(prev => ({ ...prev, continueLoading: false }));
+    }
+  }, [adState.continueLoaded, adState.isShowingAd, adState.continueLoading]);
 
   return {
     adState: {
       gameOverLoaded: adState.gameOverLoaded,
       continueLoaded: adState.continueLoaded,
+      continueLoading: adState.continueLoading,
       isShowingAd: adState.isShowingAd,
       hasContinued: adState.hasContinued,
       continueRewardEarned: adState.continueRewardEarned,
@@ -254,5 +279,6 @@ export function usePrecisionAds() {
     showContinueAd,
     resetContinueReward,
     resetAdsState,
+    forceContinueAdLoad,
   };
 }

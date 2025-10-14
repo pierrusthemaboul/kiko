@@ -260,6 +260,10 @@ function PrecisionGameScreen() {
     playerName,
     leaderboards,
     leaderboardsReady,
+    showContinueOffer,
+    handleContinueWithAd,
+    handleDeclineContinue,
+    adState,
   } = usePrecisionGame();
 
   useFocusEffect(

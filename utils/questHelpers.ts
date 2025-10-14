@@ -1,7 +1,9 @@
 import { supabase } from '@/lib/supabase/supabaseClients';
 
 /**
- * Retourne le timestamp de minuit aujourd'hui en ISO
+ * Retourne le timestamp de minuit aujourd'hui en ISO (heure française UTC+1/UTC+2)
+ * IMPORTANT: Utilise l'heure locale du système. Si ton serveur est en UTC,
+ * le reset se fera à minuit UTC (= 1h-2h du matin en France)
  */
 export function getTodayResetTime(): string {
   const today = new Date();
@@ -10,13 +12,37 @@ export function getTodayResetTime(): string {
 }
 
 /**
- * Retourne le timestamp de minuit demain en ISO
+ * Retourne le timestamp de minuit demain en ISO (heure française UTC+1/UTC+2)
  */
 export function getTomorrowResetTime(): string {
   const tomorrow = new Date();
   tomorrow.setHours(0, 0, 0, 0);
   tomorrow.setDate(tomorrow.getDate() + 1);
   return tomorrow.toISOString();
+}
+
+/**
+ * Retourne le timestamp de minuit aujourd'hui en heure française (Europe/Paris)
+ */
+export function getTodayResetTimeFrance(): string {
+  // Créer une date à minuit en heure française
+  const formatter = new Intl.DateTimeFormat('fr-FR', {
+    timeZone: 'Europe/Paris',
+    year: 'numeric',
+    month: '2-digit',
+    day: '2-digit',
+  });
+
+  const parts = formatter.formatToParts(new Date());
+  const year = parts.find(p => p.type === 'year')?.value;
+  const month = parts.find(p => p.type === 'month')?.value;
+  const day = parts.find(p => p.type === 'day')?.value;
+
+  // Construire la date à minuit en heure française
+  const dateStr = `${year}-${month}-${day}T00:00:00`;
+  const parisDate = new Date(dateStr + '+01:00'); // Heure d'hiver (ajuster selon besoin)
+
+  return parisDate.toISOString();
 }
 
 /**
@@ -34,31 +60,59 @@ export function shouldResetQuests(lastResetAt: string | null): boolean {
 }
 
 /**
+ * Calcule la date de reset en fonction du type de quête
+ */
+function getResetDateByType(questType: 'daily' | 'weekly' | 'monthly'): string {
+  const now = new Date();
+
+  if (questType === 'daily') {
+    // Reset demain à minuit
+    const tomorrow = new Date(now);
+    tomorrow.setHours(24, 0, 0, 0);
+    return tomorrow.toISOString();
+  } else if (questType === 'weekly') {
+    // Reset lundi prochain à minuit
+    const nextMonday = new Date(now);
+    const dayOfWeek = nextMonday.getDay();
+    const daysUntilMonday = dayOfWeek === 0 ? 1 : 8 - dayOfWeek;
+    nextMonday.setDate(nextMonday.getDate() + daysUntilMonday);
+    nextMonday.setHours(0, 0, 0, 0);
+    return nextMonday.toISOString();
+  } else {
+    // Reset le 1er du mois prochain à minuit
+    const nextMonth = new Date(now);
+    nextMonth.setMonth(nextMonth.getMonth() + 1);
+    nextMonth.setDate(1);
+    nextMonth.setHours(0, 0, 0, 0);
+    return nextMonth.toISOString();
+  }
+}
+
+/**
  * Initialise les quêtes quotidiennes pour un utilisateur
  * Crée les entrées dans quest_progress pour toutes les quêtes actives
  */
 export async function initializeDailyQuests(userId: string): Promise<void> {
   try {
-    // Récupérer toutes les quêtes quotidiennes disponibles
-    const { data: dailyQuests, error: questsError } = await supabase
+    // Récupérer toutes les quêtes disponibles (daily, weekly, monthly)
+    const { data: allQuests, error: questsError } = await supabase
       .from('daily_quests')
-      .select('quest_key');
+      .select('quest_key, quest_type')
+      .eq('is_active', true);
 
     if (questsError) throw questsError;
-    if (!dailyQuests || dailyQuests.length === 0) {
-      console.warn('Aucune quête quotidienne trouvée');
+    if (!allQuests || allQuests.length === 0) {
+      console.warn('Aucune quête trouvée');
       return;
     }
 
-    const tomorrowReset = getTomorrowResetTime();
-
-    // Créer les entrées de progression pour chaque quête
-    const progressEntries = dailyQuests.map(quest => ({
+    // Créer les entrées de progression pour chaque quête avec le bon reset_at
+    const progressEntries = allQuests.map(quest => ({
       user_id: userId,
       quest_key: quest.quest_key,
       current_value: 0,
       completed: false,
-      reset_at: tomorrowReset,
+      reset_at: getResetDateByType(quest.quest_type as 'daily' | 'weekly' | 'monthly'),
     }));
 
     const { error: insertError } = await supabase
@@ -67,7 +121,7 @@ export async function initializeDailyQuests(userId: string): Promise<void> {
 
     if (insertError) throw insertError;
 
-    console.log(`✅ Quêtes quotidiennes initialisées pour l'utilisateur ${userId}`);
+    console.log(`✅ Quêtes initialisées pour l'utilisateur ${userId}`);
   } catch (error) {
     console.error('Erreur lors de l\'initialisation des quêtes:', error);
     throw error;

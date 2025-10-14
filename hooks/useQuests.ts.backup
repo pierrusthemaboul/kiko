@@ -53,7 +53,6 @@ export function useQuests(userId: string | undefined) {
       if (progressData && progressData.length > 0) {
         const firstProgress = progressData[0];
         if (shouldResetQuests(firstProgress.reset_at)) {
-          console.log('= Reset des qu�tes quotidiennes n�cessaire');
           await resetDailyQuests(userId);
           // Recharger apr�s reset
           await loadQuests();
@@ -61,7 +60,6 @@ export function useQuests(userId: string | undefined) {
         }
       } else {
         // Aucune progression existante, initialiser
-        console.log('=� Initialisation des qu�tes quotidiennes');
         await initializeDailyQuests(userId);
         // Recharger apr�s initialisation
         await loadQuests();
