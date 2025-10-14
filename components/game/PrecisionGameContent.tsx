@@ -1,4 +1,4 @@
-import React, { useCallback, useEffect, useMemo, useRef, useState } from 'react';
+import React, { memo, useCallback, useEffect, useMemo, useRef, useState } from 'react';
 import {
   ActivityIndicator,
   ImageBackground,
@@ -11,7 +11,8 @@ import {
   Animated,
   Easing,
   Platform,
-  TouchableOpacity,
+  useWindowDimensions,
+  LayoutChangeEvent,
 } from 'react-native';
 import { LinearGradient } from 'expo-linear-gradient';
 import { BlurView } from 'expo-blur';
@@ -22,6 +23,17 @@ import { useSafeAreaInsets } from 'react-native-safe-area-context';
 import * as Haptics from 'expo-haptics';
 import { Ionicons } from '@expo/vector-icons';
 import PrecisionContinueModal from '../modals/PrecisionContinueModal';
+import NumericKeypad from './NumericKeypad';
+
+const LAYOUT_DEBUG = false;
+const KEYPAD_ROWS = 4;
+const KEYPAD_COLS = 3;
+const KEY_SIZE_MIN = 52;
+const GAP_MIN = 4;
+const SPACING_MIN = 0.65;
+const KEY_SIZE_STEP = 4;
+const GAP_STEP = 2;
+const SPACING_STEP = 0.05;
 
 // --- PROPS INTERFACE ---
 interface PrecisionGameContentProps {
@@ -62,6 +74,61 @@ const AUTO_ADVANCE_MS = 10000;
 const AUTO_ADVANCE_SECONDS = Math.ceil(AUTO_ADVANCE_MS / 1000);
 const MAX_DIGITS = 4;
 
+const PrecisionGameBackground = memo(() => (
+  <ImageBackground
+    source={require('../../assets/images/bgpreci.png')}
+    resizeMode="cover"
+    style={StyleSheet.absoluteFill}
+    pointerEvents="none"
+  >
+    <LinearGradient
+      colors={['rgba(0,0,0,0.55)', 'rgba(0,0,0,0.45)', 'rgba(0,0,0,0.60)']}
+      style={StyleSheet.absoluteFill}
+      pointerEvents="none"
+    />
+  </ImageBackground>
+));
+PrecisionGameBackground.displayName = 'PrecisionGameBackground';
+
+interface TimerDisplayProps {
+  progress: number;
+  seconds: number;
+  spacingScale?: number;
+  onLayout?: (event: LayoutChangeEvent) => void;
+}
+
+const TimerDisplay = memo(({ progress, seconds, spacingScale = 1, onLayout }: TimerDisplayProps) => {
+  const clampedProgress = Math.max(0, Math.min(1, progress));
+  const marginBottom = Math.max(Math.round(6 * spacingScale), 2);
+  const rowGap = Math.max(Math.round(10 * spacingScale), 6);
+  const badgePaddingH = Math.max(Math.round(12 * spacingScale), 8);
+  const badgePaddingV = Math.max(Math.round(4 * spacingScale), 2);
+  const badgeRadius = Math.max(Math.round(10 * spacingScale), 6);
+  const timerFont = Math.max(Math.round(16 * spacingScale), 12);
+  return (
+    <View style={[styles.timerContainer, { marginBottom, gap: rowGap }]} onLayout={onLayout}>
+      <View style={styles.progressTrack}>
+        <LinearGradient
+          colors={[steampunkTheme.goldGradient.start, steampunkTheme.goldGradient.end]}
+          style={[styles.progressFill, { width: `${clampedProgress * 100}%` }]}
+          pointerEvents="none"
+        />
+      </View>
+      <View
+        style={[styles.timerBadge, {
+          paddingHorizontal: badgePaddingH,
+          paddingVertical: badgePaddingV,
+          borderRadius: badgeRadius,
+        }]}
+      >
+        <Text style={[styles.timerValue, { fontSize: timerFont }]}>{seconds}s</Text>
+      </View>
+    </View>
+  );
+});
+
+TimerDisplay.displayName = 'TimerDisplay';
+
 // --- MAIN COMPONENT ---
 const PrecisionGameContent: React.FC<PrecisionGameContentProps> = ({
   loading,
@@ -92,7 +159,8 @@ const PrecisionGameContent: React.FC<PrecisionGameContentProps> = ({
   // --- STATE & REFS ---
   const [guessValue, setGuessValue] = useState('');
   const [inputError, setInputError] = useState<string | null>(null);
-  const insets = useSafeAreaInsets();
+  const { top, bottom, left, right } = useSafeAreaInsets();
+  const { height: vh, width: vw } = useWindowDimensions();
   const [showDescription, setShowDescription] = useState(false);
   const [showImageLightbox, setShowImageLightbox] = useState(false);
   const submitLockRef = useRef(false);
@@ -111,16 +179,185 @@ const PrecisionGameContent: React.FC<PrecisionGameContentProps> = ({
   // --- MEMOIZED VALUES ---
   const hpRatio = useMemo(() => Math.max(0, Math.min(1, hp / hpMax)), [hp, hpMax]);
   const hasGuess = guessValue !== '' && guessValue !== '-';
-  const scoreDelta = lastResult ? lastResult.scoreGain : null;
-  const hpDelta = lastResult ? -lastResult.hpLoss : null;
-  const timeLabel = `${timeLeft}s`;
   const resultDiffLabel = lastResult
     ? lastResult.timedOut
       ? 'Temps écoulé'
       : `${formatDifference(lastResult.difference)} ans d'écart`
     : null;
-  const urgentLabel = !lastResult && !isGameOver && timeLeft > 0 && timeLeft <= 3 ? `${timeLeft}` : null;
   const displayedCountdown = autoAdvanceCountdown ?? AUTO_ADVANCE_SECONDS;
+
+  const layoutMetrics = useMemo(() => {
+    const chrome = 8 + 8 + 76 + 32;
+    const safeHeight = top + bottom;
+    const usableSpace = Math.max(vh - safeHeight - chrome, 0);
+
+    const imgTarget = Math.min(Math.max(usableSpace * 0.34, 135), 240);
+    const keypadTarget = Math.max(usableSpace - imgTarget, 240);
+
+    const baseGap = 6;
+    const cols = KEYPAD_COLS;
+    const rows = KEYPAD_ROWS;
+
+    const horizontalPadding = left + right + 20;
+    const horizontalSafe = Math.max(vw - horizontalPadding, 0);
+    const widthDenominator = cols > 0 ? cols : 1;
+    const internalWidth = Math.max(horizontalSafe - baseGap * (cols + 1), 0);
+    const baseKeySize = internalWidth > 0 ? Math.floor(internalWidth / widthDenominator) : 0;
+    const fallbackSize = horizontalSafe > 0 ? Math.floor(horizontalSafe / widthDenominator) : 48;
+    const keySizeCandidate = baseKeySize > 0 ? baseKeySize : Math.max(fallbackSize, 32);
+
+    const neededHeight = rows * keySizeCandidate + (rows + 1) * baseGap;
+    const scale =
+      keypadTarget > 0 && neededHeight > 0 && neededHeight > keypadTarget
+        ? keypadTarget / neededHeight
+        : 1;
+
+    const scaledKeySize = Math.floor(keySizeCandidate * Math.min(1, scale));
+    const scaledGap = Math.floor(baseGap * Math.min(1, scale));
+    const finalGap = Math.max(4, scaledGap);
+
+    let finalKeySize = scaledKeySize;
+    if (finalKeySize <= 0) {
+      const availableHeight = keypadTarget - (rows + 1) * finalGap;
+      finalKeySize = availableHeight > 0 ? Math.floor(availableHeight / rows) : KEY_SIZE_MIN;
+    }
+    finalKeySize = Math.max(KEY_SIZE_MIN, finalKeySize);
+
+    return {
+      imgTarget,
+      finalKeySize,
+      finalGap,
+    };
+  }, [bottom, left, right, top, vh, vw]);
+  const { imgTarget, finalKeySize, finalGap } = layoutMetrics;
+
+  const debugActive = __DEV__ && LAYOUT_DEBUG;
+  const [debugConfig, setDebugConfig] = useState(() => ({
+    keySize: finalKeySize,
+    gap: finalGap,
+    spacingScale: 1,
+  }));
+  const [layoutHeights, setLayoutHeights] = useState({
+    hud: 0,
+    timer: 0,
+    image: 0,
+    guess: 0,
+    keypad: 0,
+    content: 0,
+  });
+  const [fitState, setFitState] = useState<'UNKNOWN' | 'OK' | 'FAIL'>('UNKNOWN');
+  const [overlayVisible, setOverlayVisible] = useState(false);
+
+  useEffect(() => {
+    if (!debugActive) return;
+    setDebugConfig({
+      keySize: finalKeySize,
+      gap: finalGap,
+      spacingScale: 1,
+    });
+    setLayoutHeights({
+      hud: 0,
+      timer: 0,
+      image: 0,
+      guess: 0,
+      keypad: 0,
+      content: 0,
+    });
+    setFitState('UNKNOWN');
+    setOverlayVisible(false);
+  }, [debugActive, finalGap, finalKeySize]);
+
+  const updateLayoutHeight = useCallback(
+    (section: keyof typeof layoutHeights) => (event: any) => {
+      if (!debugActive) return;
+      const nextHeight = Math.round(event.nativeEvent.layout.height);
+      setLayoutHeights((prev) => {
+        if (prev[section] === nextHeight) return prev;
+        return { ...prev, [section]: nextHeight };
+      });
+    },
+    [debugActive],
+  );
+
+  const effectiveKeySize = debugActive ? debugConfig.keySize : finalKeySize;
+  const effectiveGap = debugActive ? debugConfig.gap : finalGap;
+  const spacingScale = debugActive ? debugConfig.spacingScale : 1;
+  const keypadMinHeight = KEYPAD_ROWS * effectiveKeySize + (KEYPAD_ROWS + 1) * effectiveGap;
+
+  const applySpacing = useCallback(
+    (value: number, min: number = 2) => Math.max(Math.round(value * spacingScale), min),
+    [spacingScale],
+  );
+  const applyHeight = useCallback(
+    (value: number, min: number = 32) => Math.max(Math.round(value * spacingScale), min),
+    [spacingScale],
+  );
+
+  const prevFitRef = useRef<boolean | null>(null);
+  useEffect(() => {
+    if (!debugActive) return;
+    const { hud, timer, image, guess, keypad, content } = layoutHeights;
+    if (!hud || !timer || !image || !guess || !keypad || !content) return;
+    const safe = top + bottom;
+    const usable = vh - safe;
+    const sectionsTotal = hud + timer + image + guess + keypad;
+    const margins = Math.max(0, content - sectionsTotal);
+    const overflow = content - usable;
+    const fit = overflow <= 0;
+
+    const logPayload = {
+      vh: Math.round(vh),
+      safe: Math.round(safe),
+      usable: Math.round(usable),
+      hudH: hud,
+      timerH: timer,
+      imageH: image,
+      guessH: guess,
+      keypadH: keypad,
+      margins,
+      contentH: content,
+      FIT: fit,
+    };
+
+    if (prevFitRef.current !== fit || fit === false) {
+      console.table(logPayload);
+      if (!fit) {
+        console.warn(`[PrecisionLayout] Layout overflow by ${overflow} px`);
+      }
+      console.log(`LAYOUT_FIT: ${fit ? 'OK' : `FAIL (overflow: ${overflow} px)`}`);
+      prevFitRef.current = fit;
+    }
+
+    setFitState(fit ? 'OK' : 'FAIL');
+
+    if (!fit) {
+      setDebugConfig((prev) => {
+        let next = prev;
+        if (prev.keySize > KEY_SIZE_MIN) {
+          const reduced = Math.max(KEY_SIZE_MIN, prev.keySize - KEY_SIZE_STEP);
+          if (reduced !== prev.keySize) {
+            next = { ...prev, keySize: reduced };
+          }
+        } else if (prev.gap > GAP_MIN) {
+          const reducedGap = Math.max(GAP_MIN, prev.gap - GAP_STEP);
+          if (reducedGap !== prev.gap) {
+            next = { ...prev, gap: reducedGap };
+          }
+        } else if (prev.spacingScale > SPACING_MIN) {
+          const reducedScale = Math.max(
+            SPACING_MIN,
+            Math.round((prev.spacingScale - SPACING_STEP) * 100) / 100,
+          );
+          if (reducedScale !== prev.spacingScale) {
+            next = { ...prev, spacingScale: reducedScale };
+          }
+        }
+        return next;
+      });
+    }
+  }, [debugActive, layoutHeights, top, bottom, vh]);
+
+  const keypadStyle = useMemo(() => ({ alignSelf: 'stretch' as const }), []);
 
   // --- CALLBACKS ---
   const clearAutoAdvance = useCallback(() => {
@@ -283,68 +520,15 @@ const PrecisionGameContent: React.FC<PrecisionGameContentProps> = ({
   // --- RENDER ---
   const showContent = !loading && !error && currentEvent;
 
-  const KeypadButton = ({ label, onPress, containerStyle, textStyle, disabled, isIcon, iconName, isSubmit }: any) => {
-    const [isPressed, setIsPressed] = useState(false);
-
-    const gradientColors: [string, string] = isSubmit
-      ? ['#E0B457', '#8C6B2B']
-      : ['#1C1922', '#0F0E13'];
-
-    const handlePressIn = () => {
-      if (disabled) return;
-      setIsPressed(true);
-      Haptics.impactAsync(Haptics.ImpactFeedbackStyle.Medium).catch(() => {});
-
-      // Execute immediately on press in for ALL buttons
-      if (isIcon) {
-        onPress();
-      } else {
-        onPress(label);
-      }
-    };
-
-    const handlePressOut = () => {
-      setIsPressed(false);
-    };
-
-    const handlePress = () => {
-      // All actions now handled in onPressIn for instant response
-      return;
-    };
-
-    return (
-      <TouchableOpacity
-        onPressIn={handlePressIn}
-        onPressOut={handlePressOut}
-        onPress={handlePress}
-        disabled={disabled}
-        activeOpacity={1}
-        delayPressIn={0}
-        delayPressOut={0}
-        style={[
-          styles.keypadKey,
-          containerStyle,
-          disabled && styles.keypadDisabled,
-        ]}
-      >
-        <LinearGradient
-          colors={gradientColors}
-          style={StyleSheet.absoluteFill}
-          pointerEvents="none"
-        />
-        {isPressed && <View style={styles.keyPressedOverlay} pointerEvents="none" />}
-        <View style={styles.keypadContent} pointerEvents="none">
-          {isIcon ? (
-            <Ionicons name={iconName} size={36} color={steampunkTheme.secondaryText} />
-          ) : (
-            <Text style={[styles.keypadKeyText, textStyle, isSubmit && { color: '#0B0A0A' }]}>
-              {label}
-            </Text>
-          )}
-        </View>
-      </TouchableOpacity>
-    );
-  };
+  const contentInsets = useMemo(
+    () => ({
+      paddingTop: top + applySpacing(6, 4),
+      paddingBottom: bottom + 10,
+      paddingLeft: left + applySpacing(10, 8),
+      paddingRight: right + applySpacing(10, 8),
+    }),
+    [applySpacing, bottom, left, right, top],
+  );
 
   if (loading && !currentEvent) {
     return (
@@ -357,104 +541,171 @@ const PrecisionGameContent: React.FC<PrecisionGameContentProps> = ({
 
   return (
     <View style={styles.container}>
-      {/* --- BACKGROUND --- */}
-      <ImageBackground
-        source={require('../../assets/images/bgpreci.png')}
-        resizeMode="cover"
-        style={StyleSheet.absoluteFill}
+      <PrecisionGameBackground />
+
+      <View
+        style={[styles.content, contentInsets]}
+        onLayout={updateLayoutHeight('content')}
       >
-        <LinearGradient
-          colors={['rgba(0,0,0,0.55)', 'rgba(0,0,0,0.45)', 'rgba(0,0,0,0.60)']}
-          style={StyleSheet.absoluteFill}
-        />
-      </ImageBackground>
-
-      {/* --- HUD --- */}
-      <View style={styles.topHud}>
-        <LinearGradient colors={[steampunkTheme.cardGradient.start, steampunkTheme.cardGradient.end]} style={styles.hudCard}>
-          <Text style={styles.hudLabel}>Niveau</Text>
-          <Text style={styles.hudValue}>{levelId}</Text>
-        </LinearGradient>
-        <LinearGradient colors={[steampunkTheme.cardGradient.start, steampunkTheme.cardGradient.end]} style={styles.hudCard}>
-          <Text style={styles.hudLabel}>Score</Text>
-          <Text style={styles.hudValue}>{score}</Text>
-        </LinearGradient>
-        <LinearGradient colors={[steampunkTheme.cardGradient.start, steampunkTheme.cardGradient.end]} style={[styles.hudCard, { flex: 1.5 }]}>
-          <Text style={styles.hudLabel}>Vitalité</Text>
-          <View style={styles.progressTrack}>
-            <LinearGradient colors={[steampunkTheme.goldGradient.start, steampunkTheme.goldGradient.end]} style={[styles.progressFill, { width: `${hpRatio * 100}%` }]} />
-          </View>
-          <Text style={styles.hudValueSmall}>{hp}/{hpMax}</Text>
-        </LinearGradient>
-      </View>
-
-      {/* --- TIMER --- */}
-      <View style={styles.timerContainer}>
-        <View style={styles.progressTrack}>
-          <LinearGradient colors={[steampunkTheme.goldGradient.start, steampunkTheme.goldGradient.end]} style={[styles.progressFill, { width: `${timerProgress * 100}%` }]} />
-        </View>
-        <View style={styles.timerBadge}>
-          <Text style={styles.timerValue}>{timeLeft}s</Text>
-        </View>
-      </View>
-
-      {/* --- MAIN CONTENT AREA --- */}
-      <View style={styles.mainContent}>
-        {showContent && !isGameOver && (
-          <>
-            {/* --- EVENT IMAGE & TITLE --- */}
-            <View style={styles.eventCard}>
-              <Pressable onPress={toggleResultImageLightbox}>
-                <ImageBackground
-                  source={{ uri: currentEvent.illustration_url }}
-                  style={styles.eventImage}
-                  imageStyle={styles.eventImageStyle}
-                  resizeMode="cover"
-                >
-                  <LinearGradient colors={['transparent', 'rgba(0,0,0,0.8)']} style={styles.imageOverlay} />
-                  <BlurView intensity={Platform.OS === 'ios' ? 10 : 0} tint="dark" style={styles.titleBadge}>
-                    <Text style={styles.eventTitle}>{currentEvent.titre}</Text>
-                  </BlurView>
-                </ImageBackground>
-              </Pressable>
+        {/* --- HUD --- */}
+        <View
+          style={[
+            styles.topHud,
+            { gap: applySpacing(6), marginBottom: applySpacing(6) },
+          ]}
+          onLayout={updateLayoutHeight('hud')}
+        >
+          <LinearGradient
+            colors={[steampunkTheme.cardGradient.start, steampunkTheme.cardGradient.end]}
+            style={[
+              styles.hudCard,
+              {
+                paddingVertical: applySpacing(8, 4),
+                paddingHorizontal: applySpacing(10, 6),
+              },
+            ]}
+          >
+            <Text style={[styles.hudLabel, { fontSize: applySpacing(11, 10) }]}>Niveau</Text>
+            <Text style={[styles.hudValue, { fontSize: applySpacing(18, 16), marginTop: applySpacing(2, 1) }]}>
+              {levelId}
+            </Text>
+            {!!levelLabel && (
+              <Text style={[styles.hudValueSmall, { fontSize: applySpacing(11, 10), marginTop: applySpacing(1, 0) }]}>
+                {levelLabel}
+              </Text>
+            )}
+          </LinearGradient>
+          <LinearGradient
+            colors={[steampunkTheme.cardGradient.start, steampunkTheme.cardGradient.end]}
+            style={[
+              styles.hudCard,
+              {
+                paddingVertical: applySpacing(8, 4),
+                paddingHorizontal: applySpacing(10, 6),
+              },
+            ]}
+          >
+            <Text style={[styles.hudLabel, { fontSize: applySpacing(11, 10) }]}>Score</Text>
+            <Text style={[styles.hudValue, { fontSize: applySpacing(18, 16), marginTop: applySpacing(2, 1) }]}>
+              {score}
+            </Text>
+          </LinearGradient>
+          <LinearGradient
+            colors={[steampunkTheme.cardGradient.start, steampunkTheme.cardGradient.end]}
+            style={[
+              styles.hudCard,
+              {
+                flex: 1.5,
+                paddingVertical: applySpacing(8, 4),
+                paddingHorizontal: applySpacing(10, 6),
+              },
+            ]}
+          >
+            <Text style={[styles.hudLabel, { fontSize: applySpacing(11, 10) }]}>Vitalité</Text>
+            <View
+              style={[
+                styles.progressTrack,
+                { height: applySpacing(6, 4), marginTop: applySpacing(2, 1) },
+              ]}
+            >
+              <LinearGradient
+                colors={[steampunkTheme.goldGradient.start, steampunkTheme.goldGradient.end]}
+                style={[styles.progressFill, { width: `${hpRatio * 100}%` }]}
+              />
             </View>
+            <Text style={[styles.hudValueSmall, { fontSize: applySpacing(13, 12), marginTop: applySpacing(2, 1) }]}>
+              {hp}/{hpMax}
+            </Text>
+          </LinearGradient>
+        </View>
 
-            {/* --- INPUT & KEYPAD OR RESULT --- */}
-            {!lastResult ? (
-              /* Show input & keypad when no result */
-              <View style={styles.inputSection}>
-                <View style={styles.inputSlotsContainer}>
-                  {Array.from({ length: MAX_DIGITS }).map((_, i) => (
-                    <View key={i} style={styles.inputSlot}>
-                      <Text style={styles.inputSlotText}>{guessValue[i] || ''}</Text>
-                    </View>
-                  ))}
-                </View>
+        {/* --- TIMER --- */}
+        <TimerDisplay
+          progress={timerProgress}
+          seconds={timeLeft}
+          spacingScale={spacingScale}
+          onLayout={updateLayoutHeight('timer')}
+        />
 
-                <View style={styles.keypadContainer}>
-                  <KeypadButton label="1" onPress={handleDigitPress} disabled={!!lastResult} />
-                  <KeypadButton label="2" onPress={handleDigitPress} disabled={!!lastResult} />
-                  <KeypadButton label="3" onPress={handleDigitPress} disabled={!!lastResult} />
-                  <KeypadButton label="4" onPress={handleDigitPress} disabled={!!lastResult} />
-                  <KeypadButton label="5" onPress={handleDigitPress} disabled={!!lastResult} />
-                  <KeypadButton label="6" onPress={handleDigitPress} disabled={!!lastResult} />
-                  <KeypadButton label="7" onPress={handleDigitPress} disabled={!!lastResult} />
-                  <KeypadButton label="8" onPress={handleDigitPress} disabled={!!lastResult} />
-                  <KeypadButton label="9" onPress={handleDigitPress} disabled={!!lastResult} />
-                  <KeypadButton label="Supprimer" onPress={handleBackspace} disabled={!!lastResult} isIcon iconName="backspace-outline" containerStyle={{backgroundColor: 'transparent'}}/>
-                  <KeypadButton label="0" onPress={handleDigitPress} disabled={!!lastResult} />
-                  <KeypadButton
-                    label="Valider"
-                    onPress={handleSubmit}
-                    disabled={!hasGuess || !!lastResult}
-                    isSubmit={true}
-                    textStyle={styles.actionKeyText}
-                  />
-                </View>
+        {/* --- MAIN CONTENT AREA --- */}
+        <View
+          style={[styles.mainContent, { gap: applySpacing(12, 8) }]}
+        >
+          {showContent && !isGameOver && (
+            <>
+              {/* --- EVENT IMAGE & TITLE --- */}
+              <View
+                style={[
+                  styles.eventCard,
+                  { marginBottom: applySpacing(6, 4) },
+                ]}
+                onLayout={updateLayoutHeight('image')}
+              >
+                <Pressable onPress={toggleResultImageLightbox}>
+                  <ImageBackground
+                    source={{ uri: currentEvent.illustration_url }}
+                    style={[styles.eventImage, { height: imgTarget }]}
+                    imageStyle={styles.eventImageStyle}
+                    resizeMode="cover"
+                  >
+                    <LinearGradient colors={['transparent', 'rgba(0,0,0,0.8)']} style={styles.imageOverlay} />
+                    <BlurView intensity={Platform.OS === 'ios' ? 10 : 0} tint="dark" style={styles.titleBadge}>
+                      <Text style={styles.eventTitle}>{currentEvent.titre}</Text>
+                    </BlurView>
+                  </ImageBackground>
+                </Pressable>
               </View>
-            ) : (
-              /* Show result panel when result exists */
-              lastResult && !isGameOver && (
+
+              {/* --- INPUT & KEYPAD OR RESULT --- */}
+              {!lastResult ? (
+                <View
+                  style={[
+                    styles.inputSection,
+                    { gap: applySpacing(10, 6) },
+                  ]}
+                  onLayout={updateLayoutHeight('guess')}
+                >
+                  <View
+                    style={[
+                      styles.inputSlotsContainer,
+                      {
+                        gap: applySpacing(6, 4),
+                        marginBottom: applySpacing(6, 4),
+                        height: applyHeight(42, 34),
+                      },
+                    ]}
+                  >
+                    {Array.from({ length: MAX_DIGITS }).map((_, i) => (
+                      <View key={i} style={styles.inputSlot}>
+                        <Text style={styles.inputSlotText}>{guessValue[i] || ''}</Text>
+                      </View>
+                    ))}
+                  </View>
+
+                  <View
+                    style={[
+                      styles.keypadWrapper,
+                      {
+                        minHeight: keypadMinHeight,
+                        marginTop: applySpacing(6, 4),
+                      },
+                    ]}
+                    pointerEvents="box-none"
+                    onLayout={updateLayoutHeight('keypad')}
+                  >
+                    <NumericKeypad
+                      disabled={!!lastResult}
+                      hasGuess={hasGuess}
+                      onDigit={handleDigitPress}
+                      onDelete={handleBackspace}
+                      onSubmit={handleSubmit}
+                      keySize={effectiveKeySize}
+                      gap={effectiveGap}
+                      style={keypadStyle}
+                    />
+                  </View>
+                </View>
+              ) : (
                 <Animated.View style={[styles.resultPanel, { opacity: resultFadeAnim }]}>
                   <Pressable
                     onPress={handleResultClick}
@@ -467,98 +718,94 @@ const PrecisionGameContent: React.FC<PrecisionGameContentProps> = ({
                       colors={[steampunkTheme.cardGradient.start, steampunkTheme.cardGradient.end]}
                       style={styles.resultCard}
                     >
-                      {/* Compact View */}
                       <View style={styles.resultCompact}>
-                      <View style={styles.resultHeader}>
-                        <Text style={styles.resultTitle}>{lastResult.event.titre}</Text>
-                        {!resultExpanded && (
-                          <Text style={styles.resultExpandHint}>👆 Toucher pour détails</Text>
-                        )}
-                      </View>
-
-                      <View style={styles.resultComparison}>
-                        <View style={styles.resultColumn}>
-                          <Text style={styles.resultLabel}>Votre réponse</Text>
-                          <Text style={styles.resultYourAnswer}>{lastResult.guessYear}</Text>
-                        </View>
-                        <View style={styles.resultColumn}>
-                          <Text style={styles.resultLabel}>Date réelle</Text>
-                          <Text style={styles.resultCorrectAnswer}>{lastResult.actualYear}</Text>
-                        </View>
-                      </View>
-
-                      {lastResult.timedOut ? (
-                        <Text style={styles.resultTimeout}>⏱ Temps écoulé ! -350 HP</Text>
-                      ) : (
-                        <View style={styles.resultStats}>
-                          <Text style={styles.resultDifference}>
-                            Écart : {lastResult.absDifference} an{lastResult.absDifference > 1 ? 's' : ''}
-                          </Text>
-                          {lastResult.absDifference === 0 ? (
-                            <Text style={styles.resultHPBonus}>HP +100</Text>
-                          ) : (
-                            <Text style={styles.resultHP}>HP -{lastResult.hpLoss}</Text>
+                        <View style={styles.resultHeader}>
+                          <Text style={styles.resultTitle}>{lastResult.event.titre}</Text>
+                          {!resultExpanded && (
+                            <Text style={styles.resultExpandHint}>👆 Toucher pour détails</Text>
                           )}
-                          <Text style={styles.resultScore}>Score +{lastResult.scoreGain}</Text>
+                        </View>
+
+                        <View style={styles.resultComparison}>
+                          <View style={styles.resultColumn}>
+                            <Text style={styles.resultLabel}>Votre réponse</Text>
+                            <Text style={styles.resultYourAnswer}>{lastResult.guessYear}</Text>
+                          </View>
+                          <View style={styles.resultColumn}>
+                            <Text style={styles.resultLabel}>Date réelle</Text>
+                            <Text style={styles.resultCorrectAnswer}>{lastResult.actualYear}</Text>
+                          </View>
+                        </View>
+
+                        {lastResult.timedOut ? (
+                          <Text style={styles.resultTimeout}>⏱ Temps écoulé ! -350 HP</Text>
+                        ) : (
+                          <View style={styles.resultStats}>
+                            <Text style={styles.resultDifference}>
+                              Écart : {lastResult.absDifference} an{lastResult.absDifference > 1 ? 's' : ''}
+                            </Text>
+                            {lastResult.absDifference === 0 ? (
+                              <Text style={styles.resultHPBonus}>HP +100</Text>
+                            ) : (
+                              <Text style={styles.resultHP}>HP -{lastResult.hpLoss}</Text>
+                            )}
+                            <Text style={styles.resultScore}>Score +{lastResult.scoreGain}</Text>
+                          </View>
+                        )}
+
+                        {!resultExpanded && lastResult.event.description_detaillee && (
+                          <Text style={styles.resultDescriptionTruncated} numberOfLines={2}>
+                            {lastResult.event.description_detaillee}
+                          </Text>
+                        )}
+                      </View>
+
+                      {resultExpanded && (
+                        <View style={styles.resultExpanded}>
+                          {lastResult.event.description_detaillee && (
+                            <ScrollView style={styles.resultDescriptionContainer} showsVerticalScrollIndicator={false}>
+                              <Text style={styles.resultDescription}>
+                                {lastResult.event.description_detaillee}
+                              </Text>
+                            </ScrollView>
+                          )}
+
+                          <Pressable
+                            onPress={handleContinue}
+                            style={({ pressed }) => [
+                              styles.continueButton,
+                              { transform: [{ scale: pressed ? 0.98 : 1 }] }
+                            ]}
+                          >
+                            <LinearGradient
+                              colors={['#E0B457', '#8C6B2B']}
+                              style={StyleSheet.absoluteFill}
+                            />
+                            <Text style={styles.continueButtonText}>Continuer</Text>
+                          </Pressable>
                         </View>
                       )}
 
-                      {/* Truncated Description */}
-                      {!resultExpanded && lastResult.event.description_detaillee && (
-                        <Text style={styles.resultDescriptionTruncated} numberOfLines={2}>
-                          {lastResult.event.description_detaillee}
-                        </Text>
-                      )}
-                    </View>
-
-                    {/* Expanded View */}
-                    {resultExpanded && (
-                      <View style={styles.resultExpanded}>
-                        {lastResult.event.description_detaillee && (
-                          <ScrollView style={styles.resultDescriptionContainer} showsVerticalScrollIndicator={false}>
-                            <Text style={styles.resultDescription}>
-                              {lastResult.event.description_detaillee}
-                            </Text>
-                          </ScrollView>
-                        )}
-
+                      {!resultExpanded && (
                         <Pressable
                           onPress={handleContinue}
                           style={({ pressed }) => [
-                            styles.continueButton,
-                            { transform: [{ scale: pressed ? 0.98 : 1 }] }
+                            styles.resultCountdown,
+                            { opacity: pressed ? 0.7 : 1 }
                           ]}
                         >
-                          <LinearGradient
-                            colors={['#E0B457', '#8C6B2B']}
-                            style={StyleSheet.absoluteFill}
-                          />
-                          <Text style={styles.continueButtonText}>Continuer</Text>
+                          <Text style={styles.resultCountdownText}>
+                            ⏭ Continuer ({displayedCountdown}s)
+                          </Text>
                         </Pressable>
-                      </View>
-                    )}
-
-                    {/* Auto-advance countdown - only when compact */}
-                    {!resultExpanded && (
-                      <Pressable
-                        onPress={handleContinue}
-                        style={({ pressed }) => [
-                          styles.resultCountdown,
-                          { opacity: pressed ? 0.7 : 1 }
-                        ]}
-                      >
-                        <Text style={styles.resultCountdownText}>
-                          ⏭ Continuer ({displayedCountdown}s)
-                        </Text>
-                      </Pressable>
-                    )}
-                  </LinearGradient>
-                </Pressable>
-              </Animated.View>
-              )
-            )}
-          </>
-        )}
+                      )}
+                    </LinearGradient>
+                  </Pressable>
+                </Animated.View>
+              )}
+            </>
+          )}
+        </View>
       </View>
 
       {/* --- IMAGE LIGHTBOX --- */}
@@ -587,6 +834,21 @@ const PrecisionGameContent: React.FC<PrecisionGameContentProps> = ({
         onDecline={() => onDeclineContinue?.()}
         adLoaded={continueAdLoaded}
       />
+
+      {debugActive && (
+        <View pointerEvents="box-none" style={styles.debugRoot}>
+          <Pressable style={styles.debugToggle} onPress={() => setOverlayVisible((prev) => !prev)}>
+            <Text style={styles.debugToggleText}>?</Text>
+          </Pressable>
+          {overlayVisible && (
+            <View style={styles.debugOverlay} pointerEvents="none">
+              <Text style={styles.debugOverlayText}>
+                {`HUD:${layoutHeights.hud} TIM:${layoutHeights.timer} IMG:${layoutHeights.image} GUE:${layoutHeights.guess} PAD:${layoutHeights.keypad} FIT:${fitState}`}
+              </Text>
+            </View>
+          )}
+        </View>
+      )}
     </View>
   );
 };
@@ -596,7 +858,11 @@ const styles = StyleSheet.create({
   container: {
     flex: 1,
     backgroundColor: steampunkTheme.mainBg,
-    padding: 10,
+    position: 'relative',
+  },
+  content: {
+    flex: 1,
+    gap: 12,
   },
   centered: {
     flex: 1,
@@ -613,37 +879,38 @@ const styles = StyleSheet.create({
   topHud: {
     flexDirection: 'row',
     justifyContent: 'space-between',
-    gap: 8,
-    marginBottom: 10,
+    gap: 0,
+    marginBottom: 0,
   },
   hudCard: {
     flex: 1,
-    padding: 10,
-    borderRadius: 16,
+    paddingVertical: 0,
+    paddingHorizontal: 0,
+    borderRadius: 14,
     borderWidth: 1,
     borderColor: steampunkTheme.goldBorderTransparent,
     alignItems: 'center',
     ...Platform.select({
-      ios: { shadowColor: 'black', shadowOffset: { width: 0, height: 6 }, shadowOpacity: 0.25, shadowRadius: 12 },
-      android: { elevation: 6 },
+      ios: { shadowColor: 'black', shadowOffset: { width: 0, height: 4 }, shadowOpacity: 0.2, shadowRadius: 8 },
+      android: { elevation: 4 },
     }),
   },
   hudLabel: {
     color: steampunkTheme.secondaryText,
-    fontSize: 12,
+    fontSize: 11,
     fontWeight: '600',
   },
   hudValue: {
     color: steampunkTheme.primaryText,
-    fontSize: 20,
+    fontSize: 18,
     fontWeight: 'bold',
-    marginTop: 4,
+    marginTop: 2,
   },
   hudValueSmall: {
     color: steampunkTheme.primaryText,
-    fontSize: 14,
+    fontSize: 13,
     fontWeight: '600',
-    marginTop: 4,
+    marginTop: 2,
   },
   // --- Progress Bars ---
   progressTrack: {
@@ -652,7 +919,7 @@ const styles = StyleSheet.create({
     backgroundColor: steampunkTheme.progressTrack,
     borderRadius: 4,
     overflow: 'hidden',
-    marginTop: 4,
+    marginTop: 2,
   },
   progressFill: {
     height: '100%',
@@ -663,7 +930,7 @@ const styles = StyleSheet.create({
     flexDirection: 'row',
     alignItems: 'center',
     gap: 10,
-    marginBottom: 10,
+    marginBottom: 0,
   },
   timerBadge: {
     backgroundColor: steampunkTheme.inputSlot,
@@ -681,17 +948,17 @@ const styles = StyleSheet.create({
   // --- Main Content ---
   mainContent: {
     flex: 1,
+    gap: 0,
   },
   // --- Event Card ---
   eventCard: {
     borderRadius: 18,
     overflow: 'hidden',
-    marginBottom: 8,
     backgroundColor: steampunkTheme.cardPanel,
+    flexShrink: 0,
   },
   eventImage: {
     width: '100%',
-    height: 160,
     justifyContent: 'flex-end',
   },
   eventImageStyle: {
@@ -721,21 +988,22 @@ const styles = StyleSheet.create({
   },
   // --- Input & Keypad ---
   inputSection: {
-    width: '98%',
-    flex: 1,
+    width: '100%',
     alignSelf: 'center',
     justifyContent: 'flex-start',
+    gap: 0,
+    flexShrink: 0,
   },
   inputSlotsContainer: {
     flexDirection: 'row',
     justifyContent: 'center',
-    gap: 8,
-    marginBottom: 8,
-    height: 45,
+    gap: 6,
+    marginBottom: 6,
+    height: 42,
   },
   inputSlot: {
     flex: 1,
-    maxWidth: 60,
+    maxWidth: 54,
     backgroundColor: steampunkTheme.inputSlot,
     borderRadius: 12,
     borderWidth: 1,
@@ -753,49 +1021,11 @@ const styles = StyleSheet.create({
     fontSize: 28,
     fontWeight: 'bold',
   },
-  keypadContainer: {
-    flexDirection: 'row',
-    flexWrap: 'wrap',
-    justifyContent: 'space-between',
-    alignContent: 'space-between',
-    gap: 8,
-    flex: 1,
-  },
-  keypadKey: {
-    width: '31%',
-    height: '22%',
-    borderRadius: 20,
-    justifyContent: 'center',
-    alignItems: 'center',
-    overflow: 'hidden',
-  },
-  keypadContent: {
-    ...StyleSheet.absoluteFillObject,
-    justifyContent: 'center',
-    alignItems: 'center',
-  },
-  keyPressedOverlay: {
-    ...StyleSheet.absoluteFillObject,
-    backgroundColor: 'rgba(224, 180, 87, 0.3)',
-  },
-  keypadKeyText: {
-    color: '#E8D9A8',
-    fontSize: 28,
-    fontWeight: 'bold',
-    textAlign: 'center',
-    includeFontPadding: false,
-    lineHeight: 28,
-  },
-  actionKey: {
-    // Specific styles for the "Valider" button
-  },
-  actionKeyText: {
-    color: steampunkTheme.mainBg,
-    fontWeight: 'bold',
-    fontSize: 18,
-  },
-  keypadDisabled: {
-    opacity: 0.4,
+  keypadWrapper: {
+    width: '100%',
+    alignSelf: 'center',
+    flexShrink: 0,
+    marginTop: 6,
   },
   // --- Result Panel ---
   resultPanel: {
@@ -969,6 +1199,44 @@ const styles = StyleSheet.create({
     top: 40,
     right: 20,
     zIndex: 10,
+  },
+  debugRoot: {
+    position: 'absolute',
+    top: 10,
+    left: 10,
+    right: 10,
+    zIndex: 999,
+    flexDirection: 'row',
+    alignItems: 'flex-start',
+  },
+  debugToggle: {
+    width: 28,
+    height: 28,
+    borderRadius: 14,
+    backgroundColor: 'rgba(0,0,0,0.6)',
+    justifyContent: 'center',
+    alignItems: 'center',
+    borderWidth: 1,
+    borderColor: 'rgba(255,255,255,0.3)',
+  },
+  debugToggleText: {
+    color: '#FFFFFF',
+    fontWeight: 'bold',
+    fontSize: 14,
+  },
+  debugOverlay: {
+    marginLeft: 8,
+    backgroundColor: 'rgba(0,0,0,0.75)',
+    paddingHorizontal: 10,
+    paddingVertical: 6,
+    borderRadius: 10,
+    borderWidth: 1,
+    borderColor: 'rgba(255,255,255,0.2)',
+  },
+  debugOverlayText: {
+    color: '#F5F5F5',
+    fontSize: 10,
+    fontWeight: '600',
   },
 });
 
