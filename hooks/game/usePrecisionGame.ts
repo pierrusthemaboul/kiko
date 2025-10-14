@@ -91,6 +91,114 @@ function extractYear(dateStr: string | null | undefined): number | null {
   return Number.isNaN(parsed) ? null : parsed;
 }
 
+/**
+ * Calcule le score et la perte de HP en tenant compte de :
+ * - L'écart absolu entre la réponse et la date réelle
+ * - L'ancienneté de l'événement (événements anciens = tolérance plus grande)
+ * - La notoriété de l'événement (événements peu connus = tolérance plus grande)
+ */
+function calculateScoreAndHP(params: {
+  absDifference: number;
+  actualYear: number;
+  notoriete: number | null | undefined;
+}) {
+  const { absDifference, actualYear, notoriete } = params;
+
+  // 1. Facteur d'ancienneté : plus l'événement est ancien, plus on est tolérant
+  // Référence : 2000 (événements récents)
+  const yearDiff = Math.abs(2000 - actualYear);
+
+  // Tolérance de base : 0-50 ans = 1.0x, puis augmentation progressive
+  // 0-50 ans du présent : 1.0x
+  // 100 ans : 1.15x
+  // 500 ans : 1.5x
+  // 1000 ans : 2.0x
+  // 2000+ ans : 2.5x
+  let ageFactor = 1.0;
+  if (yearDiff > 2000) {
+    ageFactor = 2.5;
+  } else if (yearDiff > 1000) {
+    ageFactor = 1.5 + ((yearDiff - 1000) / 1000) * 1.0;
+  } else if (yearDiff > 500) {
+    ageFactor = 1.3 + ((yearDiff - 500) / 500) * 0.2;
+  } else if (yearDiff > 100) {
+    ageFactor = 1.1 + ((yearDiff - 100) / 400) * 0.2;
+  } else if (yearDiff > 50) {
+    ageFactor = 1.0 + ((yearDiff - 50) / 50) * 0.1;
+  }
+
+  // 2. Facteur de notoriété : événements peu connus = tolérance plus grande
+  // notoriete 0-30 : 1.5x
+  // notoriete 30-50 : 1.3x
+  // notoriete 50-70 : 1.15x
+  // notoriete 70-100 : 1.0x
+  const actualNotoriete = notoriete ?? 50;
+  let notorietyFactor = 1.0;
+  if (actualNotoriete < 30) {
+    notorietyFactor = 1.5;
+  } else if (actualNotoriete < 50) {
+    notorietyFactor = 1.3;
+  } else if (actualNotoriete < 70) {
+    notorietyFactor = 1.15;
+  }
+
+  // 3. Facteur combiné (on prend le max des deux pour être plus généreux)
+  const toleranceFactor = Math.max(ageFactor, notorietyFactor);
+
+  // 4. Calcul de l'écart ajusté (l'écart "ressenti" après application de la tolérance)
+  const adjustedDifference = absDifference / toleranceFactor;
+
+  // 5. Calcul de la perte de HP basée sur l'écart ajusté
+  // Formule moins punitive : cap à 400 HP au lieu de 500
+  // Progression : 1 an = 1.5 HP au lieu de 2 HP
+  const baseHpLoss = Math.floor(adjustedDifference * 1.5);
+  const hpLoss = Math.min(400, baseHpLoss);
+
+  // 6. Calcul du score avec doublement des gains
+  // Ancienne formule doublée et plus généreuse
+  let scoreGain = 0;
+
+  if (adjustedDifference === 0) {
+    // Réponse parfaite : gros bonus (doublé de 400 à 800)
+    scoreGain = 800;
+  } else if (adjustedDifference <= 1) {
+    // Très proche : 600-799
+    scoreGain = 600 + Math.floor((1 - adjustedDifference) * 199);
+  } else if (adjustedDifference <= 5) {
+    // Excellent : 400-599
+    scoreGain = 400 + Math.floor((5 - adjustedDifference) / 4 * 199);
+  } else if (adjustedDifference <= 10) {
+    // Très bon : 300-399
+    scoreGain = 300 + Math.floor((10 - adjustedDifference) / 5 * 99);
+  } else if (adjustedDifference <= 25) {
+    // Bon : 200-299
+    scoreGain = 200 + Math.floor((25 - adjustedDifference) / 15 * 99);
+  } else if (adjustedDifference <= 50) {
+    // Correct : 120-199
+    scoreGain = 120 + Math.floor((50 - adjustedDifference) / 25 * 79);
+  } else if (adjustedDifference <= 100) {
+    // Moyen : 60-119
+    scoreGain = 60 + Math.floor((100 - adjustedDifference) / 50 * 59);
+  } else if (adjustedDifference <= 175) {
+    // Faible : 30-59
+    scoreGain = 30 + Math.floor((175 - adjustedDifference) / 75 * 29);
+  } else if (adjustedDifference <= 250) {
+    // Très faible : 15-29
+    scoreGain = 15 + Math.floor((250 - adjustedDifference) / 75 * 14);
+  } else if (adjustedDifference <= 400) {
+    // Minimal : 5-14
+    scoreGain = 5 + Math.floor((400 - adjustedDifference) / 150 * 9);
+  } else if (adjustedDifference <= 600) {
+    // Quasi-nul : 1-4
+    scoreGain = 1 + Math.floor((600 - adjustedDifference) / 200 * 3);
+  } else {
+    // Au-delà de 600 ans d'écart ajusté : 0 point
+    scoreGain = 0;
+  }
+
+  return { hpLoss, scoreGain, toleranceFactor, adjustedDifference };
+}
+
 function getLevelForScore(score: number): PrecisionLevel {
   for (let i = PRECISION_LEVELS.length - 1; i >= 0; i -= 1) {
     const level = PRECISION_LEVELS[i];
@@ -457,33 +565,22 @@ export function usePrecisionGame() {
 
       const difference = guessYear - actualYear;
       const absDifference = Math.abs(difference);
-      const hpLoss = Math.min(500, Math.floor(absDifference * 2));
-      // Calcul progressif des points : décroissance plus forte pour les grands écarts
-      let scoreGain = 0;
-      if (absDifference > 500) {
-        scoreGain = 0;
-      } else if (absDifference > 250) {
-        // Entre 251-500 ans : 1-5 points
-        scoreGain = Math.max(1, Math.floor((500 - absDifference) / 50));
-      } else if (absDifference > 175) {
-        // Entre 176-250 ans : 6-15 points
-        scoreGain = Math.max(6, Math.floor(15 + (250 - absDifference) / 10));
-      } else if (absDifference > 100) {
-        // Entre 101-175 ans : 16-50 points
-        scoreGain = Math.max(16, Math.floor(50 + (175 - absDifference) / 2));
-      } else {
-        // 0-100 ans : 51-400 points (formule originale)
-        scoreGain = Math.max(51, 400 - hpLoss * 2);
-      }
+
+      // Nouveau système de calcul tenant compte de l'ancienneté et de la notoriété
+      const { hpLoss, scoreGain } = calculateScoreAndHP({
+        absDifference,
+        actualYear,
+        notoriete: currentEvent.notoriete,
+      });
 
       const scoreBefore = score;
       const hpBefore = hp;
 
       let nextHp = Math.max(0, hpBefore - hpLoss);
 
-      // Bonus de 100 HP si la réponse est exacte
+      // Bonus de 150 HP si la réponse est exacte (augmenté de 100 à 150)
       if (absDifference === 0) {
-        nextHp = Math.min(MAX_HP, nextHp + 100);
+        nextHp = Math.min(MAX_HP, nextHp + 150);
       }
 
       let nextScore = scoreBefore + scoreGain;
@@ -516,23 +613,9 @@ export function usePrecisionGame() {
       setTotalAnswered((prev) => prev + 1);
 
       if (nextHp <= 0) {
-        // Toujours proposer le Continue si le joueur ne l'a pas déjà utilisé
-        if (!adState.hasContinued) {
-          setShowContinueOffer(true);
-          setIsTimerPaused(true);
-        } else {
-          setIsGameOver(true);
-          setLeaderboardsReady(false);
-          loadLeaderboards(nextScore, totalAnswered + 1);
-          FirebaseAnalytics.logEvent('precision_game_over', {
-            total_events: totalAnswered + 1,
-            final_score: nextScore,
-          });
-          // Afficher la pub game over après un délai
-          setTimeout(() => {
-            showGameOverAd();
-          }, 1500);
-        }
+        // Ne pas passer à isGameOver immédiatement, laisser le résultat s'afficher
+        // L'écran game over sera déclenché quand le joueur clique sur "Continuer"
+        setIsTimerPaused(true);
       } else {
         FirebaseAnalytics.logEvent('precision_guess', {
           event_id: currentEvent.id,
@@ -553,7 +636,8 @@ export function usePrecisionGame() {
     const actualYear = extractYear(currentEvent.date);
     if (actualYear === null) return;
 
-    const hpLoss = 350;
+    // Pénalité de timeout réduite de 350 à 250 HP
+    const hpLoss = 250;
     const scoreGain = 0;
 
     const previousLevel = level;
@@ -582,23 +666,9 @@ export function usePrecisionGame() {
     setTotalAnswered((prev) => prev + 1);
 
     if (nextHp <= 0) {
-      // Toujours proposer le Continue si le joueur ne l'a pas déjà utilisé
-      if (!adState.hasContinued) {
-        setShowContinueOffer(true);
-        setIsTimerPaused(true);
-      } else {
-        setIsGameOver(true);
-        setLeaderboardsReady(false);
-        loadLeaderboards(nextScore, totalAnswered + 1);
-        FirebaseAnalytics.logEvent('precision_game_over', {
-          total_events: totalAnswered + 1,
-          final_score: nextScore,
-        });
-        // Afficher la pub game over après un délai
-        setTimeout(() => {
-          showGameOverAd();
-        }, 1500);
-      }
+      // Ne pas passer à isGameOver immédiatement, laisser le résultat s'afficher
+      // L'écran game over sera déclenché quand le joueur clique sur "Continuer"
+      setIsTimerPaused(true);
     } else {
       FirebaseAnalytics.logEvent('precision_timeout', {
         event_id: currentEvent.id,
@@ -635,6 +705,29 @@ export function usePrecisionGame() {
   const loadNextEvent = useCallback(() => {
     if (isGameOver) return;
 
+    // Si HP est à 0, c'est le moment de déclencher le game over
+    if (hp <= 0) {
+      // Proposer le Continue si pas déjà utilisé
+      if (!adState.hasContinued) {
+        setShowContinueOffer(true);
+        setIsTimerPaused(true);
+      } else {
+        // Sinon, game over
+        setIsGameOver(true);
+        setLeaderboardsReady(false);
+        loadLeaderboards(score, totalAnswered);
+        FirebaseAnalytics.logEvent('precision_game_over', {
+          total_events: totalAnswered,
+          final_score: score,
+        });
+        // Afficher la pub game over après un délai
+        setTimeout(() => {
+          showGameOverAd();
+        }, 1500);
+      }
+      return;
+    }
+
     const targetLevel = getLevelForScore(score);
     const nextEvent = pickEventForLevel(targetLevel);
     if (!nextEvent) {
@@ -647,7 +740,7 @@ export function usePrecisionGame() {
     setLastResult(null);
     setTimeLeft(MAX_TIME_SECONDS);
     setIsTimerPaused(false);
-  }, [isGameOver, pickEventForLevel, score]);
+  }, [isGameOver, pickEventForLevel, score, hp, adState.hasContinued, totalAnswered, loadLeaderboards, showGameOverAd]);
 
   const restart = useCallback(() => {
     resetAdsState();

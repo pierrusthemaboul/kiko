@@ -897,14 +897,14 @@ const PrecisionGameContent: React.FC<PrecisionGameContentProps> = ({
                         </View>
 
                         {lastResult.timedOut ? (
-                          <Text style={styles.resultTimeout}>⏱ Temps écoulé ! -350 HP</Text>
+                          <Text style={styles.resultTimeout}>⏱ Temps écoulé ! -250 HP</Text>
                         ) : (
                           <View style={styles.resultStats}>
                             <Text style={styles.resultDifference}>
                               Écart : {lastResult.absDifference} an{lastResult.absDifference > 1 ? 's' : ''}
                             </Text>
                             {lastResult.absDifference === 0 ? (
-                              <Text style={styles.resultHPBonus}>HP +100</Text>
+                              <Text style={styles.resultHPBonus}>HP +150</Text>
                             ) : (
                               <Text style={styles.resultHP}>HP -{lastResult.hpLoss}</Text>
                             )}
