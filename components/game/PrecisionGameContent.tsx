@@ -64,6 +64,8 @@ interface PrecisionGameContentProps {
   onContinueWithAd?: () => void;
   onDeclineContinue?: () => void;
   continueAdLoaded?: boolean;
+  eventsAnsweredInLevel: number;
+  eventsRequiredForLevel: number;
 }
 
 // --- HELPER FUNCTIONS ---
@@ -141,7 +143,7 @@ const PrecisionGameContent: React.FC<PrecisionGameContentProps> = ({
   hp,
   hpMax,
   levelLabel,
-  levelId, // Correction : Ajout de levelId
+  levelId,
   levelProgress,
   lastResult,
   isGameOver,
@@ -158,6 +160,8 @@ const PrecisionGameContent: React.FC<PrecisionGameContentProps> = ({
   onContinueWithAd,
   onDeclineContinue,
   continueAdLoaded = false,
+  eventsAnsweredInLevel,
+  eventsRequiredForLevel,
 }) => {
   // --- STATE & REFS ---
   const [guessValue, setGuessValue] = useState('');
@@ -194,12 +198,6 @@ const PrecisionGameContent: React.FC<PrecisionGameContentProps> = ({
   const displayedCountdown = autoAdvanceCountdown ?? AUTO_ADVANCE_SECONDS;
 
   const layoutMetrics = useMemo(() => {
-    console.log('\n[LAYOUT_START] ═══════════════════════════════════════');
-    console.log('[LAYOUT_START] NOUVEAU CALCUL DE LAYOUT');
-    console.log('[LAYOUT_START] ═══════════════════════════════════════');
-    console.log('[LAYOUT_VIEWPORT] Dimensions - vh:', Math.round(vh), 'px, vw:', Math.round(vw), 'px');
-    console.log('[LAYOUT_VIEWPORT] Safe insets - top:', top, 'bottom:', bottom, 'left:', left, 'right:', right);
-
     // Estimation des hauteurs fixes
     const hudEstimate = 55;
     const timerEstimate = 25;
@@ -207,9 +205,6 @@ const PrecisionGameContent: React.FC<PrecisionGameContentProps> = ({
     const contentGaps = 8;
     const safetyMargin = 10;
     const chromeTotal = hudEstimate + timerEstimate + inputSlotsEstimate + contentGaps + safetyMargin;
-
-    console.log('[LAYOUT_CHROME] HUD:', hudEstimate, 'Timer:', timerEstimate, 'InputSlots:', inputSlotsEstimate);
-    console.log('[LAYOUT_CHROME] ContentGaps:', contentGaps, 'SafetyMargin:', safetyMargin, 'Total:', chromeTotal);
 
     const safeHeight = top + bottom;
     const contentPaddingTopExtra = 0;
@@ -220,17 +215,12 @@ const PrecisionGameContent: React.FC<PrecisionGameContentProps> = ({
       0,
     );
 
-    console.log('[LAYOUT_SPACE] Safe height (insets):', Math.round(safeHeight), 'px');
-    console.log('[LAYOUT_SPACE] Usable space for image+keypad:', Math.round(usableSpace), 'px');
-
     const aspectRatio = vw > 0 ? vh / vw : 1;
     let imageFraction = 0.37;
     if (aspectRatio >= 1.9) imageFraction = 0.40;
     else if (aspectRatio >= 1.7) imageFraction = 0.38;
     else if (aspectRatio >= 1.5) imageFraction = 0.37;
     else imageFraction = 0.35;
-
-    console.log('[LAYOUT_SPACE] Aspect ratio (vh/vw):', aspectRatio.toFixed(2), '→ imageFraction:', imageFraction);
 
     const imgTarget = Math.max(170, usableSpace * imageFraction);
     const sectionGap = 2;
@@ -241,12 +231,6 @@ const PrecisionGameContent: React.FC<PrecisionGameContentProps> = ({
 
     const keypadTarget = Math.max(usableSpace - imgTarget - sectionGap - bottomMarginPx, 0);
 
-    console.log('[LAYOUT_ALLOCATION] Image target:', Math.round(imgTarget), 'px');
-    console.log('[LAYOUT_ALLOCATION] Section gap:', sectionGap, 'px');
-    console.log('[LAYOUT_ALLOCATION] Bottom margin (1% vh):', bottomMarginPx, 'px');
-    console.log('[LAYOUT_ALLOCATION] Keypad target height:', Math.round(keypadTarget), 'px');
-    console.log('[LAYOUT_ALLOCATION] Verification:', Math.round(imgTarget), '+', sectionGap, '+', Math.round(keypadTarget), '+', bottomMarginPx, '=', Math.round(imgTarget + sectionGap + keypadTarget + bottomMarginPx), '/', Math.round(usableSpace));
-
     const baseGap = 1;
     const cols = KEYPAD_COLS;
     const rows = KEYPAD_ROWS;
@@ -255,80 +239,45 @@ const PrecisionGameContent: React.FC<PrecisionGameContentProps> = ({
     const horizontalMarginPercent = 0.01;
     const singleMargin = Math.round(vw * horizontalMarginPercent);
 
-    console.log('[LAYOUT_WIDTH] ─────────────────────────────────────────');
-    console.log('[LAYOUT_WIDTH] Single margin (1% vw):', singleMargin, 'px');
-    console.log('[LAYOUT_WIDTH] Safe area - left:', left, 'right:', right);
-
     const safeLeft = Math.max(left, singleMargin);
     const safeRight = Math.max(right, singleMargin);
 
-    console.log('[LAYOUT_WIDTH] Final margins - left:', safeLeft, 'right:', safeRight);
-
     const availableWidth = Math.max(vw - safeLeft - safeRight, 0);
-
-    console.log('[LAYOUT_WIDTH] Calculation: vw', Math.round(vw), '- left', safeLeft, '- right', safeRight, '=', Math.round(availableWidth));
-    console.log('[LAYOUT_WIDTH] Available width (after margins):', Math.round(availableWidth), 'px');
-    console.log('[LAYOUT_WIDTH] Width ratio:', (availableWidth / vw * 100).toFixed(1) + '%');
 
     // On veut que le pavé fasse 98% de availableWidth
     const targetKeypadWidthRatio = 0.98;
     const containerWidth = Math.round(availableWidth * targetKeypadWidthRatio);
-
-    console.log('[LAYOUT_WIDTH] Target keypad width (98% of available):', containerWidth, 'px');
-    console.log('[LAYOUT_WIDTH] Keypad to viewport ratio:', (containerWidth / vw * 100).toFixed(1) + '%');
 
     const widthDenominator = cols > 0 ? cols : 1;
     const gapsWidth = baseGap * Math.max(cols - 1, 0);
     const internalWidth = Math.max(containerWidth - gapsWidth, 0);
     const baseKeySize = internalWidth > 0 ? Math.floor(internalWidth / widthDenominator) : 0;
 
-    console.log('[LAYOUT_KEYSIZE] ───────────────────────────────────────');
-    console.log('[LAYOUT_KEYSIZE] Container width:', containerWidth, '- gaps', gapsWidth, '(', baseGap, '×', cols - 1, ')', '= internal', internalWidth);
-    console.log('[LAYOUT_KEYSIZE] Base key size from WIDTH:', internalWidth, '/', cols, '=', baseKeySize, 'px');
-
     const fallbackSize = containerWidth > 0 ? Math.floor(containerWidth / widthDenominator) : 46;
     const keySizeCandidate = baseKeySize > 0 ? baseKeySize : Math.max(fallbackSize, 32);
 
-    console.log('[LAYOUT_KEYSIZE] Key size candidate:', keySizeCandidate, 'px');
-
     // PRIORITÉ À LA LARGEUR : on force la taille calculée depuis la largeur
     const targetKeyWidth = Math.max(KEY_SIZE_MIN, Math.min(KEY_SIZE_MAX, keySizeCandidate));
-
-    console.log('[LAYOUT_KEYSIZE] Target key WIDTH (forced):', targetKeyWidth, 'px');
 
     // Maintenant on calcule quel ratio hauteur/largeur on peut se permettre
     let finalGap = Math.max(GAP_MIN, baseGap);
     const verticalPadding = Math.max(1, Math.floor(finalGap / 3));
     const paddingTotal = verticalPadding * 2;
 
-    console.log('[LAYOUT_FIT] ───────────────────────────────────────────');
-    console.log('[LAYOUT_FIT] Starting with gap:', finalGap, 'verticalPadding:', verticalPadding);
-
     // Calcul de la hauteur disponible pour les touches
     const availableHeightForKeys = Math.max(keypadTarget - (rows + 1) * finalGap - paddingTotal, 0);
     const maxKeyHeight = rows > 0 ? Math.floor(availableHeightForKeys / rows) : 0;
-
-    console.log('[LAYOUT_FIT] Available height for keys:', Math.round(availableHeightForKeys), 'px');
-    console.log('[LAYOUT_FIT] Max key height:', maxKeyHeight, 'px (for', rows, 'rows)');
 
     // Calcul du ratio hauteur/largeur optimal
     const optimalHeightRatio = targetKeyWidth > 0 ? maxKeyHeight / targetKeyWidth : NUMERIC_KEYPAD_HEIGHT_RATIO;
     const actualHeightRatio = Math.min(NUMERIC_KEYPAD_HEIGHT_RATIO, optimalHeightRatio);
 
-    console.log('[LAYOUT_FIT] Optimal height ratio:', optimalHeightRatio.toFixed(3), 'vs default', NUMERIC_KEYPAD_HEIGHT_RATIO);
-    console.log('[LAYOUT_FIT] Using height ratio:', actualHeightRatio.toFixed(3));
-
     const finalKeySize = targetKeyWidth;
     const finalKeyHeight = Math.round(finalKeySize * actualHeightRatio);
     const finalKeypadHeight = rows * finalKeyHeight + (rows + 1) * finalGap + paddingTotal;
 
-    console.log('[LAYOUT_FIT] Final key size:', finalKeySize, '× ratio', actualHeightRatio.toFixed(3), '=', finalKeyHeight, 'px height');
-    console.log('[LAYOUT_FIT] Total keypad height:', finalKeypadHeight, 'px vs target', Math.round(keypadTarget), 'px');
-
     const overflow = finalKeypadHeight - keypadTarget;
     if (overflow > 0) {
-      console.warn('[LAYOUT_FIT] ⚠️ OVERFLOW by', Math.round(overflow), 'px - adjusting...');
-
       // Si on déborde, on réduit le gap
       while (overflow > 0 && finalGap > GAP_MIN) {
         finalGap = Math.max(GAP_MIN, finalGap - 1);
@@ -340,29 +289,15 @@ const PrecisionGameContent: React.FC<PrecisionGameContentProps> = ({
         const adjustedHeightRatio = Math.min(actualHeightRatio, newHeightRatio);
 
         const testHeight = rows * Math.round(finalKeySize * adjustedHeightRatio) + (rows + 1) * finalGap + newPaddingTotal;
-        console.log('[LAYOUT_FIT] Testing gap', finalGap, '→ height', testHeight, 'vs', Math.round(keypadTarget));
 
         if (testHeight <= keypadTarget) {
           break;
         }
       }
-    } else {
-      console.log('[LAYOUT_FIT] ✓ FITS perfectly with', Math.round(-overflow), 'px margin');
     }
 
     const keypadBaseWidth = finalKeySize * KEYPAD_COLS + finalGap * Math.max(KEYPAD_COLS - 1, 0);
     const keypadContainerWidth = containerWidth; // On force la largeur du container
-
-    console.log('[LAYOUT_FINAL] ═══════════════════════════════════════');
-    console.log('[LAYOUT_FINAL] Key size:', finalKeySize, 'px (width), height ratio:', actualHeightRatio.toFixed(3));
-    console.log('[LAYOUT_FINAL] Key height:', finalKeyHeight, 'px, gap:', finalGap, 'px');
-    console.log('[LAYOUT_FINAL] Keypad base width:', keypadBaseWidth, 'px (', finalKeySize, '× 3 +', finalGap, '× 2 )');
-    console.log('[LAYOUT_FINAL] Keypad container width:', keypadContainerWidth, 'px (FORCED to 98% of available)');
-    console.log('[LAYOUT_FINAL] Keypad height:', finalKeypadHeight, 'px vs target', Math.round(keypadTarget), 'px');
-    console.log('[LAYOUT_FINAL] Final fit:', finalKeypadHeight <= keypadTarget ? '✓ FITS' : '✗ OVERFLOW by ' + (finalKeypadHeight - keypadTarget) + 'px');
-    console.log('[LAYOUT_FINAL] Keypad width / viewport:', (keypadContainerWidth / vw * 100).toFixed(1) + '%');
-    console.log('[LAYOUT_FINAL] Left margin:', safeLeft, '(' + (safeLeft / vw * 100).toFixed(1) + '%) + Right margin:', safeRight, '(' + (safeRight / vw * 100).toFixed(1) + '%)');
-    console.log('[LAYOUT_FINAL] ═══════════════════════════════════════\n');
 
     return {
       imgTarget,
@@ -531,19 +466,16 @@ const PrecisionGameContent: React.FC<PrecisionGameContentProps> = ({
   }, []);
 
   const handleDigitPress = useCallback((digit: string) => {
-    console.log('[PRECISION_AUDIO] handleDigitPress called with:', digit);
     setInputError(null);
     precisionAudio.playKeyPress();
     setGuessValue((prev) => {
       const isNegative = prev.startsWith('-');
       const digits = isNegative ? prev.slice(1) : prev;
       if (digits.length >= MAX_DIGITS) {
-        console.log('[PRECISION_AUDIO] Max digits reached, returning:', prev);
         return prev;
       }
       const nextDigits = digits + digit;
       const newValue = (isNegative ? '-' : '') + nextDigits;
-      console.log('[PRECISION_AUDIO] New guess value:', newValue);
       return newValue;
     });
   // eslint-disable-next-line react-hooks/exhaustive-deps
@@ -632,13 +564,11 @@ const PrecisionGameContent: React.FC<PrecisionGameContentProps> = ({
   // --- EFFECTS ---
   useEffect(() => {
     if (!lastResult) {
-      console.log('[PRECISION_AUDIO] lastResult is null, clearing guess value');
       setGuessValue('');
       setInputError(null);
       setResultExpanded(false);
       resultFadeAnim.setValue(0);
     } else {
-      console.log('[PRECISION_AUDIO] Playing answer result sound for:', lastResult.absDifference, 'timedOut:', lastResult.timedOut);
       // Jouer le son approprié selon le résultat
       precisionAudio.playAnswerResult(lastResult.absDifference, lastResult.timedOut);
 
@@ -667,7 +597,6 @@ const PrecisionGameContent: React.FC<PrecisionGameContentProps> = ({
   useEffect(() => {
     // Ne jouer le son que quand on PASSE à 5 secondes (pas à chaque render)
     if (timeLeft === 5 && prevTimeLeftRef.current === 6 && !lastResult && !isGameOver) {
-      console.log('[PRECISION_AUDIO] Playing timer warning at 5 seconds');
       precisionAudio.playTimerWarning();
     }
     prevTimeLeftRef.current = timeLeft;
@@ -756,7 +685,7 @@ const PrecisionGameContent: React.FC<PrecisionGameContentProps> = ({
             ]}
           >
             <Text style={[styles.hudLabel, { fontSize: applySpacing(9, 8) }]}>Niveau</Text>
-            <Text style={[styles.hudValue, { fontSize: applySpacing(13, 12), marginTop: 0 }]}> {/* Réduit fontSize et marginTop */}
+            <Text style={[styles.hudValue, { fontSize: applySpacing(13, 12), marginTop: 0 }]}>
               {levelId}
             </Text>
             {!!levelLabel && (
@@ -764,6 +693,9 @@ const PrecisionGameContent: React.FC<PrecisionGameContentProps> = ({
                 {levelLabel}
               </Text>
             )}
+            <Text style={[styles.hudEventCounter, { fontSize: applySpacing(7, 6), marginTop: 0 }]}>
+              {eventsAnsweredInLevel + 1}/{eventsRequiredForLevel}
+            </Text>
           </LinearGradient>
           <LinearGradient
             colors={[steampunkTheme.cardGradient.start, steampunkTheme.cardGradient.end]}
@@ -1103,6 +1035,13 @@ const styles = StyleSheet.create({
     fontSize: 13,
     fontWeight: '600',
     marginTop: 2,
+  },
+  hudEventCounter: {
+    color: steampunkTheme.secondaryText,
+    fontSize: 10,
+    fontWeight: '500',
+    marginTop: 2,
+    opacity: 0.8,
   },
   // --- Progress Bars ---
   progressTrack: {

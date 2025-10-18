@@ -79,16 +79,18 @@ export default function SignUp() {
   const handleSignUp = async () => {
     if (isSigningUp) return;
 
-    FirebaseAnalytics.logEvent('signup_attempt');
+    FirebaseAnalytics.trackEvent('signup_attempt', { method: 'password', screen: 'signup' });
     setIsSigningUp(true);
     setErrorMessage('');
     setSuccessMessage('');
 
     const failSignup = (reason: string, message: string, logMessage?: string) => {
       setErrorMessage(message);
-      FirebaseAnalytics.logEvent('signup_failed', {
-        reason: reason,
-        message: (logMessage || message).substring(0, 100)
+      FirebaseAnalytics.trackEvent('signup_failed', {
+        reason,
+        method: 'password',
+        screen: 'signup',
+        message: (logMessage || message).substring(0, 100),
       });
       setIsSigningUp(false); // Important de remettre à false ici
     };
@@ -149,7 +151,7 @@ export default function SignUp() {
         // On pourrait afficher un message indiquant de vérifier les emails
         if(signUpData?.session === null){
              setSuccessMessage('Compte créé ! Veuillez vérifier votre email pour confirmer votre inscription.');
-             FirebaseAnalytics.logEvent('sign_up', { method: 'password_email_confirmation_pending' });
+             FirebaseAnalytics.trackEvent('sign_up', { method: 'password_email_confirmation_pending', screen: 'signup' });
              // Ne pas rediriger automatiquement, attendre la confirmation
              setTimeout(() => {
                  try {
@@ -188,7 +190,7 @@ export default function SignUp() {
 
       // 6. Succès (si la confirmation email n'est PAS requise ou déjà faite)
       setSuccessMessage('Compte créé avec succès! Redirection...');
-      FirebaseAnalytics.logEvent('sign_up', { method: 'password' });
+      FirebaseAnalytics.trackEvent('sign_up', { method: 'password', screen: 'signup' });
       FirebaseAnalytics.initialize(userId, false);
 
       setTimeout(() => {
@@ -211,7 +213,7 @@ export default function SignUp() {
   };
 
   const handleGoogleSignUp = async () => {
-    FirebaseAnalytics.logEvent('signup_attempt', { method: 'google' });
+    FirebaseAnalytics.trackEvent('signup_attempt', { method: 'google', screen: 'signup' });
     setErrorMessage('');
     setSuccessMessage('');
     setIsGoogleSigningUp(true);
@@ -237,8 +239,10 @@ export default function SignUp() {
 
       if (error) {
         console.error('❌ Google signup error:', error.message);
-        FirebaseAnalytics.logEvent('signup_failed', {
+        FirebaseAnalytics.trackEvent('signup_failed', {
           reason: 'google_oauth_error',
+          method: 'google',
+          screen: 'signup',
           message: error.message.substring(0, 100),
         });
         setErrorMessage('Inscription Google indisponible pour le moment. Veuillez réessayer.');
@@ -247,8 +251,10 @@ export default function SignUp() {
 
       if (!data?.url) {
         console.error('❌ Google signup error: No redirect URL returned from Supabase.');
-        FirebaseAnalytics.logEvent('signup_failed', {
+        FirebaseAnalytics.trackEvent('signup_failed', {
           reason: 'google_no_url',
+          method: 'google',
+          screen: 'signup',
         });
         setErrorMessage('Inscription Google indisponible pour le moment. Veuillez réessayer.');
         return;
@@ -264,8 +270,10 @@ export default function SignUp() {
           const errorDescription = qp.error_description ?? qp.error;
           console.error('OAuth error:', errorDescription);
           setErrorMessage(errorDescription ?? 'Inscription Google échouée.');
-          FirebaseAnalytics.logEvent('signup_failed', {
+          FirebaseAnalytics.trackEvent('signup_failed', {
             reason: 'google_oauth_error',
+            method: 'google',
+            screen: 'signup',
             message: errorDescription.substring(0, 100),
           });
           return;
@@ -279,14 +287,16 @@ export default function SignUp() {
           if (exchangeError) {
             console.error('Exchange failed:', exchangeError);
             setErrorMessage("Impossible de finaliser l'inscription Google.");
-            FirebaseAnalytics.logEvent('signup_failed', {
+            FirebaseAnalytics.trackEvent('signup_failed', {
               reason: 'google_exchange_failed',
+              method: 'google',
+              screen: 'signup',
               message: exchangeError.message.substring(0, 100),
             });
             return;
           }
 
-          FirebaseAnalytics.logEvent('sign_up', { method: 'google' });
+          FirebaseAnalytics.trackEvent('sign_up', { method: 'google', screen: 'signup' });
           router.replace('/(tabs)');
           return;
         }
@@ -297,7 +307,11 @@ export default function SignUp() {
         switch (authResult.type) {
           case 'dismiss':
           case 'cancel':
-            FirebaseAnalytics.logEvent('signup_failed', { reason: 'google_cancelled' });
+            FirebaseAnalytics.trackEvent('signup_failed', {
+              reason: 'google_cancelled',
+              method: 'google',
+              screen: 'signup',
+            });
             setErrorMessage('Inscription Google annulée.');
             break;
           case 'locked':
@@ -312,8 +326,10 @@ export default function SignUp() {
     } catch (err) {
       console.error('❌ Unexpected Google signup error:', err);
       const message = err instanceof Error ? err.message : String(err);
-      FirebaseAnalytics.logEvent('signup_failed', {
+      FirebaseAnalytics.trackEvent('signup_failed', {
         reason: 'google_unexpected_error',
+        method: 'google',
+        screen: 'signup',
         message: message.substring(0, 100),
       });
       setErrorMessage('Une erreur est survenue avec Google. Veuillez réessayer.');

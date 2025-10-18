@@ -96,7 +96,7 @@ export function useAnalytics() {
     placement: string,
     level: number
   ) => {
-    FirebaseAnalytics.ad(type, action, placement, level);
+    FirebaseAnalytics.trackAd(placement, action, { ad_type: type, level });
   }, []);
 
   /**
@@ -134,21 +134,21 @@ export function useAnalytics() {
    * Enregistre un événement d'erreur
    */
   const trackError = useCallback((code: string, message: string, context: string) => {
-    FirebaseAnalytics.error(code, message, context);
+    FirebaseAnalytics.trackError(code, { message, screen: context });
   }, []);
 
   /**
    * Enregistre un événement générique
    */
   const trackEvent = useCallback((eventName: string, params?: Record<string, any>) => {
-    FirebaseAnalytics.logEvent(eventName, params);
+    FirebaseAnalytics.trackEvent(eventName, params);
   }, []);
 
   /**
    * Définit une propriété utilisateur
    */
   const setUserProperty = useCallback((name: string, value: string) => {
-    FirebaseAnalytics.setUserProperty(name, value);
+    FirebaseAnalytics.setUserProps({ [name]: value });
   }, []);
 
   return {

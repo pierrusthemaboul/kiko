@@ -10,7 +10,7 @@
 
 /* Imports spécifiques aux publicités */
 import { useState, useEffect, useCallback } from 'react'; // Nécessaire pour l'état et les effets
-import { getAdUnitId } from '../kiko/lib/config/adConfig';
+import { getAdRequestOptions, getAdUnitId } from '../kiko/lib/config/adConfig';
 import { FirebaseAnalytics } from '../kiko/lib/firebase'; // <-- Assurez-vous que ce chemin est correct
 import {
   InterstitialAd,
@@ -23,18 +23,10 @@ import { MAX_LIVES } from '../kiko/hooks/types/index'; // Importé car utilisé 
 
 /* Création d'instances de publicités */
 // Nouveau code avec adConfig
-const genericInterstitial = InterstitialAd.createForAdRequest(getAdUnitId('INTERSTITIAL_GENERIC'), {
-  requestNonPersonalizedAdsOnly: true,
-});
-const levelUpInterstitial = InterstitialAd.createForAdRequest(getAdUnitId('INTERSTITIAL_LEVEL_UP'), {
-  requestNonPersonalizedAdsOnly: true,
-});
-const gameOverInterstitial = InterstitialAd.createForAdRequest(getAdUnitId('INTERSTITIAL_GAME_OVER'), {
-  requestNonPersonalizedAdsOnly: true,
-});
-const rewardedAd = RewardedAd.createForAdRequest(getAdUnitId('REWARDED_EXTRA_LIFE'), {
-  requestNonPersonalizedAdsOnly: true,
-});
+const genericInterstitial = InterstitialAd.createForAdRequest(getAdUnitId('INTERSTITIAL_GENERIC'), getAdRequestOptions());
+const levelUpInterstitial = InterstitialAd.createForAdRequest(getAdUnitId('INTERSTITIAL_LEVEL_UP'), getAdRequestOptions());
+const gameOverInterstitial = InterstitialAd.createForAdRequest(getAdUnitId('INTERSTITIAL_GAME_OVER'), getAdRequestOptions());
+const rewardedAd = RewardedAd.createForAdRequest(getAdUnitId('REWARDED_EXTRA_LIFE'), getAdRequestOptions());
 
 /* Interface pour l'état publicitaire */
 interface AdState {

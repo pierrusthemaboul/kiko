@@ -35,6 +35,12 @@ npm run reset-project
 
 This command will move the starter code to the **app-example** directory and create a blank **app** directory where you can start developing.
 
+## Schemas & DebugView
+
+- Les événements et propriétés utilisateurs sont documentés dans `EVENTS_DICTIONARY.md`.
+- Pour valider les payloads en temps réel, activez Firebase DebugView (`adb shell setprop debug.firebase.analytics.app <package>` puis ouvrez l’app).
+- Les événements clés (`login_failed`, `signup_failed`, `life_lost`, `ad_event`, `app_backgrounded_during_game`) partagent un schéma stable (`reason`, `context`, `screen`, `placement`, `action`, `level`, `event_id`).
+
 ## Learn more
 
 To learn more about developing your project with Expo, look at the following resources:

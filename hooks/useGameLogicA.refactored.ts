@@ -127,8 +127,8 @@ export function useGameLogicA(initialEvent?: string, _modeId?: string) {
     setIsWaitingForCountdown(false);
     
     // Tracking de l'événement de timeout
-    FirebaseAnalytics.logEvent('timeout', {
-      level_id: user.level,
+    FirebaseAnalytics.trackEvent('timeout', {
+      level: user.level,
       events_completed_in_level: user.eventsCompletedInLevel,
       current_streak: streak
     });
@@ -148,11 +148,12 @@ export function useGameLogicA(initialEvent?: string, _modeId?: string) {
       const newLives = prev.lives - 1;
       
       // Tracker la perte de vie
-      FirebaseAnalytics.logEvent('life_lost', {
+      FirebaseAnalytics.trackEvent('life_lost', {
         reason: 'timeout',
         remaining_lives: newLives,
-        level_id: prev.level,
+        level: prev.level,
         event_id: newEvent?.id || 'unknown',
+        context: 'classic_game_refactored',
       });
       
       if (newLives <= 0) {
@@ -177,7 +178,10 @@ export function useGameLogicA(initialEvent?: string, _modeId?: string) {
     } else {
       setError("Erreur interne: impossible de charger l'événement suivant.");
       setIsGameOver(true);
-      FirebaseAnalytics.error('timeout_null_event', 'newEvent was null in handleTimeout', 'handleTimeout');
+      FirebaseAnalytics.trackError('timeout_null_event', {
+        message: 'newEvent was null in handleTimeout',
+        screen: 'handleTimeout',
+      });
     }
   }, [
     isLevelPaused, isGameOver, user.level, user.eventsCompletedInLevel, user.lives, 
@@ -255,7 +259,10 @@ export function useGameLogicA(initialEvent?: string, _modeId?: string) {
       });
       
     } catch (error) {
-      FirebaseAnalytics.error('apply_reward_error', error instanceof Error ? error.message : 'Unknown', 'applyReward');
+      FirebaseAnalytics.trackError('apply_reward_error', {
+        message: error instanceof Error ? error.message : 'Unknown',
+        screen: 'applyReward',
+      });
     }
   }, []);
   
@@ -357,7 +364,10 @@ export function useGameLogicA(initialEvent?: string, _modeId?: string) {
     
     if (!isNewDateValid || !isPreviousDateValid) {
       setError("Erreur interne: date d'événement invalide.");
-      FirebaseAnalytics.error('invalid_event_date', `Invalid date(s): p=${previousEvent.date}, n=${newEvent.date}`, 'handleChoice');
+      FirebaseAnalytics.trackError('invalid_event_date', {
+        message: `Invalid date(s): p=${previousEvent.date}, n=${newEvent.date}`,
+        screen: 'handleChoice',
+      });
       setIsWaitingForCountdown(false);
       return;
     }
@@ -483,11 +493,12 @@ export function useGameLogicA(initialEvent?: string, _modeId?: string) {
 
       setUser((prev) => {
         const newLives = prev.lives - 1;
-        FirebaseAnalytics.logEvent('life_lost', { 
-          reason: 'incorrect_answer', 
-          remaining_lives: newLives, 
-          level_id: prev.level, 
-          event_id: newEvent.id 
+        FirebaseAnalytics.trackEvent('life_lost', {
+          reason: 'incorrect_answer',
+          remaining_lives: newLives,
+          level: prev.level,
+          event_id: newEvent.id,
+          context: 'classic_game_refactored',
         });
         
         if (newLives <= 0) {
@@ -529,7 +540,10 @@ export function useGameLogicA(initialEvent?: string, _modeId?: string) {
     
     if (!referenceEvent) {
       setError("Erreur interne critique: impossible de démarrer le niveau suivant (référence manquante).");
-      FirebaseAnalytics.error('levelup_null_prev_event', 'previousEvent was null when handleLevelUp called', 'handleLevelUp');
+      FirebaseAnalytics.trackError('levelup_null_prev_event', {
+        message: 'previousEvent was null when handleLevelUp called',
+        screen: 'handleLevelUp',
+      });
       setIsGameOver(true);
       return;
     }
@@ -539,7 +553,10 @@ export function useGameLogicA(initialEvent?: string, _modeId?: string) {
     
     if (!nextLevelConfig) {
       setError(`Félicitations ! Vous avez terminé tous les niveaux disponibles !`);
-      FirebaseAnalytics.error('config_missing_on_levelup', `Level ${nextLevel} config missing`, 'handleLevelUp');
+      FirebaseAnalytics.trackError('config_missing_on_levelup', {
+        message: `Level ${nextLevel} config missing`,
+        screen: 'handleLevelUp',
+      });
       endGame();
       return;
     }
@@ -573,13 +590,19 @@ export function useGameLogicA(initialEvent?: string, _modeId?: string) {
           if (!isGameOver && !error) {
             setError("Impossible de trouver un événement valide pour continuer le jeu.");
             setIsGameOver(true);
-            FirebaseAnalytics.error('select_event_null_levelup', 'selectNewEvent returned null unexpectedly after level up', 'handleLevelUp');
+            FirebaseAnalytics.trackError('select_event_null_levelup', {
+              message: 'selectNewEvent returned null unexpectedly after level up',
+              screen: 'handleLevelUp',
+            });
           }
         }
       })
       .catch(err => {
         setError(`Erreur critique lors du chargement du niveau suivant: ${err.message}`);
-        FirebaseAnalytics.error('select_event_error_levelup', err instanceof Error ? err.message : 'Unknown', 'handleLevelUp');
+        FirebaseAnalytics.trackError('select_event_error_levelup', {
+          message: err instanceof Error ? err.message : 'Unknown',
+          screen: 'handleLevelUp',
+        });
         setIsGameOver(true);
       });
   }, [
@@ -675,7 +698,10 @@ export function useGameLogicA(initialEvent?: string, _modeId?: string) {
         .single();
       
       if (profileError) {
-        FirebaseAnalytics.error('profile_fetch_error', profileError.message, 'endGame');
+        FirebaseAnalytics.trackError('profile_fetch_error', {
+          message: profileError.message,
+          screen: 'endGame',
+        });
       } else if (currentProfile && user.points > (currentProfile.high_score || 0)) {
         const { error: updateError } = await supabase
           .from('profiles')
@@ -683,9 +709,12 @@ export function useGameLogicA(initialEvent?: string, _modeId?: string) {
           .eq('id', userId);
         
         if (updateError) {
-          FirebaseAnalytics.error('profile_update_error', updateError.message, 'endGame');
+          FirebaseAnalytics.trackError('profile_update_error', {
+            message: updateError.message,
+            screen: 'endGame',
+          });
         } else {
-          FirebaseAnalytics.logEvent('new_high_score', {
+          FirebaseAnalytics.trackEvent('new_high_score', {
             score: user.points,
             previous_high_score: currentProfile.high_score || 0,
           });
@@ -702,20 +731,35 @@ export function useGameLogicA(initialEvent?: string, _modeId?: string) {
       ]);
       
       if(dailyRes.error) { 
-        FirebaseAnalytics.error('leaderboard_fetch_error', `Daily: ${dailyRes.error.message}`, 'endGame');
+        FirebaseAnalytics.trackError('leaderboard_fetch_error', {
+          message: `Daily: ${dailyRes.error.message}`,
+          screen: 'endGame',
+          severity: 'warning',
+        });
       }
       if(monthlyRes.error) { 
-        FirebaseAnalytics.error('leaderboard_fetch_error', `Monthly: ${monthlyRes.error.message}`, 'endGame');
+        FirebaseAnalytics.trackError('leaderboard_fetch_error', {
+          message: `Monthly: ${monthlyRes.error.message}`,
+          screen: 'endGame',
+          severity: 'warning',
+        });
       }
       if(allTimeRes.error) { 
-        FirebaseAnalytics.error('leaderboard_fetch_error', `AllTime: ${allTimeRes.error.message}`, 'endGame');
+        FirebaseAnalytics.trackError('leaderboard_fetch_error', {
+          message: `AllTime: ${allTimeRes.error.message}`,
+          screen: 'endGame',
+          severity: 'warning',
+        });
       }
       
       setScoresAndShow(dailyRes.data || [], monthlyRes.data || [], allTimeRes.data || []);
       
     } catch (error) {
       const errorMessage = error instanceof Error ? error.message : 'Unknown endGame processing error';
-      FirebaseAnalytics.error('endgame_processing_error', errorMessage, 'endGame');
+      FirebaseAnalytics.trackError('endgame_processing_error', {
+        message: errorMessage,
+        screen: 'endGame',
+      });
       
       const fallbackScores = {
         daily: [{ name: user.name || 'Voyageur', score: user.points, rank: 1 }],

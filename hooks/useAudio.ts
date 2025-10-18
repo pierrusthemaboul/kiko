@@ -42,7 +42,10 @@ export const useAudio = () => {
         });
         isInitialized.current = true;
       } catch (error) {
-        FirebaseAnalytics.error('audio_init_error', error instanceof Error ? error.message : 'Unknown', 'useAudioInit');
+        FirebaseAnalytics.trackError('audio_init_error', {
+          message: error instanceof Error ? error.message : 'Unknown',
+          screen: 'useAudioInit',
+        });
       }
     };
     initAudio();
@@ -87,11 +90,14 @@ export const useAudio = () => {
       soundObject = sound;
 
       if (['correct', 'incorrect', 'levelUp', 'gameover'].includes(soundKey)) {
-        FirebaseAnalytics.logEvent('sound_played', { sound_name: soundKey });
+        FirebaseAnalytics.trackEvent('sound_played', { sound_name: soundKey });
       }
 
     } catch (error) {
-      FirebaseAnalytics.error('audio_playback_error', `Sound: ${soundKey}, Error: ${error instanceof Error ? error.message : 'Unknown'}`, 'playSound');
+      FirebaseAnalytics.trackError('audio_playback_error', {
+        message: `Sound: ${soundKey}, Error: ${error instanceof Error ? error.message : 'Unknown'}`,
+        screen: 'playSound',
+      });
       soundObject?.unloadAsync().catch(() => {}); // Essayer de  décharger même en cas d'erreur
     }
   };
@@ -128,18 +134,21 @@ export const useAudio = () => {
         setMusicVolume(safeVolume);
       }
     } catch (error) {
-      FirebaseAnalytics.error('audio_volume_error', `Type: ${type}, Error: ${error instanceof Error ? error.message : 'Unknown'}`, 'setVolume');
+      FirebaseAnalytics.trackError('audio_volume_error', {
+        message: `Type: ${type}, Error: ${error instanceof Error ? error.message : 'Unknown'}`,
+        screen: 'setVolume',
+      });
     }
   };
 
   const toggleSound = (enabled: boolean) => {
     setIsSoundEnabled(enabled);
-    FirebaseAnalytics.logEvent('sound_toggled', { enabled, type: 'effects' });
+    FirebaseAnalytics.trackEvent('sound_toggled', { enabled, type: 'effects' });
   };
 
   const toggleMusic = (enabled: boolean) => {
     setIsMusicEnabled(enabled);
-    FirebaseAnalytics.logEvent('sound_toggled', { enabled, type: 'music' });
+    FirebaseAnalytics.trackEvent('sound_toggled', { enabled, type: 'music' });
   };
 
   return {

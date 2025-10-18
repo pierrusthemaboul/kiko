@@ -19,6 +19,7 @@ import { SafeAreaView } from 'react-native-safe-area-context';
 import GameContentA from "../../components/game/GameContentA"; // Chemin OK
 import PrecisionGameContent from "../../components/game/PrecisionGameContent";
 import PrecisionGameOverModal from "../../components/modals/PrecisionGameOverModal";
+import PrecisionLevelCompleteModal from "../../components/modals/PrecisionLevelCompleteModal";
 import EndRunSummary from '@/components/game/EndRunSummary';
 import { nextRankProgress } from '@/lib/economy/ranks';
 
@@ -263,6 +264,11 @@ function PrecisionGameScreen() {
     showContinueOffer,
     handleContinueWithAd,
     handleDeclineContinue,
+    showLevelComplete,
+    levelCompleteData,
+    closeLevelComplete,
+    eventsAnsweredInLevel,
+    eventsRequiredForLevel,
     adState,
   } = usePrecisionGame();
 
@@ -328,6 +334,20 @@ function PrecisionGameScreen() {
                 onContinueWithAd={handleContinueWithAd}
                 onDeclineContinue={handleDeclineContinue}
                 continueAdLoaded={adState?.continueLoaded}
+                eventsAnsweredInLevel={eventsAnsweredInLevel}
+                eventsRequiredForLevel={eventsRequiredForLevel}
+              />
+
+              {/* Level Complete Modal */}
+              <PrecisionLevelCompleteModal
+                isVisible={showLevelComplete}
+                completedLevel={levelCompleteData?.level.id ?? 1}
+                completedLevelLabel={levelCompleteData?.level.label ?? ''}
+                newLevel={levelCompleteData?.newLevel.id ?? 2}
+                newLevelLabel={levelCompleteData?.newLevel.label ?? ''}
+                currentScore={levelCompleteData?.score ?? 0}
+                hpRestored={levelCompleteData?.hpRestored ?? 0}
+                onContinue={closeLevelComplete}
               />
 
               {/* Game Over Modal */}

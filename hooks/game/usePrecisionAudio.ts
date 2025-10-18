@@ -49,11 +49,10 @@ export const usePrecisionAudio = ({ soundVolume, isSoundEnabled }: PrecisionAudi
         });
         isInitialized.current = true;
       } catch (error) {
-        FirebaseAnalytics.error(
-          'precision_audio_init_error',
-          error instanceof Error ? error.message : 'Unknown',
-          'usePrecisionAudioInit'
-        );
+        FirebaseAnalytics.trackError('precision_audio_init_error', {
+          message: error instanceof Error ? error.message : 'Unknown',
+          screen: 'usePrecisionAudioInit',
+        });
       }
     };
     initAudio();
@@ -124,15 +123,14 @@ export const usePrecisionAudio = ({ soundVolume, isSoundEnabled }: PrecisionAudi
 
         // Log pour les événements importants
         if (['perfectAnswer', 'wrongAnswer', 'levelUp', 'gameOver'].includes(soundKey)) {
-          FirebaseAnalytics.logEvent('precision_sound_played', { sound_name: soundKey });
+          FirebaseAnalytics.trackEvent('precision_sound_played', { sound_name: soundKey });
         }
       } catch (error) {
         console.error('[usePrecisionAudio] Error playing sound:', soundKey, error);
-        FirebaseAnalytics.error(
-          'precision_audio_playback_error',
-          `Sound: ${soundKey}, Error: ${error instanceof Error ? error.message : 'Unknown'}`,
-          'playPrecisionSound'
-        );
+        FirebaseAnalytics.trackError('precision_audio_playback_error', {
+          message: `Sound: ${soundKey}, Error: ${error instanceof Error ? error.message : 'Unknown'}`,
+          screen: 'playPrecisionSound',
+        });
       }
     },
     [isSoundEnabled, soundVolume]

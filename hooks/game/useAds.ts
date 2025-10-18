@@ -6,7 +6,7 @@ import {
   RewardedAdEventType,
   TestIds,
 } from 'react-native-google-mobile-ads';
-import { getAdUnitId } from '../../lib/config/adConfig';
+import { getAdRequestOptions, getAdUnitId } from '../../lib/config/adConfig';
 import { FirebaseAnalytics } from '../../lib/firebase';
 import { MAX_LIVES, User, Event, RewardType } from '../types';
 
@@ -37,23 +37,23 @@ const adLog = (level: 'log' | 'warn' | 'error', message: string, ...args: unknow
 // On utilise maintenant getAdUnitId() qui gère déjà cette logique !
 
 const genericInterstitial = InterstitialAd.createForAdRequest(
-  getAdUnitId('INTERSTITIAL_GENERIC'), // ✅ CORRIGÉ : utilise getAdUnitId
-  { requestNonPersonalizedAdsOnly: true }
+  getAdUnitId('INTERSTITIAL_GENERIC'),
+  getAdRequestOptions(),
 );
 
 const levelUpInterstitial = InterstitialAd.createForAdRequest(
-  getAdUnitId('INTERSTITIAL_LEVEL_UP'), // ✅ CORRIGÉ : utilise getAdUnitId
-  { requestNonPersonalizedAdsOnly: true }
+  getAdUnitId('INTERSTITIAL_LEVEL_UP'),
+  getAdRequestOptions(),
 );
 
 const gameOverInterstitial = InterstitialAd.createForAdRequest(
-  getAdUnitId('INTERSTITIAL_GAME_OVER'), // ✅ CORRIGÉ : utilise getAdUnitId
-  { requestNonPersonalizedAdsOnly: true }
+  getAdUnitId('INTERSTITIAL_GAME_OVER'),
+  getAdRequestOptions(),
 );
 
 const rewardedAd = RewardedAd.createForAdRequest(
-  getAdUnitId('REWARDED_EXTRA_LIFE'), // ✅ CORRIGÉ : utilise getAdUnitId
-  { requestNonPersonalizedAdsOnly: true }
+  getAdUnitId('REWARDED_EXTRA_LIFE'),
+  getAdRequestOptions(),
 );
 
 

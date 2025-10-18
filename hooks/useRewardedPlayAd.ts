@@ -1,6 +1,6 @@
 import { useState, useEffect, useCallback } from 'react';
 import { RewardedAd, RewardedAdEventType, AdEventType } from 'react-native-google-mobile-ads';
-import { getAdUnitId } from '@/lib/config/adConfig';
+import { getAdRequestOptions, getAdUnitId } from '@/lib/config/adConfig';
 import { FirebaseAnalytics } from '@/lib/firebase';
 
 const REWARDED_PLAY_LOG_ENABLED = (() => {
@@ -28,7 +28,7 @@ const rewardedLog = (level: 'log' | 'warn' | 'error', message: string, ...args: 
 
 const rewardedPlayAd = RewardedAd.createForAdRequest(
   getAdUnitId('REWARDED_EXTRA_PLAY'),
-  { requestNonPersonalizedAdsOnly: true }
+  getAdRequestOptions(),
 );
 
 // État global pour partager entre toutes les instances du hook

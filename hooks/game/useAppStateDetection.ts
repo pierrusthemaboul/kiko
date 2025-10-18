@@ -22,6 +22,14 @@ interface UseAppStateDetectionProps {
    * Identifiant unique de l'événement actuel (pour le logging)
    */
   currentEventId?: string;
+
+  analytics?: {
+    level?: number;
+    streak?: number;
+    context?: string;
+    screen?: string;
+    reason?: string;
+  };
 }
 
 /**
@@ -32,14 +40,21 @@ export function useAppStateDetection({
   onAppBackgrounded,
   isActive,
   currentEventId,
+  analytics,
 }: UseAppStateDetectionProps) {
   const appState = useRef(AppState.currentState);
   const wasActiveRef = useRef(false);
+  const lastSentRef = useRef(0);
+  const analyticsRef = useRef(analytics);
 
   useEffect(() => {
     // Mettre à jour la ref quand isActive change
     wasActiveRef.current = isActive;
   }, [isActive]);
+
+  useEffect(() => {
+    analyticsRef.current = analytics;
+  }, [analytics]);
 
   useEffect(() => {
     const subscription = AppState.addEventListener('change', (nextAppState: AppStateStatus) => {
@@ -55,11 +70,22 @@ export function useAppStateDetection({
         console.log('[AppStateDetection] User left app during active game');
 
         // Logger l'événement
-        FirebaseAnalytics.logEvent('app_backgrounded_during_game', {
-          event_id: currentEventId || 'unknown',
-          previous_state: previousState,
-          next_state: nextAppState,
-        });
+        const now = Date.now();
+        const secondsSinceLast = lastSentRef.current
+          ? Math.round((now - lastSentRef.current) / 1000)
+          : undefined;
+        if (!lastSentRef.current || now - lastSentRef.current >= 5000) {
+          FirebaseAnalytics.trackEvent('app_backgrounded_during_game', {
+            event_id: currentEventId || 'unknown',
+            level: analyticsRef.current?.level,
+            streak: analyticsRef.current?.streak,
+            context: analyticsRef.current?.context,
+            screen: analyticsRef.current?.screen,
+            reason: analyticsRef.current?.reason ?? 'background',
+            seconds_since_last: secondsSinceLast,
+          });
+          lastSentRef.current = now;
+        }
 
         // Déclencher le callback de malus
         onAppBackgrounded();

@@ -27,44 +27,113 @@ interface PrecisionLevel {
   minDifficulty: number;
   maxDifficulty: number;
   minNotoriete: number;
+  eventsPerLevel: number; // Nombre d'événements à répondre pour passer au niveau suivant
 }
 
 const PRECISION_LEVELS: PrecisionLevel[] = [
+  // Niveaux 1-3 : Événements récents et célèbres
   {
     id: 1,
     label: 'Novice',
     minScore: 0,
-    nextThreshold: 1000,
+    nextThreshold: 800,
     minDifficulty: 1,
     maxDifficulty: 2,
-    minNotoriete: 70,
+    minNotoriete: 80,
+    eventsPerLevel: 3, // 3 événements pour le premier niveau
   },
   {
     id: 2,
-    label: 'Initié',
-    minScore: 1000,
-    nextThreshold: 2500,
+    label: 'Apprenti',
+    minScore: 800,
+    nextThreshold: 1800,
     minDifficulty: 1,
     maxDifficulty: 3,
-    minNotoriete: 45,
+    minNotoriete: 70,
+    eventsPerLevel: 4,
   },
   {
     id: 3,
-    label: 'Historien',
-    minScore: 2500,
-    nextThreshold: 5000,
-    minDifficulty: 2,
-    maxDifficulty: 5,
-    minNotoriete: 25,
+    label: 'Initié',
+    minScore: 1800,
+    nextThreshold: 3000,
+    minDifficulty: 1,
+    maxDifficulty: 3,
+    minNotoriete: 60,
+    eventsPerLevel: 5,
   },
+  // Niveaux 4-6 : Événements moyennement récents
   {
     id: 4,
-    label: 'Expert',
-    minScore: 5000,
-    nextThreshold: null,
+    label: 'Connaisseur',
+    minScore: 3000,
+    nextThreshold: 4500,
     minDifficulty: 2,
+    maxDifficulty: 4,
+    minNotoriete: 50,
+    eventsPerLevel: 6,
+  },
+  {
+    id: 5,
+    label: 'Historien',
+    minScore: 4500,
+    nextThreshold: 6500,
+    minDifficulty: 2,
+    maxDifficulty: 5,
+    minNotoriete: 40,
+    eventsPerLevel: 7,
+  },
+  {
+    id: 6,
+    label: 'Érudit',
+    minScore: 6500,
+    nextThreshold: 9000,
+    minDifficulty: 2,
+    maxDifficulty: 5,
+    minNotoriete: 30,
+    eventsPerLevel: 8,
+  },
+  // Niveaux 7-9 : Événements anciens et obscurs
+  {
+    id: 7,
+    label: 'Expert',
+    minScore: 9000,
+    nextThreshold: 12000,
+    minDifficulty: 3,
+    maxDifficulty: 6,
+    minNotoriete: 20,
+    eventsPerLevel: 9,
+  },
+  {
+    id: 8,
+    label: 'Maître',
+    minScore: 12000,
+    nextThreshold: 16000,
+    minDifficulty: 3,
+    maxDifficulty: 6,
+    minNotoriete: 10,
+    eventsPerLevel: 10,
+  },
+  {
+    id: 9,
+    label: 'Virtuose',
+    minScore: 16000,
+    nextThreshold: 21000,
+    minDifficulty: 4,
+    maxDifficulty: 7,
+    minNotoriete: 5,
+    eventsPerLevel: 11,
+  },
+  // Niveau 10 : Base pour les niveaux infinis
+  {
+    id: 10,
+    label: 'Légende',
+    minScore: 21000,
+    nextThreshold: null, // Sera calculé dynamiquement pour les niveaux infinis
+    minDifficulty: 4,
     maxDifficulty: 7,
     minNotoriete: 0,
+    eventsPerLevel: 12, // Continue d'augmenter : 12, 13, 14...
   },
 ];
 
@@ -200,10 +269,51 @@ function calculateScoreAndHP(params: {
   return { hpLoss, scoreGain, toleranceFactor, adjustedDifference };
 }
 
+/**
+ * Génère un niveau infini au-delà du niveau 10
+ * Pour permettre d'accéder aux ~1800 événements sans problème de scalabilité
+ */
+function generateInfiniteLevel(levelId: number): PrecisionLevel {
+  const baseLevel = PRECISION_LEVELS[PRECISION_LEVELS.length - 1]; // Niveau 10
+  const levelsBeyond = levelId - 10;
+
+  // Chaque niveau infini nécessite 3000 points de plus que le précédent
+  const scoreIncrement = 3000;
+  const minScore = baseLevel.minScore + (levelsBeyond * scoreIncrement);
+  const nextThreshold = minScore + scoreIncrement;
+
+  // Nombre d'événements augmente de 1 par niveau (12, 13, 14...)
+  const eventsPerLevel = baseLevel.eventsPerLevel + levelsBeyond;
+
+  return {
+    id: levelId,
+    label: `Légende ${levelId - 9}`, // Légende 1, Légende 2, etc.
+    minScore,
+    nextThreshold,
+    minDifficulty: baseLevel.minDifficulty,
+    maxDifficulty: baseLevel.maxDifficulty,
+    minNotoriete: baseLevel.minNotoriete,
+    eventsPerLevel,
+  };
+}
+
 function getLevelForScore(score: number): PrecisionLevel {
+  // Chercher dans les niveaux prédéfinis (1-10)
   for (let i = PRECISION_LEVELS.length - 1; i >= 0; i -= 1) {
     const level = PRECISION_LEVELS[i];
     if (score >= level.minScore) {
+      // Si on est au niveau 10 ou plus, vérifier si on doit passer à un niveau infini
+      if (level.id === 10) {
+        // Calculer le niveau infini basé sur le score
+        const baseLevel = PRECISION_LEVELS[PRECISION_LEVELS.length - 1];
+        const scoreAboveBase = score - baseLevel.minScore;
+        const scoreIncrement = 3000;
+        const infiniteLevelIndex = Math.floor(scoreAboveBase / scoreIncrement);
+
+        if (infiniteLevelIndex > 0) {
+          return generateInfiniteLevel(10 + infiniteLevelIndex);
+        }
+      }
       return level;
     }
   }
@@ -214,11 +324,29 @@ function filterEventsForLevel(events: Event[], level: PrecisionLevel) {
   return events.filter((event) => {
     const difficulty = event.niveau_difficulte ?? 4;
     const notoriete = event.notoriete ?? 50;
-    const hasYear = extractYear(event.date) !== null;
-    if (!hasYear) return false;
+    const year = extractYear(event.date);
+    if (year === null) return false;
+
+    // Filtrage par difficulté et notoriété
     if (difficulty < level.minDifficulty) return false;
     if (difficulty > level.maxDifficulty) return false;
     if (notoriete < level.minNotoriete) return false;
+
+    // Filtrage progressif par ancienneté selon le niveau
+    // Niveaux 1-3 : événements récents (après 1800)
+    if (level.id >= 1 && level.id <= 3) {
+      if (year < 1800) return false;
+    }
+    // Niveaux 4-6 : événements moyennement récents (après 1500)
+    else if (level.id >= 4 && level.id <= 6) {
+      if (year < 1500) return false;
+    }
+    // Niveaux 7-9 : événements anciens (après 1000)
+    else if (level.id >= 7 && level.id <= 9) {
+      if (year < 1000) return false;
+    }
+    // Niveau 10+ : tous les événements
+
     return true;
   });
 }
@@ -245,10 +373,19 @@ export function usePrecisionGame() {
   }>({ daily: [], monthly: [], allTime: [] });
   const [leaderboardsReady, setLeaderboardsReady] = useState(false);
   const [showContinueOffer, setShowContinueOffer] = useState(false);
+  const [showLevelComplete, setShowLevelComplete] = useState(false);
+  const [levelCompleteData, setLevelCompleteData] = useState<{
+    level: PrecisionLevel;
+    newLevel: PrecisionLevel;
+    score: number;
+    hpRestored: number;
+  } | null>(null);
+  const [eventsAnsweredInLevel, setEventsAnsweredInLevel] = useState(0); // Compteur d'événements répondus dans le niveau actuel
 
   const usedIdsRef = useRef<Set<string>>(new Set());
   const initializingRef = useRef(false);
   const timerRef = useRef<NodeJS.Timeout | null>(null);
+  const justLoadedEventRef = useRef(false);
 
   // Hook pour les pubs du mode Précision
   const { adState, showGameOverAd, showContinueAd, resetContinueReward, resetAdsState, forceContinueAdLoad } = usePrecisionAds();
@@ -472,6 +609,7 @@ export function usePrecisionGame() {
     setTotalAnswered(0);
     setTimeLeft(MAX_TIME_SECONDS);
     setIsTimerPaused(false);
+    setEventsAnsweredInLevel(0); // Reset le compteur d'événements
     usedIdsRef.current = new Set();
 
     const nextEvent = pickEventForLevel(PRECISION_LEVELS[0]);
@@ -490,7 +628,15 @@ export function usePrecisionGame() {
     clearTimer();
     setTimeLeft(MAX_TIME_SECONDS);
     setIsTimerPaused(false);
+    // Ne pas remettre justLoadedEventRef à false immédiatement
+    // pour éviter qu'un timeout ne se déclenche pendant la transition des states
+    let firstTick = true;
     timerRef.current = setInterval(() => {
+      // Après le premier tick, l'événement n'est plus "juste chargé"
+      if (firstTick) {
+        justLoadedEventRef.current = false;
+        firstTick = false;
+      }
       setTimeLeft((prev) => {
         if (prev <= 1) {
           clearTimer();
@@ -591,7 +737,7 @@ export function usePrecisionGame() {
 
       if (nextLevel.id !== previousLevel.id) {
         leveledUp = true;
-        setLevel(nextLevel);
+        // Ne pas changer de niveau immédiatement, on le fera après l'écran inter-niveau
       }
 
       setScore(nextScore);
@@ -612,13 +758,14 @@ export function usePrecisionGame() {
       });
 
       setTotalAnswered((prev) => prev + 1);
+      // Ne pas incrémenter eventsAnsweredInLevel ici, on le fera dans loadNextEvent
 
       if (nextHp <= 0) {
         // Ne pas passer à isGameOver immédiatement, laisser le résultat s'afficher
         // L'écran game over sera déclenché quand le joueur clique sur "Continuer"
         setIsTimerPaused(true);
       } else {
-        FirebaseAnalytics.logEvent('precision_guess', {
+        FirebaseAnalytics.trackEvent('precision_guess', {
           event_id: currentEvent.id,
           level: previousLevel.id,
           abs_difference: absDifference,
@@ -671,7 +818,7 @@ export function usePrecisionGame() {
       // L'écran game over sera déclenché quand le joueur clique sur "Continuer"
       setIsTimerPaused(true);
     } else {
-      FirebaseAnalytics.logEvent('precision_timeout', {
+      FirebaseAnalytics.trackEvent('precision_timeout', {
         event_id: currentEvent.id,
         level: previousLevel.id,
       });
@@ -718,16 +865,11 @@ export function usePrecisionGame() {
 
     if (nextHp <= 0) {
       setIsTimerPaused(true);
-    } else {
-      FirebaseAnalytics.logEvent('precision_app_backgrounded', {
-        event_id: currentEvent.id,
-        level: previousLevel.id,
-      });
     }
   }, [currentEvent, finalizeResult, hp, isGameOver, lastResult, level, score, totalAnswered]);
 
   useEffect(() => {
-    if (!currentEvent || isGameOver) {
+    if (!currentEvent || isGameOver || showLevelComplete) {
       clearTimer();
       return;
     }
@@ -741,13 +883,14 @@ export function usePrecisionGame() {
     return () => {
       clearTimer();
     };
-  }, [currentEvent?.id, lastResult, isGameOver, isTimerPaused, scheduleTimer, clearTimer]);
+  }, [currentEvent?.id, lastResult, isGameOver, isTimerPaused, showLevelComplete, scheduleTimer, clearTimer]);
 
   useEffect(() => {
-    if (timeLeft === 0 && !lastResult && !isGameOver) {
+    // Ne pas déclencher le timeout si on vient juste de charger un événement
+    if (timeLeft === 0 && !lastResult && !isGameOver && currentEvent && !justLoadedEventRef.current) {
       handleTimeout();
     }
-  }, [timeLeft, lastResult, isGameOver, handleTimeout]);
+  }, [timeLeft, lastResult, isGameOver, currentEvent, handleTimeout]);
 
   // Détecter la sortie de l'application pendant une partie active
   const isDetectionActive = !isGameOver && !lastResult && !isTimerPaused && !!currentEvent;
@@ -755,6 +898,12 @@ export function usePrecisionGame() {
     onAppBackgrounded: handleAppBackgrounded,
     isActive: isDetectionActive,
     currentEventId: currentEvent?.id,
+    analytics: {
+      level: level.id,
+      context: 'precision_game',
+      screen: 'usePrecisionGame',
+      reason: 'background',
+    },
   });
 
   const timerProgress = useMemo(() => Math.max(0, Math.min(1, timeLeft / MAX_TIME_SECONDS)), [timeLeft]);
@@ -773,7 +922,7 @@ export function usePrecisionGame() {
         setIsGameOver(true);
         setLeaderboardsReady(false);
         loadLeaderboards(score, totalAnswered);
-        FirebaseAnalytics.logEvent('precision_game_over', {
+        FirebaseAnalytics.trackEvent('precision_game_over', {
           total_events: totalAnswered,
           final_score: score,
         });
@@ -785,24 +934,96 @@ export function usePrecisionGame() {
       return;
     }
 
-    const targetLevel = getLevelForScore(score);
-    const nextEvent = pickEventForLevel(targetLevel);
+    // Vérifier si on a atteint le nombre d'événements requis pour le niveau actuel
+    const currentLevel = level;
+    const eventsRequired = currentLevel.eventsPerLevel;
+
+    // On vérifie avec eventsAnsweredInLevel + 1 car on vient de finir un événement
+    // mais le compteur n'a pas encore été incrémenté
+    if (eventsAnsweredInLevel + 1 >= eventsRequired && !showLevelComplete) {
+      // Passage de niveau ! Afficher l'écran inter-niveau
+      const hpRestored = Math.floor(hp / 2);
+      const newHp = Math.min(MAX_HP, hp + hpRestored);
+      setHp(newHp);
+
+      // Calculer le prochain niveau
+      const nextLevelId = currentLevel.id + 1;
+      let nextLevel: PrecisionLevel;
+
+      // Si on passe au-delà du niveau 10, utiliser les niveaux infinis
+      if (nextLevelId <= PRECISION_LEVELS.length) {
+        nextLevel = PRECISION_LEVELS[nextLevelId - 1];
+      } else {
+        nextLevel = generateInfiniteLevel(nextLevelId);
+      }
+
+      setLevel(nextLevel);
+
+      setLevelCompleteData({
+        level: currentLevel,
+        newLevel: nextLevel,
+        score,
+        hpRestored,
+      });
+      setShowLevelComplete(true);
+      setIsTimerPaused(true);
+      setEventsAnsweredInLevel(0); // Reset le compteur pour le nouveau niveau
+
+      FirebaseAnalytics.trackEvent('precision_level_up', {
+        old_level: currentLevel.id,
+        new_level: nextLevel.id,
+        score,
+        hp_restored: hpRestored,
+        events_answered: eventsRequired,
+      });
+      return;
+    }
+
+    const nextEvent = pickEventForLevel(currentLevel);
     if (!nextEvent) {
       setError('Plus aucun événement disponible.');
       setCurrentEvent(null);
       return;
     }
 
-    setCurrentEvent(nextEvent);
+    // Incrémenter le compteur d'événements AVANT de charger le nouvel événement
+    // pour que l'affichage soit cohérent (on passe de 1/3 à 2/3 quand on voit le 2ème événement)
+    setEventsAnsweredInLevel((prev) => prev + 1);
+
+    // IMPORTANT : Marquer qu'on vient de charger un nouvel événement AVANT tout setState
+    // pour éviter que le useEffect du timeout ne se déclenche pendant la transition
+    justLoadedEventRef.current = true;
+
+    // Réinitialiser tous les états pour le nouvel événement
     setLastResult(null);
     setTimeLeft(MAX_TIME_SECONDS);
     setIsTimerPaused(false);
-  }, [isGameOver, pickEventForLevel, score, hp, adState.hasContinued, totalAnswered, loadLeaderboards, showGameOverAd]);
+    setCurrentEvent(nextEvent);
+  }, [isGameOver, pickEventForLevel, score, hp, level, eventsAnsweredInLevel, showLevelComplete, adState.hasContinued, totalAnswered, loadLeaderboards, showGameOverAd]);
 
   const restart = useCallback(() => {
     resetAdsState();
     startRun();
   }, [startRun, resetAdsState]);
+
+  const closeLevelComplete = useCallback(() => {
+    setShowLevelComplete(false);
+    setLevelCompleteData(null);
+    setIsTimerPaused(false);
+
+    // Charger le prochain événement avec le niveau actuel (qui a déjà été mis à jour)
+    const nextEvent = pickEventForLevel(level);
+    if (!nextEvent) {
+      setError('Plus aucun événement disponible.');
+      setCurrentEvent(null);
+      return;
+    }
+
+    justLoadedEventRef.current = true;
+    setLastResult(null);
+    setTimeLeft(MAX_TIME_SECONDS);
+    setCurrentEvent(nextEvent);
+  }, [level, pickEventForLevel]);
 
   // Fonctions pour gérer le Continue
   const handleContinueWithAd = useCallback(() => {
@@ -822,7 +1043,7 @@ export function usePrecisionGame() {
     setIsGameOver(true);
     setLeaderboardsReady(false);
     loadLeaderboards(score, totalAnswered);
-    FirebaseAnalytics.logEvent('precision_continue_declined', { score });
+    FirebaseAnalytics.trackEvent('precision_continue_declined', { score });
     // Afficher la pub game over après un délai
     setTimeout(() => {
       showGameOverAd();
@@ -839,7 +1060,7 @@ export function usePrecisionGame() {
       setIsTimerPaused(false);
       resetContinueReward();
       loadNextEvent();
-      FirebaseAnalytics.logEvent('precision_continued', { score, hp_restored: bonusHp });
+      FirebaseAnalytics.trackEvent('precision_continued', { score, hp_restored: bonusHp });
     }
   }, [adState.continueRewardEarned, score, resetContinueReward, loadNextEvent]);
 
@@ -889,6 +1110,11 @@ export function usePrecisionGame() {
     showContinueOffer,
     handleContinueWithAd,
     handleDeclineContinue,
+    showLevelComplete,
+    levelCompleteData,
+    closeLevelComplete,
+    eventsAnsweredInLevel,
+    eventsRequiredForLevel: level.eventsPerLevel,
     adState: {
       continueLoaded: adState.continueLoaded,
       hasContinued: adState.hasContinued,

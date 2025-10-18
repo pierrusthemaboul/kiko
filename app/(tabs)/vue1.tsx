@@ -22,7 +22,7 @@ import QuestCarousel from '@/components/QuestCarousel';
 import DualLeaderboardCarousel from '@/components/DualLeaderboardCarousel';
 import { getAllQuestsWithProgress } from '@/utils/questSelection';
 import { supabase } from '@/lib/supabase/supabaseClients';
-import { getAdUnitId } from '@/lib/config/adConfig';
+import { getAdRequestOptions, getAdUnitId } from '@/lib/config/adConfig';
 import { useRewardedPlayAd } from '@/hooks/useRewardedPlayAd';
 
 const COLORS = {
@@ -109,12 +109,15 @@ export default function Vue1() {
 
   const handleLogout = useCallback(async () => {
     try {
-      FirebaseAnalytics.logEvent('user_logout', { from_screen: 'vue1' });
+      FirebaseAnalytics.trackEvent('user_logout', { from_screen: 'vue1' });
       await supabase.auth.signOut();
       router.replace('/auth/login');
     } catch (error) {
       Alert.alert('Erreur', 'Impossible de se déconnecter');
-      FirebaseAnalytics.error('logout_error', error instanceof Error ? error.message : 'Unknown error', 'Vue1');
+      FirebaseAnalytics.trackError('logout_error', {
+        message: error instanceof Error ? error.message : 'Unknown error',
+        screen: 'Vue1',
+      });
     }
   }, [router]);
 
@@ -238,9 +241,7 @@ export default function Vue1() {
           <BannerAd
             unitId={getAdUnitId('BANNER_HOME')}
             size={BannerAdSize.ANCHORED_ADAPTIVE_BANNER}
-            requestOptions={{
-              requestNonPersonalizedAdsOnly: true,
-            }}
+            requestOptions={getAdRequestOptions()}
           />
         </View>
 

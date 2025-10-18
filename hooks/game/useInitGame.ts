@@ -104,7 +104,7 @@ export function useInitGame() {
         const userHighScore = profileData.high_score || 0;
         setUser(prev => ({ ...prev, name: displayName })); // Met à jour l'état user avec le nom
         setHighScore(userHighScore); // Met à jour l'état highScore
-        FirebaseAnalytics.setUserProperty('display_name', displayName);
+        FirebaseAnalytics.setUserProps({ display_name: displayName });
       } else {
         // console.warn(`[FetchUserData - Instance ${hookInstanceId}] User exists in auth but no profile found.`);
         setUser(prev => ({ ...prev, name: prev.name || authUser.email || '' })); // Fallback email

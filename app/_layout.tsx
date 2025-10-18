@@ -16,7 +16,6 @@ import { FirebaseAnalytics } from '../lib/firebase';
 import { supabase } from '../lib/supabase/supabaseClients';
 import MobileAds from 'react-native-google-mobile-ads';
 import { useAdConsent } from '../hooks/useAdConsent';
-import { setAdPersonalization } from '../lib/config/adConfig';
 
 const CURRENT_APP_VERSION = Application.nativeApplicationVersion || '1.0.0';
 const APP_VERSION_STORAGE_KEY = '@app_version';
@@ -31,10 +30,7 @@ export default function RootLayout() {
   const router = useRouter();
   const segments = useSegments(); // Donne les parties de l'URL actuelle
 
-  // Gérer le consentement RGPD pour les pubs - DÉSACTIVÉ TEMPORAIREMENT
-  // const { canShowPersonalizedAds, isLoading: consentLoading } = useAdConsent();
-  const canShowPersonalizedAds = false;
-  const consentLoading = false;
+  const { canShowPersonalizedAds, isLoading: consentLoading } = useAdConsent();
 
   const [fontsLoaded, fontError] = useFonts({
     'Montserrat-Regular': require('../assets/fonts/Montserrat-Regular.ttf'),
@@ -74,7 +70,10 @@ export default function RootLayout() {
         await FirebaseAnalytics.appOpen();
         const previousVersion = await AsyncStorage.getItem(APP_VERSION_STORAGE_KEY);
         if (previousVersion && previousVersion !== CURRENT_APP_VERSION) {
-          await FirebaseAnalytics.logEvent('app_update', {});
+          await FirebaseAnalytics.trackEvent('app_update', {
+            from_version: previousVersion,
+            to_version: CURRENT_APP_VERSION,
+          });
           // console.log(`[RootLayout] Analytics: app_update detected from ${previousVersion} to ${CURRENT_APP_VERSION}`);
           await AsyncStorage.setItem(APP_VERSION_STORAGE_KEY, CURRENT_APP_VERSION);
         } else if (!previousVersion) {
@@ -83,7 +82,10 @@ export default function RootLayout() {
         }
       } catch (e) {
         console.error("[RootLayout] Failed during initial app setup:", e);
-        FirebaseAnalytics.error('app_initialization_error', e instanceof Error ? e.message : 'Unknown setup error', 'RootLayout');
+        FirebaseAnalytics.trackError('app_initialization_error', {
+          message: e instanceof Error ? e.message : 'Unknown setup error',
+          screen: 'RootLayout',
+        });
       } finally {
         // console.log('[RootLayout] Initial App Setup Done.');
         setInitialSetupDone(true);
@@ -112,22 +114,24 @@ export default function RootLayout() {
           }
         } catch (configError) {
           console.warn('[AdMob Config] Failed to set AdMob request configuration:', configError);
-          FirebaseAnalytics.error('admob_config_warning', configError instanceof Error ? configError.message : 'Unknown request config error', 'RootLayout AdMob Setup');
+          FirebaseAnalytics.trackError('admob_config_warning', {
+            message: configError instanceof Error ? configError.message : 'Unknown request config error',
+            screen: 'RootLayout AdMob Setup',
+            severity: 'warning',
+          });
         }
       } catch (error) {
         console.error("[AdMob Config] Failed to initialize AdMob:", error);
-        FirebaseAnalytics.error('admob_init_error', error instanceof Error ? error.message : 'Unknown AdMob init error', 'RootLayout AdMob Setup');
+        FirebaseAnalytics.trackError('admob_init_error', {
+          message: error instanceof Error ? error.message : 'Unknown AdMob init error',
+          screen: 'RootLayout AdMob Setup',
+        });
       }
     };
     configureAdMob();
   }, []);
 
   // --- Appliquer le consentement RGPD ---
-  useEffect(() => {
-    if (!consentLoading) {
-      setAdPersonalization(canShowPersonalizedAds);
-    }
-  }, [canShowPersonalizedAds, consentLoading]);
 
   // --- Écoute de l'état d'authentification ---
   useEffect(() => {
@@ -141,7 +145,10 @@ export default function RootLayout() {
         console.error("[Auth Listener] Error getting initial session:", error);
         setSession(null);
         FirebaseAnalytics.initialize(undefined, true);
-        FirebaseAnalytics.error('auth_get_session_error', error.message, 'RootLayout');
+        FirebaseAnalytics.trackError('auth_get_session_error', {
+          message: error.message,
+          screen: 'RootLayout',
+        });
       });
 
     const { data: authListener } = supabase.auth.onAuthStateChange((_event, session) => {
@@ -180,7 +187,10 @@ export default function RootLayout() {
   useEffect(() => {
     if (fontError) {
       console.error("RootLayout: Font loading error:", fontError);
-      FirebaseAnalytics.error('font_load_error', fontError.message, 'RootLayout');
+      FirebaseAnalytics.trackError('font_load_error', {
+        message: fontError.message,
+        screen: 'RootLayout',
+      });
     }
   }, [fontError]);
 

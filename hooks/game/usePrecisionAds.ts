@@ -1,6 +1,6 @@
 import { useState, useEffect, useCallback, useRef } from 'react';
 import { InterstitialAd, RewardedAd, AdEventType, RewardedAdEventType } from 'react-native-google-mobile-ads';
-import { getAdUnitId } from '@/lib/config/adConfig';
+import { getAdRequestOptions, getAdUnitId } from '@/lib/config/adConfig';
 import { FirebaseAnalytics } from '@/lib/firebase';
 
 const PRECISION_AD_LOG_ENABLED = (() => {
@@ -29,12 +29,12 @@ const precisionAdLog = (level: 'log' | 'warn' | 'error', message: string, ...arg
 // Instances des pubs pour le mode Précision
 const gameOverInterstitial = InterstitialAd.createForAdRequest(
   getAdUnitId('INTERSTITIAL_PRECISION_GAME_OVER'),
-  { requestNonPersonalizedAdsOnly: true }
+  getAdRequestOptions(),
 );
 
 const continueRewardedAd = RewardedAd.createForAdRequest(
   getAdUnitId('REWARDED_CONTINUE_PRECISION'),
-  { requestNonPersonalizedAdsOnly: true }
+  getAdRequestOptions(),
 );
 
 interface PrecisionAdState {

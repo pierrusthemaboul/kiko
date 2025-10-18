@@ -1,10 +1,10 @@
-# Politique de Confidentialité - Quandi
+# Politique de Confidentialité - ChronoLeap
 
 **Dernière mise à jour :** 14 avril 2025
 
 ## Introduction
 
-Bienvenue dans la politique de confidentialité de l'application Quandi ("l'Application"). Nous respectons votre vie privée et nous nous engageons à protéger vos données personnelles. Cette politique de confidentialité vous informera sur la façon dont nous traitons vos données personnelles lorsque vous utilisez notre Application et vous informera de vos droits en matière de confidentialité et de la façon dont la loi vous protège.
+Bienvenue dans la politique de confidentialité de l'application ChronoLeap ("l'Application"). Nous respectons votre vie privée et nous nous engageons à protéger vos données personnelles. Cette politique de confidentialité vous informera sur la façon dont nous traitons vos données personnelles lorsque vous utilisez notre Application et vous informera de vos droits en matière de confidentialité et de la façon dont la loi vous protège.
 
 ## Responsable du traitement
 
@@ -95,6 +95,10 @@ Selon votre juridiction (notamment si vous êtes dans l'Espace Économique Europ
 
 Pour exercer l'un de ces droits, veuillez nous contacter à **quandiappli@proton.me**. Nous pourrons vous demander des informations supplémentaires pour vérifier votre identité avant de traiter votre demande.
 
+### Révoquer / modifier votre consentement
+
+Révoquer / modifier votre consentement : Menu → Paramètres → Confidentialité → Gérer mon consentement.
+
 ## Modifications de notre politique de confidentialité
 
 Nous pouvons mettre à jour cette politique de confidentialité de temps à autre pour refléter, par exemple, des changements dans nos pratiques ou pour d'autres raisons opérationnelles, légales ou réglementaires. Nous publierons toute mise à jour sur cette page (accessible via un lien dans l'Application ou sur sa fiche Play Store) et indiquerons la date de la "Dernière mise à jour" en haut. Nous vous encourageons à consulter régulièrement cette politique.
@@ -133,8 +137,8 @@ Nous utilisons Supabase comme solution backend pour des fonctionnalités telles 
 
 ### Comment demander la suppression de votre compte et de vos données
 
-Si vous souhaitez demander la suppression de votre compte Quandi et des données personnelles associées que nous détenons, veuillez envoyer un e-mail à l'adresse suivante :
+Si vous souhaitez demander la suppression de votre compte ChronoLeap et des données personnelles associées que nous détenons, veuillez envoyer un e-mail à l'adresse suivante :
 
 **quandiappli@proton.me**
 
-Merci d'indiquer clairement dans l'objet ou le corps de votre e-mail qu'il s'agit d'une "Demande de suppression de compte Quandi". Nous traiterons votre demande conformément à nos obligations légales et nous vous confirmerons la suppression une fois effectuée. Veuillez noter que certaines données anonymisées ou agrégées peuvent être conservées à des fins statistiques ou d'analyse, et que certaines données peuvent être conservées plus longtemps si la loi l'exige.
+Merci d'indiquer clairement dans l'objet ou le corps de votre e-mail qu'il s'agit d'une "Demande de suppression de compte ChronoLeap". Nous traiterons votre demande conformément à nos obligations légales et nous vous confirmerons la suppression une fois effectuée. Veuillez noter que certaines données anonymisées ou agrégées peuvent être conservées à des fins statistiques ou d'analyse, et que certaines données peuvent être conservées plus longtemps si la loi l'exige.

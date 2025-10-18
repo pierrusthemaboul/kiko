@@ -86,7 +86,7 @@ export default function Login() {
   }, [pathname, segments]);
 
   const handleLogin = async () => {
-    FirebaseAnalytics.logEvent('login_attempt');
+    FirebaseAnalytics.trackEvent('login_attempt', { method: 'password', screen: 'login' });
     setIsLoggingIn(true);
     setErrorMessage('');
 
@@ -106,16 +106,18 @@ export default function Login() {
         } else {
           setErrorMessage(error.message);
         }
-        FirebaseAnalytics.logEvent('login_failed', {
-            reason: reason,
-            message: error.message.substring(0, 100)
+        FirebaseAnalytics.trackEvent('login_failed', {
+          reason,
+          method: 'password',
+          screen: 'login',
+          message: error.message.substring(0, 100),
         });
         setIsLoggingIn(false); // Important de remettre à false ici
         return;
       }
 
       if (data?.session && data.user) {
-        FirebaseAnalytics.logEvent('login', { method: 'password' });
+        FirebaseAnalytics.trackEvent('login', { method: 'password', screen: 'login' });
         FirebaseAnalytics.initialize(data.user.id, false);
 
         if (stayConnected) {
@@ -127,15 +129,21 @@ export default function Login() {
       } else {
         console.error('❌ No session created or user data missing');
         setErrorMessage("Erreur lors de la connexion. Veuillez réessayer.");
-        FirebaseAnalytics.logEvent('login_failed', { reason: 'no_session_or_user' });
+        FirebaseAnalytics.trackEvent('login_failed', {
+          reason: 'no_session_or_user',
+          method: 'password',
+          screen: 'login',
+        });
         setIsLoggingIn(false); // Remettre à false
       }
     } catch (err) {
       console.error('❌ Unexpected error:', err);
       setErrorMessage('Une erreur est survenue. Veuillez réessayer.');
-      FirebaseAnalytics.logEvent('login_failed', {
-          reason: 'unexpected',
-          message: (err instanceof Error ? err.message : String(err)).substring(0, 100)
+      FirebaseAnalytics.trackEvent('login_failed', {
+        reason: 'unexpected',
+        method: 'password',
+        screen: 'login',
+        message: (err instanceof Error ? err.message : String(err)).substring(0, 100),
       });
       setIsLoggingIn(false); // Remettre à false
     }
@@ -143,7 +151,7 @@ export default function Login() {
   };
 
   const handleGoogleLogin = async () => {
-    FirebaseAnalytics.logEvent('login_attempt', { method: 'google' });
+    FirebaseAnalytics.trackEvent('login_attempt', { method: 'google', screen: 'login' });
     setErrorMessage('');
     setIsGoogleLoggingIn(true);
 
@@ -168,8 +176,10 @@ export default function Login() {
 
       if (error) {
         console.error('❌ Google login error:', error.message);
-        FirebaseAnalytics.logEvent('login_failed', {
+        FirebaseAnalytics.trackEvent('login_failed', {
           reason: 'google_oauth_error',
+          method: 'google',
+          screen: 'login',
           message: error.message.substring(0, 100),
         });
         setErrorMessage('Connexion Google indisponible pour le moment. Veuillez réessayer.');
@@ -178,8 +188,10 @@ export default function Login() {
 
       if (!data?.url) {
         console.error('❌ Google login error: No redirect URL returned from Supabase.');
-        FirebaseAnalytics.logEvent('login_failed', {
+        FirebaseAnalytics.trackEvent('login_failed', {
           reason: 'google_no_url',
+          method: 'google',
+          screen: 'login',
         });
         setErrorMessage('Connexion Google indisponible pour le moment. Veuillez réessayer.');
         return;
@@ -195,8 +207,10 @@ export default function Login() {
           const errorDescription = qp.error_description ?? qp.error;
           console.error('OAuth error:', errorDescription);
           setErrorMessage(errorDescription ?? 'Connexion Google échouée.');
-          FirebaseAnalytics.logEvent('login_failed', {
+          FirebaseAnalytics.trackEvent('login_failed', {
             reason: 'google_oauth_error',
+            method: 'google',
+            screen: 'login',
             message: errorDescription.substring(0, 100),
           });
           return;
@@ -210,14 +224,16 @@ export default function Login() {
           if (exchangeError) {
             console.error('Exchange failed:', exchangeError);
             setErrorMessage('Impossible de finaliser la connexion Google.');
-            FirebaseAnalytics.logEvent('login_failed', {
+            FirebaseAnalytics.trackEvent('login_failed', {
               reason: 'google_exchange_failed',
+              method: 'google',
+              screen: 'login',
               message: exchangeError.message.substring(0, 100),
             });
             return;
           }
 
-          FirebaseAnalytics.logEvent('login', { method: 'google' });
+          FirebaseAnalytics.trackEvent('login', { method: 'google', screen: 'login' });
           router.replace('/(tabs)');
           return;
         }
@@ -228,7 +244,11 @@ export default function Login() {
         switch (authResult.type) {
           case 'dismiss':
           case 'cancel':
-            FirebaseAnalytics.logEvent('login_failed', { reason: 'google_cancelled' });
+            FirebaseAnalytics.trackEvent('login_failed', {
+              reason: 'google_cancelled',
+              method: 'google',
+              screen: 'login',
+            });
             setErrorMessage('Connexion Google annulée.');
             break;
           case 'locked':
@@ -243,8 +263,10 @@ export default function Login() {
     } catch (err) {
       console.error('❌ Unexpected Google login error:', err);
       const message = err instanceof Error ? err.message : String(err);
-      FirebaseAnalytics.logEvent('login_failed', {
+      FirebaseAnalytics.trackEvent('login_failed', {
         reason: 'google_unexpected_error',
+        method: 'google',
+        screen: 'login',
         message: message.substring(0, 100),
       });
       setErrorMessage('Une erreur est survenue avec Google. Veuillez réessayer.');
@@ -254,7 +276,7 @@ export default function Login() {
   };
 
   const handleGoToSignUp = () => {
-    FirebaseAnalytics.logEvent('navigate_to_signup');
+    FirebaseAnalytics.trackEvent('navigate_to_signup', { screen: 'login' });
     router.push('/auth/signup');
   };
 

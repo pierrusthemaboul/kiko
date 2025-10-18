@@ -14,6 +14,7 @@ import {
   Easing,
   Dimensions,
   Platform,
+  Modal,
   Pressable,
 } from 'react-native';
 import { useRouter } from 'expo-router';
@@ -23,9 +24,10 @@ import { User } from '@supabase/supabase-js';
 import { Ionicons } from '@expo/vector-icons';
 import { BannerAd, BannerAdSize } from 'react-native-google-mobile-ads';
 import { useFonts } from '../../hooks/useFonts'; // Chemin relatif vers useFonts
+import { useAdConsent } from '../../hooks/useAdConsent';
 import { FirebaseAnalytics } from '../../lib/firebase'; // Chemin relatif vers firebase
 // MODIFIÉ: IS_TEST_BUILD ajouté à l'import
-import { getAdUnitId, IS_TEST_BUILD } from '../../lib/config/adConfig'; // Chemin relatif vers adConfig
+import { getAdRequestOptions, getAdUnitId, IS_TEST_BUILD } from '../../lib/config/adConfig'; // Chemin relatif vers adConfig
 import { LinearGradient } from 'expo-linear-gradient';
 import AsyncStorage from '@react-native-async-storage/async-storage';
 
@@ -89,6 +91,10 @@ const AnimatedSplashScreen = ({ onAnimationEnd }) => {
       );
       soundRef.current = sound;
       await soundRef.current.playAsync();
+      if (!soundRef.current) {
+        // The splash unmounted during playback start; nothing else to do.
+        return;
+      }
       soundRef.current.setOnPlaybackStatusUpdate((status) => {
         if (status.isLoaded && status.didJustFinish) {
           soundRef.current?.unloadAsync().catch((unloadError) => {
@@ -100,7 +106,10 @@ const AnimatedSplashScreen = ({ onAnimationEnd }) => {
     } catch (error) {
       console.warn('Audio playback error:', error);
       console.error('[Audio] Splash: playback error', error);
-      FirebaseAnalytics.error('audio_playback_error', error instanceof Error ? error.message : 'Unknown error', 'SplashScreen');
+      FirebaseAnalytics.trackError('audio_playback_error', {
+        message: error instanceof Error ? error.message : 'Unknown error',
+        screen: 'SplashScreen',
+      });
       if (soundRef.current) {
         await soundRef.current.unloadAsync().catch(() => undefined);
         soundRef.current = null;
@@ -313,6 +322,13 @@ export default function HomeScreen() {
   const [showSplash, setShowSplash] = useState(true);
   const [guestDisplayName, setGuestDisplayName] = useState<string | null>(null);
   const fontsLoaded = useFonts(); // Hook pour charger les polices
+  const {
+    resetConsent,
+    isLoading: consentLoading,
+    consentStatusLabel,
+  } = useAdConsent();
+  const [settingsVisible, setSettingsVisible] = useState(false);
+  const [settingsSection, setSettingsSection] = useState<'root' | 'privacy'>('root');
 
   // Animation refs pour le contenu principal
   const mainContentAnimation = {
@@ -340,7 +356,10 @@ export default function HomeScreen() {
 
   // Callback pour masquer le splash et animer le contenu principal
   const handleSplashAnimationEnd = async () => {
-    FirebaseAnalytics.logEvent('splash_complete', { time_shown: SPLASH_TOTAL_VIEW_DURATION });
+    FirebaseAnalytics.trackEvent('splash_complete', {
+      time_shown: SPLASH_TOTAL_VIEW_DURATION,
+      screen: 'home',
+    });
     setShowSplash(false);
     animateMainContentIn();
     // Marquer que le splash a été montré pour cette session
@@ -376,14 +395,21 @@ export default function HomeScreen() {
       if (session?.user) {
         setUser(session.user);
         await fetchUserProfile(session.user.id);
-        FirebaseAnalytics.logEvent('user_login', { method: 'auto', is_returning_user: true });
+        FirebaseAnalytics.trackEvent('user_login', {
+          method: 'auto',
+          is_returning_user: true,
+          screen: 'home',
+        });
         await FirebaseAnalytics.initialize(session.user.id, false);
       } else {
         await FirebaseAnalytics.initialize(undefined, true);
       }
     } catch (error) {
         console.error("Error checking user session:", error);
-        FirebaseAnalytics.error('session_check_error', error instanceof Error ? error.message : 'Unknown error', 'HomeScreen');
+        FirebaseAnalytics.trackError('session_check_error', {
+          message: error instanceof Error ? error.message : 'Unknown error',
+          screen: 'HomeScreen',
+        });
         await FirebaseAnalytics.initialize(undefined, true);
     }
   };
@@ -398,17 +424,23 @@ export default function HomeScreen() {
         if (error) throw error;
         if (data) {
           setDisplayName(data.display_name);
-          FirebaseAnalytics.setUserProperty('display_name', data.display_name);
+          FirebaseAnalytics.setUserProps({ display_name: data.display_name });
         }
     } catch (error) {
         console.error("Error fetching user profile:", error);
-        FirebaseAnalytics.error('profile_fetch_error', error instanceof Error ? error.message : 'Unknown error', 'HomeScreen');
+        FirebaseAnalytics.trackError('profile_fetch_error', {
+          message: error instanceof Error ? error.message : 'Unknown error',
+          screen: 'HomeScreen',
+        });
     }
   };
 
   const handleLogout = async () => {
     try {
-      FirebaseAnalytics.logEvent('user_logout', { user_type: guestDisplayName ? 'guest' : 'registered' });
+      FirebaseAnalytics.trackEvent('user_logout', {
+        user_type: guestDisplayName ? 'guest' : 'registered',
+        screen: 'home',
+      });
       await supabase.auth.signOut();
       setGuestDisplayName(null);
       setDisplayName('');
@@ -416,7 +448,10 @@ export default function HomeScreen() {
       await FirebaseAnalytics.initialize(undefined, true);
     } catch (error) {
       Alert.alert('Erreur', 'Impossible de se déconnecter');
-      FirebaseAnalytics.error('logout_error', error instanceof Error ? error.message : 'Unknown error', 'HomeScreen');
+      FirebaseAnalytics.trackError('logout_error', {
+        message: error instanceof Error ? error.message : 'Unknown error',
+        screen: 'HomeScreen',
+      });
     }
   };
 
@@ -425,7 +460,11 @@ export default function HomeScreen() {
     const name = `Explorateur-${guestId}`;
     setGuestDisplayName(name);
     setDisplayName(name); // Met à jour l'affichage localement
-    FirebaseAnalytics.logEvent('guest_login', { guest_id: guestId, guest_name: name });
+    FirebaseAnalytics.trackEvent('guest_login', {
+      guest_id: guestId,
+      guest_name: name,
+      screen: 'home',
+    });
     FirebaseAnalytics.initialize(undefined, true); // Assure le mode anonyme pour Firebase
 
     Alert.alert(
@@ -435,14 +474,20 @@ export default function HomeScreen() {
         {
           text: "Continuer l'exploration",
           onPress: () => {
-            FirebaseAnalytics.logEvent('guest_mode_confirmed', { guest_name: name });
+            FirebaseAnalytics.trackEvent('guest_mode_confirmed', {
+              guest_name: name,
+              screen: 'home',
+            });
             router.push('vue1'); // Navigue vers la vue du jeu
           }
         },
         {
           text: "Créer un compte",
           onPress: () => {
-            FirebaseAnalytics.logEvent('guest_to_signup', { from_screen: 'home', guest_name: name });
+            FirebaseAnalytics.trackEvent('guest_to_signup', {
+              from_screen: 'home',
+              guest_name: name,
+            });
             router.push('/auth/signup'); // Navigue vers l'inscription
           },
           style: "default"
@@ -454,7 +499,7 @@ export default function HomeScreen() {
 
   // --- Handlers Navigation ---
   const handleStartGame = () => {
-    FirebaseAnalytics.logEvent('start_game_button_clicked', {
+    FirebaseAnalytics.trackEvent('start_game_button_clicked', {
         player_name: guestDisplayName || displayName || 'Anonymous',
         is_guest: !!guestDisplayName,
         user_type: guestDisplayName ? 'guest' : (user ? 'registered' : 'unknown'),
@@ -464,15 +509,49 @@ export default function HomeScreen() {
   };
 
   const handleLoginPress = () => {
-    FirebaseAnalytics.logEvent('login_button_clicked', { from_screen: 'home' });
+    FirebaseAnalytics.trackEvent('login_button_clicked', { from_screen: 'home' });
     router.push('/auth/login'); // Navigue vers la page de connexion
   };
 
   const handleSignupPress = () => {
-    FirebaseAnalytics.logEvent('signup_button_clicked', { from_screen: 'home' });
-    router.push('/auth/signup'); // Navigue vers la page d'inscription
+    FirebaseAnalytics.trackEvent('signup_button_clicked', { from_screen: 'home' });
+   router.push('/auth/signup'); // Navigue vers la page d'inscription
   };
   // ----------------------------------------------------------
+
+  const handleOpenSettings = useCallback(() => {
+    setSettingsSection('root');
+    setSettingsVisible(true);
+  }, []);
+
+  const handleCloseSettings = useCallback(() => {
+    setSettingsVisible(false);
+    setSettingsSection('root');
+  }, []);
+
+  const handleOpenPrivacySection = useCallback(() => {
+    setSettingsSection('privacy');
+  }, []);
+
+  const handleManageConsent = useCallback(async () => {
+    FirebaseAnalytics.trackEvent('consent_manage_clicked', {
+      from_screen: 'home',
+      section: 'privacy',
+      consent_status: consentStatusLabel ?? 'unknown',
+    });
+    handleCloseSettings();
+    try {
+      await resetConsent();
+    } catch (err) {
+      console.error('[Settings] Failed to manage consent', err);
+      Alert.alert(
+        'Erreur',
+        "Impossible de mettre à jour votre consentement pour le moment. Réessayez plus tard.",
+      );
+      setSettingsSection('privacy');
+      setSettingsVisible(true);
+    }
+  }, [consentStatusLabel, handleCloseSettings, resetConsent]);
 
   // Affiche un écran de chargement si les polices ne sont pas prêtes
   if (!fontsLoaded) {
@@ -533,6 +612,12 @@ export default function HomeScreen() {
                     onPress={handleLogout}
                     variant="ghost"
                   />
+                  <MinimalButton
+                    label="Paramètres"
+                    icon="settings-outline"
+                    onPress={handleOpenSettings}
+                    variant="ghostSecondary"
+                  />
                 </>
               ) : (
                 // Si déconnecté
@@ -549,10 +634,16 @@ export default function HomeScreen() {
                     onPress={handleSignupPress}
                     variant="secondary"
                   />
-                   <MinimalButton
+                  <MinimalButton
                     label="Mode Exploration"
                     icon="compass-outline"
                     onPress={handlePlayAsGuest}
+                    variant="ghostSecondary"
+                  />
+                  <MinimalButton
+                    label="Paramètres"
+                    icon="settings-outline"
+                    onPress={handleOpenSettings}
                     variant="ghostSecondary"
                   />
                 </>
@@ -564,18 +655,90 @@ export default function HomeScreen() {
               <BannerAd
                 unitId={getAdUnitId('BANNER_HOME')} // Utilise la fonction pour obtenir l'ID d'annonce
                 size={BannerAdSize.BANNER}
-                requestOptions={{ requestNonPersonalizedAdsOnly: true }} // Pour GDPR/CCPA
+                requestOptions={getAdRequestOptions()}
                 onAdLoaded={() => { FirebaseAnalytics.ad('banner', 'loaded', 'home_banner', 0); }}
                 onAdFailedToLoad={(error) => {
                    FirebaseAnalytics.ad('banner', 'failed', 'home_banner', 0);
-                   FirebaseAnalytics.error('ad_load_failed', `Banner Ad Error: ${error.message} (Code: ${error.code})`, 'HomeScreen');
-                   console.warn(`Ad failed to load: ${error.message}`); // Log console pour le dev
+                   FirebaseAnalytics.trackError('ad_load_failed', {
+                     message: `Banner Ad Error: ${error.message} (Code: ${error.code})`,
+                     screen: 'HomeScreen',
+                     severity: 'warning',
+                   });
+                   console.warn(`Ad failed to load: ${error.message}`);
                 }}
               />
             </View>
           </Animated.View>
         </View>
       )}
+      <Modal
+        transparent
+        animationType="slide"
+        visible={settingsVisible}
+        onRequestClose={handleCloseSettings}
+      >
+        <View style={styles.modalOverlay}>
+          <View style={styles.modalContainer}>
+            {settingsSection === 'root' ? (
+              <>
+                <Text style={styles.modalTitle}>Paramètres</Text>
+                <Pressable style={styles.modalItem} onPress={handleOpenPrivacySection}>
+                  <View style={styles.modalItemContent}>
+                    <Text style={styles.modalItemText}>Confidentialité</Text>
+                    <Text style={styles.modalItemSubText}>Publicités et gestion du consentement</Text>
+                  </View>
+                  <Ionicons name="chevron-forward-outline" size={18} color={COLORS.textSecondary} />
+                </Pressable>
+                <Pressable style={styles.modalCloseButton} onPress={handleCloseSettings}>
+                  <Text style={styles.modalCloseText}>Fermer</Text>
+                </Pressable>
+              </>
+            ) : (
+              <>
+                <View style={styles.modalHeader}>
+                  <Pressable
+                    style={styles.modalIconButton}
+                    onPress={() => setSettingsSection('root')}
+                  >
+                    <Ionicons name="chevron-back-outline" size={18} color={COLORS.textSecondary} />
+                  </Pressable>
+                  <Text style={styles.modalTitle}>Confidentialité</Text>
+                  <View style={styles.modalIconPlaceholder} />
+                </View>
+                <Text style={styles.modalDescription}>
+                  Réinitialisez vos préférences publicitaires et relancez le formulaire de consentement.
+                </Text>
+                <Text style={styles.modalStatus}>
+                  Statut actuel : {consentStatusLabel ?? 'inconnu'}
+                </Text>
+                <Pressable
+                  style={[
+                    styles.modalActionButton,
+                    consentLoading && styles.modalActionButtonDisabled,
+                  ]}
+                  onPress={handleManageConsent}
+                  disabled={consentLoading}
+                >
+                  <Text style={styles.modalActionText}>
+                    {consentLoading ? 'Chargement…' : 'Gérer mon consentement'}
+                  </Text>
+                  {!consentLoading && (
+                    <Ionicons
+                      name="shield-checkmark-outline"
+                      size={18}
+                      color={COLORS.textOnPrimary}
+                      style={styles.modalActionIcon}
+                    />
+                  )}
+                </Pressable>
+                <Pressable style={styles.modalCloseButton} onPress={handleCloseSettings}>
+                  <Text style={styles.modalCloseText}>Fermer</Text>
+                </Pressable>
+              </>
+            )}
+          </View>
+        </View>
+      </Modal>
     </View>
   );
 }
@@ -703,9 +866,111 @@ const styles = StyleSheet.create({
   // --- Publicité ---
   adContainer: {
     width: '100%',
+   alignItems: 'center',
+   justifyContent: 'center',
+   minHeight: 50, // Pour la bannière standard
+   marginTop: 15, // Espace au-dessus
+  },
+  modalOverlay: {
+    flex: 1,
+    backgroundColor: 'rgba(0,0,0,0.4)',
+    justifyContent: 'center',
+    alignItems: 'center',
+    padding: 24,
+  },
+  modalContainer: {
+    width: '100%',
+    backgroundColor: COLORS.backgroundCard,
+    borderRadius: 16,
+    paddingVertical: 20,
+    paddingHorizontal: 18,
+  },
+  modalTitle: {
+    fontSize: 20,
+    fontFamily: 'Montserrat-Bold',
+    color: COLORS.textPrimary,
+    textAlign: 'center',
+    marginBottom: 12,
+  },
+  modalItem: {
+    flexDirection: 'row',
+    alignItems: 'center',
+    justifyContent: 'space-between',
+    backgroundColor: COLORS.background,
+    borderRadius: 12,
+    paddingVertical: 14,
+    paddingHorizontal: 12,
+    marginTop: 8,
+  },
+  modalItemContent: {
+    flex: 1,
+    marginRight: 12,
+  },
+  modalItemText: {
+    fontSize: 16,
+    fontFamily: 'Montserrat-Medium',
+    color: COLORS.textPrimary,
+  },
+  modalItemSubText: {
+    fontSize: 13,
+    fontFamily: 'Montserrat-Regular',
+    color: COLORS.textSecondary,
+    marginTop: 4,
+  },
+  modalHeader: {
+    flexDirection: 'row',
+    alignItems: 'center',
+    justifyContent: 'space-between',
+    marginBottom: 12,
+  },
+  modalIconButton: {
+    padding: 8,
+  },
+  modalIconPlaceholder: {
+    width: 34,
+  },
+  modalDescription: {
+    fontSize: 14,
+    fontFamily: 'Montserrat-Regular',
+    color: COLORS.textSecondary,
+    marginBottom: 12,
+  },
+  modalStatus: {
+    fontSize: 14,
+    fontFamily: 'Montserrat-Medium',
+    color: COLORS.textPrimary,
+    marginBottom: 16,
+  },
+  modalActionButton: {
+    flexDirection: 'row',
     alignItems: 'center',
     justifyContent: 'center',
-    minHeight: 50, // Pour la bannière standard
-    marginTop: 15, // Espace au-dessus
+    backgroundColor: COLORS.primary,
+    borderRadius: 12,
+    paddingVertical: 12,
+    paddingHorizontal: 14,
+  },
+  modalActionButtonDisabled: {
+    backgroundColor: COLORS.border,
+  },
+  modalActionText: {
+    fontSize: 15,
+    fontFamily: 'Montserrat-Bold',
+    color: COLORS.textOnPrimary,
+  },
+  modalActionIcon: {
+    marginLeft: 8,
+  },
+  modalCloseButton: {
+    marginTop: 16,
+    paddingVertical: 12,
+    alignItems: 'center',
+    borderRadius: 12,
+    backgroundColor: COLORS.background,
+  },
+  modalCloseText: {
+    fontSize: 15,
+    fontFamily: 'Montserrat-Medium',
+    color: COLORS.textSecondary,
   },
 });

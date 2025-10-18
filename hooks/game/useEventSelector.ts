@@ -416,7 +416,7 @@ export function useEventSelector({
         await updateStateCallback(jumpEvent);
         
         // Analytics pour le saut temporel
-        FirebaseAnalytics.logEvent('temporal_jump', {
+        FirebaseAnalytics.trackEvent('temporal_jump', {
           from_year: refYear,
           to_year: getCachedDateInfo(jumpEvent.date).year,
           jump_distance: jumpDistance,
