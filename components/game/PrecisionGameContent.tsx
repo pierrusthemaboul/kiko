@@ -24,6 +24,8 @@ import * as Haptics from 'expo-haptics';
 import { Ionicons } from '@expo/vector-icons';
 import PrecisionContinueModal from '../modals/PrecisionContinueModal';
 import NumericKeypad, { NUMERIC_KEYPAD_HEIGHT_RATIO } from './NumericKeypad';
+import { usePrecisionAudio } from '../../hooks/game/usePrecisionAudio';
+import useAudio from '../../hooks/useAudio';
 
 const LAYOUT_DEBUG = false;
 const KEYPAD_ROWS = 4;
@@ -167,7 +169,7 @@ const PrecisionGameContent: React.FC<PrecisionGameContentProps> = ({
   const submitLockRef = useRef(false);
   const [resultExpanded, setResultExpanded] = useState(false);
   const [resultImageLightbox, setResultImageLightbox] = useState(false);
-  
+
   const flashAnim = useRef(new Animated.Value(0)).current;
   const lightboxScale = useRef(new Animated.Value(0)).current;
   const lightboxOpacity = useRef(new Animated.Value(0)).current;
@@ -176,6 +178,10 @@ const PrecisionGameContent: React.FC<PrecisionGameContentProps> = ({
   const [autoAdvanceCountdown, setAutoAdvanceCountdown] = useState<number | null>(null);
   const hasAnsweredRef = useRef(false);
   const resultFadeAnim = useRef(new Animated.Value(0)).current;
+
+  // --- AUDIO ---
+  const { soundVolume, isSoundEnabled } = useAudio();
+  const precisionAudio = usePrecisionAudio({ soundVolume, isSoundEnabled });
 
   // --- MEMOIZED VALUES ---
   const hpRatio = useMemo(() => Math.max(0, Math.min(1, hp / hpMax)), [hp, hpMax]);
@@ -525,27 +531,34 @@ const PrecisionGameContent: React.FC<PrecisionGameContentProps> = ({
   }, []);
 
   const handleDigitPress = useCallback((digit: string) => {
+    console.log('[PRECISION_AUDIO] handleDigitPress called with:', digit);
     setInputError(null);
+    precisionAudio.playKeyPress();
     setGuessValue((prev) => {
       const isNegative = prev.startsWith('-');
       const digits = isNegative ? prev.slice(1) : prev;
       if (digits.length >= MAX_DIGITS) {
+        console.log('[PRECISION_AUDIO] Max digits reached, returning:', prev);
         return prev;
       }
       const nextDigits = digits + digit;
       const newValue = (isNegative ? '-' : '') + nextDigits;
+      console.log('[PRECISION_AUDIO] New guess value:', newValue);
       return newValue;
     });
+  // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
 
   const handleBackspace = useCallback(() => {
     setInputError(null);
+    precisionAudio.playKeyPress();
     setGuessValue((prev) => {
       if (prev.length === 0) return prev;
       const trimmed = prev.slice(0, -1);
       if (trimmed === '-') return '';
       return trimmed;
     });
+  // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
 
   const handleSubmit = useCallback(() => {
@@ -560,8 +573,10 @@ const PrecisionGameContent: React.FC<PrecisionGameContentProps> = ({
     setTimeout(() => { submitLockRef.current = false; }, 200);
     hasAnsweredRef.current = true;
     clearAutoAdvance();
+    precisionAudio.playSubmit();
     Haptics.impactAsync(Haptics.ImpactFeedbackStyle.Light).catch(() => {});
     onSubmitGuess(parsed);
+  // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [guessValue, clearAutoAdvance, onSubmitGuess]);
 
   const handleContinue = () => {
@@ -617,11 +632,16 @@ const PrecisionGameContent: React.FC<PrecisionGameContentProps> = ({
   // --- EFFECTS ---
   useEffect(() => {
     if (!lastResult) {
+      console.log('[PRECISION_AUDIO] lastResult is null, clearing guess value');
       setGuessValue('');
       setInputError(null);
       setResultExpanded(false);
       resultFadeAnim.setValue(0);
     } else {
+      console.log('[PRECISION_AUDIO] Playing answer result sound for:', lastResult.absDifference, 'timedOut:', lastResult.timedOut);
+      // Jouer le son approprié selon le résultat
+      precisionAudio.playAnswerResult(lastResult.absDifference, lastResult.timedOut);
+
       setResultExpanded(false);
       resultFadeAnim.setValue(0);
       Animated.timing(resultFadeAnim, {
@@ -631,6 +651,7 @@ const PrecisionGameContent: React.FC<PrecisionGameContentProps> = ({
         useNativeDriver: true,
       }).start();
     }
+  // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [lastResult, currentEvent?.id, resultFadeAnim]);
 
   useEffect(() => {
@@ -640,6 +661,18 @@ const PrecisionGameContent: React.FC<PrecisionGameContentProps> = ({
       Haptics.notificationAsync(Haptics.NotificationFeedbackType.Warning).catch(() => undefined);
     }
   }, [flashAnim, isGameOver, lastResult, timeLeft]);
+
+  // Son d'avertissement quand le temps devient faible (5 secondes)
+  const prevTimeLeftRef = useRef(timeLeft);
+  useEffect(() => {
+    // Ne jouer le son que quand on PASSE à 5 secondes (pas à chaque render)
+    if (timeLeft === 5 && prevTimeLeftRef.current === 6 && !lastResult && !isGameOver) {
+      console.log('[PRECISION_AUDIO] Playing timer warning at 5 seconds');
+      precisionAudio.playTimerWarning();
+    }
+    prevTimeLeftRef.current = timeLeft;
+  // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, [timeLeft, lastResult, isGameOver]);
 
   useEffect(() => {
     if (showDescription) pauseTimer();

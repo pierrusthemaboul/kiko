@@ -9,6 +9,7 @@ export { useAnalytics } from './useAnalytics'; // Ce hook contiendra probablemen
 export { usePerformance } from './usePerformance';
 export { useEventSelector } from './useEventSelector';  // Important - export du hook d'événements
 export { usePrecisionGame } from './usePrecisionGame';
+export { usePrecisionAudio } from './usePrecisionAudio';
 
 // Réexport des hooks existants
 export { default as useAudio } from '../useAudio';

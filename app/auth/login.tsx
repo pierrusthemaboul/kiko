@@ -13,6 +13,7 @@ import {
   ActivityIndicator
 } from 'react-native';
 import * as AuthSession from 'expo-auth-session';
+import * as Linking from 'expo-linking';
 import * as WebBrowser from 'expo-web-browser';
 import { FontAwesome } from '@expo/vector-icons';
 import { supabase } from '../../lib/supabase/supabaseClients';
@@ -184,26 +185,60 @@ export default function Login() {
         return;
       }
 
-      const authResult = await WebBrowser.openAuthSessionAsync(
-        data.url,
-        redirectTo
-      );
+      const authResult = await WebBrowser.openAuthSessionAsync(data.url, redirectTo);
 
-      switch (authResult.type) {
-        case 'success':
+      if (authResult.type === 'success' && authResult.url) {
+        const parsed = Linking.parse(authResult.url);
+        const qp = (parsed.queryParams ?? {}) as Record<string, string>;
+
+        if (qp.error) {
+          const errorDescription = qp.error_description ?? qp.error;
+          console.error('OAuth error:', errorDescription);
+          setErrorMessage(errorDescription ?? 'Connexion Google échouée.');
+          FirebaseAnalytics.logEvent('login_failed', {
+            reason: 'google_oauth_error',
+            message: errorDescription.substring(0, 100),
+          });
+          return;
+        }
+
+        const authCode = Array.isArray(qp.code) ? qp.code[0] : qp.code;
+
+        if (authCode) {
+          const { error: exchangeError } = await supabase.auth.exchangeCodeForSession(authCode);
+
+          if (exchangeError) {
+            console.error('Exchange failed:', exchangeError);
+            setErrorMessage('Impossible de finaliser la connexion Google.');
+            FirebaseAnalytics.logEvent('login_failed', {
+              reason: 'google_exchange_failed',
+              message: exchangeError.message.substring(0, 100),
+            });
+            return;
+          }
+
           FirebaseAnalytics.logEvent('login', { method: 'google' });
-          break;
-        case 'dismiss':
-        case 'cancel':
-          FirebaseAnalytics.logEvent('login_failed', { reason: 'google_cancelled' });
-          setErrorMessage('Connexion Google annulée.');
-          break;
-        case 'locked':
-          console.warn('⚠️ Google OAuth flow is already in progress.');
-          setErrorMessage('Une autre tentative de connexion est déjà en cours.');
-          break;
-        default:
-          console.warn('🔁 Google OAuth ended with unexpected result type:', authResult.type);
+          router.replace('/(tabs)');
+          return;
+        }
+
+        console.warn('Google OAuth success without code in callback URL.');
+        setErrorMessage('Connexion Google indisponible pour le moment. Veuillez réessayer.');
+      } else {
+        switch (authResult.type) {
+          case 'dismiss':
+          case 'cancel':
+            FirebaseAnalytics.logEvent('login_failed', { reason: 'google_cancelled' });
+            setErrorMessage('Connexion Google annulée.');
+            break;
+          case 'locked':
+            console.warn('⚠️ Google OAuth flow is already in progress.');
+            setErrorMessage('Une autre tentative de connexion est déjà en cours.');
+            break;
+          default:
+            console.warn('🔁 Google OAuth ended with unexpected result type:', authResult.type);
+            setErrorMessage('Connexion Google indisponible pour le moment. Veuillez réessayer.');
+        }
       }
     } catch (err) {
       console.error('❌ Unexpected Google login error:', err);
