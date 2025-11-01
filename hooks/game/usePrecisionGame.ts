@@ -15,9 +15,27 @@ function generateUUID(): string {
   });
 }
 
-const MAX_HP = 1000;
-const LEVEL_UP_BONUS_HP = 150;
-const MAX_TIME_SECONDS = 20;
+const BASE_HP_CAP = 350;
+const HP_CAP_GROWTH_BREAKPOINT = 5;
+const EARLY_LEVEL_HP_INCREMENT = 60;
+const LATE_LEVEL_HP_INCREMENT = 35;
+const ABSOLUTE_HP_CAP = 1100;
+const PERFECT_GUESS_HP_RATIO = 0.12;
+const PERFECT_GUESS_HP_MIN = 45;
+const CONTINUE_HP_RATIO = 0.8;
+const TIMER_BASE_SECONDS = 20;
+const TIMER_MIN_SECONDS = 12;
+const TIMER_MAX_SECONDS = 32;
+const FALLBACK_POOL_KEY = -1;
+const STARTING_HP_RATIO = 0.85;
+
+const FOCUS_GAUGE_MAX = 100;
+const FOCUS_LEVEL_MAX = 3;
+const FOCUS_HP_STEP = 80;
+const FOCUS_HEAL_RATIO = 0.35;
+const FOCUS_HEAL_MIN = 50;
+const FOCUS_TIMEOUT_PENALTY = 28;
+const FOCUS_BACKGROUND_PENALTY = 22;
 
 interface PrecisionLevel {
   id: number;
@@ -137,6 +155,115 @@ const PRECISION_LEVELS: PrecisionLevel[] = [
   },
 ];
 
+const LEVEL_HP_OVERRIDES: Record<number, number> = {
+  1: BASE_HP_CAP,
+  2: BASE_HP_CAP + EARLY_LEVEL_HP_INCREMENT,
+  3: BASE_HP_CAP + EARLY_LEVEL_HP_INCREMENT * 2,
+  4: BASE_HP_CAP + EARLY_LEVEL_HP_INCREMENT * 3,
+  5: BASE_HP_CAP + EARLY_LEVEL_HP_INCREMENT * 4,
+};
+
+function clamp(value: number, min: number, max: number) {
+  return Math.max(min, Math.min(max, value));
+}
+
+function getHpCapForLevel(levelId: number): number {
+  if (levelId <= 0) return BASE_HP_CAP;
+  const override = LEVEL_HP_OVERRIDES[levelId];
+  if (override) return override;
+
+  const effectiveLevel = Math.max(levelId, 1);
+  const baseAtBreakpoint = LEVEL_HP_OVERRIDES[HP_CAP_GROWTH_BREAKPOINT]
+    ?? BASE_HP_CAP + (HP_CAP_GROWTH_BREAKPOINT - 1) * EARLY_LEVEL_HP_INCREMENT;
+
+  if (effectiveLevel <= HP_CAP_GROWTH_BREAKPOINT) {
+    return LEVEL_HP_OVERRIDES[effectiveLevel] ?? baseAtBreakpoint;
+  }
+
+  const extraLevels = effectiveLevel - HP_CAP_GROWTH_BREAKPOINT;
+  const projected = baseAtBreakpoint + extraLevels * LATE_LEVEL_HP_INCREMENT;
+  return Math.min(projected, ABSOLUTE_HP_CAP);
+}
+
+function getPerfectGuessBonus(hpCap: number) {
+  return Math.max(PERFECT_GUESS_HP_MIN, Math.floor(hpCap * PERFECT_GUESS_HP_RATIO));
+}
+
+function getTimeoutPenalty(levelId: number) {
+  if (levelId <= 3) return 200;
+  if (levelId <= 6) return 230;
+  if (levelId <= 9) return 255;
+  return 275;
+}
+
+function getHpLossCap(levelId: number, hpCap: number) {
+  if (levelId <= 2) return Math.min(210, Math.floor(hpCap * 0.48));
+  if (levelId <= 4) return Math.min(280, Math.floor(hpCap * 0.5));
+  if (levelId <= 6) return Math.min(330, Math.floor(hpCap * 0.54));
+  return Math.min(400, Math.floor(hpCap * 0.56));
+}
+
+function shuffleArray<T>(source: T[]): T[] {
+  const array = [...source];
+  for (let i = array.length - 1; i > 0; i -= 1) {
+    const j = Math.floor(Math.random() * (i + 1));
+    const temp = array[i];
+    array[i] = array[j];
+    array[j] = temp;
+  }
+  return array;
+}
+
+function computeHpMax(baseCap: number, focusLvl: number) {
+  return Math.min(ABSOLUTE_HP_CAP, baseCap + focusLvl * FOCUS_HP_STEP);
+}
+
+function getTimerLimitForEvent(level: PrecisionLevel, event: Event): number {
+  let seconds = TIMER_BASE_SECONDS;
+  const difficulty = clamp(event.niveau_difficulte ?? 4, 1, 7);
+  const notoriete = event.notoriete ?? 50;
+  const eventYear = extractYear(event.date);
+
+  if (eventYear !== null) {
+    const age = Math.abs(2024 - eventYear);
+    if (age >= 1200) {
+      seconds += 4;
+    } else if (age >= 700) {
+      seconds += 3;
+    } else if (age >= 350) {
+      seconds += 2;
+    } else if (age >= 150) {
+      seconds += 1;
+    }
+  }
+
+  if (difficulty >= 5) {
+    seconds += (difficulty - 4) * 1.5;
+  } else if (difficulty <= 2) {
+    seconds -= 1.5;
+  } else if (difficulty === 3) {
+    seconds -= 0.5;
+  }
+
+  if (notoriete < 20) {
+    seconds += 2;
+  } else if (notoriete < 40) {
+    seconds += 1;
+  } else if (notoriete > 80) {
+    seconds -= 1;
+  }
+
+  if (level.id >= 12) {
+    seconds -= 2.5;
+  } else if (level.id >= 9) {
+    seconds -= 2;
+  } else if (level.id >= 6) {
+    seconds -= 1;
+  }
+
+  return clamp(Math.round(seconds), TIMER_MIN_SECONDS, TIMER_MAX_SECONDS);
+}
+
 export interface PrecisionResult {
   event: Event;
   guessYear: number;
@@ -171,8 +298,18 @@ function calculateScoreAndHP(params: {
   absDifference: number;
   actualYear: number;
   notoriete: number | null | undefined;
+  difficulty: number | null | undefined;
+  levelId: number;
+  hpCap: number;
 }) {
-  const { absDifference, actualYear, notoriete } = params;
+  const {
+    absDifference,
+    actualYear,
+    notoriete,
+    difficulty,
+    levelId,
+    hpCap,
+  } = params;
 
   // 1. Facteur d'ancienneté : plus l'événement est ancien, plus on est tolérant
   // Référence : 2000 (événements récents)
@@ -219,10 +356,23 @@ function calculateScoreAndHP(params: {
   const adjustedDifference = absDifference / toleranceFactor;
 
   // 5. Calcul de la perte de HP basée sur l'écart ajusté
-  // Formule moins punitive : cap à 400 HP au lieu de 500
-  // Progression : 1 an = 1.5 HP au lieu de 2 HP
-  const baseHpLoss = Math.floor(adjustedDifference * 1.5);
-  const hpLoss = Math.min(400, baseHpLoss);
+  const difficultyValue = clamp(typeof difficulty === 'number' ? difficulty : 4, 1, 7);
+  const difficultyDelta = difficultyValue - 4;
+
+  let levelSafetyMultiplier = 1;
+  if (levelId <= 3) {
+    levelSafetyMultiplier = 0.8;
+  } else if (levelId <= 5) {
+    levelSafetyMultiplier = 0.92;
+  } else if (levelId <= 8) {
+    levelSafetyMultiplier = 0.98;
+  }
+
+  const difficultyWeight = 1 + (difficultyDelta >= 0 ? difficultyDelta * 0.06 : difficultyDelta * 0.045);
+  const cappedMultiplier = clamp(levelSafetyMultiplier * difficultyWeight, 0.58, 1.32);
+  const baseHpLoss = Math.floor(adjustedDifference * 1.5 * cappedMultiplier);
+  const hpLossCap = getHpLossCap(levelId, hpCap);
+  const hpLoss = Math.min(hpLossCap, baseHpLoss);
 
   // 6. Calcul du score avec doublement des gains
   // Ancienne formule doublée et plus généreuse
@@ -265,6 +415,19 @@ function calculateScoreAndHP(params: {
     // Au-delà de 600 ans d'écart ajusté : 0 point
     scoreGain = 0;
   }
+
+  const notorietyMultiplier = actualNotoriete < 20
+    ? 1.25
+    : actualNotoriete < 40
+      ? 1.15
+      : actualNotoriete < 60
+        ? 1.05
+        : 1.0;
+
+  const difficultyBonus = 1 + Math.max(0, difficultyDelta) * 0.09;
+  const levelScoreBonus = levelId >= 10 ? 1.1 : levelId >= 7 ? 1.04 : 1.0;
+  const totalScoreMultiplier = clamp(notorietyMultiplier * difficultyBonus * levelScoreBonus, 0.8, 1.45);
+  scoreGain = Math.round(scoreGain * totalScoreMultiplier);
 
   return { hpLoss, scoreGain, toleranceFactor, adjustedDifference };
 }
@@ -357,12 +520,18 @@ export function usePrecisionGame() {
   const [events, setEvents] = useState<Event[]>([]);
   const [currentEvent, setCurrentEvent] = useState<Event | null>(null);
   const [score, setScore] = useState(0);
-  const [hp, setHp] = useState(MAX_HP);
+  const initialHpCap = useMemo(() => getHpCapForLevel(PRECISION_LEVELS[0].id), []);
+  const [levelHpCap, setLevelHpCap] = useState(initialHpCap);
+  const [focusLevel, setFocusLevel] = useState(0);
+  const [focusGauge, setFocusGauge] = useState(0);
+  const hpMax = useMemo(() => computeHpMax(levelHpCap, focusLevel), [levelHpCap, focusLevel]);
+  const [hp, setHp] = useState(() => Math.max(1, Math.floor(initialHpCap * STARTING_HP_RATIO)));
   const [level, setLevel] = useState<PrecisionLevel>(PRECISION_LEVELS[0]);
   const [lastResult, setLastResult] = useState<PrecisionResult | null>(null);
   const [isGameOver, setIsGameOver] = useState(false);
   const [totalAnswered, setTotalAnswered] = useState(0);
-  const [timeLeft, setTimeLeft] = useState(MAX_TIME_SECONDS);
+  const [timerLimit, setTimerLimit] = useState(TIMER_BASE_SECONDS);
+  const [timeLeft, setTimeLeft] = useState(TIMER_BASE_SECONDS);
   const [isTimerPaused, setIsTimerPaused] = useState(false);
   const [personalBest, setPersonalBest] = useState(0);
   const [playerName, setPlayerName] = useState('Joueur');
@@ -379,6 +548,7 @@ export function usePrecisionGame() {
     newLevel: PrecisionLevel;
     score: number;
     hpRestored: number;
+    newHpCap: number;
   } | null>(null);
   const [eventsAnsweredInLevel, setEventsAnsweredInLevel] = useState(0); // Compteur d'événements répondus dans le niveau actuel
 
@@ -386,9 +556,32 @@ export function usePrecisionGame() {
   const initializingRef = useRef(false);
   const timerRef = useRef<NodeJS.Timeout | null>(null);
   const justLoadedEventRef = useRef(false);
+  const levelPoolsRef = useRef<Map<number, Event[]>>(new Map());
+  const poolCursorRef = useRef<Map<number, number>>(new Map());
+  const hpRef = useRef(hp);
+  const levelHpCapRef = useRef(levelHpCap);
+  const focusLevelRef = useRef(focusLevel);
+  const focusGaugeRef = useRef(focusGauge);
+  const levelRef = useRef(level);
 
   // Hook pour les pubs du mode Précision
   const { adState, showGameOverAd, showContinueAd, resetContinueReward, resetAdsState, forceContinueAdLoad } = usePrecisionAds();
+
+  useEffect(() => {
+    hpRef.current = hp;
+  }, [hp]);
+  useEffect(() => {
+    levelHpCapRef.current = levelHpCap;
+  }, [levelHpCap]);
+  useEffect(() => {
+    focusLevelRef.current = focusLevel;
+  }, [focusLevel]);
+  useEffect(() => {
+    focusGaugeRef.current = focusGauge;
+  }, [focusGauge]);
+  useEffect(() => {
+    levelRef.current = level;
+  }, [level]);
 
   const clearTimer = useCallback(() => {
     if (timerRef.current) {
@@ -396,6 +589,82 @@ export function usePrecisionGame() {
       timerRef.current = null;
     }
   }, []);
+
+  const rebuildEventPools = useCallback((sourceEvents: Event[]) => {
+    const pools = new Map<number, Event[]>();
+    const eligibleEvents = sourceEvents.filter((event) => extractYear(event.date) !== null);
+
+    PRECISION_LEVELS.forEach((precisionLevel) => {
+      const filtered = filterEventsForLevel(sourceEvents, precisionLevel);
+      pools.set(precisionLevel.id, shuffleArray(filtered));
+    });
+
+    pools.set(FALLBACK_POOL_KEY, shuffleArray(eligibleEvents));
+    levelPoolsRef.current = pools;
+    poolCursorRef.current = new Map();
+    usedIdsRef.current.clear();
+  }, []);
+
+  const applyFocusDelta = useCallback((rawDelta: number) => {
+    if (!rawDelta) return;
+
+    let gauge = focusGaugeRef.current + rawDelta;
+    let gainedLevels = 0;
+
+    if (rawDelta > 0) {
+      while (gauge >= FOCUS_GAUGE_MAX && focusLevelRef.current + gainedLevels < FOCUS_LEVEL_MAX) {
+        gauge -= FOCUS_GAUGE_MAX;
+        gainedLevels += 1;
+      }
+    }
+
+    gauge = clamp(gauge, 0, FOCUS_GAUGE_MAX);
+
+    if (gainedLevels > 0) {
+      const newLevel = Math.min(focusLevelRef.current + gainedLevels, FOCUS_LEVEL_MAX);
+      focusLevelRef.current = newLevel;
+      setFocusLevel(newLevel);
+
+      const newHpMax = computeHpMax(levelHpCapRef.current, newLevel);
+      const healAmount = Math.max(FOCUS_HEAL_MIN, Math.floor(newHpMax * FOCUS_HEAL_RATIO));
+      setHp((prev) => Math.min(newHpMax, prev + healAmount));
+    }
+
+    focusGaugeRef.current = gauge;
+    setFocusGauge(gauge);
+  }, [setFocusLevel, setFocusGauge, setHp]);
+
+  const rewardFocusForAccuracy = useCallback((adjustedDifference: number, isPerfect: boolean) => {
+    if (!Number.isFinite(adjustedDifference)) return;
+
+    let delta = 0;
+    if (adjustedDifference <= 1) delta = 18;
+    else if (adjustedDifference <= 3) delta = 14;
+    else if (adjustedDifference <= 6) delta = 10;
+    else if (adjustedDifference <= 10) delta = 7;
+    else if (adjustedDifference <= 18) delta = 5;
+    else if (adjustedDifference <= 28) delta = 3;
+    else if (adjustedDifference <= 40) delta = 1;
+    else if (adjustedDifference <= 55) delta = -6;
+    else if (adjustedDifference <= 90) delta = -10;
+    else delta = -14;
+
+    if (isPerfect) {
+      delta += 8;
+    }
+
+    if (delta !== 0) {
+      applyFocusDelta(delta);
+    }
+  }, [applyFocusDelta]);
+
+  const penalizeFocusForTimeout = useCallback(() => {
+    applyFocusDelta(-FOCUS_TIMEOUT_PENALTY);
+  }, [applyFocusDelta]);
+
+  const penalizeFocusForBackground = useCallback(() => {
+    applyFocusDelta(-FOCUS_BACKGROUND_PENALTY);
+  }, [applyFocusDelta]);
 
   const loadPlayerProfile = useCallback(async () => {
     try {
@@ -554,12 +823,13 @@ export function usePrecisionGame() {
         }));
 
       setEvents(validEvents as Event[]);
+      rebuildEventPools(validEvents as Event[]);
     } catch (err) {
       setError('Impossible de charger les événements.');
     } finally {
       setLoading(false);
     }
-  }, []);
+  }, [rebuildEventPools]);
 
   useEffect(() => {
     loadEvents();
@@ -573,25 +843,59 @@ export function usePrecisionGame() {
       }
 
       const used = usedIdsRef.current;
-      const pool = filterEventsForLevel(events, targetLevel);
-      let candidates = pool.filter((event) => !used.has(event.id));
+      const pools = levelPoolsRef.current;
+      let poolKey = targetLevel.id <= 10 ? targetLevel.id : 10;
+      let pool = pools.get(poolKey);
 
-      if (candidates.length === 0) {
-        if (pool.length === 0) {
-          candidates = events.filter((event) => extractYear(event.date) !== null);
-        } else {
-          used.clear();
-          candidates = pool;
+      if (!pool || pool.length === 0) {
+        poolKey = FALLBACK_POOL_KEY;
+        pool = pools.get(poolKey);
+      }
+
+      if (!pool || pool.length === 0) {
+        const fallback = events.filter((event) => extractYear(event.date) !== null);
+        if (fallback.length === 0) {
+          return null;
+        }
+        const shuffledFallback = shuffleArray(fallback);
+        pools.set(poolKey, shuffledFallback);
+        poolCursorRef.current.set(poolKey, 0);
+        pool = shuffledFallback;
+      }
+
+      let cursor = poolCursorRef.current.get(poolKey) ?? 0;
+      let candidate: Event | null = null;
+
+      for (let i = 0; i < pool.length; i += 1) {
+        const index = (cursor + i) % pool.length;
+        const item = pool[index];
+        if (!used.has(item.id)) {
+          candidate = item;
+          cursor = (index + 1) % pool.length;
+          break;
         }
       }
 
-      if (candidates.length === 0) {
-        return null;
+      if (!candidate) {
+        used.clear();
+        if (pool.length === 0) {
+          return null;
+        }
+        candidate = pool[cursor];
+        cursor = (cursor + 1) % pool.length;
       }
 
-      const picked = candidates[Math.floor(Math.random() * candidates.length)];
-      used.add(picked.id);
-      return picked;
+      poolCursorRef.current.set(poolKey, cursor);
+      if (cursor === 0 && pool.length > 1) {
+        const reshuffled = shuffleArray(pool);
+        pools.set(poolKey, reshuffled);
+      }
+
+      if (candidate) {
+        used.add(candidate.id);
+      }
+
+      return candidate ?? null;
     },
     [events],
   );
@@ -602,17 +906,30 @@ export function usePrecisionGame() {
 
     clearTimer();
     setScore(0);
-    setHp(MAX_HP);
-    setLevel(PRECISION_LEVELS[0]);
+    const baseLevel = PRECISION_LEVELS[0];
+    const baseHp = getHpCapForLevel(baseLevel.id);
+    setLevel(baseLevel);
+    setLevelHpCap(baseHp);
+    levelHpCapRef.current = baseHp;
+    setFocusLevel(0);
+    setFocusGauge(0);
+    focusLevelRef.current = 0;
+    focusGaugeRef.current = 0;
+    const startingHp = Math.max(1, Math.floor(baseHp * STARTING_HP_RATIO));
+    setHp(startingHp);
+    hpRef.current = startingHp;
     setLastResult(null);
     setIsGameOver(false);
     setTotalAnswered(0);
-    setTimeLeft(MAX_TIME_SECONDS);
     setIsTimerPaused(false);
     setEventsAnsweredInLevel(0); // Reset le compteur d'événements
     usedIdsRef.current = new Set();
 
-    const nextEvent = pickEventForLevel(PRECISION_LEVELS[0]);
+    const nextEvent = pickEventForLevel(baseLevel);
+    const initialTimer = nextEvent ? getTimerLimitForEvent(baseLevel, nextEvent) : TIMER_BASE_SECONDS;
+    setTimerLimit(initialTimer);
+    setTimeLeft(initialTimer);
+    justLoadedEventRef.current = true;
     setCurrentEvent(nextEvent);
 
     initializingRef.current = false;
@@ -626,7 +943,6 @@ export function usePrecisionGame() {
 
   const scheduleTimer = useCallback(() => {
     clearTimer();
-    setTimeLeft(MAX_TIME_SECONDS);
     setIsTimerPaused(false);
     // Ne pas remettre justLoadedEventRef à false immédiatement
     // pour éviter qu'un timeout ne se déclenche pendant la transition des states
@@ -714,10 +1030,13 @@ export function usePrecisionGame() {
       const absDifference = Math.abs(difference);
 
       // Nouveau système de calcul tenant compte de l'ancienneté et de la notoriété
-      const { hpLoss, scoreGain } = calculateScoreAndHP({
+      const { hpLoss, scoreGain, adjustedDifference } = calculateScoreAndHP({
         absDifference,
         actualYear,
         notoriete: currentEvent.notoriete,
+        difficulty: currentEvent.niveau_difficulte,
+        levelId: level.id,
+        hpCap: hpMax,
       });
 
       const scoreBefore = score;
@@ -725,9 +1044,9 @@ export function usePrecisionGame() {
 
       let nextHp = Math.max(0, hpBefore - hpLoss);
 
-      // Bonus de 150 HP si la réponse est exacte (augmenté de 100 à 150)
+      // Bonus si la réponse est exacte : restaure un pourcentage du HP max actuel
       if (absDifference === 0) {
-        nextHp = Math.min(MAX_HP, nextHp + 150);
+        nextHp = Math.min(hpMax, nextHp + getPerfectGuessBonus(hpMax));
       }
 
       let nextScore = scoreBefore + scoreGain;
@@ -757,6 +1076,8 @@ export function usePrecisionGame() {
         leveledUp,
       });
 
+      rewardFocusForAccuracy(adjustedDifference, absDifference === 0);
+
       setTotalAnswered((prev) => prev + 1);
       // Ne pas incrémenter eventsAnsweredInLevel ici, on le fera dans loadNextEvent
 
@@ -772,10 +1093,13 @@ export function usePrecisionGame() {
           hp_loss: hpLoss,
           score_gain: scoreGain,
           leveled_up: leveledUp,
+          timer_limit: timerLimit,
+          focus_level: focusLevelRef.current,
+          focus_gauge: Math.round(focusGaugeRef.current),
         });
       }
     },
-    [currentEvent, finalizeResult, hp, isGameOver, level, score, totalAnswered, loadLeaderboards],
+    [currentEvent, finalizeResult, hp, hpMax, isGameOver, level, rewardFocusForAccuracy, score, timerLimit, totalAnswered],
   );
 
   const handleTimeout = useCallback(() => {
@@ -784,8 +1108,7 @@ export function usePrecisionGame() {
     const actualYear = extractYear(currentEvent.date);
     if (actualYear === null) return;
 
-    // Pénalité de timeout : 250 HP
-    const hpLoss = 250;
+    const hpLoss = getTimeoutPenalty(level.id);
     const scoreGain = 0;
 
     const previousLevel = level;
@@ -821,9 +1144,15 @@ export function usePrecisionGame() {
       FirebaseAnalytics.trackEvent('precision_timeout', {
         event_id: currentEvent.id,
         level: previousLevel.id,
+        timer_limit: timerLimit,
+        focus_level: focusLevelRef.current,
+        focus_gauge: Math.round(focusGaugeRef.current),
       });
     }
-  }, [currentEvent, finalizeResult, hp, isGameOver, lastResult, level, score, totalAnswered, loadLeaderboards]);
+
+    penalizeFocusForTimeout();
+    penalizeFocusForTimeout();
+  }, [currentEvent, finalizeResult, hp, isGameOver, lastResult, level, penalizeFocusForTimeout, score, timerLimit, totalAnswered]);
 
   // Callback pour gérer la sortie de l'application (même pénalité que timeout)
   const handleAppBackgrounded = useCallback(() => {
@@ -834,8 +1163,7 @@ export function usePrecisionGame() {
     const actualYear = extractYear(currentEvent.date);
     if (actualYear === null) return;
 
-    // Même pénalité qu'un timeout : 250 HP
-    const hpLoss = 250;
+    const hpLoss = getTimeoutPenalty(level.id);
     const scoreGain = 0;
 
     const previousLevel = level;
@@ -866,7 +1194,9 @@ export function usePrecisionGame() {
     if (nextHp <= 0) {
       setIsTimerPaused(true);
     }
-  }, [currentEvent, finalizeResult, hp, isGameOver, lastResult, level, score, totalAnswered]);
+
+    penalizeFocusForBackground();
+  }, [currentEvent, finalizeResult, hp, isGameOver, lastResult, level, penalizeFocusForBackground, score, totalAnswered]);
 
   useEffect(() => {
     if (!currentEvent || isGameOver || showLevelComplete) {
@@ -906,7 +1236,10 @@ export function usePrecisionGame() {
     },
   });
 
-  const timerProgress = useMemo(() => Math.max(0, Math.min(1, timeLeft / MAX_TIME_SECONDS)), [timeLeft]);
+  const timerProgress = useMemo(() => {
+    const limit = timerLimit > 0 ? timerLimit : TIMER_BASE_SECONDS;
+    return Math.max(0, Math.min(1, timeLeft / limit));
+  }, [timeLeft, timerLimit]);
 
   const loadNextEvent = useCallback(() => {
     if (isGameOver) return;
@@ -942,12 +1275,8 @@ export function usePrecisionGame() {
     // mais le compteur n'a pas encore été incrémenté
     if (eventsAnsweredInLevel + 1 >= eventsRequired && !showLevelComplete) {
       // Passage de niveau ! Afficher l'écran inter-niveau
-      const hpRestored = Math.floor(hp / 2);
-      const newHp = Math.min(MAX_HP, hp + hpRestored);
-      setHp(newHp);
-
-      // Calculer le prochain niveau
       const nextLevelId = currentLevel.id + 1;
+
       let nextLevel: PrecisionLevel;
 
       // Si on passe au-delà du niveau 10, utiliser les niveaux infinis
@@ -957,13 +1286,22 @@ export function usePrecisionGame() {
         nextLevel = generateInfiniteLevel(nextLevelId);
       }
 
-      setLevel(nextLevel);
+      const nextBaseCap = getHpCapForLevel(nextLevel.id);
+      const provisionalHpMax = Math.min(ABSOLUTE_HP_CAP, nextBaseCap + focusLevelRef.current * FOCUS_HP_STEP);
+      const guaranteedHp = Math.floor(provisionalHpMax * 0.65);
+      const newHp = Math.min(provisionalHpMax, Math.max(hp, guaranteedHp));
+      const hpRestored = Math.max(0, newHp - hp);
 
+      setLevelHpCap(nextBaseCap);
+      setHp(newHp);
+      setLevel(nextLevel);
+      setFocusGauge(prev => Math.min(FOCUS_GAUGE_MAX, prev + 12));
       setLevelCompleteData({
         level: currentLevel,
         newLevel: nextLevel,
         score,
         hpRestored,
+        newHpCap: provisionalHpMax,
       });
       setShowLevelComplete(true);
       setIsTimerPaused(true);
@@ -975,6 +1313,9 @@ export function usePrecisionGame() {
         score,
         hp_restored: hpRestored,
         events_answered: eventsRequired,
+        new_hp_cap: provisionalHpMax,
+        focus_level: focusLevelRef.current,
+        focus_gauge: Math.round(focusGaugeRef.current),
       });
       return;
     }
@@ -996,7 +1337,9 @@ export function usePrecisionGame() {
 
     // Réinitialiser tous les états pour le nouvel événement
     setLastResult(null);
-    setTimeLeft(MAX_TIME_SECONDS);
+    const nextTimerLimit = getTimerLimitForEvent(currentLevel, nextEvent);
+    setTimerLimit(nextTimerLimit);
+    setTimeLeft(nextTimerLimit);
     setIsTimerPaused(false);
     setCurrentEvent(nextEvent);
   }, [isGameOver, pickEventForLevel, score, hp, level, eventsAnsweredInLevel, showLevelComplete, adState.hasContinued, totalAnswered, loadLeaderboards, showGameOverAd]);
@@ -1021,7 +1364,9 @@ export function usePrecisionGame() {
 
     justLoadedEventRef.current = true;
     setLastResult(null);
-    setTimeLeft(MAX_TIME_SECONDS);
+    const nextTimerLimit = getTimerLimitForEvent(level, nextEvent);
+    setTimerLimit(nextTimerLimit);
+    setTimeLeft(nextTimerLimit);
     setCurrentEvent(nextEvent);
   }, [level, pickEventForLevel]);
 
@@ -1054,15 +1399,15 @@ export function usePrecisionGame() {
   useEffect(() => {
     if (adState.continueRewardEarned) {
       // Redonner de la vie et continuer
-      const bonusHp = 500; // Redonner 500 HP
-      setHp(prev => Math.min(MAX_HP, prev + bonusHp));
+      const bonusHp = Math.max(Math.floor(hpMax * CONTINUE_HP_RATIO), getPerfectGuessBonus(hpMax));
+      setHp(prev => Math.min(hpMax, prev + bonusHp));
       setShowContinueOffer(false);
       setIsTimerPaused(false);
       resetContinueReward();
       loadNextEvent();
       FirebaseAnalytics.trackEvent('precision_continued', { score, hp_restored: bonusHp });
     }
-  }, [adState.continueRewardEarned, score, resetContinueReward, loadNextEvent]);
+  }, [adState.continueRewardEarned, score, resetContinueReward, loadNextEvent, hpMax]);
 
   // Forcer le chargement de la pub Continue quand le modal s'affiche
   useEffect(() => {
@@ -1088,7 +1433,8 @@ export function usePrecisionGame() {
     currentEvent,
     score,
     hp,
-    hpMax: MAX_HP,
+    hpMax,
+    baseHpCap: levelHpCap,
     level,
     levelProgress,
     lastResult,
@@ -1096,6 +1442,7 @@ export function usePrecisionGame() {
     totalAnswered,
     timeLeft,
     timerProgress,
+    timerLimit,
     isTimerPaused,
     pauseTimer,
     resumeTimer,
@@ -1115,6 +1462,11 @@ export function usePrecisionGame() {
     closeLevelComplete,
     eventsAnsweredInLevel,
     eventsRequiredForLevel: level.eventsPerLevel,
+    focus: {
+      gauge: focusGauge,
+      level: focusLevel,
+      bonusHp: Math.max(0, hpMax - levelHpCap),
+    },
     adState: {
       continueLoaded: adState.continueLoaded,
       hasContinued: adState.hasContinued,

@@ -46,6 +46,7 @@ interface PrecisionGameContentProps {
   score: number;
   hp: number;
   hpMax: number;
+  baseHpCap: number;
   levelLabel: string;
   levelId: number;
   levelProgress: number;
@@ -53,6 +54,7 @@ interface PrecisionGameContentProps {
   isGameOver: boolean;
   timeLeft: number;
   timerProgress: number;
+  timerLimit: number;
   pauseTimer: () => void;
   resumeTimer: () => void;
   onSubmitGuess: (guessYear: number) => void;
@@ -66,6 +68,9 @@ interface PrecisionGameContentProps {
   continueAdLoaded?: boolean;
   eventsAnsweredInLevel: number;
   eventsRequiredForLevel: number;
+  focusGauge: number;
+  focusLevel: number;
+  focusHpBonus: number;
 }
 
 // --- HELPER FUNCTIONS ---
@@ -98,11 +103,12 @@ PrecisionGameBackground.displayName = 'PrecisionGameBackground';
 interface TimerDisplayProps {
   progress: number;
   seconds: number;
+  limitSeconds?: number;
   spacingScale?: number;
   onLayout?: (event: LayoutChangeEvent) => void;
 }
 
-const TimerDisplay = memo(({ progress, seconds, spacingScale = 1, onLayout }: TimerDisplayProps) => {
+const TimerDisplay = memo(({ progress, seconds, limitSeconds, spacingScale = 1, onLayout }: TimerDisplayProps) => {
   const clampedProgress = Math.max(0, Math.min(1, progress));
   const marginBottom = 0; // Supprime la marge inférieure
   const rowGap = Math.max(Math.round(3 * spacingScale), 2); // Réduit le gap
@@ -110,6 +116,7 @@ const TimerDisplay = memo(({ progress, seconds, spacingScale = 1, onLayout }: Ti
   const badgePaddingV = Math.max(Math.round(1 * spacingScale), 1); // Réduit le padding vertical
   const badgeRadius = Math.max(Math.round(6 * spacingScale), 4); // Réduit le radius
   const timerFont = Math.max(Math.round(12 * spacingScale), 10); // Réduit la taille de police
+  const timerLabel = limitSeconds ? `${seconds}s / ${limitSeconds}s` : `${seconds}s`;
   return (
     <View style={[styles.timerContainer, { marginBottom, gap: rowGap }]} onLayout={onLayout}>
       <View style={styles.progressTrack}>
@@ -126,7 +133,7 @@ const TimerDisplay = memo(({ progress, seconds, spacingScale = 1, onLayout }: Ti
           borderRadius: badgeRadius,
         }]}
       >
-        <Text style={[styles.timerValue, { fontSize: timerFont }]}>{seconds}s</Text>
+        <Text style={[styles.timerValue, { fontSize: timerFont }]}>{timerLabel}</Text>
       </View>
     </View>
   );
@@ -142,6 +149,7 @@ const PrecisionGameContent: React.FC<PrecisionGameContentProps> = ({
   score,
   hp,
   hpMax,
+  baseHpCap,
   levelLabel,
   levelId,
   levelProgress,
@@ -149,6 +157,7 @@ const PrecisionGameContent: React.FC<PrecisionGameContentProps> = ({
   isGameOver,
   timeLeft,
   timerProgress,
+  timerLimit,
   pauseTimer,
   resumeTimer,
   onSubmitGuess,
@@ -162,6 +171,9 @@ const PrecisionGameContent: React.FC<PrecisionGameContentProps> = ({
   continueAdLoaded = false,
   eventsAnsweredInLevel,
   eventsRequiredForLevel,
+  focusGauge,
+  focusLevel,
+  focusHpBonus,
 }) => {
   // --- STATE & REFS ---
   const [guessValue, setGuessValue] = useState('');
@@ -182,6 +194,11 @@ const PrecisionGameContent: React.FC<PrecisionGameContentProps> = ({
   const [autoAdvanceCountdown, setAutoAdvanceCountdown] = useState<number | null>(null);
   const hasAnsweredRef = useRef(false);
   const resultFadeAnim = useRef(new Animated.Value(0)).current;
+  const prevFocusGaugeRef = useRef(focusGauge);
+  const prevFocusLevelRef = useRef(focusLevel);
+  const prevLevelCompleteRef = useRef(showLevelComplete);
+  const prevGameOverRef = useRef(isGameOver);
+  const hasMountedFocusRef = useRef(false);
 
   // --- AUDIO ---
   const { soundVolume, isSoundEnabled } = useAudio();
@@ -189,6 +206,7 @@ const PrecisionGameContent: React.FC<PrecisionGameContentProps> = ({
 
   // --- MEMOIZED VALUES ---
   const hpRatio = useMemo(() => Math.max(0, Math.min(1, hp / hpMax)), [hp, hpMax]);
+  const focusRatio = useMemo(() => Math.max(0, Math.min(1, focusGauge / 100)), [focusGauge]);
   const hasGuess = guessValue !== '' && guessValue !== '-';
   const resultDiffLabel = lastResult
     ? lastResult.timedOut
@@ -568,21 +586,24 @@ const PrecisionGameContent: React.FC<PrecisionGameContentProps> = ({
       setInputError(null);
       setResultExpanded(false);
       resultFadeAnim.setValue(0);
-    } else {
-      // Jouer le son approprié selon le résultat
-      precisionAudio.playAnswerResult(lastResult.absDifference, lastResult.timedOut);
-
-      setResultExpanded(false);
-      resultFadeAnim.setValue(0);
-      Animated.timing(resultFadeAnim, {
-        toValue: 1,
-        duration: 500,
-        easing: Easing.out(Easing.ease),
-        useNativeDriver: true,
-      }).start();
+      return;
     }
-  // eslint-disable-next-line react-hooks/exhaustive-deps
-  }, [lastResult, currentEvent?.id, resultFadeAnim]);
+
+    if (lastResult.timedOut) {
+      precisionAudio.playTimerExpired();
+    } else {
+      precisionAudio.playAnswerResult(lastResult.absDifference);
+    }
+
+    setResultExpanded(false);
+    resultFadeAnim.setValue(0);
+    Animated.timing(resultFadeAnim, {
+      toValue: 1,
+      duration: 500,
+      easing: Easing.out(Easing.ease),
+      useNativeDriver: true,
+    }).start();
+  }, [lastResult, currentEvent?.id, precisionAudio, resultFadeAnim]);
 
   useEffect(() => {
     if (timeLeft === 0 && !lastResult && !isGameOver) {
@@ -600,8 +621,49 @@ const PrecisionGameContent: React.FC<PrecisionGameContentProps> = ({
       precisionAudio.playTimerWarning();
     }
     prevTimeLeftRef.current = timeLeft;
-  // eslint-disable-next-line react-hooks/exhaustive-deps
-  }, [timeLeft, lastResult, isGameOver]);
+  }, [timeLeft, lastResult, isGameOver, precisionAudio]);
+
+  useEffect(() => {
+    if (!hasMountedFocusRef.current) {
+      hasMountedFocusRef.current = true;
+      prevFocusGaugeRef.current = focusGauge;
+      prevFocusLevelRef.current = focusLevel;
+      return;
+    }
+
+    if (focusLevel > prevFocusLevelRef.current) {
+      precisionAudio.playFocusLevelUp();
+    }
+
+    const gaugeDelta = focusGauge - prevFocusGaugeRef.current;
+    if (focusLevel === prevFocusLevelRef.current) {
+      if (gaugeDelta >= 8) {
+        precisionAudio.playFocusGain();
+      } else if (gaugeDelta <= -8) {
+        precisionAudio.playFocusLoss();
+      }
+    } else if (focusLevel < prevFocusLevelRef.current && gaugeDelta <= -8) {
+      // Au cas improbable d'une baisse de niveau de focus
+      precisionAudio.playFocusLoss();
+    }
+
+    prevFocusGaugeRef.current = focusGauge;
+    prevFocusLevelRef.current = focusLevel;
+  }, [focusGauge, focusLevel, precisionAudio]);
+
+  useEffect(() => {
+    if (showLevelComplete && !prevLevelCompleteRef.current) {
+      precisionAudio.playLevelUp();
+    }
+    prevLevelCompleteRef.current = showLevelComplete;
+  }, [showLevelComplete, precisionAudio]);
+
+  useEffect(() => {
+    if (isGameOver && !prevGameOverRef.current) {
+      precisionAudio.playGameOver();
+    }
+    prevGameOverRef.current = isGameOver;
+  }, [isGameOver, precisionAudio]);
 
   useEffect(() => {
     if (showDescription) pauseTimer();
@@ -633,7 +695,10 @@ const PrecisionGameContent: React.FC<PrecisionGameContentProps> = ({
   useEffect(() => {
     setShowDescription(false);
     setShowImageLightbox(false);
-  }, [currentEvent?.id]);
+    return () => {
+      precisionAudio.stopAll();
+    };
+  }, [currentEvent?.id, precisionAudio]);
 
   // --- RENDER ---
   const showContent = !loading && !error && currentEvent;
@@ -735,9 +800,28 @@ const PrecisionGameContent: React.FC<PrecisionGameContentProps> = ({
                 style={[styles.progressFill, { width: `${hpRatio * 100}%` }]}
               />
             </View>
-            <Text style={[styles.hudValueSmall, { fontSize: applySpacing(9, 8), marginTop: 0 }]}> {/* Réduit fontSize et marginTop */}
-              {hp}/{hpMax}
-            </Text>
+            <View style={styles.hudSubRow}>
+              <Text style={[styles.hudValueSmall, { fontSize: applySpacing(8, 7), marginTop: 0 }]}>
+                {hp}/{hpMax}
+              </Text>
+              <Text style={[styles.hudValueSmall, { fontSize: applySpacing(7, 6), marginTop: 0 }]}>
+                Cap {baseHpCap}{focusHpBonus > 0 ? ` +${focusHpBonus}` : ''}
+              </Text>
+            </View>
+            <View style={[styles.focusTrack, { height: applySpacing(2.3, 1.8) }]}>
+              <LinearGradient
+                colors={['#3fd6c6', '#7df5e2']}
+                style={[styles.focusFill, { width: `${focusRatio * 100}%` }]}
+              />
+            </View>
+            <View style={styles.hudSubRow}>
+              <Text style={[styles.hudValueSmall, { fontSize: applySpacing(7, 6) }]}>
+                Focus Lv{focusLevel}
+              </Text>
+              <Text style={[styles.hudValueSmall, { fontSize: applySpacing(7, 6) }]}>
+                {Math.round(focusGauge)}%
+              </Text>
+            </View>
           </LinearGradient>
         </View>
 
@@ -745,6 +829,7 @@ const PrecisionGameContent: React.FC<PrecisionGameContentProps> = ({
         <TimerDisplay
           progress={timerProgress}
           seconds={timeLeft}
+          limitSeconds={timerLimit}
           spacingScale={spacingScale}
           onLayout={updateLayoutHeight('timer')}
         />
@@ -1036,6 +1121,13 @@ const styles = StyleSheet.create({
     fontWeight: '600',
     marginTop: 2,
   },
+  hudSubRow: {
+    width: '100%',
+    flexDirection: 'row',
+    justifyContent: 'space-between',
+    alignItems: 'center',
+    marginTop: 2,
+  },
   hudEventCounter: {
     color: steampunkTheme.secondaryText,
     fontSize: 10,
@@ -1053,6 +1145,17 @@ const styles = StyleSheet.create({
     marginTop: 2,
   },
   progressFill: {
+    height: '100%',
+    borderRadius: 4,
+  },
+  focusTrack: {
+    width: '100%',
+    backgroundColor: steampunkTheme.progressTrack,
+    borderRadius: 4,
+    overflow: 'hidden',
+    marginTop: 4,
+  },
+  focusFill: {
     height: '100%',
     borderRadius: 4,
   },

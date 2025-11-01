@@ -1,7 +1,7 @@
 // /home/pierre/sword/kiko/app/game/page.tsx
 // ----- FICHIER CORRIGÉ AVEC LOGIQUE REJOUER AJUSTÉE -----
 
-import React, { useEffect, useRef, useCallback, useState } from 'react';
+import React, { useEffect, useRef, useCallback, useState, useMemo } from 'react';
 import {
   StyleSheet,
   Animated,
@@ -31,16 +31,43 @@ import { usePrecisionGame } from '@/hooks/game/usePrecisionGame';
 import { FirebaseAnalytics } from '@/lib/firebase'; // Chemin OK
 import * as NavigationBar from 'expo-navigation-bar';
 
+// Utils
+import { getBackgroundForLevel } from '@/utils/backgroundProgression';
+
 function ClassicGameScreen({ requestedMode }: { requestedMode?: string }) {
   const router = useRouter();
   const fadeAnim = useRef(new Animated.Value(0)).current;
   const [gameKey, setGameKey] = useState(0); // Utilisé pour forcer le re-rendu du contenu du jeu
   const [isRestarting, setIsRestarting] = useState(false); // État pour afficher l'indicateur lors du redémarrage
   const [runState, setRunState] = useState<'pending' | 'ready' | 'error'>('pending');
+  const bgFadeAnim = useRef(new Animated.Value(1)).current; // Animation pour transition des backgrounds
 
   // Initialise la logique du jeu via le hook personnalisé
   const gameLogic = useGameLogicA('', requestedMode); // Passe une chaîne vide ou l'initialEvent si nécessaire
   const { endSummary, startRun, canStartRun, playsInfo, clearEndSummary } = gameLogic;
+
+  // Calcule le background en fonction du niveau
+  const currentBackground = useMemo(() => {
+    if (!gameLogic?.user?.level) return require('../../assets/images/bg-level-1.png');
+    return getBackgroundForLevel(gameLogic.user.level);
+  }, [gameLogic?.user?.level]);
+
+  // Effet de transition douce lors du changement de background
+  useEffect(() => {
+    // Fade out puis fade in pour transition douce
+    Animated.sequence([
+      Animated.timing(bgFadeAnim, {
+        toValue: 0.7,
+        duration: 300,
+        useNativeDriver: true,
+      }),
+      Animated.timing(bgFadeAnim, {
+        toValue: 1,
+        duration: 300,
+        useNativeDriver: true,
+      }),
+    ]).start();
+  }, [currentBackground, bgFadeAnim]);
 
   useEffect(() => {
     const initializeRun = async () => {
@@ -179,12 +206,19 @@ function ClassicGameScreen({ requestedMode }: { requestedMode?: string }) {
   // Rendu principal de l'écran de jeu
   return (
     <View style={styles.fullScreenContainer}>
-      <ImageBackground
-        source={require('../../assets/images/quipasse3.png')} // Chemin relatif OK
-        style={styles.backgroundImage}
-        resizeMode="cover"
-      >
-        <StatusBar translucent backgroundColor="black" barStyle="light-content" />
+      <Animated.View style={[styles.fullScreenContainer, { opacity: bgFadeAnim }]}>
+        <ImageBackground
+          source={currentBackground}
+          style={styles.backgroundImage}
+          resizeMode="cover"
+        >
+          {/* Overlay semi-transparent pour ne pas surcharger visuellement */}
+          <View style={styles.backgroundOverlay} />
+        </ImageBackground>
+      </Animated.View>
+
+      <View style={styles.contentContainer}>
+        <StatusBar translucent backgroundColor="transparent" barStyle="light-content" />
         {/* SafeAreaView pour gérer les encoches et barres système */}
         <SafeAreaView style={styles.container} edges={['top', 'bottom']}>
           {/* Composant qui contient l'UI et la logique d'affichage du jeu */}
@@ -230,7 +264,7 @@ function ClassicGameScreen({ requestedMode }: { requestedMode?: string }) {
           />
 
         </SafeAreaView>
-      </ImageBackground>
+      </View>
     </View>
   );
 }
@@ -245,6 +279,7 @@ function PrecisionGameScreen() {
     score,
     hp,
     hpMax,
+    baseHpCap,
     level,
     levelProgress,
     lastResult,
@@ -269,6 +304,8 @@ function PrecisionGameScreen() {
     closeLevelComplete,
     eventsAnsweredInLevel,
     eventsRequiredForLevel,
+    timerLimit,
+    focus,
     adState,
   } = usePrecisionGame();
 
@@ -316,6 +353,7 @@ function PrecisionGameScreen() {
                 score={score}
                 hp={hp}
                 hpMax={hpMax}
+                baseHpCap={baseHpCap}
                 levelLabel={level.label}
                 levelId={level.id}
                 levelProgress={levelProgress}
@@ -323,6 +361,10 @@ function PrecisionGameScreen() {
                 isGameOver={isGameOver}
                 timeLeft={timeLeft}
                 timerProgress={timerProgress}
+                timerLimit={timerLimit}
+                focusGauge={focus.gauge}
+                focusLevel={focus.level}
+                focusHpBonus={focus.bonusHp}
                 pauseTimer={pauseTimer}
                 resumeTimer={resumeTimer}
                 onSubmitGuess={submitGuess}
@@ -347,6 +389,7 @@ function PrecisionGameScreen() {
                 newLevelLabel={levelCompleteData?.newLevel.label ?? ''}
                 currentScore={levelCompleteData?.score ?? 0}
                 hpRestored={levelCompleteData?.hpRestored ?? 0}
+                newHpCap={levelCompleteData?.newHpCap ?? hpMax}
                 onContinue={closeLevelComplete}
               />
 
@@ -393,7 +436,17 @@ fullScreenContainer: {
   flex: 1,
 },
 backgroundImage: {
-  flex: 1, width: '100%', height: '100%',
+  flex: 1,
+  width: '100%',
+  height: '100%',
+},
+backgroundOverlay: {
+  ...StyleSheet.absoluteFillObject,
+  backgroundColor: 'rgba(0, 0, 0, 0.55)', // Overlay sombre pour atténuer le background
+},
+contentContainer: {
+  ...StyleSheet.absoluteFillObject,
+  backgroundColor: 'transparent',
 },
 container: {
   flex: 1,

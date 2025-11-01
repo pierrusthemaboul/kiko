@@ -1,4 +1,4 @@
-# 📊 Audit de maturité production - Quandi
+# 📊 Audit de maturité production - Timalaus
 
 **Date**: 6 octobre 2025
 **Version**: 1.5.1 (versionCode: 10106)

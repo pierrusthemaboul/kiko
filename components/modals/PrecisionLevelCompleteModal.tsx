@@ -13,6 +13,7 @@ interface PrecisionLevelCompleteModalProps {
   newLevelLabel: string;
   currentScore: number;
   hpRestored: number;
+  newHpCap: number;
   onContinue: () => void;
 }
 
@@ -24,6 +25,7 @@ const PrecisionLevelCompleteModal: React.FC<PrecisionLevelCompleteModalProps> = 
   newLevelLabel,
   currentScore,
   hpRestored,
+  newHpCap,
   onContinue,
 }) => {
   const scaleAnim = useRef(new Animated.Value(0)).current;
@@ -111,6 +113,11 @@ const PrecisionLevelCompleteModal: React.FC<PrecisionLevelCompleteModalProps> = 
                 <Ionicons name="heart" size={24} color="#4CAF50" />
                 <Text style={styles.statLabel}>Vitalité Restaurée</Text>
                 <Text style={[styles.statValue, styles.hpValue]}>+{hpRestored} HP</Text>
+              </View>
+              <View style={styles.statRow}>
+                <Ionicons name="flash" size={24} color={steampunkTheme.goldAccent} />
+                <Text style={styles.statLabel}>Vitalité Max</Text>
+                <Text style={styles.statValue}>{newHpCap} HP</Text>
               </View>
             </View>
 

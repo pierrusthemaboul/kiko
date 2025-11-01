@@ -16,6 +16,7 @@ import {
   Platform,
   Modal,
   Pressable,
+  AppState,
 } from 'react-native';
 import { useRouter } from 'expo-router';
 import { supabase } from '../../lib/supabase/supabaseClients'; // Chemin relatif vers supabase
@@ -84,6 +85,13 @@ const AnimatedSplashScreen = ({ onAnimationEnd }) => {
 
   const playSplashSound = useCallback(async () => {
     try {
+      // Vérifier que l'app est au premier plan avant de jouer le son
+      const currentAppState = AppState.currentState;
+      if (currentAppState !== 'active') {
+        console.log('[Audio] Splash: Skipping sound - app not in foreground');
+        return;
+      }
+
       const playbackVolume = IS_TEST_BUILD ? 0 : 0.18;
       const { sound } = await Audio.Sound.createAsync(
         require('../../assets/sounds/361261__japanyoshithegamer__8-bit-spaceship-startup.wav'),
@@ -104,6 +112,13 @@ const AnimatedSplashScreen = ({ onAnimationEnd }) => {
         }
       });
     } catch (error) {
+      // Ignorer silencieusement les erreurs de focus audio
+      const errorMessage = error instanceof Error ? error.message : '';
+      if (errorMessage.includes('AudioFocusNotAcquiredException')) {
+        console.log('[Audio] Splash: Skipped - app in background');
+        return;
+      }
+
       console.warn('Audio playback error:', error);
       console.error('[Audio] Splash: playback error', error);
       FirebaseAnalytics.trackError('audio_playback_error', {
@@ -218,7 +233,7 @@ const AnimatedSplashScreen = ({ onAnimationEnd }) => {
           transform: [{ translateY: textTranslateY }],
         }
       ]}>
-        <Text style={styles.splashTitle}>Quandi</Text>
+        <Text style={styles.splashTitle}>Timalaus</Text>
         <Text style={styles.splashSubtitle}>Explorez le Temps</Text>
       </Animated.View>
     </Animated.View>
@@ -584,7 +599,7 @@ export default function HomeScreen() {
                 {(() => {
                   if (guestDisplayName) return `Bonjour ${guestDisplayName.split('-')[0]} !`;
                   if (displayName) return `Bonjour ${displayName} !`;
-                  return "Bienvenue sur Quandi";
+                  return "Bienvenue sur Timalaus";
                 })()}
               </Text>
               <Text style={styles.welcomeSubtitle}>

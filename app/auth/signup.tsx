@@ -24,7 +24,7 @@ WebBrowser.maybeCompleteAuthSession();
 const APP_AUTH_SCHEME = 'juno2';
 const GOOGLE_REDIRECT_PATH = 'auth/callback';
 
-// --- NOUVEAU THÈME CLAIR (Basé sur logo Quandi) ---
+// --- NOUVEAU THÈME CLAIR (Basé sur logo Timalaus) ---
 const THEME = {
   primary: '#0A173D',       // Bleu foncé (Texte principal, éléments importants)
   secondary: '#F0F0F0',     // Gris clair (Fond des inputs)

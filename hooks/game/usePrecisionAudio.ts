@@ -7,36 +7,72 @@ interface PrecisionAudioConfig {
   isSoundEnabled: boolean;
 }
 
-/**
- * Hook spécialisé pour gérer l'ambiance sonore du mode Précision
- * Gère les sons d'interface (touches, soumission) et d'événements de jeu
- */
+type SoundChannel = 'ui' | 'result' | 'timer' | 'event' | 'focus';
+
+const soundPaths = {
+  keyPress: require('../../assets/sounds/bop.wav'),
+  submit: require('../../assets/sounds/361261__japanyoshithegamer__8-bit-spaceship-startup.wav'),
+  perfectAnswer: require('../../assets/sounds/corectok.wav'),
+  goodAnswer: require('../../assets/sounds/corectok.wav'),
+  wrongAnswer: require('../../assets/sounds/361260__japanyoshithegamer__8-bit-wrong-sound.wav'),
+  timerWarning: require('../../assets/sounds/countdown.wav'),
+  timerExpired: require('../../assets/sounds/242208__wagna__failfare.mp3'),
+  levelUp: require('../../assets/sounds/423455__ohforheavensake__trumpet-brass-fanfare.wav'),
+  gameOver: require('../../assets/sounds/242208__wagna__failfare.mp3'),
+  focusGain: require('../../assets/sounds/bop.wav'),
+  focusLoss: require('../../assets/sounds/361260__japanyoshithegamer__8-bit-wrong-sound.wav'),
+  focusLevelUp: require('../../assets/sounds/corectok.wav'),
+};
+
+type SoundKey = keyof typeof soundPaths;
+
+const soundConfig: Record<SoundKey, {
+  channel: SoundChannel | null;
+  baseVolume: number;
+  allowOverlap?: boolean;
+  stopChannels?: SoundChannel[];
+  analytics?: boolean;
+}> = {
+  keyPress: { channel: null, allowOverlap: true, baseVolume: 0.35 },
+  submit: { channel: 'ui', baseVolume: 0.6 },
+  perfectAnswer: { channel: 'result', baseVolume: 1.0, stopChannels: ['timer'], analytics: true },
+  goodAnswer: { channel: 'result', baseVolume: 0.85, stopChannels: ['timer'] },
+  wrongAnswer: { channel: 'result', baseVolume: 0.75, stopChannels: ['timer'], analytics: true },
+  timerWarning: { channel: 'timer', baseVolume: 0.45, stopChannels: ['result'] },
+  timerExpired: { channel: 'timer', baseVolume: 0.85, stopChannels: ['result'], analytics: true },
+  levelUp: { channel: 'event', baseVolume: 0.85, stopChannels: ['result', 'timer'], analytics: true },
+  gameOver: { channel: 'event', baseVolume: 0.85, stopChannels: ['result', 'timer'], analytics: true },
+  focusGain: { channel: 'focus', baseVolume: 0.45 },
+  focusLoss: { channel: 'focus', baseVolume: 0.55 },
+  focusLevelUp: { channel: 'focus', baseVolume: 0.7, stopChannels: ['focus'] },
+};
+
 export const usePrecisionAudio = ({ soundVolume, isSoundEnabled }: PrecisionAudioConfig) => {
   const isInitialized = useRef(false);
-  const soundCache = useRef<{ [key: string]: Audio.Sound }>({});
-  const currentlyPlayingRef = useRef<Audio.Sound | null>(null);
+  const channelPlayersRef = useRef<Record<SoundChannel, Audio.Sound | null>>({
+    ui: null,
+    result: null,
+    timer: null,
+    event: null,
+    focus: null,
+  });
   const lastPlayedResultRef = useRef<{ time: number; difference: number } | null>(null);
 
-  // Chemins vers les fichiers audio
-  const soundPaths = {
-    // Sons d'interface
-    keyPress: require('../../assets/sounds/bop.wav'), // Son doux pour les touches
-    submit: require('../../assets/sounds/361261__japanyoshithegamer__8-bit-spaceship-startup.wav'), // Son de soumission
+  const stopChannel = useCallback(async (channel: SoundChannel) => {
+    const current = channelPlayersRef.current[channel];
+    if (!current) return;
+    try {
+      await current.stopAsync();
+    } catch (_) {}
+    try {
+      await current.unloadAsync();
+    } catch (_) {}
+    channelPlayersRef.current[channel] = null;
+  }, []);
 
-    // Sons de résultat
-    perfectAnswer: require('../../assets/sounds/corectok.wav'), // Réponse parfaite (0 écart)
-    goodAnswer: require('../../assets/sounds/corectok.wav'), // Bonne réponse (écart faible)
-    wrongAnswer: require('../../assets/sounds/361260__japanyoshithegamer__8-bit-wrong-sound.wav'), // Mauvaise réponse
-
-    // Sons de chronomètre
-    timerTick: require('../../assets/sounds/count.wav'), // Tick du chronomètre
-    timerWarning: require('../../assets/sounds/countdown.wav'), // Avertissement temps faible
-    timerExpired: require('../../assets/sounds/242208__wagna__failfare.mp3'), // Temps écoulé
-
-    // Sons d'événements
-    levelUp: require('../../assets/sounds/423455__ohforheavensake__trumpet-brass-fanfare.wav'),
-    gameOver: require('../../assets/sounds/242208__wagna__failfare.mp3'),
-  };
+  const stopChannels = useCallback(async (channels: SoundChannel[]) => {
+    await Promise.all(channels.map((channel) => stopChannel(channel)));
+  }, [stopChannel]);
 
   useEffect(() => {
     const initAudio = async () => {
@@ -59,232 +95,178 @@ export const usePrecisionAudio = ({ soundVolume, isSoundEnabled }: PrecisionAudi
 
     return () => {
       isInitialized.current = false;
-      Object.values(soundCache.current).forEach(async (sound) => {
-        try {
-          await sound.unloadAsync();
-        } catch (_) {}
+      Object.keys(channelPlayersRef.current).forEach((channelKey) => {
+        const channel = channelKey as SoundChannel;
+        const sound = channelPlayersRef.current[channel];
+        if (!sound) return;
+        sound.stopAsync().catch(() => {});
+        sound.unloadAsync().catch(() => {});
+        channelPlayersRef.current[channel] = null;
       });
-      soundCache.current = {};
     };
   }, []);
 
-  /**
-   * Joue un son avec gestion du cache et du volume
-   * Arrête le son précédent pour éviter les chevauchements
-   */
-  const playSound = useCallback(
-    async (soundKey: keyof typeof soundPaths, volumeMultiplier: number = 1.0) => {
-      console.log('[usePrecisionAudio] playSound called:', soundKey, 'enabled:', isSoundEnabled, 'initialized:', isInitialized.current);
+  const playSound = useCallback(async (
+    soundKey: SoundKey,
+    options?: {
+      volumeMultiplier?: number;
+      channelOverride?: SoundChannel | null;
+      allowOverlap?: boolean;
+    },
+  ) => {
+    if (!isSoundEnabled || !isInitialized.current) {
+      return;
+    }
 
-      if (!isSoundEnabled || !isInitialized.current) {
-        console.log('[usePrecisionAudio] Sound disabled or not initialized, skipping');
+    const config = soundConfig[soundKey] ?? { channel: null, baseVolume: 1 };
+    const channel = options?.channelOverride ?? config.channel;
+    const allowOverlap = options?.allowOverlap ?? config.allowOverlap ?? false;
+    const baseVolume = config.baseVolume ?? 1;
+    const finalVolume = Math.max(0, Math.min(soundVolume * (options?.volumeMultiplier ?? 1) * baseVolume, 1));
+
+    try {
+      if (config.stopChannels?.length) {
+        await stopChannels(config.stopChannels);
+      }
+
+      if (!allowOverlap && channel) {
+        await stopChannel(channel);
+      }
+
+      const { sound } = await Audio.Sound.createAsync(
+        soundPaths[soundKey],
+        { volume: finalVolume, shouldPlay: true },
+        (status) => {
+          if (status.isLoaded && status.didJustFinish) {
+            (Object.entries(channelPlayersRef.current) as [SoundChannel, Audio.Sound | null][]).forEach(([channelName, storedSound]) => {
+              if (storedSound === sound) {
+                channelPlayersRef.current[channelName] = null;
+              }
+            });
+            sound.unloadAsync().catch(() => {});
+          }
+          if (!status.isLoaded && status.error) {
+            FirebaseAnalytics.trackError('precision_audio_playback_error', {
+              message: `Sound: ${soundKey}, Error: ${status.error}`,
+              screen: 'usePrecisionAudioStatus',
+            });
+          }
+        },
+      );
+
+      if (!allowOverlap && channel) {
+        channelPlayersRef.current[channel] = sound;
+      }
+
+      if (config.analytics) {
+        FirebaseAnalytics.trackEvent('precision_sound_played', { sound_name: soundKey });
+      }
+    } catch (error) {
+      FirebaseAnalytics.trackError('precision_audio_playback_error', {
+        message: `Sound: ${soundKey}, Error: ${error instanceof Error ? error.message : 'Unknown'}`,
+        screen: 'playPrecisionSound',
+      });
+    }
+  }, [isSoundEnabled, soundVolume, stopChannel, stopChannels]);
+
+  const stopAll = useCallback(async () => {
+    await Promise.all(
+      (Object.keys(channelPlayersRef.current) as SoundChannel[]).map((channel) => stopChannel(channel)),
+    );
+  }, [stopChannel]);
+
+  // --- Interface ---
+  const playKeyPress = useCallback(() => {
+    playSound('keyPress', { allowOverlap: true });
+  }, [playSound]);
+
+  const playSubmit = useCallback(() => {
+    playSound('submit');
+  }, [playSound]);
+
+  // --- Résultats ---
+  const playPerfectAnswer = useCallback(() => {
+    playSound('perfectAnswer');
+  }, [playSound]);
+
+  const playGoodAnswer = useCallback((intensity: 'close' | 'medium' = 'close') => {
+    const volumeMultiplier = intensity === 'close' ? 1 : 0.8;
+    playSound('goodAnswer', { volumeMultiplier });
+  }, [playSound]);
+
+  const playWrongAnswer = useCallback((intensity: 'far' | 'veryFar' = 'far') => {
+    const volumeMultiplier = intensity === 'far' ? 0.8 : 1;
+    playSound('wrongAnswer', { volumeMultiplier });
+  }, [playSound]);
+
+  const playAnswerResult = useCallback((absDifference: number) => {
+    const now = Date.now();
+
+    if (lastPlayedResultRef.current) {
+      const timeSinceLastPlay = now - lastPlayedResultRef.current.time;
+      const sameDifference = lastPlayedResultRef.current.difference === absDifference;
+      if (sameDifference && timeSinceLastPlay < 400) {
         return;
       }
+    }
 
-      const finalVolume = Math.max(0, Math.min(soundVolume * volumeMultiplier, 1.0));
-      console.log('[usePrecisionAudio] Playing', soundKey, 'at volume:', finalVolume);
+    lastPlayedResultRef.current = { time: now, difference: absDifference };
 
-      try {
-        // Arrêter le son précédent s'il est encore en cours (sauf pour les touches)
-        if (currentlyPlayingRef.current && soundKey !== 'keyPress') {
-          console.log('[usePrecisionAudio] Stopping previous sound to avoid overlap');
-          try {
-            await currentlyPlayingRef.current.stopAsync();
-            await currentlyPlayingRef.current.unloadAsync();
-          } catch (e) {
-            // Ignorer les erreurs si le son était déjà arrêté
-          }
-          currentlyPlayingRef.current = null;
-        }
+    if (absDifference === 0) {
+      playPerfectAnswer();
+    } else if (absDifference <= 7) {
+      playGoodAnswer('close');
+    } else if (absDifference <= 25) {
+      playGoodAnswer('medium');
+    } else if (absDifference <= 70) {
+      playWrongAnswer('far');
+    } else {
+      playWrongAnswer('veryFar');
+    }
+  }, [playGoodAnswer, playPerfectAnswer, playWrongAnswer]);
 
-        // Créer et jouer le son
-        const { sound } = await Audio.Sound.createAsync(
-          soundPaths[soundKey],
-          {
-            volume: finalVolume,
-            shouldPlay: true,
-          },
-          (status) => {
-            if (status.isLoaded && status.didJustFinish) {
-              if (currentlyPlayingRef.current === sound) {
-                currentlyPlayingRef.current = null;
-              }
-              sound.unloadAsync().catch(() => {});
-            }
-          }
-        );
-
-        // Mémoriser le son en cours (sauf pour les touches)
-        if (soundKey !== 'keyPress') {
-          currentlyPlayingRef.current = sound;
-        }
-
-        console.log('[usePrecisionAudio] Sound', soundKey, 'playing successfully');
-
-        // Log pour les événements importants
-        if (['perfectAnswer', 'wrongAnswer', 'levelUp', 'gameOver'].includes(soundKey)) {
-          FirebaseAnalytics.trackEvent('precision_sound_played', { sound_name: soundKey });
-        }
-      } catch (error) {
-        console.error('[usePrecisionAudio] Error playing sound:', soundKey, error);
-        FirebaseAnalytics.trackError('precision_audio_playback_error', {
-          message: `Sound: ${soundKey}, Error: ${error instanceof Error ? error.message : 'Unknown'}`,
-          screen: 'playPrecisionSound',
-        });
-      }
-    },
-    [isSoundEnabled, soundVolume]
-  );
-
-  // --- Sons d'interface ---
-
-  /**
-   * Son joué lors de la pression d'une touche du pavé numérique
-   */
-  const playKeyPress = useCallback(() => {
-    playSound('keyPress', 0.3); // Volume réduit pour ne pas être envahissant
-  }, [playSound]);
-
-  /**
-   * Son joué lors de la soumission d'une réponse
-   */
-  const playSubmit = useCallback(() => {
-    playSound('submit', 0.6);
-  }, [playSound]);
-
-  // --- Sons de résultat ---
-
-  /**
-   * Son pour une réponse parfaite (écart = 0)
-   */
-  const playPerfectAnswer = useCallback(() => {
-    playSound('perfectAnswer', 1.0);
-  }, [playSound]);
-
-  /**
-   * Son pour une bonne réponse (écart faible)
-   */
-  const playGoodAnswer = useCallback(() => {
-    playSound('goodAnswer', 0.8);
-  }, [playSound]);
-
-  /**
-   * Son pour une mauvaise réponse
-   */
-  const playWrongAnswer = useCallback(() => {
-    playSound('wrongAnswer', 0.7);
-  }, [playSound]);
-
-  /**
-   * Joue le son approprié selon l'écart de la réponse
-   * Logique :
-   * - 0 écart = Son parfait (100% volume)
-   * - 1-10 ans = Son de succès (80% volume) - Très bonne réponse
-   * - 11-30 ans = Son de succès (60% volume) - Bonne réponse
-   * - 31-100 ans = Son d'échec (50% volume) - Assez loin
-   * - >100 ans = Son d'échec (70% volume) - Très loin
-   * - Temps écoulé = Son spécial timerExpired
-   */
-  const playAnswerResult = useCallback(
-    (absDifference: number, timedOut: boolean = false) => {
-      const now = Date.now();
-
-      // Protection contre les appels multiples avec le même résultat (dans les 500ms)
-      if (lastPlayedResultRef.current) {
-        const timeSinceLastPlay = now - lastPlayedResultRef.current.time;
-        const sameDifference = lastPlayedResultRef.current.difference === absDifference;
-
-        if (sameDifference && timeSinceLastPlay < 500) {
-          console.log('[usePrecisionAudio] playAnswerResult - DUPLICATE CALL BLOCKED (same result within 500ms)');
-          return;
-        }
-      }
-
-      // Mémoriser ce résultat
-      lastPlayedResultRef.current = { time: now, difference: absDifference };
-
-      console.log('[usePrecisionAudio] playAnswerResult - diff:', absDifference, 'timedOut:', timedOut);
-
-      if (timedOut) {
-        console.log('[usePrecisionAudio] → Playing timerExpired');
-        playSound('timerExpired', 0.8);
-      } else if (absDifference === 0) {
-        console.log('[usePrecisionAudio] → Playing perfectAnswer (0 écart)');
-        playPerfectAnswer();
-      } else if (absDifference <= 10) {
-        console.log('[usePrecisionAudio] → Playing goodAnswer (1-10 ans)');
-        playSound('goodAnswer', 0.8);
-      } else if (absDifference <= 30) {
-        console.log('[usePrecisionAudio] → Playing goodAnswer (11-30 ans, volume réduit)');
-        playSound('goodAnswer', 0.6);
-      } else if (absDifference <= 100) {
-        console.log('[usePrecisionAudio] → Playing wrongAnswer (31-100 ans, assez loin)');
-        playSound('wrongAnswer', 0.5);
-      } else {
-        console.log('[usePrecisionAudio] → Playing wrongAnswer (>100 ans, très loin)');
-        playSound('wrongAnswer', 0.7);
-      }
-    },
-    [playSound, playPerfectAnswer]
-  );
-
-  // --- Sons de chronomètre ---
-
-  /**
-   * Son de tick du chronomètre (optionnel, peut être désactivé)
-   */
-  const playTimerTick = useCallback(() => {
-    playSound('timerTick', 0.2);
-  }, [playSound]);
-
-  /**
-   * Son d'avertissement quand le temps est presque écoulé
-   */
+  // --- Chronomètre ---
   const playTimerWarning = useCallback(() => {
-    playSound('timerWarning', 0.5);
+    playSound('timerWarning');
   }, [playSound]);
 
-  /**
-   * Son quand le temps est écoulé
-   */
   const playTimerExpired = useCallback(() => {
-    playSound('timerExpired', 0.8);
+    playSound('timerExpired');
   }, [playSound]);
 
-  // --- Sons d'événements ---
+  // --- Focus ---
+  const playFocusGain = useCallback(() => {
+    playSound('focusGain');
+  }, [playSound]);
 
-  /**
-   * Son de passage de niveau
-   */
+  const playFocusLoss = useCallback(() => {
+    playSound('focusLoss');
+  }, [playSound]);
+
+  const playFocusLevelUp = useCallback(() => {
+    playSound('focusLevelUp');
+  }, [playSound]);
+
+  // --- Événements ---
   const playLevelUp = useCallback(() => {
-    playSound('levelUp', 0.8);
+    playSound('levelUp');
   }, [playSound]);
 
-  /**
-   * Son de game over
-   */
   const playGameOver = useCallback(() => {
-    playSound('gameOver', 0.8);
+    playSound('gameOver');
   }, [playSound]);
 
   return {
-    // Interface
     playKeyPress,
     playSubmit,
-
-    // Résultats
-    playPerfectAnswer,
-    playGoodAnswer,
-    playWrongAnswer,
     playAnswerResult,
-
-    // Chronomètre
-    playTimerTick,
     playTimerWarning,
     playTimerExpired,
-
-    // Événements
+    playFocusGain,
+    playFocusLoss,
+    playFocusLevelUp,
     playLevelUp,
     playGameOver,
+    stopAll,
   };
 };

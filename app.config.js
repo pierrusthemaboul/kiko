@@ -1,7 +1,7 @@
 export default ({ config }) => {
   return {
     ...config,
-    name: "Quandi",
+    name: "Timalaus",
     slug: "kiko",
     version: "1.5.1",
     orientation: "portrait",

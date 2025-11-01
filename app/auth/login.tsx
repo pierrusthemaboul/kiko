@@ -20,7 +20,7 @@ import { supabase } from '../../lib/supabase/supabaseClients';
 import { router, useFocusEffect, useNavigation, usePathname, useSegments } from 'expo-router';
 import { FirebaseAnalytics } from '../../lib/firebase';
 
-// --- NOUVEAU THÈME CLAIR (Basé sur logo Quandi) ---
+// --- NOUVEAU THÈME CLAIR (Basé sur logo Timalaus) ---
 const THEME = {
   primary: '#0A173D',       // Bleu foncé (Texte principal, éléments importants)
   secondary: '#F0F0F0',     // Gris clair (Fond des inputs)
