@@ -1,4 +1,4 @@
-import { useState, useCallback, useMemo } from 'react';
+import { useState, useCallback, useMemo, useRef } from 'react';
 import { FirebaseAnalytics } from '../../lib/firebase';
 import { Event, HistoricalPeriod } from '../types';
 import { devLog } from '../../utils/devLog';
@@ -21,6 +21,70 @@ const DEBOUNCE_DELAY = 200; // ms pour éviter les appels multiples
 const dateCache = new Map<string, { year: number, timestamp: number }>();
 const scoringCache = new Map<string, any>(); // Cache pour les scores
 const scorePartsCache = new Map<string, any>(); // Cache pour les composantes de score
+
+/**
+ * Système de pools par niveau pour optimiser l'engagement
+ * Retourne les critères de filtrage selon le niveau du joueur
+ */
+const getPoolCriteriaForLevel = (level: number) => {
+  // Pool 1 - Niveaux 1-2 : Onboarding
+  if (level <= 2) {
+    return {
+      minNotoriete: 75,
+      minYear: 1800,
+      frenchPercentage: 0.5, // 50% événements français
+      description: 'Onboarding - Événements très connus',
+    };
+  }
+
+  // Pool 2 - Niveaux 3-5 : Découverte
+  if (level <= 5) {
+    return {
+      minNotoriete: 60,
+      minYear: 1700,
+      frenchPercentage: 0.5,
+      description: 'Découverte - Introduction progressive',
+    };
+  }
+
+  // Pool 3 - Niveaux 6-9 : Exploration
+  if (level <= 9) {
+    return {
+      minNotoriete: 45,
+      minYear: 1000,
+      frenchPercentage: 0.4,
+      description: 'Exploration - Diversification',
+    };
+  }
+
+  // Pool 4 - Niveaux 10-14 : Maîtrise
+  if (level <= 14) {
+    return {
+      minNotoriete: 30,
+      minYear: 500,
+      frenchPercentage: 0.3,
+      description: 'Maîtrise - Challenge',
+    };
+  }
+
+  // Pool 5 - Niveaux 15-19 : Expert
+  if (level <= 19) {
+    return {
+      minNotoriete: 20,
+      minYear: -500, // Toute l'Antiquité
+      frenchPercentage: 0.25,
+      description: 'Expert - Défi ultime',
+    };
+  }
+
+  // Pool 6 - Niveau 20+ : Infini
+  return {
+    minNotoriete: 0,
+    minYear: -3000,
+    frenchPercentage: 0.2,
+    description: 'Infini - Tous événements',
+  };
+};
 
 const notorieteProfileForLevel = (level: number) => {
   if (level <= 3) return { target: 0.6, tolerance: 0.45 };
@@ -63,7 +127,9 @@ export function useEventSelector({
   updateStateCallback: (selectedEvent: Event) => Promise<void>;
 }) {
   const [antiqueEventsCount, setAntiqueEventsCount] = useState<number>(0);
-  const [eventCount, setEventCount] = useState<number>(0);
+  // Initialiser à 2 car le jeu démarre avec 2 événements déjà affichés
+  const [eventCount, setEventCount] = useState<number>(2);
+  const eventCountRef = useRef<number>(2); // Ref pour accès synchrone
   const [forcedJumpEventCount, setForcedJumpEventCount] = useState<number>(() => {
     return Math.floor(Math.random() * (19 - 12 + 1)) + 12;
   });
@@ -72,6 +138,16 @@ export function useEventSelector({
     return Math.floor(Math.random() * (25 - 12 + 1)) + 12;
   });
   const [lastSelectionTime, setLastSelectionTime] = useState<number>(0);
+
+  // Système anti-frustration
+  const [consecutiveErrors, setConsecutiveErrors] = useState<number>(0);
+  const [shouldForceEasyEvent, setShouldForceEasyEvent] = useState<boolean>(false);
+
+  // Système d'événements bonus (tous les 8-10)
+  const [bonusEventCountdown, setBonusEventCountdown] = useState<number>(() => {
+    return Math.floor(Math.random() * (10 - 8 + 1)) + 8; // Entre 8 et 10
+  });
+  const [shouldForceBonusEvent, setShouldForceBonusEvent] = useState<boolean>(false);
 
   /**
    * Détermine la période historique - Version optimisée avec cache
@@ -139,6 +215,7 @@ export function useEventSelector({
 
   /**
    * PRÉ-FILTRAGE INTELLIGENT - Réduit drastiquement le nombre d'événements à traiter
+   * Utilise le système de pools par niveau
    */
   const preFilterEvents = useCallback((
     events: Event[],
@@ -151,6 +228,7 @@ export function useEventSelector({
     if (!config) return [];
 
     const originalCount = events.length;
+    const poolCriteria = getPoolCriteriaForLevel(userLevel);
 
     const { year: refYear } = getCachedDateInfo(referenceEvent.date);
     const canAddMoreAntiques = canAddAntiqueEvent(userLevel);
@@ -167,7 +245,24 @@ export function useEventSelector({
     }
     let filtered = events.filter(e => !usedEvents.has(e.id) && e.date && e.id !== referenceEvent.id);
 
-    // 2. (Supprimé) Filtrage par niveau_difficulte — la sélection s'appuie désormais sur notoriete
+    // 2. Filtrage par POOL selon le niveau (notoriété + année)
+    const afterPoolFilter = filtered.filter(e => {
+      const notoriete = (e as any).notoriete ?? 0;
+      const { year } = getCachedDateInfo(e.date);
+      return notoriete >= poolCriteria.minNotoriete && year >= poolCriteria.minYear;
+    });
+    if (explainEnabled()) {
+      const excluded = filtered.filter(e => !afterPoolFilter.includes(e));
+      excluded.forEach(e => {
+        const notoriete = (e as any).notoriete ?? 0;
+        const eventYear = getCachedDateInfo(e.date).year;
+        const reason = notoriete < poolCriteria.minNotoriete
+          ? 'notoriete_too_low'
+          : (eventYear < poolCriteria.minYear ? 'year_too_old' : 'other');
+        explain?.logExclusion(e, 'POOL_FILTER', reason);
+      });
+    }
+    filtered = afterPoolFilter;
 
     // 3. Filtrage temporel préliminaire (large)
     const timeGapBase = config.timeGap?.base || 100;
@@ -191,6 +286,7 @@ export function useEventSelector({
       }
       filtered = afterAntique;
     }
+
     // 5. Prioriser les événements moins utilisés
     const now = Date.now();
     filtered.sort((a, b) => {
@@ -213,6 +309,7 @@ export function useEventSelector({
       original: originalCount,
       limited: limited.length,
       level: userLevel,
+      pool: poolCriteria.description,
       reference: referenceEvent?.id ?? null,
     });
 
@@ -317,7 +414,16 @@ export function useEventSelector({
     referenceEvent: Event | null,
     userLevel: number,
     usedEvents: Set<string>,
+    currentStreak: number = 0
   ): Promise<Event | null> => {
+    console.log('[SELECT_NEW_EVENT] 🎲 Début de la sélection:', {
+      totalEvents: events.length,
+      referenceEventId: referenceEvent?.id,
+      userLevel,
+      usedEventsCount: usedEvents.size,
+      currentStreak,
+    });
+
     const explainOn = explainEnabled();
     const explainStartTs = Date.now();
     const exclusionAcc = createExclusionAccumulator(50);
@@ -366,13 +472,31 @@ export function useEventSelector({
     }
 
     // Incrémenter le compteur d'événements pour les sauts temporels
-    const localEventCount = eventCount + 1;
-    setEventCount(localEventCount);
+    // Utiliser une ref pour un accès synchrone à la valeur
+    eventCountRef.current = eventCountRef.current + 1;
+    setEventCount(eventCountRef.current);
+    const localEventCount = eventCountRef.current;
+
+    // --- SYSTÈME D'ÉVÉNEMENTS BONUS ---
+    const isBonusEventTriggered = localEventCount % bonusEventCountdown === 0;
+    if (isBonusEventTriggered) {
+      setShouldForceBonusEvent(true);
+      // Réinitialiser le countdown pour le prochain bonus
+      setBonusEventCountdown(Math.floor(Math.random() * (10 - 8 + 1)) + 8);
+      devLog('BONUS_EVENT', { trigger: 'countdown', nextIn: bonusEventCountdown });
+    }
 
     // --- LOGIQUE DE SAUT TEMPOREL FORCÉ ---
     const isForcedJumpTriggered = localEventCount === forcedJumpEventCount;
-    
+
+    console.log('[TEMPORAL_JUMP] Check:', {
+      localEventCount,
+      forcedJumpEventCount,
+      triggered: isForcedJumpTriggered
+    });
+
     if (isForcedJumpTriggered) {
+      console.log('[TEMPORAL_JUMP] ✨ Saut temporel DÉCLENCHÉ !');
       const { year: refYear } = getCachedDateInfo(referenceEvent.date);
       
       // Calculer la distance du saut selon l'époque
@@ -393,39 +517,85 @@ export function useEventSelector({
       const jumpForward = Math.random() > 0.5;
       const targetYear = jumpForward ? refYear + jumpDistance : refYear - jumpDistance;
       
-      // Pré-filtrage pour le saut temporel
-      const jumpCandidates = preFilterEvents(events, usedEvents, userLevel, referenceEvent)
+      // Pour les sauts temporels, chercher dans TOUS les événements (pas de filtre de pool)
+      // On veut pouvoir sauter dans n'importe quelle époque
+      const jumpCandidates = events
+        .filter(e => !usedEvents.has(e.id) && e.date && e.id !== referenceEvent.id)
         .filter(e => {
           const { year: eventYear } = getCachedDateInfo(e.date);
           const timeDiffFromTarget = Math.abs(eventYear - targetYear);
-          return timeDiffFromTarget <= jumpDistance * 0.5; // Tolérance de 50%
+          // Tolérance large pour maximiser les chances de trouver un candidat
+          return timeDiffFromTarget <= jumpDistance;
         })
-        .slice(0, 20); // Limite pour performance
+        .slice(0, 50); // Augmenter la limite pour avoir plus de choix
+
+      console.log('[TEMPORAL_JUMP] Recherche de candidats:', {
+        refYear,
+        targetYear,
+        jumpDistance,
+        direction: jumpForward ? 'forward' : 'backward',
+        candidatesFound: jumpCandidates.length
+      });
 
       if (jumpCandidates.length > 0) {
         // Sélection aléatoire pour le saut temporel
         const jumpEvent = jumpCandidates[Math.floor(Math.random() * jumpCandidates.length)];
-        
+        const jumpYear = getCachedDateInfo(jumpEvent.date).year;
+
+        // Déterminer l'époque cible pour le message BASÉE sur l'année cible (targetYear), pas l'année réelle
+        // Cela assure la cohérence du message même si l'événement sélectionné est légèrement décalé
+        let targetEpoque = '';
+        if (targetYear < 500) targetEpoque = "l'Antiquité";
+        else if (targetYear < 1500) targetEpoque = 'le Moyen-Âge';
+        else if (targetYear < 1800) targetEpoque = 'la Renaissance';
+        else if (targetYear < 1900) targetEpoque = 'le XIXe siècle';
+        else if (targetYear < 2000) targetEpoque = 'le XXe siècle';
+        else targetEpoque = 'le XXIe siècle';
+
         // Mettre à jour le prochain saut
         const nextIncrement = getNextForcedJumpIncrement(targetYear);
         setForcedJumpEventCount(localEventCount + nextIncrement);
         setHasFirstForcedJumpHappened(true);
-        
-        
+
+        // Marquer l'événement comme voyage temporel avec métadonnées
+        const markedJumpEvent = {
+          ...(jumpEvent as any),
+          _isTemporalJump: true,
+          _temporalJumpEpoque: targetEpoque,
+          _temporalJumpDirection: jumpForward ? 'forward' : 'backward'
+        } as Event;
+
         // Mise à jour de l'état et retour
-        await updateStateCallback(jumpEvent);
-        
+        await updateStateCallback(markedJumpEvent);
+
         // Analytics pour le saut temporel
         FirebaseAnalytics.trackEvent('temporal_jump', {
           from_year: refYear,
-          to_year: getCachedDateInfo(jumpEvent.date).year,
+          to_year: jumpYear,
           jump_distance: jumpDistance,
           jump_direction: jumpForward ? 'forward' : 'backward',
-          user_level: userLevel
+          user_level: userLevel,
+          target_epoque: targetEpoque
         });
 
-        return jumpEvent;
+        console.log('[TEMPORAL_JUMP] 🚀 VOYAGE DANS LE TEMPS !', {
+          from: refYear,
+          to: jumpYear,
+          epoque: targetEpoque,
+          direction: jumpForward ? 'forward' : 'backward',
+          distance: jumpDistance
+        });
+
+        devLog('TEMPORAL_JUMP', {
+          from: refYear,
+          to: jumpYear,
+          epoque: targetEpoque,
+          direction: jumpForward ? 'forward' : 'backward'
+        });
+
+        return markedJumpEvent;
       } else {
+        console.log('[TEMPORAL_JUMP] ⚠️ Aucun candidat pour le saut temporel, sélection normale');
         if (explainOn) {
           explainLog('FORCED_JUMP_NO_CANDIDATE', {
             referenceYear: refYear,
@@ -456,15 +626,44 @@ export function useEventSelector({
     };
 
     // 🚀 SCORING LIMITÉ (encore plus restreint pour les calculs lourds)
-    const computeMinNotoriete = (level: number) => {
-      if (level <= 1) return 45;
-      if (level === 2) return 50;
-      if (level === 3) return 55;
-      if (level <= 5) return 40;
-      return 0;
+    // Système anti-frustration + bonus + adaptation streak : forcer un événement facile si nécessaire
+    const computeMinNotoriete = (level: number, forceEasy: boolean, forceBonus: boolean, streak: number, poolMinNotoriete: number) => {
+      if (forceBonus) {
+        // Événement BONUS : très facile (notoriété maximale)
+        devLog('BONUS_EVENT', { action: 'forcing_bonus_event', level });
+        return 85; // Événement ultra-connu
+      }
+
+      if (forceEasy) {
+        // Forcer événement facile : notoriété élevée
+        devLog('ANTI_FRUSTRATION', { action: 'forcing_easy_event', level });
+        return Math.max(70, poolMinNotoriete + 25);
+      }
+
+      // Adaptation selon le streak
+      let streakAdjustment = 0;
+      if (streak >= 10) {
+        // Bon streak : augmenter légèrement la difficulté
+        streakAdjustment = -10; // Baisse de 10 points la notoriété minimale = plus difficile
+        devLog('STREAK_ADAPTATION', { action: 'harder', streak, adjustment: streakAdjustment });
+      } else if (streak === 0) {
+        // Streak cassé : légèrement plus facile pour aider à reconstruire
+        streakAdjustment = 5; // Augmente de 5 points la notoriété minimale = plus facile
+        devLog('STREAK_ADAPTATION', { action: 'easier', streak, adjustment: streakAdjustment });
+      }
+
+      // Logique normale (ancienne) + ajustement streak
+      let baseMin = 0;
+      if (level <= 1) baseMin = 45;
+      else if (level === 2) baseMin = 50;
+      else if (level === 3) baseMin = 55;
+      else if (level <= 5) baseMin = 40;
+
+      return Math.max(0, baseMin + streakAdjustment);
     };
 
-    const minNotoriete = computeMinNotoriete(userLevel);
+    const poolCriteria = getPoolCriteriaForLevel(userLevel);
+    const minNotoriete = computeMinNotoriete(userLevel, shouldForceEasyEvent, shouldForceBonusEvent, currentStreak, poolCriteria.minNotoriete);
     let notorieteConstrainedPool = preFilteredEvents;
 
     if (minNotoriete > 0) {
@@ -482,6 +681,15 @@ export function useEventSelector({
         const excluded = preFilteredEvents.filter(e => !notorieteConstrainedPool.includes(e)).slice(0, 50);
         excluded.forEach(e => exclusionAcc.logExclusion(e as any, 'NOTORIETE_MIN', 'below_threshold'));
       } catch {}
+    }
+
+    // Réinitialiser les flags après avoir forcé un événement
+    if (shouldForceEasyEvent) {
+      setShouldForceEasyEvent(false);
+    }
+    const wasBonusEvent = shouldForceBonusEvent;
+    if (shouldForceBonusEvent) {
+      setShouldForceBonusEvent(false);
     }
 
     // Diversité: exclure seulement même époque que l'événement de référence
@@ -611,11 +819,25 @@ export function useEventSelector({
       try { explainLog('RNG', { method: 'native', seed: null, poolSize: topEvents.length, indexPicked: pickedIndex }); } catch {}
     }
 
-    // Mise à jour de l'état
-    setEventCount(prev => prev + 1);
-    await updateStateCallback(selectedEvent);
+    // NOTE: eventCount a déjà été incrémenté au début de la fonction (ligne 370)
+    // Ne PAS incrémenter à nouveau ici pour éviter la double incrémentation
 
-    const selected = { ...(selectedEvent as any) } as Event;
+    // Marquer l'événement comme bonus si c'est le cas
+    const selected = { ...(selectedEvent as any), _isBonusEvent: wasBonusEvent } as Event;
+
+    await updateStateCallback(selected);
+
+    console.log('[SELECT_NEW_EVENT] ✅ Événement sélectionné:', {
+      id: (selected as any)?.id,
+      titre: (selected as any)?.titre,
+      notoriete: (selected as any)?.notoriete ?? null,
+      isBonus: wasBonusEvent,
+      isTemporalJump: (selected as any)?._isTemporalJump ?? false,
+      path: selectionPath,
+      eventCount: localEventCount,
+      nextJumpAt: forcedJumpEventCount,
+    });
+
     devLog('WHY_SELECTED', {
       id: (selected as any)?.id,
       titre: (selected as any)?.titre,
@@ -623,6 +845,7 @@ export function useEventSelector({
       level: userLevel,
       path: selectionPath,
       parts: (selected as any)?._scoreParts,
+      isBonus: wasBonusEvent,
     });
 
     if (explainOn) {
@@ -648,6 +871,36 @@ export function useEventSelector({
   const resetAntiqueCount = useCallback(() => {
     setAntiqueEventsCount(0);
     scoringCache.clear(); // Nettoyer le cache à chaque reset
+  }, []);
+
+  const resetEventCount = useCallback(() => {
+    eventCountRef.current = 2;
+    setEventCount(2); // Réinitialiser à 2 (événements initiaux) uniquement au début d'une nouvelle partie
+  }, []);
+
+  /**
+   * Système anti-frustration : gérer les erreurs consécutives
+   */
+  const recordCorrectAnswer = useCallback(() => {
+    setConsecutiveErrors(0);
+    setShouldForceEasyEvent(false);
+  }, []);
+
+  const recordIncorrectAnswer = useCallback(() => {
+    setConsecutiveErrors(prev => {
+      const newCount = prev + 1;
+      if (newCount >= 2) {
+        // Forcer un événement facile au prochain tour
+        setShouldForceEasyEvent(true);
+        devLog('ANTI_FRUSTRATION', { trigger: 'consecutive_errors', count: newCount });
+      }
+      return newCount;
+    });
+  }, []);
+
+  const resetAntiFrustration = useCallback(() => {
+    setConsecutiveErrors(0);
+    setShouldForceEasyEvent(false);
   }, []);
 
   const invalidateEventCaches = useCallback((eventId: string) => {
@@ -682,10 +935,16 @@ export function useEventSelector({
     isAntiqueEvent,
     updateAntiqueCount,
     resetAntiqueCount,
+    resetEventCount,
     invalidateEventCaches,
     getTimeDifference,
     getNextForcedJumpIncrement,
-    clearCaches
+    clearCaches,
+
+    // Système anti-frustration
+    recordCorrectAnswer,
+    recordIncorrectAnswer,
+    resetAntiFrustration,
   };
 }
 

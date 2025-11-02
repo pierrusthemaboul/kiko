@@ -1,5 +1,5 @@
-import { useCallback, useEffect, useRef } from 'react';
-import { Audio } from 'expo-av';
+import { useCallback, useEffect, useRef, useMemo } from 'react';
+import { AudioPlayer, useAudioPlayer } from 'expo-audio';
 import { FirebaseAnalytics } from '../../lib/firebase';
 
 interface PrecisionAudioConfig {
@@ -49,7 +49,7 @@ const soundConfig: Record<SoundKey, {
 
 export const usePrecisionAudio = ({ soundVolume, isSoundEnabled }: PrecisionAudioConfig) => {
   const isInitialized = useRef(false);
-  const channelPlayersRef = useRef<Record<SoundChannel, Audio.Sound | null>>({
+  const channelPlayersRef = useRef<Record<SoundChannel, AudioPlayer | null>>({
     ui: null,
     result: null,
     timer: null,
@@ -62,10 +62,8 @@ export const usePrecisionAudio = ({ soundVolume, isSoundEnabled }: PrecisionAudi
     const current = channelPlayersRef.current[channel];
     if (!current) return;
     try {
-      await current.stopAsync();
-    } catch (_) {}
-    try {
-      await current.unloadAsync();
+      current.pause();
+      current.seekTo(0);
     } catch (_) {}
     channelPlayersRef.current[channel] = null;
   }, []);
@@ -77,12 +75,7 @@ export const usePrecisionAudio = ({ soundVolume, isSoundEnabled }: PrecisionAudi
   useEffect(() => {
     const initAudio = async () => {
       try {
-        await Audio.setAudioModeAsync({
-          allowsRecordingIOS: false,
-          playsInSilentModeIOS: true,
-          shouldDuckAndroid: true,
-          playThroughEarpieceAndroid: false,
-        });
+        // expo-audio ne nécessite pas de configuration audio mode comme expo-av
         isInitialized.current = true;
       } catch (error) {
         FirebaseAnalytics.trackError('precision_audio_init_error', {
@@ -99,8 +92,9 @@ export const usePrecisionAudio = ({ soundVolume, isSoundEnabled }: PrecisionAudi
         const channel = channelKey as SoundChannel;
         const sound = channelPlayersRef.current[channel];
         if (!sound) return;
-        sound.stopAsync().catch(() => {});
-        sound.unloadAsync().catch(() => {});
+        try {
+          sound.pause();
+        } catch (_) {}
         channelPlayersRef.current[channel] = null;
       });
     };
@@ -133,29 +127,26 @@ export const usePrecisionAudio = ({ soundVolume, isSoundEnabled }: PrecisionAudi
         await stopChannel(channel);
       }
 
-      const { sound } = await Audio.Sound.createAsync(
-        soundPaths[soundKey],
-        { volume: finalVolume, shouldPlay: true },
-        (status) => {
-          if (status.isLoaded && status.didJustFinish) {
-            (Object.entries(channelPlayersRef.current) as [SoundChannel, Audio.Sound | null][]).forEach(([channelName, storedSound]) => {
-              if (storedSound === sound) {
-                channelPlayersRef.current[channelName] = null;
-              }
-            });
-            sound.unloadAsync().catch(() => {});
-          }
-          if (!status.isLoaded && status.error) {
-            FirebaseAnalytics.trackError('precision_audio_playback_error', {
-              message: `Sound: ${soundKey}, Error: ${status.error}`,
-              screen: 'usePrecisionAudioStatus',
-            });
-          }
-        },
-      );
+      // Créer un nouveau player audio avec expo-audio
+      const player = new AudioPlayer(soundPaths[soundKey]);
+      player.volume = finalVolume;
+
+      // Gérer la fin de lecture
+      player.playing.addListener((isPlaying) => {
+        if (!isPlaying && !allowOverlap && channel) {
+          (Object.entries(channelPlayersRef.current) as [SoundChannel, AudioPlayer | null][]).forEach(([channelName, storedPlayer]) => {
+            if (storedPlayer === player) {
+              channelPlayersRef.current[channelName] = null;
+            }
+          });
+        }
+      });
+
+      // Jouer le son
+      player.play();
 
       if (!allowOverlap && channel) {
-        channelPlayersRef.current[channel] = sound;
+        channelPlayersRef.current[channel] = player;
       }
 
       if (config.analytics) {
@@ -256,7 +247,7 @@ export const usePrecisionAudio = ({ soundVolume, isSoundEnabled }: PrecisionAudi
     playSound('gameOver');
   }, [playSound]);
 
-  return {
+  return useMemo(() => ({
     playKeyPress,
     playSubmit,
     playAnswerResult,
@@ -268,5 +259,17 @@ export const usePrecisionAudio = ({ soundVolume, isSoundEnabled }: PrecisionAudi
     playLevelUp,
     playGameOver,
     stopAll,
-  };
+  }), [
+    playKeyPress,
+    playSubmit,
+    playAnswerResult,
+    playTimerWarning,
+    playTimerExpired,
+    playFocusGain,
+    playFocusLoss,
+    playFocusLevelUp,
+    playLevelUp,
+    playGameOver,
+    stopAll,
+  ]);
 };

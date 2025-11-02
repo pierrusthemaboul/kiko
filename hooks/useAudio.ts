@@ -1,49 +1,57 @@
 import { useState, useCallback, useEffect, useRef } from 'react';
-import { Audio } from 'expo-av';
+import Audio, { AudioPlayer } from 'expo-audio';
 import { FirebaseAnalytics } from '../lib/firebase';
 
-interface CachedSound {
-  sound: Audio.Sound;
-  status: Audio.PlaybackStatus;
-  lastPlayed?: number;
-}
+console.log('---- Loading useAudio.ts ----');
+
+const soundPaths = {
+  correct: require('../assets/sounds/corectok.wav'),
+  incorrect: require('../assets/sounds/361260__japanyoshithegamer__8-bit-wrong-sound.wav'),
+  levelUp: require('../assets/sounds/423455__ohforheavensake__trumpet-brass-fanfare.wav'),
+  countdown: require('../assets/sounds/bop.wav'),
+  gameover: require('../assets/sounds/242208__wagna__failfare.mp3')
+};
+
+type SoundKeys = keyof typeof soundPaths;
 
 export const useAudio = () => {
-  const [sounds, setSounds] = useState<{ [key: string]: CachedSound | null }>({
-    correct: null, incorrect: null, levelUp: null, countdown: null, gameover: null,
-  });
-  const soundVolumeRef = useRef(0.24); // 0.48 * 0.5
+  console.log('[useAudio] Hook rendered or re-rendered');
+  const players = useRef<Partial<Record<SoundKeys, AudioPlayer>>>({});
+  const soundVolumeRef = useRef(0.24);
   const musicVolumeRef = useRef(0.24);
   const [soundVolume, setSoundVolume] = useState(0.24);
   const [musicVolume, setMusicVolume] = useState(0.24);
   const [isSoundEnabled, setIsSoundEnabled] = useState(true);
   const [isMusicEnabled, setIsMusicEnabled] = useState(true);
-  const isInitialized = useRef(false);
-
-  // Référence pour suivre la dernière fois qu'un son a été joué (pourrait être utile pour d'autres logiques)
-  const lastSoundTimestamps = useRef<Record<string, number>>({});
-
-  const soundPaths = {
-    correct: require('../assets/sounds/corectok.wav'),
-    incorrect: require('../assets/sounds/361260__japanyoshithegamer__8-bit-wrong-sound.wav'),
-    levelUp: require('../assets/sounds/423455__ohforheavensake__trumpet-brass-fanfare.wav'),
-    countdown: require('../assets/sounds/bop.wav'),
-    gameover: require('../assets/sounds/242208__wagna__failfare.mp3')
-  };
+  const [isInitialized, setIsInitialized] = useState(false);
 
   useEffect(() => {
+    console.log('[useAudio] useEffect for initialization is running.');
     const initAudio = async () => {
+      console.log('[useAudio] initAudio: Starting initialization...');
+      console.log('[useAudio] Checking imported Audio object:', Audio);
       try {
-        await Audio.setAudioModeAsync({
-          allowsRecordingIOS: false,
-          playsInSilentModeIOS: true,
-          shouldDuckAndroid: true,
-          playThroughEarpieceAndroid: false
-        });
-        isInitialized.current = true;
+        if (!Audio || !Audio.createAudioPlayer) {
+          throw new Error('Audio object or createAudioPlayer method is not available.');
+        }
+        const soundKeys = Object.keys(soundPaths) as SoundKeys[];
+        console.log(`[useAudio] initAudio: Found ${soundKeys.length} sounds to load.`);
+        for (const key of soundKeys) {
+          console.log(`[useAudio] initAudio: Loading sound '${key}'...`);
+          const player = Audio.createAudioPlayer(soundPaths[key]);
+          if (player && typeof player.prepare === 'function') {
+            await player.prepare();
+          }
+          players.current[key] = player;
+          console.log(`[useAudio] initAudio: Sound '${key}' loaded successfully.`);
+        }
+        setIsInitialized(true);
+        console.log('[useAudio] initAudio: Initialization complete.');
       } catch (error) {
+        console.error('[useAudio] initAudio: CRITICAL ERROR during initialization:', error);
         FirebaseAnalytics.trackError('audio_init_error', {
           message: error instanceof Error ? error.message : 'Unknown',
+          stack: error instanceof Error ? error.stack : 'N/A',
           screen: 'useAudioInit',
         });
       }
@@ -51,76 +59,81 @@ export const useAudio = () => {
     initAudio();
 
     return () => {
-      isInitialized.current = false;
-      Object.values(sounds).forEach(async (soundObj) => {
-        if (soundObj?.sound) {
+      console.log('[useAudio] Cleanup: Releasing audio players.');
+      setIsInitialized(false);
+      (Object.values(players.current) as AudioPlayer[]).forEach((player) => {
+        if (player && typeof player.release === 'function') {
           try {
-            await soundObj.sound.unloadAsync();
-          } catch (_) {}
+            player.release();
+          } catch (e) {
+            console.warn('[useAudio] Cleanup: Error releasing a player:', e);
+          }
         }
       });
-      setSounds({});
+      players.current = {};
+      console.log('[useAudio] Cleanup: Done.');
     };
   }, []);
 
-  const playSound = async (soundKey: string, volumeMultiplier: number = 1.0) => {
-    const now = Date.now();
-    lastSoundTimestamps.current[soundKey] = now; // Mettre à jour le timestamp
+  const playSound = async (soundKey: SoundKeys, volumeMultiplier: number = 1.0) => {
+    console.log(`[useAudio] playSound: Attempting to play '${soundKey}'`);
+    if (!isSoundEnabled) {
+      console.log(`[useAudio] playSound: Sound is disabled. Aborting.`);
+      return;
+    }
+    if (!isInitialized) {
+      console.log(`[useAudio] playSound: Audio not initialized yet. Aborting.`);
+      return;
+    }
 
-    if (!isSoundEnabled || !isInitialized.current) {
+    const player = players.current[soundKey];
+    if (!player) {
+      console.error(`[useAudio] playSound: Player for '${soundKey}' not found!`);
       return;
     }
 
     const finalVolume = Math.max(0, Math.min(soundVolumeRef.current * volumeMultiplier, 1.0));
-    let soundObject: Audio.Sound | null = null;
+    console.log(`[useAudio] playSound: Playing '${soundKey}' with volume ${finalVolume}`);
 
     try {
-      const { sound } = await Audio.Sound.createAsync(
-        soundPaths[soundKey],
-        {
-          volume: finalVolume,
-          shouldPlay: true,
-        },
-        (status) => {
-          if (status.didJustFinish) {
-            soundObject?.unloadAsync().catch(() => {});
-          }
-        }
-      );
-      soundObject = sound;
+      player.volume = finalVolume;
+      await player.seekTo(0);
+      await player.play();
+      console.log(`[useAudio] playSound: '${soundKey}' played successfully.`);
 
       if (['correct', 'incorrect', 'levelUp', 'gameover'].includes(soundKey)) {
         FirebaseAnalytics.trackEvent('sound_played', { sound_name: soundKey });
       }
 
     } catch (error) {
+      console.error(`[useAudio] playSound: CRITICAL ERROR during playback of '${soundKey}':`, error);
       FirebaseAnalytics.trackError('audio_playback_error', {
         message: `Sound: ${soundKey}, Error: ${error instanceof Error ? error.message : 'Unknown'}`,
+        stack: error instanceof Error ? error.stack : 'N/A',
         screen: 'playSound',
       });
-      soundObject?.unloadAsync().catch(() => {}); // Essayer de  décharger même en cas d'erreur
     }
   };
 
   const playCountdownSound = useCallback(() => {
-    // playSound('countdown', 1); // Commenté pour réduire le bruit
-  }, [isSoundEnabled]); // Note: la dépendance est isSoundEnabled via playSound
+    // playSound('countdown', 1);
+  }, [isSoundEnabled, isInitialized]);
 
   const playCorrectSound = useCallback(() => {
     playSound('correct', 1.0);
-  }, [isSoundEnabled]); // Note: la dépendance est isSoundEnabled via playSound
+  }, [isSoundEnabled, isInitialized]);
 
   const playIncorrectSound = useCallback(() => {
     playSound('incorrect', 0.7);
-  }, [isSoundEnabled]); // Note: la dépendance est isSoundEnabled via playSound
+  }, [isSoundEnabled, isInitialized]);
 
   const playLevelUpSound = useCallback(() => {
     playSound('levelUp', 0.8);
-  }, [isSoundEnabled]); // Note: la dépendance est isSoundEnabled via playSound
+  }, [isSoundEnabled, isInitialized]);
 
   const playGameOverSound = useCallback(() => {
     playSound('gameover', 0.8);
-  }, [isSoundEnabled]); // Note: la dépendance est isSoundEnabled via playSound
+  }, [isSoundEnabled, isInitialized]);
 
 
   const setVolume = async (volume: number, type: 'sound' | 'music') => {
@@ -142,11 +155,13 @@ export const useAudio = () => {
   };
 
   const toggleSound = (enabled: boolean) => {
+    console.log(`[useAudio] Toggling sound effects to: ${enabled}`);
     setIsSoundEnabled(enabled);
     FirebaseAnalytics.trackEvent('sound_toggled', { enabled, type: 'effects' });
   };
 
   const toggleMusic = (enabled: boolean) => {
+    console.log(`[useAudio] Toggling music to: ${enabled}`);
     setIsMusicEnabled(enabled);
     FirebaseAnalytics.trackEvent('sound_toggled', { enabled, type: 'music' });
   };
@@ -167,5 +182,8 @@ export const useAudio = () => {
     musicVolume,
   };
 };
+
+export default useAudio;
+
 
 export default useAudio;

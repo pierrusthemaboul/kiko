@@ -178,6 +178,7 @@ const PrecisionGameContent: React.FC<PrecisionGameContentProps> = ({
   // --- STATE & REFS ---
   const [guessValue, setGuessValue] = useState('');
   const [inputError, setInputError] = useState<string | null>(null);
+
   const { top, bottom, left, right } = useSafeAreaInsets();
   const { height: vh, width: vw } = useWindowDimensions();
   const [showDescription, setShowDescription] = useState(false);
@@ -196,6 +197,7 @@ const PrecisionGameContent: React.FC<PrecisionGameContentProps> = ({
   const resultFadeAnim = useRef(new Animated.Value(0)).current;
   const prevFocusGaugeRef = useRef(focusGauge);
   const prevFocusLevelRef = useRef(focusLevel);
+  const showLevelComplete = useMemo(() => levelProgress >= 1, [levelProgress]);
   const prevLevelCompleteRef = useRef(showLevelComplete);
   const prevGameOverRef = useRef(isGameOver);
   const hasMountedFocusRef = useRef(false);
@@ -484,40 +486,63 @@ const PrecisionGameContent: React.FC<PrecisionGameContentProps> = ({
   }, []);
 
   const handleDigitPress = useCallback((digit: string) => {
+    console.log('[handleDigitPress] Called with digit:', digit);
     setInputError(null);
-    precisionAudio.playKeyPress();
+
     setGuessValue((prev) => {
+      console.log('[handleDigitPress] Previous value:', prev);
       const isNegative = prev.startsWith('-');
       const digits = isNegative ? prev.slice(1) : prev;
       if (digits.length >= MAX_DIGITS) {
+        console.log('[handleDigitPress] Max digits reached, returning prev');
         return prev;
       }
       const nextDigits = digits + digit;
       const newValue = (isNegative ? '-' : '') + nextDigits;
+      console.log('[handleDigitPress] New value:', newValue);
       return newValue;
     });
-  // eslint-disable-next-line react-hooks/exhaustive-deps
-  }, []);
+
+    // Jouer le son après la mise à jour de l'état
+    precisionAudio.playKeyPress();
+  }, [precisionAudio]);
 
   const handleBackspace = useCallback(() => {
+    console.log('[handleBackspace] Called');
     setInputError(null);
-    precisionAudio.playKeyPress();
+
     setGuessValue((prev) => {
-      if (prev.length === 0) return prev;
+      console.log('[handleBackspace] Previous value:', prev);
+      if (prev.length === 0) {
+        console.log('[handleBackspace] Empty value, returning prev');
+        return prev;
+      }
       const trimmed = prev.slice(0, -1);
-      if (trimmed === '-') return '';
+      if (trimmed === '-') {
+        console.log('[handleBackspace] Only minus sign left, clearing');
+        return '';
+      }
+      console.log('[handleBackspace] New value:', trimmed);
       return trimmed;
     });
-  // eslint-disable-next-line react-hooks/exhaustive-deps
-  }, []);
+
+    // Jouer le son après la mise à jour de l'état
+    precisionAudio.playKeyPress();
+  }, [precisionAudio]);
 
   const handleSubmit = useCallback(() => {
-    if (submitLockRef.current) return;
+    console.log('[handleSubmit] Called with guessValue:', guessValue);
+    if (submitLockRef.current) {
+      console.log('[handleSubmit] Submit locked, returning');
+      return;
+    }
     const parsed = parseInt(guessValue, 10);
     if (!guessValue || Number.isNaN(parsed)) {
+      console.log('[handleSubmit] Invalid guess value');
       setInputError('Entrez une année valide.');
       return;
     }
+    console.log('[handleSubmit] Submitting guess:', parsed);
     setInputError(null);
     submitLockRef.current = true;
     setTimeout(() => { submitLockRef.current = false; }, 200);
@@ -526,8 +551,7 @@ const PrecisionGameContent: React.FC<PrecisionGameContentProps> = ({
     precisionAudio.playSubmit();
     Haptics.impactAsync(Haptics.ImpactFeedbackStyle.Light).catch(() => {});
     onSubmitGuess(parsed);
-  // eslint-disable-next-line react-hooks/exhaustive-deps
-  }, [guessValue, clearAutoAdvance, onSubmitGuess]);
+  }, [guessValue, clearAutoAdvance, onSubmitGuess, precisionAudio]);
 
   const handleContinue = () => {
     if (!lastResult || isGameOver) return;
@@ -581,7 +605,9 @@ const PrecisionGameContent: React.FC<PrecisionGameContentProps> = ({
 
   // --- EFFECTS ---
   useEffect(() => {
+    console.log('[Effect lastResult] lastResult changed:', lastResult?.event?.titre || 'null');
     if (!lastResult) {
+      console.log('[Effect lastResult] No result, clearing guessValue');
       setGuessValue('');
       setInputError(null);
       setResultExpanded(false);
@@ -589,6 +615,7 @@ const PrecisionGameContent: React.FC<PrecisionGameContentProps> = ({
       return;
     }
 
+    console.log('[Effect lastResult] Result present, playing audio');
     if (lastResult.timedOut) {
       precisionAudio.playTimerExpired();
     } else {

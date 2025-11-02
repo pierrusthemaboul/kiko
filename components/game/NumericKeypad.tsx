@@ -63,14 +63,22 @@ interface KeyButtonProps {
 
 const KeyButton = memo<KeyButtonProps>(({ config, disabled, hasGuess, onDigit, onDelete, onSubmit, keyStyle, labelFontSize }) => {
   const handlePressIn = useCallback(() => {
-    if (disabled) return;
+    console.log('[KeyButton] Press:', config.label, 'disabled:', disabled);
+    if (disabled) {
+      console.log('[KeyButton] Disabled, returning');
+      return;
+    }
     if (config.type === 'digit') {
+      console.log('[KeyButton] Calling onDigit with:', config.label);
       onDigit(config.label as DigitLabel);
     } else if (config.type === 'delete') {
+      console.log('[KeyButton] Calling onDelete');
       onDelete();
     } else if (!hasGuess) {
+      console.log('[KeyButton] Submit disabled, no guess');
       return;
     } else {
+      console.log('[KeyButton] Calling onSubmit');
       onSubmit();
     }
   }, [config.label, config.type, disabled, hasGuess, onDelete, onDigit, onSubmit]);

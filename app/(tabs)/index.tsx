@@ -20,7 +20,7 @@ import {
 } from 'react-native';
 import { useRouter } from 'expo-router';
 import { supabase } from '../../lib/supabase/supabaseClients'; // Chemin relatif vers supabase
-import { Audio } from 'expo-av';
+import Audio, { AudioPlayer } from 'expo-audio';
 import { User } from '@supabase/supabase-js';
 import { Ionicons } from '@expo/vector-icons';
 import { BannerAd, BannerAdSize } from 'react-native-google-mobile-ads';
@@ -81,7 +81,7 @@ const AnimatedSplashScreen = ({ onAnimationEnd }) => {
   const textOpacity = useRef(new Animated.Value(0)).current;
   const textTranslateY = useRef(new Animated.Value(12)).current;
   const accentWidth = useRef(new Animated.Value(0)).current;
-  const soundRef = useRef<Audio.Sound | null>(null);
+  const soundRef = useRef<AudioPlayer | null>(null);
 
   const playSplashSound = useCallback(async () => {
     try {
@@ -93,24 +93,12 @@ const AnimatedSplashScreen = ({ onAnimationEnd }) => {
       }
 
       const playbackVolume = IS_TEST_BUILD ? 0 : 0.18;
-      const { sound } = await Audio.Sound.createAsync(
-        require('../../assets/sounds/361261__japanyoshithegamer__8-bit-spaceship-startup.wav'),
-        { volume: playbackVolume }
+      const player = Audio.createAudioPlayer(
+        require('../../assets/sounds/361261__japanyoshithegamer__8-bit-spaceship-startup.wav')
       );
-      soundRef.current = sound;
-      await soundRef.current.playAsync();
-      if (!soundRef.current) {
-        // The splash unmounted during playback start; nothing else to do.
-        return;
-      }
-      soundRef.current.setOnPlaybackStatusUpdate((status) => {
-        if (status.isLoaded && status.didJustFinish) {
-          soundRef.current?.unloadAsync().catch((unloadError) => {
-            console.warn('[Audio] Splash: unload failed', unloadError);
-          });
-          soundRef.current = null;
-        }
-      });
+      player.volume = playbackVolume;
+      soundRef.current = player;
+      player.play();
     } catch (error) {
       // Ignorer silencieusement les erreurs de focus audio
       const errorMessage = error instanceof Error ? error.message : '';
@@ -126,7 +114,7 @@ const AnimatedSplashScreen = ({ onAnimationEnd }) => {
         screen: 'SplashScreen',
       });
       if (soundRef.current) {
-        await soundRef.current.unloadAsync().catch(() => undefined);
+        soundRef.current.pause();
         soundRef.current = null;
       }
     }
@@ -194,7 +182,7 @@ const AnimatedSplashScreen = ({ onAnimationEnd }) => {
     return () => {
       clearTimeout(endTimer);
       if (soundRef.current) {
-        soundRef.current.unloadAsync().catch(() => undefined);
+        soundRef.current.pause();
         soundRef.current = null;
       }
     };

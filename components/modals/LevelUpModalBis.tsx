@@ -90,16 +90,31 @@ const LevelUpModalBis: React.FC<LevelUpModalBisProps> = ({
   // Effect pour filtrer les événements spécifiques au niveau
   useEffect(() => {
     if (visible && eventsSummary && eventsSummary.length > 0) {
+      console.log('[LEVEL_UP_MODAL] 🎯 Modal devenue visible, filtrage des événements:', {
+        level,
+        previousLevel,
+        totalEventsSummary: eventsSummary.length,
+        requiredEvents,
+        isNewLevel,
+      });
       // On filtre les événements pour n'afficher que ceux du niveau qui vient d'être terminé
       // Dans un level-up, previousLevel contient le niveau qui vient d'être terminé
       const targetLevel = previousLevel || (level > 1 ? level - 1 : level);
-      
+
       // Limitons le nombre d'événements à afficher pour ce niveau
       // Une façon simple est de prendre seulement le nombre requis pour ce niveau
       const eventsLimit = Math.min(eventsSummary.length, requiredEvents);
       const recentEvents = eventsSummary.slice(-eventsLimit);
+      console.log('[LEVEL_UP_MODAL] Événements filtrés:', {
+        targetLevel,
+        eventsLimit,
+        filteredCount: recentEvents.length,
+      });
       setFilteredEvents(recentEvents);
     } else {
+      if (visible) {
+        console.log('[LEVEL_UP_MODAL] Modal visible mais pas d\'événements à afficher');
+      }
       setFilteredEvents([]);
     }
   }, [visible, eventsSummary, level, previousLevel, requiredEvents]);
@@ -367,7 +382,10 @@ const LevelUpModalBis: React.FC<LevelUpModalBisProps> = ({
             >
               <TouchableOpacity
                 style={styles.startButton}
-                onPress={onStart}
+                onPress={() => {
+                  console.log('[LEVEL_UP_MODAL] 👆 Bouton "Commencer" pressé, appel de handleLevelUp');
+                  onStart();
+                }}
                 activeOpacity={0.8}
               >
                 <LinearGradient

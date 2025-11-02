@@ -71,11 +71,8 @@ export default ({ config }) => {
           }
         }
       ],
+      "expo-audio",
       "expo-router",
-      [
-        "expo-splash-screen",
-        {}
-      ],
       [
         "expo-system-ui",
         {

@@ -205,13 +205,58 @@ export function useInitGame() {
 
       setAllEvents(validEvents);
 
-      // console.log(`[InitGame - Instance ${currentInstanceId}] Selecting initial pair RANDOMLY...`);
-      // Sélection aléatoire sur l'ensemble des événements valides (niveau_difficulte obsolète)
-      const shuffledAll = [...validEvents].sort(() => 0.5 - Math.random());
-      // console.log(`[InitGame - Instance ${currentInstanceId}] Shuffled IDs (first 5):`, shuffledAll.slice(0, 5).map(e => e.id));
+      // console.log(`[InitGame - Instance ${currentInstanceId}] Selecting initial pair with SMART FILTER...`);
 
-      const firstEvent = shuffledAll[0];
-      const secondEvent = shuffledAll[1];
+      // Filtrage intelligent pour la sélection initiale
+      // Critères : Notoriété >= 80, Date >= 1850, garantir au moins 1 événement français
+      const initialCandidates = validEvents.filter(e => {
+        if (!e.date) return false;
+        const year = new Date(e.date).getFullYear();
+        const notoriete = (e as any).notoriete ?? 0;
+        return notoriete >= 80 && year >= 1850;
+      });
+
+      let firstEvent: Event;
+      let secondEvent: Event;
+
+      if (initialCandidates.length < 2) {
+        // Fallback : si pas assez d'événements avec ces critères stricts
+        console.warn('[InitGame] Not enough high-notoriety events, using fallback');
+        const fallbackCandidates = validEvents.filter(e => {
+          if (!e.date) return false;
+          const year = new Date(e.date).getFullYear();
+          const notoriete = (e as any).notoriete ?? 50;
+          return notoriete >= 60 && year >= 1800;
+        });
+        const shuffled = [...fallbackCandidates].sort(() => 0.5 - Math.random());
+        firstEvent = shuffled[0];
+        secondEvent = shuffled[1];
+      } else {
+        // Séparer événements français et internationaux
+        const frenchEvents = initialCandidates.filter(e => {
+          const pays = (e as any).pays;
+          return Array.isArray(pays) && pays.includes('France');
+        });
+
+        // Garantir au moins 1 événement français
+        if (frenchEvents.length > 0) {
+          // Prendre 1 français aléatoire
+          const shuffledFrench = [...frenchEvents].sort(() => 0.5 - Math.random());
+          firstEvent = shuffledFrench[0];
+
+          // Pour le second : choisir dans tout le pool (sans le premier)
+          const remaining = initialCandidates.filter(e => e.id !== firstEvent.id);
+          const shuffledRemaining = [...remaining].sort(() => 0.5 - Math.random());
+          secondEvent = shuffledRemaining[0];
+        } else {
+          // Pas d'événements français (cas rare), prendre 2 au hasard
+          const shuffled = [...initialCandidates].sort(() => 0.5 - Math.random());
+          firstEvent = shuffled[0];
+          secondEvent = shuffled[1];
+        }
+      }
+
+      // console.log(`[InitGame - Instance ${currentInstanceId}] SELECTED Initial Pair (SMART):`);
       // --- FIN MODIFICATION ---
 
       if (!firstEvent || !secondEvent) throw new Error("Erreur interne: échec de la sélection aléatoire des événements initiaux.");
