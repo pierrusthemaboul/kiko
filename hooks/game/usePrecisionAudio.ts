@@ -1,6 +1,25 @@
-import { useCallback, useEffect, useRef, useMemo } from 'react';
-import { AudioPlayer, createAudioPlayer } from 'expo-audio';
+import { useCallback, useRef, useMemo } from 'react';
+import { AudioPlayer, useAudioPlayer } from 'expo-audio';
 import { FirebaseAnalytics } from '../../lib/firebase';
+
+/**
+ * Hook audio pour le mode de jeu PRECISION
+ *
+ * ⚠️ IMPORTANT - AVANT DE MODIFIER CE FICHIER :
+ * Lisez /docs/AUDIO_MIGRATION_GUIDE.md pour comprendre pourquoi nous utilisons
+ * useAudioPlayer au lieu de createAudioPlayer.
+ *
+ * Résumé : createAudioPlayer() est buggé dans expo-audio 0.3.5 (SDK 52)
+ * et provoque "Error: Value is undefined, expected an Object".
+ *
+ * ✅ Utilisez useAudioPlayer() pour créer les players
+ * ❌ N'utilisez PAS createAudioPlayer() avec expo-audio 0.3.5
+ *
+ * Stratégie audio Precision :
+ * - Son neutre (bop.wav) pour toutes les validations
+ * - Son spécial (corectok.wav) uniquement pour date exacte (absDifference === 0)
+ * - Pas de son pour les autres cas → feedback visuel uniquement
+ */
 
 interface PrecisionAudioConfig {
   soundVolume: number;
@@ -11,10 +30,8 @@ type SoundChannel = 'ui' | 'result' | 'timer' | 'event' | 'focus';
 
 const soundPaths = {
   keyPress: require('../../assets/sounds/bop.wav'),
-  submit: require('../../assets/sounds/361261__japanyoshithegamer__8-bit-spaceship-startup.wav'),
+  submit: require('../../assets/sounds/bop.wav'), // Son neutre et court pour validation
   perfectAnswer: require('../../assets/sounds/corectok.wav'),
-  goodAnswer: require('../../assets/sounds/corectok.wav'),
-  wrongAnswer: require('../../assets/sounds/361260__japanyoshithegamer__8-bit-wrong-sound.wav'),
   timerWarning: require('../../assets/sounds/countdown.wav'),
   timerExpired: require('../../assets/sounds/242208__wagna__failfare.mp3'),
   levelUp: require('../../assets/sounds/423455__ohforheavensake__trumpet-brass-fanfare.wav'),
@@ -34,11 +51,9 @@ const soundConfig: Record<SoundKey, {
   analytics?: boolean;
 }> = {
   keyPress: { channel: null, allowOverlap: true, baseVolume: 0.35 },
-  submit: { channel: 'ui', baseVolume: 0.6 },
-  perfectAnswer: { channel: 'result', baseVolume: 1.0, stopChannels: ['timer'], analytics: true },
-  goodAnswer: { channel: 'result', baseVolume: 0.85, stopChannels: ['timer'] },
-  wrongAnswer: { channel: 'result', baseVolume: 0.75, stopChannels: ['timer'], analytics: true },
-  timerWarning: { channel: 'timer', baseVolume: 0.45, stopChannels: ['result'] },
+  submit: { channel: 'ui', baseVolume: 0.5, stopChannels: ['timer'] }, // Son neutre pour validation
+  perfectAnswer: { channel: 'result', baseVolume: 0.7, stopChannels: ['timer', 'ui'], analytics: true }, // Son spécial pour date exacte
+  timerWarning: { channel: 'timer', baseVolume: 0.45 },
   timerExpired: { channel: 'timer', baseVolume: 0.85, stopChannels: ['result'], analytics: true },
   levelUp: { channel: 'event', baseVolume: 0.85, stopChannels: ['timer'], analytics: true },
   gameOver: { channel: 'event', baseVolume: 0.85, stopChannels: ['timer'], analytics: true },
@@ -48,7 +63,32 @@ const soundConfig: Record<SoundKey, {
 };
 
 export const usePrecisionAudio = ({ soundVolume, isSoundEnabled }: PrecisionAudioConfig) => {
-  const isInitialized = useRef(false);
+  // Créer un player pour chaque son avec useAudioPlayer hook
+  const keyPressPlayer = useAudioPlayer(soundPaths.keyPress);
+  const submitPlayer = useAudioPlayer(soundPaths.submit);
+  const perfectAnswerPlayer = useAudioPlayer(soundPaths.perfectAnswer);
+  const timerWarningPlayer = useAudioPlayer(soundPaths.timerWarning);
+  const timerExpiredPlayer = useAudioPlayer(soundPaths.timerExpired);
+  const levelUpPlayer = useAudioPlayer(soundPaths.levelUp);
+  const gameOverPlayer = useAudioPlayer(soundPaths.gameOver);
+  const focusGainPlayer = useAudioPlayer(soundPaths.focusGain);
+  const focusLossPlayer = useAudioPlayer(soundPaths.focusLoss);
+  const focusLevelUpPlayer = useAudioPlayer(soundPaths.focusLevelUp);
+
+  // Map des players pour accès facile
+  const playersRef = useRef<Record<SoundKey, AudioPlayer>>({
+    keyPress: keyPressPlayer,
+    submit: submitPlayer,
+    perfectAnswer: perfectAnswerPlayer,
+    timerWarning: timerWarningPlayer,
+    timerExpired: timerExpiredPlayer,
+    levelUp: levelUpPlayer,
+    gameOver: gameOverPlayer,
+    focusGain: focusGainPlayer,
+    focusLoss: focusLossPlayer,
+    focusLevelUp: focusLevelUpPlayer,
+  });
+
   const channelPlayersRef = useRef<Record<SoundChannel, AudioPlayer | null>>({
     ui: null,
     result: null,
@@ -56,7 +96,6 @@ export const usePrecisionAudio = ({ soundVolume, isSoundEnabled }: PrecisionAudi
     event: null,
     focus: null,
   });
-  const preCreatedPlayersRef = useRef<Partial<Record<SoundKey, AudioPlayer>>>({});
   const lastPlayedResultRef = useRef<{ time: number; difference: number } | null>(null);
 
   const stopChannel = useCallback(async (channel: SoundChannel) => {
@@ -73,65 +112,6 @@ export const usePrecisionAudio = ({ soundVolume, isSoundEnabled }: PrecisionAudi
     await Promise.all(channels.map((channel) => stopChannel(channel)));
   }, [stopChannel]);
 
-  useEffect(() => {
-    const initAudio = async () => {
-      try {
-        // Delay then pre-create all players
-        await new Promise(resolve => setTimeout(resolve, 150));
-
-        // Pre-create all sound players
-        const soundKeys: SoundKey[] = Object.keys(soundPaths) as SoundKey[];
-        for (const key of soundKeys) {
-          try {
-            const player = createAudioPlayer(soundPaths[key]);
-            if (player) {
-              preCreatedPlayersRef.current[key] = player;
-            }
-          } catch (err) {
-            console.log(`[PrecisionAudio] Skipping pre-create for ${key}`);
-          }
-        }
-
-        isInitialized.current = true;
-      } catch (error) {
-        console.error('[PrecisionAudio] Init error:', error);
-        FirebaseAnalytics.trackError('precision_audio_init_error', {
-          message: error instanceof Error ? error.message : 'Unknown',
-          screen: 'usePrecisionAudioInit',
-        });
-        isInitialized.current = true; // Continue anyway
-      }
-    };
-    initAudio();
-
-    return () => {
-      isInitialized.current = false;
-      // Cleanup channel players
-      Object.keys(channelPlayersRef.current).forEach((channelKey) => {
-        const channel = channelKey as SoundChannel;
-        const sound = channelPlayersRef.current[channel];
-        if (!sound) return;
-        try {
-          if (typeof sound.pause === 'function') {
-            sound.pause();
-          }
-          if (typeof sound.remove === 'function') {
-            sound.remove();
-          }
-        } catch (_) {}
-        channelPlayersRef.current[channel] = null;
-      });
-      // Cleanup pre-created players
-      Object.values(preCreatedPlayersRef.current).forEach(player => {
-        try {
-          player?.pause();
-          player?.remove();
-        } catch {}
-      });
-      preCreatedPlayersRef.current = {};
-    };
-  }, []);
-
   const playSound = useCallback(async (
     soundKey: SoundKey,
     options?: {
@@ -140,7 +120,7 @@ export const usePrecisionAudio = ({ soundVolume, isSoundEnabled }: PrecisionAudi
       allowOverlap?: boolean;
     },
   ) => {
-    if (!isSoundEnabled || !isInitialized.current) {
+    if (!isSoundEnabled) {
       return;
     }
 
@@ -159,25 +139,25 @@ export const usePrecisionAudio = ({ soundVolume, isSoundEnabled }: PrecisionAudi
         await stopChannel(channel);
       }
 
-      // Use pre-created player if available
-      let player = preCreatedPlayersRef.current[soundKey];
-
+      // Get the pre-created player
+      const player = playersRef.current[soundKey];
       if (!player) {
-        // Fallback: create new player if not pre-created
-        player = createAudioPlayer(soundPaths[soundKey]);
-        if (!player) {
-          console.error(`[PrecisionAudio] Failed to create player for ${soundKey}`);
-          return;
-        }
-        preCreatedPlayersRef.current[soundKey] = player;
+        console.error(`[PrecisionAudio] Player not found for ${soundKey}`);
+        return;
       }
 
       // Rewind and set volume
       try {
         await player.seekTo(0);
-      } catch {}
+      } catch (seekError) {
+        console.log(`[PrecisionAudio] Seek error for ${soundKey} (non-critical):`, seekError);
+      }
 
-      player.volume = finalVolume;
+      try {
+        player.volume = finalVolume;
+      } catch (volError) {
+        console.error(`[PrecisionAudio] Volume error for ${soundKey}:`, volError);
+      }
 
       // Store in channel if needed
       if (!allowOverlap && channel) {
@@ -185,7 +165,11 @@ export const usePrecisionAudio = ({ soundVolume, isSoundEnabled }: PrecisionAudi
       }
 
       // Play
-      player.play();
+      try {
+        player.play();
+      } catch (playError) {
+        console.error(`[PrecisionAudio] Play error for ${soundKey}:`, playError);
+      }
 
       if (config.analytics) {
         FirebaseAnalytics.trackEvent('precision_sound_played', { sound_name: soundKey });
@@ -212,20 +196,6 @@ export const usePrecisionAudio = ({ soundVolume, isSoundEnabled }: PrecisionAudi
   }, [playSound]);
 
   // --- Résultats ---
-  const playPerfectAnswer = useCallback(() => {
-    playSound('perfectAnswer');
-  }, [playSound]);
-
-  const playGoodAnswer = useCallback((intensity: 'close' | 'medium' = 'close') => {
-    const volumeMultiplier = intensity === 'close' ? 1 : 0.8;
-    playSound('goodAnswer', { volumeMultiplier });
-  }, [playSound]);
-
-  const playWrongAnswer = useCallback((intensity: 'far' | 'veryFar' = 'far') => {
-    const volumeMultiplier = intensity === 'far' ? 0.8 : 1;
-    playSound('wrongAnswer', { volumeMultiplier });
-  }, [playSound]);
-
   const playAnswerResult = useCallback((absDifference: number) => {
     const now = Date.now();
 
@@ -239,18 +209,12 @@ export const usePrecisionAudio = ({ soundVolume, isSoundEnabled }: PrecisionAudi
 
     lastPlayedResultRef.current = { time: now, difference: absDifference };
 
+    // Son spécial uniquement pour la date exacte
     if (absDifference === 0) {
-      playPerfectAnswer();
-    } else if (absDifference <= 7) {
-      playGoodAnswer('close');
-    } else if (absDifference <= 25) {
-      playGoodAnswer('medium');
-    } else if (absDifference <= 70) {
-      playWrongAnswer('far');
-    } else {
-      playWrongAnswer('veryFar');
+      playSound('perfectAnswer');
     }
-  }, [playGoodAnswer, playPerfectAnswer, playWrongAnswer]);
+    // Pas de son pour les autres cas - le feedback est visuel
+  }, [playSound]);
 
   // --- Chronomètre ---
   const playTimerWarning = useCallback(() => {

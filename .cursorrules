@@ -1,0 +1,36 @@
+# Cursor Rules pour Kiko
+
+## Audio System - CRITIQUE ⚠️
+
+AVANT de modifier `/hooks/useAudio.ts` ou `/hooks/game/usePrecisionAudio.ts`:
+1. LIRE `/docs/AUDIO_MIGRATION_GUIDE.md`
+2. Ne JAMAIS utiliser `createAudioPlayer()` avec expo-audio 0.3.5
+3. Toujours utiliser `useAudioPlayer()` hook
+
+Bug connu: createAudioPlayer() provoque "Error: Value is undefined, expected an Object" dans SDK 52.
+
+## Pattern Audio Correct
+
+```typescript
+// ✅ CORRECT
+import { useAudioPlayer } from 'expo-audio';
+const player = useAudioPlayer(require('./sound.wav'));
+
+// ❌ INTERDIT
+import { createAudioPlayer } from 'expo-audio';
+const player = createAudioPlayer(require('./sound.wav')); // BUG SDK 52
+```
+
+## Règles générales
+
+1. Projet utilise Expo SDK 52, pas SDK 53
+2. expo-audio version 0.3.5 (ne pas upgrader vers 1.0.14+)
+3. TypeScript strict sur les nouveaux fichiers
+4. Tous les sons dans `/assets/sounds/`
+5. Documentation dans `/docs/`
+
+## Voir aussi
+
+- `/docs/README.md` - Index documentation
+- `/docs/AUDIO_MIGRATION_GUIDE.md` - Migration expo-audio
+- `/.ai-context.md` - Context général pour IA

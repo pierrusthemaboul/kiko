@@ -1,8 +1,20 @@
-import { useState, useCallback, useEffect, useRef } from 'react';
-import { createAudioPlayer, AudioPlayer } from 'expo-audio';
+import { useState, useCallback, useRef } from 'react';
+import { AudioPlayer, useAudioPlayer } from 'expo-audio';
 import { FirebaseAnalytics } from '../lib/firebase';
 
-// console.log('---- Loading useAudio.ts ----');
+/**
+ * Hook audio pour le mode de jeu CLASSIQUE
+ *
+ * ⚠️ IMPORTANT - AVANT DE MODIFIER CE FICHIER :
+ * Lisez /docs/AUDIO_MIGRATION_GUIDE.md pour comprendre pourquoi nous utilisons
+ * useAudioPlayer au lieu de createAudioPlayer.
+ *
+ * Résumé : createAudioPlayer() est buggé dans expo-audio 0.3.5 (SDK 52)
+ * et provoque "Error: Value is undefined, expected an Object".
+ *
+ * ✅ Utilisez useAudioPlayer() pour créer les players
+ * ❌ N'utilisez PAS createAudioPlayer() avec expo-audio 0.3.5
+ */
 
 const soundPaths = {
   correct: require('../assets/sounds/corectok.wav'),
@@ -15,71 +27,42 @@ const soundPaths = {
 type SoundKeys = keyof typeof soundPaths;
 
 export const useAudio = () => {
-  // console.log('[useAudio] Hook rendered or re-rendered');
-  const players = useRef<Partial<Record<SoundKeys, AudioPlayer>>>({});
+  // Créer un player pour chaque son avec useAudioPlayer hook
+  const correctPlayer = useAudioPlayer(soundPaths.correct);
+  const incorrectPlayer = useAudioPlayer(soundPaths.incorrect);
+  const levelUpPlayer = useAudioPlayer(soundPaths.levelUp);
+  const countdownPlayer = useAudioPlayer(soundPaths.countdown);
+  const gameoverPlayer = useAudioPlayer(soundPaths.gameover);
+
+  // Map des players pour accès facile
+  const playersRef = useRef<Record<SoundKeys, AudioPlayer>>({
+    correct: correctPlayer,
+    incorrect: incorrectPlayer,
+    levelUp: levelUpPlayer,
+    countdown: countdownPlayer,
+    gameover: gameoverPlayer,
+  });
+
   const soundVolumeRef = useRef(0.24);
   const musicVolumeRef = useRef(0.24);
   const [soundVolume, setSoundVolume] = useState(0.24);
   const [musicVolume, setMusicVolume] = useState(0.24);
   const [isSoundEnabled, setIsSoundEnabled] = useState(true);
   const [isMusicEnabled, setIsMusicEnabled] = useState(true);
-  const [isInitialized, setIsInitialized] = useState(false);
-
-  useEffect(() => {
-    // Pre-create all players to avoid EventEmitter issues during gameplay
-    const timer = setTimeout(async () => {
-      try {
-        // Create all players upfront
-        const soundKeys: SoundKeys[] = ['correct', 'incorrect', 'levelUp', 'countdown', 'gameover'];
-        for (const key of soundKeys) {
-          try {
-            const player = createAudioPlayer(soundPaths[key]);
-            if (player) {
-              players.current[key] = player;
-            }
-          } catch (err) {
-            console.log(`[useAudio] Skipping pre-create for ${key}:`, err);
-          }
-        }
-        setIsInitialized(true);
-      } catch (error) {
-        console.error('[useAudio] Init error:', error);
-        setIsInitialized(true); // Continue anyway
-      }
-    }, 200);
-
-    return () => {
-      clearTimeout(timer);
-      setIsInitialized(false);
-      // Cleanup all players
-      Object.values(players.current).forEach(player => {
-        try {
-          player?.pause();
-          player?.remove();
-        } catch {}
-      });
-      players.current = {};
-    };
-  }, []);
 
   const playSound = async (soundKey: SoundKeys, volumeMultiplier: number = 1.0) => {
-    if (!isSoundEnabled || !isInitialized) {
+    if (!isSoundEnabled) {
       return;
     }
 
     const finalVolume = Math.max(0, Math.min(soundVolumeRef.current * volumeMultiplier, 1.0));
 
     try {
-      // Use pre-created player if available
-      let player = players.current[soundKey];
-
+      // Get the pre-created player
+      const player = playersRef.current[soundKey];
       if (!player) {
-        // Fallback: create new player if not pre-created
-        player = createAudioPlayer(soundPaths[soundKey]);
-        if (!player) {
-          return;
-        }
-        players.current[soundKey] = player;
+        console.error(`[useAudio] Player not found for ${soundKey}`);
+        return;
       }
 
       // Rewind and play
@@ -101,23 +84,23 @@ export const useAudio = () => {
 
   const playCountdownSound = useCallback(() => {
     playSound('countdown', 1);
-  }, [isSoundEnabled, isInitialized]);
+  }, [isSoundEnabled]);
 
   const playCorrectSound = useCallback(() => {
     playSound('correct', 1.0);
-  }, [isSoundEnabled, isInitialized]);
+  }, [isSoundEnabled]);
 
   const playIncorrectSound = useCallback(() => {
     playSound('incorrect', 0.7);
-  }, [isSoundEnabled, isInitialized]);
+  }, [isSoundEnabled]);
 
   const playLevelUpSound = useCallback(() => {
     playSound('levelUp', 0.8);
-  }, [isSoundEnabled, isInitialized]);
+  }, [isSoundEnabled]);
 
   const playGameOverSound = useCallback(() => {
     playSound('gameover', 0.8);
-  }, [isSoundEnabled, isInitialized]);
+  }, [isSoundEnabled]);
 
 
   const setVolume = async (volume: number, type: 'sound' | 'music') => {
@@ -166,8 +149,5 @@ export const useAudio = () => {
     musicVolume,
   };
 };
-
-export default useAudio;
-
 
 export default useAudio;
