@@ -3,7 +3,7 @@ export default ({ config }) => {
     ...config,
     name: "Timalaus",
     slug: "kiko",
-    version: "1.5.1",
+    version: "1.5.4",
     orientation: "portrait",
     icon: "./assets/images/icon.png",
     scheme: "juno2",
@@ -27,16 +27,7 @@ export default ({ config }) => {
         backgroundColor: "#FFFFFF"
       },
       package: "com.pierretulle.juno2",
-      navigationBar: {
-        visible: false,
-        backgroundColor: "#020817"
-      },
       softwareKeyboardLayoutMode: "pan",
-      statusBar: {
-        barStyle: "light-content",
-        backgroundColor: "#020817",
-        translucent: false
-      },
       permissions: [
         "android.permission.INTERNET",
         "android.permission.VIBRATE",
@@ -49,8 +40,6 @@ export default ({ config }) => {
         "android.permission.ACCESS_ADSERVICES_AD_ID"
       ],
       versionCode: 10106,
-      compileSdkVersion: 35,
-      targetSdkVersion: 35,
       googleServicesFile: process.env.GOOGLE_SERVICES_JSON || "./google-services.json"
     },
     web: {

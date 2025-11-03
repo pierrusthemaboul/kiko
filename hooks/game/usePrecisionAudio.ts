@@ -1,5 +1,5 @@
 import { useCallback, useEffect, useRef, useMemo } from 'react';
-import { AudioPlayer, useAudioPlayer } from 'expo-audio';
+import { AudioPlayer, createAudioPlayer } from 'expo-audio';
 import { FirebaseAnalytics } from '../../lib/firebase';
 
 interface PrecisionAudioConfig {
@@ -40,8 +40,8 @@ const soundConfig: Record<SoundKey, {
   wrongAnswer: { channel: 'result', baseVolume: 0.75, stopChannels: ['timer'], analytics: true },
   timerWarning: { channel: 'timer', baseVolume: 0.45, stopChannels: ['result'] },
   timerExpired: { channel: 'timer', baseVolume: 0.85, stopChannels: ['result'], analytics: true },
-  levelUp: { channel: 'event', baseVolume: 0.85, stopChannels: ['result', 'timer'], analytics: true },
-  gameOver: { channel: 'event', baseVolume: 0.85, stopChannels: ['result', 'timer'], analytics: true },
+  levelUp: { channel: 'event', baseVolume: 0.85, stopChannels: ['timer'], analytics: true },
+  gameOver: { channel: 'event', baseVolume: 0.85, stopChannels: ['timer'], analytics: true },
   focusGain: { channel: 'focus', baseVolume: 0.45 },
   focusLoss: { channel: 'focus', baseVolume: 0.55 },
   focusLevelUp: { channel: 'focus', baseVolume: 0.7, stopChannels: ['focus'] },
@@ -56,6 +56,7 @@ export const usePrecisionAudio = ({ soundVolume, isSoundEnabled }: PrecisionAudi
     event: null,
     focus: null,
   });
+  const preCreatedPlayersRef = useRef<Partial<Record<SoundKey, AudioPlayer>>>({});
   const lastPlayedResultRef = useRef<{ time: number; difference: number } | null>(null);
 
   const stopChannel = useCallback(async (channel: SoundChannel) => {
@@ -63,7 +64,7 @@ export const usePrecisionAudio = ({ soundVolume, isSoundEnabled }: PrecisionAudi
     if (!current) return;
     try {
       current.pause();
-      current.seekTo(0);
+      current.remove();
     } catch (_) {}
     channelPlayersRef.current[channel] = null;
   }, []);
@@ -75,28 +76,59 @@ export const usePrecisionAudio = ({ soundVolume, isSoundEnabled }: PrecisionAudi
   useEffect(() => {
     const initAudio = async () => {
       try {
-        // expo-audio ne nécessite pas de configuration audio mode comme expo-av
+        // Delay then pre-create all players
+        await new Promise(resolve => setTimeout(resolve, 150));
+
+        // Pre-create all sound players
+        const soundKeys: SoundKey[] = Object.keys(soundPaths) as SoundKey[];
+        for (const key of soundKeys) {
+          try {
+            const player = createAudioPlayer(soundPaths[key]);
+            if (player) {
+              preCreatedPlayersRef.current[key] = player;
+            }
+          } catch (err) {
+            console.log(`[PrecisionAudio] Skipping pre-create for ${key}`);
+          }
+        }
+
         isInitialized.current = true;
       } catch (error) {
+        console.error('[PrecisionAudio] Init error:', error);
         FirebaseAnalytics.trackError('precision_audio_init_error', {
           message: error instanceof Error ? error.message : 'Unknown',
           screen: 'usePrecisionAudioInit',
         });
+        isInitialized.current = true; // Continue anyway
       }
     };
     initAudio();
 
     return () => {
       isInitialized.current = false;
+      // Cleanup channel players
       Object.keys(channelPlayersRef.current).forEach((channelKey) => {
         const channel = channelKey as SoundChannel;
         const sound = channelPlayersRef.current[channel];
         if (!sound) return;
         try {
-          sound.pause();
+          if (typeof sound.pause === 'function') {
+            sound.pause();
+          }
+          if (typeof sound.remove === 'function') {
+            sound.remove();
+          }
         } catch (_) {}
         channelPlayersRef.current[channel] = null;
       });
+      // Cleanup pre-created players
+      Object.values(preCreatedPlayersRef.current).forEach(player => {
+        try {
+          player?.pause();
+          player?.remove();
+        } catch {}
+      });
+      preCreatedPlayersRef.current = {};
     };
   }, []);
 
@@ -127,36 +159,40 @@ export const usePrecisionAudio = ({ soundVolume, isSoundEnabled }: PrecisionAudi
         await stopChannel(channel);
       }
 
-      // Créer un nouveau player audio avec expo-audio
-      const player = new AudioPlayer(soundPaths[soundKey]);
+      // Use pre-created player if available
+      let player = preCreatedPlayersRef.current[soundKey];
+
+      if (!player) {
+        // Fallback: create new player if not pre-created
+        player = createAudioPlayer(soundPaths[soundKey]);
+        if (!player) {
+          console.error(`[PrecisionAudio] Failed to create player for ${soundKey}`);
+          return;
+        }
+        preCreatedPlayersRef.current[soundKey] = player;
+      }
+
+      // Rewind and set volume
+      try {
+        await player.seekTo(0);
+      } catch {}
+
       player.volume = finalVolume;
 
-      // Gérer la fin de lecture
-      player.playing.addListener((isPlaying) => {
-        if (!isPlaying && !allowOverlap && channel) {
-          (Object.entries(channelPlayersRef.current) as [SoundChannel, AudioPlayer | null][]).forEach(([channelName, storedPlayer]) => {
-            if (storedPlayer === player) {
-              channelPlayersRef.current[channelName] = null;
-            }
-          });
-        }
-      });
-
-      // Jouer le son
-      player.play();
-
+      // Store in channel if needed
       if (!allowOverlap && channel) {
         channelPlayersRef.current[channel] = player;
       }
+
+      // Play
+      player.play();
 
       if (config.analytics) {
         FirebaseAnalytics.trackEvent('precision_sound_played', { sound_name: soundKey });
       }
     } catch (error) {
-      FirebaseAnalytics.trackError('precision_audio_playback_error', {
-        message: `Sound: ${soundKey}, Error: ${error instanceof Error ? error.message : 'Unknown'}`,
-        screen: 'playPrecisionSound',
-      });
+      // Silently ignore errors - audio is non-critical
+      console.log(`[PrecisionAudio] Skipped ${soundKey} due to error`);
     }
   }, [isSoundEnabled, soundVolume, stopChannel, stopChannels]);
 

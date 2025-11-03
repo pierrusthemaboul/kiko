@@ -20,7 +20,7 @@ import {
 } from 'react-native';
 import { useRouter } from 'expo-router';
 import { supabase } from '../../lib/supabase/supabaseClients'; // Chemin relatif vers supabase
-import Audio, { AudioPlayer } from 'expo-audio';
+import { createAudioPlayer, AudioPlayer } from 'expo-audio';
 import { User } from '@supabase/supabase-js';
 import { Ionicons } from '@expo/vector-icons';
 import { BannerAd, BannerAdSize } from 'react-native-google-mobile-ads';
@@ -93,12 +93,14 @@ const AnimatedSplashScreen = ({ onAnimationEnd }) => {
       }
 
       const playbackVolume = IS_TEST_BUILD ? 0 : 0.18;
-      const player = Audio.createAudioPlayer(
+      const player = createAudioPlayer(
         require('../../assets/sounds/361261__japanyoshithegamer__8-bit-spaceship-startup.wav')
       );
-      player.volume = playbackVolume;
-      soundRef.current = player;
-      player.play();
+      if (player) {
+        player.volume = playbackVolume;
+        soundRef.current = player;
+        player.play();
+      }
     } catch (error) {
       // Ignorer silencieusement les erreurs de focus audio
       const errorMessage = error instanceof Error ? error.message : '';
@@ -121,7 +123,10 @@ const AnimatedSplashScreen = ({ onAnimationEnd }) => {
   }, []);
 
   useEffect(() => {
-    playSplashSound();
+    // Delay splash sound to ensure EventEmitter is ready
+    const timer = setTimeout(() => {
+      playSplashSound();
+    }, 150);
 
     Animated.parallel([
       Animated.timing(imageOpacity, {
@@ -180,6 +185,7 @@ const AnimatedSplashScreen = ({ onAnimationEnd }) => {
     }, SPLASH_VISIBLE_DURATION);
 
     return () => {
+      clearTimeout(timer);
       clearTimeout(endTimer);
       if (soundRef.current) {
         soundRef.current.pause();

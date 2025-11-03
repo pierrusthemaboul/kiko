@@ -1,8 +1,8 @@
 import { useState, useCallback, useEffect, useRef } from 'react';
-import Audio, { AudioPlayer } from 'expo-audio';
+import { createAudioPlayer, AudioPlayer } from 'expo-audio';
 import { FirebaseAnalytics } from '../lib/firebase';
 
-console.log('---- Loading useAudio.ts ----');
+// console.log('---- Loading useAudio.ts ----');
 
 const soundPaths = {
   correct: require('../assets/sounds/corectok.wav'),
@@ -15,7 +15,7 @@ const soundPaths = {
 type SoundKeys = keyof typeof soundPaths;
 
 export const useAudio = () => {
-  console.log('[useAudio] Hook rendered or re-rendered');
+  // console.log('[useAudio] Hook rendered or re-rendered');
   const players = useRef<Partial<Record<SoundKeys, AudioPlayer>>>({});
   const soundVolumeRef = useRef(0.24);
   const musicVolumeRef = useRef(0.24);
@@ -26,97 +26,81 @@ export const useAudio = () => {
   const [isInitialized, setIsInitialized] = useState(false);
 
   useEffect(() => {
-    console.log('[useAudio] useEffect for initialization is running.');
-    const initAudio = async () => {
-      console.log('[useAudio] initAudio: Starting initialization...');
-      console.log('[useAudio] Checking imported Audio object:', Audio);
+    // Pre-create all players to avoid EventEmitter issues during gameplay
+    const timer = setTimeout(async () => {
       try {
-        if (!Audio || !Audio.createAudioPlayer) {
-          throw new Error('Audio object or createAudioPlayer method is not available.');
-        }
-        const soundKeys = Object.keys(soundPaths) as SoundKeys[];
-        console.log(`[useAudio] initAudio: Found ${soundKeys.length} sounds to load.`);
+        // Create all players upfront
+        const soundKeys: SoundKeys[] = ['correct', 'incorrect', 'levelUp', 'countdown', 'gameover'];
         for (const key of soundKeys) {
-          console.log(`[useAudio] initAudio: Loading sound '${key}'...`);
-          const player = Audio.createAudioPlayer(soundPaths[key]);
-          if (player && typeof player.prepare === 'function') {
-            await player.prepare();
+          try {
+            const player = createAudioPlayer(soundPaths[key]);
+            if (player) {
+              players.current[key] = player;
+            }
+          } catch (err) {
+            console.log(`[useAudio] Skipping pre-create for ${key}:`, err);
           }
-          players.current[key] = player;
-          console.log(`[useAudio] initAudio: Sound '${key}' loaded successfully.`);
         }
         setIsInitialized(true);
-        console.log('[useAudio] initAudio: Initialization complete.');
       } catch (error) {
-        console.error('[useAudio] initAudio: CRITICAL ERROR during initialization:', error);
-        FirebaseAnalytics.trackError('audio_init_error', {
-          message: error instanceof Error ? error.message : 'Unknown',
-          stack: error instanceof Error ? error.stack : 'N/A',
-          screen: 'useAudioInit',
-        });
+        console.error('[useAudio] Init error:', error);
+        setIsInitialized(true); // Continue anyway
       }
-    };
-    initAudio();
+    }, 200);
 
     return () => {
-      console.log('[useAudio] Cleanup: Releasing audio players.');
+      clearTimeout(timer);
       setIsInitialized(false);
-      (Object.values(players.current) as AudioPlayer[]).forEach((player) => {
-        if (player && typeof player.release === 'function') {
-          try {
-            player.release();
-          } catch (e) {
-            console.warn('[useAudio] Cleanup: Error releasing a player:', e);
-          }
-        }
+      // Cleanup all players
+      Object.values(players.current).forEach(player => {
+        try {
+          player?.pause();
+          player?.remove();
+        } catch {}
       });
       players.current = {};
-      console.log('[useAudio] Cleanup: Done.');
     };
   }, []);
 
   const playSound = async (soundKey: SoundKeys, volumeMultiplier: number = 1.0) => {
-    console.log(`[useAudio] playSound: Attempting to play '${soundKey}'`);
-    if (!isSoundEnabled) {
-      console.log(`[useAudio] playSound: Sound is disabled. Aborting.`);
-      return;
-    }
-    if (!isInitialized) {
-      console.log(`[useAudio] playSound: Audio not initialized yet. Aborting.`);
-      return;
-    }
-
-    const player = players.current[soundKey];
-    if (!player) {
-      console.error(`[useAudio] playSound: Player for '${soundKey}' not found!`);
+    if (!isSoundEnabled || !isInitialized) {
       return;
     }
 
     const finalVolume = Math.max(0, Math.min(soundVolumeRef.current * volumeMultiplier, 1.0));
-    console.log(`[useAudio] playSound: Playing '${soundKey}' with volume ${finalVolume}`);
 
     try {
+      // Use pre-created player if available
+      let player = players.current[soundKey];
+
+      if (!player) {
+        // Fallback: create new player if not pre-created
+        player = createAudioPlayer(soundPaths[soundKey]);
+        if (!player) {
+          return;
+        }
+        players.current[soundKey] = player;
+      }
+
+      // Rewind and play
+      try {
+        await player.seekTo(0);
+      } catch {}
+
       player.volume = finalVolume;
-      await player.seekTo(0);
-      await player.play();
-      console.log(`[useAudio] playSound: '${soundKey}' played successfully.`);
+      player.play();
 
       if (['correct', 'incorrect', 'levelUp', 'gameover'].includes(soundKey)) {
         FirebaseAnalytics.trackEvent('sound_played', { sound_name: soundKey });
       }
-
     } catch (error) {
-      console.error(`[useAudio] playSound: CRITICAL ERROR during playback of '${soundKey}':`, error);
-      FirebaseAnalytics.trackError('audio_playback_error', {
-        message: `Sound: ${soundKey}, Error: ${error instanceof Error ? error.message : 'Unknown'}`,
-        stack: error instanceof Error ? error.stack : 'N/A',
-        screen: 'playSound',
-      });
+      // Silently ignore errors - audio is non-critical
+      console.log(`[useAudio] Skipped ${soundKey} due to error`);
     }
   };
 
   const playCountdownSound = useCallback(() => {
-    // playSound('countdown', 1);
+    playSound('countdown', 1);
   }, [isSoundEnabled, isInitialized]);
 
   const playCorrectSound = useCallback(() => {
@@ -155,13 +139,13 @@ export const useAudio = () => {
   };
 
   const toggleSound = (enabled: boolean) => {
-    console.log(`[useAudio] Toggling sound effects to: ${enabled}`);
+    // console.log(`[useAudio] Toggling sound effects to: ${enabled}`);
     setIsSoundEnabled(enabled);
     FirebaseAnalytics.trackEvent('sound_toggled', { enabled, type: 'effects' });
   };
 
   const toggleMusic = (enabled: boolean) => {
-    console.log(`[useAudio] Toggling music to: ${enabled}`);
+    // console.log(`[useAudio] Toggling music to: ${enabled}`);
     setIsMusicEnabled(enabled);
     FirebaseAnalytics.trackEvent('sound_toggled', { enabled, type: 'music' });
   };
