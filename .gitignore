@@ -34,6 +34,9 @@ android/.gradle/
 # iOS build outputs (usually large and regenerated)
 ios/build/
 ios/Pods/ # Usually large and managed by pod install
+# APK files (build outputs, can be large)
+*.apk
+*.aab
 
 # Backup & Temp files
 *.orig
