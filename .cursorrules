@@ -4,22 +4,27 @@
 
 AVANT de modifier `/hooks/useAudio.ts` ou `/hooks/game/usePrecisionAudio.ts`:
 1. LIRE `/docs/AUDIO_MIGRATION_GUIDE.md`
-2. Ne JAMAIS utiliser `createAudioPlayer()` avec expo-audio 0.3.5
-3. Toujours utiliser `useAudioPlayer()` hook
+2. Utiliser UNIQUEMENT `expo-av` (pas expo-audio)
+3. expo-audio 0.3.5 est ENTIÈREMENT BUGGÉ dans SDK 52
 
-Bug connu: createAudioPlayer() provoque "Error: Value is undefined, expected an Object" dans SDK 52.
+Bug connu: TOUT expo-audio 0.3.5 provoque "Error: Value is undefined, expected an Object"
 
 ## Pattern Audio Correct
 
 ```typescript
-// ✅ CORRECT
-import { useAudioPlayer } from 'expo-audio';
-const player = useAudioPlayer(require('./sound.wav'));
+// ✅ CORRECT - expo-av
+import { Audio } from 'expo-av';
+const { sound } = await Audio.Sound.createAsync(require('./sound.wav'));
+await sound.playAsync();
 
-// ❌ INTERDIT
-import { createAudioPlayer } from 'expo-audio';
-const player = createAudioPlayer(require('./sound.wav')); // BUG SDK 52
+// ❌ INTERDIT - expo-audio (buggé)
+import { createAudioPlayer, useAudioPlayer } from 'expo-audio';
+const player = createAudioPlayer(...); // CRASH
+const player = useAudioPlayer(...); // CRASH AUSSI
 ```
+
+IMPORTANT: expo-av est un module natif. Après modification audio:
+- Rebuilder: `npx expo prebuild --clean && cd android && ./gradlew assembleDebug`
 
 ## Règles générales
 

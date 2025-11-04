@@ -60,7 +60,7 @@ export default ({ config }) => {
           }
         }
       ],
-      "expo-audio",
+      "expo-asset",
       "expo-router",
       [
         "expo-system-ui",

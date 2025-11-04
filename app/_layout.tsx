@@ -16,6 +16,7 @@ import { FirebaseAnalytics } from '../lib/firebase';
 import { supabase } from '../lib/supabase/supabaseClients';
 import MobileAds from 'react-native-google-mobile-ads';
 import { useAdConsent } from '../hooks/useAdConsent';
+import { AudioProvider } from '../contexts/AudioContext';
 
 const CURRENT_APP_VERSION = Application.nativeApplicationVersion || '1.0.0';
 const APP_VERSION_STORAGE_KEY = '@app_version';
@@ -269,11 +270,13 @@ export default function RootLayout() {
   // console.log('[RootLayout] Rendering Stack Navigator');
   // Le Stack Navigator principal
   return (
-    <Stack screenOptions={{ headerShown: false }}>
-      <Stack.Screen name="(tabs)" />
-      <Stack.Screen name="auth" />
-      <Stack.Screen name="game" />
-      <Stack.Screen name="+not-found" />
-    </Stack>
+    <AudioProvider>
+      <Stack screenOptions={{ headerShown: false }}>
+        <Stack.Screen name="(tabs)" />
+        <Stack.Screen name="auth" />
+        <Stack.Screen name="game" />
+        <Stack.Screen name="+not-found" />
+      </Stack>
+    </AudioProvider>
   );
 }

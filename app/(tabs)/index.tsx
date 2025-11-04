@@ -20,7 +20,6 @@ import {
 } from 'react-native';
 import { useRouter } from 'expo-router';
 import { supabase } from '../../lib/supabase/supabaseClients'; // Chemin relatif vers supabase
-import { createAudioPlayer, AudioPlayer } from 'expo-audio';
 import { User } from '@supabase/supabase-js';
 import { Ionicons } from '@expo/vector-icons';
 import { BannerAd, BannerAdSize } from 'react-native-google-mobile-ads';
@@ -81,45 +80,10 @@ const AnimatedSplashScreen = ({ onAnimationEnd }) => {
   const textOpacity = useRef(new Animated.Value(0)).current;
   const textTranslateY = useRef(new Animated.Value(12)).current;
   const accentWidth = useRef(new Animated.Value(0)).current;
-  const soundRef = useRef<AudioPlayer | null>(null);
 
   const playSplashSound = useCallback(async () => {
-    try {
-      // Vérifier que l'app est au premier plan avant de jouer le son
-      const currentAppState = AppState.currentState;
-      if (currentAppState !== 'active') {
-        console.log('[Audio] Splash: Skipping sound - app not in foreground');
-        return;
-      }
-
-      const playbackVolume = IS_TEST_BUILD ? 0 : 0.18;
-      const player = createAudioPlayer(
-        require('../../assets/sounds/361261__japanyoshithegamer__8-bit-spaceship-startup.wav')
-      );
-      if (player) {
-        player.volume = playbackVolume;
-        soundRef.current = player;
-        player.play();
-      }
-    } catch (error) {
-      // Ignorer silencieusement les erreurs de focus audio
-      const errorMessage = error instanceof Error ? error.message : '';
-      if (errorMessage.includes('AudioFocusNotAcquiredException')) {
-        console.log('[Audio] Splash: Skipped - app in background');
-        return;
-      }
-
-      console.warn('Audio playback error:', error);
-      console.error('[Audio] Splash: playback error', error);
-      FirebaseAnalytics.trackError('audio_playback_error', {
-        message: error instanceof Error ? error.message : 'Unknown error',
-        screen: 'SplashScreen',
-      });
-      if (soundRef.current) {
-        soundRef.current.pause();
-        soundRef.current = null;
-      }
-    }
+    // Splash sound disabled - using WebView audio in game screens only
+    console.log('[Audio] Splash: Sound disabled (WebView audio not initialized yet)');
   }, []);
 
   useEffect(() => {
@@ -187,10 +151,6 @@ const AnimatedSplashScreen = ({ onAnimationEnd }) => {
     return () => {
       clearTimeout(timer);
       clearTimeout(endTimer);
-      if (soundRef.current) {
-        soundRef.current.pause();
-        soundRef.current = null;
-      }
     };
   }, [playSplashSound, onAnimationEnd]);
 

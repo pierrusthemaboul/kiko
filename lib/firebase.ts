@@ -9,7 +9,7 @@ import {
 } from '@react-native-firebase/analytics';
 import Constants from 'expo-constants';
 import { Platform } from 'react-native';
-import { recordNonFatal } from './crash';
+import { recordNonFatal, setUserId as setCrashlyticsUserId } from './crash';
 
 const analyticsInstance = getAnalytics();
 
@@ -149,8 +149,10 @@ export async function initializeAnalytics(userId?: string, isGuest = false) {
   try {
     if (userId) {
       await setUserId(analyticsInstance, userId);
+      await setCrashlyticsUserId(userId);
     } else {
       await setUserId(analyticsInstance, null);
+      await setCrashlyticsUserId(null);
     }
     await setUserProperties(
       analyticsInstance,
