@@ -76,8 +76,8 @@ const AudioWebView = forwardRef<AudioWebViewRef, Props>(({ onReady }, ref) => {
       gameover: new Audio('${audioAssets.gameover}'),
       keyPress: new Audio('${audioAssets.keyPress}'),
       submit: new Audio('${audioAssets.keyPress}'),
-      perfectAnswer: new Audio('${audioAssets.levelUp}'),
-      timerWarning: new Audio('${audioAssets.countdown}'),
+      perfectAnswer: new Audio('${audioAssets.perfectAnswer}'),
+      timerWarning: new Audio('${audioAssets.timerWarning}'),
       timerExpired: new Audio('${audioAssets.gameover}'),
       focusGain: new Audio('${audioAssets.keyPress}'),
       focusLoss: new Audio('${audioAssets.keyPress}'),
@@ -126,6 +126,8 @@ const AudioWebView = forwardRef<AudioWebViewRef, Props>(({ onReady }, ref) => {
         source={{ html: htmlContent }}
         style={styles.hidden}
         pointerEvents="none"
+        androidLayerType="hardware"
+        webviewDebuggingEnabled={false}
         onMessage={(event) => {
           try {
             const data = JSON.parse(event.nativeEvent.data);
