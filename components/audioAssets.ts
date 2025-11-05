@@ -23,6 +23,8 @@ export async function loadAudioAssets(): Promise<AudioAssets> {
     levelUp: require('../assets/sounds/361261__japanyoshithegamer__8-bit-spaceship-startup.wav'),
     perfectAnswer: require('../assets/sounds/423455__ohforheavensake__trumpet-brass-fanfare.wav'),
     timerWarning: require('../assets/sounds/count.wav'),
+    splash: require('../assets/sounds/splash.mp3'),
+    modeSelect: require('../assets/sounds/mode-select.mp3'),
   };
 
   const audioData: AudioAssets = {};

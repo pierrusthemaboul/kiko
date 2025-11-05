@@ -82,6 +82,8 @@ const AudioWebView = forwardRef<AudioWebViewRef, Props>(({ onReady }, ref) => {
       focusGain: new Audio('${audioAssets.keyPress}'),
       focusLoss: new Audio('${audioAssets.keyPress}'),
       focusLevelUp: new Audio('${audioAssets.levelUp}'),
+      splash: new Audio('${audioAssets.splash}'),
+      modeSelect: new Audio('${audioAssets.modeSelect}'),
     };
 
     let currentVolume = 0.24;

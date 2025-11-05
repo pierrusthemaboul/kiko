@@ -29,44 +29,20 @@ const PrecisionLevelCompleteModal: React.FC<PrecisionLevelCompleteModalProps> = 
   onContinue,
 }) => {
   const scaleAnim = useRef(new Animated.Value(0)).current;
-  const glowAnim = useRef(new Animated.Value(0)).current;
 
   useEffect(() => {
     if (isVisible) {
       scaleAnim.setValue(0);
-      glowAnim.setValue(0);
-      Animated.sequence([
-        Animated.spring(scaleAnim, {
-          toValue: 1,
-          useNativeDriver: true,
-          tension: 50,
-          friction: 7
-        }),
-        Animated.loop(
-          Animated.sequence([
-            Animated.timing(glowAnim, {
-              toValue: 1,
-              duration: 1500,
-              useNativeDriver: true,
-            }),
-            Animated.timing(glowAnim, {
-              toValue: 0,
-              duration: 1500,
-              useNativeDriver: true,
-            }),
-          ])
-        ),
-      ]).start();
+      Animated.spring(scaleAnim, {
+        toValue: 1,
+        useNativeDriver: true,
+        tension: 50,
+        friction: 7
+      }).start();
     } else {
       scaleAnim.setValue(0);
-      glowAnim.setValue(0);
     }
-  }, [isVisible, scaleAnim, glowAnim]);
-
-  const glowOpacity = glowAnim.interpolate({
-    inputRange: [0, 1],
-    outputRange: [0.3, 0.8],
-  });
+  }, [isVisible, scaleAnim]);
 
   return (
     <Modal transparent visible={isVisible} animationType="none" statusBarTranslucent>
@@ -77,15 +53,8 @@ const PrecisionLevelCompleteModal: React.FC<PrecisionLevelCompleteModalProps> = 
             colors={[steampunkTheme.cardGradient.start, steampunkTheme.cardGradient.end]}
             style={styles.containerGradient}
           >
-            {/* Header avec icône de succès */}
+            {/* Header simplifié sans icône */}
             <View style={styles.header}>
-              <Animated.View style={[styles.iconGlow, { opacity: glowOpacity }]} />
-              <LinearGradient
-                colors={['#4CAF50', '#45a049']}
-                style={styles.successIcon}
-              >
-                <Ionicons name="trophy" size={56} color="#FFD700" />
-              </LinearGradient>
               <Text style={styles.title}>Niveau Terminé !</Text>
               <Text style={styles.congratsText}>Félicitations !</Text>
             </View>
@@ -187,49 +156,31 @@ const styles = StyleSheet.create({
     }),
   },
   containerGradient: {
-    padding: 24,
+    padding: 20,
     borderWidth: 2,
     borderColor: 'rgba(224, 180, 87, 0.4)',
     borderRadius: 24,
   },
   header: {
     alignItems: 'center',
-    marginBottom: 24,
-  },
-  iconGlow: {
-    position: 'absolute',
-    width: 120,
-    height: 120,
-    borderRadius: 60,
-    backgroundColor: '#FFD700',
-    top: 0,
-  },
-  successIcon: {
-    width: 96,
-    height: 96,
-    borderRadius: 48,
-    justifyContent: 'center',
-    alignItems: 'center',
     marginBottom: 16,
-    borderWidth: 3,
-    borderColor: '#FFD700',
   },
   title: {
-    fontSize: 28,
+    fontSize: 24,
     fontWeight: 'bold',
     color: steampunkTheme.primaryText,
     textAlign: 'center',
-    marginBottom: 8,
+    marginBottom: 6,
   },
   congratsText: {
-    fontSize: 16,
+    fontSize: 14,
     color: steampunkTheme.goldAccent,
     textAlign: 'center',
     fontStyle: 'italic',
   },
   levelSection: {
     alignItems: 'center',
-    marginBottom: 20,
+    marginBottom: 16,
   },
   sectionLabel: {
     fontSize: 14,
@@ -239,45 +190,45 @@ const styles = StyleSheet.create({
     letterSpacing: 1,
   },
   levelBadge: {
-    paddingHorizontal: 24,
-    paddingVertical: 16,
-    borderRadius: 16,
+    paddingHorizontal: 20,
+    paddingVertical: 12,
+    borderRadius: 14,
     alignItems: 'center',
-    minWidth: 200,
+    minWidth: 160,
     borderWidth: 2,
     borderColor: 'rgba(224, 180, 87, 0.3)',
   },
   levelNumber: {
-    fontSize: 48,
+    fontSize: 36,
     fontWeight: 'bold',
     color: steampunkTheme.mainBg,
-    marginBottom: 4,
+    marginBottom: 2,
   },
   levelLabel: {
-    fontSize: 18,
+    fontSize: 16,
     fontWeight: '600',
     color: steampunkTheme.mainBg,
   },
   statsContainer: {
     backgroundColor: 'rgba(0, 0, 0, 0.3)',
-    borderRadius: 16,
-    padding: 16,
-    marginBottom: 20,
-    gap: 12,
+    borderRadius: 14,
+    padding: 14,
+    marginBottom: 16,
+    gap: 10,
   },
   statRow: {
     flexDirection: 'row',
     alignItems: 'center',
-    gap: 12,
+    gap: 10,
   },
   statLabel: {
     flex: 1,
-    fontSize: 15,
+    fontSize: 14,
     color: steampunkTheme.secondaryText,
     fontWeight: '500',
   },
   statValue: {
-    fontSize: 18,
+    fontSize: 16,
     fontWeight: 'bold',
     color: steampunkTheme.primaryText,
   },
@@ -286,51 +237,51 @@ const styles = StyleSheet.create({
   },
   nextLevelSection: {
     alignItems: 'center',
-    marginBottom: 24,
+    marginBottom: 16,
   },
   arrowContainer: {
-    marginBottom: 8,
+    marginBottom: 6,
   },
   nextLevelText: {
-    fontSize: 14,
+    fontSize: 12,
     color: steampunkTheme.secondaryText,
-    marginBottom: 12,
+    marginBottom: 10,
     textTransform: 'uppercase',
     letterSpacing: 1,
   },
   nextLevelBadge: {
-    paddingHorizontal: 32,
-    paddingVertical: 12,
-    borderRadius: 16,
+    paddingHorizontal: 24,
+    paddingVertical: 10,
+    borderRadius: 14,
     alignItems: 'center',
-    minWidth: 180,
+    minWidth: 140,
     borderWidth: 2,
     borderColor: 'rgba(224, 180, 87, 0.5)',
   },
   nextLevelNumber: {
-    fontSize: 36,
+    fontSize: 28,
     fontWeight: 'bold',
     color: '#FFFFFF',
-    marginBottom: 4,
+    marginBottom: 2,
   },
   nextLevelLabel: {
-    fontSize: 16,
+    fontSize: 14,
     fontWeight: '600',
     color: '#FFFFFF',
   },
   continueButton: {
-    borderRadius: 16,
+    borderRadius: 14,
     overflow: 'hidden',
   },
   continueButtonGradient: {
     flexDirection: 'row',
     justifyContent: 'center',
     alignItems: 'center',
-    paddingVertical: 16,
+    paddingVertical: 14,
     gap: 8,
   },
   continueButtonText: {
-    fontSize: 20,
+    fontSize: 18,
     fontWeight: 'bold',
     color: '#FFFFFF',
   },

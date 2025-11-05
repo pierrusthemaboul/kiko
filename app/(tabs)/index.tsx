@@ -21,6 +21,7 @@ import {
 import { useRouter } from 'expo-router';
 import { supabase } from '../../lib/supabase/supabaseClients'; // Chemin relatif vers supabase
 import { User } from '@supabase/supabase-js';
+import { useAudioContext } from '../../contexts/AudioContext';
 import { Ionicons } from '@expo/vector-icons';
 import { BannerAd, BannerAdSize } from 'react-native-google-mobile-ads';
 import { useFonts } from '../../hooks/useFonts'; // Chemin relatif vers useFonts
@@ -81,10 +82,16 @@ const AnimatedSplashScreen = ({ onAnimationEnd }) => {
   const textTranslateY = useRef(new Animated.Value(12)).current;
   const accentWidth = useRef(new Animated.Value(0)).current;
 
+  const { playSound, isReady } = useAudioContext();
+
   const playSplashSound = useCallback(async () => {
-    // Splash sound disabled - using WebView audio in game screens only
-    console.log('[Audio] Splash: Sound disabled (WebView audio not initialized yet)');
-  }, []);
+    if (!isReady) {
+      console.log('[Audio] Splash: WebView not ready yet');
+      return;
+    }
+    console.log('[Audio] Splash: Playing splash sound');
+    playSound('splash');
+  }, [isReady, playSound]);
 
   useEffect(() => {
     // Delay splash sound to ensure EventEmitter is ready

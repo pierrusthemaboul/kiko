@@ -24,6 +24,7 @@ import { getAllQuestsWithProgress } from '@/utils/questSelection';
 import { supabase } from '@/lib/supabase/supabaseClients';
 import { getAdRequestOptions, getAdUnitId } from '@/lib/config/adConfig';
 import { useRewardedPlayAd } from '@/hooks/useRewardedPlayAd';
+import { useAudioContext } from '@/contexts/AudioContext';
 
 const COLORS = {
   background: '#050505',
@@ -46,6 +47,8 @@ export default function Vue1() {
   const { leaderboards, loading: leaderboardsLoading } = useLeaderboardsByMode();
   // Hook pour la pub récompensée (gagner 1 partie)
   const { isLoaded: adLoaded, rewardEarned, showAd, resetReward } = useRewardedPlayAd();
+  // Hook audio pour les sons
+  const { playSound } = useAudioContext();
 
   // État pour les quêtes (daily, weekly, monthly)
   const [quests, setQuests] = React.useState<{
@@ -102,9 +105,12 @@ export default function Vue1() {
         return;
       }
 
+      // Jouer le son de sélection de mode
+      playSound('modeSelect');
+
       router.push(`/game/${mode}`);
     },
-    [router, canStartRun, loadingPlays],
+    [router, canStartRun, loadingPlays, playSound],
   );
 
   const handleLogout = useCallback(async () => {
