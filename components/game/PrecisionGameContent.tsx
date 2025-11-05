@@ -832,7 +832,7 @@ const PrecisionGameContent: React.FC<PrecisionGameContentProps> = ({
                 {hp}/{hpMax}
               </Text>
               <Text style={[styles.hudValueSmall, { fontSize: applySpacing(7, 6), marginTop: 0 }]}>
-                Cap {baseHpCap}{focusHpBonus > 0 ? ` +${focusHpBonus}` : ''}
+                Max {baseHpCap}{focusHpBonus > 0 ? ` +${focusHpBonus}` : ''}
               </Text>
             </View>
             <View style={[styles.focusTrack, { height: applySpacing(2.3, 1.8) }]}>
@@ -980,8 +980,8 @@ const PrecisionGameContent: React.FC<PrecisionGameContentProps> = ({
                             <Text style={styles.resultDifference}>
                               Écart : {lastResult.absDifference} an{lastResult.absDifference > 1 ? 's' : ''}
                             </Text>
-                            {lastResult.absDifference === 0 ? (
-                              <Text style={styles.resultHPBonus}>HP +150</Text>
+                            {lastResult.hpGain > 0 ? (
+                              <Text style={styles.resultHPBonus}>HP +{lastResult.hpGain}</Text>
                             ) : (
                               <Text style={styles.resultHP}>HP -{lastResult.hpLoss}</Text>
                             )}

@@ -271,6 +271,7 @@ export interface PrecisionResult {
   difference: number;
   absDifference: number;
   hpLoss: number;
+  hpGain: number;
   scoreGain: number;
   scoreAfter: number;
   hpAfter: number;
@@ -985,8 +986,9 @@ export function usePrecisionGame() {
   }, [clearTimer, currentEvent, isGameOver, isTimerPaused, lastResult]);
 
   const finalizeResult = useCallback((
-    params: Omit<PrecisionResult, 'scoreAfter' | 'hpAfter' | 'levelAfter' | 'leveledUp' | 'levelBefore' | 'scoreGain' | 'hpLoss'> & {
+    params: Omit<PrecisionResult, 'scoreAfter' | 'hpAfter' | 'levelAfter' | 'leveledUp' | 'levelBefore' | 'scoreGain' | 'hpLoss' | 'hpGain'> & {
       hpLoss: number;
+      hpGain: number;
       scoreGain: number;
       leveledUp: boolean;
       levelBefore: number;
@@ -1004,6 +1006,7 @@ export function usePrecisionGame() {
       difference: params.difference,
       absDifference: params.absDifference,
       hpLoss: params.hpLoss,
+      hpGain: params.hpGain,
       scoreGain: params.scoreGain,
       leveledUp: params.leveledUp,
       levelBefore: params.levelBefore,
@@ -1043,10 +1046,12 @@ export function usePrecisionGame() {
       const hpBefore = hp;
 
       let nextHp = Math.max(0, hpBefore - hpLoss);
+      let hpGain = 0;
 
       // Bonus si la réponse est exacte : restaure un pourcentage du HP max actuel
       if (absDifference === 0) {
-        nextHp = Math.min(hpMax, nextHp + getPerfectGuessBonus(hpMax));
+        hpGain = getPerfectGuessBonus(hpMax);
+        nextHp = Math.min(hpMax, nextHp + hpGain);
       }
 
       let nextScore = scoreBefore + scoreGain;
@@ -1068,6 +1073,7 @@ export function usePrecisionGame() {
         difference,
         absDifference,
         hpLoss,
+        hpGain,
         scoreGain,
         scoreAfter: nextScore,
         hpAfter: nextHp,
@@ -1110,6 +1116,7 @@ export function usePrecisionGame() {
 
     const hpLoss = getTimeoutPenalty(level.id);
     const scoreGain = 0;
+    const hpGain = 0;
 
     const previousLevel = level;
     const nextLevel = getLevelForScore(score);
@@ -1125,6 +1132,7 @@ export function usePrecisionGame() {
       difference: 0,
       absDifference: 0,
       hpLoss,
+      hpGain,
       scoreGain,
       scoreAfter: nextScore,
       hpAfter: nextHp,
@@ -1165,6 +1173,7 @@ export function usePrecisionGame() {
 
     const hpLoss = getTimeoutPenalty(level.id);
     const scoreGain = 0;
+    const hpGain = 0;
 
     const previousLevel = level;
     const nextLevel = getLevelForScore(score);
@@ -1180,6 +1189,7 @@ export function usePrecisionGame() {
       difference: 0,
       absDifference: 0,
       hpLoss,
+      hpGain,
       scoreGain,
       scoreAfter: nextScore,
       hpAfter: nextHp,
