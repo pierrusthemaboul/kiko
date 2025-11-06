@@ -151,6 +151,7 @@ function GameContentA({
   // --- États pour gérer l'affichage conditionnel de fin de partie ---
   const [showWatchAdOffer, setShowWatchAdOffer] = useState(false);
   const [showScoreboard, setShowScoreboard] = useState(false);
+  const [isLoadingAd, setIsLoadingAd] = useState(false);
 
   const isInitialRenderRef = useRef(true); // Pour l'animation d'EventLayoutA
 
@@ -299,6 +300,13 @@ function GameContentA({
     }
   }, [isGameOver, user, adState, showRewardedAd, isAdLoaded]); // Ajout de isAdLoaded aux dépendances
 
+  // --- Effet pour réinitialiser l'état de chargement de la pub ---
+  useEffect(() => {
+    if (showScoreboard || !isGameOver) {
+      setIsLoadingAd(false);
+    }
+  }, [showScoreboard, isGameOver]);
+
   // --- Effet pour marquer la fin du premier rendu significatif ---
   // (Logique inchangée)
   useEffect(() => {
@@ -316,18 +324,32 @@ function GameContentA({
   // --- Fonctions pour gérer l'interaction avec l'offre de publicité ---
   // (Logique inchangée)
   const handleWatchAd = () => {
+    console.log('[GameContentA] handleWatchAd appelé');
+    console.log('[GameContentA] showRewardedAd existe:', !!showRewardedAd);
+    console.log('[GameContentA] isAdLoaded(rewarded):', isAdLoaded?.('rewarded'));
+
     if (showRewardedAd) {
+      console.log('[GameContentA] Appel de showRewardedAd()...');
+      setIsLoadingAd(true); // Activer l'indicateur de chargement
+
       const adTriggered = showRewardedAd();
+      console.log('[GameContentA] showRewardedAd() retourné:', adTriggered);
+
       if (adTriggered) {
+        console.log('[GameContentA] Pub déclenchée avec succès, masquage de l\'offre');
         setShowWatchAdOffer(false); // Cacher l'offre pendant que la pub tourne
+        // L'indicateur de chargement restera actif jusqu'à ce que la pub s'affiche
       } else {
+        console.log('[GameContentA] La pub n\'a pas pu être déclenchée');
+        setIsLoadingAd(false); // Désactiver l'indicateur
         Alert.alert("Oups !", "Impossible de lancer la publicité pour le moment.", [{ text: "OK" }]);
         setShowWatchAdOffer(false);
         setShowScoreboard(true); // Afficher le scoreboard si la pub échoue à démarrer
       }
     } else {
-       setShowWatchAdOffer(false);
-       setShowScoreboard(true); // Afficher le scoreboard si la fonction showRewardedAd n'existe pas
+      console.log('[GameContentA] showRewardedAd n\'existe pas!');
+      setShowWatchAdOffer(false);
+      setShowScoreboard(true); // Afficher le scoreboard si la fonction showRewardedAd n'existe pas
     }
   };
 
@@ -421,17 +443,35 @@ function GameContentA({
                 <TouchableOpacity
                   style={[styles.watchAdButton, styles.watchAdDeclineButton]}
                   onPress={handleDeclineWatchAd}
+                  disabled={isLoadingAd}
                 >
                   <Text style={styles.watchAdDeclineText}>Non, merci</Text>
                 </TouchableOpacity>
                 <TouchableOpacity
-                  style={[styles.watchAdButton, styles.watchAdAcceptButton]}
+                  style={[styles.watchAdButton, styles.watchAdAcceptButton, isLoadingAd && styles.watchAdButtonDisabled]}
                   onPress={handleWatchAd}
+                  disabled={isLoadingAd}
                 >
-                  <Ionicons name="play-circle-outline" size={20} color="white" style={styles.watchAdButtonIcon} />
-                  <Text style={styles.watchAdAcceptText}>D'accord !</Text>
+                  {isLoadingAd ? (
+                    <ActivityIndicator size="small" color="white" />
+                  ) : (
+                    <>
+                      <Ionicons name="play-circle-outline" size={20} color="white" style={styles.watchAdButtonIcon} />
+                      <Text style={styles.watchAdAcceptText}>D'accord !</Text>
+                    </>
+                  )}
                 </TouchableOpacity>
               </View>
+            </View>
+          </View>
+        )}
+
+        {/* --- Overlay de chargement pour la publicité --- */}
+        {isLoadingAd && !showWatchAdOffer && (
+          <View style={styles.loadingAdOverlay}>
+            <View style={styles.loadingAdContainer}>
+              <ActivityIndicator size="large" color={colors.correctGreen} />
+              <Text style={styles.loadingAdText}>Chargement de la publicité...</Text>
             </View>
           </View>
         )}
@@ -624,6 +664,34 @@ const styles = StyleSheet.create({
       flexDirection: 'row',
       alignItems: 'center',
       justifyContent: 'center',
+    },
+    watchAdButtonDisabled: {
+      backgroundColor: '#888', // Gris pour l'état désactivé
+      opacity: 0.6,
+    },
+    loadingAdOverlay: {
+      position: 'absolute',
+      top: 0,
+      left: 0,
+      right: 0,
+      bottom: 0,
+      backgroundColor: 'rgba(0, 0, 0, 0.7)',
+      justifyContent: 'center',
+      alignItems: 'center',
+      zIndex: 2000,
+    },
+    loadingAdContainer: {
+      backgroundColor: 'white',
+      borderRadius: 12,
+      padding: 24,
+      alignItems: 'center',
+      minWidth: 200,
+    },
+    loadingAdText: {
+      marginTop: 16,
+      fontSize: 16,
+      color: '#333',
+      fontWeight: '500',
     },
     watchAdDeclineText: {
       color: '#888', // Gris foncé
