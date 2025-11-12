@@ -216,7 +216,7 @@ export function useAds({
       return true;
     }
 
-    if (adType === 'levelUp' && (currentLevel === 1 || currentLevel === 6 || currentLevel % 5 === 0)) {
+    if (adType === 'levelUp' && (currentLevel === 2 || currentLevel === 6 || currentLevel % 5 === 0)) {
       adLog('log', `canShowAd (${adType}): True for special level (level: ${currentLevel})`);
       return true;
     }

@@ -629,6 +629,15 @@ export function usePrecisionGame() {
       const newHpMax = computeHpMax(levelHpCapRef.current, newLevel);
       const healAmount = Math.max(FOCUS_HEAL_MIN, Math.floor(newHpMax * FOCUS_HEAL_RATIO));
       setHp((prev) => Math.min(newHpMax, prev + healAmount));
+
+      // Track le focus level up et le heal
+      FirebaseAnalytics.trackEvent('precision_focus_level_up', {
+        new_focus_level: newLevel,
+        gained_levels: gainedLevels,
+        heal_amount: healAmount,
+        new_hp_max: newHpMax,
+        game_level: level.id,
+      });
     }
 
     focusGaugeRef.current = gauge;
@@ -708,6 +717,11 @@ export function usePrecisionGame() {
 
         if (insertError) {
           console.error('[usePrecisionGame] Error inserting score in precision_scores:', insertError);
+          FirebaseAnalytics.trackError('precision_score_insert_error', {
+            message: `${insertError.message} (code: ${insertError.code}, score: ${finalScore})`,
+            screen: 'usePrecisionGame',
+            context: 'loadLeaderboards',
+          });
         } else {
           console.log('[usePrecisionGame] Score inserted successfully in precision_scores:', finalScore);
         }
@@ -722,6 +736,11 @@ export function usePrecisionGame() {
 
         if (gameScoresError) {
           console.error('[usePrecisionGame] Error inserting score in game_scores:', gameScoresError);
+          FirebaseAnalytics.trackError('precision_game_scores_insert_error', {
+            message: `${gameScoresError.message} (code: ${gameScoresError.code}, score: ${finalScore})`,
+            screen: 'usePrecisionGame',
+            context: 'loadLeaderboards',
+          });
         } else {
           console.log('[usePrecisionGame] Score inserted successfully in game_scores with mode precision:', finalScore);
         }
@@ -730,6 +749,12 @@ export function usePrecisionGame() {
         // (voir scripts/APPLY_THIS_IN_SUPABASE_SQL_EDITOR.sql)
         if (finalScore > personalBest) {
           setPersonalBest(finalScore);
+          FirebaseAnalytics.trackEvent('precision_new_high_score', {
+            new_score: finalScore,
+            previous_best: personalBest,
+            improvement: finalScore - personalBest,
+            total_events: answeredCount,
+          });
         }
 
         // Apply economy (XP, quests, etc.)
@@ -748,6 +773,11 @@ export function usePrecisionGame() {
           console.log('[usePrecisionGame] Economy applied successfully');
         } catch (economyError) {
           console.error('[usePrecisionGame] Error applying economy:', economyError);
+          FirebaseAnalytics.trackError('precision_economy_error', {
+            message: economyError instanceof Error ? economyError.message : String(economyError),
+            screen: 'usePrecisionGame',
+            context: 'applyEndOfRunEconomy',
+          });
         }
       }
 
@@ -780,6 +810,29 @@ export function usePrecisionGame() {
       console.log('[usePrecisionGame] Monthly scores:', monthlyRes.data, 'error:', monthlyRes.error);
       console.log('[usePrecisionGame] All-time scores:', allTimeRes.data, 'error:', allTimeRes.error);
 
+      // Track les erreurs de récupération des leaderboards
+      if (dailyRes.error) {
+        FirebaseAnalytics.trackError('precision_leaderboard_fetch_error', {
+          message: `Daily: ${dailyRes.error.message}`,
+          screen: 'usePrecisionGame',
+          context: 'loadLeaderboards_daily',
+        });
+      }
+      if (monthlyRes.error) {
+        FirebaseAnalytics.trackError('precision_leaderboard_fetch_error', {
+          message: `Monthly: ${monthlyRes.error.message}`,
+          screen: 'usePrecisionGame',
+          context: 'loadLeaderboards_monthly',
+        });
+      }
+      if (allTimeRes.error) {
+        FirebaseAnalytics.trackError('precision_leaderboard_fetch_error', {
+          message: `All-time: ${allTimeRes.error.message}`,
+          screen: 'usePrecisionGame',
+          context: 'loadLeaderboards_alltime',
+        });
+      }
+
       const formatScores = (scores: any[], scoreField: string = 'score') =>
         (scores || []).map((s, index) => ({
           name: s.display_name?.trim() || 'Joueur Anonyme',
@@ -793,8 +846,14 @@ export function usePrecisionGame() {
         allTime: formatScores(allTimeRes.data || [], 'high_score_precision'),
       });
       setLeaderboardsReady(true);
+      FirebaseAnalytics.leaderboard('precision_summary_loaded');
     } catch (err) {
       console.error('[usePrecisionGame] Error loading leaderboards:', err);
+      FirebaseAnalytics.trackError('precision_leaderboard_load_error', {
+        message: err instanceof Error ? err.message : String(err),
+        screen: 'usePrecisionGame',
+        context: 'loadLeaderboards_catch',
+      });
       setLeaderboards({ daily: [], monthly: [], allTime: [] });
       setLeaderboardsReady(true);
     }
@@ -827,6 +886,11 @@ export function usePrecisionGame() {
       rebuildEventPools(validEvents as Event[]);
     } catch (err) {
       setError('Impossible de charger les événements.');
+      FirebaseAnalytics.trackError('precision_events_load_error', {
+        message: err instanceof Error ? err.message : String(err),
+        screen: 'usePrecisionGame',
+        context: 'loadEvents',
+      });
     } finally {
       setLoading(false);
     }
@@ -932,6 +996,13 @@ export function usePrecisionGame() {
     setTimeLeft(initialTimer);
     justLoadedEventRef.current = true;
     setCurrentEvent(nextEvent);
+
+    // Track le début de la partie
+    FirebaseAnalytics.trackEvent('precision_game_start', {
+      starting_hp: startingHp,
+      hp_cap: baseHp,
+      starting_level: baseLevel.id,
+    });
 
     initializingRef.current = false;
   }, [clearTimer, pickEventForLevel]);

@@ -90,6 +90,11 @@ export default function Vue1() {
         setQuests(allQuests);
       } catch (err) {
         console.error('[QUESTS ERROR] Erreur chargement:', err);
+        FirebaseAnalytics.trackError('quests_load_error', {
+          message: err instanceof Error ? err.message : String(err),
+          screen: 'vue1',
+          context: 'loadQuests',
+        });
       } finally {
         setQuestsLoading(false);
       }
@@ -102,15 +107,27 @@ export default function Vue1() {
     (mode: 'classic' | 'precision') => {
       if (!canStartRun && !loadingPlays) { // Vérifier aussi que le chargement est terminé
         Alert.alert('Plus de parties disponibles', "Vous avez utilisé toutes vos parties pour aujourd'hui.");
+        FirebaseAnalytics.trackEvent('mode_selection_blocked', {
+          mode,
+          remaining_plays: playsInfo?.remaining ?? 0,
+          screen: 'vue1',
+        });
         return;
       }
 
       // Jouer le son de sélection de mode
       playSound('modeSelect');
 
+      // Track la sélection du mode
+      FirebaseAnalytics.trackEvent('mode_selected', {
+        mode,
+        remaining_plays: playsInfo?.remaining ?? 0,
+        screen: 'vue1',
+      });
+
       router.push(`/game/${mode}`);
     },
-    [router, canStartRun, loadingPlays, playSound],
+    [router, canStartRun, loadingPlays, playSound, playsInfo?.remaining],
   );
 
   const handleLogout = useCallback(async () => {
@@ -130,13 +147,27 @@ export default function Vue1() {
   const handleWatchAdForPlay = useCallback(() => {
     if (!adLoaded) {
       Alert.alert('Publicité non disponible', 'La publicité n\'est pas encore chargée. Réessayez dans quelques instants.');
+      FirebaseAnalytics.trackEvent('rewarded_play_ad_not_loaded', {
+        screen: 'vue1',
+        remaining_plays: playsInfo?.remaining ?? 0,
+      });
       return;
     }
+
+    FirebaseAnalytics.trackEvent('rewarded_play_ad_requested', {
+      screen: 'vue1',
+      remaining_plays: playsInfo?.remaining ?? 0,
+    });
+
     const success = showAd();
     if (!success) {
       Alert.alert('Erreur', 'Impossible de lancer la publicité pour le moment.');
+      FirebaseAnalytics.trackError('rewarded_play_ad_show_error', {
+        message: 'Failed to show rewarded ad for extra play',
+        screen: 'vue1',
+      });
     }
-  }, [adLoaded, showAd]);
+  }, [adLoaded, showAd, playsInfo?.remaining]);
 
   // Gérer la récompense gagnée
   useEffect(() => {
@@ -160,14 +191,29 @@ export default function Vue1() {
             if (!error) {
               Alert.alert('Partie gagnée ! 🎉', 'Vous avez gagné 1 partie supplémentaire !');
               refreshPlaysInfo(); // Rafraîchir les infos de parties
+              FirebaseAnalytics.trackEvent('rewarded_play_granted', {
+                screen: 'vue1',
+                new_parties_per_day: newPartiesPerDay,
+                previous_remaining: playsInfo?.remaining ?? 0,
+              });
             } else {
               console.error('[RewardedPlay] Error updating profile:', error);
               Alert.alert('Erreur', 'Impossible d\'ajouter la partie. Contactez le support.');
+              FirebaseAnalytics.trackError('rewarded_play_grant_error', {
+                message: error.message,
+                screen: 'vue1',
+                context: 'update_profile',
+              });
             }
           }
         } catch (error) {
           console.error('[RewardedPlay] Error granting play:', error);
           Alert.alert('Erreur', 'Une erreur est survenue.');
+          FirebaseAnalytics.trackError('rewarded_play_grant_error', {
+            message: error instanceof Error ? error.message : String(error),
+            screen: 'vue1',
+            context: 'catch_block',
+          });
         } finally {
           resetReward();
         }

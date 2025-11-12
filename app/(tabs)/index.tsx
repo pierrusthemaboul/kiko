@@ -94,10 +94,10 @@ const AnimatedSplashScreen = ({ onAnimationEnd }) => {
   }, [isReady, playSound]);
 
   useEffect(() => {
-    // Delay splash sound to ensure EventEmitter is ready
+    // Play splash sound immediately at the start
     const timer = setTimeout(() => {
       playSplashSound();
-    }, 150);
+    }, 0);
 
     Animated.parallel([
       Animated.timing(imageOpacity, {
