@@ -72,33 +72,53 @@ const SPLASH_COLORS = {
 };
 // ---------------------------------------------
 
-// --- Nouveau Splash Screen Animé - Impact sur Fond Clair ---
+// --- Nouveau Splash Screen Animé - Effet Météorite Impact ---
 const AnimatedSplashScreen = ({ onAnimationEnd }) => {
   const containerOpacity = useRef(new Animated.Value(1)).current;
   const imageOpacity = useRef(new Animated.Value(0)).current;
   const imageScale = useRef(new Animated.Value(1.08)).current;
   const vignetteOpacity = useRef(new Animated.Value(0)).current;
-  const textOpacity = useRef(new Animated.Value(0)).current;
-  const textTranslateY = useRef(new Animated.Value(12)).current;
-  const accentWidth = useRef(new Animated.Value(0)).current;
+
+  // Animation météorite pour le titre
+  const titleScale = useRef(new Animated.Value(0.3)).current;
+  const titleOpacity = useRef(new Animated.Value(0)).current;
+  const titleTranslateX = useRef(new Animated.Value(-600)).current;
+  const titleRotate = useRef(new Animated.Value(-15)).current;
+
+  // Effet d'onde de choc
+  const shockwaveScale = useRef(new Animated.Value(0)).current;
+  const shockwaveOpacity = useRef(new Animated.Value(0.8)).current;
+
+  // Sous-titre
+  const subtitleOpacity = useRef(new Animated.Value(0)).current;
+  const subtitleTranslateY = useRef(new Animated.Value(20)).current;
 
   const { playSound, isReady } = useAudioContext();
 
   const playSplashSound = useCallback(async () => {
+    console.log('[Splash] ========================================');
+    console.log('[Splash] playSplashSound called');
+    console.log('[Splash] isReady:', isReady);
+    console.log('[Splash] playSound function available:', !!playSound);
     if (!isReady) {
-      console.log('[Audio] Splash: WebView not ready yet');
+      console.warn('[Splash] ❌ WebView not ready yet - CANNOT PLAY SOUND');
       return;
     }
-    console.log('[Audio] Splash: Playing splash sound');
+    console.log('[Splash] ✅ WebView ready - PLAYING SPLASH SOUND NOW');
     playSound('splash');
+    console.log('[Splash] playSound("splash") called');
+    console.log('[Splash] ========================================');
   }, [isReady, playSound]);
 
   useEffect(() => {
+    console.log('[Splash] useEffect triggered for splash sound');
     // Play splash sound immediately at the start
     const timer = setTimeout(() => {
+      console.log('[Splash] Timeout executed - calling playSplashSound');
       playSplashSound();
     }, 0);
 
+    // Animation du fond
     Animated.parallel([
       Animated.timing(imageOpacity, {
         toValue: 1,
@@ -112,12 +132,6 @@ const AnimatedSplashScreen = ({ onAnimationEnd }) => {
         easing: Easing.out(Easing.cubic),
         useNativeDriver: true,
       }),
-      Animated.timing(accentWidth, {
-        toValue: 1,
-        duration: 1400,
-        easing: Easing.out(Easing.quad),
-        useNativeDriver: false,
-      }),
       Animated.timing(imageScale, {
         toValue: 1,
         duration: SPLASH_VISIBLE_DURATION + 600,
@@ -126,19 +140,70 @@ const AnimatedSplashScreen = ({ onAnimationEnd }) => {
       }),
     ]).start();
 
+    // Animation météorite du titre - arrive avec impact
     Animated.sequence([
       Animated.delay(SPLASH_TEXT_DELAY),
       Animated.parallel([
-        Animated.timing(textOpacity, {
-          toValue: 1,
-          duration: SPLASH_TEXT_FADE_DURATION,
+        // Le titre arrive rapidement depuis la gauche
+        Animated.timing(titleTranslateX, {
+          toValue: 0,
+          duration: 600,
           easing: Easing.out(Easing.cubic),
           useNativeDriver: true,
         }),
-        Animated.spring(textTranslateY, {
+        Animated.timing(titleOpacity, {
+          toValue: 1,
+          duration: 400,
+          easing: Easing.out(Easing.ease),
+          useNativeDriver: true,
+        }),
+        Animated.spring(titleScale, {
+          toValue: 1,
+          tension: 50,
+          friction: 6,
+          useNativeDriver: true,
+        }),
+        Animated.timing(titleRotate, {
           toValue: 0,
-          tension: 35,
-          friction: 7,
+          duration: 600,
+          easing: Easing.out(Easing.cubic),
+          useNativeDriver: true,
+        }),
+        // Onde de choc à l'impact
+        Animated.sequence([
+          Animated.delay(400),
+          Animated.parallel([
+            Animated.timing(shockwaveScale, {
+              toValue: 3,
+              duration: 800,
+              easing: Easing.out(Easing.cubic),
+              useNativeDriver: true,
+            }),
+            Animated.timing(shockwaveOpacity, {
+              toValue: 0,
+              duration: 800,
+              easing: Easing.out(Easing.cubic),
+              useNativeDriver: true,
+            }),
+          ]),
+        ]),
+      ])
+    ]).start();
+
+    // Sous-titre apparaît après l'impact
+    Animated.sequence([
+      Animated.delay(SPLASH_TEXT_DELAY + 700),
+      Animated.parallel([
+        Animated.timing(subtitleOpacity, {
+          toValue: 1,
+          duration: 600,
+          easing: Easing.out(Easing.ease),
+          useNativeDriver: true,
+        }),
+        Animated.spring(subtitleTranslateY, {
+          toValue: 0,
+          tension: 40,
+          friction: 8,
           useNativeDriver: true,
         })
       ])
@@ -161,9 +226,9 @@ const AnimatedSplashScreen = ({ onAnimationEnd }) => {
     };
   }, [playSplashSound, onAnimationEnd]);
 
-  const animatedAccentWidth = accentWidth.interpolate({
-    inputRange: [0, 1],
-    outputRange: ['20%', '72%'],
+  const titleRotateInterpolate = titleRotate.interpolate({
+    inputRange: [-15, 0],
+    outputRange: ['-15deg', '0deg'],
   });
 
   return (
@@ -183,20 +248,36 @@ const AnimatedSplashScreen = ({ onAnimationEnd }) => {
         />
       </Animated.View>
 
-      <Animated.View
-        style={[styles.splashAccent, { width: animatedAccentWidth }]}
-      />
-
+      {/* Onde de choc à l'impact */}
       <Animated.View style={[
-        styles.splashTextContainer,
+        styles.shockwave,
         {
-          opacity: textOpacity,
-          transform: [{ translateY: textTranslateY }],
+          opacity: shockwaveOpacity,
+          transform: [{ scale: shockwaveScale }],
         }
-      ]}>
-        <Text style={styles.splashTitle}>Timalaus</Text>
-        <Text style={styles.splashSubtitle}>Explorez le Temps</Text>
-      </Animated.View>
+      ]} />
+
+      <View style={styles.splashTextContainer}>
+        {/* Titre avec effet météorite */}
+        <Animated.View style={{
+          opacity: titleOpacity,
+          transform: [
+            { translateX: titleTranslateX },
+            { scale: titleScale },
+            { rotate: titleRotateInterpolate },
+          ],
+        }}>
+          <Text style={styles.splashTitle}>Timalaus</Text>
+        </Animated.View>
+
+        {/* Sous-titre */}
+        <Animated.View style={{
+          opacity: subtitleOpacity,
+          transform: [{ translateY: subtitleTranslateY }],
+        }}>
+          <Text style={styles.splashSubtitle}>Explorez le Temps</Text>
+        </Animated.View>
+      </View>
     </Animated.View>
   );
 };
@@ -752,12 +833,14 @@ const styles = StyleSheet.create({
   splashVignette: {
     ...StyleSheet.absoluteFillObject,
   },
-  splashAccent: {
+  shockwave: {
     position: 'absolute',
-    bottom: height * 0.18,
-    height: 1,
-    backgroundColor: SPLASH_COLORS.accent,
-    borderRadius: 999,
+    bottom: height * 0.12,
+    width: 150,
+    height: 150,
+    borderRadius: 75,
+    borderWidth: 3,
+    borderColor: SPLASH_COLORS.accent,
     alignSelf: 'center',
   },
   splashTextContainer: {
@@ -767,11 +850,14 @@ const styles = StyleSheet.create({
     width: '100%',
   },
   splashTitle: {
-    fontSize: 44,
-    fontFamily: 'Montserrat-Bold', // Police personnalisée (doit être chargée)
+    fontSize: 52,
+    fontFamily: 'Montserrat-Bold',
     color: SPLASH_COLORS.textPrimary,
-    letterSpacing: 1.2,
-    marginBottom: 6,
+    letterSpacing: 2,
+    marginBottom: 8,
+    textShadowColor: 'rgba(255, 230, 179, 0.5)',
+    textShadowOffset: { width: 0, height: 0 },
+    textShadowRadius: 20,
   },
   splashSubtitle: {
     fontSize: 15,

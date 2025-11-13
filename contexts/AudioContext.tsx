@@ -26,8 +26,12 @@ export const AudioProvider = ({ children }: Props) => {
   const [isReady, setIsReady] = useState(false);
 
   const playSound = (soundName: string) => {
+    console.log('[AudioContext] playSound called:', soundName, 'isReady:', isReady, 'audioRef:', !!audioRef.current);
     if (isReady && audioRef.current) {
+      console.log('[AudioContext] Calling audioRef.current.playSound for:', soundName);
       audioRef.current.playSound(soundName);
+    } else {
+      console.warn('[AudioContext] Cannot play sound - isReady:', isReady, 'audioRef:', !!audioRef.current);
     }
   };
 
@@ -40,7 +44,10 @@ export const AudioProvider = ({ children }: Props) => {
   return (
     <AudioContext.Provider value={{ playSound, setVolume, isReady }}>
       {children}
-      <AudioWebView ref={audioRef} onReady={() => setIsReady(true)} />
+      <AudioWebView ref={audioRef} onReady={() => {
+        console.log('[AudioContext] AudioWebView is READY!');
+        setIsReady(true);
+      }} />
     </AudioContext.Provider>
   );
 };

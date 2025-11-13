@@ -1481,14 +1481,33 @@ export function usePrecisionGame() {
     if (adState.continueRewardEarned) {
       // Redonner de la vie et continuer
       const bonusHp = Math.max(Math.floor(hpMax * CONTINUE_HP_RATIO), getPerfectGuessBonus(hpMax));
-      setHp(prev => Math.min(hpMax, prev + bonusHp));
+      const newHp = Math.min(hpMax, hp + bonusHp);
+
+      setHp(newHp);
       setShowContinueOffer(false);
-      setIsTimerPaused(false);
       resetContinueReward();
-      loadNextEvent();
       FirebaseAnalytics.trackEvent('precision_continued', { score, hp_restored: bonusHp });
+
+      // Charger le prochain événement directement ici, en s'assurant que HP > 0
+      const nextEvent = pickEventForLevel(level);
+      if (!nextEvent) {
+        setError('Plus aucun événement disponible.');
+        setCurrentEvent(null);
+        return;
+      }
+
+      justLoadedEventRef.current = true;
+      setLastResult(null);
+      const nextTimerLimit = getTimerLimitForEvent(level, nextEvent);
+      setTimerLimit(nextTimerLimit);
+      setTimeLeft(nextTimerLimit);
+      setIsTimerPaused(false);
+      setCurrentEvent(nextEvent);
+
+      // Incrémenter le compteur d'événements
+      setEventsAnsweredInLevel((prev) => prev + 1);
     }
-  }, [adState.continueRewardEarned, score, resetContinueReward, loadNextEvent, hpMax]);
+  }, [adState.continueRewardEarned, score, resetContinueReward, hpMax, hp, level, pickEventForLevel]);
 
   // Forcer le chargement de la pub Continue quand le modal s'affiche
   useEffect(() => {

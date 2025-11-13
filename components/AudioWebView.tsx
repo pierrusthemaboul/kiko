@@ -37,8 +37,10 @@ const AudioWebView = forwardRef<AudioWebViewRef, Props>(({ onReady }, ref) => {
 
   useImperativeHandle(ref, () => ({
     playSound: (soundName: string) => {
-      console.log('[AudioWebView] Playing sound:', soundName);
+      console.log('[AudioWebView Native] ===== PLAYING SOUND:', soundName, '=====');
+      console.log('[AudioWebView Native] WebView ready:', !!webViewRef.current);
       webViewRef.current?.injectJavaScript(`
+        console.log('[AudioWebView] Injecting JavaScript to play: ${soundName}');
         playSound('${soundName}');
         true;
       `);
@@ -62,12 +64,40 @@ const AudioWebView = forwardRef<AudioWebViewRef, Props>(({ onReady }, ref) => {
 <html>
 <head>
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="mobile-web-app-capable" content="yes">
   <style>
     body { margin: 0; padding: 0; }
+    /* Force audio context pour mobile */
+    audio {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 1px;
+      height: 1px;
+      opacity: 0;
+    }
   </style>
 </head>
 <body>
   <script>
+    // Force audio context pour Android
+    const AudioContext = window.AudioContext || window.webkitAudioContext;
+    let audioContext = null;
+
+    try {
+      audioContext = new AudioContext();
+      console.log('[AudioWebView HTML] AudioContext created:', audioContext.state);
+
+      // Débloquer l'audio context
+      if (audioContext.state === 'suspended') {
+        audioContext.resume().then(() => {
+          console.log('[AudioWebView HTML] AudioContext resumed');
+        });
+      }
+    } catch (e) {
+      console.warn('[AudioWebView HTML] AudioContext not supported:', e);
+    }
+
     const sounds = {
       correct: new Audio('${audioAssets.correct}'),
       incorrect: new Audio('${audioAssets.incorrect}'),
@@ -97,11 +127,26 @@ const AudioWebView = forwardRef<AudioWebViewRef, Props>(({ onReady }, ref) => {
     function playSound(name) {
       const sound = sounds[name];
       if (sound) {
+        console.log('[AudioWebView HTML] Playing sound:', name, 'volume:', currentVolume);
         sound.currentTime = 0;
-        sound.volume = currentVolume;
-        sound.play().catch(err => {
-          console.log('Error playing sound:', name, err);
-        });
+
+        // Volume maximum pour le splash
+        if (name === 'splash') {
+          sound.volume = 1.0;
+          console.log('[AudioWebView HTML] SPLASH SOUND - Volume set to MAXIMUM (1.0)');
+        } else {
+          sound.volume = currentVolume;
+        }
+
+        sound.play()
+          .then(() => {
+            console.log('[AudioWebView HTML] Sound started successfully:', name);
+          })
+          .catch(err => {
+            console.error('[AudioWebView HTML] ERROR playing sound:', name, err);
+          });
+      } else {
+        console.error('[AudioWebView HTML] Sound not found:', name);
       }
     }
 
@@ -129,7 +174,7 @@ const AudioWebView = forwardRef<AudioWebViewRef, Props>(({ onReady }, ref) => {
         style={styles.hidden}
         pointerEvents="none"
         androidLayerType="hardware"
-        webviewDebuggingEnabled={false}
+        webviewDebuggingEnabled={true}
         onMessage={(event) => {
           try {
             const data = JSON.parse(event.nativeEvent.data);
@@ -148,6 +193,10 @@ const AudioWebView = forwardRef<AudioWebViewRef, Props>(({ onReady }, ref) => {
         domStorageEnabled={true}
         mediaPlaybackRequiresUserAction={false}
         allowsInlineMediaPlayback={true}
+        mixedContentMode="always"
+        setSupportMultipleWindows={false}
+        allowFileAccess={true}
+        allowUniversalAccessFromFileURLs={true}
       />
     </View>
   );
