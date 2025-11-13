@@ -28,6 +28,13 @@ const PrecisionContinueModal: React.FC<PrecisionContinueModalProps> = ({
 
   useEffect(() => {
     if (isVisible) {
+      console.log('[ContinueModal DIAG] ✅ Modal devient visible');
+      console.log('[ContinueModal DIAG] État:', {
+        adLoaded,
+        currentScore,
+        adTimedOut
+      });
+
       scaleAnim.setValue(0);
       setAdTimedOut(false);
 
@@ -40,11 +47,15 @@ const PrecisionContinueModal: React.FC<PrecisionContinueModalProps> = ({
 
       // Timeout : si la pub ne charge pas après 15s, afficher un message
       if (!adLoaded) {
+        console.log('[ContinueModal DIAG] ⏳ Pub pas chargée, démarrage du timeout de 15s...');
         timeoutRef.current = setTimeout(() => {
           if (!adLoaded) {
+            console.warn('[ContinueModal DIAG] ❌ TIMEOUT: Pub toujours pas chargée après 15s!');
             setAdTimedOut(true);
           }
         }, AD_TIMEOUT_MS);
+      } else {
+        console.log('[ContinueModal DIAG] ✅ Pub déjà chargée lors de l\'affichage du modal');
       }
 
       return () => {
@@ -61,11 +72,12 @@ const PrecisionContinueModal: React.FC<PrecisionContinueModalProps> = ({
         timeoutRef.current = null;
       }
     }
-  }, [isVisible, scaleAnim, adLoaded]);
+  }, [isVisible, scaleAnim, adLoaded, currentScore]);
 
   // Clear timeout si la pub se charge avant la fin du timeout
   useEffect(() => {
     if (adLoaded && timeoutRef.current) {
+      console.log('[ContinueModal DIAG] ✅ Pub chargée, annulation du timeout');
       clearTimeout(timeoutRef.current);
       timeoutRef.current = null;
       setAdTimedOut(false);
@@ -118,7 +130,11 @@ const PrecisionContinueModal: React.FC<PrecisionContinueModalProps> = ({
             <View style={styles.buttonsContainer}>
               <Pressable
                 style={[styles.button, styles.watchButton, !adLoaded && styles.buttonDisabled]}
-                onPress={onWatchAd}
+                onPress={() => {
+                  console.log('[ContinueModal DIAG] 🎬 Bouton "Regarder la publicité" cliqué');
+                  console.log('[ContinueModal DIAG] adLoaded:', adLoaded);
+                  onWatchAd();
+                }}
                 disabled={!adLoaded}
               >
                 <LinearGradient
@@ -132,7 +148,13 @@ const PrecisionContinueModal: React.FC<PrecisionContinueModalProps> = ({
                 </LinearGradient>
               </Pressable>
 
-              <Pressable style={[styles.button, styles.declineButton]} onPress={onDecline}>
+              <Pressable
+                style={[styles.button, styles.declineButton]}
+                onPress={() => {
+                  console.log('[ContinueModal DIAG] ❌ Bouton "Abandonner" cliqué');
+                  onDecline();
+                }}
+              >
                 <Text style={styles.declineButtonText}>Abandonner</Text>
               </Pressable>
             </View>

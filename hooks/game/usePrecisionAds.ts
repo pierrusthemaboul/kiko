@@ -15,15 +15,12 @@ const PRECISION_AD_LOG_ENABLED = (() => {
 
 const precisionAdLog = (level: 'log' | 'warn' | 'error', message: string, ...args: unknown[]) => {
   if (level === 'error') {
-    console.error(`[PrecisionAds] ${message}`, ...args);
     return;
   }
   if (!PRECISION_AD_LOG_ENABLED) return;
   if (level === 'warn') {
-    console.warn(`[PrecisionAds] ${message}`, ...args);
     return;
   }
-  console.log(`[PrecisionAds] ${message}`, ...args);
 };
 
 // Instances des pubs pour le mode Précision
@@ -103,6 +100,7 @@ export function usePrecisionAds() {
     const continueLoaded = continueRewardedAd.addAdEventListener(
       RewardedAdEventType.LOADED,
       () => {
+        console.log('[PrecisionAds DIAG] ✅ Continue Rewarded ad LOADED!');
         precisionAdLog('log', 'Continue Rewarded loaded');
         setAdState(prev => ({ ...prev, continueLoaded: true, continueLoading: false }));
         FirebaseAnalytics.ad('rewarded', 'loaded', 'precision_continue', 0);
@@ -112,11 +110,18 @@ export function usePrecisionAds() {
     const continueError = continueRewardedAd.addAdEventListener(
       AdEventType.ERROR,
       (error) => {
+        console.error('[PrecisionAds DIAG] ❌ Continue Rewarded FAILED to load:', error);
+        console.log('[PrecisionAds DIAG] Error details:', {
+          message: error.message,
+          code: error.code,
+          domain: error.domain
+        });
         precisionAdLog('warn', 'Continue Rewarded failed to load:', error);
         setAdState(prev => ({ ...prev, continueLoaded: false, continueLoading: false }));
         FirebaseAnalytics.ad('rewarded', 'failed', 'precision_continue', 0);
         // Retry plus rapidement (5s au lieu de 30s)
         setTimeout(() => {
+          console.log('[PrecisionAds DIAG] 🔄 Retry: tentative de rechargement dans 5s...');
           setAdState(prev => ({ ...prev, continueLoading: true }));
           continueRewardedAd.load();
         }, 5000);
@@ -164,8 +169,10 @@ export function usePrecisionAds() {
     );
 
     // Chargement initial
+    console.log('[PrecisionAds DIAG] 🚀 Initialisation des pubs...');
     gameOverInterstitial.load();
     setAdState(prev => ({ ...prev, continueLoading: true }));
+    console.log('[PrecisionAds DIAG] 📲 Chargement initial de la pub Continue...');
     continueRewardedAd.load();
 
     return () => {
@@ -202,29 +209,47 @@ export function usePrecisionAds() {
   }, [adState.gameOverLoaded, adState.isShowingAd]);
 
   const showContinueAd = useCallback(() => {
+    // DIAGNOSTIC LOGS
+    console.log('[PrecisionAds DIAG] showContinueAd appelé');
+    console.log('[PrecisionAds DIAG] État actuel:', {
+      continueLoaded: adState.continueLoaded,
+      continueLoading: adState.continueLoading,
+      isShowingAd: adState.isShowingAd,
+      hasContinued: adState.hasContinued,
+      nativeAdLoaded: continueRewardedAd.loaded
+    });
+
     if (!adState.continueLoaded) {
+      console.warn('[PrecisionAds DIAG] ❌ PROBLÈME: Continue ad not loaded');
+      console.log('[PrecisionAds DIAG] Instance native loaded?', continueRewardedAd.loaded);
+      console.log('[PrecisionAds DIAG] continueLoading?', adState.continueLoading);
       precisionAdLog('warn', 'Continue ad not loaded');
       return false;
     }
     if (adState.isShowingAd) {
+      console.warn('[PrecisionAds DIAG] ❌ PROBLÈME: Ad already showing');
       precisionAdLog('warn', 'Ad already showing');
       return false;
     }
     if (adState.hasContinued) {
+      console.warn('[PrecisionAds DIAG] ❌ PROBLÈME: Player already continued once');
       precisionAdLog('warn', 'Player already continued once');
       return false;
     }
     try {
+      console.log('[PrecisionAds DIAG] ✅ Tentative d\'affichage de la pub...');
       FirebaseAnalytics.ad('rewarded', 'triggered', 'precision_continue', 0);
       continueRewardTimeRef.current = 0;
       continueRewardedAd.show();
+      console.log('[PrecisionAds DIAG] ✅ show() appelé avec succès');
       return true;
     } catch (error) {
+      console.error('[PrecisionAds DIAG] ❌ ERREUR lors du show():', error);
       precisionAdLog('error', 'Error showing continue ad:', error);
       FirebaseAnalytics.error('ad_show_error', error instanceof Error ? error.message : 'Unknown', 'usePrecisionAds');
       return false;
     }
-  }, [adState.continueLoaded, adState.isShowingAd, adState.hasContinued]);
+  }, [adState.continueLoaded, adState.isShowingAd, adState.hasContinued, adState.continueLoading]);
 
   const resetContinueReward = useCallback(() => {
     setAdState(prev => ({ ...prev, continueRewardEarned: false }));
@@ -252,15 +277,25 @@ export function usePrecisionAds() {
   }, []);
 
   const forceContinueAdLoad = useCallback(() => {
+    console.log('[PrecisionAds DIAG] forceContinueAdLoad appelé');
+    console.log('[PrecisionAds DIAG] État avant force load:', {
+      continueLoaded: adState.continueLoaded,
+      isShowingAd: adState.isShowingAd,
+      continueLoading: adState.continueLoading
+    });
+
     if (adState.continueLoaded || adState.isShowingAd || adState.continueLoading) {
+      console.log('[PrecisionAds DIAG] ⏭ Skip force load: déjà loaded/showing/loading');
       precisionAdLog('log', 'Continue ad already loaded, showing, or loading');
       return;
     }
     try {
+      console.log('[PrecisionAds DIAG] 🔄 Force loading continue ad...');
       precisionAdLog('log', 'Force loading continue ad');
       setAdState(prev => ({ ...prev, continueLoading: true }));
       continueRewardedAd.load();
     } catch (error) {
+      console.error('[PrecisionAds DIAG] ❌ Error force loading:', error);
       precisionAdLog('error', 'Error force loading continue ad:', error);
       setAdState(prev => ({ ...prev, continueLoading: false }));
     }

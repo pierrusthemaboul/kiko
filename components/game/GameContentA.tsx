@@ -17,6 +17,7 @@ import {
 } from 'react-native';
 import { useRouter } from 'expo-router'; // Gardé si jamais utilisé ailleurs, sinon peut être enlevé
 import { Ionicons } from '@expo/vector-icons';
+import { LinearGradient } from 'expo-linear-gradient';
 
 // Components
 import UserInfo, { UserInfoHandle } from './UserInfo';
@@ -487,37 +488,64 @@ function GameContentA({
       {/* La barre de statut est gérée par le parent */}
       {/* L'Animated.View avec fadeAnim est appliqué par le parent */}
 
-      {/* Header avec UserInfo, Countdown, RewardAnimation */}
-      <View style={styles.header}>
-        {user && (
-          <UserInfo
-            ref={userInfoRef}
-            name={user.name}
-            points={user.points}
-            lives={user.lives}
-            level={level}
-            streak={streak}
-            eventsCompletedInLevel={user.eventsCompletedInLevel}
-            eventsNeededForLevel={currentLevelConfig.eventsNeeded}
-            maxLives={gameMode.maxLives}
-          />
-        )}
-        <View style={styles.countdownContainer}>
-          <Countdown
-             timeLeft={timeLeft}
-             isActive={!isLevelPaused && isImageLoaded && !!user && !!previousEvent && !!displayedEvent && !isGameOver && !showLevelModal}
-          />
-        </View>
+      {/* Header avec UserInfo, Countdown */}
+      <View style={styles.headerWrapper}>
+        <LinearGradient
+          colors={['#c9a876', '#b89968', '#9d7e52', '#a68759', '#8b6f47']}
+          locations={[0, 0.25, 0.5, 0.75, 1]}
+          start={{ x: 0, y: 0 }}
+          end={{ x: 1, y: 1 }}
+          style={styles.header}
+        >
+          {/* Texture granuleuse pour effet vieilli */}
+          <View style={styles.parchmentTexture} />
 
-        {currentReward && (isRewardPositionSet || currentReward.targetPosition) && (
-          <RewardAnimation
-            type={currentReward.type}
-            amount={currentReward.amount}
-            targetPosition={currentReward.targetPosition}
-            onComplete={completeRewardAnimation}
-          />
-        )}
+          {/* Taches et variations de couleur */}
+          <View style={styles.parchmentStain1} />
+          <View style={styles.parchmentStain2} />
+          <View style={styles.parchmentStain3} />
+          <View style={styles.parchmentStain4} />
+
+          {/* Ombre interne en haut */}
+          <View style={styles.headerInnerShadow} />
+
+          {/* Bord déchiré en bas */}
+          <View style={styles.tornEdgeTop} />
+          <View style={styles.tornEdgeBottom} />
+
+          <View style={styles.headerContent}>
+            {user && (
+              <UserInfo
+                ref={userInfoRef}
+                name={user.name}
+                points={user.points}
+                lives={user.lives}
+                level={level}
+                streak={streak}
+                eventsCompletedInLevel={user.eventsCompletedInLevel}
+                eventsNeededForLevel={currentLevelConfig.eventsNeeded}
+                maxLives={gameMode.maxLives}
+              />
+            )}
+            <View style={styles.countdownContainer}>
+              <Countdown
+                 timeLeft={timeLeft}
+                 isActive={!isLevelPaused && isImageLoaded && !!user && !!previousEvent && !!displayedEvent && !isGameOver && !showLevelModal}
+              />
+            </View>
+          </View>
+        </LinearGradient>
       </View>
+
+      {/* RewardAnimation rendu en dehors du header pour être visible partout */}
+      {currentReward && (isRewardPositionSet || currentReward.targetPosition) && (
+        <RewardAnimation
+          type={currentReward.type}
+          amount={currentReward.amount}
+          targetPosition={currentReward.targetPosition}
+          onComplete={completeRewardAnimation}
+        />
+      )}
 
       {/* Contenu principal du jeu avec son animation d'opacité interne (pour le modal) */}
       <Animated.View style={[styles.content, { opacity: contentOpacity }]}>
@@ -534,18 +562,117 @@ const styles = StyleSheet.create({
       flex: 1,
       backgroundColor: 'transparent', // Important pour voir le fond d'écran du parent
     },
+    headerWrapper: {
+      position: 'relative',
+      overflow: 'visible',
+      zIndex: 100,
+      shadowColor: '#000',
+      shadowOffset: { width: 0, height: 4 },
+      shadowOpacity: 0.35,
+      shadowRadius: 6,
+      elevation: 10,
+    },
     header: {
       position: 'relative',
       flexDirection: 'row',
       justifyContent: 'space-between',
       alignItems: 'center',
-      backgroundColor: 'rgba(250, 245, 235, 0.85)', // Fond clair semi-transparent
-      borderBottomColor: 'rgba(0, 0, 0, 0.05)', // Bordure légère
-      zIndex: 1000, // Pour l'animation de récompense
       paddingHorizontal: 15,
-      paddingVertical: Platform.OS === 'android' ? 8 : 10,
+      paddingVertical: Platform.OS === 'android' ? 12 : 14,
+      minHeight: 70,
+      overflow: 'hidden',
+    },
+    // Texture granuleuse pour simuler le papier ancien
+    parchmentTexture: {
+      position: 'absolute',
+      top: 0,
+      left: 0,
+      right: 0,
+      bottom: 0,
+      backgroundColor: 'rgba(139, 111, 71, 0.03)',
+      opacity: 0.6,
+      zIndex: 0,
+    },
+    // Taches de vieillissement - différentes zones plus sombres
+    parchmentStain1: {
+      position: 'absolute',
+      top: 5,
+      left: '10%',
+      width: 60,
+      height: 40,
+      backgroundColor: 'rgba(101, 67, 33, 0.08)',
+      borderRadius: 30,
+      zIndex: 0,
+    },
+    parchmentStain2: {
+      position: 'absolute',
+      top: 15,
+      right: '15%',
+      width: 80,
+      height: 35,
+      backgroundColor: 'rgba(139, 90, 43, 0.06)',
+      borderRadius: 40,
+      zIndex: 0,
+    },
+    parchmentStain3: {
+      position: 'absolute',
+      bottom: 10,
+      left: '40%',
+      width: 50,
+      height: 30,
+      backgroundColor: 'rgba(101, 67, 33, 0.07)',
+      borderRadius: 25,
+      zIndex: 0,
+    },
+    parchmentStain4: {
+      position: 'absolute',
+      top: 20,
+      left: '65%',
+      width: 45,
+      height: 45,
+      backgroundColor: 'rgba(120, 80, 40, 0.05)',
+      borderRadius: 22,
+      zIndex: 0,
+    },
+    // Ombre interne en haut
+    headerInnerShadow: {
+      position: 'absolute',
+      top: 0,
+      left: 0,
+      right: 0,
+      height: 10,
+      backgroundColor: 'rgba(0, 0, 0, 0.12)',
+      zIndex: 0,
+    },
+    // Bords déchirés/irréguliers
+    tornEdgeTop: {
+      position: 'absolute',
+      top: -1,
+      left: 0,
+      right: 0,
+      height: 3,
+      backgroundColor: '#654321',
+      opacity: 0.15,
+      zIndex: 0,
+    },
+    tornEdgeBottom: {
+      position: 'absolute',
+      bottom: 0,
+      left: 0,
+      right: 0,
+      height: 2,
+      backgroundColor: '#654321',
+      opacity: 0.25,
+      zIndex: 0,
       borderBottomWidth: 1,
-      // borderBottomColor: 'rgba(255, 255, 255, 0.2)', // Commenté car fond clair
+      borderBottomColor: 'rgba(101, 67, 33, 0.3)',
+    },
+    headerContent: {
+      flex: 1,
+      flexDirection: 'row',
+      justifyContent: 'space-between',
+      alignItems: 'center',
+      zIndex: 10,
     },
     countdownContainer: {
       marginLeft: 15, // Espace entre UserInfo et Countdown
