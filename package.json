@@ -1,7 +1,7 @@
 {
   "name": "timalaus",
   "main": "expo-router/entry",
-  "version": "1.5.4",
+  "version": "1.4.1",
   "_comment": "📚 Documentation importante : Avant de modifier l'audio, lisez /docs/AUDIO_MIGRATION_GUIDE.md",
   "scripts": {
     "start": "expo start",
@@ -86,6 +86,7 @@
     "@types/react-test-renderer": "^18.3.0",
     "babel-plugin-module-resolver": "^5.0.2",
     "babel-plugin-transform-remove-console": "^6.9.4",
+    "babel-preset-expo": "^54.0.7",
     "csv-writer": "^1.6.0",
     "jest": "^29.2.1",
     "jest-expo": "~52.0.3",

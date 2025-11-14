@@ -1,11 +1,11 @@
 {
   "expo": {
-    "name": "Juno2",
+    "name": "Timalaus",
     "slug": "kiko",
-    "version": "1.4.0",
+    "version": "1.4.1",
     "orientation": "portrait",
     "icon": "./assets/images/logo.png",
-    "scheme": "juno2",
+    "scheme": "timalaus",
     "userInterfaceStyle": "automatic",
     "newArchEnabled": false,
     "splash": {
@@ -19,7 +19,7 @@
     "ios": {
       "supportsTablet": true,
       "bundleIdentifier": "com.pierretulle.juno2",
-      "buildNumber": "4"
+      "buildNumber": "6"
     },
     "android": {
       "adaptiveIcon": {
@@ -27,17 +27,15 @@
         "backgroundColor": "#020817"
       },
       "package": "com.pierretulle.juno2",
-      "versionCode": 5,
+      "versionCode": 6,
       "permissions": [
         "INTERNET",
         "VIBRATE",
-        "MODIFY_AUDIO_SETTINGS",
-        "READ_EXTERNAL_STORAGE",
-        "RECORD_AUDIO",
-        "SYSTEM_ALERT_WINDOW",
-        "WRITE_EXTERNAL_STORAGE"
+        "MODIFY_AUDIO_SETTINGS"
       ],
-      "googleServicesFile": "./google-services.json"
+      "googleServicesFile": "./google-services.json",
+      "userInterfaceStyle": "automatic",
+      "enableEdgeToEdge": true
     },
     "web": {
       "bundler": "metro",
@@ -70,7 +68,8 @@
           "iosAppId": "ca-app-pub-7809209690404525~1711130974"
         }
       ],
-      "@react-native-firebase/app"
+      "@react-native-firebase/app",
+      "./plugins/withCleanPermissions"
     ],
     "experiments": {
       "typedRoutes": true
@@ -84,7 +83,7 @@
       }
     },
     "owner": "pierretulle",
-    "description": "Découvrez l'histoire en devinant l'ordre chronologique des événements. Un jeu ludique et éducatif pour tous âges.",
+    "description": "Timalaus - Voyagez à travers le temps ! Deux modes de jeu : Mode Classique pour deviner l'ordre chronologique des événements, Mode Précision pour retrouver l'année exacte. Un défi éducatif et captivant pour tous les passionnés d'histoire.",
     "primaryColor": "#1D5F9E",
     "privacy": "public",
     "platforms": [

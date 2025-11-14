@@ -1,10 +1,10 @@
-# Conditions d'Utilisation - ChronoLeap
+# Conditions d'Utilisation - Timalaus
 
-**Dernière mise à jour :** 1 novembre 2025
+**Dernière mise à jour :** 14 novembre 2025
 
 ## 1. Introduction
 
-Bienvenue sur ChronoLeap ("l'Application"), développée par Pierre Cousin ("PierrotDev"). En téléchargeant, accédant ou utilisant notre Application, vous acceptez d'être lié par les présentes Conditions d'Utilisation ("Conditions"). Si vous n'êtes pas d'accord avec une partie de ces Conditions, vous ne devez pas utiliser l'Application.
+Bienvenue sur Timalaus ("l'Application"), développée par Pierre Cousin ("PierrotDev"). En téléchargeant, accédant ou utilisant notre Application, vous acceptez d'être lié par les présentes Conditions d'Utilisation ("Conditions"). Si vous n'êtes pas d'accord avec une partie de ces Conditions, vous ne devez pas utiliser l'Application.
 
 ## 2. Licence d'Utilisation
 
