@@ -59,6 +59,15 @@ ios/Pods/ # Usually large and managed by pod install
 # ios/[YourApp]/GoogleService-Info.plist # <-- Ensure this is NOT ignored if file is here
 # google-services.json # <-- Ensure this is NOT ignored if file is at the root
 
+# Google Play Console API credentials (SENSITIVE - DO NOT COMMIT)
+kiko-chrono-*.json
+
+# Twitter API credentials (SENSITIVE - DO NOT COMMIT)
+twitter-credentials.json
+
+# Discord webhook (SENSITIVE - DO NOT COMMIT)
+discord-webhook.json
+
 # IDE configuration files
 .idea/
 *.iml
