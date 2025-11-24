@@ -7,14 +7,13 @@ import {
 } from 'react-native-google-mobile-ads';
 import { FirebaseAnalytics } from '../lib/firebase';
 import { setAdPersonalization } from '../lib/config/adConfig';
+import Constants from 'expo-constants';
 
 const AD_CONSENT_LOG_ENABLED = (() => {
   try {
-    if (typeof process !== 'undefined' && process.env) {
-      const flag = process.env.EXPO_PUBLIC_ADS_LOGS ?? process.env.ADS_DEBUG_LOGS;
-      return flag === 'verbose';
-    }
-  } catch {}
+    const flag = Constants.expoConfig?.extra?.EXPO_PUBLIC_ADS_LOGS;
+    return flag === 'verbose';
+  } catch { }
   return false;
 })();
 

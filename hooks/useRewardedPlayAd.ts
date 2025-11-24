@@ -2,14 +2,13 @@ import { useState, useEffect, useCallback } from 'react';
 import { RewardedAd, RewardedAdEventType, AdEventType } from 'react-native-google-mobile-ads';
 import { getAdRequestOptions, getAdUnitId } from '@/lib/config/adConfig';
 import { FirebaseAnalytics } from '@/lib/firebase';
+import Constants from 'expo-constants';
 
-const REWARDED_PLAY_LOG_ENABLED = (() => {
+const ADS_LOG_ENABLED = (() => {
   try {
-    if (typeof process !== 'undefined' && process.env) {
-      const flag = process.env.EXPO_PUBLIC_ADS_LOGS ?? process.env.ADS_DEBUG_LOGS;
-      return flag === 'verbose';
-    }
-  } catch {}
+    const flag = Constants.expoConfig?.extra?.EXPO_PUBLIC_ADS_LOGS;
+    return flag === 'verbose';
+  } catch { }
   return false;
 })();
 
@@ -18,7 +17,7 @@ const rewardedLog = (level: 'log' | 'warn' | 'error', message: string, ...args: 
     console.error(`[RewardedPlayAd] ${message}`, ...args);
     return;
   }
-  if (!REWARDED_PLAY_LOG_ENABLED) return;
+  if (!ADS_LOG_ENABLED) return;
   if (level === 'warn') {
     console.warn(`[RewardedPlayAd] ${message}`, ...args);
     return;

@@ -2,14 +2,13 @@ import { useState, useEffect, useCallback, useRef } from 'react';
 import { InterstitialAd, RewardedAd, AdEventType, RewardedAdEventType } from 'react-native-google-mobile-ads';
 import { getAdRequestOptions, getAdUnitId } from '@/lib/config/adConfig';
 import { FirebaseAnalytics } from '@/lib/firebase';
+import Constants from 'expo-constants';
 
-const PRECISION_AD_LOG_ENABLED = (() => {
+const ADS_LOG_ENABLED = (() => {
   try {
-    if (typeof process !== 'undefined' && process.env) {
-      const flag = process.env.EXPO_PUBLIC_ADS_LOGS ?? process.env.ADS_DEBUG_LOGS;
-      return flag === 'verbose';
-    }
-  } catch {}
+    const flag = Constants.expoConfig?.extra?.EXPO_PUBLIC_ADS_LOGS;
+    return flag === 'verbose';
+  } catch { }
   return false;
 })();
 
@@ -17,7 +16,7 @@ const precisionAdLog = (level: 'log' | 'warn' | 'error', message: string, ...arg
   if (level === 'error') {
     return;
   }
-  if (!PRECISION_AD_LOG_ENABLED) return;
+  if (!ADS_LOG_ENABLED) return;
   if (level === 'warn') {
     return;
   }

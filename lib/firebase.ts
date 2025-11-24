@@ -2,7 +2,6 @@ import {
   getAnalytics,
   logAppOpen,
   logEvent,
-  logScreenView,
   setUserId,
   setUserProperties,
   setUserProperty,
@@ -170,7 +169,8 @@ export async function initializeAnalytics(userId?: string, isGuest = false) {
 export async function trackScreen(screenName: string, screenClass?: string) {
   try {
     const name = screenName || 'unknown';
-    await logScreenView(analyticsInstance, {
+    // Utiliser logEvent au lieu de logScreenView (deprecated)
+    await logEvent(analyticsInstance, 'screen_view', {
       screen_name: name,
       screen_class: screenClass || name,
     });

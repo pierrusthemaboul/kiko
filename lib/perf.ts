@@ -3,18 +3,19 @@ type TraceController = {
   stop: () => void;
 };
 
-const ENABLE_PERF = (() => {
+import Constants from 'expo-constants';
+
+const PERF_ENABLED = (() => {
   try {
-    return (process.env.EXPO_PUBLIC_ENABLE_PERF ?? 'false') === 'true';
-  } catch {
-    return false;
-  }
+    return (Constants.expoConfig?.extra?.EXPO_PUBLIC_ENABLE_PERF ?? 'false') === 'true';
+  } catch { }
+  return false;
 })();
 
-export const isPerformanceEnabled = () => ENABLE_PERF;
+export const isPerformanceEnabled = () => PERF_ENABLED;
 
 export function trace(name: string): TraceController {
-  if (!ENABLE_PERF) {
+  if (!PERF_ENABLED) {
     return {
       start: () => undefined,
       stop: () => undefined,

@@ -1,5 +1,7 @@
 import React from 'react';
-import { View, Text, Pressable } from 'react-native';
+import { View, Text, Pressable, StyleSheet, Alert } from 'react-native';
+import { Ionicons } from '@expo/vector-icons';
+import { LinearGradient } from 'expo-linear-gradient';
 
 type RankInfo = { key: string; label: string; partiesPerDay: number };
 
@@ -38,9 +40,52 @@ export default function EndRunSummary({ mode, points, result, next, onClose }: E
         </View>
       )}
 
+      {/* Bouton Partager sur TikTok - DEMO MOCKUP */}
+      <Pressable
+        onPress={() => {
+          console.log('[TIKTOK SHARE] Points:', points, 'Rank:', result.rank.label);
+          Alert.alert(
+            '🎯 Score partagé sur TikTok !',
+            `Points: ${points.toLocaleString()}\nTitre: ${result.rank.label}`
+          );
+        }}
+        style={styles.tiktokShareButton}
+      >
+        <LinearGradient colors={['#FF0050', '#000000']} style={styles.tiktokButtonGradient}>
+          <Ionicons name="logo-tiktok" size={24} color="#FFFFFF" />
+          <Text style={styles.tiktokButtonText}>Partager sur TikTok</Text>
+        </LinearGradient>
+      </Pressable>
+
       <Pressable onPress={onClose} style={{ padding: 12, borderRadius: 12, alignItems: 'center', borderWidth: 1 }}>
         <Text>Continuer</Text>
       </Pressable>
     </View>
   );
 }
+
+const styles = StyleSheet.create({
+  tiktokShareButton: {
+    borderRadius: 12,
+    overflow: 'hidden',
+    marginVertical: 10,
+    elevation: 6,
+    shadowColor: '#FF0050',
+    shadowOffset: { width: 0, height: 4 },
+    shadowOpacity: 0.4,
+    shadowRadius: 8,
+  },
+  tiktokButtonGradient: {
+    flexDirection: 'row',
+    alignItems: 'center',
+    justifyContent: 'center',
+    paddingVertical: 16,
+    gap: 10,
+  },
+  tiktokButtonText: {
+    color: '#FFFFFF',
+    fontSize: 18,
+    fontWeight: 'bold',
+    letterSpacing: 0.5,
+  },
+});

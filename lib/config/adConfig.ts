@@ -1,14 +1,14 @@
 // lib/config/adConfig.ts
 import { TestIds } from 'react-native-google-mobile-ads';
+import Constants from 'expo-constants';
 
 const USE_TEST_IDS = __DEV__;
+// Logs activés uniquement si EXPO_PUBLIC_AD_CONFIG_LOGS=verbose
 const AD_CONFIG_LOG_ENABLED = (() => {
   try {
-    if (typeof process !== 'undefined' && process.env) {
-      const flag = process.env.EXPO_PUBLIC_AD_CONFIG_LOGS ?? process.env.AD_CONFIG_LOGS;
-      return flag === 'verbose';
-    }
-  } catch {}
+    const flag = Constants.expoConfig?.extra?.EXPO_PUBLIC_AD_CONFIG_LOGS;
+    return flag === 'verbose';
+  } catch { }
   return false;
 })();
 

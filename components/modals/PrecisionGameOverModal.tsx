@@ -117,6 +117,22 @@ const PrecisionGameOverModal: React.FC<PrecisionGameOverModalProps> = ({
                 </View>
               )}
             </ScrollView>
+            {/* Bouton Partager sur TikTok - DEMO MOCKUP */}
+            <Pressable
+              style={styles.tiktokShareButton}
+              onPress={() => {
+                // Mockup pour démonstration vidéo TikTok
+                console.log('[TIKTOK SHARE] Score:', finalScore, 'Level:', levelReached);
+                // Dans la vraie version, ceci ouvrira TikTok Share Kit
+                alert('🎯 Score partagé sur TikTok !\n\nScore: ' + finalScore.toLocaleString() + '\nNiveau: ' + levelReached);
+              }}
+            >
+              <LinearGradient colors={['#FF0050', '#000000']} style={styles.tiktokButtonGradient}>
+                <Ionicons name="logo-tiktok" size={24} color="#FFFFFF" />
+                <Text style={styles.tiktokButtonText}>Partager sur TikTok</Text>
+              </LinearGradient>
+            </Pressable>
+
             <View style={styles.buttonContainer}>
               <Pressable style={styles.button} onPress={onRestart}>
                 <LinearGradient colors={['#E0B457', '#8C6B2B']} style={styles.buttonGradient}>
@@ -176,6 +192,10 @@ const styles = StyleSheet.create({
   menuButton: { backgroundColor: 'rgba(0, 0, 0, 0.4)', borderWidth: 1, borderColor: steampunkTheme.goldBorderTransparent },
   menuButtonContent: { flexDirection: 'row', alignItems: 'center', justifyContent: 'center', paddingVertical: 14, gap: 8 },
   menuButtonText: { color: steampunkTheme.secondaryText, fontSize: 16, fontWeight: 'bold' },
+  // Styles pour le bouton TikTok
+  tiktokShareButton: { borderRadius: 12, overflow: 'hidden', marginBottom: 15, ...Platform.select({ ios: { shadowColor: '#FF0050', shadowOffset: { width: 0, height: 4 }, shadowOpacity: 0.4, shadowRadius: 8 }, android: { elevation: 6 } }) },
+  tiktokButtonGradient: { flexDirection: 'row', alignItems: 'center', justifyContent: 'center', paddingVertical: 16, gap: 10 },
+  tiktokButtonText: { color: '#FFFFFF', fontSize: 18, fontWeight: 'bold', letterSpacing: 0.5 },
 });
 
 export default PrecisionGameOverModal;

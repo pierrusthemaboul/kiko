@@ -4,14 +4,13 @@ import { pointsToXP } from 'lib/economy/convert';
 import { partiesPerDayFromXP, rankFromXP } from 'lib/economy/ranks';
 import { calculateNewStreak, getTodayDateString } from '@/utils/questHelpers';
 import { shouldUnlockAchievement, ACHIEVEMENTS } from './quests';
+import Constants from 'expo-constants';
 
 const ECONOMY_LOG_ENABLED = (() => {
   try {
-    if (typeof process !== 'undefined' && process.env) {
-      const flag = process.env.EXPO_PUBLIC_ECONOMY_LOGS ?? process.env.ECONOMY_LOGS;
-      return flag === 'verbose';
-    }
-  } catch {}
+    const flag = Constants.expoConfig?.extra?.EXPO_PUBLIC_ECONOMY_LOGS;
+    return flag === 'verbose';
+  } catch { }
   return false;
 })();
 

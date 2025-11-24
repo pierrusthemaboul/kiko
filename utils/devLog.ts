@@ -3,15 +3,13 @@
  * `EXPO_PUBLIC_DEBUG_LOGS` environment variable.
  */
 
-const isEnabled = (() => {
+import Constants from 'expo-constants';
+
+const DEBUG_LOG_ENABLED = (() => {
   try {
-    if (typeof process !== 'undefined' && process.env) {
-      const flag = process.env.EXPO_PUBLIC_DEBUG_LOGS ?? process.env.DEBUG_LOGS;
-      return false; // flag === '1' || flag === 'true';
-    }
-  } catch (err) {
-    // noop – fall back to disabled
-  }
+    const flag = Constants.expoConfig?.extra?.EXPO_PUBLIC_DEBUG_LOGS;
+    return flag === 'verbose';
+  } catch { }
   return false;
 })();
 
@@ -23,7 +21,7 @@ const ALLOWED_TAGS = new Set([
 ]);
 
 export function devLog(tag: string, payload?: unknown) {
-  if (!isEnabled || !ALLOWED_TAGS.has(tag)) return;
+  if (!DEBUG_LOG_ENABLED || !ALLOWED_TAGS.has(tag)) return;
 
   const timestamp = new Date().toISOString();
   if (payload !== undefined) {

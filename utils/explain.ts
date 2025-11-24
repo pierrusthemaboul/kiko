@@ -5,12 +5,12 @@ type LoggedEntry = {
   timestamp: string;
 };
 
-const explainFlag = (() => {
+import Constants from 'expo-constants';
+
+const EXPLAIN_LOG_ENABLED = (() => {
   try {
-    if (typeof process !== 'undefined' && process.env) {
-      const flag = process.env.EXPO_PUBLIC_EXPLAIN_LOGS ?? process.env.EXPLAIN_LOGS;
-      return flag === '1' || flag === 'true';
-    }
+    const flag = Constants.expoConfig?.extra?.EXPO_PUBLIC_EXPLAIN_LOGS;
+    return flag === 'verbose';
   } catch (err) {
     // ignore – default disabled
   }
@@ -18,7 +18,7 @@ const explainFlag = (() => {
 })();
 
 export function explainEnabled(): boolean {
-  return explainFlag;
+  return EXPLAIN_LOG_ENABLED;
 }
 
 export function explainLog(message: string, payload?: unknown) {

@@ -1,13 +1,12 @@
 import { supabase } from '@/lib/supabase/supabaseClients';
 import type { DailyQuest } from '@/lib/economy/quests';
+import Constants from 'expo-constants';
 
 const QUEST_LOG_ENABLED = (() => {
   try {
-    if (typeof process !== 'undefined' && process.env) {
-      const flag = process.env.EXPO_PUBLIC_QUEST_LOGS ?? process.env.QUEST_LOGS;
-      return flag === 'verbose';
-    }
-  } catch {}
+    const flag = Constants.expoConfig?.extra?.EXPO_PUBLIC_QUEST_LOGS;
+    return flag === 'verbose';
+  } catch { }
   return false;
 })();
 
