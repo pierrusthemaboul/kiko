@@ -91,28 +91,8 @@ android {
         applicationId 'com.pierretulle.juno2'
         minSdkVersion rootProject.ext.minSdkVersion
         targetSdkVersion rootProject.ext.targetSdkVersion
-        versionCode 10112
-        versionName "1.5.7"
-
-        // Support for 16KB page sizes (NDK r28 handles this automatically)
-        // Only include 64-bit ABIs as 16KB support is only required for 64-bit
-        ndk {
-            abiFilters 'arm64-v8a', 'x86_64'
-        }
-
-        // Enable 16KB page size support for CMake builds
-        externalNativeBuild {
-            cmake {
-                arguments "-DANDROID_SUPPORT_FLEXIBLE_PAGE_SIZES=ON"
-            }
-        }
-
-        // Additional packaging options for 16KB support
-        packagingOptions {
-            jniLibs {
-                useLegacyPackaging = false
-            }
-        }
+        versionCode 10106
+        versionName "1.5.4"
     }
     signingConfigs {
         debug {

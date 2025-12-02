@@ -8,11 +8,15 @@ import {
   Animated,
   ScrollView,
   Image,
+  Alert,
+  Pressable,
 } from 'react-native';
 import { Ionicons } from '@expo/vector-icons';
 import { LinearGradient } from 'expo-linear-gradient';
 import { colors } from '../../constants/Colors';
 import type { LevelEventSummary } from '@/hooks/types';
+import { ShareScoreButton } from '../ShareScoreButton';
+import { ShareData } from '../../types/sharing';
 
 interface ScoreboardModalProps {
   isVisible: boolean;
@@ -25,6 +29,12 @@ interface ScoreboardModalProps {
   monthlyScores?: Array<{ name: string; score: number; rank: number }>;
   allTimeScores?: Array<{ name: string; score: number; rank: number }>;
   levelsHistory?: Array<{ level: number; events: LevelEventSummary[] }>;
+  gameMode?: 'classic' | 'precision' | 'chrono' | 'relax';
+  userStats?: {
+    totalGames: number;
+    bestScore: number;
+    averageScore: number;
+  };
 }
 
 const ScoreboardModal: React.FC<ScoreboardModalProps> = ({
@@ -38,6 +48,8 @@ const ScoreboardModal: React.FC<ScoreboardModalProps> = ({
   monthlyScores = [],
   allTimeScores = [],
   levelsHistory = [],
+  gameMode = 'classic',
+  userStats,
 }) => {
   // État pour l’onglet des scores (jour, mois, total)
   const [activeTab, setActiveTab] = useState<'daily' | 'monthly' | 'allTime'>('daily');
@@ -378,6 +390,28 @@ const ScoreboardModal: React.FC<ScoreboardModalProps> = ({
           {!showEvents ? (
             <>
               {renderScoreboardContent()}
+
+              {/* Share Score Button */}
+              <View style={styles.shareButtonContainer}>
+                <ShareScoreButton
+                  scoreData={{
+                    score: currentScore,
+                    mode: gameMode === 'precision' ? 'precision' : 'classique',
+                    streak: currentScore, // For classic mode, score represents streak
+                    timestamp: new Date(),
+                    userStats,
+                    bestStreak: personalBest,
+                  }}
+                  onShareComplete={(success, platform) => {
+                    console.log('[SCOREBOARD] Share completed', {
+                      success,
+                      platform,
+                      mode: gameMode,
+                      score: currentScore,
+                    });
+                  }}
+                />
+              </View>
 
               <View style={styles.buttonContainer}>
                 <TouchableOpacity style={styles.button} onPress={onRestart}>
@@ -745,6 +779,11 @@ const styles = StyleSheet.create({
     color: 'white',
     fontWeight: 'bold',
     fontSize: 16,
+  },
+  // Styles pour le conteneur du bouton de partage
+  shareButtonContainer: {
+    marginVertical: 16,
+    paddingHorizontal: 20,
   },
 });
 
