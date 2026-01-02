@@ -4,6 +4,7 @@ import { Ionicons } from '@expo/vector-icons';
 import { LinearGradient } from 'expo-linear-gradient';
 import { BlurView } from 'expo-blur';
 import { steampunkTheme } from '../../constants/Colors';
+import { useImmersiveMode } from '@/hooks/useImmersiveMode';
 
 interface PrecisionLevelCompleteModalProps {
   isVisible: boolean;
@@ -28,6 +29,8 @@ const PrecisionLevelCompleteModal: React.FC<PrecisionLevelCompleteModalProps> = 
   newHpCap,
   onContinue,
 }) => {
+  // Activer le mode immersif quand la modale est visible
+  useImmersiveMode(isVisible);
   const scaleAnim = useRef(new Animated.Value(0)).current;
 
   useEffect(() => {

@@ -9,6 +9,19 @@
       "distribution": "internal",
       "env": {
         "EXPO_PUBLIC_APP_VARIANT": "development"
+      },
+      "android": {
+        "buildType": "apk",
+        "gradleCommand": ":app:assembleDebug"
+      }
+    },
+    "dev": {
+      "distribution": "internal",
+      "env": {
+        "EXPO_PUBLIC_APP_VARIANT": "development"
+      },
+      "android": {
+        "buildType": "apk"
       }
     },
     "preview": {

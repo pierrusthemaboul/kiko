@@ -76,24 +76,29 @@ const AudioWebView = forwardRef<AudioWebViewRef, Props>(({ onReady }, ref) => {
       height: 1px;
       opacity: 0;
     }
+    #unlock-button {
+      position: absolute;
+      width: 100%;
+      height: 100%;
+      top: 0;
+      left: 0;
+      opacity: 0;
+    }
   </style>
 </head>
 <body>
+  <!-- Bouton invisible pour débloquer l'audio sur Android -->
+  <button id="unlock-button"></button>
+
   <script>
     // Force audio context pour Android
     const AudioContext = window.AudioContext || window.webkitAudioContext;
     let audioContext = null;
+    let audioUnlocked = false;
 
     try {
       audioContext = new AudioContext();
       console.log('[AudioWebView HTML] AudioContext created:', audioContext.state);
-
-      // Débloquer l'audio context
-      if (audioContext.state === 'suspended') {
-        audioContext.resume().then(() => {
-          console.log('[AudioWebView HTML] AudioContext resumed');
-        });
-      }
     } catch (e) {
       console.warn('[AudioWebView HTML] AudioContext not supported:', e);
     }
@@ -124,16 +129,68 @@ const AudioWebView = forwardRef<AudioWebViewRef, Props>(({ onReady }, ref) => {
       audio.load();
     });
 
+    // Fonction pour débloquer l'audio
+    function unlockAudio() {
+      if (audioUnlocked) return;
+
+      console.log('[AudioWebView HTML] 🔓 Attempting to unlock audio...');
+
+      if (audioContext && audioContext.state === 'suspended') {
+        audioContext.resume().then(() => {
+          console.log('[AudioWebView HTML] ✅ AudioContext resumed successfully');
+          audioUnlocked = true;
+        }).catch(err => {
+          console.error('[AudioWebView HTML] ❌ Failed to resume AudioContext:', err);
+        });
+      } else {
+        console.log('[AudioWebView HTML] ✅ AudioContext already running, state:', audioContext?.state);
+        audioUnlocked = true;
+      }
+
+      // Jouer un son silencieux pour débloquer (requis sur certains navigateurs Android)
+      const firstSound = sounds.splash;
+      if (firstSound) {
+        const originalVolume = firstSound.volume;
+        firstSound.volume = 0;
+        firstSound.play().then(() => {
+          console.log('[AudioWebView HTML] ✅ Silent audio played successfully for unlock');
+          firstSound.pause();
+          firstSound.currentTime = 0;
+          firstSound.volume = originalVolume;
+        }).catch(err => {
+          console.warn('[AudioWebView HTML] ⚠️  Failed to play silent audio:', err);
+          firstSound.volume = originalVolume;
+        });
+      }
+    }
+
+    // Débloquer automatiquement au chargement
+    document.addEventListener('DOMContentLoaded', () => {
+      console.log('[AudioWebView HTML] DOM loaded, setting up unlock mechanism');
+      const unlockButton = document.getElementById('unlock-button');
+
+      if (unlockButton) {
+        // Simuler un click immédiatement
+        setTimeout(() => {
+          console.log('[AudioWebView HTML] 🖱️  Auto-clicking unlock button');
+          unlockButton.click();
+        }, 50);
+
+        unlockButton.addEventListener('click', unlockAudio);
+        unlockButton.addEventListener('touchstart', unlockAudio);
+      }
+    });
+
     function playSound(name) {
       const sound = sounds[name];
       if (sound) {
         console.log('[AudioWebView HTML] Playing sound:', name, 'volume:', currentVolume);
         sound.currentTime = 0;
 
-        // Volume maximum pour le splash
+        // Volume à 65% pour le splash
         if (name === 'splash') {
-          sound.volume = 1.0;
-          console.log('[AudioWebView HTML] SPLASH SOUND - Volume set to MAXIMUM (1.0)');
+          sound.volume = 0.65;
+          console.log('[AudioWebView HTML] SPLASH SOUND - Volume set to 65% (0.65)');
         } else {
           sound.volume = currentVolume;
         }
@@ -187,7 +244,17 @@ const AudioWebView = forwardRef<AudioWebViewRef, Props>(({ onReady }, ref) => {
             console.log('[AudioWebView] Message parse error:', e);
           }
         }}
-        onLoad={() => console.log('[AudioWebView] WebView loaded')}
+        onLoad={() => {
+          console.log('[AudioWebView] WebView loaded - injecting unlock script');
+          // Injecter le script de déblocage immédiatement
+          webViewRef.current?.injectJavaScript(`
+            console.log('[AudioWebView HTML] Native injection - calling unlockAudio');
+            if (typeof unlockAudio === 'function') {
+              unlockAudio();
+            }
+            true;
+          `);
+        }}
         onError={(e) => console.log('[AudioWebView] WebView error:', e)}
         javaScriptEnabled={true}
         domStorageEnabled={true}

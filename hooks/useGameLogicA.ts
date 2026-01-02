@@ -28,6 +28,7 @@ import {
 import { useAppStateDetection } from './game/useAppStateDetection';
 import { getGameModeConfig, GameModeConfig } from '../constants/gameModes';
 import { applyEndOfRunEconomy } from 'lib/economy/apply';
+import { useGuestPlays } from './useGuestPlays';
 
 const screenWidth = Dimensions.get('window').width;
 
@@ -163,8 +164,19 @@ export function useGameLogicA(initialEvent?: string, modeId?: string) {
     };
   }, [refreshProfile]);
 
-  // Utiliser le nouveau hook pour gérer les parties
+  // Utiliser le nouveau hook pour gérer les parties (utilisateurs connectés)
   const { playsInfo, canStartRun, refreshPlaysInfo } = usePlays();
+
+  // Utiliser le hook pour gérer les parties invité
+  const {
+    guestPlaysUsed,
+    guestPlaysRemaining,
+    guestPlaysLimit,
+    canStartGuestPlay,
+    isLoading: isGuestPlaysLoading,
+    incrementGuestPlays,
+    refreshGuestPlays,
+  } = useGuestPlays();
 
   const baseInitGameWrapper = useCallback(async () => {
     setEndSummary(null);
@@ -931,12 +943,38 @@ export function useGameLogicA(initialEvent?: string, modeId?: string) {
           error: authError,
         } = await supabase.auth.getUser();
 
+        // === MODE INVITÉ ===
         if (authError || !authUser?.id) {
+          // Rafraîchir les infos invité
+          await refreshGuestPlays();
+
+          // Vérifier la limite
+          if (!canStartGuestPlay) {
+            return {
+              ok: false,
+              reason: 'NO_PLAYS_LEFT',
+              message: `Plus de parties disponibles aujourd'hui. Créez un compte pour débloquer jusqu'à 8 parties par jour !`
+            };
+          }
+
+          // Incrémenter le compteur
+          const incremented = await incrementGuestPlays();
+          if (!incremented) {
+            return {
+              ok: false,
+              reason: 'NO_PLAYS_LEFT',
+              message: `Impossible de démarrer la partie.`
+            };
+          }
+
+          // Retourner un succès sans runId (mode invité)
           currentRunIdRef.current = null;
           return {
-            ok: false,
-            reason: 'AUTH_REQUIRED',
-            message: 'Veuillez vous (re)connecter.'
+            ok: true,
+            runId: 'guest-mode',
+            window: todayWindow(),
+            allowed: guestPlaysLimit,
+            used: guestPlaysUsed + 1,
           };
         }
 
@@ -1019,7 +1057,7 @@ export function useGameLogicA(initialEvent?: string, modeId?: string) {
         };
       }
     },
-    [refreshPlaysInfo, canStartRun],
+    [refreshPlaysInfo, canStartRun, refreshGuestPlays, canStartGuestPlay, incrementGuestPlays, guestPlaysLimit, guestPlaysUsed],
   );
 
   const endGame = useCallback(async () => {
@@ -1045,7 +1083,7 @@ export function useGameLogicA(initialEvent?: string, modeId?: string) {
     finalizeCurrentLevelHistory(currentLevelEvents); // Finalize history with events from the last, incomplete level
 
     setTimeout(() => {
-      if (canShowAd()) {
+      if (canShowAd('gameOver')) {
          setPendingAdDisplay('gameOver');
       }
     }, 1500); // Delay ad trigger slightly
@@ -1346,9 +1384,9 @@ export function useGameLogicA(initialEvent?: string, modeId?: string) {
     const currentPendingAd = pendingAdDisplayRef.current;
     console.log('[HANDLE_LEVEL_UP] 📺 Vérification de la publicité:', {
       currentPendingAd,
-      canShowAd: canShowAd(),
+      canShowAd: canShowAd('levelUp'),
     });
-    if (currentPendingAd === 'levelUp' && canShowAd()) {
+    if (currentPendingAd === 'levelUp' && canShowAd('levelUp')) {
       console.log('[HANDLE_LEVEL_UP] Affichage de la publicité interstitielle');
       showLevelUpInterstitial(); // Show the ad *after* resetting state but *before* selecting the next event
       // DO NOT clear pendingAdDisplay here! It will be cleared by the ad system after showing
@@ -1462,6 +1500,14 @@ export function useGameLogicA(initialEvent?: string, modeId?: string) {
     // --- Profil exposé pour la Home (vue1) ---
     profile,
     refreshProfile,
+    // --- Infos parties invité ---
+    guestPlaysInfo: {
+      used: guestPlaysUsed,
+      remaining: guestPlaysRemaining,
+      limit: guestPlaysLimit,
+      canStart: canStartGuestPlay,
+      isLoading: isGuestPlaysLoading,
+    },
   };
 }
 

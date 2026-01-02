@@ -23,11 +23,14 @@ const APP_VERSION_STORAGE_KEY = '@app_version';
 
 SplashScreen.preventAutoHideAsync();
 
+const GUEST_MODE_KEY = '@timalaus_guest_mode';
+
 export default function RootLayout() {
   const [appReady, setAppReady] = useState(false);
   const [initialSetupDone, setInitialSetupDone] = useState(false);
   const [session, setSession] = useState<Session | null>(null);
   const [splashShown, setSplashShown] = useState(false);
+  const [guestMode, setGuestMode] = useState(false);
   const router = useRouter();
   const segments = useSegments(); // Donne les parties de l'URL actuelle
 
@@ -39,24 +42,42 @@ export default function RootLayout() {
     'Montserrat-Bold': require('../assets/fonts/Montserrat-Bold.ttf'),
   });
 
-  // --- NOUVEAU: Cacher la barre de navigation Android ---
+  // --- NOUVEAU: Mode immersif complet pour Android ---
   useEffect(() => {
-    const hideNavigationBar = async () => {
+    const setupImmersiveMode = async () => {
       if (Platform.OS === 'android') {
         try {
-          // console.log('🔧 [NAVBAR] Tentative avec SystemUI...');
+          // Configuration de la status bar
           await SystemUI.setBackgroundColorAsync('#020817');
-          // console.log('✅ [NAVBAR] SystemUI background color set');
+
+          // Configuration de la navigation bar en mode immersive sticky
           await NavigationBar.setVisibilityAsync('hidden');
-          await NavigationBar.setBehaviorAsync('overlay-swipe');
+          await NavigationBar.setBehaviorAsync('inset-swipe');
           await NavigationBar.setBackgroundColorAsync('#020817');
-          // console.log('✅ [NAVBAR] Navigation bar hidden');
+          await NavigationBar.setPositionAsync('absolute');
+
+          // Réappliquer le mode immersif régulièrement (au cas où l'utilisateur fait un swipe)
+          const interval = setInterval(async () => {
+            try {
+              await NavigationBar.setVisibilityAsync('hidden');
+            } catch (e) {
+              // Ignorer les erreurs silencieusement
+            }
+          }, 3000);
+
+          return () => clearInterval(interval);
         } catch (error) {
-          // console.log('❌ [NAVBAR] Erreur SystemUI:', error);
+          console.warn('[IMMERSIVE MODE] Erreur:', error);
         }
       }
     };
-    hideNavigationBar();
+
+    const cleanup = setupImmersiveMode();
+    return () => {
+      if (cleanup instanceof Promise) {
+        cleanup.then(fn => fn && fn());
+      }
+    };
   }, []);
 
   // --- Initialisation (Firebase, Version Check) ---
@@ -184,6 +205,26 @@ export default function RootLayout() {
     return () => clearInterval(interval);
   }, []);
 
+  // --- Vérifier si l'utilisateur est en mode invité ---
+  useEffect(() => {
+    const checkGuestMode = async () => {
+      try {
+        const isGuest = await AsyncStorage.getItem(GUEST_MODE_KEY);
+        if (isGuest === 'true') {
+          setGuestMode(true);
+        }
+      } catch (e) {
+        console.warn('Failed to check guest mode state:', e);
+      }
+    };
+
+    // Vérifier régulièrement si le mode invité est activé
+    const interval = setInterval(checkGuestMode, 500);
+    checkGuestMode();
+
+    return () => clearInterval(interval);
+  }, []);
+
   // --- Gestion Erreur Polices ---
   useEffect(() => {
     if (fontError) {
@@ -219,7 +260,7 @@ export default function RootLayout() {
     // Vérifier si on essaie d'accéder à l'écran d'accueil (index) dans (tabs)
     const isTryingTabsIndex = segments[0] === '(tabs)' && (segments.length === 1 || segments[1] === 'index');
 
-    // console.log(`[Auth Guard] Checking: Session=${session ? 'Yes' : 'No'}, Segments=${segments.join('/')}, InAuth=${inAuthGroup}, IsTryingProtected=${isTryingProtectedGroup}, IsTryingTabsIndex=${isTryingTabsIndex}`);
+    // console.log(`[Auth Guard] Checking: Session=${session ? 'Yes' : 'No'}, GuestMode=${guestMode}, Segments=${segments.join('/')}, InAuth=${inAuthGroup}, IsTryingProtected=${isTryingProtectedGroup}, IsTryingTabsIndex=${isTryingTabsIndex}`);
 
     // Si connecté et sur index, attendre que le splash soit montré puis rediriger vers vue1
     if (session && isTryingTabsIndex && splashShown) {
@@ -235,21 +276,27 @@ export default function RootLayout() {
       return;
     }
 
-    // Si pas de session et essai d'accéder à une zone protégée (sauf index)
-    if (!session && isTryingProtectedGroup && !isTryingTabsIndex) {
-      // console.log('[Auth Guard] No session & trying protected area -> Redirecting to /auth/login');
+    // MODE INVITÉ: Si en mode invité, autoriser l'accès aux zones protégées
+    if (guestMode && isTryingProtectedGroup) {
+      // console.log('[Auth Guard] Guest mode active & trying protected area -> Allowing access');
+      return; // Autoriser l'accès
+    }
+
+    // Si pas de session NI mode invité et essai d'accéder à une zone protégée (sauf index)
+    if (!session && !guestMode && isTryingProtectedGroup && !isTryingTabsIndex) {
+      // console.log('[Auth Guard] No session & no guest mode & trying protected area -> Redirecting to /auth/login');
       router.replace('/auth/login');
       return;
     }
 
-    // Si pas de session et pas sur auth, rediriger vers login
-    if (!session && !inAuthGroup && !isTryingTabsIndex) {
-      // console.log('[Auth Guard] No session & not on auth/index -> Redirecting to /auth/login');
+    // Si pas de session NI mode invité et pas sur auth, rediriger vers login
+    if (!session && !guestMode && !inAuthGroup && !isTryingTabsIndex) {
+      // console.log('[Auth Guard] No session & no guest mode & not on auth/index -> Redirecting to /auth/login');
       router.replace('/auth/login');
       return;
     }
 
-  }, [appReady, session, segments, router, splashShown]);
+  }, [appReady, session, guestMode, segments, router, splashShown]);
   // --- FIN CORRECTION REDIRECTION ---
 
 

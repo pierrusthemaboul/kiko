@@ -7,7 +7,7 @@ export const LEVEL_CONFIGS: Record<number, LevelConfig> = {
     name: "Novice",
     description: "Premiers pas dans l'histoire",
     eventsNeeded: 5,
-    timeGap: { base: 320, variance: 180, minimum: 150 },
+    timeGap: { base: 280, variance: 150, minimum: 120 },
     eventSelection: {
       minDifficulty: 1, maxDifficulty: 1, universalOnly: true, specialEventChance: 0,
       preferModernEvents: true, modernEventThreshold: 1900, modernEventPreference: 0.9, balancePeriods: true
@@ -17,7 +17,7 @@ export const LEVEL_CONFIGS: Record<number, LevelConfig> = {
   },
   2: {
     level: 2, name: "Explorateur", description: "Découverte des événements faciles", eventsNeeded: 6,
-    timeGap: { base: 300, variance: 160, minimum: 130 },
+    timeGap: { base: 250, variance: 130, minimum: 100 },
     eventSelection: {
       minDifficulty: 1, maxDifficulty: 2, universalOnly: false, specialEventChance: 0.05,
       preferModernEvents: true, modernEventThreshold: 1850, modernEventPreference: 0.8, balancePeriods: true
@@ -27,7 +27,7 @@ export const LEVEL_CONFIGS: Record<number, LevelConfig> = {
   },
   3: {
     level: 3, name: "Initié", description: "Introduction aux événements moyens", eventsNeeded: 7,
-    timeGap: { base: 260, variance: 140, minimum: 110 },
+    timeGap: { base: 180, variance: 90, minimum: 70 },
     eventSelection: {
       minDifficulty: 1, maxDifficulty: 3, universalOnly: false, specialEventChance: 0.1,
       preferModernEvents: true, modernEventThreshold: 1800, modernEventPreference: 0.7, balancePeriods: true
@@ -37,7 +37,7 @@ export const LEVEL_CONFIGS: Record<number, LevelConfig> = {
   },
   4: {
     level: 4, name: "Voyageur Temporel", description: "Événements faciles et moyens mélangés", eventsNeeded: 8,
-    timeGap: { base: 350, variance: 150, minimum: 150 },
+    timeGap: { base: 150, variance: 75, minimum: 60 },
     eventSelection: {
       minDifficulty: 2, maxDifficulty: 3, universalOnly: false, specialEventChance: 0.15,
       preferModernEvents: true, modernEventThreshold: 1700, modernEventPreference: 0.6, balancePeriods: true
@@ -47,7 +47,7 @@ export const LEVEL_CONFIGS: Record<number, LevelConfig> = {
   },
   5: {
     level: 5, name: "Chroniqueur", description: "Principalement des événements moyens", eventsNeeded: 9,
-    timeGap: { base: 300, variance: 100, minimum: 100 },
+    timeGap: { base: 120, variance: 60, minimum: 50 },
     eventSelection: {
       minDifficulty: 2, maxDifficulty: 4, universalOnly: false, specialEventChance: 0.2,
       preferModernEvents: true, modernEventThreshold: 1600, modernEventPreference: 0.4, balancePeriods: true
@@ -57,7 +57,7 @@ export const LEVEL_CONFIGS: Record<number, LevelConfig> = {
   },
   6: {
     level: 6, name: "Historien Amateur", description: "Introduction aux événements difficiles", eventsNeeded: 10,
-    timeGap: { base: 250, variance: 100, minimum: 75 },
+    timeGap: { base: 100, variance: 50, minimum: 40 },
     eventSelection: {
       minDifficulty: 3, maxDifficulty: 4, universalOnly: false, specialEventChance: 0.25,
       preferModernEvents: false, balancePeriods: true
@@ -67,7 +67,7 @@ export const LEVEL_CONFIGS: Record<number, LevelConfig> = {
   },
   7: {
     level: 7, name: "Historien Éclairé", description: "Événements moyens et difficiles", eventsNeeded: 11,
-    timeGap: { base: 200, variance: 75, minimum: 50 },
+    timeGap: { base: 80, variance: 40, minimum: 30 },
     eventSelection: {
       minDifficulty: 3, maxDifficulty: 5, universalOnly: false, specialEventChance: 0.3,
       preferModernEvents: false, balancePeriods: true
@@ -77,7 +77,7 @@ export const LEVEL_CONFIGS: Record<number, LevelConfig> = {
   },
   8: {
     level: 8, name: "Maître du Temps", description: "Tous types d'événements commencent à apparaître", eventsNeeded: 12,
-    timeGap: { base: 150, variance: 75, minimum: 50 },
+    timeGap: { base: 65, variance: 30, minimum: 25 },
     eventSelection: {
       minDifficulty: 2, maxDifficulty: 5, universalOnly: false, specialEventChance: 0.35,
       preferModernEvents: false, balancePeriods: true
@@ -87,7 +87,7 @@ export const LEVEL_CONFIGS: Record<number, LevelConfig> = {
   },
   9: {
     level: 9, name: "Savant Historique", description: "Événements complexes à démêler", eventsNeeded: 13,
-    timeGap: { base: 125, variance: 50, minimum: 40 },
+    timeGap: { base: 50, variance: 25, minimum: 20 },
     eventSelection: {
       minDifficulty: 3, maxDifficulty: 6, universalOnly: false, specialEventChance: 0.4,
       preferModernEvents: false, balancePeriods: true
@@ -97,7 +97,7 @@ export const LEVEL_CONFIGS: Record<number, LevelConfig> = {
   },
   10: {
     level: 10, name: "Expert Historien", description: "Principalement des événements difficiles", eventsNeeded: 14,
-    timeGap: { base: 100, variance: 50, minimum: 30 },
+    timeGap: { base: 40, variance: 20, minimum: 15 },
     eventSelection: {
       minDifficulty: 4, maxDifficulty: 6, universalOnly: false, specialEventChance: 0.45,
       preferModernEvents: false, balancePeriods: true
@@ -107,7 +107,7 @@ export const LEVEL_CONFIGS: Record<number, LevelConfig> = {
   },
   11: {
     level: 11, name: "Grand Historien", description: "Un défi pour les érudits", eventsNeeded: 15,
-    timeGap: { base: 80, variance: 40, minimum: 25 },
+    timeGap: { base: 30, variance: 15, minimum: 12 },
     eventSelection: {
       minDifficulty: 4, maxDifficulty: 7, universalOnly: false, specialEventChance: 0.5,
       preferModernEvents: false, balancePeriods: true
@@ -117,7 +117,7 @@ export const LEVEL_CONFIGS: Record<number, LevelConfig> = {
   },
   12: {
     level: 12, name: "Historien Légendaire", description: "Seuls les plus grands réussissent", eventsNeeded: 16,
-    timeGap: { base: 60, variance: 30, minimum: 20 },
+    timeGap: { base: 25, variance: 12, minimum: 10 },
     eventSelection: {
       minDifficulty: 5, maxDifficulty: 7, universalOnly: false, specialEventChance: 0.55,
       preferModernEvents: false, balancePeriods: true
@@ -127,7 +127,7 @@ export const LEVEL_CONFIGS: Record<number, LevelConfig> = {
   },
   13: {
     level: 13, name: "Maître Historien", description: "Ultime épreuve de connaissance", eventsNeeded: 17,
-    timeGap: { base: 40, variance: 20, minimum: 15 },
+    timeGap: { base: 20, variance: 10, minimum: 8 },
     eventSelection: {
       minDifficulty: 5, maxDifficulty: 7, universalOnly: false, specialEventChance: 0.6,
       preferModernEvents: false, balancePeriods: true
@@ -137,7 +137,7 @@ export const LEVEL_CONFIGS: Record<number, LevelConfig> = {
   },
   14: {
     level: 14, name: "Oracle du Temps", description: "Seul le temps nous le dira", eventsNeeded: 18,
-    timeGap: { base: 20, variance: 10, minimum: 10 },
+    timeGap: { base: 15, variance: 8, minimum: 6 },
     eventSelection: {
       minDifficulty: 6, maxDifficulty: 7, universalOnly: false, specialEventChance: 0.65,
       preferModernEvents: false, balancePeriods: true

@@ -11,7 +11,7 @@ import {
 } from 'react-native';
 import { useRouter } from 'expo-router';
 import { Ionicons } from '@expo/vector-icons';
-import { BannerAd, BannerAdSize } from 'react-native-google-mobile-ads';
+import { BannerAd, BannerAdSize, AdEventType } from 'react-native-google-mobile-ads';
 import { FirebaseAnalytics } from '@/lib/firebase';
 import { useGameLogicA } from '@/hooks/useGameLogicA';
 import { usePlays } from '@/hooks/usePlays'; // Importer le nouveau hook
@@ -39,9 +39,9 @@ const COLORS = {
 
 export default function Vue1() {
   const router = useRouter();
-  // On utilise useGameLogicA principalement pour le profil
-  const { profile } = useGameLogicA();
-  // On utilise usePlays spécifiquement pour les infos de parties
+  // On utilise useGameLogicA principalement pour le profil et les infos invité
+  const { profile, guestPlaysInfo } = useGameLogicA();
+  // On utilise usePlays spécifiquement pour les infos de parties (utilisateurs connectés)
   const { playsInfo, canStartRun, loadingPlays, refreshPlaysInfo } = usePlays();
   // On utilise useLeaderboardsByMode pour les classements séparés par mode
   const { leaderboards, loading: leaderboardsLoading } = useLeaderboardsByMode();
@@ -66,10 +66,26 @@ export default function Vue1() {
     () => `Titre : ${rank.label} · ${xp.toLocaleString('fr-FR')} XP`,
     [rank.label, xp]
   );
-  const headerPlays = useMemo(
-    () => `${playsInfo?.remaining ?? 0} parties restantes`,
-    [playsInfo?.remaining]
-  );
+
+  // Afficher les parties restantes : invité ou connecté
+  const headerPlays = useMemo(() => {
+    if (!profile?.id) {
+      // Mode invité
+      return `${guestPlaysInfo.remaining} parties restantes (mode invité)`;
+    }
+    // Mode connecté
+    return `${playsInfo?.remaining ?? 0} parties restantes`;
+  }, [profile?.id, playsInfo?.remaining, guestPlaysInfo.remaining]);
+
+  // Déterminer si on peut jouer : invité ou connecté
+  const canPlay = useMemo(() => {
+    if (!profile?.id) {
+      // Mode invité : utiliser guestPlaysInfo
+      return guestPlaysInfo.canStart;
+    }
+    // Mode connecté : utiliser canStartRun
+    return canStartRun;
+  }, [profile?.id, guestPlaysInfo.canStart, canStartRun]);
 
 
   useEffect(() => {
@@ -80,13 +96,16 @@ export default function Vue1() {
   useEffect(() => {
     async function loadQuests() {
       if (!profile?.id) {
+        // Réinitialiser les quêtes si l'utilisateur se déconnecte
+        setQuests({ daily: [], weekly: [], monthly: [] });
         setQuestsLoading(false);
         return;
       }
 
       setQuestsLoading(true);
       try {
-        const allQuests = await getAllQuestsWithProgress(profile.id);
+        // NOUVEAU: Passer le rank index pour le scaling des quêtes
+        const allQuests = await getAllQuestsWithProgress(profile.id, rank.index);
         setQuests(allQuests);
       } catch (err) {
         console.error('[QUESTS ERROR] Erreur chargement:', err);
@@ -101,15 +120,37 @@ export default function Vue1() {
     }
 
     loadQuests();
-  }, [profile?.id]);
+  }, [profile?.id, rank.index]);
 
   const handleModePress = useCallback(
     (mode: 'classic' | 'precision') => {
-      if (!canStartRun && !loadingPlays) { // Vérifier aussi que le chargement est terminé
-        Alert.alert('Plus de parties disponibles', "Vous avez utilisé toutes vos parties pour aujourd'hui.");
+      // Déterminer si on peut démarrer : invité ou connecté
+      const canStart = !profile?.id ? guestPlaysInfo.canStart : canStartRun;
+      const remaining = !profile?.id ? guestPlaysInfo.remaining : (playsInfo?.remaining ?? 0);
+
+      if (!canStart && !loadingPlays && !guestPlaysInfo.isLoading) {
+        const message = !profile?.id
+          ? "Vous avez utilisé vos 3 parties gratuites pour aujourd'hui.\n\nCréez un compte pour débloquer jusqu'à 8 parties par jour et sauvegarder votre progression !"
+          : "Vous avez utilisé toutes vos parties pour aujourd'hui.";
+
+        Alert.alert('Plus de parties disponibles', message, [
+          { text: 'OK', style: 'cancel' },
+          ...(!profile?.id ? [{
+            text: 'Créer un compte',
+            onPress: () => {
+              FirebaseAnalytics.trackEvent('guest_convert_prompt', {
+                source: 'no_plays_left',
+                screen: 'vue1',
+              });
+              router.push('/auth/signup');
+            }
+          }] : [])
+        ]);
+
         FirebaseAnalytics.trackEvent('mode_selection_blocked', {
           mode,
-          remaining_plays: playsInfo?.remaining ?? 0,
+          remaining_plays: remaining,
+          is_guest: !profile?.id,
           screen: 'vue1',
         });
         return;
@@ -121,19 +162,26 @@ export default function Vue1() {
       // Track la sélection du mode
       FirebaseAnalytics.trackEvent('mode_selected', {
         mode,
-        remaining_plays: playsInfo?.remaining ?? 0,
+        remaining_plays: remaining,
+        is_guest: !profile?.id,
         screen: 'vue1',
       });
 
       router.push(`/game/${mode}`);
     },
-    [router, canStartRun, loadingPlays, playSound, playsInfo?.remaining],
+    [router, canStartRun, loadingPlays, playSound, playsInfo?.remaining, profile?.id, guestPlaysInfo],
   );
 
   const handleLogout = useCallback(async () => {
     try {
       FirebaseAnalytics.trackEvent('user_logout', { from_screen: 'vue1' });
       await supabase.auth.signOut();
+
+      // Désactiver le mode invité
+      const AsyncStorage = (await import('@react-native-async-storage/async-storage')).default;
+      await AsyncStorage.removeItem('@timalaus_guest_mode');
+      console.log('[Guest Mode] Mode invité désactivé');
+
       router.replace('/auth/login');
     } catch (error) {
       Alert.alert('Erreur', 'Impossible de se déconnecter');
@@ -259,9 +307,9 @@ export default function Vue1() {
           <Text style={styles.sectionTitle}>Choisissez votre destin</Text>
           <View style={styles.modeRow}>
             <TouchableOpacity
-              style={[styles.modeCard, !canStartRun && { opacity: 0.5 }]}
+              style={[styles.modeCard, !canPlay && { opacity: 0.5 }]}
               onPress={() => handleModePress('classic')}
-              disabled={!canStartRun}
+              disabled={!canPlay}
             >
               <View style={styles.modeIconCircle}>
                 <Ionicons name="flash-outline" size={26} color={COLORS.gold} />
@@ -273,9 +321,9 @@ export default function Vue1() {
               <Ionicons name="chevron-forward" size={22} color={COLORS.gold} />
             </TouchableOpacity>
             <TouchableOpacity
-              style={[styles.modeCard, !canStartRun && { opacity: 0.5 }]}
+              style={[styles.modeCard, !canPlay && { opacity: 0.5 }]}
               onPress={() => handleModePress('precision')}
-              disabled={!canStartRun}
+              disabled={!canPlay}
             >
               <View style={styles.modeIconCircle}>
                 <Ionicons name="analytics-outline" size={26} color={COLORS.gold} />
@@ -294,6 +342,19 @@ export default function Vue1() {
             unitId={getAdUnitId('BANNER_HOME')}
             size={BannerAdSize.ANCHORED_ADAPTIVE_BANNER}
             requestOptions={getAdRequestOptions()}
+            onAdLoaded={() => {
+              console.log('[BANNER_HOME] Ad loaded successfully');
+              FirebaseAnalytics.trackEvent('banner_ad_loaded', { screen: 'vue1', position: 'home' });
+            }}
+            onAdFailedToLoad={(error) => {
+              console.error('[BANNER_HOME] Failed to load ad:', error);
+              FirebaseAnalytics.trackError('banner_ad_failed', {
+                screen: 'vue1',
+                position: 'home',
+                error_code: error.code,
+                error_message: error.message,
+              });
+            }}
           />
         </View>
 

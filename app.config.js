@@ -1,11 +1,13 @@
 export default ({ config }) => {
+  const IS_DEV = process.env.EXPO_PUBLIC_APP_VARIANT === 'development';
+
   return {
     ...config,
-    name: "Timalaus",
+    name: IS_DEV ? "Timalaus DEV" : "Timalaus",
     slug: "kiko",
     version: "1.5.4",
     orientation: "portrait",
-    icon: "./assets/images/icon.png",
+    icon: "./assets/images/oklogo.png",
     scheme: "juno2",
     userInterfaceStyle: "automatic",
     splash: {
@@ -17,16 +19,16 @@ export default ({ config }) => {
     ios: {
       ...config.ios,
       supportsTablet: true,
-      bundleIdentifier: "com.pierretulle.juno2",
+      bundleIdentifier: IS_DEV ? "com.pierretulle.juno2.dev" : "com.pierretulle.juno2",
       buildNumber: "5"
     },
     android: {
       ...config.android,
       adaptiveIcon: {
-        foregroundImage: "./assets/images/logo3.png",
-        backgroundColor: "#FFFFFF"
+        foregroundImage: "./assets/images/adaptive-icon.png",
+        backgroundColor: "#020817"
       },
-      package: "com.pierretulle.juno2",
+      package: IS_DEV ? "com.pierretulle.juno2.dev" : "com.pierretulle.juno2",
       softwareKeyboardLayoutMode: "pan",
       permissions: [
         "android.permission.INTERNET",
@@ -40,7 +42,8 @@ export default ({ config }) => {
         "android.permission.ACCESS_ADSERVICES_AD_ID"
       ],
       versionCode: 10106,
-      googleServicesFile: process.env.GOOGLE_SERVICES_JSON || "./google-services.json"
+      googleServicesFile: process.env.GOOGLE_SERVICES_JSON || "./google-services.json",
+      userInterfaceStyle: "dark"
     },
     web: {
       bundler: "metro",
@@ -66,12 +69,14 @@ export default ({ config }) => {
         "expo-system-ui",
         {
           androidNavigationBar: {
-            visible: false,
+            visible: "immersive",
             backgroundColor: "#020817"
           },
           androidStatusBar: {
             barStyle: "light-content",
-            backgroundColor: "#020817"
+            backgroundColor: "#020817",
+            hidden: false,
+            translucent: true
           }
         }
       ],

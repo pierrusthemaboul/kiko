@@ -402,6 +402,7 @@ function GameContentA({
           visible={showLevelModal}
           level={level}
           onStart={handleLevelUp}
+          onReturnToMenu={onActualMenu}
           name={currentLevelConfig.name}
           description={currentLevelConfig.description}
           requiredEvents={currentLevelConfig.eventsNeeded}

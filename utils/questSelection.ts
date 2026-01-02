@@ -158,6 +158,12 @@ function getResetDate(questType: 'daily' | 'weekly' | 'monthly'): string {
  * Initialise la progression pour toutes les quêtes
  */
 async function initializeQuestProgress(userId: string, quests: DailyQuest[]): Promise<void> {
+  // Vérifier que l'utilisateur est valide (pas null ou vide)
+  if (!userId || userId === 'null' || userId === 'undefined') {
+    console.warn('[QUESTS INIT] ⚠️ Tentative d\'initialisation avec userId invalide, abandon');
+    return;
+  }
+
   const progressEntries = quests.map(quest => {
     const resetAt = getResetDate(quest.quest_type as 'daily' | 'weekly' | 'monthly');
 
@@ -207,9 +213,20 @@ async function cleanExpiredQuests(userId: string): Promise<void> {
 /**
  * Récupère toutes les quêtes (daily, weekly, monthly) avec leur progression
  * OPTIMISÉ: Lazy loading - crée les quêtes uniquement à la demande
+ * NOUVELLE FONCTIONNALITÉ: Scaling automatique par grade
  */
-export async function getAllQuestsWithProgress(userId: string) {
+export async function getAllQuestsWithProgress(userId: string, rankIndex: number = 0) {
   try {
+    // Vérifier que l'utilisateur est valide avant toute opération
+    if (!userId || userId === 'null' || userId === 'undefined') {
+      console.warn('[QUESTS] ⚠️ userId invalide, retour de quêtes vides');
+      return {
+        daily: [],
+        weekly: [],
+        monthly: [],
+      };
+    }
+
     // Nettoyer les quêtes expirées avant de récupérer
     await cleanExpiredQuests(userId);
 
@@ -220,7 +237,17 @@ export async function getAllQuestsWithProgress(userId: string) {
       getMonthlyQuests(),
     ]);
 
-    const allQuests = [...dailyQuests, ...weeklyQuests, ...monthlyQuests];
+    // NOUVEAU: Appliquer le scaling par grade
+    const { getPlayerTier, scaleQuests } = await import('./questScaling');
+    const playerTier = getPlayerTier(rankIndex);
+
+    const scaledDailyQuests = scaleQuests(dailyQuests, playerTier);
+    const scaledWeeklyQuests = scaleQuests(weeklyQuests, playerTier);
+    const scaledMonthlyQuests = scaleQuests(monthlyQuests, playerTier);
+
+    const allQuests = [...scaledDailyQuests, ...scaledWeeklyQuests, ...scaledMonthlyQuests];
+
+    questLog('[QUESTS] 🎯 Tier du joueur:', playerTier, '(rank index:', rankIndex, ')');
 
     // Récupérer la progression de l'utilisateur
     const { data: progressData, error: progressError } = await supabase
@@ -253,9 +280,9 @@ export async function getAllQuestsWithProgress(userId: string) {
         }));
 
       return {
-        daily: mapQuestsWithProgress(dailyQuests),
-        weekly: mapQuestsWithProgress(weeklyQuests),
-        monthly: mapQuestsWithProgress(monthlyQuests),
+        daily: mapQuestsWithProgress(scaledDailyQuests),
+        weekly: mapQuestsWithProgress(scaledWeeklyQuests),
+        monthly: mapQuestsWithProgress(scaledMonthlyQuests),
       };
     }
 
@@ -267,9 +294,9 @@ export async function getAllQuestsWithProgress(userId: string) {
       }));
 
     return {
-      daily: mapQuestsWithProgress(dailyQuests),
-      weekly: mapQuestsWithProgress(weeklyQuests),
-      monthly: mapQuestsWithProgress(monthlyQuests),
+      daily: mapQuestsWithProgress(scaledDailyQuests),
+      weekly: mapQuestsWithProgress(scaledWeeklyQuests),
+      monthly: mapQuestsWithProgress(scaledMonthlyQuests),
     };
   } catch (err) {
     console.error('[QUESTS] ❌ Erreur getAllQuestsWithProgress:', err);

@@ -4,6 +4,7 @@ import { Ionicons } from '@expo/vector-icons';
 import { LinearGradient } from 'expo-linear-gradient';
 import { BlurView } from 'expo-blur';
 import { steampunkTheme } from '../../constants/Colors';
+import { useImmersiveMode } from '@/hooks/useImmersiveMode';
 
 interface PrecisionGameOverModalProps {
   isVisible: boolean;
@@ -23,6 +24,9 @@ const PrecisionGameOverModal: React.FC<PrecisionGameOverModalProps> = ({
   isVisible, finalScore, personalBest, levelReached, levelId, onRestart, onMenuPress, playerName,
   dailyScores = [], monthlyScores = [], allTimeScores = [],
 }) => {
+  // Activer le mode immersif quand la modale est visible
+  useImmersiveMode(isVisible);
+
   const [activeTab, setActiveTab] = useState<'daily' | 'monthly' | 'allTime'>('daily');
   const scaleAnim = useRef(new Animated.Value(0)).current;
   const isNewHighScore = finalScore > personalBest;

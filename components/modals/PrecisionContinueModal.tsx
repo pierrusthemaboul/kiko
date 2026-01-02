@@ -4,6 +4,7 @@ import { Ionicons } from '@expo/vector-icons';
 import { LinearGradient } from 'expo-linear-gradient';
 import { BlurView } from 'expo-blur';
 import { steampunkTheme } from '../../constants/Colors';
+import { useImmersiveMode } from '@/hooks/useImmersiveMode';
 
 interface PrecisionContinueModalProps {
   isVisible: boolean;
@@ -22,6 +23,9 @@ const PrecisionContinueModal: React.FC<PrecisionContinueModalProps> = ({
   onDecline,
   adLoaded,
 }) => {
+  // Activer le mode immersif quand la modale est visible
+  useImmersiveMode(isVisible);
+
   const scaleAnim = useRef(new Animated.Value(0)).current;
   const [adTimedOut, setAdTimedOut] = useState(false);
   const timeoutRef = useRef<NodeJS.Timeout | null>(null);

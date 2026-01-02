@@ -10,12 +10,14 @@ import {
   SafeAreaView,
   StatusBar,
   Dimensions,
-  ActivityIndicator
+  ActivityIndicator,
+  Alert
 } from 'react-native';
 import * as AuthSession from 'expo-auth-session';
 import * as Linking from 'expo-linking';
 import * as WebBrowser from 'expo-web-browser';
 import { FontAwesome } from '@expo/vector-icons';
+import AsyncStorage from '@react-native-async-storage/async-storage';
 import { supabase } from '../../lib/supabase/supabaseClients';
 import { router, useFocusEffect, useNavigation, usePathname, useSegments } from 'expo-router';
 import { FirebaseAnalytics } from '../../lib/firebase';
@@ -280,6 +282,69 @@ export default function Login() {
     router.push('/auth/signup');
   };
 
+  const handleGoToForgotPassword = () => {
+    FirebaseAnalytics.trackEvent('navigate_to_forgot_password', { screen: 'login' });
+    router.push('/auth/forgot-password');
+  };
+
+  const handlePlayAsGuest = async () => {
+    const guestId = Math.floor(Math.random() * 10000);
+    const name = `Explorateur-${guestId}`;
+
+    // Activer le mode invité
+    try {
+      await AsyncStorage.setItem('@timalaus_guest_mode', 'true');
+      console.log('[Guest Mode] Mode invité activé');
+    } catch (e) {
+      console.error('[Guest Mode] Erreur activation mode invité:', e);
+    }
+
+    FirebaseAnalytics.trackEvent('guest_login', {
+      guest_id: guestId,
+      guest_name: name,
+      screen: 'login',
+    });
+    FirebaseAnalytics.initialize(undefined, true); // Mode anonyme pour Firebase
+
+    Alert.alert(
+      'Mode Exploration',
+      `Bienvenue, ${name.split('-')[0]} ! En mode exploration, votre progression ne sera pas sauvegardée. Créez un compte pour accéder aux classements et enregistrer vos scores !`,
+      [
+        {
+          text: "Continuer l'exploration",
+          onPress: () => {
+            FirebaseAnalytics.trackEvent('guest_mode_confirmed', {
+              guest_name: name,
+              screen: 'login',
+            });
+            router.push('/(tabs)/vue1'); // Navigue vers la vue du jeu
+          }
+        },
+        {
+          text: 'Créer un compte',
+          onPress: () => {
+            FirebaseAnalytics.trackEvent('guest_mode_rejected', {
+              action: 'create_account',
+              screen: 'login',
+            });
+            router.push('/auth/signup');
+          },
+          style: 'default'
+        },
+        {
+          text: 'Annuler',
+          style: 'cancel',
+          onPress: () => {
+            FirebaseAnalytics.trackEvent('guest_mode_rejected', {
+              action: 'cancel',
+              screen: 'login',
+            });
+          }
+        }
+      ]
+    );
+  };
+
   return (
     <SafeAreaView style={styles.safeArea}>
       <View style={styles.container}>
@@ -323,6 +388,14 @@ export default function Login() {
           editable={!isLoggingIn}
         />
 
+        <TouchableOpacity
+          style={styles.forgotPasswordButton}
+          onPress={handleGoToForgotPassword}
+          disabled={isLoggingIn}
+        >
+          <Text style={styles.forgotPasswordText}>Mot de passe oublié ?</Text>
+        </TouchableOpacity>
+
         <View style={styles.stayConnectedContainer}>
           <Switch
             trackColor={{ false: '#CCCCCC', true: THEME.accent + 'AA' }} // Orange semi-transparent quand actif
@@ -355,6 +428,14 @@ export default function Login() {
           disabled={isLoggingIn}
         >
           <Text style={styles.createAccountText}>Créer un compte</Text>
+        </TouchableOpacity>
+
+        <TouchableOpacity
+          style={[styles.guestModeButton, isLoggingIn && styles.buttonDisabled]}
+          onPress={handlePlayAsGuest}
+          disabled={isLoggingIn}
+        >
+          <Text style={styles.guestModeText}>Jouer en mode Exploration</Text>
         </TouchableOpacity>
       </View>
     </SafeAreaView>
@@ -464,5 +545,31 @@ const styles = StyleSheet.create({
     color: THEME.button.secondary.text, // Texte Orange
     fontSize: 16,
     textDecorationLine: 'underline'
+  },
+  forgotPasswordButton: {
+    alignSelf: 'flex-end',
+    marginBottom: 15,
+    paddingVertical: 5,
+    paddingHorizontal: 5,
+  },
+  forgotPasswordText: {
+    color: THEME.button.secondary.text, // Texte Orange
+    fontSize: 14,
+    textDecorationLine: 'underline'
+  },
+  guestModeButton: {
+    marginTop: 15,
+    alignItems: 'center',
+    paddingVertical: 15,
+    paddingHorizontal: 10,
+    minHeight: 48,
+    width: '100%',
+    borderWidth: 1,
+    borderColor: THEME.border,
+    borderRadius: 8,
+  },
+  guestModeText: {
+    color: THEME.textSecondary, // Texte gris
+    fontSize: 16,
   },
 });

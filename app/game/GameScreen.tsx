@@ -26,6 +26,7 @@ import { nextRankProgress } from '@/lib/economy/ranks';
 // Hooks
 import { useGameLogicA } from '@/hooks/useGameLogicA'; // Chemin OK
 import { usePrecisionGame } from '@/hooks/game/usePrecisionGame';
+import { useImmersiveMode } from '@/hooks/useImmersiveMode';
 
 // Libs
 import { FirebaseAnalytics } from '@/lib/firebase'; // Chemin OK
@@ -41,6 +42,9 @@ function ClassicGameScreen({ requestedMode }: { requestedMode?: string }) {
   const [isRestarting, setIsRestarting] = useState(false); // État pour afficher l'indicateur lors du redémarrage
   const [runState, setRunState] = useState<'pending' | 'ready' | 'error'>('pending');
   const bgFadeAnim = useRef(new Animated.Value(1)).current; // Animation pour transition des backgrounds
+
+  // Activer le mode immersif pour cet écran
+  useImmersiveMode(true);
 
   // Initialise la logique du jeu via le hook personnalisé
   const gameLogic = useGameLogicA('', requestedMode); // Passe une chaîne vide ou l'initialEvent si nécessaire
@@ -272,6 +276,10 @@ function ClassicGameScreen({ requestedMode }: { requestedMode?: string }) {
 function PrecisionGameScreen() {
   const router = useRouter();
   const fadeAnim = useRef(new Animated.Value(0)).current;
+
+  // Activer le mode immersif pour cet écran
+  useImmersiveMode(true);
+
   const {
     loading,
     error,

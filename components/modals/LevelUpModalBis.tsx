@@ -15,11 +15,13 @@ import {
   Image,
   TouchableOpacity,
   Dimensions,
+  Alert,
 } from 'react-native';
 import { Ionicons } from '@expo/vector-icons';
 import { LinearGradient } from 'expo-linear-gradient';
-import { colors } from '../../constants/Colors'; 
-import type { LevelEventSummary, SpecialRules } from '@/hooks/types'; 
+import { colors } from '../../constants/Colors';
+import type { LevelEventSummary, SpecialRules } from '@/hooks/types';
+import { useImmersiveMode } from '@/hooks/useImmersiveMode'; 
 
 const { width } = Dimensions.get('window');
 
@@ -27,6 +29,7 @@ interface LevelUpModalBisProps {
   visible: boolean;
   level: number;
   onStart: () => void;
+  onReturnToMenu?: () => void;
   name: string;
   description: string;
   requiredEvents: number;
@@ -65,6 +68,7 @@ const LevelUpModalBis: React.FC<LevelUpModalBisProps> = ({
   visible,
   level,
   onStart,
+  onReturnToMenu,
   name,
   description,
   requiredEvents,
@@ -73,6 +77,9 @@ const LevelUpModalBis: React.FC<LevelUpModalBisProps> = ({
   isNewLevel,
   eventsSummary
 }) => {
+  // Activer le mode immersif quand la modale est visible
+  useImmersiveMode(visible);
+
   // Animations
   const scaleAnim = useRef(new Animated.Value(0.3)).current;
   const opacityAnim = useRef(new Animated.Value(0)).current;
@@ -86,6 +93,29 @@ const LevelUpModalBis: React.FC<LevelUpModalBisProps> = ({
 
   // State pour stocker uniquement les événements du niveau actuel/précédent
   const [filteredEvents, setFilteredEvents] = useState<LevelEventSummary[]>([]);
+
+  // Fonction pour gérer le retour au menu avec confirmation
+  const handleReturnToMenu = () => {
+    Alert.alert(
+      'Retour au menu',
+      'Êtes-vous sûr de vouloir retourner au menu ? Votre partie en cours sera perdue.',
+      [
+        {
+          text: 'Annuler',
+          style: 'cancel',
+        },
+        {
+          text: 'Retour au menu',
+          style: 'destructive',
+          onPress: () => {
+            if (onReturnToMenu) {
+              onReturnToMenu();
+            }
+          },
+        },
+      ]
+    );
+  };
 
   // Effect pour filtrer les événements spécifiques au niveau
   useEffect(() => {
@@ -399,6 +429,18 @@ const LevelUpModalBis: React.FC<LevelUpModalBisProps> = ({
                 </LinearGradient>
               </TouchableOpacity>
             </Animated.View>
+
+            {/* Bouton retour au menu */}
+            {onReturnToMenu && (
+              <TouchableOpacity
+                style={styles.menuButton}
+                onPress={handleReturnToMenu}
+                activeOpacity={0.7}
+              >
+                <Ionicons name="home-outline" size={20} color="#666" />
+                <Text style={styles.menuButtonText}>Retour au menu</Text>
+              </TouchableOpacity>
+            )}
           </ScrollView>
           {renderEventDetailsModal()}
         </Animated.View>
@@ -657,6 +699,26 @@ const styles = StyleSheet.create({
     textAlign: 'center',
     fontStyle: 'italic',
     padding: 20,
+  },
+  // Styles pour le bouton retour au menu
+  menuButton: {
+    flexDirection: 'row',
+    alignItems: 'center',
+    justifyContent: 'center',
+    paddingVertical: 12,
+    paddingHorizontal: 20,
+    marginTop: 10,
+    marginBottom: 5,
+    borderRadius: 10,
+    backgroundColor: 'transparent',
+    borderWidth: 1,
+    borderColor: '#ddd',
+  },
+  menuButtonText: {
+    color: '#666',
+    fontSize: 14,
+    fontWeight: '600',
+    marginLeft: 8,
   },
 });
 

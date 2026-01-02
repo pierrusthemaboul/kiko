@@ -24,6 +24,7 @@ interface Props {
 export const AudioProvider = ({ children }: Props) => {
   const audioRef = useRef<AudioWebViewRef>(null);
   const [isReady, setIsReady] = useState(false);
+  const pendingSoundsRef = useRef<string[]>([]);
 
   const playSound = (soundName: string) => {
     console.log('[AudioContext] playSound called:', soundName, 'isReady:', isReady, 'audioRef:', !!audioRef.current);
@@ -31,7 +32,11 @@ export const AudioProvider = ({ children }: Props) => {
       console.log('[AudioContext] Calling audioRef.current.playSound for:', soundName);
       audioRef.current.playSound(soundName);
     } else {
-      console.warn('[AudioContext] Cannot play sound - isReady:', isReady, 'audioRef:', !!audioRef.current);
+      console.warn('[AudioContext] Audio not ready yet, queuing sound:', soundName);
+      // Ajouter le son à la file d'attente
+      if (!pendingSoundsRef.current.includes(soundName)) {
+        pendingSoundsRef.current.push(soundName);
+      }
     }
   };
 
@@ -47,6 +52,18 @@ export const AudioProvider = ({ children }: Props) => {
       <AudioWebView ref={audioRef} onReady={() => {
         console.log('[AudioContext] AudioWebView is READY!');
         setIsReady(true);
+
+        // Jouer tous les sons en attente
+        if (pendingSoundsRef.current.length > 0) {
+          console.log('[AudioContext] Playing pending sounds:', pendingSoundsRef.current);
+          setTimeout(() => {
+            pendingSoundsRef.current.forEach(soundName => {
+              console.log('[AudioContext] Playing queued sound:', soundName);
+              audioRef.current?.playSound(soundName);
+            });
+            pendingSoundsRef.current = [];
+          }, 100);
+        }
       }} />
     </AudioContext.Provider>
   );

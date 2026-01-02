@@ -93,30 +93,15 @@ const AnimatedSplashScreen = ({ onAnimationEnd }) => {
   const subtitleOpacity = useRef(new Animated.Value(0)).current;
   const subtitleTranslateY = useRef(new Animated.Value(20)).current;
 
-  const { playSound, isReady } = useAudioContext();
-
-  const playSplashSound = useCallback(async () => {
-    console.log('[Splash] ========================================');
-    console.log('[Splash] playSplashSound called');
-    console.log('[Splash] isReady:', isReady);
-    console.log('[Splash] playSound function available:', !!playSound);
-    if (!isReady) {
-      console.warn('[Splash] ❌ WebView not ready yet - CANNOT PLAY SOUND');
-      return;
-    }
-    console.log('[Splash] ✅ WebView ready - PLAYING SPLASH SOUND NOW');
-    playSound('splash');
-    console.log('[Splash] playSound("splash") called');
-    console.log('[Splash] ========================================');
-  }, [isReady, playSound]);
+  const { playSound } = useAudioContext();
 
   useEffect(() => {
-    console.log('[Splash] useEffect triggered for splash sound');
-    // Play splash sound immediately at the start
-    const timer = setTimeout(() => {
-      console.log('[Splash] Timeout executed - calling playSplashSound');
-      playSplashSound();
-    }, 0);
+    console.log('[Splash] ========================================');
+    console.log('[Splash] AnimatedSplashScreen mounted - requesting splash sound');
+    console.log('[Splash] ========================================');
+
+    // Demander le son immédiatement - il sera mis en file d'attente si l'audio n'est pas prêt
+    playSound('splash');
 
     // Animation du fond
     Animated.parallel([
@@ -221,10 +206,9 @@ const AnimatedSplashScreen = ({ onAnimationEnd }) => {
     }, SPLASH_VISIBLE_DURATION);
 
     return () => {
-      clearTimeout(timer);
       clearTimeout(endTimer);
     };
-  }, [playSplashSound, onAnimationEnd]);
+  }, [playSound, onAnimationEnd]);
 
   const titleRotateInterpolate = titleRotate.interpolate({
     inputRange: [-15, 0],
@@ -499,6 +483,11 @@ export default function HomeScreen() {
         screen: 'home',
       });
       await supabase.auth.signOut();
+
+      // Désactiver le mode invité
+      await AsyncStorage.removeItem('@timalaus_guest_mode');
+      console.log('[Guest Mode] Mode invité désactivé');
+
       setGuestDisplayName(null);
       setDisplayName('');
       setUser(null);
@@ -512,11 +501,20 @@ export default function HomeScreen() {
     }
   };
 
-  const handlePlayAsGuest = () => {
+  const handlePlayAsGuest = async () => {
     const guestId = Math.floor(Math.random() * 10000);
     const name = `Explorateur-${guestId}`;
     setGuestDisplayName(name);
     setDisplayName(name); // Met à jour l'affichage localement
+
+    // Activer le mode invité
+    try {
+      await AsyncStorage.setItem('@timalaus_guest_mode', 'true');
+      console.log('[Guest Mode] Mode invité activé');
+    } catch (e) {
+      console.error('[Guest Mode] Erreur activation mode invité:', e);
+    }
+
     FirebaseAnalytics.trackEvent('guest_login', {
       guest_id: guestId,
       guest_name: name,
@@ -535,7 +533,7 @@ export default function HomeScreen() {
               guest_name: name,
               screen: 'home',
             });
-            router.push('vue1'); // Navigue vers la vue du jeu
+            router.push('/(tabs)/vue1'); // Navigue vers la vue du jeu
           }
         },
         {
@@ -562,7 +560,7 @@ export default function HomeScreen() {
         user_type: guestDisplayName ? 'guest' : (user ? 'registered' : 'unknown'),
         from_screen: 'home'
     });
-    router.push('vue1'); // Navigue vers la vue du jeu
+    router.push('/(tabs)/vue1'); // Navigue vers la vue du jeu
   };
 
   const handleLoginPress = () => {
