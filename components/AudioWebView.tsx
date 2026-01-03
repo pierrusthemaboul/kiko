@@ -123,11 +123,34 @@ const AudioWebView = forwardRef<AudioWebViewRef, Props>(({ onReady }, ref) => {
 
     let currentVolume = 0.24;
 
-    // Précharger tous les sons
-    Object.values(sounds).forEach(audio => {
-      audio.volume = currentVolume;
-      audio.load();
-    });
+    // Précharger le son de splash en PRIORITÉ et signaler "ready" dès qu'il est chargé
+    let splashReadySent = false;
+    if (sounds.splash) {
+      sounds.splash.volume = 0.65;
+
+      // Signaler ready dès que le splash est prêt
+      sounds.splash.addEventListener('canplaythrough', () => {
+        if (!splashReadySent) {
+          splashReadySent = true;
+          console.log('[AudioWebView HTML] 🚀 Splash ready - notifying React Native IMMEDIATELY');
+          window.ReactNativeWebView?.postMessage(JSON.stringify({ type: 'ready' }));
+        }
+      }, { once: true });
+
+      sounds.splash.load();
+      console.log('[AudioWebView HTML] Splash sound loading with priority...');
+    }
+
+    // Précharger les autres sons en arrière-plan (sans bloquer)
+    setTimeout(() => {
+      Object.entries(sounds).forEach(([name, audio]) => {
+        if (name !== 'splash') {
+          audio.volume = currentVolume;
+          audio.load();
+        }
+      });
+      console.log('[AudioWebView HTML] Other sounds preloading in background');
+    }, 50);
 
     // Fonction pour débloquer l'audio
     function unlockAudio() {
@@ -214,8 +237,8 @@ const AudioWebView = forwardRef<AudioWebViewRef, Props>(({ onReady }, ref) => {
       });
     }
 
-    // Notifier que l'audio est prêt
-    window.ReactNativeWebView?.postMessage(JSON.stringify({ type: 'ready' }));
+    // Le signal 'ready' est maintenant envoyé dès que le splash est chargé (ligne 136)
+    // Pas besoin d'attendre ici
   </script>
 </body>
 </html>

@@ -46,6 +46,21 @@ type KnownAnalyticsEvents = {
     error_code?: string;
     network?: string;
   };
+  event_selected: {
+    event_id: string;
+    event_year: number;
+    event_period: string;
+    event_notoriete: number;
+    time_gap_years: number;
+    configured_base_gap: number;
+    configured_min_gap: number;
+    level: number;
+    is_temporal_jump?: boolean;
+    is_bonus_event?: boolean;
+    is_anti_frustration?: boolean;
+    pool_tier?: number;
+    selection_path?: string;
+  };
   app_backgrounded_during_game: {
     event_id: string;
     level?: number;
@@ -386,6 +401,37 @@ const legacyAnalytics = {
   newHighScore: async (oldScore: number, newScore: number) => {
     await trackEvent('new_high_score', {
       score: newScore,
+    });
+  },
+  eventSelected: async (params: {
+    eventId: string;
+    eventYear: number;
+    eventPeriod: string;
+    eventNotoriete: number;
+    timeGapYears: number;
+    configuredBaseGap: number;
+    configuredMinGap: number;
+    level: number;
+    isTemporalJump?: boolean;
+    isBonusEvent?: boolean;
+    isAntiFrustration?: boolean;
+    poolTier?: number;
+    selectionPath?: string;
+  }) => {
+    await trackEvent('event_selected', {
+      event_id: params.eventId,
+      event_year: params.eventYear,
+      event_period: params.eventPeriod,
+      event_notoriete: params.eventNotoriete,
+      time_gap_years: Math.round(params.timeGapYears),
+      configured_base_gap: params.configuredBaseGap,
+      configured_min_gap: params.configuredMinGap,
+      level: params.level,
+      is_temporal_jump: params.isTemporalJump ?? false,
+      is_bonus_event: params.isBonusEvent ?? false,
+      is_anti_frustration: params.isAntiFrustration ?? false,
+      pool_tier: params.poolTier,
+      selection_path: params.selectionPath,
     });
   },
 };

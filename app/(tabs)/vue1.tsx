@@ -156,8 +156,8 @@ export default function Vue1() {
         return;
       }
 
-      // Jouer le son de sélection de mode
-      playSound('modeSelect');
+      // Son de sélection de mode désactivé
+      // playSound('modeSelect');
 
       // Track la sélection du mode
       FirebaseAnalytics.trackEvent('mode_selected', {

@@ -852,11 +852,54 @@ export function useEventSelector({
       try { explainLog('SELECTOR_END', { idPicked: (selected as any)?.id ?? null, durationMs: Date.now() - explainStartTs }); } catch {}
     }
 
+    // 📊 Analytics : Tracker la sélection d'événement (async, non-bloquant)
+    const trackEventSelection = async () => {
+      try {
+        const config = LEVEL_CONFIGS[userLevel];
+        if (!config) return;
+
+        const selectedYear = getCachedDateInfo((selected as any)?.date).year;
+        const refYear = referenceEvent ? getCachedDateInfo(referenceEvent.date).year : selectedYear;
+        const timeGapYears = Math.abs(selectedYear - refYear);
+        const period = getPeriod((selected as any)?.date);
+
+        // Déterminer le pool tier
+        let poolTier = 1;
+        if (userLevel >= 20) poolTier = 6;
+        else if (userLevel >= 15) poolTier = 5;
+        else if (userLevel >= 10) poolTier = 4;
+        else if (userLevel >= 6) poolTier = 3;
+        else if (userLevel >= 3) poolTier = 2;
+
+        await FirebaseAnalytics.eventSelected({
+          eventId: (selected as any)?.id ?? 'unknown',
+          eventYear: selectedYear,
+          eventPeriod: period,
+          eventNotoriete: (selected as any)?.notoriete ?? 0,
+          timeGapYears,
+          configuredBaseGap: config.timeGap.base,
+          configuredMinGap: config.timeGap.minimum,
+          level: userLevel,
+          isTemporalJump: (selected as any)?._isTemporalJump ?? false,
+          isBonusEvent: wasBonusEvent,
+          isAntiFrustration: shouldForceEasyEvent,
+          poolTier,
+          selectionPath,
+        });
+      } catch (err) {
+        // Silencieux : on ne veut pas casser le jeu pour un problème d'analytics
+        console.warn('[Analytics] Failed to track event selection:', err);
+      }
+    };
+
+    // Exécuter en arrière-plan sans bloquer
+    trackEventSelection();
+
     return selected;
 
   }, [
     setError, setIsGameOver, updateStateCallback, lastSelectionTime,
-    preFilterEvents, scoreEventOptimized, getTimeDifference
+    preFilterEvents, scoreEventOptimized, getTimeDifference, shouldForceEasyEvent
   ]);
 
   /**

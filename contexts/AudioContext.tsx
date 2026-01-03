@@ -53,16 +53,14 @@ export const AudioProvider = ({ children }: Props) => {
         console.log('[AudioContext] AudioWebView is READY!');
         setIsReady(true);
 
-        // Jouer tous les sons en attente
+        // Jouer tous les sons en attente IMMÉDIATEMENT (pas de timeout)
         if (pendingSoundsRef.current.length > 0) {
-          console.log('[AudioContext] Playing pending sounds:', pendingSoundsRef.current);
-          setTimeout(() => {
-            pendingSoundsRef.current.forEach(soundName => {
-              console.log('[AudioContext] Playing queued sound:', soundName);
-              audioRef.current?.playSound(soundName);
-            });
-            pendingSoundsRef.current = [];
-          }, 100);
+          console.log('[AudioContext] Playing pending sounds IMMEDIATELY:', pendingSoundsRef.current);
+          pendingSoundsRef.current.forEach(soundName => {
+            console.log('[AudioContext] Playing queued sound:', soundName);
+            audioRef.current?.playSound(soundName);
+          });
+          pendingSoundsRef.current = [];
         }
       }} />
     </AudioContext.Provider>
