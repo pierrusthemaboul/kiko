@@ -5,7 +5,7 @@ export default ({ config }) => {
     ...config,
     name: IS_DEV ? "Timalaus DEV" : "Timalaus",
     slug: "kiko",
-    version: "1.5.4",
+    version: "1.5.9",
     orientation: "portrait",
     icon: "./assets/images/oklogo.png",
     scheme: "juno2",
@@ -41,7 +41,7 @@ export default ({ config }) => {
         "com.google.android.gms.permission.AD_ID",
         "android.permission.ACCESS_ADSERVICES_AD_ID"
       ],
-      versionCode: 10106,
+      versionCode: 10113,
       googleServicesFile: process.env.GOOGLE_SERVICES_JSON || "./google-services.json",
       userInterfaceStyle: "dark"
     },
@@ -59,7 +59,13 @@ export default ({ config }) => {
             compileSdkVersion: 35,
             targetSdkVersion: 35,
             buildToolsVersion: "35.0.0",
-            gradleVersion: "8.10.2"
+            gradleVersion: "8.10.2",
+            ndkVersion: "27.1.12297006",
+            packagingOptions: {
+              jniLibs: {
+                useLegacyPackaging: false
+              }
+            }
           }
         }
       ],

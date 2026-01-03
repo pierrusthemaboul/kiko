@@ -65,12 +65,31 @@ export function useRewardedPlayAd() {
     const errorListener = rewardedPlayAd.addAdEventListener(
       AdEventType.ERROR,
       (error) => {
-        rewardedLog('warn', 'Failed to load:', error);
+        const errorCode = (error as any)?.code ?? 'unknown_code';
+        const errorMessage = error?.message ?? 'unknown_message';
+        rewardedLog('warn', `Failed to load: [Code: ${errorCode}] ${errorMessage}`);
         globalIsLoaded = false;
         stateListeners.forEach(listener => listener());
+        FirebaseAnalytics.trackEvent('ad_load_error_detailed', {
+          ad_type: 'rewarded',
+          ad_unit: 'extra_play',
+          error_code: String(errorCode),
+          error_message: errorMessage,
+          level: 0,
+        });
         FirebaseAnalytics.ad('rewarded', 'failed', 'extra_play', 0);
+        FirebaseAnalytics.error('ad_load_error', `Rewarded Play Ad [${errorCode}]: ${errorMessage}`, 'useRewardedPlayAd');
         // Retry after 30s
-        setTimeout(() => rewardedPlayAd.load(), 30000);
+        setTimeout(() => {
+          FirebaseAnalytics.trackEvent('ad_load_attempt', {
+            ad_type: 'rewarded',
+            ad_unit: 'extra_play',
+            trigger: 'retry_after_error',
+            previous_error_code: String(errorCode),
+            level: 0,
+          });
+          rewardedPlayAd.load();
+        }, 30000);
       }
     );
 
@@ -111,6 +130,12 @@ export function useRewardedPlayAd() {
     // Try to load the ad, but it may already be loaded or loading
     // The load() method is safe to call even if already loading
     try {
+      FirebaseAnalytics.trackEvent('ad_load_attempt', {
+        ad_type: 'rewarded',
+        ad_unit: 'extra_play',
+        trigger: 'initial_load',
+        level: 0,
+      });
       rewardedPlayAd.load();
     } catch (error) {
       // Ignore if already loading
@@ -137,6 +162,12 @@ export function useRewardedPlayAd() {
       return false;
     }
     try {
+      FirebaseAnalytics.trackEvent('ad_show_attempt', {
+        ad_type: 'rewarded',
+        ad_unit: 'extra_play',
+        is_loaded: true,
+        level: 0,
+      });
       FirebaseAnalytics.ad('rewarded', 'triggered', 'extra_play', 0);
       rewardedPlayAd.show();
       return true;

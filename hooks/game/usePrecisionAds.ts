@@ -69,10 +69,29 @@ export function usePrecisionAds() {
     const gameOverError = gameOverInterstitial.addAdEventListener(
       AdEventType.ERROR,
       (error) => {
-        precisionAdLog('warn', 'Game Over failed to load:', error);
+        const errorCode = (error as any)?.code ?? 'unknown_code';
+        const errorMessage = error?.message ?? 'unknown_message';
+        precisionAdLog('warn', `Game Over failed to load: [Code: ${errorCode}] ${errorMessage}`);
         setAdState(prev => ({ ...prev, gameOverLoaded: false }));
+        FirebaseAnalytics.trackEvent('ad_load_error_detailed', {
+          ad_type: 'interstitial',
+          ad_unit: 'precision_game_over',
+          error_code: String(errorCode),
+          error_message: errorMessage,
+          level: 0,
+        });
         FirebaseAnalytics.ad('interstitial', 'failed', 'precision_game_over', 0);
-        setTimeout(() => gameOverInterstitial.load(), 30000);
+        FirebaseAnalytics.error('ad_load_error', `Precision Game Over [${errorCode}]: ${errorMessage}`, 'usePrecisionAds');
+        setTimeout(() => {
+          FirebaseAnalytics.trackEvent('ad_load_attempt', {
+            ad_type: 'interstitial',
+            ad_unit: 'precision_game_over',
+            trigger: 'retry_after_error',
+            previous_error_code: String(errorCode),
+            level: 0,
+          });
+          gameOverInterstitial.load();
+        }, 30000);
       }
     );
 
@@ -109,19 +128,38 @@ export function usePrecisionAds() {
     const continueError = continueRewardedAd.addAdEventListener(
       AdEventType.ERROR,
       (error) => {
+        const errorCode = (error as any)?.code ?? 'unknown_code';
+        const errorMessage = error?.message ?? 'unknown_message';
+        const errorDomain = (error as any)?.domain ?? 'unknown_domain';
         console.error('[PrecisionAds DIAG] ❌ Continue Rewarded FAILED to load:', error);
         console.log('[PrecisionAds DIAG] Error details:', {
-          message: error.message,
-          code: error.code,
-          domain: error.domain
+          message: errorMessage,
+          code: errorCode,
+          domain: errorDomain
         });
-        precisionAdLog('warn', 'Continue Rewarded failed to load:', error);
+        precisionAdLog('warn', `Continue Rewarded failed to load: [Code: ${errorCode}] ${errorMessage}`);
         setAdState(prev => ({ ...prev, continueLoaded: false, continueLoading: false }));
+        FirebaseAnalytics.trackEvent('ad_load_error_detailed', {
+          ad_type: 'rewarded',
+          ad_unit: 'precision_continue',
+          error_code: String(errorCode),
+          error_message: errorMessage,
+          error_domain: String(errorDomain),
+          level: 0,
+        });
         FirebaseAnalytics.ad('rewarded', 'failed', 'precision_continue', 0);
+        FirebaseAnalytics.error('ad_load_error', `Precision Continue [${errorCode}]: ${errorMessage}`, 'usePrecisionAds');
         // Retry plus rapidement (5s au lieu de 30s)
         setTimeout(() => {
           console.log('[PrecisionAds DIAG] 🔄 Retry: tentative de rechargement dans 5s...');
           setAdState(prev => ({ ...prev, continueLoading: true }));
+          FirebaseAnalytics.trackEvent('ad_load_attempt', {
+            ad_type: 'rewarded',
+            ad_unit: 'precision_continue',
+            trigger: 'retry_after_error',
+            previous_error_code: String(errorCode),
+            level: 0,
+          });
           continueRewardedAd.load();
         }, 5000);
       }
