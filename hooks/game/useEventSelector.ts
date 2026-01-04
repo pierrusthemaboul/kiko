@@ -131,7 +131,8 @@ export function useEventSelector({
   const [eventCount, setEventCount] = useState<number>(2);
   const eventCountRef = useRef<number>(2); // Ref pour accès synchrone
   const [forcedJumpEventCount, setForcedJumpEventCount] = useState<number>(() => {
-    return Math.floor(Math.random() * (19 - 12 + 1)) + 12;
+    // Premier saut temporel beaucoup plus tôt : entre 3 et 5 événements
+    return Math.floor(Math.random() * (5 - 3 + 1)) + 3;
   });
   const [hasFirstForcedJumpHappened, setHasFirstForcedJumpHappened] = useState<boolean>(false);
   const [fallbackCountdown, setFallbackCountdown] = useState<number>(() => {
@@ -181,25 +182,59 @@ export function useEventSelector({
   }, [antiqueEventsCount]);
 
   /**
+   * Calcule le multiplicateur d'écart temporel selon l'époque
+   * Plus l'événement est proche de 2024, plus le gap doit être serré
+   */
+  const getEraMultiplier = useCallback((year: number): number => {
+    if (year >= 2000) return 0.2;  // 2000-2024 : ultra-serré
+    if (year >= 1980) return 0.4;  // 1980-1999 : très serré
+    if (year >= 1950) return 0.6;  // 1950-1979 : serré
+    if (year >= 1900) return 0.8;  // 1900-1949 : modéré
+    if (year >= 1800) return 1.0;  // 1800-1899 : normal (baseline)
+    if (year >= 1600) return 1.3;  // 1600-1799 : large
+    if (year >= 1000) return 1.8;  // 1000-1599 : très large
+    if (year >= 500) return 2.5;   // 500-999 : énorme
+    if (year >= 0) return 3.0;     // 0-499 : gigantesque
+    return 3.5;                    // < 0 : maximum (Antiquité)
+  }, []);
+
+  /**
+   * Calcule le timeGap adaptatif basé sur l'année de référence
+   * Retourne { base, minimum, maximum } adaptés à l'époque
+   */
+  const getAdaptiveTimeGap = useCallback((
+    referenceYear: number,
+    levelTimeGap: { base: number; minimum: number; variance: number }
+  ): { base: number; minimum: number; maximum: number } => {
+    const multiplier = getEraMultiplier(referenceYear);
+
+    const adaptedBase = Math.max(1, Math.round(levelTimeGap.base * multiplier));
+    const adaptedMin = Math.max(1, Math.round(levelTimeGap.minimum * multiplier));
+    const adaptedMax = Math.round((levelTimeGap.base + levelTimeGap.variance) * multiplier);
+
+    console.log('[ADAPTIVE_TIMEGAP]', {
+      referenceYear,
+      multiplier,
+      original: levelTimeGap,
+      adapted: { base: adaptedBase, minimum: adaptedMin, maximum: adaptedMax }
+    });
+
+    return {
+      base: adaptedBase,
+      minimum: adaptedMin,
+      maximum: adaptedMax
+    };
+  }, [getEraMultiplier]);
+
+  /**
    * Calcule l'incrément pour le prochain saut temporel en fonction de l'année
    */
   const getNextForcedJumpIncrement = useCallback((year: number): number => {
-    if (year < 500) {
-      return Math.floor(Math.random() * (5 - 1 + 1)) + 1; // 1-5
-    } else if (year < 700) {
-      return Math.floor(Math.random() * (9 - 6 + 1)) + 6; // 6-9
-    } else if (year < 1000) {
-      return Math.floor(Math.random() * (9 - 6 + 1)) + 6; // 6-9
-    } else if (year < 1500) {
-      return Math.floor(Math.random() * (9 - 6 + 1)) + 6; // 6-9
-    } else if (year < 1800) {
-      return Math.floor(Math.random() * (11 - 7 + 1)) + 7; // 7-11
-    } else if (year <= 2024) {
-      return Math.floor(Math.random() * (19 - 12 + 1)) + 12; // 12-19
-    } else {
-      return 15; // Valeur par défaut
-    }
+    // DRASTIQUEMENT réduit pour forcer la diversité temporelle
+    // Sauts beaucoup plus fréquents pour explorer toutes les époques
+    return Math.floor(Math.random() * (5 - 3 + 1)) + 3; // 3-5 événements entre chaque saut
   }, []);
+
   /**
    * Calcule la différence de temps optimisée avec cache
    */
@@ -326,7 +361,7 @@ export function useEventSelector({
     timeGap: any
   ): number => {
     const cacheKey = `${evt.id}-${referenceEvent.id}-${userLevel}`;
-    
+
     if (scoringCache.has(cacheKey)) {
       const cached = scoringCache.get(cacheKey);
       try {
@@ -344,7 +379,11 @@ export function useEventSelector({
 
     const weights = getWeightsForLevel(userLevel);
     const randomFactor = 0.9 + Math.random() * 0.2;
-    const idealGap = timeGap.base || 100;
+
+    // NOUVEAU : Utiliser le timeGap adaptatif basé sur l'époque de référence
+    const refYear = getCachedDateInfo(referenceEvent.date).year;
+    const adaptiveGap = getAdaptiveTimeGap(refYear, timeGap);
+    const idealGap = adaptiveGap.base;
 
     // Score de proximité temporelle pondéré
     let gapScore = 0;
@@ -404,7 +443,7 @@ export function useEventSelector({
     scoringCache.set(cacheKey, totalScore);
     scorePartsCache.set(cacheKey, parts);
     return totalScore;
-  }, [getTimeDifference]);
+  }, [getTimeDifference, getCachedDateInfo, getAdaptiveTimeGap]);
 
   /**
    * SÉLECTION OPTIMISÉE avec sauts temporels et debouncing
@@ -457,11 +496,74 @@ export function useEventSelector({
     setLastSelectionTime(now);
 
     // Validations de base
-    if (!events?.length || !referenceEvent?.date) {
+    if (!events?.length) {
       setError("Erreur interne: données manquantes.");
       setIsGameOver(true);
-      FirebaseAnalytics.error("invalid_selection_params", "Missing events or reference", "selectNewEvent");
+      FirebaseAnalytics.error("invalid_selection_params", "Missing events", "selectNewEvent");
       return null;
+    }
+
+    // Si referenceEvent est null, cela signifie un début de niveau "propre"
+    // On sélectionne un événement aléatoire pour démarrer
+    if (!referenceEvent) {
+      console.log('[SELECT_NEW_EVENT] 🆕 Début de niveau propre - sélection aléatoire');
+
+      const config = LEVEL_CONFIGS[userLevel];
+      if (!config) {
+        setError(`Configuration manquante pour le niveau ${userLevel}`);
+        setIsGameOver(true);
+        return null;
+      }
+
+      // Pré-filtrer les événements selon le niveau
+      const availableEvents = events.filter((e) => {
+        // Déjà utilisé ?
+        if (usedEvents.has(e.id)) {
+          return false;
+        }
+
+        // Respecter les difficultés du niveau
+        const notoriete = e.notoriete ?? 50; // Valeur par défaut si null/undefined
+        const eventDifficulty = notoriete >= 80 ? 1 : notoriete >= 60 ? 2 : notoriete >= 40 ? 3 : notoriete >= 20 ? 4 : 5;
+
+        if (eventDifficulty < config.eventSelection.minDifficulty || eventDifficulty > config.eventSelection.maxDifficulty) {
+          return false;
+        }
+
+        return true;
+      });
+
+      if (availableEvents.length === 0) {
+        // Fallback: prendre n'importe quel événement non utilisé
+        const anyUnused = events.filter(e => !usedEvents.has(e.id));
+        if (anyUnused.length > 0) {
+          const randomEvent = anyUnused[Math.floor(Math.random() * anyUnused.length)];
+          console.log('[SELECT_NEW_EVENT] ✅ Événement aléatoire de fallback sélectionné:', randomEvent.id);
+          await updateStateCallback(randomEvent);
+          return randomEvent;
+        } else {
+          setError("Plus d'événements disponibles pour ce niveau !");
+          setIsGameOver(true);
+          return null;
+        }
+      }
+
+      // Sélectionner aléatoirement parmi les événements disponibles
+      const randomEvent = availableEvents[Math.floor(Math.random() * availableEvents.length)];
+      console.log('[SELECT_NEW_EVENT] ✅ Événement aléatoire sélectionné:', randomEvent.id);
+      await updateStateCallback(randomEvent);
+
+      // Incrémenter le compteur d'événements et planifier le prochain saut temporel
+      const localEventCount = eventCountRef.current;
+      eventCountRef.current = localEventCount + 1;
+      setEventCount(localEventCount + 1);
+
+      // Planifier le premier saut temporel pour ce niveau
+      const { year: selectedYear } = getCachedDateInfo(randomEvent.date);
+      const nextIncrement = getNextForcedJumpIncrement(selectedYear);
+      setForcedJumpEventCount(localEventCount + nextIncrement);
+
+      return randomEvent;
     }
 
     const config = LEVEL_CONFIGS[userLevel];
@@ -499,22 +601,59 @@ export function useEventSelector({
       console.log('[TEMPORAL_JUMP] ✨ Saut temporel DÉCLENCHÉ !');
       const { year: refYear } = getCachedDateInfo(referenceEvent.date);
       
-      // Calculer la distance du saut selon l'époque
+      // NOUVEAU : Sauts MASSIFS et BIAISÉS vers le passé pour garantir la diversité
       let jumpDistance;
-      if (refYear < 500) {
-        jumpDistance = Math.floor(Math.random() * 800) + 200; // 200-1000 ans
-      } else if (refYear < 1000) {
-        jumpDistance = Math.floor(Math.random() * 600) + 400; // 400-1000 ans
-      } else if (refYear < 1500) {
-        jumpDistance = Math.floor(Math.random() * 400) + 300; // 300-700 ans
-      } else if (refYear < 1800) {
-        jumpDistance = Math.floor(Math.random() * 300) + 200; // 200-500 ans
+      let jumpForward;
+
+      // Si on est dans l'ère moderne (>1700), FORCER des sauts vers l'Antiquité/Moyen-Âge
+      if (refYear > 1700) {
+        // 80% de chance d'aller dans le passé lointain
+        const goToAncientTimes = Math.random() < 0.8;
+
+        if (goToAncientTimes) {
+          // Saut MASSIF vers Antiquité (-500 à 500) ou Moyen-Âge (500-1500)
+          const targetEra = Math.random() < 0.5 ? 'antiquite' : 'moyen-age';
+
+          if (targetEra === 'antiquite') {
+            // Cibler entre -500 et 500
+            const targetYear = Math.floor(Math.random() * 1000) - 500;
+            jumpDistance = Math.abs(refYear - targetYear);
+            jumpForward = false;
+          } else {
+            // Cibler entre 500 et 1500
+            const targetYear = Math.floor(Math.random() * 1000) + 500;
+            jumpDistance = Math.abs(refYear - targetYear);
+            jumpForward = false;
+          }
+        } else {
+          // 20% : saut normal
+          jumpDistance = Math.floor(Math.random() * 300) + 100;
+          jumpForward = Math.random() > 0.5;
+        }
+      } else if (refYear > 1500) {
+        // Renaissance : 60% vers Antiquité/Moyen-Âge
+        if (Math.random() < 0.6) {
+          const targetYear = Math.floor(Math.random() * 1500) - 500;
+          jumpDistance = Math.abs(refYear - targetYear);
+          jumpForward = false;
+        } else {
+          jumpDistance = Math.floor(Math.random() * 400) + 200;
+          jumpForward = Math.random() > 0.5;
+        }
+      } else if (refYear > 1000) {
+        // Moyen-Âge : sauts équilibrés
+        jumpDistance = Math.floor(Math.random() * 800) + 200;
+        jumpForward = Math.random() > 0.5;
+      } else if (refYear > 0) {
+        // Haut Moyen-Âge : sauts moyens
+        jumpDistance = Math.floor(Math.random() * 600) + 300;
+        jumpForward = Math.random() > 0.5;
       } else {
-        jumpDistance = Math.floor(Math.random() * 150) + 50;  // 50-200 ans
+        // Antiquité : sauts vers toutes les époques
+        jumpDistance = Math.floor(Math.random() * 1500) + 500;
+        jumpForward = Math.random() > 0.7; // Légèrement biaisé vers le futur
       }
 
-      // Direction aléatoire du saut
-      const jumpForward = Math.random() > 0.5;
       const targetYear = jumpForward ? refYear + jumpDistance : refYear - jumpDistance;
       
       // Pour les sauts temporels, chercher dans TOUS les événements (pas de filtre de pool)
@@ -754,55 +893,154 @@ export function useEventSelector({
       } catch {}
     }
 
-    // Relâchement des contraintes si nécessaire
+    // SYSTÈME DE FALLBACK MULTI-NIVEAUX ROBUSTE - GARANTIT qu'un événement sera TOUJOURS trouvé
     let finalEvents = scoredEvents;
-    let selectionPath: 'normal' | 'relax' | 'ultimate_fallback' = 'normal';
+    let selectionPath: 'normal' | 'fallback_1.5x' | 'fallback_2.5x' | 'fallback_5x' | 'fallback_ignore_gap' | 'fallback_all_unused' | 'fallback_reset_50pct' = 'normal';
+
+    console.log('[FALLBACK] Tentative 1 (normal):', { candidates: finalEvents.length, timeGap });
+
+    // Fallback 1: Élargir timeGap de 50%
     if (finalEvents.length === 0) {
-      const relaxedMin = timeGap.min * 0.3;
-      const relaxedMax = timeGap.max * 2;
-      
+      console.log('[FALLBACK] ⚠️ Tentative 1 échouée, tentative 2: élargir ×1.5');
+      const relaxedMin = timeGap.min * 0.7;
+      const relaxedMax = timeGap.max * 1.5;
+
       finalEvents = scoringPool
         .map(evt => ({
           event: evt,
           score: scoreEventOptimized(evt, referenceEvent, userLevel, timeGap),
           timeDiff: getTimeDifference(evt.date, referenceEvent.date)
         }))
-        .filter(({ score, timeDiff }) => 
-          isFinite(score) && 
-          score > 0 && 
-          timeDiff >= relaxedMin && 
-          timeDiff <= relaxedMax
+        .filter(({ score, timeDiff }) =>
+          isFinite(score) && score > 0 && timeDiff >= relaxedMin && timeDiff <= relaxedMax
         )
         .sort((a, b) => b.score - a.score);
-      if (finalEvents.length > 0) selectionPath = 'relax';
+
+      if (finalEvents.length > 0) selectionPath = 'fallback_1.5x';
+      console.log('[FALLBACK] Tentative 2:', { candidates: finalEvents.length, relaxedMin, relaxedMax });
     }
 
-    // Fallback ultime si toujours vide
+    // Fallback 2: Élargir timeGap de 150%
     if (finalEvents.length === 0) {
-      try { devLog('FALLBACK_REASON', { level: userLevel, reason: 'empty_pool_after_constraints' }); } catch {}
-      if (explainOn) {
-        explainLog('SELECTOR_FALLBACK_RANDOM', {
-          exclusions: exclusionAcc.size(),
-        });
-      }
-      finalEvents = preFilteredEvents.slice(0, 10).map(evt => {
-        const score = Math.random() * 100;
-        const parts = { difficulty: 0, notorieteBonus: 0, timeGap: 0, recencyPenalty: 0, freqPenalty: 0, jitter: score };
-        try { (evt as any)._score = score; (evt as any)._scoreParts = parts; } catch {}
-        return {
+      console.log('[FALLBACK] ⚠️ Tentative 2 échouée, tentative 3: élargir ×2.5');
+      const relaxedMin = timeGap.min * 0.4;
+      const relaxedMax = timeGap.max * 2.5;
+
+      finalEvents = scoringPool
+        .map(evt => ({
           event: evt,
-          score,
+          score: scoreEventOptimized(evt, referenceEvent, userLevel, timeGap),
           timeDiff: getTimeDifference(evt.date, referenceEvent.date)
-        };
-      });
-      selectionPath = 'ultimate_fallback';
+        }))
+        .filter(({ score, timeDiff }) =>
+          isFinite(score) && score > 0 && timeDiff >= relaxedMin && timeDiff <= relaxedMax
+        )
+        .sort((a, b) => b.score - a.score);
+
+      if (finalEvents.length > 0) selectionPath = 'fallback_2.5x';
+      console.log('[FALLBACK] Tentative 3:', { candidates: finalEvents.length, relaxedMin, relaxedMax });
     }
 
+    // Fallback 3: Élargir timeGap de 400%
     if (finalEvents.length === 0) {
-      setError("Impossible de sélectionner un événement valide.");
-      setIsGameOver(true);
-      return null;
+      console.log('[FALLBACK] ⚠️ Tentative 3 échouée, tentative 4: élargir ×5');
+      const relaxedMin = timeGap.min * 0.2;
+      const relaxedMax = timeGap.max * 5;
+
+      finalEvents = scoringPool
+        .map(evt => ({
+          event: evt,
+          score: scoreEventOptimized(evt, referenceEvent, userLevel, timeGap),
+          timeDiff: getTimeDifference(evt.date, referenceEvent.date)
+        }))
+        .filter(({ score, timeDiff }) =>
+          isFinite(score) && score > 0 && timeDiff >= relaxedMin && timeDiff <= relaxedMax
+        )
+        .sort((a, b) => b.score - a.score);
+
+      if (finalEvents.length > 0) selectionPath = 'fallback_5x';
+      console.log('[FALLBACK] Tentative 4:', { candidates: finalEvents.length, relaxedMin, relaxedMax });
     }
+
+    // Fallback 4: IGNORER timeGap complètement, juste pool de notoriété
+    if (finalEvents.length === 0) {
+      console.log('[FALLBACK] ⚠️ Tentative 4 échouée, tentative 5: ignorer timeGap');
+      finalEvents = scoringPool
+        .map(evt => ({
+          event: evt,
+          score: scoreEventOptimized(evt, referenceEvent, userLevel, timeGap),
+          timeDiff: getTimeDifference(evt.date, referenceEvent.date)
+        }))
+        .filter(({ score }) => isFinite(score) && score > 0)
+        .sort((a, b) => b.score - a.score);
+
+      if (finalEvents.length > 0) selectionPath = 'fallback_ignore_gap';
+      console.log('[FALLBACK] Tentative 5:', { candidates: finalEvents.length });
+    }
+
+    // Fallback 5: TOUS les événements non utilisés (random)
+    if (finalEvents.length === 0) {
+      console.log('[FALLBACK] ⚠️ Tentative 5 échouée, tentative 6: TOUS événements non utilisés');
+      const allUnusedEvents = events.filter(e => !usedEvents.has(e.id) && e.date && e.id !== referenceEvent.id);
+
+      finalEvents = allUnusedEvents.slice(0, 50).map(evt => ({
+        event: evt,
+        score: Math.random() * 100,
+        timeDiff: getTimeDifference(evt.date, referenceEvent.date)
+      }));
+
+      if (finalEvents.length > 0) selectionPath = 'fallback_all_unused';
+      console.log('[FALLBACK] Tentative 6:', { candidates: finalEvents.length, totalUnused: allUnusedEvents.length });
+    }
+
+    // Fallback 6: RESET 50% événements les plus anciens + retry
+    if (finalEvents.length === 0) {
+      console.log('[FALLBACK] ⚠️ Tentative 6 échouée, tentative 7: RESET 50% événements + retry');
+      console.warn('[FALLBACK] 🔄 Plus de 90% événements utilisés, reset des 50% les plus anciens');
+
+      // Reset 50% des événements (les premiers ajoutés à usedEvents)
+      const usedArray = Array.from(usedEvents);
+      const toReset = usedArray.slice(0, Math.floor(usedArray.length * 0.5));
+      toReset.forEach(id => usedEvents.delete(id));
+
+      // Retry avec événements fraîchement réinitialisés
+      const resetEvents = events.filter(e => !usedEvents.has(e.id) && e.date && e.id !== referenceEvent.id);
+      finalEvents = resetEvents.slice(0, 50).map(evt => ({
+        event: evt,
+        score: Math.random() * 100,
+        timeDiff: getTimeDifference(evt.date, referenceEvent.date)
+      }));
+
+      if (finalEvents.length > 0) selectionPath = 'fallback_reset_50pct';
+      console.log('[FALLBACK] Tentative 7:', { candidates: finalEvents.length, resetCount: toReset.length });
+    }
+
+    // GARANTIE ABSOLUE : Si vraiment aucun événement après tout ça, c'est critique
+    if (finalEvents.length === 0) {
+      console.error('[FALLBACK] ❌ ÉCHEC CRITIQUE : Impossible de trouver un événement après 7 tentatives');
+      console.error('[FALLBACK] État du jeu:', {
+        totalEvents: events.length,
+        usedEvents: usedEvents.size,
+        percentUsed: Math.round((usedEvents.size / events.length) * 100) + '%',
+        referenceEvent: referenceEvent.id,
+        level: userLevel
+      });
+
+      // Dernière tentative désespérée : Prendre N'IMPORTE QUEL événement de la base
+      const desperateEvents = events.filter(e => e.date).slice(0, 10);
+      if (desperateEvents.length > 0) {
+        console.warn('[FALLBACK] 🆘 Sélection désespérée: premier événement valide trouvé');
+        finalEvents = [{ event: desperateEvents[0], score: 1, timeDiff: 0 }];
+        selectionPath = 'fallback_reset_50pct'; // Réutiliser ce path
+      } else {
+        // Si même ça échoue, c'est que la base de données est vide
+        setError("Base de données vide ou corrompue. Impossible de continuer.");
+        setIsGameOver(true);
+        return null;
+      }
+    }
+
+    console.log('[FALLBACK] ✅ Événement trouvé via:', selectionPath, '- Candidats:', finalEvents.length);
 
     // Sélection finale (top 5 pour la variété)
     const topEvents = finalEvents.slice(0, Math.min(5, finalEvents.length));

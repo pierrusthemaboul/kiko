@@ -5,7 +5,7 @@ export default ({ config }) => {
     ...config,
     name: IS_DEV ? "Timalaus DEV" : "Timalaus",
     slug: "kiko",
-    version: "1.6.0",
+    version: "1.6.3",
     orientation: "portrait",
     icon: "./assets/images/oklogo.png",
     scheme: "juno2",

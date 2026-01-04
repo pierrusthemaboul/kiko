@@ -492,27 +492,20 @@ function GameContentA({
       {/* Header avec UserInfo, Countdown */}
       <View style={styles.headerWrapper}>
         <LinearGradient
-          colors={['#c9a876', '#b89968', '#9d7e52', '#a68759', '#8b6f47']}
-          locations={[0, 0.25, 0.5, 0.75, 1]}
+          colors={['#1a1a2e', '#16213e', '#0f3460']}
+          locations={[0, 0.5, 1]}
           start={{ x: 0, y: 0 }}
-          end={{ x: 1, y: 1 }}
+          end={{ x: 1, y: 0 }}
           style={styles.header}
         >
-          {/* Texture granuleuse pour effet vieilli */}
-          <View style={styles.parchmentTexture} />
+          {/* Effet de lumière subtile */}
+          <View style={styles.subtleGlow} />
 
-          {/* Taches et variations de couleur */}
-          <View style={styles.parchmentStain1} />
-          <View style={styles.parchmentStain2} />
-          <View style={styles.parchmentStain3} />
-          <View style={styles.parchmentStain4} />
+          {/* Ligne dorée décorative en haut */}
+          <View style={styles.decorativeLineTop} />
 
-          {/* Ombre interne en haut */}
-          <View style={styles.headerInnerShadow} />
-
-          {/* Bord déchiré en bas */}
-          <View style={styles.tornEdgeTop} />
-          <View style={styles.tornEdgeBottom} />
+          {/* Ligne dorée décorative en bas */}
+          <View style={styles.decorativeLineBottom} />
 
           <View style={styles.headerContent}>
             {user && (
@@ -568,10 +561,10 @@ const styles = StyleSheet.create({
       overflow: 'visible',
       zIndex: 100,
       shadowColor: '#000',
-      shadowOffset: { width: 0, height: 4 },
-      shadowOpacity: 0.35,
-      shadowRadius: 6,
-      elevation: 10,
+      shadowOffset: { width: 0, height: 8 },
+      shadowOpacity: 0.5,
+      shadowRadius: 12,
+      elevation: 15,
     },
     header: {
       position: 'relative',
@@ -582,91 +575,39 @@ const styles = StyleSheet.create({
       paddingVertical: Platform.OS === 'android' ? 12 : 14,
       minHeight: 70,
       overflow: 'hidden',
+      borderBottomWidth: 1,
+      borderBottomColor: 'rgba(212, 175, 55, 0.3)',
     },
-    // Texture granuleuse pour simuler le papier ancien
-    parchmentTexture: {
+    // Effet de lumière subtile pour donner de la profondeur
+    subtleGlow: {
       position: 'absolute',
       top: 0,
-      left: 0,
-      right: 0,
-      bottom: 0,
-      backgroundColor: 'rgba(139, 111, 71, 0.03)',
-      opacity: 0.6,
-      zIndex: 0,
-    },
-    // Taches de vieillissement - différentes zones plus sombres
-    parchmentStain1: {
-      position: 'absolute',
-      top: 5,
-      left: '10%',
-      width: 60,
-      height: 40,
-      backgroundColor: 'rgba(101, 67, 33, 0.08)',
-      borderRadius: 30,
-      zIndex: 0,
-    },
-    parchmentStain2: {
-      position: 'absolute',
-      top: 15,
-      right: '15%',
-      width: 80,
-      height: 35,
-      backgroundColor: 'rgba(139, 90, 43, 0.06)',
-      borderRadius: 40,
-      zIndex: 0,
-    },
-    parchmentStain3: {
-      position: 'absolute',
-      bottom: 10,
-      left: '40%',
-      width: 50,
+      left: '20%',
+      right: '20%',
       height: 30,
-      backgroundColor: 'rgba(101, 67, 33, 0.07)',
-      borderRadius: 25,
+      backgroundColor: 'rgba(255, 255, 255, 0.03)',
+      borderRadius: 100,
       zIndex: 0,
     },
-    parchmentStain4: {
-      position: 'absolute',
-      top: 20,
-      left: '65%',
-      width: 45,
-      height: 45,
-      backgroundColor: 'rgba(120, 80, 40, 0.05)',
-      borderRadius: 22,
-      zIndex: 0,
-    },
-    // Ombre interne en haut
-    headerInnerShadow: {
+    // Ligne dorée décorative en haut
+    decorativeLineTop: {
       position: 'absolute',
       top: 0,
-      left: 0,
-      right: 0,
-      height: 10,
-      backgroundColor: 'rgba(0, 0, 0, 0.12)',
-      zIndex: 0,
-    },
-    // Bords déchirés/irréguliers
-    tornEdgeTop: {
-      position: 'absolute',
-      top: -1,
-      left: 0,
-      right: 0,
-      height: 3,
-      backgroundColor: '#654321',
-      opacity: 0.15,
-      zIndex: 0,
-    },
-    tornEdgeBottom: {
-      position: 'absolute',
-      bottom: 0,
       left: 0,
       right: 0,
       height: 2,
-      backgroundColor: '#654321',
-      opacity: 0.25,
-      zIndex: 0,
-      borderBottomWidth: 1,
-      borderBottomColor: 'rgba(101, 67, 33, 0.3)',
+      backgroundColor: 'rgba(212, 175, 55, 0.4)',
+      zIndex: 1,
+    },
+    // Ligne dorée décorative en bas
+    decorativeLineBottom: {
+      position: 'absolute',
+      bottom: 0,
+      left: 0,
+      right: 0,
+      height: 1,
+      backgroundColor: 'rgba(212, 175, 55, 0.5)',
+      zIndex: 1,
     },
     headerContent: {
       flex: 1,

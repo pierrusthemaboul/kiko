@@ -1396,8 +1396,8 @@ export function useGameLogicA(initialEvent?: string, modeId?: string) {
     }
 
     // --- Load Next Event ---
-    console.log('[HANDLE_LEVEL_UP] 🎲 Sélection du prochain événement');
-    selectNewEvent(allEvents, referenceEvent) // Use the last correct event as reference
+    console.log('[HANDLE_LEVEL_UP] 🎲 Sélection du prochain événement (début de niveau propre)');
+    selectNewEvent(allEvents, null) // Pass null to start fresh with a random event
       .then((selectedEvent) => {
         console.log('[HANDLE_LEVEL_UP] Événement sélectionné:', {
           eventId: selectedEvent?.id,
