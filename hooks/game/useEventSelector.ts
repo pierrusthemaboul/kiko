@@ -1,9 +1,7 @@
 import { useState, useCallback, useMemo, useRef } from 'react';
 import { FirebaseAnalytics } from '../../lib/firebase';
 import { Event, HistoricalPeriod } from '../types';
-import { devLog } from '../../utils/devLog';
 import { LEVEL_CONFIGS } from '../levelConfigs';
-import { explainEnabled, explainLog, createExclusionAccumulator } from '../../utils/explain';
 import { getWeightsForLevel } from '../../lib/selectionWeights';
 
 // Constantes pour limiter les événements antiques
@@ -26,6 +24,49 @@ const scorePartsCache = new Map<string, any>(); // Cache pour les composantes de
  * Système de pools par niveau pour optimiser l'engagement
  * Retourne les critères de filtrage selon le niveau du joueur
  */
+// Constantes de Tiers de Notoriété
+const TIER_THRESHOLDS = {
+  TIER_1_STAR: 75,      // Les incontournables
+  TIER_2_CLASSIC: 50,   // Culture générale
+  TIER_3_EXPERT: 0      // Détails pointus
+};
+
+// Périodes Clés pour la difficulté sémantique
+const KEY_PERIODS = [
+  { id: 'WWI', start: 1914, end: 1918, traps: ['WWII'] },
+  { id: 'WWII', start: 1939, end: 1945, traps: ['WWI'] },
+  { id: 'REV_FR', start: 1789, end: 1799, traps: ['NAPOLEON'] },
+  { id: 'NAPOLEON', start: 1804, end: 1815, traps: ['REV_FR'] }
+];
+
+/**
+ * Système de probabilités par niveau pour les Tiers
+ * Retourne les chances (0-1) de piocher dans chaque Tier
+ */
+const getTierProbabilities = (level: number) => {
+  if (level <= 2) return { t1: 0.9, t2: 0.1, t3: 0.0 };      // Quasi que des stars
+  if (level <= 5) return { t1: 0.7, t2: 0.25, t3: 0.05 };    // Introduction douce
+  if (level <= 10) return { t1: 0.5, t2: 0.4, t3: 0.1 };     // Équilibre
+  if (level <= 20) return { t1: 0.3, t2: 0.5, t3: 0.2 };     // Plus de classiques
+  return { t1: 0.2, t2: 0.4, t3: 0.4 };                      // Mode expert
+};
+
+/**
+ * Ajustement de la notoriété selon l'époque
+ * L'Antiquité/Moyen-Âge étant plus durs, on booste leur score perçu
+ */
+const getAdjustedNotoriety = (notoriety: number, year: number): number => {
+  if (year < 500) return Math.min(100, notoriety + 15);      // Antiquité : +15
+  if (year < 1500) return Math.min(100, notoriety + 10);     // Moyen-Âge : +10
+  if (year < 1800) return Math.min(100, notoriety + 5);      // Renaissance : +5
+  return notoriety;                                          // Moderne : +0
+};
+
+/**
+ * Système de pools par niveau pour optimiser l'engagement
+ * Retourne les critères de filtrage selon le niveau du joueur
+ * @deprecated Remplacé par le système de Tiers probabilistes, gardé pour compatibilité
+ */
 const getPoolCriteriaForLevel = (level: number) => {
   // Pool 1 - Niveaux 1-2 : Onboarding
   if (level <= 2) {
@@ -36,55 +77,15 @@ const getPoolCriteriaForLevel = (level: number) => {
       description: 'Onboarding - Événements très connus',
     };
   }
-
-  // Pool 2 - Niveaux 3-5 : Découverte
-  if (level <= 5) {
-    return {
-      minNotoriete: 60,
-      minYear: 1700,
-      frenchPercentage: 0.5,
-      description: 'Découverte - Introduction progressive',
-    };
-  }
-
-  // Pool 3 - Niveaux 6-9 : Exploration
-  if (level <= 9) {
-    return {
-      minNotoriete: 45,
-      minYear: 1000,
-      frenchPercentage: 0.4,
-      description: 'Exploration - Diversification',
-    };
-  }
-
-  // Pool 4 - Niveaux 10-14 : Maîtrise
-  if (level <= 14) {
-    return {
-      minNotoriete: 30,
-      minYear: 500,
-      frenchPercentage: 0.3,
-      description: 'Maîtrise - Challenge',
-    };
-  }
-
-  // Pool 5 - Niveaux 15-19 : Expert
-  if (level <= 19) {
-    return {
-      minNotoriete: 20,
-      minYear: -500, // Toute l'Antiquité
-      frenchPercentage: 0.25,
-      description: 'Expert - Défi ultime',
-    };
-  }
-
-  // Pool 6 - Niveau 20+ : Infini
+  // Fallback générique
   return {
     minNotoriete: 0,
-    minYear: -3000,
-    frenchPercentage: 0.2,
-    description: 'Infini - Tous événements',
+    minYear: -5000,
+    frenchPercentage: 0.3,
+    description: 'Standard',
   };
 };
+
 
 const notorieteProfileForLevel = (level: number) => {
   if (level <= 3) return { target: 0.6, tolerance: 0.45 };
@@ -149,6 +150,8 @@ export function useEventSelector({
     return Math.floor(Math.random() * (10 - 8 + 1)) + 8; // Entre 8 et 10
   });
   const [shouldForceBonusEvent, setShouldForceBonusEvent] = useState<boolean>(false);
+  const [recentEras, setRecentEras] = useState<HistoricalPeriod[]>([]);
+  const [consecutiveEraCount, setConsecutiveEraCount] = useState<number>(0);
 
   /**
    * Détermine la période historique - Version optimisée avec cache
@@ -185,17 +188,28 @@ export function useEventSelector({
    * Calcule le multiplicateur d'écart temporel selon l'époque
    * Plus l'événement est proche de 2024, plus le gap doit être serré
    */
-  const getEraMultiplier = useCallback((year: number): number => {
-    if (year >= 2000) return 0.2;  // 2000-2024 : ultra-serré
-    if (year >= 1980) return 0.4;  // 1980-1999 : très serré
-    if (year >= 1950) return 0.6;  // 1950-1979 : serré
-    if (year >= 1900) return 0.8;  // 1900-1949 : modéré
-    if (year >= 1800) return 1.0;  // 1800-1899 : normal (baseline)
-    if (year >= 1600) return 1.3;  // 1600-1799 : large
-    if (year >= 1000) return 1.8;  // 1000-1599 : très large
-    if (year >= 500) return 2.5;   // 500-999 : énorme
-    if (year >= 0) return 3.0;     // 0-499 : gigantesque
-    return 3.5;                    // < 0 : maximum (Antiquité)
+  const getEraMultiplier = useCallback((year: number, level: number): number => {
+    let m = 1.0;
+    if (year >= 2020) m = 0.15; // Ultra-serré pour le très récent
+    else if (year >= 2000) m = 0.3;
+    else if (year >= 1980) m = 0.5;
+    else if (year >= 1950) m = 0.7;
+    else if (year >= 1900) m = 0.9;
+    else if (year >= 1800) m = 1.0;
+    else if (year >= 1500) m = 1.5;
+    else if (year >= 1000) m = 2.2;
+    else if (year >= 500) m = 3.8;
+    else if (year >= 0) m = 5.5;
+    else m = 7.5;
+
+    // Amplification de l'écart pour les bas niveaux dans le passé (Anti-difficulté)
+    // C'est cette logique qui s'amenuise avec les niveaux
+    if (m > 1) {
+      // Facteur qui décroît avec le niveau : Level 1 = 3.5x, Level 7+ = 1.0x
+      const levelFactor = Math.max(1, 3.5 - (level - 1) * 0.4);
+      return m * levelFactor;
+    }
+    return m;
   }, []);
 
   /**
@@ -204,20 +218,14 @@ export function useEventSelector({
    */
   const getAdaptiveTimeGap = useCallback((
     referenceYear: number,
-    levelTimeGap: { base: number; minimum: number; variance: number }
+    levelTimeGap: { base: number; minimum: number; variance: number },
+    level: number
   ): { base: number; minimum: number; maximum: number } => {
-    const multiplier = getEraMultiplier(referenceYear);
+    const multiplier = getEraMultiplier(referenceYear, level);
 
     const adaptedBase = Math.max(1, Math.round(levelTimeGap.base * multiplier));
     const adaptedMin = Math.max(1, Math.round(levelTimeGap.minimum * multiplier));
     const adaptedMax = Math.round((levelTimeGap.base + levelTimeGap.variance) * multiplier);
-
-    console.log('[ADAPTIVE_TIMEGAP]', {
-      referenceYear,
-      multiplier,
-      original: levelTimeGap,
-      adapted: { base: adaptedBase, minimum: adaptedMin, maximum: adaptedMax }
-    });
 
     return {
       base: adaptedBase,
@@ -240,10 +248,10 @@ export function useEventSelector({
    */
   const getTimeDifference = useCallback((date1: string | null, date2: string | null): number => {
     if (!date1 || !date2) return Infinity;
-    
+
     const info1 = getCachedDateInfo(date1);
     const info2 = getCachedDateInfo(date2);
-    
+
     const diffInMilliseconds = Math.abs(info1.timestamp - info2.timestamp);
     return diffInMilliseconds / (365.25 * 24 * 60 * 60 * 1000);
   }, []);
@@ -269,34 +277,28 @@ export function useEventSelector({
     const canAddMoreAntiques = canAddAntiqueEvent(userLevel);
 
     // 1. Filtrage de base
-    if (explainEnabled()) {
-      const baseExcluded = events.filter(e => usedEvents.has(e.id) || !e.date || e.id === referenceEvent.id);
-      baseExcluded.forEach(e => {
-        const reason = usedEvents.has(e.id)
-          ? 'used'
-          : (!e.date ? 'missing_date' : (e.id === referenceEvent.id ? 'same_as_reference' : 'other'));
-        explain?.logExclusion(e, 'BASE_FILTER', reason);
-      });
-    }
-    let filtered = events.filter(e => !usedEvents.has(e.id) && e.date && e.id !== referenceEvent.id);
 
-    // 2. Filtrage par POOL selon le niveau (notoriété + année)
+    let filtered = events.filter(e => !usedEvents.has(e.id) && e.date && e.id !== referenceEvent.id && getTimeDifference(e.date, referenceEvent.date) !== 0);
+
+    // 2. Filtrage par TIER PROBABILISTE
+    // On détermine quel Tier on vise pour cet événement spécifique
+    const probs = getTierProbabilities(userLevel);
+    const rand = Math.random();
+    let targetTier = 3;
+    if (rand < probs.t1) targetTier = 1;
+    else if (rand < probs.t1 + probs.t2) targetTier = 2;
+
     const afterPoolFilter = filtered.filter(e => {
-      const notoriete = (e as any).notoriete ?? 0;
+      const rawNotoriety = (e as any).notoriete ?? 0;
       const { year } = getCachedDateInfo(e.date);
-      return notoriete >= poolCriteria.minNotoriete && year >= poolCriteria.minYear;
+      const adjustedNotoriety = getAdjustedNotoriety(rawNotoriety, year);
+
+      // Vérification du Tier
+      if (targetTier === 1) return adjustedNotoriety >= TIER_THRESHOLDS.TIER_1_STAR;
+      if (targetTier === 2) return adjustedNotoriety >= TIER_THRESHOLDS.TIER_2_CLASSIC;
+      return true; // Tier 3 accepte tout (mais sera filtré par le sort score plus tard)
     });
-    if (explainEnabled()) {
-      const excluded = filtered.filter(e => !afterPoolFilter.includes(e));
-      excluded.forEach(e => {
-        const notoriete = (e as any).notoriete ?? 0;
-        const eventYear = getCachedDateInfo(e.date).year;
-        const reason = notoriete < poolCriteria.minNotoriete
-          ? 'notoriete_too_low'
-          : (eventYear < poolCriteria.minYear ? 'year_too_old' : 'other');
-        explain?.logExclusion(e, 'POOL_FILTER', reason);
-      });
-    }
+
     filtered = afterPoolFilter;
 
     // 3. Filtrage temporel préliminaire (large)
@@ -306,20 +308,25 @@ export function useEventSelector({
       const timeDiff = getTimeDifference(e.date, referenceEvent.date);
       return timeDiff <= preTimeLimit;
     });
-    if (explainEnabled()) {
-      const excluded = filtered.filter(e => !afterTime.includes(e));
-      excluded.forEach(e => explain?.logExclusion(e, 'PRE_TIME_LIMIT', 'time_diff_gt_limit'));
-    }
+
     filtered = afterTime;
 
     // 4. Filtrage antique
     if (!canAddMoreAntiques) {
       const afterAntique = filtered.filter(e => !isAntiqueEvent(e));
-      if (explainEnabled()) {
-        const excluded = filtered.filter(e => !afterAntique.includes(e));
-        excluded.forEach(e => explain?.logExclusion(e, 'ANTIQUE_LIMIT', 'is_antique'));
-      }
+
       filtered = afterAntique;
+    }
+
+    // 4.5 Filtrage diversité d'époque (consecutive)
+    // À bas niveau, on évite de rester trop longtemps dans la même époque
+    const currentEra = recentEras.length > 0 ? recentEras[recentEras.length - 1] : null;
+    if (userLevel <= 5 && consecutiveEraCount >= 2 && currentEra) {
+      const afterDiversity = filtered.filter(e => getPeriod(e.date) !== currentEra);
+      // Ne pas vider le pool si trop restrictif
+      if (afterDiversity.length >= 10) {
+        filtered = afterDiversity;
+      }
     }
 
     // 5. Prioriser les événements moins utilisés
@@ -340,16 +347,10 @@ export function useEventSelector({
     // 6. Limite drastique pour éviter les gels
     const limited = filtered.slice(0, MAX_EVENTS_TO_PROCESS);
 
-    devLog('PREFILTER_COUNTS', {
-      original: originalCount,
-      limited: limited.length,
-      level: userLevel,
-      pool: poolCriteria.description,
-      reference: referenceEvent?.id ?? null,
-    });
+
 
     return limited;
-  }, [canAddAntiqueEvent, getTimeDifference, isAntiqueEvent]);
+  }, [canAddAntiqueEvent, getTimeDifference, isAntiqueEvent, recentEras, consecutiveEraCount, getPeriod]);
 
   /**
    * Fonction de scoring optimisée avec cache
@@ -370,7 +371,7 @@ export function useEventSelector({
           (evt as any)._score = cached;
           (evt as any)._scoreParts = parts;
         }
-      } catch {}
+      } catch { }
       return cached;
     }
 
@@ -380,9 +381,9 @@ export function useEventSelector({
     const weights = getWeightsForLevel(userLevel);
     const randomFactor = 0.9 + Math.random() * 0.2;
 
-    // NOUVEAU : Utiliser le timeGap adaptatif basé sur l'époque de référence
+    // NOUVEAU : Utiliser le timeGap adaptatif basé sur l'époque de référence et le niveau
     const refYear = getCachedDateInfo(referenceEvent.date).year;
-    const adaptiveGap = getAdaptiveTimeGap(refYear, timeGap);
+    const adaptiveGap = getAdaptiveTimeGap(refYear, timeGap, userLevel);
     const idealGap = adaptiveGap.base;
 
     // Score de proximité temporelle pondéré
@@ -425,12 +426,37 @@ export function useEventSelector({
     // Jitter léger pour éviter des patterns trop rigides
     const variationBonus = Math.random() * 12;
 
-    const totalScore = Math.max(0, gapScore + notorieteScore + variationBonus - frequencyMalus - recencyPenalty);
+    // SCORING SÉMANTIQUE (Périodes Clés)
+    let contextScore = 0;
+    const candYear = getCachedDateInfo(evt.date).year;
+
+    const refKeyPeriod = KEY_PERIODS.find(p => refYear >= p.start && refYear <= p.end);
+    const candKeyPeriod = KEY_PERIODS.find(p => candYear >= p.start && candYear <= p.end);
+
+    if (refKeyPeriod) {
+      const isSamePeriod = candKeyPeriod?.id === refKeyPeriod.id;
+      const isTrapPeriod = refKeyPeriod.traps.includes(candKeyPeriod?.id || '');
+
+      if (userLevel <= 4) {
+        // MODE FACILE : Éviter la confusion absolue
+        // Si on est dans une période clé, on évite la même période ou son piège direct
+        if (isSamePeriod) contextScore = -500; // Interdit (ex: 1942 vs 1944)
+        else if (isTrapPeriod) contextScore = -300; // Fortement déconseillé (ex: 1916 vs 1942)
+        else contextScore = 50; // Bonus pour être clairement en dehors
+      } else if (userLevel >= 5) {
+        // MODE PIÈGE : Chercher la confusion dès le niveau 5
+        if (isSamePeriod) contextScore = 150; // Très recherché (Précision intra-période)
+        else if (isTrapPeriod) contextScore = 100; // Recherché (Piège inter-périodes)
+      }
+    }
+
+    const totalScore = Math.max(0, gapScore + notorieteScore + variationBonus + contextScore - frequencyMalus - recencyPenalty);
 
     const parts = {
       difficulty: 0,
       notorieteBonus: notorieteScore,
       timeGap: gapScore,
+      context: contextScore,
       recencyPenalty: -recencyPenalty,
       freqPenalty: -frequencyMalus,
       jitter: variationBonus,
@@ -438,7 +464,7 @@ export function useEventSelector({
     try {
       (evt as any)._score = totalScore;
       (evt as any)._scoreParts = parts;
-    } catch {}
+    } catch { }
 
     scoringCache.set(cacheKey, totalScore);
     scorePartsCache.set(cacheKey, parts);
@@ -455,115 +481,24 @@ export function useEventSelector({
     usedEvents: Set<string>,
     currentStreak: number = 0
   ): Promise<Event | null> => {
-    console.log('[SELECT_NEW_EVENT] 🎲 Début de la sélection:', {
-      totalEvents: events.length,
-      referenceEventId: referenceEvent?.id,
-      userLevel,
-      usedEventsCount: usedEvents.size,
-      currentStreak,
-    });
-
-    const explainOn = explainEnabled();
+    const explainOn = false;
     const explainStartTs = Date.now();
-    const exclusionAcc = createExclusionAccumulator(50);
-    if (explainOn) {
-      try {
-        explainLog('SELECTOR_START', {
-          seed: null,
-          level: userLevel,
-          previousEventId: referenceEvent?.id ?? null,
-          previousEpoch: (referenceEvent as any)?.epoque ?? null,
-          nowISO: new Date().toISOString(),
-        });
-        explainLog('CANDIDATES_RAW', {
-          count: Array.isArray(events) ? events.length : 0,
-          sample: (events || []).slice(0, 30).map((e: any) => ({ id: e?.id, titre: e?.titre, notoriete: e?.notoriete ?? null, epoque: e?.epoque ?? null, frequency_score: e?.frequency_score ?? 0, last_used: e?.last_used ?? null })),
-        });
-      } catch {}
-    }
-    
+    const exclusionAcc = { logExclusion: (..._args: any[]) => { }, flush: () => ({ truncated: 0 }), size: () => 0 };
+
     // Debouncing pour éviter les appels multiples rapprochés
     const now = Date.now();
     if (now - lastSelectionTime < DEBOUNCE_DELAY) {
-      if (explainOn) {
-        explainLog('SELECTOR_DEBOUNCED', {
-          elapsed: now - lastSelectionTime,
-          threshold: DEBOUNCE_DELAY,
-        });
-      }
+
       return null;
     }
     setLastSelectionTime(now);
 
     // Validations de base
-    if (!events?.length) {
+    if (!events?.length || !referenceEvent?.date) {
       setError("Erreur interne: données manquantes.");
       setIsGameOver(true);
-      FirebaseAnalytics.error("invalid_selection_params", "Missing events", "selectNewEvent");
+      FirebaseAnalytics.error("invalid_selection_params", "Missing events or reference", "selectNewEvent");
       return null;
-    }
-
-    // Si referenceEvent est null, cela signifie un début de niveau "propre"
-    // On sélectionne un événement aléatoire pour démarrer
-    if (!referenceEvent) {
-      console.log('[SELECT_NEW_EVENT] 🆕 Début de niveau propre - sélection aléatoire');
-
-      const config = LEVEL_CONFIGS[userLevel];
-      if (!config) {
-        setError(`Configuration manquante pour le niveau ${userLevel}`);
-        setIsGameOver(true);
-        return null;
-      }
-
-      // Pré-filtrer les événements selon le niveau
-      const availableEvents = events.filter((e) => {
-        // Déjà utilisé ?
-        if (usedEvents.has(e.id)) {
-          return false;
-        }
-
-        // Respecter les difficultés du niveau
-        const notoriete = e.notoriete ?? 50; // Valeur par défaut si null/undefined
-        const eventDifficulty = notoriete >= 80 ? 1 : notoriete >= 60 ? 2 : notoriete >= 40 ? 3 : notoriete >= 20 ? 4 : 5;
-
-        if (eventDifficulty < config.eventSelection.minDifficulty || eventDifficulty > config.eventSelection.maxDifficulty) {
-          return false;
-        }
-
-        return true;
-      });
-
-      if (availableEvents.length === 0) {
-        // Fallback: prendre n'importe quel événement non utilisé
-        const anyUnused = events.filter(e => !usedEvents.has(e.id));
-        if (anyUnused.length > 0) {
-          const randomEvent = anyUnused[Math.floor(Math.random() * anyUnused.length)];
-          console.log('[SELECT_NEW_EVENT] ✅ Événement aléatoire de fallback sélectionné:', randomEvent.id);
-          await updateStateCallback(randomEvent);
-          return randomEvent;
-        } else {
-          setError("Plus d'événements disponibles pour ce niveau !");
-          setIsGameOver(true);
-          return null;
-        }
-      }
-
-      // Sélectionner aléatoirement parmi les événements disponibles
-      const randomEvent = availableEvents[Math.floor(Math.random() * availableEvents.length)];
-      console.log('[SELECT_NEW_EVENT] ✅ Événement aléatoire sélectionné:', randomEvent.id);
-      await updateStateCallback(randomEvent);
-
-      // Incrémenter le compteur d'événements et planifier le prochain saut temporel
-      const localEventCount = eventCountRef.current;
-      eventCountRef.current = localEventCount + 1;
-      setEventCount(localEventCount + 1);
-
-      // Planifier le premier saut temporel pour ce niveau
-      const { year: selectedYear } = getCachedDateInfo(randomEvent.date);
-      const nextIncrement = getNextForcedJumpIncrement(selectedYear);
-      setForcedJumpEventCount(localEventCount + nextIncrement);
-
-      return randomEvent;
     }
 
     const config = LEVEL_CONFIGS[userLevel];
@@ -585,36 +520,103 @@ export function useEventSelector({
       setShouldForceBonusEvent(true);
       // Réinitialiser le countdown pour le prochain bonus
       setBonusEventCountdown(Math.floor(Math.random() * (10 - 8 + 1)) + 8);
-      devLog('BONUS_EVENT', { trigger: 'countdown', nextIn: bonusEventCountdown });
+
+    }
+
+    // --- LOGIQUE DE BALANCE TEMPORELLE (Anti-Tunnel Historique) ---
+    // Empêcher le joueur de rester trop longtemps loin de 2024 à bas niveau
+    const { year: currentRefYear } = getCachedDateInfo(referenceEvent.date);
+    const isFarFromPresent = currentRefYear < 1900; // "Loin" = avant 1900
+
+    // Mettre à jour le compteur de "tunnel"
+    // Note: on utilise une ref ou un state, mais ici on va calculer dynamiquement pour la prochaine sélection
+    // Idéalement on devrait avoir un state, mais pour l'instant on va utiliser une logique simplifiée basée sur le saut forcé
+
+    // Si on est loin depuis trop longtemps, on force un retour vers le présent
+    // On utilise forcedJumpEventCount pour déclencher ça si ce n'est pas déjà le cas
+    let forceReturnToPresent = false;
+
+    if (userLevel <= 5 && isFarFromPresent) {
+      // À bas niveau, si on est loin, on a une chance de vouloir revenir
+      // Plus le niveau est bas, plus on veut revenir vite
+      const returnProbability = userLevel <= 2 ? 0.4 : 0.2;
+      if (Math.random() < returnProbability) {
+        forceReturnToPresent = true;
+        forceReturnToPresent = true;
+      }
     }
 
     // --- LOGIQUE DE SAUT TEMPOREL FORCÉ ---
-    const isForcedJumpTriggered = localEventCount === forcedJumpEventCount;
+    const isForcedJumpTriggered = localEventCount === forcedJumpEventCount || forceReturnToPresent;
 
-    console.log('[TEMPORAL_JUMP] Check:', {
-      localEventCount,
-      forcedJumpEventCount,
-      triggered: isForcedJumpTriggered
-    });
+
 
     if (isForcedJumpTriggered) {
-      console.log('[TEMPORAL_JUMP] ✨ Saut temporel DÉCLENCHÉ !');
+
       const { year: refYear } = getCachedDateInfo(referenceEvent.date);
-      
+
       // NOUVEAU : Sauts MASSIFS et BIAISÉS vers le passé pour garantir la diversité
       let jumpDistance;
       let jumpForward;
 
       // Si on est dans l'ère moderne (>1700), FORCER des sauts vers l'Antiquité/Moyen-Âge
-      if (refYear > 1700) {
+      // SAUF si on force le retour au présent
+      const eraMultiplier = getEraMultiplier(refYear, userLevel);
+
+      // DÉTECTION DE TUNNEL ANCIEN : Si on est coincé dans le passé depuis trop longtemps
+      // Niveaux 1-10 : Protection stricte (2 événements)
+      // Niveaux 11-15 : Protection moyenne (3 événements)
+      // Niveaux 16-19 : Protection légère (4 événements)
+      let tunnelThreshold = 2;
+      if (userLevel > 15) tunnelThreshold = 4;
+      else if (userLevel > 10) tunnelThreshold = 3;
+
+      const isStuckInPast = userLevel <= 19 &&
+        recentEras.length >= tunnelThreshold &&
+        recentEras.slice(-tunnelThreshold).every(era => era === HistoricalPeriod.ANTIQUITY || era === HistoricalPeriod.MIDDLE_AGES);
+
+      // DÉTECTION DE TUNNEL MODERNE : Si on est coincé dans le récent depuis trop longtemps
+      const isStuckInModern = recentEras.length >= 3 &&
+        recentEras.every(era =>
+          era === HistoricalPeriod.NINETEENTH ||
+          era === HistoricalPeriod.TWENTIETH ||
+          era === HistoricalPeriod.TWENTYFIRST
+        );
+
+      if (forceReturnToPresent || isStuckInPast) {
+        // Retour forcé vers le présent/moderne (1800-2024) pour faire respirer le joueur
+        // On élargit un peu la plage (1800 au lieu de 1950) pour varier
+        const targetYear = Math.floor(Math.random() * (2024 - 1800 + 1)) + 1800;
+        jumpDistance = Math.abs(refYear - targetYear);
+        jumpForward = true; // Toujours vers le futur
+
+      } else if (isStuckInModern) {
+        // Retour forcé vers le passé (avant 1800) pour varier
+        // On cible Antiquité, Moyen-Âge ou Renaissance
+        const targetYear = Math.floor(Math.random() * (1700 - (-500) + 1)) - 500;
+        jumpDistance = Math.abs(refYear - targetYear);
+        jumpForward = false; // Toujours vers le passé
+
+      } else if (refYear > 1700) {
         // 80% de chance d'aller dans le passé lointain
         const goToAncientTimes = Math.random() < 0.8;
 
         if (goToAncientTimes) {
           // Saut MASSIF vers Antiquité (-500 à 500) ou Moyen-Âge (500-1500)
-          const targetEra = Math.random() < 0.5 ? 'antiquite' : 'moyen-age';
+          // Éviter de retourner dans une époque qu'on vient de quitter
+          const antiquity = HistoricalPeriod.ANTIQUITY;
+          const middleAges = HistoricalPeriod.MIDDLE_AGES;
 
-          if (targetEra === 'antiquite') {
+          let targetEra: HistoricalPeriod;
+          if (recentEras.includes(antiquity) && !recentEras.includes(middleAges)) {
+            targetEra = middleAges;
+          } else if (recentEras.includes(middleAges) && !recentEras.includes(antiquity)) {
+            targetEra = antiquity;
+          } else {
+            targetEra = Math.random() < 0.5 ? antiquity : middleAges;
+          }
+
+          if (targetEra === antiquity) {
             // Cibler entre -500 et 500
             const targetYear = Math.floor(Math.random() * 1000) - 500;
             jumpDistance = Math.abs(refYear - targetYear);
@@ -633,7 +635,18 @@ export function useEventSelector({
       } else if (refYear > 1500) {
         // Renaissance : 60% vers Antiquité/Moyen-Âge
         if (Math.random() < 0.6) {
-          const targetYear = Math.floor(Math.random() * 1500) - 500;
+          const antiquity = HistoricalPeriod.ANTIQUITY;
+          const middleAges = HistoricalPeriod.MIDDLE_AGES;
+          let targetEra: HistoricalPeriod;
+
+          if (recentEras.includes(antiquity)) targetEra = middleAges;
+          else if (recentEras.includes(middleAges)) targetEra = antiquity;
+          else targetEra = Math.random() < 0.5 ? antiquity : middleAges;
+
+          const targetYear = targetEra === antiquity
+            ? Math.floor(Math.random() * 1000) - 500
+            : Math.floor(Math.random() * 1000) + 500;
+
           jumpDistance = Math.abs(refYear - targetYear);
           jumpForward = false;
         } else {
@@ -655,41 +668,62 @@ export function useEventSelector({
       }
 
       const targetYear = jumpForward ? refYear + jumpDistance : refYear - jumpDistance;
-      
+
       // Pour les sauts temporels, chercher dans TOUS les événements (pas de filtre de pool)
       // On veut pouvoir sauter dans n'importe quelle époque
       const jumpCandidates = events
-        .filter(e => !usedEvents.has(e.id) && e.date && e.id !== referenceEvent.id)
+        .filter(e => !usedEvents.has(e.id) && e.date && e.id !== referenceEvent.id && getTimeDifference(e.date, referenceEvent.date) !== 0)
         .filter(e => {
           const { year: eventYear } = getCachedDateInfo(e.date);
+          const notoriete = (e as any).notoriete ?? 0;
+
+          // Respecter la notoriété minimale pour les bas niveaux via le système de Tier simplifié pour les sauts
+          const adjustedNotoriety = getAdjustedNotoriety(notoriete, eventYear);
+          if (userLevel <= 2 && adjustedNotoriety < TIER_THRESHOLDS.TIER_1_STAR) return false;
+          if (userLevel <= 5 && adjustedNotoriety < TIER_THRESHOLDS.TIER_2_CLASSIC) return false;
+
+          // CRUCIAL : Même pour un saut, on respecte l'écart minimum adaptatif
+          // pour éviter des situations trop dures (ex: 881 vs 1081 au niveau 1)
+          const adaptiveGap = getAdaptiveTimeGap(refYear, config.timeGap, userLevel);
+          if (Math.abs(eventYear - refYear) < adaptiveGap.minimum) return false;
+
           const timeDiffFromTarget = Math.abs(eventYear - targetYear);
           // Tolérance large pour maximiser les chances de trouver un candidat
-          return timeDiffFromTarget <= jumpDistance;
+          // Mais on privilégie quand même la direction demandée
+          if (jumpForward && eventYear <= refYear) return false;
+          if (!jumpForward && eventYear >= refYear) return false;
+
+          return timeDiffFromTarget <= jumpDistance * 1.5; // Marge de 50%
         })
         .slice(0, 50); // Augmenter la limite pour avoir plus de choix
 
-      console.log('[TEMPORAL_JUMP] Recherche de candidats:', {
-        refYear,
-        targetYear,
-        jumpDistance,
-        direction: jumpForward ? 'forward' : 'backward',
-        candidatesFound: jumpCandidates.length
-      });
+
 
       if (jumpCandidates.length > 0) {
         // Sélection aléatoire pour le saut temporel
         const jumpEvent = jumpCandidates[Math.floor(Math.random() * jumpCandidates.length)];
         const jumpYear = getCachedDateInfo(jumpEvent.date).year;
 
-        // Déterminer l'époque cible pour le message BASÉE sur l'année cible (targetYear), pas l'année réelle
-        // Cela assure la cohérence du message même si l'événement sélectionné est légèrement décalé
+        // Déterminer l'époque cible pour le message BASÉE sur l'année RÉELLE de l'événement trouvé
+        // Cela évite les incohérences (ex: viser 1970 mais trouver 180)
         let targetEpoque = '';
-        if (targetYear < 500) targetEpoque = "l'Antiquité";
-        else if (targetYear < 1500) targetEpoque = 'le Moyen-Âge';
-        else if (targetYear < 1800) targetEpoque = 'la Renaissance';
-        else if (targetYear < 1900) targetEpoque = 'le XIXe siècle';
-        else if (targetYear < 2000) targetEpoque = 'le XXe siècle';
+        if (jumpYear < 500) targetEpoque = "l'Antiquité";
+        else if (jumpYear < 1500) targetEpoque = 'le Moyen-Âge';
+        else if (jumpYear < 1800) targetEpoque = 'la Renaissance';
+        else if (jumpYear < 1900) targetEpoque = 'le XIXe siècle';
+        else if (jumpYear < 2000) targetEpoque = 'le XXe siècle';
         else targetEpoque = 'le XXIe siècle';
+
+        // Mise à jour de l'état de diversité
+        const jumpEra = getPeriod(jumpEvent.date);
+        setRecentEras(prev => {
+          const next = [...prev, jumpEra];
+          return next.slice(-3);
+        });
+        setConsecutiveEraCount(prev => {
+          const last = recentEras[recentEras.length - 1];
+          return last === jumpEra ? prev + 1 : 1;
+        });
 
         // Mettre à jour le prochain saut
         const nextIncrement = getNextForcedJumpIncrement(targetYear);
@@ -718,6 +752,8 @@ export function useEventSelector({
         });
 
         console.log('[TEMPORAL_JUMP] 🚀 VOYAGE DANS LE TEMPS !', {
+          id: jumpEvent.id,
+          titre: jumpEvent.titre,
           from: refYear,
           to: jumpYear,
           epoque: targetEpoque,
@@ -725,34 +761,34 @@ export function useEventSelector({
           distance: jumpDistance
         });
 
-        devLog('TEMPORAL_JUMP', {
-          from: refYear,
-          to: jumpYear,
-          epoque: targetEpoque,
-          direction: jumpForward ? 'forward' : 'backward'
-        });
-
         return markedJumpEvent;
       } else {
-        console.log('[TEMPORAL_JUMP] ⚠️ Aucun candidat pour le saut temporel, sélection normale');
-        if (explainOn) {
-          explainLog('FORCED_JUMP_NO_CANDIDATE', {
-            referenceYear: refYear,
-            attemptedJumpDistance: jumpDistance,
-          });
-        }
+
         // Continuer vers sélection normale si échec
       }
     }
     // --- FIN LOGIQUE SAUT TEMPOREL ---
 
     // 🚀 PRÉ-FILTRAGE INTELLIGENT (réduit de 896 à ~150 événements max)
-    const preFilteredEvents = preFilterEvents(events, usedEvents, userLevel, referenceEvent, explainOn ? { logExclusion: exclusionAcc.logExclusion } : undefined);
+    let preFilteredEvents = preFilterEvents(events, usedEvents, userLevel, referenceEvent, explainOn ? { logExclusion: exclusionAcc.logExclusion } : undefined);
 
+    // Si le pré-filtrage ne retourne rien, utiliser TOUS les événements non utilisés
     if (preFilteredEvents.length === 0) {
-      setError("Plus d'événements disponibles pour ce niveau !");
-      setIsGameOver(true);
-      return null;
+
+      preFilteredEvents = events.filter(e => !usedEvents.has(e.id) && e.date && e.id !== referenceEvent.id && getTimeDifference(e.date, referenceEvent.date) !== 0);
+
+      // Si vraiment AUCUN événement non utilisé, réutiliser des événements
+      if (preFilteredEvents.length === 0) {
+
+        preFilteredEvents = events.filter(e => e.date && e.id !== referenceEvent.id && getTimeDifference(e.date, referenceEvent.date) !== 0);
+      }
+
+      // Si même après ça il n'y a rien (base vide), alors c'est critique
+      if (preFilteredEvents.length === 0) {
+        setError("Base de données vide ou corrompue !");
+        setIsGameOver(true);
+        return null;
+      }
     }
 
     // Configuration du gap temporel
@@ -769,13 +805,12 @@ export function useEventSelector({
     const computeMinNotoriete = (level: number, forceEasy: boolean, forceBonus: boolean, streak: number, poolMinNotoriete: number) => {
       if (forceBonus) {
         // Événement BONUS : très facile (notoriété maximale)
-        devLog('BONUS_EVENT', { action: 'forcing_bonus_event', level });
-        return 85; // Événement ultra-connu
+        // Événement BONUS : très facile (notoriété maximale)
       }
 
       if (forceEasy) {
         // Forcer événement facile : notoriété élevée
-        devLog('ANTI_FRUSTRATION', { action: 'forcing_easy_event', level });
+        // Forcer événement facile : notoriété élevée
         return Math.max(70, poolMinNotoriete + 25);
       }
 
@@ -784,11 +819,11 @@ export function useEventSelector({
       if (streak >= 10) {
         // Bon streak : augmenter légèrement la difficulté
         streakAdjustment = -10; // Baisse de 10 points la notoriété minimale = plus difficile
-        devLog('STREAK_ADAPTATION', { action: 'harder', streak, adjustment: streakAdjustment });
+        streakAdjustment = -10; // Baisse de 10 points la notoriété minimale = plus difficile
       } else if (streak === 0) {
         // Streak cassé : légèrement plus facile pour aider à reconstruire
         streakAdjustment = 5; // Augmente de 5 points la notoriété minimale = plus facile
-        devLog('STREAK_ADAPTATION', { action: 'easier', streak, adjustment: streakAdjustment });
+        streakAdjustment = 5; // Augmente de 5 points la notoriété minimale = plus facile
       }
 
       // Logique normale (ancienne) + ajustement streak
@@ -801,8 +836,7 @@ export function useEventSelector({
       return Math.max(0, baseMin + streakAdjustment);
     };
 
-    const poolCriteria = getPoolCriteriaForLevel(userLevel);
-    const minNotoriete = computeMinNotoriete(userLevel, shouldForceEasyEvent, shouldForceBonusEvent, currentStreak, poolCriteria.minNotoriete);
+    const minNotoriete = computeMinNotoriete(userLevel, shouldForceEasyEvent, shouldForceBonusEvent, currentStreak, 30);
     let notorieteConstrainedPool = preFilteredEvents;
 
     if (minNotoriete > 0) {
@@ -815,12 +849,7 @@ export function useEventSelector({
         ? filteredByNotoriete
         : preFilteredEvents;
     }
-    if (explainOn) {
-      try {
-        const excluded = preFilteredEvents.filter(e => !notorieteConstrainedPool.includes(e)).slice(0, 50);
-        excluded.forEach(e => exclusionAcc.logExclusion(e as any, 'NOTORIETE_MIN', 'below_threshold'));
-      } catch {}
-    }
+
 
     // Réinitialiser les flags après avoir forcé un événement
     if (shouldForceEasyEvent) {
@@ -842,66 +871,35 @@ export function useEventSelector({
     });
 
     const scoringPool = diversityFilteredPool.slice(0, MAX_SCORING_POOL);
-    if (explainOn) {
-      try {
-        const { truncated } = exclusionAcc.flush('EXCLUSION');
-        explainLog('CANDIDATES_AFTER_FILTER', {
-          count: scoringPool.length,
-          kept_sample: scoringPool.slice(0, 30).map((e: any) => ({ id: e?.id, titre: e?.titre, notoriete: e?.notoriete ?? null })),
-          excluded_total: exclusionAcc.size(),
-          excluded_truncated_count: truncated,
-        });
-      } catch {}
-    }
-    
+
+
     const scoredEvents = scoringPool
       .map(evt => ({
         event: evt,
         score: scoreEventOptimized(evt, referenceEvent, userLevel, timeGap),
         timeDiff: getTimeDifference(evt.date, referenceEvent.date)
       }))
-      .filter(({ score, timeDiff }) => 
-        isFinite(score) && 
-        score > 0 && 
-        timeDiff >= timeGap.min && 
+      .filter(({ score, timeDiff }) =>
+        isFinite(score) &&
+        score > 0 &&
+        timeDiff >= timeGap.min &&
         timeDiff <= timeGap.max
       )
       .sort((a, b) => b.score - a.score);
-    
-    try {
-      devLog('SCORING_COUNTS', {
-        level: userLevel,
-        pool: scoringPool.length,
-        passed: scoredEvents.length,
-        minGap: timeGap.min,
-        maxGap: timeGap.max,
-      });
-    } catch {}
 
-    if (explainOn) {
-      try {
-        const weights = { timeGapWeight: 35, freqMalusPerUnit: 10, freqMalusCap: 500, jitterRange: 10 };
-        const topDetails = scoredEvents.slice(0, 30).map(({ event, score, timeDiff }: any) => ({
-          id: event?.id,
-          notoriete: (event as any)?.notoriete ?? null,
-          frequency_score: (event as any)?.frequency_score ?? 0,
-          timeDiffYears: timeDiff,
-          baseScore: ((event as any)?._scoreParts?.timeGap ?? 0) + ((event as any)?._scoreParts?.jitter ?? 0),
-          weightedScore: (event as any)?._score ?? score,
-        }));
-        explainLog('SCORING_INPUT', { weights, candidates_top: topDetails });
-      } catch {}
-    }
+
+
+
 
     // SYSTÈME DE FALLBACK MULTI-NIVEAUX ROBUSTE - GARANTIT qu'un événement sera TOUJOURS trouvé
     let finalEvents = scoredEvents;
     let selectionPath: 'normal' | 'fallback_1.5x' | 'fallback_2.5x' | 'fallback_5x' | 'fallback_ignore_gap' | 'fallback_all_unused' | 'fallback_reset_50pct' = 'normal';
 
-    console.log('[FALLBACK] Tentative 1 (normal):', { candidates: finalEvents.length, timeGap });
+
 
     // Fallback 1: Élargir timeGap de 50%
     if (finalEvents.length === 0) {
-      console.log('[FALLBACK] ⚠️ Tentative 1 échouée, tentative 2: élargir ×1.5');
+
       const relaxedMin = timeGap.min * 0.7;
       const relaxedMax = timeGap.max * 1.5;
 
@@ -917,12 +915,11 @@ export function useEventSelector({
         .sort((a, b) => b.score - a.score);
 
       if (finalEvents.length > 0) selectionPath = 'fallback_1.5x';
-      console.log('[FALLBACK] Tentative 2:', { candidates: finalEvents.length, relaxedMin, relaxedMax });
     }
 
     // Fallback 2: Élargir timeGap de 150%
     if (finalEvents.length === 0) {
-      console.log('[FALLBACK] ⚠️ Tentative 2 échouée, tentative 3: élargir ×2.5');
+
       const relaxedMin = timeGap.min * 0.4;
       const relaxedMax = timeGap.max * 2.5;
 
@@ -938,12 +935,11 @@ export function useEventSelector({
         .sort((a, b) => b.score - a.score);
 
       if (finalEvents.length > 0) selectionPath = 'fallback_2.5x';
-      console.log('[FALLBACK] Tentative 3:', { candidates: finalEvents.length, relaxedMin, relaxedMax });
     }
 
     // Fallback 3: Élargir timeGap de 400%
     if (finalEvents.length === 0) {
-      console.log('[FALLBACK] ⚠️ Tentative 3 échouée, tentative 4: élargir ×5');
+
       const relaxedMin = timeGap.min * 0.2;
       const relaxedMax = timeGap.max * 5;
 
@@ -959,12 +955,11 @@ export function useEventSelector({
         .sort((a, b) => b.score - a.score);
 
       if (finalEvents.length > 0) selectionPath = 'fallback_5x';
-      console.log('[FALLBACK] Tentative 4:', { candidates: finalEvents.length, relaxedMin, relaxedMax });
     }
 
     // Fallback 4: IGNORER timeGap complètement, juste pool de notoriété
     if (finalEvents.length === 0) {
-      console.log('[FALLBACK] ⚠️ Tentative 4 échouée, tentative 5: ignorer timeGap');
+
       finalEvents = scoringPool
         .map(evt => ({
           event: evt,
@@ -975,13 +970,12 @@ export function useEventSelector({
         .sort((a, b) => b.score - a.score);
 
       if (finalEvents.length > 0) selectionPath = 'fallback_ignore_gap';
-      console.log('[FALLBACK] Tentative 5:', { candidates: finalEvents.length });
     }
 
     // Fallback 5: TOUS les événements non utilisés (random)
     if (finalEvents.length === 0) {
-      console.log('[FALLBACK] ⚠️ Tentative 5 échouée, tentative 6: TOUS événements non utilisés');
-      const allUnusedEvents = events.filter(e => !usedEvents.has(e.id) && e.date && e.id !== referenceEvent.id);
+
+      const allUnusedEvents = events.filter(e => !usedEvents.has(e.id) && e.date && e.id !== referenceEvent.id && getTimeDifference(e.date, referenceEvent.date) !== 0);
 
       finalEvents = allUnusedEvents.slice(0, 50).map(evt => ({
         event: evt,
@@ -990,13 +984,11 @@ export function useEventSelector({
       }));
 
       if (finalEvents.length > 0) selectionPath = 'fallback_all_unused';
-      console.log('[FALLBACK] Tentative 6:', { candidates: finalEvents.length, totalUnused: allUnusedEvents.length });
     }
 
     // Fallback 6: RESET 50% événements les plus anciens + retry
     if (finalEvents.length === 0) {
-      console.log('[FALLBACK] ⚠️ Tentative 6 échouée, tentative 7: RESET 50% événements + retry');
-      console.warn('[FALLBACK] 🔄 Plus de 90% événements utilisés, reset des 50% les plus anciens');
+
 
       // Reset 50% des événements (les premiers ajoutés à usedEvents)
       const usedArray = Array.from(usedEvents);
@@ -1004,7 +996,7 @@ export function useEventSelector({
       toReset.forEach(id => usedEvents.delete(id));
 
       // Retry avec événements fraîchement réinitialisés
-      const resetEvents = events.filter(e => !usedEvents.has(e.id) && e.date && e.id !== referenceEvent.id);
+      const resetEvents = events.filter(e => !usedEvents.has(e.id) && e.date && e.id !== referenceEvent.id && getTimeDifference(e.date, referenceEvent.date) !== 0);
       finalEvents = resetEvents.slice(0, 50).map(evt => ({
         event: evt,
         score: Math.random() * 100,
@@ -1012,24 +1004,16 @@ export function useEventSelector({
       }));
 
       if (finalEvents.length > 0) selectionPath = 'fallback_reset_50pct';
-      console.log('[FALLBACK] Tentative 7:', { candidates: finalEvents.length, resetCount: toReset.length });
     }
 
     // GARANTIE ABSOLUE : Si vraiment aucun événement après tout ça, c'est critique
     if (finalEvents.length === 0) {
-      console.error('[FALLBACK] ❌ ÉCHEC CRITIQUE : Impossible de trouver un événement après 7 tentatives');
-      console.error('[FALLBACK] État du jeu:', {
-        totalEvents: events.length,
-        usedEvents: usedEvents.size,
-        percentUsed: Math.round((usedEvents.size / events.length) * 100) + '%',
-        referenceEvent: referenceEvent.id,
-        level: userLevel
-      });
+
 
       // Dernière tentative désespérée : Prendre N'IMPORTE QUEL événement de la base
-      const desperateEvents = events.filter(e => e.date).slice(0, 10);
+      const desperateEvents = events.filter(e => e.date && getTimeDifference(e.date, referenceEvent.date) !== 0).slice(0, 10);
       if (desperateEvents.length > 0) {
-        console.warn('[FALLBACK] 🆘 Sélection désespérée: premier événement valide trouvé');
+
         finalEvents = [{ event: desperateEvents[0], score: 1, timeDiff: 0 }];
         selectionPath = 'fallback_reset_50pct'; // Réutiliser ce path
       } else {
@@ -1040,22 +1024,15 @@ export function useEventSelector({
       }
     }
 
-    console.log('[FALLBACK] ✅ Événement trouvé via:', selectionPath, '- Candidats:', finalEvents.length);
+
 
     // Sélection finale (top 5 pour la variété)
     const topEvents = finalEvents.slice(0, Math.min(5, finalEvents.length));
     const topK = topEvents.map(x => x.event);
-    devLog('SELECTION_PATH', {
-      level: userLevel,
-      selectionPath,
-      finalCandidates: finalEvents.length,
-      topSample: topEvents.map(e => e.event?.id ?? null),
-    });
+
     let pickedIndex = Math.floor(Math.random() * topEvents.length);
     const selectedEvent = topEvents[pickedIndex].event;
-    if (explainOn) {
-      try { explainLog('RNG', { method: 'native', seed: null, poolSize: topEvents.length, indexPicked: pickedIndex }); } catch {}
-    }
+
 
     // NOTE: eventCount a déjà été incrémenté au début de la fonction (ligne 370)
     // Ne PAS incrémenter à nouveau ici pour éviter la double incrémentation
@@ -1063,9 +1040,21 @@ export function useEventSelector({
     // Marquer l'événement comme bonus si c'est le cas
     const selected = { ...(selectedEvent as any), _isBonusEvent: wasBonusEvent } as Event;
 
+    // Mise à jour de l'état de diversité
+    const selectedEra = getPeriod(selected.date);
+    setRecentEras(prev => {
+      const next = [...prev, selectedEra];
+      return next.slice(-3);
+    });
+    setConsecutiveEraCount(prev => {
+      const last = recentEras[recentEras.length - 1];
+      return last === selectedEra ? prev + 1 : 1;
+    });
+
     await updateStateCallback(selected);
 
     console.log('[SELECT_NEW_EVENT] ✅ Événement sélectionné:', {
+      level: userLevel, // AJOUTÉ : Pour savoir à quel niveau on est
       id: (selected as any)?.id,
       titre: (selected as any)?.titre,
       notoriete: (selected as any)?.notoriete ?? null,
@@ -1076,19 +1065,9 @@ export function useEventSelector({
       nextJumpAt: forcedJumpEventCount,
     });
 
-    devLog('WHY_SELECTED', {
-      id: (selected as any)?.id,
-      titre: (selected as any)?.titre,
-      notoriete: (selected as any)?.notoriete ?? null,
-      level: userLevel,
-      path: selectionPath,
-      parts: (selected as any)?._scoreParts,
-      isBonus: wasBonusEvent,
-    });
 
-    if (explainOn) {
-      try { explainLog('SELECTOR_END', { idPicked: (selected as any)?.id ?? null, durationMs: Date.now() - explainStartTs }); } catch {}
-    }
+
+
 
     // 📊 Analytics : Tracker la sélection d'événement (async, non-bloquant)
     const trackEventSelection = async () => {
@@ -1126,7 +1105,7 @@ export function useEventSelector({
         });
       } catch (err) {
         // Silencieux : on ne veut pas casser le jeu pour un problème d'analytics
-        console.warn('[Analytics] Failed to track event selection:', err);
+        // Silencieux : on ne veut pas casser le jeu pour un problème d'analytics
       }
     };
 
@@ -1137,7 +1116,8 @@ export function useEventSelector({
 
   }, [
     setError, setIsGameOver, updateStateCallback, lastSelectionTime,
-    preFilterEvents, scoreEventOptimized, getTimeDifference, shouldForceEasyEvent
+    preFilterEvents, scoreEventOptimized, getTimeDifference, shouldForceEasyEvent,
+    recentEras, consecutiveEraCount, getPeriod, forcedJumpEventCount, bonusEventCountdown
   ]);
 
   /**
@@ -1173,7 +1153,8 @@ export function useEventSelector({
       if (newCount >= 2) {
         // Forcer un événement facile au prochain tour
         setShouldForceEasyEvent(true);
-        devLog('ANTI_FRUSTRATION', { trigger: 'consecutive_errors', count: newCount });
+        // Forcer un événement facile au prochain tour
+        setShouldForceEasyEvent(true);
       }
       return newCount;
     });

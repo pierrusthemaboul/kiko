@@ -35,9 +35,9 @@ import type {
   User,
   Event,
   ExtendedLevelConfig,
-  RewardType,
   LevelEventSummary,
 } from '@/hooks/types'; // Assurez-vous que ce chemin est correct
+import { RewardType } from '@/hooks/types';
 
 // Interface pour l'historique des niveaux (si non définie ailleurs)
 interface LevelHistory {
@@ -47,9 +47,9 @@ interface LevelHistory {
 
 // --- Interface pour l'état publicitaire attendu ---
 interface AdStateForContent {
-    rewardedLoaded: boolean;
-    hasWatchedRewardedAd: boolean;
-    isAdFree?: boolean;
+  rewardedLoaded: boolean;
+  hasWatchedRewardedAd: boolean;
+  isAdFree?: boolean;
 }
 
 // --- Interface des Props Mises à Jour ---
@@ -72,7 +72,10 @@ interface GameContentAProps {
   level: number;
   fadeAnim: Animated.Value; // Animation gérée par le parent
   showLevelModal: boolean;
+  showLevelTransition: boolean;
+  triggerLevelEndAnim: boolean;
   isLevelPaused: boolean;
+  isLastEventOfLevel: boolean;
   handleLevelUp: () => void;
   currentLevelConfig: ExtendedLevelConfig;
   currentReward: {
@@ -122,7 +125,10 @@ function GameContentA({
   level,
   fadeAnim, // Reçu du parent
   showLevelModal,
+  showLevelTransition,
+  triggerLevelEndAnim,
   isLevelPaused,
+  isLastEventOfLevel,
   handleLevelUp,
   currentLevelConfig,
   currentReward,
@@ -207,37 +213,37 @@ function GameContentA({
             Math.abs(currentReward.targetPosition.y - position.y) > 5;
 
           if (positionChanged) {
-             // console.log(`[GameContentA] Updating reward position`);
-             updateRewardPosition(position);
-             setIsRewardPositionSet(true);
+            // console.log(`[GameContentA] Updating reward position`);
+            updateRewardPosition(position);
+            setIsRewardPositionSet(true);
           } else {
-             // console.log("[GameContentA] Position unchanged, no update needed");
-             setIsRewardPositionSet(true);
+            // console.log("[GameContentA] Position unchanged, no update needed");
+            setIsRewardPositionSet(true);
           }
         } else {
           // console.warn("[GameContentA] getPosition returned invalid position:", position);
           if (attempts < MAX_ATTEMPTS) {
             attempts++;
           } else {
-             // console.log("[GameContentA] Using fallback position after failed attempts");
-             const fallbackPosition = currentReward.type === RewardType.EXTRA_LIFE
+            // console.log("[GameContentA] Using fallback position after failed attempts");
+            const fallbackPosition = currentReward.type === RewardType.EXTRA_LIFE
               ? { x: Dimensions.get('window').width * 0.80, y: 50 }
               : { x: Dimensions.get('window').width * 0.20, y: 50 };
-             updateRewardPosition(fallbackPosition);
-             setIsRewardPositionSet(true);
+            updateRewardPosition(fallbackPosition);
+            setIsRewardPositionSet(true);
           }
         }
       } catch (e) {
         // console.warn("[GameContentA] Error getting element position:", e);
         if (attempts < MAX_ATTEMPTS) {
-            attempts++;
+          attempts++;
         } else {
-           // console.log("[GameContentA] Using fallback position after error");
-           const fallbackPosition = currentReward.type === RewardType.EXTRA_LIFE
+          // console.log("[GameContentA] Using fallback position after error");
+          const fallbackPosition = currentReward.type === RewardType.EXTRA_LIFE
             ? { x: Dimensions.get('window').width * 0.80, y: 50 }
             : { x: Dimensions.get('window').width * 0.20, y: 50 };
-           updateRewardPosition(fallbackPosition);
-           setIsRewardPositionSet(true);
+          updateRewardPosition(fallbackPosition);
+          setIsRewardPositionSet(true);
         }
       }
     };
@@ -269,7 +275,7 @@ function GameContentA({
         Animated.timing(contentOpacity, { toValue: 1, duration: 300, delay: 1000, useNativeDriver: true }),
       ]).start();
     } else {
-        contentOpacity.setValue(1);
+      contentOpacity.setValue(1);
     }
   }, [showLevelModal, contentOpacity]);
 
@@ -318,7 +324,7 @@ function GameContentA({
       return () => clearTimeout(timer);
     }
     if (!previousEvent && !displayedEvent && !error && user) {
-       // isInitialRenderRef.current = true; // Commenté
+      // isInitialRenderRef.current = true; // Commenté
     }
   }, [previousEvent, displayedEvent, error, user]);
 
@@ -368,7 +374,7 @@ function GameContentA({
           {/* --- MODIFICATION : Le bouton Retour doit appeler handleModalMenu --- */}
           {/* Si une erreur survient, on propose généralement de retourner au menu */}
           <TouchableOpacity onPress={handleModalMenu} style={styles.errorButton}>
-              <Text style={styles.errorButtonText}>Retour au Menu</Text>
+            <Text style={styles.errorButtonText}>Retour au Menu</Text>
           </TouchableOpacity>
           {/* -------------------------------------------------------------------- */}
         </View>
@@ -394,8 +400,12 @@ function GameContentA({
           streak={streak}
           level={level}
           isLevelPaused={isLevelPaused}
+          triggerLevelEndAnim={triggerLevelEndAnim}
           isInitialRender={isInitialRenderRef.current}
+          isLastEventOfLevel={isLastEventOfLevel}
         />
+
+
 
         {/* --- Modal de Level Up --- */}
         <LevelUpModalBis
@@ -403,7 +413,7 @@ function GameContentA({
           level={level}
           onStart={handleLevelUp}
           onReturnToMenu={onActualMenu}
-          name={currentLevelConfig.name}
+          name={currentLevelConfig.name || `Niveau ${level}`}
           description={currentLevelConfig.description}
           requiredEvents={currentLevelConfig.eventsNeeded}
           specialRules={currentLevelConfig.specialRules}
@@ -523,8 +533,8 @@ function GameContentA({
             )}
             <View style={styles.countdownContainer}>
               <Countdown
-                 timeLeft={timeLeft}
-                 isActive={!isLevelPaused && isImageLoaded && !!user && !!previousEvent && !!displayedEvent && !isGameOver && !showLevelModal}
+                timeLeft={timeLeft}
+                isActive={!isLevelPaused && isImageLoaded && !!user && !!previousEvent && !!displayedEvent && !isGameOver && !showLevelModal}
               />
             </View>
           </View>
@@ -552,229 +562,229 @@ function GameContentA({
 // --- Styles ---
 // (Identiques à la version originale fournie)
 const styles = StyleSheet.create({
-    container: {
-      flex: 1,
-      backgroundColor: 'transparent', // Important pour voir le fond d'écran du parent
-    },
-    headerWrapper: {
-      position: 'relative',
-      overflow: 'visible',
-      zIndex: 100,
-      shadowColor: '#000',
-      shadowOffset: { width: 0, height: 8 },
-      shadowOpacity: 0.5,
-      shadowRadius: 12,
-      elevation: 15,
-    },
-    header: {
-      position: 'relative',
-      flexDirection: 'row',
-      justifyContent: 'space-between',
-      alignItems: 'center',
-      paddingHorizontal: 15,
-      paddingVertical: Platform.OS === 'android' ? 12 : 14,
-      minHeight: 70,
-      overflow: 'hidden',
-      borderBottomWidth: 1,
-      borderBottomColor: 'rgba(212, 175, 55, 0.3)',
-    },
-    // Effet de lumière subtile pour donner de la profondeur
-    subtleGlow: {
-      position: 'absolute',
-      top: 0,
-      left: '20%',
-      right: '20%',
-      height: 30,
-      backgroundColor: 'rgba(255, 255, 255, 0.03)',
-      borderRadius: 100,
-      zIndex: 0,
-    },
-    // Ligne dorée décorative en haut
-    decorativeLineTop: {
-      position: 'absolute',
-      top: 0,
-      left: 0,
-      right: 0,
-      height: 2,
-      backgroundColor: 'rgba(212, 175, 55, 0.4)',
-      zIndex: 1,
-    },
-    // Ligne dorée décorative en bas
-    decorativeLineBottom: {
-      position: 'absolute',
-      bottom: 0,
-      left: 0,
-      right: 0,
-      height: 1,
-      backgroundColor: 'rgba(212, 175, 55, 0.5)',
-      zIndex: 1,
-    },
-    headerContent: {
-      flex: 1,
-      flexDirection: 'row',
-      justifyContent: 'space-between',
-      alignItems: 'center',
-      zIndex: 10,
-    },
-    countdownContainer: {
-      marginLeft: 15, // Espace entre UserInfo et Countdown
-      alignItems: 'flex-end',
-    },
-    content: {
-      flex: 1,
-      position: 'relative', // Nécessaire pour les overlays (pub, modal)
-    },
-    loadingContainer: { // Peut-être plus utilisé si géré par parent
-      flex: 1,
-      justifyContent: 'center',
-      alignItems: 'center',
-      backgroundColor: 'rgba(0, 0, 0, 0.5)',
-    },
-    loadingText: { // Peut-être plus utilisé
-      marginTop: 10,
-      fontSize: 16,
-      color: colors.white,
-      textAlign: 'center',
-    },
-    errorContainer: {
-      flex: 1,
-      justifyContent: 'center',
-      alignItems: 'center',
-      paddingHorizontal: 20,
-      backgroundColor: 'rgba(0,0,0,0.6)', // Fond sombre pour contraster l'erreur
-    },
-    errorText: {
-      color: colors.white,
-      fontSize: 18,
-      textAlign: 'center',
-      backgroundColor: colors.incorrectRed,
-      padding: 20,
-      borderRadius: 10,
-      overflow: 'hidden', // Pour que le borderRadius s'applique au fond
-      marginBottom: 20,
-    },
-    errorButton: {
-        backgroundColor: colors.white,
-        paddingHorizontal: 30,
-        paddingVertical: 10,
-        borderRadius: 20,
-    },
-    errorButtonText: {
-        color: colors.incorrectRed, // Texte rouge sur bouton blanc
-        fontSize: 16,
-        fontWeight: 'bold',
-    },
-    watchAdOverlay: {
-      position: 'absolute',
-      top: 0, left: 0, right: 0, bottom: 0,
-      backgroundColor: 'rgba(0, 0, 0, 0.7)',
-      justifyContent: 'center',
-      alignItems: 'center',
-      zIndex: 2000, // Au-dessus du contenu du jeu
-    },
-    watchAdContainer: {
-      width: '85%',
-      maxWidth: 380,
-      backgroundColor: 'white',
-      borderRadius: 15,
-      padding: 20,
-      alignItems: 'center',
-      elevation: 5,
-      shadowColor: '#000',
-      shadowOffset: { width: 0, height: 3 },
-      shadowOpacity: 0.25,
-      shadowRadius: 3.84,
-    },
-    watchAdIconContainer: {
-      width: 80, height: 80, borderRadius: 40,
-      backgroundColor: 'rgba(231, 76, 60, 0.2)', // Rouge pâle
-      justifyContent: 'center',
-      alignItems: 'center',
-      marginBottom: 15,
-    },
-    watchAdTitle: {
-      fontSize: 22,
-      fontWeight: 'bold',
-      color: colors.text, // Utilise la couleur texte définie
-      marginBottom: 15,
-      textAlign: 'center',
-    },
-    watchAdDescription: {
-      fontSize: 16,
-      color: colors.textMuted || colors.text, // Utilise la couleur texte mute ou standard
-      textAlign: 'center',
-      marginBottom: 25,
-      lineHeight: 22,
-    },
-    watchAdButtonsContainer: {
-      flexDirection: 'row',
-      justifyContent: 'space-around',
-      alignItems: 'center',
-      width: '100%',
-      paddingHorizontal: 10,
-    },
-    watchAdButton: {
-      paddingVertical: 12,
-      paddingHorizontal: 15,
-      borderRadius: 25,
-      alignItems: 'center',
-      justifyContent: 'center',
-      minWidth: 130,
-      flex: 1,
-      marginHorizontal: 5,
-    },
-    watchAdDeclineButton: {
-      backgroundColor: '#f5f5f5', // Gris clair
-      borderWidth: 1,
-      borderColor: '#ddd', // Bordure grise
-    },
-    watchAdAcceptButton: {
-      backgroundColor: colors.correctGreen, // Vert défini
-      flexDirection: 'row',
-      alignItems: 'center',
-      justifyContent: 'center',
-    },
-    watchAdButtonDisabled: {
-      backgroundColor: '#888', // Gris pour l'état désactivé
-      opacity: 0.6,
-    },
-    loadingAdOverlay: {
-      position: 'absolute',
-      top: 0,
-      left: 0,
-      right: 0,
-      bottom: 0,
-      backgroundColor: 'rgba(0, 0, 0, 0.7)',
-      justifyContent: 'center',
-      alignItems: 'center',
-      zIndex: 2000,
-    },
-    loadingAdContainer: {
-      backgroundColor: 'white',
-      borderRadius: 12,
-      padding: 24,
-      alignItems: 'center',
-      minWidth: 200,
-    },
-    loadingAdText: {
-      marginTop: 16,
-      fontSize: 16,
-      color: '#333',
-      fontWeight: '500',
-    },
-    watchAdDeclineText: {
-      color: '#888', // Gris foncé
-      fontSize: 16,
-      fontWeight: '500',
-    },
-    watchAdAcceptText: {
-      color: 'white', // Blanc sur vert
-      fontSize: 16,
-      fontWeight: 'bold',
-    },
-    watchAdButtonIcon: {
-      marginRight: 8,
-    },
+  container: {
+    flex: 1,
+    backgroundColor: 'transparent', // Important pour voir le fond d'écran du parent
+  },
+  headerWrapper: {
+    position: 'relative',
+    overflow: 'visible',
+    zIndex: 100,
+    shadowColor: '#000',
+    shadowOffset: { width: 0, height: 8 },
+    shadowOpacity: 0.5,
+    shadowRadius: 12,
+    elevation: 15,
+  },
+  header: {
+    position: 'relative',
+    flexDirection: 'row',
+    justifyContent: 'space-between',
+    alignItems: 'center',
+    paddingHorizontal: 15,
+    paddingVertical: Platform.OS === 'android' ? 12 : 14,
+    minHeight: 70,
+    overflow: 'hidden',
+    borderBottomWidth: 1,
+    borderBottomColor: 'rgba(212, 175, 55, 0.3)',
+  },
+  // Effet de lumière subtile pour donner de la profondeur
+  subtleGlow: {
+    position: 'absolute',
+    top: 0,
+    left: '20%',
+    right: '20%',
+    height: 30,
+    backgroundColor: 'rgba(255, 255, 255, 0.03)',
+    borderRadius: 100,
+    zIndex: 0,
+  },
+  // Ligne dorée décorative en haut
+  decorativeLineTop: {
+    position: 'absolute',
+    top: 0,
+    left: 0,
+    right: 0,
+    height: 2,
+    backgroundColor: 'rgba(212, 175, 55, 0.4)',
+    zIndex: 1,
+  },
+  // Ligne dorée décorative en bas
+  decorativeLineBottom: {
+    position: 'absolute',
+    bottom: 0,
+    left: 0,
+    right: 0,
+    height: 1,
+    backgroundColor: 'rgba(212, 175, 55, 0.5)',
+    zIndex: 1,
+  },
+  headerContent: {
+    flex: 1,
+    flexDirection: 'row',
+    justifyContent: 'space-between',
+    alignItems: 'center',
+    zIndex: 10,
+  },
+  countdownContainer: {
+    marginLeft: 15, // Espace entre UserInfo et Countdown
+    alignItems: 'flex-end',
+  },
+  content: {
+    flex: 1,
+    position: 'relative', // Nécessaire pour les overlays (pub, modal)
+  },
+  loadingContainer: { // Peut-être plus utilisé si géré par parent
+    flex: 1,
+    justifyContent: 'center',
+    alignItems: 'center',
+    backgroundColor: 'rgba(0, 0, 0, 0.5)',
+  },
+  loadingText: { // Peut-être plus utilisé
+    marginTop: 10,
+    fontSize: 16,
+    color: colors.white,
+    textAlign: 'center',
+  },
+  errorContainer: {
+    flex: 1,
+    justifyContent: 'center',
+    alignItems: 'center',
+    paddingHorizontal: 20,
+    backgroundColor: 'rgba(0,0,0,0.6)', // Fond sombre pour contraster l'erreur
+  },
+  errorText: {
+    color: colors.white,
+    fontSize: 18,
+    textAlign: 'center',
+    backgroundColor: colors.incorrectRed,
+    padding: 20,
+    borderRadius: 10,
+    overflow: 'hidden', // Pour que le borderRadius s'applique au fond
+    marginBottom: 20,
+  },
+  errorButton: {
+    backgroundColor: colors.white,
+    paddingHorizontal: 30,
+    paddingVertical: 10,
+    borderRadius: 20,
+  },
+  errorButtonText: {
+    color: colors.incorrectRed, // Texte rouge sur bouton blanc
+    fontSize: 16,
+    fontWeight: 'bold',
+  },
+  watchAdOverlay: {
+    position: 'absolute',
+    top: 0, left: 0, right: 0, bottom: 0,
+    backgroundColor: 'rgba(0, 0, 0, 0.7)',
+    justifyContent: 'center',
+    alignItems: 'center',
+    zIndex: 2000, // Au-dessus du contenu du jeu
+  },
+  watchAdContainer: {
+    width: '85%',
+    maxWidth: 380,
+    backgroundColor: 'white',
+    borderRadius: 15,
+    padding: 20,
+    alignItems: 'center',
+    elevation: 5,
+    shadowColor: '#000',
+    shadowOffset: { width: 0, height: 3 },
+    shadowOpacity: 0.25,
+    shadowRadius: 3.84,
+  },
+  watchAdIconContainer: {
+    width: 80, height: 80, borderRadius: 40,
+    backgroundColor: 'rgba(231, 76, 60, 0.2)', // Rouge pâle
+    justifyContent: 'center',
+    alignItems: 'center',
+    marginBottom: 15,
+  },
+  watchAdTitle: {
+    fontSize: 22,
+    fontWeight: 'bold',
+    color: colors.text, // Utilise la couleur texte définie
+    marginBottom: 15,
+    textAlign: 'center',
+  },
+  watchAdDescription: {
+    fontSize: 16,
+    color: colors.textMuted || colors.text, // Utilise la couleur texte mute ou standard
+    textAlign: 'center',
+    marginBottom: 25,
+    lineHeight: 22,
+  },
+  watchAdButtonsContainer: {
+    flexDirection: 'row',
+    justifyContent: 'space-around',
+    alignItems: 'center',
+    width: '100%',
+    paddingHorizontal: 10,
+  },
+  watchAdButton: {
+    paddingVertical: 12,
+    paddingHorizontal: 15,
+    borderRadius: 25,
+    alignItems: 'center',
+    justifyContent: 'center',
+    minWidth: 130,
+    flex: 1,
+    marginHorizontal: 5,
+  },
+  watchAdDeclineButton: {
+    backgroundColor: '#f5f5f5', // Gris clair
+    borderWidth: 1,
+    borderColor: '#ddd', // Bordure grise
+  },
+  watchAdAcceptButton: {
+    backgroundColor: colors.correctGreen, // Vert défini
+    flexDirection: 'row',
+    alignItems: 'center',
+    justifyContent: 'center',
+  },
+  watchAdButtonDisabled: {
+    backgroundColor: '#888', // Gris pour l'état désactivé
+    opacity: 0.6,
+  },
+  loadingAdOverlay: {
+    position: 'absolute',
+    top: 0,
+    left: 0,
+    right: 0,
+    bottom: 0,
+    backgroundColor: 'rgba(0, 0, 0, 0.7)',
+    justifyContent: 'center',
+    alignItems: 'center',
+    zIndex: 2000,
+  },
+  loadingAdContainer: {
+    backgroundColor: 'white',
+    borderRadius: 12,
+    padding: 24,
+    alignItems: 'center',
+    minWidth: 200,
+  },
+  loadingAdText: {
+    marginTop: 16,
+    fontSize: 16,
+    color: '#333',
+    fontWeight: '500',
+  },
+  watchAdDeclineText: {
+    color: '#888', // Gris foncé
+    fontSize: 16,
+    fontWeight: '500',
+  },
+  watchAdAcceptText: {
+    color: 'white', // Blanc sur vert
+    fontSize: 16,
+    fontWeight: 'bold',
+  },
+  watchAdButtonIcon: {
+    marginRight: 8,
+  },
 });
 
 export default GameContentA;

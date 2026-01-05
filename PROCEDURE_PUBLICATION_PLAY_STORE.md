@@ -172,6 +172,7 @@ plugins: [
 
 | Version | Version Code | Date | Notes |
 |---------|--------------|------|-------|
+| 1.6.4   | 10121        | 04/01/2026 | Mise à jour demandée par l'utilisateur |
 | 1.6.0   | 10115        | 03/01/2026 | Modifications Firebase + fix 16KB |
 | 1.5.9   | 10114        | 03/01/2026 | Fix support 16 KB page size |
 | 1.5.8   | 10113        | 02/01/2026 | Tentative initiale |

@@ -177,7 +177,7 @@ const UserInfo = forwardRef<UserInfoHandle, UserInfoProps>(
               const lifeX = width * 0.80; // 80% de la largeur de l'écran
               // Ajouter un offset Y pour cibler le centre des coeurs
               const lifeY = y + (containerHeight / 2);
-              
+
               // console.log('[UserInfo] Calculated life position:', { x: lifeX, y: lifeY });
               resolve({ x: lifeX, y: lifeY });
             });
@@ -424,7 +424,7 @@ const styles = StyleSheet.create({
     fontWeight: 'bold',
   },
   levelProgress: {
-    color: '#000000',
+    color: 'white',
     fontSize: 7,
     textAlign: 'center',
     marginTop: 1,
@@ -447,7 +447,7 @@ const styles = StyleSheet.create({
     marginRight: 2,
   },
   streakText: {
-    color: colors.darkText,
+    color: 'white',
     fontSize: 14,
     fontWeight: 'bold',
   },

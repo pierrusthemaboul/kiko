@@ -21,7 +21,7 @@ import { Ionicons } from '@expo/vector-icons';
 import { LinearGradient } from 'expo-linear-gradient';
 import { colors } from '../../constants/Colors';
 import type { LevelEventSummary, SpecialRules } from '@/hooks/types';
-import { useImmersiveMode } from '@/hooks/useImmersiveMode'; 
+import { useImmersiveMode } from '@/hooks/useImmersiveMode';
 
 const { width } = Dimensions.get('window');
 
@@ -46,7 +46,7 @@ interface LevelUpModalBisProps {
  */
 function getEventYear(event: LevelEventSummary): string {
   if (!event) return '';
-  
+
   // On priorise la date formattée, sinon la date brute
   const rawDate = event.date_formatee || event.date;
   if (!rawDate) return '';
@@ -120,13 +120,7 @@ const LevelUpModalBis: React.FC<LevelUpModalBisProps> = ({
   // Effect pour filtrer les événements spécifiques au niveau
   useEffect(() => {
     if (visible && eventsSummary && eventsSummary.length > 0) {
-      console.log('[LEVEL_UP_MODAL] 🎯 Modal devenue visible, filtrage des événements:', {
-        level,
-        previousLevel,
-        totalEventsSummary: eventsSummary.length,
-        requiredEvents,
-        isNewLevel,
-      });
+
       // On filtre les événements pour n'afficher que ceux du niveau qui vient d'être terminé
       // Dans un level-up, previousLevel contient le niveau qui vient d'être terminé
       const targetLevel = previousLevel || (level > 1 ? level - 1 : level);
@@ -135,15 +129,11 @@ const LevelUpModalBis: React.FC<LevelUpModalBisProps> = ({
       // Une façon simple est de prendre seulement le nombre requis pour ce niveau
       const eventsLimit = Math.min(eventsSummary.length, requiredEvents);
       const recentEvents = eventsSummary.slice(-eventsLimit);
-      console.log('[LEVEL_UP_MODAL] Événements filtrés:', {
-        targetLevel,
-        eventsLimit,
-        filteredCount: recentEvents.length,
-      });
+
       setFilteredEvents(recentEvents);
     } else {
       if (visible) {
-        console.log('[LEVEL_UP_MODAL] Modal visible mais pas d\'événements à afficher');
+
       }
       setFilteredEvents([]);
     }
@@ -285,7 +275,7 @@ const LevelUpModalBis: React.FC<LevelUpModalBisProps> = ({
           {filteredEvents.map((event, index) => {
             // Créer une clé vraiment unique
             const eventKey = `event-level-${previousLevel || level}-id-${event.id || 'unknown'}-index-${index}`;
-            
+
             return (
               <TouchableOpacity
                 key={eventKey}
@@ -298,7 +288,7 @@ const LevelUpModalBis: React.FC<LevelUpModalBisProps> = ({
                     source={{ uri: event.illustration_url }}
                     style={styles.eventImage}
                     resizeMode="cover"
-                    // Fallback pour les images qui ne se chargent pas
+                  // Fallback pour les images qui ne se chargent pas
                   />
                   <LinearGradient
                     colors={['transparent', 'rgba(0,0,0,0.8)']}
@@ -413,7 +403,7 @@ const LevelUpModalBis: React.FC<LevelUpModalBisProps> = ({
               <TouchableOpacity
                 style={styles.startButton}
                 onPress={() => {
-                  console.log('[LEVEL_UP_MODAL] 👆 Bouton "Commencer" pressé, appel de handleLevelUp');
+
                   onStart();
                 }}
                 activeOpacity={0.8}

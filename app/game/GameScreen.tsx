@@ -110,15 +110,15 @@ function ClassicGameScreen({ requestedMode }: { requestedMode?: string }) {
 
   const next = endSummary
     ? (() => {
-        const prog = nextRankProgress(endSummary.newXp);
-        if (!prog.next) return null;
-        const denom = Math.max(1, prog.progress + prog.needed);
-        return {
-          label: prog.next.label,
-          xpNeeded: Math.max(0, prog.needed),
-          pct: Math.round((prog.progress / denom) * 100),
-        };
-      })()
+      const prog = nextRankProgress(endSummary.newXp);
+      if (!prog.next) return null;
+      const denom = Math.max(1, prog.progress + prog.needed);
+      return {
+        label: prog.next.label,
+        xpNeeded: Math.max(0, prog.needed),
+        pct: Math.round((prog.progress / denom) * 100),
+      };
+    })()
     : null;
 
   // Log analytics quand l'écran prend le focus
@@ -129,7 +129,7 @@ function ClassicGameScreen({ requestedMode }: { requestedMode?: string }) {
         NavigationBar.setVisibilityAsync('hidden').catch(() => undefined);
       } catch (error) {
       }
-      return () => {};
+      return () => { };
     }, [])
   );
 
@@ -199,13 +199,13 @@ function ClassicGameScreen({ requestedMode }: { requestedMode?: string }) {
 
   // Affiche l'indicateur de chargement si le jeu s'initialise, redémarre, ou si des données essentielles manquent
   if (showLoadingIndicator || runState !== 'ready' || !gameLogic || !gameLogic.user || !gameLogic.currentLevelConfig || !gameLogic.adState) {
-     return (
-       <View style={[styles.fullScreenContainer, styles.loadingContainer]}>
-         <StatusBar translucent backgroundColor="black" barStyle="light-content" />
-         <ActivityIndicator size="large" color="#FFFFFF" />
-       </View>
-     );
-   }
+    return (
+      <View style={[styles.fullScreenContainer, styles.loadingContainer]}>
+        <StatusBar translucent backgroundColor="black" barStyle="light-content" />
+        <ActivityIndicator size="large" color="#FFFFFF" />
+      </View>
+    );
+  }
 
   // Rendu principal de l'écran de jeu
   return (
@@ -243,6 +243,9 @@ function ClassicGameScreen({ requestedMode }: { requestedMode?: string }) {
             highScore={gameLogic.highScore}
             level={gameLogic.user.level}
             isLevelPaused={gameLogic.isLevelPaused}
+            triggerLevelEndAnim={gameLogic.triggerLevelEndAnim}
+            showLevelTransition={gameLogic.showLevelTransition}
+            isLastEventOfLevel={gameLogic.isLastEventOfLevel}
             currentLevelConfig={gameLogic.currentLevelConfig}
             leaderboards={gameLogic.leaderboards}
             levelCompletedEvents={gameLogic.levelCompletedEvents}
@@ -324,7 +327,7 @@ function PrecisionGameScreen() {
         NavigationBar.setVisibilityAsync('hidden').catch(() => undefined);
       } catch (error) {
       }
-      return () => {};
+      return () => { };
     }, [])
   );
 
@@ -353,7 +356,7 @@ function PrecisionGameScreen() {
               <ActivityIndicator size="large" color="#FFFFFF" />
             </View>
           ) : (
-            <Animated.View style={[styles.flexFill, { opacity: fadeAnim }] }>
+            <Animated.View style={[styles.flexFill, { opacity: fadeAnim }]}>
               <PrecisionGameContent
                 loading={loading}
                 error={error}
@@ -440,33 +443,33 @@ export default function GameScreenPage() {
 
 // --- Styles ---
 const styles = StyleSheet.create({
-fullScreenContainer: {
-  flex: 1,
-},
-backgroundImage: {
-  flex: 1,
-  width: '100%',
-  height: '100%',
-},
-backgroundOverlay: {
-  ...StyleSheet.absoluteFillObject,
-  backgroundColor: 'rgba(0, 0, 0, 0.55)', // Overlay sombre pour atténuer le background
-},
-contentContainer: {
-  ...StyleSheet.absoluteFillObject,
-  backgroundColor: 'transparent',
-},
-container: {
-  flex: 1,
-  backgroundColor: 'transparent', // Important pour voir l'image de fond
-},
-flexFill: {
-  flex: 1,
-},
-loadingContainer: {
-  flex: 1,
-  justifyContent: 'center',
-  alignItems: 'center',
-  backgroundColor: 'rgba(0, 0, 0, 0.7)', // Fond semi-transparent pour le chargement
-},
+  fullScreenContainer: {
+    flex: 1,
+  },
+  backgroundImage: {
+    flex: 1,
+    width: '100%',
+    height: '100%',
+  },
+  backgroundOverlay: {
+    ...StyleSheet.absoluteFillObject,
+    backgroundColor: 'rgba(0, 0, 0, 0.55)', // Overlay sombre pour atténuer le background
+  },
+  contentContainer: {
+    ...StyleSheet.absoluteFillObject,
+    backgroundColor: 'transparent',
+  },
+  container: {
+    flex: 1,
+    backgroundColor: 'transparent', // Important pour voir l'image de fond
+  },
+  flexFill: {
+    flex: 1,
+  },
+  loadingContainer: {
+    flex: 1,
+    justifyContent: 'center',
+    alignItems: 'center',
+    backgroundColor: 'rgba(0, 0, 0, 0.7)', // Fond semi-transparent pour le chargement
+  },
 });

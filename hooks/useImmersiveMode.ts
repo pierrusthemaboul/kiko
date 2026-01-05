@@ -19,26 +19,26 @@ export function useImmersiveMode(enabled: boolean = true) {
 
     const applyImmersiveMode = async () => {
       try {
-        console.log('[useImmersiveMode] 🔄 Application du mode immersif...');
+        // console.log('[useImmersiveMode] 🔄 Application du mode immersif...');
 
         // Configuration de la status bar (transparente et translucide)
         await SystemUI.setBackgroundColorAsync('transparent');
-        console.log('[useImmersiveMode] ✅ SystemUI background set');
+        // console.log('[useImmersiveMode] ✅ SystemUI background set');
 
         // Masquer complètement la navigation bar
         await NavigationBar.setVisibilityAsync('hidden');
-        console.log('[useImmersiveMode] ✅ Navigation bar hidden');
+        // console.log('[useImmersiveMode] ✅ Navigation bar hidden');
 
         await NavigationBar.setBehaviorAsync('inset-swipe');
-        console.log('[useImmersiveMode] ✅ Behavior set to inset-swipe');
+        // console.log('[useImmersiveMode] ✅ Behavior set to inset-swipe');
 
         await NavigationBar.setBackgroundColorAsync('#000000');
-        console.log('[useImmersiveMode] ✅ Background color set');
+        // console.log('[useImmersiveMode] ✅ Background color set');
 
         await NavigationBar.setPositionAsync('absolute');
-        console.log('[useImmersiveMode] ✅ Position set to absolute');
+        // console.log('[useImmersiveMode] ✅ Position set to absolute');
 
-        console.log('[useImmersiveMode] ✅ Mode immersif appliqué avec succès');
+        // console.log('[useImmersiveMode] ✅ Mode immersif appliqué avec succès');
       } catch (error) {
         console.error('[useImmersiveMode] ❌ Erreur lors de l\'application du mode immersif:', error);
       }

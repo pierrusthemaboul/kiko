@@ -59,14 +59,15 @@ export function useInitGame() {
   const instanceIdRef = useRef(Math.random().toString(36).substring(2, 8));
 
   // Intégration de useEventSelector (pour isAntiqueEvent etc.)
-  const dummyUpdateStateCallback = useCallback(async (_event: Event) => {}, []);
-  const dummySetError = useCallback((_error: string) => {}, []);
-  const dummySetIsGameOver = useCallback((_isGameOver: boolean) => {}, []);
+  const dummyUpdateStateCallback = useCallback(async (_event: Event) => { }, []);
+  const dummySetError = useCallback((_error: string) => { }, []);
+  const dummySetIsGameOver = useCallback((_isGameOver: boolean) => { }, []);
 
   const {
     isAntiqueEvent,
     updateAntiqueCount,
-    resetAntiqueCount
+    resetAntiqueCount,
+    getTimeDifference
   } = useEventSelector({
     setError: dummySetError,
     setIsGameOver: dummySetIsGameOver,
@@ -171,7 +172,7 @@ export function useInitGame() {
           // Force MISS if version is not the expected one
           if (isRightVersion && isFresh && Array.isArray(cached.data)) {
             // console.log(`[InitGame - Instance ${currentInstanceId}] Using cached events (${cached.data.length})`);
-            try { devLog('CACHE', { used: 'hit', version: EVENTS_CACHE_VERSION, count: Array.isArray(cached.data) ? cached.data.length : 0 }); } catch {}
+            try { devLog('CACHE', { used: 'hit', version: EVENTS_CACHE_VERSION, count: Array.isArray(cached.data) ? cached.data.length : 0 }); } catch { }
             allEventsData = cached.data;
           }
         }
@@ -191,7 +192,7 @@ export function useInitGame() {
         } catch (e) {
           console.warn('[InitGame] Failed writing cache:', e);
         }
-        try { devLog('CACHE', { used: 'miss', version: EVENTS_CACHE_VERSION }); } catch {}
+        try { devLog('CACHE', { used: 'miss', version: EVENTS_CACHE_VERSION }); } catch { }
       }
       if (!allEventsData?.length) throw new Error('Aucun événement disponible');
 
@@ -230,7 +231,8 @@ export function useInitGame() {
         });
         const shuffled = [...fallbackCandidates].sort(() => 0.5 - Math.random());
         firstEvent = shuffled[0];
-        secondEvent = shuffled[1];
+        const candidatesForSecond = shuffled.slice(1).filter(e => getTimeDifference(e.date, firstEvent.date) !== 0);
+        secondEvent = candidatesForSecond.length > 0 ? candidatesForSecond[0] : shuffled[1];
       } else {
         // Séparer événements français et internationaux
         const frenchEvents = initialCandidates.filter(e => {
@@ -245,14 +247,15 @@ export function useInitGame() {
           firstEvent = shuffledFrench[0];
 
           // Pour le second : choisir dans tout le pool (sans le premier)
-          const remaining = initialCandidates.filter(e => e.id !== firstEvent.id);
+          const remaining = initialCandidates.filter(e => e.id !== firstEvent.id && getTimeDifference(e.date, firstEvent.date) !== 0);
           const shuffledRemaining = [...remaining].sort(() => 0.5 - Math.random());
-          secondEvent = shuffledRemaining[0];
+          secondEvent = shuffledRemaining.length > 0 ? shuffledRemaining[0] : initialCandidates.filter(e => e.id !== firstEvent.id)[0];
         } else {
           // Pas d'événements français (cas rare), prendre 2 au hasard
           const shuffled = [...initialCandidates].sort(() => 0.5 - Math.random());
           firstEvent = shuffled[0];
-          secondEvent = shuffled[1];
+          const candidatesForSecond = shuffled.slice(1).filter(e => getTimeDifference(e.date, firstEvent.date) !== 0);
+          secondEvent = candidatesForSecond.length > 0 ? candidatesForSecond[0] : shuffled[1];
         }
       }
 
@@ -276,10 +279,10 @@ export function useInitGame() {
       // Log Analytics - Utilise une fonction pour obtenir l'état user le plus récent possible
       const logAnalyticsAfterStateUpdate = () => {
         setUser(currentUserState => {
-            const currentUserName = currentUserState.name || 'Anonymous';
-            FirebaseAnalytics.gameStarted(currentUserName, !currentUserState.name, 1);
-            FirebaseAnalytics.levelStarted(1, initialConfig.name || 'Niveau 1', initialConfig.eventsNeeded, 0);
-            return currentUserState; // Ne change pas l'état, utilise juste la valeur fraîche
+          const currentUserName = currentUserState.name || 'Anonymous';
+          FirebaseAnalytics.gameStarted(currentUserName, !currentUserState.name, 1);
+          FirebaseAnalytics.levelStarted(1, initialConfig.name || 'Niveau 1', initialConfig.eventsNeeded, 0);
+          return currentUserState; // Ne change pas l'état, utilise juste la valeur fraîche
         });
       }
       // Appel légerement différé pour s'assurer que l'état user est à jour après fetchUserData
@@ -301,12 +304,12 @@ export function useInitGame() {
       setLoading(false);
     }
   }, [ // Dépendances pour initGame useCallback
-      fetchUserData,
-      resetAntiqueCount,
-      updateAntiqueCount,
-      isAntiqueEvent,
-      // Pas besoin des setters ici
-    ]
+    fetchUserData,
+    resetAntiqueCount,
+    updateAntiqueCount,
+    isAntiqueEvent,
+    // Pas besoin des setters ici
+  ]
   );
 
   const markEventUsageLocal = useCallback((eventId: string) => {
@@ -343,8 +346,8 @@ export function useInitGame() {
 
     // Fonction de nettoyage pour cette instance spécifique
     return () => {
-        // console.log(`[InitGame Hook - Instance ${currentInstanceId}] CLEANUP useEffect[]`);
-        // Peut-être annuler des requêtes en cours si nécessaire
+      // console.log(`[InitGame Hook - Instance ${currentInstanceId}] CLEANUP useEffect[]`);
+      // Peut-être annuler des requêtes en cours si nécessaire
     }
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [initGame]); // Dépend uniquement de initGame (qui est stable)

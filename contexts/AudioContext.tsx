@@ -27,12 +27,12 @@ export const AudioProvider = ({ children }: Props) => {
   const pendingSoundsRef = useRef<string[]>([]);
 
   const playSound = (soundName: string) => {
-    console.log('[AudioContext] playSound called:', soundName, 'isReady:', isReady, 'audioRef:', !!audioRef.current);
+    // console.log('[AudioContext] playSound called:', soundName, 'isReady:', isReady, 'audioRef:', !!audioRef.current);
     if (isReady && audioRef.current) {
-      console.log('[AudioContext] Calling audioRef.current.playSound for:', soundName);
+      // console.log('[AudioContext] Calling audioRef.current.playSound for:', soundName);
       audioRef.current.playSound(soundName);
     } else {
-      console.warn('[AudioContext] Audio not ready yet, queuing sound:', soundName);
+      // console.warn('[AudioContext] Audio not ready yet, queuing sound:', soundName);
       // Ajouter le son à la file d'attente
       if (!pendingSoundsRef.current.includes(soundName)) {
         pendingSoundsRef.current.push(soundName);
@@ -50,14 +50,14 @@ export const AudioProvider = ({ children }: Props) => {
     <AudioContext.Provider value={{ playSound, setVolume, isReady }}>
       {children}
       <AudioWebView ref={audioRef} onReady={() => {
-        console.log('[AudioContext] AudioWebView is READY!');
+        // console.log('[AudioContext] AudioWebView is READY!');
         setIsReady(true);
 
         // Jouer tous les sons en attente IMMÉDIATEMENT (pas de timeout)
         if (pendingSoundsRef.current.length > 0) {
-          console.log('[AudioContext] Playing pending sounds IMMEDIATELY:', pendingSoundsRef.current);
+          // console.log('[AudioContext] Playing pending sounds IMMEDIATELY:', pendingSoundsRef.current);
           pendingSoundsRef.current.forEach(soundName => {
-            console.log('[AudioContext] Playing queued sound:', soundName);
+            // console.log('[AudioContext] Playing queued sound:', soundName);
             audioRef.current?.playSound(soundName);
           });
           pendingSoundsRef.current = [];

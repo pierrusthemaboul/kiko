@@ -96,9 +96,9 @@ const AnimatedSplashScreen = ({ onAnimationEnd }) => {
   const { playSound } = useAudioContext();
 
   useEffect(() => {
-    console.log('[Splash] ========================================');
-    console.log('[Splash] AnimatedSplashScreen mounted - requesting splash sound');
-    console.log('[Splash] ========================================');
+    // console.log('[Splash] ========================================');
+    // console.log('[Splash] AnimatedSplashScreen mounted - requesting splash sound');
+    // console.log('[Splash] ========================================');
 
     // Demander le son immédiatement - il sera mis en file d'attente si l'audio n'est pas prêt
     playSound('splash');

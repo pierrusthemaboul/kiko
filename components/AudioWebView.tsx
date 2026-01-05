@@ -19,7 +19,7 @@ const AudioWebView = forwardRef<AudioWebViewRef, Props>(({ onReady }, ref) => {
   // Charger les assets audio au montage du composant
   useEffect(() => {
     loadAudioAssets().then(assets => {
-      console.log('[AudioWebView] Audio assets loaded');
+      // console.log('[AudioWebView] Audio assets loaded');
       setAudioAssets(assets);
     }).catch(error => {
       console.error('[AudioWebView] Failed to load audio assets:', error);
@@ -37,16 +37,15 @@ const AudioWebView = forwardRef<AudioWebViewRef, Props>(({ onReady }, ref) => {
 
   useImperativeHandle(ref, () => ({
     playSound: (soundName: string) => {
-      console.log('[AudioWebView Native] ===== PLAYING SOUND:', soundName, '=====');
-      console.log('[AudioWebView Native] WebView ready:', !!webViewRef.current);
+      // console.log('[AudioWebView Native] ===== PLAYING SOUND:', soundName, '=====');
+      // console.log('[AudioWebView Native] WebView ready:', !!webViewRef.current);
       webViewRef.current?.injectJavaScript(`
-        console.log('[AudioWebView] Injecting JavaScript to play: ${soundName}');
         playSound('${soundName}');
         true;
       `);
     },
     setVolume: (volume: number) => {
-      console.log('[AudioWebView] Setting volume:', volume);
+      // console.log('[AudioWebView] Setting volume:', volume);
       webViewRef.current?.injectJavaScript(`
         setVolume(${volume});
         true;
@@ -98,7 +97,7 @@ const AudioWebView = forwardRef<AudioWebViewRef, Props>(({ onReady }, ref) => {
 
     try {
       audioContext = new AudioContext();
-      console.log('[AudioWebView HTML] AudioContext created:', audioContext.state);
+      // console.log('[AudioWebView HTML] AudioContext created:', audioContext.state);
     } catch (e) {
       console.warn('[AudioWebView HTML] AudioContext not supported:', e);
     }
@@ -132,13 +131,13 @@ const AudioWebView = forwardRef<AudioWebViewRef, Props>(({ onReady }, ref) => {
       sounds.splash.addEventListener('canplaythrough', () => {
         if (!splashReadySent) {
           splashReadySent = true;
-          console.log('[AudioWebView HTML] 🚀 Splash ready - notifying React Native IMMEDIATELY');
+          // console.log('[AudioWebView HTML] 🚀 Splash ready - notifying React Native IMMEDIATELY');
           window.ReactNativeWebView?.postMessage(JSON.stringify({ type: 'ready' }));
         }
       }, { once: true });
 
       sounds.splash.load();
-      console.log('[AudioWebView HTML] Splash sound loading with priority...');
+      // console.log('[AudioWebView HTML] Splash sound loading with priority...');
     }
 
     // Précharger les autres sons en arrière-plan (sans bloquer)
@@ -149,24 +148,24 @@ const AudioWebView = forwardRef<AudioWebViewRef, Props>(({ onReady }, ref) => {
           audio.load();
         }
       });
-      console.log('[AudioWebView HTML] Other sounds preloading in background');
+      // console.log('[AudioWebView HTML] Other sounds preloading in background');
     }, 50);
 
     // Fonction pour débloquer l'audio
     function unlockAudio() {
       if (audioUnlocked) return;
 
-      console.log('[AudioWebView HTML] 🔓 Attempting to unlock audio...');
+      // console.log('[AudioWebView HTML] 🔓 Attempting to unlock audio...');
 
       if (audioContext && audioContext.state === 'suspended') {
         audioContext.resume().then(() => {
-          console.log('[AudioWebView HTML] ✅ AudioContext resumed successfully');
+          // console.log('[AudioWebView HTML] ✅ AudioContext resumed successfully');
           audioUnlocked = true;
         }).catch(err => {
           console.error('[AudioWebView HTML] ❌ Failed to resume AudioContext:', err);
         });
       } else {
-        console.log('[AudioWebView HTML] ✅ AudioContext already running, state:', audioContext?.state);
+        // console.log('[AudioWebView HTML] ✅ AudioContext already running, state:', audioContext?.state);
         audioUnlocked = true;
       }
 
@@ -176,7 +175,7 @@ const AudioWebView = forwardRef<AudioWebViewRef, Props>(({ onReady }, ref) => {
         const originalVolume = firstSound.volume;
         firstSound.volume = 0;
         firstSound.play().then(() => {
-          console.log('[AudioWebView HTML] ✅ Silent audio played successfully for unlock');
+          // console.log('[AudioWebView HTML] ✅ Silent audio played successfully for unlock');
           firstSound.pause();
           firstSound.currentTime = 0;
           firstSound.volume = originalVolume;
@@ -189,13 +188,13 @@ const AudioWebView = forwardRef<AudioWebViewRef, Props>(({ onReady }, ref) => {
 
     // Débloquer automatiquement au chargement
     document.addEventListener('DOMContentLoaded', () => {
-      console.log('[AudioWebView HTML] DOM loaded, setting up unlock mechanism');
+      // console.log('[AudioWebView HTML] DOM loaded, setting up unlock mechanism');
       const unlockButton = document.getElementById('unlock-button');
 
       if (unlockButton) {
         // Simuler un click immédiatement
         setTimeout(() => {
-          console.log('[AudioWebView HTML] 🖱️  Auto-clicking unlock button');
+          // console.log('[AudioWebView HTML] 🖱️  Auto-clicking unlock button');
           unlockButton.click();
         }, 50);
 
@@ -207,20 +206,20 @@ const AudioWebView = forwardRef<AudioWebViewRef, Props>(({ onReady }, ref) => {
     function playSound(name) {
       const sound = sounds[name];
       if (sound) {
-        console.log('[AudioWebView HTML] Playing sound:', name, 'volume:', currentVolume);
+        // console.log('[AudioWebView HTML] Playing sound:', name, 'volume:', currentVolume);
         sound.currentTime = 0;
 
         // Volume à 65% pour le splash
         if (name === 'splash') {
           sound.volume = 0.65;
-          console.log('[AudioWebView HTML] SPLASH SOUND - Volume set to 65% (0.65)');
+          // console.log('[AudioWebView HTML] SPLASH SOUND - Volume set to 65% (0.65)');
         } else {
           sound.volume = currentVolume;
         }
 
         sound.play()
           .then(() => {
-            console.log('[AudioWebView HTML] Sound started successfully:', name);
+            // console.log('[AudioWebView HTML] Sound started successfully:', name);
           })
           .catch(err => {
             console.error('[AudioWebView HTML] ERROR playing sound:', name, err);
@@ -244,7 +243,7 @@ const AudioWebView = forwardRef<AudioWebViewRef, Props>(({ onReady }, ref) => {
 </html>
   `;
 
-  console.log('[AudioWebView] Rendering with style:', styles.hidden);
+  // console.log('[AudioWebView] Rendering with style:', styles.hidden);
 
   return (
     <View style={styles.container}>
@@ -258,27 +257,26 @@ const AudioWebView = forwardRef<AudioWebViewRef, Props>(({ onReady }, ref) => {
         onMessage={(event) => {
           try {
             const data = JSON.parse(event.nativeEvent.data);
-            console.log('[AudioWebView] Message received:', data);
+            // console.log('[AudioWebView] Message received:', data);
             if (data.type === 'ready' && onReady) {
-              console.log('[AudioWebView] Audio is ready!');
+              // console.log('[AudioWebView] Audio is ready!');
               onReady();
             }
           } catch (e) {
-            console.log('[AudioWebView] Message parse error:', e);
+            // console.log('[AudioWebView] Message parse error:', e);
           }
         }}
         onLoad={() => {
-          console.log('[AudioWebView] WebView loaded - injecting unlock script');
+          // console.log('[AudioWebView] WebView loaded - injecting unlock script');
           // Injecter le script de déblocage immédiatement
           webViewRef.current?.injectJavaScript(`
-            console.log('[AudioWebView HTML] Native injection - calling unlockAudio');
             if (typeof unlockAudio === 'function') {
               unlockAudio();
             }
             true;
           `);
         }}
-        onError={(e) => console.log('[AudioWebView] WebView error:', e)}
+        onError={(e) => {}}
         javaScriptEnabled={true}
         domStorageEnabled={true}
         mediaPlaybackRequiresUserAction={false}

@@ -343,7 +343,7 @@ export default function Vue1() {
             size={BannerAdSize.ANCHORED_ADAPTIVE_BANNER}
             requestOptions={getAdRequestOptions()}
             onAdLoaded={() => {
-              console.log('[BANNER_HOME] Ad loaded successfully');
+              // console.log('[BANNER_HOME] Ad loaded successfully');
               FirebaseAnalytics.trackEvent('banner_ad_loaded', { screen: 'vue1', position: 'home' });
             }}
             onAdFailedToLoad={(error) => {

@@ -5,7 +5,7 @@ export default ({ config }) => {
     ...config,
     name: IS_DEV ? "Timalaus DEV" : "Timalaus",
     slug: "kiko",
-    version: "1.6.3",
+    version: "1.6.5",
     orientation: "portrait",
     icon: "./assets/images/oklogo.png",
     scheme: "juno2",
@@ -41,7 +41,7 @@ export default ({ config }) => {
         "com.google.android.gms.permission.AD_ID",
         "android.permission.ACCESS_ADSERVICES_AD_ID"
       ],
-      versionCode: 10113,
+      versionCode: 10122,
       googleServicesFile: process.env.GOOGLE_SERVICES_JSON || "./google-services.json",
       userInterfaceStyle: "dark"
     },
@@ -71,6 +71,7 @@ export default ({ config }) => {
       ],
       "expo-asset",
       "expo-router",
+      "expo-navigation-bar",
       [
         "expo-system-ui",
         {
@@ -97,32 +98,32 @@ export default ({ config }) => {
       [
         function withForceAdIdPermission(config) {
           const { withAndroidManifest } = require('@expo/config-plugins');
-          
+
           return withAndroidManifest(config, config => {
             const androidManifest = config.modResults;
             const manifest = androidManifest.manifest;
-            
+
             if (!manifest.$) manifest.$ = {};
             manifest.$['xmlns:tools'] = 'http://schemas.android.com/tools';
-            
+
             if (!manifest['uses-permission']) {
               manifest['uses-permission'] = [];
             }
-            
+
             manifest['uses-permission'] = manifest['uses-permission'].filter(p => {
               const name = p?.$ && p.$['android:name'];
               return name !== 'com.google.android.gms.permission.AD_ID';
             });
-            
+
             manifest['uses-permission'].unshift({
               $: {
                 'android:name': 'com.google.android.gms.permission.AD_ID',
                 'tools:node': 'replace'
               }
             });
-            
+
             console.log('✅ Permission AD_ID forcée avec tools:node="replace"');
-            
+
             return config;
           });
         },
@@ -131,7 +132,7 @@ export default ({ config }) => {
       [
         function withKotlinVersionFix(config) {
           const { withGradleProperties } = require('@expo/config-plugins');
-          
+
           return withGradleProperties(config, config => {
             config.modResults.push({
               type: 'property',
@@ -139,7 +140,7 @@ export default ({ config }) => {
               value: 'true'
             });
             config.modResults.push({
-              type: 'property', 
+              type: 'property',
               key: 'kotlin.version',
               value: '1.9.25'
             });

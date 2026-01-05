@@ -671,17 +671,10 @@ export function useAds({
   ]);
 
   useEffect(() => {
-    // Ne logger que si pendingAdDisplay n'est pas null (réduire la verbosité)
-    if (pendingAdDisplay) {
-      console.log('[useAds Effect] Effet déclenché, pendingAdDisplay:', pendingAdDisplay);
-    }
-
     if (!pendingAdDisplay || !setPendingAdDisplay) {
-      // Pas de log quand pendingAdDisplay est null (trop verbeux)
       return;
     }
 
-    console.log('[useAds Effect] État:', { isShowingAd: adState.isShowingAd, pendingAdsCount: adState.pendingAds.length });
     adLog('log', `[useAds Effect] Processing pendingAdDisplay: ${pendingAdDisplay}. Current state: isShowingAd=${adState.isShowingAd}, pendingAds=${adState.pendingAds.length}`);
 
     if (adState.isShowingAd) {
@@ -797,12 +790,12 @@ export function useAds({
           adTypeToClear = null;
         }
       } else if (adTypeToClear === 'rewarded') {
-        console.log('[useAds Effect] Traitement de la pub rewarded');
-        console.log('[useAds Effect] rewardedAd.loaded:', rewardedAd.loaded);
+
+
 
         // Vérifier directement l'instance native
         if (rewardedAd.loaded) {
-          console.log('[useAds Effect] Affichage de la pub rewarded...');
+
           adLog('log', "[useAds Effect] Showing Rewarded Ad.");
           FirebaseAnalytics.trackEvent('ad_show_attempt', {
             ad_type: 'rewarded',
@@ -814,14 +807,13 @@ export function useAds({
 
           try {
             rewardedAd.show();
-            console.log('[useAds Effect] rewardedAd.show() appelé avec succès');
             adShown = true;
           } catch (showError) {
-            console.error('[useAds Effect] ERREUR lors de rewardedAd.show():', showError);
+
             throw showError;
           }
         } else {
-          console.log('[useAds Effect] PROBLÈME: La pub n\'est plus chargée!');
+
           adLog('warn', "[useAds Effect] Rewarded Ad was requested but is not loaded anymore.");
           FirebaseAnalytics.trackEvent('ad_show_attempt', {
             ad_type: 'rewarded',
@@ -879,15 +871,10 @@ export function useAds({
   ]);
 
   const showRewardedAd = useCallback(() => {
-    console.log('[useAds] showRewardedAd() appelée');
+
     const currentLevel = user?.level || 0;
 
-    console.log('[useAds] État actuel:', {
-      hasWatchedRewardedAd: adState.hasWatchedRewardedAd,
-      rewardedAdLoaded: rewardedAd.loaded,
-      setPendingAdDisplay: !!setPendingAdDisplay,
-      currentLevel
-    });
+
 
     if (adState.hasWatchedRewardedAd) {
       adLog('warn', "Rewarded ad request blocked: already watched in this session/level.");
@@ -898,7 +885,7 @@ export function useAds({
 
     // Vérifier directement l'instance native
     if (!rewardedAd.loaded) {
-      console.log('[useAds] PROBLÈME: La pub n\'est pas chargée!');
+
       adLog('warn', "Rewarded ad request: Ad not loaded yet. Attempting to load.");
       FirebaseAnalytics.ad('rewarded', 'not_available', 'user_request_extra_life', currentLevel);
       rewardedAd.load();
@@ -906,21 +893,21 @@ export function useAds({
       return false;
     }
 
-    console.log('[useAds] La pub est chargée, déclenchement...');
+
     FirebaseAnalytics.ad('rewarded', 'request_display', 'user_request_extra_life', currentLevel);
 
     if (setPendingAdDisplay) {
-      console.log('[useAds] Mise à jour de pendingAdDisplay à "rewarded"');
+
       // Réinitialiser la référence de temps de fermeture avant d'afficher une nouvelle pub
       adClosedTimeRef.current = 0;
       // Réinitialiser l'indicateur de récompense
       setAdState(prev => ({ ...prev, rewardEarned: false }));
       setPendingAdDisplay('rewarded');
-      console.log('[useAds] pendingAdDisplay défini, retour true');
+
       return true;
     }
 
-    console.log('[useAds] PROBLÈME: setPendingAdDisplay n\'existe pas!');
+
     return false;
   }, [
     adState.hasWatchedRewardedAd,

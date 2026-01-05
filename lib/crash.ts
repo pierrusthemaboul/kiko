@@ -16,23 +16,19 @@ export const isCrashlyticsEnabled = () => CRASHLYTICS_ENABLED;
 export async function recordNonFatal(error: unknown, context: CrashContext = undefined) {
   if (!CRASHLYTICS_ENABLED) return;
   // Désactivé en dev - sera réactivé pour EAS build
-  console.log('[Crashlytics stub] recordNonFatal:', error, context);
 }
 
 export async function recordFatalError(error: unknown, context: CrashContext = undefined) {
   if (!CRASHLYTICS_ENABLED) return;
   // Désactivé en dev - sera réactivé pour EAS build
-  console.log('[Crashlytics stub] recordFatalError:', error, context);
 }
 
 export async function setUserId(userId: string | null) {
   if (!CRASHLYTICS_ENABLED) return;
   // Désactivé en dev - sera réactivé pour EAS build
-  console.log('[Crashlytics stub] setUserId:', userId);
 }
 
 export async function log(message: string) {
   if (!CRASHLYTICS_ENABLED) return;
   // Désactivé en dev - sera réactivé pour EAS build
-  console.log('[Crashlytics stub] log:', message);
 }

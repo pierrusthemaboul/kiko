@@ -99,6 +99,7 @@ export interface ActiveBonus {
 // Interface pour la configuration d'un niveau avec des extensions
 export interface ExtendedLevelConfig {
   name?: string;
+  description?: string;
   eventsNeeded: number;
   timeGap: {
     minimum: number;
@@ -113,4 +114,5 @@ export interface ExtendedLevelConfig {
   };
   eventsSummary: LevelEventSummary[];
   pointsReward?: number;
+  specialRules?: any[];
 }

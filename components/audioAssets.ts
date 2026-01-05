@@ -34,7 +34,7 @@ export async function loadAudioAssets(): Promise<AudioAssets> {
       const assetModule = Asset.fromModule(asset);
       await assetModule.downloadAsync();
 
-      console.log(`[audioAssets] Loading ${key}: uri=${assetModule.uri}, localUri=${assetModule.localUri}`);
+      // console.log(`[audioAssets] Loading ${key}: uri=${assetModule.uri}, localUri=${assetModule.localUri}`);
 
       if (assetModule.localUri) {
         const base64 = await FileSystem.readAsStringAsync(assetModule.localUri, {
@@ -44,7 +44,7 @@ export async function loadAudioAssets(): Promise<AudioAssets> {
         // Déterminer le type MIME
         const mimeType = assetModule.localUri.endsWith('.mp3') ? 'audio/mpeg' : 'audio/wav';
         audioData[key] = `data:${mimeType};base64,${base64}`;
-        console.log(`[audioAssets] ${key} loaded as base64 (${base64.length} bytes)`);
+        // console.log(`[audioAssets] ${key} loaded as base64 (${base64.length} bytes)`);
       } else {
         console.warn(`[audioAssets] No localUri for ${key}, using uri: ${assetModule.uri}`);
         audioData[key] = assetModule.uri;

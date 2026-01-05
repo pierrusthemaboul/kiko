@@ -49,25 +49,24 @@ export default function RootLayout() {
         try {
           // Configuration de la status bar
           await SystemUI.setBackgroundColorAsync('#020817');
-
-          // Configuration de la navigation bar en mode immersive sticky
           await NavigationBar.setVisibilityAsync('hidden');
-          await NavigationBar.setBehaviorAsync('inset-swipe');
+          await NavigationBar.setBehaviorAsync('overlay-swipe');
           await NavigationBar.setBackgroundColorAsync('#020817');
           await NavigationBar.setPositionAsync('absolute');
 
           // Réappliquer le mode immersif régulièrement (au cas où l'utilisateur fait un swipe)
           const interval = setInterval(async () => {
             try {
+              // console.log('[IMMERSIVE MODE] Re-applying visibility: hidden');
               await NavigationBar.setVisibilityAsync('hidden');
             } catch (e) {
-              // Ignorer les erreurs silencieusement
+              console.warn('[IMMERSIVE MODE] Interval error:', e);
             }
           }, 3000);
 
           return () => clearInterval(interval);
         } catch (error) {
-          console.warn('[IMMERSIVE MODE] Erreur:', error);
+          console.error('[IMMERSIVE MODE] CRITICAL ERROR:', error);
         }
       }
     };
