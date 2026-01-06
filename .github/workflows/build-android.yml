@@ -1,0 +1,63 @@
+name: Build Android
+
+on:
+  workflow_dispatch:
+  push:
+    branches:
+      - main
+    paths:
+      - 'app.config.js'
+      - 'package.json'
+      - '.github/workflows/build-android.yml'
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - name: 🏗 Checkout repository
+        uses: actions/checkout@v4
+
+      - name: 🏗 Setup Node
+        uses: actions/setup-node@v4
+        with:
+          node-version: 20
+
+      - name: 🏗 Setup PNPM
+        uses: pnpm/action-setup@v3
+        with:
+          version: 8
+
+      - name: 🏗 Setup Java
+        uses: actions/setup-java@v4
+        with:
+          distribution: 'temurin'
+          java-version: '17'
+
+      - name: 🏗 Setup EAS
+        uses: expo/expo-github-action@v8
+        with:
+          eas-version: latest
+          token: ${{ secrets.EXPO_TOKEN }}
+
+      - name: 📦 Install dependencies
+        run: pnpm install
+
+      - name: 🔑 Prepare Play Store Key
+        run: echo '${{ secrets.PLAY_STORE_CONFIG_JSON }}' > kiko-chrono-e34241a84e41.json
+
+      - name: 🚀 Build AAB (Local)
+        run: |
+          npx expo prebuild --platform android --clean
+          node scripts/fix-manifest.js
+          node scripts/fix-kotlin-version.js
+          EAS_SKIP_AUTO_FINGERPRINT=1 eas build --platform android --profile production --local --non-interactive
+
+      - name: 📤 Upload Artifact
+        uses: actions/upload-artifact@v4
+        with:
+          name: android-build
+          path: build-*.aab
+
+      - name: 🚀 Submit to Play Store
+        if: github.event_name == 'workflow_dispatch'
+        run: eas submit --platform android --profile production --path build-*.aab --non-interactive
