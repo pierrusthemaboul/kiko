@@ -27,80 +27,56 @@ Avant de commencer, assurez-vous que :
      }
      ```
 
-3. **Service Account configuré**
-   - Fichier : `kiko-chrono-d02fc8cffcf6.json`
-   - Configuré dans `eas.json` :
-     ```json
-     "submit": {
-       "production": {
-         "android": {
-           "track": "production",
-           "releaseStatus": "completed",
-           "serviceAccountKeyPath": "./kiko-chrono-d02fc8cffcf6.json"
-         }
-       }
-     }
-     ```
+### 3. Service Account et Secrets GitHub
+- **Fichier de clé principal** : `kiko-chrono-e34241a84e41.json` (configuré dans `eas.json`)
+- **Secrets GitHub** (OBLIGATOIRE pour la CI/CD) :
+    - `EXPO_TOKEN` : Jeton d'accès Expo.
+    - `PLAY_STORE_CONFIG_JSON` : Contenu du fichier `.json` de la clé.
 
 ---
 
-## 🚀 Procédure Complète
+## 🚀 Procédure de Publication (2 Options)
 
-### Étape 1 : Incrémenter les versions
+### 🥇 Option A : Via GitHub Actions (RECOMMANDÉ)
 
-#### 1.1 Modifier `app.config.js`
+C'est la méthode la plus simple qui n'utilise pas les ressources de votre ordinateur.
 
-Fichier : `/home/pierre/kiko/app.config.js`
+#### 1. Préparation
+- Modifiez les versions dans `app.config.js` et `package.json`.
+- Faites un `git push origin main`.
+  - *Cela lancera automatiquement un build AAB sur GitHub (sans soumission).*
 
-```javascript
-version: "1.X.X",  // Incrémenter (ex: 1.6.0 → 1.6.1)
-```
+#### 2. Soumission au Play Store
+Pour que GitHub envoie l'AAB au Play Store, vous avez deux choix :
+- **Via Terminal (Rapide)** :
+  ```bash
+  gh workflow run build-android.yml
+  ```
+- **Via Navigateur** :
+  1. Allez sur GitHub → Onglet **Actions**.
+  2. Sélectionnez **Build Android**.
+  3. Cliquez sur **Run workflow** → **Run workflow**.
 
-#### 1.2 Modifier `android/app/build.gradle`
-
-Fichier : `/home/pierre/kiko/android/app/build.gradle`
-
-Ligne ~94-95 :
-```gradle
-versionCode 10XXX  // Incrémenter de 1 (ex: 10115 → 10116)
-versionName "1.X.X"  // Doit correspondre à app.config.js
-```
-
-**Important** : Les deux fichiers doivent avoir des versions cohérentes !
-
----
-
-### Étape 2 : Construire l'AAB
-
+#### 3. Suivi du build
 ```bash
-cd ~/kiko
-eas build --profile production --platform android
-```
-
-**Durée estimée** : 5-10 minutes
-
-**Résultat attendu** :
-```
-✔ Build finished
-🤖 Android app:
-https://expo.dev/artifacts/eas/XXXXXXXXXXXXX.aab
+gh run watch
 ```
 
 ---
 
-### Étape 3 : Soumettre au Play Store
+### 🥈 Option B : Via EAS (Manuel / Local)
 
+À utiliser en cas de problème avec GitHub Actions ou pour un test spécifique.
+
+#### 1. Construire l'AAB localement (Optimisé pour votre RAM)
 ```bash
-cd ~/kiko
-eas submit --platform android --profile production --latest
+./android/gradlew --stop
+EAS_SKIP_AUTO_FINGERPRINT=1 eas build --platform android --profile production --local
 ```
 
-**Durée estimée** : 1-2 minutes
-
-**Résultat attendu** :
-```
-✔ Submitted your app to Google Play Store!
-All done!
+#### 2. Soumettre au Play Store
+```bash
+eas submit --platform android --profile production --path ./le-fichier-genere.aab
 ```
 
 ---
@@ -244,7 +220,7 @@ Les deux fichiers doivent être synchronisés :
 
 **Email** : `play-console-api@kiko-chrono.iam.gserviceaccount.com`
 
-**Fichier de clé** : `./kiko-chrono-d02fc8cffcf6.json`
+**Fichier de clé utilisé** : `./kiko-chrono-e34241a84e41.json`
 
 **Permissions requises sur Google Play Console** :
 - ✅ Accès aux versions (Release)
@@ -333,6 +309,6 @@ Quand l'utilisateur demande de publier une nouvelle version sur le Play Store :
 
 ---
 
-**Dernière mise à jour** : 03/01/2026
+**Dernière mise à jour** : 06/01/2026 (Intégration GitHub Actions)
 **Version du document** : 1.0
 **Mainteneur** : Pierre
