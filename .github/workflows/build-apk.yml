@@ -50,7 +50,12 @@ jobs:
         run: echo '${{ secrets.PLAY_STORE_CONFIG_JSON }}' > kiko-chrono-e34241a84e41.json
 
       - name: 🚀 Build APK (Local)
+        env:
+          EXPO_NO_TELEMETRY: 1
+          NODE_ENV: development
         run: |
+          # Remove native folders to ensure Expo uses app.config.js dynamic values
+          rm -rf android ios
           npx expo prebuild --platform android --clean
           node scripts/fix-manifest.js
           node scripts/fix-kotlin-version.js
