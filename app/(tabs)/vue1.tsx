@@ -223,18 +223,18 @@ export default function Vue1() {
       // Incrémenter parties_per_day dans la base de données
       const grantExtraPlay = async () => {
         try {
-          const { data: currentProfile } = await supabase
+          const { data: currentProfile } = await (supabase
             .from('profiles')
             .select('parties_per_day')
             .eq('id', profile.id)
-            .single();
+            .single() as any);
 
           if (currentProfile) {
             const newPartiesPerDay = (currentProfile.parties_per_day ?? 3) + 1;
-            const { error } = await supabase
+            const { error } = await (supabase
               .from('profiles')
               .update({ parties_per_day: newPartiesPerDay })
-              .eq('id', profile.id);
+              .eq('id', profile.id) as any);
 
             if (!error) {
               Alert.alert('Partie gagnée ! 🎉', 'Vous avez gagné 1 partie supplémentaire !');
@@ -346,13 +346,11 @@ export default function Vue1() {
               // console.log('[BANNER_HOME] Ad loaded successfully');
               FirebaseAnalytics.trackEvent('banner_ad_loaded', { screen: 'vue1', position: 'home' });
             }}
-            onAdFailedToLoad={(error) => {
+            onAdFailedToLoad={(error: any) => {
               console.error('[BANNER_HOME] Failed to load ad:', error);
               FirebaseAnalytics.trackError('banner_ad_failed', {
                 screen: 'vue1',
-                position: 'home',
-                error_code: error.code,
-                error_message: error.message,
+                context: `position:home, code:${error.code}, message:${error.message}`,
               });
             }}
           />
@@ -366,6 +364,21 @@ export default function Vue1() {
               dailyQuests={quests.daily || []}
               weeklyQuests={quests.weekly || []}
               monthlyQuests={quests.monthly || []}
+              userId={profile?.id}
+              rankIndex={rank.index}
+              onRefresh={() => {
+                // Fonction pour rafraîchir les quêtes
+                const loadQuests = async () => {
+                  if (!profile?.id) return;
+                  try {
+                    const allQuests = await getAllQuestsWithProgress(profile.id, rank.index);
+                    setQuests(allQuests);
+                  } catch (err) {
+                    console.error('[QUESTS REFRESH ERROR]', err);
+                  }
+                };
+                loadQuests();
+              }}
             />
           )}
         </View>

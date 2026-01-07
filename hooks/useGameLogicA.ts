@@ -75,6 +75,8 @@ export function useGameLogicA(initialEvent?: string, modeId?: string) {
     title_key?: string | null;
     parties_per_day: number;
     high_score?: number | null;
+    last_reroll_date?: string | null;
+    reroll_count?: number;
   };
   const [profile, setProfile] = useState<ProfileLite | null>(null);
 

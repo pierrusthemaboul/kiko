@@ -91,6 +91,25 @@ type KnownAnalyticsEvents = {
     error_code?: string;
     message?: string;
   };
+  quest_claimed: {
+    quest_key: string;
+    xp_reward: number;
+    parts_reward: number;
+    quest_type: string;
+  };
+  quest_rerolled: {
+    old_quest_key: string;
+    new_quest_key: string;
+    difficulty_tier: number;
+  };
+  quest_completed: {
+    quest_key: string;
+    quest_type: string;
+  };
+  achievement_unlocked: {
+    achievement_key: string;
+    xp_bonus: number;
+  };
 };
 
 type AnalyticsEventName = keyof KnownAnalyticsEvents | (string & {});
@@ -185,7 +204,7 @@ export async function trackScreen(screenName: string, screenClass?: string) {
   try {
     const name = screenName || 'unknown';
     // Utiliser logEvent au lieu de logScreenView (deprecated)
-    await logEvent(analyticsInstance, 'screen_view', {
+    await logEvent(analyticsInstance, 'screen_view' as any, {
       screen_name: name,
       screen_class: screenClass || name,
     });
@@ -219,7 +238,7 @@ export async function trackEvent<N extends AnalyticsEventName>(
   params?: AnalyticsEventParams<N>,
 ) {
   try {
-    await logEvent(analyticsInstance, name, sanitizeParams(params));
+    await logEvent(analyticsInstance, name as any, sanitizeParams(params));
   } catch (error) {
     console.error(`trackEvent failed for ${name}`, error);
   }

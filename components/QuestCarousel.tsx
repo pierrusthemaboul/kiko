@@ -1,8 +1,10 @@
 import React, { useState, useEffect, useRef } from 'react';
-import { View, Text, StyleSheet, Animated, TouchableOpacity, Dimensions } from 'react-native';
+import { View, Text, StyleSheet, Animated, TouchableOpacity, Dimensions, Easing, ActivityIndicator, Alert } from 'react-native';
 import { Ionicons } from '@expo/vector-icons';
 import type { QuestWithProgress } from '@/lib/economy/quests';
 import { getQuestProgressPercentage } from '@/lib/economy/quests';
+import { claimQuestReward, rerollQuest } from '@/lib/economy/apply';
+import { FirebaseAnalytics } from '@/lib/firebase';
 
 const COLORS = {
   background: '#050505',
@@ -24,6 +26,9 @@ interface QuestCarouselProps {
   dailyQuests: QuestWithProgress[];
   weeklyQuests: QuestWithProgress[];
   monthlyQuests: QuestWithProgress[];
+  userId?: string;
+  rankIndex?: number;
+  onRefresh?: () => void;
 }
 
 type QuestType = 'daily' | 'weekly' | 'monthly';
@@ -53,16 +58,42 @@ export default function QuestCarousel({
   dailyQuests,
   weeklyQuests,
   monthlyQuests,
+  userId,
+  rankIndex = 0,
+  onRefresh,
 }: QuestCarouselProps) {
   const [currentType, setCurrentType] = useState<QuestType>('daily');
+  const [loadingQuestId, setLoadingQuestId] = useState<string | null>(null);
+
   const fadeAnim = useRef(new Animated.Value(1)).current;
   const slideAnim = useRef(new Animated.Value(0)).current;
+  const glowAnim = useRef(new Animated.Value(0)).current;
 
-  // Auto-rotation toutes les 8 secondes
+  // Animation de brillance répétitive
+  useEffect(() => {
+    Animated.loop(
+      Animated.sequence([
+        Animated.timing(glowAnim, {
+          toValue: 1,
+          duration: 1500,
+          easing: Easing.inOut(Easing.sin),
+          useNativeDriver: true,
+        }),
+        Animated.timing(glowAnim, {
+          toValue: 0,
+          duration: 1500,
+          easing: Easing.inOut(Easing.sin),
+          useNativeDriver: true,
+        }),
+      ])
+    ).start();
+  }, []);
+
+  // Auto-rotation toutes les 12 secondes (ralenti pour laisser le temps de lire/cliquer)
   useEffect(() => {
     const interval = setInterval(() => {
       rotateToNext();
-    }, 8000);
+    }, 12000);
 
     return () => clearInterval(interval);
   }, [currentType]);
@@ -84,7 +115,6 @@ export default function QuestCarousel({
   };
 
   const transitionTo = (newType: QuestType) => {
-    // Animation de sortie
     Animated.parallel([
       Animated.timing(fadeAnim, {
         toValue: 0,
@@ -97,10 +127,7 @@ export default function QuestCarousel({
         useNativeDriver: true,
       }),
     ]).start(() => {
-      // Changer le type
       setCurrentType(newType);
-
-      // Animation d'entrée
       slideAnim.setValue(20);
       Animated.parallel([
         Animated.timing(fadeAnim, {
@@ -117,16 +144,71 @@ export default function QuestCarousel({
     });
   };
 
+  const handleClaim = async (questKey: string, id: string) => {
+    if (!userId) return;
+    setLoadingQuestId(id);
+
+    try {
+      const result = await claimQuestReward(userId, questKey);
+      if (result.success) {
+        FirebaseAnalytics.trackEvent('quest_claimed', {
+          quest_key: questKey,
+          xp_reward: result.xpEarned,
+          parts_reward: result.partsEarned,
+          quest_type: currentType
+        });
+        if (onRefresh) onRefresh();
+      } else {
+        Alert.alert('Erreur', result.error || 'Impossible de réclamer la récompense');
+      }
+    } catch (err) {
+      console.error('Claim error:', err);
+    } finally {
+      setLoadingQuestId(null);
+    }
+  };
+
+  const handleReroll = async (questKey: string, id: string) => {
+    if (!userId) return;
+
+    Alert.alert(
+      'Changer de quête ?',
+      'Tu peux changer une quête par jour gratuitement.',
+      [
+        { text: 'Annuler', style: 'cancel' },
+        {
+          text: 'Changer',
+          onPress: async () => {
+            setLoadingQuestId(id);
+            try {
+              const result = await rerollQuest(userId, questKey, rankIndex);
+              if (result.success) {
+                FirebaseAnalytics.trackEvent('quest_rerolled', {
+                  old_quest_key: questKey,
+                  new_quest_key: result.newQuest.quest_key,
+                  difficulty_tier: result.newQuest.difficulty
+                });
+                if (onRefresh) onRefresh();
+              } else {
+                Alert.alert('Quota atteint', result.error || 'Impossible de changer la quête');
+              }
+            } catch (err) {
+              console.error('Reroll error:', err);
+            } finally {
+              setLoadingQuestId(null);
+            }
+          }
+        }
+      ]
+    );
+  };
+
   const getCurrentQuests = (): QuestWithProgress[] => {
     switch (currentType) {
-      case 'daily':
-        return dailyQuests || [];
-      case 'weekly':
-        return weeklyQuests || [];
-      case 'monthly':
-        return monthlyQuests || [];
-      default:
-        return [];
+      case 'daily': return dailyQuests || [];
+      case 'weekly': return weeklyQuests || [];
+      case 'monthly': return monthlyQuests || [];
+      default: return [];
     }
   };
 
@@ -135,7 +217,6 @@ export default function QuestCarousel({
 
   return (
     <View style={styles.container}>
-      {/* Header avec navigation */}
       <View style={styles.header}>
         <TouchableOpacity onPress={rotateToPrevious} style={styles.navButton}>
           <Ionicons name="chevron-back" size={24} color={COLORS.gold} />
@@ -151,7 +232,6 @@ export default function QuestCarousel({
         </TouchableOpacity>
       </View>
 
-      {/* Indicateurs */}
       <View style={styles.indicators}>
         {(['daily', 'weekly', 'monthly'] as QuestType[]).map((type) => (
           <TouchableOpacity
@@ -162,7 +242,6 @@ export default function QuestCarousel({
         ))}
       </View>
 
-      {/* Contenu animé */}
       <Animated.View
         style={[
           styles.content,
@@ -177,24 +256,35 @@ export default function QuestCarousel({
           <Text style={styles.emptyText}>Aucune quête disponible</Text>
         ) : (
           currentQuests.map((quest, index) => {
-            const currentValue = quest.progress?.current_value ?? 0;
-            const isCompleted = quest.progress?.completed ?? false;
+            const progress = quest.progress;
+            const currentValue = progress?.current_value ?? 0;
+            const isCompleted = progress?.completed ?? false;
+            const isClaimed = (progress as any)?.claimed ?? false;
             const progressPercent = getQuestProgressPercentage(currentValue, quest.target_value);
+            const isDaily = currentType === 'daily';
 
             return (
               <View key={quest.id} style={[styles.questRow, index < currentQuests.length - 1 ? styles.questDivider : null]}>
                 <View style={styles.questContent}>
-                  <Text style={[styles.questTitle, isCompleted ? styles.questTitleDone : null]}>
-                    {quest.title || 'Sans titre'}
-                  </Text>
+                  <View style={styles.questHeaderRow}>
+                    <Text style={[styles.questTitle, isClaimed ? styles.questTitleDone : null]}>
+                      {quest.title || 'Sans titre'}
+                    </Text>
+                    {isDaily && !isCompleted && !isClaimed && userId && (
+                      <TouchableOpacity
+                        onPress={() => handleReroll(quest.quest_key, quest.id)}
+                        style={styles.rerollButton}
+                      >
+                        <Ionicons name="refresh-circle" size={20} color={COLORS.textMuted} />
+                      </TouchableOpacity>
+                    )}
+                  </View>
                   <Text style={styles.questDescription}>{quest.description || 'Pas de description'}</Text>
 
-                  {/* Barre de progression */}
                   <View style={styles.progressBar}>
                     <View style={[styles.progressFill, { width: `${progressPercent}%`, backgroundColor: config.color }]} />
                   </View>
 
-                  {/* Récompenses */}
                   <View style={styles.rewardsRow}>
                     <View style={styles.reward}>
                       <Ionicons name="star" size={14} color={COLORS.gold} />
@@ -203,9 +293,7 @@ export default function QuestCarousel({
                     {quest.parts_reward && quest.parts_reward > 0 ? (
                       <View style={styles.reward}>
                         <Ionicons name="game-controller" size={14} color={COLORS.green} />
-                        <Text style={styles.rewardText}>
-                          +{quest.parts_reward} partie{quest.parts_reward > 1 ? 's' : ''}
-                        </Text>
+                        <Text style={styles.rewardText}>+{quest.parts_reward}</Text>
                       </View>
                     ) : null}
                     <Text style={styles.progressText}>
@@ -214,10 +302,31 @@ export default function QuestCarousel({
                   </View>
                 </View>
 
-                {/* Icône de complétion */}
-                {isCompleted ? (
-                  <Ionicons name="checkmark-circle" size={32} color={config.color} style={styles.checkIcon} />
-                ) : null}
+                <View style={styles.actionContainer}>
+                  {isClaimed ? (
+                    <Ionicons name="checkmark-done-circle" size={32} color={COLORS.textMuted} style={styles.checkIcon} />
+                  ) : isCompleted ? (
+                    <TouchableOpacity
+                      onPress={() => handleClaim(quest.quest_key, quest.id)}
+                      disabled={loadingQuestId === quest.id}
+                      style={styles.claimButtonContainer}
+                    >
+                      <Animated.View style={[
+                        styles.claimButton,
+                        { borderColor: config.color, backgroundColor: config.color + '20' },
+                        { transform: [{ scale: glowAnim.interpolate({ inputRange: [0, 1], outputRange: [1, 1.1] }) }] }
+                      ]}>
+                        {loadingQuestId === quest.id ? (
+                          <ActivityIndicator size="small" color={config.color} />
+                        ) : (
+                          <Text style={[styles.claimText, { color: config.color }]}>LOT</Text>
+                        )}
+                      </Animated.View>
+                    </TouchableOpacity>
+                  ) : (
+                    <Ionicons name="ellipse-outline" size={24} color={COLORS.divider} style={styles.checkIcon} />
+                  )}
+                </View>
               </View>
             );
           })
@@ -286,18 +395,26 @@ const styles = StyleSheet.create({
   },
   questRow: {
     flexDirection: 'row',
-    alignItems: 'flex-start',
+    alignItems: 'center',
     paddingVertical: 12,
   },
   questDivider: {
     borderBottomWidth: StyleSheet.hairlineWidth,
     borderBottomColor: COLORS.divider,
   },
+  questContent: {
+    flex: 1,
+  },
+  questHeaderRow: {
+    flexDirection: 'row',
+    alignItems: 'center',
+    gap: 8,
+    marginBottom: 4,
+  },
   questTitle: {
     fontSize: 16,
     fontWeight: '600',
     color: COLORS.textPrimary,
-    marginBottom: 4,
   },
   questTitleDone: {
     opacity: 0.6,
@@ -339,10 +456,31 @@ const styles = StyleSheet.create({
     color: COLORS.textMuted,
     marginLeft: 'auto',
   },
-  checkIcon: {
+  actionContainer: {
     marginLeft: 12,
+    width: 50,
+    alignItems: 'center',
+    justifyContent: 'center',
   },
-  questContent: {
-    flex: 1,
+  checkIcon: {
+    opacity: 0.8,
+  },
+  claimButtonContainer: {
+    alignItems: 'center',
+  },
+  claimButton: {
+    paddingHorizontal: 8,
+    paddingVertical: 4,
+    borderRadius: 8,
+    borderWidth: 2,
+    minWidth: 44,
+    alignItems: 'center',
+  },
+  claimText: {
+    fontSize: 11,
+    fontWeight: 'bold',
+  },
+  rerollButton: {
+    padding: 2,
   },
 });

@@ -16,16 +16,17 @@ const questLog = (..._args: unknown[]) => {
 };
 
 /**
- * Génère une seed basée sur la date du jour
- * Permet d'avoir les mêmes quêtes pour tous les utilisateurs un jour donné
+ * Génère une seed basée sur la date du jour en heure française
  */
 function getDailySeed(): number {
-  const today = new Date();
-  const year = today.getFullYear();
-  const month = today.getMonth() + 1;
-  const day = today.getDate();
+  const now = new Date();
+  const options = { timeZone: 'Europe/Paris', year: 'numeric', month: 'numeric', day: 'numeric' } as const;
+  const parts = new Intl.DateTimeFormat('en-US', options).formatToParts(now);
 
-  // Seed unique par jour
+  const year = parseInt(parts.find(p => p.type === 'year')?.value || '0');
+  const month = parseInt(parts.find(p => p.type === 'month')?.value || '0');
+  const day = parseInt(parts.find(p => p.type === 'day')?.value || '0');
+
   return year * 10000 + month * 100 + day;
 }
 
@@ -56,29 +57,96 @@ function shuffleWithSeed<T>(array: T[], seed: number): T[] {
 }
 
 /**
- * Sélectionne 3 quêtes quotidiennes aléatoires pour aujourd'hui
- * Utilise une seed basée sur la date pour que tous les utilisateurs aient les mêmes quêtes
+ * Sélectionne 3 quêtes quotidiennes adaptées au grade du joueur
+ * 1. Détermine le Tier (1-4)
+ * 2. Filtre par Tier
+ * 3. Sélectionne 3 catégories différentes
+ * 4. Applique un scaling intra-tier (+5% par grade dans le tier)
  */
-export async function selectDailyQuests(): Promise<DailyQuest[]> {
+
+function scaleTargetValue(baseValue: number, rankIndex: number): number {
+  // Le tier change tous les 4 grades
+  // On applique +5% par grade au-dessus du début du tier
+  const progressInTier = rankIndex % 4;
+  const multiplier = 1 + (progressInTier * 0.05);
+
+  // Pour les petits nombres (ex: 3 parties), on arrondit à l'entier
+  // Pour les grands nombres (ex: 10 000 points), on arrondit à la centaine la plus proche pour que ce soit "beau"
+  const scaled = baseValue * multiplier;
+  if (scaled >= 1000) {
+    return Math.round(scaled / 100) * 100;
+  }
+  return Math.ceil(scaled);
+}
+
+export async function selectDailyQuests(rankIndex: number = 0): Promise<DailyQuest[]> {
   try {
-    // Récupérer toutes les quêtes quotidiennes (pool)
+    // Déterminer le tier de difficulté (1 à 4)
+    // Page(0)-Chevalier(3) -> Tier 1
+    // Baronnet(4)-Seigneur(7) -> Tier 2
+    // Comte(8)-Margrave(11) -> Tier 3
+    // Duc(12)+ -> Tier 4
+    let difficultyTier = 1;
+    if (rankIndex >= 12) difficultyTier = 4;
+    else if (rankIndex >= 8) difficultyTier = 3;
+    else if (rankIndex >= 4) difficultyTier = 2;
+
+    // Récupérer toutes les quêtes quotidiennes actives du tier correspondant
     const { data: allDailyQuests, error } = await supabase
       .from('daily_quests')
       .select('*')
       .eq('quest_type', 'daily')
-      .eq('is_active', true);
+      .eq('is_active', true)
+      .eq('difficulty', difficultyTier);
 
     if (error) throw error;
-    if (!allDailyQuests || allDailyQuests.length === 0) {
-      throw new Error('Aucune quête quotidienne disponible');
+
+    if (!allDailyQuests || allDailyQuests.length < 3) {
+      // Fallback : si pas assez de quêtes dans le tier, on prend tout le daily actif
+      const { data: fallbackQuests } = await supabase
+        .from('daily_quests')
+        .select('*')
+        .eq('quest_type', 'daily')
+        .eq('is_active', true);
+
+      const seed = getDailySeed();
+      return shuffleWithSeed(fallbackQuests || [], seed).slice(0, 3) as DailyQuest[];
     }
 
-    // Mélanger avec la seed du jour
+    // Sélection intelligente par catégorie pour éviter les doublons de type (ex: 3 scores)
     const seed = getDailySeed();
     const shuffled = shuffleWithSeed(allDailyQuests, seed);
 
-    // Prendre les 3 premières
-    return shuffled.slice(0, 3) as DailyQuest[];
+    const selected: DailyQuest[] = [];
+    const usedCategories = new Set<string>();
+
+    // Premier passage : on essaie de prendre des catégories uniques
+    for (const q of shuffled) {
+      const cat = (q as any).category || 'general';
+      if (!usedCategories.has(cat)) {
+        selected.push(q as DailyQuest);
+        usedCategories.add(cat);
+      }
+      if (selected.length >= 3) break;
+    }
+
+    // Appliquer le scaling intra-tier sur les objets sélectionnés
+    return selected.map(q => ({
+      ...q,
+      target_value: scaleTargetValue(q.target_value, rankIndex)
+    }));
+
+    // Deuxième passage : si on n'a pas encore 3 quêtes (rare), on complète avec le reste
+    if (selected.length < 3) {
+      for (const q of shuffled) {
+        if (!selected.find(s => s.quest_key === q.quest_key)) {
+          selected.push(q as DailyQuest);
+        }
+        if (selected.length >= 3) break;
+      }
+    }
+
+    return selected;
   } catch (err) {
     console.error('Erreur lors de la sélection des quêtes quotidiennes:', err);
     return [];
@@ -86,19 +154,44 @@ export async function selectDailyQuests(): Promise<DailyQuest[]> {
 }
 
 /**
- * Récupère les 3 quêtes hebdomadaires actives
+ * Récupère les 3 quêtes hebdomadaires adaptées au grade du joueur
  */
-export async function getWeeklyQuests(): Promise<DailyQuest[]> {
+export async function getWeeklyQuests(rankIndex: number = 0): Promise<DailyQuest[]> {
   try {
+    let difficultyTier = 1;
+    if (rankIndex >= 12) difficultyTier = 4;
+    else if (rankIndex >= 8) difficultyTier = 3;
+    else if (rankIndex >= 4) difficultyTier = 2;
+
     const { data, error } = await supabase
       .from('daily_quests')
       .select('*')
       .eq('quest_type', 'weekly')
       .eq('is_active', true)
-      .limit(3);
+      .eq('difficulty', difficultyTier);
 
     if (error) throw error;
-    return (data || []) as DailyQuest[];
+
+    let selected = data || [];
+    if (selected.length === 0) {
+      // Fallback si pas de quêtes pour ce tier spécifique
+      const { data: fallback } = await supabase
+        .from('daily_quests')
+        .select('*')
+        .eq('quest_type', 'weekly')
+        .eq('is_active', true);
+      selected = fallback || [];
+    }
+
+    // Prendre 3 au hasard (ou seedé)
+    const seed = getDailySeed();
+    const result = shuffleWithSeed(selected, seed + 1).slice(0, 3) as DailyQuest[];
+
+    // Appliquer le scaling
+    return result.map(q => ({
+      ...q,
+      target_value: scaleTargetValue(q.target_value, rankIndex)
+    }));
   } catch (err) {
     console.error('Erreur lors de la récupération des quêtes hebdomadaires:', err);
     return [];
@@ -106,19 +199,42 @@ export async function getWeeklyQuests(): Promise<DailyQuest[]> {
 }
 
 /**
- * Récupère les 3 quêtes mensuelles actives
+ * Récupère les 3 quêtes mensuelles adaptées au grade du joueur
  */
-export async function getMonthlyQuests(): Promise<DailyQuest[]> {
+export async function getMonthlyQuests(rankIndex: number = 0): Promise<DailyQuest[]> {
   try {
+    let difficultyTier = 1;
+    if (rankIndex >= 12) difficultyTier = 4;
+    else if (rankIndex >= 8) difficultyTier = 3;
+    else if (rankIndex >= 4) difficultyTier = 2;
+
     const { data, error } = await supabase
       .from('daily_quests')
       .select('*')
       .eq('quest_type', 'monthly')
       .eq('is_active', true)
-      .limit(3);
+      .eq('difficulty', difficultyTier);
 
     if (error) throw error;
-    return (data || []) as DailyQuest[];
+
+    let selected = data || [];
+    if (selected.length === 0) {
+      const { data: fallback } = await supabase
+        .from('daily_quests')
+        .select('*')
+        .eq('quest_type', 'monthly')
+        .eq('is_active', true);
+      selected = fallback || [];
+    }
+
+    const seed = getDailySeed();
+    const result = shuffleWithSeed(selected, seed + 2).slice(0, 3) as DailyQuest[];
+
+    // Appliquer le scaling
+    return result.map(q => ({
+      ...q,
+      target_value: scaleTargetValue(q.target_value, rankIndex)
+    }));
   } catch (err) {
     console.error('Erreur lors de la récupération des quêtes mensuelles:', err);
     return [];
@@ -126,31 +242,35 @@ export async function getMonthlyQuests(): Promise<DailyQuest[]> {
 }
 
 /**
- * Calcule la date de reset en fonction du type de quête
+ * Calcule la date de reset en fonction du type de quête (Heure Française)
  */
 function getResetDate(questType: 'daily' | 'weekly' | 'monthly'): string {
+  // Obtenir la date actuelle à Paris
   const now = new Date();
+  const options = { timeZone: 'Europe/Paris' };
+
+  // Créer un objet Date qui représente minuit aujourd'hui à Paris
+  const parisToday = new Date(now.toLocaleString('en-US', { timeZone: 'Europe/Paris' }));
+  parisToday.setHours(0, 0, 0, 0);
 
   if (questType === 'daily') {
-    // Reset demain à minuit
-    const tomorrow = new Date(now);
-    tomorrow.setHours(24, 0, 0, 0);
-    return tomorrow.toISOString();
+    // Reset demain à minuit Paris
+    const tomorrow = new Date(parisToday);
+    tomorrow.setDate(tomorrow.getDate() + 1);
+    return tomorrow.toISOString().replace('.000Z', '') + '+01:00'; // Simplification, idéalement ISO avec offset
   } else if (questType === 'weekly') {
-    // Reset lundi prochain à minuit
-    const nextMonday = new Date(now);
+    // Reset lundi prochain à minuit Paris
+    const nextMonday = new Date(parisToday);
     const dayOfWeek = nextMonday.getDay();
-    const daysUntilMonday = dayOfWeek === 0 ? 1 : 8 - dayOfWeek; // Si dimanche, +1, sinon jours jusqu'au prochain lundi
+    const daysUntilMonday = dayOfWeek === 0 ? 1 : 8 - dayOfWeek;
     nextMonday.setDate(nextMonday.getDate() + daysUntilMonday);
-    nextMonday.setHours(0, 0, 0, 0);
-    return nextMonday.toISOString();
+    return nextMonday.toISOString().replace('.000Z', '') + '+01:00';
   } else {
-    // Reset le 1er du mois prochain à minuit
-    const nextMonth = new Date(now);
+    // Reset le 1er du mois prochain à minuit Paris
+    const nextMonth = new Date(parisToday);
     nextMonth.setMonth(nextMonth.getMonth() + 1);
     nextMonth.setDate(1);
-    nextMonth.setHours(0, 0, 0, 0);
-    return nextMonth.toISOString();
+    return nextMonth.toISOString().replace('.000Z', '') + '+01:00';
   }
 }
 
@@ -173,7 +293,7 @@ async function initializeQuestProgress(userId: string, quests: DailyQuest[]): Pr
       current_value: 0,
       completed: false,
       reset_at: resetAt,
-    };
+    } as any;
   });
 
   const { error } = await supabase
@@ -230,24 +350,18 @@ export async function getAllQuestsWithProgress(userId: string, rankIndex: number
     // Nettoyer les quêtes expirées avant de récupérer
     await cleanExpiredQuests(userId);
 
-    // Récupérer les quêtes sélectionnées
+    // Récupérer les quêtes sélectionnées (Passage du rankIndex pour le filtrage par Tier)
     const [dailyQuests, weeklyQuests, monthlyQuests] = await Promise.all([
-      selectDailyQuests(),
-      getWeeklyQuests(),
-      getMonthlyQuests(),
+      selectDailyQuests(rankIndex),
+      getWeeklyQuests(rankIndex),
+      getMonthlyQuests(rankIndex),
     ]);
 
-    // NOUVEAU: Appliquer le scaling par grade
-    const { getPlayerTier, scaleQuests } = await import('./questScaling');
-    const playerTier = getPlayerTier(rankIndex);
+    // IMPORTANT: Le scaling dynamique est désactivé car les quêtes sont désormais
+    // pré-équilibrées par Tier dans la base de données.
+    const allQuests = [...dailyQuests, ...weeklyQuests, ...monthlyQuests];
 
-    const scaledDailyQuests = scaleQuests(dailyQuests, playerTier);
-    const scaledWeeklyQuests = scaleQuests(weeklyQuests, playerTier);
-    const scaledMonthlyQuests = scaleQuests(monthlyQuests, playerTier);
-
-    const allQuests = [...scaledDailyQuests, ...scaledWeeklyQuests, ...scaledMonthlyQuests];
-
-    questLog('[QUESTS] 🎯 Tier du joueur:', playerTier, '(rank index:', rankIndex, ')');
+    questLog('[QUESTS] 🎯 Rank Index:', rankIndex);
 
     // Récupérer la progression de l'utilisateur
     const { data: progressData, error: progressError } = await supabase
@@ -258,7 +372,7 @@ export async function getAllQuestsWithProgress(userId: string, rankIndex: number
     if (progressError) throw progressError;
 
     // LAZY LOADING: Créer les quêtes manquantes (nouvelles quêtes ajoutées ou premier accès)
-    const existingQuestKeys = new Set(progressData?.map(p => p.quest_key) || []);
+    const existingQuestKeys = new Set((progressData as any[])?.map((p: any) => p.quest_key) || []);
     const missingQuests = allQuests.filter(q => !existingQuestKeys.has(q.quest_key));
 
     if (missingQuests.length > 0) {
@@ -271,32 +385,32 @@ export async function getAllQuestsWithProgress(userId: string, rankIndex: number
         .select('*')
         .eq('user_id', userId);
 
-      questLog('[QUESTS LAZY] ✅ Total:', updatedProgressData?.length || 0, 'quêtes');
+      questLog('[QUESTS LAZY] ✅ Total:', (updatedProgressData as any[])?.length || 0, 'quêtes');
 
-      const mapQuestsWithProgress = (quests: DailyQuest[]) =>
-        quests.map((quest) => ({
+      const mapQuestsWithProgress = (qs: DailyQuest[]) =>
+        qs.map((quest) => ({
           ...quest,
-          progress: updatedProgressData?.find((p) => p.quest_key === quest.quest_key) || null,
+          progress: (updatedProgressData as any[])?.find((p: any) => p.quest_key === quest.quest_key) || null,
         }));
 
       return {
-        daily: mapQuestsWithProgress(scaledDailyQuests),
-        weekly: mapQuestsWithProgress(scaledWeeklyQuests),
-        monthly: mapQuestsWithProgress(scaledMonthlyQuests),
+        daily: mapQuestsWithProgress(dailyQuests),
+        weekly: mapQuestsWithProgress(weeklyQuests),
+        monthly: mapQuestsWithProgress(monthlyQuests),
       };
     }
 
     // Combiner les quêtes avec leur progression
-    const mapQuestsWithProgress = (quests: DailyQuest[]) =>
-      quests.map((quest) => ({
+    const mapQuestsWithProgress = (qs: DailyQuest[]) =>
+      qs.map((quest) => ({
         ...quest,
-        progress: progressData?.find((p) => p.quest_key === quest.quest_key) || null,
+        progress: (progressData as any[])?.find((p: any) => p.quest_key === quest.quest_key) || null,
       }));
 
     return {
-      daily: mapQuestsWithProgress(scaledDailyQuests),
-      weekly: mapQuestsWithProgress(scaledWeeklyQuests),
-      monthly: mapQuestsWithProgress(scaledMonthlyQuests),
+      daily: mapQuestsWithProgress(dailyQuests),
+      weekly: mapQuestsWithProgress(weeklyQuests),
+      monthly: mapQuestsWithProgress(monthlyQuests),
     };
   } catch (err) {
     console.error('[QUESTS] ❌ Erreur getAllQuestsWithProgress:', err);

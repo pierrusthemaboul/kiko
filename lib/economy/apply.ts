@@ -5,6 +5,7 @@ import { partiesPerDayFromXP, rankFromXP } from 'lib/economy/ranks';
 import { calculateNewStreak, getTodayDateString } from '@/utils/questHelpers';
 import { shouldUnlockAchievement, ACHIEVEMENTS } from './quests';
 import Constants from 'expo-constants';
+import { FirebaseAnalytics } from 'lib/firebase';
 
 const ECONOMY_LOG_ENABLED = (() => {
   try {
@@ -601,6 +602,13 @@ async function updateDailyQuests(
           completed: isCompleted,
           completed_at: isCompleted ? timestamp : null,
         });
+
+        if (isCompleted) {
+          FirebaseAnalytics.trackEvent('quest_completed', {
+            quest_key: progress.quest_key,
+            quest_type: questTemplate.quest_type || 'daily'
+          });
+        }
       } else {
         economyLog(`[QUESTS] ⏭️ PAS DE MISE À JOUR pour ${key}`);
       }
@@ -632,16 +640,8 @@ async function updateDailyQuests(
         economyLog(`[QUESTS] ✅ Mise à jour réussie pour ID=${update.id.substring(0, 8)}...`);
       }
 
-      // Si la quête est complétée, ajouter l'XP
-      const progressBefore = questProgress.find(q => q.id === update.id);
-      if (update.completed && !progressBefore?.completed) {
-        const quest = dailyQuests?.find(q => q.quest_key === progressBefore?.quest_key);
-        if (quest?.xp_reward) {
-          economyLog(`[QUESTS] 🎉 QUÊTE COMPLÉTÉE: ${quest.title} - Attribution de ${quest.xp_reward} XP`);
-          await awardQuestXP(userId, quest.xp_reward);
-          economyLog(`[QUESTS] ✅ XP attribué avec succès`);
-        }
-      }
+      // NOTE: L'attribution automatique de l'XP est supprimée.
+      // Le joueur doit maintenant cliquer sur "Réclamer" dans l'UI.
     }
 
     economyLog(`[QUESTS] ✅ ===== FIN updateDailyQuests =====`);
@@ -729,6 +729,11 @@ async function checkAndUnlockAchievements(
         // Ajouter l'XP
         await awardQuestXP(userId, achievement.xp_bonus);
 
+        FirebaseAnalytics.trackEvent('achievement_unlocked', {
+          achievement_key: key,
+          xp_bonus: achievement.xp_bonus
+        });
+
         unlockedKeys.push(key);
         economyLog(`🏆 Achievement débloqué: ${achievement.title} (+${achievement.xp_bonus} XP)`);
       }
@@ -739,4 +744,171 @@ async function checkAndUnlockAchievements(
     console.error('Erreur dans checkAndUnlockAchievements:', error);
     return unlockedKeys;
   }
+}
+
+/**
+ * Réclame la récompense d'une quête complétée
+ */
+export async function claimQuestReward(userId: string, questKey: string): Promise<{ success: boolean; xpEarned: number; partsEarned: number; error?: string }> {
+  try {
+    // 1. Vérifier la progression
+    const { data: progress, error: fetchError } = await supabase
+      .from('quest_progress')
+      .select('*, daily_quests(*)')
+      .eq('user_id', userId)
+      .eq('quest_key', questKey)
+      .single();
+
+    if (fetchError || !progress) throw new Error('Quête non trouvée');
+    if (!progress.completed) throw new Error('Quête non terminée');
+    if (progress.claimed) throw new Error('Récompense déjà réclamée');
+
+    const quest = progress.daily_quests;
+    if (!quest) throw new Error('Détails de quête manquants');
+
+    const xpAmount = quest.xp_reward || 0;
+    const partsAmount = quest.parts_reward || 0;
+
+    // 2. Marquer comme réclamé AVANT de donner les récompenses (éviter les exploits)
+    const { error: updateProgressError } = await supabase
+      .from('quest_progress')
+      .update({ claimed: true, updated_at: new Date().toISOString() })
+      .eq('id', progress.id);
+
+    if (updateProgressError) throw updateProgressError;
+
+    // 3. Attribuer les récompenses
+    const { data: profile, error: profileFetchError } = await supabase
+      .from('profiles')
+      .select('xp_total, parties_per_day')
+      .eq('id', userId)
+      .single();
+
+    if (profileFetchError) throw profileFetchError;
+
+    const newXP = (profile.xp_total || 0) + xpAmount;
+    const newParties = (profile.parties_per_day || 0) + partsAmount;
+
+    const { error: profileUpdateError } = await supabase
+      .from('profiles')
+      .update({
+        xp_total: newXP,
+        parties_per_day: newParties,
+        updated_at: new Date().toISOString()
+      })
+      .eq('id', userId);
+
+    if (profileUpdateError) throw profileUpdateError;
+
+    return { success: true, xpEarned: xpAmount, partsEarned: partsAmount };
+  } catch (error: any) {
+    console.error('[ECONOMY] Error claiming reward:', error.message);
+    return { success: false, xpEarned: 0, partsEarned: 0, error: error.message };
+  }
+}
+
+/**
+ * Change une quête quotidienne (Reroll)
+ */
+export async function rerollQuest(userId: string, questKey: string, rankIndex: number): Promise<{ success: boolean; newQuest?: any; error?: string }> {
+  try {
+    // 1. Vérifier le quota de reroll (1 par jour)
+    const { data: profile, error: profileError } = await supabase
+      .from('profiles')
+      .select('last_reroll_date, reroll_count')
+      .eq('id', userId)
+      .single();
+
+    if (profileError) throw profileError;
+
+    const today = new Date().toISOString().split('T')[0];
+    if (profile.last_reroll_date === today && profile.reroll_count >= 1) {
+      throw new Error('Limite de reroll quotidien atteinte (1/jour)');
+    }
+
+    // 2. Récupérer la quête actuelle pour connaître son Tier
+    const { data: currentProgress, error: fetchError } = await supabase
+      .from('quest_progress')
+      .select('*, daily_quests(*)')
+      .eq('user_id', userId)
+      .eq('quest_key', questKey)
+      .single();
+
+    if (fetchError || !currentProgress) throw new Error('Quête à changer non trouvée');
+    if (currentProgress.completed) throw new Error('Impossible de changer une quête déjà terminée');
+
+    const currentDifficulty = currentProgress.daily_quests.difficulty;
+    const currentCategory = currentProgress.daily_quests.category;
+
+    // 3. Chercher une nouvelle quête alternative du même Tier et de la même catégorie
+    // On exclut les quêtes déjà possédées par le joueur
+    const { data: userProgress } = await supabase
+      .from('quest_progress')
+      .select('quest_key')
+      .eq('user_id', userId);
+
+    const excludedKeys = userProgress?.map(p => p.quest_key) || [];
+
+    const { data: availableQuests, error: availError } = await supabase
+      .from('daily_quests')
+      .select('*')
+      .eq('quest_type', 'daily')
+      .eq('is_active', true)
+      .eq('difficulty', currentDifficulty)
+      .eq('category', currentCategory)
+      .not('quest_key', 'in', `(${excludedKeys.join(',')})`);
+
+    if (availError || !availableQuests || availableQuests.length === 0) {
+      // Si pas de même catégorie, on prend n'importe quelle catégorie du même tier
+      const { data: anyQuests } = await supabase
+        .from('daily_quests')
+        .select('*')
+        .eq('quest_type', 'daily')
+        .eq('is_active', true)
+        .eq('difficulty', currentDifficulty)
+        .not('quest_key', 'in', `(${excludedKeys.join(',')})`);
+
+      if (!anyQuests || anyQuests.length === 0) throw new Error('Aucune quête alternative disponible');
+
+      const newQuest = anyQuests[Math.floor(Math.random() * anyQuests.length)];
+      return await applyReroll(userId, currentProgress.id, newQuest, today, (profile.reroll_count || 0) + 1);
+    }
+
+    const newQuest = availableQuests[Math.floor(Math.random() * availableQuests.length)];
+    return await applyReroll(userId, currentProgress.id, newQuest, today, (profile.reroll_count || 0) + 1);
+
+  } catch (error: any) {
+    console.error('[ECONOMY] Reroll error:', error.message);
+    return { success: false, error: error.message };
+  }
+}
+
+async function applyReroll(userId: string, progressId: string, newQuest: any, date: string, count: number) {
+  // 1. Mettre à jour la progression avec la nouvelle quête
+  const { error: updateError } = await supabase
+    .from('quest_progress')
+    .update({
+      quest_key: newQuest.quest_key,
+      current_value: 0,
+      completed: false,
+      claimed: false,
+      completed_at: null,
+      updated_at: new Date().toISOString()
+    })
+    .eq('id', progressId);
+
+  if (updateError) throw updateError;
+
+  // 2. Mettre à jour le quota dans le profil
+  const { error: profileError } = await supabase
+    .from('profiles')
+    .update({
+      last_reroll_date: date,
+      reroll_count: count
+    })
+    .eq('id', userId);
+
+  if (profileError) throw profileError;
+
+  return { success: true, newQuest };
 }

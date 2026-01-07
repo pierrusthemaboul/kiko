@@ -26,9 +26,9 @@ BEGIN
   -- Réinitialiser les quêtes pour tous les utilisateurs actifs
   -- On considère "actifs" = ayant joué dans les 7 derniers jours
   WITH active_users AS (
-    SELECT DISTINCT user_id
+    SELECT DISTINCT id AS user_id
     FROM profiles
-    WHERE last_play_date >= (CURRENT_DATE - INTERVAL '7 days')
+    WHERE last_play_date >= ((CURRENT_TIMESTAMP AT TIME ZONE 'Europe/Paris')::date - INTERVAL '7 days')::text
   ),
   active_quests AS (
     SELECT quest_key, quest_type
@@ -44,13 +44,13 @@ BEGIN
       CASE aq.quest_type
         -- Daily: reset demain à minuit
         WHEN 'daily' THEN
-          (CURRENT_DATE + INTERVAL '1 day')::timestamp with time zone
+          ((CURRENT_TIMESTAMP AT TIME ZONE 'Europe/Paris')::date + INTERVAL '1 day') AT TIME ZONE 'Europe/Paris'
         -- Weekly: reset lundi prochain à minuit
         WHEN 'weekly' THEN
-          (CURRENT_DATE + ((8 - EXTRACT(DOW FROM CURRENT_DATE)::integer) % 7) * INTERVAL '1 day')::timestamp with time zone
+          ((CURRENT_TIMESTAMP AT TIME ZONE 'Europe/Paris')::date + (CASE WHEN EXTRACT(DOW FROM (CURRENT_TIMESTAMP AT TIME ZONE 'Europe/Paris')) = 0 THEN 1 ELSE 8 - EXTRACT(DOW FROM (CURRENT_TIMESTAMP AT TIME ZONE 'Europe/Paris'))::int END) * INTERVAL '1 day') AT TIME ZONE 'Europe/Paris'
         -- Monthly: reset le 1er du mois prochain à minuit
         WHEN 'monthly' THEN
-          (DATE_TRUNC('month', CURRENT_DATE) + INTERVAL '1 month')::timestamp with time zone
+          (DATE_TRUNC('month', (CURRENT_TIMESTAMP AT TIME ZONE 'Europe/Paris')) + INTERVAL '1 month') AT TIME ZONE 'Europe/Paris'
       END as reset_at
     FROM active_users au
     CROSS JOIN active_quests aq

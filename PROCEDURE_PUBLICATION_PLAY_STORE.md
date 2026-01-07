@@ -28,43 +28,55 @@ Avant de commencer, assurez-vous que :
      ```
 
 ### 3. Service Account et Secrets GitHub
-- **Fichier de clé principal** : `kiko-chrono-e34241a84e41.json` (configuré dans `eas.json`)
-- **Secrets GitHub** (OBLIGATOIRE pour la CI/CD) :
-    - `EXPO_TOKEN` : Jeton d'accès Expo.
-    - `PLAY_STORE_CONFIG_JSON` : Contenu du fichier `.json` de la clé.
+-   **Fichier de clé principal** : `kiko-chrono-e34241a84e41.json` (configuré dans `eas.json`)
+-   **Secrets GitHub** (OBLIGATOIRE pour la CI/CD) :
+    -   `EXPO_TOKEN` : Jeton d'accès Expo.
+    -   `PLAY_STORE_CONFIG_JSON` : Contenu du fichier `.json` de la clé.
+
+#### 4. Build d'un APK (Pour test direct)
+Si vous voulez simplement un fichier APK pour l'installer manuellement :
+- Utilisez **l'Option C** expliquée ci-dessous.
 
 ---
 
-## 🚀 Procédure de Publication (2 Options)
+## 🚀 Procédure de Publication & Build (3 Options)
 
-### 🥇 Option A : Via GitHub Actions (RECOMMANDÉ)
+### 🥇 Option A : Via GitHub Actions (**PRIORITÉ ABSOLUE**)
 
-C'est la méthode la plus simple qui n'utilise pas les ressources de votre ordinateur.
+C'est la méthode **obligatoire** par défaut. Elle évite de saturer l'ordinateur local et contourne les limites de quota EAS Cloud.
 
-#### 1. Préparation
-- Modifiez les versions dans `app.config.js` et `package.json`.
-- Faites un `git push origin main`.
-  - *Cela lancera automatiquement un build AAB sur GitHub (sans soumission).*
+#### 1. Préparation (Pour l'IA)
+-   Modifiez les versions dans `app.config.js` et `package.json`.
+-   Faites un `git push origin main`.
 
-#### 2. Soumission au Play Store
-Pour que GitHub envoie l'AAB au Play Store, vous avez deux choix :
-- **Via Terminal (Rapide)** :
-  ```bash
-  gh workflow run build-android.yml
-  ```
-- **Via Navigateur** :
-  1. Allez sur GitHub → Onglet **Actions**.
-  2. Sélectionnez **Build Android**.
-  3. Cliquez sur **Run workflow** → **Run workflow**.
+#### 2. Lancement & Soumission Play Store
+L'IA doit utiliser la commande suivante pour lancer le build ET la soumission :
+```bash
+gh workflow run build-android.yml
+```
+*(Cette commande déclenche le workflow qui gère tout de A à Z).*
 
 #### 3. Suivi du build
+L'IA doit surveiller l'avancement avec :
 ```bash
 gh run watch
 ```
 
 ---
-
-### 🥈 Option B : Via EAS (Manuel / Local)
+ 
+ ### 🥉 Option C : Build APK (Test Rapide)
+ 
+ Pour générer un APK sans impact sur le Play Store :
+ - **Via Terminal** :
+   ```bash
+   gh workflow run build-apk.yml
+   ```
+ - **Via Navigateur** : Allez dans Actions → **Build APK** → **Run workflow**.
+ - **Récupération** : Une fois terminé, téléchargez l'APK dans les "Artifacts" du build sur GitHub.
+ 
+ ---
+ 
+ ### 🥈 Option B : Via EAS (Manuel / Local)
 
 À utiliser en cas de problème avec GitHub Actions ou pour un test spécifique.
 
@@ -273,18 +285,20 @@ npm install -g eas-cli
 
 ---
 
-## 🎯 Instruction pour Claude
+## 🎯 Instructions Spécifiques pour l'IA (Antigravity / Claude)
 
-Quand l'utilisateur demande de publier une nouvelle version sur le Play Store :
+Quand l'utilisateur demande : "Publie une nouvelle version sur le Play Store" :
 
-1. **Lire ce fichier** pour se référer à la procédure
-2. **Incrémenter les versions** dans les deux fichiers requis
-3. **Construire l'AAB** avec `eas build`
-4. **Soumettre automatiquement** avec `eas submit`
-5. **Confirmer** la publication réussie
+1.  **Priorité 1 (GitHub CI)** : Utiliser TOUJOURS **l'Option A** (GitHub Actions).
+    - Incrémenter les versions.
+    - `git push`.
+    - `gh workflow run build-android.yml`.
+    - `gh run watch`.
+2.  **Fallback (Local)** : N'utiliser l'Option B (EAS local) que si GitHub Actions est indisponible.
+3.  **Vérification** : Une fois que `gh run watch` confirme le succès, informer l'utilisateur.
 
-**Commande type** :
-> "Publie une nouvelle version sur le Play Store en suivant la procédure dans PROCEDURE_PUBLICATION_PLAY_STORE.md"
+**Commande type de l'utilisateur** :
+> "Publie une nouvelle version sur le Play Store en suivant la procédure prioritaire."
 
 ---
 

@@ -18,6 +18,8 @@ export interface Database {
           current_streak: number;
           best_streak: number;
           last_play_date: string | null;
+          last_reroll_date: string | null;
+          reroll_count: number;
         };
         Insert: {
           id: string;
@@ -144,6 +146,9 @@ export interface Database {
           description: string;
           target_value: number;
           xp_reward: number;
+          parts_reward: number | null;
+          difficulty: number;
+          category: string;
           is_active: boolean;
           created_at?: string;
         };
@@ -155,6 +160,9 @@ export interface Database {
           description: string;
           target_value: number;
           xp_reward?: number;
+          parts_reward?: number | null;
+          difficulty?: number;
+          category?: string;
           is_active?: boolean;
           created_at?: string;
         };
@@ -166,6 +174,9 @@ export interface Database {
           description?: string;
           target_value?: number;
           xp_reward?: number;
+          parts_reward?: number | null;
+          difficulty?: number;
+          category?: string;
           is_active?: boolean;
           created_at?: string;
         };
@@ -177,6 +188,7 @@ export interface Database {
           quest_key: string;
           current_value: number;
           completed: boolean;
+          claimed: boolean;
           completed_at: string | null;
           reset_at: string;
           created_at?: string;
@@ -188,6 +200,7 @@ export interface Database {
           quest_key: string;
           current_value?: number;
           completed?: boolean;
+          claimed?: boolean;
           completed_at?: string | null;
           reset_at: string;
           created_at?: string;
@@ -199,6 +212,7 @@ export interface Database {
           quest_key?: string;
           current_value?: number;
           completed?: boolean;
+          claimed?: boolean;
           completed_at?: string | null;
           reset_at?: string;
           created_at?: string;
