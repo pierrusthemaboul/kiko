@@ -53,6 +53,7 @@ jobs:
         env:
           EXPO_NO_TELEMETRY: 1
           NODE_ENV: development
+          EXPO_PUBLIC_APP_VARIANT: ${{ github.event.inputs.profile == 'development' && 'development' || 'apkTesting' }}
         run: |
           # Remove native folders to ensure Expo uses app.config.js dynamic values
           rm -rf android ios
