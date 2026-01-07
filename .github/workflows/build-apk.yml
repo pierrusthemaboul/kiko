@@ -1,7 +1,16 @@
 name: Build APK
 
 on:
-  workflow_dispatch: # Déclenchement manuel uniquement
+  workflow_dispatch:
+    inputs:
+      profile:
+        description: 'EAS Build Profile (apk or development)'
+        required: true
+        default: 'apk'
+        type: choice
+        options:
+          - apk
+          - development
 
 jobs:
   build:
@@ -45,7 +54,7 @@ jobs:
           npx expo prebuild --platform android --clean
           node scripts/fix-manifest.js
           node scripts/fix-kotlin-version.js
-          EAS_SKIP_AUTO_FINGERPRINT=1 eas build --platform android --profile apk --local --non-interactive
+          EAS_SKIP_AUTO_FINGERPRINT=1 eas build --platform android --profile ${{ github.event.inputs.profile }} --local --non-interactive
 
       - name: 📤 Upload Artifact
         uses: actions/upload-artifact@v4
