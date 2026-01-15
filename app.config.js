@@ -5,7 +5,7 @@ export default ({ config }) => {
     ...config,
     name: IS_DEV ? "Timalaus DEV" : "Timalaus",
     slug: "kiko",
-    version: "1.6.5",
+    version: "1.6.6",
     orientation: "portrait",
     icon: "./assets/images/oklogo.png",
     scheme: "juno2",
@@ -41,7 +41,7 @@ export default ({ config }) => {
         "com.google.android.gms.permission.AD_ID",
         "android.permission.ACCESS_ADSERVICES_AD_ID"
       ],
-      versionCode: 10122,
+      versionCode: 10123,
       googleServicesFile: process.env.GOOGLE_SERVICES_JSON || "./google-services.json",
       userInterfaceStyle: "dark"
     },
