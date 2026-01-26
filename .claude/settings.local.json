@@ -1,0 +1,42 @@
+{
+  "permissions": {
+    "allow": [
+      "Bash(fnm list:*)",
+      "Bash(node --version:*)",
+      "Bash(java -version:*)",
+      "Bash(test:*)",
+      "Bash(powershell.exe -Command \"echo $env:JAVA_HOME\")",
+      "Bash(powershell.exe -Command \"echo $env:PATH\")",
+      "Bash(echo:*)",
+      "Bash(powershell.exe:*)",
+      "Bash(winget search:*)",
+      "Bash(where Reactotron)",
+      "Bash(winget install:*)",
+      "Bash(pnpm add:*)",
+      "Bash(curl:*)",
+      "Bash(wsl --version:*)",
+      "Bash(npm install:*)",
+      "Bash(pnpm list:*)",
+      "Bash(pnpm test:*)",
+      "Bash(pnpm jest:*)",
+      "Bash(pnpm tsc:*)",
+      "Bash(./gradlew clean:*)",
+      "Bash(pnpm prebuild:android:*)",
+      "Bash(./gradlew:*)",
+      "Bash(ls:*)",
+      "Bash(cmd.exe /c \"dir D:\\\\ 2>&1\")",
+      "Bash(eas credentials:*)",
+      "Bash(npx eas:*)",
+      "Bash(adb devices:*)",
+      "Bash(emulator:*)",
+      "Bash(npm run android:*)",
+      "Bash(npm run prebuild:android:*)",
+      "Bash(node:*)",
+      "Bash(pnpm install:*)",
+      "Bash(npx expo start:*)",
+      "Bash(Select-String -Pattern \"gradle\")",
+      "Bash(start https://adoptium.net/temurin/releases/?version=21)",
+      "Bash(where:*)"
+    ]
+  }
+}

@@ -1,0 +1,108 @@
+
+{
+  name: [32m'Juno2'[39m,
+  slug: [32m'kiko'[39m,
+  version: [32m'1.3.0'[39m,
+  description: [32m"Découvrez l'histoire en devinant l'ordre chronologique des événements. Un jeu ludique et éducatif pour tous âges."[39m,
+  sdkVersion: [32m'52.0.0'[39m,
+  platforms: [
+    [32m'android'[39m,
+    [32m'ios'[39m
+  ],
+  orientation: [32m'portrait'[39m,
+  icon: [32m'./assets/images/icon.png'[39m,
+  scheme: [32m'juno2'[39m,
+  userInterfaceStyle: [32m'automatic'[39m,
+  newArchEnabled: [33mfalse[39m,
+  assetBundlePatterns: [
+    [32m'**/*'[39m
+  ],
+  plugins: [
+    [
+      [32m'expo-build-properties'[39m,
+      {
+        android: {
+          kotlinVersion: [32m'1.9.25'[39m
+        }
+      }
+    ],
+    [32m'expo-router'[39m,
+    [
+      [32m'expo-splash-screen'[39m,
+      {
+        image: [32m'./assets/images/splash-icon.png'[39m,
+        imageWidth: [33m200[39m,
+        resizeMode: [32m'contain'[39m,
+        backgroundColor: [32m'#020817'[39m
+      }
+    ],
+    [
+      [32m'react-native-google-mobile-ads'[39m,
+      {
+        androidAppId: [32m'ca-app-pub-7809209690404525~1711130974'[39m,
+        iosAppId: [32m'ca-app-pub-7809209690404525~1711130974'[39m
+      }
+    ],
+    [32m'@react-native-firebase/app'[39m
+  ],
+  owner: [32m'pierretulle'[39m,
+  primaryColor: [32m'#1D5F9E'[39m,
+  privacy: [32m'public'[39m,
+  githubUrl: [32m'https://github.com/pierretulle/quandi'[39m,
+  splash: {
+    image: [32m'./assets/images/splash-icon.png'[39m,
+    resizeMode: [32m'contain'[39m,
+    backgroundColor: [32m'#020817'[39m
+  },
+  ios: {
+    supportsTablet: [33mtrue[39m,
+    bundleIdentifier: [32m'com.pierretulle.juno2'[39m,
+    buildNumber: [32m'3'[39m
+  },
+  android: {
+    package: [32m'com.pierretulle.juno2'[39m,
+    permissions: [
+      [32m'INTERNET'[39m,
+      [32m'VIBRATE'[39m,
+      [32m'MODIFY_AUDIO_SETTINGS'[39m,
+      [32m'READ_EXTERNAL_STORAGE'[39m,
+      [32m'RECORD_AUDIO'[39m,
+      [32m'SYSTEM_ALERT_WINDOW'[39m,
+      [32m'WRITE_EXTERNAL_STORAGE'[39m,
+      [32m'com.google.android.gms.permission.AD_ID'[39m
+    ],
+    googleServicesFile: [32m'./google-services.json'[39m,
+    adaptiveIcon: {
+      foregroundImage: [32m'./assets/images/logo3.png'[39m,
+      backgroundColor: [32m'#020817'[39m
+    }
+  },
+  web: {
+    bundler: [32m'metro'[39m,
+    output: [32m'static'[39m,
+    favicon: [32m'./assets/images/favicon.png'[39m
+  },
+  experiments: {
+    typedRoutes: [33mtrue[39m
+  },
+  updates: {
+    fallbackToCacheTimeout: [33m0[39m,
+    url: [32m'https://u.expo.dev/3cbda57c-1ec1-4949-af06-9e933dbc0050'[39m
+  },
+  runtimeVersion: {
+    policy: [32m'appVersion'[39m
+  },
+  extra: {
+    APP_VARIANT: [32m'development'[39m,
+    router: {
+      origin: [33mfalse[39m
+    },
+    eas: {
+      projectId: [32m'3cbda57c-1ec1-4949-af06-9e933dbc0050'[39m
+    }
+  },
+  androidStatusBar: {
+    backgroundColor: [32m'#020817'[39m
+  }
+}
+

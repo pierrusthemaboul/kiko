@@ -1,0 +1,131 @@
+{
+  "expo": {
+    "name": "Timalaus DEV",
+    "slug": "kiko",
+    "version": "1.5.7",
+    "orientation": "portrait",
+    "icon": "./assets/images/logo.png",
+    "scheme": "timalaus",
+    "userInterfaceStyle": "automatic",
+    "newArchEnabled": false,
+    "splash": {
+      "image": "./assets/images/logo.png",
+      "resizeMode": "contain",
+      "backgroundColor": "#020817"
+    },
+    "assetBundlePatterns": [
+      "**/*"
+    ],
+    "ios": {
+      "supportsTablet": true,
+      "bundleIdentifier": "com.pierretulle.juno2",
+      "buildNumber": "6",
+      "infoPlist": {
+        "LSApplicationQueriesSchemes": [
+          "tiktok",
+          "instagram",
+          "instagram-stories",
+          "fb",
+          "twitter",
+          "whatsapp"
+        ]
+      }
+    },
+    "android": {
+      "adaptiveIcon": {
+        "foregroundImage": "./assets/images/logo.png",
+        "backgroundColor": "#020817"
+      },
+      "package": "com.pierretulle.juno2.dev",
+      "versionCode": 10112,
+      "permissions": [
+        "com.google.android.gms.permission.AD_ID",
+        "INTERNET",
+        "VIBRATE",
+        "MODIFY_AUDIO_SETTINGS",
+        "READ_EXTERNAL_STORAGE",
+        "WRITE_EXTERNAL_STORAGE"
+      ],
+      "googleServicesFile": "./google-services.json",
+      "userInterfaceStyle": "automatic",
+      "enableEdgeToEdge": true,
+      "queries": {
+        "schemes": [
+          "tiktok",
+          "instagram",
+          "instagram-stories",
+          "fb",
+          "twitter",
+          "whatsapp"
+        ]
+      }
+    },
+    "web": {
+      "bundler": "metro",
+      "output": "static",
+      "favicon": "./assets/images/favicon.png"
+    },
+    "plugins": [
+      [
+        "expo-build-properties",
+        {
+          "android": {
+            "kotlinVersion": "1.9.25",
+            "ndkVersion": "28.0.12433566",
+            "packagingOptions": {
+              "jniLibs": {
+                "useLegacyPackaging": false
+              }
+            }
+          }
+        }
+      ],
+      "expo-router",
+      [
+        "expo-splash-screen",
+        {
+          "image": "./assets/images/logo.png",
+          "imageWidth": 200,
+          "resizeMode": "contain",
+          "backgroundColor": "#020817"
+        }
+      ],
+      [
+        "react-native-google-mobile-ads",
+        {
+          "androidAppId": "ca-app-pub-7809209690404525~1711130974",
+          "iosAppId": "ca-app-pub-7809209690404525~1711130974"
+        }
+      ],
+      "@react-native-firebase/app",
+      "./plugins/withCleanPermissions"
+    ],
+    "experiments": {
+      "typedRoutes": true
+    },
+    "extra": {
+      "router": {
+        "origin": false
+      },
+      "eas": {
+        "projectId": "3cbda57c-1ec1-4949-af06-9e933dbc0050"
+      }
+    },
+    "owner": "pierretulle",
+    "description": "Timalaus - Voyagez à travers le temps ! Deux modes de jeu : Mode Classique pour deviner l'ordre chronologique des événements, Mode Précision pour retrouver l'année exacte. Un défi éducatif et captivant pour tous les passionnés d'histoire.",
+    "primaryColor": "#1D5F9E",
+    "privacy": "public",
+    "platforms": [
+      "android",
+      "ios"
+    ],
+    "githubUrl": "https://github.com/pierretulle/quandi",
+    "updates": {
+      "fallbackToCacheTimeout": 0,
+      "url": "https://u.expo.dev/3cbda57c-1ec1-4949-af06-9e933dbc0050"
+    },
+    "runtimeVersion": {
+      "policy": "appVersion"
+    }
+  }
+}

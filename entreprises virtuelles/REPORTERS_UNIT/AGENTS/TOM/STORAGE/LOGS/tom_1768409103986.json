@@ -1,0 +1,5 @@
+{"timestamp":"2026-01-14T16:45:03.989Z","agent":"TOM","action":"INITIALIZATION","status":"OK","detail":"Agent TOM réveillé","reason":""}
+{"timestamp":"2026-01-14T16:45:03.990Z","agent":"TOM","action":"RECORD_START","status":"PROCESS","detail":"Capture de 90s lancée","reason":""}
+{"timestamp":"2026-01-14T16:46:34.207Z","agent":"TOM","action":"RECORD_END","status":"SUCCESS","detail":"Vidéo générée","reason":""}
+{"timestamp":"2026-01-14T16:46:34.208Z","agent":"TOM","action":"FETCH_DATA","status":"PROCESS","detail":"Récupération des métadonnées","reason":""}
+{"timestamp":"2026-01-14T16:46:34.435Z","agent":"TOM","action":"FETCH_DATA","status":"SUCCESS","detail":"Manifest récupéré","reason":""}

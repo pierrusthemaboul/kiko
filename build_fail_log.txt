@@ -1,0 +1,1166 @@
+build	Set up job	﻿2026-01-07T18:00:34.5161161Z Current runner version: '2.330.0'
+build	Set up job	2026-01-07T18:00:34.5187716Z ##[group]Runner Image Provisioner
+build	Set up job	2026-01-07T18:00:34.5189100Z Hosted Compute Agent
+build	Set up job	2026-01-07T18:00:34.5190041Z Version: 20251211.462
+build	Set up job	2026-01-07T18:00:34.5190914Z Commit: 6cbad8c2bb55d58165063d031ccabf57e2d2db61
+build	Set up job	2026-01-07T18:00:34.5191883Z Build Date: 2025-12-11T16:28:49Z
+build	Set up job	2026-01-07T18:00:34.5192855Z Worker ID: ***e508d03b-1ab2-4959-addf-4c05374dca73***
+build	Set up job	2026-01-07T18:00:34.5193854Z ##[endgroup]
+build	Set up job	2026-01-07T18:00:34.5194621Z ##[group]Operating System
+build	Set up job	2026-01-07T18:00:34.5195436Z Ubuntu
+build	Set up job	2026-01-07T18:00:34.5196104Z 24.04.3
+build	Set up job	2026-01-07T18:00:34.5196862Z LTS
+build	Set up job	2026-01-07T18:00:34.5197554Z ##[endgroup]
+build	Set up job	2026-01-07T18:00:34.5198301Z ##[group]Runner Image
+build	Set up job	2026-01-07T18:00:34.5199365Z Image: ubuntu-24.04
+build	Set up job	2026-01-07T18:00:34.5200197Z Version: 20251215.174.1
+build	Set up job	2026-01-07T18:00:34.5201477Z Included Software: https://github.com/actions/runner-images/blob/ubuntu24/20251215.174/images/ubuntu/Ubuntu2404-Readme.md
+build	Set up job	2026-01-07T18:00:34.5203156Z Image Release: https://github.com/actions/runner-images/releases/tag/ubuntu24%2F20251215.174
+build	Set up job	2026-01-07T18:00:34.5204649Z ##[endgroup]
+build	Set up job	2026-01-07T18:00:34.5206209Z ##[group]GITHUB_TOKEN Permissions
+build	Set up job	2026-01-07T18:00:34.5208721Z Contents: read
+build	Set up job	2026-01-07T18:00:34.5209625Z Metadata: read
+build	Set up job	2026-01-07T18:00:34.5210306Z Packages: read
+build	Set up job	2026-01-07T18:00:34.5211078Z ##[endgroup]
+build	Set up job	2026-01-07T18:00:34.5213707Z Secret source: Actions
+build	Set up job	2026-01-07T18:00:34.5214754Z Prepare workflow directory
+build	Set up job	2026-01-07T18:00:34.5594864Z Prepare all required actions
+build	Set up job	2026-01-07T18:00:34.5633025Z Getting action download info
+build	Set up job	2026-01-07T18:00:34.9713353Z Download action repository 'actions/checkout@v4' (SHA:34e114876b0b11c390a56381ad16ebd13914f8d5)
+build	Set up job	2026-01-07T18:00:35.0953089Z Download action repository 'pnpm/action-setup@v3' (SHA:a3252b78c470c02df07e9d59298aecedc3ccdd6d)
+build	Set up job	2026-01-07T18:00:35.3809298Z Download action repository 'actions/setup-node@v4' (SHA:49933ea5288caeca8642d1e84afbd3f7d6820020)
+build	Set up job	2026-01-07T18:00:35.4853238Z Download action repository 'actions/setup-java@v4' (SHA:c1e323688fd81a25caa38c78aa6df2d33d3e20d9)
+build	Set up job	2026-01-07T18:00:35.7945212Z Download action repository 'expo/expo-github-action@v8' (SHA:c7b66a9c327a43a8fa7c0158e7f30d6040d2481e)
+build	Set up job	2026-01-07T18:00:36.1584424Z Download action repository 'actions/upload-artifact@v4' (SHA:ea165f8d65b6e75b540449e92b4886f43607fa02)
+build	Set up job	2026-01-07T18:00:36.4396706Z Complete job name: build
+build	🏗 Checkout repository	﻿2026-01-07T18:00:36.5530184Z ##[group]Run actions/checkout@v4
+build	🏗 Checkout repository	2026-01-07T18:00:36.5531869Z with:
+build	🏗 Checkout repository	2026-01-07T18:00:36.5533001Z   repository: pierrusthemaboul/kiko
+build	🏗 Checkout repository	2026-01-07T18:00:36.5534676Z   token: ***
+build	🏗 Checkout repository	2026-01-07T18:00:36.5535727Z   ssh-strict: true
+build	🏗 Checkout repository	2026-01-07T18:00:36.5536800Z   ssh-user: git
+build	🏗 Checkout repository	2026-01-07T18:00:36.5537881Z   persist-credentials: true
+build	🏗 Checkout repository	2026-01-07T18:00:36.5539407Z   clean: true
+build	🏗 Checkout repository	2026-01-07T18:00:36.5540541Z   sparse-checkout-cone-mode: true
+build	🏗 Checkout repository	2026-01-07T18:00:36.5541794Z   fetch-depth: 1
+build	🏗 Checkout repository	2026-01-07T18:00:36.5542860Z   fetch-tags: false
+build	🏗 Checkout repository	2026-01-07T18:00:36.5543924Z   show-progress: true
+build	🏗 Checkout repository	2026-01-07T18:00:36.5545003Z   lfs: false
+build	🏗 Checkout repository	2026-01-07T18:00:36.5546053Z   submodules: false
+build	🏗 Checkout repository	2026-01-07T18:00:36.5547151Z   set-safe-directory: true
+build	🏗 Checkout repository	2026-01-07T18:00:36.5548751Z ##[endgroup]
+build	🏗 Checkout repository	2026-01-07T18:00:36.6780201Z Syncing repository: pierrusthemaboul/kiko
+build	🏗 Checkout repository	2026-01-07T18:00:36.6783705Z ##[group]Getting Git version info
+build	🏗 Checkout repository	2026-01-07T18:00:36.6785400Z Working directory is '/home/runner/work/kiko/kiko'
+build	🏗 Checkout repository	2026-01-07T18:00:36.6787688Z [command]/usr/bin/git version
+build	🏗 Checkout repository	2026-01-07T18:00:36.6850713Z git version 2.52.0
+build	🏗 Checkout repository	2026-01-07T18:00:36.6881091Z ##[endgroup]
+build	🏗 Checkout repository	2026-01-07T18:00:36.6898065Z Temporarily overriding HOME='/home/runner/work/_temp/453f5e9b-e14e-45a4-9020-6f55402b366b' before making global git config changes
+build	🏗 Checkout repository	2026-01-07T18:00:36.6903531Z Adding repository directory to the temporary git global config as a safe directory
+build	🏗 Checkout repository	2026-01-07T18:00:36.6914344Z [command]/usr/bin/git config --global --add safe.directory /home/runner/work/kiko/kiko
+build	🏗 Checkout repository	2026-01-07T18:00:36.6959409Z Deleting the contents of '/home/runner/work/kiko/kiko'
+build	🏗 Checkout repository	2026-01-07T18:00:36.6963929Z ##[group]Initializing the repository
+build	🏗 Checkout repository	2026-01-07T18:00:36.6970555Z [command]/usr/bin/git init /home/runner/work/kiko/kiko
+build	🏗 Checkout repository	2026-01-07T18:00:36.7113694Z hint: Using 'master' as the name for the initial branch. This default branch name
+build	🏗 Checkout repository	2026-01-07T18:00:36.7117318Z hint: will change to "main" in Git 3.0. To configure the initial branch name
+build	🏗 Checkout repository	2026-01-07T18:00:36.7121225Z hint: to use in all of your new repositories, which will suppress this warning,
+build	🏗 Checkout repository	2026-01-07T18:00:36.7124262Z hint: call:
+build	🏗 Checkout repository	2026-01-07T18:00:36.7126057Z hint:
+build	🏗 Checkout repository	2026-01-07T18:00:36.7128424Z hint: 	git config --global init.defaultBranch <name>
+build	🏗 Checkout repository	2026-01-07T18:00:36.7131079Z hint:
+build	🏗 Checkout repository	2026-01-07T18:00:36.7133459Z hint: Names commonly chosen instead of 'master' are 'main', 'trunk' and
+build	🏗 Checkout repository	2026-01-07T18:00:36.7136870Z hint: 'development'. The just-created branch can be renamed via this command:
+build	🏗 Checkout repository	2026-01-07T18:00:36.7139823Z hint:
+build	🏗 Checkout repository	2026-01-07T18:00:36.7141306Z hint: 	git branch -m <name>
+build	🏗 Checkout repository	2026-01-07T18:00:36.7142476Z hint:
+build	🏗 Checkout repository	2026-01-07T18:00:36.7143949Z hint: Disable this message with "git config set advice.defaultBranchName false"
+build	🏗 Checkout repository	2026-01-07T18:00:36.7146112Z Initialized empty Git repository in /home/runner/work/kiko/kiko/.git/
+build	🏗 Checkout repository	2026-01-07T18:00:36.7152292Z [command]/usr/bin/git remote add origin https://github.com/pierrusthemaboul/kiko
+build	🏗 Checkout repository	2026-01-07T18:00:36.7177347Z ##[endgroup]
+build	🏗 Checkout repository	2026-01-07T18:00:36.7180714Z ##[group]Disabling automatic garbage collection
+build	🏗 Checkout repository	2026-01-07T18:00:36.7183406Z [command]/usr/bin/git config --local gc.auto 0
+build	🏗 Checkout repository	2026-01-07T18:00:36.7216997Z ##[endgroup]
+build	🏗 Checkout repository	2026-01-07T18:00:36.7220148Z ##[group]Setting up auth
+build	🏗 Checkout repository	2026-01-07T18:00:36.7225099Z [command]/usr/bin/git config --local --name-only --get-regexp core\.sshCommand
+build	🏗 Checkout repository	2026-01-07T18:00:36.7260834Z [command]/usr/bin/git submodule foreach --recursive sh -c "git config --local --name-only --get-regexp 'core\.sshCommand' && git config --local --unset-all 'core.sshCommand' || :"
+build	🏗 Checkout repository	2026-01-07T18:00:36.7651039Z [command]/usr/bin/git config --local --name-only --get-regexp http\.https\:\/\/github\.com\/\.extraheader
+build	🏗 Checkout repository	2026-01-07T18:00:36.7687614Z [command]/usr/bin/git submodule foreach --recursive sh -c "git config --local --name-only --get-regexp 'http\.https\:\/\/github\.com\/\.extraheader' && git config --local --unset-all 'http.https://github.com/.extraheader' || :"
+build	🏗 Checkout repository	2026-01-07T18:00:36.7919260Z [command]/usr/bin/git config --local --name-only --get-regexp ^includeIf\.gitdir:
+build	🏗 Checkout repository	2026-01-07T18:00:36.7954653Z [command]/usr/bin/git submodule foreach --recursive git config --local --show-origin --name-only --get-regexp remote.origin.url
+build	🏗 Checkout repository	2026-01-07T18:00:36.8199296Z [command]/usr/bin/git config --local http.https://github.com/.extraheader AUTHORIZATION: basic ***
+build	🏗 Checkout repository	2026-01-07T18:00:36.8238400Z ##[endgroup]
+build	🏗 Checkout repository	2026-01-07T18:00:36.8242230Z ##[group]Fetching the repository
+build	🏗 Checkout repository	2026-01-07T18:00:36.8250742Z [command]/usr/bin/git -c protocol.version=2 fetch --no-tags --prune --no-recurse-submodules --depth=1 origin +e151bdeeea3c906e476a8c93d6db67584f049356:refs/remotes/origin/main
+build	🏗 Checkout repository	2026-01-07T18:00:37.4670044Z From https://github.com/pierrusthemaboul/kiko
+build	🏗 Checkout repository	2026-01-07T18:00:37.4671268Z  * [new ref]         e151bdeeea3c906e476a8c93d6db67584f049356 -> origin/main
+build	🏗 Checkout repository	2026-01-07T18:00:37.4704377Z ##[endgroup]
+build	🏗 Checkout repository	2026-01-07T18:00:37.4704988Z ##[group]Determining the checkout info
+build	🏗 Checkout repository	2026-01-07T18:00:37.4706369Z ##[endgroup]
+build	🏗 Checkout repository	2026-01-07T18:00:37.4711347Z [command]/usr/bin/git sparse-checkout disable
+build	🏗 Checkout repository	2026-01-07T18:00:37.4754674Z [command]/usr/bin/git config --local --unset-all extensions.worktreeConfig
+build	🏗 Checkout repository	2026-01-07T18:00:37.4780432Z ##[group]Checking out the ref
+build	🏗 Checkout repository	2026-01-07T18:00:37.4784244Z [command]/usr/bin/git checkout --progress --force -B main refs/remotes/origin/main
+build	🏗 Checkout repository	2026-01-07T18:00:37.5815333Z Switched to a new branch 'main'
+build	🏗 Checkout repository	2026-01-07T18:00:37.5816251Z branch 'main' set up to track 'origin/main'.
+build	🏗 Checkout repository	2026-01-07T18:00:37.5833380Z ##[endgroup]
+build	🏗 Checkout repository	2026-01-07T18:00:37.5870537Z [command]/usr/bin/git log -1 --format=%H
+build	🏗 Checkout repository	2026-01-07T18:00:37.5891691Z e151bdeeea3c906e476a8c93d6db67584f049356
+build	🏗 Setup PNPM	﻿2026-01-07T18:00:37.6095695Z ##[group]Run pnpm/action-setup@v3
+build	🏗 Setup PNPM	2026-01-07T18:00:37.6096154Z with:
+build	🏗 Setup PNPM	2026-01-07T18:00:37.6096675Z   version: 8
+build	🏗 Setup PNPM	2026-01-07T18:00:37.6096979Z   dest: ~/setup-pnpm
+build	🏗 Setup PNPM	2026-01-07T18:00:37.6097311Z   run_install: null
+build	🏗 Setup PNPM	2026-01-07T18:00:37.6097640Z   package_json_file: package.json
+build	🏗 Setup PNPM	2026-01-07T18:00:37.6097998Z   standalone: false
+build	🏗 Setup PNPM	2026-01-07T18:00:37.6098305Z ##[endgroup]
+build	🏗 Setup PNPM	2026-01-07T18:00:37.6977347Z ##[group]Running self-installer...
+build	🏗 Setup PNPM	2026-01-07T18:00:38.3060166Z Progress: resolved 1, reused 0, downloaded 0, added 0
+build	🏗 Setup PNPM	2026-01-07T18:00:38.3185291Z Packages: +1
+build	🏗 Setup PNPM	2026-01-07T18:00:38.3186489Z +
+build	🏗 Setup PNPM	2026-01-07T18:00:38.7575024Z Progress: resolved 1, reused 0, downloaded 1, added 1, done
+build	🏗 Setup PNPM	2026-01-07T18:00:38.7843539Z 
+build	🏗 Setup PNPM	2026-01-07T18:00:38.7844004Z dependencies:
+build	🏗 Setup PNPM	2026-01-07T18:00:38.7844374Z + pnpm 8.15.9 (10.27.0 is available)
+build	🏗 Setup PNPM	2026-01-07T18:00:38.7844618Z 
+build	🏗 Setup PNPM	2026-01-07T18:00:38.7875446Z Done in 925ms
+build	🏗 Setup PNPM	2026-01-07T18:00:38.8040275Z ##[endgroup]
+build	🏗 Setup PNPM	2026-01-07T18:00:38.8044127Z Installation Completed!
+build	🏗 Setup Node	﻿2026-01-07T18:00:38.8199815Z ##[group]Run actions/setup-node@v4
+build	🏗 Setup Node	2026-01-07T18:00:38.8200186Z with:
+build	🏗 Setup Node	2026-01-07T18:00:38.8200433Z   node-version: 20
+build	🏗 Setup Node	2026-01-07T18:00:38.8200707Z   cache: pnpm
+build	🏗 Setup Node	2026-01-07T18:00:38.8200984Z   always-auth: false
+build	🏗 Setup Node	2026-01-07T18:00:38.8201261Z   check-latest: false
+build	🏗 Setup Node	2026-01-07T18:00:38.8201645Z   token: ***
+build	🏗 Setup Node	2026-01-07T18:00:38.8201893Z env:
+build	🏗 Setup Node	2026-01-07T18:00:38.8202196Z   PNPM_HOME: /home/runner/setup-pnpm/node_modules/.bin
+build	🏗 Setup Node	2026-01-07T18:00:38.8202567Z ##[endgroup]
+build	🏗 Setup Node	2026-01-07T18:00:39.0035609Z Found in cache @ /opt/hostedtoolcache/node/20.19.6/x64
+build	🏗 Setup Node	2026-01-07T18:00:39.0043700Z ##[group]Environment details
+build	🏗 Setup Node	2026-01-07T18:00:39.3745032Z node: v20.19.6
+build	🏗 Setup Node	2026-01-07T18:00:39.3745646Z npm: 10.8.2
+build	🏗 Setup Node	2026-01-07T18:00:39.3746085Z yarn: 1.22.22
+build	🏗 Setup Node	2026-01-07T18:00:39.3748964Z ##[endgroup]
+build	🏗 Setup Node	2026-01-07T18:00:39.3775239Z [command]/home/runner/setup-pnpm/node_modules/.bin/pnpm store path --silent
+build	🏗 Setup Node	2026-01-07T18:00:39.7702417Z /home/runner/setup-pnpm/node_modules/.bin/store/v3
+build	🏗 Setup Node	2026-01-07T18:00:39.8935011Z pnpm cache is not found
+build	🏗 Setup Java	﻿2026-01-07T18:00:39.9091097Z ##[group]Run actions/setup-java@v4
+build	🏗 Setup Java	2026-01-07T18:00:39.9091479Z with:
+build	🏗 Setup Java	2026-01-07T18:00:39.9091790Z   distribution: temurin
+build	🏗 Setup Java	2026-01-07T18:00:39.9092079Z   java-version: 17
+build	🏗 Setup Java	2026-01-07T18:00:39.9092342Z   cache: gradle
+build	🏗 Setup Java	2026-01-07T18:00:39.9092607Z   java-package: jdk
+build	🏗 Setup Java	2026-01-07T18:00:39.9092893Z   check-latest: false
+build	🏗 Setup Java	2026-01-07T18:00:39.9093177Z   server-id: github
+build	🏗 Setup Java	2026-01-07T18:00:39.9093450Z   server-username: GITHUB_ACTOR
+build	🏗 Setup Java	2026-01-07T18:00:39.9093770Z   server-password: GITHUB_TOKEN
+build	🏗 Setup Java	2026-01-07T18:00:39.9094078Z   overwrite-settings: true
+build	🏗 Setup Java	2026-01-07T18:00:39.9094363Z   job-status: success
+build	🏗 Setup Java	2026-01-07T18:00:39.9094748Z   token: ***
+build	🏗 Setup Java	2026-01-07T18:00:39.9094995Z env:
+build	🏗 Setup Java	2026-01-07T18:00:39.9095302Z   PNPM_HOME: /home/runner/setup-pnpm/node_modules/.bin
+build	🏗 Setup Java	2026-01-07T18:00:39.9095676Z ##[endgroup]
+build	🏗 Setup Java	2026-01-07T18:00:40.1141370Z ##[group]Installed distributions
+build	🏗 Setup Java	2026-01-07T18:00:40.1216095Z Resolved Java 17.0.17+10 from tool-cache
+build	🏗 Setup Java	2026-01-07T18:00:40.1217037Z Setting Java 17.0.17+10 as the default
+build	🏗 Setup Java	2026-01-07T18:00:40.1226635Z Creating toolchains.xml for JDK version 17 from temurin
+build	🏗 Setup Java	2026-01-07T18:00:40.1304361Z Writing to /home/runner/.m2/toolchains.xml
+build	🏗 Setup Java	2026-01-07T18:00:40.1304882Z 
+build	🏗 Setup Java	2026-01-07T18:00:40.1305166Z Java configuration:
+build	🏗 Setup Java	2026-01-07T18:00:40.1306603Z   Distribution: temurin
+build	🏗 Setup Java	2026-01-07T18:00:40.1307249Z   Version: 17.0.17+10
+build	🏗 Setup Java	2026-01-07T18:00:40.1308119Z   Path: /opt/hostedtoolcache/Java_Temurin-Hotspot_jdk/17.0.17-10/x64
+build	🏗 Setup Java	2026-01-07T18:00:40.1308910Z 
+build	🏗 Setup Java	2026-01-07T18:00:40.1309570Z ##[endgroup]
+build	🏗 Setup Java	2026-01-07T18:00:40.1313870Z Creating settings.xml with server-id: github
+build	🏗 Setup Java	2026-01-07T18:00:40.1330536Z Writing to /home/runner/.m2/settings.xml
+build	🏗 Setup Java	2026-01-07T18:00:40.2926157Z gradle cache is not found
+build	🏗 Setup EAS	﻿2026-01-07T18:00:40.3056820Z ##[group]Run expo/expo-github-action@v8
+build	🏗 Setup EAS	2026-01-07T18:00:40.3057193Z with:
+build	🏗 Setup EAS	2026-01-07T18:00:40.3057436Z   eas-version: latest
+build	🏗 Setup EAS	2026-01-07T18:00:40.3057784Z   token: ***
+build	🏗 Setup EAS	2026-01-07T18:00:40.3058034Z   expo-cache: true
+build	🏗 Setup EAS	2026-01-07T18:00:40.3058292Z   eas-cache: true
+build	🏗 Setup EAS	2026-01-07T18:00:40.3058796Z   packager: yarn
+build	🏗 Setup EAS	2026-01-07T18:00:40.3059202Z   patch-watchers: true
+build	🏗 Setup EAS	2026-01-07T18:00:40.3059476Z env:
+build	🏗 Setup EAS	2026-01-07T18:00:40.3059960Z   PNPM_HOME: /home/runner/setup-pnpm/node_modules/.bin
+build	🏗 Setup EAS	2026-01-07T18:00:40.3060450Z   JAVA_HOME: /opt/hostedtoolcache/Java_Temurin-Hotspot_jdk/17.0.17-10/x64
+build	🏗 Setup EAS	2026-01-07T18:00:40.3060993Z   JAVA_HOME_17_X64: /opt/hostedtoolcache/Java_Temurin-Hotspot_jdk/17.0.17-10/x64
+build	🏗 Setup EAS	2026-01-07T18:00:40.3061418Z ##[endgroup]
+build	🏗 Setup EAS	2026-01-07T18:00:40.4627023Z Skipped installing expo-cli: 'expo-version' not provided.
+build	🏗 Setup EAS	2026-01-07T18:00:41.2014564Z ##[group]Installing eas-cli (16.28.0) from cache or with yarn
+build	🏗 Setup EAS	2026-01-07T18:00:41.3447478Z ##[warning]Failed to restore: Cache service responded with 400
+build	🏗 Setup EAS	2026-01-07T18:00:41.3457367Z [command]/usr/local/bin/yarn add eas-cli@16.28.0
+build	🏗 Setup EAS	2026-01-07T18:00:41.4701494Z yarn add v1.22.22
+build	🏗 Setup EAS	2026-01-07T18:00:41.4839724Z info No lockfile found.
+build	🏗 Setup EAS	2026-01-07T18:00:41.5001631Z [1/4] Resolving packages...
+build	🏗 Setup EAS	2026-01-07T18:00:42.7045859Z warning eas-cli > @expo/steps > lodash.get@4.4.2: This package is deprecated. Use the optional chaining (?.) operator instead.
+build	🏗 Setup EAS	2026-01-07T18:00:42.7147645Z warning eas-cli > @expo/plist > @xmldom/xmldom@0.7.13: this version is no longer supported, please update to at least 0.8.*
+build	🏗 Setup EAS	2026-01-07T18:00:42.7150023Z warning eas-cli > @expo/config-plugins > @expo/plist > @xmldom/xmldom@0.7.13: this version is no longer supported, please update to at least 0.8.*
+build	🏗 Setup EAS	2026-01-07T18:00:42.8556724Z warning eas-cli > @oclif/core > @oclif/screen@3.0.8: Package no longer supported. Contact Support at https://www.npmjs.com/support for more info.
+build	🏗 Setup EAS	2026-01-07T18:00:43.0070082Z warning eas-cli > @expo/package-manager > sudo-prompt@9.1.1: Package no longer supported. Contact Support at https://www.npmjs.com/support for more info.
+build	🏗 Setup EAS	2026-01-07T18:00:43.2690365Z warning eas-cli > @expo/logger > bunyan > mv > rimraf@2.4.5: Rimraf versions prior to v4 are no longer supported
+build	🏗 Setup EAS	2026-01-07T18:00:43.2696931Z warning eas-cli > @expo/logger > bunyan > mv > rimraf > glob@6.0.4: Glob versions prior to v9 are no longer supported
+build	🏗 Setup EAS	2026-01-07T18:00:43.6872543Z warning eas-cli > @expo/logger > bunyan > mv > rimraf > glob > inflight@1.0.6: This module is not supported, and leaks memory. Do not use it. Check out lru-cache if you want a good and tested way to coalesce async requests by a key value, which is much more comprehensive and powerful.
+build	🏗 Setup EAS	2026-01-07T18:00:43.9132084Z [2/4] Fetching packages...
+build	🏗 Setup EAS	2026-01-07T18:00:48.8917101Z [3/4] Linking dependencies...
+build	🏗 Setup EAS	2026-01-07T18:00:48.8933812Z warning "eas-cli > @expo/plugin-help > @oclif/core > ts-node@10.9.2" has unmet peer dependency "@types/node@*".
+build	🏗 Setup EAS	2026-01-07T18:00:48.8935836Z warning "eas-cli > @expo/plugin-help > @oclif/core > ts-node@10.9.2" has unmet peer dependency "typescript@>=2.7".
+build	🏗 Setup EAS	2026-01-07T18:00:51.0446911Z [4/4] Building fresh packages...
+build	🏗 Setup EAS	2026-01-07T18:00:52.8648879Z success Saved lockfile.
+build	🏗 Setup EAS	2026-01-07T18:00:52.8927680Z success Saved 285 new dependencies.
+build	🏗 Setup EAS	2026-01-07T18:00:52.8929784Z info Direct dependencies
+build	🏗 Setup EAS	2026-01-07T18:00:52.8930958Z └─ eas-cli@16.28.0
+build	🏗 Setup EAS	2026-01-07T18:00:52.8931461Z info All dependencies
+build	🏗 Setup EAS	2026-01-07T18:00:52.8948652Z ├─ @0no-co/graphql.web@1.2.0
+build	🏗 Setup EAS	2026-01-07T18:00:52.8949827Z ├─ @babel/helper-validator-identifier@7.28.5
+build	🏗 Setup EAS	2026-01-07T18:00:52.8951310Z ├─ @babel/highlight@7.25.9
+build	🏗 Setup EAS	2026-01-07T18:00:52.8952125Z ├─ @cspotcode/source-map-support@0.8.1
+build	🏗 Setup EAS	2026-01-07T18:00:52.8953003Z ├─ @expo/apple-utils@2.1.12
+build	🏗 Setup EAS	2026-01-07T18:00:52.8953683Z ├─ @expo/bunyan@4.0.1
+build	🏗 Setup EAS	2026-01-07T18:00:52.8954491Z ├─ @expo/code-signing-certificates@0.0.5
+build	🏗 Setup EAS	2026-01-07T18:00:52.8955202Z ├─ @expo/config-plugins@9.0.17
+build	🏗 Setup EAS	2026-01-07T18:00:52.8955772Z ├─ @expo/config@10.0.6
+build	🏗 Setup EAS	2026-01-07T18:00:52.8956298Z ├─ @expo/eas-json@16.25.0
+build	🏗 Setup EAS	2026-01-07T18:00:52.8956802Z ├─ @expo/env@1.0.7
+build	🏗 Setup EAS	2026-01-07T18:00:52.8957816Z ├─ @expo/image-utils@0.6.5
+build	🏗 Setup EAS	2026-01-07T18:00:52.8958504Z ├─ @expo/multipart-body-parser@2.0.0
+build	🏗 Setup EAS	2026-01-07T18:00:52.8959395Z ├─ @expo/osascript@2.1.4
+build	🏗 Setup EAS	2026-01-07T18:00:52.8960041Z ├─ @expo/package-manager@1.7.0
+build	🏗 Setup EAS	2026-01-07T18:00:52.8960651Z ├─ @expo/pkcs12@0.1.3
+build	🏗 Setup EAS	2026-01-07T18:00:52.8961261Z ├─ @expo/plist@0.2.2
+build	🏗 Setup EAS	2026-01-07T18:00:52.8961856Z ├─ @expo/plugin-help@5.1.23
+build	🏗 Setup EAS	2026-01-07T18:00:52.8962642Z ├─ @expo/plugin-warn-if-update-available@2.5.1
+build	🏗 Setup EAS	2026-01-07T18:00:52.8963792Z ├─ @expo/prebuild-config@8.0.17
+build	🏗 Setup EAS	2026-01-07T18:00:52.8964465Z ├─ @expo/results@1.0.0
+build	🏗 Setup EAS	2026-01-07T18:00:52.8965131Z ├─ @expo/rudder-sdk-node@1.1.1
+build	🏗 Setup EAS	2026-01-07T18:00:52.8965754Z ├─ @expo/steps@1.0.231
+build	🏗 Setup EAS	2026-01-07T18:00:52.8966328Z ├─ @expo/timeago.js@1.0.0
+build	🏗 Setup EAS	2026-01-07T18:00:52.8966895Z ├─ @hapi/topo@5.1.0
+build	🏗 Setup EAS	2026-01-07T18:00:52.8967426Z ├─ @isaacs/cliui@8.0.2
+build	🏗 Setup EAS	2026-01-07T18:00:52.8968077Z ├─ @jridgewell/gen-mapping@0.3.13
+build	🏗 Setup EAS	2026-01-07T18:00:52.8968975Z ├─ @jridgewell/resolve-uri@3.1.2
+build	🏗 Setup EAS	2026-01-07T18:00:52.8969679Z ├─ @jridgewell/sourcemap-codec@1.5.5
+build	🏗 Setup EAS	2026-01-07T18:00:52.8970462Z ├─ @jridgewell/trace-mapping@0.3.9
+build	🏗 Setup EAS	2026-01-07T18:00:52.8971121Z ├─ @nodelib/fs.scandir@2.1.5
+build	🏗 Setup EAS	2026-01-07T18:00:52.8971735Z ├─ @nodelib/fs.stat@2.0.5
+build	🏗 Setup EAS	2026-01-07T18:00:52.8972333Z ├─ @oclif/linewrap@1.0.0
+build	🏗 Setup EAS	2026-01-07T18:00:52.8973025Z ├─ @oclif/plugin-autocomplete@2.3.10
+build	🏗 Setup EAS	2026-01-07T18:00:52.8973667Z ├─ @oclif/screen@3.0.8
+build	🏗 Setup EAS	2026-01-07T18:00:52.8974239Z ├─ @pkgjs/parseargs@0.11.0
+build	🏗 Setup EAS	2026-01-07T18:00:52.8974989Z ├─ @react-native/normalize-colors@0.76.2
+build	🏗 Setup EAS	2026-01-07T18:00:52.8975762Z ├─ @segment/ajv-human-errors@2.15.0
+build	🏗 Setup EAS	2026-01-07T18:00:52.8976618Z ├─ @segment/loosely-validate-event@2.0.0
+build	🏗 Setup EAS	2026-01-07T18:00:52.8977324Z ├─ @sideway/address@4.1.5
+build	🏗 Setup EAS	2026-01-07T18:00:52.8977930Z ├─ @tsconfig/node10@1.0.12
+build	🏗 Setup EAS	2026-01-07T18:00:52.8978724Z ├─ @tsconfig/node12@1.0.11
+build	🏗 Setup EAS	2026-01-07T18:00:52.8979344Z ├─ @tsconfig/node14@1.0.3
+build	🏗 Setup EAS	2026-01-07T18:00:52.8979942Z ├─ @tsconfig/node16@1.0.4
+build	🏗 Setup EAS	2026-01-07T18:00:52.8980560Z ├─ @types/bunyan@1.8.11
+build	🏗 Setup EAS	2026-01-07T18:00:52.8981230Z ├─ @types/cli-progress@3.11.6
+build	🏗 Setup EAS	2026-01-07T18:00:52.8981925Z ├─ @urql/core@4.0.11
+build	🏗 Setup EAS	2026-01-07T18:00:52.8982593Z ├─ @urql/exchange-retry@1.2.0
+build	🏗 Setup EAS	2026-01-07T18:00:52.8983246Z ├─ acorn-walk@8.3.4
+build	🏗 Setup EAS	2026-01-07T18:00:52.8983778Z ├─ acorn@8.15.0
+build	🏗 Setup EAS	2026-01-07T18:00:52.8984303Z ├─ agent-base@6.0.2
+build	🏗 Setup EAS	2026-01-07T18:00:52.8984859Z ├─ ajv-formats@2.1.1
+build	🏗 Setup EAS	2026-01-07T18:00:52.8985375Z ├─ ajv@8.11.0
+build	🏗 Setup EAS	2026-01-07T18:00:52.8985880Z ├─ ansicolors@0.3.2
+build	🏗 Setup EAS	2026-01-07T18:00:52.8986398Z ├─ arg@4.1.3
+build	🏗 Setup EAS	2026-01-07T18:00:52.8986950Z ├─ argparse@1.0.10
+build	🏗 Setup EAS	2026-01-07T18:00:52.8987515Z ├─ array-union@2.1.0
+build	🏗 Setup EAS	2026-01-07T18:00:52.8988065Z ├─ asn1@0.2.6
+build	🏗 Setup EAS	2026-01-07T18:00:52.8988955Z ├─ astral-regex@2.0.0
+build	🏗 Setup EAS	2026-01-07T18:00:52.8989598Z ├─ async@3.2.6
+build	🏗 Setup EAS	2026-01-07T18:00:52.8990223Z ├─ asynckit@0.4.0
+build	🏗 Setup EAS	2026-01-07T18:00:52.8990844Z ├─ balanced-match@1.0.2
+build	🏗 Setup EAS	2026-01-07T18:00:52.8991458Z ├─ bare-events@2.8.2
+build	🏗 Setup EAS	2026-01-07T18:00:52.8992089Z ├─ base64-js@1.5.1
+build	🏗 Setup EAS	2026-01-07T18:00:52.8992631Z ├─ better-opn@3.0.2
+build	🏗 Setup EAS	2026-01-07T18:00:52.8993190Z ├─ bplist-creator@0.1.0
+build	🏗 Setup EAS	2026-01-07T18:00:52.8993777Z ├─ bplist-parser@0.3.2
+build	🏗 Setup EAS	2026-01-07T18:00:52.8994322Z ├─ braces@3.0.3
+build	🏗 Setup EAS	2026-01-07T18:00:52.8994974Z ├─ buffer-equal-constant-time@1.0.1
+build	🏗 Setup EAS	2026-01-07T18:00:52.8995596Z ├─ bunyan@1.8.15
+build	🏗 Setup EAS	2026-01-07T18:00:52.8996223Z ├─ call-bind-apply-helpers@1.0.2
+build	🏗 Setup EAS	2026-01-07T18:00:52.8996819Z ├─ charenc@0.0.2
+build	🏗 Setup EAS	2026-01-07T18:00:52.8997306Z ├─ chownr@2.0.0
+build	🏗 Setup EAS	2026-01-07T18:00:52.8997850Z ├─ cli-cursor@3.1.0
+build	🏗 Setup EAS	2026-01-07T18:00:52.8998423Z ├─ cli-progress@3.12.0
+build	🏗 Setup EAS	2026-01-07T18:00:52.8999286Z ├─ cli-spinners@2.9.2
+build	🏗 Setup EAS	2026-01-07T18:00:52.8999836Z ├─ clone@1.0.4
+build	🏗 Setup EAS	2026-01-07T18:00:52.9000423Z ├─ color-convert@2.0.1
+build	🏗 Setup EAS	2026-01-07T18:00:52.9000994Z ├─ color-name@1.1.4
+build	🏗 Setup EAS	2026-01-07T18:00:52.9001589Z ├─ combined-stream@1.0.8
+build	🏗 Setup EAS	2026-01-07T18:00:52.9002193Z ├─ commander@4.1.1
+build	🏗 Setup EAS	2026-01-07T18:00:52.9002765Z ├─ component-type@1.2.2
+build	🏗 Setup EAS	2026-01-07T18:00:52.9003361Z ├─ concat-map@0.0.1
+build	🏗 Setup EAS	2026-01-07T18:00:52.9003943Z ├─ content-type@1.0.5
+build	🏗 Setup EAS	2026-01-07T18:00:52.9004536Z ├─ create-require@1.1.1
+build	🏗 Setup EAS	2026-01-07T18:00:52.9005121Z ├─ cross-spawn@7.0.6
+build	🏗 Setup EAS	2026-01-07T18:00:52.9005673Z ├─ crypt@0.0.2
+build	🏗 Setup EAS	2026-01-07T18:00:52.9006299Z ├─ crypto-random-string@2.0.0
+build	🏗 Setup EAS	2026-01-07T18:00:52.9007286Z ├─ dateformat@4.6.3
+build	🏗 Setup EAS	2026-01-07T18:00:52.9007837Z ├─ debug@4.4.3
+build	🏗 Setup EAS	2026-01-07T18:00:52.9008405Z ├─ defaults@1.0.4
+build	🏗 Setup EAS	2026-01-07T18:00:52.9009233Z ├─ define-lazy-prop@2.0.0
+build	🏗 Setup EAS	2026-01-07T18:00:52.9009881Z ├─ delayed-stream@1.0.0
+build	🏗 Setup EAS	2026-01-07T18:00:52.9010439Z ├─ diff@7.0.0
+build	🏗 Setup EAS	2026-01-07T18:00:52.9010950Z ├─ dir-glob@3.0.1
+build	🏗 Setup EAS	2026-01-07T18:00:52.9011457Z ├─ domino@2.1.6
+build	🏗 Setup EAS	2026-01-07T18:00:52.9012237Z ├─ dotenv-expand@11.0.7
+build	🏗 Setup EAS	2026-01-07T18:00:52.9012775Z ├─ dotenv@16.3.1
+build	🏗 Setup EAS	2026-01-07T18:00:52.9013333Z ├─ dtrace-provider@0.8.8
+build	🏗 Setup EAS	2026-01-07T18:00:52.9013943Z ├─ dunder-proto@1.0.1
+build	🏗 Setup EAS	2026-01-07T18:00:52.9014500Z ├─ eas-cli@16.28.0
+build	🏗 Setup EAS	2026-01-07T18:00:52.9015038Z ├─ eastasianwidth@0.2.0
+build	🏗 Setup EAS	2026-01-07T18:00:52.9015796Z ├─ ecdsa-sig-formatter@1.0.11
+build	🏗 Setup EAS	2026-01-07T18:00:52.9016360Z ├─ ejs@3.1.10
+build	🏗 Setup EAS	2026-01-07T18:00:52.9016885Z ├─ env-paths@2.2.0
+build	🏗 Setup EAS	2026-01-07T18:00:52.9017412Z ├─ env-string@1.0.1
+build	🏗 Setup EAS	2026-01-07T18:00:52.9017945Z ├─ envinfo@7.11.0
+build	🏗 Setup EAS	2026-01-07T18:00:52.9018452Z ├─ err-code@2.0.3
+build	🏗 Setup EAS	2026-01-07T18:00:52.9019182Z ├─ error-ex@1.3.4
+build	🏗 Setup EAS	2026-01-07T18:00:52.9019778Z ├─ es-define-property@1.0.1
+build	🏗 Setup EAS	2026-01-07T18:00:52.9020404Z ├─ es-object-atoms@1.1.1
+build	🏗 Setup EAS	2026-01-07T18:00:52.9021019Z ├─ es-set-tostringtag@2.1.0
+build	🏗 Setup EAS	2026-01-07T18:00:52.9021612Z ├─ esprima@4.0.1
+build	🏗 Setup EAS	2026-01-07T18:00:52.9022229Z ├─ events-universal@1.0.1
+build	🏗 Setup EAS	2026-01-07T18:00:52.9022875Z ├─ exec-async@2.2.0
+build	🏗 Setup EAS	2026-01-07T18:00:52.9023469Z ├─ fast-deep-equal@3.1.3
+build	🏗 Setup EAS	2026-01-07T18:00:52.9024090Z ├─ fast-fifo@1.3.2
+build	🏗 Setup EAS	2026-01-07T18:00:52.9024678Z ├─ fast-glob@3.3.2
+build	🏗 Setup EAS	2026-01-07T18:00:52.9025257Z ├─ fast-uri@3.1.0
+build	🏗 Setup EAS	2026-01-07T18:00:52.9025809Z ├─ fastq@1.20.1
+build	🏗 Setup EAS	2026-01-07T18:00:52.9026456Z ├─ fetch-retry@4.1.1
+build	🏗 Setup EAS	2026-01-07T18:00:52.9027018Z ├─ figures@3.2.0
+build	🏗 Setup EAS	2026-01-07T18:00:52.9027335Z ├─ filelist@1.0.4
+build	🏗 Setup EAS	2026-01-07T18:00:52.9027634Z ├─ fill-range@7.1.1
+build	🏗 Setup EAS	2026-01-07T18:00:52.9027920Z ├─ find-up@4.1.0
+build	🏗 Setup EAS	2026-01-07T18:00:52.9028231Z ├─ foreground-child@3.3.1
+build	🏗 Setup EAS	2026-01-07T18:00:52.9028740Z ├─ form-data@4.0.5
+build	🏗 Setup EAS	2026-01-07T18:00:52.9029069Z ├─ fs-minipass@2.1.0
+build	🏗 Setup EAS	2026-01-07T18:00:52.9029615Z ├─ get-intrinsic@1.3.0
+build	🏗 Setup EAS	2026-01-07T18:00:52.9041070Z ├─ get-proto@1.0.1
+build	🏗 Setup EAS	2026-01-07T18:00:52.9041638Z ├─ glob@10.5.0
+build	🏗 Setup EAS	2026-01-07T18:00:52.9042244Z ├─ golden-fleece@1.0.9
+build	🏗 Setup EAS	2026-01-07T18:00:52.9042820Z ├─ gradle-to-js@2.0.1
+build	🏗 Setup EAS	2026-01-07T18:00:52.9043349Z ├─ graphql-tag@2.12.6
+build	🏗 Setup EAS	2026-01-07T18:00:52.9043874Z ├─ graphql@16.8.1
+build	🏗 Setup EAS	2026-01-07T18:00:52.9044373Z ├─ has-symbols@1.1.0
+build	🏗 Setup EAS	2026-01-07T18:00:52.9044911Z ├─ has-tostringtag@1.0.2
+build	🏗 Setup EAS	2026-01-07T18:00:52.9045417Z ├─ hosted-git-info@7.0.2
+build	🏗 Setup EAS	2026-01-07T18:00:52.9045760Z ├─ http-call@5.3.0
+build	🏗 Setup EAS	2026-01-07T18:00:52.9046092Z ├─ https-proxy-agent@5.0.1
+build	🏗 Setup EAS	2026-01-07T18:00:52.9046416Z ├─ ignore@5.3.0
+build	🏗 Setup EAS	2026-01-07T18:00:52.9046714Z ├─ imurmurhash@0.1.4
+build	🏗 Setup EAS	2026-01-07T18:00:52.9047015Z ├─ inflight@1.0.6
+build	🏗 Setup EAS	2026-01-07T18:00:52.9047313Z ├─ inherits@2.0.4
+build	🏗 Setup EAS	2026-01-07T18:00:52.9047600Z ├─ is-arrayish@0.2.1
+build	🏗 Setup EAS	2026-01-07T18:00:52.9047892Z ├─ is-buffer@1.1.6
+build	🏗 Setup EAS	2026-01-07T18:00:52.9048178Z ├─ is-docker@2.2.1
+build	🏗 Setup EAS	2026-01-07T18:00:52.9048464Z ├─ is-extglob@2.1.1
+build	🏗 Setup EAS	2026-01-07T18:00:52.9049020Z ├─ is-glob@4.0.3
+build	🏗 Setup EAS	2026-01-07T18:00:52.9049340Z ├─ is-interactive@1.0.0
+build	🏗 Setup EAS	2026-01-07T18:00:52.9049671Z ├─ is-number@7.0.0
+build	🏗 Setup EAS	2026-01-07T18:00:52.9049988Z ├─ is-retry-allowed@1.2.0
+build	🏗 Setup EAS	2026-01-07T18:00:52.9050308Z ├─ is-stream@2.0.1
+build	🏗 Setup EAS	2026-01-07T18:00:52.9050624Z ├─ is-unicode-supported@0.1.0
+build	🏗 Setup EAS	2026-01-07T18:00:52.9050944Z ├─ isexe@2.0.0
+build	🏗 Setup EAS	2026-01-07T18:00:52.9051244Z ├─ jackspeak@3.4.3
+build	🏗 Setup EAS	2026-01-07T18:00:52.9051535Z ├─ jake@10.9.4
+build	🏗 Setup EAS	2026-01-07T18:00:52.9051832Z ├─ jimp-compact@0.16.1
+build	🏗 Setup EAS	2026-01-07T18:00:52.9052138Z ├─ jks-js@1.1.0
+build	🏗 Setup EAS	2026-01-07T18:00:52.9052435Z ├─ join-component@1.1.0
+build	🏗 Setup EAS	2026-01-07T18:00:52.9052746Z ├─ js-tokens@4.0.0
+build	🏗 Setup EAS	2026-01-07T18:00:52.9053023Z ├─ jsep@1.4.0
+build	🏗 Setup EAS	2026-01-07T18:00:52.9053370Z ├─ json-parse-better-errors@1.0.2
+build	🏗 Setup EAS	2026-01-07T18:00:52.9053729Z ├─ jsonwebtoken@9.0.0
+build	🏗 Setup EAS	2026-01-07T18:00:52.9054021Z ├─ jwa@1.4.2
+build	🏗 Setup EAS	2026-01-07T18:00:52.9054286Z ├─ jws@3.2.3
+build	🏗 Setup EAS	2026-01-07T18:00:52.9054561Z ├─ keychain@1.5.0
+build	🏗 Setup EAS	2026-01-07T18:00:52.9054835Z ├─ kleur@3.0.3
+build	🏗 Setup EAS	2026-01-07T18:00:52.9055154Z ├─ lines-and-columns@1.2.4
+build	🏗 Setup EAS	2026-01-07T18:00:52.9055470Z ├─ locate-path@5.0.0
+build	🏗 Setup EAS	2026-01-07T18:00:52.9055941Z ├─ lodash.clonedeep@4.5.0
+build	🏗 Setup EAS	2026-01-07T18:00:52.9056561Z ├─ lodash.get@4.4.2
+build	🏗 Setup EAS	2026-01-07T18:00:52.9056873Z ├─ lodash.merge@4.6.2
+build	🏗 Setup EAS	2026-01-07T18:00:52.9057284Z ├─ lodash@4.17.21
+build	🏗 Setup EAS	2026-01-07T18:00:52.9057578Z ├─ lru-cache@10.4.3
+build	🏗 Setup EAS	2026-01-07T18:00:52.9057866Z ├─ make-error@1.3.6
+build	🏗 Setup EAS	2026-01-07T18:00:52.9058167Z ├─ math-intrinsics@1.1.0
+build	🏗 Setup EAS	2026-01-07T18:00:52.9058459Z ├─ md5@2.3.0
+build	🏗 Setup EAS	2026-01-07T18:00:52.9058931Z ├─ mime-db@1.52.0
+build	🏗 Setup EAS	2026-01-07T18:00:52.9059415Z ├─ mime-types@2.1.35
+build	🏗 Setup EAS	2026-01-07T18:00:52.9059709Z ├─ mime@3.0.0
+build	🏗 Setup EAS	2026-01-07T18:00:52.9059992Z ├─ mimic-fn@2.1.0
+build	🏗 Setup EAS	2026-01-07T18:00:52.9060278Z ├─ minimatch@5.1.2
+build	🏗 Setup EAS	2026-01-07T18:00:52.9060567Z ├─ minimist@1.2.8
+build	🏗 Setup EAS	2026-01-07T18:00:52.9060856Z ├─ minipass@7.1.2
+build	🏗 Setup EAS	2026-01-07T18:00:52.9061151Z ├─ minizlib@3.0.1
+build	🏗 Setup EAS	2026-01-07T18:00:52.9061495Z ├─ mkdirp@1.0.4
+build	🏗 Setup EAS	2026-01-07T18:00:52.9061777Z ├─ moment@2.30.1
+build	🏗 Setup EAS	2026-01-07T18:00:52.9062068Z ├─ ms@2.1.3
+build	🏗 Setup EAS	2026-01-07T18:00:52.9062359Z ├─ multipasta@0.2.7
+build	🏗 Setup EAS	2026-01-07T18:00:52.9062717Z ├─ mute-stream@0.0.8
+build	🏗 Setup EAS	2026-01-07T18:00:52.9063123Z ├─ mv@2.1.1
+build	🏗 Setup EAS	2026-01-07T18:00:52.9063451Z ├─ mz@2.7.0
+build	🏗 Setup EAS	2026-01-07T18:00:52.9063720Z ├─ nan@2.24.0
+build	🏗 Setup EAS	2026-01-07T18:00:52.9063989Z ├─ nanoid@3.3.8
+build	🏗 Setup EAS	2026-01-07T18:00:52.9064264Z ├─ ncp@2.0.0
+build	🏗 Setup EAS	2026-01-07T18:00:52.9064547Z ├─ node-fetch@2.6.7
+build	🏗 Setup EAS	2026-01-07T18:00:52.9064848Z ├─ node-int64@0.4.0
+build	🏗 Setup EAS	2026-01-07T18:00:52.9065134Z ├─ node-rsa@1.1.1
+build	🏗 Setup EAS	2026-01-07T18:00:52.9065437Z ├─ node-stream-zip@1.15.0
+build	🏗 Setup EAS	2026-01-07T18:00:52.9065772Z ├─ npm-package-arg@11.0.3
+build	🏗 Setup EAS	2026-01-07T18:00:52.9066093Z ├─ nullthrows@1.1.1
+build	🏗 Setup EAS	2026-01-07T18:00:52.9066389Z ├─ object-assign@4.1.1
+build	🏗 Setup EAS	2026-01-07T18:00:52.9066689Z ├─ onetime@5.1.2
+build	🏗 Setup EAS	2026-01-07T18:00:52.9066967Z ├─ open@8.4.2
+build	🏗 Setup EAS	2026-01-07T18:00:52.9067235Z ├─ ora@5.1.0
+build	🏗 Setup EAS	2026-01-07T18:00:52.9067510Z ├─ p-limit@2.3.0
+build	🏗 Setup EAS	2026-01-07T18:00:52.9067800Z ├─ p-locate@4.1.0
+build	🏗 Setup EAS	2026-01-07T18:00:52.9068077Z ├─ p-try@2.2.0
+build	🏗 Setup EAS	2026-01-07T18:00:52.9068845Z ├─ package-json-from-dist@1.0.1
+build	🏗 Setup EAS	2026-01-07T18:00:52.9069212Z ├─ parse-json@4.0.0
+build	🏗 Setup EAS	2026-01-07T18:00:52.9069518Z ├─ parse-png@2.1.0
+build	🏗 Setup EAS	2026-01-07T18:00:52.9069834Z ├─ path-is-absolute@1.0.1
+build	🏗 Setup EAS	2026-01-07T18:00:52.9070156Z ├─ path-key@3.1.1
+build	🏗 Setup EAS	2026-01-07T18:00:52.9070478Z ├─ path-scurry@1.11.1
+build	🏗 Setup EAS	2026-01-07T18:00:52.9070786Z ├─ path-type@4.0.0
+build	🏗 Setup EAS	2026-01-07T18:00:52.9071078Z ├─ picocolors@1.1.1
+build	🏗 Setup EAS	2026-01-07T18:00:52.9071374Z ├─ picomatch@2.3.1
+build	🏗 Setup EAS	2026-01-07T18:00:52.9071648Z ├─ pirates@4.0.7
+build	🏗 Setup EAS	2026-01-07T18:00:52.9071936Z ├─ pkg-dir@4.2.0
+build	🏗 Setup EAS	2026-01-07T18:00:52.9072205Z ├─ plist@3.1.0
+build	🏗 Setup EAS	2026-01-07T18:00:52.9072477Z ├─ pngjs@7.0.0
+build	🏗 Setup EAS	2026-01-07T18:00:52.9072779Z ├─ proc-log@4.2.0
+build	🏗 Setup EAS	2026-01-07T18:00:52.9073081Z ├─ promise-limit@2.7.0
+build	🏗 Setup EAS	2026-01-07T18:00:52.9073397Z ├─ promise-retry@2.0.1
+build	🏗 Setup EAS	2026-01-07T18:00:52.9073688Z ├─ prompts@2.4.2
+build	🏗 Setup EAS	2026-01-07T18:00:52.9073976Z ├─ punycode@2.3.1
+build	🏗 Setup EAS	2026-01-07T18:00:52.9074277Z ├─ qrcode-terminal@0.12.0
+build	🏗 Setup EAS	2026-01-07T18:00:52.9074605Z ├─ queue-microtask@1.2.3
+build	🏗 Setup EAS	2026-01-07T18:00:52.9074906Z ├─ redeyed@2.1.1
+build	🏗 Setup EAS	2026-01-07T18:00:52.9075241Z ├─ remove-trailing-slash@0.1.1
+build	🏗 Setup EAS	2026-01-07T18:00:52.9075580Z ├─ restore-cursor@3.1.0
+build	🏗 Setup EAS	2026-01-07T18:00:52.9075870Z ├─ retry@0.12.0
+build	🏗 Setup EAS	2026-01-07T18:00:52.9076141Z ├─ reusify@1.1.0
+build	🏗 Setup EAS	2026-01-07T18:00:52.9076624Z ├─ rimraf@5.0.10
+build	🏗 Setup EAS	2026-01-07T18:00:52.9076932Z ├─ run-parallel@1.2.0
+build	🏗 Setup EAS	2026-01-07T18:00:52.9077261Z ├─ safe-json-stringify@1.2.0
+build	🏗 Setup EAS	2026-01-07T18:00:52.9077589Z ├─ safer-buffer@2.1.2
+build	🏗 Setup EAS	2026-01-07T18:00:52.9077877Z ├─ sax@1.4.3
+build	🏗 Setup EAS	2026-01-07T18:00:52.9078143Z ├─ semver@7.7.3
+build	🏗 Setup EAS	2026-01-07T18:00:52.9078448Z ├─ set-interval-async@3.0.3
+build	🏗 Setup EAS	2026-01-07T18:00:52.9078968Z ├─ shebang-command@2.0.0
+build	🏗 Setup EAS	2026-01-07T18:00:52.9079300Z ├─ shebang-regex@3.0.0
+build	🏗 Setup EAS	2026-01-07T18:00:52.9079611Z ├─ simple-plist@1.3.1
+build	🏗 Setup EAS	2026-01-07T18:00:52.9079910Z ├─ sisteransi@1.0.5
+build	🏗 Setup EAS	2026-01-07T18:00:52.9080206Z ├─ slice-ansi@4.0.0
+build	🏗 Setup EAS	2026-01-07T18:00:52.9080489Z ├─ split@1.0.1
+build	🏗 Setup EAS	2026-01-07T18:00:52.9080785Z ├─ sprintf-js@1.0.3
+build	🏗 Setup EAS	2026-01-07T18:00:52.9081082Z ├─ stream-buffers@2.2.0
+build	🏗 Setup EAS	2026-01-07T18:00:52.9081385Z ├─ streamx@2.23.0
+build	🏗 Setup EAS	2026-01-07T18:00:52.9081688Z ├─ string-width-cjs@4.2.3
+build	🏗 Setup EAS	2026-01-07T18:00:52.9082012Z ├─ strip-ansi-cjs@6.0.1
+build	🏗 Setup EAS	2026-01-07T18:00:52.9082323Z ├─ sudo-prompt@9.1.1
+build	🏗 Setup EAS	2026-01-07T18:00:52.9082638Z ├─ supports-color@7.2.0
+build	🏗 Setup EAS	2026-01-07T18:00:52.9082945Z ├─ tar-stream@3.1.7
+build	🏗 Setup EAS	2026-01-07T18:00:52.9083407Z ├─ tar@6.2.1
+build	🏗 Setup EAS	2026-01-07T18:00:52.9083691Z ├─ temp-dir@2.0.0
+build	🏗 Setup EAS	2026-01-07T18:00:52.9083987Z ├─ text-decoder@1.2.3
+build	🏗 Setup EAS	2026-01-07T18:00:52.9084289Z ├─ thenify-all@1.6.0
+build	🏗 Setup EAS	2026-01-07T18:00:52.9084575Z ├─ thenify@3.3.1
+build	🏗 Setup EAS	2026-01-07T18:00:52.9084866Z ├─ this-file@2.0.3
+build	🏗 Setup EAS	2026-01-07T18:00:52.9085140Z ├─ through@2.3.8
+build	🏗 Setup EAS	2026-01-07T18:00:52.9085434Z ├─ to-regex-range@5.0.1
+build	🏗 Setup EAS	2026-01-07T18:00:52.9085865Z ├─ tr46@0.0.3
+build	🏗 Setup EAS	2026-01-07T18:00:52.9086153Z ├─ ts-deepmerge@6.2.0
+build	🏗 Setup EAS	2026-01-07T18:00:52.9086497Z ├─ ts-interface-checker@0.1.13
+build	🏗 Setup EAS	2026-01-07T18:00:52.9086824Z ├─ ts-node@10.9.2
+build	🏗 Setup EAS	2026-01-07T18:00:52.9087101Z ├─ tslib@2.8.1
+build	🏗 Setup EAS	2026-01-07T18:00:52.9087387Z ├─ tunnel-agent@0.6.0
+build	🏗 Setup EAS	2026-01-07T18:00:52.9087680Z ├─ turndown@7.1.2
+build	🏗 Setup EAS	2026-01-07T18:00:52.9087968Z ├─ type-fest@0.21.3
+build	🏗 Setup EAS	2026-01-07T18:00:52.9088273Z ├─ undici-types@7.16.0
+build	🏗 Setup EAS	2026-01-07T18:00:52.9088778Z ├─ unique-string@2.0.0
+build	🏗 Setup EAS	2026-01-07T18:00:52.9089107Z ├─ untildify@4.0.0
+build	🏗 Setup EAS	2026-01-07T18:00:52.9089392Z ├─ uri-js@4.4.1
+build	🏗 Setup EAS	2026-01-07T18:00:52.9089661Z ├─ uuid@8.3.2
+build	🏗 Setup EAS	2026-01-07T18:00:52.9089980Z ├─ v8-compile-cache-lib@3.0.1
+build	🏗 Setup EAS	2026-01-07T18:00:52.9090376Z ├─ validate-npm-package-name@5.0.1
+build	🏗 Setup EAS	2026-01-07T18:00:52.9090751Z ├─ webidl-conversions@3.0.1
+build	🏗 Setup EAS	2026-01-07T18:00:52.9091063Z ├─ which@2.0.2
+build	🏗 Setup EAS	2026-01-07T18:00:52.9091344Z ├─ wordwrap@1.0.0
+build	🏗 Setup EAS	2026-01-07T18:00:52.9091639Z ├─ wrap-ansi-cjs@7.0.0
+build	🏗 Setup EAS	2026-01-07T18:00:52.9091958Z ├─ yaml@2.6.0
+build	🏗 Setup EAS	2026-01-07T18:00:52.9092223Z ├─ yn@3.1.1
+build	🏗 Setup EAS	2026-01-07T18:00:52.9092511Z └─ yocto-queue@0.1.0
+build	🏗 Setup EAS	2026-01-07T18:00:52.9092802Z Done in 11.43s.
+build	🏗 Setup EAS	2026-01-07T18:00:57.1730609Z [command]/usr/bin/tar --posix -cf cache.tzst --exclude cache.tzst -P -C /home/runner/work/kiko/kiko --files-from manifest.txt --use-compress-program zstdmt
+build	🏗 Setup EAS	2026-01-07T18:00:57.7560615Z ##[warning]Failed to save: <h2>Our services aren't available right now</h2><p>We're working to restore all services as soon as possible. Please check back soon.</p>0WZ9eaQAAAACbT5Oz6fF8SYA4i6ejML5cUEhMMzBFREdFMDQwOQBFZGdl
+build	🏗 Setup EAS	2026-01-07T18:00:57.7586623Z ##[endgroup]
+build	🏗 Setup EAS	2026-01-07T18:00:57.7587130Z ##[group]Validating authenticated account
+build	🏗 Setup EAS	2026-01-07T18:00:57.7607135Z [command]/opt/hostedtoolcache/eas-cli/16.28.0/x64/node_modules/.bin/eas whoami
+build	🏗 Setup EAS	2026-01-07T18:00:58.5696763Z pierretulle (authenticated using EXPO_TOKEN)
+build	🏗 Setup EAS	2026-01-07T18:00:58.7642376Z ##[endgroup]
+build	🏗 Setup EAS	2026-01-07T18:00:58.7642982Z ##[group]Patching system watchers for the 'ENOSPC' error
+build	🏗 Setup EAS	2026-01-07T18:00:58.7661395Z [command]/usr/bin/sudo sysctl fs.inotify.max_user_instances=524288
+build	🏗 Setup EAS	2026-01-07T18:00:58.7743620Z fs.inotify.max_user_instances = 524288
+build	🏗 Setup EAS	2026-01-07T18:00:58.7771131Z [command]/usr/bin/sudo sysctl fs.inotify.max_user_watches=524288
+build	🏗 Setup EAS	2026-01-07T18:00:58.7849379Z fs.inotify.max_user_watches = 524288
+build	🏗 Setup EAS	2026-01-07T18:00:58.7875303Z [command]/usr/bin/sudo sysctl fs.inotify.max_queued_events=524288
+build	🏗 Setup EAS	2026-01-07T18:00:58.7952234Z fs.inotify.max_queued_events = 524288
+build	🏗 Setup EAS	2026-01-07T18:00:58.7977513Z [command]/usr/bin/sudo sysctl -p
+build	🏗 Setup EAS	2026-01-07T18:00:58.8054509Z vm.max_map_count = 262144
+build	🏗 Setup EAS	2026-01-07T18:00:58.8055224Z fs.inotify.max_user_watches = 655360
+build	🏗 Setup EAS	2026-01-07T18:00:58.8056277Z fs.inotify.max_user_instances = 1280
+build	🏗 Setup EAS	2026-01-07T18:00:58.8056869Z vm.mmap_rnd_bits = 28
+build	🏗 Setup EAS	2026-01-07T18:00:58.8065808Z Patched system watchers for the `ENOSPC` error.
+build	🏗 Setup EAS	2026-01-07T18:00:58.8066526Z ##[endgroup]
+build	📦 Install dependencies	﻿2026-01-07T18:00:58.8215878Z ##[group]Run pnpm install
+build	📦 Install dependencies	2026-01-07T18:00:58.8216292Z [36;1mpnpm install[0m
+build	📦 Install dependencies	2026-01-07T18:00:58.8266647Z shell: /usr/bin/bash -e ***0***
+build	📦 Install dependencies	2026-01-07T18:00:58.8267197Z env:
+build	📦 Install dependencies	2026-01-07T18:00:58.8267511Z   PNPM_HOME: /home/runner/setup-pnpm/node_modules/.bin
+build	📦 Install dependencies	2026-01-07T18:00:58.8268012Z   JAVA_HOME: /opt/hostedtoolcache/Java_Temurin-Hotspot_jdk/17.0.17-10/x64
+build	📦 Install dependencies	2026-01-07T18:00:58.8268862Z   JAVA_HOME_17_X64: /opt/hostedtoolcache/Java_Temurin-Hotspot_jdk/17.0.17-10/x64
+build	📦 Install dependencies	2026-01-07T18:00:58.8269402Z   EXPO_TOKEN: ***
+build	📦 Install dependencies	2026-01-07T18:00:58.8269664Z ##[endgroup]
+build	📦 Install dependencies	2026-01-07T18:00:59.2997440Z  WARN  Ignoring not compatible lockfile at /home/runner/work/kiko/kiko/pnpm-lock.yaml
+build	📦 Install dependencies	2026-01-07T18:00:59.4393845Z Progress: resolved 1, reused 0, downloaded 0, added 0
+build	📦 Install dependencies	2026-01-07T18:01:00.4714849Z Progress: resolved 69, reused 0, downloaded 59, added 0
+build	📦 Install dependencies	2026-01-07T18:01:01.4712887Z Progress: resolved 114, reused 0, downloaded 92, added 0
+build	📦 Install dependencies	2026-01-07T18:01:02.4783517Z Progress: resolved 214, reused 0, downloaded 198, added 0
+build	📦 Install dependencies	2026-01-07T18:01:03.4781632Z Progress: resolved 321, reused 0, downloaded 280, added 0
+build	📦 Install dependencies	2026-01-07T18:01:04.4791280Z Progress: resolved 456, reused 0, downloaded 409, added 0
+build	📦 Install dependencies	2026-01-07T18:01:05.4809676Z Progress: resolved 585, reused 0, downloaded 524, added 0
+build	📦 Install dependencies	2026-01-07T18:01:06.4801910Z Progress: resolved 724, reused 0, downloaded 644, added 0
+build	📦 Install dependencies	2026-01-07T18:01:07.5027140Z Progress: resolved 759, reused 0, downloaded 668, added 0
+build	📦 Install dependencies	2026-01-07T18:01:08.5029328Z Progress: resolved 911, reused 0, downloaded 812, added 0
+build	📦 Install dependencies	2026-01-07T18:01:09.5022108Z Progress: resolved 1103, reused 0, downloaded 982, added 0
+build	📦 Install dependencies	2026-01-07T18:01:10.5028864Z Progress: resolved 1203, reused 0, downloaded 1080, added 0
+build	📦 Install dependencies	2026-01-07T18:01:11.5033444Z Progress: resolved 1393, reused 0, downloaded 1289, added 0
+build	📦 Install dependencies	2026-01-07T18:01:11.9878947Z  WARN  12 deprecated subdependencies found: @babel/plugin-proposal-class-properties@7.18.6, @babel/plugin-proposal-nullish-coalescing-operator@7.18.6, @babel/plugin-proposal-optional-chaining@7.21.0, @xmldom/xmldom@0.7.13, abab@2.0.6, domexception@4.0.0, glob@7.2.3, inflight@1.0.6, node-domexception@1.0.0, rimraf@2.6.3, rimraf@3.0.2, whatwg-encoding@2.0.0
+build	📦 Install dependencies	2026-01-07T18:01:12.0725440Z Packages: +1382
+build	📦 Install dependencies	2026-01-07T18:01:12.0726263Z ++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+build	📦 Install dependencies	2026-01-07T18:01:12.5035518Z Progress: resolved 1432, reused 0, downloaded 1377, added 529
+build	📦 Install dependencies	2026-01-07T18:01:13.4398932Z Progress: resolved 1432, reused 0, downloaded 1383, added 1382, done
+build	📦 Install dependencies	2026-01-07T18:01:13.7417242Z .../node_modules/@firebase/util postinstall$ node ./postinstall.js
+build	📦 Install dependencies	2026-01-07T18:01:13.7844311Z .../node_modules/@firebase/util postinstall: Done
+build	📦 Install dependencies	2026-01-07T18:01:13.8139435Z .../esbuild@0.27.2/node_modules/esbuild postinstall$ node install.js
+build	📦 Install dependencies	2026-01-07T18:01:13.8662398Z .../esbuild@0.27.2/node_modules/esbuild postinstall: Done
+build	📦 Install dependencies	2026-01-07T18:01:13.9123269Z .../node_modules/protobufjs postinstall$ node scripts/postinstall
+build	📦 Install dependencies	2026-01-07T18:01:13.9311835Z .../sharp@0.33.5/node_modules/sharp install$ node install/check
+build	📦 Install dependencies	2026-01-07T18:01:13.9535693Z .../node_modules/protobufjs postinstall: Done
+build	📦 Install dependencies	2026-01-07T18:01:14.0206363Z .../sharp@0.33.5/node_modules/sharp install: Done
+build	📦 Install dependencies	2026-01-07T18:01:15.7120392Z 
+build	📦 Install dependencies	2026-01-07T18:01:15.7121248Z > timalaus@1.6.5 postinstall /home/runner/work/kiko/kiko
+build	📦 Install dependencies	2026-01-07T18:01:15.7121714Z > patch-package
+build	📦 Install dependencies	2026-01-07T18:01:15.7121886Z 
+build	📦 Install dependencies	2026-01-07T18:01:15.8746757Z patch-package 8.0.1
+build	📦 Install dependencies	2026-01-07T18:01:15.8750973Z Applying patches...
+build	📦 Install dependencies	2026-01-07T18:01:15.8755467Z No patch files found
+build	📦 Install dependencies	2026-01-07T18:01:15.8835601Z 
+build	📦 Install dependencies	2026-01-07T18:01:15.8836511Z dependencies:
+build	📦 Install dependencies	2026-01-07T18:01:15.8837555Z + @anthropic-ai/sdk 0.54.0 (0.71.2 is available)
+build	📦 Install dependencies	2026-01-07T18:01:15.8839165Z + @babel/runtime 7.28.4
+build	📦 Install dependencies	2026-01-07T18:01:15.8840886Z + @expo-google-fonts/montserrat 0.2.3 (0.4.2 is available)
+build	📦 Install dependencies	2026-01-07T18:01:15.8841975Z + @expo/config-plugins 54.0.4
+build	📦 Install dependencies	2026-01-07T18:01:15.8843072Z + @expo/vector-icons 14.0.4 (15.0.3 is available)
+build	📦 Install dependencies	2026-01-07T18:01:15.8846203Z + @google/generative-ai 0.24.1
+build	📦 Install dependencies	2026-01-07T18:01:15.8847145Z + @react-native-async-storage/async-storage 1.23.1 (2.2.0 is available)
+build	📦 Install dependencies	2026-01-07T18:01:15.8854453Z + @react-native-clipboard/clipboard 1.16.3
+build	📦 Install dependencies	2026-01-07T18:01:15.8855449Z + @react-native-community/cli 20.1.0
+build	📦 Install dependencies	2026-01-07T18:01:15.8856174Z + @react-native-firebase/analytics 23.7.0
+build	📦 Install dependencies	2026-01-07T18:01:15.8856853Z + @react-native-firebase/app 23.7.0
+build	📦 Install dependencies	2026-01-07T18:01:15.8857553Z + @react-navigation/bottom-tabs 7.9.0
+build	📦 Install dependencies	2026-01-07T18:01:15.8858253Z + @react-navigation/native 7.1.26
+build	📦 Install dependencies	2026-01-07T18:01:15.8859080Z + @supabase/supabase-js 2.90.0
+build	📦 Install dependencies	2026-01-07T18:01:15.8859693Z + csv-parse 5.6.0 (6.1.0 is available)
+build	📦 Install dependencies	2026-01-07T18:01:15.8860302Z + csv-parser 3.2.0
+build	📦 Install dependencies	2026-01-07T18:01:15.8860854Z + dotenv 16.6.1 (17.2.3 is available)
+build	📦 Install dependencies	2026-01-07T18:01:15.8861501Z + expo 52.0.48 (54.0.31 is available)
+build	📦 Install dependencies	2026-01-07T18:01:15.8862217Z + expo-application 6.0.2 (7.0.8 is available)
+build	📦 Install dependencies	2026-01-07T18:01:15.8863287Z + expo-asset 11.0.5 (12.0.12 is available)
+build	📦 Install dependencies	2026-01-07T18:01:15.8864060Z + expo-auth-session 6.0.3 (7.0.10 is available)
+build	📦 Install dependencies	2026-01-07T18:01:15.8864979Z + expo-blur 14.0.3 (15.0.8 is available)
+build	📦 Install dependencies	2026-01-07T18:01:15.8865781Z + expo-build-properties 0.13.3 (1.0.10 is available)
+build	📦 Install dependencies	2026-01-07T18:01:15.8866627Z + expo-constants 17.0.8 (18.0.13 is available)
+build	📦 Install dependencies	2026-01-07T18:01:15.8867335Z + expo-crypto 14.0.2 (15.0.8 is available)
+build	📦 Install dependencies	2026-01-07T18:01:15.8868061Z + expo-dev-client 5.0.20 (6.0.20 is available)
+build	📦 Install dependencies	2026-01-07T18:01:15.8868821Z + expo-env 1.1.1
+build	📦 Install dependencies	2026-01-07T18:01:15.8869421Z + expo-file-system 18.0.12 (19.0.21 is available)
+build	📦 Install dependencies	2026-01-07T18:01:15.8870090Z + expo-font 13.0.4 (14.0.10 is available)
+build	📦 Install dependencies	2026-01-07T18:01:15.8870771Z + expo-haptics 14.0.1 (15.0.8 is available)
+build	📦 Install dependencies	2026-01-07T18:01:15.8871483Z + expo-image 2.0.7 (3.0.11 is available)
+build	📦 Install dependencies	2026-01-07T18:01:15.8872257Z + expo-linear-gradient 14.0.2 (15.0.8 is available)
+build	📦 Install dependencies	2026-01-07T18:01:15.8873063Z + expo-linking 7.0.5 (8.0.11 is available)
+build	📦 Install dependencies	2026-01-07T18:01:15.8873841Z + expo-navigation-bar 4.0.9 (5.0.10 is available)
+build	📦 Install dependencies	2026-01-07T18:01:15.8874599Z + expo-router 4.0.22 (6.0.21 is available)
+build	📦 Install dependencies	2026-01-07T18:01:15.8875350Z + expo-status-bar 2.0.1 (3.0.9 is available)
+build	📦 Install dependencies	2026-01-07T18:01:15.8876074Z + expo-symbols 0.2.2 (1.0.8 is available)
+build	📦 Install dependencies	2026-01-07T18:01:15.8877163Z + expo-system-ui 4.0.9 (6.0.9 is available)
+build	📦 Install dependencies	2026-01-07T18:01:15.8877869Z + expo-web-browser 14.0.2 (15.0.10 is available)
+build	📦 Install dependencies	2026-01-07T18:01:15.8878462Z + google-auth-library 10.5.0
+build	📦 Install dependencies	2026-01-07T18:01:15.8879266Z + googleapis 166.0.0 (169.0.0 is available)
+build	📦 Install dependencies	2026-01-07T18:01:15.8879821Z + node-fetch 3.3.2
+build	📦 Install dependencies	2026-01-07T18:01:15.8880333Z + openai 5.23.2 (6.15.0 is available)
+build	📦 Install dependencies	2026-01-07T18:01:15.8880843Z + papaparse 5.5.3
+build	📦 Install dependencies	2026-01-07T18:01:15.8881342Z + react 18.3.1 (19.2.3 is available)
+build	📦 Install dependencies	2026-01-07T18:01:15.8881925Z + react-dom 18.3.1 (19.2.3 is available)
+build	📦 Install dependencies	2026-01-07T18:01:15.8882520Z + react-native 0.76.9 (0.83.1 is available)
+build	📦 Install dependencies	2026-01-07T18:01:15.8883027Z + react-native-fs 2.20.0
+build	📦 Install dependencies	2026-01-07T18:01:15.8883678Z + react-native-gesture-handler 2.20.2 (2.30.0 is available)
+build	📦 Install dependencies	2026-01-07T18:01:15.8884587Z + react-native-google-mobile-ads 14.11.0 (16.0.1 is available)
+build	📦 Install dependencies	2026-01-07T18:01:15.8885445Z + react-native-reanimated 3.16.7 (4.2.1 is available)
+build	📦 Install dependencies	2026-01-07T18:01:15.8886281Z + react-native-safe-area-context 4.12.0 (5.6.2 is available)
+build	📦 Install dependencies	2026-01-07T18:01:15.8887106Z + react-native-screens 4.4.0 (4.19.0 is available)
+build	📦 Install dependencies	2026-01-07T18:01:15.8887727Z + react-native-share 12.2.2
+build	📦 Install dependencies	2026-01-07T18:01:15.8888396Z + react-native-url-polyfill 2.0.0 (3.0.0 is available)
+build	📦 Install dependencies	2026-01-07T18:01:15.8895632Z + react-native-view-shot 4.0.3
+build	📦 Install dependencies	2026-01-07T18:01:15.8896412Z + react-native-web 0.19.13 (0.21.2 is available)
+build	📦 Install dependencies	2026-01-07T18:01:15.8897242Z + react-native-webview 13.12.5 (13.16.0 is available)
+build	📦 Install dependencies	2026-01-07T18:01:15.8897898Z + replicate 1.4.0
+build	📦 Install dependencies	2026-01-07T18:01:15.8898404Z + twitter-api-v2 1.28.0
+build	📦 Install dependencies	2026-01-07T18:01:15.8899194Z + uuid 11.1.0 (13.0.0 is available)
+build	📦 Install dependencies	2026-01-07T18:01:15.8899552Z 
+build	📦 Install dependencies	2026-01-07T18:01:15.8899754Z devDependencies:
+build	📦 Install dependencies	2026-01-07T18:01:15.8900231Z + @babel/core 7.28.5
+build	📦 Install dependencies	2026-01-07T18:01:15.8900716Z + @types/cors 2.8.19
+build	📦 Install dependencies	2026-01-07T18:01:15.8901208Z + @types/express 5.0.6
+build	📦 Install dependencies	2026-01-07T18:01:15.8902186Z + @types/jest 29.5.14 (30.0.0 is available)
+build	📦 Install dependencies	2026-01-07T18:01:15.8902884Z + @types/react 18.3.27 (19.2.7 is available)
+build	📦 Install dependencies	2026-01-07T18:01:15.8903657Z + @types/react-test-renderer 18.3.1 (19.1.0 is available)
+build	📦 Install dependencies	2026-01-07T18:01:15.8904577Z + axios 1.13.2
+build	📦 Install dependencies	2026-01-07T18:01:15.8905073Z + babel-plugin-module-resolver 5.0.2
+build	📦 Install dependencies	2026-01-07T18:01:15.8905783Z + babel-plugin-transform-remove-console 6.9.4
+build	📦 Install dependencies	2026-01-07T18:01:15.8906443Z + babel-preset-expo 54.0.9
+build	📦 Install dependencies	2026-01-07T18:01:15.8906931Z + cors 2.8.5
+build	📦 Install dependencies	2026-01-07T18:01:15.8907366Z + csv-writer 1.6.0
+build	📦 Install dependencies	2026-01-07T18:01:15.8907798Z + express 5.2.1
+build	📦 Install dependencies	2026-01-07T18:01:15.8908256Z + firebase-admin 13.6.0
+build	📦 Install dependencies	2026-01-07T18:01:15.8908974Z + jest 29.7.0 (30.2.0 is available)
+build	📦 Install dependencies	2026-01-07T18:01:15.8909611Z + jest-expo 52.0.6 (54.0.16 is available)
+build	📦 Install dependencies	2026-01-07T18:01:15.8910194Z + patch-package 8.0.1
+build	📦 Install dependencies	2026-01-07T18:01:15.8910836Z + react-test-renderer 18.3.1 (19.2.3 is available)
+build	📦 Install dependencies	2026-01-07T18:01:15.8911526Z + sharp 0.33.5 (0.34.5 is available)
+build	📦 Install dependencies	2026-01-07T18:01:15.8912039Z + tsx 4.21.0
+build	📦 Install dependencies	2026-01-07T18:01:15.8912486Z + typescript 5.9.3
+build	📦 Install dependencies	2026-01-07T18:01:15.8912748Z 
+build	📦 Install dependencies	2026-01-07T18:01:15.8913446Z  WARN  Issues with peer dependencies found
+build	📦 Install dependencies	2026-01-07T18:01:15.8914159Z .
+build	📦 Install dependencies	2026-01-07T18:01:15.8914676Z └─┬ jest-expo 52.0.6
+build	📦 Install dependencies	2026-01-07T18:01:15.8915501Z   └─┬ react-server-dom-webpack 19.0.0-rc-6230622a1a-20240610
+build	📦 Install dependencies	2026-01-07T18:01:15.8916547Z     ├── ✕ unmet peer react@19.0.0-rc-6230622a1a-20240610: found 18.3.1
+build	📦 Install dependencies	2026-01-07T18:01:15.8917618Z     └── ✕ unmet peer react-dom@19.0.0-rc-6230622a1a-20240610: found 18.3.1
+build	📦 Install dependencies	2026-01-07T18:01:15.8918145Z 
+build	📦 Install dependencies	2026-01-07T18:01:15.8918336Z Done in 17s
+build	🔑 Prepare Play Store Key	﻿2026-01-07T18:01:16.0414702Z ##[group]Run echo '***
+build	🔑 Prepare Play Store Key	2026-01-07T18:01:16.0415296Z [36;1mecho '***[0m
+build	🔑 Prepare Play Store Key	2026-01-07T18:01:16.0415795Z [36;1m  ***[0m
+build	🔑 Prepare Play Store Key	2026-01-07T18:01:16.0416272Z [36;1m  ***[0m
+build	🔑 Prepare Play Store Key	2026-01-07T18:01:16.0416900Z [36;1m  ***[0m
+build	🔑 Prepare Play Store Key	2026-01-07T18:01:16.0425325Z [36;1m  ***[0m
+build	🔑 Prepare Play Store Key	2026-01-07T18:01:16.0425992Z [36;1m  ***[0m
+build	🔑 Prepare Play Store Key	2026-01-07T18:01:16.0426879Z [36;1m  ***[0m
+build	🔑 Prepare Play Store Key	2026-01-07T18:01:16.0427475Z [36;1m  ***[0m
+build	🔑 Prepare Play Store Key	2026-01-07T18:01:16.0428167Z [36;1m  ***[0m
+build	🔑 Prepare Play Store Key	2026-01-07T18:01:16.0429164Z [36;1m  ***[0m
+build	🔑 Prepare Play Store Key	2026-01-07T18:01:16.0430253Z [36;1m  ***[0m
+build	🔑 Prepare Play Store Key	2026-01-07T18:01:16.0430906Z [36;1m  ***[0m
+build	🔑 Prepare Play Store Key	2026-01-07T18:01:16.0431417Z [36;1m***' > kiko-chrono-e34241a84e41.json[0m
+build	🔑 Prepare Play Store Key	2026-01-07T18:01:16.0472747Z shell: /usr/bin/bash -e ***0***
+build	🔑 Prepare Play Store Key	2026-01-07T18:01:16.0473105Z env:
+build	🔑 Prepare Play Store Key	2026-01-07T18:01:16.0473440Z   PNPM_HOME: /home/runner/setup-pnpm/node_modules/.bin
+build	🔑 Prepare Play Store Key	2026-01-07T18:01:16.0473937Z   JAVA_HOME: /opt/hostedtoolcache/Java_Temurin-Hotspot_jdk/17.0.17-10/x64
+build	🔑 Prepare Play Store Key	2026-01-07T18:01:16.0474502Z   JAVA_HOME_17_X64: /opt/hostedtoolcache/Java_Temurin-Hotspot_jdk/17.0.17-10/x64
+build	🔑 Prepare Play Store Key	2026-01-07T18:01:16.0475082Z   EXPO_TOKEN: ***
+build	🔑 Prepare Play Store Key	2026-01-07T18:01:16.0475349Z ##[endgroup]
+build	🚀 Build APK (Local)	﻿2026-01-07T18:01:16.0577890Z ##[group]Run npx expo prebuild --platform android --clean
+build	🚀 Build APK (Local)	2026-01-07T18:01:16.0578429Z [36;1mnpx expo prebuild --platform android --clean[0m
+build	🚀 Build APK (Local)	2026-01-07T18:01:16.0579117Z [36;1mnode scripts/fix-manifest.js[0m
+build	🚀 Build APK (Local)	2026-01-07T18:01:16.0579475Z [36;1mnode scripts/fix-kotlin-version.js[0m
+build	🚀 Build APK (Local)	2026-01-07T18:01:16.0580084Z [36;1mEAS_SKIP_AUTO_FINGERPRINT=1 eas build --platform android --profile development --local --non-interactive[0m
+build	🚀 Build APK (Local)	2026-01-07T18:01:16.0615345Z shell: /usr/bin/bash -e ***0***
+build	🚀 Build APK (Local)	2026-01-07T18:01:16.0615668Z env:
+build	🚀 Build APK (Local)	2026-01-07T18:01:16.0615974Z   PNPM_HOME: /home/runner/setup-pnpm/node_modules/.bin
+build	🚀 Build APK (Local)	2026-01-07T18:01:16.0616462Z   JAVA_HOME: /opt/hostedtoolcache/Java_Temurin-Hotspot_jdk/17.0.17-10/x64
+build	🚀 Build APK (Local)	2026-01-07T18:01:16.0617013Z   JAVA_HOME_17_X64: /opt/hostedtoolcache/Java_Temurin-Hotspot_jdk/17.0.17-10/x64
+build	🚀 Build APK (Local)	2026-01-07T18:01:16.0617517Z   EXPO_TOKEN: ***
+build	🚀 Build APK (Local)	2026-01-07T18:01:16.0617773Z ##[endgroup]
+build	🚀 Build APK (Local)	2026-01-07T18:01:16.7468487Z ! Git branch has uncommited file changes
+build	🚀 Build APK (Local)	2026-01-07T18:01:16.7471087Z › It's recommended to commit all changes before proceeding in case you want to revert generated changes.
+build	🚀 Build APK (Local)	2026-01-07T18:01:16.7472479Z Git status is dirty but the command will continue because the terminal is not interactive.
+build	🚀 Build APK (Local)	2026-01-07T18:01:16.7605323Z - Clearing android
+build	🚀 Build APK (Local)	2026-01-07T18:01:16.7666920Z ✔ Cleared android code
+build	🚀 Build APK (Local)	2026-01-07T18:01:17.0999708Z - Creating native directory (./android)
+build	🚀 Build APK (Local)	2026-01-07T18:01:17.7892705Z ✔ Created native directory
+build	🚀 Build APK (Local)	2026-01-07T18:01:17.7897446Z - Updating package.json
+build	🚀 Build APK (Local)	2026-01-07T18:01:17.7923647Z ✔ Updated package.json | no changes
+build	🚀 Build APK (Local)	2026-01-07T18:01:17.7924420Z - Running prebuild
+build	🚀 Build APK (Local)	2026-01-07T18:01:20.1858383Z ✅ Permission AD_ID forcée avec tools:node="replace"
+build	🚀 Build APK (Local)	2026-01-07T18:01:20.1859470Z - Running prebuild
+build	🚀 Build APK (Local)	2026-01-07T18:01:20.2015195Z ✔ Finished prebuild
+build	🚀 Build APK (Local)	2026-01-07T18:01:20.2572789Z ✅ Manifeste Android corrigé avec succès!
+build	🚀 Build APK (Local)	2026-01-07T18:01:20.2581572Z   - Namespace tools ajouté
+build	🚀 Build APK (Local)	2026-01-07T18:01:20.2582427Z   - Permission AD_ID ajoutée
+build	🚀 Build APK (Local)	2026-01-07T18:01:20.2583303Z   - Permission ACCESS_ADSERVICES_AD_ID ajoutée
+build	🚀 Build APK (Local)	2026-01-07T18:01:20.2584684Z ✅ splashscreen_logo.png → drawable/splashscreen_logo.png
+build	🚀 Build APK (Local)	2026-01-07T18:01:20.2586099Z ✅ splash-icon.png → drawable/splash_icon.png
+build	🚀 Build APK (Local)	2026-01-07T18:01:20.2588760Z ✅ logo3.png → drawable/logo3.png
+build	🚀 Build APK (Local)	2026-01-07T18:01:20.2592177Z ✅ icon.png → drawable/icon.png
+build	🚀 Build APK (Local)	2026-01-07T18:01:20.2594760Z ✅ Assets splash copiés vers drawable/
+build	🚀 Build APK (Local)	2026-01-07T18:01:20.2884053Z ✅ kotlinVersion mis à jour vers 1.9.25
+build	🚀 Build APK (Local)	2026-01-07T18:01:20.2893030Z ✅ gradle.properties corrigé avec succès!
+build	🚀 Build APK (Local)	2026-01-07T18:01:23.5969418Z Resolved "development" environment for the build. Learn more: https://docs.expo.dev/eas/environment-variables/#setting-the-environment-for-your-builds
+build	🚀 Build APK (Local)	2026-01-07T18:01:23.6932928Z No environment variables with visibility "Plain text" and "Sensitive" found for the "development" environment on EAS.
+build	🚀 Build APK (Local)	2026-01-07T18:01:23.6934789Z Environment variables loaded from the "development" build profile "env" configuration: EXPO_PUBLIC_APP_VARIANT.
+build	🚀 Build APK (Local)	2026-01-07T18:01:23.6935675Z 
+build	🚀 Build APK (Local)	2026-01-07T18:01:32.0615583Z Specified value for "android.package" in app.config.js is ignored because an android directory was detected in the project.
+build	🚀 Build APK (Local)	2026-01-07T18:01:32.0616719Z EAS Build will use the value found in the native code.
+build	🚀 Build APK (Local)	2026-01-07T18:01:32.0634853Z You need to be on SDK 46 or higher, and use expo-updates >= 0.14.4 to use appVersion runtime policy.
+build	🚀 Build APK (Local)	2026-01-07T18:01:32.0776207Z ✔ Using remote Android credentials (Expo server)
+build	🚀 Build APK (Local)	2026-01-07T18:01:32.5981425Z ✔ Using Keystore from configuration: Build Credentials dU0_MiLJ3z (default)
+build	🚀 Build APK (Local)	2026-01-07T18:01:33.6119410Z - Compressing project files
+build	🚀 Build APK (Local)	2026-01-07T18:01:34.9425537Z Skipping project fingerprint
+build	🚀 Build APK (Local)	2026-01-07T18:01:48.5884633Z npm warn deprecated inflight@1.0.6: This module is not supported, and leaks memory. Do not use it. Check out lru-cache if you want a good and tested way to coalesce async requests by a key value, which is much more comprehensive and powerful.
+build	🚀 Build APK (Local)	2026-01-07T18:01:49.0719652Z npm warn deprecated rimraf@2.4.5: Rimraf versions prior to v4 are no longer supported
+build	🚀 Build APK (Local)	2026-01-07T18:01:49.5364312Z npm warn deprecated lodash.get@4.4.2: This package is deprecated. Use the optional chaining (?.) operator instead.
+build	🚀 Build APK (Local)	2026-01-07T18:01:49.6039328Z npm warn deprecated sudo-prompt@9.1.1: Package no longer supported. Contact Support at https://www.npmjs.com/support for more info.
+build	🚀 Build APK (Local)	2026-01-07T18:01:49.7775791Z npm warn deprecated @xmldom/xmldom@0.7.13: this version is no longer supported, please update to at least 0.8.*
+build	🚀 Build APK (Local)	2026-01-07T18:01:49.9653974Z npm warn deprecated glob@6.0.4: Glob versions prior to v9 are no longer supported
+build	🚀 Build APK (Local)	2026-01-07T18:01:51.8153778Z [SETUP_WORKINGDIR] Preparing workingdir /tmp/runner/eas-build-local-nodejs/b808225a-d246-4d65-b23c-27efc1e3c001
+build	🚀 Build APK (Local)	2026-01-07T18:01:51.8201837Z [START_BUILD] Starting build
+build	🚀 Build APK (Local)	2026-01-07T18:01:51.8204981Z   "job": ***
+build	🚀 Build APK (Local)	2026-01-07T18:01:51.8205551Z     "type": "generic",
+build	🚀 Build APK (Local)	2026-01-07T18:01:51.8206147Z     "platform": "android",
+build	🚀 Build APK (Local)	2026-01-07T18:01:51.8206840Z     "projectRootDirectory": ".",
+build	🚀 Build APK (Local)	2026-01-07T18:01:51.8207506Z     "projectArchive": ***
+build	🚀 Build APK (Local)	2026-01-07T18:01:51.8208150Z       "type": "PATH",
+build	🚀 Build APK (Local)	2026-01-07T18:01:51.8209318Z       "path": "/tmp/runner/eas-cli-nodejs/cdb063fa-ab39-4200-87d6-8b01b425c052.tar.gz"
+build	🚀 Build APK (Local)	2026-01-07T18:01:51.8209952Z     ***,
+build	🚀 Build APK (Local)	2026-01-07T18:01:51.8210270Z     "builderEnvironment": ***
+build	🚀 Build APK (Local)	2026-01-07T18:01:51.8210639Z       "env": ***
+build	🚀 Build APK (Local)	2026-01-07T18:01:51.8211025Z         "EXPO_PUBLIC_APP_VARIANT": "development"
+build	🚀 Build APK (Local)	2026-01-07T18:01:51.8211450Z       ***
+build	🚀 Build APK (Local)	2026-01-07T18:01:51.8212057Z     ***,
+build	🚀 Build APK (Local)	2026-01-07T18:01:51.8212346Z     "cache": ***
+build	🚀 Build APK (Local)	2026-01-07T18:01:51.8212654Z       "disabled": false,
+build	🚀 Build APK (Local)	2026-01-07T18:01:51.8212991Z       "paths": [],
+build	🚀 Build APK (Local)	2026-01-07T18:01:51.8213309Z       "clear": false
+build	🚀 Build APK (Local)	2026-01-07T18:01:51.8213617Z     ***,
+build	🚀 Build APK (Local)	2026-01-07T18:01:51.8213921Z     "updates": ***,
+build	🚀 Build APK (Local)	2026-01-07T18:01:51.8214366Z     "developmentClient": true,
+build	🚀 Build APK (Local)	2026-01-07T18:01:51.8214891Z     "gradleCommand": ":app:assembleDebug",
+build	🚀 Build APK (Local)	2026-01-07T18:01:51.8215300Z     "buildType": "apk",
+build	🚀 Build APK (Local)	2026-01-07T18:01:51.8215665Z     "username": "pierretulle",
+build	🚀 Build APK (Local)	2026-01-07T18:01:51.8216043Z     "experimental": ***,
+build	🚀 Build APK (Local)	2026-01-07T18:01:51.8216372Z     "mode": "build",
+build	🚀 Build APK (Local)	2026-01-07T18:01:51.8216710Z     "triggeredBy": "EAS_CLI",
+build	🚀 Build APK (Local)	2026-01-07T18:01:51.8217153Z     "appId": "3cbda57c-1ec1-4949-af06-9e933dbc0050",
+build	🚀 Build APK (Local)	2026-01-07T18:01:51.8217708Z     "initiatingUserId": "e2f1211b-28af-49f3-b0e0-07d6de13d75a"
+build	🚀 Build APK (Local)	2026-01-07T18:01:51.8218163Z   ***
+build	🚀 Build APK (Local)	2026-01-07T18:01:51.8238265Z Local build, skipping project archive refresh
+build	🚀 Build APK (Local)	2026-01-07T18:01:51.8917429Z [PREPARE_PROJECT] tar: Ignoring unknown extended header keyword 'SCHILY.dev'
+build	🚀 Build APK (Local)	2026-01-07T18:01:51.8919287Z [PREPARE_PROJECT] tar: Ignoring unknown extended header keyword 'SCHILY.ino'
+build	🚀 Build APK (Local)	2026-01-07T18:01:51.8921975Z [PREPARE_PROJECT] tar: Ignoring unknown extended header keyword 'SCHILY.nlink'
+build	🚀 Build APK (Local)	2026-01-07T18:01:52.1851898Z [READ_PACKAGE_JSON] Using package.json:
+build	🚀 Build APK (Local)	2026-01-07T18:01:52.1855066Z [READ_PACKAGE_JSON] ***
+build	🚀 Build APK (Local)	2026-01-07T18:01:52.1855590Z   "name": "timalaus",
+build	🚀 Build APK (Local)	2026-01-07T18:01:52.1856109Z   "main": "expo-router/entry",
+build	🚀 Build APK (Local)	2026-01-07T18:01:52.1856635Z   "version": "1.6.5",
+build	🚀 Build APK (Local)	2026-01-07T18:01:52.1858090Z   "_comment": "📚 Documentation importante : Avant de modifier l'audio, lisez /docs/AUDIO_MIGRATION_GUIDE.md",
+build	🚀 Build APK (Local)	2026-01-07T18:01:52.1859546Z   "scripts": ***
+build	🚀 Build APK (Local)	2026-01-07T18:01:52.1859913Z     "start": "expo start",
+build	🚀 Build APK (Local)	2026-01-07T18:01:52.1860333Z     "prebuild:check": "node scripts/prebuild-checker.js",
+build	🚀 Build APK (Local)	2026-01-07T18:01:52.1860827Z     "reset-project": "node ./scripts/reset-project.js",
+build	🚀 Build APK (Local)	2026-01-07T18:01:52.1861273Z     "android": "expo run:android",
+build	🚀 Build APK (Local)	2026-01-07T18:01:52.1861603Z     "ios": "expo run:ios",
+build	🚀 Build APK (Local)	2026-01-07T18:01:52.1861928Z     "web": "expo start --web",
+build	🚀 Build APK (Local)	2026-01-07T18:01:52.1862266Z     "test": "jest --watchAll",
+build	🚀 Build APK (Local)	2026-01-07T18:01:52.1862578Z     "lint": "expo lint",
+build	🚀 Build APK (Local)	2026-01-07T18:01:52.1862910Z     "postinstall": "patch-package",
+build	🚀 Build APK (Local)	2026-01-07T18:01:52.1863343Z     "android:fix-manifest": "node scripts/fix-manifest.js",
+build	🚀 Build APK (Local)	2026-01-07T18:01:52.1863859Z     "android:fix-kotlin": "node scripts/fix-kotlin-version.js",
+build	🚀 Build APK (Local)	2026-01-07T18:01:52.1864396Z     "prebuild:clean": "expo prebuild --platform android --clean",
+build	🚀 Build APK (Local)	2026-01-07T18:01:52.1865543Z     "prebuild:android": "npx expo prebuild --platform android --clean && npm run android:fix-manifest && npm run android:fix-kotlin",
+build	🚀 Build APK (Local)	2026-01-07T18:01:52.1866410Z     "build:android:local": "eas build --platform android --profile production --local",
+build	🚀 Build APK (Local)	2026-01-07T18:01:52.1867137Z     "build:android:cloud": "eas build --platform android --profile production --clear-cache",
+build	🚀 Build APK (Local)	2026-01-07T18:01:52.1867958Z     "build:android:production": "npm run prebuild:android && eas build --platform android --profile production --clear-cache"
+build	🚀 Build APK (Local)	2026-01-07T18:01:52.1868748Z   ***,
+build	🚀 Build APK (Local)	2026-01-07T18:01:52.1869024Z   "jest": ***
+build	🚀 Build APK (Local)	2026-01-07T18:01:52.1869300Z     "preset": "jest-expo"
+build	🚀 Build APK (Local)	2026-01-07T18:01:52.1869582Z   ***,
+build	🚀 Build APK (Local)	2026-01-07T18:01:52.1869830Z   "dependencies": ***
+build	🚀 Build APK (Local)	2026-01-07T18:01:52.1870140Z     "@anthropic-ai/sdk": "^0.54.0",
+build	🚀 Build APK (Local)	2026-01-07T18:01:52.1870476Z     "@babel/runtime": "^7.28.4",
+build	🚀 Build APK (Local)	2026-01-07T18:01:52.1870838Z     "@expo-google-fonts/montserrat": "^0.2.3",
+build	🚀 Build APK (Local)	2026-01-07T18:01:52.1871414Z     "@expo/config-plugins": "^54.0.2",
+build	🚀 Build APK (Local)	2026-01-07T18:01:52.1871905Z     "@expo/vector-icons": "~14.0.4",
+build	🚀 Build APK (Local)	2026-01-07T18:01:52.1872256Z     "@google/generative-ai": "^0.24.1",
+build	🚀 Build APK (Local)	2026-01-07T18:01:52.1872666Z     "@react-native-async-storage/async-storage": "1.23.1",
+build	🚀 Build APK (Local)	2026-01-07T18:01:52.1873115Z     "@react-native-clipboard/clipboard": "^1.16.3",
+build	🚀 Build APK (Local)	2026-01-07T18:01:52.1873520Z     "@react-native-community/cli": "latest",
+build	🚀 Build APK (Local)	2026-01-07T18:01:52.1874150Z     "@react-native-firebase/analytics": "^23.5.0",
+build	🚀 Build APK (Local)	2026-01-07T18:01:52.1874548Z     "@react-native-firebase/app": "^23.5.0",
+build	🚀 Build APK (Local)	2026-01-07T18:01:52.1874928Z     "@react-navigation/bottom-tabs": "^7.2.0",
+build	🚀 Build APK (Local)	2026-01-07T18:01:52.1875300Z     "@react-navigation/native": "^7.0.14",
+build	🚀 Build APK (Local)	2026-01-07T18:01:52.1875663Z     "@supabase/supabase-js": "^2.50.0",
+build	🚀 Build APK (Local)	2026-01-07T18:01:52.1875992Z     "csv-parse": "^5.6.0",
+build	🚀 Build APK (Local)	2026-01-07T18:01:52.1876297Z     "csv-parser": "^3.2.0",
+build	🚀 Build APK (Local)	2026-01-07T18:01:52.1876582Z     "dotenv": "^16.5.0",
+build	🚀 Build APK (Local)	2026-01-07T18:01:52.1876876Z     "expo": "~52.0.47",
+build	🚀 Build APK (Local)	2026-01-07T18:01:52.1877192Z     "expo-application": "~6.0.2",
+build	🚀 Build APK (Local)	2026-01-07T18:01:52.1877504Z     "expo-asset": "~11.0.5",
+build	🚀 Build APK (Local)	2026-01-07T18:01:52.1877827Z     "expo-auth-session": "~6.0.3",
+build	🚀 Build APK (Local)	2026-01-07T18:01:52.1878176Z     "expo-blur": "~14.0.3",
+build	🚀 Build APK (Local)	2026-01-07T18:01:52.1878500Z     "expo-build-properties": "~0.13.3",
+build	🚀 Build APK (Local)	2026-01-07T18:01:52.1879464Z     "expo-constants": "~17.0.5",
+build	🚀 Build APK (Local)	2026-01-07T18:01:52.1879802Z     "expo-crypto": "~14.0.2",
+build	🚀 Build APK (Local)	2026-01-07T18:01:52.1880141Z     "expo-dev-client": "~5.0.11",
+build	🚀 Build APK (Local)	2026-01-07T18:01:52.1880445Z     "expo-env": "^1.1.1",
+build	🚀 Build APK (Local)	2026-01-07T18:01:52.1880754Z     "expo-file-system": "~18.0.12",
+build	🚀 Build APK (Local)	2026-01-07T18:01:52.1881078Z     "expo-font": "~13.0.3",
+build	🚀 Build APK (Local)	2026-01-07T18:01:52.1881387Z     "expo-haptics": "~14.0.1",
+build	🚀 Build APK (Local)	2026-01-07T18:01:52.1881681Z     "expo-image": "~2.0.7",
+build	🚀 Build APK (Local)	2026-01-07T18:01:52.1882007Z     "expo-linear-gradient": "~14.0.2",
+build	🚀 Build APK (Local)	2026-01-07T18:01:52.1882328Z     "expo-linking": "~7.0.5",
+build	🚀 Build APK (Local)	2026-01-07T18:01:52.1882648Z     "expo-navigation-bar": "~4.0.9",
+build	🚀 Build APK (Local)	2026-01-07T18:01:52.1882968Z     "expo-router": "~4.0.21",
+build	🚀 Build APK (Local)	2026-01-07T18:01:52.1883309Z     "expo-status-bar": "~2.0.1",
+build	🚀 Build APK (Local)	2026-01-07T18:01:52.1883616Z     "expo-symbols": "~0.2.1",
+build	🚀 Build APK (Local)	2026-01-07T18:01:52.1883930Z     "expo-system-ui": "~4.0.9",
+build	🚀 Build APK (Local)	2026-01-07T18:01:52.1884256Z     "expo-web-browser": "~14.0.2",
+build	🚀 Build APK (Local)	2026-01-07T18:01:52.1884599Z     "google-auth-library": "^10.5.0",
+build	🚀 Build APK (Local)	2026-01-07T18:01:52.1884922Z     "googleapis": "^166.0.0",
+build	🚀 Build APK (Local)	2026-01-07T18:01:52.1885228Z     "node-fetch": "^3.3.2",
+build	🚀 Build APK (Local)	2026-01-07T18:01:52.1885528Z     "openai": "^5.5.1",
+build	🚀 Build APK (Local)	2026-01-07T18:01:52.1885808Z     "papaparse": "^5.5.3",
+build	🚀 Build APK (Local)	2026-01-07T18:01:52.1886093Z     "react": "18.3.1",
+build	🚀 Build APK (Local)	2026-01-07T18:01:52.1886364Z     "react-dom": "18.3.1",
+build	🚀 Build APK (Local)	2026-01-07T18:01:52.1886643Z     "react-native": "0.76.9",
+build	🚀 Build APK (Local)	2026-01-07T18:01:52.1886958Z     "react-native-fs": "^2.20.0",
+build	🚀 Build APK (Local)	2026-01-07T18:01:52.1887322Z     "react-native-gesture-handler": "~2.20.2",
+build	🚀 Build APK (Local)	2026-01-07T18:01:52.1887744Z     "react-native-google-mobile-ads": "^14.11.0",
+build	🚀 Build APK (Local)	2026-01-07T18:01:52.1888141Z     "react-native-reanimated": "~3.16.1",
+build	🚀 Build APK (Local)	2026-01-07T18:01:52.1889020Z     "react-native-safe-area-context": "4.12.0",
+build	🚀 Build APK (Local)	2026-01-07T18:01:52.1889424Z     "react-native-screens": "~4.4.0",
+build	🚀 Build APK (Local)	2026-01-07T18:01:52.1889784Z     "react-native-share": "^12.2.1",
+build	🚀 Build APK (Local)	2026-01-07T18:01:52.1890163Z     "react-native-url-polyfill": "^2.0.0",
+build	🚀 Build APK (Local)	2026-01-07T18:01:52.1890537Z     "react-native-view-shot": "^4.0.3",
+build	🚀 Build APK (Local)	2026-01-07T18:01:52.1890895Z     "react-native-web": "~0.19.13",
+build	🚀 Build APK (Local)	2026-01-07T18:01:52.1891249Z     "react-native-webview": "13.12.5",
+build	🚀 Build APK (Local)	2026-01-07T18:01:52.1891573Z     "replicate": "^1.0.1",
+build	🚀 Build APK (Local)	2026-01-07T18:01:52.1891889Z     "twitter-api-v2": "^1.28.0",
+build	🚀 Build APK (Local)	2026-01-07T18:01:52.1892187Z     "uuid": "^11.1.0"
+build	🚀 Build APK (Local)	2026-01-07T18:01:52.1892477Z   ***,
+build	🚀 Build APK (Local)	2026-01-07T18:01:52.1892740Z   "devDependencies": ***
+build	🚀 Build APK (Local)	2026-01-07T18:01:52.1893035Z     "@babel/core": "^7.25.2",
+build	🚀 Build APK (Local)	2026-01-07T18:01:52.1893328Z     "@types/cors": "^2.8.19",
+build	🚀 Build APK (Local)	2026-01-07T18:01:52.1893642Z     "@types/express": "^5.0.5",
+build	🚀 Build APK (Local)	2026-01-07T18:01:52.1893962Z     "@types/jest": "^29.5.12",
+build	🚀 Build APK (Local)	2026-01-07T18:01:52.1894273Z     "@types/react": "~18.3.12",
+build	🚀 Build APK (Local)	2026-01-07T18:01:52.1894626Z     "@types/react-test-renderer": "^18.3.0",
+build	🚀 Build APK (Local)	2026-01-07T18:01:52.1894964Z     "axios": "^1.13.2",
+build	🚀 Build APK (Local)	2026-01-07T18:01:52.1895297Z     "babel-plugin-module-resolver": "^5.0.2",
+build	🚀 Build APK (Local)	2026-01-07T18:01:52.1895730Z     "babel-plugin-transform-remove-console": "^6.9.4",
+build	🚀 Build APK (Local)	2026-01-07T18:01:52.1896153Z     "babel-preset-expo": "^54.0.7",
+build	🚀 Build APK (Local)	2026-01-07T18:01:52.1896705Z     "cors": "^2.8.5",
+build	🚀 Build APK (Local)	2026-01-07T18:01:52.1897431Z     "csv-writer": "^1.6.0",
+build	🚀 Build APK (Local)	2026-01-07T18:01:52.1897930Z     "express": "^5.1.0",
+build	🚀 Build APK (Local)	2026-01-07T18:01:52.1898407Z     "firebase-admin": "^13.6.0",
+build	🚀 Build APK (Local)	2026-01-07T18:01:52.1898879Z     "jest": "^29.2.1",
+build	🚀 Build APK (Local)	2026-01-07T18:01:52.1899154Z     "jest-expo": "~52.0.3",
+build	🚀 Build APK (Local)	2026-01-07T18:01:52.1899474Z     "patch-package": "^8.0.0",
+build	🚀 Build APK (Local)	2026-01-07T18:01:52.1899805Z     "react-test-renderer": "18.3.1",
+build	🚀 Build APK (Local)	2026-01-07T18:01:52.1900298Z     "sharp": "^0.33.5",
+build	🚀 Build APK (Local)	2026-01-07T18:01:52.1900754Z     "tsx": "^4.20.6",
+build	🚀 Build APK (Local)	2026-01-07T18:01:52.1901228Z     "typescript": "^5.3.3"
+build	🚀 Build APK (Local)	2026-01-07T18:01:52.1901701Z   ***,
+build	🚀 Build APK (Local)	2026-01-07T18:01:52.1902116Z   "overrides": ***
+build	🚀 Build APK (Local)	2026-01-07T18:01:52.1902596Z     "expo-ads-admob": ***
+build	🚀 Build APK (Local)	2026-01-07T18:01:52.1903161Z       "@expo/config-plugins": "9.0.14"
+build	🚀 Build APK (Local)	2026-01-07T18:01:52.1903723Z     ***
+build	🚀 Build APK (Local)	2026-01-07T18:01:52.1903966Z   ***,
+build	🚀 Build APK (Local)	2026-01-07T18:01:52.1904201Z   "private": true
+build	🚀 Build APK (Local)	2026-01-07T18:01:52.1904457Z ***
+build	🚀 Build APK (Local)	2026-01-07T18:01:52.1905271Z [INSTALL_DEPENDENCIES] Running "pnpm install --no-frozen-lockfile" in /tmp/runner/eas-build-local-nodejs/b808225a-d246-4d65-b23c-27efc1e3c001/build directory
+build	🚀 Build APK (Local)	2026-01-07T18:01:52.6617874Z [INSTALL_DEPENDENCIES] Lockfile is up to date, resolution step is skipped
+build	🚀 Build APK (Local)	2026-01-07T18:01:52.7884769Z [INSTALL_DEPENDENCIES] Progress: resolved 1, reused 0, downloaded 0, added 0
+build	🚀 Build APK (Local)	2026-01-07T18:01:53.0042272Z [INSTALL_DEPENDENCIES] Packages: +1382
+build	🚀 Build APK (Local)	2026-01-07T18:01:53.0044228Z [INSTALL_DEPENDENCIES] ++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+build	🚀 Build APK (Local)	2026-01-07T18:01:53.7916817Z [INSTALL_DEPENDENCIES] Progress: resolved 1382, reused 1382, downloaded 0, added 71
+build	🚀 Build APK (Local)	2026-01-07T18:01:54.7921943Z [INSTALL_DEPENDENCIES] Progress: resolved 1382, reused 1382, downloaded 0, added 1065
+build	🚀 Build APK (Local)	2026-01-07T18:01:55.0094150Z [INSTALL_DEPENDENCIES] Progress: resolved 1382, reused 1382, downloaded 0, added 1382, done
+build	🚀 Build APK (Local)	2026-01-07T18:01:55.5661843Z [INSTALL_DEPENDENCIES] .../esbuild@0.27.2/node_modules/esbuild postinstall$ node install.js
+build	🚀 Build APK (Local)	2026-01-07T18:01:55.6085688Z [INSTALL_DEPENDENCIES] .../esbuild@0.27.2/node_modules/esbuild postinstall: Done
+build	🚀 Build APK (Local)	2026-01-07T18:01:55.6576170Z [INSTALL_DEPENDENCIES] .../sharp@0.33.5/node_modules/sharp install$ node install/check
+build	🚀 Build APK (Local)	2026-01-07T18:01:55.7125056Z [INSTALL_DEPENDENCIES] .../sharp@0.33.5/node_modules/sharp install: Done
+build	🚀 Build APK (Local)	2026-01-07T18:01:55.8708860Z [INSTALL_DEPENDENCIES] dependencies:
+build	🚀 Build APK (Local)	2026-01-07T18:01:55.8709799Z [INSTALL_DEPENDENCIES] + @anthropic-ai/sdk 0.54.0
+build	🚀 Build APK (Local)	2026-01-07T18:01:55.8710651Z [INSTALL_DEPENDENCIES] + @babel/runtime 7.28.4
+build	🚀 Build APK (Local)	2026-01-07T18:01:55.8711577Z [INSTALL_DEPENDENCIES] + @expo-google-fonts/montserrat 0.2.3
+build	🚀 Build APK (Local)	2026-01-07T18:01:55.8712483Z [INSTALL_DEPENDENCIES] + @expo/config-plugins 54.0.4
+build	🚀 Build APK (Local)	2026-01-07T18:01:55.8713664Z [INSTALL_DEPENDENCIES] + @expo/vector-icons 14.0.4
+build	🚀 Build APK (Local)	2026-01-07T18:01:55.8714558Z [INSTALL_DEPENDENCIES] + @google/generative-ai 0.24.1
+build	🚀 Build APK (Local)	2026-01-07T18:01:55.8715576Z [INSTALL_DEPENDENCIES] + @react-native-async-storage/async-storage 1.23.1
+build	🚀 Build APK (Local)	2026-01-07T18:01:55.8716679Z [INSTALL_DEPENDENCIES] + @react-native-clipboard/clipboard 1.16.3
+build	🚀 Build APK (Local)	2026-01-07T18:01:55.8717674Z [INSTALL_DEPENDENCIES] + @react-native-community/cli 20.1.0
+build	🚀 Build APK (Local)	2026-01-07T18:01:55.8718855Z [INSTALL_DEPENDENCIES] + @react-native-firebase/analytics 23.7.0
+build	🚀 Build APK (Local)	2026-01-07T18:01:55.8719843Z [INSTALL_DEPENDENCIES] + @react-native-firebase/app 23.7.0
+build	🚀 Build APK (Local)	2026-01-07T18:01:55.8720768Z [INSTALL_DEPENDENCIES] + @react-navigation/bottom-tabs 7.9.0
+build	🚀 Build APK (Local)	2026-01-07T18:01:55.8721677Z [INSTALL_DEPENDENCIES] + @react-navigation/native 7.1.26
+build	🚀 Build APK (Local)	2026-01-07T18:01:55.8722542Z [INSTALL_DEPENDENCIES] + @supabase/supabase-js 2.90.0
+build	🚀 Build APK (Local)	2026-01-07T18:01:55.8723340Z [INSTALL_DEPENDENCIES] + csv-parse 5.6.0
+build	🚀 Build APK (Local)	2026-01-07T18:01:55.8724108Z [INSTALL_DEPENDENCIES] + csv-parser 3.2.0
+build	🚀 Build APK (Local)	2026-01-07T18:01:55.8724815Z [INSTALL_DEPENDENCIES] + dotenv 16.6.1
+build	🚀 Build APK (Local)	2026-01-07T18:01:55.8725465Z [INSTALL_DEPENDENCIES] + expo 52.0.48
+build	🚀 Build APK (Local)	2026-01-07T18:01:55.8726226Z [INSTALL_DEPENDENCIES] + expo-application 6.0.2
+build	🚀 Build APK (Local)	2026-01-07T18:01:55.8726992Z [INSTALL_DEPENDENCIES] + expo-asset 11.0.5
+build	🚀 Build APK (Local)	2026-01-07T18:01:55.8727762Z [INSTALL_DEPENDENCIES] + expo-auth-session 6.0.3
+build	🚀 Build APK (Local)	2026-01-07T18:01:55.8729007Z [INSTALL_DEPENDENCIES] + expo-blur 14.0.3
+build	🚀 Build APK (Local)	2026-01-07T18:01:55.8729786Z [INSTALL_DEPENDENCIES] + expo-build-properties 0.13.3
+build	🚀 Build APK (Local)	2026-01-07T18:01:55.8730567Z [INSTALL_DEPENDENCIES] + expo-constants 17.0.8
+build	🚀 Build APK (Local)	2026-01-07T18:01:55.8731276Z [INSTALL_DEPENDENCIES] + expo-crypto 14.0.2
+build	🚀 Build APK (Local)	2026-01-07T18:01:55.8731990Z [INSTALL_DEPENDENCIES] + expo-dev-client 5.0.20
+build	🚀 Build APK (Local)	2026-01-07T18:01:55.8732684Z [INSTALL_DEPENDENCIES] + expo-env 1.1.1
+build	🚀 Build APK (Local)	2026-01-07T18:01:55.8733478Z [INSTALL_DEPENDENCIES] + expo-file-system 18.0.12
+build	🚀 Build APK (Local)	2026-01-07T18:01:55.8734265Z [INSTALL_DEPENDENCIES] + expo-font 13.0.4
+build	🚀 Build APK (Local)	2026-01-07T18:01:55.8735035Z [INSTALL_DEPENDENCIES] + expo-haptics 14.0.1
+build	🚀 Build APK (Local)	2026-01-07T18:01:55.8735800Z [INSTALL_DEPENDENCIES] + expo-image 2.0.7
+build	🚀 Build APK (Local)	2026-01-07T18:01:55.8736600Z [INSTALL_DEPENDENCIES] + expo-linear-gradient 14.0.2
+build	🚀 Build APK (Local)	2026-01-07T18:01:55.8737407Z [INSTALL_DEPENDENCIES] + expo-linking 7.0.5
+build	🚀 Build APK (Local)	2026-01-07T18:01:55.8738198Z [INSTALL_DEPENDENCIES] + expo-navigation-bar 4.0.9
+build	🚀 Build APK (Local)	2026-01-07T18:01:55.8739153Z [INSTALL_DEPENDENCIES] + expo-router 4.0.22
+build	🚀 Build APK (Local)	2026-01-07T18:01:55.8739944Z [INSTALL_DEPENDENCIES] + expo-status-bar 2.0.1
+build	🚀 Build APK (Local)	2026-01-07T18:01:55.8740731Z [INSTALL_DEPENDENCIES] + expo-symbols 0.2.2
+build	🚀 Build APK (Local)	2026-01-07T18:01:55.8741485Z [INSTALL_DEPENDENCIES] + expo-system-ui 4.0.9
+build	🚀 Build APK (Local)	2026-01-07T18:01:55.8742275Z [INSTALL_DEPENDENCIES] + expo-web-browser 14.0.2
+build	🚀 Build APK (Local)	2026-01-07T18:01:55.8743104Z [INSTALL_DEPENDENCIES] + google-auth-library 10.5.0
+build	🚀 Build APK (Local)	2026-01-07T18:01:55.8743886Z [INSTALL_DEPENDENCIES] + googleapis 166.0.0
+build	🚀 Build APK (Local)	2026-01-07T18:01:55.8744633Z [INSTALL_DEPENDENCIES] + node-fetch 3.3.2
+build	🚀 Build APK (Local)	2026-01-07T18:01:55.8745363Z [INSTALL_DEPENDENCIES] + openai 5.23.2
+build	🚀 Build APK (Local)	2026-01-07T18:01:55.8746071Z [INSTALL_DEPENDENCIES] + papaparse 5.5.3
+build	🚀 Build APK (Local)	2026-01-07T18:01:55.8746484Z [INSTALL_DEPENDENCIES] + react 18.3.1
+build	🚀 Build APK (Local)	2026-01-07T18:01:55.8747178Z [INSTALL_DEPENDENCIES] + react-dom 18.3.1
+build	🚀 Build APK (Local)	2026-01-07T18:01:55.8747717Z [INSTALL_DEPENDENCIES] + react-native 0.76.9
+build	🚀 Build APK (Local)	2026-01-07T18:01:55.8748478Z [INSTALL_DEPENDENCIES] + react-native-fs 2.20.0
+build	🚀 Build APK (Local)	2026-01-07T18:01:55.8749537Z [INSTALL_DEPENDENCIES] + react-native-gesture-handler 2.20.2
+build	🚀 Build APK (Local)	2026-01-07T18:01:55.8750445Z [INSTALL_DEPENDENCIES] + react-native-google-mobile-ads 14.11.0
+build	🚀 Build APK (Local)	2026-01-07T18:01:55.8751425Z [INSTALL_DEPENDENCIES] + react-native-reanimated 3.16.7
+build	🚀 Build APK (Local)	2026-01-07T18:01:55.8752309Z [INSTALL_DEPENDENCIES] + react-native-safe-area-context 4.12.0
+build	🚀 Build APK (Local)	2026-01-07T18:01:55.8753034Z [INSTALL_DEPENDENCIES] + react-native-screens 4.4.0
+build	🚀 Build APK (Local)	2026-01-07T18:01:55.8753935Z [INSTALL_DEPENDENCIES] + react-native-share 12.2.2
+build	🚀 Build APK (Local)	2026-01-07T18:01:55.8754850Z [INSTALL_DEPENDENCIES] + react-native-url-polyfill 2.0.0
+build	🚀 Build APK (Local)	2026-01-07T18:01:55.8755742Z [INSTALL_DEPENDENCIES] + react-native-view-shot 4.0.3
+build	🚀 Build APK (Local)	2026-01-07T18:01:55.8757056Z [INSTALL_DEPENDENCIES] + react-native-web 0.19.13
+build	🚀 Build APK (Local)	2026-01-07T18:01:55.8757859Z [INSTALL_DEPENDENCIES] + react-native-webview 13.12.5
+build	🚀 Build APK (Local)	2026-01-07T18:01:55.8758704Z [INSTALL_DEPENDENCIES] + replicate 1.4.0
+build	🚀 Build APK (Local)	2026-01-07T18:01:55.8759313Z [INSTALL_DEPENDENCIES] + twitter-api-v2 1.28.0
+build	🚀 Build APK (Local)	2026-01-07T18:01:55.8759854Z [INSTALL_DEPENDENCIES] + uuid 11.1.0
+build	🚀 Build APK (Local)	2026-01-07T18:01:55.8760378Z [INSTALL_DEPENDENCIES] 
+build	🚀 Build APK (Local)	2026-01-07T18:01:55.8760961Z [INSTALL_DEPENDENCIES] devDependencies:
+build	🚀 Build APK (Local)	2026-01-07T18:01:55.8761677Z [INSTALL_DEPENDENCIES] + @babel/core 7.28.5
+build	🚀 Build APK (Local)	2026-01-07T18:01:55.8762421Z [INSTALL_DEPENDENCIES] + @types/cors 2.8.19
+build	🚀 Build APK (Local)	2026-01-07T18:01:55.8763116Z [INSTALL_DEPENDENCIES] + @types/express 5.0.6
+build	🚀 Build APK (Local)	2026-01-07T18:01:55.8763807Z [INSTALL_DEPENDENCIES] + @types/jest 29.5.14
+build	🚀 Build APK (Local)	2026-01-07T18:01:55.8764498Z [INSTALL_DEPENDENCIES] + @types/react 18.3.27
+build	🚀 Build APK (Local)	2026-01-07T18:01:55.8765291Z [INSTALL_DEPENDENCIES] + @types/react-test-renderer 18.3.1
+build	🚀 Build APK (Local)	2026-01-07T18:01:55.8766070Z [INSTALL_DEPENDENCIES] + axios 1.13.2
+build	🚀 Build APK (Local)	2026-01-07T18:01:55.8766849Z [INSTALL_DEPENDENCIES] + babel-plugin-module-resolver 5.0.2
+build	🚀 Build APK (Local)	2026-01-07T18:01:55.8767819Z [INSTALL_DEPENDENCIES] + babel-plugin-transform-remove-console 6.9.4
+build	🚀 Build APK (Local)	2026-01-07T18:01:55.8768857Z [INSTALL_DEPENDENCIES] + babel-preset-expo 54.0.9
+build	🚀 Build APK (Local)	2026-01-07T18:01:55.8769550Z [INSTALL_DEPENDENCIES] + cors 2.8.5
+build	🚀 Build APK (Local)	2026-01-07T18:01:55.8770184Z [INSTALL_DEPENDENCIES] + csv-writer 1.6.0
+build	🚀 Build APK (Local)	2026-01-07T18:01:55.8771067Z [INSTALL_DEPENDENCIES] + express 5.2.1
+build	🚀 Build APK (Local)	2026-01-07T18:01:55.8771767Z [INSTALL_DEPENDENCIES] + firebase-admin 13.6.0
+build	🚀 Build APK (Local)	2026-01-07T18:01:55.8772429Z [INSTALL_DEPENDENCIES] + jest 29.7.0
+build	🚀 Build APK (Local)	2026-01-07T18:01:55.8773061Z [INSTALL_DEPENDENCIES] + jest-expo 52.0.6
+build	🚀 Build APK (Local)	2026-01-07T18:01:55.8773752Z [INSTALL_DEPENDENCIES] + patch-package 8.0.1
+build	🚀 Build APK (Local)	2026-01-07T18:01:55.8774484Z [INSTALL_DEPENDENCIES] + react-test-renderer 18.3.1
+build	🚀 Build APK (Local)	2026-01-07T18:01:55.8775147Z [INSTALL_DEPENDENCIES] + sharp 0.33.5
+build	🚀 Build APK (Local)	2026-01-07T18:01:55.8775745Z [INSTALL_DEPENDENCIES] + tsx 4.21.0
+build	🚀 Build APK (Local)	2026-01-07T18:01:55.8776372Z [INSTALL_DEPENDENCIES] + typescript 5.9.3
+build	🚀 Build APK (Local)	2026-01-07T18:01:55.8972811Z [INSTALL_DEPENDENCIES] > timalaus@1.6.5 postinstall /tmp/runner/eas-build-local-nodejs/b808225a-d246-4d65-b23c-27efc1e3c001/build
+build	🚀 Build APK (Local)	2026-01-07T18:01:55.8973621Z [INSTALL_DEPENDENCIES] > patch-package
+build	🚀 Build APK (Local)	2026-01-07T18:01:56.0436255Z [INSTALL_DEPENDENCIES] patch-package 8.0.1
+build	🚀 Build APK (Local)	2026-01-07T18:01:56.0439988Z [INSTALL_DEPENDENCIES] Applying patches...
+build	🚀 Build APK (Local)	2026-01-07T18:01:56.0445442Z [INSTALL_DEPENDENCIES] No patch files found
+build	🚀 Build APK (Local)	2026-01-07T18:01:56.0552456Z [INSTALL_DEPENDENCIES] Done in 3.8s
+build	🚀 Build APK (Local)	2026-01-07T18:01:56.1025909Z The NODE_ENV environment variable is required but was not specified. Ensure the project is bundled with Expo CLI or NODE_ENV is set.
+build	🚀 Build APK (Local)	2026-01-07T18:01:56.1026893Z Proceeding without mode-specific .env
+build	🚀 Build APK (Local)	2026-01-07T18:01:56.3868220Z [READ_APP_CONFIG] Using app configuration:
+build	🚀 Build APK (Local)	2026-01-07T18:01:56.3869822Z [READ_APP_CONFIG] ***
+build	🚀 Build APK (Local)	2026-01-07T18:01:56.3870337Z   "name": "Timalaus DEV",
+build	🚀 Build APK (Local)	2026-01-07T18:01:56.3870821Z   "slug": "kiko",
+build	🚀 Build APK (Local)	2026-01-07T18:01:56.3871305Z   "version": "1.6.5",
+build	🚀 Build APK (Local)	2026-01-07T18:01:56.3871764Z   "sdkVersion": "52.0.0",
+build	🚀 Build APK (Local)	2026-01-07T18:01:56.3872251Z   "platforms": [
+build	🚀 Build APK (Local)	2026-01-07T18:01:56.3872528Z     "ios",
+build	🚀 Build APK (Local)	2026-01-07T18:01:56.3872773Z     "android",
+build	🚀 Build APK (Local)	2026-01-07T18:01:56.3873012Z     "web"
+build	🚀 Build APK (Local)	2026-01-07T18:01:56.3873239Z   ],
+build	🚀 Build APK (Local)	2026-01-07T18:01:56.3873488Z   "orientation": "portrait",
+build	🚀 Build APK (Local)	2026-01-07T18:01:56.3873846Z   "icon": "./assets/images/oklogo.png",
+build	🚀 Build APK (Local)	2026-01-07T18:01:56.3874189Z   "scheme": "juno2",
+build	🚀 Build APK (Local)	2026-01-07T18:01:56.3874498Z   "userInterfaceStyle": "automatic",
+build	🚀 Build APK (Local)	2026-01-07T18:01:56.3874996Z   "splash": ***
+build	🚀 Build APK (Local)	2026-01-07T18:01:56.3875490Z     "image": "./assets/images/splash-icon.png",
+build	🚀 Build APK (Local)	2026-01-07T18:01:56.3876053Z     "resizeMode": "contain",
+build	🚀 Build APK (Local)	2026-01-07T18:01:56.3876581Z     "backgroundColor": "#020817"
+build	🚀 Build APK (Local)	2026-01-07T18:01:56.3877044Z   ***,
+build	🚀 Build APK (Local)	2026-01-07T18:01:56.3877413Z   "assetBundlePatterns": [
+build	🚀 Build APK (Local)	2026-01-07T18:01:56.3877845Z     "**/*"
+build	🚀 Build APK (Local)	2026-01-07T18:01:56.3878280Z   ],
+build	🚀 Build APK (Local)	2026-01-07T18:01:56.3878802Z   "ios": ***
+build	🚀 Build APK (Local)	2026-01-07T18:01:56.3879564Z     "supportsTablet": true,
+build	🚀 Build APK (Local)	2026-01-07T18:01:56.3880196Z     "bundleIdentifier": "com.pierretulle.juno2.dev",
+build	🚀 Build APK (Local)	2026-01-07T18:01:56.3880804Z     "buildNumber": "5"
+build	🚀 Build APK (Local)	2026-01-07T18:01:56.3881246Z   ***,
+build	🚀 Build APK (Local)	2026-01-07T18:01:56.3881626Z   "android": ***
+build	🚀 Build APK (Local)	2026-01-07T18:01:56.3882042Z     "adaptiveIcon": ***
+build	🚀 Build APK (Local)	2026-01-07T18:01:56.3882673Z       "foregroundImage": "./assets/images/adaptive-icon.png",
+build	🚀 Build APK (Local)	2026-01-07T18:01:56.3883360Z       "backgroundColor": "#020817"
+build	🚀 Build APK (Local)	2026-01-07T18:01:56.3883853Z     ***,
+build	🚀 Build APK (Local)	2026-01-07T18:01:56.3884315Z     "package": "com.pierretulle.juno2.dev",
+build	🚀 Build APK (Local)	2026-01-07T18:01:56.3884947Z     "softwareKeyboardLayoutMode": "pan",
+build	🚀 Build APK (Local)	2026-01-07T18:01:56.3885497Z     "permissions": [
+build	🚀 Build APK (Local)	2026-01-07T18:01:56.3886009Z       "android.permission.INTERNET",
+build	🚀 Build APK (Local)	2026-01-07T18:01:56.3886591Z       "android.permission.VIBRATE",
+build	🚀 Build APK (Local)	2026-01-07T18:01:56.3887233Z       "android.permission.MODIFY_AUDIO_SETTINGS",
+build	🚀 Build APK (Local)	2026-01-07T18:01:56.3887939Z       "android.permission.READ_EXTERNAL_STORAGE",
+build	🚀 Build APK (Local)	2026-01-07T18:01:56.3888735Z       "android.permission.RECORD_AUDIO",
+build	🚀 Build APK (Local)	2026-01-07T18:01:56.3889446Z       "android.permission.SYSTEM_ALERT_WINDOW",
+build	🚀 Build APK (Local)	2026-01-07T18:01:56.3890157Z       "android.permission.WRITE_EXTERNAL_STORAGE",
+build	🚀 Build APK (Local)	2026-01-07T18:01:56.3890664Z       "com.google.android.gms.permission.AD_ID",
+build	🚀 Build APK (Local)	2026-01-07T18:01:56.3891103Z       "android.permission.ACCESS_ADSERVICES_AD_ID"
+build	🚀 Build APK (Local)	2026-01-07T18:01:56.3891451Z     ],
+build	🚀 Build APK (Local)	2026-01-07T18:01:56.3891706Z     "versionCode": 10122,
+build	🚀 Build APK (Local)	2026-01-07T18:01:56.3892269Z     "googleServicesFile": "./google-services.json",
+build	🚀 Build APK (Local)	2026-01-07T18:01:56.3892667Z     "userInterfaceStyle": "dark"
+build	🚀 Build APK (Local)	2026-01-07T18:01:56.3892971Z   ***,
+build	🚀 Build APK (Local)	2026-01-07T18:01:56.3893205Z   "web": ***
+build	🚀 Build APK (Local)	2026-01-07T18:01:56.3893452Z     "bundler": "metro",
+build	🚀 Build APK (Local)	2026-01-07T18:01:56.3893727Z     "output": "static",
+build	🚀 Build APK (Local)	2026-01-07T18:01:56.3894043Z     "favicon": "./assets/images/favicon.png"
+build	🚀 Build APK (Local)	2026-01-07T18:01:56.3894367Z   ***,
+build	🚀 Build APK (Local)	2026-01-07T18:01:56.3894597Z   "plugins": [
+build	🚀 Build APK (Local)	2026-01-07T18:01:56.3894837Z     [
+build	🚀 Build APK (Local)	2026-01-07T18:01:56.3895108Z       "expo-build-properties",
+build	🚀 Build APK (Local)	2026-01-07T18:01:56.3895447Z       ***
+build	🚀 Build APK (Local)	2026-01-07T18:01:56.3895870Z         "android": ***
+build	🚀 Build APK (Local)	2026-01-07T18:01:56.3896409Z           "kotlinVersion": "1.9.25",
+build	🚀 Build APK (Local)	2026-01-07T18:01:56.3897024Z           "compileSdkVersion": 35,
+build	🚀 Build APK (Local)	2026-01-07T18:01:56.3897618Z           "targetSdkVersion": 35,
+build	🚀 Build APK (Local)	2026-01-07T18:01:56.3898216Z           "buildToolsVersion": "35.0.0",
+build	🚀 Build APK (Local)	2026-01-07T18:01:56.3899061Z           "gradleVersion": "8.10.2",
+build	🚀 Build APK (Local)	2026-01-07T18:01:56.3899883Z           "ndkVersion": "27.1.12297006",
+build	🚀 Build APK (Local)	2026-01-07T18:01:56.3900875Z           "packagingOptions": ***
+build	🚀 Build APK (Local)	2026-01-07T18:01:56.3901618Z             "jniLibs": ***
+build	🚀 Build APK (Local)	2026-01-07T18:01:56.3914079Z               "useLegacyPackaging": false
+build	🚀 Build APK (Local)	2026-01-07T18:01:56.3914724Z             ***
+build	🚀 Build APK (Local)	2026-01-07T18:01:56.3915160Z           ***
+build	🚀 Build APK (Local)	2026-01-07T18:01:56.3915563Z         ***
+build	🚀 Build APK (Local)	2026-01-07T18:01:56.3915942Z       ***
+build	🚀 Build APK (Local)	2026-01-07T18:01:56.3916307Z     ],
+build	🚀 Build APK (Local)	2026-01-07T18:01:56.3916702Z     "expo-asset",
+build	🚀 Build APK (Local)	2026-01-07T18:01:56.3917131Z     "expo-router",
+build	🚀 Build APK (Local)	2026-01-07T18:01:56.3917555Z     "expo-navigation-bar",
+build	🚀 Build APK (Local)	2026-01-07T18:01:56.3918021Z     [
+build	🚀 Build APK (Local)	2026-01-07T18:01:56.3918411Z       "expo-system-ui",
+build	🚀 Build APK (Local)	2026-01-07T18:01:56.3919046Z       ***
+build	🚀 Build APK (Local)	2026-01-07T18:01:56.3919522Z         "androidNavigationBar": ***
+build	🚀 Build APK (Local)	2026-01-07T18:01:56.3920083Z           "visible": "immersive",
+build	🚀 Build APK (Local)	2026-01-07T18:01:56.3920634Z           "backgroundColor": "#020817"
+build	🚀 Build APK (Local)	2026-01-07T18:01:56.3921170Z         ***,
+build	🚀 Build APK (Local)	2026-01-07T18:01:56.3921597Z         "androidStatusBar": ***
+build	🚀 Build APK (Local)	2026-01-07T18:01:56.3922160Z           "barStyle": "light-content",
+build	🚀 Build APK (Local)	2026-01-07T18:01:56.3922731Z           "backgroundColor": "#020817",
+build	🚀 Build APK (Local)	2026-01-07T18:01:56.3923251Z           "hidden": false,
+build	🚀 Build APK (Local)	2026-01-07T18:01:56.3923719Z           "translucent": true
+build	🚀 Build APK (Local)	2026-01-07T18:01:56.3924182Z         ***
+build	🚀 Build APK (Local)	2026-01-07T18:01:56.3924560Z       ***
+build	🚀 Build APK (Local)	2026-01-07T18:01:56.3924929Z     ],
+build	🚀 Build APK (Local)	2026-01-07T18:01:56.3925275Z     [
+build	🚀 Build APK (Local)	2026-01-07T18:01:56.3925724Z       "react-native-google-mobile-ads",
+build	🚀 Build APK (Local)	2026-01-07T18:01:56.3926234Z       ***
+build	🚀 Build APK (Local)	2026-01-07T18:01:56.3926797Z         "androidAppId": "ca-app-pub-7809209690404525~1711130974",
+build	🚀 Build APK (Local)	2026-01-07T18:01:56.3927844Z         "iosAppId": "ca-app-pub-7809209690404525~1711130974"
+build	🚀 Build APK (Local)	2026-01-07T18:01:56.3928400Z       ***
+build	🚀 Build APK (Local)	2026-01-07T18:01:56.3929175Z     ],
+build	🚀 Build APK (Local)	2026-01-07T18:01:56.3929651Z     "@react-native-firebase/app",
+build	🚀 Build APK (Local)	2026-01-07T18:01:56.3930128Z     [
+build	🚀 Build APK (Local)	2026-01-07T18:01:56.3930573Z       "withForceAdIdPermission",
+build	🚀 Build APK (Local)	2026-01-07T18:01:56.3931116Z       "force-ad-id-permission"
+build	🚀 Build APK (Local)	2026-01-07T18:01:56.3931591Z     ],
+build	🚀 Build APK (Local)	2026-01-07T18:01:56.3931965Z     [
+build	🚀 Build APK (Local)	2026-01-07T18:01:56.3932359Z       "withKotlinVersionFix",
+build	🚀 Build APK (Local)	2026-01-07T18:01:56.3932892Z       "kotlin-version-fix"
+build	🚀 Build APK (Local)	2026-01-07T18:01:56.3933364Z     ]
+build	🚀 Build APK (Local)	2026-01-07T18:01:56.3933766Z   ],
+build	🚀 Build APK (Local)	2026-01-07T18:01:56.3934216Z   "experiments": ***
+build	🚀 Build APK (Local)	2026-01-07T18:01:56.3934674Z     "typedRoutes": true
+build	🚀 Build APK (Local)	2026-01-07T18:01:56.3935112Z   ***,
+build	🚀 Build APK (Local)	2026-01-07T18:01:56.3935510Z   "owner": "pierretulle",
+build	🚀 Build APK (Local)	2026-01-07T18:01:56.3935968Z   "updates": ***
+build	🚀 Build APK (Local)	2026-01-07T18:01:56.3936453Z     "fallbackToCacheTimeout": 0,
+build	🚀 Build APK (Local)	2026-01-07T18:01:56.3937187Z     "url": "https://u.expo.dev/3cbda57c-1ec1-4949-af06-9e933dbc0050"
+build	🚀 Build APK (Local)	2026-01-07T18:01:56.3937855Z   ***,
+build	🚀 Build APK (Local)	2026-01-07T18:01:56.3938248Z   "runtimeVersion": ***
+build	🚀 Build APK (Local)	2026-01-07T18:01:56.3939055Z     "policy": "appVersion"
+build	🚀 Build APK (Local)	2026-01-07T18:01:56.3939516Z   ***,
+build	🚀 Build APK (Local)	2026-01-07T18:01:56.3939899Z   "extra": ***
+build	🚀 Build APK (Local)	2026-01-07T18:01:56.3940303Z     "eas": ***
+build	🚀 Build APK (Local)	2026-01-07T18:01:56.3940862Z       "projectId": "3cbda57c-1ec1-4949-af06-9e933dbc0050"
+build	🚀 Build APK (Local)	2026-01-07T18:01:56.3941448Z     ***,
+build	🚀 Build APK (Local)	2026-01-07T18:01:56.3942258Z     "APP_VARIANT": "development",
+build	🚀 Build APK (Local)	2026-01-07T18:01:56.3942789Z     "router": ***
+build	🚀 Build APK (Local)	2026-01-07T18:01:56.3943204Z       "origin": false
+build	🚀 Build APK (Local)	2026-01-07T18:01:56.3943629Z     ***,
+build	🚀 Build APK (Local)	2026-01-07T18:01:56.3944063Z     "expo-navigation-bar": ***
+build	🚀 Build APK (Local)	2026-01-07T18:01:56.3944540Z   ***,
+build	🚀 Build APK (Local)	2026-01-07T18:01:56.3944955Z   "androidNavigationBar": ***
+build	🚀 Build APK (Local)	2026-01-07T18:01:56.3945424Z ***
+build	🚀 Build APK (Local)	2026-01-07T18:01:56.3945918Z [RUN_EXPO_DOCTOR] Running "expo doctor"
+build	🚀 Build APK (Local)	2026-01-07T18:02:01.7202136Z [RUN_EXPO_DOCTOR] Running 17 checks on your project...
+build	🚀 Build APK (Local)	2026-01-07T18:02:26.6765418Z node:internal/process/per_thread:225
+build	🚀 Build APK (Local)	2026-01-07T18:02:26.6766510Z       throw new ErrnoException(err, 'kill');
+build	🚀 Build APK (Local)	2026-01-07T18:02:26.6767326Z             ^
+build	🚀 Build APK (Local)	2026-01-07T18:02:26.6767732Z 
+build	🚀 Build APK (Local)	2026-01-07T18:02:26.6768091Z Error: kill ESRCH
+build	🚀 Build APK (Local)	2026-01-07T18:02:26.6769427Z     at process.kill (node:internal/process/per_thread:225:13)
+build	🚀 Build APK (Local)	2026-01-07T18:02:26.6770586Z     at /home/runner/.npm/_npx/51b74c4db9e60cb6/node_modules/@expo/build-tools/dist/common/setup.js:135:25
+build	🚀 Build APK (Local)	2026-01-07T18:02:26.6771570Z     at Array.forEach (<anonymous>)
+build	🚀 Build APK (Local)	2026-01-07T18:02:26.6773017Z     at Timeout._onTimeout (/home/runner/.npm/_npx/51b74c4db9e60cb6/node_modules/@expo/build-tools/dist/common/setup.js:134:18)
+build	🚀 Build APK (Local)	2026-01-07T18:02:26.6774519Z     at process.processTicksAndRejections (node:internal/process/task_queues:95:5) ***
+build	🚀 Build APK (Local)	2026-01-07T18:02:26.6780589Z   errno: -3,
+build	🚀 Build APK (Local)	2026-01-07T18:02:26.6781047Z   code: 'ESRCH',
+build	🚀 Build APK (Local)	2026-01-07T18:02:26.6781507Z   syscall: 'kill'
+build	🚀 Build APK (Local)	2026-01-07T18:02:26.6781966Z ***
+build	🚀 Build APK (Local)	2026-01-07T18:02:26.6782188Z 
+build	🚀 Build APK (Local)	2026-01-07T18:02:26.6782385Z Node.js v20.19.6
+build	🚀 Build APK (Local)	2026-01-07T18:02:26.9796364Z npx -y eas-cli-local-build-plugin@1.0.243 eyJqb2IiOnsidHlwZSI6ImdlbmVyaWMiLCJwbGF0Zm9ybSI6ImFuZHJvaWQiLCJwcm9qZWN0Um9vdERpcmVjdG9yeSI6Ii4iLCJwcm9qZWN0QXJjaGl2ZSI6eyJ0eXBlIjoiUEFUSCIsInBhdGgiOiIvdG1wL3J1bm5lci9lYXMtY2xpLW5vZGVqcy9jZGIwNjNmYS1hYjM5LTQyMDAtODdkNi04YjAxYjQyNWMwNTIudGFyLmd6In0sImJ1aWxkZXJFbnZpcm9ubWVudCI6eyJlbnYiOnsiRVhQT19QVUJMSUNfQVBQX1ZBUklBTlQiOiJkZXZlbG9wbWVudCJ9fSwiY2FjaGUiOnsiZGlzYWJsZWQiOmZhbHNlLCJwYXRocyI6W10sImNsZWFyIjpmYWxzZX0sInNlY3JldHMiOnsiYnVpbGRDcmVkZW50aWFscyI6eyJrZXlzdG9yZSI6eyJkYXRhQmFzZTY0IjoiL3UzKzdRQUFBQUlBQUFBQkFBQUFBUUFnT0dNNU0yUmpPR0ZqT0RBd1pqQmlNV00xTXpNeVpHSXlNVFkwWldZd01UVUFBQUdXbHR2QWFnQUFCUU13Z2dUL01BNEdDaXNHQVFRQktnSVJBUUVGQUFTQ0JPdG0wY2R5NmlieEVwTHFGVS9OZHZtVkovR3ZWRzdNYUg3bkRZMEtnbzMwekh1YmlUbXI4L0doNmtuSXJqQVNWdnRJYkRIT3ZRZnB1ZmlHSm9NdUU0ZVZyYmhvcGtqRG9oaXFHTVN6dzI0c3hsdXNnRk1uK1JDTWh5N25MRW1valgvTFdVWE9TOGpvRTlUKzF4T0U0M1FKSUZGem5Nalo5N2I3RUpxcGRSSW1iQW8vQUlXcS9lZ2VhNzljN29vRVFQbXhZUTBsZnNSK3dQYUV5YklDc0dFbHQ5RDlLWlNEclp2TEgzM2JxN2tSd1pmKzJnK1ovVFJSNzdMMDZQY1lnV2hkaGF5OTdKRlE3QTMxYnUrQ2FsM1pYelUxWVhxN0lPK2NZR3VIcEFFc3lRVDFXOGQ0bzk0NElBUFFZaXpveTJTRzRZMFJsSTgrbGk1dFovREdLbm1JMk53aTZQVWQ0WFloaTlvSkVlaDFYTUNYcGJhc3BUajRVZHBPWTZEaHdEbWM0WEpTS2ViQlVrYjJFWDdFT1ZZQ0h5M3ZaYUxYdVdtbkxxOFpDWXpjNTJKL0FpQVpyclhraERkaTJRQ001VklhRzB5WmZqS2pPUS9EMklQUmsvTC8wYm91STZORXo2T2FraDkvTGFsdnBrRDRhR3pmOXdsT2F5ZG9vaGRPZWRxeEI2T1l6by9PWGpKUnNHUXB6VVdSY0drb1BMeEVDNEhsRjlrb0Fkc3ZkOUU5R2RWdnZDc2RaM2d1NGVmN1J2RU9aWmxOMkJwSjlsS0w4b2VVVUtyVWQzOFVIZFRHWWF5SkhUT1NJRjY4WjQvU0dmVHZTTUUzVTVMbkl6REJXcDBQeTN2clV1azFmbDc0d3hPeWFEMG1IemRhTDJNTGo3ajR0cWdTTUgxR2ZpcTVYWU40ckhyQktFNGNvQ29GRXQ2MGxYd2V3ZDlybVh1NFMzZEVlaWU5Rm0wVm5mTEwvTTFoLy9JbklodXFzK2hadndnOVY4VFhycnByaXFLVWQyaERlQWF0OHJ3Unk0dnZ1R0wrWjNkMi9vSW52aGJHRnBIc2MwMUg1VnhZMUxCWWhKSi9DS3RDNXpNcFNoYmlFRFZhOHd5aDh3aXVwdUptRDJ1L2hCbzMvMlJKYW5KZUZPNEhiaWRYUWpHcUM4RXlZQmZMYnRTNkVzUk9Vc3VLL2tTU0VMT3BBUTVrUjlZY0d1SUJFK0o3SDFaTjlkaXJtSVpKdGtva09ORUIxYU1yNjFBMHpIOFBMU0NDOUp2NEFUczBvS3I5WVprTzdBZk0xQzhhSVAraWw2cGYyRm5TL3FJS0lkS2Fvd09JL0FRSkd2aFN0RzEweWlselNHV0xkNGpHZUF3VlRLblowL0JlK1EwS3EwRWFYR2FOTXJEaHJ3NzZYdUt1MUd6M0ZUZG01eERaU2FFdUtYSFlPcnVZazdhR0p4U1h0bVRqbXB1M3VLb2g3TEhmODEra0hXY25mVGpZdUplSXQ2TUM1dG5aZ3hxNWNkYmZOYTA3dFN6bkpXZGprWXlsRVdqdTQwN2FGWHRjcERqU3BEK1E5RUVZYmhydXMzazBYejh3N21id2hKV25rZjNtbElCSXh2Y3FUV2ZZSVltc2hmSDRVelVvN3F5OXhFcGdPdExUSjZsNXJjdUVlK1RtNTluMzNLcXIwdHVLb2FsWnY1QmJoaHVIUXVGYmozU3hRa3d2b1RMNVl1ZFhFTFI1a0t4Y1pQazE2K3RTR0paWWVSWTJsRkdCYko2N01SYllkUlJ3ejRNaGJkL2U5SW82eEQ1bHJwK0lSdWdHMldydms4cnVPREhQRUNsd28xdjljWGwwQzUrQ1dzMmZrT3B6Q2ZFa1Y5dEsrYmdhWkVWTzRhSzJZWGpQanlOTHhlT0hkNEYyRUdsUThKRmgxVDBQVlpOSm9zT0xVYncwVGFFNFd5cTF2dmxGWm9UVFUzalBaNU96Y3dtNFRtanN6TVkyNVFFU1dra1BjZVJvWHVWdVJQb0twdFptb0lBTGR1b0RlMjZaZ3BndW51Z3BOTDBNUWczR2FjYjBaaWZyV3NwcnoyanpJTGp0bVRFNGZlMTF6OVAyVmJ4VXNrT0Z2MWFPbnJ0Q0o2Yk9qZlVKTWZTc215Y1FHMklORFVwRGt1WEs4bWlxY0Z2NzY5ZlNxUVAxWHp5aFBNbGlEWGFTaGU1Z29FM2tlVEhjbFV1ZGM3TFMreUJmUTBXdjZBQUFBQUVBQlZndU5UQTVBQUFETVRDQ0F5MHdnZ0lWb0FNQ0FRSUNDRDFWbG5yaktnbG1NQTBHQ1NxR1NJYjNEUUVCQ3dVQU1FUXhDekFKQmdOVkJBWVRBbFZUTVFrd0J3WURWUVFJRXdBeENUQUhCZ05WQkFjVEFERUpNQWNHQTFVRUNoTUFNUWt3QndZRFZRUUxFd0F4Q1RBSEJnTlZCQU1UQURBZ0Z3MHlOVEExTURNeE5UVTFNRFphR0E4eU1EVXlNRGt4T0RFMU5UVXdObG93UkRFTE1Ba0dBMVVFQmhNQ1ZWTXhDVEFIQmdOVkJBZ1RBREVKTUFjR0ExVUVCeE1BTVFrd0J3WURWUVFLRXdBeENUQUhCZ05WQkFzVEFERUpNQWNHQTFVRUF4TUFNSUlCSWpBTkJna3Foa2lHOXcwQkFRRUZBQU9DQVE4QU1JSUJDZ0tDQVFFQXQyZFduSGRPcVEyTjNiYUdkQmk2VmdmSjRXUTVEeUtpQzhra2wvSVNFWjFIZGN6T3NOa0pXOEM4VDZPaEpxcHlDSTJQTkhOdHRwQ0lKQmtlbUhneWVQTDhkcFFxb3BoTi9sdlNrLzArV1daNllRNjUrOTk3cjAwR0JkRWRVWFptUG9NZXNERmpWSGgwZVJlMFBNTldxbk0yZEoxSFhjQVFLYmdCdEVZb1pvNUhuQkMzemh5Vm1nQ1B4Nmk1S1VKaU85QmNCSzExeDZZZGZydkcwR3EvMnZCUHlOd1JodWhwYWhmSzJWRkIyV2NubzNjMzBzSitNNVRNbEM5R1RqdEUrRHVZb3NMTForWjhXQlpRTGtkbVd1WkVIbm9ZbTNpUzhBeUpDQ2gvcURzdmNOdVhmM2dsTThnSUlvRkN4NFhKamc1NVJxMmNvMEgzbVJJNk9BWUord0lEQVFBQm95RXdIekFkQmdOVkhRNEVGZ1FVbzducUowVFlXbUUyNklZQkVud1cyQXBPdlI0d0RRWUpLb1pJaHZjTkFRRUxCUUFEZ2dFQkFIeXozQ0xna1VsdzRaQXQwVWgrSk1zb0I5WThSSm9IQ1JPWFVKaDFYbW9ROWFybVg1STNSR1BIM3lkTGlTQlk5UjVabUlENmgvL3RYK0lSWjlPN1ZheDBpcUI5UGpWRnpWc3VlQnZ0NUQ1VHRUcTBaRGVEZlp4QXp0V2tkSDlleElIR2psbllxaXVDTFRYQnhxUGpBQTI4cyswby9PbEJaZ0dZejdUQ29XdEoyRVBiMWdKUGdKUVRWK2tjS0lDVUhXQTB0OTZVZlhWV214aHQrRWFadlVHUW0yNUpXdGRiOGFCdWYyZHdHejEwb2FYdy90OVlsNWNSckNGWTNLTEkrV2tYNWdIQ3Z5OVhaOXRlWXA2Nm9yVCtOVlY1djl5dVluV2NoTUYzTWJLRy9HYndvd0VtUUtuUUQvL29nK3RmRCtZak11VUYzbXZ2NitiUDFLTjhBbjUxZUxXQlpiLzQzVjBoSXYreUpkdUEvUVdNN0E9PSIsImtleXN0b3JlUGFzc3dvcmQiOiI0ODMyNDQ0N2Y5ZGZkMzgxMjM5NzExYzBkYzAzZTZkOSIsImtleUFsaWFzIjoiOGM5M2RjOGFjODAwZjBiMWM1MzMyZGIyMTY0ZWYwMTUiLCJrZXlQYXNzd29yZCI6ImEzODk3N2Y5MmI1ODE4ZWIyYWFlODliZWJkYmJmOGJiIn19fSwidXBkYXRlcyI6e30sImRldmVsb3BtZW50Q2xpZW50Ijp0cnVlLCJncmFkbGVDb21tYW5kIjoiOmFwcDphc3NlbWJsZURlYnVnIiwiYnVpbGRUeXBlIjoiYXBrIiwidXNlcm5hbWUiOiJwaWVycmV0dWxsZSIsImV4cGVyaW1lbnRhbCI6e30sIm1vZGUiOiJidWlsZCIsInRyaWdnZXJlZEJ5IjoiRUFTX0NMSSIsImFwcElkIjoiM2NiZGE1N2MtMWVjMS00OTQ5LWFmMDYtOWU5MzNkYmMwMDUwIiwiaW5pdGlhdGluZ1VzZXJJZCI6ImUyZjEyMTFiLTI4YWYtNDlmMy1iMGUwLTA3ZDZkZTEzZDc1YSJ9LCJtZXRhZGF0YSI6eyJ0cmFja2luZ0NvbnRleHQiOnsidHJhY2tpbmdfaWQiOiI1OWIwMWQ3Mi00NzhmLTRmN2UtYjRjOC00M2NhODU0NDUwZDMiLCJwbGF0Zm9ybSI6ImFuZHJvaWQiLCJzZGtfdmVyc2lvbiI6IjUyLjAuMCIsImFjY291bnRfaWQiOiI2YjI3M2MwMy00YmQ0LTQ3M2ItODg2Yy0zZTg5OTJhZTE2NDEiLCJwcm9qZWN0X2lkIjoiM2NiZGE1N2MtMWVjMS00OTQ5LWFmMDYtOWU5MzNkYmMwMDUwIiwicHJvamVjdF90eXBlIjoiZ2VuZXJpYyIsImRldl9jbGllbnQiOnRydWUsImRldl9jbGllbnRfdmVyc2lvbiI6IjUuMC4yMCIsIm5vX3dhaXQiOmZhbHNlLCJydW5fZnJvbV9jaSI6dHJ1ZSwibG9jYWwiOnRydWV9LCJhcHBWZXJzaW9uIjoiMS42LjUiLCJhcHBCdWlsZFZlcnNpb24iOiIxMDEyMiIsImNsaVZlcnNpb24iOiIxNi4yOC4wIiwid29ya2Zsb3ciOiJnZW5lcmljIiwiY3JlZGVudGlhbHNTb3VyY2UiOiJyZW1vdGUiLCJzZGtWZXJzaW9uIjoiNTIuMC4wIiwicnVudGltZVZlcnNpb24iOiIxLjYuNSIsInJlYWN0TmF0aXZlVmVyc2lvbiI6IjAuNzYuOSIsImRpc3RyaWJ1dGlvbiI6ImludGVybmFsIiwiYXBwTmFtZSI6IlRpbWFsYXVzIERFViIsImFwcElkZW50aWZpZXIiOiJjb20ucGllcnJldHVsbGUuanVubzIiLCJidWlsZFByb2ZpbGUiOiJkZXZlbG9wbWVudCIsImdpdENvbW1pdEhhc2giOiJlMTUxYmRlZWVhM2M5MDZlNDc2YThjOTNkNmRiNjc1ODRmMDQ5MzU2IiwiZ2l0Q29tbWl0TWVzc2FnZSI6ImNob3JlOiBhZGQgZml4X3JscyIsImlzR2l0V29ya2luZ1RyZWVEaXJ0eSI6dHJ1ZSwidXNlcm5hbWUiOiJwaWVycmV0dWxsZSIsInJ1bldpdGhOb1dhaXRGbGFnIjpmYWxzZSwicnVuRnJvbUNJIjp0cnVlLCJkZXZlbG9wbWVudENsaWVudCI6dHJ1ZSwicmVxdWlyZWRQYWNrYWdlTWFuYWdlciI6InBucG0iLCJzaW11bGF0b3IiOmZhbHNlfX0= exited with non-zero code: 1
+build	🚀 Build APK (Local)	2026-01-07T18:02:27.0474412Z     Error: build command failed.
+build	🚀 Build APK (Local)	2026-01-07T18:02:27.0478224Z ##[error]Process completed with exit code 1.
+build	Post 🏗 Setup Java	﻿2026-01-07T18:02:27.0552726Z Post job cleanup.
+build	Post 🏗 Setup PNPM	﻿2026-01-07T18:02:27.2761822Z Post job cleanup.
+build	Post 🏗 Setup PNPM	2026-01-07T18:02:27.4036722Z Pruning is unnecessary.
+build	Post 🏗 Checkout repository	﻿2026-01-07T18:02:27.4174666Z Post job cleanup.
+build	Post 🏗 Checkout repository	2026-01-07T18:02:27.5431154Z [command]/usr/bin/git version
+build	Post 🏗 Checkout repository	2026-01-07T18:02:27.5496664Z git version 2.52.0
+build	Post 🏗 Checkout repository	2026-01-07T18:02:27.5573200Z Temporarily overriding HOME='/home/runner/work/_temp/91b9d900-1527-46a4-968b-c6cd4c7a35f2' before making global git config changes
+build	Post 🏗 Checkout repository	2026-01-07T18:02:27.5574826Z Adding repository directory to the temporary git global config as a safe directory
+build	Post 🏗 Checkout repository	2026-01-07T18:02:27.5577585Z [command]/usr/bin/git config --global --add safe.directory /home/runner/work/kiko/kiko
+build	Post 🏗 Checkout repository	2026-01-07T18:02:27.5644009Z [command]/usr/bin/git config --local --name-only --get-regexp core\.sshCommand
+build	Post 🏗 Checkout repository	2026-01-07T18:02:27.5688743Z [command]/usr/bin/git submodule foreach --recursive sh -c "git config --local --name-only --get-regexp 'core\.sshCommand' && git config --local --unset-all 'core.sshCommand' || :"
+build	Post 🏗 Checkout repository	2026-01-07T18:02:27.6023687Z [command]/usr/bin/git config --local --name-only --get-regexp http\.https\:\/\/github\.com\/\.extraheader
+build	Post 🏗 Checkout repository	2026-01-07T18:02:27.6091065Z http.https://github.com/.extraheader
+build	Post 🏗 Checkout repository	2026-01-07T18:02:27.6093046Z [command]/usr/bin/git config --local --unset-all http.https://github.com/.extraheader
+build	Post 🏗 Checkout repository	2026-01-07T18:02:27.6163724Z [command]/usr/bin/git submodule foreach --recursive sh -c "git config --local --name-only --get-regexp 'http\.https\:\/\/github\.com\/\.extraheader' && git config --local --unset-all 'http.https://github.com/.extraheader' || :"
+build	Post 🏗 Checkout repository	2026-01-07T18:02:27.6500362Z [command]/usr/bin/git config --local --name-only --get-regexp ^includeIf\.gitdir:
+build	Post 🏗 Checkout repository	2026-01-07T18:02:27.6545346Z [command]/usr/bin/git submodule foreach --recursive git config --local --show-origin --name-only --get-regexp remote.origin.url
+build	Complete job	﻿2026-01-07T18:02:27.6900809Z Cleaning up orphan processes
+build	Complete job	2026-01-07T18:02:27.7221035Z Terminate orphan process: pid (3063) (npm explain eas-cli)

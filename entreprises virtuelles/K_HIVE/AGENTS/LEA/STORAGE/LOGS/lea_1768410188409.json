@@ -1,0 +1,7 @@
+{"timestamp":"2026-01-14T17:03:08.409Z","agent":"LEA","action":"INITIALIZATION","status":"OK","detail":"Agent LEA en service (Compliance & Audit)","reason":""}
+{"timestamp":"2026-01-14T17:03:08.413Z","agent":"LEA","action":"SCAN","status":"OK","detail":"2 productions à auditer","reason":""}
+{"timestamp":"2026-01-14T17:03:08.413Z","agent":"LEA","action":"AUDIT","status":"PROCESS","detail":"Examen de tiktok_session_1768409018866_5868_tour2_Bataille_des_Champs_Catalauniq.mp4","reason":""}
+{"timestamp":"2026-01-14T17:03:08.414Z","agent":"LEA","action":"REJECTION","status":"WARNING","detail":"Vidéo rejetée (Score: 6/10)","reason":"Qualité insuffisante"}
+{"timestamp":"2026-01-14T17:03:08.414Z","agent":"LEA","action":"AUDIT","status":"PROCESS","detail":"Examen de tiktok_session_1768409018866_5868_tour3_Inauguration_du_Tunnel_sous_la.mp4","reason":""}
+{"timestamp":"2026-01-14T17:03:08.414Z","agent":"LEA","action":"REJECTION","status":"WARNING","detail":"Vidéo rejetée (Score: 6/10)","reason":"Qualité insuffisante"}
+{"timestamp":"2026-01-14T17:03:08.414Z","agent":"LEA","action":"FINALIZATION","status":"OK","detail":"Audit de session terminé","reason":""}

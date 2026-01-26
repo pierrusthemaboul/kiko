@@ -1,0 +1,87 @@
+# Learn more https://docs.github.com/en/get-started/getting-started-with-git/ignoring-files
+
+# dependencies
+node_modules/
+yarn-error.log
+npm-debug.log*
+yarn-debug.log*
+
+# Expo
+.expo/
+dist/
+web-build/
+expo-env.d.ts
+
+# Metro
+.metro-health-check*
+
+# Build & Cache artifacts
+*.js.map
+*.tsbuildinfo
+# Add any other specific build outputs if needed
+
+# Native - Sensitive Credentials & Build Files
+# IMPORTANT: Keystores, keys, provisioning profiles are handled by EAS Credentials. DO NOT commit these.
+*.jks
+*.p8
+*.p12
+*.key
+*.mobileprovision
+*.pem
+# Android build outputs (usually large and regenerated)
+android/app/build/
+android/.gradle/
+# iOS build outputs (usually large and regenerated)
+ios/build/
+ios/Pods/ # Usually large and managed by pod install
+# APK files (build outputs, can be large)
+*.apk
+*.aab
+
+# Backup & Temp files
+*.orig
+
+# macOS
+.DS_Store
+
+# Local environment variables (Contains secrets!)
+.env*
+*.env
+.env*.local
+# If you have specific non-local .env files you NEED to commit (e.g., .env.example),
+# use negation patterns like:
+# !.env.example
+
+# Firebase / Google Services
+# NOTE: google-services.json (Android) and GoogleService-Info.plist (iOS)
+# are REQUIRED by EAS build if using Firebase. They should NOT be ignored.
+# android/app/google-services.json # <-- Ensure this is NOT ignored if file is here
+# ios/[YourApp]/GoogleService-Info.plist # <-- Ensure this is NOT ignored if file is here
+# google-services.json # <-- Ensure this is NOT ignored if file is at the root
+
+# Google Play Console API credentials (SENSITIVE - DO NOT COMMIT)
+kiko-chrono-*.json
+credentials.json
+tiktok-credentials.json
+
+# Local fix scripts
+fix_rls.ts
+
+# Twitter API credentials (SENSITIVE - DO NOT COMMIT)
+twitter-credentials.json
+
+# Discord webhook (SENSITIVE - DO NOT COMMIT)
+discord-webhook.json
+
+# IDE configuration files
+.idea/
+*.iml
+.vscode/ # If using VS Code
+
+# Log files
+*.log
+
+# Example dir/file (if applicable)
+# app-example
+# Local Netlify folder
+.netlify

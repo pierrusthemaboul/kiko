@@ -1,0 +1,39 @@
+{
+  "session_id": "session_1768411650184_469",
+  "selection_date": "2026-01-14T23:08:43.620Z",
+  "selection_method": "TOP_N_FALLBACK",
+  "total_clips_analyzed": 2,
+  "clips_selected": 2,
+  "clips": [
+    {
+      "original_filename": "session_1768411650184_469_tour2_Mort_de_Pablo_Picasso.mp4",
+      "readable_filename": "clip_mort_pablo_picasso_1973.mp4",
+      "tour": 2,
+      "duration": 25,
+      "evenement": {
+        "titre": "Mort de Pablo Picasso",
+        "date": "1973-01-01",
+        "notoriete": 84,
+        "description": "Pablo Picasso, figure dominante de l'art du 20ème siècle, décède le 8 avril 1973 à Mougins, France, à l'âge de 91 ans. Sa mort marque la fin d'une époque et laisse un vide immense dans le monde de l'art, alors que sa seconde épouse, Jacqueline Roque, et ses enfants sont confrontés aux complexités de son héritage."
+      },
+      "choix": "avant",
+      "hook": "1973. Tu situes cette date ?",
+      "is_vip": false
+    },
+    {
+      "original_filename": "session_1768411650184_469_tour1_Abolition_des_Corn_Laws_en_Ang.mp4",
+      "readable_filename": "clip_abolition_corn_laws_1846.mp4",
+      "tour": 1,
+      "duration": 33.04,
+      "evenement": {
+        "titre": "Abolition des Corn Laws en Angleterre",
+        "date": "1846-06-01",
+        "notoriete": 75,
+        "description": "Le 1er juin 1846, l'abolition des Corn Laws en Angleterre marque le triomphe du libre-échange et transforme profondément l'économie britannique."
+      },
+      "choix": "après",
+      "hook": "1846. Évident ou piège ?",
+      "is_vip": false
+    }
+  ]
+}

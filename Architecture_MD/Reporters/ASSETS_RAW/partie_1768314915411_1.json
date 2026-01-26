@@ -1,0 +1,276 @@
+{
+  "mode": "Classique",
+  "type": "gagnante",
+  "evenements": [
+    {
+      "id": "a6eea4bf-5664-487c-ac41-4509303c1cbc",
+      "date": "1905-12-09",
+      "titre": "Loi de séparation des Églises et de l'État",
+      "illustration_url": "https://ppxmtnuewcixbbmhnzzc.supabase.co/storage/v1/object/public/evenements-image/separtion%20eglis%20etat.webp",
+      "universel": false,
+      "region": "France",
+      "langue": "français",
+      "ecart_temps_max": 18,
+      "facteur_variation": 1.04,
+      "created_at": "2024-10-11T08:21:58.672551+00:00",
+      "updated_at": "2025-09-07T09:51:20.600901+00:00",
+      "niveau_difficulte": 2,
+      "types_evenement": [
+        "Politique",
+        "Religieux"
+      ],
+      "pays": [
+        "France"
+      ],
+      "epoque": "Époque contemporaine",
+      "mots_cles": [
+        "Autre"
+      ],
+      "date_formatee": "09 décembre 1905",
+      "code": "19051209",
+      "date_precision": "DAY",
+      "ecart_temps_min": 6,
+      "frequency_score": 0,
+      "last_used": "2025-04-02T21:40:11.762+00:00",
+      "description_detaillee": "Le 9 décembre 1905, la loi de séparation des Églises et de l'État est adoptée, établissant la laïcité en France et modifiant profondément les relations entre religion et État.",
+      "donnee_corrigee": false,
+      "notoriete": 94,
+      "notoriete_prev": 95,
+      "notoriete_source": null,
+      "notoriete_updated_at": "2025-09-07T07:30:30.358117+00:00",
+      "notoriete_fr": null
+    },
+    {
+      "id": "6e2c5fa8-2e02-46c7-9f29-f6cd987a853f",
+      "date": "1942-11-11",
+      "titre": "Occupation de la zone libre par les Allemands",
+      "illustration_url": "https://ppxmtnuewcixbbmhnzzc.supabase.co/storage/v1/object/public/evenements-image/a_historical_depiction_of_rural_11d827b5.webp",
+      "universel": false,
+      "region": "Monde",
+      "langue": "français",
+      "ecart_temps_max": 12,
+      "facteur_variation": 1.05,
+      "created_at": "2024-10-18T15:31:27.453+00:00",
+      "updated_at": "2025-09-07T09:52:08.712203+00:00",
+      "niveau_difficulte": 4,
+      "types_evenement": [
+        "Historique",
+        null
+      ],
+      "pays": [
+        "France"
+      ],
+      "epoque": "Époque contemporaine",
+      "mots_cles": [
+        "Autre"
+      ],
+      "date_formatee": "11 November  1942",
+      "code": "19421111",
+      "date_precision": "DAY",
+      "ecart_temps_min": 4,
+      "frequency_score": 0,
+      "last_used": "2025-03-17T21:43:36.626+00:00",
+      "description_detaillee": "Le 11 novembre 1942, les troupes allemandes envahissent la zone libre de la France, mettant fin à la division du pays en deux zones.",
+      "donnee_corrigee": false,
+      "notoriete": 63,
+      "notoriete_prev": 85,
+      "notoriete_source": null,
+      "notoriete_updated_at": "2025-09-07T07:30:30.358117+00:00",
+      "notoriete_fr": null
+    },
+    {
+      "id": "93162364-33ed-4cf4-ad55-49ed365c9876",
+      "date": "1429-05-08",
+      "titre": "Victoire de Jeanne d'Arc au siège d'Orléans",
+      "illustration_url": "https://ppxmtnuewcixbbmhnzzc.supabase.co/storage/v1/object/public/evenements-image/victoire_de_jeanne_d_arc_au_si_ge_d_orl_ans_222c4697.webp",
+      "universel": false,
+      "region": "France",
+      "langue": "fr",
+      "ecart_temps_max": 250,
+      "facteur_variation": 1.4,
+      "created_at": "2025-06-17T16:25:27.331934+00:00",
+      "updated_at": "2025-09-07T09:20:19.362864+00:00",
+      "niveau_difficulte": 6,
+      "types_evenement": [
+        "Militaire",
+        "Religieux"
+      ],
+      "pays": [
+        "France"
+      ],
+      "epoque": "Moyen Âge",
+      "mots_cles": [
+        "Jeanne d'Arc",
+        "Guerre de Cent Ans",
+        "Orléans",
+        "Siège",
+        "Charles VII"
+      ],
+      "date_formatee": "8 mai 1429",
+      "code": "jeanne-orleans-1429",
+      "date_precision": "DAY",
+      "ecart_temps_min": 50,
+      "frequency_score": 0,
+      "last_used": null,
+      "description_detaillee": "L'arrivée de Jeanne d'Arc galvanise les troupes françaises qui parviennent à lever le siège d'Orléans, tenu par les Anglais. Cette victoire constitue le premier succès militaire majeur de Jeanne et un tournant décisif dans la Guerre de Cent Ans.",
+      "donnee_corrigee": false,
+      "notoriete": 93,
+      "notoriete_prev": 95,
+      "notoriete_source": null,
+      "notoriete_updated_at": "2025-09-07T07:30:30.358117+00:00",
+      "notoriete_fr": null
+    },
+    {
+      "id": "00e6a08e-ae85-475b-b32b-1b30746190d8",
+      "date": "1804-05-18",
+      "titre": "Proclamation du Premier Empire",
+      "illustration_url": "https://ppxmtnuewcixbbmhnzzc.supabase.co/storage/v1/object/public/evenements-image/napoleon_bonaparte_standing_tall_on_the_balcony_of_the_tuileries_palace_addressing_a_m_dd8da9b0.webp",
+      "universel": false,
+      "region": "France",
+      "langue": "français",
+      "ecart_temps_max": 33,
+      "facteur_variation": 1.05,
+      "created_at": "2024-10-12T12:10:56.2561+00:00",
+      "updated_at": "2025-09-07T09:30:34.343976+00:00",
+      "niveau_difficulte": 2,
+      "types_evenement": [
+        "Politique",
+        "Militaire"
+      ],
+      "pays": [
+        "France"
+      ],
+      "epoque": "Époque contemporaine",
+      "mots_cles": [
+        "Autre"
+      ],
+      "date_formatee": "18 mai 1804",
+      "code": "18040518",
+      "date_precision": "DAY",
+      "ecart_temps_min": 11,
+      "frequency_score": 0,
+      "last_used": "2025-04-02T20:48:25.75+00:00",
+      "description_detaillee": "Le 18 mai 1804, Napoléon Bonaparte est proclamé Empereur des Français sous le nom de Napoléon Ier. Cette transformation du Consulat en Empire marque le début d'une nouvelle ère dans l'histoire de France et de l'Europe.",
+      "donnee_corrigee": false,
+      "notoriete": 93,
+      "notoriete_prev": 100,
+      "notoriete_source": null,
+      "notoriete_updated_at": "2025-09-07T07:30:30.358117+00:00",
+      "notoriete_fr": null
+    },
+    {
+      "id": "9e4ff49d-ae7d-4e9c-919d-92c21715cfe4",
+      "date": "1951-01-01",
+      "titre": "13 - 17 janvier , Indochine",
+      "illustration_url": "https://ppxmtnuewcixbbmhnzzc.supabase.co/storage/v1/object/public/evenements-image/claude_13___17_janvier___indochine_1759005837346.webp",
+      "universel": true,
+      "region": "Indochine",
+      "langue": "fr",
+      "ecart_temps_max": 300,
+      "facteur_variation": 1.5,
+      "created_at": "2025-11-01T15:08:29.39074+00:00",
+      "updated_at": "2025-11-01T15:08:29.39074+00:00",
+      "niveau_difficulte": 6,
+      "types_evenement": [
+        "militaire"
+      ],
+      "pays": [
+        "Indochine"
+      ],
+      "epoque": "XXe",
+      "mots_cles": [
+        "janvier",
+        "indochine"
+      ],
+      "date_formatee": "1951",
+      "code": "cld837551",
+      "date_precision": "year",
+      "ecart_temps_min": 50,
+      "frequency_score": 0,
+      "last_used": null,
+      "description_detaillee": "Du 13 au 17 janvier 1951, l'Indochine française est le théâtre de la bataille de Vĩnh Yên, une confrontation majeure entre les forces de l'Union française, commandées par le général Jean de Lattre de Tassigny, et les forces du Việt Minh, dirigées par Võ Nguyên Giáp. Cette bataille marque un tournant dans la guerre d'Indochine, démontrant la capacité de l'armée française à contrer les tactiques Việt Minh.",
+      "donnee_corrigee": false,
+      "notoriete": 13,
+      "notoriete_prev": null,
+      "notoriete_source": null,
+      "notoriete_updated_at": "2025-11-01T15:08:29.39074+00:00",
+      "notoriete_fr": null
+    },
+    {
+      "id": "7163e821-3f10-4a27-9265-b4f3e40c3abf",
+      "date": "1913-01-01",
+      "titre": "Loi française sur les monuments historiques",
+      "illustration_url": "https://ppxmtnuewcixbbmhnzzc.supabase.co/storage/v1/object/public/evenements-image/claude_loi_fran_aise_sur_les_monument_1758547607950.webp",
+      "universel": true,
+      "region": "Assemblée nationale, Paris",
+      "langue": "fr",
+      "ecart_temps_max": 300,
+      "facteur_variation": 1.5,
+      "created_at": "2025-09-22T13:28:33.409415+00:00",
+      "updated_at": "2025-09-22T13:28:33.409415+00:00",
+      "niveau_difficulte": 6,
+      "types_evenement": [
+        "justice"
+      ],
+      "pays": [
+        "Assemblée nationale, Paris"
+      ],
+      "epoque": "Contemporaine",
+      "mots_cles": [
+        "franaise",
+        "monuments",
+        "historiques"
+      ],
+      "date_formatee": "1913",
+      "code": "cld608150",
+      "date_precision": "year",
+      "ecart_temps_min": 50,
+      "frequency_score": 0,
+      "last_used": null,
+      "description_detaillee": "La loi de 1913 sur les monuments historiques, fruit d'une prise de conscience progressive de la valeur du patrimoine français, est votée à l'Assemblée nationale après des décennies de débats et d'efforts de personnalités comme Prosper Mérimée et Eugène Viollet-le-Duc, qui ont sensibilisé à la nécessité de protéger les édifices menacés par l'urbanisation et l'industrialisation. Elle marque une étape cruciale dans la protection du patrimoine en France, en définissant les critères de classement et les procédures de protection.",
+      "donnee_corrigee": false,
+      "notoriete": 62,
+      "notoriete_prev": null,
+      "notoriete_source": null,
+      "notoriete_updated_at": "2025-09-22T13:28:33.409415+00:00",
+      "notoriete_fr": null
+    }
+  ],
+  "choix": [
+    {
+      "tour": 1,
+      "annee": "1942-11-11",
+      "choix": "APRES",
+      "correct": true
+    },
+    {
+      "tour": 2,
+      "annee": "1429-05-08",
+      "choix": "AVANT",
+      "correct": true
+    },
+    {
+      "tour": 3,
+      "annee": "1804-05-18",
+      "choix": "APRES",
+      "correct": true
+    },
+    {
+      "tour": 4,
+      "annee": "1951-01-01",
+      "choix": "APRES",
+      "correct": true
+    },
+    {
+      "tour": 5,
+      "annee": "1913-01-01",
+      "choix": "AVANT",
+      "correct": true
+    }
+  ],
+  "score": 6308,
+  "erreurs": 0,
+  "dureeSecondes": 42,
+  "resultat": "victoire",
+  "timestamp": "2026-01-13T14:35:15.409Z"
+}

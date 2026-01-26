@@ -1,0 +1,6 @@
+{"timestamp":"2026-01-14T17:12:15.179Z","agent":"CHLOE","action":"INITIALIZATION","status":"OK","detail":"Agent CHLOE prête","reason":""}
+{"timestamp":"2026-01-14T17:12:15.183Z","agent":"CHLOE","action":"Ffmpeg_COMPOSITE","status":"PROCESS","detail":"Formatage 9:16 pour session_1768410088639_2577_tour1_Mort_de_Louis_XIV.mp4","reason":""}
+{"timestamp":"2026-01-14T17:12:27.223Z","agent":"CHLOE","action":"EXPORT","status":"SUCCESS","detail":"Vidéo produite: tiktok_session_1768410088639_2577_tour1_Mort_de_Louis_XIV.mp4","reason":""}
+{"timestamp":"2026-01-14T17:12:27.223Z","agent":"CHLOE","action":"CLIP_INVALID","status":"WARNING","detail":"Clip inexistant ou trop petit: session_1768410088639_2577_tour2_Premi_re_greffe_cardiaque.mp4","reason":""}
+{"timestamp":"2026-01-14T17:12:27.224Z","agent":"CHLOE","action":"CLIP_INVALID","status":"WARNING","detail":"Clip inexistant ou trop petit: session_1768410088639_2577_tour3_Premier_Tour_de_France_cyclist.mp4","reason":""}
+{"timestamp":"2026-01-14T17:12:27.224Z","agent":"CHLOE","action":"FINALIZATION","status":"OK","detail":"Session terminée","reason":""}

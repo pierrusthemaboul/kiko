@@ -1,0 +1,54 @@
+{
+  "session_id": "session_1768411650184_469",
+  "mode": "Classique",
+  "start_time": 1768411650184,
+  "user_name": "Joueur",
+  "initial_level": 1,
+  "score_initial": 0,
+  "vies_initiales": 3,
+  "events_timeline": [
+    {
+      "tour": 1,
+      "event_id": "8511372f-fe42-4ddb-96e4-3bae07df32fc",
+      "event_titre": "Abolition des Corn Laws en Angleterre",
+      "event_date": "1846-06-01",
+      "event_description": "Le 1er juin 1846, l'abolition des Corn Laws en Angleterre marque le triomphe du libre-échange et transforme profondément l'économie britannique.",
+      "event_types": [
+        "Historique"
+      ],
+      "event_notoriete": 75,
+      "timecode_apparition": 10.51,
+      "timecode_choix": 23.55,
+      "duree_reflexion": 13.04,
+      "choix": "après",
+      "correct": false
+    },
+    {
+      "tour": 2,
+      "event_id": "78434f4b-ab26-4419-954e-48d4b86f37dd",
+      "event_titre": "Mort de Pablo Picasso",
+      "event_date": "1973-01-01",
+      "event_description": "Pablo Picasso, figure dominante de l'art du 20ème siècle, décède le 8 avril 1973 à Mougins, France, à l'âge de 91 ans. Sa mort marque la fin d'une époque et laisse un vide immense dans le monde de l'art, alors que sa seconde épouse, Jacqueline Roque, et ses enfants sont confrontés aux complexités de son héritage.",
+      "event_types": [
+        "culture"
+      ],
+      "event_notoriete": 84,
+      "timecode_apparition": 25.42,
+      "timecode_choix": 27.68,
+      "duree_reflexion": 2.26,
+      "choix": "avant",
+      "correct": false
+    }
+  ],
+  "total_events": 2,
+  "total_correct": 0,
+  "total_incorrect": 2,
+  "end_time": 1768411678473,
+  "duration_seconds": 28,
+  "resultat": "victoire",
+  "final_level": 1,
+  "score_final": 0,
+  "vies_finales": 1,
+  "accuracy_percent": 0,
+  "average_response_time": 7.65
+}

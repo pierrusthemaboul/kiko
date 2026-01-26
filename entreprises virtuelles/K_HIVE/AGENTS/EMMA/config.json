@@ -1,0 +1,25 @@
+{
+    "agent_name": "EMMA",
+    "role": "TikTok Publisher",
+    "version": "1.0.0",
+    "storage": {
+        "input": "../CHLOE/STORAGE/OUTPUT",
+        "output": "./STORAGE/OUTPUT",
+        "logs": "./STORAGE/LOGS",
+        "pret_a_publier": "../../../PRET_A_PUBLIER/TIKTOK",
+        "published": "../../../PUBLISHED/TIKTOK"
+    },
+    "tiktok": {
+        "session_file": "./tiktok_session.json",
+        "default_hashtags": [
+            "timalaus",
+            "histoire",
+            "quiz",
+            "culture",
+            "avantouapres"
+        ],
+        "max_posts_per_run": 3,
+        "delay_between_posts_ms": 30000
+    },
+    "caption_template": "{hook}\n\n🎮 Télécharge Timalaus!\n\n{hashtags}"
+}

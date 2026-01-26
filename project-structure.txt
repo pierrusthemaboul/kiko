@@ -1,0 +1,166 @@
+.
+├── all_in_one.txt
+├── app
+│   ├── auth
+│   │   ├── _layout.tsx
+│   │   ├── login.tsx
+│   │   └── signup.tsx
+│   ├── game
+│   │   └── page.tsx
+│   ├── _layout.tsx
+│   ├── +not-found.tsx
+│   └── (tabs)
+│       ├── explore.tsx
+│       ├── index.tsx
+│       ├── _layout.tsx
+│       ├── vue1.tsx
+│       ├── vue2a.tsx
+│       ├── vue2b.tsx
+│       ├── vue3.tsx
+│       ├── vue4.tsx
+│       ├── vue5.tsx
+│       └── vue6.tsx
+├── app.json
+├── assets
+│   ├── fonts
+│   │   ├── Montserrat-Bold.ttf
+│   │   ├── Montserrat-Medium.ttf
+│   │   ├── Montserrat-Regular.ttf
+│   │   └── SpaceMono-Regular.ttf
+│   ├── images
+│   │   ├── adaptive-icon.png
+│   │   ├── bgvue2.webp
+│   │   ├── favicon.png
+│   │   ├── icon.png
+│   │   ├── partial-react-logo.png
+│   │   ├── react-logo@2x.png
+│   │   ├── react-logo@3x.png
+│   │   ├── react-logo.png
+│   │   └── splash-icon.png
+│   └── sounds
+│       ├── 242208__wagna__failfare.mp3
+│       ├── 361254__japanyoshithegamer__8-bit-countdown-ready.wav
+│       ├── 423455__ohforheavensake__trumpet-brass-fanfare.wav
+│       └── corectok.wav
+├── babel.config.js
+├── components
+│   ├── Collapsible.tsx
+│   ├── ExternalLink.tsx
+│   ├── game
+│   │   ├── AnimatedEventCardA.tsx
+│   │   ├── Countdown.tsx
+│   │   ├── EventLayoutA.tsx
+│   │   ├── GameContentA.tsx
+│   │   ├── OverlayChoiceButtonsA.tsx
+│   │   └── UserInfo.tsx
+│   ├── HapticTab.tsx
+│   ├── HelloWave.tsx
+│   ├── modals
+│   │   ├── LevelUpModalBis.tsx
+│   │   └── ScoreboardModal.tsx
+│   ├── ParallaxScrollView.tsx
+│   ├── __tests__
+│   │   ├── __snapshots__
+│   │   │   └── ThemedText-test.tsx.snap
+│   │   └── ThemedText-test.tsx
+│   ├── ThemedText.tsx
+│   ├── ThemedView.tsx
+│   └── ui
+│       ├── IconSymbol.ios.tsx
+│       ├── IconSymbol.tsx
+│       ├── TabBarBackground.ios.tsx
+│       └── TabBarBackground.tsx
+├── constants
+│   ├── colors.ts
+│   └── Colors.ts
+├── eas.json
+├── expo-env.d.ts
+├── hooks
+│   ├── levelConfigs.ts
+│   ├── types
+│   │   └── index.ts
+│   ├── useAdminStatus.ts
+│   ├── useAudio.ts
+│   ├── useColorScheme.ts
+│   ├── useColorScheme.web.ts
+│   ├── useFonts.ts
+│   ├── useGameLogicA.ts
+│   ├── useRewards.ts
+│   └── useThemeColor.ts
+├── kiko-files
+│   ├── all-in-one-1.txt
+│   ├── app
+│   │   ├── auth
+│   │   │   ├── _layout.tsx
+│   │   │   ├── login.tsx
+│   │   │   └── signup.tsx
+│   │   ├── game
+│   │   │   └── page.tsx
+│   │   ├── _layout.tsx
+│   │   ├── +not-found.tsx
+│   │   └── (tabs)
+│   │       ├── explore.tsx
+│   │       ├── index.tsx
+│   │       ├── _layout.tsx
+│   │       ├── vue1.tsx
+│   │       ├── vue2a.tsx
+│   │       ├── vue2b.tsx
+│   │       ├── vue3.tsx
+│   │       ├── vue4.tsx
+│   │       ├── vue5.tsx
+│   │       └── vue6.tsx
+│   ├── app-components-list.txt
+│   ├── app.json
+│   ├── babel.config.js
+│   ├── components
+│   │   ├── game
+│   │   │   ├── AnimatedEventCardA.tsx
+│   │   │   ├── Countdown.tsx
+│   │   │   ├── EventLayoutA.tsx
+│   │   │   ├── GameContentA.tsx
+│   │   │   ├── OverlayChoiceButtonsA.tsx
+│   │   │   └── UserInfo.tsx
+│   │   └── ui
+│   │       ├── IconSymbol.ios.tsx
+│   │       ├── IconSymbol.tsx
+│   │       ├── linear-gradient.tsx
+│   │       ├── TabBarBackground.ios.tsx
+│   │       └── TabBarBackground.tsx
+│   ├── constants
+│   │   ├── colors.ts
+│   │   ├── Colors.ts
+│   │   └── theme.ts
+│   ├── game-components-list.txt
+│   ├── hooks
+│   │   ├── levelConfigs.ts
+│   │   ├── types
+│   │   │   └── index.ts
+│   │   ├── useAudio.ts
+│   │   ├── useGameLogicA.ts
+│   │   └── useRewards.ts
+│   ├── package.json
+│   ├── styles
+│   ├── tsconfig.json
+│   └── ui-components-list.txt
+├── lib
+│   └── supabase
+│       ├── database.types.ts
+│       └── supabaseClients.ts
+├── package.json
+├── package-lock.json
+├── patches
+│   └── expo-modules-core+2.2.0.patch
+├── project-structure.txt
+├── README.md
+├── scripts
+│   └── reset-project.js
+├── tsconfig.json
+├── vue1.tsx
+├── vue2a.tsx
+├── vue2b.tsx
+├── vue3.tsx
+├── vue4.tsx
+├── vue5.tsx
+└── vue6.tsx
+
+34 directories, 130 files

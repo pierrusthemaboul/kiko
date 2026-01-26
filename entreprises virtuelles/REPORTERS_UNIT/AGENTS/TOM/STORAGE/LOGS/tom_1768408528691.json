@@ -1,0 +1,4 @@
+{"timestamp":"2026-01-14T16:35:28.691Z","agent":"TOM","action":"INITIALIZATION","status":"OK","detail":"Agent TOM réveillé","reason":""}
+{"timestamp":"2026-01-14T16:35:28.706Z","agent":"TOM","action":"CHECK_DEVICE","status":"SUCCESS","detail":"Téléphone détecté","reason":""}
+{"timestamp":"2026-01-14T16:35:28.706Z","agent":"TOM","action":"RECORD_START","status":"PROCESS","detail":"Début de l'enregistrement ($duration s)","reason":""}
+{"timestamp":"2026-01-14T16:35:28.730Z","agent":"TOM","action":"RECORD_END","status":"FAILED","detail":"Scrcpy a quitté avec erreur","reason":"Code: 1"}

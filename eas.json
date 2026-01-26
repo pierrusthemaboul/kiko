@@ -1,0 +1,70 @@
+{
+  "cli": {
+    "version": ">=7.6.0",
+    "appVersionSource": "local"
+  },
+  "build": {
+    "development": {
+      "developmentClient": true,
+      "distribution": "internal",
+      "env": {
+        "EXPO_PUBLIC_APP_VARIANT": "development"
+      },
+      "android": {
+        "buildType": "apk",
+        "gradleCommand": ":app:assembleDebug"
+      }
+    },
+    "dev": {
+      "distribution": "internal",
+      "env": {
+        "EXPO_PUBLIC_APP_VARIANT": "development"
+      },
+      "android": {
+        "buildType": "apk"
+      }
+    },
+    "preview": {
+      "distribution": "internal",
+      "autoIncrement": false,
+      "credentialsSource": "remote",
+      "env": {
+        "EXPO_PUBLIC_APP_VARIANT": "internalTesting"
+      },
+      "android": {
+        "buildType": "app-bundle"
+      }
+    },
+    "apk": {
+      "distribution": "internal",
+      "autoIncrement": false,
+      "credentialsSource": "remote",
+      "env": {
+        "EXPO_PUBLIC_APP_VARIANT": "apkTesting"
+      },
+      "android": {
+        "buildType": "apk"
+      }
+    },
+    "production": {
+      "distribution": "store",
+      "autoIncrement": false,
+      "credentialsSource": "remote",
+      "env": {
+        "EXPO_PUBLIC_APP_VARIANT": "production"
+      },
+      "android": {
+        "buildType": "app-bundle"
+      }
+    }
+  },
+  "submit": {
+    "production": {
+      "android": {
+        "track": "production",
+        "releaseStatus": "completed",
+        "serviceAccountKeyPath": "./kiko-chrono-e34241a84e41.json"
+      }
+    }
+  }
+}

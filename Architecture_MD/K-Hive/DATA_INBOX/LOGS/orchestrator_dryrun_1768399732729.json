@@ -1,0 +1,94 @@
+{
+  "generated_at": "2026-01-14T14:08:52.729Z",
+  "summary": {
+    "total_decisions": 7,
+    "warnings": 1,
+    "errors": 0
+  },
+  "decisions": [
+    {
+      "timestamp": "2026-01-14T14:08:52.726Z",
+      "step": "FILTRAGE",
+      "decision": "2 événements exclus car hors plage vidéo",
+      "reason": "Événements avec timecode > 59.1s ignorés",
+      "data": {
+        "excluded": 2
+      }
+    },
+    {
+      "timestamp": "2026-01-14T14:08:52.727Z",
+      "step": "SÉLECTION",
+      "decision": "VIP: Début du règne de la reine Victoria",
+      "reason": "Notoriété 100 > seuil 90",
+      "data": {
+        "event": "Début du règne de la reine Victoria",
+        "notoriete": 100,
+        "tour": 1
+      }
+    },
+    {
+      "timestamp": "2026-01-14T14:08:52.727Z",
+      "step": "SÉLECTION",
+      "decision": "VIP: Victoire de Jeanne d'Arc au siège d'Orléans",
+      "reason": "Notoriété 93 > seuil 90",
+      "data": {
+        "event": "Victoire de Jeanne d'Arc au siège d'Orléans",
+        "notoriete": 93,
+        "tour": 4
+      }
+    },
+    {
+      "timestamp": "2026-01-14T14:08:52.727Z",
+      "step": "SÉLECTION",
+      "decision": "VIP: Fin de la guerre de Cent Ans",
+      "reason": "Notoriété 91 > seuil 90",
+      "data": {
+        "event": "Fin de la guerre de Cent Ans",
+        "notoriete": 91,
+        "tour": 2
+      }
+    },
+    {
+      "timestamp": "2026-01-14T14:08:52.728Z",
+      "step": "HOOK",
+      "decision": "Hook généré: \"1837. Tu connais cette date ? 🤔\"",
+      "reason": "Basé sur titre et date de l'événement",
+      "data": {
+        "event": "Début du règne de la reine Victoria",
+        "hook": "1837. Tu connais cette date ? 🤔"
+      }
+    },
+    {
+      "timestamp": "2026-01-14T14:08:52.728Z",
+      "step": "HOOK",
+      "decision": "Hook généré: \"1429. Qui a gagné ? 🏆\"",
+      "reason": "Basé sur titre et date de l'événement",
+      "data": {
+        "event": "Victoire de Jeanne d'Arc au siège d'Orléans",
+        "hook": "1429. Qui a gagné ? 🏆"
+      }
+    },
+    {
+      "timestamp": "2026-01-14T14:08:52.728Z",
+      "step": "HOOK",
+      "decision": "Hook généré: \"1453. Le combat décisif ⚔️\"",
+      "reason": "Basé sur titre et date de l'événement",
+      "data": {
+        "event": "Fin de la guerre de Cent Ans",
+        "hook": "1453. Le combat décisif ⚔️"
+      }
+    }
+  ],
+  "warnings": [
+    {
+      "message": "DÉSYNCHRONISATION DÉTECTÉE: Les métadonnées vont jusqu'à 109.6s mais la vidéo ne fait que 59.1s",
+      "context": {
+        "lastTimecode": 109.62,
+        "videoDuration": 59.139011,
+        "gap": 50.480989
+      },
+      "timestamp": "2026-01-14T14:08:52.725Z"
+    }
+  ],
+  "errors": []
+}

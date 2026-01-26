@@ -1,0 +1,17 @@
+{
+  "agent_name": "LEA",
+  "version": "2.0.0",
+  "description": "Contrôle qualité et validation avant publication",
+  "validation": {
+    "min_duration_seconds": 10,
+    "max_duration_seconds": 60,
+    "min_size_kb": 500,
+    "max_size_mb": 50
+  },
+  "storage": {
+    "input": "./STORAGE/INPUT",
+    "output_approved": "../../../PRET_A_PUBLIER/TIKTOK",
+    "output_rejected": "./STORAGE/REJECTED",
+    "logs": "./STORAGE/LOGS"
+  }
+}

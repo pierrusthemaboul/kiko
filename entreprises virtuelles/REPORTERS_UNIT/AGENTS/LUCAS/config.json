@@ -1,0 +1,11 @@
+{
+  "agent_name": "LUCAS",
+  "version": "1.0.0",
+  "ffprobe_path": "ffprobe",
+  "min_file_size_kb": 100,
+  "storage": {
+    "input": "../DERUSH/STORAGE/OUTPUT",
+    "output": "./STORAGE/OUTPUT",
+    "logs": "./STORAGE/LOGS"
+  }
+}

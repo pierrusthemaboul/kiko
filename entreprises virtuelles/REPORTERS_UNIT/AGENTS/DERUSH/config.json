@@ -1,0 +1,17 @@
+{
+  "agent_name": "DERUSH",
+  "version": "1.1.0",
+  "ffmpeg_path": "ffmpeg",
+  "ffprobe_path": "ffprobe",
+  "target_duration": 25,
+  "padding": {
+    "standard": 10,
+    "vip": 20,
+    "before": 10
+  },
+  "storage": {
+    "input": "./STORAGE/INPUT",
+    "output": "./STORAGE/OUTPUT",
+    "logs": "./STORAGE/LOGS"
+  }
+}

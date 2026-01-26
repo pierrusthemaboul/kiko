@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+<html lang="fr">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Organigramme Timalaus Corp</title>
+    <script type="module">
+        import mermaid from 'https://cdn.jsdelivr.net/npm/mermaid@10/dist/mermaid.esm.min.mjs';
+        mermaid.initialize({
+            startOnLoad: true,
+            theme: 'base',
+            themeVariables: {
+                primaryColor: '#5352ed',
+                primaryTextColor: '#fff',
+                primaryBorderColor: '#333',
+                lineColor: '#333',
+                secondaryColor: '#2ed573',
+                tertiaryColor: '#fff'
+            }
+        });
+    </script>
+    <style>
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background-color: #f0f2f5;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            margin: 0;
+            padding: 20px;
+        }
+
+        .container {
+            background-color: white;
+            padding: 40px;
+            border-radius: 15px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            max-width: 1200px;
+            width: 100%;
+            text-align: center;
+        }
+
+        h1 {
+            color: #2d3436;
+            margin-bottom: 30px;
+        }
+
+        .legend {
+            margin-top: 30px;
+            display: flex;
+            justify-content: center;
+            gap: 20px;
+            font-size: 0.9em;
+        }
+
+        .legend-item {
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+
+        .dot {
+            width: 12px;
+            height: 12px;
+            border-radius: 50%;
+        }
+
+        .red {
+            background-color: #ffa502;
+        }
+
+        .blue {
+            background-color: #5352ed;
+        }
+
+        .green {
+            background-color: #2ed573;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container">
+        <h1>🐝 Timalaus Corp - Structure K-Hive</h1>
+
+        <div class="mermaid">
+            graph TD
+            %% Styles
+            classDef n2 fill:#ffa502,color:white,stroke:#333,stroke-width:2px;
+            classDef n1 fill:#5352ed,color:white,stroke:#333,stroke-width:2px;
+            classDef n0 fill:#2ed573,color:white,stroke:#333,stroke-width:2px;
+
+            %% NIVEAU N+2 : DIRECTION
+            subgraph STRATEGIC_BOARD [N+2 : DIRECTION STRATÉGIQUE]
+            direction TB
+            Pierre[👤 PIERRE<br />PDG & Vision]
+
+            subgraph N2_IA [IA DIRECTEURS]
+            direction LR
+            Louis[🧠 LOUIS<br />Dir. Marketing]
+            Serge[⚙️ SERGE<br />Dir. Technique]
+            end
+            end
+
+            %% NIVEAU N+1 : MANAGEMENT
+            subgraph MANAGEMENT [N+1 : PÔLE MANAGEMENT]
+            direction LR
+            Marc[🧠 MARC<br />Chef Stratégie]
+            Lea[🎨 LÉA<br />Directrice Créative]
+            Hugo[📢 HUGO<br />Chef Social]
+            Jade[📊 JADE<br />Cheffe Données]
+            end
+
+            %% NIVEAU N : OPÉRATIONNEL
+            subgraph OPS [N : AGENTS OPÉRATIONNELS]
+            direction TB
+
+            %% Équipe Stratégie (Marc)
+            Paul[📅 PAUL<br />Planification]
+
+            %% Équipe Créa (Léa)
+            Milo[✍️ MILO<br />Rédaction]
+            Nina[🖼️ NINA<br />Visuels]
+
+            %% Équipe Social (Hugo)
+            Tom[💬 TOM<br />Réponses]
+            Noe[📈 NOÉ<br />Tendances]
+
+            %% Équipe Data (Jade)
+            Remi[🕷️ RÉMI<br />Collecte]
+            Lise[📉 LISE<br />Analyse]
+            end
+
+            %% LIENS HIÉRARCHIQUES
+            Pierre --> Louis & Serge
+            Louis --> Marc & Lea & Hugo & Jade
+
+            Marc --> Paul
+            Lea --> Milo & Nina
+            Hugo --> Tom & Noe
+            Jade --> Remi & Lise
+
+            %% Classes
+            class Pierre,Louis,Serge n2;
+            class Marc,Lea,Hugo,Jade n1;
+            class Paul,Milo,Nina,Tom,Noe,Remi,Lise n0;
+        </div>
+
+        <div class="legend">
+            <div class="legend-item"><span class="dot red"></span>Direction Stratégique</div>
+            <div class="legend-item"><span class="dot blue"></span>Management</div>
+            <div class="legend-item"><span class="dot green"></span>Opérationnel</div>
+        </div>
+    </div>
+</body>
+
+</html>

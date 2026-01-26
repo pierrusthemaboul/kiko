@@ -1,0 +1,224 @@
+{
+  "session_id": "session_1768386527201_1442",
+  "mode": "Classique",
+  "start_time": 1768386527201,
+  "user_name": "Joueur",
+  "initial_level": 1,
+  "score_initial": 0,
+  "vies_initiales": 3,
+  "events_timeline": [
+    {
+      "tour": 1,
+      "event_id": "d7d1f5f5-9528-4701-a528-f852f256133b",
+      "event_titre": "Début du règne de la reine Victoria",
+      "event_date": "1837-10-01",
+      "event_description": "La reine Victoria monte sur le trône britannique à l'âge de 18 ans, inaugurant une ère de prospérité, d'expansion coloniale et de progrès industriel qui portera son nom. Son règne, le plus long de l'histoire britannique jusqu'alors, transforme profondément la société et la culture britanniques.",
+      "event_types": [
+        "Politique"
+      ],
+      "event_notoriete": 100,
+      "timecode_apparition": 5.95,
+      "timecode_choix": 7.79,
+      "duree_reflexion": 1.84,
+      "choix": "avant",
+      "correct": true
+    },
+    {
+      "tour": 2,
+      "event_id": "b3c37fb8-7253-4ad7-8112-776092146c5a",
+      "event_titre": "Fin de la guerre de Cent Ans",
+      "event_date": "1453-07-17",
+      "event_description": "Le 17 juillet 1453 marque la fin officielle de la guerre de Cent Ans avec la victoire française, consolidant la monarchie et l'unité nationale.",
+      "event_types": [
+        "Militaire",
+        "Politique"
+      ],
+      "event_notoriete": 91,
+      "timecode_apparition": 8.94,
+      "timecode_choix": 11.68,
+      "duree_reflexion": 2.74,
+      "choix": "avant",
+      "correct": true
+    },
+    {
+      "tour": 3,
+      "event_id": "275e1c68-19da-4241-a2a9-b7152861612b",
+      "event_titre": "Fondation de l'Académie française par Richelieu",
+      "event_date": "1635-01-29",
+      "event_description": "Le 14 janvier 1634, le cardinal de Richelieu fonde l'Académie française, institution chargée de normaliser et de protéger la langue française.",
+      "event_types": [
+        "Historique",
+        null
+      ],
+      "event_notoriete": 81,
+      "timecode_apparition": 12.79,
+      "timecode_choix": 17.31,
+      "duree_reflexion": 4.52,
+      "choix": "après",
+      "correct": true
+    },
+    {
+      "tour": 4,
+      "event_id": "93162364-33ed-4cf4-ad55-49ed365c9876",
+      "event_titre": "Victoire de Jeanne d'Arc au siège d'Orléans",
+      "event_date": "1429-05-08",
+      "event_description": "L'arrivée de Jeanne d'Arc galvanise les troupes françaises qui parviennent à lever le siège d'Orléans, tenu par les Anglais. Cette victoire constitue le premier succès militaire majeur de Jeanne et un tournant décisif dans la Guerre de Cent Ans.",
+      "event_types": [
+        "Militaire",
+        "Religieux"
+      ],
+      "event_notoriete": 93,
+      "timecode_apparition": 18.42,
+      "timecode_choix": 21.58,
+      "duree_reflexion": 3.16,
+      "choix": "avant",
+      "correct": true
+    },
+    {
+      "tour": 5,
+      "event_id": "f8e656b4-46f8-415f-a6cf-ebd50ab6c52b",
+      "event_titre": "Découverte du boson de Higgs au CERN",
+      "event_date": "2012-01-01",
+      "event_description": "Le 4 juillet 2012, les physiciens du CERN annoncent la découverte d'une nouvelle particule correspondant au boson de Higgs, avec les détecteurs ATLAS et CMS du Grand Collisionneur de Hadrons (LHC). Cette découverte, dirigée par Fabiola Gianotti et Joe Incandela, confirme le modèle standard de la physique des particules.",
+      "event_types": [
+        "Découverte"
+      ],
+      "event_notoriete": 84,
+      "timecode_apparition": 29.62,
+      "timecode_choix": 33.11,
+      "duree_reflexion": 3.49,
+      "choix": "après",
+      "correct": true
+    },
+    {
+      "tour": 6,
+      "event_id": "d0e0de17-5797-4747-a2fa-c56e500f5e04",
+      "event_titre": "Signature du traité de Maastricht",
+      "event_date": "1992-02-07",
+      "event_description": "Le 7 février 1992, le traité de Maastricht est signé, établissant l'Union européenne et ouvrant la voie à la création de la monnaie unique.",
+      "event_types": [
+        "Politique",
+        "Européen"
+      ],
+      "event_notoriete": 88,
+      "timecode_apparition": 34.25,
+      "timecode_choix": 36.11,
+      "duree_reflexion": 1.86,
+      "choix": "avant",
+      "correct": true
+    },
+    {
+      "tour": 7,
+      "event_id": "2ec799e7-f585-4c69-bd5a-1104729ddf19",
+      "event_titre": "Débarquement allié en Afrique du Nord (opération Torch)",
+      "event_date": "1942-01-01",
+      "event_description": "L'opération Torch, lancée en novembre 1942, fut le débarquement allié en Afrique du Nord française, alors sous contrôle du régime de Vichy. Les forces américaines et britanniques, sous le commandement général d'Eisenhower, visaient à prendre le contrôle de l'Afrique du Nord pour ouvrir un nouveau front contre l'Axe.",
+      "event_types": [
+        "guerre"
+      ],
+      "event_notoriete": 79,
+      "timecode_apparition": 37.25,
+      "timecode_choix": 40.03,
+      "duree_reflexion": 2.78,
+      "choix": "avant",
+      "correct": true
+    },
+    {
+      "tour": 8,
+      "event_id": "72851dc3-e97b-41e3-b27e-ef8c5745c635",
+      "event_titre": "Promulgation de la loi Falloux sur la liberté de l'enseignement",
+      "event_date": "1850-03-15",
+      "event_description": "La loi Falloux sur la liberté de l'enseignement est promulguée, permettant à l'Église catholique d'ouvrir des écoles. Cette loi marque une étape importante dans l'histoire de l'éducation en France.",
+      "event_types": [
+        "Politique",
+        "Juridique"
+      ],
+      "event_notoriete": 55,
+      "timecode_apparition": 41.23,
+      "timecode_choix": 44.21,
+      "duree_reflexion": 2.98,
+      "choix": "avant",
+      "correct": true
+    },
+    {
+      "tour": 9,
+      "event_id": "440ec558-d6b2-4a58-b16f-6a487a7cfe56",
+      "event_titre": "Ordonnance sur la Sécurité sociale",
+      "event_date": "1945-01-01",
+      "event_description": "L'ordonnance du 4 octobre 1945, signée par le gouvernement provisoire de la République française dirigé par Charles de Gaulle et sous l'impulsion d'Ambroise Croizat, ministre du Travail, marque la création de la Sécurité sociale en France. Elle vise à garantir une protection sociale universelle 'de la naissance à la mort' pour tous les citoyens, basée sur la solidarité nationale.",
+      "event_types": [
+        "société"
+      ],
+      "event_notoriete": 85,
+      "timecode_apparition": 45.37,
+      "timecode_choix": 47.54,
+      "duree_reflexion": 2.17,
+      "choix": "après",
+      "correct": true
+    },
+    {
+      "tour": 10,
+      "event_id": "53724444-ac02-4724-be9f-7dd2435ba4be",
+      "event_titre": "L'équipe de France triomphe à la Coupe du monde de football en Russie",
+      "event_date": "2018-01-01",
+      "event_description": "La victoire de la France à la Coupe du Monde 2018 en Russie marque un moment de fierté nationale, survenant dans un contexte de tensions géopolitiques et de défis sociaux en France. L'équipe, menée par le capitaine Hugo Lloris et l'entraîneur Didier Deschamps, a incarné un symbole d'unité et de diversité.",
+      "event_types": [
+        "sport"
+      ],
+      "event_notoriete": 85,
+      "timecode_apparition": 48.69,
+      "timecode_choix": 50.98,
+      "duree_reflexion": 2.29,
+      "choix": "après",
+      "correct": true
+    },
+    {
+      "tour": 11,
+      "event_id": "7d22171a-1e12-426e-8a01-fafa4fd90cca",
+      "event_titre": "Bataille de Vouillé",
+      "event_date": "0507-07-01",
+      "event_description": "Le 1er juillet 507, la bataille de Vouillé voit la victoire de Clovis sur les Wisigoths, étendant le royaume franc jusqu'aux Pyrénées.",
+      "event_types": [
+        "Militaire",
+        "Politique"
+      ],
+      "event_notoriete": 52,
+      "timecode_apparition": 62.37
+    },
+    {
+      "tour": 12,
+      "event_id": "0d85f8f6-3d27-4556-9f0f-705f73f81052",
+      "event_titre": "Victoire de Clovis sur les Alamans à Tolbiac",
+      "event_date": "0496-01-01",
+      "event_description": "En 496, Clovis remporte la bataille de Tolbiac contre les Alamans. Sa victoire, suivie de sa conversion au christianisme, renforce son pouvoir sur la Gaule.",
+      "event_types": [
+        "Non catégorisé"
+      ],
+      "event_notoriete": 61,
+      "timecode_apparition": 85.75
+    },
+    {
+      "tour": 13,
+      "event_id": "7ccc1142-f97d-44ce-a7f5-17ed8beaaaee",
+      "event_titre": "Concile de Nicée, première réunion œcuménique du christianisme",
+      "event_date": "0325-01-01",
+      "event_description": "En 325, le Concile de Nicée, première réunion œcuménique de l'Église chrétienne, établit le Credo et unifie la doctrine chrétienne.",
+      "event_types": [
+        "Non catégorisé"
+      ],
+      "event_notoriete": 62,
+      "timecode_apparition": 109.62
+    }
+  ],
+  "total_events": 13,
+  "total_correct": 10,
+  "total_incorrect": 0,
+  "end_time": 1768386658567,
+  "duration_seconds": 131,
+  "resultat": "victoire",
+  "final_level": 3,
+  "score_final": 2529,
+  "vies_finales": 3,
+  "accuracy_percent": 77,
+  "average_response_time": 2.78
+}

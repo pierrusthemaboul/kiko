@@ -1,0 +1,69 @@
+name: Build APK
+
+on:
+  workflow_dispatch:
+    inputs:
+      profile:
+        description: 'EAS Build Profile (apk or development)'
+        required: true
+        default: 'apk'
+        type: choice
+        options:
+          - apk
+          - development
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - name: 🏗 Checkout repository
+        uses: actions/checkout@v4
+
+      - name: 🏗 Setup PNPM
+        uses: pnpm/action-setup@v3
+        with:
+          version: 8
+
+      - name: 🏗 Setup Node
+        uses: actions/setup-node@v4
+        with:
+          node-version: 20
+          cache: 'pnpm'
+
+      - name: 🏗 Setup Java
+        uses: actions/setup-java@v4
+        with:
+          distribution: 'temurin'
+          java-version: '17'
+          cache: 'gradle'
+
+      - name: 🏗 Setup EAS
+        uses: expo/expo-github-action@v8
+        with:
+          eas-version: latest
+          token: ${{ secrets.EXPO_TOKEN }}
+
+      - name: 📦 Install dependencies
+        run: pnpm install
+
+      - name: 🔑 Prepare Play Store Key
+        run: echo '${{ secrets.PLAY_STORE_CONFIG_JSON }}' > kiko-chrono-e34241a84e41.json
+
+      - name: 🚀 Build APK (Local)
+        env:
+          EXPO_NO_TELEMETRY: 1
+          NODE_ENV: development
+          EXPO_PUBLIC_APP_VARIANT: ${{ github.event.inputs.profile == 'development' && 'development' || 'apkTesting' }}
+        run: |
+          # Remove native folders to ensure Expo uses app.config.js dynamic values
+          rm -rf android ios
+          npx expo prebuild --platform android --clean
+          node scripts/fix-manifest.js
+          node scripts/fix-kotlin-version.js
+          EAS_SKIP_AUTO_FINGERPRINT=1 eas build --platform android --profile ${{ github.event.inputs.profile }} --local --non-interactive
+
+      - name: 📤 Upload Artifact
+        uses: actions/upload-artifact@v4
+        with:
+          name: android-apk
+          path: build-*.apk
