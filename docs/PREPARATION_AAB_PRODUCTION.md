@@ -93,24 +93,21 @@ buildTypes {
 ```
 
 #### 4.3 Signing configuration
-Fichier : `android/app/build.gradle`
+Fichier : `android/app/build.gradle` (pour build local) ou Configuration EAS (recommandé)
 
-- [ ] Configurer le keystore de signature :
+- [x] **Vérification faite (26/01/2026)** : Les clés de signature sont bien stockées sur **EAS (Remote)**.
+- [ ] Configurer le keystore de signature si build local nécessaire :
 ```gradle
 signingConfigs {
     release {
-        storeFile file('my-release-key.keystore')
+        storeFile file('credentials/android/keystore.jks')
         storePassword System.getenv("KEYSTORE_PASSWORD")
-        keyAlias System.getenv("KEY_ALIAS")
+        keyAlias "8c93dc8ac800f0b1c5332db2164ef015"
         keyPassword System.getenv("KEY_PASSWORD")
     }
 }
 ```
-- [ ] Créer le keystore si ce n'est pas déjà fait :
-```bash
-keytool -genkeypair -v -storetype PKCS12 -keystore my-release-key.keystore -alias my-key-alias -keyalg RSA -keysize 2048 -validity 10000
-```
-- [ ] **SAUVEGARDER LE KEYSTORE** dans un endroit sûr (Google Drive, 1Password, etc.)
+- [x] **SAUVEGARDER LE KEYSTORE** : Une copie est en sécurité chez Expo.
 
 ### 5. Assets et ressources
 
@@ -142,35 +139,27 @@ keytool -genkeypair -v -storetype PKCS12 -keystore my-release-key.keystore -alia
 
 ### 7. Build du AAB
 
-#### 7.1 Nettoyer le projet
-```bash
-cd android
-./gradlew clean
-cd ..
-rm -rf node_modules
-pnpm install
-```
+#### 7.1 Méthode Recommandée : GitHub Actions (Économique & Rapide) 🚀
+C'est la meilleure méthode pour éviter les files d'attente EAS tout en restant gratuit (2000+ min/mois).
 
-#### 7.2 Prébuild avec Expo
-```bash
-npx expo prebuild --platform android --clean
-```
+**Pré-requis (à faire une fois) :**
+1. Télécharger le keystore : `eas credentials --platform android` -> `production` -> `Download credentials`.
+2. Ajouter les secrets sur GitHub : `ANDROID_KEYSTORE` (Base64), `KEYSTORE_PASSWORD`, `KEY_ALIAS`, `KEY_PASSWORD`, `EXPO_TOKEN`.
 
-#### 7.3 Build du AAB avec Gradle
-```bash
-cd android
-./gradlew bundleRelease
-```
+**Avantages :**
+- Démarrage instantané (pas de file d'attente EAS Free).
+- Automatisation complète et gratuite.
 
-Le fichier AAB sera généré dans :
-```
-android/app/build/outputs/bundle/release/app-release.aab
-```
-
-#### 7.4 Build avec EAS (alternative recommandée)
+#### 7.2 Alternative : EAS Build (Simple)
+À utiliser pour un dépannage rapide ou si GitHub Actions n'est pas prêt.
 ```bash
 eas build --platform android --profile production
 ```
+*Note : Attention aux files d'attente importantes sur le plan gratuit d'EAS.*
+
+#### 7.3 Pourquoi éviter la build locale ?
+- Trop complexe à maintenir sur Windows (Java, SDK, Gradle).
+- Risque d'incohérences entre les builds.
 
 ### 8. Vérifications post-build
 

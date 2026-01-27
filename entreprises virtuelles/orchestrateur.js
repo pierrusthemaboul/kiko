@@ -285,6 +285,11 @@ async function main() {
             await runTikTokPipeline(false);
             break;
 
+        case '--observer':
+            // Lancer l'écouteur Reactotron en arrière-plan
+            await runAgent(path.join(REPORTERS_DIR, 'OBSERVER/agent.js'), "OBSERVER - Écouteur Reactotron & Analytics");
+            break;
+
         case '--full':
         default:
             // Pipeline complet
@@ -340,6 +345,9 @@ Modes:
 
   --clean     Nettoyer les dossiers de travail
               Vide tous les STORAGE/INPUT et OUTPUT
+
+  --observer  Lancer l'écouteur Reactotron en temps réel
+              Capture les logs et erreurs (Analyse Gemini auto)
 
   --help      Afficher cette aide
 

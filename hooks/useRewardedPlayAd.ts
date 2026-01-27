@@ -34,6 +34,7 @@ const rewardedPlayAd = RewardedAd.createForAdRequest(
 // État global pour partager entre toutes les instances du hook
 let globalIsLoaded = false;
 let globalIsShowing = false;
+let globalIsProcessing = false; // Verrou pour éviter les doublons de récompense
 const stateListeners = new Set<() => void>();
 
 export function useRewardedPlayAd() {
@@ -121,6 +122,11 @@ export function useRewardedPlayAd() {
     const earnedListener = rewardedPlayAd.addAdEventListener(
       RewardedAdEventType.EARNED_REWARD,
       (reward) => {
+        if (globalIsProcessing) {
+          rewardedLog('warn', 'Reward already being processed, ignoring duplicate event');
+          return;
+        }
+        globalIsProcessing = true;
         rewardedLog('log', 'Reward earned:', reward);
         setRewardEarned(true);
         FirebaseAnalytics.ad('rewarded', 'earned_reward', 'extra_play', 0);
@@ -186,6 +192,7 @@ export function useRewardedPlayAd() {
 
   const resetReward = useCallback(() => {
     setRewardEarned(false);
+    globalIsProcessing = false;
   }, []);
 
   return {

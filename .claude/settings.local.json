@@ -36,7 +36,26 @@
       "Bash(npx expo start:*)",
       "Bash(Select-String -Pattern \"gradle\")",
       "Bash(start https://adoptium.net/temurin/releases/?version=21)",
-      "Bash(where:*)"
+      "Bash(where:*)",
+      "Bash(netstat:*)",
+      "Bash(findstr:*)",
+      "Bash(taskkill:*)",
+      "Bash(powershell -Command \"Stop-Process -Id 18824 -Force\")",
+      "Bash(adb shell pm list packages:*)",
+      "Bash(adb shell monkey:*)",
+      "Bash(adb logcat:*)",
+      "Bash(adb shell:*)",
+      "Bash(export EXPO_PUBLIC_APP_VARIANT=development)",
+      "Bash(powershell -Command \"Stop-Process -Id 9020,5960 -Force\")",
+      "Bash(adb reverse:*)",
+      "Bash(REACT_NATIVE_PACKAGER_HOSTNAME=10.0.2.2 npx expo start:*)",
+      "Bash(powershell -Command \"Get-Process | Where-Object {$_ProcessName -like ''*node*'' -or $_ProcessName -like ''*expo*''} | Stop-Process -Force\")",
+      "Bash(Get-Process node -ErrorAction SilentlyContinue)",
+      "Bash(Select-Object Id, ProcessName, StartTime)",
+      "Bash(Format-Table)",
+      "Bash(tasklist:*)",
+      "Bash(cmd /c \"taskkill /F /PID 31400 & taskkill /F /PID 15488\")",
+      "Bash(powershell -Command:*)"
     ]
   }
 }

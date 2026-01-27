@@ -1,7 +1,9 @@
 import { useState, useCallback, useEffect } from 'react';
+import AsyncStorage from '@react-native-async-storage/async-storage';
 import { supabase } from '@/lib/supabase/supabaseClients';
 import { todayWindow } from '@/utils/time';
 import { Logger } from '@/utils/logger';
+import { partiesPerDayFromXP } from '@/lib/economy/ranks';
 
 export interface PlaysInfo {
   allowed: number;
@@ -14,10 +16,13 @@ export function usePlays() {
   const [canStartRun, setCanStartRun] = useState<boolean>(true);
   const [loading, setLoading] = useState<boolean>(true);
 
-  const fetchPlaysInfo = useCallback(async () => {
+  const fetchPlaysInfo = useCallback(async (): Promise<PlaysInfo | null> => {
+    // 🔍 Logger - DÉBUT FETCH
+    Logger.debug('Plays', 'Fetching plays info from Supabase');
+
     // 🔍 REACTOTRON LOG - DÉBUT FETCH
-    if (__DEV__ && console.tron) {
-      console.tron.display({
+    if (__DEV__ && (console as any).tron) {
+      (console as any).tron.display({
         name: '🔄 FETCH PLAYS INFO',
         preview: 'Récupération des parties restantes',
         value: { timestamp: new Date().toISOString() },
@@ -29,76 +34,97 @@ export function usePlays() {
     try {
       const { data: { user: authUser } } = await supabase.auth.getUser();
       if (!authUser) {
-        if (__DEV__ && console.tron) {
-          console.tron.warn('❌ Pas d\'utilisateur authentifié');
-        }
         setPlaysInfo(null);
         setCanStartRun(false);
-        return;
+        return null;
       }
 
-      const { data: profile } = await supabase
+      const { data: profile } = await (supabase
         .from('profiles')
-        .select('parties_per_day, is_admin')
+        .select('parties_per_day, is_admin, xp_total')
         .eq('id', authUser.id)
-        .single();
+        .single() as any);
 
-      // ... (imports)
+      const baseFromRank = partiesPerDayFromXP(profile?.xp_total ?? 0);
+      const storedQuota = profile?.parties_per_day ?? 3;
 
-      // ... inside fetchPlaysInfo
-      const isAdmin = profile?.is_admin === true;
-      const allowed = isAdmin ? 999 : (profile?.parties_per_day ?? 3);
+      Logger.debug('Plays', 'Quota breakdown', {
+        xp: profile?.xp_total,
+        baseFromRank,
+        storedQuota
+      });
 
-      Logger.debug('Plays', `Fetching info for user ${authUser.id}`, { isAdmin, allowed });
+      // Si le grade donne plus que ce qui est en base, on devrait idéalement mettre à jour la base
+      // Mais pour l'instant, on va juste utiliser le maximum pour le calcul local
+      let allowed = Math.max(baseFromRank, storedQuota);
+
+      // Si le grade a augmenté au-delà de la base, on synchronise silencieusement la DB
+      if (baseFromRank > storedQuota) {
+        Logger.info('Plays', `Rank upgrade detected! Syncing DB quota: ${storedQuota} -> ${baseFromRank}`);
+        await (supabase.from('profiles') as any)
+          .update({ parties_per_day: baseFromRank })
+          .eq('id', authUser.id);
+      }
+
+      let isAdmin = profile?.is_admin === true;
+
+      // Simulation pour le test des pubs via Reactotron
+      if (__DEV__) {
+        const simulated = await AsyncStorage.getItem('@debug_simulated_plays');
+        if (simulated === 'true') {
+          isAdmin = false;
+        }
+      }
 
       if (isAdmin) {
-        // ...
+        allowed = 999;
       }
-
       const window = todayWindow();
+
       const { count: runsToday, error: countError } = await supabase
-      // ...
-      if (countError) {
-        Logger.error('Plays', 'Error counting runs', countError);
-        if (__DEV__ && console.tron) {
-          console.tron.error('❌ Erreur count runs:', countError);
-        }
-        throw countError;
-      }
+        .from('runs')
+        .select('id', { count: 'exact', head: true })
+        .eq('user_id', authUser.id)
+        .gte('created_at', window.startISO)
+        .lt('created_at', window.endISO);
+
+      if (countError) throw countError;
 
       const used = runsToday ?? 0;
       const remaining = Math.max(0, allowed - used);
+      const canStart = isAdmin || remaining > 0;
       const info = { allowed, used, remaining };
 
-      // 🔍 REACTOTRON LOG - RÉSULTAT FETCH
-      if (__DEV__ && console.tron) {
-        console.tron.display({
-          name: '✅ PLAYS INFO CALCULÉ',
-          preview: `${remaining} parties restantes`,
+      Logger.debug('Plays', 'Calculated plays info', {
+        allowed,
+        used,
+        remaining,
+        isAdmin,
+        userId: authUser.id
+      });
+
+      if (__DEV__ && (console as any).tron) {
+        (console as any).tron.display({
+          name: '📊 PLAYS INFO',
+          preview: `Remaining: ${remaining} (${used}/${allowed})`,
           value: {
-            allowed,
-            used,
-            remaining,
-            isAdmin,
-            userId: authUser.id,
-            window: { start: window.start, end: window.end },
-            runsToday
+            allowed, used, remaining, isAdmin,
+            isSimulated: (await AsyncStorage.getItem('@debug_simulated_plays')) === 'true',
+            windowStart: window.startISO,
+            userId: authUser.id
           },
           important: true
         });
       }
 
-      Logger.debug('Plays', 'Calculated plays info', info);
-
       setPlaysInfo(info);
-      // ...
+      setCanStartRun(canStart);
+      return info;
     } catch (error) {
       Logger.error('Plays', 'Failed to fetch plays info', error);
-      if (__DEV__ && console.tron) {
-        console.tron.error('❌ ERREUR fetchPlaysInfo:', error);
-      }
       setPlaysInfo(null);
       setCanStartRun(false);
+      return null;
     } finally {
       setLoading(false);
     }

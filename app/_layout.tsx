@@ -86,13 +86,15 @@ export default function RootLayout() {
   // --- Initialisation (Firebase, Version Check) ---
   useEffect(() => {
     const initializeApp = async () => {
-      // console.log('[RootLayout] Initializing App Setup (Firebase, Version)...');
+      console.log('[RootLayout] Initializing App Setup (Firebase, Version)...');
       try {
         // Réinitialiser le flag splash à chaque démarrage
         await AsyncStorage.removeItem('@splash_shown_session');
 
         await FirebaseAnalytics.initialize(undefined, true);
-        await FirebaseAnalytics.appOpen();
+        // Ne pas attendre le logAppOpen qui peut parfois bloquer l'initialisation sur certains réseaux
+        FirebaseAnalytics.appOpen().catch(err => console.warn('[RootLayout] appOpen error:', err));
+
         const previousVersion = await AsyncStorage.getItem(APP_VERSION_STORAGE_KEY);
         if (previousVersion && previousVersion !== CURRENT_APP_VERSION) {
           await FirebaseAnalytics.trackEvent('app_update', {
@@ -112,7 +114,7 @@ export default function RootLayout() {
           screen: 'RootLayout',
         });
       } finally {
-        // console.log('[RootLayout] Initial App Setup Done.');
+        console.log('[RootLayout] Initial App Setup Done.');
         setInitialSetupDone(true);
       }
     };
@@ -243,7 +245,7 @@ export default function RootLayout() {
   useEffect(() => {
     if ((fontsLoaded || fontError) && initialSetupDone) {
       setAppReady(true);
-      // console.log('[RootLayout] App is marked as ready.');
+      console.log('[RootLayout] App is marked as ready.');
     }
   }, [fontsLoaded, fontError, initialSetupDone]);
 
@@ -251,19 +253,19 @@ export default function RootLayout() {
   // --- CORRECTION DE LA LOGIQUE DE REDIRECTION (Auth Guard) ---
   useEffect(() => {
     // Ne rien faire tant que l'app n'est pas prête ou que les infos de route ne sont pas dispo
-    if (!appReady || !router || !segments || segments.length === 0) {
+    if (!appReady || !router || !segments || (segments as string[]).length === 0) {
       return;
     }
 
-    const inAuthGroup = segments[0] === 'auth';
+    const inAuthGroup = (segments as string[])[0] === 'auth';
 
     // Vérifier si on essaie d'accéder à un groupe protégé
-    const isTryingProtectedGroup = segments[0] === '(tabs)' || segments[0] === 'game';
+    const isTryingProtectedGroup = (segments as string[])[0] === '(tabs)' || (segments as string[])[0] === 'game';
 
     // Vérifier si on essaie d'accéder à l'écran d'accueil (index) dans (tabs)
-    const isTryingTabsIndex = segments[0] === '(tabs)' && (segments.length === 1 || segments[1] === 'index');
+    const isTryingTabsIndex = (segments as string[])[0] === '(tabs)' && ((segments as string[]).length === 1 || (segments as string[])[1] === 'index');
 
-    // console.log(`[Auth Guard] Checking: Session=${session ? 'Yes' : 'No'}, GuestMode=${guestMode}, Segments=${segments.join('/')}, InAuth=${inAuthGroup}, IsTryingProtected=${isTryingProtectedGroup}, IsTryingTabsIndex=${isTryingTabsIndex}`);
+    console.log(`[Auth Guard] Checking: Session=${session ? 'Yes' : 'No'}, GuestMode=${guestMode}, Segments=${segments.join('/')}, InAuth=${inAuthGroup}, IsTryingProtected=${isTryingProtectedGroup}, IsTryingTabsIndex=${isTryingTabsIndex}`);
 
     // Si connecté et sur index, attendre que le splash soit montré puis rediriger vers vue1
     if (session && isTryingTabsIndex && splashShown) {

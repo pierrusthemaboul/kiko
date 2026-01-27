@@ -26,7 +26,7 @@ import EventLayoutA from './EventLayoutA'; // Assurez-vous que ce chemin est cor
 import LevelUpModalBis from '../modals/LevelUpModalBis';
 import ScoreboardModal from '../modals/ScoreboardModal';
 import RewardAnimation from './RewardAnimation';
-import { logger } from '@/utils/logger';
+import { Logger } from '@/utils/logger';
 
 // Types & Constants
 import { colors } from '@/constants/Colors';
@@ -169,7 +169,7 @@ function GameContentA({
   // --- MODIFICATION : Nouveaux handlers internes pour les boutons du modal ---
   // Handler pour le bouton "Rejouer" du modal
   const handleModalRestart = useCallback(() => {
-    logger.log("[GameContentA] Modal 'Rejouer' clicked. Resetting ads and calling parent restart logic.");
+    Logger.info('GameLogic', "[GameContentA] Modal 'Rejouer' clicked. Resetting ads and calling parent restart logic.");
     if (resetAdsState) {
       resetAdsState(); // Réinitialise les pubs si la fonction existe
     }
@@ -178,7 +178,7 @@ function GameContentA({
 
   // Handler pour le bouton "Menu" du modal
   const handleModalMenu = useCallback(() => {
-    logger.log("[GameContentA] Modal 'Menu' clicked. Resetting ads and calling parent menu logic.");
+    Logger.info('GameLogic', "[GameContentA] Modal 'Menu' clicked. Resetting ads and calling parent menu logic.");
     if (resetAdsState) {
       resetAdsState(); // Réinitialise les pubs si la fonction existe
     }
@@ -249,7 +249,7 @@ function GameContentA({
     };
 
     updateRewardPositionSafely();
-    const timers = [];
+    const timers: any[] = [];
     for (let i = 1; i <= MAX_ATTEMPTS; i++) {
       const timer = setTimeout(() => {
         if (mounted && currentReward && !isRewardPositionSet) { // eslint-disable-line @typescript-eslint/no-unnecessary-condition
@@ -414,7 +414,7 @@ function GameContentA({
           onStart={handleLevelUp}
           onReturnToMenu={onActualMenu}
           name={currentLevelConfig.name || `Niveau ${level}`}
-          description={currentLevelConfig.description}
+          description={currentLevelConfig.description || ''}
           requiredEvents={currentLevelConfig.eventsNeeded}
           specialRules={currentLevelConfig.specialRules}
           previousLevel={level > 1 ? level - 1 : undefined}
@@ -711,7 +711,7 @@ const styles = StyleSheet.create({
   },
   watchAdDescription: {
     fontSize: 16,
-    color: colors.textMuted || colors.text, // Utilise la couleur texte mute ou standard
+    color: colors.lightText || colors.text, // Utilise la couleur texte mute ou standard
     textAlign: 'center',
     marginBottom: 25,
     lineHeight: 22,

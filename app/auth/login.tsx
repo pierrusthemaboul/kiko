@@ -57,7 +57,7 @@ export default function Login() {
   const segments = useSegments();
   const window = Dimensions.get('window');
 
-  const [email, setEmail] = useState('');
+  const [email, setEmail] = useState(__DEV__ ? 'pierre.cousin7@gmail.com' : '');
   const [password, setPassword] = useState('');
   const [errorMessage, setErrorMessage] = useState('');
   const [stayConnected, setStayConnected] = useState(false);
@@ -503,8 +503,8 @@ const styles = StyleSheet.create({
     justifyContent: 'center'
   },
   buttonDisabled: {
-     opacity: 0.6 // Opacité pour état désactivé
-   },
+    opacity: 0.6 // Opacité pour état désactivé
+  },
   googleButton: {
     backgroundColor: THEME.background.main,
     borderColor: THEME.border,
@@ -529,7 +529,7 @@ const styles = StyleSheet.create({
     marginLeft: 12,
   },
   buttonText: {
-    color:'#0A173D', // Texte Blanc
+    color: '#0A173D', // Texte Blanc
     fontSize: 17, // Police légèrement plus grande
     fontWeight: 'bold'
   },

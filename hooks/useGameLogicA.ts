@@ -47,7 +47,11 @@ export function useGameLogicA(initialEvent?: string, modeId?: string) {
   const [showLevelTransition, setShowLevelTransition] = useState(false);
   const [triggerLevelEndAnim, setTriggerLevelEndAnim] = useState(false);
   const [leaderboardsReady, setLeaderboardsReady] = useState(false);
-  const [leaderboards, setLeaderboards] = useState({ daily: [], monthly: [], allTime: [] });
+  const [leaderboards, setLeaderboards] = useState<{
+    daily: any[];
+    monthly: any[];
+    allTime: any[];
+  }>({ daily: [], monthly: [], allTime: [] });
   const [currentLevelConfig, setCurrentLevelConfig] = useState<ExtendedLevelConfig>({
     ...LEVEL_CONFIGS[1],
     eventsSummary: [],
@@ -89,6 +93,15 @@ export function useGameLogicA(initialEvent?: string, modeId?: string) {
 
   const [progressAnim] = useState(() => new Animated.Value(0));
   const isApplyingEconomyRef = useRef(false);
+  const hasConsumedRunInInstanceRef = useRef(false);
+
+  // Refs pour stabiliser les callbacks circulaires et éviter les ReferenceErrors
+  const endGameRef = useRef<() => Promise<void>>(async () => { console.warn('endGame called before initialization'); });
+  const updateGameStateRef = useRef<(evt: Event) => Promise<void>>(async () => { console.warn('updateGameState called before initialization'); });
+  const selectNewEventRef = useRef<any>(async () => { console.warn('selectNewEvent called before initialization'); return null; });
+  const handleTimeoutRef = useRef<() => void>(() => { console.warn('handleTimeout called before initialization'); });
+  const handleAppBackgroundedRef = useRef<() => void>(() => { console.warn('handleAppBackgrounded called before initialization'); });
+
   const [endSummary, setEndSummary] = useState<{
     mode: 'classic' | 'date' | 'precision';
     points: number;
@@ -99,6 +112,7 @@ export function useGameLogicA(initialEvent?: string, modeId?: string) {
   } | null>(null);
   const [endSummaryError, setEndSummaryError] = useState<string | null>(null);
   const currentRunIdRef = useRef<string | null>(null);
+  const isStartingRunRef = useRef(false);
 
   useEffect(() => {
     setShowDates(!!gameMode.showDatesByDefault);
@@ -127,6 +141,97 @@ export function useGameLogicA(initialEvent?: string, modeId?: string) {
     initGame: baseInitGame,
   } = useInitGame();
 
+  const {
+    timeLeft,
+    isCountdownActive,
+    setTimeLeft,
+    setIsCountdownActive,
+    resetTimer,
+    handleImageLoad,
+    isImageLoaded,
+    setIsImageLoaded,
+  } = useTimer({
+    user,
+    isLevelPaused,
+    isGameOver,
+    handleTimeout: () => handleTimeoutRef.current(),
+    isImageLoaded: false,
+    initialTime: timeLimit,
+  });
+
+  const {
+    antiqueEventsCount,
+    eventCount,
+    forcedJumpEventCount,
+    selectNewEvent: baseSelectNewEvent,
+    getPeriod,
+    isAntiqueEvent,
+    updateAntiqueCount,
+    resetAntiqueCount,
+    resetEventCount,
+    invalidateEventCaches,
+    recordCorrectAnswer,
+    recordIncorrectAnswer,
+    resetAntiFrustration,
+  } = useEventSelector({
+    setError,
+    setIsGameOver,
+    updateStateCallback: (e) => updateGameStateRef.current(e)
+  });
+
+  const { currentReward, checkRewards, completeRewardAnimation, updateRewardPosition } = useRewards({
+    onRewardEarned: (reward) => {
+      if (!reward.targetPosition) {
+        reward.targetPosition =
+          reward.type === RewardType.EXTRA_LIFE
+            ? { x: screenWidth * 0.45, y: 50 }
+            : { x: 80, y: 30 };
+      }
+      applyReward(reward);
+    },
+    maxLives: gameMode.maxLives,
+  });
+
+  const {
+    adState,
+    canShowAd,
+    showRewardedAd,
+    showGenericInterstitial,
+    showLevelUpInterstitial,
+    showGameOverInterstitial,
+    resetAdsState,
+    isAdLoaded,
+  } = useAds({
+    user,
+    setUser,
+    previousEvent,
+    allEvents,
+    selectNewEvent: (e: any, r: any) => selectNewEventRef.current(e, r),
+    resetTimer,
+    setIsGameOver,
+    setIsLevelPaused,
+    setIsWaitingForCountdown,
+    setError,
+    pendingAdDisplay: pendingAdDisplay,
+    setPendingAdDisplay,
+    maxLives: gameMode.maxLives,
+  });
+
+  // Détecter la sortie de l'application pendant une partie active
+  const isDetectionActive = !isGameOver && !isLevelPaused && !isWaitingForCountdown && !!newEvent && isImageLoaded;
+  useAppStateDetection({
+    onAppBackgrounded: () => handleAppBackgroundedRef.current(),
+    isActive: isDetectionActive,
+    currentEventId: newEvent?.id,
+    analytics: {
+      level: user.level,
+      streak,
+      context: 'classic_game',
+      screen: 'useGameLogicA',
+      reason: 'background',
+    },
+  });
+
   // Calculer si c'est le dernier événement du niveau
   const isLastEventOfLevel = useMemo(() => {
     const config = LEVEL_CONFIGS[user.level];
@@ -147,7 +252,7 @@ export function useGameLogicA(initialEvent?: string, modeId?: string) {
         .from('profiles')
         .select('id, display_name, xp_total, title_key, parties_per_day, high_score')
         .eq('id', userId)
-        .maybeSingle();
+        .maybeSingle() as any;
 
       if (error) {
         setProfile(null);
@@ -235,39 +340,7 @@ export function useGameLogicA(initialEvent?: string, modeId?: string) {
     trackError,
   } = useAnalytics();
 
-  // --- AJOUT : Fonction pour réinitialiser l'état de contrôle du jeu ---
-  const resetGameFlowState = useCallback(() => {
-    setIsGameOver(false);
-    setIsLevelPaused(false);
-    setShowLevelModal(false);
-    setShowDates(!!gameMode.showDatesByDefault);
-    setIsCorrect(undefined);
-    setIsWaitingForCountdown(false);
-    setStreak(0);
-    progressAnim.setValue(0); // Réinitialiser l'animation de progression
-    setCurrentLevelConfig({ ...LEVEL_CONFIGS[1], eventsSummary: [] }); // Revenir à la config niveau 1
-    setPendingAdDisplay(null); // Annuler les pubs en attente
-    setTriggerLevelEndAnim(false); // Réinitialiser l'animation de fin de niveau
-    setError(null); // Nettoyer les erreurs précédentes
-    setEndSummary(null);
-    setEndSummaryError(null);
-    // Réinitialiser aussi l'état des sous-hooks si nécessaire
-    resetCurrentLevelEvents(); // Réinitialise les events du niveau en cours
-    resetLevelCompletedEvents(); // Réinitialise les events du niveau complété
-    resetAntiqueCount(); // Réinitialise le compteur d'events antiques
-    // Note: resetAntiFrustration et resetEventCount sont appelés dans initGame
-    setLeaderboardsReady(false); // Masquer les classements précédents
-  }, [
-    progressAnim,
-    resetCurrentLevelEvents,
-    resetLevelCompletedEvents,
-    resetAntiqueCount,
-    setLeaderboardsReady,
-    gameMode.showDatesByDefault,
-    setEndSummary,
-    setEndSummaryError,
-  ]);
-  // --- FIN AJOUT ---
+
 
   const clearEndSummary = useCallback(() => {
     setEndSummary(null);
@@ -320,7 +393,7 @@ export function useGameLogicA(initialEvent?: string, modeId?: string) {
         if (!isGameOver) {
           setPreviousEvent(newEvent);
           setDisplayedEvent(null);
-          selectNewEvent(allEvents, newEvent);
+          selectNewEventRef.current(allEvents, newEvent);
         }
       }, 1500);
     } else {
@@ -342,18 +415,10 @@ export function useGameLogicA(initialEvent?: string, modeId?: string) {
     allEvents,
     playIncorrectSound,
     progressAnim,
-    endGame,
-    selectNewEvent,
-    setPreviousEvent,
-    setDisplayedEvent,
-    setError,
-    setIsGameOver,
-    setIsCorrect,
-    setShowDates,
-    setUser,
-    setStreak,
     setIsWaitingForCountdown,
   ]);
+
+  handleTimeoutRef.current = handleTimeout;
 
   // Callback pour gérer la sortie de l'application (même comportement qu'un timeout)
   const handleAppBackgrounded = useCallback(() => {
@@ -395,7 +460,7 @@ export function useGameLogicA(initialEvent?: string, modeId?: string) {
         if (!isGameOver) {
           setPreviousEvent(newEvent);
           setDisplayedEvent(null);
-          selectNewEvent(allEvents, newEvent);
+          selectNewEventRef.current(allEvents, newEvent);
         }
       }, 1500);
     } else {
@@ -412,14 +477,11 @@ export function useGameLogicA(initialEvent?: string, modeId?: string) {
     isWaitingForCountdown,
     user.level,
     user.lives,
-    user.eventsCompletedInLevel,
     streak,
     newEvent,
     allEvents,
     playIncorrectSound,
     progressAnim,
-    endGame,
-    selectNewEvent,
     setPreviousEvent,
     setDisplayedEvent,
     setError,
@@ -430,38 +492,9 @@ export function useGameLogicA(initialEvent?: string, modeId?: string) {
     setStreak,
   ]);
 
-  const {
-    timeLeft,
-    isCountdownActive,
-    setTimeLeft,
-    setIsCountdownActive,
-    resetTimer,
-    handleImageLoad,
-    isImageLoaded,
-    setIsImageLoaded,
-  } = useTimer({
-    user,
-    isLevelPaused,
-    isGameOver,
-    handleTimeout,
-    isImageLoaded: false,
-    initialTime: timeLimit,
-  });
+  handleAppBackgroundedRef.current = handleAppBackgrounded;
 
-  // Détecter la sortie de l'application pendant une partie active
-  const isDetectionActive = !isGameOver && !isLevelPaused && !isWaitingForCountdown && !!newEvent && isImageLoaded;
-  useAppStateDetection({
-    onAppBackgrounded: handleAppBackgrounded,
-    isActive: isDetectionActive,
-    currentEventId: newEvent?.id,
-    analytics: {
-      level: user.level,
-      streak,
-      context: 'classic_game',
-      screen: 'useGameLogicA',
-      reason: 'background',
-    },
-  });
+
 
   const updateGameState = useCallback(
     async (selectedEvent: Event) => {
@@ -486,7 +519,7 @@ export function useGameLogicA(initialEvent?: string, modeId?: string) {
           );
         }
 
-        const { error: usageError } = await supabase.rpc('increment_event_usage', {
+        const { error: usageError } = await (supabase as any).rpc('increment_event_usage', {
           event_id: selectedEvent.id,
         });
 
@@ -527,26 +560,10 @@ export function useGameLogicA(initialEvent?: string, modeId?: string) {
     ]
   );
 
+  updateGameStateRef.current = updateGameState;
 
-  const {
-    antiqueEventsCount,
-    eventCount,
-    forcedJumpEventCount,
-    selectNewEvent: baseSelectNewEvent,
-    getPeriod,
-    isAntiqueEvent,
-    updateAntiqueCount,
-    resetAntiqueCount,
-    resetEventCount,
-    invalidateEventCaches,
-    recordCorrectAnswer,
-    recordIncorrectAnswer,
-    resetAntiFrustration,
-  } = useEventSelector({
-    setError,
-    setIsGameOver,
-    updateStateCallback: updateGameState
-  });
+
+
 
   const selectNewEvent = useCallback(
     async (events: Event[], referenceEvent: Event | null, currentStreak?: number): Promise<Event | null> => {
@@ -575,11 +592,13 @@ export function useGameLogicA(initialEvent?: string, modeId?: string) {
     [baseSelectNewEvent, user.level, usedEvents, streak]
   );
 
+  selectNewEventRef.current = selectNewEvent;
+
   // Wrapper initGame qui réinitialise aussi le système anti-frustration et le compteur d'événements
-  const initGame = useCallback(async () => {
+  const startNewGame = useCallback(async () => {
     resetAntiFrustration();
     resetEventCount(); // Réinitialiser le compteur pour les sauts temporels
-    await baseInitGameWrapper();
+    await baseInitGame();
     // 🎬 Initialiser les métadonnées (utilise les valeurs courantes via closure)
     currentTourRef.current = 0;
     metadataManagerRef.current = new GameSessionMetadataManager(
@@ -624,43 +643,40 @@ export function useGameLogicA(initialEvent?: string, modeId?: string) {
     [setUser, setError, gameMode.maxLives]
   );
 
-  const { currentReward, checkRewards, completeRewardAnimation, updateRewardPosition } = useRewards({
-    onRewardEarned: (reward) => {
-      if (!reward.targetPosition) {
-        reward.targetPosition =
-          reward.type === RewardType.EXTRA_LIFE
-            ? { x: screenWidth * 0.45, y: 50 }
-            : { x: 80, y: 30 };
-      }
-      applyReward(reward);
-    },
-    maxLives: gameMode.maxLives,
-  });
 
-  const {
-    adState,
-    canShowAd,
-    showRewardedAd,
-    showGenericInterstitial,
-    showLevelUpInterstitial,
-    showGameOverInterstitial,
-    resetAdsState,
-    isAdLoaded,
-  } = useAds({
-    user,
-    setUser,
-    previousEvent,
-    allEvents,
-    selectNewEvent,
-    resetTimer,
-    setIsGameOver,
-    setIsLevelPaused,
-    setIsWaitingForCountdown,
-    setError,
-    pendingAdDisplay: pendingAdDisplay,
-    setPendingAdDisplay,
-    maxLives: gameMode.maxLives,
-  });
+
+  // --- REPLACÉ ICI : Fonction pour réinitialiser l'état de contrôle du jeu ---
+  const resetGameFlowState = useCallback(() => {
+    setIsGameOver(false);
+    setIsLevelPaused(false);
+    setShowLevelModal(false);
+    setShowDates(!!gameMode.showDatesByDefault);
+    setIsCorrect(undefined);
+    setIsWaitingForCountdown(false);
+    setStreak(0);
+    progressAnim.setValue(0); // Réinitialiser l'animation de progression
+    setCurrentLevelConfig({ ...LEVEL_CONFIGS[1], eventsSummary: [] }); // Revenir à la config niveau 1
+    setPendingAdDisplay(null); // Annuler les pubs en attente
+    setTriggerLevelEndAnim(false); // Réinitialiser l'animation de fin de niveau
+    setError(null); // Nettoyer les erreurs précédentes
+    setEndSummary(null);
+    setEndSummaryError(null);
+    // Réinitialiser aussi l'état des sous-hooks si nécessaire
+    resetCurrentLevelEvents(); // Réinitialise les events du niveau en cours
+    resetLevelCompletedEvents(); // Réinitialise les events du niveau complété
+    resetAntiqueCount(); // Réinitialise le compteur d'events antiques
+    // Note: resetAntiFrustration et resetEventCount sont appelés dans initGame
+    setLeaderboardsReady(false); // Masquer les classements précédents
+  }, [
+    progressAnim,
+    resetCurrentLevelEvents,
+    resetLevelCompletedEvents,
+    resetAntiqueCount,
+    setLeaderboardsReady,
+    gameMode.showDatesByDefault,
+    setEndSummary,
+    setEndSummaryError,
+  ]);
 
   useEffect(() => {
     if (isImageLoaded && !isLevelPaused && !isGameOver && !isCountdownActive) {
@@ -874,7 +890,7 @@ export function useGameLogicA(initialEvent?: string, modeId?: string) {
             setTimeout(() => {
               setIsWaitingForCountdown(false);
               if (!isGameOver && !showLevelModal) {
-                selectNewEvent(allEvents, newEvent);
+                selectNewEventRef.current(allEvents, newEvent);
               }
             }, 750);
           }
@@ -912,20 +928,20 @@ export function useGameLogicA(initialEvent?: string, modeId?: string) {
         if (user.lives <= 1) { // Check if *about* to be game over
           setTimeout(() => {
             // Re-check isGameOver in case something else ended the game during the delay
-            if (!isGameOver) endGame();
+            if (!isGameOver) endGameRef.current();
           }, 500); // Short delay before game over screen
         } else {
           setTimeout(() => {
             setIsWaitingForCountdown(false);
             if (!isGameOver && !showLevelModal) {
-              selectNewEvent(allEvents, newEvent);
+              selectNewEventRef.current(allEvents, newEvent);
             }
           }, 1500); // Longer delay for incorrect answers
         }
       }
     },
     [
-      previousEvent, newEvent, isLevelPaused, isGameOver, isWaitingForCountdown, timeLeft, streak, user, allEvents, progressAnim, levelCompletedEvents, getPeriod, calculatePoints, checkRewards, selectNewEvent, finalizeCurrentLevelHistory, playCorrectSound, playIncorrectSound, playLevelUpSound, updatePerformanceStats, trackQuestion, trackStreak, trackReward, trackLevelCompleted, addEventToLevel, resetCurrentLevelEvents, resetAntiqueCount, endGame, setPreviousEvent, setError, setIsCorrect, setShowDates, setIsWaitingForCountdown, setIsCountdownActive, setStreak, setUser, setLevelsHistory, setCurrentLevelConfig, setShowLevelModal, setIsLevelPaused, setPendingAdDisplay, gameMode.scoreMultiplier, timeLimit
+      previousEvent, newEvent, isLevelPaused, isGameOver, isWaitingForCountdown, timeLeft, streak, user, allEvents, progressAnim, levelCompletedEvents, getPeriod, calculatePoints, checkRewards, finalizeCurrentLevelHistory, playCorrectSound, playIncorrectSound, playLevelUpSound, updatePerformanceStats, trackQuestion, trackStreak, trackReward, trackLevelCompleted, addEventToLevel, resetCurrentLevelEvents, resetAntiqueCount, setPreviousEvent, setError, setIsCorrect, setShowDates, setIsWaitingForCountdown, setIsCountdownActive, setStreak, setUser, setLevelsHistory, setCurrentLevelConfig, setShowLevelModal, setIsLevelPaused, setPendingAdDisplay, gameMode.scoreMultiplier, timeLimit
     ]
   );
 
@@ -963,7 +979,7 @@ export function useGameLogicA(initialEvent?: string, modeId?: string) {
 
   type StartRunFailure = {
     ok: false;
-    reason: 'NO_PLAYS_LEFT' | 'DB_ERROR' | 'AUTH_REQUIRED' | 'UNKNOWN';
+    reason: 'NO_PLAYS_LEFT' | 'DB_ERROR' | 'AUTH_REQUIRED' | 'UNKNOWN' | 'ALREADY_STARTING';
     message: string;
   };
 
@@ -1012,21 +1028,55 @@ export function useGameLogicA(initialEvent?: string, modeId?: string) {
           };
         }
 
-        // On rafraîchit l'état des parties pour être sûr
-        await refreshPlaysInfo();
+        if (isStartingRunRef.current) {
+          Logger.warn('Plays', '[startRun] Already starting a run, ignoring duplicate call');
+          if (__DEV__ && (console as any).tron) {
+            (console as any).tron.log('[startRun] Démarrage déjà en cours, appel ignoré');
+          }
+          return { ok: false, reason: 'ALREADY_STARTING', message: 'Démarrage déjà en cours' };
+        }
+        isStartingRunRef.current = true;
 
-        // La vérification se fait maintenant sur la valeur fraîche de canStartRun
-        if (!canStartRun) {
+        if (hasConsumedRunInInstanceRef.current && (mode === 'classic' || mode === 'date' || mode === 'precision')) {
+          Logger.info('Plays', '[startRun] Run already consumed for this component instance, skipping DB record');
+          return {
+            ok: true,
+            runId: currentRunIdRef.current || 'already-started',
+            window: todayWindow(),
+            allowed: playsInfo?.allowed ?? 3,
+            used: playsInfo?.used ?? 0
+          };
+        }
+
+        const freshPlays = await refreshPlaysInfo();
+        const canStartActually = freshPlays?.remaining ? freshPlays.remaining > 0 : canStartRun;
+
+        if (__DEV__ && (console as any).tron) {
+          (console as any).tron.display({
+            name: '🚀 START RUN ATTEMPT',
+            preview: `Mode: ${mode}`,
+            value: { freshPlays, canStartActually, timestamp: new Date().toISOString() },
+            important: true
+          });
+        }
+
+        // La vérification se fait maintenant sur la valeur fraîche
+        if (!canStartActually) {
+          Logger.warn('Plays', '[startRun] Blocked: No plays left', { remaining: freshPlays?.remaining });
+          isStartingRunRef.current = false;
           return { ok: false, reason: 'NO_PLAYS_LEFT', message: "Plus de parties disponibles aujourd'hui." };
         }
 
-        const { data: profile, error: profileError } = await supabase
+        Logger.info('Plays', '[startRun] Allowed: Starting run creation', { remaining: freshPlays?.remaining });
+
+        const { data: profile, error: profileError } = await (supabase
           .from('profiles')
           .select('id, parties_per_day')
           .eq('id', authUser.id)
-          .maybeSingle();
+          .maybeSingle() as any);
 
         if (profileError) {
+          isStartingRunRef.current = false;
           currentRunIdRef.current = null;
           return {
             ok: false,
@@ -1046,6 +1096,7 @@ export function useGameLogicA(initialEvent?: string, modeId?: string) {
           .lt('created_at', window.endISO);
 
         if (runsCountError) {
+          isStartingRunRef.current = false;
           currentRunIdRef.current = null;
           return {
             ok: false,
@@ -1057,13 +1108,14 @@ export function useGameLogicA(initialEvent?: string, modeId?: string) {
         const used = runsToday ?? 0;
         const insertPayload: any = { user_id: authUser.id, mode, points: 0 };
 
-        const { data: inserted, error: insertError } = await supabase
+        const { data: inserted, error: insertError } = await (supabase
           .from('runs')
           .insert(insertPayload)
           .select('id, created_at')
-          .single();
+          .single() as any);
 
         if (insertError || !inserted) {
+          isStartingRunRef.current = false;
           currentRunIdRef.current = null;
           return {
             ok: false,
@@ -1072,12 +1124,17 @@ export function useGameLogicA(initialEvent?: string, modeId?: string) {
           };
         }
 
-        await refreshPlaysInfo();
-        currentRunIdRef.current = inserted.id;
+        const insertedRun = inserted as any;
+        Logger.info('Plays', `[startRun] Run successfully created in DB with ID: ${insertedRun.id}`);
 
+        hasConsumedRunInInstanceRef.current = true;
+        await refreshPlaysInfo();
+        currentRunIdRef.current = insertedRun.id;
+
+        isStartingRunRef.current = false;
         return {
           ok: true,
-          runId: inserted.id,
+          runId: insertedRun.id,
           window,
           allowed,
           used,
@@ -1215,12 +1272,12 @@ export function useGameLogicA(initialEvent?: string, modeId?: string) {
       }
 
       // 1. Insert current game score
-      const { error: insertError } = await supabase.from('game_scores').insert({
+      const { error: insertError } = await ((supabase as any).from('game_scores').insert({
         user_id: userId,
         display_name: currentDisplayName,
         score: user.points,
-        mode: economyMode, // 'classic' or 'precision'
-      });
+        mode: economyMode,
+      }));
       if (insertError) {
         FirebaseAnalytics.trackError('score_insert_error', {
           message: insertError.message,
@@ -1229,11 +1286,11 @@ export function useGameLogicA(initialEvent?: string, modeId?: string) {
       }
 
       // 2. Check and update high score in profiles table
-      const { data: currentProfile, error: profileError } = await supabase
+      const { data: currentProfile, error: profileError } = await ((supabase as any)
         .from('profiles')
         .select('high_score')
         .eq('id', userId)
-        .single();
+        .single());
 
       if (profileError) {
         FirebaseAnalytics.trackError('profile_fetch_error', {
@@ -1241,10 +1298,10 @@ export function useGameLogicA(initialEvent?: string, modeId?: string) {
           screen: 'endGame',
         });
       } else if (currentProfile && user.points > (currentProfile.high_score || 0)) {
-        const { error: updateError } = await supabase
+        const { error: updateError } = await ((supabase as any)
           .from('profiles')
           .update({ high_score: user.points })
-          .eq('id', userId);
+          .eq('id', userId));
 
         if (updateError) {
           FirebaseAnalytics.trackError('profile_update_error', {
@@ -1460,8 +1517,8 @@ export function useGameLogicA(initialEvent?: string, modeId?: string) {
 
     // Maintenant sélectionner le premier événement à deviner
 
-    selectNewEvent(allEvents, firstEvent)
-      .then((selectedEvent) => {
+    selectNewEventRef.current(allEvents, firstEvent)
+      .then((selectedEvent: Event | null) => {
         console.log('[LEVEL_START] Événement sélectionné:', selectedEvent?.id);
         // Only unpause if an event was successfully selected AND the game hasn't ended in the meantime
         if (selectedEvent && !isGameOver) {
@@ -1479,7 +1536,7 @@ export function useGameLogicA(initialEvent?: string, modeId?: string) {
           });
         }
       })
-      .catch((err) => {
+      .catch((err: any) => {
 
         setError(`Erreur critique lors du chargement du niveau suivant: ${err.message}`);
         FirebaseAnalytics.trackError('select_event_error_levelup', {
@@ -1503,6 +1560,8 @@ export function useGameLogicA(initialEvent?: string, modeId?: string) {
     setShowDates, setIsCorrect, setIsImageLoaded, // More state setters
     isGameOver // Need to check isGameOver status within the callback
   ]);
+
+  endGameRef.current = endGame;
 
   // --- REACTOTRON DEBUG COMMANDS ---
   useEffect(() => {
@@ -1541,10 +1600,13 @@ export function useGameLogicA(initialEvent?: string, modeId?: string) {
   }, [setUser, user.lives, showRewardedAd, setPendingAdDisplay, gameMode.maxLives]);
   // --- FIN REACTOTRON DEBUG COMMANDS ---
 
+  // --- SUPPRESSION DE L'INITIALISATION AUTOMATIQUE ICI ---
+  // Elle est déjà gérée par useInitGame.ts via baseInitGame
+  // On ne garde que le tracking si nécessaire, mais startNewGame() ici causait des doubles appels.
   useEffect(() => {
-    initGame();
-    trackGameStarted();
-  }, [initGame, trackGameStarted]); // Dependencies ensure this runs only once on mount
+    const playerName = profile?.display_name || user.name || 'Joueur';
+    trackGameStarted(playerName, !profile?.id, user.level);
+  }, [trackGameStarted, user.name, user.level, profile]);
 
 
   // --- MODIFIER LA SECTION RETURN (tout à la fin du hook) ---
@@ -1574,7 +1636,7 @@ export function useGameLogicA(initialEvent?: string, modeId?: string) {
     handleChoice,
     handleLevelUp,
     showRewardedAd,
-    initGame, // Fonction de useInitGame
+    initGame: startNewGame, // Utilisation du nouveau nom
     completeRewardAnimation,
     updateRewardPosition,
     remainingEvents: allEvents ? allEvents.length - usedEvents.size : 0,

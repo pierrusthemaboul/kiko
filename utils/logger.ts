@@ -1,12 +1,20 @@
-import { Platform } from 'react-native';
+import { Platform, NativeModules } from 'react-native';
 
 type LogLevel = 'info' | 'warn' | 'error' | 'debug';
 type LogCategory = 'Ads' | 'GameLogic' | 'Quests' | 'Navigation' | 'System' | 'Plays';
 
+// Récupération de l'IP du serveur pour l'OBSERVER (comme Reactotron)
+let agentHost = 'localhost';
+if (__DEV__) {
+  const scriptURL = NativeModules.SourceCode?.scriptURL;
+  if (scriptURL) {
+    agentHost = scriptURL.split('://')[1].split(':')[0];
+  }
+}
+
 /**
  * Logger structured for easier debugging.
- * In development, it prints to console with colors/formatting.
- * In production, it could send to Sentry/Crashlytics (to be configured).
+ * In development, it prints to console and sends to OBSERVER agent.
  */
 class LoggerService {
   private static instance: LoggerService;
@@ -28,19 +36,40 @@ class LoggerService {
     return { prefix, message, data };
   }
 
+  async broadcastToAgent(logData: any) {
+    if (!__DEV__) return;
+    try {
+      await fetch(`http://${agentHost}:9091/log`, {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify(logData),
+      });
+    } catch (e) {
+      // Échec silencieux si l'agent n'est pas lancé
+    }
+  }
+
   log(level: LogLevel, category: LogCategory, message: string, data?: any) {
+    const logEntry = {
+      level,
+      category,
+      message,
+      data,
+      timestamp: new Date().toISOString()
+    };
+
     const { prefix, message: formattedMsg, data: loggedData } = this.formatMessage(level, category, message, data);
 
-    // Store in memory for specialized "Debug Screen"
-    this.logs.unshift({ level, category, message, data, timestamp: new Date().toISOString() });
+    // Store in memory
+    this.logs.unshift(logEntry);
     if (this.logs.length > this.MAX_LOGS) this.logs.pop();
 
     // Console output
+    console.log(`${prefix} ${formattedMsg}`, loggedData || '');
+
+    // Broadcast to OBSERVER Agent
     if (__DEV__) {
-      // Colors not supported in all React Native debugging environments, so we stick to prefixes
-      console.log(`${prefix} ${formattedMsg}`, loggedData || '');
-    } else {
-      console.log(`${prefix} ${formattedMsg}`, loggedData || '');
+      this.broadcastToAgent(logEntry);
     }
   }
 

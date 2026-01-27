@@ -216,7 +216,8 @@ export async function trackScreen(screenName: string, screenClass?: string) {
 
 export async function trackAppOpen() {
   try {
-    await logAppOpen(analyticsInstance);
+    // logAppOpen est obsolète, on utilise logEvent('app_open')
+    await logEvent(analyticsInstance, 'app_open' as any);
   } catch (error) {
     console.error('trackAppOpen failed', error);
   }

@@ -1,0 +1,19 @@
+{
+    "name": "OBSERVER",
+    "version": "1.0.0",
+    "config": {
+        "reactotron": {
+            "host": "localhost",
+            "port": 9090
+        },
+        "storage": {
+            "input": "./STORAGE/INPUT",
+            "output": "./STORAGE/OUTPUT",
+            "logs": "./STORAGE/LOGS"
+        },
+        "gemini": {
+            "model": "gemini-1.5-flash",
+            "threshold": "error"
+        }
+    }
+}

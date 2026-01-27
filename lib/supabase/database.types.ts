@@ -56,7 +56,7 @@ export interface Database {
         Row: {
           id: string;
           user_id: string;
-          mode: 'classic' | 'date';
+          mode: 'classic' | 'date' | 'precision';
           points: number;
           created_at?: string;
           updated_at?: string;
@@ -74,7 +74,7 @@ export interface Database {
         Insert: {
           id?: string;
           user_id: string;
-          mode: 'classic' | 'date';
+          mode: 'classic' | 'date' | 'precision';
           points: number;
           created_at?: string;
           updated_at?: string;
@@ -92,7 +92,7 @@ export interface Database {
         Update: {
           id?: string;
           user_id?: string;
-          mode?: 'classic' | 'date';
+          mode?: 'classic' | 'date' | 'precision';
           points?: number;
           created_at?: string;
           updated_at?: string;

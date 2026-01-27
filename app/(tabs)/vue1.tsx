@@ -9,7 +9,7 @@ import {
   StatusBar,
   Alert,
 } from 'react-native';
-import { useRouter } from 'expo-router';
+import { useRouter, useFocusEffect } from 'expo-router';
 import { Ionicons } from '@expo/vector-icons';
 import { BannerAd, BannerAdSize, AdEventType } from 'react-native-google-mobile-ads';
 import { FirebaseAnalytics } from '@/lib/firebase';
@@ -93,6 +93,14 @@ export default function Vue1() {
   useEffect(() => {
     FirebaseAnalytics.screen('HomeLuxury', 'Vue1');
   }, []);
+
+  // Rafraîchir les infos de parties à chaque focus (retour de partie)
+  useFocusEffect(
+    useCallback(() => {
+      refreshPlaysInfo();
+      return () => { };
+    }, [refreshPlaysInfo])
+  );
 
   // Charger les quêtes au montage et quand le profil change
   useEffect(() => {
@@ -240,8 +248,16 @@ export default function Vue1() {
           if (fetchError) throw fetchError;
 
           if (currentProfile) {
-            const newPartiesPerDay = (currentProfile.parties_per_day ?? 3) + 1;
-            Logger.debug('Ads', `Updating parties_per_day from ${currentProfile.parties_per_day} to ${newPartiesPerDay}`);
+            // Pour garantir au moins une partie, on doit regarder combien ont été utilisées aujourd'hui
+            // via les infos de playsInfo si disponibles, sinon on fait juste +1 sur le quota
+            const currentQuota = currentProfile.parties_per_day ?? 3;
+            const currentlyUsed = playsInfo?.used ?? 0;
+
+            // On s'assure que le nouveau quota est supérieur au max entre (ce qu'on a déjà) et (ce qu'on a déjà joué)
+            const baseForIncrement = Math.max(currentQuota, currentlyUsed);
+            const newPartiesPerDay = baseForIncrement + 1;
+
+            Logger.debug('Ads', `Updating parties_per_day from ${currentQuota} to ${newPartiesPerDay} (Used today: ${currentlyUsed})`);
 
             const { error: updateError } = await (supabase.from('profiles') as any)
               .update({
@@ -253,6 +269,7 @@ export default function Vue1() {
             if (!updateError) {
               Logger.info('Ads', 'Successfully updated profile');
               Alert.alert('Partie gagnée ! 🎉', 'Vous avez gagné 1 partie supplémentaire !');
+              Logger.debug('Ads', 'Refreshing plays info after reward');
               await refreshPlaysInfo(); // Attendre le rafraîchissement
               FirebaseAnalytics.trackEvent('rewarded_play_granted', {
                 screen: 'vue1',

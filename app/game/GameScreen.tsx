@@ -27,6 +27,7 @@ import { nextRankProgress } from '@/lib/economy/ranks';
 import { useGameLogicA } from '@/hooks/useGameLogicA'; // Chemin OK
 import { usePrecisionGame } from '@/hooks/game/usePrecisionGame';
 import { useImmersiveMode } from '@/hooks/useImmersiveMode';
+import { Logger } from '@/utils/logger';
 
 // Libs
 import { FirebaseAnalytics } from '@/lib/firebase'; // Chemin OK
@@ -479,6 +480,8 @@ export default function GameScreenPage() {
   const rawMode = (params as { mode?: string | string[] }).mode;
   const resolvedMode = Array.isArray(rawMode) ? rawMode[rawMode.length - 1] : rawMode;
   const mode = typeof resolvedMode === 'string' ? resolvedMode.toLowerCase() : undefined;
+
+  Logger.info('System', `[GameScreenPage] Rendering for mode: ${mode || 'default (classic)'}`);
 
   if (mode === 'precision') {
     return <PrecisionGameScreen />;
