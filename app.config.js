@@ -158,9 +158,7 @@ export default ({ config }) => {
       fallbackToCacheTimeout: 0,
       url: "https://u.expo.dev/3cbda57c-1ec1-4949-af06-9e933dbc0050"
     },
-    runtimeVersion: {
-      policy: "appVersion"
-    },
+    runtimeVersion: "1.6.6",
     extra: {
       ...(config.extra || {}),
       eas: {
