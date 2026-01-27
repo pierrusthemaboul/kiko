@@ -12,7 +12,7 @@ import { Stack, SplashScreen } from 'expo-router';
 import { useFonts } from 'expo-font';
 import * as Application from 'expo-application';
 import AsyncStorage from '@react-native-async-storage/async-storage';
-import { Platform } from 'react-native';
+import { Platform, View, Text } from 'react-native';
 import * as SystemUI from 'expo-system-ui';
 import * as NavigationBar from 'expo-navigation-bar';
 
@@ -323,12 +323,30 @@ export default function RootLayout() {
   // Le Stack Navigator principal
   return (
     <AudioProvider>
-      <Stack screenOptions={{ headerShown: false }}>
-        <Stack.Screen name="(tabs)" />
-        <Stack.Screen name="auth" />
-        <Stack.Screen name="game" />
-        <Stack.Screen name="+not-found" />
-      </Stack>
+      <View style={{ flex: 1 }}>
+        <Stack screenOptions={{ headerShown: false }}>
+          <Stack.Screen name="(tabs)" />
+          <Stack.Screen name="auth" />
+          <Stack.Screen name="game" />
+          <Stack.Screen name="+not-found" />
+        </Stack>
+
+        {/* INDICATEUR DE VERSION EAS - SENTINELLES */}
+        <View style={{
+          position: 'absolute',
+          bottom: 40,
+          left: 10,
+          backgroundColor: 'rgba(0, 255, 0, 0.7)',
+          padding: 4,
+          borderRadius: 4,
+          zIndex: 9999,
+          pointerEvents: 'none'
+        }}>
+          <Text style={{ color: 'black', fontSize: 10, fontWeight: 'bold' }}>
+            SENTINELLES ACTIVE V3
+          </Text>
+        </View>
+      </View>
     </AudioProvider>
   );
 }

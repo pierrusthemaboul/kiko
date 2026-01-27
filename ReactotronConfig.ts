@@ -166,6 +166,15 @@ if (__DEV__) {
             title: 'Reset Debug',
             description: 'Supprime tous les flags de simulation debug.',
         });
+
+        Reactotron.onCustomCommand({
+            command: 'ping_test',
+            handler: () => {
+                Reactotron.log!('🏓 PONG ! ReactotronConfig est bien à jour.');
+            },
+            title: 'Ping Test',
+            description: 'Vérifie si les modifications de code sont prises en compte.',
+        });
     };
 
     // Enregistrement initial

@@ -88,11 +88,11 @@ export function useInitGame() {
         return;
       }
       // console.log(`[FetchUserData - Instance ${hookInstanceId}] User found: ${authUser.id}. Fetching profile...`);
-      const { data: profileData, error: profileError } = await supabase
+      const { data: profileData, error: profileError } = await (supabase
         .from('profiles')
         .select('display_name, high_score')
         .eq('id', authUser.id)
-        .single();
+        .single() as any);
       if (profileError) {
         // console.error(`[FetchUserData - Instance ${hookInstanceId}] Error fetching profile:`, profileError.message);
         // Fallback: utilise l'email si le profil échoue mais l'utilisateur auth existe
@@ -101,8 +101,8 @@ export function useInitGame() {
         FirebaseAnalytics.error('profile_fetch_error', profileError.message, 'fetchUserData');
       } else if (profileData) {
         // console.log(`[FetchUserData - Instance ${hookInstanceId}] Profile data found:`, profileData);
-        const displayName = profileData.display_name || authUser.email || '';
-        const userHighScore = profileData.high_score || 0;
+        const displayName = (profileData as any).display_name || authUser.email || '';
+        const userHighScore = (profileData as any).high_score || 0;
         setUser(prev => ({ ...prev, name: displayName })); // Met à jour l'état user avec le nom
         setHighScore(userHighScore); // Met à jour l'état highScore
         FirebaseAnalytics.setUserProps({ display_name: displayName });
@@ -239,13 +239,17 @@ export function useInitGame() {
         if (candidatesForSecond.length > 0) {
           secondEvent = candidatesForSecond[0];
         } else {
-          // If all fallback candidates have same date (unlikely but possible), 
-          // search in all valid events
+          // If all fallback candidates have same date, search in all valid events
           const backupCandidates = validEvents.filter(e => {
             if (!e.date || !firstEvent.date) return false;
             return e.id !== firstEvent.id && getTimeDifference(e.date, firstEvent.date) !== 0;
           });
-          secondEvent = backupCandidates.length > 0 ? backupCandidates[0] : shuffled[1];
+          if (backupCandidates.length > 0) {
+            secondEvent = backupCandidates[0];
+          } else {
+            console.error('[InitGame] FATAL: No event with unique date found in DB!');
+            secondEvent = shuffled[1] || shuffled[0]; // Desperation fallback
+          }
         }
       } else {
         // Séparer événements français et internationaux
@@ -267,9 +271,13 @@ export function useInitGame() {
           if (shuffledRemaining.length > 0) {
             secondEvent = shuffledRemaining[0];
           } else {
-            // Fallback inside initialCandidates if no unique date found
+            // Fallback unique date search
             const backup = validEvents.filter(e => e.id !== firstEvent.id && getTimeDifference(e.date, firstEvent.date) !== 0);
-            secondEvent = backup.length > 0 ? backup[0] : initialCandidates.filter(e => e.id !== firstEvent.id)[0];
+            if (backup.length > 0) {
+              secondEvent = backup[0];
+            } else {
+              secondEvent = initialCandidates.filter(e => e.id !== firstEvent.id)[0] || validEvents[0];
+            }
           }
         } else {
           // Pas d'événements français (cas rare), prendre 2 au hasard
@@ -358,11 +366,9 @@ export function useInitGame() {
       return didUpdate ? updated : prev;
     });
 
-    if (didUpdate) {
-      AsyncStorage.removeItem(EVENTS_CACHE_KEY).catch(() => {
-        console.warn('[useInitGame] Unable to invalidate events cache after usage update.');
-      });
-    }
+    // Plus besoin de supprimer le cache ici, l'état local allEvents est déjà mis à jour
+    // et sera persisté lors de la prochaine sauvegarde automatique ou rechargement.
+    // Supprimer tout le cache à chaque fois causait des rechargements inutiles de 2000 events.
   }, []);
 
   // Exécuter initGame une seule fois au montage initial de chaque instance du hook

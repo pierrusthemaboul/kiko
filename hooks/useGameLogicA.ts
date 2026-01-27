@@ -35,6 +35,7 @@ import { registerDebugCommand } from '../ReactotronConfig';
 const screenWidth = Dimensions.get('window').width;
 
 export function useGameLogicA(initialEvent?: string, modeId?: string) {
+  if (__DEV__) console.log('[useGameLogicA] Hook executed for mode:', modeId || 'default');
   const gameMode = useMemo<GameModeConfig>(() => getGameModeConfig(modeId), [modeId]);
   const timeLimit = Math.max(1, gameMode.timeLimit);
   const [streak, setStreak] = useState(0);
@@ -297,6 +298,7 @@ export function useGameLogicA(initialEvent?: string, modeId?: string) {
     canStartGuestPlay,
     isLoading: isGuestPlaysLoading,
     incrementGuestPlays,
+    grantExtraPlay: grantGuestExtraPlay,
     refreshGuestPlays,
   } = useGuestPlays();
 
@@ -519,12 +521,26 @@ export function useGameLogicA(initialEvent?: string, modeId?: string) {
           );
         }
 
-        const { error: usageError } = await (supabase as any).rpc('increment_event_usage', {
-          event_id: selectedEvent.id,
-        });
+        // Synchroniser l'usage de l'événement dans la DB
+        try {
+          const { data: evtData } = await (supabase
+            .from('evenements')
+            .select('frequency_score')
+            .eq('id', selectedEvent.id)
+            .single() as any);
 
-        if (usageError) {
+          const newScore = (evtData?.frequency_score ?? 0) + 1;
 
+          await (supabase.from('evenements') as any)
+            .update({
+              frequency_score: newScore,
+              last_used: new Date().toISOString()
+            })
+            .eq('id', selectedEvent.id);
+
+          Logger.debug('GameLogic', `Synced usage for event: ${selectedEvent.titre}`, { newScore });
+        } catch (syncErr) {
+          Logger.warn('GameLogic', 'Failed to sync event usage to DB', syncErr);
         }
 
         markEventUsageLocal(selectedEvent.id);
@@ -1564,8 +1580,11 @@ export function useGameLogicA(initialEvent?: string, modeId?: string) {
   endGameRef.current = endGame;
 
   // --- REACTOTRON DEBUG COMMANDS ---
+  const hasRegisteredDebugRef = useRef(false);
   useEffect(() => {
-    if (__DEV__) {
+    if (__DEV__ && !hasRegisteredDebugRef.current) {
+      console.log('[DEBUG] Registering hook-based Reactotron commands...');
+
       registerDebugCommand({
         command: 'addLife',
         handler: () => {
@@ -1596,8 +1615,62 @@ export function useGameLogicA(initialEvent?: string, modeId?: string) {
         },
         description: 'Passer au niveau suivant (mode debug)',
       });
+
+      registerDebugCommand({
+        command: 'simulate_event_distribution',
+        handler: async () => {
+          // @ts-ignore
+          console.tron.log('🚀 Démarrage de la simulation (100 tirages)...');
+          const results = [];
+          const duplicates = [];
+          const sameDates: any[] = [];
+          let currentRef = newEvent || previousEvent;
+          let tempUsed = new Set(usedEvents);
+
+          for (let i = 0; i < 100; i++) {
+            const next = await baseSelectNewEvent(allEvents, currentRef, user.level, tempUsed, streak);
+            if (next) {
+              if (tempUsed.has(next.id)) duplicates.push({ title: next.titre, id: next.id });
+              if (currentRef && next.date === currentRef.date) sameDates.push({ date: next.date, event: next.titre, prev: currentRef.titre });
+              results.push(next.titre);
+              tempUsed.add(next.id);
+              currentRef = next;
+            } else {
+              // @ts-ignore
+              console.tron.display({ name: '⚠️  Simulateur arrêté', value: `Arrêté au tour ${i} (plus d'événements)` });
+              break;
+            }
+          }
+
+          // @ts-ignore
+          console.tron.display({
+            name: '🎲 DISTRIBUTION (100 tours)',
+            value: {
+              total: results.length,
+              unique: new Set(results).size,
+              duplicates,
+              sameDates_count: sameDates.length,
+              sameDates_list: sameDates,
+              first_10: results.slice(0, 10)
+            },
+            important: true
+          });
+
+          // Envoyer aussi à l'OBSERVER pour que l'IA puisse voir
+          Logger.info('GameLogic', 'Simulation Distribution Result', {
+            total: results.length,
+            unique: new Set(results).size,
+            duplicates_count: duplicates.length,
+            sameDates_count: sameDates.length,
+            duplicates,
+            sameDates_list: sameDates
+          });
+        },
+        description: 'Simuler 100 sélections successives pour auditer les doublons et la diversité.',
+      });
+      hasRegisteredDebugRef.current = true;
     }
-  }, [setUser, user.lives, showRewardedAd, setPendingAdDisplay, gameMode.maxLives]);
+  }, [setUser, user.lives, showRewardedAd, setPendingAdDisplay, gameMode.maxLives, allEvents, baseSelectNewEvent, newEvent, previousEvent, usedEvents, streak]);
   // --- FIN REACTOTRON DEBUG COMMANDS ---
 
   // --- SUPPRESSION DE L'INITIALISATION AUTOMATIQUE ICI ---
@@ -1669,6 +1742,7 @@ export function useGameLogicA(initialEvent?: string, modeId?: string) {
       limit: guestPlaysLimit,
       canStart: canStartGuestPlay,
       isLoading: isGuestPlaysLoading,
+      grantExtraPlay: grantGuestExtraPlay,
     },
   };
 }

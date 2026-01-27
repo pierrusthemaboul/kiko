@@ -1,4 +1,4 @@
-package com.pierretulle.juno2.dev
+package com.pierretulle.juno2
 
 import android.app.Application
 import android.content.res.Configuration

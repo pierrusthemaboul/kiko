@@ -86,88 +86,12 @@ Avant de proposer une correction, tu **DOIS** suivre ces étapes :
 
 ---
 
-## 🔧 6. WORKFLOW DE CORRECTION D'ERREURS
+## 🔧 6. CONFIRMATION D'ACCÈS AUX LOGS
 
-**Quand l'utilisateur rapporte une erreur, tu dois suivre ce workflow:**
-
-### Étape 1️⃣ : Consulter le fichier `DEV_AI/erreurs_a_corriger.md`
-
-Ce fichier centralise **toutes les erreurs documentées** avec:
-- Logs spécifiques extraits de `current_session.json`
-- Contexte et conditions de reproduction
-- Suggestions IA pour la correction
-- Fichiers concernés et numéros de lignes
-
-**Ton action** :
-- Cherche si l'erreur rapportée existe déjà dans ce fichier
-- Si oui, utilise les logs et suggestions documentées
-- Si non, continue à l'étape 2
-
-### Étape 2️⃣ : Extraire les logs pertinents
-
-Tu **DOIS extraire les logs de `current_session.json`** et **les documenter dans `erreurs_a_corriger.md`** :
-- Identifie les timestamps exacts de l'erreur
-- Extrais les messages de log pertinents
-- Inclus les données associées (userId, timestamps, états)
-- Note les patterns (double appels? re-renders? conditions spécifiques?)
-
-### Étape 3️⃣ : Analyser le code + les logs ensemble
-
-**Ne te fie JAMAIS au code seul**. Utilise:
-- Les logs réels du fichier `current_session.json` comme source de vérité
-- Le code source pour comprendre le "pourquoi"
-- Les deux ensemble pour diagnostiquer le problème
-
-Exemple :
-```
-Log montre: "Attempting to grant extra play" x2 au timestamp 09:51:54
-Code indique: Il y a un useEffect avec un lock adSuccessLoading
-Diagnostic: Le lock existe mais peut être contourné par une re-render
-```
-
-### Étape 4️⃣ : Proposer une correction avec suggestions complètes
-
-Quand tu proposes une correction, **inclus toujours**:
-1. **Hypothèse sur la cause** : Basée sur les logs et le code
-2. **Logs supplémentaires à ajouter** : Pour mieux tracer le problème
-3. **Configurations Reactotron à tester** : (ex: désactiver StrictMode)
-4. **Réglages potentiels** : Changements de code proposés
-5. **Plan de vérification** : Comment confirmer que la correction fonctionne
-
-### Étape 5️⃣ : Mettre à jour `erreurs_a_corriger.md`
-
-Après chaque session de débogage:
-- Mets à jour le statut: `[x] Non corrigée` → `[ ] En cours` → `[ ] Corrigée`
-- Documente la solution implémentée
-- Ajoute les logs utiles trouvés pour futures références
-- Note les découvertes importantes pour le contexte
-
----
-
-### 📌 Résumé du flux utilisateur → IA → Correction
-
-```
-Utilisateur rapporte une erreur
-         ↓
-IA consulte erreurs_a_corriger.md
-         ↓
-IA analyse current_session.json pour les logs
-         ↓
-IA lit le code source concerné
-         ↓
-IA propose correction avec suggestions complètes
-         ↓
-Utilisateur implémente la correction
-         ↓
-IA met à jour erreurs_a_corriger.md avec statut "Corrigée"
-```
-
-### 🎯 Erreurs documentées à ce jour:
-
-1. **[Publicités] Bannière AdMob ne se charge pas (BANNER_HOME)** - Non corrigée
-2. **[Système de récompense] Double déclenchement** - Non corrigée
-
-Consulte `DEV_AI/erreurs_a_corriger.md` pour les détails complets de chaque erreur.
+Avant de commencer toute analyse ou correction, tu **DOIS** :
+1.  Vérifier l'accès au fichier `entreprises virtuelles/REPORTERS_UNIT/AGENTS/OBSERVER/STORAGE/INPUT/current_session.json`.
+2.  Confirmer explicitement ici (dans la conversation) que tu as accès à ce fichier.
+3.  Citer brièvement les dernières entrées ou l'état du fichier (nombre de lignes, dernier timestamp) pour prouver que la surveillance est active et récente.
 
 ---
 *Dernière mise à jour : 27 Janvier 2026*

@@ -86,13 +86,13 @@ android {
     buildToolsVersion rootProject.ext.buildToolsVersion
     compileSdk rootProject.ext.compileSdkVersion
 
-    namespace 'com.pierretulle.juno2.dev'
+    namespace 'com.pierretulle.juno2'
     defaultConfig {
-        applicationId 'com.pierretulle.juno2.dev'
+        applicationId 'com.pierretulle.juno2'
         minSdkVersion rootProject.ext.minSdkVersion
         targetSdkVersion rootProject.ext.targetSdkVersion
-        versionCode 10123
-        versionName "1.6.6"
+        versionCode 10124
+        versionName "1.6.7"
     }
     signingConfigs {
         debug {

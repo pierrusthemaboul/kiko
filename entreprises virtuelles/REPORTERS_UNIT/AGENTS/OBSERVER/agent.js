@@ -20,15 +20,24 @@ function log(msg, type = 'INFO') {
 }
 
 // Initialisation du fichier de session
+// NOUVEAU: On vide systématiquement au démarrage pour avoir une session propre,
+// après avoir archivé l'ancienne si elle contient des données.
 let sessionData = [];
 if (fs.existsSync(SESSION_FILE)) {
     try {
-        sessionData = JSON.parse(fs.readFileSync(SESSION_FILE, 'utf8'));
-    } catch (e) {
-        log("Erreur lecture session existante, reset.", "WARN");
-        sessionData = [];
-    }
+        const oldData = fs.readFileSync(SESSION_FILE, 'utf8');
+        const parsed = JSON.parse(oldData);
+        if (parsed.length > 0) {
+            log(`Archivage d'une session précédente (${parsed.length} entrées)...`);
+            const archivePath = path.join(config.config.storage.output, `auto_archive_${Date.now()}.json`);
+            fs.copyFileSync(SESSION_FILE, archivePath);
+        }
+    } catch (e) { }
 }
+
+// On démarre avec une session vide
+fs.writeFileSync(SESSION_FILE, JSON.stringify([], null, 2));
+log("Nouvelle session de surveillance démarrée (fichier vidé).", "SUCCESS");
 
 // --- CONFIG GEMINI ---
 const geminiKey = process.env.GEMINI_API_KEY || process.env.GOOGLE_GEMINI_API_KEY;

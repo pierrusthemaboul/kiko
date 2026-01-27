@@ -121,5 +121,31 @@ export function useGuestPlays() {
     incrementGuestPlays,
     resetGuestPlays,
     refreshGuestPlays: loadGuestPlays,
+    grantExtraPlay: async () => {
+      try {
+        const stored = await AsyncStorage.getItem(GUEST_PLAYS_KEY);
+        const today = getTodayString();
+        const data: GuestPlaysData = stored
+          ? JSON.parse(stored)
+          : { date: today, playsUsed: 0 };
+
+        // On réduit le nombre de parties utilisées pour donner une partie supplémentaire
+        // (Ou on augmente un quota virtuel, mais ici on va juste décrémenter playsUsed s'il est > 0, 
+        // sinon on autorise une partie "bonus" en permettant playsUsed d'être négatif ou en changeant la limite)
+
+        // Stratégie simple : décrémenter playsUsed (permet de rejouer une partie consommée)
+        const newCount = Math.max(-10, data.playsUsed - 1);
+
+        const newData = { date: today, playsUsed: newCount };
+        await AsyncStorage.setItem(GUEST_PLAYS_KEY, JSON.stringify(newData));
+
+        setGuestPlaysUsed(newCount);
+        setCanStartGuestPlay(true);
+        return true;
+      } catch (error) {
+        console.error('[useGuestPlays] Error granting extra play:', error);
+        return false;
+      }
+    }
   };
 }

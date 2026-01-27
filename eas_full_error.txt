@@ -1,0 +1,102 @@
+- Exporting...
+[expo-cli] --non-interactive is not supported, use $CI=1 instead
+[expo-cli] env: load .env
+[expo-cli] env: export EXPO_PUBLIC_APP_VARIANT EXPO_PUBLIC_SUPABASE_URL EXPO_PUBLIC_SUPABASE_ANON_KEY EXPO_PUBLIC_QUEST_LOGS EXPO_PUBLIC_ECONOMY_LOGS EXPO_PUBLIC_ENABLE_CRASHLYTICS GEMINI_API_KEY SUPABASE_SERVICE_ROLE_KEY
+[expo-cli] Starting Metro Bundler
+[expo-cli] Android Bundled 6878ms node_modules\.pnpm\expo-router@4.0.21_0f58ec67478637dfaaaacada63ac4881\node_modules\expo-router\entry.js (1595 modules)
+[expo-cli] Creating asset map
+[expo-cli] 
+[expo-cli] ??? Assets (69):
+[expo-cli] assets\fonts\Montserrat-Bold.ttf (336 kB)
+[expo-cli] assets\fonts\Montserrat-Medium.ttf (331 kB)
+[expo-cli] assets\fonts\Montserrat-Regular.ttf (331 kB)
+[expo-cli] assets\fonts\Montserrat-SemiBold.ttf (334 kB)
+[expo-cli] assets\fonts\SpaceMono-Regular.ttf (93.3 kB)
+[expo-cli] assets\images\bg-level-1.png (1.66 MB)
+[expo-cli] assets\images\bg-level-2.png (1.6 MB)
+[expo-cli] assets\images\bg-level-3.png (1.55 MB)
+[expo-cli] 
+[expo-cli] assets\images\bg-level-4.png (2.28 MB)
+[expo-cli] assets\images\bg-level-5.png (1.62 MB)
+[expo-cli] assets\images\bgpreci.png (2.11 MB)
+[expo-cli] assets\images\logo.png (120 kB)
+[expo-cli] 
+[expo-cli] assets\images\quipasse3.png (1.38 MB)
+[expo-cli] assets\images\react-logo.png (3 variations | 13.9 kB)
+[expo-cli] assets\images\sablier.png (1.73 MB)
+[expo-cli] assets\images\splash-abbey.png (2.02 MB)
+[expo-cli] assets\sounds\242208__wagna__failfare.mp3 (50.2 kB)
+[expo-cli] assets\sounds\361260__japanyoshithegamer__8-bit-wrong-sound.wav (52.1 kB)
+[expo-cli] assets\sounds\361261__japanyoshithegamer__8-bit-spaceship-startup.wav (192 kB)
+[expo-cli] assets\sounds\423455__ohforheavensake__trumpet-brass-fanfare.wav (1.6 MB)
+[expo-cli] assets\sounds\bop.wav (42.8 kB)
+[expo-cli] assets\sounds\corectok.wav (288 kB)
+[expo-cli] assets\sounds\countdown.wav (16.1 kB)
+[expo-cli] assets\sounds\mode-select.mp3 (35.9 kB)
+[expo-cli] assets\sounds\splash.mp3 (264 kB)
+[expo-cli] node_modules\.pnpm\@expo+vector-icons@14.0.4\node_modules\@expo\vector-icons\build\vendor\react-native-vector-icons\Fonts\AntDesign.ttf (70.3 kB)
+[expo-cli] node_modules\.pnpm\@expo+vector-icons@14.0.4\node_modules\@expo\vector-icons\build\vendor\react-native-vector-icons\Fonts\Entypo.ttf (66.2 kB)
+[expo-cli] node_modules\.pnpm\@expo+vector-icons@14.0.4\node_modules\@expo\vector-icons\build\vendor\react-native-vector-icons\Fonts\EvilIcons.ttf (13.5 kB)
+[expo-cli] 
+[expo-cli] node_modules\.pnpm\@expo+vector-icons@14.0.4\node_modules\@expo\vector-icons\build\vendor\react-native-vector-icons\Fonts\Feather.ttf (56.2 kB)
+[expo-cli] node_modules\.pnpm\@expo+vector-icons@14.0.4\node_modules\@expo\vector-icons\build\vendor\react-native-vector-icons\Fonts\FontAwesome.ttf (166 kB)
+[expo-cli] node_modules\.pnpm\@expo+vector-icons@14.0.4\node_modules\@expo\vector-icons\build\vendor\react-native-vector-icons\Fonts\FontAwesome5_Brands.ttf (134 kB)
+[expo-cli] node_modules\.pnpm\@expo+vector-icons@14.0.4\node_modules\@expo\vector-icons\build\vendor\react-native-vector-icons\Fonts\FontAwesome5_Regular.ttf (33.7 kB)
+[expo-cli] node_modules\.pnpm\@expo+vector-icons@14.0.4\node_modules\@expo\vector-icons\build\vendor\react-native-vector-icons\Fonts\FontAwesome5_Solid.ttf (203 kB)
+[expo-cli] node_modules\.pnpm\@expo+vector-icons@14.0.4\node_modules\@expo\vector-icons\build\vendor\react-native-vector-icons\Fonts\FontAwesome6_Brands.ttf (209 kB)
+[expo-cli] node_modules\.pnpm\@expo+vector-icons@14.0.4\node_modules\@expo\vector-icons\build\vendor\react-native-vector-icons\Fonts\FontAwesome6_Regular.ttf (68 kB)
+[expo-cli] node_modules\.pnpm\@expo+vector-icons@14.0.4\node_modules\@expo\vector-icons\build\vendor\react-native-vector-icons\Fonts\FontAwesome6_Solid.ttf (424 kB)
+[expo-cli] 
+[expo-cli] node_modules\.pnpm\@expo+vector-icons@14.0.4\node_modules\@expo\vector-icons\build\vendor\react-native-vector-icons\Fonts\Fontisto.ttf (314 kB)
+[expo-cli] 
+[expo-cli] node_modules\.pnpm\@expo+vector-icons@14.0.4\node_modules\@expo\vector-icons\build\vendor\react-native-vector-icons\Fonts\Foundation.ttf (57 kB)
+[expo-cli] node_modules\.pnpm\@expo+vector-icons@14.0.4\node_modules\@expo\vector-icons\build\vendor\react-native-vector-icons\Fonts\Ionicons.ttf (443 kB)
+[expo-cli] node_modules\.pnpm\@expo+vector-icons@14.0.4\node_modules\@expo\vector-icons\build\vendor\react-native-vector-icons\Fonts\MaterialCommunityIcons.ttf (1.15 MB)
+[expo-cli] node_modules\.pnpm\@expo+vector-icons@14.0.4\node_modules\@expo\vector-icons\build\vendor\react-native-vector-icons\Fonts\MaterialIcons.ttf (357 kB)
+[expo-cli] node_modules\.pnpm\@expo+vector-icons@14.0.4\node_modules\@expo\vector-icons\build\vendor\react-native-vector-icons\Fonts\Octicons.ttf (49.4 kB)
+[expo-cli] node_modules\.pnpm\@expo+vector-icons@14.0.4\node_modules\@expo\vector-icons\build\vendor\react-native-vector-icons\Fonts\SimpleLineIcons.ttf (54.1 kB)
+[expo-cli] node_modules\.pnpm\@expo+vector-icons@14.0.4\node_modules\@expo\vector-icons\build\vendor\react-native-vector-icons\Fonts\Zocial.ttf (25.8 kB)
+[expo-cli] node_modules\.pnpm\@react-navigation+elements@_9f6562661726faab0d34fdf8fa15c5d2\node_modules\@react-navigation\elements\lib\module\assets\back-icon-mask.png (653 B)
+[expo-cli] node_modules\.pnpm\@react-navigation+elements@_9f6562661726faab0d34fdf8fa15c5d2\node_modules\@react-navigation\elements\lib\module\assets\back-icon.png (4 variations | 152 B)
+[expo-cli] node_modules\.pnpm\@react-navigation+elements@_9f6562661726faab0d34fdf8fa15c5d2\node_modules\@react-navigation\elements\lib\module\assets\clear-icon.png (4 variations | 425 B)
+[expo-cli] node_modules\.pnpm\@react-navigation+elements@_9f6562661726faab0d34fdf8fa15c5d2\node_modules\@react-navigation\elements\lib\module\assets\close-icon.png (4 variations | 235 B)
+[expo-cli] node_modules\.pnpm\@react-navigation+elements@_9f6562661726faab0d34fdf8fa15c5d2\node_modules\@react-navigation\elements\lib\module\assets\search-icon.png (4 variations | 599 B)
+[expo-cli] node_modules\.pnpm\expo-router@4.0.21_0f58ec67478637dfaaaacada63ac4881\node_modules\expo-router\assets\error.png (469 B)
+[expo-cli] node_modules\.pnpm\expo-router@4.0.21_0f58ec67478637dfaaaacada63ac4881\node_modules\expo-router\assets\file.png (138 B)
+[expo-cli] node_modules\.pnpm\expo-router@4.0.21_0f58ec67478637dfaaaacada63ac4881\node_modules\expo-router\assets\forward.png (188 B)
+[expo-cli] node_modules\.pnpm\expo-router@4.0.21_0f58ec67478637dfaaaacada63ac4881\node_modules\expo-router\assets\pkg.png (364 B)
+[expo-cli] node_modules\.pnpm\expo-router@4.0.21_0f58ec67478637dfaaaacada63ac4881\node_modules\expo-router\assets\sitemap.png (465 B)
+[expo-cli] node_modules\.pnpm\expo-router@4.0.21_0f58ec67478637dfaaaacada63ac4881\node_modules\expo-router\assets\unmatched.png (4.75 kB)
+[expo-cli] 
+[expo-cli] ??? android bundles (2):
+[expo-cli] _expo/static/js/android/entry-6fec8d69446b7495a90b73969c96991b.hbc (3.19 MB)
+[expo-cli] _expo/static/js/android/entry-6fec8d69446b7495a90b73969c96991b.hbc.map (10.1 MB)
+[expo-cli] 
+[expo-cli] 
+[expo-cli] ??? Files (2):
+[expo-cli] assetmap.json (35 kB)
+[expo-cli] metadata.json (4.76 kB)
+[expo-cli] 
+[expo-cli] 
+[expo-cli] Exported: dist
+??? Exported bundle(s)
+- Uploading...
+- Uploading assetmap.json (0 / 34.2 KB)
+??? Uploaded assetmap.json 
+??? Uploaded 1 app bundle
+??? Uploading assets skipped - no new assets found
+i 73 Android assets (maximum: 2000 total per update). Learn more about asset limits: https://expo.fyi/eas-update-asset-limits
+CommandError: You're currently using the bare workflow, where runtime version policies are not supported. You must set your runtime version manually. For example, define your runtime version as "1.0.0", not {"policy": "appVersion"} in your app config. https://docs.expo.dev/eas-update/runtime-versions
+
+node.exe :     Error: update command failed.
+Au caract?re C:\Users\Pierre\AppData\Local\fnm_mult
+ishells\26500_1769515862033\eas.ps1:16 : 5
++     & "$basedir/node$exe"  
+"$basedir/node_modules/eas-cli/bin/run" $a ...
++     ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+~~~~~~~~~~~~~~~~~~~~
+    + CategoryInfo          : NotSpecified: (    E 
+   rror: update command failed.:String) [], Remot  
+  eException
+    + FullyQualifiedErrorId : NativeCommandError
+ 

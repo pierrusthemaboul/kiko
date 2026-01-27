@@ -4,6 +4,8 @@ import { getAdRequestOptions, getAdUnitId } from '@/lib/config/adConfig';
 import { FirebaseAnalytics } from '@/lib/firebase';
 import Constants from 'expo-constants';
 import { Logger } from '@/utils/logger';
+import { RemoteLogger } from '@/lib/remoteLogger';
+import { supabase } from '@/lib/supabase/supabaseClients';
 
 const ADS_LOG_ENABLED = (() => {
   try {
@@ -35,6 +37,8 @@ const rewardedPlayAd = RewardedAd.createForAdRequest(
 let globalIsLoaded = false;
 let globalIsShowing = false;
 let globalIsProcessing = false; // Verrou pour éviter les doublons de récompense
+let globalAdStartTime = 0; // Heure de début de la pub
+let globalRewardReceived = false; // Flag pour savoir si on a reçu la récompense
 const stateListeners = new Set<() => void>();
 
 export function useRewardedPlayAd() {
@@ -58,6 +62,7 @@ export function useRewardedPlayAd() {
       RewardedAdEventType.LOADED,
       () => {
         rewardedLog('log', 'Ad loaded');
+        RemoteLogger.info('Ads', '✅ Ad loaded successfully');
         globalIsLoaded = true;
         stateListeners.forEach(listener => listener());
         FirebaseAnalytics.ad('rewarded', 'loaded', 'extra_play', 0);
@@ -70,8 +75,10 @@ export function useRewardedPlayAd() {
         const errorCode = (error as any)?.code ?? 'unknown_code';
         const errorMessage = error?.message ?? 'unknown_message';
         rewardedLog('warn', `Failed to load: [Code: ${errorCode}] ${errorMessage}`);
+        RemoteLogger.error('Ads', `❌ Failed to load Ad: [${errorCode}] ${errorMessage}`);
         globalIsLoaded = false;
         stateListeners.forEach(listener => listener());
+        // ... (tracking Firebase)
         FirebaseAnalytics.trackEvent('ad_load_error_detailed', {
           ad_type: 'rewarded',
           ad_unit: 'extra_play',
@@ -99,7 +106,10 @@ export function useRewardedPlayAd() {
       AdEventType.OPENED,
       () => {
         rewardedLog('log', 'Ad opened');
+        RemoteLogger.info('Ads', '👀 Ad opened/started showing');
         globalIsShowing = true;
+        globalAdStartTime = Date.now();
+        globalRewardReceived = false;
         stateListeners.forEach(listener => listener());
         setRewardEarned(false);
         FirebaseAnalytics.ad('rewarded', 'opened', 'extra_play', 0);
@@ -109,7 +119,22 @@ export function useRewardedPlayAd() {
     const closedListener = rewardedPlayAd.addAdEventListener(
       AdEventType.CLOSED,
       () => {
-        rewardedLog('log', 'Ad closed');
+        const duration = Math.round((Date.now() - globalAdStartTime) / 1000);
+        rewardedLog('log', `Ad closed after ${duration}s`);
+
+        // FALLBACK: Si AdMob oublie d'envoyer EARNED_REWARD mais que la pub a duré longtemps (ex: pubs 1/3, 2/3)
+        if (!globalRewardReceived && duration >= 28) {
+          RemoteLogger.warn('Ads', `🛡️ Fallback Reward: No signal from AdMob but ad lasted ${duration}s. Granting play anyway.`, { duration });
+          globalIsProcessing = true;
+          globalRewardReceived = true;
+          setRewardEarned(true);
+          FirebaseAnalytics.trackEvent('ad_fallback_reward_granted', { duration });
+        } else if (!globalRewardReceived) {
+          RemoteLogger.info('Ads', `🚪 Ad closed after ${duration}s WITHOUT reward (too short or cancelled)`, { duration });
+        } else {
+          RemoteLogger.info('Ads', `🚪 Ad closed by user after ${duration}s (Reward confirmed: ${globalRewardReceived})`);
+        }
+
         globalIsLoaded = false;
         globalIsShowing = false;
         stateListeners.forEach(listener => listener());
@@ -124,10 +149,13 @@ export function useRewardedPlayAd() {
       (reward) => {
         if (globalIsProcessing) {
           rewardedLog('warn', 'Reward already being processed, ignoring duplicate event');
+          RemoteLogger.warn('Ads', '⚠️ Duplicate Reward Earned event ignored');
           return;
         }
         globalIsProcessing = true;
+        globalRewardReceived = true;
         rewardedLog('log', 'Reward earned:', reward);
+        RemoteLogger.info('Ads', '🎁 Reward signal EARNED_REWARD received from AdMob', { reward });
         setRewardEarned(true);
         FirebaseAnalytics.ad('rewarded', 'earned_reward', 'extra_play', 0);
         FirebaseAnalytics.reward('EXTRA_PLAY', 1, 'ad_reward', 'completed', 0, 0);
@@ -139,6 +167,7 @@ export function useRewardedPlayAd() {
       if (!globalIsLoaded && !globalIsShowing) {
         try {
           rewardedLog('log', 'Attempting initial load');
+          RemoteLogger.info('Ads', '🔄 Attempting initial ad load');
           FirebaseAnalytics.trackEvent('ad_load_attempt', {
             ad_type: 'rewarded',
             ad_unit: 'extra_play',

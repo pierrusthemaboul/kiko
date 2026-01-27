@@ -1,5 +1,6 @@
 import { useState, useCallback, useMemo, useRef } from 'react';
 import { FirebaseAnalytics } from '../../lib/firebase';
+import { Logger } from '../../utils/logger';
 import { Event, HistoricalPeriod } from '../types';
 import { LEVEL_CONFIGS } from '../levelConfigs';
 import { getWeightsForLevel } from '../../lib/selectionWeights';
@@ -276,9 +277,11 @@ export function useEventSelector({
     const { year: refYear } = getCachedDateInfo(referenceEvent.date);
     const canAddMoreAntiques = canAddAntiqueEvent(userLevel);
 
-    // 1. Filtrage de base
+    const totalCandidates = events.length;
+    const usedCount = usedEvents.size;
 
     let filtered = events.filter(e => !usedEvents.has(e.id) && e.date && e.id !== referenceEvent.id && getTimeDifference(e.date, referenceEvent.date) !== 0);
+    const afterBasicFilter = filtered.length;
 
     // 2. Filtrage par TIER PROBABILISTE
     // On détermine quel Tier on vise pour cet événement spécifique
@@ -300,6 +303,7 @@ export function useEventSelector({
     });
 
     filtered = afterPoolFilter;
+    const afterTierFilter = filtered.length;
 
     // 3. Filtrage temporel préliminaire (large)
     const timeGapBase = config.timeGap?.base || 100;
@@ -310,6 +314,7 @@ export function useEventSelector({
     });
 
     filtered = afterTime;
+    const afterTimeFilter = filtered.length;
 
     // 4. Filtrage antique
     if (!canAddMoreAntiques) {
@@ -347,7 +352,11 @@ export function useEventSelector({
     // 6. Limite drastique pour éviter les gels
     const limited = filtered.slice(0, MAX_EVENTS_TO_PROCESS);
 
-
+    Logger.debug('GameLogic', `Pool reduction: ${totalCandidates} -> ${afterBasicFilter} (used) -> ${afterTierFilter} (tier ${targetTier}) -> ${afterTimeFilter} (time) -> ${limited.length} (final)`, {
+      level: userLevel,
+      refEvent: referenceEvent.titre,
+      targetTier
+    });
 
     return limited;
   }, [canAddAntiqueEvent, getTimeDifference, isAntiqueEvent, recentEras, consecutiveEraCount, getPeriod]);

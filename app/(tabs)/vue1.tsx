@@ -26,6 +26,7 @@ import { getAdRequestOptions, getAdUnitId } from '@/lib/config/adConfig';
 import { useRewardedPlayAd } from '@/hooks/useRewardedPlayAd';
 import { useAudioContext } from '@/contexts/AudioContext';
 import { Logger } from '@/utils/logger';
+import { RemoteLogger } from '@/lib/remoteLogger';
 
 const COLORS = {
   background: '#050505',
@@ -59,6 +60,7 @@ export default function Vue1() {
   }>({ daily: [], weekly: [], monthly: [] });
   const [questsLoading, setQuestsLoading] = React.useState(true);
   const [adSuccessLoading, setAdSuccessLoading] = React.useState(false);
+  const grantProcessingRef = React.useRef(false); // Ref pour éviter les doubles déclenchements synchrone
 
   const xp = profile?.xp_total ?? 0;
   const rank = useMemo(() => rankFromXP(xp), [xp]);
@@ -230,74 +232,104 @@ export default function Vue1() {
     }
   }, [adLoaded, showAd, playsInfo?.remaining, adSuccessLoading]);
 
-  // Gérer la récompense gagnée
+  // Gérer la récompense gagnée (Sentinelles + Sécurité)
   useEffect(() => {
-    if (rewardEarned && profile?.id && !adSuccessLoading) {
-      // Incrémenter parties_per_day dans la base de données
-      const grantExtraPlay = async () => {
+    if (rewardEarned && !adSuccessLoading && !grantProcessingRef.current) {
+      const grantReward = async () => {
+        // VERROUILLAGE IMMÉDIAT
+        grantProcessingRef.current = true;
         setAdSuccessLoading(true);
+
+        // On reset le reward tout de suite côté state local pour éviter les redéclenchements
+        resetReward();
+
+        const context = {
+          isGuest: !profile?.id,
+          userId: profile?.id,
+          timestamp: new Date().toISOString()
+        };
+
+        RemoteLogger.info('Ads', '🚀 Starting reward grant process (Sentinelle)', context);
+
         try {
-          // ... (inside grantExtraPlay)
-          Logger.info('Ads', 'Attempting to grant extra play', { userId: profile.id });
-          const { data: currentProfile, error: fetchError } = await (supabase
-            .from('profiles')
-            .select('parties_per_day')
-            .eq('id', profile.id)
-            .single() as any);
+          if (profile?.id) {
+            // Logique pour utilisateur connecté
+            RemoteLogger.info('Ads', 'Attempting to grant extra play (Logged-in)', { userId: profile.id });
 
-          if (fetchError) throw fetchError;
+            const { data: currentProfile, error: fetchError } = await (supabase
+              .from('profiles')
+              .select('parties_per_day')
+              .eq('id', profile.id)
+              .single() as any);
 
-          if (currentProfile) {
-            // Pour garantir au moins une partie, on doit regarder combien ont été utilisées aujourd'hui
-            // via les infos de playsInfo si disponibles, sinon on fait juste +1 sur le quota
-            const currentQuota = currentProfile.parties_per_day ?? 3;
-            const currentlyUsed = playsInfo?.used ?? 0;
+            if (fetchError) {
+              RemoteLogger.error('Ads', 'Failed to fetch profile for reward', { error: fetchError, userId: profile.id });
+              throw fetchError;
+            }
 
-            // On s'assure que le nouveau quota est supérieur au max entre (ce qu'on a déjà) et (ce qu'on a déjà joué)
-            const baseForIncrement = Math.max(currentQuota, currentlyUsed);
-            const newPartiesPerDay = baseForIncrement + 1;
+            if (currentProfile) {
+              const currentQuota = currentProfile.parties_per_day ?? 3;
+              const currentlyUsed = playsInfo?.used ?? 0;
+              const baseForIncrement = Math.max(currentQuota, currentlyUsed);
+              const newPartiesPerDay = baseForIncrement + 1;
 
-            Logger.debug('Ads', `Updating parties_per_day from ${currentQuota} to ${newPartiesPerDay} (Used today: ${currentlyUsed})`);
+              RemoteLogger.info('Ads', `Updating parties_per_day: ${currentQuota} -> ${newPartiesPerDay}`, { userId: profile.id });
 
-            const { error: updateError } = await (supabase.from('profiles') as any)
-              .update({
-                parties_per_day: newPartiesPerDay,
-                updated_at: new Date().toISOString()
-              })
-              .eq('id', profile.id);
+              const { error: updateError } = await (supabase.from('profiles') as any)
+                .update({
+                  parties_per_day: newPartiesPerDay,
+                  updated_at: new Date().toISOString()
+                })
+                .eq('id', profile.id);
 
-            if (!updateError) {
-              Logger.info('Ads', 'Successfully updated profile');
+              if (updateError) {
+                RemoteLogger.error('Ads', 'Supabase update failed', { error: updateError, userId: profile.id });
+                throw updateError;
+              }
+
+              RemoteLogger.info('Ads', 'Successfully updated profile in Supabase', { userId: profile.id });
+
+              // On rafraîchit les infos AVANT de dire au revoir, mais le lock reste actif
+              await refreshPlaysInfo();
+
               Alert.alert('Partie gagnée ! 🎉', 'Vous avez gagné 1 partie supplémentaire !');
-              Logger.debug('Ads', 'Refreshing plays info after reward');
-              await refreshPlaysInfo(); // Attendre le rafraîchissement
+
               FirebaseAnalytics.trackEvent('rewarded_play_granted', {
                 screen: 'vue1',
                 new_parties_per_day: newPartiesPerDay,
-                previous_remaining: playsInfo?.remaining ?? 0,
               });
+            }
+          } else {
+            // Logique pour invité
+            RemoteLogger.info('Ads', 'Attempting to grant extra play (Guest)');
+            const success = await guestPlaysInfo.grantExtraPlay();
+            if (success) {
+              RemoteLogger.info('Ads', 'Successfully updated guest plays');
+              Alert.alert('Partie gagnée ! 🎉', 'Vous avez gagné 1 partie supplémentaire !');
+              FirebaseAnalytics.trackEvent('rewarded_play_granted_guest', { screen: 'vue1' });
             } else {
-              Logger.error('Ads', 'Error updating profile', updateError);
-              const msg = updateError.message?.includes('profiles_parties_per_day_range_ck')
-                ? "Limite quotidienne atteinte. Vous ne pouvez pas gagner plus de parties aujourd'hui."
-                : "Impossible d'ajouter la partie. Contactez le support.";
-              Alert.alert('Oups !', msg);
-              // ...
+              RemoteLogger.error('Ads', 'Guest grantExtraPlay returned false');
+              throw new Error('Failed to update guest plays');
             }
           }
         } catch (error) {
-          Logger.error('Ads', 'Critical error granting play', error);
-          Alert.alert('Erreur', 'Une erreur est survenue lors de l\'attribution de votre récompense.');
-          // ...
+          RemoteLogger.error('Ads', 'CRITICAL ERROR GRANTING REWARD', { error: (error as any)?.message || error });
+          const msg = (error as any)?.message?.includes('profiles_parties_per_day_range_ck')
+            ? "Limite quotidienne atteinte. Vous ne pouvez pas gagner plus de parties aujourd'hui."
+            : "Une erreur est survenue lors de l'attribution de votre récompense.";
+          Alert.alert('Oups !', msg);
         } finally {
-          setAdSuccessLoading(false);
-          resetReward();
+          // On attend un peu avant de libérer le verrou pour absorber les re-renders parasites
+          setTimeout(() => {
+            setAdSuccessLoading(false);
+            grantProcessingRef.current = false;
+          }, 1000);
         }
       };
 
-      grantExtraPlay();
+      grantReward();
     }
-  }, [rewardEarned, profile?.id, refreshPlaysInfo, resetReward]);
+  }, [rewardEarned, profile?.id, refreshPlaysInfo, resetReward, adSuccessLoading]);
 
 
   return (
@@ -382,7 +414,12 @@ export default function Vue1() {
               FirebaseAnalytics.trackEvent('banner_ad_loaded', { screen: 'vue1', position: 'home' });
             }}
             onAdFailedToLoad={(error: any) => {
-              console.error('[BANNER_HOME] Failed to load ad:', error);
+              // Ajout du log Logger.error pour l'OBSERVER
+              Logger.error('Ads', '[BANNER_HOME] Ad loading failed', {
+                code: error.code,
+                message: error.message
+              });
+
               FirebaseAnalytics.trackError('banner_ad_failed', {
                 screen: 'vue1',
                 context: `position:home, code:${error.code}, message:${error.message}`,
