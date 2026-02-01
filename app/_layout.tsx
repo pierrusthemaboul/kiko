@@ -168,8 +168,22 @@ export default function RootLayout() {
         setSession(initialSession);
         FirebaseAnalytics.initialize(initialSession?.user?.id, !initialSession);
       })
-      .catch(error => {
+      .catch(async error => {
         console.error("[Auth Listener] Error getting initial session:", error);
+
+        // Si le token de rafraîchissement est invalide ou manquant, on force la déconnexion
+        // pour nettoyer le stockage local corrompu.
+        if (error.message?.includes('Refresh Token') || error.status === 400 || error.code === 'refresh_token_not_found') {
+          console.log('[Auth Listener] Invalid session detected, clearing storage...');
+          try {
+            await supabase.auth.signOut();
+          } catch (signOutError) {
+            console.warn('[Auth Listener] Sign out error:', signOutError);
+            // Fallback: nettoyage manuel si signOut échoue
+            await AsyncStorage.removeItem('supabase.auth.token');
+          }
+        }
+
         setSession(null);
         FirebaseAnalytics.initialize(undefined, true);
         FirebaseAnalytics.trackError('auth_get_session_error', {
@@ -330,22 +344,6 @@ export default function RootLayout() {
           <Stack.Screen name="game" />
           <Stack.Screen name="+not-found" />
         </Stack>
-
-        {/* INDICATEUR DE VERSION EAS - SENTINELLES */}
-        <View style={{
-          position: 'absolute',
-          bottom: 40,
-          left: 10,
-          backgroundColor: 'rgba(0, 255, 0, 0.7)',
-          padding: 4,
-          borderRadius: 4,
-          zIndex: 9999,
-          pointerEvents: 'none'
-        }}>
-          <Text style={{ color: 'black', fontSize: 10, fontWeight: 'bold' }}>
-            SENTINELLES ACTIVE V3
-          </Text>
-        </View>
       </View>
     </AudioProvider>
   );

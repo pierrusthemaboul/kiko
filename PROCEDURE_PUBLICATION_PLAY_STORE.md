@@ -46,10 +46,18 @@ Si vous voulez simplement un fichier APK pour l'installer manuellement :
 C'est la méthode **obligatoire** par défaut. Elle évite de saturer l'ordinateur local et contourne les limites de quota EAS Cloud.
 
 #### 1. Préparation (Pour l'IA)
--   Modifiez les versions dans `app.config.js` et `package.json`.
--   Faites un `git push origin main`.
+- #### 3.1 Mettre à jour les versions (ALIGNEMENT CRITIQUE)
+Il est impératif que les versions soient synchronisées dans **4 fichiers** :
 
-#### 2. Lancement & Soumission Play Store
+1.  **`app.config.js`** : `version: "1.X.X"` ET `runtimeVersion: "1.X.X"`
+2.  **`android/app/build.gradle`** : `versionName "1.X.X"` ET `versionCode 10XXX`
+3.  **`package.json`** : `"version": "1.X.X"`
+4.  **`hooks/useGameLogicA.ts`** & **`hooks/game/useEventSelector.ts`** : Fallback version dans le code (rechercher "1.X.X").
+
+- [ ] Incrémenter `version` (ex: "1.6.7" → "1.6.8")
+- [ ] Mettre à jour `runtimeVersion` pour correspondre à la version (ex: "1.6.8"). **Indispensable pour la compatibilité OTA.**
+- [ ] Incrémenter `versionCode` (ex: 10124 → 10125). **Obligatoire pour Google Play.**
+- [ ] Vérifier que `android.package` correspond au bundle ID : `com.pierretulle.juno2`
 L'IA doit utiliser la commande suivante pour lancer le build ET la soumission :
 ```bash
 gh workflow run build-android.yml
@@ -177,6 +185,10 @@ plugins: [
   - Ne peut jamais être réutilisé
   - Format utilisé : `101XX` (ex: 10115, 10116, 10117...)
 
+- **Runtime Version** (`runtimeVersion`) :
+  - Doit correspondre au `versionName` pour chaque nouvelle version du Store.
+  - C'est ce qui garantit que les futures mises à jour "Over The Air" (OTA) ne mixeront pas des fichiers incompatibles.
+
 ---
 
 ## ⚠️ Erreurs Courantes et Solutions
@@ -290,7 +302,9 @@ npm install -g eas-cli
 Quand l'utilisateur demande : "Publie une nouvelle version sur le Play Store" :
 
 1.  **Priorité 1 (GitHub CI)** : Utiliser TOUJOURS **l'Option A** (GitHub Actions).
-    - Incrémenter les versions.
+    - Incrémenter les versions dans les 4 emplacements cités en section 3.1.
+    - S'assurer que le `versionCode` est strictement supérieur au précédent.
+    - S'assurer que le `runtimeVersion` est aligné.
     - `git push`.
     - `gh workflow run build-android.yml`.
     - `gh run watch`.

@@ -1,7 +1,7 @@
 {
   "name": "timalaus",
   "main": "expo-router/entry",
-  "version": "1.6.7",
+  "version": "1.6.8",
   "_comment": "📚 Documentation importante : Avant de modifier l'audio, lisez /docs/AUDIO_MIGRATION_GUIDE.md",
   "scripts": {
     "start": "expo start",
@@ -19,7 +19,13 @@
     "prebuild:android": "npx expo prebuild --platform android --clean && npm run android:fix-manifest && npm run android:fix-kotlin",
     "build:android:local": "eas build --platform android --profile production --local",
     "build:android:cloud": "eas build --platform android --profile production --clear-cache",
-    "build:android:production": "npm run prebuild:android && eas build --platform android --profile production --clear-cache"
+    "build:android:production": "npm run prebuild:android && eas build --platform android --profile production --clear-cache",
+    "ideation": "node machine_a_evenements/orchestrator.mjs",
+    "bureau": "node machine_a_evenements/orchestrator.mjs",
+    "sevent": "node machine_a_evenements/sevent3.mjs",
+    "migrer": "node machine_a_evenements/migration_goju_prod.mjs",
+    "remote": "node remote_listener.mjs",
+    "ai-bridge": "node ai_bridge.mjs"
   },
   "dependencies": {
     "@anthropic-ai/sdk": "^0.54.0",

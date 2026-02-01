@@ -754,7 +754,7 @@ export async function claimQuestReward(userId: string, questKey: string): Promis
     // 1. Vérifier la progression
     const { data: progress, error: fetchError } = await supabase
       .from('quest_progress')
-      .select('*, daily_quests(*)')
+      .select('*')
       .eq('user_id', userId)
       .eq('quest_key', questKey)
       .single();
@@ -763,8 +763,14 @@ export async function claimQuestReward(userId: string, questKey: string): Promis
     if (!progress.completed) throw new Error('Quête non terminée');
     if (progress.claimed) throw new Error('Récompense déjà réclamée');
 
-    const quest = progress.daily_quests;
-    if (!quest) throw new Error('Détails de quête manquants');
+    // 2. Récupérer les détails de la quête (requête séparée car le JOIN ne fonctionne pas encore)
+    const { data: quest, error: questError } = await supabase
+      .from('daily_quests')
+      .select('*')
+      .eq('quest_key', questKey)
+      .single();
+
+    if (questError || !quest) throw new Error('Détails de quête manquants');
 
     const xpAmount = quest.xp_reward || 0;
     const partsAmount = quest.parts_reward || 0;
@@ -829,7 +835,7 @@ export async function rerollQuest(userId: string, questKey: string, rankIndex: n
     // 2. Récupérer la quête actuelle pour connaître son Tier
     const { data: currentProgress, error: fetchError } = await supabase
       .from('quest_progress')
-      .select('*, daily_quests(*)')
+      .select('*')
       .eq('user_id', userId)
       .eq('quest_key', questKey)
       .single();
@@ -837,8 +843,17 @@ export async function rerollQuest(userId: string, questKey: string, rankIndex: n
     if (fetchError || !currentProgress) throw new Error('Quête à changer non trouvée');
     if (currentProgress.completed) throw new Error('Impossible de changer une quête déjà terminée');
 
-    const currentDifficulty = currentProgress.daily_quests.difficulty;
-    const currentCategory = currentProgress.daily_quests.category;
+    // Récupérer les détails de la quête actuelle (requête séparée)
+    const { data: currentQuest, error: questFetchError } = await supabase
+      .from('daily_quests')
+      .select('*')
+      .eq('quest_key', questKey)
+      .single();
+
+    if (questFetchError || !currentQuest) throw new Error('Détails de quête manquants');
+
+    const currentDifficulty = currentQuest.difficulty;
+    const currentCategory = currentQuest.category;
 
     // 3. Chercher une nouvelle quête alternative du même Tier et de la même catégorie
     // On exclut les quêtes déjà possédées par le joueur

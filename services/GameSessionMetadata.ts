@@ -41,6 +41,7 @@ export interface SessionMetadata {
   // Identifiants
   session_id: string;
   mode: string;
+  app_version: string;
 
   // Timestamps
   start_time: number;  // Date.now() au début
@@ -90,13 +91,16 @@ export class GameSessionMetadataManager {
     userName: string,
     userLevel: number,
     initialScore: number,
-    initialLives: number
+    initialLives: number,
+    appVersion: string
   ) {
     this.sessionStartTime = Date.now();
+    console.log(`[GameMetadata] 🚀 Version: ${appVersion}`);
 
     this.metadata = {
       session_id: this.generateSessionId(),
       mode,
+      app_version: appVersion,
       start_time: this.sessionStartTime,
       user_name: userName,
       initial_level: userLevel,
@@ -284,6 +288,7 @@ export class GameSessionMetadataManager {
     // Générer le contenu texte
     const lines: string[] = [];
     lines.push(`# SESSION TIMALAUS - ${this.metadata.mode}`);
+    lines.push(`Version: ${this.metadata.app_version}`);
     lines.push(`Date: ${new Date(this.metadata.start_time).toLocaleString()}`);
     lines.push(`ID: ${this.metadata.session_id}`);
     lines.push('');

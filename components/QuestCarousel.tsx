@@ -1,23 +1,26 @@
 import React, { useState, useEffect, useRef } from 'react';
 import { View, Text, StyleSheet, Animated, TouchableOpacity, Dimensions, Easing, ActivityIndicator, Alert } from 'react-native';
-import { Ionicons } from '@expo/vector-icons';
+import { Ionicons, MaterialCommunityIcons } from '@expo/vector-icons';
 import type { QuestWithProgress } from '@/lib/economy/quests';
 import { getQuestProgressPercentage } from '@/lib/economy/quests';
 import { claimQuestReward, rerollQuest } from '@/lib/economy/apply';
 import { FirebaseAnalytics } from '@/lib/firebase';
 
 const COLORS = {
-  background: '#050505',
-  surface: '#111111',
-  surfaceAlt: '#181818',
-  gold: '#d4af37',
-  goldSoft: 'rgba(212, 175, 55, 0.2)',
-  textPrimary: '#f5f1d6',
-  textMuted: '#b5b1a0',
-  divider: '#2a2a2a',
-  green: '#4ade80',
-  blue: '#60a5fa',
-  purple: '#a78bfa',
+  background: '#FAF7F2',
+  surface: '#FFFFFF',
+  surfaceAlt: '#F2EDE4',
+  primary: '#002B5B',
+  accent: '#A67C1F',
+  accentSoft: 'rgba(166, 124, 31, 0.1)',
+  textPrimary: '#1C1C1C',
+  textMuted: '#7A7267',
+  divider: '#EDECEC',
+  gold: '#D4AF37',
+  goldSoft: 'rgba(212, 175, 55, 0.1)',
+  green: '#2D6a4f', // Vert émeraude sombre (élégant)
+  blue: '#1d3557',  // Bleu profond
+  purple: '#4a306d', // Violet noble
 };
 
 const { width: screenWidth } = Dimensions.get('window');
@@ -36,21 +39,21 @@ type QuestType = 'daily' | 'weekly' | 'monthly';
 const QUEST_CONFIGS = {
   daily: {
     title: 'Quêtes du Jour',
-    icon: 'today' as const,
-    color: COLORS.green,
-    gradient: 'rgba(74, 222, 128, 0.15)',
+    icon: 'hourglass-outline' as const,
+    color: COLORS.accent,
+    gradient: 'rgba(166, 124, 31, 0.05)',
   },
   weekly: {
-    title: 'Quêtes de la Semaine',
-    icon: 'calendar' as const,
-    color: COLORS.blue,
-    gradient: 'rgba(96, 165, 250, 0.15)',
+    title: 'Défis Hebdomadaires',
+    icon: 'trophy-outline' as const,
+    color: COLORS.primary,
+    gradient: 'rgba(0, 43, 91, 0.05)',
   },
   monthly: {
-    title: 'Quêtes du Mois',
-    icon: 'calendar-outline' as const,
+    title: 'Grandes Étapes',
+    icon: 'map-outline' as const,
     color: COLORS.purple,
-    gradient: 'rgba(167, 139, 250, 0.15)',
+    gradient: 'rgba(74, 48, 109, 0.05)',
   },
 };
 
@@ -66,97 +69,47 @@ export default function QuestCarousel({
   const [loadingQuestId, setLoadingQuestId] = useState<string | null>(null);
 
   const fadeAnim = useRef(new Animated.Value(1)).current;
-  const slideAnim = useRef(new Animated.Value(0)).current;
-  const glowAnim = useRef(new Animated.Value(0)).current;
+  const pulseAnim = useRef(new Animated.Value(1)).current;
 
-  // Animation de brillance répétitive
+  // Animation de pulsation pour le bouton de récompense
   useEffect(() => {
     Animated.loop(
       Animated.sequence([
-        Animated.timing(glowAnim, {
-          toValue: 1,
-          duration: 1500,
-          easing: Easing.inOut(Easing.sin),
+        Animated.timing(pulseAnim, {
+          toValue: 1.05,
+          duration: 800,
           useNativeDriver: true,
         }),
-        Animated.timing(glowAnim, {
-          toValue: 0,
-          duration: 1500,
-          easing: Easing.inOut(Easing.sin),
+        Animated.timing(pulseAnim, {
+          toValue: 1,
+          duration: 800,
           useNativeDriver: true,
         }),
       ])
     ).start();
   }, []);
 
-  // Auto-rotation toutes les 12 secondes (ralenti pour laisser le temps de lire/cliquer)
-  useEffect(() => {
-    const interval = setInterval(() => {
-      rotateToNext();
-    }, 12000);
-
-    return () => clearInterval(interval);
-  }, [currentType]);
-
-  const rotateToNext = () => {
-    const types: QuestType[] = ['daily', 'weekly', 'monthly'];
-    const currentIndex = types.indexOf(currentType);
-    const nextIndex = (currentIndex + 1) % types.length;
-
-    transitionTo(types[nextIndex]);
-  };
-
-  const rotateToPrevious = () => {
-    const types: QuestType[] = ['daily', 'weekly', 'monthly'];
-    const currentIndex = types.indexOf(currentType);
-    const prevIndex = (currentIndex - 1 + types.length) % types.length;
-
-    transitionTo(types[prevIndex]);
-  };
-
   const transitionTo = (newType: QuestType) => {
-    Animated.parallel([
-      Animated.timing(fadeAnim, {
-        toValue: 0,
-        duration: 200,
-        useNativeDriver: true,
-      }),
-      Animated.timing(slideAnim, {
-        toValue: -20,
-        duration: 200,
-        useNativeDriver: true,
-      }),
-    ]).start(() => {
+    Animated.timing(fadeAnim, {
+      toValue: 0,
+      duration: 200,
+      useNativeDriver: true,
+    }).start(() => {
       setCurrentType(newType);
-      slideAnim.setValue(20);
-      Animated.parallel([
-        Animated.timing(fadeAnim, {
-          toValue: 1,
-          duration: 300,
-          useNativeDriver: true,
-        }),
-        Animated.timing(slideAnim, {
-          toValue: 0,
-          duration: 300,
-          useNativeDriver: true,
-        }),
-      ]).start();
+      Animated.timing(fadeAnim, {
+        toValue: 1,
+        duration: 300,
+        useNativeDriver: true,
+      }).start();
     });
   };
 
   const handleClaim = async (questKey: string, id: string) => {
     if (!userId) return;
     setLoadingQuestId(id);
-
     try {
       const result = await claimQuestReward(userId, questKey);
       if (result.success) {
-        FirebaseAnalytics.trackEvent('quest_claimed', {
-          quest_key: questKey,
-          xp_reward: result.xpEarned,
-          parts_reward: result.partsEarned,
-          quest_type: currentType
-        });
         if (onRefresh) onRefresh();
       } else {
         Alert.alert('Erreur', result.error || 'Impossible de réclamer la récompense');
@@ -168,48 +121,29 @@ export default function QuestCarousel({
     }
   };
 
-  const handleReroll = async (questKey: string, id: string) => {
-    if (!userId) return;
-
-    Alert.alert(
-      'Changer de quête ?',
-      'Tu peux changer une quête par jour gratuitement.',
-      [
-        { text: 'Annuler', style: 'cancel' },
-        {
-          text: 'Changer',
-          onPress: async () => {
-            setLoadingQuestId(id);
-            try {
-              const result = await rerollQuest(userId, questKey, rankIndex);
-              if (result.success) {
-                FirebaseAnalytics.trackEvent('quest_rerolled', {
-                  old_quest_key: questKey,
-                  new_quest_key: result.newQuest.quest_key,
-                  difficulty_tier: result.newQuest.difficulty
-                });
-                if (onRefresh) onRefresh();
-              } else {
-                Alert.alert('Quota atteint', result.error || 'Impossible de changer la quête');
-              }
-            } catch (err) {
-              console.error('Reroll error:', err);
-            } finally {
-              setLoadingQuestId(null);
-            }
-          }
-        }
-      ]
-    );
+  const hasPendingRewards = (type: QuestType): boolean => {
+    const list = type === 'daily' ? dailyQuests : type === 'weekly' ? weeklyQuests : monthlyQuests;
+    return (list || []).some(q => q.progress?.completed && !(q.progress as any)?.claimed);
   };
 
   const getCurrentQuests = (): QuestWithProgress[] => {
-    switch (currentType) {
-      case 'daily': return dailyQuests || [];
-      case 'weekly': return weeklyQuests || [];
-      case 'monthly': return monthlyQuests || [];
-      default: return [];
-    }
+    const quests = currentType === 'daily' ? dailyQuests : currentType === 'weekly' ? weeklyQuests : monthlyQuests;
+    const list = quests || [];
+
+    // Trier : Terminé mais pas récupéré en premier, puis en cours, puis récupéré en dernier
+    return [...list].sort((a, b) => {
+      const aDone = a.progress?.completed && !(a.progress as any)?.claimed;
+      const bDone = b.progress?.completed && !(b.progress as any)?.claimed;
+      if (aDone && !bDone) return -1;
+      if (!aDone && bDone) return 1;
+
+      const aClaimed = (a.progress as any)?.claimed;
+      const bClaimed = (b.progress as any)?.claimed;
+      if (!aClaimed && bClaimed) return -1;
+      if (aClaimed && !bClaimed) return 1;
+
+      return 0;
+    });
   };
 
   const currentQuests = getCurrentQuests();
@@ -217,270 +151,382 @@ export default function QuestCarousel({
 
   return (
     <View style={styles.container}>
-      <View style={styles.header}>
-        <TouchableOpacity onPress={rotateToPrevious} style={styles.navButton}>
-          <Ionicons name="chevron-back" size={24} color={COLORS.gold} />
-        </TouchableOpacity>
-
-        <View style={styles.titleContainer}>
-          <Ionicons name={config.icon} size={24} color={config.color} style={styles.titleIcon} />
-          <Text style={[styles.title, { color: config.color }]}>{config.title}</Text>
-        </View>
-
-        <TouchableOpacity onPress={rotateToNext} style={styles.navButton}>
-          <Ionicons name="chevron-forward" size={24} color={COLORS.gold} />
-        </TouchableOpacity>
-      </View>
-
-      <View style={styles.indicators}>
+      {/* Sélecteur de Type (Haut) */}
+      <View style={styles.typeSelector}>
         {(['daily', 'weekly', 'monthly'] as QuestType[]).map((type) => (
           <TouchableOpacity
             key={type}
             onPress={() => transitionTo(type)}
-            style={[styles.indicator, currentType === type ? styles.indicatorActive : null]}
-          />
+            style={[
+              styles.typeButton,
+              currentType === type && { backgroundColor: COLORS.surface, borderColor: COLORS.accent }
+            ]}
+          >
+            <Text style={[
+              styles.typeButtonText,
+              currentType === type && { color: COLORS.accent, fontWeight: '800' }
+            ]}>
+              {type === 'daily' ? 'JOUR' : type === 'weekly' ? 'SEMAINE' : 'MOIS'}
+            </Text>
+            {hasPendingRewards(type) && (
+              <View style={[styles.notificationBadge, { backgroundColor: type === 'daily' ? COLORS.accent : type === 'weekly' ? COLORS.primary : COLORS.purple }]}>
+                <Text style={styles.notificationBadgeText}>!</Text>
+              </View>
+            )}
+          </TouchableOpacity>
         ))}
       </View>
 
-      <Animated.View
-        style={[
-          styles.content,
-          {
-            opacity: fadeAnim,
-            transform: [{ translateY: slideAnim }],
-            backgroundColor: config.gradient,
-          },
-        ]}
+      <Animated.ScrollView
+        horizontal
+        showsHorizontalScrollIndicator={false}
+        decelerationRate="fast"
+        snapToInterval={screenWidth * 0.8 + 16} // Largeur carte + gap
+        snapToAlignment="start"
+        contentContainerStyle={styles.scrollContent}
+        style={{ opacity: fadeAnim }}
       >
-        {!currentQuests || currentQuests.length === 0 ? (
-          <Text style={styles.emptyText}>Aucune quête disponible</Text>
+        {currentQuests.length === 0 ? (
+          <View style={styles.emptyCard}>
+            <Text style={styles.emptyText}>Exploration terminée pour cette période.</Text>
+          </View>
         ) : (
-          currentQuests.map((quest, index) => {
+          currentQuests.map((quest) => {
             const progress = quest.progress;
             const currentValue = progress?.current_value ?? 0;
             const isCompleted = progress?.completed ?? false;
             const isClaimed = (progress as any)?.claimed ?? false;
             const progressPercent = getQuestProgressPercentage(currentValue, quest.target_value);
-            const isDaily = currentType === 'daily';
 
             return (
-              <View key={quest.id} style={[styles.questRow, index < currentQuests.length - 1 ? styles.questDivider : null]}>
-                <View style={styles.questContent}>
-                  <View style={styles.questHeaderRow}>
-                    <Text style={[styles.questTitle, isClaimed ? styles.questTitleDone : null]}>
-                      {quest.title || 'Sans titre'}
-                    </Text>
-                    {isDaily && !isCompleted && !isClaimed && userId && (
-                      <TouchableOpacity
-                        onPress={() => handleReroll(quest.quest_key, quest.id)}
-                        style={styles.rerollButton}
-                      >
-                        <Ionicons name="refresh-circle" size={20} color={COLORS.textMuted} />
-                      </TouchableOpacity>
-                    )}
+              <View
+                key={quest.id}
+                style={[
+                  styles.questCard,
+                  isCompleted && !isClaimed && styles.questCardReady
+                ]}
+              >
+                {isCompleted && !isClaimed && (
+                  <View style={styles.rewardRibbon}>
+                    <Text style={styles.rewardRibbonText}>RÉCOMPENSE PRÊTE !</Text>
                   </View>
-                  <Text style={styles.questDescription}>{quest.description || 'Pas de description'}</Text>
+                )}
 
-                  <View style={styles.progressBar}>
-                    <View style={[styles.progressFill, { width: `${progressPercent}%`, backgroundColor: config.color }]} />
+                <View style={styles.cardHeader}>
+                  <View style={[styles.iconBox, isCompleted && !isClaimed && { backgroundColor: COLORS.goldSoft }]}>
+                    <Ionicons name={isCompleted && !isClaimed ? "trophy" : config.icon} size={24} color={isCompleted && !isClaimed ? COLORS.gold : config.color} />
                   </View>
-
-                  <View style={styles.rewardsRow}>
-                    <View style={styles.reward}>
-                      <Ionicons name="star" size={14} color={COLORS.gold} />
-                      <Text style={styles.rewardText}>{quest.xp_reward ?? 0} XP</Text>
-                    </View>
-                    {quest.parts_reward && quest.parts_reward > 0 ? (
-                      <View style={styles.reward}>
-                        <Ionicons name="game-controller" size={14} color={COLORS.green} />
-                        <Text style={styles.rewardText}>+{quest.parts_reward}</Text>
-                      </View>
-                    ) : null}
-                    <Text style={styles.progressText}>
-                      {currentValue} / {quest.target_value ?? 0}
+                  <View style={styles.titleContainer}>
+                    <Text style={[styles.questTitle, isClaimed && styles.questTitleDone]} numberOfLines={1}>
+                      {quest.title}
                     </Text>
+                    <Text style={styles.questSubtitle}>{config.title}</Text>
                   </View>
                 </View>
 
-                <View style={styles.actionContainer}>
+                <Text style={styles.questDescription} numberOfLines={2}>
+                  {quest.description}
+                </Text>
+
+                <View style={styles.progressContainer}>
+                  <View style={styles.progressTopRow}>
+                    <Text style={[styles.progressValueText, isCompleted && !isClaimed && { color: COLORS.gold }]}>
+                      {isCompleted ? 'TERMINÉ !' : `${currentValue} / ${quest.target_value}`}
+                    </Text>
+                    {!isCompleted && <Text style={styles.progressPercentText}>{Math.round(progressPercent)}%</Text>}
+                  </View>
+                  <View style={styles.progressBarBg}>
+                    <View style={[styles.progressBarFill, { width: `${progressPercent}%`, backgroundColor: isCompleted && !isClaimed ? COLORS.gold : config.color }]} />
+                  </View>
+                </View>
+
+                <View style={styles.cardFooter}>
+                  <View style={styles.rewardsRow}>
+                    <View style={styles.rewardPill}>
+                      <Ionicons name="star" size={14} color={COLORS.gold} />
+                      <Text style={styles.rewardText}>{quest.xp_reward} XP</Text>
+                    </View>
+                    {quest.parts_reward !== null && quest.parts_reward > 0 && (
+                      <View style={styles.rewardPill}>
+                        <Ionicons name="flash" size={14} color={COLORS.accent} />
+                        <Text style={styles.rewardText}>+{quest.parts_reward}</Text>
+                      </View>
+                    )}
+                  </View>
+
                   {isClaimed ? (
-                    <Ionicons name="checkmark-done-circle" size={32} color={COLORS.textMuted} style={styles.checkIcon} />
+                    <View style={styles.claimedBadge}>
+                      <Ionicons name="checkmark-circle" size={16} color={COLORS.textMuted} />
+                      <Text style={styles.claimedText}>DÉJÀ RÉCUPÉRÉ</Text>
+                    </View>
                   ) : isCompleted ? (
-                    <TouchableOpacity
-                      onPress={() => handleClaim(quest.quest_key, quest.id)}
-                      disabled={loadingQuestId === quest.id}
-                      style={styles.claimButtonContainer}
-                    >
-                      <Animated.View style={[
-                        styles.claimButton,
-                        { borderColor: config.color, backgroundColor: config.color + '20' },
-                        { transform: [{ scale: glowAnim.interpolate({ inputRange: [0, 1], outputRange: [1, 1.1] }) }] }
-                      ]}>
+                    <Animated.View style={{ transform: [{ scale: pulseAnim }] }}>
+                      <TouchableOpacity
+                        onPress={() => handleClaim(quest.quest_key, quest.id)}
+                        style={[styles.premiumClaimButton, { shadowColor: config.color }]}
+                        activeOpacity={0.7}
+                      >
                         {loadingQuestId === quest.id ? (
-                          <ActivityIndicator size="small" color={config.color} />
+                          <ActivityIndicator size="small" color="#FFF" />
                         ) : (
-                          <Text style={[styles.claimText, { color: config.color }]}>LOT</Text>
+                          <View style={styles.claimButtonInner}>
+                            <Ionicons name="sparkles" size={16} color="#FFF" style={{ marginRight: 8 }} />
+                            <Text style={styles.premiumClaimText}>PRÉLEVER LOT</Text>
+                          </View>
                         )}
-                      </Animated.View>
-                    </TouchableOpacity>
+                      </TouchableOpacity>
+                    </Animated.View>
                   ) : (
-                    <Ionicons name="ellipse-outline" size={24} color={COLORS.divider} style={styles.checkIcon} />
+                    <View style={styles.statusBadge}>
+                      <Text style={styles.statusText}>EN COURS</Text>
+                    </View>
                   )}
                 </View>
               </View>
             );
           })
         )}
-      </Animated.View>
+      </Animated.ScrollView>
     </View>
   );
 }
 
 const styles = StyleSheet.create({
   container: {
-    marginBottom: 24,
+    marginVertical: 10,
   },
-  header: {
+  typeSelector: {
+    flexDirection: 'row',
+    justifyContent: 'center',
+    gap: 8,
+    marginBottom: 20,
+    paddingHorizontal: 20,
+  },
+  typeButton: {
+    paddingHorizontal: 16,
+    paddingVertical: 8,
+    borderRadius: 20,
+    borderWidth: 1,
+    borderColor: 'transparent',
+    backgroundColor: 'rgba(0,0,0,0.03)',
+    position: 'relative',
+  },
+  notificationBadge: {
+    position: 'absolute',
+    top: -6,
+    right: -6,
+    minWidth: 18,
+    height: 18,
+    borderRadius: 9,
+    justifyContent: 'center',
+    alignItems: 'center',
+    borderWidth: 2,
+    borderColor: COLORS.background,
+    paddingHorizontal: 4,
+  },
+  notificationBadgeText: {
+    color: '#FFF',
+    fontSize: 10,
+    fontWeight: '900',
+  },
+  typeButtonText: {
+    fontSize: 11,
+    color: COLORS.textMuted,
+    fontWeight: '600',
+    letterSpacing: 1,
+  },
+  scrollContent: {
+    paddingLeft: 20,
+    paddingRight: 10, // Pour le dernier item
+    paddingBottom: 20,
+    gap: 16,
+  },
+  questCard: {
+    width: screenWidth * 0.8,
+    backgroundColor: COLORS.surface,
+    borderRadius: 24,
+    padding: 20,
+    borderWidth: 1,
+    borderColor: '#EDECEC',
+    // Ombres premium
+    shadowColor: '#A67C1F',
+    shadowOpacity: 0.1,
+    shadowRadius: 12,
+    shadowOffset: { width: 0, height: 8 },
+    elevation: 4,
+  },
+  emptyCard: {
+    width: screenWidth - 40,
+    backgroundColor: 'rgba(255,255,255,0.5)',
+    borderRadius: 24,
+    padding: 40,
+    justifyContent: 'center',
+    alignItems: 'center',
+    borderStyle: 'dashed',
+    borderWidth: 1,
+    borderColor: COLORS.divider,
+  },
+  cardHeader: {
     flexDirection: 'row',
     alignItems: 'center',
-    justifyContent: 'space-between',
-    marginBottom: 12,
+    gap: 12,
+    marginBottom: 16,
   },
-  navButton: {
-    width: 40,
-    height: 40,
+  iconBox: {
+    width: 44,
+    height: 44,
+    borderRadius: 12,
+    backgroundColor: COLORS.background,
     justifyContent: 'center',
     alignItems: 'center',
   },
   titleContainer: {
-    flexDirection: 'row',
-    alignItems: 'center',
-    gap: 8,
-  },
-  titleIcon: {
-    marginRight: 4,
-  },
-  title: {
-    fontSize: 20,
-    fontWeight: '600',
-    letterSpacing: 0.4,
-  },
-  indicators: {
-    flexDirection: 'row',
-    justifyContent: 'center',
-    gap: 8,
-    marginBottom: 16,
-  },
-  indicator: {
-    width: 24,
-    height: 4,
-    backgroundColor: COLORS.divider,
-    borderRadius: 2,
-  },
-  indicatorActive: {
-    backgroundColor: COLORS.gold,
-  },
-  content: {
-    backgroundColor: COLORS.surface,
-    borderRadius: 18,
-    padding: 20,
-    borderWidth: 1,
-    borderColor: COLORS.goldSoft,
-    minHeight: 200,
-  },
-  emptyText: {
-    color: COLORS.textMuted,
-    textAlign: 'center',
-    paddingVertical: 40,
-  },
-  questRow: {
-    flexDirection: 'row',
-    alignItems: 'center',
-    paddingVertical: 12,
-  },
-  questDivider: {
-    borderBottomWidth: StyleSheet.hairlineWidth,
-    borderBottomColor: COLORS.divider,
-  },
-  questContent: {
     flex: 1,
-  },
-  questHeaderRow: {
-    flexDirection: 'row',
-    alignItems: 'center',
-    gap: 8,
-    marginBottom: 4,
   },
   questTitle: {
     fontSize: 16,
-    fontWeight: '600',
+    fontWeight: '800',
     color: COLORS.textPrimary,
+    letterSpacing: -0.2,
   },
   questTitleDone: {
-    opacity: 0.6,
     textDecorationLine: 'line-through',
+    opacity: 0.4,
+  },
+  questSubtitle: {
+    fontSize: 11,
+    color: COLORS.textMuted,
+    fontWeight: '600',
+    textTransform: 'uppercase',
+    marginTop: 2,
   },
   questDescription: {
     fontSize: 13,
     color: COLORS.textMuted,
-    marginBottom: 8,
+    lineHeight: 18,
+    marginBottom: 20,
+    height: 36, // Force 2 lignes pour alignement
   },
-  progressBar: {
+  progressContainer: {
+    marginBottom: 20,
+  },
+  progressTopRow: {
+    flexDirection: 'row',
+    justifyContent: 'space-between',
+    marginBottom: 6,
+  },
+  progressValueText: {
+    fontSize: 12,
+    fontWeight: '700',
+    color: COLORS.primary,
+  },
+  progressPercentText: {
+    fontSize: 12,
+    color: COLORS.textMuted,
+    fontWeight: '600',
+  },
+  progressBarBg: {
     height: 6,
-    backgroundColor: COLORS.surfaceAlt,
+    backgroundColor: COLORS.background,
     borderRadius: 3,
-    marginBottom: 8,
     overflow: 'hidden',
   },
-  progressFill: {
+  progressBarFill: {
     height: '100%',
     borderRadius: 3,
   },
+  cardFooter: {
+    flexDirection: 'row',
+    justifyContent: 'space-between',
+    alignItems: 'center',
+  },
   rewardsRow: {
     flexDirection: 'row',
-    alignItems: 'center',
-    gap: 12,
+    gap: 8,
   },
-  reward: {
+  rewardPill: {
+    flexDirection: 'row',
+    alignItems: 'center',
+    gap: 4,
+    backgroundColor: COLORS.background,
+    paddingHorizontal: 8,
+    paddingVertical: 4,
+    borderRadius: 8,
+  },
+  rewardText: {
+    fontSize: 11,
+    fontWeight: '700',
+    color: COLORS.primary,
+  },
+  questCardReady: {
+    borderColor: COLORS.gold,
+    borderWidth: 2,
+    shadowColor: COLORS.gold,
+    shadowOpacity: 0.3,
+    shadowRadius: 15,
+  },
+  rewardRibbon: {
+    position: 'absolute',
+    top: 0,
+    right: 20,
+    backgroundColor: COLORS.gold,
+    paddingHorizontal: 12,
+    paddingVertical: 4,
+    borderBottomLeftRadius: 8,
+    borderBottomRightRadius: 8,
+    zIndex: 10,
+  },
+  rewardRibbonText: {
+    color: '#FFF',
+    fontSize: 9,
+    fontWeight: '900',
+    letterSpacing: 0.5,
+  },
+  premiumClaimButton: {
+    backgroundColor: COLORS.primary,
+    paddingHorizontal: 20,
+    paddingVertical: 12,
+    borderRadius: 14,
+    shadowOpacity: 0.4,
+    shadowRadius: 8,
+    shadowOffset: { width: 0, height: 6 },
+    elevation: 6,
+  },
+  premiumClaimText: {
+    color: '#FFF',
+    fontSize: 12,
+    fontWeight: '900',
+    letterSpacing: 1,
+  },
+  statusBadge: {
+    backgroundColor: COLORS.surfaceAlt,
+    paddingHorizontal: 10,
+    paddingVertical: 5,
+    borderRadius: 8,
+  },
+  statusText: {
+    fontSize: 9,
+    fontWeight: '800',
+    color: COLORS.textMuted,
+    letterSpacing: 0.5,
+  },
+  claimButtonInner: {
+    flexDirection: 'row',
+    alignItems: 'center',
+  },
+  claimedBadge: {
     flexDirection: 'row',
     alignItems: 'center',
     gap: 4,
   },
-  rewardText: {
-    fontSize: 12,
+  claimedText: {
+    fontSize: 10,
+    fontWeight: '800',
     color: COLORS.textMuted,
-    fontWeight: '500',
   },
-  progressText: {
-    fontSize: 12,
+  emptyText: {
     color: COLORS.textMuted,
-    marginLeft: 'auto',
-  },
-  actionContainer: {
-    marginLeft: 12,
-    width: 50,
-    alignItems: 'center',
-    justifyContent: 'center',
-  },
-  checkIcon: {
-    opacity: 0.8,
-  },
-  claimButtonContainer: {
-    alignItems: 'center',
-  },
-  claimButton: {
-    paddingHorizontal: 8,
-    paddingVertical: 4,
-    borderRadius: 8,
-    borderWidth: 2,
-    minWidth: 44,
-    alignItems: 'center',
-  },
-  claimText: {
-    fontSize: 11,
-    fontWeight: 'bold',
-  },
-  rerollButton: {
-    padding: 2,
-  },
+    textAlign: 'center',
+    lineHeight: 22,
+  }
 });

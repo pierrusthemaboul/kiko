@@ -11,13 +11,13 @@ import { Ionicons } from '@expo/vector-icons';
 import { LeaderboardData } from '@/hooks/useLeaderboards';
 
 const COLORS = {
-  surface: '#111111',
-  surfaceAlt: '#181818',
-  gold: '#d4af37',
-  goldSoft: 'rgba(212, 175, 55, 0.2)',
-  textPrimary: '#f5f1d6',
-  textMuted: '#b5b1a0',
-  divider: '#2a2a2a',
+  surface: '#FFFFFF',
+  surfaceAlt: '#F8F9FA',
+  gold: '#B8860B', // Or légèrement plus foncé pour lisibilité sur fond blanc
+  goldSoft: 'rgba(184, 134, 11, 0.1)',
+  textPrimary: '#1A1A1A',
+  textMuted: '#707070',
+  divider: '#EEEEEE',
 };
 
 const { width: screenWidth } = Dimensions.get('window');

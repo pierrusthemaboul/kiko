@@ -1,4 +1,7 @@
-import { useState, useCallback, useMemo, useRef } from 'react';
+import { useState, useCallback, useMemo, useRef, useEffect } from 'react';
+import AsyncStorage from '@react-native-async-storage/async-storage';
+import Constants from 'expo-constants';
+import { supabase } from '../../lib/supabase/supabaseClients';
 import { FirebaseAnalytics } from '../../lib/firebase';
 import { Logger } from '../../utils/logger';
 import { Event, HistoricalPeriod } from '../types';
@@ -153,6 +156,118 @@ export function useEventSelector({
   const [shouldForceBonusEvent, setShouldForceBonusEvent] = useState<boolean>(false);
   const [recentEras, setRecentEras] = useState<HistoricalPeriod[]>([]);
   const [consecutiveEraCount, setConsecutiveEraCount] = useState<number>(0);
+
+  // --- NOUVEAU : HISTORIQUE PERSONNEL DU JOUEUR ---
+  const [personalHistory, setPersonalHistory] = useState<Map<string, { times_seen: number }>>(new Map());
+
+  // Clé pour le stockage local (AsyncStorage)
+  const LOCAL_HISTORY_KEY = 'user_event_usage_local';
+
+  // Charger l'historique au démarrage (Supabase + Local)
+  useEffect(() => {
+    const fetchHistory = async () => {
+      try {
+        const historyMap = new Map<string, { times_seen: number }>();
+
+        // 1. Charger depuis AsyncStorage (Priorité pour la persistence hors-ligne/Guest)
+        try {
+          const localData = await AsyncStorage.getItem(LOCAL_HISTORY_KEY);
+          if (localData) {
+            const parsed = JSON.parse(localData);
+            Object.entries(parsed).forEach(([id, val]: [string, any]) => {
+              historyMap.set(id, { times_seen: val.times_seen });
+            });
+            Logger.debug('GameLogic', `Loaded ${historyMap.size} local history items`);
+          }
+        } catch (localErr) {
+          Logger.warn('GameLogic', 'Failed to load local history', localErr);
+        }
+
+        // 2. Charger depuis Supabase (Si connecté, vient merger/écraser)
+        const { data: { user } } = await supabase.auth.getUser();
+        if (user) {
+          const { data, error } = await supabase
+            .from('user_event_usage')
+            .select('event_id, times_seen')
+            .eq('user_id', user.id);
+
+          if (!error && data) {
+            (data as any[]).forEach(item => {
+              // On prend la valeur max entre local et distant pour être sûr
+              const existing = historyMap.get(item.event_id);
+              historyMap.set(item.event_id, {
+                times_seen: Math.max(existing?.times_seen ?? 0, item.times_seen)
+              });
+            });
+            Logger.debug('GameLogic', `Synced with ${data.length} Supabase history items`);
+          }
+        }
+
+        setPersonalHistory(historyMap);
+      } catch (err) {
+        Logger.warn('GameLogic', 'Failed to fetch personal history', err);
+      }
+    };
+
+    fetchHistory();
+  }, []);
+
+  /**
+   * Marquer un événement comme vu et persister (Local + Supabase)
+   */
+  const markEventSeen = useCallback(async (eventId: string) => {
+    let updatedTimesSeen = 1;
+
+    // 1. Mise à jour immédiate du State (UI)
+    setPersonalHistory(prev => {
+      const next = new Map(prev);
+      const current = next.get(eventId) || { times_seen: 0 };
+      updatedTimesSeen = current.times_seen + 1;
+      next.set(eventId, { times_seen: updatedTimesSeen });
+      return next;
+    });
+
+    // 2. Sauvegarde asynchrone (non-bloquante pour le UI)
+    const runAsyncSave = async () => {
+      try {
+        // A. Sauvegarde Locale
+        const localData = await AsyncStorage.getItem(LOCAL_HISTORY_KEY);
+        const history = localData ? JSON.parse(localData) : {};
+        history[eventId] = { times_seen: updatedTimesSeen };
+        await AsyncStorage.setItem(LOCAL_HISTORY_KEY, JSON.stringify(history));
+
+        // B. Sauvegarde Supabase (si connecté)
+        // On récupère la session actuelle de manière synchrone si possible, sinon async
+        const { data: { session } } = await supabase.auth.getSession();
+        const authUser = session?.user;
+
+        if (authUser) {
+          const { error } = await (supabase.from('user_event_usage' as any) as any).upsert({
+            user_id: authUser.id,
+            event_id: eventId,
+            times_seen: updatedTimesSeen,
+            last_seen_at: new Date().toISOString(),
+            app_version: Constants.expoConfig?.version ?? '1.6.8'
+          }, {
+            onConflict: 'user_id,event_id'
+          });
+
+          if (error) {
+            console.warn('[GameLogic] ❌ Erreur Synchro Supabase:', error.message);
+          } else {
+            console.log(`[GameLogic] ✅ Synchro OK: ${eventId} (v${updatedTimesSeen})`);
+          }
+        }
+      } catch (err) {
+        console.warn('[GameLogic] ⚠️ Échec persistance mémoire:', err);
+      }
+    };
+
+    // Déclencher sans attendre
+    setTimeout(() => {
+      runAsyncSave().catch(e => console.error('[GameLogic] Async Save Error:', e));
+    }, 0);
+  }, []);
 
   /**
    * Détermine la période historique - Version optimisée avec cache
@@ -370,7 +485,9 @@ export function useEventSelector({
     userLevel: number,
     timeGap: any
   ): number => {
-    const cacheKey = `${evt.id}-${referenceEvent.id}-${userLevel}`;
+    const historyItem = personalHistory.get(evt.id);
+    const timesSeen = historyItem?.times_seen ?? 0;
+    const cacheKey = `${evt.id}-${referenceEvent.id}-${userLevel}-${timesSeen}`;
 
     if (scoringCache.has(cacheKey)) {
       const cached = scoringCache.get(cacheKey);
@@ -414,6 +531,19 @@ export function useEventSelector({
     // Malus de fréquence plus marqué sur les événements surjoués
     const frequencyScore = Math.max(0, Number((evt as any).frequency_score) || 0);
     const frequencyMalus = Math.min(weights.thetaFrequencyCap, frequencyScore * weights.thetaFrequencyMalus);
+
+    // --- NOUVEAU : MALUS PERSONNEL (Pénalité de répétition) ---
+    let personalPenaltyMultiplier = 1.0;
+    if (historyItem) {
+      // Plus l'événement a été vu, plus son score baisse drastiquement
+      // Formule : 1 / (1 + nb_vues)
+      // Vu 1 fois -> score / 2
+      // Vu 2 fois -> score / 3
+      // etc.
+      personalPenaltyMultiplier = 1 / (1 + historyItem.times_seen);
+
+      // Bonus de "fraîcheur" pour les nouveaux joueurs : si jamais vu, multiplicateur = 1.0
+    }
 
     // Malus de récence pour éviter de rejouer un événement trop vite
     let recencyPenalty = 0;
@@ -459,7 +589,7 @@ export function useEventSelector({
       }
     }
 
-    const totalScore = Math.max(0, gapScore + notorieteScore + variationBonus + contextScore - frequencyMalus - recencyPenalty);
+    const totalScore = Math.max(0, (gapScore + notorieteScore + variationBonus + contextScore - frequencyMalus - recencyPenalty) * personalPenaltyMultiplier);
 
     const parts = {
       difficulty: 0,
@@ -478,7 +608,7 @@ export function useEventSelector({
     scoringCache.set(cacheKey, totalScore);
     scorePartsCache.set(cacheKey, parts);
     return totalScore;
-  }, [getTimeDifference, getCachedDateInfo, getAdaptiveTimeGap]);
+  }, [getTimeDifference, getCachedDateInfo, getAdaptiveTimeGap, personalHistory]);
 
   /**
    * SÉLECTION OPTIMISÉE avec sauts temporels et debouncing
@@ -1216,6 +1346,7 @@ export function useEventSelector({
     recordCorrectAnswer,
     recordIncorrectAnswer,
     resetAntiFrustration,
+    markEventSeen,
   };
 }
 

@@ -10,13 +10,13 @@ import LeaderboardCarousel from './LeaderboardCarousel';
 import { LeaderboardData } from '@/hooks/useLeaderboards';
 
 const COLORS = {
-  surface: '#111111',
-  surfaceAlt: '#181818',
-  gold: '#d4af37',
-  goldSoft: 'rgba(212, 175, 55, 0.2)',
-  textPrimary: '#f5f1d6',
-  textMuted: '#b5b1a0',
-  divider: '#2a2a2a',
+  surface: '#FFFFFF',
+  surfaceAlt: '#F8F9FA',
+  gold: '#D4AF37',
+  goldSoft: 'rgba(212, 175, 55, 0.1)',
+  textPrimary: '#212529',
+  textMuted: '#6C757D',
+  divider: '#EDECEC',
 };
 
 interface DualLeaderboardCarouselProps {

@@ -1,6 +1,7 @@
 // hooks/useGameLogicA.ts
 import { useState, useCallback, useEffect, useMemo, useRef } from 'react';
 import { Animated, Dimensions } from 'react-native';
+import Constants from 'expo-constants';
 import { supabase } from '@/lib/supabase/supabaseClients';
 import { FirebaseAnalytics } from '../lib/firebase';
 import { todayWindow } from '../utils/time';
@@ -174,6 +175,7 @@ export function useGameLogicA(initialEvent?: string, modeId?: string) {
     recordCorrectAnswer,
     recordIncorrectAnswer,
     resetAntiFrustration,
+    markEventSeen,
   } = useEventSelector({
     setError,
     setIsGameOver,
@@ -521,27 +523,16 @@ export function useGameLogicA(initialEvent?: string, modeId?: string) {
           );
         }
 
-        // Synchroniser l'usage de l'événement dans la DB
-        try {
-          const { data: evtData } = await (supabase
-            .from('evenements')
-            .select('frequency_score')
-            .eq('id', selectedEvent.id)
-            .single() as any);
+        // 📊 Analytics : Vision globale sur la fréquence d'apparition
+        FirebaseAnalytics.trackEvent('event_viewed', {
+          event_id: selectedEvent.id,
+          event_title: selectedEvent.titre,
+          notoriete: (selectedEvent as any)?.notoriete ?? 0,
+          level: user.level
+        });
 
-          const newScore = (evtData?.frequency_score ?? 0) + 1;
-
-          await (supabase.from('evenements') as any)
-            .update({
-              frequency_score: newScore,
-              last_used: new Date().toISOString()
-            })
-            .eq('id', selectedEvent.id);
-
-          Logger.debug('GameLogic', `Synced usage for event: ${selectedEvent.titre}`, { newScore });
-        } catch (syncErr) {
-          Logger.warn('GameLogic', 'Failed to sync event usage to DB', syncErr);
-        }
+        // 🧠 Mémoire intelligente (Locale + Distante)
+        markEventSeen(selectedEvent.id);
 
         markEventUsageLocal(selectedEvent.id);
         invalidateEventCaches(selectedEvent.id);
@@ -573,6 +564,7 @@ export function useGameLogicA(initialEvent?: string, modeId?: string) {
       setError,
       gameMode.showDatesByDefault,
       timeLimit,
+      markEventSeen,
     ]
   );
 
@@ -622,7 +614,8 @@ export function useGameLogicA(initialEvent?: string, modeId?: string) {
       'Joueur',
       1,
       0,
-      gameMode.initialLives
+      gameMode.initialLives,
+      Constants.expoConfig?.version ?? '1.6.8'
     );
     console.log('[useGameLogicA] 🎬 Gestionnaire de métadonnées initialisé');
   }, [baseInitGameWrapper, resetAntiFrustration, resetEventCount, gameMode.label, gameMode.initialLives]);
@@ -906,7 +899,10 @@ export function useGameLogicA(initialEvent?: string, modeId?: string) {
             setTimeout(() => {
               setIsWaitingForCountdown(false);
               if (!isGameOver && !showLevelModal) {
-                selectNewEventRef.current(allEvents, newEvent);
+                selectNewEventRef.current(allEvents, newEvent)
+                  .then((evt: Event | null) => {
+                    if (evt) updateGameState(evt);
+                  });
               }
             }, 750);
           }
@@ -950,7 +946,10 @@ export function useGameLogicA(initialEvent?: string, modeId?: string) {
           setTimeout(() => {
             setIsWaitingForCountdown(false);
             if (!isGameOver && !showLevelModal) {
-              selectNewEventRef.current(allEvents, newEvent);
+              selectNewEventRef.current(allEvents, newEvent)
+                .then((evt: Event | null) => {
+                  if (evt) updateGameState(evt);
+                });
             }
           }, 1500); // Longer delay for incorrect answers
         }

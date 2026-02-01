@@ -11,7 +11,7 @@ import { LEVEL_CONFIGS } from '../levelConfigs'; // Ajuste le chemin si nécessa
 import { useEventSelector } from './useEventSelector'; // Ajuste le chemin si nécessaire
 
 const EVENTS_CACHE_KEY = 'events_cache_v1';
-const EVENTS_CACHE_VERSION = 5;
+const EVENTS_CACHE_VERSION = 6;
 const EVENTS_CACHE_TTL_MS = 24 * 60 * 60 * 1000; // 24h
 
 interface InitGameOptions {
