@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="fr">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -14,6 +15,7 @@
             --success: #22c55e;
             --accent: #f59e0b;
         }
+
         body {
             font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
             background-color: var(--bg);
@@ -25,16 +27,19 @@
             height: 100vh;
             overflow: hidden;
         }
+
         .header {
             text-align: center;
             margin-bottom: 20px;
         }
+
         .controls {
             display: grid;
             grid-template-columns: 1fr 1fr;
             gap: 10px;
             margin-bottom: 20px;
         }
+
         button {
             padding: 15px;
             border: none;
@@ -46,11 +51,23 @@
             cursor: pointer;
             transition: opacity 0.2s;
         }
-        button:active { opacity: 0.7; }
-        button.chambre { background-color: var(--accent); }
-        button.migration { background-color: var(--success); }
-        button.full { grid-column: span 2; }
-        
+
+        button:active {
+            opacity: 0.7;
+        }
+
+        button.chambre {
+            background-color: var(--accent);
+        }
+
+        button.migration {
+            background-color: var(--success);
+        }
+
+        button.full {
+            grid-column: span 2;
+        }
+
         .console {
             flex-grow: 1;
             background-color: black;
@@ -63,11 +80,13 @@
             color: #10b981;
             white-space: pre-wrap;
         }
+
         .input-area {
             display: flex;
             margin-top: 10px;
             gap: 10px;
         }
+
         input {
             flex-grow: 1;
             padding: 12px;
@@ -76,6 +95,7 @@
             background: var(--card);
             color: white;
         }
+
         .status {
             font-size: 12px;
             text-align: center;
@@ -84,6 +104,7 @@
         }
     </style>
 </head>
+
 <body>
     <div class="header">
         <h1>🚀 Kiko Remote</h1>
@@ -97,10 +118,11 @@
     </div>
 
     <div id="console" class="console">Bienvenue sur la console distante.
-En attente d'une commande...</div>
+        En attente d'une commande...</div>
 
     <div class="input-area">
-        <input type="text" id="user-input" placeholder="Répondre au script..." onkeypress="if(event.key==='Enter') sendInput()">
+        <input type="text" id="user-input" placeholder="Répondre au script..."
+            onkeypress="if(event.key==='Enter') sendInput()">
         <button onclick="sendInput()">Envoyer</button>
     </div>
 
@@ -109,8 +131,8 @@ En attente d'une commande...</div>
     <script>
         const SUPABASE_URL = 'https://ppxmtnuewcixbbmhnzzc.supabase.co';
         const SUPABASE_KEY = 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6InBweG10bnVld2NpeGJibWhuenpjIiwicm9sZSI6ImFub24iLCJpYXQiOjE3MjY4OTkxMjcsImV4cCI6MjA0MjQ3NTEyN30.0z2be74E3db-XvyIKXPlogI__9Ric1Il4cZ1Fs7TJ5U';
-        
-        const supabase = supabase.createClient(SUPABASE_URL, SUPABASE_KEY);
+
+        const _supabase = supabase.createClient(SUPABASE_URL, SUPABASE_KEY);
         let currentSession = null;
 
         document.getElementById('connection-status').innerText = '🟢 Connecté à Supabase';
@@ -119,14 +141,14 @@ En attente d'une commande...</div>
         async function sendCommand(cmd) {
             currentSession = 'sess_' + Date.now();
             document.getElementById('console').innerHTML = `\n> Lancement de ${cmd}...\n`;
-            
-            const { error } = await supabase.from('remote_control').insert({
+
+            const { error } = await _supabase.from('remote_control').insert({
                 type: 'command',
                 content: cmd,
                 session_id: currentSession,
                 status: 'pending'
             });
-            
+
             if (error) alert("Erreur: " + error.message);
         }
 
@@ -135,7 +157,7 @@ En attente d'une commande...</div>
             const val = inputField.value;
             if (!val || !currentSession) return;
 
-            await supabase.from('remote_control').insert({
+            await _supabase.from('remote_control').insert({
                 type: 'input',
                 content: val,
                 session_id: currentSession,
@@ -147,11 +169,11 @@ En attente d'une commande...</div>
         }
 
         // Ecoute du Realtime pour les outputs
-        supabase
+        _supabase
             .channel('remote_outputs')
             .on('postgres_changes', { event: 'INSERT', schema: 'public', table: 'remote_control' }, payload => {
                 const { type, content, session_id } = payload.new;
-                
+
                 if (session_id === currentSession || !currentSession) {
                     if (type === 'output') {
                         const consoleDiv = document.getElementById('console');
@@ -171,4 +193,5 @@ En attente d'une commande...</div>
 
     </script>
 </body>
+
 </html>
