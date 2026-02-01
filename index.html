@@ -194,7 +194,7 @@
 
     <div class="status-bar">
         <span id="connection-status">Connexion...</span>
-        <span>v2.0 Turbo</span>
+        <span>v2.1 Turbo</span>
     </div>
 
     <script>
@@ -242,7 +242,7 @@
             } else {
                 // Mode AI Chat
                 appendMsg(val, 'user');
-                await _supabase.from('ai_chat').insert({ role: 'user', content: val, session_id: 'mobile_session' });
+                await _supabase.from('remote_control').insert({ type: 'ai_query', content: val, session_id: 'ai_mobile_' + Date.now() });
             }
             inputField.value = '';
             inputField.blur();
@@ -260,19 +260,16 @@
         document.getElementById('send-btn').onclick = handleGlobalSend;
         document.getElementById('user-input').onkeypress = (e) => { if (e.key === 'Enter') handleGlobalSend(); };
 
-        // Écoute Realtime Machine
-        _supabase.channel('machine_out').on('postgres_changes', { event: 'INSERT', schema: 'public', table: 'remote_control' }, payload => {
-            if (payload.new.type === 'output') {
-                const con = document.getElementById('console');
-                con.innerText += payload.new.content;
-                con.scrollTop = con.scrollHeight;
-            }
-        }).subscribe();
+        // Écoute Realtime Multi-usage
+        _supabase.channel('global_channel').on('postgres_changes', { event: 'INSERT', schema: 'public', table: 'remote_control' }, payload => {
+            const { type, content, session_id } = payload.new;
 
-        // Écoute Realtime AI
-        _supabase.channel('ai_in').on('postgres_changes', { event: 'INSERT', schema: 'public', table: 'ai_chat' }, payload => {
-            if (payload.new.role === 'assistant') {
-                appendMsg(payload.new.content, 'bot');
+            if (type === 'output') {
+                const con = document.getElementById('console');
+                con.innerText += content;
+                con.scrollTop = con.scrollHeight;
+            } else if (type === 'ai_response') {
+                appendMsg(content, 'bot');
             }
         }).subscribe();
     </script>
