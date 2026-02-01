@@ -3,144 +3,172 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Timalaus - Documentation Légale</title>
+    <title>Kiko - Remote Control</title>
+    <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
     <style>
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
+        :root {
+            --bg: #0f172a;
+            --card: #1e293b;
+            --text: #f8fafc;
+            --primary: #3b82f6;
+            --success: #22c55e;
+            --accent: #f59e0b;
         }
-
         body {
-            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, sans-serif;
-            line-height: 1.6;
-            color: #333;
-            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
-            min-height: 100vh;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background-color: var(--bg);
+            color: var(--text);
+            margin: 0;
             padding: 20px;
+            display: flex;
+            flex-direction: column;
+            height: 100vh;
+            overflow: hidden;
         }
-
-        .container {
-            max-width: 800px;
-            margin: 0 auto;
-            background: white;
-            border-radius: 20px;
-            padding: 40px;
-            box-shadow: 0 20px 60px rgba(0, 0, 0, 0.3);
-        }
-
-        .logo {
+        .header {
             text-align: center;
-            margin-bottom: 30px;
+            margin-bottom: 20px;
         }
-
-        h1 {
-            color: #667eea;
-            text-align: center;
-            font-size: 2.5em;
-            margin-bottom: 10px;
-        }
-
-        .subtitle {
-            text-align: center;
-            color: #666;
-            font-size: 1.1em;
-            margin-bottom: 40px;
-        }
-
-        .links {
+        .controls {
             display: grid;
-            gap: 20px;
-            margin-top: 30px;
+            grid-template-columns: 1fr 1fr;
+            gap: 10px;
+            margin-bottom: 20px;
         }
-
-        .link-card {
-            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+        button {
+            padding: 15px;
+            border: none;
+            border-radius: 8px;
+            background-color: var(--primary);
             color: white;
-            padding: 25px;
-            border-radius: 15px;
-            text-decoration: none;
-            transition: transform 0.3s ease, box-shadow 0.3s ease;
-            display: block;
+            font-weight: bold;
+            font-size: 16px;
+            cursor: pointer;
+            transition: opacity 0.2s;
         }
-
-        .link-card:hover {
-            transform: translateY(-5px);
-            box-shadow: 0 10px 30px rgba(102, 126, 234, 0.4);
+        button:active { opacity: 0.7; }
+        button.chambre { background-color: var(--accent); }
+        button.migration { background-color: var(--success); }
+        button.full { grid-column: span 2; }
+        
+        .console {
+            flex-grow: 1;
+            background-color: black;
+            border-radius: 8px;
+            padding: 10px;
+            font-family: 'Courier New', Courier, monospace;
+            font-size: 14px;
+            overflow-y: auto;
+            border: 1px solid #334155;
+            color: #10b981;
+            white-space: pre-wrap;
         }
-
-        .link-card h2 {
-            font-size: 1.5em;
-            margin-bottom: 10px;
+        .input-area {
+            display: flex;
+            margin-top: 10px;
+            gap: 10px;
         }
-
-        .link-card p {
-            opacity: 0.9;
-            font-size: 0.95em;
-        }
-
-        .footer {
-            text-align: center;
-            margin-top: 40px;
-            padding-top: 20px;
-            border-top: 2px solid #eee;
-            color: #666;
-        }
-
-        .app-links {
-            text-align: center;
-            margin-top: 30px;
-        }
-
-        .app-button {
-            display: inline-block;
-            background: #667eea;
+        input {
+            flex-grow: 1;
+            padding: 12px;
+            border-radius: 8px;
+            border: 1px solid #334155;
+            background: var(--card);
             color: white;
-            padding: 12px 30px;
-            border-radius: 25px;
-            text-decoration: none;
-            margin: 10px;
-            transition: background 0.3s ease;
         }
-
-        .app-button:hover {
-            background: #764ba2;
+        .status {
+            font-size: 12px;
+            text-align: center;
+            margin-top: 5px;
+            color: #94a3b8;
         }
     </style>
 </head>
 <body>
-    <div class="container">
-        <div class="logo">
-            <h1>⏳ Timalaus</h1>
-            <p class="subtitle">Testez vos connaissances historiques !</p>
-        </div>
-
-        <p style="text-align: center; margin-bottom: 30px;">
-            Devinez la chronologie de milliers d'événements historiques à travers deux modes de jeu captivants.
-        </p>
-
-        <div class="links">
-            <a href="terms.html" class="link-card">
-                <h2>📜 Conditions d'Utilisation</h2>
-                <p>Consultez les conditions générales d'utilisation de l'application Timalaus.</p>
-            </a>
-
-            <a href="privacy.html" class="link-card">
-                <h2>🔒 Politique de Confidentialité</h2>
-                <p>Découvrez comment nous protégeons vos données personnelles.</p>
-            </a>
-        </div>
-
-        <div class="app-links">
-            <a href="https://play.google.com/store/apps/details?id=com.pierretulle.juno2" class="app-button">
-                📱 Télécharger sur Google Play
-            </a>
-        </div>
-
-        <div class="footer">
-            <p><strong>Contact :</strong> quandiappli@proton.me</p>
-            <p style="margin-top: 10px;">© 2025 Timalaus. Tous droits réservés.</p>
-        </div>
+    <div class="header">
+        <h1>🚀 Kiko Remote</h1>
+        <div id="connection-status" style="color: red;">Connect...</div>
     </div>
+
+    <div class="controls">
+        <button onclick="sendCommand('bureau')">📁 Bureau</button>
+        <button class="chambre" onclick="sendCommand('chambre')">📷 Chambre</button>
+        <button class="migration full" onclick="sendCommand('migration')">🚢 Migration</button>
+    </div>
+
+    <div id="console" class="console">Bienvenue sur la console distante.
+En attente d'une commande...</div>
+
+    <div class="input-area">
+        <input type="text" id="user-input" placeholder="Répondre au script..." onkeypress="if(event.key==='Enter') sendInput()">
+        <button onclick="sendInput()">Envoyer</button>
+    </div>
+
+    <div id="meta-status" class="status">Pret</div>
+
+    <script>
+        const SUPABASE_URL = 'https://ppxmtnuewcixbbmhnzzc.supabase.co';
+        const SUPABASE_KEY = 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6InBweG10bnVld2NpeGJibWhuenpjIiwicm9sZSI6ImFub24iLCJpYXQiOjE3MjY4OTkxMjcsImV4cCI6MjA0MjQ3NTEyN30.0z2be74E3db-XvyIKXPlogI__9Ric1Il4cZ1Fs7TJ5U';
+        
+        const supabase = supabase.createClient(SUPABASE_URL, SUPABASE_KEY);
+        let currentSession = null;
+
+        document.getElementById('connection-status').innerText = '🟢 Connecté à Supabase';
+        document.getElementById('connection-status').style.color = '#22c55e';
+
+        async function sendCommand(cmd) {
+            currentSession = 'sess_' + Date.now();
+            document.getElementById('console').innerHTML = `\n> Lancement de ${cmd}...\n`;
+            
+            const { error } = await supabase.from('remote_control').insert({
+                type: 'command',
+                content: cmd,
+                session_id: currentSession,
+                status: 'pending'
+            });
+            
+            if (error) alert("Erreur: " + error.message);
+        }
+
+        async function sendInput() {
+            const inputField = document.getElementById('user-input');
+            const val = inputField.value;
+            if (!val || !currentSession) return;
+
+            await supabase.from('remote_control').insert({
+                type: 'input',
+                content: val,
+                session_id: currentSession,
+                status: 'pending'
+            });
+
+            inputField.value = '';
+            document.getElementById('console').innerText += `\n>> ${val}\n`;
+        }
+
+        // Ecoute du Realtime pour les outputs
+        supabase
+            .channel('remote_outputs')
+            .on('postgres_changes', { event: 'INSERT', schema: 'public', table: 'remote_control' }, payload => {
+                const { type, content, session_id } = payload.new;
+                
+                if (session_id === currentSession || !currentSession) {
+                    if (type === 'output') {
+                        const consoleDiv = document.getElementById('console');
+                        consoleDiv.innerText += content;
+                        consoleDiv.scrollTop = consoleDiv.scrollHeight;
+                    } else if (type === 'status') {
+                        document.getElementById('meta-status').innerText = "Status: " + content;
+                        if (content === 'waiting_input') {
+                            document.getElementById('meta-status').style.color = '#f59e0b';
+                        } else {
+                            document.getElementById('meta-status').style.color = '#94a3b8';
+                        }
+                    }
+                }
+            })
+            .subscribe();
+
+    </script>
 </body>
 </html>
