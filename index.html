@@ -5,7 +5,7 @@
     <meta charset="UTF-8">
     <meta name="viewport"
         content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, viewport-fit=cover">
-    <title>Kiko - Remote Control</title>
+    <title>Kiko - Super Remote</title>
     <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
     <style>
         :root {
@@ -15,6 +15,7 @@
             --primary: #3b82f6;
             --success: #22c55e;
             --accent: #f59e0b;
+            --ai-bg: #1e1b4b;
         }
 
         * {
@@ -35,21 +36,44 @@
             overflow: hidden;
         }
 
-        .header {
-            text-align: center;
-            padding: 5px 0;
+        .tabs {
+            display: flex;
+            gap: 5px;
+            margin-bottom: 10px;
         }
 
-        h1 {
-            margin: 0;
-            font-size: 1.5rem;
+        .tab {
+            flex: 1;
+            padding: 10px;
+            text-align: center;
+            background: var(--card);
+            border-radius: 8px;
+            font-size: 14px;
+            font-weight: bold;
+            opacity: 0.5;
+        }
+
+        .tab.active {
+            opacity: 1;
+            background: var(--primary);
+        }
+
+        .view {
+            display: none;
+            flex-direction: column;
+            flex: 1;
+            overflow: hidden;
+        }
+
+        .view.active {
+            display: flex;
         }
 
         .controls {
             display: grid;
             grid-template-columns: 1fr 1fr;
             gap: 8px;
-            margin: 10px 0;
+            margin-bottom: 10px;
         }
 
         button {
@@ -60,24 +84,6 @@
             color: white;
             font-weight: bold;
             font-size: 14px;
-            cursor: pointer;
-        }
-
-        button:active {
-            opacity: 0.7;
-            transform: scale(0.98);
-        }
-
-        button.chambre {
-            background-color: var(--accent);
-        }
-
-        button.migration {
-            background-color: var(--success);
-        }
-
-        button.full {
-            grid-column: span 2;
         }
 
         .console {
@@ -86,13 +92,41 @@
             border-radius: 8px;
             padding: 10px;
             font-family: 'Courier New', monospace;
-            font-size: 13px;
+            font-size: 12px;
             overflow-y: auto;
             border: 1px solid #334155;
             color: #10b981;
             white-space: pre-wrap;
-            margin-bottom: 10px;
-            -webkit-overflow-scrolling: touch;
+        }
+
+        .chat-container {
+            flex: 1;
+            background: var(--ai-bg);
+            border-radius: 10px;
+            padding: 10px;
+            overflow-y: auto;
+            display: flex;
+            flex-direction: column;
+            gap: 10px;
+        }
+
+        .msg {
+            max-width: 85%;
+            padding: 10px;
+            border-radius: 12px;
+            font-size: 14px;
+            line-height: 1.4;
+        }
+
+        .msg.user {
+            align-self: flex-end;
+            background: var(--primary);
+        }
+
+        .msg.bot {
+            align-self: flex-start;
+            background: var(--card);
+            border-left: 4px solid var(--accent);
         }
 
         .input-area {
@@ -101,29 +135,22 @@
             padding: 10px;
             background: var(--card);
             border-radius: 12px;
-            margin-bottom: 5px;
-            box-shadow: 0 -4px 12px rgba(0, 0, 0, 0.2);
+            margin-top: 10px;
         }
 
         input {
             flex: 1;
-            padding: 14px;
+            padding: 12px;
             border-radius: 8px;
-            border: 2px solid #334155;
+            border: 1px solid #334155;
             background: #0f172a;
             color: white;
             font-size: 16px !important;
-            /* Pour éviter le zoom auto sur mobile */
-            outline: none;
-        }
-
-        input:focus {
-            border-color: var(--primary);
         }
 
         .send-btn {
-            background-color: var(--success);
-            padding: 0 20px;
+            background: var(--success);
+            padding: 0 15px;
         }
 
         .status-bar {
@@ -131,24 +158,34 @@
             justify-content: space-between;
             font-size: 10px;
             color: #94a3b8;
-            padding: 2px 5px;
+            padding: 5px;
         }
     </style>
 </head>
 
 <body>
-    <div class="header">
-        <h1>🚀 Kiko Remote</h1>
-        <div id="connection-status" style="color: #ef4444; font-size: 12px;">Connexion...</div>
+    <div class="tabs">
+        <div class="tab active" onclick="switchTab('machine')">⚙️ Machine</div>
+        <div class="tab" id="ai-tab-btn" onclick="switchTab('ai')">🧠 Antigravity</div>
     </div>
 
-    <div class="controls">
-        <button onclick="sendCommand('bureau')">📁 Bureau</button>
-        <button class="chambre" onclick="sendCommand('chambre')">📷 Chambre</button>
-        <button class="migration full" onclick="sendCommand('migration')">🚢 Migration</button>
+    <!-- VUE MACHINE -->
+    <div id="view-machine" class="view active">
+        <div class="controls">
+            <button onclick="sendCommand('bureau')">📁 Bureau</button>
+            <button style="background:var(--accent)" onclick="sendCommand('chambre')">📷 Chambre</button>
+            <button style="background:var(--success); grid-column: span 2;" onclick="sendCommand('migration')">🚢
+                Migration IA</button>
+        </div>
+        <div id="console" class="console">Prêt pour les commandes...</div>
     </div>
 
-    <div id="console" class="console">Console prête. En attente d'une commande...</div>
+    <!-- VUE AI -->
+    <div id="view-ai" class="view">
+        <div id="chat-box" class="chat-container">
+            <div class="msg bot">Bonjour Pierre ! Je suis Antigravity. Je t'écoute, même à distance.</div>
+        </div>
+    </div>
 
     <div class="input-area">
         <input type="text" id="user-input" placeholder="Écrire ici..." autocomplete="off">
@@ -156,8 +193,8 @@
     </div>
 
     <div class="status-bar">
-        <span id="meta-status">Statut: IDLE</span>
-        <span>v1.1</span>
+        <span id="connection-status">Connexion...</span>
+        <span>v2.0 Turbo</span>
     </div>
 
     <script>
@@ -165,64 +202,79 @@
         const SUPABASE_KEY = 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6InBweG10bnVld2NpeGJibWhuenpjIiwicm9sZSI6ImFub24iLCJpYXQiOjE3MjY4OTkxMjcsImV4cCI6MjA0MjQ3NTEyN30.0z2be74E3db-XvyIKXPlogI__9Ric1Il4cZ1Fs7TJ5U';
 
         const _supabase = supabase.createClient(SUPABASE_URL, SUPABASE_KEY);
-        let currentSession = null;
+        let currentSession = 'sess_global_' + Date.now();
+        let currentTab = 'machine';
 
         document.getElementById('connection-status').innerText = '🟢 Connecté';
         document.getElementById('connection-status').style.color = '#22c55e';
 
-        async function sendCommand(cmd) {
-            currentSession = 'sess_' + Date.now();
-            document.getElementById('console').innerText = `\n> Lancement de ${cmd}...\n`;
+        function switchTab(tab) {
+            currentTab = tab;
+            document.querySelectorAll('.tab').forEach(t => t.classList.remove('active'));
+            document.querySelectorAll('.view').forEach(v => v.classList.remove('active'));
 
-            await _supabase.from('remote_control').insert({
-                type: 'command',
-                content: cmd,
-                session_id: currentSession,
-                status: 'pending'
-            });
+            if (tab === 'machine') {
+                document.getElementById('view-machine').classList.add('active');
+                document.querySelectorAll('.tab')[0].classList.add('active');
+                document.getElementById('user-input').placeholder = "Répondre au script...";
+            } else {
+                document.getElementById('view-ai').classList.add('active');
+                document.getElementById('ai-tab-btn').classList.add('active');
+                document.getElementById('user-input').placeholder = "Parler à Antigravity...";
+            }
         }
 
-        async function sendInput() {
+        async function sendCommand(cmd) {
+            currentSession = 'sess_' + Date.now();
+            switchTab('machine');
+            document.getElementById('console').innerText = `\n> Lancement de ${cmd}...\n`;
+            await _supabase.from('remote_control').insert({ type: 'command', content: cmd, session_id: currentSession });
+        }
+
+        async function handleGlobalSend() {
             const inputField = document.getElementById('user-input');
             const val = inputField.value;
-            if (!val || !currentSession) return;
+            if (!val) return;
 
-            await _supabase.from('remote_control').insert({
-                type: 'input',
-                content: val,
-                session_id: currentSession,
-                status: 'pending'
-            });
-
+            if (currentTab === 'machine') {
+                await _supabase.from('remote_control').insert({ type: 'input', content: val, session_id: currentSession });
+                document.getElementById('console').innerText += `\n>> ${val}\n`;
+            } else {
+                // Mode AI Chat
+                appendMsg(val, 'user');
+                await _supabase.from('ai_chat').insert({ role: 'user', content: val, session_id: 'mobile_session' });
+            }
             inputField.value = '';
-            document.getElementById('console').innerText += `\n>> ${val}\n`;
-            // Cacher le clavier après envoi
             inputField.blur();
         }
 
-        document.getElementById('send-btn').onclick = sendInput;
-        document.getElementById('user-input').onkeypress = (e) => {
-            if (e.key === 'Enter') sendInput();
-        };
+        function appendMsg(text, role) {
+            const chatBox = document.getElementById('chat-box');
+            const div = document.createElement('div');
+            div.className = `msg ${role === 'user' ? 'user' : 'bot'}`;
+            div.innerText = text;
+            chatBox.appendChild(div);
+            chatBox.scrollTop = chatBox.scrollHeight;
+        }
 
-        _supabase
-            .channel('remote_outputs')
-            .on('postgres_changes', { event: 'INSERT', schema: 'public', table: 'remote_control' }, payload => {
-                const { type, content, session_id } = payload.new;
-                if (session_id === currentSession || !currentSession) {
-                    if (type === 'output') {
-                        const consoleDiv = document.getElementById('console');
-                        consoleDiv.innerText += content;
-                        consoleDiv.scrollTop = consoleDiv.scrollHeight;
-                    } else if (type === 'status') {
-                        document.getElementById('meta-status').innerText = "Statut: " + content;
-                        if (content === 'waiting_input') {
-                            document.getElementById('user-input').focus();
-                        }
-                    }
-                }
-            })
-            .subscribe();
+        document.getElementById('send-btn').onclick = handleGlobalSend;
+        document.getElementById('user-input').onkeypress = (e) => { if (e.key === 'Enter') handleGlobalSend(); };
+
+        // Écoute Realtime Machine
+        _supabase.channel('machine_out').on('postgres_changes', { event: 'INSERT', schema: 'public', table: 'remote_control' }, payload => {
+            if (payload.new.type === 'output') {
+                const con = document.getElementById('console');
+                con.innerText += payload.new.content;
+                con.scrollTop = con.scrollHeight;
+            }
+        }).subscribe();
+
+        // Écoute Realtime AI
+        _supabase.channel('ai_in').on('postgres_changes', { event: 'INSERT', schema: 'public', table: 'ai_chat' }, payload => {
+            if (payload.new.role === 'assistant') {
+                appendMsg(payload.new.content, 'bot');
+            }
+        }).subscribe();
     </script>
 </body>
 
