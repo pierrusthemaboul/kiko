@@ -1,9 +1,10 @@
 <!DOCTYPE html>
-<html lang="fr">
+<html lang="fr" style="height: 100%;">
 
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="viewport"
+        content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, viewport-fit=cover">
     <title>Kiko - Remote Control</title>
     <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
     <style>
@@ -16,44 +17,55 @@
             --accent: #f59e0b;
         }
 
+        * {
+            box-sizing: border-box;
+            -webkit-tap-highlight-color: transparent;
+        }
+
         body {
-            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            font-family: 'Segoe UI', system-ui, -apple-system, sans-serif;
             background-color: var(--bg);
             color: var(--text);
             margin: 0;
-            padding: 20px;
+            padding: 10px;
             display: flex;
             flex-direction: column;
             height: 100vh;
+            height: 100dvh;
             overflow: hidden;
         }
 
         .header {
             text-align: center;
-            margin-bottom: 20px;
+            padding: 5px 0;
+        }
+
+        h1 {
+            margin: 0;
+            font-size: 1.5rem;
         }
 
         .controls {
             display: grid;
             grid-template-columns: 1fr 1fr;
-            gap: 10px;
-            margin-bottom: 20px;
+            gap: 8px;
+            margin: 10px 0;
         }
 
         button {
-            padding: 15px;
+            padding: 12px;
             border: none;
             border-radius: 8px;
             background-color: var(--primary);
             color: white;
             font-weight: bold;
-            font-size: 16px;
+            font-size: 14px;
             cursor: pointer;
-            transition: opacity 0.2s;
         }
 
         button:active {
             opacity: 0.7;
+            transform: scale(0.98);
         }
 
         button.chambre {
@@ -69,38 +81,57 @@
         }
 
         .console {
-            flex-grow: 1;
-            background-color: black;
+            flex: 1;
+            background-color: #000;
             border-radius: 8px;
             padding: 10px;
-            font-family: 'Courier New', Courier, monospace;
-            font-size: 14px;
+            font-family: 'Courier New', monospace;
+            font-size: 13px;
             overflow-y: auto;
             border: 1px solid #334155;
             color: #10b981;
             white-space: pre-wrap;
+            margin-bottom: 10px;
+            -webkit-overflow-scrolling: touch;
         }
 
         .input-area {
             display: flex;
-            margin-top: 10px;
-            gap: 10px;
+            gap: 8px;
+            padding: 10px;
+            background: var(--card);
+            border-radius: 12px;
+            margin-bottom: 5px;
+            box-shadow: 0 -4px 12px rgba(0, 0, 0, 0.2);
         }
 
         input {
-            flex-grow: 1;
-            padding: 12px;
+            flex: 1;
+            padding: 14px;
             border-radius: 8px;
-            border: 1px solid #334155;
-            background: var(--card);
+            border: 2px solid #334155;
+            background: #0f172a;
             color: white;
+            font-size: 16px !important;
+            /* Pour éviter le zoom auto sur mobile */
+            outline: none;
         }
 
-        .status {
-            font-size: 12px;
-            text-align: center;
-            margin-top: 5px;
+        input:focus {
+            border-color: var(--primary);
+        }
+
+        .send-btn {
+            background-color: var(--success);
+            padding: 0 20px;
+        }
+
+        .status-bar {
+            display: flex;
+            justify-content: space-between;
+            font-size: 10px;
             color: #94a3b8;
+            padding: 2px 5px;
         }
     </style>
 </head>
@@ -108,7 +139,7 @@
 <body>
     <div class="header">
         <h1>🚀 Kiko Remote</h1>
-        <div id="connection-status" style="color: red;">Connect...</div>
+        <div id="connection-status" style="color: #ef4444; font-size: 12px;">Connexion...</div>
     </div>
 
     <div class="controls">
@@ -117,16 +148,17 @@
         <button class="migration full" onclick="sendCommand('migration')">🚢 Migration</button>
     </div>
 
-    <div id="console" class="console">Bienvenue sur la console distante.
-        En attente d'une commande...</div>
+    <div id="console" class="console">Console prête. En attente d'une commande...</div>
 
     <div class="input-area">
-        <input type="text" id="user-input" placeholder="Répondre au script..."
-            onkeypress="if(event.key==='Enter') sendInput()">
-        <button onclick="sendInput()">Envoyer</button>
+        <input type="text" id="user-input" placeholder="Écrire ici..." autocomplete="off">
+        <button class="send-btn" id="send-btn">OK</button>
     </div>
 
-    <div id="meta-status" class="status">Pret</div>
+    <div class="status-bar">
+        <span id="meta-status">Statut: IDLE</span>
+        <span>v1.1</span>
+    </div>
 
     <script>
         const SUPABASE_URL = 'https://ppxmtnuewcixbbmhnzzc.supabase.co';
@@ -135,21 +167,19 @@
         const _supabase = supabase.createClient(SUPABASE_URL, SUPABASE_KEY);
         let currentSession = null;
 
-        document.getElementById('connection-status').innerText = '🟢 Connecté à Supabase';
+        document.getElementById('connection-status').innerText = '🟢 Connecté';
         document.getElementById('connection-status').style.color = '#22c55e';
 
         async function sendCommand(cmd) {
             currentSession = 'sess_' + Date.now();
-            document.getElementById('console').innerHTML = `\n> Lancement de ${cmd}...\n`;
+            document.getElementById('console').innerText = `\n> Lancement de ${cmd}...\n`;
 
-            const { error } = await _supabase.from('remote_control').insert({
+            await _supabase.from('remote_control').insert({
                 type: 'command',
                 content: cmd,
                 session_id: currentSession,
                 status: 'pending'
             });
-
-            if (error) alert("Erreur: " + error.message);
         }
 
         async function sendInput() {
@@ -166,31 +196,33 @@
 
             inputField.value = '';
             document.getElementById('console').innerText += `\n>> ${val}\n`;
+            // Cacher le clavier après envoi
+            inputField.blur();
         }
 
-        // Ecoute du Realtime pour les outputs
+        document.getElementById('send-btn').onclick = sendInput;
+        document.getElementById('user-input').onkeypress = (e) => {
+            if (e.key === 'Enter') sendInput();
+        };
+
         _supabase
             .channel('remote_outputs')
             .on('postgres_changes', { event: 'INSERT', schema: 'public', table: 'remote_control' }, payload => {
                 const { type, content, session_id } = payload.new;
-
                 if (session_id === currentSession || !currentSession) {
                     if (type === 'output') {
                         const consoleDiv = document.getElementById('console');
                         consoleDiv.innerText += content;
                         consoleDiv.scrollTop = consoleDiv.scrollHeight;
                     } else if (type === 'status') {
-                        document.getElementById('meta-status').innerText = "Status: " + content;
+                        document.getElementById('meta-status').innerText = "Statut: " + content;
                         if (content === 'waiting_input') {
-                            document.getElementById('meta-status').style.color = '#f59e0b';
-                        } else {
-                            document.getElementById('meta-status').style.color = '#94a3b8';
+                            document.getElementById('user-input').focus();
                         }
                     }
                 }
             })
             .subscribe();
-
     </script>
 </body>
 
