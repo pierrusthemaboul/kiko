@@ -1,7 +1,7 @@
 {
   "name": "timalaus",
   "main": "expo-router/entry",
-  "version": "1.6.8",
+  "version": "1.6.9",
   "_comment": "📚 Documentation importante : Avant de modifier l'audio, lisez /docs/AUDIO_MIGRATION_GUIDE.md",
   "scripts": {
     "start": "expo start",
@@ -22,6 +22,7 @@
     "build:android:production": "npm run prebuild:android && eas build --platform android --profile production --clear-cache",
     "ideation": "node machine_a_evenements/orchestrator.mjs",
     "bureau": "node machine_a_evenements/orchestrator.mjs",
+    "chambre_noire": "node machine_a_evenements/chambre_noire.mjs",
     "sevent": "node machine_a_evenements/sevent3.mjs",
     "migrer": "node machine_a_evenements/migration_goju_prod.mjs",
     "remote": "node remote_listener.mjs",
