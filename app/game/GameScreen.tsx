@@ -51,28 +51,35 @@ function ClassicGameScreen({ requestedMode }: { requestedMode?: string }) {
   const gameLogic = useGameLogicA('', requestedMode); // Passe une chaîne vide ou l'initialEvent si nécessaire
   const { endSummary, startRun, canStartRun, playsInfo, clearEndSummary } = gameLogic;
 
-  // Calcule le background en fonction du niveau
+  // On utilise un état local pour le background afin d'éviter qu'il ne change 
+  // pendant l'animation de fin de niveau (ce qui cause un flash).
+  const [displayedLevel, setDisplayedLevel] = useState(gameLogic?.user?.level || 1);
+
+  useEffect(() => {
+    // On ne met à jour le background que si on n'est pas en transition de fin de niveau
+    if (!gameLogic.triggerLevelEndAnim && gameLogic.user?.level) {
+      setDisplayedLevel(gameLogic.user.level);
+    }
+  }, [gameLogic.user?.level, gameLogic.triggerLevelEndAnim]);
+
+  // Calcule le background en fonction du niveau affiché
   const currentBackground = useMemo(() => {
-    if (!gameLogic?.user?.level) return require('../../assets/images/bg-level-1.png');
-    return getBackgroundForLevel(gameLogic.user.level);
-  }, [gameLogic?.user?.level]);
+    return getBackgroundForLevel(displayedLevel);
+  }, [displayedLevel]);
 
   // Effet de transition douce lors du changement de background
   useEffect(() => {
-    // Fade out puis fade in pour transition douce
-    Animated.sequence([
-      Animated.timing(bgFadeAnim, {
-        toValue: 0.7,
-        duration: 300,
-        useNativeDriver: true,
-      }),
-      Animated.timing(bgFadeAnim, {
-        toValue: 1,
-        duration: 300,
-        useNativeDriver: true,
-      }),
-    ]).start();
-  }, [currentBackground, bgFadeAnim]);
+    if (__DEV__ && (console as any).tron) {
+      (console as any).tron.log(`🖼️ TRANSITION BACKGROUND - Niveau affiché: ${displayedLevel}`);
+    }
+    // Fade in simple
+    bgFadeAnim.setValue(0.8);
+    Animated.timing(bgFadeAnim, {
+      toValue: 1,
+      duration: 400,
+      useNativeDriver: true,
+    }).start();
+  }, [currentBackground, bgFadeAnim, displayedLevel]);
 
   useEffect(() => {
     const initializeRun = async () => {
@@ -495,6 +502,7 @@ export default function GameScreenPage() {
 const styles = StyleSheet.create({
   fullScreenContainer: {
     flex: 1,
+    backgroundColor: '#000',
   },
   backgroundImage: {
     flex: 1,
@@ -503,7 +511,7 @@ const styles = StyleSheet.create({
   },
   backgroundOverlay: {
     ...StyleSheet.absoluteFillObject,
-    backgroundColor: 'rgba(0, 0, 0, 0.55)', // Overlay sombre pour atténuer le background
+    backgroundColor: 'rgba(0, 0, 0, 0.65)', // Un peu plus sombre pour la transition
   },
   contentContainer: {
     ...StyleSheet.absoluteFillObject,
@@ -511,7 +519,7 @@ const styles = StyleSheet.create({
   },
   container: {
     flex: 1,
-    backgroundColor: 'transparent', // Important pour voir l'image de fond
+    backgroundColor: '#000', // Important pour voir l'image de fond
   },
   flexFill: {
     flex: 1,

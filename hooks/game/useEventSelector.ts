@@ -15,9 +15,9 @@ const ANTIQUE_EVENTS_LIMITS = {
 
 // Constantes d'optimisation
 const ANTIQUE_YEAR_THRESHOLD = 500;
-const MAX_EVENTS_TO_PROCESS = 150; // Limite critique pour éviter les gels
-const MAX_SCORING_POOL = 100; // Pool encore plus restreint pour le scoring
-const DEBOUNCE_DELAY = 200; // ms pour éviter les appels multiples
+const MAX_EVENTS_TO_PROCESS = 500; // Augmenté de 150 -> 500 pour plus de catalogue
+const MAX_SCORING_POOL = 300; // Pool augmenté pour mieux comparer
+const DEBOUNCE_DELAY = 150; // ms légèrement réduit pour plus de réactivité
 
 // Cache global pour les calculs de dates (évite les re-calculs)
 const dateCache = new Map<string, { year: number, timestamp: number }>();
@@ -48,11 +48,11 @@ const KEY_PERIODS = [
  * Retourne les chances (0-1) de piocher dans chaque Tier
  */
 const getTierProbabilities = (level: number) => {
-  if (level <= 2) return { t1: 0.9, t2: 0.1, t3: 0.0 };      // Quasi que des stars
-  if (level <= 5) return { t1: 0.7, t2: 0.25, t3: 0.05 };    // Introduction douce
-  if (level <= 10) return { t1: 0.5, t2: 0.4, t3: 0.1 };     // Équilibre
-  if (level <= 20) return { t1: 0.3, t2: 0.5, t3: 0.2 };     // Plus de classiques
-  return { t1: 0.2, t2: 0.4, t3: 0.4 };                      // Mode expert
+  if (level <= 2) return { t1: 0.75, t2: 0.20, t3: 0.05 };    // Mixité dès le début (Stars majoritaires)
+  if (level <= 5) return { t1: 0.60, t2: 0.30, t3: 0.10 };    // Introduction plus rapide du Tier 2
+  if (level <= 10) return { t1: 0.45, t2: 0.40, t3: 0.15 };   // Équilibre atteint plus tôt
+  if (level <= 20) return { t1: 0.30, t2: 0.45, t3: 0.25 };   // Plus de variété
+  return { t1: 0.20, t2: 0.40, t3: 0.40 };                    // Mode expert (équilibré)
 };
 
 /**
@@ -101,22 +101,24 @@ const notorieteProfileForLevel = (level: number) => {
 /**
  * Cache optimisé pour les calculs de dates
  */
-const getCachedDateInfo = (dateStr: string) => {
-  if (!dateCache.has(dateStr)) {
+export const getCachedDateInfo = (dateStr: string) => {
+  const trimmedKey = (dateStr || '').trim();
+  if (!dateCache.has(trimmedKey)) {
     try {
-      const date = new Date(dateStr);
+      const date = new Date(trimmedKey);
       const year = date.getFullYear();
       const timestamp = date.getTime();
       if (!isNaN(year) && !isNaN(timestamp)) {
-        dateCache.set(dateStr, { year, timestamp });
+        dateCache.set(trimmedKey, { year, timestamp });
       } else {
-        return { year: 2000, timestamp: new Date('2000-01-01').getTime() }; // Fallback
+        // Fallback stable pour éviter NaN
+        dateCache.set(trimmedKey, { year: 2000, timestamp: 946684800000 });
       }
     } catch {
-      return { year: 2000, timestamp: new Date('2000-01-01').getTime() }; // Fallback
+      dateCache.set(trimmedKey, { year: 2000, timestamp: 946684800000 });
     }
   }
-  return dateCache.get(dateStr)!;
+  return dateCache.get(trimmedKey)!;
 };
 
 /**
@@ -246,8 +248,8 @@ export function useEventSelector({
             user_id: authUser.id,
             event_id: eventId,
             times_seen: updatedTimesSeen,
-            last_seen_at: new Date().toISOString(),
-            app_version: Constants.expoConfig?.version ?? '1.6.8'
+            last_seen_at: new Date().toISOString()
+            // app_version supprimé car la colonne n'existe pas en DB
           }, {
             onConflict: 'user_id,event_id'
           });
@@ -368,6 +370,8 @@ export function useEventSelector({
     const info1 = getCachedDateInfo(date1);
     const info2 = getCachedDateInfo(date2);
 
+    if (info1.timestamp === info2.timestamp) return 0;
+
     const diffInMilliseconds = Math.abs(info1.timestamp - info2.timestamp);
     return diffInMilliseconds / (365.25 * 24 * 60 * 60 * 1000);
   }, []);
@@ -395,7 +399,20 @@ export function useEventSelector({
     const totalCandidates = events.length;
     const usedCount = usedEvents.size;
 
-    let filtered = events.filter(e => !usedEvents.has(e.id) && e.date && e.id !== referenceEvent.id && getTimeDifference(e.date, referenceEvent.date) !== 0);
+    let filtered = events.filter(e => {
+      if (usedEvents.has(e.id) || !e.date || e.id === referenceEvent.id) return false;
+      const info = getCachedDateInfo(e.date);
+      const refInfo = getCachedDateInfo(referenceEvent.date);
+
+      // Sécurité absolue : pas le même timestamp
+      if (info.timestamp === refInfo.timestamp) return false;
+
+      // Ergonomie : on évite la même année si on n'est pas à un très haut niveau
+      // (Car l'UI n'affiche que l'année, ce qui rend le tour impossible à deviner consciemment)
+      if (info.year === refInfo.year) return false;
+
+      return true;
+    });
     const afterBasicFilter = filtered.length;
 
     // 2. Filtrage par TIER PROBABILISTE
@@ -422,7 +439,7 @@ export function useEventSelector({
 
     // 3. Filtrage temporel préliminaire (large)
     const timeGapBase = config.timeGap?.base || 100;
-    const preTimeLimit = timeGapBase * 3; // Limite large pour le pré-filtrage
+    const preTimeLimit = Math.max(timeGapBase * 3, 2500); // Fenêtre min 2500 ans pour couvrir toutes les époques
     const afterTime = filtered.filter(e => {
       const timeDiff = getTimeDifference(e.date, referenceEvent.date);
       return timeDiff <= preTimeLimit;
@@ -449,23 +466,51 @@ export function useEventSelector({
       }
     }
 
-    // 5. Prioriser les événements moins utilisés
+    // 5. Mélange et Priorisation des événements moins utilisés
+    // On ajoute un facteur de hasard stable pour varier les 150 candidats finaux
     const now = Date.now();
     filtered.sort((a, b) => {
+      // Priorité 1 : Malus personnel (jamais vu avant tout)
+      const personalA = personalHistory.get(a.id)?.times_seen ?? 0;
+      const personalB = personalHistory.get(b.id)?.times_seen ?? 0;
+      if (personalA !== personalB) return personalA - personalB;
+
+      // Priorité 2 : Hasard léger pour briser les patterns fixes
+      const jitter = Math.random() - 0.5;
+
       const freqA = (a as any).frequency_score || 0;
       const freqB = (b as any).frequency_score || 0;
-      if (freqA !== freqB) return freqA - freqB;
+      if (Math.abs(freqA - freqB) > 2) return freqA - freqB;
 
-      const lastATs = (a as any).last_used ? new Date((a as any).last_used as string).getTime() : NaN;
-      const lastBTs = (b as any).last_used ? new Date((b as any).last_used as string).getTime() : NaN;
-      const ageA = Number.isFinite(lastATs) ? now - lastATs : Number.POSITIVE_INFINITY;
-      const ageB = Number.isFinite(lastBTs) ? now - lastBTs : Number.POSITIVE_INFINITY;
-
-      return ageB - ageA; // Plus ancien en premier
+      return jitter;
     });
 
-    // 6. Limite drastique pour éviter les gels
-    const limited = filtered.slice(0, MAX_EVENTS_TO_PROCESS);
+    // 6. Composition équilibrée par période historique
+    // Garantit que chaque période a un minimum de représentants dans le pool
+    const MIN_PERIOD_SHARE = 0.08; // 8% minimum par période = ~40 slots sur 500
+    const periodBuckets: Record<string, Event[]> = {};
+    const allPeriods = [HistoricalPeriod.ANTIQUITY, HistoricalPeriod.MIDDLE_AGES, HistoricalPeriod.RENAISSANCE,
+                        HistoricalPeriod.NINETEENTH, HistoricalPeriod.TWENTIETH, HistoricalPeriod.TWENTYFIRST];
+    for (const evt of filtered) {
+      const p = getPeriod(evt.date);
+      if (!periodBuckets[p]) periodBuckets[p] = [];
+      periodBuckets[p].push(evt);
+    }
+    const minPerPeriod = Math.max(5, Math.floor(MAX_EVENTS_TO_PROCESS * MIN_PERIOD_SHARE));
+    const reserved: Event[] = [];
+    const reservedIds = new Set<string>();
+    for (const period of allPeriods) {
+      const bucket = periodBuckets[period] || [];
+      const toReserve = bucket.slice(0, minPerPeriod);
+      for (const evt of toReserve) {
+        reserved.push(evt);
+        reservedIds.add(evt.id);
+      }
+    }
+    // Remplir le reste avec les meilleurs candidats toutes périodes confondues
+    const remaining = filtered.filter(e => !reservedIds.has(e.id));
+    const fillCount = Math.max(0, MAX_EVENTS_TO_PROCESS - reserved.length);
+    const limited = [...reserved, ...remaining.slice(0, fillCount)];
 
     Logger.debug('GameLogic', `Pool reduction: ${totalCandidates} -> ${afterBasicFilter} (used) -> ${afterTierFilter} (tier ${targetTier}) -> ${afterTimeFilter} (time) -> ${limited.length} (final)`, {
       level: userLevel,
@@ -536,13 +581,11 @@ export function useEventSelector({
     let personalPenaltyMultiplier = 1.0;
     if (historyItem) {
       // Plus l'événement a été vu, plus son score baisse drastiquement
-      // Formule : 1 / (1 + nb_vues)
-      // Vu 1 fois -> score / 2
-      // Vu 2 fois -> score / 3
-      // etc.
-      personalPenaltyMultiplier = 1 / (1 + historyItem.times_seen);
-
-      // Bonus de "fraîcheur" pour les nouveaux joueurs : si jamais vu, multiplicateur = 1.0
+      // Formule : 1 / (1 + (nb_vues^1.5)) pour une décroissance plus forte
+      // Vu 1 fois -> score / 2.8
+      // Vu 2 fois -> score / 3.8
+      // Vu 5 fois -> score / 12
+      personalPenaltyMultiplier = 1 / (1 + Math.pow(historyItem.times_seen, 1.5));
     }
 
     // Malus de récence pour éviter de rejouer un événement trop vite
@@ -811,7 +854,14 @@ export function useEventSelector({
       // Pour les sauts temporels, chercher dans TOUS les événements (pas de filtre de pool)
       // On veut pouvoir sauter dans n'importe quelle époque
       const jumpCandidates = events
-        .filter(e => !usedEvents.has(e.id) && e.date && e.id !== referenceEvent.id && getTimeDifference(e.date, referenceEvent.date) !== 0)
+        .filter(e => {
+          if (usedEvents.has(e.id) || !e.date || e.id === referenceEvent.id) return false;
+          const info = getCachedDateInfo(e.date);
+          const refInfo = getCachedDateInfo(referenceEvent.date);
+          if (info.timestamp === refInfo.timestamp) return false;
+          if (info.year === refInfo.year) return false;
+          return true;
+        })
         .filter(e => {
           const { year: eventYear } = getCachedDateInfo(e.date);
           const notoriete = (e as any).notoriete ?? 0;
@@ -914,12 +964,26 @@ export function useEventSelector({
     // Si le pré-filtrage ne retourne rien, utiliser TOUS les événements non utilisés
     if (preFilteredEvents.length === 0) {
 
-      preFilteredEvents = events.filter(e => !usedEvents.has(e.id) && e.date && e.id !== referenceEvent.id && getTimeDifference(e.date, referenceEvent.date) !== 0);
+      preFilteredEvents = events.filter(e => {
+        if (usedEvents.has(e.id) || !e.date || e.id === referenceEvent.id) return false;
+        const info = getCachedDateInfo(e.date);
+        const refInfo = getCachedDateInfo(referenceEvent.date);
+        if (info.timestamp === refInfo.timestamp) return false;
+        if (info.year === refInfo.year) return false;
+        return true;
+      });
 
       // Si vraiment AUCUN événement non utilisé, réutiliser des événements
       if (preFilteredEvents.length === 0) {
 
-        preFilteredEvents = events.filter(e => e.date && e.id !== referenceEvent.id && getTimeDifference(e.date, referenceEvent.date) !== 0);
+        preFilteredEvents = events.filter(e => {
+          if (!e.date || e.id === referenceEvent.id) return false;
+          const info = getCachedDateInfo(e.date);
+          const refInfo = getCachedDateInfo(referenceEvent.date);
+          if (info.timestamp === refInfo.timestamp) return false;
+          if (info.year === refInfo.year) return false;
+          return true;
+        });
       }
 
       // Si même après ça il n'y a rien (base vide), alors c'est critique
@@ -1030,9 +1094,24 @@ export function useEventSelector({
 
 
 
+    // --- CHEMIN DIVERSITÉ : sélection parallèle d'événements d'autres périodes ---
+    // Ignore le filtre timeGap pour pouvoir atteindre des époques distantes
+    const refPeriod = getPeriod(referenceEvent.date);
+    const diversityEvents = scoringPool
+      .map(evt => ({
+        event: evt,
+        score: scoreEventOptimized(evt, referenceEvent, userLevel, timeGap),
+        timeDiff: getTimeDifference(evt.date, referenceEvent.date)
+      }))
+      .filter(({ event, score }) =>
+        isFinite(score) && score > 0 && getPeriod(event.date) !== refPeriod
+      )
+      .sort((a, b) => b.score - a.score)
+      .slice(0, 5);
+
     // SYSTÈME DE FALLBACK MULTI-NIVEAUX ROBUSTE - GARANTIT qu'un événement sera TOUJOURS trouvé
     let finalEvents = scoredEvents;
-    let selectionPath: 'normal' | 'fallback_1.5x' | 'fallback_2.5x' | 'fallback_5x' | 'fallback_ignore_gap' | 'fallback_all_unused' | 'fallback_reset_50pct' = 'normal';
+    let selectionPath: 'normal' | 'fallback_1.5x' | 'fallback_2.5x' | 'fallback_5x' | 'fallback_ignore_gap' | 'fallback_all_unused' | 'fallback_reset_50pct' | 'diversity' = 'normal';
 
 
 
@@ -1114,7 +1193,14 @@ export function useEventSelector({
     // Fallback 5: TOUS les événements non utilisés (random)
     if (finalEvents.length === 0) {
 
-      const allUnusedEvents = events.filter(e => !usedEvents.has(e.id) && e.date && e.id !== referenceEvent.id && getTimeDifference(e.date, referenceEvent.date) !== 0);
+      const allUnusedEvents = events.filter(e => {
+        if (usedEvents.has(e.id) || !e.date || e.id === referenceEvent.id) return false;
+        const info = getCachedDateInfo(e.date);
+        const refInfo = getCachedDateInfo(referenceEvent.date);
+        if (info.timestamp === refInfo.timestamp) return false;
+        if (info.year === refInfo.year) return false;
+        return true;
+      });
 
       finalEvents = allUnusedEvents.slice(0, 50).map(evt => ({
         event: evt,
@@ -1135,7 +1221,14 @@ export function useEventSelector({
       toReset.forEach(id => usedEvents.delete(id));
 
       // Retry avec événements fraîchement réinitialisés
-      const resetEvents = events.filter(e => !usedEvents.has(e.id) && e.date && e.id !== referenceEvent.id && getTimeDifference(e.date, referenceEvent.date) !== 0);
+      const resetEvents = events.filter(e => {
+        if (usedEvents.has(e.id) || !e.date || e.id === referenceEvent.id) return false;
+        const info = getCachedDateInfo(e.date);
+        const refInfo = getCachedDateInfo(referenceEvent.date);
+        if (info.timestamp === refInfo.timestamp) return false;
+        if (info.year === refInfo.year) return false;
+        return true;
+      });
       finalEvents = resetEvents.slice(0, 50).map(evt => ({
         event: evt,
         score: Math.random() * 100,
@@ -1150,7 +1243,14 @@ export function useEventSelector({
 
 
       // Dernière tentative désespérée : Prendre N'IMPORTE QUEL événement de la base
-      const desperateEvents = events.filter(e => e.date && getTimeDifference(e.date, referenceEvent.date) !== 0).slice(0, 10);
+      const desperateEvents = events.filter(e => {
+        if (!e.date || e.id === referenceEvent.id) return false;
+        const info = getCachedDateInfo(e.date);
+        const refInfo = getCachedDateInfo(referenceEvent.date);
+        if (info.timestamp === refInfo.timestamp) return false;
+        if (info.year === refInfo.year) return false;
+        return true;
+      }).slice(0, 10);
       if (desperateEvents.length > 0) {
 
         finalEvents = [{ event: desperateEvents[0], score: 1, timeDiff: 0 }];
@@ -1165,8 +1265,16 @@ export function useEventSelector({
 
 
 
-    // Sélection finale (top 5 pour la variété)
-    const topEvents = finalEvents.slice(0, Math.min(5, finalEvents.length));
+    // Sélection finale : mélange chemin normal + chemin diversité
+    // 3-4 événements du chemin normal + 1-2 du chemin diversité
+    const normalTop = finalEvents.slice(0, Math.min(4, finalEvents.length));
+    const normalIds = new Set(normalTop.map(x => x.event.id));
+    const diversityCandidates = diversityEvents.filter(x => !normalIds.has(x.event.id));
+    const diversityPicks = diversityCandidates.slice(0, Math.min(2, diversityCandidates.length));
+    const topEvents = [...normalTop, ...diversityPicks];
+    if (diversityPicks.length > 0 && normalTop.length > 0 && diversityPicks[0].score > 0) {
+      selectionPath = 'diversity';
+    }
     const topK = topEvents.map(x => x.event);
 
     let pickedIndex = Math.floor(Math.random() * topEvents.length);

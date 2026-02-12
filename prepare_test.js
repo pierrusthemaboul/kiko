@@ -1,8 +1,9 @@
+require('dotenv').config();
 
 const { createClient } = require('@supabase/supabase-js');
 
 const supabaseUrl = 'https://ppxmtnuewcixbbmhnzzc.supabase.co';
-const supabaseServiceKey = 'sb_secret_FVCBjr7eTZDVhRM1HALgKQ_q1p1T6QK';
+const supabaseServiceKey = 'process.env.SUPABASE_PROD_SERVICE_ROLE_KEY';
 const userId = '9d97c5fe-9051-4da5-881a-f4f380cbb6b0';
 
 const supabase = createClient(supabaseUrl, supabaseServiceKey);

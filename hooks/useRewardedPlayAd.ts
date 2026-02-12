@@ -1,4 +1,4 @@
-import { useState, useEffect, useCallback } from 'react';
+import { useState, useEffect, useCallback, useRef } from 'react';
 import { RewardedAd, RewardedAdEventType, AdEventType } from 'react-native-google-mobile-ads';
 import { getAdRequestOptions, getAdUnitId } from '@/lib/config/adConfig';
 import { FirebaseAnalytics } from '@/lib/firebase';
@@ -39,12 +39,23 @@ let globalIsShowing = false;
 let globalIsProcessing = false; // Verrou pour éviter les doublons de récompense
 let globalAdStartTime = 0; // Heure de début de la pub
 let globalRewardReceived = false; // Flag pour savoir si on a reçu la récompense
+let globalCallbackFired = false; // Flag pour éviter double callback
 const stateListeners = new Set<() => void>();
 
-export function useRewardedPlayAd() {
+interface UseRewardedPlayAdOptions {
+  onRewardEarned?: () => void;
+}
+
+export function useRewardedPlayAd(options?: UseRewardedPlayAdOptions) {
   const [isLoaded, setIsLoaded] = useState(globalIsLoaded);
   const [isShowing, setIsShowing] = useState(globalIsShowing);
   const [rewardEarned, setRewardEarned] = useState(false);
+
+  // Stocker le callback dans une ref pour éviter les closures stale
+  const onRewardEarnedRef = useRef<(() => void) | undefined>(options?.onRewardEarned);
+  useEffect(() => {
+    onRewardEarnedRef.current = options?.onRewardEarned;
+  }, [options?.onRewardEarned]);
 
   useEffect(() => {
     // Sync with global state on mount
@@ -78,7 +89,6 @@ export function useRewardedPlayAd() {
         RemoteLogger.error('Ads', `❌ Failed to load Ad: [${errorCode}] ${errorMessage}`);
         globalIsLoaded = false;
         stateListeners.forEach(listener => listener());
-        // ... (tracking Firebase)
         FirebaseAnalytics.trackEvent('ad_load_error_detailed', {
           ad_type: 'rewarded',
           ad_unit: 'extra_play',
@@ -110,6 +120,7 @@ export function useRewardedPlayAd() {
         globalIsShowing = true;
         globalAdStartTime = Date.now();
         globalRewardReceived = false;
+        globalCallbackFired = false;
         stateListeners.forEach(listener => listener());
         setRewardEarned(false);
         FirebaseAnalytics.ad('rewarded', 'opened', 'extra_play', 0);
@@ -122,17 +133,35 @@ export function useRewardedPlayAd() {
         const duration = Math.round((Date.now() - globalAdStartTime) / 1000);
         rewardedLog('log', `Ad closed after ${duration}s`);
 
-        // FALLBACK: Si AdMob oublie d'envoyer EARNED_REWARD mais que la pub a duré longtemps (ex: pubs 1/3, 2/3)
-        if (!globalRewardReceived && duration >= 28) {
-          RemoteLogger.warn('Ads', `🛡️ Fallback Reward: No signal from AdMob but ad lasted ${duration}s. Granting play anyway.`, { duration });
-          globalIsProcessing = true;
+        let shouldGrant = false;
+
+        if (globalRewardReceived) {
+          // Cas normal : EARNED_REWARD a été reçu
+          shouldGrant = true;
+          RemoteLogger.info('Ads', `🚪 Ad closed after ${duration}s (Reward confirmed: true)`);
+        } else if (duration >= 20) {
+          // FALLBACK: AdMob n'a pas envoyé EARNED_REWARD mais la pub a duré assez longtemps
+          shouldGrant = true;
           globalRewardReceived = true;
-          setRewardEarned(true);
+          globalIsProcessing = true;
+          RemoteLogger.warn('Ads', `🛡️ Fallback Reward: No EARNED_REWARD signal but ad lasted ${duration}s. Granting play.`, { duration });
           FirebaseAnalytics.trackEvent('ad_fallback_reward_granted', { duration });
-        } else if (!globalRewardReceived) {
-          RemoteLogger.info('Ads', `🚪 Ad closed after ${duration}s WITHOUT reward (too short or cancelled)`, { duration });
         } else {
-          RemoteLogger.info('Ads', `🚪 Ad closed by user after ${duration}s (Reward confirmed: ${globalRewardReceived})`);
+          RemoteLogger.info('Ads', `🚪 Ad closed after ${duration}s WITHOUT reward (too short or cancelled)`, { duration });
+        }
+
+        // CRITICAL: Appeler le callback directement depuis CLOSED (événement garanti)
+        // Ceci bypasse la propagation de state React qui peut être non fiable en production
+        if (shouldGrant && !globalCallbackFired) {
+          globalCallbackFired = true;
+          setRewardEarned(true); // Pour l'UI (indicateur de chargement)
+          RemoteLogger.info('Ads', '🎯 Calling onRewardEarned callback from CLOSED handler');
+
+          try {
+            onRewardEarnedRef.current?.();
+          } catch (err) {
+            RemoteLogger.error('Ads', `❌ onRewardEarned callback error: ${err instanceof Error ? err.message : String(err)}`);
+          }
         }
 
         globalIsLoaded = false;
@@ -155,10 +184,14 @@ export function useRewardedPlayAd() {
         globalIsProcessing = true;
         globalRewardReceived = true;
         rewardedLog('log', 'Reward earned:', reward);
-        RemoteLogger.info('Ads', '🎁 Reward signal EARNED_REWARD received from AdMob', { reward });
-        setRewardEarned(true);
+        RemoteLogger.info('Ads', '🎁 EARNED_REWARD signal received from AdMob', { reward });
         FirebaseAnalytics.ad('rewarded', 'earned_reward', 'extra_play', 0);
         FirebaseAnalytics.reward('EXTRA_PLAY', 1, 'ad_reward', 'completed', 0, 0);
+
+        // Note: On ne set PAS rewardEarned ici et on n'appelle PAS le callback.
+        // Tout se fait dans le CLOSED handler, qui est garanti de fire.
+        // Cela évite les problèmes de timing où EARNED_REWARD fire avant CLOSED
+        // et le state React ne propage pas correctement.
       }
     );
 
@@ -194,15 +227,25 @@ export function useRewardedPlayAd() {
   }, []);
 
   const showAd = useCallback(() => {
-    if (!isLoaded) {
-      rewardedLog('warn', 'Ad not loaded yet');
+    // Vérifier l'instance native directement (plus fiable que le state React)
+    if (!rewardedPlayAd.loaded) {
+      rewardedLog('warn', 'Ad not loaded yet (native check)');
+      // Tenter de recharger si pas en cours
+      if (!globalIsShowing) {
+        rewardedPlayAd.load();
+      }
       return false;
     }
-    if (isShowing) {
+    if (globalIsShowing) {
       rewardedLog('warn', 'Ad already showing');
       return false;
     }
     try {
+      // Réinitialiser les verrous avant de montrer une nouvelle pub
+      globalIsProcessing = false;
+      globalRewardReceived = false;
+      globalCallbackFired = false;
+
       FirebaseAnalytics.trackEvent('ad_show_attempt', {
         ad_type: 'rewarded',
         ad_unit: 'extra_play',
@@ -222,6 +265,7 @@ export function useRewardedPlayAd() {
   const resetReward = useCallback(() => {
     setRewardEarned(false);
     globalIsProcessing = false;
+    globalCallbackFired = false;
   }, []);
 
   return {

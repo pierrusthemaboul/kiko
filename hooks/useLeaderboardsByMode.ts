@@ -17,18 +17,11 @@ export interface LeaderboardData {
 
 export interface LeaderboardsByMode {
   classic: LeaderboardData;
-  precision: LeaderboardData;
 }
 
 export function useLeaderboardsByMode() {
   const [leaderboards, setLeaderboards] = useState<LeaderboardsByMode>({
     classic: {
-      daily: [],
-      weekly: [],
-      monthly: [],
-      allTime: [],
-    },
-    precision: {
       daily: [],
       weekly: [],
       monthly: [],
@@ -103,11 +96,7 @@ export function useLeaderboardsByMode() {
         };
       };
 
-      // Récupérer les classements pour les deux modes en parallèle
-      const [classicData, precisionData] = await Promise.all([
-        fetchLeaderboardsForMode('classic'),
-        fetchLeaderboardsForMode('precision'),
-      ]);
+      const classicData = await fetchLeaderboardsForMode('classic');
 
       const formatScores = (data: any[], scoreField: string = 'score'): LeaderboardPlayer[] => {
         return (data || []).map((item, index) => ({
@@ -124,12 +113,6 @@ export function useLeaderboardsByMode() {
           weekly: formatScores(classicData.weekly, 'score'),
           monthly: formatScores(classicData.monthly, 'score'),
           allTime: formatScores(classicData.allTime, 'high_score'),
-        },
-        precision: {
-          daily: formatScores(precisionData.daily, 'score'),
-          weekly: formatScores(precisionData.weekly, 'score'),
-          monthly: formatScores(precisionData.monthly, 'score'),
-          allTime: formatScores(precisionData.allTime, 'high_score'),
         },
       });
     } catch (err) {

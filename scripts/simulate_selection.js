@@ -1,6 +1,7 @@
+require('dotenv').config();
 
 const { createClient } = require('@supabase/supabase-js');
-const supabase = createClient('https://ppxmtnuewcixbbmhnzzc.supabase.co', 'sb_secret_FVCBjr7eTZDVhRM1HALgKQ_q1p1T6QK');
+const supabase = createClient('https://ppxmtnuewcixbbmhnzzc.supabase.co', 'process.env.SUPABASE_PROD_SERVICE_ROLE_KEY');
 
 const TIER_THRESHOLDS = {
     TIER_1_STAR: 75,

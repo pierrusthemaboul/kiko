@@ -47,16 +47,18 @@ C'est la méthode **obligatoire** par défaut. Elle évite de saturer l'ordinate
 
 #### 1. Préparation (Pour l'IA)
 - #### 3.1 Mettre à jour les versions (ALIGNEMENT CRITIQUE)
-Il est impératif que les versions soient synchronisées dans **4 fichiers** :
+Il est impératif que les versions soient synchronisées dans **5 fichiers** :
 
 1.  **`app.config.js`** : `version: "1.X.X"` ET `runtimeVersion: "1.X.X"`
 2.  **`android/app/build.gradle`** : `versionName "1.X.X"` ET `versionCode 10XXX`
 3.  **`package.json`** : `"version": "1.X.X"`
 4.  **`hooks/useGameLogicA.ts`** & **`hooks/game/useEventSelector.ts`** : Fallback version dans le code (rechercher "1.X.X").
+5.  **`hooks/game/useInitGame.ts`** : **CRITIQUE** - Incrémenter `EVENTS_CACHE_VERSION` pour forcer les utilisateurs à télécharger les nouveaux événements (invalide le cache local).
 
 - [ ] Incrémenter `version` (ex: "1.6.7" → "1.6.8")
 - [ ] Mettre à jour `runtimeVersion` pour correspondre à la version (ex: "1.6.8"). **Indispensable pour la compatibilité OTA.**
 - [ ] Incrémenter `versionCode` (ex: 10124 → 10125). **Obligatoire pour Google Play.**
+- [ ] **Incrémenter `EVENTS_CACHE_VERSION`** dans `hooks/game/useInitGame.ts`.
 - [ ] Vérifier que `android.package` correspond au bundle ID : `com.pierretulle.juno2`
 L'IA doit utiliser la commande suivante pour lancer le build ET la soumission :
 ```bash
@@ -321,9 +323,10 @@ Quand l'utilisateur demande : "Publie une nouvelle version sur le Play Store" :
 1. **Toujours incrémenter les versions** avant de build
 2. **Les deux fichiers** (`app.config.js` et `build.gradle`) doivent être synchronisés
 3. **Le versionCode** ne peut jamais diminuer ou être réutilisé
-4. **Le support 16 KB page size** est obligatoire depuis 2025
-5. **La soumission est automatique** grâce au Service Account configuré
-6. **Temps total** : ~10-15 minutes de la modification au Play Store
+4. **Le cache des événements** doit être invalidé via `EVENTS_CACHE_VERSION` pour voir les nouveaux contenus
+5. **Le support 16 KB page size** est obligatoire depuis 2025
+6. **La soumission est automatique** grâce au Service Account configuré
+7. **Temps total** : ~10-15 minutes de la modification au Play Store
 
 ---
 

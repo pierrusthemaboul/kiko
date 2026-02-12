@@ -602,10 +602,204 @@ export function useGameLogicA(initialEvent?: string, modeId?: string) {
 
   selectNewEventRef.current = selectNewEvent;
 
+  type StartRunSuccess = {
+    ok: true;
+    runId: string;
+    window: { startISO: string; endISO: string };
+    allowed: number;
+    used: number;
+  };
+
+  type StartRunFailure = {
+    ok: false;
+    reason: 'NO_PLAYS_LEFT' | 'DB_ERROR' | 'AUTH_REQUIRED' | 'UNKNOWN' | 'ALREADY_STARTING';
+    message: string;
+  };
+
+  const startRun = useCallback(
+    async (mode: 'classic' | 'date' | 'precision'): Promise<StartRunSuccess | StartRunFailure> => {
+      try {
+        currentRunIdRef.current = null;
+
+        const {
+          data: { user: authUser },
+          error: authError,
+        } = await supabase.auth.getUser();
+
+        // === MODE INVITÉ ===
+        if (authError || !authUser?.id) {
+          // Rafraîchir les infos invité
+          await refreshGuestPlays();
+
+          // Vérifier la limite
+          if (!canStartGuestPlay) {
+            return {
+              ok: false,
+              reason: 'NO_PLAYS_LEFT',
+              message: `Plus de parties disponibles aujourd'hui. Créez un compte pour débloquer jusqu'à 8 parties par jour !`
+            };
+          }
+
+          // Incrémenter le compteur
+          const incremented = await incrementGuestPlays();
+          if (!incremented) {
+            return {
+              ok: false,
+              reason: 'NO_PLAYS_LEFT',
+              message: `Impossible de démarrer la partie.`
+            };
+          }
+
+          // Retourner un succès sans runId (mode invité)
+          currentRunIdRef.current = null;
+          return {
+            ok: true,
+            runId: 'guest-mode',
+            window: todayWindow(),
+            allowed: guestPlaysLimit,
+            used: guestPlaysUsed + 1,
+          };
+        }
+
+        if (isStartingRunRef.current) {
+          Logger.warn('Plays', '[startRun] Already starting a run, ignoring duplicate call');
+          if (__DEV__ && (console as any).tron) {
+            (console as any).tron.log('[startRun] Démarrage déjà en cours, appel ignoré');
+          }
+          return { ok: false, reason: 'ALREADY_STARTING', message: 'Démarrage déjà en cours' };
+        }
+        isStartingRunRef.current = true;
+
+        if (hasConsumedRunInInstanceRef.current && (mode === 'classic' || mode === 'date' || mode === 'precision')) {
+          Logger.info('Plays', '[startRun] Run already consumed for this component instance, skipping DB record');
+          return {
+            ok: true,
+            runId: currentRunIdRef.current || 'already-started',
+            window: todayWindow(),
+            allowed: playsInfo?.allowed ?? 3,
+            used: playsInfo?.used ?? 0
+          };
+        }
+
+        const freshPlays = await refreshPlaysInfo();
+        const canStartActually = freshPlays?.remaining ? freshPlays.remaining > 0 : canStartRun;
+
+        if (__DEV__ && (console as any).tron) {
+          (console as any).tron.display({
+            name: '🚀 START RUN ATTEMPT',
+            preview: `Mode: ${mode}`,
+            value: { freshPlays, canStartActually, timestamp: new Date().toISOString() },
+            important: true
+          });
+        }
+
+        // La vérification se fait maintenant sur la valeur fraîche
+        if (!canStartActually) {
+          Logger.warn('Plays', '[startRun] Blocked: No plays left', { remaining: freshPlays?.remaining });
+          isStartingRunRef.current = false;
+          return { ok: false, reason: 'NO_PLAYS_LEFT', message: "Plus de parties disponibles aujourd'hui." };
+        }
+
+        Logger.info('Plays', '[startRun] Allowed: Starting run creation', { remaining: freshPlays?.remaining });
+
+        const { data: profile, error: profileError } = await (supabase
+          .from('profiles')
+          .select('id, parties_per_day')
+          .eq('id', authUser.id)
+          .maybeSingle() as any);
+
+        if (profileError) {
+          isStartingRunRef.current = false;
+          currentRunIdRef.current = null;
+          return {
+            ok: false,
+            reason: 'DB_ERROR',
+            message: profileError.message || 'Erreur de chargement du profil.'
+          };
+        }
+
+        const allowed = Math.max(1, profile?.parties_per_day ?? 3);
+        const window = todayWindow();
+
+        const { count: runsToday, error: runsCountError } = await supabase
+          .from('runs')
+          .select('id', { count: 'exact', head: true })
+          .eq('user_id', authUser.id)
+          .gte('created_at', window.startISO)
+          .lt('created_at', window.endISO);
+
+        if (runsCountError) {
+          isStartingRunRef.current = false;
+          currentRunIdRef.current = null;
+          return {
+            ok: false,
+            reason: 'DB_ERROR',
+            message: runsCountError.message || 'Erreur de vérification des parties.'
+          };
+        }
+
+        const used = runsToday ?? 0;
+        const insertPayload: any = { user_id: authUser.id, mode, points: 0 };
+
+        const { data: inserted, error: insertError } = await (supabase
+          .from('runs')
+          .insert(insertPayload)
+          .select('id, created_at')
+          .single() as any);
+
+        if (insertError || !inserted) {
+          isStartingRunRef.current = false;
+          currentRunIdRef.current = null;
+          return {
+            ok: false,
+            reason: 'DB_ERROR',
+            message: insertError?.message || 'Insert failed (runs).'
+          };
+        }
+
+        const insertedRun = inserted as any;
+        Logger.info('Plays', `[startRun] Run successfully created in DB with ID: ${insertedRun.id}`);
+
+        hasConsumedRunInInstanceRef.current = true;
+        await refreshPlaysInfo();
+        currentRunIdRef.current = insertedRun.id;
+
+        isStartingRunRef.current = false;
+        return {
+          ok: true,
+          runId: insertedRun.id,
+          window,
+          allowed,
+          used,
+        };
+      } catch (e: any) {
+        currentRunIdRef.current = null;
+        return {
+          ok: false,
+          reason: 'UNKNOWN',
+          message: e?.message || 'Erreur inconnue.'
+        };
+      } finally {
+        isStartingRunRef.current = false;
+      }
+    },
+    [refreshPlaysInfo, canStartRun, refreshGuestPlays, canStartGuestPlay, incrementGuestPlays, guestPlaysLimit, guestPlaysUsed],
+  );
+
   // Wrapper initGame qui réinitialise aussi le système anti-frustration et le compteur d'événements
   const startNewGame = useCallback(async () => {
     resetAntiFrustration();
     resetEventCount(); // Réinitialiser le compteur pour les sauts temporels
+
+    // 🚀 Démarrer le run sur Supabase pour l'historique et l'économie
+    const variant = gameMode.variant === 'precision' ? 'precision' : 'classic';
+    const runResult = await startRun(variant);
+    if (!runResult.ok) {
+      console.warn('[useGameLogicA] ⚠️ Impossible de démarrer le run:', runResult.message);
+    } else {
+      console.log('[useGameLogicA] 🚀 Run démarré avec succès:', runResult.runId);
+    }
+
     await baseInitGame();
     // 🎬 Initialiser les métadonnées (utilise les valeurs courantes via closure)
     currentTourRef.current = 0;
@@ -615,10 +809,10 @@ export function useGameLogicA(initialEvent?: string, modeId?: string) {
       1,
       0,
       gameMode.initialLives,
-      Constants.expoConfig?.version ?? '1.6.8'
+      Constants.expoConfig?.version ?? '1.7.0'
     );
     console.log('[useGameLogicA] 🎬 Gestionnaire de métadonnées initialisé');
-  }, [baseInitGameWrapper, resetAntiFrustration, resetEventCount, gameMode.label, gameMode.initialLives]);
+  }, [baseInitGameWrapper, resetAntiFrustration, resetEventCount, gameMode.label, gameMode.initialLives, startRun]);
 
   const applyReward = useCallback(
     (reward: { type: RewardType; amount: number }) => {
@@ -847,6 +1041,14 @@ export function useGameLogicA(initialEvent?: string, modeId?: string) {
           const config = LEVEL_CONFIGS[prev.level];
 
           if (config && eventsDone >= config.eventsNeeded) {
+            if (__DEV__ && (console as any).tron) {
+              (console as any).tron.display({
+                name: '🏆 LEVEL COMPLETED',
+                preview: `Level ${prev.level} -> ${prev.level + 1}`,
+                value: { eventsDone, points: updatedPoints },
+                important: true
+              });
+            }
             trackLevelCompleted(prev.level, config.name || `Niveau ${prev.level}`, eventsDone, updatedPoints);
             finalizeCurrentLevelHistory(levelCompletedEvents);
 
@@ -867,21 +1069,18 @@ export function useGameLogicA(initialEvent?: string, modeId?: string) {
             // 800ms: Modal/Pub apparaît
 
             // --- AJOUT : Récompense de fin de niveau ---
-            // On utilise prev.level + 1 car le niveau vient d'être incrémenté dans updated.level
-            // Mais checkRewards utilise le niveau passé en paramètre pour chercher la config.
-            // Si on vient de finir le niveau 1, on passe au niveau 2.
-            // On veut donner la récompense associée à l'atteinte du niveau 2 (ou fin du 1).
-            // La logique dans useRewards.ts utilise LEVEL_CONFIGS[newLevel].
             checkRewards({ type: 'level', value: newLevel }, updated);
-            // -------------------------------------------
 
-
+            if (__DEV__ && (console as any).tron) {
+              (console as any).tron.log("🎬 DÉCLENCHEMENT triggerLevelEndAnim");
+            }
             setTriggerLevelEndAnim(true);
 
             // 2. Attendre 1500ms (temps de l'animation de validation allongée)
             setTimeout(() => {
-
-
+              if (__DEV__ && (console as any).tron) {
+                (console as any).tron.log("🕒 TIMEOUT LEVEL UP (1500ms) - Affichage Modal");
+              }
               // Maintenant on peut pauser
               setIsLevelPaused(true);
 
@@ -890,7 +1089,6 @@ export function useGameLogicA(initialEvent?: string, modeId?: string) {
 
               // DÉCLENCHEMENT DE LA PUB ICI, après l'animation
               if (shouldShowAd) {
-
                 setPendingAdDisplay('levelUp');
                 FirebaseAnalytics.ad('interstitial', 'triggered', 'level_up', newLevel);
               }
@@ -982,188 +1180,6 @@ export function useGameLogicA(initialEvent?: string, modeId?: string) {
       FirebaseAnalytics.leaderboard('summary_loaded');
     },
     [setLeaderboards, setLeaderboardsReady]
-  );
-
-  type StartRunSuccess = {
-    ok: true;
-    runId: string;
-    window: { startISO: string; endISO: string };
-    allowed: number;
-    used: number;
-  };
-
-  type StartRunFailure = {
-    ok: false;
-    reason: 'NO_PLAYS_LEFT' | 'DB_ERROR' | 'AUTH_REQUIRED' | 'UNKNOWN' | 'ALREADY_STARTING';
-    message: string;
-  };
-
-  const startRun = useCallback(
-    async (mode: 'classic' | 'date' | 'precision'): Promise<StartRunSuccess | StartRunFailure> => {
-      try {
-        currentRunIdRef.current = null;
-
-        const {
-          data: { user: authUser },
-          error: authError,
-        } = await supabase.auth.getUser();
-
-        // === MODE INVITÉ ===
-        if (authError || !authUser?.id) {
-          // Rafraîchir les infos invité
-          await refreshGuestPlays();
-
-          // Vérifier la limite
-          if (!canStartGuestPlay) {
-            return {
-              ok: false,
-              reason: 'NO_PLAYS_LEFT',
-              message: `Plus de parties disponibles aujourd'hui. Créez un compte pour débloquer jusqu'à 8 parties par jour !`
-            };
-          }
-
-          // Incrémenter le compteur
-          const incremented = await incrementGuestPlays();
-          if (!incremented) {
-            return {
-              ok: false,
-              reason: 'NO_PLAYS_LEFT',
-              message: `Impossible de démarrer la partie.`
-            };
-          }
-
-          // Retourner un succès sans runId (mode invité)
-          currentRunIdRef.current = null;
-          return {
-            ok: true,
-            runId: 'guest-mode',
-            window: todayWindow(),
-            allowed: guestPlaysLimit,
-            used: guestPlaysUsed + 1,
-          };
-        }
-
-        if (isStartingRunRef.current) {
-          Logger.warn('Plays', '[startRun] Already starting a run, ignoring duplicate call');
-          if (__DEV__ && (console as any).tron) {
-            (console as any).tron.log('[startRun] Démarrage déjà en cours, appel ignoré');
-          }
-          return { ok: false, reason: 'ALREADY_STARTING', message: 'Démarrage déjà en cours' };
-        }
-        isStartingRunRef.current = true;
-
-        if (hasConsumedRunInInstanceRef.current && (mode === 'classic' || mode === 'date' || mode === 'precision')) {
-          Logger.info('Plays', '[startRun] Run already consumed for this component instance, skipping DB record');
-          return {
-            ok: true,
-            runId: currentRunIdRef.current || 'already-started',
-            window: todayWindow(),
-            allowed: playsInfo?.allowed ?? 3,
-            used: playsInfo?.used ?? 0
-          };
-        }
-
-        const freshPlays = await refreshPlaysInfo();
-        const canStartActually = freshPlays?.remaining ? freshPlays.remaining > 0 : canStartRun;
-
-        if (__DEV__ && (console as any).tron) {
-          (console as any).tron.display({
-            name: '🚀 START RUN ATTEMPT',
-            preview: `Mode: ${mode}`,
-            value: { freshPlays, canStartActually, timestamp: new Date().toISOString() },
-            important: true
-          });
-        }
-
-        // La vérification se fait maintenant sur la valeur fraîche
-        if (!canStartActually) {
-          Logger.warn('Plays', '[startRun] Blocked: No plays left', { remaining: freshPlays?.remaining });
-          isStartingRunRef.current = false;
-          return { ok: false, reason: 'NO_PLAYS_LEFT', message: "Plus de parties disponibles aujourd'hui." };
-        }
-
-        Logger.info('Plays', '[startRun] Allowed: Starting run creation', { remaining: freshPlays?.remaining });
-
-        const { data: profile, error: profileError } = await (supabase
-          .from('profiles')
-          .select('id, parties_per_day')
-          .eq('id', authUser.id)
-          .maybeSingle() as any);
-
-        if (profileError) {
-          isStartingRunRef.current = false;
-          currentRunIdRef.current = null;
-          return {
-            ok: false,
-            reason: 'DB_ERROR',
-            message: profileError.message || 'Erreur de chargement du profil.'
-          };
-        }
-
-        const allowed = Math.max(1, profile?.parties_per_day ?? 3);
-        const window = todayWindow();
-
-        const { count: runsToday, error: runsCountError } = await supabase
-          .from('runs')
-          .select('id', { count: 'exact', head: true })
-          .eq('user_id', authUser.id)
-          .gte('created_at', window.startISO)
-          .lt('created_at', window.endISO);
-
-        if (runsCountError) {
-          isStartingRunRef.current = false;
-          currentRunIdRef.current = null;
-          return {
-            ok: false,
-            reason: 'DB_ERROR',
-            message: runsCountError.message || 'Erreur de vérification des parties.'
-          };
-        }
-
-        const used = runsToday ?? 0;
-        const insertPayload: any = { user_id: authUser.id, mode, points: 0 };
-
-        const { data: inserted, error: insertError } = await (supabase
-          .from('runs')
-          .insert(insertPayload)
-          .select('id, created_at')
-          .single() as any);
-
-        if (insertError || !inserted) {
-          isStartingRunRef.current = false;
-          currentRunIdRef.current = null;
-          return {
-            ok: false,
-            reason: 'DB_ERROR',
-            message: insertError?.message || 'Insert failed (runs).'
-          };
-        }
-
-        const insertedRun = inserted as any;
-        Logger.info('Plays', `[startRun] Run successfully created in DB with ID: ${insertedRun.id}`);
-
-        hasConsumedRunInInstanceRef.current = true;
-        await refreshPlaysInfo();
-        currentRunIdRef.current = insertedRun.id;
-
-        isStartingRunRef.current = false;
-        return {
-          ok: true,
-          runId: insertedRun.id,
-          window,
-          allowed,
-          used,
-        };
-      } catch (e: any) {
-        currentRunIdRef.current = null;
-        return {
-          ok: false,
-          reason: 'UNKNOWN',
-          message: e?.message || 'Erreur inconnue.'
-        };
-      }
-    },
-    [refreshPlaysInfo, canStartRun, refreshGuestPlays, canStartGuestPlay, incrementGuestPlays, guestPlaysLimit, guestPlaysUsed],
   );
 
   const endGame = useCallback(async () => {
@@ -1527,8 +1543,8 @@ export function useGameLogicA(initialEvent?: string, modeId?: string) {
     setUsedEvents(prev => new Set([...prev, firstEvent.id]));
 
     setPreviousEvent(firstEvent);
-    setNewEvent(firstEvent); // Mettre à jour newEvent pour l'affichage en haut
-    setDisplayedEvent(firstEvent); // Afficher immédiatement la carte de référence
+    setNewEvent(null); // Ne pas mettre le même événement que firstEvent
+    setDisplayedEvent(null); // Masquer temporairement pour éviter le doublon visuel
 
     // Maintenant sélectionner le premier événement à deviner
 

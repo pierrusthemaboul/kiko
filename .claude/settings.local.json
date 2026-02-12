@@ -55,7 +55,19 @@
       "Bash(Format-Table)",
       "Bash(tasklist:*)",
       "Bash(cmd /c \"taskkill /F /PID 31400 & taskkill /F /PID 15488\")",
-      "Bash(powershell -Command:*)"
+      "Bash(powershell -Command:*)",
+      "Bash(tee:*)",
+      "Bash(cmd //c machine_a_evenements\\\\run_test.bat)",
+      "WebFetch(domain:127.0.0.1)",
+      "Bash(gh:*)",
+      "Bash(eas:*)",
+      "Bash(git reset:*)",
+      "Bash(git add:*)",
+      "Bash(git commit:*)",
+      "Bash(git push:*)",
+      "Bash(env)",
+      "Bash(npx tsc:*)",
+      "Bash(dir:*)"
     ]
   }
 }

@@ -8,14 +8,20 @@ import {
   TouchableOpacity,
   StatusBar,
   Alert,
+  Modal,
 } from 'react-native';
+import AsyncStorage from '@react-native-async-storage/async-storage';
+import AIConsentModal from '@/components/modals/AIConsentModal';
+import LeaderboardRewardModal from '@/components/modals/LeaderboardRewardModal';
 import { useRouter, useFocusEffect } from 'expo-router';
 import { Ionicons } from '@expo/vector-icons';
 import { BannerAd, BannerAdSize, AdEventType } from 'react-native-google-mobile-ads';
 import { FirebaseAnalytics } from '@/lib/firebase';
 import { useGameLogicA } from '@/hooks/useGameLogicA';
-import { usePlays } from '@/hooks/usePlays'; // Importer le nouveau hook
+import { usePlays } from '@/hooks/usePlays';
 import { useLeaderboardsByMode } from '@/hooks/useLeaderboardsByMode';
+import { useMyRanking } from '@/hooks/useMyRanking';
+import { useLeaderboardRewards } from '@/hooks/useLeaderboardRewards';
 import { rankFromXP } from '@/lib/economy/ranks';
 import { getQuestProgressPercentage } from '@/lib/economy/quests';
 import QuestCarousel from '@/components/QuestCarousel';
@@ -46,9 +52,8 @@ export default function Vue1() {
   const { profile, guestPlaysInfo } = useGameLogicA();
   const { playsInfo, canStartRun, loadingPlays, refreshPlaysInfo } = usePlays();
   const { leaderboards, loading: leaderboardsLoading } = useLeaderboardsByMode();
-  const { isLoaded: adLoaded, rewardEarned, showAd, resetReward } = useRewardedPlayAd();
-  const { playSound } = useAudioContext();
-
+  const { rankings: myRankings, loading: myRankingLoading } = useMyRanking(profile?.id);
+  const { pendingRewards, claimAll, claiming } = useLeaderboardRewards(profile?.id);
   const [quests, setQuests] = React.useState<{
     daily: any[];
     weekly: any[];
@@ -57,6 +62,137 @@ export default function Vue1() {
   const [questsLoading, setQuestsLoading] = React.useState(true);
   const [adSuccessLoading, setAdSuccessLoading] = React.useState(false);
   const grantProcessingRef = React.useRef(false);
+  const [aiConsentGiven, setAiConsentGiven] = React.useState<boolean | null>(null);
+  const [showAIInfo, setShowAIInfo] = React.useState(false);
+  const [settingsVisible, setSettingsVisible] = React.useState(false);
+  const [rewardModalDismissed, setRewardModalDismissed] = React.useState(false);
+
+  // Refs stables pour le callback (évite les closures stale dans le callback ad)
+  const profileRef = React.useRef(profile);
+  const guestPlaysInfoRef = React.useRef(guestPlaysInfo);
+  const refreshPlaysInfoRef = React.useRef(refreshPlaysInfo);
+  React.useEffect(() => { profileRef.current = profile; }, [profile]);
+  React.useEffect(() => { guestPlaysInfoRef.current = guestPlaysInfo; }, [guestPlaysInfo]);
+  React.useEffect(() => { refreshPlaysInfoRef.current = refreshPlaysInfo; }, [refreshPlaysInfo]);
+
+  // --- Callback direct appelé par le hook quand la récompense est confirmée ---
+  // Ce callback est appelé directement depuis le handler CLOSED de l'ad (pas via React state)
+  // ce qui est beaucoup plus fiable en production.
+  const handleRewardEarned = React.useCallback(async () => {
+    if (grantProcessingRef.current) {
+      RemoteLogger.warn('Ads', '⚠️ Grant already in progress, skipping duplicate');
+      return;
+    }
+    grantProcessingRef.current = true;
+    setAdSuccessLoading(true);
+
+    try {
+      // Vérifier l'auth directement (pas de closure stale)
+      const { data: { user: authUser } } = await supabase.auth.getUser();
+
+      if (authUser) {
+        // Utilisateur connecté : fetch-then-increment avec données fraîches
+        RemoteLogger.info('Ads', `🔄 Granting extra play for user ${authUser.id}`);
+
+        let success = false;
+        for (let attempt = 1; attempt <= 3 && !success; attempt++) {
+          try {
+            // 1. Lire la valeur actuelle FRAÎCHE depuis la DB
+            const { data: freshProfile, error: fetchError } = await (supabase
+              .from('profiles')
+              .select('parties_per_day')
+              .eq('id', authUser.id)
+              .single() as any);
+
+            if (fetchError) {
+              RemoteLogger.error('Ads', `Attempt ${attempt}: Failed to fetch profile: ${fetchError.message}`);
+              if (attempt < 3) { await new Promise(r => setTimeout(r, 1000 * attempt)); continue; }
+              break;
+            }
+
+            const currentAllowed = freshProfile?.parties_per_day ?? 3;
+            const newAllowed = currentAllowed + 1;
+
+            // 2. Incrémenter avec la valeur fraîche
+            const { error: updateError } = await (supabase
+              .from('profiles') as any)
+              .update({ parties_per_day: newAllowed })
+              .eq('id', authUser.id);
+
+            if (updateError) {
+              RemoteLogger.error('Ads', `Attempt ${attempt}: Failed to update: ${updateError.message}`);
+              if (attempt < 3) { await new Promise(r => setTimeout(r, 1000 * attempt)); continue; }
+              break;
+            }
+
+            // 3. Vérifier que l'update a pris effet
+            const { data: verifyProfile } = await (supabase
+              .from('profiles')
+              .select('parties_per_day')
+              .eq('id', authUser.id)
+              .single() as any);
+
+            if (verifyProfile?.parties_per_day >= newAllowed) {
+              success = true;
+              RemoteLogger.info('Ads', `✅ Extra play granted & verified: ${currentAllowed} → ${newAllowed}`);
+              FirebaseAnalytics.trackEvent('extra_play_granted', {
+                source: 'rewarded_ad',
+                user_id: authUser.id,
+                old_allowed: currentAllowed,
+                new_allowed: newAllowed,
+                attempt,
+              });
+            } else {
+              RemoteLogger.warn('Ads', `Attempt ${attempt}: Verification failed (got ${verifyProfile?.parties_per_day}, expected >= ${newAllowed})`);
+              if (attempt < 3) { await new Promise(r => setTimeout(r, 1000 * attempt)); }
+            }
+          } catch (attemptErr) {
+            RemoteLogger.error('Ads', `Attempt ${attempt} error: ${attemptErr instanceof Error ? attemptErr.message : String(attemptErr)}`);
+            if (attempt < 3) { await new Promise(r => setTimeout(r, 1000 * attempt)); }
+          }
+        }
+
+        if (!success) {
+          RemoteLogger.error('Ads', '❌ All 3 attempts to grant extra play failed');
+          FirebaseAnalytics.trackEvent('extra_play_grant_failed', {
+            user_id: authUser.id,
+            reason: 'all_attempts_failed',
+          });
+        }
+      } else {
+        // Mode invité
+        await guestPlaysInfoRef.current.grantExtraPlay();
+        RemoteLogger.info('Ads', '✅ Guest extra play granted via ad');
+      }
+
+      // Rafraîchir l'affichage des parties
+      await refreshPlaysInfoRef.current();
+    } catch (err) {
+      Logger.error('Ads', 'Error in handleRewardEarned', err);
+      RemoteLogger.error('Ads', `❌ handleRewardEarned error: ${err instanceof Error ? err.message : String(err)}`);
+    } finally {
+      grantProcessingRef.current = false;
+      setAdSuccessLoading(false);
+    }
+  }, []);
+
+  const { isLoaded: adLoaded, rewardEarned, showAd, resetReward } = useRewardedPlayAd({
+    onRewardEarned: handleRewardEarned,
+  });
+  const { playSound } = useAudioContext();
+
+  // Cleanup: reset reward state quand rewardEarned redevient false naturellement
+  useEffect(() => {
+    if (rewardEarned && !grantProcessingRef.current && !adSuccessLoading) {
+      // rewardEarned est true mais le grant n'est pas en cours - reset pour éviter un état bloqué
+      const timeout = setTimeout(() => {
+        if (!grantProcessingRef.current) {
+          resetReward();
+        }
+      }, 10000); // Safety timeout: si après 10s le grant n'a pas démarré, reset
+      return () => clearTimeout(timeout);
+    }
+  }, [rewardEarned, adSuccessLoading, resetReward]);
 
   const xp = profile?.xp_total ?? 0;
   const rank = useMemo(() => rankFromXP(xp), [xp]);
@@ -81,6 +217,18 @@ export default function Vue1() {
 
   useEffect(() => {
     FirebaseAnalytics.screen('HomeClean', 'Vue1');
+  }, []);
+
+  // --- Vérifier le consentement IA au premier lancement ---
+  useEffect(() => {
+    AsyncStorage.getItem('@ai_consent_accepted').then((value) => {
+      setAiConsentGiven(value === 'true');
+    });
+  }, []);
+
+  const handleAIConsent = useCallback(async () => {
+    await AsyncStorage.setItem('@ai_consent_accepted', 'true');
+    setAiConsentGiven(true);
   }, []);
 
   useFocusEffect(
@@ -140,8 +288,8 @@ export default function Vue1() {
             <Text style={styles.welcomeText}>Bonjour, {playerName}</Text>
             <Text style={styles.rankBadge}>{headerSubtitle}</Text>
           </View>
-          <TouchableOpacity style={styles.logoutIcon} onPress={handleLogout}>
-            <Ionicons name="log-out-outline" size={24} color={COLORS.textMuted} />
+          <TouchableOpacity style={styles.settingsIcon} onPress={() => setSettingsVisible(true)}>
+            <Ionicons name="settings-outline" size={24} color={COLORS.textMuted} />
           </TouchableOpacity>
         </View>
 
@@ -213,15 +361,107 @@ export default function Vue1() {
             <Text style={styles.sectionTitle}>Top Explorateurs</Text>
             <Text style={styles.sectionLink}>Voir tout</Text>
           </View>
-          {/* Note: Dans un second temps on pourra simplifier DualLeaderboardCarousel */}
           <DualLeaderboardCarousel
             classicLeaderboards={leaderboards.classic}
-            precisionLeaderboards={{ daily: [], weekly: [], monthly: [], allTime: [] }} // Format correct
+            myRankings={myRankings}
             loading={leaderboardsLoading}
+            myRankingLoading={myRankingLoading}
           />
         </View>
-
       </ScrollView>
+
+      {/* Modal de Réglages */}
+      <Modal
+        visible={settingsVisible}
+        transparent
+        animationType="slide"
+        onRequestClose={() => setSettingsVisible(false)}
+      >
+        <View style={styles.modalOverlay}>
+          <View style={styles.modalContainer}>
+            <View style={styles.modalHeader}>
+              <Text style={styles.modalTitle}>Paramètres</Text>
+              <TouchableOpacity onPress={() => setSettingsVisible(false)}>
+                <Ionicons name="close" size={24} color={COLORS.textPrimary} />
+              </TouchableOpacity>
+            </View>
+
+            <TouchableOpacity
+              style={styles.modalItem}
+              onPress={() => {
+                setSettingsVisible(false);
+                setShowAIInfo(true);
+              }}
+            >
+              <View style={styles.modalItemIcon}>
+                <Ionicons name="sparkles-outline" size={20} color={COLORS.accent} />
+              </View>
+              <Text style={styles.modalItemText}>À propos de l'IA</Text>
+            </TouchableOpacity>
+
+            <TouchableOpacity
+              style={styles.modalItem}
+              onPress={() => {
+                const { openBrowserAsync } = require('expo-web-browser');
+                openBrowserAsync('https://timalaus.fr/terms');
+              }}
+            >
+              <View style={styles.modalItemIcon}>
+                <Ionicons name="document-text-outline" size={20} color={COLORS.textMuted} />
+              </View>
+              <Text style={styles.modalItemText}>Conditions d'Utilisation</Text>
+            </TouchableOpacity>
+
+            <TouchableOpacity
+              style={styles.modalItem}
+              onPress={() => {
+                const { openBrowserAsync } = require('expo-web-browser');
+                openBrowserAsync('https://timalaus.fr/privacy');
+              }}
+            >
+              <View style={styles.modalItemIcon}>
+                <Ionicons name="shield-checkmark-outline" size={20} color={COLORS.textMuted} />
+              </View>
+              <Text style={styles.modalItemText}>Confidentialité</Text>
+            </TouchableOpacity>
+
+            <View style={styles.modalDivider} />
+
+            <TouchableOpacity
+              style={[styles.modalItem, styles.logoutItem]}
+              onPress={() => {
+                setSettingsVisible(false);
+                handleLogout();
+              }}
+            >
+              <View style={styles.modalItemIcon}>
+                <Ionicons name="log-out-outline" size={20} color="#DC3545" />
+              </View>
+              <Text style={[styles.modalItemText, { color: '#DC3545' }]}>Déconnexion</Text>
+            </TouchableOpacity>
+          </View>
+        </View>
+      </Modal>
+
+      {/* Modal de récompenses de classement */}
+      <LeaderboardRewardModal
+        visible={pendingRewards.length > 0 && !rewardModalDismissed}
+        rewards={pendingRewards}
+        onClaim={async (periodType, periodKey) => {}}
+        onClaimAll={async () => {
+          await claimAll();
+          await refreshPlaysInfo();
+          setRewardModalDismissed(true);
+        }}
+        claiming={claiming}
+        onClose={() => setRewardModalDismissed(true)}
+      />
+
+      {/* Modal de consentement IA (bloquant au premier lancement) */}
+      <AIConsentModal visible={aiConsentGiven === false} onAccept={handleAIConsent} />
+
+      {/* Modal info IA (relecture) */}
+      <AIConsentModal visible={showAIInfo} onAccept={() => setShowAIInfo(false)} infoOnly />
     </View>
   );
 }
@@ -256,7 +496,7 @@ const styles = StyleSheet.create({
     color: COLORS.textMuted,
     fontWeight: '500',
   },
-  logoutIcon: {
+  settingsIcon: {
     padding: 10,
     backgroundColor: COLORS.surface,
     borderRadius: 12,
@@ -388,5 +628,58 @@ const styles = StyleSheet.create({
     height: 100,
     backgroundColor: COLORS.surfaceAlt,
     borderRadius: 18,
+  },
+  // --- Styles Modal de Réglages ---
+  modalOverlay: {
+    flex: 1,
+    backgroundColor: 'rgba(0, 0, 0, 0.5)',
+    justifyContent: 'flex-end',
+  },
+  modalContainer: {
+    backgroundColor: COLORS.background,
+    borderTopLeftRadius: 32,
+    borderTopRightRadius: 32,
+    padding: 24,
+    paddingBottom: 40,
+  },
+  modalHeader: {
+    flexDirection: 'row',
+    justifyContent: 'space-between',
+    alignItems: 'center',
+    marginBottom: 24,
+  },
+  modalTitle: {
+    fontSize: 22,
+    fontWeight: '800',
+    color: COLORS.primary,
+  },
+  modalItem: {
+    flexDirection: 'row',
+    alignItems: 'center',
+    paddingVertical: 16,
+    gap: 12,
+  },
+  modalItemIcon: {
+    width: 40,
+    height: 40,
+    borderRadius: 12,
+    backgroundColor: COLORS.surface,
+    justifyContent: 'center',
+    alignItems: 'center',
+    borderWidth: 1,
+    borderColor: COLORS.divider,
+  },
+  modalItemText: {
+    fontSize: 16,
+    fontWeight: '600',
+    color: COLORS.textPrimary,
+  },
+  modalDivider: {
+    height: 1,
+    backgroundColor: COLORS.divider,
+    marginVertical: 12,
+  },
+  logoutItem: {
+    marginTop: 4,
   },
 });

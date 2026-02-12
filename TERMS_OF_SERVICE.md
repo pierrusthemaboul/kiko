@@ -21,9 +21,11 @@ Vous acceptez de ne pas utiliser l'Application pour :
 
 Nous nous réservons le droit de suspendre ou de résilier votre accès à l'Application pour toute violation de ces règles.
 
-## 4. Propriété Intellectuelle
+## 4. Propriété Intellectuelle et Contenu IA
 
-L'Application, y compris tous ses contenus, fonctionnalités, graphismes, sons et codes (collectivement, le "Contenu"), est la propriété de Pierre Cousin (PierrotDev) et est protégée par les lois sur le droit d'auteur, les marques et autres lois sur la propriété intellectuelle. Vous n'êtes pas autorisé à copier, modifier, distribuer, vendre ou louer une partie de notre Application ou de son Contenu.
+**4.1. Illustrations par IA :** L'Application contient plusieurs milliers d'illustrations générées par des systèmes d'Intelligence Artificielle. Ces images sont fournies à titre purement **ludique et illustratif**. Elles ne prétendent pas à l'exactitude historique absolue et peuvent contenir des anachronismes ou des erreurs visuelles. En utilisant l'Application, vous reconnaissez que ces illustrations ne doivent pas être considérées comme des sources de vérité scientifique ou historique.
+
+**4.2. Propriété :** L'Application, y compris ses contenus, fonctionnalités, graphismes (hors licence spécifique des modèles d'IA), sons et codes (collectivement, le "Contenu"), est la propriété de Pierre Cousin (PierrotDev) et est protégée par les lois sur le droit d'auteur. Vous n'êtes pas autorisé à copier, modifier, distribuer, vendre ou louer une partie de notre Application ou de son Contenu.
 
 ## 5. Achats In-App et Publicités
 

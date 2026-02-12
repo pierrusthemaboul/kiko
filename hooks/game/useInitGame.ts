@@ -8,10 +8,10 @@ import { FirebaseAnalytics } from '../../lib/firebase'; // Ajuste le chemin si n
 import { Event, User, MAX_LIVES, LevelHistory } from '../types'; // Ajuste le chemin si nécessaire
 import { devLog } from '../../utils/devLog';
 import { LEVEL_CONFIGS } from '../levelConfigs'; // Ajuste le chemin si nécessaire
-import { useEventSelector } from './useEventSelector'; // Ajuste le chemin si nécessaire
+import { useEventSelector, getCachedDateInfo } from './useEventSelector'; // Ajuste le chemin si nécessaire
 
 const EVENTS_CACHE_KEY = 'events_cache_v1';
-const EVENTS_CACHE_VERSION = 8;
+const EVENTS_CACHE_VERSION = 9;
 const EVENTS_CACHE_TTL_MS = 24 * 60 * 60 * 1000; // 24h
 
 interface InitGameOptions {
@@ -233,7 +233,9 @@ export function useInitGame() {
         firstEvent = shuffled[0];
         const candidatesForSecond = shuffled.slice(1).filter(e => {
           if (!e.date || !firstEvent.date) return false;
-          return getTimeDifference(e.date, firstEvent.date) !== 0;
+          const info = getCachedDateInfo(e.date);
+          const refInfo = getCachedDateInfo(firstEvent.date);
+          return info.timestamp !== refInfo.timestamp && info.year !== refInfo.year;
         });
 
         if (candidatesForSecond.length > 0) {
@@ -242,7 +244,9 @@ export function useInitGame() {
           // If all fallback candidates have same date, search in all valid events
           const backupCandidates = validEvents.filter(e => {
             if (!e.date || !firstEvent.date) return false;
-            return e.id !== firstEvent.id && getTimeDifference(e.date, firstEvent.date) !== 0;
+            const info = getCachedDateInfo(e.date);
+            const refInfo = getCachedDateInfo(firstEvent.date);
+            return e.id !== firstEvent.id && info.timestamp !== refInfo.timestamp && info.year !== refInfo.year;
           });
           if (backupCandidates.length > 0) {
             secondEvent = backupCandidates[0];
@@ -265,14 +269,25 @@ export function useInitGame() {
           firstEvent = shuffledFrench[0];
 
           // Pour le second : choisir dans tout le pool (sans le premier)
-          const remaining = initialCandidates.filter(e => e.id !== firstEvent.id && getTimeDifference(e.date, firstEvent.date) !== 0);
+          const remaining = initialCandidates.filter(e => {
+            if (e.id === firstEvent.id) return false;
+            const info = getCachedDateInfo(e.date);
+            const refInfo = getCachedDateInfo(firstEvent.date);
+            return info.timestamp !== refInfo.timestamp && info.year !== refInfo.year;
+          });
           const shuffledRemaining = [...remaining].sort(() => 0.5 - Math.random());
 
           if (shuffledRemaining.length > 0) {
             secondEvent = shuffledRemaining[0];
           } else {
             // Fallback unique date search
-            const backup = validEvents.filter(e => e.id !== firstEvent.id && getTimeDifference(e.date, firstEvent.date) !== 0);
+            const backup = validEvents.filter(e => {
+              if (e.id === firstEvent.id) return false;
+              const info = getCachedDateInfo(e.date);
+              const refInfo = getCachedDateInfo(firstEvent.date);
+              return info.timestamp !== refInfo.timestamp && info.year !== refInfo.year;
+            });
+
             if (backup.length > 0) {
               secondEvent = backup[0];
             } else {
@@ -283,12 +298,22 @@ export function useInitGame() {
           // Pas d'événements français (cas rare), prendre 2 au hasard
           const shuffled = [...initialCandidates].sort(() => 0.5 - Math.random());
           firstEvent = shuffled[0];
-          const candidatesForSecond = shuffled.slice(1).filter(e => getTimeDifference(e.date, firstEvent.date) !== 0);
+          const candidatesForSecond = shuffled.slice(1).filter(e => {
+            const info = getCachedDateInfo(e.date);
+            const refInfo = getCachedDateInfo(firstEvent.date);
+            return info.timestamp !== refInfo.timestamp && info.year !== refInfo.year;
+          });
 
           if (candidatesForSecond.length > 0) {
             secondEvent = candidatesForSecond[0];
           } else {
-            const backup = validEvents.filter(e => e.id !== firstEvent.id && getTimeDifference(e.date, firstEvent.date) !== 0);
+            const backup = validEvents.filter(e => {
+              if (e.id === firstEvent.id) return false;
+              const info = getCachedDateInfo(e.date);
+              const refInfo = getCachedDateInfo(firstEvent.date);
+              return info.timestamp !== refInfo.timestamp && info.year !== refInfo.year;
+            });
+
             secondEvent = backup.length > 0 ? backup[0] : shuffled[1];
           }
         }

@@ -1,544 +1,6 @@
 [
   {
-    "timestamp": "2026-01-26T23:22:42.168Z",
-    "type": "state.values.subscribe",
-    "payload": {
-      "paths": []
-    }
-  },
-  {
-    "level": "debug",
-    "category": "Plays",
-    "message": "Fetching info for user 9d97c5fe-9051-4da5-881a-f4f380cbb6b0",
-    "data": {
-      "isAdmin": true,
-      "allowed": 999
-    },
-    "timestamp": "2026-01-27T09:47:49.942Z",
-    "source": "app_logger"
-  },
-  {
-    "level": "debug",
-    "category": "Plays",
-    "message": "Calculated plays info",
-    "data": {
-      "allowed": 999,
-      "used": 0,
-      "remaining": 999
-    },
-    "timestamp": "2026-01-27T09:47:50.117Z",
-    "source": "app_logger"
-  },
-  {
-    "level": "debug",
-    "category": "Plays",
-    "message": "Fetching info for user 9d97c5fe-9051-4da5-881a-f4f380cbb6b0",
-    "data": {
-      "isAdmin": true,
-      "allowed": 999
-    },
-    "timestamp": "2026-01-27T09:47:51.398Z",
-    "source": "app_logger"
-  },
-  {
-    "level": "debug",
-    "category": "Plays",
-    "message": "Calculated plays info",
-    "data": {
-      "allowed": 999,
-      "used": 0,
-      "remaining": 999
-    },
-    "timestamp": "2026-01-27T09:47:51.429Z",
-    "source": "app_logger"
-  },
-  {
-    "level": "debug",
-    "category": "Plays",
-    "message": "Fetching info for user 9d97c5fe-9051-4da5-881a-f4f380cbb6b0",
-    "data": {
-      "isAdmin": true,
-      "allowed": 999
-    },
-    "timestamp": "2026-01-27T09:47:53.227Z",
-    "source": "app_logger"
-  },
-  {
-    "level": "debug",
-    "category": "Plays",
-    "message": "Calculated plays info",
-    "data": {
-      "allowed": 999,
-      "used": 0,
-      "remaining": 999
-    },
-    "timestamp": "2026-01-27T09:47:53.246Z",
-    "source": "app_logger"
-  },
-  {
-    "level": "debug",
-    "category": "Plays",
-    "message": "Fetching info for user 9d97c5fe-9051-4da5-881a-f4f380cbb6b0",
-    "data": {
-      "isAdmin": true,
-      "allowed": 999
-    },
-    "timestamp": "2026-01-27T09:47:54.189Z",
-    "source": "app_logger"
-  },
-  {
-    "level": "debug",
-    "category": "Plays",
-    "message": "Calculated plays info",
-    "data": {
-      "allowed": 999,
-      "used": 0,
-      "remaining": 999
-    },
-    "timestamp": "2026-01-27T09:47:54.198Z",
-    "source": "app_logger"
-  },
-  {
-    "level": "debug",
-    "category": "Plays",
-    "message": "Fetching info for user 9d97c5fe-9051-4da5-881a-f4f380cbb6b0",
-    "data": {
-      "isAdmin": true,
-      "allowed": 999
-    },
-    "timestamp": "2026-01-27T09:47:55.221Z",
-    "source": "app_logger"
-  },
-  {
-    "level": "debug",
-    "category": "Plays",
-    "message": "Calculated plays info",
-    "data": {
-      "allowed": 999,
-      "used": 0,
-      "remaining": 999
-    },
-    "timestamp": "2026-01-27T09:47:55.230Z",
-    "source": "app_logger"
-  },
-  {
-    "level": "debug",
-    "category": "Plays",
-    "message": "Fetching info for user 9d97c5fe-9051-4da5-881a-f4f380cbb6b0",
-    "data": {
-      "isAdmin": true,
-      "allowed": 999
-    },
-    "timestamp": "2026-01-27T09:51:47.089Z",
-    "source": "app_logger"
-  },
-  {
-    "level": "debug",
-    "category": "Plays",
-    "message": "Calculated plays info",
-    "data": {
-      "allowed": 999,
-      "used": 0,
-      "remaining": 999
-    },
-    "timestamp": "2026-01-27T09:51:47.129Z",
-    "source": "app_logger"
-  },
-  {
-    "level": "debug",
-    "category": "Plays",
-    "message": "Fetching info for user 9d97c5fe-9051-4da5-881a-f4f380cbb6b0",
-    "data": {
-      "isAdmin": true,
-      "allowed": 999
-    },
-    "timestamp": "2026-01-27T09:51:47.466Z",
-    "source": "app_logger"
-  },
-  {
-    "level": "debug",
-    "category": "Plays",
-    "message": "Calculated plays info",
-    "data": {
-      "allowed": 999,
-      "used": 0,
-      "remaining": 999
-    },
-    "timestamp": "2026-01-27T09:51:47.489Z",
-    "source": "app_logger"
-  },
-  {
-    "level": "info",
-    "category": "Ads",
-    "message": "Attempting to grant extra play",
-    "data": {
-      "userId": "9d97c5fe-9051-4da5-881a-f4f380cbb6b0"
-    },
-    "timestamp": "2026-01-27T09:51:54.056Z",
-    "source": "app_logger"
-  },
-  {
-    "level": "info",
-    "category": "Ads",
-    "message": "Attempting to grant extra play",
-    "data": {
-      "userId": "9d97c5fe-9051-4da5-881a-f4f380cbb6b0"
-    },
-    "timestamp": "2026-01-27T09:51:54.286Z",
-    "source": "app_logger"
-  },
-  {
-    "level": "debug",
-    "category": "Ads",
-    "message": "Updating parties_per_day from 4 to 5",
-    "timestamp": "2026-01-27T09:51:54.527Z",
-    "source": "app_logger"
-  },
-  {
-    "level": "debug",
-    "category": "Ads",
-    "message": "Updating parties_per_day from 4 to 5",
-    "timestamp": "2026-01-27T09:51:54.536Z",
-    "source": "app_logger"
-  },
-  {
-    "level": "info",
-    "category": "Ads",
-    "message": "Successfully updated profile",
-    "timestamp": "2026-01-27T09:51:54.617Z",
-    "source": "app_logger"
-  },
-  {
-    "level": "info",
-    "category": "Ads",
-    "message": "Successfully updated profile",
-    "timestamp": "2026-01-27T09:51:54.742Z",
-    "source": "app_logger"
-  },
-  {
-    "level": "debug",
-    "category": "Plays",
-    "message": "Fetching info for user 9d97c5fe-9051-4da5-881a-f4f380cbb6b0",
-    "data": {
-      "isAdmin": true,
-      "allowed": 999
-    },
-    "timestamp": "2026-01-27T09:51:55.040Z",
-    "source": "app_logger"
-  },
-  {
-    "level": "debug",
-    "category": "Plays",
-    "message": "Calculated plays info",
-    "data": {
-      "allowed": 999,
-      "used": 0,
-      "remaining": 999
-    },
-    "timestamp": "2026-01-27T09:51:55.049Z",
-    "source": "app_logger"
-  },
-  {
-    "level": "debug",
-    "category": "Plays",
-    "message": "Fetching info for user 9d97c5fe-9051-4da5-881a-f4f380cbb6b0",
-    "data": {
-      "isAdmin": true,
-      "allowed": 999
-    },
-    "timestamp": "2026-01-27T09:51:55.581Z",
-    "source": "app_logger"
-  },
-  {
-    "level": "debug",
-    "category": "Plays",
-    "message": "Calculated plays info",
-    "data": {
-      "allowed": 999,
-      "used": 0,
-      "remaining": 999
-    },
-    "timestamp": "2026-01-27T09:51:55.590Z",
-    "source": "app_logger"
-  },
-  {
-    "level": "debug",
-    "category": "Plays",
-    "message": "Fetching info for user 9d97c5fe-9051-4da5-881a-f4f380cbb6b0",
-    "data": {
-      "isAdmin": true,
-      "allowed": 999
-    },
-    "timestamp": "2026-01-27T09:54:58.774Z",
-    "source": "app_logger"
-  },
-  {
-    "level": "debug",
-    "category": "Plays",
-    "message": "Calculated plays info",
-    "data": {
-      "allowed": 999,
-      "used": 0,
-      "remaining": 999
-    },
-    "timestamp": "2026-01-27T09:54:58.817Z",
-    "source": "app_logger"
-  },
-  {
-    "level": "debug",
-    "category": "Plays",
-    "message": "Fetching info for user 9d97c5fe-9051-4da5-881a-f4f380cbb6b0",
-    "data": {
-      "isAdmin": true,
-      "allowed": 999
-    },
-    "timestamp": "2026-01-27T09:54:59.046Z",
-    "source": "app_logger"
-  },
-  {
-    "level": "debug",
-    "category": "Plays",
-    "message": "Calculated plays info",
-    "data": {
-      "allowed": 999,
-      "used": 0,
-      "remaining": 999
-    },
-    "timestamp": "2026-01-27T09:54:59.052Z",
-    "source": "app_logger"
-  },
-  {
-    "level": "debug",
-    "category": "Plays",
-    "message": "Fetching info for user 9d97c5fe-9051-4da5-881a-f4f380cbb6b0",
-    "data": {
-      "isAdmin": true,
-      "allowed": 999
-    },
-    "timestamp": "2026-01-27T09:54:59.252Z",
-    "source": "app_logger"
-  },
-  {
-    "level": "debug",
-    "category": "Plays",
-    "message": "Calculated plays info",
-    "data": {
-      "allowed": 999,
-      "used": 0,
-      "remaining": 999
-    },
-    "timestamp": "2026-01-27T09:54:59.262Z",
-    "source": "app_logger"
-  },
-  {
-    "level": "debug",
-    "category": "Plays",
-    "message": "Fetching info for user 9d97c5fe-9051-4da5-881a-f4f380cbb6b0",
-    "data": {
-      "isAdmin": true,
-      "allowed": 999
-    },
-    "timestamp": "2026-01-27T09:54:59.517Z",
-    "source": "app_logger"
-  },
-  {
-    "level": "debug",
-    "category": "Plays",
-    "message": "Calculated plays info",
-    "data": {
-      "allowed": 999,
-      "used": 0,
-      "remaining": 999
-    },
-    "timestamp": "2026-01-27T09:54:59.533Z",
-    "source": "app_logger"
-  },
-  {
-    "level": "debug",
-    "category": "Plays",
-    "message": "Fetching info for user 9d97c5fe-9051-4da5-881a-f4f380cbb6b0",
-    "data": {
-      "isAdmin": true,
-      "allowed": 999
-    },
-    "timestamp": "2026-01-27T09:55:32.937Z",
-    "source": "app_logger"
-  },
-  {
-    "level": "debug",
-    "category": "Plays",
-    "message": "Calculated plays info",
-    "data": {
-      "allowed": 999,
-      "used": 0,
-      "remaining": 999
-    },
-    "timestamp": "2026-01-27T09:55:32.948Z",
-    "source": "app_logger"
-  },
-  {
-    "level": "debug",
-    "category": "Plays",
-    "message": "Fetching info for user 9d97c5fe-9051-4da5-881a-f4f380cbb6b0",
-    "data": {
-      "isAdmin": true,
-      "allowed": 999
-    },
-    "timestamp": "2026-01-27T09:55:33.089Z",
-    "source": "app_logger"
-  },
-  {
-    "level": "debug",
-    "category": "Plays",
-    "message": "Calculated plays info",
-    "data": {
-      "allowed": 999,
-      "used": 0,
-      "remaining": 999
-    },
-    "timestamp": "2026-01-27T09:55:33.100Z",
-    "source": "app_logger"
-  },
-  {
-    "level": "debug",
-    "category": "Plays",
-    "message": "Fetching info for user 9d97c5fe-9051-4da5-881a-f4f380cbb6b0",
-    "data": {
-      "isAdmin": true,
-      "allowed": 999
-    },
-    "timestamp": "2026-01-27T09:55:33.917Z",
-    "source": "app_logger"
-  },
-  {
-    "level": "debug",
-    "category": "Plays",
-    "message": "Calculated plays info",
-    "data": {
-      "allowed": 999,
-      "used": 0,
-      "remaining": 999
-    },
-    "timestamp": "2026-01-27T09:55:33.935Z",
-    "source": "app_logger"
-  },
-  {
-    "level": "debug",
-    "category": "Plays",
-    "message": "Fetching info for user 9d97c5fe-9051-4da5-881a-f4f380cbb6b0",
-    "data": {
-      "isAdmin": true,
-      "allowed": 999
-    },
-    "timestamp": "2026-01-27T09:55:34.188Z",
-    "source": "app_logger"
-  },
-  {
-    "level": "debug",
-    "category": "Plays",
-    "message": "Calculated plays info",
-    "data": {
-      "allowed": 999,
-      "used": 0,
-      "remaining": 999
-    },
-    "timestamp": "2026-01-27T09:55:34.200Z",
-    "source": "app_logger"
-  },
-  {
-    "level": "debug",
-    "category": "Plays",
-    "message": "Fetching info for user 9d97c5fe-9051-4da5-881a-f4f380cbb6b0",
-    "data": {
-      "isAdmin": true,
-      "allowed": 999
-    },
-    "timestamp": "2026-01-27T09:56:55.234Z",
-    "source": "app_logger"
-  },
-  {
-    "level": "debug",
-    "category": "Plays",
-    "message": "Calculated plays info",
-    "data": {
-      "allowed": 999,
-      "used": 0,
-      "remaining": 999
-    },
-    "timestamp": "2026-01-27T09:56:55.258Z",
-    "source": "app_logger"
-  },
-  {
-    "level": "debug",
-    "category": "Plays",
-    "message": "Fetching info for user 9d97c5fe-9051-4da5-881a-f4f380cbb6b0",
-    "data": {
-      "isAdmin": true,
-      "allowed": 999
-    },
-    "timestamp": "2026-01-27T09:56:55.653Z",
-    "source": "app_logger"
-  },
-  {
-    "level": "debug",
-    "category": "Plays",
-    "message": "Calculated plays info",
-    "data": {
-      "allowed": 999,
-      "used": 0,
-      "remaining": 999
-    },
-    "timestamp": "2026-01-27T09:56:55.661Z",
-    "source": "app_logger"
-  },
-  {
-    "level": "debug",
-    "category": "Plays",
-    "message": "Fetching info for user 9d97c5fe-9051-4da5-881a-f4f380cbb6b0",
-    "data": {
-      "isAdmin": true,
-      "allowed": 999
-    },
-    "timestamp": "2026-01-27T09:56:56.611Z",
-    "source": "app_logger"
-  },
-  {
-    "level": "debug",
-    "category": "Plays",
-    "message": "Calculated plays info",
-    "data": {
-      "allowed": 999,
-      "used": 0,
-      "remaining": 999
-    },
-    "timestamp": "2026-01-27T09:56:56.618Z",
-    "source": "app_logger"
-  },
-  {
-    "level": "debug",
-    "category": "Plays",
-    "message": "Fetching info for user 9d97c5fe-9051-4da5-881a-f4f380cbb6b0",
-    "data": {
-      "isAdmin": true,
-      "allowed": 999
-    },
-    "timestamp": "2026-01-27T09:56:56.861Z",
-    "source": "app_logger"
-  },
-  {
-    "level": "debug",
-    "category": "Plays",
-    "message": "Calculated plays info",
-    "data": {
-      "allowed": 999,
-      "used": 0,
-      "remaining": 999
-    },
-    "timestamp": "2026-01-27T09:56:56.867Z",
-    "source": "app_logger"
-  },
-  {
-    "timestamp": "2026-01-27T09:57:47.824Z",
+    "timestamp": "2026-02-10T21:58:01.406Z",
     "source": "reactotron",
     "type": "state.values.subscribe",
     "payload": {
@@ -546,2556 +8,7 @@
     }
   },
   {
-    "timestamp": "2026-01-27T09:58:46.767Z",
-    "source": "reactotron",
-    "type": "state.values.subscribe",
-    "payload": {
-      "paths": []
-    }
-  },
-  {
-    "level": "debug",
-    "category": "Plays",
-    "message": "Fetching info for user 9d97c5fe-9051-4da5-881a-f4f380cbb6b0",
-    "data": {
-      "isAdmin": true,
-      "allowed": 999
-    },
-    "timestamp": "2026-01-27T09:58:53.262Z",
-    "source": "app_logger"
-  },
-  {
-    "level": "debug",
-    "category": "Plays",
-    "message": "Calculated plays info",
-    "data": {
-      "allowed": 999,
-      "used": 0,
-      "remaining": 999
-    },
-    "timestamp": "2026-01-27T09:58:53.339Z",
-    "source": "app_logger"
-  },
-  {
-    "level": "debug",
-    "category": "Plays",
-    "message": "Fetching info for user 9d97c5fe-9051-4da5-881a-f4f380cbb6b0",
-    "data": {
-      "isAdmin": true,
-      "allowed": 999
-    },
-    "timestamp": "2026-01-27T09:58:53.648Z",
-    "source": "app_logger"
-  },
-  {
-    "level": "debug",
-    "category": "Plays",
-    "message": "Calculated plays info",
-    "data": {
-      "allowed": 999,
-      "used": 0,
-      "remaining": 999
-    },
-    "timestamp": "2026-01-27T09:58:53.656Z",
-    "source": "app_logger"
-  },
-  {
-    "timestamp": "2026-01-27T10:02:03.138Z",
-    "source": "reactotron",
-    "type": "state.values.subscribe",
-    "payload": {
-      "paths": []
-    }
-  },
-  {
-    "level": "info",
-    "category": "System",
-    "message": "🧪 MODE SIMULATION : Statut Admin désactivé pour test.",
-    "timestamp": "2026-01-27T10:02:11.149Z",
-    "source": "app_logger"
-  },
-  {
-    "level": "debug",
-    "category": "Plays",
-    "message": "Fetching info for user 9d97c5fe-9051-4da5-881a-f4f380cbb6b0",
-    "data": {
-      "isAdmin": false,
-      "allowed": 5
-    },
-    "timestamp": "2026-01-27T10:02:11.159Z",
-    "source": "app_logger"
-  },
-  {
-    "level": "debug",
-    "category": "Plays",
-    "message": "Calculated plays info",
-    "data": {
-      "allowed": 5,
-      "used": 0,
-      "remaining": 5
-    },
-    "timestamp": "2026-01-27T10:02:11.214Z",
-    "source": "app_logger"
-  },
-  {
-    "level": "info",
-    "category": "System",
-    "message": "🧪 MODE SIMULATION : Statut Admin désactivé pour test.",
-    "timestamp": "2026-01-27T10:02:11.334Z",
-    "source": "app_logger"
-  },
-  {
-    "level": "debug",
-    "category": "Plays",
-    "message": "Fetching info for user 9d97c5fe-9051-4da5-881a-f4f380cbb6b0",
-    "data": {
-      "isAdmin": false,
-      "allowed": 5
-    },
-    "timestamp": "2026-01-27T10:02:11.335Z",
-    "source": "app_logger"
-  },
-  {
-    "level": "debug",
-    "category": "Plays",
-    "message": "Calculated plays info",
-    "data": {
-      "allowed": 5,
-      "used": 0,
-      "remaining": 5
-    },
-    "timestamp": "2026-01-27T10:02:11.352Z",
-    "source": "app_logger"
-  },
-  {
-    "level": "info",
-    "category": "Ads",
-    "message": "Attempting to grant extra play",
-    "data": {
-      "userId": "9d97c5fe-9051-4da5-881a-f4f380cbb6b0"
-    },
-    "timestamp": "2026-01-27T10:02:27.657Z",
-    "source": "app_logger"
-  },
-  {
-    "level": "debug",
-    "category": "Ads",
-    "message": "Updating parties_per_day from 5 to 6",
-    "timestamp": "2026-01-27T10:02:28.462Z",
-    "source": "app_logger"
-  },
-  {
-    "level": "info",
-    "category": "Ads",
-    "message": "Successfully updated profile",
-    "timestamp": "2026-01-27T10:02:28.630Z",
-    "source": "app_logger"
-  },
-  {
-    "level": "info",
-    "category": "System",
-    "message": "🧪 MODE SIMULATION : Statut Admin désactivé pour test.",
-    "timestamp": "2026-01-27T10:02:29.012Z",
-    "source": "app_logger"
-  },
-  {
-    "level": "debug",
-    "category": "Plays",
-    "message": "Fetching info for user 9d97c5fe-9051-4da5-881a-f4f380cbb6b0",
-    "data": {
-      "isAdmin": false,
-      "allowed": 6
-    },
-    "timestamp": "2026-01-27T10:02:29.013Z",
-    "source": "app_logger"
-  },
-  {
-    "level": "debug",
-    "category": "Plays",
-    "message": "Calculated plays info",
-    "data": {
-      "allowed": 6,
-      "used": 0,
-      "remaining": 6
-    },
-    "timestamp": "2026-01-27T10:02:29.042Z",
-    "source": "app_logger"
-  },
-  {
-    "level": "debug",
-    "category": "Plays",
-    "message": "Fetching info for user 9d97c5fe-9051-4da5-881a-f4f380cbb6b0",
-    "data": {
-      "isAdmin": false,
-      "allowed": 6
-    },
-    "timestamp": "2026-01-27T10:09:39.430Z",
-    "source": "app_logger"
-  },
-  {
-    "level": "info",
-    "category": "System",
-    "message": "🧪 MODE SIMULATION : Statut Admin désactivé pour test.",
-    "timestamp": "2026-01-27T10:09:39.428Z",
-    "source": "app_logger"
-  },
-  {
-    "level": "debug",
-    "category": "Plays",
-    "message": "Calculated plays info",
-    "data": {
-      "allowed": 6,
-      "used": 0,
-      "remaining": 6
-    },
-    "timestamp": "2026-01-27T10:09:39.450Z",
-    "source": "app_logger"
-  },
-  {
-    "level": "info",
-    "category": "System",
-    "message": "🧪 MODE SIMULATION : Statut Admin désactivé pour test.",
-    "timestamp": "2026-01-27T10:09:39.519Z",
-    "source": "app_logger"
-  },
-  {
-    "level": "debug",
-    "category": "Plays",
-    "message": "Fetching info for user 9d97c5fe-9051-4da5-881a-f4f380cbb6b0",
-    "data": {
-      "isAdmin": false,
-      "allowed": 6
-    },
-    "timestamp": "2026-01-27T10:09:39.522Z",
-    "source": "app_logger"
-  },
-  {
-    "level": "debug",
-    "category": "Plays",
-    "message": "Calculated plays info",
-    "data": {
-      "allowed": 6,
-      "used": 0,
-      "remaining": 6
-    },
-    "timestamp": "2026-01-27T10:09:39.540Z",
-    "source": "app_logger"
-  },
-  {
-    "level": "info",
-    "category": "System",
-    "message": "🧪 MODE SIMULATION : Statut Admin désactivé pour test.",
-    "timestamp": "2026-01-27T10:09:40.283Z",
-    "source": "app_logger"
-  },
-  {
-    "level": "debug",
-    "category": "Plays",
-    "message": "Fetching info for user 9d97c5fe-9051-4da5-881a-f4f380cbb6b0",
-    "data": {
-      "isAdmin": false,
-      "allowed": 6
-    },
-    "timestamp": "2026-01-27T10:09:40.284Z",
-    "source": "app_logger"
-  },
-  {
-    "level": "debug",
-    "category": "Plays",
-    "message": "Calculated plays info",
-    "data": {
-      "allowed": 6,
-      "used": 0,
-      "remaining": 6
-    },
-    "timestamp": "2026-01-27T10:09:40.297Z",
-    "source": "app_logger"
-  },
-  {
-    "level": "info",
-    "category": "GameLogic",
-    "message": "[GameContentA] Modal 'Rejouer' clicked. Resetting ads and calling parent restart logic.",
-    "timestamp": "2026-01-27T10:10:11.624Z",
-    "source": "app_logger"
-  },
-  {
-    "level": "info",
-    "category": "System",
-    "message": "🧪 MODE SIMULATION : Statut Admin désactivé pour test.",
-    "timestamp": "2026-01-27T10:10:11.991Z",
-    "source": "app_logger"
-  },
-  {
-    "level": "debug",
-    "category": "Plays",
-    "message": "Fetching info for user 9d97c5fe-9051-4da5-881a-f4f380cbb6b0",
-    "data": {
-      "isAdmin": false,
-      "allowed": 4
-    },
-    "timestamp": "2026-01-27T10:10:11.992Z",
-    "source": "app_logger"
-  },
-  {
-    "level": "debug",
-    "category": "Plays",
-    "message": "Calculated plays info",
-    "data": {
-      "allowed": 4,
-      "used": 0,
-      "remaining": 4
-    },
-    "timestamp": "2026-01-27T10:10:12.005Z",
-    "source": "app_logger"
-  },
-  {
-    "level": "info",
-    "category": "System",
-    "message": "🧪 MODE SIMULATION : Statut Admin désactivé pour test.",
-    "timestamp": "2026-01-27T10:10:12.912Z",
-    "source": "app_logger"
-  },
-  {
-    "level": "debug",
-    "category": "Plays",
-    "message": "Fetching info for user 9d97c5fe-9051-4da5-881a-f4f380cbb6b0",
-    "data": {
-      "isAdmin": false,
-      "allowed": 4
-    },
-    "timestamp": "2026-01-27T10:10:12.913Z",
-    "source": "app_logger"
-  },
-  {
-    "level": "debug",
-    "category": "Plays",
-    "message": "Calculated plays info",
-    "data": {
-      "allowed": 4,
-      "used": 0,
-      "remaining": 4
-    },
-    "timestamp": "2026-01-27T10:10:12.921Z",
-    "source": "app_logger"
-  },
-  {
-    "level": "info",
-    "category": "System",
-    "message": "🧪 MODE SIMULATION : Statut Admin désactivé pour test.",
-    "timestamp": "2026-01-27T10:15:50.954Z",
-    "source": "app_logger"
-  },
-  {
-    "level": "debug",
-    "category": "Plays",
-    "message": "Fetching info for user 9d97c5fe-9051-4da5-881a-f4f380cbb6b0",
-    "data": {
-      "isAdmin": false,
-      "allowed": 4
-    },
-    "timestamp": "2026-01-27T10:15:50.957Z",
-    "source": "app_logger"
-  },
-  {
-    "level": "info",
-    "category": "System",
-    "message": "🧪 MODE SIMULATION : Statut Admin désactivé pour test.",
-    "timestamp": "2026-01-27T10:15:51.297Z",
-    "source": "app_logger"
-  },
-  {
-    "level": "debug",
-    "category": "Plays",
-    "message": "Fetching info for user 9d97c5fe-9051-4da5-881a-f4f380cbb6b0",
-    "data": {
-      "isAdmin": false,
-      "allowed": 4
-    },
-    "timestamp": "2026-01-27T10:15:51.298Z",
-    "source": "app_logger"
-  },
-  {
-    "level": "info",
-    "category": "System",
-    "message": "🧪 MODE SIMULATION : Statut Admin désactivé pour test.",
-    "timestamp": "2026-01-27T10:15:51.635Z",
-    "source": "app_logger"
-  },
-  {
-    "level": "debug",
-    "category": "Plays",
-    "message": "Fetching info for user 9d97c5fe-9051-4da5-881a-f4f380cbb6b0",
-    "data": {
-      "isAdmin": false,
-      "allowed": 4
-    },
-    "timestamp": "2026-01-27T10:15:51.638Z",
-    "source": "app_logger"
-  },
-  {
-    "level": "debug",
-    "category": "Plays",
-    "message": "Calculated plays info",
-    "data": {
-      "allowed": 4,
-      "used": 3,
-      "remaining": 1
-    },
-    "timestamp": "2026-01-27T10:15:51.860Z",
-    "source": "app_logger"
-  },
-  {
-    "level": "debug",
-    "category": "Plays",
-    "message": "Calculated plays info",
-    "data": {
-      "allowed": 4,
-      "used": 3,
-      "remaining": 1
-    },
-    "timestamp": "2026-01-27T10:15:52.173Z",
-    "source": "app_logger"
-  },
-  {
-    "level": "debug",
-    "category": "Plays",
-    "message": "Calculated plays info",
-    "data": {
-      "allowed": 4,
-      "used": 3,
-      "remaining": 1
-    },
-    "timestamp": "2026-01-27T10:15:52.949Z",
-    "source": "app_logger"
-  },
-  {
-    "level": "info",
-    "category": "System",
-    "message": "🧪 MODE SIMULATION : Statut Admin désactivé pour test.",
-    "timestamp": "2026-01-27T10:15:53.215Z",
-    "source": "app_logger"
-  },
-  {
-    "level": "debug",
-    "category": "Plays",
-    "message": "Fetching info for user 9d97c5fe-9051-4da5-881a-f4f380cbb6b0",
-    "data": {
-      "isAdmin": false,
-      "allowed": 4
-    },
-    "timestamp": "2026-01-27T10:15:53.218Z",
-    "source": "app_logger"
-  },
-  {
-    "level": "debug",
-    "category": "Plays",
-    "message": "Calculated plays info",
-    "data": {
-      "allowed": 4,
-      "used": 3,
-      "remaining": 1
-    },
-    "timestamp": "2026-01-27T10:15:55.219Z",
-    "source": "app_logger"
-  },
-  {
-    "level": "info",
-    "category": "System",
-    "message": "🧪 MODE SIMULATION : Statut Admin désactivé pour test.",
-    "timestamp": "2026-01-27T10:15:55.973Z",
-    "source": "app_logger"
-  },
-  {
-    "level": "debug",
-    "category": "Plays",
-    "message": "Fetching info for user 9d97c5fe-9051-4da5-881a-f4f380cbb6b0",
-    "data": {
-      "isAdmin": false,
-      "allowed": 4
-    },
-    "timestamp": "2026-01-27T10:15:55.974Z",
-    "source": "app_logger"
-  },
-  {
-    "level": "debug",
-    "category": "Plays",
-    "message": "Calculated plays info",
-    "data": {
-      "allowed": 4,
-      "used": 4,
-      "remaining": 0
-    },
-    "timestamp": "2026-01-27T10:15:56.071Z",
-    "source": "app_logger"
-  },
-  {
-    "timestamp": "2026-01-27T10:16:07.543Z",
-    "source": "reactotron",
-    "type": "state.values.subscribe",
-    "payload": {
-      "paths": []
-    }
-  },
-  {
-    "level": "info",
-    "category": "System",
-    "message": "🧪 MODE SIMULATION : Statut Admin désactivé pour test.",
-    "timestamp": "2026-01-27T10:16:20.711Z",
-    "source": "app_logger"
-  },
-  {
-    "level": "debug",
-    "category": "Plays",
-    "message": "Fetching info for user 9d97c5fe-9051-4da5-881a-f4f380cbb6b0",
-    "data": {
-      "isAdmin": false,
-      "allowed": 4
-    },
-    "timestamp": "2026-01-27T10:16:20.716Z",
-    "source": "app_logger"
-  },
-  {
-    "level": "debug",
-    "category": "Plays",
-    "message": "Fetching info for user 9d97c5fe-9051-4da5-881a-f4f380cbb6b0",
-    "data": {
-      "isAdmin": false,
-      "allowed": 4
-    },
-    "timestamp": "2026-01-27T10:16:20.841Z",
-    "source": "app_logger"
-  },
-  {
-    "level": "info",
-    "category": "System",
-    "message": "🧪 MODE SIMULATION : Statut Admin désactivé pour test.",
-    "timestamp": "2026-01-27T10:16:20.839Z",
-    "source": "app_logger"
-  },
-  {
-    "level": "debug",
-    "category": "Plays",
-    "message": "Calculated plays info",
-    "data": {
-      "allowed": 4,
-      "used": 4,
-      "remaining": 0
-    },
-    "timestamp": "2026-01-27T10:16:21.327Z",
-    "source": "app_logger"
-  },
-  {
-    "level": "debug",
-    "category": "Plays",
-    "message": "Calculated plays info",
-    "data": {
-      "allowed": 4,
-      "used": 4,
-      "remaining": 0
-    },
-    "timestamp": "2026-01-27T10:16:22.398Z",
-    "source": "app_logger"
-  },
-  {
-    "level": "info",
-    "category": "System",
-    "message": "🧪 MODE SIMULATION : Statut Admin désactivé pour test.",
-    "timestamp": "2026-01-27T10:19:16.839Z",
-    "source": "app_logger"
-  },
-  {
-    "level": "debug",
-    "category": "Plays",
-    "message": "Fetching info for user 9d97c5fe-9051-4da5-881a-f4f380cbb6b0",
-    "data": {
-      "isAdmin": false,
-      "allowed": 4
-    },
-    "timestamp": "2026-01-27T10:19:16.843Z",
-    "source": "app_logger"
-  },
-  {
-    "level": "info",
-    "category": "System",
-    "message": "🧪 MODE SIMULATION : Statut Admin désactivé pour test.",
-    "timestamp": "2026-01-27T10:19:17.047Z",
-    "source": "app_logger"
-  },
-  {
-    "level": "debug",
-    "category": "Plays",
-    "message": "Fetching info for user 9d97c5fe-9051-4da5-881a-f4f380cbb6b0",
-    "data": {
-      "isAdmin": false,
-      "allowed": 4
-    },
-    "timestamp": "2026-01-27T10:19:17.049Z",
-    "source": "app_logger"
-  },
-  {
-    "level": "debug",
-    "category": "Plays",
-    "message": "Calculated plays info",
-    "data": {
-      "allowed": 4,
-      "used": 4,
-      "remaining": 0
-    },
-    "timestamp": "2026-01-27T10:19:17.659Z",
-    "source": "app_logger"
-  },
-  {
-    "level": "debug",
-    "category": "Plays",
-    "message": "Calculated plays info",
-    "data": {
-      "allowed": 4,
-      "used": 4,
-      "remaining": 0
-    },
-    "timestamp": "2026-01-27T10:19:17.793Z",
-    "source": "app_logger"
-  },
-  {
-    "level": "debug",
-    "category": "Plays",
-    "message": "Fetching info for user 9d97c5fe-9051-4da5-881a-f4f380cbb6b0",
-    "data": {
-      "isAdmin": false,
-      "allowed": 4
-    },
-    "timestamp": "2026-01-27T10:20:08.344Z",
-    "source": "app_logger"
-  },
-  {
-    "level": "info",
-    "category": "System",
-    "message": "🧪 MODE SIMULATION : Statut Admin désactivé pour test.",
-    "timestamp": "2026-01-27T10:20:08.343Z",
-    "source": "app_logger"
-  },
-  {
-    "level": "info",
-    "category": "System",
-    "message": "🧪 MODE SIMULATION : Statut Admin désactivé pour test.",
-    "timestamp": "2026-01-27T10:20:08.370Z",
-    "source": "app_logger"
-  },
-  {
-    "level": "debug",
-    "category": "Plays",
-    "message": "Fetching info for user 9d97c5fe-9051-4da5-881a-f4f380cbb6b0",
-    "data": {
-      "isAdmin": false,
-      "allowed": 4
-    },
-    "timestamp": "2026-01-27T10:20:08.370Z",
-    "source": "app_logger"
-  },
-  {
-    "level": "debug",
-    "category": "Plays",
-    "message": "Calculated plays info",
-    "data": {
-      "allowed": 4,
-      "used": 4,
-      "remaining": 0
-    },
-    "timestamp": "2026-01-27T10:20:08.531Z",
-    "source": "app_logger"
-  },
-  {
-    "level": "debug",
-    "category": "Plays",
-    "message": "Calculated plays info",
-    "data": {
-      "allowed": 4,
-      "used": 4,
-      "remaining": 0
-    },
-    "timestamp": "2026-01-27T10:20:08.765Z",
-    "source": "app_logger"
-  },
-  {
-    "level": "info",
-    "category": "System",
-    "message": "🧪 MODE SIMULATION : Statut Admin désactivé pour test.",
-    "timestamp": "2026-01-27T10:20:49.196Z",
-    "source": "app_logger"
-  },
-  {
-    "level": "debug",
-    "category": "Plays",
-    "message": "Fetching info for user 9d97c5fe-9051-4da5-881a-f4f380cbb6b0",
-    "data": {
-      "isAdmin": false,
-      "allowed": 4
-    },
-    "timestamp": "2026-01-27T10:20:49.197Z",
-    "source": "app_logger"
-  },
-  {
-    "level": "info",
-    "category": "System",
-    "message": "🧪 MODE SIMULATION : Statut Admin désactivé pour test.",
-    "timestamp": "2026-01-27T10:20:49.591Z",
-    "source": "app_logger"
-  },
-  {
-    "level": "debug",
-    "category": "Plays",
-    "message": "Fetching info for user 9d97c5fe-9051-4da5-881a-f4f380cbb6b0",
-    "data": {
-      "isAdmin": false,
-      "allowed": 4
-    },
-    "timestamp": "2026-01-27T10:20:49.593Z",
-    "source": "app_logger"
-  },
-  {
-    "level": "debug",
-    "category": "Plays",
-    "message": "Calculated plays info",
-    "data": {
-      "allowed": 4,
-      "used": 4,
-      "remaining": 0
-    },
-    "timestamp": "2026-01-27T10:20:49.954Z",
-    "source": "app_logger"
-  },
-  {
-    "level": "debug",
-    "category": "Plays",
-    "message": "Calculated plays info",
-    "data": {
-      "allowed": 4,
-      "used": 4,
-      "remaining": 0
-    },
-    "timestamp": "2026-01-27T10:20:50.625Z",
-    "source": "app_logger"
-  },
-  {
-    "level": "debug",
-    "category": "Plays",
-    "message": "Fetching info for user 9d97c5fe-9051-4da5-881a-f4f380cbb6b0",
-    "data": {
-      "isAdmin": false,
-      "allowed": 4
-    },
-    "timestamp": "2026-01-27T10:21:31.030Z",
-    "source": "app_logger"
-  },
-  {
-    "level": "info",
-    "category": "System",
-    "message": "🧪 MODE SIMULATION : Statut Admin désactivé pour test.",
-    "timestamp": "2026-01-27T10:21:31.021Z",
-    "source": "app_logger"
-  },
-  {
-    "level": "debug",
-    "category": "Plays",
-    "message": "Fetching info for user 9d97c5fe-9051-4da5-881a-f4f380cbb6b0",
-    "data": {
-      "isAdmin": false,
-      "allowed": 4
-    },
-    "timestamp": "2026-01-27T10:21:31.230Z",
-    "source": "app_logger"
-  },
-  {
-    "level": "info",
-    "category": "System",
-    "message": "🧪 MODE SIMULATION : Statut Admin désactivé pour test.",
-    "timestamp": "2026-01-27T10:21:31.228Z",
-    "source": "app_logger"
-  },
-  {
-    "level": "debug",
-    "category": "Plays",
-    "message": "Calculated plays info",
-    "data": {
-      "allowed": 4,
-      "used": 4,
-      "remaining": 0
-    },
-    "timestamp": "2026-01-27T10:21:31.382Z",
-    "source": "app_logger"
-  },
-  {
-    "level": "debug",
-    "category": "Plays",
-    "message": "Calculated plays info",
-    "data": {
-      "allowed": 4,
-      "used": 4,
-      "remaining": 0
-    },
-    "timestamp": "2026-01-27T10:21:32.289Z",
-    "source": "app_logger"
-  },
-  {
-    "level": "info",
-    "category": "System",
-    "message": "🧪 MODE SIMULATION : Statut Admin désactivé pour test.",
-    "timestamp": "2026-01-27T10:22:28.518Z",
-    "source": "app_logger"
-  },
-  {
-    "level": "debug",
-    "category": "Plays",
-    "message": "Fetching info for user 9d97c5fe-9051-4da5-881a-f4f380cbb6b0",
-    "data": {
-      "isAdmin": false,
-      "allowed": 4
-    },
-    "timestamp": "2026-01-27T10:22:28.520Z",
-    "source": "app_logger"
-  },
-  {
-    "level": "info",
-    "category": "System",
-    "message": "🧪 MODE SIMULATION : Statut Admin désactivé pour test.",
-    "timestamp": "2026-01-27T10:22:28.579Z",
-    "source": "app_logger"
-  },
-  {
-    "level": "debug",
-    "category": "Plays",
-    "message": "Fetching info for user 9d97c5fe-9051-4da5-881a-f4f380cbb6b0",
-    "data": {
-      "isAdmin": false,
-      "allowed": 4
-    },
-    "timestamp": "2026-01-27T10:22:28.583Z",
-    "source": "app_logger"
-  },
-  {
-    "level": "debug",
-    "category": "Plays",
-    "message": "Calculated plays info",
-    "data": {
-      "allowed": 4,
-      "used": 4,
-      "remaining": 0
-    },
-    "timestamp": "2026-01-27T10:22:28.832Z",
-    "source": "app_logger"
-  },
-  {
-    "level": "debug",
-    "category": "Plays",
-    "message": "Calculated plays info",
-    "data": {
-      "allowed": 4,
-      "used": 4,
-      "remaining": 0
-    },
-    "timestamp": "2026-01-27T10:22:29.048Z",
-    "source": "app_logger"
-  },
-  {
-    "timestamp": "2026-01-27T10:23:35.697Z",
-    "source": "reactotron",
-    "type": "state.values.subscribe",
-    "payload": {
-      "paths": []
-    }
-  },
-  {
-    "level": "info",
-    "category": "System",
-    "message": "🧪 MODE SIMULATION : Statut Admin désactivé pour test.",
-    "timestamp": "2026-01-27T10:23:45.187Z",
-    "source": "app_logger"
-  },
-  {
-    "level": "debug",
-    "category": "Plays",
-    "message": "Fetching info for user 9d97c5fe-9051-4da5-881a-f4f380cbb6b0",
-    "data": {
-      "isAdmin": false,
-      "allowed": 4
-    },
-    "timestamp": "2026-01-27T10:23:45.207Z",
-    "source": "app_logger"
-  },
-  {
-    "level": "debug",
-    "category": "Plays",
-    "message": "Fetching info for user 9d97c5fe-9051-4da5-881a-f4f380cbb6b0",
-    "data": {
-      "isAdmin": false,
-      "allowed": 4
-    },
-    "timestamp": "2026-01-27T10:23:45.393Z",
-    "source": "app_logger"
-  },
-  {
-    "level": "info",
-    "category": "System",
-    "message": "🧪 MODE SIMULATION : Statut Admin désactivé pour test.",
-    "timestamp": "2026-01-27T10:23:45.392Z",
-    "source": "app_logger"
-  },
-  {
-    "level": "debug",
-    "category": "Plays",
-    "message": "Calculated plays info",
-    "data": {
-      "allowed": 4,
-      "used": 4,
-      "remaining": 0
-    },
-    "timestamp": "2026-01-27T10:23:47.238Z",
-    "source": "app_logger"
-  },
-  {
-    "level": "debug",
-    "category": "Plays",
-    "message": "Calculated plays info",
-    "data": {
-      "allowed": 4,
-      "used": 4,
-      "remaining": 0
-    },
-    "timestamp": "2026-01-27T10:23:47.866Z",
-    "source": "app_logger"
-  },
-  {
-    "timestamp": "2026-01-27T10:26:34.261Z",
-    "source": "reactotron",
-    "type": "state.values.subscribe",
-    "payload": {
-      "paths": []
-    }
-  },
-  {
-    "level": "info",
-    "category": "System",
-    "message": "🧪 MODE SIMULATION : Statut Admin désactivé pour test.",
-    "timestamp": "2026-01-27T10:26:33.715Z",
-    "source": "app_logger"
-  },
-  {
-    "level": "debug",
-    "category": "Plays",
-    "message": "Fetching info for user 9d97c5fe-9051-4da5-881a-f4f380cbb6b0",
-    "data": {
-      "isAdmin": false,
-      "allowed": 4
-    },
-    "timestamp": "2026-01-27T10:26:33.720Z",
-    "source": "app_logger"
-  },
-  {
-    "level": "info",
-    "category": "System",
-    "message": "🧪 MODE SIMULATION : Statut Admin désactivé pour test.",
-    "timestamp": "2026-01-27T10:26:33.938Z",
-    "source": "app_logger"
-  },
-  {
-    "level": "debug",
-    "category": "Plays",
-    "message": "Fetching info for user 9d97c5fe-9051-4da5-881a-f4f380cbb6b0",
-    "data": {
-      "isAdmin": false,
-      "allowed": 4
-    },
-    "timestamp": "2026-01-27T10:26:33.939Z",
-    "source": "app_logger"
-  },
-  {
-    "level": "debug",
-    "category": "Plays",
-    "message": "Calculated plays info",
-    "data": {
-      "allowed": 4,
-      "used": 4,
-      "remaining": 0
-    },
-    "timestamp": "2026-01-27T10:26:34.150Z",
-    "source": "app_logger"
-  },
-  {
-    "level": "debug",
-    "category": "Plays",
-    "message": "Calculated plays info",
-    "data": {
-      "allowed": 4,
-      "used": 4,
-      "remaining": 0
-    },
-    "timestamp": "2026-01-27T10:26:34.321Z",
-    "source": "app_logger"
-  },
-  {
-    "timestamp": "2026-01-27T10:26:57.003Z",
-    "source": "reactotron",
-    "type": "state.values.subscribe",
-    "payload": {
-      "paths": []
-    }
-  },
-  {
-    "level": "info",
-    "category": "System",
-    "message": "🧪 MODE SIMULATION : Statut Admin désactivé pour test.",
-    "timestamp": "2026-01-27T10:26:57.277Z",
-    "source": "app_logger"
-  },
-  {
-    "level": "debug",
-    "category": "Plays",
-    "message": "Fetching info for user 9d97c5fe-9051-4da5-881a-f4f380cbb6b0",
-    "data": {
-      "isAdmin": false,
-      "allowed": 4
-    },
-    "timestamp": "2026-01-27T10:26:57.278Z",
-    "source": "app_logger"
-  },
-  {
-    "level": "info",
-    "category": "System",
-    "message": "🧪 MODE SIMULATION : Statut Admin désactivé pour test.",
-    "timestamp": "2026-01-27T10:26:58.399Z",
-    "source": "app_logger"
-  },
-  {
-    "level": "debug",
-    "category": "Plays",
-    "message": "Fetching info for user 9d97c5fe-9051-4da5-881a-f4f380cbb6b0",
-    "data": {
-      "isAdmin": false,
-      "allowed": 4
-    },
-    "timestamp": "2026-01-27T10:26:58.400Z",
-    "source": "app_logger"
-  },
-  {
-    "level": "debug",
-    "category": "Plays",
-    "message": "Calculated plays info",
-    "data": {
-      "allowed": 4,
-      "used": 4,
-      "remaining": 0
-    },
-    "timestamp": "2026-01-27T10:26:58.894Z",
-    "source": "app_logger"
-  },
-  {
-    "level": "debug",
-    "category": "Plays",
-    "message": "Calculated plays info",
-    "data": {
-      "allowed": 4,
-      "used": 4,
-      "remaining": 0
-    },
-    "timestamp": "2026-01-27T10:26:59.319Z",
-    "source": "app_logger"
-  },
-  {
-    "timestamp": "2026-01-27T10:27:47.948Z",
-    "source": "reactotron",
-    "type": "state.values.subscribe",
-    "payload": {
-      "paths": []
-    }
-  },
-  {
-    "level": "info",
-    "category": "System",
-    "message": "🧪 MODE SIMULATION : Statut Admin désactivé pour test.",
-    "timestamp": "2026-01-27T10:28:05.983Z",
-    "source": "app_logger"
-  },
-  {
-    "level": "info",
-    "category": "System",
-    "message": "[GameScreenPage] Rendering for mode: classic",
-    "timestamp": "2026-01-27T10:28:06.745Z",
-    "source": "app_logger"
-  },
-  {
-    "level": "debug",
-    "category": "Plays",
-    "message": "Fetching info for user 9d97c5fe-9051-4da5-881a-f4f380cbb6b0",
-    "data": {
-      "isAdmin": false,
-      "allowed": 9
-    },
-    "timestamp": "2026-01-27T10:28:06.110Z",
-    "source": "app_logger"
-  },
-  {
-    "level": "info",
-    "category": "System",
-    "message": "🧪 MODE SIMULATION : Statut Admin désactivé pour test.",
-    "timestamp": "2026-01-27T10:28:18.474Z",
-    "source": "app_logger"
-  },
-  {
-    "level": "debug",
-    "category": "Plays",
-    "message": "Fetching info for user 9d97c5fe-9051-4da5-881a-f4f380cbb6b0",
-    "data": {
-      "isAdmin": false,
-      "allowed": 9
-    },
-    "timestamp": "2026-01-27T10:28:18.928Z",
-    "source": "app_logger"
-  },
-  {
-    "level": "debug",
-    "category": "Plays",
-    "message": "Calculated plays info",
-    "data": {
-      "allowed": 9,
-      "used": 4,
-      "remaining": 5
-    },
-    "timestamp": "2026-01-27T10:28:22.834Z",
-    "source": "app_logger"
-  },
-  {
-    "level": "info",
-    "category": "Plays",
-    "message": "[startRun] Beginning startRun for mode: classic",
-    "timestamp": "2026-01-27T10:28:29.058Z",
-    "source": "app_logger"
-  },
-  {
-    "level": "debug",
-    "category": "Plays",
-    "message": "Calculated plays info",
-    "data": {
-      "allowed": 9,
-      "used": 4,
-      "remaining": 5
-    },
-    "timestamp": "2026-01-27T10:28:30.901Z",
-    "source": "app_logger"
-  },
-  {
-    "level": "debug",
-    "category": "Plays",
-    "message": "Fetching info for user 9d97c5fe-9051-4da5-881a-f4f380cbb6b0",
-    "data": {
-      "isAdmin": false,
-      "allowed": 9
-    },
-    "timestamp": "2026-01-27T10:28:38.401Z",
-    "source": "app_logger"
-  },
-  {
-    "level": "info",
-    "category": "System",
-    "message": "🧪 MODE SIMULATION : Statut Admin désactivé pour test.",
-    "timestamp": "2026-01-27T10:28:38.356Z",
-    "source": "app_logger"
-  },
-  {
-    "level": "debug",
-    "category": "Plays",
-    "message": "Calculated plays info",
-    "data": {
-      "allowed": 9,
-      "used": 4,
-      "remaining": 5
-    },
-    "timestamp": "2026-01-27T10:28:41.072Z",
-    "source": "app_logger"
-  },
-  {
-    "level": "info",
-    "category": "System",
-    "message": "🧪 MODE SIMULATION : Statut Admin désactivé pour test.",
-    "timestamp": "2026-01-27T10:28:41.685Z",
-    "source": "app_logger"
-  },
-  {
-    "level": "debug",
-    "category": "Plays",
-    "message": "Fetching info for user 9d97c5fe-9051-4da5-881a-f4f380cbb6b0",
-    "data": {
-      "isAdmin": false,
-      "allowed": 9
-    },
-    "timestamp": "2026-01-27T10:28:41.690Z",
-    "source": "app_logger"
-  },
-  {
-    "level": "debug",
-    "category": "Plays",
-    "message": "Calculated plays info",
-    "data": {
-      "allowed": 9,
-      "used": 4,
-      "remaining": 5
-    },
-    "timestamp": "2026-01-27T10:28:55.469Z",
-    "source": "app_logger"
-  },
-  {
-    "level": "info",
-    "category": "System",
-    "message": "🧪 MODE SIMULATION : Statut Admin désactivé pour test.",
-    "timestamp": "2026-01-27T10:29:24.148Z",
-    "source": "app_logger"
-  },
-  {
-    "level": "debug",
-    "category": "Plays",
-    "message": "Fetching info for user 9d97c5fe-9051-4da5-881a-f4f380cbb6b0",
-    "data": {
-      "isAdmin": false,
-      "allowed": 9
-    },
-    "timestamp": "2026-01-27T10:29:24.263Z",
-    "source": "app_logger"
-  },
-  {
-    "level": "debug",
-    "category": "Plays",
-    "message": "Calculated plays info",
-    "data": {
-      "allowed": 9,
-      "used": 5,
-      "remaining": 4
-    },
-    "timestamp": "2026-01-27T10:29:24.801Z",
-    "source": "app_logger"
-  },
-  {
-    "level": "info",
-    "category": "System",
-    "message": "[GameScreenPage] Rendering for mode: classic",
-    "timestamp": "2026-01-27T10:36:18.823Z",
-    "source": "app_logger"
-  },
-  {
-    "level": "info",
-    "category": "Plays",
-    "message": "[startRun] Beginning startRun for mode: classic",
-    "timestamp": "2026-01-27T10:36:20.716Z",
-    "source": "app_logger"
-  },
-  {
-    "level": "info",
-    "category": "System",
-    "message": "[GameScreenPage] Rendering for mode: classic",
-    "timestamp": "2026-01-27T10:36:27.305Z",
-    "source": "app_logger"
-  },
-  {
-    "level": "warn",
-    "category": "Plays",
-    "message": "[startRun] Already starting a run, ignoring duplicate call",
-    "timestamp": "2026-01-27T10:36:28.876Z",
-    "source": "app_logger"
-  },
-  {
-    "level": "info",
-    "category": "System",
-    "message": "[GameScreenPage] Rendering for mode: classic",
-    "timestamp": "2026-01-27T10:36:35.766Z",
-    "source": "app_logger"
-  },
-  {
-    "level": "info",
-    "category": "Plays",
-    "message": "[startRun] Beginning startRun for mode: classic",
-    "timestamp": "2026-01-27T10:36:37.241Z",
-    "source": "app_logger"
-  },
-  {
-    "level": "info",
-    "category": "System",
-    "message": "[GameScreenPage] Rendering for mode: classic",
-    "timestamp": "2026-01-27T10:36:49.723Z",
-    "source": "app_logger"
-  },
-  {
-    "level": "info",
-    "category": "Plays",
-    "message": "[startRun] Beginning startRun for mode: classic",
-    "timestamp": "2026-01-27T10:36:51.286Z",
-    "source": "app_logger"
-  },
-  {
-    "level": "info",
-    "category": "System",
-    "message": "[GameScreenPage] Rendering for mode: classic",
-    "timestamp": "2026-01-27T10:37:02.596Z",
-    "source": "app_logger"
-  },
-  {
-    "level": "info",
-    "category": "Plays",
-    "message": "[startRun] Beginning startRun for mode: classic",
-    "timestamp": "2026-01-27T10:37:03.929Z",
-    "source": "app_logger"
-  },
-  {
-    "level": "info",
-    "category": "System",
-    "message": "[GameScreenPage] Rendering for mode: classic",
-    "timestamp": "2026-01-27T10:37:56.922Z",
-    "source": "app_logger"
-  },
-  {
-    "level": "info",
-    "category": "Plays",
-    "message": "[startRun] Beginning startRun for mode: classic",
-    "timestamp": "2026-01-27T10:37:58.155Z",
-    "source": "app_logger"
-  },
-  {
-    "level": "info",
-    "category": "System",
-    "message": "[GameScreenPage] Rendering for mode: classic",
-    "timestamp": "2026-01-27T10:38:07.778Z",
-    "source": "app_logger"
-  },
-  {
-    "level": "info",
-    "category": "Plays",
-    "message": "[startRun] Beginning startRun for mode: classic",
-    "timestamp": "2026-01-27T10:38:09.297Z",
-    "source": "app_logger"
-  },
-  {
-    "level": "info",
-    "category": "System",
-    "message": "[GameScreenPage] Rendering for mode: classic",
-    "timestamp": "2026-01-27T10:38:28.324Z",
-    "source": "app_logger"
-  },
-  {
-    "level": "info",
-    "category": "Plays",
-    "message": "[startRun] Beginning startRun for mode: classic",
-    "timestamp": "2026-01-27T10:38:30.233Z",
-    "source": "app_logger"
-  },
-  {
-    "timestamp": "2026-01-27T10:43:16.407Z",
-    "source": "reactotron",
-    "type": "state.values.subscribe",
-    "payload": {
-      "paths": []
-    }
-  },
-  {
-    "timestamp": "2026-01-27T10:58:13.101Z",
-    "source": "reactotron",
-    "type": "state.values.subscribe",
-    "payload": {
-      "paths": []
-    }
-  },
-  {
-    "level": "info",
-    "category": "System",
-    "message": "[GameScreenPage] Rendering for mode: precision",
-    "timestamp": "2026-01-27T10:58:21.907Z",
-    "source": "app_logger"
-  },
-  {
-    "level": "info",
-    "category": "System",
-    "message": "[GameScreenPage] Rendering for mode: classic",
-    "timestamp": "2026-01-27T10:58:39.111Z",
-    "source": "app_logger"
-  },
-  {
-    "level": "info",
-    "category": "Plays",
-    "message": "[startRun] Beginning startRun for mode: classic",
-    "timestamp": "2026-01-27T10:58:39.770Z",
-    "source": "app_logger"
-  },
-  {
-    "level": "info",
-    "category": "Plays",
-    "message": "[startRun] Run successfully created in DB with ID: 2bdfba46-fde2-43f5-a6b7-0054c9223e22",
-    "timestamp": "2026-01-27T10:58:40.951Z",
-    "source": "app_logger"
-  },
-  {
-    "level": "info",
-    "category": "System",
-    "message": "[GameScreenPage] Rendering for mode: classic",
-    "timestamp": "2026-01-27T11:00:33.710Z",
-    "source": "app_logger"
-  },
-  {
-    "level": "info",
-    "category": "Plays",
-    "message": "[startRun] Beginning startRun for mode: classic",
-    "timestamp": "2026-01-27T11:00:35.036Z",
-    "source": "app_logger"
-  },
-  {
-    "level": "info",
-    "category": "Plays",
-    "message": "[startRun] Run successfully created in DB with ID: 545af5e5-312a-4b96-8dce-a71cce0d6b84",
-    "timestamp": "2026-01-27T11:00:41.774Z",
-    "source": "app_logger"
-  },
-  {
-    "level": "info",
-    "category": "System",
-    "message": "[GameScreenPage] Rendering for mode: classic",
-    "timestamp": "2026-01-27T11:01:19.168Z",
-    "source": "app_logger"
-  },
-  {
-    "level": "info",
-    "category": "Plays",
-    "message": "[startRun] Beginning startRun for mode: classic",
-    "timestamp": "2026-01-27T11:01:20.272Z",
-    "source": "app_logger"
-  },
-  {
-    "level": "info",
-    "category": "System",
-    "message": "[GameScreenPage] Rendering for mode: classic",
-    "timestamp": "2026-01-27T11:01:55.871Z",
-    "source": "app_logger"
-  },
-  {
-    "level": "info",
-    "category": "Plays",
-    "message": "[startRun] Beginning startRun for mode: classic",
-    "timestamp": "2026-01-27T11:01:57.177Z",
-    "source": "app_logger"
-  },
-  {
-    "level": "info",
-    "category": "System",
-    "message": "[GameScreenPage] Rendering for mode: classic",
-    "timestamp": "2026-01-27T11:02:16.764Z",
-    "source": "app_logger"
-  },
-  {
-    "level": "info",
-    "category": "Plays",
-    "message": "[startRun] Beginning startRun for mode: classic",
-    "timestamp": "2026-01-27T11:02:17.903Z",
-    "source": "app_logger"
-  },
-  {
-    "level": "info",
-    "category": "System",
-    "message": "[GameScreenPage] Rendering for mode: classic",
-    "timestamp": "2026-01-27T11:02:23.004Z",
-    "source": "app_logger"
-  },
-  {
-    "level": "info",
-    "category": "Plays",
-    "message": "[startRun] Beginning startRun for mode: classic",
-    "timestamp": "2026-01-27T11:02:24.512Z",
-    "source": "app_logger"
-  },
-  {
-    "timestamp": "2026-01-27T11:05:55.222Z",
-    "source": "reactotron",
-    "type": "state.values.subscribe",
-    "payload": {
-      "paths": []
-    }
-  },
-  {
-    "level": "info",
-    "category": "System",
-    "message": "[GameScreenPage] Rendering for mode: classic",
-    "timestamp": "2026-01-27T11:06:05.736Z",
-    "source": "app_logger"
-  },
-  {
-    "level": "info",
-    "category": "Plays",
-    "message": "[startRun] Beginning startRun for mode: classic",
-    "timestamp": "2026-01-27T11:06:06.621Z",
-    "source": "app_logger"
-  },
-  {
-    "level": "info",
-    "category": "Plays",
-    "message": "[startRun] Run successfully created in DB with ID: d3662f8d-7fc9-42df-a3ad-8227b3704f9b",
-    "timestamp": "2026-01-27T11:06:07.830Z",
-    "source": "app_logger"
-  },
-  {
-    "level": "info",
-    "category": "GameLogic",
-    "message": "[GameContentA] Modal 'Menu' clicked. Resetting ads and calling parent menu logic.",
-    "timestamp": "2026-01-27T11:06:46.306Z",
-    "source": "app_logger"
-  },
-  {
-    "timestamp": "2026-01-27T11:10:49.931Z",
-    "source": "reactotron",
-    "type": "state.values.subscribe",
-    "payload": {
-      "paths": []
-    }
-  },
-  {
-    "timestamp": "2026-01-27T11:12:47.038Z",
-    "source": "reactotron",
-    "type": "state.values.subscribe",
-    "payload": {
-      "paths": []
-    }
-  },
-  {
-    "level": "info",
-    "category": "System",
-    "message": "[GameScreenPage] Rendering for mode: precision",
-    "timestamp": "2026-01-27T11:12:52.521Z",
-    "source": "app_logger"
-  },
-  {
-    "timestamp": "2026-01-27T11:17:13.024Z",
-    "source": "reactotron",
-    "type": "state.values.subscribe",
-    "payload": {
-      "paths": []
-    }
-  },
-  {
-    "timestamp": "2026-01-27T11:18:15.589Z",
-    "source": "reactotron",
-    "type": "state.values.subscribe",
-    "payload": {
-      "paths": []
-    }
-  },
-  {
-    "timestamp": "2026-01-27T11:20:10.543Z",
-    "source": "reactotron",
-    "type": "state.values.subscribe",
-    "payload": {
-      "paths": []
-    }
-  },
-  {
-    "timestamp": "2026-01-27T11:21:06.222Z",
-    "source": "reactotron",
-    "type": "state.values.subscribe",
-    "payload": {
-      "paths": []
-    }
-  },
-  {
-    "level": "info",
-    "category": "System",
-    "message": "[GameScreenPage] Rendering for mode: precision",
-    "timestamp": "2026-01-27T11:21:48.532Z",
-    "source": "app_logger"
-  },
-  {
-    "level": "info",
-    "category": "System",
-    "message": "[GameScreenPage] Rendering for mode: classic",
-    "timestamp": "2026-01-27T11:21:58.324Z",
-    "source": "app_logger"
-  },
-  {
-    "timestamp": "2026-01-27T11:24:45.218Z",
-    "source": "reactotron",
-    "type": "state.values.subscribe",
-    "payload": {
-      "paths": []
-    }
-  },
-  {
-    "level": "info",
-    "category": "Ads",
-    "message": "Attempting to grant extra play",
-    "data": {
-      "userId": "9d97c5fe-9051-4da5-881a-f4f380cbb6b0"
-    },
-    "timestamp": "2026-01-27T11:33:25.718Z",
-    "source": "app_logger"
-  },
-  {
-    "level": "debug",
-    "category": "Ads",
-    "message": "Updating parties_per_day from 9 to 10",
-    "timestamp": "2026-01-27T11:33:26.670Z",
-    "source": "app_logger"
-  },
-  {
-    "level": "info",
-    "category": "Ads",
-    "message": "Successfully updated profile",
-    "timestamp": "2026-01-27T11:33:27.007Z",
-    "source": "app_logger"
-  },
-  {
-    "level": "info",
-    "category": "System",
-    "message": "[GameScreenPage] Rendering for mode: classic",
-    "timestamp": "2026-01-27T11:33:33.518Z",
-    "source": "app_logger"
-  },
-  {
-    "level": "info",
-    "category": "Plays",
-    "message": "[startRun] Run successfully created in DB with ID: 13db1c00-f2c8-406c-9da0-e8867999a9b9",
-    "timestamp": "2026-01-27T11:33:37.990Z",
-    "source": "app_logger"
-  },
-  {
-    "timestamp": "2026-01-27T11:40:32.953Z",
-    "source": "reactotron",
-    "type": "state.values.subscribe",
-    "payload": {
-      "paths": []
-    }
-  },
-  {
-    "timestamp": "2026-01-27T11:43:26.157Z",
-    "source": "reactotron",
-    "type": "state.values.subscribe",
-    "payload": {
-      "paths": []
-    }
-  },
-  {
-    "timestamp": "2026-01-27T11:50:09.256Z",
-    "source": "reactotron",
-    "type": "state.values.subscribe",
-    "payload": {
-      "paths": []
-    }
-  },
-  {
-    "timestamp": "2026-01-27T11:53:39.257Z",
-    "source": "reactotron",
-    "type": "state.values.subscribe",
-    "payload": {
-      "paths": []
-    }
-  },
-  {
-    "timestamp": "2026-01-27T12:05:07.343Z",
-    "source": "reactotron",
-    "type": "state.values.subscribe",
-    "payload": {
-      "paths": []
-    }
-  },
-  {
-    "timestamp": "2026-01-27T12:08:31.316Z",
-    "source": "reactotron",
-    "type": "state.values.subscribe",
-    "payload": {
-      "paths": []
-    }
-  },
-  {
-    "timestamp": "2026-01-27T12:17:56.035Z",
-    "source": "reactotron",
-    "type": "state.values.subscribe",
-    "payload": {
-      "paths": []
-    }
-  },
-  {
-    "timestamp": "2026-01-27T12:21:06.736Z",
-    "source": "reactotron",
-    "type": "state.values.subscribe",
-    "payload": {
-      "paths": []
-    }
-  },
-  {
-    "timestamp": "2026-01-27T12:22:55.149Z",
-    "source": "reactotron",
-    "type": "state.values.subscribe",
-    "payload": {
-      "paths": []
-    }
-  },
-  {
-    "timestamp": "2026-01-27T12:24:08.221Z",
-    "source": "reactotron",
-    "type": "state.values.subscribe",
-    "payload": {
-      "paths": []
-    }
-  },
-  {
-    "timestamp": "2026-01-27T12:26:54.371Z",
-    "source": "reactotron",
-    "type": "state.values.subscribe",
-    "payload": {
-      "paths": []
-    }
-  },
-  {
-    "timestamp": "2026-01-27T12:28:38.585Z",
-    "source": "reactotron",
-    "type": "state.values.subscribe",
-    "payload": {
-      "paths": []
-    }
-  },
-  {
-    "timestamp": "2026-01-27T12:33:43.803Z",
-    "source": "reactotron",
-    "type": "state.values.subscribe",
-    "payload": {
-      "paths": []
-    }
-  },
-  {
-    "timestamp": "2026-01-27T12:43:27.100Z",
-    "source": "reactotron",
-    "type": "state.values.subscribe",
-    "payload": {
-      "paths": []
-    }
-  },
-  {
-    "timestamp": "2026-01-27T12:50:17.350Z",
-    "source": "reactotron",
-    "type": "state.values.subscribe",
-    "payload": {
-      "paths": []
-    }
-  },
-  {
-    "timestamp": "2026-01-27T12:52:19.381Z",
-    "source": "reactotron",
-    "type": "state.values.subscribe",
-    "payload": {
-      "paths": []
-    }
-  },
-  {
-    "timestamp": "2026-01-27T12:55:53.896Z",
-    "source": "reactotron",
-    "type": "state.values.subscribe",
-    "payload": {
-      "paths": []
-    }
-  },
-  {
-    "timestamp": "2026-01-27T12:56:44.171Z",
-    "source": "reactotron",
-    "type": "state.values.subscribe",
-    "payload": {
-      "paths": []
-    }
-  },
-  {
-    "level": "info",
-    "category": "Ads",
-    "message": "Attempting to grant extra play",
-    "data": {
-      "userId": "9d97c5fe-9051-4da5-881a-f4f380cbb6b0"
-    },
-    "timestamp": "2026-01-27T13:06:03.581Z",
-    "source": "app_logger"
-  },
-  {
-    "level": "debug",
-    "category": "Ads",
-    "message": "Updating parties_per_day from 4 to 5",
-    "timestamp": "2026-01-27T13:06:04.381Z",
-    "source": "app_logger"
-  },
-  {
-    "level": "info",
-    "category": "Ads",
-    "message": "Successfully updated profile",
-    "timestamp": "2026-01-27T13:06:04.599Z",
-    "source": "app_logger"
-  },
-  {
-    "level": "debug",
-    "category": "Plays",
-    "message": "Fetching plays info from Supabase",
-    "timestamp": "2026-01-27T13:12:46.842Z",
-    "source": "app_logger"
-  },
-  {
-    "level": "debug",
-    "category": "Plays",
-    "message": "Fetching plays info from Supabase",
-    "timestamp": "2026-01-27T13:12:46.868Z",
-    "source": "app_logger"
-  },
-  {
-    "level": "debug",
-    "category": "Plays",
-    "message": "Fetching plays info from Supabase",
-    "timestamp": "2026-01-27T13:12:46.907Z",
-    "source": "app_logger"
-  },
-  {
-    "level": "debug",
-    "category": "Plays",
-    "message": "Calculated plays info",
-    "data": {
-      "allowed": 5,
-      "used": 10,
-      "remaining": 0,
-      "isAdmin": false,
-      "userId": "9d97c5fe-9051-4da5-881a-f4f380cbb6b0"
-    },
-    "timestamp": "2026-01-27T13:12:48.504Z",
-    "source": "app_logger"
-  },
-  {
-    "level": "debug",
-    "category": "Plays",
-    "message": "Calculated plays info",
-    "data": {
-      "allowed": 5,
-      "used": 10,
-      "remaining": 0,
-      "isAdmin": false,
-      "userId": "9d97c5fe-9051-4da5-881a-f4f380cbb6b0"
-    },
-    "timestamp": "2026-01-27T13:12:48.713Z",
-    "source": "app_logger"
-  },
-  {
-    "level": "debug",
-    "category": "Plays",
-    "message": "Calculated plays info",
-    "data": {
-      "allowed": 5,
-      "used": 10,
-      "remaining": 0,
-      "isAdmin": false,
-      "userId": "9d97c5fe-9051-4da5-881a-f4f380cbb6b0"
-    },
-    "timestamp": "2026-01-27T13:12:48.718Z",
-    "source": "app_logger"
-  },
-  {
-    "level": "debug",
-    "category": "Plays",
-    "message": "Fetching plays info from Supabase",
-    "timestamp": "2026-01-27T13:12:50.387Z",
-    "source": "app_logger"
-  },
-  {
-    "level": "debug",
-    "category": "Plays",
-    "message": "Fetching plays info from Supabase",
-    "timestamp": "2026-01-27T13:12:50.391Z",
-    "source": "app_logger"
-  },
-  {
-    "level": "debug",
-    "category": "Plays",
-    "message": "Fetching plays info from Supabase",
-    "timestamp": "2026-01-27T13:12:50.406Z",
-    "source": "app_logger"
-  },
-  {
-    "level": "debug",
-    "category": "Plays",
-    "message": "Fetching plays info from Supabase",
-    "timestamp": "2026-01-27T13:12:51.603Z",
-    "source": "app_logger"
-  },
-  {
-    "level": "debug",
-    "category": "Plays",
-    "message": "Fetching plays info from Supabase",
-    "timestamp": "2026-01-27T13:12:51.607Z",
-    "source": "app_logger"
-  },
-  {
-    "level": "debug",
-    "category": "Plays",
-    "message": "Fetching plays info from Supabase",
-    "timestamp": "2026-01-27T13:12:51.620Z",
-    "source": "app_logger"
-  },
-  {
-    "level": "debug",
-    "category": "Plays",
-    "message": "Calculated plays info",
-    "data": {
-      "allowed": 5,
-      "used": 10,
-      "remaining": 0,
-      "isAdmin": false,
-      "userId": "9d97c5fe-9051-4da5-881a-f4f380cbb6b0"
-    },
-    "timestamp": "2026-01-27T13:12:52.574Z",
-    "source": "app_logger"
-  },
-  {
-    "level": "debug",
-    "category": "Plays",
-    "message": "Calculated plays info",
-    "data": {
-      "allowed": 5,
-      "used": 10,
-      "remaining": 0,
-      "isAdmin": false,
-      "userId": "9d97c5fe-9051-4da5-881a-f4f380cbb6b0"
-    },
-    "timestamp": "2026-01-27T13:12:52.566Z",
-    "source": "app_logger"
-  },
-  {
-    "level": "debug",
-    "category": "Plays",
-    "message": "Calculated plays info",
-    "data": {
-      "allowed": 5,
-      "used": 10,
-      "remaining": 0,
-      "isAdmin": false,
-      "userId": "9d97c5fe-9051-4da5-881a-f4f380cbb6b0"
-    },
-    "timestamp": "2026-01-27T13:12:53.853Z",
-    "source": "app_logger"
-  },
-  {
-    "level": "debug",
-    "category": "Plays",
-    "message": "Calculated plays info",
-    "data": {
-      "allowed": 5,
-      "used": 10,
-      "remaining": 0,
-      "isAdmin": false,
-      "userId": "9d97c5fe-9051-4da5-881a-f4f380cbb6b0"
-    },
-    "timestamp": "2026-01-27T13:12:54.121Z",
-    "source": "app_logger"
-  },
-  {
-    "level": "debug",
-    "category": "Plays",
-    "message": "Calculated plays info",
-    "data": {
-      "allowed": 5,
-      "used": 10,
-      "remaining": 0,
-      "isAdmin": false,
-      "userId": "9d97c5fe-9051-4da5-881a-f4f380cbb6b0"
-    },
-    "timestamp": "2026-01-27T13:12:54.353Z",
-    "source": "app_logger"
-  },
-  {
-    "level": "debug",
-    "category": "Plays",
-    "message": "Calculated plays info",
-    "data": {
-      "allowed": 5,
-      "used": 10,
-      "remaining": 0,
-      "isAdmin": false,
-      "userId": "9d97c5fe-9051-4da5-881a-f4f380cbb6b0"
-    },
-    "timestamp": "2026-01-27T13:12:54.360Z",
-    "source": "app_logger"
-  },
-  {
-    "level": "info",
-    "category": "Ads",
-    "message": "Attempting to grant extra play",
-    "data": {
-      "userId": "9d97c5fe-9051-4da5-881a-f4f380cbb6b0"
-    },
-    "timestamp": "2026-01-27T13:13:16.353Z",
-    "source": "app_logger"
-  },
-  {
-    "level": "debug",
-    "category": "Ads",
-    "message": "Updating parties_per_day from 5 to 6",
-    "timestamp": "2026-01-27T13:13:16.789Z",
-    "source": "app_logger"
-  },
-  {
-    "level": "info",
-    "category": "Ads",
-    "message": "Successfully updated profile",
-    "timestamp": "2026-01-27T13:13:16.956Z",
-    "source": "app_logger"
-  },
-  {
-    "level": "debug",
-    "category": "Plays",
-    "message": "Fetching plays info from Supabase",
-    "timestamp": "2026-01-27T13:13:16.963Z",
-    "source": "app_logger"
-  },
-  {
-    "level": "debug",
-    "category": "Ads",
-    "message": "Refreshing plays info after reward",
-    "timestamp": "2026-01-27T13:13:16.959Z",
-    "source": "app_logger"
-  },
-  {
-    "level": "debug",
-    "category": "Plays",
-    "message": "Calculated plays info",
-    "data": {
-      "allowed": 6,
-      "used": 10,
-      "remaining": 0,
-      "isAdmin": false,
-      "userId": "9d97c5fe-9051-4da5-881a-f4f380cbb6b0"
-    },
-    "timestamp": "2026-01-27T13:13:17.745Z",
-    "source": "app_logger"
-  },
-  {
-    "level": "debug",
-    "category": "Plays",
-    "message": "Fetching plays info from Supabase",
-    "timestamp": "2026-01-27T13:15:23.762Z",
-    "source": "app_logger"
-  },
-  {
-    "level": "debug",
-    "category": "Plays",
-    "message": "Fetching plays info from Supabase",
-    "timestamp": "2026-01-27T13:15:23.747Z",
-    "source": "app_logger"
-  },
-  {
-    "level": "debug",
-    "category": "Plays",
-    "message": "Fetching plays info from Supabase",
-    "timestamp": "2026-01-27T13:15:23.789Z",
-    "source": "app_logger"
-  },
-  {
-    "level": "debug",
-    "category": "Plays",
-    "message": "Calculated plays info",
-    "data": {
-      "allowed": 6,
-      "used": 10,
-      "remaining": 0,
-      "isAdmin": false,
-      "userId": "9d97c5fe-9051-4da5-881a-f4f380cbb6b0"
-    },
-    "timestamp": "2026-01-27T13:15:25.745Z",
-    "source": "app_logger"
-  },
-  {
-    "level": "debug",
-    "category": "Plays",
-    "message": "Calculated plays info",
-    "data": {
-      "allowed": 6,
-      "used": 10,
-      "remaining": 0,
-      "isAdmin": false,
-      "userId": "9d97c5fe-9051-4da5-881a-f4f380cbb6b0"
-    },
-    "timestamp": "2026-01-27T13:15:25.914Z",
-    "source": "app_logger"
-  },
-  {
-    "level": "debug",
-    "category": "Plays",
-    "message": "Calculated plays info",
-    "data": {
-      "allowed": 6,
-      "used": 10,
-      "remaining": 0,
-      "isAdmin": false,
-      "userId": "9d97c5fe-9051-4da5-881a-f4f380cbb6b0"
-    },
-    "timestamp": "2026-01-27T13:15:26.088Z",
-    "source": "app_logger"
-  },
-  {
-    "level": "info",
-    "category": "Ads",
-    "message": "Attempting to grant extra play",
-    "data": {
-      "userId": "9d97c5fe-9051-4da5-881a-f4f380cbb6b0"
-    },
-    "timestamp": "2026-01-27T13:15:44.193Z",
-    "source": "app_logger"
-  },
-  {
-    "level": "debug",
-    "category": "Ads",
-    "message": "Updating parties_per_day from 6 to 11 (Used today: 10)",
-    "timestamp": "2026-01-27T13:15:44.507Z",
-    "source": "app_logger"
-  },
-  {
-    "level": "info",
-    "category": "Ads",
-    "message": "Successfully updated profile",
-    "timestamp": "2026-01-27T13:15:44.598Z",
-    "source": "app_logger"
-  },
-  {
-    "level": "debug",
-    "category": "Ads",
-    "message": "Refreshing plays info after reward",
-    "timestamp": "2026-01-27T13:15:44.599Z",
-    "source": "app_logger"
-  },
-  {
-    "level": "debug",
-    "category": "Plays",
-    "message": "Fetching plays info from Supabase",
-    "timestamp": "2026-01-27T13:15:44.600Z",
-    "source": "app_logger"
-  },
-  {
-    "level": "debug",
-    "category": "Plays",
-    "message": "Calculated plays info",
-    "data": {
-      "allowed": 11,
-      "used": 10,
-      "remaining": 1,
-      "isAdmin": false,
-      "userId": "9d97c5fe-9051-4da5-881a-f4f380cbb6b0"
-    },
-    "timestamp": "2026-01-27T13:15:44.947Z",
-    "source": "app_logger"
-  },
-  {
-    "level": "info",
-    "category": "System",
-    "message": "[GameScreenPage] Rendering for mode: classic",
-    "timestamp": "2026-01-27T13:15:53.040Z",
-    "source": "app_logger"
-  },
-  {
-    "level": "debug",
-    "category": "Plays",
-    "message": "Fetching plays info from Supabase",
-    "timestamp": "2026-01-27T13:15:53.087Z",
-    "source": "app_logger"
-  },
-  {
-    "level": "debug",
-    "category": "Plays",
-    "message": "Fetching plays info from Supabase",
-    "timestamp": "2026-01-27T13:15:54.104Z",
-    "source": "app_logger"
-  },
-  {
-    "level": "debug",
-    "category": "Plays",
-    "message": "Calculated plays info",
-    "data": {
-      "allowed": 11,
-      "used": 10,
-      "remaining": 1,
-      "isAdmin": false,
-      "userId": "9d97c5fe-9051-4da5-881a-f4f380cbb6b0"
-    },
-    "timestamp": "2026-01-27T13:15:54.582Z",
-    "source": "app_logger"
-  },
-  {
-    "level": "debug",
-    "category": "Plays",
-    "message": "Calculated plays info",
-    "data": {
-      "allowed": 11,
-      "used": 10,
-      "remaining": 1,
-      "isAdmin": false,
-      "userId": "9d97c5fe-9051-4da5-881a-f4f380cbb6b0"
-    },
-    "timestamp": "2026-01-27T13:15:54.884Z",
-    "source": "app_logger"
-  },
-  {
-    "level": "info",
-    "category": "Plays",
-    "message": "[startRun] Allowed: Starting run creation",
-    "data": {
-      "remaining": 1
-    },
-    "timestamp": "2026-01-27T13:15:54.947Z",
-    "source": "app_logger"
-  },
-  {
-    "level": "info",
-    "category": "Plays",
-    "message": "[startRun] Run successfully created in DB with ID: cd017b78-74c1-4949-808a-22ac61d1741e",
-    "timestamp": "2026-01-27T13:15:55.229Z",
-    "source": "app_logger"
-  },
-  {
-    "level": "debug",
-    "category": "Plays",
-    "message": "Fetching plays info from Supabase",
-    "timestamp": "2026-01-27T13:15:55.230Z",
-    "source": "app_logger"
-  },
-  {
-    "level": "debug",
-    "category": "Plays",
-    "message": "Calculated plays info",
-    "data": {
-      "allowed": 11,
-      "used": 11,
-      "remaining": 0,
-      "isAdmin": false,
-      "userId": "9d97c5fe-9051-4da5-881a-f4f380cbb6b0"
-    },
-    "timestamp": "2026-01-27T13:15:55.535Z",
-    "source": "app_logger"
-  },
-  {
-    "level": "info",
-    "category": "GameLogic",
-    "message": "[GameContentA] Modal 'Menu' clicked. Resetting ads and calling parent menu logic.",
-    "timestamp": "2026-01-27T13:21:39.005Z",
-    "source": "app_logger"
-  },
-  {
-    "level": "debug",
-    "category": "Plays",
-    "message": "Fetching plays info from Supabase",
-    "timestamp": "2026-01-27T13:21:39.340Z",
-    "source": "app_logger"
-  },
-  {
-    "level": "debug",
-    "category": "Plays",
-    "message": "Fetching plays info from Supabase",
-    "timestamp": "2026-01-27T13:21:39.346Z",
-    "source": "app_logger"
-  },
-  {
-    "level": "debug",
-    "category": "Plays",
-    "message": "Fetching plays info from Supabase",
-    "timestamp": "2026-01-27T13:21:39.570Z",
-    "source": "app_logger"
-  },
-  {
-    "level": "debug",
-    "category": "Plays",
-    "message": "Calculated plays info",
-    "data": {
-      "allowed": 4,
-      "used": 11,
-      "remaining": 0,
-      "isAdmin": false,
-      "userId": "9d97c5fe-9051-4da5-881a-f4f380cbb6b0"
-    },
-    "timestamp": "2026-01-27T13:21:41.829Z",
-    "source": "app_logger"
-  },
-  {
-    "level": "debug",
-    "category": "Plays",
-    "message": "Calculated plays info",
-    "data": {
-      "allowed": 4,
-      "used": 11,
-      "remaining": 0,
-      "isAdmin": false,
-      "userId": "9d97c5fe-9051-4da5-881a-f4f380cbb6b0"
-    },
-    "timestamp": "2026-01-27T13:21:41.839Z",
-    "source": "app_logger"
-  },
-  {
-    "level": "debug",
-    "category": "Plays",
-    "message": "Calculated plays info",
-    "data": {
-      "allowed": 4,
-      "used": 11,
-      "remaining": 0,
-      "isAdmin": false,
-      "userId": "9d97c5fe-9051-4da5-881a-f4f380cbb6b0"
-    },
-    "timestamp": "2026-01-27T13:21:42.382Z",
-    "source": "app_logger"
-  },
-  {
-    "level": "info",
-    "category": "Ads",
-    "message": "Attempting to grant extra play",
-    "data": {
-      "userId": "9d97c5fe-9051-4da5-881a-f4f380cbb6b0"
-    },
-    "timestamp": "2026-01-27T13:24:44.690Z",
-    "source": "app_logger"
-  },
-  {
-    "level": "debug",
-    "category": "Ads",
-    "message": "Updating parties_per_day from 4 to 11 (Used today: 10)",
-    "timestamp": "2026-01-27T13:24:45.060Z",
-    "source": "app_logger"
-  },
-  {
-    "level": "info",
-    "category": "Ads",
-    "message": "Successfully updated profile",
-    "timestamp": "2026-01-27T13:24:45.207Z",
-    "source": "app_logger"
-  },
-  {
-    "level": "debug",
-    "category": "Ads",
-    "message": "Refreshing plays info after reward",
-    "timestamp": "2026-01-27T13:24:45.209Z",
-    "source": "app_logger"
-  },
-  {
-    "level": "debug",
-    "category": "Plays",
-    "message": "Fetching plays info from Supabase",
-    "timestamp": "2026-01-27T13:24:45.210Z",
-    "source": "app_logger"
-  },
-  {
-    "level": "debug",
-    "category": "Plays",
-    "message": "Calculated plays info",
-    "data": {
-      "allowed": 11,
-      "used": 11,
-      "remaining": 0,
-      "isAdmin": false,
-      "userId": "9d97c5fe-9051-4da5-881a-f4f380cbb6b0"
-    },
-    "timestamp": "2026-01-27T13:24:45.903Z",
-    "source": "app_logger"
-  },
-  {
-    "level": "debug",
-    "category": "Plays",
-    "message": "Fetching plays info from Supabase",
-    "timestamp": "2026-01-27T13:27:55.371Z",
-    "source": "app_logger"
-  },
-  {
-    "level": "debug",
-    "category": "Plays",
-    "message": "Fetching plays info from Supabase",
-    "timestamp": "2026-01-27T13:27:55.379Z",
-    "source": "app_logger"
-  },
-  {
-    "level": "debug",
-    "category": "Plays",
-    "message": "Fetching plays info from Supabase",
-    "timestamp": "2026-01-27T13:27:55.672Z",
-    "source": "app_logger"
-  },
-  {
-    "level": "debug",
-    "category": "Plays",
-    "message": "Calculated plays info",
-    "data": {
-      "allowed": 11,
-      "used": 11,
-      "remaining": 0,
-      "isAdmin": false,
-      "userId": "9d97c5fe-9051-4da5-881a-f4f380cbb6b0"
-    },
-    "timestamp": "2026-01-27T13:27:58.328Z",
-    "source": "app_logger"
-  },
-  {
-    "level": "debug",
-    "category": "Plays",
-    "message": "Calculated plays info",
-    "data": {
-      "allowed": 11,
-      "used": 11,
-      "remaining": 0,
-      "isAdmin": false,
-      "userId": "9d97c5fe-9051-4da5-881a-f4f380cbb6b0"
-    },
-    "timestamp": "2026-01-27T13:27:58.528Z",
-    "source": "app_logger"
-  },
-  {
-    "level": "debug",
-    "category": "Plays",
-    "message": "Calculated plays info",
-    "data": {
-      "allowed": 11,
-      "used": 11,
-      "remaining": 0,
-      "isAdmin": false,
-      "userId": "9d97c5fe-9051-4da5-881a-f4f380cbb6b0"
-    },
-    "timestamp": "2026-01-27T13:27:58.866Z",
-    "source": "app_logger"
-  },
-  {
-    "level": "debug",
-    "category": "Plays",
-    "message": "Fetching plays info from Supabase",
-    "timestamp": "2026-01-27T13:30:59.609Z",
-    "source": "app_logger"
-  },
-  {
-    "level": "debug",
-    "category": "Plays",
-    "message": "Fetching plays info from Supabase",
-    "timestamp": "2026-01-27T13:30:59.615Z",
-    "source": "app_logger"
-  },
-  {
-    "level": "debug",
-    "category": "Plays",
-    "message": "Fetching plays info from Supabase",
-    "timestamp": "2026-01-27T13:30:59.955Z",
-    "source": "app_logger"
-  },
-  {
-    "level": "debug",
-    "category": "Plays",
-    "message": "Calculated plays info",
-    "data": {
-      "allowed": 11,
-      "used": 11,
-      "remaining": 0,
-      "isAdmin": false,
-      "userId": "9d97c5fe-9051-4da5-881a-f4f380cbb6b0"
-    },
-    "timestamp": "2026-01-27T13:31:02.864Z",
-    "source": "app_logger"
-  },
-  {
-    "level": "debug",
-    "category": "Plays",
-    "message": "Calculated plays info",
-    "data": {
-      "allowed": 11,
-      "used": 11,
-      "remaining": 0,
-      "isAdmin": false,
-      "userId": "9d97c5fe-9051-4da5-881a-f4f380cbb6b0"
-    },
-    "timestamp": "2026-01-27T13:31:02.876Z",
-    "source": "app_logger"
-  },
-  {
-    "level": "debug",
-    "category": "Plays",
-    "message": "Calculated plays info",
-    "data": {
-      "allowed": 11,
-      "used": 11,
-      "remaining": 0,
-      "isAdmin": false,
-      "userId": "9d97c5fe-9051-4da5-881a-f4f380cbb6b0"
-    },
-    "timestamp": "2026-01-27T13:31:03.283Z",
-    "source": "app_logger"
-  },
-  {
-    "level": "debug",
-    "category": "Plays",
-    "message": "Fetching plays info from Supabase",
-    "timestamp": "2026-01-27T13:32:58.805Z",
-    "source": "app_logger"
-  },
-  {
-    "level": "debug",
-    "category": "Plays",
-    "message": "Fetching plays info from Supabase",
-    "timestamp": "2026-01-27T13:32:58.812Z",
-    "source": "app_logger"
-  },
-  {
-    "level": "debug",
-    "category": "Plays",
-    "message": "Fetching plays info from Supabase",
-    "timestamp": "2026-01-27T13:32:59.124Z",
-    "source": "app_logger"
-  },
-  {
-    "level": "debug",
-    "category": "Plays",
-    "message": "Calculated plays info",
-    "data": {
-      "allowed": 11,
-      "used": 11,
-      "remaining": 0,
-      "isAdmin": false,
-      "userId": "9d97c5fe-9051-4da5-881a-f4f380cbb6b0"
-    },
-    "timestamp": "2026-01-27T13:33:02.256Z",
-    "source": "app_logger"
-  },
-  {
-    "level": "debug",
-    "category": "Plays",
-    "message": "Calculated plays info",
-    "data": {
-      "allowed": 11,
-      "used": 11,
-      "remaining": 0,
-      "isAdmin": false,
-      "userId": "9d97c5fe-9051-4da5-881a-f4f380cbb6b0"
-    },
-    "timestamp": "2026-01-27T13:33:02.269Z",
-    "source": "app_logger"
-  },
-  {
-    "level": "debug",
-    "category": "Plays",
-    "message": "Calculated plays info",
-    "data": {
-      "allowed": 11,
-      "used": 11,
-      "remaining": 0,
-      "isAdmin": false,
-      "userId": "9d97c5fe-9051-4da5-881a-f4f380cbb6b0"
-    },
-    "timestamp": "2026-01-27T13:33:02.578Z",
-    "source": "app_logger"
-  },
-  {
-    "timestamp": "2026-01-27T13:36:03.901Z",
-    "source": "reactotron",
-    "type": "state.values.subscribe",
-    "payload": {
-      "paths": []
-    }
-  },
-  {
-    "timestamp": "2026-01-27T13:37:53.646Z",
-    "source": "reactotron",
-    "type": "state.values.subscribe",
-    "payload": {
-      "paths": []
-    }
-  },
-  {
-    "timestamp": "2026-01-27T13:38:43.349Z",
+    "timestamp": "2026-02-10T21:59:56.867Z",
     "source": "reactotron",
     "type": "state.values.subscribe",
     "payload": {
@@ -3106,1280 +19,49 @@
     "level": "debug",
     "category": "Plays",
     "message": "Fetching plays info from Supabase",
-    "timestamp": "2026-01-27T13:38:52.701Z",
+    "timestamp": "2026-02-10T22:00:03.334Z",
     "source": "app_logger"
   },
   {
     "level": "debug",
     "category": "Plays",
     "message": "Fetching plays info from Supabase",
-    "timestamp": "2026-01-27T13:38:52.725Z",
-    "source": "app_logger"
-  },
-  {
-    "level": "debug",
-    "category": "Plays",
-    "message": "Fetching plays info from Supabase",
-    "timestamp": "2026-01-27T13:38:53.219Z",
-    "source": "app_logger"
-  },
-  {
-    "level": "info",
-    "category": "System",
-    "message": "[GameScreenPage] Rendering for mode: precision",
-    "timestamp": "2026-01-27T13:38:55.654Z",
-    "source": "app_logger"
-  },
-  {
-    "level": "info",
-    "category": "Plays",
-    "message": "Rank upgrade detected! Syncing DB quota: 11 -> 100",
-    "timestamp": "2026-01-27T13:38:57.750Z",
-    "source": "app_logger"
-  },
-  {
-    "level": "debug",
-    "category": "Plays",
-    "message": "Quota breakdown",
-    "data": {
-      "xp": 73522,
-      "baseFromRank": 100,
-      "storedQuota": 11
-    },
-    "timestamp": "2026-01-27T13:38:57.734Z",
-    "source": "app_logger"
-  },
-  {
-    "level": "debug",
-    "category": "Plays",
-    "message": "Quota breakdown",
-    "data": {
-      "xp": 73522,
-      "baseFromRank": 100,
-      "storedQuota": 11
-    },
-    "timestamp": "2026-01-27T13:38:57.877Z",
-    "source": "app_logger"
-  },
-  {
-    "level": "info",
-    "category": "Plays",
-    "message": "Rank upgrade detected! Syncing DB quota: 11 -> 100",
-    "timestamp": "2026-01-27T13:38:57.882Z",
-    "source": "app_logger"
-  },
-  {
-    "level": "debug",
-    "category": "Plays",
-    "message": "Quota breakdown",
-    "data": {
-      "xp": 73522,
-      "baseFromRank": 100,
-      "storedQuota": 11
-    },
-    "timestamp": "2026-01-27T13:38:57.895Z",
-    "source": "app_logger"
-  },
-  {
-    "level": "info",
-    "category": "Plays",
-    "message": "Rank upgrade detected! Syncing DB quota: 11 -> 100",
-    "timestamp": "2026-01-27T13:38:57.899Z",
-    "source": "app_logger"
-  },
-  {
-    "level": "debug",
-    "category": "Plays",
-    "message": "Calculated plays info",
-    "data": {
-      "allowed": 100,
-      "used": 11,
-      "remaining": 89,
-      "isAdmin": false,
-      "userId": "9d97c5fe-9051-4da5-881a-f4f380cbb6b0"
-    },
-    "timestamp": "2026-01-27T13:39:00.064Z",
-    "source": "app_logger"
-  },
-  {
-    "level": "debug",
-    "category": "Plays",
-    "message": "Calculated plays info",
-    "data": {
-      "allowed": 100,
-      "used": 11,
-      "remaining": 89,
-      "isAdmin": false,
-      "userId": "9d97c5fe-9051-4da5-881a-f4f380cbb6b0"
-    },
-    "timestamp": "2026-01-27T13:39:00.078Z",
-    "source": "app_logger"
-  },
-  {
-    "level": "debug",
-    "category": "Plays",
-    "message": "Calculated plays info",
-    "data": {
-      "allowed": 100,
-      "used": 11,
-      "remaining": 89,
-      "isAdmin": false,
-      "userId": "9d97c5fe-9051-4da5-881a-f4f380cbb6b0"
-    },
-    "timestamp": "2026-01-27T13:39:00.914Z",
-    "source": "app_logger"
-  },
-  {
-    "level": "debug",
-    "category": "Plays",
-    "message": "Fetching plays info from Supabase",
-    "timestamp": "2026-01-27T13:39:01.187Z",
-    "source": "app_logger"
-  },
-  {
-    "level": "debug",
-    "category": "Plays",
-    "message": "Quota breakdown",
-    "data": {
-      "xp": 73522,
-      "baseFromRank": 100,
-      "storedQuota": 100
-    },
-    "timestamp": "2026-01-27T13:39:01.537Z",
-    "source": "app_logger"
-  },
-  {
-    "level": "debug",
-    "category": "Plays",
-    "message": "Calculated plays info",
-    "data": {
-      "allowed": 100,
-      "used": 11,
-      "remaining": 89,
-      "isAdmin": false,
-      "userId": "9d97c5fe-9051-4da5-881a-f4f380cbb6b0"
-    },
-    "timestamp": "2026-01-27T13:39:01.642Z",
-    "source": "app_logger"
-  },
-  {
-    "level": "debug",
-    "category": "Plays",
-    "message": "Fetching plays info from Supabase",
-    "timestamp": "2026-01-27T13:58:02.683Z",
-    "source": "app_logger"
-  },
-  {
-    "level": "debug",
-    "category": "Plays",
-    "message": "Fetching plays info from Supabase",
-    "timestamp": "2026-01-27T13:58:02.689Z",
-    "source": "app_logger"
-  },
-  {
-    "level": "debug",
-    "category": "Plays",
-    "message": "Fetching plays info from Supabase",
-    "timestamp": "2026-01-27T13:58:02.717Z",
-    "source": "app_logger"
-  },
-  {
-    "level": "debug",
-    "category": "Plays",
-    "message": "Quota breakdown",
-    "data": {
-      "xp": 73522,
-      "baseFromRank": 4,
-      "storedQuota": 100
-    },
-    "timestamp": "2026-01-27T13:58:04.039Z",
-    "source": "app_logger"
-  },
-  {
-    "level": "debug",
-    "category": "Plays",
-    "message": "Quota breakdown",
-    "data": {
-      "xp": 73522,
-      "baseFromRank": 4,
-      "storedQuota": 100
-    },
-    "timestamp": "2026-01-27T13:58:04.169Z",
-    "source": "app_logger"
-  },
-  {
-    "level": "debug",
-    "category": "Plays",
-    "message": "Quota breakdown",
-    "data": {
-      "xp": 73522,
-      "baseFromRank": 4,
-      "storedQuota": 100
-    },
-    "timestamp": "2026-01-27T13:58:04.186Z",
-    "source": "app_logger"
-  },
-  {
-    "level": "debug",
-    "category": "Plays",
-    "message": "Calculated plays info",
-    "data": {
-      "allowed": 100,
-      "used": 11,
-      "remaining": 89,
-      "isAdmin": false,
-      "userId": "9d97c5fe-9051-4da5-881a-f4f380cbb6b0"
-    },
-    "timestamp": "2026-01-27T13:58:04.621Z",
-    "source": "app_logger"
-  },
-  {
-    "level": "debug",
-    "category": "Plays",
-    "message": "Calculated plays info",
-    "data": {
-      "allowed": 100,
-      "used": 11,
-      "remaining": 89,
-      "isAdmin": false,
-      "userId": "9d97c5fe-9051-4da5-881a-f4f380cbb6b0"
-    },
-    "timestamp": "2026-01-27T13:58:05.130Z",
-    "source": "app_logger"
-  },
-  {
-    "level": "debug",
-    "category": "Plays",
-    "message": "Calculated plays info",
-    "data": {
-      "allowed": 100,
-      "used": 11,
-      "remaining": 89,
-      "isAdmin": false,
-      "userId": "9d97c5fe-9051-4da5-881a-f4f380cbb6b0"
-    },
-    "timestamp": "2026-01-27T13:58:05.180Z",
-    "source": "app_logger"
-  },
-  {
-    "timestamp": "2026-01-27T14:42:51.089Z",
-    "source": "reactotron",
-    "type": "state.values.subscribe",
-    "payload": {
-      "paths": []
-    }
-  },
-  {
-    "level": "debug",
-    "category": "Plays",
-    "message": "Fetching plays info from Supabase",
-    "timestamp": "2026-01-27T14:43:28.720Z",
-    "source": "app_logger"
-  },
-  {
-    "level": "debug",
-    "category": "Plays",
-    "message": "Fetching plays info from Supabase",
-    "timestamp": "2026-01-27T14:43:28.704Z",
-    "source": "app_logger"
-  },
-  {
-    "level": "debug",
-    "category": "Plays",
-    "message": "Fetching plays info from Supabase",
-    "timestamp": "2026-01-27T14:43:29.262Z",
-    "source": "app_logger"
-  },
-  {
-    "timestamp": "2026-01-27T14:43:45.906Z",
-    "source": "reactotron",
-    "type": "state.values.subscribe",
-    "payload": {
-      "paths": []
-    }
-  },
-  {
-    "timestamp": "2026-01-27T14:48:11.994Z",
-    "source": "reactotron",
-    "type": "state.values.subscribe",
-    "payload": {
-      "paths": []
-    }
-  },
-  {
-    "level": "debug",
-    "category": "Plays",
-    "message": "Fetching plays info from Supabase",
-    "timestamp": "2026-01-27T14:48:55.484Z",
-    "source": "app_logger"
-  },
-  {
-    "level": "debug",
-    "category": "Plays",
-    "message": "Fetching plays info from Supabase",
-    "timestamp": "2026-01-27T14:48:55.524Z",
-    "source": "app_logger"
-  },
-  {
-    "level": "debug",
-    "category": "Plays",
-    "message": "Fetching plays info from Supabase",
-    "timestamp": "2026-01-27T14:48:56.596Z",
-    "source": "app_logger"
-  },
-  {
-    "timestamp": "2026-01-27T14:49:03.373Z",
-    "source": "reactotron",
-    "type": "state.values.subscribe",
-    "payload": {
-      "paths": []
-    }
-  },
-  {
-    "level": "debug",
-    "category": "Plays",
-    "message": "Fetching plays info from Supabase",
-    "timestamp": "2026-01-27T14:49:07.506Z",
-    "source": "app_logger"
-  },
-  {
-    "level": "debug",
-    "category": "Plays",
-    "message": "Fetching plays info from Supabase",
-    "timestamp": "2026-01-27T14:49:07.489Z",
-    "source": "app_logger"
-  },
-  {
-    "level": "debug",
-    "category": "Plays",
-    "message": "Fetching plays info from Supabase",
-    "timestamp": "2026-01-27T14:49:07.903Z",
-    "source": "app_logger"
-  },
-  {
-    "level": "debug",
-    "category": "Plays",
-    "message": "Quota breakdown",
-    "data": {
-      "xp": 73522,
-      "baseFromRank": 4,
-      "storedQuota": 100
-    },
-    "timestamp": "2026-01-27T14:49:10.137Z",
-    "source": "app_logger"
-  },
-  {
-    "level": "debug",
-    "category": "Plays",
-    "message": "Quota breakdown",
-    "data": {
-      "xp": 73522,
-      "baseFromRank": 4,
-      "storedQuota": 100
-    },
-    "timestamp": "2026-01-27T14:49:10.537Z",
-    "source": "app_logger"
-  },
-  {
-    "level": "debug",
-    "category": "Plays",
-    "message": "Quota breakdown",
-    "data": {
-      "xp": 73522,
-      "baseFromRank": 4,
-      "storedQuota": 100
-    },
-    "timestamp": "2026-01-27T14:49:10.543Z",
-    "source": "app_logger"
-  },
-  {
-    "level": "debug",
-    "category": "Plays",
-    "message": "Calculated plays info",
-    "data": {
-      "allowed": 100,
-      "used": 11,
-      "remaining": 89,
-      "isAdmin": false,
-      "userId": "9d97c5fe-9051-4da5-881a-f4f380cbb6b0"
-    },
-    "timestamp": "2026-01-27T14:49:10.859Z",
-    "source": "app_logger"
-  },
-  {
-    "level": "debug",
-    "category": "Plays",
-    "message": "Calculated plays info",
-    "data": {
-      "allowed": 100,
-      "used": 11,
-      "remaining": 89,
-      "isAdmin": false,
-      "userId": "9d97c5fe-9051-4da5-881a-f4f380cbb6b0"
-    },
-    "timestamp": "2026-01-27T14:49:11.654Z",
-    "source": "app_logger"
-  },
-  {
-    "level": "debug",
-    "category": "Plays",
-    "message": "Calculated plays info",
-    "data": {
-      "allowed": 100,
-      "used": 11,
-      "remaining": 89,
-      "isAdmin": false,
-      "userId": "9d97c5fe-9051-4da5-881a-f4f380cbb6b0"
-    },
-    "timestamp": "2026-01-27T14:49:12.050Z",
-    "source": "app_logger"
-  },
-  {
-    "timestamp": "2026-01-27T15:13:48.994Z",
-    "source": "reactotron",
-    "type": "state.values.subscribe",
-    "payload": {
-      "paths": []
-    }
-  },
-  {
-    "level": "debug",
-    "category": "Plays",
-    "message": "Fetching plays info from Supabase",
-    "timestamp": "2026-01-27T15:13:54.599Z",
-    "source": "app_logger"
-  },
-  {
-    "level": "debug",
-    "category": "Plays",
-    "message": "Fetching plays info from Supabase",
-    "timestamp": "2026-01-27T15:13:54.590Z",
-    "source": "app_logger"
-  },
-  {
-    "level": "debug",
-    "category": "Plays",
-    "message": "Fetching plays info from Supabase",
-    "timestamp": "2026-01-27T15:13:54.695Z",
-    "source": "app_logger"
-  },
-  {
-    "level": "debug",
-    "category": "Plays",
-    "message": "Quota breakdown",
-    "data": {
-      "xp": 73522,
-      "baseFromRank": 4,
-      "storedQuota": 100
-    },
-    "timestamp": "2026-01-27T15:13:58.459Z",
-    "source": "app_logger"
-  },
-  {
-    "level": "debug",
-    "category": "Plays",
-    "message": "Quota breakdown",
-    "data": {
-      "xp": 73522,
-      "baseFromRank": 4,
-      "storedQuota": 100
-    },
-    "timestamp": "2026-01-27T15:13:58.494Z",
-    "source": "app_logger"
-  },
-  {
-    "level": "debug",
-    "category": "Plays",
-    "message": "Quota breakdown",
-    "data": {
-      "xp": 73522,
-      "baseFromRank": 4,
-      "storedQuota": 100
-    },
-    "timestamp": "2026-01-27T15:13:58.501Z",
-    "source": "app_logger"
-  },
-  {
-    "level": "debug",
-    "category": "Plays",
-    "message": "Calculated plays info",
-    "data": {
-      "allowed": 100,
-      "used": 11,
-      "remaining": 89,
-      "isAdmin": false,
-      "userId": "9d97c5fe-9051-4da5-881a-f4f380cbb6b0"
-    },
-    "timestamp": "2026-01-27T15:13:59.726Z",
-    "source": "app_logger"
-  },
-  {
-    "level": "debug",
-    "category": "Plays",
-    "message": "Calculated plays info",
-    "data": {
-      "allowed": 100,
-      "used": 11,
-      "remaining": 89,
-      "isAdmin": false,
-      "userId": "9d97c5fe-9051-4da5-881a-f4f380cbb6b0"
-    },
-    "timestamp": "2026-01-27T15:13:59.833Z",
-    "source": "app_logger"
-  },
-  {
-    "level": "debug",
-    "category": "Plays",
-    "message": "Calculated plays info",
-    "data": {
-      "allowed": 100,
-      "used": 11,
-      "remaining": 89,
-      "isAdmin": false,
-      "userId": "9d97c5fe-9051-4da5-881a-f4f380cbb6b0"
-    },
-    "timestamp": "2026-01-27T15:13:59.937Z",
-    "source": "app_logger"
-  },
-  {
-    "level": "info",
-    "category": "GameLogic",
-    "message": "Simulation Distribution Result",
-    "data": {
-      "total": 0,
-      "unique": 0,
-      "duplicates_count": 0,
-      "sameDates_count": 0,
-      "duplicates": [],
-      "sameDates_list": []
-    },
-    "timestamp": "2026-01-27T15:14:13.772Z",
-    "source": "app_logger"
-  },
-  {
-    "level": "info",
-    "category": "GameLogic",
-    "message": "Simulation Distribution Result",
-    "data": {
-      "total": 0,
-      "unique": 0,
-      "duplicates_count": 0,
-      "sameDates_count": 0,
-      "duplicates": [],
-      "sameDates_list": []
-    },
-    "timestamp": "2026-01-27T15:20:04.640Z",
-    "source": "app_logger"
-  },
-  {
-    "level": "info",
-    "category": "GameLogic",
-    "message": "Simulation Distribution Result",
-    "data": {
-      "total": 0,
-      "unique": 0,
-      "duplicates_count": 0,
-      "sameDates_count": 0,
-      "duplicates": [],
-      "sameDates_list": []
-    },
-    "timestamp": "2026-01-27T15:20:06.957Z",
-    "source": "app_logger"
-  },
-  {
-    "level": "info",
-    "category": "GameLogic",
-    "message": "Simulation Distribution Result",
-    "data": {
-      "total": 0,
-      "unique": 0,
-      "duplicates_count": 0,
-      "sameDates_count": 0,
-      "duplicates": [],
-      "sameDates_list": []
-    },
-    "timestamp": "2026-01-27T15:20:09.132Z",
-    "source": "app_logger"
-  },
-  {
-    "level": "info",
-    "category": "GameLogic",
-    "message": "Simulation Distribution Result",
-    "data": {
-      "total": 0,
-      "unique": 0,
-      "duplicates_count": 0,
-      "sameDates_count": 0,
-      "duplicates": [],
-      "sameDates_list": []
-    },
-    "timestamp": "2026-01-27T15:20:11.078Z",
-    "source": "app_logger"
-  },
-  {
-    "level": "info",
-    "category": "GameLogic",
-    "message": "Simulation Distribution Result",
-    "data": {
-      "total": 0,
-      "unique": 0,
-      "duplicates_count": 0,
-      "sameDates_count": 0,
-      "duplicates": [],
-      "sameDates_list": []
-    },
-    "timestamp": "2026-01-27T15:20:12.791Z",
-    "source": "app_logger"
-  },
-  {
-    "level": "info",
-    "category": "GameLogic",
-    "message": "Simulation Distribution Result",
-    "data": {
-      "total": 0,
-      "unique": 0,
-      "duplicates_count": 0,
-      "sameDates_count": 0,
-      "duplicates": [],
-      "sameDates_list": []
-    },
-    "timestamp": "2026-01-27T15:20:14.462Z",
-    "source": "app_logger"
-  },
-  {
-    "level": "info",
-    "category": "GameLogic",
-    "message": "Simulation Distribution Result",
-    "data": {
-      "total": 0,
-      "unique": 0,
-      "duplicates_count": 0,
-      "sameDates_count": 0,
-      "duplicates": [],
-      "sameDates_list": []
-    },
-    "timestamp": "2026-01-27T15:20:16.067Z",
-    "source": "app_logger"
-  },
-  {
-    "level": "info",
-    "category": "GameLogic",
-    "message": "Simulation Distribution Result",
-    "data": {
-      "total": 0,
-      "unique": 0,
-      "duplicates_count": 0,
-      "sameDates_count": 0,
-      "duplicates": [],
-      "sameDates_list": []
-    },
-    "timestamp": "2026-01-27T15:20:17.648Z",
-    "source": "app_logger"
-  },
-  {
-    "level": "info",
-    "category": "System",
-    "message": "[GameScreenPage] Rendering for mode: classic",
-    "timestamp": "2026-01-27T15:44:26.533Z",
-    "source": "app_logger"
-  },
-  {
-    "level": "debug",
-    "category": "Plays",
-    "message": "Fetching plays info from Supabase",
-    "timestamp": "2026-01-27T15:44:26.638Z",
-    "source": "app_logger"
-  },
-  {
-    "level": "debug",
-    "category": "Plays",
-    "message": "Fetching plays info from Supabase",
-    "timestamp": "2026-01-27T15:44:27.925Z",
-    "source": "app_logger"
-  },
-  {
-    "level": "debug",
-    "category": "Plays",
-    "message": "Quota breakdown",
-    "data": {
-      "xp": 73522,
-      "baseFromRank": 4,
-      "storedQuota": 100
-    },
-    "timestamp": "2026-01-27T15:44:28.369Z",
-    "source": "app_logger"
-  },
-  {
-    "level": "debug",
-    "category": "Plays",
-    "message": "Quota breakdown",
-    "data": {
-      "xp": 73522,
-      "baseFromRank": 4,
-      "storedQuota": 100
-    },
-    "timestamp": "2026-01-27T15:44:28.690Z",
-    "source": "app_logger"
-  },
-  {
-    "level": "debug",
-    "category": "Plays",
-    "message": "Calculated plays info",
-    "data": {
-      "allowed": 100,
-      "used": 11,
-      "remaining": 89,
-      "isAdmin": false,
-      "userId": "9d97c5fe-9051-4da5-881a-f4f380cbb6b0"
-    },
-    "timestamp": "2026-01-27T15:44:29.011Z",
-    "source": "app_logger"
-  },
-  {
-    "level": "debug",
-    "category": "Plays",
-    "message": "Calculated plays info",
-    "data": {
-      "allowed": 100,
-      "used": 11,
-      "remaining": 89,
-      "isAdmin": false,
-      "userId": "9d97c5fe-9051-4da5-881a-f4f380cbb6b0"
-    },
-    "timestamp": "2026-01-27T15:44:29.126Z",
-    "source": "app_logger"
-  },
-  {
-    "level": "info",
-    "category": "Plays",
-    "message": "[startRun] Allowed: Starting run creation",
-    "data": {
-      "remaining": 89
-    },
-    "timestamp": "2026-01-27T15:44:29.517Z",
-    "source": "app_logger"
-  },
-  {
-    "level": "info",
-    "category": "Plays",
-    "message": "[startRun] Run successfully created in DB with ID: d352d590-6b45-4c7d-a3db-442dc72d15bb",
-    "timestamp": "2026-01-27T15:44:29.982Z",
-    "source": "app_logger"
-  },
-  {
-    "level": "debug",
-    "category": "Plays",
-    "message": "Fetching plays info from Supabase",
-    "timestamp": "2026-01-27T15:44:29.983Z",
-    "source": "app_logger"
-  },
-  {
-    "level": "debug",
-    "category": "Plays",
-    "message": "Quota breakdown",
-    "data": {
-      "xp": 73522,
-      "baseFromRank": 4,
-      "storedQuota": 100
-    },
-    "timestamp": "2026-01-27T15:44:30.331Z",
-    "source": "app_logger"
-  },
-  {
-    "level": "debug",
-    "category": "Plays",
-    "message": "Calculated plays info",
-    "data": {
-      "allowed": 100,
-      "used": 12,
-      "remaining": 88,
-      "isAdmin": false,
-      "userId": "9d97c5fe-9051-4da5-881a-f4f380cbb6b0"
-    },
-    "timestamp": "2026-01-27T15:44:30.503Z",
-    "source": "app_logger"
-  },
-  {
-    "level": "debug",
-    "category": "GameLogic",
-    "message": "Pool reduction: 1000 -> 996 (used) -> 167 (tier 1) -> 135 (time) -> 135 (final)",
-    "data": {
-      "level": 1,
-      "refEvent": "Jacques Chirac élu Président de la République",
-      "targetTier": 1
-    },
-    "timestamp": "2026-01-27T15:44:38.440Z",
-    "source": "app_logger"
-  },
-  {
-    "level": "debug",
-    "category": "GameLogic",
-    "message": "Synced usage for event: Premier vol motorisé des frères Wright",
-    "data": {
-      "newScore": 1
-    },
-    "timestamp": "2026-01-27T15:44:39.496Z",
-    "source": "app_logger"
-  },
-  {
-    "level": "debug",
-    "category": "GameLogic",
-    "message": "Pool reduction: 1000 -> 997 (used) -> 166 (tier 1) -> 135 (time) -> 135 (final)",
-    "data": {
-      "level": 1,
-      "refEvent": "Premier vol motorisé des frères Wright",
-      "targetTier": 1
-    },
-    "timestamp": "2026-01-27T15:44:43.855Z",
-    "source": "app_logger"
-  },
-  {
-    "level": "debug",
-    "category": "GameLogic",
-    "message": "Synced usage for event: Macron lance un débat national pour répondre à la crise sociale des Gilets jaunes",
-    "data": {
-      "newScore": 1
-    },
-    "timestamp": "2026-01-27T15:44:44.875Z",
-    "source": "app_logger"
-  },
-  {
-    "level": "debug",
-    "category": "GameLogic",
-    "message": "Pool reduction: 1000 -> 994 (used) -> 164 (tier 1) -> 131 (time) -> 131 (final)",
-    "data": {
-      "level": 1,
-      "refEvent": "Macron lance un débat national pour répondre à la crise sociale des Gilets jaunes",
-      "targetTier": 1
-    },
-    "timestamp": "2026-01-27T15:44:48.663Z",
-    "source": "app_logger"
-  },
-  {
-    "level": "debug",
-    "category": "GameLogic",
-    "message": "Synced usage for event: Alexander Fleming découvre la pénicilline",
-    "data": {
-      "newScore": 1
-    },
-    "timestamp": "2026-01-27T15:44:49.623Z",
-    "source": "app_logger"
-  },
-  {
-    "level": "debug",
-    "category": "GameLogic",
-    "message": "Pool reduction: 1000 -> 995 (used) -> 164 (tier 1) -> 133 (time) -> 133 (final)",
-    "data": {
-      "level": 1,
-      "refEvent": "Alexander Fleming découvre la pénicilline",
-      "targetTier": 1
-    },
-    "timestamp": "2026-01-27T15:44:54.056Z",
-    "source": "app_logger"
-  },
-  {
-    "level": "debug",
-    "category": "GameLogic",
-    "message": "Synced usage for event: Fondation de l'École Polytechnique à Paris",
-    "data": {
-      "newScore": 1
-    },
-    "timestamp": "2026-01-27T15:44:55.153Z",
-    "source": "app_logger"
-  },
-  {
-    "level": "debug",
-    "category": "GameLogic",
-    "message": "Pool reduction: 1000 -> 992 (used) -> 546 (tier 2) -> 465 (time) -> 150 (final)",
-    "data": {
-      "level": 1,
-      "refEvent": "Fondation de l'École Polytechnique à Paris",
-      "targetTier": 2
-    },
-    "timestamp": "2026-01-27T15:45:01.048Z",
-    "source": "app_logger"
-  },
-  {
-    "level": "debug",
-    "category": "GameLogic",
-    "message": "Synced usage for event: Publication du premier brouillon du génome humain",
-    "data": {
-      "newScore": 1
-    },
-    "timestamp": "2026-01-27T15:45:02.222Z",
-    "source": "app_logger"
-  },
-  {
-    "timestamp": "2026-01-27T21:24:16.153Z",
-    "source": "reactotron",
-    "type": "state.values.subscribe",
-    "payload": {
-      "paths": []
-    }
-  },
-  {
-    "level": "debug",
-    "category": "GameLogic",
-    "message": "Pool reduction: 1000 -> 987 (used) -> 162 (tier 1) -> 109 (time) -> 109 (final)",
-    "data": {
-      "level": 2,
-      "refEvent": "Mort de Georges Pompidou",
-      "targetTier": 1
-    },
-    "timestamp": "2026-01-27T21:25:17.890Z",
-    "source": "app_logger"
-  },
-  {
-    "level": "debug",
-    "category": "GameLogic",
-    "message": "Synced usage for event: Premier Tour de France cycliste",
-    "data": {
-      "newScore": 1
-    },
-    "timestamp": "2026-01-27T21:25:19.257Z",
-    "source": "app_logger"
-  },
-  {
-    "level": "debug",
-    "category": "Plays",
-    "message": "Fetching plays info from Supabase",
-    "timestamp": "2026-01-27T21:25:23.974Z",
-    "source": "app_logger"
-  },
-  {
-    "level": "debug",
-    "category": "Plays",
-    "message": "Quota breakdown",
-    "data": {
-      "xp": 73522,
-      "baseFromRank": 4,
-      "storedQuota": 100
-    },
-    "timestamp": "2026-01-27T21:25:24.556Z",
-    "source": "app_logger"
-  },
-  {
-    "level": "debug",
-    "category": "Plays",
-    "message": "Calculated plays info",
-    "data": {
-      "allowed": 100,
-      "used": 13,
-      "remaining": 87,
-      "isAdmin": false,
-      "userId": "9d97c5fe-9051-4da5-881a-f4f380cbb6b0"
-    },
-    "timestamp": "2026-01-27T21:25:24.908Z",
-    "source": "app_logger"
-  },
-  {
-    "timestamp": "2026-01-27T21:27:21.245Z",
-    "source": "reactotron",
-    "type": "state.values.subscribe",
-    "payload": {
-      "paths": []
-    }
-  },
-  {
-    "timestamp": "2026-01-27T21:28:42.915Z",
-    "source": "reactotron",
-    "type": "state.values.subscribe",
-    "payload": {
-      "paths": []
-    }
-  },
-  {
-    "level": "debug",
-    "category": "Plays",
-    "message": "Fetching plays info from Supabase",
-    "timestamp": "2026-01-27T21:28:50.432Z",
-    "source": "app_logger"
-  },
-  {
-    "level": "debug",
-    "category": "Plays",
-    "message": "Fetching plays info from Supabase",
-    "timestamp": "2026-01-27T21:28:50.451Z",
-    "source": "app_logger"
-  },
-  {
-    "level": "debug",
-    "category": "Plays",
-    "message": "Fetching plays info from Supabase",
-    "timestamp": "2026-01-27T21:28:50.684Z",
-    "source": "app_logger"
-  },
-  {
-    "level": "debug",
-    "category": "Plays",
-    "message": "Quota breakdown",
-    "data": {
-      "xp": 73522,
-      "baseFromRank": 4,
-      "storedQuota": 100
-    },
-    "timestamp": "2026-01-27T21:28:52.967Z",
-    "source": "app_logger"
-  },
-  {
-    "level": "debug",
-    "category": "Plays",
-    "message": "Quota breakdown",
-    "data": {
-      "xp": 73522,
-      "baseFromRank": 4,
-      "storedQuota": 100
-    },
-    "timestamp": "2026-01-27T21:28:53.013Z",
-    "source": "app_logger"
-  },
-  {
-    "level": "debug",
-    "category": "Plays",
-    "message": "Quota breakdown",
-    "data": {
-      "xp": 73522,
-      "baseFromRank": 4,
-      "storedQuota": 100
-    },
-    "timestamp": "2026-01-27T21:28:53.430Z",
-    "source": "app_logger"
-  },
-  {
-    "level": "debug",
-    "category": "Plays",
-    "message": "Calculated plays info",
-    "data": {
-      "allowed": 100,
-      "used": 13,
-      "remaining": 87,
-      "isAdmin": false,
-      "userId": "9d97c5fe-9051-4da5-881a-f4f380cbb6b0"
-    },
-    "timestamp": "2026-01-27T21:28:53.788Z",
-    "source": "app_logger"
-  },
-  {
-    "level": "debug",
-    "category": "Plays",
-    "message": "Calculated plays info",
-    "data": {
-      "allowed": 100,
-      "used": 13,
-      "remaining": 87,
-      "isAdmin": false,
-      "userId": "9d97c5fe-9051-4da5-881a-f4f380cbb6b0"
-    },
-    "timestamp": "2026-01-27T21:28:53.803Z",
-    "source": "app_logger"
-  },
-  {
-    "level": "debug",
-    "category": "Plays",
-    "message": "Calculated plays info",
-    "data": {
-      "allowed": 100,
-      "used": 13,
-      "remaining": 87,
-      "isAdmin": false,
-      "userId": "9d97c5fe-9051-4da5-881a-f4f380cbb6b0"
-    },
-    "timestamp": "2026-01-27T21:28:54.018Z",
-    "source": "app_logger"
-  },
-  {
-    "level": "info",
-    "category": "System",
-    "message": "TEST LOG FROM AI",
-    "timestamp": "2026-01-27T22:39:00Z",
-    "source": "app_logger"
-  },
-  {
-    "level": "info",
-    "category": "Ads",
-    "message": "Starting reward grant process",
-    "data": {
-      "isGuest": false
-    },
-    "timestamp": "2026-01-27T21:35:38.804Z",
-    "source": "app_logger"
-  },
-  {
-    "level": "info",
-    "category": "Ads",
-    "message": "Attempting to grant extra play (Logged-in)",
-    "data": {
-      "userId": "9d97c5fe-9051-4da5-881a-f4f380cbb6b0"
-    },
-    "timestamp": "2026-01-27T21:35:38.807Z",
-    "source": "app_logger"
-  },
-  {
-    "level": "debug",
-    "category": "Ads",
-    "message": "Updating parties_per_day from 100 to 101",
-    "timestamp": "2026-01-27T21:35:39.445Z",
-    "source": "app_logger"
-  },
-  {
-    "level": "info",
-    "category": "Ads",
-    "message": "Successfully updated profile",
-    "timestamp": "2026-01-27T21:35:39.735Z",
-    "source": "app_logger"
-  },
-  {
-    "level": "debug",
-    "category": "Plays",
-    "message": "Fetching plays info from Supabase",
-    "timestamp": "2026-01-27T21:35:39.746Z",
-    "source": "app_logger"
-  },
-  {
-    "level": "debug",
-    "category": "Plays",
-    "message": "Quota breakdown",
-    "data": {
-      "xp": 73522,
-      "baseFromRank": 4,
-      "storedQuota": 101
-    },
-    "timestamp": "2026-01-27T21:35:40.188Z",
-    "source": "app_logger"
-  },
-  {
-    "level": "debug",
-    "category": "Plays",
-    "message": "Calculated plays info",
-    "data": {
-      "allowed": 101,
-      "used": 13,
-      "remaining": 88,
-      "isAdmin": false,
-      "userId": "9d97c5fe-9051-4da5-881a-f4f380cbb6b0"
-    },
-    "timestamp": "2026-01-27T21:35:40.371Z",
-    "source": "app_logger"
-  },
-  {
-    "level": "info",
-    "category": "Ads",
-    "message": "Starting reward grant process",
-    "data": {
-      "isGuest": false
-    },
-    "timestamp": "2026-01-27T21:35:40.666Z",
-    "source": "app_logger"
-  },
-  {
-    "level": "info",
-    "category": "Ads",
-    "message": "Attempting to grant extra play (Logged-in)",
-    "data": {
-      "userId": "9d97c5fe-9051-4da5-881a-f4f380cbb6b0"
-    },
-    "timestamp": "2026-01-27T21:35:40.671Z",
-    "source": "app_logger"
-  },
-  {
-    "level": "debug",
-    "category": "Ads",
-    "message": "Updating parties_per_day from 101 to 102",
-    "timestamp": "2026-01-27T21:35:40.885Z",
-    "source": "app_logger"
-  },
-  {
-    "level": "info",
-    "category": "Ads",
-    "message": "Successfully updated profile",
-    "timestamp": "2026-01-27T21:35:40.961Z",
-    "source": "app_logger"
-  },
-  {
-    "level": "debug",
-    "category": "Plays",
-    "message": "Fetching plays info from Supabase",
-    "timestamp": "2026-01-27T21:35:40.962Z",
-    "source": "app_logger"
-  },
-  {
-    "level": "debug",
-    "category": "Plays",
-    "message": "Quota breakdown",
-    "data": {
-      "xp": 73522,
-      "baseFromRank": 4,
-      "storedQuota": 102
-    },
-    "timestamp": "2026-01-27T21:35:41.228Z",
-    "source": "app_logger"
-  },
-  {
-    "level": "debug",
-    "category": "Plays",
-    "message": "Calculated plays info",
-    "data": {
-      "allowed": 102,
-      "used": 13,
-      "remaining": 89,
-      "isAdmin": false,
-      "userId": "9d97c5fe-9051-4da5-881a-f4f380cbb6b0"
-    },
-    "timestamp": "2026-01-27T21:35:41.317Z",
-    "source": "app_logger"
-  },
-  {
-    "level": "error",
-    "category": "Ads",
-    "message": "[BANNER_HOME] Ad loading failed",
-    "data": {
-      "code": "googleMobileAds/error-code-internal-error",
-      "message": "[googleMobileAds/error-code-internal-error] Something happened internally; for instance, an invalid response was received from the ad server."
-    },
-    "timestamp": "2026-01-27T22:30:01.236Z",
-    "source": "app_logger"
-  },
-  {
-    "timestamp": "2026-01-27T22:36:10.224Z",
-    "source": "reactotron",
-    "type": "state.values.subscribe",
-    "payload": {
-      "paths": []
-    }
-  },
-  {
-    "level": "debug",
-    "category": "Plays",
-    "message": "Fetching plays info from Supabase",
-    "timestamp": "2026-01-27T22:37:03.213Z",
-    "source": "app_logger"
-  },
-  {
-    "level": "debug",
-    "category": "Plays",
-    "message": "Fetching plays info from Supabase",
-    "timestamp": "2026-01-27T22:37:03.218Z",
+    "timestamp": "2026-02-10T22:00:03.340Z",
     "source": "app_logger"
   },
   {
     "level": "info",
     "category": "Ads",
     "message": "🔄 Attempting initial ad load",
-    "timestamp": "2026-01-27T22:37:03.230Z",
+    "timestamp": "2026-02-10T22:00:03.347Z",
     "source": "app_logger"
   },
   {
     "level": "debug",
     "category": "Plays",
     "message": "Fetching plays info from Supabase",
-    "timestamp": "2026-01-27T22:37:03.424Z",
+    "timestamp": "2026-02-10T22:00:03.455Z",
+    "source": "app_logger"
+  },
+  {
+    "level": "debug",
+    "category": "GameLogic",
+    "message": "Loaded 64 local history items",
+    "timestamp": "2026-02-10T22:00:03.467Z",
+    "source": "app_logger"
+  },
+  {
+    "level": "debug",
+    "category": "GameLogic",
+    "message": "Loaded 64 local history items",
+    "timestamp": "2026-02-10T22:00:03.471Z",
     "source": "app_logger"
   },
   {
     "level": "error",
     "category": "Ads",
     "message": "❌ Failed to load Ad: [googleMobileAds/no-fill] [googleMobileAds/no-fill] No fill.",
-    "timestamp": "2026-01-27T22:37:04.787Z",
+    "timestamp": "2026-02-10T22:00:04.207Z",
     "source": "app_logger"
   },
   {
@@ -4387,11 +69,11 @@
     "category": "Plays",
     "message": "Quota breakdown",
     "data": {
-      "xp": 73522,
-      "baseFromRank": 4,
-      "storedQuota": 5
+      "xp": 75738,
+      "baseFromRank": 10,
+      "storedQuota": 10
     },
-    "timestamp": "2026-01-27T22:37:05.079Z",
+    "timestamp": "2026-02-10T22:00:04.891Z",
     "source": "app_logger"
   },
   {
@@ -4399,11 +81,25 @@
     "category": "Plays",
     "message": "Quota breakdown",
     "data": {
-      "xp": 73522,
-      "baseFromRank": 4,
-      "storedQuota": 5
+      "xp": 75738,
+      "baseFromRank": 10,
+      "storedQuota": 10
     },
-    "timestamp": "2026-01-27T22:37:05.083Z",
+    "timestamp": "2026-02-10T22:00:04.899Z",
+    "source": "app_logger"
+  },
+  {
+    "level": "debug",
+    "category": "GameLogic",
+    "message": "Synced with 110 Supabase history items",
+    "timestamp": "2026-02-10T22:00:05.236Z",
+    "source": "app_logger"
+  },
+  {
+    "level": "debug",
+    "category": "GameLogic",
+    "message": "Synced with 110 Supabase history items",
+    "timestamp": "2026-02-10T22:00:05.257Z",
     "source": "app_logger"
   },
   {
@@ -4411,11 +107,11 @@
     "category": "Plays",
     "message": "Quota breakdown",
     "data": {
-      "xp": 73522,
-      "baseFromRank": 4,
-      "storedQuota": 5
+      "xp": 75738,
+      "baseFromRank": 10,
+      "storedQuota": 10
     },
-    "timestamp": "2026-01-27T22:37:05.173Z",
+    "timestamp": "2026-02-10T22:00:05.281Z",
     "source": "app_logger"
   },
   {
@@ -4423,13 +119,13 @@
     "category": "Plays",
     "message": "Calculated plays info",
     "data": {
-      "allowed": 5,
-      "used": 13,
-      "remaining": 0,
-      "isAdmin": false,
+      "allowed": 999,
+      "used": 0,
+      "remaining": 999,
+      "isAdmin": true,
       "userId": "9d97c5fe-9051-4da5-881a-f4f380cbb6b0"
     },
-    "timestamp": "2026-01-27T22:37:05.530Z",
+    "timestamp": "2026-02-10T22:00:05.380Z",
     "source": "app_logger"
   },
   {
@@ -4437,13 +133,13 @@
     "category": "Plays",
     "message": "Calculated plays info",
     "data": {
-      "allowed": 5,
-      "used": 13,
-      "remaining": 0,
-      "isAdmin": false,
+      "allowed": 999,
+      "used": 0,
+      "remaining": 999,
+      "isAdmin": true,
       "userId": "9d97c5fe-9051-4da5-881a-f4f380cbb6b0"
     },
-    "timestamp": "2026-01-27T22:37:05.540Z",
+    "timestamp": "2026-02-10T22:00:05.430Z",
     "source": "app_logger"
   },
   {
@@ -4451,164 +147,62 @@
     "category": "Plays",
     "message": "Calculated plays info",
     "data": {
-      "allowed": 5,
-      "used": 13,
-      "remaining": 0,
-      "isAdmin": false,
+      "allowed": 999,
+      "used": 0,
+      "remaining": 999,
+      "isAdmin": true,
       "userId": "9d97c5fe-9051-4da5-881a-f4f380cbb6b0"
     },
-    "timestamp": "2026-01-27T22:37:05.617Z",
-    "source": "app_logger"
-  },
-  {
-    "level": "error",
-    "category": "Ads",
-    "message": "❌ Failed to load Ad: [googleMobileAds/no-fill] [googleMobileAds/no-fill] No fill.",
-    "timestamp": "2026-01-27T22:37:35.224Z",
+    "timestamp": "2026-02-10T22:00:05.606Z",
     "source": "app_logger"
   },
   {
     "level": "info",
     "category": "Ads",
     "message": "✅ Ad loaded successfully",
-    "timestamp": "2026-01-27T22:38:06.294Z",
-    "source": "app_logger"
-  },
-  {
-    "level": "info",
-    "category": "Ads",
-    "message": "👀 Ad opened/started showing",
-    "timestamp": "2026-01-27T22:38:12.921Z",
-    "source": "app_logger"
-  },
-  {
-    "level": "info",
-    "category": "Ads",
-    "message": "🎁 Reward signal EARNED_REWARD received from AdMob",
-    "data": {
-      "reward": {
-        "amount": 10,
-        "type": "coins"
-      }
-    },
-    "timestamp": "2026-01-27T22:38:21.644Z",
-    "source": "app_logger"
-  },
-  {
-    "level": "info",
-    "category": "Ads",
-    "message": "Attempting to grant extra play (Logged-in)",
-    "data": {
-      "userId": "9d97c5fe-9051-4da5-881a-f4f380cbb6b0"
-    },
-    "timestamp": "2026-01-27T22:38:21.699Z",
-    "source": "app_logger"
-  },
-  {
-    "level": "info",
-    "category": "Ads",
-    "message": "🚀 Starting reward grant process (Sentinelle)",
-    "data": {
-      "isGuest": false,
-      "userId": "9d97c5fe-9051-4da5-881a-f4f380cbb6b0",
-      "timestamp": "2026-01-27T22:38:21.697Z"
-    },
-    "timestamp": "2026-01-27T22:38:21.697Z",
-    "source": "app_logger"
-  },
-  {
-    "level": "info",
-    "category": "Ads",
-    "message": "Updating parties_per_day: 5 -> 14",
-    "data": {
-      "userId": "9d97c5fe-9051-4da5-881a-f4f380cbb6b0"
-    },
-    "timestamp": "2026-01-27T22:38:22.182Z",
-    "source": "app_logger"
-  },
-  {
-    "level": "debug",
-    "category": "Plays",
-    "message": "Fetching plays info from Supabase",
-    "timestamp": "2026-01-27T22:38:22.401Z",
-    "source": "app_logger"
-  },
-  {
-    "level": "info",
-    "category": "Ads",
-    "message": "Successfully updated profile in Supabase",
-    "data": {
-      "userId": "9d97c5fe-9051-4da5-881a-f4f380cbb6b0"
-    },
-    "timestamp": "2026-01-27T22:38:22.400Z",
-    "source": "app_logger"
-  },
-  {
-    "level": "debug",
-    "category": "Plays",
-    "message": "Quota breakdown",
-    "data": {
-      "xp": 73522,
-      "baseFromRank": 4,
-      "storedQuota": 14
-    },
-    "timestamp": "2026-01-27T22:38:22.712Z",
-    "source": "app_logger"
-  },
-  {
-    "level": "debug",
-    "category": "Plays",
-    "message": "Calculated plays info",
-    "data": {
-      "allowed": 14,
-      "used": 13,
-      "remaining": 1,
-      "isAdmin": false,
-      "userId": "9d97c5fe-9051-4da5-881a-f4f380cbb6b0"
-    },
-    "timestamp": "2026-01-27T22:38:22.795Z",
-    "source": "app_logger"
-  },
-  {
-    "level": "info",
-    "category": "Ads",
-    "message": "🚪 Ad closed by user",
-    "timestamp": "2026-01-27T22:38:59.418Z",
-    "source": "app_logger"
-  },
-  {
-    "level": "info",
-    "category": "Ads",
-    "message": "✅ Ad loaded successfully",
-    "timestamp": "2026-01-27T22:39:00.633Z",
-    "source": "app_logger"
-  },
-  {
-    "level": "debug",
-    "category": "Plays",
-    "message": "Fetching plays info from Supabase",
-    "timestamp": "2026-01-27T22:42:20.268Z",
-    "source": "app_logger"
-  },
-  {
-    "level": "debug",
-    "category": "Plays",
-    "message": "Fetching plays info from Supabase",
-    "timestamp": "2026-01-27T22:42:20.284Z",
+    "timestamp": "2026-02-10T22:00:35.344Z",
     "source": "app_logger"
   },
   {
     "level": "info",
     "category": "Ads",
     "message": "🔄 Attempting initial ad load",
-    "timestamp": "2026-01-27T22:42:20.294Z",
+    "timestamp": "2026-02-10T22:10:05.705Z",
     "source": "app_logger"
   },
   {
     "level": "debug",
     "category": "Plays",
     "message": "Fetching plays info from Supabase",
-    "timestamp": "2026-01-27T22:42:20.507Z",
+    "timestamp": "2026-02-10T22:10:05.698Z",
+    "source": "app_logger"
+  },
+  {
+    "level": "debug",
+    "category": "Plays",
+    "message": "Fetching plays info from Supabase",
+    "timestamp": "2026-02-10T22:10:05.702Z",
+    "source": "app_logger"
+  },
+  {
+    "level": "debug",
+    "category": "GameLogic",
+    "message": "Loaded 64 local history items",
+    "timestamp": "2026-02-10T22:10:05.742Z",
+    "source": "app_logger"
+  },
+  {
+    "level": "debug",
+    "category": "Plays",
+    "message": "Fetching plays info from Supabase",
+    "timestamp": "2026-02-10T22:10:05.737Z",
+    "source": "app_logger"
+  },
+  {
+    "level": "debug",
+    "category": "GameLogic",
+    "message": "Loaded 64 local history items",
+    "timestamp": "2026-02-10T22:10:05.743Z",
     "source": "app_logger"
   },
   {
@@ -4616,11 +210,11 @@
     "category": "Plays",
     "message": "Quota breakdown",
     "data": {
-      "xp": 73522,
-      "baseFromRank": 4,
-      "storedQuota": 14
+      "xp": 75738,
+      "baseFromRank": 10,
+      "storedQuota": 10
     },
-    "timestamp": "2026-01-27T22:42:23.510Z",
+    "timestamp": "2026-02-10T22:10:07.013Z",
     "source": "app_logger"
   },
   {
@@ -4628,11 +222,37 @@
     "category": "Plays",
     "message": "Quota breakdown",
     "data": {
-      "xp": 73522,
-      "baseFromRank": 4,
-      "storedQuota": 14
+      "xp": 75738,
+      "baseFromRank": 10,
+      "storedQuota": 10
     },
-    "timestamp": "2026-01-27T22:42:23.801Z",
+    "timestamp": "2026-02-10T22:10:07.049Z",
+    "source": "app_logger"
+  },
+  {
+    "level": "debug",
+    "category": "Plays",
+    "message": "Quota breakdown",
+    "data": {
+      "xp": 75738,
+      "baseFromRank": 10,
+      "storedQuota": 10
+    },
+    "timestamp": "2026-02-10T22:10:07.122Z",
+    "source": "app_logger"
+  },
+  {
+    "level": "debug",
+    "category": "GameLogic",
+    "message": "Synced with 110 Supabase history items",
+    "timestamp": "2026-02-10T22:10:07.142Z",
+    "source": "app_logger"
+  },
+  {
+    "level": "debug",
+    "category": "GameLogic",
+    "message": "Synced with 110 Supabase history items",
+    "timestamp": "2026-02-10T22:10:07.161Z",
     "source": "app_logger"
   },
   {
@@ -4640,32 +260,133 @@
     "category": "Plays",
     "message": "Calculated plays info",
     "data": {
-      "allowed": 14,
-      "used": 13,
-      "remaining": 1,
-      "isAdmin": false,
+      "allowed": 999,
+      "used": 0,
+      "remaining": 999,
+      "isAdmin": true,
       "userId": "9d97c5fe-9051-4da5-881a-f4f380cbb6b0"
     },
-    "timestamp": "2026-01-27T22:42:23.806Z",
+    "timestamp": "2026-02-10T22:10:07.254Z",
     "source": "app_logger"
   },
   {
     "level": "debug",
     "category": "Plays",
-    "message": "Quota breakdown",
+    "message": "Calculated plays info",
     "data": {
-      "xp": 73522,
-      "baseFromRank": 4,
-      "storedQuota": 14
+      "allowed": 999,
+      "used": 0,
+      "remaining": 999,
+      "isAdmin": true,
+      "userId": "9d97c5fe-9051-4da5-881a-f4f380cbb6b0"
     },
-    "timestamp": "2026-01-27T22:42:23.821Z",
+    "timestamp": "2026-02-10T22:10:07.543Z",
+    "source": "app_logger"
+  },
+  {
+    "level": "debug",
+    "category": "Plays",
+    "message": "Calculated plays info",
+    "data": {
+      "allowed": 999,
+      "used": 0,
+      "remaining": 999,
+      "isAdmin": true,
+      "userId": "9d97c5fe-9051-4da5-881a-f4f380cbb6b0"
+    },
+    "timestamp": "2026-02-10T22:10:07.549Z",
     "source": "app_logger"
   },
   {
     "level": "info",
     "category": "Ads",
     "message": "✅ Ad loaded successfully",
-    "timestamp": "2026-01-27T22:42:25.058Z",
+    "timestamp": "2026-02-10T22:10:08.080Z",
+    "source": "app_logger"
+  },
+  {
+    "level": "debug",
+    "category": "Plays",
+    "message": "Fetching plays info from Supabase",
+    "timestamp": "2026-02-10T22:10:42.982Z",
+    "source": "app_logger"
+  },
+  {
+    "level": "debug",
+    "category": "Plays",
+    "message": "Fetching plays info from Supabase",
+    "timestamp": "2026-02-10T22:10:42.985Z",
+    "source": "app_logger"
+  },
+  {
+    "level": "debug",
+    "category": "Plays",
+    "message": "Fetching plays info from Supabase",
+    "timestamp": "2026-02-10T22:10:43.015Z",
+    "source": "app_logger"
+  },
+  {
+    "level": "debug",
+    "category": "GameLogic",
+    "message": "Loaded 64 local history items",
+    "timestamp": "2026-02-10T22:10:43.023Z",
+    "source": "app_logger"
+  },
+  {
+    "level": "debug",
+    "category": "GameLogic",
+    "message": "Loaded 64 local history items",
+    "timestamp": "2026-02-10T22:10:43.020Z",
+    "source": "app_logger"
+  },
+  {
+    "level": "debug",
+    "category": "Plays",
+    "message": "Quota breakdown",
+    "data": {
+      "xp": 75738,
+      "baseFromRank": 10,
+      "storedQuota": 10
+    },
+    "timestamp": "2026-02-10T22:10:43.956Z",
+    "source": "app_logger"
+  },
+  {
+    "level": "debug",
+    "category": "Plays",
+    "message": "Quota breakdown",
+    "data": {
+      "xp": 75738,
+      "baseFromRank": 10,
+      "storedQuota": 10
+    },
+    "timestamp": "2026-02-10T22:10:43.973Z",
+    "source": "app_logger"
+  },
+  {
+    "level": "debug",
+    "category": "GameLogic",
+    "message": "Synced with 110 Supabase history items",
+    "timestamp": "2026-02-10T22:10:43.989Z",
+    "source": "app_logger"
+  },
+  {
+    "level": "debug",
+    "category": "Plays",
+    "message": "Quota breakdown",
+    "data": {
+      "xp": 75738,
+      "baseFromRank": 10,
+      "storedQuota": 10
+    },
+    "timestamp": "2026-02-10T22:10:44.017Z",
+    "source": "app_logger"
+  },
+  {
+    "level": "debug",
+    "category": "GameLogic",
+    "message": "Synced with 110 Supabase history items",
+    "timestamp": "2026-02-10T22:10:44.035Z",
     "source": "app_logger"
   },
   {
@@ -4673,13 +394,13 @@
     "category": "Plays",
     "message": "Calculated plays info",
     "data": {
-      "allowed": 14,
-      "used": 13,
-      "remaining": 1,
-      "isAdmin": false,
+      "allowed": 999,
+      "used": 0,
+      "remaining": 999,
+      "isAdmin": true,
       "userId": "9d97c5fe-9051-4da5-881a-f4f380cbb6b0"
     },
-    "timestamp": "2026-01-27T22:42:25.414Z",
+    "timestamp": "2026-02-10T22:10:44.139Z",
     "source": "app_logger"
   },
   {
@@ -4687,82 +408,82 @@
     "category": "Plays",
     "message": "Calculated plays info",
     "data": {
-      "allowed": 14,
-      "used": 13,
-      "remaining": 1,
-      "isAdmin": false,
+      "allowed": 999,
+      "used": 0,
+      "remaining": 999,
+      "isAdmin": true,
       "userId": "9d97c5fe-9051-4da5-881a-f4f380cbb6b0"
     },
-    "timestamp": "2026-01-27T22:42:25.429Z",
+    "timestamp": "2026-02-10T22:10:44.228Z",
+    "source": "app_logger"
+  },
+  {
+    "level": "debug",
+    "category": "Plays",
+    "message": "Calculated plays info",
+    "data": {
+      "allowed": 999,
+      "used": 0,
+      "remaining": 999,
+      "isAdmin": true,
+      "userId": "9d97c5fe-9051-4da5-881a-f4f380cbb6b0"
+    },
+    "timestamp": "2026-02-10T22:10:44.230Z",
     "source": "app_logger"
   },
   {
     "level": "info",
     "category": "Ads",
     "message": "👀 Ad opened/started showing",
-    "timestamp": "2026-01-27T22:42:56.659Z",
+    "timestamp": "2026-02-10T22:12:37.180Z",
     "source": "app_logger"
   },
   {
     "level": "info",
     "category": "Ads",
-    "message": "🎁 Reward signal EARNED_REWARD received from AdMob",
+    "message": "🎁 EARNED_REWARD signal received from AdMob",
     "data": {
       "reward": {
         "amount": 10,
         "type": "coins"
       }
     },
-    "timestamp": "2026-01-27T22:43:04.644Z",
+    "timestamp": "2026-02-10T22:12:44.838Z",
     "source": "app_logger"
   },
   {
     "level": "info",
     "category": "Ads",
-    "message": "Attempting to grant extra play (Logged-in)",
-    "data": {
-      "userId": "9d97c5fe-9051-4da5-881a-f4f380cbb6b0"
-    },
-    "timestamp": "2026-01-27T22:43:04.698Z",
+    "message": "🚪 Ad closed after 10s (Reward confirmed: true)",
+    "timestamp": "2026-02-10T22:12:47.263Z",
     "source": "app_logger"
   },
   {
     "level": "info",
     "category": "Ads",
-    "message": "🚀 Starting reward grant process (Sentinelle)",
-    "data": {
-      "isGuest": false,
-      "userId": "9d97c5fe-9051-4da5-881a-f4f380cbb6b0",
-      "timestamp": "2026-01-27T22:43:04.695Z"
-    },
-    "timestamp": "2026-01-27T22:43:04.695Z",
+    "message": "🎯 Calling onRewardEarned callback from CLOSED handler",
+    "timestamp": "2026-02-10T22:12:47.325Z",
     "source": "app_logger"
   },
   {
     "level": "info",
     "category": "Ads",
-    "message": "Updating parties_per_day: 14 -> 15",
-    "data": {
-      "userId": "9d97c5fe-9051-4da5-881a-f4f380cbb6b0"
-    },
-    "timestamp": "2026-01-27T22:43:05.165Z",
+    "message": "🔄 Granting extra play for user 9d97c5fe-9051-4da5-881a-f4f380cbb6b0",
+    "timestamp": "2026-02-10T22:12:47.628Z",
     "source": "app_logger"
   },
   {
     "level": "info",
     "category": "Ads",
-    "message": "Successfully updated profile in Supabase",
-    "data": {
-      "userId": "9d97c5fe-9051-4da5-881a-f4f380cbb6b0"
-    },
-    "timestamp": "2026-01-27T22:43:05.308Z",
+    "message": "✅ Extra play granted & verified: 10 → 11",
+    "timestamp": "2026-02-10T22:12:47.986Z",
     "source": "app_logger"
   },
   {
     "level": "debug",
     "category": "Plays",
     "message": "Fetching plays info from Supabase",
-    "timestamp": "2026-01-27T22:43:05.309Z",
+    "timestamp": "2026-02-10T22:12:47.987Z",
     "source": "app_logger"
   },
   {
@@ -4770,11 +491,11 @@
     "category": "Plays",
     "message": "Quota breakdown",
     "data": {
-      "xp": 73522,
-      "baseFromRank": 4,
-      "storedQuota": 15
+      "xp": 75738,
+      "baseFromRank": 10,
+      "storedQuota": 11
     },
-    "timestamp": "2026-01-27T22:43:05.564Z",
+    "timestamp": "2026-02-10T22:12:48.309Z",
     "source": "app_logger"
   },
   {
@@ -4782,140 +503,108 @@
     "category": "Plays",
     "message": "Calculated plays info",
     "data": {
-      "allowed": 15,
-      "used": 13,
-      "remaining": 2,
-      "isAdmin": false,
+      "allowed": 999,
+      "used": 0,
+      "remaining": 999,
+      "isAdmin": true,
       "userId": "9d97c5fe-9051-4da5-881a-f4f380cbb6b0"
     },
-    "timestamp": "2026-01-27T22:43:05.723Z",
-    "source": "app_logger"
-  },
-  {
-    "level": "info",
-    "category": "Ads",
-    "message": "🚪 Ad closed by user after 11s (Reward confirmed: true)",
-    "timestamp": "2026-01-27T22:43:07.536Z",
+    "timestamp": "2026-02-10T22:12:48.406Z",
     "source": "app_logger"
   },
   {
     "level": "info",
     "category": "Ads",
     "message": "✅ Ad loaded successfully",
-    "timestamp": "2026-01-27T22:43:08.773Z",
-    "source": "app_logger"
-  },
-  {
-    "level": "debug",
-    "category": "Plays",
-    "message": "Fetching plays info from Supabase",
-    "timestamp": "2026-01-27T22:45:16.126Z",
-    "source": "app_logger"
-  },
-  {
-    "level": "debug",
-    "category": "Plays",
-    "message": "Fetching plays info from Supabase",
-    "timestamp": "2026-01-27T22:45:16.129Z",
+    "timestamp": "2026-02-10T22:12:48.410Z",
     "source": "app_logger"
   },
   {
     "level": "info",
     "category": "Ads",
-    "message": "🔄 Attempting initial ad load",
-    "timestamp": "2026-01-27T22:45:16.136Z",
+    "message": "👀 Ad opened/started showing",
+    "timestamp": "2026-02-10T22:13:28.420Z",
+    "source": "app_logger"
+  },
+  {
+    "level": "info",
+    "category": "Ads",
+    "message": "🎁 EARNED_REWARD signal received from AdMob",
+    "data": {
+      "reward": {
+        "amount": 10,
+        "type": "coins"
+      }
+    },
+    "timestamp": "2026-02-10T22:13:33.749Z",
+    "source": "app_logger"
+  },
+  {
+    "level": "info",
+    "category": "Ads",
+    "message": "🚪 Ad closed after 8s (Reward confirmed: true)",
+    "timestamp": "2026-02-10T22:13:35.990Z",
+    "source": "app_logger"
+  },
+  {
+    "level": "info",
+    "category": "Ads",
+    "message": "🎯 Calling onRewardEarned callback from CLOSED handler",
+    "timestamp": "2026-02-10T22:13:36.057Z",
+    "source": "app_logger"
+  },
+  {
+    "level": "info",
+    "category": "Ads",
+    "message": "🔄 Granting extra play for user 9d97c5fe-9051-4da5-881a-f4f380cbb6b0",
+    "timestamp": "2026-02-10T22:13:36.375Z",
+    "source": "app_logger"
+  },
+  {
+    "level": "info",
+    "category": "Ads",
+    "message": "✅ Extra play granted & verified: 11 → 12",
+    "timestamp": "2026-02-10T22:13:36.785Z",
     "source": "app_logger"
   },
   {
     "level": "debug",
     "category": "Plays",
     "message": "Fetching plays info from Supabase",
-    "timestamp": "2026-01-27T22:45:16.140Z",
+    "timestamp": "2026-02-10T22:13:36.788Z",
+    "source": "app_logger"
+  },
+  {
+    "level": "debug",
+    "category": "Plays",
+    "message": "Quota breakdown",
+    "data": {
+      "xp": 75738,
+      "baseFromRank": 10,
+      "storedQuota": 12
+    },
+    "timestamp": "2026-02-10T22:13:37.087Z",
+    "source": "app_logger"
+  },
+  {
+    "level": "debug",
+    "category": "Plays",
+    "message": "Calculated plays info",
+    "data": {
+      "allowed": 999,
+      "used": 0,
+      "remaining": 999,
+      "isAdmin": true,
+      "userId": "9d97c5fe-9051-4da5-881a-f4f380cbb6b0"
+    },
+    "timestamp": "2026-02-10T22:13:37.165Z",
     "source": "app_logger"
   },
   {
     "level": "info",
     "category": "Ads",
     "message": "✅ Ad loaded successfully",
-    "timestamp": "2026-01-27T22:45:17.218Z",
-    "source": "app_logger"
-  },
-  {
-    "level": "debug",
-    "category": "Plays",
-    "message": "Quota breakdown",
-    "data": {
-      "xp": 73522,
-      "baseFromRank": 4,
-      "storedQuota": 15
-    },
-    "timestamp": "2026-01-27T22:45:17.326Z",
-    "source": "app_logger"
-  },
-  {
-    "level": "debug",
-    "category": "Plays",
-    "message": "Quota breakdown",
-    "data": {
-      "xp": 73522,
-      "baseFromRank": 4,
-      "storedQuota": 15
-    },
-    "timestamp": "2026-01-27T22:45:17.389Z",
-    "source": "app_logger"
-  },
-  {
-    "level": "debug",
-    "category": "Plays",
-    "message": "Quota breakdown",
-    "data": {
-      "xp": 73522,
-      "baseFromRank": 4,
-      "storedQuota": 15
-    },
-    "timestamp": "2026-01-27T22:45:17.391Z",
-    "source": "app_logger"
-  },
-  {
-    "level": "debug",
-    "category": "Plays",
-    "message": "Calculated plays info",
-    "data": {
-      "allowed": 15,
-      "used": 13,
-      "remaining": 2,
-      "isAdmin": false,
-      "userId": "9d97c5fe-9051-4da5-881a-f4f380cbb6b0"
-    },
-    "timestamp": "2026-01-27T22:45:17.622Z",
-    "source": "app_logger"
-  },
-  {
-    "level": "debug",
-    "category": "Plays",
-    "message": "Calculated plays info",
-    "data": {
-      "allowed": 15,
-      "used": 13,
-      "remaining": 2,
-      "isAdmin": false,
-      "userId": "9d97c5fe-9051-4da5-881a-f4f380cbb6b0"
-    },
-    "timestamp": "2026-01-27T22:45:17.685Z",
-    "source": "app_logger"
-  },
-  {
-    "level": "debug",
-    "category": "Plays",
-    "message": "Calculated plays info",
-    "data": {
-      "allowed": 15,
-      "used": 13,
-      "remaining": 2,
-      "isAdmin": false,
-      "userId": "9d97c5fe-9051-4da5-881a-f4f380cbb6b0"
-    },
-    "timestamp": "2026-01-27T22:45:17.687Z",
+    "timestamp": "2026-02-10T22:13:37.314Z",
     "source": "app_logger"
   }
 ]

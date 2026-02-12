@@ -43,19 +43,21 @@ function Wait-Emulator {
     }
 
     Write-Host "   Lancement de l'emulateur Medium_Phone_API_36.1..." -ForegroundColor Yellow
-    Start-Process -NoNewWindow -FilePath "emulator" -ArgumentList "-avd", "Medium_Phone_API_36.1"
+    # On lance l'emulateur dans sa propre fenetre pour ne pas polluer le terminal actuel
+    # On redirige les logs vers un fichier pour debug si besoin
+    Start-Process -FilePath "emulator" -ArgumentList "-avd", "Medium_Phone_API_36.1" -WindowStyle Minimized
 
     Write-Host "   Attente du demarrage de l'emulateur (30 secondes)..." -ForegroundColor Yellow
     $maxAttempts = 30
     $attempt = 0
 
     while ($attempt -lt $maxAttempts) {
-        Start-Sleep -Seconds 1
         $devices = adb devices 2>$null | Select-String "device$"
         if ($devices) {
-            Write-Host "   OK Emulateur demarre!" -ForegroundColor Green
+            Write-Host "   OK Emulateur demarre (ADB Pret)!" -ForegroundColor Green
             return $true
         }
+        Start-Sleep -Seconds 1
         $attempt++
     }
 
@@ -95,13 +97,14 @@ Setup-ADBTunnels
 # Etape 1: Lancer gokiko (Metro) dans une nouvelle fenetre PowerShell
 Write-Host ""
 Write-Host "1. Lancement du serveur Metro (gokiko)..." -ForegroundColor Green
-Start-Process PowerShell -ArgumentList "-NoExit", "-Command", "cd '$PWD'; .\gokiko.ps1"
-Write-Host "   OK Fenetre Metro ouverte" -ForegroundColor Green
+# On ajoute --android pour lancer l'app automatiquement sur l'emulateur
+Start-Process PowerShell -ArgumentList "-NoExit", "-Command", "cd '$PWD'; npx expo start --dev-client --android"
+Write-Host "   OK Fenetre Metro ouverte (App lancée sur Android)" -ForegroundColor Green
 
 # Attendre que Metro soit pret (environ 10-15 secondes)
 Write-Host ""
-Write-Host "Attente du demarrage de Metro (10 secondes)..." -ForegroundColor Yellow
-Start-Sleep -Seconds 10
+Write-Host "Attente du demarrage de Metro..." -ForegroundColor Yellow
+Start-Sleep -Seconds 8
 
 # Etape 2: Lancer goobs (OBSERVER) dans une nouvelle fenetre PowerShell
 Write-Host ""

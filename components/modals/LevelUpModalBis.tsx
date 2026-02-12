@@ -629,7 +629,6 @@ const styles = StyleSheet.create({
     width: '85%',
     maxWidth: 400,
     maxHeight: '75%',
-    overflow: 'hidden',
     elevation: 6,
     shadowColor: '#000',
     shadowOffset: { width: 0, height: 3 },
@@ -656,7 +655,7 @@ const styles = StyleSheet.create({
   },
   eventDetailsContent: {
     padding: 20,
-    maxHeight: '60%',
+    flexShrink: 1,
   },
   eventDetailsDescription: {
     fontSize: 15,
