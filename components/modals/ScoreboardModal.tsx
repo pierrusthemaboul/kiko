@@ -73,6 +73,18 @@ const ScoreboardModal: React.FC<ScoreboardModalProps> = ({
   function getEventYear(event: LevelEventSummary): string {
     const rawDate = (event.date_formatee || event.date) ?? '';
     if (!rawDate) return '';
+
+    // Extraction propre de l'année pour les formats YYYY-MM-DD (même négatifs)
+    const match = rawDate.match(/^(-?\d+)-/);
+    if (match) {
+      return parseInt(match[1], 10).toString();
+    }
+
+    // Si c'est déjà une année simple "1926"
+    if (/^-?\d+$/.test(rawDate)) {
+      return parseInt(rawDate, 10).toString();
+    }
+
     const parsedDate = new Date(rawDate);
     if (!isNaN(parsedDate.getTime())) {
       return parsedDate.getFullYear().toString();

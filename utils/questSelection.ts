@@ -61,23 +61,8 @@ function shuffleWithSeed<T>(array: T[], seed: number): T[] {
  * 1. Détermine le Tier (1-4)
  * 2. Filtre par Tier
  * 3. Sélectionne 3 catégories différentes
- * 4. Applique un scaling intra-tier (+5% par grade dans le tier)
+ * Les valeurs de base sont pré-équilibrées par Tier dans Supabase.
  */
-
-function scaleTargetValue(baseValue: number, rankIndex: number): number {
-  // Le tier change tous les 4 grades
-  // On applique +5% par grade au-dessus du début du tier
-  const progressInTier = rankIndex % 4;
-  const multiplier = 1 + (progressInTier * 0.05);
-
-  // Pour les petits nombres (ex: 3 parties), on arrondit à l'entier
-  // Pour les grands nombres (ex: 10 000 points), on arrondit à la centaine la plus proche pour que ce soit "beau"
-  const scaled = baseValue * multiplier;
-  if (scaled >= 1000) {
-    return Math.round(scaled / 100) * 100;
-  }
-  return Math.ceil(scaled);
-}
 
 export async function selectDailyQuests(rankIndex: number = 0): Promise<DailyQuest[]> {
   try {
@@ -130,12 +115,6 @@ export async function selectDailyQuests(rankIndex: number = 0): Promise<DailyQue
       if (selected.length >= 3) break;
     }
 
-    // Appliquer le scaling intra-tier sur les objets sélectionnés
-    return selected.map(q => ({
-      ...q,
-      target_value: scaleTargetValue(q.target_value, rankIndex)
-    }));
-
     // Deuxième passage : si on n'a pas encore 3 quêtes (rare), on complète avec le reste
     if (selected.length < 3) {
       for (const q of shuffled) {
@@ -187,11 +166,7 @@ export async function getWeeklyQuests(rankIndex: number = 0): Promise<DailyQuest
     const seed = getDailySeed();
     const result = shuffleWithSeed(selected, seed + 1).slice(0, 3) as DailyQuest[];
 
-    // Appliquer le scaling
-    return result.map(q => ({
-      ...q,
-      target_value: scaleTargetValue(q.target_value, rankIndex)
-    }));
+    return result;
   } catch (err) {
     console.error('Erreur lors de la récupération des quêtes hebdomadaires:', err);
     return [];
@@ -230,11 +205,7 @@ export async function getMonthlyQuests(rankIndex: number = 0): Promise<DailyQues
     const seed = getDailySeed();
     const result = shuffleWithSeed(selected, seed + 2).slice(0, 3) as DailyQuest[];
 
-    // Appliquer le scaling
-    return result.map(q => ({
-      ...q,
-      target_value: scaleTargetValue(q.target_value, rankIndex)
-    }));
+    return result;
   } catch (err) {
     console.error('Erreur lors de la récupération des quêtes mensuelles:', err);
     return [];

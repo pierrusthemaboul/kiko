@@ -1,0 +1,14 @@
+{
+  "timestamp": "2026-02-22T07:46:48.750Z",
+  "agent": "VERITAS",
+  "action": "VALIDATE",
+  "inputs": {
+    "titre": "Cambridge Analytica",
+    "year": 2018
+  },
+  "decision": "REJECTED",
+  "reason": "The image contains multiple anachronisms including laptops (specifically Apple Macbooks), a modern computer monitor, modern desks and chairs, a smartphone, and a whiteboard. The presence of these modern items is incompatible with the 2018 Cambridge Analytica timeframe.",
+  "outputs": {
+    "score": 1
+  }
+}

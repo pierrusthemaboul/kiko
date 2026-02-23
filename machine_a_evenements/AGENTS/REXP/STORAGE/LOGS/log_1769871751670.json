@@ -1,0 +1,12 @@
+{
+  "timestamp": "2026-01-31T15:02:31.669Z",
+  "agent": "REXP",
+  "action": "EXPORT_FINAL",
+  "inputs": {
+    "titre": "Première représentation de 'Tartuffe' de Molière",
+    "year": 1664
+  },
+  "decision": "ERROR",
+  "reason": "null value in column \"ecart_temps_max\" of relation \"evenements\" violates not-null constraint",
+  "outputs": {}
+}

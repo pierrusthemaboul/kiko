@@ -1,0 +1,14 @@
+{
+  "timestamp": "2026-02-18T23:40:47.021Z",
+  "agent": "VERITAS",
+  "action": "VALIDATE",
+  "inputs": {
+    "titre": "Guerre du Vietnam",
+    "year": 1955
+  },
+  "decision": "REJECTED",
+  "reason": "The image depicts soldiers in a jungle-like environment, reminiscent of the Vietnam War era. The presence of concrete bunkers and military vehicles (possibly trucks or light armored vehicles) adds to this impression. However, some details raise concerns about historical accuracy. The helmets appear to be German Stahlhelm, not US M1 helmets. The uniforms, while appearing to be of the correct period, are not exactly right. The weapons are also not accurate for the vietnam war, possibly StG44 or similar weapon, also not widely in US armies. Additionally, the condition and finish of the vehicles is too good for what would be expected in a war zone. Therefore the image is questionable.",
+  "outputs": {
+    "score": 6
+  }
+}

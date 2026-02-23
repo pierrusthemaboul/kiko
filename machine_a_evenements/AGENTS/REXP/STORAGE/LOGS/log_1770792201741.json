@@ -1,0 +1,15 @@
+{
+  "timestamp": "2026-02-11T06:43:21.741Z",
+  "agent": "REXP",
+  "action": "EXPORT_PROD",
+  "inputs": {
+    "titre": "Naissance de Jean de La Fontaine",
+    "year": 1621
+  },
+  "decision": "SUCCESS",
+  "reason": "Nouvel événement créé avec image",
+  "outputs": {
+    "publicUrl": "https://ppxmtnuewcixbbmhnzzc.supabase.co/storage/v1/object/public/evenements-image/chambre_noire_naissance_de_jean_de_la_fontai_1770792201416.webp",
+    "id": "d7d1866d-615e-460b-b3b3-7dcf91199b38"
+  }
+}

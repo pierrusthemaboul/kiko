@@ -1,0 +1,14 @@
+{
+  "timestamp": "2026-01-31T15:55:27.889Z",
+  "agent": "VERITAS",
+  "action": "VALIDATE",
+  "inputs": {
+    "titre": "Création de l'Hôpital des Quinze-Vingts par Saint Louis pour les aveugles",
+    "year": 1254
+  },
+  "decision": "REJECTED",
+  "reason": "L'image montre un intérieur qui pourrait potentiellement représenter l'Hôpital des Quinze-Vingts. On y voit des patients vêtus de longues tuniques et coiffés de voiles, ainsi qu'un homme en robe, possiblement un soignant. L'architecture est en pierre et bois, ce qui correspond à l'époque. Cependant, les luminaires suspendus ne semblent pas correspondre à l'éclairage disponible au XIIIe siècle. De plus, les divans sur lesquels les patients sont allongés semblent un peu trop confortables et modernes pour cette époque. L'atmosphère générale suggère un lieu de soins, mais certains détails rendent la reconstitution historique douteuse.",
+  "outputs": {
+    "score": 6
+  }
+}

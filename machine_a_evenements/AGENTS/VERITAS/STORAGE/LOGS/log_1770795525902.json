@@ -1,0 +1,14 @@
+{
+  "timestamp": "2026-02-11T07:38:45.901Z",
+  "agent": "VERITAS",
+  "action": "VALIDATE",
+  "inputs": {
+    "titre": "Lancement du 'Flowbee' (tondeuse à cheveux)",
+    "year": 1980
+  },
+  "decision": "VALIDATED",
+  "reason": "L'image représente une personne tenant un Flowbee dans un salon. Le style vestimentaire, le papier peint, le miroir et les disques vinyles (Eagles, Flowbee, Fleetwood Mac) suggèrent les années 1980. Cependant, la qualité de l'image et certains détails mineurs (la forme exacte du Flowbee, possible utilisation d'IA) pourraient indiquer qu'elle n'est pas une photo authentique de l'époque. Le reste semble conforme aux critères de l'époque.",
+  "outputs": {
+    "score": 7
+  }
+}

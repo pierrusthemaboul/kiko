@@ -1,0 +1,11 @@
+{
+  "timestamp": "2026-02-18T20:22:09.408Z",
+  "agent": "CHRONOS",
+  "action": "AUDIT",
+  "inputs": {
+    "count": 13
+  },
+  "decision": "ERROR",
+  "reason": "[GoogleGenerativeAI Error]: Error fetching from https://generativelanguage.googleapis.com/v1beta/models/gemini-2.0-flash:generateContent: [429 Too Many Requests] Resource exhausted. Please try again later. Please refer to https://cloud.google.com/vertex-ai/generative-ai/docs/error-code-429 for more details.",
+  "outputs": {}
+}

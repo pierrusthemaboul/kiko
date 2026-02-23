@@ -1,0 +1,14 @@
+{
+  "timestamp": "2026-02-09T22:31:23.005Z",
+  "agent": "REXP",
+  "action": "EXPORT_PROD",
+  "inputs": {
+    "titre": "Naissance d'Émile Zola",
+    "year": 1840
+  },
+  "decision": "SUCCESS",
+  "reason": "Image mise à jour en production",
+  "outputs": {
+    "publicUrl": "https://ppxmtnuewcixbbmhnzzc.supabase.co/storage/v1/object/public/evenements-image/chambre_noire_naissance_d__mile_zola_1770676282735.webp"
+  }
+}

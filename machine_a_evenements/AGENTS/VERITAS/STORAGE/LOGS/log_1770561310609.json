@@ -1,0 +1,14 @@
+{
+  "timestamp": "2026-02-08T14:35:10.608Z",
+  "agent": "VERITAS",
+  "action": "VALIDATE",
+  "inputs": {
+    "titre": "L'Ère de Théodose : Un Empire en Deux Piliers",
+    "year": 395
+  },
+  "decision": "REJECTED",
+  "reason": "The image contains a modern crane, which is a significant anachronism. The presence of the crane immediately disqualifies the image as historically accurate for the Theodosian era.",
+  "outputs": {
+    "score": 1
+  }
+}

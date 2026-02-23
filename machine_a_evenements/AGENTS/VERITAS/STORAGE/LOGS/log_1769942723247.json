@@ -1,0 +1,14 @@
+{
+  "timestamp": "2026-02-01T10:45:23.246Z",
+  "agent": "VERITAS",
+  "action": "VALIDATE",
+  "inputs": {
+    "titre": "Le couronnement d'Otton Ier comme empereur du Saint-Empire romain germanique",
+    "year": 962
+  },
+  "decision": "VALIDATED",
+  "reason": "The image depicts a coronation scene reminiscent of Otton I's era. The architecture (arched windows, stone walls) and clothing (tunics, cloaks, crown) are generally consistent. Candles are used for lighting, which aligns with the time period. The tapestry is a plausible feature. However, the specific architectural style of the windows (pointed arches) might lean towards later Gothic architecture, which developed significantly after 962.  The quality of fabric may also be overly refined for that period, potentially creating a slight anachronism. Finally, the candles seem to be evenly spaced and the placement of the light fixtures is very modern.",
+  "outputs": {
+    "score": 7
+  }
+}

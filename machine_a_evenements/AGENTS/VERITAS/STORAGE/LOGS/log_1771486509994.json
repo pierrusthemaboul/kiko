@@ -1,0 +1,14 @@
+{
+  "timestamp": "2026-02-19T07:35:09.993Z",
+  "agent": "VERITAS",
+  "action": "VALIDATE",
+  "inputs": {
+    "titre": "SwissLeaks",
+    "year": 2015
+  },
+  "decision": "REJECTED",
+  "reason": "L'image montre une réunion d'hommes en costumes dans une salle de conférence avec de grands ordinateurs portables Apple Macbook. La présence de ces ordinateurs portables est un anachronisme majeur, car ils sont des produits modernes. De plus, les coupes des costumes et les styles de cheveux semblent très contemporains, ne correspondant pas nécessairement à l'esthétique de 2015. En conclusion, l'image ne correspond pas aux exigences d'exactitude historique pour représenter les SwissLeaks de 2015.",
+  "outputs": {
+    "score": 1
+  }
+}

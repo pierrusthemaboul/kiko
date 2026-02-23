@@ -1,0 +1,14 @@
+{
+  "timestamp": "2026-01-31T15:02:12.000Z",
+  "agent": "VERITAS",
+  "action": "VALIDATE",
+  "inputs": {
+    "titre": "Publication du 'Discours de la Méthode' de Descartes",
+    "year": 1637
+  },
+  "decision": "VALIDATED",
+  "reason": "The image depicts a man in a study, seemingly writing. He is dressed in clothing that loosely resembles 17th-century fashion (leather doublet, simple collar). The setting includes stone walls, books, a skull, and candles, consistent with the era. \n\nHowever, the lighting, the style of the bookcase (the spacing and shelves appear modern), and the rendering of the leather jacket look quite modern. The book the man is writing in is not a parchment, more like a modern book with paper.",
+  "outputs": {
+    "score": 7
+  }
+}

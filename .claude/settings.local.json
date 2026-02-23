@@ -67,7 +67,13 @@
       "Bash(git push:*)",
       "Bash(env)",
       "Bash(npx tsc:*)",
-      "Bash(dir:*)"
+      "Bash(dir:*)",
+      "Bash(del:*)",
+      "Bash(copy:*)",
+      "Bash(for:*)",
+      "Bash(do cp \"c:\\\\Users\\\\Pierre\\\\kiko\\\\assets\\\\images\\\\logo.png\" \"$dir/splashscreen_logo.png\")",
+      "Bash(done)",
+      "Bash(do cp \"c:\\\\Users\\\\Pierre\\\\kiko\\\\assets\\\\images\\\\splash-abbey.png\" \"$dir/splashscreen_logo.png\")"
     ]
   }
 }

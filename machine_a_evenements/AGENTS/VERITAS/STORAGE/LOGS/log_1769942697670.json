@@ -1,0 +1,14 @@
+{
+  "timestamp": "2026-02-01T10:44:57.669Z",
+  "agent": "VERITAS",
+  "action": "VALIDATE",
+  "inputs": {
+    "titre": "La Sorbonne est fondée à Paris.",
+    "year": 1257
+  },
+  "decision": "VALIDATED",
+  "reason": "The image depicts a scene inside what appears to be a medieval-era hall, possibly a university or monastery. Scholars are shown studying and writing by candlelight. The clothing and architecture generally match the period. However, the style of the scholars' robes and hair and the table style are slightly too modern, but no obvious anachronisms are visible like zippers, modern glasses, or electronic devices. The light fixture at the back also looks questionable.",
+  "outputs": {
+    "score": 8
+  }
+}

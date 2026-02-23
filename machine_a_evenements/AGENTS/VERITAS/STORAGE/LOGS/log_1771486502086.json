@@ -1,0 +1,14 @@
+{
+  "timestamp": "2026-02-19T07:35:02.085Z",
+  "agent": "VERITAS",
+  "action": "VALIDATE",
+  "inputs": {
+    "titre": "SwissLeaks",
+    "year": 2015
+  },
+  "decision": "REJECTED",
+  "reason": "The image depicts a meeting in a room with stone walls. The participants are wearing modern business suits, which are acceptable for the 2015 timeframe of the SwissLeaks. However, the numerous digital displays showing code/data and the screens integrated into the conference table are anachronistic and incompatible with the described event. The lighting also feels too modern.",
+  "outputs": {
+    "score": 2
+  }
+}

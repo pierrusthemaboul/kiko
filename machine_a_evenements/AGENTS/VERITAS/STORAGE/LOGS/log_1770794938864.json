@@ -1,0 +1,14 @@
+{
+  "timestamp": "2026-02-11T07:28:58.863Z",
+  "agent": "VERITAS",
+  "action": "VALIDATE",
+  "inputs": {
+    "titre": "Naufrage du General Slocum",
+    "year": 1904
+  },
+  "decision": "REJECTED",
+  "reason": "The image depicts a scene reminiscent of the General Slocum disaster. People in period clothing are shown in the water and on a burning steamboat with the New York skyline in the background. However, the style of the buildings in the skyline includes buildings that were not present in 1904, rendering the image inaccurate. Additionally, the overall 'cleanliness' of the image and the photorealistic rendering style does not resemble early black and white photography. The modern appearance of the buildings and general aesthetic are unacceptable.",
+  "outputs": {
+    "score": 5
+  }
+}

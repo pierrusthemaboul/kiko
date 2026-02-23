@@ -1,0 +1,210 @@
+[
+    {
+        "category": "cinematic",
+        "key": "classic",
+        "style": {
+            "enhancers": [
+                "cinematic",
+                "dramatic lighting",
+                "wide shot"
+            ],
+            "description": "Plan large dramatique avec éclairage cinéma",
+            "composition": "wide establishing shot, dramatic shadows, golden hour lighting"
+        }
+    },
+    {
+        "category": "cinematic",
+        "key": "intimate",
+        "style": {
+            "enhancers": [
+                "cinematic",
+                "close-up",
+                "shallow depth of field"
+            ],
+            "description": "Plan rapproché intimiste avec bokeh",
+            "composition": "intimate close-up, soft focus background, emotional lighting"
+        }
+    },
+    {
+        "category": "cinematic",
+        "key": "epic",
+        "style": {
+            "enhancers": [
+                "cinematic",
+                "epic scale",
+                "sweeping vista"
+            ],
+            "description": "Composition épique à grande échelle",
+            "composition": "epic wide angle, grand scale, heroic perspective"
+        }
+    },
+    {
+        "category": "cinematic",
+        "key": "atmospheric",
+        "style": {
+            "enhancers": [
+                "cinematic",
+                "atmospheric",
+                "mood lighting"
+            ],
+            "description": "Ambiance cinématographique immersive",
+            "composition": "atmospheric mood, volumetric lighting, rich textures"
+        }
+    },
+    {
+        "category": "cinematic",
+        "key": "dynamic",
+        "style": {
+            "enhancers": [
+                "cinematic",
+                "dynamic composition",
+                "action"
+            ],
+            "description": "Composition dynamique en mouvement",
+            "composition": "dynamic angle, movement blur, kinetic energy"
+        }
+    },
+    {
+        "category": "cinematic",
+        "key": "kubrick",
+        "style": {
+            "enhancers": [
+                "cinematic",
+                "symmetrical composition",
+                "wide lens"
+            ],
+            "description": "Composition symétrique à la Kubrick",
+            "composition": "perfect symmetry, wide angle lens, geometric precision"
+        }
+    },
+    {
+        "category": "cinematic",
+        "key": "ridley_scott",
+        "style": {
+            "enhancers": [
+                "cinematic",
+                "rich textures",
+                "golden lighting"
+            ],
+            "description": "Style Ridley Scott - textures riches",
+            "composition": "rich environmental detail, warm golden tones, layered depth"
+        }
+    },
+    {
+        "category": "cinematic",
+        "key": "kurosawa",
+        "style": {
+            "enhancers": [
+                "cinematic",
+                "deep focus",
+                "weather elements"
+            ],
+            "description": "Style Kurosawa - profondeur de champ",
+            "composition": "deep focus composition, natural elements, human drama"
+        }
+    },
+    {
+        "category": "alternative",
+        "key": "renaissance_painting",
+        "style": {
+            "enhancers": [
+                "renaissance painting style",
+                "classical composition",
+                "oil painting"
+            ],
+            "description": "Style peinture Renaissance - composition classique",
+            "composition": "classical renaissance composition, rich oil painting textures, masterful technique"
+        }
+    },
+    {
+        "category": "alternative",
+        "key": "baroque_drama",
+        "style": {
+            "enhancers": [
+                "baroque style",
+                "chiaroscuro",
+                "dramatic contrast"
+            ],
+            "description": "Style baroque - clair-obscur dramatique",
+            "composition": "baroque chiaroscuro, dramatic light contrast, emotional intensity"
+        }
+    },
+    {
+        "category": "alternative",
+        "key": "romantic_painting",
+        "style": {
+            "enhancers": [
+                "romantic painting",
+                "sublime nature",
+                "emotional depth"
+            ],
+            "description": "Style romantique - nature sublime",
+            "composition": "romantic landscape style, sublime natural forces, emotional resonance"
+        }
+    },
+    {
+        "category": "alternative",
+        "key": "documentary",
+        "style": {
+            "enhancers": [
+                "documentary photography",
+                "authentic",
+                "natural lighting"
+            ],
+            "description": "Style documentaire - authenticité brute",
+            "composition": "documentary realism, natural lighting, authentic moments"
+        }
+    },
+    {
+        "category": "alternative",
+        "key": "portrait_master",
+        "style": {
+            "enhancers": [
+                "master portrait",
+                "character study",
+                "refined lighting"
+            ],
+            "description": "Portrait de maître - étude de caractère",
+            "composition": "masterful portraiture, character depth, refined studio lighting"
+        }
+    },
+    {
+        "category": "alternative",
+        "key": "hyperrealistic",
+        "style": {
+            "enhancers": [
+                "hyperrealistic",
+                "photorealistic",
+                "sharp detail"
+            ],
+            "description": "Hyperréalisme - détail photographique",
+            "composition": "hyperrealistic detail, photographic precision, crystal clear focus"
+        }
+    },
+    {
+        "category": "alternative",
+        "key": "matte_painting",
+        "style": {
+            "enhancers": [
+                "matte painting",
+                "concept art",
+                "detailed environment"
+            ],
+            "description": "Matte painting - environnement détaillé",
+            "composition": "detailed environmental design, concept art quality, architectural precision"
+        }
+    },
+    {
+        "category": "alternative",
+        "key": "architectural",
+        "style": {
+            "enhancers": [
+                "architectural visualization",
+                "precise geometry",
+                "technical detail"
+            ],
+            "description": "Visualisation architecturale",
+            "composition": "architectural precision, geometric accuracy, technical excellence"
+        }
+    }
+]

@@ -1,0 +1,14 @@
+{
+  "timestamp": "2026-02-09T19:37:35.766Z",
+  "agent": "VERITAS",
+  "action": "VALIDATE",
+  "inputs": {
+    "titre": "François Ier fonde Le Havre",
+    "year": 1517
+  },
+  "decision": "REJECTED",
+  "reason": "The image depicts François Ier overseeing construction. The clothing and general atmosphere are generally consistent with the period. However, the workers' clothes are far too simple and don't quite match the known styles of the time for laborers. Additionally, the building in the background doesn't quite match the architecture of early Le Havre. Therefore, while attempting to represent the scene, it fails to achieve historical accuracy.",
+  "outputs": {
+    "score": 6
+  }
+}

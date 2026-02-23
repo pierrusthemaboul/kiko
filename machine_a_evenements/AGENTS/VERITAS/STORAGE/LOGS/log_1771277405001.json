@@ -1,0 +1,14 @@
+{
+  "timestamp": "2026-02-16T21:30:04.999Z",
+  "agent": "VERITAS",
+  "action": "VALIDATE",
+  "inputs": {
+    "titre": "Siège de Lisbonne",
+    "year": 1147
+  },
+  "decision": "REJECTED",
+  "reason": "The image depicts soldiers wearing helmets and chainmail armor, which are generally appropriate for the medieval period. However, there are modern helicopters in the background. This is a significant anachronism and makes the image unsuitable for depicting the Siege of Lisbon in 1147.",
+  "outputs": {
+    "score": 1
+  }
+}

@@ -1,0 +1,14 @@
+{
+  "timestamp": "2026-02-09T22:20:30.862Z",
+  "agent": "REXP",
+  "action": "EXPORT_PROD",
+  "inputs": {
+    "titre": "Le Tour du monde en 80 jours",
+    "year": 1872
+  },
+  "decision": "SUCCESS",
+  "reason": "Image mise à jour en production",
+  "outputs": {
+    "publicUrl": "https://ppxmtnuewcixbbmhnzzc.supabase.co/storage/v1/object/public/evenements-image/chambre_noire_le_tour_du_monde_en_80_jours_1770675630552.webp"
+  }
+}

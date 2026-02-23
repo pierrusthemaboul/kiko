@@ -1,0 +1,14 @@
+{
+  "timestamp": "2026-02-22T20:25:18.707Z",
+  "agent": "VERITAS",
+  "action": "VALIDATE",
+  "inputs": {
+    "titre": "Tiger Woods remporte le Masters d'Augusta",
+    "year": 1957
+  },
+  "decision": "REJECTED",
+  "reason": "The image depicts a scene related to golf, likely the Masters tournament. The clothing styles and architecture appear generally consistent with the mid-20th century, however one woman is holding a cellphone, which is an anachronism. There are two golf players at the front celebrating, as well as spectators lined up on either side. The general scene is plausible for the event described. Furthermore, the man on the right of the image is wearing a wristwatch, which would have been less common in 1957.",
+  "outputs": {
+    "score": 6
+  }
+}

@@ -1,0 +1,14 @@
+{
+  "timestamp": "2026-02-19T07:32:07.306Z",
+  "agent": "VERITAS",
+  "action": "VALIDATE",
+  "inputs": {
+    "titre": "Eradication de la variole (OMS)",
+    "year": 1980
+  },
+  "decision": "VALIDATED",
+  "reason": "L'image représente une réunion du personnel médical portant des masques chirurgicaux. On voit des documents, des stylos, et des écrans de télévision affichant le logo de l'OMS. L'atmosphère générale semble correspondre à une réunion d'information. Cependant, l'éclairage fluorescent au plafond et l'aspect moderne des écrans de télévision ainsi que l'allure générale de la pièce suggèrent une époque plus récente que 1980. Les masques chirurgicaux généralisés pourraient être un anachronisme si on considère l'usage courant des masques en 1980 (usage moins systématique). Une bouteille d'eau en plastique est visible, or le plastique n'était pas aussi omniprésent et le recyclage inexistant à cette époque.",
+  "outputs": {
+    "score": 7
+  }
+}

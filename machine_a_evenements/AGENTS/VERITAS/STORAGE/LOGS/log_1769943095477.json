@@ -1,0 +1,14 @@
+{
+  "timestamp": "2026-02-01T10:51:35.476Z",
+  "agent": "VERITAS",
+  "action": "VALIDATE",
+  "inputs": {
+    "titre": "Le roi Jean sans Terre d'Angleterre cède le Poitou à Philippe Auguste, agrandissant le domaine royal français.",
+    "year": 1204
+  },
+  "decision": "REJECTED",
+  "reason": "The image depicts a scene that could potentially represent King John ceding Poitou to Philip Augustus. The clothing generally resembles medieval attire. However, there are some anachronisms. Notably, the man on the left is wearing glasses, a clear indication of a modern element. The general style and atmosphere feel reasonably consistent with the period, but the presence of glasses breaks the historical accuracy, reducing the score and making the image invalid.",
+  "outputs": {
+    "score": 7
+  }
+}

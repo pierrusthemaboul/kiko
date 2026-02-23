@@ -1,0 +1,14 @@
+{
+  "timestamp": "2026-02-08T21:21:02.529Z",
+  "agent": "VERITAS",
+  "action": "VALIDATE",
+  "inputs": {
+    "titre": "Invasion de l'Ukraine par la Russie",
+    "year": 2022
+  },
+  "decision": "REJECTED",
+  "reason": "L'image contient plusieurs anachronismes modernes. La présence de smartphones et de la technologie liée (chargeurs, etc.) est un signe clair que cette image ne correspond pas à une invasion historique passée. Bien que les chars d'assaut correspondent à l'atmosphère d'un conflit armé, les appareils modernes discréditent l'authenticité de l'image.",
+  "outputs": {
+    "score": 1
+  }
+}

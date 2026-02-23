@@ -1,0 +1,14 @@
+{
+  "timestamp": "2026-02-19T07:34:55.214Z",
+  "agent": "VERITAS",
+  "action": "VALIDATE",
+  "inputs": {
+    "titre": "Cambridge Analytica",
+    "year": 2018
+  },
+  "decision": "REJECTED",
+  "reason": "The image depicts a modern office setting, which is suitable for the Cambridge Analytica event in 2018. However, there are anachronisms present that violate the rules: smartphones, laptops, and the visible plastic in the soda cans indicate modern technology. The clothing styles and general office setup also seem contemporary, aligning with the intended time period but the presence of modern items makes it invalid.",
+  "outputs": {
+    "score": 2
+  }
+}

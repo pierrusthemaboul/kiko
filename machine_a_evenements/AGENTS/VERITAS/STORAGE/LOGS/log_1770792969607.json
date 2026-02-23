@@ -1,0 +1,14 @@
+{
+  "timestamp": "2026-02-11T06:56:09.606Z",
+  "agent": "VERITAS",
+  "action": "VALIDATE",
+  "inputs": {
+    "titre": "Nicolas Fouquet devient surintendant des Finances",
+    "year": 1653
+  },
+  "decision": "REJECTED",
+  "reason": "The image depicts a man dressed in attire reminiscent of the 17th century, including a feathered hat and doublet. The setting features stone walls, arched windows, paintings, a writing desk, candles, and an inkwell, all suggestive of the era. However, the lightbulb hanging in the top right corner is a significant anachronism; electric lighting wasn't invented until the 19th century. The lightbulb immediately disqualifies the image for accuracy.",
+  "outputs": {
+    "score": 6
+  }
+}

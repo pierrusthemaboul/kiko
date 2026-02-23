@@ -1,0 +1,14 @@
+{
+  "timestamp": "2026-02-22T20:25:11.261Z",
+  "agent": "VERITAS",
+  "action": "VALIDATE",
+  "inputs": {
+    "titre": "Tiger Woods remporte le Masters d'Augusta",
+    "year": 1957
+  },
+  "decision": "REJECTED",
+  "reason": "This image is depicting a crowd watching a golfer celebrate his victory. However, several anachronisms prevent it from accurately representing the 1957 Masters tournament. Most notably, the golfer is wearing a modern-looking watch on his wrist. Also, the cut and style of the clothing worn by the crowd, while appearing vintage at first glance, show subtle modern touches and fabric properties. The building in the background does not clearly resemble the Augusta clubhouse as it would have appeared in 1957. Due to these inaccuracies, the image cannot be validated for historical authenticity.",
+  "outputs": {
+    "score": 2
+  }
+}

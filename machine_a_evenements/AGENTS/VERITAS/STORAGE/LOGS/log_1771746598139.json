@@ -1,0 +1,14 @@
+{
+  "timestamp": "2026-02-22T07:49:58.138Z",
+  "agent": "VERITAS",
+  "action": "VALIDATE",
+  "inputs": {
+    "titre": "Marée noire de l'Amoco Cadiz",
+    "year": 1978
+  },
+  "decision": "REJECTED",
+  "reason": "The image depicts people on a rocky beach, potentially related to a cleanup effort. While the clothing style appears generally consistent with the late 1970s in terms of color palettes and general shapes (jackets, pants), the fabric texture and the presence of zippers might indicate more modern materials. The presence of an inflatable boat in the background also raises questions regarding its appropriateness for the period, but it is a more modern style. Therefore, while it's not immediately rejected, the subtle modern aesthetics lower the score and cause a rejection for a high fidelity historical recreation.",
+  "outputs": {
+    "score": 7
+  }
+}

@@ -1,0 +1,14 @@
+{
+  "timestamp": "2026-01-31T15:54:24.023Z",
+  "agent": "VERITAS",
+  "action": "VALIDATE",
+  "inputs": {
+    "titre": "Saint Louis rentre en France après son séjour en Terre Sainte",
+    "year": 1254
+  },
+  "decision": "REJECTED",
+  "reason": "The image depicts a man in a medieval setting with timber-framed buildings and a forest backdrop. The man is wearing a cloak, which is appropriate for the period. The absence of modern objects like cars, smartphones, or zippers enhances the scene's historical plausibility. However, the floating banner is unrealistic, lacking any visible means of support. The man is also wearing a too modern hoodie under his clock, making this historically inaccurate. While the clothes, ground, and buildings seem appropriate, the floating banner and modern hoddie under the clock introduces an element of fantasy that detracts from the scene's historical accuracy, making it invalid. The environment and buildings point towards a medieval setting.",
+  "outputs": {
+    "score": 7
+  }
+}

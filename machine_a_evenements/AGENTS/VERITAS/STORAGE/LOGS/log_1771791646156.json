@@ -1,0 +1,14 @@
+{
+  "timestamp": "2026-02-22T20:20:46.154Z",
+  "agent": "VERITAS",
+  "action": "VALIDATE",
+  "inputs": {
+    "titre": "Première victoire de l'équipe de France à la Coupe du Monde",
+    "year": 1998
+  },
+  "decision": "REJECTED",
+  "reason": "The image depicts a jubilant scene following France's 1998 World Cup victory. The crowd is dressed in colors of the French flag, there are fireworks, and the World Cup trophy is held aloft. However, several elements indicate that the image is not entirely accurate for the time period. The large screen visible in the background seems of a more recent vintage. More crucially, several people are holding smartphones to take pictures, which is an anachronism. Banners appear to be of a modern material. Furthermore, the general aesthetic feels digitally rendered rather than like a genuine photograph from 1998.",
+  "outputs": {
+    "score": 6
+  }
+}

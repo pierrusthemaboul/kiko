@@ -1,0 +1,14 @@
+{
+  "timestamp": "2026-02-22T19:30:40.153Z",
+  "agent": "VERITAS",
+  "action": "VALIDATE",
+  "inputs": {
+    "titre": "Marée noire de l'Amoco Cadiz",
+    "year": 1978
+  },
+  "decision": "REJECTED",
+  "reason": "The image depicts a coastal scene with cleanup crew members, a ship aground, and oil containment booms. While the overall atmosphere is reminiscent of the Amoco Cadiz oil spill, several elements raise concerns about historical accuracy. The clothing of the crew seems more modern than what was typically worn in 1978, especially the jacket on the left, and the texture of the orange booms looks like modern plastic. Therefore, the image is likely a modern recreation, but not fully accurate. The presence of plastic is a concern as well. The overall scene is plausible, but the details are questionable. In detail, the sportswear and some modern materials on the clothing should be avoided.",
+  "outputs": {
+    "score": 7
+  }
+}

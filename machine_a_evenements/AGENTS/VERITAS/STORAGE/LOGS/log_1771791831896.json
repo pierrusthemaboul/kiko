@@ -1,0 +1,14 @@
+{
+  "timestamp": "2026-02-22T20:23:51.895Z",
+  "agent": "VERITAS",
+  "action": "VALIDATE",
+  "inputs": {
+    "titre": "Mort de Jane Birkin",
+    "year": 2023
+  },
+  "decision": "REJECTED",
+  "reason": "The image depicts a crowd gathering in a Parisian square, likely for a memorial. The overall atmosphere aligns with the event \"Mort de Jane Birkin (2023)\". However, the presence of a modern van and large screen displaying a portrait of the deceased are significant anachronisms, marking it as an image from the modern day. The buildings appear period-appropriate.",
+  "outputs": {
+    "score": 6
+  }
+}

@@ -1,0 +1,14 @@
+{
+  "timestamp": "2026-02-19T07:08:17.768Z",
+  "agent": "VERITAS",
+  "action": "VALIDATE",
+  "inputs": {
+    "titre": "Naufrage du MV Wilhelm Gustloff",
+    "year": 1945
+  },
+  "decision": "VALIDATED",
+  "reason": "L'image montre un grand navire rempli de passagers, ressemblant à une scène des années 1940. Les vêtements (manteaux, chapeaux fedora et cloche, bonnets) et le design du navire sont compatibles avec cette époque. Il n'y a pas d'anachronismes flagrants comme des smartphones ou des voitures modernes. L'ambiance générale de l'image correspond à un navire de l'époque. Cependant, la qualité d'image est un peu trop parfaite pour être une vraie photographie de 1945, ce qui lui fait perdre quelques points. La présence de ce qui semble être des canots de sauvetage est appropriée au contexte.",
+  "outputs": {
+    "score": 8
+  }
+}

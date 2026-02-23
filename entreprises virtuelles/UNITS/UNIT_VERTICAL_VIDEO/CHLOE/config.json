@@ -1,0 +1,49 @@
+{
+  "agent_name": "CHLOE",
+  "version": "2.1.0",
+  "description": "Production TikTok avec hook reveal, CTA et durée contrôlée",
+  "video": {
+    "resolution": "1080x1920",
+    "bg_blur": 20,
+    "fps": 30,
+    "bitrate": "3500k",
+    "target_duration": 30,
+    "min_duration": 25,
+    "loop_if_short": true,
+    "crop_top_px": 60
+  },
+  "hook": {
+    "text": "TIMALAUS",
+    "banner_path": "../../../SHARED/ASSETS/timalaus_badge_v2.png",
+    "duration_seconds": 6,
+    "font_size": 90,
+    "position_y": 300,
+    "font_color": "white",
+    "bg_color": "black",
+    "bg_opacity": 0.0,
+    "effect": "reveal",
+    "reveal_speed": 600,
+    "shadow": true,
+    "rotation": -15
+  },
+  "cta": {
+    "enabled": true,
+    "text": "Télécharge Timalaus !",
+    "image_path": "../../../SHARED/ASSETS/cta_playstore.png",
+    "show_text": false,
+    "start_at_seconds_before_end": 5,
+    "font_color": "yellow",
+    "font_size": 60,
+    "position_y": "H-150"
+  },
+  "production": {
+    "naming_prefix": "tiktok",
+    "limit_clips": 1,
+    "clean_output_before_run": true
+  },
+  "storage": {
+    "input": "./STORAGE/INPUT",
+    "output": "./STORAGE/OUTPUT",
+    "logs": "./STORAGE/LOGS"
+  }
+}

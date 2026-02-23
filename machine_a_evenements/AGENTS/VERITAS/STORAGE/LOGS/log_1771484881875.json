@@ -1,0 +1,14 @@
+{
+  "timestamp": "2026-02-19T07:08:01.874Z",
+  "agent": "VERITAS",
+  "action": "VALIDATE",
+  "inputs": {
+    "titre": "Naufrage du MV Doña Paz",
+    "year": 1987
+  },
+  "decision": "REJECTED",
+  "reason": "The image shows a burning ship with many people present. While the general scene aligns with the MV Doña Paz disaster, the modern clothing and likely digital photography are anachronistic. Specific clothing items like t-shirts, baseball caps, and some dresses appear too modern. Furthermore, the crisp clarity of the image points to a modern digital camera, impossible for 1987.",
+  "outputs": {
+    "score": 4
+  }
+}

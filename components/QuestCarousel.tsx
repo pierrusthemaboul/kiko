@@ -248,10 +248,11 @@ export default function QuestCarousel({
                     </View>
                     {quest.parts_reward !== null && quest.parts_reward > 0 && (
                       <View style={styles.rewardPill}>
-                        <Ionicons name="flash" size={14} color={COLORS.accent} />
-                        <Text style={styles.rewardText}>+{quest.parts_reward}</Text>
+                        <Ionicons name="game-controller-outline" size={14} color={COLORS.accent} />
+                        <Text style={styles.rewardText}>+{quest.parts_reward} {quest.parts_reward === 1 ? 'partie' : 'parties'}</Text>
                       </View>
                     )}
+
                   </View>
 
                   {isClaimed ? (

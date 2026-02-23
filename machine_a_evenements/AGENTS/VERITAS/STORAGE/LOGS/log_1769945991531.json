@@ -1,0 +1,14 @@
+{
+  "timestamp": "2026-02-01T11:39:51.530Z",
+  "agent": "VERITAS",
+  "action": "VALIDATE",
+  "inputs": {
+    "titre": "Tiger Woods devient le plus jeune golfeur à remporter le Masters d'Augusta",
+    "year": 1997
+  },
+  "decision": "VALIDATED",
+  "reason": "L'image montre Tiger Woods effectuant un swing de golf devant une foule. On y voit des vêtements et accessoires de golf (casquette, chaussures, club). La présence d'un véhicule de golf à l'arrière-plan est typique. Le style vestimentaire des spectateurs semble plausible pour l'époque. L'absence d'objets modernes flagrants comme des smartphones ou des vêtements hyper-modernes rend l'image globalement crédible pour représenter l'événement de 1997. Cependant, l'absence de contraste dans la photo donne l'impression que c'est une photo récente, et le matériel vestimentaire des gens a l'air moderne.",
+  "outputs": {
+    "score": 8
+  }
+}

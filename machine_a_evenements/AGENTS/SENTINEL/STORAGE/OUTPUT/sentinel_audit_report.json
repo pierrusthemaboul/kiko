@@ -1,0 +1,98 @@
+{
+  "timestamp": "2026-02-22T19:58:55.218Z",
+  "session": {
+    "totalGenerated": 12,
+    "totalAccepted": 7,
+    "totalRejected": 5,
+    "acceptanceRate": "58.3%",
+    "rejectionRate": "41.7%"
+  },
+  "rejectionBreakdown": {
+    "preFilter": 2,
+    "aiDecision": 3
+  },
+  "detectionStrategies": {
+    "exactMatch": 2,
+    "highSimilarity": 0,
+    "keywordMatch": 0,
+    "similarityCloseYear": 0,
+    "aiDecision": 3
+  },
+  "acceptedEvents": [
+    {
+      "titre": "Raid de Dieppe",
+      "year": 1942
+    },
+    {
+      "titre": "Ouverture du camp d'extermination de Belzec",
+      "year": 1942
+    },
+    {
+      "titre": "Opération Market Garden",
+      "year": 1944
+    },
+    {
+      "titre": "Soulèvement de Varsovie",
+      "year": 1944
+    },
+    {
+      "titre": "Bombardement de Dresde",
+      "year": 1945
+    },
+    {
+      "titre": "Libération du camp d'Auschwitz",
+      "year": 1945
+    },
+    {
+      "titre": "Suicide d'Adolf Hitler",
+      "year": 1945
+    }
+  ],
+  "rejectedEvents": [
+    {
+      "titre": "Bataille de Guadalcanal",
+      "year": 1942,
+      "reason": "Titre identique (normalisé) + même année: \"Bataille de Guadalcanal\"",
+      "rejectionType": "PRE_FILTER",
+      "strategy": "EXACT_MATCH",
+      "matchedWith": "Bataille de Guadalcanal"
+    },
+    {
+      "titre": "Bataille des Ardennes",
+      "year": 1944,
+      "reason": "Titre identique (normalisé) + même année: \"Bataille des Ardennes\"",
+      "rejectionType": "PRE_FILTER",
+      "strategy": "EXACT_MATCH",
+      "matchedWith": "Bataille des Ardennes"
+    },
+    {
+      "titre": "Capitulation de l'Allemagne nazie",
+      "year": 1945,
+      "reason": "L'événement 'Capitulation de l'Allemagne nazie' est un synonyme de 'Fin de la Seconde Guerre mondiale en Europe'. Ils désignent le même événement historique.",
+      "rejectionType": "AI_DECISION",
+      "strategy": "AI",
+      "matchedWith": "Fin de la Seconde Guerre mondiale en Europe"
+    },
+    {
+      "titre": "Bombardement atomique d'Hiroshima",
+      "year": 1945,
+      "reason": "Le titre de l'événement à valider est quasi-identique à un événement existant : Bombardement d'Hiroshima vs Bombardement d'Hiroshima.",
+      "rejectionType": "AI_DECISION",
+      "strategy": "AI",
+      "matchedWith": "Bombardement d'Hiroshima"
+    },
+    {
+      "titre": "Capitulation du Japon",
+      "year": 1945,
+      "reason": "La \"Capitulation du Japon\" est un événement majeur de la fin de la Seconde Guerre Mondiale. \"Fin de la Seconde Guerre mondiale en Europe\" est conceptuellement très proche et se déroule la même année. Il s'agit du même conflit.",
+      "rejectionType": "AI_DECISION",
+      "strategy": "AI",
+      "matchedWith": "Fin de la Seconde Guerre mondiale en Europe"
+    }
+  ],
+  "performance": {
+    "preFilterEfficiency": "40.0% des rejets sans appel IA",
+    "aiCalls": 10,
+    "estimatedCostSaved": "~2 appels IA évités"
+  }
+}

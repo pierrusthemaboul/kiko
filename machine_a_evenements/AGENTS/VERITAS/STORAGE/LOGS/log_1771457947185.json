@@ -1,0 +1,14 @@
+{
+  "timestamp": "2026-02-18T23:39:07.184Z",
+  "agent": "VERITAS",
+  "action": "VALIDATE",
+  "inputs": {
+    "titre": "Invention du pantalon jeans",
+    "year": 1873
+  },
+  "decision": "REJECTED",
+  "reason": "The image depicts two men in a workshop. The presence of exposed light bulbs is anachronistic, as they were not widely available in 1873. The scenery and clothing are appropriate for the time. The general atmosphere is also consistent. However, the light bulbs are a significant historical inaccuracy.",
+  "outputs": {
+    "score": 6
+  }
+}

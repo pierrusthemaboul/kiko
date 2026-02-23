@@ -1,0 +1,14 @@
+{
+  "timestamp": "2026-02-22T07:52:43.086Z",
+  "agent": "VERITAS",
+  "action": "VALIDATE",
+  "inputs": {
+    "titre": "Blanchiment à la Danske Bank",
+    "year": 2017
+  },
+  "decision": "REJECTED",
+  "reason": "L'image montre une réunion se déroulant dans un bâtiment à l'architecture classique. Les participants portent des costumes. Cependant, la présence de laptops, d'un écran d'ordinateur moderne, et d'un tableau blanc indique qu'il s'agit d'une scène contemporaine, ce qui est un anachronisme par rapport à l'événement de 2017, le blanchiment à la Danske Bank. L'éclairage semble également trop moderne et intense pour l'époque, ressemblant à des projecteurs de stade.",
+  "outputs": {
+    "score": 2
+  }
+}

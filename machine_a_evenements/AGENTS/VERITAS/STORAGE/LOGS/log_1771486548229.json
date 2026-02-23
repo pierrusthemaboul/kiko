@@ -1,0 +1,14 @@
+{
+  "timestamp": "2026-02-19T07:35:48.228Z",
+  "agent": "VERITAS",
+  "action": "VALIDATE",
+  "inputs": {
+    "titre": "Blanchiment à la Danske Bank",
+    "year": 2017
+  },
+  "decision": "REJECTED",
+  "reason": "The image depicts a palatial office space with people in suits, resembling a bank setting. However, the presence of modern computer monitors with what appear to be stock market graphs, combined with the lamps and the plastic/plexiglass appearance of modern office furniture, constitutes anachronisms for an accurate depiction of the Danske Bank scandal in 2017. While suits and classic architecture could be appropriate, the overwhelming presence of modern technology is not. Additionally, the candles seem out of place in a modern office setting.",
+  "outputs": {
+    "score": 3
+  }
+}

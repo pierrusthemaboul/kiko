@@ -1,0 +1,14 @@
+{
+  "timestamp": "2026-02-09T06:54:11.966Z",
+  "agent": "REXP",
+  "action": "EXPORT_PROD",
+  "inputs": {
+    "titre": "Albrecht Dürer peint son Autoportrait à la fourrure",
+    "year": 1500
+  },
+  "decision": "SUCCESS",
+  "reason": "Image mise à jour en production",
+  "outputs": {
+    "publicUrl": "https://ppxmtnuewcixbbmhnzzc.supabase.co/storage/v1/object/public/evenements-image/chambre_noire_albrecht_d_rer_peint_son_autop_1770620051715.webp"
+  }
+}

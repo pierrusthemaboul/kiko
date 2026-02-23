@@ -1,0 +1,14 @@
+{
+  "timestamp": "2026-02-22T20:22:05.585Z",
+  "agent": "VERITAS",
+  "action": "VALIDATE",
+  "inputs": {
+    "titre": "Mort de Claude Nougaro",
+    "year": 2004
+  },
+  "decision": "REJECTED",
+  "reason": "The image depicts a Parisian street scene, plausibly set in 2004 during a period of mourning. People wear appropriate attire and gather outside a building. The presence of the Citroen DS car introduces anachronism, this car is more characteristic of the 60s or 70s. The image also includes CTA signage that might be too recent and modern.",
+  "outputs": {
+    "score": 6
+  }
+}

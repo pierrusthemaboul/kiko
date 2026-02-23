@@ -1,0 +1,14 @@
+{
+  "timestamp": "2026-02-18T23:42:14.080Z",
+  "agent": "VERITAS",
+  "action": "VALIDATE",
+  "inputs": {
+    "titre": "Chute de Saïgon",
+    "year": 1975
+  },
+  "decision": "VALIDATED",
+  "reason": "The image depicts a chaotic scene in what appears to be Saigon, with helicopters flying overhead and people fleeing.  The clothing generally seems appropriate for the time period, and the overall atmosphere matches the description of the Fall of Saigon. However, the car in the bottom right is a more modern model car than would have been present in 1975, the helicopter designs seems incorrect and the polyester jerseys seem a bit too modern in design and fabric. The general architecture fits the era. No fantastical elements are visible. Overall, it's a decent representation but needs some tweaks to remove the modern anachronisms and better match the helicopter designs.",
+  "outputs": {
+    "score": 7
+  }
+}

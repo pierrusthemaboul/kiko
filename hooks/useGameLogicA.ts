@@ -1,6 +1,6 @@
 // hooks/useGameLogicA.ts
 import { useState, useCallback, useEffect, useMemo, useRef } from 'react';
-import { Animated, Dimensions } from 'react-native';
+import { Animated, Dimensions, Image } from 'react-native';
 import Constants from 'expo-constants';
 import { supabase } from '@/lib/supabase/supabaseClients';
 import { FirebaseAnalytics } from '../lib/firebase';
@@ -1094,13 +1094,17 @@ export function useGameLogicA(initialEvent?: string, modeId?: string) {
               }
             }, 1500);
           } else {
+            // Sélection anticipée + prefetch image pendant le délai de feedback (750ms)
+            const nextEventPromise = selectNewEventRef.current(allEvents, newEvent);
+            nextEventPromise.then((evt: Event | null) => {
+              if (evt?.illustration_url) Image.prefetch(evt.illustration_url).catch(() => {});
+            });
             setTimeout(() => {
               setIsWaitingForCountdown(false);
               if (!isGameOver && !showLevelModal) {
-                selectNewEventRef.current(allEvents, newEvent)
-                  .then((evt: Event | null) => {
-                    if (evt) updateGameState(evt);
-                  });
+                nextEventPromise.then((evt: Event | null) => {
+                  if (evt) updateGameState(evt);
+                });
               }
             }, 750);
           }
@@ -1141,13 +1145,17 @@ export function useGameLogicA(initialEvent?: string, modeId?: string) {
             if (!isGameOver) endGameRef.current();
           }, 500); // Short delay before game over screen
         } else {
+          // Sélection anticipée + prefetch image pendant le délai de feedback (1500ms)
+          const nextEventPromise = selectNewEventRef.current(allEvents, newEvent);
+          nextEventPromise.then((evt: Event | null) => {
+            if (evt?.illustration_url) Image.prefetch(evt.illustration_url).catch(() => {});
+          });
           setTimeout(() => {
             setIsWaitingForCountdown(false);
             if (!isGameOver && !showLevelModal) {
-              selectNewEventRef.current(allEvents, newEvent)
-                .then((evt: Event | null) => {
-                  if (evt) updateGameState(evt);
-                });
+              nextEventPromise.then((evt: Event | null) => {
+                if (evt) updateGameState(evt);
+              });
             }
           }, 1500); // Longer delay for incorrect answers
         }

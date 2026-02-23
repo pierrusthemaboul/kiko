@@ -1,0 +1,14 @@
+{
+  "timestamp": "2026-02-09T06:52:51.251Z",
+  "agent": "REXP",
+  "action": "EXPORT_PROD",
+  "inputs": {
+    "titre": "Décès de William Shakespeare",
+    "year": 1616
+  },
+  "decision": "SUCCESS",
+  "reason": "Image mise à jour en production",
+  "outputs": {
+    "publicUrl": "https://ppxmtnuewcixbbmhnzzc.supabase.co/storage/v1/object/public/evenements-image/chambre_noire_d_c_s_de_william_shakespeare_1770619970715.webp"
+  }
+}

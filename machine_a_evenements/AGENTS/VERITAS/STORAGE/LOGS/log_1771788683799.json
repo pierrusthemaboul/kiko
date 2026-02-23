@@ -1,0 +1,14 @@
+{
+  "timestamp": "2026-02-22T19:31:23.798Z",
+  "agent": "VERITAS",
+  "action": "VALIDATE",
+  "inputs": {
+    "titre": "Blanchiment à la Danske Bank",
+    "year": 2017
+  },
+  "decision": "REJECTED",
+  "reason": "L'image montre une grande salle avec des personnes en costumes, ce qui correspond à l'ambiance d'une banque en 2017. Cependant, la présence évidente d'ordinateurs portables (Macbook) est un anachronisme. De plus, l'éclairage de type 'stadium floodlights' est inapproprié. La description fait référence à du 'plastique et du plexiglass', ce qui est aussi un problème. En raison de ces nombreux éléments modernes, l'image est rejetée.",
+  "outputs": {
+    "score": 2
+  }
+}

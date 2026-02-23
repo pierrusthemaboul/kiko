@@ -1,0 +1,14 @@
+{
+  "timestamp": "2026-02-22T20:24:36.229Z",
+  "agent": "VERITAS",
+  "action": "VALIDATE",
+  "inputs": {
+    "titre": "Premier Ballon d'Or hors Europe",
+    "year": 1995
+  },
+  "decision": "REJECTED",
+  "reason": "The image depicts a modern-day stadium with modern features such as advertising boards. The trophy style appears more recent than 1995. While there are no blatant anachronisms like smartphones, the overall look is too polished and modern for the mid-90s. Confetti looks different as well. The stadium advertising boards are the biggest giveaway.",
+  "outputs": {
+    "score": 6
+  }
+}

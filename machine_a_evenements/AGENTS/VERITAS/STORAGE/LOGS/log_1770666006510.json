@@ -1,0 +1,14 @@
+{
+  "timestamp": "2026-02-09T19:40:06.509Z",
+  "agent": "VERITAS",
+  "action": "VALIDATE",
+  "inputs": {
+    "titre": "Première Bible imprimée en français",
+    "year": 1488
+  },
+  "decision": "REJECTED",
+  "reason": "L'image représente une scène dans un atelier éclairé à la bougie, avec deux hommes travaillant sur un grand livre. On y trouve des vêtements d'époque, mais la présence de lunettes sur l'un des hommes constitue un anachronisme important. De plus, le bâtiment avec des murs de pierre grossièrement taillés et l'éclairage à la bougie suggèrent plus une ambiance monastique qu'un atelier d'imprimerie du 15e siècle. Il n'y a pas d'éléments fantastiques, mais l'imprécision historique rend l'image moins crédible pour illustrer l'événement de la première Bible imprimée en français.",
+  "outputs": {
+    "score": 6
+  }
+}

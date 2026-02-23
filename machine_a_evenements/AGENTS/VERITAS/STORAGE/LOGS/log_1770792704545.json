@@ -1,0 +1,14 @@
+{
+  "timestamp": "2026-02-11T06:51:44.544Z",
+  "agent": "VERITAS",
+  "action": "VALIDATE",
+  "inputs": {
+    "titre": "Le 'Mauvais Lundi Noir' de Russie",
+    "year": 1994
+  },
+  "decision": "REJECTED",
+  "reason": "L'image représente des hommes d'affaires devant une bourse, avec des valises et des papiers éparpillés, suggérant un krach boursier. Plusieurs anachronismes compromettent la crédibilité de l'image pour représenter le \"Mauvais Lundi Noir\" de 1994 en Russie. Notamment les valises en plastique. De plus, la typographie du bâtiment \"RRITTS\" semble moderne, ce qui pose un problème d'authenticité. L'ambiance générale est cohérente avec un événement économique désastreux, mais les détails techniques ne correspondent pas à l'époque.",
+  "outputs": {
+    "score": 6
+  }
+}

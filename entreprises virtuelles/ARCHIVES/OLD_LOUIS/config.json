@@ -1,0 +1,21 @@
+{
+  "agent_name": "LOUIS",
+  "version": "1.0.0",
+  "role": "CEO",
+  "description": "PDG de K-Hive - Supervise les KPIs et donne les directives stratégiques",
+  "kpis": {
+    "target_videos_per_day": 3,
+    "target_approval_rate": 0.8,
+    "target_engagement_rate": 0.05,
+    "platforms": ["tiktok", "twitter"]
+  },
+  "reporting": {
+    "frequency": "daily",
+    "metrics": ["videos_produced", "videos_approved", "videos_rejected", "by_platform"]
+  },
+  "storage": {
+    "input": "./STORAGE/INPUT",
+    "output": "./STORAGE/OUTPUT",
+    "logs": "./STORAGE/LOGS"
+  }
+}

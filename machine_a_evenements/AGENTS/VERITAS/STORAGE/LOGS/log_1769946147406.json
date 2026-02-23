@@ -1,0 +1,14 @@
+{
+  "timestamp": "2026-02-01T11:42:27.405Z",
+  "agent": "VERITAS",
+  "action": "VALIDATE",
+  "inputs": {
+    "titre": "Première édition des 24 Heures du Mans",
+    "year": 1923
+  },
+  "decision": "REJECTED",
+  "reason": "L'image présente plusieurs anachronismes et incohérences qui la rendent inadaptée à la description des 24 Heures du Mans de 1923. Tout d'abord, la présence d'un drapeau américain sur la combinaison d'un pilote est un anachronisme, car l'événement était principalement européen à ses débuts. L'architecture des tribunes semble trop moderne, tout comme la tour en arrière-plan. De plus, la qualité et la finition des voitures suggèrent une esthétique plus tardive. Enfin, l'insigne 'Griveten' sur la combinaison est suspect, car il semble inventé.",
+  "outputs": {
+    "score": 6
+  }
+}

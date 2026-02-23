@@ -1,0 +1,14 @@
+{
+  "timestamp": "2026-02-19T07:08:25.939Z",
+  "agent": "VERITAS",
+  "action": "VALIDATE",
+  "inputs": {
+    "titre": "Naufrage du MV Le Joola",
+    "year": 2002
+  },
+  "decision": "REJECTED",
+  "reason": "The image depicts a capsized ship with many people clinging to it, resembling the MV Le Joola disaster. However, several details make it inaccurate. Firstly, the clothing worn by the passengers appears to be modern sportswear with vibrant colors and designs that were not commonly seen in 2002 Senegal. Additionally, the presence of baseball caps is problematic because while baseball caps are not anachronistic in general, they look very new, with no signs of wear. The general rendering also gives a feeling of a modern photo, which is not appropriate considering this tragic event.",
+  "outputs": {
+    "score": 4
+  }
+}

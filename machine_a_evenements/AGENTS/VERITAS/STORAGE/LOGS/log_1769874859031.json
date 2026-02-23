@@ -1,0 +1,14 @@
+{
+  "timestamp": "2026-01-31T15:54:19.030Z",
+  "agent": "VERITAS",
+  "action": "VALIDATE",
+  "inputs": {
+    "titre": "Louis IX épouse Marguerite de Provence",
+    "year": 1234
+  },
+  "decision": "REJECTED",
+  "reason": "The image depicts a wedding scene within a grand stone hall, seemingly attempting to capture the essence of a medieval royal wedding, possibly that of Louis IX and Marguerite de Provence. However, several anachronisms and stylistic inaccuracies prevent it from being a truly accurate representation. The architecture features Gothic elements, which are appropriate for the era.  The clothing of the bride and bridesmaids is vaguely medieval inspired but doesn't correspond exactly to 13th-century fashion. The groom and other men are wearing modern suits and bowties, which is a glaring anachronism. The plate armor of the knight is more reminiscent of 15th century armor than 13th century. Overall, the atmosphere attempts to be medieval but is marred by modern clothing and inaccuracies.",
+  "outputs": {
+    "score": 6
+  }
+}

@@ -1,0 +1,14 @@
+{
+  "timestamp": "2026-02-19T07:36:02.649Z",
+  "agent": "VERITAS",
+  "action": "VALIDATE",
+  "inputs": {
+    "titre": "Blanchiment à la Danske Bank",
+    "year": 2017
+  },
+  "decision": "REJECTED",
+  "reason": "The image depicts a boardroom setting with men in suits, which could align with the Danske Bank era. However, several modern elements are present, making it unsuitable. Specifically, there are laptops (including a Macbook with the Apple logo), modern flat-screen displays showing what appears to be stock market data, and a modern telephone. These are significant anachronisms that prevent the image from accurately representing the 2017 timeframe.",
+  "outputs": {
+    "score": 2
+  }
+}

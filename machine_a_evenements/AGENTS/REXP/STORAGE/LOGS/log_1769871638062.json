@@ -1,0 +1,12 @@
+{
+  "timestamp": "2026-01-31T15:00:38.061Z",
+  "agent": "REXP",
+  "action": "EXPORT_FINAL",
+  "inputs": {
+    "titre": "Publication du 'Discours de la Méthode' de Descartes",
+    "year": 1637
+  },
+  "decision": "ERROR",
+  "reason": "Could not find the 'score_validation' column of 'evenements' in the schema cache",
+  "outputs": {}
+}

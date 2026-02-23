@@ -1,0 +1,14 @@
+{
+  "timestamp": "2026-02-01T11:41:42.923Z",
+  "agent": "VERITAS",
+  "action": "VALIDATE",
+  "inputs": {
+    "titre": "Le Calcio Fiorentino, un ancêtre du football moderne, est codifié à Florence",
+    "year": 1580
+  },
+  "decision": "VALIDATED",
+  "reason": "The image depicts a Calcio Fiorentino match in a Florentine square. The clothing, architecture, and general atmosphere appear to be in line with the 16th century. The absence of modern technology, fantastical elements, and anachronistic buildings supports its validity. However, some details of the clothing style are not quite accurate for 1580, resulting in a slightly lower score. The architecture is generally correct but could be more detailed to reflect accurate Renaissance building styles.",
+  "outputs": {
+    "score": 7
+  }
+}

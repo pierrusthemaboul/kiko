@@ -1,0 +1,14 @@
+{
+  "timestamp": "2026-02-11T06:50:23.075Z",
+  "agent": "VERITAS",
+  "action": "VALIDATE",
+  "inputs": {
+    "titre": "Incendie du Reichstag",
+    "year": 1933
+  },
+  "decision": "VALIDATED",
+  "reason": "The image depicts a man in a peaked cap and trench coat observing a burning building that resembles the Reichstag. The presence of period-appropriate clothing and the architectural style align with the 1930s. The street lights also appear to be within the correct timeframe. There are no immediately obvious anachronisms like smartphones or modern cars. The general atmosphere of political unrest conveyed by the scene also matches the historical context. However, the man looks too \"clean\" and modern, also, some of the facial features and the lighting are too perfect and suggest the image is digitally created. The architecture around the building seems rather generic and may not be entirely consistent with the actual Reichstag environment, further reducing the historical accuracy score.",
+  "outputs": {
+    "score": 7
+  }
+}

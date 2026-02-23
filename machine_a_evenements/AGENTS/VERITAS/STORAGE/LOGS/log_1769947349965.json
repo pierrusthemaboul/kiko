@@ -1,0 +1,14 @@
+{
+  "timestamp": "2026-02-01T12:02:29.964Z",
+  "agent": "VERITAS",
+  "action": "VALIDATE",
+  "inputs": {
+    "titre": "Création de la 'Banque mondiale de semences du Svalbard', un coffre-fort mondial pour les semences de plantes",
+    "year": 2008
+  },
+  "decision": "REJECTED",
+  "reason": "The image shows the Svalbard Seed Vault in a snowy landscape. While the overall aesthetic matches the setting, there are modern elements in the clothing. The puffer jackets, backpacks, and the technical boots suggest modern sportswear, which are anachronistic for depicting the initial creation in 2008. The building's architecture appears plausible for the period, and the landscape is fitting. The packages are stacked in front of the entrance, suggesting the seed deposit. The presence of modern clothing brings down the authenticity score.",
+  "outputs": {
+    "score": 6
+  }
+}

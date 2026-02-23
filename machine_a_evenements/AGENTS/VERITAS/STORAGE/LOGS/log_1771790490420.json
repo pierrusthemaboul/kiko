@@ -1,0 +1,14 @@
+{
+  "timestamp": "2026-02-22T20:01:30.419Z",
+  "agent": "VERITAS",
+  "action": "VALIDATE",
+  "inputs": {
+    "titre": "Bombardement de Dresde",
+    "year": 1945
+  },
+  "decision": "REJECTED",
+  "reason": "The image depicts a city in ruins, consistent with the aftermath of a bombing. The clothing of the figures generally matches the period, with hats and coats appropriate for the 1940s. However, the presence of what appears to be a modern construction crane in the background and the highly detailed, almost hyper-realistic rendering suggest this is a digitally created image, possibly inspired by the Dresden bombing, but not a genuine photograph. The overall aesthetic is somewhat stylized, and the scale of metal structures feels out of place. The building architecture looks similar, but are they true to Dresden in 1945?",
+  "outputs": {
+    "score": 6
+  }
+}

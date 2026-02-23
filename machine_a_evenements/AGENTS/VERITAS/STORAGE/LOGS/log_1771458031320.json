@@ -1,0 +1,14 @@
+{
+  "timestamp": "2026-02-18T23:40:31.319Z",
+  "agent": "VERITAS",
+  "action": "VALIDATE",
+  "inputs": {
+    "titre": "Guerre des Six Jours",
+    "year": 1967
+  },
+  "decision": "REJECTED",
+  "reason": "The image depicts soldiers in a dusty urban environment, consistent with descriptions of the Six-Day War. However, the style of the vehicle is from the 1970's which is incorrect for the 1967 time frame. The rifles also don't all appear to be accurate for the time period.",
+  "outputs": {
+    "score": 7
+  }
+}

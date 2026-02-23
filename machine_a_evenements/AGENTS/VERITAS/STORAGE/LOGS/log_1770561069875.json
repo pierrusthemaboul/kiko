@@ -1,0 +1,14 @@
+{
+  "timestamp": "2026-02-08T14:31:09.874Z",
+  "agent": "VERITAS",
+  "action": "VALIDATE",
+  "inputs": {
+    "titre": "Ulrich von Liechtenstein : L'Épopée d'un Chevalier Ménestrel",
+    "year": 1275
+  },
+  "decision": "REJECTED",
+  "reason": "The image shows a man in medieval attire playing what appears to be a modern acoustic guitar.  While the clothing and the stone building are plausible for the era, the guitar is a significant anachronism as it is a modern instrument. A medieval minstrel would have played instruments such as a lute, harp or vielle. The shape of the armor looks plausible but the overall style looks a little too clean and modern. The fact that he is wearing modern-looking hair makes the scene less believable.",
+  "outputs": {
+    "score": 3
+  }
+}

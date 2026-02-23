@@ -1,0 +1,14 @@
+{
+  "timestamp": "2026-02-22T19:31:03.284Z",
+  "agent": "VERITAS",
+  "action": "VALIDATE",
+  "inputs": {
+    "titre": "Paradise Papers",
+    "year": 2017
+  },
+  "decision": "REJECTED",
+  "reason": "The image depicts a meeting in what appears to be a palatial room, but several elements are anachronistic for a historical depiction of the \"Paradise Papers\" event in 2017. The main issue is the presence of large modern digital displays showing complex data (stock tickers, etc.) along the walls, which would not be present in a genuinely historical scene. Also, modern laptops and tablets are visible on the table. Modern fluorescent lights are also anachronistic in a room with classical elements.",
+  "outputs": {
+    "score": 6
+  }
+}

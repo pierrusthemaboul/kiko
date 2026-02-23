@@ -1,0 +1,14 @@
+{
+  "timestamp": "2026-02-09T19:36:59.595Z",
+  "agent": "VERITAS",
+  "action": "VALIDATE",
+  "inputs": {
+    "titre": "Construction du Pont Neuf à Paris",
+    "year": 1578
+  },
+  "decision": "REJECTED",
+  "reason": "This image depicts construction, but the architecture of the bridge (steel framework) and the surrounding buildings is anachronistic, placing it much later than 1578. The clothing of the workers also does not match the style of the late 16th century. The overall style is not that of a Renaissance oil painting and the location does not fit the surroundings as well.",
+  "outputs": {
+    "score": 2
+  }
+}

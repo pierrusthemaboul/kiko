@@ -1,0 +1,14 @@
+{
+  "timestamp": "2026-02-22T20:01:12.332Z",
+  "agent": "VERITAS",
+  "action": "VALIDATE",
+  "inputs": {
+    "titre": "Raid de Dieppe",
+    "year": 1942
+  },
+  "decision": "VALIDATED",
+  "reason": "L'image représente une scène de débarquement sur une plage rocheuse, probablement inspirée du raid de Dieppe. On voit des soldats en uniforme courant vers le rivage, des véhicules de débarquement et un bâtiment imposant en arrière-plan. Bien que l'image ait une ambiance générale cohérente avec l'époque, quelques éléments posent problème. \n\nLes véhicules de débarquement ressemblent à des chars Churchill modifiés, mais leur conception est légèrement imprécise, ce qui rend leur identification difficile. L'armement des soldats semble être des fusils d'assaut plus modernes que ceux utilisés en 1942. L'absence de casques typiques du raid de Dieppe, au profit de casques plus génériques, est également un point faible. Le bâtiment en arrière-plan semble trop grand et imposant pour ce qui était visible à Dieppe. Cependant, l'absence d'anachronismes flagrants comme les smartphones ou les voitures modernes permet de la valider, avec une note tenant compte des imprécisions.",
+  "outputs": {
+    "score": 6
+  }
+}

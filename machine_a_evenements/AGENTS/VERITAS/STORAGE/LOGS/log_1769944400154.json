@@ -1,0 +1,14 @@
+{
+  "timestamp": "2026-02-01T11:13:20.153Z",
+  "agent": "VERITAS",
+  "action": "VALIDATE",
+  "inputs": {
+    "titre": "Premiers Jeux paralympiques à Rome",
+    "year": 1960
+  },
+  "decision": "REJECTED",
+  "reason": "L'image représente des athlètes en fauteuil roulant lors d'une compétition. L'architecture du stade semble correcte pour l'époque. Les vêtements sont simples, conformes à l'époque. Cependant, la présence de tatouages visibles sur les athlètes est un anachronisme (peu courant à cette époque). Les harnais de cuir semblent trop modernes. La qualité de l'image et la netteté de certains détails suggèrent également une retouche moderne (IA).",
+  "outputs": {
+    "score": 6
+  }
+}

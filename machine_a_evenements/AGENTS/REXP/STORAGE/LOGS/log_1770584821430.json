@@ -1,0 +1,12 @@
+{
+  "timestamp": "2026-02-08T21:07:01.429Z",
+  "agent": "REXP",
+  "action": "EXPORT_PROD",
+  "inputs": {
+    "titre": "Mort de Pablo Picasso",
+    "year": 1973
+  },
+  "decision": "ERROR",
+  "reason": "Could not find the 'score_validation_ia' column of 'evenements' in the schema cache",
+  "outputs": {}
+}

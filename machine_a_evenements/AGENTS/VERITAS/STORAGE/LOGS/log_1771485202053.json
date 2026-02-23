@@ -1,0 +1,14 @@
+{
+  "timestamp": "2026-02-19T07:13:22.052Z",
+  "agent": "VERITAS",
+  "action": "VALIDATE",
+  "inputs": {
+    "titre": "Blanchiment à la Danske Bank",
+    "year": 2017
+  },
+  "decision": "REJECTED",
+  "reason": "The image depicts a modern office meeting of Danske Bank, which is consistent with the \"Blanchiment à la Danske Bank\" event in 2017. However, it contains many anachronisms and modern elements that prevent it from being historically accurate, such as: smartphones, laptops, modern office building with floor-to-ceiling glass windows, modern clothing, and digital displays. Therefore, it is rejected.",
+  "outputs": {
+    "score": 2
+  }
+}

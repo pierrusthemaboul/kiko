@@ -1,0 +1,151 @@
+{
+  "timestamp": "2026-02-11T06:21:48.373Z",
+  "totalEvents": 2655,
+  "periodStats": {
+    "ANTIQUITY": {
+      "total": 91,
+      "t1": 12,
+      "t2": 21,
+      "t3": 58,
+      "avgNotoriete": 40,
+      "notSum": 3662
+    },
+    "MIDDLE_AGES": {
+      "total": 705,
+      "t1": 127,
+      "t2": 326,
+      "t3": 252,
+      "avgNotoriete": 49,
+      "notSum": 34509
+    },
+    "RENAISSANCE": {
+      "total": 535,
+      "t1": 201,
+      "t2": 169,
+      "t3": 165,
+      "avgNotoriete": 61,
+      "notSum": 32395
+    },
+    "NINETEENTH": {
+      "total": 279,
+      "t1": 154,
+      "t2": 67,
+      "t3": 58,
+      "avgNotoriete": 69,
+      "notSum": 19291
+    },
+    "TWENTIETH": {
+      "total": 857,
+      "t1": 262,
+      "t2": 317,
+      "t3": 278,
+      "avgNotoriete": 58,
+      "notSum": 49585
+    },
+    "TWENTYFIRST": {
+      "total": 188,
+      "t1": 70,
+      "t2": 90,
+      "t3": 28,
+      "avgNotoriete": 63,
+      "notSum": 11833
+    }
+  },
+  "gaps": [
+    {
+      "period": "ANTIQUITY",
+      "label": "Antiquité (100-500)",
+      "currentCount": 91,
+      "deficit": 68,
+      "highNotDeficit": 17,
+      "missingThemes": [
+        "Économie & Commerce",
+        "Société & Social",
+        "Exploration & Découvertes",
+        "Catastrophes & Environnement",
+        "Sport",
+        "Justice & Droit",
+        "Santé & Médecine"
+      ],
+      "priority": "HIGH",
+      "recommendation": "Peu représenté. Idée: Routes de la soie, Droits des femmes, Périples maritimes..."
+    },
+    {
+      "period": "NINETEENTH",
+      "label": "XIXe siècle (1800-1900)",
+      "currentCount": 279,
+      "deficit": 199,
+      "highNotDeficit": 0,
+      "missingThemes": [
+        "Religion & Spiritualité",
+        "Catastrophes & Environnement",
+        "Justice & Droit"
+      ],
+      "priority": "HIGH",
+      "recommendation": "Peu représenté. Idée: Mystiques, Grandes famines, Codes de lois..."
+    },
+    {
+      "period": "TWENTYFIRST",
+      "label": "XXIe siècle (2000+)",
+      "currentCount": 188,
+      "deficit": 131,
+      "highNotDeficit": 0,
+      "missingThemes": [
+        "Religion & Spiritualité",
+        "Exploration & Découvertes",
+        "Justice & Droit"
+      ],
+      "priority": "HIGH",
+      "recommendation": "Peu représenté. Idée: Mystiques, Mars & Lune, Grands procès..."
+    },
+    {
+      "period": "MIDDLE_AGES",
+      "label": "Moyen Âge (500-1500)",
+      "currentCount": 705,
+      "deficit": 0,
+      "highNotDeficit": 0,
+      "missingThemes": [
+        "Sport"
+      ],
+      "priority": "LOW",
+      "recommendation": "Manque de diversité. Pistes: Premiers tournois..."
+    },
+    {
+      "period": "RENAISSANCE",
+      "label": "Renaissance (1500-1800)",
+      "currentCount": 535,
+      "deficit": 0,
+      "highNotDeficit": 0,
+      "missingThemes": [
+        "Sport"
+      ],
+      "priority": "LOW",
+      "recommendation": "Manque de diversité. Pistes: Records historiques..."
+    }
+  ],
+  "topPriorities": [
+    "Antiquité (100-500)",
+    "XIXe siècle (1800-1900)",
+    "XXIe siècle (2000+)"
+  ],
+  "generationGuidelines": {
+    "minNotoriete": 50,
+    "targetNotoriete": "60-85",
+    "calibration": "Un Français moyen de 30-50 ans doit pouvoir reconnaître cet événement ou au minimum le situer à ±20 ans.",
+    "avoidList": [
+      "Événements ultra-spécialisés (batailles mineures, traités secondaires)",
+      "Événements locaux sans impact national",
+      "Personnages connus uniquement des historiens",
+      "Sous-événements techniques de conflits plus larges"
+    ],
+    "preferList": [
+      "Événements enseignés au collège/lycée en France",
+      "Événements liés à des personnages célèbres",
+      "Découvertes scientifiques majeures",
+      "Traités et lois qui ont changé la société",
+      "Événements culturels iconiques (livres, films, inventions)",
+      "Événements sportifs mémorables",
+      "Catastrophes naturelles ou industrielles majeures"
+    ]
+  }
+}

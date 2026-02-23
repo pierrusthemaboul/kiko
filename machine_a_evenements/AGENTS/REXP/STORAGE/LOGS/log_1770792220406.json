@@ -1,0 +1,15 @@
+{
+  "timestamp": "2026-02-11T06:43:40.405Z",
+  "agent": "REXP",
+  "action": "EXPORT_PROD",
+  "inputs": {
+    "titre": "Mort de Jean de La Fontaine",
+    "year": 1695
+  },
+  "decision": "SUCCESS",
+  "reason": "Nouvel événement créé avec image",
+  "outputs": {
+    "publicUrl": "https://ppxmtnuewcixbbmhnzzc.supabase.co/storage/v1/object/public/evenements-image/chambre_noire_mort_de_jean_de_la_fontaine_1770792219686.webp",
+    "id": "bc8713e0-34e3-4608-ae95-ed86ef656cf5"
+  }
+}

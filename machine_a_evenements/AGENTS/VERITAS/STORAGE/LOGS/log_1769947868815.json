@@ -1,0 +1,14 @@
+{
+  "timestamp": "2026-02-01T12:11:08.814Z",
+  "agent": "VERITAS",
+  "action": "VALIDATE",
+  "inputs": {
+    "titre": "Léonard de Vinci conçoit des plans pour des machines volantes et des ponts complexes",
+    "year": 1480
+  },
+  "decision": "REJECTED",
+  "reason": "The image depicts a man resembling Leonardo da Vinci working on sketches. The clothing style (doublet, trunk hose), the stone walls, candle lighting, parchment documents, and drawings are consistent with the 15th-century Renaissance period. There are no explicitly fantastical elements. However, the pen he's using appears to be a modern fountain pen, which is an anachronism. Also, the pictures on the wall do not resemble the style of the renaissance.",
+  "outputs": {
+    "score": 7
+  }
+}

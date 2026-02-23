@@ -1,0 +1,14 @@
+{
+  "timestamp": "2026-02-09T22:29:44.062Z",
+  "agent": "VERITAS",
+  "action": "VALIDATE",
+  "inputs": {
+    "titre": "Ouverture du Musée du Louvre",
+    "year": 1793
+  },
+  "decision": "REJECTED",
+  "reason": "L'image présente des anachronismes majeurs dans les détails des uniformes militaires et certains détails des vêtements, bien que l'architecture et l'atmosphère générale soient appropriées pour l'époque et le lieu. La présence de ces éléments discordants invalide l'image pour une représentation rigoureusement historique de l'ouverture du Louvre en 1793.",
+  "outputs": {
+    "score": 6
+  }
+}

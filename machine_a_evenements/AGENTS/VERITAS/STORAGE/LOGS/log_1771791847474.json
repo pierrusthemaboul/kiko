@@ -1,0 +1,14 @@
+{
+  "timestamp": "2026-02-22T20:24:07.473Z",
+  "agent": "VERITAS",
+  "action": "VALIDATE",
+  "inputs": {
+    "titre": "Mort de Jane Birkin",
+    "year": 2023
+  },
+  "decision": "REJECTED",
+  "reason": "The image shows a gathering of people in what appears to be a Parisian alleyway, potentially in memory of Jane Birkin. However, numerous smartphones are clearly visible in the hands of the individuals present, which are significant anachronisms. Additionally, some of the clothing styles seem modern. Therefore, the image is not suitable for representing a historical event.",
+  "outputs": {
+    "score": 1
+  }
+}

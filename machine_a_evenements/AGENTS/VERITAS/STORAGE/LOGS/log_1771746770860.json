@@ -1,0 +1,14 @@
+{
+  "timestamp": "2026-02-22T07:52:50.859Z",
+  "agent": "VERITAS",
+  "action": "VALIDATE",
+  "inputs": {
+    "titre": "Blanchiment à la Danske Bank",
+    "year": 2017
+  },
+  "decision": "REJECTED",
+  "reason": "The image depicts a modern business meeting, featuring elements incompatible with the 2017 Danske Bank context. Anachronisms such as laptop computers, modern conference call equipment, a large flat-screen display, and contemporary business attire are present. Therefore, it is highly inaccurate for illustrating the Danske Bank money laundering event.",
+  "outputs": {
+    "score": 2
+  }
+}

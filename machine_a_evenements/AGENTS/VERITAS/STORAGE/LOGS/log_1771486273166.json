@@ -1,0 +1,14 @@
+{
+  "timestamp": "2026-02-19T07:31:13.165Z",
+  "agent": "VERITAS",
+  "action": "VALIDATE",
+  "inputs": {
+    "titre": "Cousteau invente le scaphandre",
+    "year": 1943
+  },
+  "decision": "VALIDATED",
+  "reason": "The image depicts a man, presumably intended to be Jacques Cousteau, on what appears to be the deck of a boat. He is wearing a cap, goggles, overalls, and boots. An early diving apparatus is strapped to his chest. The wooden deck, coiled rope, and other nautical equipment are visible. The overall aesthetic suggests the early to mid-20th century and aligns with the 1943 invention of the aqualung. However, the design of the diving apparatus seems stylized rather than replicating the exact models used at the time, and the man's expression looks unnatural. Furthermore, the quality of the image is very high, more in line with modern cameras. Although everything in the picture could be considered period-appropriate, the combination of high resolution and lack of precise historical accuracy regarding the diving apparatus lead to a slightly lower score.",
+  "outputs": {
+    "score": 7
+  }
+}

@@ -1,0 +1,14 @@
+{
+  "timestamp": "2026-02-09T22:31:05.709Z",
+  "agent": "VERITAS",
+  "action": "VALIDATE",
+  "inputs": {
+    "titre": "Naissance de Victor Hugo",
+    "year": 1802
+  },
+  "decision": "REJECTED",
+  "reason": "The image depicts a scene set in a rustic cottage, purportedly representing the birthplace of Victor Hugo. While the architecture and many of the objects (wicker basket, pottery, fireplace, wooden beams) align with the 1802 setting, there are significant anachronisms. The presence of a modern generator outside the cottage is a major issue. Also, the model of the figure on the mantle is wearing a modern style suit. Also there is a modern electric candle.",
+  "outputs": {
+    "score": 4
+  }
+}

@@ -1,0 +1,14 @@
+{
+  "timestamp": "2026-02-18T23:40:15.996Z",
+  "agent": "VERITAS",
+  "action": "VALIDATE",
+  "inputs": {
+    "titre": "Première exécution à la chaise électrique",
+    "year": 1890
+  },
+  "decision": "VALIDATED",
+  "reason": "L'image représente une scène d'exécution à la chaise électrique, plausible pour l'époque. L'architecture de la prison (briques, fenêtres cintrées), les vêtements des observateurs (costumes sombres, cols hauts pour les hommes, robes sobres pour les femmes), et l'éclairage (lampes à gaz murales) sont cohérents avec la fin du 19ème siècle. L'absence d'éléments anachroniques flagrants tels que smartphones, voitures ou montres modernes rend l'image globalement acceptable. Cependant, la coupe de cheveux du condamné et la coupe des costumes des observateurs semblent un peu modernes, ce qui justifie une petite déduction du score parfait. La chaise électrique est correctement représentée, bien que le système de câblage ne soit pas visible, ce qui est un détail mineur.",
+  "outputs": {
+    "score": 8
+  }
+}

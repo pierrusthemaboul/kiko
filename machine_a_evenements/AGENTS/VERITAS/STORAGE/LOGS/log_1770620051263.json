@@ -1,0 +1,14 @@
+{
+  "timestamp": "2026-02-09T06:54:11.262Z",
+  "agent": "VERITAS",
+  "action": "VALIDATE",
+  "inputs": {
+    "titre": "Albrecht Dürer peint son Autoportrait à la fourrure",
+    "year": 1500
+  },
+  "decision": "VALIDATED",
+  "reason": "L'image représente un homme dans un atelier qui semble être celui d'un artiste peintre. L'architecture de la pièce, avec ses murs de pierre et sa fenêtre à petits carreaux, correspond à l'époque d'Albrecht Dürer. Les vêtements de l'homme, bien que sombres, ne présentent pas d'anachronismes évidents comme des fermetures éclair ou des coupes modernes. La présence d'une bougie et d'un chevalet avec une toile renforce l'ambiance d'un atelier de peintre de la Renaissance. L'absence d'objets modernes ou d'éléments fantastiques est un point positif. Toutefois, le vêtement ressemble plus à un t-shirt moderne et moins à un doublet de velours. De même, le style de la barbe est plus contemporain.",
+  "outputs": {
+    "score": 7
+  }
+}

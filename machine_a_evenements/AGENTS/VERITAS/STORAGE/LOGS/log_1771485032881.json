@@ -1,0 +1,14 @@
+{
+  "timestamp": "2026-02-19T07:10:32.880Z",
+  "agent": "VERITAS",
+  "action": "VALIDATE",
+  "inputs": {
+    "titre": "Révélations de Wikileaks",
+    "year": 2010
+  },
+  "decision": "REJECTED",
+  "reason": "The image depicts a server room with modern technology. While the general aesthetic fits, several elements are problematic. The eyeglasses worn by the individual are too modern for 2010, and the computer screens display a very high-resolution and modern interface that wasn't typical back then. The general lighting of the room also seems too bright. Also, the hoodie is too modern.",
+  "outputs": {
+    "score": 6
+  }
+}

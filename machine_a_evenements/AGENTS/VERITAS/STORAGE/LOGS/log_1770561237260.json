@@ -1,0 +1,14 @@
+{
+  "timestamp": "2026-02-08T14:33:57.259Z",
+  "agent": "VERITAS",
+  "action": "VALIDATE",
+  "inputs": {
+    "titre": "L'Héritage de Valéry Giscard d'Estaing",
+    "year": 2020
+  },
+  "decision": "REJECTED",
+  "reason": "The image contains several elements that are anachronistic for the 1970s: modern cars (Mercedes), smartphones, and face masks (clearly due to a recent event like the COVID-19 pandemic). These invalidate its use for an event focused on Valéry Giscard d'Estaing's legacy during the 1970s.",
+  "outputs": {
+    "score": 1
+  }
+}

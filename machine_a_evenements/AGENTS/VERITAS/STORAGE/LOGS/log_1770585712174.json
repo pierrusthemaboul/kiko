@@ -1,0 +1,14 @@
+{
+  "timestamp": "2026-02-08T21:21:52.173Z",
+  "agent": "VERITAS",
+  "action": "VALIDATE",
+  "inputs": {
+    "titre": "Invasion du Koweït par l'Irak",
+    "year": 1990
+  },
+  "decision": "REJECTED",
+  "reason": "L'image montre des réfugiés fuyant des chars d'assaut dans un environnement désertique, potentiellement évocateur de l'invasion du Koweït par l'Irak. Cependant, il y a des incohérences : la désignation \"UAE\" sur les chars est douteuse pour un contexte d'invasion irakienne du Koweït, bien que les Emirats Arabes Unis aient participé à la coalition. De plus, la résolution et le style de l'image suggèrent une création numérique, potentiellement avec des inexactitudes. Les vêtements des réfugiés semblent assez modernes (jeans, t-shirts), ce qui est suspect. Un rejet de chaussures modernes est visible au sol. Enfin, les chars représentés semblent être des modèles de fabrication occidentale et pas ceux de l'armée Irakienne de 1990. Cela rend l'image globalement inexacte.",
+  "outputs": {
+    "score": 6
+  }
+}

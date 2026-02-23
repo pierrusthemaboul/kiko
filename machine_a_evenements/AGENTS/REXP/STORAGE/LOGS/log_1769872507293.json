@@ -1,0 +1,12 @@
+{
+  "timestamp": "2026-01-31T15:15:07.292Z",
+  "agent": "REXP",
+  "action": "EXPORT_GOJU2",
+  "inputs": {
+    "titre": "Bataille de la Boyne en Irlande, soutenue par Louis XIV",
+    "year": 1690
+  },
+  "decision": "ERROR",
+  "reason": "Could not find the 'date_formatee' column of 'goju2' in the schema cache",
+  "outputs": {}
+}

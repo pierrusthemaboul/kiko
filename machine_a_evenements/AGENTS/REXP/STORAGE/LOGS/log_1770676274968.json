@@ -1,0 +1,14 @@
+{
+  "timestamp": "2026-02-09T22:31:14.967Z",
+  "agent": "REXP",
+  "action": "EXPORT_PROD",
+  "inputs": {
+    "titre": "Naissance de Victor Hugo",
+    "year": 1802
+  },
+  "decision": "SUCCESS",
+  "reason": "Image mise à jour en production",
+  "outputs": {
+    "publicUrl": "https://ppxmtnuewcixbbmhnzzc.supabase.co/storage/v1/object/public/evenements-image/chambre_noire_naissance_de_victor_hugo_1770676274727.webp"
+  }
+}

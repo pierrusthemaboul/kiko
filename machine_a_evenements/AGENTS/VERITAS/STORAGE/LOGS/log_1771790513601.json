@@ -1,0 +1,14 @@
+{
+  "timestamp": "2026-02-22T20:01:53.600Z",
+  "agent": "VERITAS",
+  "action": "VALIDATE",
+  "inputs": {
+    "titre": "Suicide d'Adolf Hitler",
+    "year": 1945
+  },
+  "decision": "REJECTED",
+  "reason": "L'image représente un homme ressemblant à Adolf Hitler assis à un bureau avec deux pistolets et une douille. L'atmosphère générale est sombre et suggère la défaite, comme décrit. Cependant, la présence d'une lampe électrique et surtout les pistolets eux-mêmes soulèvent des doutes. La lampe pourrait être une version plus moderne qu'il n'y en avait à cette époque. Les deux pistolets sur la table semblent être des modèles modernes, probablement des pistolets semi-automatiques. Hitler s'est suicidé en utilisant une arme de poing et du cyanure. Il est fort probable que l'image ait été mise en scène et que l'équipement de l'époque n'ait pas été respecté.",
+  "outputs": {
+    "score": 6
+  }
+}

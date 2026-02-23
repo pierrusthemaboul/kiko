@@ -1,0 +1,81 @@
+{
+  "report_date": "2026-01-15T07:16:45.224Z",
+  "generated_by": "LOUIS",
+  "role": "CEO",
+  "executive_summary": {
+    "status": "GREEN",
+    "total_content_ready": 5,
+    "alerts_count": 0
+  },
+  "kpi_dashboard": {
+    "production": {
+      "target": 3,
+      "actual": 5,
+      "status": "ON_TARGET"
+    },
+    "quality": {
+      "produced": 4,
+      "approved": 5,
+      "rejected": 0,
+      "approval_rate": "100.0%"
+    }
+  },
+  "platforms": {
+    "tiktok": {
+      "produced": 4,
+      "approved": 5,
+      "rejected": 0
+    },
+    "twitter": {
+      "produced": 0,
+      "approved": 0,
+      "rejected": 0
+    }
+  },
+  "agents_status": {
+    "MARC": {
+      "total_logs": 74,
+      "recent_logs_24h": 74,
+      "status": "ACTIVE"
+    },
+    "CHLOE": {
+      "total_logs": 15,
+      "recent_logs_24h": 15,
+      "status": "ACTIVE"
+    },
+    "LEA": {
+      "total_logs": 8,
+      "recent_logs_24h": 8,
+      "status": "ACTIVE"
+    },
+    "HUGO": {
+      "total_logs": 0,
+      "recent_logs_24h": 0,
+      "status": "IDLE"
+    },
+    "JEAN": {
+      "total_logs": 0,
+      "recent_logs_24h": 0,
+      "status": "IDLE"
+    }
+  },
+  "alerts": [],
+  "recommendations": [
+    {
+      "type": "DIVERSIFY",
+      "message": "Aucun contenu Twitter - diversifier la présence sociale"
+    },
+    {
+      "type": "AGENT_IDLE",
+      "message": "Agents inactifs: HUGO, JEAN"
+    }
+  ],
+  "directives": [
+    {
+      "priority": "MEDIUM",
+      "to": "JEAN",
+      "action": "ACTIVATE_TWITTER",
+      "detail": "Produire du contenu Twitter pour diversifier"
+    }
+  ]
+}

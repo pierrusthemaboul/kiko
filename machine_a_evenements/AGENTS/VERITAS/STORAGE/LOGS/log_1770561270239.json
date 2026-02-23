@@ -1,0 +1,14 @@
+{
+  "timestamp": "2026-02-08T14:34:30.238Z",
+  "agent": "VERITAS",
+  "action": "VALIDATE",
+  "inputs": {
+    "titre": "L'Héritage de Hugues le Grand",
+    "year": 956
+  },
+  "decision": "REJECTED",
+  "reason": "L'image présente plusieurs problèmes d'anachronismes et d'exactitude historique. Bien que l'armure et l'étendard avec des fleurs de lys soient présents, la forme et le style de l'armure semblent plus tardifs que le milieu du Xe siècle, et l'apparence générale évoque davantage l'imagerie médiévale ultérieure. De plus, l'alliance portée au doigt est un élément douteux pour l'époque. L'architecture du château en arrière-plan, bien que typique, ne correspond pas de manière spécifique aux châteaux du milieu du Xe siècle.",
+  "outputs": {
+    "score": 6
+  }
+}

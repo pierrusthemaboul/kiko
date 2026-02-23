@@ -1,0 +1,14 @@
+{
+  "timestamp": "2026-02-11T06:43:39.293Z",
+  "agent": "VERITAS",
+  "action": "VALIDATE",
+  "inputs": {
+    "titre": "Mort de Jean de La Fontaine",
+    "year": 1695
+  },
+  "decision": "VALIDATED",
+  "reason": "L'image représente une scène plausible de la mort de Jean de La Fontaine. L'homme est vêtu de vêtements de l'époque, dans une chambre éclairée à la bougie. L'architecture de la pièce et son ameublement correspondent globalement au contexte historique. L'absence d'éléments modernes et fantastiques renforce sa crédibilité. Toutefois, la propreté excessive de la pièce et l'état de conservation des vêtements et de la perruque (trop neuf) diminuent légèrement le réalisme de la scène. De plus, la pierre du mur à l'arrière semble trop moderne.",
+  "outputs": {
+    "score": 8
+  }
+}

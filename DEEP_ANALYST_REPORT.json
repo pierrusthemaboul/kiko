@@ -1,0 +1,583 @@
+{
+  "duplicates": [
+    {
+      "index": 2,
+      "verdict": "duplicate",
+      "explanation": "Il s'agit de la même affaire de diamants impliquant Bokassa, même si les dates de médiatisation peuvent varier.",
+      "id_to_keep": "ID2",
+      "e1": {
+        "id": "f14ebbe5-4596-4ccc-9966-df3be65e7ebc",
+        "titre": "L'Affaire des diamants",
+        "date": "1977-01-01"
+      },
+      "e2": {
+        "id": "ef583ac5-6641-4752-8944-ee2df754ecd6",
+        "titre": "Affaire des diamants de Bokassa",
+        "date": "1975-01-01"
+      }
+    }
+  ],
+  "false_positives": [
+    {
+      "index": 1,
+      "verdict": "related_distinct",
+      "explanation": "La proclamation de Sol Invictus fait partie des réformes d'Aurélien, mais ne les englobe pas entièrement.",
+      "id_to_keep": "B1",
+      "e1": {
+        "id": "94e9d5c0-1cdd-4efc-b80c-8dbe8e48be91",
+        "titre": "Proclamation de Sol Invictus comme culte officiel de l’Empire romain",
+        "date": "0274-01-01"
+      },
+      "e2": {
+        "id": "bc80486f-e4a7-436e-a03e-fb090705d574",
+        "titre": "Réformes et restauration d’Aurélien",
+        "date": "0274-01-01"
+      }
+    },
+    {
+      "index": 2,
+      "verdict": "distinct",
+      "explanation": "Bien que toutes deux concernent la Gaule, il s'agit de réformes différentes ayant lieu à des dates distinctes.",
+      "id_to_keep": "B2",
+      "e1": {
+        "id": "0dbbb958-c979-42ef-83f5-634737acf18c",
+        "titre": "Réformes de Dioclétien en Gaule",
+        "date": "0297-01-01"
+      },
+      "e2": {
+        "id": "30398aaa-76be-4609-aa5c-bae80154e32e",
+        "titre": "Réformes agricoles en Gaule",
+        "date": "0292-01-01"
+      }
+    },
+    {
+      "index": 3,
+      "verdict": "related_distinct",
+      "explanation": "La conquête d'Alexandrie est une partie de la conquête musulmane de l'Égypte.",
+      "id_to_keep": "B3",
+      "e1": {
+        "id": "d1ca5430-2be0-467c-a15e-dd0eff30490a",
+        "titre": "Conquête musulmane de l'Égypte",
+        "date": "0639-01-01"
+      },
+      "e2": {
+        "id": "e4721fb1-dffa-4028-98b9-ba9c43cb2c72",
+        "titre": "Conquête arabe d'Alexandrie",
+        "date": "0642-01-01"
+      }
+    },
+    {
+      "index": 4,
+      "verdict": "related_distinct",
+      "explanation": "La Bataille de Poitiers est l'événement principal, la victoire de Charles Martel en est une description plus large.",
+      "id_to_keep": "B4",
+      "e1": {
+        "id": "948ff915-76ec-4313-bbfe-10d5cbbd5174",
+        "titre": "Victoire de Charles Martel",
+        "date": "0732-01-01"
+      },
+      "e2": {
+        "id": "21c42b91-d47d-4591-aa1d-9cd71d85faaa",
+        "titre": "Bataille de Poitiers (Charles Martel contre les Omeyyades)",
+        "date": "0732-10-25"
+      }
+    },
+    {
+      "index": 5,
+      "verdict": "related_distinct",
+      "explanation": "La bataille de Toulouse fait partie de l'expédition d'Abd al-Rahman en Aquitaine, mais n'est pas la même chose.",
+      "id_to_keep": "B5",
+      "e1": {
+        "id": "bf9ed04d-ced3-4d44-a1ac-ec9c9b154fea",
+        "titre": "Expédition d'Abd al-Rahman en Aquitaine",
+        "date": "0728-01-01"
+      },
+      "e2": {
+        "id": "e49b5993-4101-4331-a01f-83983861bb6d",
+        "titre": "Bataille de Toulouse (Abdérame)",
+        "date": "0721-01-01"
+      }
+    },
+    {
+      "index": 6,
+      "verdict": "distinct",
+      "explanation": "Le règne et le mariage sont deux événements distincts bien qu'ayant lieu la même année.",
+      "id_to_keep": "B6",
+      "e1": {
+        "id": "6aa96a4b-43e3-4044-94c9-62b1ef545eaa",
+        "titre": "Règne de Robert II le Pieux",
+        "date": "0996-01-01"
+      },
+      "e2": {
+        "id": "f134f6f3-b5e4-4585-928b-8088f2ff13b9",
+        "titre": "Mariage de Berthe de Bourgogne et Robert II",
+        "date": "0996-01-01"
+      }
+    },
+    {
+      "index": 7,
+      "verdict": "distinct",
+      "explanation": "La régence et le règne sont deux événements distincts même s'ils se produisent la même année.",
+      "id_to_keep": "B7",
+      "e1": {
+        "id": "2790cdfb-8ef6-449b-906b-a539137b064d",
+        "titre": "Régence de Baudouin V de Flandre sur le royaume de France",
+        "date": "1060-01-01"
+      },
+      "e2": {
+        "id": "e088c088-2f1e-4bcf-b68a-5f36113cd761",
+        "titre": "Règne de Philippe I er",
+        "date": "1060-01-01"
+      }
+    },
+    {
+      "index": 8,
+      "verdict": "related_distinct",
+      "explanation": "L'appel à la croisade est l'événement qui précède et déclenche la première croisade.",
+      "id_to_keep": "B8",
+      "e1": {
+        "id": "0665c752-0d2f-4ed0-8fad-1d5d227eb704",
+        "titre": "Première croisade",
+        "date": "1096-10-01"
+      },
+      "e2": {
+        "id": "3f61f03a-dc37-4ece-a5f8-eb1de3149351",
+        "titre": "Appel à la Première Croisade par le pape Urbain II",
+        "date": "1095-11-27"
+      }
+    },
+    {
+      "index": 9,
+      "verdict": "related_distinct",
+      "explanation": "Le sacre et couronnement est l'événement qui précède et déclenche le règne de Philippe II Auguste.",
+      "id_to_keep": "B9",
+      "e1": {
+        "id": "19ec1746-8efc-4767-924e-24e93f71dc76",
+        "titre": "Règne de Philippe II Auguste",
+        "date": "1180-01-01"
+      },
+      "e2": {
+        "id": "0d729c55-5811-42f3-ab7c-1d3616393dbd",
+        "titre": "Sacre et Couronnement de Philippe Auguste",
+        "date": "1179-11-01"
+      }
+    },
+    {
+      "index": 10,
+      "verdict": "distinct",
+      "explanation": "La fin de la guerre des Deux-Roses et le siège de Ronda sont des événements distincts.",
+      "id_to_keep": "B10",
+      "e1": {
+        "id": "49b47d1f-2c30-469a-b0a7-a70f66627474",
+        "titre": "Fin de la Guerre des Deux-Roses",
+        "date": "1485-10-01"
+      },
+      "e2": {
+        "id": "96aa26a4-324c-40c7-8110-ebe755ffc760",
+        "titre": "Siège de Ronda par les forces catholiques",
+        "date": "1485-01-01"
+      }
+    },
+    {
+      "index": 11,
+      "verdict": "related_distinct",
+      "explanation": "Le siège de Tenochtitlan est un événement majeur de la conquête de l'Empire aztèque, mais ne représente pas toute la conquête.",
+      "id_to_keep": "B11",
+      "e1": {
+        "id": "c365dcdb-1ab9-420f-9799-31d280e24544",
+        "titre": "Début de la conquête de l'Empire aztèque par Hernán Cortés",
+        "date": "1519-10-01"
+      },
+      "e2": {
+        "id": "c9b9b228-6c2a-428e-a2e7-4cceee6e831d",
+        "titre": "Siège de Tenochtitlan par Cortés",
+        "date": "1521-01-01"
+      }
+    },
+    {
+      "index": 12,
+      "verdict": "related_distinct",
+      "explanation": "Le premier tour du monde est l'aboutissement de l'expédition de Magellan, mais ne représente pas le début.",
+      "id_to_keep": "B12",
+      "e1": {
+        "id": "d7055542-0611-4bca-9eb5-ad0e1d2e3205",
+        "titre": "Début de l'expédition de Magellan",
+        "date": "1519-01-01"
+      },
+      "e2": {
+        "id": "16c1ce9a-ea81-4bd7-bb74-a5ec3b52da8f",
+        "titre": "Premier tour du monde achevé",
+        "date": "1522-01-01"
+      }
+    },
+    {
+      "index": 13,
+      "verdict": "distinct",
+      "explanation": "L'Édit de Fontainebleau et le début de la période Edo sont deux événements distincts se produisant dans des pays différents.",
+      "id_to_keep": "B13",
+      "e1": {
+        "id": "d1fa0c1d-3460-4a99-89b4-bcd4887bc42d",
+        "titre": "Édit de Fontainebleau - Retour des Jésuites en France",
+        "date": "1603-01-01"
+      },
+      "e2": {
+        "id": "3558447f-2c83-4982-b589-7e7729d2b6fd",
+        "titre": "Début de la période Edo",
+        "date": "1603-10-01"
+      }
+    },
+    {
+      "index": 14,
+      "verdict": "related_distinct",
+      "explanation": "La nomination au Conseil du roi est un pas vers le rôle de principal ministre.",
+      "id_to_keep": "B14",
+      "e1": {
+        "id": "848e3800-d35c-4599-9be4-51beea441e3b",
+        "titre": "Richelieu devient principal ministre",
+        "date": "1624-08-13"
+      },
+      "e2": {
+        "id": "1b83c653-6194-4d64-a195-c5ad1a700fb4",
+        "titre": "Nomination du cardinal de Richelieu au Conseil du roi",
+        "date": "1623-01-01"
+      }
+    },
+    {
+      "index": 15,
+      "verdict": "distinct",
+      "explanation": "La création du Conservatoire de musique et celle du système métrique sont deux événements distincts.",
+      "id_to_keep": "B15",
+      "e1": {
+        "id": "4f347274-ae8a-4651-9dab-54734ef9709a",
+        "titre": "Création du Conservatoire de musique",
+        "date": "1795-08-03"
+      },
+      "e2": {
+        "id": "477fd90d-f346-4c27-ac57-181ff1348093",
+        "titre": "Création du système métrique",
+        "date": "1795-04-07"
+      }
+    },
+    {
+      "index": 16,
+      "verdict": "distinct",
+      "explanation": "Il s'agit de la première de deux symphonies différentes, composées par des compositeurs différents et jouées à des dates différentes.",
+      "id_to_keep": "B16",
+      "e1": {
+        "id": "6581fe9f-c425-4ab1-9296-a00574f056bf",
+        "titre": "Première de la Symphonie No. 5 de Tchaïkovski",
+        "date": "1888-01-01"
+      },
+      "e2": {
+        "id": "b30c4b06-cb13-4c5d-a867-ee4d5dc55878",
+        "titre": "Première de la Symphonie n°5 de Gustav Mahler",
+        "date": "1904-10-18"
+      }
+    },
+    {
+      "index": 17,
+      "verdict": "distinct",
+      "explanation": "L'éruption de la Montagne Pelée et la première de Pelléas et Mélisande sont deux événements distincts.",
+      "id_to_keep": "B17",
+      "e1": {
+        "id": "d5f9f87d-85d0-4a7b-b25d-b12b090de741",
+        "titre": "Éruption de la Montagne Pelée en Martinique",
+        "date": "1902-05-08"
+      },
+      "e2": {
+        "id": "a335b8d3-cf88-405e-b010-a3e0c4a8d173",
+        "titre": "Première de Pelléas et Mélisande de Claude Debussy",
+        "date": "1902-04-30"
+      }
+    },
+    {
+      "index": 18,
+      "verdict": "distinct",
+      "explanation": "La création de la SDN et celle de l'OIT sont deux événements distincts.",
+      "id_to_keep": "B18",
+      "e1": {
+        "id": "8b0f4699-44a8-46f7-840e-77837d575edf",
+        "titre": "Création de la Société des Nations (SDN)",
+        "date": "1920-01-01"
+      },
+      "e2": {
+        "id": "b23d1179-7e79-4a5a-a5f2-bbd3f4853dce",
+        "titre": "Création de l'Organisation Internationale du Travail",
+        "date": "1919-01-01"
+      }
+    },
+    {
+      "index": 19,
+      "verdict": "related_distinct",
+      "explanation": "Le droit de vote des femmes est accordé dans deux pays différents, à des dates différentes.",
+      "id_to_keep": "B19",
+      "e1": {
+        "id": "c8d4362f-1660-4668-bcf8-98fcc219b367",
+        "titre": "Le Droit de vote des femmes est accordé en Allemagne",
+        "date": "1918-01-01"
+      },
+      "e2": {
+        "id": "e74e45d9-81d8-4cf4-88fc-ebe8c37c43d8",
+        "titre": "Droit de vote des femmes au Royaume-Uni",
+        "date": "1918-02-06"
+      }
+    },
+    {
+      "index": 20,
+      "verdict": "distinct",
+      "explanation": "Bien que proches, ce sont deux inondations différentes ayant eu lieu à des dates différentes.",
+      "id_to_keep": "B20",
+      "e1": {
+        "id": "b73aff91-06bd-49d3-9fd3-8ce121132128",
+        "titre": "Crue de la Seine de 1909",
+        "date": "1909-01-01"
+      },
+      "e2": {
+        "id": "8ed7ea02-4423-4e87-a726-adbff9b38117",
+        "titre": "Grande inondation de Paris",
+        "date": "1910-01-01"
+      }
+    },
+    {
+      "index": 21,
+      "verdict": "distinct",
+      "explanation": "Bien que ce soit la même récompense, il s'agit d'années différentes.",
+      "id_to_keep": "B21",
+      "e1": {
+        "id": "ffc4bfc5-f15a-4c8f-b259-0eee7a1b2cdb",
+        "titre": "Prix Goncourt 1904 : Léon Frapié",
+        "date": "1904-01-01"
+      },
+      "e2": {
+        "id": "a48bbd06-c46f-455e-9e40-5998d815f3f4",
+        "titre": "Première attribution du Prix Goncourt",
+        "date": "1901-12-01"
+      }
+    },
+    {
+      "index": 22,
+      "verdict": "distinct",
+      "explanation": "Bien que ce soit la même récompense, il s'agit d'années différentes.",
+      "id_to_keep": "B22",
+      "e1": {
+        "id": "dc498d33-5d33-4377-b1b9-c93131c717c8",
+        "titre": "Prix Goncourt 1917 : Henry Malherbe",
+        "date": "1917-01-01"
+      },
+      "e2": {
+        "id": "7ec453bc-509e-425f-8c99-0f2b512d0560",
+        "titre": "Prix Goncourt 1912 : André Savignon",
+        "date": "1912-01-01"
+      }
+    },
+    {
+      "index": 23,
+      "verdict": "distinct",
+      "explanation": "Bien que ce soit la même récompense, il s'agit d'années différentes.",
+      "id_to_keep": "B23",
+      "e1": {
+        "id": "7ec453bc-509e-425f-8c99-0f2b512d0560",
+        "titre": "Prix Goncourt 1912 : André Savignon",
+        "date": "1912-01-01"
+      },
+      "e2": {
+        "id": "ffc4bfc5-f15a-4c8f-b259-0eee7a1b2cdb",
+        "titre": "Prix Goncourt 1904 : Léon Frapié",
+        "date": "1904-01-01"
+      }
+    },
+    {
+      "index": 24,
+      "verdict": "distinct",
+      "explanation": "Bien que ce soit la même récompense, il s'agit d'années différentes.",
+      "id_to_keep": "B24",
+      "e1": {
+        "id": "dc498d33-5d33-4377-b1b9-c93131c717c8",
+        "titre": "Prix Goncourt 1917 : Henry Malherbe",
+        "date": "1917-01-01"
+      },
+      "e2": {
+        "id": "ffc4bfc5-f15a-4c8f-b259-0eee7a1b2cdb",
+        "titre": "Prix Goncourt 1904 : Léon Frapié",
+        "date": "1904-01-01"
+      }
+    },
+    {
+      "index": 25,
+      "verdict": "related_distinct",
+      "explanation": "La chute de l'Autriche-Hongrie est un événement distinct du renversement de l'Empire allemand, bien que tous deux liés à la fin de la Première Guerre Mondiale.",
+      "id_to_keep": "B25",
+      "e1": {
+        "id": "545aa73a-de15-4eaa-9ed6-19306edf42e4",
+        "titre": "Renversement de l’Empire allemand par la révolution de novembre",
+        "date": "1918-01-01"
+      },
+      "e2": {
+        "id": "f26b1fd4-75c4-4a06-8adc-251db10b8387",
+        "titre": "Chute Autriche-Hongrie",
+        "date": "1918-11-03"
+      }
+    },
+    {
+      "index": 26,
+      "verdict": "related_distinct",
+      "explanation": "Les FTP sont des composantes du Front National, l'un est une partie de l'autre.",
+      "id_to_keep": "B26",
+      "e1": {
+        "id": "8b830ce0-dc3f-4b5b-b026-687704bf0ca4",
+        "titre": "Premières cellules armées FTP en zone occupée",
+        "date": "1941-01-01"
+      },
+      "e2": {
+        "id": "faddca26-547c-42d1-ab66-105136e64f29",
+        "titre": "Création du Front national de lutte pour la libération de la France",
+        "date": "1941-06-22"
+      }
+    },
+    {
+      "index": 27,
+      "verdict": "distinct",
+      "explanation": "Bien que créées à la même conférence, la Banque Mondiale et le FMI sont des institutions distinctes.",
+      "id_to_keep": "B27",
+      "e1": {
+        "id": "7cb92e9f-c690-4c74-865b-66ebbe9aebfd",
+        "titre": "Création de la Banque Mondiale",
+        "date": "1944-12-27"
+      },
+      "e2": {
+        "id": "8d48934e-e061-4fa5-b888-100827c1c5c9",
+        "titre": "Création du Fonds Monétaire International (FMI)",
+        "date": "1944-07-01"
+      }
+    },
+    {
+      "index": 28,
+      "verdict": "related_distinct",
+      "explanation": "La Bataille d'Alger est une phase de la guerre d'Algérie, mais pas la guerre entière.",
+      "id_to_keep": "B28",
+      "e1": {
+        "id": "68bbcb98-1284-4976-a6e3-004eeb4dbc6a",
+        "titre": "Début de la guerre d'Algérie",
+        "date": "1954-11-01"
+      },
+      "e2": {
+        "id": "f3b7ff7f-739c-4feb-8595-55a53a58c9c0",
+        "titre": "Début de la bataille d’Alger",
+        "date": "1957-01-01"
+      }
+    },
+    {
+      "index": 29,
+      "verdict": "related_distinct",
+      "explanation": "Les accords de Genève sont une conséquence de la défaite de Diên Biên Phu.",
+      "id_to_keep": "B29",
+      "e1": {
+        "id": "3fcf8418-e1e9-49f0-bee1-8259a08d68d1",
+        "titre": "Défaite de Diên Biên Phu",
+        "date": "1954-05-07"
+      },
+      "e2": {
+        "id": "dfecc963-4ea5-45e1-808d-93ac9f548e8b",
+        "titre": "Accords de Genève sur l'Indochine",
+        "date": "1954-01-01"
+      }
+    },
+    {
+      "index": 30,
+      "verdict": "distinct",
+      "explanation": "Il s'agit de deux crises pétrolières distinctes ayant eu lieu à des dates différentes.",
+      "id_to_keep": "B30",
+      "e1": {
+        "id": "f7e237d8-b0ae-479e-bd0a-fb1e4745e06e",
+        "titre": "Crise pétrolière de 1973",
+        "date": "1973-10-17"
+      },
+      "e2": {
+        "id": "993fe3fc-bbcc-4f1d-bbb6-a77403a195b1",
+        "titre": "Crise pétrolière de 1979",
+        "date": "1979-01-16"
+      }
+    },
+    {
+      "index": 1,
+      "verdict": "related_distinct",
+      "explanation": "La mort de Georges Pompidou a mené à l'élection de Valéry Giscard d'Estaing. Ce sont deux événements distincts mais liés.",
+      "id_to_keep": "ID1",
+      "e1": {
+        "id": "014696a7-978e-42eb-8fe7-bd481339640e",
+        "titre": "Mort de Georges Pompidou",
+        "date": "1974-01-01"
+      },
+      "e2": {
+        "id": "f17fc1cb-01c8-4079-8a83-7da0c7ea8378",
+        "titre": "Élection de Valéry Giscard d'Estaing",
+        "date": "1974-05-27"
+      }
+    },
+    {
+      "index": 3,
+      "verdict": "distinct",
+      "explanation": "Bien que se déroulant la même année, la construction de grands ensembles HLM et l'élection anticipée sont des événements distincts.",
+      "id_to_keep": "ID1",
+      "e1": {
+        "id": "59b4aefd-7a1d-4e98-bd65-015701e2feff",
+        "titre": "Chantiers des grands ensembles HLM",
+        "date": "1967-01-01"
+      },
+      "e2": {
+        "id": "822416a2-d68e-4e4e-9fae-8e216a574066",
+        "titre": "Scrutin anticipé qui fragilise la majorité gaulliste",
+        "date": "1967-01-01"
+      }
+    },
+    {
+      "index": 4,
+      "verdict": "related_distinct",
+      "explanation": "L'inauguration de l'Eurostar est directement liée à l'inauguration du Tunnel sous la Manche. Ce sont des étapes interdépendantes du même projet.",
+      "id_to_keep": "ID1",
+      "e1": {
+        "id": "182504e7-c709-4503-9727-d5f87b802cdd",
+        "titre": "Inauguration du Tunnel sous la Manche",
+        "date": "1994-05-06"
+      },
+      "e2": {
+        "id": "56a0db84-4024-490a-bdeb-e5d536a581ec",
+        "titre": "Inauguration de l'Eurostar",
+        "date": "1994-01-01"
+      }
+    },
+    {
+      "index": 5,
+      "verdict": "related_distinct",
+      "explanation": "L'ouverture initiale sous le nom 'Euro Disney' et le renommage en 'Disneyland Paris' sont deux événements liés, le second découlant du premier.  Le renommage est une conséquence directe de l'ouverture initiale, justifiant le 'related_distinct'.",
+      "id_to_keep": "ID1",
+      "e1": {
+        "id": "dff20736-2bdd-48fe-a74a-0bc78519b9f1",
+        "titre": "Ouverture d'Euro Disney",
+        "date": "1992-01-01"
+      },
+      "e2": {
+        "id": "9d4bcc5b-002c-4dfa-bb0a-f56c0098ad94",
+        "titre": "Ouverture de Disneyland Paris – renommage officiel",
+        "date": "1997-01-01"
+      }
+    },
+    {
+      "index": 6,
+      "verdict": "distinct",
+      "explanation": "La dissolution de l'Assemblée nationale et l'adoption de la loi sur les 35 heures sont des événements distincts, même s'ils peuvent être liés politiquement. La dissolution a mené à des élections, puis à l'adoption de la loi.",
+      "id_to_keep": "ID1",
+      "e1": {
+        "id": "f92a6ab4-3ac9-4e7e-a383-6cd9fa9fb404",
+        "titre": "Dissolution de l'Assemblée nationale par Chirac",
+        "date": "1997-01-01"
+      },
+      "e2": {
+        "id": "394454cf-1e84-490e-83e1-cb2833a5f57d",
+        "titre": "Loi des 35 heures : adoption d'une durée hebdomadaire maximale du travail salarié",
+        "date": "1997-01-01"
+      }
+    }
+  ],
+  "bc_warning": []
+}

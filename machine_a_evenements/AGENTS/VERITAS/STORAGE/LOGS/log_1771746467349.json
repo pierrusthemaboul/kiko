@@ -1,0 +1,14 @@
+{
+  "timestamp": "2026-02-22T07:47:47.348Z",
+  "agent": "VERITAS",
+  "action": "VALIDATE",
+  "inputs": {
+    "titre": "Arrestation d'Al Capone",
+    "year": 1931
+  },
+  "decision": "REJECTED",
+  "reason": "The image depicts Al Capone's arrest. The clothing and architecture are largely consistent with the early 20th century, specifically the 1930s. However, the presence of a very modern skyscraper and the overall composition of the shot is anachronistic.",
+  "outputs": {
+    "score": 7
+  }
+}

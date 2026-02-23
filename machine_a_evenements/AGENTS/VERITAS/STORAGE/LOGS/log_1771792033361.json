@@ -1,0 +1,14 @@
+{
+  "timestamp": "2026-02-22T20:27:13.360Z",
+  "agent": "VERITAS",
+  "action": "VALIDATE",
+  "inputs": {
+    "titre": "L'Argentine gagne la Coupe du Monde",
+    "year": 2022
+  },
+  "decision": "VALIDATED",
+  "reason": "The image depicts a football stadium filled with Argentinian supporters celebrating a victory, presumably the 2022 World Cup. While the overall atmosphere is accurate, the jersey design and modern stadium architecture raise concerns. The specific font and style of the names on the back of the jerseys ('PUITELES', 'ARGESTEE', 'ARIMACEE') look anachronistic, and the stadium appears too modern for a historical depiction of the mid-20th century (when Argentina first won the World Cup). There are no immediately disqualifying elements like smartphones or airplanes. The fireworks, flags, and general excitement are consistent with a modern football victory celebration, but the jersey design details bring into question the accuracy. Also stadium architecture is not easy to distinguish as it could be modern but the stadium style has been around for decades.",
+  "outputs": {
+    "score": 6
+  }
+}

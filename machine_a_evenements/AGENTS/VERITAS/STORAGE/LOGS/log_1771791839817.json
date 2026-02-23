@@ -1,0 +1,14 @@
+{
+  "timestamp": "2026-02-22T20:23:59.816Z",
+  "agent": "VERITAS",
+  "action": "VALIDATE",
+  "inputs": {
+    "titre": "Mort de Jane Birkin",
+    "year": 2023
+  },
+  "decision": "REJECTED",
+  "reason": "The image depicts a gathering under umbrellas with people holding smartphones, which are anachronistic for representing the period following Jane Birkin's death in 2023. The presence of the Louvre Pyramid also points to a specific modern location. The clothing styles are also modern.",
+  "outputs": {
+    "score": 1
+  }
+}

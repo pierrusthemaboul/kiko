@@ -1,0 +1,14 @@
+{
+  "timestamp": "2026-02-17T07:00:09.442Z",
+  "agent": "VERITAS",
+  "action": "VALIDATE",
+  "inputs": {
+    "titre": "Incendie de la cathédrale de Durham",
+    "year": 1083
+  },
+  "decision": "VALIDATED",
+  "reason": "L'image représente un incendie dans un bâtiment qui ressemble à une cathédrale médiévale. Les vêtements des personnes semblent correspondre à l'époque, avec des tuniques, des capes de laine. L'architecture avec des poutres apparentes et des murs en pierre grossièrement taillée est également cohérente. La présence de poteries et de chandelles renforce l'atmosphère historique. Cependant, la netteté de l'image et certains détails de la modélisation des visages peuvent suggérer une création numérique moderne, mais sans anachronismes flagrants.",
+  "outputs": {
+    "score": 8
+  }
+}

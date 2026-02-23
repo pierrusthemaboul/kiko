@@ -1,0 +1,14 @@
+{
+  "timestamp": "2026-02-08T14:31:02.493Z",
+  "agent": "VERITAS",
+  "action": "VALIDATE",
+  "inputs": {
+    "titre": "Ulrich von Liechtenstein : L'Épopée d'un Chevalier Ménestrel",
+    "year": 1275
+  },
+  "decision": "REJECTED",
+  "reason": "L'image montre un homme dans ce qui semble être une armure de mailles et des vêtements médiévaux, jouant d'un instrument à cordes. L'arrière-plan présente une architecture de style médiéval, avec des fenêtres à meneaux et des tapisseries. Cependant, l'instrument de musique ressemble plus à une guitare moderne qu'à un luth médiéval, constituant un anachronisme. De plus, le style de l'instrument, en particulier la tête et le mécanisme d'accordage, sont anachroniques. L'homme semble également porter une protection de bras en cuir qui ne correspond pas tout à fait à l'esthétique de l'époque. L'ensemble est plausible, mais la présence d'un instrument moderne est inacceptable.",
+  "outputs": {
+    "score": 5
+  }
+}

@@ -1,0 +1,14 @@
+{
+  "timestamp": "2026-02-19T07:12:07.186Z",
+  "agent": "VERITAS",
+  "action": "VALIDATE",
+  "inputs": {
+    "titre": "SwissLeaks",
+    "year": 2015
+  },
+  "decision": "REJECTED",
+  "reason": "The image depicts a group of men in suits seated around a table, seemingly in a serious meeting. While the general atmosphere and clothing align with the theme of 'SwissLeaks', several modern elements are present, thus making it anachronistic. The presence of a modern flat-screen displaying a world map interface, along with a modern telephone, constitute major anachronisms. The overall setting and clothing are plausible for the 2015 timeframe, but the technology is a clear indicator of modern times.",
+  "outputs": {
+    "score": 7
+  }
+}

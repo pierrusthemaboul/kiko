@@ -1,0 +1,14 @@
+{
+  "timestamp": "2026-02-19T07:11:51.969Z",
+  "agent": "VERITAS",
+  "action": "VALIDATE",
+  "inputs": {
+    "titre": "SwissLeaks",
+    "year": 2015
+  },
+  "decision": "REJECTED",
+  "reason": "The image depicts a modern conference room setting, which is inconsistent with the time period relevant to SwissLeaks (2015). The clothing (business suits) is generally acceptable, but the laptops and digital displays are definite anachronisms. The lighting and modern design of the room are also anachronistic. The presence of laptops and digital displays invalidates the image for depicting the SwissLeaks events.",
+  "outputs": {
+    "score": 2
+  }
+}

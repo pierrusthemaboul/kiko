@@ -1,0 +1,14 @@
+{
+  "timestamp": "2026-02-09T22:31:14.282Z",
+  "agent": "VERITAS",
+  "action": "VALIDATE",
+  "inputs": {
+    "titre": "Naissance de Victor Hugo",
+    "year": 1802
+  },
+  "decision": "VALIDATED",
+  "reason": "L'image représente une scène plausible de la naissance de Victor Hugo en 1802. L'architecture, les vêtements et les objets présents correspondent à l'époque. Il n'y a pas d'anachronismes flagrants, ni d'éléments fantastiques. L'atmosphère générale de rusticité et d'éclairage à la bougie est cohérente avec le début du 19ème siècle. Cependant, la qualité de l'image, son réalisme, et la qualité de détails me font douter qu'il s'agisse réellement d'une image historique. L'éclairage semble trop parfait pour être un éclairage réel d'époque.",
+  "outputs": {
+    "score": 9
+  }
+}

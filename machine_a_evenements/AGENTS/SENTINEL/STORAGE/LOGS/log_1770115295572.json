@@ -1,0 +1,15 @@
+{
+  "timestamp": "2026-02-03T10:41:35.572Z",
+  "agent": "SENTINEL",
+  "action": "FILTER_SESSION",
+  "inputs": {
+    "total": 11
+  },
+  "decision": "SUCCESS",
+  "reason": "8 conservés",
+  "outputs": {
+    "rejections": 3,
+    "preFilterRejects": 2,
+    "aiRejects": 1
+  }
+}

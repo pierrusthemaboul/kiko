@@ -1,0 +1,14 @@
+{
+  "timestamp": "2026-01-31T15:48:03.097Z",
+  "agent": "VERITAS",
+  "action": "VALIDATE",
+  "inputs": {
+    "titre": "Occupation de Strasbourg par les troupes françaises",
+    "year": 1681
+  },
+  "decision": "REJECTED",
+  "reason": "The image depicts soldiers marching in a city, potentially intended to represent French troops occupying Strasbourg. However, their uniforms are inaccurate for the 17th century. They wear long coats, but they are too modern in cut. The helmets are completely anachronistic, resembling a Victorian era design. The rifles also appear to be more modern than 17th-century muskets. The buildings, while generally fitting a historical European style, are not precise enough to confirm or deny their period accuracy for Strasbourg in 1681. These inaccuracies regarding the uniforms and weapons make the image unsuitable for accurate historical representation. The uniforms are totally wrong and the rifles are too advanced.",
+  "outputs": {
+    "score": 3
+  }
+}

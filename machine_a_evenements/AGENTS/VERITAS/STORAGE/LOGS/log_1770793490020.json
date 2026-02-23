@@ -1,0 +1,14 @@
+{
+  "timestamp": "2026-02-11T07:04:50.019Z",
+  "agent": "VERITAS",
+  "action": "VALIDATE",
+  "inputs": {
+    "titre": "Fête de la Fédération",
+    "year": 1790
+  },
+  "decision": "REJECTED",
+  "reason": "The image depicts a large gathering of people in what appears to be a Parisian setting, possibly intended to represent the Fête de la Fédération. People are wearing clothing that vaguely resembles styles from the late 18th century/early 19th century: frock coats, high-waisted dresses, and top hats are visible. Flags are present. The overall atmosphere is one of celebration. However, several details are problematic: the clothing of some individuals is not quite right for 1790, with some resembling later styles. The building in the background looks very much like the Palais Bourbon, which would be thematically appropriate. Unfortunately, the Eiffel Tower is visible in the very background, which is a major anachronism. Therefore, I must reject the image.",
+  "outputs": {
+    "score": 6
+  }
+}

@@ -1,0 +1,14 @@
+{
+  "timestamp": "2026-02-22T07:51:31.082Z",
+  "agent": "VERITAS",
+  "action": "VALIDATE",
+  "inputs": {
+    "titre": "SwissLeaks",
+    "year": 2015
+  },
+  "decision": "REJECTED",
+  "reason": "The image depicts a meeting in a wood-paneled room, with people in business suits seated around a large table. While the general atmosphere could be interpreted as related to the SwissLeaks event (financial dealings), several elements indicate that this is not historically accurate. The biggest red flag is the presence of a modern tablet device at the center of the table. Wrist watches worn by the people are also too modern. The room's lighting also feels too modern. It is a conference room that could represent what happened but has anachronisms that make it not historically valid.",
+  "outputs": {
+    "score": 6
+  }
+}

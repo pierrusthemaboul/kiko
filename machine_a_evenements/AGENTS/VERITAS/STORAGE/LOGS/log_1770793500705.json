@@ -1,0 +1,14 @@
+{
+  "timestamp": "2026-02-11T07:05:00.704Z",
+  "agent": "VERITAS",
+  "action": "VALIDATE",
+  "inputs": {
+    "titre": "Fête de la Fédération",
+    "year": 1790
+  },
+  "decision": "VALIDATED",
+  "reason": "The image depicts a large gathering of people, seemingly celebrating an event in front of a grand building with classical architecture. The attire of the crowd is generally consistent with the late 18th century or early 19th century, with frock coats, high-waisted dresses, and various hats. Flags are visible in the crowd. \n\nHowever, there are some elements that raise concerns:\n\n1.  The architectural style of the grand building seems a bit too 'perfect' and monumental for 1790. It has a distinct neoclassical grandeur that could be from a slightly later period. Needs a more thorough check on the building.\n\n2. The presence of what looks like a power pylon in the background. These would not have existed in 1790. This causes the deduction in score.",
+  "outputs": {
+    "score": 7
+  }
+}

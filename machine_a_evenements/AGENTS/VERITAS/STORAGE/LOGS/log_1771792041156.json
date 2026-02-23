@@ -1,0 +1,14 @@
+{
+  "timestamp": "2026-02-22T20:27:21.155Z",
+  "agent": "VERITAS",
+  "action": "VALIDATE",
+  "inputs": {
+    "titre": "Les Bleus (France) triomphent en Ligue des Nations face à l'Équipe espagnole",
+    "year": 2021
+  },
+  "decision": "REJECTED",
+  "reason": "The image contains several anachronisms making it unsuitable for portraying a historical event accurately. The modern-style stadium lighting, the contemporary fabric of the jerseys, the presence of smartphones, and modern advertising banners indicate that this scene depicts a modern event, specifically, the 2021 Ligue des Nations victory of France over Spain. The presence of a cellphone and a modern stadium structure and lights makes it impossible to accurately depict any era prior to the 21st century.",
+  "outputs": {
+    "score": 2
+  }
+}

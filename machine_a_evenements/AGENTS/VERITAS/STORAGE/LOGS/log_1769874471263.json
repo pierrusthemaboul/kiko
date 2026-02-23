@@ -1,0 +1,14 @@
+{
+  "timestamp": "2026-01-31T15:47:51.262Z",
+  "agent": "VERITAS",
+  "action": "VALIDATE",
+  "inputs": {
+    "titre": "Édit créant l'Hôtel des Invalides pour les soldats invalides",
+    "year": 1670
+  },
+  "decision": "REJECTED",
+  "reason": "The image depicts a group of men in what appears to be a stone building, lit by candlelight. Several elements suggest a setting reminiscent of the 17th century, such as the stone walls, oak furniture, and classical-style paintings. However, the clothing of the men is too modern and lacks the characteristic styles of the 17th century. The overall ambiance and the presence of elements like the candles are aligned with the historical setting of the Edict creating the Hôtel des Invalides. However, the cut and style of the suits/clothing of the men are clearly too modern.",
+  "outputs": {
+    "score": 6
+  }
+}

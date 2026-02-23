@@ -1,0 +1,14 @@
+{
+  "timestamp": "2026-02-22T20:21:09.466Z",
+  "agent": "VERITAS",
+  "action": "VALIDATE",
+  "inputs": {
+    "titre": "L'équipe de France triomphe à la Coupe du monde de football en Russie",
+    "year": 2018
+  },
+  "decision": "REJECTED",
+  "reason": "The image contains visible smartphones which are anachronistic to 2018. The general atmosphere of a football stadium with flares is appropriate but the prominent modern smartphones invalidate the picture.",
+  "outputs": {
+    "score": 1
+  }
+}

@@ -1,0 +1,14 @@
+{
+  "timestamp": "2026-02-09T06:52:50.268Z",
+  "agent": "VERITAS",
+  "action": "VALIDATE",
+  "inputs": {
+    "titre": "Décès de William Shakespeare",
+    "year": 1616
+  },
+  "decision": "VALIDATED",
+  "reason": "The image depicts a man, presumably Shakespeare, in a dimly lit room, surrounded by objects suggestive of the 17th century.  The stone walls, candles, parchments, feather hat, and clothing style are consistent with the period. However, the candles are in modern-looking glass containers, which is an anachronism. The overall atmosphere fits the sombre theme of death.",
+  "outputs": {
+    "score": 7
+  }
+}

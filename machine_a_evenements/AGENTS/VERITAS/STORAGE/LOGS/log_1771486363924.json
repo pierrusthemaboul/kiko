@@ -1,0 +1,14 @@
+{
+  "timestamp": "2026-02-19T07:32:43.923Z",
+  "agent": "VERITAS",
+  "action": "VALIDATE",
+  "inputs": {
+    "titre": "Approbation du premier vaccin contre le cancer (Gardasil)",
+    "year": 2006
+  },
+  "decision": "REJECTED",
+  "reason": "L'image montre un patient dans une salle d'attente moderne d'une clinique. Plusieurs éléments suggèrent une époque moderne, bien que la salle d'attente elle-même soit assez générique et pourrait potentiellement convenir à l'époque de 2006.  Cependant, la seringue sur le sol et l'équipement médical, ainsi que l'équipement de bureau, sont de conception moderne et suspecte. De plus, le patient porte une montre bracelet. La lumière LED au plafond semble moderne.",
+  "outputs": {
+    "score": 6
+  }
+}

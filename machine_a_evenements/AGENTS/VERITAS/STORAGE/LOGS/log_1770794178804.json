@@ -1,0 +1,14 @@
+{
+  "timestamp": "2026-02-11T07:16:18.802Z",
+  "agent": "VERITAS",
+  "action": "VALIDATE",
+  "inputs": {
+    "titre": "Première opération d'appendicite réussie",
+    "year": 1887
+  },
+  "decision": "VALIDATED",
+  "reason": "L'image dépeint une scène d'opération chirurgicale qui semble se dérouler à la fin du 19e siècle. L'éclairage à la bougie, les vêtements et l'équipement chirurgical suggèrent cette époque. Cependant, la présence d'un appareil électrique moderne sur une table à l'arrière-plan est un anachronisme majeur. De plus, la conception des lampes chirurgicales au plafond est trop moderne pour l'époque.",
+  "outputs": {
+    "score": 7
+  }
+}

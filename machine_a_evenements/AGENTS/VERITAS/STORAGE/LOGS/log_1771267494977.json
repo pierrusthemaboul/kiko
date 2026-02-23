@@ -1,0 +1,14 @@
+{
+  "timestamp": "2026-02-16T18:44:54.976Z",
+  "agent": "VERITAS",
+  "action": "VALIDATE",
+  "inputs": {
+    "titre": "Tentative d'assassinat d'Henri IV par Pierre Barrière",
+    "year": 1593
+  },
+  "decision": "REJECTED",
+  "reason": "The image features some clothing styles reminiscent of the late 16th century, such as ruffs and doublets. However, there are significant historical inaccuracies and anachronisms: \n\n*   **Modern Street Architecture**: The buildings in the background do not resemble the architecture of Paris in 1593.\n*   **Modern Clothing**: A number of people are wearing modern clothing.\n*   **Modern street lights** The street lights look too modern.\n*   **Materials:** The materials of some of the clothing look modern.",
+  "outputs": {
+    "score": 4
+  }
+}

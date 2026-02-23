@@ -1,0 +1,14 @@
+{
+  "timestamp": "2026-02-08T14:34:54.594Z",
+  "agent": "VERITAS",
+  "action": "VALIDATE",
+  "inputs": {
+    "titre": "L'Héritage de Charles le Téméraire",
+    "year": 1477
+  },
+  "decision": "VALIDATED",
+  "reason": "L'image montre Charles le Téméraire en armure complète, à cheval lors d'une parade, acclamé par la foule dans une ville. L'armure et les bannières correspondent globalement à l'époque. Cependant, plusieurs éléments de la foule semblent porter des vêtements plus modernes, comme des chemises à motifs et des chapeaux qui ne sont pas strictement du XVe siècle. L'architecture est globalement compatible avec l'époque, bien que certains détails puissent être discutables. Les lanternes murales semblent correctes en termes de style mais leur utilisation généralisée dans ce contexte urbain spécifique nécessiterait une vérification plus approfondie.",
+  "outputs": {
+    "score": 6
+  }
+}

@@ -1,0 +1,14 @@
+{
+  "timestamp": "2026-02-22T20:24:44.648Z",
+  "agent": "VERITAS",
+  "action": "VALIDATE",
+  "inputs": {
+    "titre": "Premier Ballon d'Or hors Europe",
+    "year": 1995
+  },
+  "decision": "REJECTED",
+  "reason": "The image depicts a football player holding a Ballon d'Or in a stadium filled with cheering fans. While the overall atmosphere aligns with the description, several elements are questionable for 1995. The style of the clothing and the presence of what appear to be modern cameras in the crowd indicate potential anachronisms. Also, the banner in the background with mixed fonts and nonsensical words raises suspicion.",
+  "outputs": {
+    "score": 4
+  }
+}

@@ -1,0 +1,14 @@
+{
+  "timestamp": "2026-02-08T14:30:00.451Z",
+  "agent": "VERITAS",
+  "action": "VALIDATE",
+  "inputs": {
+    "titre": "Attentat de Louis Alibaud contre Louis-Philippe",
+    "year": 1836
+  },
+  "decision": "REJECTED",
+  "reason": "The image depicts a man firing a pistol at a horse-drawn carriage in a Parisian street. The surrounding architecture appears consistent with the 19th century. The clothing of the figures also aligns with the time period. However, the pistol being used looks slightly too modern for the 1830s. More importantly, the attacker's boots are anachronistic and appear to be modern boots with a chunky heel. Furthermore, the style of the shop signs is too modern for the 1830s.",
+  "outputs": {
+    "score": 6
+  }
+}

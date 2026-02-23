@@ -1,0 +1,14 @@
+{
+  "timestamp": "2026-02-22T20:21:31.777Z",
+  "agent": "VERITAS",
+  "action": "VALIDATE",
+  "inputs": {
+    "titre": "Première image d'un trou noir capturée",
+    "year": 2019
+  },
+  "decision": "REJECTED",
+  "reason": "The image depicts scientists viewing the first image of a black hole. However, the clothing (modern hoodies), the architecture of the control room (flat screens, recessed lighting, ceiling panels), and the computers on the desks are anachronistic. While the depiction of the black hole itself is appropriate, the setting is not historically accurate for 2019.",
+  "outputs": {
+    "score": 6
+  }
+}

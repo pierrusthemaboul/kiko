@@ -1,0 +1,14 @@
+{
+  "timestamp": "2026-02-22T20:21:40.699Z",
+  "agent": "VERITAS",
+  "action": "VALIDATE",
+  "inputs": {
+    "titre": "Première image d'un trou noir capturée",
+    "year": 2019
+  },
+  "decision": "REJECTED",
+  "reason": "This image contains many modern elements incompatible with the description, including modern computer screens, laptops, and the architecture is clearly recent. The description asked for rough wool coats, which are not shown here. The computers, screens and building make the image a clear anachronism.",
+  "outputs": {
+    "score": 1
+  }
+}

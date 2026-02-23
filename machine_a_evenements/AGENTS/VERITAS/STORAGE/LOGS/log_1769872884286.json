@@ -1,0 +1,14 @@
+{
+  "timestamp": "2026-01-31T15:21:24.285Z",
+  "agent": "VERITAS",
+  "action": "VALIDATE",
+  "inputs": {
+    "titre": "Bataille de la Boyne en Irlande, soutenue par Louis XIV",
+    "year": 1690
+  },
+  "decision": "REJECTED",
+  "reason": "The image depicts a group of soldiers in what appears to be a historical battle scene. While there are no immediately obvious anachronisms like smartphones or cars, the clothing and weaponry raise concerns about historical accuracy. Specifically, the uniformity and style of the soldiers' clothing (short skirts, long boots, and consistent colors) seem somewhat stylized and not entirely representative of the diverse attire typically seen in 17th-century battles. The smooth-bore muskets are appropriate, but their handling is strange. The overall 'look' is more fantasy-inspired than strictly historical, lowering the score and resulting in a 'false' verdict. Also, the image lacks visual complexity: for example, the ground is not covered with slain men, like in a true battle scene.",
+  "outputs": {
+    "score": 6
+  }
+}

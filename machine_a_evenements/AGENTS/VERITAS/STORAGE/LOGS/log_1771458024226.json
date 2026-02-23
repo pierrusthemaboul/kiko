@@ -1,0 +1,14 @@
+{
+  "timestamp": "2026-02-18T23:40:24.225Z",
+  "agent": "VERITAS",
+  "action": "VALIDATE",
+  "inputs": {
+    "titre": "Guerre des Six Jours",
+    "year": 1967
+  },
+  "decision": "REJECTED",
+  "reason": "The image depicts soldiers in a war-torn urban environment. However, several elements are anachronistic for the Six-Day War in 1967. The modern rifles, the style of the cars, the Coca-Cola logo on the soldier's uniform, the design of the radio equipment, and the baseball caps are all inconsistencies. Israeli soldiers would not have worn clothing with commercial logos nor used that type of modern equipment during that time.",
+  "outputs": {
+    "score": 1
+  }
+}

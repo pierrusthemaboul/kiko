@@ -1,0 +1,557 @@
+[
+  {
+    "level": "debug",
+    "category": "Plays",
+    "message": "Fetching plays info from Supabase",
+    "timestamp": "2026-02-01T22:49:55.939Z",
+    "source": "app_logger"
+  },
+  {
+    "level": "debug",
+    "category": "Plays",
+    "message": "Fetching plays info from Supabase",
+    "timestamp": "2026-02-01T22:49:55.943Z",
+    "source": "app_logger"
+  },
+  {
+    "level": "info",
+    "category": "Ads",
+    "message": "🔄 Attempting initial ad load",
+    "timestamp": "2026-02-01T22:49:55.950Z",
+    "source": "app_logger"
+  },
+  {
+    "level": "debug",
+    "category": "Plays",
+    "message": "Fetching plays info from Supabase",
+    "timestamp": "2026-02-01T22:49:56.074Z",
+    "source": "app_logger"
+  },
+  {
+    "level": "debug",
+    "category": "Plays",
+    "message": "Quota breakdown",
+    "data": {
+      "xp": 75286,
+      "baseFromRank": 4,
+      "storedQuota": 4
+    },
+    "timestamp": "2026-02-01T22:49:57.439Z",
+    "source": "app_logger"
+  },
+  {
+    "level": "debug",
+    "category": "Plays",
+    "message": "Quota breakdown",
+    "data": {
+      "xp": 75286,
+      "baseFromRank": 4,
+      "storedQuota": 4
+    },
+    "timestamp": "2026-02-01T22:49:57.446Z",
+    "source": "app_logger"
+  },
+  {
+    "level": "debug",
+    "category": "Plays",
+    "message": "Quota breakdown",
+    "data": {
+      "xp": 75286,
+      "baseFromRank": 4,
+      "storedQuota": 4
+    },
+    "timestamp": "2026-02-01T22:49:57.456Z",
+    "source": "app_logger"
+  },
+  {
+    "level": "debug",
+    "category": "GameLogic",
+    "message": "Synced with 4 Supabase history items",
+    "timestamp": "2026-02-01T22:49:57.551Z",
+    "source": "app_logger"
+  },
+  {
+    "level": "debug",
+    "category": "GameLogic",
+    "message": "Synced with 4 Supabase history items",
+    "timestamp": "2026-02-01T22:49:57.606Z",
+    "source": "app_logger"
+  },
+  {
+    "level": "info",
+    "category": "Ads",
+    "message": "✅ Ad loaded successfully",
+    "timestamp": "2026-02-01T22:49:57.756Z",
+    "source": "app_logger"
+  },
+  {
+    "level": "debug",
+    "category": "Plays",
+    "message": "Calculated plays info",
+    "data": {
+      "allowed": 4,
+      "used": 6,
+      "remaining": 0,
+      "isAdmin": false,
+      "userId": "9d97c5fe-9051-4da5-881a-f4f380cbb6b0"
+    },
+    "timestamp": "2026-02-01T22:49:57.897Z",
+    "source": "app_logger"
+  },
+  {
+    "level": "debug",
+    "category": "Plays",
+    "message": "Calculated plays info",
+    "data": {
+      "allowed": 4,
+      "used": 6,
+      "remaining": 0,
+      "isAdmin": false,
+      "userId": "9d97c5fe-9051-4da5-881a-f4f380cbb6b0"
+    },
+    "timestamp": "2026-02-01T22:49:57.935Z",
+    "source": "app_logger"
+  },
+  {
+    "level": "debug",
+    "category": "Plays",
+    "message": "Calculated plays info",
+    "data": {
+      "allowed": 4,
+      "used": 6,
+      "remaining": 0,
+      "isAdmin": false,
+      "userId": "9d97c5fe-9051-4da5-881a-f4f380cbb6b0"
+    },
+    "timestamp": "2026-02-01T22:49:58.171Z",
+    "source": "app_logger"
+  },
+  {
+    "level": "info",
+    "category": "Ads",
+    "message": "👀 Ad opened/started showing",
+    "timestamp": "2026-02-01T22:50:04.158Z",
+    "source": "app_logger"
+  },
+  {
+    "level": "info",
+    "category": "Ads",
+    "message": "🎁 Reward signal EARNED_REWARD received from AdMob",
+    "data": {
+      "reward": {
+        "amount": 10,
+        "type": "coins"
+      }
+    },
+    "timestamp": "2026-02-01T22:50:11.727Z",
+    "source": "app_logger"
+  },
+  {
+    "level": "info",
+    "category": "Ads",
+    "message": "🚪 Ad closed by user after 10s (Reward confirmed: true)",
+    "timestamp": "2026-02-01T22:50:14.101Z",
+    "source": "app_logger"
+  },
+  {
+    "level": "info",
+    "category": "Ads",
+    "message": "✅ Ad loaded successfully",
+    "timestamp": "2026-02-01T22:50:15.125Z",
+    "source": "app_logger"
+  },
+  {
+    "timestamp": "2026-02-01T22:50:44.058Z",
+    "source": "reactotron",
+    "type": "state.values.subscribe",
+    "payload": {
+      "paths": []
+    }
+  },
+  {
+    "level": "info",
+    "category": "Ads",
+    "message": "👀 Ad opened/started showing",
+    "timestamp": "2026-02-01T22:51:04.160Z",
+    "source": "app_logger"
+  },
+  {
+    "level": "warn",
+    "category": "Ads",
+    "message": "⚠️ Duplicate Reward Earned event ignored",
+    "timestamp": "2026-02-01T22:51:11.803Z",
+    "source": "app_logger"
+  },
+  {
+    "level": "info",
+    "category": "Ads",
+    "message": "🚪 Ad closed after 10s WITHOUT reward (too short or cancelled)",
+    "data": {
+      "duration": 10
+    },
+    "timestamp": "2026-02-01T22:51:13.930Z",
+    "source": "app_logger"
+  },
+  {
+    "level": "info",
+    "category": "Ads",
+    "message": "✅ Ad loaded successfully",
+    "timestamp": "2026-02-01T22:51:15.014Z",
+    "source": "app_logger"
+  },
+  {
+    "level": "info",
+    "category": "Ads",
+    "message": "👀 Ad opened/started showing",
+    "timestamp": "2026-02-01T22:52:21.201Z",
+    "source": "app_logger"
+  },
+  {
+    "level": "warn",
+    "category": "Ads",
+    "message": "⚠️ Duplicate Reward Earned event ignored",
+    "timestamp": "2026-02-01T22:52:26.532Z",
+    "source": "app_logger"
+  },
+  {
+    "level": "info",
+    "category": "Ads",
+    "message": "🚪 Ad closed after 7s WITHOUT reward (too short or cancelled)",
+    "data": {
+      "duration": 7
+    },
+    "timestamp": "2026-02-01T22:52:28.558Z",
+    "source": "app_logger"
+  },
+  {
+    "level": "error",
+    "category": "Ads",
+    "message": "❌ Failed to load Ad: [googleMobileAds/no-fill] [googleMobileAds/no-fill] No fill.",
+    "timestamp": "2026-02-01T22:52:28.944Z",
+    "source": "app_logger"
+  },
+  {
+    "level": "error",
+    "category": "Ads",
+    "message": "❌ Failed to load Ad: [googleMobileAds/no-fill] [googleMobileAds/no-fill] No fill.",
+    "timestamp": "2026-02-01T22:52:59.432Z",
+    "source": "app_logger"
+  },
+  {
+    "level": "info",
+    "category": "Ads",
+    "message": "✅ Ad loaded successfully",
+    "timestamp": "2026-02-01T22:53:30.505Z",
+    "source": "app_logger"
+  },
+  {
+    "timestamp": "2026-02-01T22:53:41.706Z",
+    "source": "reactotron",
+    "type": "state.values.subscribe",
+    "payload": {
+      "paths": []
+    }
+  },
+  {
+    "level": "debug",
+    "category": "Plays",
+    "message": "Fetching plays info from Supabase",
+    "timestamp": "2026-02-01T22:53:47.461Z",
+    "source": "app_logger"
+  },
+  {
+    "level": "debug",
+    "category": "Plays",
+    "message": "Fetching plays info from Supabase",
+    "timestamp": "2026-02-01T22:53:47.466Z",
+    "source": "app_logger"
+  },
+  {
+    "level": "info",
+    "category": "Ads",
+    "message": "🔄 Attempting initial ad load",
+    "timestamp": "2026-02-01T22:53:47.473Z",
+    "source": "app_logger"
+  },
+  {
+    "level": "debug",
+    "category": "Plays",
+    "message": "Fetching plays info from Supabase",
+    "timestamp": "2026-02-01T22:53:47.622Z",
+    "source": "app_logger"
+  },
+  {
+    "level": "error",
+    "category": "Ads",
+    "message": "❌ Failed to load Ad: [googleMobileAds/no-fill] [googleMobileAds/no-fill] No fill.",
+    "timestamp": "2026-02-01T22:53:47.984Z",
+    "source": "app_logger"
+  },
+  {
+    "level": "debug",
+    "category": "Plays",
+    "message": "Quota breakdown",
+    "data": {
+      "xp": 75286,
+      "baseFromRank": 4,
+      "storedQuota": 999
+    },
+    "timestamp": "2026-02-01T22:53:48.586Z",
+    "source": "app_logger"
+  },
+  {
+    "level": "debug",
+    "category": "Plays",
+    "message": "Quota breakdown",
+    "data": {
+      "xp": 75286,
+      "baseFromRank": 4,
+      "storedQuota": 999
+    },
+    "timestamp": "2026-02-01T22:53:48.698Z",
+    "source": "app_logger"
+  },
+  {
+    "level": "debug",
+    "category": "Plays",
+    "message": "Quota breakdown",
+    "data": {
+      "xp": 75286,
+      "baseFromRank": 4,
+      "storedQuota": 999
+    },
+    "timestamp": "2026-02-01T22:53:48.745Z",
+    "source": "app_logger"
+  },
+  {
+    "level": "debug",
+    "category": "GameLogic",
+    "message": "Synced with 4 Supabase history items",
+    "timestamp": "2026-02-01T22:53:48.756Z",
+    "source": "app_logger"
+  },
+  {
+    "level": "debug",
+    "category": "GameLogic",
+    "message": "Synced with 4 Supabase history items",
+    "timestamp": "2026-02-01T22:53:48.787Z",
+    "source": "app_logger"
+  },
+  {
+    "level": "debug",
+    "category": "Plays",
+    "message": "Calculated plays info",
+    "data": {
+      "allowed": 999,
+      "used": 6,
+      "remaining": 993,
+      "isAdmin": true,
+      "userId": "9d97c5fe-9051-4da5-881a-f4f380cbb6b0"
+    },
+    "timestamp": "2026-02-01T22:53:48.826Z",
+    "source": "app_logger"
+  },
+  {
+    "level": "debug",
+    "category": "Plays",
+    "message": "Calculated plays info",
+    "data": {
+      "allowed": 999,
+      "used": 6,
+      "remaining": 993,
+      "isAdmin": true,
+      "userId": "9d97c5fe-9051-4da5-881a-f4f380cbb6b0"
+    },
+    "timestamp": "2026-02-01T22:53:48.933Z",
+    "source": "app_logger"
+  },
+  {
+    "level": "debug",
+    "category": "Plays",
+    "message": "Calculated plays info",
+    "data": {
+      "allowed": 999,
+      "used": 6,
+      "remaining": 993,
+      "isAdmin": true,
+      "userId": "9d97c5fe-9051-4da5-881a-f4f380cbb6b0"
+    },
+    "timestamp": "2026-02-01T22:53:49.068Z",
+    "source": "app_logger"
+  },
+  {
+    "level": "info",
+    "category": "System",
+    "message": "[GameScreenPage] Rendering for mode: classic",
+    "timestamp": "2026-02-01T22:53:51.547Z",
+    "source": "app_logger"
+  },
+  {
+    "level": "debug",
+    "category": "Plays",
+    "message": "Fetching plays info from Supabase",
+    "timestamp": "2026-02-01T22:53:51.566Z",
+    "source": "app_logger"
+  },
+  {
+    "level": "debug",
+    "category": "Plays",
+    "message": "Fetching plays info from Supabase",
+    "timestamp": "2026-02-01T22:53:51.911Z",
+    "source": "app_logger"
+  },
+  {
+    "level": "debug",
+    "category": "Plays",
+    "message": "Quota breakdown",
+    "data": {
+      "xp": 75286,
+      "baseFromRank": 4,
+      "storedQuota": 999
+    },
+    "timestamp": "2026-02-01T22:53:52.215Z",
+    "source": "app_logger"
+  },
+  {
+    "level": "debug",
+    "category": "GameLogic",
+    "message": "Synced with 4 Supabase history items",
+    "timestamp": "2026-02-01T22:53:52.288Z",
+    "source": "app_logger"
+  },
+  {
+    "level": "debug",
+    "category": "Plays",
+    "message": "Calculated plays info",
+    "data": {
+      "allowed": 999,
+      "used": 6,
+      "remaining": 993,
+      "isAdmin": true,
+      "userId": "9d97c5fe-9051-4da5-881a-f4f380cbb6b0"
+    },
+    "timestamp": "2026-02-01T22:53:52.358Z",
+    "source": "app_logger"
+  },
+  {
+    "level": "debug",
+    "category": "GameLogic",
+    "message": "Synced with 4 Supabase history items",
+    "timestamp": "2026-02-01T22:53:52.360Z",
+    "source": "app_logger"
+  },
+  {
+    "level": "debug",
+    "category": "Plays",
+    "message": "Quota breakdown",
+    "data": {
+      "xp": 75286,
+      "baseFromRank": 4,
+      "storedQuota": 999
+    },
+    "timestamp": "2026-02-01T22:53:52.364Z",
+    "source": "app_logger"
+  },
+  {
+    "level": "debug",
+    "category": "Plays",
+    "message": "Calculated plays info",
+    "data": {
+      "allowed": 999,
+      "used": 6,
+      "remaining": 993,
+      "isAdmin": true,
+      "userId": "9d97c5fe-9051-4da5-881a-f4f380cbb6b0"
+    },
+    "timestamp": "2026-02-01T22:53:52.458Z",
+    "source": "app_logger"
+  },
+  {
+    "level": "info",
+    "category": "Plays",
+    "message": "[startRun] Allowed: Starting run creation",
+    "data": {
+      "remaining": 993
+    },
+    "timestamp": "2026-02-01T22:53:52.466Z",
+    "source": "app_logger"
+  },
+  {
+    "level": "info",
+    "category": "Plays",
+    "message": "[startRun] Run successfully created in DB with ID: ed3f25a0-4429-4cb3-9311-62f41c7b3f01",
+    "timestamp": "2026-02-01T22:53:52.675Z",
+    "source": "app_logger"
+  },
+  {
+    "level": "debug",
+    "category": "Plays",
+    "message": "Fetching plays info from Supabase",
+    "timestamp": "2026-02-01T22:53:52.676Z",
+    "source": "app_logger"
+  },
+  {
+    "level": "debug",
+    "category": "Plays",
+    "message": "Quota breakdown",
+    "data": {
+      "xp": 75286,
+      "baseFromRank": 4,
+      "storedQuota": 999
+    },
+    "timestamp": "2026-02-01T22:53:52.821Z",
+    "source": "app_logger"
+  },
+  {
+    "level": "debug",
+    "category": "Plays",
+    "message": "Calculated plays info",
+    "data": {
+      "allowed": 999,
+      "used": 7,
+      "remaining": 992,
+      "isAdmin": true,
+      "userId": "9d97c5fe-9051-4da5-881a-f4f380cbb6b0"
+    },
+    "timestamp": "2026-02-01T22:53:52.895Z",
+    "source": "app_logger"
+  },
+  {
+    "level": "debug",
+    "category": "GameLogic",
+    "message": "Pool reduction: 990 -> 983 (used) -> 541 (tier 2) -> 448 (time) -> 150 (final)",
+    "data": {
+      "level": 1,
+      "refEvent": "Loi Neuwirth sur la contraception",
+      "targetTier": 2
+    },
+    "timestamp": "2026-02-01T22:54:06.598Z",
+    "source": "app_logger"
+  },
+  {
+    "level": "debug",
+    "category": "GameLogic",
+    "message": "Pool reduction: 990 -> 982 (used) -> 165 (tier 1) -> 138 (time) -> 138 (final)",
+    "data": {
+      "level": 1,
+      "refEvent": "Création de l'Université de Oslo",
+      "targetTier": 1
+    },
+    "timestamp": "2026-02-01T22:54:16.043Z",
+    "source": "app_logger"
+  },
+  {
+    "level": "error",
+    "category": "Ads",
+    "message": "❌ Failed to load Ad: [googleMobileAds/no-fill] [googleMobileAds/no-fill] No fill.",
+    "timestamp": "2026-02-01T22:54:18.489Z",
+    "source": "app_logger"
+  },
+  {
+    "level": "info",
+    "category": "Ads",
+    "message": "✅ Ad loaded successfully",
+    "timestamp": "2026-02-01T22:54:49.613Z",
+    "source": "app_logger"
+  }
+]

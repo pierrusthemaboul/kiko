@@ -1,0 +1,14 @@
+{
+  "timestamp": "2026-02-19T07:35:17.186Z",
+  "agent": "VERITAS",
+  "action": "VALIDATE",
+  "inputs": {
+    "titre": "SwissLeaks",
+    "year": 2015
+  },
+  "decision": "REJECTED",
+  "reason": "The image contains several anachronisms that disqualify it for representing the SwissLeaks event in 2015. Specifically, the presence of modern laptops (likely Macbooks), and what appears to be a modern smartphone or tablet render it inaccurate. The style of the business suits could potentially be considered modern as well, though less definitively. While the overall atmosphere is appropriate for depicting serious financial dealings, the technological elements are too out of place.",
+  "outputs": {
+    "score": 3
+  }
+}

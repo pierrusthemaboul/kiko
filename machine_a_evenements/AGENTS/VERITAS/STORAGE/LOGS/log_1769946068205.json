@@ -1,0 +1,12 @@
+{
+  "timestamp": "2026-02-01T11:41:08.204Z",
+  "agent": "VERITAS",
+  "action": "VALIDATE",
+  "inputs": {
+    "titre": "Lance Armstrong est déchu de ses sept titres du Tour de France pour dopage",
+    "year": 2012
+  },
+  "decision": "ERROR",
+  "reason": "[GoogleGenerativeAI Error]: Error fetching from https://generativelanguage.googleapis.com/v1beta/models/gemini-2.0-flash:generateContent: [429 Too Many Requests] Resource exhausted. Please try again later. Please refer to https://cloud.google.com/vertex-ai/generative-ai/docs/error-code-429 for more details.",
+  "outputs": {}
+}

@@ -1,0 +1,417 @@
+LISTE DES ÉVÉNEMENTS DÉJÀ PRÉSENTS (NE PAS LES REPRODUIRE) :
+
+- Traité de Rome
+- Sacre de Charles VII à Reims
+- Loi Neuwirth sur la contraception
+- Décès du philosophe et écrivain Jean-Paul Sartre dans la capitale française
+- Éruption de la Montagne Pelée en Martinique
+- Loi de séparation des Églises et de l'État
+- Accords de Genève sur l'Indochine
+- Édouard Manet expose Le Déjeuner sur l'herbe
+- Première croisade
+- Première utilisation astronomique du télescope par Galilée
+- Chute de Robespierre
+- Alexander Fleming découvre la pénicilline
+- Coup d'État du 18 Brumaire
+- Abolition de l'esclavage dans les colonies françaises
+- Proclamation du Premier Empire
+- Lancement du premier satellite artificiel Spoutnik 1
+- Crise pétrolière de 1979
+- Ouverture du Centre Pompidou à Paris
+- Dissolution de l'Assemblée nationale par Chirac
+- Ouverture d'Euro Disney
+- Création du Comité de salut public
+- Chute de l’Empire romain d’Occident
+- Première Coupe du monde de football
+- Premier tour du monde achevé
+- Réhabilitation posthume de Jeanne d'Arc
+- Répression policière de la manifestation algérienne à Paris
+- Assassinat de John F. Kennedy
+- Bataille d'Angleterre
+- Génocide arménien
+- Naufrage d'un pétrolier entraînant une grave pollution des côtes françaises
+- Abdication de Napoléon Ier
+- Entrée en guerre des États-Unis dans la Première Guerre mondiale
+- Condamnation de Galilée par l'Inquisition
+- Mise en œuvre du Plan Marshall en Europe
+- Inhumation du Soldat inconnu sous l’Arc de Triomphe
+- Lancement du TGV Sud-Est
+- Bataille d'Azincourt
+- Déchiffrement des hiéroglyphes par Champollion
+- Création du Front populaire
+- Mobilisation massive contre le plan Juppé, paralysie de la France pendant des semaines
+- Inauguration du Tunnel sous la Manche
+- Déclaration Schuman
+- Loi des 35 heures : adoption d'une durée hebdomadaire maximale du travail salarié
+- Première édition française du Petit Prince
+- STO instauré par Vichy
+- Naissance de Léonard de Vinci
+- Publication du Manifeste du Parti communiste
+- Création de l’OAS
+- Première attribution du Prix Goncourt
+- Discours de De Gaulle sur l’autodétermination
+- Présentation du Concorde au Salon du Bourget
+- Vol de la Joconde
+- Exécution de membres du groupe Manouchian
+- Couronnement de Charlemagne empereur d’Occident
+- Premier vol motorisé des frères Wright
+- Loi Évin sur le tabac et l’alcool
+- Dissolution de l'URSS
+- Première réunion des États généraux
+- Décès de Georges Clemenceau
+- Création de la CECA
+- Élection de Valéry Giscard d'Estaing
+- Gouvernement provisoire de De Gaulle
+- Indépendance du Maroc
+- Invasion de la Baie des Cochons
+- Nomination du cardinal de Richelieu au Conseil du roi
+- Début de la construction de Notre-Dame de Paris
+- Début de la prohibition aux États-Unis
+- Naissance de Jean-Sébastien Bach
+- Passage du SMIG au SMIC
+- Explosion du dirigeable Hindenburg
+- Publication du premier volume de l'Encyclopédie
+- Création du système métrique
+- Attaque de Pearl Harbor
+- Lancement du télescope spatial Hubble
+- Élection de François Mitterrand
+- Découverte de la pierre de Rosette
+- Le Rouge et le Noir
+- Création de l'ordre des Templiers
+- Début de la bataille d’Alger
+- French Maastricht Treaty Referendum
+- Création du franc
+- Génocide au Rwanda : rôle controversé de la France
+- Mort de Diana, princesse de Galles
+- Affaire du sang contaminé – verdicts
+- Découverte de la fission nucléaire
+- Création du CNRS
+- Création Université de Paris
+- Institution du salaire minimum interprofessionnel garanti
+- Nuit de Cristal
+- Crise pétrolière de 1973
+- Festival de Woodstock
+- L'affaire Cahuzac
+- Début du voyage de Marco Polo vers l'Asie
+- Mort de Pablo Picasso
+- Mort de Charles Aznavour
+- Mort de Valéry Giscard d’Estaing
+- Libération des radios locales
+- Création de l'UNESCO
+- Début du blocus de Berlin
+- Edison invente l'ampoule électrique
+- Proclamation de l'Empire allemand à Versailles
+- Discours de Dominique de Villepin à l’ONU
+- Création de la Société des Nations (SDN)
+- Bataille de Poitiers (Charles Martel contre les Omeyyades)
+- Naissance de William Shakespeare
+- Défaite de Diên Biên Phu
+- Affaire Dreyfus : réhabilitation d'Alfred Dreyfus
+- Début des travaux de la cathédrale gothique Notre-Dame de Chartres
+- Mise au point du vaccin contre la polio
+- Abolition de la peine de mort en France
+- Révolution cubaine
+- Premiers Jeux Olympiques modernes
+- 2023 Pension Reform Protests
+- Apparitions de Lourdes
+- Début de la conquête de l'Empire aztèque par Hernán Cortés
+- Inauguration du canal de Suez
+- Début de la création de La Joconde par Léonard de Vinci
+- Machiavel écrit "Le Prince"
+- Publication de "L'Origine des espèces" de Darwin
+- Début du voyage de Charles Darwin sur le HMS Beagle
+- Marche sur Rome de Benito Mussolini
+- Catastrophe minière de Courrières (1099 morts)
+- Crise énergétique française de 2022
+- Première ascension de l'Everest
+- Sacre de Louis XIV
+- Assassinat de Mahatma Gandhi
+- Génocide des Tutsis au Rwanda
+- Lancement de l'euro comme monnaie scripturale
+- Épidémie de grippe espagnole
+- Lancement de Google
+- Accords de Camp David
+- Invention de la presse à caractères mobiles en métal
+- Invention du World Wide Web par Tim Berners-Lee
+- Traité de l'Élysée
+- Marie et Pierre Curie isolent le radium
+- Convocation des États généraux
+- Crise de Suez
+- Première bombe atomique française
+- Bataille de Bouvines
+- Déclaration d'indépendance des États-Unis
+- Invasion de la Pologne par l'Allemagne
+- Premier vol en montgolfière par les frères Montgolfier
+- Inauguration de l'Opéra de Paris
+- Invention de la radio par Guglielmo Marconi
+- Naissance de Galilée
+- Début de la Révolution industrielle
+- Découverte des grottes de Lascaux
+- Édit de Nantes
+- Première traversée de la Manche en avion par Louis Blériot
+- Publication de Madame Bovary de Flaubert
+- Création de l'ONU
+- Création de la Comédie-Française
+- Début de la bataille de Verdun
+- Clonage de la brebis Dolly
+- Découverte de l'épave du Titanic par Robert Ballard
+- Grand smog de Londres
+- Première exposition impressionniste à Paris
+- Première du Boléro de Maurice Ravel
+- Annonce de la fin du service militaire obligatoire
+- Début de la présidence de Charles de Gaulle
+- Création du Parti communiste français
+- Crise des réfugiés en Europe
+- Fin de la Commune de Paris
+- Crise des subprimes
+- Publication des Fleurs du mal de Baudelaire
+- Traité de Verdun
+- Première de Carmen de Georges Bizet
+- Invention de la dynamite par Alfred Nobel
+- Jenner développe le premier vaccin contre la variole
+- Signature du traité de Versailles
+- Prise de Constantinople par les Ottomans
+- Lancement de la pilule contraceptive en France
+- Passage au nouveau millénaire
+- Démission de Charles de Gaulle
+- Passage à l'euro
+- Première représentation du Bourgeois gentilhomme de Molière
+- Création de l'impôt sur le revenu
+- Disparition du fondateur des Restos du Cœur, humoriste français engagé dans l'aide sociale
+- Le Tour du monde en 80 jours
+- Lance Armstrong est déchu de ses titres
+- Disparition de l'emblématique acteur comique français Louis de Funès
+- Publication des Principia Mathematica de Newton
+- Découverte de la structure de l'ADN par Watson et Crick
+- Création de l’OTAN
+- Procès et condamnation du « célibataire serial » Henri Désiré Landru
+- Fondation de la Croix-Rouge
+- Retour de Christophe Colomb de son premier voyage en Amérique
+- Réhabilitation de Jeanne d'Arc par le procès en nullité
+- Début de la Guerre froide
+- Invention de la pile électrique par Alessandro Volta
+- Adoption de l'Accord de Paris sur le climat (COP21)
+- Adoption du système décimal en France
+- Conférence de Copenhague sur le climat (COP15)
+- Invasion du Koweït par l'Irak
+- Invention du moteur diesel par Rudolf Diesel
+- L'Argentine gagne la Coupe du Monde
+- Léonard de Vinci meurt à Amboise
+- Naissance de Molière
+- La reconnaissance légale de l'esclavage comme crime contre l'humanité
+- Début de la construction du Château de Versailles
+- Construction de la Tour de Pise
+- Campagne de Russie de Napoléon
+- Proclamation de la Deuxième République
+- Koch identifie le bacille de la tuberculose
+- Découverte de l'Amérique
+- Élection de Nelson Mandela comme président
+- Invasion de l'Ukraine par la Russie
+- Premier homme dans l'espace (Youri Gagarine)
+- Début de l'affaire Dreyfus
+- Tsunami dans l'océan Indien
+- Proclamation d'émancipation par Abraham Lincoln
+- Bataille d'Austerlitz
+- Abolition de la monarchie en France
+- Éruption du mont Vésuve qui détruit Pompéi et Herculanum
+- Exécution de Louis XVI
+- Adoption du PACS
+- Installation de la cour de Louis XIV à Versailles
+- Invention de l'automobile par Karl Benz
+- Massacre de la Saint-Barthélemy
+- Éruption du Krakatoa
+- Henri IV se convertit au catholicisme
+- Début de la prédication de Luther et des 95 thèses
+- Fin de la Guerre de Cent Ans - Bataille de Castillon
+- Premier Tour de France cycliste
+- Premier vol d'essai du Concorde
+- Décès de William Shakespeare
+- Mort de Louis XIV
+- Jesse Owens aux Jeux olympiques de Berlin
+- Fondation de l'État d'Israël
+- Mort de Napoléon Ier
+- Mort de Karl Marx
+- Début de la Bataille de France
+- Signature des accords d'Évian
+- Assassinat de l'archiduc François-Ferdinand
+- Création du Fonds mondial pour la nature (WWF)
+- Première projection des frères Lumière
+- Mobilisation générale française
+- Explosion de l'usine AZF à Toulouse
+- Première femme nommée ministre en France
+- Création de La Nuit étoilée par Van Gogh
+- La Sorbonne est fondée à Paris.
+- Promulgation de la loi sur les associations de 1901
+- Proclamation de la Troisième République
+- Début de la construction de Sainte-Sophie
+- Bataille de Hastings (conquête normande de l'Angleterre)
+- Inauguration du Colisée à Rome
+- Bataille de Marignan (François Ier)
+- Première édition des 24 Heures du Mans
+- Mort de Charles de Gaulle
+- Foundation of the Human Rights League
+- Beginning of the Civil Rights Movement (USA)
+- Achèvement de la construction du Taj Mahal à Agra
+- Scandale de corruption à la FIFA
+- Achèvement de la Divine Comédie de Dante Alighieri
+- Accident industriel de Seveso – retentissement en France
+- Foundation of the UN Peacekeepers
+- Crise énergétique déclenchée par l’embargo de l’OPEP
+- Publication de Candide de Voltaire
+- Débarquement allié en Afrique du Nord (opération Torch)
+- Publication de Les Misérables de Victor Hugo
+- Apartheid en Afrique du Sud
+- Le scandale du Watergate
+- Le suicide collectif de Jonestown
+- Corneille écrit Le Cid
+- Bataille de Waterloo
+- Développement du procédé de pasteurisation
+- Graham Bell invente le téléphone
+- Le scandale de l'esclavage au Congo belge
+- Publication de De revolutionibus orbium coelestium de Copernic
+- Renforcement du statut des Juifs par le régime de Vichy
+- Creation of Amnesty International
+- Armistice de Rethondes
+- Première célébration officielle de la fête nationale française
+- Rosa Parks refuse de céder sa place
+- Crise des missiles de Cuba
+- Accords de Munich
+- Début du règne de Louis XIV
+- Inauguration de la Statue de la Liberté
+- Massacre d'Oradour-sur-Glane
+- Adoption de la CCNUCC
+- Explosion de la première bombe atomique soviétique
+- Arrestation de Jean Moulin
+- Naissance de Louis XIV
+- Bombardement de Guernica
+- Accident nucléaire de Fukushima au Japon
+- Découverte du boson de Higgs au CERN
+- Première bataille de la Marne
+- Conférence de Yalta
+- Nicolas Appert invente la conserve
+- Assaut meurtrier contre un journal satirique et un commerce juif à Paris
+- Adoption de la Déclaration universelle des droits de l'homme
+- Bataille de la Somme (Picardie)
+- Découverte d'eau liquide sur Mars
+- Loi sur les signes religieux à l'école
+- Prix Nobel de physique pour les Curie et Becquerel
+- Publication de la théorie de la relativité restreinte par Einstein
+- Découverte du tombeau de Toutânkhamon
+- Inauguration de la Pyramide du Louvre
+- Publication de Roméo et Juliette de William Shakespeare
+- La tempête Lothar frappe la France
+- Ouragan Katrina aux États-Unis
+- Tremblement de terre en Turquie (Izmit)
+- Massacre de Columbine
+- Création du GIEC
+- Première greffe cardiaque
+- Début de la Renaissance italienne avec Giotto
+- Sortie du film Matrix
+- Pasteur réfute la génération spontanée
+- Bicentenaire de la Révolution Française
+- Signature du traité de Maastricht
+- Attaques terroristes contre Paris liées au groupe armé algérien GIA
+- L'expérience de Stanford
+- Mort de Saint Louis
+- La Révolution culturelle en Chine
+- Ouverture du métro de Paris
+- Fondation de l'Académie française par Richelieu
+- Indépendance de la Tunisie
+- Indépendance d'Haïti
+- Procès de Nuremberg
+- Pacte germano-soviétique
+- Invention du braille
+- Premier essai nucléaire français
+- Lancement du programme électronucléaire français
+- Premiers essais thermonucléaires (bombe H)
+- Protocole de Kyoto adopté
+- Première élection présidentielle au suffrage universel direct
+- Canicule meurtrière de 2003
+- Inauguration du Canal du Midi
+- Attaque mortelle visant un établissement juif à Paris : Six victimes d'un acte antisémite.
+- Lancement du Spoutnik 2
+- Publication de 'La Case de l'oncle Tom'
+- Liaison ferroviaire transcontinentale (USA)
+- Jacques Chirac élu Président de la République
+- Marée noire de Deepwater Horizon
+- Guerre du Vietnam
+- Fondation de l'École Polytechnique à Paris
+- Conférence de Wannsee
+- Fondation de la République populaire de Chine
+- Publication de Mein Kampf
+- Création de l'Union Européenne
+- Chute de Saïgon
+- Marche des femmes sur Versailles (1789)
+- Début des Trois Glorieuses
+- Arrivée de la Peste noire en Europe
+- Publication du 'Deuxième Sexe' de Simone de Beauvoir
+- Assassinat d'Henri IV
+- Traités de Westphalie
+- Shakespeare écrit Hamlet
+- Guerre des Six Jours
+- La crainte en France face à l'accident nucléaire soviétique et ses enjeux de communication
+- Naufrage du Costa Concordia
+- Découverte du virus du sida – à Paris en 1983, premiers cas recensés en 1978
+- Construction de la Sainte-Chapelle à Paris
+- Réforme des retraites : Relèvement de l'âge légal de départ à la retraite
+- Panama Papers
+- Contamination sanguine : Transmission du VIH dans les établissements de santé
+- Crise économique et financière en France
+- Révélations de Wikileaks
+- Affaire Bettencourt
+- Création de la Banque de France
+- Loi sur la liberté de la presse
+- Déclaration de guerre de la France à la Prusse
+- Affaire Weinstein
+- Eradication de la variole (OMS)
+- JO d’hiver de Chamonix
+- Lancement du parfum Chanel No. 5
+- Cousteau invente le scaphandre
+- Premier bébé éprouvette (Louise Brown)
+- Publication de 1984 de George Orwell
+- Droit de vote des femmes
+- Création de la Milice
+- Promulgation de la Constitution de la Ve République
+- Victoire de Jeanne d'Arc au siège d'Orléans
+- Procès de Pétain
+- Landsteiner découvre les groupes sanguins
+- Jean Moulin envoyé par De Gaulle
+- Traité de Paris instituant la CECA
+- Occupation de la zone libre par les Allemands
+- Loi Taubira sur le mariage pour tous
+- Disparition de Jean-Paul Belmondo
+- Le référendum français rejette le projet de Constitution européenne
+- Le débat national sur le port du voile islamique dans les établissements scolaires publics
+- Désillusion du XV de France, éliminé à domicile lors de sa Coupe du monde.
+- Commission indépendante estime 216 000 victimes d'abus sexuels dans l'Église depuis 1950
+- Introduction du congé maternité en France
+- Révolution d'Octobre
+- Publication de l'Encyclopédie de Diderot et d'Alembert
+- Napoléon Bonaparte devient Consul à vie
+- Exécution de Jeanne d'Arc
+- Invention de la photographie par Nicéphore Niépce
+- Création du Code Civil
+- Abjuration d'Henri IV
+- Adoption du PACS – débat initial
+- Funérailles nationales de Victor Hugo
+- Publication du Comte de Monte-Cristo d'Alexandre Dumas
+- Première Ligue des Champions
+- Attentat de Beyrouth – soldats français
+- Rédaction de l'Odyssée par Homère
+- Découverte du VIH par l’Institut Pasteur
+- Marie Curie obtient son deuxième prix Nobel
+- Création du CERN avec participation française
+- Loi Defferre sur l’outre-mer
+- Le scandale du Dieselgate
+- Publication de Les Liaisons dangereuses
+- Révélation publique sur les risques de l'amiante, suivie de poursuites judiciaires
+- Allongement de la durée de cotisation des fonctionnaires pour la réforme des retraites
+- Guerre de Cent Ans entre le royaume de France et le royaume d'Angleterre
+- Découverte du Canada par Jacques Cartier
+- Invention du laser
+- Execution of Marie Antoinette
+- Fuite à Varennes
+- Révolte vendéenne
+- Début de la colonisation du Congo
+- Décès de plus de 1500 personnes lors du naufrage du Titanic
+- Réunification allemande

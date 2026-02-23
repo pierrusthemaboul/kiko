@@ -1,0 +1,14 @@
+{
+  "timestamp": "2026-02-22T20:21:16.937Z",
+  "agent": "VERITAS",
+  "action": "VALIDATE",
+  "inputs": {
+    "titre": "L'équipe de France triomphe à la Coupe du monde de football en Russie",
+    "year": 2018
+  },
+  "decision": "REJECTED",
+  "reason": "The image depicts the French team celebrating their victory at the World Cup. However, there are numerous anachronisms that make it unsuitable for a historically accurate representation. The most glaring is the presence of smartphones held by many spectators. Modern sportswear brands are also visible on the players' kits. Therefore, the image is rejected.",
+  "outputs": {
+    "score": 2
+  }
+}

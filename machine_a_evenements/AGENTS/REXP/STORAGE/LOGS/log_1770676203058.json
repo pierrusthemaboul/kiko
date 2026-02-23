@@ -1,0 +1,14 @@
+{
+  "timestamp": "2026-02-09T22:30:03.057Z",
+  "agent": "REXP",
+  "action": "EXPORT_PROD",
+  "inputs": {
+    "titre": "Naissance de Louis Pasteur",
+    "year": 1822
+  },
+  "decision": "SUCCESS",
+  "reason": "Image mise à jour en production",
+  "outputs": {
+    "publicUrl": "https://ppxmtnuewcixbbmhnzzc.supabase.co/storage/v1/object/public/evenements-image/chambre_noire_naissance_de_louis_pasteur_1770676202796.webp"
+  }
+}

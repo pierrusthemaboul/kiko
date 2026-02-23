@@ -1,0 +1,14 @@
+{
+  "timestamp": "2026-02-08T21:03:45.955Z",
+  "agent": "VERITAS",
+  "action": "VALIDATE",
+  "inputs": {
+    "titre": "Invasion de l'Ukraine par la Russie",
+    "year": 2022
+  },
+  "decision": "REJECTED",
+  "reason": "The image depicts a modern soldier and tank.  The presence of modern military gear, while relevant to the event, makes it anachronistic. Specifically, the soldier's camouflage uniform, helmet with goggles, the automatic weapon with a sight, and the tank are modern equipment. Additionally, modern military vests/pouches are also visible.  While the overall atmosphere is appropriate, the anachronisms prevent the image from being historically accurate.",
+  "outputs": {
+    "score": 6
+  }
+}

@@ -1,0 +1,12 @@
+{
+  "timestamp": "2026-01-31T14:58:42.201Z",
+  "agent": "VERITAS",
+  "action": "VALIDATE",
+  "inputs": {
+    "titre": "Publication du 'Discours de la Méthode' de Descartes",
+    "year": 1637
+  },
+  "decision": "ERROR",
+  "reason": "[GoogleGenerativeAI Error]: Error fetching from https://generativelanguage.googleapis.com/v1beta/models/gemini-1.5-flash:generateContent: [404 Not Found] models/gemini-1.5-flash is not found for API version v1beta, or is not supported for generateContent. Call ListModels to see the list of available models and their supported methods.",
+  "outputs": {}
+}

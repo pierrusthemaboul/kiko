@@ -1,0 +1,14 @@
+{
+  "timestamp": "2026-02-19T07:11:58.974Z",
+  "agent": "VERITAS",
+  "action": "VALIDATE",
+  "inputs": {
+    "titre": "SwissLeaks",
+    "year": 2015
+  },
+  "decision": "REJECTED",
+  "reason": "The image shows a modern individual in a cafe using a laptop and taking notes. The presence of a laptop, modern clothing (leather jacket), visible exterior with cars and signs are severe anachronisms for the SwissLeaks event (2015), which is a specific timeframe that necessitates historical accuracy.",
+  "outputs": {
+    "score": 1
+  }
+}

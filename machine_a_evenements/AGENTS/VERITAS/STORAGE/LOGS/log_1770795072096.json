@@ -1,0 +1,14 @@
+{
+  "timestamp": "2026-02-11T07:31:12.095Z",
+  "agent": "VERITAS",
+  "action": "VALIDATE",
+  "inputs": {
+    "titre": "Naufrage du General Slocum",
+    "year": 1904
+  },
+  "decision": "REJECTED",
+  "reason": "The image depicts a burning ship with people in the water, seemingly related to the General Slocum disaster. However, there are significant anachronisms. While the clothing of many people fleeing the ship and the style of the ship itself are plausible for the era, the skyline of New York City in the background features buildings far too modern for 1904. Buildings like the Empire State Building and other modern skyscrapers are visible. This makes the image unsuitable for the event.",
+  "outputs": {
+    "score": 3
+  }
+}

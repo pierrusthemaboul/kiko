@@ -1,0 +1,789 @@
+[
+  {
+    "level": "info",
+    "category": "Ads",
+    "message": "👀 Ad opened/started showing",
+    "timestamp": "2026-02-01T17:16:45.878Z",
+    "source": "app_logger"
+  },
+  {
+    "level": "info",
+    "category": "Ads",
+    "message": "🎁 Reward signal EARNED_REWARD received from AdMob",
+    "data": {
+      "reward": {
+        "amount": 10,
+        "type": "coins"
+      }
+    },
+    "timestamp": "2026-02-01T17:16:51.038Z",
+    "source": "app_logger"
+  },
+  {
+    "level": "info",
+    "category": "Ads",
+    "message": "🚀 Starting reward grant process (Sentinelle)",
+    "data": {
+      "isGuest": false,
+      "userId": "9d97c5fe-9051-4da5-881a-f4f380cbb6b0",
+      "timestamp": "2026-02-01T17:16:51.098Z"
+    },
+    "timestamp": "2026-02-01T17:16:51.098Z",
+    "source": "app_logger"
+  },
+  {
+    "level": "info",
+    "category": "Ads",
+    "message": "Attempting to grant extra play (Logged-in)",
+    "data": {
+      "userId": "9d97c5fe-9051-4da5-881a-f4f380cbb6b0"
+    },
+    "timestamp": "2026-02-01T17:16:51.100Z",
+    "source": "app_logger"
+  },
+  {
+    "level": "info",
+    "category": "Ads",
+    "message": "Updating parties_per_day: 4 -> 6",
+    "data": {
+      "userId": "9d97c5fe-9051-4da5-881a-f4f380cbb6b0"
+    },
+    "timestamp": "2026-02-01T17:16:51.843Z",
+    "source": "app_logger"
+  },
+  {
+    "level": "info",
+    "category": "Ads",
+    "message": "Successfully updated profile in Supabase",
+    "data": {
+      "userId": "9d97c5fe-9051-4da5-881a-f4f380cbb6b0"
+    },
+    "timestamp": "2026-02-01T17:16:52.033Z",
+    "source": "app_logger"
+  },
+  {
+    "level": "debug",
+    "category": "Plays",
+    "message": "Fetching plays info from Supabase",
+    "timestamp": "2026-02-01T17:16:52.033Z",
+    "source": "app_logger"
+  },
+  {
+    "level": "debug",
+    "category": "Plays",
+    "message": "Quota breakdown",
+    "data": {
+      "xp": 74970,
+      "baseFromRank": 4,
+      "storedQuota": 6
+    },
+    "timestamp": "2026-02-01T17:16:52.429Z",
+    "source": "app_logger"
+  },
+  {
+    "level": "debug",
+    "category": "Plays",
+    "message": "Calculated plays info",
+    "data": {
+      "allowed": 6,
+      "used": 5,
+      "remaining": 1,
+      "isAdmin": false,
+      "userId": "9d97c5fe-9051-4da5-881a-f4f380cbb6b0"
+    },
+    "timestamp": "2026-02-01T17:16:52.580Z",
+    "source": "app_logger"
+  },
+  {
+    "level": "info",
+    "category": "Ads",
+    "message": "🚪 Ad closed by user after 7s (Reward confirmed: true)",
+    "timestamp": "2026-02-01T17:16:53.311Z",
+    "source": "app_logger"
+  },
+  {
+    "level": "info",
+    "category": "Ads",
+    "message": "✅ Ad loaded successfully",
+    "timestamp": "2026-02-01T17:16:54.651Z",
+    "source": "app_logger"
+  },
+  {
+    "level": "debug",
+    "category": "Plays",
+    "message": "Fetching plays info from Supabase",
+    "timestamp": "2026-02-01T17:23:36.344Z",
+    "source": "app_logger"
+  },
+  {
+    "level": "debug",
+    "category": "Plays",
+    "message": "Fetching plays info from Supabase",
+    "timestamp": "2026-02-01T17:23:36.377Z",
+    "source": "app_logger"
+  },
+  {
+    "level": "debug",
+    "category": "Plays",
+    "message": "Fetching plays info from Supabase",
+    "timestamp": "2026-02-01T17:23:36.729Z",
+    "source": "app_logger"
+  },
+  {
+    "level": "debug",
+    "category": "Plays",
+    "message": "Quota breakdown",
+    "data": {
+      "xp": 74970,
+      "baseFromRank": 4,
+      "storedQuota": 6
+    },
+    "timestamp": "2026-02-01T17:23:38.638Z",
+    "source": "app_logger"
+  },
+  {
+    "level": "debug",
+    "category": "Plays",
+    "message": "Quota breakdown",
+    "data": {
+      "xp": 74970,
+      "baseFromRank": 4,
+      "storedQuota": 6
+    },
+    "timestamp": "2026-02-01T17:23:38.659Z",
+    "source": "app_logger"
+  },
+  {
+    "level": "debug",
+    "category": "Plays",
+    "message": "Quota breakdown",
+    "data": {
+      "xp": 74970,
+      "baseFromRank": 4,
+      "storedQuota": 6
+    },
+    "timestamp": "2026-02-01T17:23:38.662Z",
+    "source": "app_logger"
+  },
+  {
+    "level": "debug",
+    "category": "GameLogic",
+    "message": "Synced with 4 Supabase history items",
+    "timestamp": "2026-02-01T17:23:38.690Z",
+    "source": "app_logger"
+  },
+  {
+    "level": "debug",
+    "category": "GameLogic",
+    "message": "Synced with 4 Supabase history items",
+    "timestamp": "2026-02-01T17:23:38.704Z",
+    "source": "app_logger"
+  },
+  {
+    "level": "debug",
+    "category": "Plays",
+    "message": "Calculated plays info",
+    "data": {
+      "allowed": 6,
+      "used": 5,
+      "remaining": 1,
+      "isAdmin": false,
+      "userId": "9d97c5fe-9051-4da5-881a-f4f380cbb6b0"
+    },
+    "timestamp": "2026-02-01T17:23:38.827Z",
+    "source": "app_logger"
+  },
+  {
+    "level": "debug",
+    "category": "Plays",
+    "message": "Calculated plays info",
+    "data": {
+      "allowed": 6,
+      "used": 5,
+      "remaining": 1,
+      "isAdmin": false,
+      "userId": "9d97c5fe-9051-4da5-881a-f4f380cbb6b0"
+    },
+    "timestamp": "2026-02-01T17:23:38.831Z",
+    "source": "app_logger"
+  },
+  {
+    "level": "debug",
+    "category": "Plays",
+    "message": "Calculated plays info",
+    "data": {
+      "allowed": 6,
+      "used": 5,
+      "remaining": 1,
+      "isAdmin": false,
+      "userId": "9d97c5fe-9051-4da5-881a-f4f380cbb6b0"
+    },
+    "timestamp": "2026-02-01T17:23:38.864Z",
+    "source": "app_logger"
+  },
+  {
+    "level": "debug",
+    "category": "Plays",
+    "message": "Fetching plays info from Supabase",
+    "timestamp": "2026-02-01T17:28:14.527Z",
+    "source": "app_logger"
+  },
+  {
+    "level": "debug",
+    "category": "Plays",
+    "message": "Fetching plays info from Supabase",
+    "timestamp": "2026-02-01T17:28:14.529Z",
+    "source": "app_logger"
+  },
+  {
+    "level": "debug",
+    "category": "Plays",
+    "message": "Fetching plays info from Supabase",
+    "timestamp": "2026-02-01T17:28:14.537Z",
+    "source": "app_logger"
+  },
+  {
+    "level": "debug",
+    "category": "Plays",
+    "message": "Quota breakdown",
+    "data": {
+      "xp": 74970,
+      "baseFromRank": 4,
+      "storedQuota": 6
+    },
+    "timestamp": "2026-02-01T17:28:15.873Z",
+    "source": "app_logger"
+  },
+  {
+    "level": "debug",
+    "category": "Plays",
+    "message": "Quota breakdown",
+    "data": {
+      "xp": 74970,
+      "baseFromRank": 4,
+      "storedQuota": 6
+    },
+    "timestamp": "2026-02-01T17:28:15.874Z",
+    "source": "app_logger"
+  },
+  {
+    "level": "debug",
+    "category": "Plays",
+    "message": "Quota breakdown",
+    "data": {
+      "xp": 74970,
+      "baseFromRank": 4,
+      "storedQuota": 6
+    },
+    "timestamp": "2026-02-01T17:28:15.876Z",
+    "source": "app_logger"
+  },
+  {
+    "level": "debug",
+    "category": "GameLogic",
+    "message": "Synced with 4 Supabase history items",
+    "timestamp": "2026-02-01T17:28:16.001Z",
+    "source": "app_logger"
+  },
+  {
+    "level": "debug",
+    "category": "GameLogic",
+    "message": "Synced with 4 Supabase history items",
+    "timestamp": "2026-02-01T17:28:16.015Z",
+    "source": "app_logger"
+  },
+  {
+    "level": "debug",
+    "category": "Plays",
+    "message": "Calculated plays info",
+    "data": {
+      "allowed": 6,
+      "used": 5,
+      "remaining": 1,
+      "isAdmin": false,
+      "userId": "9d97c5fe-9051-4da5-881a-f4f380cbb6b0"
+    },
+    "timestamp": "2026-02-01T17:28:16.113Z",
+    "source": "app_logger"
+  },
+  {
+    "level": "debug",
+    "category": "Plays",
+    "message": "Calculated plays info",
+    "data": {
+      "allowed": 6,
+      "used": 5,
+      "remaining": 1,
+      "isAdmin": false,
+      "userId": "9d97c5fe-9051-4da5-881a-f4f380cbb6b0"
+    },
+    "timestamp": "2026-02-01T17:28:16.159Z",
+    "source": "app_logger"
+  },
+  {
+    "level": "debug",
+    "category": "Plays",
+    "message": "Calculated plays info",
+    "data": {
+      "allowed": 6,
+      "used": 5,
+      "remaining": 1,
+      "isAdmin": false,
+      "userId": "9d97c5fe-9051-4da5-881a-f4f380cbb6b0"
+    },
+    "timestamp": "2026-02-01T17:28:16.216Z",
+    "source": "app_logger"
+  },
+  {
+    "level": "debug",
+    "category": "Plays",
+    "message": "Fetching plays info from Supabase",
+    "timestamp": "2026-02-01T17:28:21.080Z",
+    "source": "app_logger"
+  },
+  {
+    "level": "debug",
+    "category": "Plays",
+    "message": "Fetching plays info from Supabase",
+    "timestamp": "2026-02-01T17:28:21.082Z",
+    "source": "app_logger"
+  },
+  {
+    "level": "debug",
+    "category": "Plays",
+    "message": "Fetching plays info from Supabase",
+    "timestamp": "2026-02-01T17:28:21.087Z",
+    "source": "app_logger"
+  },
+  {
+    "level": "debug",
+    "category": "Plays",
+    "message": "Quota breakdown",
+    "data": {
+      "xp": 74970,
+      "baseFromRank": 4,
+      "storedQuota": 6
+    },
+    "timestamp": "2026-02-01T17:28:22.515Z",
+    "source": "app_logger"
+  },
+  {
+    "level": "debug",
+    "category": "Plays",
+    "message": "Quota breakdown",
+    "data": {
+      "xp": 74970,
+      "baseFromRank": 4,
+      "storedQuota": 6
+    },
+    "timestamp": "2026-02-01T17:28:22.551Z",
+    "source": "app_logger"
+  },
+  {
+    "level": "debug",
+    "category": "Plays",
+    "message": "Quota breakdown",
+    "data": {
+      "xp": 74970,
+      "baseFromRank": 4,
+      "storedQuota": 6
+    },
+    "timestamp": "2026-02-01T17:28:22.552Z",
+    "source": "app_logger"
+  },
+  {
+    "level": "debug",
+    "category": "GameLogic",
+    "message": "Synced with 4 Supabase history items",
+    "timestamp": "2026-02-01T17:28:22.683Z",
+    "source": "app_logger"
+  },
+  {
+    "level": "debug",
+    "category": "GameLogic",
+    "message": "Synced with 4 Supabase history items",
+    "timestamp": "2026-02-01T17:28:22.697Z",
+    "source": "app_logger"
+  },
+  {
+    "level": "debug",
+    "category": "Plays",
+    "message": "Calculated plays info",
+    "data": {
+      "allowed": 6,
+      "used": 5,
+      "remaining": 1,
+      "isAdmin": false,
+      "userId": "9d97c5fe-9051-4da5-881a-f4f380cbb6b0"
+    },
+    "timestamp": "2026-02-01T17:28:22.783Z",
+    "source": "app_logger"
+  },
+  {
+    "level": "debug",
+    "category": "Plays",
+    "message": "Calculated plays info",
+    "data": {
+      "allowed": 6,
+      "used": 5,
+      "remaining": 1,
+      "isAdmin": false,
+      "userId": "9d97c5fe-9051-4da5-881a-f4f380cbb6b0"
+    },
+    "timestamp": "2026-02-01T17:28:22.784Z",
+    "source": "app_logger"
+  },
+  {
+    "level": "debug",
+    "category": "Plays",
+    "message": "Calculated plays info",
+    "data": {
+      "allowed": 6,
+      "used": 5,
+      "remaining": 1,
+      "isAdmin": false,
+      "userId": "9d97c5fe-9051-4da5-881a-f4f380cbb6b0"
+    },
+    "timestamp": "2026-02-01T17:28:22.967Z",
+    "source": "app_logger"
+  },
+  {
+    "level": "debug",
+    "category": "Plays",
+    "message": "Fetching plays info from Supabase",
+    "timestamp": "2026-02-01T17:31:00.853Z",
+    "source": "app_logger"
+  },
+  {
+    "level": "debug",
+    "category": "Plays",
+    "message": "Fetching plays info from Supabase",
+    "timestamp": "2026-02-01T17:31:00.855Z",
+    "source": "app_logger"
+  },
+  {
+    "level": "debug",
+    "category": "Plays",
+    "message": "Fetching plays info from Supabase",
+    "timestamp": "2026-02-01T17:31:00.860Z",
+    "source": "app_logger"
+  },
+  {
+    "level": "debug",
+    "category": "Plays",
+    "message": "Quota breakdown",
+    "data": {
+      "xp": 74970,
+      "baseFromRank": 4,
+      "storedQuota": 6
+    },
+    "timestamp": "2026-02-01T17:31:02.343Z",
+    "source": "app_logger"
+  },
+  {
+    "level": "debug",
+    "category": "Plays",
+    "message": "Quota breakdown",
+    "data": {
+      "xp": 74970,
+      "baseFromRank": 4,
+      "storedQuota": 6
+    },
+    "timestamp": "2026-02-01T17:31:02.418Z",
+    "source": "app_logger"
+  },
+  {
+    "level": "debug",
+    "category": "Plays",
+    "message": "Quota breakdown",
+    "data": {
+      "xp": 74970,
+      "baseFromRank": 4,
+      "storedQuota": 6
+    },
+    "timestamp": "2026-02-01T17:31:02.457Z",
+    "source": "app_logger"
+  },
+  {
+    "level": "debug",
+    "category": "GameLogic",
+    "message": "Synced with 4 Supabase history items",
+    "timestamp": "2026-02-01T17:31:02.458Z",
+    "source": "app_logger"
+  },
+  {
+    "level": "debug",
+    "category": "GameLogic",
+    "message": "Synced with 4 Supabase history items",
+    "timestamp": "2026-02-01T17:31:02.506Z",
+    "source": "app_logger"
+  },
+  {
+    "level": "debug",
+    "category": "Plays",
+    "message": "Calculated plays info",
+    "data": {
+      "allowed": 6,
+      "used": 5,
+      "remaining": 1,
+      "isAdmin": false,
+      "userId": "9d97c5fe-9051-4da5-881a-f4f380cbb6b0"
+    },
+    "timestamp": "2026-02-01T17:31:02.564Z",
+    "source": "app_logger"
+  },
+  {
+    "level": "debug",
+    "category": "Plays",
+    "message": "Calculated plays info",
+    "data": {
+      "allowed": 6,
+      "used": 5,
+      "remaining": 1,
+      "isAdmin": false,
+      "userId": "9d97c5fe-9051-4da5-881a-f4f380cbb6b0"
+    },
+    "timestamp": "2026-02-01T17:31:02.704Z",
+    "source": "app_logger"
+  },
+  {
+    "level": "debug",
+    "category": "Plays",
+    "message": "Calculated plays info",
+    "data": {
+      "allowed": 6,
+      "used": 5,
+      "remaining": 1,
+      "isAdmin": false,
+      "userId": "9d97c5fe-9051-4da5-881a-f4f380cbb6b0"
+    },
+    "timestamp": "2026-02-01T17:31:02.706Z",
+    "source": "app_logger"
+  },
+  {
+    "level": "debug",
+    "category": "Plays",
+    "message": "Fetching plays info from Supabase",
+    "timestamp": "2026-02-01T17:52:28.389Z",
+    "source": "app_logger"
+  },
+  {
+    "level": "debug",
+    "category": "Plays",
+    "message": "Fetching plays info from Supabase",
+    "timestamp": "2026-02-01T17:52:28.391Z",
+    "source": "app_logger"
+  },
+  {
+    "level": "debug",
+    "category": "Plays",
+    "message": "Fetching plays info from Supabase",
+    "timestamp": "2026-02-01T17:52:28.395Z",
+    "source": "app_logger"
+  },
+  {
+    "level": "debug",
+    "category": "Plays",
+    "message": "Quota breakdown",
+    "data": {
+      "xp": 74970,
+      "baseFromRank": 4,
+      "storedQuota": 6
+    },
+    "timestamp": "2026-02-01T17:52:29.725Z",
+    "source": "app_logger"
+  },
+  {
+    "level": "debug",
+    "category": "Plays",
+    "message": "Quota breakdown",
+    "data": {
+      "xp": 74970,
+      "baseFromRank": 4,
+      "storedQuota": 6
+    },
+    "timestamp": "2026-02-01T17:52:29.754Z",
+    "source": "app_logger"
+  },
+  {
+    "level": "debug",
+    "category": "Plays",
+    "message": "Quota breakdown",
+    "data": {
+      "xp": 74970,
+      "baseFromRank": 4,
+      "storedQuota": 6
+    },
+    "timestamp": "2026-02-01T17:52:29.796Z",
+    "source": "app_logger"
+  },
+  {
+    "level": "debug",
+    "category": "GameLogic",
+    "message": "Synced with 4 Supabase history items",
+    "timestamp": "2026-02-01T17:52:29.925Z",
+    "source": "app_logger"
+  },
+  {
+    "level": "debug",
+    "category": "GameLogic",
+    "message": "Synced with 4 Supabase history items",
+    "timestamp": "2026-02-01T17:52:29.948Z",
+    "source": "app_logger"
+  },
+  {
+    "level": "debug",
+    "category": "Plays",
+    "message": "Calculated plays info",
+    "data": {
+      "allowed": 6,
+      "used": 5,
+      "remaining": 1,
+      "isAdmin": false,
+      "userId": "9d97c5fe-9051-4da5-881a-f4f380cbb6b0"
+    },
+    "timestamp": "2026-02-01T17:52:29.984Z",
+    "source": "app_logger"
+  },
+  {
+    "level": "debug",
+    "category": "Plays",
+    "message": "Calculated plays info",
+    "data": {
+      "allowed": 6,
+      "used": 5,
+      "remaining": 1,
+      "isAdmin": false,
+      "userId": "9d97c5fe-9051-4da5-881a-f4f380cbb6b0"
+    },
+    "timestamp": "2026-02-01T17:52:29.985Z",
+    "source": "app_logger"
+  },
+  {
+    "level": "debug",
+    "category": "Plays",
+    "message": "Calculated plays info",
+    "data": {
+      "allowed": 6,
+      "used": 5,
+      "remaining": 1,
+      "isAdmin": false,
+      "userId": "9d97c5fe-9051-4da5-881a-f4f380cbb6b0"
+    },
+    "timestamp": "2026-02-01T17:52:29.986Z",
+    "source": "app_logger"
+  },
+  {
+    "level": "debug",
+    "category": "Plays",
+    "message": "Fetching plays info from Supabase",
+    "timestamp": "2026-02-01T17:52:39.664Z",
+    "source": "app_logger"
+  },
+  {
+    "level": "debug",
+    "category": "Plays",
+    "message": "Fetching plays info from Supabase",
+    "timestamp": "2026-02-01T17:52:39.658Z",
+    "source": "app_logger"
+  },
+  {
+    "level": "debug",
+    "category": "Plays",
+    "message": "Fetching plays info from Supabase",
+    "timestamp": "2026-02-01T17:52:39.660Z",
+    "source": "app_logger"
+  },
+  {
+    "level": "debug",
+    "category": "Plays",
+    "message": "Quota breakdown",
+    "data": {
+      "xp": 74970,
+      "baseFromRank": 4,
+      "storedQuota": 6
+    },
+    "timestamp": "2026-02-01T17:52:40.924Z",
+    "source": "app_logger"
+  },
+  {
+    "level": "debug",
+    "category": "GameLogic",
+    "message": "Synced with 4 Supabase history items",
+    "timestamp": "2026-02-01T17:52:41.050Z",
+    "source": "app_logger"
+  },
+  {
+    "level": "debug",
+    "category": "Plays",
+    "message": "Quota breakdown",
+    "data": {
+      "xp": 74970,
+      "baseFromRank": 4,
+      "storedQuota": 6
+    },
+    "timestamp": "2026-02-01T17:52:41.069Z",
+    "source": "app_logger"
+  },
+  {
+    "level": "debug",
+    "category": "Plays",
+    "message": "Quota breakdown",
+    "data": {
+      "xp": 74970,
+      "baseFromRank": 4,
+      "storedQuota": 6
+    },
+    "timestamp": "2026-02-01T17:52:41.070Z",
+    "source": "app_logger"
+  },
+  {
+    "level": "debug",
+    "category": "GameLogic",
+    "message": "Synced with 4 Supabase history items",
+    "timestamp": "2026-02-01T17:52:41.128Z",
+    "source": "app_logger"
+  },
+  {
+    "level": "debug",
+    "category": "Plays",
+    "message": "Calculated plays info",
+    "data": {
+      "allowed": 6,
+      "used": 5,
+      "remaining": 1,
+      "isAdmin": false,
+      "userId": "9d97c5fe-9051-4da5-881a-f4f380cbb6b0"
+    },
+    "timestamp": "2026-02-01T17:52:41.342Z",
+    "source": "app_logger"
+  },
+  {
+    "level": "debug",
+    "category": "Plays",
+    "message": "Calculated plays info",
+    "data": {
+      "allowed": 6,
+      "used": 5,
+      "remaining": 1,
+      "isAdmin": false,
+      "userId": "9d97c5fe-9051-4da5-881a-f4f380cbb6b0"
+    },
+    "timestamp": "2026-02-01T17:52:41.344Z",
+    "source": "app_logger"
+  },
+  {
+    "level": "debug",
+    "category": "Plays",
+    "message": "Calculated plays info",
+    "data": {
+      "allowed": 6,
+      "used": 5,
+      "remaining": 1,
+      "isAdmin": false,
+      "userId": "9d97c5fe-9051-4da5-881a-f4f380cbb6b0"
+    },
+    "timestamp": "2026-02-01T17:52:41.451Z",
+    "source": "app_logger"
+  }
+]

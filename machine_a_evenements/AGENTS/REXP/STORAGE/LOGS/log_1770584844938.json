@@ -1,0 +1,14 @@
+{
+  "timestamp": "2026-02-08T21:07:24.937Z",
+  "agent": "REXP",
+  "action": "EXPORT_PROD",
+  "inputs": {
+    "titre": "Mort de Pablo Picasso",
+    "year": 1973
+  },
+  "decision": "SUCCESS",
+  "reason": "Image mise à jour en production",
+  "outputs": {
+    "publicUrl": "https://ppxmtnuewcixbbmhnzzc.supabase.co/storage/v1/object/public/evenements-image/chambre_noire_mort_de_pablo_picasso_1770584844545.webp"
+  }
+}

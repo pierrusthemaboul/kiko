@@ -1,0 +1,14 @@
+{
+  "timestamp": "2026-02-08T14:33:49.222Z",
+  "agent": "VERITAS",
+  "action": "VALIDATE",
+  "inputs": {
+    "titre": "L'Héritage de Valéry Giscard d'Estaing",
+    "year": 2020
+  },
+  "decision": "REJECTED",
+  "reason": "The image features a modern flat-screen television displaying Valéry Giscard d'Estaing, a modern lamp, and what appears to be a modern landline phone. These elements are anachronistic for a photograph intended to depict Giscard d'Estaing during his presidency in the 1970s. The television and potentially the lamp are clear indicators of a modern setting. The architecture of the wall looks appropriate, but the presence of modern electronic devices significantly detracts from the historical accuracy.",
+  "outputs": {
+    "score": 3
+  }
+}

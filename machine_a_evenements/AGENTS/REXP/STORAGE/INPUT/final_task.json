@@ -1,0 +1,42 @@
+{
+  "id": 931,
+  "titre": "L'Argentine gagne la Coupe du Monde",
+  "year": 2022,
+  "description": "A jubilant football stadium erupts in a kaleidoscope of saturated colors. The scene overflows with raw emotion, a sea of Argentinian flags waving amidst flashes of celebratory pyrotechnics. In the foreground, a group of anonymous football players, clad in blue and white jerseys, are captured in mid-air, their backs to the viewer, arms raised in triumph. Textures abound: rough wool scarves, the cold stone of the stadium seats, and the gleaming metal of the championship trophy. The overall mood is one of ecstatic release, a visceral representation of victory. Focus is on the atmosphere and the collective experience, faces obscured, emphasizing the anonymous joy of the crowd.",
+  "specific_location": "L'Argentine remporte la Coupe du Monde de la FIFA 2022 face à la France lors d'une finale haletante conclue aux tirs au but. Cette victoire marque le troisième titre mondial de l'Argentine et consacre Lionel Messi.",
+  "type": "[\"Sport\"]",
+  "region": "Amérique du Sud",
+  "notoriete": 80,
+  "feedback": "",
+  "internal_metadata": "ORIGINAL_UUID:aed6880f-03e0-4685-8aa3-9f6b5b969864",
+  "imageUrl": "https://replicate.delivery/czjl/df6qQWC7ZFSfH08TskVgQCn4lLKnHDgCo2nmV33sX94ciRKWA/out-0.webp",
+  "technical": {
+    "model": "flux-schnell",
+    "seed": 63539081,
+    "guidanceScale": 3,
+    "steps": 4,
+    "predictionId": "c3b901ej3xrnw0cwgw4azv92c0"
+  },
+  "validation": {
+    "score": 6,
+    "isValid": true,
+    "explanation": "The image depicts a football stadium filled with Argentinian supporters celebrating a victory, presumably the 2022 World Cup. While the overall atmosphere is accurate, the jersey design and modern stadium architecture raise concerns. The specific font and style of the names on the back of the jerseys ('PUITELES', 'ARGESTEE', 'ARIMACEE') look anachronistic, and the stadium appears too modern for a historical depiction of the mid-20th century (when Argentina first won the World Cup). There are no immediately disqualifying elements like smartphones or airplanes. The fireworks, flags, and general excitement are consistent with a modern football victory celebration, but the jersey design details bring into question the accuracy. Also stadium architecture is not easy to distinguish as it could be modern but the stadium style has been around for decades.",
+    "inventory": [
+      "Football stadium",
+      "Argentinian flags",
+      "Fireworks",
+      "Football players (blue and white jerseys)",
+      "Stadium seats",
+      "Scarves (implied)",
+      "Crowd of supporters",
+      "Jerseys (with names and numbers)",
+      "Shorts"
+    ],
+    "anachronisms": [
+      "Potentially Modern Jersey Design",
+      "Potentially Modern Stadium Architecture",
+      "Jersey Font",
+      "Jersey Style (names on the back)"
+    ]
+  }
+}

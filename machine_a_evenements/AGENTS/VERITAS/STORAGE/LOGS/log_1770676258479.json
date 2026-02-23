@@ -1,0 +1,14 @@
+{
+  "timestamp": "2026-02-09T22:30:58.477Z",
+  "agent": "VERITAS",
+  "action": "VALIDATE",
+  "inputs": {
+    "titre": "Naissance de Victor Hugo",
+    "year": 1802
+  },
+  "decision": "REJECTED",
+  "reason": "The image depicts a dimly lit room with rough plastered walls and wooden beams, consistent with the description of a humble cottage in 1802. It contains items like earthenware pottery, a wicker basket, and candles which are all appropriate for the time period. However, there is a modern TV screen in the back.",
+  "outputs": {
+    "score": 6
+  }
+}

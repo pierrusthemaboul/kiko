@@ -1,0 +1,14 @@
+{
+  "timestamp": "2026-02-01T11:39:17.102Z",
+  "agent": "VERITAS",
+  "action": "VALIDATE",
+  "inputs": {
+    "titre": "Coupe du Monde de Football de 1950 : Le 'Maracanazo', l'Uruguay bat le Brésil en finale",
+    "year": 1950
+  },
+  "decision": "REJECTED",
+  "reason": "The image shows a football stadium at night with floodlights illuminating a packed stadium. While the overall stadium structure and goal nets are plausible for the era, several details are concerning. The modern-looking floodlights are suspect. The football itself, while superficially resembling a vintage ball, lacks the proper stitching detail typical of balls from the 1950s. The player's shorts and shoes are of modern design and material. The quality of the photo also looks more modern than that of a 1950 photograph, and the uniformity of the crowd suggests AI generation. I'm leaning towards rejecting this image due to the modern appearance of the items mentioned above.",
+  "outputs": {
+    "score": 6
+  }
+}

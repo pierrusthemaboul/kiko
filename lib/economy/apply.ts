@@ -197,7 +197,9 @@ export async function applyEndOfRunEconomy({ runId, userId, mode, points, gameSt
   const previousRank = rankFromXP(currentStoredXp);
   const newXp = currentStoredXp + xpEarned;
   const rank = rankFromXP(newXp);
-  const newPartiesPerDay = partiesPerDayFromXP(newXp);
+  const rankPartiesPerDay = partiesPerDayFromXP(newXp);
+  // Ne jamais écraser les bonus de quêtes : garder le max entre le rang et la valeur actuelle
+  const newPartiesPerDay = Math.max(rankPartiesPerDay, safeProfile.parties_per_day ?? 0);
   const leveledUp = rank.label !== previousRank.label;
   const timestamp = new Date().toISOString();
 
@@ -377,6 +379,7 @@ async function updateDailyQuests(
       fastWin?: boolean;
       speedMaster?: boolean;
       noMistakes?: number;
+      maxAnswerStreak?: number;
     };
   }
 ): Promise<void> {
@@ -503,15 +506,25 @@ async function updateDailyQuests(
       const key = progress.quest_key;
       economyLog(`[QUESTS] 📝 ${key}: valeur actuelle=${progress.current_value}, target=${questTemplate.target_value}`);
 
+      // Helpers pour identifier le type de quête par sa clé
+      const isPlayQuest = key.startsWith('daily_play_') || key.startsWith('weekly_play_') || key.startsWith('monthly_play_')
+        || /^[twm]\d+_play_/.test(key);
+      const isDailyScoreOneShot = key.startsWith('daily_score_') || /^t\d+_score_/.test(key);
+      const isWeeklyMonthlyScoreCumul = (key.startsWith('weekly_score_') || key.startsWith('monthly_score_')
+        || /^[wm]\d+_score_/.test(key) || key.includes('_champion') || key.includes('_points'));
+      const isStreakQuest = key.includes('_streak_') || key === 'daily_high_streak' || key === 'weekly_long_streak' || key === 'monthly_streak_master';
+      const isBothModes = key === 'daily_both_modes' || key === 'weekly_both_modes' || /^t\d+_both_modes$/.test(key);
+      const isSpeedQuest = key === 'daily_speed_master' || /^t\d+_speed_/.test(key);
+
       // === QUÊTES DE JEU (incrémenter +1 à chaque partie) ===
-      if (key.startsWith('daily_play_') || key.startsWith('weekly_play_') || key.startsWith('monthly_play_')) {
+      if (isPlayQuest) {
         newValue = progress.current_value + 1;
         shouldUpdate = true;
         economyLog(`[QUESTS] ✓ Type: PLAY - ${progress.current_value} → ${newValue}`);
       }
-      // === QUÊTES DE SCORE ONE-SHOT (daily_score_XXXX - atteindre le score en une partie) ===
-      // IMPORTANT: Cette condition doit être AVANT le cumul de score pour éviter les doublons
-      else if (key.startsWith('daily_score_')) {
+      // === QUÊTES DE SCORE ONE-SHOT (atteindre le score en UNE partie) ===
+      // Couvre: daily_score_XXXX, t1_score_XXXX, t2_score_XXXX, etc.
+      else if (isDailyScoreOneShot) {
         if (gameData.points >= questTemplate.target_value) {
           newValue = questTemplate.target_value;
           shouldUpdate = true;
@@ -530,15 +543,15 @@ async function updateDailyQuests(
           economyLog(`[QUESTS] ⏭️ Type: HIGH_SCORE - Score ${gameData.points} < target ${questTemplate.target_value}`);
         }
       }
-      // === QUÊTES DE SCORE CUMULATIF (weekly_score_XXXX, monthly_score_XXXX) ===
-      // Cumule les points sur plusieurs parties
-      else if (key.includes('_score_') || key.includes('_champion') || key.includes('_points')) {
+      // === QUÊTES DE SCORE CUMULATIF (weekly/monthly - cumule sur plusieurs parties) ===
+      // Couvre: weekly_score_XXXX, monthly_score_XXXX, w1_score_XXX, m1_score_XXX, *_champion*, *_points
+      else if (isWeeklyMonthlyScoreCumul) {
         newValue = progress.current_value + gameData.points;
         shouldUpdate = true;
         economyLog(`[QUESTS] ✓ Type: SCORE_CUMUL - Ajout de ${gameData.points} points: ${progress.current_value} → ${newValue} (target: ${questTemplate.target_value})`);
       }
       // === QUÊTES DE STREAK (réponses correctes dans la partie) ===
-      else if (key.includes('_streak_') || key === 'daily_high_streak' || key === 'weekly_long_streak' || key === 'monthly_streak_master') {
+      else if (isStreakQuest) {
         const maxAnswerStreak = gameData.gameStats?.maxAnswerStreak || 0;
         economyLog(`[QUESTS] 📊 Type: STREAK - maxAnswerStreak=${maxAnswerStreak}, target=${questTemplate.target_value}`);
         if (maxAnswerStreak >= questTemplate.target_value) {
@@ -549,34 +562,39 @@ async function updateDailyQuests(
           economyLog(`[QUESTS] ⏭️ Type: STREAK - Pas encore atteint`);
         }
       }
-      // === QUÊTES SPÉCIFIQUES ===
-      else if (key === 'daily_both_modes' || key === 'weekly_both_modes') {
-        // Vérifier qu'on a joué les 2 modes différents
-        const period = key.startsWith('daily') ? 'daily' : 'weekly';
+      // === QUÊTES BOTH MODES (jouer les 2 modes) ===
+      else if (isBothModes) {
+        const period = key.startsWith('weekly') ? 'weekly' : 'daily';
         const modesPlayed = await checkModesPlayed(userId, period, gameData.mode);
 
         if (modesPlayed >= 2) {
-          newValue = 2; // Complété
+          newValue = 2;
           shouldUpdate = true;
           economyLog(`[QUESTS] ✓ Type: BOTH_MODES - Les 2 modes ont été joués (${period})`);
         } else if (modesPlayed === 1) {
-          newValue = 1; // Un seul mode joué pour l'instant
+          newValue = 1;
           shouldUpdate = true;
           economyLog(`[QUESTS] ⏳ Type: BOTH_MODES - 1/2 modes joués (${period})`);
         }
       }
-      else if (key === 'daily_speed_master') {
-        // TEMPORAIRE: speedMaster est un boolean, pas implémenté correctement
-        // Pour l'instant on ignore cette quête jusqu'à ce que speedMaster soit un compteur
-        economyLog(`[QUESTS] ⚠️ Type: SPEED_MASTER - Non implémenté (speedMaster est boolean)`);
-      }
-      else if (key === 'daily_no_mistake_5') {
-        // Vérifie si le streak de la partie est >= 5 (one-shot)
-        const maxStreak = gameData.gameStats?.maxAnswerStreak || 0;
-        if (maxStreak >= 5) {
+      // === QUÊTES PARTIE PARFAITE (aucune vie perdue + seuil de réponses) ===
+      else if (isSpeedQuest) {
+        // noMistakes = totalEventsCompleted si 3 vies restantes (partie parfaite), sinon 0
+        const perfectAnswers = gameData.gameStats?.noMistakes || 0;
+        if (perfectAnswers >= questTemplate.target_value) {
           newValue = questTemplate.target_value;
           shouldUpdate = true;
-          economyLog(`[QUESTS] ✓ Type: NO_MISTAKE - Streak de ${maxStreak} >= 5 - COMPLÉTÉE!`);
+          economyLog(`[QUESTS] ✓ Type: PERFECT_GAME - perfectAnswers ${perfectAnswers} >= target ${questTemplate.target_value}`);
+        } else {
+          economyLog(`[QUESTS] ⏭️ Type: PERFECT_GAME - perfectAnswers ${perfectAnswers} < target ${questTemplate.target_value}`);
+        }
+      }
+      else if (key === 'daily_no_mistake_5' || /^t\d+_no_mistake_/.test(key)) {
+        const maxStreak = gameData.gameStats?.maxAnswerStreak || 0;
+        if (maxStreak >= questTemplate.target_value) {
+          newValue = questTemplate.target_value;
+          shouldUpdate = true;
+          economyLog(`[QUESTS] ✓ Type: NO_MISTAKE - Streak de ${maxStreak} >= ${questTemplate.target_value} - COMPLÉTÉE!`);
         }
       }
       else if (key === 'daily_precision_perfect' || key === 'weekly_precision_master') {

@@ -1,0 +1,14 @@
+{
+  "timestamp": "2026-02-22T07:50:30.442Z",
+  "agent": "VERITAS",
+  "action": "VALIDATE",
+  "inputs": {
+    "titre": "Séisme de Bam",
+    "year": 2003
+  },
+  "decision": "REJECTED",
+  "reason": "The image depicts a scene of devastation, presumably after an earthquake, with rescue workers navigating through rubble. However, several elements are anachronistic for a photograph depicting the 2003 Bam earthquake. The clothing appears to be modern technical sportswear, which is highly unlikely to have been widely used in Iran in 2003. More critically, there are multiple plastic water bottles scattered around, and modern zippers are visible on the clothing. The quality of photography is also suspiciously high for documentary photos during that period. These anachronisms render the image unsuitable for portraying the 2003 Bam earthquake.",
+  "outputs": {
+    "score": 4
+  }
+}

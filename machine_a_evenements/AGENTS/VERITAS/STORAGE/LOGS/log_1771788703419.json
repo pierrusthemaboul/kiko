@@ -1,0 +1,14 @@
+{
+  "timestamp": "2026-02-22T19:31:43.418Z",
+  "agent": "VERITAS",
+  "action": "VALIDATE",
+  "inputs": {
+    "titre": "Blanchiment à la Danske Bank",
+    "year": 2017
+  },
+  "decision": "REJECTED",
+  "reason": "The image depicts an office interior featuring men and women in business attire, seemingly at work. The architectural style with wood paneling and large windows suggests a historical setting. However, the presence of modern computer monitors and keyboards is a definite anachronism for the 'Blanchiment à la Danske Bank' event in 2017. While the clothing (suits) is generally appropriate, the computers immediately invalidate it.",
+  "outputs": {
+    "score": 3
+  }
+}

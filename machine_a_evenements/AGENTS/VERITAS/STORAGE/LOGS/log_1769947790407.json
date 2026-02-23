@@ -1,0 +1,14 @@
+{
+  "timestamp": "2026-02-01T12:09:50.406Z",
+  "agent": "VERITAS",
+  "action": "VALIDATE",
+  "inputs": {
+    "titre": "Début de la construction des Thermes de Caracalla à Rome",
+    "year": 212
+  },
+  "decision": "VALIDATED",
+  "reason": "L'image représente la construction d'un bâtiment de style romain antique, probablement les Thermes de Caracalla. Les vêtements des personnages correspondent à l'époque, et l'architecture est cohérente avec les bâtiments romains antiques. L'absence d'anachronismes majeurs (voitures, smartphones, etc.) plaide en faveur de sa validité. \n\nCependant, la présence d'une petite antenne au sommet d'un bâtiment visible, bien qu'elle puisse être une interprétation erronée d'un élément architectural ancien, suscite un doute et diminue donc le score. La rotonde sur le côté gauche est aussi plus de l'architecture Renaissance que Romaine.",
+  "outputs": {
+    "score": 7
+  }
+}

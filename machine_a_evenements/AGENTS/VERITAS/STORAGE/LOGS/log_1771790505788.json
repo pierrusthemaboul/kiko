@@ -1,0 +1,14 @@
+{
+  "timestamp": "2026-02-22T20:01:45.787Z",
+  "agent": "VERITAS",
+  "action": "VALIDATE",
+  "inputs": {
+    "titre": "Suicide d'Adolf Hitler",
+    "year": 1945
+  },
+  "decision": "REJECTED",
+  "reason": "The image depicts a man resembling Adolf Hitler sitting at a desk in what appears to be a bunker setting. While the overall atmosphere and the presence of a desk lamp, suit, and guns contribute to the intended historical context, the guns appear to be modern automatic pistols, which are anachronistic for 1945. Also the suit style and design appear more modern than suits from the 1940s. The lack of visible coarse wool texture and the inclusion of a possible wedding ring further detract from the historical accuracy. The wall texture looks too smooth and modern to be a historical bunker. The face and hands also look too airbrushed to be a real black and white photo. ",
+  "outputs": {
+    "score": 6
+  }
+}

@@ -1,0 +1,14 @@
+{
+  "timestamp": "2026-02-19T07:32:25.775Z",
+  "agent": "VERITAS",
+  "action": "VALIDATE",
+  "inputs": {
+    "titre": "Développement de la thérapie génique",
+    "year": 1990
+  },
+  "decision": "REJECTED",
+  "reason": "L'image montre un laboratoire avec des scientifiques travaillant sur des échantillons. Plusieurs éléments posent problème : \n*  L'éclairage LED est très moderne et peu probable en 1990. \n* L'équipement semble trop sophistiqué pour l'époque. \n* Les vêtements des scientifiques (vêtements de sport techniques de couleur vive) sont un anachronisme.\n* Les écrans affichant des données génétiques sont plausibles, mais leur apparence futuriste est problématique. \n* La présence de texte numérisé sur l'un des vêtements est suspecte et potentiellement un anachronisme.\n* Les logos présents sur les bouteilles sont un anachronisme certain. \n\nEn résumé, l'image a l'air moderne et pas forcément fidèle aux années 1990.",
+  "outputs": {
+    "score": 6
+  }
+}

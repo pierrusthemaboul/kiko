@@ -1,0 +1,14 @@
+{
+  "timestamp": "2026-02-22T19:30:47.257Z",
+  "agent": "VERITAS",
+  "action": "VALIDATE",
+  "inputs": {
+    "titre": "Marée noire de l'Amoco Cadiz",
+    "year": 1978
+  },
+  "decision": "REJECTED",
+  "reason": "The image depicts a coastal cleanup effort, but several elements suggest it's not from 1978. The clothing worn by the cleanup crew appears to be modern, featuring technical fabrics and potentially modern zippers. While straw booms are plausible, the overall impression is of a more recent cleanup operation. The presence of modern backpacks is also a red flag. While there is an attempt at a cleanup operation, the uniforms and clothing of the responders point at a modern event.",
+  "outputs": {
+    "score": 3
+  }
+}

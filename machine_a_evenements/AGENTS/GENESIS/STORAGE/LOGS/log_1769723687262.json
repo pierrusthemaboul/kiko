@@ -1,0 +1,22 @@
+{
+  "timestamp": "2026-01-29T21:54:47.261Z",
+  "agent": "GENESIS",
+  "action": "GENERATE_INTELLIGENT",
+  "inputs": {
+    "targetCount": 25,
+    "batchSize": 30,
+    "missingMajorEvents": 34
+  },
+  "decision": "SUCCESS",
+  "reason": "30 événements générés (Mode Intelligent)",
+  "outputs": {
+    "file": "genesis_raw_batch.json",
+    "topPriorities": [
+      "-52: alesia vercingetorix",
+      "1940: appel 18 juin",
+      "1431: jeanne arc bucher",
+      "1572: saint barthelemy",
+      "1661: louis xiv debut personnel"
+    ]
+  }
+}

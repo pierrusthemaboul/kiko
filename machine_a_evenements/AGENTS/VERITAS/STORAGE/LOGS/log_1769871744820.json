@@ -1,0 +1,14 @@
+{
+  "timestamp": "2026-01-31T15:02:24.819Z",
+  "agent": "VERITAS",
+  "action": "VALIDATE",
+  "inputs": {
+    "titre": "Création de l'Académie des Inscriptions et Belles-Lettres",
+    "year": 1663
+  },
+  "decision": "VALIDATED",
+  "reason": "L'image montre une réunion de personnes dans une pièce ornée qui ressemble à un intérieur du 17ème siècle. Les vêtements sont globalement corrects (simili justaucorps, jabots, perruques sommaires), et l'architecture correspond. Cependant, l'absence de véritables justaucorps et de perruques élaborées, ainsi que le style des costumes plus proche du XIXe siècle que du XVIIe font baisser le score. L'éclairage semble moderne, ce qui retire du réalisme à la scène. Les chandelles semblent être électriques.",
+  "outputs": {
+    "score": 7
+  }
+}

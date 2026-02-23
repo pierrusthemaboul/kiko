@@ -1,0 +1,14 @@
+{
+  "timestamp": "2026-01-31T15:55:05.644Z",
+  "agent": "VERITAS",
+  "action": "VALIDATE",
+  "inputs": {
+    "titre": "Construction de la Sainte-Chapelle à Paris par Saint Louis pour abriter les reliques de la Passion",
+    "year": 1242
+  },
+  "decision": "REJECTED",
+  "reason": "This image contains several modern elements making it unsuitable for portraying the construction of the Sainte-Chapelle in 1242. The modern clothes (t-shirt and jeans) on the man working on the window, modern metal scaffolding, modern metal table, and the contemporary architecture surrounding the building are anachronistic. The presence of a car in the background is a clear indication of a modern setting. While the architecture of the building itself is reminiscent of Gothic style, the context is entirely modern.",
+  "outputs": {
+    "score": 1
+  }
+}

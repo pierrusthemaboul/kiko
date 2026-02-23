@@ -1,0 +1,14 @@
+{
+  "timestamp": "2026-02-22T07:50:13.838Z",
+  "agent": "VERITAS",
+  "action": "VALIDATE",
+  "inputs": {
+    "titre": "Marée noire de l'Amoco Cadiz",
+    "year": 1978
+  },
+  "decision": "REJECTED",
+  "reason": "The image contains several anachronisms that render it unsuitable for depicting the Amoco Cadiz oil spill in 1978. First, the yellow van appears to be a modern vehicle. Furthermore, the clothing worn by the cleanup crew, while resembling protective gear, has a contemporary design and potentially uses modern materials. The design of the booms and ship in the background also suggest more modern engineering. While the general atmosphere is somber and related to an oil spill cleanup, the details are too modern to be considered historically accurate for 1978.",
+  "outputs": {
+    "score": 3
+  }
+}

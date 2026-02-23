@@ -1,0 +1,12 @@
+{
+  "timestamp": "2026-01-31T15:00:55.482Z",
+  "agent": "REXP",
+  "action": "EXPORT_FINAL",
+  "inputs": {
+    "titre": "Première représentation de 'Tartuffe' de Molière",
+    "year": 1664
+  },
+  "decision": "ERROR",
+  "reason": "Could not find the 'score_validation' column of 'evenements' in the schema cache",
+  "outputs": {}
+}

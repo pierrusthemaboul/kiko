@@ -1,0 +1,14 @@
+{
+  "timestamp": "2026-01-31T15:00:55.035Z",
+  "agent": "VERITAS",
+  "action": "VALIDATE",
+  "inputs": {
+    "titre": "Première représentation de 'Tartuffe' de Molière",
+    "year": 1664
+  },
+  "decision": "VALIDATED",
+  "reason": "The image depicts a theatrical performance in what appears to be a grand hall, illuminated by candlelight. The architecture and general setting are consistent with a theater from the 17th century. Clothing styles are mostly acceptable for the period. There's no visible blatant anachronisms like smartphones or cars. However, some of the clothing details (cut of coats) is debatable and closer to the 18th century. The presence of what look like modern hairstyles and more contemporary evening gowns in some women's attire lowers the credibility score. The presence of what looks like a child wearing a modern shirt is a potential anachronism too. While the general atmosphere matches the description, the details are what brings the score down.",
+  "outputs": {
+    "score": 7
+  }
+}

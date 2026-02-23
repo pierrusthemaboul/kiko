@@ -1,0 +1,14 @@
+{
+  "timestamp": "2026-01-31T15:54:13.349Z",
+  "agent": "VERITAS",
+  "action": "VALIDATE",
+  "inputs": {
+    "titre": "Louis IX épouse Marguerite de Provence",
+    "year": 1234
+  },
+  "decision": "REJECTED",
+  "reason": "The image depicts a wedding scene seemingly set in a medieval context. While there are elements that are generally appropriate to the period, there are noticeable anachronisms and stylistic inconsistencies that prevent the image from being truly accurate for the wedding of Louis IX and Marguerite of Provence. The architecture, while generally gothic in style, has aspects that appear too clean and modern in their execution. The dresses are not very representative of the dress of the time. The man in a black suit seems quite anachronistic as well. Finally, the man wearing armor looks as if it is just a costume.",
+  "outputs": {
+    "score": 6
+  }
+}

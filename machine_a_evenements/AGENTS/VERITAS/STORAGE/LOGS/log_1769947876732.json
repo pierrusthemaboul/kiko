@@ -1,0 +1,14 @@
+{
+  "timestamp": "2026-02-01T12:11:16.731Z",
+  "agent": "VERITAS",
+  "action": "VALIDATE",
+  "inputs": {
+    "titre": "Léonard de Vinci conçoit des plans pour des machines volantes et des ponts complexes",
+    "year": 1480
+  },
+  "decision": "VALIDATED",
+  "reason": "L'image montre un homme ressemblant à Léonard de Vinci travaillant sur des schémas. L'éclairage à la bougie, les vêtements et le cadre général correspondent à la période de la Renaissance. Cependant, le style vestimentaire de l'homme est un peu simpliste (absence de détails et ornements) ce qui réduit le score. Les outils et les matériaux semblent appropriés à l'époque. Le livre sur la table me parait un peu trop propre et neuf.",
+  "outputs": {
+    "score": 8
+  }
+}

@@ -1,0 +1,14 @@
+{
+  "timestamp": "2026-02-08T14:32:15.656Z",
+  "agent": "VERITAS",
+  "action": "VALIDATE",
+  "inputs": {
+    "titre": "L'Héritage de François Truffaut",
+    "year": 1984
+  },
+  "decision": "REJECTED",
+  "reason": "The image depicts a film set, presumably during the Nouvelle Vague era. However, the video camera being used appears to be of a significantly more modern design than what would have been available in the 1960s and 1970s when Truffaut was most active. The lighting also appears too modern.",
+  "outputs": {
+    "score": 5
+  }
+}

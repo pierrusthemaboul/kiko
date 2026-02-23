@@ -1,0 +1,14 @@
+{
+  "timestamp": "2026-02-22T20:02:00.452Z",
+  "agent": "VERITAS",
+  "action": "VALIDATE",
+  "inputs": {
+    "titre": "Suicide d'Adolf Hitler",
+    "year": 1945
+  },
+  "decision": "VALIDATED",
+  "reason": "The image depicts a scene resembling Hitler in a bunker setting, seemingly before his suicide. The clothing, the gun, the lamp, and the general architectural style are plausible for the period. The lighting and the somber mood are consistent with the described event. The bottle could be holding cyanide. However, the precision and clarity of the image are higher than what would be expected for historical photography from that era, which is suspicious. Also, the style of the pistol is not immediately recognizable as commonly associated with Hitler, which usually involved Walther PPK, however it is still very likely a period correct automatic pistol. The representation of the bunker walls seems somewhat simplified and stylized, which further suggests that the image might not be completely authentic.",
+  "outputs": {
+    "score": 8
+  }
+}

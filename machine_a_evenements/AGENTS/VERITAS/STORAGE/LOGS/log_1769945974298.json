@@ -1,0 +1,14 @@
+{
+  "timestamp": "2026-02-01T11:39:34.297Z",
+  "agent": "VERITAS",
+  "action": "VALIDATE",
+  "inputs": {
+    "titre": "Première édition de la Coupe du monde féminine de football",
+    "year": 1991
+  },
+  "decision": "REJECTED",
+  "reason": "The image depicts a women's soccer game in a stadium with a large crowd. The clothing and overall scene generally align with the style of the early 1990s. However, the clear Nike logos on the shirts are a significant anachronism, as such prominent branding was not common in 1991 for this type of sportswear. Additionally, the quality and design of the sportswear appears more modern than what was typical in 1991. Also the clarity of the image and the photography appears modern, and the stadium design is also leaning into modern design. The field is also too perfect and uniform to be real.",
+  "outputs": {
+    "score": 6
+  }
+}

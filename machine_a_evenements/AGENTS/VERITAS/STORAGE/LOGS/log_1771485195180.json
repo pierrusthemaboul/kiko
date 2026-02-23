@@ -1,0 +1,14 @@
+{
+  "timestamp": "2026-02-19T07:13:15.179Z",
+  "agent": "VERITAS",
+  "action": "VALIDATE",
+  "inputs": {
+    "titre": "Blanchiment à la Danske Bank",
+    "year": 2017
+  },
+  "decision": "REJECTED",
+  "reason": "The image depicts a modern business meeting, which is acceptable as the event is in 2017. However, the presence of smartphones, modern laptops (including what appears to be a MacBook based on the apple logo), and a large flat screen TV constitutes a significant anachronism. The style of the clothing is also generally modern, although business suits existed earlier, the details such as cuts and fabrics are not suitable for earlier eras. The modern ceiling and lighting are also problematic.",
+  "outputs": {
+    "score": 2
+  }
+}

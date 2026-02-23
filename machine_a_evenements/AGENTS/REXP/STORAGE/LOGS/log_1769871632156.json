@@ -1,0 +1,12 @@
+{
+  "timestamp": "2026-01-31T15:00:32.155Z",
+  "agent": "REXP",
+  "action": "EXPORT_FINAL",
+  "inputs": {
+    "titre": "Ouverture du salon de l'Hôtel de Rambouillet",
+    "year": 1618
+  },
+  "decision": "ERROR",
+  "reason": "Could not find the 'score_validation' column of 'evenements' in the schema cache",
+  "outputs": {}
+}

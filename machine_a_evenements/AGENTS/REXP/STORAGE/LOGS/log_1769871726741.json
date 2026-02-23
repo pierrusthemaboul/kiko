@@ -1,0 +1,12 @@
+{
+  "timestamp": "2026-01-31T15:02:06.740Z",
+  "agent": "REXP",
+  "action": "EXPORT_FINAL",
+  "inputs": {
+    "titre": "Ouverture du salon de l'Hôtel de Rambouillet",
+    "year": 1618
+  },
+  "decision": "ERROR",
+  "reason": "null value in column \"ecart_temps_max\" of relation \"evenements\" violates not-null constraint",
+  "outputs": {}
+}

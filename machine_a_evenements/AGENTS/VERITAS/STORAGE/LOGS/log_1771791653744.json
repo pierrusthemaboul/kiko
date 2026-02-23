@@ -1,0 +1,14 @@
+{
+  "timestamp": "2026-02-22T20:20:53.743Z",
+  "agent": "VERITAS",
+  "action": "VALIDATE",
+  "inputs": {
+    "titre": "Première victoire de l'équipe de France à la Coupe du Monde",
+    "year": 1998
+  },
+  "decision": "REJECTED",
+  "reason": "The image depicts a jubilant crowd in a stadium celebrating a victory, presumably the 1998 World Cup. However, several smartphones and digital cameras are visible throughout the crowd, which are anachronistic for 1998. These modern devices immediately disqualify the image's accuracy for depicting that era. Additionally, some clothing styles appear more modern than the late 90s.",
+  "outputs": {
+    "score": 2
+  }
+}

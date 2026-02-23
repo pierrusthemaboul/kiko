@@ -1,0 +1,14 @@
+{
+  "timestamp": "2026-02-22T07:51:22.495Z",
+  "agent": "VERITAS",
+  "action": "VALIDATE",
+  "inputs": {
+    "titre": "SwissLeaks",
+    "year": 2015
+  },
+  "decision": "REJECTED",
+  "reason": "The image depicts a meeting scene, but contains anachronisms that make it unsuitable for representing the 2015 SwissLeaks event. Modern laptops are present on the table. While the architecture aims for a historical feel with its dark wood and stone-like texture, the presence of modern devices makes it anachronistic.",
+  "outputs": {
+    "score": 3
+  }
+}

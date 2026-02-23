@@ -1,0 +1,14 @@
+{
+  "timestamp": "2026-02-11T07:39:41.298Z",
+  "agent": "VERITAS",
+  "action": "VALIDATE",
+  "inputs": {
+    "titre": "Guerre des Baleines",
+    "year": 1978
+  },
+  "decision": "REJECTED",
+  "reason": "The image depicts a group of men on what appears to be a ship. They are wearing yellow rain gear that looks fairly modern. While the scene evokes a nautical setting, the details raise concerns. The clothing appears to be a modern style. The presence of modern steel pipes and industrial design in the ship's interior could be anachronistic. The modern design of the clothes, the steel pipes, the artificial lighting, and lack of clear indicators pointing to the year 1978 make the image problematic for the context. It's not a complete rejection, as elements could be interpreted as fitting, but the overall impression is more modern than 1978.",
+  "outputs": {
+    "score": 6
+  }
+}

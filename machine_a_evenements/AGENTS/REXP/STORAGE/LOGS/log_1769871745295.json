@@ -1,0 +1,12 @@
+{
+  "timestamp": "2026-01-31T15:02:25.294Z",
+  "agent": "REXP",
+  "action": "EXPORT_FINAL",
+  "inputs": {
+    "titre": "Création de l'Académie des Inscriptions et Belles-Lettres",
+    "year": 1663
+  },
+  "decision": "ERROR",
+  "reason": "null value in column \"ecart_temps_max\" of relation \"evenements\" violates not-null constraint",
+  "outputs": {}
+}

@@ -1,0 +1,90 @@
+{
+  "old": {
+    "id": "571336ad-eacb-4a9f-a69c-86916738fc3c",
+    "date": "0009-09-01",
+    "titre": "Bataille Teutobourg (Varus vaincu par Germains)",
+    "illustration_url": "https://ppxmtnuewcixbbmhnzzc.supabase.co/storage/v1/object/public/evenements-image/dalle_2024_12_30_104208_684143ac.webp",
+    "universel": true,
+    "region": null,
+    "langue": "fr",
+    "ecart_temps_max": 500,
+    "facteur_variation": 1.5,
+    "created_at": "2025-01-03T16:51:41.188431+00:00",
+    "updated_at": "2025-09-07T07:40:02.506398+00:00",
+    "niveau_difficulte": 3,
+    "types_evenement": [
+      "general"
+    ],
+    "pays": [
+      "Allemagne"
+    ],
+    "epoque": null,
+    "mots_cles": null,
+    "date_formatee": "0009-09-01",
+    "code": null,
+    "date_precision": null,
+    "ecart_temps_min": 100,
+    "frequency_score": 0,
+    "last_used": "2025-03-17T06:24:26.786+00:00",
+    "description_detaillee": "En septembre 9 après J.-C., la bataille de Teutobourg voit la défaite catastrophique des légions romaines face aux tribus germaniques. Cette bataille met fin à l'expansion romaine en Germanie.",
+    "donnee_corrigee": false,
+    "notoriete": 41,
+    "notoriete_prev": 75,
+    "notoriete_source": null,
+    "notoriete_updated_at": "2025-09-07T07:30:30.358117+00:00",
+    "notoriete_fr": null,
+    "migration_at": null,
+    "source_goju2_id": null
+  },
+  "new": {
+    "id": "f2fab121-8931-433d-9f58-ed5640598567",
+    "date": "1966-01-01",
+    "titre": "La Révolution culturelle en Chine",
+    "illustration_url": "https://ppxmtnuewcixbbmhnzzc.supabase.co/storage/v1/object/public/evenements-image/migrated_la_r_volution_culturelle_en_ch_1769980115023.webp",
+    "universel": false,
+    "region": "Asie",
+    "langue": "fr",
+    "ecart_temps_max": 500,
+    "facteur_variation": 1,
+    "created_at": "2026-02-01T21:08:34.971037+00:00",
+    "updated_at": "2026-02-01T21:49:54.055113+00:00",
+    "niveau_difficulte": 3,
+    "types_evenement": [
+      "Politique",
+      "Social",
+      "Culturel",
+      "Révolution"
+    ],
+    "pays": [
+      "Chine"
+    ],
+    "epoque": "XXe siècle",
+    "mots_cles": [
+      "Mao Zedong",
+      "Révolution culturelle",
+      "Chine",
+      "Garde rouge",
+      "Culte de la personnalité",
+      "Purges",
+      "Idéologie",
+      "Communisme",
+      "bouleversements sociaux",
+      "bouleversements politiques"
+    ],
+    "date_formatee": "1966",
+    "code": "la-revolution-culturelle-en-ch-1966-23",
+    "date_precision": null,
+    "ecart_temps_min": 20,
+    "frequency_score": 0,
+    "last_used": null,
+    "description_detaillee": "La Révolution culturelle en Chine (1966-1976) fut une décennie de chaos politique et social, marquée par le culte de la personnalité de Mao Zedong et la violence des Gardes rouges. Elle a profondément transformé la société chinoise et a laissé des cicatrices durables.",
+    "donnee_corrigee": false,
+    "notoriete": 90,
+    "notoriete_prev": null,
+    "notoriete_source": null,
+    "notoriete_updated_at": "2026-02-01T21:08:34.971037+00:00",
+    "notoriete_fr": null,
+    "migration_at": "2026-02-01T21:08:35.218+00:00",
+    "source_goju2_id": "55649663-888b-4d49-aa62-2447879e8a11"
+  }
+}

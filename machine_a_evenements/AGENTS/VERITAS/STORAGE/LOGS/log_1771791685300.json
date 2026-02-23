@@ -1,0 +1,14 @@
+{
+  "timestamp": "2026-02-22T20:21:25.299Z",
+  "agent": "VERITAS",
+  "action": "VALIDATE",
+  "inputs": {
+    "titre": "L'équipe de France triomphe à la Coupe du monde de football en Russie",
+    "year": 2018
+  },
+  "decision": "REJECTED",
+  "reason": "The image depicts the French team celebrating their victory at the World Cup. The presence of modern smartphones and digital cameras in the hands of the crowd is anachronistic for a depiction focused on 'texture and atmosphere over identifiable faces, capturing the electric energy of the event without revealing any specific individuals'. Also, some of the t-shirts have clearly visible modern logos (like Nike swoosh). The stadium architecture seems plausible for the 21st century.",
+  "outputs": {
+    "score": 7
+  }
+}

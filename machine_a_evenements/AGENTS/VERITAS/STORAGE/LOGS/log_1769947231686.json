@@ -1,0 +1,14 @@
+{
+  "timestamp": "2026-02-01T12:00:31.685Z",
+  "agent": "VERITAS",
+  "action": "VALIDATE",
+  "inputs": {
+    "titre": "Création du Jardin des Plantes de Paris",
+    "year": 1635
+  },
+  "decision": "VALIDATED",
+  "reason": "The image depicts a garden with people dressed in clothing that generally resembles garments from the 17th century. The architecture features stone walls and details consistent with the period. However, the hairstyles, material of the hats, and some elements in the clothing construction seem slightly off and suggest a staged/modern take on historical fashion. The fountain and the paved courtyard design also feel subtly anachronistic, leaning towards a later design aesthetic. Overall, the scene is visually plausible but contains nuances that detract from complete historical accuracy. While there's no obvious modern technology present, the overall impression is more of a modern re-enactment or costume drama. The neatly arranged plants and garden design, while not impossible, appears too well-maintained for what might be expected in an early Jardin des Plantes.",
+  "outputs": {
+    "score": 7
+  }
+}

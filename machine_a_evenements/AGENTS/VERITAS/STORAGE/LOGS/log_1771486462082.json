@@ -1,0 +1,14 @@
+{
+  "timestamp": "2026-02-19T07:34:22.082Z",
+  "agent": "VERITAS",
+  "action": "VALIDATE",
+  "inputs": {
+    "titre": "Premier scanner médical (Hounsfield)",
+    "year": 1972
+  },
+  "decision": "REJECTED",
+  "reason": "The image depicts a large, brushed steel scanner with medical professionals working around it. The presence of flat panel displays and modern style equipment control panel are anachronistic for 1972. The lighting fixtures on the ceiling are also too modern. The medical personnel wearing masks and a clock on the wall appear to be too modern.",
+  "outputs": {
+    "score": 6
+  }
+}

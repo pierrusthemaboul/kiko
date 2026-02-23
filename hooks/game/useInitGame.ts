@@ -2,6 +2,7 @@
 // ----- VERSION COMPLÈTE AVEC PLUS DE LOGS DANS INITGAME ET USEEFFECT -----
 
 import { useState, useCallback, useEffect, useRef } from 'react';
+import { Image } from 'react-native';
 import AsyncStorage from '@react-native-async-storage/async-storage';
 import { supabase } from '../../lib/supabase/supabaseClients'; // Ajuste le chemin si nécessaire
 import { FirebaseAnalytics } from '../../lib/firebase'; // Ajuste le chemin si nécessaire
@@ -11,7 +12,7 @@ import { LEVEL_CONFIGS } from '../levelConfigs'; // Ajuste le chemin si nécessa
 import { useEventSelector, getCachedDateInfo } from './useEventSelector'; // Ajuste le chemin si nécessaire
 
 const EVENTS_CACHE_KEY = 'events_cache_v1';
-const EVENTS_CACHE_VERSION = 9;
+const EVENTS_CACHE_VERSION = 10;
 const EVENTS_CACHE_TTL_MS = 24 * 60 * 60 * 1000; // 24h
 
 interface InitGameOptions {
@@ -184,9 +185,13 @@ export function useInitGame() {
         // console.log(`[InitGame - Instance ${currentInstanceId}] Cache miss/expired. Fetching events from Supabase...`);
         const { data, error: eventsError } = await supabase
           .from('evenements')
-          .select('id, titre, date, date_formatee, types_evenement, illustration_url, frequency_score, notoriete, description_detaillee, last_used');
+          .select('id, titre, date, date_formatee, types_evenement, illustration_url, frequency_score, notoriete, notoriete_fr, description_detaillee, last_used');
         if (eventsError) throw eventsError;
-        allEventsData = data || [];
+        // Utiliser notoriete_fr (notoriété française révisée) à la place de notoriete
+        allEventsData = (data || []).map((e: any) => ({
+          ...e,
+          notoriete: e.notoriete_fr ?? e.notoriete,
+        }));
         try {
           await AsyncStorage.setItem(EVENTS_CACHE_KEY, JSON.stringify({ version: EVENTS_CACHE_VERSION, ts: Date.now(), data: allEventsData }));
         } catch (e) {
@@ -324,9 +329,14 @@ export function useInitGame() {
 
       if (!firstEvent || !secondEvent) throw new Error("Erreur interne: échec de la sélection aléatoire des événements initiaux.");
 
-      // console.log(`[InitGame - Instance ${currentInstanceId}] SELECTED Initial Pair:`); // Log avant de setter l'état
-      // console.log(`  Event 1 (Prev): ${firstEvent.titre} (ID: ${firstEvent.id})`);
-      // console.log(`  Event 2 (New):  ${secondEvent.titre} (ID: ${secondEvent.id})`);
+      // Prefetch les images de la paire initiale pour réduire le délai d'affichage
+      // secondEvent est prioritaire car c'est la carte du bas qui bloque le timer (onImageLoad)
+      if (secondEvent.illustration_url) {
+        Image.prefetch(secondEvent.illustration_url).catch(() => {});
+      }
+      if (firstEvent.illustration_url) {
+        Image.prefetch(firstEvent.illustration_url).catch(() => {});
+      }
 
       // Mettre à jour l'état
       setPreviousEvent(firstEvent);

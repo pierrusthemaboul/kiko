@@ -1,0 +1,14 @@
+{
+  "timestamp": "2026-02-11T07:28:17.892Z",
+  "agent": "VERITAS",
+  "action": "VALIDATE",
+  "inputs": {
+    "titre": "Naufrage du HMS Association",
+    "year": 1707
+  },
+  "decision": "VALIDATED",
+  "reason": "L'image représente un naufrage avec des officiers de la Royal Navy luttant contre les vagues. Les vêtements (justaucorps, gilets, cravates, chapeaux tricorne) sont globalement conformes à l'époque. On voit des débris du navire et une lanterne. L'atmosphère générale de désastre maritime correspond à l'événement décrit. \n\nCependant, l'eau semble étrangement propre, ce qui est peu probable dans un naufrage. De plus, la luminosité uniforme et le rendu des visages donnent un aspect légèrement artificiel, typique des images générées par IA.",
+  "outputs": {
+    "score": 7
+  }
+}

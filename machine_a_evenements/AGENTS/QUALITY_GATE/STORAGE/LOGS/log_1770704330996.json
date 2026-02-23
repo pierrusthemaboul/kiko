@@ -1,0 +1,14 @@
+{
+  "timestamp": "2026-02-10T06:18:50.995Z",
+  "agent": "QUALITY_GATE",
+  "action": "QUALITY_CHECK",
+  "inputs": {
+    "total": 15
+  },
+  "decision": "SUCCESS",
+  "reason": "3 passés, 12 rejetés",
+  "outputs": {
+    "passed": 3,
+    "rejected": 12
+  }
+}

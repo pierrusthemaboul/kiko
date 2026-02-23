@@ -1,0 +1,14 @@
+{
+  "timestamp": "2026-02-19T07:31:05.562Z",
+  "agent": "VERITAS",
+  "action": "VALIDATE",
+  "inputs": {
+    "titre": "Cousteau invente le scaphandre",
+    "year": 1943
+  },
+  "decision": "REJECTED",
+  "reason": "The image features a man on a boat deck, wearing a peaked cap and what seems to be an early diving apparatus. While the boat and overall attire seem plausible, the design of the diving apparatus around the neck and, particularly, the headphones-like elements next to his ears are anachronistic and overly stylized. Also, there is a modern look about the clothing and the overall lighting does not match the usual vintage look of photos from the 1940s.",
+  "outputs": {
+    "score": 4
+  }
+}

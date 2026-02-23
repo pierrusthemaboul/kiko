@@ -1,0 +1,14 @@
+{
+  "timestamp": "2026-02-08T14:30:45.028Z",
+  "agent": "VERITAS",
+  "action": "VALIDATE",
+  "inputs": {
+    "titre": "Mort de Claude",
+    "year": 54
+  },
+  "decision": "REJECTED",
+  "reason": "The image depicts the death of Claudius. While there are no immediately obvious anachronisms, the image focuses on his deathbed rather than the grand vision of his reign, which does not match the request. Claudius is lying in bed, surrounded by people with candles. The setting seems appropriate for the event depicted, but doesn't convey the grandiosity desired. The clothing, while reminiscent of Roman tunics and togas, appears somewhat generic and lacks specific imperial insignia. It also does not convey the greatness of his achievements. The picture focuses more on his death than on his glory and construction of aqueducts.",
+  "outputs": {
+    "score": 7
+  }
+}

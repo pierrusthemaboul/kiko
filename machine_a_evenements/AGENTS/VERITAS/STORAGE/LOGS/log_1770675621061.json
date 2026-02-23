@@ -1,0 +1,14 @@
+{
+  "timestamp": "2026-02-09T22:20:21.060Z",
+  "agent": "VERITAS",
+  "action": "VALIDATE",
+  "inputs": {
+    "titre": "Exposition universelle de Paris",
+    "year": 1855
+  },
+  "decision": "VALIDATED",
+  "reason": "The image depicts a plausible scene from the 1855 Exposition Universelle in Paris. The architecture, clothing, and general atmosphere align with the period. The large iron and glass structure is consistent with the era's engineering. The clothing (top hats, bustle dresses) is appropriate. There are no immediately obvious anachronisms like smartphones or modern cars. There's a possible issue with the level of detail in the reflections in the storefront windows - this *might* indicate a computer generated image, thus subtracting a point. Some architectural details are slightly simplified, also hinting at AI generation, subtracting another point. Overall, it captures the spirit of the event accurately.",
+  "outputs": {
+    "score": 8
+  }
+}

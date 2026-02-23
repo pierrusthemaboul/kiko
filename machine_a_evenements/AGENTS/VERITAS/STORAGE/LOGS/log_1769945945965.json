@@ -1,0 +1,14 @@
+{
+  "timestamp": "2026-02-01T11:39:05.964Z",
+  "agent": "VERITAS",
+  "action": "VALIDATE",
+  "inputs": {
+    "titre": "Jesse Owens remporte quatre médailles d'or aux Jeux olympiques de Berlin, défiant l'idéologie nazie",
+    "year": 1936
+  },
+  "decision": "VALIDATED",
+  "reason": "L'image montre Jesse Owens dans un stade de Berlin, potentiellement en 1936. Les vêtements correspondent à l'époque (salopette d'athlète, casquette). L'architecture du stade est plausible pour les années 1930. La photographie en noir et blanc renforce l'authenticité de l'époque. Cependant, le rendu général est un peu trop propre et lisse, ce qui est inhabituel pour les photos d'époque. De plus, la clarté de l'image et la profondeur de champ semblent modernes, donnant l'impression d'une création numérique plutôt que d'une photographie argentique.",
+  "outputs": {
+    "score": 7
+  }
+}

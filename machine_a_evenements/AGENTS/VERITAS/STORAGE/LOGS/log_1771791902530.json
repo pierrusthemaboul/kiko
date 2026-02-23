@@ -1,0 +1,14 @@
+{
+  "timestamp": "2026-02-22T20:25:02.530Z",
+  "agent": "VERITAS",
+  "action": "VALIDATE",
+  "inputs": {
+    "titre": "Tiger Woods remporte le Masters d'Augusta",
+    "year": 1957
+  },
+  "decision": "REJECTED",
+  "reason": "The image generally depicts clothing and styles that could be consistent with the late 1950s (hats, dresses, golf attire). However, the very modern cap worn by the man in the foreground is anachronistic for 1957. While caps were worn, the style and fit are clearly from a later era. Also, the style of the yellow golf flags appears more modern, as well as the building itself. While the building style isn't necessarily anachronistic, its overall appearance and construction seem more recent. Tiger Woods won Augusta in 1997, 2001, 2002, 2005, and 2019, not 1957.",
+  "outputs": {
+    "score": 7
+  }
+}

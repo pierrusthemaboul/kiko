@@ -1,0 +1,14 @@
+{
+  "timestamp": "2026-02-01T12:12:50.911Z",
+  "agent": "VERITAS",
+  "action": "VALIDATE",
+  "inputs": {
+    "titre": "Inauguration du Teatro Olimpico de Vicence, conçu par Andrea Palladio",
+    "year": 1585
+  },
+  "decision": "REJECTED",
+  "reason": "L'image montre une foule dans un grand théâtre éclairé à la bougie. L'architecture semble vaguement correcte pour l'époque, avec des colonnes et des balcons. Cependant, les vêtements de la foule sont un mélange d'époques, certains semblant modernes. La qualité de l'image, en particulier les visages, suggère une image générée par IA, ce qui augmente la probabilité d'anachronismes subtils. La présence potentielle de vêtements modernes rend l'image invalide.",
+  "outputs": {
+    "score": 6
+  }
+}

@@ -25,6 +25,7 @@
     "chambre_noire": "node machine_a_evenements/chambre_noire.mjs",
     "sevent": "node machine_a_evenements/sevent3.mjs",
     "migrer": "node machine_a_evenements/migration_goju_prod.mjs",
+    "star": "node machine_a_evenements/prepare_star_context.mjs",
     "remote": "node remote_listener.mjs",
     "ai-bridge": "node ai_bridge.mjs"
   },

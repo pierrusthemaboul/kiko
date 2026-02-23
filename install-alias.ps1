@@ -16,7 +16,8 @@ if (-not (Test-Path $profilePath)) {
     Write-Host "Creation du profil PowerShell..." -ForegroundColor Yellow
     New-Item -Path $profilePath -Type File -Force | Out-Null
     Write-Host "   OK Profil cree: $profilePath" -ForegroundColor Green
-} else {
+}
+else {
     Write-Host "Profil PowerShell existant: $profilePath" -ForegroundColor Gray
 }
 
@@ -79,13 +80,34 @@ function Start-Migrer {
 }
 Set-Alias -Name migrer -Value Start-Migrer
 
-# Outil: Synchronisation Production -> Local
-function Start-Sync {
+Set-Alias -Name sync -Value Start-Sync
+
+# Outil: Préparation Contexte Star (75-85)
+function Start-Star {
     Push-Location "$projectPath"
-    node sync_prod_to_local.mjs `$args
+    node machine_a_evenements/prepare_star_context.mjs `$args
     Pop-Location
 }
-Set-Alias -Name sync -Value Start-Sync
+Set-Alias -Name star -Value Start-Star
+
+# Outil: Analyse et Correction Interactive (look)
+function Start-Look {
+    Push-Location "$projectPath"
+    node machine_a_evenements/analyser.mjs `$args
+    Pop-Location
+}
+Set-Alias -Name look -Value Start-Look
+
+# Outil: Correction rapide (fix)
+function Start-Fix {
+    Push-Location "$projectPath"
+    node machine_a_evenements/edit.mjs `$args
+    Pop-Location
+}
+Set-Alias -Name fix -Value Start-Fix
+
+# Alias court pour Chambre Noire
+Set-Alias -Name chambre -Value Start-ChambreNoire
 # =======================================
 "@
 
@@ -100,7 +122,8 @@ if ($profileContent -match "Start-Kiko" -or $profileContent -match "Start-Bureau
     Set-Content -Path $profilePath -Value $profileContent.Trim()
     Add-Content -Path $profilePath -Value "`n$aliasCommand"
     Write-Host "   OK Alias Kiko mis a jour (kiko, bureau, sevent, migrer)!" -ForegroundColor Green
-} else {
+}
+else {
     # Ajouter l'alias
     Add-Content -Path $profilePath -Value "`n$aliasCommand"
     Write-Host "   OK Alias Kiko ajoutes au profil!" -ForegroundColor Green

@@ -1,0 +1,14 @@
+{
+  "timestamp": "2026-02-11T06:51:32.806Z",
+  "agent": "VERITAS",
+  "action": "VALIDATE",
+  "inputs": {
+    "titre": "Le tremblement de terre d'Antioche",
+    "year": 526
+  },
+  "decision": "VALIDATED",
+  "reason": "The image depicts a city in ruins, consistent with the aftermath of an earthquake. The clothing, consisting of tunics, appears appropriate for the period. Buildings are made of stone and are in a state of collapse. No obvious anachronisms or fantasy elements are present. The overall atmosphere aligns with the description of Antioch in 526 AD following the earthquake. However, the minaret in the background looks anachronistic as it seems inspired by later islamic architecture, which wasn't present at that scale and style in 6th century Antioch. The score is 8 instead of 9 because the minaret introduces a minor doubt.",
+  "outputs": {
+    "score": 8
+  }
+}

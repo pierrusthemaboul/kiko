@@ -1,0 +1,14 @@
+{
+  "timestamp": "2026-02-16T18:42:43.462Z",
+  "agent": "VERITAS",
+  "action": "VALIDATE",
+  "inputs": {
+    "titre": "Naissance de François Ravaillac",
+    "year": 1578
+  },
+  "decision": "VALIDATED",
+  "reason": "The image depicts a scene that could plausibly represent the birth of François Ravaillac in 1578. The clothing, furniture, and architecture appear consistent with the late 16th century. The lighting using candles is accurate. There are no immediately obvious anachronisms or fantastical elements. However, a very close inspection might reveal details inconsistent with the period, such as subtle features of the furniture or textiles that wouldn't exist back then. The woman's hairstyle is slightly more modern, so I will lower the score. Overall, it presents a believable depiction of the time.",
+  "outputs": {
+    "score": 8
+  }
+}
