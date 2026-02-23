@@ -28,11 +28,22 @@ IMPORTANT: expo-av est un module natif. Après modification audio:
 
 ## Règles générales
 
+### 1. Sécurité et Secrets ABSOLUS (Zéro Plaintext) 🔴
+- **INTERDICTION FORMELLE** d'écrire une clé d'API (OpenAI, Anthropic, Gemini, Supabase, Firebase) ou un mot de passe en dur dans un script `.js`, `.mjs` ou `.ts`. 
+- Tout secret DOIT passer par `process.env.NOM_DE_LA_CLE`. 
+- Si tu crées un script de test, demande à l'utilisateur d'ajouter la clé dans son `.env`, mais ne la code JAMAIS en dur.
+
+### 2. Politique Anti-Poubelle (Camp Scout Rule) 🏕️
+- **INTERDICTION** de créer le moindre fichier script "jetable" ou "ponctuel" (ex: `test_db.mjs`, `audit_titres.js`) à la racine du projet ou de la `machine_a_evenements`.
+- Tous les scripts d'investigation ou de maintenance que tu crées DANS L'URGENCE doivent obligatoirement aller dans un dossier nommé `/scripts/`.
+- Prends l'engagement formel de proposer à l'utilisateur la SUPPRESSION de ton script de test à la seconde où tu as obtenu ta réponse métier.
+
+### 3. Architecture globale
 1. Projet utilise Expo SDK 52, pas SDK 53
 2. expo-audio version 0.3.5 (ne pas upgrader vers 1.0.14+)
-3. TypeScript strict sur les nouveaux fichiers
+3. TypeScript strict privilégié sur les nouveaux fichiers Vue ou Métier.
 4. Tous les sons dans `/assets/sounds/`
-5. Documentation dans `/docs/`
+5. Documentation produit dans `/docs/`
 
 ## Voir aussi
 

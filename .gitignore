@@ -85,3 +85,14 @@ discord-webhook.json
 # app-example
 # Local Netlify folder
 .netlify
+
+# --- MACHINE A EVENEMENTS & AGENTS ---
+# Logs IA et fichiers de travail (Très lourds, risques secrets)
+machine_a_evenements/AGENTS/**/STORAGE/LOGS/*.json
+machine_a_evenements/temp_images/
+
+# Rapports jetables et dumps de base de données
+*report.txt
+*.pdf
+dump_*.json
+sayon_session_*.json
