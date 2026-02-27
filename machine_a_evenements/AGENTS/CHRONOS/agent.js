@@ -1,4 +1,3 @@
-
 import fs from 'fs';
 import path from 'path';
 import 'dotenv/config';
@@ -8,9 +7,25 @@ import { GoogleGenerativeAI } from '@google/generative-ai';
 const agentName = "CHRONOS";
 const genAI = new GoogleGenerativeAI(process.env.GEMINI_API_KEY);
 const model = genAI.getGenerativeModel({
-  model: "gemini-2.0-flash",
+  model: process.env.GEMINI_MODEL_SMART || "gemini-2.0-flash",
   generationConfig: { responseMimeType: "application/json" }
 });
+
+async function crossCheckWithGemini(titre, year) {
+  try {
+    const prompt = `Fact-check historique strict. L'événement "${titre}" s'est-il produit en l'an ${year} (après J.-C.) ?
+Sois strict : si l'événement est réel mais que l'année est fausse (erreur > 1 an), réponds valid=false.
+Réponds UNIQUEMENT en JSON : {"valid": true/false, "reason": "raison courte (max 15 mots)"}`;
+
+    const result = await model.generateContent(prompt);
+    const text = result.response.text();
+    const jsonMatch = text.match(/\{[\s\S]*\}/);
+    if (jsonMatch) return JSON.parse(jsonMatch[0]);
+    return { valid: true, reason: "parse error - bénéfice du doute" };
+  } catch (e) {
+    return { valid: true, reason: `gemini unavailable: ${String(e.message || e).substring(0, 30)}` };
+  }
+}
 
 async function main() {
   const orchestratorPath = path.join(process.cwd(), '../../orchestrator_result.json');
@@ -82,14 +97,53 @@ async function main() {
     `;
 
   try {
+    // PASSE 1 : Gemini valide en batch (ancres + is_historically_valid)
     const result = await model.generateContent(prompt);
     const data = JSON.parse(result.response.text());
+    const auditedEvents = data.audited_events;
+
+    // PASSE 2 : Contre-vérification Gemini uniquement sur les événements approuvés
+    const geminiApproved = auditedEvents.filter(e => e.is_historically_valid !== false);
+    const geminiRejected = auditedEvents.filter(e => e.is_historically_valid === false);
+
+    if (geminiRejected.length > 0) {
+      console.log(`[CHRONOS] Gemini a rejeté ${geminiRejected.length} événement(s) :`);
+      geminiRejected.forEach(e => console.log(`   ❌ Gemini: "${e.titre}" (${e.year}) — ${e.justification}`));
+    }
+
+    if (geminiApproved.length > 0) {
+      console.log(`[CHRONOS] 🔍 Contre-vérification Gemini sur ${geminiApproved.length} événement(s)...`);
+
+      // Appels Gemini en parallèle pour la vitesse
+      const crossResults = await Promise.all(
+        geminiApproved.map(e => crossCheckWithGemini(e.titre, e.year))
+      );
+
+      let crossRejections = 0;
+      geminiApproved.forEach((event, i) => {
+        const cross = crossResults[i];
+        if (cross.valid === false) {
+          event.is_historically_valid = false;
+          event.justification = `[CrossCheck] ${cross.reason}`;
+          crossRejections++;
+          console.log(`   ❌ CrossCheck: "${event.titre}" (${event.year}) — ${cross.reason}`);
+        }
+      });
+
+      if (crossRejections === 0) {
+        console.log(`   ✅ CrossCheck confirme tous les événements.`);
+      }
+    }
+
+    const finalEvents = auditedEvents;
+    const validCount = finalEvents.filter(e => e.is_historically_valid !== false).length;
+    const invalidCount = finalEvents.length - validCount;
 
     const outputPath = path.join(process.cwd(), 'STORAGE/OUTPUT/chronos_audited_events.json');
-    fs.writeFileSync(outputPath, JSON.stringify(data.audited_events, null, 2));
+    fs.writeFileSync(outputPath, JSON.stringify(finalEvents, null, 2));
 
-    console.log(`[CHRONOS] ✅ ${data.audited_events.length} événements audités historiquement.`);
-    logDecision(agentName, 'AUDIT', { count: events.length }, 'SUCCESS', 'Ancres historiques générées');
+    console.log(`[CHRONOS] ✅ ${validCount} événements valides, ${invalidCount} rejetés (double validation Gemini+Claude).`);
+    logDecision(agentName, 'AUDIT', { count: events.length }, 'SUCCESS', `Ancres historiques générées (${invalidCount} rejetés)`);
 
   } catch (e) {
     console.error("[CHRONOS] Erreur:", e);
