@@ -209,7 +209,11 @@ export function useGameLogicA(initialEvent?: string, modeId?: string) {
     setUser,
     previousEvent,
     allEvents,
-    selectNewEvent: (e: any, r: any) => selectNewEventRef.current(e, r),
+    selectNewEvent: async (e: any, r: any) => {
+      const evt = await selectNewEventRef.current(e, r);
+      if (evt) await updateGameStateRef.current(evt);
+      return evt;
+    },
     resetTimer,
     setIsGameOver,
     setIsLevelPaused,
@@ -397,7 +401,9 @@ export function useGameLogicA(initialEvent?: string, modeId?: string) {
         if (!isGameOver) {
           setPreviousEvent(newEvent);
           setDisplayedEvent(null);
-          selectNewEventRef.current(allEvents, newEvent);
+          selectNewEventRef.current(allEvents, newEvent).then((evt: Event | null) => {
+            if (evt) updateGameStateRef.current(evt);
+          });
         }
       }, 1500);
     } else {
@@ -464,7 +470,9 @@ export function useGameLogicA(initialEvent?: string, modeId?: string) {
         if (!isGameOver) {
           setPreviousEvent(newEvent);
           setDisplayedEvent(null);
-          selectNewEventRef.current(allEvents, newEvent);
+          selectNewEventRef.current(allEvents, newEvent).then((evt: Event | null) => {
+            if (evt) updateGameStateRef.current(evt);
+          });
         }
       }, 1500);
     } else {
@@ -1097,7 +1105,7 @@ export function useGameLogicA(initialEvent?: string, modeId?: string) {
             // Sélection anticipée + prefetch image pendant le délai de feedback (750ms)
             const nextEventPromise = selectNewEventRef.current(allEvents, newEvent);
             nextEventPromise.then((evt: Event | null) => {
-              if (evt?.illustration_url) Image.prefetch(evt.illustration_url).catch(() => {});
+              if (evt?.illustration_url) Image.prefetch(evt.illustration_url).catch(() => { });
             });
             setTimeout(() => {
               setIsWaitingForCountdown(false);
@@ -1148,7 +1156,7 @@ export function useGameLogicA(initialEvent?: string, modeId?: string) {
           // Sélection anticipée + prefetch image pendant le délai de feedback (1500ms)
           const nextEventPromise = selectNewEventRef.current(allEvents, newEvent);
           nextEventPromise.then((evt: Event | null) => {
-            if (evt?.illustration_url) Image.prefetch(evt.illustration_url).catch(() => {});
+            if (evt?.illustration_url) Image.prefetch(evt.illustration_url).catch(() => { });
           });
           setTimeout(() => {
             setIsWaitingForCountdown(false);
@@ -1562,7 +1570,8 @@ export function useGameLogicA(initialEvent?: string, modeId?: string) {
         // Only unpause if an event was successfully selected AND the game hasn't ended in the meantime
         if (selectedEvent && !isGameOver) {
 
-          // Crucially unpause *after* the new event is ready (updateGameState callback handles setting displayedEvent etc.)
+          // Crucially update state before unpausing
+          updateGameStateRef.current(selectedEvent);
           setIsLevelPaused(false);
         } else if (!isGameOver) {
           // If no event could be selected, it's a critical error for continuing play

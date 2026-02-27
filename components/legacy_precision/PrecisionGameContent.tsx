@@ -23,7 +23,7 @@ import { useSafeAreaInsets } from 'react-native-safe-area-context';
 import * as Haptics from 'expo-haptics';
 import { Ionicons } from '@expo/vector-icons';
 import PrecisionContinueModal from '../modals/PrecisionContinueModal';
-import NumericKeypad, { NUMERIC_KEYPAD_HEIGHT_RATIO } from './NumericKeypad';
+import NumericKeypad, { NUMERIC_KEYPAD_HEIGHT_RATIO } from '../game/NumericKeypad';
 import { usePrecisionAudio } from '../../hooks/game/usePrecisionAudio';
 import useAudio from '../../hooks/useAudio';
 
@@ -549,7 +549,7 @@ const PrecisionGameContent: React.FC<PrecisionGameContentProps> = ({
     hasAnsweredRef.current = true;
     clearAutoAdvance();
     precisionAudio.playSubmit();
-    Haptics.impactAsync(Haptics.ImpactFeedbackStyle.Light).catch(() => {});
+    Haptics.impactAsync(Haptics.ImpactFeedbackStyle.Light).catch(() => { });
     onSubmitGuess(parsed);
   }, [guessValue, clearAutoAdvance, onSubmitGuess, precisionAudio]);
 
@@ -571,7 +571,7 @@ const PrecisionGameContent: React.FC<PrecisionGameContentProps> = ({
   const toggleResultImageLightbox = () => {
     setResultImageLightbox(!resultImageLightbox);
   };
-  
+
   const openDescription = () => {
     if (!currentEvent?.description_detaillee) return;
     clearAutoAdvance();

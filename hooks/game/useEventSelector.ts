@@ -490,7 +490,7 @@ export function useEventSelector({
     const MIN_PERIOD_SHARE = 0.08; // 8% minimum par période = ~40 slots sur 500
     const periodBuckets: Record<string, Event[]> = {};
     const allPeriods = [HistoricalPeriod.ANTIQUITY, HistoricalPeriod.MIDDLE_AGES, HistoricalPeriod.RENAISSANCE,
-                        HistoricalPeriod.NINETEENTH, HistoricalPeriod.TWENTIETH, HistoricalPeriod.TWENTYFIRST];
+    HistoricalPeriod.NINETEENTH, HistoricalPeriod.TWENTIETH, HistoricalPeriod.TWENTYFIRST];
     for (const evt of filtered) {
       const p = getPeriod(evt.date);
       if (!periodBuckets[p]) periodBuckets[p] = [];
@@ -927,8 +927,8 @@ export function useEventSelector({
           _temporalJumpDirection: jumpForward ? 'forward' : 'backward'
         } as Event;
 
-        // Mise à jour de l'état et retour
-        await updateStateCallback(markedJumpEvent);
+        // Mise à jour de l'état (DÉLÉGUÉE AU CALLER pour les animations)
+        // await updateStateCallback(markedJumpEvent);
 
         // Analytics pour le saut temporel
         FirebaseAnalytics.trackEvent('temporal_jump', {
@@ -1298,7 +1298,9 @@ export function useEventSelector({
       return last === selectedEra ? prev + 1 : 1;
     });
 
-    await updateStateCallback(selected);
+    // NOTE: La mise à jour de l'état est DÉLÉGUÉE au caller
+    // pour permettre l'affichage des animations de validation
+    // await updateStateCallback(selected);
 
     console.log('[SELECT_NEW_EVENT] ✅ Événement sélectionné:', {
       level: userLevel, // AJOUTÉ : Pour savoir à quel niveau on est

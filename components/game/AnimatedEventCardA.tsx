@@ -18,8 +18,10 @@
 
 // 1.C. Imports
 import React, { useEffect, useRef, useState } from 'react';
-import { View, Image, Text, StyleSheet, Dimensions, Animated } from 'react-native';
+import { View, Image, Text, StyleSheet, Dimensions, Animated, TouchableOpacity, Alert } from 'react-native';
 import { LinearGradient } from 'expo-linear-gradient';
+import { Ionicons } from '@expo/vector-icons';
+import { supabase } from '@/lib/supabase/supabaseClients';
 
 // Obtenir les dimensions de l'écran pour les calculs de style adaptatif
 const { width: SCREEN_WIDTH, height: SCREEN_HEIGHT } = Dimensions.get('window');
@@ -53,13 +55,48 @@ const AnimatedEventCardA: React.FC<AnimatedEventCardAProps> = ({
   const dateScale = useRef(new Animated.Value(1)).current;
   const fadeAnim = useRef(new Animated.Value(0)).current;
   const [isTitleLong, setIsTitleLong] = useState(false);
-  
+
   // État pour adapter la taille du texte en fonction de la longueur du titre
   const [titleFontSize, setTitleFontSize] = useState(position === 'top' ? 24 : 22);
-  
+
   // Animation pour la couleur du titre
   const titleColorAnim = useRef(new Animated.Value(0)).current;
-  
+
+  // État administrateur pour le bouton de régénération
+  const [isAdmin, setIsAdmin] = useState(false);
+  const [isRegenerating, setIsRegenerating] = useState(false);
+
+  // Vérification de l'administrateur
+  useEffect(() => {
+    const checkAdmin = async () => {
+      const { data: { session } } = await supabase.auth.getSession();
+      if (session?.user?.email === 'pierre.cousin7@gmail.com') {
+        setIsAdmin(true);
+      }
+    };
+    checkAdmin();
+  }, []);
+
+  // Fonction de régénération
+  const handleRegenerate = async () => {
+    if (!event || !event.id) return;
+    setIsRegenerating(true);
+    try {
+      const { error } = await (supabase.from('aregenerer') as any).insert({
+        evenement_id: event.id,
+        titre: event.titre,
+        year: parseInt(getYearFromDate(event.date), 10) || 0
+      });
+      if (error) throw error;
+      Alert.alert('Succès', 'Événement envoyé en régénération dans la Chambre Noire.');
+    } catch (err: any) {
+      Alert.alert('Erreur', 'Impossible de demander la régénération : ' + err.message);
+    } finally {
+      setIsRegenerating(false);
+    }
+  };
+
+
   // 1.E.2. Effet pour l'animation de la date
   useEffect(() => {
     if (showDate) {
@@ -76,7 +113,7 @@ const AnimatedEventCardA: React.FC<AnimatedEventCardAProps> = ({
           useNativeDriver: true,
         })
       ]).start();
-      
+
       // Animation de fondu pour l'ensemble
       Animated.timing(fadeAnim, {
         toValue: 1,
@@ -99,12 +136,12 @@ const AnimatedEventCardA: React.FC<AnimatedEventCardAProps> = ({
       }).start();
     }
   }, [position]);
-  
+
   // Animation de variation de couleur pour le titre
   useEffect(() => {
     // Réinitialiser l'animation à chaque changement d'événement
     titleColorAnim.setValue(0);
-    
+
     // Animation en boucle pour faire varier la couleur du titre
     Animated.loop(
       Animated.sequence([
@@ -120,7 +157,7 @@ const AnimatedEventCardA: React.FC<AnimatedEventCardAProps> = ({
         })
       ])
     ).start();
-    
+
     // Nettoyer l'animation quand le composant est démonté ou l'événement change
     return () => {
       titleColorAnim.stopAnimation();
@@ -132,10 +169,10 @@ const AnimatedEventCardA: React.FC<AnimatedEventCardAProps> = ({
     if (event?.titre) {
       const titleLength = event.titre.length;
       const wordCount = event.titre.split(' ').length;
-      
+
       // Déterminer si c'est un titre long
       setIsTitleLong(titleLength > 40 || wordCount > 4);
-      
+
       // Ajuster la taille de police en fonction de la longueur et position
       if (position === 'top') {
         if (titleLength > 70 || wordCount > 8) {
@@ -167,10 +204,10 @@ const AnimatedEventCardA: React.FC<AnimatedEventCardAProps> = ({
     try {
       // Si c'est déjà une année à 4 chiffres, on la retourne directement
       if (/^\d{4}$/.test(dateString)) return dateString;
-      
+
       // Si c'est une date formatée "YYYY-MM-DD", on extrait l'année
       if (dateString.includes('-')) return dateString.split('-')[0];
-      
+
       // Si c'est une date formatée localisée, on tente d'extraire l'année
       if (event.date_formatee) {
         const parts = event.date_formatee.split(' ');
@@ -178,7 +215,7 @@ const AnimatedEventCardA: React.FC<AnimatedEventCardAProps> = ({
           if (/^\d{4}$/.test(part)) return part;
         }
       }
-      
+
       // Fallback: retour de la chaîne originale
       return dateString;
     } catch (error) {
@@ -194,12 +231,12 @@ const AnimatedEventCardA: React.FC<AnimatedEventCardAProps> = ({
       inputRange: [0, 0.5, 1],
       outputRange: ['rgba(255, 255, 255, 1)', 'rgba(220, 240, 255, 1)', 'rgba(255, 255, 255, 1)']
     });
-    
+
     const shadowColor = titleColorAnim.interpolate({
       inputRange: [0, 0.5, 1],
       outputRange: ['rgba(0, 0, 0, 0.9)', 'rgba(0, 0, 0, 0.7)', 'rgba(0, 0, 0, 0.9)']
     });
-    
+
     // Titre pour la carte du haut
     if (position === 'top') {
       return (
@@ -209,33 +246,33 @@ const AnimatedEventCardA: React.FC<AnimatedEventCardAProps> = ({
           isTitleLong && styles.titleContainerLong,
           showDate && styles.titleContainerWithDate
         ]}>
-          <Animated.Text 
+          <Animated.Text
             style={[
               styles.title,
               styles.titleTop,
               styles.textOutline,
-              { 
+              {
                 fontSize: titleFontSize,
                 color: textColor,
                 textShadowColor: shadowColor
               }
-            ]} 
+            ]}
             numberOfLines={3}
           >
             {event?.titre}
           </Animated.Text>
         </View>
       );
-    } 
-    
+    }
+
     // Titre pour la carte du bas avec effet d'ombre amélioré
     return (
       <View style={styles.bottomTitleWrapper}>
-        <Animated.Text 
+        <Animated.Text
           style={[
             styles.titleBottom,
             styles.textOutline,
-            { 
+            {
               fontSize: titleFontSize,
               fontWeight: 'bold',
               textAlign: 'center',
@@ -244,7 +281,7 @@ const AnimatedEventCardA: React.FC<AnimatedEventCardAProps> = ({
               color: textColor,
               textShadowColor: shadowColor
             }
-          ]} 
+          ]}
           numberOfLines={3}
         >
           {event?.titre}
@@ -270,7 +307,7 @@ const AnimatedEventCardA: React.FC<AnimatedEventCardAProps> = ({
         {position === 'top' && (
           <View style={styles.separator} />
         )}
-        <Animated.Text 
+        <Animated.Text
           style={[
             styles.dateText,
             position === 'top' ? styles.topDateText : styles.bottomDateText,
@@ -295,11 +332,11 @@ const AnimatedEventCardA: React.FC<AnimatedEventCardAProps> = ({
             onLoad={onImageLoad}
             resizeMode="cover"
           />
-          
+
           {/* Dégradé pour améliorer la lisibilité du texte */}
           <LinearGradient
-            colors={position === 'top' ? 
-              ['transparent', 'rgba(0,0,0,0.7)', 'rgba(0,0,0,0.9)'] : 
+            colors={position === 'top' ?
+              ['transparent', 'rgba(0,0,0,0.7)', 'rgba(0,0,0,0.9)'] :
               ['transparent', 'transparent', 'rgba(0,0,0,0.6)', 'rgba(0,0,0,0.8)']
             }
             locations={position === 'top' ? [0.4, 0.7, 1] : [0, 0.6, 0.8, 1]}
@@ -310,12 +347,23 @@ const AnimatedEventCardA: React.FC<AnimatedEventCardAProps> = ({
           >
             {position === 'top' && renderTitle()}
           </LinearGradient>
-          
+
           {/* Titre pour la carte du bas (placé au-dessus du gradient pour un meilleur contrôle) */}
           {position === 'bottom' && renderTitle()}
-          
+
           {/* Overlay de date */}
           {renderDate()}
+
+          {/* Bouton Admin Régénération */}
+          {isAdmin && position === 'bottom' && (
+            <TouchableOpacity
+              style={styles.adminRegenerateButton}
+              onPress={handleRegenerate}
+              disabled={isRegenerating}
+            >
+              <Ionicons name="refresh-circle" size={32} color={isRegenerating ? '#ccc' : '#FFD700'} />
+            </TouchableOpacity>
+          )}
         </View>
       </View>
     </View>
@@ -343,7 +391,7 @@ const styles = StyleSheet.create({
     shadowOpacity: 0.9, // augmenté pour un glow visible
     shadowRadius: 10, // légèrement augmenté pour l'effet "glow"
   },
-  
+
   cardContent: {
     flex: 1,
     borderRadius: 16,
@@ -354,7 +402,7 @@ const styles = StyleSheet.create({
     width: '100%',
     height: '100%',
   },
-  
+
   // Styles pour le dégradé
   gradient: {
     position: 'absolute',
@@ -370,7 +418,7 @@ const styles = StyleSheet.create({
     bottom: 0,
     height: '50%', // Augmenté pour la carte du bas
   },
-  
+
   // Styles pour le conteneur de titre
   titleContainer: {
     padding: 15,
@@ -385,7 +433,7 @@ const styles = StyleSheet.create({
   titleContainerWithDate: {
     paddingBottom: 80, // Plus grand quand la date est affichée
   },
-  
+
   // Styles pour le titre
   title: {
     fontWeight: 'bold',
@@ -396,14 +444,14 @@ const styles = StyleSheet.create({
   titleTop: {
     letterSpacing: 0.5,
   },
-  
+
   // Styles pour le contour du texte et l'effet de glow
   textOutline: {
     // Effet de contour multiple avec des ombres dans différentes directions
     textShadowOffset: { width: 0, height: 0 },
     textShadowRadius: 4,
     // Le style de base inclut déjà textShadowColor qui est animé
-    
+
     // On ajoute un effet supplémentaire avec backgroundColor
     backgroundColor: 'rgba(0, 0, 0, 0.25)',
     paddingHorizontal: 8,
@@ -413,7 +461,7 @@ const styles = StyleSheet.create({
     borderWidth: 1,
     borderColor: 'rgba(255, 255, 255, 0.3)',
   },
-  
+
   // Styles pour le wrapper du titre du bas
   bottomTitleWrapper: {
     position: 'absolute',
@@ -425,7 +473,7 @@ const styles = StyleSheet.create({
     alignItems: 'center',
     justifyContent: 'center',
   },
-  
+
   // Styles pour le titre du bas
   titleBottom: {
     fontWeight: 'bold',
@@ -433,7 +481,7 @@ const styles = StyleSheet.create({
     fontSize: 22,
     letterSpacing: 0.3,
   },
-  
+
   // Styles pour l'overlay de date
   dateOverlay: {
     position: 'absolute',
@@ -456,7 +504,7 @@ const styles = StyleSheet.create({
   incorrectOverlay: {
     backgroundColor: 'rgba(231, 76, 60, 0.8)',
   },
-  
+
   // Styles pour le texte de date
   dateText: {
     color: 'white',
@@ -471,7 +519,7 @@ const styles = StyleSheet.create({
   bottomDateText: {
     fontSize: 42,
   },
-  
+
   // Séparateur visuel
   separator: {
     height: 2,
@@ -479,6 +527,17 @@ const styles = StyleSheet.create({
     width: '80%',
     alignSelf: 'center',
     marginBottom: 10
+  },
+
+  // Style bouton admin
+  adminRegenerateButton: {
+    position: 'absolute',
+    top: 15,
+    right: 15,
+    zIndex: 999,
+    backgroundColor: 'rgba(0,0,0,0.5)',
+    borderRadius: 20,
+    padding: 2,
   }
 });
 

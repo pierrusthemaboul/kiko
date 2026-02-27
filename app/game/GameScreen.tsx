@@ -17,7 +17,7 @@ import { SafeAreaView } from 'react-native-safe-area-context';
 
 // Composants
 import GameContentA from "../../components/game/GameContentA"; // Chemin OK
-import PrecisionGameContent from "../../components/game/PrecisionGameContent";
+import PrecisionGameContent from "../../components/legacy_precision/PrecisionGameContent";
 import PrecisionGameOverModal from "../../components/modals/PrecisionGameOverModal";
 import PrecisionLevelCompleteModal from "../../components/modals/PrecisionLevelCompleteModal";
 import EndRunSummary from '@/components/game/EndRunSummary';
