@@ -3,7 +3,7 @@
 import { useState, useCallback, useEffect, useRef } from 'react';
 import { RewardType, User, MAX_LIVES } from './types';
 import { LEVEL_CONFIGS } from './levelConfigs';
-import { logger } from '../utils/logger';
+import { Logger } from '../utils/logger';
 import { FirebaseAnalytics } from '../lib/firebase';
 
 interface Position {
@@ -52,7 +52,7 @@ export const useRewards = ({
   const calculateStreakReward = useCallback((streak: number, user: User): Reward | null => {
     if (streak % 10 !== 0 || streak === 0) return null;
 
-    let pointsAmount;
+    let pointsAmount = 0;
 
     // NOUVEAU SYSTÈME - Progression modérée et plafonnée
     if (streak === 10) {
@@ -154,7 +154,7 @@ export const useRewards = ({
 
     // Vérifier que la position est valide
     if (isNaN(position.x) || isNaN(position.y)) {
-      logger.warn(`[useRewards] Invalid position coordinates: x=${position.x}, y=${position.y}`);
+      Logger.warn('GameLogic', 'Invalid position coordinates', { x: position.x, y: position.y });
       return;
     }
 

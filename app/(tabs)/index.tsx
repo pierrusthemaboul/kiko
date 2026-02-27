@@ -2,7 +2,7 @@
 // Refonte Radicale - Thème Clair, Épuré et Percutant
 // ----- FICHIER COMPLET CORRIGÉ (Chemins Relatifs '../../') -----
 
-import React, { useEffect, useState, useRef, useCallback } from 'react';
+import React, { useEffect, useState, useRef, useCallback, useMemo } from 'react';
 import {
   View,
   Text,
@@ -18,6 +18,7 @@ import {
   Pressable,
   AppState,
 } from 'react-native';
+import type { StyleProp, ViewStyle } from 'react-native';
 import { useRouter } from 'expo-router';
 import { supabase } from '../../lib/supabase/supabaseClients'; // Chemin relatif vers supabase
 import { User } from '@supabase/supabase-js';
@@ -27,8 +28,7 @@ import { BannerAd, BannerAdSize } from 'react-native-google-mobile-ads';
 import { useFonts } from '../../hooks/useFonts'; // Chemin relatif vers useFonts
 import { useAdConsent } from '../../hooks/useAdConsent';
 import { FirebaseAnalytics } from '../../lib/firebase'; // Chemin relatif vers firebase
-// MODIFIÉ: IS_TEST_BUILD ajouté à l'import
-import { getAdRequestOptions, getAdUnitId, IS_TEST_BUILD } from '../../lib/config/adConfig'; // Chemin relatif vers adConfig
+import { AdService } from '@/src/features/ads/AdService';
 import { LinearGradient } from 'expo-linear-gradient';
 import AsyncStorage from '@react-native-async-storage/async-storage';
 
@@ -73,7 +73,11 @@ const SPLASH_COLORS = {
 // ---------------------------------------------
 
 // --- Nouveau Splash Screen Animé - Effet Météorite Impact ---
-const AnimatedSplashScreen = ({ onAnimationEnd }) => {
+type AnimatedSplashScreenProps = {
+  onAnimationEnd?: () => void;
+};
+
+const AnimatedSplashScreen = ({ onAnimationEnd }: AnimatedSplashScreenProps) => {
   const containerOpacity = useRef(new Animated.Value(1)).current;
   const imageOpacity = useRef(new Animated.Value(0)).current;
   const imageScale = useRef(new Animated.Value(1.08)).current;
@@ -274,11 +278,18 @@ const MinimalButton = React.memo(({
   icon,
   variant = 'primary', // 'primary'(Bleu), 'secondary'(Saumon), 'ghost'(Bordure), 'ghostSecondary'(Bordure Grise)
   disabled = false,
-  style = {}
+  style,
+}: {
+  onPress: () => void;
+  label: string;
+  icon?: keyof typeof Ionicons.glyphMap;
+  variant?: 'primary' | 'secondary' | 'ghost' | 'ghostSecondary';
+  disabled?: boolean;
+  style?: StyleProp<ViewStyle>;
 }) => {
   const scale = useRef(new Animated.Value(1)).current;
 
-  const animatePress = (pressed) => {
+  const animatePress = (pressed: boolean) => {
     Animated.spring(scale, {
       toValue: pressed ? 0.97 : 1,
       tension: 150,
@@ -330,7 +341,7 @@ const MinimalButton = React.memo(({
       onPressOut={() => animatePress(false)}
       onPress={onPress}
       disabled={disabled}
-      style={({ pressed }) => [
+      style={() => [
           styles.buttonWrapper,
           buttonStyle,
           { opacity: disabled ? 0.6 : 1 },
@@ -368,6 +379,8 @@ export default function HomeScreen() {
     isLoading: consentLoading,
     consentStatusLabel,
   } = useAdConsent();
+
+  const homeBannerConfig = useMemo(() => AdService.getBannerConfig('HOME'), []);
   const [settingsVisible, setSettingsVisible] = useState(false);
   const [settingsSection, setSettingsSection] = useState<'root' | 'privacy'>('root');
 
@@ -457,15 +470,19 @@ export default function HomeScreen() {
 
   const fetchUserProfile = async (userId: string) => {
     try {
+        type ProfileRow = { display_name: string | null };
         const { data, error } = await supabase
           .from('profiles')
           .select('display_name')
           .eq('id', userId)
-          .single();
+          .single<ProfileRow>();
         if (error) throw error;
         if (data) {
-          setDisplayName(data.display_name);
-          FirebaseAnalytics.setUserProps({ display_name: data.display_name });
+          const safeName = data.display_name ?? '';
+          setDisplayName(safeName);
+          if (safeName) {
+            FirebaseAnalytics.setUserProps({ display_name: safeName });
+          }
         }
     } catch (error) {
         console.error("Error fetching user profile:", error);
@@ -589,20 +606,16 @@ export default function HomeScreen() {
   }, []);
 
   const handleManageConsent = useCallback(async () => {
-    FirebaseAnalytics.trackEvent('consent_manage_clicked', {
-      from_screen: 'home',
-      section: 'privacy',
-      consent_status: consentStatusLabel ?? 'unknown',
-    });
     handleCloseSettings();
-    try {
-      await resetConsent();
-    } catch (err) {
-      console.error('[Settings] Failed to manage consent', err);
-      Alert.alert(
-        'Erreur',
-        "Impossible de mettre à jour votre consentement pour le moment. Réessayez plus tard.",
-      );
+    const result = await AdService.resetConsentSafely({
+      resetConsent,
+      consentStatusLabel: consentStatusLabel ?? null,
+      fromScreen: 'home',
+    });
+
+    if (!result.ok) {
+      console.error('[Settings] Failed to manage consent', result.message);
+      AdService.showConsentErrorAlert();
       setSettingsSection('privacy');
       setSettingsVisible(true);
     }
@@ -708,18 +721,21 @@ export default function HomeScreen() {
             {/* --- Bannière Publicitaire --- */}
             <View style={styles.adContainer}>
               <BannerAd
-                unitId={getAdUnitId('BANNER_HOME')} // Utilise la fonction pour obtenir l'ID d'annonce
+                unitId={homeBannerConfig.unitId}
                 size={BannerAdSize.BANNER}
-                requestOptions={getAdRequestOptions()}
-                onAdLoaded={() => { FirebaseAnalytics.ad('banner', 'loaded', 'home_banner', 0); }}
+                requestOptions={homeBannerConfig.requestOptions}
+                onAdLoaded={() => {
+                  AdService.trackBannerLoaded({ placement: 'HOME' });
+                }}
                 onAdFailedToLoad={(error) => {
-                   FirebaseAnalytics.ad('banner', 'failed', 'home_banner', 0);
-                   FirebaseAnalytics.trackError('ad_load_failed', {
-                     message: `Banner Ad Error: ${error.message} (Code: ${error.code})`,
-                     screen: 'HomeScreen',
-                     severity: 'warning',
-                   });
-                   console.warn(`Ad failed to load: ${error.message}`);
+                  AdService.trackBannerFailed({
+                    placement: 'HOME',
+                    error: {
+                      code: String((error as unknown as { code?: unknown }).code ?? 'unknown'),
+                      message: error instanceof Error ? error.message : String((error as unknown as { message?: unknown }).message ?? error),
+                    },
+                  });
+                  console.warn(`Ad failed to load: ${error.message}`);
                 }}
               />
             </View>

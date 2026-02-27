@@ -4,8 +4,10 @@
   "version": "1.7.0",
   "_comment": "📚 Documentation importante : Avant de modifier l'audio, lisez /docs/AUDIO_MIGRATION_GUIDE.md",
   "scripts": {
+    "dev": "expo start --clear",
     "start": "expo start",
     "prebuild:check": "node scripts/prebuild-checker.js",
+    "typecheck:app": "tsc -p tsconfig.check.json --noEmit",
     "reset-project": "node ./scripts/reset-project.js",
     "android": "expo run:android",
     "ios": "expo run:ios",

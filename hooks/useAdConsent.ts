@@ -53,7 +53,8 @@ const fromStorageValue = (value: string | null): AdsConsentStatus | null => {
   if (!value) return null;
   const parsed = Number(value);
   if (Number.isNaN(parsed)) return null;
-  if (parsed in AdsConsentStatus) return parsed as AdsConsentStatus;
+  const enumValues = Object.values(AdsConsentStatus as unknown as Record<string, unknown>);
+  if (enumValues.includes(parsed as unknown)) return parsed as unknown as AdsConsentStatus;
   return null;
 };
 

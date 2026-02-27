@@ -1,0 +1,17 @@
+# Allowlist approach: ignore everything by default
+*
+
+# Keep linting only app/ and src/
+!app/
+!app/**
+!src/
+!src/**
+
+# Keep Expo types
+!.expo/
+!.expo/types/
+!.expo/types/**
+!expo-env.d.ts
+
+# Always ignore dependencies
+node_modules/

@@ -36,6 +36,323 @@ type ProfileRow = Database['public']['Tables']['profiles']['Row'];
 type RunsRow = Database['public']['Tables']['runs']['Row'];
 type RunsInsert = Database['public']['Tables']['runs']['Insert'];
 
+type DailyQuestRow = Database['public']['Tables']['daily_quests']['Row'];
+type QuestProgressRow = Database['public']['Tables']['quest_progress']['Row'];
+type QuestProgressInsert = Database['public']['Tables']['quest_progress']['Insert'];
+type QuestProgressUpdate = Database['public']['Tables']['quest_progress']['Update'];
+type UserAchievementRow = Database['public']['Tables']['user_achievements']['Row'];
+type UserAchievementInsert = Database['public']['Tables']['user_achievements']['Insert'];
+
+function runsRepo() {
+  const table = supabase.from('runs') as unknown;
+
+  return {
+    async selectById(runId: string): Promise<{ data: RunsRow | null; error: unknown | null }> {
+      const res = await (table as {
+        select: (cols: '*') => {
+          eq: (col: 'id', value: string) => {
+            maybeSingle: () => Promise<{ data: RunsRow | null; error: unknown | null }>;
+          };
+        };
+      })
+        .select('*')
+        .eq('id', runId)
+        .maybeSingle();
+
+      return { data: res.data ?? null, error: res.error ?? null };
+    },
+    async selectModesByUserSince(userId: string, startIso: string): Promise<{ data: Array<Pick<RunsRow, 'mode'>> | null; error: unknown | null }> {
+      const res = await (table as {
+        select: (cols: 'mode') => {
+          eq: (col: 'user_id', value: string) => {
+            gte: (col2: 'created_at', value2: string) => Promise<{ data: Array<Pick<RunsRow, 'mode'>> | null; error: unknown | null }>;
+          };
+        };
+      })
+        .select('mode')
+        .eq('user_id', userId)
+        .gte('created_at', startIso);
+
+      return { data: res.data ?? null, error: res.error ?? null };
+    },
+    async insertOne(values: RunsInsert): Promise<{ data: RunsRow | null; error: unknown | null }> {
+      const res = await (table as {
+        insert: (v: RunsInsert) => {
+          select: (cols: '*') => { single: () => Promise<{ data: RunsRow | null; error: unknown | null }> };
+        };
+      })
+        .insert(values)
+        .select('*')
+        .single();
+      return { data: res.data ?? null, error: res.error ?? null };
+    },
+    async updateById(id: string, values: Partial<RunsRow>): Promise<{ error: unknown | null }> {
+      const res = await (table as {
+        update: (v: Partial<RunsRow>) => { eq: (col: 'id', value: string) => Promise<{ error: unknown | null }> };
+      })
+        .update(values)
+        .eq('id', id);
+      return { error: res.error ?? null };
+    },
+  };
+}
+
+function dailyQuestsRepo() {
+  const table = supabase.from('daily_quests') as unknown;
+
+  return {
+    async selectAll(): Promise<{ data: DailyQuestRow[] | null; error: unknown | null }> {
+      const res = await (table as {
+        select: (cols: '*') => { returns: <T>() => Promise<{ data: T | null; error: unknown | null }> };
+      })
+        .select('*')
+        .returns<DailyQuestRow[]>();
+
+      return { data: res.data ?? null, error: res.error ?? null };
+    },
+    async selectActive(): Promise<{ data: DailyQuestRow[] | null; error: unknown | null }> {
+      const res = await (table as {
+        select: (cols: '*') => {
+          eq: (col: 'is_active', value: boolean) => { returns: <T>() => Promise<{ data: T | null; error: unknown | null }> };
+        };
+      })
+        .select('*')
+        .eq('is_active', true)
+        .returns<DailyQuestRow[]>();
+
+      return { data: res.data ?? null, error: res.error ?? null };
+    },
+    async selectByQuestKey(questKey: string): Promise<{ data: DailyQuestRow | null; error: unknown | null }> {
+      const res = await (table as {
+        select: (cols: '*') => {
+          eq: (col: 'quest_key', value: string) => { single: () => Promise<{ data: DailyQuestRow | null; error: unknown | null }> };
+        };
+      })
+        .select('*')
+        .eq('quest_key', questKey)
+        .single();
+
+      return { data: res.data ?? null, error: res.error ?? null };
+    },
+    async selectDailyActiveByDifficultyAndCategoryExcludingKeys(params: {
+      difficulty: number;
+      category: string;
+      excludedKeys: string[];
+    }): Promise<{ data: DailyQuestRow[] | null; error: unknown | null }> {
+      const { difficulty, category, excludedKeys } = params;
+      const notIn = excludedKeys.length > 0 ? `(${excludedKeys.join(',')})` : '("")';
+
+      const res = await (table as {
+        select: (cols: '*') => {
+          eq: (col: 'quest_type', value: 'daily') => {
+            eq: (col2: 'is_active', value2: boolean) => {
+              eq: (col3: 'difficulty', value3: number) => {
+                eq: (col4: 'category', value4: string) => {
+                  not: (col5: 'quest_key', op: 'in', value5: string) => Promise<{ data: DailyQuestRow[] | null; error: unknown | null }>;
+                };
+              };
+            };
+          };
+        };
+      })
+        .select('*')
+        .eq('quest_type', 'daily')
+        .eq('is_active', true)
+        .eq('difficulty', difficulty)
+        .eq('category', category)
+        .not('quest_key', 'in', notIn);
+
+      return { data: res.data ?? null, error: res.error ?? null };
+    },
+    async selectDailyActiveByDifficultyExcludingKeys(params: {
+      difficulty: number;
+      excludedKeys: string[];
+    }): Promise<{ data: DailyQuestRow[] | null; error: unknown | null }> {
+      const { difficulty, excludedKeys } = params;
+      const notIn = excludedKeys.length > 0 ? `(${excludedKeys.join(',')})` : '("")';
+
+      const res = await (table as {
+        select: (cols: '*') => {
+          eq: (col: 'quest_type', value: 'daily') => {
+            eq: (col2: 'is_active', value2: boolean) => {
+              eq: (col3: 'difficulty', value3: number) => {
+                not: (col4: 'quest_key', op: 'in', value4: string) => Promise<{ data: DailyQuestRow[] | null; error: unknown | null }>;
+              };
+            };
+          };
+        };
+      })
+        .select('*')
+        .eq('quest_type', 'daily')
+        .eq('is_active', true)
+        .eq('difficulty', difficulty)
+        .not('quest_key', 'in', notIn);
+
+      return { data: res.data ?? null, error: res.error ?? null };
+    },
+  };
+}
+
+type ProfilesUpdatePayload = Partial<Pick<
+  ProfileRow,
+  | 'xp_total'
+  | 'title_key'
+  | 'parties_per_day'
+  | 'current_streak'
+  | 'best_streak'
+  | 'last_play_date'
+  | 'games_played'
+  | 'high_score'
+  | 'last_reroll_date'
+  | 'reroll_count'
+  | 'updated_at'
+>>;
+
+function questProgressRepo() {
+  const table = supabase.from('quest_progress') as unknown;
+
+  return {
+    async insertMany(values: QuestProgressInsert[]): Promise<{ error: unknown | null }> {
+      const res = await (table as {
+        insert: (v: QuestProgressInsert[]) => Promise<{ error: unknown | null }>;
+      }).insert(values);
+      return { error: res.error ?? null };
+    },
+    async selectIncompleteByUserId(userId: string): Promise<{ data: QuestProgressRow[] | null; error: unknown | null }> {
+      const res = await (table as {
+        select: (cols: '*') => {
+          eq: (col: 'user_id', value: string) => {
+            eq: (col2: 'completed', value2: boolean) => Promise<{ data: QuestProgressRow[] | null; error: unknown | null }>;
+          };
+        };
+      })
+        .select('*')
+        .eq('user_id', userId)
+        .eq('completed', false);
+
+      return { data: res.data ?? null, error: res.error ?? null };
+    },
+    async selectByUserAndQuestKey(userId: string, questKey: string): Promise<{ data: QuestProgressRow | null; error: unknown | null }> {
+      const res = await (table as {
+        select: (cols: '*') => {
+          eq: (col: 'user_id', value: string) => {
+            eq: (col2: 'quest_key', value2: string) => {
+              single: () => Promise<{ data: QuestProgressRow | null; error: unknown | null }>;
+            };
+          };
+        };
+      })
+        .select('*')
+        .eq('user_id', userId)
+        .eq('quest_key', questKey)
+        .single();
+
+      return { data: res.data ?? null, error: res.error ?? null };
+    },
+    async selectQuestKeysByUserId(userId: string): Promise<{ data: Array<Pick<QuestProgressRow, 'quest_key'>> | null; error: unknown | null }> {
+      const res = await (table as {
+        select: (cols: 'quest_key') => {
+          eq: (col: 'user_id', value: string) => Promise<{ data: Array<Pick<QuestProgressRow, 'quest_key'>> | null; error: unknown | null }>;
+        };
+      })
+        .select('quest_key')
+        .eq('user_id', userId);
+
+      return { data: res.data ?? null, error: res.error ?? null };
+    },
+    async updateById(id: string, values: QuestProgressUpdate): Promise<{ error: unknown | null }> {
+      const res = await (table as {
+        update: (v: QuestProgressUpdate) => { eq: (col: 'id', value: string) => Promise<{ error: unknown | null }> };
+      })
+        .update(values)
+        .eq('id', id);
+
+      return { error: res.error ?? null };
+    },
+  };
+}
+
+function profilesRepo() {
+  const table = supabase.from('profiles') as unknown;
+
+  return {
+    async selectEconomyById(userId: string): Promise<{ data: ProfileRow | null; error: unknown | null }> {
+      const res = await (table as {
+        select: (cols: string) => {
+          eq: (col: 'id', value: string) => { maybeSingle: () => Promise<{ data: ProfileRow | null; error: unknown | null }> };
+        };
+      })
+        .select('xp_total, title_key, parties_per_day, current_streak, best_streak, last_play_date, games_played, high_score')
+        .eq('id', userId)
+        .maybeSingle();
+
+      return { data: res.data ?? null, error: res.error ?? null };
+    },
+    async selectXpTotalById(userId: string): Promise<{ data: Pick<ProfileRow, 'xp_total'> | null; error: unknown | null }> {
+      const res = await (table as {
+        select: (cols: 'xp_total') => {
+          eq: (col: 'id', value: string) => { single: () => Promise<{ data: Pick<ProfileRow, 'xp_total'> | null; error: unknown | null }> };
+        };
+      })
+        .select('xp_total')
+        .eq('id', userId)
+        .single();
+
+      return { data: res.data ?? null, error: res.error ?? null };
+    },
+    async selectRerollInfoById(userId: string): Promise<{ data: Pick<ProfileRow, 'last_reroll_date' | 'reroll_count'> | null; error: unknown | null }> {
+      const res = await (table as {
+        select: (cols: 'last_reroll_date, reroll_count') => {
+          eq: (col: 'id', value: string) => {
+            single: () => Promise<{ data: Pick<ProfileRow, 'last_reroll_date' | 'reroll_count'> | null; error: unknown | null }>;
+          };
+        };
+      })
+        .select('last_reroll_date, reroll_count')
+        .eq('id', userId)
+        .single();
+
+      return { data: res.data ?? null, error: res.error ?? null };
+    },
+    async selectXpAndPartiesById(userId: string): Promise<{ data: Pick<ProfileRow, 'xp_total' | 'parties_per_day'> | null; error: unknown | null }> {
+      const res = await (table as {
+        select: (cols: 'xp_total, parties_per_day') => {
+          eq: (col: 'id', value: string) => {
+            single: () => Promise<{ data: Pick<ProfileRow, 'xp_total' | 'parties_per_day'> | null; error: unknown | null }>;
+          };
+        };
+      })
+        .select('xp_total, parties_per_day')
+        .eq('id', userId)
+        .single();
+
+      return { data: res.data ?? null, error: res.error ?? null };
+    },
+    async updateById(id: string, values: ProfilesUpdatePayload): Promise<{ error: unknown | null }> {
+      const res = await (table as {
+        update: (v: ProfilesUpdatePayload) => { eq: (col: 'id', value: string) => Promise<{ error: unknown | null }> };
+      })
+        .update(values)
+        .eq('id', id);
+
+      return { error: res.error ?? null };
+    },
+  };
+}
+
+function userAchievementsRepo() {
+  const table = supabase.from('user_achievements') as unknown;
+
+  return {
+    async insertOne(values: UserAchievementInsert): Promise<{ error: unknown | null }> {
+      const res = await (table as {
+        insert: (v: UserAchievementInsert) => Promise<{ error: unknown | null }>;
+      }).insert(values);
+      return { error: res.error ?? null };
+    },
+  };
+}
+
 type ApplyParams = {
   runId: string;
   userId: string;
@@ -135,45 +452,33 @@ export async function applyEndOfRunEconomy({ runId, userId, mode, points, gameSt
   const safePoints = Number.isFinite(points) ? points : 0;
   const xpEarned = pointsToXP(safePoints, mode);
 
-  const { data: existingRun, error: runFetchError } = await supabase
-    .from('runs')
-    .select('*')
-    .eq('id', runId)
-    .maybeSingle();
+  const { data: existingRun, error: runFetchError } = await runsRepo().selectById(runId);
 
   if (runFetchError) {
-    throw new Error(`Failed to load run history: ${runFetchError.message}`);
+    throw new Error(`Failed to load run history: ${String(runFetchError)}`);
   }
 
   let runRecord = existingRun;
 
   if (!runRecord) {
-    const { data: insertedRun, error: runInsertError } = await supabase
-      .from('runs')
-      .insert({
-        id: runId,
-        user_id: userId,
-        mode,
-        points: safePoints,
-      })
-      .select('*')
-      .single();
+    const { data: insertedRun, error: runInsertError } = await runsRepo().insertOne({
+      id: runId,
+      user_id: userId,
+      mode,
+      points: safePoints,
+    });
 
     if (runInsertError) {
-      throw new Error(`Failed to create run record: ${runInsertError.message}`);
+      throw new Error(`Failed to create run record: ${String(runInsertError)}`);
     }
 
     runRecord = insertedRun;
   }
 
-  const { data: profile, error: profileError } = await supabase
-    .from('profiles')
-    .select('xp_total, title_key, parties_per_day, current_streak, best_streak, last_play_date, games_played, high_score')
-    .eq('id', userId)
-    .maybeSingle();
+  const { data: profile, error: profileError } = await profilesRepo().selectEconomyById(userId);
 
   if (profileError) {
-    throw new Error(`Failed to load profile: ${profileError.message}`);
+    throw new Error(`Failed to load profile: ${String(profileError)}`);
   }
 
   const safeProfile = ensureProfile(profile, userId);
@@ -227,14 +532,11 @@ export async function applyEndOfRunEconomy({ runId, userId, mode, points, gameSt
   economyLog('[ECONOMY] 📝 UPDATE payload:', JSON.stringify(updatePayload, null, 2));
   economyLog('[ECONOMY] 📝 newXp value:', newXp, 'type:', typeof newXp, 'isNaN:', Number.isNaN(newXp));
 
-  const { error: profileUpdateError } = await supabase
-    .from('profiles')
-    .update(updatePayload)
-    .eq('id', userId);
+  const { error: profileUpdateError } = await profilesRepo().updateById(userId, updatePayload);
 
   if (profileUpdateError) {
     economyLog('[ECONOMY] ❌ Profile update error:', profileUpdateError);
-    throw new Error(`Failed to update profile: ${profileUpdateError.message}`);
+    throw new Error(`Failed to update profile: ${String(profileUpdateError)}`);
   }
 
   // Mettre à jour les quêtes quotidiennes
@@ -278,19 +580,14 @@ export async function applyEndOfRunEconomy({ runId, userId, mode, points, gameSt
   });
 
   if (runRecord?.id) {
-    const { error: runUpdateError } = await supabase
-      .from('runs')
-      .update(runPayload)
-      .eq('id', runRecord.id);
-
+    const { error: runUpdateError } = await runsRepo().updateById(runRecord.id, runPayload as Partial<RunsRow>);
     if (runUpdateError) {
-      throw new Error(`Failed to mark run as processed: ${runUpdateError.message}`);
+      throw new Error(`Failed to mark run as processed: ${String(runUpdateError)}`);
     }
   } else {
-    const { error: runInsertError } = await supabase.from('runs').insert(runPayload as RunsInsert);
-
+    const { error: runInsertError } = await runsRepo().insertOne(runPayload as RunsInsert);
     if (runInsertError) {
-      throw new Error(`Failed to record run: ${runInsertError.message}`);
+      throw new Error(`Failed to record run: ${String(runInsertError)}`);
     }
   }
 
@@ -336,11 +633,7 @@ async function checkModesPlayed(
     }
 
     // Récupérer les runs de la période
-    const { data: runs, error } = await supabase
-      .from('runs')
-      .select('mode')
-      .eq('user_id', userId)
-      .gte('created_at', startDate.toISOString());
+    const { data: runs, error } = await runsRepo().selectModesByUserSince(userId, startDate.toISOString());
 
     if (error) {
       console.error('[QUESTS] Erreur checkModesPlayed:', error);
@@ -390,17 +683,13 @@ async function updateDailyQuests(
 
     // Récupérer la progression des quêtes
     economyLog('[QUESTS] 📊 Récupération de quest_progress...');
-    const { data: questProgressData, error: fetchError } = await supabase
-      .from('quest_progress')
-      .select('*')
-      .eq('user_id', userId)
-      .eq('completed', false);
+    const { data: questProgressData, error: fetchError } = await questProgressRepo().selectIncompleteByUserId(userId);
 
     let questProgress = questProgressData;
 
     economyLog('[QUESTS] 📊 Résultat fetch:', {
       count: questProgress?.length,
-      error: fetchError?.message,
+      error: fetchError ? String(fetchError) : undefined,
       data: questProgress
     });
 
@@ -415,10 +704,7 @@ async function updateDailyQuests(
       economyLog('[QUESTS] 🔧 Tentative de création automatique des quest_progress...');
 
       // Récupérer toutes les quêtes actives
-      const { data: allActiveQuests, error: allQuestsErr } = await supabase
-        .from('daily_quests')
-        .select('*')
-        .eq('is_active', true);
+      const { data: allActiveQuests, error: allQuestsErr } = await dailyQuestsRepo().selectActive();
 
       if (allQuestsErr) {
         console.error('[QUESTS] ❌ Erreur récupération daily_quests:', allQuestsErr);
@@ -438,7 +724,7 @@ async function updateDailyQuests(
       const resetAt = tomorrow.toISOString();
 
       // Créer les entrées quest_progress
-      const progressToCreate = allActiveQuests.map(quest => ({
+      const progressToCreate: QuestProgressInsert[] = allActiveQuests.map((quest: DailyQuestRow) => ({
         user_id: userId,
         quest_key: quest.quest_key,
         current_value: 0,
@@ -446,10 +732,7 @@ async function updateDailyQuests(
         reset_at: resetAt,
       }));
 
-      const { data: createdProgress, error: createErr } = await supabase
-        .from('quest_progress')
-        .insert(progressToCreate)
-        .select();
+      const { error: createErr } = await questProgressRepo().insertMany(progressToCreate);
 
       if (createErr) {
         console.error('[QUESTS] ❌ Erreur création quest_progress:', createErr);
@@ -457,14 +740,10 @@ async function updateDailyQuests(
         return;
       }
 
-      economyLog(`[QUESTS] ✅ Créé ${createdProgress?.length || 0} quest_progress`);
+      economyLog(`[QUESTS] ✅ Créé ${progressToCreate.length} quest_progress`);
 
       // Récupérer à nouveau les quest_progress non complétés
-      const { data: newQuestProgress, error: refetchErr } = await supabase
-        .from('quest_progress')
-        .select('*')
-        .eq('user_id', userId)
-        .eq('completed', false);
+      const { data: newQuestProgress, error: refetchErr } = await questProgressRepo().selectIncompleteByUserId(userId);
 
       if (refetchErr || !newQuestProgress || newQuestProgress.length === 0) {
         console.error('[QUESTS] ❌ Impossible de récupérer quest_progress après création');
@@ -482,9 +761,7 @@ async function updateDailyQuests(
     const timestamp = new Date().toISOString();
 
     // Récupérer les templates de quêtes pour les target_value
-    const { data: dailyQuests, error: questsError } = await supabase
-      .from('daily_quests')
-      .select('*');
+    const { data: dailyQuests, error: questsError } = await dailyQuestsRepo().selectAll();
 
     if (questsError) {
       console.error('[QUESTS] Erreur fetch templates:', questsError);
@@ -642,15 +919,12 @@ async function updateDailyQuests(
     economyLog(`[QUESTS] 💾 ===== APPLICATION DES MISES À JOUR EN BASE =====`);
     for (const update of updates) {
       economyLog(`[QUESTS] 💾 Updating quest_progress ID=${update.id.substring(0, 8)}...`);
-      const { error: updateError } = await supabase
-        .from('quest_progress')
-        .update({
-          current_value: update.current_value,
-          completed: update.completed,
-          completed_at: update.completed_at,
-          updated_at: timestamp,
-        })
-        .eq('id', update.id);
+      const { error: updateError } = await questProgressRepo().updateById(update.id, {
+        current_value: update.current_value,
+        completed: update.completed,
+        completed_at: update.completed_at,
+        updated_at: timestamp,
+      });
 
       if (updateError) {
         console.error('[QUESTS] ❌ Erreur update DB pour ID', update.id, ':', updateError);
@@ -674,20 +948,13 @@ async function updateDailyQuests(
  */
 async function awardQuestXP(userId: string, xpAmount: number): Promise<void> {
   try {
-    const { data: profile, error: fetchError } = await supabase
-      .from('profiles')
-      .select('xp_total')
-      .eq('id', userId)
-      .single();
+    const { data: profile, error: fetchError } = await profilesRepo().selectXpTotalById(userId);
 
     if (fetchError) throw fetchError;
 
     const newXP = (profile?.xp_total || 0) + xpAmount;
 
-    const { error: updateError } = await supabase
-      .from('profiles')
-      .update({ xp_total: newXP })
-      .eq('id', userId);
+    const { error: updateError } = await profilesRepo().updateById(userId, { xp_total: newXP });
 
     if (updateError) throw updateError;
 
@@ -716,7 +983,8 @@ async function checkAndUnlockAchievements(
     const { data: userAchievements, error: fetchError } = await supabase
       .from('user_achievements')
       .select('achievement_key')
-      .eq('user_id', userId);
+      .eq('user_id', userId)
+      .returns<Array<Pick<UserAchievementRow, 'achievement_key'>>>();
 
     if (fetchError) {
       console.error('Erreur récupération achievements:', fetchError);
@@ -731,13 +999,11 @@ async function checkAndUnlockAchievements(
 
       if (shouldUnlockAchievement(key, userData)) {
         // Débloquer l'achievement
-        const { error: insertError } = await supabase
-          .from('user_achievements')
-          .insert({
-            user_id: userId,
-            achievement_key: key,
-            unlocked_at: new Date().toISOString(),
-          });
+        const { error: insertError } = await userAchievementsRepo().insertOne({
+          user_id: userId,
+          achievement_key: key,
+          unlocked_at: new Date().toISOString(),
+        });
 
         if (insertError) {
           console.error('Erreur débloquage achievement:', insertError);
@@ -770,23 +1036,14 @@ async function checkAndUnlockAchievements(
 export async function claimQuestReward(userId: string, questKey: string): Promise<{ success: boolean; xpEarned: number; partsEarned: number; error?: string }> {
   try {
     // 1. Vérifier la progression
-    const { data: progress, error: fetchError } = await supabase
-      .from('quest_progress')
-      .select('*')
-      .eq('user_id', userId)
-      .eq('quest_key', questKey)
-      .single();
+    const { data: progress, error: fetchError } = await questProgressRepo().selectByUserAndQuestKey(userId, questKey);
 
     if (fetchError || !progress) throw new Error('Quête non trouvée');
     if (!progress.completed) throw new Error('Quête non terminée');
     if (progress.claimed) throw new Error('Récompense déjà réclamée');
 
     // 2. Récupérer les détails de la quête (requête séparée car le JOIN ne fonctionne pas encore)
-    const { data: quest, error: questError } = await supabase
-      .from('daily_quests')
-      .select('*')
-      .eq('quest_key', questKey)
-      .single();
+    const { data: quest, error: questError } = await dailyQuestsRepo().selectByQuestKey(questKey);
 
     if (questError || !quest) throw new Error('Détails de quête manquants');
 
@@ -794,33 +1051,27 @@ export async function claimQuestReward(userId: string, questKey: string): Promis
     const partsAmount = quest.parts_reward || 0;
 
     // 2. Marquer comme réclamé AVANT de donner les récompenses (éviter les exploits)
-    const { error: updateProgressError } = await supabase
-      .from('quest_progress')
-      .update({ claimed: true, updated_at: new Date().toISOString() })
-      .eq('id', progress.id);
+    const { error: updateProgressError } = await questProgressRepo().updateById(progress.id, {
+      claimed: true,
+      updated_at: new Date().toISOString(),
+    });
 
     if (updateProgressError) throw updateProgressError;
 
     // 3. Attribuer les récompenses
-    const { data: profile, error: profileFetchError } = await supabase
-      .from('profiles')
-      .select('xp_total, parties_per_day')
-      .eq('id', userId)
-      .single();
+    const { data: profile, error: profileFetchError } = await profilesRepo().selectXpAndPartiesById(userId);
 
     if (profileFetchError) throw profileFetchError;
+    if (!profile) throw new Error('Profil introuvable');
 
     const newXP = (profile.xp_total || 0) + xpAmount;
     const newParties = (profile.parties_per_day || 0) + partsAmount;
 
-    const { error: profileUpdateError } = await supabase
-      .from('profiles')
-      .update({
-        xp_total: newXP,
-        parties_per_day: newParties,
-        updated_at: new Date().toISOString()
-      })
-      .eq('id', userId);
+    const { error: profileUpdateError } = await profilesRepo().updateById(userId, {
+      xp_total: newXP,
+      parties_per_day: newParties,
+      updated_at: new Date().toISOString(),
+    });
 
     if (profileUpdateError) throw profileUpdateError;
 
@@ -837,13 +1088,10 @@ export async function claimQuestReward(userId: string, questKey: string): Promis
 export async function rerollQuest(userId: string, questKey: string, rankIndex: number): Promise<{ success: boolean; newQuest?: any; error?: string }> {
   try {
     // 1. Vérifier le quota de reroll (1 par jour)
-    const { data: profile, error: profileError } = await supabase
-      .from('profiles')
-      .select('last_reroll_date, reroll_count')
-      .eq('id', userId)
-      .single();
+    const { data: profile, error: profileError } = await profilesRepo().selectRerollInfoById(userId);
 
     if (profileError) throw profileError;
+    if (!profile) throw new Error('Profil introuvable');
 
     const today = new Date().toISOString().split('T')[0];
     if (profile.last_reroll_date === today && profile.reroll_count >= 1) {
@@ -851,22 +1099,13 @@ export async function rerollQuest(userId: string, questKey: string, rankIndex: n
     }
 
     // 2. Récupérer la quête actuelle pour connaître son Tier
-    const { data: currentProgress, error: fetchError } = await supabase
-      .from('quest_progress')
-      .select('*')
-      .eq('user_id', userId)
-      .eq('quest_key', questKey)
-      .single();
+    const { data: currentProgress, error: fetchError } = await questProgressRepo().selectByUserAndQuestKey(userId, questKey);
 
     if (fetchError || !currentProgress) throw new Error('Quête à changer non trouvée');
     if (currentProgress.completed) throw new Error('Impossible de changer une quête déjà terminée');
 
     // Récupérer les détails de la quête actuelle (requête séparée)
-    const { data: currentQuest, error: questFetchError } = await supabase
-      .from('daily_quests')
-      .select('*')
-      .eq('quest_key', questKey)
-      .single();
+    const { data: currentQuest, error: questFetchError } = await dailyQuestsRepo().selectByQuestKey(questKey);
 
     if (questFetchError || !currentQuest) throw new Error('Détails de quête manquants');
 
@@ -875,31 +1114,22 @@ export async function rerollQuest(userId: string, questKey: string, rankIndex: n
 
     // 3. Chercher une nouvelle quête alternative du même Tier et de la même catégorie
     // On exclut les quêtes déjà possédées par le joueur
-    const { data: userProgress } = await supabase
-      .from('quest_progress')
-      .select('quest_key')
-      .eq('user_id', userId);
+    const { data: userProgress } = await questProgressRepo().selectQuestKeysByUserId(userId);
 
     const excludedKeys = userProgress?.map(p => p.quest_key) || [];
 
-    const { data: availableQuests, error: availError } = await supabase
-      .from('daily_quests')
-      .select('*')
-      .eq('quest_type', 'daily')
-      .eq('is_active', true)
-      .eq('difficulty', currentDifficulty)
-      .eq('category', currentCategory)
-      .not('quest_key', 'in', `(${excludedKeys.join(',')})`);
+    const { data: availableQuests, error: availError } = await dailyQuestsRepo().selectDailyActiveByDifficultyAndCategoryExcludingKeys({
+      difficulty: currentDifficulty,
+      category: currentCategory,
+      excludedKeys,
+    });
 
     if (availError || !availableQuests || availableQuests.length === 0) {
       // Si pas de même catégorie, on prend n'importe quelle catégorie du même tier
-      const { data: anyQuests } = await supabase
-        .from('daily_quests')
-        .select('*')
-        .eq('quest_type', 'daily')
-        .eq('is_active', true)
-        .eq('difficulty', currentDifficulty)
-        .not('quest_key', 'in', `(${excludedKeys.join(',')})`);
+      const { data: anyQuests } = await dailyQuestsRepo().selectDailyActiveByDifficultyExcludingKeys({
+        difficulty: currentDifficulty,
+        excludedKeys,
+      });
 
       if (!anyQuests || anyQuests.length === 0) throw new Error('Aucune quête alternative disponible');
 
@@ -916,30 +1146,24 @@ export async function rerollQuest(userId: string, questKey: string, rankIndex: n
   }
 }
 
-async function applyReroll(userId: string, progressId: string, newQuest: any, date: string, count: number) {
+async function applyReroll(userId: string, progressId: string, newQuest: DailyQuestRow, date: string, count: number) {
   // 1. Mettre à jour la progression avec la nouvelle quête
-  const { error: updateError } = await supabase
-    .from('quest_progress')
-    .update({
-      quest_key: newQuest.quest_key,
-      current_value: 0,
-      completed: false,
-      claimed: false,
-      completed_at: null,
-      updated_at: new Date().toISOString()
-    })
-    .eq('id', progressId);
+  const { error: updateError } = await questProgressRepo().updateById(progressId, {
+    quest_key: newQuest.quest_key,
+    current_value: 0,
+    completed: false,
+    claimed: false,
+    completed_at: null,
+    updated_at: new Date().toISOString(),
+  });
 
   if (updateError) throw updateError;
 
   // 2. Mettre à jour le quota dans le profil
-  const { error: profileError } = await supabase
-    .from('profiles')
-    .update({
-      last_reroll_date: date,
-      reroll_count: count
-    })
-    .eq('id', userId);
+  const { error: profileError } = await profilesRepo().updateById(userId, {
+    last_reroll_date: date,
+    reroll_count: count,
+  });
 
   if (profileError) throw profileError;
 

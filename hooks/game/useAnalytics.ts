@@ -6,6 +6,7 @@
 
 import { useCallback } from 'react';
 import { FirebaseAnalytics } from '../../lib/firebase';
+import { trackAppState as firebaseTrackAppState } from '../../lib/firebase';
 
 export function useAnalytics() {
   /**
@@ -34,9 +35,10 @@ export function useAnalytics() {
     level: number,
     levelName: string,
     eventsCompleted: number,
-    points: number
+    points: number,
+    correctAnswers: number = eventsCompleted
   ) => {
-    FirebaseAnalytics.levelCompleted(level, levelName, eventsCompleted, points);
+    FirebaseAnalytics.levelCompleted(level, levelName, eventsCompleted, correctAnswers, points);
   }, []);
 
   /**
@@ -127,7 +129,13 @@ export function useAnalytics() {
     level?: number,
     points?: number
   ) => {
-    FirebaseAnalytics.appState(state, timeLeft, level, points);
+    if (state === 'active' || state === 'background') {
+      firebaseTrackAppState(state, {
+        time_left: timeLeft,
+        current_level: level,
+        current_score: points,
+      });
+    }
   }, []);
 
   /**

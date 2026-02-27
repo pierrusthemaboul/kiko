@@ -143,8 +143,9 @@ function ClassicGameScreen({ requestedMode }: { requestedMode?: string }) {
 
   const handleActualRestart = useCallback(async () => {
     // 🔍 REACTOTRON LOG - DÉBUT REJOUER
-    if (__DEV__ && console.tron) {
-      console.tron.display({
+    const tron = (console as unknown as { tron?: any }).tron;
+    if (__DEV__ && tron) {
+      tron.display({
         name: '🎮 REJOUER - DÉBUT',
         preview: 'Utilisateur appuie sur Rejouer',
         value: {
@@ -162,17 +163,17 @@ function ClassicGameScreen({ requestedMode }: { requestedMode?: string }) {
     if (typeof startRun === 'function') {
       const economyMode: 'classic' | 'date' = gameLogic.gameMode?.variant === 'precision' ? 'date' : 'classic';
       try {
-        if (__DEV__ && console.tron) {
-          console.tron.log('📞 Appel startRun() - Enregistrement partie en DB');
+        if (__DEV__ && tron) {
+          tron.log('📞 Appel startRun() - Enregistrement partie en DB');
         }
         const res = await startRun(economyMode);
         if (!res.ok) throw new Error(res.message);
-        if (__DEV__ && console.tron) {
-          console.tron.log('✅ startRun() terminé - Résultat:', res);
+        if (__DEV__ && tron) {
+          tron.log('✅ startRun() terminé - Résultat:', res);
         }
       } catch (runError) {
-        if (__DEV__ && console.tron) {
-          console.tron.error('❌ Erreur dans startRun:', runError);
+        if (__DEV__ && tron) {
+          tron.error('❌ Erreur dans startRun:', runError);
         }
       }
     }
@@ -187,16 +188,16 @@ function ClassicGameScreen({ requestedMode }: { requestedMode?: string }) {
 
     if (gameLogic.initGame) {
       try {
-        if (__DEV__ && console.tron) {
-          console.tron.log('📞 Appel gameLogic.initGame()');
+        if (__DEV__ && tron) {
+          tron.log('📞 Appel gameLogic.initGame()');
         }
         await gameLogic.initGame();
-        if (__DEV__ && console.tron) {
-          console.tron.log('✅ gameLogic.initGame() terminé');
+        if (__DEV__ && tron) {
+          tron.log('✅ gameLogic.initGame() terminé');
         }
       } catch (error) {
-        if (__DEV__ && console.tron) {
-          console.tron.error('❌ Erreur dans initGame:', error);
+        if (__DEV__ && tron) {
+          tron.error('❌ Erreur dans initGame:', error);
         }
       }
     }
@@ -206,8 +207,8 @@ function ClassicGameScreen({ requestedMode }: { requestedMode?: string }) {
     Animated.timing(fadeAnim, { toValue: 1, duration: 500, useNativeDriver: true }).start();
 
     // 🔍 REACTOTRON LOG - FIN REJOUER
-    if (__DEV__ && console.tron) {
-      console.tron.display({
+    if (__DEV__ && tron) {
+      tron.display({
         name: '🎮 REJOUER - FIN',
         preview: 'Rejouer terminé',
         value: {
@@ -238,7 +239,7 @@ function ClassicGameScreen({ requestedMode }: { requestedMode?: string }) {
     }
 
     try {
-      router.replace('/(tabs)/');
+      router.replace('/(tabs)');
     } catch (e) {
     }
   }, [router, gameLogic.resetAdsState]);
@@ -392,7 +393,7 @@ function PrecisionGameScreen() {
   }, [fadeAnim, currentEvent?.id, lastResult?.event.id]);
 
   const handleMenu = useCallback(() => {
-    router.replace('/(tabs)/');
+    router.replace('/(tabs)');
   }, [router]);
 
   const showBlockingLoader = loading && !currentEvent && !error;

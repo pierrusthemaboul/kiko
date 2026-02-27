@@ -207,7 +207,9 @@ const UserInfo = forwardRef<UserInfoHandle, UserInfoProps>(
       }
     };
 
-    const getBonusIcon = (type: BonusType): string => {
+    type IoniconName = React.ComponentProps<typeof Ionicons>['name'];
+
+    const getBonusIcon = (type: BonusType): IoniconName => {
       switch (type) {
         case BonusType.TIME:
           return 'timer-outline';
@@ -474,7 +476,7 @@ const styles = StyleSheet.create({
   bonusProgressContainer: {
     height: 6,
     width: 50,
-    backgroundColor: colors.lightGrey,
+    backgroundColor: colors.transparencies.medium,
     borderRadius: 3,
     overflow: 'hidden',
   },

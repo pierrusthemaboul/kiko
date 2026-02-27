@@ -28,11 +28,11 @@ import QuestCarousel from '@/components/QuestCarousel';
 import DualLeaderboardCarousel from '@/components/DualLeaderboardCarousel';
 import { getAllQuestsWithProgress } from '@/utils/questSelection';
 import { supabase } from '@/lib/supabase/supabaseClients';
-import { getAdRequestOptions, getAdUnitId } from '@/lib/config/adConfig';
 import { useRewardedPlayAd } from '@/hooks/useRewardedPlayAd';
 import { useAudioContext } from '@/contexts/AudioContext';
 import { Logger } from '@/utils/logger';
 import { RemoteLogger } from '@/lib/remoteLogger';
+import { AdService } from '@/src/features/ads/AdService';
 
 const COLORS = {
   background: '#FAF7F2',     // Crème / Parchemin (Chaleureux)
@@ -87,86 +87,18 @@ export default function Vue1() {
     setAdSuccessLoading(true);
 
     try {
-      // Vérifier l'auth directement (pas de closure stale)
-      const { data: { user: authUser } } = await supabase.auth.getUser();
+      const result = await AdService.grantExtraPlayFromRewardedAd({
+        guestGrantExtraPlay: async () => {
+          await guestPlaysInfoRef.current.grantExtraPlay();
+        },
+        refreshPlaysInfo: async () => {
+          await refreshPlaysInfoRef.current();
+        },
+      });
 
-      if (authUser) {
-        // Utilisateur connecté : fetch-then-increment avec données fraîches
-        RemoteLogger.info('Ads', `🔄 Granting extra play for user ${authUser.id}`);
-
-        let success = false;
-        for (let attempt = 1; attempt <= 3 && !success; attempt++) {
-          try {
-            // 1. Lire la valeur actuelle FRAÎCHE depuis la DB
-            const { data: freshProfile, error: fetchError } = await (supabase
-              .from('profiles')
-              .select('parties_per_day')
-              .eq('id', authUser.id)
-              .single() as any);
-
-            if (fetchError) {
-              RemoteLogger.error('Ads', `Attempt ${attempt}: Failed to fetch profile: ${fetchError.message}`);
-              if (attempt < 3) { await new Promise(r => setTimeout(r, 1000 * attempt)); continue; }
-              break;
-            }
-
-            const currentAllowed = freshProfile?.parties_per_day ?? 3;
-            const newAllowed = currentAllowed + 1;
-
-            // 2. Incrémenter avec la valeur fraîche
-            const { error: updateError } = await (supabase
-              .from('profiles') as any)
-              .update({ parties_per_day: newAllowed })
-              .eq('id', authUser.id);
-
-            if (updateError) {
-              RemoteLogger.error('Ads', `Attempt ${attempt}: Failed to update: ${updateError.message}`);
-              if (attempt < 3) { await new Promise(r => setTimeout(r, 1000 * attempt)); continue; }
-              break;
-            }
-
-            // 3. Vérifier que l'update a pris effet
-            const { data: verifyProfile } = await (supabase
-              .from('profiles')
-              .select('parties_per_day')
-              .eq('id', authUser.id)
-              .single() as any);
-
-            if (verifyProfile?.parties_per_day >= newAllowed) {
-              success = true;
-              RemoteLogger.info('Ads', `✅ Extra play granted & verified: ${currentAllowed} → ${newAllowed}`);
-              FirebaseAnalytics.trackEvent('extra_play_granted', {
-                source: 'rewarded_ad',
-                user_id: authUser.id,
-                old_allowed: currentAllowed,
-                new_allowed: newAllowed,
-                attempt,
-              });
-            } else {
-              RemoteLogger.warn('Ads', `Attempt ${attempt}: Verification failed (got ${verifyProfile?.parties_per_day}, expected >= ${newAllowed})`);
-              if (attempt < 3) { await new Promise(r => setTimeout(r, 1000 * attempt)); }
-            }
-          } catch (attemptErr) {
-            RemoteLogger.error('Ads', `Attempt ${attempt} error: ${attemptErr instanceof Error ? attemptErr.message : String(attemptErr)}`);
-            if (attempt < 3) { await new Promise(r => setTimeout(r, 1000 * attempt)); }
-          }
-        }
-
-        if (!success) {
-          RemoteLogger.error('Ads', '❌ All 3 attempts to grant extra play failed');
-          FirebaseAnalytics.trackEvent('extra_play_grant_failed', {
-            user_id: authUser.id,
-            reason: 'all_attempts_failed',
-          });
-        }
-      } else {
-        // Mode invité
-        await guestPlaysInfoRef.current.grantExtraPlay();
-        RemoteLogger.info('Ads', '✅ Guest extra play granted via ad');
+      if (!result.ok) {
+        RemoteLogger.error('Ads', `❌ extra play grant failed: ${result.message}`);
       }
-
-      // Rafraîchir l'affichage des parties
-      await refreshPlaysInfoRef.current();
     } catch (err) {
       Logger.error('Ads', 'Error in handleRewardEarned', err);
       RemoteLogger.error('Ads', `❌ handleRewardEarned error: ${err instanceof Error ? err.message : String(err)}`);

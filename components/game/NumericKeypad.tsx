@@ -87,9 +87,9 @@ const KeyButton = memo<KeyButtonProps>(({ config, disabled, hasGuess, onDigit, o
   const isDelete = config.type === 'delete';
   const gradientColors =
     config.type === 'submit'
-      ? ['#E0B457', '#8C6B2B']
+      ? (['#E0B457', '#8C6B2B'] as const)
       : config.type === 'digit'
-        ? ['#1C1922', '#0F0E13']
+        ? (['#1C1922', '#0F0E13'] as const)
         : undefined;
 
   const buttonDisabled = disabled || (isSubmit && !hasGuess);

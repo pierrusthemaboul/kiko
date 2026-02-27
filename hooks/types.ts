@@ -89,11 +89,20 @@ export interface CategoryMastery {
   attempts: number;
 }
 
+export enum BonusType {
+  TIME = 'TIME',
+  STREAK = 'STREAK',
+  PERIOD = 'PERIOD',
+  MASTERY = 'MASTERY',
+  COMBO = 'COMBO',
+}
+
 // Interface pour un bonus actif
 export interface ActiveBonus {
-  type: string;
+  type: BonusType;
   multiplier: number;
   expiresAt: number;
+  duration: number;
 }
 
 // Interface pour la configuration d'un niveau avec des extensions
@@ -104,7 +113,8 @@ export interface ExtendedLevelConfig {
   timeGap: {
     minimum: number;
     base: number;
-    maximum: number;
+    maximum?: number;
+    variance?: number;
   };
   scoring: {
     basePoints: number;
@@ -115,4 +125,34 @@ export interface ExtendedLevelConfig {
   eventsSummary: LevelEventSummary[];
   pointsReward?: number;
   specialRules?: any[];
+}
+
+export type SpecialRules = Record<string, unknown>;
+
+export interface LevelConfig {
+  level: number;
+  name: string;
+  description: string;
+  eventsNeeded: number;
+  timeGap: {
+    base: number;
+    variance: number;
+    minimum: number;
+  };
+  eventSelection: {
+    minDifficulty: number;
+    maxDifficulty: number;
+    universalOnly: boolean;
+    specialEventChance: number;
+    preferModernEvents: boolean;
+    balancePeriods: boolean;
+  };
+  scoring: {
+    basePoints: number;
+    streakMultiplier: number;
+    timeMultiplier: number;
+    comboThreshold: number;
+  };
+  pointsReward?: number;
+  specialRules?: SpecialRules[];
 }

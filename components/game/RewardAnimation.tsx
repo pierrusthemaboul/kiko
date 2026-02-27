@@ -1,4 +1,4 @@
-import React, { useEffect, useRef, useCallback } from 'react';
+import React, { useEffect, useCallback, useRef } from 'react';
 import { View, Text, StyleSheet, Animated, Dimensions } from 'react-native';
 import { Ionicons } from '@expo/vector-icons';
 
@@ -176,16 +176,18 @@ const RewardAnimation: React.FC<RewardAnimationProps> = ({
   }, [targetPosition, startAnimation]);
 
   // Configuration de l'icône et de la couleur en fonction du type de récompense
+  type IoniconName = React.ComponentProps<typeof Ionicons>['name'];
+
   const getConfig = () => {
     switch (type) {
       case "POINTS":
-        return { icon: 'star', color: '#FFD700' }; // Or
+        return { icon: 'star-outline' as IoniconName, color: '#FFD700' }; // Or
       case "EXTRA_LIFE":
-        return { icon: 'heart', color: '#FF4757' }; // Rouge vif pour correspondre aux cœurs
+        return { icon: 'heart-outline' as IoniconName, color: '#FF4757' }; // Rouge vif pour correspondre aux cœurs
       case "STREAK_BONUS":
-        return { icon: 'flame', color: '#4169E1' }; // Bleu royal
+        return { icon: 'flame-outline' as IoniconName, color: '#4169E1' }; // Bleu royal
       default:
-        return { icon: 'star', color: '#1E88E5' }; // Bleu
+        return { icon: 'star-outline' as IoniconName, color: '#1E88E5' }; // Bleu
     }
   };
 

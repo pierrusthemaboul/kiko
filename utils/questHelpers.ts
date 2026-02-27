@@ -1,4 +1,22 @@
 import { supabase } from '@/lib/supabase/supabaseClients';
+import type { Database } from '@/lib/supabase/database.types';
+
+type DailyQuestRow = Database['public']['Tables']['daily_quests']['Row'];
+type QuestProgressInsert = Database['public']['Tables']['quest_progress']['Insert'];
+
+function questProgressRepo() {
+  // Frontière Supabase: certaines configs TS infèrent `never` sur `.insert()`.
+  const table = supabase.from('quest_progress') as unknown;
+
+  return {
+    async insertMany(values: QuestProgressInsert[]): Promise<{ error: unknown | null }> {
+      const res = await (table as {
+        insert: (v: QuestProgressInsert[]) => Promise<{ error: unknown | null }>;
+      }).insert(values);
+      return { error: res.error ?? null };
+    },
+  };
+}
 
 /**
  * Retourne le timestamp de minuit aujourd'hui en ISO (heure française UTC+1/UTC+2)
@@ -98,7 +116,8 @@ export async function initializeDailyQuests(userId: string): Promise<void> {
     const { data: allQuests, error: questsError } = await supabase
       .from('daily_quests')
       .select('quest_key, quest_type')
-      .eq('is_active', true);
+      .eq('is_active', true)
+      .returns<Array<Pick<DailyQuestRow, 'quest_key' | 'quest_type'>>>();
 
     if (questsError) throw questsError;
     if (!allQuests || allQuests.length === 0) {
@@ -107,7 +126,7 @@ export async function initializeDailyQuests(userId: string): Promise<void> {
     }
 
     // Créer les entrées de progression pour chaque quête avec le bon reset_at
-    const progressEntries = allQuests.map(quest => ({
+    const progressEntries: QuestProgressInsert[] = allQuests.map((quest) => ({
       user_id: userId,
       quest_key: quest.quest_key,
       current_value: 0,
@@ -115,9 +134,7 @@ export async function initializeDailyQuests(userId: string): Promise<void> {
       reset_at: getResetDateByType(quest.quest_type as 'daily' | 'weekly' | 'monthly'),
     }));
 
-    const { error: insertError } = await supabase
-      .from('quest_progress')
-      .insert(progressEntries);
+    const { error: insertError } = await questProgressRepo().insertMany(progressEntries);
 
     if (insertError) throw insertError;
 

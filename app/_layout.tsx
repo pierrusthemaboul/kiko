@@ -12,15 +12,15 @@ import { Stack, SplashScreen } from 'expo-router';
 import { useFonts } from 'expo-font';
 import * as Application from 'expo-application';
 import AsyncStorage from '@react-native-async-storage/async-storage';
-import { Platform, View, Text } from 'react-native';
+import { AppState, Platform, View, Text } from 'react-native';
 import * as SystemUI from 'expo-system-ui';
 import * as NavigationBar from 'expo-navigation-bar';
 
 import { FirebaseAnalytics } from '../lib/firebase';
 import { supabase } from '../lib/supabase/supabaseClients';
-import MobileAds from 'react-native-google-mobile-ads';
 import { useAdConsent } from '../hooks/useAdConsent';
 import { AudioProvider } from '../contexts/AudioContext';
+import { AdService } from '@/src/features/ads/AdService';
 
 const CURRENT_APP_VERSION = Application.nativeApplicationVersion || '1.0.0';
 const APP_VERSION_STORAGE_KEY = '@app_version';
@@ -57,30 +57,25 @@ export default function RootLayout() {
           await NavigationBar.setBehaviorAsync('overlay-swipe');
           await NavigationBar.setBackgroundColorAsync('#020817');
           await NavigationBar.setPositionAsync('absolute');
-
-          // Réappliquer le mode immersif régulièrement (au cas où l'utilisateur fait un swipe)
-          const interval = setInterval(async () => {
-            try {
-              // console.log('[IMMERSIVE MODE] Re-applying visibility: hidden');
-              await NavigationBar.setVisibilityAsync('hidden');
-            } catch (e) {
-              console.warn('[IMMERSIVE MODE] Interval error:', e);
-            }
-          }, 3000);
-
-          return () => clearInterval(interval);
         } catch (error) {
           console.error('[IMMERSIVE MODE] CRITICAL ERROR:', error);
         }
       }
     };
 
-    const cleanup = setupImmersiveMode();
-    return () => {
-      if (cleanup instanceof Promise) {
-        cleanup.then(fn => fn && fn());
-      }
+    const apply = () => {
+      setupImmersiveMode().catch(e => console.warn('[IMMERSIVE MODE] Apply error:', e));
     };
+
+    apply();
+
+    const subscription = AppState.addEventListener('change', (nextState) => {
+      if (nextState === 'active') {
+        apply();
+      }
+    });
+
+    return () => subscription.remove();
   }, []);
 
   // --- Initialisation (Firebase, Version Check) ---
@@ -123,39 +118,9 @@ export default function RootLayout() {
 
   // --- Configuration AdMob ---
   useEffect(() => {
-    const configureAdMob = async () => {
-      try {
-        // console.log('[AdMob Config] Starting AdMob initialization...');
-        await MobileAds().initialize();
-        // console.log('[AdMob Config] AdMob SDK Initialized successfully.');
-        await new Promise(resolve => setTimeout(resolve, 2000)); // Délai
-        try {
-          if (__DEV__) {
-            const myTestDeviceIds = ['3D55CC0D2A3E4E6EB5D0F1231DE2E59C'];
-            // console.log('[AdMob Config] DEV MODE - Configuring test devices:', myTestDeviceIds);
-            const requestConfig = { testDeviceIdentifiers: myTestDeviceIds };
-            await MobileAds().setRequestConfiguration(requestConfig);
-            // console.log('[AdMob Config] Test Devices Configured successfully.');
-          } else {
-            // console.log('[AdMob Config] PROD MODE - Skipping test device configuration.');
-          }
-        } catch (configError) {
-          console.warn('[AdMob Config] Failed to set AdMob request configuration:', configError);
-          FirebaseAnalytics.trackError('admob_config_warning', {
-            message: configError instanceof Error ? configError.message : 'Unknown request config error',
-            screen: 'RootLayout AdMob Setup',
-            severity: 'warning',
-          });
-        }
-      } catch (error) {
-        console.error("[AdMob Config] Failed to initialize AdMob:", error);
-        FirebaseAnalytics.trackError('admob_init_error', {
-          message: error instanceof Error ? error.message : 'Unknown AdMob init error',
-          screen: 'RootLayout AdMob Setup',
-        });
-      }
-    };
-    configureAdMob();
+    AdService.initializeMobileAds().catch(err => {
+      console.warn('[RootLayout] AdMob init error (non-blocking):', err);
+    });
   }, []);
 
   // --- Appliquer le consentement RGPD ---
@@ -217,11 +182,15 @@ export default function RootLayout() {
       }
     };
 
-    // Vérifier régulièrement si le splash a été montré
-    const interval = setInterval(checkSplashShown, 500);
     checkSplashShown();
 
-    return () => clearInterval(interval);
+    const subscription = AppState.addEventListener('change', (nextState) => {
+      if (nextState === 'active') {
+        checkSplashShown();
+      }
+    });
+
+    return () => subscription.remove();
   }, []);
 
   // --- Vérifier si l'utilisateur est en mode invité ---
@@ -237,11 +206,15 @@ export default function RootLayout() {
       }
     };
 
-    // Vérifier régulièrement si le mode invité est activé
-    const interval = setInterval(checkGuestMode, 500);
     checkGuestMode();
 
-    return () => clearInterval(interval);
+    const subscription = AppState.addEventListener('change', (nextState) => {
+      if (nextState === 'active') {
+        checkGuestMode();
+      }
+    });
+
+    return () => subscription.remove();
   }, []);
 
   // --- Gestion Erreur Polices ---

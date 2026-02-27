@@ -1,14 +1,11 @@
 'use client';
 
-import React, { useState, useEffect } from 'react';
-import { View, ScrollView, Pressable, Alert, Text, TextInput, Image } from 'react-native';
-import { 
-  Ionicons, 
-  MaterialIcons, 
-  MaterialCommunityIcons 
-} from '@expo/vector-icons';
+import React, { useEffect, useMemo, useState } from 'react';
+import { Alert, Image, Pressable, ScrollView, Text, TextInput, View } from 'react-native';
+import { Ionicons, MaterialCommunityIcons, MaterialIcons } from '@expo/vector-icons';
+import { router, useLocalSearchParams } from 'expo-router';
+
 import { supabase } from '@/lib/supabase/supabaseClients';
-import { router } from 'expo-router';
 
 // ==============================================================================
 // TYPES ET INTERFACES
@@ -43,6 +40,51 @@ interface ValidationStats {
   needsImageChange: number;
   needsTitleChange: number;
   rejected: number;
+}
+
+type ValidationStatus = 'pending' | 'validated' | 'needs_image_change' | 'needs_title_change' | 'rejected';
+
+type GojuUpdate = Partial<Pick<
+  ValidationEvent,
+  | 'illustration_url'
+  | 'prompt_flux'
+  | 'validation_status'
+  | 'validation_notes'
+  | 'validated_by'
+  | 'validated_at'
+  | 'needs_image_change'
+  | 'needs_title_change'
+>>;
+
+function gojuRepo() {
+  const table = supabase.from('goju') as unknown;
+
+  return {
+    async selectAllOrderedByDate(): Promise<{ data: ValidationEvent[] | null; error: unknown | null }> {
+      const res = await (table as {
+        select: (cols: '*') => {
+          order: (col: 'date', opts: { ascending: boolean }) => Promise<{ data: ValidationEvent[] | null; error: unknown | null }>;
+        };
+      })
+        .select('*')
+        .order('date', { ascending: true });
+
+      return { data: res.data ?? null, error: res.error ?? null };
+    },
+    async updateById(id: string, values: GojuUpdate): Promise<{ error: unknown | null }> {
+      const res = await (table as {
+        update: (v: GojuUpdate) => { eq: (col: 'id', value: string) => Promise<{ error: unknown | null }> };
+      })
+        .update(values)
+        .eq('id', id);
+
+      return { error: res.error ?? null };
+    },
+  };
+}
+
+function replaceToLogin() {
+  router.replace('/login' as unknown as Parameters<typeof router.replace>[0]);
 }
 
 interface PromptGenerationState {
@@ -217,15 +259,12 @@ function PromptGenerator({
       const data = await response.json();
       
       // Sauvegarder en base
-      const { error } = await supabase
-        .from('goju')
-        .update({
-          illustration_url: data.imageUrl,
-          prompt_flux: state.generatedPrompt,
-          validation_notes: `Image régénérée avec prompt IA`,
-          validated_at: new Date().toISOString()
-        })
-        .eq('id', eventId);
+      const { error } = await gojuRepo().updateById(String(eventId), {
+        illustration_url: (data as { imageUrl?: string }).imageUrl ?? '',
+        prompt_flux: state.generatedPrompt,
+        validation_notes: `Image régénérée avec prompt IA`,
+        validated_at: new Date().toISOString(),
+      });
 
       if (error) throw error;
 
@@ -247,11 +286,11 @@ function PromptGenerator({
         }));
       }, 3000);
 
-    } catch (error) {
+    } catch (error: unknown) {
       setState(prev => ({ 
         ...prev, 
         isSending: false,
-        error: error.message
+        error: error instanceof Error ? error.message : String(error)
       }));
     }
   };
@@ -438,7 +477,7 @@ export default function VueValid() {
       try {
         const { data: { user } } = await supabase.auth.getUser();
         if (!user) {
-          router.replace('/login');
+          replaceToLogin();
           return;
         }
 
@@ -456,18 +495,18 @@ export default function VueValid() {
           .from('profiles')
           .select('*')
           .eq('id', user.id)
-          .single();
+          .maybeSingle();
 
         setUserProfile({
-          ...profile,
-          email: user.email // Ajouter l'email depuis l'auth
+          ...(profile && typeof profile === 'object' ? profile : {}),
+          email: user.email,
         });
 
         // Charger les événements
         loadEvents();
       } catch (error) {
         console.error('Erreur chargement profil:', error);
-        router.replace('/login');
+        replaceToLogin();
       }
     };
 
@@ -478,10 +517,7 @@ export default function VueValid() {
   const loadEvents = async () => {
     try {
       setLoading(true);
-      const { data, error } = await supabase
-        .from('goju')
-        .select('*')
-        .order('date', { ascending: true });
+      const { data, error } = await gojuRepo().selectAllOrderedByDate();
 
       if (error) throw error;
 
@@ -489,7 +525,7 @@ export default function VueValid() {
       calculateStats(data || []);
 
       // Trouver le premier événement non traité
-      const firstPendingIndex = (data || []).findIndex(event => 
+      const firstPendingIndex = (data || []).findIndex((event) =>
         !event.validation_status || event.validation_status === 'pending'
       );
       
@@ -548,17 +584,14 @@ export default function VueValid() {
     if (!events[currentIndex]) return;
 
     try {
-      const { error } = await supabase
-        .from('goju')
-        .update({
-          validation_status: status,
-          validation_notes: notes,
-          validated_by: userProfile?.email,
-          validated_at: new Date().toISOString(),
-          needs_image_change: status === 'needs_image_change',
-          needs_title_change: status === 'needs_title_change'
-        })
-        .eq('id', events[currentIndex].id);
+      const { error } = await gojuRepo().updateById(events[currentIndex].id, {
+        validation_status: status,
+        validation_notes: notes,
+        validated_by: typeof userProfile?.email === 'string' ? userProfile.email : undefined,
+        validated_at: new Date().toISOString(),
+        needs_image_change: status === 'needs_image_change',
+        needs_title_change: status === 'needs_title_change',
+      });
 
       if (error) throw error;
 
@@ -641,8 +674,8 @@ export default function VueValid() {
 
   // Obtenir le badge de statut
   const getStatusBadge = (status: string) => {
-    const actualStatus = status || 'pending';
-    const statusConfig = {
+    const actualStatus = (status || 'pending') as ValidationStatus;
+    const statusConfig: Record<ValidationStatus, { bg: string; text: string; label: string }> = {
       pending: { bg: '#fef3c7', text: '#92400e', label: 'En attente' },
       validated: { bg: '#d1fae5', text: '#065f46', label: 'Validé' },
       needs_image_change: { bg: '#fed7aa', text: '#9a3412', label: 'Image à changer' },

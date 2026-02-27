@@ -1,5 +1,6 @@
 import { supabase } from '@/lib/supabase/supabaseClients';
-import type { DailyQuest } from '@/lib/economy/quests';
+import type { DailyQuest, QuestProgress, QuestWithProgress } from '@/lib/economy/quests';
+import type { Database } from '@/lib/supabase/database.types';
 import Constants from 'expo-constants';
 
 const QUEST_LOG_ENABLED = (() => {
@@ -14,6 +15,35 @@ const questLog = (..._args: unknown[]) => {
   if (!QUEST_LOG_ENABLED) return;
   // Quest logs intentionally disabled to avoid noisy output.
 };
+
+type QuestProgressInsert = Database['public']['Tables']['quest_progress']['Insert'];
+
+function questProgressRepo() {
+  // Adaptation strict-typing: certains fichiers du repo déclenchent un `never` sur `.from('quest_progress').insert(...)`
+  // On isole le contournement à cette frontière via `unknown`.
+  const table = supabase.from('quest_progress') as unknown;
+
+  return {
+    async insertMany(values: QuestProgressInsert[]): Promise<{ error: unknown | null }> {
+      const res = await (table as {
+        insert: (v: QuestProgressInsert[]) => Promise<{ error: unknown | null }>;
+      }).insert(values);
+      return { error: res.error ?? null };
+    },
+    async selectByUserId(userId: string): Promise<{ data: QuestProgress[] | null; error: unknown | null }> {
+      const res = await (table as {
+        select: (columns: '*') => {
+          eq: (col: 'user_id', value: string) => { returns: <T>() => Promise<{ data: T | null; error: unknown | null }> };
+        };
+      })
+        .select('*')
+        .eq('user_id', userId)
+        .returns<QuestProgress[]>();
+
+      return { data: res.data ?? null, error: res.error ?? null };
+    },
+  };
+}
 
 /**
  * Génère une seed basée sur la date du jour en heure française
@@ -82,7 +112,8 @@ export async function selectDailyQuests(rankIndex: number = 0): Promise<DailyQue
       .select('*')
       .eq('quest_type', 'daily')
       .eq('is_active', true)
-      .eq('difficulty', difficultyTier);
+      .eq('difficulty', difficultyTier)
+      .returns<DailyQuest[]>();
 
     if (error) throw error;
 
@@ -92,7 +123,8 @@ export async function selectDailyQuests(rankIndex: number = 0): Promise<DailyQue
         .from('daily_quests')
         .select('*')
         .eq('quest_type', 'daily')
-        .eq('is_active', true);
+        .eq('is_active', true)
+        .returns<DailyQuest[]>();
 
       const seed = getDailySeed();
       return shuffleWithSeed(fallbackQuests || [], seed).slice(0, 3) as DailyQuest[];
@@ -107,9 +139,9 @@ export async function selectDailyQuests(rankIndex: number = 0): Promise<DailyQue
 
     // Premier passage : on essaie de prendre des catégories uniques
     for (const q of shuffled) {
-      const cat = (q as any).category || 'general';
+      const cat = q.category || 'general';
       if (!usedCategories.has(cat)) {
-        selected.push(q as DailyQuest);
+        selected.push(q);
         usedCategories.add(cat);
       }
       if (selected.length >= 3) break;
@@ -119,7 +151,7 @@ export async function selectDailyQuests(rankIndex: number = 0): Promise<DailyQue
     if (selected.length < 3) {
       for (const q of shuffled) {
         if (!selected.find(s => s.quest_key === q.quest_key)) {
-          selected.push(q as DailyQuest);
+          selected.push(q);
         }
         if (selected.length >= 3) break;
       }
@@ -147,7 +179,8 @@ export async function getWeeklyQuests(rankIndex: number = 0): Promise<DailyQuest
       .select('*')
       .eq('quest_type', 'weekly')
       .eq('is_active', true)
-      .eq('difficulty', difficultyTier);
+      .eq('difficulty', difficultyTier)
+      .returns<DailyQuest[]>();
 
     if (error) throw error;
 
@@ -158,7 +191,8 @@ export async function getWeeklyQuests(rankIndex: number = 0): Promise<DailyQuest
         .from('daily_quests')
         .select('*')
         .eq('quest_type', 'weekly')
-        .eq('is_active', true);
+        .eq('is_active', true)
+        .returns<DailyQuest[]>();
       selected = fallback || [];
     }
 
@@ -188,7 +222,8 @@ export async function getMonthlyQuests(rankIndex: number = 0): Promise<DailyQues
       .select('*')
       .eq('quest_type', 'monthly')
       .eq('is_active', true)
-      .eq('difficulty', difficultyTier);
+      .eq('difficulty', difficultyTier)
+      .returns<DailyQuest[]>();
 
     if (error) throw error;
 
@@ -198,7 +233,8 @@ export async function getMonthlyQuests(rankIndex: number = 0): Promise<DailyQues
         .from('daily_quests')
         .select('*')
         .eq('quest_type', 'monthly')
-        .eq('is_active', true);
+        .eq('is_active', true)
+        .returns<DailyQuest[]>();
       selected = fallback || [];
     }
 
@@ -265,7 +301,7 @@ async function initializeQuestProgress(userId: string, quests: DailyQuest[]): Pr
     return;
   }
 
-  const progressEntries = quests.map(quest => {
+  const progressEntries: QuestProgressInsert[] = quests.map((quest) => {
     const resetAt = getResetDate(quest.quest_type as 'daily' | 'weekly' | 'monthly');
 
     return {
@@ -274,12 +310,10 @@ async function initializeQuestProgress(userId: string, quests: DailyQuest[]): Pr
       current_value: 0,
       completed: false,
       reset_at: resetAt,
-    } as any;
+    };
   });
 
-  const { error } = await supabase
-    .from('quest_progress')
-    .insert(progressEntries);
+  const { error } = await questProgressRepo().insertMany(progressEntries);
 
   if (error) {
     console.error('[QUESTS INIT] ❌ Erreur insert:', error);
@@ -345,15 +379,12 @@ export async function getAllQuestsWithProgress(userId: string, rankIndex: number
     questLog('[QUESTS] 🎯 Rank Index:', rankIndex);
 
     // Récupérer la progression de l'utilisateur
-    const { data: progressData, error: progressError } = await supabase
-      .from('quest_progress')
-      .select('*')
-      .eq('user_id', userId);
+    const { data: progressData, error: progressError } = await questProgressRepo().selectByUserId(userId);
 
     if (progressError) throw progressError;
 
     // LAZY LOADING: Créer les quêtes manquantes (nouvelles quêtes ajoutées ou premier accès)
-    const existingQuestKeys = new Set((progressData as any[])?.map((p: any) => p.quest_key) || []);
+    const existingQuestKeys = new Set((progressData ?? []).map((p) => p.quest_key));
     const missingQuests = allQuests.filter(q => !existingQuestKeys.has(q.quest_key));
 
     if (missingQuests.length > 0) {
@@ -361,17 +392,14 @@ export async function getAllQuestsWithProgress(userId: string, rankIndex: number
       await initializeQuestProgress(userId, missingQuests);
 
       // Récupérer à nouveau après ajout
-      const { data: updatedProgressData } = await supabase
-        .from('quest_progress')
-        .select('*')
-        .eq('user_id', userId);
+      const { data: updatedProgressData } = await questProgressRepo().selectByUserId(userId);
 
-      questLog('[QUESTS LAZY] ✅ Total:', (updatedProgressData as any[])?.length || 0, 'quêtes');
+      questLog('[QUESTS LAZY] ✅ Total:', updatedProgressData?.length || 0, 'quêtes');
 
-      const mapQuestsWithProgress = (qs: DailyQuest[]) =>
-        qs.map((quest) => ({
+      const mapQuestsWithProgress = (qs: DailyQuest[]): QuestWithProgress[] =>
+        qs.map((quest): QuestWithProgress => ({
           ...quest,
-          progress: (updatedProgressData as any[])?.find((p: any) => p.quest_key === quest.quest_key) || null,
+          progress: updatedProgressData?.find((p) => p.quest_key === quest.quest_key) || null,
         }));
 
       return {
@@ -382,10 +410,10 @@ export async function getAllQuestsWithProgress(userId: string, rankIndex: number
     }
 
     // Combiner les quêtes avec leur progression
-    const mapQuestsWithProgress = (qs: DailyQuest[]) =>
-      qs.map((quest) => ({
+    const mapQuestsWithProgress = (qs: DailyQuest[]): QuestWithProgress[] =>
+      qs.map((quest): QuestWithProgress => ({
         ...quest,
-        progress: (progressData as any[])?.find((p: any) => p.quest_key === quest.quest_key) || null,
+        progress: (progressData ?? []).find((p) => p.quest_key === quest.quest_key) || null,
       }));
 
     return {

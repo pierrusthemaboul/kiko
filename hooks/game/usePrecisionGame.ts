@@ -1,10 +1,121 @@
 import { useCallback, useEffect, useMemo, useRef, useState } from 'react';
 import { supabase } from '../../lib/supabase/supabaseClients';
+import type { Database } from '../../lib/supabase/database.types';
 import { FirebaseAnalytics } from '../../lib/firebase';
 import { Event } from '../types';
 import { usePrecisionAds } from './usePrecisionAds';
 import { applyEndOfRunEconomy } from '../../lib/economy/apply';
 import { useAppStateDetection } from './useAppStateDetection';
+
+type PrecisionScoreInsert = {
+  user_id: string;
+  display_name: string;
+  score: number;
+};
+
+type PrecisionScoreRow = PrecisionScoreInsert & {
+  created_at?: string;
+};
+
+type GameScoreInsert = Database['public']['Tables']['game_scores']['Insert'];
+type GameScoreRow = Database['public']['Tables']['game_scores']['Row'];
+
+type ProfilePrecisionSelect = Pick<
+  Database['public']['Tables']['profiles']['Row'],
+  'display_name' | 'high_score'
+>;
+
+type EvenementRow = {
+  id: string;
+  titre: string;
+  date: string;
+  date_formatee?: string | null;
+  types_evenement?: unknown;
+  illustration_url?: string | null;
+  notoriete?: number | null;
+  description_detaillee?: string | null;
+  niveau_difficulte?: number | null;
+};
+
+function precisionScoresRepo() {
+  const table = supabase.from('precision_scores') as unknown;
+
+  return {
+    async insertOne(values: PrecisionScoreInsert): Promise<{ error: unknown | null }> {
+      const res = await (table as {
+        insert: (v: PrecisionScoreInsert) => Promise<{ error: unknown | null }>;
+      }).insert(values);
+      return { error: res.error ?? null };
+    },
+    async selectTopSince(startIso: string): Promise<{ data: Array<Pick<PrecisionScoreRow, 'display_name' | 'score'>> | null; error: unknown | null }> {
+      const res = await (table as {
+        select: (cols: 'display_name, score') => {
+          gte: (col: 'created_at', value: string) => {
+            order: (col2: 'score', opts: { ascending: boolean }) => {
+              limit: (n: number) => Promise<{ data: Array<Pick<PrecisionScoreRow, 'display_name' | 'score'>> | null; error: unknown | null }>;
+            };
+          };
+        };
+      })
+        .select('display_name, score')
+        .gte('created_at', startIso)
+        .order('score', { ascending: false })
+        .limit(5);
+
+      return { data: res.data ?? null, error: res.error ?? null };
+    },
+  };
+}
+
+function profilesRepo() {
+  const table = supabase.from('profiles') as unknown;
+
+  return {
+    async selectPrecisionById(userId: string): Promise<{ data: ProfilePrecisionSelect | null; error: unknown | null }> {
+      const res = await (table as {
+        select: (cols: 'display_name, high_score') => {
+          eq: (col: 'id', value: string) => { maybeSingle: () => Promise<{ data: ProfilePrecisionSelect | null; error: unknown | null }> };
+        };
+      })
+        .select('display_name, high_score')
+        .eq('id', userId)
+        .maybeSingle();
+
+      return { data: res.data ?? null, error: res.error ?? null };
+    },
+  };
+}
+
+function gameScoresRepo() {
+  const table = supabase.from('game_scores') as unknown;
+
+  return {
+    async insertOne(values: GameScoreInsert): Promise<{ error: unknown | null }> {
+      const res = await (table as {
+        insert: (v: GameScoreInsert) => Promise<{ error: unknown | null }>;
+      }).insert(values);
+      return { error: res.error ?? null };
+    },
+  };
+}
+
+function evenementsRepo() {
+  const table = supabase.from('evenements') as unknown;
+
+  return {
+    async selectForPrecisionMode(): Promise<{ data: EvenementRow[] | null; error: unknown | null }> {
+      const res = await (table as {
+        select: (cols: string) => {
+          order: (col: 'notoriete', opts: { ascending: boolean }) => Promise<{ data: EvenementRow[] | null; error: unknown | null }>;
+        };
+      })
+        .select('id, titre, date, date_formatee, types_evenement, illustration_url, notoriete, description_detaillee, niveau_difficulte')
+        .order('notoriete', { ascending: false });
+
+      return { data: res.data ?? null, error: res.error ?? null };
+    },
+  };
+}
 
 // Générateur d'UUID compatible React Native
 function generateUUID(): string {
@@ -685,15 +796,11 @@ export function usePrecisionGame() {
         return;
       }
 
-      const { data: profile } = await supabase
-        .from('profiles')
-        .select('display_name, high_score_precision')
-        .eq('id', user.id)
-        .maybeSingle();
+      const { data: profile } = await profilesRepo().selectPrecisionById(user.id);
 
       if (profile) {
         setPlayerName(profile.display_name || 'Joueur');
-        setPersonalBest(profile.high_score_precision || 0);
+        setPersonalBest(profile.high_score || 0);
       }
     } catch (err) {
       console.error('[usePrecisionGame] Error loading profile:', err);
@@ -709,7 +816,7 @@ export function usePrecisionGame() {
 
       if (user) {
         // Insert current score in precision_scores (legacy table)
-        const { error: insertError } = await supabase.from('precision_scores').insert({
+        const { error: insertError } = await precisionScoresRepo().insertOne({
           user_id: user.id,
           display_name: currentDisplayName,
           score: finalScore,
@@ -718,7 +825,7 @@ export function usePrecisionGame() {
         if (insertError) {
           console.error('[usePrecisionGame] Error inserting score in precision_scores:', insertError);
           FirebaseAnalytics.trackError('precision_score_insert_error', {
-            message: `${insertError.message} (code: ${insertError.code}, score: ${finalScore})`,
+            message: `${String(insertError)} (score: ${finalScore})`,
             screen: 'usePrecisionGame',
             context: 'loadLeaderboards',
           });
@@ -727,7 +834,7 @@ export function usePrecisionGame() {
         }
 
         // Insert current score in game_scores with mode 'precision' for unified leaderboards
-        const { error: gameScoresError } = await supabase.from('game_scores').insert({
+        const { error: gameScoresError } = await gameScoresRepo().insertOne({
           user_id: user.id,
           display_name: currentDisplayName,
           score: finalScore,
@@ -737,7 +844,7 @@ export function usePrecisionGame() {
         if (gameScoresError) {
           console.error('[usePrecisionGame] Error inserting score in game_scores:', gameScoresError);
           FirebaseAnalytics.trackError('precision_game_scores_insert_error', {
-            message: `${gameScoresError.message} (code: ${gameScoresError.code}, score: ${finalScore})`,
+            message: `${String(gameScoresError)} (score: ${finalScore})`,
             screen: 'usePrecisionGame',
             context: 'loadLeaderboards',
           });
@@ -786,23 +893,13 @@ export function usePrecisionGame() {
       const firstDayOfMonth = `${today.substring(0, 7)}-01`;
 
       const [dailyRes, monthlyRes, allTimeRes] = await Promise.all([
-        supabase
-          .from('precision_scores')
-          .select('display_name, score')
-          .gte('created_at', `${today}T00:00:00.000Z`)
-          .order('score', { ascending: false })
-          .limit(5),
-        supabase
-          .from('precision_scores')
-          .select('display_name, score')
-          .gte('created_at', `${firstDayOfMonth}T00:00:00.000Z`)
-          .order('score', { ascending: false })
-          .limit(5),
+        precisionScoresRepo().selectTopSince(`${today}T00:00:00.000Z`),
+        precisionScoresRepo().selectTopSince(`${firstDayOfMonth}T00:00:00.000Z`),
         supabase
           .from('profiles')
-          .select('display_name, high_score_precision')
-          .not('high_score_precision', 'is', null)
-          .order('high_score_precision', { ascending: false })
+          .select('display_name, high_score')
+          .not('high_score', 'is', null)
+          .order('high_score', { ascending: false })
           .limit(5),
       ]);
 
@@ -813,21 +910,21 @@ export function usePrecisionGame() {
       // Track les erreurs de récupération des leaderboards
       if (dailyRes.error) {
         FirebaseAnalytics.trackError('precision_leaderboard_fetch_error', {
-          message: `Daily: ${dailyRes.error.message}`,
+          message: `Daily: ${String(dailyRes.error)}`,
           screen: 'usePrecisionGame',
           context: 'loadLeaderboards_daily',
         });
       }
       if (monthlyRes.error) {
         FirebaseAnalytics.trackError('precision_leaderboard_fetch_error', {
-          message: `Monthly: ${monthlyRes.error.message}`,
+          message: `Monthly: ${String(monthlyRes.error)}`,
           screen: 'usePrecisionGame',
           context: 'loadLeaderboards_monthly',
         });
       }
       if (allTimeRes.error) {
         FirebaseAnalytics.trackError('precision_leaderboard_fetch_error', {
-          message: `All-time: ${allTimeRes.error.message}`,
+          message: `All-time: ${String(allTimeRes.error)}`,
           screen: 'usePrecisionGame',
           context: 'loadLeaderboards_alltime',
         });
@@ -843,7 +940,7 @@ export function usePrecisionGame() {
       setLeaderboards({
         daily: formatScores(dailyRes.data || [], 'score'),
         monthly: formatScores(monthlyRes.data || [], 'score'),
-        allTime: formatScores(allTimeRes.data || [], 'high_score_precision'),
+        allTime: formatScores(allTimeRes.data || [], 'high_score'),
       });
       setLeaderboardsReady(true);
       FirebaseAnalytics.leaderboard('precision_summary_loaded');
@@ -863,18 +960,15 @@ export function usePrecisionGame() {
     setLoading(true);
     setError(null);
     try {
-      const { data, error: supabaseError } = await supabase
-        .from('evenements')
-        .select('id, titre, date, date_formatee, types_evenement, illustration_url, notoriete, description_detaillee, niveau_difficulte')
-        .order('notoriete', { ascending: false });
+      const { data, error: supabaseError } = await evenementsRepo().selectForPrecisionMode();
 
       if (supabaseError) {
         throw supabaseError;
       }
 
       const validEvents = (data ?? [])
-        .filter((event) => !!event && !!event.id && !!event.titre && !!event.date)
-        .map((event) => ({
+        .filter((event: EvenementRow) => Boolean(event?.id && event?.titre && event?.date))
+        .map((event: EvenementRow) => ({
           ...event,
           illustration_url: event.illustration_url ?? '',
           types_evenement: Array.isArray(event.types_evenement) ? event.types_evenement : [],

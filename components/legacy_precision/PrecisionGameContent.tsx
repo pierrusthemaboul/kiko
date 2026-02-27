@@ -89,10 +89,9 @@ const PrecisionGameBackground = memo(() => (
     source={require('../../assets/images/bgpreci.png')}
     resizeMode="cover"
     style={StyleSheet.absoluteFill}
-    pointerEvents="none"
   >
     <LinearGradient
-      colors={['rgba(0,0,0,0.55)', 'rgba(0,0,0,0.45)', 'rgba(0,0,0,0.60)']}
+      colors={['rgba(0,0,0,0.55)', 'rgba(0,0,0,0.45)', 'rgba(0,0,0,0.60)'] as const}
       style={StyleSheet.absoluteFill}
       pointerEvents="none"
     />

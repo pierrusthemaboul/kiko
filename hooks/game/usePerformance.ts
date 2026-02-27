@@ -12,12 +12,12 @@ import {
  */
 export function usePerformance() {
   // États pour le tracking des performances
-  const [periodStats, setPeriodStats] = useState<Record<HistoricalPeriod, HistoricalPeriodStats>>({});
+  const [periodStats, setPeriodStats] = useState<Partial<Record<HistoricalPeriod, HistoricalPeriodStats>>>({});
   const [categoryMastery, setCategoryMastery] = useState<Record<string, CategoryMastery>>({});
   const [eventHistory, setEventHistory] = useState<{ type: string; period: string; success: boolean; }[]>([]);
   const [performanceStats, setPerformanceStats] = useState<{
-    typeSuccess: Record<string, number>;
-    periodSuccess: Record<string, number>;
+    typeSuccess: Record<string, [number, number]>;
+    periodSuccess: Record<string, [number, number]>;
     overallAccuracy: number;
   }>({
     typeSuccess: {},
@@ -35,10 +35,13 @@ export function usePerformance() {
   const updatePerformanceStats = useCallback((type: string, period: string, success: boolean) => {
     setPerformanceStats((prev) => {
       // Logique de calcul interne
-      const typeAttempts = (prev.typeSuccess[type] ? prev.typeSuccess[type][1] : 0) + 1;
-      const typeSuccesses = (prev.typeSuccess[type] ? prev.typeSuccess[type][0] : 0) + (success ? 1 : 0);
-      const periodAttempts = (prev.periodSuccess[period] ? prev.periodSuccess[period][1] : 0) + 1;
-      const periodSuccesses = (prev.periodSuccess[period] ? prev.periodSuccess[period][0] : 0) + (success ? 1 : 0);
+      const [prevTypeSuccesses, prevTypeAttempts] = prev.typeSuccess[type] ?? [0, 0];
+      const [prevPeriodSuccesses, prevPeriodAttempts] = prev.periodSuccess[period] ?? [0, 0];
+
+      const typeAttempts = prevTypeAttempts + 1;
+      const typeSuccesses = prevTypeSuccesses + (success ? 1 : 0);
+      const periodAttempts = prevPeriodAttempts + 1;
+      const periodSuccesses = prevPeriodSuccesses + (success ? 1 : 0);
       const totalAttempts = eventHistory.length;
       const totalSuccesses = eventHistory.filter(e => e.success).length + (success ? 1 : 0);
       

@@ -173,13 +173,13 @@ export default function SignUp() {
       const userId = user.id;
 
       // 5. Création du profil (inchangée)
-      const { error: profileError } = await supabase
-        .from('profiles')
-        .insert({
-            id: userId,
-            display_name: nickname.trim(),
-            // email: email.trim(), // Ne pas stocker l'email ici s'il est déjà dans auth.users
-          });
+      const profilesTable = supabase.from('profiles') as unknown;
+      const { error: profileError } = await (profilesTable as {
+        insert: (values: { id: string; display_name: string }) => Promise<{ error: { message: string } | null }>;
+      }).insert({
+        id: userId,
+        display_name: nickname.trim(),
+      });
 
       if (profileError) {
         console.error('❌ Profile creation error:', profileError);
@@ -222,7 +222,6 @@ export default function SignUp() {
       const redirectTo = AuthSession.makeRedirectUri({
         scheme: APP_AUTH_SCHEME,
         path: GOOGLE_REDIRECT_PATH,
-        useProxy: false,
       });
 
       const { data, error } = await supabase.auth.signInWithOAuth({

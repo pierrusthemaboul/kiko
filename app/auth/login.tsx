@@ -161,7 +161,6 @@ export default function Login() {
       const redirectTo = AuthSession.makeRedirectUri({
         scheme: APP_AUTH_SCHEME,
         path: GOOGLE_REDIRECT_PATH,
-        useProxy: false,
       });
 
       const { data, error } = await supabase.auth.signInWithOAuth({
