@@ -1,0 +1,13 @@
+{
+  "titre": "Fondation du Tour Auto (course automobile)",
+  "raison_echec_precedente": "REPLACE — L'image contient une date explicite, ce qui est interdit par le règlement de l'École d'Art Timalaus. De plus, la scène est trop générique et les visages sont trop reconnaissables, augmentant le risque juridique.",
+  "archiviste": "- **Essence** : La naissance d'une légende de la course automobile, un défi d'endurance et d'innovation à travers les paysages changeants de la France. L'émotion dominante est un mélange d'audace, de compétition féroce, et de fascination pour la mécanique.\n- **Archetype** : `dramatic_action`\n- **Moment_critique** : Une voiture de tête négociant un virage serré dans un col de montagne sous un soleil éclatant, la foule massée sur le bord de la route.\n- **Indices_uniques** : La juxtaposition d'une voiture de course élégante des années 50 avec un village pittoresque en arrière-plan.\n- **Objets** :\n    - Voiture de course (ex: Ferrari 250 GT, Mercedes-Benz 300 SL)\n    - Casque de pilote en cuir\n    - Lunettes de protection style aviateur\n    - Chronomètre de course\n    - Panneau de signalisation \"Tour Auto\" vintage\n- **Textures** :\n    - Métal poli de la carrosserie\n    - Cuir craquelé des sièges et du casque\n    - Asphalte rugueux de la route\n    - Pierre des bâtiments anciens\n    - Tissu des vêtements de la foule (coton, lin)\n- **Alertes** :\n    - Marques automobiles : Éviter les logos modernes.\n    - Personnalités : Pas de visages reconnaissables. Privilégier une vue du pilote à travers le pare-brise ou un plan sur les mains gantées sur le volant.\n",
+  "prompt_genere": "Cinematic wide shot, dramatic low angle, vintage 1950s race car speeding around a sharp hairpin turn in a sun-drenched French mountain pass. Gleaming polished metal body, blurred background of cheering crowd, driver's gloved hands gripping the steering wheel. Background : quaint European village nestled in the valley below, bright blue sky, unbranded vintage racing signage. Full color, sharp focus, dynamic composition, warm sunny light, asphalt texture. No visible logos or recognizable faces.",
+  "audit_nouvelle_image": {
+    "score_final": 3,
+    "scannability": 6,
+    "dominance": 3,
+    "compliance": 1,
+    "critique": "REJETÉ - Bien que la date soit absente, l'image présente encore des problèmes importants. La scène reste trop générique et la foule de spectateurs viole la règle interdisant les foules. De plus, le visage du conducteur est visible, ce qui pose un risque de violation du droit à l'image. La dominance du sujet (la voiture) est insuffisante car d'autres éléments (paysage, foule) distraient l'attention."
+  }
+}

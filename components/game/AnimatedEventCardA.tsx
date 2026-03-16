@@ -77,6 +77,31 @@ const AnimatedEventCardA: React.FC<AnimatedEventCardAProps> = ({
     checkAdmin();
   }, []);
 
+  // 1.E.4. Fonction pour extraire l'année d'une date
+  const getYearFromDate = (dateString: string): string => {
+    try {
+      // Si c'est déjà une année à 4 chiffres, on la retourne directement
+      if (/^\d{4}$/.test(dateString)) return dateString;
+
+      // Si c'est une date formatée "YYYY-MM-DD", on extrait l'année
+      if (dateString.includes('-')) return dateString.split('-')[0];
+
+      // Si c'est une date formatée localisée, on tente d'extraire l'année
+      if (event.date_formatee) {
+        const parts = event.date_formatee.split(' ');
+        for (const part of parts) {
+          if (/^\d{4}$/.test(part)) return part;
+        }
+      }
+
+      // Fallback: retour de la chaîne originale
+      return dateString;
+    } catch (error) {
+      console.error('Error extracting year from date:', error);
+      return dateString;
+    }
+  };
+
   // Fonction de régénération
   const handleRegenerate = async () => {
     if (!event || !event.id) return;
@@ -85,7 +110,8 @@ const AnimatedEventCardA: React.FC<AnimatedEventCardAProps> = ({
       const { error } = await (supabase.from('aregenerer') as any).insert({
         evenement_id: event.id,
         titre: event.titre,
-        year: parseInt(getYearFromDate(event.date), 10) || 0
+        year: parseInt(getYearFromDate(event.date), 10) || 0,
+        status: 'pending',
       });
       if (error) throw error;
       Alert.alert('Succès', 'Événement envoyé en régénération dans la Chambre Noire.');
@@ -198,31 +224,6 @@ const AnimatedEventCardA: React.FC<AnimatedEventCardAProps> = ({
       }
     }
   }, [event?.titre, position]);
-
-  // 1.E.4. Fonction pour extraire l'année d'une date
-  const getYearFromDate = (dateString: string): string => {
-    try {
-      // Si c'est déjà une année à 4 chiffres, on la retourne directement
-      if (/^\d{4}$/.test(dateString)) return dateString;
-
-      // Si c'est une date formatée "YYYY-MM-DD", on extrait l'année
-      if (dateString.includes('-')) return dateString.split('-')[0];
-
-      // Si c'est une date formatée localisée, on tente d'extraire l'année
-      if (event.date_formatee) {
-        const parts = event.date_formatee.split(' ');
-        for (const part of parts) {
-          if (/^\d{4}$/.test(part)) return part;
-        }
-      }
-
-      // Fallback: retour de la chaîne originale
-      return dateString;
-    } catch (error) {
-      console.error('Error extracting year from date:', error);
-      return dateString;
-    }
-  };
 
   // 1.E.5. Rendu du titre avec ou sans effet d'ombre
   const renderTitle = () => {

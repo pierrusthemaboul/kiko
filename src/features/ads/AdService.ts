@@ -202,75 +202,57 @@ export const AdService = {
         return { ok: true, userType: 'guest' };
       }
 
-      type ProfilePlaysRow = { parties_per_day: number | null };
-
-      const profiles = profilesRepo();
-
       let success = false;
       let lastErrorMessage = 'Unknown error';
+      let lastOldAllowed: number | null = null;
+      let lastNewAllowed: number | null = null;
 
       for (let attempt = 1; attempt <= 3 && !success; attempt++) {
         try {
-          RemoteLogger.info('Ads', `🔄 Granting extra play for user ${authUser.id} (attempt ${attempt})`);
+          RemoteLogger.info('Ads', `🔄 Granting extra play for user ${authUser.id} via RPC (attempt ${attempt})`);
 
-          const { data: freshProfile, error: fetchError } = await profiles.selectPartiesPerDayByUserId(authUser.id);
+          const { data, error } = await (supabase as any).rpc('grant_extra_play', { p_increment: 1 });
 
-          if (fetchError) {
-            lastErrorMessage = fetchError.message;
-            RemoteLogger.error('Ads', `Attempt ${attempt}: Failed to fetch profile: ${fetchError.message}`);
-            if (attempt < 3) {
-              await delay(1000 * attempt);
-              continue;
-            }
-            break;
-          }
-
-          const currentAllowed = freshProfile?.parties_per_day ?? 3;
-          const newAllowed = currentAllowed + 1;
-
-          const updatePayload: ProfilesUpdateRow = { parties_per_day: newAllowed };
-
-          const { error: updateError } = await profiles.updatePartiesPerDayByUserId(authUser.id, updatePayload);
-
-          if (updateError) {
-            lastErrorMessage = updateError.message;
-            RemoteLogger.error('Ads', `Attempt ${attempt}: Failed to update: ${updateError.message}`);
-            if (attempt < 3) {
-              await delay(1000 * attempt);
-              continue;
-            }
-            break;
-          }
-
-          const { data: verifyProfile, error: verifyError } = await profiles.selectPartiesPerDayByUserId(authUser.id);
-
-          if (verifyError) {
-            lastErrorMessage = verifyError.message;
-            RemoteLogger.warn('Ads', `Attempt ${attempt}: Verification fetch failed: ${verifyError.message}`);
-          }
-
-          const verifiedAllowed = verifyProfile?.parties_per_day ?? newAllowed;
-
-          if (verifiedAllowed >= newAllowed) {
-            success = true;
-            RemoteLogger.info('Ads', `✅ Extra play granted & verified: ${currentAllowed} → ${newAllowed}`);
-            FirebaseAnalytics.trackEvent('extra_play_granted', {
-              source: 'rewarded_ad',
-              user_id: authUser.id,
-              old_allowed: currentAllowed,
-              new_allowed: newAllowed,
-              attempt,
+          if (error) {
+            lastErrorMessage = error.message;
+            RemoteLogger.error('Ads', `Attempt ${attempt}: RPC grant_extra_play failed: ${error.message}`);
+            FirebaseAnalytics.trackError('extra_play_rpc_error', {
+              message: error.message,
+              screen: 'AdService.grantExtraPlayFromRewardedAd',
+              context: `attempt=${attempt}`,
+              severity: 'error',
             });
-          } else {
-            lastErrorMessage = `Verification failed (got ${verifiedAllowed}, expected >= ${newAllowed})`;
-            RemoteLogger.warn('Ads', `Attempt ${attempt}: ${lastErrorMessage}`);
             if (attempt < 3) {
               await delay(1000 * attempt);
+              continue;
             }
+            break;
           }
+
+          const row: any = Array.isArray(data) ? data[0] : data;
+          const oldAllowed = typeof row?.old_allowed === 'number' ? row.old_allowed : null;
+          const newAllowed = typeof row?.new_allowed === 'number' ? row.new_allowed : null;
+          lastOldAllowed = oldAllowed;
+          lastNewAllowed = newAllowed;
+
+          success = true;
+          RemoteLogger.info('Ads', `✅ Extra play granted via RPC: ${oldAllowed ?? 'unknown'} → ${newAllowed ?? 'unknown'}`);
+          FirebaseAnalytics.trackEvent('extra_play_granted', {
+            source: 'rewarded_ad',
+            user_id: authUser.id,
+            old_allowed: oldAllowed ?? -1,
+            new_allowed: newAllowed ?? -1,
+            attempt,
+          });
         } catch (attemptErr) {
           lastErrorMessage = toErrorMessage(attemptErr);
           RemoteLogger.error('Ads', `Attempt ${attempt} error: ${lastErrorMessage}`);
+          FirebaseAnalytics.trackError('extra_play_rpc_exception', {
+            message: lastErrorMessage,
+            screen: 'AdService.grantExtraPlayFromRewardedAd',
+            context: `attempt=${attempt}`,
+            severity: 'error',
+          });
           if (attempt < 3) {
             await delay(1000 * attempt);
           }
@@ -278,10 +260,13 @@ export const AdService = {
       }
 
       if (!success) {
-        RemoteLogger.error('Ads', '❌ All 3 attempts to grant extra play failed');
+        RemoteLogger.error('Ads', '❌ All 3 attempts to grant extra play via RPC failed', {
+          lastOldAllowed,
+          lastNewAllowed,
+        });
         FirebaseAnalytics.trackEvent('extra_play_grant_failed', {
           user_id: authUser.id,
-          reason: 'all_attempts_failed',
+          reason: 'rpc_all_attempts_failed',
         });
         return { ok: false, message: lastErrorMessage };
       }

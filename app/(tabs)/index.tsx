@@ -31,6 +31,8 @@ import { FirebaseAnalytics } from '../../lib/firebase'; // Chemin relatif vers f
 import { AdService } from '@/src/features/ads/AdService';
 import { LinearGradient } from 'expo-linear-gradient';
 import AsyncStorage from '@react-native-async-storage/async-storage';
+import { TouchableOpacity } from 'react-native';
+import AdminPanel from '../admin/admin-panel';
 
 const { width, height } = Dimensions.get('window');
 
@@ -383,6 +385,8 @@ export default function HomeScreen() {
   const homeBannerConfig = useMemo(() => AdService.getBannerConfig('HOME'), []);
   const [settingsVisible, setSettingsVisible] = useState(false);
   const [settingsSection, setSettingsSection] = useState<'root' | 'privacy'>('root');
+  const [showAdminPanel, setShowAdminPanel] = useState(false);
+  const [adminPressTimer, setAdminPressTimer] = useState<NodeJS.Timeout | null>(null);
 
   // Animation refs pour le contenu principal
   const mainContentAnimation = {
@@ -621,6 +625,27 @@ export default function HomeScreen() {
     }
   }, [consentStatusLabel, handleCloseSettings, resetConsent]);
 
+  // --- Admin Access Handlers ---
+  const handleAdminPressIn = useCallback(() => {
+    const timer = setTimeout(() => {
+      // Vérifier si l'utilisateur est autorisé
+      if (user?.email === 'pierre.cousin7@gmail.com') {
+        setShowAdminPanel(true);
+        Alert.alert('Accès Admin', 'Panneau d\'administration activé !');
+      } else {
+        Alert.alert('Accès refusé', 'Vous n\'êtes pas autorisé à accéder à ce panneau.');
+      }
+    }, 3000); // 3 secondes de press
+    setAdminPressTimer(timer);
+  }, [user]);
+
+  const handleAdminPressOut = useCallback(() => {
+    if (adminPressTimer) {
+      clearTimeout(adminPressTimer);
+      setAdminPressTimer(null);
+    }
+  }, [adminPressTimer]);
+
   // Affiche un écran de chargement si les polices ne sont pas prêtes
   if (!fontsLoaded) {
     // Vous pourriez mettre un indicateur de chargement ici si vous le souhaitez
@@ -648,13 +673,20 @@ export default function HomeScreen() {
 
             {/* --- Header --- */}
             <View style={styles.headerContainer}>
-              <Text style={styles.welcomeTitle}>
-                {(() => {
-                  if (guestDisplayName) return `Bonjour ${guestDisplayName.split('-')[0]} !`;
-                  if (displayName) return `Bonjour ${displayName} !`;
-                  return "Bienvenue sur Timalaus";
-                })()}
-              </Text>
+              <TouchableOpacity
+                onPressIn={handleAdminPressIn}
+                onPressOut={handleAdminPressOut}
+                style={styles.titleContainer}
+                activeOpacity={0.7}
+              >
+                <Text style={styles.welcomeTitle}>
+                  {(() => {
+                    if (guestDisplayName) return `Bonjour ${guestDisplayName.split('-')[0]} !`;
+                    if (displayName) return `Bonjour ${displayName} !`;
+                    return "Bienvenue sur Timalaus";
+                  })()}
+                </Text>
+              </TouchableOpacity>
               <Text style={styles.welcomeSubtitle}>
                 {user || guestDisplayName
                   ? "Prêt à défier le temps ?"
@@ -810,6 +842,15 @@ export default function HomeScreen() {
           </View>
         </View>
       </Modal>
+
+      {/* Admin Panel Modal */}
+      <Modal
+        animationType="slide"
+        visible={showAdminPanel}
+        onRequestClose={() => setShowAdminPanel(false)}
+      >
+        <AdminPanel />
+      </Modal>
     </View>
   );
 }
@@ -893,6 +934,10 @@ const styles = StyleSheet.create({
     alignItems: 'center',
     marginTop: height * 0.06,
     marginBottom: height * 0.1,
+  },
+  titleContainer: {
+    borderRadius: 8,
+    padding: 4,
   },
   welcomeTitle: {
     fontSize: 26,

@@ -19,7 +19,7 @@ export function getSupabase(env = 'local') {
     return createClient('http://127.0.0.1:54321', process.env.SUPABASE_SERVICE_ROLE_KEY);
 }
 
-export async function uploadImageToSupabase(supabase, imageUrl, eventTitle) {
+export async function uploadImageToSupabase(supabase, imageUrl, eventTitle, eventId = 'no-id') {
     const response = await fetch(imageUrl);
     const imageBuffer = await response.arrayBuffer();
     const processedBuffer = await sharp(Buffer.from(imageBuffer))
@@ -27,7 +27,16 @@ export async function uploadImageToSupabase(supabase, imageUrl, eventTitle) {
         .resize(1024, 576, { fit: 'cover' }) // Format 16:9
         .toBuffer();
 
-    const fileName = `chambre_noire_${eventTitle.toLowerCase().replace(/[^a-z0-9]/g, '_').substring(0, 30)}_${Date.now()}.webp`;
+    // Nettoyage strict du nom de fichier pour éviter les erreurs 404 dues à l'encodage URL ou aux caractères spéciaux
+    const cleanTitle = eventTitle
+        .normalize("NFD")
+        .replace(/[\u0300-\u036f]/g, "") // Supprime les accents
+        .toLowerCase()
+        .replace(/[^a-z0-9]/g, '_')     // Garde uniquement alphanumérique
+        .replace(/_+/g, '_')            // Évite les doubles underscores
+        .substring(0, 40);
+
+    const fileName = `evt_${eventId}_${cleanTitle}.webp`;
 
     const { error } = await supabase.storage
         .from('evenements-image')

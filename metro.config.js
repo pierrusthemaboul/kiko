@@ -3,6 +3,30 @@ const path = require('path');
 
 const config = getDefaultConfig(__dirname);
 
+config.resolver.blockList = [
+  /android\/.*/,
+  /ios\/.*/,
+];
+
+// Performance optimizations
+config.resolver.maxWorkers = 4;
+config.transformer.minifierConfig = {
+  keep_fnames: true,
+  mangle: false,
+};
+/*
+config.server = {
+  ...config.server,
+  enhanceMiddleware: (middleware) => {
+    return (req, res, next) => {
+      // Enable compression for better performance
+      res.setHeader('Content-Encoding', 'gzip');
+      middleware(req, res, next);
+    };
+  },
+};
+*/
+
 // Enable symlinks for pnpm support
 config.resolver.unstable_enableSymlinks = true;
 // Enable package exports for modern library support

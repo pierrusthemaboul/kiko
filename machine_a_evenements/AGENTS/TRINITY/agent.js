@@ -13,7 +13,7 @@ const replicate = new Replicate({
 });
 
 const genAI = new GoogleGenerativeAI(process.env.GEMINI_API_KEY);
-const gemini = genAI.getGenerativeModel({ model: "gemini-2.0-flash" });
+const gemini = genAI.getGenerativeModel({ model: process.env.GEMINI_MODEL_FAST || "gemini-2.0-flash" });
 
 async function main() {
     const inputPath = path.join(process.cwd(), 'STORAGE/INPUT/task.json');

@@ -9,8 +9,16 @@ CREATE TABLE IF NOT EXISTS public.remote_control (
     status text DEFAULT 'pending'
 );
 
--- Activation du Realtime pour cette table
-ALTER PUBLICATION supabase_realtime ADD TABLE remote_control;
+-- Activation du Realtime pour cette table (ignore si déjà ajouté)
+DO $$
+BEGIN
+    IF NOT EXISTS (
+        SELECT 1 FROM pg_publication_tables 
+        WHERE pubname = 'supabase_realtime' AND schemaname = 'public' AND tablename = 'remote_control'
+    ) THEN
+        ALTER PUBLICATION supabase_realtime ADD TABLE remote_control;
+    END IF;
+END $$;
 
 -- Index pour la performance
 CREATE INDEX IF NOT EXISTS idx_remote_control_session ON public.remote_control(session_id);
@@ -19,4 +27,12 @@ CREATE INDEX IF NOT EXISTS idx_remote_control_created_at ON public.remote_contro
 -- Sécurité : On autorise tout pour le moment pour faciliter le setup, 
 -- mais à terme on pourrait restreindre.
 ALTER TABLE public.remote_control ENABLE ROW LEVEL SECURITY;
-CREATE POLICY "Allow all for now" ON public.remote_control FOR ALL USING (true) WITH CHECK (true);
+DO $$
+BEGIN
+    IF NOT EXISTS (
+        SELECT 1 FROM pg_policies 
+        WHERE tablename = 'remote_control' AND policyname = 'Allow all for now'
+    ) THEN
+        CREATE POLICY "Allow all for now" ON public.remote_control FOR ALL USING (true) WITH CHECK (true);
+    END IF;
+END $$;

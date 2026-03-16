@@ -1,38 +1,48 @@
 {
-  "id": 938,
-  "titre": "Les Bleus (France) triomphent en Ligue des Nations face à l'Équipe espagnole",
-  "year": 2021,
-  "description": "A jubilant football stadium bathed in the vibrant hues of the French flag, the scene overflowing with a saturated, almost surreal atmosphere. The victorious team, a sea of blue jerseys, are seen from the back, anonymous figures celebrating their triumph in a dynamic tableau. Rough wool scarves and banners wave wildly, creating a textured wave of national pride. Cold stone architecture forms the backdrop, ancient and steadfast. Flashes of light punctuate the scene, capturing the raw energy and elation of the moment. A golden trophy gleams amidst the crowd, a symbol of their hard-fought victory. Focus on texture, movement, and color, evoking the emotional intensity of the sporting event, with no recognizable faces.",
-  "specific_location": "La victoire de la France en Ligue des Nations 2021 s'inscrit dans une période où le football européen est dominé par quelques grandes nations. L'équipe de France, menée par Didier Deschamps, cherchait à confirmer son statut de championne du monde après sa victoire en 2018.",
-  "type": "[\"Sport\"]",
-  "region": "Ligue des Nations",
-  "notoriete": 55,
-  "feedback": "The image depicts a modern football stadium with bright stadium lights. The players are wearing modern jerseys with numbers on the back. Several people are holding up smartphones to take pictures, which is a major anachronism for any period before the late 2000s. The image contains too many anachronisms to be considered historically accurate for any period before the 21st century.",
-  "internal_metadata": "ORIGINAL_UUID:8b34fe7c-238c-47ab-a2f8-3623c0e1ac92",
-  "imageUrl": "https://replicate.delivery/czjl/fQPy79ZOWFxtSKJBNb5nep8BJmkCcyRfImC4U5zxh6eOLGpYB/out-0.webp",
+  "id": 995,
+  "titre": "Élisabeth d'York épouse Henri VII",
+  "year": 1486,
+  "description": "A rich Renaissance oil painting, utilizing sfumato techniques and deep saturation, captures an interior palatial scene of regal splendor. Polished marble floors reflect the soft light, illuminating stone walls covered with heavy draperies and ornate tapestries. A royal couple, adorned in sumptuous silk damask, velvet berets, and ruff collars, stands at the center of a social gathering. Their faces, with weathered skin and asymmetric features, convey a sense of destiny. The room is filled with courtiers in coarse wool and heavy velvet garments, their presence adding to the formality. The scene is entirely enclosed by closed wooden doors, emphasizing the intimate and significant nature of this dynastic union, with no external views distracting from the solemnity.",
+  "specific_location": "Le 18 janvier 1486, Élisabeth d'York, héritière de la Maison d'York, épouse le roi Henri VII, le premier monarque de la Maison Tudor. Ce mariage, célébré à l'abbaye de Westminster, est un acte politique fondamental qui met fin à la Guerre des Deux-Roses, unifiant symboliquement les maisons rivales de Lancastre et d'York. Cette union marque la fondation de la puissante dynastie Tudor, qui régnera sur l'Angleterre pendant plus d'un siècle, et apporte une nouvelle ère de stabilité au royaume.",
+  "type": "[\"Royauté\",\"Politique\"]",
+  "region": "Angleterre",
+  "notoriete": 65,
+  "feedback": "",
+  "internal_metadata": null,
+  "imageUrl": "https://replicate.delivery/czjl/d4sa6Et30fTjLK1GPj1qCzKMadZX3Sh2soRjyz6RpUm2MUFLA/out-0.webp",
   "technical": {
     "model": "flux-schnell",
-    "seed": 494075336,
-    "guidanceScale": 3,
+    "seed": 80146222,
+    "guidanceScale": 2,
     "steps": 4,
-    "predictionId": "fq2ttq9bn1rnt0cwgw4tgsfytr"
+    "predictionId": "sp7460yb55rnr0cwhjet7j8edm"
   },
   "validation": {
-    "score": 0,
-    "isValid": false,
-    "explanation": "L'image contient des anachronismes majeurs : des smartphones et un stade de football moderne. Ces éléments n'existaient pas à l'époque où cet événement s'est déroulé.",
+    "score": 7,
+    "isValid": true,
+    "explanation": "The image depicts a scene resembling a royal gathering, likely a marriage, featuring individuals in period-like attire. The architecture and interior design evoke a Renaissance setting with marble floors, large windows, and candle lighting.  However, the clothing appears to be more theatrical than historically accurate, and the hairstyle and makeup of the female figure appear more modern. The paintings on the wall seem slightly out of place and too clean for the period. There are no obvious modern objects or fantastical elements present, though the overall polish is not entirely congruent with the expected realism of the late 15th century. The lighting and color grading look to be overly staged and manipulated. Still, there are no glaring errors.",
     "inventory": [
-      "Maillots de football bleus",
-      "Trophée de football",
-      "Drapeaux (France, Espagne)",
-      "Smartphones",
-      "Stade de football moderne",
-      "Projecteurs"
+      "Marble floors",
+      "Stone walls",
+      "Chandeliers",
+      "Candlesticks",
+      "Candles",
+      "Paintings",
+      "Large windows",
+      "Man in black attire",
+      "Woman in gold dress",
+      "Headwear",
+      "Necklaces",
+      "Tables",
+      "Red tablecloth",
+      "Chandelier",
+      "Crown"
     ],
     "anachronisms": [
-      "Smartphones",
-      "Stade de football moderne",
-      "éclairage halogène"
+      "Makeup of the female figure",
+      "Hairstyle of the female figure",
+      "The artificial-looking color grading and lighting",
+      "Potentially the smoothness and cleanliness of the marble and paintings"
     ]
   }
 }

@@ -129,6 +129,12 @@ function saveMemory(state) {
     fs.writeFileSync(MEMORY_FILE, JSON.stringify(next, null, 2));
 }
 
+function ensureDir(dirPath) {
+    if (!fs.existsSync(dirPath)) {
+        fs.mkdirSync(dirPath, { recursive: true });
+    }
+}
+
 // =========================================================================
 // ÉTAGE 0 : LE CONSEIL DES SAGES (DOUBLE IA)
 // =========================================================================
@@ -136,6 +142,7 @@ function saveMemory(state) {
 async function proposerMissions(memoire) {
     const apiKey = process.env.GEMINI_API_KEY;
     const pastMissions = memoire.missionsExplorees || [];
+    const themesHistory = Array.isArray(memoire.themesHistory) ? memoire.themesHistory.slice(-30) : [];
 
     const prompt = `
 Tu es l'Architecte d'un jeu de chronologie.
@@ -157,7 +164,13 @@ CONSIGNES DE DIVERSITÉ TEMPORELLE (IMPÉRATIF) :
 RÈGLES D'OR :
 - ÉVÉNEMENTS PONCTUELS : Faits datables au jour/mois près idéalement.
 - IDENTIFIABILITÉ : Les thèmes doivent être universellement reconnus.
-- Missions passées : [${pastMissions.slice(-10).join(', ')}].
+- Missions passées : [${pastMissions.slice(-15).join(', ')}].
+- Historique (pour éviter les redites, y compris sémantiques) : ${JSON.stringify(themesHistory)}
+
+RÈGLE ANTI-RÉPÉTITION (TRÈS IMPORTANTE) :
+- Tes 3 nouvelles propositions doivent être sémantiquement très éloignées des missions passées et de l'historique.
+- Si une proposition ressemble à un thème déjà exploré (même période + même sujet, ou mêmes mots-clés), c'est une MAUVAISE proposition.
+- Tu dois volontairement aller chercher des domaines variés (culture, aventures, explorations, trahisons, sciences, religion, art, sport, crimes politiques, etc.) et des époques variées, sans te focaliser sur un seul registre.
 
 Renvoie un tableau JSON :
 [ { "mission": "Thème concret", "years": "800-1200", "pitch": "Pourquoi ce thème est riche en dates précises" } ]`;
@@ -168,7 +181,7 @@ Renvoie un tableau JSON :
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify({
             contents: [{ parts: [{ text: prompt }] }],
-            generationConfig: { temperature: 1.0, responseMimeType: "application/json" }
+            generationConfig: { temperature: 1.1, responseMimeType: "application/json" }
         })
     });
     const data = await res.json();
@@ -185,7 +198,8 @@ Tu dois les noter de 0 à 10 sur deux critères :
 2. "Voyage" (est-ce que c'est visuel et amusant ?)
 
 Compare ces 3 nouvelles pistes avec l'historique suivant : ${JSON.stringify(history)}.
-Si une piste est sémantiquement trop proche (même sujet, même zone géographique, même période), rejette-la impitoyablement en lui mettant un score de Fun (noteVoyage) de 0.
+Si une piste est sémantiquement trop proche (même sujet, même zone géographique, même période OU mots-clés très proches), rejette-la impitoyablement en lui mettant un score de Fun (noteVoyage) de 0.
+Tu dois favoriser la DIVERSITÉ : si plusieurs options appartiennent au même registre (ex: conflits géopolitiques / course à l'espace / guerre froide), baisse fortement leur noteVoyage pour forcer une proposition plus originale.
 
 Options : ${JSON.stringify(options)}
 
@@ -314,7 +328,9 @@ Angle : "${angle}" (${mission.startYear}-${mission.endYear}).
 
 DÉFINITION D'UN BON ÉVÉNEMENT :
 - Il doit avoir un jour/mois/année précis.
-- Ce doit être une ACTION ou une DISPONIBILITÉ (ex: "Première diffusion de...", "Mort de...", "Inauguration de...").
+- Ce doit être une ACTION ou une DISPONIBILITÉ (ex: "Première diffusion de...", "Inauguration de...", "Publication de...", "Signature de...").
+- Évite les événements "Mort de ..." / "Décès de ..." par défaut : ce n'est généralement pas fun à jouer.
+- Exception : conserve la mort UNIQUEMENT si elle est historiquement déterminante (assassinat, exécution, martyre, décès déclencheur d'une crise/guerre/succession), et formule le titre de façon premium (pas générique).
 - REBUTS : Pas de tendances, rivalités, styles ou gestes techniques.
 - IDENTIFICATION : L'événement doit être UNIQUE. Si titre générique, nom officiel entre parenthèses.
 
@@ -436,10 +452,34 @@ async function runDenicheur() {
     console.log(`  🕵️  DÉNICHEUR ENCYCLOPÉDIQUE — PLAGE 0-2010`);
     console.log("======================================================\n");
 
+    const runStartedAt = new Date();
+    const runId = `${runStartedAt.toISOString().replace(/[:.]/g, '-')}_${Math.random().toString(16).slice(2, 10)}`;
+    const logsDir = path.join(__dirname, 'LOGS');
+    ensureDir(logsDir);
+    const runLogPath = path.join(logsDir, `denicheur_run_${runId}.json`);
+    const runLog = {
+        runId,
+        script: 'denicheur_saison.mjs',
+        startedAt: runStartedAt.toISOString(),
+        endedAt: null,
+        status: 'RUNNING',
+        error: null,
+        maxCycles: MAX_CYCLES,
+        cyclesProcessed: 0,
+        budgetMax: MAX_BUDGET,
+        budgetSpent: 0,
+        totalInserted: 0,
+        insertedSample: [],
+    };
+
     try {
         assertStartupConfig();
     } catch (e) {
         console.error(`❌ ${e.message}`);
+        runLog.status = 'FAILED_STARTUP_CONFIG';
+        runLog.error = String(e?.message || e);
+        runLog.endedAt = new Date().toISOString();
+        try { fs.writeFileSync(runLogPath, JSON.stringify(runLog, null, 2)); } catch { }
         process.exit(1);
     }
 
@@ -452,157 +492,184 @@ async function runDenicheur() {
     let totalSession = 0;
     const insertedThisSession = [];
 
-    for (let cycleCount = 1; cycleCount <= MAX_CYCLES; cycleCount++) {
-        if (budget.depasse()) break;
-
-        console.log(`\n${'='.repeat(60)}`);
-        console.log(`  🔄 CYCLE ${cycleCount}/${MAX_CYCLES} | 💰 ${budget.afficher()}`);
-        console.log(`${'='.repeat(60)}`);
-
-        // 0. DÉLIBÉRATION (Le Conseil des Sages)
-        let mission;
-        try {
-            mission = await delibererMission(state, budget);
-            console.log(`\n🏆 GAGNANT : "${mission.mission}" (${mission.startYear} - ${mission.endYear})`);
-            console.log(`   💡 Pitch : ${mission.explication}`);
-
-            try {
-                const mots_cles = await genererMotsClesTheme(mission.mission);
-                budget.ajouter('gemini');
-                if (!Array.isArray(state.themesHistory)) state.themesHistory = [];
-                state.themesHistory.push({ titre: mission.mission, mots_cles });
-                saveMemory(state);
-            } catch (e) {
-                console.error("⚠️  Mots-clés thème :", e.message);
-            }
-        } catch (e) {
-            console.error("❌ Échec Délibération :", e.message);
-            await new Promise(r => setTimeout(r, 5000));
-            continue;
-        }
-
-        // 1. GÉNÉRATION DES ANGLES (Le Rédacteur)
-        console.log(`\n🧠 [RÉDACTEUR] Déclinaison en angles de recherche...`);
-        let nouveauxAngles = [];
-        try {
-            nouveauxAngles = await genererNouveauxAngles(mission, state.anglesExplores);
-            budget.ajouter('gemini');
-            nouveauxAngles.forEach(a => console.log(`      - ${a}`));
-        } catch (e) {
-            console.error("❌ Échec Rédacteur :", e.message);
-            continue;
-        }
-
-        let totalCycle = 0;
-
-        for (const angle of nouveauxAngles) {
+    try {
+        for (let cycleCount = 1; cycleCount <= MAX_CYCLES; cycleCount++) {
             if (budget.depasse()) break;
 
-            console.log(`\n🎯 THÈME : "${angle}"`);
+            console.log(`\n${'='.repeat(60)}`);
+            console.log(`  🔄 CYCLE ${cycleCount}/${MAX_CYCLES} | 💰 ${budget.afficher()}`);
+            console.log(`${'='.repeat(60)}`);
 
-            // 2. LA CHASSE (GEMINI)
-            console.log(`   🏹 Gemini (Le Chasseur)...`);
-            let evidences = [];
+            runLog.cyclesProcessed = cycleCount;
+
+            // 0. DÉLIBÉRATION (Le Conseil des Sages)
+            let mission;
             try {
-                evidences = await chasserTopEvidences(angle, mission);
+                mission = await delibererMission(state, budget);
+                console.log(`\n🏆 GAGNANT : "${mission.mission}" (${mission.startYear} - ${mission.endYear})`);
+                console.log(`   💡 Pitch : ${mission.explication}`);
+
+                try {
+                    const mots_cles = await genererMotsClesTheme(mission.mission);
+                    budget.ajouter('gemini');
+                    if (!Array.isArray(state.themesHistory)) state.themesHistory = [];
+                    state.themesHistory.push({ titre: mission.mission, mots_cles });
+                    saveMemory(state);
+                } catch (e) {
+                    console.error("⚠️  Mots-clés thème :", e.message);
+                }
+            } catch (e) {
+                console.error("❌ Échec Délibération :", e.message);
+                await new Promise(r => setTimeout(r, 5000));
+                continue;
+            }
+
+            // 1. GÉNÉRATION DES ANGLES (Le Rédacteur)
+            console.log(`\n🧠 [RÉDACTEUR] Déclinaison en angles de recherche...`);
+            let nouveauxAngles = [];
+            try {
+                nouveauxAngles = await genererNouveauxAngles(mission, state.anglesExplores);
                 budget.ajouter('gemini');
-                console.log(`   🎁 ${evidences.length} évidences rapportées.`);
+                nouveauxAngles.forEach(a => console.log(`      - ${a}`));
             } catch (e) {
-                console.error(`   ❌ Échec Gemini :`, e.message);
+                console.error("❌ Échec Rédacteur :", e.message);
                 continue;
             }
 
-            const beforeQuality = evidences.length;
-            evidences = evidences.filter(e => isTitreQualiteOk(e?.titre));
-            const rejectedQuality = beforeQuality - evidences.length;
-            if (rejectedQuality > 0) {
-                console.log(`   🧹 Filtre qualité titre : ${rejectedQuality} rejeté(s).`);
-            }
+            let totalCycle = 0;
 
-            if (evidences.length === 0) continue;
+            for (const angle of nouveauxAngles) {
+                if (budget.depasse()) break;
 
-            // 3. LE GARDIEN SÉMANTIQUE (OPENAI)
-            console.log(`   🛡️ OpenAI (Le Gardien) vérifie les doublons...`);
-            let pursInedits = [];
-            try {
-                pursInedits = await filtrerDoublons(evidences);
-                budget.ajouter('openai');
-            } catch (e) {
-                console.error(`   ❌ Échec OpenAI :`, e.message);
-                continue;
-            }
+                console.log(`\n🎯 THÈME : "${angle}"`);
 
-            // 4. SAUVEGARDE
-            if (pursInedits.length > 0) {
-                console.log(`   🎉 ${pursInedits.length} pépites inédites.`);
-                const rows = pursInedits.map(p => {
-                    return {
-                        titre: p.titre,
-                        year: p.year,
-                        description: p.description,
-                        status: 'PENDING',
-                        type: mission.mission
-                    };
-                });
-
-                const titres = rows.map(r => r.titre);
-                const { data: existing, error: existingErr } = await localDb
-                    .from('labo')
-                    .select('titre')
-                    .in('titre', titres);
-
-                if (existingErr) {
-                    console.error("   ❌ Erreur vérification idempotence :", existingErr.message);
+                // 2. LA CHASSE (GEMINI)
+                console.log(`   🏹 Gemini (Le Chasseur)...`);
+                let evidences = [];
+                try {
+                    evidences = await chasserTopEvidences(angle, mission);
+                    budget.ajouter('gemini');
+                    console.log(`   🎁 ${evidences.length} évidences rapportées.`);
+                } catch (e) {
+                    console.error(`   ❌ Échec Gemini :`, e.message);
+                    continue;
                 }
 
-                const existingSet = new Set((existing || []).map(e => e.titre));
-                const toInsert = rows.filter(r => !existingSet.has(r.titre));
+                const beforeQuality = evidences.length;
+                evidences = evidences.filter(e => isTitreQualiteOk(e?.titre));
+                const rejectedQuality = beforeQuality - evidences.length;
+                if (rejectedQuality > 0) {
+                    console.log(`   🧹 Filtre qualité titre : ${rejectedQuality} rejeté(s).`);
+                }
 
-                if (toInsert.length === 0) {
-                    console.log(`   ✅ Rien à insérer (idempotence: tous les titres existent déjà).`);
-                } else {
-                    const { error: insertErr } = await localDb.from('labo').insert(toInsert);
-                    if (insertErr) console.error("   ❌ Erreur insertion :", insertErr.message);
-                    else {
-                        totalCycle += toInsert.length;
-                        totalSession += toInsert.length;
-                        for (const r of toInsert) {
-                            insertedThisSession.push({ titre: r.titre, year: r.year });
+                if (evidences.length === 0) continue;
+
+                // 3. LE GARDIEN SÉMANTIQUE (OPENAI)
+                console.log(`   🛡️ OpenAI (Le Gardien) vérifie les doublons...`);
+                let pursInedits = [];
+                try {
+                    pursInedits = await filtrerDoublons(evidences);
+                    budget.ajouter('openai');
+                } catch (e) {
+                    console.error(`   ❌ Échec OpenAI :`, e.message);
+                    continue;
+                }
+
+                // 4. SAUVEGARDE
+                if (pursInedits.length > 0) {
+                    console.log(`   ${pursInedits.length} pépites inédites.`);
+                    const rows = pursInedits.map(p => {
+                        return {
+                            titre: p.titre,
+                            year: p.year,
+                            description: p.description,
+                            status: 'PENDING',
+                            type: mission.mission
+                        };
+                    }).filter(r => {
+                        if (!Number.isFinite(r.year)) return false;
+                        return r.year >= 1;
+                    });
+
+                    if (rows.length === 0) {
+                        console.log(`   Filtre BC (year < 1) : tout rejeté.`);
+                        continue;
+                    }
+
+                    const titres = rows.map(r => r.titre);
+                    const { data: existing, error: existingErr } = await localDb
+                        .from('labo')
+                        .select('titre')
+                        .in('titre', titres);
+
+                    if (existingErr) {
+                        console.error("   Erreur vérification idempotence :", existingErr.message);
+                    }
+
+                    const existingSet = new Set((existing || []).map(e => e.titre));
+                    const toInsert = rows.filter(r => !existingSet.has(r.titre));
+
+                    if (toInsert.length === 0) {
+                        console.log(`   Rien à insérer (idempotence: tous les titres existent déjà).`);
+                    } else {
+                        const { error: insertErr } = await localDb.from('labo').insert(toInsert);
+                        if (insertErr) console.error("   Erreur insertion :", insertErr.message);
+                        else {
+                            totalCycle += toInsert.length;
+                            totalSession += toInsert.length;
+                            for (const r of toInsert) {
+                                insertedThisSession.push({ titre: r.titre, year: r.year });
+                            }
                         }
                     }
                 }
-            } else {
-                console.log(`   ⚠️ Doublons détectés par le Gardien.`);
+
+                state.anglesExplores.push(angle);
+                saveMemory(state);
+
+                await new Promise(r => setTimeout(r, 4000));
             }
 
-            state.anglesExplores.push(angle);
+            state.missionsExplorees.push(mission.mission);
             saveMemory(state);
 
-            await new Promise(r => setTimeout(r, 4000));
+            console.log(`\n  Cycle terminé : +${totalCycle} events | Total session : ${totalSession} | Dépense : ${budget.afficher()}`);
+            console.log(`  Pause 15s avant le prochain chantier...`);
+            await new Promise(r => setTimeout(r, 15000));
         }
 
-        state.missionsExplorees.push(mission.mission);
-        saveMemory(state);
+        console.log(`\nSESSION TERMINÉE — ${totalSession} événements ajoutés.`);
 
-        console.log(`\n✅ Cycle terminé : +${totalCycle} events | Total session : ${totalSession} | Dépense : ${budget.afficher()}`);
-        console.log(`⏳ Pause 15s avant le prochain chantier...`);
-        await new Promise(r => setTimeout(r, 15000));
-    }
+        if (insertedThisSession.length > 0) {
+            console.log("\n📋 RÉCAP — ÉVÉNEMENTS INSÉRÉS (SESSION)");
+            console.table(insertedThisSession.map(e => ({ Titre: e.titre, Année: e.year })));
+        } else {
+            console.log("\n📋 RÉCAP — Aucun événement inséré durant cette session.");
+        }
 
-    console.log(`\n💥 SESSION TERMINÉE — ${totalSession} événements ajoutés.`);
-
-    if (insertedThisSession.length > 0) {
-        console.log("\n📋 RÉCAP — ÉVÉNEMENTS INSÉRÉS (SESSION)");
-        console.table(insertedThisSession.map(e => ({ Titre: e.titre, Année: e.year })));
-    } else {
-        console.log("\n📋 RÉCAP — Aucun événement inséré durant cette session.");
+        runLog.status = budget.depasse() ? 'BUDGET_REACHED' : 'COMPLETED';
+    } catch (e) {
+        runLog.status = 'FAILED_RUNTIME';
+        runLog.error = String(e?.stack || e?.message || e);
+        console.error("❌ Run Denicheur interrompu :", e.message);
+        throw e;
+    } finally {
+        runLog.endedAt = new Date().toISOString();
+        runLog.budgetSpent = typeof budget.valeur === 'function' ? budget.valeur() : 0;
+        runLog.totalInserted = totalSession;
+        runLog.insertedSample = insertedThisSession.slice(0, 300);
+        try {
+            fs.writeFileSync(runLogPath, JSON.stringify(runLog, null, 2));
+        } catch (e) {
+            console.error("⚠️  Impossible d'écrire le log de run :", e.message);
+        }
     }
 }
 
 // =========================================================================
 // GARDE-FOU BUDGÉTAIRE & UTILS
 // =========================================================================
-const MAX_CYCLES = 150; // SESSION DE PRODUCTION
+const MAX_CYCLES = 300; // SESSION DE PRODUCTION
 const MAX_BUDGET = 15.0;
 const COUT_PAR_APPEL = { gemini: 0.001, openai: 0.001 };
 
@@ -644,7 +711,8 @@ function creerCompteur() {
     return {
         ajouter(api) { depense += COUT_PAR_APPEL[api] ?? 0; },
         afficher() { return `$${depense.toFixed(3)}`; },
-        depasse() { return depense >= MAX_BUDGET; }
+        depasse() { return depense >= MAX_BUDGET; },
+        valeur() { return depense; }
     };
 }
 

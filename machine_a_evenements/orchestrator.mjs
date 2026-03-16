@@ -145,6 +145,8 @@ async function executeOrchestration(TARGET, THEME, BATCH_SIZE, MAX_ATTEMPTS) {
     let totalGenerated = 0;
     let totalRejected = 0;
 
+    let finalInsertedCount = 0;
+
     while (validatedEvents.length < TARGET && attempts < MAX_ATTEMPTS) {
         attempts++;
         console.log(`\n🔄 CYCLE ${attempts} - Progression: ${validatedEvents.length}/${TARGET} validés\n`);
@@ -238,6 +240,34 @@ async function executeOrchestration(TARGET, THEME, BATCH_SIZE, MAX_ATTEMPTS) {
                 stdio: 'inherit'
             });
 
+            // ÉTAPE 4b : Filtrage CHRONOS — rejeter les événements historiquement invalides
+            const chronosOutputPath = 'machine_a_evenements/AGENTS/CHRONOS/STORAGE/OUTPUT/chronos_audited_events.json';
+            if (fs.existsSync(chronosOutputPath)) {
+                const auditedEvents = JSON.parse(fs.readFileSync(chronosOutputPath, 'utf-8'));
+                const invalidEvents = auditedEvents.filter(e => e.is_historically_valid === false);
+
+                finalInsertedCount = auditedEvents.filter(e => e.is_historically_valid !== false).length;
+
+                if (invalidEvents.length > 0) {
+                    console.log(`\n🚫 [CHRONOS] ${invalidEvents.length} événement(s) rejeté(s) pour erreur historique :`);
+                    invalidEvents.forEach(e => console.log(`   ❌ "${e.titre}" (${e.year}) — ${e.justification}`));
+
+                    // Nettoyer le fichier CHRONOS : ne garder que les événements valides
+                    const validAudited = auditedEvents.filter(e => e.is_historically_valid !== false);
+                    fs.writeFileSync(chronosOutputPath, JSON.stringify(validAudited, null, 2));
+
+                    // Mettre à jour orchestrator_result.json en cohérence
+                    const validTitles = new Set(validAudited.map(e => e.titre));
+                    const resultData = JSON.parse(fs.readFileSync(outputPath, 'utf-8'));
+                    const beforeCount = resultData.events.length;
+                    resultData.events = resultData.events.filter(e => validTitles.has(e.titre));
+                    resultData.obtained = resultData.events.length;
+                    fs.writeFileSync(outputPath, JSON.stringify(resultData, null, 2));
+                    finalInsertedCount = resultData.events.length;
+                    console.log(`   ✅ ${resultData.events.length}/${beforeCount} événements conservés après audit CHRONOS.`);
+                }
+            }
+
             // ÉTAPE 5: ARTISAN (Enrichissement)
             console.log(`🎨 [ARTISAN] Sculpture des métadonnées...`);
             execSync(`node agent.js`, {
@@ -263,7 +293,8 @@ async function executeOrchestration(TARGET, THEME, BATCH_SIZE, MAX_ATTEMPTS) {
     console.log("=".repeat(40));
 
     const elapsed = ((Date.now() - startTime) / 1000).toFixed(1);
-    console.log(`\n✅ ${validatedEvents.length} événements ont été injectés en base.`);
+    const actualInserted = finalInsertedCount || validatedEvents.length;
+    console.log(`\n✅ ${actualInserted} événements ont été injectés en base.`);
     console.log(`📚 Thème : ${THEME}`);
     console.log(`⏳ Temps total : ${elapsed}s`);
     console.log(`\n👉 Prochaine étape : Tape 'chambre_noire' pour commencer les illustrations (via les AGENTS).`);

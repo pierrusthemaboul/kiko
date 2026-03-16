@@ -1,42 +1,48 @@
 {
-  "id": 931,
-  "titre": "L'Argentine gagne la Coupe du Monde",
-  "year": 2022,
-  "description": "A jubilant football stadium erupts in a kaleidoscope of saturated colors. The scene overflows with raw emotion, a sea of Argentinian flags waving amidst flashes of celebratory pyrotechnics. In the foreground, a group of anonymous football players, clad in blue and white jerseys, are captured in mid-air, their backs to the viewer, arms raised in triumph. Textures abound: rough wool scarves, the cold stone of the stadium seats, and the gleaming metal of the championship trophy. The overall mood is one of ecstatic release, a visceral representation of victory. Focus is on the atmosphere and the collective experience, faces obscured, emphasizing the anonymous joy of the crowd.",
-  "specific_location": "L'Argentine remporte la Coupe du Monde de la FIFA 2022 face à la France lors d'une finale haletante conclue aux tirs au but. Cette victoire marque le troisième titre mondial de l'Argentine et consacre Lionel Messi.",
-  "type": "[\"Sport\"]",
-  "region": "Amérique du Sud",
-  "notoriete": 80,
+  "id": 995,
+  "titre": "Élisabeth d'York épouse Henri VII",
+  "year": 1486,
+  "description": "A rich Renaissance oil painting, utilizing sfumato techniques and deep saturation, captures an interior palatial scene of regal splendor. Polished marble floors reflect the soft light, illuminating stone walls covered with heavy draperies and ornate tapestries. A royal couple, adorned in sumptuous silk damask, velvet berets, and ruff collars, stands at the center of a social gathering. Their faces, with weathered skin and asymmetric features, convey a sense of destiny. The room is filled with courtiers in coarse wool and heavy velvet garments, their presence adding to the formality. The scene is entirely enclosed by closed wooden doors, emphasizing the intimate and significant nature of this dynastic union, with no external views distracting from the solemnity.",
+  "specific_location": "Le 18 janvier 1486, Élisabeth d'York, héritière de la Maison d'York, épouse le roi Henri VII, le premier monarque de la Maison Tudor. Ce mariage, célébré à l'abbaye de Westminster, est un acte politique fondamental qui met fin à la Guerre des Deux-Roses, unifiant symboliquement les maisons rivales de Lancastre et d'York. Cette union marque la fondation de la puissante dynastie Tudor, qui régnera sur l'Angleterre pendant plus d'un siècle, et apporte une nouvelle ère de stabilité au royaume.",
+  "type": "[\"Royauté\",\"Politique\"]",
+  "region": "Angleterre",
+  "notoriete": 65,
   "feedback": "",
-  "internal_metadata": "ORIGINAL_UUID:aed6880f-03e0-4685-8aa3-9f6b5b969864",
-  "imageUrl": "https://replicate.delivery/czjl/df6qQWC7ZFSfH08TskVgQCn4lLKnHDgCo2nmV33sX94ciRKWA/out-0.webp",
+  "internal_metadata": null,
+  "imageUrl": "https://replicate.delivery/czjl/d4sa6Et30fTjLK1GPj1qCzKMadZX3Sh2soRjyz6RpUm2MUFLA/out-0.webp",
   "technical": {
     "model": "flux-schnell",
-    "seed": 63539081,
-    "guidanceScale": 3,
+    "seed": 80146222,
+    "guidanceScale": 2,
     "steps": 4,
-    "predictionId": "c3b901ej3xrnw0cwgw4azv92c0"
+    "predictionId": "sp7460yb55rnr0cwhjet7j8edm"
   },
   "validation": {
-    "score": 6,
+    "score": 7,
     "isValid": true,
-    "explanation": "The image depicts a football stadium filled with Argentinian supporters celebrating a victory, presumably the 2022 World Cup. While the overall atmosphere is accurate, the jersey design and modern stadium architecture raise concerns. The specific font and style of the names on the back of the jerseys ('PUITELES', 'ARGESTEE', 'ARIMACEE') look anachronistic, and the stadium appears too modern for a historical depiction of the mid-20th century (when Argentina first won the World Cup). There are no immediately disqualifying elements like smartphones or airplanes. The fireworks, flags, and general excitement are consistent with a modern football victory celebration, but the jersey design details bring into question the accuracy. Also stadium architecture is not easy to distinguish as it could be modern but the stadium style has been around for decades.",
+    "explanation": "The image depicts a scene resembling a royal gathering, likely a marriage, featuring individuals in period-like attire. The architecture and interior design evoke a Renaissance setting with marble floors, large windows, and candle lighting.  However, the clothing appears to be more theatrical than historically accurate, and the hairstyle and makeup of the female figure appear more modern. The paintings on the wall seem slightly out of place and too clean for the period. There are no obvious modern objects or fantastical elements present, though the overall polish is not entirely congruent with the expected realism of the late 15th century. The lighting and color grading look to be overly staged and manipulated. Still, there are no glaring errors.",
     "inventory": [
-      "Football stadium",
-      "Argentinian flags",
-      "Fireworks",
-      "Football players (blue and white jerseys)",
-      "Stadium seats",
-      "Scarves (implied)",
-      "Crowd of supporters",
-      "Jerseys (with names and numbers)",
-      "Shorts"
+      "Marble floors",
+      "Stone walls",
+      "Chandeliers",
+      "Candlesticks",
+      "Candles",
+      "Paintings",
+      "Large windows",
+      "Man in black attire",
+      "Woman in gold dress",
+      "Headwear",
+      "Necklaces",
+      "Tables",
+      "Red tablecloth",
+      "Chandelier",
+      "Crown"
     ],
     "anachronisms": [
-      "Potentially Modern Jersey Design",
-      "Potentially Modern Stadium Architecture",
-      "Jersey Font",
-      "Jersey Style (names on the back)"
+      "Makeup of the female figure",
+      "Hairstyle of the female figure",
+      "The artificial-looking color grading and lighting",
+      "Potentially the smoothness and cleanliness of the marble and paintings"
     ]
   }
 }
