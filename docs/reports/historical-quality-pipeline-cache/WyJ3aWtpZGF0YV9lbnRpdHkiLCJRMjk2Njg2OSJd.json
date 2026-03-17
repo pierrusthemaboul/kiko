@@ -1,0 +1,270 @@
+{
+  "pageid": 2837248,
+  "ns": 0,
+  "title": "Q2966869",
+  "lastrevid": 2389628227,
+  "modified": "2025-08-09T06:27:43Z",
+  "type": "item",
+  "id": "Q2966869",
+  "labels": {
+    "fr": {
+      "language": "fr",
+      "value": "chronologie de Londres"
+    },
+    "en": {
+      "language": "en",
+      "value": "timeline of London"
+    }
+  },
+  "descriptions": {
+    "en": {
+      "language": "en",
+      "value": "timeline of the history of London, United Kingdom"
+    },
+    "fr": {
+      "language": "fr",
+      "value": "histoire chronologique de Londres"
+    }
+  },
+  "aliases": {
+    "fr": [
+      {
+        "language": "fr",
+        "value": "Chronologie de londres"
+      },
+      {
+        "language": "fr",
+        "value": "Chronologie De Londres"
+      }
+    ]
+  },
+  "claims": {
+    "P625": [
+      {
+        "mainsnak": {
+          "snaktype": "value",
+          "property": "P625",
+          "hash": "c009e1d341999171ac044a7d7968594ade6a5abc",
+          "datavalue": {
+            "value": {
+              "latitude": 51.5072,
+              "longitude": -0.1275,
+              "altitude": null,
+              "precision": 0.14432708525136,
+              "globe": "http://www.wikidata.org/entity/Q2"
+            },
+            "type": "globecoordinate"
+          },
+          "datatype": "globe-coordinate"
+        },
+        "type": "statement",
+        "id": "Q2966869$32CD2557-AC84-4F89-9590-EBD3CF3A73C8",
+        "rank": "normal",
+        "references": [
+          {
+            "hash": "fa278ebfc458360e5aed63d5058cca83c46134f1",
+            "snaks": {
+              "P143": [
+                {
+                  "snaktype": "value",
+                  "property": "P143",
+                  "hash": "e4f6d9441d0600513c4533c672b5ab472dc73694",
+                  "datavalue": {
+                    "value": {
+                      "entity-type": "item",
+                      "numeric-id": 328,
+                      "id": "Q328"
+                    },
+                    "type": "wikibase-entityid"
+                  },
+                  "datatype": "wikibase-item"
+                }
+              ]
+            },
+            "snaks-order": [
+              "P143"
+            ]
+          }
+        ]
+      }
+    ],
+    "P31": [
+      {
+        "mainsnak": {
+          "snaktype": "value",
+          "property": "P31",
+          "hash": "4d19866788d54a4d4f8ac36c4f30a8e5409c3da6",
+          "datavalue": {
+            "value": {
+              "entity-type": "item",
+              "numeric-id": 18340550,
+              "id": "Q18340550"
+            },
+            "type": "wikibase-entityid"
+          },
+          "datatype": "wikibase-item"
+        },
+        "type": "statement",
+        "id": "Q2966869$1F7AABE7-1ED0-4833-A47B-C2A6D8AF84E4",
+        "rank": "normal"
+      }
+    ],
+    "P17": [
+      {
+        "mainsnak": {
+          "snaktype": "value",
+          "property": "P17",
+          "hash": "a44880420787fb348836dc51d3babc5227c4ef7e",
+          "datavalue": {
+            "value": {
+              "entity-type": "item",
+              "numeric-id": 145,
+              "id": "Q145"
+            },
+            "type": "wikibase-entityid"
+          },
+          "datatype": "wikibase-item"
+        },
+        "type": "statement",
+        "id": "Q2966869$32291889-E87C-4EB2-839D-D7A7CC9D2078",
+        "rank": "normal"
+      }
+    ],
+    "P373": [
+      {
+        "mainsnak": {
+          "snaktype": "value",
+          "property": "P373",
+          "hash": "0fd0c7c947e89dcf8092f483192936a3ff0e9a40",
+          "datavalue": {
+            "value": "History of London",
+            "type": "string"
+          },
+          "datatype": "string"
+        },
+        "type": "statement",
+        "id": "Q2966869$A1D3203C-6391-40B1-9F66-E68F26595311",
+        "rank": "normal",
+        "references": [
+          {
+            "hash": "fa278ebfc458360e5aed63d5058cca83c46134f1",
+            "snaks": {
+              "P143": [
+                {
+                  "snaktype": "value",
+                  "property": "P143",
+                  "hash": "e4f6d9441d0600513c4533c672b5ab472dc73694",
+                  "datavalue": {
+                    "value": {
+                      "entity-type": "item",
+                      "numeric-id": 328,
+                      "id": "Q328"
+                    },
+                    "type": "wikibase-entityid"
+                  },
+                  "datatype": "wikibase-item"
+                }
+              ]
+            },
+            "snaks-order": [
+              "P143"
+            ]
+          }
+        ]
+      }
+    ],
+    "P18": [
+      {
+        "mainsnak": {
+          "snaktype": "value",
+          "property": "P18",
+          "hash": "fc2945ad3f55e3eeb8b9529d34c83df1d071fc81",
+          "datavalue": {
+            "value": "Timeline of London.jpg",
+            "type": "string"
+          },
+          "datatype": "commonsMedia"
+        },
+        "type": "statement",
+        "qualifiers": {
+          "P2096": [
+            {
+              "snaktype": "value",
+              "property": "P2096",
+              "hash": "d64f6afa39c737de86d25fe3fdf0a4ffbaa654f6",
+              "datavalue": {
+                "value": {
+                  "text": "timeline of London",
+                  "language": "en"
+                },
+                "type": "monolingualtext"
+              },
+              "datatype": "monolingualtext"
+            }
+          ]
+        },
+        "qualifiers-order": [
+          "P2096"
+        ],
+        "id": "Q2966869$4a765635-c3ec-4f1b-b3d3-b10da91c3d05",
+        "rank": "normal"
+      }
+    ],
+    "P1269": [
+      {
+        "mainsnak": {
+          "snaktype": "value",
+          "property": "P1269",
+          "hash": "d997148bb426ef2d03d6d2e0b73e247623ceecb7",
+          "datavalue": {
+            "value": {
+              "entity-type": "item",
+              "numeric-id": 84,
+              "id": "Q84"
+            },
+            "type": "wikibase-entityid"
+          },
+          "datatype": "wikibase-item"
+        },
+        "type": "statement",
+        "id": "Q2966869$C60A4D5F-BDD4-454E-91D3-C55D295AF150",
+        "rank": "normal"
+      }
+    ],
+    "P921": [
+      {
+        "mainsnak": {
+          "snaktype": "value",
+          "property": "P921",
+          "hash": "6ec1ac33bcf7a436e01f4cd0f370a7e0ca7d9e08",
+          "datavalue": {
+            "value": {
+              "entity-type": "item",
+              "numeric-id": 84,
+              "id": "Q84"
+            },
+            "type": "wikibase-entityid"
+          },
+          "datatype": "wikibase-item"
+        },
+        "type": "statement",
+        "id": "Q2966869$CD23DA84-D1B4-4753-98F2-F9F740046CE2",
+        "rank": "normal"
+      }
+    ]
+  },
+  "sitelinks": {
+    "enwiki": {
+      "site": "enwiki",
+      "title": "Timeline of London",
+      "badges": [],
+      "url": "https://en.wikipedia.org/wiki/Timeline_of_London"
+    },
+    "frwiki": {
+      "site": "frwiki",
+      "title": "Chronologie de Londres",
+      "badges": [],
+      "url": "https://fr.wikipedia.org/wiki/Chronologie_de_Londres"
+    }
+  }
+}

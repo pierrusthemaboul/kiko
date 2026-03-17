@@ -1,0 +1,130 @@
+{
+  "saved_at": "2026-03-07T14:44:49.581Z",
+  "value": {
+    "pageid": 3109643,
+    "ns": 0,
+    "title": "Q3258636",
+    "lastrevid": 1454188968,
+    "modified": "2021-07-05T08:21:54Z",
+    "type": "item",
+    "id": "Q3258636",
+    "labels": {
+      "fr": {
+        "language": "fr",
+        "value": "Loi électorale française du 9 mai 1951"
+      }
+    },
+    "descriptions": {
+      "ast": {
+        "language": "ast",
+        "value": "llei francesa"
+      }
+    },
+    "aliases": {
+      "fr": [
+        {
+          "language": "fr",
+          "value": "Loi Des Apparentements"
+        },
+        {
+          "language": "fr",
+          "value": "Loi des apparentements"
+        },
+        {
+          "language": "fr",
+          "value": "Loi électorale française du 9 mai 1951 (loi des apparentements)"
+        }
+      ]
+    },
+    "claims": {
+      "P31": [
+        {
+          "mainsnak": {
+            "snaktype": "value",
+            "property": "P31",
+            "hash": "26feacaf586ee8762b1a5523fb6432ebd6ffe651",
+            "datavalue": {
+              "value": {
+                "entity-type": "item",
+                "numeric-id": 13408009,
+                "id": "Q13408009"
+              },
+              "type": "wikibase-entityid"
+            },
+            "datatype": "wikibase-item"
+          },
+          "type": "statement",
+          "id": "Q3258636$2A6F5330-81AB-410D-A525-A95B2D29A361",
+          "rank": "normal"
+        }
+      ],
+      "P17": [
+        {
+          "mainsnak": {
+            "snaktype": "value",
+            "property": "P17",
+            "hash": "c05db5d169c2560b9799d567a803d20a392f53e4",
+            "datavalue": {
+              "value": {
+                "entity-type": "item",
+                "numeric-id": 142,
+                "id": "Q142"
+              },
+              "type": "wikibase-entityid"
+            },
+            "datatype": "wikibase-item"
+          },
+          "type": "statement",
+          "id": "Q3258636$44394BC2-A65B-415E-994F-4C8DE645B7D8",
+          "rank": "normal"
+        }
+      ],
+      "P1001": [
+        {
+          "mainsnak": {
+            "snaktype": "value",
+            "property": "P1001",
+            "hash": "efe2878aed693a79dce942b2f853910a78c4e2a8",
+            "datavalue": {
+              "value": {
+                "entity-type": "item",
+                "numeric-id": 142,
+                "id": "Q142"
+              },
+              "type": "wikibase-entityid"
+            },
+            "datatype": "wikibase-item"
+          },
+          "type": "statement",
+          "id": "Q3258636$4AC6A3A1-569A-4938-9DC6-BF47BCCE0155",
+          "rank": "normal"
+        }
+      ],
+      "P2671": [
+        {
+          "mainsnak": {
+            "snaktype": "value",
+            "property": "P2671",
+            "hash": "695f58da8d964e42dfe2e488e34194407cec5938",
+            "datavalue": {
+              "value": "/g/11b66hxxmw",
+              "type": "string"
+            },
+            "datatype": "external-id"
+          },
+          "type": "statement",
+          "id": "Q3258636$09CB8F9F-CE9A-44AD-8FAC-AD95B4A085B8",
+          "rank": "normal"
+        }
+      ]
+    },
+    "sitelinks": {
+      "frwiki": {
+        "site": "frwiki",
+        "title": "Loi des apparentements",
+        "badges": [],
+        "url": "https://fr.wikipedia.org/wiki/Loi_des_apparentements"
+      }
+    }
+  }
+}

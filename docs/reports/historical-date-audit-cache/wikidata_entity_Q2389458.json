@@ -1,0 +1,145 @@
+{
+  "saved_at": "2026-03-07T15:19:33.598Z",
+  "value": {
+    "pageid": 2308397,
+    "ns": 0,
+    "title": "Q2389458",
+    "lastrevid": 2277504826,
+    "modified": "2024-11-20T14:21:22Z",
+    "type": "item",
+    "id": "Q2389458",
+    "labels": {
+      "fr": {
+        "language": "fr",
+        "value": "système monétaire de l'Ancien Régime"
+      },
+      "it": {
+        "language": "it",
+        "value": "Monetazione moderna"
+      },
+      "ru": {
+        "language": "ru",
+        "value": "Денежная система Франции при Старом порядке"
+      },
+      "es": {
+        "language": "es",
+        "value": "sistema monetario del Reino de Francia"
+      },
+      "zh": {
+        "language": "zh",
+        "value": "法兰西王国的货币体系"
+      },
+      "sl": {
+        "language": "sl",
+        "value": "denarni sistem starega režima"
+      },
+      "ga": {
+        "language": "ga",
+        "value": "córas airgeadaíochta Ríocht na Fraince"
+      }
+    },
+    "descriptions": {
+      "fr": {
+        "language": "fr",
+        "value": "10 francs 1979"
+      }
+    },
+    "aliases": {},
+    "claims": {
+      "P910": [
+        {
+          "mainsnak": {
+            "snaktype": "value",
+            "property": "P910",
+            "hash": "2f28daaf23475a2e7b14c7bf09b24ba7e3b45ec3",
+            "datavalue": {
+              "value": {
+                "entity-type": "item",
+                "numeric-id": 8396481,
+                "id": "Q8396481"
+              },
+              "type": "wikibase-entityid"
+            },
+            "datatype": "wikibase-item"
+          },
+          "type": "statement",
+          "id": "Q2389458$EE0AD853-57B8-4DBA-844F-C0E967ACEE34",
+          "rank": "normal",
+          "references": [
+            {
+              "hash": "d5847b9b6032aa8b13dae3c2dfd9ed5d114d21b3",
+              "snaks": {
+                "P143": [
+                  {
+                    "snaktype": "value",
+                    "property": "P143",
+                    "hash": "5a343e7e758a4282a01316d3e959b6e653b767fc",
+                    "datavalue": {
+                      "value": {
+                        "entity-type": "item",
+                        "numeric-id": 11920,
+                        "id": "Q11920"
+                      },
+                      "type": "wikibase-entityid"
+                    },
+                    "datatype": "wikibase-item"
+                  }
+                ]
+              },
+              "snaks-order": [
+                "P143"
+              ]
+            }
+          ]
+        }
+      ],
+      "P31": [
+        {
+          "mainsnak": {
+            "snaktype": "value",
+            "property": "P31",
+            "hash": "b34b900133d4a42b690d9abf024f5f2f27576bee",
+            "datavalue": {
+              "value": {
+                "entity-type": "item",
+                "numeric-id": 1773266,
+                "id": "Q1773266"
+              },
+              "type": "wikibase-entityid"
+            },
+            "datatype": "wikibase-item"
+          },
+          "type": "statement",
+          "id": "Q2389458$bc505219-49c0-d433-1542-4a07982b858d",
+          "rank": "normal"
+        }
+      ]
+    },
+    "sitelinks": {
+      "frwiki": {
+        "site": "frwiki",
+        "title": "Système monétaire du royaume de France",
+        "badges": [],
+        "url": "https://fr.wikipedia.org/wiki/Syst%C3%A8me_mon%C3%A9taire_du_royaume_de_France"
+      },
+      "itwiki": {
+        "site": "itwiki",
+        "title": "Monetazione moderna",
+        "badges": [],
+        "url": "https://it.wikipedia.org/wiki/Monetazione_moderna"
+      },
+      "ruwiki": {
+        "site": "ruwiki",
+        "title": "Денежная система Франции при Старом порядке",
+        "badges": [],
+        "url": "https://ru.wikipedia.org/wiki/%D0%94%D0%B5%D0%BD%D0%B5%D0%B6%D0%BD%D0%B0%D1%8F_%D1%81%D0%B8%D1%81%D1%82%D0%B5%D0%BC%D0%B0_%D0%A4%D1%80%D0%B0%D0%BD%D1%86%D0%B8%D0%B8_%D0%BF%D1%80%D0%B8_%D0%A1%D1%82%D0%B0%D1%80%D0%BE%D0%BC_%D0%BF%D0%BE%D1%80%D1%8F%D0%B4%D0%BA%D0%B5"
+      },
+      "zhwiki": {
+        "site": "zhwiki",
+        "title": "法兰西王国的货币体系",
+        "badges": [],
+        "url": "https://zh.wikipedia.org/wiki/%E6%B3%95%E5%85%B0%E8%A5%BF%E7%8E%8B%E5%9B%BD%E7%9A%84%E8%B4%A7%E5%B8%81%E4%BD%93%E7%B3%BB"
+      }
+    }
+  }
+}

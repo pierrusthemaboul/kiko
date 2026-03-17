@@ -1,0 +1,1195 @@
+{
+  "pageid": 652833,
+  "ns": 0,
+  "title": "Q692936",
+  "lastrevid": 2468310763,
+  "modified": "2026-03-01T09:57:51Z",
+  "type": "item",
+  "id": "Q692936",
+  "labels": {
+    "pt": {
+      "language": "pt",
+      "value": "Touring Club Suisse"
+    },
+    "de": {
+      "language": "de",
+      "value": "Touring Club Schweiz"
+    },
+    "fr": {
+      "language": "fr",
+      "value": "Touring Club suisse"
+    },
+    "en": {
+      "language": "en",
+      "value": "Touring Club Suisse"
+    },
+    "hr": {
+      "language": "hr",
+      "value": "Touring Club Schweiz"
+    },
+    "rm": {
+      "language": "rm",
+      "value": "Touring Club da la Svizra"
+    },
+    "nl": {
+      "language": "nl",
+      "value": "Touring Club Suisse"
+    },
+    "it": {
+      "language": "it",
+      "value": "Touring Club Svizzero"
+    },
+    "ja": {
+      "language": "ja",
+      "value": "スイス旅行クラブ"
+    },
+    "vec": {
+      "language": "vec",
+      "value": "Touring Club Suisse"
+    }
+  },
+  "descriptions": {
+    "en": {
+      "language": "en",
+      "value": "non-profit association"
+    },
+    "de": {
+      "language": "de",
+      "value": "Schweizer Verkehrsclub, ursprünglich Radfahrerklub (* 1896)"
+    }
+  },
+  "aliases": {
+    "rm": [
+      {
+        "language": "rm",
+        "value": "TCS"
+      }
+    ],
+    "de": [
+      {
+        "language": "de",
+        "value": "TCS"
+      }
+    ]
+  },
+  "claims": {
+    "P646": [
+      {
+        "mainsnak": {
+          "snaktype": "value",
+          "property": "P646",
+          "hash": "5f8903673bf735a2b50e99be5fbdd41fc5b01117",
+          "datavalue": {
+            "value": "/m/08r30y",
+            "type": "string"
+          },
+          "datatype": "external-id"
+        },
+        "type": "statement",
+        "id": "Q692936$643F0A44-D5E0-4B1E-828E-01E31E52C8A2",
+        "rank": "normal",
+        "references": [
+          {
+            "hash": "2b00cb481cddcac7623114367489b5c194901c4a",
+            "snaks": {
+              "P248": [
+                {
+                  "snaktype": "value",
+                  "property": "P248",
+                  "hash": "a94b740202b097dd33355e0e6c00e54b9395e5e0",
+                  "datavalue": {
+                    "value": {
+                      "entity-type": "item",
+                      "numeric-id": 15241312,
+                      "id": "Q15241312"
+                    },
+                    "type": "wikibase-entityid"
+                  },
+                  "datatype": "wikibase-item"
+                }
+              ],
+              "P577": [
+                {
+                  "snaktype": "value",
+                  "property": "P577",
+                  "hash": "fde79ecb015112d2f29229ccc1ec514ed3e71fa2",
+                  "datavalue": {
+                    "value": {
+                      "time": "+2013-10-28T00:00:00Z",
+                      "timezone": 0,
+                      "before": 0,
+                      "after": 0,
+                      "precision": 11,
+                      "calendarmodel": "http://www.wikidata.org/entity/Q1985727"
+                    },
+                    "type": "time"
+                  },
+                  "datatype": "time"
+                }
+              ]
+            },
+            "snaks-order": [
+              "P248",
+              "P577"
+            ]
+          }
+        ]
+      }
+    ],
+    "P227": [
+      {
+        "mainsnak": {
+          "snaktype": "value",
+          "property": "P227",
+          "hash": "861736835c2b7b2feaad06a9122eb94d1ceffc39",
+          "datavalue": {
+            "value": "2024619-5",
+            "type": "string"
+          },
+          "datatype": "external-id"
+        },
+        "type": "statement",
+        "id": "Q692936$F84C5867-EFB2-42D1-933F-B6E1F4E6A424",
+        "rank": "normal",
+        "references": [
+          {
+            "hash": "9a24f7c0208b05d6be97077d855671d1dfdbc0dd",
+            "snaks": {
+              "P143": [
+                {
+                  "snaktype": "value",
+                  "property": "P143",
+                  "hash": "d38375ffe6fe142663ff55cd783aa4df4301d83d",
+                  "datavalue": {
+                    "value": {
+                      "entity-type": "item",
+                      "numeric-id": 48183,
+                      "id": "Q48183"
+                    },
+                    "type": "wikibase-entityid"
+                  },
+                  "datatype": "wikibase-item"
+                }
+              ]
+            },
+            "snaks-order": [
+              "P143"
+            ]
+          }
+        ]
+      }
+    ],
+    "P244": [
+      {
+        "mainsnak": {
+          "snaktype": "value",
+          "property": "P244",
+          "hash": "fd686175e5f1eec6d67bd16f176e81ae5786035f",
+          "datavalue": {
+            "value": "n81103296",
+            "type": "string"
+          },
+          "datatype": "external-id"
+        },
+        "type": "statement",
+        "id": "Q692936$DD7DD5B8-AA17-4F21-94F6-2F3D60F03119",
+        "rank": "normal",
+        "references": [
+          {
+            "hash": "9a24f7c0208b05d6be97077d855671d1dfdbc0dd",
+            "snaks": {
+              "P143": [
+                {
+                  "snaktype": "value",
+                  "property": "P143",
+                  "hash": "d38375ffe6fe142663ff55cd783aa4df4301d83d",
+                  "datavalue": {
+                    "value": {
+                      "entity-type": "item",
+                      "numeric-id": 48183,
+                      "id": "Q48183"
+                    },
+                    "type": "wikibase-entityid"
+                  },
+                  "datatype": "wikibase-item"
+                }
+              ]
+            },
+            "snaks-order": [
+              "P143"
+            ]
+          }
+        ]
+      }
+    ],
+    "P214": [
+      {
+        "mainsnak": {
+          "snaktype": "value",
+          "property": "P214",
+          "hash": "1d997b546f83af33908ff903a576f3294b94d358",
+          "datavalue": {
+            "value": "140197451",
+            "type": "string"
+          },
+          "datatype": "external-id"
+        },
+        "type": "statement",
+        "id": "Q692936$98F7440E-4A90-4441-B17E-67270242C9F9",
+        "rank": "normal",
+        "references": [
+          {
+            "hash": "9a24f7c0208b05d6be97077d855671d1dfdbc0dd",
+            "snaks": {
+              "P143": [
+                {
+                  "snaktype": "value",
+                  "property": "P143",
+                  "hash": "d38375ffe6fe142663ff55cd783aa4df4301d83d",
+                  "datavalue": {
+                    "value": {
+                      "entity-type": "item",
+                      "numeric-id": 48183,
+                      "id": "Q48183"
+                    },
+                    "type": "wikibase-entityid"
+                  },
+                  "datatype": "wikibase-item"
+                }
+              ]
+            },
+            "snaks-order": [
+              "P143"
+            ]
+          }
+        ]
+      }
+    ],
+    "P571": [
+      {
+        "mainsnak": {
+          "snaktype": "value",
+          "property": "P571",
+          "hash": "550c156c32c3ed22955f1ea853b76dbb848506d3",
+          "datavalue": {
+            "value": {
+              "time": "+1896-00-00T00:00:00Z",
+              "timezone": 0,
+              "before": 0,
+              "after": 0,
+              "precision": 9,
+              "calendarmodel": "http://www.wikidata.org/entity/Q1985727"
+            },
+            "type": "time"
+          },
+          "datatype": "time"
+        },
+        "type": "statement",
+        "id": "Q692936$B0B18801-C8E3-43AA-9B57-7EAE83A3D69A",
+        "rank": "normal",
+        "references": [
+          {
+            "hash": "9a24f7c0208b05d6be97077d855671d1dfdbc0dd",
+            "snaks": {
+              "P143": [
+                {
+                  "snaktype": "value",
+                  "property": "P143",
+                  "hash": "d38375ffe6fe142663ff55cd783aa4df4301d83d",
+                  "datavalue": {
+                    "value": {
+                      "entity-type": "item",
+                      "numeric-id": 48183,
+                      "id": "Q48183"
+                    },
+                    "type": "wikibase-entityid"
+                  },
+                  "datatype": "wikibase-item"
+                }
+              ]
+            },
+            "snaks-order": [
+              "P143"
+            ]
+          }
+        ]
+      }
+    ],
+    "P856": [
+      {
+        "mainsnak": {
+          "snaktype": "value",
+          "property": "P856",
+          "hash": "f66370deab2fa56110722543b9a36c26f3f5698f",
+          "datavalue": {
+            "value": "http://www.tcs.ch",
+            "type": "string"
+          },
+          "datatype": "url"
+        },
+        "type": "statement",
+        "id": "Q692936$2A0A1B13-C955-47D0-9425-67C5983AEC49",
+        "rank": "normal",
+        "references": [
+          {
+            "hash": "d4bd87b862b12d99d26e86472d44f26858dee639",
+            "snaks": {
+              "P143": [
+                {
+                  "snaktype": "value",
+                  "property": "P143",
+                  "hash": "f30cbd35620c4ea6d0633aaf0210a8916130469b",
+                  "datavalue": {
+                    "value": {
+                      "entity-type": "item",
+                      "numeric-id": 8447,
+                      "id": "Q8447"
+                    },
+                    "type": "wikibase-entityid"
+                  },
+                  "datatype": "wikibase-item"
+                }
+              ]
+            },
+            "snaks-order": [
+              "P143"
+            ]
+          }
+        ]
+      }
+    ],
+    "P373": [
+      {
+        "mainsnak": {
+          "snaktype": "value",
+          "property": "P373",
+          "hash": "fc37399f917e2b86f835671f62e01090f67ca746",
+          "datavalue": {
+            "value": "Touring Club Suisse",
+            "type": "string"
+          },
+          "datatype": "string"
+        },
+        "type": "statement",
+        "id": "Q692936$C6870A07-C0E7-4BD0-A26E-B8246755D2D1",
+        "rank": "normal"
+      }
+    ],
+    "P31": [
+      {
+        "mainsnak": {
+          "snaktype": "value",
+          "property": "P31",
+          "hash": "dbb969a1d294a33cba09de83895922121a7bc847",
+          "datavalue": {
+            "value": {
+              "entity-type": "item",
+              "numeric-id": 988108,
+              "id": "Q988108"
+            },
+            "type": "wikibase-entityid"
+          },
+          "datatype": "wikibase-item"
+        },
+        "type": "statement",
+        "id": "Q692936$f94d05ba-4cdb-1327-cbc4-6bc894233c6f",
+        "rank": "normal"
+      },
+      {
+        "mainsnak": {
+          "snaktype": "value",
+          "property": "P31",
+          "hash": "eef1731db85f0ac84d4ae5d83756e45ce052108d",
+          "datavalue": {
+            "value": {
+              "entity-type": "item",
+              "numeric-id": 6881511,
+              "id": "Q6881511"
+            },
+            "type": "wikibase-entityid"
+          },
+          "datatype": "wikibase-item"
+        },
+        "type": "statement",
+        "id": "Q692936$c6da7527-4a34-195f-eb56-8610d042d3b1",
+        "rank": "normal"
+      }
+    ],
+    "P2427": [
+      {
+        "mainsnak": {
+          "snaktype": "value",
+          "property": "P2427",
+          "hash": "2c322cab2028c44b1382d7096b869e8d4c388a18",
+          "datavalue": {
+            "value": "grid.483681.0",
+            "type": "string"
+          },
+          "datatype": "external-id"
+        },
+        "type": "statement",
+        "id": "Q692936$df0940e4-40fa-ec58-575b-67eea7468749",
+        "rank": "normal",
+        "references": [
+          {
+            "hash": "0b6cf684d731cc4fd3b96081cdf683b07af8a53e",
+            "snaks": {
+              "P248": [
+                {
+                  "snaktype": "value",
+                  "property": "P248",
+                  "hash": "586a1cdd192c1719501984b361649bcd4b453a4f",
+                  "datavalue": {
+                    "value": {
+                      "entity-type": "item",
+                      "numeric-id": 33026260,
+                      "id": "Q33026260"
+                    },
+                    "type": "wikibase-entityid"
+                  },
+                  "datatype": "wikibase-item"
+                }
+              ]
+            },
+            "snaks-order": [
+              "P248"
+            ]
+          }
+        ]
+      }
+    ],
+    "P159": [
+      {
+        "mainsnak": {
+          "snaktype": "value",
+          "property": "P159",
+          "hash": "601454fe0ff491b16223882c08ca61cf68f45e20",
+          "datavalue": {
+            "value": {
+              "entity-type": "item",
+              "numeric-id": 63922,
+              "id": "Q63922"
+            },
+            "type": "wikibase-entityid"
+          },
+          "datatype": "wikibase-item"
+        },
+        "type": "statement",
+        "id": "Q692936$CF71A089-7D92-4539-A562-E2E69AE8AEFE",
+        "rank": "normal",
+        "references": [
+          {
+            "hash": "9a24f7c0208b05d6be97077d855671d1dfdbc0dd",
+            "snaks": {
+              "P143": [
+                {
+                  "snaktype": "value",
+                  "property": "P143",
+                  "hash": "d38375ffe6fe142663ff55cd783aa4df4301d83d",
+                  "datavalue": {
+                    "value": {
+                      "entity-type": "item",
+                      "numeric-id": 48183,
+                      "id": "Q48183"
+                    },
+                    "type": "wikibase-entityid"
+                  },
+                  "datatype": "wikibase-item"
+                }
+              ]
+            },
+            "snaks-order": [
+              "P143"
+            ]
+          }
+        ]
+      }
+    ],
+    "P17": [
+      {
+        "mainsnak": {
+          "snaktype": "value",
+          "property": "P17",
+          "hash": "72649de3bac2e56da4b2eca1af96de4a619af9bc",
+          "datavalue": {
+            "value": {
+              "entity-type": "item",
+              "numeric-id": 39,
+              "id": "Q39"
+            },
+            "type": "wikibase-entityid"
+          },
+          "datatype": "wikibase-item"
+        },
+        "type": "statement",
+        "id": "Q692936$c75e5ab5-48be-89bd-4322-16242cf50be1",
+        "rank": "normal",
+        "references": [
+          {
+            "hash": "5f23b08781d37833e7e4ed9cd46a8767a48bd0c6",
+            "snaks": {
+              "P2427": [
+                {
+                  "snaktype": "value",
+                  "property": "P2427",
+                  "hash": "2c322cab2028c44b1382d7096b869e8d4c388a18",
+                  "datavalue": {
+                    "value": "grid.483681.0",
+                    "type": "string"
+                  },
+                  "datatype": "external-id"
+                }
+              ],
+              "P248": [
+                {
+                  "snaktype": "value",
+                  "property": "P248",
+                  "hash": "90ed57226f81c281580343f40e5859831bf9b38e",
+                  "datavalue": {
+                    "value": {
+                      "entity-type": "item",
+                      "numeric-id": 27768150,
+                      "id": "Q27768150"
+                    },
+                    "type": "wikibase-entityid"
+                  },
+                  "datatype": "wikibase-item"
+                }
+              ],
+              "P813": [
+                {
+                  "snaktype": "value",
+                  "property": "P813",
+                  "hash": "d78b41e6e38956f96b9eca20b6fa9b2a1b566263",
+                  "datavalue": {
+                    "value": {
+                      "time": "+2020-05-13T00:00:00Z",
+                      "timezone": 0,
+                      "before": 0,
+                      "after": 0,
+                      "precision": 11,
+                      "calendarmodel": "http://www.wikidata.org/entity/Q1985727"
+                    },
+                    "type": "time"
+                  },
+                  "datatype": "time"
+                }
+              ]
+            },
+            "snaks-order": [
+              "P2427",
+              "P248",
+              "P813"
+            ]
+          }
+        ]
+      }
+    ],
+    "P154": [
+      {
+        "mainsnak": {
+          "snaktype": "value",
+          "property": "P154",
+          "hash": "587bb937c1d05eab25e0177717d2dcfee9f8927c",
+          "datavalue": {
+            "value": "Tcs logo online rgb round 2024 220px.png",
+            "type": "string"
+          },
+          "datatype": "commonsMedia"
+        },
+        "type": "statement",
+        "id": "Q692936$1c6c1e44-4fb8-552a-2eb9-cecb5fa5491a",
+        "rank": "normal"
+      }
+    ],
+    "P213": [
+      {
+        "mainsnak": {
+          "snaktype": "value",
+          "property": "P213",
+          "hash": "8aa7245487747609eb999a27c1cbe641cd625f32",
+          "datavalue": {
+            "value": "0000000110129295",
+            "type": "string"
+          },
+          "datatype": "external-id"
+        },
+        "type": "statement",
+        "id": "Q692936$1FCE84C0-7B9C-4525-AD4F-3105D4DBFAD9",
+        "rank": "normal",
+        "references": [
+          {
+            "hash": "a84033bf463efad736e9b83227b04ba96a5995db",
+            "snaks": {
+              "P2427": [
+                {
+                  "snaktype": "value",
+                  "property": "P2427",
+                  "hash": "2c322cab2028c44b1382d7096b869e8d4c388a18",
+                  "datavalue": {
+                    "value": "grid.483681.0",
+                    "type": "string"
+                  },
+                  "datatype": "external-id"
+                }
+              ]
+            },
+            "snaks-order": [
+              "P2427"
+            ]
+          }
+        ]
+      }
+    ],
+    "P269": [
+      {
+        "mainsnak": {
+          "snaktype": "value",
+          "property": "P269",
+          "hash": "d61b75fcde6b8aeee192d9ee382d4d4c4cc47a84",
+          "datavalue": {
+            "value": "170200949",
+            "type": "string"
+          },
+          "datatype": "external-id"
+        },
+        "type": "statement",
+        "id": "Q692936$772BCF07-1634-4D94-ADE4-A4323FD1045E",
+        "rank": "normal",
+        "references": [
+          {
+            "hash": "fee89c4488c942491dad7fea5d6f3a854b9b677d",
+            "snaks": {
+              "P248": [
+                {
+                  "snaktype": "value",
+                  "property": "P248",
+                  "hash": "6b7d4330c4aac4caec4ede9de0311ce273f88ecd",
+                  "datavalue": {
+                    "value": {
+                      "entity-type": "item",
+                      "numeric-id": 54919,
+                      "id": "Q54919"
+                    },
+                    "type": "wikibase-entityid"
+                  },
+                  "datatype": "wikibase-item"
+                }
+              ],
+              "P214": [
+                {
+                  "snaktype": "value",
+                  "property": "P214",
+                  "hash": "1d997b546f83af33908ff903a576f3294b94d358",
+                  "datavalue": {
+                    "value": "140197451",
+                    "type": "string"
+                  },
+                  "datatype": "external-id"
+                }
+              ],
+              "P813": [
+                {
+                  "snaktype": "value",
+                  "property": "P813",
+                  "hash": "a1b98b5c8bb6eca02829acaf6200c3e4a45b4dd0",
+                  "datavalue": {
+                    "value": {
+                      "time": "+2018-10-07T00:00:00Z",
+                      "timezone": 0,
+                      "before": 0,
+                      "after": 0,
+                      "precision": 11,
+                      "calendarmodel": "http://www.wikidata.org/entity/Q1985727"
+                    },
+                    "type": "time"
+                  },
+                  "datatype": "time"
+                }
+              ]
+            },
+            "snaks-order": [
+              "P248",
+              "P214",
+              "P813"
+            ]
+          }
+        ]
+      }
+    ],
+    "P691": [
+      {
+        "mainsnak": {
+          "snaktype": "value",
+          "property": "P691",
+          "hash": "b15b04e7c57e55079726a78ffe198741b856bdf5",
+          "datavalue": {
+            "value": "ko2003189449",
+            "type": "string"
+          },
+          "datatype": "external-id"
+        },
+        "type": "statement",
+        "qualifiers": {
+          "P1810": [
+            {
+              "snaktype": "value",
+              "property": "P1810",
+              "hash": "cc97bfa7f770b6b7d52bde53a42c3a0d1ec8e5d3",
+              "datavalue": {
+                "value": "Touring Club suisse",
+                "type": "string"
+              },
+              "datatype": "string"
+            }
+          ]
+        },
+        "qualifiers-order": [
+          "P1810"
+        ],
+        "id": "Q692936$08F6B7AC-2A79-4CD0-ADD1-934BEF8DF204",
+        "rank": "normal",
+        "references": [
+          {
+            "hash": "e33b20bfa6d46f6f1a1aed2f7cf2202ac3e4f990",
+            "snaks": {
+              "P214": [
+                {
+                  "snaktype": "value",
+                  "property": "P214",
+                  "hash": "1d997b546f83af33908ff903a576f3294b94d358",
+                  "datavalue": {
+                    "value": "140197451",
+                    "type": "string"
+                  },
+                  "datatype": "external-id"
+                }
+              ],
+              "P248": [
+                {
+                  "snaktype": "value",
+                  "property": "P248",
+                  "hash": "6b7d4330c4aac4caec4ede9de0311ce273f88ecd",
+                  "datavalue": {
+                    "value": {
+                      "entity-type": "item",
+                      "numeric-id": 54919,
+                      "id": "Q54919"
+                    },
+                    "type": "wikibase-entityid"
+                  },
+                  "datatype": "wikibase-item"
+                }
+              ],
+              "P813": [
+                {
+                  "snaktype": "value",
+                  "property": "P813",
+                  "hash": "fbb82335948dded05700b40aa70939a025132936",
+                  "datavalue": {
+                    "value": {
+                      "time": "+2018-12-23T00:00:00Z",
+                      "timezone": 0,
+                      "before": 0,
+                      "after": 0,
+                      "precision": 11,
+                      "calendarmodel": "http://www.wikidata.org/entity/Q1985727"
+                    },
+                    "type": "time"
+                  },
+                  "datatype": "time"
+                }
+              ]
+            },
+            "snaks-order": [
+              "P214",
+              "P248",
+              "P813"
+            ]
+          }
+        ]
+      }
+    ],
+    "P6366": [
+      {
+        "mainsnak": {
+          "snaktype": "value",
+          "property": "P6366",
+          "hash": "1ecbe11ecb7e902512cc634a78337989554d9c9c",
+          "datavalue": {
+            "value": "2801230624",
+            "type": "string"
+          },
+          "datatype": "external-id"
+        },
+        "type": "statement",
+        "id": "Q692936$A3A90CBC-01A9-4472-B05A-EC24B5CF773E",
+        "rank": "normal",
+        "references": [
+          {
+            "hash": "edb6619050762150e98f12318f99070d33756868",
+            "snaks": {
+              "P248": [
+                {
+                  "snaktype": "value",
+                  "property": "P248",
+                  "hash": "2995ad06d424d751f036cb92149fada89fe252d9",
+                  "datavalue": {
+                    "value": {
+                      "entity-type": "item",
+                      "numeric-id": 60683589,
+                      "id": "Q60683589"
+                    },
+                    "type": "wikibase-entityid"
+                  },
+                  "datatype": "wikibase-item"
+                }
+              ],
+              "P2427": [
+                {
+                  "snaktype": "value",
+                  "property": "P2427",
+                  "hash": "2c322cab2028c44b1382d7096b869e8d4c388a18",
+                  "datavalue": {
+                    "value": "grid.483681.0",
+                    "type": "string"
+                  },
+                  "datatype": "external-id"
+                }
+              ],
+              "P813": [
+                {
+                  "snaktype": "value",
+                  "property": "P813",
+                  "hash": "74c664545729bbe3e2b6db4bfa3d58ebdeb8e9f0",
+                  "datavalue": {
+                    "value": {
+                      "time": "+2019-01-19T00:00:00Z",
+                      "timezone": 0,
+                      "before": 0,
+                      "after": 0,
+                      "precision": 11,
+                      "calendarmodel": "http://www.wikidata.org/entity/Q1985727"
+                    },
+                    "type": "time"
+                  },
+                  "datatype": "time"
+                }
+              ]
+            },
+            "snaks-order": [
+              "P248",
+              "P2427",
+              "P813"
+            ]
+          }
+        ]
+      }
+    ],
+    "P6782": [
+      {
+        "mainsnak": {
+          "snaktype": "value",
+          "property": "P6782",
+          "hash": "2c0e480ce95aed7d21fa12ee7e10e73ff8e84b51",
+          "datavalue": {
+            "value": "00h5qcp65",
+            "type": "string"
+          },
+          "datatype": "external-id"
+        },
+        "type": "statement",
+        "id": "Q692936$8216220E-FF50-412B-A81D-FE4A494F503E",
+        "rank": "normal"
+      }
+    ],
+    "P463": [
+      {
+        "mainsnak": {
+          "snaktype": "value",
+          "property": "P463",
+          "hash": "01c293cc8f785c24333fbfb7287a2903da459203",
+          "datavalue": {
+            "value": {
+              "entity-type": "item",
+              "numeric-id": 179412,
+              "id": "Q179412"
+            },
+            "type": "wikibase-entityid"
+          },
+          "datatype": "wikibase-item"
+        },
+        "type": "statement",
+        "id": "Q692936$49B98277-C98B-4879-8B97-2E20D569C67E",
+        "rank": "normal"
+      }
+    ],
+    "P10283": [
+      {
+        "mainsnak": {
+          "snaktype": "value",
+          "property": "P10283",
+          "hash": "c4361294b74c04160b32788c38b95c7593fcd250",
+          "datavalue": {
+            "value": "I2801230624",
+            "type": "string"
+          },
+          "datatype": "external-id"
+        },
+        "type": "statement",
+        "id": "Q692936$C23DBCA8-2479-4A33-9BD9-B0D6C39D5D17",
+        "rank": "normal",
+        "references": [
+          {
+            "hash": "30c7a6367b9a2e7a19c76fa60ecd6c4a5ace5ec9",
+            "snaks": {
+              "P248": [
+                {
+                  "snaktype": "value",
+                  "property": "P248",
+                  "hash": "4a4f26a5361b5707266e48e425bf2be2f99fd2ab",
+                  "datavalue": {
+                    "value": {
+                      "entity-type": "item",
+                      "numeric-id": 107507571,
+                      "id": "Q107507571"
+                    },
+                    "type": "wikibase-entityid"
+                  },
+                  "datatype": "wikibase-item"
+                }
+              ],
+              "P854": [
+                {
+                  "snaktype": "value",
+                  "property": "P854",
+                  "hash": "a4a4bf53f22268815c51ec10fed608da703c9c7f",
+                  "datavalue": {
+                    "value": "https://docs.openalex.org/download-snapshot/snapshot-data-format",
+                    "type": "string"
+                  },
+                  "datatype": "url"
+                }
+              ],
+              "P813": [
+                {
+                  "snaktype": "value",
+                  "property": "P813",
+                  "hash": "08529d064baad71a9df22dc3308e931aca9bd537",
+                  "datavalue": {
+                    "value": {
+                      "time": "+2022-01-25T00:00:00Z",
+                      "timezone": 0,
+                      "before": 0,
+                      "after": 0,
+                      "precision": 11,
+                      "calendarmodel": "http://www.wikidata.org/entity/Q1985727"
+                    },
+                    "type": "time"
+                  },
+                  "datatype": "time"
+                }
+              ]
+            },
+            "snaks-order": [
+              "P248",
+              "P854",
+              "P813"
+            ]
+          }
+        ]
+      }
+    ],
+    "P2088": [
+      {
+        "mainsnak": {
+          "snaktype": "value",
+          "property": "P2088",
+          "hash": "2c4f2c64a0c2c89ad595a5c61a0cc2d7836d1d42",
+          "datavalue": {
+            "value": "touring-club-switzerland",
+            "type": "string"
+          },
+          "datatype": "external-id"
+        },
+        "type": "statement",
+        "id": "Q692936$285661F3-2C76-481D-9B6B-AF1DAA68FE4A",
+        "rank": "normal"
+      }
+    ],
+    "P18": [
+      {
+        "mainsnak": {
+          "snaktype": "value",
+          "property": "P18",
+          "hash": "310c3e4b53eb99efe4fd82b71cef9fe869ac233c",
+          "datavalue": {
+            "value": "Tcs-patrouille-mercedes-2025 2.jpg",
+            "type": "string"
+          },
+          "datatype": "commonsMedia"
+        },
+        "type": "statement",
+        "id": "Q692936$449E4DD2-47D1-49BF-BA7B-BCAF5E5C8AB6",
+        "rank": "normal"
+      }
+    ],
+    "P1454": [
+      {
+        "mainsnak": {
+          "snaktype": "value",
+          "property": "P1454",
+          "hash": "26acf39889d9314a96982f4a11242ca566e07d96",
+          "datavalue": {
+            "value": {
+              "entity-type": "item",
+              "numeric-id": 15177651,
+              "id": "Q15177651"
+            },
+            "type": "wikibase-entityid"
+          },
+          "datatype": "wikibase-item"
+        },
+        "type": "statement",
+        "id": "Q692936$FC0C44C5-E758-44D8-AC8C-D57CF3AB6098",
+        "rank": "normal",
+        "references": [
+          {
+            "hash": "33e2737823f9ccfa306c822136e11e5727e1eeb0",
+            "snaks": {
+              "P143": [
+                {
+                  "snaktype": "value",
+                  "property": "P143",
+                  "hash": "d38375ffe6fe142663ff55cd783aa4df4301d83d",
+                  "datavalue": {
+                    "value": {
+                      "entity-type": "item",
+                      "numeric-id": 48183,
+                      "id": "Q48183"
+                    },
+                    "type": "wikibase-entityid"
+                  },
+                  "datatype": "wikibase-item"
+                }
+              ],
+              "P813": [
+                {
+                  "snaktype": "value",
+                  "property": "P813",
+                  "hash": "a60166770ad12bc67ce9d28ed207e1fe630c325a",
+                  "datavalue": {
+                    "value": {
+                      "time": "+2024-08-10T00:00:00Z",
+                      "timezone": 0,
+                      "before": 0,
+                      "after": 0,
+                      "precision": 11,
+                      "calendarmodel": "http://www.wikidata.org/entity/Q1985727"
+                    },
+                    "type": "time"
+                  },
+                  "datatype": "time"
+                }
+              ]
+            },
+            "snaks-order": [
+              "P143",
+              "P813"
+            ]
+          }
+        ]
+      }
+    ],
+    "P9964": [
+      {
+        "mainsnak": {
+          "snaktype": "value",
+          "property": "P9964",
+          "hash": "de3b225f67800ab28716f9ea81c1f929a938c957",
+          "datavalue": {
+            "value": "2024619-5",
+            "type": "string"
+          },
+          "datatype": "external-id"
+        },
+        "type": "statement",
+        "id": "Q692936$9F2ED747-C2AF-4429-9F9C-B5C9A1C5EA2B",
+        "rank": "normal"
+      }
+    ],
+    "P13591": [
+      {
+        "mainsnak": {
+          "snaktype": "value",
+          "property": "P13591",
+          "hash": "2635202a8f26372de3cc795ac825fb990e56dbca",
+          "datavalue": {
+            "value": "group/473c7119-7304-4a74-9178-addef0de4351",
+            "type": "string"
+          },
+          "datatype": "external-id"
+        },
+        "type": "statement",
+        "id": "Q692936$0F976173-0E0C-45EA-9985-3058C4466A7C",
+        "rank": "normal"
+      }
+    ]
+  },
+  "sitelinks": {
+    "commonswiki": {
+      "site": "commonswiki",
+      "title": "Category:Touring Club Suisse",
+      "badges": [],
+      "url": "https://commons.wikimedia.org/wiki/Category:Touring_Club_Suisse"
+    },
+    "dewiki": {
+      "site": "dewiki",
+      "title": "Touring Club Schweiz",
+      "badges": [],
+      "url": "https://de.wikipedia.org/wiki/Touring_Club_Schweiz"
+    },
+    "enwiki": {
+      "site": "enwiki",
+      "title": "Touring Club Suisse",
+      "badges": [],
+      "url": "https://en.wikipedia.org/wiki/Touring_Club_Suisse"
+    },
+    "frwiki": {
+      "site": "frwiki",
+      "title": "Touring Club Suisse",
+      "badges": [],
+      "url": "https://fr.wikipedia.org/wiki/Touring_Club_Suisse"
+    },
+    "hrwiki": {
+      "site": "hrwiki",
+      "title": "Touring Club Schweiz",
+      "badges": [],
+      "url": "https://hr.wikipedia.org/wiki/Touring_Club_Schweiz"
+    },
+    "itwiki": {
+      "site": "itwiki",
+      "title": "Touring Club Svizzero",
+      "badges": [],
+      "url": "https://it.wikipedia.org/wiki/Touring_Club_Svizzero"
+    },
+    "nlwiki": {
+      "site": "nlwiki",
+      "title": "Touring Club Suisse",
+      "badges": [],
+      "url": "https://nl.wikipedia.org/wiki/Touring_Club_Suisse"
+    },
+    "ptwiki": {
+      "site": "ptwiki",
+      "title": "Touring Club Suisse",
+      "badges": [],
+      "url": "https://pt.wikipedia.org/wiki/Touring_Club_Suisse"
+    },
+    "rmwiki": {
+      "site": "rmwiki",
+      "title": "Touring Club da la Svizra",
+      "badges": [],
+      "url": "https://rm.wikipedia.org/wiki/Touring_Club_da_la_Svizra"
+    }
+  }
+}

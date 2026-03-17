@@ -1,0 +1,594 @@
+{
+  "saved_at": "2026-03-07T14:07:00.683Z",
+  "value": {
+    "pageid": 1489222,
+    "ns": 0,
+    "title": "Q1552900",
+    "lastrevid": 2341601114,
+    "modified": "2025-04-25T10:50:28Z",
+    "type": "item",
+    "id": "Q1552900",
+    "labels": {
+      "ru": {
+        "language": "ru",
+        "value": "Клад из Гварразара"
+      },
+      "eo": {
+        "language": "eo",
+        "value": "Trezoro de Guarrazar"
+      },
+      "en": {
+        "language": "en",
+        "value": "Treasure of Guarrazar"
+      },
+      "de": {
+        "language": "de",
+        "value": "Schatzfund von Guarrazar"
+      },
+      "pt": {
+        "language": "pt",
+        "value": "Tesouro de Guarrazar"
+      },
+      "eu": {
+        "language": "eu",
+        "value": "Guarrazarreko altxorra"
+      },
+      "ro": {
+        "language": "ro",
+        "value": "Tezaurul de Guarrazar"
+      },
+      "fr": {
+        "language": "fr",
+        "value": "Trésor de Guarrazar"
+      },
+      "es": {
+        "language": "es",
+        "value": "Tesoro de Guarrazar"
+      },
+      "ca": {
+        "language": "ca",
+        "value": "tresor de Guarrazar"
+      },
+      "hy": {
+        "language": "hy",
+        "value": "Գվառազարի գանձ"
+      },
+      "zh-hant": {
+        "language": "zh-hant",
+        "value": "誇拉薩寶藏"
+      },
+      "zh-cn": {
+        "language": "zh-cn",
+        "value": "夸拉萨宝藏"
+      },
+      "ja": {
+        "language": "ja",
+        "value": "グアラサールの宝物"
+      },
+      "id": {
+        "language": "id",
+        "value": "Harta karun Guarrazar"
+      },
+      "zh-hans": {
+        "language": "zh-hans",
+        "value": "夸拉萨宝藏"
+      },
+      "sl": {
+        "language": "sl",
+        "value": "Zaklad iz Guarrazarja"
+      },
+      "zh": {
+        "language": "zh",
+        "value": "夸拉萨宝藏"
+      },
+      "it": {
+        "language": "it",
+        "value": "Tesoro di Guarrazar"
+      },
+      "el": {
+        "language": "el",
+        "value": "Θησαυρός του Γκουαραθάρ"
+      },
+      "kk": {
+        "language": "kk",
+        "value": "Гварразардан қазына"
+      },
+      "nl": {
+        "language": "nl",
+        "value": "Schat van Guarrazar"
+      }
+    },
+    "descriptions": {
+      "en": {
+        "language": "en",
+        "value": "archeological find composed of twenty-six votive crowns and gold crosses from a site in Guadamur, prov. of Toledo, Castilla-La Mancha, Spain"
+      },
+      "nl": {
+        "language": "nl",
+        "value": "Visigotische schat uit Guadamur, Spanje"
+      }
+    },
+    "aliases": {
+      "ru": [
+        {
+          "language": "ru",
+          "value": "Клад в Гварразаре"
+        },
+        {
+          "language": "ru",
+          "value": "Клад из Гварразары"
+        },
+        {
+          "language": "ru",
+          "value": "Гварразарский клад"
+        }
+      ],
+      "eo": [
+        {
+          "language": "eo",
+          "value": "Guarrazar"
+        }
+      ],
+      "pt": [
+        {
+          "language": "pt",
+          "value": "Tesouro de guarrazar"
+        }
+      ],
+      "eu": [
+        {
+          "language": "eu",
+          "value": "Guarrazarreko Altxorra"
+        }
+      ],
+      "es": [
+        {
+          "language": "es",
+          "value": "Guarrazar"
+        },
+        {
+          "language": "es",
+          "value": "Tesoro de guarrazar"
+        }
+      ],
+      "ja": [
+        {
+          "language": "ja",
+          "value": "グアラザールの宝物"
+        }
+      ],
+      "zh": [
+        {
+          "language": "zh",
+          "value": "瓜拉萨尔的宝藏"
+        }
+      ]
+    },
+    "claims": {
+      "P373": [
+        {
+          "mainsnak": {
+            "snaktype": "value",
+            "property": "P373",
+            "hash": "230222c950785f832cdd609f9f910fc41c0dc674",
+            "datavalue": {
+              "value": "Treasure of Guarrazar",
+              "type": "string"
+            },
+            "datatype": "string"
+          },
+          "type": "statement",
+          "id": "q1552900$79D24538-64DE-4CAE-877B-105C20543400",
+          "rank": "normal",
+          "references": [
+            {
+              "hash": "fa278ebfc458360e5aed63d5058cca83c46134f1",
+              "snaks": {
+                "P143": [
+                  {
+                    "snaktype": "value",
+                    "property": "P143",
+                    "hash": "e4f6d9441d0600513c4533c672b5ab472dc73694",
+                    "datavalue": {
+                      "value": {
+                        "entity-type": "item",
+                        "numeric-id": 328,
+                        "id": "Q328"
+                      },
+                      "type": "wikibase-entityid"
+                    },
+                    "datatype": "wikibase-item"
+                  }
+                ]
+              },
+              "snaks-order": [
+                "P143"
+              ]
+            }
+          ]
+        }
+      ],
+      "P625": [
+        {
+          "mainsnak": {
+            "snaktype": "value",
+            "property": "P625",
+            "hash": "e292ae4decff6438c2d8177ffaa43285b6344446",
+            "datavalue": {
+              "value": {
+                "latitude": 39.81444444,
+                "longitude": -4.14555556,
+                "altitude": null,
+                "precision": 0.00027777777777778,
+                "globe": "http://www.wikidata.org/entity/Q2"
+              },
+              "type": "globecoordinate"
+            },
+            "datatype": "globe-coordinate"
+          },
+          "type": "statement",
+          "id": "Q1552900$342A6577-D23C-45A3-907D-C8ADD1F3580F",
+          "rank": "normal",
+          "references": [
+            {
+              "hash": "9a24f7c0208b05d6be97077d855671d1dfdbc0dd",
+              "snaks": {
+                "P143": [
+                  {
+                    "snaktype": "value",
+                    "property": "P143",
+                    "hash": "d38375ffe6fe142663ff55cd783aa4df4301d83d",
+                    "datavalue": {
+                      "value": {
+                        "entity-type": "item",
+                        "numeric-id": 48183,
+                        "id": "Q48183"
+                      },
+                      "type": "wikibase-entityid"
+                    },
+                    "datatype": "wikibase-item"
+                  }
+                ]
+              },
+              "snaks-order": [
+                "P143"
+              ]
+            }
+          ]
+        }
+      ],
+      "P646": [
+        {
+          "mainsnak": {
+            "snaktype": "value",
+            "property": "P646",
+            "hash": "dd3f8fbdec81d0d99330747c8b345da0dee7c163",
+            "datavalue": {
+              "value": "/m/028c9vn",
+              "type": "string"
+            },
+            "datatype": "external-id"
+          },
+          "type": "statement",
+          "id": "Q1552900$FF214C70-ABE0-46FB-836A-DDFCD7EC6038",
+          "rank": "normal",
+          "references": [
+            {
+              "hash": "2b00cb481cddcac7623114367489b5c194901c4a",
+              "snaks": {
+                "P248": [
+                  {
+                    "snaktype": "value",
+                    "property": "P248",
+                    "hash": "a94b740202b097dd33355e0e6c00e54b9395e5e0",
+                    "datavalue": {
+                      "value": {
+                        "entity-type": "item",
+                        "numeric-id": 15241312,
+                        "id": "Q15241312"
+                      },
+                      "type": "wikibase-entityid"
+                    },
+                    "datatype": "wikibase-item"
+                  }
+                ],
+                "P577": [
+                  {
+                    "snaktype": "value",
+                    "property": "P577",
+                    "hash": "fde79ecb015112d2f29229ccc1ec514ed3e71fa2",
+                    "datavalue": {
+                      "value": {
+                        "time": "+2013-10-28T00:00:00Z",
+                        "timezone": 0,
+                        "before": 0,
+                        "after": 0,
+                        "precision": 11,
+                        "calendarmodel": "http://www.wikidata.org/entity/Q1985727"
+                      },
+                      "type": "time"
+                    },
+                    "datatype": "time"
+                  }
+                ]
+              },
+              "snaks-order": [
+                "P248",
+                "P577"
+              ]
+            }
+          ]
+        }
+      ],
+      "P17": [
+        {
+          "mainsnak": {
+            "snaktype": "value",
+            "property": "P17",
+            "hash": "69df494d7fa0613c7bd8f047afc1e87bdc03a0f2",
+            "datavalue": {
+              "value": {
+                "entity-type": "item",
+                "numeric-id": 29,
+                "id": "Q29"
+              },
+              "type": "wikibase-entityid"
+            },
+            "datatype": "wikibase-item"
+          },
+          "type": "statement",
+          "id": "Q1552900$4B7F0B01-02D3-49DA-B696-5DA97408D2F5",
+          "rank": "normal"
+        }
+      ],
+      "P18": [
+        {
+          "mainsnak": {
+            "snaktype": "value",
+            "property": "P18",
+            "hash": "aeea019d7c26dc0f8bd96e48a43375a2611be485",
+            "datavalue": {
+              "value": "Tesoro de Guarrazar (M.A.N. Inv. 71207 & 71211) 01a.jpg",
+              "type": "string"
+            },
+            "datatype": "commonsMedia"
+          },
+          "type": "statement",
+          "id": "Q1552900$F2253903-EC9D-4678-BD4A-4A07E42C2D3B",
+          "rank": "normal"
+        }
+      ],
+      "P1296": [
+        {
+          "mainsnak": {
+            "snaktype": "value",
+            "property": "P1296",
+            "hash": "5a5da7ee71388d30c574ddb338f7a39f3cc27df8",
+            "datavalue": {
+              "value": "0031423",
+              "type": "string"
+            },
+            "datatype": "external-id"
+          },
+          "type": "statement",
+          "id": "Q1552900$E4509A68-79D8-4C5F-926D-A1DF7745B9AD",
+          "rank": "normal"
+        }
+      ],
+      "P195": [
+        {
+          "mainsnak": {
+            "snaktype": "value",
+            "property": "P195",
+            "hash": "7910aa42a1facfefb8e5c3e1e60e1e002e7993d6",
+            "datavalue": {
+              "value": {
+                "entity-type": "item",
+                "numeric-id": 1352282,
+                "id": "Q1352282"
+              },
+              "type": "wikibase-entityid"
+            },
+            "datatype": "wikibase-item"
+          },
+          "type": "statement",
+          "id": "Q1552900$9F8FF16C-CC91-4F3E-BA1F-FE3ECA075572",
+          "rank": "normal"
+        }
+      ],
+      "P1417": [
+        {
+          "mainsnak": {
+            "snaktype": "value",
+            "property": "P1417",
+            "hash": "b2678fa2c93d41d2ebf907d6b2f83212d68cdca7",
+            "datavalue": {
+              "value": "topic/treasure-of-Guarrazar",
+              "type": "string"
+            },
+            "datatype": "external-id"
+          },
+          "type": "statement",
+          "qualifiers": {
+            "P1810": [
+              {
+                "snaktype": "value",
+                "property": "P1810",
+                "hash": "abe7291e79680898461fa7983fea602640343585",
+                "datavalue": {
+                  "value": "treasure of Guarrazar",
+                  "type": "string"
+                },
+                "datatype": "string"
+              }
+            ]
+          },
+          "qualifiers-order": [
+            "P1810"
+          ],
+          "id": "Q1552900$16E1ADE9-FB03-460A-B439-B097BAC7434C",
+          "rank": "normal"
+        }
+      ],
+      "P31": [
+        {
+          "mainsnak": {
+            "snaktype": "value",
+            "property": "P31",
+            "hash": "0e0a95de275db7d5ee6d4d48275ff87b422c19d0",
+            "datavalue": {
+              "value": {
+                "entity-type": "item",
+                "numeric-id": 10855061,
+                "id": "Q10855061"
+              },
+              "type": "wikibase-entityid"
+            },
+            "datatype": "wikibase-item"
+          },
+          "type": "statement",
+          "id": "Q1552900$f7dd003d-4893-970b-b568-d0cb05854af1",
+          "rank": "normal"
+        }
+      ],
+      "P12385": [
+        {
+          "mainsnak": {
+            "snaktype": "value",
+            "property": "P12385",
+            "hash": "1b8bc5314f44eec8d7e3b5bc93e88ac18dfacc1b",
+            "datavalue": {
+              "value": "tresor-de-guarrazar",
+              "type": "string"
+            },
+            "datatype": "external-id"
+          },
+          "type": "statement",
+          "id": "Q1552900$1df940c7-739b-49c2-b506-a279e091806c",
+          "rank": "normal"
+        }
+      ],
+      "P6332": [
+        {
+          "mainsnak": {
+            "snaktype": "value",
+            "property": "P6332",
+            "hash": "cdf9b7b8a163dd60e8e9c0047f38b3cc0bc5f807",
+            "datavalue": {
+              "value": "tresor-de-guarrazar",
+              "type": "string"
+            },
+            "datatype": "external-id"
+          },
+          "type": "statement",
+          "id": "Q1552900$76b92949-4786-4e62-0029-43071a6adbf8",
+          "rank": "normal"
+        }
+      ]
+    },
+    "sitelinks": {
+      "cawiki": {
+        "site": "cawiki",
+        "title": "Tresor de Guarrazar",
+        "badges": [],
+        "url": "https://ca.wikipedia.org/wiki/Tresor_de_Guarrazar"
+      },
+      "commonswiki": {
+        "site": "commonswiki",
+        "title": "Category:Treasure of Guarrazar",
+        "badges": [],
+        "url": "https://commons.wikimedia.org/wiki/Category:Treasure_of_Guarrazar"
+      },
+      "dewiki": {
+        "site": "dewiki",
+        "title": "Schatzfund von Guarrazar",
+        "badges": [],
+        "url": "https://de.wikipedia.org/wiki/Schatzfund_von_Guarrazar"
+      },
+      "elwiki": {
+        "site": "elwiki",
+        "title": "Θησαυρός του Γκουαραθάρ",
+        "badges": [],
+        "url": "https://el.wikipedia.org/wiki/%CE%98%CE%B7%CF%83%CE%B1%CF%85%CF%81%CF%8C%CF%82_%CF%84%CE%BF%CF%85_%CE%93%CE%BA%CE%BF%CF%85%CE%B1%CF%81%CE%B1%CE%B8%CE%AC%CF%81"
+      },
+      "enwiki": {
+        "site": "enwiki",
+        "title": "Treasure of Guarrazar",
+        "badges": [],
+        "url": "https://en.wikipedia.org/wiki/Treasure_of_Guarrazar"
+      },
+      "eowiki": {
+        "site": "eowiki",
+        "title": "Trezoro de Guarrazar",
+        "badges": [],
+        "url": "https://eo.wikipedia.org/wiki/Trezoro_de_Guarrazar"
+      },
+      "eswiki": {
+        "site": "eswiki",
+        "title": "Tesoro de Guarrazar",
+        "badges": [],
+        "url": "https://es.wikipedia.org/wiki/Tesoro_de_Guarrazar"
+      },
+      "euwiki": {
+        "site": "euwiki",
+        "title": "Guarrazarreko Altxorra",
+        "badges": [],
+        "url": "https://eu.wikipedia.org/wiki/Guarrazarreko_Altxorra"
+      },
+      "frwiki": {
+        "site": "frwiki",
+        "title": "Trésor de Guarrazar",
+        "badges": [],
+        "url": "https://fr.wikipedia.org/wiki/Tr%C3%A9sor_de_Guarrazar"
+      },
+      "hywiki": {
+        "site": "hywiki",
+        "title": "Գվառազարի գանձ",
+        "badges": [],
+        "url": "https://hy.wikipedia.org/wiki/%D4%B3%D5%BE%D5%A1%D5%BC%D5%A1%D5%A6%D5%A1%D6%80%D5%AB_%D5%A3%D5%A1%D5%B6%D5%B1"
+      },
+      "idwiki": {
+        "site": "idwiki",
+        "title": "Harta karun Guarrazar",
+        "badges": [],
+        "url": "https://id.wikipedia.org/wiki/Harta_karun_Guarrazar"
+      },
+      "itwiki": {
+        "site": "itwiki",
+        "title": "Tesoro di Guarrazar",
+        "badges": [],
+        "url": "https://it.wikipedia.org/wiki/Tesoro_di_Guarrazar"
+      },
+      "kkwiki": {
+        "site": "kkwiki",
+        "title": "Гварразардан қазына",
+        "badges": [],
+        "url": "https://kk.wikipedia.org/wiki/%D0%93%D0%B2%D0%B0%D1%80%D1%80%D0%B0%D0%B7%D0%B0%D1%80%D0%B4%D0%B0%D0%BD_%D2%9B%D0%B0%D0%B7%D1%8B%D0%BD%D0%B0"
+      },
+      "ptwiki": {
+        "site": "ptwiki",
+        "title": "Tesouro de Guarrazar",
+        "badges": [],
+        "url": "https://pt.wikipedia.org/wiki/Tesouro_de_Guarrazar"
+      },
+      "rowiki": {
+        "site": "rowiki",
+        "title": "Tezaurul de Guarrazar",
+        "badges": [],
+        "url": "https://ro.wikipedia.org/wiki/Tezaurul_de_Guarrazar"
+      },
+      "ruwiki": {
+        "site": "ruwiki",
+        "title": "Клад из Гваррасара",
+        "badges": [],
+        "url": "https://ru.wikipedia.org/wiki/%D0%9A%D0%BB%D0%B0%D0%B4_%D0%B8%D0%B7_%D0%93%D0%B2%D0%B0%D1%80%D1%80%D0%B0%D1%81%D0%B0%D1%80%D0%B0"
+      },
+      "slwiki": {
+        "site": "slwiki",
+        "title": "Zaklad iz Guarrazarja",
+        "badges": [],
+        "url": "https://sl.wikipedia.org/wiki/Zaklad_iz_Guarrazarja"
+      }
+    }
+  }
+}

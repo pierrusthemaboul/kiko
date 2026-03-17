@@ -1,0 +1,71 @@
+[
+  {
+    "batch": "01",
+    "size": 25,
+    "output": "reports/historical-quality-hard-review-batch-01.json",
+    "by_bucket": {
+      "absence_de_singularite": 22,
+      "titre_ambigu_ou_collision": 3
+    }
+  },
+  {
+    "batch": "02",
+    "size": 25,
+    "output": "reports/historical-quality-hard-review-batch-02.json",
+    "by_bucket": {
+      "divergence_date": 3,
+      "date_disputee": 22
+    }
+  },
+  {
+    "batch": "03",
+    "size": 25,
+    "output": "reports/historical-quality-hard-review-batch-03.json",
+    "by_bucket": {
+      "date_disputee": 6,
+      "retrieval_insuffisant": 2,
+      "annee_exacte_introuvable": 17
+    }
+  },
+  {
+    "batch": "04",
+    "size": 25,
+    "output": "reports/historical-quality-hard-review-batch-04.json",
+    "by_bucket": {
+      "annee_exacte_introuvable": 25
+    }
+  },
+  {
+    "batch": "05",
+    "size": 25,
+    "output": "reports/historical-quality-hard-review-batch-05.json",
+    "by_bucket": {
+      "annee_exacte_introuvable": 25
+    }
+  },
+  {
+    "batch": "06",
+    "size": 25,
+    "output": "reports/historical-quality-hard-review-batch-06.json",
+    "by_bucket": {
+      "annee_exacte_introuvable": 25
+    }
+  },
+  {
+    "batch": "07",
+    "size": 25,
+    "output": "reports/historical-quality-hard-review-batch-07.json",
+    "by_bucket": {
+      "annee_exacte_introuvable": 25
+    }
+  },
+  {
+    "batch": "08",
+    "size": 24,
+    "output": "reports/historical-quality-hard-review-batch-08.json",
+    "by_bucket": {
+      "annee_exacte_introuvable": 8,
+      "preuve_insuffisante": 16
+    }
+  }
+]

@@ -1,0 +1,370 @@
+{
+  "saved_at": "2026-03-07T13:37:14.905Z",
+  "value": {
+    "pageid": 2820028,
+    "ns": 0,
+    "title": "Q2948401",
+    "lastrevid": 2128618452,
+    "modified": "2024-04-14T08:38:04Z",
+    "type": "item",
+    "id": "Q2948401",
+    "labels": {
+      "fr": {
+        "language": "fr",
+        "value": "Chambre des comptes"
+      },
+      "en": {
+        "language": "en",
+        "value": "Court of Auditors"
+      },
+      "it": {
+        "language": "it",
+        "value": "Chambre des comptes"
+      },
+      "de": {
+        "language": "de",
+        "value": "Chambre des comptes"
+      },
+      "ja": {
+        "language": "ja",
+        "value": "会計検査院 (フランス王国)"
+      },
+      "bg": {
+        "language": "bg",
+        "value": "Сметна палата на Франция"
+      },
+      "zh": {
+        "language": "zh",
+        "value": "法蘭西財政部"
+      },
+      "pt": {
+        "language": "pt",
+        "value": "Tribunal de Contas (Chambres des Comptes)"
+      },
+      "ru": {
+        "language": "ru",
+        "value": "Счётная палата"
+      },
+      "ca": {
+        "language": "ca",
+        "value": "Tribunal de Comptes de França"
+      },
+      "es": {
+        "language": "es",
+        "value": "Cámara de comptos"
+      }
+    },
+    "descriptions": {
+      "en": {
+        "language": "en",
+        "value": "courts specialising in financial affairs in France"
+      },
+      "ru": {
+        "language": "ru",
+        "value": "Финансовый институт во Франции при Старом порядке"
+      },
+      "de": {
+        "language": "de",
+        "value": "ehemalige Finanzkontrollbehörden in Frankreich"
+      },
+      "es": {
+        "language": "es",
+        "value": "tribunal de cuentas"
+      },
+      "fr": {
+        "language": "fr",
+        "value": "institution de la France d'Ancien Régime"
+      }
+    },
+    "aliases": {
+      "fr": [
+        {
+          "language": "fr",
+          "value": "Chambre Des Comptes"
+        }
+      ],
+      "en": [
+        {
+          "language": "en",
+          "value": "Chambre des comptes"
+        },
+        {
+          "language": "en",
+          "value": "Cour des Comptes"
+        },
+        {
+          "language": "en",
+          "value": "Chamber of Accounts"
+        }
+      ],
+      "zh": [
+        {
+          "language": "zh",
+          "value": "審計院"
+        }
+      ]
+    },
+    "claims": {
+      "P646": [
+        {
+          "mainsnak": {
+            "snaktype": "value",
+            "property": "P646",
+            "hash": "bb7234e007fd003a66887437590e00e424100585",
+            "datavalue": {
+              "value": "/m/047c969",
+              "type": "string"
+            },
+            "datatype": "external-id"
+          },
+          "type": "statement",
+          "id": "Q2948401$74E8A477-31FD-4350-ACFF-0B495A4804F3",
+          "rank": "normal",
+          "references": [
+            {
+              "hash": "2b00cb481cddcac7623114367489b5c194901c4a",
+              "snaks": {
+                "P248": [
+                  {
+                    "snaktype": "value",
+                    "property": "P248",
+                    "hash": "a94b740202b097dd33355e0e6c00e54b9395e5e0",
+                    "datavalue": {
+                      "value": {
+                        "entity-type": "item",
+                        "numeric-id": 15241312,
+                        "id": "Q15241312"
+                      },
+                      "type": "wikibase-entityid"
+                    },
+                    "datatype": "wikibase-item"
+                  }
+                ],
+                "P577": [
+                  {
+                    "snaktype": "value",
+                    "property": "P577",
+                    "hash": "fde79ecb015112d2f29229ccc1ec514ed3e71fa2",
+                    "datavalue": {
+                      "value": {
+                        "time": "+2013-10-28T00:00:00Z",
+                        "timezone": 0,
+                        "before": 0,
+                        "after": 0,
+                        "precision": 11,
+                        "calendarmodel": "http://www.wikidata.org/entity/Q1985727"
+                      },
+                      "type": "time"
+                    },
+                    "datatype": "time"
+                  }
+                ]
+              },
+              "snaks-order": [
+                "P248",
+                "P577"
+              ]
+            }
+          ]
+        }
+      ],
+      "P910": [
+        {
+          "mainsnak": {
+            "snaktype": "value",
+            "property": "P910",
+            "hash": "139cb19e96582c9f2870ee6f2cddfc46b829b8b4",
+            "datavalue": {
+              "value": {
+                "entity-type": "item",
+                "numeric-id": 9566951,
+                "id": "Q9566951"
+              },
+              "type": "wikibase-entityid"
+            },
+            "datatype": "wikibase-item"
+          },
+          "type": "statement",
+          "id": "Q2948401$892BBB83-7E9C-41EC-BF82-8C5E224C5526",
+          "rank": "normal",
+          "references": [
+            {
+              "hash": "d4bd87b862b12d99d26e86472d44f26858dee639",
+              "snaks": {
+                "P143": [
+                  {
+                    "snaktype": "value",
+                    "property": "P143",
+                    "hash": "f30cbd35620c4ea6d0633aaf0210a8916130469b",
+                    "datavalue": {
+                      "value": {
+                        "entity-type": "item",
+                        "numeric-id": 8447,
+                        "id": "Q8447"
+                      },
+                      "type": "wikibase-entityid"
+                    },
+                    "datatype": "wikibase-item"
+                  }
+                ]
+              },
+              "snaks-order": [
+                "P143"
+              ]
+            }
+          ]
+        }
+      ],
+      "P1417": [
+        {
+          "mainsnak": {
+            "snaktype": "value",
+            "property": "P1417",
+            "hash": "57528262213df66f10ddd92989a87bc084c99ca7",
+            "datavalue": {
+              "value": "topic/Chambre-des-Comptes",
+              "type": "string"
+            },
+            "datatype": "external-id"
+          },
+          "type": "statement",
+          "qualifiers": {
+            "P1810": [
+              {
+                "snaktype": "value",
+                "property": "P1810",
+                "hash": "1109aef4a531e571132980478cc4fa956cbe4e47",
+                "datavalue": {
+                  "value": "Chambre des Comptes",
+                  "type": "string"
+                },
+                "datatype": "string"
+              }
+            ]
+          },
+          "qualifiers-order": [
+            "P1810"
+          ],
+          "id": "Q2948401$48ADA29D-5F1C-47B8-94A9-4130EC56CBF8",
+          "rank": "normal"
+        }
+      ],
+      "P17": [
+        {
+          "mainsnak": {
+            "snaktype": "value",
+            "property": "P17",
+            "hash": "2b7d86f7555d9e77641e33f3f283b88021a5e49a",
+            "datavalue": {
+              "value": {
+                "entity-type": "item",
+                "numeric-id": 70972,
+                "id": "Q70972"
+              },
+              "type": "wikibase-entityid"
+            },
+            "datatype": "wikibase-item"
+          },
+          "type": "statement",
+          "id": "Q2948401$1CBA3C1A-AAFB-4B08-B1EA-CDFD7700D78E",
+          "rank": "normal"
+        }
+      ],
+      "P31": [
+        {
+          "mainsnak": {
+            "snaktype": "value",
+            "property": "P31",
+            "hash": "b943c33bc8909170585906ca23ef9f8599945cc5",
+            "datavalue": {
+              "value": {
+                "entity-type": "item",
+                "numeric-id": 4383245,
+                "id": "Q4383245"
+              },
+              "type": "wikibase-entityid"
+            },
+            "datatype": "wikibase-item"
+          },
+          "type": "statement",
+          "id": "Q2948401$a0bce0fc-46f7-f07c-dff3-71426c91dafb",
+          "rank": "normal"
+        },
+        {
+          "mainsnak": {
+            "snaktype": "value",
+            "property": "P31",
+            "hash": "46d487de25b5905d498d4a6b003742d7bf6b6631",
+            "datavalue": {
+              "value": {
+                "entity-type": "item",
+                "numeric-id": 16854297,
+                "id": "Q16854297"
+              },
+              "type": "wikibase-entityid"
+            },
+            "datatype": "wikibase-item"
+          },
+          "type": "statement",
+          "id": "Q2948401$ac690425-41a2-6575-a844-8b5696a272e4",
+          "rank": "normal"
+        }
+      ],
+      "P8168": [
+        {
+          "mainsnak": {
+            "snaktype": "value",
+            "property": "P8168",
+            "hash": "611c281bcd7bd696140c13c2ff50f410c5d93e00",
+            "datavalue": {
+              "value": "Q153523",
+              "type": "string"
+            },
+            "datatype": "external-id"
+          },
+          "type": "statement",
+          "id": "Q2948401$432A89C2-9388-470A-BD65-6CDB9D02F6DE",
+          "rank": "normal"
+        }
+      ]
+    },
+    "sitelinks": {
+      "dewiki": {
+        "site": "dewiki",
+        "title": "Chambre des comptes",
+        "badges": [],
+        "url": "https://de.wikipedia.org/wiki/Chambre_des_comptes"
+      },
+      "enwiki": {
+        "site": "enwiki",
+        "title": "Court of Auditors (France)",
+        "badges": [],
+        "url": "https://en.wikipedia.org/wiki/Court_of_Auditors_(France)"
+      },
+      "eswiki": {
+        "site": "eswiki",
+        "title": "Cámara de Comptos",
+        "badges": [],
+        "url": "https://es.wikipedia.org/wiki/C%C3%A1mara_de_Comptos"
+      },
+      "frwiki": {
+        "site": "frwiki",
+        "title": "Chambre des comptes",
+        "badges": [],
+        "url": "https://fr.wikipedia.org/wiki/Chambre_des_comptes"
+      },
+      "itwiki": {
+        "site": "itwiki",
+        "title": "Chambre des comptes",
+        "badges": [],
+        "url": "https://it.wikipedia.org/wiki/Chambre_des_comptes"
+      },
+      "ptwiki": {
+        "site": "ptwiki",
+        "title": "Tribunal de Contas (Chambres des Comptes)",
+        "badges": [],
+        "url": "https://pt.wikipedia.org/wiki/Tribunal_de_Contas_(Chambres_des_Comptes)"
+      }
+    }
+  }
+}

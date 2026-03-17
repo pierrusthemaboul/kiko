@@ -1,0 +1,317 @@
+{
+  "saved_at": "2026-03-07T15:01:41.522Z",
+  "value": {
+    "pageid": 2892071,
+    "ns": 0,
+    "title": "Q3025062",
+    "lastrevid": 2398638879,
+    "modified": "2025-08-31T07:25:29Z",
+    "type": "item",
+    "id": "Q3025062",
+    "labels": {
+      "fr": {
+        "language": "fr",
+        "value": "deuxième chaîne de l'ORTF"
+      },
+      "es": {
+        "language": "es",
+        "value": "ORTF Télévision 2"
+      },
+      "ru": {
+        "language": "ru",
+        "value": "Второй канал ORTF"
+      },
+      "eu": {
+        "language": "eu",
+        "value": "ORTF Télévision 2"
+      },
+      "en": {
+        "language": "en",
+        "value": "ORTF Télévision 2"
+      },
+      "de": {
+        "language": "de",
+        "value": "ORTF Télévision 2"
+      },
+      "pt": {
+        "language": "pt",
+        "value": "ORTF Télévision 2"
+      },
+      "sv": {
+        "language": "sv",
+        "value": "ORTF Télévision 2"
+      },
+      "ca": {
+        "language": "ca",
+        "value": "ORTF Télévision 2"
+      },
+      "mul": {
+        "language": "mul",
+        "value": "ORTF Télévision 2"
+      }
+    },
+    "descriptions": {
+      "de": {
+        "language": "de",
+        "value": "Fernsehkanal"
+      },
+      "ru": {
+        "language": "ru",
+        "value": "французский телеканал"
+      },
+      "fr": {
+        "language": "fr",
+        "value": "deuxième chaîne de télévision française, diffusée de 1959 à 1975, ensuite devenue Antenne 2"
+      },
+      "ca": {
+        "language": "ca",
+        "value": "Segona cadena de televisió francesa, predecessora d'Antenne 2"
+      }
+    },
+    "aliases": {
+      "fr": [
+        {
+          "language": "fr",
+          "value": "ORTF Télévision 2"
+        }
+      ]
+    },
+    "claims": {
+      "P495": [
+        {
+          "mainsnak": {
+            "snaktype": "value",
+            "property": "P495",
+            "hash": "f707ab9792279b2ccec78f8736a8e5d28c8b7fc7",
+            "datavalue": {
+              "value": {
+                "entity-type": "item",
+                "numeric-id": 142,
+                "id": "Q142"
+              },
+              "type": "wikibase-entityid"
+            },
+            "datatype": "wikibase-item"
+          },
+          "type": "statement",
+          "id": "Q3025062$7B664A44-3726-4475-9638-F0403A674A07",
+          "rank": "normal"
+        }
+      ],
+      "P31": [
+        {
+          "mainsnak": {
+            "snaktype": "value",
+            "property": "P31",
+            "hash": "a805808f2c1d49132e2c4b824e5ee97b7eb47ce7",
+            "datavalue": {
+              "value": {
+                "entity-type": "item",
+                "numeric-id": 1616075,
+                "id": "Q1616075"
+              },
+              "type": "wikibase-entityid"
+            },
+            "datatype": "wikibase-item"
+          },
+          "type": "statement",
+          "id": "Q3025062$28EF6441-C96C-4C9D-9B76-8571517FEEF4",
+          "rank": "normal"
+        }
+      ],
+      "P910": [
+        {
+          "mainsnak": {
+            "snaktype": "value",
+            "property": "P910",
+            "hash": "0ce2f7892f25d2f37b1fc6ee04f6d9630d09bd01",
+            "datavalue": {
+              "value": {
+                "entity-type": "item",
+                "numeric-id": 26266513,
+                "id": "Q26266513"
+              },
+              "type": "wikibase-entityid"
+            },
+            "datatype": "wikibase-item"
+          },
+          "type": "statement",
+          "id": "Q3025062$14716853-1f16-4b1c-bf33-a55a5c90b820",
+          "rank": "normal"
+        }
+      ],
+      "P159": [
+        {
+          "mainsnak": {
+            "snaktype": "value",
+            "property": "P159",
+            "hash": "d179a62332719ee34711d3475d0b230c5e2d233d",
+            "datavalue": {
+              "value": {
+                "entity-type": "item",
+                "numeric-id": 16009498,
+                "id": "Q16009498"
+              },
+              "type": "wikibase-entityid"
+            },
+            "datatype": "wikibase-item"
+          },
+          "type": "statement",
+          "id": "Q3025062$BEDD0A13-0BD9-4E42-85E4-454F327480F0",
+          "rank": "normal",
+          "references": [
+            {
+              "hash": "0bb10ca27d2ec14ecc710cb032360a74d9bce9f1",
+              "snaks": {
+                "P143": [
+                  {
+                    "snaktype": "value",
+                    "property": "P143",
+                    "hash": "f30cbd35620c4ea6d0633aaf0210a8916130469b",
+                    "datavalue": {
+                      "value": {
+                        "entity-type": "item",
+                        "numeric-id": 8447,
+                        "id": "Q8447"
+                      },
+                      "type": "wikibase-entityid"
+                    },
+                    "datatype": "wikibase-item"
+                  }
+                ],
+                "P4656": [
+                  {
+                    "snaktype": "value",
+                    "property": "P4656",
+                    "hash": "a9d150a1044234e5fdac6fcec58486b7ca7cd3f2",
+                    "datavalue": {
+                      "value": "https://fr.wikipedia.org/w/index.php?title=Deuxième_chaîne_de_l'ORTF&oldid=168395337",
+                      "type": "string"
+                    },
+                    "datatype": "url"
+                  }
+                ]
+              },
+              "snaks-order": [
+                "P143",
+                "P4656"
+              ]
+            }
+          ]
+        }
+      ],
+      "P127": [
+        {
+          "mainsnak": {
+            "snaktype": "value",
+            "property": "P127",
+            "hash": "b1130f8242d825c7a29433c90ca3240dde6104ff",
+            "datavalue": {
+              "value": {
+                "entity-type": "item",
+                "numeric-id": 362280,
+                "id": "Q362280"
+              },
+              "type": "wikibase-entityid"
+            },
+            "datatype": "wikibase-item"
+          },
+          "type": "statement",
+          "id": "Q3025062$2D321045-E951-4A40-BC60-64E4D250CDA0",
+          "rank": "normal",
+          "references": [
+            {
+              "hash": "0bb10ca27d2ec14ecc710cb032360a74d9bce9f1",
+              "snaks": {
+                "P143": [
+                  {
+                    "snaktype": "value",
+                    "property": "P143",
+                    "hash": "f30cbd35620c4ea6d0633aaf0210a8916130469b",
+                    "datavalue": {
+                      "value": {
+                        "entity-type": "item",
+                        "numeric-id": 8447,
+                        "id": "Q8447"
+                      },
+                      "type": "wikibase-entityid"
+                    },
+                    "datatype": "wikibase-item"
+                  }
+                ],
+                "P4656": [
+                  {
+                    "snaktype": "value",
+                    "property": "P4656",
+                    "hash": "a9d150a1044234e5fdac6fcec58486b7ca7cd3f2",
+                    "datavalue": {
+                      "value": "https://fr.wikipedia.org/w/index.php?title=Deuxième_chaîne_de_l'ORTF&oldid=168395337",
+                      "type": "string"
+                    },
+                    "datatype": "url"
+                  }
+                ]
+              },
+              "snaks-order": [
+                "P143",
+                "P4656"
+              ]
+            }
+          ]
+        }
+      ],
+      "P2671": [
+        {
+          "mainsnak": {
+            "snaktype": "value",
+            "property": "P2671",
+            "hash": "7109fa3a258a941ba3ce9f10bee58236b5c784e2",
+            "datavalue": {
+              "value": "/g/12dpwr__y",
+              "type": "string"
+            },
+            "datatype": "external-id"
+          },
+          "type": "statement",
+          "id": "Q3025062$BAA30E43-CC05-4772-91E7-B781639EA76B",
+          "rank": "normal"
+        }
+      ],
+      "P1366": [
+        {
+          "mainsnak": {
+            "snaktype": "value",
+            "property": "P1366",
+            "hash": "4886e647809c0282980ca3371bcdaf4ca3a8b3aa",
+            "datavalue": {
+              "value": {
+                "entity-type": "item",
+                "numeric-id": 2852682,
+                "id": "Q2852682"
+              },
+              "type": "wikibase-entityid"
+            },
+            "datatype": "wikibase-item"
+          },
+          "type": "statement",
+          "id": "Q3025062$da6afeab-4beb-5a92-971e-1e90914f3bae",
+          "rank": "normal"
+        }
+      ]
+    },
+    "sitelinks": {
+      "frwiki": {
+        "site": "frwiki",
+        "title": "Deuxième chaîne de l'ORTF",
+        "badges": [],
+        "url": "https://fr.wikipedia.org/wiki/Deuxi%C3%A8me_cha%C3%AEne_de_l%27ORTF"
+      },
+      "ruwiki": {
+        "site": "ruwiki",
+        "title": "Второй цветной канал ОРТФ",
+        "badges": [],
+        "url": "https://ru.wikipedia.org/wiki/%D0%92%D1%82%D0%BE%D1%80%D0%BE%D0%B9_%D1%86%D0%B2%D0%B5%D1%82%D0%BD%D0%BE%D0%B9_%D0%BA%D0%B0%D0%BD%D0%B0%D0%BB_%D0%9E%D0%A0%D0%A2%D0%A4"
+      }
+    }
+  }
+}

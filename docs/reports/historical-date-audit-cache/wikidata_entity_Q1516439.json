@@ -1,0 +1,663 @@
+{
+  "saved_at": "2026-03-07T14:18:55.837Z",
+  "value": {
+    "pageid": 1453626,
+    "ns": 0,
+    "title": "Q1516439",
+    "lastrevid": 2460748723,
+    "modified": "2026-02-04T23:06:27Z",
+    "type": "item",
+    "id": "Q1516439",
+    "labels": {
+      "de": {
+        "language": "de",
+        "value": "Schlacht von Brémule"
+      },
+      "bg": {
+        "language": "bg",
+        "value": "Битка при Бремюл"
+      },
+      "cs": {
+        "language": "cs",
+        "value": "Bitva u Brémule"
+      },
+      "da": {
+        "language": "da",
+        "value": "Slaget ved Brémule"
+      },
+      "en": {
+        "language": "en",
+        "value": "Battle of Brémule"
+      },
+      "eo": {
+        "language": "eo",
+        "value": "Batalo de Bremule"
+      },
+      "fr": {
+        "language": "fr",
+        "value": "bataille de Brémule"
+      },
+      "pt": {
+        "language": "pt",
+        "value": "Batalha de Brémule"
+      },
+      "ru": {
+        "language": "ru",
+        "value": "Битва при Бремюле"
+      },
+      "uk": {
+        "language": "uk",
+        "value": "Битва під Бремюлем"
+      },
+      "sh": {
+        "language": "sh",
+        "value": "Bitka kod Brémulea"
+      },
+      "es": {
+        "language": "es",
+        "value": "batalla de Brémule"
+      },
+      "sr": {
+        "language": "sr",
+        "value": "Битка код Бремила"
+      },
+      "nl": {
+        "language": "nl",
+        "value": "Battle of Bremule"
+      },
+      "ja": {
+        "language": "ja",
+        "value": "ブレミュールの戦い"
+      },
+      "yo": {
+        "language": "yo",
+        "value": "ogun Brémule"
+      },
+      "fa": {
+        "language": "fa",
+        "value": "نبرد برموله"
+      },
+      "it": {
+        "language": "it",
+        "value": "Battaglia di Brémule"
+      },
+      "tr": {
+        "language": "tr",
+        "value": "Brémule Muharebesi"
+      },
+      "ga": {
+        "language": "ga",
+        "value": "Cath Brémule"
+      },
+      "zh": {
+        "language": "zh",
+        "value": "布雷米勒战役"
+      }
+    },
+    "descriptions": {
+      "en": {
+        "language": "en",
+        "value": "1119 battle between Henry I of England and Louis VI the Fat of France"
+      },
+      "nl": {
+        "language": "nl",
+        "value": "veldslag in Frankrijk"
+      },
+      "yo": {
+        "language": "yo",
+        "value": "ogun"
+      },
+      "ru": {
+        "language": "ru",
+        "value": "столкновение английской и французской армий в 1119 году"
+      },
+      "tr": {
+        "language": "tr",
+        "value": "1119'da İngiltere Kralı I. Henry ile Fransa Kralı VI. Louis arasındaki muharebe"
+      },
+      "zh": {
+        "language": "zh",
+        "value": "英法戰爭戰役"
+      }
+    },
+    "aliases": {
+      "en": [
+        {
+          "language": "en",
+          "value": "Battle of Bremule"
+        }
+      ],
+      "nl": [
+        {
+          "language": "nl",
+          "value": "Slag bij Bremule"
+        }
+      ]
+    },
+    "claims": {
+      "P625": [
+        {
+          "mainsnak": {
+            "snaktype": "value",
+            "property": "P625",
+            "hash": "1049699a36783edd769edcfbec77d2fe59302e99",
+            "datavalue": {
+              "value": {
+                "latitude": 49.3433,
+                "longitude": 1.4058,
+                "altitude": null,
+                "precision": 0.00000277777777778,
+                "globe": "http://www.wikidata.org/entity/Q2"
+              },
+              "type": "globecoordinate"
+            },
+            "datatype": "globe-coordinate"
+          },
+          "type": "statement",
+          "id": "Q1516439$7E2B9A3B-C9E7-475F-9493-E5452AB0DFC8",
+          "rank": "normal",
+          "references": [
+            {
+              "hash": "fa278ebfc458360e5aed63d5058cca83c46134f1",
+              "snaks": {
+                "P143": [
+                  {
+                    "snaktype": "value",
+                    "property": "P143",
+                    "hash": "e4f6d9441d0600513c4533c672b5ab472dc73694",
+                    "datavalue": {
+                      "value": {
+                        "entity-type": "item",
+                        "numeric-id": 328,
+                        "id": "Q328"
+                      },
+                      "type": "wikibase-entityid"
+                    },
+                    "datatype": "wikibase-item"
+                  }
+                ]
+              },
+              "snaks-order": [
+                "P143"
+              ]
+            }
+          ]
+        }
+      ],
+      "P646": [
+        {
+          "mainsnak": {
+            "snaktype": "value",
+            "property": "P646",
+            "hash": "543656fbf5816223ae491ef0e83608d1c16f325b",
+            "datavalue": {
+              "value": "/m/04y8cm",
+              "type": "string"
+            },
+            "datatype": "external-id"
+          },
+          "type": "statement",
+          "id": "Q1516439$DB28A39D-6591-4A50-8F58-C08524512A54",
+          "rank": "normal",
+          "references": [
+            {
+              "hash": "2b00cb481cddcac7623114367489b5c194901c4a",
+              "snaks": {
+                "P248": [
+                  {
+                    "snaktype": "value",
+                    "property": "P248",
+                    "hash": "a94b740202b097dd33355e0e6c00e54b9395e5e0",
+                    "datavalue": {
+                      "value": {
+                        "entity-type": "item",
+                        "numeric-id": 15241312,
+                        "id": "Q15241312"
+                      },
+                      "type": "wikibase-entityid"
+                    },
+                    "datatype": "wikibase-item"
+                  }
+                ],
+                "P577": [
+                  {
+                    "snaktype": "value",
+                    "property": "P577",
+                    "hash": "fde79ecb015112d2f29229ccc1ec514ed3e71fa2",
+                    "datavalue": {
+                      "value": {
+                        "time": "+2013-10-28T00:00:00Z",
+                        "timezone": 0,
+                        "before": 0,
+                        "after": 0,
+                        "precision": 11,
+                        "calendarmodel": "http://www.wikidata.org/entity/Q1985727"
+                      },
+                      "type": "time"
+                    },
+                    "datatype": "time"
+                  }
+                ]
+              },
+              "snaks-order": [
+                "P248",
+                "P577"
+              ]
+            }
+          ]
+        }
+      ],
+      "P31": [
+        {
+          "mainsnak": {
+            "snaktype": "value",
+            "property": "P31",
+            "hash": "baa1df9dcd37b9f3a062e7a14a8bef0c37078d32",
+            "datavalue": {
+              "value": {
+                "entity-type": "item",
+                "numeric-id": 178561,
+                "id": "Q178561"
+              },
+              "type": "wikibase-entityid"
+            },
+            "datatype": "wikibase-item"
+          },
+          "type": "statement",
+          "id": "Q1516439$44E9F662-EFD4-4DA9-82EF-511112758E00",
+          "rank": "normal"
+        }
+      ],
+      "P18": [
+        {
+          "mainsnak": {
+            "snaktype": "value",
+            "property": "P18",
+            "hash": "5b98668ffd53473fea6bba25faaa1152665f6cba",
+            "datavalue": {
+              "value": "Ludvik6 jindrichI Bremule.jpg",
+              "type": "string"
+            },
+            "datatype": "commonsMedia"
+          },
+          "type": "statement",
+          "id": "Q1516439$EEBAE554-9D17-41FA-B03F-E47D73616E05",
+          "rank": "normal",
+          "references": [
+            {
+              "hash": "f20be15903adba954c926bb718dd1324ecea88ce",
+              "snaks": {
+                "P143": [
+                  {
+                    "snaktype": "value",
+                    "property": "P143",
+                    "hash": "dd56ad2862a901ee6f44e0266bde6d18056b7d0d",
+                    "datavalue": {
+                      "value": {
+                        "entity-type": "item",
+                        "numeric-id": 181163,
+                        "id": "Q181163"
+                      },
+                      "type": "wikibase-entityid"
+                    },
+                    "datatype": "wikibase-item"
+                  }
+                ]
+              },
+              "snaks-order": [
+                "P143"
+              ]
+            }
+          ]
+        }
+      ],
+      "P17": [
+        {
+          "mainsnak": {
+            "snaktype": "value",
+            "property": "P17",
+            "hash": "c05db5d169c2560b9799d567a803d20a392f53e4",
+            "datavalue": {
+              "value": {
+                "entity-type": "item",
+                "numeric-id": 142,
+                "id": "Q142"
+              },
+              "type": "wikibase-entityid"
+            },
+            "datatype": "wikibase-item"
+          },
+          "type": "statement",
+          "id": "Q1516439$49F6062C-3CC0-4793-93A6-08AEF5A7BD47",
+          "rank": "normal"
+        }
+      ],
+      "P585": [
+        {
+          "mainsnak": {
+            "snaktype": "value",
+            "property": "P585",
+            "hash": "4dc984ef934a8853798338230377e3b6db6c12eb",
+            "datavalue": {
+              "value": {
+                "time": "+1119-08-20T00:00:00Z",
+                "timezone": 0,
+                "before": 0,
+                "after": 0,
+                "precision": 11,
+                "calendarmodel": "http://www.wikidata.org/entity/Q1985786"
+              },
+              "type": "time"
+            },
+            "datatype": "time"
+          },
+          "type": "statement",
+          "id": "Q1516439$09d1180e-4e8c-b93d-8f82-04ade49b9451",
+          "rank": "normal"
+        }
+      ],
+      "P276": [
+        {
+          "mainsnak": {
+            "snaktype": "value",
+            "property": "P276",
+            "hash": "49476e692635372e0be9beace4f9d5f2b1b9c756",
+            "datavalue": {
+              "value": {
+                "entity-type": "item",
+                "numeric-id": 624439,
+                "id": "Q624439"
+              },
+              "type": "wikibase-entityid"
+            },
+            "datatype": "wikibase-item"
+          },
+          "type": "statement",
+          "id": "Q1516439$7224E03F-EC65-4636-AA3A-D1CD72FA992F",
+          "rank": "normal"
+        }
+      ],
+      "P710": [
+        {
+          "mainsnak": {
+            "snaktype": "value",
+            "property": "P710",
+            "hash": "94757bdc48d787b52e28d494639cbea583aad352",
+            "datavalue": {
+              "value": {
+                "entity-type": "item",
+                "numeric-id": 179876,
+                "id": "Q179876"
+              },
+              "type": "wikibase-entityid"
+            },
+            "datatype": "wikibase-item"
+          },
+          "type": "statement",
+          "id": "Q1516439$1B20A7C9-8F8A-45D7-AC3D-AB2790F1329F",
+          "rank": "normal"
+        },
+        {
+          "mainsnak": {
+            "snaktype": "value",
+            "property": "P710",
+            "hash": "8a9ea07e5e69e9e51e5c91cad488fa1c0428f5bc",
+            "datavalue": {
+              "value": {
+                "entity-type": "item",
+                "numeric-id": 70972,
+                "id": "Q70972"
+              },
+              "type": "wikibase-entityid"
+            },
+            "datatype": "wikibase-item"
+          },
+          "type": "statement",
+          "id": "Q1516439$AAEB0CBB-3757-41AA-9F92-7BFC6FF68C2D",
+          "rank": "normal"
+        }
+      ],
+      "P361": [
+        {
+          "mainsnak": {
+            "snaktype": "value",
+            "property": "P361",
+            "hash": "6fc8044e6328af7165bcbaf954338f4ac26045be",
+            "datavalue": {
+              "value": {
+                "entity-type": "item",
+                "numeric-id": 21656700,
+                "id": "Q21656700"
+              },
+              "type": "wikibase-entityid"
+            },
+            "datatype": "wikibase-item"
+          },
+          "type": "statement",
+          "id": "Q1516439$69443C9F-2840-4E6A-9AA1-ED854E0E22CB",
+          "rank": "normal",
+          "references": [
+            {
+              "hash": "0124ad3337528bf49cabe249949d2db69ba5a1c9",
+              "snaks": {
+                "P143": [
+                  {
+                    "snaktype": "value",
+                    "property": "P143",
+                    "hash": "6a164248fc96bfa583bbb495cb63ae6401ec203c",
+                    "datavalue": {
+                      "value": {
+                        "entity-type": "item",
+                        "numeric-id": 206855,
+                        "id": "Q206855"
+                      },
+                      "type": "wikibase-entityid"
+                    },
+                    "datatype": "wikibase-item"
+                  }
+                ],
+                "P4656": [
+                  {
+                    "snaktype": "value",
+                    "property": "P4656",
+                    "hash": "3bf77bcc8509d3bc1c863aed83c26c5f9f62c3bb",
+                    "datavalue": {
+                      "value": "https://ru.wikipedia.org/w/index.php?title=Битва_при_Бремюле&oldid=96489823",
+                      "type": "string"
+                    },
+                    "datatype": "url"
+                  }
+                ]
+              },
+              "snaks-order": [
+                "P143",
+                "P4656"
+              ]
+            }
+          ]
+        }
+      ],
+      "P1343": [
+        {
+          "mainsnak": {
+            "snaktype": "value",
+            "property": "P1343",
+            "hash": "838bca4d129e7db69c9b411c07d03542437bccbb",
+            "datavalue": {
+              "value": {
+                "entity-type": "item",
+                "numeric-id": 4114391,
+                "id": "Q4114391"
+              },
+              "type": "wikibase-entityid"
+            },
+            "datatype": "wikibase-item"
+          },
+          "type": "statement",
+          "qualifiers": {
+            "P805": [
+              {
+                "snaktype": "value",
+                "property": "P805",
+                "hash": "b7aa86524b9c04b8fc2f9259060c20d2fb3416da",
+                "datavalue": {
+                  "value": {
+                    "entity-type": "item",
+                    "numeric-id": 25373005,
+                    "id": "Q25373005"
+                  },
+                  "type": "wikibase-entityid"
+                },
+                "datatype": "wikibase-item"
+              }
+            ]
+          },
+          "qualifiers-order": [
+            "P805"
+          ],
+          "id": "Q1516439$57041907-df0f-435d-9f60-fd7032bd9056",
+          "rank": "normal"
+        }
+      ],
+      "P373": [
+        {
+          "mainsnak": {
+            "snaktype": "value",
+            "property": "P373",
+            "hash": "c6aeb50c925eda607adb9a575bfab78b5eb3aecd",
+            "datavalue": {
+              "value": "Battle of Brémule",
+              "type": "string"
+            },
+            "datatype": "string"
+          },
+          "type": "statement",
+          "id": "Q1516439$d344377b-6200-437b-b067-975e079564fb",
+          "rank": "normal"
+        }
+      ]
+    },
+    "sitelinks": {
+      "bgwiki": {
+        "site": "bgwiki",
+        "title": "Битка при Бремюл",
+        "badges": [],
+        "url": "https://bg.wikipedia.org/wiki/%D0%91%D0%B8%D1%82%D0%BA%D0%B0_%D0%BF%D1%80%D0%B8_%D0%91%D1%80%D0%B5%D0%BC%D1%8E%D0%BB"
+      },
+      "commonswiki": {
+        "site": "commonswiki",
+        "title": "Category:Battle of Brémule",
+        "badges": [],
+        "url": "https://commons.wikimedia.org/wiki/Category:Battle_of_Br%C3%A9mule"
+      },
+      "cswiki": {
+        "site": "cswiki",
+        "title": "Bitva u Brémule",
+        "badges": [],
+        "url": "https://cs.wikipedia.org/wiki/Bitva_u_Br%C3%A9mule"
+      },
+      "dawiki": {
+        "site": "dawiki",
+        "title": "Slaget ved Brémule",
+        "badges": [],
+        "url": "https://da.wikipedia.org/wiki/Slaget_ved_Br%C3%A9mule"
+      },
+      "dewiki": {
+        "site": "dewiki",
+        "title": "Schlacht von Brémule",
+        "badges": [],
+        "url": "https://de.wikipedia.org/wiki/Schlacht_von_Br%C3%A9mule"
+      },
+      "enwiki": {
+        "site": "enwiki",
+        "title": "Battle of Brémule",
+        "badges": [],
+        "url": "https://en.wikipedia.org/wiki/Battle_of_Br%C3%A9mule"
+      },
+      "eowiki": {
+        "site": "eowiki",
+        "title": "Batalo de Bremule",
+        "badges": [],
+        "url": "https://eo.wikipedia.org/wiki/Batalo_de_Bremule"
+      },
+      "eswiki": {
+        "site": "eswiki",
+        "title": "Batalla de Brémule",
+        "badges": [],
+        "url": "https://es.wikipedia.org/wiki/Batalla_de_Br%C3%A9mule"
+      },
+      "fawiki": {
+        "site": "fawiki",
+        "title": "نبرد برموله",
+        "badges": [],
+        "url": "https://fa.wikipedia.org/wiki/%D9%86%D8%A8%D8%B1%D8%AF_%D8%A8%D8%B1%D9%85%D9%88%D9%84%D9%87"
+      },
+      "frwiki": {
+        "site": "frwiki",
+        "title": "Bataille de Brémule",
+        "badges": [],
+        "url": "https://fr.wikipedia.org/wiki/Bataille_de_Br%C3%A9mule"
+      },
+      "itwiki": {
+        "site": "itwiki",
+        "title": "Battaglia di Brémule",
+        "badges": [],
+        "url": "https://it.wikipedia.org/wiki/Battaglia_di_Br%C3%A9mule"
+      },
+      "nlwiki": {
+        "site": "nlwiki",
+        "title": "Slag bij Brémule",
+        "badges": [],
+        "url": "https://nl.wikipedia.org/wiki/Slag_bij_Br%C3%A9mule"
+      },
+      "ptwiki": {
+        "site": "ptwiki",
+        "title": "Batalha de Brémule",
+        "badges": [],
+        "url": "https://pt.wikipedia.org/wiki/Batalha_de_Br%C3%A9mule"
+      },
+      "ruwiki": {
+        "site": "ruwiki",
+        "title": "Битва при Бремюле",
+        "badges": [],
+        "url": "https://ru.wikipedia.org/wiki/%D0%91%D0%B8%D1%82%D0%B2%D0%B0_%D0%BF%D1%80%D0%B8_%D0%91%D1%80%D0%B5%D0%BC%D1%8E%D0%BB%D0%B5"
+      },
+      "shwiki": {
+        "site": "shwiki",
+        "title": "Bitka kod Brémulea",
+        "badges": [],
+        "url": "https://sh.wikipedia.org/wiki/Bitka_kod_Br%C3%A9mulea"
+      },
+      "simplewiki": {
+        "site": "simplewiki",
+        "title": "Battle of Brémule",
+        "badges": [],
+        "url": "https://simple.wikipedia.org/wiki/Battle_of_Br%C3%A9mule"
+      },
+      "srwiki": {
+        "site": "srwiki",
+        "title": "Битка код Бремила",
+        "badges": [],
+        "url": "https://sr.wikipedia.org/wiki/%D0%91%D0%B8%D1%82%D0%BA%D0%B0_%D0%BA%D0%BE%D0%B4_%D0%91%D1%80%D0%B5%D0%BC%D0%B8%D0%BB%D0%B0"
+      },
+      "trwiki": {
+        "site": "trwiki",
+        "title": "Brémule Muharebesi",
+        "badges": [],
+        "url": "https://tr.wikipedia.org/wiki/Br%C3%A9mule_Muharebesi"
+      },
+      "ukwiki": {
+        "site": "ukwiki",
+        "title": "Битва під Бремюлем",
+        "badges": [],
+        "url": "https://uk.wikipedia.org/wiki/%D0%91%D0%B8%D1%82%D0%B2%D0%B0_%D0%BF%D1%96%D0%B4_%D0%91%D1%80%D0%B5%D0%BC%D1%8E%D0%BB%D0%B5%D0%BC"
+      },
+      "zhwiki": {
+        "site": "zhwiki",
+        "title": "布雷米勒之戰",
+        "badges": [],
+        "url": "https://zh.wikipedia.org/wiki/%E5%B8%83%E9%9B%B7%E7%B1%B3%E5%8B%92%E4%B9%8B%E6%88%B0"
+      }
+    }
+  }
+}

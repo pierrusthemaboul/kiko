@@ -1,0 +1,669 @@
+{
+  "saved_at": "2026-03-07T15:35:37.474Z",
+  "value": {
+    "pageid": 3544444,
+    "ns": 0,
+    "title": "Q3718708",
+    "lastrevid": 2380813476,
+    "modified": "2025-07-17T10:33:08Z",
+    "type": "item",
+    "id": "Q3718708",
+    "labels": {
+      "en": {
+        "language": "en",
+        "value": "62 Pompeii earthquake"
+      },
+      "it": {
+        "language": "it",
+        "value": "Terremoto del 62"
+      },
+      "es": {
+        "language": "es",
+        "value": "Terremoto de Pompeya de 62"
+      },
+      "pt": {
+        "language": "pt",
+        "value": "Sismo de Pompeia de 62"
+      },
+      "fr": {
+        "language": "fr",
+        "value": "séisme de 62 à Pompéi"
+      },
+      "nl": {
+        "language": "nl",
+        "value": "62 Pompeii earthquake"
+      },
+      "ja": {
+        "language": "ja",
+        "value": "ポンペイ地震"
+      },
+      "id": {
+        "language": "id",
+        "value": "Gempa bumi Pompeii 62"
+      },
+      "eo": {
+        "language": "eo",
+        "value": "tertremo je 62 p.K. en Pompejo"
+      },
+      "ms": {
+        "language": "ms",
+        "value": "Gempa bumi Pompeii 62"
+      },
+      "ca": {
+        "language": "ca",
+        "value": "Terratrèmol de Pompeia del 62"
+      },
+      "te": {
+        "language": "te",
+        "value": "62 పాంపే భూకంపం"
+      },
+      "ru": {
+        "language": "ru",
+        "value": "Помпейское землетрясение"
+      },
+      "sv": {
+        "language": "sv",
+        "value": "jordbävningen vid Pompeji år 62"
+      },
+      "ar": {
+        "language": "ar",
+        "value": "زلزال بومبي 62"
+      },
+      "eu": {
+        "language": "eu",
+        "value": "62ko Ponpeiako lurrikara"
+      },
+      "zh": {
+        "language": "zh",
+        "value": "西元62年的地震"
+      },
+      "cs": {
+        "language": "cs",
+        "value": "Zemětřesení v Pompejích"
+      },
+      "hr": {
+        "language": "hr",
+        "value": "Potres u Pompejima 62."
+      },
+      "ckb": {
+        "language": "ckb",
+        "value": "بوومەلەرزەی پۆمپی"
+      },
+      "ko": {
+        "language": "ko",
+        "value": "62년 폼페이 지진"
+      }
+    },
+    "descriptions": {
+      "id": {
+        "language": "id",
+        "value": "gempa bumi tahun 62"
+      },
+      "en": {
+        "language": "en",
+        "value": "earthquake in Italy in 62 AD"
+      },
+      "te": {
+        "language": "te",
+        "value": "సా.శ 62 లో ఇటలీలో వచ్చిన భూకంపం"
+      },
+      "ja": {
+        "language": "ja",
+        "value": "西暦62年に発生した地震"
+      },
+      "pt": {
+        "language": "pt",
+        "value": "Terremoto na Itália em 62 DC"
+      },
+      "es": {
+        "language": "es",
+        "value": "evento sísmico extremo en Italia"
+      },
+      "ru": {
+        "language": "ru",
+        "value": "Землетрясение в Помпеях, которое произошло в 62 году нашей эры"
+      },
+      "jv": {
+        "language": "jv",
+        "value": "lindhu"
+      },
+      "mad": {
+        "language": "mad",
+        "value": "lendhu"
+      },
+      "su": {
+        "language": "su",
+        "value": "lini"
+      },
+      "min": {
+        "language": "min",
+        "value": "gampo"
+      },
+      "ko": {
+        "language": "ko",
+        "value": "기원후 62년 로마 폼페이 인근에서 발생한 지진"
+      }
+    },
+    "aliases": {
+      "it": [
+        {
+          "language": "it",
+          "value": "Terremoto del Vesuvio del 62"
+        }
+      ]
+    },
+    "claims": {
+      "P625": [
+        {
+          "mainsnak": {
+            "snaktype": "value",
+            "property": "P625",
+            "hash": "58f814ecd576d537e51a1292ad9c9e551c834b64",
+            "datavalue": {
+              "value": {
+                "latitude": 40.7,
+                "longitude": 14.5,
+                "altitude": null,
+                "precision": 0.01184902518233,
+                "globe": "http://www.wikidata.org/entity/Q2"
+              },
+              "type": "globecoordinate"
+            },
+            "datatype": "globe-coordinate"
+          },
+          "type": "statement",
+          "id": "Q3718708$39FB5F55-44C9-4718-B0FC-D008252D0282",
+          "rank": "normal",
+          "references": [
+            {
+              "hash": "fa278ebfc458360e5aed63d5058cca83c46134f1",
+              "snaks": {
+                "P143": [
+                  {
+                    "snaktype": "value",
+                    "property": "P143",
+                    "hash": "e4f6d9441d0600513c4533c672b5ab472dc73694",
+                    "datavalue": {
+                      "value": {
+                        "entity-type": "item",
+                        "numeric-id": 328,
+                        "id": "Q328"
+                      },
+                      "type": "wikibase-entityid"
+                    },
+                    "datatype": "wikibase-item"
+                  }
+                ]
+              },
+              "snaks-order": [
+                "P143"
+              ]
+            }
+          ]
+        }
+      ],
+      "P31": [
+        {
+          "mainsnak": {
+            "snaktype": "value",
+            "property": "P31",
+            "hash": "86d02967b086ed0e9975c2b1817468932c07adea",
+            "datavalue": {
+              "value": {
+                "entity-type": "item",
+                "numeric-id": 7944,
+                "id": "Q7944"
+              },
+              "type": "wikibase-entityid"
+            },
+            "datatype": "wikibase-item"
+          },
+          "type": "statement",
+          "id": "Q3718708$BFCD4776-4054-4830-AF6E-0AF48A50A02B",
+          "rank": "normal"
+        },
+        {
+          "mainsnak": {
+            "snaktype": "value",
+            "property": "P31",
+            "hash": "a163800008cf151e06aebdf47c1803e2e849d6ad",
+            "datavalue": {
+              "value": {
+                "entity-type": "item",
+                "numeric-id": 8065,
+                "id": "Q8065"
+              },
+              "type": "wikibase-entityid"
+            },
+            "datatype": "wikibase-item"
+          },
+          "type": "statement",
+          "id": "Q3718708$ACF804D7-6A9D-400C-8247-ACD84D4F5386",
+          "rank": "normal"
+        },
+        {
+          "mainsnak": {
+            "snaktype": "value",
+            "property": "P31",
+            "hash": "3e8d1bc2eccbbf4e65b6412aeb818779bacb77c4",
+            "datavalue": {
+              "value": {
+                "entity-type": "item",
+                "numeric-id": 3839081,
+                "id": "Q3839081"
+              },
+              "type": "wikibase-entityid"
+            },
+            "datatype": "wikibase-item"
+          },
+          "type": "statement",
+          "id": "Q3718708$323D6A39-7008-49D2-86FB-8FA201F25D22",
+          "rank": "normal"
+        }
+      ],
+      "P585": [
+        {
+          "mainsnak": {
+            "snaktype": "value",
+            "property": "P585",
+            "hash": "287516d369b667472d0822286721a6b3904cc2cd",
+            "datavalue": {
+              "value": {
+                "time": "+0062-02-05T00:00:00Z",
+                "timezone": 0,
+                "before": 0,
+                "after": 0,
+                "precision": 9,
+                "calendarmodel": "http://www.wikidata.org/entity/Q1985727"
+              },
+              "type": "time"
+            },
+            "datatype": "time"
+          },
+          "type": "statement",
+          "id": "Q3718708$01050699-4716-8dc4-c418-7433081eb610",
+          "rank": "normal"
+        }
+      ],
+      "P131": [
+        {
+          "mainsnak": {
+            "snaktype": "value",
+            "property": "P131",
+            "hash": "b0a790dda8f320f5defa637a9e28c539ea88438a",
+            "datavalue": {
+              "value": {
+                "entity-type": "item",
+                "numeric-id": 43332,
+                "id": "Q43332"
+              },
+              "type": "wikibase-entityid"
+            },
+            "datatype": "wikibase-item"
+          },
+          "type": "statement",
+          "id": "Q3718708$fa814c71-4928-9c63-35a4-f3754279ddb3",
+          "rank": "normal"
+        }
+      ],
+      "P17": [
+        {
+          "mainsnak": {
+            "snaktype": "value",
+            "property": "P17",
+            "hash": "1926cfb37c7ba1c7409262dd3a8eee7af6e4497f",
+            "datavalue": {
+              "value": {
+                "entity-type": "item",
+                "numeric-id": 1747689,
+                "id": "Q1747689"
+              },
+              "type": "wikibase-entityid"
+            },
+            "datatype": "wikibase-item"
+          },
+          "type": "statement",
+          "id": "Q3718708$084ffba3-40d2-1dad-4c3f-eab8b2d308de",
+          "rank": "normal"
+        }
+      ],
+      "P4511": [
+        {
+          "mainsnak": {
+            "snaktype": "value",
+            "property": "P4511",
+            "hash": "36a13bb0163b14bcd663b4682699c7e80a3b54ff",
+            "datavalue": {
+              "value": {
+                "amount": "+6",
+                "unit": "http://www.wikidata.org/entity/Q828224"
+              },
+              "type": "quantity"
+            },
+            "datatype": "quantity"
+          },
+          "type": "statement",
+          "id": "Q3718708$3D364AAB-5630-48ED-A7E6-D457DEC9921D",
+          "rank": "normal",
+          "references": [
+            {
+              "hash": "d4bd87b862b12d99d26e86472d44f26858dee639",
+              "snaks": {
+                "P143": [
+                  {
+                    "snaktype": "value",
+                    "property": "P143",
+                    "hash": "f30cbd35620c4ea6d0633aaf0210a8916130469b",
+                    "datavalue": {
+                      "value": {
+                        "entity-type": "item",
+                        "numeric-id": 8447,
+                        "id": "Q8447"
+                      },
+                      "type": "wikibase-entityid"
+                    },
+                    "datatype": "wikibase-item"
+                  }
+                ]
+              },
+              "snaks-order": [
+                "P143"
+              ]
+            }
+          ]
+        }
+      ],
+      "P2528": [
+        {
+          "mainsnak": {
+            "snaktype": "value",
+            "property": "P2528",
+            "hash": "0896814296594c215d21a2f4cf0818c61867640a",
+            "datavalue": {
+              "value": {
+                "amount": "+5.2",
+                "unit": "1"
+              },
+              "type": "quantity"
+            },
+            "datatype": "quantity"
+          },
+          "type": "statement",
+          "id": "Q3718708$5259bf6e-4f4c-06f6-8d26-273b5dc512f7",
+          "rank": "normal",
+          "references": [
+            {
+              "hash": "fa278ebfc458360e5aed63d5058cca83c46134f1",
+              "snaks": {
+                "P143": [
+                  {
+                    "snaktype": "value",
+                    "property": "P143",
+                    "hash": "e4f6d9441d0600513c4533c672b5ab472dc73694",
+                    "datavalue": {
+                      "value": {
+                        "entity-type": "item",
+                        "numeric-id": 328,
+                        "id": "Q328"
+                      },
+                      "type": "wikibase-entityid"
+                    },
+                    "datatype": "wikibase-item"
+                  }
+                ]
+              },
+              "snaks-order": [
+                "P143"
+              ]
+            }
+          ]
+        },
+        {
+          "mainsnak": {
+            "snaktype": "value",
+            "property": "P2528",
+            "hash": "0ca5d090fcfd6af0f14443eee1c3388953585219",
+            "datavalue": {
+              "value": {
+                "amount": "+6.1",
+                "unit": "1"
+              },
+              "type": "quantity"
+            },
+            "datatype": "quantity"
+          },
+          "type": "statement",
+          "id": "Q3718708$fc693601-41c6-e48d-0364-048e75bcaa96",
+          "rank": "normal",
+          "references": [
+            {
+              "hash": "fa278ebfc458360e5aed63d5058cca83c46134f1",
+              "snaks": {
+                "P143": [
+                  {
+                    "snaktype": "value",
+                    "property": "P143",
+                    "hash": "e4f6d9441d0600513c4533c672b5ab472dc73694",
+                    "datavalue": {
+                      "value": {
+                        "entity-type": "item",
+                        "numeric-id": 328,
+                        "id": "Q328"
+                      },
+                      "type": "wikibase-entityid"
+                    },
+                    "datatype": "wikibase-item"
+                  }
+                ]
+              },
+              "snaks-order": [
+                "P143"
+              ]
+            }
+          ]
+        }
+      ],
+      "P2784": [
+        {
+          "mainsnak": {
+            "snaktype": "value",
+            "property": "P2784",
+            "hash": "26e2d32ae381965093198e1ccebf1efe6ee0c720",
+            "datavalue": {
+              "value": {
+                "entity-type": "item",
+                "numeric-id": 23925706,
+                "id": "Q23925706"
+              },
+              "type": "wikibase-entityid"
+            },
+            "datatype": "wikibase-item"
+          },
+          "type": "statement",
+          "id": "Q3718708$86cde20f-4cab-f3d2-bd06-65eb39ea309a",
+          "rank": "normal",
+          "references": [
+            {
+              "hash": "fa278ebfc458360e5aed63d5058cca83c46134f1",
+              "snaks": {
+                "P143": [
+                  {
+                    "snaktype": "value",
+                    "property": "P143",
+                    "hash": "e4f6d9441d0600513c4533c672b5ab472dc73694",
+                    "datavalue": {
+                      "value": {
+                        "entity-type": "item",
+                        "numeric-id": 328,
+                        "id": "Q328"
+                      },
+                      "type": "wikibase-entityid"
+                    },
+                    "datatype": "wikibase-item"
+                  }
+                ]
+              },
+              "snaks-order": [
+                "P143"
+              ]
+            }
+          ]
+        },
+        {
+          "mainsnak": {
+            "snaktype": "value",
+            "property": "P2784",
+            "hash": "ccbbbad696ad3f69d044091573c06f89e936925c",
+            "datavalue": {
+              "value": {
+                "entity-type": "item",
+                "numeric-id": 23925707,
+                "id": "Q23925707"
+              },
+              "type": "wikibase-entityid"
+            },
+            "datatype": "wikibase-item"
+          },
+          "type": "statement",
+          "id": "Q3718708$7cd1ea02-40c4-8522-d1e3-e442fa3e6a88",
+          "rank": "normal",
+          "references": [
+            {
+              "hash": "fa278ebfc458360e5aed63d5058cca83c46134f1",
+              "snaks": {
+                "P143": [
+                  {
+                    "snaktype": "value",
+                    "property": "P143",
+                    "hash": "e4f6d9441d0600513c4533c672b5ab472dc73694",
+                    "datavalue": {
+                      "value": {
+                        "entity-type": "item",
+                        "numeric-id": 328,
+                        "id": "Q328"
+                      },
+                      "type": "wikibase-entityid"
+                    },
+                    "datatype": "wikibase-item"
+                  }
+                ]
+              },
+              "snaks-order": [
+                "P143"
+              ]
+            }
+          ]
+        }
+      ],
+      "P646": [
+        {
+          "mainsnak": {
+            "snaktype": "value",
+            "property": "P646",
+            "hash": "905fd01deb341258b4eaf827dcd383e70a351f27",
+            "datavalue": {
+              "value": "/m/0gmfjbp",
+              "type": "string"
+            },
+            "datatype": "external-id"
+          },
+          "type": "statement",
+          "id": "Q3718708$26124110-7890-4F66-B4A9-DD1A44DBFF9C",
+          "rank": "normal"
+        }
+      ]
+    },
+    "sitelinks": {
+      "cawiki": {
+        "site": "cawiki",
+        "title": "Terratrèmol de Pompeia del 62",
+        "badges": [],
+        "url": "https://ca.wikipedia.org/wiki/Terratr%C3%A8mol_de_Pompeia_del_62"
+      },
+      "ckbwiki": {
+        "site": "ckbwiki",
+        "title": "بوومەلەرزەی پۆمپی (٦٢ی زایینی)",
+        "badges": [],
+        "url": "https://ckb.wikipedia.org/wiki/%D8%A8%D9%88%D9%88%D9%85%DB%95%D9%84%DB%95%D8%B1%D8%B2%DB%95%DB%8C_%D9%BE%DB%86%D9%85%D9%BE%DB%8C_(%D9%A6%D9%A2%DB%8C_%D8%B2%D8%A7%DB%8C%DB%8C%D9%86%DB%8C)"
+      },
+      "cswiki": {
+        "site": "cswiki",
+        "title": "Zemětřesení v Pompejích (62)",
+        "badges": [],
+        "url": "https://cs.wikipedia.org/wiki/Zem%C4%9Bt%C5%99esen%C3%AD_v_Pompej%C3%ADch_(62)"
+      },
+      "enwiki": {
+        "site": "enwiki",
+        "title": "AD 62 Pompeii earthquake",
+        "badges": [],
+        "url": "https://en.wikipedia.org/wiki/AD_62_Pompeii_earthquake"
+      },
+      "eswiki": {
+        "site": "eswiki",
+        "title": "Terremoto de Pompeya de 62",
+        "badges": [],
+        "url": "https://es.wikipedia.org/wiki/Terremoto_de_Pompeya_de_62"
+      },
+      "euwiki": {
+        "site": "euwiki",
+        "title": "62ko Ponpeiako lurrikara",
+        "badges": [],
+        "url": "https://eu.wikipedia.org/wiki/62ko_Ponpeiako_lurrikara"
+      },
+      "frwiki": {
+        "site": "frwiki",
+        "title": "Séisme du 5 février 62 à Pompéi",
+        "badges": [],
+        "url": "https://fr.wikipedia.org/wiki/S%C3%A9isme_du_5_f%C3%A9vrier_62_%C3%A0_Pomp%C3%A9i"
+      },
+      "hrwiki": {
+        "site": "hrwiki",
+        "title": "Potres u Pompejima 62.",
+        "badges": [],
+        "url": "https://hr.wikipedia.org/wiki/Potres_u_Pompejima_62."
+      },
+      "idwiki": {
+        "site": "idwiki",
+        "title": "Gempa bumi Pompeii 62",
+        "badges": [],
+        "url": "https://id.wikipedia.org/wiki/Gempa_bumi_Pompeii_62"
+      },
+      "itwiki": {
+        "site": "itwiki",
+        "title": "Terremoto di Pompei del 62",
+        "badges": [],
+        "url": "https://it.wikipedia.org/wiki/Terremoto_di_Pompei_del_62"
+      },
+      "jawiki": {
+        "site": "jawiki",
+        "title": "ポンペイ地震",
+        "badges": [],
+        "url": "https://ja.wikipedia.org/wiki/%E3%83%9D%E3%83%B3%E3%83%9A%E3%82%A4%E5%9C%B0%E9%9C%87"
+      },
+      "kowiki": {
+        "site": "kowiki",
+        "title": "62년 폼페이 지진",
+        "badges": [],
+        "url": "https://ko.wikipedia.org/wiki/62%EB%85%84_%ED%8F%BC%ED%8E%98%EC%9D%B4_%EC%A7%80%EC%A7%84"
+      },
+      "mswiki": {
+        "site": "mswiki",
+        "title": "Gempa bumi Pompeii 62",
+        "badges": [],
+        "url": "https://ms.wikipedia.org/wiki/Gempa_bumi_Pompeii_62"
+      },
+      "ptwiki": {
+        "site": "ptwiki",
+        "title": "Sismo de Pompeia de 62",
+        "badges": [],
+        "url": "https://pt.wikipedia.org/wiki/Sismo_de_Pompeia_de_62"
+      },
+      "ruwiki": {
+        "site": "ruwiki",
+        "title": "Землетрясение в Помпеях (62)",
+        "badges": [],
+        "url": "https://ru.wikipedia.org/wiki/%D0%97%D0%B5%D0%BC%D0%BB%D0%B5%D1%82%D1%80%D1%8F%D1%81%D0%B5%D0%BD%D0%B8%D0%B5_%D0%B2_%D0%9F%D0%BE%D0%BC%D0%BF%D0%B5%D1%8F%D1%85_(62)"
+      }
+    }
+  }
+}

@@ -1,0 +1,644 @@
+{
+  "saved_at": "2026-03-07T14:32:30.461Z",
+  "value": {
+    "pageid": 623080,
+    "ns": 0,
+    "title": "Q661950",
+    "lastrevid": 2444035502,
+    "modified": "2025-12-19T10:47:50Z",
+    "type": "item",
+    "id": "Q661950",
+    "labels": {
+      "de": {
+        "language": "de",
+        "value": "Bazar de la Charité"
+      },
+      "cs": {
+        "language": "cs",
+        "value": "Bazar de la Charité"
+      },
+      "en": {
+        "language": "en",
+        "value": "Bazar de la Charité"
+      },
+      "fr": {
+        "language": "fr",
+        "value": "Bazar de la Charité"
+      },
+      "it": {
+        "language": "it",
+        "value": "Bazar de la Charité"
+      },
+      "nl": {
+        "language": "nl",
+        "value": "Bazar de la Charité"
+      },
+      "pt": {
+        "language": "pt",
+        "value": "Bazar de la Charité"
+      },
+      "sh": {
+        "language": "sh",
+        "value": "Bazar de la Charité"
+      },
+      "ja": {
+        "language": "ja",
+        "value": "バザール・ド・ラ・シャリテ"
+      },
+      "ru": {
+        "language": "ru",
+        "value": "Ярмарка благотворительности"
+      },
+      "oc": {
+        "language": "oc",
+        "value": "Bazar de la Caritat"
+      },
+      "es": {
+        "language": "es",
+        "value": "Bazar de la Charité"
+      },
+      "avk": {
+        "language": "avk",
+        "value": "Fird ke Bazar de la Charité kazaxe (yunkeks)"
+      },
+      "id": {
+        "language": "id",
+        "value": "Bazar de la Charité"
+      },
+      "ckb": {
+        "language": "ckb",
+        "value": "بازاڕ دی لا چاریتێ"
+      }
+    },
+    "descriptions": {
+      "cs": {
+        "language": "cs",
+        "value": "dobročinná akce v Paříži"
+      },
+      "nl": {
+        "language": "nl",
+        "value": "bouwwerk in Parijs"
+      },
+      "en": {
+        "language": "en",
+        "value": "charity event"
+      },
+      "fr": {
+        "language": "fr",
+        "value": "Incendie mortel lors d'une vente de bienfaisance"
+      },
+      "ru": {
+        "language": "ru",
+        "value": "благотворительное событие в Париеж"
+      }
+    },
+    "aliases": {
+      "en": [
+        {
+          "language": "en",
+          "value": "Bazar de la Charite"
+        },
+        {
+          "language": "en",
+          "value": "Fire at the Bazar de la Charité (1897)"
+        }
+      ],
+      "nl": [
+        {
+          "language": "nl",
+          "value": "Bazar de la Charite"
+        }
+      ],
+      "ja": [
+        {
+          "language": "ja",
+          "value": "慈善バザー"
+        }
+      ],
+      "ru": [
+        {
+          "language": "ru",
+          "value": "Пожар на Благотворительном базаре"
+        }
+      ]
+    },
+    "claims": {
+      "P373": [
+        {
+          "mainsnak": {
+            "snaktype": "value",
+            "property": "P373",
+            "hash": "e7082ccd0860faa46d9ed035ccd0e0e08eadb861",
+            "datavalue": {
+              "value": "Bazar de la Charité",
+              "type": "string"
+            },
+            "datatype": "string"
+          },
+          "type": "statement",
+          "id": "q661950$F5F7C1B8-A8C3-4B05-9A4A-67A1705B707F",
+          "rank": "normal",
+          "references": [
+            {
+              "hash": "288ab581e7d2d02995a26dfa8b091d96e78457fc",
+              "snaks": {
+                "P143": [
+                  {
+                    "snaktype": "value",
+                    "property": "P143",
+                    "hash": "6a164248fc96bfa583bbb495cb63ae6401ec203c",
+                    "datavalue": {
+                      "value": {
+                        "entity-type": "item",
+                        "numeric-id": 206855,
+                        "id": "Q206855"
+                      },
+                      "type": "wikibase-entityid"
+                    },
+                    "datatype": "wikibase-item"
+                  }
+                ]
+              },
+              "snaks-order": [
+                "P143"
+              ]
+            }
+          ]
+        }
+      ],
+      "P18": [
+        {
+          "mainsnak": {
+            "snaktype": "value",
+            "property": "P18",
+            "hash": "2cb7f3ece30c4df633f77b3e8e57f0bf30a29439",
+            "datavalue": {
+              "value": "Le Petit Journal - Bazar de la Charité.jpg",
+              "type": "string"
+            },
+            "datatype": "commonsMedia"
+          },
+          "type": "statement",
+          "id": "Q661950$1A6A1A22-1794-4107-A7C5-2DD66BAAAD8B",
+          "rank": "normal"
+        }
+      ],
+      "P646": [
+        {
+          "mainsnak": {
+            "snaktype": "value",
+            "property": "P646",
+            "hash": "801af1d15fb728dd9ef462a61f0ac00a5e4faf05",
+            "datavalue": {
+              "value": "/m/0bh6z_j",
+              "type": "string"
+            },
+            "datatype": "external-id"
+          },
+          "type": "statement",
+          "id": "Q661950$6859E8E1-FC48-4BC0-A983-217895864A50",
+          "rank": "normal",
+          "references": [
+            {
+              "hash": "2b00cb481cddcac7623114367489b5c194901c4a",
+              "snaks": {
+                "P248": [
+                  {
+                    "snaktype": "value",
+                    "property": "P248",
+                    "hash": "a94b740202b097dd33355e0e6c00e54b9395e5e0",
+                    "datavalue": {
+                      "value": {
+                        "entity-type": "item",
+                        "numeric-id": 15241312,
+                        "id": "Q15241312"
+                      },
+                      "type": "wikibase-entityid"
+                    },
+                    "datatype": "wikibase-item"
+                  }
+                ],
+                "P577": [
+                  {
+                    "snaktype": "value",
+                    "property": "P577",
+                    "hash": "fde79ecb015112d2f29229ccc1ec514ed3e71fa2",
+                    "datavalue": {
+                      "value": {
+                        "time": "+2013-10-28T00:00:00Z",
+                        "timezone": 0,
+                        "before": 0,
+                        "after": 0,
+                        "precision": 11,
+                        "calendarmodel": "http://www.wikidata.org/entity/Q1985727"
+                      },
+                      "type": "time"
+                    },
+                    "datatype": "time"
+                  }
+                ]
+              },
+              "snaks-order": [
+                "P248",
+                "P577"
+              ]
+            }
+          ]
+        }
+      ],
+      "P279": [
+        {
+          "mainsnak": {
+            "snaktype": "value",
+            "property": "P279",
+            "hash": "004a94faba8d3aa6b285f022d2d1f260c839eacf",
+            "datavalue": {
+              "value": {
+                "entity-type": "item",
+                "numeric-id": 2441722,
+                "id": "Q2441722"
+              },
+              "type": "wikibase-entityid"
+            },
+            "datatype": "wikibase-item"
+          },
+          "type": "statement",
+          "id": "Q661950$22f99d82-4f4a-eb3a-23b7-92f1d3a2dc86",
+          "rank": "normal"
+        }
+      ],
+      "P571": [
+        {
+          "mainsnak": {
+            "snaktype": "value",
+            "property": "P571",
+            "hash": "b17b3b588d210359424e70849a6b5c8930caafd4",
+            "datavalue": {
+              "value": {
+                "time": "+1885-00-00T00:00:00Z",
+                "timezone": 0,
+                "before": 0,
+                "after": 0,
+                "precision": 9,
+                "calendarmodel": "http://www.wikidata.org/entity/Q1985727"
+              },
+              "type": "time"
+            },
+            "datatype": "time"
+          },
+          "type": "statement",
+          "id": "Q661950$a94362cf-495c-5c96-5af1-f8e81352e9e6",
+          "rank": "normal"
+        }
+      ],
+      "P17": [
+        {
+          "mainsnak": {
+            "snaktype": "value",
+            "property": "P17",
+            "hash": "c05db5d169c2560b9799d567a803d20a392f53e4",
+            "datavalue": {
+              "value": {
+                "entity-type": "item",
+                "numeric-id": 142,
+                "id": "Q142"
+              },
+              "type": "wikibase-entityid"
+            },
+            "datatype": "wikibase-item"
+          },
+          "type": "statement",
+          "id": "Q661950$A69FDEC1-C01C-421D-A117-BCD88989BDC7",
+          "rank": "normal"
+        }
+      ],
+      "P31": [
+        {
+          "mainsnak": {
+            "snaktype": "value",
+            "property": "P31",
+            "hash": "db9e4c0775b59244baa1676d09095daf0b87e9d8",
+            "datavalue": {
+              "value": {
+                "entity-type": "item",
+                "numeric-id": 2441722,
+                "id": "Q2441722"
+              },
+              "type": "wikibase-entityid"
+            },
+            "datatype": "wikibase-item"
+          },
+          "type": "statement",
+          "id": "Q661950$75ADCAB1-6914-4B06-B140-8CFF7F5375D7",
+          "rank": "normal"
+        },
+        {
+          "mainsnak": {
+            "snaktype": "value",
+            "property": "P31",
+            "hash": "3e8d1bc2eccbbf4e65b6412aeb818779bacb77c4",
+            "datavalue": {
+              "value": {
+                "entity-type": "item",
+                "numeric-id": 3839081,
+                "id": "Q3839081"
+              },
+              "type": "wikibase-entityid"
+            },
+            "datatype": "wikibase-item"
+          },
+          "type": "statement",
+          "id": "Q661950$062AAD11-335A-41A3-A761-9348FD049A2C",
+          "rank": "normal"
+        },
+        {
+          "mainsnak": {
+            "snaktype": "value",
+            "property": "P31",
+            "hash": "bf229d025943f5bd619dfc7afe9f80ca7f308c8e",
+            "datavalue": {
+              "value": {
+                "entity-type": "item",
+                "numeric-id": 168983,
+                "id": "Q168983"
+              },
+              "type": "wikibase-entityid"
+            },
+            "datatype": "wikibase-item"
+          },
+          "type": "statement",
+          "id": "Q661950$A19C9F85-C57C-4994-8B7E-A090E4022745",
+          "rank": "normal"
+        }
+      ],
+      "P1889": [
+        {
+          "mainsnak": {
+            "snaktype": "value",
+            "property": "P1889",
+            "hash": "95c872dffb7b23c1ccf52f1059a0353fb3589067",
+            "datavalue": {
+              "value": {
+                "entity-type": "item",
+                "numeric-id": 75036033,
+                "id": "Q75036033"
+              },
+              "type": "wikibase-entityid"
+            },
+            "datatype": "wikibase-item"
+          },
+          "type": "statement",
+          "id": "Q661950$6ac52820-47bb-5aad-5cdc-5ec46b4f1670",
+          "rank": "normal"
+        }
+      ],
+      "P269": [
+        {
+          "mainsnak": {
+            "snaktype": "value",
+            "property": "P269",
+            "hash": "225555d752eed4cbee44be36ee25ea5a2bd0784b",
+            "datavalue": {
+              "value": "029763703",
+              "type": "string"
+            },
+            "datatype": "external-id"
+          },
+          "type": "statement",
+          "id": "Q661950$F0B9DCE0-E274-4B99-BE1A-453BA36795F6",
+          "rank": "normal",
+          "references": [
+            {
+              "hash": "bfd493889f0cd1017a959ab0855529568a313b60",
+              "snaks": {
+                "P248": [
+                  {
+                    "snaktype": "value",
+                    "property": "P248",
+                    "hash": "6b7d4330c4aac4caec4ede9de0311ce273f88ecd",
+                    "datavalue": {
+                      "value": {
+                        "entity-type": "item",
+                        "numeric-id": 54919,
+                        "id": "Q54919"
+                      },
+                      "type": "wikibase-entityid"
+                    },
+                    "datatype": "wikibase-item"
+                  }
+                ],
+                "P813": [
+                  {
+                    "snaktype": "value",
+                    "property": "P813",
+                    "hash": "9c07da73b84889803ebd6601ba04b4579c39577d",
+                    "datavalue": {
+                      "value": {
+                        "time": "+2022-07-06T00:00:00Z",
+                        "timezone": 0,
+                        "before": 0,
+                        "after": 0,
+                        "precision": 11,
+                        "calendarmodel": "http://www.wikidata.org/entity/Q1985727"
+                      },
+                      "type": "time"
+                    },
+                    "datatype": "time"
+                  }
+                ],
+                "P214": [
+                  {
+                    "snaktype": "value",
+                    "property": "P214",
+                    "hash": "8953d8a2d96703aefac4586960bf4f92a9c8fbe3",
+                    "datavalue": {
+                      "value": "236562130",
+                      "type": "string"
+                    },
+                    "datatype": "external-id"
+                  }
+                ]
+              },
+              "snaks-order": [
+                "P248",
+                "P813",
+                "P214"
+              ]
+            }
+          ]
+        }
+      ],
+      "P12800": [
+        {
+          "mainsnak": {
+            "snaktype": "value",
+            "property": "P12800",
+            "hash": "786a27eb5cc760def6bbfcd473302c7b4717ff77",
+            "datavalue": {
+              "value": "fr:Bazar_de_la_Charité",
+              "type": "string"
+            },
+            "datatype": "external-id"
+          },
+          "type": "statement",
+          "id": "Q661950$7E7F8A4A-C00C-4B20-99D0-CC0550CD2577",
+          "rank": "normal"
+        }
+      ],
+      "P793": [
+        {
+          "mainsnak": {
+            "snaktype": "value",
+            "property": "P793",
+            "hash": "471750e5fed56885cd52c7b90ebfa1eb898bc917",
+            "datavalue": {
+              "value": {
+                "entity-type": "item",
+                "numeric-id": 131455605,
+                "id": "Q131455605"
+              },
+              "type": "wikibase-entityid"
+            },
+            "datatype": "wikibase-item"
+          },
+          "type": "statement",
+          "id": "Q661950$34c246db-4336-428c-e43b-1cf70bdce08b",
+          "rank": "normal"
+        }
+      ],
+      "P2671": [
+        {
+          "mainsnak": {
+            "snaktype": "value",
+            "property": "P2671",
+            "hash": "63f7e5ea274415cb7b1b470068f22bbc6d0e24b0",
+            "datavalue": {
+              "value": "/g/11c2q3rsfd",
+              "type": "string"
+            },
+            "datatype": "external-id"
+          },
+          "type": "statement",
+          "id": "Q661950$138D198C-C6FC-4622-97F9-B8B75E59BAD4",
+          "rank": "normal"
+        }
+      ],
+      "P585": [
+        {
+          "mainsnak": {
+            "snaktype": "value",
+            "property": "P585",
+            "hash": "290587254c377cf173ac58d6b7a505c02daf331b",
+            "datavalue": {
+              "value": {
+                "time": "+1897-05-04T00:00:00Z",
+                "timezone": 0,
+                "before": 0,
+                "after": 0,
+                "precision": 11,
+                "calendarmodel": "http://www.wikidata.org/entity/Q1985727"
+              },
+              "type": "time"
+            },
+            "datatype": "time"
+          },
+          "type": "statement",
+          "id": "Q661950$522FA692-51D2-4DE9-A5A0-A78CC2BD8854",
+          "rank": "normal"
+        }
+      ]
+    },
+    "sitelinks": {
+      "avkwiki": {
+        "site": "avkwiki",
+        "title": "Fird ke Bazar de la Charité kazaxe (yunkexa)",
+        "badges": [],
+        "url": "https://avk.wikipedia.org/wiki/Fird_ke_Bazar_de_la_Charit%C3%A9_kazaxe_(yunkexa)"
+      },
+      "commonswiki": {
+        "site": "commonswiki",
+        "title": "Category:Bazar de la Charité",
+        "badges": [],
+        "url": "https://commons.wikimedia.org/wiki/Category:Bazar_de_la_Charit%C3%A9"
+      },
+      "cswiki": {
+        "site": "cswiki",
+        "title": "Bazar de la Charité",
+        "badges": [],
+        "url": "https://cs.wikipedia.org/wiki/Bazar_de_la_Charit%C3%A9"
+      },
+      "dewiki": {
+        "site": "dewiki",
+        "title": "Bazar de la Charité",
+        "badges": [],
+        "url": "https://de.wikipedia.org/wiki/Bazar_de_la_Charit%C3%A9"
+      },
+      "enwiki": {
+        "site": "enwiki",
+        "title": "Bazar de la Charité",
+        "badges": [],
+        "url": "https://en.wikipedia.org/wiki/Bazar_de_la_Charit%C3%A9"
+      },
+      "eswiki": {
+        "site": "eswiki",
+        "title": "Bazar de la Charité",
+        "badges": [],
+        "url": "https://es.wikipedia.org/wiki/Bazar_de_la_Charit%C3%A9"
+      },
+      "frwiki": {
+        "site": "frwiki",
+        "title": "Bazar de la Charité",
+        "badges": [],
+        "url": "https://fr.wikipedia.org/wiki/Bazar_de_la_Charit%C3%A9"
+      },
+      "idwiki": {
+        "site": "idwiki",
+        "title": "Bazar de la Charité",
+        "badges": [],
+        "url": "https://id.wikipedia.org/wiki/Bazar_de_la_Charit%C3%A9"
+      },
+      "itwiki": {
+        "site": "itwiki",
+        "title": "Bazar de la Charité",
+        "badges": [],
+        "url": "https://it.wikipedia.org/wiki/Bazar_de_la_Charit%C3%A9"
+      },
+      "jawiki": {
+        "site": "jawiki",
+        "title": "バザール・ド・ラ・シャリテ",
+        "badges": [],
+        "url": "https://ja.wikipedia.org/wiki/%E3%83%90%E3%82%B6%E3%83%BC%E3%83%AB%E3%83%BB%E3%83%89%E3%83%BB%E3%83%A9%E3%83%BB%E3%82%B7%E3%83%A3%E3%83%AA%E3%83%86"
+      },
+      "nlwiki": {
+        "site": "nlwiki",
+        "title": "Bazar de la Charité",
+        "badges": [],
+        "url": "https://nl.wikipedia.org/wiki/Bazar_de_la_Charit%C3%A9"
+      },
+      "ocwiki": {
+        "site": "ocwiki",
+        "title": "Bazar de la Caritat",
+        "badges": [],
+        "url": "https://oc.wikipedia.org/wiki/Bazar_de_la_Caritat"
+      },
+      "ptwiki": {
+        "site": "ptwiki",
+        "title": "Bazar de la Charité",
+        "badges": [],
+        "url": "https://pt.wikipedia.org/wiki/Bazar_de_la_Charit%C3%A9"
+      },
+      "ruwiki": {
+        "site": "ruwiki",
+        "title": "Пожар на Благотворительном базаре",
+        "badges": [],
+        "url": "https://ru.wikipedia.org/wiki/%D0%9F%D0%BE%D0%B6%D0%B0%D1%80_%D0%BD%D0%B0_%D0%91%D0%BB%D0%B0%D0%B3%D0%BE%D1%82%D0%B2%D0%BE%D1%80%D0%B8%D1%82%D0%B5%D0%BB%D1%8C%D0%BD%D0%BE%D0%BC_%D0%B1%D0%B0%D0%B7%D0%B0%D1%80%D0%B5"
+      },
+      "shwiki": {
+        "site": "shwiki",
+        "title": "Bazar de la Charité",
+        "badges": [],
+        "url": "https://sh.wikipedia.org/wiki/Bazar_de_la_Charit%C3%A9"
+      }
+    }
+  }
+}

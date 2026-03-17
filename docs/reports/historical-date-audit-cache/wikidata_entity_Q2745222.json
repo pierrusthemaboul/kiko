@@ -1,0 +1,789 @@
+{
+  "saved_at": "2026-03-07T15:47:33.641Z",
+  "value": {
+    "pageid": 2636071,
+    "ns": 0,
+    "title": "Q2745222",
+    "lastrevid": 2463353217,
+    "modified": "2026-02-14T06:06:53Z",
+    "type": "item",
+    "id": "Q2745222",
+    "labels": {
+      "nn": {
+        "language": "nn",
+        "value": "Te Ara Encyclopedia of New Zealand"
+      },
+      "fr": {
+        "language": "fr",
+        "value": "Te Ara Encyclopedia of New Zealand"
+      },
+      "en": {
+        "language": "en",
+        "value": "Te Ara: The Encyclopedia of New Zealand"
+      },
+      "mk": {
+        "language": "mk",
+        "value": "Те Ара - Енциклопедија на Нов Зеланд"
+      },
+      "eo": {
+        "language": "eo",
+        "value": "Te Ara: The Encyclopedia of New Zealand"
+      },
+      "de": {
+        "language": "de",
+        "value": "Te Ara: The Encyclopedia of New Zealand"
+      },
+      "nl": {
+        "language": "nl",
+        "value": "Te Ara: The Encyclopedia of New Zealand"
+      },
+      "mi": {
+        "language": "mi",
+        "value": "Te Ara"
+      },
+      "es": {
+        "language": "es",
+        "value": "Te Ara: The Encyclopedia of New Zealand"
+      },
+      "ja": {
+        "language": "ja",
+        "value": "ニュージーランド大百科"
+      },
+      "ru": {
+        "language": "ru",
+        "value": "Te Ara: The Encyclopedia of New Zealand"
+      },
+      "zh": {
+        "language": "zh",
+        "value": "蒂阿拉：新西兰百科全书"
+      },
+      "it": {
+        "language": "it",
+        "value": "Te Ara: The Encyclopedia of New Zealand"
+      },
+      "sv": {
+        "language": "sv",
+        "value": "Te Ara: The Encyclopedia of New Zealand"
+      }
+    },
+    "descriptions": {
+      "en": {
+        "language": "en",
+        "value": "online encyclopedia"
+      },
+      "de": {
+        "language": "de",
+        "value": "Online-Enzyklopädie"
+      },
+      "nl": {
+        "language": "nl",
+        "value": "nationale encyclopedie (online)"
+      },
+      "ru": {
+        "language": "ru",
+        "value": "онлайн-энциклопедия"
+      },
+      "fr": {
+        "language": "fr",
+        "value": "encyclopédie nationale en ligne bilingue"
+      },
+      "es": {
+        "language": "es",
+        "value": "enciclopedia nacional en linea"
+      },
+      "it": {
+        "language": "it",
+        "value": "enciclopedia nacional in linea"
+      },
+      "sv": {
+        "language": "sv",
+        "value": "online-baserad nationell encyklopedi"
+      },
+      "ryu": {
+        "language": "ryu",
+        "value": "ヱブサイト"
+      }
+    },
+    "aliases": {
+      "en": [
+        {
+          "language": "en",
+          "value": "The Encyclopedia of New Zealand"
+        }
+      ],
+      "ru": [
+        {
+          "language": "ru",
+          "value": "Te Ara: Энциклопедия Новой Зеландии"
+        }
+      ]
+    },
+    "claims": {
+      "P31": [
+        {
+          "mainsnak": {
+            "snaktype": "value",
+            "property": "P31",
+            "hash": "d1a354dc2f4b11f2408da25b8a1065de18fecc35",
+            "datavalue": {
+              "value": {
+                "entity-type": "item",
+                "numeric-id": 35127,
+                "id": "Q35127"
+              },
+              "type": "wikibase-entityid"
+            },
+            "datatype": "wikibase-item"
+          },
+          "type": "statement",
+          "id": "Q2745222$30d585e0-4685-9d3d-0a2a-7e5295189917",
+          "rank": "normal"
+        },
+        {
+          "mainsnak": {
+            "snaktype": "value",
+            "property": "P31",
+            "hash": "08b828261fcdb667a7834576d82e2a95bf7ec48a",
+            "datavalue": {
+              "value": {
+                "entity-type": "item",
+                "numeric-id": 1239328,
+                "id": "Q1239328"
+              },
+              "type": "wikibase-entityid"
+            },
+            "datatype": "wikibase-item"
+          },
+          "type": "statement",
+          "id": "Q2745222$C06D23DE-0EC9-4BE3-A72D-25AF4E13FEA9",
+          "rank": "normal"
+        }
+      ],
+      "P856": [
+        {
+          "mainsnak": {
+            "snaktype": "value",
+            "property": "P856",
+            "hash": "1d70e0c442ac514aaeae6784630e3b1692e8dfaf",
+            "datavalue": {
+              "value": "https://teara.govt.nz",
+              "type": "string"
+            },
+            "datatype": "url"
+          },
+          "type": "statement",
+          "qualifiers": {
+            "P813": [
+              {
+                "snaktype": "value",
+                "property": "P813",
+                "hash": "625f4863afc88c32d6947b47ded8d517435039d0",
+                "datavalue": {
+                  "value": {
+                    "time": "+2022-11-07T00:00:00Z",
+                    "timezone": 0,
+                    "before": 0,
+                    "after": 0,
+                    "precision": 11,
+                    "calendarmodel": "http://www.wikidata.org/entity/Q1985727"
+                  },
+                  "type": "time"
+                },
+                "datatype": "time"
+              }
+            ],
+            "P407": [
+              {
+                "snaktype": "value",
+                "property": "P407",
+                "hash": "daf1c4fcb58181b02dff9cc89deb084004ddae4b",
+                "datavalue": {
+                  "value": {
+                    "entity-type": "item",
+                    "numeric-id": 1860,
+                    "id": "Q1860"
+                  },
+                  "type": "wikibase-entityid"
+                },
+                "datatype": "wikibase-item"
+              },
+              {
+                "snaktype": "value",
+                "property": "P407",
+                "hash": "6549419302c779d37f7cc78b052ab2b398b7b2a5",
+                "datavalue": {
+                  "value": {
+                    "entity-type": "item",
+                    "numeric-id": 36451,
+                    "id": "Q36451"
+                  },
+                  "type": "wikibase-entityid"
+                },
+                "datatype": "wikibase-item"
+              }
+            ]
+          },
+          "qualifiers-order": [
+            "P813",
+            "P407"
+          ],
+          "id": "Q2745222$73ae3bcc-46d8-239e-f6e8-fd30c5a41498",
+          "rank": "normal"
+        }
+      ],
+      "P127": [
+        {
+          "mainsnak": {
+            "snaktype": "value",
+            "property": "P127",
+            "hash": "4ac819c11840ec2d6ce797d6ac66b3f90c82b723",
+            "datavalue": {
+              "value": {
+                "entity-type": "item",
+                "numeric-id": 6866573,
+                "id": "Q6866573"
+              },
+              "type": "wikibase-entityid"
+            },
+            "datatype": "wikibase-item"
+          },
+          "type": "statement",
+          "id": "Q2745222$54b78b55-46e5-af5c-c669-72ef9a178e6f",
+          "rank": "normal",
+          "references": [
+            {
+              "hash": "be40ca14e26be83ef8e42845f44e4ac3c76f59a1",
+              "snaks": {
+                "P143": [
+                  {
+                    "snaktype": "value",
+                    "property": "P143",
+                    "hash": "a4c0661f1445c708fe66088377bc2d64bccb8a78",
+                    "datavalue": {
+                      "value": {
+                        "entity-type": "item",
+                        "numeric-id": 6866573,
+                        "id": "Q6866573"
+                      },
+                      "type": "wikibase-entityid"
+                    },
+                    "datatype": "wikibase-item"
+                  }
+                ],
+                "P854": [
+                  {
+                    "snaktype": "value",
+                    "property": "P854",
+                    "hash": "b8e27c8410bfb6c3683491d8347a6cf78eef3e59",
+                    "datavalue": {
+                      "value": "http://www.mch.govt.nz/what-we-do/websites-we-run",
+                      "type": "string"
+                    },
+                    "datatype": "url"
+                  }
+                ],
+                "P813": [
+                  {
+                    "snaktype": "value",
+                    "property": "P813",
+                    "hash": "306d46821e31ad151cc9977703c67795bc2f944e",
+                    "datavalue": {
+                      "value": {
+                        "time": "+2015-03-12T00:00:00Z",
+                        "timezone": 0,
+                        "before": 0,
+                        "after": 0,
+                        "precision": 11,
+                        "calendarmodel": "http://www.wikidata.org/entity/Q1985727"
+                      },
+                      "type": "time"
+                    },
+                    "datatype": "time"
+                  }
+                ],
+                "P407": [
+                  {
+                    "snaktype": "value",
+                    "property": "P407",
+                    "hash": "daf1c4fcb58181b02dff9cc89deb084004ddae4b",
+                    "datavalue": {
+                      "value": {
+                        "entity-type": "item",
+                        "numeric-id": 1860,
+                        "id": "Q1860"
+                      },
+                      "type": "wikibase-entityid"
+                    },
+                    "datatype": "wikibase-item"
+                  }
+                ]
+              },
+              "snaks-order": [
+                "P143",
+                "P854",
+                "P813",
+                "P407"
+              ]
+            }
+          ]
+        }
+      ],
+      "P1056": [
+        {
+          "mainsnak": {
+            "snaktype": "value",
+            "property": "P1056",
+            "hash": "d69d78a414794607c803b7b1d8d1431e47e19022",
+            "datavalue": {
+              "value": {
+                "entity-type": "item",
+                "numeric-id": 615699,
+                "id": "Q615699"
+              },
+              "type": "wikibase-entityid"
+            },
+            "datatype": "wikibase-item"
+          },
+          "type": "statement",
+          "id": "Q2745222$A8E1E903-21F2-414F-B668-20F489B28374",
+          "rank": "normal",
+          "references": [
+            {
+              "hash": "fa278ebfc458360e5aed63d5058cca83c46134f1",
+              "snaks": {
+                "P143": [
+                  {
+                    "snaktype": "value",
+                    "property": "P143",
+                    "hash": "e4f6d9441d0600513c4533c672b5ab472dc73694",
+                    "datavalue": {
+                      "value": {
+                        "entity-type": "item",
+                        "numeric-id": 328,
+                        "id": "Q328"
+                      },
+                      "type": "wikibase-entityid"
+                    },
+                    "datatype": "wikibase-item"
+                  }
+                ]
+              },
+              "snaks-order": [
+                "P143"
+              ]
+            }
+          ]
+        }
+      ],
+      "P407": [
+        {
+          "mainsnak": {
+            "snaktype": "value",
+            "property": "P407",
+            "hash": "6549419302c779d37f7cc78b052ab2b398b7b2a5",
+            "datavalue": {
+              "value": {
+                "entity-type": "item",
+                "numeric-id": 36451,
+                "id": "Q36451"
+              },
+              "type": "wikibase-entityid"
+            },
+            "datatype": "wikibase-item"
+          },
+          "type": "statement",
+          "id": "Q2745222$AFE9C44E-77B5-424A-A57C-394A8F3F9382",
+          "rank": "normal",
+          "references": [
+            {
+              "hash": "fa278ebfc458360e5aed63d5058cca83c46134f1",
+              "snaks": {
+                "P143": [
+                  {
+                    "snaktype": "value",
+                    "property": "P143",
+                    "hash": "e4f6d9441d0600513c4533c672b5ab472dc73694",
+                    "datavalue": {
+                      "value": {
+                        "entity-type": "item",
+                        "numeric-id": 328,
+                        "id": "Q328"
+                      },
+                      "type": "wikibase-entityid"
+                    },
+                    "datatype": "wikibase-item"
+                  }
+                ]
+              },
+              "snaks-order": [
+                "P143"
+              ]
+            }
+          ]
+        },
+        {
+          "mainsnak": {
+            "snaktype": "value",
+            "property": "P407",
+            "hash": "a757ccb5be01584a9aa3940c5844f081f7b3c193",
+            "datavalue": {
+              "value": {
+                "entity-type": "item",
+                "numeric-id": 44661,
+                "id": "Q44661"
+              },
+              "type": "wikibase-entityid"
+            },
+            "datatype": "wikibase-item"
+          },
+          "type": "statement",
+          "id": "Q2745222$e1a33689-42f9-db4f-4ac2-1537d823f5fa",
+          "rank": "normal"
+        }
+      ],
+      "P527": [
+        {
+          "mainsnak": {
+            "snaktype": "value",
+            "property": "P527",
+            "hash": "d2c062e0153a6bedec5269d799ff8dce9db2226f",
+            "datavalue": {
+              "value": {
+                "entity-type": "item",
+                "numeric-id": 1210319,
+                "id": "Q1210319"
+              },
+              "type": "wikibase-entityid"
+            },
+            "datatype": "wikibase-item"
+          },
+          "type": "statement",
+          "id": "Q2745222$3c84e0b1-45c0-7404-bf33-60cc90a64d18",
+          "rank": "normal"
+        }
+      ],
+      "P1365": [
+        {
+          "mainsnak": {
+            "snaktype": "value",
+            "property": "P1365",
+            "hash": "0cf6fe322e8b03afbae1cfe70dc2a3742deab5b6",
+            "datavalue": {
+              "value": {
+                "entity-type": "item",
+                "numeric-id": 4749901,
+                "id": "Q4749901"
+              },
+              "type": "wikibase-entityid"
+            },
+            "datatype": "wikibase-item"
+          },
+          "type": "statement",
+          "id": "Q2745222$c47db7bc-4848-62e5-6019-20f7847cb77e",
+          "rank": "normal"
+        }
+      ],
+      "P17": [
+        {
+          "mainsnak": {
+            "snaktype": "value",
+            "property": "P17",
+            "hash": "4ca99002d7956874c9d5c13060663a9f312ecadb",
+            "datavalue": {
+              "value": {
+                "entity-type": "item",
+                "numeric-id": 664,
+                "id": "Q664"
+              },
+              "type": "wikibase-entityid"
+            },
+            "datatype": "wikibase-item"
+          },
+          "type": "statement",
+          "id": "Q2745222$A1F66B77-ABC7-450A-9140-78312CBC45C8",
+          "rank": "normal"
+        }
+      ],
+      "P921": [
+        {
+          "mainsnak": {
+            "snaktype": "value",
+            "property": "P921",
+            "hash": "ccb5fb476053977fb32bfffd2054f752b47a01c9",
+            "datavalue": {
+              "value": {
+                "entity-type": "item",
+                "numeric-id": 664,
+                "id": "Q664"
+              },
+              "type": "wikibase-entityid"
+            },
+            "datatype": "wikibase-item"
+          },
+          "type": "statement",
+          "id": "Q2745222$B5C1836E-B05E-4281-A831-A31717942151",
+          "rank": "normal"
+        }
+      ],
+      "P495": [
+        {
+          "mainsnak": {
+            "snaktype": "value",
+            "property": "P495",
+            "hash": "6e8d2c402eb7ac7c0b548ba47512bb4d7760ae5e",
+            "datavalue": {
+              "value": {
+                "entity-type": "item",
+                "numeric-id": 664,
+                "id": "Q664"
+              },
+              "type": "wikibase-entityid"
+            },
+            "datatype": "wikibase-item"
+          },
+          "type": "statement",
+          "id": "Q2745222$FAB69220-A258-40ED-8D6E-DD1C9C0DA59E",
+          "rank": "normal"
+        }
+      ],
+      "P571": [
+        {
+          "mainsnak": {
+            "snaktype": "value",
+            "property": "P571",
+            "hash": "2403d6cd76d4b02ab0c828eb58be0c83c4cba5d4",
+            "datavalue": {
+              "value": {
+                "time": "+2001-00-00T00:00:00Z",
+                "timezone": 0,
+                "before": 0,
+                "after": 0,
+                "precision": 9,
+                "calendarmodel": "http://www.wikidata.org/entity/Q1985727"
+              },
+              "type": "time"
+            },
+            "datatype": "time"
+          },
+          "type": "statement",
+          "id": "Q2745222$25faf612-4c58-7166-6537-4cb97629e9d4",
+          "rank": "normal",
+          "references": [
+            {
+              "hash": "7efd01a6c542a328dfcef604a85dacd35f35cd1a",
+              "snaks": {
+                "P854": [
+                  {
+                    "snaktype": "value",
+                    "property": "P854",
+                    "hash": "d23441a94e900e61ec5a082f09435c4f6c3420f9",
+                    "datavalue": {
+                      "value": "http://www.nzjh.auckland.ac.nz/document.php?wid=256",
+                      "type": "string"
+                    },
+                    "datatype": "url"
+                  }
+                ],
+                "P1065": [
+                  {
+                    "snaktype": "value",
+                    "property": "P1065",
+                    "hash": "76b865d292d97ce161836e6d4ac4dd3e3b479166",
+                    "datavalue": {
+                      "value": "https://web.archive.org/web/20210921115045/http://www.nzjh.auckland.ac.nz/document.php?wid=256",
+                      "type": "string"
+                    },
+                    "datatype": "url"
+                  }
+                ],
+                "P2960": [
+                  {
+                    "snaktype": "value",
+                    "property": "P2960",
+                    "hash": "214727c9b4a502f3bc3fd0f01f328f90fed46735",
+                    "datavalue": {
+                      "value": {
+                        "time": "+2021-09-21T00:00:00Z",
+                        "timezone": 0,
+                        "before": 0,
+                        "after": 0,
+                        "precision": 11,
+                        "calendarmodel": "http://www.wikidata.org/entity/Q1985727"
+                      },
+                      "type": "time"
+                    },
+                    "datatype": "time"
+                  }
+                ]
+              },
+              "snaks-order": [
+                "P854",
+                "P1065",
+                "P2960"
+              ]
+            }
+          ]
+        }
+      ],
+      "P646": [
+        {
+          "mainsnak": {
+            "snaktype": "value",
+            "property": "P646",
+            "hash": "c5e1f943d79e3dcd5c84a7a92fe0c66a7afe6fa3",
+            "datavalue": {
+              "value": "/m/0c4yyq",
+              "type": "string"
+            },
+            "datatype": "external-id"
+          },
+          "type": "statement",
+          "id": "Q2745222$87C2DEB2-26CF-442C-AB53-CC500E310675",
+          "rank": "normal"
+        }
+      ],
+      "P13337": [
+        {
+          "mainsnak": {
+            "snaktype": "value",
+            "property": "P13337",
+            "hash": "a54073f37d6156d0c97c986270c376bd6d7c5de7",
+            "datavalue": {
+              "value": "teara.govt.nz",
+              "type": "string"
+            },
+            "datatype": "external-id"
+          },
+          "type": "statement",
+          "id": "Q2745222$F1F4F3F5-F364-4649-9322-65EA481DA431",
+          "rank": "normal",
+          "references": [
+            {
+              "hash": "f7cdf0ab8a6e13ee5270a706e983f90475075ef1",
+              "snaks": {
+                "P1476": [
+                  {
+                    "snaktype": "value",
+                    "property": "P1476",
+                    "hash": "11ffa263689aad6455b06f7e457a5c0794f9c7f0",
+                    "datavalue": {
+                      "value": {
+                        "text": "Internet Domains Wikibase",
+                        "language": "en"
+                      },
+                      "type": "monolingualtext"
+                    },
+                    "datatype": "monolingualtext"
+                  }
+                ],
+                "P407": [
+                  {
+                    "snaktype": "value",
+                    "property": "P407",
+                    "hash": "daf1c4fcb58181b02dff9cc89deb084004ddae4b",
+                    "datavalue": {
+                      "value": {
+                        "entity-type": "item",
+                        "numeric-id": 1860,
+                        "id": "Q1860"
+                      },
+                      "type": "wikibase-entityid"
+                    },
+                    "datatype": "wikibase-item"
+                  }
+                ],
+                "P813": [
+                  {
+                    "snaktype": "value",
+                    "property": "P813",
+                    "hash": "bc178beee95bf5ee4e672d5b6cd6765efba029e8",
+                    "datavalue": {
+                      "value": {
+                        "time": "+2025-03-14T00:00:00Z",
+                        "timezone": 0,
+                        "before": 0,
+                        "after": 0,
+                        "precision": 11,
+                        "calendarmodel": "http://www.wikidata.org/entity/Q1985727"
+                      },
+                      "type": "time"
+                    },
+                    "datatype": "time"
+                  }
+                ],
+                "P854": [
+                  {
+                    "snaktype": "value",
+                    "property": "P854",
+                    "hash": "325a808b6d5bd9a450b2c3a1bfeb40ec4825eb4a",
+                    "datavalue": {
+                      "value": "https://domains.wikibase.cloud/entity/Q262",
+                      "type": "string"
+                    },
+                    "datatype": "url"
+                  }
+                ]
+              },
+              "snaks-order": [
+                "P1476",
+                "P407",
+                "P813",
+                "P854"
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    "sitelinks": {
+      "enwiki": {
+        "site": "enwiki",
+        "title": "Te Ara: The Encyclopedia of New Zealand",
+        "badges": [],
+        "url": "https://en.wikipedia.org/wiki/Te_Ara:_The_Encyclopedia_of_New_Zealand"
+      },
+      "eowiki": {
+        "site": "eowiki",
+        "title": "Te Ara: The Encyclopedia of New Zealand",
+        "badges": [],
+        "url": "https://eo.wikipedia.org/wiki/Te_Ara:_The_Encyclopedia_of_New_Zealand"
+      },
+      "eswiki": {
+        "site": "eswiki",
+        "title": "Te Ara: The Encyclopedia of New Zealand",
+        "badges": [],
+        "url": "https://es.wikipedia.org/wiki/Te_Ara:_The_Encyclopedia_of_New_Zealand"
+      },
+      "frwiki": {
+        "site": "frwiki",
+        "title": "Te Ara Encyclopedia of New Zealand",
+        "badges": [],
+        "url": "https://fr.wikipedia.org/wiki/Te_Ara_Encyclopedia_of_New_Zealand"
+      },
+      "mkwiki": {
+        "site": "mkwiki",
+        "title": "Те Ара - Енциклопедија на Нов Зеланд",
+        "badges": [],
+        "url": "https://mk.wikipedia.org/wiki/%D0%A2%D0%B5_%D0%90%D1%80%D0%B0_-_%D0%95%D0%BD%D1%86%D0%B8%D0%BA%D0%BB%D0%BE%D0%BF%D0%B5%D0%B4%D0%B8%D1%98%D0%B0_%D0%BD%D0%B0_%D0%9D%D0%BE%D0%B2_%D0%97%D0%B5%D0%BB%D0%B0%D0%BD%D0%B4"
+      },
+      "nlwiki": {
+        "site": "nlwiki",
+        "title": "Te Ara: The Encyclopedia of New Zealand",
+        "badges": [],
+        "url": "https://nl.wikipedia.org/wiki/Te_Ara:_The_Encyclopedia_of_New_Zealand"
+      },
+      "nnwiki": {
+        "site": "nnwiki",
+        "title": "Te Ara – The Encyclopedia of New Zealand",
+        "badges": [],
+        "url": "https://nn.wikipedia.org/wiki/Te_Ara_%E2%80%93_The_Encyclopedia_of_New_Zealand"
+      },
+      "ruwiki": {
+        "site": "ruwiki",
+        "title": "Te Ara: The Encyclopedia of New Zealand",
+        "badges": [],
+        "url": "https://ru.wikipedia.org/wiki/Te_Ara:_The_Encyclopedia_of_New_Zealand"
+      }
+    }
+  }
+}

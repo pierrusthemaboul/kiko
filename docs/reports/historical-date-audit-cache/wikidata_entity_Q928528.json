@@ -1,0 +1,995 @@
+{
+  "saved_at": "2026-03-07T12:51:27.751Z",
+  "value": {
+    "pageid": 878884,
+    "ns": 0,
+    "title": "Q928528",
+    "lastrevid": 2464894020,
+    "modified": "2026-02-20T09:29:31Z",
+    "type": "item",
+    "id": "Q928528",
+    "labels": {
+      "it": {
+        "language": "it",
+        "value": "Caso degli emoderivati infetti"
+      },
+      "da": {
+        "language": "da",
+        "value": "Blødersagen"
+      },
+      "de": {
+        "language": "de",
+        "value": "Infektionen durch HIV-kontaminierte Blutprodukte"
+      },
+      "en": {
+        "language": "en",
+        "value": "contaminated haemophilia blood products"
+      },
+      "es": {
+        "language": "es",
+        "value": "Escándalo de los productos para hemofílicos"
+      },
+      "fr": {
+        "language": "fr",
+        "value": "affaire du sang contaminé"
+      },
+      "fa": {
+        "language": "fa",
+        "value": "پرونده خون‌های آلوده"
+      },
+      "ja": {
+        "language": "ja",
+        "value": "汚染血友病血液製剤"
+      },
+      "sv": {
+        "language": "sv",
+        "value": "Blodsmitta"
+      },
+      "ar": {
+        "language": "ar",
+        "value": "منتجات الدم الملوثة الخاصة بالناعور"
+      },
+      "pt": {
+        "language": "pt",
+        "value": "Produtos sanguíneos para hemofilia contaminados"
+      },
+      "sl": {
+        "language": "sl",
+        "value": "okužbe s  kontaminiranimi krvnimi pripravki za hemofilijo"
+      }
+    },
+    "descriptions": {
+      "en": {
+        "language": "en",
+        "value": "health crisis in the late 1970s up to 1985"
+      },
+      "zh": {
+        "language": "zh",
+        "value": "1970年代末至1985年的健康危機"
+      },
+      "de": {
+        "language": "de",
+        "value": "HIV-Infizierung von Krankenhauspatienten durch Bluttransfusion in den 1980er Jahren"
+      },
+      "sl": {
+        "language": "sl",
+        "value": "okužbe s HIV pri krvnih transfuzijah v 1970. in 1980. letih"
+      },
+      "fr": {
+        "language": "fr",
+        "value": "scandale sanitaire"
+      }
+    },
+    "aliases": {
+      "es": [
+        {
+          "language": "es",
+          "value": "Escandalo de los productos para hemofilicos"
+        }
+      ],
+      "en": [
+        {
+          "language": "en",
+          "value": "infected blood scandal"
+        }
+      ],
+      "zh": [
+        {
+          "language": "zh",
+          "value": "“美國血”事件"
+        },
+        {
+          "language": "zh",
+          "value": "“美國血”醜聞"
+        }
+      ]
+    },
+    "claims": {
+      "P646": [
+        {
+          "mainsnak": {
+            "snaktype": "value",
+            "property": "P646",
+            "hash": "ba76100c2d42493fb346d7ae2e5ea5363d14b5d1",
+            "datavalue": {
+              "value": "/m/0g_mgt",
+              "type": "string"
+            },
+            "datatype": "external-id"
+          },
+          "type": "statement",
+          "id": "Q928528$BC4186D6-FFFC-458C-8DD4-22F297C8C3A5",
+          "rank": "normal",
+          "references": [
+            {
+              "hash": "2b00cb481cddcac7623114367489b5c194901c4a",
+              "snaks": {
+                "P248": [
+                  {
+                    "snaktype": "value",
+                    "property": "P248",
+                    "hash": "a94b740202b097dd33355e0e6c00e54b9395e5e0",
+                    "datavalue": {
+                      "value": {
+                        "entity-type": "item",
+                        "numeric-id": 15241312,
+                        "id": "Q15241312"
+                      },
+                      "type": "wikibase-entityid"
+                    },
+                    "datatype": "wikibase-item"
+                  }
+                ],
+                "P577": [
+                  {
+                    "snaktype": "value",
+                    "property": "P577",
+                    "hash": "fde79ecb015112d2f29229ccc1ec514ed3e71fa2",
+                    "datavalue": {
+                      "value": {
+                        "time": "+2013-10-28T00:00:00Z",
+                        "timezone": 0,
+                        "before": 0,
+                        "after": 0,
+                        "precision": 11,
+                        "calendarmodel": "http://www.wikidata.org/entity/Q1985727"
+                      },
+                      "type": "time"
+                    },
+                    "datatype": "time"
+                  }
+                ]
+              },
+              "snaks-order": [
+                "P248",
+                "P577"
+              ]
+            }
+          ]
+        }
+      ],
+      "P910": [
+        {
+          "mainsnak": {
+            "snaktype": "value",
+            "property": "P910",
+            "hash": "a7d933349de4d226f62b9d34ec23087d93dc7166",
+            "datavalue": {
+              "value": {
+                "entity-type": "item",
+                "numeric-id": 23727179,
+                "id": "Q23727179"
+              },
+              "type": "wikibase-entityid"
+            },
+            "datatype": "wikibase-item"
+          },
+          "type": "statement",
+          "id": "Q928528$734F684A-EBC0-4D6B-93E5-40B6AEB8E829",
+          "rank": "normal",
+          "references": [
+            {
+              "hash": "fa278ebfc458360e5aed63d5058cca83c46134f1",
+              "snaks": {
+                "P143": [
+                  {
+                    "snaktype": "value",
+                    "property": "P143",
+                    "hash": "e4f6d9441d0600513c4533c672b5ab472dc73694",
+                    "datavalue": {
+                      "value": {
+                        "entity-type": "item",
+                        "numeric-id": 328,
+                        "id": "Q328"
+                      },
+                      "type": "wikibase-entityid"
+                    },
+                    "datatype": "wikibase-item"
+                  }
+                ]
+              },
+              "snaks-order": [
+                "P143"
+              ]
+            }
+          ]
+        }
+      ],
+      "P1269": [
+        {
+          "mainsnak": {
+            "snaktype": "value",
+            "property": "P1269",
+            "hash": "133e3271a9f9c3d0233a047869056fa6c02185c8",
+            "datavalue": {
+              "value": {
+                "entity-type": "item",
+                "numeric-id": 4927522,
+                "id": "Q4927522"
+              },
+              "type": "wikibase-entityid"
+            },
+            "datatype": "wikibase-item"
+          },
+          "type": "statement",
+          "id": "Q928528$a66d6426-484a-0d73-e380-834fcf3b7bab",
+          "rank": "normal"
+        }
+      ],
+      "P710": [
+        {
+          "mainsnak": {
+            "snaktype": "value",
+            "property": "P710",
+            "hash": "6d9eaf20045333283c65b6327c9543bf3f9d7f4d",
+            "datavalue": {
+              "value": {
+                "entity-type": "item",
+                "numeric-id": 3151778,
+                "id": "Q3151778"
+              },
+              "type": "wikibase-entityid"
+            },
+            "datatype": "wikibase-item"
+          },
+          "type": "statement",
+          "qualifiers": {
+            "P3831": [
+              {
+                "snaktype": "value",
+                "property": "P3831",
+                "hash": "c02fb0286c2e81cb12d721bc010623f4deaeb95c",
+                "datavalue": {
+                  "value": {
+                    "entity-type": "item",
+                    "numeric-id": 159394,
+                    "id": "Q159394"
+                  },
+                  "type": "wikibase-entityid"
+                },
+                "datatype": "wikibase-item"
+              }
+            ]
+          },
+          "qualifiers-order": [
+            "P3831"
+          ],
+          "id": "Q928528$3c110461-455e-fc01-0996-780de8c01edf",
+          "rank": "normal",
+          "references": [
+            {
+              "hash": "0a32e3e896ac592cdc988ff29347a6444aef7dbc",
+              "snaks": {
+                "P854": [
+                  {
+                    "snaktype": "value",
+                    "property": "P854",
+                    "hash": "d946a78f896b91703fd6c296da63883b5235cf4b",
+                    "datavalue": {
+                      "value": "https://www.nytimes.com/2006/09/04/world/middleeast/04aids.html",
+                      "type": "string"
+                    },
+                    "datatype": "url"
+                  }
+                ],
+                "P813": [
+                  {
+                    "snaktype": "value",
+                    "property": "P813",
+                    "hash": "40922ab48ab9b70166c9a9e1bfe5b494e7c7b959",
+                    "datavalue": {
+                      "value": {
+                        "time": "+2019-04-05T00:00:00Z",
+                        "timezone": 0,
+                        "before": 0,
+                        "after": 0,
+                        "precision": 11,
+                        "calendarmodel": "http://www.wikidata.org/entity/Q1985727"
+                      },
+                      "type": "time"
+                    },
+                    "datatype": "time"
+                  }
+                ]
+              },
+              "snaks-order": [
+                "P854",
+                "P813"
+              ]
+            }
+          ]
+        },
+        {
+          "mainsnak": {
+            "snaktype": "value",
+            "property": "P710",
+            "hash": "52db1eaea025ef58a196e0ff76a1dbd78c68103f",
+            "datavalue": {
+              "value": {
+                "entity-type": "item",
+                "numeric-id": 152051,
+                "id": "Q152051"
+              },
+              "type": "wikibase-entityid"
+            },
+            "datatype": "wikibase-item"
+          },
+          "type": "statement",
+          "qualifiers": {
+            "P3831": [
+              {
+                "snaktype": "value",
+                "property": "P3831",
+                "hash": "c02fb0286c2e81cb12d721bc010623f4deaeb95c",
+                "datavalue": {
+                  "value": {
+                    "entity-type": "item",
+                    "numeric-id": 159394,
+                    "id": "Q159394"
+                  },
+                  "type": "wikibase-entityid"
+                },
+                "datatype": "wikibase-item"
+              }
+            ]
+          },
+          "qualifiers-order": [
+            "P3831"
+          ],
+          "id": "Q928528$cc05acef-40b4-ade9-9b16-06fec2582ed0",
+          "rank": "normal",
+          "references": [
+            {
+              "hash": "80853dfb3e76a7f5b27707c1cb9ebc3f7b1e2bdb",
+              "snaks": {
+                "P854": [
+                  {
+                    "snaktype": "value",
+                    "property": "P854",
+                    "hash": "7464681c8d42aa29ab1a989f97ba8357745b6282",
+                    "datavalue": {
+                      "value": "https://www.nytimes.com/1996/06/11/business/blood-money-aids-hemophiliacs-are-split-liability-cases-bogged-down-disputes.html",
+                      "type": "string"
+                    },
+                    "datatype": "url"
+                  }
+                ],
+                "P813": [
+                  {
+                    "snaktype": "value",
+                    "property": "P813",
+                    "hash": "40922ab48ab9b70166c9a9e1bfe5b494e7c7b959",
+                    "datavalue": {
+                      "value": {
+                        "time": "+2019-04-05T00:00:00Z",
+                        "timezone": 0,
+                        "before": 0,
+                        "after": 0,
+                        "precision": 11,
+                        "calendarmodel": "http://www.wikidata.org/entity/Q1985727"
+                      },
+                      "type": "time"
+                    },
+                    "datatype": "time"
+                  }
+                ]
+              },
+              "snaks-order": [
+                "P854",
+                "P813"
+              ]
+            }
+          ]
+        },
+        {
+          "mainsnak": {
+            "snaktype": "value",
+            "property": "P710",
+            "hash": "ec5365a9a154c26e866cf076ac3196d24c85dd17",
+            "datavalue": {
+              "value": {
+                "entity-type": "item",
+                "numeric-id": 5196941,
+                "id": "Q5196941"
+              },
+              "type": "wikibase-entityid"
+            },
+            "datatype": "wikibase-item"
+          },
+          "type": "statement",
+          "qualifiers": {
+            "P3831": [
+              {
+                "snaktype": "value",
+                "property": "P3831",
+                "hash": "c02fb0286c2e81cb12d721bc010623f4deaeb95c",
+                "datavalue": {
+                  "value": {
+                    "entity-type": "item",
+                    "numeric-id": 159394,
+                    "id": "Q159394"
+                  },
+                  "type": "wikibase-entityid"
+                },
+                "datatype": "wikibase-item"
+              }
+            ]
+          },
+          "qualifiers-order": [
+            "P3831"
+          ],
+          "id": "Q928528$2628b7d9-4458-f679-15fc-27824859bb9e",
+          "rank": "normal"
+        },
+        {
+          "mainsnak": {
+            "snaktype": "value",
+            "property": "P710",
+            "hash": "b073ddcbbd7ec5121b4a33462a76a4401681da8f",
+            "datavalue": {
+              "value": {
+                "entity-type": "item",
+                "numeric-id": 761965,
+                "id": "Q761965"
+              },
+              "type": "wikibase-entityid"
+            },
+            "datatype": "wikibase-item"
+          },
+          "type": "statement",
+          "qualifiers": {
+            "P3831": [
+              {
+                "snaktype": "value",
+                "property": "P3831",
+                "hash": "c02fb0286c2e81cb12d721bc010623f4deaeb95c",
+                "datavalue": {
+                  "value": {
+                    "entity-type": "item",
+                    "numeric-id": 159394,
+                    "id": "Q159394"
+                  },
+                  "type": "wikibase-entityid"
+                },
+                "datatype": "wikibase-item"
+              }
+            ]
+          },
+          "qualifiers-order": [
+            "P3831"
+          ],
+          "id": "Q928528$41a258cb-457e-9c4a-2d9d-74a671196599",
+          "rank": "normal",
+          "references": [
+            {
+              "hash": "80853dfb3e76a7f5b27707c1cb9ebc3f7b1e2bdb",
+              "snaks": {
+                "P854": [
+                  {
+                    "snaktype": "value",
+                    "property": "P854",
+                    "hash": "7464681c8d42aa29ab1a989f97ba8357745b6282",
+                    "datavalue": {
+                      "value": "https://www.nytimes.com/1996/06/11/business/blood-money-aids-hemophiliacs-are-split-liability-cases-bogged-down-disputes.html",
+                      "type": "string"
+                    },
+                    "datatype": "url"
+                  }
+                ],
+                "P813": [
+                  {
+                    "snaktype": "value",
+                    "property": "P813",
+                    "hash": "40922ab48ab9b70166c9a9e1bfe5b494e7c7b959",
+                    "datavalue": {
+                      "value": {
+                        "time": "+2019-04-05T00:00:00Z",
+                        "timezone": 0,
+                        "before": 0,
+                        "after": 0,
+                        "precision": 11,
+                        "calendarmodel": "http://www.wikidata.org/entity/Q1985727"
+                      },
+                      "type": "time"
+                    },
+                    "datatype": "time"
+                  }
+                ]
+              },
+              "snaks-order": [
+                "P854",
+                "P813"
+              ]
+            }
+          ]
+        },
+        {
+          "mainsnak": {
+            "snaktype": "value",
+            "property": "P710",
+            "hash": "9ef0fcaf5f7c9c4be278d04a6bf62c210aeb9e8e",
+            "datavalue": {
+              "value": {
+                "entity-type": "item",
+                "numeric-id": 185334,
+                "id": "Q185334"
+              },
+              "type": "wikibase-entityid"
+            },
+            "datatype": "wikibase-item"
+          },
+          "type": "statement",
+          "qualifiers": {
+            "P3831": [
+              {
+                "snaktype": "value",
+                "property": "P3831",
+                "hash": "c02fb0286c2e81cb12d721bc010623f4deaeb95c",
+                "datavalue": {
+                  "value": {
+                    "entity-type": "item",
+                    "numeric-id": 159394,
+                    "id": "Q159394"
+                  },
+                  "type": "wikibase-entityid"
+                },
+                "datatype": "wikibase-item"
+              }
+            ]
+          },
+          "qualifiers-order": [
+            "P3831"
+          ],
+          "id": "Q928528$3a47db8c-4736-a976-0c43-868e630c29b2",
+          "rank": "normal",
+          "references": [
+            {
+              "hash": "80853dfb3e76a7f5b27707c1cb9ebc3f7b1e2bdb",
+              "snaks": {
+                "P854": [
+                  {
+                    "snaktype": "value",
+                    "property": "P854",
+                    "hash": "7464681c8d42aa29ab1a989f97ba8357745b6282",
+                    "datavalue": {
+                      "value": "https://www.nytimes.com/1996/06/11/business/blood-money-aids-hemophiliacs-are-split-liability-cases-bogged-down-disputes.html",
+                      "type": "string"
+                    },
+                    "datatype": "url"
+                  }
+                ],
+                "P813": [
+                  {
+                    "snaktype": "value",
+                    "property": "P813",
+                    "hash": "40922ab48ab9b70166c9a9e1bfe5b494e7c7b959",
+                    "datavalue": {
+                      "value": {
+                        "time": "+2019-04-05T00:00:00Z",
+                        "timezone": 0,
+                        "before": 0,
+                        "after": 0,
+                        "precision": 11,
+                        "calendarmodel": "http://www.wikidata.org/entity/Q1985727"
+                      },
+                      "type": "time"
+                    },
+                    "datatype": "time"
+                  }
+                ]
+              },
+              "snaks-order": [
+                "P854",
+                "P813"
+              ]
+            }
+          ]
+        },
+        {
+          "mainsnak": {
+            "snaktype": "value",
+            "property": "P710",
+            "hash": "4625badad96db67cef1e085469cc3a5ad01817b9",
+            "datavalue": {
+              "value": {
+                "entity-type": "item",
+                "numeric-id": 5602462,
+                "id": "Q5602462"
+              },
+              "type": "wikibase-entityid"
+            },
+            "datatype": "wikibase-item"
+          },
+          "type": "statement",
+          "qualifiers": {
+            "P3831": [
+              {
+                "snaktype": "value",
+                "property": "P3831",
+                "hash": "c02fb0286c2e81cb12d721bc010623f4deaeb95c",
+                "datavalue": {
+                  "value": {
+                    "entity-type": "item",
+                    "numeric-id": 159394,
+                    "id": "Q159394"
+                  },
+                  "type": "wikibase-entityid"
+                },
+                "datatype": "wikibase-item"
+              }
+            ]
+          },
+          "qualifiers-order": [
+            "P3831"
+          ],
+          "id": "Q928528$682a37fd-4cff-5143-3fe6-c8f66c6e2ae1",
+          "rank": "normal",
+          "references": [
+            {
+              "hash": "80853dfb3e76a7f5b27707c1cb9ebc3f7b1e2bdb",
+              "snaks": {
+                "P854": [
+                  {
+                    "snaktype": "value",
+                    "property": "P854",
+                    "hash": "7464681c8d42aa29ab1a989f97ba8357745b6282",
+                    "datavalue": {
+                      "value": "https://www.nytimes.com/1996/06/11/business/blood-money-aids-hemophiliacs-are-split-liability-cases-bogged-down-disputes.html",
+                      "type": "string"
+                    },
+                    "datatype": "url"
+                  }
+                ],
+                "P813": [
+                  {
+                    "snaktype": "value",
+                    "property": "P813",
+                    "hash": "40922ab48ab9b70166c9a9e1bfe5b494e7c7b959",
+                    "datavalue": {
+                      "value": {
+                        "time": "+2019-04-05T00:00:00Z",
+                        "timezone": 0,
+                        "before": 0,
+                        "after": 0,
+                        "precision": 11,
+                        "calendarmodel": "http://www.wikidata.org/entity/Q1985727"
+                      },
+                      "type": "time"
+                    },
+                    "datatype": "time"
+                  }
+                ]
+              },
+              "snaks-order": [
+                "P854",
+                "P813"
+              ]
+            }
+          ]
+        },
+        {
+          "mainsnak": {
+            "snaktype": "value",
+            "property": "P710",
+            "hash": "aca0b1acf0e2e864f2381e400c409dc46ed760c2",
+            "datavalue": {
+              "value": {
+                "entity-type": "item",
+                "numeric-id": 812048,
+                "id": "Q812048"
+              },
+              "type": "wikibase-entityid"
+            },
+            "datatype": "wikibase-item"
+          },
+          "type": "statement",
+          "qualifiers": {
+            "P3831": [
+              {
+                "snaktype": "value",
+                "property": "P3831",
+                "hash": "c02fb0286c2e81cb12d721bc010623f4deaeb95c",
+                "datavalue": {
+                  "value": {
+                    "entity-type": "item",
+                    "numeric-id": 159394,
+                    "id": "Q159394"
+                  },
+                  "type": "wikibase-entityid"
+                },
+                "datatype": "wikibase-item"
+              }
+            ]
+          },
+          "qualifiers-order": [
+            "P3831"
+          ],
+          "id": "Q928528$4b96d06c-4168-28dd-181e-09baad147188",
+          "rank": "normal",
+          "references": [
+            {
+              "hash": "0a32e3e896ac592cdc988ff29347a6444aef7dbc",
+              "snaks": {
+                "P854": [
+                  {
+                    "snaktype": "value",
+                    "property": "P854",
+                    "hash": "d946a78f896b91703fd6c296da63883b5235cf4b",
+                    "datavalue": {
+                      "value": "https://www.nytimes.com/2006/09/04/world/middleeast/04aids.html",
+                      "type": "string"
+                    },
+                    "datatype": "url"
+                  }
+                ],
+                "P813": [
+                  {
+                    "snaktype": "value",
+                    "property": "P813",
+                    "hash": "40922ab48ab9b70166c9a9e1bfe5b494e7c7b959",
+                    "datavalue": {
+                      "value": {
+                        "time": "+2019-04-05T00:00:00Z",
+                        "timezone": 0,
+                        "before": 0,
+                        "after": 0,
+                        "precision": 11,
+                        "calendarmodel": "http://www.wikidata.org/entity/Q1985727"
+                      },
+                      "type": "time"
+                    },
+                    "datatype": "time"
+                  }
+                ]
+              },
+              "snaks-order": [
+                "P854",
+                "P813"
+              ]
+            }
+          ]
+        }
+      ],
+      "P1542": [
+        {
+          "mainsnak": {
+            "snaktype": "value",
+            "property": "P1542",
+            "hash": "c7bde095394988fa3fc8d04433ed786d074adb74",
+            "datavalue": {
+              "value": {
+                "entity-type": "item",
+                "numeric-id": 2986444,
+                "id": "Q2986444"
+              },
+              "type": "wikibase-entityid"
+            },
+            "datatype": "wikibase-item"
+          },
+          "type": "statement",
+          "id": "Q928528$b8df3047-44ff-be48-5cab-7367ca913bcf",
+          "rank": "normal"
+        },
+        {
+          "mainsnak": {
+            "snaktype": "value",
+            "property": "P1542",
+            "hash": "848b4ee4538ca9ed3e0781f56421247a1c151905",
+            "datavalue": {
+              "value": {
+                "entity-type": "item",
+                "numeric-id": 16986215,
+                "id": "Q16986215"
+              },
+              "type": "wikibase-entityid"
+            },
+            "datatype": "wikibase-item"
+          },
+          "type": "statement",
+          "id": "Q928528$8a118cc5-4b08-5eee-239e-84dcaf2c8e0b",
+          "rank": "normal"
+        },
+        {
+          "mainsnak": {
+            "snaktype": "value",
+            "property": "P1542",
+            "hash": "20a500f9506bbd1184ecab969e97bfee8dee55e5",
+            "datavalue": {
+              "value": {
+                "entity-type": "item",
+                "numeric-id": 6552829,
+                "id": "Q6552829"
+              },
+              "type": "wikibase-entityid"
+            },
+            "datatype": "wikibase-item"
+          },
+          "type": "statement",
+          "id": "Q928528$d021471e-4beb-2744-f4b2-8cdaebf8dcbe",
+          "rank": "normal"
+        },
+        {
+          "mainsnak": {
+            "snaktype": "value",
+            "property": "P1542",
+            "hash": "51b6be0c09ec398c975ebaa2feea604ab7ba2200",
+            "datavalue": {
+              "value": {
+                "entity-type": "item",
+                "numeric-id": 8193836,
+                "id": "Q8193836"
+              },
+              "type": "wikibase-entityid"
+            },
+            "datatype": "wikibase-item"
+          },
+          "type": "statement",
+          "id": "Q928528$cefb3409-4166-b21f-7d69-aa172540d525",
+          "rank": "normal"
+        },
+        {
+          "mainsnak": {
+            "snaktype": "value",
+            "property": "P1542",
+            "hash": "45f372ae2e1c6528b8aed6a84c15e8ca20b3feef",
+            "datavalue": {
+              "value": {
+                "entity-type": "item",
+                "numeric-id": 7676236,
+                "id": "Q7676236"
+              },
+              "type": "wikibase-entityid"
+            },
+            "datatype": "wikibase-item"
+          },
+          "type": "statement",
+          "id": "Q928528$dc53264c-4d19-2074-d21c-68b9bcfb2ab3",
+          "rank": "normal"
+        }
+      ],
+      "P1343": [
+        {
+          "mainsnak": {
+            "snaktype": "value",
+            "property": "P1343",
+            "hash": "f0dfa0b4bbf7f7908416d1d76ff03e1dc7db5f69",
+            "datavalue": {
+              "value": {
+                "entity-type": "item",
+                "numeric-id": 5428711,
+                "id": "Q5428711"
+              },
+              "type": "wikibase-entityid"
+            },
+            "datatype": "wikibase-item"
+          },
+          "type": "statement",
+          "id": "Q928528$adde255e-459c-cd92-4d1e-db59d0c1432c",
+          "rank": "normal"
+        },
+        {
+          "mainsnak": {
+            "snaktype": "value",
+            "property": "P1343",
+            "hash": "1f8c68e72086eaf31a0fba565f0ecc54f85424f8",
+            "datavalue": {
+              "value": {
+                "entity-type": "item",
+                "numeric-id": 4840170,
+                "id": "Q4840170"
+              },
+              "type": "wikibase-entityid"
+            },
+            "datatype": "wikibase-item"
+          },
+          "type": "statement",
+          "id": "Q928528$fe4d02a6-456a-728a-e88a-e72aa4afa33e",
+          "rank": "normal"
+        }
+      ],
+      "P31": [
+        {
+          "mainsnak": {
+            "snaktype": "value",
+            "property": "P31",
+            "hash": "f0d1126fb49e4d1a9f1078dbf97993aef991eba6",
+            "datavalue": {
+              "value": {
+                "entity-type": "item",
+                "numeric-id": 3002774,
+                "id": "Q3002774"
+              },
+              "type": "wikibase-entityid"
+            },
+            "datatype": "wikibase-item"
+          },
+          "type": "statement",
+          "id": "Q928528$cecce8e1-4bf1-a690-0d72-3f377e77d03b",
+          "rank": "normal"
+        }
+      ]
+    },
+    "sitelinks": {
+      "arwiki": {
+        "site": "arwiki",
+        "title": "منتجات الدم الملوثة الخاصة بالناعور",
+        "badges": [],
+        "url": "https://ar.wikipedia.org/wiki/%D9%85%D9%86%D8%AA%D8%AC%D8%A7%D8%AA_%D8%A7%D9%84%D8%AF%D9%85_%D8%A7%D9%84%D9%85%D9%84%D9%88%D8%AB%D8%A9_%D8%A7%D9%84%D8%AE%D8%A7%D8%B5%D8%A9_%D8%A8%D8%A7%D9%84%D9%86%D8%A7%D8%B9%D9%88%D8%B1"
+      },
+      "dawiki": {
+        "site": "dawiki",
+        "title": "Blødersagen",
+        "badges": [],
+        "url": "https://da.wikipedia.org/wiki/Bl%C3%B8dersagen"
+      },
+      "dewiki": {
+        "site": "dewiki",
+        "title": "Infektionen durch HIV-kontaminierte Blutprodukte",
+        "badges": [],
+        "url": "https://de.wikipedia.org/wiki/Infektionen_durch_HIV-kontaminierte_Blutprodukte"
+      },
+      "enwiki": {
+        "site": "enwiki",
+        "title": "Contaminated haemophilia blood products",
+        "badges": [],
+        "url": "https://en.wikipedia.org/wiki/Contaminated_haemophilia_blood_products"
+      },
+      "eswiki": {
+        "site": "eswiki",
+        "title": "Escándalo de los productos para hemofílicos",
+        "badges": [],
+        "url": "https://es.wikipedia.org/wiki/Esc%C3%A1ndalo_de_los_productos_para_hemof%C3%ADlicos"
+      },
+      "fawiki": {
+        "site": "fawiki",
+        "title": "پرونده خون‌های آلوده",
+        "badges": [],
+        "url": "https://fa.wikipedia.org/wiki/%D9%BE%D8%B1%D9%88%D9%86%D8%AF%D9%87_%D8%AE%D9%88%D9%86%E2%80%8C%D9%87%D8%A7%DB%8C_%D8%A2%D9%84%D9%88%D8%AF%D9%87"
+      },
+      "frwiki": {
+        "site": "frwiki",
+        "title": "Affaire du sang contaminé",
+        "badges": [],
+        "url": "https://fr.wikipedia.org/wiki/Affaire_du_sang_contamin%C3%A9"
+      },
+      "itwiki": {
+        "site": "itwiki",
+        "title": "Caso degli emoderivati infetti",
+        "badges": [],
+        "url": "https://it.wikipedia.org/wiki/Caso_degli_emoderivati_infetti"
+      },
+      "ptwiki": {
+        "site": "ptwiki",
+        "title": "Produtos sanguíneos para hemofilia contaminados",
+        "badges": [],
+        "url": "https://pt.wikipedia.org/wiki/Produtos_sangu%C3%ADneos_para_hemofilia_contaminados"
+      },
+      "svwiki": {
+        "site": "svwiki",
+        "title": "Blodsmitta",
+        "badges": [],
+        "url": "https://sv.wikipedia.org/wiki/Blodsmitta"
+      }
+    }
+  }
+}

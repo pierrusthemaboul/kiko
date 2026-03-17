@@ -1,0 +1,83 @@
+{
+  "saved_at": "2026-03-07T13:47:51.954Z",
+  "value": {
+    "pageid": 128304236,
+    "ns": 0,
+    "title": "Q134462832",
+    "lastrevid": 2390821070,
+    "modified": "2025-08-11T20:36:20Z",
+    "type": "item",
+    "id": "Q134462832",
+    "labels": {
+      "fr": {
+        "language": "fr",
+        "value": "Danse dans la Rome antique"
+      },
+      "en": {
+        "language": "en",
+        "value": "Dance in ancient Rome"
+      }
+    },
+    "descriptions": {
+      "fr": {
+        "language": "fr",
+        "value": "aperçu de la danse dans la Rome antique"
+      }
+    },
+    "aliases": {},
+    "claims": {
+      "P31": [
+        {
+          "mainsnak": {
+            "snaktype": "value",
+            "property": "P31",
+            "hash": "fab74a9dc78aab9e32faacb6ff6c2dc026c4faee",
+            "datavalue": {
+              "value": {
+                "entity-type": "item",
+                "numeric-id": 107357104,
+                "id": "Q107357104"
+              },
+              "type": "wikibase-entityid"
+            },
+            "datatype": "wikibase-item"
+          },
+          "type": "statement",
+          "id": "Q134462832$719E1F05-4C86-4AE0-988B-0DF7B8944F22",
+          "rank": "normal"
+        }
+      ],
+      "P361": [
+        {
+          "mainsnak": {
+            "snaktype": "value",
+            "property": "P361",
+            "hash": "9c3dfd104f073f61164615bb23c71110bcf2f5fb",
+            "datavalue": {
+              "value": {
+                "entity-type": "item",
+                "numeric-id": 1200427,
+                "id": "Q1200427"
+              },
+              "type": "wikibase-entityid"
+            },
+            "datatype": "wikibase-item"
+          },
+          "type": "statement",
+          "id": "Q134462832$a6fd36d4-4be2-46ae-8441-555d324ab6a0",
+          "rank": "normal"
+        }
+      ]
+    },
+    "sitelinks": {
+      "frwiki": {
+        "site": "frwiki",
+        "title": "Danse dans la Rome antique",
+        "badges": [
+          "Q17437796"
+        ],
+        "url": "https://fr.wikipedia.org/wiki/Danse_dans_la_Rome_antique"
+      }
+    }
+  }
+}

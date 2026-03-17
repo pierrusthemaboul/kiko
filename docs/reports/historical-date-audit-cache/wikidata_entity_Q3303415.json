@@ -1,0 +1,322 @@
+{
+  "saved_at": "2026-03-07T16:48:50.599Z",
+  "value": {
+    "pageid": 3150289,
+    "ns": 0,
+    "title": "Q3303415",
+    "lastrevid": 2399811599,
+    "modified": "2025-09-03T02:14:38Z",
+    "type": "item",
+    "id": "Q3303415",
+    "labels": {
+      "vi": {
+        "language": "vi",
+        "value": "Ngô nếp"
+      },
+      "fr": {
+        "language": "fr",
+        "value": "Maïs cireux"
+      },
+      "en": {
+        "language": "en",
+        "value": "waxy corn"
+      },
+      "de": {
+        "language": "de",
+        "value": "Wachsmais"
+      },
+      "fa": {
+        "language": "fa",
+        "value": "ذرت مومی"
+      },
+      "ko": {
+        "language": "ko",
+        "value": "찰옥수수"
+      },
+      "id": {
+        "language": "id",
+        "value": "jagung"
+      },
+      "fi": {
+        "language": "fi",
+        "value": "vahamaissi"
+      },
+      "smn": {
+        "language": "smn",
+        "value": "kässimaissâ"
+      },
+      "jv": {
+        "language": "jv",
+        "value": "Jagung lilin"
+      },
+      "ru": {
+        "language": "ru",
+        "value": "восковидная кукуруза"
+      },
+      "ja": {
+        "language": "ja",
+        "value": "ワキシーコーン"
+      }
+    },
+    "descriptions": {
+      "en": {
+        "language": "en",
+        "value": "mutation in Zea mays"
+      }
+    },
+    "aliases": {
+      "fr": [
+        {
+          "language": "fr",
+          "value": "Maïs Cireux"
+        },
+        {
+          "language": "fr",
+          "value": "Waxy"
+        },
+        {
+          "language": "fr",
+          "value": "Cireux"
+        },
+        {
+          "language": "fr",
+          "value": "Mais cireux"
+        }
+      ]
+    },
+    "claims": {
+      "P31": [
+        {
+          "mainsnak": {
+            "snaktype": "value",
+            "property": "P31",
+            "hash": "ff65ace7a8d8d5bc303583a21e49e7eb619741bc",
+            "datavalue": {
+              "value": {
+                "entity-type": "item",
+                "numeric-id": 42918,
+                "id": "Q42918"
+              },
+              "type": "wikibase-entityid"
+            },
+            "datatype": "wikibase-item"
+          },
+          "type": "statement",
+          "id": "Q3303415$7dd95186-474a-d03c-96dd-ead484392b2e",
+          "rank": "normal"
+        },
+        {
+          "mainsnak": {
+            "snaktype": "value",
+            "property": "P31",
+            "hash": "4c2a030342e3e8cd9b66a508970bc93870683955",
+            "datavalue": {
+              "value": {
+                "entity-type": "item",
+                "numeric-id": 97165254,
+                "id": "Q97165254"
+              },
+              "type": "wikibase-entityid"
+            },
+            "datatype": "wikibase-item"
+          },
+          "type": "statement",
+          "id": "Q3303415$b244b8b1-4e5a-1fca-6b78-56eb6d9205b3",
+          "rank": "normal"
+        }
+      ],
+      "P6366": [
+        {
+          "mainsnak": {
+            "snaktype": "value",
+            "property": "P6366",
+            "hash": "5ca5ba95711a9567f19cb8730dbc51cebfc75aaf",
+            "datavalue": {
+              "value": "2776087241",
+              "type": "string"
+            },
+            "datatype": "external-id"
+          },
+          "type": "statement",
+          "id": "Q3303415$3BEAFB75-06BC-4F89-9916-71C00711128F",
+          "rank": "normal"
+        }
+      ],
+      "P646": [
+        {
+          "mainsnak": {
+            "snaktype": "value",
+            "property": "P646",
+            "hash": "21761be34422e3a7151e263fb226f9a929a40902",
+            "datavalue": {
+              "value": "/m/09yf8_",
+              "type": "string"
+            },
+            "datatype": "external-id"
+          },
+          "type": "statement",
+          "id": "Q3303415$51B26F7A-46E7-459B-A3AC-C83060286F8F",
+          "rank": "normal"
+        }
+      ],
+      "P10283": [
+        {
+          "mainsnak": {
+            "snaktype": "value",
+            "property": "P10283",
+            "hash": "44f21086c47600150f843b0a1a8e92e7fa4ade86",
+            "datavalue": {
+              "value": "C2776087241",
+              "type": "string"
+            },
+            "datatype": "external-id"
+          },
+          "type": "statement",
+          "id": "Q3303415$7192D637-0E7D-4E60-825B-32FE1DAFAC46",
+          "rank": "normal",
+          "references": [
+            {
+              "hash": "c13ba4d7902ead2693f79396bc25bd35d4d14030",
+              "snaks": {
+                "P248": [
+                  {
+                    "snaktype": "value",
+                    "property": "P248",
+                    "hash": "4a4f26a5361b5707266e48e425bf2be2f99fd2ab",
+                    "datavalue": {
+                      "value": {
+                        "entity-type": "item",
+                        "numeric-id": 107507571,
+                        "id": "Q107507571"
+                      },
+                      "type": "wikibase-entityid"
+                    },
+                    "datatype": "wikibase-item"
+                  }
+                ],
+                "P813": [
+                  {
+                    "snaktype": "value",
+                    "property": "P813",
+                    "hash": "435834d08182bb9f3dbe974ba9840af0f12899cc",
+                    "datavalue": {
+                      "value": {
+                        "time": "+2022-01-26T00:00:00Z",
+                        "timezone": 0,
+                        "before": 0,
+                        "after": 0,
+                        "precision": 11,
+                        "calendarmodel": "http://www.wikidata.org/entity/Q1985727"
+                      },
+                      "type": "time"
+                    },
+                    "datatype": "time"
+                  }
+                ],
+                "P854": [
+                  {
+                    "snaktype": "value",
+                    "property": "P854",
+                    "hash": "a4a4bf53f22268815c51ec10fed608da703c9c7f",
+                    "datavalue": {
+                      "value": "https://docs.openalex.org/download-snapshot/snapshot-data-format",
+                      "type": "string"
+                    },
+                    "datatype": "url"
+                  }
+                ]
+              },
+              "snaks-order": [
+                "P248",
+                "P813",
+                "P854"
+              ]
+            }
+          ]
+        }
+      ],
+      "P13044": [
+        {
+          "mainsnak": {
+            "snaktype": "value",
+            "property": "P13044",
+            "hash": "e464354f58acf6314b35e800a5e98279034c75fe",
+            "datavalue": {
+              "value": {
+                "entity-type": "item",
+                "numeric-id": 11575,
+                "id": "Q11575"
+              },
+              "type": "wikibase-entityid"
+            },
+            "datatype": "wikibase-item"
+          },
+          "type": "statement",
+          "id": "Q3303415$E2517E5A-825B-4999-80A8-E175F8C3204F",
+          "rank": "normal"
+        }
+      ],
+      "P373": [
+        {
+          "mainsnak": {
+            "snaktype": "value",
+            "property": "P373",
+            "hash": "b5fe6805a77412a3ce065f942d8058be76adb0c6",
+            "datavalue": {
+              "value": "Waxy corn",
+              "type": "string"
+            },
+            "datatype": "string"
+          },
+          "type": "statement",
+          "id": "Q3303415$b995f8f2-418f-c743-74b8-1b4396ef206e",
+          "rank": "normal"
+        }
+      ]
+    },
+    "sitelinks": {
+      "commonswiki": {
+        "site": "commonswiki",
+        "title": "Category:Waxy corn",
+        "badges": [],
+        "url": "https://commons.wikimedia.org/wiki/Category:Waxy_corn"
+      },
+      "enwiki": {
+        "site": "enwiki",
+        "title": "Waxy corn",
+        "badges": [],
+        "url": "https://en.wikipedia.org/wiki/Waxy_corn"
+      },
+      "fawiki": {
+        "site": "fawiki",
+        "title": "ذرت مومی",
+        "badges": [],
+        "url": "https://fa.wikipedia.org/wiki/%D8%B0%D8%B1%D8%AA_%D9%85%D9%88%D9%85%DB%8C"
+      },
+      "frwiki": {
+        "site": "frwiki",
+        "title": "Maïs cireux",
+        "badges": [],
+        "url": "https://fr.wikipedia.org/wiki/Ma%C3%AFs_cireux"
+      },
+      "jawiki": {
+        "site": "jawiki",
+        "title": "ワキシーコーン",
+        "badges": [],
+        "url": "https://ja.wikipedia.org/wiki/%E3%83%AF%E3%82%AD%E3%82%B7%E3%83%BC%E3%82%B3%E3%83%BC%E3%83%B3"
+      },
+      "kowiki": {
+        "site": "kowiki",
+        "title": "찰옥수수",
+        "badges": [],
+        "url": "https://ko.wikipedia.org/wiki/%EC%B0%B0%EC%98%A5%EC%88%98%EC%88%98"
+      },
+      "viwiki": {
+        "site": "viwiki",
+        "title": "Ngô nếp",
+        "badges": [],
+        "url": "https://vi.wikipedia.org/wiki/Ng%C3%B4_n%E1%BA%BFp"
+      }
+    }
+  }
+}

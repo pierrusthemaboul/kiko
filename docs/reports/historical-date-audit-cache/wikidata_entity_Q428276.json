@@ -1,0 +1,386 @@
+{
+  "saved_at": "2026-03-07T16:07:08.880Z",
+  "value": {
+    "pageid": 404091,
+    "ns": 0,
+    "title": "Q428276",
+    "lastrevid": 2397640919,
+    "modified": "2025-08-28T10:18:04Z",
+    "type": "item",
+    "id": "Q428276",
+    "labels": {
+      "es": {
+        "language": "es",
+        "value": "Ley Gayssot"
+      },
+      "ar": {
+        "language": "ar",
+        "value": "قانون غيسو"
+      },
+      "en": {
+        "language": "en",
+        "value": "Gayssot Act"
+      },
+      "fr": {
+        "language": "fr",
+        "value": "Loi Gayssot"
+      },
+      "ja": {
+        "language": "ja",
+        "value": "ゲソ法"
+      },
+      "zh-hant": {
+        "language": "zh-hant",
+        "value": "蓋索法"
+      },
+      "zh-cn": {
+        "language": "zh-cn",
+        "value": "盖索法"
+      },
+      "tr": {
+        "language": "tr",
+        "value": "Gayssot Yasası"
+      },
+      "zh-hans": {
+        "language": "zh-hans",
+        "value": "盖索法"
+      },
+      "zh": {
+        "language": "zh",
+        "value": "盖索法"
+      },
+      "he": {
+        "language": "he",
+        "value": "חוק גייסוט"
+      },
+      "ca": {
+        "language": "ca",
+        "value": "Llei Gayssot"
+      },
+      "eu": {
+        "language": "eu",
+        "value": "Gayssot Legea"
+      }
+    },
+    "descriptions": {
+      "en": {
+        "language": "en",
+        "value": "law in France against Holocaust denial and other denial of crimes against humanity"
+      },
+      "ast": {
+        "language": "ast",
+        "value": "llei francesa"
+      },
+      "fr": {
+        "language": "fr",
+        "value": "loi mémorielle française"
+      },
+      "ca": {
+        "language": "ca",
+        "value": "llei antiracista i antisemita francesa"
+      }
+    },
+    "aliases": {
+      "ar": [
+        {
+          "language": "ar",
+          "value": "قانون جيسو فابيو"
+        }
+      ],
+      "fr": [
+        {
+          "language": "fr",
+          "value": "loi tendant à réprimer tout acte raciste, antisémite ou xénophobe"
+        }
+      ],
+      "en": [
+        {
+          "language": "en",
+          "value": "Gayssot Law"
+        }
+      ],
+      "ja": [
+        {
+          "language": "ja",
+          "value": "あらゆる人種差別、反ユダヤ主義又は排外主義の行為を禁止する法律（ゲソ法）"
+        }
+      ]
+    },
+    "claims": {
+      "P646": [
+        {
+          "mainsnak": {
+            "snaktype": "value",
+            "property": "P646",
+            "hash": "4680a87a5bb62064132b75edb3690f3a9651af8e",
+            "datavalue": {
+              "value": "/m/0bt057",
+              "type": "string"
+            },
+            "datatype": "external-id"
+          },
+          "type": "statement",
+          "id": "Q428276$82B6837E-5F66-40FE-8120-8A2AEF63115A",
+          "rank": "normal",
+          "references": [
+            {
+              "hash": "2b00cb481cddcac7623114367489b5c194901c4a",
+              "snaks": {
+                "P248": [
+                  {
+                    "snaktype": "value",
+                    "property": "P248",
+                    "hash": "a94b740202b097dd33355e0e6c00e54b9395e5e0",
+                    "datavalue": {
+                      "value": {
+                        "entity-type": "item",
+                        "numeric-id": 15241312,
+                        "id": "Q15241312"
+                      },
+                      "type": "wikibase-entityid"
+                    },
+                    "datatype": "wikibase-item"
+                  }
+                ],
+                "P577": [
+                  {
+                    "snaktype": "value",
+                    "property": "P577",
+                    "hash": "fde79ecb015112d2f29229ccc1ec514ed3e71fa2",
+                    "datavalue": {
+                      "value": {
+                        "time": "+2013-10-28T00:00:00Z",
+                        "timezone": 0,
+                        "before": 0,
+                        "after": 0,
+                        "precision": 11,
+                        "calendarmodel": "http://www.wikidata.org/entity/Q1985727"
+                      },
+                      "type": "time"
+                    },
+                    "datatype": "time"
+                  }
+                ]
+              },
+              "snaks-order": [
+                "P248",
+                "P577"
+              ]
+            }
+          ]
+        }
+      ],
+      "P31": [
+        {
+          "mainsnak": {
+            "snaktype": "value",
+            "property": "P31",
+            "hash": "26feacaf586ee8762b1a5523fb6432ebd6ffe651",
+            "datavalue": {
+              "value": {
+                "entity-type": "item",
+                "numeric-id": 13408009,
+                "id": "Q13408009"
+              },
+              "type": "wikibase-entityid"
+            },
+            "datatype": "wikibase-item"
+          },
+          "type": "statement",
+          "id": "Q428276$08D66061-DBAD-4665-B94C-11F2B9F7DF36",
+          "rank": "normal"
+        }
+      ],
+      "P17": [
+        {
+          "mainsnak": {
+            "snaktype": "value",
+            "property": "P17",
+            "hash": "c05db5d169c2560b9799d567a803d20a392f53e4",
+            "datavalue": {
+              "value": {
+                "entity-type": "item",
+                "numeric-id": 142,
+                "id": "Q142"
+              },
+              "type": "wikibase-entityid"
+            },
+            "datatype": "wikibase-item"
+          },
+          "type": "statement",
+          "id": "Q428276$F16E103B-5618-4DE3-8DE6-C56518B9555D",
+          "rank": "normal"
+        }
+      ],
+      "P1001": [
+        {
+          "mainsnak": {
+            "snaktype": "value",
+            "property": "P1001",
+            "hash": "efe2878aed693a79dce942b2f853910a78c4e2a8",
+            "datavalue": {
+              "value": {
+                "entity-type": "item",
+                "numeric-id": 142,
+                "id": "Q142"
+              },
+              "type": "wikibase-entityid"
+            },
+            "datatype": "wikibase-item"
+          },
+          "type": "statement",
+          "id": "Q428276$1433E675-40FB-492E-ABB2-99C9B655C08B",
+          "rank": "normal"
+        }
+      ],
+      "P577": [
+        {
+          "mainsnak": {
+            "snaktype": "value",
+            "property": "P577",
+            "hash": "cc62acc274bf3da2ad03dbf1eee5689dd42767dc",
+            "datavalue": {
+              "value": {
+                "time": "+1990-07-13T00:00:00Z",
+                "timezone": 0,
+                "before": 0,
+                "after": 0,
+                "precision": 11,
+                "calendarmodel": "http://www.wikidata.org/entity/Q1985727"
+              },
+              "type": "time"
+            },
+            "datatype": "time"
+          },
+          "type": "statement",
+          "id": "Q428276$f25c5300-4131-53f6-ed25-4076856168d9",
+          "rank": "normal"
+        }
+      ],
+      "P1476": [
+        {
+          "mainsnak": {
+            "snaktype": "value",
+            "property": "P1476",
+            "hash": "9a2e0b503b35400c9e00884045db79a47daffc9a",
+            "datavalue": {
+              "value": {
+                "text": "Loi Gayssot",
+                "language": "fr"
+              },
+              "type": "monolingualtext"
+            },
+            "datatype": "monolingualtext"
+          },
+          "type": "statement",
+          "id": "Q428276$d955edd2-4618-a4f1-853e-6a0a20a9096f",
+          "rank": "normal"
+        }
+      ],
+      "P138": [
+        {
+          "mainsnak": {
+            "snaktype": "value",
+            "property": "P138",
+            "hash": "73ac3be1af3ec437937a86c233a2aa0c8f0fe563",
+            "datavalue": {
+              "value": {
+                "entity-type": "item",
+                "numeric-id": 2276307,
+                "id": "Q2276307"
+              },
+              "type": "wikibase-entityid"
+            },
+            "datatype": "wikibase-item"
+          },
+          "type": "statement",
+          "id": "Q428276$8601bebb-4a89-ed8c-f1f3-cbe489a09fb6",
+          "rank": "normal"
+        }
+      ],
+      "P279": [
+        {
+          "mainsnak": {
+            "snaktype": "value",
+            "property": "P279",
+            "hash": "41c995253fbd1a8857136bd7f9d9463f3a27c5d0",
+            "datavalue": {
+              "value": {
+                "entity-type": "item",
+                "numeric-id": 479985,
+                "id": "Q479985"
+              },
+              "type": "wikibase-entityid"
+            },
+            "datatype": "wikibase-item"
+          },
+          "type": "statement",
+          "id": "Q428276$c786a459-47b7-54c7-14e6-a4b1e0eb83df",
+          "rank": "normal"
+        }
+      ]
+    },
+    "sitelinks": {
+      "arwiki": {
+        "site": "arwiki",
+        "title": "قانون غيسو",
+        "badges": [],
+        "url": "https://ar.wikipedia.org/wiki/%D9%82%D8%A7%D9%86%D9%88%D9%86_%D8%BA%D9%8A%D8%B3%D9%88"
+      },
+      "cawiki": {
+        "site": "cawiki",
+        "title": "Llei Gayssot",
+        "badges": [],
+        "url": "https://ca.wikipedia.org/wiki/Llei_Gayssot"
+      },
+      "enwiki": {
+        "site": "enwiki",
+        "title": "Gayssot Act",
+        "badges": [],
+        "url": "https://en.wikipedia.org/wiki/Gayssot_Act"
+      },
+      "eswiki": {
+        "site": "eswiki",
+        "title": "Ley Gayssot",
+        "badges": [],
+        "url": "https://es.wikipedia.org/wiki/Ley_Gayssot"
+      },
+      "euwiki": {
+        "site": "euwiki",
+        "title": "Gayssot Legea",
+        "badges": [],
+        "url": "https://eu.wikipedia.org/wiki/Gayssot_Legea"
+      },
+      "frwiki": {
+        "site": "frwiki",
+        "title": "Loi Gayssot",
+        "badges": [],
+        "url": "https://fr.wikipedia.org/wiki/Loi_Gayssot"
+      },
+      "hewiki": {
+        "site": "hewiki",
+        "title": "חוק גייסו",
+        "badges": [],
+        "url": "https://he.wikipedia.org/wiki/%D7%97%D7%95%D7%A7_%D7%92%D7%99%D7%99%D7%A1%D7%95"
+      },
+      "jawiki": {
+        "site": "jawiki",
+        "title": "ゲソ法",
+        "badges": [],
+        "url": "https://ja.wikipedia.org/wiki/%E3%82%B2%E3%82%BD%E6%B3%95"
+      },
+      "trwiki": {
+        "site": "trwiki",
+        "title": "Gayssot Yasası",
+        "badges": [],
+        "url": "https://tr.wikipedia.org/wiki/Gayssot_Yasas%C4%B1"
+      },
+      "zhwiki": {
+        "site": "zhwiki",
+        "title": "盖索法",
+        "badges": [],
+        "url": "https://zh.wikipedia.org/wiki/%E7%9B%96%E7%B4%A2%E6%B3%95"
+      }
+    }
+  }
+}

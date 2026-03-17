@@ -1,0 +1,174 @@
+{
+  "pageid": 6719547,
+  "ns": 0,
+  "title": "Q6865499",
+  "lastrevid": 2190646010,
+  "modified": "2024-06-28T14:46:15Z",
+  "type": "item",
+  "id": "Q6865499",
+  "labels": {
+    "en": {
+      "language": "en",
+      "value": "Minimum wage law"
+    },
+    "mr": {
+      "language": "mr",
+      "value": "किमान वेतन कायदा"
+    },
+    "ko": {
+      "language": "ko",
+      "value": "최저임금법"
+    },
+    "zh": {
+      "language": "zh",
+      "value": "最低工資法"
+    },
+    "fa": {
+      "language": "fa",
+      "value": "قانون حداقل دستمزد"
+    },
+    "ar": {
+      "language": "ar",
+      "value": "قانون الحد الأدنى للأجور"
+    }
+  },
+  "descriptions": {
+    "en": {
+      "language": "en",
+      "value": "A legilslation to protect workers"
+    }
+  },
+  "aliases": {},
+  "claims": {
+    "P910": [
+      {
+        "mainsnak": {
+          "snaktype": "value",
+          "property": "P910",
+          "hash": "528864e794697ce7950a78c3abb681eabf38418f",
+          "datavalue": {
+            "value": {
+              "entity-type": "item",
+              "numeric-id": 8633395,
+              "id": "Q8633395"
+            },
+            "type": "wikibase-entityid"
+          },
+          "datatype": "wikibase-item"
+        },
+        "type": "statement",
+        "id": "Q6865499$B69F0146-D493-4444-89A0-3ACB0A6CF2D4",
+        "rank": "normal"
+      }
+    ],
+    "P3417": [
+      {
+        "mainsnak": {
+          "snaktype": "value",
+          "property": "P3417",
+          "hash": "80173f1d6d4c5b80f05b45df9deaddd0dee6bfe8",
+          "datavalue": {
+            "value": "Minimum-Wage-Law",
+            "type": "string"
+          },
+          "datatype": "external-id"
+        },
+        "type": "statement",
+        "id": "Q6865499$73400CE5-62BE-428E-AA7D-FB8ABC11D10D",
+        "rank": "normal",
+        "references": [
+          {
+            "hash": "3b0a5bb3c1f955edce73740124f7d935698092ad",
+            "snaks": {
+              "P248": [
+                {
+                  "snaktype": "value",
+                  "property": "P248",
+                  "hash": "3ac9682e789a3a3791d4fd088b265ea03abef101",
+                  "datavalue": {
+                    "value": {
+                      "entity-type": "item",
+                      "numeric-id": 51711,
+                      "id": "Q51711"
+                    },
+                    "type": "wikibase-entityid"
+                  },
+                  "datatype": "wikibase-item"
+                }
+              ]
+            },
+            "snaks-order": [
+              "P248"
+            ]
+          }
+        ]
+      }
+    ],
+    "P6366": [
+      {
+        "mainsnak": {
+          "snaktype": "value",
+          "property": "P6366",
+          "hash": "7f419dad61312ec77be20b6d99699a2b62df99be",
+          "datavalue": {
+            "value": "2781190941",
+            "type": "string"
+          },
+          "datatype": "external-id"
+        },
+        "type": "statement",
+        "id": "Q6865499$9580D465-4E83-4F81-B183-5920E422CE74",
+        "rank": "normal"
+      }
+    ],
+    "P646": [
+      {
+        "mainsnak": {
+          "snaktype": "value",
+          "property": "P646",
+          "hash": "5803d54a74271f80ce53d873cae5b7f7cfd93c93",
+          "datavalue": {
+            "value": "/m/02pgnkm",
+            "type": "string"
+          },
+          "datatype": "external-id"
+        },
+        "type": "statement",
+        "id": "Q6865499$E533CB6F-C7EE-4CF2-A935-51D2717E1E23",
+        "rank": "normal"
+      }
+    ]
+  },
+  "sitelinks": {
+    "arwiki": {
+      "site": "arwiki",
+      "title": "قانون الحد الأدنى للأجور",
+      "badges": [],
+      "url": "https://ar.wikipedia.org/wiki/%D9%82%D8%A7%D9%86%D9%88%D9%86_%D8%A7%D9%84%D8%AD%D8%AF_%D8%A7%D9%84%D8%A3%D8%AF%D9%86%D9%89_%D9%84%D9%84%D8%A3%D8%AC%D9%88%D8%B1"
+    },
+    "enwiki": {
+      "site": "enwiki",
+      "title": "Minimum wage law",
+      "badges": [],
+      "url": "https://en.wikipedia.org/wiki/Minimum_wage_law"
+    },
+    "fawiki": {
+      "site": "fawiki",
+      "title": "قانون حداقل دستمزد",
+      "badges": [],
+      "url": "https://fa.wikipedia.org/wiki/%D9%82%D8%A7%D9%86%D9%88%D9%86_%D8%AD%D8%AF%D8%A7%D9%82%D9%84_%D8%AF%D8%B3%D8%AA%D9%85%D8%B2%D8%AF"
+    },
+    "kowiki": {
+      "site": "kowiki",
+      "title": "최저임금법",
+      "badges": [],
+      "url": "https://ko.wikipedia.org/wiki/%EC%B5%9C%EC%A0%80%EC%9E%84%EA%B8%88%EB%B2%95"
+    },
+    "mrwiki": {
+      "site": "mrwiki",
+      "title": "किमान वेतन कायदा",
+      "badges": [],
+      "url": "https://mr.wikipedia.org/wiki/%E0%A4%95%E0%A4%BF%E0%A4%AE%E0%A4%BE%E0%A4%A8_%E0%A4%B5%E0%A5%87%E0%A4%A4%E0%A4%A8_%E0%A4%95%E0%A4%BE%E0%A4%AF%E0%A4%A6%E0%A4%BE"
+    }
+  }
+}

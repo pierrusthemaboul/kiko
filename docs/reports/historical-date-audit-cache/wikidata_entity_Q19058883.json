@@ -1,0 +1,706 @@
+{
+  "saved_at": "2026-03-07T14:54:04.408Z",
+  "value": {
+    "pageid": 20619883,
+    "ns": 0,
+    "title": "Q19058883",
+    "lastrevid": 2424319465,
+    "modified": "2025-11-01T18:02:03Z",
+    "type": "item",
+    "id": "Q19058883",
+    "labels": {
+      "en": {
+        "language": "en",
+        "value": "Swiss Leaks"
+      },
+      "fr": {
+        "language": "fr",
+        "value": "SwissLeaks"
+      },
+      "de": {
+        "language": "de",
+        "value": "Swiss-Leaks"
+      },
+      "ar": {
+        "language": "ar",
+        "value": "سويسليكس"
+      },
+      "ja": {
+        "language": "ja",
+        "value": "スイスリークス事件"
+      },
+      "pt": {
+        "language": "pt",
+        "value": "Swiss Leaks"
+      },
+      "it": {
+        "language": "it",
+        "value": "Swiss Leaks"
+      },
+      "cs": {
+        "language": "cs",
+        "value": "Swiss Leaks"
+      },
+      "fi": {
+        "language": "fi",
+        "value": "SwissLeaks"
+      },
+      "ro": {
+        "language": "ro",
+        "value": "Swiss Leaks"
+      },
+      "ca": {
+        "language": "ca",
+        "value": "Swiss Leaks"
+      },
+      "nl": {
+        "language": "nl",
+        "value": "SwissLeaks"
+      },
+      "es": {
+        "language": "es",
+        "value": "Swiss Leaks"
+      },
+      "zh-hant": {
+        "language": "zh-hant",
+        "value": "瑞士洩密事件"
+      },
+      "zh-cn": {
+        "language": "zh-cn",
+        "value": "瑞士泄密事件"
+      },
+      "zh-hans": {
+        "language": "zh-hans",
+        "value": "瑞士泄密事件"
+      },
+      "he": {
+        "language": "he",
+        "value": "פרשת חשבונות בנק HSBC"
+      },
+      "uk": {
+        "language": "uk",
+        "value": "Swiss Leaks"
+      },
+      "zh": {
+        "language": "zh",
+        "value": "瑞士泄密事件"
+      },
+      "eu": {
+        "language": "eu",
+        "value": "SwissLeaks"
+      },
+      "bg": {
+        "language": "bg",
+        "value": "Swiss Leaks"
+      }
+    },
+    "descriptions": {
+      "fi": {
+        "language": "fi",
+        "value": "HSBC-pankin tietovuoto"
+      },
+      "en": {
+        "language": "en",
+        "value": "2015 expose of tax avoidance scheme"
+      },
+      "pt": {
+        "language": "pt",
+        "value": "exposição do esquema de evasão fiscal em 2015"
+      },
+      "eu": {
+        "language": "eu",
+        "value": "Zerga ihesaren aurkako ikerketa"
+      },
+      "fr": {
+        "language": "fr",
+        "value": "affaire d'évasion fiscale"
+      },
+      "es": {
+        "language": "es",
+        "value": "escándalo de evasión fiscal"
+      },
+      "ro": {
+        "language": "ro",
+        "value": "caz de evaziune fiscală din 2015"
+      }
+    },
+    "aliases": {
+      "fi": [
+        {
+          "language": "fi",
+          "value": "Swiss Leaks"
+        },
+        {
+          "language": "fi",
+          "value": "#SwissLeaks-paljastus"
+        },
+        {
+          "language": "fi",
+          "value": "Falciani-lista"
+        },
+        {
+          "language": "fi",
+          "value": "Lagarde-lista"
+        }
+      ],
+      "en": [
+        {
+          "language": "en",
+          "value": "SwissLeaks"
+        }
+      ],
+      "pt": [
+        {
+          "language": "pt",
+          "value": "Swissleaks"
+        }
+      ],
+      "ro": [
+        {
+          "language": "ro",
+          "value": "SwissLeaks"
+        }
+      ]
+    },
+    "claims": {
+      "P31": [
+        {
+          "mainsnak": {
+            "snaktype": "value",
+            "property": "P31",
+            "hash": "90bdb9c4e02dc9727a25f4c69e7e558fadce96c1",
+            "datavalue": {
+              "value": {
+                "entity-type": "item",
+                "numeric-id": 2904148,
+                "id": "Q2904148"
+              },
+              "type": "wikibase-entityid"
+            },
+            "datatype": "wikibase-item"
+          },
+          "type": "statement",
+          "id": "Q19058883$a3c3d326-4698-8fd1-335c-d9495e61a95d",
+          "rank": "normal"
+        },
+        {
+          "mainsnak": {
+            "snaktype": "value",
+            "property": "P31",
+            "hash": "6cb6b95eeece11ada0dbf1f494d4d4d6718ac1f6",
+            "datavalue": {
+              "value": {
+                "entity-type": "item",
+                "numeric-id": 1127717,
+                "id": "Q1127717"
+              },
+              "type": "wikibase-entityid"
+            },
+            "datatype": "wikibase-item"
+          },
+          "type": "statement",
+          "id": "Q19058883$223C1751-9683-4130-BD41-43F5644DC076",
+          "rank": "normal",
+          "references": [
+            {
+              "hash": "9b89eb66ffdc1a9b0d6fee2b15d4ba992dbfff7f",
+              "snaks": {
+                "P854": [
+                  {
+                    "snaktype": "value",
+                    "property": "P854",
+                    "hash": "3f098263902d96af29ac23bc9067bcb7595f8709",
+                    "datavalue": {
+                      "value": "https://www.icij.org/investigations/swiss-leaks/",
+                      "type": "string"
+                    },
+                    "datatype": "url"
+                  }
+                ],
+                "P813": [
+                  {
+                    "snaktype": "value",
+                    "property": "P813",
+                    "hash": "c2f193fa5d1151a0e01e079491fb9ae354bb0790",
+                    "datavalue": {
+                      "value": {
+                        "time": "+2023-07-05T00:00:00Z",
+                        "timezone": 0,
+                        "before": 0,
+                        "after": 0,
+                        "precision": 11,
+                        "calendarmodel": "http://www.wikidata.org/entity/Q1985727"
+                      },
+                      "type": "time"
+                    },
+                    "datatype": "time"
+                  }
+                ]
+              },
+              "snaks-order": [
+                "P854",
+                "P813"
+              ]
+            }
+          ]
+        }
+      ],
+      "P3417": [
+        {
+          "mainsnak": {
+            "snaktype": "value",
+            "property": "P3417",
+            "hash": "4acd0e58b652d0cdcc7b42446f095699d644128b",
+            "datavalue": {
+              "value": "Swiss-Leaks",
+              "type": "string"
+            },
+            "datatype": "external-id"
+          },
+          "type": "statement",
+          "id": "Q19058883$40E42687-79D7-4668-93F4-DEB0A2169A22",
+          "rank": "normal",
+          "references": [
+            {
+              "hash": "3b0a5bb3c1f955edce73740124f7d935698092ad",
+              "snaks": {
+                "P248": [
+                  {
+                    "snaktype": "value",
+                    "property": "P248",
+                    "hash": "3ac9682e789a3a3791d4fd088b265ea03abef101",
+                    "datavalue": {
+                      "value": {
+                        "entity-type": "item",
+                        "numeric-id": 51711,
+                        "id": "Q51711"
+                      },
+                      "type": "wikibase-entityid"
+                    },
+                    "datatype": "wikibase-item"
+                  }
+                ]
+              },
+              "snaks-order": [
+                "P248"
+              ]
+            }
+          ]
+        }
+      ],
+      "P910": [
+        {
+          "mainsnak": {
+            "snaktype": "value",
+            "property": "P910",
+            "hash": "9d355d2045823a20d625dc12de8ae22bfee64c36",
+            "datavalue": {
+              "value": {
+                "entity-type": "item",
+                "numeric-id": 32380561,
+                "id": "Q32380561"
+              },
+              "type": "wikibase-entityid"
+            },
+            "datatype": "wikibase-item"
+          },
+          "type": "statement",
+          "id": "Q19058883$64E7F47E-0475-452A-9E74-23EC7971F8FA",
+          "rank": "normal"
+        }
+      ],
+      "P646": [
+        {
+          "mainsnak": {
+            "snaktype": "value",
+            "property": "P646",
+            "hash": "6a470adb32dbff90af3d58efe0ce6073ac0beb3a",
+            "datavalue": {
+              "value": "/m/012tqkr0",
+              "type": "string"
+            },
+            "datatype": "external-id"
+          },
+          "type": "statement",
+          "id": "Q19058883$8907602F-2399-4517-8D7E-99007AD2903F",
+          "rank": "normal"
+        }
+      ],
+      "P973": [
+        {
+          "mainsnak": {
+            "snaktype": "value",
+            "property": "P973",
+            "hash": "cc45054853d889becadfb35dbd605d61ea9ec949",
+            "datavalue": {
+              "value": "https://www.icij.org/investigations/swiss-leaks/",
+              "type": "string"
+            },
+            "datatype": "url"
+          },
+          "type": "statement",
+          "qualifiers": {
+            "P407": [
+              {
+                "snaktype": "value",
+                "property": "P407",
+                "hash": "daf1c4fcb58181b02dff9cc89deb084004ddae4b",
+                "datavalue": {
+                  "value": {
+                    "entity-type": "item",
+                    "numeric-id": 1860,
+                    "id": "Q1860"
+                  },
+                  "type": "wikibase-entityid"
+                },
+                "datatype": "wikibase-item"
+              }
+            ]
+          },
+          "qualifiers-order": [
+            "P407"
+          ],
+          "id": "Q19058883$FED20E42-42F7-4BED-BEDB-C494863C2DB8",
+          "rank": "normal"
+        }
+      ],
+      "P61": [
+        {
+          "mainsnak": {
+            "snaktype": "value",
+            "property": "P61",
+            "hash": "5f2c0fa8dedbee4001b4205e4720b2fc592f8825",
+            "datavalue": {
+              "value": {
+                "entity-type": "item",
+                "numeric-id": 16166292,
+                "id": "Q16166292"
+              },
+              "type": "wikibase-entityid"
+            },
+            "datatype": "wikibase-item"
+          },
+          "type": "statement",
+          "id": "Q19058883$904BD990-CE5F-457C-B344-8BC1530A6FF0",
+          "rank": "normal",
+          "references": [
+            {
+              "hash": "9b89eb66ffdc1a9b0d6fee2b15d4ba992dbfff7f",
+              "snaks": {
+                "P854": [
+                  {
+                    "snaktype": "value",
+                    "property": "P854",
+                    "hash": "3f098263902d96af29ac23bc9067bcb7595f8709",
+                    "datavalue": {
+                      "value": "https://www.icij.org/investigations/swiss-leaks/",
+                      "type": "string"
+                    },
+                    "datatype": "url"
+                  }
+                ],
+                "P813": [
+                  {
+                    "snaktype": "value",
+                    "property": "P813",
+                    "hash": "c2f193fa5d1151a0e01e079491fb9ae354bb0790",
+                    "datavalue": {
+                      "value": {
+                        "time": "+2023-07-05T00:00:00Z",
+                        "timezone": 0,
+                        "before": 0,
+                        "after": 0,
+                        "precision": 11,
+                        "calendarmodel": "http://www.wikidata.org/entity/Q1985727"
+                      },
+                      "type": "time"
+                    },
+                    "datatype": "time"
+                  }
+                ]
+              },
+              "snaks-order": [
+                "P854",
+                "P813"
+              ]
+            }
+          ]
+        }
+      ],
+      "P9346": [
+        {
+          "mainsnak": {
+            "snaktype": "value",
+            "property": "P9346",
+            "hash": "346c3b67f53c4fe765997a98b2675da493f8f5cc",
+            "datavalue": {
+              "value": "swissleaks",
+              "type": "string"
+            },
+            "datatype": "external-id"
+          },
+          "type": "statement",
+          "id": "Q19058883$F967559F-81C6-4EB4-819F-2A3E4DA165C9",
+          "rank": "normal"
+        }
+      ],
+      "P1343": [
+        {
+          "mainsnak": {
+            "snaktype": "value",
+            "property": "P1343",
+            "hash": "bffcebb7943159de2531f42d3f2c2241fdd1031f",
+            "datavalue": {
+              "value": {
+                "entity-type": "item",
+                "numeric-id": 132730790,
+                "id": "Q132730790"
+              },
+              "type": "wikibase-entityid"
+            },
+            "datatype": "wikibase-item"
+          },
+          "type": "statement",
+          "id": "Q19058883$a092cfd0-43be-44b2-75ff-0c913a02d225",
+          "rank": "normal",
+          "references": [
+            {
+              "hash": "98bfe851d40c7b3548435e024ef8672c2f122a01",
+              "snaks": {
+                "P854": [
+                  {
+                    "snaktype": "value",
+                    "property": "P854",
+                    "hash": "e56a5d626be428f6d70865cec57bfbb8073a822d",
+                    "datavalue": {
+                      "value": "https://www.lemonde.fr/panama-papers/article/2016/04/06/d-ubs-aux-panama-papers-une-decennie-de-scandales-financiers-et-ce-qu-ils-ont-change_4897177_4890278.html",
+                      "type": "string"
+                    },
+                    "datatype": "url"
+                  }
+                ],
+                "P577": [
+                  {
+                    "snaktype": "value",
+                    "property": "P577",
+                    "hash": "9f3726a8264efd9b033c7c78d3d118a2138042fa",
+                    "datavalue": {
+                      "value": {
+                        "time": "+2016-04-06T00:00:00Z",
+                        "timezone": 0,
+                        "before": 0,
+                        "after": 0,
+                        "precision": 11,
+                        "calendarmodel": "http://www.wikidata.org/entity/Q1985727"
+                      },
+                      "type": "time"
+                    },
+                    "datatype": "time"
+                  }
+                ],
+                "P1476": [
+                  {
+                    "snaktype": "value",
+                    "property": "P1476",
+                    "hash": "de850d0d4a95b316d6758d821d75a22d0b1a42df",
+                    "datavalue": {
+                      "value": {
+                        "text": "D’UBS aux « Panama papers », une décennie de scandales financiers (et ce qu’ils ont changé)",
+                        "language": "fr"
+                      },
+                      "type": "monolingualtext"
+                    },
+                    "datatype": "monolingualtext"
+                  }
+                ],
+                "P407": [
+                  {
+                    "snaktype": "value",
+                    "property": "P407",
+                    "hash": "d197d0a5efa4b4c23a302a829dd3ef43684fe002",
+                    "datavalue": {
+                      "value": {
+                        "entity-type": "item",
+                        "numeric-id": 150,
+                        "id": "Q150"
+                      },
+                      "type": "wikibase-entityid"
+                    },
+                    "datatype": "wikibase-item"
+                  }
+                ],
+                "P813": [
+                  {
+                    "snaktype": "value",
+                    "property": "P813",
+                    "hash": "916bd0a51072f707afbe543715c33d5a398c0556",
+                    "datavalue": {
+                      "value": {
+                        "time": "+2025-02-24T00:00:00Z",
+                        "timezone": 0,
+                        "before": 0,
+                        "after": 0,
+                        "precision": 11,
+                        "calendarmodel": "http://www.wikidata.org/entity/Q1985727"
+                      },
+                      "type": "time"
+                    },
+                    "datatype": "time"
+                  }
+                ]
+              },
+              "snaks-order": [
+                "P854",
+                "P577",
+                "P1476",
+                "P407",
+                "P813"
+              ]
+            }
+          ]
+        }
+      ],
+      "P1617": [
+        {
+          "mainsnak": {
+            "snaktype": "value",
+            "property": "P1617",
+            "hash": "cd6a82e555051e8f1f36852a6cbc8e95d97d8288",
+            "datavalue": {
+              "value": "f3f6bc89-a5d2-4d2b-a347-c7500e2e8726",
+              "type": "string"
+            },
+            "datatype": "external-id"
+          },
+          "type": "statement",
+          "id": "Q19058883$96143781-ac4d-4582-b45c-20a5c0a47ebf",
+          "rank": "normal",
+          "references": [
+            {
+              "hash": "8582d8416671f1f2567247201bac753552435ca5",
+              "snaks": {
+                "P248": [
+                  {
+                    "snaktype": "value",
+                    "property": "P248",
+                    "hash": "ea55dc6ac5c3ab77c77d4ae7979e3276d0d4cd20",
+                    "datavalue": {
+                      "value": {
+                        "entity-type": "item",
+                        "numeric-id": 18336371,
+                        "id": "Q18336371"
+                      },
+                      "type": "wikibase-entityid"
+                    },
+                    "datatype": "wikibase-item"
+                  }
+                ]
+              },
+              "snaks-order": [
+                "P248"
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    "sitelinks": {
+      "arwiki": {
+        "site": "arwiki",
+        "title": "سويسليكس",
+        "badges": [],
+        "url": "https://ar.wikipedia.org/wiki/%D8%B3%D9%88%D9%8A%D8%B3%D9%84%D9%8A%D9%83%D8%B3"
+      },
+      "bgwiki": {
+        "site": "bgwiki",
+        "title": "Swiss Leaks",
+        "badges": [],
+        "url": "https://bg.wikipedia.org/wiki/Swiss_Leaks"
+      },
+      "cawiki": {
+        "site": "cawiki",
+        "title": "Swiss Leaks",
+        "badges": [],
+        "url": "https://ca.wikipedia.org/wiki/Swiss_Leaks"
+      },
+      "cswiki": {
+        "site": "cswiki",
+        "title": "Swiss Leaks",
+        "badges": [],
+        "url": "https://cs.wikipedia.org/wiki/Swiss_Leaks"
+      },
+      "dewiki": {
+        "site": "dewiki",
+        "title": "Swiss-Leaks",
+        "badges": [],
+        "url": "https://de.wikipedia.org/wiki/Swiss-Leaks"
+      },
+      "enwiki": {
+        "site": "enwiki",
+        "title": "Swiss Leaks",
+        "badges": [],
+        "url": "https://en.wikipedia.org/wiki/Swiss_Leaks"
+      },
+      "eswiki": {
+        "site": "eswiki",
+        "title": "Swiss Leaks",
+        "badges": [],
+        "url": "https://es.wikipedia.org/wiki/Swiss_Leaks"
+      },
+      "euwiki": {
+        "site": "euwiki",
+        "title": "SwissLeaks",
+        "badges": [],
+        "url": "https://eu.wikipedia.org/wiki/SwissLeaks"
+      },
+      "fiwiki": {
+        "site": "fiwiki",
+        "title": "SwissLeaks",
+        "badges": [],
+        "url": "https://fi.wikipedia.org/wiki/SwissLeaks"
+      },
+      "frwiki": {
+        "site": "frwiki",
+        "title": "SwissLeaks",
+        "badges": [],
+        "url": "https://fr.wikipedia.org/wiki/SwissLeaks"
+      },
+      "itwiki": {
+        "site": "itwiki",
+        "title": "Swiss Leaks",
+        "badges": [],
+        "url": "https://it.wikipedia.org/wiki/Swiss_Leaks"
+      },
+      "jawiki": {
+        "site": "jawiki",
+        "title": "スイスリークス事件",
+        "badges": [],
+        "url": "https://ja.wikipedia.org/wiki/%E3%82%B9%E3%82%A4%E3%82%B9%E3%83%AA%E3%83%BC%E3%82%AF%E3%82%B9%E4%BA%8B%E4%BB%B6"
+      },
+      "nlwiki": {
+        "site": "nlwiki",
+        "title": "SwissLeaks",
+        "badges": [],
+        "url": "https://nl.wikipedia.org/wiki/SwissLeaks"
+      },
+      "ptwiki": {
+        "site": "ptwiki",
+        "title": "Swiss Leaks",
+        "badges": [],
+        "url": "https://pt.wikipedia.org/wiki/Swiss_Leaks"
+      },
+      "rowiki": {
+        "site": "rowiki",
+        "title": "Swiss Leaks",
+        "badges": [],
+        "url": "https://ro.wikipedia.org/wiki/Swiss_Leaks"
+      },
+      "ukwiki": {
+        "site": "ukwiki",
+        "title": "Swiss Leaks",
+        "badges": [],
+        "url": "https://uk.wikipedia.org/wiki/Swiss_Leaks"
+      }
+    }
+  }
+}

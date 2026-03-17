@@ -1,0 +1,74 @@
+{
+  "saved_at": "2026-03-07T13:33:42.160Z",
+  "value": {
+    "pageid": 108578479,
+    "ns": 0,
+    "title": "Q113834107",
+    "lastrevid": 2161246708,
+    "modified": "2024-05-22T01:21:45Z",
+    "type": "item",
+    "id": "Q113834107",
+    "labels": {
+      "fr": {
+        "language": "fr",
+        "value": "Centenaire de l'Algérie française (1830-1930)"
+      }
+    },
+    "descriptions": {},
+    "aliases": {},
+    "claims": {
+      "P31": [
+        {
+          "mainsnak": {
+            "snaktype": "value",
+            "property": "P31",
+            "hash": "a8d20bca9784ba7fe01694d880398e4abfddf0c0",
+            "datavalue": {
+              "value": {
+                "entity-type": "item",
+                "numeric-id": 1656682,
+                "id": "Q1656682"
+              },
+              "type": "wikibase-entityid"
+            },
+            "datatype": "wikibase-item"
+          },
+          "type": "statement",
+          "id": "Q113834107$5619b66e-7ffb-4194-87f8-514fee2282dd",
+          "rank": "normal"
+        }
+      ],
+      "P373": [
+        {
+          "mainsnak": {
+            "snaktype": "value",
+            "property": "P373",
+            "hash": "5370d661f8b3a658ceeeaae625446d12965f43e2",
+            "datavalue": {
+              "value": "Centennial of French Algeria",
+              "type": "string"
+            },
+            "datatype": "string"
+          },
+          "type": "statement",
+          "id": "Q113834107$9207aef1-1915-4b29-8ef0-2018ea5477ae",
+          "rank": "normal"
+        }
+      ]
+    },
+    "sitelinks": {
+      "commonswiki": {
+        "site": "commonswiki",
+        "title": "Category:Centennial of French Algeria",
+        "badges": [],
+        "url": "https://commons.wikimedia.org/wiki/Category:Centennial_of_French_Algeria"
+      },
+      "frwiki": {
+        "site": "frwiki",
+        "title": "Centenaire de l'Algérie française (1830-1930)",
+        "badges": [],
+        "url": "https://fr.wikipedia.org/wiki/Centenaire_de_l%27Alg%C3%A9rie_fran%C3%A7aise_(1830-1930)"
+      }
+    }
+  }
+}

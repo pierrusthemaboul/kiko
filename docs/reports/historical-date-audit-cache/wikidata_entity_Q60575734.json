@@ -1,0 +1,127 @@
+{
+  "saved_at": "2026-03-07T15:15:34.633Z",
+  "value": {
+    "pageid": 60444223,
+    "ns": 0,
+    "title": "Q60575734",
+    "lastrevid": 1721710546,
+    "modified": "2022-09-05T17:55:48Z",
+    "type": "item",
+    "id": "Q60575734",
+    "labels": {
+      "fr": {
+        "language": "fr",
+        "value": "conseil de prud'hommes de Paris"
+      }
+    },
+    "descriptions": {},
+    "aliases": {},
+    "claims": {
+      "P31": [
+        {
+          "mainsnak": {
+            "snaktype": "value",
+            "property": "P31",
+            "hash": "ccde31b5127054eecc04a626ae07e3cb02d0b359",
+            "datavalue": {
+              "value": {
+                "entity-type": "item",
+                "numeric-id": 2993796,
+                "id": "Q2993796"
+              },
+              "type": "wikibase-entityid"
+            },
+            "datatype": "wikibase-item"
+          },
+          "type": "statement",
+          "id": "Q60575734$C2F82B16-4809-427F-B6C6-66E61CD72467",
+          "rank": "normal"
+        }
+      ],
+      "P131": [
+        {
+          "mainsnak": {
+            "snaktype": "value",
+            "property": "P131",
+            "hash": "22ac05a1462e2cb078c3eaf435f5ec86f5ab9b19",
+            "datavalue": {
+              "value": {
+                "entity-type": "item",
+                "numeric-id": 90,
+                "id": "Q90"
+              },
+              "type": "wikibase-entityid"
+            },
+            "datatype": "wikibase-item"
+          },
+          "type": "statement",
+          "id": "Q60575734$8BD3E6A2-ACC9-4518-9900-E44608A5ABBC",
+          "rank": "normal"
+        }
+      ],
+      "P17": [
+        {
+          "mainsnak": {
+            "snaktype": "value",
+            "property": "P17",
+            "hash": "c05db5d169c2560b9799d567a803d20a392f53e4",
+            "datavalue": {
+              "value": {
+                "entity-type": "item",
+                "numeric-id": 142,
+                "id": "Q142"
+              },
+              "type": "wikibase-entityid"
+            },
+            "datatype": "wikibase-item"
+          },
+          "type": "statement",
+          "id": "Q60575734$54599D03-0B44-4C27-9109-C849E0684518",
+          "rank": "normal"
+        }
+      ],
+      "P973": [
+        {
+          "mainsnak": {
+            "snaktype": "value",
+            "property": "P973",
+            "hash": "83f2706e9ae711668e5fbb5d8c5475a48f055474",
+            "datavalue": {
+              "value": "http://timeusage.paris.inria.fr/prudhommes-paris-19e/",
+              "type": "string"
+            },
+            "datatype": "url"
+          },
+          "type": "statement",
+          "id": "Q60575734$05fc80cd-4f5e-0b25-9777-38b4e17533cf",
+          "rank": "normal"
+        }
+      ],
+      "P6671": [
+        {
+          "mainsnak": {
+            "snaktype": "value",
+            "property": "P6671",
+            "hash": "46bbe7da9bbe11749ec44ad7f49560d2aaa581b5",
+            "datavalue": {
+              "value": "ile-de-france/paris/prudhommes-75110-01",
+              "type": "string"
+            },
+            "datatype": "external-id"
+          },
+          "type": "statement",
+          "id": "Q60575734$f6c6f0cc-4c7c-c803-7d14-24c2c44352d1",
+          "rank": "normal"
+        }
+      ]
+    },
+    "sitelinks": {
+      "frwiki": {
+        "site": "frwiki",
+        "title": "Conseil de prud'hommes de Paris",
+        "badges": [],
+        "url": "https://fr.wikipedia.org/wiki/Conseil_de_prud%27hommes_de_Paris"
+      }
+    }
+  }
+}

@@ -1,0 +1,351 @@
+{
+  "saved_at": "2026-03-07T13:33:10.009Z",
+  "value": {
+    "pageid": 29633309,
+    "ns": 0,
+    "title": "Q27926964",
+    "lastrevid": 2347743186,
+    "modified": "2025-05-12T12:05:09Z",
+    "type": "item",
+    "id": "Q27926964",
+    "labels": {
+      "de": {
+        "language": "de",
+        "value": "Pockenepidemie in Boston 1721"
+      },
+      "en": {
+        "language": "en",
+        "value": "Boston smallpox epidemic of 1721"
+      },
+      "es": {
+        "language": "es",
+        "value": "epidemia de viruela en Boston de 1721"
+      },
+      "ko": {
+        "language": "ko",
+        "value": "1721년 보스턴의 천연두 유행"
+      },
+      "eo": {
+        "language": "eo",
+        "value": "variola epidemio en Bostono (1721)"
+      },
+      "arz": {
+        "language": "arz",
+        "value": "مرض الجدرى فى بوسطن 1721"
+      },
+      "tr": {
+        "language": "tr",
+        "value": "1721 Boston çiçek hastalığı salgını"
+      },
+      "sl": {
+        "language": "sl",
+        "value": "epidemija črnih koz v Bostonu leta 1721"
+      },
+      "fr": {
+        "language": "fr",
+        "value": "Épidémie de variole de 1721 à Boston"
+      }
+    },
+    "descriptions": {
+      "de": {
+        "language": "de",
+        "value": "Epidemie"
+      },
+      "en": {
+        "language": "en",
+        "value": "epidemic"
+      },
+      "arz": {
+        "language": "arz",
+        "value": "وباء"
+      }
+    },
+    "aliases": {
+      "en": [
+        {
+          "language": "en",
+          "value": "1721 Boston smallpox outbreak"
+        }
+      ]
+    },
+    "claims": {
+      "P31": [
+        {
+          "mainsnak": {
+            "snaktype": "value",
+            "property": "P31",
+            "hash": "b457191309193fd49324d69800157e49eb464f40",
+            "datavalue": {
+              "value": {
+                "entity-type": "item",
+                "numeric-id": 30103545,
+                "id": "Q30103545"
+              },
+              "type": "wikibase-entityid"
+            },
+            "datatype": "wikibase-item"
+          },
+          "type": "statement",
+          "id": "Q27926964$6d1dd951-4989-3c23-bcf1-8695d56ca43b",
+          "rank": "normal"
+        }
+      ],
+      "P131": [
+        {
+          "mainsnak": {
+            "snaktype": "value",
+            "property": "P131",
+            "hash": "ba735871b8df2b0c056dcc6de5b4f6ce476d1e52",
+            "datavalue": {
+              "value": {
+                "entity-type": "item",
+                "numeric-id": 100,
+                "id": "Q100"
+              },
+              "type": "wikibase-entityid"
+            },
+            "datatype": "wikibase-item"
+          },
+          "type": "statement",
+          "id": "Q27926964$6dd611ed-4254-47b4-2c53-fa8b41e30ea0",
+          "rank": "normal"
+        }
+      ],
+      "P580": [
+        {
+          "mainsnak": {
+            "snaktype": "value",
+            "property": "P580",
+            "hash": "a28fa929d0c87f7919a7dcb0440e1ed5ac6b338d",
+            "datavalue": {
+              "value": {
+                "time": "+1721-04-00T00:00:00Z",
+                "timezone": 0,
+                "before": 0,
+                "after": 0,
+                "precision": 10,
+                "calendarmodel": "http://www.wikidata.org/entity/Q1985727"
+              },
+              "type": "time"
+            },
+            "datatype": "time"
+          },
+          "type": "statement",
+          "id": "Q27926964$adfec49d-41a5-6738-ab3b-9bbf80289011",
+          "rank": "normal"
+        }
+      ],
+      "P582": [
+        {
+          "mainsnak": {
+            "snaktype": "value",
+            "property": "P582",
+            "hash": "8c0be0785e4277368401a0b33b4eaab76cb3e72d",
+            "datavalue": {
+              "value": {
+                "time": "+1721-12-00T00:00:00Z",
+                "timezone": 0,
+                "before": 0,
+                "after": 0,
+                "precision": 10,
+                "calendarmodel": "http://www.wikidata.org/entity/Q1985727"
+              },
+              "type": "time"
+            },
+            "datatype": "time"
+          },
+          "type": "statement",
+          "id": "Q27926964$1a276d5d-49c5-c749-5a14-b8c378a2886d",
+          "rank": "normal"
+        }
+      ],
+      "P828": [
+        {
+          "mainsnak": {
+            "snaktype": "value",
+            "property": "P828",
+            "hash": "7acc17ad29f5fe47dfe52024ef8bee7a03f58dd8",
+            "datavalue": {
+              "value": {
+                "entity-type": "item",
+                "numeric-id": 12214,
+                "id": "Q12214"
+              },
+              "type": "wikibase-entityid"
+            },
+            "datatype": "wikibase-item"
+          },
+          "type": "statement",
+          "id": "Q27926964$a0d63058-4447-f6e1-69fd-106ed36ddbbb",
+          "rank": "normal"
+        }
+      ],
+      "P2671": [
+        {
+          "mainsnak": {
+            "snaktype": "value",
+            "property": "P2671",
+            "hash": "b82b7150b12e718bd1db82108f1aba6819976711",
+            "datavalue": {
+              "value": "/g/11cs5n28s6",
+              "type": "string"
+            },
+            "datatype": "external-id"
+          },
+          "type": "statement",
+          "id": "Q27926964$205BE9E9-C9ED-41A8-BA51-868AFB41197E",
+          "rank": "normal"
+        }
+      ],
+      "P17": [
+        {
+          "mainsnak": {
+            "snaktype": "value",
+            "property": "P17",
+            "hash": "e55b22f88b7bb7eb90c8b410817a6921d7a16704",
+            "datavalue": {
+              "value": {
+                "entity-type": "item",
+                "numeric-id": 179997,
+                "id": "Q179997"
+              },
+              "type": "wikibase-entityid"
+            },
+            "datatype": "wikibase-item"
+          },
+          "type": "statement",
+          "id": "Q27926964$6170b2ae-4595-bb6d-a929-13692a3cfffd",
+          "rank": "normal"
+        }
+      ],
+      "P276": [
+        {
+          "mainsnak": {
+            "snaktype": "value",
+            "property": "P276",
+            "hash": "6ce7d96de6a53fc9c1fb05666d9e424ef6b1c72d",
+            "datavalue": {
+              "value": {
+                "entity-type": "item",
+                "numeric-id": 100,
+                "id": "Q100"
+              },
+              "type": "wikibase-entityid"
+            },
+            "datatype": "wikibase-item"
+          },
+          "type": "statement",
+          "id": "Q27926964$7b0cf566-4873-a9f0-df2a-5af9d1aaa5e4",
+          "rank": "normal"
+        }
+      ],
+      "P18": [
+        {
+          "mainsnak": {
+            "snaktype": "value",
+            "property": "P18",
+            "hash": "184cde47e2d0e47d4c5b415c7288706b5fedafb2",
+            "datavalue": {
+              "value": "A South-East View of the City of Boston in North America.jpg",
+              "type": "string"
+            },
+            "datatype": "commonsMedia"
+          },
+          "type": "statement",
+          "id": "Q27926964$afe3cbba-4f6c-b6f2-7d05-49ad3f9fea9f",
+          "rank": "normal"
+        }
+      ],
+      "P1120": [
+        {
+          "mainsnak": {
+            "snaktype": "value",
+            "property": "P1120",
+            "hash": "bdc04e0a91a5d46fa244cb7dd724a5269e97814e",
+            "datavalue": {
+              "value": {
+                "amount": "+844",
+                "unit": "1"
+              },
+              "type": "quantity"
+            },
+            "datatype": "quantity"
+          },
+          "type": "statement",
+          "id": "Q27926964$5cbc4889-4c25-69dc-447d-95363057439e",
+          "rank": "normal",
+          "references": [
+            {
+              "hash": "a29a646602abf65105ed0f39a44231c962ece9ee",
+              "snaks": {
+                "P143": [
+                  {
+                    "snaktype": "value",
+                    "property": "P143",
+                    "hash": "c6f1777471211df31724ac60175786f3872c83e9",
+                    "datavalue": {
+                      "value": {
+                        "entity-type": "item",
+                        "numeric-id": 177837,
+                        "id": "Q177837"
+                      },
+                      "type": "wikibase-entityid"
+                    },
+                    "datatype": "wikibase-item"
+                  }
+                ]
+              },
+              "snaks-order": [
+                "P143"
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    "sitelinks": {
+      "arzwiki": {
+        "site": "arzwiki",
+        "title": "مرض الجدرى فى بوسطن 1721",
+        "badges": [],
+        "url": "https://arz.wikipedia.org/wiki/%D9%85%D8%B1%D8%B6_%D8%A7%D9%84%D8%AC%D8%AF%D8%B1%D9%89_%D9%81%D9%89_%D8%A8%D9%88%D8%B3%D8%B7%D9%86_1721"
+      },
+      "dewiki": {
+        "site": "dewiki",
+        "title": "Pockenepidemie in Boston 1721",
+        "badges": [],
+        "url": "https://de.wikipedia.org/wiki/Pockenepidemie_in_Boston_1721"
+      },
+      "enwiki": {
+        "site": "enwiki",
+        "title": "1721 Boston smallpox outbreak",
+        "badges": [],
+        "url": "https://en.wikipedia.org/wiki/1721_Boston_smallpox_outbreak"
+      },
+      "eswiki": {
+        "site": "eswiki",
+        "title": "Brote de viruela en Boston de 1721",
+        "badges": [],
+        "url": "https://es.wikipedia.org/wiki/Brote_de_viruela_en_Boston_de_1721"
+      },
+      "frwiki": {
+        "site": "frwiki",
+        "title": "Épidémie de variole de 1721 à Boston",
+        "badges": [],
+        "url": "https://fr.wikipedia.org/wiki/%C3%89pid%C3%A9mie_de_variole_de_1721_%C3%A0_Boston"
+      },
+      "kowiki": {
+        "site": "kowiki",
+        "title": "1721년 보스턴의 천연두 유행",
+        "badges": [],
+        "url": "https://ko.wikipedia.org/wiki/1721%EB%85%84_%EB%B3%B4%EC%8A%A4%ED%84%B4%EC%9D%98_%EC%B2%9C%EC%97%B0%EB%91%90_%EC%9C%A0%ED%96%89"
+      },
+      "trwiki": {
+        "site": "trwiki",
+        "title": "1721 Boston çiçek hastalığı salgını",
+        "badges": [],
+        "url": "https://tr.wikipedia.org/wiki/1721_Boston_%C3%A7i%C3%A7ek_hastal%C4%B1%C4%9F%C4%B1_salg%C4%B1n%C4%B1"
+      }
+    }
+  }
+}

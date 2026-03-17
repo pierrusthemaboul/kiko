@@ -1,0 +1,532 @@
+{
+  "saved_at": "2026-03-07T14:49:23.572Z",
+  "value": {
+    "pageid": 2764756,
+    "ns": 0,
+    "title": "Q2888101",
+    "lastrevid": 2200529675,
+    "modified": "2024-07-10T15:49:35Z",
+    "type": "item",
+    "id": "Q2888101",
+    "labels": {
+      "fr": {
+        "language": "fr",
+        "value": "bataille de Ballon"
+      },
+      "sh": {
+        "language": "sh",
+        "value": "Bitka kod Ballona"
+      },
+      "en": {
+        "language": "en",
+        "value": "Battle of Ballon"
+      },
+      "pl": {
+        "language": "pl",
+        "value": "Bitwa pod Ballon"
+      },
+      "br": {
+        "language": "br",
+        "value": "emgann Ballon"
+      },
+      "lmo": {
+        "language": "lmo",
+        "value": "Bataja de Ballon"
+      },
+      "es": {
+        "language": "es",
+        "value": "Batalla de Ballon"
+      },
+      "ja": {
+        "language": "ja",
+        "value": "バロンの戦い"
+      },
+      "ru": {
+        "language": "ru",
+        "value": "Сражение при Баллоне"
+      },
+      "it": {
+        "language": "it",
+        "value": "Battaglia di Ballon"
+      },
+      "zh": {
+        "language": "zh",
+        "value": "巴隆战役"
+      },
+      "yo": {
+        "language": "yo",
+        "value": "ogun Ballon"
+      },
+      "ca": {
+        "language": "ca",
+        "value": "Batalle de Ballon"
+      },
+      "gv": {
+        "language": "gv",
+        "value": "Cah Ballon"
+      },
+      "ga": {
+        "language": "ga",
+        "value": "Cath Ballon"
+      }
+    },
+    "descriptions": {
+      "nl": {
+        "language": "nl",
+        "value": "veldslag in Frankrijk"
+      },
+      "en": {
+        "language": "en",
+        "value": "845 battle in France"
+      },
+      "yo": {
+        "language": "yo",
+        "value": "ogun"
+      },
+      "fr": {
+        "language": "fr",
+        "value": "bataille entre les Bretons et les Francs"
+      }
+    },
+    "aliases": {
+      "fr": [
+        {
+          "language": "fr",
+          "value": "Bataille de ballon"
+        },
+        {
+          "language": "fr",
+          "value": "Bataille De Ballon"
+        }
+      ],
+      "es": [
+        {
+          "language": "es",
+          "value": "Batalla de ballon"
+        }
+      ]
+    },
+    "claims": {
+      "P625": [
+        {
+          "mainsnak": {
+            "snaktype": "value",
+            "property": "P625",
+            "hash": "12a3e4191bf8b206c6af6cbce9b70d49a6566407",
+            "datavalue": {
+              "value": {
+                "latitude": 47.70444444,
+                "longitude": -2.07027778,
+                "altitude": null,
+                "precision": 0.00027777777777778,
+                "globe": "http://www.wikidata.org/entity/Q2"
+              },
+              "type": "globecoordinate"
+            },
+            "datatype": "globe-coordinate"
+          },
+          "type": "statement",
+          "id": "Q2888101$CFAA36F3-A13B-4F41-970D-7D55AAC96E8C",
+          "rank": "normal",
+          "references": [
+            {
+              "hash": "d4bd87b862b12d99d26e86472d44f26858dee639",
+              "snaks": {
+                "P143": [
+                  {
+                    "snaktype": "value",
+                    "property": "P143",
+                    "hash": "f30cbd35620c4ea6d0633aaf0210a8916130469b",
+                    "datavalue": {
+                      "value": {
+                        "entity-type": "item",
+                        "numeric-id": 8447,
+                        "id": "Q8447"
+                      },
+                      "type": "wikibase-entityid"
+                    },
+                    "datatype": "wikibase-item"
+                  }
+                ]
+              },
+              "snaks-order": [
+                "P143"
+              ]
+            }
+          ]
+        }
+      ],
+      "P646": [
+        {
+          "mainsnak": {
+            "snaktype": "value",
+            "property": "P646",
+            "hash": "38e8b3b414d7d1edfe54c24acebd6136611710d9",
+            "datavalue": {
+              "value": "/m/04cvjmn",
+              "type": "string"
+            },
+            "datatype": "external-id"
+          },
+          "type": "statement",
+          "id": "Q2888101$5D099EB1-43A7-4852-819B-377E4E548E1B",
+          "rank": "normal",
+          "references": [
+            {
+              "hash": "2b00cb481cddcac7623114367489b5c194901c4a",
+              "snaks": {
+                "P248": [
+                  {
+                    "snaktype": "value",
+                    "property": "P248",
+                    "hash": "a94b740202b097dd33355e0e6c00e54b9395e5e0",
+                    "datavalue": {
+                      "value": {
+                        "entity-type": "item",
+                        "numeric-id": 15241312,
+                        "id": "Q15241312"
+                      },
+                      "type": "wikibase-entityid"
+                    },
+                    "datatype": "wikibase-item"
+                  }
+                ],
+                "P577": [
+                  {
+                    "snaktype": "value",
+                    "property": "P577",
+                    "hash": "fde79ecb015112d2f29229ccc1ec514ed3e71fa2",
+                    "datavalue": {
+                      "value": {
+                        "time": "+2013-10-28T00:00:00Z",
+                        "timezone": 0,
+                        "before": 0,
+                        "after": 0,
+                        "precision": 11,
+                        "calendarmodel": "http://www.wikidata.org/entity/Q1985727"
+                      },
+                      "type": "time"
+                    },
+                    "datatype": "time"
+                  }
+                ]
+              },
+              "snaks-order": [
+                "P248",
+                "P577"
+              ]
+            }
+          ]
+        }
+      ],
+      "P31": [
+        {
+          "mainsnak": {
+            "snaktype": "value",
+            "property": "P31",
+            "hash": "baa1df9dcd37b9f3a062e7a14a8bef0c37078d32",
+            "datavalue": {
+              "value": {
+                "entity-type": "item",
+                "numeric-id": 178561,
+                "id": "Q178561"
+              },
+              "type": "wikibase-entityid"
+            },
+            "datatype": "wikibase-item"
+          },
+          "type": "statement",
+          "id": "Q2888101$7E9E6596-A6F1-4F98-873A-FBFF4C350EE2",
+          "rank": "normal",
+          "references": [
+            {
+              "hash": "d4bd87b862b12d99d26e86472d44f26858dee639",
+              "snaks": {
+                "P143": [
+                  {
+                    "snaktype": "value",
+                    "property": "P143",
+                    "hash": "f30cbd35620c4ea6d0633aaf0210a8916130469b",
+                    "datavalue": {
+                      "value": {
+                        "entity-type": "item",
+                        "numeric-id": 8447,
+                        "id": "Q8447"
+                      },
+                      "type": "wikibase-entityid"
+                    },
+                    "datatype": "wikibase-item"
+                  }
+                ]
+              },
+              "snaks-order": [
+                "P143"
+              ]
+            }
+          ]
+        }
+      ],
+      "P18": [
+        {
+          "mainsnak": {
+            "snaktype": "value",
+            "property": "P18",
+            "hash": "d6ef67c7307ecea48071d9223c6b15c6338fc82c",
+            "datavalue": {
+              "value": "Battle of Ballon.jpg",
+              "type": "string"
+            },
+            "datatype": "commonsMedia"
+          },
+          "type": "statement",
+          "id": "Q2888101$A99448D6-CDDB-48CB-B12B-2EABC919D641",
+          "rank": "normal"
+        }
+      ],
+      "P276": [
+        {
+          "mainsnak": {
+            "snaktype": "value",
+            "property": "P276",
+            "hash": "a725d59e91c688939a73d10f2aee1f8f51e03dcb",
+            "datavalue": {
+              "value": {
+                "entity-type": "item",
+                "numeric-id": 213584,
+                "id": "Q213584"
+              },
+              "type": "wikibase-entityid"
+            },
+            "datatype": "wikibase-item"
+          },
+          "type": "statement",
+          "id": "Q2888101$D7863D56-1F31-4BBE-833A-235571533389",
+          "rank": "normal",
+          "references": [
+            {
+              "hash": "d4bd87b862b12d99d26e86472d44f26858dee639",
+              "snaks": {
+                "P143": [
+                  {
+                    "snaktype": "value",
+                    "property": "P143",
+                    "hash": "f30cbd35620c4ea6d0633aaf0210a8916130469b",
+                    "datavalue": {
+                      "value": {
+                        "entity-type": "item",
+                        "numeric-id": 8447,
+                        "id": "Q8447"
+                      },
+                      "type": "wikibase-entityid"
+                    },
+                    "datatype": "wikibase-item"
+                  }
+                ]
+              },
+              "snaks-order": [
+                "P143"
+              ]
+            }
+          ]
+        }
+      ],
+      "P373": [
+        {
+          "mainsnak": {
+            "snaktype": "value",
+            "property": "P373",
+            "hash": "9d66f9b1679ba012c8b3d84c49d8f597af9f39f0",
+            "datavalue": {
+              "value": "Battle of Ballon",
+              "type": "string"
+            },
+            "datatype": "string"
+          },
+          "type": "statement",
+          "id": "Q2888101$161BC535-8970-4FAA-AF36-F0120BA25B41",
+          "rank": "normal"
+        }
+      ],
+      "P17": [
+        {
+          "mainsnak": {
+            "snaktype": "value",
+            "property": "P17",
+            "hash": "c05db5d169c2560b9799d567a803d20a392f53e4",
+            "datavalue": {
+              "value": {
+                "entity-type": "item",
+                "numeric-id": 142,
+                "id": "Q142"
+              },
+              "type": "wikibase-entityid"
+            },
+            "datatype": "wikibase-item"
+          },
+          "type": "statement",
+          "id": "Q2888101$2180BC3F-4A51-4BED-B767-C244CB13E80F",
+          "rank": "normal"
+        }
+      ],
+      "P585": [
+        {
+          "mainsnak": {
+            "snaktype": "value",
+            "property": "P585",
+            "hash": "a76823b1686ffec5f7af270c4dc1a8d6b06beedf",
+            "datavalue": {
+              "value": {
+                "time": "+0845-11-22T00:00:00Z",
+                "timezone": 0,
+                "before": 0,
+                "after": 0,
+                "precision": 11,
+                "calendarmodel": "http://www.wikidata.org/entity/Q1985727"
+              },
+              "type": "time"
+            },
+            "datatype": "time"
+          },
+          "type": "statement",
+          "id": "Q2888101$1BAC3AA5-4418-4CA7-BDB5-215CF75844A7",
+          "rank": "normal",
+          "references": [
+            {
+              "hash": "d4bd87b862b12d99d26e86472d44f26858dee639",
+              "snaks": {
+                "P143": [
+                  {
+                    "snaktype": "value",
+                    "property": "P143",
+                    "hash": "f30cbd35620c4ea6d0633aaf0210a8916130469b",
+                    "datavalue": {
+                      "value": {
+                        "entity-type": "item",
+                        "numeric-id": 8447,
+                        "id": "Q8447"
+                      },
+                      "type": "wikibase-entityid"
+                    },
+                    "datatype": "wikibase-item"
+                  }
+                ]
+              },
+              "snaks-order": [
+                "P143"
+              ]
+            }
+          ]
+        }
+      ],
+      "P710": [
+        {
+          "mainsnak": {
+            "snaktype": "value",
+            "property": "P710",
+            "hash": "9a7409a9b4076f100e00debba639e2e17837e862",
+            "datavalue": {
+              "value": {
+                "entity-type": "item",
+                "numeric-id": 71747,
+                "id": "Q71747"
+              },
+              "type": "wikibase-entityid"
+            },
+            "datatype": "wikibase-item"
+          },
+          "type": "statement",
+          "id": "Q2888101$D3DAD212-9D89-4B03-8683-E0B617AE6281",
+          "rank": "normal",
+          "references": [
+            {
+              "hash": "fa278ebfc458360e5aed63d5058cca83c46134f1",
+              "snaks": {
+                "P143": [
+                  {
+                    "snaktype": "value",
+                    "property": "P143",
+                    "hash": "e4f6d9441d0600513c4533c672b5ab472dc73694",
+                    "datavalue": {
+                      "value": {
+                        "entity-type": "item",
+                        "numeric-id": 328,
+                        "id": "Q328"
+                      },
+                      "type": "wikibase-entityid"
+                    },
+                    "datatype": "wikibase-item"
+                  }
+                ]
+              },
+              "snaks-order": [
+                "P143"
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    "sitelinks": {
+      "brwiki": {
+        "site": "brwiki",
+        "title": "Emgann Ballon",
+        "badges": [],
+        "url": "https://br.wikipedia.org/wiki/Emgann_Ballon"
+      },
+      "commonswiki": {
+        "site": "commonswiki",
+        "title": "Category:Battle of Ballon",
+        "badges": [],
+        "url": "https://commons.wikimedia.org/wiki/Category:Battle_of_Ballon"
+      },
+      "enwiki": {
+        "site": "enwiki",
+        "title": "Battle of Ballon",
+        "badges": [],
+        "url": "https://en.wikipedia.org/wiki/Battle_of_Ballon"
+      },
+      "eswiki": {
+        "site": "eswiki",
+        "title": "Batalla de Ballon",
+        "badges": [],
+        "url": "https://es.wikipedia.org/wiki/Batalla_de_Ballon"
+      },
+      "frwiki": {
+        "site": "frwiki",
+        "title": "Bataille de Ballon",
+        "badges": [],
+        "url": "https://fr.wikipedia.org/wiki/Bataille_de_Ballon"
+      },
+      "gvwiki": {
+        "site": "gvwiki",
+        "title": "Cah Ballon",
+        "badges": [],
+        "url": "https://gv.wikipedia.org/wiki/Cah_Ballon"
+      },
+      "itwiki": {
+        "site": "itwiki",
+        "title": "Battaglia di Ballon",
+        "badges": [],
+        "url": "https://it.wikipedia.org/wiki/Battaglia_di_Ballon"
+      },
+      "lmowiki": {
+        "site": "lmowiki",
+        "title": "Bataja de Ballon",
+        "badges": [],
+        "url": "https://lmo.wikipedia.org/wiki/Bataja_de_Ballon"
+      },
+      "ruwiki": {
+        "site": "ruwiki",
+        "title": "Сражение при Баллоне",
+        "badges": [],
+        "url": "https://ru.wikipedia.org/wiki/%D0%A1%D1%80%D0%B0%D0%B6%D0%B5%D0%BD%D0%B8%D0%B5_%D0%BF%D1%80%D0%B8_%D0%91%D0%B0%D0%BB%D0%BB%D0%BE%D0%BD%D0%B5"
+      },
+      "shwiki": {
+        "site": "shwiki",
+        "title": "Bitka kod Ballona",
+        "badges": [],
+        "url": "https://sh.wikipedia.org/wiki/Bitka_kod_Ballona"
+      }
+    }
+  }
+}

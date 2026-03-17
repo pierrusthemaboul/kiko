@@ -1,0 +1,423 @@
+{
+  "saved_at": "2026-03-07T15:29:38.956Z",
+  "value": {
+    "pageid": 1270683,
+    "ns": 0,
+    "title": "Q1330971",
+    "lastrevid": 2469130471,
+    "modified": "2026-03-03T21:18:36Z",
+    "type": "item",
+    "id": "Q1330971",
+    "labels": {
+      "de": {
+        "language": "de",
+        "value": "Nationalwerkstätten"
+      },
+      "en": {
+        "language": "en",
+        "value": "National Workshops"
+      },
+      "es": {
+        "language": "es",
+        "value": "Talleres Nacionales"
+      },
+      "fi": {
+        "language": "fi",
+        "value": "Kansallistyöhuoneet"
+      },
+      "fr": {
+        "language": "fr",
+        "value": "ateliers nationaux"
+      },
+      "ja": {
+        "language": "ja",
+        "value": "国立作業場"
+      },
+      "pt": {
+        "language": "pt",
+        "value": "Oficinas Nacionais"
+      },
+      "ru": {
+        "language": "ru",
+        "value": "Национальные мастерские"
+      },
+      "it": {
+        "language": "it",
+        "value": "Opifici nazionali"
+      },
+      "sv": {
+        "language": "sv",
+        "value": "Nationalverkstäderna"
+      },
+      "nl": {
+        "language": "nl",
+        "value": "Nationale werkplaatsen"
+      },
+      "eo": {
+        "language": "eo",
+        "value": "Naciaj Atelieroj"
+      },
+      "zh": {
+        "language": "zh",
+        "value": "国家工场"
+      },
+      "ko": {
+        "language": "ko",
+        "value": "국립작업장"
+      },
+      "cs": {
+        "language": "cs",
+        "value": "Národní dílny"
+      },
+      "eu": {
+        "language": "eu",
+        "value": "Lantegi Nazionalak"
+      }
+    },
+    "descriptions": {
+      "fr": {
+        "language": "fr",
+        "value": "organisation destinée à fournir du travail aux chômeurs parisiens pendant la révolution de 1848"
+      },
+      "cs": {
+        "language": "cs",
+        "value": "sociální experiment v roce 1848"
+      },
+      "en": {
+        "language": "en",
+        "value": "1848 publicly-funded jobs in France"
+      }
+    },
+    "aliases": {
+      "ja": [
+        {
+          "language": "ja",
+          "value": "国立作業所"
+        }
+      ]
+    },
+    "claims": {
+      "P646": [
+        {
+          "mainsnak": {
+            "snaktype": "value",
+            "property": "P646",
+            "hash": "8d4e22bfdb8329007d4e794415dc46b34d559ce9",
+            "datavalue": {
+              "value": "/m/0b8g31",
+              "type": "string"
+            },
+            "datatype": "external-id"
+          },
+          "type": "statement",
+          "id": "Q1330971$BC92B9F4-023F-4EA3-B7E7-FA9CD53412C3",
+          "rank": "normal",
+          "references": [
+            {
+              "hash": "2b00cb481cddcac7623114367489b5c194901c4a",
+              "snaks": {
+                "P248": [
+                  {
+                    "snaktype": "value",
+                    "property": "P248",
+                    "hash": "a94b740202b097dd33355e0e6c00e54b9395e5e0",
+                    "datavalue": {
+                      "value": {
+                        "entity-type": "item",
+                        "numeric-id": 15241312,
+                        "id": "Q15241312"
+                      },
+                      "type": "wikibase-entityid"
+                    },
+                    "datatype": "wikibase-item"
+                  }
+                ],
+                "P577": [
+                  {
+                    "snaktype": "value",
+                    "property": "P577",
+                    "hash": "fde79ecb015112d2f29229ccc1ec514ed3e71fa2",
+                    "datavalue": {
+                      "value": {
+                        "time": "+2013-10-28T00:00:00Z",
+                        "timezone": 0,
+                        "before": 0,
+                        "after": 0,
+                        "precision": 11,
+                        "calendarmodel": "http://www.wikidata.org/entity/Q1985727"
+                      },
+                      "type": "time"
+                    },
+                    "datatype": "time"
+                  }
+                ]
+              },
+              "snaks-order": [
+                "P248",
+                "P577"
+              ]
+            }
+          ]
+        }
+      ],
+      "P1343": [
+        {
+          "mainsnak": {
+            "snaktype": "value",
+            "property": "P1343",
+            "hash": "3ff2ac8940073bc3a73debcbbba63bad5e2ba3ad",
+            "datavalue": {
+              "value": {
+                "entity-type": "item",
+                "numeric-id": 1766280,
+                "id": "Q1766280"
+              },
+              "type": "wikibase-entityid"
+            },
+            "datatype": "wikibase-item"
+          },
+          "type": "statement",
+          "id": "Q1330971$29ED44CC-87A0-4A5C-A76E-6B7BBF46B190",
+          "rank": "normal"
+        },
+        {
+          "mainsnak": {
+            "snaktype": "value",
+            "property": "P1343",
+            "hash": "bce6a36f982b01f6cec4a97d253565328f22b47d",
+            "datavalue": {
+              "value": {
+                "entity-type": "item",
+                "numeric-id": 19190511,
+                "id": "Q19190511"
+              },
+              "type": "wikibase-entityid"
+            },
+            "datatype": "wikibase-item"
+          },
+          "type": "statement",
+          "qualifiers": {
+            "P805": [
+              {
+                "snaktype": "value",
+                "property": "P805",
+                "hash": "a98a5160068fca5a95c95ea7e1bae2fe48567586",
+                "datavalue": {
+                  "value": {
+                    "entity-type": "item",
+                    "numeric-id": 44724719,
+                    "id": "Q44724719"
+                  },
+                  "type": "wikibase-entityid"
+                },
+                "datatype": "wikibase-item"
+              }
+            ]
+          },
+          "qualifiers-order": [
+            "P805"
+          ],
+          "id": "Q1330971$9b0741cb-aca6-43c6-a93a-a264695150a8",
+          "rank": "normal"
+        },
+        {
+          "mainsnak": {
+            "snaktype": "value",
+            "property": "P1343",
+            "hash": "1e87e0f7d2db06ab0ef5ccabd7c6275641f36553",
+            "datavalue": {
+              "value": {
+                "entity-type": "item",
+                "numeric-id": 867541,
+                "id": "Q867541"
+              },
+              "type": "wikibase-entityid"
+            },
+            "datatype": "wikibase-item"
+          },
+          "type": "statement",
+          "qualifiers": {
+            "P805": [
+              {
+                "snaktype": "value",
+                "property": "P805",
+                "hash": "74371f17d51a623b77a809e8ea88112c02870010",
+                "datavalue": {
+                  "value": {
+                    "entity-type": "item",
+                    "numeric-id": 84691867,
+                    "id": "Q84691867"
+                  },
+                  "type": "wikibase-entityid"
+                },
+                "datatype": "wikibase-item"
+              }
+            ]
+          },
+          "qualifiers-order": [
+            "P805"
+          ],
+          "id": "Q1330971$294CFA09-4A66-45F8-8D61-2AC1EA152EAF",
+          "rank": "normal"
+        }
+      ],
+      "P373": [
+        {
+          "mainsnak": {
+            "snaktype": "value",
+            "property": "P373",
+            "hash": "943371a8b2b95c99cbb144e98addb29a62bef582",
+            "datavalue": {
+              "value": "National Workshops",
+              "type": "string"
+            },
+            "datatype": "string"
+          },
+          "type": "statement",
+          "id": "Q1330971$DCAEC8FD-0E96-435A-B8B6-B655218BE229",
+          "rank": "normal"
+        }
+      ],
+      "P279": [
+        {
+          "mainsnak": {
+            "snaktype": "value",
+            "property": "P279",
+            "hash": "c7fdb1731c9da820d4e12f1a1be389d5956e916a",
+            "datavalue": {
+              "value": {
+                "entity-type": "item",
+                "numeric-id": 627364,
+                "id": "Q627364"
+              },
+              "type": "wikibase-entityid"
+            },
+            "datatype": "wikibase-item"
+          },
+          "type": "statement",
+          "id": "Q1330971$6a18baae-45a4-75a2-d01d-b13e04599bef",
+          "rank": "normal"
+        }
+      ],
+      "P17": [
+        {
+          "mainsnak": {
+            "snaktype": "value",
+            "property": "P17",
+            "hash": "4ad7173764c597efc43e4dcd6727b52952ec0618",
+            "datavalue": {
+              "value": {
+                "entity-type": "item",
+                "numeric-id": 58326,
+                "id": "Q58326"
+              },
+              "type": "wikibase-entityid"
+            },
+            "datatype": "wikibase-item"
+          },
+          "type": "statement",
+          "id": "Q1330971$d8d14b1b-4fc6-0ea8-73e7-82dc38656e5c",
+          "rank": "normal"
+        }
+      ]
+    },
+    "sitelinks": {
+      "commonswiki": {
+        "site": "commonswiki",
+        "title": "Category:National Workshops",
+        "badges": [],
+        "url": "https://commons.wikimedia.org/wiki/Category:National_Workshops"
+      },
+      "cswiki": {
+        "site": "cswiki",
+        "title": "Národní dílny",
+        "badges": [],
+        "url": "https://cs.wikipedia.org/wiki/N%C3%A1rodn%C3%AD_d%C3%ADlny"
+      },
+      "dewiki": {
+        "site": "dewiki",
+        "title": "Nationalwerkstätten",
+        "badges": [],
+        "url": "https://de.wikipedia.org/wiki/Nationalwerkst%C3%A4tten"
+      },
+      "enwiki": {
+        "site": "enwiki",
+        "title": "National Workshops",
+        "badges": [],
+        "url": "https://en.wikipedia.org/wiki/National_Workshops"
+      },
+      "eswiki": {
+        "site": "eswiki",
+        "title": "Talleres Nacionales (Francia)",
+        "badges": [],
+        "url": "https://es.wikipedia.org/wiki/Talleres_Nacionales_(Francia)"
+      },
+      "euwiki": {
+        "site": "euwiki",
+        "title": "Lantegi Nazionalak",
+        "badges": [],
+        "url": "https://eu.wikipedia.org/wiki/Lantegi_Nazionalak"
+      },
+      "fiwiki": {
+        "site": "fiwiki",
+        "title": "Kansallistyöhuoneet",
+        "badges": [],
+        "url": "https://fi.wikipedia.org/wiki/Kansallisty%C3%B6huoneet"
+      },
+      "frwiki": {
+        "site": "frwiki",
+        "title": "Ateliers nationaux",
+        "badges": [],
+        "url": "https://fr.wikipedia.org/wiki/Ateliers_nationaux"
+      },
+      "itwiki": {
+        "site": "itwiki",
+        "title": "Opifici nazionali",
+        "badges": [],
+        "url": "https://it.wikipedia.org/wiki/Opifici_nazionali"
+      },
+      "jawiki": {
+        "site": "jawiki",
+        "title": "国立作業場",
+        "badges": [],
+        "url": "https://ja.wikipedia.org/wiki/%E5%9B%BD%E7%AB%8B%E4%BD%9C%E6%A5%AD%E5%A0%B4"
+      },
+      "kowiki": {
+        "site": "kowiki",
+        "title": "국립작업장",
+        "badges": [],
+        "url": "https://ko.wikipedia.org/wiki/%EA%B5%AD%EB%A6%BD%EC%9E%91%EC%97%85%EC%9E%A5"
+      },
+      "nlwiki": {
+        "site": "nlwiki",
+        "title": "Nationale werkplaatsen",
+        "badges": [],
+        "url": "https://nl.wikipedia.org/wiki/Nationale_werkplaatsen"
+      },
+      "ptwiki": {
+        "site": "ptwiki",
+        "title": "Oficinas Nacionais",
+        "badges": [],
+        "url": "https://pt.wikipedia.org/wiki/Oficinas_Nacionais"
+      },
+      "ruwiki": {
+        "site": "ruwiki",
+        "title": "Национальные мастерские",
+        "badges": [],
+        "url": "https://ru.wikipedia.org/wiki/%D0%9D%D0%B0%D1%86%D0%B8%D0%BE%D0%BD%D0%B0%D0%BB%D1%8C%D0%BD%D1%8B%D0%B5_%D0%BC%D0%B0%D1%81%D1%82%D0%B5%D1%80%D1%81%D0%BA%D0%B8%D0%B5"
+      },
+      "svwiki": {
+        "site": "svwiki",
+        "title": "Nationalverkstäderna",
+        "badges": [],
+        "url": "https://sv.wikipedia.org/wiki/Nationalverkst%C3%A4derna"
+      },
+      "zhwiki": {
+        "site": "zhwiki",
+        "title": "国家工场",
+        "badges": [],
+        "url": "https://zh.wikipedia.org/wiki/%E5%9B%BD%E5%AE%B6%E5%B7%A5%E5%9C%BA"
+      }
+    }
+  }
+}

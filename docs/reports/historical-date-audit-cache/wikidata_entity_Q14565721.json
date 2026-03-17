@@ -1,0 +1,184 @@
+{
+  "saved_at": "2026-03-07T13:24:04.005Z",
+  "value": {
+    "pageid": 16237682,
+    "ns": 0,
+    "title": "Q14565721",
+    "lastrevid": 2459855118,
+    "modified": "2026-02-01T19:41:35Z",
+    "type": "item",
+    "id": "Q14565721",
+    "labels": {
+      "en": {
+        "language": "en",
+        "value": "stamp act in the history of time"
+      },
+      "vi": {
+        "language": "vi",
+        "value": "Đạo luật tem"
+      },
+      "zh-hant": {
+        "language": "zh-hant",
+        "value": "Stamp act"
+      },
+      "fr": {
+        "language": "fr",
+        "value": "Stamp Act"
+      },
+      "zh": {
+        "language": "zh",
+        "value": "印花稅法"
+      },
+      "ru": {
+        "language": "ru",
+        "value": "Гербовый акт"
+      },
+      "ar": {
+        "language": "ar",
+        "value": "قانون طابع"
+      }
+    },
+    "descriptions": {
+      "en": {
+        "language": "en",
+        "value": "legislation that requires a tax for certain documents"
+      },
+      "ar": {
+        "language": "ar",
+        "value": "التشريعات التي تتطلب فرض ضريبة على مستندات معينة"
+      },
+      "fr": {
+        "language": "fr",
+        "value": "loi fiscal britannique de 1765"
+      }
+    },
+    "aliases": {
+      "zh-hant": [
+        {
+          "language": "zh-hant",
+          "value": "印花稅法"
+        }
+      ],
+      "ar": [
+        {
+          "language": "ar",
+          "value": "قانون الطوابع في تاريخ الزمن"
+        }
+      ]
+    },
+    "claims": {
+      "P279": [
+        {
+          "mainsnak": {
+            "snaktype": "value",
+            "property": "P279",
+            "hash": "53e6ae77edcd6bc0ac664df8dc09145b2d92f623",
+            "datavalue": {
+              "value": {
+                "entity-type": "item",
+                "numeric-id": 49371,
+                "id": "Q49371"
+              },
+              "type": "wikibase-entityid"
+            },
+            "datatype": "wikibase-item"
+          },
+          "type": "statement",
+          "id": "Q14565721$a3abf1ab-4248-6d32-7a25-fba9299000af",
+          "rank": "normal"
+        },
+        {
+          "mainsnak": {
+            "snaktype": "value",
+            "property": "P279",
+            "hash": "558e348152e72ba47ecacb7e58b8af0d1c924b90",
+            "datavalue": {
+              "value": {
+                "entity-type": "item",
+                "numeric-id": 8161,
+                "id": "Q8161"
+              },
+              "type": "wikibase-entityid"
+            },
+            "datatype": "wikibase-item"
+          },
+          "type": "statement",
+          "id": "Q14565721$dc2b773b-4f8e-22c2-9de2-375e61e56e7e",
+          "rank": "normal"
+        }
+      ],
+      "P6366": [
+        {
+          "mainsnak": {
+            "snaktype": "value",
+            "property": "P6366",
+            "hash": "8b61c715b0e5a7ff0fd0e22cde358fa0c4d2cff3",
+            "datavalue": {
+              "value": "2778332296",
+              "type": "string"
+            },
+            "datatype": "external-id"
+          },
+          "type": "statement",
+          "id": "Q14565721$3E4F6703-C3B0-412B-864B-4FF0C255BFFA",
+          "rank": "normal"
+        }
+      ],
+      "P646": [
+        {
+          "mainsnak": {
+            "snaktype": "value",
+            "property": "P646",
+            "hash": "92606ce60346640fafb55508200cce41233a28b0",
+            "datavalue": {
+              "value": "/m/03w63g",
+              "type": "string"
+            },
+            "datatype": "external-id"
+          },
+          "type": "statement",
+          "id": "Q14565721$A7CD04D3-7AF4-41D6-A2DA-6EB1AED312B3",
+          "rank": "normal"
+        }
+      ]
+    },
+    "sitelinks": {
+      "arwiki": {
+        "site": "arwiki",
+        "title": "قانون طابع",
+        "badges": [],
+        "url": "https://ar.wikipedia.org/wiki/%D9%82%D8%A7%D9%86%D9%88%D9%86_%D8%B7%D8%A7%D8%A8%D8%B9"
+      },
+      "enwiki": {
+        "site": "enwiki",
+        "title": "Stamp act",
+        "badges": [],
+        "url": "https://en.wikipedia.org/wiki/Stamp_act"
+      },
+      "frwiki": {
+        "site": "frwiki",
+        "title": "Stamp Act",
+        "badges": [],
+        "url": "https://fr.wikipedia.org/wiki/Stamp_Act"
+      },
+      "ruwiki": {
+        "site": "ruwiki",
+        "title": "Гербовый акт",
+        "badges": [],
+        "url": "https://ru.wikipedia.org/wiki/%D0%93%D0%B5%D1%80%D0%B1%D0%BE%D0%B2%D1%8B%D0%B9_%D0%B0%D0%BA%D1%82"
+      },
+      "simplewiki": {
+        "site": "simplewiki",
+        "title": "Stamp act",
+        "badges": [],
+        "url": "https://simple.wikipedia.org/wiki/Stamp_act"
+      },
+      "viwiki": {
+        "site": "viwiki",
+        "title": "Đạo luật tem",
+        "badges": [],
+        "url": "https://vi.wikipedia.org/wiki/%C4%90%E1%BA%A1o_lu%E1%BA%ADt_tem"
+      }
+    }
+  }
+}

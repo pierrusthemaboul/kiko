@@ -1,0 +1,112 @@
+# Context pour IA / AI Coding Assistants
+
+## 🔊 Audio - IMPORTANT
+
+**Avant de modifier les fichiers audio du projet, LISEZ OBLIGATOIREMENT :**
+👉 `/docs/AUDIO_MIGRATION_GUIDE.md`
+
+### Résumé critique
+- ✅ Utilisez `expo-av` (Audio.Sound.createAsync)
+- ❌ N'utilisez JAMAIS `expo-audio` avec SDK 52 (TOUT est buggé)
+- Cause : expo-audio 0.3.5 est en beta et crash → "Error: Value is undefined, expected an Object"
+- ⚠️ expo-av est un **module natif** : nécessite rebuild après installation
+
+### Fichiers concernés
+- `/hooks/useAudio.ts` - Mode Classique
+- `/hooks/game/usePrecisionAudio.ts` - Mode Precision
+
+Ces fichiers contiennent déjà des commentaires pointant vers le guide.
+
+## 📋 Structure du projet
+
+### Modes de jeu
+1. **Mode Classique** : Jeu de dates standard
+2. **Mode Precision** : Jeu avec système de HP et dates précises
+
+### Documentation
+- `/docs/README.md` - Index de la documentation
+- `/docs/AUDIO_MIGRATION_GUIDE.md` - Guide critique pour l'audio
+
+## ⚡ Commandes importantes
+
+```bash
+# Démarrer le serveur
+npm start
+
+# Build Android local
+npm run build:android:local
+
+# Prebuild Android
+npm run prebuild:android
+```
+
+## 🚨 Pièges à éviter
+
+1. **Audio** : Ne pas utiliser `createAudioPlayer` → Lire /docs/AUDIO_MIGRATION_GUIDE.md
+2. **SDK** : Projet sur Expo SDK 52, ne pas upgrader expo-audio vers 1.0.14+ sans migrer vers SDK 53
+3. **TypeScript** : Projet a des erreurs TS dans certains fichiers legacy, mais les fichiers audio sont propres
+
+## 📦 Dépendances clés
+
+- expo-audio: 0.3.5 (SDK 52 compatible)
+- expo: ~52.0.47
+- react-native: 0.76.x
+
+## 🎯 Si vous voulez ajouter un nouveau son
+
+1. Lire `/docs/AUDIO_MIGRATION_GUIDE.md`
+2. Ajouter le fichier son dans `/assets/sounds/`
+3. Ajouter dans `soundPaths` avec `require('./path/to/sound.wav')`
+4. Utiliser `Audio.Sound.createAsync()` dans playSound
+5. Ne PAS utiliser `expo-audio` (buggé dans SDK 52)
+
+## 📝 Notes pour les développeurs futurs
+
+- Le projet utilise Firebase pour analytics et auth
+- Supabase pour la base de données
+- Expo Router pour la navigation
+- Les sons sont gérés par canal pour éviter les superpositions (mode Precision)
+
+## ✅ Règles de fer (Mode Professionnel)
+
+### 1) Bootstrap / Perf
+- Interdiction du polling (`setInterval`) pour piloter le bootstrap (session, splash, guest mode, etc.).
+- Préférer:
+  - événements (ex: `onAuthStateChange`, `AppState`)
+  - exécution “one-shot” au montage
+  - invalidation explicite lors d’actions utilisateur
+
+### 2) Supabase (Architecture)
+- Centraliser les accès Supabase dans des **services** (ou repositories) dédiés.
+- Les écrans / components:
+  - n’embarquent pas la logique d’accès DB
+  - appellent des fonctions métier typées (ex: `EventsService.fetchEvents()`)
+- Les scripts `machine_a_evenements/*` (service role) restent hors app.
+
+### 3) TypeScript (Qualité)
+- Utilisation systématique de TypeScript strict.
+- Éviter `any` dans le code “core” (gameplay, auth, DB). Les exceptions doivent être justifiées et localisées.
+- Les types Supabase (`Database`) sont la source de vérité pour les tables.
+
+### 4) Sécurité (Admin, RLS)
+- Interdiction de sécuriser un écran “Admin” uniquement par UI (email hardcodé, checks côté client, etc.).
+- Toute autorisation Admin doit être garantie par la base:
+  - RLS/policies (ex: `profiles.is_admin` + policy)
+  - ou Edge Functions (service role côté serveur)
+
+### 5) Organisation du Projet & "Le Ménage" 🧹
+- **Scripts** : Ne rien mettre à la racine.
+  - Temporaire/Tests AI → `/scripts/sandbox/`
+  - Maintenance (Fix/Backup) → `/scripts/maintenance/`
+  - Data Processing → `/scripts/data/`
+- **Outils de Production** (Pipelines IA, Générateurs) → `/tools/`
+- **Données** (Datasets JSON volumineux) → `/data/` (ignoré par Git)
+- **Secrets & Clés API** → `/credentials/` (ignoré par Git)
+
+### 7) Protocole pour les Agents de Codage (STRICT) 🚨
+Pour garantir la stabilité du projet, tout agent (IA) doit respecter ces règles :
+- **Scripts de test** : Toujours créer les scripts temporaires dans `scripts/sandbox/`. Interdiction de créer à la racine.
+- **Isolation du Jeu** : Ne jamais modifier le dossier `mobile_app/` sans instruction explicite du client.
+- **Fichiers Configuration** : Ne jamais modifier `metro.config.js`, `package.json`, `app.config.js` ou les fichiers de migration Supabase sans validation préalable.
+- **Secrets** : Si un agent a besoin d'une clé API pour un test, il doit utiliser le `.env` de la racine ou demander de l'ajouter dans `credentials/`. Interdiction de hardcoder des clés.
+- **Lignes de commande** : Si une commande modifie la structure (ex: `mkdir`), vérifier d'abord si le dossier existe.

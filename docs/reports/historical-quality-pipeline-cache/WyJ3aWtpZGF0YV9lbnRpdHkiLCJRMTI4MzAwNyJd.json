@@ -1,0 +1,379 @@
+{
+  "pageid": 1223486,
+  "ns": 0,
+  "title": "Q1283007",
+  "lastrevid": 2465845180,
+  "modified": "2026-02-23T03:31:43Z",
+  "type": "item",
+  "id": "Q1283007",
+  "labels": {
+    "cs": {
+      "language": "cs",
+      "value": "Baqt"
+    },
+    "sh": {
+      "language": "sh",
+      "value": "Bakt"
+    },
+    "en": {
+      "language": "en",
+      "value": "Baqt"
+    },
+    "es": {
+      "language": "es",
+      "value": "Bakt"
+    },
+    "it": {
+      "language": "it",
+      "value": "Bakt"
+    },
+    "ar": {
+      "language": "ar",
+      "value": "معاهدة البقط"
+    },
+    "ka": {
+      "language": "ka",
+      "value": "ბაქტი"
+    },
+    "pl": {
+      "language": "pl",
+      "value": "Bakt"
+    },
+    "fr": {
+      "language": "fr",
+      "value": "Baqt"
+    },
+    "ur": {
+      "language": "ur",
+      "value": "معاہدہ بقط"
+    },
+    "sv": {
+      "language": "sv",
+      "value": "Baqt"
+    },
+    "ha": {
+      "language": "ha",
+      "value": "Baqt"
+    },
+    "tr": {
+      "language": "tr",
+      "value": "bakt"
+    },
+    "arz": {
+      "language": "arz",
+      "value": "معاهدة البقط"
+    }
+  },
+  "descriptions": {
+    "fr": {
+      "language": "fr",
+      "value": "traité de paix"
+    },
+    "en": {
+      "language": "en",
+      "value": "7th-century treaty between Makuria and Egypt"
+    },
+    "sv": {
+      "language": "sv",
+      "value": "fördrag som slöts år 652 mellan det muslimska Rashidunkalifatet och det kristna kungariket Makuria"
+    }
+  },
+  "aliases": {
+    "cs": [
+      {
+        "language": "cs",
+        "value": "Bakt"
+      }
+    ],
+    "sh": [
+      {
+        "language": "sh",
+        "value": "Baqt"
+      }
+    ],
+    "es": [
+      {
+        "language": "es",
+        "value": "Baqt"
+      }
+    ],
+    "ar": [
+      {
+        "language": "ar",
+        "value": "معاهدة بقت"
+      },
+      {
+        "language": "ar",
+        "value": "إتِفاقِية البقط"
+      },
+      {
+        "language": "ar",
+        "value": "اتفاقية البقط"
+      }
+    ]
+  },
+  "claims": {
+    "P646": [
+      {
+        "mainsnak": {
+          "snaktype": "value",
+          "property": "P646",
+          "hash": "ab1f24fe91224bbdcae4fb72a5fe7a510b65d853",
+          "datavalue": {
+            "value": "/m/04y9ql",
+            "type": "string"
+          },
+          "datatype": "external-id"
+        },
+        "type": "statement",
+        "id": "Q1283007$9D730D7D-372D-475D-8205-5F49FC61DE32",
+        "rank": "normal",
+        "references": [
+          {
+            "hash": "2b00cb481cddcac7623114367489b5c194901c4a",
+            "snaks": {
+              "P248": [
+                {
+                  "snaktype": "value",
+                  "property": "P248",
+                  "hash": "a94b740202b097dd33355e0e6c00e54b9395e5e0",
+                  "datavalue": {
+                    "value": {
+                      "entity-type": "item",
+                      "numeric-id": 15241312,
+                      "id": "Q15241312"
+                    },
+                    "type": "wikibase-entityid"
+                  },
+                  "datatype": "wikibase-item"
+                }
+              ],
+              "P577": [
+                {
+                  "snaktype": "value",
+                  "property": "P577",
+                  "hash": "fde79ecb015112d2f29229ccc1ec514ed3e71fa2",
+                  "datavalue": {
+                    "value": {
+                      "time": "+2013-10-28T00:00:00Z",
+                      "timezone": 0,
+                      "before": 0,
+                      "after": 0,
+                      "precision": 11,
+                      "calendarmodel": "http://www.wikidata.org/entity/Q1985727"
+                    },
+                    "type": "time"
+                  },
+                  "datatype": "time"
+                }
+              ]
+            },
+            "snaks-order": [
+              "P248",
+              "P577"
+            ]
+          }
+        ]
+      }
+    ],
+    "P31": [
+      {
+        "mainsnak": {
+          "snaktype": "value",
+          "property": "P31",
+          "hash": "e8aeb1052dc73db474d26af9b197ca1496559c90",
+          "datavalue": {
+            "value": {
+              "entity-type": "item",
+              "numeric-id": 625298,
+              "id": "Q625298"
+            },
+            "type": "wikibase-entityid"
+          },
+          "datatype": "wikibase-item"
+        },
+        "type": "statement",
+        "id": "Q1283007$db97e5ad-4908-b4aa-0e0b-d518c864952e",
+        "rank": "normal"
+      }
+    ],
+    "P585": [
+      {
+        "mainsnak": {
+          "snaktype": "value",
+          "property": "P585",
+          "hash": "ae988d7bc1bedbdd76864537f9f6ca59c61da695",
+          "datavalue": {
+            "value": {
+              "time": "+0700-00-00T00:00:00Z",
+              "timezone": 0,
+              "before": 0,
+              "after": 0,
+              "precision": 7,
+              "calendarmodel": "http://www.wikidata.org/entity/Q1985786"
+            },
+            "type": "time"
+          },
+          "datatype": "time"
+        },
+        "type": "statement",
+        "id": "Q1283007$97bca69f-4fcd-7bcf-10ca-84c7106f1749",
+        "rank": "normal"
+      }
+    ],
+    "P1891": [
+      {
+        "mainsnak": {
+          "snaktype": "value",
+          "property": "P1891",
+          "hash": "dfab30fb468463472c175eb48fdeb182803d5832",
+          "datavalue": {
+            "value": {
+              "entity-type": "item",
+              "numeric-id": 12490507,
+              "id": "Q12490507"
+            },
+            "type": "wikibase-entityid"
+          },
+          "datatype": "wikibase-item"
+        },
+        "type": "statement",
+        "id": "Q1283007$f0aee64b-49fd-6534-896a-9ca1f6f7b2d7",
+        "rank": "normal"
+      },
+      {
+        "mainsnak": {
+          "snaktype": "value",
+          "property": "P1891",
+          "hash": "89fade9c6b2be002b2048d1787b1870041db95dd",
+          "datavalue": {
+            "value": {
+              "entity-type": "item",
+              "numeric-id": 829356,
+              "id": "Q829356"
+            },
+            "type": "wikibase-entityid"
+          },
+          "datatype": "wikibase-item"
+        },
+        "type": "statement",
+        "id": "Q1283007$8c5a5f53-4556-af69-504d-b815ce794356",
+        "rank": "normal"
+      }
+    ],
+    "P10565": [
+      {
+        "mainsnak": {
+          "snaktype": "value",
+          "property": "P10565",
+          "hash": "06cffba06b58d796541971089cc0af0a7e6fc652",
+          "datavalue": {
+            "value": "126961",
+            "type": "string"
+          },
+          "datatype": "external-id"
+        },
+        "type": "statement",
+        "id": "Q1283007$30B99A95-5C1C-46FF-8942-EF70209E9DD8",
+        "rank": "normal"
+      }
+    ],
+    "P7314": [
+      {
+        "mainsnak": {
+          "snaktype": "value",
+          "property": "P7314",
+          "hash": "155521979e91a7de379d5697e8aac5169fb7a45d",
+          "datavalue": {
+            "value": "bakt",
+            "type": "string"
+          },
+          "datatype": "external-id"
+        },
+        "type": "statement",
+        "id": "Q1283007$8E9447A8-E4E8-423D-97AA-265DBCCABD00",
+        "rank": "normal"
+      }
+    ]
+  },
+  "sitelinks": {
+    "arwiki": {
+      "site": "arwiki",
+      "title": "معاهدة البقط",
+      "badges": [],
+      "url": "https://ar.wikipedia.org/wiki/%D9%85%D8%B9%D8%A7%D9%87%D8%AF%D8%A9_%D8%A7%D9%84%D8%A8%D9%82%D8%B7"
+    },
+    "arzwiki": {
+      "site": "arzwiki",
+      "title": "معاهدة البقط",
+      "badges": [],
+      "url": "https://arz.wikipedia.org/wiki/%D9%85%D8%B9%D8%A7%D9%87%D8%AF%D8%A9_%D8%A7%D9%84%D8%A8%D9%82%D8%B7"
+    },
+    "cswiki": {
+      "site": "cswiki",
+      "title": "Baqt",
+      "badges": [],
+      "url": "https://cs.wikipedia.org/wiki/Baqt"
+    },
+    "enwiki": {
+      "site": "enwiki",
+      "title": "Baqt",
+      "badges": [],
+      "url": "https://en.wikipedia.org/wiki/Baqt"
+    },
+    "eswiki": {
+      "site": "eswiki",
+      "title": "Bakt",
+      "badges": [],
+      "url": "https://es.wikipedia.org/wiki/Bakt"
+    },
+    "frwiki": {
+      "site": "frwiki",
+      "title": "Baqt",
+      "badges": [],
+      "url": "https://fr.wikipedia.org/wiki/Baqt"
+    },
+    "hawiki": {
+      "site": "hawiki",
+      "title": "Baqt",
+      "badges": [],
+      "url": "https://ha.wikipedia.org/wiki/Baqt"
+    },
+    "itwiki": {
+      "site": "itwiki",
+      "title": "Bakt",
+      "badges": [],
+      "url": "https://it.wikipedia.org/wiki/Bakt"
+    },
+    "kawiki": {
+      "site": "kawiki",
+      "title": "ბაქტი",
+      "badges": [],
+      "url": "https://ka.wikipedia.org/wiki/%E1%83%91%E1%83%90%E1%83%A5%E1%83%A2%E1%83%98"
+    },
+    "plwiki": {
+      "site": "plwiki",
+      "title": "Bakt",
+      "badges": [],
+      "url": "https://pl.wikipedia.org/wiki/Bakt"
+    },
+    "shwiki": {
+      "site": "shwiki",
+      "title": "Bakt",
+      "badges": [],
+      "url": "https://sh.wikipedia.org/wiki/Bakt"
+    },
+    "svwiki": {
+      "site": "svwiki",
+      "title": "Baqt",
+      "badges": [],
+      "url": "https://sv.wikipedia.org/wiki/Baqt"
+    },
+    "urwiki": {
+      "site": "urwiki",
+      "title": "معاہدہ بقط",
+      "badges": [],
+      "url": "https://ur.wikipedia.org/wiki/%D9%85%D8%B9%D8%A7%DB%81%D8%AF%DB%81_%D8%A8%D9%82%D8%B7"
+    }
+  }
+}

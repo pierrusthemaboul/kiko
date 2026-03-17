@@ -1,0 +1,322 @@
+{
+  "saved_at": "2026-03-07T15:37:59.488Z",
+  "value": {
+    "pageid": 1257132,
+    "ns": 0,
+    "title": "Q1317266",
+    "lastrevid": 2397252213,
+    "modified": "2025-08-27T11:52:39Z",
+    "type": "item",
+    "id": "Q1317266",
+    "labels": {
+      "fr": {
+        "language": "fr",
+        "value": "hockey sur glace en France"
+      },
+      "de": {
+        "language": "de",
+        "value": "Eishockey in Frankreich"
+      },
+      "en": {
+        "language": "en",
+        "value": "ice hockey in France"
+      },
+      "it": {
+        "language": "it",
+        "value": "hockey su ghiaccio in Francia"
+      },
+      "eo": {
+        "language": "eo",
+        "value": "glacihokeo en Francio"
+      },
+      "sv": {
+        "language": "sv",
+        "value": "ishockey i Frankrike"
+      },
+      "pl": {
+        "language": "pl",
+        "value": "hokej na lodzie we Francji"
+      },
+      "cs": {
+        "language": "cs",
+        "value": "lední hokej ve Francii"
+      },
+      "ru": {
+        "language": "ru",
+        "value": "Хоккей во Франции"
+      },
+      "es": {
+        "language": "es",
+        "value": "hockey sobre hielo en Francia"
+      },
+      "nl": {
+        "language": "nl",
+        "value": "IJshockey in Frankrijk"
+      },
+      "fi": {
+        "language": "fi",
+        "value": "jääkiekko Ranskassa"
+      },
+      "sms": {
+        "language": "sms",
+        "value": "jiõŋŋhokki Franskkjânnmest"
+      },
+      "se": {
+        "language": "se",
+        "value": "jiekŋaskearru Frankriikkast"
+      },
+      "smn": {
+        "language": "smn",
+        "value": "jieŋâskiärru Ranskaast"
+      },
+      "ga": {
+        "language": "ga",
+        "value": "haca oighir sa Fhrainc"
+      },
+      "ja": {
+        "language": "ja",
+        "value": "フランスのアイスホッケー"
+      }
+    },
+    "descriptions": {
+      "sv": {
+        "language": "sv",
+        "value": "översikt över ishockey utövad i Frankrike"
+      },
+      "en": {
+        "language": "en",
+        "value": "overview of ice hockey practiced in France"
+      },
+      "de": {
+        "language": "de",
+        "value": "Mannschaftssportart in Frankreich"
+      }
+    },
+    "aliases": {
+      "fr": [
+        {
+          "language": "fr",
+          "value": "Hockey sur glace en france"
+        },
+        {
+          "language": "fr",
+          "value": "Hockey Sur Glace En France"
+        }
+      ],
+      "fi": [
+        {
+          "language": "fi",
+          "value": "Ranskan jääkiekko"
+        }
+      ],
+      "en": [
+        {
+          "language": "en",
+          "value": "France ice hockey"
+        }
+      ]
+    },
+    "claims": {
+      "P910": [
+        {
+          "mainsnak": {
+            "snaktype": "value",
+            "property": "P910",
+            "hash": "5bc5fd3db0a6342519f24580e6a58fbef84f13b3",
+            "datavalue": {
+              "value": {
+                "entity-type": "item",
+                "numeric-id": 8530735,
+                "id": "Q8530735"
+              },
+              "type": "wikibase-entityid"
+            },
+            "datatype": "wikibase-item"
+          },
+          "type": "statement",
+          "id": "Q1317266$86E7392D-38DC-4F50-966B-507C7C3F5E33",
+          "rank": "normal",
+          "references": [
+            {
+              "hash": "9a24f7c0208b05d6be97077d855671d1dfdbc0dd",
+              "snaks": {
+                "P143": [
+                  {
+                    "snaktype": "value",
+                    "property": "P143",
+                    "hash": "d38375ffe6fe142663ff55cd783aa4df4301d83d",
+                    "datavalue": {
+                      "value": {
+                        "entity-type": "item",
+                        "numeric-id": 48183,
+                        "id": "Q48183"
+                      },
+                      "type": "wikibase-entityid"
+                    },
+                    "datatype": "wikibase-item"
+                  }
+                ]
+              },
+              "snaks-order": [
+                "P143"
+              ]
+            }
+          ]
+        }
+      ],
+      "P641": [
+        {
+          "mainsnak": {
+            "snaktype": "value",
+            "property": "P641",
+            "hash": "22388274db98b44b3acadbf5d0ac21a0e1bedda2",
+            "datavalue": {
+              "value": {
+                "entity-type": "item",
+                "numeric-id": 41466,
+                "id": "Q41466"
+              },
+              "type": "wikibase-entityid"
+            },
+            "datatype": "wikibase-item"
+          },
+          "type": "statement",
+          "id": "Q1317266$581EE056-D131-47A6-BF25-7C214E8DE9E5",
+          "rank": "normal"
+        }
+      ],
+      "P373": [
+        {
+          "mainsnak": {
+            "snaktype": "value",
+            "property": "P373",
+            "hash": "2ad1b65871cb4be5f3376fde7cbebb02ef6e570f",
+            "datavalue": {
+              "value": "Ice hockey in France",
+              "type": "string"
+            },
+            "datatype": "string"
+          },
+          "type": "statement",
+          "id": "Q1317266$471D0801-5CB5-43D3-8A5C-E9D0F91287BC",
+          "rank": "normal"
+        }
+      ],
+      "P31": [
+        {
+          "mainsnak": {
+            "snaktype": "value",
+            "property": "P31",
+            "hash": "9a4821f71751f6aa859f6c2e7de729bec3fc1bb8",
+            "datavalue": {
+              "value": {
+                "entity-type": "item",
+                "numeric-id": 29791211,
+                "id": "Q29791211"
+              },
+              "type": "wikibase-entityid"
+            },
+            "datatype": "wikibase-item"
+          },
+          "type": "statement",
+          "id": "Q1317266$40B22ACF-898D-4744-B02F-E37958000700",
+          "rank": "normal"
+        }
+      ],
+      "P276": [
+        {
+          "mainsnak": {
+            "snaktype": "value",
+            "property": "P276",
+            "hash": "8b0ec779b065477650db33917ff99d018700f11d",
+            "datavalue": {
+              "value": {
+                "entity-type": "item",
+                "numeric-id": 142,
+                "id": "Q142"
+              },
+              "type": "wikibase-entityid"
+            },
+            "datatype": "wikibase-item"
+          },
+          "type": "statement",
+          "id": "Q1317266$B716EEA2-F62F-4F67-968C-EEA0710F542D",
+          "rank": "normal"
+        }
+      ],
+      "P17": [
+        {
+          "mainsnak": {
+            "snaktype": "value",
+            "property": "P17",
+            "hash": "c05db5d169c2560b9799d567a803d20a392f53e4",
+            "datavalue": {
+              "value": {
+                "entity-type": "item",
+                "numeric-id": 142,
+                "id": "Q142"
+              },
+              "type": "wikibase-entityid"
+            },
+            "datatype": "wikibase-item"
+          },
+          "type": "statement",
+          "id": "Q1317266$5CE4033A-C1C2-4BDF-883C-2B0ADFA51A7E",
+          "rank": "normal"
+        }
+      ],
+      "P2671": [
+        {
+          "mainsnak": {
+            "snaktype": "value",
+            "property": "P2671",
+            "hash": "12306a21c6d4fc3d6de62d8c9b19f2252b280ba9",
+            "datavalue": {
+              "value": "/g/123773zw",
+              "type": "string"
+            },
+            "datatype": "external-id"
+          },
+          "type": "statement",
+          "id": "Q1317266$71740DC1-0D16-40D7-9AED-ED23874C3AEC",
+          "rank": "normal"
+        }
+      ],
+      "P279": [
+        {
+          "mainsnak": {
+            "snaktype": "value",
+            "property": "P279",
+            "hash": "1e1aa1cbbad74a3358d62d7cd5da0b6a39e8c31c",
+            "datavalue": {
+              "value": {
+                "entity-type": "item",
+                "numeric-id": 3109604,
+                "id": "Q3109604"
+              },
+              "type": "wikibase-entityid"
+            },
+            "datatype": "wikibase-item"
+          },
+          "type": "statement",
+          "id": "Q1317266$56f71366-4824-f294-d6ee-45a942d2e305",
+          "rank": "normal"
+        }
+      ]
+    },
+    "sitelinks": {
+      "dewiki": {
+        "site": "dewiki",
+        "title": "Eishockey in Frankreich",
+        "badges": [],
+        "url": "https://de.wikipedia.org/wiki/Eishockey_in_Frankreich"
+      },
+      "frwiki": {
+        "site": "frwiki",
+        "title": "Hockey sur glace en France",
+        "badges": [],
+        "url": "https://fr.wikipedia.org/wiki/Hockey_sur_glace_en_France"
+      }
+    }
+  }
+}

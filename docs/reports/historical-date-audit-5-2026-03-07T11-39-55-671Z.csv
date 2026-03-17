@@ -1,0 +1,6 @@
+id,titre,date_in_db,date_candidate,precision,status,result_bucket,confidence,needs_human_review,recommendation,matched_article_fr,matched_article_en,wikidata_id
+57263c5c-b035-4eaa-a498-b8f7b8e797a3,Bataille du Yarmouk conquête musulmane de la Syrie byzantine,0636-01-01,0636-01-01,year,CONFIRMED,confirme,0.9,false,Confirmer la date de 636 pour la bataille du Yarmouk.,https://fr.wikipedia.org/wiki/Bataille_du_Yarmouk,,Q194226
+e765e846-1bf8-4c53-828b-e106c0ec7e6d,Ouverture du Concile Vatican II,1962-10-11,,,INSUFFICIENT_EVIDENCE,annee_exacte_introuvable,0,true,Provide a reliable external source confirming the year of the event.,,,Q172991
+b83867ef-cbc6-4f5d-8ba5-31cad13c48bf,Mort de François II,1560-01-01,1560-01-01,year,CONFIRMED,confirme,1,false,Confirmer la date de 1560.,wikipedia_fr_article,,Q132548
+a6c0a199-8a72-4f00-ad8f-45f0c95b6bc1,Réactions et interprétations françaises de la révolution russe de 1905,1905-01-01,1905-01-01,year,LIKELY_CORRECT,probable_mais_a_confirmer,0.8,false,Confirmer la date de 1905.,,,Q8729
+2162be68-6e36-4284-87fb-d687b7e2cc7d,Fondation de la Pennsylvanie,1681-01-01,,,INSUFFICIENT_EVIDENCE,annee_exacte_introuvable,0,true,Find a source that explicitly states the year of the founding of the Pennsylvania colony.,https://fr.wikipedia.org/wiki/Pennsylvanie,,Q1400

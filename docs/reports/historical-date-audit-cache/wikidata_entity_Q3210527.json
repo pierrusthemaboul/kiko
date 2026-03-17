@@ -1,0 +1,439 @@
+{
+  "saved_at": "2026-03-07T12:51:39.974Z",
+  "value": {
+    "pageid": 3065466,
+    "ns": 0,
+    "title": "Q3210527",
+    "lastrevid": 2291118195,
+    "modified": "2024-12-24T21:58:25Z",
+    "type": "item",
+    "id": "Q3210527",
+    "labels": {
+      "fr": {
+        "language": "fr",
+        "value": "La Marche des rois"
+      },
+      "ja": {
+        "language": "ja",
+        "value": "3人の王の行列"
+      },
+      "es": {
+        "language": "es",
+        "value": "La Marcha de los Reyes Magos"
+      },
+      "fi": {
+        "language": "fi",
+        "value": "Kolmen kuninkaan marssi"
+      },
+      "br": {
+        "language": "br",
+        "value": "La Marcho di Rèi"
+      },
+      "en": {
+        "language": "en",
+        "value": "The March of the Kings"
+      }
+    },
+    "descriptions": {
+      "de": {
+        "language": "de",
+        "value": "Volkslied der Provence"
+      },
+      "en": {
+        "language": "en",
+        "value": "folk song from Provence"
+      },
+      "es": {
+        "language": "es",
+        "value": "villancico"
+      }
+    },
+    "aliases": {
+      "fr": [
+        {
+          "language": "fr",
+          "value": "La marche des rois"
+        },
+        {
+          "language": "fr",
+          "value": "La marche des Rois"
+        },
+        {
+          "language": "fr",
+          "value": "La marche des Rois mages"
+        },
+        {
+          "language": "fr",
+          "value": "La Marcho di Rèi"
+        }
+      ],
+      "ja": [
+        {
+          "language": "ja",
+          "value": "王の行進"
+        }
+      ]
+    },
+    "claims": {
+      "P31": [
+        {
+          "mainsnak": {
+            "snaktype": "value",
+            "property": "P31",
+            "hash": "27a6895d28d498e66ba8712e567e9c88f7c1eeee",
+            "datavalue": {
+              "value": {
+                "entity-type": "item",
+                "numeric-id": 503354,
+                "id": "Q503354"
+              },
+              "type": "wikibase-entityid"
+            },
+            "datatype": "wikibase-item"
+          },
+          "type": "statement",
+          "id": "Q3210527$49532d6e-483a-d7a0-b8cd-247abe42e660",
+          "rank": "normal"
+        },
+        {
+          "mainsnak": {
+            "snaktype": "value",
+            "property": "P31",
+            "hash": "5be109d8a3cbbd062357a9d210d4ef00ef25244e",
+            "datavalue": {
+              "value": {
+                "entity-type": "item",
+                "numeric-id": 105543609,
+                "id": "Q105543609"
+              },
+              "type": "wikibase-entityid"
+            },
+            "datatype": "wikibase-item"
+          },
+          "type": "statement",
+          "id": "Q3210527$FAE77D83-BD20-4925-803C-C4574281EAF3",
+          "rank": "normal"
+        }
+      ],
+      "P2341": [
+        {
+          "mainsnak": {
+            "snaktype": "value",
+            "property": "P2341",
+            "hash": "074bba727e0283e06bf4b696df96f783b5d0ce7d",
+            "datavalue": {
+              "value": {
+                "entity-type": "item",
+                "numeric-id": 101081,
+                "id": "Q101081"
+              },
+              "type": "wikibase-entityid"
+            },
+            "datatype": "wikibase-item"
+          },
+          "type": "statement",
+          "id": "Q3210527$bc98f01a-487b-9bc9-c197-0445efd33c04",
+          "rank": "normal"
+        }
+      ],
+      "P435": [
+        {
+          "mainsnak": {
+            "snaktype": "value",
+            "property": "P435",
+            "hash": "635f9b2333f36c825c81ce4b0f833f47772493fd",
+            "datavalue": {
+              "value": "89e006cd-70ef-4696-9a22-b5f62e289f70",
+              "type": "string"
+            },
+            "datatype": "external-id"
+          },
+          "type": "statement",
+          "id": "Q3210527$55C6D64B-3488-402A-A2B5-FDEA5034061E",
+          "rank": "normal",
+          "references": [
+            {
+              "hash": "b2d31ed70c8480906e761640e2be55a649d59c15",
+              "snaks": {
+                "P248": [
+                  {
+                    "snaktype": "value",
+                    "property": "P248",
+                    "hash": "623cc8f0e2f65afe4d66b91962d354a2f3aa9a27",
+                    "datavalue": {
+                      "value": {
+                        "entity-type": "item",
+                        "numeric-id": 14005,
+                        "id": "Q14005"
+                      },
+                      "type": "wikibase-entityid"
+                    },
+                    "datatype": "wikibase-item"
+                  }
+                ],
+                "P813": [
+                  {
+                    "snaktype": "value",
+                    "property": "P813",
+                    "hash": "4b6295e6db899c08530a79d156c6a15c41b498c5",
+                    "datavalue": {
+                      "value": {
+                        "time": "+2019-04-13T00:00:00Z",
+                        "timezone": 0,
+                        "before": 0,
+                        "after": 0,
+                        "precision": 11,
+                        "calendarmodel": "http://www.wikidata.org/entity/Q1985727"
+                      },
+                      "type": "time"
+                    },
+                    "datatype": "time"
+                  }
+                ]
+              },
+              "snaks-order": [
+                "P248",
+                "P813"
+              ]
+            }
+          ]
+        },
+        {
+          "mainsnak": {
+            "snaktype": "value",
+            "property": "P435",
+            "hash": "f690edbb10622b8771c401d54a6ef8ba62ec1ddd",
+            "datavalue": {
+              "value": "87691d94-c930-4caf-af3f-15bf241d7991",
+              "type": "string"
+            },
+            "datatype": "external-id"
+          },
+          "type": "statement",
+          "id": "Q3210527$E2B53146-B7A6-4932-B61B-98C8274D21AF",
+          "rank": "normal",
+          "references": [
+            {
+              "hash": "b2d31ed70c8480906e761640e2be55a649d59c15",
+              "snaks": {
+                "P248": [
+                  {
+                    "snaktype": "value",
+                    "property": "P248",
+                    "hash": "623cc8f0e2f65afe4d66b91962d354a2f3aa9a27",
+                    "datavalue": {
+                      "value": {
+                        "entity-type": "item",
+                        "numeric-id": 14005,
+                        "id": "Q14005"
+                      },
+                      "type": "wikibase-entityid"
+                    },
+                    "datatype": "wikibase-item"
+                  }
+                ],
+                "P813": [
+                  {
+                    "snaktype": "value",
+                    "property": "P813",
+                    "hash": "4b6295e6db899c08530a79d156c6a15c41b498c5",
+                    "datavalue": {
+                      "value": {
+                        "time": "+2019-04-13T00:00:00Z",
+                        "timezone": 0,
+                        "before": 0,
+                        "after": 0,
+                        "precision": 11,
+                        "calendarmodel": "http://www.wikidata.org/entity/Q1985727"
+                      },
+                      "type": "time"
+                    },
+                    "datatype": "time"
+                  }
+                ]
+              },
+              "snaks-order": [
+                "P248",
+                "P813"
+              ]
+            }
+          ]
+        }
+      ],
+      "P1889": [
+        {
+          "mainsnak": {
+            "snaktype": "value",
+            "property": "P1889",
+            "hash": "ff906b68af059dc20d271043861cd2ced9434b78",
+            "datavalue": {
+              "value": {
+                "entity-type": "item",
+                "numeric-id": 16035290,
+                "id": "Q16035290"
+              },
+              "type": "wikibase-entityid"
+            },
+            "datatype": "wikibase-item"
+          },
+          "type": "statement",
+          "id": "Q3210527$A384FCD1-B33E-4CC1-AEF7-BE811BEDA132",
+          "rank": "normal",
+          "references": [
+            {
+              "hash": "6ad6014359b6a3d3ea351f1aca512a00bb0dae39",
+              "snaks": {
+                "P143": [
+                  {
+                    "snaktype": "value",
+                    "property": "P143",
+                    "hash": "f30cbd35620c4ea6d0633aaf0210a8916130469b",
+                    "datavalue": {
+                      "value": {
+                        "entity-type": "item",
+                        "numeric-id": 8447,
+                        "id": "Q8447"
+                      },
+                      "type": "wikibase-entityid"
+                    },
+                    "datatype": "wikibase-item"
+                  }
+                ],
+                "P4656": [
+                  {
+                    "snaktype": "value",
+                    "property": "P4656",
+                    "hash": "5de628f503809e29b43aec33c73d147129215975",
+                    "datavalue": {
+                      "value": "https://fr.wikipedia.org/w/index.php?title=La_Marche_des_rois&oldid=169347509",
+                      "type": "string"
+                    },
+                    "datatype": "url"
+                  }
+                ]
+              },
+              "snaks-order": [
+                "P143",
+                "P4656"
+              ]
+            }
+          ]
+        }
+      ],
+      "P2671": [
+        {
+          "mainsnak": {
+            "snaktype": "value",
+            "property": "P2671",
+            "hash": "6d9fb6d175e286d58973f681bbb2138083c72371",
+            "datavalue": {
+              "value": "/g/1hc0r0bdf",
+              "type": "string"
+            },
+            "datatype": "external-id"
+          },
+          "type": "statement",
+          "id": "Q3210527$E73BD333-A2BD-4928-A70B-C718A54BF11B",
+          "rank": "normal"
+        }
+      ],
+      "P1552": [
+        {
+          "mainsnak": {
+            "snaktype": "value",
+            "property": "P1552",
+            "hash": "ab5b648d23f8c7ba23c997516bef78c220e36105",
+            "datavalue": {
+              "value": {
+                "entity-type": "item",
+                "numeric-id": 943929,
+                "id": "Q943929"
+              },
+              "type": "wikibase-entityid"
+            },
+            "datatype": "wikibase-item"
+          },
+          "type": "statement",
+          "id": "Q3210527$5D43C70D-0B74-4538-A955-D3B99006CA20",
+          "rank": "normal"
+        }
+      ],
+      "P7937": [
+        {
+          "mainsnak": {
+            "snaktype": "value",
+            "property": "P7937",
+            "hash": "95c182f3c475d9df12743fde55dc93e0a76efa11",
+            "datavalue": {
+              "value": {
+                "entity-type": "item",
+                "numeric-id": 7366,
+                "id": "Q7366"
+              },
+              "type": "wikibase-entityid"
+            },
+            "datatype": "wikibase-item"
+          },
+          "type": "statement",
+          "id": "Q3210527$116DD4F9-F2B4-464F-9347-FDCFA36DE583",
+          "rank": "normal"
+        }
+      ],
+      "P7212": [
+        {
+          "mainsnak": {
+            "snaktype": "value",
+            "property": "P7212",
+            "hash": "2d2ac520c233ca74a396d8c01ab487dab60a2632",
+            "datavalue": {
+              "value": "joseph-françois-domergue-lyrics.html",
+              "type": "string"
+            },
+            "datatype": "external-id"
+          },
+          "type": "statement",
+          "id": "Q3210527$AFD1E684-4DC2-43BB-BD3B-988FD15D5D64",
+          "rank": "normal"
+        }
+      ]
+    },
+    "sitelinks": {
+      "brwiki": {
+        "site": "brwiki",
+        "title": "La Marcho di Rèi",
+        "badges": [],
+        "url": "https://br.wikipedia.org/wiki/La_Marcho_di_R%C3%A8i"
+      },
+      "enwiki": {
+        "site": "enwiki",
+        "title": "The March of the Kings",
+        "badges": [],
+        "url": "https://en.wikipedia.org/wiki/The_March_of_the_Kings"
+      },
+      "eswiki": {
+        "site": "eswiki",
+        "title": "La Marcha de los Reyes Magos",
+        "badges": [],
+        "url": "https://es.wikipedia.org/wiki/La_Marcha_de_los_Reyes_Magos"
+      },
+      "fiwiki": {
+        "site": "fiwiki",
+        "title": "Kolmen kuninkaan marssi",
+        "badges": [],
+        "url": "https://fi.wikipedia.org/wiki/Kolmen_kuninkaan_marssi"
+      },
+      "frwiki": {
+        "site": "frwiki",
+        "title": "La Marche des rois",
+        "badges": [],
+        "url": "https://fr.wikipedia.org/wiki/La_Marche_des_rois"
+      },
+      "jawiki": {
+        "site": "jawiki",
+        "title": "3人の王の行列",
+        "badges": [],
+        "url": "https://ja.wikipedia.org/wiki/3%E4%BA%BA%E3%81%AE%E7%8E%8B%E3%81%AE%E8%A1%8C%E5%88%97"
+      }
+    }
+  }
+}

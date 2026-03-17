@@ -1,0 +1,373 @@
+{
+  "saved_at": "2026-03-07T13:36:57.932Z",
+  "value": {
+    "pageid": 25587085,
+    "ns": 0,
+    "title": "Q23578835",
+    "lastrevid": 2467237149,
+    "modified": "2026-02-26T19:44:53Z",
+    "type": "item",
+    "id": "Q23578835",
+    "labels": {
+      "en": {
+        "language": "en",
+        "value": "946 eruption of Paektu Mountain"
+      },
+      "fr": {
+        "language": "fr",
+        "value": "éruption du mont Paektu de 946"
+      },
+      "ko": {
+        "language": "ko",
+        "value": "946년 백두산 분화"
+      },
+      "tr": {
+        "language": "tr",
+        "value": "946 Baekdu Dağı patlaması"
+      },
+      "ja": {
+        "language": "ja",
+        "value": "946年白頭山噴火"
+      },
+      "en-gb": {
+        "language": "en-gb",
+        "value": "946 eruption of Paektu Mountain"
+      },
+      "zh": {
+        "language": "zh",
+        "value": "946年长白山喷发"
+      },
+      "id": {
+        "language": "id",
+        "value": "Letusan Gunung Baekdu 946"
+      },
+      "fi": {
+        "language": "fi",
+        "value": "Paektuvuoren purkaus 946"
+      },
+      "es": {
+        "language": "es",
+        "value": "Erupción del monte Paektu de 946"
+      },
+      "ar": {
+        "language": "ar",
+        "value": "ثوران جبل بايكتو"
+      }
+    },
+    "descriptions": {
+      "en-gb": {
+        "language": "en-gb",
+        "value": "major volcanic eruption in Korea"
+      },
+      "en": {
+        "language": "en",
+        "value": "major volcanic eruption in Korea"
+      },
+      "fi": {
+        "language": "fi",
+        "value": "suuri tulivuorenpurkaus Koreassa"
+      },
+      "ko": {
+        "language": "ko",
+        "value": "946년경 발생한 백두산의 대분화"
+      },
+      "ar": {
+        "language": "ar",
+        "value": "ثوران بركاني كبير في كوريا"
+      }
+    },
+    "aliases": {
+      "en-gb": [
+        {
+          "language": "en-gb",
+          "value": "Millennium Eruption"
+        },
+        {
+          "language": "en-gb",
+          "value": "Tianchi eruption"
+        }
+      ],
+      "en": [
+        {
+          "language": "en",
+          "value": "Millennium Eruption"
+        },
+        {
+          "language": "en",
+          "value": "Tianchi eruption"
+        }
+      ]
+    },
+    "claims": {
+      "P31": [
+        {
+          "mainsnak": {
+            "snaktype": "value",
+            "property": "P31",
+            "hash": "0aa752994aed985dbbd6b6a6cf5fd7d42bedf8f3",
+            "datavalue": {
+              "value": {
+                "entity-type": "item",
+                "numeric-id": 7692360,
+                "id": "Q7692360"
+              },
+              "type": "wikibase-entityid"
+            },
+            "datatype": "wikibase-item"
+          },
+          "type": "statement",
+          "id": "Q23578835$57321c2c-491c-33e8-6a58-e27c2a22c068",
+          "rank": "normal"
+        }
+      ],
+      "P625": [
+        {
+          "mainsnak": {
+            "snaktype": "value",
+            "property": "P625",
+            "hash": "91a6e675ab30af3b796fcb5491ce87bcd966fa11",
+            "datavalue": {
+              "value": {
+                "latitude": 41.99306,
+                "longitude": 128.07694,
+                "altitude": null,
+                "precision": 0.00001,
+                "globe": "http://www.wikidata.org/entity/Q2"
+              },
+              "type": "globecoordinate"
+            },
+            "datatype": "globe-coordinate"
+          },
+          "type": "statement",
+          "id": "Q23578835$f7ba1e3f-4113-b48f-33e0-18d8a3dabc1b",
+          "rank": "normal"
+        }
+      ],
+      "P1903": [
+        {
+          "mainsnak": {
+            "snaktype": "value",
+            "property": "P1903",
+            "hash": "9cefce38c3cce3f635e96ad1d8127aeb456f0291",
+            "datavalue": {
+              "value": {
+                "entity-type": "item",
+                "numeric-id": 19988329,
+                "id": "Q19988329"
+              },
+              "type": "wikibase-entityid"
+            },
+            "datatype": "wikibase-item"
+          },
+          "type": "statement",
+          "id": "Q23578835$d6ef61f7-4e25-7957-1483-bcf1a2441ac7",
+          "rank": "normal"
+        }
+      ],
+      "P2671": [
+        {
+          "mainsnak": {
+            "snaktype": "value",
+            "property": "P2671",
+            "hash": "c5e5e11c1e131b72ec8ff06efad7f5541efa8e70",
+            "datavalue": {
+              "value": "/g/11bw5_vnmj",
+              "type": "string"
+            },
+            "datatype": "external-id"
+          },
+          "type": "statement",
+          "id": "Q23578835$899A96A0-5BAA-41D4-8FEC-176CCD8FC6FE",
+          "rank": "normal"
+        }
+      ],
+      "P18": [
+        {
+          "mainsnak": {
+            "snaktype": "value",
+            "property": "P18",
+            "hash": "32b2d4bd41e8cba19ce2e19e5563bf7251e176d3",
+            "datavalue": {
+              "value": "Millenium-Eruption-map.jpg",
+              "type": "string"
+            },
+            "datatype": "commonsMedia"
+          },
+          "type": "statement",
+          "id": "Q23578835$72e24c52-44fd-9641-a000-d81b55a460b9",
+          "rank": "normal"
+        }
+      ],
+      "P276": [
+        {
+          "mainsnak": {
+            "snaktype": "value",
+            "property": "P276",
+            "hash": "5f0a2f277617e0c9927227b114f5052b283b094c",
+            "datavalue": {
+              "value": {
+                "entity-type": "item",
+                "numeric-id": 107635,
+                "id": "Q107635"
+              },
+              "type": "wikibase-entityid"
+            },
+            "datatype": "wikibase-item"
+          },
+          "type": "statement",
+          "id": "Q23578835$0e11d83f-4b9f-6f5d-f21a-3b2fbe8699fe",
+          "rank": "normal"
+        }
+      ],
+      "P585": [
+        {
+          "mainsnak": {
+            "snaktype": "value",
+            "property": "P585",
+            "hash": "46a5d3bf559d05ed432b4af09f851b41780548e1",
+            "datavalue": {
+              "value": {
+                "time": "+0946-00-00T00:00:00Z",
+                "timezone": 0,
+                "before": 0,
+                "after": 0,
+                "precision": 9,
+                "calendarmodel": "http://www.wikidata.org/entity/Q1985786"
+              },
+              "type": "time"
+            },
+            "datatype": "time"
+          },
+          "type": "statement",
+          "qualifiers": {
+            "P5102": [
+              {
+                "snaktype": "value",
+                "property": "P5102",
+                "hash": "ac62d0f97f6355522174f2028954bf9152977518",
+                "datavalue": {
+                  "value": {
+                    "entity-type": "item",
+                    "numeric-id": 37113960,
+                    "id": "Q37113960"
+                  },
+                  "type": "wikibase-entityid"
+                },
+                "datatype": "wikibase-item"
+              }
+            ]
+          },
+          "qualifiers-order": [
+            "P5102"
+          ],
+          "id": "Q23578835$c7f68028-469d-1c82-80bb-5c15f139c6f8",
+          "rank": "normal"
+        }
+      ],
+      "P17": [
+        {
+          "mainsnak": {
+            "snaktype": "value",
+            "property": "P17",
+            "hash": "c05e724394e6aa8ce1aadfc7c8a94e2f09e5d43f",
+            "datavalue": {
+              "value": {
+                "entity-type": "item",
+                "numeric-id": 707128,
+                "id": "Q707128"
+              },
+              "type": "wikibase-entityid"
+            },
+            "datatype": "wikibase-item"
+          },
+          "type": "statement",
+          "id": "Q23578835$78345b14-4793-2b5e-594e-329ff8209978",
+          "rank": "normal"
+        }
+      ],
+      "P131": [
+        {
+          "mainsnak": {
+            "snaktype": "value",
+            "property": "P131",
+            "hash": "11d21395c882f2fc7e9ad41b16e9824f67432844",
+            "datavalue": {
+              "value": {
+                "entity-type": "item",
+                "numeric-id": 110171,
+                "id": "Q110171"
+              },
+              "type": "wikibase-entityid"
+            },
+            "datatype": "wikibase-item"
+          },
+          "type": "statement",
+          "id": "Q23578835$01138d87-4162-5387-2561-3ff06137cbbc",
+          "rank": "normal"
+        }
+      ]
+    },
+    "sitelinks": {
+      "arwiki": {
+        "site": "arwiki",
+        "title": "ثوران جبل بايكتو",
+        "badges": [],
+        "url": "https://ar.wikipedia.org/wiki/%D8%AB%D9%88%D8%B1%D8%A7%D9%86_%D8%AC%D8%A8%D9%84_%D8%A8%D8%A7%D9%8A%D9%83%D8%AA%D9%88"
+      },
+      "enwiki": {
+        "site": "enwiki",
+        "title": "946 eruption of Paektu Mountain",
+        "badges": [],
+        "url": "https://en.wikipedia.org/wiki/946_eruption_of_Paektu_Mountain"
+      },
+      "eswiki": {
+        "site": "eswiki",
+        "title": "Erupción del monte Paektu de 946",
+        "badges": [],
+        "url": "https://es.wikipedia.org/wiki/Erupci%C3%B3n_del_monte_Paektu_de_946"
+      },
+      "fiwiki": {
+        "site": "fiwiki",
+        "title": "Paektuvuoren purkaus 946",
+        "badges": [],
+        "url": "https://fi.wikipedia.org/wiki/Paektuvuoren_purkaus_946"
+      },
+      "frwiki": {
+        "site": "frwiki",
+        "title": "Éruption du mont Paektu en 946",
+        "badges": [],
+        "url": "https://fr.wikipedia.org/wiki/%C3%89ruption_du_mont_Paektu_en_946"
+      },
+      "idwiki": {
+        "site": "idwiki",
+        "title": "Letusan Gunung Baekdu 946",
+        "badges": [],
+        "url": "https://id.wikipedia.org/wiki/Letusan_Gunung_Baekdu_946"
+      },
+      "jawiki": {
+        "site": "jawiki",
+        "title": "946年白頭山噴火",
+        "badges": [],
+        "url": "https://ja.wikipedia.org/wiki/946%E5%B9%B4%E7%99%BD%E9%A0%AD%E5%B1%B1%E5%99%B4%E7%81%AB"
+      },
+      "kowiki": {
+        "site": "kowiki",
+        "title": "946년 백두산 분화",
+        "badges": [],
+        "url": "https://ko.wikipedia.org/wiki/946%EB%85%84_%EB%B0%B1%EB%91%90%EC%82%B0_%EB%B6%84%ED%99%94"
+      },
+      "trwiki": {
+        "site": "trwiki",
+        "title": "946 Baekdu Dağı patlaması",
+        "badges": [],
+        "url": "https://tr.wikipedia.org/wiki/946_Baekdu_Da%C4%9F%C4%B1_patlamas%C4%B1"
+      },
+      "zhwiki": {
+        "site": "zhwiki",
+        "title": "946年长白山喷发",
+        "badges": [],
+        "url": "https://zh.wikipedia.org/wiki/946%E5%B9%B4%E9%95%BF%E7%99%BD%E5%B1%B1%E5%96%B7%E5%8F%91"
+      }
+    }
+  }
+}

@@ -1,0 +1,655 @@
+{
+  "pageid": 29800565,
+  "ns": 0,
+  "title": "Q28100122",
+  "lastrevid": 2266310167,
+  "modified": "2024-10-28T09:35:27Z",
+  "type": "item",
+  "id": "Q28100122",
+  "labels": {
+    "fr": {
+      "language": "fr",
+      "value": "Vitrail de saint Martin, cathédrale de Chartres (baie 20)"
+    },
+    "en": {
+      "language": "en",
+      "value": "Stained-glass windows of the ambulatory of Cathédrale Notre-Dame de Chartres baie 020"
+    },
+    "de": {
+      "language": "de",
+      "value": "Glasfenster von Saint Martin, Kathedrale von Chartres (Bucht 20)"
+    }
+  },
+  "descriptions": {
+    "fr": {
+      "language": "fr",
+      "value": "verrière monument historique (IM28000392) de la cathédrale de Chartres (Eure-et-Loir, France)"
+    },
+    "de": {
+      "language": "de",
+      "value": "Glasdach historisches Denkmal (IM28000392) der Kathedrale von Chartres (Eure-et-Loir, Frankreich)"
+    },
+    "en": {
+      "language": "en",
+      "value": "Historic monument (IM28000392) of the cathedral of Chartres (Eure-et-Loir, France)"
+    }
+  },
+  "aliases": {},
+  "claims": {
+    "P31": [
+      {
+        "mainsnak": {
+          "snaktype": "value",
+          "property": "P31",
+          "hash": "a2a4c37aa90d37af5de9fbb0caad66ad3d8813e1",
+          "datavalue": {
+            "value": {
+              "entity-type": "item",
+              "numeric-id": 21061279,
+              "id": "Q21061279"
+            },
+            "type": "wikibase-entityid"
+          },
+          "datatype": "wikibase-item"
+        },
+        "type": "statement",
+        "id": "Q28100122$bc6e2353-4ffa-9826-7ac7-4e67a7a07108",
+        "rank": "normal"
+      }
+    ],
+    "P481": [
+      {
+        "mainsnak": {
+          "snaktype": "value",
+          "property": "P481",
+          "hash": "2d69a115ef319e7c58a99a8d74dea3905ad350b6",
+          "datavalue": {
+            "value": "IM28000392",
+            "type": "string"
+          },
+          "datatype": "external-id"
+        },
+        "type": "statement",
+        "id": "Q28100122$df5c0dff-44f8-5f99-104f-82559f3e6c6d",
+        "rank": "normal",
+        "references": [
+          {
+            "hash": "dd70cd12b9533d5bc0603ec23691830c7c6513c1",
+            "snaks": {
+              "P248": [
+                {
+                  "snaktype": "value",
+                  "property": "P248",
+                  "hash": "966c028990d6baa3295cac1c7294dd7f9895c488",
+                  "datavalue": {
+                    "value": {
+                      "entity-type": "item",
+                      "numeric-id": 2886424,
+                      "id": "Q2886424"
+                    },
+                    "type": "wikibase-entityid"
+                  },
+                  "datatype": "wikibase-item"
+                }
+              ]
+            },
+            "snaks-order": [
+              "P248"
+            ]
+          }
+        ]
+      }
+    ],
+    "P276": [
+      {
+        "mainsnak": {
+          "snaktype": "value",
+          "property": "P276",
+          "hash": "ead4c48c3fd474b1e2ba9dbe0b3e279749c59881",
+          "datavalue": {
+            "value": {
+              "entity-type": "item",
+              "numeric-id": 180274,
+              "id": "Q180274"
+            },
+            "type": "wikibase-entityid"
+          },
+          "datatype": "wikibase-item"
+        },
+        "type": "statement",
+        "id": "Q28100122$377C08AD-C054-4200-87F6-28487DF953CA",
+        "rank": "normal"
+      }
+    ],
+    "P361": [
+      {
+        "mainsnak": {
+          "snaktype": "value",
+          "property": "P361",
+          "hash": "21b3f36a1ded9e28f3282d4d5bacfce9dd179df7",
+          "datavalue": {
+            "value": {
+              "entity-type": "item",
+              "numeric-id": 29373801,
+              "id": "Q29373801"
+            },
+            "type": "wikibase-entityid"
+          },
+          "datatype": "wikibase-item"
+        },
+        "type": "statement",
+        "id": "Q28100122$2F762CCA-2EF5-412B-B68D-23C3481ECF04",
+        "rank": "normal"
+      }
+    ],
+    "P180": [
+      {
+        "mainsnak": {
+          "snaktype": "value",
+          "property": "P180",
+          "hash": "2dcf511b5e71e63bf561df7a5441f6faad392196",
+          "datavalue": {
+            "value": {
+              "entity-type": "item",
+              "numeric-id": 133704,
+              "id": "Q133704"
+            },
+            "type": "wikibase-entityid"
+          },
+          "datatype": "wikibase-item"
+        },
+        "type": "statement",
+        "id": "Q28100122$E53B9F4C-24C0-49D8-9919-467FC4AD9393",
+        "rank": "normal"
+      }
+    ],
+    "P18": [
+      {
+        "mainsnak": {
+          "snaktype": "value",
+          "property": "P18",
+          "hash": "6b5c2bf4ad449fc5e9ed3ed5b6c5c3f62982a7ff",
+          "datavalue": {
+            "value": "Chartres-020 rectifié.jpg",
+            "type": "string"
+          },
+          "datatype": "commonsMedia"
+        },
+        "type": "statement",
+        "id": "Q28100122$4C57B0C9-8AFC-442C-8B94-0E9D2892D87C",
+        "rank": "normal"
+      },
+      {
+        "mainsnak": {
+          "snaktype": "value",
+          "property": "P18",
+          "hash": "ae4ce2b032b5971bebb6a6580b339213bf8ad496",
+          "datavalue": {
+            "value": "Chartres 20 -Corrected.jpg",
+            "type": "string"
+          },
+          "datatype": "commonsMedia"
+        },
+        "type": "statement",
+        "id": "Q28100122$47351f0c-4bd1-3a15-4760-8be36ee8d0d4",
+        "rank": "preferred"
+      }
+    ],
+    "P373": [
+      {
+        "mainsnak": {
+          "snaktype": "value",
+          "property": "P373",
+          "hash": "e0c079976eda29bfefcba9e2b3f7bd5c2ed8a5c2",
+          "datavalue": {
+            "value": "Stained-glass windows of the ambulatory of Cathédrale Notre-Dame de Chartres baie 020",
+            "type": "string"
+          },
+          "datatype": "string"
+        },
+        "type": "statement",
+        "id": "Q28100122$87b389dc-4991-1909-ba86-04da1eb32691",
+        "rank": "normal"
+      }
+    ],
+    "P17": [
+      {
+        "mainsnak": {
+          "snaktype": "value",
+          "property": "P17",
+          "hash": "c05db5d169c2560b9799d567a803d20a392f53e4",
+          "datavalue": {
+            "value": {
+              "entity-type": "item",
+              "numeric-id": 142,
+              "id": "Q142"
+            },
+            "type": "wikibase-entityid"
+          },
+          "datatype": "wikibase-item"
+        },
+        "type": "statement",
+        "id": "Q28100122$cbd6380c-48fe-b0e8-db8b-fd6b86692c4f",
+        "rank": "normal",
+        "references": [
+          {
+            "hash": "dd70cd12b9533d5bc0603ec23691830c7c6513c1",
+            "snaks": {
+              "P248": [
+                {
+                  "snaktype": "value",
+                  "property": "P248",
+                  "hash": "966c028990d6baa3295cac1c7294dd7f9895c488",
+                  "datavalue": {
+                    "value": {
+                      "entity-type": "item",
+                      "numeric-id": 2886424,
+                      "id": "Q2886424"
+                    },
+                    "type": "wikibase-entityid"
+                  },
+                  "datatype": "wikibase-item"
+                }
+              ]
+            },
+            "snaks-order": [
+              "P248"
+            ]
+          }
+        ]
+      }
+    ],
+    "P131": [
+      {
+        "mainsnak": {
+          "snaktype": "value",
+          "property": "P131",
+          "hash": "4c6032f6fc2143d3d617ef5e3b4ba714f34a677c",
+          "datavalue": {
+            "value": {
+              "entity-type": "item",
+              "numeric-id": 130272,
+              "id": "Q130272"
+            },
+            "type": "wikibase-entityid"
+          },
+          "datatype": "wikibase-item"
+        },
+        "type": "statement",
+        "id": "Q28100122$F547D3D1-356E-4128-9F78-23837CBB23A3",
+        "rank": "normal",
+        "references": [
+          {
+            "hash": "dd70cd12b9533d5bc0603ec23691830c7c6513c1",
+            "snaks": {
+              "P248": [
+                {
+                  "snaktype": "value",
+                  "property": "P248",
+                  "hash": "966c028990d6baa3295cac1c7294dd7f9895c488",
+                  "datavalue": {
+                    "value": {
+                      "entity-type": "item",
+                      "numeric-id": 2886424,
+                      "id": "Q2886424"
+                    },
+                    "type": "wikibase-entityid"
+                  },
+                  "datatype": "wikibase-item"
+                }
+              ]
+            },
+            "snaks-order": [
+              "P248"
+            ]
+          }
+        ]
+      }
+    ],
+    "P1435": [
+      {
+        "mainsnak": {
+          "snaktype": "value",
+          "property": "P1435",
+          "hash": "74d20e4270cbee10d0a5f058a6654859ad05700e",
+          "datavalue": {
+            "value": {
+              "entity-type": "item",
+              "numeric-id": 61058403,
+              "id": "Q61058403"
+            },
+            "type": "wikibase-entityid"
+          },
+          "datatype": "wikibase-item"
+        },
+        "type": "statement",
+        "qualifiers": {
+          "P580": [
+            {
+              "snaktype": "value",
+              "property": "P580",
+              "hash": "adba3177490bda61a634a30be2b57077044b80f6",
+              "datavalue": {
+                "value": {
+                  "time": "+1840-00-00T00:00:00Z",
+                  "timezone": 0,
+                  "before": 0,
+                  "after": 0,
+                  "precision": 9,
+                  "calendarmodel": "http://www.wikidata.org/entity/Q1985727"
+                },
+                "type": "time"
+              },
+              "datatype": "time"
+            }
+          ]
+        },
+        "qualifiers-order": [
+          "P580"
+        ],
+        "id": "Q28100122$9627BF31-0667-42C2-A9A7-3AC59F07AF04",
+        "rank": "normal",
+        "references": [
+          {
+            "hash": "dd70cd12b9533d5bc0603ec23691830c7c6513c1",
+            "snaks": {
+              "P248": [
+                {
+                  "snaktype": "value",
+                  "property": "P248",
+                  "hash": "966c028990d6baa3295cac1c7294dd7f9895c488",
+                  "datavalue": {
+                    "value": {
+                      "entity-type": "item",
+                      "numeric-id": 2886424,
+                      "id": "Q2886424"
+                    },
+                    "type": "wikibase-entityid"
+                  },
+                  "datatype": "wikibase-item"
+                }
+              ]
+            },
+            "snaks-order": [
+              "P248"
+            ]
+          }
+        ]
+      }
+    ],
+    "P2671": [
+      {
+        "mainsnak": {
+          "snaktype": "value",
+          "property": "P2671",
+          "hash": "6c4428e41fc782a39141e8dc1ca9efef971ced17",
+          "datavalue": {
+            "value": "/g/11ddww62hs",
+            "type": "string"
+          },
+          "datatype": "external-id"
+        },
+        "type": "statement",
+        "id": "Q28100122$BDF5A6B8-A38D-4F33-9915-C8767D33F32C",
+        "rank": "normal"
+      }
+    ],
+    "P186": [
+      {
+        "mainsnak": {
+          "snaktype": "value",
+          "property": "P186",
+          "hash": "57de0f05e17f197854d20bc093e0f105562120dc",
+          "datavalue": {
+            "value": {
+              "entity-type": "item",
+              "numeric-id": 28869937,
+              "id": "Q28869937"
+            },
+            "type": "wikibase-entityid"
+          },
+          "datatype": "wikibase-item"
+        },
+        "type": "statement",
+        "id": "Q28100122$e7c35050-4d54-be0a-ed5d-a309341c09a4",
+        "rank": "normal"
+      }
+    ],
+    "P195": [
+      {
+        "mainsnak": {
+          "snaktype": "value",
+          "property": "P195",
+          "hash": "1226309236305579b0eae84e62f8677d2ced2bab",
+          "datavalue": {
+            "value": {
+              "entity-type": "item",
+              "numeric-id": 180274,
+              "id": "Q180274"
+            },
+            "type": "wikibase-entityid"
+          },
+          "datatype": "wikibase-item"
+        },
+        "type": "statement",
+        "id": "Q28100122$f3a9b634-4baa-02ba-8be2-af3d2cdfcf9a",
+        "rank": "normal"
+      }
+    ],
+    "P217": [
+      {
+        "mainsnak": {
+          "snaktype": "value",
+          "property": "P217",
+          "hash": "75080c60d88f393f89905f92b907c5ef0b3c905d",
+          "datavalue": {
+            "value": "020",
+            "type": "string"
+          },
+          "datatype": "string"
+        },
+        "type": "statement",
+        "qualifiers": {
+          "P195": [
+            {
+              "snaktype": "value",
+              "property": "P195",
+              "hash": "1226309236305579b0eae84e62f8677d2ced2bab",
+              "datavalue": {
+                "value": {
+                  "entity-type": "item",
+                  "numeric-id": 180274,
+                  "id": "Q180274"
+                },
+                "type": "wikibase-entityid"
+              },
+              "datatype": "wikibase-item"
+            }
+          ]
+        },
+        "qualifiers-order": [
+          "P195"
+        ],
+        "id": "Q28100122$8e17e44c-4b66-4b58-7b65-020bd4107eed",
+        "rank": "normal"
+      }
+    ],
+    "P170": [
+      {
+        "mainsnak": {
+          "snaktype": "somevalue",
+          "property": "P170",
+          "hash": "d3550e860f988c6675fff913440993f58f5c40c5",
+          "datatype": "wikibase-item"
+        },
+        "type": "statement",
+        "id": "Q28100122$cd638e5a-4cee-423f-df7f-7ae89df6be79",
+        "rank": "normal"
+      }
+    ],
+    "P6216": [
+      {
+        "mainsnak": {
+          "snaktype": "value",
+          "property": "P6216",
+          "hash": "f69dc45ce9c48664155022498b34100d801bd549",
+          "datavalue": {
+            "value": {
+              "entity-type": "item",
+              "numeric-id": 19652,
+              "id": "Q19652"
+            },
+            "type": "wikibase-entityid"
+          },
+          "datatype": "wikibase-item"
+        },
+        "type": "statement",
+        "id": "Q28100122$a530cd8f-4484-5ca5-6158-5495462ad76a",
+        "rank": "normal"
+      }
+    ],
+    "P136": [
+      {
+        "mainsnak": {
+          "snaktype": "value",
+          "property": "P136",
+          "hash": "ac99343de7c28479381e643c0d3395281eec8e47",
+          "datavalue": {
+            "value": {
+              "entity-type": "item",
+              "numeric-id": 2414609,
+              "id": "Q2414609"
+            },
+            "type": "wikibase-entityid"
+          },
+          "datatype": "wikibase-item"
+        },
+        "type": "statement",
+        "id": "Q28100122$4ed0a3c9-4530-7e5f-af0a-bb3058ee74f5",
+        "rank": "normal"
+      }
+    ],
+    "P571": [
+      {
+        "mainsnak": {
+          "snaktype": "value",
+          "property": "P571",
+          "hash": "c704255b22f6a9eb7be1cd8524df7d4f122e414d",
+          "datavalue": {
+            "value": {
+              "time": "+1300-00-00T00:00:00Z",
+              "timezone": 0,
+              "before": 0,
+              "after": 0,
+              "precision": 7,
+              "calendarmodel": "http://www.wikidata.org/entity/Q1985786"
+            },
+            "type": "time"
+          },
+          "datatype": "time"
+        },
+        "type": "statement",
+        "qualifiers": {
+          "P582": [
+            {
+              "snaktype": "value",
+              "property": "P582",
+              "hash": "fba7fd070cefaccea204540679a28cef103f8ae9",
+              "datavalue": {
+                "value": {
+                  "time": "+1225-00-00T00:00:00Z",
+                  "timezone": 0,
+                  "before": 0,
+                  "after": 0,
+                  "precision": 9,
+                  "calendarmodel": "http://www.wikidata.org/entity/Q1985786"
+                },
+                "type": "time"
+              },
+              "datatype": "time"
+            }
+          ],
+          "P580": [
+            {
+              "snaktype": "value",
+              "property": "P580",
+              "hash": "b7ff3de12bf77fe653e159af3eab1dc05ff9822e",
+              "datavalue": {
+                "value": {
+                  "time": "+1215-00-00T00:00:00Z",
+                  "timezone": 0,
+                  "before": 0,
+                  "after": 0,
+                  "precision": 9,
+                  "calendarmodel": "http://www.wikidata.org/entity/Q1985786"
+                },
+                "type": "time"
+              },
+              "datatype": "time"
+            }
+          ]
+        },
+        "qualifiers-order": [
+          "P582",
+          "P580"
+        ],
+        "id": "Q28100122$185c4c6a-4f34-7576-f35d-c790196897a8",
+        "rank": "normal"
+      }
+    ],
+    "P2048": [
+      {
+        "mainsnak": {
+          "snaktype": "value",
+          "property": "P2048",
+          "hash": "587b465aac0bfd63cdf70df69b0b75222c926f16",
+          "datavalue": {
+            "value": {
+              "amount": "+893",
+              "unit": "http://www.wikidata.org/entity/Q174728"
+            },
+            "type": "quantity"
+          },
+          "datatype": "quantity"
+        },
+        "type": "statement",
+        "id": "Q28100122$450d8035-48ba-b996-5b8b-72b73012ba77",
+        "rank": "normal"
+      }
+    ],
+    "P2049": [
+      {
+        "mainsnak": {
+          "snaktype": "value",
+          "property": "P2049",
+          "hash": "6cc2975f7c3d6ab63dcbb9e78a407ad2f82dcb90",
+          "datavalue": {
+            "value": {
+              "amount": "+224",
+              "unit": "http://www.wikidata.org/entity/Q174728"
+            },
+            "type": "quantity"
+          },
+          "datatype": "quantity"
+        },
+        "type": "statement",
+        "id": "Q28100122$7693d2e0-4db1-9b42-2c05-f76811423f51",
+        "rank": "normal"
+      }
+    ]
+  },
+  "sitelinks": {
+    "commonswiki": {
+      "site": "commonswiki",
+      "title": "Category:Stained-glass windows of the ambulatory of Cathédrale Notre-Dame de Chartres baie 020",
+      "badges": [],
+      "url": "https://commons.wikimedia.org/wiki/Category:Stained-glass_windows_of_the_ambulatory_of_Cath%C3%A9drale_Notre-Dame_de_Chartres_baie_020"
+    },
+    "frwiki": {
+      "site": "frwiki",
+      "title": "Vitrail de saint Martin (Chartres)",
+      "badges": [],
+      "url": "https://fr.wikipedia.org/wiki/Vitrail_de_saint_Martin_(Chartres)"
+    }
+  }
+}

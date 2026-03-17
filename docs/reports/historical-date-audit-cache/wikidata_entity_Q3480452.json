@@ -1,0 +1,299 @@
+{
+  "saved_at": "2026-03-07T14:23:57.509Z",
+  "value": {
+    "pageid": 3314865,
+    "ns": 0,
+    "title": "Q3480452",
+    "lastrevid": 2370255263,
+    "modified": "2025-06-29T23:22:35Z",
+    "type": "item",
+    "id": "Q3480452",
+    "labels": {
+      "fr": {
+        "language": "fr",
+        "value": "service militaire en France"
+      },
+      "en": {
+        "language": "en",
+        "value": "conscription in France"
+      },
+      "zh": {
+        "language": "zh",
+        "value": "三年法案"
+      },
+      "ca": {
+        "language": "ca",
+        "value": "servei militar a França"
+      },
+      "ar": {
+        "language": "ar",
+        "value": "التجنيد الإجباري في فرنسا"
+      },
+      "sl": {
+        "language": "sl",
+        "value": "naborništvo v Franciji"
+      },
+      "es": {
+        "language": "es",
+        "value": "conscripción en Francia"
+      }
+    },
+    "descriptions": {
+      "fr": {
+        "language": "fr",
+        "value": "conscription en France"
+      },
+      "en": {
+        "language": "en",
+        "value": "compulsory military service in France (1798–1997)"
+      },
+      "sl": {
+        "language": "sl",
+        "value": "obvezno služenje vojaškega roka v Franciji (1798–1997)"
+      }
+    },
+    "aliases": {
+      "fr": [
+        {
+          "language": "fr",
+          "value": "Conseil de révision"
+        },
+        {
+          "language": "fr",
+          "value": "service national français"
+        },
+        {
+          "language": "fr",
+          "value": "réformé P4"
+        },
+        {
+          "language": "fr",
+          "value": "conscription (France)"
+        },
+        {
+          "language": "fr",
+          "value": "service militaire (France)"
+        }
+      ],
+      "sl": [
+        {
+          "language": "sl",
+          "value": "francosko naborništvo"
+        },
+        {
+          "language": "sl",
+          "value": "vpokliv v Franciji"
+        }
+      ]
+    },
+    "claims": {
+      "P31": [
+        {
+          "mainsnak": {
+            "snaktype": "value",
+            "property": "P31",
+            "hash": "c6a5021f8d2b73a08f3bd36e9df12cbd0eca2448",
+            "datavalue": {
+              "value": {
+                "entity-type": "item",
+                "numeric-id": 74817647,
+                "id": "Q74817647"
+              },
+              "type": "wikibase-entityid"
+            },
+            "datatype": "wikibase-item"
+          },
+          "type": "statement",
+          "id": "Q3480452$fa1be075-4b7f-1c7c-9f84-55bb35358c7d",
+          "rank": "normal"
+        }
+      ],
+      "P17": [
+        {
+          "mainsnak": {
+            "snaktype": "value",
+            "property": "P17",
+            "hash": "c05db5d169c2560b9799d567a803d20a392f53e4",
+            "datavalue": {
+              "value": {
+                "entity-type": "item",
+                "numeric-id": 142,
+                "id": "Q142"
+              },
+              "type": "wikibase-entityid"
+            },
+            "datatype": "wikibase-item"
+          },
+          "type": "statement",
+          "id": "Q3480452$e5f088e9-4b6c-8650-3a49-19515cdc21ea",
+          "rank": "normal"
+        }
+      ],
+      "P646": [
+        {
+          "mainsnak": {
+            "snaktype": "value",
+            "property": "P646",
+            "hash": "0c92c1233e7d5460da10bdd898e293338b4f3c31",
+            "datavalue": {
+              "value": "/m/0119g1yf",
+              "type": "string"
+            },
+            "datatype": "external-id"
+          },
+          "type": "statement",
+          "id": "Q3480452$BE1EBF08-1171-42B9-8383-26974F4DC95F",
+          "rank": "normal"
+        }
+      ],
+      "P527": [
+        {
+          "mainsnak": {
+            "snaktype": "value",
+            "property": "P527",
+            "hash": "af114b3fb336ad839ef2ac48b6b2585cf51480b2",
+            "datavalue": {
+              "value": {
+                "entity-type": "item",
+                "numeric-id": 109039395,
+                "id": "Q109039395"
+              },
+              "type": "wikibase-entityid"
+            },
+            "datatype": "wikibase-item"
+          },
+          "type": "statement",
+          "id": "Q3480452$76a7e19c-44dc-4236-1965-786f3d9a9337",
+          "rank": "normal"
+        }
+      ],
+      "P910": [
+        {
+          "mainsnak": {
+            "snaktype": "value",
+            "property": "P910",
+            "hash": "87595550731de44f5df8342898db682b4e7b24f7",
+            "datavalue": {
+              "value": {
+                "entity-type": "item",
+                "numeric-id": 9637129,
+                "id": "Q9637129"
+              },
+              "type": "wikibase-entityid"
+            },
+            "datatype": "wikibase-item"
+          },
+          "type": "statement",
+          "id": "Q3480452$9f829c15-4deb-694a-3a8f-24217819ce88",
+          "rank": "normal"
+        }
+      ],
+      "P373": [
+        {
+          "mainsnak": {
+            "snaktype": "value",
+            "property": "P373",
+            "hash": "1da2cc62e88f0bad240ab58d1595f32db57fda3c",
+            "datavalue": {
+              "value": "Conscription in France",
+              "type": "string"
+            },
+            "datatype": "string"
+          },
+          "type": "statement",
+          "id": "Q3480452$474f98ff-4d5b-5678-89d3-a865ecf4e733",
+          "rank": "normal"
+        }
+      ],
+      "P571": [
+        {
+          "mainsnak": {
+            "snaktype": "value",
+            "property": "P571",
+            "hash": "740f097fcfd7ea8013077999dcb03694390895fb",
+            "datavalue": {
+              "value": {
+                "time": "+1798-00-00T00:00:00Z",
+                "timezone": 0,
+                "before": 0,
+                "after": 0,
+                "precision": 9,
+                "calendarmodel": "http://www.wikidata.org/entity/Q1985727"
+              },
+              "type": "time"
+            },
+            "datatype": "time"
+          },
+          "type": "statement",
+          "id": "Q3480452$ea1f0653-416e-2305-498a-50aa28c898fb",
+          "rank": "normal"
+        }
+      ],
+      "P576": [
+        {
+          "mainsnak": {
+            "snaktype": "value",
+            "property": "P576",
+            "hash": "f513ddd4805fb9de0eae67bfae8f70297671b459",
+            "datavalue": {
+              "value": {
+                "time": "+1997-00-00T00:00:00Z",
+                "timezone": 0,
+                "before": 0,
+                "after": 0,
+                "precision": 9,
+                "calendarmodel": "http://www.wikidata.org/entity/Q1985727"
+              },
+              "type": "time"
+            },
+            "datatype": "time"
+          },
+          "type": "statement",
+          "id": "Q3480452$06b340a3-4e39-ba45-7dc9-fda37d64d7c9",
+          "rank": "normal"
+        }
+      ],
+      "P279": [
+        {
+          "mainsnak": {
+            "snaktype": "value",
+            "property": "P279",
+            "hash": "30857a73e3c46c80438b6846aac60e59fe3089fb",
+            "datavalue": {
+              "value": {
+                "entity-type": "item",
+                "numeric-id": 580750,
+                "id": "Q580750"
+              },
+              "type": "wikibase-entityid"
+            },
+            "datatype": "wikibase-item"
+          },
+          "type": "statement",
+          "id": "Q3480452$39958903-4848-19ae-a65b-2d8d2dd450a9",
+          "rank": "normal"
+        }
+      ]
+    },
+    "sitelinks": {
+      "arwiki": {
+        "site": "arwiki",
+        "title": "التجنيد الإجباري في فرنسا",
+        "badges": [],
+        "url": "https://ar.wikipedia.org/wiki/%D8%A7%D9%84%D8%AA%D8%AC%D9%86%D9%8A%D8%AF_%D8%A7%D9%84%D8%A5%D8%AC%D8%A8%D8%A7%D8%B1%D9%8A_%D9%81%D9%8A_%D9%81%D8%B1%D9%86%D8%B3%D8%A7"
+      },
+      "enwiki": {
+        "site": "enwiki",
+        "title": "Conscription in France",
+        "badges": [],
+        "url": "https://en.wikipedia.org/wiki/Conscription_in_France"
+      },
+      "frwiki": {
+        "site": "frwiki",
+        "title": "Service militaire en France",
+        "badges": [],
+        "url": "https://fr.wikipedia.org/wiki/Service_militaire_en_France"
+      }
+    }
+  }
+}

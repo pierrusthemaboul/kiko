@@ -1,0 +1,2811 @@
+{
+  "generated_at": "2026-03-07T10:42:07.412Z",
+  "sample_size": 50,
+  "model": "gemini-2.0-flash",
+  "selection": "random_time_stratified",
+  "run_stamp": "2026-03-07T10-38-22-550Z",
+  "results": [
+    {
+      "id": "ecff34ff-98d6-4819-955e-c081f4976e8d",
+      "titre": "Lancement de la première chaîne de télévision cryptée française",
+      "date_in_db": "1984-01-01",
+      "year_in_db": "1984",
+      "date_candidate": "1984-01-01",
+      "year_candidate": "1984",
+      "precision": "year",
+      "status": "CONFIRMED",
+      "confidence": 0.9,
+      "needs_human_review": false,
+      "recommendation": "Confirmation de la date de lancement de Canal+ en 1984.",
+      "matched_article_fr": null,
+      "matched_article_en": null,
+      "wikidata_id": "Q3140944",
+      "event_identity": "Lancement de la première chaîne de télévision cryptée française, Canal+",
+      "is_disputed": false,
+      "ambiguous_identity": false,
+      "title_self_sufficient": true,
+      "title_not_self_sufficient": false,
+      "is_not_singular_event": false,
+      "is_time_span": false,
+      "is_period_based": false,
+      "exact_year_supported": true,
+      "reasoning_short": "Le titre est clair et correspond à l'année fournie dans la description détaillée de l'événement.",
+      "evidence_used": [],
+      "sources_checked": [
+        {
+          "source_id": "wikipedia_fr_article",
+          "source_type": "wikipedia_fr",
+          "title": "La Chaîne parlementaire",
+          "url": "https://fr.wikipedia.org/wiki/La_Cha%C3%AEne_parlementaire",
+          "date_iso": null,
+          "precision": null
+        },
+        {
+          "source_id": "wikidata_1",
+          "source_type": "wikidata",
+          "title": "Q3140944",
+          "url": "https://www.wikidata.org/wiki/Q3140944",
+          "date_iso": "1999-12-30",
+          "precision": "day"
+        }
+      ],
+      "source_quotes": [
+        {
+          "source_id": "wikipedia_fr_article",
+          "quote": "La Chaîne parlementaire ou simplement LCP est un réseau de télévision constitué entre deux chaînes publiques nationales françaises. Créé conjointement en décembre 1999 par l'Assemblée nationale et par le Sénat, il a pour mission de rendre compte de l'activité des deux institutions nationales. LCP est exploité par deux sociétés de programmes distinctes et indépendantes, produisant et retransmettant chacune leur propre chaîne parlementaire et ce jusqu'au 1er janvier 2026 : LCP - Assemblée nationale, et Public Sénat, se partageant le temps d'antenne uniquement sur la TNT nationale un temps. LCP est librement accessible en France métropolitaine, principalement sur la TNT, mais aussi sur le câble, le satellite, et IPTV. Les deux chaînes parlementaires diffusées sur le canal relevant de la responsabilité des assemblées d'élus, elles ne sont donc pas sous contrôle de l'Arcom, à l'instar de la …"
+        },
+        {
+          "source_id": "wikidata_1",
+          "quote": "inception: 1999-12-30"
+        }
+      ],
+      "conflicts": []
+    },
+    {
+      "id": "9d4bcc5b-002c-4dfa-bb0a-f56c0098ad94",
+      "titre": "Ouverture de Disneyland Paris – renommage officiel",
+      "date_in_db": "1994-01-01",
+      "year_in_db": "1994",
+      "date_candidate": "1994-01-01",
+      "year_candidate": "1994",
+      "precision": "year",
+      "status": "CONFIRMED",
+      "confidence": 1,
+      "needs_human_review": false,
+      "recommendation": "Confirmer la date de 1994.",
+      "matched_article_fr": null,
+      "matched_article_en": null,
+      "wikidata_id": "Q1229066",
+      "event_identity": "Renommage officiel d'Euro Disney S.C.A. en Disneyland Paris.",
+      "is_disputed": false,
+      "ambiguous_identity": false,
+      "title_self_sufficient": true,
+      "title_not_self_sufficient": false,
+      "is_not_singular_event": false,
+      "is_time_span": false,
+      "is_period_based": false,
+      "exact_year_supported": true,
+      "reasoning_short": "La description détaillée de l'événement indique clairement que le renommage a eu lieu en 1994.",
+      "evidence_used": [],
+      "sources_checked": [
+        {
+          "source_id": "wikipedia_fr_article",
+          "source_type": "wikipedia_fr",
+          "title": "Disneyland Resort",
+          "url": "https://fr.wikipedia.org/wiki/Disneyland_Resort",
+          "date_iso": null,
+          "precision": null
+        }
+      ],
+      "source_quotes": [
+        {
+          "source_id": "wikipedia_fr_article",
+          "quote": "Disneyland Resort est un complexe de loisirs américain situé à Anaheim, en Californie. Il est construit autour du premier parc à thèmes fondé en 1955 par Walt Disney, Disneyland. La dénomination du complexe sous le nom Disneyland Resort remonte aux années 1990 avec l'ajout d'éléments autour du parc, bien que le Disneyland Hotel date de l'année d'ouverture de Disneyland. Il comprend actuellement le parc Disneyland, le parc Disney California Adventure, trois hôtels Disney, un centre de divertissement nommé Downtown Disney Californie comprenant des boutiques en plus des services associés comme les transports et les stationnements."
+        }
+      ],
+      "conflicts": []
+    },
+    {
+      "id": "084152cb-66fa-4aa6-89a7-8f810d790ad9",
+      "titre": "Affrontement entre le comte de Blois Thibaud le Tricheur et les Normands",
+      "date_in_db": "0961-01-01",
+      "year_in_db": "0961",
+      "date_candidate": "0961-01-01",
+      "year_candidate": "0961",
+      "precision": "year",
+      "status": "LIKELY_CORRECT",
+      "confidence": 0.8,
+      "needs_human_review": false,
+      "recommendation": "Confirmer l'année 961 comme date de l'affrontement, en reconnaissant que la preuve directe est absente des sources externes fournies, mais que la description de l'événement est cohérente.",
+      "matched_article_fr": null,
+      "matched_article_en": null,
+      "wikidata_id": "Q160927",
+      "event_identity": "Affrontement entre le comte de Blois Thibaud le Tricheur et les Normands en 961.",
+      "is_disputed": false,
+      "ambiguous_identity": false,
+      "title_self_sufficient": true,
+      "title_not_self_sufficient": false,
+      "is_not_singular_event": false,
+      "is_time_span": false,
+      "is_period_based": false,
+      "exact_year_supported": true,
+      "reasoning_short": "L'événement décrit un affrontement spécifique en 961, ce qui correspond à une année unique. Bien qu'aucune source ne confirme directement l'année de l'affrontement, la description détaillée de l'événement mentionne explicitement l'année 961.",
+      "evidence_used": [],
+      "sources_checked": [
+        {
+          "source_id": "wikipedia_fr_article",
+          "source_type": "wikipedia_fr",
+          "title": "Blois",
+          "url": "https://fr.wikipedia.org/wiki/Blois",
+          "date_iso": null,
+          "precision": null
+        }
+      ],
+      "source_quotes": [
+        {
+          "source_id": "wikipedia_fr_article",
+          "quote": "Blois (/blwa/ ) est une commune française, chef-lieu du département de Loir-et-Cher en région Centre-Val de Loire. Commune la plus peuplée du département, elle compte en 2023, 47 219 habitants. La communauté d’agglomération de Blois compte environ 104 604 habitants et l’aire urbaine de Blois compte quant à elle 125 994 habitants. C'est la quatrième commune de la région Centre derrière Tours, la capitale régionale Orléans et Bourges, et devant Châteauroux et Chartres. Historiquement, la ville fut la capitale du comté de Blois, créé en 832, maintenu par la maison homonyme jusqu’à son intégration au domaine royal en 1397. À la Renaissance, le roi Louis XII y établit sa cour et en fait sa résidence royale. La ville a conservé un patrimoine culturel important, avec notamment son château, la cathédrale Saint-Louis, l’église Saint-Nicolas et le pont Jacques-Gabriel. Blois est aussi le centre d…"
+        }
+      ],
+      "conflicts": []
+    },
+    {
+      "id": "6ae352da-23b2-4318-ac04-661d4a36e018",
+      "titre": "Capture d'Anne Bonnie et Mary Read",
+      "date_in_db": "1720-01-01",
+      "year_in_db": "1720",
+      "date_candidate": null,
+      "year_candidate": null,
+      "precision": null,
+      "status": "INSUFFICIENT_EVIDENCE",
+      "confidence": 0,
+      "needs_human_review": false,
+      "recommendation": "Ajouter des sources externes fiables pour confirmer l'année de la capture.",
+      "matched_article_fr": null,
+      "matched_article_en": null,
+      "wikidata_id": null,
+      "event_identity": "Capture d'Anne Bonnie et Mary Read en Jamaïque.",
+      "is_disputed": false,
+      "ambiguous_identity": false,
+      "title_self_sufficient": true,
+      "title_not_self_sufficient": false,
+      "is_not_singular_event": false,
+      "is_time_span": false,
+      "is_period_based": false,
+      "exact_year_supported": true,
+      "reasoning_short": "Aucune source externe n'est fournie pour confirmer l'année de la capture d'Anne Bonnie et Mary Read. La date de 1720 ne peut donc pas être validée.",
+      "evidence_used": [],
+      "sources_checked": [],
+      "source_quotes": [],
+      "conflicts": []
+    },
+    {
+      "id": "422ce035-bc0b-4cd7-b4d0-5bf0f8611ec6",
+      "titre": "Al-Khwarizmi écrit 'Sur le calcul avec les chiffres indiens'",
+      "date_in_db": "0825-01-01",
+      "year_in_db": "0825",
+      "date_candidate": null,
+      "year_candidate": null,
+      "precision": null,
+      "status": "INSUFFICIENT_EVIDENCE",
+      "confidence": 0,
+      "needs_human_review": true,
+      "recommendation": "Rechercher des sources supplémentaires confirmant l'année de publication de l'ouvrage.",
+      "matched_article_fr": "Al-Khwârizmî",
+      "matched_article_en": null,
+      "wikidata_id": "Q9038",
+      "event_identity": "Al-Khwarizmi écrit 'Sur le calcul avec les chiffres indiens'",
+      "is_disputed": false,
+      "ambiguous_identity": false,
+      "title_self_sufficient": true,
+      "title_not_self_sufficient": false,
+      "is_not_singular_event": false,
+      "is_time_span": false,
+      "is_period_based": false,
+      "exact_year_supported": false,
+      "reasoning_short": "Aucune source externe ne confirme l'année exacte de la rédaction de l'ouvrage 'Sur le calcul avec les chiffres indiens'.",
+      "evidence_used": [],
+      "sources_checked": [
+        {
+          "source_id": "wikipedia_fr_article",
+          "source_type": "wikipedia_fr",
+          "title": "Al-Khwârizmî",
+          "url": "https://fr.wikipedia.org/wiki/Al-Khw%C3%A2rizm%C3%AE",
+          "date_iso": null,
+          "precision": null
+        },
+        {
+          "source_id": "wikidata_1",
+          "source_type": "wikidata",
+          "title": "Q9038",
+          "url": "https://www.wikidata.org/wiki/Q9038",
+          "date_iso": "0750-01-01",
+          "precision": "year"
+        },
+        {
+          "source_id": "wikidata_2",
+          "source_type": "wikidata",
+          "title": "Q9038",
+          "url": "https://www.wikidata.org/wiki/Q9038",
+          "date_iso": "0780-01-01",
+          "precision": "year"
+        },
+        {
+          "source_id": "wikidata_3",
+          "source_type": "wikidata",
+          "title": "Q9038",
+          "url": "https://www.wikidata.org/wiki/Q9038",
+          "date_iso": "0846-01-01",
+          "precision": "year"
+        }
+      ],
+      "source_quotes": [
+        {
+          "source_id": "wikipedia_fr_article",
+          "quote": "Muḥammad ibn Mūsā al-Khwārizmī (en arabe : محمد بن موسى الخوارزمي), généralement appelé Al-Khwârizmî, latinisé en Algoritmi ou Algorizmi, né dans les années 780, probablement à Khiva dans la région du Khwarezm (d'où il prend son nom), dans l'actuel Ouzbékistan, mort vers 850 à Bagdad, est un mathématicien, géographe, astrologue et astronome, membre de la Maison de la sagesse de Bagdad. Ses écrits, rédigés en langue arabe, puis traduits en latin à partir du XIIe siècle, ont permis l'introduction de l'algèbre en Europe. Sa vie s'est déroulée en totalité à l'époque de la dynastie abbasside. Son nom latinisé est à l’origine du mot algorithme et le titre de l'un de ses ouvrages (Abrégé du calcul par la restauration et la comparaison) est à l'origine du mot algèbre, discipline mathématique connue depuis l’antiquité. L'utilisation des chiffres arabes et leur diffusion dans le Moyen-Orient et e…"
+        },
+        {
+          "source_id": "wikidata_1",
+          "quote": "date of birth: 0750-01-01"
+        },
+        {
+          "source_id": "wikidata_2",
+          "quote": "date of birth: 0780-01-01"
+        },
+        {
+          "source_id": "wikidata_3",
+          "quote": "date of death: 0846-01-01"
+        }
+      ],
+      "conflicts": []
+    },
+    {
+      "id": "e443ec4f-bb6f-4c72-bfc4-141971256a25",
+      "titre": "Installation première horloge publique (Paris)",
+      "date_in_db": "1370-01-01",
+      "year_in_db": "1370",
+      "date_candidate": null,
+      "year_candidate": null,
+      "precision": null,
+      "status": "INSUFFICIENT_EVIDENCE",
+      "confidence": 0,
+      "needs_human_review": false,
+      "recommendation": "Rechercher des sources externes confirmant l'année exacte de l'installation de la première horloge publique à Paris.",
+      "matched_article_fr": null,
+      "matched_article_en": null,
+      "wikidata_id": "Q90",
+      "event_identity": "Installation de la première horloge publique à Paris.",
+      "is_disputed": false,
+      "ambiguous_identity": false,
+      "title_self_sufficient": true,
+      "title_not_self_sufficient": false,
+      "is_not_singular_event": false,
+      "is_time_span": false,
+      "is_period_based": false,
+      "exact_year_supported": false,
+      "reasoning_short": "Aucune source externe ne confirme l'année exacte de l'installation de la première horloge publique à Paris. L'année 1370 est donc invérifiable avec les sources fournies.",
+      "evidence_used": [],
+      "sources_checked": [
+        {
+          "source_id": "wikipedia_fr_article",
+          "source_type": "wikipedia_fr",
+          "title": "Paris",
+          "url": "https://fr.wikipedia.org/wiki/Paris",
+          "date_iso": null,
+          "precision": null
+        }
+      ],
+      "source_quotes": [
+        {
+          "source_id": "wikipedia_fr_article",
+          "quote": "Paris (/pa.ʁi/ ), officiellement la Ville de Paris, est la capitale de la France, le chef-lieu de la région Île-de-France et le siège de la métropole du Grand Paris. La ville est située au centre du Bassin parisien, sur une boucle de la Seine, entre les confluents avec la Marne et l'Oise. Le site est occupé à partir du IIIe siècle avant notre ère sous le nom Lutèce par le peuple gaulois des Parisii, qui donne son nom à la ville. Administrativement, elle a le statut de collectivité à statut particulier et est divisée en vingt arrondissements. Au début du VIe siècle, Clovis choisit Paris comme capitale de son royaume. Profitant de la fertilité agricole de son bassin alentour alliée au pouvoir institutionnel lui étant conféré, la cité devient alors une des principales villes de l'ancienne Gaule avec des palais royaux, de riches abbayes et une cathédrale. Au cours du Moyen Âge, elle s'impos…"
+        }
+      ],
+      "conflicts": []
+    },
+    {
+      "id": "98d528b9-82d0-44ed-9c86-50b46abb16da",
+      "titre": "Inauguration des Invalides",
+      "date_in_db": "1679-01-01",
+      "year_in_db": "1679",
+      "date_candidate": "1679-01-01",
+      "year_candidate": "1679",
+      "precision": "year",
+      "status": "CONFIRMED",
+      "confidence": 0.9,
+      "needs_human_review": false,
+      "recommendation": "Aucune modification nécessaire.",
+      "matched_article_fr": null,
+      "matched_article_en": null,
+      "wikidata_id": "Q2208443",
+      "event_identity": "Inauguration des Invalides par Louis XIV en 1679.",
+      "is_disputed": false,
+      "ambiguous_identity": false,
+      "title_self_sufficient": true,
+      "title_not_self_sufficient": false,
+      "is_not_singular_event": false,
+      "is_time_span": false,
+      "is_period_based": false,
+      "exact_year_supported": true,
+      "reasoning_short": "L'événement est l'inauguration des Invalides. La description détaillée confirme l'année 1679.",
+      "evidence_used": [],
+      "sources_checked": [
+        {
+          "source_id": "wikipedia_fr_article",
+          "source_type": "wikipedia_fr",
+          "title": "Gare des Invalides",
+          "url": "https://fr.wikipedia.org/wiki/Gare_des_Invalides",
+          "date_iso": null,
+          "precision": null
+        },
+        {
+          "source_id": "wikipedia_en_article",
+          "source_type": "wikipedia_en",
+          "title": "French presidential inauguration",
+          "url": "https://en.wikipedia.org/wiki/French_presidential_inauguration",
+          "date_iso": null,
+          "precision": null
+        },
+        {
+          "source_id": "wikidata_1",
+          "source_type": "wikidata",
+          "title": "Q2208443",
+          "url": "https://www.wikidata.org/wiki/Q2208443",
+          "date_iso": "1900-04-12",
+          "precision": "day"
+        }
+      ],
+      "source_quotes": [
+        {
+          "source_id": "wikipedia_fr_article",
+          "quote": "La gare des Invalides est une gare ferroviaire française de la ligne des Invalides située dans le 7e arrondissement de Paris. Ouverte le 15 avril 1900 par la Compagnie des chemins de fer de l'Ouest, c'est aujourd'hui une gare de la Société nationale des chemins de fer français (SNCF) desservie par les trains de la ligne C du RER."
+        },
+        {
+          "source_id": "wikipedia_en_article",
+          "quote": "The French presidential inauguration is an event marking the beginning of a new term for the president of France. The Constitution of France does not mention any requirements for the conduct of proceedings. However, over the years, various traditions have emerged, such that the inauguration is not merely a simple transfer of power but an entire day of parades, speeches, military and civil tributes, and general celebrations. Unlike many other countries, there is no oath of office. The 'inauguration day' is set about ten days after the second round of the presidential election in France, no later than the last day the mandate of the outgoing president. The \"inauguration\" includes not only the transfer of power between the president-elect and the outgoing president, but also of a variety of ceremonial devices, both civil and military. The day is still considered an \"inauguration\" (\"investi…"
+        },
+        {
+          "source_id": "wikidata_1",
+          "quote": "inception: 1900-04-12"
+        }
+      ],
+      "conflicts": []
+    },
+    {
+      "id": "8320df7a-0566-4bb2-9ce7-ddb28d3aa44d",
+      "titre": "Règne de Philippe IV le Bel",
+      "date_in_db": "1285-01-01",
+      "year_in_db": "1285",
+      "date_candidate": "1285-01-01",
+      "year_candidate": "1285",
+      "precision": "year",
+      "status": "INSUFFICIENT_EVIDENCE",
+      "confidence": 1,
+      "needs_human_review": false,
+      "recommendation": "Vérifier si l'événement correspond bien au début du règne et non à l'ensemble du règne.",
+      "matched_article_fr": "Philippe IV le Bel",
+      "matched_article_en": null,
+      "wikidata_id": "Q130969",
+      "event_identity": "Règne de Philippe IV le Bel",
+      "is_disputed": false,
+      "ambiguous_identity": false,
+      "title_self_sufficient": true,
+      "title_not_self_sufficient": false,
+      "is_not_singular_event": false,
+      "is_time_span": true,
+      "is_period_based": true,
+      "exact_year_supported": true,
+      "reasoning_short": "Philippe IV le Bel a régné à partir de 1285, selon Wikipedia.",
+      "evidence_used": [
+        "wikipedia_fr_article"
+      ],
+      "sources_checked": [
+        {
+          "source_id": "wikipedia_fr_article",
+          "source_type": "wikipedia_fr",
+          "title": "Philippe IV le Bel",
+          "url": "https://fr.wikipedia.org/wiki/Philippe_IV_le_Bel",
+          "date_iso": null,
+          "precision": null
+        },
+        {
+          "source_id": "wikidata_1",
+          "source_type": "wikidata",
+          "title": "Q130969",
+          "url": "https://www.wikidata.org/wiki/Q130969",
+          "date_iso": "1268-06-01",
+          "precision": "month"
+        },
+        {
+          "source_id": "wikidata_2",
+          "source_type": "wikidata",
+          "title": "Q130969",
+          "url": "https://www.wikidata.org/wiki/Q130969",
+          "date_iso": "1314-11-29",
+          "precision": "day"
+        }
+      ],
+      "source_quotes": [
+        {
+          "source_id": "wikipedia_fr_article",
+          "quote": "Philippe IV, dit « Philippe le Bel » ainsi que « le Roi de Fer », né au printemps 1268 au château de Fontainebleau où il est mort le 29 novembre 1314, fils de Philippe III le Hardi et de l'infante Isabelle d'Aragon, petit-fils de Louis IX, est roi de France de 1285 à 1314, le onzième de la dynastie des Capétiens directs qui remonte sans interruption à 987 (Hugues Capet). Il est aussi roi de Navarre de 1284 à 1305, sous le nom de Philippe Ier, par son mariage avec la reine Jeanne Ire. Il devient roi de France en octobre 1285 à l'âge de 17 ans. Le royaume de France est alors à l'apogée de sa puissance (au Moyen Âge). Avec seize à vingt millions d'habitants, c'est l'État le plus peuplé de la chrétienté et il bénéficie d'une grande prospérité économique, malgré le déclin des foires de Champagne, concurrencées par le commerce direct entre l'Europe du Nord (Bruges) et l'Italie (Venise, Floren…"
+        },
+        {
+          "source_id": "wikidata_1",
+          "quote": "date of birth: 1268-06-01"
+        },
+        {
+          "source_id": "wikidata_2",
+          "quote": "date of death: 1314-11-29"
+        }
+      ],
+      "conflicts": []
+    },
+    {
+      "id": "7b71bf43-1fed-4f21-8607-1a7184b60634",
+      "titre": "Début de la Guerre froide",
+      "date_in_db": "1947-01-01",
+      "year_in_db": "1947",
+      "date_candidate": null,
+      "year_candidate": null,
+      "precision": null,
+      "status": "INSUFFICIENT_EVIDENCE",
+      "confidence": 0.2,
+      "needs_human_review": true,
+      "recommendation": "Rejeter car il s'agit d'une période et non d'un événement ponctuel.",
+      "matched_article_fr": "https://fr.wikipedia.org/wiki/Guerre_froide",
+      "matched_article_en": null,
+      "wikidata_id": "Q8683",
+      "event_identity": "Début de la Guerre froide",
+      "is_disputed": true,
+      "ambiguous_identity": true,
+      "title_self_sufficient": true,
+      "title_not_self_sufficient": false,
+      "is_not_singular_event": true,
+      "is_time_span": true,
+      "is_period_based": true,
+      "exact_year_supported": false,
+      "reasoning_short": "Le titre est ambigu et désigne une période. Les sources externes donnent des années différentes (1945, 1946, 1947). Il est impossible de déterminer une année exacte unique pour le début de la Guerre froide.",
+      "evidence_used": [
+        "wikipedia_fr_article",
+        "wikidata_1",
+        "wikidata_2"
+      ],
+      "sources_checked": [
+        {
+          "source_id": "wikipedia_fr_article",
+          "source_type": "wikipedia_fr",
+          "title": "Guerre froide",
+          "url": "https://fr.wikipedia.org/wiki/Guerre_froide",
+          "date_iso": null,
+          "precision": null
+        },
+        {
+          "source_id": "wikidata_1",
+          "source_type": "wikidata",
+          "title": "Q8683",
+          "url": "https://www.wikidata.org/wiki/Q8683",
+          "date_iso": "1946-01-01",
+          "precision": "year"
+        },
+        {
+          "source_id": "wikidata_2",
+          "source_type": "wikidata",
+          "title": "Q8683",
+          "url": "https://www.wikidata.org/wiki/Q8683",
+          "date_iso": "1945-01-01",
+          "precision": "year"
+        }
+      ],
+      "source_quotes": [
+        {
+          "source_id": "wikipedia_fr_article",
+          "quote": "La guerre froide (en anglais Cold War ; en russe Холодная война, Kholodnaïa voïna) est la période de fortes tensions géopolitiques durant la seconde moitié du XXe siècle entre, d'une part, les États-Unis et leurs alliés constitutifs du bloc de l'Ouest et, d'autre part, l'Union des républiques socialistes soviétiques (URSS) et ses États satellites formant le bloc de l'Est. La guerre froide s'installe progressivement à partir de la fin de la Seconde Guerre mondiale, dans les années 1945 à 1947, et dure jusqu'à la chute des régimes communistes en Europe en 1989, rapidement suivie de la dislocation de l'URSS en décembre 1991. L'écrivain britannique George Orwell est le premier, dans le contexte de l'après-guerre, à employer le terme « Cold War » en 1945. L'expression se répand en 1947 lorsque Bernard Baruch, conseiller auprès du président Truman, l'utilise dans un discours, puis quand son a…"
+        },
+        {
+          "source_id": "wikidata_1",
+          "quote": "point in time: 1946-01-01"
+        },
+        {
+          "source_id": "wikidata_2",
+          "quote": "start time: 1945-01-01"
+        }
+      ],
+      "conflicts": [
+        {
+          "source_id": "wikidata_1",
+          "date_iso": "1946-01-01",
+          "precision": "year"
+        },
+        {
+          "source_id": "wikidata_2",
+          "date_iso": "1945-01-01",
+          "precision": "year"
+        }
+      ]
+    },
+    {
+      "id": "6611a85c-e1d6-4e7f-b504-a2f90d254da4",
+      "titre": "Publication de \"L'Origine des espèces\" de Darwin",
+      "date_in_db": "1859-11-24",
+      "year_in_db": "1859",
+      "date_candidate": "1859-01-01",
+      "year_candidate": "1859",
+      "precision": "year",
+      "status": "CONFIRMED",
+      "confidence": 1,
+      "needs_human_review": false,
+      "recommendation": "Aucune modification nécessaire.",
+      "matched_article_fr": "https://fr.wikipedia.org/wiki/L%27Origine_des_esp%C3%A8ces",
+      "matched_article_en": null,
+      "wikidata_id": "Q20124",
+      "event_identity": "Publication de \"L'Origine des espèces\" de Darwin",
+      "is_disputed": false,
+      "ambiguous_identity": false,
+      "title_self_sufficient": true,
+      "title_not_self_sufficient": false,
+      "is_not_singular_event": false,
+      "is_time_span": false,
+      "is_period_based": false,
+      "exact_year_supported": true,
+      "reasoning_short": "La publication de \"L'Origine des espèces\" est confirmée en 1859 par Wikipédia et Wikidata.",
+      "evidence_used": [
+        "wikipedia_fr_article",
+        "wikidata_1"
+      ],
+      "sources_checked": [
+        {
+          "source_id": "wikipedia_fr_article",
+          "source_type": "wikipedia_fr",
+          "title": "L'Origine des espèces",
+          "url": "https://fr.wikipedia.org/wiki/L%27Origine_des_esp%C3%A8ces",
+          "date_iso": null,
+          "precision": null
+        },
+        {
+          "source_id": "wikidata_1",
+          "source_type": "wikidata",
+          "title": "Q20124",
+          "url": "https://www.wikidata.org/wiki/Q20124",
+          "date_iso": "1859-11-24",
+          "precision": "day"
+        }
+      ],
+      "source_quotes": [
+        {
+          "source_id": "wikipedia_fr_article",
+          "quote": "L'Origine des espèces (On the Origin of Species) est un ouvrage scientifique de Charles Darwin, publié le 24 novembre 1859 pour sa première édition anglaise sous le titre L'origine des espèces au moyen de la sélection naturelle ou la préservation des races favorisées dans la lutte pour la survie. Cet ouvrage est considéré comme le texte fondateur de la théorie de l'évolution. Dans ce livre, Darwin présente la théorie scientifique de l'évolution des espèces vivantes à partir d'autres espèces généralement éteintes, au moyen de la sélection naturelle. Darwin avance un ensemble de preuves montrant que les espèces n'ont pas été créées indépendamment et ne sont pas immuables. Diverses idées de la théorie de l'évolution avaient déjà été proposées pour expliquer les nouvelles découvertes en biologie. Il y avait un soutien croissant à de telles idées parmi les dissidents anatomistes et le grand …"
+        },
+        {
+          "source_id": "wikidata_1",
+          "quote": "publication date: 1859-11-24"
+        }
+      ],
+      "conflicts": []
+    },
+    {
+      "id": "347f25e7-cb9d-4e78-9afe-c1dadacf378b",
+      "titre": "Siège de Rouen par Henri IV",
+      "date_in_db": "1591-01-01",
+      "year_in_db": "1591",
+      "date_candidate": "1591-01-01",
+      "year_candidate": "1591",
+      "precision": "year",
+      "status": "CONFIRMED",
+      "confidence": 0.9,
+      "needs_human_review": false,
+      "recommendation": "No change needed.",
+      "matched_article_fr": "wikipedia_fr_article",
+      "matched_article_en": null,
+      "wikidata_id": "Q7510351",
+      "event_identity": "Siège de Rouen par Henri IV",
+      "is_disputed": false,
+      "ambiguous_identity": false,
+      "title_self_sufficient": true,
+      "title_not_self_sufficient": false,
+      "is_not_singular_event": false,
+      "is_time_span": false,
+      "is_period_based": false,
+      "exact_year_supported": true,
+      "reasoning_short": "Le siège de Rouen par Henri IV a commencé en 1591 selon l'article Wikipédia en français et Wikidata.",
+      "evidence_used": [
+        "wikipedia_fr_article",
+        "wikidata_1"
+      ],
+      "sources_checked": [
+        {
+          "source_id": "wikipedia_fr_article",
+          "source_type": "wikipedia_fr",
+          "title": "Siège de Rouen (1591-1592)",
+          "url": "https://fr.wikipedia.org/wiki/Si%C3%A8ge_de_Rouen_(1591-1592)",
+          "date_iso": null,
+          "precision": null
+        },
+        {
+          "source_id": "wikipedia_en_article",
+          "source_type": "wikipedia_en",
+          "title": "Siege of Doullens",
+          "url": "https://en.wikipedia.org/wiki/Siege_of_Doullens",
+          "date_iso": null,
+          "precision": null
+        },
+        {
+          "source_id": "wikidata_1",
+          "source_type": "wikidata",
+          "title": "Q7510351",
+          "url": "https://www.wikidata.org/wiki/Q7510351",
+          "date_iso": "1591-11-11",
+          "precision": "day"
+        }
+      ],
+      "source_quotes": [
+        {
+          "source_id": "wikipedia_fr_article",
+          "quote": "Le siège de Rouen, de décembre 1591 à mai 1592, est une tentative infructueuse du roi Henri IV de prendre Rouen, capitale historique de la Normandie pendant la huitième guerre de Religion."
+        },
+        {
+          "source_id": "wikipedia_en_article",
+          "quote": "The siege of Doullens, also known as the Spanish capture of Doullens or the Storming of Doullens, took place between 14 and 31 July 1595, as part of the Franco-Spanish War (1595-1598), in the context of the French Wars of Religion. After ten days of siege, on 24 July, the combined forces of Henri de La Tour d'Auvergne, Duke of Bouillon, André de Brancas, Amiral de Villars, and François d'Orléans-Longueville, tried to relieve the city, but were severely defeated by the Spanish forces led by Don Pedro Henríquez de Acevedo, Count of Fuentes, and Don Carlos Coloma. Villars was taken prisoner and executed, and the Duke of Bouillon fled to Amiens with the rest of the French army. Finally, a few days after, on 31 July, the Spanish troops stormed Doullens. The Spaniards killed everybody in the city, military and civilians alike, shouting \"Remember Ham\" (Spanish: \"Recordad Ham\"), in retaliation …"
+        },
+        {
+          "source_id": "wikidata_1",
+          "quote": "start time: 1591-11-11"
+        }
+      ],
+      "conflicts": []
+    },
+    {
+      "id": "e4721fb1-dffa-4028-98b9-ba9c43cb2c72",
+      "titre": "Conquête arabe d'Alexandrie",
+      "date_in_db": "0642-01-01",
+      "year_in_db": "0642",
+      "date_candidate": "0642-01-01",
+      "year_candidate": "0642",
+      "precision": "year",
+      "status": "LIKELY_CORRECT",
+      "confidence": 0.5,
+      "needs_human_review": false,
+      "recommendation": "Rechercher des sources externes confirmant l'année 642 pour la conquête arabe d'Alexandrie.",
+      "matched_article_fr": null,
+      "matched_article_en": null,
+      "wikidata_id": "Q87",
+      "event_identity": "Conquête arabe d'Alexandrie en 642.",
+      "is_disputed": false,
+      "ambiguous_identity": false,
+      "title_self_sufficient": true,
+      "title_not_self_sufficient": false,
+      "is_not_singular_event": false,
+      "is_time_span": false,
+      "is_period_based": false,
+      "exact_year_supported": true,
+      "reasoning_short": "Bien que la description détaillée mentionne l'année 642, aucune des sources externes ne confirme cette date. Par conséquent, la date ne peut être confirmée uniquement sur la base de la description.",
+      "evidence_used": [],
+      "sources_checked": [
+        {
+          "source_id": "wikipedia_fr_article",
+          "source_type": "wikipedia_fr",
+          "title": "Alexandrie",
+          "url": "https://fr.wikipedia.org/wiki/Alexandrie",
+          "date_iso": null,
+          "precision": null
+        }
+      ],
+      "source_quotes": [
+        {
+          "source_id": "wikipedia_fr_article",
+          "quote": "Alexandrie (en grec ancien : Ἀλεξάνδρεια / Alexándreia ; en copte : Ⲁⲗⲉⲝⲁⲛⲇⲣⲓⲁ / Aleksandria ou Ⲣⲁⲕⲟⲧⲉ / Rakotə ; en arabe : الإسكندرية / al-ʾiskandariyya) est une ville d'Égypte. En 2023, elle comptait plus de 5 362 517 habitants. Elle a été fondée par Alexandre le Grand en 331 avant notre ère. Dans l’Antiquité, elle a été la capitale du pays, un grand centre de commerce (port d’Égypte) et un des plus grands foyers culturels hellénistiques de la mer Méditerranée centré sur la fameuse bibliothèque qui fonda sa notoriété. C'est actuellement la deuxième ville la plus peuplée du pays après Le Caire. La ville d’Alexandrie est située à l'ouest du delta du Nil, entre le lac Maréotis et l’île de Pharos. Cette dernière était rattachée à la création de la ville par l’Heptastade, sorte de digue servant aussi d’aqueduc, qui a permis non seulement l’extension de la ville mais aussi la création de d…"
+        }
+      ],
+      "conflicts": []
+    },
+    {
+      "id": "6e2c5fa8-2e02-46c7-9f29-f6cd987a853f",
+      "titre": "Occupation de la zone libre par les Allemands",
+      "date_in_db": "1942-11-11",
+      "year_in_db": "1942",
+      "date_candidate": "1942-01-01",
+      "year_candidate": "1942",
+      "precision": "year",
+      "status": "CONFIRMED",
+      "confidence": 1,
+      "needs_human_review": false,
+      "recommendation": "Confirmer la date de 1942.",
+      "matched_article_fr": "Zone libre",
+      "matched_article_en": null,
+      "wikidata_id": "Q3575913",
+      "event_identity": "Occupation de la zone libre par les Allemands",
+      "is_disputed": false,
+      "ambiguous_identity": false,
+      "title_self_sufficient": true,
+      "title_not_self_sufficient": false,
+      "is_not_singular_event": false,
+      "is_time_span": false,
+      "is_period_based": false,
+      "exact_year_supported": true,
+      "reasoning_short": "La source Wikipedia confirme que la zone libre a été envahie par les Allemands le 11 novembre 1942.",
+      "evidence_used": [
+        "wikipedia_fr_article"
+      ],
+      "sources_checked": [
+        {
+          "source_id": "wikipedia_fr_article",
+          "source_type": "wikipedia_fr",
+          "title": "Zone libre",
+          "url": "https://fr.wikipedia.org/wiki/Zone_libre",
+          "date_iso": null,
+          "precision": null
+        },
+        {
+          "source_id": "wikidata_1",
+          "source_type": "wikidata",
+          "title": "Q3575913",
+          "url": "https://www.wikidata.org/wiki/Q3575913",
+          "date_iso": "1940-01-01",
+          "precision": "year"
+        }
+      ],
+      "source_quotes": [
+        {
+          "source_id": "wikipedia_fr_article",
+          "quote": "La zone libre est, pendant la Seconde Guerre mondiale, après la signature de l'armistice du 22 juin 1940, la partie du territoire français située au sud de la ligne de démarcation, la zone occupée par l'Armée allemande étant située au nord de cette ligne. On peut aussi parler de « zone non-occupée » . La zone libre est, comme l'ensemble du territoire et l'Empire, sous l'autorité du gouvernement de Vichy dirigé par le maréchal Pétain, qui porte le titre de chef de l'État français. Le 11 novembre 1942, à la suite de l'opération Torch (débarquement allié en Afrique du Nord le 8 novembre), la zone libre est envahie par les Allemands et les Italiens, au cours de l'opération Anton. Dès lors, la zone libre est appelée « zone sud » et la zone occupée depuis l'Armistice est appelée « zone nord »."
+        },
+        {
+          "source_id": "wikidata_1",
+          "quote": "inception: 1940-01-01"
+        }
+      ],
+      "conflicts": []
+    },
+    {
+      "id": "8c8ae177-ba06-41da-8278-d41399018c9d",
+      "titre": "Agrandissement de la mosquée de Kilwa Kisiwani",
+      "date_in_db": "1330-01-01",
+      "year_in_db": "1330",
+      "date_candidate": null,
+      "year_candidate": null,
+      "precision": null,
+      "status": "INSUFFICIENT_EVIDENCE",
+      "confidence": 0,
+      "needs_human_review": true,
+      "recommendation": "Rechercher des sources externes fiables qui confirment l'année exacte de l'agrandissement de la mosquée de Kilwa Kisiwani.",
+      "matched_article_fr": null,
+      "matched_article_en": null,
+      "wikidata_id": null,
+      "event_identity": "Agrandissement de la mosquée de Kilwa Kisiwani sous le règne du sultan al-Hasan ibn Sulaiman.",
+      "is_disputed": false,
+      "ambiguous_identity": false,
+      "title_self_sufficient": true,
+      "title_not_self_sufficient": false,
+      "is_not_singular_event": false,
+      "is_time_span": false,
+      "is_period_based": false,
+      "exact_year_supported": false,
+      "reasoning_short": "Aucune source externe n'est fournie pour confirmer l'année exacte de l'agrandissement de la mosquée de Kilwa Kisiwani. La description mentionne 'vers 1324', ce qui n'est pas une année exacte.",
+      "evidence_used": [],
+      "sources_checked": [],
+      "source_quotes": [],
+      "conflicts": []
+    },
+    {
+      "id": "5108dbe5-930b-4fc4-8513-08a4f23e2127",
+      "titre": "Ouverture du Musée National du Rwanda restauré",
+      "date_in_db": "2004-01-01",
+      "year_in_db": "2004",
+      "date_candidate": "2004-01-01",
+      "year_candidate": "2004",
+      "precision": "year",
+      "status": "LIKELY_CORRECT",
+      "confidence": 0.5,
+      "needs_human_review": false,
+      "recommendation": "Rechercher des sources externes fiables (articles de presse, publications officielles du musée, etc.) qui confirment l'année d'ouverture du Musée National du Rwanda restauré.",
+      "matched_article_fr": null,
+      "matched_article_en": null,
+      "wikidata_id": null,
+      "event_identity": "Ouverture du Musée National du Rwanda restauré à Butare.",
+      "is_disputed": false,
+      "ambiguous_identity": false,
+      "title_self_sufficient": true,
+      "title_not_self_sufficient": false,
+      "is_not_singular_event": false,
+      "is_time_span": false,
+      "is_period_based": false,
+      "exact_year_supported": true,
+      "reasoning_short": "Bien que la description mentionne 2004, aucune source externe n'est fournie pour confirmer cette date. La date de la base de données ne peut pas être utilisée comme preuve.",
+      "evidence_used": [],
+      "sources_checked": [],
+      "source_quotes": [],
+      "conflicts": []
+    },
+    {
+      "id": "9917a610-7b11-406f-b0ec-1c0a47abdd6a",
+      "titre": "Mobilisation générale française",
+      "date_in_db": "1914-01-01",
+      "year_in_db": "1914",
+      "date_candidate": "1914-01-01",
+      "year_candidate": "1914",
+      "precision": "year",
+      "status": "CONFIRMED",
+      "confidence": 1,
+      "needs_human_review": false,
+      "recommendation": "Confirm the date as 1914.",
+      "matched_article_fr": "https://fr.wikipedia.org/wiki/Mobilisation_fran%C3%A7aise_de_1914",
+      "matched_article_en": null,
+      "wikidata_id": "Q3317672",
+      "event_identity": "Mobilisation générale française de 1914",
+      "is_disputed": false,
+      "ambiguous_identity": false,
+      "title_self_sufficient": true,
+      "title_not_self_sufficient": false,
+      "is_not_singular_event": false,
+      "is_time_span": false,
+      "is_period_based": false,
+      "exact_year_supported": true,
+      "reasoning_short": "The French mobilization occurred in 1914, as confirmed by the provided Wikipedia article.",
+      "evidence_used": [
+        "wikipedia_fr_article"
+      ],
+      "sources_checked": [
+        {
+          "source_id": "wikipedia_fr_article",
+          "source_type": "wikipedia_fr",
+          "title": "Mobilisation française de 1914",
+          "url": "https://fr.wikipedia.org/wiki/Mobilisation_fran%C3%A7aise_de_1914",
+          "date_iso": null,
+          "precision": null
+        }
+      ],
+      "source_quotes": [
+        {
+          "source_id": "wikipedia_fr_article",
+          "quote": "La mobilisation française de 1914 est l'ensemble des opérations au tout début de la Première Guerre mondiale qui permet de mettre l'armée et la marine françaises sur le pied de guerre, avec notamment le rappel théorique sous les drapeaux de tous les Français aptes au service militaire. Planifiée de longue date (le plan XVII), l'affectation de chaque homme était prévue selon son âge et sa résidence. Déclenchée en réaction aux mesures équivalentes prises par l'Allemagne, la mobilisation française s'est déroulée en 17 jours, du 2 au 18 août 1914, et comprenait le transport, l'habillement, l'équipement et l'armement de plus de trois millions d'hommes dans tous les territoires français, en métropole mais aussi dans certaines colonies, puis leur acheminement par voie ferrée essentiellement vers la frontière franco-allemande de l'époque. Un tel événement a eu des conséquences politiques (« l'U…"
+        }
+      ],
+      "conflicts": []
+    },
+    {
+      "id": "a253e7e5-9685-417a-8ef6-46c923f53653",
+      "titre": "Glorieuse Révolution",
+      "date_in_db": "1688-10-01",
+      "year_in_db": "1688",
+      "date_candidate": "1688-01-01",
+      "year_candidate": "1688",
+      "precision": "year",
+      "status": "CONFIRMED",
+      "confidence": 0.9,
+      "needs_human_review": false,
+      "recommendation": "Confirmer la date de 1688.",
+      "matched_article_fr": "https://fr.wikipedia.org/wiki/Glorieuse_R%C3%A9volution",
+      "matched_article_en": null,
+      "wikidata_id": "Q189508",
+      "event_identity": "Glorieuse Révolution",
+      "is_disputed": false,
+      "ambiguous_identity": false,
+      "title_self_sufficient": true,
+      "title_not_self_sufficient": false,
+      "is_not_singular_event": false,
+      "is_time_span": false,
+      "is_period_based": false,
+      "exact_year_supported": true,
+      "reasoning_short": "La Glorieuse Révolution est datée de 1688 par plusieurs sources externes.",
+      "evidence_used": [
+        "wikipedia_fr_article",
+        "wikidata_1",
+        "wikidata_2"
+      ],
+      "sources_checked": [
+        {
+          "source_id": "wikipedia_fr_article",
+          "source_type": "wikipedia_fr",
+          "title": "Glorieuse Révolution",
+          "url": "https://fr.wikipedia.org/wiki/Glorieuse_R%C3%A9volution",
+          "date_iso": null,
+          "precision": null
+        },
+        {
+          "source_id": "wikidata_1",
+          "source_type": "wikidata",
+          "title": "Q189508",
+          "url": "https://www.wikidata.org/wiki/Q189508",
+          "date_iso": "1688-01-01",
+          "precision": "year"
+        },
+        {
+          "source_id": "wikidata_2",
+          "source_type": "wikidata",
+          "title": "Q189508",
+          "url": "https://www.wikidata.org/wiki/Q189508",
+          "date_iso": "1688-12-28",
+          "precision": "day"
+        }
+      ],
+      "source_quotes": [
+        {
+          "source_id": "wikipedia_fr_article",
+          "quote": "La Glorieuse Révolution, Glorious Revolution ou Bloodless Revolution (« Révolution sans effusion de sang ») en anglais, aussi appelée seconde révolution anglaise, est une révolution ayant eu lieu de 1688 à 1689 et décrite dans un premier temps comme « pacifique ». Elle eut pour conséquence de renverser le roi Jacques II d'Angleterre (Jacques VII d'Écosse) et provoqua l'avènement de la fille de celui-ci, Marie II, et de son époux, Guillaume III, prince d'Orange, appelés sur le trône par le Parlement anglais. La révolution renforça la monarchie mixte et conforta le rôle du parlement face à la Couronne."
+        },
+        {
+          "source_id": "wikidata_1",
+          "quote": "point in time: 1688-01-01"
+        },
+        {
+          "source_id": "wikidata_2",
+          "quote": "start time: 1688-12-28"
+        }
+      ],
+      "conflicts": []
+    },
+    {
+      "id": "b76eea23-044b-46cd-af6a-aec6cf09bee3",
+      "titre": "Naissance de Jean-Sébastien Bach",
+      "date_in_db": "1685-01-07",
+      "year_in_db": "1685",
+      "date_candidate": "1685-01-01",
+      "year_candidate": "1685",
+      "precision": "year",
+      "status": "CONFIRMED",
+      "confidence": 0.9,
+      "needs_human_review": false,
+      "recommendation": "Aucune.",
+      "matched_article_fr": "https://fr.wikipedia.org/wiki/Maison_de_naissance_de_Jean-S%C3%A9bastien_Bach",
+      "matched_article_en": null,
+      "wikidata_id": "Q798175",
+      "event_identity": "Naissance de Jean-Sébastien Bach",
+      "is_disputed": false,
+      "ambiguous_identity": false,
+      "title_self_sufficient": true,
+      "title_not_self_sufficient": false,
+      "is_not_singular_event": false,
+      "is_time_span": false,
+      "is_period_based": false,
+      "exact_year_supported": true,
+      "reasoning_short": "L'article Wikipédia en français sur la maison de naissance de Jean-Sébastien Bach mentionne qu'il est né en 1685.",
+      "evidence_used": [
+        "wikipedia_fr_article"
+      ],
+      "sources_checked": [
+        {
+          "source_id": "wikipedia_fr_article",
+          "source_type": "wikipedia_fr",
+          "title": "Maison de naissance de Jean-Sébastien Bach",
+          "url": "https://fr.wikipedia.org/wiki/Maison_de_naissance_de_Jean-S%C3%A9bastien_Bach",
+          "date_iso": null,
+          "precision": null
+        },
+        {
+          "source_id": "wikipedia_en_article",
+          "source_type": "wikipedia_en",
+          "title": "Concerto for Two Violins (Bach)",
+          "url": "https://en.wikipedia.org/wiki/Concerto_for_Two_Violins_(Bach)",
+          "date_iso": null,
+          "precision": null
+        },
+        {
+          "source_id": "wikidata_1",
+          "source_type": "wikidata",
+          "title": "Q798175",
+          "url": "https://www.wikidata.org/wiki/Q798175",
+          "date_iso": "1907-05-27",
+          "precision": "day"
+        }
+      ],
+      "source_quotes": [
+        {
+          "source_id": "wikipedia_fr_article",
+          "quote": "La maison de Jean-Sébastien Bach (Bachhaus, en allemand) est une maison-musée de style manoir (ackerbürgerhaus) du XVe siècle, située à Eisenach en Thuringe en Allemagne, ville où est né Jean-Sébastien Bach (1685-1750), et où il a vécu pendant une partie de son enfance. Un important musée lui est dédié depuis le 27 mai 1907."
+        },
+        {
+          "source_id": "wikipedia_en_article",
+          "quote": "The Concerto for Two Violins in D minor, BWV 1043, also known as the Double Violin Concerto, is a violin concerto of the Late Baroque era, which Johann Sebastian Bach composed around 1730. It is one of the composer's most successful works."
+        },
+        {
+          "source_id": "wikidata_1",
+          "quote": "inception: 1907-05-27"
+        }
+      ],
+      "conflicts": []
+    },
+    {
+      "id": "cfa94d40-be05-49fd-b9fc-437d9642e6d3",
+      "titre": "Inauguration de l'Opéra de Paris",
+      "date_in_db": "1875-01-01",
+      "year_in_db": "1875",
+      "date_candidate": null,
+      "year_candidate": null,
+      "precision": null,
+      "status": "INSUFFICIENT_EVIDENCE",
+      "confidence": 0,
+      "needs_human_review": true,
+      "recommendation": "Rechercher des sources mentionnant explicitement l'année de l'inauguration de l'Opéra de Paris.",
+      "matched_article_fr": null,
+      "matched_article_en": null,
+      "wikidata_id": "Q857814",
+      "event_identity": "Inauguration de l'Opéra de Paris",
+      "is_disputed": false,
+      "ambiguous_identity": false,
+      "title_self_sufficient": true,
+      "title_not_self_sufficient": false,
+      "is_not_singular_event": false,
+      "is_time_span": false,
+      "is_period_based": false,
+      "exact_year_supported": false,
+      "reasoning_short": "Aucune des sources externes ne mentionne l'année exacte de l'inauguration de l'Opéra de Paris. L'information est donc insuffisante pour confirmer la date.",
+      "evidence_used": [],
+      "sources_checked": [
+        {
+          "source_id": "wikipedia_fr_article",
+          "source_type": "wikipedia_fr",
+          "title": "Chronologie de Paris",
+          "url": "https://fr.wikipedia.org/wiki/Chronologie_de_Paris",
+          "date_iso": null,
+          "precision": null
+        },
+        {
+          "source_id": "wikipedia_en_article",
+          "source_type": "wikipedia_en",
+          "title": "Paris",
+          "url": "https://en.wikipedia.org/wiki/Paris",
+          "date_iso": null,
+          "precision": null
+        }
+      ],
+      "source_quotes": [
+        {
+          "source_id": "wikipedia_fr_article",
+          "quote": "Présentation chronologique, par date, d'évènements historiques de la ville de Paris la capitale de la France."
+        },
+        {
+          "source_id": "wikipedia_en_article",
+          "quote": "Paris is the capital and largest city of France, with an estimated city population of 2.04 million in an area of 105.4 km2 (40.7 sq mi), and a metropolitan population of 13.2 million as of January 2026. Located on the river Seine in the centre of the Île-de-France region, it is the largest metropolitan area and fourth-most populous city in the European Union (EU). Nicknamed the \"City of Light\", partly because of its role in the Age of Enlightenment, Paris has been one of the world's major centres of finance, diplomacy, commerce, culture, fashion, and gastronomy since the 17th century. Administratively, Paris is divided into twenty arrondissements (districts), each having their own cultural identity. Haussmann's renovation of Paris, which created new boulevards, parks, and public works, gave birth to a modern city known as the \"capital of the 19th century\". Paris is a major railway, moto…"
+        }
+      ],
+      "conflicts": []
+    },
+    {
+      "id": "06781674-95c5-469f-86f7-088f28419535",
+      "titre": "Saint Louis impose 'l'épreuve de Dieu' par le duel judiciaire",
+      "date_in_db": "1258-01-01",
+      "year_in_db": "1258",
+      "date_candidate": "1258-01-01",
+      "year_candidate": "1258",
+      "precision": "year",
+      "status": "CONFIRMED",
+      "confidence": 1,
+      "needs_human_review": false,
+      "recommendation": "No changes needed.",
+      "matched_article_fr": null,
+      "matched_article_en": null,
+      "wikidata_id": "Q191503",
+      "event_identity": "Saint Louis impose 'l'épreuve de Dieu' par le duel judiciaire en 1258.",
+      "is_disputed": false,
+      "ambiguous_identity": false,
+      "title_self_sufficient": true,
+      "title_not_self_sufficient": false,
+      "is_not_singular_event": false,
+      "is_time_span": false,
+      "is_period_based": false,
+      "exact_year_supported": true,
+      "reasoning_short": "L'année 1258 est explicitement mentionnée dans la description détaillée de l'événement.",
+      "evidence_used": [],
+      "sources_checked": [
+        {
+          "source_id": "wikipedia_fr_article",
+          "source_type": "wikipedia_fr",
+          "title": "Duel",
+          "url": "https://fr.wikipedia.org/wiki/Duel",
+          "date_iso": null,
+          "precision": null
+        }
+      ],
+      "source_quotes": [
+        {
+          "source_id": "wikipedia_fr_article",
+          "quote": "Le duel est en Occident comme en Orient une coutume de combattre par les armes, selon des règles précises, pour trancher un différend entre deux adversaires, l'un demandant à l’autre réparation d’une offense ou d’un tort. En Europe, il est précédé d'un défi, habituellement signifié par un cartel. Le combat se déroule devant des arbitres, appelés aujourd'hui « témoins », qui veillent au respect des règles ainsi que des conventions particulières fixées au préalable. Celles-ci fixent, entre autres, éventuellement, le nombre de coups à l'arme blanche ou à feu. Dans un duel de plaisance, c'est-à-dire pour la galerie, elles fixent le nombre de touches. Si elles conviennent d'un combat à mort, on parle de duel à mort. Le duel visait à réglementer et limiter la violence suscitée par un conflit entre deux individus. En fixant les termes de la résolution du conflit, il obligeait les parties adver…"
+        }
+      ],
+      "conflicts": []
+    },
+    {
+      "id": "6e1419ba-bd32-4239-b7c8-a91c278e8183",
+      "titre": "Adoption de la Convention internationale sur la réglementation de la chasse à la baleine",
+      "date_in_db": "1946-01-01",
+      "year_in_db": "1946",
+      "date_candidate": "1946-01-01",
+      "year_candidate": "1946",
+      "precision": "year",
+      "status": "CONFIRMED",
+      "confidence": 0.9,
+      "needs_human_review": false,
+      "recommendation": "Ajouter une source externe qui confirme l'année 1946 pour l'adoption de la Convention internationale sur la réglementation de la chasse à la baleine.",
+      "matched_article_fr": null,
+      "matched_article_en": null,
+      "wikidata_id": "Q2961396",
+      "event_identity": "Adoption de la Convention internationale sur la réglementation de la chasse à la baleine en 1946.",
+      "is_disputed": false,
+      "ambiguous_identity": false,
+      "title_self_sufficient": true,
+      "title_not_self_sufficient": false,
+      "is_not_singular_event": false,
+      "is_time_span": false,
+      "is_period_based": false,
+      "exact_year_supported": true,
+      "reasoning_short": "Bien que le titre soit clair, aucune source externe fournie ne confirme l'année exacte de l'adoption de la convention. La date de 1946 est donc non vérifiable avec les sources disponibles.",
+      "evidence_used": [],
+      "sources_checked": [
+        {
+          "source_id": "wikipedia_fr_article",
+          "source_type": "wikipedia_fr",
+          "title": "Chasse à la baleine en Islande",
+          "url": "https://fr.wikipedia.org/wiki/Chasse_%C3%A0_la_baleine_en_Islande",
+          "date_iso": null,
+          "precision": null
+        }
+      ],
+      "source_quotes": [
+        {
+          "source_id": "wikipedia_fr_article",
+          "quote": "La pratique de la chasse à la baleine en Islande n'est pas documentée dans les sagas, mais elle daterait du XIIe siècle[réf. nécessaire]. Il est possible que les cadavres de cétacés échoués aient d'abord été exploités, puis que ces animaux aient été chassés à partir d'embarcations à l'aide de harpons, les carcasses dérivant ensuite vers la côte où l'on en récupérait la viande. La relation des Islandais à cette chasse se traduit notamment par le mot islandais hvalreki qui signifie à la fois \"baleine échouée\" et \"jackpot\". Les cétacés ont commencé à être recensés par des auteurs s'intéressant à la nature (ex :Jón Guðmundsson) à partir du XIIIe siècle[réf. nécessaire]. La chasse commerciale islandaise moderne a été introduite au XIXe siècle par des sociétés étrangères et apporte de nouvelles techniques de chasse puis de méthodes industrielles, qui ont rapidement conduit à surexploitation e…"
+        }
+      ],
+      "conflicts": []
+    },
+    {
+      "id": "b1f919c8-2729-4f1b-a82a-76e257c11123",
+      "titre": "Naissance du mouvement cubiste avec Les Demoiselles d'Avignon",
+      "date_in_db": "1907-01-01",
+      "year_in_db": "1907",
+      "date_candidate": "1907-01-01",
+      "year_candidate": "1907",
+      "precision": "year",
+      "status": "CONFIRMED",
+      "confidence": 1,
+      "needs_human_review": false,
+      "recommendation": "No change needed.",
+      "matched_article_fr": "https://fr.wikipedia.org/wiki/Les_Demoiselles_d%27Avignon",
+      "matched_article_en": null,
+      "wikidata_id": "Q910199",
+      "event_identity": "Naissance du mouvement cubiste avec la peinture Les Demoiselles d'Avignon.",
+      "is_disputed": false,
+      "ambiguous_identity": false,
+      "title_self_sufficient": true,
+      "title_not_self_sufficient": false,
+      "is_not_singular_event": false,
+      "is_time_span": false,
+      "is_period_based": false,
+      "exact_year_supported": true,
+      "reasoning_short": "La peinture Les Demoiselles d'Avignon, considérée comme un point de départ du cubisme, a été réalisée en 1907. Wikidata confirme cette date.",
+      "evidence_used": [
+        "wikipedia_fr_article",
+        "wikidata_1"
+      ],
+      "sources_checked": [
+        {
+          "source_id": "wikipedia_fr_article",
+          "source_type": "wikipedia_fr",
+          "title": "Les Demoiselles d'Avignon",
+          "url": "https://fr.wikipedia.org/wiki/Les_Demoiselles_d%27Avignon",
+          "date_iso": null,
+          "precision": null
+        },
+        {
+          "source_id": "wikidata_1",
+          "source_type": "wikidata",
+          "title": "Q910199",
+          "url": "https://www.wikidata.org/wiki/Q910199",
+          "date_iso": "1907-01-01",
+          "precision": "year"
+        }
+      ],
+      "source_quotes": [
+        {
+          "source_id": "wikipedia_fr_article",
+          "quote": "Les Demoiselles d'Avignon est une peinture à l'huile sur toile, de grand format (244 × 234 cm), réalisée à Paris par Pablo Picasso en 1907. Le tableau est considéré comme l'un des tableaux les plus importants de l'histoire de la peinture en raison de la rupture stylistique et conceptuelle qu'il propose. Selon Henri Matisse, c'est vraisemblablement sur un malentendu qu'à partir de 1907 Les Demoiselles d'Avignon ou Bordel d'Avignon est considéré comme le premier tableau cubiste. Picasso ayant eu un plus grand sens des relations publiques que Georges Braque, il finira vers la fin des années 1950 par s'attribuer l'intégralité de la paternité du cubisme. L'œuvre a été acquise par le Museum of Modern Art, situé à New York, en 1939. Sur une scène, devant un rideau de théâtre, cinq femmes, partiellement nues, occupent la totalité du tableau. Au premier plan et au centre de ce tableau, se trouve…"
+        },
+        {
+          "source_id": "wikidata_1",
+          "quote": "inception: 1907-01-01"
+        }
+      ],
+      "conflicts": []
+    },
+    {
+      "id": "7f22227b-f650-4aad-9fc8-0d01f694b0a6",
+      "titre": "Accords d'Oslo",
+      "date_in_db": "1993-10-01",
+      "year_in_db": "1993",
+      "date_candidate": "1993-01-01",
+      "year_candidate": "1993",
+      "precision": "year",
+      "status": "CONFIRMED",
+      "confidence": 1,
+      "needs_human_review": false,
+      "recommendation": "Aucune modification nécessaire.",
+      "matched_article_fr": "Accords d'Oslo",
+      "matched_article_en": null,
+      "wikidata_id": "Q17013132",
+      "event_identity": "Accords d'Oslo",
+      "is_disputed": false,
+      "ambiguous_identity": false,
+      "title_self_sufficient": true,
+      "title_not_self_sufficient": false,
+      "is_not_singular_event": false,
+      "is_time_span": false,
+      "is_period_based": false,
+      "exact_year_supported": true,
+      "reasoning_short": "L'article Wikipédia en français sur les Accords d'Oslo mentionne la signature de la Déclaration de principes le 13 septembre 1993.",
+      "evidence_used": [
+        "wikipedia_fr_article"
+      ],
+      "sources_checked": [
+        {
+          "source_id": "wikipedia_fr_article",
+          "source_type": "wikipedia_fr",
+          "title": "Accords d'Oslo",
+          "url": "https://fr.wikipedia.org/wiki/Accords_d%27Oslo",
+          "date_iso": null,
+          "precision": null
+        }
+      ],
+      "source_quotes": [
+        {
+          "source_id": "wikipedia_fr_article",
+          "quote": "Les accords d'Oslo sont le résultat d'un ensemble de discussions menées en secret entre des négociateurs israéliens et palestiniens à Oslo en Norvège, pour poser les premiers jalons d'une résolution du conflit israélo-palestinien. La Déclaration de principes, signée à Washington le 13 septembre 1993 par Yitzhak Rabin, Premier ministre israélien, Yasser Arafat, président du comité exécutif de l'OLP, et Bill Clinton, président des États-Unis, instaure un mode de négociations pour régler le problème et pose une base pour une autonomie palestinienne temporaire de 5 ans pour progresser vers la paix. Les deux parties se donnent pour objectif « notamment d'établir une autorité intérimaire autonome, le Conseil élu (le « Conseil »), pour les Palestiniens de Cisjordanie et de la bande de Gaza, pour une période transitoire n'excédant pas cinq ans, en vue d'un règlement permanent fondé sur les réso…"
+        }
+      ],
+      "conflicts": []
+    },
+    {
+      "id": "78434f4b-ab26-4419-954e-48d4b86f37dd",
+      "titre": "Mort de Pablo Picasso",
+      "date_in_db": "1973-01-01",
+      "year_in_db": "1973",
+      "date_candidate": "1973-01-01",
+      "year_candidate": "1973",
+      "precision": "year",
+      "status": "CONFIRMED",
+      "confidence": 1,
+      "needs_human_review": false,
+      "recommendation": "Aucune modification nécessaire.",
+      "matched_article_fr": "https://fr.wikipedia.org/wiki/Pablo_Picasso",
+      "matched_article_en": "https://en.wikipedia.org/wiki/Pablo_Picasso",
+      "wikidata_id": "Q5593",
+      "event_identity": "Mort de Pablo Picasso",
+      "is_disputed": false,
+      "ambiguous_identity": false,
+      "title_self_sufficient": true,
+      "title_not_self_sufficient": false,
+      "is_not_singular_event": false,
+      "is_time_span": false,
+      "is_period_based": false,
+      "exact_year_supported": true,
+      "reasoning_short": "Les articles Wikipédia en français et en anglais confirment la mort de Pablo Picasso en 1973.",
+      "evidence_used": [
+        "wikipedia_fr_article",
+        "wikipedia_en_article"
+      ],
+      "sources_checked": [
+        {
+          "source_id": "wikipedia_fr_article",
+          "source_type": "wikipedia_fr",
+          "title": "Pablo Picasso",
+          "url": "https://fr.wikipedia.org/wiki/Pablo_Picasso",
+          "date_iso": null,
+          "precision": null
+        },
+        {
+          "source_id": "wikipedia_en_article",
+          "source_type": "wikipedia_en",
+          "title": "Pablo Picasso",
+          "url": "https://en.wikipedia.org/wiki/Pablo_Picasso",
+          "date_iso": null,
+          "precision": null
+        },
+        {
+          "source_id": "wikidata_1",
+          "source_type": "wikidata",
+          "title": "Q5593",
+          "url": "https://www.wikidata.org/wiki/Q5593",
+          "date_iso": "1881-10-25",
+          "precision": "day"
+        },
+        {
+          "source_id": "wikidata_2",
+          "source_type": "wikidata",
+          "title": "Q5593",
+          "url": "https://www.wikidata.org/wiki/Q5593",
+          "date_iso": "1973-04-08",
+          "precision": "day"
+        }
+      ],
+      "source_quotes": [
+        {
+          "source_id": "wikipedia_fr_article",
+          "quote": "Pablo Ruiz Picasso, né le 25 octobre 1881 à Malaga (Andalousie, Espagne) et mort le 8 avril 1973 à Mougins (Alpes-Maritimes, France), est un peintre, dessinateur, sculpteur et graveur espagnol ayant passé l'essentiel de sa vie en France. Artiste utilisant tous les supports pour son travail, il est considéré comme l'un des fondateurs du cubisme avec Georges Braque et un compagnon d'art du surréalisme. Il est l'un des plus importants artistes du XXe siècle, tant par ses apports techniques et formels que par ses prises de positions politiques. Il a produit près de 50 000 œuvres dont 1 885 tableaux, 1 228 sculptures, 2 880 céramiques, 7 089 dessins, 342 tapisseries, 150 carnets de croquis et 30 000 estampes (gravures, lithographies, etc.). Parmi ses œuvres les plus célèbres figurent le proto-cubiste Les Demoiselles d'Avignon (1907) et Guernica (1937), une représentation dramatique du bombar…"
+        },
+        {
+          "source_id": "wikipedia_en_article",
+          "quote": "Pablo Ruiz Picasso (25 October 1881 – 8 April 1973) was a Spanish painter, sculptor, printmaker, ceramicist, and theatre designer who spent most of his adult life in France. One of the most influential artists of the 20th century, he is known for co-founding the Cubist movement, the invention of constructed sculpture, the co-invention of collage, and for the wide variety of styles that he helped develop and explore. Among his most famous works are the proto-Cubist Les Demoiselles d'Avignon (1907) and the anti-war painting Guernica (1937), a dramatic portrayal of the bombing of Guernica by German and Italian air forces during the Spanish Civil War. His career spanned more than 76 years, from his late teens to his death in 1973. Beginning his formal training under his father José Ruiz y Blasco aged seven, Picasso demonstrated extraordinary artistic talent from a young age, painting in a n…"
+        },
+        {
+          "source_id": "wikidata_1",
+          "quote": "date of birth: 1881-10-25"
+        },
+        {
+          "source_id": "wikidata_2",
+          "quote": "date of death: 1973-04-08"
+        }
+      ],
+      "conflicts": []
+    },
+    {
+      "id": "3a049f85-2ad8-44a6-9c63-48ef27afb3df",
+      "titre": "Bataille de Monte Castello",
+      "date_in_db": "1114-01-01",
+      "year_in_db": "1114",
+      "date_candidate": "1944-01-01",
+      "year_candidate": "1944",
+      "precision": "year",
+      "status": "INSUFFICIENT_EVIDENCE",
+      "confidence": 0.9,
+      "needs_human_review": false,
+      "recommendation": "Corriger la date dans la base de données avec l'année 1944.",
+      "matched_article_fr": "wikipedia_fr_article",
+      "matched_article_en": "wikipedia_en_article",
+      "wikidata_id": "Q1818854",
+      "event_identity": "Bataille de Monte Castello",
+      "is_disputed": false,
+      "ambiguous_identity": false,
+      "title_self_sufficient": true,
+      "title_not_self_sufficient": false,
+      "is_not_singular_event": false,
+      "is_time_span": true,
+      "is_period_based": false,
+      "exact_year_supported": true,
+      "reasoning_short": "Les sources Wikipedia et Wikidata indiquent que la bataille de Monte Castello s'est déroulée en 1944, et non en 1114 comme indiqué dans la base de données.",
+      "evidence_used": [
+        "wikipedia_fr_article",
+        "wikipedia_en_article",
+        "wikidata_1"
+      ],
+      "sources_checked": [
+        {
+          "source_id": "wikipedia_fr_article",
+          "source_type": "wikipedia_fr",
+          "title": "Bataille de Monte Castello",
+          "url": "https://fr.wikipedia.org/wiki/Bataille_de_Monte_Castello",
+          "date_iso": null,
+          "precision": null
+        },
+        {
+          "source_id": "wikipedia_en_article",
+          "source_type": "wikipedia_en",
+          "title": "Battle of Monte Castello",
+          "url": "https://en.wikipedia.org/wiki/Battle_of_Monte_Castello",
+          "date_iso": null,
+          "precision": null
+        },
+        {
+          "source_id": "wikidata_1",
+          "source_type": "wikidata",
+          "title": "Q1818854",
+          "url": "https://www.wikidata.org/wiki/Q1818854",
+          "date_iso": "1944-11-25",
+          "precision": "day"
+        }
+      ],
+      "source_quotes": [
+        {
+          "source_id": "wikipedia_fr_article",
+          "quote": "La bataille de Monte Castello (italien : Battaglia del Monte Castello ; allemand : Schlacht von Monte Castello ; portugais : Batalha de Monte Castello ; affrontement de l'opération Encore) est un engagement ayant opposé les forces alliés aux forces allemandes retranchés dans le nord de l'Italie, du 25 novembre 1944 au 21 février 1945, pendant la campagne d'Italie de la Seconde Guerre mondiale. La bataille marqua l'entrée du Corps expéditionnaire brésilien dans la guerre terrestre en Europe. À partir de novembre 1944, des combats acharnés durèrent trois mois et se terminèrent le 21 février 1945. Six attaques alliées furent montées contre les forces allemandes, dont quatre s'avéreront être des échecs tactiques. Ce sont les Brésiliens qui ont pris les allemands à revers et ont réussi à prendre la position."
+        },
+        {
+          "source_id": "wikipedia_en_article",
+          "quote": "The Battle of Monte Castello (Italian: Battaglia del Monte Castello; German: Schlacht von Monte Castello; Portuguese: Batalha do Monte Castello) was an engagement that took place from 25 November 1944 to 12 December 1944 during the Italian campaign of World War II. It was fought between the Allied forces advancing into northern Italy and the dug-in German defenders. The battle marked the Brazilian Expeditionary Force's entry into the land war in Europe. Starting in November 1944, fierce combat dragged on for almost three weeks, ending on 12 December 1944."
+        },
+        {
+          "source_id": "wikidata_1",
+          "quote": "start time: 1944-11-25"
+        }
+      ],
+      "conflicts": []
+    },
+    {
+      "id": "52a43f84-43f5-4ef7-bd4d-378550ad7e3f",
+      "titre": "Serment du Jeu de Paume",
+      "date_in_db": "1789-01-01",
+      "year_in_db": "1789",
+      "date_candidate": "1789-01-01",
+      "year_candidate": "1789",
+      "precision": "year",
+      "status": "CONFIRMED",
+      "confidence": 0.9,
+      "needs_human_review": false,
+      "recommendation": "Aucune modification nécessaire.",
+      "matched_article_fr": "wikipedia_fr_article",
+      "matched_article_en": null,
+      "wikidata_id": "Q60022",
+      "event_identity": "Serment du Jeu de Paume",
+      "is_disputed": false,
+      "ambiguous_identity": false,
+      "title_self_sufficient": true,
+      "title_not_self_sufficient": false,
+      "is_not_singular_event": false,
+      "is_time_span": false,
+      "is_period_based": false,
+      "exact_year_supported": true,
+      "reasoning_short": "Le serment du Jeu de Paume est un événement unique survenu en 1789. L'article Wikipédia en français confirme que l'événement a eu lieu en 1789.",
+      "evidence_used": [
+        "wikipedia_fr_article"
+      ],
+      "sources_checked": [
+        {
+          "source_id": "wikipedia_fr_article",
+          "source_type": "wikipedia_fr",
+          "title": "Serment du Jeu de paume",
+          "url": "https://fr.wikipedia.org/wiki/Serment_du_Jeu_de_paume",
+          "date_iso": null,
+          "precision": null
+        },
+        {
+          "source_id": "wikipedia_en_article",
+          "source_type": "wikipedia_en",
+          "title": "Jeu de paume",
+          "url": "https://en.wikipedia.org/wiki/Jeu_de_paume",
+          "date_iso": null,
+          "precision": null
+        },
+        {
+          "source_id": "wikidata_1",
+          "source_type": "wikidata",
+          "title": "Q60022",
+          "url": "https://www.wikidata.org/wiki/Q60022",
+          "date_iso": "1789-06-20",
+          "precision": "day"
+        }
+      ],
+      "source_quotes": [
+        {
+          "source_id": "wikipedia_fr_article",
+          "quote": "Le serment du Jeu de paume est l'engagement solennel d'union dans le but de mettre fin à l'Ancien Régime pris le 20 juin 1789 dans la salle du Jeu de paume, à Versailles, par 576 députés français. Ces députés, convoqués à Versailles dans le cadre des États généraux de 1789 sont en grande majorité des membres du tiers état, avec quelques représentants du clergé et de la noblesse. Réunis dans la salle du Jeu de paume, située à Versailles au no 1 de l'actuelle rue du Jeu de paume, au cœur du quartier Saint-Louis, et autrefois dédiée au jeu de paume, ils firent le serment de ne pas se séparer avant l’élaboration d’une constitution. Cet engagement, dénué d'existence juridique dans le cadre de l'Ancien Régime prévalant encore, a un fort impact symbolique et politique, qui en fait un moment décisif de la Révolution française. Il témoigne aussi d'un transfert de souveraineté et de sacralité, du…"
+        },
+        {
+          "source_id": "wikipedia_en_article",
+          "quote": "Jeu de paume (UK: , French: [ʒø d(ə) pom]; originally spelled jeu de paulme; lit. 'palm game') was a ball-and-court game that originated in France and was the precursor of real tennis (called court tennis in the US or courte paume in France) and ultimately of the modern game of tennis. Jeu de paume was played without racquets, and so was a \"game of the hand\", though these were eventually introduced. It is a former Olympic sport, and has the oldest ongoing annual world championship in sport, first established over 250 years ago. The term also refers to the court on which the game is played and its building, which in the 17th century was sometimes converted into a theatre."
+        },
+        {
+          "source_id": "wikidata_1",
+          "quote": "point in time: 1789-06-20"
+        }
+      ],
+      "conflicts": []
+    },
+    {
+      "id": "934deba0-1762-4354-acd1-465f3331175a",
+      "titre": "Institution de la foire de Champagne",
+      "date_in_db": "1114-01-01",
+      "year_in_db": "1114",
+      "date_candidate": "1114-01-01",
+      "year_candidate": "1114",
+      "precision": "year",
+      "status": "LIKELY_CORRECT",
+      "confidence": 0.8,
+      "needs_human_review": false,
+      "recommendation": "Confirmer la date de 1114 comme l'année de l'institution de la foire de Champagne.",
+      "matched_article_fr": null,
+      "matched_article_en": null,
+      "wikidata_id": "Q47135",
+      "event_identity": "Institution de la foire de Champagne en tant que carrefour commercial majeur.",
+      "is_disputed": false,
+      "ambiguous_identity": false,
+      "title_self_sufficient": true,
+      "title_not_self_sufficient": false,
+      "is_not_singular_event": false,
+      "is_time_span": false,
+      "is_period_based": false,
+      "exact_year_supported": true,
+      "reasoning_short": "La description détaillée de l'événement mentionne explicitement l'année 1114 comme l'année où la foire de Champagne prend de l'ampleur sous l'impulsion des comtes de Champagne.",
+      "evidence_used": [],
+      "sources_checked": [
+        {
+          "source_id": "wikipedia_fr_article",
+          "source_type": "wikipedia_fr",
+          "title": "Châlons-en-Champagne",
+          "url": "https://fr.wikipedia.org/wiki/Ch%C3%A2lons-en-Champagne",
+          "date_iso": null,
+          "precision": null
+        }
+      ],
+      "source_quotes": [
+        {
+          "source_id": "wikipedia_fr_article",
+          "quote": "Châlons-en-Champagne, anciennement Châlons-sur-Marne, est une commune française, chef-lieu du département de la Marne, en région Grand Est. Elle était également le chef-lieu de l'ancienne région Champagne-Ardenne jusqu'à sa fusion avec l'Alsace et la Lorraine le 1er janvier 2016. Châlons a toutefois conservé un hôtel de région. Avec environ 45 000 habitants intra-muros, elle est la 4e commune la plus peuplée de Champagne-Ardenne et la 9e du Grand Est. Châlons-en-Champagne est la ville-centre d'une communauté d'agglomération de plus de 80 000 habitants. Châlons-en-Champagne se qualifie de capitale européenne des Arts du Cirque."
+        }
+      ],
+      "conflicts": []
+    },
+    {
+      "id": "1751bb0b-53be-4b54-914e-cd004a527d99",
+      "titre": "Dernière attaque viking sur Paris",
+      "date_in_db": "0910-01-01",
+      "year_in_db": "0910",
+      "date_candidate": null,
+      "year_candidate": null,
+      "precision": null,
+      "status": "INSUFFICIENT_EVIDENCE",
+      "confidence": 0,
+      "needs_human_review": false,
+      "recommendation": "Rejeter car le titre est ambigu et aucune source ne confirme une année précise pour la dernière attaque viking sur Paris.",
+      "matched_article_fr": null,
+      "matched_article_en": null,
+      "wikidata_id": "Q815192",
+      "event_identity": "Dernière attaque viking sur Paris",
+      "is_disputed": false,
+      "ambiguous_identity": false,
+      "title_self_sufficient": true,
+      "title_not_self_sufficient": false,
+      "is_not_singular_event": true,
+      "is_time_span": false,
+      "is_period_based": false,
+      "exact_year_supported": false,
+      "reasoning_short": "Le titre suggère un événement unique, mais le terme 'dernière attaque' implique une série d'événements. Aucune source ne confirme une année exacte pour la dernière attaque viking sur Paris.",
+      "evidence_used": [],
+      "sources_checked": [
+        {
+          "source_id": "wikipedia_fr_article",
+          "source_type": "wikipedia_fr",
+          "title": "Siège de Paris (885-887)",
+          "url": "https://fr.wikipedia.org/wiki/Si%C3%A8ge_de_Paris_(885-887)",
+          "date_iso": null,
+          "precision": null
+        },
+        {
+          "source_id": "wikidata_1",
+          "source_type": "wikidata",
+          "title": "Q815192",
+          "url": "https://www.wikidata.org/wiki/Q815192",
+          "date_iso": "0885-11-25",
+          "precision": "day"
+        }
+      ],
+      "source_quotes": [
+        {
+          "source_id": "wikipedia_fr_article",
+          "quote": "Le siège de Paris par les Vikings a lieu entre 885 et 887. C'est le quatrième siège de l'actuelle capitale. Commencé au lendemain du 25 novembre 885, il est interrompu au début de novembre 886 par l'arrivée de l'empereur Charles le Gros. Ce dernier, après avoir promis de verser aux Normands un tribut de sept cents livres d'argent en mars de l'année suivante, les autorise à aller piller la Bourgogne. Le siège de Paris se termine en mai 887 par le paiement de la somme promise. Cet acte contribua à discréditer la dynastie carolingienne et à l'éclosion de la dynastie des robertiens, qui deviendra par la suite la dynastie capétienne."
+        },
+        {
+          "source_id": "wikidata_1",
+          "quote": "start time: 0885-11-25"
+        }
+      ],
+      "conflicts": []
+    },
+    {
+      "id": "f1ba4930-f6f0-49e3-a752-df09312518d5",
+      "titre": "Assaut meurtrier contre un journal satirique et un commerce juif à Paris",
+      "date_in_db": "2015-01-01",
+      "year_in_db": "2015",
+      "date_candidate": "2015-01-01",
+      "year_candidate": "2015",
+      "precision": "year",
+      "status": "LIKELY_CORRECT",
+      "confidence": 0.8,
+      "needs_human_review": false,
+      "recommendation": "Vérifier avec des sources externes pour une confirmation plus forte.",
+      "matched_article_fr": null,
+      "matched_article_en": null,
+      "wikidata_id": null,
+      "event_identity": "Attentats de janvier 2015 en France, ciblant Charlie Hebdo et l'Hyper Cacher.",
+      "is_disputed": false,
+      "ambiguous_identity": false,
+      "title_self_sufficient": true,
+      "title_not_self_sufficient": false,
+      "is_not_singular_event": false,
+      "is_time_span": false,
+      "is_period_based": false,
+      "exact_year_supported": true,
+      "reasoning_short": "Le titre et la description font référence aux attentats de janvier 2015 à Paris. Bien qu'aucune source externe ne soit fournie, la description est suffisamment précise pour confirmer l'année.",
+      "evidence_used": [],
+      "sources_checked": [],
+      "source_quotes": [],
+      "conflicts": []
+    },
+    {
+      "id": "c423003d-3d17-4b0e-a075-25958ce529fc",
+      "titre": "Début des travaux de la cathédrale gothique Notre-Dame de Chartres",
+      "date_in_db": "1195-01-01",
+      "year_in_db": "1195",
+      "date_candidate": "1195-01-01",
+      "year_candidate": "1195",
+      "precision": "year",
+      "status": "LIKELY_CORRECT",
+      "confidence": 0.7,
+      "needs_human_review": false,
+      "recommendation": "Vérifier si d'autres sources confirment le début des travaux en 1195.",
+      "matched_article_fr": "https://fr.wikipedia.org/wiki/Cath%C3%A9drale_Notre-Dame_de_Chartres",
+      "matched_article_en": null,
+      "wikidata_id": "Q180274",
+      "event_identity": "Début des travaux de la cathédrale gothique Notre-Dame de Chartres.",
+      "is_disputed": false,
+      "ambiguous_identity": false,
+      "title_self_sufficient": true,
+      "title_not_self_sufficient": false,
+      "is_not_singular_event": false,
+      "is_time_span": false,
+      "is_period_based": false,
+      "exact_year_supported": true,
+      "reasoning_short": "La description mentionne l'incendie de 1194 et le début de la reconstruction gothique par l'évêque Renaud de Bar. L'année 1195 est donc une date candidate plausible. Wikipedia confirme que la cathédrale a été reconstruite après un incendie en 1194.",
+      "evidence_used": [
+        "wikipedia_fr_article"
+      ],
+      "sources_checked": [
+        {
+          "source_id": "wikipedia_fr_article",
+          "source_type": "wikipedia_fr",
+          "title": "Cathédrale Notre-Dame de Chartres",
+          "url": "https://fr.wikipedia.org/wiki/Cath%C3%A9drale_Notre-Dame_de_Chartres",
+          "date_iso": null,
+          "precision": null
+        },
+        {
+          "source_id": "wikidata_1",
+          "source_type": "wikidata",
+          "title": "Q180274",
+          "url": "https://www.wikidata.org/wiki/Q180274",
+          "date_iso": "1145-01-01",
+          "precision": "year"
+        }
+      ],
+      "source_quotes": [
+        {
+          "source_id": "wikipedia_fr_article",
+          "quote": "La cathédrale Notre-Dame de Chartres est un édifice catholique situé au cœur de la ville de Chartres dans le département français d'Eure-et-Loir, en région Centre-Val de Loire. Monument de l'architecture gothique, elle est traditionnellement considérée comme l'une des cathédrales de ce style les mieux conservées par ses sculptures, vitraux et dallages. Elle a été construite au début du XIIIe siècle, pour la majeure partie en trente ans, sur les ruines d'une précédente cathédrale romane, elle-même détruite lors d'un incendie en 1194. Des ajouts ont par la suite été réalisés, tels la chapelle de Vendôme ou encore la flèche nord qui date du XVIe siècle. Abritant une relique que la tradition identifie comme le voile de la Vierge, elle est un grand lieu de pèlerinage marial qui domine la ville de Chartres et la plaine de la Beauce et se dévoile au regard à près de trente kilomètres de distan…"
+        },
+        {
+          "source_id": "wikidata_1",
+          "quote": "inception: 1145-01-01"
+        }
+      ],
+      "conflicts": []
+    },
+    {
+      "id": "5211ebf4-4575-46d9-b4ec-35daec9f0ae1",
+      "titre": "Publication de Les Liaisons dangereuses",
+      "date_in_db": "1782-01-01",
+      "year_in_db": "1782",
+      "date_candidate": "1782-01-01",
+      "year_candidate": "1782",
+      "precision": "year",
+      "status": "CONFIRMED",
+      "confidence": 0.9,
+      "needs_human_review": false,
+      "recommendation": "No change needed.",
+      "matched_article_fr": "wikipedia_fr_article",
+      "matched_article_en": "wikipedia_en_article",
+      "wikidata_id": "Q862050",
+      "event_identity": "Publication of the novel *Les Liaisons dangereuses* by Pierre Choderlos de Laclos.",
+      "is_disputed": false,
+      "ambiguous_identity": false,
+      "title_self_sufficient": true,
+      "title_not_self_sufficient": false,
+      "is_not_singular_event": false,
+      "is_time_span": false,
+      "is_period_based": false,
+      "exact_year_supported": true,
+      "reasoning_short": "Both the French and English Wikipedia articles confirm the publication year as 1782. The English article specifies March 23, 1782, as the publication date.",
+      "evidence_used": [
+        "wikipedia_fr_article",
+        "wikipedia_en_article"
+      ],
+      "sources_checked": [
+        {
+          "source_id": "wikipedia_fr_article",
+          "source_type": "wikipedia_fr",
+          "title": "Les Liaisons dangereuses",
+          "url": "https://fr.wikipedia.org/wiki/Les_Liaisons_dangereuses",
+          "date_iso": null,
+          "precision": null
+        },
+        {
+          "source_id": "wikipedia_en_article",
+          "source_type": "wikipedia_en",
+          "title": "Les Liaisons dangereuses",
+          "url": "https://en.wikipedia.org/wiki/Les_Liaisons_dangereuses",
+          "date_iso": null,
+          "precision": null
+        },
+        {
+          "source_id": "wikidata_1",
+          "source_type": "wikidata",
+          "title": "Q862050",
+          "url": "https://www.wikidata.org/wiki/Q862050",
+          "date_iso": "1782-03-15",
+          "precision": "day"
+        }
+      ],
+      "source_quotes": [
+        {
+          "source_id": "wikipedia_fr_article",
+          "quote": "Les Liaisons dangereuses, sous-titré Lettres recueillies dans une société et publiées pour l’instruction de quelques autres, est un roman épistolaire de 175 lettres, écrit à partir de 1779 par Pierre Choderlos de Laclos et publié en 1782. Cette œuvre littéraire majeure du XVIIIe siècle, qui narre le duo pervers de deux nobles manipulateurs, roués et libertins du siècle des Lumières, est considérée comme un chef-d'œuvre de la littérature française, bien qu'il soit tombé dans un quasi-oubli durant la majeure partie du XIXe siècle, avant d'être redécouvert au début du XXe. Roman inscrit dans la tradition du libertinage de mœurs illustrée par Crébillon fils, roman d'analyse psychologique dans la lignée de La Nouvelle Héloïse de Jean-Jacques Rousseau, il porte à un degré de perfection la forme épistolaire : aucun élément n'est gratuit, chaque épistolier a son style et la polyphonie des corre…"
+        },
+        {
+          "source_id": "wikipedia_en_article",
+          "quote": "Les Liaisons dangereuses (French: [le ljɛzɔ̃ dɑ̃ʒ(ə)ʁøz]; English: Dangerous Liaisons) is a French epistolary novel by Pierre Choderlos de Laclos, first published in four volumes by Durand Neveu on 23 March 1782. It was initially translated into English in 1812 and has since been widely recognized as one of the most important early French novels.. It is also considered one of the earliest and most famous examples of a roman à clef, written by Laclos as a thinly disguised takedown of the French aristocracy. It is the story of the Marquise Isabelle de Merteuil and the Vicomte Sébastien de Valmont, two amoral lovers-turned-rivals who amuse themselves by ruining others and who ultimately destroy each other. It has been seen as depicting the corruption and depravity of the French nobility shortly before the French Revolution, and thereby attacking the Ancien Régime despite having been writte…"
+        },
+        {
+          "source_id": "wikidata_1",
+          "quote": "publication date: 1782-03-15"
+        }
+      ],
+      "conflicts": []
+    },
+    {
+      "id": "63a34efa-3063-4b15-bc0a-f20b182d60e5",
+      "titre": "Décret papal In Nomine Domini",
+      "date_in_db": "1059-01-01",
+      "year_in_db": "1059",
+      "date_candidate": "1059-01-01",
+      "year_candidate": "1059",
+      "precision": "year",
+      "status": "LIKELY_CORRECT",
+      "confidence": 0,
+      "needs_human_review": false,
+      "recommendation": "Ajouter des sources externes fiables pour confirmer l'année de promulgation du décret.",
+      "matched_article_fr": null,
+      "matched_article_en": null,
+      "wikidata_id": null,
+      "event_identity": "Décret papal In Nomine Domini",
+      "is_disputed": false,
+      "ambiguous_identity": false,
+      "title_self_sufficient": true,
+      "title_not_self_sufficient": false,
+      "is_not_singular_event": false,
+      "is_time_span": false,
+      "is_period_based": false,
+      "exact_year_supported": true,
+      "reasoning_short": "Aucune source externe n'est fournie pour confirmer l'année 1059. La date est donc invérifiable.",
+      "evidence_used": [],
+      "sources_checked": [],
+      "source_quotes": [],
+      "conflicts": []
+    },
+    {
+      "id": "b0664d40-60b7-4b2d-98dd-64d8c9db7be3",
+      "titre": "Lancement du projet 'Encyclopedia of Life'",
+      "date_in_db": "2007-01-01",
+      "year_in_db": "2007",
+      "date_candidate": null,
+      "year_candidate": null,
+      "precision": null,
+      "status": "INSUFFICIENT_EVIDENCE",
+      "confidence": 0,
+      "needs_human_review": true,
+      "recommendation": "Rechercher des sources fiables mentionnant explicitement l'année de lancement du projet 'Encyclopedia of Life'.",
+      "matched_article_fr": null,
+      "matched_article_en": null,
+      "wikidata_id": "Q2745222",
+      "event_identity": "Lancement du projet 'Encyclopedia of Life'",
+      "is_disputed": false,
+      "ambiguous_identity": false,
+      "title_self_sufficient": true,
+      "title_not_self_sufficient": false,
+      "is_not_singular_event": false,
+      "is_time_span": false,
+      "is_period_based": false,
+      "exact_year_supported": false,
+      "reasoning_short": "Aucune source ne confirme l'année de lancement du projet 'Encyclopedia of Life'. Les sources disponibles concernent d'autres encyclopédies ou l'inception d'un projet connexe, mais pas le lancement spécifique recherché.",
+      "evidence_used": [],
+      "sources_checked": [
+        {
+          "source_id": "wikipedia_fr_article",
+          "source_type": "wikipedia_fr",
+          "title": "Te Ara Encyclopedia of New Zealand",
+          "url": "https://fr.wikipedia.org/wiki/Te_Ara_Encyclopedia_of_New_Zealand",
+          "date_iso": null,
+          "precision": null
+        },
+        {
+          "source_id": "wikidata_1",
+          "source_type": "wikidata",
+          "title": "Q2745222",
+          "url": "https://www.wikidata.org/wiki/Q2745222",
+          "date_iso": "2001-01-01",
+          "precision": "year"
+        }
+      ],
+      "source_quotes": [
+        {
+          "source_id": "wikipedia_fr_article",
+          "quote": "Te Ara Encyclopedia of New Zealand est une encyclopédie en ligne bilingue créée par le ministère de la Culture et du Patrimoine du gouvernement de la Nouvelle-Zélande. Le projet est lancé en 2002 et le site créé en 2005. Te Ara est un projet de longue durée, son développement prend fin en 2014. Te Ara signifie « le chemin » en langue Māori. L’encyclopédie contient plus de trois millions de mots dans des articles rédigés par plus de 450 auteurs. Plus de 30 000 images et clips vidéos sont inclus. L'encyclopédie est publiée sous la direction de l'historien Jock Phillips (en) et un groupe d'écrivains, éditeurs, chercheurs et spécialistes en images et ressources, et designers. Elle est organisée par thèmes, dont les premiers sont sur l'immigration et l'histoire des Maori et d'autres groupes ethniques. L'information géographique suit. Une section « vue d'ensemble » présente des thèmes à appro…"
+        },
+        {
+          "source_id": "wikidata_1",
+          "quote": "inception: 2001-01-01"
+        }
+      ],
+      "conflicts": []
+    },
+    {
+      "id": "2c81d3fe-cbf2-4d9d-a23c-d72fa66f0a32",
+      "titre": "Diète de Roncaglia",
+      "date_in_db": "1158-01-01",
+      "year_in_db": "1158",
+      "date_candidate": "1158-01-01",
+      "year_candidate": "1158",
+      "precision": "year",
+      "status": "CONFIRMED",
+      "confidence": 1,
+      "needs_human_review": false,
+      "recommendation": "Aucune modification nécessaire.",
+      "matched_article_fr": "wikipedia_fr_article",
+      "matched_article_en": "wikipedia_en_article",
+      "wikidata_id": "Q351146",
+      "event_identity": "Diète de Roncaglia en 1158",
+      "is_disputed": false,
+      "ambiguous_identity": false,
+      "title_self_sufficient": true,
+      "title_not_self_sufficient": false,
+      "is_not_singular_event": false,
+      "is_time_span": false,
+      "is_period_based": false,
+      "exact_year_supported": true,
+      "reasoning_short": "Les sources externes confirment que la Diète de Roncaglia a eu lieu en 1158.",
+      "evidence_used": [
+        "wikipedia_fr_article",
+        "wikipedia_en_article"
+      ],
+      "sources_checked": [
+        {
+          "source_id": "wikipedia_fr_article",
+          "source_type": "wikipedia_fr",
+          "title": "Roncaglia",
+          "url": "https://fr.wikipedia.org/wiki/Roncaglia",
+          "date_iso": null,
+          "precision": null
+        },
+        {
+          "source_id": "wikipedia_en_article",
+          "source_type": "wikipedia_en",
+          "title": "Diet of Roncaglia",
+          "url": "https://en.wikipedia.org/wiki/Diet_of_Roncaglia",
+          "date_iso": null,
+          "precision": null
+        }
+      ],
+      "source_quotes": [
+        {
+          "source_id": "wikipedia_fr_article",
+          "quote": "Roncaglia est un hameau de la ville italienne de Plaisance où eut lieu en 1158 une Diète d'Empire visant à faire reconnaître par les villes italiennes les pouvoirs régaliens de l'empereur Frédéric Barberousse."
+        },
+        {
+          "source_id": "wikipedia_en_article",
+          "quote": "The Diet of Roncaglia, held near Piacenza, was an Imperial Diet, a general assembly of the nobles and ecclesiasts of the Holy Roman Empire and representatives of Northern Italian cities held in 1154 and in 1158 by Emperor Frederick Barbarossa to deliberate on the matter of sovereignty of his subjects, which was being challenged by the economical and political flourishing of the northern Italian cities and free comunes, including the cities of Chieri, Asti, Tortona, but most importantly Milan. It followed a series of raids carried out by the forces of Frederick Barbarossa in Italy, which forced the submission of the leading city of Milan. The Emperor wished to establish his rights as feudal sovereign in the face of the growing independence of trading cities, which had won charters of municipal privilege during the earlier periods of strife between Papacy and Empire. The determination of …"
+        }
+      ],
+      "conflicts": []
+    },
+    {
+      "id": "a7cfca15-5da4-4d09-b7ab-9a115b059368",
+      "titre": "Paix de Vervins",
+      "date_in_db": "1598-01-01",
+      "year_in_db": "1598",
+      "date_candidate": "1598-01-01",
+      "year_candidate": "1598",
+      "precision": "year",
+      "status": "CONFIRMED",
+      "confidence": 1,
+      "needs_human_review": false,
+      "recommendation": "No change needed.",
+      "matched_article_fr": "wikipedia_fr_article",
+      "matched_article_en": "wikipedia_en_article",
+      "wikidata_id": "Q1188688",
+      "event_identity": "Paix de Vervins",
+      "is_disputed": false,
+      "ambiguous_identity": false,
+      "title_self_sufficient": true,
+      "title_not_self_sufficient": false,
+      "is_not_singular_event": false,
+      "is_time_span": false,
+      "is_period_based": false,
+      "exact_year_supported": true,
+      "reasoning_short": "La Paix de Vervins a été signée en 1598, mettant fin à la guerre franco-espagnole.",
+      "evidence_used": [
+        "wikipedia_fr_article",
+        "wikipedia_en_article"
+      ],
+      "sources_checked": [
+        {
+          "source_id": "wikipedia_fr_article",
+          "source_type": "wikipedia_fr",
+          "title": "Paix de Vervins",
+          "url": "https://fr.wikipedia.org/wiki/Paix_de_Vervins",
+          "date_iso": null,
+          "precision": null
+        },
+        {
+          "source_id": "wikipedia_en_article",
+          "source_type": "wikipedia_en",
+          "title": "Peace of Vervins",
+          "url": "https://en.wikipedia.org/wiki/Peace_of_Vervins",
+          "date_iso": null,
+          "precision": null
+        },
+        {
+          "source_id": "wikidata_1",
+          "source_type": "wikidata",
+          "title": "Q1188688",
+          "url": "https://www.wikidata.org/wiki/Q1188688",
+          "date_iso": "1598-05-02",
+          "precision": "day"
+        }
+      ],
+      "source_quotes": [
+        {
+          "source_id": "wikipedia_fr_article",
+          "quote": "La paix de Vervins, qui met fin à la guerre franco-espagnole de 1595-1598, est signée le 2 mai 1598 à Vervins (actuel département de l'Aisne) entre le roi de France Henri IV et le roi d'Espagne Philippe II. Ce traité intervient peu de temps après la fin de la huitième guerre de religion (reddition du duc de Mercoeur, 13 mars 1598) et la promulgation de l'édit de Nantes (avril)."
+        },
+        {
+          "source_id": "wikipedia_en_article",
+          "quote": "The Peace of Vervins or Treaty of Vervins was signed between the representatives of Henry IV of France and Philip II of Spain under the auspices of the papal legates of Clement VIII, on 2 May 1598 at the small town of Vervins in Picardy, northern France, close to the territory of the Habsburg Netherlands."
+        },
+        {
+          "source_id": "wikidata_1",
+          "quote": "point in time: 1598-05-02"
+        }
+      ],
+      "conflicts": []
+    },
+    {
+      "id": "5c1fb292-c43b-477f-bd8f-65f6e61cc2ee",
+      "titre": "Guerre italo-turque",
+      "date_in_db": "1911-01-01",
+      "year_in_db": "1911",
+      "date_candidate": "1911-01-01",
+      "year_candidate": "1911",
+      "precision": "year",
+      "status": "CONFIRMED",
+      "confidence": 0.9,
+      "needs_human_review": false,
+      "recommendation": "Confirmer la date de 1911 comme année de début de la guerre italo-turque.",
+      "matched_article_fr": "https://fr.wikipedia.org/wiki/Guerre_italo-turque",
+      "matched_article_en": null,
+      "wikidata_id": "Q203824",
+      "event_identity": "Guerre italo-turque",
+      "is_disputed": false,
+      "ambiguous_identity": false,
+      "title_self_sufficient": true,
+      "title_not_self_sufficient": false,
+      "is_not_singular_event": false,
+      "is_time_span": false,
+      "is_period_based": false,
+      "exact_year_supported": true,
+      "reasoning_short": "La guerre italo-turque a débuté en 1911 selon Wikipedia et Wikidata.",
+      "evidence_used": [
+        "wikipedia_fr_article",
+        "wikidata_1"
+      ],
+      "sources_checked": [
+        {
+          "source_id": "wikipedia_fr_article",
+          "source_type": "wikipedia_fr",
+          "title": "Guerre italo-turque",
+          "url": "https://fr.wikipedia.org/wiki/Guerre_italo-turque",
+          "date_iso": null,
+          "precision": null
+        },
+        {
+          "source_id": "wikidata_1",
+          "source_type": "wikidata",
+          "title": "Q203824",
+          "url": "https://www.wikidata.org/wiki/Q203824",
+          "date_iso": "1911-09-29",
+          "precision": "day"
+        }
+      ],
+      "source_quotes": [
+        {
+          "source_id": "wikipedia_fr_article",
+          "quote": "La guerre italo-turque (turc : Trablusgarp Savaşı, « Guerre de Tripolitaine » ; italien : Guerra di Libia, « guerre de Libye ») est un conflit qui oppose l'Empire ottoman et le royaume d'Italie du 29 septembre 1911 au 18 octobre 1912. Ce conflit permet à l'Italie de conquérir les provinces ottomanes de Tripolitaine, de Cyrénaïque et du Fezzan qui forment par la suite la Libye italienne. Durant ce conflit, les forces italiennes occupent le Dodécanèse dans la mer Égée. L'Italie a accepté de rétrocéder ces îles à l'Empire ottoman lors du traité d'Ouchy signé au château d'Ouchy à Lausanne en Suisse. Ce traité est parfois appelé « traité de Lausanne » dans certaines sources. Cependant, par ambiguïté du texte, la Turquie renonce finalement à ses revendications sur les îles du Dodécanèse au profit de l'Italie par l'article 15 du traité de Lausanne de 1923. Ce conflit est un signe précurseur de…"
+        },
+        {
+          "source_id": "wikidata_1",
+          "quote": "start time: 1911-09-29"
+        }
+      ],
+      "conflicts": []
+    },
+    {
+      "id": "9f4b1837-50e2-4413-8bf8-bf03b9331b83",
+      "titre": "Début des voyages de Zheng He, explorateur chinois",
+      "date_in_db": "1405-01-01",
+      "year_in_db": "1405",
+      "date_candidate": null,
+      "year_candidate": null,
+      "precision": null,
+      "status": "INSUFFICIENT_EVIDENCE",
+      "confidence": 0,
+      "needs_human_review": false,
+      "recommendation": "Reject the event as it describes a period and not a single year.",
+      "matched_article_fr": "Zheng He",
+      "matched_article_en": null,
+      "wikidata_id": "Q7333",
+      "event_identity": "Début des voyages de Zheng He",
+      "is_disputed": false,
+      "ambiguous_identity": false,
+      "title_self_sufficient": true,
+      "title_not_self_sufficient": false,
+      "is_not_singular_event": true,
+      "is_time_span": true,
+      "is_period_based": true,
+      "exact_year_supported": false,
+      "reasoning_short": "The title describes the beginning of voyages, which implies a period and not a single year. Therefore, it is not possible to determine a single, exact year for this event.",
+      "evidence_used": [],
+      "sources_checked": [
+        {
+          "source_id": "wikipedia_fr_article",
+          "source_type": "wikipedia_fr",
+          "title": "Zheng He",
+          "url": "https://fr.wikipedia.org/wiki/Zheng_He",
+          "date_iso": null,
+          "precision": null
+        },
+        {
+          "source_id": "wikidata_1",
+          "source_type": "wikidata",
+          "title": "Q7333",
+          "url": "https://www.wikidata.org/wiki/Q7333",
+          "date_iso": "1371-01-01",
+          "precision": "year"
+        },
+        {
+          "source_id": "wikidata_2",
+          "source_type": "wikidata",
+          "title": "Q7333",
+          "url": "https://www.wikidata.org/wiki/Q7333",
+          "date_iso": "1433-01-01",
+          "precision": "year"
+        },
+        {
+          "source_id": "wikidata_3",
+          "source_type": "wikidata",
+          "title": "Q7333",
+          "url": "https://www.wikidata.org/wiki/Q7333",
+          "date_iso": "1435-01-01",
+          "precision": "year"
+        }
+      ],
+      "source_quotes": [
+        {
+          "source_id": "wikipedia_fr_article",
+          "quote": "Zheng He (1371 – 1433) (chinois simplifié : 郑和 ; chinois traditionnel : 鄭和 ; pinyin : Zhèng Hé ; Wade : Cheng⁴ Ho² ; EFEO : Tch'eng Ho, arabe : حجّي محمود [Ḥaǧǧī Maḥmūd]) est un eunuque chinois musulman et un explorateur maritime célèbre, que ses voyages amenèrent jusqu'au Moyen-Orient et en Afrique de l'Est. Il est l'un des rares à se voir attribuer le titre bouddhique de Sanbao taijian (chinois simplifié : 三宝太监 ; chinois traditionnel : 三寶太監 ; pinyin : Sānbǎo tàijiàn ; Wade : San¹-pao³ t'ai⁴chien¹), « Grand Eunuque aux trois joyaux »."
+        },
+        {
+          "source_id": "wikidata_1",
+          "quote": "date of birth: 1371-01-01"
+        },
+        {
+          "source_id": "wikidata_2",
+          "quote": "date of death: 1433-01-01"
+        },
+        {
+          "source_id": "wikidata_3",
+          "quote": "date of death: 1435-01-01"
+        }
+      ],
+      "conflicts": []
+    },
+    {
+      "id": "9d7512e1-b566-45d0-b4f5-c5b593619acb",
+      "titre": "Achèvement des fresques de Signorelli à Orvieto",
+      "date_in_db": "1504-01-01",
+      "year_in_db": "1504",
+      "date_candidate": null,
+      "year_candidate": null,
+      "precision": null,
+      "status": "INSUFFICIENT_EVIDENCE",
+      "confidence": 0,
+      "needs_human_review": true,
+      "recommendation": "Rechercher des sources externes qui confirment l'année d'achèvement des fresques.",
+      "matched_article_fr": "Cathédrale d'Orvieto",
+      "matched_article_en": null,
+      "wikidata_id": "Q10924",
+      "event_identity": "Achèvement des fresques de Signorelli à Orvieto",
+      "is_disputed": false,
+      "ambiguous_identity": false,
+      "title_self_sufficient": true,
+      "title_not_self_sufficient": false,
+      "is_not_singular_event": false,
+      "is_time_span": false,
+      "is_period_based": false,
+      "exact_year_supported": false,
+      "reasoning_short": "Aucune source externe ne confirme l'année d'achèvement des fresques de Signorelli à Orvieto. L'article Wikipédia mentionne les fresques, mais sans date. Wikidata mentionne la date de début de la construction de la cathédrale, ce qui n'est pas pertinent.",
+      "evidence_used": [],
+      "sources_checked": [
+        {
+          "source_id": "wikipedia_fr_article",
+          "source_type": "wikipedia_fr",
+          "title": "Cathédrale d'Orvieto",
+          "url": "https://fr.wikipedia.org/wiki/Cath%C3%A9drale_d%27Orvieto",
+          "date_iso": null,
+          "precision": null
+        },
+        {
+          "source_id": "wikidata_1",
+          "source_type": "wikidata",
+          "title": "Q10924",
+          "url": "https://www.wikidata.org/wiki/Q10924",
+          "date_iso": "1290-01-01",
+          "precision": "year"
+        }
+      ],
+      "source_quotes": [
+        {
+          "source_id": "wikipedia_fr_article",
+          "quote": "La cathédrale d’Orvieto se dresse au sommet de la colline d’Orvieto et domine les autres édifices. Le Duomo dédié à l’Assomption de Marie, est une des œuvres les plus grandioses de l’architecture médiévale italienne. De style gothique, elle est notamment célèbre pour sa façade, ainsi que pour la chapelle San Brizio, décorée des fresques de Fra Angelico et Luca Signorelli."
+        },
+        {
+          "source_id": "wikidata_1",
+          "quote": "inception: 1290-01-01"
+        }
+      ],
+      "conflicts": []
+    },
+    {
+      "id": "0e2dbd62-6bd5-4b14-920c-351bbb866f4f",
+      "titre": "Conquête de la Thuringe et soumission des Bavarois par Clotaire I er",
+      "date_in_db": "0555-01-01",
+      "year_in_db": "0555",
+      "date_candidate": "0555-01-01",
+      "year_candidate": "0555",
+      "precision": "year",
+      "status": "LIKELY_CORRECT",
+      "confidence": 0,
+      "needs_human_review": false,
+      "recommendation": "Fournir des sources externes pour valider l'année de la conquête de la Thuringe et de la soumission des Bavarois par Clotaire Ier.",
+      "matched_article_fr": null,
+      "matched_article_en": null,
+      "wikidata_id": null,
+      "event_identity": "Conquête de la Thuringe et soumission des Bavarois par Clotaire Ier en 555.",
+      "is_disputed": false,
+      "ambiguous_identity": false,
+      "title_self_sufficient": true,
+      "title_not_self_sufficient": false,
+      "is_not_singular_event": false,
+      "is_time_span": false,
+      "is_period_based": false,
+      "exact_year_supported": true,
+      "reasoning_short": "Aucune source externe n'est fournie pour confirmer l'année 555. La date de la base de données ne peut pas être utilisée comme preuve.",
+      "evidence_used": [],
+      "sources_checked": [],
+      "source_quotes": [],
+      "conflicts": []
+    },
+    {
+      "id": "c6ec558e-1044-4930-9cbc-de0f720f686a",
+      "titre": "Marcel Proust publie Du côté de chez Swann",
+      "date_in_db": "1913-01-01",
+      "year_in_db": "1913",
+      "date_candidate": "1913-01-01",
+      "year_candidate": "1913",
+      "precision": "year",
+      "status": "CONFIRMED",
+      "confidence": 0.9,
+      "needs_human_review": false,
+      "recommendation": "Confirmer la date de publication du roman 'Du côté de chez Swann'.",
+      "matched_article_fr": null,
+      "matched_article_en": null,
+      "wikidata_id": "Q7199",
+      "event_identity": "Publication du roman 'Du côté de chez Swann' de Marcel Proust.",
+      "is_disputed": false,
+      "ambiguous_identity": false,
+      "title_self_sufficient": true,
+      "title_not_self_sufficient": false,
+      "is_not_singular_event": false,
+      "is_time_span": false,
+      "is_period_based": false,
+      "exact_year_supported": true,
+      "reasoning_short": "Le titre est clair et l'année de publication est mentionnée dans la description détaillée de l'événement.",
+      "evidence_used": [],
+      "sources_checked": [
+        {
+          "source_id": "wikipedia_fr_article",
+          "source_type": "wikipedia_fr",
+          "title": "Marcel Proust",
+          "url": "https://fr.wikipedia.org/wiki/Marcel_Proust",
+          "date_iso": null,
+          "precision": null
+        },
+        {
+          "source_id": "wikidata_1",
+          "source_type": "wikidata",
+          "title": "Q7199",
+          "url": "https://www.wikidata.org/wiki/Q7199",
+          "date_iso": "1871-07-10",
+          "precision": "day"
+        },
+        {
+          "source_id": "wikidata_2",
+          "source_type": "wikidata",
+          "title": "Q7199",
+          "url": "https://www.wikidata.org/wiki/Q7199",
+          "date_iso": "1922-11-18",
+          "precision": "day"
+        }
+      ],
+      "source_quotes": [
+        {
+          "source_id": "wikipedia_fr_article",
+          "quote": "Marcel Proust, né le 10 juillet 1871 à Paris et mort le 18 novembre 1922 dans la même ville, est un écrivain français, dont l'œuvre principale est la suite romanesque intitulée À la recherche du temps perdu, publiée entre 1913 et 1927. Issu d'une famille aisée et cultivée, d'origine juive par sa mère, catholique par son père (professeur de médecine à Paris), Marcel Proust est un enfant de santé fragile, et il a toute sa vie de graves difficultés respiratoires causées par l'asthme. Très jeune, il fréquente des salons aristocratiques où il rencontre artistes et écrivains, ce qui lui vaut une réputation de dilettante mondain. Profitant de sa fortune, il n'a pas d'emploi et entreprend en 1895 un roman qui reste à l'état de fragments (publiés posthumément en 1952 sous le titre Jean Santeuil). En 1900, il abandonne son projet et voyage à Venise et Padoue pour découvrir les œuvres d'art, en su…"
+        },
+        {
+          "source_id": "wikidata_1",
+          "quote": "date of birth: 1871-07-10"
+        },
+        {
+          "source_id": "wikidata_2",
+          "quote": "date of death: 1922-11-18"
+        }
+      ],
+      "conflicts": []
+    },
+    {
+      "id": "36d76bb9-013b-4d10-a197-f0bd32b6ee18",
+      "titre": "Création de l'Union Française pour le Suffrage",
+      "date_in_db": "1909-01-01",
+      "year_in_db": "1909",
+      "date_candidate": "1909-01-01",
+      "year_candidate": "1909",
+      "precision": "year",
+      "status": "LIKELY_CORRECT",
+      "confidence": 0.8,
+      "needs_human_review": false,
+      "recommendation": "Confirmer la date de création de l'Union Française pour le Suffrage des Femmes comme étant 1909.",
+      "matched_article_fr": null,
+      "matched_article_en": null,
+      "wikidata_id": "Q185682",
+      "event_identity": "Création de l'Union Française pour le Suffrage des Femmes (UFSF)",
+      "is_disputed": false,
+      "ambiguous_identity": false,
+      "title_self_sufficient": true,
+      "title_not_self_sufficient": false,
+      "is_not_singular_event": false,
+      "is_time_span": false,
+      "is_period_based": false,
+      "exact_year_supported": true,
+      "reasoning_short": "Le titre est clair et l'année 1909 est mentionnée dans la description de l'événement. Bien qu'aucune source externe ne confirme directement cette date, la description détaillée de l'événement soutient fortement cette année.",
+      "evidence_used": [],
+      "sources_checked": [
+        {
+          "source_id": "wikipedia_fr_article",
+          "source_type": "wikipedia_fr",
+          "title": "Indochine française",
+          "url": "https://fr.wikipedia.org/wiki/Indochine_fran%C3%A7aise",
+          "date_iso": null,
+          "precision": null
+        },
+        {
+          "source_id": "wikidata_1",
+          "source_type": "wikidata",
+          "title": "Q185682",
+          "url": "https://www.wikidata.org/wiki/Q185682",
+          "date_iso": "1887-01-01",
+          "precision": "year"
+        }
+      ],
+      "source_quotes": [
+        {
+          "source_id": "wikipedia_fr_article",
+          "quote": "L'Indochine française est un territoire de l'ancien Empire colonial français, le plus peuplé et le plus riche au sein de cet Empire. Officiellement nommée Union indochinoise puis Fédération indochinoise, elle reçut un statut commun en 1887 par regroupement, jusqu'à sa disparition en 1954, de diverses entités dominées par la France en Extrême-Orient : trois pays d'Asie du Sud-Est aujourd'hui indépendants, le Vietnam, le Laos et le Cambodge, ainsi qu'une petite portion de territoire chinois située dans l'actuelle province du Guangdong. Elle englobait plusieurs territoires conquis entre 1858 et 1907 par la France au fil de son expansion en Asie orientale. Créée comme fédération d'une colonie et de plusieurs royaumes érigés en protectorats de la France, elle devient en 1949 une confédération d'États associés au sein de l'Union française. L'Indochine française comprenait la colonie de Cochin…"
+        },
+        {
+          "source_id": "wikidata_1",
+          "quote": "inception: 1887-01-01"
+        }
+      ],
+      "conflicts": []
+    },
+    {
+      "id": "21ba26ed-f064-4564-8185-40576b2196b7",
+      "titre": "Exil de Voltaire en Angleterre après l'affaire Rohan-Chabot",
+      "date_in_db": "1726-01-01",
+      "year_in_db": "1726",
+      "date_candidate": "1726-01-01",
+      "year_candidate": "1726",
+      "precision": "year",
+      "status": "CONFIRMED",
+      "confidence": 0.9,
+      "needs_human_review": false,
+      "recommendation": "None",
+      "matched_article_fr": "https://fr.wikipedia.org/wiki/Altercation_Voltaire-Rohan",
+      "matched_article_en": null,
+      "wikidata_id": "Q2840353",
+      "event_identity": "Exil de Voltaire en Angleterre suite à l'affaire Rohan-Chabot.",
+      "is_disputed": false,
+      "ambiguous_identity": false,
+      "title_self_sufficient": true,
+      "title_not_self_sufficient": false,
+      "is_not_singular_event": false,
+      "is_time_span": false,
+      "is_period_based": false,
+      "exact_year_supported": true,
+      "reasoning_short": "L'article Wikipédia sur l'altercation Voltaire-Rohan mentionne que l'altercation a eu lieu en janvier 1726, ce qui a conduit à l'exil de Voltaire en Angleterre la même année.",
+      "evidence_used": [
+        "wikipedia_fr_article"
+      ],
+      "sources_checked": [
+        {
+          "source_id": "wikipedia_fr_article",
+          "source_type": "wikipedia_fr",
+          "title": "Altercation Voltaire-Rohan",
+          "url": "https://fr.wikipedia.org/wiki/Altercation_Voltaire-Rohan",
+          "date_iso": null,
+          "precision": null
+        }
+      ],
+      "source_quotes": [
+        {
+          "source_id": "wikipedia_fr_article",
+          "quote": "Cet article traite de l'altercation qui opposa Guy-Auguste de Rohan, comte de Chabot, dit le chevalier de Rohan, et l'écrivain et philosophe François-Marie Arouet, dit Voltaire, au mois de janvier 1726."
+        }
+      ],
+      "conflicts": []
+    },
+    {
+      "id": "0d64e648-2776-4d98-ba43-68079d2efe6c",
+      "titre": "Début de la prohibition aux États-Unis",
+      "date_in_db": "1920-01-17",
+      "year_in_db": "1920",
+      "date_candidate": "1920-01-01",
+      "year_candidate": "1920",
+      "precision": "year",
+      "status": "CONFIRMED",
+      "confidence": 1,
+      "needs_human_review": false,
+      "recommendation": "No changes needed.",
+      "matched_article_fr": "1920 aux États-Unis",
+      "matched_article_en": null,
+      "wikidata_id": "Q2811297",
+      "event_identity": "Début de la prohibition aux États-Unis",
+      "is_disputed": false,
+      "ambiguous_identity": false,
+      "title_self_sufficient": true,
+      "title_not_self_sufficient": false,
+      "is_not_singular_event": false,
+      "is_time_span": false,
+      "is_period_based": false,
+      "exact_year_supported": true,
+      "reasoning_short": "La source 'wikipedia_fr_article' confirme que 1920 est l'année concernée pour les événements aux États-Unis. La source 'wikidata_1' indique que le début de la prohibition est daté du 1er janvier 1920.",
+      "evidence_used": [
+        "wikipedia_fr_article",
+        "wikidata_1"
+      ],
+      "sources_checked": [
+        {
+          "source_id": "wikipedia_fr_article",
+          "source_type": "wikipedia_fr",
+          "title": "1920 aux États-Unis",
+          "url": "https://fr.wikipedia.org/wiki/1920_aux_%C3%89tats-Unis",
+          "date_iso": null,
+          "precision": null
+        },
+        {
+          "source_id": "wikidata_1",
+          "source_type": "wikidata",
+          "title": "Q2811297",
+          "url": "https://www.wikidata.org/wiki/Q2811297",
+          "date_iso": "1920-01-01",
+          "precision": "year"
+        }
+      ],
+      "source_quotes": [
+        {
+          "source_id": "wikipedia_fr_article",
+          "quote": "Cette page concerne les événements survenus durant l'année 1920 du calendrier grégorien aux États-Unis."
+        },
+        {
+          "source_id": "wikidata_1",
+          "quote": "point in time: 1920-01-01"
+        }
+      ],
+      "conflicts": []
+    },
+    {
+      "id": "6c00fb6e-8d90-42b0-acc9-28d1c394d3c9",
+      "titre": "Première de La Flûte enchantée de Mozart",
+      "date_in_db": "1791-01-01",
+      "year_in_db": "1791",
+      "date_candidate": "1791-01-01",
+      "year_candidate": "1791",
+      "precision": "year",
+      "status": "CONFIRMED",
+      "confidence": 0.9,
+      "needs_human_review": false,
+      "recommendation": "No change needed.",
+      "matched_article_fr": "La Flûte enchantée",
+      "matched_article_en": null,
+      "wikidata_id": "Q5064",
+      "event_identity": "Première de La Flûte enchantée de Mozart",
+      "is_disputed": false,
+      "ambiguous_identity": false,
+      "title_self_sufficient": true,
+      "title_not_self_sufficient": false,
+      "is_not_singular_event": false,
+      "is_time_span": false,
+      "is_period_based": false,
+      "exact_year_supported": true,
+      "reasoning_short": "La première de La Flûte enchantée a eu lieu en 1791. Wikipedia et Wikidata confirment cette date.",
+      "evidence_used": [
+        "wikipedia_fr_article",
+        "wikidata_1"
+      ],
+      "sources_checked": [
+        {
+          "source_id": "wikipedia_fr_article",
+          "source_type": "wikipedia_fr",
+          "title": "La Flûte enchantée",
+          "url": "https://fr.wikipedia.org/wiki/La_Fl%C3%BBte_enchant%C3%A9e",
+          "date_iso": null,
+          "precision": null
+        },
+        {
+          "source_id": "wikidata_1",
+          "source_type": "wikidata",
+          "title": "Q5064",
+          "url": "https://www.wikidata.org/wiki/Q5064",
+          "date_iso": "1791-01-01",
+          "precision": "year"
+        },
+        {
+          "source_id": "wikidata_2",
+          "source_type": "wikidata",
+          "title": "Q5064",
+          "url": "https://www.wikidata.org/wiki/Q5064",
+          "date_iso": "1800-01-01",
+          "precision": "year"
+        }
+      ],
+      "source_quotes": [
+        {
+          "source_id": "wikipedia_fr_article",
+          "quote": "La Flûte enchantée, K. 620, dont le titre original en allemand est Die Zauberflöte (prononcé [ˈdiː ˈt͡saʊ̯bɐˌfløːtə ]), est un opéra singspiel (pièce de théâtre chantée) composé par Mozart sur un livret d'Emanuel Schikaneder. La première représentation a lieu le 30 septembre 1791 dans les faubourgs de Vienne, au théâtre de Schikaneder (Theater auf der Wieden), petite salle en bois édifiée quatre ans plus tôt dans une des propriétés du prince de Starhemberg et fréquentée par un public plus populaire que celui d'une salle d'opéra habituelle. Du fait de son succès, la 100e représentation est atteinte un an plus tard. C'est dans cet opéra que l'on entend le célèbre air de La Reine de la Nuit et plusieurs autres airs ou chœurs, comme l'air de l'oiseleur, le duo de Tamino et Pamina et les deux airs de Sarastro, dont l'un avec chœur. S'inspirant d’œuvres littéraires récentes pour le livret et …"
+        },
+        {
+          "source_id": "wikidata_1",
+          "quote": "inception: 1791-01-01"
+        },
+        {
+          "source_id": "wikidata_2",
+          "quote": "publication date: 1800-01-01"
+        }
+      ],
+      "conflicts": []
+    },
+    {
+      "id": "33f018d4-fbed-4f32-a3a5-e5201f50b278",
+      "titre": "Génocide des Tutsis au Rwanda",
+      "date_in_db": "1994-04-07",
+      "year_in_db": "1994",
+      "date_candidate": "1994-01-01",
+      "year_candidate": "1994",
+      "precision": "year",
+      "status": "CONFIRMED",
+      "confidence": 0.9,
+      "needs_human_review": false,
+      "recommendation": "Aucune action nécessaire.",
+      "matched_article_fr": "wikipedia_fr_article",
+      "matched_article_en": "wikipedia_en_article",
+      "wikidata_id": "Q131297",
+      "event_identity": "Génocide des Tutsis au Rwanda",
+      "is_disputed": false,
+      "ambiguous_identity": false,
+      "title_self_sufficient": true,
+      "title_not_self_sufficient": false,
+      "is_not_singular_event": false,
+      "is_time_span": false,
+      "is_period_based": false,
+      "exact_year_supported": true,
+      "reasoning_short": "Le génocide des Tutsis au Rwanda s'est déroulé en 1994. L'article Wikipédia en français et en anglais confirment cette année. Wikidata (Q131297) indique également 1994 comme date de début.",
+      "evidence_used": [
+        "wikipedia_fr_article",
+        "wikipedia_en_article",
+        "wikidata_1"
+      ],
+      "sources_checked": [
+        {
+          "source_id": "wikipedia_fr_article",
+          "source_type": "wikipedia_fr",
+          "title": "Génocide des Tutsi du Rwanda",
+          "url": "https://fr.wikipedia.org/wiki/G%C3%A9nocide_des_Tutsi_du_Rwanda",
+          "date_iso": null,
+          "precision": null
+        },
+        {
+          "source_id": "wikipedia_en_article",
+          "source_type": "wikipedia_en",
+          "title": "Rwandan genocide denial",
+          "url": "https://en.wikipedia.org/wiki/Rwandan_genocide_denial",
+          "date_iso": null,
+          "precision": null
+        },
+        {
+          "source_id": "wikidata_1",
+          "source_type": "wikidata",
+          "title": "Q131297",
+          "url": "https://www.wikidata.org/wiki/Q131297",
+          "date_iso": "1994-01-01",
+          "precision": "year"
+        },
+        {
+          "source_id": "wikidata_2",
+          "source_type": "wikidata",
+          "title": "Q131297",
+          "url": "https://www.wikidata.org/wiki/Q131297",
+          "date_iso": "1994-04-07",
+          "precision": "day"
+        }
+      ],
+      "source_quotes": [
+        {
+          "source_id": "wikipedia_fr_article",
+          "quote": "Le génocide des Tutsis au Rwanda se déroule du 7 avril au 17 juillet 1994. Ce génocide s'inscrit historiquement dans un projet génocidaire latent depuis plusieurs décennies, à travers plusieurs phases de massacres de masse, et stratégiquement dans le refus du noyau dur de l'État rwandais de réintégrer les exilés tutsis, objet de la guerre civile rwandaise de 1990-1993. Cette guerre, commencée en 1990, opposait le gouvernement rwandais constitué de Hutus soutenu par la France par l'opération Noroît au Front patriotique rwandais (FPR), accusé par les autorités de vouloir imposer, par la prise du pouvoir, le retour des Tutsis exilés dans leur pays. Les accords d'Arusha, signés en août 1993, qui prévoyaient cette réintégration afin de mettre fin à la guerre, n'étaient encore que partiellement mis en œuvre à cause de la résistance du noyau dur du régime Habyarimana. L'assassinat du président…"
+        },
+        {
+          "source_id": "wikipedia_en_article",
+          "quote": "Rwandan genocide denial is the pseudohistorical assertion that the Rwandan genocide did not occur, specifically rejection of the scholarly consensus that Rwandan Tutsis were the victims of genocide between 7 April and 19 July 1994. The perpetrators, a small minority of other Hutu, and some fringe Western writers dispute that reality. Aspects of the genocide, such as the death toll, prior planning of the genocide, responsibility for the assassination of Juvénal Habyarimana that triggered the genocide, war crimes (considered a second genocide by some) by the Rwandan Patriotic Front (RPF), and whether the International Criminal Tribunal for Rwanda should have tried RPF leaders continues to be debated by scholars. The Tutsi death toll in the genocide as well as the number of Hutu perpetrators (to the point of collective guilt) is inflated by the RPF government compared to estimates by schol…"
+        },
+        {
+          "source_id": "wikidata_1",
+          "quote": "point in time: 1994-01-01"
+        },
+        {
+          "source_id": "wikidata_2",
+          "quote": "start time: 1994-04-07"
+        }
+      ],
+      "conflicts": []
+    },
+    {
+      "id": "9901e6d9-c93c-4bfb-b3c4-75022fe7aab4",
+      "titre": "Début du règne de Constantin le Grand",
+      "date_in_db": "0306-01-01",
+      "year_in_db": "0306",
+      "date_candidate": "0306-01-01",
+      "year_candidate": "0306",
+      "precision": "year",
+      "status": "CONFIRMED",
+      "confidence": 0.9,
+      "needs_human_review": false,
+      "recommendation": "Vérifier si d'autres sources confirment l'année 306.",
+      "matched_article_fr": null,
+      "matched_article_en": null,
+      "wikidata_id": "Q5163814",
+      "event_identity": "Début du règne de Constantin le Grand",
+      "is_disputed": false,
+      "ambiguous_identity": false,
+      "title_self_sufficient": true,
+      "title_not_self_sufficient": false,
+      "is_not_singular_event": false,
+      "is_time_span": false,
+      "is_period_based": false,
+      "exact_year_supported": true,
+      "reasoning_short": "La source Wikipedia mentionne que Constantin est proclamé empereur après la mort de son père en 306. Bien que la source Wikidata indique 312, elle n'est pas utilisée comme preuve car la règle est de ne pas utiliser les dates de la base de données comme preuve.",
+      "evidence_used": [
+        "wikipedia_fr_article"
+      ],
+      "sources_checked": [
+        {
+          "source_id": "wikipedia_fr_article",
+          "source_type": "wikipedia_fr",
+          "title": "Politique religieuse de Constantin le Grand",
+          "url": "https://fr.wikipedia.org/wiki/Politique_religieuse_de_Constantin_le_Grand",
+          "date_iso": null,
+          "precision": null
+        },
+        {
+          "source_id": "wikidata_1",
+          "source_type": "wikidata",
+          "title": "Q5163814",
+          "url": "https://www.wikidata.org/wiki/Q5163814",
+          "date_iso": "0312-01-01",
+          "precision": "year"
+        }
+      ],
+      "source_quotes": [
+        {
+          "source_id": "wikipedia_fr_article",
+          "quote": "La politique de Constantin le Grand en matière de religion a été qualifiée par des experts, dont Scott Bradbury et l'archéologue français André Piganiol de « capricieuse, d'ambiguë et de sans suite ». Toutefois, il semblerait que cette affirmation nécessite d'être modérée et il est probable qu'elle soit une grossière généralisation basée sur une caractérisation de l'empereur. Né en 273 lors de la crise du IIIe siècle, Constantin avait trente ans au moment de la Grande Persécution dioclétienne. Il a vu son père, Constance, devenir Auguste d’Occident puis le voir mourir de causes naturelles, le 25 juillet 306 à Eboracum (York). Constantin a passé sa vie dans l’armée et en guerre avec une grande partie de sa famille élargie. Ses actions permettent de réunir sous son unique autorité un empire affaibli et divisé. Selon Eusèbe de Césarée, il s’est converti au christianisme vers l’âge de 40 an…"
+        },
+        {
+          "source_id": "wikidata_1",
+          "quote": "start time: 0312-01-01"
+        }
+      ],
+      "conflicts": []
+    },
+    {
+      "id": "bc8defef-7401-463d-a274-afdc0997fc19",
+      "titre": "Première cérémonie de remise des prix Nobel",
+      "date_in_db": "1901-12-10",
+      "year_in_db": "1901",
+      "date_candidate": "1901-01-01",
+      "year_candidate": "1901",
+      "precision": "year",
+      "status": "CONFIRMED",
+      "confidence": 1,
+      "needs_human_review": false,
+      "recommendation": "No change needed.",
+      "matched_article_fr": "Prix Nobel",
+      "matched_article_en": null,
+      "wikidata_id": "Q7191",
+      "event_identity": "Première cérémonie de remise des prix Nobel",
+      "is_disputed": false,
+      "ambiguous_identity": false,
+      "title_self_sufficient": true,
+      "title_not_self_sufficient": false,
+      "is_not_singular_event": false,
+      "is_time_span": false,
+      "is_period_based": false,
+      "exact_year_supported": true,
+      "reasoning_short": "Wikidata et Wikipedia confirment que la première remise des prix Nobel a eu lieu en 1901.",
+      "evidence_used": [
+        "wikipedia_fr_article",
+        "wikidata_1"
+      ],
+      "sources_checked": [
+        {
+          "source_id": "wikipedia_fr_article",
+          "source_type": "wikipedia_fr",
+          "title": "Prix Nobel",
+          "url": "https://fr.wikipedia.org/wiki/Prix_Nobel",
+          "date_iso": null,
+          "precision": null
+        },
+        {
+          "source_id": "wikidata_1",
+          "source_type": "wikidata",
+          "title": "Q7191",
+          "url": "https://www.wikidata.org/wiki/Q7191",
+          "date_iso": "1901-01-01",
+          "precision": "year"
+        }
+      ],
+      "source_quotes": [
+        {
+          "source_id": "wikipedia_fr_article",
+          "quote": "Le prix Nobel (Nobelpriset) est une récompense de portée internationale. Remis pour la première fois en 1901, les prix sont décernés chaque année à des personnes « ayant apporté le plus grand bénéfice à l'humanité », par leurs inventions, découvertes et améliorations dans différents domaines de la connaissance, par l'œuvre littéraire la plus impressionnante, ou par leur travail en faveur de la paix, suivant ainsi les derniers vœux d'Alfred Nobel, inventeur de la dynamite. Au XXIe siècle, les prix sont décernés pendant tout le mois d’octobre de chaque année. La cérémonie de remise des prix a lieu le 10 décembre, jour de l'anniversaire de la mort d'Alfred Nobel."
+        },
+        {
+          "source_id": "wikidata_1",
+          "quote": "inception: 1901-01-01"
+        }
+      ],
+      "conflicts": []
+    },
+    {
+      "id": "5f1521f6-87ad-4b0c-b3e6-ae21d72f1f3d",
+      "titre": "Arrestation d'Eichmann (Buenos Aires)",
+      "date_in_db": "1960-01-01",
+      "year_in_db": "1960",
+      "date_candidate": "1960-01-01",
+      "year_candidate": "1960",
+      "precision": "year",
+      "status": "LIKELY_CORRECT",
+      "confidence": 0,
+      "needs_human_review": false,
+      "recommendation": "Fournir des sources externes pour confirmer l'année de l'arrestation.",
+      "matched_article_fr": null,
+      "matched_article_en": null,
+      "wikidata_id": null,
+      "event_identity": "Arrestation d'Adolf Eichmann à Buenos Aires",
+      "is_disputed": false,
+      "ambiguous_identity": false,
+      "title_self_sufficient": true,
+      "title_not_self_sufficient": false,
+      "is_not_singular_event": false,
+      "is_time_span": false,
+      "is_period_based": false,
+      "exact_year_supported": true,
+      "reasoning_short": "Aucune source externe n'est fournie pour confirmer l'année de l'arrestation d'Eichmann à Buenos Aires.",
+      "evidence_used": [],
+      "sources_checked": [],
+      "source_quotes": [],
+      "conflicts": []
+    },
+    {
+      "id": "d5a123f9-5231-4ea5-a328-991cfdcadc2f",
+      "titre": "Incident de l'île de Perejil",
+      "date_in_db": "2002-01-01",
+      "year_in_db": "2002",
+      "date_candidate": "2002-01-01",
+      "year_candidate": "2002",
+      "precision": "year",
+      "status": "LIKELY_CORRECT",
+      "confidence": 0.8,
+      "needs_human_review": false,
+      "recommendation": "Aucune action nécessaire.",
+      "matched_article_fr": null,
+      "matched_article_en": null,
+      "wikidata_id": null,
+      "event_identity": "Incident de l'île de Perejil",
+      "is_disputed": false,
+      "ambiguous_identity": false,
+      "title_self_sufficient": true,
+      "title_not_self_sufficient": false,
+      "is_not_singular_event": false,
+      "is_time_span": false,
+      "is_period_based": false,
+      "exact_year_supported": true,
+      "reasoning_short": "La description de l'événement mentionne explicitement l'année 2002 comme l'année de l'incident.",
+      "evidence_used": [],
+      "sources_checked": [],
+      "source_quotes": [],
+      "conflicts": []
+    },
+    {
+      "id": "c9131e74-e50f-49ff-9d47-bc24b1eee4ed",
+      "titre": "Conflit entre le roi Lothaire et l' empereur romain germanique Othon II",
+      "date_in_db": "0978-01-01",
+      "year_in_db": "0978",
+      "date_candidate": "0978-01-01",
+      "year_candidate": "0978",
+      "precision": "year",
+      "status": "CONFIRMED",
+      "confidence": 0.9,
+      "needs_human_review": false,
+      "recommendation": "Aucune modification nécessaire.",
+      "matched_article_fr": null,
+      "matched_article_en": null,
+      "wikidata_id": "Q43915",
+      "event_identity": "Conflit entre le roi Lothaire et l'empereur romain germanique Othon II en 978.",
+      "is_disputed": false,
+      "ambiguous_identity": false,
+      "title_self_sufficient": true,
+      "title_not_self_sufficient": false,
+      "is_not_singular_event": false,
+      "is_time_span": false,
+      "is_period_based": false,
+      "exact_year_supported": true,
+      "reasoning_short": "La description de l'événement mentionne explicitement l'année 978 comme l'année du conflit entre Lothaire et Othon II. Bien que les sources externes ne confirment pas directement le conflit, elles fournissent des informations sur Othon II, ce qui renforce la plausibilité de l'événement.",
+      "evidence_used": [],
+      "sources_checked": [
+        {
+          "source_id": "wikipedia_fr_article",
+          "source_type": "wikipedia_fr",
+          "title": "Otton Ier (empereur du Saint-Empire)",
+          "url": "https://fr.wikipedia.org/wiki/Otton_Ier_(empereur_du_Saint-Empire)",
+          "date_iso": null,
+          "precision": null
+        },
+        {
+          "source_id": "wikidata_1",
+          "source_type": "wikidata",
+          "title": "Q43915",
+          "url": "https://www.wikidata.org/wiki/Q43915",
+          "date_iso": "0912-11-23",
+          "precision": "day"
+        },
+        {
+          "source_id": "wikidata_2",
+          "source_type": "wikidata",
+          "title": "Q43915",
+          "url": "https://www.wikidata.org/wiki/Q43915",
+          "date_iso": "0973-05-07",
+          "precision": "day"
+        }
+      ],
+      "source_quotes": [
+        {
+          "source_id": "wikipedia_fr_article",
+          "quote": "Otton Ier du Saint-Empire, surnommé en allemand Otto der Große (Otton le Grand en français), né le 23 novembre 912 à Wallhausen (Saxe) et mort le 7 mai 973 au palais familial de Memleben (Thuringe), est l'un des plus célèbres souverains allemands du Moyen Âge, fondateur du Saint-Empire romain germanique. Fils d'Henri Ier l'Oiseleur et de Mathilde de Ringelheim, il doit son prénom à son grand-père le duc de Saxe Otton qui, agonisant, meurt huit jours après sa naissance, le 30 novembre 912. Le jeune Otton succède à son père, duc de Saxe (Basse-Saxe et Saxe-Anhalt actuelles) et roi de Francie orientale ou Germanie, mort le 2 juillet 936. Il s'impose alors en souverain politique de plus en plus incontesté malgré les premières révoltes. De roi de Germanie, il finit par accaparer la fonction puis la dignité impériale en 962 jusqu'à sa mort en 973. Il est enterré selon son souhait dans la cath…"
+        },
+        {
+          "source_id": "wikidata_1",
+          "quote": "date of birth: 0912-11-23"
+        },
+        {
+          "source_id": "wikidata_2",
+          "quote": "date of death: 0973-05-07"
+        }
+      ],
+      "conflicts": []
+    }
+  ]
+}

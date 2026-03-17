@@ -1,0 +1,538 @@
+{
+  "pageid": 2979277,
+  "ns": 0,
+  "title": "Q3117998",
+  "lastrevid": 2345700263,
+  "modified": "2025-05-07T13:33:01Z",
+  "type": "item",
+  "id": "Q3117998",
+  "labels": {
+    "fr": {
+      "language": "fr",
+      "value": "groupement agricole d'exploitation en commun"
+    },
+    "en": {
+      "language": "en",
+      "value": "GAEC"
+    }
+  },
+  "descriptions": {
+    "en": {
+      "language": "en",
+      "value": "French agricultural civil society"
+    },
+    "fr": {
+      "language": "fr",
+      "value": "catégorie juridique française de niveau 3"
+    }
+  },
+  "aliases": {
+    "fr": [
+      {
+        "language": "fr",
+        "value": "GAEC"
+      },
+      {
+        "language": "fr",
+        "value": "CJ 6533"
+      }
+    ],
+    "en": [
+      {
+        "language": "en",
+        "value": "groupement agricole d'exploitation en commun"
+      }
+    ]
+  },
+  "claims": {
+    "P31": [
+      {
+        "mainsnak": {
+          "snaktype": "value",
+          "property": "P31",
+          "hash": "2de42cb200e5826105a120f7a3059b59a9e549c9",
+          "datavalue": {
+            "value": {
+              "entity-type": "item",
+              "numeric-id": 56427813,
+              "id": "Q56427813"
+            },
+            "type": "wikibase-entityid"
+          },
+          "datatype": "wikibase-item"
+        },
+        "type": "statement",
+        "id": "Q3117998$43ca85db-4890-10ab-6734-76537de8858b",
+        "rank": "normal",
+        "references": [
+          {
+            "hash": "6a1bbae3e2d72da16e4e1690895df64b92bd0bc6",
+            "snaks": {
+              "P248": [
+                {
+                  "snaktype": "value",
+                  "property": "P248",
+                  "hash": "fcf65a391a49839906ef7185e6bfb3704cb0b247",
+                  "datavalue": {
+                    "value": {
+                      "entity-type": "item",
+                      "numeric-id": 112176191,
+                      "id": "Q112176191"
+                    },
+                    "type": "wikibase-entityid"
+                  },
+                  "datatype": "wikibase-item"
+                }
+              ]
+            },
+            "snaks-order": [
+              "P248"
+            ]
+          }
+        ]
+      },
+      {
+        "mainsnak": {
+          "snaktype": "value",
+          "property": "P31",
+          "hash": "302b930acf35e8bb9f32ce922de9faad431c03c2",
+          "datavalue": {
+            "value": {
+              "entity-type": "item",
+              "numeric-id": 10541491,
+              "id": "Q10541491"
+            },
+            "type": "wikibase-entityid"
+          },
+          "datatype": "wikibase-item"
+        },
+        "type": "statement",
+        "id": "Q3117998$D2580F66-CD22-4E71-8721-A3B5E1A7805B",
+        "rank": "normal",
+        "references": [
+          {
+            "hash": "8a57d12b2e595df8145704c04fabad85078dbb25",
+            "snaks": {
+              "P248": [
+                {
+                  "snaktype": "value",
+                  "property": "P248",
+                  "hash": "fbaa030b197e19ebd697936c89437d92e7fecec1",
+                  "datavalue": {
+                    "value": {
+                      "entity-type": "item",
+                      "numeric-id": 106152815,
+                      "id": "Q106152815"
+                    },
+                    "type": "wikibase-entityid"
+                  },
+                  "datatype": "wikibase-item"
+                }
+              ],
+              "P813": [
+                {
+                  "snaktype": "value",
+                  "property": "P813",
+                  "hash": "018c52e72950eb78d8c9d43195b9d58875ea99b3",
+                  "datavalue": {
+                    "value": {
+                      "time": "+2024-06-25T00:00:00Z",
+                      "timezone": 0,
+                      "before": 0,
+                      "after": 0,
+                      "precision": 11,
+                      "calendarmodel": "http://www.wikidata.org/entity/Q1985727"
+                    },
+                    "type": "time"
+                  },
+                  "datatype": "time"
+                }
+              ]
+            },
+            "snaks-order": [
+              "P248",
+              "P813"
+            ]
+          }
+        ]
+      }
+    ],
+    "P17": [
+      {
+        "mainsnak": {
+          "snaktype": "value",
+          "property": "P17",
+          "hash": "c05db5d169c2560b9799d567a803d20a392f53e4",
+          "datavalue": {
+            "value": {
+              "entity-type": "item",
+              "numeric-id": 142,
+              "id": "Q142"
+            },
+            "type": "wikibase-entityid"
+          },
+          "datatype": "wikibase-item"
+        },
+        "type": "statement",
+        "id": "Q3117998$0936bf94-48b6-7af2-4fe6-89f7afeb7e1b",
+        "rank": "normal"
+      }
+    ],
+    "P452": [
+      {
+        "mainsnak": {
+          "snaktype": "value",
+          "property": "P452",
+          "hash": "0404122c4738872b819dfaabd1836feacd476fa5",
+          "datavalue": {
+            "value": {
+              "entity-type": "item",
+              "numeric-id": 11451,
+              "id": "Q11451"
+            },
+            "type": "wikibase-entityid"
+          },
+          "datatype": "wikibase-item"
+        },
+        "type": "statement",
+        "id": "Q3117998$2e0ab323-45f1-20fe-040e-9821fcdcfcc5",
+        "rank": "normal"
+      }
+    ],
+    "P2671": [
+      {
+        "mainsnak": {
+          "snaktype": "value",
+          "property": "P2671",
+          "hash": "68248c7f7a44a4d460c23abfbc3b4e26ae425d73",
+          "datavalue": {
+            "value": "/g/1230_5kk",
+            "type": "string"
+          },
+          "datatype": "external-id"
+        },
+        "type": "statement",
+        "id": "Q3117998$B32E31AC-1172-4766-86A2-ABF1B59B49BA",
+        "rank": "normal"
+      }
+    ],
+    "P1001": [
+      {
+        "mainsnak": {
+          "snaktype": "value",
+          "property": "P1001",
+          "hash": "efe2878aed693a79dce942b2f853910a78c4e2a8",
+          "datavalue": {
+            "value": {
+              "entity-type": "item",
+              "numeric-id": 142,
+              "id": "Q142"
+            },
+            "type": "wikibase-entityid"
+          },
+          "datatype": "wikibase-item"
+        },
+        "type": "statement",
+        "id": "Q3117998$0ff99b1d-4a3f-0a73-9643-9477badffada",
+        "rank": "normal",
+        "references": [
+          {
+            "hash": "6a1bbae3e2d72da16e4e1690895df64b92bd0bc6",
+            "snaks": {
+              "P248": [
+                {
+                  "snaktype": "value",
+                  "property": "P248",
+                  "hash": "fcf65a391a49839906ef7185e6bfb3704cb0b247",
+                  "datavalue": {
+                    "value": {
+                      "entity-type": "item",
+                      "numeric-id": 112176191,
+                      "id": "Q112176191"
+                    },
+                    "type": "wikibase-entityid"
+                  },
+                  "datatype": "wikibase-item"
+                }
+              ]
+            },
+            "snaks-order": [
+              "P248"
+            ]
+          }
+        ]
+      }
+    ],
+    "P10421": [
+      {
+        "mainsnak": {
+          "snaktype": "value",
+          "property": "P10421",
+          "hash": "ffeb4d667c32a26bea177d1aa6d1f73b46cdb48e",
+          "datavalue": {
+            "value": "QCWO",
+            "type": "string"
+          },
+          "datatype": "external-id"
+        },
+        "type": "statement",
+        "id": "Q3117998$df48669c-4da2-a5f0-bcfb-07798591a3ea",
+        "rank": "normal"
+      }
+    ],
+    "P279": [
+      {
+        "mainsnak": {
+          "snaktype": "value",
+          "property": "P279",
+          "hash": "861750e3a4218f6b4001af49560977ebfed55966",
+          "datavalue": {
+            "value": {
+              "entity-type": "item",
+              "numeric-id": 33134075,
+              "id": "Q33134075"
+            },
+            "type": "wikibase-entityid"
+          },
+          "datatype": "wikibase-item"
+        },
+        "type": "statement",
+        "qualifiers": {
+          "P1343": [
+            {
+              "snaktype": "value",
+              "property": "P1343",
+              "hash": "95de1b34beeaf332f2ba8fbd537cc0d4e4c5cb60",
+              "datavalue": {
+                "value": {
+                  "entity-type": "item",
+                  "numeric-id": 112176191,
+                  "id": "Q112176191"
+                },
+                "type": "wikibase-entityid"
+              },
+              "datatype": "wikibase-item"
+            }
+          ]
+        },
+        "qualifiers-order": [
+          "P1343"
+        ],
+        "id": "Q3117998$1556AB08-ED74-435B-9B81-CB69347F830C",
+        "rank": "normal",
+        "references": [
+          {
+            "hash": "6a1bbae3e2d72da16e4e1690895df64b92bd0bc6",
+            "snaks": {
+              "P248": [
+                {
+                  "snaktype": "value",
+                  "property": "P248",
+                  "hash": "fcf65a391a49839906ef7185e6bfb3704cb0b247",
+                  "datavalue": {
+                    "value": {
+                      "entity-type": "item",
+                      "numeric-id": 112176191,
+                      "id": "Q112176191"
+                    },
+                    "type": "wikibase-entityid"
+                  },
+                  "datatype": "wikibase-item"
+                }
+              ]
+            },
+            "snaks-order": [
+              "P248"
+            ]
+          }
+        ]
+      }
+    ],
+    "P528": [
+      {
+        "mainsnak": {
+          "snaktype": "value",
+          "property": "P528",
+          "hash": "35efd7e903b03e41475dce687c81181352ffcb88",
+          "datavalue": {
+            "value": "6533",
+            "type": "string"
+          },
+          "datatype": "string"
+        },
+        "type": "statement",
+        "qualifiers": {
+          "P972": [
+            {
+              "snaktype": "value",
+              "property": "P972",
+              "hash": "f1fd77dd7d7ab7b3de49acae59d3992c9dec40c2",
+              "datavalue": {
+                "value": {
+                  "entity-type": "item",
+                  "numeric-id": 112176191,
+                  "id": "Q112176191"
+                },
+                "type": "wikibase-entityid"
+              },
+              "datatype": "wikibase-item"
+            }
+          ]
+        },
+        "qualifiers-order": [
+          "P972"
+        ],
+        "id": "Q3117998$E62F9A37-72B2-4DBC-A610-7E61246F78A3",
+        "rank": "normal",
+        "references": [
+          {
+            "hash": "6a1bbae3e2d72da16e4e1690895df64b92bd0bc6",
+            "snaks": {
+              "P248": [
+                {
+                  "snaktype": "value",
+                  "property": "P248",
+                  "hash": "fcf65a391a49839906ef7185e6bfb3704cb0b247",
+                  "datavalue": {
+                    "value": {
+                      "entity-type": "item",
+                      "numeric-id": 112176191,
+                      "id": "Q112176191"
+                    },
+                    "type": "wikibase-entityid"
+                  },
+                  "datatype": "wikibase-item"
+                }
+              ]
+            },
+            "snaks-order": [
+              "P248"
+            ]
+          }
+        ]
+      }
+    ],
+    "P361": [
+      {
+        "mainsnak": {
+          "snaktype": "value",
+          "property": "P361",
+          "hash": "76a3fc382686ebeaf42363031d233111a5a176f4",
+          "datavalue": {
+            "value": {
+              "entity-type": "item",
+              "numeric-id": 112176282,
+              "id": "Q112176282"
+            },
+            "type": "wikibase-entityid"
+          },
+          "datatype": "wikibase-item"
+        },
+        "type": "statement",
+        "id": "Q3117998$8FCD125D-39A5-46E8-9E55-51E2B7CE499F",
+        "rank": "normal",
+        "references": [
+          {
+            "hash": "6a1bbae3e2d72da16e4e1690895df64b92bd0bc6",
+            "snaks": {
+              "P248": [
+                {
+                  "snaktype": "value",
+                  "property": "P248",
+                  "hash": "fcf65a391a49839906ef7185e6bfb3704cb0b247",
+                  "datavalue": {
+                    "value": {
+                      "entity-type": "item",
+                      "numeric-id": 112176191,
+                      "id": "Q112176191"
+                    },
+                    "type": "wikibase-entityid"
+                  },
+                  "datatype": "wikibase-item"
+                }
+              ]
+            },
+            "snaks-order": [
+              "P248"
+            ]
+          }
+        ]
+      }
+    ],
+    "P2561": [
+      {
+        "mainsnak": {
+          "snaktype": "value",
+          "property": "P2561",
+          "hash": "947c54431414593ce22aece17bae382133a58e0f",
+          "datavalue": {
+            "value": {
+              "text": "groupement agricole d'exploitation en commun (GAEC)",
+              "language": "fr"
+            },
+            "type": "monolingualtext"
+          },
+          "datatype": "monolingualtext"
+        },
+        "type": "statement",
+        "qualifiers": {
+          "P1343": [
+            {
+              "snaktype": "value",
+              "property": "P1343",
+              "hash": "95de1b34beeaf332f2ba8fbd537cc0d4e4c5cb60",
+              "datavalue": {
+                "value": {
+                  "entity-type": "item",
+                  "numeric-id": 112176191,
+                  "id": "Q112176191"
+                },
+                "type": "wikibase-entityid"
+              },
+              "datatype": "wikibase-item"
+            }
+          ]
+        },
+        "qualifiers-order": [
+          "P1343"
+        ],
+        "id": "Q3117998$FB6D0E7C-11D3-45FB-917F-4A7B5CAC2817",
+        "rank": "normal",
+        "references": [
+          {
+            "hash": "6a1bbae3e2d72da16e4e1690895df64b92bd0bc6",
+            "snaks": {
+              "P248": [
+                {
+                  "snaktype": "value",
+                  "property": "P248",
+                  "hash": "fcf65a391a49839906ef7185e6bfb3704cb0b247",
+                  "datavalue": {
+                    "value": {
+                      "entity-type": "item",
+                      "numeric-id": 112176191,
+                      "id": "Q112176191"
+                    },
+                    "type": "wikibase-entityid"
+                  },
+                  "datatype": "wikibase-item"
+                }
+              ]
+            },
+            "snaks-order": [
+              "P248"
+            ]
+          }
+        ]
+      }
+    ]
+  },
+  "sitelinks": {
+    "frwiki": {
+      "site": "frwiki",
+      "title": "Groupement agricole d'exploitation en commun",
+      "badges": [],
+      "url": "https://fr.wikipedia.org/wiki/Groupement_agricole_d%27exploitation_en_commun"
+    }
+  }
+}

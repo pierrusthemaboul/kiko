@@ -17,3 +17,4 @@ async function checkCatalog() {
     console.log(`Coverage: ${((uniqueSeen / totalEvents) * 100).toFixed(2)}%`);
 }
 checkCatalog();
+

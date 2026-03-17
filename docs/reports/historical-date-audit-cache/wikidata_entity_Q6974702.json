@@ -1,0 +1,279 @@
+{
+  "saved_at": "2026-03-07T15:45:05.012Z",
+  "value": {
+    "pageid": 6844962,
+    "ns": 0,
+    "title": "Q6974702",
+    "lastrevid": 2338645935,
+    "modified": "2025-04-16T20:31:58Z",
+    "type": "item",
+    "id": "Q6974702",
+    "labels": {
+      "en": {
+        "language": "en",
+        "value": "National Origins Formula"
+      },
+      "fr": {
+        "language": "fr",
+        "value": "National Origins Formula"
+      }
+    },
+    "descriptions": {},
+    "aliases": {},
+    "claims": {
+      "P17": [
+        {
+          "mainsnak": {
+            "snaktype": "value",
+            "property": "P17",
+            "hash": "be4c6eafa2984964f04be85667263f5642ba1a72",
+            "datavalue": {
+              "value": {
+                "entity-type": "item",
+                "numeric-id": 30,
+                "id": "Q30"
+              },
+              "type": "wikibase-entityid"
+            },
+            "datatype": "wikibase-item"
+          },
+          "type": "statement",
+          "id": "Q6974702$5E78E990-1B82-41EE-8D6F-DE3C3AECA06A",
+          "rank": "normal"
+        }
+      ],
+      "P1417": [
+        {
+          "mainsnak": {
+            "snaktype": "value",
+            "property": "P1417",
+            "hash": "03cb1277d32f2794734d5bef6b73005ab8c08834",
+            "datavalue": {
+              "value": "topic/national-origins-system",
+              "type": "string"
+            },
+            "datatype": "external-id"
+          },
+          "type": "statement",
+          "qualifiers": {
+            "P1810": [
+              {
+                "snaktype": "value",
+                "property": "P1810",
+                "hash": "a1987b333e1588e5967da8ac9d3a81b4f6581d30",
+                "datavalue": {
+                  "value": "national-origins system",
+                  "type": "string"
+                },
+                "datatype": "string"
+              }
+            ]
+          },
+          "qualifiers-order": [
+            "P1810"
+          ],
+          "id": "Q6974702$8BC79020-C30E-41DA-AC54-BEE6D6E90217",
+          "rank": "normal"
+        }
+      ],
+      "P31": [
+        {
+          "mainsnak": {
+            "snaktype": "value",
+            "property": "P31",
+            "hash": "a52592692f522df080f0d1220c01ab0132786e23",
+            "datavalue": {
+              "value": {
+                "entity-type": "item",
+                "numeric-id": 15064326,
+                "id": "Q15064326"
+              },
+              "type": "wikibase-entityid"
+            },
+            "datatype": "wikibase-item"
+          },
+          "type": "statement",
+          "qualifiers": {
+            "P580": [
+              {
+                "snaktype": "value",
+                "property": "P580",
+                "hash": "d18b94be39e316a318941bb0ffa6fb8d1071ef04",
+                "datavalue": {
+                  "value": {
+                    "time": "+1921-00-00T00:00:00Z",
+                    "timezone": 0,
+                    "before": 0,
+                    "after": 0,
+                    "precision": 9,
+                    "calendarmodel": "http://www.wikidata.org/entity/Q1985727"
+                  },
+                  "type": "time"
+                },
+                "datatype": "time"
+              }
+            ],
+            "P582": [
+              {
+                "snaktype": "value",
+                "property": "P582",
+                "hash": "c85764aaeb58cfb3b69bd53da76bd66df99ac69b",
+                "datavalue": {
+                  "value": {
+                    "time": "+1965-00-00T00:00:00Z",
+                    "timezone": 0,
+                    "before": 0,
+                    "after": 0,
+                    "precision": 9,
+                    "calendarmodel": "http://www.wikidata.org/entity/Q1985727"
+                  },
+                  "type": "time"
+                },
+                "datatype": "time"
+              }
+            ],
+            "P13044": [
+              {
+                "snaktype": "value",
+                "property": "P13044",
+                "hash": "a7e200919cedbf157f685edba9eedd094d884908",
+                "datavalue": {
+                  "value": {
+                    "entity-type": "item",
+                    "numeric-id": 30,
+                    "id": "Q30"
+                  },
+                  "type": "wikibase-entityid"
+                },
+                "datatype": "wikibase-item"
+              }
+            ]
+          },
+          "qualifiers-order": [
+            "P580",
+            "P582",
+            "P13044"
+          ],
+          "id": "Q6974702$35fc76fc-44f1-cb3a-f54a-c31cd0568413",
+          "rank": "normal"
+        }
+      ],
+      "P2568": [
+        {
+          "mainsnak": {
+            "snaktype": "value",
+            "property": "P2568",
+            "hash": "b4afb7f980b2891c72d2265a820ca00e30ec9c0a",
+            "datavalue": {
+              "value": {
+                "entity-type": "item",
+                "numeric-id": 505311,
+                "id": "Q505311"
+              },
+              "type": "wikibase-entityid"
+            },
+            "datatype": "wikibase-item"
+          },
+          "type": "statement",
+          "qualifiers": {
+            "P585": [
+              {
+                "snaktype": "value",
+                "property": "P585",
+                "hash": "9ec093bec6b9742fe39444d2649d5bac5172d092",
+                "datavalue": {
+                  "value": {
+                    "time": "+1968-06-30T00:00:00Z",
+                    "timezone": 0,
+                    "before": 0,
+                    "after": 0,
+                    "precision": 11,
+                    "calendarmodel": "http://www.wikidata.org/entity/Q1985727"
+                  },
+                  "type": "time"
+                },
+                "datatype": "time"
+              }
+            ]
+          },
+          "qualifiers-order": [
+            "P585"
+          ],
+          "id": "Q6974702$eb256c04-4025-7590-ee64-a06aebb20cab",
+          "rank": "normal"
+        }
+      ],
+      "P457": [
+        {
+          "mainsnak": {
+            "snaktype": "value",
+            "property": "P457",
+            "hash": "a3dc38a9b11e92a2fa8ff4a759a5e4012b348afc",
+            "datavalue": {
+              "value": {
+                "entity-type": "item",
+                "numeric-id": 1335451,
+                "id": "Q1335451"
+              },
+              "type": "wikibase-entityid"
+            },
+            "datatype": "wikibase-item"
+          },
+          "type": "statement",
+          "id": "Q6974702$cbd90741-4f86-a2f3-ce6c-84947ed99a26",
+          "rank": "normal"
+        },
+        {
+          "mainsnak": {
+            "snaktype": "value",
+            "property": "P457",
+            "hash": "3a31d01dd9aec831531c5039633cd7bb7302dddc",
+            "datavalue": {
+              "value": {
+                "entity-type": "item",
+                "numeric-id": 1434492,
+                "id": "Q1434492"
+              },
+              "type": "wikibase-entityid"
+            },
+            "datatype": "wikibase-item"
+          },
+          "type": "statement",
+          "id": "Q6974702$f1de6daa-4904-c964-fb7f-c6077f80982a",
+          "rank": "normal"
+        }
+      ],
+      "P646": [
+        {
+          "mainsnak": {
+            "snaktype": "value",
+            "property": "P646",
+            "hash": "4b653d9b5af5676f8a0c1458095a21e5052df484",
+            "datavalue": {
+              "value": "/m/08kqs6",
+              "type": "string"
+            },
+            "datatype": "external-id"
+          },
+          "type": "statement",
+          "id": "Q6974702$1A1500E3-8E2D-4124-ADDE-91E38606B200",
+          "rank": "normal"
+        }
+      ]
+    },
+    "sitelinks": {
+      "enwiki": {
+        "site": "enwiki",
+        "title": "National Origins Formula",
+        "badges": [],
+        "url": "https://en.wikipedia.org/wiki/National_Origins_Formula"
+      },
+      "frwiki": {
+        "site": "frwiki",
+        "title": "National Origins Formula",
+        "badges": [],
+        "url": "https://fr.wikipedia.org/wiki/National_Origins_Formula"
+      }
+    }
+  }
+}

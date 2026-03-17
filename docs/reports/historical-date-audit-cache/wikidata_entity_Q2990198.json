@@ -1,0 +1,451 @@
+{
+  "saved_at": "2026-03-07T13:29:44.351Z",
+  "value": {
+    "pageid": 2859350,
+    "ns": 0,
+    "title": "Q2990198",
+    "lastrevid": 1998589228,
+    "modified": "2023-10-27T15:09:26Z",
+    "type": "item",
+    "id": "Q2990198",
+    "labels": {
+      "fr": {
+        "language": "fr",
+        "value": "Compagnie générale transaérienne"
+      },
+      "en": {
+        "language": "en",
+        "value": "Compagnie générale transaérienne"
+      },
+      "es": {
+        "language": "es",
+        "value": "Compagnie générale transaérienne"
+      }
+    },
+    "descriptions": {
+      "ar": {
+        "language": "ar",
+        "value": "شركة"
+      },
+      "en": {
+        "language": "en",
+        "value": "French airline"
+      }
+    },
+    "aliases": {
+      "fr": [
+        {
+          "language": "fr",
+          "value": "Compagnie Générale Transaérienne"
+        }
+      ],
+      "es": [
+        {
+          "language": "es",
+          "value": "Compagnie generale transaerienne"
+        }
+      ],
+      "en": [
+        {
+          "language": "en",
+          "value": "Compagnie generale transaerienne"
+        }
+      ]
+    },
+    "claims": {
+      "P31": [
+        {
+          "mainsnak": {
+            "snaktype": "value",
+            "property": "P31",
+            "hash": "fad0acbb18accf7995c64a724b620913b4b7864e",
+            "datavalue": {
+              "value": {
+                "entity-type": "item",
+                "numeric-id": 46970,
+                "id": "Q46970"
+              },
+              "type": "wikibase-entityid"
+            },
+            "datatype": "wikibase-item"
+          },
+          "type": "statement",
+          "id": "Q2990198$3AAF20EE-B4D9-49A2-A51C-4A3F8BD4DCE6",
+          "rank": "normal"
+        }
+      ],
+      "P571": [
+        {
+          "mainsnak": {
+            "snaktype": "value",
+            "property": "P571",
+            "hash": "c6141d320a73d277ab764827cace53847f977444",
+            "datavalue": {
+              "value": {
+                "time": "+1909-01-01T00:00:00Z",
+                "timezone": 0,
+                "before": 0,
+                "after": 0,
+                "precision": 9,
+                "calendarmodel": "http://www.wikidata.org/entity/Q1985727"
+              },
+              "type": "time"
+            },
+            "datatype": "time"
+          },
+          "type": "statement",
+          "id": "Q2990198$FDAEF53E-9A2C-486E-BB32-9EEC59739C08",
+          "rank": "normal",
+          "references": [
+            {
+              "hash": "d4bd87b862b12d99d26e86472d44f26858dee639",
+              "snaks": {
+                "P143": [
+                  {
+                    "snaktype": "value",
+                    "property": "P143",
+                    "hash": "f30cbd35620c4ea6d0633aaf0210a8916130469b",
+                    "datavalue": {
+                      "value": {
+                        "entity-type": "item",
+                        "numeric-id": 8447,
+                        "id": "Q8447"
+                      },
+                      "type": "wikibase-entityid"
+                    },
+                    "datatype": "wikibase-item"
+                  }
+                ]
+              },
+              "snaks-order": [
+                "P143"
+              ]
+            }
+          ]
+        }
+      ],
+      "P576": [
+        {
+          "mainsnak": {
+            "snaktype": "value",
+            "property": "P576",
+            "hash": "3aa0809b6c9286f86337b68890701eb1db0b1402",
+            "datavalue": {
+              "value": {
+                "time": "+1921-00-00T00:00:00Z",
+                "timezone": 0,
+                "before": 0,
+                "after": 0,
+                "precision": 9,
+                "calendarmodel": "http://www.wikidata.org/entity/Q1985727"
+              },
+              "type": "time"
+            },
+            "datatype": "time"
+          },
+          "type": "statement",
+          "id": "Q2990198$FBA89BB2-788A-42B0-85E8-5CF4E0B17D2A",
+          "rank": "normal",
+          "references": [
+            {
+              "hash": "fa278ebfc458360e5aed63d5058cca83c46134f1",
+              "snaks": {
+                "P143": [
+                  {
+                    "snaktype": "value",
+                    "property": "P143",
+                    "hash": "e4f6d9441d0600513c4533c672b5ab472dc73694",
+                    "datavalue": {
+                      "value": {
+                        "entity-type": "item",
+                        "numeric-id": 328,
+                        "id": "Q328"
+                      },
+                      "type": "wikibase-entityid"
+                    },
+                    "datatype": "wikibase-item"
+                  }
+                ]
+              },
+              "snaks-order": [
+                "P143"
+              ]
+            }
+          ]
+        }
+      ],
+      "P159": [
+        {
+          "mainsnak": {
+            "snaktype": "value",
+            "property": "P159",
+            "hash": "ca89301236116d4a48cdb10f14f9b410a42fed7d",
+            "datavalue": {
+              "value": {
+                "entity-type": "item",
+                "numeric-id": 142,
+                "id": "Q142"
+              },
+              "type": "wikibase-entityid"
+            },
+            "datatype": "wikibase-item"
+          },
+          "type": "statement",
+          "id": "Q2990198$B9F19CA7-F27F-4F73-A15A-501D0E1408DD",
+          "rank": "normal",
+          "references": [
+            {
+              "hash": "d4bd87b862b12d99d26e86472d44f26858dee639",
+              "snaks": {
+                "P143": [
+                  {
+                    "snaktype": "value",
+                    "property": "P143",
+                    "hash": "f30cbd35620c4ea6d0633aaf0210a8916130469b",
+                    "datavalue": {
+                      "value": {
+                        "entity-type": "item",
+                        "numeric-id": 8447,
+                        "id": "Q8447"
+                      },
+                      "type": "wikibase-entityid"
+                    },
+                    "datatype": "wikibase-item"
+                  }
+                ]
+              },
+              "snaks-order": [
+                "P143"
+              ]
+            }
+          ]
+        }
+      ],
+      "P112": [
+        {
+          "mainsnak": {
+            "snaktype": "value",
+            "property": "P112",
+            "hash": "e96880cdcd9caf3a9161e2a553b6f120ef223ea2",
+            "datavalue": {
+              "value": {
+                "entity-type": "item",
+                "numeric-id": 1345595,
+                "id": "Q1345595"
+              },
+              "type": "wikibase-entityid"
+            },
+            "datatype": "wikibase-item"
+          },
+          "type": "statement",
+          "id": "Q2990198$11CA5040-DF8B-46AB-9579-7371E6DFB934",
+          "rank": "normal",
+          "references": [
+            {
+              "hash": "fa278ebfc458360e5aed63d5058cca83c46134f1",
+              "snaks": {
+                "P143": [
+                  {
+                    "snaktype": "value",
+                    "property": "P143",
+                    "hash": "e4f6d9441d0600513c4533c672b5ab472dc73694",
+                    "datavalue": {
+                      "value": {
+                        "entity-type": "item",
+                        "numeric-id": 328,
+                        "id": "Q328"
+                      },
+                      "type": "wikibase-entityid"
+                    },
+                    "datatype": "wikibase-item"
+                  }
+                ]
+              },
+              "snaks-order": [
+                "P143"
+              ]
+            }
+          ]
+        }
+      ],
+      "P18": [
+        {
+          "mainsnak": {
+            "snaktype": "value",
+            "property": "P18",
+            "hash": "0aef8dff98a96b7dc156b50377b3dbd8dcb63ab4",
+            "datavalue": {
+              "value": "Horaire cgt.jpg",
+              "type": "string"
+            },
+            "datatype": "commonsMedia"
+          },
+          "type": "statement",
+          "id": "Q2990198$0103A69F-EE1B-4AC8-9102-7A186F0CE07A",
+          "rank": "normal",
+          "references": [
+            {
+              "hash": "fa278ebfc458360e5aed63d5058cca83c46134f1",
+              "snaks": {
+                "P143": [
+                  {
+                    "snaktype": "value",
+                    "property": "P143",
+                    "hash": "e4f6d9441d0600513c4533c672b5ab472dc73694",
+                    "datavalue": {
+                      "value": {
+                        "entity-type": "item",
+                        "numeric-id": 328,
+                        "id": "Q328"
+                      },
+                      "type": "wikibase-entityid"
+                    },
+                    "datatype": "wikibase-item"
+                  }
+                ]
+              },
+              "snaks-order": [
+                "P143"
+              ]
+            }
+          ]
+        }
+      ],
+      "P646": [
+        {
+          "mainsnak": {
+            "snaktype": "value",
+            "property": "P646",
+            "hash": "5c33e39358526fdf94465bfaa7a39409f5b33358",
+            "datavalue": {
+              "value": "/m/012brdgz",
+              "type": "string"
+            },
+            "datatype": "external-id"
+          },
+          "type": "statement",
+          "id": "Q2990198$CA740E1F-41C5-4164-8427-0841F558B8CE",
+          "rank": "normal"
+        }
+      ],
+      "P452": [
+        {
+          "mainsnak": {
+            "snaktype": "value",
+            "property": "P452",
+            "hash": "a0235909d129c984d4a23280f2da001d2d3d0c1e",
+            "datavalue": {
+              "value": {
+                "entity-type": "item",
+                "numeric-id": 765633,
+                "id": "Q765633"
+              },
+              "type": "wikibase-entityid"
+            },
+            "datatype": "wikibase-item"
+          },
+          "type": "statement",
+          "id": "Q2990198$C6ED141B-9490-44F9-92B1-932116C0810C",
+          "rank": "normal",
+          "references": [
+            {
+              "hash": "69b25ba943d08566f5e21b1894395c01c2feb03d",
+              "snaks": {
+                "P143": [
+                  {
+                    "snaktype": "value",
+                    "property": "P143",
+                    "hash": "e4f6d9441d0600513c4533c672b5ab472dc73694",
+                    "datavalue": {
+                      "value": {
+                        "entity-type": "item",
+                        "numeric-id": 328,
+                        "id": "Q328"
+                      },
+                      "type": "wikibase-entityid"
+                    },
+                    "datatype": "wikibase-item"
+                  }
+                ],
+                "P4656": [
+                  {
+                    "snaktype": "value",
+                    "property": "P4656",
+                    "hash": "16fb618fb0410376895d18daf163725a77a85702",
+                    "datavalue": {
+                      "value": "https://en.wikipedia.org/w/index.php?title=Compagnie_générale_transaérienne&oldid=1016757987",
+                      "type": "string"
+                    },
+                    "datatype": "url"
+                  }
+                ]
+              },
+              "snaks-order": [
+                "P143",
+                "P4656"
+              ]
+            }
+          ]
+        }
+      ],
+      "P17": [
+        {
+          "mainsnak": {
+            "snaktype": "value",
+            "property": "P17",
+            "hash": "c05db5d169c2560b9799d567a803d20a392f53e4",
+            "datavalue": {
+              "value": {
+                "entity-type": "item",
+                "numeric-id": 142,
+                "id": "Q142"
+              },
+              "type": "wikibase-entityid"
+            },
+            "datatype": "wikibase-item"
+          },
+          "type": "statement",
+          "id": "Q2990198$e54c5e86-4945-69d5-19a9-c9d37b8cfe30",
+          "rank": "normal"
+        }
+      ],
+      "P373": [
+        {
+          "mainsnak": {
+            "snaktype": "value",
+            "property": "P373",
+            "hash": "03be006a7721ac0870b2a7c07f5486344945dfdc",
+            "datavalue": {
+              "value": "Compagnie Générale Transaérienne",
+              "type": "string"
+            },
+            "datatype": "string"
+          },
+          "type": "statement",
+          "id": "Q2990198$42748b5e-4abe-f295-632d-84bd5bed4fea",
+          "rank": "normal"
+        }
+      ]
+    },
+    "sitelinks": {
+      "commonswiki": {
+        "site": "commonswiki",
+        "title": "Category:Compagnie Générale Transaérienne",
+        "badges": [],
+        "url": "https://commons.wikimedia.org/wiki/Category:Compagnie_G%C3%A9n%C3%A9rale_Transa%C3%A9rienne"
+      },
+      "enwiki": {
+        "site": "enwiki",
+        "title": "Compagnie générale transaérienne",
+        "badges": [],
+        "url": "https://en.wikipedia.org/wiki/Compagnie_g%C3%A9n%C3%A9rale_transa%C3%A9rienne"
+      },
+      "frwiki": {
+        "site": "frwiki",
+        "title": "Compagnie générale transaérienne",
+        "badges": [],
+        "url": "https://fr.wikipedia.org/wiki/Compagnie_g%C3%A9n%C3%A9rale_transa%C3%A9rienne"
+      }
+    }
+  }
+}

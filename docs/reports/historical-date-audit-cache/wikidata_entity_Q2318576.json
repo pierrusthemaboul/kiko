@@ -1,0 +1,269 @@
+{
+  "saved_at": "2026-03-07T15:04:55.227Z",
+  "value": {
+    "pageid": 2239769,
+    "ns": 0,
+    "title": "Q2318576",
+    "lastrevid": 2232959429,
+    "modified": "2024-08-21T13:57:04Z",
+    "type": "item",
+    "id": "Q2318576",
+    "labels": {
+      "ru": {
+        "language": "ru",
+        "value": "Французский референдум по расширению Европейского сообщества"
+      },
+      "fr": {
+        "language": "fr",
+        "value": "Référendum sur l'élargissement de la CEE"
+      },
+      "en": {
+        "language": "en",
+        "value": "French European Economic Community enlargement referendum"
+      },
+      "th": {
+        "language": "th",
+        "value": "การลงประชามติขยายประชาคมเศรษฐกิจยุโรป"
+      },
+      "it": {
+        "language": "it",
+        "value": "referendum sull'allargamento della CEE"
+      },
+      "ko": {
+        "language": "ko",
+        "value": "1972년 프랑스 국민투표"
+      },
+      "de": {
+        "language": "de",
+        "value": "Referendum in Frankreich 1972 zur Erweiterung der Europäischen Wirtschaftsgemeinschaft"
+      },
+      "zh-hant": {
+        "language": "zh-hant",
+        "value": "1972年歐洲各共同體擴張法國公投"
+      },
+      "zh-hans": {
+        "language": "zh-hans",
+        "value": "1972年欧洲各共同体扩张法国公投"
+      },
+      "zh": {
+        "language": "zh",
+        "value": "1972年欧洲各共同体扩张法国公投"
+      },
+      "ar": {
+        "language": "ar",
+        "value": "استفتاء توسيع المجتمعات الأوروبية الفرنسية 1972"
+      },
+      "uk": {
+        "language": "uk",
+        "value": "Референдум у Франції щодо розширення Європейських Співтовариств 1972 року"
+      }
+    },
+    "descriptions": {
+      "de": {
+        "language": "de",
+        "value": "Volksabstimmung zum EWG-Beitritt des Vereinigten Königreichs, Irlands, Dänemarks und Norwegens"
+      }
+    },
+    "aliases": {
+      "fr": [
+        {
+          "language": "fr",
+          "value": "Referendum sur l'elargissement de la CEE"
+        }
+      ],
+      "th": [
+        {
+          "language": "th",
+          "value": "การลงประชามติขยายประชาคมเศรษฐกิจยุโรป พ.ศ. 2515"
+        }
+      ]
+    },
+    "claims": {
+      "P646": [
+        {
+          "mainsnak": {
+            "snaktype": "value",
+            "property": "P646",
+            "hash": "680cbcc01843c94ce3fe49e34acf374dc50e417d",
+            "datavalue": {
+              "value": "/m/02rnn6b",
+              "type": "string"
+            },
+            "datatype": "external-id"
+          },
+          "type": "statement",
+          "id": "Q2318576$02E1ADC2-62E1-4B7A-AC60-7A28FFC50F9D",
+          "rank": "normal",
+          "references": [
+            {
+              "hash": "2b00cb481cddcac7623114367489b5c194901c4a",
+              "snaks": {
+                "P248": [
+                  {
+                    "snaktype": "value",
+                    "property": "P248",
+                    "hash": "a94b740202b097dd33355e0e6c00e54b9395e5e0",
+                    "datavalue": {
+                      "value": {
+                        "entity-type": "item",
+                        "numeric-id": 15241312,
+                        "id": "Q15241312"
+                      },
+                      "type": "wikibase-entityid"
+                    },
+                    "datatype": "wikibase-item"
+                  }
+                ],
+                "P577": [
+                  {
+                    "snaktype": "value",
+                    "property": "P577",
+                    "hash": "fde79ecb015112d2f29229ccc1ec514ed3e71fa2",
+                    "datavalue": {
+                      "value": {
+                        "time": "+2013-10-28T00:00:00Z",
+                        "timezone": 0,
+                        "before": 0,
+                        "after": 0,
+                        "precision": 11,
+                        "calendarmodel": "http://www.wikidata.org/entity/Q1985727"
+                      },
+                      "type": "time"
+                    },
+                    "datatype": "time"
+                  }
+                ]
+              },
+              "snaks-order": [
+                "P248",
+                "P577"
+              ]
+            }
+          ]
+        }
+      ],
+      "P31": [
+        {
+          "mainsnak": {
+            "snaktype": "value",
+            "property": "P31",
+            "hash": "d31a19d338af1e9f1a88316e14e6cd432b62c830",
+            "datavalue": {
+              "value": {
+                "entity-type": "item",
+                "numeric-id": 43109,
+                "id": "Q43109"
+              },
+              "type": "wikibase-entityid"
+            },
+            "datatype": "wikibase-item"
+          },
+          "type": "statement",
+          "id": "Q2318576$DFD998A1-F86F-453A-A1D9-6601B6428F17",
+          "rank": "normal"
+        }
+      ],
+      "P585": [
+        {
+          "mainsnak": {
+            "snaktype": "value",
+            "property": "P585",
+            "hash": "298da83092c136e800ae682acef7fea83d053c74",
+            "datavalue": {
+              "value": {
+                "time": "+1972-04-23T00:00:00Z",
+                "timezone": 0,
+                "before": 0,
+                "after": 0,
+                "precision": 11,
+                "calendarmodel": "http://www.wikidata.org/entity/Q1985727"
+              },
+              "type": "time"
+            },
+            "datatype": "time"
+          },
+          "type": "statement",
+          "id": "Q2318576$E01BC997-07EB-4E7B-A298-6F05FAF25664",
+          "rank": "normal"
+        }
+      ],
+      "P17": [
+        {
+          "mainsnak": {
+            "snaktype": "value",
+            "property": "P17",
+            "hash": "c05db5d169c2560b9799d567a803d20a392f53e4",
+            "datavalue": {
+              "value": {
+                "entity-type": "item",
+                "numeric-id": 142,
+                "id": "Q142"
+              },
+              "type": "wikibase-entityid"
+            },
+            "datatype": "wikibase-item"
+          },
+          "type": "statement",
+          "id": "Q2318576$16C94883-746D-4184-8010-4C6C3297A274",
+          "rank": "normal"
+        }
+      ]
+    },
+    "sitelinks": {
+      "arwiki": {
+        "site": "arwiki",
+        "title": "استفتاء توسيع المجتمعات الأوروبية الفرنسي 1972",
+        "badges": [],
+        "url": "https://ar.wikipedia.org/wiki/%D8%A7%D8%B3%D8%AA%D9%81%D8%AA%D8%A7%D8%A1_%D8%AA%D9%88%D8%B3%D9%8A%D8%B9_%D8%A7%D9%84%D9%85%D8%AC%D8%AA%D9%85%D8%B9%D8%A7%D8%AA_%D8%A7%D9%84%D8%A3%D9%88%D8%B1%D9%88%D8%A8%D9%8A%D8%A9_%D8%A7%D9%84%D9%81%D8%B1%D9%86%D8%B3%D9%8A_1972"
+      },
+      "dewiki": {
+        "site": "dewiki",
+        "title": "Referendum in Frankreich 1972 zur Erweiterung der Europäischen Wirtschaftsgemeinschaft",
+        "badges": [],
+        "url": "https://de.wikipedia.org/wiki/Referendum_in_Frankreich_1972_zur_Erweiterung_der_Europ%C3%A4ischen_Wirtschaftsgemeinschaft"
+      },
+      "enwiki": {
+        "site": "enwiki",
+        "title": "1972 French European Communities enlargement referendum",
+        "badges": [],
+        "url": "https://en.wikipedia.org/wiki/1972_French_European_Communities_enlargement_referendum"
+      },
+      "frwiki": {
+        "site": "frwiki",
+        "title": "Référendum français sur l'élargissement des Communautés européennes",
+        "badges": [],
+        "url": "https://fr.wikipedia.org/wiki/R%C3%A9f%C3%A9rendum_fran%C3%A7ais_sur_l%27%C3%A9largissement_des_Communaut%C3%A9s_europ%C3%A9ennes"
+      },
+      "itwiki": {
+        "site": "itwiki",
+        "title": "Referendum sull'allargamento della CEE",
+        "badges": [],
+        "url": "https://it.wikipedia.org/wiki/Referendum_sull%27allargamento_della_CEE"
+      },
+      "kowiki": {
+        "site": "kowiki",
+        "title": "1972년 프랑스 국민투표",
+        "badges": [],
+        "url": "https://ko.wikipedia.org/wiki/1972%EB%85%84_%ED%94%84%EB%9E%91%EC%8A%A4_%EA%B5%AD%EB%AF%BC%ED%88%AC%ED%91%9C"
+      },
+      "ruwiki": {
+        "site": "ruwiki",
+        "title": "Французский референдум по расширению Европейского сообщества (1972)",
+        "badges": [],
+        "url": "https://ru.wikipedia.org/wiki/%D0%A4%D1%80%D0%B0%D0%BD%D1%86%D1%83%D0%B7%D1%81%D0%BA%D0%B8%D0%B9_%D1%80%D0%B5%D1%84%D0%B5%D1%80%D0%B5%D0%BD%D0%B4%D1%83%D0%BC_%D0%BF%D0%BE_%D1%80%D0%B0%D1%81%D1%88%D0%B8%D1%80%D0%B5%D0%BD%D0%B8%D1%8E_%D0%95%D0%B2%D1%80%D0%BE%D0%BF%D0%B5%D0%B9%D1%81%D0%BA%D0%BE%D0%B3%D0%BE_%D1%81%D0%BE%D0%BE%D0%B1%D1%89%D0%B5%D1%81%D1%82%D0%B2%D0%B0_(1972)"
+      },
+      "thwiki": {
+        "site": "thwiki",
+        "title": "การลงประชามติขยายประชาคมเศรษฐกิจยุโรป",
+        "badges": [],
+        "url": "https://th.wikipedia.org/wiki/%E0%B8%81%E0%B8%B2%E0%B8%A3%E0%B8%A5%E0%B8%87%E0%B8%9B%E0%B8%A3%E0%B8%B0%E0%B8%8A%E0%B8%B2%E0%B8%A1%E0%B8%95%E0%B8%B4%E0%B8%82%E0%B8%A2%E0%B8%B2%E0%B8%A2%E0%B8%9B%E0%B8%A3%E0%B8%B0%E0%B8%8A%E0%B8%B2%E0%B8%84%E0%B8%A1%E0%B9%80%E0%B8%A8%E0%B8%A3%E0%B8%A9%E0%B8%90%E0%B8%81%E0%B8%B4%E0%B8%88%E0%B8%A2%E0%B8%B8%E0%B9%82%E0%B8%A3%E0%B8%9B"
+      },
+      "ukwiki": {
+        "site": "ukwiki",
+        "title": "Референдум у Франції щодо розширення Європейських Співтовариств (1972)",
+        "badges": [],
+        "url": "https://uk.wikipedia.org/wiki/%D0%A0%D0%B5%D1%84%D0%B5%D1%80%D0%B5%D0%BD%D0%B4%D1%83%D0%BC_%D1%83_%D0%A4%D1%80%D0%B0%D0%BD%D1%86%D1%96%D1%97_%D1%89%D0%BE%D0%B4%D0%BE_%D1%80%D0%BE%D0%B7%D1%88%D0%B8%D1%80%D0%B5%D0%BD%D0%BD%D1%8F_%D0%84%D0%B2%D1%80%D0%BE%D0%BF%D0%B5%D0%B9%D1%81%D1%8C%D0%BA%D0%B8%D1%85_%D0%A1%D0%BF%D1%96%D0%B2%D1%82%D0%BE%D0%B2%D0%B0%D1%80%D0%B8%D1%81%D1%82%D0%B2_(1972)"
+      }
+    }
+  }
+}

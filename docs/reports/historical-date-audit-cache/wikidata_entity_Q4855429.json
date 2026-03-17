@@ -1,0 +1,445 @@
+{
+  "saved_at": "2026-03-07T14:51:07.690Z",
+  "value": {
+    "pageid": 4637811,
+    "ns": 0,
+    "title": "Q4855429",
+    "lastrevid": 2461774350,
+    "modified": "2026-02-08T15:28:56Z",
+    "type": "item",
+    "id": "Q4855429",
+    "labels": {
+      "en": {
+        "language": "en",
+        "value": "Bangladeshi Declaration of Independence"
+      },
+      "bn": {
+        "language": "bn",
+        "value": "বাংলাদেশের স্বাধীনতার ঘোষণাপত্র"
+      },
+      "ar": {
+        "language": "ar",
+        "value": "إعلان استقلال بنغلاديش"
+      },
+      "id": {
+        "language": "id",
+        "value": "Deklarasi Kemerdekaan Bangladesh"
+      },
+      "fr": {
+        "language": "fr",
+        "value": "Proclamation d'indépendance du Bangladesh"
+      },
+      "ko": {
+        "language": "ko",
+        "value": "방글라데시 독립선언"
+      },
+      "ja": {
+        "language": "ja",
+        "value": "バングラデシュ独立宣言"
+      },
+      "el": {
+        "language": "el",
+        "value": "Διακήρυξη Ανεξαρτησίας του Μπανγκλαντές"
+      },
+      "he": {
+        "language": "he",
+        "value": "הכרזת העצמאות של בנגלדש"
+      }
+    },
+    "descriptions": {
+      "bn": {
+        "language": "bn",
+        "value": "মুজিবনগর সরকার কর্তৃক ১৯৭১ সালের ১৭ এপ্রিল আনুষ্ঠানিকভাবে ঘোষিত স্বাধীনতার ঘোষণাপত্র"
+      },
+      "en": {
+        "language": "en",
+        "value": "founding document of Bangladesh"
+      },
+      "id": {
+        "language": "id",
+        "value": "artikel daftar Wikimedia"
+      },
+      "el": {
+        "language": "el",
+        "value": "ιδρυτικό έγγραφο του Μπανγκλαντές"
+      }
+    },
+    "aliases": {
+      "en": [
+        {
+          "language": "en",
+          "value": "Proclamation of Independence"
+        },
+        {
+          "language": "en",
+          "value": "Proclamation of Independence of Bangladesh"
+        }
+      ]
+    },
+    "claims": {
+      "P4254": [
+        {
+          "mainsnak": {
+            "snaktype": "value",
+            "property": "P4254",
+            "hash": "e1f2803f44a7fe6d31621b1acf8bde6026b4326a",
+            "datavalue": {
+              "value": "স্বাধীনতার_ঘোষণাপত্র",
+              "type": "string"
+            },
+            "datatype": "external-id"
+          },
+          "type": "statement",
+          "id": "Q4855429$f6d6c529-4fcb-6ec0-d062-63d724338eb7",
+          "rank": "normal"
+        }
+      ],
+      "P4255": [
+        {
+          "mainsnak": {
+            "snaktype": "value",
+            "property": "P4255",
+            "hash": "29999b167b7e61039e7b76614f4a0e1032de498f",
+            "datavalue": {
+              "value": "Proclamation_of_Independence",
+              "type": "string"
+            },
+            "datatype": "external-id"
+          },
+          "type": "statement",
+          "id": "Q4855429$e9c550c3-4c96-679d-1068-d3212d3a9c32",
+          "rank": "normal"
+        }
+      ],
+      "P571": [
+        {
+          "mainsnak": {
+            "snaktype": "value",
+            "property": "P571",
+            "hash": "7aa86f2156ae1211312a3586c08264e4681298f6",
+            "datavalue": {
+              "value": {
+                "time": "+1971-03-26T00:00:00Z",
+                "timezone": 0,
+                "before": 0,
+                "after": 0,
+                "precision": 11,
+                "calendarmodel": "http://www.wikidata.org/entity/Q1985727"
+              },
+              "type": "time"
+            },
+            "datatype": "time"
+          },
+          "type": "statement",
+          "id": "Q4855429$9ce89bc4-45f7-4d82-8912-7a31101aa31a",
+          "rank": "normal"
+        }
+      ],
+      "P50": [
+        {
+          "mainsnak": {
+            "snaktype": "value",
+            "property": "P50",
+            "hash": "5650d4ea861c29a283714763324a6e46b5dde471",
+            "datavalue": {
+              "value": {
+                "entity-type": "item",
+                "numeric-id": 191375,
+                "id": "Q191375"
+              },
+              "type": "wikibase-entityid"
+            },
+            "datatype": "wikibase-item"
+          },
+          "type": "statement",
+          "id": "Q4855429$bae14cae-494c-3a22-b340-d5ef088d7c0a",
+          "rank": "normal"
+        },
+        {
+          "mainsnak": {
+            "snaktype": "value",
+            "property": "P50",
+            "hash": "ccff301b348c8c60c6d7f254885954eaaac89396",
+            "datavalue": {
+              "value": {
+                "entity-type": "item",
+                "numeric-id": 63615287,
+                "id": "Q63615287"
+              },
+              "type": "wikibase-entityid"
+            },
+            "datatype": "wikibase-item"
+          },
+          "type": "statement",
+          "id": "Q4855429$08855d4a-4423-3b12-22cb-cb4f3f8b11f4",
+          "rank": "normal"
+        },
+        {
+          "mainsnak": {
+            "snaktype": "value",
+            "property": "P50",
+            "hash": "1d37d02bb246bd5c7bdc5a928e68b1f387a21231",
+            "datavalue": {
+              "value": {
+                "entity-type": "item",
+                "numeric-id": 3346340,
+                "id": "Q3346340"
+              },
+              "type": "wikibase-entityid"
+            },
+            "datatype": "wikibase-item"
+          },
+          "type": "statement",
+          "id": "Q4855429$8db1f9c6-4186-d510-e242-171c230d0bd1",
+          "rank": "normal"
+        },
+        {
+          "mainsnak": {
+            "snaktype": "value",
+            "property": "P50",
+            "hash": "21bfff8f0f81aeeed92b7d39d9a7863e8c1a4ced",
+            "datavalue": {
+              "value": {
+                "entity-type": "item",
+                "numeric-id": 2975772,
+                "id": "Q2975772"
+              },
+              "type": "wikibase-entityid"
+            },
+            "datatype": "wikibase-item"
+          },
+          "type": "statement",
+          "id": "Q4855429$f941c54c-492e-b98a-5dab-a1e96f5e2ef5",
+          "rank": "normal"
+        }
+      ],
+      "P31": [
+        {
+          "mainsnak": {
+            "snaktype": "value",
+            "property": "P31",
+            "hash": "14711a22b3e9fbf942a2fe7ff7f6679f043a607c",
+            "datavalue": {
+              "value": {
+                "entity-type": "item",
+                "numeric-id": 49848,
+                "id": "Q49848"
+              },
+              "type": "wikibase-entityid"
+            },
+            "datatype": "wikibase-item"
+          },
+          "type": "statement",
+          "id": "Q4855429$8d5bbc52-45ca-9aee-1028-7ee5621063de",
+          "rank": "normal"
+        }
+      ],
+      "P1476": [
+        {
+          "mainsnak": {
+            "snaktype": "value",
+            "property": "P1476",
+            "hash": "1972474c9b924ee22d4f8cc9d20a9a3082d24281",
+            "datavalue": {
+              "value": {
+                "text": "Proclamation of Bangladeshi Independence",
+                "language": "en"
+              },
+              "type": "monolingualtext"
+            },
+            "datatype": "monolingualtext"
+          },
+          "type": "statement",
+          "id": "Q4855429$2b09a405-47cc-2da2-7dd3-7be4ac2abb45",
+          "rank": "normal"
+        },
+        {
+          "mainsnak": {
+            "snaktype": "value",
+            "property": "P1476",
+            "hash": "f59a952471bb4640d4931c7d9fd50d6a479d4371",
+            "datavalue": {
+              "value": {
+                "text": "বাংলাদেশের স্বাধীনতার ঘোষণাপত্র",
+                "language": "bn"
+              },
+              "type": "monolingualtext"
+            },
+            "datatype": "monolingualtext"
+          },
+          "type": "statement",
+          "id": "Q4855429$745db210-43bc-64e7-4479-57ed172b72d1",
+          "rank": "normal"
+        }
+      ],
+      "P646": [
+        {
+          "mainsnak": {
+            "snaktype": "value",
+            "property": "P646",
+            "hash": "cc0c6544dcdb346785596dcf6fe1f66ffd59dfaf",
+            "datavalue": {
+              "value": "/m/051_jwn",
+              "type": "string"
+            },
+            "datatype": "external-id"
+          },
+          "type": "statement",
+          "id": "Q4855429$F20D92A4-EBE8-4EEE-A455-C7128DFE9901",
+          "rank": "normal"
+        }
+      ],
+      "P953": [
+        {
+          "mainsnak": {
+            "snaktype": "value",
+            "property": "P953",
+            "hash": "c9b92a5b9376167db01a606400fe403ac52cab19",
+            "datavalue": {
+              "value": "https://en.wikisource.org/wiki/Proclamation_of_Independence_(Bangladesh)",
+              "type": "string"
+            },
+            "datatype": "url"
+          },
+          "type": "statement",
+          "id": "Q4855429$09BCBCD7-8D65-42EE-BAC7-1D7CF87D159B",
+          "rank": "normal"
+        }
+      ],
+      "P577": [
+        {
+          "mainsnak": {
+            "snaktype": "value",
+            "property": "P577",
+            "hash": "aea2902b88c3c077876771a1dcdf9e7739e3b527",
+            "datavalue": {
+              "value": {
+                "time": "+1971-04-10T00:00:00Z",
+                "timezone": 0,
+                "before": 0,
+                "after": 0,
+                "precision": 11,
+                "calendarmodel": "http://www.wikidata.org/entity/Q1985727"
+              },
+              "type": "time"
+            },
+            "datatype": "time"
+          },
+          "type": "statement",
+          "id": "Q4855429$9566699F-73A7-41D9-9EA3-B9E288C4A056",
+          "rank": "normal"
+        }
+      ],
+      "P1891": [
+        {
+          "mainsnak": {
+            "snaktype": "value",
+            "property": "P1891",
+            "hash": "3536503d9e46e5e76f155582946f74591bb330bc",
+            "datavalue": {
+              "value": {
+                "entity-type": "item",
+                "numeric-id": 63615287,
+                "id": "Q63615287"
+              },
+              "type": "wikibase-entityid"
+            },
+            "datatype": "wikibase-item"
+          },
+          "type": "statement",
+          "id": "Q4855429$50BE7FFC-B1DE-41D7-A151-9BFCB0686D0F",
+          "rank": "normal"
+        },
+        {
+          "mainsnak": {
+            "snaktype": "value",
+            "property": "P1891",
+            "hash": "589bbd7a337dba67bf4d6b4d2f11e9d112c5fe1b",
+            "datavalue": {
+              "value": {
+                "entity-type": "item",
+                "numeric-id": 191375,
+                "id": "Q191375"
+              },
+              "type": "wikibase-entityid"
+            },
+            "datatype": "wikibase-item"
+          },
+          "type": "statement",
+          "id": "Q4855429$CDC419F2-F176-4B8A-88FD-53FF4AC902AF",
+          "rank": "normal"
+        },
+        {
+          "mainsnak": {
+            "snaktype": "value",
+            "property": "P1891",
+            "hash": "dfbfb9f255e66debceeea1e33471eef3adee3ed2",
+            "datavalue": {
+              "value": {
+                "entity-type": "item",
+                "numeric-id": 3346340,
+                "id": "Q3346340"
+              },
+              "type": "wikibase-entityid"
+            },
+            "datatype": "wikibase-item"
+          },
+          "type": "statement",
+          "id": "Q4855429$F7BA5E98-1D3F-4C16-B8EE-A45AC93F0F7C",
+          "rank": "normal"
+        },
+        {
+          "mainsnak": {
+            "snaktype": "value",
+            "property": "P1891",
+            "hash": "bd29e71603cfecfcf8e544cadefa878c762a7535",
+            "datavalue": {
+              "value": {
+                "entity-type": "item",
+                "numeric-id": 333981,
+                "id": "Q333981"
+              },
+              "type": "wikibase-entityid"
+            },
+            "datatype": "wikibase-item"
+          },
+          "type": "statement",
+          "id": "Q4855429$941588B4-EC87-4BE3-8A0E-E20A84BE14E3",
+          "rank": "normal"
+        }
+      ]
+    },
+    "sitelinks": {
+      "arwiki": {
+        "site": "arwiki",
+        "title": "إعلان استقلال بنغلاديش",
+        "badges": [],
+        "url": "https://ar.wikipedia.org/wiki/%D8%A5%D8%B9%D9%84%D8%A7%D9%86_%D8%A7%D8%B3%D8%AA%D9%82%D9%84%D8%A7%D9%84_%D8%A8%D9%86%D8%BA%D9%84%D8%A7%D8%AF%D9%8A%D8%B4"
+      },
+      "bnwiki": {
+        "site": "bnwiki",
+        "title": "বাংলাদেশের স্বাধীনতার ঘোষণাপত্র",
+        "badges": [],
+        "url": "https://bn.wikipedia.org/wiki/%E0%A6%AC%E0%A6%BE%E0%A6%82%E0%A6%B2%E0%A6%BE%E0%A6%A6%E0%A7%87%E0%A6%B6%E0%A7%87%E0%A6%B0_%E0%A6%B8%E0%A7%8D%E0%A6%AC%E0%A6%BE%E0%A6%A7%E0%A7%80%E0%A6%A8%E0%A6%A4%E0%A6%BE%E0%A6%B0_%E0%A6%98%E0%A7%8B%E0%A6%B7%E0%A6%A3%E0%A6%BE%E0%A6%AA%E0%A6%A4%E0%A7%8D%E0%A6%B0"
+      },
+      "enwiki": {
+        "site": "enwiki",
+        "title": "Proclamation of Bangladeshi Independence",
+        "badges": [],
+        "url": "https://en.wikipedia.org/wiki/Proclamation_of_Bangladeshi_Independence"
+      },
+      "frwiki": {
+        "site": "frwiki",
+        "title": "Proclamation d'indépendance du Bangladesh",
+        "badges": [],
+        "url": "https://fr.wikipedia.org/wiki/Proclamation_d%27ind%C3%A9pendance_du_Bangladesh"
+      },
+      "idwiki": {
+        "site": "idwiki",
+        "title": "Deklarasi Kemerdekaan Bangladesh",
+        "badges": [],
+        "url": "https://id.wikipedia.org/wiki/Deklarasi_Kemerdekaan_Bangladesh"
+      }
+    }
+  }
+}

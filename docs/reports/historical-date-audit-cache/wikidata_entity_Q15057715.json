@@ -1,0 +1,534 @@
+{
+  "saved_at": "2026-03-07T14:27:53.388Z",
+  "value": {
+    "pageid": 16723919,
+    "ns": 0,
+    "title": "Q15057715",
+    "lastrevid": 2350638101,
+    "modified": "2025-05-20T20:37:45Z",
+    "type": "item",
+    "id": "Q15057715",
+    "labels": {
+      "de": {
+        "language": "de",
+        "value": "Europawahl in Frankreich 2014"
+      },
+      "fr": {
+        "language": "fr",
+        "value": "élections européennes de 2014 en France"
+      },
+      "ru": {
+        "language": "ru",
+        "value": "Выборы в Европейский парламент 2014 года во Франции"
+      },
+      "en": {
+        "language": "en",
+        "value": "2014 European Parliament election in France"
+      },
+      "sv": {
+        "language": "sv",
+        "value": "Europaparlamentsvalet i Frankrike 2014"
+      },
+      "ja": {
+        "language": "ja",
+        "value": "2014年欧州議会議員選挙 (フランス)"
+      },
+      "nl": {
+        "language": "nl",
+        "value": "Europese Parlementsverkiezingen 2014 in Frankrijk"
+      },
+      "pl": {
+        "language": "pl",
+        "value": "Wybory do Parlamentu Europejskiego we Francji w 2014 roku"
+      },
+      "es": {
+        "language": "es",
+        "value": "elecciones al Parlamento Europeo de 2014"
+      },
+      "it": {
+        "language": "it",
+        "value": "elezioni europee del 2014"
+      },
+      "fi": {
+        "language": "fi",
+        "value": "Ranskan europarlamenttivaalit 2014"
+      },
+      "eo": {
+        "language": "eo",
+        "value": "Eŭropaj balotoj de 2014 en Francio"
+      },
+      "ca": {
+        "language": "ca",
+        "value": "eleccions al Parlament Europeu de 2014 a França"
+      },
+      "pt": {
+        "language": "pt",
+        "value": "eleições parlamentares europeias de 2014"
+      },
+      "zh": {
+        "language": "zh",
+        "value": "詳情"
+      },
+      "ko": {
+        "language": "ko",
+        "value": "2014년 프랑스 유럽 의회 선거"
+      },
+      "nb": {
+        "language": "nb",
+        "value": "Europaparlamentsvalget i Frankrike 2014"
+      },
+      "sr": {
+        "language": "sr",
+        "value": "Избори за Европски парламент 2014."
+      },
+      "ar": {
+        "language": "ar",
+        "value": "انتخابات البرلمان الأوروبي في فرنسا 2014"
+      },
+      "ast": {
+        "language": "ast",
+        "value": "eleiciones al Parllamentu Européu de 2014 en Francia"
+      },
+      "da": {
+        "language": "da",
+        "value": "europaparlamentsvalget i Frankrig 2014"
+      },
+      "vec": {
+        "language": "vec",
+        "value": "ełesion parlamentari de l'Union Eoropea del 2014"
+      }
+    },
+    "descriptions": {
+      "it": {
+        "language": "it",
+        "value": "risultati delle elezioni in Francia"
+      },
+      "fr": {
+        "language": "fr",
+        "value": "élection en 2014 au suffrage direct des députés représentant le France au Parlement européen"
+      },
+      "en": {
+        "language": "en",
+        "value": "2014 election by direct suffrage of the Members of the European Parliament representing France"
+      },
+      "de": {
+        "language": "de",
+        "value": "direktwahl der Abgeordneten des Europäischen Parlaments aus Frankreich im Jahr 2014"
+      },
+      "es": {
+        "language": "es",
+        "value": "elección por sufragio directo en 2014 de los diputados al Parlamento Europeo que representan a Francia"
+      }
+    },
+    "aliases": {
+      "en": [
+        {
+          "language": "en",
+          "value": "European Parliament election, 2014 (France)"
+        }
+      ]
+    },
+    "claims": {
+      "P17": [
+        {
+          "mainsnak": {
+            "snaktype": "value",
+            "property": "P17",
+            "hash": "c05db5d169c2560b9799d567a803d20a392f53e4",
+            "datavalue": {
+              "value": {
+                "entity-type": "item",
+                "numeric-id": 142,
+                "id": "Q142"
+              },
+              "type": "wikibase-entityid"
+            },
+            "datatype": "wikibase-item"
+          },
+          "type": "statement",
+          "id": "Q15057715$16BC49BA-0B3F-4315-913D-C559FBD77334",
+          "rank": "normal"
+        }
+      ],
+      "P361": [
+        {
+          "mainsnak": {
+            "snaktype": "value",
+            "property": "P361",
+            "hash": "408b76f316666c090c398597a992a3923fd4c974",
+            "datavalue": {
+              "value": {
+                "entity-type": "item",
+                "numeric-id": 1376095,
+                "id": "Q1376095"
+              },
+              "type": "wikibase-entityid"
+            },
+            "datatype": "wikibase-item"
+          },
+          "type": "statement",
+          "id": "Q15057715$edb46dd7-412f-c9ee-d37f-0a27eeb38153",
+          "rank": "normal"
+        }
+      ],
+      "P585": [
+        {
+          "mainsnak": {
+            "snaktype": "value",
+            "property": "P585",
+            "hash": "84ff0808fa1dedcd59229815cb61693ea8f9d13c",
+            "datavalue": {
+              "value": {
+                "time": "+2014-05-25T00:00:00Z",
+                "timezone": 0,
+                "before": 0,
+                "after": 0,
+                "precision": 11,
+                "calendarmodel": "http://www.wikidata.org/entity/Q1985727"
+              },
+              "type": "time"
+            },
+            "datatype": "time"
+          },
+          "type": "statement",
+          "id": "Q15057715$f8f2b318-48cb-8405-cb96-c0a4e3b4dee6",
+          "rank": "normal"
+        }
+      ],
+      "P31": [
+        {
+          "mainsnak": {
+            "snaktype": "value",
+            "property": "P31",
+            "hash": "dbda20e1dd7b86aa4e9c6511cedb9a98cc551366",
+            "datavalue": {
+              "value": {
+                "entity-type": "item",
+                "numeric-id": 126456824,
+                "id": "Q126456824"
+              },
+              "type": "wikibase-entityid"
+            },
+            "datatype": "wikibase-item"
+          },
+          "type": "statement",
+          "id": "Q15057715$25c3aa6a-4513-a00c-5685-bc749ea323d9",
+          "rank": "normal"
+        }
+      ],
+      "P155": [
+        {
+          "mainsnak": {
+            "snaktype": "value",
+            "property": "P155",
+            "hash": "6a5c23cda67adde1b307269b101ef941d278ac5e",
+            "datavalue": {
+              "value": {
+                "entity-type": "item",
+                "numeric-id": 1376149,
+                "id": "Q1376149"
+              },
+              "type": "wikibase-entityid"
+            },
+            "datatype": "wikibase-item"
+          },
+          "type": "statement",
+          "id": "Q15057715$2D2F1732-4690-4EC5-88C0-D892195D081D",
+          "rank": "normal",
+          "references": [
+            {
+              "hash": "d4bd87b862b12d99d26e86472d44f26858dee639",
+              "snaks": {
+                "P143": [
+                  {
+                    "snaktype": "value",
+                    "property": "P143",
+                    "hash": "f30cbd35620c4ea6d0633aaf0210a8916130469b",
+                    "datavalue": {
+                      "value": {
+                        "entity-type": "item",
+                        "numeric-id": 8447,
+                        "id": "Q8447"
+                      },
+                      "type": "wikibase-entityid"
+                    },
+                    "datatype": "wikibase-item"
+                  }
+                ]
+              },
+              "snaks-order": [
+                "P143"
+              ]
+            }
+          ]
+        }
+      ],
+      "P156": [
+        {
+          "mainsnak": {
+            "snaktype": "value",
+            "property": "P156",
+            "hash": "fb35f1aeeab24f995c1133076d5d7ac5f72365d1",
+            "datavalue": {
+              "value": {
+                "entity-type": "item",
+                "numeric-id": 46063233,
+                "id": "Q46063233"
+              },
+              "type": "wikibase-entityid"
+            },
+            "datatype": "wikibase-item"
+          },
+          "type": "statement",
+          "id": "Q15057715$d1864f39-442a-7b8f-ab2d-5da08c0503dc",
+          "rank": "normal"
+        }
+      ],
+      "P541": [
+        {
+          "mainsnak": {
+            "snaktype": "value",
+            "property": "P541",
+            "hash": "5085ecabf79c2e8c05e6918510f2196066d9e878",
+            "datavalue": {
+              "value": {
+                "entity-type": "item",
+                "numeric-id": 27169,
+                "id": "Q27169"
+              },
+              "type": "wikibase-entityid"
+            },
+            "datatype": "wikibase-item"
+          },
+          "type": "statement",
+          "qualifiers": {
+            "P1114": [
+              {
+                "snaktype": "value",
+                "property": "P1114",
+                "hash": "a11f893ff4f99ac832e3addbd6c6a0ab8b7b5afd",
+                "datavalue": {
+                  "value": {
+                    "amount": "+74",
+                    "unit": "1"
+                  },
+                  "type": "quantity"
+                },
+                "datatype": "quantity"
+              }
+            ],
+            "P2937": [
+              {
+                "snaktype": "value",
+                "property": "P2937",
+                "hash": "2347219cf50b48ee84483421f6492ff3d04dafc7",
+                "datavalue": {
+                  "value": {
+                    "entity-type": "item",
+                    "numeric-id": 17315694,
+                    "id": "Q17315694"
+                  },
+                  "type": "wikibase-entityid"
+                },
+                "datatype": "wikibase-item"
+              }
+            ]
+          },
+          "qualifiers-order": [
+            "P1114",
+            "P2937"
+          ],
+          "id": "Q15057715$43C8D60A-AA92-4CB3-A5DF-628670CA0328",
+          "rank": "normal",
+          "references": [
+            {
+              "hash": "14ad1b54de4c034400e19ecf34b58adbaf1567a8",
+              "snaks": {
+                "P856": [
+                  {
+                    "snaktype": "value",
+                    "property": "P856",
+                    "hash": "3c377a5c4bc812089e394bc3feb18f8c9555f524",
+                    "datavalue": {
+                      "value": "https://www.europarl.europa.eu/election-results-2019/en/seats-political-group-country/2014-2019/constitutive-session/",
+                      "type": "string"
+                    },
+                    "datatype": "url"
+                  }
+                ]
+              },
+              "snaks-order": [
+                "P856"
+              ]
+            }
+          ]
+        }
+      ],
+      "P1001": [
+        {
+          "mainsnak": {
+            "snaktype": "value",
+            "property": "P1001",
+            "hash": "efe2878aed693a79dce942b2f853910a78c4e2a8",
+            "datavalue": {
+              "value": {
+                "entity-type": "item",
+                "numeric-id": 142,
+                "id": "Q142"
+              },
+              "type": "wikibase-entityid"
+            },
+            "datatype": "wikibase-item"
+          },
+          "type": "statement",
+          "id": "Q15057715$871181FA-DC12-4EBF-9AB8-0B10B4203D3D",
+          "rank": "normal"
+        }
+      ],
+      "P646": [
+        {
+          "mainsnak": {
+            "snaktype": "value",
+            "property": "P646",
+            "hash": "cb3bf8b9f125bf8de355a2f6bc8bcefcb8bd5a78",
+            "datavalue": {
+              "value": "/m/0zrq8nj",
+              "type": "string"
+            },
+            "datatype": "external-id"
+          },
+          "type": "statement",
+          "id": "Q15057715$3AE98362-F092-459D-A3E3-1024CEDEA81F",
+          "rank": "normal"
+        }
+      ],
+      "P373": [
+        {
+          "mainsnak": {
+            "snaktype": "value",
+            "property": "P373",
+            "hash": "ecf4da0df66f1997adb00044e7df4f7856eb67ea",
+            "datavalue": {
+              "value": "European Parliament election, 2014 (France)",
+              "type": "string"
+            },
+            "datatype": "string"
+          },
+          "type": "statement",
+          "id": "Q15057715$0967022f-4a01-3447-2ea2-0afb16d90e80",
+          "rank": "normal"
+        }
+      ]
+    },
+    "sitelinks": {
+      "cawiki": {
+        "site": "cawiki",
+        "title": "Eleccions al Parlament Europeu de 2014 (França)",
+        "badges": [],
+        "url": "https://ca.wikipedia.org/wiki/Eleccions_al_Parlament_Europeu_de_2014_(Fran%C3%A7a)"
+      },
+      "commonswiki": {
+        "site": "commonswiki",
+        "title": "Category:European Parliament election, 2014 (France)",
+        "badges": [],
+        "url": "https://commons.wikimedia.org/wiki/Category:European_Parliament_election,_2014_(France)"
+      },
+      "dewiki": {
+        "site": "dewiki",
+        "title": "Europawahl in Frankreich 2014",
+        "badges": [],
+        "url": "https://de.wikipedia.org/wiki/Europawahl_in_Frankreich_2014"
+      },
+      "enwiki": {
+        "site": "enwiki",
+        "title": "2014 European Parliament election in France",
+        "badges": [],
+        "url": "https://en.wikipedia.org/wiki/2014_European_Parliament_election_in_France"
+      },
+      "eowiki": {
+        "site": "eowiki",
+        "title": "Eŭropaj balotoj de 2014 en Francio",
+        "badges": [],
+        "url": "https://eo.wikipedia.org/wiki/E%C5%ADropaj_balotoj_de_2014_en_Francio"
+      },
+      "eswiki": {
+        "site": "eswiki",
+        "title": "Elecciones al Parlamento Europeo de 2014 (Francia)",
+        "badges": [],
+        "url": "https://es.wikipedia.org/wiki/Elecciones_al_Parlamento_Europeo_de_2014_(Francia)"
+      },
+      "fiwiki": {
+        "site": "fiwiki",
+        "title": "Ranskan europarlamenttivaalit 2014",
+        "badges": [],
+        "url": "https://fi.wikipedia.org/wiki/Ranskan_europarlamenttivaalit_2014"
+      },
+      "frwiki": {
+        "site": "frwiki",
+        "title": "Élections européennes de 2014 en France",
+        "badges": [],
+        "url": "https://fr.wikipedia.org/wiki/%C3%89lections_europ%C3%A9ennes_de_2014_en_France"
+      },
+      "itwiki": {
+        "site": "itwiki",
+        "title": "Elezioni europee del 2014 in Francia",
+        "badges": [],
+        "url": "https://it.wikipedia.org/wiki/Elezioni_europee_del_2014_in_Francia"
+      },
+      "jawiki": {
+        "site": "jawiki",
+        "title": "2014年欧州議会議員選挙 (フランス)",
+        "badges": [],
+        "url": "https://ja.wikipedia.org/wiki/2014%E5%B9%B4%E6%AC%A7%E5%B7%9E%E8%AD%B0%E4%BC%9A%E8%AD%B0%E5%93%A1%E9%81%B8%E6%8C%99_(%E3%83%95%E3%83%A9%E3%83%B3%E3%82%B9)"
+      },
+      "kowiki": {
+        "site": "kowiki",
+        "title": "2014년 프랑스 유럽 의회 선거",
+        "badges": [],
+        "url": "https://ko.wikipedia.org/wiki/2014%EB%85%84_%ED%94%84%EB%9E%91%EC%8A%A4_%EC%9C%A0%EB%9F%BD_%EC%9D%98%ED%9A%8C_%EC%84%A0%EA%B1%B0"
+      },
+      "nowiki": {
+        "site": "nowiki",
+        "title": "Europaparlamentsvalget i Frankrike 2014",
+        "badges": [],
+        "url": "https://no.wikipedia.org/wiki/Europaparlamentsvalget_i_Frankrike_2014"
+      },
+      "plwiki": {
+        "site": "plwiki",
+        "title": "Wybory do Parlamentu Europejskiego we Francji w 2014 roku",
+        "badges": [],
+        "url": "https://pl.wikipedia.org/wiki/Wybory_do_Parlamentu_Europejskiego_we_Francji_w_2014_roku"
+      },
+      "ptwiki": {
+        "site": "ptwiki",
+        "title": "Eleições parlamentares europeias de 2014 (França)",
+        "badges": [],
+        "url": "https://pt.wikipedia.org/wiki/Elei%C3%A7%C3%B5es_parlamentares_europeias_de_2014_(Fran%C3%A7a)"
+      },
+      "ruwiki": {
+        "site": "ruwiki",
+        "title": "Выборы в Европейский парламент во Франции (2014)",
+        "badges": [],
+        "url": "https://ru.wikipedia.org/wiki/%D0%92%D1%8B%D0%B1%D0%BE%D1%80%D1%8B_%D0%B2_%D0%95%D0%B2%D1%80%D0%BE%D0%BF%D0%B5%D0%B9%D1%81%D0%BA%D0%B8%D0%B9_%D0%BF%D0%B0%D1%80%D0%BB%D0%B0%D0%BC%D0%B5%D0%BD%D1%82_%D0%B2%D0%BE_%D0%A4%D1%80%D0%B0%D0%BD%D1%86%D0%B8%D0%B8_(2014)"
+      },
+      "srwiki": {
+        "site": "srwiki",
+        "title": "Избори за Европски парламент 2014. (Француска)",
+        "badges": [],
+        "url": "https://sr.wikipedia.org/wiki/%D0%98%D0%B7%D0%B1%D0%BE%D1%80%D0%B8_%D0%B7%D0%B0_%D0%95%D0%B2%D1%80%D0%BE%D0%BF%D1%81%D0%BA%D0%B8_%D0%BF%D0%B0%D1%80%D0%BB%D0%B0%D0%BC%D0%B5%D0%BD%D1%82_2014._(%D0%A4%D1%80%D0%B0%D0%BD%D1%86%D1%83%D1%81%D0%BA%D0%B0)"
+      },
+      "svwiki": {
+        "site": "svwiki",
+        "title": "Europaparlamentsvalet i Frankrike 2014",
+        "badges": [],
+        "url": "https://sv.wikipedia.org/wiki/Europaparlamentsvalet_i_Frankrike_2014"
+      },
+      "zhwiki": {
+        "site": "zhwiki",
+        "title": "2014年歐洲議會選舉 (法國)",
+        "badges": [],
+        "url": "https://zh.wikipedia.org/wiki/2014%E5%B9%B4%E6%AD%90%E6%B4%B2%E8%AD%B0%E6%9C%83%E9%81%B8%E8%88%89_(%E6%B3%95%E5%9C%8B)"
+      }
+    }
+  }
+}

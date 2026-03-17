@@ -1,0 +1,316 @@
+{
+  "saved_at": "2026-03-07T14:46:21.863Z",
+  "value": {
+    "pageid": 21321615,
+    "ns": 0,
+    "title": "Q19720529",
+    "lastrevid": 2432544359,
+    "modified": "2025-11-22T16:22:55Z",
+    "type": "item",
+    "id": "Q19720529",
+    "labels": {
+      "en": {
+        "language": "en",
+        "value": "discovery of the neutron"
+      },
+      "hi": {
+        "language": "hi",
+        "value": "Discovery of the neutron"
+      },
+      "cs": {
+        "language": "cs",
+        "value": "objev neutronu"
+      },
+      "ro": {
+        "language": "ro",
+        "value": "descoperirea neutronului"
+      },
+      "ar": {
+        "language": "ar",
+        "value": "اكتشاف النيوترون"
+      },
+      "zh": {
+        "language": "zh",
+        "value": "中子发现史"
+      },
+      "bn": {
+        "language": "bn",
+        "value": "নিউট্রন আবিষ্কার"
+      },
+      "ja": {
+        "language": "ja",
+        "value": "中性子の発見"
+      },
+      "es": {
+        "language": "es",
+        "value": "descubrimiento del neutrón"
+      },
+      "fr": {
+        "language": "fr",
+        "value": "découverte du neutron"
+      },
+      "en-us": {
+        "language": "en-us",
+        "value": "discovery of the neutron"
+      },
+      "hr": {
+        "language": "hr",
+        "value": "otkriće neutrona"
+      },
+      "sh": {
+        "language": "sh",
+        "value": "otkriće neutrona"
+      },
+      "ko": {
+        "language": "ko",
+        "value": "중성자의 발견"
+      }
+    },
+    "descriptions": {
+      "cs": {
+        "language": "cs",
+        "value": "objev"
+      },
+      "ar": {
+        "language": "ar",
+        "value": "الخلفية العلمية التي أدت إلى اكتشاف النيوترون والجسيمات دون الذرية الأخرى"
+      },
+      "en": {
+        "language": "en",
+        "value": "Scientific background leading to the discovery of the neutron and other subatomic particles"
+      },
+      "fr": {
+        "language": "fr",
+        "value": "Histoire de l’environnement scientifique ayant conduit à la découverte du neutron et d’autres particules subatomiques"
+      },
+      "bn": {
+        "language": "bn",
+        "value": "উপ-পারমাণবিক কণার আবিষ্কারের দিকে পরিচালিত বৈজ্ঞানিক পটভূমি"
+      },
+      "hr": {
+        "language": "hr",
+        "value": "znanstvena pozadina koja je dovela do otkrića neutrona i drugih subatomskih čestica"
+      },
+      "sh": {
+        "language": "sh",
+        "value": "Znanstvena pozadina koja je dovela do otkrića neutrona i drugih subatomskih čestica"
+      },
+      "es": {
+        "language": "es",
+        "value": "antecedentes científicos que llevaron al descubrimiento del neutrón y otras partículas subatómicas"
+      }
+    },
+    "aliases": {
+      "ar": [
+        {
+          "language": "ar",
+          "value": "اكتشاف النيوترون, استكشاف النيوترون"
+        }
+      ]
+    },
+    "claims": {
+      "P31": [
+        {
+          "mainsnak": {
+            "snaktype": "value",
+            "property": "P31",
+            "hash": "0af758afcb05f24cb71e6b55e63964f687b42e0d",
+            "datavalue": {
+              "value": {
+                "entity-type": "item",
+                "numeric-id": 12772819,
+                "id": "Q12772819"
+              },
+              "type": "wikibase-entityid"
+            },
+            "datatype": "wikibase-item"
+          },
+          "type": "statement",
+          "qualifiers": {
+            "P12912": [
+              {
+                "snaktype": "value",
+                "property": "P12912",
+                "hash": "6baa382237ec2537ddbb2650b1bc85e83d33a156",
+                "datavalue": {
+                  "value": {
+                    "entity-type": "item",
+                    "numeric-id": 2348,
+                    "id": "Q2348"
+                  },
+                  "type": "wikibase-entityid"
+                },
+                "datatype": "wikibase-item"
+              }
+            ]
+          },
+          "qualifiers-order": [
+            "P12912"
+          ],
+          "id": "Q19720529$4ae4730b-4b3e-3006-435d-12974e94c5b5",
+          "rank": "normal"
+        }
+      ],
+      "P828": [
+        {
+          "mainsnak": {
+            "snaktype": "value",
+            "property": "P828",
+            "hash": "87aca8fd0e33fd7637848d2ef01b8de12c8fb01b",
+            "datavalue": {
+              "value": {
+                "entity-type": "item",
+                "numeric-id": 3062466,
+                "id": "Q3062466"
+              },
+              "type": "wikibase-entityid"
+            },
+            "datatype": "wikibase-item"
+          },
+          "type": "statement",
+          "id": "Q19720529$ce1bbfa2-44e3-6906-e575-742ab0d67fa6",
+          "rank": "normal"
+        }
+      ],
+      "P6366": [
+        {
+          "mainsnak": {
+            "snaktype": "value",
+            "property": "P6366",
+            "hash": "ba9570c9be5fd1ee7cb98055ce74b53ed1c37a4d",
+            "datavalue": {
+              "value": "2778492134",
+              "type": "string"
+            },
+            "datatype": "external-id"
+          },
+          "type": "statement",
+          "id": "Q19720529$B3A6F633-CAA4-4300-A3C9-D7ADFE81F28F",
+          "rank": "normal"
+        }
+      ],
+      "P61": [
+        {
+          "mainsnak": {
+            "snaktype": "value",
+            "property": "P61",
+            "hash": "8056dd75f0be8a08c14152ed42fe0e986d651a16",
+            "datavalue": {
+              "value": {
+                "entity-type": "item",
+                "numeric-id": 80884,
+                "id": "Q80884"
+              },
+              "type": "wikibase-entityid"
+            },
+            "datatype": "wikibase-item"
+          },
+          "type": "statement",
+          "id": "Q19720529$ada3eab4-49c6-e873-296f-972edffd5c9d",
+          "rank": "normal"
+        }
+      ],
+      "P575": [
+        {
+          "mainsnak": {
+            "snaktype": "value",
+            "property": "P575",
+            "hash": "9a00e033f2f9d134120e11e2ea7776d18fbb5526",
+            "datavalue": {
+              "value": {
+                "time": "+1932-00-00T00:00:00Z",
+                "timezone": 0,
+                "before": 0,
+                "after": 0,
+                "precision": 9,
+                "calendarmodel": "http://www.wikidata.org/entity/Q1985727"
+              },
+              "type": "time"
+            },
+            "datatype": "time"
+          },
+          "type": "statement",
+          "id": "Q19720529$dc644411-4a2f-cf72-fee2-6c67f0fddf92",
+          "rank": "normal"
+        }
+      ],
+      "P189": [
+        {
+          "mainsnak": {
+            "snaktype": "value",
+            "property": "P189",
+            "hash": "6214902f5206997ee003927dd4c322b497c491d0",
+            "datavalue": {
+              "value": {
+                "entity-type": "item",
+                "numeric-id": 181892,
+                "id": "Q181892"
+              },
+              "type": "wikibase-entityid"
+            },
+            "datatype": "wikibase-item"
+          },
+          "type": "statement",
+          "id": "Q19720529$2594d1a6-4f25-cdf7-0bfd-5cebb7217831",
+          "rank": "normal"
+        }
+      ]
+    },
+    "sitelinks": {
+      "arwiki": {
+        "site": "arwiki",
+        "title": "اكتشاف النيوترون",
+        "badges": [],
+        "url": "https://ar.wikipedia.org/wiki/%D8%A7%D9%83%D8%AA%D8%B4%D8%A7%D9%81_%D8%A7%D9%84%D9%86%D9%8A%D9%88%D8%AA%D8%B1%D9%88%D9%86"
+      },
+      "bnwiki": {
+        "site": "bnwiki",
+        "title": "নিউট্রন আবিষ্কার",
+        "badges": [],
+        "url": "https://bn.wikipedia.org/wiki/%E0%A6%A8%E0%A6%BF%E0%A6%89%E0%A6%9F%E0%A7%8D%E0%A6%B0%E0%A6%A8_%E0%A6%86%E0%A6%AC%E0%A6%BF%E0%A6%B7%E0%A7%8D%E0%A6%95%E0%A6%BE%E0%A6%B0"
+      },
+      "cswiki": {
+        "site": "cswiki",
+        "title": "Objev neutronu",
+        "badges": [],
+        "url": "https://cs.wikipedia.org/wiki/Objev_neutronu"
+      },
+      "enwiki": {
+        "site": "enwiki",
+        "title": "Discovery of the neutron",
+        "badges": [],
+        "url": "https://en.wikipedia.org/wiki/Discovery_of_the_neutron"
+      },
+      "eswiki": {
+        "site": "eswiki",
+        "title": "Descubrimiento del neutrón",
+        "badges": [],
+        "url": "https://es.wikipedia.org/wiki/Descubrimiento_del_neutr%C3%B3n"
+      },
+      "frwiki": {
+        "site": "frwiki",
+        "title": "Découverte du neutron",
+        "badges": [],
+        "url": "https://fr.wikipedia.org/wiki/D%C3%A9couverte_du_neutron"
+      },
+      "jawiki": {
+        "site": "jawiki",
+        "title": "中性子の発見",
+        "badges": [],
+        "url": "https://ja.wikipedia.org/wiki/%E4%B8%AD%E6%80%A7%E5%AD%90%E3%81%AE%E7%99%BA%E8%A6%8B"
+      },
+      "kowiki": {
+        "site": "kowiki",
+        "title": "중성자의 발견",
+        "badges": [],
+        "url": "https://ko.wikipedia.org/wiki/%EC%A4%91%EC%84%B1%EC%9E%90%EC%9D%98_%EB%B0%9C%EA%B2%AC"
+      },
+      "zhwiki": {
+        "site": "zhwiki",
+        "title": "中子发现史",
+        "badges": [],
+        "url": "https://zh.wikipedia.org/wiki/%E4%B8%AD%E5%AD%90%E5%8F%91%E7%8E%B0%E5%8F%B2"
+      }
+    }
+  }
+}

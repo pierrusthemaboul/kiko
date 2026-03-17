@@ -1,0 +1,587 @@
+{
+  "saved_at": "2026-03-07T14:54:31.064Z",
+  "value": {
+    "pageid": 3245961,
+    "ns": 0,
+    "title": "Q3406432",
+    "lastrevid": 2454284733,
+    "modified": "2026-01-12T17:50:54Z",
+    "type": "item",
+    "id": "Q3406432",
+    "labels": {
+      "fr": {
+        "language": "fr",
+        "value": "proclamation de la République française du 4 septembre 1870"
+      },
+      "ru": {
+        "language": "ru",
+        "value": "Сентябрьская революция"
+      },
+      "nl": {
+        "language": "nl",
+        "value": "afkondiging van de Derde Franse Republiek"
+      },
+      "en": {
+        "language": "en",
+        "value": "Proclamation of the French Third Republic"
+      },
+      "hy": {
+        "language": "hy",
+        "value": "Սեպտեմբերյան հեղափոխություն"
+      },
+      "de": {
+        "language": "de",
+        "value": "Proklamation der Französischen Republik vom 4. September 1870"
+      },
+      "ja": {
+        "language": "ja",
+        "value": "共和国宣言"
+      },
+      "ro": {
+        "language": "ro",
+        "value": "Proclamarea Republicii Franceze din 4 septembrie 1870"
+      }
+    },
+    "descriptions": {
+      "ru": {
+        "language": "ru",
+        "value": "восстание, окончательно упразднившее французскую монархию"
+      },
+      "fr": {
+        "language": "fr",
+        "value": "événement historique français"
+      },
+      "en": {
+        "language": "en",
+        "value": "September 4, 1870"
+      },
+      "ro": {
+        "language": "ro",
+        "value": "eveniment istoric francez (4 septembrie 1870)"
+      }
+    },
+    "aliases": {
+      "ru": [
+        {
+          "language": "ru",
+          "value": "Французская революция 1870"
+        }
+      ]
+    },
+    "claims": {
+      "P3219": [
+        {
+          "mainsnak": {
+            "snaktype": "value",
+            "property": "P3219",
+            "hash": "3dff0f338bb101a2803bc619a863c6fd87adebeb",
+            "datavalue": {
+              "value": "proclamation-de-la-iiie-republique",
+              "type": "string"
+            },
+            "datatype": "external-id"
+          },
+          "type": "statement",
+          "id": "Q3406432$8BFA0374-C143-4080-8D78-AA8E51F2EB1E",
+          "rank": "normal"
+        }
+      ],
+      "P18": [
+        {
+          "mainsnak": {
+            "snaktype": "value",
+            "property": "P18",
+            "hash": "1c14fdc0af3d71eb24a9e230c5d2fa65224b0083",
+            "datavalue": {
+              "value": "Proclamation de la République - Cropped.jpg",
+              "type": "string"
+            },
+            "datatype": "commonsMedia"
+          },
+          "type": "statement",
+          "id": "Q3406432$c1448827-4f5d-b64c-8220-249719101ca7",
+          "rank": "normal"
+        }
+      ],
+      "P585": [
+        {
+          "mainsnak": {
+            "snaktype": "value",
+            "property": "P585",
+            "hash": "6a181f9c6310f460ca5e06d530139b5d69f815a9",
+            "datavalue": {
+              "value": {
+                "time": "+1870-09-00T00:00:00Z",
+                "timezone": 0,
+                "before": 0,
+                "after": 0,
+                "precision": 10,
+                "calendarmodel": "http://www.wikidata.org/entity/Q1985727"
+              },
+              "type": "time"
+            },
+            "datatype": "time"
+          },
+          "type": "statement",
+          "id": "Q3406432$8d4600c5-4d8a-f098-04dc-f534a4187f0b",
+          "rank": "normal"
+        }
+      ],
+      "P373": [
+        {
+          "mainsnak": {
+            "snaktype": "value",
+            "property": "P373",
+            "hash": "b2384b8ea56d01b38e3abb7c9c1c67ced3dd7a30",
+            "datavalue": {
+              "value": "Proclamation of the French Third Republic",
+              "type": "string"
+            },
+            "datatype": "string"
+          },
+          "type": "statement",
+          "id": "Q3406432$dd86d7fa-496b-cc36-c7e5-a4945b88cb94",
+          "rank": "normal"
+        }
+      ],
+      "P2671": [
+        {
+          "mainsnak": {
+            "snaktype": "value",
+            "property": "P2671",
+            "hash": "930940f3fc4e598405e3260de3bf3ccabe22da78",
+            "datavalue": {
+              "value": "/g/112ygdd41",
+              "type": "string"
+            },
+            "datatype": "external-id"
+          },
+          "type": "statement",
+          "id": "Q3406432$E49C7BEB-6491-475C-B861-C99CBC01F05E",
+          "rank": "normal"
+        }
+      ],
+      "P1343": [
+        {
+          "mainsnak": {
+            "snaktype": "value",
+            "property": "P1343",
+            "hash": "62c309f8296338bd9647a7e758857137f3370310",
+            "datavalue": {
+              "value": {
+                "entity-type": "item",
+                "numeric-id": 2657718,
+                "id": "Q2657718"
+              },
+              "type": "wikibase-entityid"
+            },
+            "datatype": "wikibase-item"
+          },
+          "type": "statement",
+          "id": "Q3406432$285B5E59-E860-479D-BC53-C1C86D020DFB",
+          "rank": "normal"
+        }
+      ],
+      "P268": [
+        {
+          "mainsnak": {
+            "snaktype": "value",
+            "property": "P268",
+            "hash": "8ea4661dcb6c5e9f74101a20b21115ff21082ec5",
+            "datavalue": {
+              "value": "15556696q",
+              "type": "string"
+            },
+            "datatype": "external-id"
+          },
+          "type": "statement",
+          "id": "Q3406432$2e231b5e-474c-1015-50f4-2aa70f20d6e7",
+          "rank": "normal"
+        }
+      ],
+      "P31": [
+        {
+          "mainsnak": {
+            "snaktype": "value",
+            "property": "P31",
+            "hash": "48e87f1d8d1a89ae4ee0377e92706e7680842a8d",
+            "datavalue": {
+              "value": {
+                "entity-type": "item",
+                "numeric-id": 1572600,
+                "id": "Q1572600"
+              },
+              "type": "wikibase-entityid"
+            },
+            "datatype": "wikibase-item"
+          },
+          "type": "statement",
+          "id": "Q3406432$2cd820a2-4af1-fa9e-b947-5c94e7b35a1f",
+          "rank": "normal"
+        }
+      ],
+      "P276": [
+        {
+          "mainsnak": {
+            "snaktype": "value",
+            "property": "P276",
+            "hash": "65737aff6befb67b52f4956ed02d8655213307f0",
+            "datavalue": {
+              "value": {
+                "entity-type": "item",
+                "numeric-id": 90,
+                "id": "Q90"
+              },
+              "type": "wikibase-entityid"
+            },
+            "datatype": "wikibase-item"
+          },
+          "type": "statement",
+          "id": "Q3406432$3276b88b-49ed-a32b-f140-2acefbcb8c9a",
+          "rank": "normal",
+          "references": [
+            {
+              "hash": "ca531df3baa8592e7de5c2a1c4cd4ebbf2311b2c",
+              "snaks": {
+                "P143": [
+                  {
+                    "snaktype": "value",
+                    "property": "P143",
+                    "hash": "6a164248fc96bfa583bbb495cb63ae6401ec203c",
+                    "datavalue": {
+                      "value": {
+                        "entity-type": "item",
+                        "numeric-id": 206855,
+                        "id": "Q206855"
+                      },
+                      "type": "wikibase-entityid"
+                    },
+                    "datatype": "wikibase-item"
+                  }
+                ],
+                "P4656": [
+                  {
+                    "snaktype": "value",
+                    "property": "P4656",
+                    "hash": "92e7afe1404fa212bfc3d6b14b04c5f871a4b123",
+                    "datavalue": {
+                      "value": "https://ru.wikipedia.org/?oldid=126446857",
+                      "type": "string"
+                    },
+                    "datatype": "url"
+                  }
+                ]
+              },
+              "snaks-order": [
+                "P143",
+                "P4656"
+              ]
+            }
+          ]
+        },
+        {
+          "mainsnak": {
+            "snaktype": "value",
+            "property": "P276",
+            "hash": "7017c34a4452ccc089c1156154b3512c996afc28",
+            "datavalue": {
+              "value": {
+                "entity-type": "item",
+                "numeric-id": 456,
+                "id": "Q456"
+              },
+              "type": "wikibase-entityid"
+            },
+            "datatype": "wikibase-item"
+          },
+          "type": "statement",
+          "id": "Q3406432$97d70fe4-463f-40dd-0491-9517d30f6034",
+          "rank": "normal",
+          "references": [
+            {
+              "hash": "ca531df3baa8592e7de5c2a1c4cd4ebbf2311b2c",
+              "snaks": {
+                "P143": [
+                  {
+                    "snaktype": "value",
+                    "property": "P143",
+                    "hash": "6a164248fc96bfa583bbb495cb63ae6401ec203c",
+                    "datavalue": {
+                      "value": {
+                        "entity-type": "item",
+                        "numeric-id": 206855,
+                        "id": "Q206855"
+                      },
+                      "type": "wikibase-entityid"
+                    },
+                    "datatype": "wikibase-item"
+                  }
+                ],
+                "P4656": [
+                  {
+                    "snaktype": "value",
+                    "property": "P4656",
+                    "hash": "92e7afe1404fa212bfc3d6b14b04c5f871a4b123",
+                    "datavalue": {
+                      "value": "https://ru.wikipedia.org/?oldid=126446857",
+                      "type": "string"
+                    },
+                    "datatype": "url"
+                  }
+                ]
+              },
+              "snaks-order": [
+                "P143",
+                "P4656"
+              ]
+            }
+          ]
+        },
+        {
+          "mainsnak": {
+            "snaktype": "value",
+            "property": "P276",
+            "hash": "db30227c4b29bf431c6cab5d8fc937dadf98eda3",
+            "datavalue": {
+              "value": {
+                "entity-type": "item",
+                "numeric-id": 23482,
+                "id": "Q23482"
+              },
+              "type": "wikibase-entityid"
+            },
+            "datatype": "wikibase-item"
+          },
+          "type": "statement",
+          "id": "Q3406432$33a8fdec-4e3c-c3c0-4111-663fdb293163",
+          "rank": "normal",
+          "references": [
+            {
+              "hash": "ca531df3baa8592e7de5c2a1c4cd4ebbf2311b2c",
+              "snaks": {
+                "P143": [
+                  {
+                    "snaktype": "value",
+                    "property": "P143",
+                    "hash": "6a164248fc96bfa583bbb495cb63ae6401ec203c",
+                    "datavalue": {
+                      "value": {
+                        "entity-type": "item",
+                        "numeric-id": 206855,
+                        "id": "Q206855"
+                      },
+                      "type": "wikibase-entityid"
+                    },
+                    "datatype": "wikibase-item"
+                  }
+                ],
+                "P4656": [
+                  {
+                    "snaktype": "value",
+                    "property": "P4656",
+                    "hash": "92e7afe1404fa212bfc3d6b14b04c5f871a4b123",
+                    "datavalue": {
+                      "value": "https://ru.wikipedia.org/?oldid=126446857",
+                      "type": "string"
+                    },
+                    "datatype": "url"
+                  }
+                ]
+              },
+              "snaks-order": [
+                "P143",
+                "P4656"
+              ]
+            }
+          ]
+        },
+        {
+          "mainsnak": {
+            "snaktype": "value",
+            "property": "P276",
+            "hash": "fed865aa8f5fd28ec53c82f0a3781f7e15a202c8",
+            "datavalue": {
+              "value": {
+                "entity-type": "item",
+                "numeric-id": 1479,
+                "id": "Q1479"
+              },
+              "type": "wikibase-entityid"
+            },
+            "datatype": "wikibase-item"
+          },
+          "type": "statement",
+          "id": "Q3406432$87851305-4d20-e238-8afb-5f8dfbbb5e79",
+          "rank": "normal",
+          "references": [
+            {
+              "hash": "ca531df3baa8592e7de5c2a1c4cd4ebbf2311b2c",
+              "snaks": {
+                "P143": [
+                  {
+                    "snaktype": "value",
+                    "property": "P143",
+                    "hash": "6a164248fc96bfa583bbb495cb63ae6401ec203c",
+                    "datavalue": {
+                      "value": {
+                        "entity-type": "item",
+                        "numeric-id": 206855,
+                        "id": "Q206855"
+                      },
+                      "type": "wikibase-entityid"
+                    },
+                    "datatype": "wikibase-item"
+                  }
+                ],
+                "P4656": [
+                  {
+                    "snaktype": "value",
+                    "property": "P4656",
+                    "hash": "92e7afe1404fa212bfc3d6b14b04c5f871a4b123",
+                    "datavalue": {
+                      "value": "https://ru.wikipedia.org/?oldid=126446857",
+                      "type": "string"
+                    },
+                    "datatype": "url"
+                  }
+                ]
+              },
+              "snaks-order": [
+                "P143",
+                "P4656"
+              ]
+            }
+          ]
+        }
+      ],
+      "P1705": [
+        {
+          "mainsnak": {
+            "snaktype": "value",
+            "property": "P1705",
+            "hash": "cdd3aafc63213ea849e7ebbd483f93b94327c691",
+            "datavalue": {
+              "value": {
+                "text": "Proclamation de la République française",
+                "language": "fr"
+              },
+              "type": "monolingualtext"
+            },
+            "datatype": "monolingualtext"
+          },
+          "type": "statement",
+          "id": "Q3406432$d8841c88-4e6c-2c57-340d-1117e223c142",
+          "rank": "normal",
+          "references": [
+            {
+              "hash": "ca531df3baa8592e7de5c2a1c4cd4ebbf2311b2c",
+              "snaks": {
+                "P143": [
+                  {
+                    "snaktype": "value",
+                    "property": "P143",
+                    "hash": "6a164248fc96bfa583bbb495cb63ae6401ec203c",
+                    "datavalue": {
+                      "value": {
+                        "entity-type": "item",
+                        "numeric-id": 206855,
+                        "id": "Q206855"
+                      },
+                      "type": "wikibase-entityid"
+                    },
+                    "datatype": "wikibase-item"
+                  }
+                ],
+                "P4656": [
+                  {
+                    "snaktype": "value",
+                    "property": "P4656",
+                    "hash": "92e7afe1404fa212bfc3d6b14b04c5f871a4b123",
+                    "datavalue": {
+                      "value": "https://ru.wikipedia.org/?oldid=126446857",
+                      "type": "string"
+                    },
+                    "datatype": "url"
+                  }
+                ]
+              },
+              "snaks-order": [
+                "P143",
+                "P4656"
+              ]
+            }
+          ]
+        }
+      ],
+      "P11514": [
+        {
+          "mainsnak": {
+            "snaktype": "value",
+            "property": "P11514",
+            "hash": "971f87fdd4f5e128d95be27f407c8069aa3eeef9",
+            "datavalue": {
+              "value": "frantsuzskaia-revoliutsiia-1870-a1e662",
+              "type": "string"
+            },
+            "datatype": "external-id"
+          },
+          "type": "statement",
+          "id": "Q3406432$6f17b7eb-44a4-fb69-e78d-ed8123b9001f",
+          "rank": "normal"
+        }
+      ]
+    },
+    "sitelinks": {
+      "commonswiki": {
+        "site": "commonswiki",
+        "title": "Category:Proclamation of the French Third Republic",
+        "badges": [],
+        "url": "https://commons.wikimedia.org/wiki/Category:Proclamation_of_the_French_Third_Republic"
+      },
+      "dewiki": {
+        "site": "dewiki",
+        "title": "Proklamation der Französischen Republik vom 4. September 1870",
+        "badges": [],
+        "url": "https://de.wikipedia.org/wiki/Proklamation_der_Franz%C3%B6sischen_Republik_vom_4._September_1870"
+      },
+      "enwiki": {
+        "site": "enwiki",
+        "title": "Proclamation of the French Republic (September 4, 1870)",
+        "badges": [],
+        "url": "https://en.wikipedia.org/wiki/Proclamation_of_the_French_Republic_(September_4,_1870)"
+      },
+      "frwiki": {
+        "site": "frwiki",
+        "title": "Proclamation de la République française du 4 septembre 1870",
+        "badges": [
+          "Q17437796"
+        ],
+        "url": "https://fr.wikipedia.org/wiki/Proclamation_de_la_R%C3%A9publique_fran%C3%A7aise_du_4_septembre_1870"
+      },
+      "hywiki": {
+        "site": "hywiki",
+        "title": "Ֆրանսիայի Հանրապետության հռչակում (1870)",
+        "badges": [],
+        "url": "https://hy.wikipedia.org/wiki/%D5%96%D6%80%D5%A1%D5%B6%D5%BD%D5%AB%D5%A1%D5%B5%D5%AB_%D5%80%D5%A1%D5%B6%D6%80%D5%A1%D5%BA%D5%A5%D5%BF%D5%B8%D6%82%D5%A9%D5%B5%D5%A1%D5%B6_%D5%B0%D5%BC%D5%B9%D5%A1%D5%AF%D5%B8%D6%82%D5%B4_(1870)"
+      },
+      "nlwiki": {
+        "site": "nlwiki",
+        "title": "Afkondiging van de Derde Franse Republiek",
+        "badges": [],
+        "url": "https://nl.wikipedia.org/wiki/Afkondiging_van_de_Derde_Franse_Republiek"
+      },
+      "rowiki": {
+        "site": "rowiki",
+        "title": "Proclamarea Republicii Franceze din 4 septembrie 1870",
+        "badges": [],
+        "url": "https://ro.wikipedia.org/wiki/Proclamarea_Republicii_Franceze_din_4_septembrie_1870"
+      },
+      "ruwiki": {
+        "site": "ruwiki",
+        "title": "Сентябрьская революция",
+        "badges": [],
+        "url": "https://ru.wikipedia.org/wiki/%D0%A1%D0%B5%D0%BD%D1%82%D1%8F%D0%B1%D1%80%D1%8C%D1%81%D0%BA%D0%B0%D1%8F_%D1%80%D0%B5%D0%B2%D0%BE%D0%BB%D1%8E%D1%86%D0%B8%D1%8F"
+      }
+    }
+  }
+}

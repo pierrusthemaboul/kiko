@@ -1,0 +1,607 @@
+{
+  "saved_at": "2026-03-07T14:37:28.561Z",
+  "value": {
+    "pageid": 3091620,
+    "ns": 0,
+    "title": "Q3238930",
+    "lastrevid": 2438222722,
+    "modified": "2025-12-05T05:01:22Z",
+    "type": "item",
+    "id": "Q3238930",
+    "labels": {
+      "fr": {
+        "language": "fr",
+        "value": "ligne 4 du Busway de Nantes"
+      },
+      "en": {
+        "language": "en",
+        "value": "line 4 of Nantes's Busway"
+      },
+      "zh": {
+        "language": "zh",
+        "value": "南特公交4路"
+      },
+      "eu": {
+        "language": "eu",
+        "value": "4. linea"
+      }
+    },
+    "descriptions": {
+      "en": {
+        "language": "en",
+        "value": "bus rapid transit in Nantes, France"
+      },
+      "fr": {
+        "language": "fr",
+        "value": "bus à haut niveau de service à Nantes, en France"
+      },
+      "eu": {
+        "language": "eu",
+        "value": "Nantesko igarotze azkarreko autobusaren linea"
+      }
+    },
+    "aliases": {
+      "fr": [
+        {
+          "language": "fr",
+          "value": "Ligne 4 Du Busway Nantais"
+        },
+        {
+          "language": "fr",
+          "value": "Ligne 4 du busway nantais"
+        },
+        {
+          "language": "fr",
+          "value": "Ligne 4 du Busway de Nantes"
+        }
+      ]
+    },
+    "claims": {
+      "P18": [
+        {
+          "mainsnak": {
+            "snaktype": "value",
+            "property": "P18",
+            "hash": "59386b7f0a08566805a56361f142386ef343e7bf",
+            "datavalue": {
+              "value": "Hess 222 Foch.jpg",
+              "type": "string"
+            },
+            "datatype": "commonsMedia"
+          },
+          "type": "statement",
+          "id": "Q3238930$82022867-44fe-71e9-1e03-7dfc60a4aa32",
+          "rank": "normal"
+        },
+        {
+          "mainsnak": {
+            "snaktype": "value",
+            "property": "P18",
+            "hash": "1f4ed599e62ee75bb8f6be6fae4be74e92d4ba3a",
+            "datavalue": {
+              "value": "Busway, TAN (NANTES,FR44).jpg",
+              "type": "string"
+            },
+            "datatype": "commonsMedia"
+          },
+          "type": "statement",
+          "id": "Q3238930$76693657-445e-923f-6789-40c444981313",
+          "rank": "normal"
+        }
+      ],
+      "P31": [
+        {
+          "mainsnak": {
+            "snaktype": "value",
+            "property": "P31",
+            "hash": "e64bf75ad4bc1dea559d01538cff350fa11fe73f",
+            "datavalue": {
+              "value": {
+                "entity-type": "item",
+                "numeric-id": 3240003,
+                "id": "Q3240003"
+              },
+              "type": "wikibase-entityid"
+            },
+            "datatype": "wikibase-item"
+          },
+          "type": "statement",
+          "id": "Q3238930$5218f849-4698-1746-58f4-66f1f11ecb11",
+          "rank": "normal"
+        },
+        {
+          "mainsnak": {
+            "snaktype": "value",
+            "property": "P31",
+            "hash": "4c622779c986dfb1b946e468f3f97d675f30bbc3",
+            "datavalue": {
+              "value": {
+                "entity-type": "item",
+                "numeric-id": 69502391,
+                "id": "Q69502391"
+              },
+              "type": "wikibase-entityid"
+            },
+            "datatype": "wikibase-item"
+          },
+          "type": "statement",
+          "id": "Q3238930$6b01eff0-4e6e-fef3-8166-c158d2f02b70",
+          "rank": "normal"
+        }
+      ],
+      "P137": [
+        {
+          "mainsnak": {
+            "snaktype": "value",
+            "property": "P137",
+            "hash": "47617e5fd513e4f72ec93c8bf5dc47974508e73e",
+            "datavalue": {
+              "value": {
+                "entity-type": "item",
+                "numeric-id": 3487840,
+                "id": "Q3487840"
+              },
+              "type": "wikibase-entityid"
+            },
+            "datatype": "wikibase-item"
+          },
+          "type": "statement",
+          "id": "Q3238930$b1ea5b4b-4960-9bba-c14e-0bf9ce3fa235",
+          "rank": "normal"
+        }
+      ],
+      "P17": [
+        {
+          "mainsnak": {
+            "snaktype": "value",
+            "property": "P17",
+            "hash": "c05db5d169c2560b9799d567a803d20a392f53e4",
+            "datavalue": {
+              "value": {
+                "entity-type": "item",
+                "numeric-id": 142,
+                "id": "Q142"
+              },
+              "type": "wikibase-entityid"
+            },
+            "datatype": "wikibase-item"
+          },
+          "type": "statement",
+          "id": "Q3238930$95b5f624-4696-1962-e984-1e1708d3e557",
+          "rank": "normal"
+        }
+      ],
+      "P131": [
+        {
+          "mainsnak": {
+            "snaktype": "value",
+            "property": "P131",
+            "hash": "3e384f004fd352bade27e854a24cb7dbc745515a",
+            "datavalue": {
+              "value": {
+                "entity-type": "item",
+                "numeric-id": 12191,
+                "id": "Q12191"
+              },
+              "type": "wikibase-entityid"
+            },
+            "datatype": "wikibase-item"
+          },
+          "type": "statement",
+          "id": "Q3238930$e27691d9-4b15-27e7-60fb-673b9565bb0d",
+          "rank": "normal"
+        },
+        {
+          "mainsnak": {
+            "snaktype": "value",
+            "property": "P131",
+            "hash": "ce58d648bba71abe5b093ca761c8d1b57f0a35e3",
+            "datavalue": {
+              "value": {
+                "entity-type": "item",
+                "numeric-id": 337636,
+                "id": "Q337636"
+              },
+              "type": "wikibase-entityid"
+            },
+            "datatype": "wikibase-item"
+          },
+          "type": "statement",
+          "id": "Q3238930$98341df1-459c-917a-0e40-4ed090c9b122",
+          "rank": "normal"
+        },
+        {
+          "mainsnak": {
+            "snaktype": "value",
+            "property": "P131",
+            "hash": "cc7bfbb80a747767fbc585c6b7c6c230defc02e3",
+            "datavalue": {
+              "value": {
+                "entity-type": "item",
+                "numeric-id": 328077,
+                "id": "Q328077"
+              },
+              "type": "wikibase-entityid"
+            },
+            "datatype": "wikibase-item"
+          },
+          "type": "statement",
+          "id": "Q3238930$47b1829d-41c7-c4a5-4d75-0329a722c2c3",
+          "rank": "normal"
+        }
+      ],
+      "P402": [
+        {
+          "mainsnak": {
+            "snaktype": "value",
+            "property": "P402",
+            "hash": "383b86812a3ba651a09960af6ffbb5b127263bf5",
+            "datavalue": {
+              "value": "2131342",
+              "type": "string"
+            },
+            "datatype": "external-id"
+          },
+          "type": "statement",
+          "id": "Q3238930$a8ca3baa-4f07-04dc-1e69-a624f81e83b0",
+          "rank": "normal"
+        }
+      ],
+      "P373": [
+        {
+          "mainsnak": {
+            "snaktype": "value",
+            "property": "P373",
+            "hash": "ec954979d964dce85fa18709eb8e34019c33ac3a",
+            "datavalue": {
+              "value": "Nantes Busway Line 4",
+              "type": "string"
+            },
+            "datatype": "string"
+          },
+          "type": "statement",
+          "id": "Q3238930$ACF88107-576B-40BB-909F-362225AC3E37",
+          "rank": "normal"
+        }
+      ],
+      "P1619": [
+        {
+          "mainsnak": {
+            "snaktype": "value",
+            "property": "P1619",
+            "hash": "4a2ae99ef307dfaab0fee8b51d6df76a20134684",
+            "datavalue": {
+              "value": {
+                "time": "+2006-11-06T00:00:00Z",
+                "timezone": 0,
+                "before": 0,
+                "after": 0,
+                "precision": 11,
+                "calendarmodel": "http://www.wikidata.org/entity/Q1985727"
+              },
+              "type": "time"
+            },
+            "datatype": "time"
+          },
+          "type": "statement",
+          "id": "Q3238930$89BE7672-7960-461C-86A0-9658DEF3A738",
+          "rank": "normal"
+        }
+      ],
+      "P2043": [
+        {
+          "mainsnak": {
+            "snaktype": "value",
+            "property": "P2043",
+            "hash": "9722c0fe03f88946501480debacd2da50f60d5c0",
+            "datavalue": {
+              "value": {
+                "amount": "+7",
+                "unit": "http://www.wikidata.org/entity/Q828224"
+              },
+              "type": "quantity"
+            },
+            "datatype": "quantity"
+          },
+          "type": "statement",
+          "id": "Q3238930$12D50F26-9A6C-4576-8EF3-C0348EF192C9",
+          "rank": "normal",
+          "references": [
+            {
+              "hash": "28bbd9a5f44164aa9f2c2ff4d7cd08ad9f7226e6",
+              "snaks": {
+                "P143": [
+                  {
+                    "snaktype": "value",
+                    "property": "P143",
+                    "hash": "f30cbd35620c4ea6d0633aaf0210a8916130469b",
+                    "datavalue": {
+                      "value": {
+                        "entity-type": "item",
+                        "numeric-id": 8447,
+                        "id": "Q8447"
+                      },
+                      "type": "wikibase-entityid"
+                    },
+                    "datatype": "wikibase-item"
+                  }
+                ],
+                "P4656": [
+                  {
+                    "snaktype": "value",
+                    "property": "P4656",
+                    "hash": "633957bdda0ca0541bf5f09e5a77079f8edf107f",
+                    "datavalue": {
+                      "value": "https://fr.wikipedia.org/w/index.php?title=Ligne_4_du_Busway_de_Nantes&oldid=154784393",
+                      "type": "string"
+                    },
+                    "datatype": "url"
+                  }
+                ]
+              },
+              "snaks-order": [
+                "P143",
+                "P4656"
+              ]
+            }
+          ]
+        }
+      ],
+      "P3438": [
+        {
+          "mainsnak": {
+            "snaktype": "value",
+            "property": "P3438",
+            "hash": "ad153beeac3b832011316e1f30b445053d7be307",
+            "datavalue": {
+              "value": {
+                "entity-type": "item",
+                "numeric-id": 114626,
+                "id": "Q114626"
+              },
+              "type": "wikibase-entityid"
+            },
+            "datatype": "wikibase-item"
+          },
+          "type": "statement",
+          "id": "Q3238930$610AECD7-7581-466B-B8B3-74251BA064AC",
+          "rank": "normal",
+          "references": [
+            {
+              "hash": "433b91868c294f02605edf15674031f81f40eb15",
+              "snaks": {
+                "P143": [
+                  {
+                    "snaktype": "value",
+                    "property": "P143",
+                    "hash": "f30cbd35620c4ea6d0633aaf0210a8916130469b",
+                    "datavalue": {
+                      "value": {
+                        "entity-type": "item",
+                        "numeric-id": 8447,
+                        "id": "Q8447"
+                      },
+                      "type": "wikibase-entityid"
+                    },
+                    "datatype": "wikibase-item"
+                  }
+                ],
+                "P4656": [
+                  {
+                    "snaktype": "value",
+                    "property": "P4656",
+                    "hash": "065ad6a68fe684aef67c806cf020f1bdcd57d6ba",
+                    "datavalue": {
+                      "value": "https://fr.wikipedia.org/w/index.php?title=Ligne_4_du_Busway_de_Nantes&oldid=162124377",
+                      "type": "string"
+                    },
+                    "datatype": "url"
+                  }
+                ]
+              },
+              "snaks-order": [
+                "P143",
+                "P4656"
+              ]
+            }
+          ]
+        },
+        {
+          "mainsnak": {
+            "snaktype": "value",
+            "property": "P3438",
+            "hash": "6be598b15dd1373ecbe14b1849330a3adc4ea45d",
+            "datavalue": {
+              "value": {
+                "entity-type": "item",
+                "numeric-id": 1615695,
+                "id": "Q1615695"
+              },
+              "type": "wikibase-entityid"
+            },
+            "datatype": "wikibase-item"
+          },
+          "type": "statement",
+          "id": "Q3238930$43c62e75-4faa-4ec6-7476-47465803e833",
+          "rank": "normal"
+        }
+      ],
+      "P2671": [
+        {
+          "mainsnak": {
+            "snaktype": "value",
+            "property": "P2671",
+            "hash": "730949d70edd124ae7097022f475171dde394b30",
+            "datavalue": {
+              "value": "/g/120pnlyp",
+              "type": "string"
+            },
+            "datatype": "external-id"
+          },
+          "type": "statement",
+          "id": "Q3238930$1A714739-C1A5-4CDB-9706-7C0A2155C5D8",
+          "rank": "normal"
+        }
+      ],
+      "P559": [
+        {
+          "mainsnak": {
+            "snaktype": "value",
+            "property": "P559",
+            "hash": "d96ec5a05663c9f8bf1e9f516d6784ba38a96e53",
+            "datavalue": {
+              "value": {
+                "entity-type": "item",
+                "numeric-id": 110599476,
+                "id": "Q110599476"
+              },
+              "type": "wikibase-entityid"
+            },
+            "datatype": "wikibase-item"
+          },
+          "type": "statement",
+          "id": "Q3238930$a43476dc-4d03-502e-e8ba-a185f026827b",
+          "rank": "normal"
+        },
+        {
+          "mainsnak": {
+            "snaktype": "value",
+            "property": "P559",
+            "hash": "ef43bdc2c9458cdb06b724137852541fe39dcd3f",
+            "datavalue": {
+              "value": {
+                "entity-type": "item",
+                "numeric-id": 110599609,
+                "id": "Q110599609"
+              },
+              "type": "wikibase-entityid"
+            },
+            "datatype": "wikibase-item"
+          },
+          "type": "statement",
+          "id": "Q3238930$bdc511b7-48c1-4ef9-7066-350f27cb9527",
+          "rank": "normal"
+        }
+      ],
+      "P1671": [
+        {
+          "mainsnak": {
+            "snaktype": "value",
+            "property": "P1671",
+            "hash": "ef5eeee1da92b0c34b06a9e84e29755715658d9f",
+            "datavalue": {
+              "value": "4",
+              "type": "string"
+            },
+            "datatype": "string"
+          },
+          "type": "statement",
+          "id": "Q3238930$cca7298b-4fce-bfe2-5b7e-d8f848e15044",
+          "rank": "normal"
+        }
+      ],
+      "P16": [
+        {
+          "mainsnak": {
+            "snaktype": "value",
+            "property": "P16",
+            "hash": "393c3ed7921f5f51694b81869b40577a29104845",
+            "datavalue": {
+              "value": {
+                "entity-type": "item",
+                "numeric-id": 2928801,
+                "id": "Q2928801"
+              },
+              "type": "wikibase-entityid"
+            },
+            "datatype": "wikibase-item"
+          },
+          "type": "statement",
+          "id": "Q3238930$5FF456BC-3722-47AA-A43C-BF9E3527767C",
+          "rank": "normal"
+        }
+      ],
+      "P5817": [
+        {
+          "mainsnak": {
+            "snaktype": "value",
+            "property": "P5817",
+            "hash": "3a5c47216c1ed20dc4a40d9bcde91e515d6a6966",
+            "datavalue": {
+              "value": {
+                "entity-type": "item",
+                "numeric-id": 55654238,
+                "id": "Q55654238"
+              },
+              "type": "wikibase-entityid"
+            },
+            "datatype": "wikibase-item"
+          },
+          "type": "statement",
+          "id": "Q3238930$e7d82a64-4499-c3e7-8631-d673e8afe226",
+          "rank": "normal"
+        }
+      ],
+      "P465": [
+        {
+          "mainsnak": {
+            "snaktype": "value",
+            "property": "P465",
+            "hash": "b29294d0eff30b89abe7fdb36e913270bad09017",
+            "datavalue": {
+              "value": "E3B700",
+              "type": "string"
+            },
+            "datatype": "string"
+          },
+          "type": "statement",
+          "id": "Q3238930$bc8e4599-4c34-dc18-5648-9b3e2d190332",
+          "rank": "normal"
+        }
+      ],
+      "P154": [
+        {
+          "mainsnak": {
+            "snaktype": "value",
+            "property": "P154",
+            "hash": "123fa1027ace368fe0cadd92b0e6e118a7397591",
+            "datavalue": {
+              "value": "Logo de la ligne 4 du busway de Nantes.svg",
+              "type": "string"
+            },
+            "datatype": "commonsMedia"
+          },
+          "type": "statement",
+          "id": "Q3238930$4e5f4f7c-454a-f20d-769e-543c1c8a2338",
+          "rank": "normal"
+        }
+      ]
+    },
+    "sitelinks": {
+      "commonswiki": {
+        "site": "commonswiki",
+        "title": "Category:Nantes Busway Line 4",
+        "badges": [],
+        "url": "https://commons.wikimedia.org/wiki/Category:Nantes_Busway_Line_4"
+      },
+      "euwiki": {
+        "site": "euwiki",
+        "title": "4. linea (Nantesko IAB)",
+        "badges": [],
+        "url": "https://eu.wikipedia.org/wiki/4._linea_(Nantesko_IAB)"
+      },
+      "frwiki": {
+        "site": "frwiki",
+        "title": "Ligne 4 du Busway de Nantes",
+        "badges": [],
+        "url": "https://fr.wikipedia.org/wiki/Ligne_4_du_Busway_de_Nantes"
+      },
+      "zhwiki": {
+        "site": "zhwiki",
+        "title": "南特大容量公交4号线",
+        "badges": [],
+        "url": "https://zh.wikipedia.org/wiki/%E5%8D%97%E7%89%B9%E5%A4%A7%E5%AE%B9%E9%87%8F%E5%85%AC%E4%BA%A44%E5%8F%B7%E7%BA%BF"
+      }
+    }
+  }
+}

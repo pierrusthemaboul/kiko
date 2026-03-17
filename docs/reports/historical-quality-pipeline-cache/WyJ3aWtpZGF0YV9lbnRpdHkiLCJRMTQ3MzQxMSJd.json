@@ -1,0 +1,570 @@
+{
+  "pageid": 1411418,
+  "ns": 0,
+  "title": "Q1473411",
+  "lastrevid": 2265409652,
+  "modified": "2024-10-26T16:12:38Z",
+  "type": "item",
+  "id": "Q1473411",
+  "labels": {
+    "de": {
+      "language": "de",
+      "value": "Union des Sociétés Françaises de Sports Athlétiques"
+    },
+    "fr": {
+      "language": "fr",
+      "value": "Union des sociétés françaises de sports athlétiques"
+    },
+    "en": {
+      "language": "en",
+      "value": "Union des Sociétés Françaises de Sports Athlétiques"
+    },
+    "nl": {
+      "language": "nl",
+      "value": "Union des Sociétés Françaises de Sports Athlétiques"
+    },
+    "it": {
+      "language": "it",
+      "value": "Union des sociétés françaises de sports athlétiques"
+    },
+    "ar": {
+      "language": "ar",
+      "value": "اتحاد الجمعيات الفرنسية للرياضة والرياضيين"
+    },
+    "tr": {
+      "language": "tr",
+      "value": "Union des sociétés françaises de sports athlétiques"
+    },
+    "pt": {
+      "language": "pt",
+      "value": "Union des Sociétés Françaises de Sports Athlétiques"
+    },
+    "el": {
+      "language": "el",
+      "value": "Ένωση Γαλλικών Αθλητικών Σωματείων"
+    },
+    "en-ca": {
+      "language": "en-ca",
+      "value": "Union des Sociétés Françaises de Sports Athlétiques"
+    },
+    "en-gb": {
+      "language": "en-gb",
+      "value": "Union des Sociétés Françaises de Sports Athlétiques"
+    },
+    "eo": {
+      "language": "eo",
+      "value": "Union des Sociétés Françaises de Sports Athlétiques"
+    },
+    "ja": {
+      "language": "ja",
+      "value": "フランススポーツ競技連合"
+    },
+    "uk": {
+      "language": "uk",
+      "value": "Союз французьких спортивних товариств"
+    },
+    "es": {
+      "language": "es",
+      "value": "Union des Sociétés Françaises de Sports Athlétiques"
+    },
+    "zh": {
+      "language": "zh",
+      "value": "法国体育运动协会联盟"
+    },
+    "zh-hans": {
+      "language": "zh-hans",
+      "value": "法国体育运动协会联盟"
+    },
+    "zh-cn": {
+      "language": "zh-cn",
+      "value": "法国体育运动协会联盟"
+    }
+  },
+  "descriptions": {
+    "en": {
+      "language": "en",
+      "value": "former sports governing body in France"
+    },
+    "de": {
+      "language": "de",
+      "value": "ehemaliger Sportverband"
+    },
+    "fr": {
+      "language": "fr",
+      "value": "fédération sportive française"
+    },
+    "it": {
+      "language": "it",
+      "value": "società sportiva"
+    }
+  },
+  "aliases": {
+    "fr": [
+      {
+        "language": "fr",
+        "value": "USFSA"
+      },
+      {
+        "language": "fr",
+        "value": "Union des societes francaises de sports athletiques"
+      }
+    ],
+    "nl": [
+      {
+        "language": "nl",
+        "value": "USFSA"
+      },
+      {
+        "language": "nl",
+        "value": "Union des Societes Francaises de Sports Athletiques"
+      }
+    ],
+    "it": [
+      {
+        "language": "it",
+        "value": "USFSA"
+      }
+    ],
+    "ja": [
+      {
+        "language": "ja",
+        "value": "フランス総合スポーツ連盟"
+      }
+    ],
+    "zh": [
+      {
+        "language": "zh",
+        "value": "法國體育協會聯盟"
+      }
+    ]
+  },
+  "claims": {
+    "P646": [
+      {
+        "mainsnak": {
+          "snaktype": "value",
+          "property": "P646",
+          "hash": "44e49f8da5058bdc50f28ba937a95f5d9f5cb7a3",
+          "datavalue": {
+            "value": "/m/03qm42n",
+            "type": "string"
+          },
+          "datatype": "external-id"
+        },
+        "type": "statement",
+        "id": "Q1473411$EF4A269D-4F13-440B-AD89-C1F0CBA97238",
+        "rank": "normal",
+        "references": [
+          {
+            "hash": "2b00cb481cddcac7623114367489b5c194901c4a",
+            "snaks": {
+              "P248": [
+                {
+                  "snaktype": "value",
+                  "property": "P248",
+                  "hash": "a94b740202b097dd33355e0e6c00e54b9395e5e0",
+                  "datavalue": {
+                    "value": {
+                      "entity-type": "item",
+                      "numeric-id": 15241312,
+                      "id": "Q15241312"
+                    },
+                    "type": "wikibase-entityid"
+                  },
+                  "datatype": "wikibase-item"
+                }
+              ],
+              "P577": [
+                {
+                  "snaktype": "value",
+                  "property": "P577",
+                  "hash": "fde79ecb015112d2f29229ccc1ec514ed3e71fa2",
+                  "datavalue": {
+                    "value": {
+                      "time": "+2013-10-28T00:00:00Z",
+                      "timezone": 0,
+                      "before": 0,
+                      "after": 0,
+                      "precision": 11,
+                      "calendarmodel": "http://www.wikidata.org/entity/Q1985727"
+                    },
+                    "type": "time"
+                  },
+                  "datatype": "time"
+                }
+              ]
+            },
+            "snaks-order": [
+              "P248",
+              "P577"
+            ]
+          }
+        ]
+      }
+    ],
+    "P641": [
+      {
+        "mainsnak": {
+          "snaktype": "value",
+          "property": "P641",
+          "hash": "1624e15e061523279bc14bb6497168e45caacb32",
+          "datavalue": {
+            "value": {
+              "entity-type": "item",
+              "numeric-id": 2736,
+              "id": "Q2736"
+            },
+            "type": "wikibase-entityid"
+          },
+          "datatype": "wikibase-item"
+        },
+        "type": "statement",
+        "id": "Q1473411$793230CA-43D5-4ED5-BB2B-B0DB22513C5C",
+        "rank": "normal",
+        "references": [
+          {
+            "hash": "fa278ebfc458360e5aed63d5058cca83c46134f1",
+            "snaks": {
+              "P143": [
+                {
+                  "snaktype": "value",
+                  "property": "P143",
+                  "hash": "e4f6d9441d0600513c4533c672b5ab472dc73694",
+                  "datavalue": {
+                    "value": {
+                      "entity-type": "item",
+                      "numeric-id": 328,
+                      "id": "Q328"
+                    },
+                    "type": "wikibase-entityid"
+                  },
+                  "datatype": "wikibase-item"
+                }
+              ]
+            },
+            "snaks-order": [
+              "P143"
+            ]
+          }
+        ]
+      }
+    ],
+    "P31": [
+      {
+        "mainsnak": {
+          "snaktype": "value",
+          "property": "P31",
+          "hash": "6dfe14ae174ef89e4d3c1f310449498194b68310",
+          "datavalue": {
+            "value": {
+              "entity-type": "item",
+              "numeric-id": 61718443,
+              "id": "Q61718443"
+            },
+            "type": "wikibase-entityid"
+          },
+          "datatype": "wikibase-item"
+        },
+        "type": "statement",
+        "id": "Q1473411$2525C955-19D6-418C-8DCB-483AD8257F2D",
+        "rank": "normal"
+      }
+    ],
+    "P571": [
+      {
+        "mainsnak": {
+          "snaktype": "value",
+          "property": "P571",
+          "hash": "a3579deb0a108aa08c1a366299e2095b29e297c9",
+          "datavalue": {
+            "value": {
+              "time": "+1887-11-20T00:00:00Z",
+              "timezone": 0,
+              "before": 0,
+              "after": 0,
+              "precision": 11,
+              "calendarmodel": "http://www.wikidata.org/entity/Q1985727"
+            },
+            "type": "time"
+          },
+          "datatype": "time"
+        },
+        "type": "statement",
+        "id": "Q1473411$C5481D61-47B0-49B5-B2B0-052DBD36C7C4",
+        "rank": "normal",
+        "references": [
+          {
+            "hash": "d4bd87b862b12d99d26e86472d44f26858dee639",
+            "snaks": {
+              "P143": [
+                {
+                  "snaktype": "value",
+                  "property": "P143",
+                  "hash": "f30cbd35620c4ea6d0633aaf0210a8916130469b",
+                  "datavalue": {
+                    "value": {
+                      "entity-type": "item",
+                      "numeric-id": 8447,
+                      "id": "Q8447"
+                    },
+                    "type": "wikibase-entityid"
+                  },
+                  "datatype": "wikibase-item"
+                }
+              ]
+            },
+            "snaks-order": [
+              "P143"
+            ]
+          }
+        ]
+      }
+    ],
+    "P17": [
+      {
+        "mainsnak": {
+          "snaktype": "value",
+          "property": "P17",
+          "hash": "c05db5d169c2560b9799d567a803d20a392f53e4",
+          "datavalue": {
+            "value": {
+              "entity-type": "item",
+              "numeric-id": 142,
+              "id": "Q142"
+            },
+            "type": "wikibase-entityid"
+          },
+          "datatype": "wikibase-item"
+        },
+        "type": "statement",
+        "id": "Q1473411$AB35FF9B-286D-4461-BFE9-E03BF48829AE",
+        "rank": "normal"
+      }
+    ],
+    "P373": [
+      {
+        "mainsnak": {
+          "snaktype": "value",
+          "property": "P373",
+          "hash": "4d378953bfbc846bd1575a141ecf4bfca8a238f0",
+          "datavalue": {
+            "value": "Union des Sociétés Françaises de Sports Athlétiques",
+            "type": "string"
+          },
+          "datatype": "string"
+        },
+        "type": "statement",
+        "id": "Q1473411$2FB63629-F229-4B7C-88A8-83E693284AA1",
+        "rank": "normal"
+      }
+    ],
+    "P214": [
+      {
+        "mainsnak": {
+          "snaktype": "value",
+          "property": "P214",
+          "hash": "7d8aa230937b468983d73f4c6c8717a2e1a93be8",
+          "datavalue": {
+            "value": "151128184",
+            "type": "string"
+          },
+          "datatype": "external-id"
+        },
+        "type": "statement",
+        "id": "Q1473411$EC726042-30C1-4CF6-B722-F8B0E91F184F",
+        "rank": "normal",
+        "references": [
+          {
+            "hash": "9a24f7c0208b05d6be97077d855671d1dfdbc0dd",
+            "snaks": {
+              "P143": [
+                {
+                  "snaktype": "value",
+                  "property": "P143",
+                  "hash": "d38375ffe6fe142663ff55cd783aa4df4301d83d",
+                  "datavalue": {
+                    "value": {
+                      "entity-type": "item",
+                      "numeric-id": 48183,
+                      "id": "Q48183"
+                    },
+                    "type": "wikibase-entityid"
+                  },
+                  "datatype": "wikibase-item"
+                }
+              ]
+            },
+            "snaks-order": [
+              "P143"
+            ]
+          }
+        ]
+      }
+    ],
+    "P159": [
+      {
+        "mainsnak": {
+          "snaktype": "value",
+          "property": "P159",
+          "hash": "801ca3c7c9013f90ceef9c3cdca2deecf5306a4a",
+          "datavalue": {
+            "value": {
+              "entity-type": "item",
+              "numeric-id": 90,
+              "id": "Q90"
+            },
+            "type": "wikibase-entityid"
+          },
+          "datatype": "wikibase-item"
+        },
+        "type": "statement",
+        "id": "Q1473411$EC33CF89-914C-4C75-A685-BA4952B0BD59",
+        "rank": "normal",
+        "references": [
+          {
+            "hash": "d5c215e958e485ab5f67431aec2bcc998b0c5ef4",
+            "snaks": {
+              "P143": [
+                {
+                  "snaktype": "value",
+                  "property": "P143",
+                  "hash": "e4f6d9441d0600513c4533c672b5ab472dc73694",
+                  "datavalue": {
+                    "value": {
+                      "entity-type": "item",
+                      "numeric-id": 328,
+                      "id": "Q328"
+                    },
+                    "type": "wikibase-entityid"
+                  },
+                  "datatype": "wikibase-item"
+                }
+              ],
+              "P4656": [
+                {
+                  "snaktype": "value",
+                  "property": "P4656",
+                  "hash": "6aa05396fff09867c3a754fbc8bd0616cf1d53fa",
+                  "datavalue": {
+                    "value": "https://en.wikipedia.org/w/index.php?title=Union_des_Sociétés_Françaises_de_Sports_Athlétiques&oldid=935770881",
+                    "type": "string"
+                  },
+                  "datatype": "url"
+                }
+              ]
+            },
+            "snaks-order": [
+              "P143",
+              "P4656"
+            ]
+          }
+        ]
+      }
+    ],
+    "P154": [
+      {
+        "mainsnak": {
+          "snaktype": "value",
+          "property": "P154",
+          "hash": "5c25ee2613cc61e403f9f79ace4eff9a6d462a83",
+          "datavalue": {
+            "value": "Union des sociétés françaises de sports athlétiques logo.svg",
+            "type": "string"
+          },
+          "datatype": "commonsMedia"
+        },
+        "type": "statement",
+        "id": "Q1473411$ad6a59c5-40c4-37d7-bc8e-105ae2b28d3b",
+        "rank": "normal"
+      }
+    ]
+  },
+  "sitelinks": {
+    "arwiki": {
+      "site": "arwiki",
+      "title": "اتحاد الجمعيات الفرنسية للرياضة والرياضيين",
+      "badges": [],
+      "url": "https://ar.wikipedia.org/wiki/%D8%A7%D8%AA%D8%AD%D8%A7%D8%AF_%D8%A7%D9%84%D8%AC%D9%85%D8%B9%D9%8A%D8%A7%D8%AA_%D8%A7%D9%84%D9%81%D8%B1%D9%86%D8%B3%D9%8A%D8%A9_%D9%84%D9%84%D8%B1%D9%8A%D8%A7%D8%B6%D8%A9_%D9%88%D8%A7%D9%84%D8%B1%D9%8A%D8%A7%D8%B6%D9%8A%D9%8A%D9%86"
+    },
+    "commonswiki": {
+      "site": "commonswiki",
+      "title": "Category:Union des Sociétés Françaises de Sports Athlétiques",
+      "badges": [],
+      "url": "https://commons.wikimedia.org/wiki/Category:Union_des_Soci%C3%A9t%C3%A9s_Fran%C3%A7aises_de_Sports_Athl%C3%A9tiques"
+    },
+    "dewiki": {
+      "site": "dewiki",
+      "title": "Union des sociétés françaises de sports athlétiques",
+      "badges": [],
+      "url": "https://de.wikipedia.org/wiki/Union_des_soci%C3%A9t%C3%A9s_fran%C3%A7aises_de_sports_athl%C3%A9tiques"
+    },
+    "elwiki": {
+      "site": "elwiki",
+      "title": "Ένωση Γαλλικών Αθλητικών Σωματείων",
+      "badges": [],
+      "url": "https://el.wikipedia.org/wiki/%CE%88%CE%BD%CF%89%CF%83%CE%B7_%CE%93%CE%B1%CE%BB%CE%BB%CE%B9%CE%BA%CF%8E%CE%BD_%CE%91%CE%B8%CE%BB%CE%B7%CF%84%CE%B9%CE%BA%CF%8E%CE%BD_%CE%A3%CF%89%CE%BC%CE%B1%CF%84%CE%B5%CE%AF%CF%89%CE%BD"
+    },
+    "enwiki": {
+      "site": "enwiki",
+      "title": "Union des Sociétés Françaises de Sports Athlétiques",
+      "badges": [],
+      "url": "https://en.wikipedia.org/wiki/Union_des_Soci%C3%A9t%C3%A9s_Fran%C3%A7aises_de_Sports_Athl%C3%A9tiques"
+    },
+    "eowiki": {
+      "site": "eowiki",
+      "title": "Union des Sociétés Françaises de Sports Athlétiques",
+      "badges": [],
+      "url": "https://eo.wikipedia.org/wiki/Union_des_Soci%C3%A9t%C3%A9s_Fran%C3%A7aises_de_Sports_Athl%C3%A9tiques"
+    },
+    "eswiki": {
+      "site": "eswiki",
+      "title": "Union des sociétés françaises de sports athlétiques",
+      "badges": [],
+      "url": "https://es.wikipedia.org/wiki/Union_des_soci%C3%A9t%C3%A9s_fran%C3%A7aises_de_sports_athl%C3%A9tiques"
+    },
+    "frwiki": {
+      "site": "frwiki",
+      "title": "Union des sociétés françaises de sports athlétiques",
+      "badges": [
+        "Q17437798"
+      ],
+      "url": "https://fr.wikipedia.org/wiki/Union_des_soci%C3%A9t%C3%A9s_fran%C3%A7aises_de_sports_athl%C3%A9tiques"
+    },
+    "itwiki": {
+      "site": "itwiki",
+      "title": "Union des sociétés françaises de sports athlétiques",
+      "badges": [],
+      "url": "https://it.wikipedia.org/wiki/Union_des_soci%C3%A9t%C3%A9s_fran%C3%A7aises_de_sports_athl%C3%A9tiques"
+    },
+    "jawiki": {
+      "site": "jawiki",
+      "title": "フランス・スポーツ競技社団連合",
+      "badges": [],
+      "url": "https://ja.wikipedia.org/wiki/%E3%83%95%E3%83%A9%E3%83%B3%E3%82%B9%E3%83%BB%E3%82%B9%E3%83%9D%E3%83%BC%E3%83%84%E7%AB%B6%E6%8A%80%E7%A4%BE%E5%9B%A3%E9%80%A3%E5%90%88"
+    },
+    "nlwiki": {
+      "site": "nlwiki",
+      "title": "Union des Sociétés Françaises de Sports Athlétiques",
+      "badges": [],
+      "url": "https://nl.wikipedia.org/wiki/Union_des_Soci%C3%A9t%C3%A9s_Fran%C3%A7aises_de_Sports_Athl%C3%A9tiques"
+    },
+    "ptwiki": {
+      "site": "ptwiki",
+      "title": "Union des Sociétés Françaises de Sports Athlétiques",
+      "badges": [],
+      "url": "https://pt.wikipedia.org/wiki/Union_des_Soci%C3%A9t%C3%A9s_Fran%C3%A7aises_de_Sports_Athl%C3%A9tiques"
+    },
+    "trwiki": {
+      "site": "trwiki",
+      "title": "Union des sociétés françaises de sports athlétiques",
+      "badges": [],
+      "url": "https://tr.wikipedia.org/wiki/Union_des_soci%C3%A9t%C3%A9s_fran%C3%A7aises_de_sports_athl%C3%A9tiques"
+    },
+    "ukwiki": {
+      "site": "ukwiki",
+      "title": "Союз французьких спортивних товариств",
+      "badges": [],
+      "url": "https://uk.wikipedia.org/wiki/%D0%A1%D0%BE%D1%8E%D0%B7_%D1%84%D1%80%D0%B0%D0%BD%D1%86%D1%83%D0%B7%D1%8C%D0%BA%D0%B8%D1%85_%D1%81%D0%BF%D0%BE%D1%80%D1%82%D0%B8%D0%B2%D0%BD%D0%B8%D1%85_%D1%82%D0%BE%D0%B2%D0%B0%D1%80%D0%B8%D1%81%D1%82%D0%B2"
+    }
+  }
+}

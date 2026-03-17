@@ -1,0 +1,396 @@
+{
+  "saved_at": "2026-03-07T13:03:17.887Z",
+  "value": {
+    "pageid": 2718105,
+    "ns": 0,
+    "title": "Q2837984",
+    "lastrevid": 2384125442,
+    "modified": "2025-07-25T10:59:05Z",
+    "type": "item",
+    "id": "Q2837984",
+    "labels": {
+      "fr": {
+        "language": "fr",
+        "value": "réseau Alliance"
+      },
+      "de": {
+        "language": "de",
+        "value": "Réseau Alliance"
+      },
+      "en": {
+        "language": "en",
+        "value": "Réseau Alliance"
+      }
+    },
+    "descriptions": {
+      "fr": {
+        "language": "fr",
+        "value": "réseau de renseignement de la résistance intérieure française"
+      },
+      "en": {
+        "language": "en",
+        "value": "French resistance group"
+      }
+    },
+    "aliases": {
+      "fr": [
+        {
+          "language": "fr",
+          "value": "Réseau Alliance"
+        },
+        {
+          "language": "fr",
+          "value": "Alliance (Résistance)"
+        },
+        {
+          "language": "fr",
+          "value": "Alliance (réseau)"
+        }
+      ],
+      "en": [
+        {
+          "language": "en",
+          "value": "Alliance (Résistance)"
+        }
+      ]
+    },
+    "claims": {
+      "P31": [
+        {
+          "mainsnak": {
+            "snaktype": "value",
+            "property": "P31",
+            "hash": "183ea53d1514632dae835d81202ca38c198376bc",
+            "datavalue": {
+              "value": {
+                "entity-type": "item",
+                "numeric-id": 21528930,
+                "id": "Q21528930"
+              },
+              "type": "wikibase-entityid"
+            },
+            "datatype": "wikibase-item"
+          },
+          "type": "statement",
+          "id": "Q2837984$4E978386-AF5F-41C5-B198-10F136343619",
+          "rank": "normal"
+        },
+        {
+          "mainsnak": {
+            "snaktype": "value",
+            "property": "P31",
+            "hash": "66fc160b9765618dc76390d5940733329c336720",
+            "datavalue": {
+              "value": {
+                "entity-type": "item",
+                "numeric-id": 94617066,
+                "id": "Q94617066"
+              },
+              "type": "wikibase-entityid"
+            },
+            "datatype": "wikibase-item"
+          },
+          "type": "statement",
+          "id": "Q2837984$65bb7180-48a5-a487-416a-48b58ab60292",
+          "rank": "normal"
+        }
+      ],
+      "P17": [
+        {
+          "mainsnak": {
+            "snaktype": "value",
+            "property": "P17",
+            "hash": "c05db5d169c2560b9799d567a803d20a392f53e4",
+            "datavalue": {
+              "value": {
+                "entity-type": "item",
+                "numeric-id": 142,
+                "id": "Q142"
+              },
+              "type": "wikibase-entityid"
+            },
+            "datatype": "wikibase-item"
+          },
+          "type": "statement",
+          "id": "Q2837984$2aa36b3d-4bb2-ba6b-a101-8da0fcf477c6",
+          "rank": "normal"
+        }
+      ],
+      "P18": [
+        {
+          "mainsnak": {
+            "snaktype": "value",
+            "property": "P18",
+            "hash": "4bd3dc22e14d9281ca624b57d05fe6a98e9cb3e4",
+            "datavalue": {
+              "value": "Camp de concentration de Natzwiller-Struthof 23.jpg",
+              "type": "string"
+            },
+            "datatype": "commonsMedia"
+          },
+          "type": "statement",
+          "qualifiers": {
+            "P2096": [
+              {
+                "snaktype": "value",
+                "property": "P2096",
+                "hash": "0d739f443dae60018fd5bb60b8ff03cba2f4e83e",
+                "datavalue": {
+                  "value": {
+                    "text": "Plaque mémorielle au crématoire du camp de concentration de Natzwiller-Struthof où furent massacrés et incinérés 107 membres du Réseau Alliance.",
+                    "language": "fr"
+                  },
+                  "type": "monolingualtext"
+                },
+                "datatype": "monolingualtext"
+              }
+            ]
+          },
+          "qualifiers-order": [
+            "P2096"
+          ],
+          "id": "Q2837984$37394592-4390-6e59-218e-ba897057623f",
+          "rank": "normal"
+        },
+        {
+          "mainsnak": {
+            "snaktype": "value",
+            "property": "P18",
+            "hash": "e185f7d0b2fa73ee46c1be73e5ee32437f2ac2cb",
+            "datavalue": {
+              "value": "Kehl pont du Rhin Réseau Alliance plaque commémorative.jpg",
+              "type": "string"
+            },
+            "datatype": "commonsMedia"
+          },
+          "type": "statement",
+          "qualifiers": {
+            "P2096": [
+              {
+                "snaktype": "value",
+                "property": "P2096",
+                "hash": "c02cfe670dfefbd120fb750366c28512927fb64f",
+                "datavalue": {
+                  "value": {
+                    "text": "[[Kehl]] (Allemagne) – Pont du Rhin : plaque commémorative à la mémoire de neuf membres du « Réseau Alliance » fusillés à cet endroit par la Gestapo le 23 novembre 1944 et dont les corps ont été jetés dans le Rhin.",
+                    "language": "fr"
+                  },
+                  "type": "monolingualtext"
+                },
+                "datatype": "monolingualtext"
+              }
+            ]
+          },
+          "qualifiers-order": [
+            "P2096"
+          ],
+          "id": "Q2837984$6d26e209-4f7e-3d69-52f4-db2f6d738f59",
+          "rank": "normal"
+        }
+      ],
+      "P607": [
+        {
+          "mainsnak": {
+            "snaktype": "value",
+            "property": "P607",
+            "hash": "40f9ead6221f415002a554314e16e13378328823",
+            "datavalue": {
+              "value": {
+                "entity-type": "item",
+                "numeric-id": 362,
+                "id": "Q362"
+              },
+              "type": "wikibase-entityid"
+            },
+            "datatype": "wikibase-item"
+          },
+          "type": "statement",
+          "id": "Q2837984$6874897a-4dc3-b7c6-bc66-1bc03bf3c346",
+          "rank": "normal"
+        }
+      ],
+      "P2124": [
+        {
+          "mainsnak": {
+            "snaktype": "value",
+            "property": "P2124",
+            "hash": "8f619f56f21f8cfb458501700135e4a70250adcd",
+            "datavalue": {
+              "value": {
+                "amount": "+3000",
+                "unit": "1"
+              },
+              "type": "quantity"
+            },
+            "datatype": "quantity"
+          },
+          "type": "statement",
+          "qualifiers": {
+            "P1480": [
+              {
+                "snaktype": "value",
+                "property": "P1480",
+                "hash": "35be581ff8889f5edf5286292e104e8f91546c4a",
+                "datavalue": {
+                  "value": {
+                    "entity-type": "item",
+                    "numeric-id": 10578722,
+                    "id": "Q10578722"
+                  },
+                  "type": "wikibase-entityid"
+                },
+                "datatype": "wikibase-item"
+              }
+            ]
+          },
+          "qualifiers-order": [
+            "P1480"
+          ],
+          "id": "Q2837984$f7ffa8cb-4010-32a0-f82b-e28155f52bb7",
+          "rank": "normal",
+          "references": [
+            {
+              "hash": "d4bd87b862b12d99d26e86472d44f26858dee639",
+              "snaks": {
+                "P143": [
+                  {
+                    "snaktype": "value",
+                    "property": "P143",
+                    "hash": "f30cbd35620c4ea6d0633aaf0210a8916130469b",
+                    "datavalue": {
+                      "value": {
+                        "entity-type": "item",
+                        "numeric-id": 8447,
+                        "id": "Q8447"
+                      },
+                      "type": "wikibase-entityid"
+                    },
+                    "datatype": "wikibase-item"
+                  }
+                ]
+              },
+              "snaks-order": [
+                "P143"
+              ]
+            }
+          ]
+        }
+      ],
+      "P2671": [
+        {
+          "mainsnak": {
+            "snaktype": "value",
+            "property": "P2671",
+            "hash": "0ec2bfc7b7106da61fd9af57fa915a0ae49dad8b",
+            "datavalue": {
+              "value": "/g/121bk6_5",
+              "type": "string"
+            },
+            "datatype": "external-id"
+          },
+          "type": "statement",
+          "id": "Q2837984$78575E61-1CD1-4248-904E-635C68690717",
+          "rank": "normal"
+        }
+      ],
+      "P373": [
+        {
+          "mainsnak": {
+            "snaktype": "value",
+            "property": "P373",
+            "hash": "b8a34c1ffee6cc2d5acb85b5ed5eb9849f694458",
+            "datavalue": {
+              "value": "Réseau Alliance",
+              "type": "string"
+            },
+            "datatype": "string"
+          },
+          "type": "statement",
+          "id": "Q2837984$86d5f9de-7358-41b2-b827-cedcffebec23",
+          "rank": "normal"
+        }
+      ],
+      "P1037": [
+        {
+          "mainsnak": {
+            "snaktype": "value",
+            "property": "P1037",
+            "hash": "85b258f532bda8564a567b263bd71a39e06be631",
+            "datavalue": {
+              "value": {
+                "entity-type": "item",
+                "numeric-id": 112259619,
+                "id": "Q112259619"
+              },
+              "type": "wikibase-entityid"
+            },
+            "datatype": "wikibase-item"
+          },
+          "type": "statement",
+          "id": "Q2837984$a70896d4-4ffb-c730-dbbb-207e097fe886",
+          "rank": "normal"
+        }
+      ],
+      "P1343": [
+        {
+          "mainsnak": {
+            "snaktype": "value",
+            "property": "P1343",
+            "hash": "54cee08af264922e89e260a2512ee1c9819e1862",
+            "datavalue": {
+              "value": {
+                "entity-type": "item",
+                "numeric-id": 126902760,
+                "id": "Q126902760"
+              },
+              "type": "wikibase-entityid"
+            },
+            "datatype": "wikibase-item"
+          },
+          "type": "statement",
+          "id": "Q2837984$71116ba0-445e-5e28-5fbc-73e588a0f62a",
+          "rank": "normal"
+        }
+      ],
+      "P13591": [
+        {
+          "mainsnak": {
+            "snaktype": "value",
+            "property": "P13591",
+            "hash": "1ccbcc173efea3c0c56ed9c4a5b480d5cfe564ae",
+            "datavalue": {
+              "value": "group/ba21384c-275d-49cd-af82-dae20e4bf29f",
+              "type": "string"
+            },
+            "datatype": "external-id"
+          },
+          "type": "statement",
+          "id": "Q2837984$B77D64D7-2624-4B42-8503-BE5648B7C9CD",
+          "rank": "normal"
+        }
+      ]
+    },
+    "sitelinks": {
+      "commonswiki": {
+        "site": "commonswiki",
+        "title": "Category:Réseau Alliance",
+        "badges": [],
+        "url": "https://commons.wikimedia.org/wiki/Category:R%C3%A9seau_Alliance"
+      },
+      "dewiki": {
+        "site": "dewiki",
+        "title": "Réseau Alliance",
+        "badges": [],
+        "url": "https://de.wikipedia.org/wiki/R%C3%A9seau_Alliance"
+      },
+      "frwiki": {
+        "site": "frwiki",
+        "title": "Alliance (réseau)",
+        "badges": [
+          "Q17437798"
+        ],
+        "url": "https://fr.wikipedia.org/wiki/Alliance_(r%C3%A9seau)"
+      }
+    }
+  }
+}

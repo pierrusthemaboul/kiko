@@ -1,0 +1,431 @@
+{
+  "saved_at": "2026-03-07T16:34:56.234Z",
+  "value": {
+    "pageid": 2766033,
+    "ns": 0,
+    "title": "Q2889455",
+    "lastrevid": 2470002217,
+    "modified": "2026-03-06T23:55:52Z",
+    "type": "item",
+    "id": "Q2889455",
+    "labels": {
+      "fr": {
+        "language": "fr",
+        "value": "bataille de Nantes"
+      },
+      "en": {
+        "language": "en",
+        "value": "Battle of Nantes"
+      },
+      "it": {
+        "language": "it",
+        "value": "battaglia di Nantes"
+      },
+      "el": {
+        "language": "el",
+        "value": "Μάχη της Ναντ"
+      },
+      "es": {
+        "language": "es",
+        "value": "Batalla de Nantes"
+      },
+      "nl": {
+        "language": "nl",
+        "value": "Battle of Nantes"
+      },
+      "ja": {
+        "language": "ja",
+        "value": "ナントの戦い"
+      },
+      "sh": {
+        "language": "sh",
+        "value": "Bitka kod Nantesa"
+      },
+      "ca": {
+        "language": "ca",
+        "value": "Batalla de Nantes"
+      },
+      "he": {
+        "language": "he",
+        "value": "קרב נאנט"
+      },
+      "zh": {
+        "language": "zh",
+        "value": "南特战役"
+      },
+      "yo": {
+        "language": "yo",
+        "value": "ogun Nantes"
+      },
+      "ru": {
+        "language": "ru",
+        "value": "Сражение за Нант (1793)"
+      },
+      "sl": {
+        "language": "sl",
+        "value": "bitka za Nantes"
+      },
+      "ga": {
+        "language": "ga",
+        "value": "Cath Nantes"
+      }
+    },
+    "descriptions": {
+      "fr": {
+        "language": "fr",
+        "value": "bataille de la guerre de Vendée"
+      },
+      "nl": {
+        "language": "nl",
+        "value": "veldslag in Frankrijk"
+      },
+      "yo": {
+        "language": "yo",
+        "value": "ogun"
+      },
+      "it": {
+        "language": "it",
+        "value": "battaglia della guerra di Vandea (1793)"
+      },
+      "en": {
+        "language": "en",
+        "value": "1793 battle"
+      }
+    },
+    "aliases": {
+      "fr": [
+        {
+          "language": "fr",
+          "value": "siège de Nantes"
+        }
+      ],
+      "el": [
+        {
+          "language": "el",
+          "value": "Πολιορκία της Ναντ"
+        }
+      ]
+    },
+    "claims": {
+      "P625": [
+        {
+          "mainsnak": {
+            "snaktype": "value",
+            "property": "P625",
+            "hash": "33eb8b80a4b5f01299dec3cb14c97090acbdfd74",
+            "datavalue": {
+              "value": {
+                "latitude": 47.218055555556,
+                "longitude": -1.5527777777778,
+                "altitude": null,
+                "precision": 0.00027777777777778,
+                "globe": "http://www.wikidata.org/entity/Q2"
+              },
+              "type": "globecoordinate"
+            },
+            "datatype": "globe-coordinate"
+          },
+          "type": "statement",
+          "id": "Q2889455$08c2c34c-4a3c-a84d-9851-3c04ce745d78",
+          "rank": "normal"
+        }
+      ],
+      "P31": [
+        {
+          "mainsnak": {
+            "snaktype": "value",
+            "property": "P31",
+            "hash": "baa1df9dcd37b9f3a062e7a14a8bef0c37078d32",
+            "datavalue": {
+              "value": {
+                "entity-type": "item",
+                "numeric-id": 178561,
+                "id": "Q178561"
+              },
+              "type": "wikibase-entityid"
+            },
+            "datatype": "wikibase-item"
+          },
+          "type": "statement",
+          "id": "Q2889455$017E8567-4C02-498C-9D23-8600B15314F7",
+          "rank": "normal",
+          "references": [
+            {
+              "hash": "d4bd87b862b12d99d26e86472d44f26858dee639",
+              "snaks": {
+                "P143": [
+                  {
+                    "snaktype": "value",
+                    "property": "P143",
+                    "hash": "f30cbd35620c4ea6d0633aaf0210a8916130469b",
+                    "datavalue": {
+                      "value": {
+                        "entity-type": "item",
+                        "numeric-id": 8447,
+                        "id": "Q8447"
+                      },
+                      "type": "wikibase-entityid"
+                    },
+                    "datatype": "wikibase-item"
+                  }
+                ]
+              },
+              "snaks-order": [
+                "P143"
+              ]
+            }
+          ]
+        }
+      ],
+      "P361": [
+        {
+          "mainsnak": {
+            "snaktype": "value",
+            "property": "P361",
+            "hash": "da85c5b3ded1259beb16e374ca46937a9d8a98fd",
+            "datavalue": {
+              "value": {
+                "entity-type": "item",
+                "numeric-id": 8628,
+                "id": "Q8628"
+              },
+              "type": "wikibase-entityid"
+            },
+            "datatype": "wikibase-item"
+          },
+          "type": "statement",
+          "id": "Q2889455$5C9AF447-EA4E-4933-95EF-CECC2AB10394",
+          "rank": "normal",
+          "references": [
+            {
+              "hash": "d4bd87b862b12d99d26e86472d44f26858dee639",
+              "snaks": {
+                "P143": [
+                  {
+                    "snaktype": "value",
+                    "property": "P143",
+                    "hash": "f30cbd35620c4ea6d0633aaf0210a8916130469b",
+                    "datavalue": {
+                      "value": {
+                        "entity-type": "item",
+                        "numeric-id": 8447,
+                        "id": "Q8447"
+                      },
+                      "type": "wikibase-entityid"
+                    },
+                    "datatype": "wikibase-item"
+                  }
+                ]
+              },
+              "snaks-order": [
+                "P143"
+              ]
+            }
+          ]
+        }
+      ],
+      "P17": [
+        {
+          "mainsnak": {
+            "snaktype": "value",
+            "property": "P17",
+            "hash": "c05db5d169c2560b9799d567a803d20a392f53e4",
+            "datavalue": {
+              "value": {
+                "entity-type": "item",
+                "numeric-id": 142,
+                "id": "Q142"
+              },
+              "type": "wikibase-entityid"
+            },
+            "datatype": "wikibase-item"
+          },
+          "type": "statement",
+          "id": "Q2889455$9C1CE0DF-62E7-4CD1-B161-7B3685991CF2",
+          "rank": "normal"
+        }
+      ],
+      "P276": [
+        {
+          "mainsnak": {
+            "snaktype": "value",
+            "property": "P276",
+            "hash": "28b9df372cc440d7f784b22a7305fa030aa56b74",
+            "datavalue": {
+              "value": {
+                "entity-type": "item",
+                "numeric-id": 12191,
+                "id": "Q12191"
+              },
+              "type": "wikibase-entityid"
+            },
+            "datatype": "wikibase-item"
+          },
+          "type": "statement",
+          "id": "Q2889455$A05A7524-F814-44B2-9345-B435D9019C5D",
+          "rank": "normal",
+          "references": [
+            {
+              "hash": "d4bd87b862b12d99d26e86472d44f26858dee639",
+              "snaks": {
+                "P143": [
+                  {
+                    "snaktype": "value",
+                    "property": "P143",
+                    "hash": "f30cbd35620c4ea6d0633aaf0210a8916130469b",
+                    "datavalue": {
+                      "value": {
+                        "entity-type": "item",
+                        "numeric-id": 8447,
+                        "id": "Q8447"
+                      },
+                      "type": "wikibase-entityid"
+                    },
+                    "datatype": "wikibase-item"
+                  }
+                ]
+              },
+              "snaks-order": [
+                "P143"
+              ]
+            }
+          ]
+        }
+      ],
+      "P585": [
+        {
+          "mainsnak": {
+            "snaktype": "value",
+            "property": "P585",
+            "hash": "fb9f51d152e392ef878f0e5cf678b95c1948346a",
+            "datavalue": {
+              "value": {
+                "time": "+1793-06-29T00:00:00Z",
+                "timezone": 0,
+                "before": 0,
+                "after": 0,
+                "precision": 11,
+                "calendarmodel": "http://www.wikidata.org/entity/Q1985727"
+              },
+              "type": "time"
+            },
+            "datatype": "time"
+          },
+          "type": "statement",
+          "id": "Q2889455$3616EB2B-E1A6-4D1C-A2E5-4F8F3D77D13D",
+          "rank": "normal",
+          "references": [
+            {
+              "hash": "d4bd87b862b12d99d26e86472d44f26858dee639",
+              "snaks": {
+                "P143": [
+                  {
+                    "snaktype": "value",
+                    "property": "P143",
+                    "hash": "f30cbd35620c4ea6d0633aaf0210a8916130469b",
+                    "datavalue": {
+                      "value": {
+                        "entity-type": "item",
+                        "numeric-id": 8447,
+                        "id": "Q8447"
+                      },
+                      "type": "wikibase-entityid"
+                    },
+                    "datatype": "wikibase-item"
+                  }
+                ]
+              },
+              "snaks-order": [
+                "P143"
+              ]
+            }
+          ]
+        }
+      ],
+      "P18": [
+        {
+          "mainsnak": {
+            "snaktype": "value",
+            "property": "P18",
+            "hash": "4f26c276d234f10491076e1b418643ea172ddcb7",
+            "datavalue": {
+              "value": "Siège de Nantes 1793.jpg",
+              "type": "string"
+            },
+            "datatype": "commonsMedia"
+          },
+          "type": "statement",
+          "id": "Q2889455$1097440E-C2A5-413E-BDFA-6388300EE9A8",
+          "rank": "normal"
+        }
+      ],
+      "P646": [
+        {
+          "mainsnak": {
+            "snaktype": "value",
+            "property": "P646",
+            "hash": "798e83a62b3015574ee81213883fbbbaa0598946",
+            "datavalue": {
+              "value": "/m/03qp76q",
+              "type": "string"
+            },
+            "datatype": "external-id"
+          },
+          "type": "statement",
+          "id": "Q2889455$FF01C91D-4363-49DE-BB22-0A748D919F91",
+          "rank": "normal"
+        }
+      ]
+    },
+    "sitelinks": {
+      "cawiki": {
+        "site": "cawiki",
+        "title": "Batalla de Nantes",
+        "badges": [],
+        "url": "https://ca.wikipedia.org/wiki/Batalla_de_Nantes"
+      },
+      "commonswiki": {
+        "site": "commonswiki",
+        "title": "Category:Battle of Nantes (1793)",
+        "badges": [],
+        "url": "https://commons.wikimedia.org/wiki/Category:Battle_of_Nantes_(1793)"
+      },
+      "enwiki": {
+        "site": "enwiki",
+        "title": "Battle of Nantes",
+        "badges": [],
+        "url": "https://en.wikipedia.org/wiki/Battle_of_Nantes"
+      },
+      "eswiki": {
+        "site": "eswiki",
+        "title": "Batalla de Nantes",
+        "badges": [],
+        "url": "https://es.wikipedia.org/wiki/Batalla_de_Nantes"
+      },
+      "frwiki": {
+        "site": "frwiki",
+        "title": "Bataille de Nantes (1793)",
+        "badges": [],
+        "url": "https://fr.wikipedia.org/wiki/Bataille_de_Nantes_(1793)"
+      },
+      "itwiki": {
+        "site": "itwiki",
+        "title": "Battaglia di Nantes",
+        "badges": [],
+        "url": "https://it.wikipedia.org/wiki/Battaglia_di_Nantes"
+      },
+      "ruwiki": {
+        "site": "ruwiki",
+        "title": "Сражение за Нант (1793)",
+        "badges": [],
+        "url": "https://ru.wikipedia.org/wiki/%D0%A1%D1%80%D0%B0%D0%B6%D0%B5%D0%BD%D0%B8%D0%B5_%D0%B7%D0%B0_%D0%9D%D0%B0%D0%BD%D1%82_(1793)"
+      },
+      "shwiki": {
+        "site": "shwiki",
+        "title": "Bitka kod Nantesa",
+        "badges": [],
+        "url": "https://sh.wikipedia.org/wiki/Bitka_kod_Nantesa"
+      }
+    }
+  }
+}

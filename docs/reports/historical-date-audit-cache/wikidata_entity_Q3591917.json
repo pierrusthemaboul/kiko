@@ -1,0 +1,111 @@
+{
+  "saved_at": "2026-03-07T15:02:43.014Z",
+  "value": {
+    "pageid": 3420324,
+    "ns": 0,
+    "title": "Q3591917",
+    "lastrevid": 2325517899,
+    "modified": "2025-03-16T07:37:35Z",
+    "type": "item",
+    "id": "Q3591917",
+    "labels": {
+      "fr": {
+        "language": "fr",
+        "value": "États généraux de 1614"
+      },
+      "ja": {
+        "language": "ja",
+        "value": "1614年全国三部会"
+      },
+      "zh-hant": {
+        "language": "zh-hant",
+        "value": "1614年法國三級會議"
+      },
+      "zh-hans": {
+        "language": "zh-hans",
+        "value": "1614年法国三级会议"
+      },
+      "zh": {
+        "language": "zh",
+        "value": "1614年法国三级会议"
+      },
+      "it": {
+        "language": "it",
+        "value": "Stati generali del 1614"
+      }
+    },
+    "descriptions": {},
+    "aliases": {
+      "fr": [
+        {
+          "language": "fr",
+          "value": "Etats généraux de 1614"
+        },
+        {
+          "language": "fr",
+          "value": "Etats generaux de 1614"
+        }
+      ],
+      "ja": [
+        {
+          "language": "ja",
+          "value": "ブロワの三部会（1614年）"
+        }
+      ]
+    },
+    "claims": {
+      "P31": [
+        {
+          "mainsnak": {
+            "snaktype": "value",
+            "property": "P31",
+            "hash": "26d1323543c7eb0589a5897d22a77c8a4a5b8688",
+            "datavalue": {
+              "value": {
+                "entity-type": "item",
+                "numeric-id": 207304,
+                "id": "Q207304"
+              },
+              "type": "wikibase-entityid"
+            },
+            "datatype": "wikibase-item"
+          },
+          "type": "statement",
+          "id": "Q3591917$BB324A18-0086-4FA7-8D8B-C93FA5B92287",
+          "rank": "normal"
+        }
+      ],
+      "P2671": [
+        {
+          "mainsnak": {
+            "snaktype": "value",
+            "property": "P2671",
+            "hash": "842fd0d39ea01ca6ea2d16babcacd3fec27c47c6",
+            "datavalue": {
+              "value": "/g/121zjkx5",
+              "type": "string"
+            },
+            "datatype": "external-id"
+          },
+          "type": "statement",
+          "id": "Q3591917$8294B029-42DD-4E65-B463-270F363BE579",
+          "rank": "normal"
+        }
+      ]
+    },
+    "sitelinks": {
+      "frwiki": {
+        "site": "frwiki",
+        "title": "États généraux de 1614",
+        "badges": [],
+        "url": "https://fr.wikipedia.org/wiki/%C3%89tats_g%C3%A9n%C3%A9raux_de_1614"
+      },
+      "itwiki": {
+        "site": "itwiki",
+        "title": "Stati Generali del 1614",
+        "badges": [],
+        "url": "https://it.wikipedia.org/wiki/Stati_Generali_del_1614"
+      }
+    }
+  }
+}

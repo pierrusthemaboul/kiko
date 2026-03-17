@@ -1,0 +1,834 @@
+{
+  "saved_at": "2026-03-07T16:06:29.742Z",
+  "value": {
+    "pageid": 1398733,
+    "ns": 0,
+    "title": "Q1460618",
+    "lastrevid": 2456639769,
+    "modified": "2026-01-21T17:21:08Z",
+    "type": "item",
+    "id": "Q1460618",
+    "labels": {
+      "de": {
+        "language": "de",
+        "value": "Hôpital des Quinze-Vingts"
+      },
+      "cs": {
+        "language": "cs",
+        "value": "Hôpital des Quinze-Vingts"
+      },
+      "fr": {
+        "language": "fr",
+        "value": "hôpital des Quinze-Vingts"
+      },
+      "en": {
+        "language": "en",
+        "value": "Quinze-Vingts National Eye Hospital"
+      },
+      "ja": {
+        "language": "ja",
+        "value": "国立キャンズ ・ヴァン病院眼科センター"
+      },
+      "ff": {
+        "language": "ff",
+        "value": "Quinze-Vingts National Ophthalmology Hospital"
+      }
+    },
+    "descriptions": {
+      "cs": {
+        "language": "cs",
+        "value": "nemocnice v Paříži"
+      },
+      "nl": {
+        "language": "nl",
+        "value": "ziekenhuis in Frankrijk"
+      },
+      "en": {
+        "language": "en",
+        "value": "hospital in France"
+      },
+      "he": {
+        "language": "he",
+        "value": "בית חולים בצרפת"
+      },
+      "id": {
+        "language": "id",
+        "value": "rumah sakit di Prancis"
+      },
+      "de": {
+        "language": "de",
+        "value": "Krankenhaus in Paris"
+      },
+      "ar": {
+        "language": "ar",
+        "value": "مستشفى"
+      },
+      "ko": {
+        "language": "ko",
+        "value": "병원"
+      },
+      "fr": {
+        "language": "fr",
+        "value": "hôpital"
+      },
+      "ast": {
+        "language": "ast",
+        "value": "hospital de Francia"
+      },
+      "ace": {
+        "language": "ace",
+        "value": "rumoh sakét"
+      },
+      "jv": {
+        "language": "jv",
+        "value": "griya sakit"
+      },
+      "min": {
+        "language": "min",
+        "value": "rumah sakik"
+      }
+    },
+    "aliases": {
+      "fr": [
+        {
+          "language": "fr",
+          "value": "centre hospitalier national d’ophtalmologie des Quinze-Vingts"
+        },
+        {
+          "language": "fr",
+          "value": "centre hospitalier national d'ophtalmologie Quinze-Vingts"
+        }
+      ],
+      "ja": [
+        {
+          "language": "ja",
+          "value": "カンズ＝ヴァン病院"
+        }
+      ]
+    },
+    "claims": {
+      "P31": [
+        {
+          "mainsnak": {
+            "snaktype": "value",
+            "property": "P31",
+            "hash": "2be06461a4b9778fb10baf466d3453acb9314bd4",
+            "datavalue": {
+              "value": {
+                "entity-type": "item",
+                "numeric-id": 16917,
+                "id": "Q16917"
+              },
+              "type": "wikibase-entityid"
+            },
+            "datatype": "wikibase-item"
+          },
+          "type": "statement",
+          "id": "Q1460618$4C973D9B-DBBA-4C99-918D-3F54EB26D963",
+          "rank": "normal",
+          "references": [
+            {
+              "hash": "9a24f7c0208b05d6be97077d855671d1dfdbc0dd",
+              "snaks": {
+                "P143": [
+                  {
+                    "snaktype": "value",
+                    "property": "P143",
+                    "hash": "d38375ffe6fe142663ff55cd783aa4df4301d83d",
+                    "datavalue": {
+                      "value": {
+                        "entity-type": "item",
+                        "numeric-id": 48183,
+                        "id": "Q48183"
+                      },
+                      "type": "wikibase-entityid"
+                    },
+                    "datatype": "wikibase-item"
+                  }
+                ]
+              },
+              "snaks-order": [
+                "P143"
+              ]
+            }
+          ]
+        },
+        {
+          "mainsnak": {
+            "snaktype": "value",
+            "property": "P31",
+            "hash": "5159c563942c7c97741b770c8c1d70100221c63b",
+            "datavalue": {
+              "value": {
+                "entity-type": "item",
+                "numeric-id": 180370,
+                "id": "Q180370"
+              },
+              "type": "wikibase-entityid"
+            },
+            "datatype": "wikibase-item"
+          },
+          "type": "statement",
+          "qualifiers": {
+            "P580": [
+              {
+                "snaktype": "value",
+                "property": "P580",
+                "hash": "807391df0ac000e45d5b2a34d35fc2f00e6f76d5",
+                "datavalue": {
+                  "value": {
+                    "time": "+1226-00-00T00:00:00Z",
+                    "timezone": 0,
+                    "before": 0,
+                    "after": 0,
+                    "precision": 9,
+                    "calendarmodel": "http://www.wikidata.org/entity/Q1985786"
+                  },
+                  "type": "time"
+                },
+                "datatype": "time"
+              }
+            ]
+          },
+          "qualifiers-order": [
+            "P580"
+          ],
+          "id": "Q1460618$636c1ec0-441f-1330-1efb-6f3688191662",
+          "rank": "normal"
+        }
+      ],
+      "P625": [
+        {
+          "mainsnak": {
+            "snaktype": "value",
+            "property": "P625",
+            "hash": "6292d15c821454b150ea612b0c868eaed9b387dc",
+            "datavalue": {
+              "value": {
+                "latitude": 48.835621,
+                "longitude": 2.394399,
+                "altitude": null,
+                "precision": 0.00000277777777778,
+                "globe": "http://www.wikidata.org/entity/Q2"
+              },
+              "type": "globecoordinate"
+            },
+            "datatype": "globe-coordinate"
+          },
+          "type": "statement",
+          "id": "Q1460618$24B9970C-B7B8-430F-8374-7F28DB57E07B",
+          "rank": "normal",
+          "references": [
+            {
+              "hash": "9a24f7c0208b05d6be97077d855671d1dfdbc0dd",
+              "snaks": {
+                "P143": [
+                  {
+                    "snaktype": "value",
+                    "property": "P143",
+                    "hash": "d38375ffe6fe142663ff55cd783aa4df4301d83d",
+                    "datavalue": {
+                      "value": {
+                        "entity-type": "item",
+                        "numeric-id": 48183,
+                        "id": "Q48183"
+                      },
+                      "type": "wikibase-entityid"
+                    },
+                    "datatype": "wikibase-item"
+                  }
+                ]
+              },
+              "snaks-order": [
+                "P143"
+              ]
+            }
+          ]
+        }
+      ],
+      "P17": [
+        {
+          "mainsnak": {
+            "snaktype": "value",
+            "property": "P17",
+            "hash": "c05db5d169c2560b9799d567a803d20a392f53e4",
+            "datavalue": {
+              "value": {
+                "entity-type": "item",
+                "numeric-id": 142,
+                "id": "Q142"
+              },
+              "type": "wikibase-entityid"
+            },
+            "datatype": "wikibase-item"
+          },
+          "type": "statement",
+          "id": "Q1460618$3228163C-582A-4225-9135-F8AFDF9CD4EC",
+          "rank": "normal"
+        }
+      ],
+      "P373": [
+        {
+          "mainsnak": {
+            "snaktype": "value",
+            "property": "P373",
+            "hash": "9b9f903fcaa1c98fb3dbfb06665d40d8e3d77c21",
+            "datavalue": {
+              "value": "Hôpital des Quinze-Vingts",
+              "type": "string"
+            },
+            "datatype": "string"
+          },
+          "type": "statement",
+          "id": "Q1460618$B929FD45-E223-4C3C-83FB-B02AF3C3F389",
+          "rank": "normal"
+        }
+      ],
+      "P856": [
+        {
+          "mainsnak": {
+            "snaktype": "value",
+            "property": "P856",
+            "hash": "fca60ababc3a55bced373183a1636eeb50e87ee9",
+            "datavalue": {
+              "value": "https://www.15-20.fr",
+              "type": "string"
+            },
+            "datatype": "url"
+          },
+          "type": "statement",
+          "id": "Q1460618$AE6D1EDD-4228-4673-A920-C221881497EA",
+          "rank": "normal",
+          "references": [
+            {
+              "hash": "d4bd87b862b12d99d26e86472d44f26858dee639",
+              "snaks": {
+                "P143": [
+                  {
+                    "snaktype": "value",
+                    "property": "P143",
+                    "hash": "f30cbd35620c4ea6d0633aaf0210a8916130469b",
+                    "datavalue": {
+                      "value": {
+                        "entity-type": "item",
+                        "numeric-id": 8447,
+                        "id": "Q8447"
+                      },
+                      "type": "wikibase-entityid"
+                    },
+                    "datatype": "wikibase-item"
+                  }
+                ]
+              },
+              "snaks-order": [
+                "P143"
+              ]
+            }
+          ]
+        }
+      ],
+      "P213": [
+        {
+          "mainsnak": {
+            "snaktype": "value",
+            "property": "P213",
+            "hash": "4420083eec190e6d052392d2de569fa1488ddc9e",
+            "datavalue": {
+              "value": "0000000106579752",
+              "type": "string"
+            },
+            "datatype": "external-id"
+          },
+          "type": "statement",
+          "id": "Q1460618$AA1B7738-FD3E-4CF3-B9BE-A36BA5A05D35",
+          "rank": "normal",
+          "references": [
+            {
+              "hash": "5a761c7a986f4a5cf8cefbfc18e5a5ae5133d44b",
+              "snaks": {
+                "P248": [
+                  {
+                    "snaktype": "value",
+                    "property": "P248",
+                    "hash": "2e92dfb9200a54eef9b44e474b97c4dd6dd90461",
+                    "datavalue": {
+                      "value": {
+                        "entity-type": "item",
+                        "numeric-id": 53705033,
+                        "id": "Q53705033"
+                      },
+                      "type": "wikibase-entityid"
+                    },
+                    "datatype": "wikibase-item"
+                  }
+                ]
+              },
+              "snaks-order": [
+                "P248"
+              ]
+            }
+          ]
+        }
+      ],
+      "P3500": [
+        {
+          "mainsnak": {
+            "snaktype": "value",
+            "property": "P3500",
+            "hash": "9863d99f9af273ba12b2fef096b87fe616f4b219",
+            "datavalue": {
+              "value": "55862",
+              "type": "string"
+            },
+            "datatype": "external-id"
+          },
+          "type": "statement",
+          "id": "Q1460618$1F54F244-9E79-41CA-BC0F-B546D69DB8E2",
+          "rank": "normal",
+          "references": [
+            {
+              "hash": "2834ac5da275724a6354a73d2d2a89ae956042a9",
+              "snaks": {
+                "P248": [
+                  {
+                    "snaktype": "value",
+                    "property": "P248",
+                    "hash": "654ac97d41e766b6860b1b7acd87f11a6b00c4f9",
+                    "datavalue": {
+                      "value": {
+                        "entity-type": "item",
+                        "numeric-id": 64159407,
+                        "id": "Q64159407"
+                      },
+                      "type": "wikibase-entityid"
+                    },
+                    "datatype": "wikibase-item"
+                  }
+                ]
+              },
+              "snaks-order": [
+                "P248"
+              ]
+            }
+          ]
+        }
+      ],
+      "P131": [
+        {
+          "mainsnak": {
+            "snaktype": "value",
+            "property": "P131",
+            "hash": "22ac05a1462e2cb078c3eaf435f5ec86f5ab9b19",
+            "datavalue": {
+              "value": {
+                "entity-type": "item",
+                "numeric-id": 90,
+                "id": "Q90"
+              },
+              "type": "wikibase-entityid"
+            },
+            "datatype": "wikibase-item"
+          },
+          "type": "statement",
+          "id": "Q1460618$28CEA9F6-87EA-464F-9586-ED0555D54221",
+          "rank": "normal",
+          "references": [
+            {
+              "hash": "957b623ba8e66770a2b525d40dfa40b43c8f6807",
+              "snaks": {
+                "P2427": [
+                  {
+                    "snaktype": "value",
+                    "property": "P2427",
+                    "hash": "24119fec5e645a040eec566f629be1bab77ef6d1",
+                    "datavalue": {
+                      "value": "grid.415610.7",
+                      "type": "string"
+                    },
+                    "datatype": "external-id"
+                  }
+                ]
+              },
+              "snaks-order": [
+                "P2427"
+              ]
+            }
+          ]
+        }
+      ],
+      "P18": [
+        {
+          "mainsnak": {
+            "snaktype": "value",
+            "property": "P18",
+            "hash": "c052b20020d32638c67ca769f2e10a36f1fa08a2",
+            "datavalue": {
+              "value": "Hôpital Quinze Vingts - Paris XII (FR75) - 2021-06-05 - 2.jpg",
+              "type": "string"
+            },
+            "datatype": "commonsMedia"
+          },
+          "type": "statement",
+          "id": "Q1460618$915CDD96-1889-4A66-B637-6AB3827776A3",
+          "rank": "normal"
+        }
+      ],
+      "P2427": [
+        {
+          "mainsnak": {
+            "snaktype": "value",
+            "property": "P2427",
+            "hash": "24119fec5e645a040eec566f629be1bab77ef6d1",
+            "datavalue": {
+              "value": "grid.415610.7",
+              "type": "string"
+            },
+            "datatype": "external-id"
+          },
+          "type": "statement",
+          "id": "Q1460618$4E80A675-1D01-4860-B6A1-F80023228832",
+          "rank": "normal",
+          "references": [
+            {
+              "hash": "a1914c8952a5bc482eafeb26be4fda504fe701f9",
+              "snaks": {
+                "P248": [
+                  {
+                    "snaktype": "value",
+                    "property": "P248",
+                    "hash": "31f77799b27e462a188007d80e9cae011a037bca",
+                    "datavalue": {
+                      "value": {
+                        "entity-type": "item",
+                        "numeric-id": 53705036,
+                        "id": "Q53705036"
+                      },
+                      "type": "wikibase-entityid"
+                    },
+                    "datatype": "wikibase-item"
+                  }
+                ]
+              },
+              "snaks-order": [
+                "P248"
+              ]
+            }
+          ]
+        }
+      ],
+      "P6366": [
+        {
+          "mainsnak": {
+            "snaktype": "value",
+            "property": "P6366",
+            "hash": "4dbe34a3269059a0eec7d8c7b115394645aa4a5f",
+            "datavalue": {
+              "value": "2801203653",
+              "type": "string"
+            },
+            "datatype": "external-id"
+          },
+          "type": "statement",
+          "id": "Q1460618$2F5F5FC2-FB15-4BFB-9C6F-B4BD87D7A41B",
+          "rank": "normal",
+          "references": [
+            {
+              "hash": "0256e7f4b1afebc490dc9f539b40869142a8e247",
+              "snaks": {
+                "P248": [
+                  {
+                    "snaktype": "value",
+                    "property": "P248",
+                    "hash": "2995ad06d424d751f036cb92149fada89fe252d9",
+                    "datavalue": {
+                      "value": {
+                        "entity-type": "item",
+                        "numeric-id": 60683589,
+                        "id": "Q60683589"
+                      },
+                      "type": "wikibase-entityid"
+                    },
+                    "datatype": "wikibase-item"
+                  }
+                ],
+                "P2427": [
+                  {
+                    "snaktype": "value",
+                    "property": "P2427",
+                    "hash": "24119fec5e645a040eec566f629be1bab77ef6d1",
+                    "datavalue": {
+                      "value": "grid.415610.7",
+                      "type": "string"
+                    },
+                    "datatype": "external-id"
+                  }
+                ],
+                "P813": [
+                  {
+                    "snaktype": "value",
+                    "property": "P813",
+                    "hash": "74c664545729bbe3e2b6db4bfa3d58ebdeb8e9f0",
+                    "datavalue": {
+                      "value": {
+                        "time": "+2019-01-19T00:00:00Z",
+                        "timezone": 0,
+                        "before": 0,
+                        "after": 0,
+                        "precision": 11,
+                        "calendarmodel": "http://www.wikidata.org/entity/Q1985727"
+                      },
+                      "type": "time"
+                    },
+                    "datatype": "time"
+                  }
+                ]
+              },
+              "snaks-order": [
+                "P248",
+                "P2427",
+                "P813"
+              ]
+            }
+          ]
+        }
+      ],
+      "P244": [
+        {
+          "mainsnak": {
+            "snaktype": "value",
+            "property": "P244",
+            "hash": "1121c235f7a536983e4fe7ef4b9d11f128356017",
+            "datavalue": {
+              "value": "n86081948",
+              "type": "string"
+            },
+            "datatype": "external-id"
+          },
+          "type": "statement",
+          "id": "Q1460618$297A1301-295E-4AC6-95DD-2E2F12DF6563",
+          "rank": "normal"
+        }
+      ],
+      "P214": [
+        {
+          "mainsnak": {
+            "snaktype": "value",
+            "property": "P214",
+            "hash": "093fa96d65fd8ce821608c7c99d64d8bd3c76afe",
+            "datavalue": {
+              "value": "126591999",
+              "type": "string"
+            },
+            "datatype": "external-id"
+          },
+          "type": "statement",
+          "id": "Q1460618$E9EE24D4-875B-49C9-A569-A34A29BF5E9E",
+          "rank": "normal"
+        }
+      ],
+      "P646": [
+        {
+          "mainsnak": {
+            "snaktype": "value",
+            "property": "P646",
+            "hash": "ed618b832185139a31af496477a18c4b840155b2",
+            "datavalue": {
+              "value": "/m/010rhfss",
+              "type": "string"
+            },
+            "datatype": "external-id"
+          },
+          "type": "statement",
+          "id": "Q1460618$703CB175-FD8B-40FD-B5D2-928EB68BDB79",
+          "rank": "normal"
+        }
+      ],
+      "P3215": [
+        {
+          "mainsnak": {
+            "snaktype": "value",
+            "property": "P3215",
+            "hash": "18d3e89aa7eddc065a46f2e4641dc085b004db8a",
+            "datavalue": {
+              "value": "18003601400017",
+              "type": "string"
+            },
+            "datatype": "external-id"
+          },
+          "type": "statement",
+          "id": "Q1460618$5283fd87-4d41-de00-0db4-4ef84b4e98cc",
+          "rank": "normal"
+        }
+      ],
+      "P137": [
+        {
+          "mainsnak": {
+            "snaktype": "value",
+            "property": "P137",
+            "hash": "828b06ba53fdea75a7f7a91d26bda87ae4f60634",
+            "datavalue": {
+              "value": {
+                "entity-type": "item",
+                "numeric-id": 125972688,
+                "id": "Q125972688"
+              },
+              "type": "wikibase-entityid"
+            },
+            "datatype": "wikibase-item"
+          },
+          "type": "statement",
+          "id": "Q1460618$68495362-425b-c000-7a92-6b71c0933d20",
+          "rank": "normal"
+        }
+      ],
+      "P4058": [
+        {
+          "mainsnak": {
+            "snaktype": "value",
+            "property": "P4058",
+            "hash": "326c3b1baa761efcc428342e448cec94126bad02",
+            "datavalue": {
+              "value": "750000481",
+              "type": "string"
+            },
+            "datatype": "external-id"
+          },
+          "type": "statement",
+          "id": "Q1460618$f16fe997-47a6-9fb1-47dc-8042bd5fe2f8",
+          "rank": "normal"
+        }
+      ],
+      "P12597": [
+        {
+          "mainsnak": {
+            "snaktype": "value",
+            "property": "P12597",
+            "hash": "99e1cd5db0a8f79e816e43bbc985da8c09003a93",
+            "datavalue": {
+              "value": "225984",
+              "type": "string"
+            },
+            "datatype": "external-id"
+          },
+          "type": "statement",
+          "id": "Q1460618$02213CDC-9809-4392-BB16-C3F124914B10",
+          "rank": "normal"
+        }
+      ],
+      "P13591": [
+        {
+          "mainsnak": {
+            "snaktype": "value",
+            "property": "P13591",
+            "hash": "b3e7c41c7710a350ccf52d12ecaee54a7ca8a3b3",
+            "datavalue": {
+              "value": "group/acad0e64-3dfd-4ab8-8c9b-3d633dc9772c",
+              "type": "string"
+            },
+            "datatype": "external-id"
+          },
+          "type": "statement",
+          "id": "Q1460618$D8FF9E70-01E3-4FED-B040-0F7FFCD2062C",
+          "rank": "normal"
+        }
+      ],
+      "P1343": [
+        {
+          "mainsnak": {
+            "snaktype": "value",
+            "property": "P1343",
+            "hash": "21c8e96c778eb05288629cc456bbb0aece2e8a17",
+            "datavalue": {
+              "value": {
+                "entity-type": "item",
+                "numeric-id": 127691734,
+                "id": "Q127691734"
+              },
+              "type": "wikibase-entityid"
+            },
+            "datatype": "wikibase-item"
+          },
+          "type": "statement",
+          "qualifiers": {
+            "P304": [
+              {
+                "snaktype": "value",
+                "property": "P304",
+                "hash": "25a4bb70d0d1ef78ed63d8dc8c061c145ff20858",
+                "datavalue": {
+                  "value": "224",
+                  "type": "string"
+                },
+                "datatype": "string"
+              }
+            ]
+          },
+          "qualifiers-order": [
+            "P304"
+          ],
+          "id": "Q1460618$dbc8a5b7-49fb-72a0-4382-f4803c1ee4dc",
+          "rank": "normal"
+        }
+      ],
+      "P13459": [
+        {
+          "mainsnak": {
+            "snaktype": "value",
+            "property": "P13459",
+            "hash": "07584e1cf2cf8bdafb3b4bb03bf92e9e6e615b9f",
+            "datavalue": {
+              "value": {
+                "entity-type": "item",
+                "numeric-id": 126737400,
+                "id": "Q126737400"
+              },
+              "type": "wikibase-entityid"
+            },
+            "datatype": "wikibase-item"
+          },
+          "type": "statement",
+          "id": "Q1460618$f15af0ca-466c-f0a2-f418-a449a4a38eac",
+          "rank": "normal"
+        }
+      ]
+    },
+    "sitelinks": {
+      "commonswiki": {
+        "site": "commonswiki",
+        "title": "Category:Hôpital des Quinze-Vingts",
+        "badges": [],
+        "url": "https://commons.wikimedia.org/wiki/Category:H%C3%B4pital_des_Quinze-Vingts"
+      },
+      "cswiki": {
+        "site": "cswiki",
+        "title": "Hôpital des Quinze-Vingts",
+        "badges": [],
+        "url": "https://cs.wikipedia.org/wiki/H%C3%B4pital_des_Quinze-Vingts"
+      },
+      "dewiki": {
+        "site": "dewiki",
+        "title": "Hôpital des Quinze-Vingts",
+        "badges": [],
+        "url": "https://de.wikipedia.org/wiki/H%C3%B4pital_des_Quinze-Vingts"
+      },
+      "enwiki": {
+        "site": "enwiki",
+        "title": "Quinze-Vingts National Ophthalmology Hospital",
+        "badges": [],
+        "url": "https://en.wikipedia.org/wiki/Quinze-Vingts_National_Ophthalmology_Hospital"
+      },
+      "ffwiki": {
+        "site": "ffwiki",
+        "title": "Quinze-Vingts National Ophthalmology Hospital",
+        "badges": [],
+        "url": "https://ff.wikipedia.org/wiki/Quinze-Vingts_National_Ophthalmology_Hospital"
+      },
+      "frwiki": {
+        "site": "frwiki",
+        "title": "Hôpital des Quinze-Vingts",
+        "badges": [],
+        "url": "https://fr.wikipedia.org/wiki/H%C3%B4pital_des_Quinze-Vingts"
+      }
+    }
+  }
+}

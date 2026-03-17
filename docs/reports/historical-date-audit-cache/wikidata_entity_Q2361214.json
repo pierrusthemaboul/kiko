@@ -1,0 +1,634 @@
+{
+  "saved_at": "2026-03-07T13:20:02.080Z",
+  "value": {
+    "pageid": 2281312,
+    "ns": 0,
+    "title": "Q2361214",
+    "lastrevid": 2454230530,
+    "modified": "2026-01-12T14:44:14Z",
+    "type": "item",
+    "id": "Q2361214",
+    "labels": {
+      "pt": {
+        "language": "pt",
+        "value": "Batalha de Sirte"
+      },
+      "zh-hans": {
+        "language": "zh-hans",
+        "value": "苏尔特之战"
+      },
+      "zh-hant": {
+        "language": "zh-hant",
+        "value": "蘇爾特之戰"
+      },
+      "zh-hk": {
+        "language": "zh-hk",
+        "value": "蘇爾特之戰"
+      },
+      "id": {
+        "language": "id",
+        "value": "Pertempuran Sirte"
+      },
+      "pl": {
+        "language": "pl",
+        "value": "Bitwa o Syrtę"
+      },
+      "fr": {
+        "language": "fr",
+        "value": "siège de Syrte"
+      },
+      "ru": {
+        "language": "ru",
+        "value": "Битва за Сирт"
+      },
+      "en": {
+        "language": "en",
+        "value": "Battle of Sirte"
+      },
+      "es": {
+        "language": "es",
+        "value": "Batalla de Sirte"
+      },
+      "tr": {
+        "language": "tr",
+        "value": "Sirte Muharebesi"
+      },
+      "ar": {
+        "language": "ar",
+        "value": "معركة سرت"
+      },
+      "zh": {
+        "language": "zh",
+        "value": "苏尔特之战"
+      },
+      "ja": {
+        "language": "ja",
+        "value": "スルトの戦い"
+      },
+      "be": {
+        "language": "be",
+        "value": "Бітва за Сірт"
+      },
+      "he": {
+        "language": "he",
+        "value": "קרב סירת"
+      },
+      "yo": {
+        "language": "yo",
+        "value": "ogun Sirte"
+      },
+      "vec": {
+        "language": "vec",
+        "value": "Bataja de Sirte"
+      },
+      "ko": {
+        "language": "ko",
+        "value": "시르테 전투(2011)"
+      },
+      "ga": {
+        "language": "ga",
+        "value": "Cath Sirte"
+      },
+      "ha": {
+        "language": "ha",
+        "value": "Battle Of Sirte (2011)"
+      }
+    },
+    "descriptions": {
+      "nl": {
+        "language": "nl",
+        "value": "veldslag in Libië"
+      },
+      "en": {
+        "language": "en",
+        "value": "2011 final battle of the First Libyan Civil War"
+      },
+      "yo": {
+        "language": "yo",
+        "value": "ogun"
+      },
+      "ko": {
+        "language": "ko",
+        "value": "2011년 제1차 리비아 내전의 마지막 전투"
+      },
+      "es": {
+        "language": "es",
+        "value": "Batalla final de la primera guerra civil libia"
+      }
+    },
+    "aliases": {
+      "fr": [
+        {
+          "language": "fr",
+          "value": "Offensive de Syrte"
+        },
+        {
+          "language": "fr",
+          "value": "Offensive sur Syrte"
+        },
+        {
+          "language": "fr",
+          "value": "Prise de Syrte"
+        },
+        {
+          "language": "fr",
+          "value": "Bataille de Syrte"
+        }
+      ]
+    },
+    "claims": {
+      "P625": [
+        {
+          "mainsnak": {
+            "snaktype": "value",
+            "property": "P625",
+            "hash": "b61bba17856aaff1a4b5dee1da84a6f9788aa4e3",
+            "datavalue": {
+              "value": {
+                "latitude": 31.205277777778,
+                "longitude": 16.588888888889,
+                "altitude": null,
+                "precision": 0.00027777777777778,
+                "globe": "http://www.wikidata.org/entity/Q2"
+              },
+              "type": "globecoordinate"
+            },
+            "datatype": "globe-coordinate"
+          },
+          "type": "statement",
+          "id": "Q2361214$7445753D-2A85-4A3E-BBD9-714CCEBF4B89",
+          "rank": "normal",
+          "references": [
+            {
+              "hash": "fa278ebfc458360e5aed63d5058cca83c46134f1",
+              "snaks": {
+                "P143": [
+                  {
+                    "snaktype": "value",
+                    "property": "P143",
+                    "hash": "e4f6d9441d0600513c4533c672b5ab472dc73694",
+                    "datavalue": {
+                      "value": {
+                        "entity-type": "item",
+                        "numeric-id": 328,
+                        "id": "Q328"
+                      },
+                      "type": "wikibase-entityid"
+                    },
+                    "datatype": "wikibase-item"
+                  }
+                ]
+              },
+              "snaks-order": [
+                "P143"
+              ]
+            }
+          ]
+        }
+      ],
+      "P646": [
+        {
+          "mainsnak": {
+            "snaktype": "value",
+            "property": "P646",
+            "hash": "a225e488bbbade8af0f33084fc5e4523c9dbacc9",
+            "datavalue": {
+              "value": "/m/0h64xh7",
+              "type": "string"
+            },
+            "datatype": "external-id"
+          },
+          "type": "statement",
+          "id": "Q2361214$83F3AB9F-70E1-4486-8AED-EC96D5AC3684",
+          "rank": "normal",
+          "references": [
+            {
+              "hash": "2b00cb481cddcac7623114367489b5c194901c4a",
+              "snaks": {
+                "P248": [
+                  {
+                    "snaktype": "value",
+                    "property": "P248",
+                    "hash": "a94b740202b097dd33355e0e6c00e54b9395e5e0",
+                    "datavalue": {
+                      "value": {
+                        "entity-type": "item",
+                        "numeric-id": 15241312,
+                        "id": "Q15241312"
+                      },
+                      "type": "wikibase-entityid"
+                    },
+                    "datatype": "wikibase-item"
+                  }
+                ],
+                "P577": [
+                  {
+                    "snaktype": "value",
+                    "property": "P577",
+                    "hash": "fde79ecb015112d2f29229ccc1ec514ed3e71fa2",
+                    "datavalue": {
+                      "value": {
+                        "time": "+2013-10-28T00:00:00Z",
+                        "timezone": 0,
+                        "before": 0,
+                        "after": 0,
+                        "precision": 11,
+                        "calendarmodel": "http://www.wikidata.org/entity/Q1985727"
+                      },
+                      "type": "time"
+                    },
+                    "datatype": "time"
+                  }
+                ]
+              },
+              "snaks-order": [
+                "P248",
+                "P577"
+              ]
+            }
+          ]
+        }
+      ],
+      "P31": [
+        {
+          "mainsnak": {
+            "snaktype": "value",
+            "property": "P31",
+            "hash": "baa1df9dcd37b9f3a062e7a14a8bef0c37078d32",
+            "datavalue": {
+              "value": {
+                "entity-type": "item",
+                "numeric-id": 178561,
+                "id": "Q178561"
+              },
+              "type": "wikibase-entityid"
+            },
+            "datatype": "wikibase-item"
+          },
+          "type": "statement",
+          "id": "Q2361214$88214497-2F72-47A8-B8F6-D4CF4C499450",
+          "rank": "normal"
+        },
+        {
+          "mainsnak": {
+            "snaktype": "value",
+            "property": "P31",
+            "hash": "4fa1783d4cfdddbd24616e28fab46d9c00a29a54",
+            "datavalue": {
+              "value": {
+                "entity-type": "item",
+                "numeric-id": 188055,
+                "id": "Q188055"
+              },
+              "type": "wikibase-entityid"
+            },
+            "datatype": "wikibase-item"
+          },
+          "type": "statement",
+          "id": "Q2361214$4E49D4B7-CA20-4DB0-88E3-DE58B5367F89",
+          "rank": "normal"
+        }
+      ],
+      "P580": [
+        {
+          "mainsnak": {
+            "snaktype": "value",
+            "property": "P580",
+            "hash": "3069d31ccf5ee8ac284ba69946584b80f99722cc",
+            "datavalue": {
+              "value": {
+                "time": "+2011-09-15T00:00:00Z",
+                "timezone": 0,
+                "before": 0,
+                "after": 0,
+                "precision": 11,
+                "calendarmodel": "http://www.wikidata.org/entity/Q1985727"
+              },
+              "type": "time"
+            },
+            "datatype": "time"
+          },
+          "type": "statement",
+          "id": "Q2361214$1d8808e6-4234-4541-5815-3c9920481aee",
+          "rank": "normal"
+        }
+      ],
+      "P582": [
+        {
+          "mainsnak": {
+            "snaktype": "value",
+            "property": "P582",
+            "hash": "c3d41f2867de31669e4dbc477e31b6167cb1029d",
+            "datavalue": {
+              "value": {
+                "time": "+2011-10-20T00:00:00Z",
+                "timezone": 0,
+                "before": 0,
+                "after": 0,
+                "precision": 11,
+                "calendarmodel": "http://www.wikidata.org/entity/Q1985727"
+              },
+              "type": "time"
+            },
+            "datatype": "time"
+          },
+          "type": "statement",
+          "id": "Q2361214$988dd956-4e7e-542f-2fde-61f954a599d3",
+          "rank": "normal"
+        }
+      ],
+      "P276": [
+        {
+          "mainsnak": {
+            "snaktype": "value",
+            "property": "P276",
+            "hash": "7684a8e8aad90fdece9d117e980c0978d2912f05",
+            "datavalue": {
+              "value": {
+                "entity-type": "item",
+                "numeric-id": 162413,
+                "id": "Q162413"
+              },
+              "type": "wikibase-entityid"
+            },
+            "datatype": "wikibase-item"
+          },
+          "type": "statement",
+          "id": "Q2361214$97F54FCA-6753-490E-ABFF-DA23F17CB1C2",
+          "rank": "normal"
+        }
+      ],
+      "P361": [
+        {
+          "mainsnak": {
+            "snaktype": "value",
+            "property": "P361",
+            "hash": "b00b89608cf623289e7cb3439c85dab81fa3345a",
+            "datavalue": {
+              "value": {
+                "entity-type": "item",
+                "numeric-id": 81545,
+                "id": "Q81545"
+              },
+              "type": "wikibase-entityid"
+            },
+            "datatype": "wikibase-item"
+          },
+          "type": "statement",
+          "id": "Q2361214$4A277350-F992-4D79-807B-1344DA3B2FD9",
+          "rank": "normal"
+        }
+      ],
+      "P18": [
+        {
+          "mainsnak": {
+            "snaktype": "value",
+            "property": "P18",
+            "hash": "3338ae5546aef4568aafe3a89074935233419520",
+            "datavalue": {
+              "value": "2011 Battle of Sirte.svg",
+              "type": "string"
+            },
+            "datatype": "commonsMedia"
+          },
+          "type": "statement",
+          "id": "Q2361214$A7D5AD9E-52D4-4D58-8EF4-7872F6FD9ADD",
+          "rank": "normal",
+          "references": [
+            {
+              "hash": "fa278ebfc458360e5aed63d5058cca83c46134f1",
+              "snaks": {
+                "P143": [
+                  {
+                    "snaktype": "value",
+                    "property": "P143",
+                    "hash": "e4f6d9441d0600513c4533c672b5ab472dc73694",
+                    "datavalue": {
+                      "value": {
+                        "entity-type": "item",
+                        "numeric-id": 328,
+                        "id": "Q328"
+                      },
+                      "type": "wikibase-entityid"
+                    },
+                    "datatype": "wikibase-item"
+                  }
+                ]
+              },
+              "snaks-order": [
+                "P143"
+              ]
+            }
+          ]
+        }
+      ],
+      "P421": [
+        {
+          "mainsnak": {
+            "snaktype": "value",
+            "property": "P421",
+            "hash": "2f5d88b20f122f125387179df70f54990074d5a8",
+            "datavalue": {
+              "value": {
+                "entity-type": "item",
+                "numeric-id": 6723,
+                "id": "Q6723"
+              },
+              "type": "wikibase-entityid"
+            },
+            "datatype": "wikibase-item"
+          },
+          "type": "statement",
+          "id": "Q2361214$91788ECD-A49A-4494-B98A-0787C9A9C64F",
+          "rank": "normal",
+          "references": [
+            {
+              "hash": "662166b4bf9df3ac2bb10998f0321a94bb726536",
+              "snaks": {
+                "P854": [
+                  {
+                    "snaktype": "value",
+                    "property": "P854",
+                    "hash": "f17744a8bae8a9a0860d1940c56f39d90d4dace5",
+                    "datavalue": {
+                      "value": "http://ar.thetimenow.com/libya",
+                      "type": "string"
+                    },
+                    "datatype": "url"
+                  }
+                ]
+              },
+              "snaks-order": [
+                "P854"
+              ]
+            }
+          ]
+        }
+      ],
+      "P17": [
+        {
+          "mainsnak": {
+            "snaktype": "value",
+            "property": "P17",
+            "hash": "77d5901c99abecb5b79e14018a8093ecba84b82e",
+            "datavalue": {
+              "value": {
+                "entity-type": "item",
+                "numeric-id": 1016,
+                "id": "Q1016"
+              },
+              "type": "wikibase-entityid"
+            },
+            "datatype": "wikibase-item"
+          },
+          "type": "statement",
+          "id": "Q2361214$66AB5EF1-464E-4FD3-84DE-0A4AC1774DF7",
+          "rank": "normal",
+          "references": [
+            {
+              "hash": "9cdd4f1d064faebc44a10fbd408afa604f3b89f6",
+              "snaks": {
+                "P143": [
+                  {
+                    "snaktype": "value",
+                    "property": "P143",
+                    "hash": "16eef556b717b1b9c8e2599faef3af2af8537632",
+                    "datavalue": {
+                      "value": {
+                        "entity-type": "item",
+                        "numeric-id": 199700,
+                        "id": "Q199700"
+                      },
+                      "type": "wikibase-entityid"
+                    },
+                    "datatype": "wikibase-item"
+                  }
+                ]
+              },
+              "snaks-order": [
+                "P143"
+              ]
+            }
+          ]
+        }
+      ],
+      "P2581": [
+        {
+          "mainsnak": {
+            "snaktype": "value",
+            "property": "P2581",
+            "hash": "2be2defe533024906338e9e8328fe6a9403517b0",
+            "datavalue": {
+              "value": "02668478n",
+              "type": "string"
+            },
+            "datatype": "external-id"
+          },
+          "type": "statement",
+          "id": "Q2361214$7208E8AF-8CA7-4BFB-B260-E95B3B8D2269",
+          "rank": "normal",
+          "references": [
+            {
+              "hash": "248ac337a217a5f5eed7139a82a4e60931611af0",
+              "snaks": {
+                "P248": [
+                  {
+                    "snaktype": "value",
+                    "property": "P248",
+                    "hash": "25b816aab41db18565946259c950aed6de05dd1e",
+                    "datavalue": {
+                      "value": {
+                        "entity-type": "item",
+                        "numeric-id": 4837690,
+                        "id": "Q4837690"
+                      },
+                      "type": "wikibase-entityid"
+                    },
+                    "datatype": "wikibase-item"
+                  }
+                ]
+              },
+              "snaks-order": [
+                "P248"
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    "sitelinks": {
+      "arwiki": {
+        "site": "arwiki",
+        "title": "معركة سرت (2011)",
+        "badges": [],
+        "url": "https://ar.wikipedia.org/wiki/%D9%85%D8%B9%D8%B1%D9%83%D8%A9_%D8%B3%D8%B1%D8%AA_(2011)"
+      },
+      "bewiki": {
+        "site": "bewiki",
+        "title": "Бітва за Сірт (2011)",
+        "badges": [],
+        "url": "https://be.wikipedia.org/wiki/%D0%91%D1%96%D1%82%D0%B2%D0%B0_%D0%B7%D0%B0_%D0%A1%D1%96%D1%80%D1%82_(2011)"
+      },
+      "enwiki": {
+        "site": "enwiki",
+        "title": "Battle of Sirte (2011)",
+        "badges": [],
+        "url": "https://en.wikipedia.org/wiki/Battle_of_Sirte_(2011)"
+      },
+      "eswiki": {
+        "site": "eswiki",
+        "title": "Batalla de Sirte",
+        "badges": [],
+        "url": "https://es.wikipedia.org/wiki/Batalla_de_Sirte"
+      },
+      "frwiki": {
+        "site": "frwiki",
+        "title": "Bataille de Syrte (2011)",
+        "badges": [],
+        "url": "https://fr.wikipedia.org/wiki/Bataille_de_Syrte_(2011)"
+      },
+      "hawiki": {
+        "site": "hawiki",
+        "title": "Battle Of Sirte (2011)",
+        "badges": [],
+        "url": "https://ha.wikipedia.org/wiki/Battle_Of_Sirte_(2011)"
+      },
+      "idwiki": {
+        "site": "idwiki",
+        "title": "Pertempuran Sirte (2011)",
+        "badges": [],
+        "url": "https://id.wikipedia.org/wiki/Pertempuran_Sirte_(2011)"
+      },
+      "plwiki": {
+        "site": "plwiki",
+        "title": "Bitwa o Syrtę (2011)",
+        "badges": [],
+        "url": "https://pl.wikipedia.org/wiki/Bitwa_o_Syrt%C4%99_(2011)"
+      },
+      "ptwiki": {
+        "site": "ptwiki",
+        "title": "Batalha de Sirte (2011)",
+        "badges": [],
+        "url": "https://pt.wikipedia.org/wiki/Batalha_de_Sirte_(2011)"
+      },
+      "ruwiki": {
+        "site": "ruwiki",
+        "title": "Битва за Сирт",
+        "badges": [],
+        "url": "https://ru.wikipedia.org/wiki/%D0%91%D0%B8%D1%82%D0%B2%D0%B0_%D0%B7%D0%B0_%D0%A1%D0%B8%D1%80%D1%82"
+      },
+      "trwiki": {
+        "site": "trwiki",
+        "title": "Sirte Muharebesi (2011)",
+        "badges": [],
+        "url": "https://tr.wikipedia.org/wiki/Sirte_Muharebesi_(2011)"
+      },
+      "zhwiki": {
+        "site": "zhwiki",
+        "title": "苏尔特之战",
+        "badges": [],
+        "url": "https://zh.wikipedia.org/wiki/%E8%8B%8F%E5%B0%94%E7%89%B9%E4%B9%8B%E6%88%98"
+      }
+    }
+  }
+}

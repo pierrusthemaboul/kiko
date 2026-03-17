@@ -1,0 +1,933 @@
+{
+  "saved_at": "2026-03-07T15:26:39.758Z",
+  "value": {
+    "pageid": 17835961,
+    "ns": 0,
+    "title": "Q16209171",
+    "lastrevid": 2279440769,
+    "modified": "2024-11-25T05:41:23Z",
+    "type": "item",
+    "id": "Q16209171",
+    "labels": {
+      "en": {
+        "language": "en",
+        "value": "Gustavus Adolphus of the Palatinate"
+      },
+      "it": {
+        "language": "it",
+        "value": "Gustavus Adolphus of the Palatinate"
+      },
+      "fr": {
+        "language": "fr",
+        "value": "Gustavus Adolphus du Palatinat"
+      },
+      "nb": {
+        "language": "nb",
+        "value": "Gustavus Adolphus von der Pfalz"
+      },
+      "ru": {
+        "language": "ru",
+        "value": "Густав Адольф Пфальцский"
+      },
+      "cy": {
+        "language": "cy",
+        "value": "Gustavus Adolphus o'r Palatinate"
+      },
+      "pt-br": {
+        "language": "pt-br",
+        "value": "Gustavo Adolfo do Palatinado"
+      },
+      "de": {
+        "language": "de",
+        "value": "Gustav Adolf von der Pfalz"
+      },
+      "nl": {
+        "language": "nl",
+        "value": "Gustav Adolf von der Pfalz"
+      },
+      "pt": {
+        "language": "pt",
+        "value": "Gustavo Adolfo do Palatinado"
+      },
+      "cs": {
+        "language": "cs",
+        "value": "Gustav Adolf Falcký"
+      },
+      "ca": {
+        "language": "ca",
+        "value": "Gustavus Adolphus del Palatinate"
+      },
+      "zh": {
+        "language": "zh",
+        "value": "普法爾茨的古斯塔夫·阿道夫"
+      },
+      "tr": {
+        "language": "tr",
+        "value": "Gustav Adolf von der Pfalz"
+      },
+      "ja": {
+        "language": "ja",
+        "value": "グスタフ・アドルフ・フォン・デア・プファルツ"
+      }
+    },
+    "descriptions": {
+      "en": {
+        "language": "en",
+        "value": "German noble"
+      },
+      "fr": {
+        "language": "fr",
+        "value": "prince allemand"
+      },
+      "de": {
+        "language": "de",
+        "value": "Adliger"
+      },
+      "cs": {
+        "language": "cs",
+        "value": "syn Fridricha V. Falckého"
+      },
+      "cy": {
+        "language": "cy",
+        "value": "(1632-1641)"
+      },
+      "tr": {
+        "language": "tr",
+        "value": "Alman soylu (1632-1641)"
+      }
+    },
+    "aliases": {
+      "en": [
+        {
+          "language": "en",
+          "value": "Gustav Adolf von der Pfalz"
+        }
+      ],
+      "tr": [
+        {
+          "language": "tr",
+          "value": "Gustavus Adolphus von der Pfalz"
+        }
+      ]
+    },
+    "claims": {
+      "P31": [
+        {
+          "mainsnak": {
+            "snaktype": "value",
+            "property": "P31",
+            "hash": "ad7d38a03cdd40cdc373de0dc4e7b7fcbccb31d9",
+            "datavalue": {
+              "value": {
+                "entity-type": "item",
+                "numeric-id": 5,
+                "id": "Q5"
+              },
+              "type": "wikibase-entityid"
+            },
+            "datatype": "wikibase-item"
+          },
+          "type": "statement",
+          "id": "Q16209171$02698C7B-176A-4450-B4DC-FC1D5B37585F",
+          "rank": "normal"
+        }
+      ],
+      "P21": [
+        {
+          "mainsnak": {
+            "snaktype": "value",
+            "property": "P21",
+            "hash": "85ad4b1c7348f7a5aac521135040d74e91fb5939",
+            "datavalue": {
+              "value": {
+                "entity-type": "item",
+                "numeric-id": 6581097,
+                "id": "Q6581097"
+              },
+              "type": "wikibase-entityid"
+            },
+            "datatype": "wikibase-item"
+          },
+          "type": "statement",
+          "id": "Q16209171$D94B0998-E6CD-4B3C-ACD5-D80B731FE199",
+          "rank": "normal"
+        }
+      ],
+      "P569": [
+        {
+          "mainsnak": {
+            "snaktype": "value",
+            "property": "P569",
+            "hash": "b70aa550ca0427e1c167e4412a9d38dec222ac3d",
+            "datavalue": {
+              "value": {
+                "time": "+1632-01-14T00:00:00Z",
+                "timezone": 0,
+                "before": 0,
+                "after": 0,
+                "precision": 11,
+                "calendarmodel": "http://www.wikidata.org/entity/Q1985727"
+              },
+              "type": "time"
+            },
+            "datatype": "time"
+          },
+          "type": "statement",
+          "id": "Q16209171$EB9AA615-C1C1-4D12-9FBE-5453A560808D",
+          "rank": "normal",
+          "references": [
+            {
+              "hash": "fa278ebfc458360e5aed63d5058cca83c46134f1",
+              "snaks": {
+                "P143": [
+                  {
+                    "snaktype": "value",
+                    "property": "P143",
+                    "hash": "e4f6d9441d0600513c4533c672b5ab472dc73694",
+                    "datavalue": {
+                      "value": {
+                        "entity-type": "item",
+                        "numeric-id": 328,
+                        "id": "Q328"
+                      },
+                      "type": "wikibase-entityid"
+                    },
+                    "datatype": "wikibase-item"
+                  }
+                ]
+              },
+              "snaks-order": [
+                "P143"
+              ]
+            }
+          ]
+        }
+      ],
+      "P570": [
+        {
+          "mainsnak": {
+            "snaktype": "value",
+            "property": "P570",
+            "hash": "a6f26242b1d341cd8fb38b0195767d8d8dc0d7ce",
+            "datavalue": {
+              "value": {
+                "time": "+1641-01-09T00:00:00Z",
+                "timezone": 0,
+                "before": 0,
+                "after": 0,
+                "precision": 11,
+                "calendarmodel": "http://www.wikidata.org/entity/Q1985727"
+              },
+              "type": "time"
+            },
+            "datatype": "time"
+          },
+          "type": "statement",
+          "id": "Q16209171$FAD5011E-B2B4-477F-B831-D9EC29BA2234",
+          "rank": "normal",
+          "references": [
+            {
+              "hash": "fa278ebfc458360e5aed63d5058cca83c46134f1",
+              "snaks": {
+                "P143": [
+                  {
+                    "snaktype": "value",
+                    "property": "P143",
+                    "hash": "e4f6d9441d0600513c4533c672b5ab472dc73694",
+                    "datavalue": {
+                      "value": {
+                        "entity-type": "item",
+                        "numeric-id": 328,
+                        "id": "Q328"
+                      },
+                      "type": "wikibase-entityid"
+                    },
+                    "datatype": "wikibase-item"
+                  }
+                ]
+              },
+              "snaks-order": [
+                "P143"
+              ]
+            }
+          ]
+        }
+      ],
+      "P735": [
+        {
+          "mainsnak": {
+            "snaktype": "value",
+            "property": "P735",
+            "hash": "46091287225674477f475ec4ee7cdfc1066227c9",
+            "datavalue": {
+              "value": {
+                "entity-type": "item",
+                "numeric-id": 18181297,
+                "id": "Q18181297"
+              },
+              "type": "wikibase-entityid"
+            },
+            "datatype": "wikibase-item"
+          },
+          "type": "statement",
+          "id": "Q16209171$FCE8208E-A087-4ABF-9589-0239B5C16C53",
+          "rank": "normal"
+        }
+      ],
+      "P22": [
+        {
+          "mainsnak": {
+            "snaktype": "value",
+            "property": "P22",
+            "hash": "4304251a0f8de266b019ef956b8761c47dcc48a5",
+            "datavalue": {
+              "value": {
+                "entity-type": "item",
+                "numeric-id": 57195,
+                "id": "Q57195"
+              },
+              "type": "wikibase-entityid"
+            },
+            "datatype": "wikibase-item"
+          },
+          "type": "statement",
+          "id": "Q16209171$69670d51-4c26-c240-81a5-0ae08985dd45",
+          "rank": "normal"
+        }
+      ],
+      "P19": [
+        {
+          "mainsnak": {
+            "snaktype": "value",
+            "property": "P19",
+            "hash": "52be27dccf864e638437ca2dae3bc420d2682b75",
+            "datavalue": {
+              "value": {
+                "entity-type": "item",
+                "numeric-id": 36600,
+                "id": "Q36600"
+              },
+              "type": "wikibase-entityid"
+            },
+            "datatype": "wikibase-item"
+          },
+          "type": "statement",
+          "id": "Q16209171$0904AD6F-CF59-4793-896C-CBA37D7244FF",
+          "rank": "normal",
+          "references": [
+            {
+              "hash": "fa278ebfc458360e5aed63d5058cca83c46134f1",
+              "snaks": {
+                "P143": [
+                  {
+                    "snaktype": "value",
+                    "property": "P143",
+                    "hash": "e4f6d9441d0600513c4533c672b5ab472dc73694",
+                    "datavalue": {
+                      "value": {
+                        "entity-type": "item",
+                        "numeric-id": 328,
+                        "id": "Q328"
+                      },
+                      "type": "wikibase-entityid"
+                    },
+                    "datatype": "wikibase-item"
+                  }
+                ]
+              },
+              "snaks-order": [
+                "P143"
+              ]
+            }
+          ]
+        }
+      ],
+      "P25": [
+        {
+          "mainsnak": {
+            "snaktype": "value",
+            "property": "P25",
+            "hash": "cffd7620622e4297ef263ecb612f96223ea48452",
+            "datavalue": {
+              "value": {
+                "entity-type": "item",
+                "numeric-id": 158252,
+                "id": "Q158252"
+              },
+              "type": "wikibase-entityid"
+            },
+            "datatype": "wikibase-item"
+          },
+          "type": "statement",
+          "id": "Q16209171$81E7EAB0-6594-4564-A0B7-2FBF859C26FB",
+          "rank": "normal",
+          "references": [
+            {
+              "hash": "fa278ebfc458360e5aed63d5058cca83c46134f1",
+              "snaks": {
+                "P143": [
+                  {
+                    "snaktype": "value",
+                    "property": "P143",
+                    "hash": "e4f6d9441d0600513c4533c672b5ab472dc73694",
+                    "datavalue": {
+                      "value": {
+                        "entity-type": "item",
+                        "numeric-id": 328,
+                        "id": "Q328"
+                      },
+                      "type": "wikibase-entityid"
+                    },
+                    "datatype": "wikibase-item"
+                  }
+                ]
+              },
+              "snaks-order": [
+                "P143"
+              ]
+            }
+          ]
+        }
+      ],
+      "P2949": [
+        {
+          "mainsnak": {
+            "snaktype": "value",
+            "property": "P2949",
+            "hash": "362c5beff854f376dde428dc003ebb944df519a4",
+            "datavalue": {
+              "value": "Wittelsbach-166",
+              "type": "string"
+            },
+            "datatype": "external-id"
+          },
+          "type": "statement",
+          "qualifiers": {
+            "P1810": [
+              {
+                "snaktype": "value",
+                "property": "P1810",
+                "hash": "5c7e6813cbbe454e2424da7291c921cb0a6ce159",
+                "datavalue": {
+                  "value": "Gustavus Adolphus von der Pfalz (Wittelsbach) aka Pfalz-Simmern, Wittelsbach (14 Jan 1632 - 9 Jan 1641)",
+                  "type": "string"
+                },
+                "datatype": "string"
+              }
+            ]
+          },
+          "qualifiers-order": [
+            "P1810"
+          ],
+          "id": "Q16209171$2E536A13-44A9-4764-820D-360CB3B2B801",
+          "rank": "normal"
+        }
+      ],
+      "P3373": [
+        {
+          "mainsnak": {
+            "snaktype": "value",
+            "property": "P3373",
+            "hash": "0700f827743de247c20a945362cfae4552cad27e",
+            "datavalue": {
+              "value": {
+                "entity-type": "item",
+                "numeric-id": 57989,
+                "id": "Q57989"
+              },
+              "type": "wikibase-entityid"
+            },
+            "datatype": "wikibase-item"
+          },
+          "type": "statement",
+          "id": "Q16209171$42018028-5125-4BE4-9CFC-AED7E0AAFDAF",
+          "rank": "normal"
+        },
+        {
+          "mainsnak": {
+            "snaktype": "value",
+            "property": "P3373",
+            "hash": "3621c48a1e319ff145b86c35bee6ff1b8dd3c0c7",
+            "datavalue": {
+              "value": {
+                "entity-type": "item",
+                "numeric-id": 62998,
+                "id": "Q62998"
+              },
+              "type": "wikibase-entityid"
+            },
+            "datatype": "wikibase-item"
+          },
+          "type": "statement",
+          "id": "Q16209171$F12EB6BC-197F-42CE-BF09-3A99A4E87483",
+          "rank": "normal"
+        },
+        {
+          "mainsnak": {
+            "snaktype": "value",
+            "property": "P3373",
+            "hash": "2e082ae56d9dbdaf336ea9898544e07044970d76",
+            "datavalue": {
+              "value": {
+                "entity-type": "item",
+                "numeric-id": 617665,
+                "id": "Q617665"
+              },
+              "type": "wikibase-entityid"
+            },
+            "datatype": "wikibase-item"
+          },
+          "type": "statement",
+          "id": "Q16209171$67DBA333-6A98-4C6B-AF78-3B850BF19411",
+          "rank": "normal"
+        },
+        {
+          "mainsnak": {
+            "snaktype": "value",
+            "property": "P3373",
+            "hash": "a1e99b93d5044fbfbf72f2f13c949be32d3b2d23",
+            "datavalue": {
+              "value": {
+                "entity-type": "item",
+                "numeric-id": 69737,
+                "id": "Q69737"
+              },
+              "type": "wikibase-entityid"
+            },
+            "datatype": "wikibase-item"
+          },
+          "type": "statement",
+          "id": "Q16209171$A520129D-8E82-48DD-847F-F4B711BAC890",
+          "rank": "normal"
+        },
+        {
+          "mainsnak": {
+            "snaktype": "value",
+            "property": "P3373",
+            "hash": "14cb6a32bb97da1f4abe5eeb09efa464cbe4764e",
+            "datavalue": {
+              "value": {
+                "entity-type": "item",
+                "numeric-id": 76930,
+                "id": "Q76930"
+              },
+              "type": "wikibase-entityid"
+            },
+            "datatype": "wikibase-item"
+          },
+          "type": "statement",
+          "id": "Q16209171$59F58AE1-5262-43B7-8A27-16BB35174035",
+          "rank": "normal"
+        },
+        {
+          "mainsnak": {
+            "snaktype": "value",
+            "property": "P3373",
+            "hash": "fd3801dfe3e6cac84dc1b2a82ee7933d02075a56",
+            "datavalue": {
+              "value": {
+                "entity-type": "item",
+                "numeric-id": 92167,
+                "id": "Q92167"
+              },
+              "type": "wikibase-entityid"
+            },
+            "datatype": "wikibase-item"
+          },
+          "type": "statement",
+          "id": "Q16209171$D3CA22FD-116E-4DE4-83F3-BA87725FCF2E",
+          "rank": "normal"
+        },
+        {
+          "mainsnak": {
+            "snaktype": "value",
+            "property": "P3373",
+            "hash": "6f6c19f87f7eb718eee5aa1a154f1f9a46886a67",
+            "datavalue": {
+              "value": {
+                "entity-type": "item",
+                "numeric-id": 469896,
+                "id": "Q469896"
+              },
+              "type": "wikibase-entityid"
+            },
+            "datatype": "wikibase-item"
+          },
+          "type": "statement",
+          "id": "Q16209171$759D454C-6478-47DE-B235-21B04B190B4F",
+          "rank": "normal"
+        },
+        {
+          "mainsnak": {
+            "snaktype": "value",
+            "property": "P3373",
+            "hash": "0232d74af40ff5ac4b2bb3619e84216f948c483f",
+            "datavalue": {
+              "value": {
+                "entity-type": "item",
+                "numeric-id": 57224,
+                "id": "Q57224"
+              },
+              "type": "wikibase-entityid"
+            },
+            "datatype": "wikibase-item"
+          },
+          "type": "statement",
+          "id": "Q16209171$28FD4523-B96D-42B8-BC5F-78B0133D53E0",
+          "rank": "normal"
+        },
+        {
+          "mainsnak": {
+            "snaktype": "value",
+            "property": "P3373",
+            "hash": "38477459b4504082a3706b383b4e29083b36b66e",
+            "datavalue": {
+              "value": {
+                "entity-type": "item",
+                "numeric-id": 61389,
+                "id": "Q61389"
+              },
+              "type": "wikibase-entityid"
+            },
+            "datatype": "wikibase-item"
+          },
+          "type": "statement",
+          "id": "Q16209171$36E4D50D-D9C7-47A6-BB28-18F91A118B67",
+          "rank": "normal"
+        },
+        {
+          "mainsnak": {
+            "snaktype": "value",
+            "property": "P3373",
+            "hash": "32de8d207aa664f72db71b4b1cd872c6a8bcdcc9",
+            "datavalue": {
+              "value": {
+                "entity-type": "item",
+                "numeric-id": 71240,
+                "id": "Q71240"
+              },
+              "type": "wikibase-entityid"
+            },
+            "datatype": "wikibase-item"
+          },
+          "type": "statement",
+          "id": "Q16209171$A2E8DB59-C211-4796-B9E2-7B162BD78558",
+          "rank": "normal"
+        },
+        {
+          "mainsnak": {
+            "snaktype": "value",
+            "property": "P3373",
+            "hash": "25f83b53002afb9b73f66b1b7c18910b549522c0",
+            "datavalue": {
+              "value": {
+                "entity-type": "item",
+                "numeric-id": 16853913,
+                "id": "Q16853913"
+              },
+              "type": "wikibase-entityid"
+            },
+            "datatype": "wikibase-item"
+          },
+          "type": "statement",
+          "id": "Q16209171$4D742B87-B662-4BCE-843A-4D080F29E34E",
+          "rank": "normal",
+          "references": [
+            {
+              "hash": "22fffee465761f78411e553aa334d32f18c68c48",
+              "snaks": {
+                "P3452": [
+                  {
+                    "snaktype": "value",
+                    "property": "P3452",
+                    "hash": "37901bc4aea9ceffdbef3e8b448ec3f12fc0920f",
+                    "datavalue": {
+                      "value": {
+                        "entity-type": "item",
+                        "numeric-id": 16853913,
+                        "id": "Q16853913"
+                      },
+                      "type": "wikibase-entityid"
+                    },
+                    "datatype": "wikibase-item"
+                  }
+                ]
+              },
+              "snaks-order": [
+                "P3452"
+              ]
+            }
+          ]
+        }
+      ],
+      "P4159": [
+        {
+          "mainsnak": {
+            "snaktype": "value",
+            "property": "P4159",
+            "hash": "88ad76004ea5c072e5ffd4045b2d0c301c5e8b2d",
+            "datavalue": {
+              "value": "Gustav_of_The_Palatinate_(1)",
+              "type": "string"
+            },
+            "datatype": "external-id"
+          },
+          "type": "statement",
+          "id": "Q16209171$BE912DF8-F159-4855-A025-2188C2655956",
+          "rank": "normal"
+        }
+      ],
+      "P18": [
+        {
+          "mainsnak": {
+            "snaktype": "value",
+            "property": "P18",
+            "hash": "d9cc0cfaf7183fd975a7793c2148244c3b4d76f1",
+            "datavalue": {
+              "value": "Queen Elizabeth with Prince Gustavus.jpg",
+              "type": "string"
+            },
+            "datatype": "commonsMedia"
+          },
+          "type": "statement",
+          "id": "Q16209171$8c01a23e-4be0-9382-e995-9340655998f1",
+          "rank": "normal"
+        }
+      ],
+      "P4638": [
+        {
+          "mainsnak": {
+            "snaktype": "value",
+            "property": "P4638",
+            "hash": "530d3274411e4e5bf69f99d4ef3349560f126cca",
+            "datavalue": {
+              "value": "p10502.htm#i105020",
+              "type": "string"
+            },
+            "datatype": "external-id"
+          },
+          "type": "statement",
+          "qualifiers": {
+            "P1810": [
+              {
+                "snaktype": "value",
+                "property": "P1810",
+                "hash": "cc22aede225a74160c6ebe43a64eb076242cf4d6",
+                "datavalue": {
+                  "value": "Gustavus Adolphus von der Pfalz",
+                  "type": "string"
+                },
+                "datatype": "string"
+              }
+            ]
+          },
+          "qualifiers-order": [
+            "P1810"
+          ],
+          "id": "Q16209171$C8F3925A-0E11-4585-9E9A-047EEE13FDA1",
+          "rank": "normal",
+          "references": [
+            {
+              "hash": "4c53287ffacf9ff03783715d51259928a67cba5a",
+              "snaks": {
+                "P813": [
+                  {
+                    "snaktype": "value",
+                    "property": "P813",
+                    "hash": "e2b008912fe31b38fa64992d832ce82b9cf32f6f",
+                    "datavalue": {
+                      "value": {
+                        "time": "+2020-08-07T00:00:00Z",
+                        "timezone": 0,
+                        "before": 0,
+                        "after": 0,
+                        "precision": 11,
+                        "calendarmodel": "http://www.wikidata.org/entity/Q1985727"
+                      },
+                      "type": "time"
+                    },
+                    "datatype": "time"
+                  }
+                ]
+              },
+              "snaks-order": [
+                "P813"
+              ]
+            }
+          ]
+        }
+      ],
+      "P1819": [
+        {
+          "mainsnak": {
+            "snaktype": "value",
+            "property": "P1819",
+            "hash": "a620f76950866c3f8762bc2d4fa3b50fbb191feb",
+            "datavalue": {
+              "value": "I00001807",
+              "type": "string"
+            },
+            "datatype": "external-id"
+          },
+          "type": "statement",
+          "id": "Q16209171$7fd49d44-4853-bff2-af03-6bc6cdce88d6",
+          "rank": "normal"
+        }
+      ],
+      "P8172": [
+        {
+          "mainsnak": {
+            "snaktype": "value",
+            "property": "P8172",
+            "hash": "97a96298cf466221fc122437770df0f22e563e8e",
+            "datavalue": {
+              "value": "dw.7587",
+              "type": "string"
+            },
+            "datatype": "external-id"
+          },
+          "type": "statement",
+          "id": "Q16209171$9EF8CA7E-1F3A-4893-B408-9ED7D502E9D3",
+          "rank": "normal",
+          "references": [
+            {
+              "hash": "103ba26910a63fd12453e5bc5a6e28b2fcf40dbb",
+              "snaks": {
+                "P248": [
+                  {
+                    "snaktype": "value",
+                    "property": "P248",
+                    "hash": "c55598288e81315e1551813f8f8b05fb267a277b",
+                    "datavalue": {
+                      "value": {
+                        "entity-type": "item",
+                        "numeric-id": 93482363,
+                        "id": "Q93482363"
+                      },
+                      "type": "wikibase-entityid"
+                    },
+                    "datatype": "wikibase-item"
+                  }
+                ]
+              },
+              "snaks-order": [
+                "P248"
+              ]
+            }
+          ]
+        }
+      ],
+      "P646": [
+        {
+          "mainsnak": {
+            "snaktype": "value",
+            "property": "P646",
+            "hash": "d1453887dd35f5b169148cc6e8ad66818da60f7b",
+            "datavalue": {
+              "value": "/m/0_vbck2",
+              "type": "string"
+            },
+            "datatype": "external-id"
+          },
+          "type": "statement",
+          "id": "Q16209171$95205D35-3A11-4DE0-8BC4-5EE899E2283F",
+          "rank": "normal"
+        }
+      ],
+      "P3368": [
+        {
+          "mainsnak": {
+            "snaktype": "value",
+            "property": "P3368",
+            "hash": "c386de48ee997c5257c465b482b86b7716b8f313",
+            "datavalue": {
+              "value": "2324115",
+              "type": "string"
+            },
+            "datatype": "external-id"
+          },
+          "type": "statement",
+          "id": "Q16209171$C4BAE4B7-55E2-4ED2-AD40-522FE073CAFC",
+          "rank": "normal"
+        }
+      ],
+      "P8168": [
+        {
+          "mainsnak": {
+            "snaktype": "value",
+            "property": "P8168",
+            "hash": "cf5fea926f56b8c831264e8daab2ea20fc121e14",
+            "datavalue": {
+              "value": "Q508608",
+              "type": "string"
+            },
+            "datatype": "external-id"
+          },
+          "type": "statement",
+          "id": "Q16209171$18E89EBC-0F30-417F-9E6A-70CC7DB5E9A0",
+          "rank": "normal"
+        }
+      ],
+      "P12749": [
+        {
+          "mainsnak": {
+            "snaktype": "value",
+            "property": "P12749",
+            "hash": "a0040fa3ef6f9a53561a0c99d8d609199505c362",
+            "datavalue": {
+              "value": "Q80634",
+              "type": "string"
+            },
+            "datatype": "external-id"
+          },
+          "type": "statement",
+          "id": "Q16209171$808E5404-E214-4916-BA6E-06089D946E71",
+          "rank": "normal"
+        }
+      ],
+      "P7929": [
+        {
+          "mainsnak": {
+            "snaktype": "value",
+            "property": "P7929",
+            "hash": "e9d03029e740589caf1b7d7c853785c4d393b4fe",
+            "datavalue": {
+              "value": "p=gustav adolf;n=von der pfalz",
+              "type": "string"
+            },
+            "datatype": "external-id"
+          },
+          "type": "statement",
+          "id": "Q16209171$FB0F87DE-B013-4859-B89C-B6ED2DEEFD0F",
+          "rank": "normal"
+        }
+      ]
+    },
+    "sitelinks": {
+      "dewiki": {
+        "site": "dewiki",
+        "title": "Gustav Adolf von der Pfalz",
+        "badges": [],
+        "url": "https://de.wikipedia.org/wiki/Gustav_Adolf_von_der_Pfalz"
+      },
+      "enwiki": {
+        "site": "enwiki",
+        "title": "Gustavus Adolphus of the Palatinate",
+        "badges": [],
+        "url": "https://en.wikipedia.org/wiki/Gustavus_Adolphus_of_the_Palatinate"
+      },
+      "frwiki": {
+        "site": "frwiki",
+        "title": "Gustave-Adolphe du Palatinat",
+        "badges": [],
+        "url": "https://fr.wikipedia.org/wiki/Gustave-Adolphe_du_Palatinat"
+      },
+      "jawiki": {
+        "site": "jawiki",
+        "title": "グスタフ・アドルフ・フォン・デア・プファルツ",
+        "badges": [],
+        "url": "https://ja.wikipedia.org/wiki/%E3%82%B0%E3%82%B9%E3%82%BF%E3%83%95%E3%83%BB%E3%82%A2%E3%83%89%E3%83%AB%E3%83%95%E3%83%BB%E3%83%95%E3%82%A9%E3%83%B3%E3%83%BB%E3%83%87%E3%82%A2%E3%83%BB%E3%83%97%E3%83%95%E3%82%A1%E3%83%AB%E3%83%84"
+      }
+    }
+  }
+}

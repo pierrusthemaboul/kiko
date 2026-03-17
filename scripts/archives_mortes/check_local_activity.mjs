@@ -15,3 +15,4 @@ async function checkLocal() {
     runs?.forEach(r => console.log(`[${r.created_at}] Mode: ${r.mode}`));
 }
 checkLocal();
+

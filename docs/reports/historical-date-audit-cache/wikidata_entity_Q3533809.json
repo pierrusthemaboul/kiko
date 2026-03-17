@@ -1,0 +1,166 @@
+{
+  "saved_at": "2026-03-07T15:17:03.176Z",
+  "value": {
+    "pageid": 3364378,
+    "ns": 0,
+    "title": "Q3533809",
+    "lastrevid": 2222171401,
+    "modified": "2024-08-06T18:33:33Z",
+    "type": "item",
+    "id": "Q3533809",
+    "labels": {
+      "fr": {
+        "language": "fr",
+        "value": "tour du monde"
+      },
+      "ast": {
+        "language": "ast",
+        "value": "Tour du monde"
+      },
+      "en": {
+        "language": "en",
+        "value": "circumnavigation of Earth"
+      },
+      "nl": {
+        "language": "nl",
+        "value": "reis om de aarde"
+      },
+      "ca": {
+        "language": "ca",
+        "value": "circumnavegació de la Terra"
+      },
+      "ga": {
+        "language": "ga",
+        "value": "timpeallú an domhain"
+      },
+      "hu": {
+        "language": "hu",
+        "value": "világ körüli út"
+      }
+    },
+    "descriptions": {
+      "fr": {
+        "language": "fr",
+        "value": "voyage qui consiste à parcourir complètement et dans un sens donné le globe terrestre jusqu'à revenir à son point de départ"
+      }
+    },
+    "aliases": {
+      "hu": [
+        {
+          "language": "hu",
+          "value": "a Föld körbehajózása"
+        },
+        {
+          "language": "hu",
+          "value": "a Föld körbeutazása"
+        },
+        {
+          "language": "hu",
+          "value": "a Föld körberepülése"
+        },
+        {
+          "language": "hu",
+          "value": "a Föld körülhajózása"
+        },
+        {
+          "language": "hu",
+          "value": "a Föld körülrepülése"
+        },
+        {
+          "language": "hu",
+          "value": "a Föld körülutazása"
+        },
+        {
+          "language": "hu",
+          "value": "Föld körüli út"
+        }
+      ]
+    },
+    "claims": {
+      "P279": [
+        {
+          "mainsnak": {
+            "snaktype": "value",
+            "property": "P279",
+            "hash": "07a74e3dd2592a3b4e084567a1e466a0e0c92f69",
+            "datavalue": {
+              "value": {
+                "entity-type": "item",
+                "numeric-id": 1135885,
+                "id": "Q1135885"
+              },
+              "type": "wikibase-entityid"
+            },
+            "datatype": "wikibase-item"
+          },
+          "type": "statement",
+          "id": "Q3533809$f97de64e-4ae7-81e8-004b-58a67a3cc08e",
+          "rank": "normal"
+        }
+      ],
+      "P3219": [
+        {
+          "mainsnak": {
+            "snaktype": "value",
+            "property": "P3219",
+            "hash": "f5433fa381bcdc16e7146589c752f1560faedd7b",
+            "datavalue": {
+              "value": "premier-tour-du-monde",
+              "type": "string"
+            },
+            "datatype": "external-id"
+          },
+          "type": "statement",
+          "id": "Q3533809$E6965F2F-7ADB-403E-8AB7-6ED3F9989154",
+          "rank": "normal"
+        }
+      ],
+      "P2671": [
+        {
+          "mainsnak": {
+            "snaktype": "value",
+            "property": "P2671",
+            "hash": "b057913a7a512bc3440a4d40d6bd9fc06891e48e",
+            "datavalue": {
+              "value": "/g/12365hxk",
+              "type": "string"
+            },
+            "datatype": "external-id"
+          },
+          "type": "statement",
+          "id": "Q3533809$FEE293A7-4C6F-4577-963B-53D9DC8E9AB1",
+          "rank": "normal"
+        }
+      ],
+      "P12912": [
+        {
+          "mainsnak": {
+            "snaktype": "value",
+            "property": "P12912",
+            "hash": "f49ff7284e2c074d506241ada8786c7c2057e395",
+            "datavalue": {
+              "value": {
+                "entity-type": "item",
+                "numeric-id": 2,
+                "id": "Q2"
+              },
+              "type": "wikibase-entityid"
+            },
+            "datatype": "wikibase-item"
+          },
+          "type": "statement",
+          "id": "Q3533809$006c6bb3-4e16-e8a6-7858-88ec3f35bf77",
+          "rank": "normal"
+        }
+      ]
+    },
+    "sitelinks": {
+      "frwiki": {
+        "site": "frwiki",
+        "title": "Tour du monde",
+        "badges": [],
+        "url": "https://fr.wikipedia.org/wiki/Tour_du_monde"
+      }
+    }
+  }
+}

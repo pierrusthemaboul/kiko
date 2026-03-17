@@ -1,0 +1,294 @@
+{
+  "saved_at": "2026-03-07T15:16:56.385Z",
+  "value": {
+    "pageid": 3308088,
+    "ns": 0,
+    "title": "Q3473124",
+    "lastrevid": 2438048581,
+    "modified": "2025-12-04T15:24:44Z",
+    "type": "item",
+    "id": "Q3473124",
+    "labels": {
+      "fr": {
+        "language": "fr",
+        "value": "Sapaudie"
+      },
+      "es": {
+        "language": "es",
+        "value": "Sapaudia"
+      },
+      "br": {
+        "language": "br",
+        "value": "Sapaodia"
+      },
+      "en": {
+        "language": "en",
+        "value": "Sapaudia"
+      },
+      "it": {
+        "language": "it",
+        "value": "Sapaudia"
+      },
+      "nl": {
+        "language": "nl",
+        "value": "Sapaudia"
+      },
+      "ru": {
+        "language": "ru",
+        "value": "Сабаудия"
+      },
+      "zh": {
+        "language": "zh",
+        "value": "薩波迪亞"
+      },
+      "de": {
+        "language": "de",
+        "value": "Sapaudia"
+      }
+    },
+    "descriptions": {
+      "en": {
+        "language": "en",
+        "value": "Roman and medieval Alpine territory"
+      },
+      "fr": {
+        "language": "fr",
+        "value": "territoire antique et médiéval des Alpes"
+      },
+      "it": {
+        "language": "it",
+        "value": "regione storica"
+      },
+      "de": {
+        "language": "de",
+        "value": "antike Landschaft der Alpen in Gallien"
+      }
+    },
+    "aliases": {
+      "fr": [
+        {
+          "language": "fr",
+          "value": "Sapaudia"
+        }
+      ],
+      "en": [
+        {
+          "language": "en",
+          "value": "Sabaudia"
+        },
+        {
+          "language": "en",
+          "value": "Savoy Proper"
+        },
+        {
+          "language": "en",
+          "value": "Savoy"
+        }
+      ]
+    },
+    "claims": {
+      "P31": [
+        {
+          "mainsnak": {
+            "snaktype": "value",
+            "property": "P31",
+            "hash": "ebce96d844112d02992e6d9c4e44cbe6f1d8f034",
+            "datavalue": {
+              "value": {
+                "entity-type": "item",
+                "numeric-id": 183366,
+                "id": "Q183366"
+              },
+              "type": "wikibase-entityid"
+            },
+            "datatype": "wikibase-item"
+          },
+          "type": "statement",
+          "qualifiers": {
+            "P131": [
+              {
+                "snaktype": "value",
+                "property": "P131",
+                "hash": "bcede2046ea9f0392ed94ebb0b7dc12008e130dd",
+                "datavalue": {
+                  "value": {
+                    "entity-type": "item",
+                    "numeric-id": 42834,
+                    "id": "Q42834"
+                  },
+                  "type": "wikibase-entityid"
+                },
+                "datatype": "wikibase-item"
+              }
+            ]
+          },
+          "qualifiers-order": [
+            "P131"
+          ],
+          "id": "Q3473124$c10ef0ae-433e-cc77-7367-f882739b52f8",
+          "rank": "normal"
+        }
+      ],
+      "P1584": [
+        {
+          "mainsnak": {
+            "snaktype": "value",
+            "property": "P1584",
+            "hash": "ffcdd1be47c4c2ef4b34f1f0fb5806a9041cab93",
+            "datavalue": {
+              "value": "167911",
+              "type": "string"
+            },
+            "datatype": "external-id"
+          },
+          "type": "statement",
+          "id": "Q3473124$6AE59E28-5B63-4707-A04E-96BB5AB9CD6B",
+          "rank": "normal"
+        }
+      ],
+      "P625": [
+        {
+          "mainsnak": {
+            "snaktype": "value",
+            "property": "P625",
+            "hash": "a44d002d4be435945aa6700e40a01edbbfa65aeb",
+            "datavalue": {
+              "value": {
+                "latitude": 45.75,
+                "longitude": 6.25,
+                "altitude": null,
+                "precision": 0.000001,
+                "globe": "http://www.wikidata.org/entity/Q2"
+              },
+              "type": "globecoordinate"
+            },
+            "datatype": "globe-coordinate"
+          },
+          "type": "statement",
+          "id": "Q3473124$41C3DBD4-4EC7-451E-A70C-21B42FC0667D",
+          "rank": "normal"
+        }
+      ],
+      "P902": [
+        {
+          "mainsnak": {
+            "snaktype": "value",
+            "property": "P902",
+            "hash": "aa17cd21751f17ee8d23d0babdc7d7c6d24854be",
+            "datavalue": {
+              "value": "047784",
+              "type": "string"
+            },
+            "datatype": "external-id"
+          },
+          "type": "statement",
+          "id": "Q3473124$59b75866-4c2c-3c61-33bb-a30966adf76f",
+          "rank": "normal"
+        }
+      ],
+      "P2671": [
+        {
+          "mainsnak": {
+            "snaktype": "value",
+            "property": "P2671",
+            "hash": "076ba0e19c3052ddec67c417c29254b6146e9610",
+            "datavalue": {
+              "value": "/g/122kjgqc",
+              "type": "string"
+            },
+            "datatype": "external-id"
+          },
+          "type": "statement",
+          "id": "Q3473124$51FF15FE-6504-48BF-96A6-B4D427B8A29F",
+          "rank": "normal"
+        }
+      ],
+      "P17": [
+        {
+          "mainsnak": {
+            "snaktype": "value",
+            "property": "P17",
+            "hash": "c05db5d169c2560b9799d567a803d20a392f53e4",
+            "datavalue": {
+              "value": {
+                "entity-type": "item",
+                "numeric-id": 142,
+                "id": "Q142"
+              },
+              "type": "wikibase-entityid"
+            },
+            "datatype": "wikibase-item"
+          },
+          "type": "statement",
+          "id": "Q3473124$5ACD2314-872C-4931-BE5E-045CAD85A90B",
+          "rank": "normal"
+        }
+      ],
+      "P131": [
+        {
+          "mainsnak": {
+            "snaktype": "value",
+            "property": "P131",
+            "hash": "66af1e793dde8f838d1d4f6f41d1ddc6b47bd15d",
+            "datavalue": {
+              "value": {
+                "entity-type": "item",
+                "numeric-id": 682900,
+                "id": "Q682900"
+              },
+              "type": "wikibase-entityid"
+            },
+            "datatype": "wikibase-item"
+          },
+          "type": "statement",
+          "id": "Q3473124$14B96D6E-1305-4477-ACB6-9FEE9EE4A013",
+          "rank": "normal"
+        }
+      ]
+    },
+    "sitelinks": {
+      "brwiki": {
+        "site": "brwiki",
+        "title": "Sapaodia",
+        "badges": [],
+        "url": "https://br.wikipedia.org/wiki/Sapaodia"
+      },
+      "dewiki": {
+        "site": "dewiki",
+        "title": "Sapaudia",
+        "badges": [],
+        "url": "https://de.wikipedia.org/wiki/Sapaudia"
+      },
+      "enwiki": {
+        "site": "enwiki",
+        "title": "Sapaudia",
+        "badges": [],
+        "url": "https://en.wikipedia.org/wiki/Sapaudia"
+      },
+      "eswiki": {
+        "site": "eswiki",
+        "title": "Sapaudia",
+        "badges": [],
+        "url": "https://es.wikipedia.org/wiki/Sapaudia"
+      },
+      "frwiki": {
+        "site": "frwiki",
+        "title": "Sapaudie",
+        "badges": [],
+        "url": "https://fr.wikipedia.org/wiki/Sapaudie"
+      },
+      "itwiki": {
+        "site": "itwiki",
+        "title": "Sapaudia",
+        "badges": [],
+        "url": "https://it.wikipedia.org/wiki/Sapaudia"
+      },
+      "ruwiki": {
+        "site": "ruwiki",
+        "title": "Сабаудия (область)",
+        "badges": [],
+        "url": "https://ru.wikipedia.org/wiki/%D0%A1%D0%B0%D0%B1%D0%B0%D1%83%D0%B4%D0%B8%D1%8F_(%D0%BE%D0%B1%D0%BB%D0%B0%D1%81%D1%82%D1%8C)"
+      }
+    }
+  }
+}

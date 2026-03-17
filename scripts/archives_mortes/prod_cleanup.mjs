@@ -86,3 +86,4 @@ async function runCleanup() {
 }
 
 runCleanup();
+

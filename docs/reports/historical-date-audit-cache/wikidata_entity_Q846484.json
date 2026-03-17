@@ -1,0 +1,3184 @@
+{
+  "saved_at": "2026-03-07T13:40:08.516Z",
+  "value": {
+    "pageid": 798511,
+    "ns": 0,
+    "title": "Q846484",
+    "lastrevid": 2358170908,
+    "modified": "2025-06-08T11:04:41Z",
+    "type": "item",
+    "id": "Q846484",
+    "labels": {
+      "de": {
+        "language": "de",
+        "value": "Caisse des Dépôts"
+      },
+      "cs": {
+        "language": "cs",
+        "value": "Caisse des Dépôts et Consignations"
+      },
+      "fr": {
+        "language": "fr",
+        "value": "Caisse des dépôts et consignations"
+      },
+      "en": {
+        "language": "en",
+        "value": "Caisse des Dépôts et Consignations"
+      },
+      "nl": {
+        "language": "nl",
+        "value": "Caisse des Dépôts et Consignations"
+      },
+      "nb": {
+        "language": "nb",
+        "value": "Caisse des Dépôts et Consignations"
+      },
+      "it": {
+        "language": "it",
+        "value": "Caisse des Dépôts et Consignations"
+      },
+      "zh": {
+        "language": "zh",
+        "value": "法国存托银行"
+      },
+      "ja": {
+        "language": "ja",
+        "value": "預金供託金庫"
+      },
+      "pl": {
+        "language": "pl",
+        "value": "Caisse des Dépôts et Consignations"
+      },
+      "ro": {
+        "language": "ro",
+        "value": "Caisse des Dépôts et Consignations"
+      },
+      "id": {
+        "language": "id",
+        "value": "Caisse des Dépôts et Consignations"
+      },
+      "eu": {
+        "language": "eu",
+        "value": "Caisse des Dépôts et Consignations"
+      },
+      "ru": {
+        "language": "ru",
+        "value": "Caisse des Dépôts et Consignations"
+      },
+      "ar": {
+        "language": "ar",
+        "value": "صندوق الضمان دي ديبو"
+      },
+      "vec": {
+        "language": "vec",
+        "value": "Caisse des Dépôts et Consignations"
+      },
+      "sl": {
+        "language": "sl",
+        "value": "Caisse des Dépôts et Consignations"
+      },
+      "zh-hant": {
+        "language": "zh-hant",
+        "value": "法國存托銀行"
+      },
+      "mul": {
+        "language": "mul",
+        "value": "CAISSE DES DEPOTS"
+      },
+      "ko": {
+        "language": "ko",
+        "value": "예금보험공사"
+      }
+    },
+    "descriptions": {
+      "cs": {
+        "language": "cs",
+        "value": "francouzský finanční ústav"
+      },
+      "fr": {
+        "language": "fr",
+        "value": "institution financière publique de la France créée en 1816"
+      },
+      "en": {
+        "language": "en",
+        "value": "French financial organization created in 1816"
+      },
+      "it": {
+        "language": "it",
+        "value": "Istituto finanziario pubblico francese, creato nel 1816"
+      },
+      "nl": {
+        "language": "nl",
+        "value": "bedrijf uit Frankrijk"
+      },
+      "ar": {
+        "language": "ar",
+        "value": "شركة فرنسية"
+      },
+      "de": {
+        "language": "de",
+        "value": "staatliches Finanzinstitut in Frankreich"
+      },
+      "pl": {
+        "language": "pl",
+        "value": "francuska publiczna instytucja finansowa"
+      },
+      "sl": {
+        "language": "sl",
+        "value": "francoska finančna organizacija, ustanovljena leta 1816"
+      },
+      "zh": {
+        "language": "zh",
+        "value": "1816年成立的法國公共金融機構"
+      }
+    },
+    "aliases": {
+      "fr": [
+        {
+          "language": "fr",
+          "value": "CDC"
+        },
+        {
+          "language": "fr",
+          "value": "CAISSE DES DEPOTS ET DES CONSIGNATIONS"
+        }
+      ],
+      "zh": [
+        {
+          "language": "zh",
+          "value": "法國存託銀行"
+        },
+        {
+          "language": "zh",
+          "value": "法國存托局"
+        }
+      ]
+    },
+    "claims": {
+      "P373": [
+        {
+          "mainsnak": {
+            "snaktype": "value",
+            "property": "P373",
+            "hash": "9424e62f89cfe6ae41e155c7b277c816d26a5b67",
+            "datavalue": {
+              "value": "Caisse des dépôts et consignations",
+              "type": "string"
+            },
+            "datatype": "string"
+          },
+          "type": "statement",
+          "id": "q846484$07AA78BE-45FE-467D-80BF-F16A31CA2B4C",
+          "rank": "normal"
+        }
+      ],
+      "P646": [
+        {
+          "mainsnak": {
+            "snaktype": "value",
+            "property": "P646",
+            "hash": "8439bd44926ac4034fc4c195c58a8e8fc10e8fe2",
+            "datavalue": {
+              "value": "/m/04grznj",
+              "type": "string"
+            },
+            "datatype": "external-id"
+          },
+          "type": "statement",
+          "id": "Q846484$41E9F48A-36D1-4CB7-9737-C1F2483C1D81",
+          "rank": "normal",
+          "references": [
+            {
+              "hash": "2b00cb481cddcac7623114367489b5c194901c4a",
+              "snaks": {
+                "P248": [
+                  {
+                    "snaktype": "value",
+                    "property": "P248",
+                    "hash": "a94b740202b097dd33355e0e6c00e54b9395e5e0",
+                    "datavalue": {
+                      "value": {
+                        "entity-type": "item",
+                        "numeric-id": 15241312,
+                        "id": "Q15241312"
+                      },
+                      "type": "wikibase-entityid"
+                    },
+                    "datatype": "wikibase-item"
+                  }
+                ],
+                "P577": [
+                  {
+                    "snaktype": "value",
+                    "property": "P577",
+                    "hash": "fde79ecb015112d2f29229ccc1ec514ed3e71fa2",
+                    "datavalue": {
+                      "value": {
+                        "time": "+2013-10-28T00:00:00Z",
+                        "timezone": 0,
+                        "before": 0,
+                        "after": 0,
+                        "precision": 11,
+                        "calendarmodel": "http://www.wikidata.org/entity/Q1985727"
+                      },
+                      "type": "time"
+                    },
+                    "datatype": "time"
+                  }
+                ]
+              },
+              "snaks-order": [
+                "P248",
+                "P577"
+              ]
+            }
+          ]
+        }
+      ],
+      "P159": [
+        {
+          "mainsnak": {
+            "snaktype": "value",
+            "property": "P159",
+            "hash": "801ca3c7c9013f90ceef9c3cdca2deecf5306a4a",
+            "datavalue": {
+              "value": {
+                "entity-type": "item",
+                "numeric-id": 90,
+                "id": "Q90"
+              },
+              "type": "wikibase-entityid"
+            },
+            "datatype": "wikibase-item"
+          },
+          "type": "statement",
+          "qualifiers": {
+            "P669": [
+              {
+                "snaktype": "value",
+                "property": "P669",
+                "hash": "10614097f6add7f81b7744826670f54547e3bd2f",
+                "datavalue": {
+                  "value": {
+                    "entity-type": "item",
+                    "numeric-id": 3450813,
+                    "id": "Q3450813"
+                  },
+                  "type": "wikibase-entityid"
+                },
+                "datatype": "wikibase-item"
+              }
+            ],
+            "P625": [
+              {
+                "snaktype": "value",
+                "property": "P625",
+                "hash": "9ba9f515a8d55d166ecea3f572d007b33dce5a33",
+                "datavalue": {
+                  "value": {
+                    "latitude": 48.859166666667,
+                    "longitude": 2.3283333333333,
+                    "altitude": null,
+                    "precision": 0.00027777777777778,
+                    "globe": "http://www.wikidata.org/entity/Q2"
+                  },
+                  "type": "globecoordinate"
+                },
+                "datatype": "globe-coordinate"
+              }
+            ],
+            "P281": [
+              {
+                "snaktype": "value",
+                "property": "P281",
+                "hash": "76a2bbd5ad0f724af1073b230bafc1881fb460ef",
+                "datavalue": {
+                  "value": "75356",
+                  "type": "string"
+                },
+                "datatype": "string"
+              }
+            ],
+            "P670": [
+              {
+                "snaktype": "value",
+                "property": "P670",
+                "hash": "349ce80800b29d0b72c63a46d8f5cb1df5564f12",
+                "datavalue": {
+                  "value": "56",
+                  "type": "string"
+                },
+                "datatype": "string"
+              }
+            ],
+            "P17": [
+              {
+                "snaktype": "value",
+                "property": "P17",
+                "hash": "c05db5d169c2560b9799d567a803d20a392f53e4",
+                "datavalue": {
+                  "value": {
+                    "entity-type": "item",
+                    "numeric-id": 142,
+                    "id": "Q142"
+                  },
+                  "type": "wikibase-entityid"
+                },
+                "datatype": "wikibase-item"
+              }
+            ]
+          },
+          "qualifiers-order": [
+            "P669",
+            "P625",
+            "P281",
+            "P670",
+            "P17"
+          ],
+          "id": "Q846484$4de549a2-40b7-0918-7df9-4468365bb621",
+          "rank": "normal",
+          "references": [
+            {
+              "hash": "0e37bd19db6fc8cf2201d73ae30a851311f4b80a",
+              "snaks": {
+                "P2657": [
+                  {
+                    "snaktype": "value",
+                    "property": "P2657",
+                    "hash": "35669bd2466643f5522f38352a06953e73ebf677",
+                    "datavalue": {
+                      "value": "84606487324-44",
+                      "type": "string"
+                    },
+                    "datatype": "external-id"
+                  }
+                ],
+                "P813": [
+                  {
+                    "snaktype": "value",
+                    "property": "P813",
+                    "hash": "99341f3740169e72deba3a0eb24a5e4b0acce305",
+                    "datavalue": {
+                      "value": {
+                        "time": "+2022-05-22T00:00:00Z",
+                        "timezone": 0,
+                        "before": 0,
+                        "after": 0,
+                        "precision": 11,
+                        "calendarmodel": "http://www.wikidata.org/entity/Q1985727"
+                      },
+                      "type": "time"
+                    },
+                    "datatype": "time"
+                  }
+                ]
+              },
+              "snaks-order": [
+                "P2657",
+                "P813"
+              ]
+            }
+          ]
+        }
+      ],
+      "P31": [
+        {
+          "mainsnak": {
+            "snaktype": "value",
+            "property": "P31",
+            "hash": "e3f989690a80432cae3d62d39712965512d428ca",
+            "datavalue": {
+              "value": {
+                "entity-type": "item",
+                "numeric-id": 730038,
+                "id": "Q730038"
+              },
+              "type": "wikibase-entityid"
+            },
+            "datatype": "wikibase-item"
+          },
+          "type": "statement",
+          "id": "Q846484$39040284-3622-4E0D-87E7-FC07ADAF3B0A",
+          "rank": "normal",
+          "references": [
+            {
+              "hash": "74d1b096ed715c28419f84d93e2957ea4697899a",
+              "snaks": {
+                "P143": [
+                  {
+                    "snaktype": "value",
+                    "property": "P143",
+                    "hash": "d38375ffe6fe142663ff55cd783aa4df4301d83d",
+                    "datavalue": {
+                      "value": {
+                        "entity-type": "item",
+                        "numeric-id": 48183,
+                        "id": "Q48183"
+                      },
+                      "type": "wikibase-entityid"
+                    },
+                    "datatype": "wikibase-item"
+                  }
+                ],
+                "P813": [
+                  {
+                    "snaktype": "value",
+                    "property": "P813",
+                    "hash": "8768a46b67ddc6e449068356a7a8c89f5839baea",
+                    "datavalue": {
+                      "value": {
+                        "time": "+2018-09-16T00:00:00Z",
+                        "timezone": 0,
+                        "before": 0,
+                        "after": 0,
+                        "precision": 11,
+                        "calendarmodel": "http://www.wikidata.org/entity/Q1985727"
+                      },
+                      "type": "time"
+                    },
+                    "datatype": "time"
+                  }
+                ]
+              },
+              "snaks-order": [
+                "P143",
+                "P813"
+              ]
+            }
+          ]
+        },
+        {
+          "mainsnak": {
+            "snaktype": "value",
+            "property": "P31",
+            "hash": "20b3c9267c82af90c6e03e3b112a810207b32cc0",
+            "datavalue": {
+              "value": {
+                "entity-type": "item",
+                "numeric-id": 43229,
+                "id": "Q43229"
+              },
+              "type": "wikibase-entityid"
+            },
+            "datatype": "wikibase-item"
+          },
+          "type": "statement",
+          "id": "Q846484$2F5A19A9-7395-4754-BAE8-42ECB2636A86",
+          "rank": "normal"
+        }
+      ],
+      "P910": [
+        {
+          "mainsnak": {
+            "snaktype": "value",
+            "property": "P910",
+            "hash": "ac4cf026eb22ce263432b0a99dd794b9196a9883",
+            "datavalue": {
+              "value": {
+                "entity-type": "item",
+                "numeric-id": 9553388,
+                "id": "Q9553388"
+              },
+              "type": "wikibase-entityid"
+            },
+            "datatype": "wikibase-item"
+          },
+          "type": "statement",
+          "id": "Q846484$8A55F8B0-75B6-4016-9BFD-D13E12E2792A",
+          "rank": "normal",
+          "references": [
+            {
+              "hash": "d4bd87b862b12d99d26e86472d44f26858dee639",
+              "snaks": {
+                "P143": [
+                  {
+                    "snaktype": "value",
+                    "property": "P143",
+                    "hash": "f30cbd35620c4ea6d0633aaf0210a8916130469b",
+                    "datavalue": {
+                      "value": {
+                        "entity-type": "item",
+                        "numeric-id": 8447,
+                        "id": "Q8447"
+                      },
+                      "type": "wikibase-entityid"
+                    },
+                    "datatype": "wikibase-item"
+                  }
+                ]
+              },
+              "snaks-order": [
+                "P143"
+              ]
+            }
+          ]
+        }
+      ],
+      "P18": [
+        {
+          "mainsnak": {
+            "snaktype": "value",
+            "property": "P18",
+            "hash": "ffcf8556e51f6e0e32d387561563e8ee6399c223",
+            "datavalue": {
+              "value": "Caisse-des-depots.jpg",
+              "type": "string"
+            },
+            "datatype": "commonsMedia"
+          },
+          "type": "statement",
+          "id": "Q846484$8d822418-4d30-c20a-e753-0970384bb692",
+          "rank": "normal"
+        }
+      ],
+      "P214": [
+        {
+          "mainsnak": {
+            "snaktype": "value",
+            "property": "P214",
+            "hash": "072d6a41bc1f0ed630528a8cf630bc80c16f1771",
+            "datavalue": {
+              "value": "147496891",
+              "type": "string"
+            },
+            "datatype": "external-id"
+          },
+          "type": "statement",
+          "id": "Q846484$05926479-2ED1-47C4-8345-F12EA6A913A7",
+          "rank": "normal",
+          "references": [
+            {
+              "hash": "9b43a00c0898a90b5902965a797f48ca3014fe2f",
+              "snaks": {
+                "P248": [
+                  {
+                    "snaktype": "value",
+                    "property": "P248",
+                    "hash": "6b7d4330c4aac4caec4ede9de0311ce273f88ecd",
+                    "datavalue": {
+                      "value": {
+                        "entity-type": "item",
+                        "numeric-id": 54919,
+                        "id": "Q54919"
+                      },
+                      "type": "wikibase-entityid"
+                    },
+                    "datatype": "wikibase-item"
+                  }
+                ],
+                "P813": [
+                  {
+                    "snaktype": "value",
+                    "property": "P813",
+                    "hash": "4e77cc52fc57978fcb9573a621e9086334ef5cd8",
+                    "datavalue": {
+                      "value": {
+                        "time": "+2015-08-05T00:00:00Z",
+                        "timezone": 0,
+                        "before": 0,
+                        "after": 0,
+                        "precision": 11,
+                        "calendarmodel": "http://www.wikidata.org/entity/Q1985727"
+                      },
+                      "type": "time"
+                    },
+                    "datatype": "time"
+                  }
+                ]
+              },
+              "snaks-order": [
+                "P248",
+                "P813"
+              ]
+            }
+          ]
+        }
+      ],
+      "P571": [
+        {
+          "mainsnak": {
+            "snaktype": "value",
+            "property": "P571",
+            "hash": "dc06b9f9b419f3b49682004be710f052718de849",
+            "datavalue": {
+              "value": {
+                "time": "+1816-04-28T00:00:00Z",
+                "timezone": 0,
+                "before": 0,
+                "after": 0,
+                "precision": 11,
+                "calendarmodel": "http://www.wikidata.org/entity/Q1985727"
+              },
+              "type": "time"
+            },
+            "datatype": "time"
+          },
+          "type": "statement",
+          "id": "Q846484$02fe8b05-42b5-d5d7-58be-7f28d946de91",
+          "rank": "normal"
+        }
+      ],
+      "P17": [
+        {
+          "mainsnak": {
+            "snaktype": "value",
+            "property": "P17",
+            "hash": "c05db5d169c2560b9799d567a803d20a392f53e4",
+            "datavalue": {
+              "value": {
+                "entity-type": "item",
+                "numeric-id": 142,
+                "id": "Q142"
+              },
+              "type": "wikibase-entityid"
+            },
+            "datatype": "wikibase-item"
+          },
+          "type": "statement",
+          "id": "Q846484$9363eeef-4d47-2faf-e80a-b270c59183a6",
+          "rank": "normal",
+          "references": [
+            {
+              "hash": "0e37bd19db6fc8cf2201d73ae30a851311f4b80a",
+              "snaks": {
+                "P2657": [
+                  {
+                    "snaktype": "value",
+                    "property": "P2657",
+                    "hash": "35669bd2466643f5522f38352a06953e73ebf677",
+                    "datavalue": {
+                      "value": "84606487324-44",
+                      "type": "string"
+                    },
+                    "datatype": "external-id"
+                  }
+                ],
+                "P813": [
+                  {
+                    "snaktype": "value",
+                    "property": "P813",
+                    "hash": "99341f3740169e72deba3a0eb24a5e4b0acce305",
+                    "datavalue": {
+                      "value": {
+                        "time": "+2022-05-22T00:00:00Z",
+                        "timezone": 0,
+                        "before": 0,
+                        "after": 0,
+                        "precision": 11,
+                        "calendarmodel": "http://www.wikidata.org/entity/Q1985727"
+                      },
+                      "type": "time"
+                    },
+                    "datatype": "time"
+                  }
+                ]
+              },
+              "snaks-order": [
+                "P2657",
+                "P813"
+              ]
+            },
+            {
+              "hash": "32f40a5ce57de8dd742a20f5d15456d4b5ec4688",
+              "snaks": {
+                "P854": [
+                  {
+                    "snaktype": "value",
+                    "property": "P854",
+                    "hash": "0a13d129ec587c3c68a47604d023df72c26a5c8a",
+                    "datavalue": {
+                      "value": "https://www.lobbyfacts.eu/datacard/caisse-des-depots?rid=84606487324-44",
+                      "type": "string"
+                    },
+                    "datatype": "url"
+                  }
+                ]
+              },
+              "snaks-order": [
+                "P854"
+              ]
+            }
+          ]
+        }
+      ],
+      "P268": [
+        {
+          "mainsnak": {
+            "snaktype": "value",
+            "property": "P268",
+            "hash": "19c8a407118efd81f9ba04f7ed1c8b78d838f8e6",
+            "datavalue": {
+              "value": "11862565c",
+              "type": "string"
+            },
+            "datatype": "external-id"
+          },
+          "type": "statement",
+          "id": "Q846484$c4bae2f4-4feb-cb48-4105-8835969fcb76",
+          "rank": "normal"
+        },
+        {
+          "mainsnak": {
+            "snaktype": "value",
+            "property": "P268",
+            "hash": "9c26c164851ce2b7ef14596cff9510580378ff4f",
+            "datavalue": {
+              "value": "121912844",
+              "type": "string"
+            },
+            "datatype": "external-id"
+          },
+          "type": "statement",
+          "id": "Q846484$754448eb-46f2-e60f-1caa-041ae4332b74",
+          "rank": "normal"
+        }
+      ],
+      "P269": [
+        {
+          "mainsnak": {
+            "snaktype": "value",
+            "property": "P269",
+            "hash": "e843fc03cabb8754f572d51890656d1010e72f59",
+            "datavalue": {
+              "value": "027472914",
+              "type": "string"
+            },
+            "datatype": "external-id"
+          },
+          "type": "statement",
+          "qualifiers": {
+            "P1810": [
+              {
+                "snaktype": "value",
+                "property": "P1810",
+                "hash": "2b313887cd634be5727825d9a96303679a71f0b1",
+                "datavalue": {
+                  "value": "Caisse des dépôts (France)",
+                  "type": "string"
+                },
+                "datatype": "string"
+              }
+            ]
+          },
+          "qualifiers-order": [
+            "P1810"
+          ],
+          "id": "Q846484$3c5ca65a-4183-8705-0e05-f466c0e48534",
+          "rank": "preferred",
+          "references": [
+            {
+              "hash": "08986c1577f851cbaac06cdd53b78601c98ea010",
+              "snaks": {
+                "P248": [
+                  {
+                    "snaktype": "value",
+                    "property": "P248",
+                    "hash": "e5f853298b310a45c2ee3b01a2a4940640f7985a",
+                    "datavalue": {
+                      "value": {
+                        "entity-type": "item",
+                        "numeric-id": 47757534,
+                        "id": "Q47757534"
+                      },
+                      "type": "wikibase-entityid"
+                    },
+                    "datatype": "wikibase-item"
+                  }
+                ]
+              },
+              "snaks-order": [
+                "P248"
+              ]
+            }
+          ]
+        },
+        {
+          "mainsnak": {
+            "snaktype": "value",
+            "property": "P269",
+            "hash": "459d88676685ae343343c0311cb8472f59526a89",
+            "datavalue": {
+              "value": "03051357X",
+              "type": "string"
+            },
+            "datatype": "external-id"
+          },
+          "type": "statement",
+          "qualifiers": {
+            "P1810": [
+              {
+                "snaktype": "value",
+                "property": "P1810",
+                "hash": "bf7543a87e3addd266331fbad614a45787bd4ae3",
+                "datavalue": {
+                  "value": "Groupe Caisse des dépôts (France)",
+                  "type": "string"
+                },
+                "datatype": "string"
+              }
+            ]
+          },
+          "qualifiers-order": [
+            "P1810"
+          ],
+          "id": "Q846484$153ca382-4fd6-8780-2487-235b8edde78f",
+          "rank": "deprecated"
+        }
+      ],
+      "P213": [
+        {
+          "mainsnak": {
+            "snaktype": "value",
+            "property": "P213",
+            "hash": "2c9405ab793d17c350ba01f9be6f94686a9658a1",
+            "datavalue": {
+              "value": "000000012180038X",
+              "type": "string"
+            },
+            "datatype": "external-id"
+          },
+          "type": "statement",
+          "id": "Q846484$4331876b-416a-fb92-8480-3f7d8b3c40e0",
+          "rank": "normal"
+        }
+      ],
+      "P1005": [
+        {
+          "mainsnak": {
+            "snaktype": "value",
+            "property": "P1005",
+            "hash": "63a6e8108d93d5ef4dcf6cf29b6c8edda746871a",
+            "datavalue": {
+              "value": "181990",
+              "type": "string"
+            },
+            "datatype": "external-id"
+          },
+          "type": "statement",
+          "id": "Q846484$0fd8e7c8-46d5-d2be-2e30-f223989cfc0f",
+          "rank": "normal"
+        }
+      ],
+      "P227": [
+        {
+          "mainsnak": {
+            "snaktype": "value",
+            "property": "P227",
+            "hash": "1bfb200b4139bd6f81ff6d173d75b0267e3f2493",
+            "datavalue": {
+              "value": "122182-6",
+              "type": "string"
+            },
+            "datatype": "external-id"
+          },
+          "type": "statement",
+          "qualifiers": {
+            "P1810": [
+              {
+                "snaktype": "value",
+                "property": "P1810",
+                "hash": "eb9373e45e15a4addba0803e24f40e847ce8a2e8",
+                "datavalue": {
+                  "value": "Caisse des dépôts et consignations (Frankreich)",
+                  "type": "string"
+                },
+                "datatype": "string"
+              }
+            ]
+          },
+          "qualifiers-order": [
+            "P1810"
+          ],
+          "id": "Q846484$8129caf3-4432-b51f-4a15-c880b57f41d0",
+          "rank": "normal",
+          "references": [
+            {
+              "hash": "fb0d4a492351f7ff74a617b2b230a1a86a15afb0",
+              "snaks": {
+                "P813": [
+                  {
+                    "snaktype": "value",
+                    "property": "P813",
+                    "hash": "0b6dc025a18f675e4299fe6c49f5d644b8fbdce5",
+                    "datavalue": {
+                      "value": {
+                        "time": "+2022-08-25T00:00:00Z",
+                        "timezone": 0,
+                        "before": 0,
+                        "after": 0,
+                        "precision": 11,
+                        "calendarmodel": "http://www.wikidata.org/entity/Q1985727"
+                      },
+                      "type": "time"
+                    },
+                    "datatype": "time"
+                  }
+                ]
+              },
+              "snaks-order": [
+                "P813"
+              ]
+            }
+          ]
+        }
+      ],
+      "P409": [
+        {
+          "mainsnak": {
+            "snaktype": "value",
+            "property": "P409",
+            "hash": "296302044726c28fa913c72e5ddc86b83bde37d8",
+            "datavalue": {
+              "value": "35303929",
+              "type": "string"
+            },
+            "datatype": "external-id"
+          },
+          "type": "statement",
+          "id": "Q846484$23ca76db-4c59-f0ab-036e-be4c849a7d31",
+          "rank": "normal"
+        }
+      ],
+      "P244": [
+        {
+          "mainsnak": {
+            "snaktype": "value",
+            "property": "P244",
+            "hash": "21249fbc39d8e6ef864970931e6f59a8af98d74e",
+            "datavalue": {
+              "value": "n50070850",
+              "type": "string"
+            },
+            "datatype": "external-id"
+          },
+          "type": "statement",
+          "id": "Q846484$4d6088f6-4fda-cc76-2aa1-e4c39a9bf42d",
+          "rank": "normal"
+        }
+      ],
+      "P1207": [
+        {
+          "mainsnak": {
+            "snaktype": "value",
+            "property": "P1207",
+            "hash": "ec79f983308e7e4e97334784ce1a9d413875a474",
+            "datavalue": {
+              "value": "n98066874",
+              "type": "string"
+            },
+            "datatype": "external-id"
+          },
+          "type": "statement",
+          "id": "Q846484$eacaf2d0-4cd7-a0cd-7fa7-4a6cbfb2309d",
+          "rank": "normal"
+        }
+      ],
+      "P856": [
+        {
+          "mainsnak": {
+            "snaktype": "value",
+            "property": "P856",
+            "hash": "619df740ca607d4b183fc540142c6fb1f293d64e",
+            "datavalue": {
+              "value": "https://www.caissedesdepots.fr/",
+              "type": "string"
+            },
+            "datatype": "url"
+          },
+          "type": "statement",
+          "qualifiers": {
+            "P407": [
+              {
+                "snaktype": "value",
+                "property": "P407",
+                "hash": "d197d0a5efa4b4c23a302a829dd3ef43684fe002",
+                "datavalue": {
+                  "value": {
+                    "entity-type": "item",
+                    "numeric-id": 150,
+                    "id": "Q150"
+                  },
+                  "type": "wikibase-entityid"
+                },
+                "datatype": "wikibase-item"
+              }
+            ]
+          },
+          "qualifiers-order": [
+            "P407"
+          ],
+          "id": "Q846484$be98b87e-4e89-6fe5-a2bc-fbeb792c11ff",
+          "rank": "normal"
+        }
+      ],
+      "P127": [
+        {
+          "mainsnak": {
+            "snaktype": "value",
+            "property": "P127",
+            "hash": "925454b70d04851919316e9a759c97b70a245a37",
+            "datavalue": {
+              "value": {
+                "entity-type": "item",
+                "numeric-id": 3591845,
+                "id": "Q3591845"
+              },
+              "type": "wikibase-entityid"
+            },
+            "datatype": "wikibase-item"
+          },
+          "type": "statement",
+          "id": "Q846484$0ff2d233-41af-4ad3-3e19-c15f45a57a7b",
+          "rank": "normal"
+        }
+      ],
+      "P740": [
+        {
+          "mainsnak": {
+            "snaktype": "value",
+            "property": "P740",
+            "hash": "b534ad428891c960f20fd2a8afd886d59a8c7d7d",
+            "datavalue": {
+              "value": {
+                "entity-type": "item",
+                "numeric-id": 90,
+                "id": "Q90"
+              },
+              "type": "wikibase-entityid"
+            },
+            "datatype": "wikibase-item"
+          },
+          "type": "statement",
+          "id": "Q846484$AD515FB8-17E7-4C6F-A04A-D0445CD96A48",
+          "rank": "normal",
+          "references": [
+            {
+              "hash": "d5847b9b6032aa8b13dae3c2dfd9ed5d114d21b3",
+              "snaks": {
+                "P143": [
+                  {
+                    "snaktype": "value",
+                    "property": "P143",
+                    "hash": "5a343e7e758a4282a01316d3e959b6e653b767fc",
+                    "datavalue": {
+                      "value": {
+                        "entity-type": "item",
+                        "numeric-id": 11920,
+                        "id": "Q11920"
+                      },
+                      "type": "wikibase-entityid"
+                    },
+                    "datatype": "wikibase-item"
+                  }
+                ]
+              },
+              "snaks-order": [
+                "P143"
+              ]
+            }
+          ]
+        }
+      ],
+      "P2657": [
+        {
+          "mainsnak": {
+            "snaktype": "value",
+            "property": "P2657",
+            "hash": "35669bd2466643f5522f38352a06953e73ebf677",
+            "datavalue": {
+              "value": "84606487324-44",
+              "type": "string"
+            },
+            "datatype": "external-id"
+          },
+          "type": "statement",
+          "qualifiers": {
+            "P1932": [
+              {
+                "snaktype": "value",
+                "property": "P1932",
+                "hash": "2f13785296a97ff9ea77ee299e4dd80f8551691a",
+                "datavalue": {
+                  "value": "CAISSE DES DEPOTS",
+                  "type": "string"
+                },
+                "datatype": "string"
+              }
+            ]
+          },
+          "qualifiers-order": [
+            "P1932"
+          ],
+          "id": "Q846484$4DCA5B2A-3280-4778-BBD7-4FD82FF9B914",
+          "rank": "normal",
+          "references": [
+            {
+              "hash": "32f40a5ce57de8dd742a20f5d15456d4b5ec4688",
+              "snaks": {
+                "P854": [
+                  {
+                    "snaktype": "value",
+                    "property": "P854",
+                    "hash": "0a13d129ec587c3c68a47604d023df72c26a5c8a",
+                    "datavalue": {
+                      "value": "https://www.lobbyfacts.eu/datacard/caisse-des-depots?rid=84606487324-44",
+                      "type": "string"
+                    },
+                    "datatype": "url"
+                  }
+                ]
+              },
+              "snaks-order": [
+                "P854"
+              ]
+            }
+          ]
+        }
+      ],
+      "P3761": [
+        {
+          "mainsnak": {
+            "snaktype": "value",
+            "property": "P3761",
+            "hash": "98b3e7049c29425dbfaa8c059327ae581b348219",
+            "datavalue": {
+              "value": "158.156.0.0/16",
+              "type": "string"
+            },
+            "datatype": "string"
+          },
+          "type": "statement",
+          "id": "Q846484$71DC8D06-A30E-4CA8-9F87-65ADF91CC157",
+          "rank": "normal",
+          "references": [
+            {
+              "hash": "e8e60cbaed4d71362d9a5a54cf07b89fc75eac46",
+              "snaks": {
+                "P854": [
+                  {
+                    "snaktype": "value",
+                    "property": "P854",
+                    "hash": "0b356a89fe4a893307c81a3176155fbaf2ae880d",
+                    "datavalue": {
+                      "value": "https://apps.db.ripe.net/search/lookup.html?source=ripe&key=158.156.0.0+-+158.156.255.255&type=inetnum",
+                      "type": "string"
+                    },
+                    "datatype": "url"
+                  }
+                ]
+              },
+              "snaks-order": [
+                "P854"
+              ]
+            }
+          ]
+        }
+      ],
+      "P3219": [
+        {
+          "mainsnak": {
+            "snaktype": "value",
+            "property": "P3219",
+            "hash": "e5356067d61266748e506c61cab05492dd573b64",
+            "datavalue": {
+              "value": "caisse-des-depots-et-consignations",
+              "type": "string"
+            },
+            "datatype": "external-id"
+          },
+          "type": "statement",
+          "id": "Q846484$B3BF4EBE-C5E3-43DC-AE07-76577173CD16",
+          "rank": "normal"
+        }
+      ],
+      "P2002": [
+        {
+          "mainsnak": {
+            "snaktype": "value",
+            "property": "P2002",
+            "hash": "72d8fb8c27a511684db3ed814c7bb6b716bbdf51",
+            "datavalue": {
+              "value": "CaissedesDepots",
+              "type": "string"
+            },
+            "datatype": "external-id"
+          },
+          "type": "statement",
+          "qualifiers": {
+            "P6552": [
+              {
+                "snaktype": "value",
+                "property": "P6552",
+                "hash": "b54bd0ea037d09214bf3474bc7efb9600c2815ff",
+                "datavalue": {
+                  "value": "979277656616259584",
+                  "type": "string"
+                },
+                "datatype": "external-id"
+              }
+            ],
+            "P1552": [
+              {
+                "snaktype": "value",
+                "property": "P1552",
+                "hash": "62f0039d240f7eeba6c6908a0d8807a6188324a1",
+                "datavalue": {
+                  "value": {
+                    "entity-type": "item",
+                    "numeric-id": 28378282,
+                    "id": "Q28378282"
+                  },
+                  "type": "wikibase-entityid"
+                },
+                "datatype": "wikibase-item"
+              }
+            ],
+            "P3744": [
+              {
+                "snaktype": "value",
+                "property": "P3744",
+                "hash": "3db6b65dcd4d5be02c9a432cf777f99ae16c0ae0",
+                "datavalue": {
+                  "value": {
+                    "amount": "+9822",
+                    "unit": "1"
+                  },
+                  "type": "quantity"
+                },
+                "datatype": "quantity"
+              }
+            ],
+            "P580": [
+              {
+                "snaktype": "value",
+                "property": "P580",
+                "hash": "06e53d4d6cef4e428dfd64764a4f3929f33b1f07",
+                "datavalue": {
+                  "value": {
+                    "time": "+2018-03-29T00:00:00Z",
+                    "timezone": 0,
+                    "before": 0,
+                    "after": 0,
+                    "precision": 11,
+                    "calendarmodel": "http://www.wikidata.org/entity/Q1985727"
+                  },
+                  "type": "time"
+                },
+                "datatype": "time"
+              }
+            ],
+            "P585": [
+              {
+                "snaktype": "value",
+                "property": "P585",
+                "hash": "d23772ed2b8b4c4e31ec158c814140af0379c572",
+                "datavalue": {
+                  "value": {
+                    "time": "+2020-04-25T00:00:00Z",
+                    "timezone": 0,
+                    "before": 0,
+                    "after": 0,
+                    "precision": 11,
+                    "calendarmodel": "http://www.wikidata.org/entity/Q1985727"
+                  },
+                  "type": "time"
+                },
+                "datatype": "time"
+              }
+            ]
+          },
+          "qualifiers-order": [
+            "P6552",
+            "P1552",
+            "P3744",
+            "P580",
+            "P585"
+          ],
+          "id": "Q846484$6d3cb1ac-41dd-9851-dbea-c39d5f879f4b",
+          "rank": "normal"
+        }
+      ],
+      "P1128": [
+        {
+          "mainsnak": {
+            "snaktype": "value",
+            "property": "P1128",
+            "hash": "2f643c1e1fa54ad6f85e0ba7ae978722a7f34a4a",
+            "datavalue": {
+              "value": {
+                "amount": "+117385",
+                "unit": "1"
+              },
+              "type": "quantity"
+            },
+            "datatype": "quantity"
+          },
+          "type": "statement",
+          "qualifiers": {
+            "P585": [
+              {
+                "snaktype": "value",
+                "property": "P585",
+                "hash": "5c1fde399c6884fe5743adc4a924cd6a02671412",
+                "datavalue": {
+                  "value": {
+                    "time": "+2014-12-31T00:00:00Z",
+                    "timezone": 0,
+                    "before": 0,
+                    "after": 0,
+                    "precision": 11,
+                    "calendarmodel": "http://www.wikidata.org/entity/Q1985727"
+                  },
+                  "type": "time"
+                },
+                "datatype": "time"
+              }
+            ]
+          },
+          "qualifiers-order": [
+            "P585"
+          ],
+          "id": "Q846484$39F8BF66-FE34-4DD0-BFA0-B439A9A6F7BE",
+          "rank": "normal",
+          "references": [
+            {
+              "hash": "9a24f7c0208b05d6be97077d855671d1dfdbc0dd",
+              "snaks": {
+                "P143": [
+                  {
+                    "snaktype": "value",
+                    "property": "P143",
+                    "hash": "d38375ffe6fe142663ff55cd783aa4df4301d83d",
+                    "datavalue": {
+                      "value": {
+                        "entity-type": "item",
+                        "numeric-id": 48183,
+                        "id": "Q48183"
+                      },
+                      "type": "wikibase-entityid"
+                    },
+                    "datatype": "wikibase-item"
+                  }
+                ]
+              },
+              "snaks-order": [
+                "P143"
+              ]
+            }
+          ]
+        }
+      ],
+      "P2427": [
+        {
+          "mainsnak": {
+            "snaktype": "value",
+            "property": "P2427",
+            "hash": "69b6ff8dcb9b60e1d376bdd46d796c127b903cac",
+            "datavalue": {
+              "value": "grid.433068.a",
+              "type": "string"
+            },
+            "datatype": "external-id"
+          },
+          "type": "statement",
+          "id": "Q846484$1E12CC4F-038C-4D31-B462-6C4BE8B15CD1",
+          "rank": "normal",
+          "references": [
+            {
+              "hash": "40fdc7f3ce7f6771a8f285a1267bfc3f3de154d9",
+              "snaks": {
+                "P248": [
+                  {
+                    "snaktype": "value",
+                    "property": "P248",
+                    "hash": "858e5db66e8139829fa8f88e7e16ea6af5213e4b",
+                    "datavalue": {
+                      "value": {
+                        "entity-type": "item",
+                        "numeric-id": 53869345,
+                        "id": "Q53869345"
+                      },
+                      "type": "wikibase-entityid"
+                    },
+                    "datatype": "wikibase-item"
+                  }
+                ]
+              },
+              "snaks-order": [
+                "P248"
+              ]
+            }
+          ]
+        }
+      ],
+      "P1320": [
+        {
+          "mainsnak": {
+            "snaktype": "value",
+            "property": "P1320",
+            "hash": "b2c1dff9a01aa1048af88c9aea34ac3918919e92",
+            "datavalue": {
+              "value": "fr/180020026",
+              "type": "string"
+            },
+            "datatype": "external-id"
+          },
+          "type": "statement",
+          "id": "Q846484$802D89A9-4BF2-441B-A654-09E786B3D343",
+          "rank": "normal",
+          "references": [
+            {
+              "hash": "69662e948a1f66993f70b437e701edbfeb4026a4",
+              "snaks": {
+                "P1616": [
+                  {
+                    "snaktype": "value",
+                    "property": "P1616",
+                    "hash": "ea877083488b658c9ca811401abe740634f19d52",
+                    "datavalue": {
+                      "value": "180020026",
+                      "type": "string"
+                    },
+                    "datatype": "external-id"
+                  }
+                ]
+              },
+              "snaks-order": [
+                "P1616"
+              ]
+            }
+          ]
+        }
+      ],
+      "P1278": [
+        {
+          "mainsnak": {
+            "snaktype": "value",
+            "property": "P1278",
+            "hash": "991e071f790b76a85739269b7528e989742a7844",
+            "datavalue": {
+              "value": "969500Q2PFTTP0Y5QL44",
+              "type": "string"
+            },
+            "datatype": "external-id"
+          },
+          "type": "statement",
+          "id": "Q846484$E0B39CC9-7747-44D6-A371-6C014DBC5CE5",
+          "rank": "normal",
+          "references": [
+            {
+              "hash": "16e2d37b8c5781ee1fae68e2f4aef90689fbe5a8",
+              "snaks": {
+                "P248": [
+                  {
+                    "snaktype": "value",
+                    "property": "P248",
+                    "hash": "88b1aea91b49e7281dc2608b867987d014c88992",
+                    "datavalue": {
+                      "value": {
+                        "entity-type": "item",
+                        "numeric-id": 55259097,
+                        "id": "Q55259097"
+                      },
+                      "type": "wikibase-entityid"
+                    },
+                    "datatype": "wikibase-item"
+                  }
+                ],
+                "P813": [
+                  {
+                    "snaktype": "value",
+                    "property": "P813",
+                    "hash": "8c99484d950d47044cbf3b24bf49a4fafe51821e",
+                    "datavalue": {
+                      "value": {
+                        "time": "+2018-06-28T00:00:00Z",
+                        "timezone": 0,
+                        "before": 0,
+                        "after": 0,
+                        "precision": 11,
+                        "calendarmodel": "http://www.wikidata.org/entity/Q1985727"
+                      },
+                      "type": "time"
+                    },
+                    "datatype": "time"
+                  }
+                ]
+              },
+              "snaks-order": [
+                "P248",
+                "P813"
+              ]
+            }
+          ]
+        }
+      ],
+      "P355": [
+        {
+          "mainsnak": {
+            "snaktype": "value",
+            "property": "P355",
+            "hash": "b2679612804f426dfaf3f6dd59ec50a689c568ad",
+            "datavalue": {
+              "value": {
+                "entity-type": "item",
+                "numeric-id": 3117552,
+                "id": "Q3117552"
+              },
+              "type": "wikibase-entityid"
+            },
+            "datatype": "wikibase-item"
+          },
+          "type": "statement",
+          "qualifiers": {
+            "P1107": [
+              {
+                "snaktype": "value",
+                "property": "P1107",
+                "hash": "e27a33a9c5204c9541a6013f9feb8f4e0edfa589",
+                "datavalue": {
+                  "value": {
+                    "amount": "+100",
+                    "unit": "http://www.wikidata.org/entity/Q11229"
+                  },
+                  "type": "quantity"
+                },
+                "datatype": "quantity"
+              }
+            ]
+          },
+          "qualifiers-order": [
+            "P1107"
+          ],
+          "id": "Q846484$bf60ef6c-49dc-35fb-0d8a-b63d12e9dcdc",
+          "rank": "normal"
+        },
+        {
+          "mainsnak": {
+            "snaktype": "value",
+            "property": "P355",
+            "hash": "121e42d9bc19f8c044ce3676d1194a7c159c8b43",
+            "datavalue": {
+              "value": {
+                "entity-type": "item",
+                "numeric-id": 64410153,
+                "id": "Q64410153"
+              },
+              "type": "wikibase-entityid"
+            },
+            "datatype": "wikibase-item"
+          },
+          "type": "statement",
+          "qualifiers": {
+            "P1107": [
+              {
+                "snaktype": "value",
+                "property": "P1107",
+                "hash": "e27a33a9c5204c9541a6013f9feb8f4e0edfa589",
+                "datavalue": {
+                  "value": {
+                    "amount": "+100",
+                    "unit": "http://www.wikidata.org/entity/Q11229"
+                  },
+                  "type": "quantity"
+                },
+                "datatype": "quantity"
+              }
+            ]
+          },
+          "qualifiers-order": [
+            "P1107"
+          ],
+          "id": "Q846484$bf96ae25-48a2-57a4-61b4-7bd22d588510",
+          "rank": "normal"
+        },
+        {
+          "mainsnak": {
+            "snaktype": "value",
+            "property": "P355",
+            "hash": "44eae4c4a5a500875ccaa2430689bc59ae7df011",
+            "datavalue": {
+              "value": {
+                "entity-type": "item",
+                "numeric-id": 64410114,
+                "id": "Q64410114"
+              },
+              "type": "wikibase-entityid"
+            },
+            "datatype": "wikibase-item"
+          },
+          "type": "statement",
+          "qualifiers": {
+            "P1107": [
+              {
+                "snaktype": "value",
+                "property": "P1107",
+                "hash": "e27a33a9c5204c9541a6013f9feb8f4e0edfa589",
+                "datavalue": {
+                  "value": {
+                    "amount": "+100",
+                    "unit": "http://www.wikidata.org/entity/Q11229"
+                  },
+                  "type": "quantity"
+                },
+                "datatype": "quantity"
+              }
+            ]
+          },
+          "qualifiers-order": [
+            "P1107"
+          ],
+          "id": "Q846484$5441efd4-45ad-2056-3015-fab605dd762d",
+          "rank": "normal"
+        },
+        {
+          "mainsnak": {
+            "snaktype": "value",
+            "property": "P355",
+            "hash": "2bbc6c142e1ae76853c9fb91be3b651827cd0e4f",
+            "datavalue": {
+              "value": {
+                "entity-type": "item",
+                "numeric-id": 3147573,
+                "id": "Q3147573"
+              },
+              "type": "wikibase-entityid"
+            },
+            "datatype": "wikibase-item"
+          },
+          "type": "statement",
+          "qualifiers": {
+            "P1107": [
+              {
+                "snaktype": "value",
+                "property": "P1107",
+                "hash": "2bee92ca95e849dbe105f58e0ca1876ee0720468",
+                "datavalue": {
+                  "value": {
+                    "amount": "+39.1",
+                    "unit": "http://www.wikidata.org/entity/Q11229"
+                  },
+                  "type": "quantity"
+                },
+                "datatype": "quantity"
+              }
+            ]
+          },
+          "qualifiers-order": [
+            "P1107"
+          ],
+          "id": "Q846484$b733ffa9-4ac3-a2e6-400d-97fe18f1d591",
+          "rank": "normal"
+        },
+        {
+          "mainsnak": {
+            "snaktype": "value",
+            "property": "P355",
+            "hash": "3882d324495166ccd16caa38faf3bc81e09f02ba",
+            "datavalue": {
+              "value": {
+                "entity-type": "item",
+                "numeric-id": 624378,
+                "id": "Q624378"
+              },
+              "type": "wikibase-entityid"
+            },
+            "datatype": "wikibase-item"
+          },
+          "type": "statement",
+          "qualifiers": {
+            "P1107": [
+              {
+                "snaktype": "value",
+                "property": "P1107",
+                "hash": "c60808730802a9479aa26fbb3f9db671c3307f9a",
+                "datavalue": {
+                  "value": {
+                    "amount": "+39.49",
+                    "unit": "http://www.wikidata.org/entity/Q11229"
+                  },
+                  "type": "quantity"
+                },
+                "datatype": "quantity"
+              }
+            ]
+          },
+          "qualifiers-order": [
+            "P1107"
+          ],
+          "id": "Q846484$03a5b42d-4312-6d62-5ae7-85188d201039",
+          "rank": "normal"
+        },
+        {
+          "mainsnak": {
+            "snaktype": "value",
+            "property": "P355",
+            "hash": "a3a1c339f4e77fffee28881c458b78417ece464e",
+            "datavalue": {
+              "value": {
+                "entity-type": "item",
+                "numeric-id": 3049197,
+                "id": "Q3049197"
+              },
+              "type": "wikibase-entityid"
+            },
+            "datatype": "wikibase-item"
+          },
+          "type": "statement",
+          "qualifiers": {
+            "P1107": [
+              {
+                "snaktype": "value",
+                "property": "P1107",
+                "hash": "f9cd6e329d3f9f19dff04a63a153451323a49d05",
+                "datavalue": {
+                  "value": {
+                    "amount": "+74.99",
+                    "unit": "http://www.wikidata.org/entity/Q11229"
+                  },
+                  "type": "quantity"
+                },
+                "datatype": "quantity"
+              }
+            ]
+          },
+          "qualifiers-order": [
+            "P1107"
+          ],
+          "id": "Q846484$4474696f-4bcc-c7ad-df6c-355546e826e4",
+          "rank": "normal"
+        },
+        {
+          "mainsnak": {
+            "snaktype": "value",
+            "property": "P355",
+            "hash": "1b5ca2ba89defbf16b1ec9d116fd8bcf8046a613",
+            "datavalue": {
+              "value": {
+                "entity-type": "item",
+                "numeric-id": 442637,
+                "id": "Q442637"
+              },
+              "type": "wikibase-entityid"
+            },
+            "datatype": "wikibase-item"
+          },
+          "type": "statement",
+          "qualifiers": {
+            "P1107": [
+              {
+                "snaktype": "value",
+                "property": "P1107",
+                "hash": "dfde8033cbacae45230b0478afca10def3604414",
+                "datavalue": {
+                  "value": {
+                    "amount": "+70",
+                    "unit": "http://www.wikidata.org/entity/Q11229"
+                  },
+                  "type": "quantity"
+                },
+                "datatype": "quantity"
+              }
+            ]
+          },
+          "qualifiers-order": [
+            "P1107"
+          ],
+          "id": "Q846484$d366e294-46f9-aa52-ab43-cb585b05deae",
+          "rank": "normal"
+        }
+      ],
+      "P4293": [
+        {
+          "mainsnak": {
+            "snaktype": "value",
+            "property": "P4293",
+            "hash": "1d1531919ac17166f1f75885be0b784cda4d48a0",
+            "datavalue": {
+              "value": "co/004030",
+              "type": "string"
+            },
+            "datatype": "external-id"
+          },
+          "type": "statement",
+          "qualifiers": {
+            "P3740": [
+              {
+                "snaktype": "somevalue",
+                "property": "P3740",
+                "hash": "95677c861c4fe94b8e8ede6ec7f20ff167c093bc",
+                "datatype": "quantity"
+              }
+            ],
+            "P5592": [
+              {
+                "snaktype": "value",
+                "property": "P5592",
+                "hash": "7fd6c9d080aa8ae0d8f65ee5f86df775c23b71a7",
+                "datavalue": {
+                  "value": {
+                    "amount": "+0",
+                    "unit": "1"
+                  },
+                  "type": "quantity"
+                },
+                "datatype": "quantity"
+              }
+            ],
+            "P1810": [
+              {
+                "snaktype": "value",
+                "property": "P1810",
+                "hash": "a1b622d583734be3aae034144da0ae10923d59ee",
+                "datavalue": {
+                  "value": "Caisse des Dépôts et Consignations",
+                  "type": "string"
+                },
+                "datatype": "string"
+              }
+            ]
+          },
+          "qualifiers-order": [
+            "P3740",
+            "P5592",
+            "P1810"
+          ],
+          "id": "Q846484$6644FC86-1C6C-4D21-AA62-5D31449991FB",
+          "rank": "normal",
+          "references": [
+            {
+              "hash": "93b84ca9fdcf13e945d1fbcf55eb742d63a353ae",
+              "snaks": {
+                "P248": [
+                  {
+                    "snaktype": "value",
+                    "property": "P248",
+                    "hash": "5b84902877d11b6e0ccbb34499a285097cd76e79",
+                    "datavalue": {
+                      "value": {
+                        "entity-type": "item",
+                        "numeric-id": 36948990,
+                        "id": "Q36948990"
+                      },
+                      "type": "wikibase-entityid"
+                    },
+                    "datatype": "wikibase-item"
+                  }
+                ],
+                "P1476": [
+                  {
+                    "snaktype": "value",
+                    "property": "P1476",
+                    "hash": "68d3dda8c5eacba1b0c568d53a97d91359d58e25",
+                    "datavalue": {
+                      "value": {
+                        "text": "Via P227 lookup with GND value from PM20 folder",
+                        "language": "en"
+                      },
+                      "type": "monolingualtext"
+                    },
+                    "datatype": "monolingualtext"
+                  }
+                ]
+              },
+              "snaks-order": [
+                "P248",
+                "P1476"
+              ]
+            }
+          ]
+        }
+      ],
+      "P1830": [
+        {
+          "mainsnak": {
+            "snaktype": "value",
+            "property": "P1830",
+            "hash": "f1484b71c75ce6e4f7733ee74f745d17647de0c7",
+            "datavalue": {
+              "value": {
+                "entity-type": "item",
+                "numeric-id": 286494,
+                "id": "Q286494"
+              },
+              "type": "wikibase-entityid"
+            },
+            "datatype": "wikibase-item"
+          },
+          "type": "statement",
+          "id": "Q846484$27C2E5B2-2D88-45E9-A70F-5EB1D657CFE0",
+          "rank": "normal"
+        },
+        {
+          "mainsnak": {
+            "snaktype": "value",
+            "property": "P1830",
+            "hash": "9f80910b4b7485f53568b94c5e5d8bed7b454f2a",
+            "datavalue": {
+              "value": {
+                "entity-type": "item",
+                "numeric-id": 442637,
+                "id": "Q442637"
+              },
+              "type": "wikibase-entityid"
+            },
+            "datatype": "wikibase-item"
+          },
+          "type": "statement",
+          "id": "Q846484$2FE4C259-2C71-4260-A1EF-4E3923B83664",
+          "rank": "normal"
+        },
+        {
+          "mainsnak": {
+            "snaktype": "value",
+            "property": "P1830",
+            "hash": "e84d4bf8faf306a461af7ff020a47b559049d92f",
+            "datavalue": {
+              "value": {
+                "entity-type": "item",
+                "numeric-id": 624378,
+                "id": "Q624378"
+              },
+              "type": "wikibase-entityid"
+            },
+            "datatype": "wikibase-item"
+          },
+          "type": "statement",
+          "id": "Q846484$98477AC9-42AA-47B2-A7A1-AE99FFFF6FF6",
+          "rank": "normal"
+        },
+        {
+          "mainsnak": {
+            "snaktype": "value",
+            "property": "P1830",
+            "hash": "174b2fc248b05f2efcaae8d9d66f10bc4db92207",
+            "datavalue": {
+              "value": {
+                "entity-type": "item",
+                "numeric-id": 726531,
+                "id": "Q726531"
+              },
+              "type": "wikibase-entityid"
+            },
+            "datatype": "wikibase-item"
+          },
+          "type": "statement",
+          "id": "Q846484$21C19F70-4882-4784-939E-23B13505330D",
+          "rank": "normal"
+        },
+        {
+          "mainsnak": {
+            "snaktype": "value",
+            "property": "P1830",
+            "hash": "5070ca5ccda7bc3110fd1281f2fe62db32b9dbab",
+            "datavalue": {
+              "value": {
+                "entity-type": "item",
+                "numeric-id": 1127887,
+                "id": "Q1127887"
+              },
+              "type": "wikibase-entityid"
+            },
+            "datatype": "wikibase-item"
+          },
+          "type": "statement",
+          "id": "Q846484$A71D7387-6670-4C4F-A02F-F3BC2B158852",
+          "rank": "normal"
+        },
+        {
+          "mainsnak": {
+            "snaktype": "value",
+            "property": "P1830",
+            "hash": "31521befc3cb14b050b6f9eb01af3028f19414a7",
+            "datavalue": {
+              "value": {
+                "entity-type": "item",
+                "numeric-id": 1632461,
+                "id": "Q1632461"
+              },
+              "type": "wikibase-entityid"
+            },
+            "datatype": "wikibase-item"
+          },
+          "type": "statement",
+          "id": "Q846484$3E300DCA-6326-4FE6-91BF-C80FEDE94E27",
+          "rank": "normal"
+        },
+        {
+          "mainsnak": {
+            "snaktype": "value",
+            "property": "P1830",
+            "hash": "9a5dd4dcf43b0dd4ec5b7068e97ef4e2088a2fc6",
+            "datavalue": {
+              "value": {
+                "entity-type": "item",
+                "numeric-id": 3117552,
+                "id": "Q3117552"
+              },
+              "type": "wikibase-entityid"
+            },
+            "datatype": "wikibase-item"
+          },
+          "type": "statement",
+          "id": "Q846484$FA9B9326-7756-4A5F-9F99-F7429526D4EB",
+          "rank": "normal"
+        },
+        {
+          "mainsnak": {
+            "snaktype": "value",
+            "property": "P1830",
+            "hash": "8ec0d4ab80adf67681991967e119bd041b96c23b",
+            "datavalue": {
+              "value": {
+                "entity-type": "item",
+                "numeric-id": 3147573,
+                "id": "Q3147573"
+              },
+              "type": "wikibase-entityid"
+            },
+            "datatype": "wikibase-item"
+          },
+          "type": "statement",
+          "id": "Q846484$C3973541-F26E-402B-8C0A-E6216B80EB98",
+          "rank": "normal"
+        },
+        {
+          "mainsnak": {
+            "snaktype": "value",
+            "property": "P1830",
+            "hash": "2e46b850296633415b98595ef24d60ce9305bf19",
+            "datavalue": {
+              "value": {
+                "entity-type": "item",
+                "numeric-id": 2362964,
+                "id": "Q2362964"
+              },
+              "type": "wikibase-entityid"
+            },
+            "datatype": "wikibase-item"
+          },
+          "type": "statement",
+          "qualifiers": {
+            "P1107": [
+              {
+                "snaktype": "value",
+                "property": "P1107",
+                "hash": "2fcd6dd96b9491425803362ebb1863c01aad3b16",
+                "datavalue": {
+                  "value": {
+                    "amount": "+50",
+                    "unit": "http://www.wikidata.org/entity/Q11229"
+                  },
+                  "type": "quantity"
+                },
+                "datatype": "quantity"
+              }
+            ]
+          },
+          "qualifiers-order": [
+            "P1107"
+          ],
+          "id": "Q846484$65adc46f-4c7e-17d6-f9aa-1dc88b992e70",
+          "rank": "normal"
+        },
+        {
+          "mainsnak": {
+            "snaktype": "value",
+            "property": "P1830",
+            "hash": "6ec434a2b32a800795aad3b92e3a8d3fc0f9486c",
+            "datavalue": {
+              "value": {
+                "entity-type": "item",
+                "numeric-id": 373724,
+                "id": "Q373724"
+              },
+              "type": "wikibase-entityid"
+            },
+            "datatype": "wikibase-item"
+          },
+          "type": "statement",
+          "qualifiers": {
+            "P1107": [
+              {
+                "snaktype": "value",
+                "property": "P1107",
+                "hash": "51bab4014f5b85872c49e6669791f7d8ae8baedb",
+                "datavalue": {
+                  "value": {
+                    "amount": "+26.32",
+                    "unit": "http://www.wikidata.org/entity/Q11229"
+                  },
+                  "type": "quantity"
+                },
+                "datatype": "quantity"
+              }
+            ]
+          },
+          "qualifiers-order": [
+            "P1107"
+          ],
+          "id": "Q846484$513295e1-4b20-1d85-5be6-dedbc6452510",
+          "rank": "normal"
+        },
+        {
+          "mainsnak": {
+            "snaktype": "value",
+            "property": "P1830",
+            "hash": "d0d5bbf629c634ed7b8fd421edda18d4221832f1",
+            "datavalue": {
+              "value": {
+                "entity-type": "item",
+                "numeric-id": 1023930,
+                "id": "Q1023930"
+              },
+              "type": "wikibase-entityid"
+            },
+            "datatype": "wikibase-item"
+          },
+          "type": "statement",
+          "qualifiers": {
+            "P1107": [
+              {
+                "snaktype": "value",
+                "property": "P1107",
+                "hash": "e603aeae0392f3f3cf5a4820fd3858448022f0fa",
+                "datavalue": {
+                  "value": {
+                    "amount": "+40.88",
+                    "unit": "http://www.wikidata.org/entity/Q11229"
+                  },
+                  "type": "quantity"
+                },
+                "datatype": "quantity"
+              }
+            ]
+          },
+          "qualifiers-order": [
+            "P1107"
+          ],
+          "id": "Q846484$e58e5ab4-4117-d8b6-cf6c-812955e532ab",
+          "rank": "normal"
+        },
+        {
+          "mainsnak": {
+            "snaktype": "value",
+            "property": "P1830",
+            "hash": "30cbb7b1c5e5922a140bd55c32bfbd3c36580a01",
+            "datavalue": {
+              "value": {
+                "entity-type": "item",
+                "numeric-id": 1121170,
+                "id": "Q1121170"
+              },
+              "type": "wikibase-entityid"
+            },
+            "datatype": "wikibase-item"
+          },
+          "type": "statement",
+          "qualifiers": {
+            "P1107": [
+              {
+                "snaktype": "value",
+                "property": "P1107",
+                "hash": "a4dd7df08295d577ae641d09e99f3a074a51b4e2",
+                "datavalue": {
+                  "value": {
+                    "amount": "+33.2",
+                    "unit": "http://www.wikidata.org/entity/Q11229"
+                  },
+                  "type": "quantity"
+                },
+                "datatype": "quantity"
+              }
+            ]
+          },
+          "qualifiers-order": [
+            "P1107"
+          ],
+          "id": "Q846484$0669b61c-4dc7-e5cb-8d0f-01968b10b215",
+          "rank": "normal"
+        }
+      ],
+      "P6413": [
+        {
+          "mainsnak": {
+            "snaktype": "value",
+            "property": "P6413",
+            "hash": "1710f4f846cbaa6002efe76f760f72f3a2096fee",
+            "datavalue": {
+              "value": "Q846484",
+              "type": "string"
+            },
+            "datatype": "external-id"
+          },
+          "type": "statement",
+          "id": "Q846484$A2025FD8-9F0A-4CA3-A66E-6DC1771A6605",
+          "rank": "normal"
+        }
+      ],
+      "P6782": [
+        {
+          "mainsnak": {
+            "snaktype": "value",
+            "property": "P6782",
+            "hash": "d57552ccca4dbe7d5b3b5a6d37b6d2857582f5ec",
+            "datavalue": {
+              "value": "01set1758",
+              "type": "string"
+            },
+            "datatype": "external-id"
+          },
+          "type": "statement",
+          "id": "Q846484$B0DD3A26-351A-4FD6-8AFB-6C54D36D4BCB",
+          "rank": "normal"
+        }
+      ],
+      "P6366": [
+        {
+          "mainsnak": {
+            "snaktype": "value",
+            "property": "P6366",
+            "hash": "8eed14a891e9bf7b8c4da5bb6f6460724e18e276",
+            "datavalue": {
+              "value": "114380877",
+              "type": "string"
+            },
+            "datatype": "external-id"
+          },
+          "type": "statement",
+          "id": "Q846484$6E85AE9A-E4DD-40D4-A792-DC1835A86648",
+          "rank": "normal"
+        }
+      ],
+      "P2627": [
+        {
+          "mainsnak": {
+            "snaktype": "value",
+            "property": "P2627",
+            "hash": "1f0773ed5fd88250d195b5f7095e4a475f3135c2",
+            "datavalue": {
+              "value": "CDCGFRPPXXX",
+              "type": "string"
+            },
+            "datatype": "external-id"
+          },
+          "type": "statement",
+          "id": "Q846484$94C0C839-5B92-4D40-AA7A-8FF9250B6FE0",
+          "rank": "normal",
+          "references": [
+            {
+              "hash": "caf857ec3cda28ba1bf4bde1da40d2245519d48b",
+              "snaks": {
+                "P854": [
+                  {
+                    "snaktype": "value",
+                    "property": "P854",
+                    "hash": "4848c82e94160258c1be8c23b89f330a48fb6496",
+                    "datavalue": {
+                      "value": "https://www.gleif.org/content/4-lei-data/8-lei-mapping/1-download-bic-to-lei-relationship-files/bic_lei_gleif_v1_monthly_full_20200327.csv",
+                      "type": "string"
+                    },
+                    "datatype": "url"
+                  }
+                ],
+                "P577": [
+                  {
+                    "snaktype": "value",
+                    "property": "P577",
+                    "hash": "8813f39ae109f50c76098aba94f842ef1db5b4c8",
+                    "datavalue": {
+                      "value": {
+                        "time": "+2020-03-27T00:00:00Z",
+                        "timezone": 0,
+                        "before": 0,
+                        "after": 0,
+                        "precision": 11,
+                        "calendarmodel": "http://www.wikidata.org/entity/Q1985727"
+                      },
+                      "type": "time"
+                    },
+                    "datatype": "time"
+                  }
+                ]
+              },
+              "snaks-order": [
+                "P854",
+                "P577"
+              ]
+            }
+          ]
+        }
+      ],
+      "P1037": [
+        {
+          "mainsnak": {
+            "snaktype": "value",
+            "property": "P1037",
+            "hash": "e11c1c3f1bc1db7fdc92b5c6ca6f83da649cba7c",
+            "datavalue": {
+              "value": {
+                "entity-type": "item",
+                "numeric-id": 45192006,
+                "id": "Q45192006"
+              },
+              "type": "wikibase-entityid"
+            },
+            "datatype": "wikibase-item"
+          },
+          "type": "statement",
+          "id": "Q846484$B45E80CD-7DBB-474E-A051-46A792EBFDC0",
+          "rank": "normal",
+          "references": [
+            {
+              "hash": "2ce8c9ee6d85740428a921fc20dde1f21449bee4",
+              "snaks": {
+                "P143": [
+                  {
+                    "snaktype": "value",
+                    "property": "P143",
+                    "hash": "f30cbd35620c4ea6d0633aaf0210a8916130469b",
+                    "datavalue": {
+                      "value": {
+                        "entity-type": "item",
+                        "numeric-id": 8447,
+                        "id": "Q8447"
+                      },
+                      "type": "wikibase-entityid"
+                    },
+                    "datatype": "wikibase-item"
+                  }
+                ],
+                "P4656": [
+                  {
+                    "snaktype": "value",
+                    "property": "P4656",
+                    "hash": "87495e60af7a47c1b5979cd4a1ccb2922209e07f",
+                    "datavalue": {
+                      "value": "https://fr.wikipedia.org/w/index.php?title=Caisse_des_dépôts_et_consignations&oldid=171315270",
+                      "type": "string"
+                    },
+                    "datatype": "url"
+                  }
+                ]
+              },
+              "snaks-order": [
+                "P143",
+                "P4656"
+              ]
+            }
+          ]
+        }
+      ],
+      "P1813": [
+        {
+          "mainsnak": {
+            "snaktype": "value",
+            "property": "P1813",
+            "hash": "4013f245d2fcb431ae887b98e1efd9e87be9a4e0",
+            "datavalue": {
+              "value": {
+                "text": "CDC",
+                "language": "fr"
+              },
+              "type": "monolingualtext"
+            },
+            "datatype": "monolingualtext"
+          },
+          "type": "statement",
+          "id": "Q846484$8c9cd70c-4a53-1d34-769f-35e627bcd29b",
+          "rank": "normal",
+          "references": [
+            {
+              "hash": "4996dc58d2ce988bda9453f0e4e9ecd309ef1a09",
+              "snaks": {
+                "P854": [
+                  {
+                    "snaktype": "value",
+                    "property": "P854",
+                    "hash": "3f862f41edb442b9bc05ad41c224dfc2a63c5c0d",
+                    "datavalue": {
+                      "value": "https://www.mediapart.fr/journal/economie/170820/la-caisse-des-depots-efface-45-millions-d-euros-en-faveur-de-luc-besson",
+                      "type": "string"
+                    },
+                    "datatype": "url"
+                  }
+                ]
+              },
+              "snaks-order": [
+                "P854"
+              ]
+            },
+            {
+              "hash": "0e37bd19db6fc8cf2201d73ae30a851311f4b80a",
+              "snaks": {
+                "P2657": [
+                  {
+                    "snaktype": "value",
+                    "property": "P2657",
+                    "hash": "35669bd2466643f5522f38352a06953e73ebf677",
+                    "datavalue": {
+                      "value": "84606487324-44",
+                      "type": "string"
+                    },
+                    "datatype": "external-id"
+                  }
+                ],
+                "P813": [
+                  {
+                    "snaktype": "value",
+                    "property": "P813",
+                    "hash": "99341f3740169e72deba3a0eb24a5e4b0acce305",
+                    "datavalue": {
+                      "value": {
+                        "time": "+2022-05-22T00:00:00Z",
+                        "timezone": 0,
+                        "before": 0,
+                        "after": 0,
+                        "precision": 11,
+                        "calendarmodel": "http://www.wikidata.org/entity/Q1985727"
+                      },
+                      "type": "time"
+                    },
+                    "datatype": "time"
+                  }
+                ]
+              },
+              "snaks-order": [
+                "P2657",
+                "P813"
+              ]
+            }
+          ]
+        }
+      ],
+      "P8687": [
+        {
+          "mainsnak": {
+            "snaktype": "value",
+            "property": "P8687",
+            "hash": "483cda2a3563b8a958dc6d04d7fefd4a8eb87719",
+            "datavalue": {
+              "value": {
+                "amount": "+12431",
+                "unit": "1"
+              },
+              "type": "quantity"
+            },
+            "datatype": "quantity"
+          },
+          "type": "statement",
+          "qualifiers": {
+            "P6552": [
+              {
+                "snaktype": "value",
+                "property": "P6552",
+                "hash": "b54bd0ea037d09214bf3474bc7efb9600c2815ff",
+                "datavalue": {
+                  "value": "979277656616259584",
+                  "type": "string"
+                },
+                "datatype": "external-id"
+              }
+            ],
+            "P585": [
+              {
+                "snaktype": "value",
+                "property": "P585",
+                "hash": "ca6610e3015cabb3069ecb93a89c1f5245717b35",
+                "datavalue": {
+                  "value": {
+                    "time": "+2021-01-10T00:00:00Z",
+                    "timezone": 0,
+                    "before": 0,
+                    "after": 0,
+                    "precision": 11,
+                    "calendarmodel": "http://www.wikidata.org/entity/Q1985727"
+                  },
+                  "type": "time"
+                },
+                "datatype": "time"
+              }
+            ]
+          },
+          "qualifiers-order": [
+            "P6552",
+            "P585"
+          ],
+          "id": "Q846484$f03fc05c-1168-466b-9a2d-186f2f654ab1",
+          "rank": "normal"
+        },
+        {
+          "mainsnak": {
+            "snaktype": "value",
+            "property": "P8687",
+            "hash": "99de7650deec7b16247f2564d80024aedb1e8e72",
+            "datavalue": {
+              "value": {
+                "amount": "+9822",
+                "unit": "1"
+              },
+              "type": "quantity"
+            },
+            "datatype": "quantity"
+          },
+          "type": "statement",
+          "qualifiers": {
+            "P6552": [
+              {
+                "snaktype": "value",
+                "property": "P6552",
+                "hash": "b54bd0ea037d09214bf3474bc7efb9600c2815ff",
+                "datavalue": {
+                  "value": "979277656616259584",
+                  "type": "string"
+                },
+                "datatype": "external-id"
+              }
+            ],
+            "P585": [
+              {
+                "snaktype": "value",
+                "property": "P585",
+                "hash": "d23772ed2b8b4c4e31ec158c814140af0379c572",
+                "datavalue": {
+                  "value": {
+                    "time": "+2020-04-25T00:00:00Z",
+                    "timezone": 0,
+                    "before": 0,
+                    "after": 0,
+                    "precision": 11,
+                    "calendarmodel": "http://www.wikidata.org/entity/Q1985727"
+                  },
+                  "type": "time"
+                },
+                "datatype": "time"
+              }
+            ]
+          },
+          "qualifiers-order": [
+            "P6552",
+            "P585"
+          ],
+          "id": "Q846484$ed865bc2-338d-47fe-8438-ff03f9edcd1f",
+          "rank": "normal"
+        },
+        {
+          "mainsnak": {
+            "snaktype": "value",
+            "property": "P8687",
+            "hash": "8d6246ffb4191863cdc12a781a58e21bd03ad711",
+            "datavalue": {
+              "value": {
+                "amount": "+14829",
+                "unit": "1"
+              },
+              "type": "quantity"
+            },
+            "datatype": "quantity"
+          },
+          "type": "statement",
+          "qualifiers": {
+            "P6552": [
+              {
+                "snaktype": "value",
+                "property": "P6552",
+                "hash": "b54bd0ea037d09214bf3474bc7efb9600c2815ff",
+                "datavalue": {
+                  "value": "979277656616259584",
+                  "type": "string"
+                },
+                "datatype": "external-id"
+              }
+            ],
+            "P585": [
+              {
+                "snaktype": "value",
+                "property": "P585",
+                "hash": "6fe9b8bc0480177c063de6bd77ecee2413663f80",
+                "datavalue": {
+                  "value": {
+                    "time": "+2022-02-28T00:00:00Z",
+                    "timezone": 0,
+                    "before": 0,
+                    "after": 0,
+                    "precision": 11,
+                    "calendarmodel": "http://www.wikidata.org/entity/Q1985727"
+                  },
+                  "type": "time"
+                },
+                "datatype": "time"
+              }
+            ]
+          },
+          "qualifiers-order": [
+            "P6552",
+            "P585"
+          ],
+          "id": "Q846484$fba3a092-e064-4d55-9e82-4bbee4ffd3bf",
+          "rank": "normal"
+        },
+        {
+          "mainsnak": {
+            "snaktype": "value",
+            "property": "P8687",
+            "hash": "65310bc96520fa3b80b377a8294588502312f1ef",
+            "datavalue": {
+              "value": {
+                "amount": "+16404",
+                "unit": "1"
+              },
+              "type": "quantity"
+            },
+            "datatype": "quantity"
+          },
+          "type": "statement",
+          "qualifiers": {
+            "P6552": [
+              {
+                "snaktype": "value",
+                "property": "P6552",
+                "hash": "b54bd0ea037d09214bf3474bc7efb9600c2815ff",
+                "datavalue": {
+                  "value": "979277656616259584",
+                  "type": "string"
+                },
+                "datatype": "external-id"
+              }
+            ],
+            "P585": [
+              {
+                "snaktype": "value",
+                "property": "P585",
+                "hash": "26c1f8e08cf3c87468695f3d5c8abdc737448ac7",
+                "datavalue": {
+                  "value": {
+                    "time": "+2023-02-09T00:00:00Z",
+                    "timezone": 0,
+                    "before": 0,
+                    "after": 0,
+                    "precision": 11,
+                    "calendarmodel": "http://www.wikidata.org/entity/Q1985727"
+                  },
+                  "type": "time"
+                },
+                "datatype": "time"
+              }
+            ]
+          },
+          "qualifiers-order": [
+            "P6552",
+            "P585"
+          ],
+          "id": "Q846484$98e7a4f4-c47d-4547-b5be-950fdb5c2bcb",
+          "rank": "preferred"
+        }
+      ],
+      "P1454": [
+        {
+          "mainsnak": {
+            "snaktype": "value",
+            "property": "P1454",
+            "hash": "cb77f4dcf16a23afed8228ef2eeb1e4895605481",
+            "datavalue": {
+              "value": {
+                "entity-type": "item",
+                "numeric-id": 87715868,
+                "id": "Q87715868"
+              },
+              "type": "wikibase-entityid"
+            },
+            "datatype": "wikibase-item"
+          },
+          "type": "statement",
+          "qualifiers": {
+            "P1013": [
+              {
+                "snaktype": "value",
+                "property": "P1013",
+                "hash": "0e3e8757f72513cfd931fbd4ab8b80672d4c71a0",
+                "datavalue": {
+                  "value": {
+                    "entity-type": "item",
+                    "numeric-id": 87711223,
+                    "id": "Q87711223"
+                  },
+                  "type": "wikibase-entityid"
+                },
+                "datatype": "wikibase-item"
+              }
+            ]
+          },
+          "qualifiers-order": [
+            "P1013"
+          ],
+          "id": "Q846484$17A5A23A-EE10-415B-9A76-A05CBDFEDC9E",
+          "rank": "normal",
+          "references": [
+            {
+              "hash": "1a7fabd7358c8394d285081e157f89334c64a222",
+              "snaks": {
+                "P248": [
+                  {
+                    "snaktype": "value",
+                    "property": "P248",
+                    "hash": "edd6a048cc3c96bc5b21a4cf77977f233b26ab76",
+                    "datavalue": {
+                      "value": {
+                        "entity-type": "item",
+                        "numeric-id": 3509449,
+                        "id": "Q3509449"
+                      },
+                      "type": "wikibase-entityid"
+                    },
+                    "datatype": "wikibase-item"
+                  }
+                ],
+                "P5017": [
+                  {
+                    "snaktype": "value",
+                    "property": "P5017",
+                    "hash": "78be07eb68003b5dd573298e64fa5d7aeddeae3d",
+                    "datavalue": {
+                      "value": {
+                        "time": "+2022-07-13T00:00:00Z",
+                        "timezone": 0,
+                        "before": 0,
+                        "after": 0,
+                        "precision": 11,
+                        "calendarmodel": "http://www.wikidata.org/entity/Q1985727"
+                      },
+                      "type": "time"
+                    },
+                    "datatype": "time"
+                  }
+                ]
+              },
+              "snaks-order": [
+                "P248",
+                "P5017"
+              ]
+            }
+          ]
+        }
+      ],
+      "P6375": [
+        {
+          "mainsnak": {
+            "snaktype": "value",
+            "property": "P6375",
+            "hash": "0927071b175b941e96588d37b0c08d3b2ccbce85",
+            "datavalue": {
+              "value": {
+                "text": "Siège du groupe Caisse des Dépôts, 56, Rue de Lille, 75356 PARIS 07 SP",
+                "language": "fr"
+              },
+              "type": "monolingualtext"
+            },
+            "datatype": "monolingualtext"
+          },
+          "type": "statement",
+          "id": "Q846484$2472819A-7CAC-40E2-90E5-CBDFB8B7CC5A",
+          "rank": "normal",
+          "references": [
+            {
+              "hash": "0e692876084d6f2596d67c26b27969281e64b362",
+              "snaks": {
+                "P248": [
+                  {
+                    "snaktype": "value",
+                    "property": "P248",
+                    "hash": "48fbc1de4f30ca62d93eb2aea285ddbb0c9b3cbf",
+                    "datavalue": {
+                      "value": {
+                        "entity-type": "item",
+                        "numeric-id": 113956703,
+                        "id": "Q113956703"
+                      },
+                      "type": "wikibase-entityid"
+                    },
+                    "datatype": "wikibase-item"
+                  }
+                ],
+                "P854": [
+                  {
+                    "snaktype": "value",
+                    "property": "P854",
+                    "hash": "7b684a5eef16ded78d756e4d5d164b001664f170",
+                    "datavalue": {
+                      "value": "https://madada.fr/body/cdc",
+                      "type": "string"
+                    },
+                    "datatype": "url"
+                  }
+                ]
+              },
+              "snaks-order": [
+                "P248",
+                "P854"
+              ]
+            }
+          ]
+        }
+      ],
+      "P1448": [
+        {
+          "mainsnak": {
+            "snaktype": "value",
+            "property": "P1448",
+            "hash": "a56e7c567b9c1ea94df7037d2c77b062c2e314a8",
+            "datavalue": {
+              "value": {
+                "text": "Caisse des Dépôts et Consignations",
+                "language": "fr"
+              },
+              "type": "monolingualtext"
+            },
+            "datatype": "monolingualtext"
+          },
+          "type": "statement",
+          "id": "Q846484$29b2c07d-4028-1105-f3b0-506d79ec55c4",
+          "rank": "normal",
+          "references": [
+            {
+              "hash": "ec626e2a48eef15222549ff1dadaacd336244525",
+              "snaks": {
+                "P248": [
+                  {
+                    "snaktype": "value",
+                    "property": "P248",
+                    "hash": "12b1e8ac078a4d66a85e6514fd89ae433c3bcffd",
+                    "datavalue": {
+                      "value": {
+                        "entity-type": "item",
+                        "numeric-id": 3480047,
+                        "id": "Q3480047"
+                      },
+                      "type": "wikibase-entityid"
+                    },
+                    "datatype": "wikibase-item"
+                  }
+                ],
+                "P854": [
+                  {
+                    "snaktype": "value",
+                    "property": "P854",
+                    "hash": "ad1b8feb9d53f1c8d48243725a7ae172c441b477",
+                    "datavalue": {
+                      "value": "https://lannuaire.service-public.fr/institutions-juridictions/20b442d5-1447-44db-a2f9-e7f7462e804d",
+                      "type": "string"
+                    },
+                    "datatype": "url"
+                  }
+                ],
+                "P813": [
+                  {
+                    "snaktype": "value",
+                    "property": "P813",
+                    "hash": "ce09935f461afb5b9c5d45a5a1243d184b3d28dc",
+                    "datavalue": {
+                      "value": {
+                        "time": "+2023-04-09T00:00:00Z",
+                        "timezone": 0,
+                        "before": 0,
+                        "after": 0,
+                        "precision": 11,
+                        "calendarmodel": "http://www.wikidata.org/entity/Q1985727"
+                      },
+                      "type": "time"
+                    },
+                    "datatype": "time"
+                  }
+                ]
+              },
+              "snaks-order": [
+                "P248",
+                "P854",
+                "P813"
+              ]
+            }
+          ]
+        },
+        {
+          "mainsnak": {
+            "snaktype": "value",
+            "property": "P1448",
+            "hash": "1da7798dcba843cc55bf7bc4b77dc7af4a98aba8",
+            "datavalue": {
+              "value": {
+                "text": "CAISSE DES DEPOTS ET CONSIGNATIONS",
+                "language": "fr"
+              },
+              "type": "monolingualtext"
+            },
+            "datatype": "monolingualtext"
+          },
+          "type": "statement",
+          "qualifiers": {
+            "P1013": [
+              {
+                "snaktype": "value",
+                "property": "P1013",
+                "hash": "459309ea1c2d5d2e4e91cc7b22a290e5219dfcf4",
+                "datavalue": {
+                  "value": {
+                    "entity-type": "item",
+                    "numeric-id": 131741681,
+                    "id": "Q131741681"
+                  },
+                  "type": "wikibase-entityid"
+                },
+                "datatype": "wikibase-item"
+              }
+            ]
+          },
+          "qualifiers-order": [
+            "P1013"
+          ],
+          "id": "Q846484$7998F56E-DAC5-4AB9-ADA5-F7574EDD34C6",
+          "rank": "normal",
+          "references": [
+            {
+              "hash": "1a7fabd7358c8394d285081e157f89334c64a222",
+              "snaks": {
+                "P248": [
+                  {
+                    "snaktype": "value",
+                    "property": "P248",
+                    "hash": "edd6a048cc3c96bc5b21a4cf77977f233b26ab76",
+                    "datavalue": {
+                      "value": {
+                        "entity-type": "item",
+                        "numeric-id": 3509449,
+                        "id": "Q3509449"
+                      },
+                      "type": "wikibase-entityid"
+                    },
+                    "datatype": "wikibase-item"
+                  }
+                ],
+                "P5017": [
+                  {
+                    "snaktype": "value",
+                    "property": "P5017",
+                    "hash": "78be07eb68003b5dd573298e64fa5d7aeddeae3d",
+                    "datavalue": {
+                      "value": {
+                        "time": "+2022-07-13T00:00:00Z",
+                        "timezone": 0,
+                        "before": 0,
+                        "after": 0,
+                        "precision": 11,
+                        "calendarmodel": "http://www.wikidata.org/entity/Q1985727"
+                      },
+                      "type": "time"
+                    },
+                    "datatype": "time"
+                  }
+                ]
+              },
+              "snaks-order": [
+                "P248",
+                "P5017"
+              ]
+            }
+          ]
+        }
+      ],
+      "P2088": [
+        {
+          "mainsnak": {
+            "snaktype": "value",
+            "property": "P2088",
+            "hash": "86faf4adb23e912de583f2838befe6a5e3aa17ee",
+            "datavalue": {
+              "value": "the-caisse-des-d-p-ts",
+              "type": "string"
+            },
+            "datatype": "external-id"
+          },
+          "type": "statement",
+          "id": "Q846484$138E49DA-FB03-4A0C-A844-D9C0160134F5",
+          "rank": "normal"
+        }
+      ],
+      "P6671": [
+        {
+          "mainsnak": {
+            "snaktype": "value",
+            "property": "P6671",
+            "hash": "f3fb4384eb9a2063d969b47dfcb1781f9cc81df7",
+            "datavalue": {
+              "value": "institutions-juridictions/20b442d5-1447-44db-a2f9-e7f7462e804d",
+              "type": "string"
+            },
+            "datatype": "external-id"
+          },
+          "type": "statement",
+          "id": "Q846484$0e1dfa53-44ce-4f71-28f1-14a7a50c50e1",
+          "rank": "normal"
+        }
+      ],
+      "P1616": [
+        {
+          "mainsnak": {
+            "snaktype": "value",
+            "property": "P1616",
+            "hash": "ea877083488b658c9ca811401abe740634f19d52",
+            "datavalue": {
+              "value": "180020026",
+              "type": "string"
+            },
+            "datatype": "external-id"
+          },
+          "type": "statement",
+          "id": "Q846484$B9DDD09A-F4AB-4FB6-8CB5-B7633ABA934D",
+          "rank": "normal",
+          "references": [
+            {
+              "hash": "1a7fabd7358c8394d285081e157f89334c64a222",
+              "snaks": {
+                "P248": [
+                  {
+                    "snaktype": "value",
+                    "property": "P248",
+                    "hash": "edd6a048cc3c96bc5b21a4cf77977f233b26ab76",
+                    "datavalue": {
+                      "value": {
+                        "entity-type": "item",
+                        "numeric-id": 3509449,
+                        "id": "Q3509449"
+                      },
+                      "type": "wikibase-entityid"
+                    },
+                    "datatype": "wikibase-item"
+                  }
+                ],
+                "P5017": [
+                  {
+                    "snaktype": "value",
+                    "property": "P5017",
+                    "hash": "78be07eb68003b5dd573298e64fa5d7aeddeae3d",
+                    "datavalue": {
+                      "value": {
+                        "time": "+2022-07-13T00:00:00Z",
+                        "timezone": 0,
+                        "before": 0,
+                        "after": 0,
+                        "precision": 11,
+                        "calendarmodel": "http://www.wikidata.org/entity/Q1985727"
+                      },
+                      "type": "time"
+                    },
+                    "datatype": "time"
+                  }
+                ]
+              },
+              "snaks-order": [
+                "P248",
+                "P5017"
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    "sitelinks": {
+      "arwiki": {
+        "site": "arwiki",
+        "title": "صندوق الضمان دي ديبو",
+        "badges": [],
+        "url": "https://ar.wikipedia.org/wiki/%D8%B5%D9%86%D8%AF%D9%88%D9%82_%D8%A7%D9%84%D8%B6%D9%85%D8%A7%D9%86_%D8%AF%D9%8A_%D8%AF%D9%8A%D8%A8%D9%88"
+      },
+      "cswiki": {
+        "site": "cswiki",
+        "title": "Caisse des dépôts et consignations",
+        "badges": [],
+        "url": "https://cs.wikipedia.org/wiki/Caisse_des_d%C3%A9p%C3%B4ts_et_consignations"
+      },
+      "dewiki": {
+        "site": "dewiki",
+        "title": "Caisse des Dépôts",
+        "badges": [],
+        "url": "https://de.wikipedia.org/wiki/Caisse_des_D%C3%A9p%C3%B4ts"
+      },
+      "enwiki": {
+        "site": "enwiki",
+        "title": "Caisse des dépôts et consignations",
+        "badges": [],
+        "url": "https://en.wikipedia.org/wiki/Caisse_des_d%C3%A9p%C3%B4ts_et_consignations"
+      },
+      "euwiki": {
+        "site": "euwiki",
+        "title": "Caisse des dépôts et consignations",
+        "badges": [],
+        "url": "https://eu.wikipedia.org/wiki/Caisse_des_d%C3%A9p%C3%B4ts_et_consignations"
+      },
+      "frwiki": {
+        "site": "frwiki",
+        "title": "Caisse des dépôts et consignations",
+        "badges": [],
+        "url": "https://fr.wikipedia.org/wiki/Caisse_des_d%C3%A9p%C3%B4ts_et_consignations"
+      },
+      "idwiki": {
+        "site": "idwiki",
+        "title": "Caisse des dépôts et consignations",
+        "badges": [],
+        "url": "https://id.wikipedia.org/wiki/Caisse_des_d%C3%A9p%C3%B4ts_et_consignations"
+      },
+      "itwiki": {
+        "site": "itwiki",
+        "title": "Caisse des dépôts et consignations",
+        "badges": [],
+        "url": "https://it.wikipedia.org/wiki/Caisse_des_d%C3%A9p%C3%B4ts_et_consignations"
+      },
+      "jawiki": {
+        "site": "jawiki",
+        "title": "預金供託金庫",
+        "badges": [],
+        "url": "https://ja.wikipedia.org/wiki/%E9%A0%90%E9%87%91%E4%BE%9B%E8%A8%97%E9%87%91%E5%BA%AB"
+      },
+      "kowiki": {
+        "site": "kowiki",
+        "title": "예금보험공사 (프랑스)",
+        "badges": [],
+        "url": "https://ko.wikipedia.org/wiki/%EC%98%88%EA%B8%88%EB%B3%B4%ED%97%98%EA%B3%B5%EC%82%AC_(%ED%94%84%EB%9E%91%EC%8A%A4)"
+      },
+      "nlwiki": {
+        "site": "nlwiki",
+        "title": "Caisse des dépôts et consignations",
+        "badges": [],
+        "url": "https://nl.wikipedia.org/wiki/Caisse_des_d%C3%A9p%C3%B4ts_et_consignations"
+      },
+      "nowiki": {
+        "site": "nowiki",
+        "title": "Caisse des dépôts et consignations",
+        "badges": [],
+        "url": "https://no.wikipedia.org/wiki/Caisse_des_d%C3%A9p%C3%B4ts_et_consignations"
+      },
+      "plwiki": {
+        "site": "plwiki",
+        "title": "Caisse des dépôts et consignations",
+        "badges": [],
+        "url": "https://pl.wikipedia.org/wiki/Caisse_des_d%C3%A9p%C3%B4ts_et_consignations"
+      },
+      "rowiki": {
+        "site": "rowiki",
+        "title": "Caisse des dépôts et consignations",
+        "badges": [],
+        "url": "https://ro.wikipedia.org/wiki/Caisse_des_d%C3%A9p%C3%B4ts_et_consignations"
+      },
+      "ruwiki": {
+        "site": "ruwiki",
+        "title": "Caisse des Dépôts et Consignations",
+        "badges": [],
+        "url": "https://ru.wikipedia.org/wiki/Caisse_des_D%C3%A9p%C3%B4ts_et_Consignations"
+      },
+      "zhwiki": {
+        "site": "zhwiki",
+        "title": "法国存托银行",
+        "badges": [],
+        "url": "https://zh.wikipedia.org/wiki/%E6%B3%95%E5%9B%BD%E5%AD%98%E6%89%98%E9%93%B6%E8%A1%8C"
+      }
+    }
+  }
+}

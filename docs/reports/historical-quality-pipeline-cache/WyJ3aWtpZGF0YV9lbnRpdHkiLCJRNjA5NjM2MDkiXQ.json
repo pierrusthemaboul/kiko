@@ -1,0 +1,228 @@
+{
+  "pageid": 60817262,
+  "ns": 0,
+  "title": "Q60963609",
+  "lastrevid": 2303939751,
+  "modified": "2025-01-29T21:09:02Z",
+  "type": "item",
+  "id": "Q60963609",
+  "labels": {
+    "fr": {
+      "language": "fr",
+      "value": "Sous-marin à propulsion humaine"
+    },
+    "en": {
+      "language": "en",
+      "value": "human-powered submarine"
+    },
+    "de": {
+      "language": "de",
+      "value": "Muskelkraft-getriebenes U-Boot"
+    },
+    "sv": {
+      "language": "sv",
+      "value": "ubåt framdriven med muskelkraft"
+    },
+    "nb": {
+      "language": "nb",
+      "value": "menneskedrevet undervannsbåt"
+    }
+  },
+  "descriptions": {
+    "en": {
+      "language": "en",
+      "value": "submarine propelled by manpower"
+    },
+    "de": {
+      "language": "de",
+      "value": "mit Muskelkraft getriebenes Unterseeboot"
+    },
+    "sv": {
+      "language": "sv",
+      "value": "ubåt som drivs med muskelkraft"
+    }
+  },
+  "aliases": {
+    "en": [
+      {
+        "language": "en",
+        "value": "human-powered U-boat"
+      },
+      {
+        "language": "en",
+        "value": "hand-powered submarine"
+      }
+    ],
+    "de": [
+      {
+        "language": "de",
+        "value": "handgetriebenes U-Boot"
+      }
+    ]
+  },
+  "claims": {
+    "P2671": [
+      {
+        "mainsnak": {
+          "snaktype": "value",
+          "property": "P2671",
+          "hash": "f4de94de7338cbf48e19b954222e2fda7e77a065",
+          "datavalue": {
+            "value": "/g/11fctqyygh",
+            "type": "string"
+          },
+          "datatype": "external-id"
+        },
+        "type": "statement",
+        "id": "Q60963609$F5CF6723-363D-4D97-A19F-D162A2D3C167",
+        "rank": "normal"
+      }
+    ],
+    "P910": [
+      {
+        "mainsnak": {
+          "snaktype": "value",
+          "property": "P910",
+          "hash": "4ecf4c4b02b1a1a1c3ed72a32bdb70884e3c7367",
+          "datavalue": {
+            "value": {
+              "entity-type": "item",
+              "numeric-id": 25330189,
+              "id": "Q25330189"
+            },
+            "type": "wikibase-entityid"
+          },
+          "datatype": "wikibase-item"
+        },
+        "type": "statement",
+        "id": "Q60963609$accd7771-412b-25ef-0ced-7c27bff1a0a7",
+        "rank": "normal"
+      }
+    ],
+    "P279": [
+      {
+        "mainsnak": {
+          "snaktype": "value",
+          "property": "P279",
+          "hash": "5523b08cda452d9f817e8804bb4cc4392778448f",
+          "datavalue": {
+            "value": {
+              "entity-type": "item",
+              "numeric-id": 5936791,
+              "id": "Q5936791"
+            },
+            "type": "wikibase-entityid"
+          },
+          "datatype": "wikibase-item"
+        },
+        "type": "statement",
+        "id": "Q60963609$835B5127-EBBD-466C-A7CA-659D205C3D64",
+        "rank": "normal"
+      },
+      {
+        "mainsnak": {
+          "snaktype": "value",
+          "property": "P279",
+          "hash": "b5c07ee408e2af89b4b32e4bd8b0340f91803add",
+          "datavalue": {
+            "value": {
+              "entity-type": "item",
+              "numeric-id": 2811,
+              "id": "Q2811"
+            },
+            "type": "wikibase-entityid"
+          },
+          "datatype": "wikibase-item"
+        },
+        "type": "statement",
+        "id": "Q60963609$DAF6FBA2-BAE0-4C3C-B321-7AE9D06DCD41",
+        "rank": "normal"
+      }
+    ],
+    "P18": [
+      {
+        "mainsnak": {
+          "snaktype": "value",
+          "property": "P18",
+          "hash": "c7d8842ff38452efef9172f275859e9dbf8929bd",
+          "datavalue": {
+            "value": "PSM V58 D167 Confederate submarine which sank the housatonic.png",
+            "type": "string"
+          },
+          "datatype": "commonsMedia"
+        },
+        "type": "statement",
+        "id": "Q60963609$D864B031-0A3C-4466-84D7-2673104229E7",
+        "rank": "normal"
+      },
+      {
+        "mainsnak": {
+          "snaktype": "value",
+          "property": "P18",
+          "hash": "22f8d5cbfb2035a7ff9f220e4df62b7eaa9ec6f0",
+          "datavalue": {
+            "value": "Hunley-1.jpg",
+            "type": "string"
+          },
+          "datatype": "commonsMedia"
+        },
+        "type": "statement",
+        "id": "Q60963609$18975BCE-C869-4EE1-9EC3-AF2CC272BBDC",
+        "rank": "normal"
+      },
+      {
+        "mainsnak": {
+          "snaktype": "value",
+          "property": "P18",
+          "hash": "f8de4427067b31463937ff2a535c32a79eba0108",
+          "datavalue": {
+            "value": "Hunley 001.jpg",
+            "type": "string"
+          },
+          "datatype": "commonsMedia"
+        },
+        "type": "statement",
+        "id": "Q60963609$096A7926-412E-49C8-A2E4-2ABE54DDC2C2",
+        "rank": "normal"
+      },
+      {
+        "mainsnak": {
+          "snaktype": "value",
+          "property": "P18",
+          "hash": "84a75a833a698c105f1abf02860fc55b4d34d0bd",
+          "datavalue": {
+            "value": "Brandttaucher 01.jpg",
+            "type": "string"
+          },
+          "datatype": "commonsMedia"
+        },
+        "type": "statement",
+        "id": "Q60963609$76BE26E1-001B-4847-87A4-352D24E02896",
+        "rank": "normal"
+      },
+      {
+        "mainsnak": {
+          "snaktype": "value",
+          "property": "P18",
+          "hash": "8730b834e6e9d1f55a2dd8561e83773fef790915",
+          "datavalue": {
+            "value": "Brandtaucher Dresden (retuschiert).jpg",
+            "type": "string"
+          },
+          "datatype": "commonsMedia"
+        },
+        "type": "statement",
+        "id": "Q60963609$4BA27C08-20FE-47AA-B61D-5DD5E2B589E0",
+        "rank": "normal"
+      }
+    ]
+  },
+  "sitelinks": {
+    "frwiki": {
+      "site": "frwiki",
+      "title": "Sous-marin à propulsion humaine",
+      "badges": [],
+      "url": "https://fr.wikipedia.org/wiki/Sous-marin_%C3%A0_propulsion_humaine"
+    }
+  }
+}

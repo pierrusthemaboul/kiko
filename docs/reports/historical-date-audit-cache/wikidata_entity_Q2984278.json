@@ -1,0 +1,243 @@
+{
+  "saved_at": "2026-03-07T12:58:09.552Z",
+  "value": {
+    "pageid": 2853676,
+    "ns": 0,
+    "title": "Q2984278",
+    "lastrevid": 2447143248,
+    "modified": "2025-12-25T22:29:47Z",
+    "type": "item",
+    "id": "Q2984278",
+    "labels": {
+      "fr": {
+        "language": "fr",
+        "value": "Colonisation du Congo"
+      },
+      "en": {
+        "language": "en",
+        "value": "Colonization of the Congo Basin"
+      },
+      "ja": {
+        "language": "ja",
+        "value": "コンゴの植民地支配"
+      },
+      "eo": {
+        "language": "eo",
+        "value": "koloniado de Kongo"
+      },
+      "zh": {
+        "language": "zh",
+        "value": "剛果殖民化"
+      },
+      "es": {
+        "language": "es",
+        "value": "colonización de la cuenca del Congo"
+      },
+      "ha": {
+        "language": "ha",
+        "value": "Mulkin mallaka na Kogin Kongo"
+      },
+      "ln": {
+        "language": "ln",
+        "value": "tango ya bowumbu"
+      }
+    },
+    "descriptions": {
+      "fr": {
+        "language": "fr",
+        "value": "histoire de l'occupation du territoire actuel du Congo Kinshasa par les Européens depuis le XVIe siècle jusqu'en 1960"
+      },
+      "en": {
+        "language": "en",
+        "value": "European colonization of Africa's Congo Basin"
+      },
+      "ln": {
+        "language": "ln",
+        "value": "lisolo ya congo na tango ezalaki nasé ya bowumbu yaba mindele na mibu mileka pona ko konza mboka congo"
+      },
+      "lua": {
+        "language": "lua",
+        "value": "Dikokesha dia ditunga dia Congo diakenzeka mu tshikondo tshia kumbukila ku dikebulula dia kumpala dia ditunga dia Congo-Kinshasa kudi Henry Morton Stanley (1867) too ne ku dikuata dia ditunga kudi Mukalenge Léopold II wa mu Belgique (1885)."
+      }
+    },
+    "aliases": {
+      "fr": [
+        {
+          "language": "fr",
+          "value": "Colonisation du congo"
+        },
+        {
+          "language": "fr",
+          "value": "Colonisation Du Congo"
+        }
+      ],
+      "ja": [
+        {
+          "language": "ja",
+          "value": "コンゴの植民地化"
+        },
+        {
+          "language": "ja",
+          "value": "コンゴ盆地の植民地化"
+        }
+      ]
+    },
+    "claims": {
+      "P17": [
+        {
+          "mainsnak": {
+            "snaktype": "value",
+            "property": "P17",
+            "hash": "c2859f311753176d6bdfa7da54ceeeac7acb52c8",
+            "datavalue": {
+              "value": {
+                "entity-type": "item",
+                "numeric-id": 31,
+                "id": "Q31"
+              },
+              "type": "wikibase-entityid"
+            },
+            "datatype": "wikibase-item"
+          },
+          "type": "statement",
+          "id": "Q2984278$EA65D9F8-399D-4A53-9EE5-E007B1A94540",
+          "rank": "normal"
+        }
+      ],
+      "P989": [
+        {
+          "mainsnak": {
+            "snaktype": "value",
+            "property": "P989",
+            "hash": "81b493fdfd2b01b163a9318c339012882124c8a3",
+            "datavalue": {
+              "value": "En-ColonizationoftheCongo-article.ogg",
+              "type": "string"
+            },
+            "datatype": "commonsMedia"
+          },
+          "type": "statement",
+          "qualifiers": {
+            "P407": [
+              {
+                "snaktype": "value",
+                "property": "P407",
+                "hash": "daf1c4fcb58181b02dff9cc89deb084004ddae4b",
+                "datavalue": {
+                  "value": {
+                    "entity-type": "item",
+                    "numeric-id": 1860,
+                    "id": "Q1860"
+                  },
+                  "type": "wikibase-entityid"
+                },
+                "datatype": "wikibase-item"
+              }
+            ],
+            "P10135": [
+              {
+                "snaktype": "value",
+                "property": "P10135",
+                "hash": "04aea377f6bb6ab15336cf7ff41f17890cd91173",
+                "datavalue": {
+                  "value": {
+                    "time": "+2017-00-00T00:00:00Z",
+                    "timezone": 0,
+                    "before": 0,
+                    "after": 0,
+                    "precision": 9,
+                    "calendarmodel": "http://www.wikidata.org/entity/Q1985727"
+                  },
+                  "type": "time"
+                },
+                "datatype": "time"
+              }
+            ]
+          },
+          "qualifiers-order": [
+            "P407",
+            "P10135"
+          ],
+          "id": "Q2984278$80792521-CF96-4A67-A3F7-BAE53331D6AB",
+          "rank": "normal",
+          "references": [
+            {
+              "hash": "432a7694d2f598ec02918fd8834ae637480d7daf",
+              "snaks": {
+                "P143": [
+                  {
+                    "snaktype": "value",
+                    "property": "P143",
+                    "hash": "e4f6d9441d0600513c4533c672b5ab472dc73694",
+                    "datavalue": {
+                      "value": {
+                        "entity-type": "item",
+                        "numeric-id": 328,
+                        "id": "Q328"
+                      },
+                      "type": "wikibase-entityid"
+                    },
+                    "datatype": "wikibase-item"
+                  }
+                ],
+                "P4656": [
+                  {
+                    "snaktype": "value",
+                    "property": "P4656",
+                    "hash": "614d04184225230211de7614a00c740bc025b562",
+                    "datavalue": {
+                      "value": "https://en.wikipedia.org/w/index.php?title=Colonization_of_the_Congo&oldid=917214425",
+                      "type": "string"
+                    },
+                    "datatype": "url"
+                  }
+                ]
+              },
+              "snaks-order": [
+                "P143",
+                "P4656"
+              ]
+            }
+          ]
+        }
+      ],
+      "P646": [
+        {
+          "mainsnak": {
+            "snaktype": "value",
+            "property": "P646",
+            "hash": "ab1c1fe731b705701f82ea98e339d10680e93350",
+            "datavalue": {
+              "value": "/m/04nwn_",
+              "type": "string"
+            },
+            "datatype": "external-id"
+          },
+          "type": "statement",
+          "id": "Q2984278$C64EDA37-3F3A-4959-B05C-1912C33B608D",
+          "rank": "normal"
+        }
+      ]
+    },
+    "sitelinks": {
+      "enwiki": {
+        "site": "enwiki",
+        "title": "Colonization of the Congo Basin",
+        "badges": [],
+        "url": "https://en.wikipedia.org/wiki/Colonization_of_the_Congo_Basin"
+      },
+      "frwiki": {
+        "site": "frwiki",
+        "title": "Colonisation du Congo",
+        "badges": [],
+        "url": "https://fr.wikipedia.org/wiki/Colonisation_du_Congo"
+      },
+      "hawiki": {
+        "site": "hawiki",
+        "title": "Mulkin mallaka na Kogin Kongo",
+        "badges": [],
+        "url": "https://ha.wikipedia.org/wiki/Mulkin_mallaka_na_Kogin_Kongo"
+      }
+    }
+  }
+}

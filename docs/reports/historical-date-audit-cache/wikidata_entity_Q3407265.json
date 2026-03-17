@@ -1,0 +1,149 @@
+{
+  "saved_at": "2026-03-07T16:58:20.756Z",
+  "value": {
+    "pageid": 3246712,
+    "ns": 0,
+    "title": "Q3407265",
+    "lastrevid": 2313878865,
+    "modified": "2025-02-19T14:48:04Z",
+    "type": "item",
+    "id": "Q3407265",
+    "labels": {
+      "fr": {
+        "language": "fr",
+        "value": "projet de loi Devaquet"
+      },
+      "ja": {
+        "language": "ja",
+        "value": "ドゥヴァケ法案"
+      }
+    },
+    "descriptions": {
+      "fr": {
+        "language": "fr",
+        "value": "projet de loi présenté en 1986 qui vise à réformer les universités françaises"
+      }
+    },
+    "aliases": {
+      "fr": [
+        {
+          "language": "fr",
+          "value": "Projet Devaquet"
+        },
+        {
+          "language": "fr",
+          "value": "Mouvement de 1986"
+        },
+        {
+          "language": "fr",
+          "value": "Mouvement contre le projet devaquet"
+        },
+        {
+          "language": "fr",
+          "value": "Mouvement Contre Le Projet Devaquet"
+        },
+        {
+          "language": "fr",
+          "value": "Loi Devaquet"
+        },
+        {
+          "language": "fr",
+          "value": "Mouvement contre le projet Devaquet"
+        }
+      ]
+    },
+    "claims": {
+      "P31": [
+        {
+          "mainsnak": {
+            "snaktype": "value",
+            "property": "P31",
+            "hash": "dd17e4e8b006a6a77b37d266f678aee6d9345ea3",
+            "datavalue": {
+              "value": {
+                "entity-type": "item",
+                "numeric-id": 686822,
+                "id": "Q686822"
+              },
+              "type": "wikibase-entityid"
+            },
+            "datatype": "wikibase-item"
+          },
+          "type": "statement",
+          "id": "Q3407265$d339b44a-4068-b552-4724-28be65e9904f",
+          "rank": "normal"
+        }
+      ],
+      "P17": [
+        {
+          "mainsnak": {
+            "snaktype": "value",
+            "property": "P17",
+            "hash": "c05db5d169c2560b9799d567a803d20a392f53e4",
+            "datavalue": {
+              "value": {
+                "entity-type": "item",
+                "numeric-id": 142,
+                "id": "Q142"
+              },
+              "type": "wikibase-entityid"
+            },
+            "datatype": "wikibase-item"
+          },
+          "type": "statement",
+          "id": "Q3407265$b46486bd-4e6e-ec71-892d-b324283a77f5",
+          "rank": "normal"
+        }
+      ],
+      "P585": [
+        {
+          "mainsnak": {
+            "snaktype": "value",
+            "property": "P585",
+            "hash": "fdf9823c2c78f35be683dbabbdc70ae7ae1ea797",
+            "datavalue": {
+              "value": {
+                "time": "+1986-00-00T00:00:00Z",
+                "timezone": 0,
+                "before": 0,
+                "after": 0,
+                "precision": 9,
+                "calendarmodel": "http://www.wikidata.org/entity/Q1985727"
+              },
+              "type": "time"
+            },
+            "datatype": "time"
+          },
+          "type": "statement",
+          "id": "Q3407265$8217d48b-400a-b2ff-b4fc-ad5e2aa06a8a",
+          "rank": "normal"
+        }
+      ],
+      "P2671": [
+        {
+          "mainsnak": {
+            "snaktype": "value",
+            "property": "P2671",
+            "hash": "9eb5967d5346052ccb8f4505dd7a30bd98b1f84e",
+            "datavalue": {
+              "value": "/g/122_9gtq",
+              "type": "string"
+            },
+            "datatype": "external-id"
+          },
+          "type": "statement",
+          "id": "Q3407265$628B8E9E-01CA-47B9-9092-3362226DA601",
+          "rank": "normal"
+        }
+      ]
+    },
+    "sitelinks": {
+      "frwiki": {
+        "site": "frwiki",
+        "title": "Projet de loi Devaquet",
+        "badges": [],
+        "url": "https://fr.wikipedia.org/wiki/Projet_de_loi_Devaquet"
+      }
+    }
+  }
+}

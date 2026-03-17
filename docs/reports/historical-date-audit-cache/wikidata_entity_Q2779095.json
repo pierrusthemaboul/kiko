@@ -1,0 +1,327 @@
+{
+  "saved_at": "2026-03-07T13:12:10.474Z",
+  "value": {
+    "pageid": 2666640,
+    "ns": 0,
+    "title": "Q2779095",
+    "lastrevid": 2282563453,
+    "modified": "2024-12-02T05:26:25Z",
+    "type": "item",
+    "id": "Q2779095",
+    "labels": {
+      "en": {
+        "language": "en",
+        "value": "Mutual Defense Assistance Act"
+      },
+      "it": {
+        "language": "it",
+        "value": "Mutual Defense Assistance Program"
+      },
+      "nl": {
+        "language": "nl",
+        "value": "Mutual Defense Aid Program"
+      },
+      "fr": {
+        "language": "fr",
+        "value": "Mutual Defense Assistance Act"
+      },
+      "nb": {
+        "language": "nb",
+        "value": "Mutual Defense Assistance Program"
+      },
+      "ja": {
+        "language": "ja",
+        "value": "相互防衛援助統制法"
+      },
+      "ru": {
+        "language": "ru",
+        "value": "Закон Бэттла"
+      },
+      "zh": {
+        "language": "zh",
+        "value": "共同防衛援助法"
+      },
+      "pt": {
+        "language": "pt",
+        "value": "Mutual Defense and Assistence Program"
+      },
+      "id": {
+        "language": "id",
+        "value": "Undang-Undang Bantuan Pertahanan Timbal Balik"
+      }
+    },
+    "descriptions": {
+      "en": {
+        "language": "en",
+        "value": "United States law, part of the Marshall Plan"
+      },
+      "zh-hant": {
+        "language": "zh-hant",
+        "value": "美國法律"
+      }
+    },
+    "aliases": {
+      "nl": [
+        {
+          "language": "nl",
+          "value": "MDAP"
+        }
+      ],
+      "ja": [
+        {
+          "language": "ja",
+          "value": "相互防衛援助協定"
+        },
+        {
+          "language": "ja",
+          "value": "相互防衛援助法"
+        },
+        {
+          "language": "ja",
+          "value": "相互防衛援助計画（MDAP）"
+        }
+      ],
+      "zh": [
+        {
+          "language": "zh",
+          "value": "二戰同盟政策"
+        },
+        {
+          "language": "zh",
+          "value": "共同防衛互助法令"
+        },
+        {
+          "language": "zh",
+          "value": "軍事援助方案"
+        },
+        {
+          "language": "zh",
+          "value": "共同防禦條約"
+        }
+      ],
+      "nb": [
+        {
+          "language": "nb",
+          "value": "Military Assistance Program"
+        }
+      ],
+      "pt": [
+        {
+          "language": "pt",
+          "value": "MDAP"
+        },
+        {
+          "language": "pt",
+          "value": "Major Defense Acquisition Program"
+        },
+        {
+          "language": "pt",
+          "value": "Mutual Defense Assistance Program"
+        }
+      ]
+    },
+    "claims": {
+      "P646": [
+        {
+          "mainsnak": {
+            "snaktype": "value",
+            "property": "P646",
+            "hash": "17c90b6a0877e959306c1881bf6794869ef86614",
+            "datavalue": {
+              "value": "/m/02k44c",
+              "type": "string"
+            },
+            "datatype": "external-id"
+          },
+          "type": "statement",
+          "id": "Q2779095$BCCA6549-3061-419B-BCA9-94A598BF70E1",
+          "rank": "normal",
+          "references": [
+            {
+              "hash": "2b00cb481cddcac7623114367489b5c194901c4a",
+              "snaks": {
+                "P248": [
+                  {
+                    "snaktype": "value",
+                    "property": "P248",
+                    "hash": "a94b740202b097dd33355e0e6c00e54b9395e5e0",
+                    "datavalue": {
+                      "value": {
+                        "entity-type": "item",
+                        "numeric-id": 15241312,
+                        "id": "Q15241312"
+                      },
+                      "type": "wikibase-entityid"
+                    },
+                    "datatype": "wikibase-item"
+                  }
+                ],
+                "P577": [
+                  {
+                    "snaktype": "value",
+                    "property": "P577",
+                    "hash": "fde79ecb015112d2f29229ccc1ec514ed3e71fa2",
+                    "datavalue": {
+                      "value": {
+                        "time": "+2013-10-28T00:00:00Z",
+                        "timezone": 0,
+                        "before": 0,
+                        "after": 0,
+                        "precision": 11,
+                        "calendarmodel": "http://www.wikidata.org/entity/Q1985727"
+                      },
+                      "type": "time"
+                    },
+                    "datatype": "time"
+                  }
+                ]
+              },
+              "snaks-order": [
+                "P248",
+                "P577"
+              ]
+            }
+          ]
+        }
+      ],
+      "P2924": [
+        {
+          "mainsnak": {
+            "snaktype": "value",
+            "property": "P2924",
+            "hash": "593784acb232b2e458d621a762294db9488fce51",
+            "datavalue": {
+              "value": "1893074",
+              "type": "string"
+            },
+            "datatype": "external-id"
+          },
+          "type": "statement",
+          "qualifiers": {
+            "P1810": [
+              {
+                "snaktype": "value",
+                "property": "P1810",
+                "hash": "13256979ad6bce3573635bc5bc66e1f3bf781f7c",
+                "datavalue": {
+                  "value": "«БЭТТЛА ЗАКОН» 1951",
+                  "type": "string"
+                },
+                "datatype": "string"
+              }
+            ]
+          },
+          "qualifiers-order": [
+            "P1810"
+          ],
+          "id": "Q2779095$c6c855c4-44e0-ffb5-7dae-3b01777c2cc8",
+          "rank": "normal"
+        }
+      ],
+      "P1813": [
+        {
+          "mainsnak": {
+            "snaktype": "value",
+            "property": "P1813",
+            "hash": "c85c786b01f8a988c86802f770c7ade95cb9ee40",
+            "datavalue": {
+              "value": {
+                "text": "MDAP",
+                "language": "en"
+              },
+              "type": "monolingualtext"
+            },
+            "datatype": "monolingualtext"
+          },
+          "type": "statement",
+          "id": "Q2779095$369946f2-40d2-c51d-dd3b-cabbc8b816b8",
+          "rank": "normal"
+        }
+      ],
+      "P31": [
+        {
+          "mainsnak": {
+            "snaktype": "value",
+            "property": "P31",
+            "hash": "773a302c2d8912527108ffe3b168b547a4278bf8",
+            "datavalue": {
+              "value": {
+                "entity-type": "item",
+                "numeric-id": 476068,
+                "id": "Q476068"
+              },
+              "type": "wikibase-entityid"
+            },
+            "datatype": "wikibase-item"
+          },
+          "type": "statement",
+          "id": "Q2779095$d3214327-4fd0-8111-1558-a78aecc0210b",
+          "rank": "normal"
+        },
+        {
+          "mainsnak": {
+            "snaktype": "value",
+            "property": "P31",
+            "hash": "c989f7663346a81db0da30981b575350cea3de04",
+            "datavalue": {
+              "value": {
+                "entity-type": "item",
+                "numeric-id": 170584,
+                "id": "Q170584"
+              },
+              "type": "wikibase-entityid"
+            },
+            "datatype": "wikibase-item"
+          },
+          "type": "statement",
+          "id": "Q2779095$838af3f3-497a-b0e7-1565-aa2cbea0d919",
+          "rank": "normal"
+        }
+      ]
+    },
+    "sitelinks": {
+      "enwiki": {
+        "site": "enwiki",
+        "title": "Mutual Defense Assistance Act",
+        "badges": [],
+        "url": "https://en.wikipedia.org/wiki/Mutual_Defense_Assistance_Act"
+      },
+      "frwiki": {
+        "site": "frwiki",
+        "title": "Mutual Defense Assistance Act",
+        "badges": [],
+        "url": "https://fr.wikipedia.org/wiki/Mutual_Defense_Assistance_Act"
+      },
+      "idwiki": {
+        "site": "idwiki",
+        "title": "Undang-Undang Bantuan Pertahanan Timbal Balik",
+        "badges": [],
+        "url": "https://id.wikipedia.org/wiki/Undang-Undang_Bantuan_Pertahanan_Timbal_Balik"
+      },
+      "itwiki": {
+        "site": "itwiki",
+        "title": "Mutual Defense Assistance Program",
+        "badges": [],
+        "url": "https://it.wikipedia.org/wiki/Mutual_Defense_Assistance_Program"
+      },
+      "nlwiki": {
+        "site": "nlwiki",
+        "title": "Mutual Defense Aid Program",
+        "badges": [],
+        "url": "https://nl.wikipedia.org/wiki/Mutual_Defense_Aid_Program"
+      },
+      "nowiki": {
+        "site": "nowiki",
+        "title": "Mutual Defense Assistance Program",
+        "badges": [],
+        "url": "https://no.wikipedia.org/wiki/Mutual_Defense_Assistance_Program"
+      },
+      "zhwiki": {
+        "site": "zhwiki",
+        "title": "共同防御援助法案",
+        "badges": [],
+        "url": "https://zh.wikipedia.org/wiki/%E5%85%B1%E5%90%8C%E9%98%B2%E5%BE%A1%E6%8F%B4%E5%8A%A9%E6%B3%95%E6%A1%88"
+      }
+    }
+  }
+}

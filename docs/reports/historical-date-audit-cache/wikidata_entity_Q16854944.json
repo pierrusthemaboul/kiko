@@ -1,0 +1,149 @@
+{
+  "saved_at": "2026-03-07T16:27:10.117Z",
+  "value": {
+    "pageid": 18456856,
+    "ns": 0,
+    "title": "Q16854944",
+    "lastrevid": 2431957827,
+    "modified": "2025-11-20T19:33:42Z",
+    "type": "item",
+    "id": "Q16854944",
+    "labels": {
+      "fr": {
+        "language": "fr",
+        "value": "arrestation du maréchal Pétain"
+      },
+      "en": {
+        "language": "en",
+        "value": "Arrest and trial of Philippe Petain"
+      }
+    },
+    "descriptions": {
+      "fr": {
+        "language": "fr",
+        "value": "arrestation en avril 1945 à la frontière franco-suisse"
+      }
+    },
+    "aliases": {},
+    "claims": {
+      "P585": [
+        {
+          "mainsnak": {
+            "snaktype": "value",
+            "property": "P585",
+            "hash": "fd3c60b478b11ec04e34435fc68bab39b01ffda2",
+            "datavalue": {
+              "value": {
+                "time": "+1945-04-26T00:00:00Z",
+                "timezone": 0,
+                "before": 0,
+                "after": 0,
+                "precision": 11,
+                "calendarmodel": "http://www.wikidata.org/entity/Q1985727"
+              },
+              "type": "time"
+            },
+            "datatype": "time"
+          },
+          "type": "statement",
+          "id": "Q16854944$91dccee5-4a81-ca18-42da-7d3160cd47ab",
+          "rank": "normal"
+        }
+      ],
+      "P2671": [
+        {
+          "mainsnak": {
+            "snaktype": "value",
+            "property": "P2671",
+            "hash": "47839fcb0f6ec8986e1c0825145c37fb2224b414",
+            "datavalue": {
+              "value": "/g/1s0482_70",
+              "type": "string"
+            },
+            "datatype": "external-id"
+          },
+          "type": "statement",
+          "id": "Q16854944$08A399D6-44A4-48E0-8A4C-F51BD5654C8E",
+          "rank": "normal"
+        }
+      ],
+      "P31": [
+        {
+          "mainsnak": {
+            "snaktype": "value",
+            "property": "P31",
+            "hash": "8e3acf3065aea562e132e480ae103b2ff0f23ce1",
+            "datavalue": {
+              "value": {
+                "entity-type": "item",
+                "numeric-id": 4204519,
+                "id": "Q4204519"
+              },
+              "type": "wikibase-entityid"
+            },
+            "datatype": "wikibase-item"
+          },
+          "type": "statement",
+          "id": "Q16854944$78e59fb6-4fc6-b127-61f2-2dbc2d15e81b",
+          "rank": "normal"
+        },
+        {
+          "mainsnak": {
+            "snaktype": "value",
+            "property": "P31",
+            "hash": "f6e12f16fa4b07052af975bfe71e874bdeca418d",
+            "datavalue": {
+              "value": {
+                "entity-type": "item",
+                "numeric-id": 1403016,
+                "id": "Q1403016"
+              },
+              "type": "wikibase-entityid"
+            },
+            "datatype": "wikibase-item"
+          },
+          "type": "statement",
+          "id": "Q16854944$a884057e-407f-22e2-77f6-a31f382aeac1",
+          "rank": "normal"
+        }
+      ],
+      "P276": [
+        {
+          "mainsnak": {
+            "snaktype": "value",
+            "property": "P276",
+            "hash": "1d66130e86624492c75167f08a4c438d98547ec4",
+            "datavalue": {
+              "value": {
+                "entity-type": "item",
+                "numeric-id": 1991697,
+                "id": "Q1991697"
+              },
+              "type": "wikibase-entityid"
+            },
+            "datatype": "wikibase-item"
+          },
+          "type": "statement",
+          "id": "Q16854944$4239af0b-4c53-2290-d5e4-ac34c6822940",
+          "rank": "normal"
+        }
+      ]
+    },
+    "sitelinks": {
+      "enwiki": {
+        "site": "enwiki",
+        "title": "Arrest and trial of Philippe Petain",
+        "badges": [
+          "Q70893996"
+        ],
+        "url": "https://en.wikipedia.org/wiki/Arrest_and_trial_of_Philippe_Petain"
+      },
+      "frwiki": {
+        "site": "frwiki",
+        "title": "Arrestation de Philippe Pétain",
+        "badges": [],
+        "url": "https://fr.wikipedia.org/wiki/Arrestation_de_Philippe_P%C3%A9tain"
+      }
+    }
+  }
+}

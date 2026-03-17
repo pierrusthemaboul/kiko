@@ -1,0 +1,415 @@
+{
+  "saved_at": "2026-03-07T13:33:26.541Z",
+  "value": {
+    "pageid": 19818426,
+    "ns": 0,
+    "title": "Q18288795",
+    "lastrevid": 2323191932,
+    "modified": "2025-03-11T16:11:23Z",
+    "type": "item",
+    "id": "Q18288795",
+    "labels": {
+      "fr": {
+        "language": "fr",
+        "value": "assassinat de Paul Doumer"
+      },
+      "ja": {
+        "language": "ja",
+        "value": "ポール・ドゥメール暗殺事件"
+      },
+      "ru": {
+        "language": "ru",
+        "value": "убийство Поля Думера"
+      },
+      "en": {
+        "language": "en",
+        "value": "assassination of Paul Doumer"
+      },
+      "sv": {
+        "language": "sv",
+        "value": "mordet på Paul Doumer"
+      },
+      "tr": {
+        "language": "tr",
+        "value": "Paul Doumer suikasti"
+      }
+    },
+    "descriptions": {
+      "fr": {
+        "language": "fr",
+        "value": "assassinat du 14e président de la République française en 1932"
+      }
+    },
+    "aliases": {
+      "en": [
+        {
+          "language": "en",
+          "value": "Paul Doumer assassination"
+        },
+        {
+          "language": "en",
+          "value": "Paul Doumer's assassination"
+        },
+        {
+          "language": "en",
+          "value": "murder of Paul Doumer"
+        },
+        {
+          "language": "en",
+          "value": "Paul Doumer's murder"
+        },
+        {
+          "language": "en",
+          "value": "Paul Doumer murder"
+        },
+        {
+          "language": "en",
+          "value": "killing of Paul Doumer"
+        },
+        {
+          "language": "en",
+          "value": "Paul Doumer's killing"
+        },
+        {
+          "language": "en",
+          "value": "Paul Doumer killing"
+        }
+      ]
+    },
+    "claims": {
+      "P585": [
+        {
+          "mainsnak": {
+            "snaktype": "value",
+            "property": "P585",
+            "hash": "3786661835c65aab0d9e1edf4bd8436de3616cc0",
+            "datavalue": {
+              "value": {
+                "time": "+1932-05-06T00:00:00Z",
+                "timezone": 0,
+                "before": 0,
+                "after": 0,
+                "precision": 11,
+                "calendarmodel": "http://www.wikidata.org/entity/Q1985727"
+              },
+              "type": "time"
+            },
+            "datatype": "time"
+          },
+          "type": "statement",
+          "qualifiers": {
+            "P4241": [
+              {
+                "snaktype": "value",
+                "property": "P4241",
+                "hash": "757eab7d867922b3e5b1049f10b787721e22af13",
+                "datavalue": {
+                  "value": {
+                    "entity-type": "item",
+                    "numeric-id": 55811778,
+                    "id": "Q55811778"
+                  },
+                  "type": "wikibase-entityid"
+                },
+                "datatype": "wikibase-item"
+              }
+            ]
+          },
+          "qualifiers-order": [
+            "P4241"
+          ],
+          "id": "Q18288795$64dfb858-4602-2dba-8eae-00be28391f7e",
+          "rank": "normal"
+        }
+      ],
+      "P276": [
+        {
+          "mainsnak": {
+            "snaktype": "value",
+            "property": "P276",
+            "hash": "f8f76f57afea3c2e40c7f89b0aabb45569bff001",
+            "datavalue": {
+              "value": {
+                "entity-type": "item",
+                "numeric-id": 3145671,
+                "id": "Q3145671"
+              },
+              "type": "wikibase-entityid"
+            },
+            "datatype": "wikibase-item"
+          },
+          "type": "statement",
+          "id": "Q18288795$30A15584-4BBA-4E13-9A6F-47CEC049CEF4",
+          "rank": "normal"
+        }
+      ],
+      "P710": [
+        {
+          "mainsnak": {
+            "snaktype": "value",
+            "property": "P710",
+            "hash": "b2d6199e60a57306adf339812f63025b99f86072",
+            "datavalue": {
+              "value": {
+                "entity-type": "item",
+                "numeric-id": 1337810,
+                "id": "Q1337810"
+              },
+              "type": "wikibase-entityid"
+            },
+            "datatype": "wikibase-item"
+          },
+          "type": "statement",
+          "id": "Q18288795$B7167B61-13F2-40A1-945B-288E9BF7B4A3",
+          "rank": "normal"
+        }
+      ],
+      "P17": [
+        {
+          "mainsnak": {
+            "snaktype": "value",
+            "property": "P17",
+            "hash": "c05db5d169c2560b9799d567a803d20a392f53e4",
+            "datavalue": {
+              "value": {
+                "entity-type": "item",
+                "numeric-id": 142,
+                "id": "Q142"
+              },
+              "type": "wikibase-entityid"
+            },
+            "datatype": "wikibase-item"
+          },
+          "type": "statement",
+          "id": "Q18288795$85E90F3E-DC14-4FA6-99E1-CD8DEF8C16B3",
+          "rank": "normal"
+        }
+      ],
+      "P1120": [
+        {
+          "mainsnak": {
+            "snaktype": "value",
+            "property": "P1120",
+            "hash": "8a4b795363cb3d8bc4895e91da93741f7a9c2802",
+            "datavalue": {
+              "value": {
+                "amount": "+1",
+                "unit": "1"
+              },
+              "type": "quantity"
+            },
+            "datatype": "quantity"
+          },
+          "type": "statement",
+          "id": "Q18288795$2c01e98e-448b-8954-134e-85261959feff",
+          "rank": "normal"
+        }
+      ],
+      "P1339": [
+        {
+          "mainsnak": {
+            "snaktype": "value",
+            "property": "P1339",
+            "hash": "bff61b2e44477e1e9b5b2879cc905eca817ba60a",
+            "datavalue": {
+              "value": {
+                "amount": "+1",
+                "unit": "1"
+              },
+              "type": "quantity"
+            },
+            "datatype": "quantity"
+          },
+          "type": "statement",
+          "id": "Q18288795$782796d7-43f8-fc02-9561-95bbbc035252",
+          "rank": "normal"
+        }
+      ],
+      "P373": [
+        {
+          "mainsnak": {
+            "snaktype": "value",
+            "property": "P373",
+            "hash": "fbe5eee8ad882aad641c59a5697142738a5d688b",
+            "datavalue": {
+              "value": "Assassination of Paul Doumer",
+              "type": "string"
+            },
+            "datatype": "string"
+          },
+          "type": "statement",
+          "id": "Q18288795$E9E88D2D-7ED7-4357-90C7-DA482113FF46",
+          "rank": "normal"
+        }
+      ],
+      "P520": [
+        {
+          "mainsnak": {
+            "snaktype": "value",
+            "property": "P520",
+            "hash": "72705985ba418c0380f3918b380944a7d69a24ed",
+            "datavalue": {
+              "value": {
+                "entity-type": "item",
+                "numeric-id": 3389302,
+                "id": "Q3389302"
+              },
+              "type": "wikibase-entityid"
+            },
+            "datatype": "wikibase-item"
+          },
+          "type": "statement",
+          "id": "Q18288795$e05fd080-40fe-4c9e-5a75-60100f45262d",
+          "rank": "normal"
+        }
+      ],
+      "P1269": [
+        {
+          "mainsnak": {
+            "snaktype": "value",
+            "property": "P1269",
+            "hash": "7cf063d416fd2a162ed7fc1a58c36fb35f0b37a7",
+            "datavalue": {
+              "value": {
+                "entity-type": "item",
+                "numeric-id": 12680,
+                "id": "Q12680"
+              },
+              "type": "wikibase-entityid"
+            },
+            "datatype": "wikibase-item"
+          },
+          "type": "statement",
+          "id": "Q18288795$8c76d32a-475f-856c-79dc-3693bdf64e7a",
+          "rank": "normal"
+        }
+      ],
+      "P533": [
+        {
+          "mainsnak": {
+            "snaktype": "value",
+            "property": "P533",
+            "hash": "00a679acca2ff877343d6a924a5756653b0c00d7",
+            "datavalue": {
+              "value": {
+                "entity-type": "item",
+                "numeric-id": 12680,
+                "id": "Q12680"
+              },
+              "type": "wikibase-entityid"
+            },
+            "datatype": "wikibase-item"
+          },
+          "type": "statement",
+          "id": "Q18288795$a812e012-489a-d86b-2c69-0e32f285a135",
+          "rank": "normal"
+        }
+      ],
+      "P625": [
+        {
+          "mainsnak": {
+            "snaktype": "value",
+            "property": "P625",
+            "hash": "ce5eb4ec3bf1f10d866969ff8b8cae2d63e80cb3",
+            "datavalue": {
+              "value": {
+                "latitude": 48.875216,
+                "longitude": 2.303084,
+                "altitude": null,
+                "precision": 0.013658411385925443,
+                "globe": "http://www.wikidata.org/entity/Q2"
+              },
+              "type": "globecoordinate"
+            },
+            "datatype": "globe-coordinate"
+          },
+          "type": "statement",
+          "id": "Q18288795$efad4947-369b-45c3-b9c0-44d4ff2bb04d",
+          "rank": "normal",
+          "references": [
+            {
+              "hash": "d4bd87b862b12d99d26e86472d44f26858dee639",
+              "snaks": {
+                "P143": [
+                  {
+                    "snaktype": "value",
+                    "property": "P143",
+                    "hash": "f30cbd35620c4ea6d0633aaf0210a8916130469b",
+                    "datavalue": {
+                      "value": {
+                        "entity-type": "item",
+                        "numeric-id": 8447,
+                        "id": "Q8447"
+                      },
+                      "type": "wikibase-entityid"
+                    },
+                    "datatype": "wikibase-item"
+                  }
+                ]
+              },
+              "snaks-order": [
+                "P143"
+              ]
+            }
+          ]
+        }
+      ],
+      "P31": [
+        {
+          "mainsnak": {
+            "snaktype": "value",
+            "property": "P31",
+            "hash": "ee59d1f9421161fff0a010cf07ef571416d76e65",
+            "datavalue": {
+              "value": {
+                "entity-type": "item",
+                "numeric-id": 1139665,
+                "id": "Q1139665"
+              },
+              "type": "wikibase-entityid"
+            },
+            "datatype": "wikibase-item"
+          },
+          "type": "statement",
+          "id": "Q18288795$656C20CC-F562-4D59-B5F7-67BE108B3D31",
+          "rank": "normal"
+        }
+      ],
+      "P8032": [
+        {
+          "mainsnak": {
+            "snaktype": "value",
+            "property": "P8032",
+            "hash": "e71862d08ba5405e8cbcc7d1e0783b475e08e57a",
+            "datavalue": {
+              "value": {
+                "entity-type": "item",
+                "numeric-id": 12680,
+                "id": "Q12680"
+              },
+              "type": "wikibase-entityid"
+            },
+            "datatype": "wikibase-item"
+          },
+          "type": "statement",
+          "id": "Q18288795$2D838AD8-B0C6-43BA-96A3-7E53A98B3487",
+          "rank": "normal"
+        }
+      ]
+    },
+    "sitelinks": {
+      "commonswiki": {
+        "site": "commonswiki",
+        "title": "Category:Assassination of Paul Doumer",
+        "badges": [],
+        "url": "https://commons.wikimedia.org/wiki/Category:Assassination_of_Paul_Doumer"
+      },
+      "frwiki": {
+        "site": "frwiki",
+        "title": "Assassinat de Paul Doumer",
+        "badges": [],
+        "url": "https://fr.wikipedia.org/wiki/Assassinat_de_Paul_Doumer"
+      }
+    }
+  }
+}

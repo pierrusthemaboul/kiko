@@ -1,0 +1,200 @@
+{
+  "saved_at": "2026-03-07T13:23:34.951Z",
+  "value": {
+    "pageid": 119939337,
+    "ns": 0,
+    "title": "Q125847930",
+    "lastrevid": 2460785002,
+    "modified": "2026-02-05T02:57:09Z",
+    "type": "item",
+    "id": "Q125847930",
+    "labels": {
+      "fr": {
+        "language": "fr",
+        "value": "pont François-Mitterrand"
+      },
+      "en": {
+        "language": "en",
+        "value": "pont François-Mitterrand"
+      }
+    },
+    "descriptions": {
+      "fr": {
+        "language": "fr",
+        "value": "pont sur la Loire situé à Blois"
+      },
+      "en": {
+        "language": "en",
+        "value": "Bridge over the Loire in Blois, Loire-et-Cher, France"
+      }
+    },
+    "aliases": {
+      "fr": [
+        {
+          "language": "fr",
+          "value": "troisième pont de Blois"
+        }
+      ]
+    },
+    "claims": {
+      "P31": [
+        {
+          "mainsnak": {
+            "snaktype": "value",
+            "property": "P31",
+            "hash": "e5bb1fe23a659e5e1e92d6cf3da68a8d58d2e6e8",
+            "datavalue": {
+              "value": {
+                "entity-type": "item",
+                "numeric-id": 12280,
+                "id": "Q12280"
+              },
+              "type": "wikibase-entityid"
+            },
+            "datatype": "wikibase-item"
+          },
+          "type": "statement",
+          "id": "Q125847930$a04ca7aa-7845-4dd1-9264-9b007c7aa7ae",
+          "rank": "normal"
+        }
+      ],
+      "P625": [
+        {
+          "mainsnak": {
+            "snaktype": "value",
+            "property": "P625",
+            "hash": "ecd79c393747668de7496fb467b8dba62e9b7af0",
+            "datavalue": {
+              "value": {
+                "latitude": 47.5764791,
+                "longitude": 1.3226311,
+                "altitude": null,
+                "precision": 0.000002777777777777778,
+                "globe": "http://www.wikidata.org/entity/Q2"
+              },
+              "type": "globecoordinate"
+            },
+            "datatype": "globe-coordinate"
+          },
+          "type": "statement",
+          "id": "Q125847930$733b5612-0baa-498a-95fd-8f84aaf1a33e",
+          "rank": "normal"
+        }
+      ],
+      "P17": [
+        {
+          "mainsnak": {
+            "snaktype": "value",
+            "property": "P17",
+            "hash": "c05db5d169c2560b9799d567a803d20a392f53e4",
+            "datavalue": {
+              "value": {
+                "entity-type": "item",
+                "numeric-id": 142,
+                "id": "Q142"
+              },
+              "type": "wikibase-entityid"
+            },
+            "datatype": "wikibase-item"
+          },
+          "type": "statement",
+          "id": "Q125847930$e564d8a3-4816-f914-adb8-456d0f548469",
+          "rank": "normal"
+        }
+      ],
+      "P380": [
+        {
+          "mainsnak": {
+            "snaktype": "value",
+            "property": "P380",
+            "hash": "a7f67bd91a02fa432bbbf78c476ae1fdd923d41d",
+            "datavalue": {
+              "value": "ACR0000427",
+              "type": "string"
+            },
+            "datatype": "external-id"
+          },
+          "type": "statement",
+          "id": "Q125847930$53DD0F1B-6783-4BD1-A138-905CA7E46759",
+          "rank": "normal"
+        }
+      ],
+      "P131": [
+        {
+          "mainsnak": {
+            "snaktype": "value",
+            "property": "P131",
+            "hash": "8c54ec45e509fd3b8a6dc6e7f2686e3d9345a7b8",
+            "datavalue": {
+              "value": {
+                "entity-type": "item",
+                "numeric-id": 160927,
+                "id": "Q160927"
+              },
+              "type": "wikibase-entityid"
+            },
+            "datatype": "wikibase-item"
+          },
+          "type": "statement",
+          "id": "Q125847930$bf49d3c2-42e6-55f9-a7c3-a986c545ad1f",
+          "rank": "normal"
+        }
+      ],
+      "P18": [
+        {
+          "mainsnak": {
+            "snaktype": "value",
+            "property": "P18",
+            "hash": "a79280b44ec4bcb19bfa1feb96aacf9cd06d6e08",
+            "datavalue": {
+              "value": "Pont François Mitterrand (Blois).JPG",
+              "type": "string"
+            },
+            "datatype": "commonsMedia"
+          },
+          "type": "statement",
+          "qualifiers": {
+            "P585": [
+              {
+                "snaktype": "value",
+                "property": "P585",
+                "hash": "c36af6ad9406db86349c91bce45e3a95d7dcaf45",
+                "datavalue": {
+                  "value": {
+                    "time": "+2014-09-07T00:00:00Z",
+                    "timezone": 0,
+                    "before": 0,
+                    "after": 0,
+                    "precision": 11,
+                    "calendarmodel": "http://www.wikidata.org/entity/Q1985727"
+                  },
+                  "type": "time"
+                },
+                "datatype": "time"
+              }
+            ]
+          },
+          "qualifiers-order": [
+            "P585"
+          ],
+          "id": "Q125847930$ad2391f7-7b5d-417b-a618-9333fd5d76f7",
+          "rank": "normal"
+        }
+      ]
+    },
+    "sitelinks": {
+      "commonswiki": {
+        "site": "commonswiki",
+        "title": "Category:Pont François-Mitterrand (Blois)",
+        "badges": [],
+        "url": "https://commons.wikimedia.org/wiki/Category:Pont_Fran%C3%A7ois-Mitterrand_(Blois)"
+      },
+      "frwiki": {
+        "site": "frwiki",
+        "title": "Pont François-Mitterrand (Blois)",
+        "badges": [],
+        "url": "https://fr.wikipedia.org/wiki/Pont_Fran%C3%A7ois-Mitterrand_(Blois)"
+      }
+    }
+  }
+}

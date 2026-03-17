@@ -1,0 +1,994 @@
+{
+  "saved_at": "2026-03-07T16:50:30.328Z",
+  "value": {
+    "pageid": 2634834,
+    "ns": 0,
+    "title": "Q2743795",
+    "lastrevid": 2413694971,
+    "modified": "2025-10-07T13:20:02Z",
+    "type": "item",
+    "id": "Q2743795",
+    "labels": {
+      "fr": {
+        "language": "fr",
+        "value": "jardin botanique de l'université de Strasbourg"
+      },
+      "es": {
+        "language": "es",
+        "value": "Jardín Botánico de la Universidad de Estrasburgo"
+      },
+      "en": {
+        "language": "en",
+        "value": "Jardin botanique de l'Université de Strasbourg"
+      },
+      "ca": {
+        "language": "ca",
+        "value": "jardí botànic de la universitat d'Estrasburg"
+      },
+      "zh": {
+        "language": "zh",
+        "value": "斯特拉斯堡大学植物园"
+      }
+    },
+    "descriptions": {
+      "fr": {
+        "language": "fr",
+        "value": "jardin botanique à Strasbourg, en France"
+      },
+      "en": {
+        "language": "en",
+        "value": "garden in France"
+      },
+      "de": {
+        "language": "de",
+        "value": "Garten in Frankreich"
+      },
+      "br": {
+        "language": "br",
+        "value": "liorzh Frañs"
+      },
+      "it": {
+        "language": "it",
+        "value": "giardino in Francia"
+      },
+      "cy": {
+        "language": "cy",
+        "value": "gardd fotaneg yn Ffrainc"
+      },
+      "sv": {
+        "language": "sv",
+        "value": "trädgård i Frankrike"
+      },
+      "es": {
+        "language": "es",
+        "value": "arboreto y jardín botánico francés"
+      },
+      "ko": {
+        "language": "ko",
+        "value": "등재된 사적"
+      },
+      "id": {
+        "language": "id",
+        "value": "taman botani di Prancis"
+      },
+      "ms": {
+        "language": "ms",
+        "value": "taman botani di Perancis"
+      }
+    },
+    "aliases": {
+      "es": [
+        {
+          "language": "es",
+          "value": "Jardín Botanico de la Universidad Louis Pasteur"
+        },
+        {
+          "language": "es",
+          "value": "Jardin Botanico de la Universidad Louis Pasteur"
+        },
+        {
+          "language": "es",
+          "value": "Jardín Botanico de la Universidad de Estrasburgo"
+        },
+        {
+          "language": "es",
+          "value": "Jardin Botánico de la Universidad Louis Pasteur"
+        },
+        {
+          "language": "es",
+          "value": "Jardin Botánico de la Universidad de Estrasburgo"
+        },
+        {
+          "language": "es",
+          "value": "Jardin Botanico de la Universidad de Estrasburgo"
+        },
+        {
+          "language": "es",
+          "value": "Jardín Botánico de la Universidad Louis Pasteur"
+        }
+      ],
+      "ca": [
+        {
+          "language": "ca",
+          "value": "Jardin Botanique de l'Université de Strasbourg"
+        },
+        {
+          "language": "ca",
+          "value": "Jardin botanique de Strasbourg"
+        },
+        {
+          "language": "ca",
+          "value": "Jardin botanique de l'Université Louis Pasteur"
+        }
+      ]
+    },
+    "claims": {
+      "P373": [
+        {
+          "mainsnak": {
+            "snaktype": "value",
+            "property": "P373",
+            "hash": "390669caf75beae67415f156ec348e77a09528ff",
+            "datavalue": {
+              "value": "Jardin botanique de l'Université de Strasbourg",
+              "type": "string"
+            },
+            "datatype": "string"
+          },
+          "type": "statement",
+          "id": "q2743795$7B545E9D-77D3-473B-A8D5-4747E10D32BB",
+          "rank": "normal",
+          "references": [
+            {
+              "hash": "fa278ebfc458360e5aed63d5058cca83c46134f1",
+              "snaks": {
+                "P143": [
+                  {
+                    "snaktype": "value",
+                    "property": "P143",
+                    "hash": "e4f6d9441d0600513c4533c672b5ab472dc73694",
+                    "datavalue": {
+                      "value": {
+                        "entity-type": "item",
+                        "numeric-id": 328,
+                        "id": "Q328"
+                      },
+                      "type": "wikibase-entityid"
+                    },
+                    "datatype": "wikibase-item"
+                  }
+                ]
+              },
+              "snaks-order": [
+                "P143"
+              ]
+            }
+          ]
+        }
+      ],
+      "P31": [
+        {
+          "mainsnak": {
+            "snaktype": "value",
+            "property": "P31",
+            "hash": "59a7b3ef18b7e39ef2c73e7b5e9afcdf83657241",
+            "datavalue": {
+              "value": {
+                "entity-type": "item",
+                "numeric-id": 167346,
+                "id": "Q167346"
+              },
+              "type": "wikibase-entityid"
+            },
+            "datatype": "wikibase-item"
+          },
+          "type": "statement",
+          "id": "Q2743795$D291493A-7182-4F2D-B7EE-9F27003EAD54",
+          "rank": "normal",
+          "references": [
+            {
+              "hash": "d709174cc609072fbf310bb52ddfb7aa2332b473",
+              "snaks": {
+                "P248": [
+                  {
+                    "snaktype": "value",
+                    "property": "P248",
+                    "hash": "fc376b4e25f8c58fa7210b660e00a66558a3332b",
+                    "datavalue": {
+                      "value": {
+                        "entity-type": "item",
+                        "numeric-id": 809830,
+                        "id": "Q809830"
+                      },
+                      "type": "wikibase-entityid"
+                    },
+                    "datatype": "wikibase-item"
+                  }
+                ]
+              },
+              "snaks-order": [
+                "P248"
+              ]
+            }
+          ]
+        }
+      ],
+      "P17": [
+        {
+          "mainsnak": {
+            "snaktype": "value",
+            "property": "P17",
+            "hash": "c05db5d169c2560b9799d567a803d20a392f53e4",
+            "datavalue": {
+              "value": {
+                "entity-type": "item",
+                "numeric-id": 142,
+                "id": "Q142"
+              },
+              "type": "wikibase-entityid"
+            },
+            "datatype": "wikibase-item"
+          },
+          "type": "statement",
+          "id": "q2743795$23E12CB0-BB55-4559-BAA2-A456F7A1CF6F",
+          "rank": "normal",
+          "references": [
+            {
+              "hash": "d709174cc609072fbf310bb52ddfb7aa2332b473",
+              "snaks": {
+                "P248": [
+                  {
+                    "snaktype": "value",
+                    "property": "P248",
+                    "hash": "fc376b4e25f8c58fa7210b660e00a66558a3332b",
+                    "datavalue": {
+                      "value": {
+                        "entity-type": "item",
+                        "numeric-id": 809830,
+                        "id": "Q809830"
+                      },
+                      "type": "wikibase-entityid"
+                    },
+                    "datatype": "wikibase-item"
+                  }
+                ]
+              },
+              "snaks-order": [
+                "P248"
+              ]
+            }
+          ]
+        }
+      ],
+      "P625": [
+        {
+          "mainsnak": {
+            "snaktype": "value",
+            "property": "P625",
+            "hash": "df4e1d0ee0ffdf965dbbaea7036f5b1420a3f350",
+            "datavalue": {
+              "value": {
+                "latitude": 48.583611111111,
+                "longitude": 7.7666666666667,
+                "altitude": null,
+                "precision": 0.00027777777777778,
+                "globe": "http://www.wikidata.org/entity/Q2"
+              },
+              "type": "globecoordinate"
+            },
+            "datatype": "globe-coordinate"
+          },
+          "type": "statement",
+          "id": "q2743795$D6AE8C40-D549-482E-8DE4-43B7F9A9FE19",
+          "rank": "normal",
+          "references": [
+            {
+              "hash": "fa278ebfc458360e5aed63d5058cca83c46134f1",
+              "snaks": {
+                "P143": [
+                  {
+                    "snaktype": "value",
+                    "property": "P143",
+                    "hash": "e4f6d9441d0600513c4533c672b5ab472dc73694",
+                    "datavalue": {
+                      "value": {
+                        "entity-type": "item",
+                        "numeric-id": 328,
+                        "id": "Q328"
+                      },
+                      "type": "wikibase-entityid"
+                    },
+                    "datatype": "wikibase-item"
+                  }
+                ]
+              },
+              "snaks-order": [
+                "P143"
+              ]
+            }
+          ]
+        }
+      ],
+      "P646": [
+        {
+          "mainsnak": {
+            "snaktype": "value",
+            "property": "P646",
+            "hash": "eb222c8103b47bfb28726bc9b052531e5528cb08",
+            "datavalue": {
+              "value": "/m/04n05xm",
+              "type": "string"
+            },
+            "datatype": "external-id"
+          },
+          "type": "statement",
+          "id": "Q2743795$1CB5CDC7-79B7-4B22-9718-ED4D3FBEBF74",
+          "rank": "normal",
+          "references": [
+            {
+              "hash": "2b00cb481cddcac7623114367489b5c194901c4a",
+              "snaks": {
+                "P248": [
+                  {
+                    "snaktype": "value",
+                    "property": "P248",
+                    "hash": "a94b740202b097dd33355e0e6c00e54b9395e5e0",
+                    "datavalue": {
+                      "value": {
+                        "entity-type": "item",
+                        "numeric-id": 15241312,
+                        "id": "Q15241312"
+                      },
+                      "type": "wikibase-entityid"
+                    },
+                    "datatype": "wikibase-item"
+                  }
+                ],
+                "P577": [
+                  {
+                    "snaktype": "value",
+                    "property": "P577",
+                    "hash": "fde79ecb015112d2f29229ccc1ec514ed3e71fa2",
+                    "datavalue": {
+                      "value": {
+                        "time": "+2013-10-28T00:00:00Z",
+                        "timezone": 0,
+                        "before": 0,
+                        "after": 0,
+                        "precision": 11,
+                        "calendarmodel": "http://www.wikidata.org/entity/Q1985727"
+                      },
+                      "type": "time"
+                    },
+                    "datatype": "time"
+                  }
+                ]
+              },
+              "snaks-order": [
+                "P248",
+                "P577"
+              ]
+            }
+          ]
+        }
+      ],
+      "P380": [
+        {
+          "mainsnak": {
+            "snaktype": "value",
+            "property": "P380",
+            "hash": "6e6ff6f7abf1230e9cdbd3dcb02b3ead98d36217",
+            "datavalue": {
+              "value": "PA00085285",
+              "type": "string"
+            },
+            "datatype": "external-id"
+          },
+          "type": "statement",
+          "id": "Q2743795$B7B03EC2-6C56-4F85-ADAC-43F3A6E644E7",
+          "rank": "normal",
+          "references": [
+            {
+              "hash": "d709174cc609072fbf310bb52ddfb7aa2332b473",
+              "snaks": {
+                "P248": [
+                  {
+                    "snaktype": "value",
+                    "property": "P248",
+                    "hash": "fc376b4e25f8c58fa7210b660e00a66558a3332b",
+                    "datavalue": {
+                      "value": {
+                        "entity-type": "item",
+                        "numeric-id": 809830,
+                        "id": "Q809830"
+                      },
+                      "type": "wikibase-entityid"
+                    },
+                    "datatype": "wikibase-item"
+                  }
+                ]
+              },
+              "snaks-order": [
+                "P248"
+              ]
+            }
+          ]
+        }
+      ],
+      "P1435": [
+        {
+          "mainsnak": {
+            "snaktype": "value",
+            "property": "P1435",
+            "hash": "2a0d37ac7e76d305563257e91e85bb3847f90355",
+            "datavalue": {
+              "value": {
+                "entity-type": "item",
+                "numeric-id": 10387575,
+                "id": "Q10387575"
+              },
+              "type": "wikibase-entityid"
+            },
+            "datatype": "wikibase-item"
+          },
+          "type": "statement",
+          "qualifiers": {
+            "P580": [
+              {
+                "snaktype": "value",
+                "property": "P580",
+                "hash": "0a2298be58cbeeb4279bce3b56e022f8cd08dd51",
+                "datavalue": {
+                  "value": {
+                    "time": "+1990-12-07T00:00:00Z",
+                    "timezone": 0,
+                    "before": 0,
+                    "after": 0,
+                    "precision": 11,
+                    "calendarmodel": "http://www.wikidata.org/entity/Q1985727"
+                  },
+                  "type": "time"
+                },
+                "datatype": "time"
+              }
+            ]
+          },
+          "qualifiers-order": [
+            "P580"
+          ],
+          "id": "Q2743795$192D8D83-39AF-4DFE-A4FA-A6FB0E3E4928",
+          "rank": "normal",
+          "references": [
+            {
+              "hash": "d709174cc609072fbf310bb52ddfb7aa2332b473",
+              "snaks": {
+                "P248": [
+                  {
+                    "snaktype": "value",
+                    "property": "P248",
+                    "hash": "fc376b4e25f8c58fa7210b660e00a66558a3332b",
+                    "datavalue": {
+                      "value": {
+                        "entity-type": "item",
+                        "numeric-id": 809830,
+                        "id": "Q809830"
+                      },
+                      "type": "wikibase-entityid"
+                    },
+                    "datatype": "wikibase-item"
+                  }
+                ]
+              },
+              "snaks-order": [
+                "P248"
+              ]
+            }
+          ]
+        },
+        {
+          "mainsnak": {
+            "snaktype": "value",
+            "property": "P1435",
+            "hash": "47d4f633ccb039ebb1a08af61dffb908b5e07611",
+            "datavalue": {
+              "value": {
+                "entity-type": "item",
+                "numeric-id": 10387684,
+                "id": "Q10387684"
+              },
+              "type": "wikibase-entityid"
+            },
+            "datatype": "wikibase-item"
+          },
+          "type": "statement",
+          "qualifiers": {
+            "P580": [
+              {
+                "snaktype": "value",
+                "property": "P580",
+                "hash": "3d553fda55fc1eb2879fbf02b97e72e18d12f458",
+                "datavalue": {
+                  "value": {
+                    "time": "+1993-03-25T00:00:00Z",
+                    "timezone": 0,
+                    "before": 0,
+                    "after": 0,
+                    "precision": 11,
+                    "calendarmodel": "http://www.wikidata.org/entity/Q1985727"
+                  },
+                  "type": "time"
+                },
+                "datatype": "time"
+              }
+            ]
+          },
+          "qualifiers-order": [
+            "P580"
+          ],
+          "id": "Q2743795$730C18E6-C24C-4A87-9AA1-A73DD1113351",
+          "rank": "normal",
+          "references": [
+            {
+              "hash": "d709174cc609072fbf310bb52ddfb7aa2332b473",
+              "snaks": {
+                "P248": [
+                  {
+                    "snaktype": "value",
+                    "property": "P248",
+                    "hash": "fc376b4e25f8c58fa7210b660e00a66558a3332b",
+                    "datavalue": {
+                      "value": {
+                        "entity-type": "item",
+                        "numeric-id": 809830,
+                        "id": "Q809830"
+                      },
+                      "type": "wikibase-entityid"
+                    },
+                    "datatype": "wikibase-item"
+                  }
+                ]
+              },
+              "snaks-order": [
+                "P248"
+              ]
+            }
+          ]
+        },
+        {
+          "mainsnak": {
+            "snaktype": "value",
+            "property": "P1435",
+            "hash": "003f333426f5143411cede0d0a65b96e3400b1e1",
+            "datavalue": {
+              "value": {
+                "entity-type": "item",
+                "numeric-id": 498842,
+                "id": "Q498842"
+              },
+              "type": "wikibase-entityid"
+            },
+            "datatype": "wikibase-item"
+          },
+          "type": "statement",
+          "id": "Q2743795$d6d77bfd-4bc7-44c1-2a35-59d1983ae314",
+          "rank": "normal",
+          "references": [
+            {
+              "hash": "597f9f92bb0fd66f42e0b7296b26aaedfc8adb1b",
+              "snaks": {
+                "P854": [
+                  {
+                    "snaktype": "value",
+                    "property": "P854",
+                    "hash": "2d965f04086f32213afd0335a1bd968fd6dfda93",
+                    "datavalue": {
+                      "value": "https://www.parcsetjardins.fr/assets/pdf/Liste-jardins-labellises.1586511059.pdf",
+                      "type": "string"
+                    },
+                    "datatype": "url"
+                  }
+                ]
+              },
+              "snaks-order": [
+                "P854"
+              ]
+            }
+          ]
+        }
+      ],
+      "P18": [
+        {
+          "mainsnak": {
+            "snaktype": "value",
+            "property": "P18",
+            "hash": "322fa109a61112b22d7a5dba5c26471ff2bd9154",
+            "datavalue": {
+              "value": "Observatoire-Strasbourg.JPG",
+              "type": "string"
+            },
+            "datatype": "commonsMedia"
+          },
+          "type": "statement",
+          "qualifiers": {
+            "P585": [
+              {
+                "snaktype": "value",
+                "property": "P585",
+                "hash": "ee1ac47be6024b172a44c74744712c4326a747de",
+                "datavalue": {
+                  "value": {
+                    "time": "+2009-06-10T00:00:00Z",
+                    "timezone": 0,
+                    "before": 0,
+                    "after": 0,
+                    "precision": 11,
+                    "calendarmodel": "http://www.wikidata.org/entity/Q1985727"
+                  },
+                  "type": "time"
+                },
+                "datatype": "time"
+              }
+            ]
+          },
+          "qualifiers-order": [
+            "P585"
+          ],
+          "id": "Q2743795$569ADDF5-06F3-4388-A249-20108558501E",
+          "rank": "normal",
+          "references": [
+            {
+              "hash": "d4bd87b862b12d99d26e86472d44f26858dee639",
+              "snaks": {
+                "P143": [
+                  {
+                    "snaktype": "value",
+                    "property": "P143",
+                    "hash": "f30cbd35620c4ea6d0633aaf0210a8916130469b",
+                    "datavalue": {
+                      "value": {
+                        "entity-type": "item",
+                        "numeric-id": 8447,
+                        "id": "Q8447"
+                      },
+                      "type": "wikibase-entityid"
+                    },
+                    "datatype": "wikibase-item"
+                  }
+                ]
+              },
+              "snaks-order": [
+                "P143"
+              ]
+            }
+          ]
+        }
+      ],
+      "P131": [
+        {
+          "mainsnak": {
+            "snaktype": "value",
+            "property": "P131",
+            "hash": "e25a3c520aec24d61e1904320837ab7fe17538ad",
+            "datavalue": {
+              "value": {
+                "entity-type": "item",
+                "numeric-id": 6602,
+                "id": "Q6602"
+              },
+              "type": "wikibase-entityid"
+            },
+            "datatype": "wikibase-item"
+          },
+          "type": "statement",
+          "id": "Q2743795$82649138-4fc0-6f50-832c-2a3b9bab23bb",
+          "rank": "normal",
+          "references": [
+            {
+              "hash": "d709174cc609072fbf310bb52ddfb7aa2332b473",
+              "snaks": {
+                "P248": [
+                  {
+                    "snaktype": "value",
+                    "property": "P248",
+                    "hash": "fc376b4e25f8c58fa7210b660e00a66558a3332b",
+                    "datavalue": {
+                      "value": {
+                        "entity-type": "item",
+                        "numeric-id": 809830,
+                        "id": "Q809830"
+                      },
+                      "type": "wikibase-entityid"
+                    },
+                    "datatype": "wikibase-item"
+                  }
+                ]
+              },
+              "snaks-order": [
+                "P248"
+              ]
+            }
+          ]
+        }
+      ],
+      "P856": [
+        {
+          "mainsnak": {
+            "snaktype": "value",
+            "property": "P856",
+            "hash": "d756f745b819a36e623ce92ef9e9c23eed4df661",
+            "datavalue": {
+              "value": "http://jardin-botanique.unistra.fr",
+              "type": "string"
+            },
+            "datatype": "url"
+          },
+          "type": "statement",
+          "id": "Q2743795$D144D7FB-FEC5-4C39-A72C-A43FE8A2241B",
+          "rank": "normal",
+          "references": [
+            {
+              "hash": "d4bd87b862b12d99d26e86472d44f26858dee639",
+              "snaks": {
+                "P143": [
+                  {
+                    "snaktype": "value",
+                    "property": "P143",
+                    "hash": "f30cbd35620c4ea6d0633aaf0210a8916130469b",
+                    "datavalue": {
+                      "value": {
+                        "entity-type": "item",
+                        "numeric-id": 8447,
+                        "id": "Q8447"
+                      },
+                      "type": "wikibase-entityid"
+                    },
+                    "datatype": "wikibase-item"
+                  }
+                ]
+              },
+              "snaks-order": [
+                "P143"
+              ]
+            }
+          ]
+        }
+      ],
+      "P5818": [
+        {
+          "mainsnak": {
+            "snaktype": "value",
+            "property": "P5818",
+            "hash": "982101e8dc5c7eed3fe046d325a90440e2298739",
+            "datavalue": {
+              "value": "234",
+              "type": "string"
+            },
+            "datatype": "external-id"
+          },
+          "type": "statement",
+          "id": "Q2743795$804ae346-49e1-7de3-82c0-1bf5039d52af",
+          "rank": "normal"
+        }
+      ],
+      "P5760": [
+        {
+          "mainsnak": {
+            "snaktype": "value",
+            "property": "P5760",
+            "hash": "1465ec9790e5a68fae4fb5ede5b7e45c3e7d0396",
+            "datavalue": {
+              "value": "v458-strasbourg-67000/c1173-visites-points-d-interet/c971-parc-jardin/548471-jardin-botanique-de-l-universite-de-strasbourg",
+              "type": "string"
+            },
+            "datatype": "external-id"
+          },
+          "type": "statement",
+          "id": "Q2743795$3ecbeb8d-494f-d8ab-d105-3d8cb51034b7",
+          "rank": "normal"
+        }
+      ],
+      "P6375": [
+        {
+          "mainsnak": {
+            "snaktype": "value",
+            "property": "P6375",
+            "hash": "799b239320f774b32cf102dd37e942405270e028",
+            "datavalue": {
+              "value": {
+                "text": "28, rue Goethe",
+                "language": "fr"
+              },
+              "type": "monolingualtext"
+            },
+            "datatype": "monolingualtext"
+          },
+          "type": "statement",
+          "id": "Q2743795$f16d5184-b580-4e7d-a28d-0361c4f53fb7",
+          "rank": "normal"
+        }
+      ],
+      "P214": [
+        {
+          "mainsnak": {
+            "snaktype": "value",
+            "property": "P214",
+            "hash": "54b0cfdb21cada2e634f908042185759cd737442",
+            "datavalue": {
+              "value": "305852154",
+              "type": "string"
+            },
+            "datatype": "external-id"
+          },
+          "type": "statement",
+          "id": "Q2743795$BE5B8302-EBC4-4DB0-A595-50C23F10FECA",
+          "rank": "normal"
+        }
+      ],
+      "P3134": [
+        {
+          "mainsnak": {
+            "snaktype": "value",
+            "property": "P3134",
+            "hash": "6df6c3a43527b30eaee38087cbe16e818ce59acd",
+            "datavalue": {
+              "value": "2202993",
+              "type": "string"
+            },
+            "datatype": "external-id"
+          },
+          "type": "statement",
+          "id": "Q2743795$79E87A05-A5BC-45B8-9222-961375882D28",
+          "rank": "normal"
+        }
+      ],
+      "P269": [
+        {
+          "mainsnak": {
+            "snaktype": "value",
+            "property": "P269",
+            "hash": "c322fb8858762a8a90b3513afb6a0a4e26bcc105",
+            "datavalue": {
+              "value": "174496680",
+              "type": "string"
+            },
+            "datatype": "external-id"
+          },
+          "type": "statement",
+          "id": "Q2743795$642F99FF-DC7D-4C2E-AF7A-7F51E28189DA",
+          "rank": "normal",
+          "references": [
+            {
+              "hash": "3fb9550c2114095f30efb2c5a70f7f9e97a4c58a",
+              "snaks": {
+                "P248": [
+                  {
+                    "snaktype": "value",
+                    "property": "P248",
+                    "hash": "6b7d4330c4aac4caec4ede9de0311ce273f88ecd",
+                    "datavalue": {
+                      "value": {
+                        "entity-type": "item",
+                        "numeric-id": 54919,
+                        "id": "Q54919"
+                      },
+                      "type": "wikibase-entityid"
+                    },
+                    "datatype": "wikibase-item"
+                  }
+                ],
+                "P813": [
+                  {
+                    "snaktype": "value",
+                    "property": "P813",
+                    "hash": "9c07da73b84889803ebd6601ba04b4579c39577d",
+                    "datavalue": {
+                      "value": {
+                        "time": "+2022-07-06T00:00:00Z",
+                        "timezone": 0,
+                        "before": 0,
+                        "after": 0,
+                        "precision": 11,
+                        "calendarmodel": "http://www.wikidata.org/entity/Q1985727"
+                      },
+                      "type": "time"
+                    },
+                    "datatype": "time"
+                  }
+                ],
+                "P214": [
+                  {
+                    "snaktype": "value",
+                    "property": "P214",
+                    "hash": "54b0cfdb21cada2e634f908042185759cd737442",
+                    "datavalue": {
+                      "value": "305852154",
+                      "type": "string"
+                    },
+                    "datatype": "external-id"
+                  }
+                ]
+              },
+              "snaks-order": [
+                "P248",
+                "P813",
+                "P214"
+              ]
+            }
+          ]
+        }
+      ],
+      "P791": [
+        {
+          "mainsnak": {
+            "snaktype": "value",
+            "property": "P791",
+            "hash": "66aa84ac70bd7c3ea1957e2393feba0232bcb7a1",
+            "datavalue": {
+              "value": "FR-674822246",
+              "type": "string"
+            },
+            "datatype": "external-id"
+          },
+          "type": "statement",
+          "id": "Q2743795$DAB851C6-D996-4FC6-AB93-D0906E94378C",
+          "rank": "normal"
+        }
+      ],
+      "P12800": [
+        {
+          "mainsnak": {
+            "snaktype": "value",
+            "property": "P12800",
+            "hash": "9969318958c08157f6590a91364ab0cbd771d37b",
+            "datavalue": {
+              "value": "fr:Jardin_botanique_de_Strasbourg",
+              "type": "string"
+            },
+            "datatype": "external-id"
+          },
+          "type": "statement",
+          "id": "Q2743795$DF9694D8-55B0-4530-A76D-5AF9A374FD36",
+          "rank": "normal"
+        }
+      ]
+    },
+    "sitelinks": {
+      "cawiki": {
+        "site": "cawiki",
+        "title": "Jardí botànic de la universitat d'Estrasburg",
+        "badges": [],
+        "url": "https://ca.wikipedia.org/wiki/Jard%C3%AD_bot%C3%A0nic_de_la_universitat_d%27Estrasburg"
+      },
+      "commonswiki": {
+        "site": "commonswiki",
+        "title": "Category:Jardin botanique de l'Université de Strasbourg",
+        "badges": [],
+        "url": "https://commons.wikimedia.org/wiki/Category:Jardin_botanique_de_l%27Universit%C3%A9_de_Strasbourg"
+      },
+      "enwiki": {
+        "site": "enwiki",
+        "title": "Jardin botanique de l'Université de Strasbourg",
+        "badges": [],
+        "url": "https://en.wikipedia.org/wiki/Jardin_botanique_de_l%27Universit%C3%A9_de_Strasbourg"
+      },
+      "eswiki": {
+        "site": "eswiki",
+        "title": "Jardín Botánico de la Universidad de Estrasburgo",
+        "badges": [],
+        "url": "https://es.wikipedia.org/wiki/Jard%C3%ADn_Bot%C3%A1nico_de_la_Universidad_de_Estrasburgo"
+      },
+      "frwiki": {
+        "site": "frwiki",
+        "title": "Jardin botanique de l'université de Strasbourg",
+        "badges": [],
+        "url": "https://fr.wikipedia.org/wiki/Jardin_botanique_de_l%27universit%C3%A9_de_Strasbourg"
+      },
+      "zhwiki": {
+        "site": "zhwiki",
+        "title": "斯特拉斯堡大学植物园",
+        "badges": [],
+        "url": "https://zh.wikipedia.org/wiki/%E6%96%AF%E7%89%B9%E6%8B%89%E6%96%AF%E5%A0%A1%E5%A4%A7%E5%AD%A6%E6%A4%8D%E7%89%A9%E5%9B%AD"
+      }
+    }
+  }
+}

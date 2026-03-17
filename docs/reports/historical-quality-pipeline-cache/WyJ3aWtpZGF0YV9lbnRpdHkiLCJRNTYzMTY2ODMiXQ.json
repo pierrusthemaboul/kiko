@@ -1,0 +1,303 @@
+{
+  "pageid": 56255217,
+  "ns": 0,
+  "title": "Q56316683",
+  "lastrevid": 2457101425,
+  "modified": "2026-01-23T12:07:58Z",
+  "type": "item",
+  "id": "Q56316683",
+  "labels": {
+    "fr": {
+      "language": "fr",
+      "value": "moulin à papier"
+    },
+    "de": {
+      "language": "de",
+      "value": "Papiermühle"
+    },
+    "nl": {
+      "language": "nl",
+      "value": "papiermolen"
+    },
+    "li": {
+      "language": "li",
+      "value": "Papiermäöle"
+    },
+    "en": {
+      "language": "en",
+      "value": "paper mill"
+    },
+    "uk": {
+      "language": "uk",
+      "value": "папірня"
+    },
+    "eo": {
+      "language": "eo",
+      "value": "papermuelejo"
+    },
+    "pt": {
+      "language": "pt",
+      "value": "moinho de papel"
+    },
+    "zh": {
+      "language": "zh",
+      "value": "水力磨纸坊"
+    }
+  },
+  "descriptions": {
+    "fr": {
+      "language": "fr",
+      "value": "moulin à eau servant à la fabrication du papier"
+    },
+    "en": {
+      "language": "en",
+      "value": "facilities that are primarily engaged in the manufacture of paper or paper products, usually from wood, recycled paper, or other fiber pulp. Originally water-driven, modern paper mills are typically powered electrically, for use with P366 (has use)"
+    },
+    "de": {
+      "language": "de",
+      "value": "Mühle zur Herstellung von Papier"
+    },
+    "uk": {
+      "language": "uk",
+      "value": "підприємства виробництвом паперу або паперових виробів, як правило, з деревини, переробленого паперу чи іншої волокнистої маси. Сучасні паперові фабрики, які спочатку приводилися водою, зазвичай працюють від електрики, для використання з P366"
+    },
+    "zh": {
+      "language": "zh",
+      "value": "主要从事纸张或纸制品生产的工厂，通常以木材、再生纸或其他纤维纸浆为原料。最初由水力驱动，现代造纸厂通常采用电力驱动，可与 P366（用途）配合使用。"
+    }
+  },
+  "aliases": {
+    "uk": [
+      {
+        "language": "uk",
+        "value": "паперовий млин"
+      }
+    ]
+  },
+  "claims": {
+    "P279": [
+      {
+        "mainsnak": {
+          "snaktype": "value",
+          "property": "P279",
+          "hash": "f0a2590116ed3eeae111c01f0ff491d32a5ff549",
+          "datavalue": {
+            "value": {
+              "entity-type": "item",
+              "numeric-id": 185187,
+              "id": "Q185187"
+            },
+            "type": "wikibase-entityid"
+          },
+          "datatype": "wikibase-item"
+        },
+        "type": "statement",
+        "id": "Q56316683$e162e858-4b3b-2227-6f8e-0f87f4438edf",
+        "rank": "normal"
+      },
+      {
+        "mainsnak": {
+          "snaktype": "value",
+          "property": "P279",
+          "hash": "b793d84458f67591687e37e80b13895c0dc259e9",
+          "datavalue": {
+            "value": {
+              "entity-type": "item",
+              "numeric-id": 44494,
+              "id": "Q44494"
+            },
+            "type": "wikibase-entityid"
+          },
+          "datatype": "wikibase-item"
+        },
+        "type": "statement",
+        "id": "Q56316683$A21FEC3E-9178-4337-AE67-052482FEFEAC",
+        "rank": "normal"
+      }
+    ],
+    "P2671": [
+      {
+        "mainsnak": {
+          "snaktype": "value",
+          "property": "P2671",
+          "hash": "6f0420f205a446f66866e9f1eb448c576cfa211d",
+          "datavalue": {
+            "value": "/g/11fy_q9mln",
+            "type": "string"
+          },
+          "datatype": "external-id"
+        },
+        "type": "statement",
+        "id": "Q56316683$F6F2E3C4-4CC0-4E5C-80B2-452543EB6C40",
+        "rank": "normal"
+      }
+    ],
+    "P1056": [
+      {
+        "mainsnak": {
+          "snaktype": "value",
+          "property": "P1056",
+          "hash": "8995d7ccc193592637d6421ab2988dd052b50bf6",
+          "datavalue": {
+            "value": {
+              "entity-type": "item",
+              "numeric-id": 11472,
+              "id": "Q11472"
+            },
+            "type": "wikibase-entityid"
+          },
+          "datatype": "wikibase-item"
+        },
+        "type": "statement",
+        "id": "Q56316683$0FC78FDB-1741-424E-AEBC-A88B261C29F4",
+        "rank": "normal"
+      }
+    ],
+    "P1014": [
+      {
+        "mainsnak": {
+          "snaktype": "value",
+          "property": "P1014",
+          "hash": "c4c86f5337740a312e972bd79daf29e177f46822",
+          "datavalue": {
+            "value": "300006308",
+            "type": "string"
+          },
+          "datatype": "external-id"
+        },
+        "type": "statement",
+        "id": "Q56316683$C91852E2-483C-4348-A42F-C6385061D144",
+        "rank": "normal"
+      }
+    ],
+    "P1889": [
+      {
+        "mainsnak": {
+          "snaktype": "value",
+          "property": "P1889",
+          "hash": "4483f97312ad6e5bdffcce74f37456a07652397d",
+          "datavalue": {
+            "value": {
+              "entity-type": "item",
+              "numeric-id": 918088,
+              "id": "Q918088"
+            },
+            "type": "wikibase-entityid"
+          },
+          "datatype": "wikibase-item"
+        },
+        "type": "statement",
+        "id": "Q56316683$97171e56-4bd7-e253-fa9a-5ef710b05b0e",
+        "rank": "normal"
+      }
+    ],
+    "P1343": [
+      {
+        "mainsnak": {
+          "snaktype": "value",
+          "property": "P1343",
+          "hash": "cc623969772776f2a8b109402b0ac5fa5c123233",
+          "datavalue": {
+            "value": {
+              "entity-type": "item",
+              "numeric-id": 19219752,
+              "id": "Q19219752"
+            },
+            "type": "wikibase-entityid"
+          },
+          "datatype": "wikibase-item"
+        },
+        "type": "statement",
+        "qualifiers": {
+          "P805": [
+            {
+              "snaktype": "value",
+              "property": "P805",
+              "hash": "cbcd358e4abb52702acb374b45e72aa3ea87f47e",
+              "datavalue": {
+                "value": {
+                  "entity-type": "item",
+                  "numeric-id": 132856236,
+                  "id": "Q132856236"
+                },
+                "type": "wikibase-entityid"
+              },
+              "datatype": "wikibase-item"
+            }
+          ]
+        },
+        "qualifiers-order": [
+          "P805"
+        ],
+        "id": "Q56316683$80F2FF96-2177-4791-8673-454A1E14CAEF",
+        "rank": "normal"
+      },
+      {
+        "mainsnak": {
+          "snaktype": "value",
+          "property": "P1343",
+          "hash": "25990c177615dce5c2d71a82c3eb18d7e8c9efea",
+          "datavalue": {
+            "value": {
+              "entity-type": "item",
+              "numeric-id": 1547546,
+              "id": "Q1547546"
+            },
+            "type": "wikibase-entityid"
+          },
+          "datatype": "wikibase-item"
+        },
+        "type": "statement",
+        "qualifiers": {
+          "P805": [
+            {
+              "snaktype": "value",
+              "property": "P805",
+              "hash": "ba357854cd6e4fedd27380a5553ac625677d0d48",
+              "datavalue": {
+                "value": {
+                  "entity-type": "item",
+                  "numeric-id": 113108877,
+                  "id": "Q113108877"
+                },
+                "type": "wikibase-entityid"
+              },
+              "datatype": "wikibase-item"
+            }
+          ]
+        },
+        "qualifiers-order": [
+          "P805"
+        ],
+        "id": "Q56316683$A122EF68-68A0-4CA4-A3BE-602856226F3B",
+        "rank": "normal"
+      }
+    ]
+  },
+  "sitelinks": {
+    "dewiki": {
+      "site": "dewiki",
+      "title": "Papiermühle",
+      "badges": [],
+      "url": "https://de.wikipedia.org/wiki/Papierm%C3%BChle"
+    },
+    "frwiki": {
+      "site": "frwiki",
+      "title": "Moulin à papier",
+      "badges": [],
+      "url": "https://fr.wikipedia.org/wiki/Moulin_%C3%A0_papier"
+    },
+    "liwiki": {
+      "site": "liwiki",
+      "title": "Papiermäöle",
+      "badges": [],
+      "url": "https://li.wikipedia.org/wiki/Papierm%C3%A4%C3%B6le"
+    },
+    "nlwiki": {
+      "site": "nlwiki",
+      "title": "Papiermolen",
+      "badges": [],
+      "url": "https://nl.wikipedia.org/wiki/Papiermolen"
+    }
+  }
+}

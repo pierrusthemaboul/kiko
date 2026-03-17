@@ -1,0 +1,107 @@
+{
+  "saved_at": "2026-03-07T16:43:49.579Z",
+  "value": {
+    "pageid": 104257893,
+    "ns": 0,
+    "title": "Q109043253",
+    "lastrevid": 2458911268,
+    "modified": "2026-01-29T09:33:08Z",
+    "type": "item",
+    "id": "Q109043253",
+    "labels": {
+      "fr": {
+        "language": "fr",
+        "value": "rétablissement de l'esclavage par Napoléon"
+      },
+      "en": {
+        "language": "en",
+        "value": "re-introduction of slavery in French Colonies"
+      },
+      "es": {
+        "language": "es",
+        "value": "restauración de la esclavitud por Napoleón Bonaparte"
+      }
+    },
+    "descriptions": {},
+    "aliases": {},
+    "claims": {
+      "P17": [
+        {
+          "mainsnak": {
+            "snaktype": "value",
+            "property": "P17",
+            "hash": "c05db5d169c2560b9799d567a803d20a392f53e4",
+            "datavalue": {
+              "value": {
+                "entity-type": "item",
+                "numeric-id": 142,
+                "id": "Q142"
+              },
+              "type": "wikibase-entityid"
+            },
+            "datatype": "wikibase-item"
+          },
+          "type": "statement",
+          "id": "Q109043253$e84d4104-494e-aeb3-9aa0-2af0b5529bbc",
+          "rank": "normal"
+        }
+      ],
+      "P156": [
+        {
+          "mainsnak": {
+            "snaktype": "value",
+            "property": "P156",
+            "hash": "543458d3628a4e8647755000045df5f4f8633c6f",
+            "datavalue": {
+              "value": {
+                "entity-type": "item",
+                "numeric-id": 28493640,
+                "id": "Q28493640"
+              },
+              "type": "wikibase-entityid"
+            },
+            "datatype": "wikibase-item"
+          },
+          "type": "statement",
+          "id": "Q109043253$fb6758fc-4464-a7c7-70de-be71efb27e5a",
+          "rank": "normal"
+        }
+      ],
+      "P31": [
+        {
+          "mainsnak": {
+            "snaktype": "value",
+            "property": "P31",
+            "hash": "f1dfc10415f5c3d227068564717d9dfe913f80dc",
+            "datavalue": {
+              "value": {
+                "entity-type": "item",
+                "numeric-id": 2571972,
+                "id": "Q2571972"
+              },
+              "type": "wikibase-entityid"
+            },
+            "datatype": "wikibase-item"
+          },
+          "type": "statement",
+          "id": "Q109043253$0144ec24-49b1-6d86-c073-1cec50994d47",
+          "rank": "normal"
+        }
+      ]
+    },
+    "sitelinks": {
+      "enwiki": {
+        "site": "enwiki",
+        "title": "Reinstatement of slavery by Napoleon",
+        "badges": [],
+        "url": "https://en.wikipedia.org/wiki/Reinstatement_of_slavery_by_Napoleon"
+      },
+      "frwiki": {
+        "site": "frwiki",
+        "title": "Rétablissement de l'esclavage par Napoléon Bonaparte",
+        "badges": [],
+        "url": "https://fr.wikipedia.org/wiki/R%C3%A9tablissement_de_l%27esclavage_par_Napol%C3%A9on_Bonaparte"
+      }
+    }
+  }
+}

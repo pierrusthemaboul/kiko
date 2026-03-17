@@ -1,0 +1,108 @@
+{
+  "saved_at": "2026-03-07T15:21:52.519Z",
+  "value": {
+    "pageid": 2984454,
+    "ns": 0,
+    "title": "Q3123463",
+    "lastrevid": 2455880030,
+    "modified": "2026-01-18T15:42:53Z",
+    "type": "item",
+    "id": "Q3123463",
+    "labels": {
+      "fr": {
+        "language": "fr",
+        "value": "Géographie électorale du Front populaire en France"
+      }
+    },
+    "descriptions": {},
+    "aliases": {
+      "fr": [
+        {
+          "language": "fr",
+          "value": "Géographie électorale du front populaire"
+        },
+        {
+          "language": "fr",
+          "value": "Géographie électorale du front populaire en france"
+        },
+        {
+          "language": "fr",
+          "value": "Géographie Électorale Du Front Populaire En France"
+        },
+        {
+          "language": "fr",
+          "value": "Geographie electorale du Front populaire en France"
+        }
+      ]
+    },
+    "claims": {
+      "P17": [
+        {
+          "mainsnak": {
+            "snaktype": "value",
+            "property": "P17",
+            "hash": "c05db5d169c2560b9799d567a803d20a392f53e4",
+            "datavalue": {
+              "value": {
+                "entity-type": "item",
+                "numeric-id": 142,
+                "id": "Q142"
+              },
+              "type": "wikibase-entityid"
+            },
+            "datatype": "wikibase-item"
+          },
+          "type": "statement",
+          "id": "Q3123463$DFF987DE-028F-40FB-8D0F-6B220D7D3F55",
+          "rank": "normal"
+        }
+      ],
+      "P2671": [
+        {
+          "mainsnak": {
+            "snaktype": "value",
+            "property": "P2671",
+            "hash": "a8db91797d59acfb1f2d0cd61d8fd574eb448561",
+            "datavalue": {
+              "value": "/g/120qklcm",
+              "type": "string"
+            },
+            "datatype": "external-id"
+          },
+          "type": "statement",
+          "id": "Q3123463$288D02F8-1F52-4235-9DD8-57CEE9976AFD",
+          "rank": "normal"
+        }
+      ],
+      "P31": [
+        {
+          "mainsnak": {
+            "snaktype": "value",
+            "property": "P31",
+            "hash": "1129ee64dc859b7f8a9cd32e346d076f6b38b886",
+            "datavalue": {
+              "value": {
+                "entity-type": "item",
+                "numeric-id": 19571328,
+                "id": "Q19571328"
+              },
+              "type": "wikibase-entityid"
+            },
+            "datatype": "wikibase-item"
+          },
+          "type": "statement",
+          "id": "Q3123463$4e8250e0-4496-2f03-ed97-106b868e74d6",
+          "rank": "normal"
+        }
+      ]
+    },
+    "sitelinks": {
+      "frwiki": {
+        "site": "frwiki",
+        "title": "Géographie électorale du Front populaire en France",
+        "badges": [],
+        "url": "https://fr.wikipedia.org/wiki/G%C3%A9ographie_%C3%A9lectorale_du_Front_populaire_en_France"
+      }
+    }
+  }
+}

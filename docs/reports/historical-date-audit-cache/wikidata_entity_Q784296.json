@@ -1,0 +1,573 @@
+{
+  "saved_at": "2026-03-07T16:55:54.483Z",
+  "value": {
+    "pageid": 737298,
+    "ns": 0,
+    "title": "Q784296",
+    "lastrevid": 2345349993,
+    "modified": "2025-05-06T09:13:50Z",
+    "type": "item",
+    "id": "Q784296",
+    "labels": {
+      "pl": {
+        "language": "pl",
+        "value": "Bitwa pod Tertry"
+      },
+      "de": {
+        "language": "de",
+        "value": "Schlacht bei Tertry"
+      },
+      "en": {
+        "language": "en",
+        "value": "Battle of Tertry"
+      },
+      "fr": {
+        "language": "fr",
+        "value": "bataille de Tertry"
+      },
+      "nl": {
+        "language": "nl",
+        "value": "Slag bij Tertry"
+      },
+      "sh": {
+        "language": "sh",
+        "value": "Bitka kod Tertryja"
+      },
+      "ru": {
+        "language": "ru",
+        "value": "Битва при Тертри"
+      },
+      "eo": {
+        "language": "eo",
+        "value": "Batalo de Tertry"
+      },
+      "ja": {
+        "language": "ja",
+        "value": "テルティーの戦い"
+      },
+      "sl": {
+        "language": "sl",
+        "value": "Bitka pri Tertryju"
+      },
+      "es": {
+        "language": "es",
+        "value": "Batalla de Tertry"
+      },
+      "it": {
+        "language": "it",
+        "value": "Battaglia di Tertry"
+      },
+      "zh": {
+        "language": "zh",
+        "value": "泰尔特里战役"
+      },
+      "cs": {
+        "language": "cs",
+        "value": "Bitva u Tertry"
+      },
+      "yo": {
+        "language": "yo",
+        "value": "ogun Tertry"
+      },
+      "ga": {
+        "language": "ga",
+        "value": "Cath Tertry"
+      },
+      "he": {
+        "language": "he",
+        "value": "קרב טרטרי"
+      }
+    },
+    "descriptions": {
+      "en": {
+        "language": "en",
+        "value": "battle"
+      },
+      "de": {
+        "language": "de",
+        "value": "Schlacht"
+      },
+      "yo": {
+        "language": "yo",
+        "value": "ogun"
+      },
+      "es": {
+        "language": "es",
+        "value": "enfrentamiento"
+      },
+      "fr": {
+        "language": "fr",
+        "value": "bataille en 687, opposant les royaumes de Neustrie et d'Austrasie"
+      },
+      "he": {
+        "language": "he",
+        "value": "קרב שנערך בשנת 687"
+      }
+    },
+    "aliases": {
+      "ja": [
+        {
+          "language": "ja",
+          "value": "テルトリーの戦い"
+        },
+        {
+          "language": "ja",
+          "value": "テルトゥリーの戦い"
+        }
+      ],
+      "zh": [
+        {
+          "language": "zh",
+          "value": "特里之战"
+        }
+      ]
+    },
+    "claims": {
+      "P625": [
+        {
+          "mainsnak": {
+            "snaktype": "value",
+            "property": "P625",
+            "hash": "e3e6685ea625bb7caeb6e948e859955bdd71fe16",
+            "datavalue": {
+              "value": {
+                "latitude": 49.86305556,
+                "longitude": 3.96944444,
+                "altitude": null,
+                "precision": 0.00027777777777778,
+                "globe": "http://www.wikidata.org/entity/Q2"
+              },
+              "type": "globecoordinate"
+            },
+            "datatype": "globe-coordinate"
+          },
+          "type": "statement",
+          "id": "Q784296$62342E4E-072A-49DB-BE8E-6D4468FB8019",
+          "rank": "normal",
+          "references": [
+            {
+              "hash": "d4bd87b862b12d99d26e86472d44f26858dee639",
+              "snaks": {
+                "P143": [
+                  {
+                    "snaktype": "value",
+                    "property": "P143",
+                    "hash": "f30cbd35620c4ea6d0633aaf0210a8916130469b",
+                    "datavalue": {
+                      "value": {
+                        "entity-type": "item",
+                        "numeric-id": 8447,
+                        "id": "Q8447"
+                      },
+                      "type": "wikibase-entityid"
+                    },
+                    "datatype": "wikibase-item"
+                  }
+                ]
+              },
+              "snaks-order": [
+                "P143"
+              ]
+            }
+          ]
+        }
+      ],
+      "P646": [
+        {
+          "mainsnak": {
+            "snaktype": "value",
+            "property": "P646",
+            "hash": "1afddb50fad5224db8540623411431d397deb10a",
+            "datavalue": {
+              "value": "/m/0ccy3h",
+              "type": "string"
+            },
+            "datatype": "external-id"
+          },
+          "type": "statement",
+          "id": "Q784296$1C2E1953-6EA6-4543-8A89-BCDC92871451",
+          "rank": "normal",
+          "references": [
+            {
+              "hash": "2b00cb481cddcac7623114367489b5c194901c4a",
+              "snaks": {
+                "P248": [
+                  {
+                    "snaktype": "value",
+                    "property": "P248",
+                    "hash": "a94b740202b097dd33355e0e6c00e54b9395e5e0",
+                    "datavalue": {
+                      "value": {
+                        "entity-type": "item",
+                        "numeric-id": 15241312,
+                        "id": "Q15241312"
+                      },
+                      "type": "wikibase-entityid"
+                    },
+                    "datatype": "wikibase-item"
+                  }
+                ],
+                "P577": [
+                  {
+                    "snaktype": "value",
+                    "property": "P577",
+                    "hash": "fde79ecb015112d2f29229ccc1ec514ed3e71fa2",
+                    "datavalue": {
+                      "value": {
+                        "time": "+2013-10-28T00:00:00Z",
+                        "timezone": 0,
+                        "before": 0,
+                        "after": 0,
+                        "precision": 11,
+                        "calendarmodel": "http://www.wikidata.org/entity/Q1985727"
+                      },
+                      "type": "time"
+                    },
+                    "datatype": "time"
+                  }
+                ]
+              },
+              "snaks-order": [
+                "P248",
+                "P577"
+              ]
+            }
+          ]
+        }
+      ],
+      "P31": [
+        {
+          "mainsnak": {
+            "snaktype": "value",
+            "property": "P31",
+            "hash": "baa1df9dcd37b9f3a062e7a14a8bef0c37078d32",
+            "datavalue": {
+              "value": {
+                "entity-type": "item",
+                "numeric-id": 178561,
+                "id": "Q178561"
+              },
+              "type": "wikibase-entityid"
+            },
+            "datatype": "wikibase-item"
+          },
+          "type": "statement",
+          "id": "Q784296$2F84766A-FA38-4F94-BAA9-60E767C1C32C",
+          "rank": "normal",
+          "references": [
+            {
+              "hash": "d4bd87b862b12d99d26e86472d44f26858dee639",
+              "snaks": {
+                "P143": [
+                  {
+                    "snaktype": "value",
+                    "property": "P143",
+                    "hash": "f30cbd35620c4ea6d0633aaf0210a8916130469b",
+                    "datavalue": {
+                      "value": {
+                        "entity-type": "item",
+                        "numeric-id": 8447,
+                        "id": "Q8447"
+                      },
+                      "type": "wikibase-entityid"
+                    },
+                    "datatype": "wikibase-item"
+                  }
+                ]
+              },
+              "snaks-order": [
+                "P143"
+              ]
+            }
+          ]
+        }
+      ],
+      "P276": [
+        {
+          "mainsnak": {
+            "snaktype": "value",
+            "property": "P276",
+            "hash": "6508690f95426dc09665cd79a71916ec740e2a62",
+            "datavalue": {
+              "value": {
+                "entity-type": "item",
+                "numeric-id": 795337,
+                "id": "Q795337"
+              },
+              "type": "wikibase-entityid"
+            },
+            "datatype": "wikibase-item"
+          },
+          "type": "statement",
+          "id": "Q784296$6681901E-59E0-46A9-AB08-2597998FDCF5",
+          "rank": "normal",
+          "references": [
+            {
+              "hash": "d4bd87b862b12d99d26e86472d44f26858dee639",
+              "snaks": {
+                "P143": [
+                  {
+                    "snaktype": "value",
+                    "property": "P143",
+                    "hash": "f30cbd35620c4ea6d0633aaf0210a8916130469b",
+                    "datavalue": {
+                      "value": {
+                        "entity-type": "item",
+                        "numeric-id": 8447,
+                        "id": "Q8447"
+                      },
+                      "type": "wikibase-entityid"
+                    },
+                    "datatype": "wikibase-item"
+                  }
+                ]
+              },
+              "snaks-order": [
+                "P143"
+              ]
+            }
+          ]
+        }
+      ],
+      "P585": [
+        {
+          "mainsnak": {
+            "snaktype": "value",
+            "property": "P585",
+            "hash": "21d80b9744c804b671249b1c3af4900faf09b434",
+            "datavalue": {
+              "value": {
+                "time": "+0687-00-00T00:00:00Z",
+                "timezone": 0,
+                "before": 0,
+                "after": 0,
+                "precision": 9,
+                "calendarmodel": "http://www.wikidata.org/entity/Q1985786"
+              },
+              "type": "time"
+            },
+            "datatype": "time"
+          },
+          "type": "statement",
+          "id": "Q784296$54748a60-4a27-e911-9d64-098dc9dc457b",
+          "rank": "normal"
+        }
+      ],
+      "P1417": [
+        {
+          "mainsnak": {
+            "snaktype": "value",
+            "property": "P1417",
+            "hash": "dbc5b0b15237d01b55240adb1f1cf833c0c0a5b9",
+            "datavalue": {
+              "value": "topic/Battle-of-Tertry",
+              "type": "string"
+            },
+            "datatype": "external-id"
+          },
+          "type": "statement",
+          "qualifiers": {
+            "P1810": [
+              {
+                "snaktype": "value",
+                "property": "P1810",
+                "hash": "37d75ec63a5c3208464f650d7da140c819807bd2",
+                "datavalue": {
+                  "value": "Battle of Tertry",
+                  "type": "string"
+                },
+                "datatype": "string"
+              }
+            ]
+          },
+          "qualifiers-order": [
+            "P1810"
+          ],
+          "id": "Q784296$6BE0368D-3802-44A4-9C20-D4BCEA376A34",
+          "rank": "normal"
+        }
+      ],
+      "P18": [
+        {
+          "mainsnak": {
+            "snaktype": "value",
+            "property": "P18",
+            "hash": "7b4c348e131dfa1b939f04cc20ddcb89261a452c",
+            "datavalue": {
+              "value": "Jean Michel Moreau - Pepin of Herstal after the battle of Tertry in 687.jpg",
+              "type": "string"
+            },
+            "datatype": "commonsMedia"
+          },
+          "type": "statement",
+          "id": "Q784296$7812E803-6A1D-466F-856C-4BC0189D5CFF",
+          "rank": "normal"
+        }
+      ],
+      "P5063": [
+        {
+          "mainsnak": {
+            "snaktype": "value",
+            "property": "P5063",
+            "hash": "0c8d728d3af8df2bdb7197a793876490d92c5e5c",
+            "datavalue": {
+              "value": "i42184",
+              "type": "string"
+            },
+            "datatype": "external-id"
+          },
+          "type": "statement",
+          "id": "Q784296$DDFF4C4D-19A0-455B-BC91-27D5DE0EA6B7",
+          "rank": "normal"
+        }
+      ],
+      "P8814": [
+        {
+          "mainsnak": {
+            "snaktype": "value",
+            "property": "P8814",
+            "hash": "ca4f1881bafbf6a52d13de377841bd1905424bcc",
+            "datavalue": {
+              "value": "01299437-n",
+              "type": "string"
+            },
+            "datatype": "external-id"
+          },
+          "type": "statement",
+          "id": "Q784296$BB463CE4-7873-411F-B75D-C2A486A42B40",
+          "rank": "normal"
+        }
+      ],
+      "P17": [
+        {
+          "mainsnak": {
+            "snaktype": "value",
+            "property": "P17",
+            "hash": "c05db5d169c2560b9799d567a803d20a392f53e4",
+            "datavalue": {
+              "value": {
+                "entity-type": "item",
+                "numeric-id": 142,
+                "id": "Q142"
+              },
+              "type": "wikibase-entityid"
+            },
+            "datatype": "wikibase-item"
+          },
+          "type": "statement",
+          "id": "Q784296$D835A59B-EE4B-4A00-B1C4-985969FADDF2",
+          "rank": "normal"
+        }
+      ],
+      "P373": [
+        {
+          "mainsnak": {
+            "snaktype": "value",
+            "property": "P373",
+            "hash": "ec75ae1a0b29ce04ca34b2bc2e249bc6d1d741ad",
+            "datavalue": {
+              "value": "Battle of Tertry",
+              "type": "string"
+            },
+            "datatype": "string"
+          },
+          "type": "statement",
+          "id": "Q784296$2366e063-209d-4d05-888f-0f21f84b08d5",
+          "rank": "normal"
+        }
+      ]
+    },
+    "sitelinks": {
+      "commonswiki": {
+        "site": "commonswiki",
+        "title": "Category:Battle of Tertry",
+        "badges": [],
+        "url": "https://commons.wikimedia.org/wiki/Category:Battle_of_Tertry"
+      },
+      "cswiki": {
+        "site": "cswiki",
+        "title": "Bitva u Tertry",
+        "badges": [],
+        "url": "https://cs.wikipedia.org/wiki/Bitva_u_Tertry"
+      },
+      "dewiki": {
+        "site": "dewiki",
+        "title": "Schlacht bei Tertry",
+        "badges": [],
+        "url": "https://de.wikipedia.org/wiki/Schlacht_bei_Tertry"
+      },
+      "enwiki": {
+        "site": "enwiki",
+        "title": "Battle of Tertry",
+        "badges": [],
+        "url": "https://en.wikipedia.org/wiki/Battle_of_Tertry"
+      },
+      "eowiki": {
+        "site": "eowiki",
+        "title": "Batalo de Tertry",
+        "badges": [],
+        "url": "https://eo.wikipedia.org/wiki/Batalo_de_Tertry"
+      },
+      "eswiki": {
+        "site": "eswiki",
+        "title": "Batalla de Tertry",
+        "badges": [],
+        "url": "https://es.wikipedia.org/wiki/Batalla_de_Tertry"
+      },
+      "frwiki": {
+        "site": "frwiki",
+        "title": "Bataille de Tertry",
+        "badges": [],
+        "url": "https://fr.wikipedia.org/wiki/Bataille_de_Tertry"
+      },
+      "itwiki": {
+        "site": "itwiki",
+        "title": "Battaglia di Tertry",
+        "badges": [],
+        "url": "https://it.wikipedia.org/wiki/Battaglia_di_Tertry"
+      },
+      "jawiki": {
+        "site": "jawiki",
+        "title": "テルトリーの戦い",
+        "badges": [],
+        "url": "https://ja.wikipedia.org/wiki/%E3%83%86%E3%83%AB%E3%83%88%E3%83%AA%E3%83%BC%E3%81%AE%E6%88%A6%E3%81%84"
+      },
+      "nlwiki": {
+        "site": "nlwiki",
+        "title": "Slag bij Tertry",
+        "badges": [],
+        "url": "https://nl.wikipedia.org/wiki/Slag_bij_Tertry"
+      },
+      "plwiki": {
+        "site": "plwiki",
+        "title": "Bitwa pod Tertry",
+        "badges": [],
+        "url": "https://pl.wikipedia.org/wiki/Bitwa_pod_Tertry"
+      },
+      "ruwiki": {
+        "site": "ruwiki",
+        "title": "Битва при Тертри",
+        "badges": [],
+        "url": "https://ru.wikipedia.org/wiki/%D0%91%D0%B8%D1%82%D0%B2%D0%B0_%D0%BF%D1%80%D0%B8_%D0%A2%D0%B5%D1%80%D1%82%D1%80%D0%B8"
+      },
+      "shwiki": {
+        "site": "shwiki",
+        "title": "Bitka kod Tertryja",
+        "badges": [],
+        "url": "https://sh.wikipedia.org/wiki/Bitka_kod_Tertryja"
+      },
+      "slwiki": {
+        "site": "slwiki",
+        "title": "Bitka pri Tertryju",
+        "badges": [],
+        "url": "https://sl.wikipedia.org/wiki/Bitka_pri_Tertryju"
+      },
+      "zhwiki": {
+        "site": "zhwiki",
+        "title": "泰爾特里戰役",
+        "badges": [],
+        "url": "https://zh.wikipedia.org/wiki/%E6%B3%B0%E7%88%BE%E7%89%B9%E9%87%8C%E6%88%B0%E5%BD%B9"
+      }
+    }
+  }
+}

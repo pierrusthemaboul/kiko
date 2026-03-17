@@ -1,0 +1,803 @@
+{
+  "saved_at": "2026-03-07T16:16:22.498Z",
+  "value": {
+    "pageid": 211560,
+    "ns": 0,
+    "title": "Q216340",
+    "lastrevid": 2310021239,
+    "modified": "2025-02-11T12:45:25Z",
+    "type": "item",
+    "id": "Q216340",
+    "labels": {
+      "fr": {
+        "language": "fr",
+        "value": "24 Heures du Mans 1923"
+      },
+      "en": {
+        "language": "en",
+        "value": "1923 24 Hours of Le Mans"
+      },
+      "pt": {
+        "language": "pt",
+        "value": "24 Horas de Le Mans 1923"
+      },
+      "sl": {
+        "language": "sl",
+        "value": "24 ur Le Mansa 1923"
+      },
+      "de": {
+        "language": "de",
+        "value": "24-Stunden-Rennen von Le Mans 1923"
+      },
+      "tr": {
+        "language": "tr",
+        "value": "1923 Le Mans 24 Saat Yarışı"
+      },
+      "it": {
+        "language": "it",
+        "value": "24 Ore di Le Mans 1923"
+      },
+      "pl": {
+        "language": "pl",
+        "value": "24h Le Mans 1923"
+      },
+      "hu": {
+        "language": "hu",
+        "value": "1923-as Le Mans-i 24 órás verseny"
+      },
+      "fi": {
+        "language": "fi",
+        "value": "Le Mansin 24 tunnin ajo 1923"
+      },
+      "ja": {
+        "language": "ja",
+        "value": "1923年のル・マン24時間レース"
+      },
+      "gl": {
+        "language": "gl",
+        "value": "24 Horas de Le Mans 1923"
+      },
+      "zh": {
+        "language": "zh",
+        "value": "1923年利曼24小時耐力賽"
+      },
+      "nl": {
+        "language": "nl",
+        "value": "24 uur van Le Mans 1923"
+      }
+    },
+    "descriptions": {
+      "de": {
+        "language": "de",
+        "value": "24-Stunden-Rennen"
+      },
+      "en": {
+        "language": "en",
+        "value": "endurance race"
+      },
+      "tr": {
+        "language": "tr",
+        "value": "Dayanıklılığa dayalı otomobil yarışı"
+      },
+      "sl": {
+        "language": "sl",
+        "value": "24-urna dirka"
+      },
+      "hu": {
+        "language": "hu",
+        "value": "autóverseny"
+      },
+      "fr": {
+        "language": "fr",
+        "value": "course d'endurance automobile"
+      },
+      "it": {
+        "language": "it",
+        "value": "edizione della 24 ore di Le Mans"
+      }
+    },
+    "aliases": {
+      "en": [
+        {
+          "language": "en",
+          "value": "1923 24h Le Mans"
+        },
+        {
+          "language": "en",
+          "value": "1923 Le Mans 24 Hours"
+        },
+        {
+          "language": "en",
+          "value": "24 Hours Grand Prix of Endurance"
+        }
+      ],
+      "fr": [
+        {
+          "language": "fr",
+          "value": "Grand Prix d' Endurance de 24 Heures"
+        }
+      ],
+      "zh": [
+        {
+          "language": "zh",
+          "value": "1923年勒芒24小时耐力赛"
+        }
+      ]
+    },
+    "claims": {
+      "P373": [
+        {
+          "mainsnak": {
+            "snaktype": "value",
+            "property": "P373",
+            "hash": "6c218d8f9b6e22571389810d9ece54e4b821e28d",
+            "datavalue": {
+              "value": "1923 24 Hours of Le Mans",
+              "type": "string"
+            },
+            "datatype": "string"
+          },
+          "type": "statement",
+          "id": "q216340$15F3A1A2-93E8-4458-9F09-A070680019D3",
+          "rank": "normal"
+        }
+      ],
+      "P646": [
+        {
+          "mainsnak": {
+            "snaktype": "value",
+            "property": "P646",
+            "hash": "45a2bfaeb2f079dcfae8e0ddcf733fc06da77250",
+            "datavalue": {
+              "value": "/m/0d30g5",
+              "type": "string"
+            },
+            "datatype": "external-id"
+          },
+          "type": "statement",
+          "id": "Q216340$4170E5E3-F7DC-49CF-A8F8-BE591FFB9F5A",
+          "rank": "normal",
+          "references": [
+            {
+              "hash": "2b00cb481cddcac7623114367489b5c194901c4a",
+              "snaks": {
+                "P248": [
+                  {
+                    "snaktype": "value",
+                    "property": "P248",
+                    "hash": "a94b740202b097dd33355e0e6c00e54b9395e5e0",
+                    "datavalue": {
+                      "value": {
+                        "entity-type": "item",
+                        "numeric-id": 15241312,
+                        "id": "Q15241312"
+                      },
+                      "type": "wikibase-entityid"
+                    },
+                    "datatype": "wikibase-item"
+                  }
+                ],
+                "P577": [
+                  {
+                    "snaktype": "value",
+                    "property": "P577",
+                    "hash": "fde79ecb015112d2f29229ccc1ec514ed3e71fa2",
+                    "datavalue": {
+                      "value": {
+                        "time": "+2013-10-28T00:00:00Z",
+                        "timezone": 0,
+                        "before": 0,
+                        "after": 0,
+                        "precision": 11,
+                        "calendarmodel": "http://www.wikidata.org/entity/Q1985727"
+                      },
+                      "type": "time"
+                    },
+                    "datatype": "time"
+                  }
+                ]
+              },
+              "snaks-order": [
+                "P248",
+                "P577"
+              ]
+            }
+          ]
+        }
+      ],
+      "P31": [
+        {
+          "mainsnak": {
+            "snaktype": "value",
+            "property": "P31",
+            "hash": "1c72d40c354bb295011ce71ab7fbe5b1a226d402",
+            "datavalue": {
+              "value": {
+                "entity-type": "item",
+                "numeric-id": 187579,
+                "id": "Q187579"
+              },
+              "type": "wikibase-entityid"
+            },
+            "datatype": "wikibase-item"
+          },
+          "type": "statement",
+          "qualifiers": {
+            "P156": [
+              {
+                "snaktype": "value",
+                "property": "P156",
+                "hash": "265ec3ca031de9330d386ed4f11be7d4cff7666c",
+                "datavalue": {
+                  "value": {
+                    "entity-type": "item",
+                    "numeric-id": 216343,
+                    "id": "Q216343"
+                  },
+                  "type": "wikibase-entityid"
+                },
+                "datatype": "wikibase-item"
+              }
+            ],
+            "P1545": [
+              {
+                "snaktype": "value",
+                "property": "P1545",
+                "hash": "2a1ced1dca90648ea7e306acbadd74fc81a10722",
+                "datavalue": {
+                  "value": "1",
+                  "type": "string"
+                },
+                "datatype": "string"
+              }
+            ]
+          },
+          "qualifiers-order": [
+            "P156",
+            "P1545"
+          ],
+          "id": "Q216340$835d660d-4c1f-c078-372d-266fffdb1fa5",
+          "rank": "normal"
+        }
+      ],
+      "P2501": [
+        {
+          "mainsnak": {
+            "snaktype": "value",
+            "property": "P2501",
+            "hash": "81da184cfad6b337fc07b231e48b32625355f630",
+            "datavalue": {
+              "value": {
+                "entity-type": "item",
+                "numeric-id": 54935493,
+                "id": "Q54935493"
+              },
+              "type": "wikibase-entityid"
+            },
+            "datatype": "wikibase-item"
+          },
+          "type": "statement",
+          "id": "Q216340$0176ef68-46fb-3ae1-e532-097a38a721e1",
+          "rank": "normal"
+        },
+        {
+          "mainsnak": {
+            "snaktype": "value",
+            "property": "P2501",
+            "hash": "70b367c636853e52e6133ad50f55adb57a8618b6",
+            "datavalue": {
+              "value": {
+                "entity-type": "item",
+                "numeric-id": 54994260,
+                "id": "Q54994260"
+              },
+              "type": "wikibase-entityid"
+            },
+            "datatype": "wikibase-item"
+          },
+          "type": "statement",
+          "id": "Q216340$574bc4c9-4032-52bd-ee7d-b5cc90175fd7",
+          "rank": "normal"
+        },
+        {
+          "mainsnak": {
+            "snaktype": "value",
+            "property": "P2501",
+            "hash": "3b6245714d96b45647fea04479a1b1b8bb6a5888",
+            "datavalue": {
+              "value": {
+                "entity-type": "item",
+                "numeric-id": 54994808,
+                "id": "Q54994808"
+              },
+              "type": "wikibase-entityid"
+            },
+            "datatype": "wikibase-item"
+          },
+          "type": "statement",
+          "id": "Q216340$e9671d1b-4cf2-63da-132d-d2726176e715",
+          "rank": "normal"
+        },
+        {
+          "mainsnak": {
+            "snaktype": "value",
+            "property": "P2501",
+            "hash": "1a68edb54725c08996302b2f7696c23d2b3cb972",
+            "datavalue": {
+              "value": {
+                "entity-type": "item",
+                "numeric-id": 54989371,
+                "id": "Q54989371"
+              },
+              "type": "wikibase-entityid"
+            },
+            "datatype": "wikibase-item"
+          },
+          "type": "statement",
+          "id": "Q216340$914ed6b9-4076-8b3a-9112-59419b1ec33c",
+          "rank": "normal"
+        },
+        {
+          "mainsnak": {
+            "snaktype": "value",
+            "property": "P2501",
+            "hash": "86c9ccd655aa8d65c0e8fd2bc48a12cb900c4180",
+            "datavalue": {
+              "value": {
+                "entity-type": "item",
+                "numeric-id": 54989430,
+                "id": "Q54989430"
+              },
+              "type": "wikibase-entityid"
+            },
+            "datatype": "wikibase-item"
+          },
+          "type": "statement",
+          "id": "Q216340$76cb9c32-45f7-fa30-4eda-851d49ffcd95",
+          "rank": "normal"
+        },
+        {
+          "mainsnak": {
+            "snaktype": "value",
+            "property": "P2501",
+            "hash": "2d99827855d29e26013926a4c750d96d4fda8fcf",
+            "datavalue": {
+              "value": {
+                "entity-type": "item",
+                "numeric-id": 54997054,
+                "id": "Q54997054"
+              },
+              "type": "wikibase-entityid"
+            },
+            "datatype": "wikibase-item"
+          },
+          "type": "statement",
+          "id": "Q216340$f5e0a5d0-4129-3252-4a15-35d3f529d9cf",
+          "rank": "normal"
+        },
+        {
+          "mainsnak": {
+            "snaktype": "value",
+            "property": "P2501",
+            "hash": "d9f94257375174a9389f981ba68502abb32cc192",
+            "datavalue": {
+              "value": {
+                "entity-type": "item",
+                "numeric-id": 55024147,
+                "id": "Q55024147"
+              },
+              "type": "wikibase-entityid"
+            },
+            "datatype": "wikibase-item"
+          },
+          "type": "statement",
+          "id": "Q216340$496b6a23-4be7-cd06-a2fa-3521f6de47a6",
+          "rank": "normal"
+        }
+      ],
+      "P1346": [
+        {
+          "mainsnak": {
+            "snaktype": "value",
+            "property": "P1346",
+            "hash": "13c6995698197085fab52388e1fefe707a4bae80",
+            "datavalue": {
+              "value": {
+                "entity-type": "item",
+                "numeric-id": 54935546,
+                "id": "Q54935546"
+              },
+              "type": "wikibase-entityid"
+            },
+            "datatype": "wikibase-item"
+          },
+          "type": "statement",
+          "id": "Q216340$b8c3fa1e-4ef1-0d73-f24e-63b0f2e626af",
+          "rank": "normal"
+        }
+      ],
+      "P585": [
+        {
+          "mainsnak": {
+            "snaktype": "value",
+            "property": "P585",
+            "hash": "9da869666969078cd371023165717d5fcd4c377a",
+            "datavalue": {
+              "value": {
+                "time": "+1923-00-00T00:00:00Z",
+                "timezone": 0,
+                "before": 0,
+                "after": 0,
+                "precision": 9,
+                "calendarmodel": "http://www.wikidata.org/entity/Q1985727"
+              },
+              "type": "time"
+            },
+            "datatype": "time"
+          },
+          "type": "statement",
+          "id": "Q216340$5C4DB841-A6DF-4C5E-9D3B-D64121285C3D",
+          "rank": "normal"
+        }
+      ],
+      "P17": [
+        {
+          "mainsnak": {
+            "snaktype": "value",
+            "property": "P17",
+            "hash": "c05db5d169c2560b9799d567a803d20a392f53e4",
+            "datavalue": {
+              "value": {
+                "entity-type": "item",
+                "numeric-id": 142,
+                "id": "Q142"
+              },
+              "type": "wikibase-entityid"
+            },
+            "datatype": "wikibase-item"
+          },
+          "type": "statement",
+          "id": "Q216340$688D5C75-5AFF-4932-95FE-832F5BD71592",
+          "rank": "normal"
+        }
+      ],
+      "P393": [
+        {
+          "mainsnak": {
+            "snaktype": "value",
+            "property": "P393",
+            "hash": "b5add4b6e7969c37155ccceb4815a31ff80dfe2a",
+            "datavalue": {
+              "value": "1",
+              "type": "string"
+            },
+            "datatype": "string"
+          },
+          "type": "statement",
+          "id": "Q216340$181CF828-920F-4C27-8AC4-B6A9D38E8E67",
+          "rank": "normal",
+          "references": [
+            {
+              "hash": "9b1b1f1560939de9fde6e89c3e62e5010f687ea6",
+              "snaks": {
+                "P143": [
+                  {
+                    "snaktype": "value",
+                    "property": "P143",
+                    "hash": "5a343e7e758a4282a01316d3e959b6e653b767fc",
+                    "datavalue": {
+                      "value": {
+                        "entity-type": "item",
+                        "numeric-id": 11920,
+                        "id": "Q11920"
+                      },
+                      "type": "wikibase-entityid"
+                    },
+                    "datatype": "wikibase-item"
+                  }
+                ],
+                "P4656": [
+                  {
+                    "snaktype": "value",
+                    "property": "P4656",
+                    "hash": "f2bcbd0fef57eed3202d6e038e5df1445c616934",
+                    "datavalue": {
+                      "value": "https://it.wikipedia.org/w/index.php?title=24_Ore_di_Le_Mans_1923&oldid=106112553",
+                      "type": "string"
+                    },
+                    "datatype": "url"
+                  }
+                ]
+              },
+              "snaks-order": [
+                "P143",
+                "P4656"
+              ]
+            }
+          ]
+        }
+      ],
+      "P641": [
+        {
+          "mainsnak": {
+            "snaktype": "value",
+            "property": "P641",
+            "hash": "b8d19c91c42045dd7624884cbab433087641b0ff",
+            "datavalue": {
+              "value": {
+                "entity-type": "item",
+                "numeric-id": 371804,
+                "id": "Q371804"
+              },
+              "type": "wikibase-entityid"
+            },
+            "datatype": "wikibase-item"
+          },
+          "type": "statement",
+          "id": "Q216340$32B3B709-520C-40B4-8519-4F15CCBEF594",
+          "rank": "normal",
+          "references": [
+            {
+              "hash": "3553b8de3d18b40100d5941666a7cea53859e77f",
+              "snaks": {
+                "P143": [
+                  {
+                    "snaktype": "value",
+                    "property": "P143",
+                    "hash": "f30cbd35620c4ea6d0633aaf0210a8916130469b",
+                    "datavalue": {
+                      "value": {
+                        "entity-type": "item",
+                        "numeric-id": 8447,
+                        "id": "Q8447"
+                      },
+                      "type": "wikibase-entityid"
+                    },
+                    "datatype": "wikibase-item"
+                  }
+                ],
+                "P4656": [
+                  {
+                    "snaktype": "value",
+                    "property": "P4656",
+                    "hash": "cee1b01070727cfbe5edb8c18c5a617e0a4b0bb2",
+                    "datavalue": {
+                      "value": "https://fr.wikipedia.org/w/index.php?title=24_Heures_du_Mans_1923&oldid=175043359",
+                      "type": "string"
+                    },
+                    "datatype": "url"
+                  }
+                ]
+              },
+              "snaks-order": [
+                "P143",
+                "P4656"
+              ]
+            }
+          ]
+        }
+      ],
+      "P276": [
+        {
+          "mainsnak": {
+            "snaktype": "value",
+            "property": "P276",
+            "hash": "a057212e1ddeb78172a414b67289ac31172fe5d3",
+            "datavalue": {
+              "value": {
+                "entity-type": "item",
+                "numeric-id": 1476,
+                "id": "Q1476"
+              },
+              "type": "wikibase-entityid"
+            },
+            "datatype": "wikibase-item"
+          },
+          "type": "statement",
+          "id": "Q216340$25EC6FE7-F4DD-4CD7-AE3C-AD6EA849E98F",
+          "rank": "normal",
+          "references": [
+            {
+              "hash": "3a752308d2204d660bdd3762a8e8061302f92419",
+              "snaks": {
+                "P143": [
+                  {
+                    "snaktype": "value",
+                    "property": "P143",
+                    "hash": "f30cbd35620c4ea6d0633aaf0210a8916130469b",
+                    "datavalue": {
+                      "value": {
+                        "entity-type": "item",
+                        "numeric-id": 8447,
+                        "id": "Q8447"
+                      },
+                      "type": "wikibase-entityid"
+                    },
+                    "datatype": "wikibase-item"
+                  }
+                ],
+                "P4656": [
+                  {
+                    "snaktype": "value",
+                    "property": "P4656",
+                    "hash": "2391a708058efd99cc7f1ce78d88c0f5f6ce28bb",
+                    "datavalue": {
+                      "value": "https://fr.wikipedia.org/w/index.php?title=24_Heures_du_Mans_1923&oldid=204629598",
+                      "type": "string"
+                    },
+                    "datatype": "url"
+                  }
+                ]
+              },
+              "snaks-order": [
+                "P143",
+                "P4656"
+              ]
+            }
+          ]
+        },
+        {
+          "mainsnak": {
+            "snaktype": "value",
+            "property": "P276",
+            "hash": "6540bfb14f414f7e7e8a9840312ca748f18195c7",
+            "datavalue": {
+              "value": {
+                "entity-type": "item",
+                "numeric-id": 174090,
+                "id": "Q174090"
+              },
+              "type": "wikibase-entityid"
+            },
+            "datatype": "wikibase-item"
+          },
+          "type": "statement",
+          "id": "Q216340$BAAD9C49-DA62-459E-979F-7D5EF87E7CEB",
+          "rank": "normal",
+          "references": [
+            {
+              "hash": "3a752308d2204d660bdd3762a8e8061302f92419",
+              "snaks": {
+                "P143": [
+                  {
+                    "snaktype": "value",
+                    "property": "P143",
+                    "hash": "f30cbd35620c4ea6d0633aaf0210a8916130469b",
+                    "datavalue": {
+                      "value": {
+                        "entity-type": "item",
+                        "numeric-id": 8447,
+                        "id": "Q8447"
+                      },
+                      "type": "wikibase-entityid"
+                    },
+                    "datatype": "wikibase-item"
+                  }
+                ],
+                "P4656": [
+                  {
+                    "snaktype": "value",
+                    "property": "P4656",
+                    "hash": "2391a708058efd99cc7f1ce78d88c0f5f6ce28bb",
+                    "datavalue": {
+                      "value": "https://fr.wikipedia.org/w/index.php?title=24_Heures_du_Mans_1923&oldid=204629598",
+                      "type": "string"
+                    },
+                    "datatype": "url"
+                  }
+                ]
+              },
+              "snaks-order": [
+                "P143",
+                "P4656"
+              ]
+            }
+          ]
+        }
+      ],
+      "P18": [
+        {
+          "mainsnak": {
+            "snaktype": "value",
+            "property": "P18",
+            "hash": "13b75938e52e44fb03750c29befa1e1478e996c4",
+            "datavalue": {
+              "value": "Chenard & Walcker Sport.jpg",
+              "type": "string"
+            },
+            "datatype": "commonsMedia"
+          },
+          "type": "statement",
+          "id": "Q216340$681B6260-8D68-450C-8DD0-EAFA6D13D399",
+          "rank": "normal"
+        }
+      ]
+    },
+    "sitelinks": {
+      "commonswiki": {
+        "site": "commonswiki",
+        "title": "Category:1923 24 Hours of Le Mans",
+        "badges": [],
+        "url": "https://commons.wikimedia.org/wiki/Category:1923_24_Hours_of_Le_Mans"
+      },
+      "dewiki": {
+        "site": "dewiki",
+        "title": "24-Stunden-Rennen von Le Mans 1923",
+        "badges": [],
+        "url": "https://de.wikipedia.org/wiki/24-Stunden-Rennen_von_Le_Mans_1923"
+      },
+      "enwiki": {
+        "site": "enwiki",
+        "title": "1923 24 Hours of Le Mans",
+        "badges": [],
+        "url": "https://en.wikipedia.org/wiki/1923_24_Hours_of_Le_Mans"
+      },
+      "fiwiki": {
+        "site": "fiwiki",
+        "title": "Le Mansin 24 tunnin ajo 1923",
+        "badges": [],
+        "url": "https://fi.wikipedia.org/wiki/Le_Mansin_24_tunnin_ajo_1923"
+      },
+      "frwiki": {
+        "site": "frwiki",
+        "title": "24 Heures du Mans 1923",
+        "badges": [],
+        "url": "https://fr.wikipedia.org/wiki/24_Heures_du_Mans_1923"
+      },
+      "glwiki": {
+        "site": "glwiki",
+        "title": "24 Horas de Le Mans 1923",
+        "badges": [],
+        "url": "https://gl.wikipedia.org/wiki/24_Horas_de_Le_Mans_1923"
+      },
+      "huwiki": {
+        "site": "huwiki",
+        "title": "1923-as Le Mans-i 24 órás verseny",
+        "badges": [],
+        "url": "https://hu.wikipedia.org/wiki/1923-as_Le_Mans-i_24_%C3%B3r%C3%A1s_verseny"
+      },
+      "itwiki": {
+        "site": "itwiki",
+        "title": "24 Ore di Le Mans 1923",
+        "badges": [],
+        "url": "https://it.wikipedia.org/wiki/24_Ore_di_Le_Mans_1923"
+      },
+      "jawiki": {
+        "site": "jawiki",
+        "title": "1923年のル・マン24時間レース",
+        "badges": [],
+        "url": "https://ja.wikipedia.org/wiki/1923%E5%B9%B4%E3%81%AE%E3%83%AB%E3%83%BB%E3%83%9E%E3%83%B324%E6%99%82%E9%96%93%E3%83%AC%E3%83%BC%E3%82%B9"
+      },
+      "nlwiki": {
+        "site": "nlwiki",
+        "title": "24 uur van Le Mans 1923",
+        "badges": [],
+        "url": "https://nl.wikipedia.org/wiki/24_uur_van_Le_Mans_1923"
+      },
+      "plwiki": {
+        "site": "plwiki",
+        "title": "24h Le Mans 1923",
+        "badges": [],
+        "url": "https://pl.wikipedia.org/wiki/24h_Le_Mans_1923"
+      },
+      "ptwiki": {
+        "site": "ptwiki",
+        "title": "24 Horas de Le Mans de 1923",
+        "badges": [],
+        "url": "https://pt.wikipedia.org/wiki/24_Horas_de_Le_Mans_de_1923"
+      },
+      "slwiki": {
+        "site": "slwiki",
+        "title": "24 ur Le Mansa 1923",
+        "badges": [],
+        "url": "https://sl.wikipedia.org/wiki/24_ur_Le_Mansa_1923"
+      },
+      "trwiki": {
+        "site": "trwiki",
+        "title": "1923 Le Mans 24 Saat Yarışı",
+        "badges": [],
+        "url": "https://tr.wikipedia.org/wiki/1923_Le_Mans_24_Saat_Yar%C4%B1%C5%9F%C4%B1"
+      }
+    }
+  }
+}

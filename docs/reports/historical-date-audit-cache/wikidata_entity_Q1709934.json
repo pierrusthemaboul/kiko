@@ -1,0 +1,420 @@
+{
+  "saved_at": "2026-03-07T16:53:43.446Z",
+  "value": {
+    "pageid": 1643148,
+    "ns": 0,
+    "title": "Q1709934",
+    "lastrevid": 2008505062,
+    "modified": "2023-11-11T00:20:45Z",
+    "type": "item",
+    "id": "Q1709934",
+    "labels": {
+      "ru": {
+        "language": "ru",
+        "value": "День одураченных"
+      },
+      "fr": {
+        "language": "fr",
+        "value": "journée des Dupes"
+      },
+      "en": {
+        "language": "en",
+        "value": "Day of the Dupes"
+      },
+      "pl": {
+        "language": "pl",
+        "value": "Dzień zawiedzionych"
+      },
+      "pt": {
+        "language": "pt",
+        "value": "Journée des dupes"
+      },
+      "de": {
+        "language": "de",
+        "value": "Journée des dupes"
+      },
+      "oc": {
+        "language": "oc",
+        "value": "Dia deus enganats"
+      },
+      "it": {
+        "language": "it",
+        "value": "Giornata degl'ingannati"
+      },
+      "es": {
+        "language": "es",
+        "value": "Día de los Engañados"
+      },
+      "cs": {
+        "language": "cs",
+        "value": "Den oklamaných"
+      },
+      "ja": {
+        "language": "ja",
+        "value": "欺かれし者の日"
+      },
+      "is": {
+        "language": "is",
+        "value": "Dagur ginningarfíflanna"
+      },
+      "ka": {
+        "language": "ka",
+        "value": "გასულელებულთა დღე"
+      },
+      "fi": {
+        "language": "fi",
+        "value": "Narrien päivä"
+      },
+      "uk": {
+        "language": "uk",
+        "value": "День обдурених"
+      }
+    },
+    "descriptions": {
+      "fr": {
+        "language": "fr",
+        "value": "événement de l'histoire de France"
+      },
+      "en": {
+        "language": "en",
+        "value": "Day in November 1630 in French history"
+      },
+      "de": {
+        "language": "de",
+        "value": "Kardinal Richelieu hat an diesem Tag den Gipfel seiner Macht erreicht."
+      },
+      "cs": {
+        "language": "cs",
+        "value": "Den v listopadu roku 1630 ve francouzské historii"
+      }
+    },
+    "aliases": {
+      "ru": [
+        {
+          "language": "ru",
+          "value": "День обманутых"
+        }
+      ],
+      "fr": [
+        {
+          "language": "fr",
+          "value": "Journée Des Dupes"
+        },
+        {
+          "language": "fr",
+          "value": "Journee des Dupes"
+        },
+        {
+          "language": "fr",
+          "value": "Journée des dupes"
+        }
+      ],
+      "pl": [
+        {
+          "language": "pl",
+          "value": "Dzień oszukanych"
+        }
+      ],
+      "pt": [
+        {
+          "language": "pt",
+          "value": "Dia dos Logrados"
+        },
+        {
+          "language": "pt",
+          "value": "Dia dos logrados"
+        },
+        {
+          "language": "pt",
+          "value": "Dia dos Iludidos"
+        },
+        {
+          "language": "pt",
+          "value": "Dia dos iludidos"
+        }
+      ],
+      "de": [
+        {
+          "language": "de",
+          "value": "Journée des Dupes"
+        },
+        {
+          "language": "de",
+          "value": "Tag der Geprellten"
+        },
+        {
+          "language": "de",
+          "value": "Journee des Dupes"
+        }
+      ],
+      "it": [
+        {
+          "language": "it",
+          "value": "Journée des dupes"
+        },
+        {
+          "language": "it",
+          "value": "Giornata degli ingannati"
+        }
+      ],
+      "es": [
+        {
+          "language": "es",
+          "value": "Dia de los Enganados"
+        },
+        {
+          "language": "es",
+          "value": "Dia de los Engañados"
+        },
+        {
+          "language": "es",
+          "value": "Día de los Enganados"
+        }
+      ]
+    },
+    "claims": {
+      "P646": [
+        {
+          "mainsnak": {
+            "snaktype": "value",
+            "property": "P646",
+            "hash": "b86e82bc63affa5c59f4b6c3f55e24e256d0af8a",
+            "datavalue": {
+              "value": "/m/05n7ql",
+              "type": "string"
+            },
+            "datatype": "external-id"
+          },
+          "type": "statement",
+          "id": "Q1709934$68B83970-3385-42EB-B7EE-DB6AA1FFEB22",
+          "rank": "normal",
+          "references": [
+            {
+              "hash": "2b00cb481cddcac7623114367489b5c194901c4a",
+              "snaks": {
+                "P248": [
+                  {
+                    "snaktype": "value",
+                    "property": "P248",
+                    "hash": "a94b740202b097dd33355e0e6c00e54b9395e5e0",
+                    "datavalue": {
+                      "value": {
+                        "entity-type": "item",
+                        "numeric-id": 15241312,
+                        "id": "Q15241312"
+                      },
+                      "type": "wikibase-entityid"
+                    },
+                    "datatype": "wikibase-item"
+                  }
+                ],
+                "P577": [
+                  {
+                    "snaktype": "value",
+                    "property": "P577",
+                    "hash": "fde79ecb015112d2f29229ccc1ec514ed3e71fa2",
+                    "datavalue": {
+                      "value": {
+                        "time": "+2013-10-28T00:00:00Z",
+                        "timezone": 0,
+                        "before": 0,
+                        "after": 0,
+                        "precision": 11,
+                        "calendarmodel": "http://www.wikidata.org/entity/Q1985727"
+                      },
+                      "type": "time"
+                    },
+                    "datatype": "time"
+                  }
+                ]
+              },
+              "snaks-order": [
+                "P248",
+                "P577"
+              ]
+            }
+          ]
+        }
+      ],
+      "P1417": [
+        {
+          "mainsnak": {
+            "snaktype": "value",
+            "property": "P1417",
+            "hash": "1445cf7142dc7f7c3fa6b18df8fb51d8abcb897e",
+            "datavalue": {
+              "value": "event/Day-of-the-Dupes",
+              "type": "string"
+            },
+            "datatype": "external-id"
+          },
+          "type": "statement",
+          "qualifiers": {
+            "P1810": [
+              {
+                "snaktype": "value",
+                "property": "P1810",
+                "hash": "8b6d5b7a4bbad5e6685f323336d36a84c0b28307",
+                "datavalue": {
+                  "value": "Day of the Dupes",
+                  "type": "string"
+                },
+                "datatype": "string"
+              }
+            ]
+          },
+          "qualifiers-order": [
+            "P1810"
+          ],
+          "id": "Q1709934$F89FD2B9-1807-4A52-9F0C-3B8DB30C7431",
+          "rank": "normal"
+        }
+      ],
+      "P3219": [
+        {
+          "mainsnak": {
+            "snaktype": "value",
+            "property": "P3219",
+            "hash": "8733d2faab2abcd940ed7b3cf52f7e6be7c86922",
+            "datavalue": {
+              "value": "journee-des-dupes",
+              "type": "string"
+            },
+            "datatype": "external-id"
+          },
+          "type": "statement",
+          "id": "Q1709934$5AFE6699-6F11-4291-BE21-E04278C983CC",
+          "rank": "normal"
+        }
+      ],
+      "P17": [
+        {
+          "mainsnak": {
+            "snaktype": "value",
+            "property": "P17",
+            "hash": "c05db5d169c2560b9799d567a803d20a392f53e4",
+            "datavalue": {
+              "value": {
+                "entity-type": "item",
+                "numeric-id": 142,
+                "id": "Q142"
+              },
+              "type": "wikibase-entityid"
+            },
+            "datatype": "wikibase-item"
+          },
+          "type": "statement",
+          "id": "Q1709934$18947DD1-B954-46EA-B8B8-4343119BE6C5",
+          "rank": "normal"
+        }
+      ],
+      "P31": [
+        {
+          "mainsnak": {
+            "snaktype": "value",
+            "property": "P31",
+            "hash": "594cfdfbf98f2188c5eef35e07826a417d930f93",
+            "datavalue": {
+              "value": {
+                "entity-type": "item",
+                "numeric-id": 1190554,
+                "id": "Q1190554"
+              },
+              "type": "wikibase-entityid"
+            },
+            "datatype": "wikibase-item"
+          },
+          "type": "statement",
+          "id": "Q1709934$e8487b84-4b68-fb5c-9ca5-860ac9e6eec4",
+          "rank": "normal"
+        }
+      ]
+    },
+    "sitelinks": {
+      "cswiki": {
+        "site": "cswiki",
+        "title": "Den oklamaných",
+        "badges": [],
+        "url": "https://cs.wikipedia.org/wiki/Den_oklaman%C3%BDch"
+      },
+      "dewiki": {
+        "site": "dewiki",
+        "title": "Journée des dupes",
+        "badges": [],
+        "url": "https://de.wikipedia.org/wiki/Journ%C3%A9e_des_dupes"
+      },
+      "enwiki": {
+        "site": "enwiki",
+        "title": "Day of the Dupes",
+        "badges": [],
+        "url": "https://en.wikipedia.org/wiki/Day_of_the_Dupes"
+      },
+      "eswiki": {
+        "site": "eswiki",
+        "title": "Día de los Engañados",
+        "badges": [],
+        "url": "https://es.wikipedia.org/wiki/D%C3%ADa_de_los_Enga%C3%B1ados"
+      },
+      "fiwiki": {
+        "site": "fiwiki",
+        "title": "Narrien päivä",
+        "badges": [],
+        "url": "https://fi.wikipedia.org/wiki/Narrien_p%C3%A4iv%C3%A4"
+      },
+      "frwiki": {
+        "site": "frwiki",
+        "title": "Journée des Dupes",
+        "badges": [],
+        "url": "https://fr.wikipedia.org/wiki/Journ%C3%A9e_des_Dupes"
+      },
+      "iswiki": {
+        "site": "iswiki",
+        "title": "Dagur ginningarfíflanna",
+        "badges": [],
+        "url": "https://is.wikipedia.org/wiki/Dagur_ginningarf%C3%ADflanna"
+      },
+      "itwiki": {
+        "site": "itwiki",
+        "title": "Giornata degl'ingannati",
+        "badges": [],
+        "url": "https://it.wikipedia.org/wiki/Giornata_degl%27ingannati"
+      },
+      "kawiki": {
+        "site": "kawiki",
+        "title": "გასულელებულთა დღე",
+        "badges": [],
+        "url": "https://ka.wikipedia.org/wiki/%E1%83%92%E1%83%90%E1%83%A1%E1%83%A3%E1%83%9A%E1%83%94%E1%83%9A%E1%83%94%E1%83%91%E1%83%A3%E1%83%9A%E1%83%97%E1%83%90_%E1%83%93%E1%83%A6%E1%83%94"
+      },
+      "ocwiki": {
+        "site": "ocwiki",
+        "title": "Dia deus enganats",
+        "badges": [],
+        "url": "https://oc.wikipedia.org/wiki/Dia_deus_enganats"
+      },
+      "plwiki": {
+        "site": "plwiki",
+        "title": "Dzień zawiedzionych",
+        "badges": [],
+        "url": "https://pl.wikipedia.org/wiki/Dzie%C5%84_zawiedzionych"
+      },
+      "ptwiki": {
+        "site": "ptwiki",
+        "title": "Journée des dupes",
+        "badges": [],
+        "url": "https://pt.wikipedia.org/wiki/Journ%C3%A9e_des_dupes"
+      },
+      "ruwiki": {
+        "site": "ruwiki",
+        "title": "День одураченных",
+        "badges": [],
+        "url": "https://ru.wikipedia.org/wiki/%D0%94%D0%B5%D0%BD%D1%8C_%D0%BE%D0%B4%D1%83%D1%80%D0%B0%D1%87%D0%B5%D0%BD%D0%BD%D1%8B%D1%85"
+      },
+      "ukwiki": {
+        "site": "ukwiki",
+        "title": "День обдурених",
+        "badges": [],
+        "url": "https://uk.wikipedia.org/wiki/%D0%94%D0%B5%D0%BD%D1%8C_%D0%BE%D0%B1%D0%B4%D1%83%D1%80%D0%B5%D0%BD%D0%B8%D1%85"
+      }
+    }
+  }
+}

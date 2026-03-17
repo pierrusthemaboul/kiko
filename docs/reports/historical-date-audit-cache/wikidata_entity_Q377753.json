@@ -1,0 +1,509 @@
+{
+  "saved_at": "2026-03-07T16:58:24.253Z",
+  "value": {
+    "pageid": 359520,
+    "ns": 0,
+    "title": "Q377753",
+    "lastrevid": 2349961362,
+    "modified": "2025-05-18T22:07:07Z",
+    "type": "item",
+    "id": "Q377753",
+    "labels": {
+      "it": {
+        "language": "it",
+        "value": "massacro del giorno di san Brizio"
+      },
+      "cy": {
+        "language": "cy",
+        "value": "Cyflafan Gŵyl Sant Bricius"
+      },
+      "de": {
+        "language": "de",
+        "value": "St. Brice’s Day Massaker"
+      },
+      "en": {
+        "language": "en",
+        "value": "St. Brice's Day massacre"
+      },
+      "eo": {
+        "language": "eo",
+        "value": "Masakro de Sankta Bricio"
+      },
+      "fa": {
+        "language": "fa",
+        "value": "کشتار سنت برایس"
+      },
+      "fr": {
+        "language": "fr",
+        "value": "massacre de la Saint-Brice"
+      },
+      "ru": {
+        "language": "ru",
+        "value": "Резня в день св. Брайса"
+      },
+      "sh": {
+        "language": "sh",
+        "value": "Masakr na dan sv. Bricea"
+      },
+      "sv": {
+        "language": "sv",
+        "value": "Danemordet"
+      },
+      "uk": {
+        "language": "uk",
+        "value": "Різанина у день Святого Брайса"
+      },
+      "nl": {
+        "language": "nl",
+        "value": "Slachtpartij op Sint-Brixius-dag"
+      },
+      "nb": {
+        "language": "nb",
+        "value": "Massakrene på Sankt Brictiusdagen"
+      },
+      "az": {
+        "language": "az",
+        "value": "Sən-Bris qətliamı"
+      },
+      "azb": {
+        "language": "azb",
+        "value": "سَن-برایس قیرغینی"
+      },
+      "ja": {
+        "language": "ja",
+        "value": "聖ブリスの日の虐殺"
+      },
+      "zh-hant": {
+        "language": "zh-hant",
+        "value": "聖布萊斯紀念日大屠殺"
+      },
+      "zh-hans": {
+        "language": "zh-hans",
+        "value": "圣布莱斯纪念日大屠杀"
+      },
+      "da": {
+        "language": "da",
+        "value": "Danemordet"
+      },
+      "es": {
+        "language": "es",
+        "value": "Masacre del Día de San Bricio"
+      },
+      "zh": {
+        "language": "zh",
+        "value": "圣布莱斯纪念日大屠杀"
+      },
+      "ko": {
+        "language": "ko",
+        "value": "성 브릭시오 축일의 학살"
+      },
+      "pt": {
+        "language": "pt",
+        "value": "Massacre do dia de São Brice"
+      }
+    },
+    "descriptions": {
+      "it": {
+        "language": "it",
+        "value": "evento storico (13 novembre 1002)"
+      },
+      "de": {
+        "language": "de",
+        "value": "Tötung von Dänen in England 1002 vor Vertreibung des englischen Königs in die Normandie"
+      },
+      "fr": {
+        "language": "fr",
+        "value": "massacre du XIe siècle"
+      },
+      "en": {
+        "language": "en",
+        "value": "killing of most Danish people in England in 1002"
+      },
+      "es": {
+        "language": "es",
+        "value": "asesinato de la mayoría de los daneses en Inglaterra en 1002"
+      }
+    },
+    "aliases": {
+      "zh": [
+        {
+          "language": "zh",
+          "value": "圣布莱斯日大屠杀"
+        }
+      ],
+      "en": [
+        {
+          "language": "en",
+          "value": "St. Brice's"
+        }
+      ]
+    },
+    "claims": {
+      "P646": [
+        {
+          "mainsnak": {
+            "snaktype": "value",
+            "property": "P646",
+            "hash": "d8639d070d79945b33cd1dcea363c11c1b4d575d",
+            "datavalue": {
+              "value": "/m/07vq21",
+              "type": "string"
+            },
+            "datatype": "external-id"
+          },
+          "type": "statement",
+          "id": "Q377753$6C906401-CDA2-4B47-A320-9751597A047B",
+          "rank": "normal",
+          "references": [
+            {
+              "hash": "2b00cb481cddcac7623114367489b5c194901c4a",
+              "snaks": {
+                "P248": [
+                  {
+                    "snaktype": "value",
+                    "property": "P248",
+                    "hash": "a94b740202b097dd33355e0e6c00e54b9395e5e0",
+                    "datavalue": {
+                      "value": {
+                        "entity-type": "item",
+                        "numeric-id": 15241312,
+                        "id": "Q15241312"
+                      },
+                      "type": "wikibase-entityid"
+                    },
+                    "datatype": "wikibase-item"
+                  }
+                ],
+                "P577": [
+                  {
+                    "snaktype": "value",
+                    "property": "P577",
+                    "hash": "fde79ecb015112d2f29229ccc1ec514ed3e71fa2",
+                    "datavalue": {
+                      "value": {
+                        "time": "+2013-10-28T00:00:00Z",
+                        "timezone": 0,
+                        "before": 0,
+                        "after": 0,
+                        "precision": 11,
+                        "calendarmodel": "http://www.wikidata.org/entity/Q1985727"
+                      },
+                      "type": "time"
+                    },
+                    "datatype": "time"
+                  }
+                ]
+              },
+              "snaks-order": [
+                "P248",
+                "P577"
+              ]
+            }
+          ]
+        }
+      ],
+      "P585": [
+        {
+          "mainsnak": {
+            "snaktype": "value",
+            "property": "P585",
+            "hash": "2c40af8d33dc1487224395942a8fae94b6178528",
+            "datavalue": {
+              "value": {
+                "time": "+1002-11-13T00:00:00Z",
+                "timezone": 0,
+                "before": 0,
+                "after": 0,
+                "precision": 11,
+                "calendarmodel": "http://www.wikidata.org/entity/Q1985786"
+              },
+              "type": "time"
+            },
+            "datatype": "time"
+          },
+          "type": "statement",
+          "id": "Q377753$c45b381a-47da-6ffe-7a64-03a14a9fcecf",
+          "rank": "normal"
+        }
+      ],
+      "P276": [
+        {
+          "mainsnak": {
+            "snaktype": "value",
+            "property": "P276",
+            "hash": "fc631798365de02a79b31c449fd99103e17757ea",
+            "datavalue": {
+              "value": {
+                "entity-type": "item",
+                "numeric-id": 21,
+                "id": "Q21"
+              },
+              "type": "wikibase-entityid"
+            },
+            "datatype": "wikibase-item"
+          },
+          "type": "statement",
+          "id": "Q377753$d4c5a9e5-40a2-847c-f5b0-d67f97a7e81c",
+          "rank": "normal"
+        }
+      ],
+      "P710": [
+        {
+          "mainsnak": {
+            "snaktype": "value",
+            "property": "P710",
+            "hash": "8b24c67a35b4d212cdd5bee8e1d855f807729b47",
+            "datavalue": {
+              "value": {
+                "entity-type": "item",
+                "numeric-id": 183499,
+                "id": "Q183499"
+              },
+              "type": "wikibase-entityid"
+            },
+            "datatype": "wikibase-item"
+          },
+          "type": "statement",
+          "id": "Q377753$f580e13e-4a64-b8b3-c5c6-e78a40630a30",
+          "rank": "normal"
+        }
+      ],
+      "P1417": [
+        {
+          "mainsnak": {
+            "snaktype": "value",
+            "property": "P1417",
+            "hash": "5ac5949479cdbc6dba15f28997f66494b8a41635",
+            "datavalue": {
+              "value": "topic/Saint-Brices-Day-massacre",
+              "type": "string"
+            },
+            "datatype": "external-id"
+          },
+          "type": "statement",
+          "qualifiers": {
+            "P1810": [
+              {
+                "snaktype": "value",
+                "property": "P1810",
+                "hash": "dbb76537c49dfbc23e0ea8f26c7aba83b5c999ec",
+                "datavalue": {
+                  "value": "Saint Brice’s Day massacre",
+                  "type": "string"
+                },
+                "datatype": "string"
+              }
+            ]
+          },
+          "qualifiers-order": [
+            "P1810"
+          ],
+          "id": "Q377753$06869DBE-81A5-4AC9-9C61-C8A71BD6B3EC",
+          "rank": "normal"
+        }
+      ],
+      "P1343": [
+        {
+          "mainsnak": {
+            "snaktype": "value",
+            "property": "P1343",
+            "hash": "4cfd4eb1fe49d401455df557a7d9b1154f22a725",
+            "datavalue": {
+              "value": {
+                "entity-type": "item",
+                "numeric-id": 3181656,
+                "id": "Q3181656"
+              },
+              "type": "wikibase-entityid"
+            },
+            "datatype": "wikibase-item"
+          },
+          "type": "statement",
+          "qualifiers": {
+            "P1810": [
+              {
+                "snaktype": "value",
+                "property": "P1810",
+                "hash": "bf259c4dc04eb9d603d95980dffa4ca47cf65599",
+                "datavalue": {
+                  "value": "Brice's, St.",
+                  "type": "string"
+                },
+                "datatype": "string"
+              }
+            ]
+          },
+          "qualifiers-order": [
+            "P1810"
+          ],
+          "id": "Q377753$5d2a4ab2-4dcd-b789-abbb-31ca2f0f7790",
+          "rank": "normal"
+        }
+      ],
+      "P31": [
+        {
+          "mainsnak": {
+            "snaktype": "value",
+            "property": "P31",
+            "hash": "40db11f9392fab0c5e0b8e548b0c62b9cb8848da",
+            "datavalue": {
+              "value": {
+                "entity-type": "item",
+                "numeric-id": 3199915,
+                "id": "Q3199915"
+              },
+              "type": "wikibase-entityid"
+            },
+            "datatype": "wikibase-item"
+          },
+          "type": "statement",
+          "id": "Q377753$20AB525B-944D-4E9F-8C09-748D76DF740E",
+          "rank": "normal"
+        }
+      ],
+      "P8032": [
+        {
+          "mainsnak": {
+            "snaktype": "value",
+            "property": "P8032",
+            "hash": "51c8c33e2f813955d53d7d2f116e3480cd60828f",
+            "datavalue": {
+              "value": {
+                "entity-type": "item",
+                "numeric-id": 164714,
+                "id": "Q164714"
+              },
+              "type": "wikibase-entityid"
+            },
+            "datatype": "wikibase-item"
+          },
+          "type": "statement",
+          "id": "Q377753$FC3F1C0C-500F-47D1-B943-2AE04FE704DD",
+          "rank": "normal"
+        }
+      ]
+    },
+    "sitelinks": {
+      "azbwiki": {
+        "site": "azbwiki",
+        "title": "سَن-برایس قیرغینی",
+        "badges": [],
+        "url": "https://azb.wikipedia.org/wiki/%D8%B3%D9%8E%D9%86-%D8%A8%D8%B1%D8%A7%DB%8C%D8%B3_%D9%82%DB%8C%D8%B1%D8%BA%DB%8C%D9%86%DB%8C"
+      },
+      "azwiki": {
+        "site": "azwiki",
+        "title": "Müqəddəs Brays Günü qətliamı",
+        "badges": [],
+        "url": "https://az.wikipedia.org/wiki/M%C3%BCq%C9%99dd%C9%99s_Brays_G%C3%BCn%C3%BC_q%C9%99tliam%C4%B1"
+      },
+      "cywiki": {
+        "site": "cywiki",
+        "title": "Cyflafan Gŵyl Sant Bricius",
+        "badges": [],
+        "url": "https://cy.wikipedia.org/wiki/Cyflafan_G%C5%B5yl_Sant_Bricius"
+      },
+      "dawiki": {
+        "site": "dawiki",
+        "title": "Danemordet",
+        "badges": [],
+        "url": "https://da.wikipedia.org/wiki/Danemordet"
+      },
+      "dewiki": {
+        "site": "dewiki",
+        "title": "St.-Brice’s-Day-Massaker",
+        "badges": [],
+        "url": "https://de.wikipedia.org/wiki/St.-Brice%E2%80%99s-Day-Massaker"
+      },
+      "enwiki": {
+        "site": "enwiki",
+        "title": "St Brice's Day massacre",
+        "badges": [],
+        "url": "https://en.wikipedia.org/wiki/St_Brice%27s_Day_massacre"
+      },
+      "eowiki": {
+        "site": "eowiki",
+        "title": "Masakro de Sankta Bricio",
+        "badges": [],
+        "url": "https://eo.wikipedia.org/wiki/Masakro_de_Sankta_Bricio"
+      },
+      "eswiki": {
+        "site": "eswiki",
+        "title": "Masacre del Día de San Bricio",
+        "badges": [],
+        "url": "https://es.wikipedia.org/wiki/Masacre_del_D%C3%ADa_de_San_Bricio"
+      },
+      "fawiki": {
+        "site": "fawiki",
+        "title": "کشتار سنت برایس",
+        "badges": [],
+        "url": "https://fa.wikipedia.org/wiki/%DA%A9%D8%B4%D8%AA%D8%A7%D8%B1_%D8%B3%D9%86%D8%AA_%D8%A8%D8%B1%D8%A7%DB%8C%D8%B3"
+      },
+      "frwiki": {
+        "site": "frwiki",
+        "title": "Massacre de la Saint-Brice",
+        "badges": [],
+        "url": "https://fr.wikipedia.org/wiki/Massacre_de_la_Saint-Brice"
+      },
+      "itwiki": {
+        "site": "itwiki",
+        "title": "Massacro del giorno di san Brizio",
+        "badges": [],
+        "url": "https://it.wikipedia.org/wiki/Massacro_del_giorno_di_san_Brizio"
+      },
+      "jawiki": {
+        "site": "jawiki",
+        "title": "聖ブリスの日の虐殺",
+        "badges": [],
+        "url": "https://ja.wikipedia.org/wiki/%E8%81%96%E3%83%96%E3%83%AA%E3%82%B9%E3%81%AE%E6%97%A5%E3%81%AE%E8%99%90%E6%AE%BA"
+      },
+      "kowiki": {
+        "site": "kowiki",
+        "title": "성 브릭시오 축일의 학살",
+        "badges": [],
+        "url": "https://ko.wikipedia.org/wiki/%EC%84%B1_%EB%B8%8C%EB%A6%AD%EC%8B%9C%EC%98%A4_%EC%B6%95%EC%9D%BC%EC%9D%98_%ED%95%99%EC%82%B4"
+      },
+      "nlwiki": {
+        "site": "nlwiki",
+        "title": "Slachtpartij op Sint-Brixius-dag",
+        "badges": [],
+        "url": "https://nl.wikipedia.org/wiki/Slachtpartij_op_Sint-Brixius-dag"
+      },
+      "nowiki": {
+        "site": "nowiki",
+        "title": "Massakrene på Sankt Brictiusdagen",
+        "badges": [],
+        "url": "https://no.wikipedia.org/wiki/Massakrene_p%C3%A5_Sankt_Brictiusdagen"
+      },
+      "ptwiki": {
+        "site": "ptwiki",
+        "title": "Massacre do dia de São Brice",
+        "badges": [],
+        "url": "https://pt.wikipedia.org/wiki/Massacre_do_dia_de_S%C3%A3o_Brice"
+      },
+      "ruwiki": {
+        "site": "ruwiki",
+        "title": "Резня в День святого Брайса",
+        "badges": [],
+        "url": "https://ru.wikipedia.org/wiki/%D0%A0%D0%B5%D0%B7%D0%BD%D1%8F_%D0%B2_%D0%94%D0%B5%D0%BD%D1%8C_%D1%81%D0%B2%D1%8F%D1%82%D0%BE%D0%B3%D0%BE_%D0%91%D1%80%D0%B0%D0%B9%D1%81%D0%B0"
+      },
+      "shwiki": {
+        "site": "shwiki",
+        "title": "Masakr na dan sv. Bricea",
+        "badges": [],
+        "url": "https://sh.wikipedia.org/wiki/Masakr_na_dan_sv._Bricea"
+      },
+      "svwiki": {
+        "site": "svwiki",
+        "title": "Danemordet",
+        "badges": [],
+        "url": "https://sv.wikipedia.org/wiki/Danemordet"
+      },
+      "ukwiki": {
+        "site": "ukwiki",
+        "title": "Різанина у день Святого Брайса",
+        "badges": [],
+        "url": "https://uk.wikipedia.org/wiki/%D0%A0%D1%96%D0%B7%D0%B0%D0%BD%D0%B8%D0%BD%D0%B0_%D1%83_%D0%B4%D0%B5%D0%BD%D1%8C_%D0%A1%D0%B2%D1%8F%D1%82%D0%BE%D0%B3%D0%BE_%D0%91%D1%80%D0%B0%D0%B9%D1%81%D0%B0"
+      }
+    }
+  }
+}

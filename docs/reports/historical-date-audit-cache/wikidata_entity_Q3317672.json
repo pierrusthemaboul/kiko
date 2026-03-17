@@ -1,0 +1,108 @@
+{
+  "saved_at": "2026-03-07T16:29:56.934Z",
+  "value": {
+    "pageid": 3163456,
+    "ns": 0,
+    "title": "Q3317672",
+    "lastrevid": 2326234061,
+    "modified": "2025-03-17T12:33:45Z",
+    "type": "item",
+    "id": "Q3317672",
+    "labels": {
+      "fr": {
+        "language": "fr",
+        "value": "Mobilisation française de 1914"
+      },
+      "id": {
+        "language": "id",
+        "value": "Mobilisasi Perancis 1914"
+      },
+      "en": {
+        "language": "en",
+        "value": "1914 French mobilization"
+      }
+    },
+    "descriptions": {
+      "fr": {
+        "language": "fr",
+        "value": "opération de logistique militaire"
+      },
+      "en": {
+        "language": "en",
+        "value": "French mobilization procedures at the start of WWI"
+      }
+    },
+    "aliases": {
+      "en": [
+        {
+          "language": "en",
+          "value": "World War I mobilization in France"
+        }
+      ]
+    },
+    "claims": {
+      "P2671": [
+        {
+          "mainsnak": {
+            "snaktype": "value",
+            "property": "P2671",
+            "hash": "6e4b68f56bb472b162441a8003b92ad4814481ae",
+            "datavalue": {
+              "value": "/g/11x9804x2",
+              "type": "string"
+            },
+            "datatype": "external-id"
+          },
+          "type": "statement",
+          "id": "Q3317672$A01C50E9-B995-491A-9370-AAB6418F9425",
+          "rank": "normal"
+        }
+      ],
+      "P373": [
+        {
+          "mainsnak": {
+            "snaktype": "value",
+            "property": "P373",
+            "hash": "b1c5870cca584c7985c7fdfc97fb1a7adf1b844b",
+            "datavalue": {
+              "value": "World War I mobilization in France",
+              "type": "string"
+            },
+            "datatype": "string"
+          },
+          "type": "statement",
+          "id": "Q3317672$8a09fdaf-e064-4d35-8e9b-0b7716277ff2",
+          "rank": "normal"
+        }
+      ]
+    },
+    "sitelinks": {
+      "commonswiki": {
+        "site": "commonswiki",
+        "title": "Category:World War I mobilization in France",
+        "badges": [],
+        "url": "https://commons.wikimedia.org/wiki/Category:World_War_I_mobilization_in_France"
+      },
+      "enwiki": {
+        "site": "enwiki",
+        "title": "1914 French mobilization",
+        "badges": [],
+        "url": "https://en.wikipedia.org/wiki/1914_French_mobilization"
+      },
+      "frwiki": {
+        "site": "frwiki",
+        "title": "Mobilisation française de 1914",
+        "badges": [
+          "Q17437798"
+        ],
+        "url": "https://fr.wikipedia.org/wiki/Mobilisation_fran%C3%A7aise_de_1914"
+      },
+      "idwiki": {
+        "site": "idwiki",
+        "title": "Mobilisasi Prancis 1914",
+        "badges": [],
+        "url": "https://id.wikipedia.org/wiki/Mobilisasi_Prancis_1914"
+      }
+    }
+  }
+}

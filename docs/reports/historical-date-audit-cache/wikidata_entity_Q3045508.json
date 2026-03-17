@@ -1,0 +1,75 @@
+{
+  "saved_at": "2026-03-07T14:05:37.288Z",
+  "value": {
+    "pageid": 2911251,
+    "ns": 0,
+    "title": "Q3045508",
+    "lastrevid": 1369629228,
+    "modified": "2021-02-25T04:47:48Z",
+    "type": "item",
+    "id": "Q3045508",
+    "labels": {
+      "fr": {
+        "language": "fr",
+        "value": "Dévolution des biens de l'ordre du Temple"
+      }
+    },
+    "descriptions": {},
+    "aliases": {
+      "fr": [
+        {
+          "language": "fr",
+          "value": "Dévolution des biens des Templiers"
+        }
+      ]
+    },
+    "claims": {
+      "P1269": [
+        {
+          "mainsnak": {
+            "snaktype": "value",
+            "property": "P1269",
+            "hash": "fddbfa9702076e913050b92da144b8df0fd025c1",
+            "datavalue": {
+              "value": {
+                "entity-type": "item",
+                "numeric-id": 41300,
+                "id": "Q41300"
+              },
+              "type": "wikibase-entityid"
+            },
+            "datatype": "wikibase-item"
+          },
+          "type": "statement",
+          "id": "Q3045508$8b11d787-492a-ffb6-92c7-d11f43a4245b",
+          "rank": "normal"
+        }
+      ],
+      "P2671": [
+        {
+          "mainsnak": {
+            "snaktype": "value",
+            "property": "P2671",
+            "hash": "2ebccc46209c59084d7cb05dbf6bd27b7718ee28",
+            "datavalue": {
+              "value": "/g/11r_pq6xc",
+              "type": "string"
+            },
+            "datatype": "external-id"
+          },
+          "type": "statement",
+          "id": "Q3045508$F2C696EB-87D3-4F36-BBEA-71725CC41ECC",
+          "rank": "normal"
+        }
+      ]
+    },
+    "sitelinks": {
+      "frwiki": {
+        "site": "frwiki",
+        "title": "Dévolution des biens de l'ordre du Temple",
+        "badges": [],
+        "url": "https://fr.wikipedia.org/wiki/D%C3%A9volution_des_biens_de_l%27ordre_du_Temple"
+      }
+    }
+  }
+}

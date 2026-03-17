@@ -1,0 +1,726 @@
+{
+  "saved_at": "2026-03-07T15:25:02.416Z",
+  "value": {
+    "pageid": 3406053,
+    "ns": 0,
+    "title": "Q3577509",
+    "lastrevid": 2462918190,
+    "modified": "2026-02-12T19:01:48Z",
+    "type": "item",
+    "id": "Q3577509",
+    "labels": {
+      "fr": {
+        "language": "fr",
+        "value": "éclairage public"
+      },
+      "it": {
+        "language": "it",
+        "value": "illuminazione pubblica"
+      },
+      "en": {
+        "language": "en",
+        "value": "street lighting‎"
+      },
+      "de": {
+        "language": "de",
+        "value": "Straßenbeleuchtung"
+      },
+      "ja": {
+        "language": "ja",
+        "value": "街灯の歴史"
+      },
+      "uk": {
+        "language": "uk",
+        "value": "освітлення місць загального користування"
+      },
+      "pl": {
+        "language": "pl",
+        "value": "publiczne oświetlenie uliczne"
+      },
+      "cs": {
+        "language": "cs",
+        "value": "veřejné osvětlení"
+      },
+      "sl": {
+        "language": "sl",
+        "value": "javna razsvetljava"
+      },
+      "nl": {
+        "language": "nl",
+        "value": "straatverlichting"
+      },
+      "be-tarask": {
+        "language": "be-tarask",
+        "value": "публічнае вулічнае асьвятленьне"
+      },
+      "mk": {
+        "language": "mk",
+        "value": "улично осветлување"
+      },
+      "zh": {
+        "language": "zh",
+        "value": "街道照明"
+      },
+      "ru": {
+        "language": "ru",
+        "value": "уличное освещение"
+      }
+    },
+    "descriptions": {
+      "fr": {
+        "language": "fr",
+        "value": "éclairage des espaces publics assuré par la puissance publique"
+      },
+      "it": {
+        "language": "it",
+        "value": "insieme dei mezzi atti a illuminare gli spazi pubblici"
+      },
+      "de": {
+        "language": "de",
+        "value": "öffentliche Beleuchtung von Verkehrswegen"
+      },
+      "en": {
+        "language": "en",
+        "value": "lighting provided to illuminate streets, roads, motorways and other vehicle and pedestrian routes"
+      },
+      "zh": {
+        "language": "zh",
+        "value": "用于照亮街道、道路、高速公路以及其他车辆和行人通道的照明设备"
+      },
+      "ru": {
+        "language": "ru",
+        "value": "освещение, предназначенное для освещения улиц, дорог, автомагистралей и других транспортных и пешеходных маршрутов."
+      }
+    },
+    "aliases": {
+      "en": [
+        {
+          "language": "en",
+          "value": "public lighting‎"
+        },
+        {
+          "language": "en",
+          "value": "public street lighting‎"
+        },
+        {
+          "language": "en",
+          "value": "road lighting"
+        }
+      ],
+      "de": [
+        {
+          "language": "de",
+          "value": "Strassenbeleuchtung"
+        }
+      ],
+      "uk": [
+        {
+          "language": "uk",
+          "value": "освітлення МЗК"
+        }
+      ],
+      "sl": [
+        {
+          "language": "sl",
+          "value": "ulična razsvetljava"
+        },
+        {
+          "language": "sl",
+          "value": "cestna razsvetljava"
+        }
+      ],
+      "zh": [
+        {
+          "language": "zh",
+          "value": "公共照明"
+        },
+        {
+          "language": "zh",
+          "value": "道路照明"
+        }
+      ]
+    },
+    "claims": {
+      "P279": [
+        {
+          "mainsnak": {
+            "snaktype": "value",
+            "property": "P279",
+            "hash": "ded4e8236fe8deffb8c4d04de04a12f4df01c2fc",
+            "datavalue": {
+              "value": {
+                "entity-type": "item",
+                "numeric-id": 210064,
+                "id": "Q210064"
+              },
+              "type": "wikibase-entityid"
+            },
+            "datatype": "wikibase-item"
+          },
+          "type": "statement",
+          "id": "Q3577509$075B9E95-A9F4-4D51-950C-3FD1B3B0BA41",
+          "rank": "normal"
+        },
+        {
+          "mainsnak": {
+            "snaktype": "value",
+            "property": "P279",
+            "hash": "518b745104f8ece4a1e2cbd49551aa82113cebc2",
+            "datavalue": {
+              "value": {
+                "entity-type": "item",
+                "numeric-id": 161837,
+                "id": "Q161837"
+              },
+              "type": "wikibase-entityid"
+            },
+            "datatype": "wikibase-item"
+          },
+          "type": "statement",
+          "id": "Q3577509$4DC362F3-1A9F-4BA6-BB11-941C7E801069",
+          "rank": "normal"
+        }
+      ],
+      "P2283": [
+        {
+          "mainsnak": {
+            "snaktype": "value",
+            "property": "P2283",
+            "hash": "b55b65b9f90c656e625d217a45f54f88cfe7d2d9",
+            "datavalue": {
+              "value": {
+                "entity-type": "item",
+                "numeric-id": 503958,
+                "id": "Q503958"
+              },
+              "type": "wikibase-entityid"
+            },
+            "datatype": "wikibase-item"
+          },
+          "type": "statement",
+          "id": "Q3577509$7DDE443B-E3C1-4BBB-9272-1C3BEFBD9FCA",
+          "rank": "normal"
+        }
+      ],
+      "P508": [
+        {
+          "mainsnak": {
+            "snaktype": "value",
+            "property": "P508",
+            "hash": "6f5d2fe366e5101db5074f567f4c78eb3954e3c0",
+            "datavalue": {
+              "value": "7198",
+              "type": "string"
+            },
+            "datatype": "external-id"
+          },
+          "type": "statement",
+          "id": "Q3577509$7B3A3E82-BBEF-43DF-BF2C-848C65FE5975",
+          "rank": "normal"
+        }
+      ],
+      "P1417": [
+        {
+          "mainsnak": {
+            "snaktype": "value",
+            "property": "P1417",
+            "hash": "8ce1e8b31daa07697723cc0d8d931774f8478c70",
+            "datavalue": {
+              "value": "technology/street-lighting",
+              "type": "string"
+            },
+            "datatype": "external-id"
+          },
+          "type": "statement",
+          "qualifiers": {
+            "P1810": [
+              {
+                "snaktype": "value",
+                "property": "P1810",
+                "hash": "94c6bdeb390b938a0d956ecdfb247a3e16baae02",
+                "datavalue": {
+                  "value": "street lighting",
+                  "type": "string"
+                },
+                "datatype": "string"
+              }
+            ]
+          },
+          "qualifiers-order": [
+            "P1810"
+          ],
+          "id": "Q3577509$EA73E203-7ACF-420E-9284-5D0059B4A568",
+          "rank": "normal"
+        }
+      ],
+      "P910": [
+        {
+          "mainsnak": {
+            "snaktype": "value",
+            "property": "P910",
+            "hash": "16338335503bd7d1eb6a0a9d173c9891ed3468a7",
+            "datavalue": {
+              "value": {
+                "entity-type": "item",
+                "numeric-id": 32084350,
+                "id": "Q32084350"
+              },
+              "type": "wikibase-entityid"
+            },
+            "datatype": "wikibase-item"
+          },
+          "type": "statement",
+          "id": "Q3577509$aa0dd279-4f20-2e2b-07df-bfdc49df5303",
+          "rank": "normal"
+        }
+      ],
+      "P227": [
+        {
+          "mainsnak": {
+            "snaktype": "value",
+            "property": "P227",
+            "hash": "e301d3e3a71d7af2a0867eb7020843434d228878",
+            "datavalue": {
+              "value": "4129991-7",
+              "type": "string"
+            },
+            "datatype": "external-id"
+          },
+          "type": "statement",
+          "id": "Q3577509$86dd3af8-4fdc-f570-f3e6-5cdd669bcbb3",
+          "rank": "normal",
+          "references": [
+            {
+              "hash": "9a24f7c0208b05d6be97077d855671d1dfdbc0dd",
+              "snaks": {
+                "P143": [
+                  {
+                    "snaktype": "value",
+                    "property": "P143",
+                    "hash": "d38375ffe6fe142663ff55cd783aa4df4301d83d",
+                    "datavalue": {
+                      "value": {
+                        "entity-type": "item",
+                        "numeric-id": 48183,
+                        "id": "Q48183"
+                      },
+                      "type": "wikibase-entityid"
+                    },
+                    "datatype": "wikibase-item"
+                  }
+                ]
+              },
+              "snaks-order": [
+                "P143"
+              ]
+            }
+          ]
+        }
+      ],
+      "P244": [
+        {
+          "mainsnak": {
+            "snaktype": "value",
+            "property": "P244",
+            "hash": "1665ae63d66a49696c1aa6f4e4562b701c910333",
+            "datavalue": {
+              "value": "sh85128588",
+              "type": "string"
+            },
+            "datatype": "external-id"
+          },
+          "type": "statement",
+          "id": "Q3577509$0eb97922-4cdb-c0d6-727f-885df618b40f",
+          "rank": "normal"
+        }
+      ],
+      "P7033": [
+        {
+          "mainsnak": {
+            "snaktype": "value",
+            "property": "P7033",
+            "hash": "1f27b2fcf6e244abe48304ea3f52b15e27d27fe0",
+            "datavalue": {
+              "value": "scot/9054",
+              "type": "string"
+            },
+            "datatype": "external-id"
+          },
+          "type": "statement",
+          "id": "Q3577509$7ac0affc-4e16-4f17-08c4-b359677c4b7d",
+          "rank": "normal"
+        }
+      ],
+      "P268": [
+        {
+          "mainsnak": {
+            "snaktype": "value",
+            "property": "P268",
+            "hash": "99a9be68471f45b85e5126664edf23f375a303aa",
+            "datavalue": {
+              "value": "122168130",
+              "type": "string"
+            },
+            "datatype": "external-id"
+          },
+          "type": "statement",
+          "id": "Q3577509$d7f6e22e-4668-07b0-4967-5089aff085ff",
+          "rank": "normal"
+        }
+      ],
+      "P373": [
+        {
+          "mainsnak": {
+            "snaktype": "value",
+            "property": "P373",
+            "hash": "3cf9c8d9c30a30322f69df9297569dc8e882e5a8",
+            "datavalue": {
+              "value": "Public lighting (exterior lighting)",
+              "type": "string"
+            },
+            "datatype": "string"
+          },
+          "type": "statement",
+          "id": "Q3577509$2d3601fe-4805-3d7a-4aa7-ca9f86ea8544",
+          "rank": "normal"
+        }
+      ],
+      "P2671": [
+        {
+          "mainsnak": {
+            "snaktype": "value",
+            "property": "P2671",
+            "hash": "557d71377abcef1b4058716ddc8fe83718960e1d",
+            "datavalue": {
+              "value": "/g/122xwbf9",
+              "type": "string"
+            },
+            "datatype": "external-id"
+          },
+          "type": "statement",
+          "id": "Q3577509$7E2F7DC2-6FF6-4397-A8FB-6189C5BA97FB",
+          "rank": "normal"
+        }
+      ],
+      "P3451": [
+        {
+          "mainsnak": {
+            "snaktype": "value",
+            "property": "P3451",
+            "hash": "793702ccfdbd2b0f1232a28619493eb454ef6015",
+            "datavalue": {
+              "value": "Eclairage autonome solaire IMEXLAMP.jpg",
+              "type": "string"
+            },
+            "datatype": "commonsMedia"
+          },
+          "type": "statement",
+          "id": "Q3577509$645ceb8e-4d4d-e247-f56a-9ca163b3388d",
+          "rank": "normal"
+        }
+      ],
+      "P18": [
+        {
+          "mainsnak": {
+            "snaktype": "value",
+            "property": "P18",
+            "hash": "833a4eb5c4885c98070ba450cce70c30532686b9",
+            "datavalue": {
+              "value": "Calle nocturna en lima.jpg",
+              "type": "string"
+            },
+            "datatype": "commonsMedia"
+          },
+          "type": "statement",
+          "id": "Q3577509$8F690506-B4BE-48F9-B694-3AFDF9AFF73C",
+          "rank": "normal"
+        }
+      ],
+      "P6802": [
+        {
+          "mainsnak": {
+            "snaktype": "value",
+            "property": "P6802",
+            "hash": "894ec1015ec87a9487dd5ce51d3c7f0607e14076",
+            "datavalue": {
+              "value": "Camion dépanneur.jpg",
+              "type": "string"
+            },
+            "datatype": "commonsMedia"
+          },
+          "type": "statement",
+          "id": "Q3577509$58E799EA-B290-4E3D-B1FF-DCF1759F241B",
+          "rank": "normal"
+        }
+      ],
+      "P1343": [
+        {
+          "mainsnak": {
+            "snaktype": "value",
+            "property": "P1343",
+            "hash": "cc623969772776f2a8b109402b0ac5fa5c123233",
+            "datavalue": {
+              "value": {
+                "entity-type": "item",
+                "numeric-id": 19219752,
+                "id": "Q19219752"
+              },
+              "type": "wikibase-entityid"
+            },
+            "datatype": "wikibase-item"
+          },
+          "type": "statement",
+          "qualifiers": {
+            "P805": [
+              {
+                "snaktype": "value",
+                "property": "P805",
+                "hash": "ddb1f7e6e3866df0b6e71d07af8a68cd49f3ce1f",
+                "datavalue": {
+                  "value": {
+                    "entity-type": "item",
+                    "numeric-id": 112804003,
+                    "id": "Q112804003"
+                  },
+                  "type": "wikibase-entityid"
+                },
+                "datatype": "wikibase-item"
+              }
+            ]
+          },
+          "qualifiers-order": [
+            "P805"
+          ],
+          "id": "Q3577509$1BEC7EDE-ED72-46FE-A608-F72CAA71601A",
+          "rank": "normal"
+        }
+      ],
+      "P8189": [
+        {
+          "mainsnak": {
+            "snaktype": "value",
+            "property": "P8189",
+            "hash": "ffdc2ed2c920928d6d586e0d270afe05d9f22f1b",
+            "datavalue": {
+              "value": "987007538840105171",
+              "type": "string"
+            },
+            "datatype": "external-id"
+          },
+          "type": "statement",
+          "id": "Q3577509$1A30C851-42B4-414E-862A-6862FC0777AF",
+          "rank": "normal",
+          "references": [
+            {
+              "hash": "ecb7a39cf436eb1fba419853af168ef9f2ba1dab",
+              "snaks": {
+                "P248": [
+                  {
+                    "snaktype": "value",
+                    "property": "P248",
+                    "hash": "a03bb6ffe37be9554492f4eea5bd18afcb57df19",
+                    "datavalue": {
+                      "value": {
+                        "entity-type": "item",
+                        "numeric-id": 106509962,
+                        "id": "Q106509962"
+                      },
+                      "type": "wikibase-entityid"
+                    },
+                    "datatype": "wikibase-item"
+                  }
+                ]
+              },
+              "snaks-order": [
+                "P248"
+              ]
+            }
+          ]
+        }
+      ],
+      "P12107": [
+        {
+          "mainsnak": {
+            "snaktype": "value",
+            "property": "P12107",
+            "hash": "479e5c6c22fc8aedf0e200b2f29a95a6b7864dfc",
+            "datavalue": {
+              "value": "a48f1941-4bbf-4eee-a991-0767c5145d7c",
+              "type": "string"
+            },
+            "datatype": "external-id"
+          },
+          "type": "statement",
+          "id": "Q3577509$c9ba54b6-4e85-2167-9b3c-f99743f4731e",
+          "rank": "normal"
+        }
+      ],
+      "P1889": [
+        {
+          "mainsnak": {
+            "snaktype": "value",
+            "property": "P1889",
+            "hash": "69ba23245eab7e1f8b83442e74764b3a05d3c24a",
+            "datavalue": {
+              "value": {
+                "entity-type": "item",
+                "numeric-id": 503958,
+                "id": "Q503958"
+              },
+              "type": "wikibase-entityid"
+            },
+            "datatype": "wikibase-item"
+          },
+          "type": "statement",
+          "qualifiers": {
+            "P1013": [
+              {
+                "snaktype": "value",
+                "property": "P1013",
+                "hash": "fb0ed44cd903ddadad0df951401440db0bc84ea8",
+                "datavalue": {
+                  "value": {
+                    "entity-type": "item",
+                    "numeric-id": 127270577,
+                    "id": "Q127270577"
+                  },
+                  "type": "wikibase-entityid"
+                },
+                "datatype": "wikibase-item"
+              }
+            ]
+          },
+          "qualifiers-order": [
+            "P1013"
+          ],
+          "id": "Q3577509$95a3467d-40e8-6039-2eff-c24de90477e3",
+          "rank": "normal"
+        }
+      ],
+      "P1256": [
+        {
+          "mainsnak": {
+            "snaktype": "value",
+            "property": "P1256",
+            "hash": "6e44d629b4a9a0ac8e7265b34a7b0ea2c15e23ef",
+            "datavalue": {
+              "value": "44E2",
+              "type": "string"
+            },
+            "datatype": "external-id"
+          },
+          "type": "statement",
+          "id": "Q3577509$A02BAF11-AF1C-4CD2-B1BD-7DA24B6D2926",
+          "rank": "normal"
+        }
+      ],
+      "P13591": [
+        {
+          "mainsnak": {
+            "snaktype": "value",
+            "property": "P13591",
+            "hash": "17a8bf10d5a043dbaf000496bcc0b248b083fd9e",
+            "datavalue": {
+              "value": "concept/66e3e38d-7be1-46fc-8a30-1e3680dd455f",
+              "type": "string"
+            },
+            "datatype": "external-id"
+          },
+          "type": "statement",
+          "id": "Q3577509$3FAB7855-45D0-4F44-AF17-9F733C0C1EAF",
+          "rank": "normal"
+        }
+      ],
+      "P1036": [
+        {
+          "mainsnak": {
+            "snaktype": "value",
+            "property": "P1036",
+            "hash": "6917fa58d87cfb4eb24e03ad2348984a9565b1a2",
+            "datavalue": {
+              "value": "628.95",
+              "type": "string"
+            },
+            "datatype": "external-id"
+          },
+          "type": "statement",
+          "id": "Q3577509$BE161394-0DFD-4C49-875E-7E4FC8788EE6",
+          "rank": "normal",
+          "references": [
+            {
+              "hash": "591295babf63fb0e468c85f20dd4fdeaaf9ae65c",
+              "snaks": {
+                "P248": [
+                  {
+                    "snaktype": "value",
+                    "property": "P248",
+                    "hash": "3b090a7bae73c288393b2c8b9846cc7ed9a58f91",
+                    "datavalue": {
+                      "value": {
+                        "entity-type": "item",
+                        "numeric-id": 16583225,
+                        "id": "Q16583225"
+                      },
+                      "type": "wikibase-entityid"
+                    },
+                    "datatype": "wikibase-item"
+                  }
+                ],
+                "P508": [
+                  {
+                    "snaktype": "value",
+                    "property": "P508",
+                    "hash": "6f5d2fe366e5101db5074f567f4c78eb3954e3c0",
+                    "datavalue": {
+                      "value": "7198",
+                      "type": "string"
+                    },
+                    "datatype": "external-id"
+                  }
+                ],
+                "P813": [
+                  {
+                    "snaktype": "value",
+                    "property": "P813",
+                    "hash": "6d4c9e5b0416a20f72876d06319d4d54168395a8",
+                    "datavalue": {
+                      "value": {
+                        "time": "+2025-11-21T00:00:00Z",
+                        "timezone": 0,
+                        "before": 0,
+                        "after": 0,
+                        "precision": 11,
+                        "calendarmodel": "http://www.wikidata.org/entity/Q1985727"
+                      },
+                      "type": "time"
+                    },
+                    "datatype": "time"
+                  }
+                ]
+              },
+              "snaks-order": [
+                "P248",
+                "P508",
+                "P813"
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    "sitelinks": {
+      "frwiki": {
+        "site": "frwiki",
+        "title": "Éclairage public",
+        "badges": [],
+        "url": "https://fr.wikipedia.org/wiki/%C3%89clairage_public"
+      },
+      "itwiki": {
+        "site": "itwiki",
+        "title": "Illuminazione pubblica",
+        "badges": [],
+        "url": "https://it.wikipedia.org/wiki/Illuminazione_pubblica"
+      }
+    }
+  }
+}

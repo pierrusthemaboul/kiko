@@ -1,0 +1,750 @@
+{
+  "saved_at": "2026-03-07T12:54:25.757Z",
+  "value": {
+    "pageid": 1060665,
+    "ns": 0,
+    "title": "Q1113445",
+    "lastrevid": 2419236308,
+    "modified": "2025-10-20T13:17:30Z",
+    "type": "item",
+    "id": "Q1113445",
+    "labels": {
+      "fr": {
+        "language": "fr",
+        "value": "Combat"
+      },
+      "en": {
+        "language": "en",
+        "value": "Combat"
+      },
+      "de": {
+        "language": "de",
+        "value": "Combat"
+      },
+      "pt": {
+        "language": "pt",
+        "value": "Combat (jornal)"
+      },
+      "es": {
+        "language": "es",
+        "value": "Combat"
+      },
+      "fa": {
+        "language": "fa",
+        "value": "کمبا"
+      },
+      "zh": {
+        "language": "zh",
+        "value": "戰鬥"
+      },
+      "ja": {
+        "language": "ja",
+        "value": "コンバ"
+      },
+      "az": {
+        "language": "az",
+        "value": "Kombat (qəzet)"
+      },
+      "it": {
+        "language": "it",
+        "value": "Combat"
+      },
+      "ca": {
+        "language": "ca",
+        "value": "Combat"
+      },
+      "ga": {
+        "language": "ga",
+        "value": "Combat"
+      },
+      "en-us": {
+        "language": "en-us",
+        "value": "Combat"
+      },
+      "sv": {
+        "language": "sv",
+        "value": "Combat"
+      },
+      "da": {
+        "language": "da",
+        "value": "Combat"
+      }
+    },
+    "descriptions": {
+      "fr": {
+        "language": "fr",
+        "value": "quotidien français, de 1941 à 1974, clandestin pendant l'Occupation"
+      },
+      "de": {
+        "language": "de",
+        "value": "Zeitung"
+      },
+      "en": {
+        "language": "en",
+        "value": "French newspaper"
+      },
+      "it": {
+        "language": "it",
+        "value": "giornale francese (1941-1974)"
+      },
+      "az": {
+        "language": "az",
+        "value": "Fransa Müqavimət Hərəkatı tərəfindən  yaradılan qəzet"
+      },
+      "en-us": {
+        "language": "en-us",
+        "value": "French newspaper"
+      },
+      "da": {
+        "language": "da",
+        "value": "Fransk avis"
+      },
+      "ca": {
+        "language": "ca",
+        "value": "diari francès del moviment Rèsistance"
+      }
+    },
+    "aliases": {
+      "az": [
+        {
+          "language": "az",
+          "value": "Kombat"
+        }
+      ],
+      "zh": [
+        {
+          "language": "zh",
+          "value": "戰鬥報"
+        }
+      ],
+      "ca": [
+        {
+          "language": "ca",
+          "value": "publicació"
+        }
+      ]
+    },
+    "claims": {
+      "P31": [
+        {
+          "mainsnak": {
+            "snaktype": "value",
+            "property": "P31",
+            "hash": "df0818c28ebeb4dc7325421573db39fc2fa29e3f",
+            "datavalue": {
+              "value": {
+                "entity-type": "item",
+                "numeric-id": 3186988,
+                "id": "Q3186988"
+              },
+              "type": "wikibase-entityid"
+            },
+            "datatype": "wikibase-item"
+          },
+          "type": "statement",
+          "id": "Q1113445$7dcadbf1-4890-039e-cec9-cb9ce57982a7",
+          "rank": "normal"
+        },
+        {
+          "mainsnak": {
+            "snaktype": "value",
+            "property": "P31",
+            "hash": "f0ed5f5982d4049b90300bb5848f9c1b81b2cdef",
+            "datavalue": {
+              "value": {
+                "entity-type": "item",
+                "numeric-id": 1110794,
+                "id": "Q1110794"
+              },
+              "type": "wikibase-entityid"
+            },
+            "datatype": "wikibase-item"
+          },
+          "type": "statement",
+          "id": "Q1113445$180D523F-4F6A-4464-AB5B-9D6EE851E81F",
+          "rank": "normal",
+          "references": [
+            {
+              "hash": "fd2109e51de84bf33540575a63b86678da7a1962",
+              "snaks": {
+                "P248": [
+                  {
+                    "snaktype": "value",
+                    "property": "P248",
+                    "hash": "52c431c41b8a73130ff729f9b7027b9d19fffcd5",
+                    "datavalue": {
+                      "value": {
+                        "entity-type": "item",
+                        "numeric-id": 2664168,
+                        "id": "Q2664168"
+                      },
+                      "type": "wikibase-entityid"
+                    },
+                    "datatype": "wikibase-item"
+                  }
+                ],
+                "P12385": [
+                  {
+                    "snaktype": "value",
+                    "property": "P12385",
+                    "hash": "6eeb76e117e685de1855aaf2fce4dee187519c60",
+                    "datavalue": {
+                      "value": "albert-camus",
+                      "type": "string"
+                    },
+                    "datatype": "external-id"
+                  }
+                ]
+              },
+              "snaks-order": [
+                "P248",
+                "P12385"
+              ]
+            }
+          ]
+        }
+      ],
+      "P407": [
+        {
+          "mainsnak": {
+            "snaktype": "value",
+            "property": "P407",
+            "hash": "d197d0a5efa4b4c23a302a829dd3ef43684fe002",
+            "datavalue": {
+              "value": {
+                "entity-type": "item",
+                "numeric-id": 150,
+                "id": "Q150"
+              },
+              "type": "wikibase-entityid"
+            },
+            "datatype": "wikibase-item"
+          },
+          "type": "statement",
+          "id": "q1113445$C7802963-F312-4E7C-B7CF-0D650CD9F2DC",
+          "rank": "normal",
+          "references": [
+            {
+              "hash": "d4bd87b862b12d99d26e86472d44f26858dee639",
+              "snaks": {
+                "P143": [
+                  {
+                    "snaktype": "value",
+                    "property": "P143",
+                    "hash": "f30cbd35620c4ea6d0633aaf0210a8916130469b",
+                    "datavalue": {
+                      "value": {
+                        "entity-type": "item",
+                        "numeric-id": 8447,
+                        "id": "Q8447"
+                      },
+                      "type": "wikibase-entityid"
+                    },
+                    "datatype": "wikibase-item"
+                  }
+                ]
+              },
+              "snaks-order": [
+                "P143"
+              ]
+            }
+          ]
+        }
+      ],
+      "P123": [
+        {
+          "mainsnak": {
+            "snaktype": "value",
+            "property": "P123",
+            "hash": "422a2ba717154a14c0a74e41400517150fab33cc",
+            "datavalue": {
+              "value": {
+                "entity-type": "item",
+                "numeric-id": 573162,
+                "id": "Q573162"
+              },
+              "type": "wikibase-entityid"
+            },
+            "datatype": "wikibase-item"
+          },
+          "type": "statement",
+          "id": "Q1113445$ce932ca1-4cf7-6b85-dbbb-bf3561cfbf4e",
+          "rank": "normal"
+        }
+      ],
+      "P646": [
+        {
+          "mainsnak": {
+            "snaktype": "value",
+            "property": "P646",
+            "hash": "0bd2c99b6df5153e8dffa80d803206d84138e44c",
+            "datavalue": {
+              "value": "/m/0fwcdf",
+              "type": "string"
+            },
+            "datatype": "external-id"
+          },
+          "type": "statement",
+          "id": "Q1113445$067E7C7A-BCD2-4D84-A96B-CD75B49E9F26",
+          "rank": "normal",
+          "references": [
+            {
+              "hash": "2b00cb481cddcac7623114367489b5c194901c4a",
+              "snaks": {
+                "P248": [
+                  {
+                    "snaktype": "value",
+                    "property": "P248",
+                    "hash": "a94b740202b097dd33355e0e6c00e54b9395e5e0",
+                    "datavalue": {
+                      "value": {
+                        "entity-type": "item",
+                        "numeric-id": 15241312,
+                        "id": "Q15241312"
+                      },
+                      "type": "wikibase-entityid"
+                    },
+                    "datatype": "wikibase-item"
+                  }
+                ],
+                "P577": [
+                  {
+                    "snaktype": "value",
+                    "property": "P577",
+                    "hash": "fde79ecb015112d2f29229ccc1ec514ed3e71fa2",
+                    "datavalue": {
+                      "value": {
+                        "time": "+2013-10-28T00:00:00Z",
+                        "timezone": 0,
+                        "before": 0,
+                        "after": 0,
+                        "precision": 11,
+                        "calendarmodel": "http://www.wikidata.org/entity/Q1985727"
+                      },
+                      "type": "time"
+                    },
+                    "datatype": "time"
+                  }
+                ]
+              },
+              "snaks-order": [
+                "P248",
+                "P577"
+              ]
+            }
+          ]
+        }
+      ],
+      "P1476": [
+        {
+          "mainsnak": {
+            "snaktype": "value",
+            "property": "P1476",
+            "hash": "820d237028b04c603c3e5105b41bb5d1579b95eb",
+            "datavalue": {
+              "value": {
+                "text": "Combat",
+                "language": "fr"
+              },
+              "type": "monolingualtext"
+            },
+            "datatype": "monolingualtext"
+          },
+          "type": "statement",
+          "qualifiers": {
+            "P443": [
+              {
+                "snaktype": "value",
+                "property": "P443",
+                "hash": "152581115a6f1e13fdeaf335b9b55fce3baa1380",
+                "datavalue": {
+                  "value": "LL-Q150 (fra)-Jules78120-Combat.wav",
+                  "type": "string"
+                },
+                "datatype": "commonsMedia"
+              }
+            ]
+          },
+          "qualifiers-order": [
+            "P443"
+          ],
+          "id": "Q1113445$69C1E07D-B6AB-48FE-9780-972FB27A2578",
+          "rank": "normal",
+          "references": [
+            {
+              "hash": "9a24f7c0208b05d6be97077d855671d1dfdbc0dd",
+              "snaks": {
+                "P143": [
+                  {
+                    "snaktype": "value",
+                    "property": "P143",
+                    "hash": "d38375ffe6fe142663ff55cd783aa4df4301d83d",
+                    "datavalue": {
+                      "value": {
+                        "entity-type": "item",
+                        "numeric-id": 48183,
+                        "id": "Q48183"
+                      },
+                      "type": "wikibase-entityid"
+                    },
+                    "datatype": "wikibase-item"
+                  }
+                ]
+              },
+              "snaks-order": [
+                "P143"
+              ]
+            }
+          ]
+        }
+      ],
+      "P571": [
+        {
+          "mainsnak": {
+            "snaktype": "value",
+            "property": "P571",
+            "hash": "421967e6845372d9efd99659c92f0e0229f751e5",
+            "datavalue": {
+              "value": {
+                "time": "+1941-12-00T00:00:00Z",
+                "timezone": 0,
+                "before": 0,
+                "after": 0,
+                "precision": 10,
+                "calendarmodel": "http://www.wikidata.org/entity/Q1985727"
+              },
+              "type": "time"
+            },
+            "datatype": "time"
+          },
+          "type": "statement",
+          "id": "Q1113445$E8DBC36F-D7A2-4FEF-AF65-B06ED0336902",
+          "rank": "normal",
+          "references": [
+            {
+              "hash": "fa278ebfc458360e5aed63d5058cca83c46134f1",
+              "snaks": {
+                "P143": [
+                  {
+                    "snaktype": "value",
+                    "property": "P143",
+                    "hash": "e4f6d9441d0600513c4533c672b5ab472dc73694",
+                    "datavalue": {
+                      "value": {
+                        "entity-type": "item",
+                        "numeric-id": 328,
+                        "id": "Q328"
+                      },
+                      "type": "wikibase-entityid"
+                    },
+                    "datatype": "wikibase-item"
+                  }
+                ]
+              },
+              "snaks-order": [
+                "P143"
+              ]
+            }
+          ]
+        }
+      ],
+      "P1417": [
+        {
+          "mainsnak": {
+            "snaktype": "value",
+            "property": "P1417",
+            "hash": "4357a1fc4b0d90ca60eb9247cb21d25937be4208",
+            "datavalue": {
+              "value": "topic/Combat-French-newspaper",
+              "type": "string"
+            },
+            "datatype": "external-id"
+          },
+          "type": "statement",
+          "qualifiers": {
+            "P1810": [
+              {
+                "snaktype": "value",
+                "property": "P1810",
+                "hash": "f4120dd6b38dd28a1158e5d9b638ca6a84475a6c",
+                "datavalue": {
+                  "value": "Combat",
+                  "type": "string"
+                },
+                "datatype": "string"
+              }
+            ]
+          },
+          "qualifiers-order": [
+            "P1810"
+          ],
+          "id": "Q1113445$CC611F79-9BBE-4059-9F91-98C28A506511",
+          "rank": "normal"
+        }
+      ],
+      "P576": [
+        {
+          "mainsnak": {
+            "snaktype": "value",
+            "property": "P576",
+            "hash": "a5f10b6a4c4fb0a9bf09cbf2d03db94635f81ed5",
+            "datavalue": {
+              "value": {
+                "time": "+1974-08-00T00:00:00Z",
+                "timezone": 0,
+                "before": 0,
+                "after": 0,
+                "precision": 10,
+                "calendarmodel": "http://www.wikidata.org/entity/Q1985727"
+              },
+              "type": "time"
+            },
+            "datatype": "time"
+          },
+          "type": "statement",
+          "id": "Q1113445$e5f57788-4102-39bf-74fe-a3930eb54ad3",
+          "rank": "normal"
+        }
+      ],
+      "P582": [
+        {
+          "mainsnak": {
+            "snaktype": "value",
+            "property": "P582",
+            "hash": "1cbdb4a68d5b3965df82716689245d3e38bdb799",
+            "datavalue": {
+              "value": {
+                "time": "+1974-08-00T00:00:00Z",
+                "timezone": 0,
+                "before": 0,
+                "after": 0,
+                "precision": 10,
+                "calendarmodel": "http://www.wikidata.org/entity/Q1985727"
+              },
+              "type": "time"
+            },
+            "datatype": "time"
+          },
+          "type": "statement",
+          "id": "Q1113445$18F2CDB1-2573-46C8-9E8C-07153B998436",
+          "rank": "normal",
+          "references": [
+            {
+              "hash": "fa278ebfc458360e5aed63d5058cca83c46134f1",
+              "snaks": {
+                "P143": [
+                  {
+                    "snaktype": "value",
+                    "property": "P143",
+                    "hash": "e4f6d9441d0600513c4533c672b5ab472dc73694",
+                    "datavalue": {
+                      "value": {
+                        "entity-type": "item",
+                        "numeric-id": 328,
+                        "id": "Q328"
+                      },
+                      "type": "wikibase-entityid"
+                    },
+                    "datatype": "wikibase-item"
+                  }
+                ]
+              },
+              "snaks-order": [
+                "P143"
+              ]
+            }
+          ]
+        }
+      ],
+      "P580": [
+        {
+          "mainsnak": {
+            "snaktype": "value",
+            "property": "P580",
+            "hash": "8e3b0b8a93cf4eccac2bf0033da449238cd7d078",
+            "datavalue": {
+              "value": {
+                "time": "+1941-12-00T00:00:00Z",
+                "timezone": 0,
+                "before": 0,
+                "after": 0,
+                "precision": 10,
+                "calendarmodel": "http://www.wikidata.org/entity/Q1985727"
+              },
+              "type": "time"
+            },
+            "datatype": "time"
+          },
+          "type": "statement",
+          "id": "Q1113445$9F7B1F43-7CB8-4EFA-A897-2FDE9D69E420",
+          "rank": "normal",
+          "references": [
+            {
+              "hash": "fa278ebfc458360e5aed63d5058cca83c46134f1",
+              "snaks": {
+                "P143": [
+                  {
+                    "snaktype": "value",
+                    "property": "P143",
+                    "hash": "e4f6d9441d0600513c4533c672b5ab472dc73694",
+                    "datavalue": {
+                      "value": {
+                        "entity-type": "item",
+                        "numeric-id": 328,
+                        "id": "Q328"
+                      },
+                      "type": "wikibase-entityid"
+                    },
+                    "datatype": "wikibase-item"
+                  }
+                ]
+              },
+              "snaks-order": [
+                "P143"
+              ]
+            }
+          ]
+        }
+      ],
+      "P1889": [
+        {
+          "mainsnak": {
+            "snaktype": "value",
+            "property": "P1889",
+            "hash": "9bb3b7d4343e2817fbecc7080a03aa53050daa2a",
+            "datavalue": {
+              "value": {
+                "entity-type": "item",
+                "numeric-id": 2984991,
+                "id": "Q2984991"
+              },
+              "type": "wikibase-entityid"
+            },
+            "datatype": "wikibase-item"
+          },
+          "type": "statement",
+          "id": "Q1113445$6DB1FD74-DE7C-409F-BB51-A5379CB820BF",
+          "rank": "normal",
+          "references": [
+            {
+              "hash": "7741d5f77080e1883790f4fce745e97f1b6ca7b5",
+              "snaks": {
+                "P143": [
+                  {
+                    "snaktype": "value",
+                    "property": "P143",
+                    "hash": "f30cbd35620c4ea6d0633aaf0210a8916130469b",
+                    "datavalue": {
+                      "value": {
+                        "entity-type": "item",
+                        "numeric-id": 8447,
+                        "id": "Q8447"
+                      },
+                      "type": "wikibase-entityid"
+                    },
+                    "datatype": "wikibase-item"
+                  }
+                ],
+                "P4656": [
+                  {
+                    "snaktype": "value",
+                    "property": "P4656",
+                    "hash": "b7749fa78fa402f721f862d2ef08ba312363159d",
+                    "datavalue": {
+                      "value": "https://fr.wikipedia.org/w/index.php?title=Combat_(journal)&oldid=168999529",
+                      "type": "string"
+                    },
+                    "datatype": "url"
+                  }
+                ]
+              },
+              "snaks-order": [
+                "P143",
+                "P4656"
+              ]
+            }
+          ]
+        }
+      ],
+      "P18": [
+        {
+          "mainsnak": {
+            "snaktype": "value",
+            "property": "P18",
+            "hash": "fd975afe2695fbb1582fe525b0fa44ba3a257952",
+            "datavalue": {
+              "value": "Journal Combat 1943.jpg",
+              "type": "string"
+            },
+            "datatype": "commonsMedia"
+          },
+          "type": "statement",
+          "id": "Q1113445$27CB3FA9-B467-4759-BAAB-94F4A9591EB3",
+          "rank": "normal"
+        }
+      ]
+    },
+    "sitelinks": {
+      "azwiki": {
+        "site": "azwiki",
+        "title": "Kombat (qəzet)",
+        "badges": [],
+        "url": "https://az.wikipedia.org/wiki/Kombat_(q%C9%99zet)"
+      },
+      "cawiki": {
+        "site": "cawiki",
+        "title": "Combat (diari)",
+        "badges": [],
+        "url": "https://ca.wikipedia.org/wiki/Combat_(diari)"
+      },
+      "commonswiki": {
+        "site": "commonswiki",
+        "title": "Category:Combat (journal)",
+        "badges": [],
+        "url": "https://commons.wikimedia.org/wiki/Category:Combat_(journal)"
+      },
+      "dewiki": {
+        "site": "dewiki",
+        "title": "Combat (Zeitung)",
+        "badges": [],
+        "url": "https://de.wikipedia.org/wiki/Combat_(Zeitung)"
+      },
+      "enwiki": {
+        "site": "enwiki",
+        "title": "Combat (newspaper)",
+        "badges": [],
+        "url": "https://en.wikipedia.org/wiki/Combat_(newspaper)"
+      },
+      "eswiki": {
+        "site": "eswiki",
+        "title": "Combat (periódico)",
+        "badges": [],
+        "url": "https://es.wikipedia.org/wiki/Combat_(peri%C3%B3dico)"
+      },
+      "fawiki": {
+        "site": "fawiki",
+        "title": "کمبا",
+        "badges": [],
+        "url": "https://fa.wikipedia.org/wiki/%DA%A9%D9%85%D8%A8%D8%A7"
+      },
+      "frwiki": {
+        "site": "frwiki",
+        "title": "Combat (journal)",
+        "badges": [],
+        "url": "https://fr.wikipedia.org/wiki/Combat_(journal)"
+      },
+      "itwiki": {
+        "site": "itwiki",
+        "title": "Combat (giornale)",
+        "badges": [],
+        "url": "https://it.wikipedia.org/wiki/Combat_(giornale)"
+      },
+      "ptwiki": {
+        "site": "ptwiki",
+        "title": "Combat (jornal)",
+        "badges": [],
+        "url": "https://pt.wikipedia.org/wiki/Combat_(jornal)"
+      }
+    }
+  }
+}

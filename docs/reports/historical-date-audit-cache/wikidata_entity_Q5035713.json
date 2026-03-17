@@ -1,0 +1,173 @@
+{
+  "saved_at": "2026-03-07T16:16:57.941Z",
+  "value": {
+    "pageid": 4812324,
+    "ns": 0,
+    "title": "Q5035713",
+    "lastrevid": 2348256886,
+    "modified": "2025-05-13T19:59:19Z",
+    "type": "item",
+    "id": "Q5035713",
+    "labels": {
+      "en": {
+        "language": "en",
+        "value": "Capital of Brazil"
+      },
+      "fr": {
+        "language": "fr",
+        "value": "capitale du Brésil"
+      },
+      "tl": {
+        "language": "tl",
+        "value": "kapital city ng brazil"
+      },
+      "ja": {
+        "language": "ja",
+        "value": "ブラジルの首都"
+      },
+      "el": {
+        "language": "el",
+        "value": "Πρωτεύουσα της Βραζιλίας"
+      },
+      "en-ca": {
+        "language": "en-ca",
+        "value": "Capitals of Brazil"
+      },
+      "en-gb": {
+        "language": "en-gb",
+        "value": "Capitals of Brazil"
+      },
+      "zh": {
+        "language": "zh",
+        "value": "巴西首都"
+      },
+      "tr": {
+        "language": "tr",
+        "value": "Brezilya'nın başkenti"
+      }
+    },
+    "descriptions": {
+      "en": {
+        "language": "en",
+        "value": "historical capital cities"
+      },
+      "zh": {
+        "language": "zh",
+        "value": "巴西首都的历史沿革"
+      }
+    },
+    "aliases": {},
+    "claims": {
+      "P646": [
+        {
+          "mainsnak": {
+            "snaktype": "value",
+            "property": "P646",
+            "hash": "ebe786e5bc03bf4bcf976c417b2422219d7a4fc9",
+            "datavalue": {
+              "value": "/m/0bs7vhy",
+              "type": "string"
+            },
+            "datatype": "external-id"
+          },
+          "type": "statement",
+          "id": "Q5035713$D6E749E4-2D50-46C0-B927-521C97C4A36D",
+          "rank": "normal"
+        }
+      ],
+      "P279": [
+        {
+          "mainsnak": {
+            "snaktype": "value",
+            "property": "P279",
+            "hash": "2bb78b90edbd77670e338cc71f0c096e666e6206",
+            "datavalue": {
+              "value": {
+                "entity-type": "item",
+                "numeric-id": 27554677,
+                "id": "Q27554677"
+              },
+              "type": "wikibase-entityid"
+            },
+            "datatype": "wikibase-item"
+          },
+          "type": "statement",
+          "id": "Q5035713$93994a95-4430-f89b-abb3-f6643cc1a210",
+          "rank": "normal"
+        },
+        {
+          "mainsnak": {
+            "snaktype": "value",
+            "property": "P279",
+            "hash": "4db7628309668e3fa6880d1904bbc252476e8238",
+            "datavalue": {
+              "value": {
+                "entity-type": "item",
+                "numeric-id": 5119,
+                "id": "Q5119"
+              },
+              "type": "wikibase-entityid"
+            },
+            "datatype": "wikibase-item"
+          },
+          "type": "statement",
+          "id": "Q5035713$69ff7c94-4806-2b96-701c-aafbdd373dee",
+          "rank": "normal"
+        }
+      ],
+      "P17": [
+        {
+          "mainsnak": {
+            "snaktype": "value",
+            "property": "P17",
+            "hash": "90114304161d20f1934075ea47b8a33a76e95138",
+            "datavalue": {
+              "value": {
+                "entity-type": "item",
+                "numeric-id": 155,
+                "id": "Q155"
+              },
+              "type": "wikibase-entityid"
+            },
+            "datatype": "wikibase-item"
+          },
+          "type": "statement",
+          "id": "Q5035713$03947a03-4366-4a1d-a870-788ff26b80b6",
+          "rank": "normal"
+        }
+      ]
+    },
+    "sitelinks": {
+      "elwiki": {
+        "site": "elwiki",
+        "title": "Πρωτεύουσα της Βραζιλίας",
+        "badges": [],
+        "url": "https://el.wikipedia.org/wiki/%CE%A0%CF%81%CF%89%CF%84%CE%B5%CF%8D%CE%BF%CF%85%CF%83%CE%B1_%CF%84%CE%B7%CF%82_%CE%92%CF%81%CE%B1%CE%B6%CE%B9%CE%BB%CE%AF%CE%B1%CF%82"
+      },
+      "enwiki": {
+        "site": "enwiki",
+        "title": "Capitals of Brazil",
+        "badges": [],
+        "url": "https://en.wikipedia.org/wiki/Capitals_of_Brazil"
+      },
+      "frwiki": {
+        "site": "frwiki",
+        "title": "Capitale du Brésil",
+        "badges": [],
+        "url": "https://fr.wikipedia.org/wiki/Capitale_du_Br%C3%A9sil"
+      },
+      "simplewiki": {
+        "site": "simplewiki",
+        "title": "Capitals of Brazil",
+        "badges": [],
+        "url": "https://simple.wikipedia.org/wiki/Capitals_of_Brazil"
+      },
+      "zhwiki": {
+        "site": "zhwiki",
+        "title": "巴西首都",
+        "badges": [],
+        "url": "https://zh.wikipedia.org/wiki/%E5%B7%B4%E8%A5%BF%E9%A6%96%E9%83%BD"
+      }
+    }
+  }
+}

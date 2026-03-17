@@ -1,0 +1,780 @@
+{
+  "pageid": 477889,
+  "ns": 0,
+  "title": "Q508230",
+  "lastrevid": 2450675671,
+  "modified": "2026-01-02T22:35:23Z",
+  "type": "item",
+  "id": "Q508230",
+  "labels": {
+    "fr": {
+      "language": "fr",
+      "value": "naufragé"
+    },
+    "en": {
+      "language": "en",
+      "value": "castaway"
+    },
+    "it": {
+      "language": "it",
+      "value": "naufrago"
+    },
+    "pt": {
+      "language": "pt",
+      "value": "náufrago"
+    },
+    "is": {
+      "language": "is",
+      "value": "Skipbrotsmaður"
+    },
+    "es": {
+      "language": "es",
+      "value": "náufrago"
+    },
+    "el": {
+      "language": "el",
+      "value": "ναυαγός"
+    },
+    "ru": {
+      "language": "ru",
+      "value": "оставленный на необитаемом острове"
+    },
+    "de": {
+      "language": "de",
+      "value": "Schiffbrüchiger"
+    },
+    "da": {
+      "language": "da",
+      "value": "skibbruden"
+    },
+    "ga": {
+      "language": "ga",
+      "value": "duine longbhriste"
+    },
+    "pl": {
+      "language": "pl",
+      "value": "rozbitek"
+    },
+    "ca": {
+      "language": "ca",
+      "value": "fugitiu"
+    },
+    "et": {
+      "language": "et",
+      "value": "Merehädaline"
+    },
+    "hu": {
+      "language": "hu",
+      "value": "hajótörött"
+    },
+    "be-tarask": {
+      "language": "be-tarask",
+      "value": "выкінуты"
+    },
+    "cs": {
+      "language": "cs",
+      "value": "trosečník"
+    },
+    "mk": {
+      "language": "mk",
+      "value": "бродоломец"
+    },
+    "ja": {
+      "language": "ja",
+      "value": "漂流者"
+    }
+  },
+  "descriptions": {
+    "fr": {
+      "language": "fr",
+      "value": "personne abandonnée à son sort après un naufrage"
+    },
+    "en": {
+      "language": "en",
+      "value": "person who is cast adrift or ashore, usually in shipwreck"
+    },
+    "es": {
+      "language": "es",
+      "value": "persona abandonada a su suerte después de un naufragio"
+    },
+    "pl": {
+      "language": "pl",
+      "value": "osoba ocalała z katastrofy statku lub samolotu"
+    },
+    "be-tarask": {
+      "language": "be-tarask",
+      "value": "асоба, якая ацалела ў катастрофе судзіны ці летака"
+    },
+    "ja": {
+      "language": "ja",
+      "value": "海難事故による漂流者"
+    }
+  },
+  "aliases": {
+    "fr": [
+      {
+        "language": "fr",
+        "value": "naufragée"
+      }
+    ],
+    "de": [
+      {
+        "language": "de",
+        "value": "Schiffbrüchige"
+      }
+    ],
+    "es": [
+      {
+        "language": "es",
+        "value": "náufraga"
+      }
+    ],
+    "en": [
+      {
+        "language": "en",
+        "value": "castaways"
+      }
+    ],
+    "ru": [
+      {
+        "language": "ru",
+        "value": "оставленная на необитаемом острове"
+      }
+    ],
+    "cs": [
+      {
+        "language": "cs",
+        "value": "trosečnice"
+      }
+    ],
+    "mk": [
+      {
+        "language": "mk",
+        "value": "бродоломник"
+      }
+    ],
+    "ja": [
+      {
+        "language": "ja",
+        "value": "漂流民"
+      }
+    ]
+  },
+  "claims": {
+    "P646": [
+      {
+        "mainsnak": {
+          "snaktype": "value",
+          "property": "P646",
+          "hash": "08fb32f22df50b635a7677544b19881d8bf70323",
+          "datavalue": {
+            "value": "/m/095dmk",
+            "type": "string"
+          },
+          "datatype": "external-id"
+        },
+        "type": "statement",
+        "id": "Q508230$D52518DF-A588-4A01-B627-A915C1D5D06A",
+        "rank": "normal",
+        "references": [
+          {
+            "hash": "2b00cb481cddcac7623114367489b5c194901c4a",
+            "snaks": {
+              "P248": [
+                {
+                  "snaktype": "value",
+                  "property": "P248",
+                  "hash": "a94b740202b097dd33355e0e6c00e54b9395e5e0",
+                  "datavalue": {
+                    "value": {
+                      "entity-type": "item",
+                      "numeric-id": 15241312,
+                      "id": "Q15241312"
+                    },
+                    "type": "wikibase-entityid"
+                  },
+                  "datatype": "wikibase-item"
+                }
+              ],
+              "P577": [
+                {
+                  "snaktype": "value",
+                  "property": "P577",
+                  "hash": "fde79ecb015112d2f29229ccc1ec514ed3e71fa2",
+                  "datavalue": {
+                    "value": {
+                      "time": "+2013-10-28T00:00:00Z",
+                      "timezone": 0,
+                      "before": 0,
+                      "after": 0,
+                      "precision": 11,
+                      "calendarmodel": "http://www.wikidata.org/entity/Q1985727"
+                    },
+                    "type": "time"
+                  },
+                  "datatype": "time"
+                }
+              ]
+            },
+            "snaks-order": [
+              "P248",
+              "P577"
+            ]
+          }
+        ]
+      }
+    ],
+    "P2521": [
+      {
+        "mainsnak": {
+          "snaktype": "value",
+          "property": "P2521",
+          "hash": "62a3b00634df4d91deb6ca4be8d244e240afbb82",
+          "datavalue": {
+            "value": {
+              "text": "naufragée",
+              "language": "fr"
+            },
+            "type": "monolingualtext"
+          },
+          "datatype": "monolingualtext"
+        },
+        "type": "statement",
+        "id": "Q508230$74c886f9-406a-3e03-538d-2baa93c09472",
+        "rank": "normal"
+      },
+      {
+        "mainsnak": {
+          "snaktype": "value",
+          "property": "P2521",
+          "hash": "f3b1b4d7e4edb90da7bf80a763cb9e4cbaf53ead",
+          "datavalue": {
+            "value": {
+              "text": "fugitiva",
+              "language": "ca"
+            },
+            "type": "monolingualtext"
+          },
+          "datatype": "monolingualtext"
+        },
+        "type": "statement",
+        "id": "Q508230$5DB40068-B066-41FF-8935-E572F0DA7493",
+        "rank": "normal"
+      },
+      {
+        "mainsnak": {
+          "snaktype": "value",
+          "property": "P2521",
+          "hash": "6586be9499302cc4d8e0edd268033b050ead08b8",
+          "datavalue": {
+            "value": {
+              "text": "оставленная на необитаемом острове",
+              "language": "ru"
+            },
+            "type": "monolingualtext"
+          },
+          "datatype": "monolingualtext"
+        },
+        "type": "statement",
+        "id": "Q508230$c2967169-4112-b809-6695-f116ece241ed",
+        "rank": "normal"
+      },
+      {
+        "mainsnak": {
+          "snaktype": "value",
+          "property": "P2521",
+          "hash": "0fb56d6ec32d43f277116a3741c21a5141e79080",
+          "datavalue": {
+            "value": {
+              "text": "rozbitka",
+              "language": "pl"
+            },
+            "type": "monolingualtext"
+          },
+          "datatype": "monolingualtext"
+        },
+        "type": "statement",
+        "id": "Q508230$89A76E54-9F61-4A43-A410-31D82D4BE83A",
+        "rank": "normal"
+      }
+    ],
+    "P279": [
+      {
+        "mainsnak": {
+          "snaktype": "value",
+          "property": "P279",
+          "hash": "90e3caead758d907846ebbb718bf21a4d4c1c48e",
+          "datavalue": {
+            "value": {
+              "entity-type": "item",
+              "numeric-id": 12356615,
+              "id": "Q12356615"
+            },
+            "type": "wikibase-entityid"
+          },
+          "datatype": "wikibase-item"
+        },
+        "type": "statement",
+        "id": "Q508230$5d49ac63-4ca8-5a59-ab53-8ee15b0850dc",
+        "rank": "normal"
+      }
+    ],
+    "P910": [
+      {
+        "mainsnak": {
+          "snaktype": "value",
+          "property": "P910",
+          "hash": "79651f07863ecf344b484fc03ec086d71131ad15",
+          "datavalue": {
+            "value": {
+              "entity-type": "item",
+              "numeric-id": 7304778,
+              "id": "Q7304778"
+            },
+            "type": "wikibase-entityid"
+          },
+          "datatype": "wikibase-item"
+        },
+        "type": "statement",
+        "id": "Q508230$1DE6DAA7-7CF2-48CD-AF73-132A93E4280C",
+        "rank": "normal"
+      }
+    ],
+    "P373": [
+      {
+        "mainsnak": {
+          "snaktype": "value",
+          "property": "P373",
+          "hash": "904f01c08651217bd583a9328fdb63293939aa83",
+          "datavalue": {
+            "value": "Castaways",
+            "type": "string"
+          },
+          "datatype": "string"
+        },
+        "type": "statement",
+        "id": "Q508230$ae2734b4-4eda-8dd4-d735-9cc4ac321934",
+        "rank": "normal"
+      }
+    ],
+    "P31": [
+      {
+        "mainsnak": {
+          "snaktype": "value",
+          "property": "P31",
+          "hash": "864f4f6124c60ed97c50d36b5a050bccc123e775",
+          "datavalue": {
+            "value": {
+              "entity-type": "item",
+              "numeric-id": 12737077,
+              "id": "Q12737077"
+            },
+            "type": "wikibase-entityid"
+          },
+          "datatype": "wikibase-item"
+        },
+        "type": "statement",
+        "id": "Q508230$8db93811-4ba4-f004-0091-c8fcda26f303",
+        "rank": "normal"
+      }
+    ],
+    "P244": [
+      {
+        "mainsnak": {
+          "snaktype": "value",
+          "property": "P244",
+          "hash": "116e322c1e6964ae12e2098e38d62ed77dfbb697",
+          "datavalue": {
+            "value": "sh85020648",
+            "type": "string"
+          },
+          "datatype": "external-id"
+        },
+        "type": "statement",
+        "id": "Q508230$E8B750D6-9E07-452B-9409-78BD5905E4ED",
+        "rank": "normal",
+        "references": [
+          {
+            "hash": "ac5d47e9fbcc281bc0d27a205ae02e22ad24ce31",
+            "snaks": {
+              "P854": [
+                {
+                  "snaktype": "value",
+                  "property": "P854",
+                  "hash": "b560dc6b281a39d061e189d2eb299a426a06f1a2",
+                  "datavalue": {
+                    "value": "https://github.com/JohnMarkOckerbloom/ftl/blob/master/data/wikimap",
+                    "type": "string"
+                  },
+                  "datatype": "url"
+                }
+              ],
+              "P813": [
+                {
+                  "snaktype": "value",
+                  "property": "P813",
+                  "hash": "0dcf4f64e93fdcc654e2c7534285881fe48b9f3d",
+                  "datavalue": {
+                    "value": {
+                      "time": "+2019-04-03T00:00:00Z",
+                      "timezone": 0,
+                      "before": 0,
+                      "after": 0,
+                      "precision": 11,
+                      "calendarmodel": "http://www.wikidata.org/entity/Q1985727"
+                    },
+                    "type": "time"
+                  },
+                  "datatype": "time"
+                }
+              ]
+            },
+            "snaks-order": [
+              "P854",
+              "P813"
+            ]
+          }
+        ]
+      }
+    ],
+    "P793": [
+      {
+        "mainsnak": {
+          "snaktype": "value",
+          "property": "P793",
+          "hash": "0acb0a22deecf47461e2cfa973af6f93c59807ee",
+          "datavalue": {
+            "value": {
+              "entity-type": "item",
+              "numeric-id": 906512,
+              "id": "Q906512"
+            },
+            "type": "wikibase-entityid"
+          },
+          "datatype": "wikibase-item"
+        },
+        "type": "statement",
+        "id": "Q508230$fc57a1b1-454f-8767-992b-9eedad4a9294",
+        "rank": "normal"
+      }
+    ],
+    "P3847": [
+      {
+        "mainsnak": {
+          "snaktype": "value",
+          "property": "P3847",
+          "hash": "4b8be5c699ad9de677856b9f9df42c2da2e9e305",
+          "datavalue": {
+            "value": "castaways",
+            "type": "string"
+          },
+          "datatype": "external-id"
+        },
+        "type": "statement",
+        "id": "Q508230$fc101ee7-4b29-1d4b-2cc4-e6744fbd00e5",
+        "rank": "normal"
+      }
+    ],
+    "P8785": [
+      {
+        "mainsnak": {
+          "snaktype": "value",
+          "property": "P8785",
+          "hash": "68d16ed32ffd86ef2633e53d03ae51ceea764dee",
+          "datavalue": {
+            "value": "4503",
+            "type": "string"
+          },
+          "datatype": "external-id"
+        },
+        "type": "statement",
+        "qualifiers": {
+          "P1810": [
+            {
+              "snaktype": "value",
+              "property": "P1810",
+              "hash": "4167b3da368213b3f0dfa7341eda758c882501af",
+              "datavalue": {
+                "value": "castaway",
+                "type": "string"
+              },
+              "datatype": "string"
+            }
+          ]
+        },
+        "qualifiers-order": [
+          "P1810"
+        ],
+        "id": "Q508230$b172a019-4325-b749-4e04-91947fa69389",
+        "rank": "normal"
+      }
+    ],
+    "P276": [
+      {
+        "mainsnak": {
+          "snaktype": "value",
+          "property": "P276",
+          "hash": "ede96785ba5dfd13ba959bbe64f879a03aaee914",
+          "datavalue": {
+            "value": {
+              "entity-type": "item",
+              "numeric-id": 23442,
+              "id": "Q23442"
+            },
+            "type": "wikibase-entityid"
+          },
+          "datatype": "wikibase-item"
+        },
+        "type": "statement",
+        "id": "Q508230$16295d77-418c-74a7-d97b-8d7acbcdfec5",
+        "rank": "normal"
+      }
+    ],
+    "P8814": [
+      {
+        "mainsnak": {
+          "snaktype": "value",
+          "property": "P8814",
+          "hash": "21fd2a59f5279e2e06134a85100cef0391e10cac",
+          "datavalue": {
+            "value": "09918890-n",
+            "type": "string"
+          },
+          "datatype": "external-id"
+        },
+        "type": "statement",
+        "id": "Q508230$72296B9C-224E-4586-8323-4CFE77914414",
+        "rank": "normal",
+        "references": [
+          {
+            "hash": "3f8c4934cc38de77b597e01bd5028acb514abd2d",
+            "snaks": {
+              "P248": [
+                {
+                  "snaktype": "value",
+                  "property": "P248",
+                  "hash": "b43a9435cc2672909edd2b524141c9dbfa50f967",
+                  "datavalue": {
+                    "value": {
+                      "entity-type": "item",
+                      "numeric-id": 112258758,
+                      "id": "Q112258758"
+                    },
+                    "type": "wikibase-entityid"
+                  },
+                  "datatype": "wikibase-item"
+                }
+              ]
+            },
+            "snaks-order": [
+              "P248"
+            ]
+          }
+        ]
+      }
+    ],
+    "P8189": [
+      {
+        "mainsnak": {
+          "snaktype": "value",
+          "property": "P8189",
+          "hash": "20fe238eb31f85e7959a3aca6662ffbd049a5757",
+          "datavalue": {
+            "value": "987007284721805171",
+            "type": "string"
+          },
+          "datatype": "external-id"
+        },
+        "type": "statement",
+        "id": "Q508230$68B7F675-E564-4D6A-AC34-32C103E123F4",
+        "rank": "normal",
+        "references": [
+          {
+            "hash": "ecb7a39cf436eb1fba419853af168ef9f2ba1dab",
+            "snaks": {
+              "P248": [
+                {
+                  "snaktype": "value",
+                  "property": "P248",
+                  "hash": "a03bb6ffe37be9554492f4eea5bd18afcb57df19",
+                  "datavalue": {
+                    "value": {
+                      "entity-type": "item",
+                      "numeric-id": 106509962,
+                      "id": "Q106509962"
+                    },
+                    "type": "wikibase-entityid"
+                  },
+                  "datatype": "wikibase-item"
+                }
+              ]
+            },
+            "snaks-order": [
+              "P248"
+            ]
+          }
+        ]
+      }
+    ],
+    "P5160": [
+      {
+        "mainsnak": {
+          "snaktype": "value",
+          "property": "P5160",
+          "hash": "5c7a562dcaaa326c0135d97866d7b8c5f6ae25d3",
+          "datavalue": {
+            "value": "tgm001765",
+            "type": "string"
+          },
+          "datatype": "external-id"
+        },
+        "type": "statement",
+        "id": "Q508230$A70E9B4E-C9D8-4A1A-93F2-1EA5494A983A",
+        "rank": "normal"
+      }
+    ],
+    "P12596": [
+      {
+        "mainsnak": {
+          "snaktype": "value",
+          "property": "P12596",
+          "hash": "db14af6b01a6235acc44e5287b91ab2c70274e08",
+          "datavalue": {
+            "value": "39063",
+            "type": "string"
+          },
+          "datatype": "external-id"
+        },
+        "type": "statement",
+        "id": "Q508230$B69EF100-B99F-4C5D-BCF6-EB72B6BBABBB",
+        "rank": "normal"
+      }
+    ],
+    "P12800": [
+      {
+        "mainsnak": {
+          "snaktype": "value",
+          "property": "P12800",
+          "hash": "72c97ff07ac1a9426dfb1d9ec8940cf264e49e24",
+          "datavalue": {
+            "value": "fr:Naufragé",
+            "type": "string"
+          },
+          "datatype": "external-id"
+        },
+        "type": "statement",
+        "id": "Q508230$2A648EF1-24FC-4D0A-9030-43D36EA60B21",
+        "rank": "normal"
+      }
+    ],
+    "P9346": [
+      {
+        "mainsnak": {
+          "snaktype": "value",
+          "property": "P9346",
+          "hash": "5f6cf70c0d96f31278efb9fd0637961a6efaffdb",
+          "datavalue": {
+            "value": "naufrage",
+            "type": "string"
+          },
+          "datatype": "external-id"
+        },
+        "type": "statement",
+        "id": "Q508230$7D362AB2-DEC1-434A-9E35-A3782DBA8451",
+        "rank": "normal"
+      }
+    ],
+    "P13591": [
+      {
+        "mainsnak": {
+          "snaktype": "value",
+          "property": "P13591",
+          "hash": "a27e76d75f3c0e362233aa7f16951bc7c5fc622a",
+          "datavalue": {
+            "value": "concept/44d16aef-2041-4b2d-8178-2fe5defac978",
+            "type": "string"
+          },
+          "datatype": "external-id"
+        },
+        "type": "statement",
+        "id": "Q508230$61759261-B7D0-4BD6-AB6F-AE8F3FC3E02E",
+        "rank": "normal"
+      }
+    ],
+    "P11924": [
+      {
+        "mainsnak": {
+          "snaktype": "value",
+          "property": "P11924",
+          "hash": "b1540b3af23e83ce1f86f416981727d88ed597a2",
+          "datavalue": {
+            "value": "castaway",
+            "type": "string"
+          },
+          "datatype": "external-id"
+        },
+        "type": "statement",
+        "id": "Q508230$B6CED280-2D51-4B90-8C86-2E19D02ABC66",
+        "rank": "normal"
+      }
+    ]
+  },
+  "sitelinks": {
+    "dewiki": {
+      "site": "dewiki",
+      "title": "Schiffbrüchiger",
+      "badges": [
+        "Q70894304"
+      ],
+      "url": "https://de.wikipedia.org/wiki/Schiffbr%C3%BCchiger"
+    },
+    "enwiki": {
+      "site": "enwiki",
+      "title": "Castaway",
+      "badges": [],
+      "url": "https://en.wikipedia.org/wiki/Castaway"
+    },
+    "etwikiquote": {
+      "site": "etwikiquote",
+      "title": "Merehädaline",
+      "badges": [],
+      "url": "https://et.wikiquote.org/wiki/Mereh%C3%A4daline"
+    },
+    "frwiki": {
+      "site": "frwiki",
+      "title": "Naufragé",
+      "badges": [],
+      "url": "https://fr.wikipedia.org/wiki/Naufrag%C3%A9"
+    },
+    "iswiki": {
+      "site": "iswiki",
+      "title": "Skipbrotsmaður",
+      "badges": [],
+      "url": "https://is.wikipedia.org/wiki/Skipbrotsma%C3%B0ur"
+    },
+    "itwiki": {
+      "site": "itwiki",
+      "title": "Naufrago",
+      "badges": [],
+      "url": "https://it.wikipedia.org/wiki/Naufrago"
+    },
+    "plwiki": {
+      "site": "plwiki",
+      "title": "Rozbitek (osoba)",
+      "badges": [],
+      "url": "https://pl.wikipedia.org/wiki/Rozbitek_(osoba)"
+    },
+    "plwikiquote": {
+      "site": "plwikiquote",
+      "title": "Rozbitek",
+      "badges": [],
+      "url": "https://pl.wikiquote.org/wiki/Rozbitek"
+    },
+    "ptwiki": {
+      "site": "ptwiki",
+      "title": "Náufrago",
+      "badges": [],
+      "url": "https://pt.wikipedia.org/wiki/N%C3%A1ufrago"
+    }
+  }
+}

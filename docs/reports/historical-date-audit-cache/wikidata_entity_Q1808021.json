@@ -1,0 +1,951 @@
+{
+  "saved_at": "2026-03-07T13:11:02.529Z",
+  "value": {
+    "pageid": 1739195,
+    "ns": 0,
+    "title": "Q1808021",
+    "lastrevid": 2430911400,
+    "modified": "2025-11-18T01:29:30Z",
+    "type": "item",
+    "id": "Q1808021",
+    "labels": {
+      "de": {
+        "language": "de",
+        "value": "Mastering the Art of French Cooking"
+      },
+      "id": {
+        "language": "id",
+        "value": "Mastering the Art of French Cooking"
+      },
+      "fr": {
+        "language": "fr",
+        "value": "Mastering the Art of French Cooking"
+      },
+      "ru": {
+        "language": "ru",
+        "value": "Осваивая искусство французской кухни"
+      },
+      "en": {
+        "language": "en",
+        "value": "Mastering the Art of French Cooking"
+      },
+      "it": {
+        "language": "it",
+        "value": "Mastering the Art of French Cooking"
+      },
+      "nl": {
+        "language": "nl",
+        "value": "Mastering the Art of French Cooking"
+      },
+      "sv": {
+        "language": "sv",
+        "value": "Det goda franska köket"
+      },
+      "he": {
+        "language": "he",
+        "value": "Mastering the Art of French Cooking"
+      },
+      "zh": {
+        "language": "zh",
+        "value": "掌握法式烹飪藝術"
+      },
+      "tr": {
+        "language": "tr",
+        "value": "Mastering the Art of French Cooking"
+      },
+      "es": {
+        "language": "es",
+        "value": "El arte de la cocina francesa"
+      },
+      "da": {
+        "language": "da",
+        "value": "Mastering the Art of French Cooking"
+      },
+      "fi": {
+        "language": "fi",
+        "value": "Ranskalaisen keittiön salaisuudet"
+      },
+      "fa": {
+        "language": "fa",
+        "value": "تسلط بر هنر آشپزی فرانسوی"
+      }
+    },
+    "descriptions": {
+      "nl": {
+        "language": "nl",
+        "value": "boek van Simone Beck"
+      },
+      "he": {
+        "language": "he",
+        "value": "ספר"
+      },
+      "ar": {
+        "language": "ar",
+        "value": "كتاب من تأليف جوليا تشايلد"
+      },
+      "fr": {
+        "language": "fr",
+        "value": "livre de Julia Child, Louisette Bertholle, Simone Beck"
+      },
+      "en": {
+        "language": "en",
+        "value": "book by Simone Beck, Louisette Bertholle and Julia Child"
+      },
+      "de": {
+        "language": "de",
+        "value": "Buch von Simone Beck"
+      },
+      "es": {
+        "language": "es",
+        "value": "libro de recetas estadounidense sobre gastronomía francesa"
+      },
+      "sv": {
+        "language": "sv",
+        "value": "kokbok av den amerikanska kocken Julia Child m.fl."
+      },
+      "fi": {
+        "language": "fi",
+        "value": "keittokirja"
+      },
+      "uk": {
+        "language": "uk",
+        "value": "книга"
+      }
+    },
+    "aliases": {
+      "de": [
+        {
+          "language": "de",
+          "value": "Mastering the Art of French Cooking, Volume Two"
+        }
+      ],
+      "zh": [
+        {
+          "language": "zh",
+          "value": "法式料理的烹飪藝術"
+        }
+      ]
+    },
+    "claims": {
+      "P31": [
+        {
+          "mainsnak": {
+            "snaktype": "value",
+            "property": "P31",
+            "hash": "56d2ce980dfb7e5844c4c8777065c37181767334",
+            "datavalue": {
+              "value": {
+                "entity-type": "item",
+                "numeric-id": 47461344,
+                "id": "Q47461344"
+              },
+              "type": "wikibase-entityid"
+            },
+            "datatype": "wikibase-item"
+          },
+          "type": "statement",
+          "id": "q1808021$C125DECD-138E-4C94-8F95-21371A3B7A74",
+          "rank": "normal",
+          "references": [
+            {
+              "hash": "fa278ebfc458360e5aed63d5058cca83c46134f1",
+              "snaks": {
+                "P143": [
+                  {
+                    "snaktype": "value",
+                    "property": "P143",
+                    "hash": "e4f6d9441d0600513c4533c672b5ab472dc73694",
+                    "datavalue": {
+                      "value": {
+                        "entity-type": "item",
+                        "numeric-id": 328,
+                        "id": "Q328"
+                      },
+                      "type": "wikibase-entityid"
+                    },
+                    "datatype": "wikibase-item"
+                  }
+                ]
+              },
+              "snaks-order": [
+                "P143"
+              ]
+            }
+          ]
+        }
+      ],
+      "P50": [
+        {
+          "mainsnak": {
+            "snaktype": "value",
+            "property": "P50",
+            "hash": "844d7183b17b1643ab698a0a5a410c5bca676b57",
+            "datavalue": {
+              "value": {
+                "entity-type": "item",
+                "numeric-id": 2288042,
+                "id": "Q2288042"
+              },
+              "type": "wikibase-entityid"
+            },
+            "datatype": "wikibase-item"
+          },
+          "type": "statement",
+          "id": "q1808021$68F856A2-0EFE-430A-BC76-C2B827E3B0D1",
+          "rank": "normal",
+          "references": [
+            {
+              "hash": "fa278ebfc458360e5aed63d5058cca83c46134f1",
+              "snaks": {
+                "P143": [
+                  {
+                    "snaktype": "value",
+                    "property": "P143",
+                    "hash": "e4f6d9441d0600513c4533c672b5ab472dc73694",
+                    "datavalue": {
+                      "value": {
+                        "entity-type": "item",
+                        "numeric-id": 328,
+                        "id": "Q328"
+                      },
+                      "type": "wikibase-entityid"
+                    },
+                    "datatype": "wikibase-item"
+                  }
+                ]
+              },
+              "snaks-order": [
+                "P143"
+              ]
+            }
+          ]
+        },
+        {
+          "mainsnak": {
+            "snaktype": "value",
+            "property": "P50",
+            "hash": "8e7e506c99d2d297600d49a3baf7ba4ddf69d2ab",
+            "datavalue": {
+              "value": {
+                "entity-type": "item",
+                "numeric-id": 6689034,
+                "id": "Q6689034"
+              },
+              "type": "wikibase-entityid"
+            },
+            "datatype": "wikibase-item"
+          },
+          "type": "statement",
+          "id": "q1808021$A96B9335-213E-4B80-A82A-1B09D4B58D4F",
+          "rank": "normal",
+          "references": [
+            {
+              "hash": "fa278ebfc458360e5aed63d5058cca83c46134f1",
+              "snaks": {
+                "P143": [
+                  {
+                    "snaktype": "value",
+                    "property": "P143",
+                    "hash": "e4f6d9441d0600513c4533c672b5ab472dc73694",
+                    "datavalue": {
+                      "value": {
+                        "entity-type": "item",
+                        "numeric-id": 328,
+                        "id": "Q328"
+                      },
+                      "type": "wikibase-entityid"
+                    },
+                    "datatype": "wikibase-item"
+                  }
+                ]
+              },
+              "snaks-order": [
+                "P143"
+              ]
+            }
+          ]
+        },
+        {
+          "mainsnak": {
+            "snaktype": "value",
+            "property": "P50",
+            "hash": "4b9110cedd0dbbea4085277cc47d8f55481f4a64",
+            "datavalue": {
+              "value": {
+                "entity-type": "item",
+                "numeric-id": 214477,
+                "id": "Q214477"
+              },
+              "type": "wikibase-entityid"
+            },
+            "datatype": "wikibase-item"
+          },
+          "type": "statement",
+          "id": "q1808021$EF0678A6-BC0A-4227-BFBB-03B532D1AFED",
+          "rank": "normal",
+          "references": [
+            {
+              "hash": "fa278ebfc458360e5aed63d5058cca83c46134f1",
+              "snaks": {
+                "P143": [
+                  {
+                    "snaktype": "value",
+                    "property": "P143",
+                    "hash": "e4f6d9441d0600513c4533c672b5ab472dc73694",
+                    "datavalue": {
+                      "value": {
+                        "entity-type": "item",
+                        "numeric-id": 328,
+                        "id": "Q328"
+                      },
+                      "type": "wikibase-entityid"
+                    },
+                    "datatype": "wikibase-item"
+                  }
+                ]
+              },
+              "snaks-order": [
+                "P143"
+              ]
+            },
+            {
+              "hash": "288ab581e7d2d02995a26dfa8b091d96e78457fc",
+              "snaks": {
+                "P143": [
+                  {
+                    "snaktype": "value",
+                    "property": "P143",
+                    "hash": "6a164248fc96bfa583bbb495cb63ae6401ec203c",
+                    "datavalue": {
+                      "value": {
+                        "entity-type": "item",
+                        "numeric-id": 206855,
+                        "id": "Q206855"
+                      },
+                      "type": "wikibase-entityid"
+                    },
+                    "datatype": "wikibase-item"
+                  }
+                ]
+              },
+              "snaks-order": [
+                "P143"
+              ]
+            },
+            {
+              "hash": "d5847b9b6032aa8b13dae3c2dfd9ed5d114d21b3",
+              "snaks": {
+                "P143": [
+                  {
+                    "snaktype": "value",
+                    "property": "P143",
+                    "hash": "5a343e7e758a4282a01316d3e959b6e653b767fc",
+                    "datavalue": {
+                      "value": {
+                        "entity-type": "item",
+                        "numeric-id": 11920,
+                        "id": "Q11920"
+                      },
+                      "type": "wikibase-entityid"
+                    },
+                    "datatype": "wikibase-item"
+                  }
+                ]
+              },
+              "snaks-order": [
+                "P143"
+              ]
+            }
+          ]
+        }
+      ],
+      "P123": [
+        {
+          "mainsnak": {
+            "snaktype": "value",
+            "property": "P123",
+            "hash": "a16fe43aea0ea8f9f09886758876085c1505a4e0",
+            "datavalue": {
+              "value": {
+                "entity-type": "item",
+                "numeric-id": 1431868,
+                "id": "Q1431868"
+              },
+              "type": "wikibase-entityid"
+            },
+            "datatype": "wikibase-item"
+          },
+          "type": "statement",
+          "id": "q1808021$6EB97A8F-1062-4975-BD71-08DD840A34AB",
+          "rank": "normal",
+          "references": [
+            {
+              "hash": "fa278ebfc458360e5aed63d5058cca83c46134f1",
+              "snaks": {
+                "P143": [
+                  {
+                    "snaktype": "value",
+                    "property": "P143",
+                    "hash": "e4f6d9441d0600513c4533c672b5ab472dc73694",
+                    "datavalue": {
+                      "value": {
+                        "entity-type": "item",
+                        "numeric-id": 328,
+                        "id": "Q328"
+                      },
+                      "type": "wikibase-entityid"
+                    },
+                    "datatype": "wikibase-item"
+                  }
+                ]
+              },
+              "snaks-order": [
+                "P143"
+              ]
+            }
+          ]
+        }
+      ],
+      "P243": [
+        {
+          "mainsnak": {
+            "snaktype": "value",
+            "property": "P243",
+            "hash": "a9fb280545e929fd73251e30284c857e37f145ca",
+            "datavalue": {
+              "value": "429389109",
+              "type": "string"
+            },
+            "datatype": "external-id"
+          },
+          "type": "statement",
+          "id": "q1808021$044C77A1-C651-4D09-818B-4F7AC3D624DE",
+          "rank": "normal",
+          "references": [
+            {
+              "hash": "fa278ebfc458360e5aed63d5058cca83c46134f1",
+              "snaks": {
+                "P143": [
+                  {
+                    "snaktype": "value",
+                    "property": "P143",
+                    "hash": "e4f6d9441d0600513c4533c672b5ab472dc73694",
+                    "datavalue": {
+                      "value": {
+                        "entity-type": "item",
+                        "numeric-id": 328,
+                        "id": "Q328"
+                      },
+                      "type": "wikibase-entityid"
+                    },
+                    "datatype": "wikibase-item"
+                  }
+                ]
+              },
+              "snaks-order": [
+                "P143"
+              ]
+            }
+          ]
+        }
+      ],
+      "P646": [
+        {
+          "mainsnak": {
+            "snaktype": "value",
+            "property": "P646",
+            "hash": "897a394e39b02d40271a3ab501ee919d9a8b527a",
+            "datavalue": {
+              "value": "/m/06p9w3",
+              "type": "string"
+            },
+            "datatype": "external-id"
+          },
+          "type": "statement",
+          "id": "Q1808021$7F5B3B79-A787-4A6A-8087-4EB5607CEA62",
+          "rank": "normal",
+          "references": [
+            {
+              "hash": "2b00cb481cddcac7623114367489b5c194901c4a",
+              "snaks": {
+                "P248": [
+                  {
+                    "snaktype": "value",
+                    "property": "P248",
+                    "hash": "a94b740202b097dd33355e0e6c00e54b9395e5e0",
+                    "datavalue": {
+                      "value": {
+                        "entity-type": "item",
+                        "numeric-id": 15241312,
+                        "id": "Q15241312"
+                      },
+                      "type": "wikibase-entityid"
+                    },
+                    "datatype": "wikibase-item"
+                  }
+                ],
+                "P577": [
+                  {
+                    "snaktype": "value",
+                    "property": "P577",
+                    "hash": "fde79ecb015112d2f29229ccc1ec514ed3e71fa2",
+                    "datavalue": {
+                      "value": {
+                        "time": "+2013-10-28T00:00:00Z",
+                        "timezone": 0,
+                        "before": 0,
+                        "after": 0,
+                        "precision": 11,
+                        "calendarmodel": "http://www.wikidata.org/entity/Q1985727"
+                      },
+                      "type": "time"
+                    },
+                    "datatype": "time"
+                  }
+                ]
+              },
+              "snaks-order": [
+                "P248",
+                "P577"
+              ]
+            }
+          ]
+        }
+      ],
+      "P577": [
+        {
+          "mainsnak": {
+            "snaktype": "value",
+            "property": "P577",
+            "hash": "08a21a4113ada32bbd1868f5ac382a39ceaa1ec7",
+            "datavalue": {
+              "value": {
+                "time": "+1961-00-00T00:00:00Z",
+                "timezone": 0,
+                "before": 0,
+                "after": 0,
+                "precision": 9,
+                "calendarmodel": "http://www.wikidata.org/entity/Q1985727"
+              },
+              "type": "time"
+            },
+            "datatype": "time"
+          },
+          "type": "statement",
+          "id": "Q1808021$EC097761-429F-4B37-9C66-BD590ACB5D08",
+          "rank": "normal",
+          "references": [
+            {
+              "hash": "d5847b9b6032aa8b13dae3c2dfd9ed5d114d21b3",
+              "snaks": {
+                "P143": [
+                  {
+                    "snaktype": "value",
+                    "property": "P143",
+                    "hash": "5a343e7e758a4282a01316d3e959b6e653b767fc",
+                    "datavalue": {
+                      "value": {
+                        "entity-type": "item",
+                        "numeric-id": 11920,
+                        "id": "Q11920"
+                      },
+                      "type": "wikibase-entityid"
+                    },
+                    "datatype": "wikibase-item"
+                  }
+                ]
+              },
+              "snaks-order": [
+                "P143"
+              ]
+            }
+          ]
+        }
+      ],
+      "P921": [
+        {
+          "mainsnak": {
+            "snaktype": "value",
+            "property": "P921",
+            "hash": "356dab8e2ec5e962cdee8ba8e52879617a486da9",
+            "datavalue": {
+              "value": {
+                "entity-type": "item",
+                "numeric-id": 131457429,
+                "id": "Q131457429"
+              },
+              "type": "wikibase-entityid"
+            },
+            "datatype": "wikibase-item"
+          },
+          "type": "statement",
+          "id": "Q1808021$723e532e-419e-4969-27b7-56117cf61e8a",
+          "rank": "normal"
+        },
+        {
+          "mainsnak": {
+            "snaktype": "value",
+            "property": "P921",
+            "hash": "ffd5dfa420ac88a74db9b0806e7ebeb25c31cb78",
+            "datavalue": {
+              "value": {
+                "entity-type": "item",
+                "numeric-id": 6661,
+                "id": "Q6661"
+              },
+              "type": "wikibase-entityid"
+            },
+            "datatype": "wikibase-item"
+          },
+          "type": "statement",
+          "id": "Q1808021$e83c9d66-453e-2e86-0dcf-3c80dd98529d",
+          "rank": "normal"
+        }
+      ],
+      "P1417": [
+        {
+          "mainsnak": {
+            "snaktype": "value",
+            "property": "P1417",
+            "hash": "3c84661e78e1d3d49ca0e0f70914e3ce8cad38d7",
+            "datavalue": {
+              "value": "topic/Mastering-the-Art-of-French-Cooking",
+              "type": "string"
+            },
+            "datatype": "external-id"
+          },
+          "type": "statement",
+          "qualifiers": {
+            "P1810": [
+              {
+                "snaktype": "value",
+                "property": "P1810",
+                "hash": "17b6afae273b07a23d3f7b693b9ba7416a9b6bba",
+                "datavalue": {
+                  "value": "Mastering the Art of French Cooking",
+                  "type": "string"
+                },
+                "datatype": "string"
+              }
+            ]
+          },
+          "qualifiers-order": [
+            "P1810"
+          ],
+          "id": "Q1808021$26D0F697-59FF-4ED0-A67F-C325A0B779EA",
+          "rank": "normal"
+        }
+      ],
+      "P136": [
+        {
+          "mainsnak": {
+            "snaktype": "value",
+            "property": "P136",
+            "hash": "a2190afeeb0a6a4dfebcbdbe92bee2d976c388a1",
+            "datavalue": {
+              "value": {
+                "entity-type": "item",
+                "numeric-id": 213051,
+                "id": "Q213051"
+              },
+              "type": "wikibase-entityid"
+            },
+            "datatype": "wikibase-item"
+          },
+          "type": "statement",
+          "id": "Q1808021$9A205F9F-D4B1-4AFF-A6D6-C53382FC63A7",
+          "rank": "normal",
+          "references": [
+            {
+              "hash": "71e00f03b256094c05ea09e7fc9d8d8ff9ad2d35",
+              "snaks": {
+                "P143": [
+                  {
+                    "snaktype": "value",
+                    "property": "P143",
+                    "hash": "e4f6d9441d0600513c4533c672b5ab472dc73694",
+                    "datavalue": {
+                      "value": {
+                        "entity-type": "item",
+                        "numeric-id": 328,
+                        "id": "Q328"
+                      },
+                      "type": "wikibase-entityid"
+                    },
+                    "datatype": "wikibase-item"
+                  }
+                ],
+                "P4656": [
+                  {
+                    "snaktype": "value",
+                    "property": "P4656",
+                    "hash": "f8280987170bbb4a6bd13159b1926d921c34630b",
+                    "datavalue": {
+                      "value": "https://en.wikipedia.org/w/index.php?title=Mastering_the_Art_of_French_Cooking&oldid=860548404",
+                      "type": "string"
+                    },
+                    "datatype": "url"
+                  }
+                ]
+              },
+              "snaks-order": [
+                "P143",
+                "P4656"
+              ]
+            }
+          ]
+        },
+        {
+          "mainsnak": {
+            "snaktype": "value",
+            "property": "P136",
+            "hash": "19501d71c828f72ae7729b69c82c6408f37a6d2c",
+            "datavalue": {
+              "value": {
+                "entity-type": "item",
+                "numeric-id": 171141,
+                "id": "Q171141"
+              },
+              "type": "wikibase-entityid"
+            },
+            "datatype": "wikibase-item"
+          },
+          "type": "statement",
+          "id": "Q1808021$4182c7ca-4a40-156a-7f20-6e840e37d020",
+          "rank": "normal"
+        }
+      ],
+      "P5331": [
+        {
+          "mainsnak": {
+            "snaktype": "value",
+            "property": "P5331",
+            "hash": "de93aec6fef6b6c3f87765d87201596c82c24bde",
+            "datavalue": {
+              "value": "4044028",
+              "type": "string"
+            },
+            "datatype": "external-id"
+          },
+          "type": "statement",
+          "id": "Q1808021$6948279A-4A11-40C3-AFF2-BAA5856AD406",
+          "rank": "normal"
+        }
+      ],
+      "P407": [
+        {
+          "mainsnak": {
+            "snaktype": "value",
+            "property": "P407",
+            "hash": "daf1c4fcb58181b02dff9cc89deb084004ddae4b",
+            "datavalue": {
+              "value": {
+                "entity-type": "item",
+                "numeric-id": 1860,
+                "id": "Q1860"
+              },
+              "type": "wikibase-entityid"
+            },
+            "datatype": "wikibase-item"
+          },
+          "type": "statement",
+          "id": "Q1808021$3EF582E8-A34A-4E8E-AF7F-513F80B4C94C",
+          "rank": "normal",
+          "references": [
+            {
+              "hash": "f16e0489fe6a932379522ec0976f975ac7a0f4ad",
+              "snaks": {
+                "P143": [
+                  {
+                    "snaktype": "value",
+                    "property": "P143",
+                    "hash": "6a164248fc96bfa583bbb495cb63ae6401ec203c",
+                    "datavalue": {
+                      "value": {
+                        "entity-type": "item",
+                        "numeric-id": 206855,
+                        "id": "Q206855"
+                      },
+                      "type": "wikibase-entityid"
+                    },
+                    "datatype": "wikibase-item"
+                  }
+                ],
+                "P4656": [
+                  {
+                    "snaktype": "value",
+                    "property": "P4656",
+                    "hash": "e112d39268c93e9dfbce5c381bdac2047735d3cb",
+                    "datavalue": {
+                      "value": "https://ru.wikipedia.org/w/index.php?title=Осваивая_искусство_французской_кухни&oldid=91314954",
+                      "type": "string"
+                    },
+                    "datatype": "url"
+                  }
+                ]
+              },
+              "snaks-order": [
+                "P143",
+                "P4656"
+              ]
+            }
+          ]
+        }
+      ],
+      "P495": [
+        {
+          "mainsnak": {
+            "snaktype": "value",
+            "property": "P495",
+            "hash": "7f985e15819b74ed189d022e004890e66d2ae42e",
+            "datavalue": {
+              "value": {
+                "entity-type": "item",
+                "numeric-id": 30,
+                "id": "Q30"
+              },
+              "type": "wikibase-entityid"
+            },
+            "datatype": "wikibase-item"
+          },
+          "type": "statement",
+          "id": "Q1808021$FF2BBB1D-A550-481B-AC3B-D43AECE89FD2",
+          "rank": "normal"
+        }
+      ],
+      "P1476": [
+        {
+          "mainsnak": {
+            "snaktype": "value",
+            "property": "P1476",
+            "hash": "a9602b5025bbbf0505542b3e39f091975a6ec4f9",
+            "datavalue": {
+              "value": {
+                "text": "Mastering the Art of French Cooking",
+                "language": "en"
+              },
+              "type": "monolingualtext"
+            },
+            "datatype": "monolingualtext"
+          },
+          "type": "statement",
+          "id": "Q1808021$2fd4b7fa-4b87-14fb-1d7e-1eb800463bb2",
+          "rank": "normal"
+        }
+      ],
+      "P8383": [
+        {
+          "mainsnak": {
+            "snaktype": "value",
+            "property": "P8383",
+            "hash": "17de93eac329169babf10333a7792bf2dbf8f2f9",
+            "datavalue": {
+              "value": "2897158",
+              "type": "string"
+            },
+            "datatype": "external-id"
+          },
+          "type": "statement",
+          "id": "Q1808021$7360BCCB-A670-4337-BFED-5484FF41C378",
+          "rank": "normal"
+        }
+      ],
+      "P13591": [
+        {
+          "mainsnak": {
+            "snaktype": "value",
+            "property": "P13591",
+            "hash": "ba1edb5cad6ed8be3bec77b417a8115939f270f5",
+            "datavalue": {
+              "value": "text/cc2284db-dc4c-4c40-859b-bc737dadb4a0",
+              "type": "string"
+            },
+            "datatype": "external-id"
+          },
+          "type": "statement",
+          "id": "Q1808021$4661B9EA-B545-4FB4-A9D3-42568A3D57DC",
+          "rank": "normal"
+        }
+      ],
+      "P648": [
+        {
+          "mainsnak": {
+            "snaktype": "value",
+            "property": "P648",
+            "hash": "f466e4832e53dec2ee4c5d82810fbf7a51129b11",
+            "datavalue": {
+              "value": "OL15583241W",
+              "type": "string"
+            },
+            "datatype": "external-id"
+          },
+          "type": "statement",
+          "id": "Q1808021$29FF75C6-1581-4CCB-9508-A193DC0859B4",
+          "rank": "normal"
+        }
+      ]
+    },
+    "sitelinks": {
+      "dewiki": {
+        "site": "dewiki",
+        "title": "Mastering the Art of French Cooking",
+        "badges": [],
+        "url": "https://de.wikipedia.org/wiki/Mastering_the_Art_of_French_Cooking"
+      },
+      "enwiki": {
+        "site": "enwiki",
+        "title": "Mastering the Art of French Cooking",
+        "badges": [],
+        "url": "https://en.wikipedia.org/wiki/Mastering_the_Art_of_French_Cooking"
+      },
+      "eswiki": {
+        "site": "eswiki",
+        "title": "El arte de la cocina francesa",
+        "badges": [],
+        "url": "https://es.wikipedia.org/wiki/El_arte_de_la_cocina_francesa"
+      },
+      "fawiki": {
+        "site": "fawiki",
+        "title": "تسلط بر هنر آشپزی فرانسوی",
+        "badges": [],
+        "url": "https://fa.wikipedia.org/wiki/%D8%AA%D8%B3%D9%84%D8%B7_%D8%A8%D8%B1_%D9%87%D9%86%D8%B1_%D8%A2%D8%B4%D9%BE%D8%B2%DB%8C_%D9%81%D8%B1%D8%A7%D9%86%D8%B3%D9%88%DB%8C"
+      },
+      "fiwiki": {
+        "site": "fiwiki",
+        "title": "Ranskalaisen keittiön salaisuudet",
+        "badges": [],
+        "url": "https://fi.wikipedia.org/wiki/Ranskalaisen_keitti%C3%B6n_salaisuudet"
+      },
+      "frwiki": {
+        "site": "frwiki",
+        "title": "Mastering the Art of French Cooking",
+        "badges": [],
+        "url": "https://fr.wikipedia.org/wiki/Mastering_the_Art_of_French_Cooking"
+      },
+      "idwiki": {
+        "site": "idwiki",
+        "title": "Mastering the Art of French Cooking",
+        "badges": [],
+        "url": "https://id.wikipedia.org/wiki/Mastering_the_Art_of_French_Cooking"
+      },
+      "itwiki": {
+        "site": "itwiki",
+        "title": "Mastering the Art of French Cooking",
+        "badges": [],
+        "url": "https://it.wikipedia.org/wiki/Mastering_the_Art_of_French_Cooking"
+      },
+      "ruwiki": {
+        "site": "ruwiki",
+        "title": "Уроки французской кулинарии",
+        "badges": [],
+        "url": "https://ru.wikipedia.org/wiki/%D0%A3%D1%80%D0%BE%D0%BA%D0%B8_%D1%84%D1%80%D0%B0%D0%BD%D1%86%D1%83%D0%B7%D1%81%D0%BA%D0%BE%D0%B9_%D0%BA%D1%83%D0%BB%D0%B8%D0%BD%D0%B0%D1%80%D0%B8%D0%B8"
+      },
+      "svwiki": {
+        "site": "svwiki",
+        "title": "Det goda franska köket",
+        "badges": [],
+        "url": "https://sv.wikipedia.org/wiki/Det_goda_franska_k%C3%B6ket"
+      }
+    }
+  }
+}

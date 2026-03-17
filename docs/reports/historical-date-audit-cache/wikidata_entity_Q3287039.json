@@ -1,0 +1,927 @@
+{
+  "saved_at": "2026-03-07T13:57:45.677Z",
+  "value": {
+    "pageid": 3135031,
+    "ns": 0,
+    "title": "Q3287039",
+    "lastrevid": 2462923252,
+    "modified": "2026-02-12T19:26:09Z",
+    "type": "item",
+    "id": "Q3287039",
+    "labels": {
+      "fr": {
+        "language": "fr",
+        "value": "manufacture de Vincennes"
+      },
+      "en": {
+        "language": "en",
+        "value": "Vincennes porcelain"
+      },
+      "it": {
+        "language": "it",
+        "value": "Porcellana di Vincennes"
+      },
+      "de": {
+        "language": "de",
+        "value": "Manufacture de Vincennes"
+      },
+      "nl": {
+        "language": "nl",
+        "value": "Vincennes porcelain"
+      },
+      "ja": {
+        "language": "ja",
+        "value": "ヴァンセンヌ磁器"
+      },
+      "uk": {
+        "language": "uk",
+        "value": "Порцеляна Венсан"
+      },
+      "es": {
+        "language": "es",
+        "value": "Porcelana de Vincennes"
+      }
+    },
+    "descriptions": {
+      "fr": {
+        "language": "fr",
+        "value": "manufacture française de porcelaine tendre"
+      },
+      "en": {
+        "language": "en",
+        "value": "Porcelain factory"
+      }
+    },
+    "aliases": {
+      "fr": [
+        {
+          "language": "fr",
+          "value": "Porcelaine de Vincennes"
+        },
+        {
+          "language": "fr",
+          "value": "Porcelaine de vincennes"
+        }
+      ],
+      "en": [
+        {
+          "language": "en",
+          "value": "Vincennes Manufactory"
+        }
+      ]
+    },
+    "claims": {
+      "P373": [
+        {
+          "mainsnak": {
+            "snaktype": "value",
+            "property": "P373",
+            "hash": "7a8ae225aa4bc72b7a0575316b88ed768d758806",
+            "datavalue": {
+              "value": "Vincennes porcelain",
+              "type": "string"
+            },
+            "datatype": "string"
+          },
+          "type": "statement",
+          "id": "q3287039$40E0E41D-4029-44A3-9BE4-F1CFDD9F5BD1",
+          "rank": "normal"
+        }
+      ],
+      "P214": [
+        {
+          "mainsnak": {
+            "snaktype": "value",
+            "property": "P214",
+            "hash": "b50220d09c61c5ae54c88847c50aa16dc755b8b0",
+            "datavalue": {
+              "value": "140627136",
+              "type": "string"
+            },
+            "datatype": "external-id"
+          },
+          "type": "statement",
+          "id": "Q3287039$AC7A0FB8-23DA-41D0-B290-E902AD138CC2",
+          "rank": "normal"
+        }
+      ],
+      "P245": [
+        {
+          "mainsnak": {
+            "snaktype": "value",
+            "property": "P245",
+            "hash": "bf18197d78f598d212b3beb6759e9016eb64481b",
+            "datavalue": {
+              "value": "500055302",
+              "type": "string"
+            },
+            "datatype": "external-id"
+          },
+          "type": "statement",
+          "id": "Q3287039$342B3FEA-8726-481C-8F10-A5BD23C79E91",
+          "rank": "normal"
+        }
+      ],
+      "P1472": [
+        {
+          "mainsnak": {
+            "snaktype": "value",
+            "property": "P1472",
+            "hash": "c915e84ee80115978fee9e7942a4c7f8a521483a",
+            "datavalue": {
+              "value": "Vincennes Porcelain Manufactory",
+              "type": "string"
+            },
+            "datatype": "string"
+          },
+          "type": "statement",
+          "id": "Q3287039$50C9DEFF-1476-4B2C-A725-D1EA538280E3",
+          "rank": "normal"
+        }
+      ],
+      "P18": [
+        {
+          "mainsnak": {
+            "snaktype": "value",
+            "property": "P18",
+            "hash": "1da27176a428c583559b8f1b0147d9523d807df8",
+            "datavalue": {
+              "value": "Pavillon de la Reine - Chateau de Vincennes 01.JPG",
+              "type": "string"
+            },
+            "datatype": "commonsMedia"
+          },
+          "type": "statement",
+          "id": "Q3287039$7c7bc8ac-4c0b-533d-8124-9046d24bd22c",
+          "rank": "normal"
+        }
+      ],
+      "P571": [
+        {
+          "mainsnak": {
+            "snaktype": "value",
+            "property": "P571",
+            "hash": "f3039ba84e8a0d15a2f80b8ed749237d7c94cda2",
+            "datavalue": {
+              "value": {
+                "time": "+1740-00-00T00:00:00Z",
+                "timezone": 0,
+                "before": 0,
+                "after": 0,
+                "precision": 9,
+                "calendarmodel": "http://www.wikidata.org/entity/Q1985727"
+              },
+              "type": "time"
+            },
+            "datatype": "time"
+          },
+          "type": "statement",
+          "id": "Q3287039$bc653486-4eb3-21bb-0c32-d0988b06c601",
+          "rank": "normal"
+        }
+      ],
+      "P17": [
+        {
+          "mainsnak": {
+            "snaktype": "value",
+            "property": "P17",
+            "hash": "c05db5d169c2560b9799d567a803d20a392f53e4",
+            "datavalue": {
+              "value": {
+                "entity-type": "item",
+                "numeric-id": 142,
+                "id": "Q142"
+              },
+              "type": "wikibase-entityid"
+            },
+            "datatype": "wikibase-item"
+          },
+          "type": "statement",
+          "id": "Q3287039$ed52aa43-4a29-2b2c-983e-4345fe72331a",
+          "rank": "normal"
+        }
+      ],
+      "P443": [
+        {
+          "mainsnak": {
+            "snaktype": "value",
+            "property": "P443",
+            "hash": "156998703206c113684ca670daf3851ddf7f5460",
+            "datavalue": {
+              "value": "LL-Q150 (fra)-Arthur Crbz-Manufacture de Vincennes.wav",
+              "type": "string"
+            },
+            "datatype": "commonsMedia"
+          },
+          "type": "statement",
+          "qualifiers": {
+            "P407": [
+              {
+                "snaktype": "value",
+                "property": "P407",
+                "hash": "d197d0a5efa4b4c23a302a829dd3ef43684fe002",
+                "datavalue": {
+                  "value": {
+                    "entity-type": "item",
+                    "numeric-id": 150,
+                    "id": "Q150"
+                  },
+                  "type": "wikibase-entityid"
+                },
+                "datatype": "wikibase-item"
+              }
+            ]
+          },
+          "qualifiers-order": [
+            "P407"
+          ],
+          "id": "Q3287039$89d2b52f-12ec-47d7-b41a-f83f715688f4",
+          "rank": "normal",
+          "references": [
+            {
+              "hash": "0a680c143cca5dd12bdf1e71fc7b5002c0d2d755",
+              "snaks": {
+                "P854": [
+                  {
+                    "snaktype": "value",
+                    "property": "P854",
+                    "hash": "27021d69821eebdbf079baa19af7535f54e4ee68",
+                    "datavalue": {
+                      "value": "https://lingualibre.fr/wiki/Q35411",
+                      "type": "string"
+                    },
+                    "datatype": "url"
+                  }
+                ]
+              },
+              "snaks-order": [
+                "P854"
+              ]
+            }
+          ]
+        }
+      ],
+      "P1417": [
+        {
+          "mainsnak": {
+            "snaktype": "value",
+            "property": "P1417",
+            "hash": "574a25cb97347610cb086d8f1baeaba4988e07a4",
+            "datavalue": {
+              "value": "art/Vincennes-ware",
+              "type": "string"
+            },
+            "datatype": "external-id"
+          },
+          "type": "statement",
+          "qualifiers": {
+            "P1810": [
+              {
+                "snaktype": "value",
+                "property": "P1810",
+                "hash": "60bcb3e201116ce996383faec19ede509bd33db9",
+                "datavalue": {
+                  "value": "Vincennes ware",
+                  "type": "string"
+                },
+                "datatype": "string"
+              }
+            ]
+          },
+          "qualifiers-order": [
+            "P1810"
+          ],
+          "id": "Q3287039$0F1F9DC5-30BF-4EE5-A35E-41C017D36231",
+          "rank": "normal"
+        }
+      ],
+      "P646": [
+        {
+          "mainsnak": {
+            "snaktype": "value",
+            "property": "P646",
+            "hash": "4b55ba33948b5a856fa929945ce826d03b6b518b",
+            "datavalue": {
+              "value": "/m/05l46s",
+              "type": "string"
+            },
+            "datatype": "external-id"
+          },
+          "type": "statement",
+          "id": "Q3287039$D2E47B8D-BE11-47D3-BB77-F773E5254628",
+          "rank": "normal"
+        }
+      ],
+      "P6295": [
+        {
+          "mainsnak": {
+            "snaktype": "value",
+            "property": "P6295",
+            "hash": "b2f2cb3f0e7c32256e573e7856245765e98c43bc",
+            "datavalue": {
+              "value": "92697",
+              "type": "string"
+            },
+            "datatype": "external-id"
+          },
+          "type": "statement",
+          "id": "Q3287039$7B27671F-EC4F-44E2-8BA9-E0C7B0A412EF",
+          "rank": "normal"
+        }
+      ],
+      "P10882": [
+        {
+          "mainsnak": {
+            "snaktype": "value",
+            "property": "P10882",
+            "hash": "e21c0b2173906b5f589f88fc5bba4b0c0cf32cef",
+            "datavalue": {
+              "value": "36285",
+              "type": "string"
+            },
+            "datatype": "external-id"
+          },
+          "type": "statement",
+          "qualifiers": {
+            "P1810": [
+              {
+                "snaktype": "value",
+                "property": "P1810",
+                "hash": "45f56067a2749783d35acf9503fe0d93c1dbb772",
+                "datavalue": {
+                  "value": "Vincennes Manufactory",
+                  "type": "string"
+                },
+                "datatype": "string"
+              }
+            ]
+          },
+          "qualifiers-order": [
+            "P1810"
+          ],
+          "id": "Q3287039$d3e77d53-4b4f-4a04-a8da-c4855c38fc9d",
+          "rank": "normal"
+        }
+      ],
+      "P31": [
+        {
+          "mainsnak": {
+            "snaktype": "value",
+            "property": "P31",
+            "hash": "dd664ca5f1b81954badba596da8b2b7baaef5320",
+            "datavalue": {
+              "value": {
+                "entity-type": "item",
+                "numeric-id": 97669839,
+                "id": "Q97669839"
+              },
+              "type": "wikibase-entityid"
+            },
+            "datatype": "wikibase-item"
+          },
+          "type": "statement",
+          "id": "Q3287039$CD897753-1D6B-4A81-8B95-799D614E37CE",
+          "rank": "normal"
+        }
+      ],
+      "P101": [
+        {
+          "mainsnak": {
+            "snaktype": "value",
+            "property": "P101",
+            "hash": "3f6b2b2ee65ca2c29d19e5777d35a846fa12215d",
+            "datavalue": {
+              "value": {
+                "entity-type": "item",
+                "numeric-id": 28599824,
+                "id": "Q28599824"
+              },
+              "type": "wikibase-entityid"
+            },
+            "datatype": "wikibase-item"
+          },
+          "type": "statement",
+          "id": "Q3287039$0FC4124F-D3DC-4740-B419-C05D6FF7C08D",
+          "rank": "normal"
+        }
+      ],
+      "P12040": [
+        {
+          "mainsnak": {
+            "snaktype": "value",
+            "property": "P12040",
+            "hash": "d7e93fea6803a7612c0135a2968eb82241a9bf73",
+            "datavalue": {
+              "value": "group/103KC0",
+              "type": "string"
+            },
+            "datatype": "external-id"
+          },
+          "type": "statement",
+          "qualifiers": {
+            "P1810": [
+              {
+                "snaktype": "value",
+                "property": "P1810",
+                "hash": "cf989af25d2933845f522ef73dd5f34e253f0d48",
+                "datavalue": {
+                  "value": "Vincennes Porcelain Manufactory",
+                  "type": "string"
+                },
+                "datatype": "string"
+              }
+            ]
+          },
+          "qualifiers-order": [
+            "P1810"
+          ],
+          "id": "Q3287039$DFB21379-18B3-4A33-AE74-FA01C9E9B9E8",
+          "rank": "normal"
+        }
+      ],
+      "P6379": [
+        {
+          "mainsnak": {
+            "snaktype": "value",
+            "property": "P6379",
+            "hash": "9f3b965b237e3878fdc7ca826ece16746d8e13bf",
+            "datavalue": {
+              "value": {
+                "entity-type": "item",
+                "numeric-id": 731126,
+                "id": "Q731126"
+              },
+              "type": "wikibase-entityid"
+            },
+            "datatype": "wikibase-item"
+          },
+          "type": "statement",
+          "id": "Q3287039$4ED2B6AE-CED6-4227-B7EC-1A0CDE7DE2F4",
+          "rank": "normal"
+        },
+        {
+          "mainsnak": {
+            "snaktype": "value",
+            "property": "P6379",
+            "hash": "3488b735e15b03797d474a745cf138cb586d2a02",
+            "datavalue": {
+              "value": {
+                "entity-type": "item",
+                "numeric-id": 767164,
+                "id": "Q767164"
+              },
+              "type": "wikibase-entityid"
+            },
+            "datatype": "wikibase-item"
+          },
+          "type": "statement",
+          "id": "Q3287039$C6078A03-E920-4483-BFB8-C4720CA067BD",
+          "rank": "normal",
+          "references": [
+            {
+              "hash": "a3546b0abb954a4e63fc76438855b3189a2a46dc",
+              "snaks": {
+                "P3452": [
+                  {
+                    "snaktype": "value",
+                    "property": "P3452",
+                    "hash": "1a3076c9aaefdce1c96f3aea1a429a19abeaf9e0",
+                    "datavalue": {
+                      "value": {
+                        "entity-type": "item",
+                        "numeric-id": 61728035,
+                        "id": "Q61728035"
+                      },
+                      "type": "wikibase-entityid"
+                    },
+                    "datatype": "wikibase-item"
+                  }
+                ],
+                "P813": [
+                  {
+                    "snaktype": "value",
+                    "property": "P813",
+                    "hash": "1575ca49a8251d397510ba63a1aa39bcb4661a88",
+                    "datavalue": {
+                      "value": {
+                        "time": "+2025-02-05T00:00:00Z",
+                        "timezone": 0,
+                        "before": 0,
+                        "after": 0,
+                        "precision": 11,
+                        "calendarmodel": "http://www.wikidata.org/entity/Q1985727"
+                      },
+                      "type": "time"
+                    },
+                    "datatype": "time"
+                  }
+                ]
+              },
+              "snaks-order": [
+                "P3452",
+                "P813"
+              ]
+            }
+          ]
+        },
+        {
+          "mainsnak": {
+            "snaktype": "value",
+            "property": "P6379",
+            "hash": "c0aabf314e6e5446b8e6b2312be0f520f071cf95",
+            "datavalue": {
+              "value": {
+                "entity-type": "item",
+                "numeric-id": 1319378,
+                "id": "Q1319378"
+              },
+              "type": "wikibase-entityid"
+            },
+            "datatype": "wikibase-item"
+          },
+          "type": "statement",
+          "id": "Q3287039$A529DA80-EF2D-41D2-ADA4-461230C84432",
+          "rank": "normal",
+          "references": [
+            {
+              "hash": "c4c60366dc1184c00f0e73341a98f07a8ec8001c",
+              "snaks": {
+                "P3452": [
+                  {
+                    "snaktype": "value",
+                    "property": "P3452",
+                    "hash": "b4469b84fc340a83ef39a6688dba62f2e8581e1d",
+                    "datavalue": {
+                      "value": {
+                        "entity-type": "item",
+                        "numeric-id": 61727717,
+                        "id": "Q61727717"
+                      },
+                      "type": "wikibase-entityid"
+                    },
+                    "datatype": "wikibase-item"
+                  }
+                ],
+                "P813": [
+                  {
+                    "snaktype": "value",
+                    "property": "P813",
+                    "hash": "1575ca49a8251d397510ba63a1aa39bcb4661a88",
+                    "datavalue": {
+                      "value": {
+                        "time": "+2025-02-05T00:00:00Z",
+                        "timezone": 0,
+                        "before": 0,
+                        "after": 0,
+                        "precision": 11,
+                        "calendarmodel": "http://www.wikidata.org/entity/Q1985727"
+                      },
+                      "type": "time"
+                    },
+                    "datatype": "time"
+                  }
+                ]
+              },
+              "snaks-order": [
+                "P3452",
+                "P813"
+              ]
+            }
+          ]
+        },
+        {
+          "mainsnak": {
+            "snaktype": "value",
+            "property": "P6379",
+            "hash": "caf53555a33bedcf155fcdc858e66c9ce9424fb6",
+            "datavalue": {
+              "value": {
+                "entity-type": "item",
+                "numeric-id": 1572452,
+                "id": "Q1572452"
+              },
+              "type": "wikibase-entityid"
+            },
+            "datatype": "wikibase-item"
+          },
+          "type": "statement",
+          "id": "Q3287039$1A4C59F0-2B3E-4DA5-AA33-B391807B6183",
+          "rank": "normal",
+          "references": [
+            {
+              "hash": "e75d9045f4886dc7346b4f0ac2a7dcf8694abf4f",
+              "snaks": {
+                "P3452": [
+                  {
+                    "snaktype": "value",
+                    "property": "P3452",
+                    "hash": "1073b0d86dffbcce03d06620ba63b9d68e8c8c05",
+                    "datavalue": {
+                      "value": {
+                        "entity-type": "item",
+                        "numeric-id": 62604604,
+                        "id": "Q62604604"
+                      },
+                      "type": "wikibase-entityid"
+                    },
+                    "datatype": "wikibase-item"
+                  }
+                ],
+                "P813": [
+                  {
+                    "snaktype": "value",
+                    "property": "P813",
+                    "hash": "1575ca49a8251d397510ba63a1aa39bcb4661a88",
+                    "datavalue": {
+                      "value": {
+                        "time": "+2025-02-05T00:00:00Z",
+                        "timezone": 0,
+                        "before": 0,
+                        "after": 0,
+                        "precision": 11,
+                        "calendarmodel": "http://www.wikidata.org/entity/Q1985727"
+                      },
+                      "type": "time"
+                    },
+                    "datatype": "time"
+                  }
+                ]
+              },
+              "snaks-order": [
+                "P3452",
+                "P813"
+              ]
+            }
+          ]
+        },
+        {
+          "mainsnak": {
+            "snaktype": "value",
+            "property": "P6379",
+            "hash": "cc886f9fa2d4d660a53931ae74cc1d6e95fa0f18",
+            "datavalue": {
+              "value": {
+                "entity-type": "item",
+                "numeric-id": 153306,
+                "id": "Q153306"
+              },
+              "type": "wikibase-entityid"
+            },
+            "datatype": "wikibase-item"
+          },
+          "type": "statement",
+          "id": "Q3287039$F808F488-C7E2-4A01-9F64-68582D42A3D3",
+          "rank": "normal",
+          "references": [
+            {
+              "hash": "926a96e281c7c6dae0863643b77215a66e926934",
+              "snaks": {
+                "P3452": [
+                  {
+                    "snaktype": "value",
+                    "property": "P3452",
+                    "hash": "e118b028fb7b15d2ff3521cd1e63a8cc4f9c5517",
+                    "datavalue": {
+                      "value": {
+                        "entity-type": "item",
+                        "numeric-id": 129846312,
+                        "id": "Q129846312"
+                      },
+                      "type": "wikibase-entityid"
+                    },
+                    "datatype": "wikibase-item"
+                  }
+                ],
+                "P813": [
+                  {
+                    "snaktype": "value",
+                    "property": "P813",
+                    "hash": "1575ca49a8251d397510ba63a1aa39bcb4661a88",
+                    "datavalue": {
+                      "value": {
+                        "time": "+2025-02-05T00:00:00Z",
+                        "timezone": 0,
+                        "before": 0,
+                        "after": 0,
+                        "precision": 11,
+                        "calendarmodel": "http://www.wikidata.org/entity/Q1985727"
+                      },
+                      "type": "time"
+                    },
+                    "datatype": "time"
+                  }
+                ]
+              },
+              "snaks-order": [
+                "P3452",
+                "P813"
+              ]
+            }
+          ]
+        },
+        {
+          "mainsnak": {
+            "snaktype": "value",
+            "property": "P6379",
+            "hash": "a2f152a01bf4dd58e4f3e2e716751575c4a08679",
+            "datavalue": {
+              "value": {
+                "entity-type": "item",
+                "numeric-id": 160236,
+                "id": "Q160236"
+              },
+              "type": "wikibase-entityid"
+            },
+            "datatype": "wikibase-item"
+          },
+          "type": "statement",
+          "id": "Q3287039$1DCB73E8-7B7A-4F5C-AC89-E2D010626E1A",
+          "rank": "normal",
+          "references": [
+            {
+              "hash": "f8de84ad24466aa9abcb81d65a4fe5766db2e160",
+              "snaks": {
+                "P3452": [
+                  {
+                    "snaktype": "value",
+                    "property": "P3452",
+                    "hash": "d78a582a9d3326fe9293b48554cca6dd401883c8",
+                    "datavalue": {
+                      "value": {
+                        "entity-type": "item",
+                        "numeric-id": 29383628,
+                        "id": "Q29383628"
+                      },
+                      "type": "wikibase-entityid"
+                    },
+                    "datatype": "wikibase-item"
+                  }
+                ],
+                "P813": [
+                  {
+                    "snaktype": "value",
+                    "property": "P813",
+                    "hash": "1575ca49a8251d397510ba63a1aa39bcb4661a88",
+                    "datavalue": {
+                      "value": {
+                        "time": "+2025-02-05T00:00:00Z",
+                        "timezone": 0,
+                        "before": 0,
+                        "after": 0,
+                        "precision": 11,
+                        "calendarmodel": "http://www.wikidata.org/entity/Q1985727"
+                      },
+                      "type": "time"
+                    },
+                    "datatype": "time"
+                  }
+                ]
+              },
+              "snaks-order": [
+                "P3452",
+                "P813"
+              ]
+            }
+          ]
+        }
+      ],
+      "P227": [
+        {
+          "mainsnak": {
+            "snaktype": "value",
+            "property": "P227",
+            "hash": "707063c5e8054a5cfdf606a8f33497d4c9128327",
+            "datavalue": {
+              "value": "4321385-6",
+              "type": "string"
+            },
+            "datatype": "external-id"
+          },
+          "type": "statement",
+          "id": "Q3287039$8b6104ae-4317-aa6e-91a7-99f8fcab0a04",
+          "rank": "normal"
+        }
+      ],
+      "P361": [
+        {
+          "mainsnak": {
+            "snaktype": "value",
+            "property": "P361",
+            "hash": "2cd8fb33169909a34b70c4805d5f5989569335c1",
+            "datavalue": {
+              "value": {
+                "entity-type": "item",
+                "numeric-id": 663673,
+                "id": "Q663673"
+              },
+              "type": "wikibase-entityid"
+            },
+            "datatype": "wikibase-item"
+          },
+          "type": "statement",
+          "id": "Q3287039$eab8c3af-42e0-0fbf-f210-e1179cf8a970",
+          "rank": "normal"
+        }
+      ],
+      "P131": [
+        {
+          "mainsnak": {
+            "snaktype": "value",
+            "property": "P131",
+            "hash": "ed257e81b09b71308ce2cf1b3ea09ae68b1291db",
+            "datavalue": {
+              "value": {
+                "entity-type": "item",
+                "numeric-id": 193819,
+                "id": "Q193819"
+              },
+              "type": "wikibase-entityid"
+            },
+            "datatype": "wikibase-item"
+          },
+          "type": "statement",
+          "id": "Q3287039$a072d81b-4be3-c696-40ab-5f72e93e65f3",
+          "rank": "normal"
+        }
+      ],
+      "P625": [
+        {
+          "mainsnak": {
+            "snaktype": "value",
+            "property": "P625",
+            "hash": "47c94594a5e3bba0372f5cc0378d9033600790f8",
+            "datavalue": {
+              "value": {
+                "latitude": 48.8416528,
+                "longitude": 2.4367416,
+                "altitude": null,
+                "precision": 1e-7,
+                "globe": "http://www.wikidata.org/entity/Q2"
+              },
+              "type": "globecoordinate"
+            },
+            "datatype": "globe-coordinate"
+          },
+          "type": "statement",
+          "id": "Q3287039$7a346062-45c7-d132-53fe-1a1978a46881",
+          "rank": "normal"
+        }
+      ],
+      "P13591": [
+        {
+          "mainsnak": {
+            "snaktype": "value",
+            "property": "P13591",
+            "hash": "362c1414567e11d23a79802ba1a211610dbffb55",
+            "datavalue": {
+              "value": "group/832e4195-e087-4d3b-bc90-03c03a1b4104",
+              "type": "string"
+            },
+            "datatype": "external-id"
+          },
+          "type": "statement",
+          "id": "Q3287039$541F0881-848C-4DEF-9BBB-10BC8B1F2295",
+          "rank": "normal"
+        }
+      ]
+    },
+    "sitelinks": {
+      "commonswiki": {
+        "site": "commonswiki",
+        "title": "Category:Vincennes porcelain",
+        "badges": [],
+        "url": "https://commons.wikimedia.org/wiki/Category:Vincennes_porcelain"
+      },
+      "enwiki": {
+        "site": "enwiki",
+        "title": "Vincennes porcelain",
+        "badges": [],
+        "url": "https://en.wikipedia.org/wiki/Vincennes_porcelain"
+      },
+      "eswiki": {
+        "site": "eswiki",
+        "title": "Porcelana de Vincennes",
+        "badges": [],
+        "url": "https://es.wikipedia.org/wiki/Porcelana_de_Vincennes"
+      },
+      "frwiki": {
+        "site": "frwiki",
+        "title": "Manufacture de Vincennes",
+        "badges": [],
+        "url": "https://fr.wikipedia.org/wiki/Manufacture_de_Vincennes"
+      },
+      "itwiki": {
+        "site": "itwiki",
+        "title": "Porcellana di Vincennes",
+        "badges": [],
+        "url": "https://it.wikipedia.org/wiki/Porcellana_di_Vincennes"
+      },
+      "ukwiki": {
+        "site": "ukwiki",
+        "title": "Порцеляна Венсан",
+        "badges": [],
+        "url": "https://uk.wikipedia.org/wiki/%D0%9F%D0%BE%D1%80%D1%86%D0%B5%D0%BB%D1%8F%D0%BD%D0%B0_%D0%92%D0%B5%D0%BD%D1%81%D0%B0%D0%BD"
+      }
+    }
+  }
+}

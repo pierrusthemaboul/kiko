@@ -1,0 +1,2034 @@
+{
+  "pageid": 4478461,
+  "ns": 0,
+  "title": "Q4687025",
+  "lastrevid": 2439487701,
+  "modified": "2025-12-08T05:42:41Z",
+  "type": "item",
+  "id": "Q4687025",
+  "labels": {
+    "en": {
+      "language": "en",
+      "value": "Public Library of Valencia"
+    },
+    "es": {
+      "language": "es",
+      "value": "Biblioteca Pública del Estado en Valencia - Pilar Faus"
+    },
+    "ca": {
+      "language": "ca",
+      "value": "Biblioteca Pública de València"
+    },
+    "fr": {
+      "language": "fr",
+      "value": "Bibliothèque publique de Valence"
+    },
+    "it": {
+      "language": "it",
+      "value": "Biblioteca Pubblica di Valencia"
+    },
+    "fa": {
+      "language": "fa",
+      "value": "کتابخانه عمومی والنسیا"
+    }
+  },
+  "descriptions": {
+    "es": {
+      "language": "es",
+      "value": "biblioteca pública de la ciudad de Valencia, España"
+    },
+    "nl": {
+      "language": "nl",
+      "value": "openbare bibliotheek in Spanje"
+    },
+    "de": {
+      "language": "de",
+      "value": "öffentliche Bibliothek in Spanien"
+    },
+    "ca": {
+      "language": "ca",
+      "value": "biblioteca a Espanya"
+    },
+    "it": {
+      "language": "it",
+      "value": "biblioteca in Spagna"
+    },
+    "en": {
+      "language": "en",
+      "value": "library in Spain"
+    },
+    "pt": {
+      "language": "pt",
+      "value": "biblioteca na Espanha"
+    },
+    "fr": {
+      "language": "fr",
+      "value": "bibliothèque en Espagne"
+    },
+    "ar": {
+      "language": "ar",
+      "value": "مكتبة عامة في بلنسية، إسبانيا"
+    },
+    "uk": {
+      "language": "uk",
+      "value": "бібліотека в Іспанії"
+    }
+  },
+  "aliases": {
+    "es": [
+      {
+        "language": "es",
+        "value": "Biblioteca del Hospital"
+      },
+      {
+        "language": "es",
+        "value": "Biblioteca Publica de Valencia"
+      },
+      {
+        "language": "es",
+        "value": "Biblioteca Publica Provincial de Valencia"
+      },
+      {
+        "language": "es",
+        "value": "Biblioteca Pública del Estado (Valencia)"
+      },
+      {
+        "language": "es",
+        "value": "Biblioteca Pública Provincial de Valencia"
+      }
+    ],
+    "ca": [
+      {
+        "language": "ca",
+        "value": "Casa de la Cultura"
+      },
+      {
+        "language": "ca",
+        "value": "Biblioteca de València"
+      },
+      {
+        "language": "ca",
+        "value": "Biblioteca Pública de València Pilar Faus"
+      },
+      {
+        "language": "ca",
+        "value": "Biblioteca de l'Hospital"
+      }
+    ]
+  },
+  "claims": {
+    "P373": [
+      {
+        "mainsnak": {
+          "snaktype": "value",
+          "property": "P373",
+          "hash": "f6761e2478659cb824b273973777443bbeec8b03",
+          "datavalue": {
+            "value": "Biblioteca Pública de València (antic Hospital)",
+            "type": "string"
+          },
+          "datatype": "string"
+        },
+        "type": "statement",
+        "id": "q4687025$51A98E01-5E05-4C26-BF2D-4E910F25E4FA",
+        "rank": "normal"
+      }
+    ],
+    "P625": [
+      {
+        "mainsnak": {
+          "snaktype": "value",
+          "property": "P625",
+          "hash": "2da74b3beac6309f4604c1ff221f17226b816a60",
+          "datavalue": {
+            "value": {
+              "latitude": 39.47089,
+              "longitude": -0.38173,
+              "altitude": null,
+              "precision": 0.000001,
+              "globe": "http://www.wikidata.org/entity/Q2"
+            },
+            "type": "globecoordinate"
+          },
+          "datatype": "globe-coordinate"
+        },
+        "type": "statement",
+        "id": "Q4687025$D4A51505-5762-4B93-822A-CD838066398E",
+        "rank": "normal",
+        "references": [
+          {
+            "hash": "87d5402b167302054372d8aee9109e0b93277ce7",
+            "snaks": {
+              "P813": [
+                {
+                  "snaktype": "value",
+                  "property": "P813",
+                  "hash": "54a1a54fec9af19d021939e44a1a4f709c650020",
+                  "datavalue": {
+                    "value": {
+                      "time": "+2020-02-21T00:00:00Z",
+                      "timezone": 0,
+                      "before": 0,
+                      "after": 0,
+                      "precision": 11,
+                      "calendarmodel": "http://www.wikidata.org/entity/Q1985727"
+                    },
+                    "type": "time"
+                  },
+                  "datatype": "time"
+                }
+              ],
+              "P854": [
+                {
+                  "snaktype": "value",
+                  "property": "P854",
+                  "hash": "c9faeb23bc2a8fb166b57b60cc08c4de8229df48",
+                  "datavalue": {
+                    "value": "http://directoriobibliotecas.mcu.es/",
+                    "type": "string"
+                  },
+                  "datatype": "url"
+                }
+              ],
+              "P407": [
+                {
+                  "snaktype": "value",
+                  "property": "P407",
+                  "hash": "ffe70325d10cfc55f0dca807ed80ca0b5b97c472",
+                  "datavalue": {
+                    "value": {
+                      "entity-type": "item",
+                      "numeric-id": 1321,
+                      "id": "Q1321"
+                    },
+                    "type": "wikibase-entityid"
+                  },
+                  "datatype": "wikibase-item"
+                }
+              ],
+              "P1476": [
+                {
+                  "snaktype": "value",
+                  "property": "P1476",
+                  "hash": "f094956f34088a7f93a7f681eb3df3c6b3b3274f",
+                  "datavalue": {
+                    "value": {
+                      "text": "Directorio de bibliotecas españolas",
+                      "language": "es"
+                    },
+                    "type": "monolingualtext"
+                  },
+                  "datatype": "monolingualtext"
+                }
+              ]
+            },
+            "snaks-order": [
+              "P813",
+              "P854",
+              "P407",
+              "P1476"
+            ]
+          }
+        ]
+      }
+    ],
+    "P31": [
+      {
+        "mainsnak": {
+          "snaktype": "value",
+          "property": "P31",
+          "hash": "48972a669cc1f420d671447badc63f1510833814",
+          "datavalue": {
+            "value": {
+              "entity-type": "item",
+              "numeric-id": 28564,
+              "id": "Q28564"
+            },
+            "type": "wikibase-entityid"
+          },
+          "datatype": "wikibase-item"
+        },
+        "type": "statement",
+        "id": "Q4687025$D61C620C-2B07-4C8B-8C5D-34C9D5C5B538",
+        "rank": "normal",
+        "references": [
+          {
+            "hash": "a706fccacff51a8a2478d63b6701286c0ea00614",
+            "snaks": {
+              "P813": [
+                {
+                  "snaktype": "value",
+                  "property": "P813",
+                  "hash": "167abf2bd90e0d34742e76098689bea38c9d5c82",
+                  "datavalue": {
+                    "value": {
+                      "time": "+2020-02-20T00:00:00Z",
+                      "timezone": 0,
+                      "before": 0,
+                      "after": 0,
+                      "precision": 11,
+                      "calendarmodel": "http://www.wikidata.org/entity/Q1985727"
+                    },
+                    "type": "time"
+                  },
+                  "datatype": "time"
+                }
+              ],
+              "P854": [
+                {
+                  "snaktype": "value",
+                  "property": "P854",
+                  "hash": "c9faeb23bc2a8fb166b57b60cc08c4de8229df48",
+                  "datavalue": {
+                    "value": "http://directoriobibliotecas.mcu.es/",
+                    "type": "string"
+                  },
+                  "datatype": "url"
+                }
+              ],
+              "P1476": [
+                {
+                  "snaktype": "value",
+                  "property": "P1476",
+                  "hash": "f094956f34088a7f93a7f681eb3df3c6b3b3274f",
+                  "datavalue": {
+                    "value": {
+                      "text": "Directorio de bibliotecas españolas",
+                      "language": "es"
+                    },
+                    "type": "monolingualtext"
+                  },
+                  "datatype": "monolingualtext"
+                }
+              ],
+              "P407": [
+                {
+                  "snaktype": "value",
+                  "property": "P407",
+                  "hash": "ffe70325d10cfc55f0dca807ed80ca0b5b97c472",
+                  "datavalue": {
+                    "value": {
+                      "entity-type": "item",
+                      "numeric-id": 1321,
+                      "id": "Q1321"
+                    },
+                    "type": "wikibase-entityid"
+                  },
+                  "datatype": "wikibase-item"
+                }
+              ]
+            },
+            "snaks-order": [
+              "P813",
+              "P854",
+              "P1476",
+              "P407"
+            ]
+          }
+        ]
+      },
+      {
+        "mainsnak": {
+          "snaktype": "value",
+          "property": "P31",
+          "hash": "53118f85032a7371e2d40bd2c7b647a94043d592",
+          "datavalue": {
+            "value": {
+              "entity-type": "item",
+              "numeric-id": 12317349,
+              "id": "Q12317349"
+            },
+            "type": "wikibase-entityid"
+          },
+          "datatype": "wikibase-item"
+        },
+        "type": "statement",
+        "id": "Q4687025$67169BFC-4259-486A-814A-AD8CCE0C1B43",
+        "rank": "normal",
+        "references": [
+          {
+            "hash": "87d5402b167302054372d8aee9109e0b93277ce7",
+            "snaks": {
+              "P813": [
+                {
+                  "snaktype": "value",
+                  "property": "P813",
+                  "hash": "54a1a54fec9af19d021939e44a1a4f709c650020",
+                  "datavalue": {
+                    "value": {
+                      "time": "+2020-02-21T00:00:00Z",
+                      "timezone": 0,
+                      "before": 0,
+                      "after": 0,
+                      "precision": 11,
+                      "calendarmodel": "http://www.wikidata.org/entity/Q1985727"
+                    },
+                    "type": "time"
+                  },
+                  "datatype": "time"
+                }
+              ],
+              "P854": [
+                {
+                  "snaktype": "value",
+                  "property": "P854",
+                  "hash": "c9faeb23bc2a8fb166b57b60cc08c4de8229df48",
+                  "datavalue": {
+                    "value": "http://directoriobibliotecas.mcu.es/",
+                    "type": "string"
+                  },
+                  "datatype": "url"
+                }
+              ],
+              "P407": [
+                {
+                  "snaktype": "value",
+                  "property": "P407",
+                  "hash": "ffe70325d10cfc55f0dca807ed80ca0b5b97c472",
+                  "datavalue": {
+                    "value": {
+                      "entity-type": "item",
+                      "numeric-id": 1321,
+                      "id": "Q1321"
+                    },
+                    "type": "wikibase-entityid"
+                  },
+                  "datatype": "wikibase-item"
+                }
+              ],
+              "P1476": [
+                {
+                  "snaktype": "value",
+                  "property": "P1476",
+                  "hash": "f094956f34088a7f93a7f681eb3df3c6b3b3274f",
+                  "datavalue": {
+                    "value": {
+                      "text": "Directorio de bibliotecas españolas",
+                      "language": "es"
+                    },
+                    "type": "monolingualtext"
+                  },
+                  "datatype": "monolingualtext"
+                }
+              ]
+            },
+            "snaks-order": [
+              "P813",
+              "P854",
+              "P407",
+              "P1476"
+            ]
+          }
+        ]
+      }
+    ],
+    "P17": [
+      {
+        "mainsnak": {
+          "snaktype": "value",
+          "property": "P17",
+          "hash": "69df494d7fa0613c7bd8f047afc1e87bdc03a0f2",
+          "datavalue": {
+            "value": {
+              "entity-type": "item",
+              "numeric-id": 29,
+              "id": "Q29"
+            },
+            "type": "wikibase-entityid"
+          },
+          "datatype": "wikibase-item"
+        },
+        "type": "statement",
+        "id": "Q4687025$BD0533E6-1550-451D-8ABB-F8D5291A4622",
+        "rank": "normal",
+        "references": [
+          {
+            "hash": "c456dc5cd2117249948c288206ff3f8b1bf574f0",
+            "snaks": {
+              "P143": [
+                {
+                  "snaktype": "value",
+                  "property": "P143",
+                  "hash": "e17507043402fe54ae6c4d65cc51f46cec987de9",
+                  "datavalue": {
+                    "value": {
+                      "entity-type": "item",
+                      "numeric-id": 8449,
+                      "id": "Q8449"
+                    },
+                    "type": "wikibase-entityid"
+                  },
+                  "datatype": "wikibase-item"
+                }
+              ]
+            },
+            "snaks-order": [
+              "P143"
+            ]
+          },
+          {
+            "hash": "87d5402b167302054372d8aee9109e0b93277ce7",
+            "snaks": {
+              "P813": [
+                {
+                  "snaktype": "value",
+                  "property": "P813",
+                  "hash": "54a1a54fec9af19d021939e44a1a4f709c650020",
+                  "datavalue": {
+                    "value": {
+                      "time": "+2020-02-21T00:00:00Z",
+                      "timezone": 0,
+                      "before": 0,
+                      "after": 0,
+                      "precision": 11,
+                      "calendarmodel": "http://www.wikidata.org/entity/Q1985727"
+                    },
+                    "type": "time"
+                  },
+                  "datatype": "time"
+                }
+              ],
+              "P854": [
+                {
+                  "snaktype": "value",
+                  "property": "P854",
+                  "hash": "c9faeb23bc2a8fb166b57b60cc08c4de8229df48",
+                  "datavalue": {
+                    "value": "http://directoriobibliotecas.mcu.es/",
+                    "type": "string"
+                  },
+                  "datatype": "url"
+                }
+              ],
+              "P407": [
+                {
+                  "snaktype": "value",
+                  "property": "P407",
+                  "hash": "ffe70325d10cfc55f0dca807ed80ca0b5b97c472",
+                  "datavalue": {
+                    "value": {
+                      "entity-type": "item",
+                      "numeric-id": 1321,
+                      "id": "Q1321"
+                    },
+                    "type": "wikibase-entityid"
+                  },
+                  "datatype": "wikibase-item"
+                }
+              ],
+              "P1476": [
+                {
+                  "snaktype": "value",
+                  "property": "P1476",
+                  "hash": "f094956f34088a7f93a7f681eb3df3c6b3b3274f",
+                  "datavalue": {
+                    "value": {
+                      "text": "Directorio de bibliotecas españolas",
+                      "language": "es"
+                    },
+                    "type": "monolingualtext"
+                  },
+                  "datatype": "monolingualtext"
+                }
+              ]
+            },
+            "snaks-order": [
+              "P813",
+              "P854",
+              "P407",
+              "P1476"
+            ]
+          }
+        ]
+      }
+    ],
+    "P18": [
+      {
+        "mainsnak": {
+          "snaktype": "value",
+          "property": "P18",
+          "hash": "6cd747436cfbadf54076d97a792a299b2eb35b70",
+          "datavalue": {
+            "value": "Biblioteca Pública de València, interior.JPG",
+            "type": "string"
+          },
+          "datatype": "commonsMedia"
+        },
+        "type": "statement",
+        "id": "Q4687025$9AC02BF5-2AF5-44D3-A695-0D30D77B6141",
+        "rank": "normal"
+      }
+    ],
+    "P856": [
+      {
+        "mainsnak": {
+          "snaktype": "value",
+          "property": "P856",
+          "hash": "acdc7ae10eed3b441e69a8c0bc37b3622ae95b4b",
+          "datavalue": {
+            "value": "http://www.bibliotecaspublicas.es/valencia_val/index.jsp",
+            "type": "string"
+          },
+          "datatype": "url"
+        },
+        "type": "statement",
+        "qualifiers": {
+          "P407": [
+            {
+              "snaktype": "value",
+              "property": "P407",
+              "hash": "ffe70325d10cfc55f0dca807ed80ca0b5b97c472",
+              "datavalue": {
+                "value": {
+                  "entity-type": "item",
+                  "numeric-id": 1321,
+                  "id": "Q1321"
+                },
+                "type": "wikibase-entityid"
+              },
+              "datatype": "wikibase-item"
+            }
+          ]
+        },
+        "qualifiers-order": [
+          "P407"
+        ],
+        "id": "Q4687025$218FAAEC-708B-4407-9661-3EF85782C20E",
+        "rank": "normal",
+        "references": [
+          {
+            "hash": "87d5402b167302054372d8aee9109e0b93277ce7",
+            "snaks": {
+              "P813": [
+                {
+                  "snaktype": "value",
+                  "property": "P813",
+                  "hash": "54a1a54fec9af19d021939e44a1a4f709c650020",
+                  "datavalue": {
+                    "value": {
+                      "time": "+2020-02-21T00:00:00Z",
+                      "timezone": 0,
+                      "before": 0,
+                      "after": 0,
+                      "precision": 11,
+                      "calendarmodel": "http://www.wikidata.org/entity/Q1985727"
+                    },
+                    "type": "time"
+                  },
+                  "datatype": "time"
+                }
+              ],
+              "P854": [
+                {
+                  "snaktype": "value",
+                  "property": "P854",
+                  "hash": "c9faeb23bc2a8fb166b57b60cc08c4de8229df48",
+                  "datavalue": {
+                    "value": "http://directoriobibliotecas.mcu.es/",
+                    "type": "string"
+                  },
+                  "datatype": "url"
+                }
+              ],
+              "P407": [
+                {
+                  "snaktype": "value",
+                  "property": "P407",
+                  "hash": "ffe70325d10cfc55f0dca807ed80ca0b5b97c472",
+                  "datavalue": {
+                    "value": {
+                      "entity-type": "item",
+                      "numeric-id": 1321,
+                      "id": "Q1321"
+                    },
+                    "type": "wikibase-entityid"
+                  },
+                  "datatype": "wikibase-item"
+                }
+              ],
+              "P1476": [
+                {
+                  "snaktype": "value",
+                  "property": "P1476",
+                  "hash": "f094956f34088a7f93a7f681eb3df3c6b3b3274f",
+                  "datavalue": {
+                    "value": {
+                      "text": "Directorio de bibliotecas españolas",
+                      "language": "es"
+                    },
+                    "type": "monolingualtext"
+                  },
+                  "datatype": "monolingualtext"
+                }
+              ]
+            },
+            "snaks-order": [
+              "P813",
+              "P854",
+              "P407",
+              "P1476"
+            ]
+          }
+        ]
+      }
+    ],
+    "P131": [
+      {
+        "mainsnak": {
+          "snaktype": "value",
+          "property": "P131",
+          "hash": "e4f2b20c83ceed162ab6feb9b055077c1ce8a461",
+          "datavalue": {
+            "value": {
+              "entity-type": "item",
+              "numeric-id": 8818,
+              "id": "Q8818"
+            },
+            "type": "wikibase-entityid"
+          },
+          "datatype": "wikibase-item"
+        },
+        "type": "statement",
+        "id": "Q4687025$E270FF1E-FDD9-436A-B716-3BD73C0F9923",
+        "rank": "normal",
+        "references": [
+          {
+            "hash": "90d4f267fc9a08f041972be2f0a2e52d06576875",
+            "snaks": {
+              "P143": [
+                {
+                  "snaktype": "value",
+                  "property": "P143",
+                  "hash": "5a343e7e758a4282a01316d3e959b6e653b767fc",
+                  "datavalue": {
+                    "value": {
+                      "entity-type": "item",
+                      "numeric-id": 11920,
+                      "id": "Q11920"
+                    },
+                    "type": "wikibase-entityid"
+                  },
+                  "datatype": "wikibase-item"
+                }
+              ],
+              "P4656": [
+                {
+                  "snaktype": "value",
+                  "property": "P4656",
+                  "hash": "d24629d11cb72bea318c7985c9b16c900f85d053",
+                  "datavalue": {
+                    "value": "https://it.wikipedia.org/w/index.php?title=Biblioteca_Pubblica_di_Valencia&oldid=98638138",
+                    "type": "string"
+                  },
+                  "datatype": "url"
+                }
+              ]
+            },
+            "snaks-order": [
+              "P143",
+              "P4656"
+            ]
+          },
+          {
+            "hash": "87d5402b167302054372d8aee9109e0b93277ce7",
+            "snaks": {
+              "P813": [
+                {
+                  "snaktype": "value",
+                  "property": "P813",
+                  "hash": "54a1a54fec9af19d021939e44a1a4f709c650020",
+                  "datavalue": {
+                    "value": {
+                      "time": "+2020-02-21T00:00:00Z",
+                      "timezone": 0,
+                      "before": 0,
+                      "after": 0,
+                      "precision": 11,
+                      "calendarmodel": "http://www.wikidata.org/entity/Q1985727"
+                    },
+                    "type": "time"
+                  },
+                  "datatype": "time"
+                }
+              ],
+              "P854": [
+                {
+                  "snaktype": "value",
+                  "property": "P854",
+                  "hash": "c9faeb23bc2a8fb166b57b60cc08c4de8229df48",
+                  "datavalue": {
+                    "value": "http://directoriobibliotecas.mcu.es/",
+                    "type": "string"
+                  },
+                  "datatype": "url"
+                }
+              ],
+              "P407": [
+                {
+                  "snaktype": "value",
+                  "property": "P407",
+                  "hash": "ffe70325d10cfc55f0dca807ed80ca0b5b97c472",
+                  "datavalue": {
+                    "value": {
+                      "entity-type": "item",
+                      "numeric-id": 1321,
+                      "id": "Q1321"
+                    },
+                    "type": "wikibase-entityid"
+                  },
+                  "datatype": "wikibase-item"
+                }
+              ],
+              "P1476": [
+                {
+                  "snaktype": "value",
+                  "property": "P1476",
+                  "hash": "f094956f34088a7f93a7f681eb3df3c6b3b3274f",
+                  "datavalue": {
+                    "value": {
+                      "text": "Directorio de bibliotecas españolas",
+                      "language": "es"
+                    },
+                    "type": "monolingualtext"
+                  },
+                  "datatype": "monolingualtext"
+                }
+              ]
+            },
+            "snaks-order": [
+              "P813",
+              "P854",
+              "P407",
+              "P1476"
+            ]
+          }
+        ]
+      },
+      {
+        "mainsnak": {
+          "snaktype": "value",
+          "property": "P131",
+          "hash": "b9899b3cba93a04c43706cf16ef6b1d32450c68e",
+          "datavalue": {
+            "value": {
+              "entity-type": "item",
+              "numeric-id": 3392733,
+              "id": "Q3392733"
+            },
+            "type": "wikibase-entityid"
+          },
+          "datatype": "wikibase-item"
+        },
+        "type": "statement",
+        "id": "Q4687025$962BE5DA-F20A-4618-8E44-9BE3211D3F2E",
+        "rank": "normal",
+        "references": [
+          {
+            "hash": "60394e19e7101d99de40ab5d78d8022027b52217",
+            "snaks": {
+              "P248": [
+                {
+                  "snaktype": "value",
+                  "property": "P248",
+                  "hash": "8a02ab7745ea9c41b5fad4398067c958ef1945dc",
+                  "datavalue": {
+                    "value": {
+                      "entity-type": "item",
+                      "numeric-id": 60461580,
+                      "id": "Q60461580"
+                    },
+                    "type": "wikibase-entityid"
+                  },
+                  "datatype": "wikibase-item"
+                }
+              ]
+            },
+            "snaks-order": [
+              "P248"
+            ]
+          }
+        ]
+      }
+    ],
+    "P1296": [
+      {
+        "mainsnak": {
+          "snaktype": "value",
+          "property": "P1296",
+          "hash": "d793b52679e8d8eeac6f3d9df94cfb2ec69b074b",
+          "datavalue": {
+            "value": "0009944",
+            "type": "string"
+          },
+          "datatype": "external-id"
+        },
+        "type": "statement",
+        "id": "Q4687025$136E0ACC-1126-461F-8E2C-8F19FBE29EB0",
+        "rank": "normal"
+      }
+    ],
+    "P2888": [
+      {
+        "mainsnak": {
+          "snaktype": "value",
+          "property": "P2888",
+          "hash": "4c8e3400068f2cf4132bc7caec4bcd1525bca31a",
+          "datavalue": {
+            "value": "http://dbpedia.org/resource/Public_Library_of_Valencia",
+            "type": "string"
+          },
+          "datatype": "url"
+        },
+        "type": "statement",
+        "id": "Q4687025$7457466D-E3AF-4A82-B155-BB48B88BADB9",
+        "rank": "normal",
+        "references": [
+          {
+            "hash": "09629ae291993e55a6adb1828a578655b10c8398",
+            "snaks": {
+              "P248": [
+                {
+                  "snaktype": "value",
+                  "property": "P248",
+                  "hash": "c1807efd438136746592818fe5a8698869ca70c3",
+                  "datavalue": {
+                    "value": {
+                      "entity-type": "item",
+                      "numeric-id": 465,
+                      "id": "Q465"
+                    },
+                    "type": "wikibase-entityid"
+                  },
+                  "datatype": "wikibase-item"
+                }
+              ],
+              "P854": [
+                {
+                  "snaktype": "value",
+                  "property": "P854",
+                  "hash": "62f14238f05487b98b4bc47212b71940424e0626",
+                  "datavalue": {
+                    "value": "http://dbpedia.org/resource/Public_Library_of_Valencia",
+                    "type": "string"
+                  },
+                  "datatype": "url"
+                }
+              ],
+              "P813": [
+                {
+                  "snaktype": "value",
+                  "property": "P813",
+                  "hash": "c812b4eaec4edbb6efc5ab6d2c416b240213caec",
+                  "datavalue": {
+                    "value": {
+                      "time": "+2019-09-07T00:00:00Z",
+                      "timezone": 0,
+                      "before": 0,
+                      "after": 0,
+                      "precision": 11,
+                      "calendarmodel": "http://www.wikidata.org/entity/Q1985727"
+                    },
+                    "type": "time"
+                  },
+                  "datatype": "time"
+                }
+              ]
+            },
+            "snaks-order": [
+              "P248",
+              "P854",
+              "P813"
+            ]
+          }
+        ]
+      },
+      {
+        "mainsnak": {
+          "snaktype": "value",
+          "property": "P2888",
+          "hash": "7767ea533f24e069961d7aa9950253f0594638af",
+          "datavalue": {
+            "value": "http://yago-knowledge.org/resource/Public_Library_of_Valencia",
+            "type": "string"
+          },
+          "datatype": "url"
+        },
+        "type": "statement",
+        "id": "Q4687025$D22A5DF9-592E-4ADF-8D46-1C7F78C429AB",
+        "rank": "normal",
+        "references": [
+          {
+            "hash": "09629ae291993e55a6adb1828a578655b10c8398",
+            "snaks": {
+              "P248": [
+                {
+                  "snaktype": "value",
+                  "property": "P248",
+                  "hash": "c1807efd438136746592818fe5a8698869ca70c3",
+                  "datavalue": {
+                    "value": {
+                      "entity-type": "item",
+                      "numeric-id": 465,
+                      "id": "Q465"
+                    },
+                    "type": "wikibase-entityid"
+                  },
+                  "datatype": "wikibase-item"
+                }
+              ],
+              "P854": [
+                {
+                  "snaktype": "value",
+                  "property": "P854",
+                  "hash": "62f14238f05487b98b4bc47212b71940424e0626",
+                  "datavalue": {
+                    "value": "http://dbpedia.org/resource/Public_Library_of_Valencia",
+                    "type": "string"
+                  },
+                  "datatype": "url"
+                }
+              ],
+              "P813": [
+                {
+                  "snaktype": "value",
+                  "property": "P813",
+                  "hash": "c812b4eaec4edbb6efc5ab6d2c416b240213caec",
+                  "datavalue": {
+                    "value": {
+                      "time": "+2019-09-07T00:00:00Z",
+                      "timezone": 0,
+                      "before": 0,
+                      "after": 0,
+                      "precision": 11,
+                      "calendarmodel": "http://www.wikidata.org/entity/Q1985727"
+                    },
+                    "type": "time"
+                  },
+                  "datatype": "time"
+                }
+              ]
+            },
+            "snaks-order": [
+              "P248",
+              "P854",
+              "P813"
+            ]
+          }
+        ]
+      }
+    ],
+    "P646": [
+      {
+        "mainsnak": {
+          "snaktype": "value",
+          "property": "P646",
+          "hash": "58549429845357b60eabc08155d8e379ad42ae7d",
+          "datavalue": {
+            "value": "/m/0r4qtsg",
+            "type": "string"
+          },
+          "datatype": "external-id"
+        },
+        "type": "statement",
+        "id": "Q4687025$345FB53F-5F1A-4430-8F20-F7EC0D775D11",
+        "rank": "normal",
+        "references": [
+          {
+            "hash": "09629ae291993e55a6adb1828a578655b10c8398",
+            "snaks": {
+              "P248": [
+                {
+                  "snaktype": "value",
+                  "property": "P248",
+                  "hash": "c1807efd438136746592818fe5a8698869ca70c3",
+                  "datavalue": {
+                    "value": {
+                      "entity-type": "item",
+                      "numeric-id": 465,
+                      "id": "Q465"
+                    },
+                    "type": "wikibase-entityid"
+                  },
+                  "datatype": "wikibase-item"
+                }
+              ],
+              "P854": [
+                {
+                  "snaktype": "value",
+                  "property": "P854",
+                  "hash": "62f14238f05487b98b4bc47212b71940424e0626",
+                  "datavalue": {
+                    "value": "http://dbpedia.org/resource/Public_Library_of_Valencia",
+                    "type": "string"
+                  },
+                  "datatype": "url"
+                }
+              ],
+              "P813": [
+                {
+                  "snaktype": "value",
+                  "property": "P813",
+                  "hash": "c812b4eaec4edbb6efc5ab6d2c416b240213caec",
+                  "datavalue": {
+                    "value": {
+                      "time": "+2019-09-07T00:00:00Z",
+                      "timezone": 0,
+                      "before": 0,
+                      "after": 0,
+                      "precision": 11,
+                      "calendarmodel": "http://www.wikidata.org/entity/Q1985727"
+                    },
+                    "type": "time"
+                  },
+                  "datatype": "time"
+                }
+              ]
+            },
+            "snaks-order": [
+              "P248",
+              "P854",
+              "P813"
+            ]
+          }
+        ]
+      }
+    ],
+    "P214": [
+      {
+        "mainsnak": {
+          "snaktype": "value",
+          "property": "P214",
+          "hash": "3b8463a5e2d05030b4b5384982b18367516d28e1",
+          "datavalue": {
+            "value": "140805989",
+            "type": "string"
+          },
+          "datatype": "external-id"
+        },
+        "type": "statement",
+        "id": "Q4687025$7BF4550A-B55F-48DC-AB1F-2737D3818D7A",
+        "rank": "normal"
+      }
+    ],
+    "P6375": [
+      {
+        "mainsnak": {
+          "snaktype": "value",
+          "property": "P6375",
+          "hash": "5dd6d715ae9aad0ad43143a5f083080d9a044da2",
+          "datavalue": {
+            "value": {
+              "text": "Carrer de l'Hospital, 13. 46001 València",
+              "language": "ca"
+            },
+            "type": "monolingualtext"
+          },
+          "datatype": "monolingualtext"
+        },
+        "type": "statement",
+        "id": "Q4687025$DA1748B7-02AC-4874-9BCE-766FF967C8CD",
+        "rank": "normal",
+        "references": [
+          {
+            "hash": "87d5402b167302054372d8aee9109e0b93277ce7",
+            "snaks": {
+              "P813": [
+                {
+                  "snaktype": "value",
+                  "property": "P813",
+                  "hash": "54a1a54fec9af19d021939e44a1a4f709c650020",
+                  "datavalue": {
+                    "value": {
+                      "time": "+2020-02-21T00:00:00Z",
+                      "timezone": 0,
+                      "before": 0,
+                      "after": 0,
+                      "precision": 11,
+                      "calendarmodel": "http://www.wikidata.org/entity/Q1985727"
+                    },
+                    "type": "time"
+                  },
+                  "datatype": "time"
+                }
+              ],
+              "P854": [
+                {
+                  "snaktype": "value",
+                  "property": "P854",
+                  "hash": "c9faeb23bc2a8fb166b57b60cc08c4de8229df48",
+                  "datavalue": {
+                    "value": "http://directoriobibliotecas.mcu.es/",
+                    "type": "string"
+                  },
+                  "datatype": "url"
+                }
+              ],
+              "P407": [
+                {
+                  "snaktype": "value",
+                  "property": "P407",
+                  "hash": "ffe70325d10cfc55f0dca807ed80ca0b5b97c472",
+                  "datavalue": {
+                    "value": {
+                      "entity-type": "item",
+                      "numeric-id": 1321,
+                      "id": "Q1321"
+                    },
+                    "type": "wikibase-entityid"
+                  },
+                  "datatype": "wikibase-item"
+                }
+              ],
+              "P1476": [
+                {
+                  "snaktype": "value",
+                  "property": "P1476",
+                  "hash": "f094956f34088a7f93a7f681eb3df3c6b3b3274f",
+                  "datavalue": {
+                    "value": {
+                      "text": "Directorio de bibliotecas españolas",
+                      "language": "es"
+                    },
+                    "type": "monolingualtext"
+                  },
+                  "datatype": "monolingualtext"
+                }
+              ]
+            },
+            "snaks-order": [
+              "P813",
+              "P854",
+              "P407",
+              "P1476"
+            ]
+          }
+        ]
+      }
+    ],
+    "P281": [
+      {
+        "mainsnak": {
+          "snaktype": "value",
+          "property": "P281",
+          "hash": "79eff3001ada3169df18a7b772717aa1c3f367fc",
+          "datavalue": {
+            "value": "46001",
+            "type": "string"
+          },
+          "datatype": "string"
+        },
+        "type": "statement",
+        "id": "Q4687025$AA6A9C23-353C-4F23-A52C-87F6102E58AC",
+        "rank": "normal",
+        "references": [
+          {
+            "hash": "87d5402b167302054372d8aee9109e0b93277ce7",
+            "snaks": {
+              "P813": [
+                {
+                  "snaktype": "value",
+                  "property": "P813",
+                  "hash": "54a1a54fec9af19d021939e44a1a4f709c650020",
+                  "datavalue": {
+                    "value": {
+                      "time": "+2020-02-21T00:00:00Z",
+                      "timezone": 0,
+                      "before": 0,
+                      "after": 0,
+                      "precision": 11,
+                      "calendarmodel": "http://www.wikidata.org/entity/Q1985727"
+                    },
+                    "type": "time"
+                  },
+                  "datatype": "time"
+                }
+              ],
+              "P854": [
+                {
+                  "snaktype": "value",
+                  "property": "P854",
+                  "hash": "c9faeb23bc2a8fb166b57b60cc08c4de8229df48",
+                  "datavalue": {
+                    "value": "http://directoriobibliotecas.mcu.es/",
+                    "type": "string"
+                  },
+                  "datatype": "url"
+                }
+              ],
+              "P407": [
+                {
+                  "snaktype": "value",
+                  "property": "P407",
+                  "hash": "ffe70325d10cfc55f0dca807ed80ca0b5b97c472",
+                  "datavalue": {
+                    "value": {
+                      "entity-type": "item",
+                      "numeric-id": 1321,
+                      "id": "Q1321"
+                    },
+                    "type": "wikibase-entityid"
+                  },
+                  "datatype": "wikibase-item"
+                }
+              ],
+              "P1476": [
+                {
+                  "snaktype": "value",
+                  "property": "P1476",
+                  "hash": "f094956f34088a7f93a7f681eb3df3c6b3b3274f",
+                  "datavalue": {
+                    "value": {
+                      "text": "Directorio de bibliotecas españolas",
+                      "language": "es"
+                    },
+                    "type": "monolingualtext"
+                  },
+                  "datatype": "monolingualtext"
+                }
+              ]
+            },
+            "snaks-order": [
+              "P813",
+              "P854",
+              "P407",
+              "P1476"
+            ]
+          }
+        ]
+      }
+    ],
+    "P1329": [
+      {
+        "mainsnak": {
+          "snaktype": "value",
+          "property": "P1329",
+          "hash": "40b557efdd6eab5d92553896120588e3d1bed9df",
+          "datavalue": {
+            "value": "+34-924-68-72-14",
+            "type": "string"
+          },
+          "datatype": "string"
+        },
+        "type": "statement",
+        "id": "Q4687025$44CD8AFA-C112-474C-805B-6A6F3A16F141",
+        "rank": "normal",
+        "references": [
+          {
+            "hash": "87d5402b167302054372d8aee9109e0b93277ce7",
+            "snaks": {
+              "P813": [
+                {
+                  "snaktype": "value",
+                  "property": "P813",
+                  "hash": "54a1a54fec9af19d021939e44a1a4f709c650020",
+                  "datavalue": {
+                    "value": {
+                      "time": "+2020-02-21T00:00:00Z",
+                      "timezone": 0,
+                      "before": 0,
+                      "after": 0,
+                      "precision": 11,
+                      "calendarmodel": "http://www.wikidata.org/entity/Q1985727"
+                    },
+                    "type": "time"
+                  },
+                  "datatype": "time"
+                }
+              ],
+              "P854": [
+                {
+                  "snaktype": "value",
+                  "property": "P854",
+                  "hash": "c9faeb23bc2a8fb166b57b60cc08c4de8229df48",
+                  "datavalue": {
+                    "value": "http://directoriobibliotecas.mcu.es/",
+                    "type": "string"
+                  },
+                  "datatype": "url"
+                }
+              ],
+              "P407": [
+                {
+                  "snaktype": "value",
+                  "property": "P407",
+                  "hash": "ffe70325d10cfc55f0dca807ed80ca0b5b97c472",
+                  "datavalue": {
+                    "value": {
+                      "entity-type": "item",
+                      "numeric-id": 1321,
+                      "id": "Q1321"
+                    },
+                    "type": "wikibase-entityid"
+                  },
+                  "datatype": "wikibase-item"
+                }
+              ],
+              "P1476": [
+                {
+                  "snaktype": "value",
+                  "property": "P1476",
+                  "hash": "f094956f34088a7f93a7f681eb3df3c6b3b3274f",
+                  "datavalue": {
+                    "value": {
+                      "text": "Directorio de bibliotecas españolas",
+                      "language": "es"
+                    },
+                    "type": "monolingualtext"
+                  },
+                  "datatype": "monolingualtext"
+                }
+              ]
+            },
+            "snaks-order": [
+              "P813",
+              "P854",
+              "P407",
+              "P1476"
+            ]
+          }
+        ]
+      }
+    ],
+    "P968": [
+      {
+        "mainsnak": {
+          "snaktype": "value",
+          "property": "P968",
+          "hash": "12670745799e6353eb90640f7376dbe95e00b8c1",
+          "datavalue": {
+            "value": "mailto:bpv@gva.es",
+            "type": "string"
+          },
+          "datatype": "url"
+        },
+        "type": "statement",
+        "id": "Q4687025$B56D0AD3-C7F7-4C8B-ABF0-19232F1CC025",
+        "rank": "normal",
+        "references": [
+          {
+            "hash": "87d5402b167302054372d8aee9109e0b93277ce7",
+            "snaks": {
+              "P813": [
+                {
+                  "snaktype": "value",
+                  "property": "P813",
+                  "hash": "54a1a54fec9af19d021939e44a1a4f709c650020",
+                  "datavalue": {
+                    "value": {
+                      "time": "+2020-02-21T00:00:00Z",
+                      "timezone": 0,
+                      "before": 0,
+                      "after": 0,
+                      "precision": 11,
+                      "calendarmodel": "http://www.wikidata.org/entity/Q1985727"
+                    },
+                    "type": "time"
+                  },
+                  "datatype": "time"
+                }
+              ],
+              "P854": [
+                {
+                  "snaktype": "value",
+                  "property": "P854",
+                  "hash": "c9faeb23bc2a8fb166b57b60cc08c4de8229df48",
+                  "datavalue": {
+                    "value": "http://directoriobibliotecas.mcu.es/",
+                    "type": "string"
+                  },
+                  "datatype": "url"
+                }
+              ],
+              "P407": [
+                {
+                  "snaktype": "value",
+                  "property": "P407",
+                  "hash": "ffe70325d10cfc55f0dca807ed80ca0b5b97c472",
+                  "datavalue": {
+                    "value": {
+                      "entity-type": "item",
+                      "numeric-id": 1321,
+                      "id": "Q1321"
+                    },
+                    "type": "wikibase-entityid"
+                  },
+                  "datatype": "wikibase-item"
+                }
+              ],
+              "P1476": [
+                {
+                  "snaktype": "value",
+                  "property": "P1476",
+                  "hash": "f094956f34088a7f93a7f681eb3df3c6b3b3274f",
+                  "datavalue": {
+                    "value": {
+                      "text": "Directorio de bibliotecas españolas",
+                      "language": "es"
+                    },
+                    "type": "monolingualtext"
+                  },
+                  "datatype": "monolingualtext"
+                }
+              ]
+            },
+            "snaks-order": [
+              "P813",
+              "P854",
+              "P407",
+              "P1476"
+            ]
+          }
+        ]
+      }
+    ],
+    "P571": [
+      {
+        "mainsnak": {
+          "snaktype": "value",
+          "property": "P571",
+          "hash": "1ef48a0d906c0c6a36f4526ac4f1a6196d639453",
+          "datavalue": {
+            "value": {
+              "time": "+1979-01-01T00:00:00Z",
+              "timezone": 0,
+              "before": 0,
+              "after": 0,
+              "precision": 9,
+              "calendarmodel": "http://www.wikidata.org/entity/Q1985727"
+            },
+            "type": "time"
+          },
+          "datatype": "time"
+        },
+        "type": "statement",
+        "id": "Q4687025$305BB65C-C4A7-4B0E-ABF2-6161B3B9053C",
+        "rank": "normal",
+        "references": [
+          {
+            "hash": "87d5402b167302054372d8aee9109e0b93277ce7",
+            "snaks": {
+              "P813": [
+                {
+                  "snaktype": "value",
+                  "property": "P813",
+                  "hash": "54a1a54fec9af19d021939e44a1a4f709c650020",
+                  "datavalue": {
+                    "value": {
+                      "time": "+2020-02-21T00:00:00Z",
+                      "timezone": 0,
+                      "before": 0,
+                      "after": 0,
+                      "precision": 11,
+                      "calendarmodel": "http://www.wikidata.org/entity/Q1985727"
+                    },
+                    "type": "time"
+                  },
+                  "datatype": "time"
+                }
+              ],
+              "P854": [
+                {
+                  "snaktype": "value",
+                  "property": "P854",
+                  "hash": "c9faeb23bc2a8fb166b57b60cc08c4de8229df48",
+                  "datavalue": {
+                    "value": "http://directoriobibliotecas.mcu.es/",
+                    "type": "string"
+                  },
+                  "datatype": "url"
+                }
+              ],
+              "P407": [
+                {
+                  "snaktype": "value",
+                  "property": "P407",
+                  "hash": "ffe70325d10cfc55f0dca807ed80ca0b5b97c472",
+                  "datavalue": {
+                    "value": {
+                      "entity-type": "item",
+                      "numeric-id": 1321,
+                      "id": "Q1321"
+                    },
+                    "type": "wikibase-entityid"
+                  },
+                  "datatype": "wikibase-item"
+                }
+              ],
+              "P1476": [
+                {
+                  "snaktype": "value",
+                  "property": "P1476",
+                  "hash": "f094956f34088a7f93a7f681eb3df3c6b3b3274f",
+                  "datavalue": {
+                    "value": {
+                      "text": "Directorio de bibliotecas españolas",
+                      "language": "es"
+                    },
+                    "type": "monolingualtext"
+                  },
+                  "datatype": "monolingualtext"
+                }
+              ]
+            },
+            "snaks-order": [
+              "P813",
+              "P854",
+              "P407",
+              "P1476"
+            ]
+          }
+        ]
+      }
+    ],
+    "P749": [
+      {
+        "mainsnak": {
+          "snaktype": "value",
+          "property": "P749",
+          "hash": "759423cdfe1dad683a269ab0e0a257cba8646c40",
+          "datavalue": {
+            "value": {
+              "entity-type": "item",
+              "numeric-id": 3113895,
+              "id": "Q3113895"
+            },
+            "type": "wikibase-entityid"
+          },
+          "datatype": "wikibase-item"
+        },
+        "type": "statement",
+        "id": "Q4687025$6DFBE3ED-F403-427C-BE99-33DB385BF1D3",
+        "rank": "normal",
+        "references": [
+          {
+            "hash": "87d5402b167302054372d8aee9109e0b93277ce7",
+            "snaks": {
+              "P813": [
+                {
+                  "snaktype": "value",
+                  "property": "P813",
+                  "hash": "54a1a54fec9af19d021939e44a1a4f709c650020",
+                  "datavalue": {
+                    "value": {
+                      "time": "+2020-02-21T00:00:00Z",
+                      "timezone": 0,
+                      "before": 0,
+                      "after": 0,
+                      "precision": 11,
+                      "calendarmodel": "http://www.wikidata.org/entity/Q1985727"
+                    },
+                    "type": "time"
+                  },
+                  "datatype": "time"
+                }
+              ],
+              "P854": [
+                {
+                  "snaktype": "value",
+                  "property": "P854",
+                  "hash": "c9faeb23bc2a8fb166b57b60cc08c4de8229df48",
+                  "datavalue": {
+                    "value": "http://directoriobibliotecas.mcu.es/",
+                    "type": "string"
+                  },
+                  "datatype": "url"
+                }
+              ],
+              "P407": [
+                {
+                  "snaktype": "value",
+                  "property": "P407",
+                  "hash": "ffe70325d10cfc55f0dca807ed80ca0b5b97c472",
+                  "datavalue": {
+                    "value": {
+                      "entity-type": "item",
+                      "numeric-id": 1321,
+                      "id": "Q1321"
+                    },
+                    "type": "wikibase-entityid"
+                  },
+                  "datatype": "wikibase-item"
+                }
+              ],
+              "P1476": [
+                {
+                  "snaktype": "value",
+                  "property": "P1476",
+                  "hash": "f094956f34088a7f93a7f681eb3df3c6b3b3274f",
+                  "datavalue": {
+                    "value": {
+                      "text": "Directorio de bibliotecas españolas",
+                      "language": "es"
+                    },
+                    "type": "monolingualtext"
+                  },
+                  "datatype": "monolingualtext"
+                }
+              ]
+            },
+            "snaks-order": [
+              "P813",
+              "P854",
+              "P407",
+              "P1476"
+            ]
+          }
+        ]
+      }
+    ],
+    "P361": [
+      {
+        "mainsnak": {
+          "snaktype": "value",
+          "property": "P361",
+          "hash": "cab2fdd5476b635bcb54a79ba91ee2b0b9075eb6",
+          "datavalue": {
+            "value": {
+              "entity-type": "item",
+              "numeric-id": 5727891,
+              "id": "Q5727891"
+            },
+            "type": "wikibase-entityid"
+          },
+          "datatype": "wikibase-item"
+        },
+        "type": "statement",
+        "id": "Q4687025$CE8431D1-F379-4BA8-93A1-1A57179842EE",
+        "rank": "normal",
+        "references": [
+          {
+            "hash": "a5a817caa6a17c722a7bc1b60a4234d8a4a55639",
+            "snaks": {
+              "P813": [
+                {
+                  "snaktype": "value",
+                  "property": "P813",
+                  "hash": "54a1a54fec9af19d021939e44a1a4f709c650020",
+                  "datavalue": {
+                    "value": {
+                      "time": "+2020-02-21T00:00:00Z",
+                      "timezone": 0,
+                      "before": 0,
+                      "after": 0,
+                      "precision": 11,
+                      "calendarmodel": "http://www.wikidata.org/entity/Q1985727"
+                    },
+                    "type": "time"
+                  },
+                  "datatype": "time"
+                }
+              ],
+              "P854": [
+                {
+                  "snaktype": "value",
+                  "property": "P854",
+                  "hash": "c5932ad1b56d31e3f4dae622ca247509f22df94a",
+                  "datavalue": {
+                    "value": "http://mapabpe.mcu.es/mapabpe.cmd?command=GetDirectorio&orden=BIB",
+                    "type": "string"
+                  },
+                  "datatype": "url"
+                }
+              ],
+              "P407": [
+                {
+                  "snaktype": "value",
+                  "property": "P407",
+                  "hash": "ffe70325d10cfc55f0dca807ed80ca0b5b97c472",
+                  "datavalue": {
+                    "value": {
+                      "entity-type": "item",
+                      "numeric-id": 1321,
+                      "id": "Q1321"
+                    },
+                    "type": "wikibase-entityid"
+                  },
+                  "datatype": "wikibase-item"
+                }
+              ],
+              "P1476": [
+                {
+                  "snaktype": "value",
+                  "property": "P1476",
+                  "hash": "a75782e42edac60ce30d9a525d8b12f7d6387ffe",
+                  "datavalue": {
+                    "value": {
+                      "text": "Directorio de las Bibliotecas Públicas del Estado",
+                      "language": "es"
+                    },
+                    "type": "monolingualtext"
+                  },
+                  "datatype": "monolingualtext"
+                }
+              ]
+            },
+            "snaks-order": [
+              "P813",
+              "P854",
+              "P407",
+              "P1476"
+            ]
+          }
+        ]
+      }
+    ],
+    "P8242": [
+      {
+        "mainsnak": {
+          "snaktype": "value",
+          "property": "P8242",
+          "hash": "307d03e4424954510e7b3a6ad318aa0bc647d0df",
+          "datavalue": {
+            "value": "4602863-46B01824",
+            "type": "string"
+          },
+          "datatype": "external-id"
+        },
+        "type": "statement",
+        "id": "Q4687025$57D44406-1124-4CA2-969A-5B1921466E02",
+        "rank": "normal",
+        "references": [
+          {
+            "hash": "87d5402b167302054372d8aee9109e0b93277ce7",
+            "snaks": {
+              "P813": [
+                {
+                  "snaktype": "value",
+                  "property": "P813",
+                  "hash": "54a1a54fec9af19d021939e44a1a4f709c650020",
+                  "datavalue": {
+                    "value": {
+                      "time": "+2020-02-21T00:00:00Z",
+                      "timezone": 0,
+                      "before": 0,
+                      "after": 0,
+                      "precision": 11,
+                      "calendarmodel": "http://www.wikidata.org/entity/Q1985727"
+                    },
+                    "type": "time"
+                  },
+                  "datatype": "time"
+                }
+              ],
+              "P854": [
+                {
+                  "snaktype": "value",
+                  "property": "P854",
+                  "hash": "c9faeb23bc2a8fb166b57b60cc08c4de8229df48",
+                  "datavalue": {
+                    "value": "http://directoriobibliotecas.mcu.es/",
+                    "type": "string"
+                  },
+                  "datatype": "url"
+                }
+              ],
+              "P407": [
+                {
+                  "snaktype": "value",
+                  "property": "P407",
+                  "hash": "ffe70325d10cfc55f0dca807ed80ca0b5b97c472",
+                  "datavalue": {
+                    "value": {
+                      "entity-type": "item",
+                      "numeric-id": 1321,
+                      "id": "Q1321"
+                    },
+                    "type": "wikibase-entityid"
+                  },
+                  "datatype": "wikibase-item"
+                }
+              ],
+              "P1476": [
+                {
+                  "snaktype": "value",
+                  "property": "P1476",
+                  "hash": "f094956f34088a7f93a7f681eb3df3c6b3b3274f",
+                  "datavalue": {
+                    "value": {
+                      "text": "Directorio de bibliotecas españolas",
+                      "language": "es"
+                    },
+                    "type": "monolingualtext"
+                  },
+                  "datatype": "monolingualtext"
+                }
+              ]
+            },
+            "snaks-order": [
+              "P813",
+              "P854",
+              "P407",
+              "P1476"
+            ]
+          }
+        ]
+      }
+    ],
+    "P276": [
+      {
+        "mainsnak": {
+          "snaktype": "value",
+          "property": "P276",
+          "hash": "788a5f9e783df724b9e39d9310a67780dcb73560",
+          "datavalue": {
+            "value": {
+              "entity-type": "item",
+              "numeric-id": 114959415,
+              "id": "Q114959415"
+            },
+            "type": "wikibase-entityid"
+          },
+          "datatype": "wikibase-item"
+        },
+        "type": "statement",
+        "id": "Q4687025$39aa11f6-47c9-3137-d744-eeedcc518336",
+        "rank": "normal"
+      }
+    ],
+    "P12385": [
+      {
+        "mainsnak": {
+          "snaktype": "value",
+          "property": "P12385",
+          "hash": "1c4889a9b108c3b5c7bb23277b415b66bccda3f9",
+          "datavalue": {
+            "value": "biblioteca-publica-de-valencia",
+            "type": "string"
+          },
+          "datatype": "external-id"
+        },
+        "type": "statement",
+        "id": "Q4687025$75c427bb-01c3-420a-ba4a-a56e82525ed9",
+        "rank": "normal"
+      }
+    ],
+    "P8168": [
+      {
+        "mainsnak": {
+          "snaktype": "value",
+          "property": "P8168",
+          "hash": "95b4446c4c16df004643dd696f53c35bc545944c",
+          "datavalue": {
+            "value": "Q991520",
+            "type": "string"
+          },
+          "datatype": "external-id"
+        },
+        "type": "statement",
+        "id": "Q4687025$0EDC0CDF-21A2-4703-82FD-BD52E163CD1F",
+        "rank": "normal",
+        "references": [
+          {
+            "hash": "205cec87eb805862eba032251db5170eaaa49fc9",
+            "snaks": {
+              "P248": [
+                {
+                  "snaktype": "value",
+                  "property": "P248",
+                  "hash": "e4afc4ad60f2160201385d29d076e0794f815f1e",
+                  "datavalue": {
+                    "value": {
+                      "entity-type": "item",
+                      "numeric-id": 90405608,
+                      "id": "Q90405608"
+                    },
+                    "type": "wikibase-entityid"
+                  },
+                  "datatype": "wikibase-item"
+                }
+              ],
+              "P813": [
+                {
+                  "snaktype": "value",
+                  "property": "P813",
+                  "hash": "0a3bb137286f7a06f4ea2f543f29533c862174ca",
+                  "datavalue": {
+                    "value": {
+                      "time": "+2024-12-10T00:00:00Z",
+                      "timezone": 0,
+                      "before": 0,
+                      "after": 0,
+                      "precision": 11,
+                      "calendarmodel": "http://www.wikidata.org/entity/Q1985727"
+                    },
+                    "type": "time"
+                  },
+                  "datatype": "time"
+                }
+              ]
+            },
+            "snaks-order": [
+              "P248",
+              "P813"
+            ]
+          }
+        ]
+      }
+    ],
+    "P138": [
+      {
+        "mainsnak": {
+          "snaktype": "value",
+          "property": "P138",
+          "hash": "d45333a08d2c43917a53b0a9d295f81785d455b8",
+          "datavalue": {
+            "value": {
+              "entity-type": "item",
+              "numeric-id": 55989804,
+              "id": "Q55989804"
+            },
+            "type": "wikibase-entityid"
+          },
+          "datatype": "wikibase-item"
+        },
+        "type": "statement",
+        "id": "Q4687025$658c4843-431b-6214-b906-e5d46e9de7a2",
+        "rank": "normal"
+      }
+    ]
+  },
+  "sitelinks": {
+    "cawiki": {
+      "site": "cawiki",
+      "title": "Biblioteca Pública de València",
+      "badges": [],
+      "url": "https://ca.wikipedia.org/wiki/Biblioteca_P%C3%BAblica_de_Val%C3%A8ncia"
+    },
+    "commonswiki": {
+      "site": "commonswiki",
+      "title": "Category:Biblioteca Pública de València (antic Hospital)",
+      "badges": [],
+      "url": "https://commons.wikimedia.org/wiki/Category:Biblioteca_P%C3%BAblica_de_Val%C3%A8ncia_(antic_Hospital)"
+    },
+    "enwiki": {
+      "site": "enwiki",
+      "title": "Public Library of Valencia",
+      "badges": [],
+      "url": "https://en.wikipedia.org/wiki/Public_Library_of_Valencia"
+    },
+    "eswiki": {
+      "site": "eswiki",
+      "title": "Biblioteca Pública del Estado (Valencia)",
+      "badges": [],
+      "url": "https://es.wikipedia.org/wiki/Biblioteca_P%C3%BAblica_del_Estado_(Valencia)"
+    },
+    "fawiki": {
+      "site": "fawiki",
+      "title": "کتابخانه عمومی والنسیا",
+      "badges": [],
+      "url": "https://fa.wikipedia.org/wiki/%DA%A9%D8%AA%D8%A7%D8%A8%D8%AE%D8%A7%D9%86%D9%87_%D8%B9%D9%85%D9%88%D9%85%DB%8C_%D9%88%D8%A7%D9%84%D9%86%D8%B3%DB%8C%D8%A7"
+    },
+    "frwiki": {
+      "site": "frwiki",
+      "title": "Bibliothèque publique de Valence",
+      "badges": [],
+      "url": "https://fr.wikipedia.org/wiki/Biblioth%C3%A8que_publique_de_Valence"
+    },
+    "itwiki": {
+      "site": "itwiki",
+      "title": "Biblioteca Pubblica di Valencia",
+      "badges": [],
+      "url": "https://it.wikipedia.org/wiki/Biblioteca_Pubblica_di_Valencia"
+    }
+  }
+}

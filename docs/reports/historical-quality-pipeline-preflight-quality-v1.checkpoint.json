@@ -1,0 +1,369 @@
+{
+  "generated_at": "2026-03-07T18:55:09.156Z",
+  "run_stamp": "preflight-quality-v1",
+  "model_name": "gemini-2.0-flash",
+  "runtime_options": {
+    "inputReport": "reports/historical-date-audit-3015-full-audit-2026-03-07.json",
+    "limit": 5,
+    "maxBatchSize": 10,
+    "batchPauseMs": 1500,
+    "eventPauseMs": 0,
+    "checkpointEvery": 5,
+    "geminiRetries": 4,
+    "geminiRetryBaseMs": 2500,
+    "wikiSearchLimit": 5,
+    "resume": false,
+    "includeStatuses": [
+      "POTENTIAL_DATE_ERROR",
+      "DISPUTED_DATE",
+      "AMBIGUOUS_TITLE"
+    ]
+  },
+  "selected_event_ids": [
+    "a48bbd06-c46f-455e-9e40-5998d815f3f4",
+    "a5de72c7-834f-455d-beab-cc320b5d73bc",
+    "6ce54a90-a8cf-4704-b0b9-c0b77f798e18",
+    "422d0fa7-49ce-4776-88e1-5a384c474ddc",
+    "8b231105-86c5-4ae1-a7f4-5008c9b6cd2a"
+  ],
+  "summary_by_decision": {
+    "UPDATE_DATE": 3,
+    "UPDATE_TITLE": 2
+  },
+  "summary_by_final_decision": {
+    "UPDATE_DATE": 3,
+    "UPDATE_TITLE": 2
+  },
+  "summary_by_status": {
+    "DISPUTED_DATE": 4,
+    "POTENTIAL_DATE_ERROR": 1
+  },
+  "summary_by_result_bucket": {
+    "date_disputee": 4,
+    "divergence_date": 1
+  },
+  "checkpoint": false,
+  "completed": true,
+  "interrupted": false,
+  "resumed_count": 0,
+  "results": [
+    {
+      "id": "a48bbd06-c46f-455e-9e40-5998d815f3f4",
+      "current_title": "Première attribution du Prix Goncourt",
+      "current_date": "1901-12-01",
+      "current_description": "Le 1er décembre 1901, le premier Prix Goncourt est attribué à John-Antoine Nau pour \"Force ennemie\", inaugurant le plus prestigieux prix littéraire français.",
+      "status": "DISPUTED_DATE",
+      "result_bucket": "date_disputee",
+      "date_candidate": null,
+      "matched_article_fr": "https://fr.wikipedia.org/wiki/Prix_Goncourt",
+      "matched_article_en": null,
+      "wikidata_id": "Q187300",
+      "sources_checked": [
+        {
+          "source_id": "wikipedia_fr_article",
+          "source_type": "wikipedia_fr",
+          "title": "Prix Goncourt",
+          "url": "https://fr.wikipedia.org/wiki/Prix_Goncourt",
+          "quote": "Le prix Goncourt est un prix littéraire français, créé par testament par Edmond de Goncourt en 1892, qui récompense des auteurs d'expression française et qui est décerné annuellement par l'Académie Goncourt. La « Société littéraire des Goncourt », dite « Académie Goncourt », est officiellement fondée en 1903, et le premier prix Goncourt décerné le 21 décembre 1903. Ce prix littéraire est décerné chaque année par l'Académie Goncourt, au début du mois de novembre, après trois sélections successives, les deux premières intervenant en septembre et en octobre, parmi les romans publiés dans l'année en cours. Il a pour but de récompenser « le meilleur ouvrage d'imagination en prose, paru dans l'année ». Il est attribué presque exclusivement à un roman. Il s'agit du plus ancien et du plus prestigieux prix littéraire français.",
+          "wikidata_id": "Q187300",
+          "date_iso": null,
+          "precision": null
+        },
+        {
+          "source_id": "P571_1",
+          "source_type": "wikidata",
+          "title": "Q187300",
+          "url": "https://www.wikidata.org/wiki/Q187300",
+          "quote": "inception: 1903-01-01",
+          "date_iso": "1903-01-01",
+          "precision": "year",
+          "wikidata_id": "Q187300"
+        }
+      ],
+      "decision": "UPDATE_DATE",
+      "proposed_title": null,
+      "proposed_date_iso": "1903-12-21",
+      "delete_reason": null,
+      "confidence": 0.9,
+      "evidence_level": "A",
+      "official_name_respected": true,
+      "title_in_french": true,
+      "title_unambiguous": true,
+      "title_has_no_date": true,
+      "event_is_singular": true,
+      "description_consistent": true,
+      "reasoning_short": "La date du premier Prix Goncourt est le 21 décembre 1903 selon Wikipedia et Wikidata. La description est cohérente avec cette date.",
+      "recommendation": "Mettre à jour la date avec le 21 décembre 1903.",
+      "key_sources": [
+        "wikipedia_fr_article",
+        "P571_1"
+      ],
+      "review_required": false,
+      "final_decision": "UPDATE_DATE"
+    },
+    {
+      "id": "a5de72c7-834f-455d-beab-cc320b5d73bc",
+      "current_title": "Création du duché de Bourgogne",
+      "current_date": "0888-01-01",
+      "current_description": "En 888, à la suite de la déposition de Charles le Gros et de la désintégration de l'Empire carolingien, Richard le Justicier, comte d'Autun, consolide son pouvoir sur la région de Bourgogne. Il est reconnu comme *dux*, un titre militaire et administratif, marquant la création de facto du duché de Bourgogne, bien que le titre ducal formel n'apparaisse que plus tard.",
+      "status": "POTENTIAL_DATE_ERROR",
+      "result_bucket": "divergence_date",
+      "date_candidate": "0880-01-01",
+      "matched_article_fr": "Duché de Bourgogne",
+      "matched_article_en": null,
+      "wikidata_id": "Q4712",
+      "sources_checked": [
+        {
+          "source_id": "wikipedia_fr_article",
+          "source_type": "wikipedia_fr",
+          "title": "Duché de Bourgogne",
+          "url": "https://fr.wikipedia.org/wiki/Duch%C3%A9_de_Bourgogne",
+          "quote": "Le duché de Bourgogne est, entre les IXe et XVe siècles, une principauté féodale, puis, entre les XVIe et XVIIIe siècles, une province du royaume de France, dont la capitale est Dijon. Issu de la Bourgogne franque, région du royaume de Bourgogne à l'époque franque (534-843), le duché de Bourgogne est, à partir de 898, successivement tenu par trois dynasties : les Bosonides, les Robertiens, puis une branche cadette de la dynastie royale des Capétiens, avant d'être octroyé en 1363 à un fils cadet du roi Jean le Bon, de la dynastie royale des Valois. Le territoire du duché correspond approximativement à : la Côte-d'Or (chef-lieu : Dijon) ; la Saône-et-Loire (chef-lieu : Mâcon) ; une partie de l'Yonne (chef-lieu : Auxerre); l'Ain (chef-lieu : Bourg-en-Bresse). Les ducs de Bourgogne qui règnent de père en fils de 1363 à 1477, Philippe le Hardi, Jean sans Peur, Philippe le Bon et Charles le T…",
+          "wikidata_id": "Q4712",
+          "date_iso": null,
+          "precision": null
+        },
+        {
+          "source_id": "wikipedia_en_article",
+          "source_type": "wikipedia_en",
+          "title": "Bourgogne-Franche-Comté",
+          "url": "https://en.wikipedia.org/wiki/Bourgogne-Franche-Comt%C3%A9",
+          "quote": "Bourgogne-Franche-Comté (French pronunciation: [buʁɡɔɲ fʁɑ̃ʃ kɔ̃te] ; lit. 'Burgundy-Free County', sometimes abbreviated BFC; Arpitan: Borgogne-Franche-Comtât) is a region in northeastern France created by the 2014 territorial reform of French regions, from a merger of Burgundy and Franche-Comté. The new region came into existence on 1 January 2016, after the regional elections of December 2015, electing 100 members to the Regional Council of Bourgogne-Franche-Comté. The region covers an area of 47,783 km2 (18,449 sq mi) and eight departments; it had a population of 2,811,423 in 2017. Its prefecture and largest city is Dijon, although the regional council sits in Besançon, making Bourgogne-Franche-Comté one of two regions in France (along with Normandy) in which the prefect does not sit in the same city as the regional council.",
+          "wikidata_id": "Q18578267",
+          "date_iso": null,
+          "precision": null
+        },
+        {
+          "source_id": "P571_1",
+          "source_type": "wikidata",
+          "title": "Q4712",
+          "url": "https://www.wikidata.org/wiki/Q4712",
+          "quote": "inception: 0880-01-01",
+          "date_iso": "0880-01-01",
+          "precision": "year",
+          "wikidata_id": "Q4712"
+        }
+      ],
+      "decision": "UPDATE_DATE",
+      "proposed_title": null,
+      "proposed_date_iso": "0880-01-01",
+      "delete_reason": null,
+      "confidence": 0.9,
+      "evidence_level": "A",
+      "official_name_respected": true,
+      "title_in_french": true,
+      "title_unambiguous": true,
+      "title_has_no_date": true,
+      "event_is_singular": true,
+      "description_consistent": true,
+      "reasoning_short": "Wikidata indique 880 comme date de création du duché de Bourgogne. L'article Wikipédia mentionne la période, mais Wikidata fournit une date précise.",
+      "recommendation": "Mettre à jour la date avec 0880-01-01, car c'est la date la plus précise disponible selon Wikidata.",
+      "key_sources": [
+        "P571_1",
+        "wikipedia_fr_article"
+      ],
+      "review_required": false,
+      "final_decision": "UPDATE_DATE"
+    },
+    {
+      "id": "6ce54a90-a8cf-4704-b0b9-c0b77f798e18",
+      "current_title": "Shakespeare écrit Hamlet",
+      "current_date": "1601-01-01",
+      "current_description": "William Shakespeare écrit 'Hamlet', une tragédie majeure explorant la vengeance, la moralité et la folie. Cette œuvre emblématique a profondément influencé le théâtre et la littérature mondiale, et reste l'une des pièces les plus jouées et étudiées au monde.",
+      "status": "DISPUTED_DATE",
+      "result_bucket": "date_disputee",
+      "date_candidate": null,
+      "matched_article_fr": "https://fr.wikipedia.org/wiki/Hamlet",
+      "matched_article_en": null,
+      "wikidata_id": "Q41567",
+      "sources_checked": [
+        {
+          "source_id": "wikipedia_fr_article",
+          "source_type": "wikipedia_fr",
+          "title": "Hamlet",
+          "url": "https://fr.wikipedia.org/wiki/Hamlet",
+          "quote": "La Tragique histoire d'Hamlet, prince de Danemark (en anglais, The Tragedy of Hamlet, Prince of Denmark), plus couramment désigné sous le titre abrégé Hamlet, est la plus longue et l'une des plus célèbres pièces de William Shakespeare. Souhaitant venger la mort de son père, Hamlet simule la folie et organise une pièce de théâtre dans le but d'amener son oncle à avouer sa culpabilité et sa mère, qui a épousé le frère meurtrier, à renoncer à son second mariage. La date exacte de la composition de la pièce n'est pas connue avec précision ; la première représentation se situe entre 1598 et 1601. Le texte fut publié en 1603. Hamlet a fait l'objet d'analyses critiques extrêmement nombreuses et variées : thématiques, stylistiques, historiques, psychologiques, etc.",
+          "wikidata_id": "Q41567",
+          "date_iso": null,
+          "precision": null
+        },
+        {
+          "source_id": "P577_1",
+          "source_type": "wikidata",
+          "title": "Q41567",
+          "url": "https://www.wikidata.org/wiki/Q41567",
+          "quote": "publication date: 1602-01-01",
+          "date_iso": "1602-01-01",
+          "precision": "year",
+          "wikidata_id": "Q41567"
+        },
+        {
+          "source_id": "P577_2",
+          "source_type": "wikidata",
+          "title": "Q41567",
+          "url": "https://www.wikidata.org/wiki/Q41567",
+          "quote": "publication date: 1623-01-01",
+          "date_iso": "1623-01-01",
+          "precision": "year",
+          "wikidata_id": "Q41567"
+        }
+      ],
+      "decision": "UPDATE_TITLE",
+      "proposed_title": "Publication d'Hamlet",
+      "proposed_date_iso": "1603-01-01",
+      "delete_reason": null,
+      "confidence": 0.7,
+      "evidence_level": "B",
+      "official_name_respected": true,
+      "title_in_french": true,
+      "title_unambiguous": true,
+      "title_has_no_date": true,
+      "event_is_singular": true,
+      "description_consistent": true,
+      "reasoning_short": "La date de publication la plus communément admise est 1603. Le titre est plus précis que l'écriture.",
+      "recommendation": "Vérifier si la date de 1603 correspond à la première publication ou à une publication ultérieure importante.",
+      "key_sources": [
+        "wikipedia_fr_article"
+      ],
+      "review_required": false,
+      "final_decision": "UPDATE_TITLE"
+    },
+    {
+      "id": "422d0fa7-49ce-4776-88e1-5a384c474ddc",
+      "current_title": "Fondation de l' abbaye de Cluny par Guillaume le Pieux",
+      "current_date": "0909-01-01",
+      "current_description": "En 909, Guillaume Ier, duc d'Aquitaine, surnommé Guillaume le Pieux, fonde l'abbaye de Cluny. Cette fondation est notable car Guillaume renonce à tout contrôle sur l'abbaye, la plaçant directement sous l'autorité du pape, une décision novatrice qui contribue à l'indépendance et au prestige de Cluny.",
+      "status": "DISPUTED_DATE",
+      "result_bucket": "date_disputee",
+      "date_candidate": "0909-01-01",
+      "matched_article_fr": "Abbaye de Cluny",
+      "matched_article_en": null,
+      "wikidata_id": "Q220301",
+      "sources_checked": [
+        {
+          "source_id": "wikipedia_fr_article",
+          "source_type": "wikipedia_fr",
+          "title": "Abbaye de Cluny",
+          "url": "https://fr.wikipedia.org/wiki/Abbaye_de_Cluny",
+          "quote": "L'abbaye de Cluny est une abbaye bénédictine située à Cluny, en France. Fondée le 11 septembre 910 (ou 909) par le duc d'Aquitaine et comte d'Auvergne Guillaume Ier le Pieux, symbole du renouveau monastique au Moyen Âge, Cluny fut un foyer de réforme de la règle bénédictine et un centre intellectuel de premier plan. Il subsiste aujourd'hui une grande partie des bâtiments du monastère, faisant l'objet de protections au titre des monuments historiques et gérée et ouverte à la visite par le Centre des monuments nationaux. L'ancienne abbaye a reçu le label du patrimoine européen. Certains bâtiments de l'abbaye abritent depuis 1890 l'un des campus de l'École nationale supérieure d'arts et métiers.",
+          "wikidata_id": "Q220301",
+          "date_iso": null,
+          "precision": null
+        },
+        {
+          "source_id": "P571_1",
+          "source_type": "wikidata",
+          "title": "Q220301",
+          "url": "https://www.wikidata.org/wiki/Q220301",
+          "quote": "inception: 0909-09-02",
+          "date_iso": "0909-09-02",
+          "precision": "day",
+          "wikidata_id": "Q220301"
+        },
+        {
+          "source_id": "P571_2",
+          "source_type": "wikidata",
+          "title": "Q220301",
+          "url": "https://www.wikidata.org/wiki/Q220301",
+          "quote": "inception: 0910-01-01",
+          "date_iso": "0910-01-01",
+          "precision": "year",
+          "wikidata_id": "Q220301"
+        }
+      ],
+      "decision": "UPDATE_TITLE",
+      "proposed_title": "Fondation de l'abbaye de Cluny",
+      "proposed_date_iso": "0909-01-01",
+      "delete_reason": null,
+      "confidence": 0.8,
+      "evidence_level": "B",
+      "official_name_respected": true,
+      "title_in_french": true,
+      "title_unambiguous": true,
+      "title_has_no_date": true,
+      "event_is_singular": true,
+      "description_consistent": true,
+      "reasoning_short": "Le titre est amélioré en supprimant la mention de Guillaume le Pieux, car l'événement principal est la fondation de l'abbaye. La date de 909 est retenue, bien qu'il y ait une incertitude avec 910, car elle est mentionnée en premier dans l'article Wikipedia et confirmée par une source Wikidata avec une précision au jou…",
+      "recommendation": "Conserver la date de 909, mais mentionner l'incertitude avec 910 dans la description détaillée.",
+      "key_sources": [
+        "wikipedia_fr_article",
+        "wikidata_1"
+      ],
+      "review_required": false,
+      "final_decision": "UPDATE_TITLE"
+    },
+    {
+      "id": "8b231105-86c5-4ae1-a7f4-5008c9b6cd2a",
+      "current_title": "Création du Parc national de la Vanoise",
+      "current_date": "1964-08-22",
+      "current_description": "Le 22 août 1964, le Parc national de la Vanoise est créé en France, le premier parc national du pays, pour protéger la faune et la flore alpines.",
+      "status": "DISPUTED_DATE",
+      "result_bucket": "date_disputee",
+      "date_candidate": null,
+      "matched_article_fr": "Parc national de la Vanoise",
+      "matched_article_en": null,
+      "wikidata_id": "Q174250",
+      "sources_checked": [
+        {
+          "source_id": "wikipedia_fr_article",
+          "source_type": "wikipedia_fr",
+          "title": "Parc national de la Vanoise",
+          "url": "https://fr.wikipedia.org/wiki/Parc_national_de_la_Vanoise",
+          "quote": "Le parc national de la Vanoise est un parc national situé en France dans le département de la Savoie en région Auvergne-Rhône-Alpes. Le parc national s'étend principalement sur le massif de la Vanoise et pour une petite partie sur celui des Alpes grées à l'est, entre la vallée de l'Isère, la Tarentaise au nord, et celle de l'Arc, la Maurienne au sud. À la suite du décret ministériel du 27 avril 2015 approuvant sa charte et à la décision des communes d'adhérer ou non, il est composé d'une zone protégée, dite « zone cœur », de 535 km2, et d'une aire d'adhésion, sans protection spécifique, comprenant le territoire des communes de Peisey-Nancroix et de Saint-Martin-de-Belleville. Pendant le travail de mise en place de la charte, conformément à la loi du 14 avril 2006, l'aire optimale d'adhésion (AOA) s'étendait sur le territoire de vingt-neuf communes (ex-zone périphérique initialement comp…",
+          "wikidata_id": "Q174250",
+          "date_iso": null,
+          "precision": null
+        },
+        {
+          "source_id": "wikipedia_en_article",
+          "source_type": "wikipedia_en",
+          "title": "List of national parks of France",
+          "url": "https://en.wikipedia.org/wiki/List_of_national_parks_of_France",
+          "quote": "The national parks of France are a system of eleven national parks throughout metropolitan France and its overseas departments, coordinated by National Parks of France (French: Parcs nationaux de France) within the French Office for Biodiversity (Office français pour la biodiversité), an établissement public à caractère administratif guided by the Ministry of Ecological Transition and Ministry of Agriculture and Food. The first national park was established in 1963; the most recent park was established in 2019. National parks are created by decree with the signature of the Prime Minister of France and publication in the Journal Officiel de la République Française. French national parks protect a total area of 26,168 square kilometres (10,104 mi2) in core area and 30,651 square kilometres (11,834 mi2) in buffer zones. This puts over 9.5% of French territory under the protection of nation…",
+          "wikidata_id": "Q19824847",
+          "date_iso": null,
+          "precision": null
+        },
+        {
+          "source_id": "P580_1",
+          "source_type": "wikidata",
+          "title": "Q174250",
+          "url": "https://www.wikidata.org/wiki/Q174250",
+          "quote": "start time: 1963-01-01",
+          "date_iso": "1963-01-01",
+          "precision": "year",
+          "wikidata_id": "Q174250"
+        },
+        {
+          "source_id": "P571_2",
+          "source_type": "wikidata",
+          "title": "Q174250",
+          "url": "https://www.wikidata.org/wiki/Q174250",
+          "quote": "inception: 1963-07-06",
+          "date_iso": "1963-07-06",
+          "precision": "day",
+          "wikidata_id": "Q174250"
+        }
+      ],
+      "decision": "UPDATE_DATE",
+      "proposed_title": null,
+      "proposed_date_iso": "1963-07-06",
+      "delete_reason": null,
+      "confidence": 0.9,
+      "evidence_level": "A",
+      "official_name_respected": true,
+      "title_in_french": true,
+      "title_unambiguous": true,
+      "title_has_no_date": true,
+      "event_is_singular": true,
+      "description_consistent": true,
+      "reasoning_short": "Wikidata indique la date du 6 juillet 1963 comme date de création (inception).",
+      "recommendation": "Mettre à jour la date avec la date la plus précise disponible sur Wikidata.",
+      "key_sources": [
+        "P571_2"
+      ],
+      "review_required": false,
+      "final_decision": "UPDATE_DATE"
+    }
+  ]
+}

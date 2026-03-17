@@ -1,0 +1,644 @@
+{
+  "pageid": 3333357,
+  "ns": 0,
+  "title": "Q3500462",
+  "lastrevid": 2464483471,
+  "modified": "2026-02-18T15:47:45Z",
+  "type": "item",
+  "id": "Q3500462",
+  "labels": {
+    "fr": {
+      "language": "fr",
+      "value": "Strip-tease"
+    },
+    "en": {
+      "language": "en",
+      "value": "Strip-Tease"
+    },
+    "es": {
+      "language": "es",
+      "value": "Strip-Tease"
+    },
+    "mul": {
+      "language": "mul",
+      "value": "Strip-Tease"
+    },
+    "de": {
+      "language": "de",
+      "value": "Strip-Tease"
+    }
+  },
+  "descriptions": {
+    "nl": {
+      "language": "nl",
+      "value": "televisieprogramma uit België"
+    },
+    "fr": {
+      "language": "fr",
+      "value": "série documentaire télévisée belgo-française, diffusée de 1985 à 2012"
+    },
+    "en": {
+      "language": "en",
+      "value": "documentary film television program"
+    }
+  },
+  "aliases": {
+    "fr": [
+      {
+        "language": "fr",
+        "value": "Strip tease (émission)"
+      },
+      {
+        "language": "fr",
+        "value": "Strip-tease (emission)"
+      },
+      {
+        "language": "fr",
+        "value": "Strip-tease (émission)"
+      },
+      {
+        "language": "fr",
+        "value": "Strip-Tease (émission)"
+      },
+      {
+        "language": "fr",
+        "value": "Strip-Tease (émission de télévision)"
+      }
+    ]
+  },
+  "claims": {
+    "P31": [
+      {
+        "mainsnak": {
+          "snaktype": "value",
+          "property": "P31",
+          "hash": "6b8e8d6f6e2430e3c7378c7a62da7144b4307ca8",
+          "datavalue": {
+            "value": {
+              "entity-type": "item",
+              "numeric-id": 15416,
+              "id": "Q15416"
+            },
+            "type": "wikibase-entityid"
+          },
+          "datatype": "wikibase-item"
+        },
+        "type": "statement",
+        "id": "Q3500462$846A913D-AF0C-475D-86AE-6270BA70D71F",
+        "rank": "normal"
+      }
+    ],
+    "P364": [
+      {
+        "mainsnak": {
+          "snaktype": "value",
+          "property": "P364",
+          "hash": "68b8fefd24a958cacb73dfa2ace014d4386dd3cb",
+          "datavalue": {
+            "value": {
+              "entity-type": "item",
+              "numeric-id": 150,
+              "id": "Q150"
+            },
+            "type": "wikibase-entityid"
+          },
+          "datatype": "wikibase-item"
+        },
+        "type": "statement",
+        "id": "Q3500462$6D7476C1-793D-404D-BF2D-0D0C3AFA1832",
+        "rank": "normal",
+        "references": [
+          {
+            "hash": "d4bd87b862b12d99d26e86472d44f26858dee639",
+            "snaks": {
+              "P143": [
+                {
+                  "snaktype": "value",
+                  "property": "P143",
+                  "hash": "f30cbd35620c4ea6d0633aaf0210a8916130469b",
+                  "datavalue": {
+                    "value": {
+                      "entity-type": "item",
+                      "numeric-id": 8447,
+                      "id": "Q8447"
+                    },
+                    "type": "wikibase-entityid"
+                  },
+                  "datatype": "wikibase-item"
+                }
+              ]
+            },
+            "snaks-order": [
+              "P143"
+            ]
+          }
+        ]
+      }
+    ],
+    "P136": [
+      {
+        "mainsnak": {
+          "snaktype": "value",
+          "property": "P136",
+          "hash": "07a2ceb859ceaa685424c0f61b264bbf01ffa322",
+          "datavalue": {
+            "value": {
+              "entity-type": "item",
+              "numeric-id": 93204,
+              "id": "Q93204"
+            },
+            "type": "wikibase-entityid"
+          },
+          "datatype": "wikibase-item"
+        },
+        "type": "statement",
+        "id": "Q3500462$1E498087-3823-49A8-9C0E-1F18AFFB823F",
+        "rank": "normal",
+        "references": [
+          {
+            "hash": "d4bd87b862b12d99d26e86472d44f26858dee639",
+            "snaks": {
+              "P143": [
+                {
+                  "snaktype": "value",
+                  "property": "P143",
+                  "hash": "f30cbd35620c4ea6d0633aaf0210a8916130469b",
+                  "datavalue": {
+                    "value": {
+                      "entity-type": "item",
+                      "numeric-id": 8447,
+                      "id": "Q8447"
+                    },
+                    "type": "wikibase-entityid"
+                  },
+                  "datatype": "wikibase-item"
+                }
+              ]
+            },
+            "snaks-order": [
+              "P143"
+            ]
+          }
+        ]
+      }
+    ],
+    "P495": [
+      {
+        "mainsnak": {
+          "snaktype": "value",
+          "property": "P495",
+          "hash": "03aa72a5066288ecdae4f10bec45b1271b9a2ccb",
+          "datavalue": {
+            "value": {
+              "entity-type": "item",
+              "numeric-id": 31,
+              "id": "Q31"
+            },
+            "type": "wikibase-entityid"
+          },
+          "datatype": "wikibase-item"
+        },
+        "type": "statement",
+        "id": "Q3500462$0159A91E-4891-44BE-B5D7-601131597F02",
+        "rank": "normal",
+        "references": [
+          {
+            "hash": "fa278ebfc458360e5aed63d5058cca83c46134f1",
+            "snaks": {
+              "P143": [
+                {
+                  "snaktype": "value",
+                  "property": "P143",
+                  "hash": "e4f6d9441d0600513c4533c672b5ab472dc73694",
+                  "datavalue": {
+                    "value": {
+                      "entity-type": "item",
+                      "numeric-id": 328,
+                      "id": "Q328"
+                    },
+                    "type": "wikibase-entityid"
+                  },
+                  "datatype": "wikibase-item"
+                }
+              ]
+            },
+            "snaks-order": [
+              "P143"
+            ]
+          }
+        ]
+      }
+    ],
+    "P1191": [
+      {
+        "mainsnak": {
+          "snaktype": "value",
+          "property": "P1191",
+          "hash": "e2c94410da54b4c90892a77e02a3522ee12a13dc",
+          "datavalue": {
+            "value": {
+              "time": "+1985-00-00T00:00:00Z",
+              "timezone": 0,
+              "before": 0,
+              "after": 0,
+              "precision": 9,
+              "calendarmodel": "http://www.wikidata.org/entity/Q1985727"
+            },
+            "type": "time"
+          },
+          "datatype": "time"
+        },
+        "type": "statement",
+        "id": "Q3500462$F14F0A6A-8E14-49FD-AF10-26EAAF91B3B5",
+        "rank": "normal",
+        "references": [
+          {
+            "hash": "d4bd87b862b12d99d26e86472d44f26858dee639",
+            "snaks": {
+              "P143": [
+                {
+                  "snaktype": "value",
+                  "property": "P143",
+                  "hash": "f30cbd35620c4ea6d0633aaf0210a8916130469b",
+                  "datavalue": {
+                    "value": {
+                      "entity-type": "item",
+                      "numeric-id": 8447,
+                      "id": "Q8447"
+                    },
+                    "type": "wikibase-entityid"
+                  },
+                  "datatype": "wikibase-item"
+                }
+              ]
+            },
+            "snaks-order": [
+              "P143"
+            ]
+          }
+        ]
+      }
+    ],
+    "P57": [
+      {
+        "mainsnak": {
+          "snaktype": "value",
+          "property": "P57",
+          "hash": "d737e15bc55204ec995bfe6b2a4cf27b12d31b47",
+          "datavalue": {
+            "value": {
+              "entity-type": "item",
+              "numeric-id": 66622935,
+              "id": "Q66622935"
+            },
+            "type": "wikibase-entityid"
+          },
+          "datatype": "wikibase-item"
+        },
+        "type": "statement",
+        "qualifiers": {
+          "P580": [
+            {
+              "snaktype": "value",
+              "property": "P580",
+              "hash": "7dc2821fe3f7d0644f5ada26fb6c7255ccd0c291",
+              "datavalue": {
+                "value": {
+                  "time": "+1994-00-00T00:00:00Z",
+                  "timezone": 0,
+                  "before": 0,
+                  "after": 0,
+                  "precision": 9,
+                  "calendarmodel": "http://www.wikidata.org/entity/Q1985727"
+                },
+                "type": "time"
+              },
+              "datatype": "time"
+            }
+          ],
+          "P582": [
+            {
+              "snaktype": "value",
+              "property": "P582",
+              "hash": "396a8a418d2d3af6444e59183215234da844a671",
+              "datavalue": {
+                "value": {
+                  "time": "+2004-00-00T00:00:00Z",
+                  "timezone": 0,
+                  "before": 0,
+                  "after": 0,
+                  "precision": 9,
+                  "calendarmodel": "http://www.wikidata.org/entity/Q1985727"
+                },
+                "type": "time"
+              },
+              "datatype": "time"
+            }
+          ]
+        },
+        "qualifiers-order": [
+          "P580",
+          "P582"
+        ],
+        "id": "Q3500462$547da2d2-49b3-c2c8-d21a-7d5680b8802d",
+        "rank": "normal",
+        "references": [
+          {
+            "hash": "d4bd87b862b12d99d26e86472d44f26858dee639",
+            "snaks": {
+              "P143": [
+                {
+                  "snaktype": "value",
+                  "property": "P143",
+                  "hash": "f30cbd35620c4ea6d0633aaf0210a8916130469b",
+                  "datavalue": {
+                    "value": {
+                      "entity-type": "item",
+                      "numeric-id": 8447,
+                      "id": "Q8447"
+                    },
+                    "type": "wikibase-entityid"
+                  },
+                  "datatype": "wikibase-item"
+                }
+              ]
+            },
+            "snaks-order": [
+              "P143"
+            ]
+          }
+        ]
+      }
+    ],
+    "P580": [
+      {
+        "mainsnak": {
+          "snaktype": "value",
+          "property": "P580",
+          "hash": "292b4ab55e989ffdf984aede998f1d63e3c77eba",
+          "datavalue": {
+            "value": {
+              "time": "+1985-00-00T00:00:00Z",
+              "timezone": 0,
+              "before": 0,
+              "after": 0,
+              "precision": 9,
+              "calendarmodel": "http://www.wikidata.org/entity/Q1985727"
+            },
+            "type": "time"
+          },
+          "datatype": "time"
+        },
+        "type": "statement",
+        "id": "Q3500462$91E6119C-BA7E-4A17-BE92-41E809D7C05C",
+        "rank": "normal",
+        "references": [
+          {
+            "hash": "95d16cd9cb7a4c9b47072ac0601ae2c942e22dbc",
+            "snaks": {
+              "P143": [
+                {
+                  "snaktype": "value",
+                  "property": "P143",
+                  "hash": "f30cbd35620c4ea6d0633aaf0210a8916130469b",
+                  "datavalue": {
+                    "value": {
+                      "entity-type": "item",
+                      "numeric-id": 8447,
+                      "id": "Q8447"
+                    },
+                    "type": "wikibase-entityid"
+                  },
+                  "datatype": "wikibase-item"
+                }
+              ],
+              "P4656": [
+                {
+                  "snaktype": "value",
+                  "property": "P4656",
+                  "hash": "20d25e09e327e02aba086d1c4fadd0bd0fd81135",
+                  "datavalue": {
+                    "value": "https://fr.wikipedia.org/w/index.php?title=Strip-tease_(émission_de_télévision)&oldid=171562277",
+                    "type": "string"
+                  },
+                  "datatype": "url"
+                }
+              ]
+            },
+            "snaks-order": [
+              "P143",
+              "P4656"
+            ]
+          }
+        ]
+      }
+    ],
+    "P156": [
+      {
+        "mainsnak": {
+          "snaktype": "value",
+          "property": "P156",
+          "hash": "71e12c575a69ac4ed07568663001614fbd5ff005",
+          "datavalue": {
+            "value": {
+              "entity-type": "item",
+              "numeric-id": 3535807,
+              "id": "Q3535807"
+            },
+            "type": "wikibase-entityid"
+          },
+          "datatype": "wikibase-item"
+        },
+        "type": "statement",
+        "id": "Q3500462$306257AC-136D-4BFD-A6F0-8E8648C1D585",
+        "rank": "normal",
+        "references": [
+          {
+            "hash": "95d16cd9cb7a4c9b47072ac0601ae2c942e22dbc",
+            "snaks": {
+              "P143": [
+                {
+                  "snaktype": "value",
+                  "property": "P143",
+                  "hash": "f30cbd35620c4ea6d0633aaf0210a8916130469b",
+                  "datavalue": {
+                    "value": {
+                      "entity-type": "item",
+                      "numeric-id": 8447,
+                      "id": "Q8447"
+                    },
+                    "type": "wikibase-entityid"
+                  },
+                  "datatype": "wikibase-item"
+                }
+              ],
+              "P4656": [
+                {
+                  "snaktype": "value",
+                  "property": "P4656",
+                  "hash": "20d25e09e327e02aba086d1c4fadd0bd0fd81135",
+                  "datavalue": {
+                    "value": "https://fr.wikipedia.org/w/index.php?title=Strip-tease_(émission_de_télévision)&oldid=171562277",
+                    "type": "string"
+                  },
+                  "datatype": "url"
+                }
+              ]
+            },
+            "snaks-order": [
+              "P143",
+              "P4656"
+            ]
+          }
+        ]
+      }
+    ],
+    "P646": [
+      {
+        "mainsnak": {
+          "snaktype": "value",
+          "property": "P646",
+          "hash": "f94e0e83d4d51edf6d1ca60bb52d69cf05acfff8",
+          "datavalue": {
+            "value": "/m/0k97kqg",
+            "type": "string"
+          },
+          "datatype": "external-id"
+        },
+        "type": "statement",
+        "id": "Q3500462$569CC940-1B28-4C93-A029-3632438F2107",
+        "rank": "normal"
+      }
+    ],
+    "P345": [
+      {
+        "mainsnak": {
+          "snaktype": "value",
+          "property": "P345",
+          "hash": "389e9ac86b08c945e160071eaff5b55c56ff6e75",
+          "datavalue": {
+            "value": "tt0356301",
+            "type": "string"
+          },
+          "datatype": "external-id"
+        },
+        "type": "statement",
+        "id": "Q3500462$add6eb33-4790-e18a-2dd8-c8e1e7ce7da4",
+        "rank": "normal"
+      }
+    ],
+    "P4983": [
+      {
+        "mainsnak": {
+          "snaktype": "value",
+          "property": "P4983",
+          "hash": "094abfc2e6753447a46d5d57064ef226470204ce",
+          "datavalue": {
+            "value": "70708",
+            "type": "string"
+          },
+          "datatype": "external-id"
+        },
+        "type": "statement",
+        "id": "Q3500462$6ea6be0f-10fa-4662-919f-55ca7b36f3d7",
+        "rank": "normal"
+      }
+    ],
+    "P2529": [
+      {
+        "mainsnak": {
+          "snaktype": "value",
+          "property": "P2529",
+          "hash": "7a96229a9ff3fc24ba2c8341be5c386f4736f1dc",
+          "datavalue": {
+            "value": "673681",
+            "type": "string"
+          },
+          "datatype": "external-id"
+        },
+        "type": "statement",
+        "id": "Q3500462$B8109F78-4B30-443E-9D1F-3B2352930DCA",
+        "rank": "normal",
+        "references": [
+          {
+            "hash": "aa183331c5cfdcb8ec3c31b12e596d6176bd7865",
+            "snaks": {
+              "P11797": [
+                {
+                  "snaktype": "value",
+                  "property": "P11797",
+                  "hash": "201760a29ff588d59f692d581849a13bfbaea92f",
+                  "datavalue": {
+                    "value": {
+                      "entity-type": "item",
+                      "numeric-id": 37312,
+                      "id": "Q37312"
+                    },
+                    "type": "wikibase-entityid"
+                  },
+                  "datatype": "wikibase-item"
+                }
+              ],
+              "P345": [
+                {
+                  "snaktype": "value",
+                  "property": "P345",
+                  "hash": "389e9ac86b08c945e160071eaff5b55c56ff6e75",
+                  "datavalue": {
+                    "value": "tt0356301",
+                    "type": "string"
+                  },
+                  "datatype": "external-id"
+                }
+              ],
+              "P813": [
+                {
+                  "snaktype": "value",
+                  "property": "P813",
+                  "hash": "7e83ce6177b08361057b7af485d900b0d7715ef8",
+                  "datavalue": {
+                    "value": {
+                      "time": "+2026-02-17T00:00:00Z",
+                      "timezone": 0,
+                      "before": 0,
+                      "after": 0,
+                      "precision": 11,
+                      "calendarmodel": "http://www.wikidata.org/entity/Q1985727"
+                    },
+                    "type": "time"
+                  },
+                  "datatype": "time"
+                }
+              ]
+            },
+            "snaks-order": [
+              "P11797",
+              "P345",
+              "P813"
+            ]
+          }
+        ]
+      }
+    ]
+  },
+  "sitelinks": {
+    "enwiki": {
+      "site": "enwiki",
+      "title": "Strip-Tease (TV series)",
+      "badges": [],
+      "url": "https://en.wikipedia.org/wiki/Strip-Tease_(TV_series)"
+    },
+    "frwiki": {
+      "site": "frwiki",
+      "title": "Strip-Tease (émission de télévision)",
+      "badges": [],
+      "url": "https://fr.wikipedia.org/wiki/Strip-Tease_(%C3%A9mission_de_t%C3%A9l%C3%A9vision)"
+    },
+    "frwikiquote": {
+      "site": "frwikiquote",
+      "title": "Strip-tease",
+      "badges": [],
+      "url": "https://fr.wikiquote.org/wiki/Strip-tease"
+    }
+  }
+}

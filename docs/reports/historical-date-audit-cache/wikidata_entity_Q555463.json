@@ -1,0 +1,623 @@
+{
+  "saved_at": "2026-03-07T16:51:32.199Z",
+  "value": {
+    "pageid": 523384,
+    "ns": 0,
+    "title": "Q555463",
+    "lastrevid": 2450867541,
+    "modified": "2026-01-03T11:55:08Z",
+    "type": "item",
+    "id": "Q555463",
+    "labels": {
+      "de": {
+        "language": "de",
+        "value": "Harzhornereignis"
+      },
+      "pl": {
+        "language": "pl",
+        "value": "Kampania Maksymina Traka przeciwko Alamanom"
+      },
+      "en": {
+        "language": "en",
+        "value": "Battle at the Harzhorn"
+      },
+      "sv": {
+        "language": "sv",
+        "value": "Slaget vid Harzhorn"
+      },
+      "nl": {
+        "language": "nl",
+        "value": "Romeins slagveld bij Kalefeld"
+      },
+      "it": {
+        "language": "it",
+        "value": "battaglia di Harzhorn"
+      },
+      "cs": {
+        "language": "cs",
+        "value": "Bitva na Harzhornu"
+      },
+      "fr": {
+        "language": "fr",
+        "value": "site archéologique du Harzhorn"
+      },
+      "fi": {
+        "language": "fi",
+        "value": "Harzhornin taistelu"
+      },
+      "es": {
+        "language": "es",
+        "value": "Batalla en el Harzhorn"
+      }
+    },
+    "descriptions": {
+      "fr": {
+        "language": "fr",
+        "value": "bataille entre les Romains et les Germains en 235"
+      },
+      "de": {
+        "language": "de",
+        "value": "Kampf zwischen römischen und germanischen Truppen im Jahr 235 in der Germania magna"
+      },
+      "en": {
+        "language": "en",
+        "value": "235 battle between Roman and Germanic troops (c.235)"
+      },
+      "nl": {
+        "language": "nl",
+        "value": "veldslag in Duitsland"
+      }
+    },
+    "aliases": {
+      "de": [
+        {
+          "language": "de",
+          "value": "Schlacht am Harzhorn"
+        }
+      ],
+      "fr": [
+        {
+          "language": "fr",
+          "value": "bataille d'Harzhorn"
+        }
+      ]
+    },
+    "claims": {
+      "P625": [
+        {
+          "mainsnak": {
+            "snaktype": "value",
+            "property": "P625",
+            "hash": "292e02ced09f66e69d9a52101ba94a12d7285754",
+            "datavalue": {
+              "value": {
+                "latitude": 51.8324,
+                "longitude": 10.105,
+                "altitude": null,
+                "precision": 0.0001,
+                "globe": "http://www.wikidata.org/entity/Q2"
+              },
+              "type": "globecoordinate"
+            },
+            "datatype": "globe-coordinate"
+          },
+          "type": "statement",
+          "id": "Q555463$2A018AAB-ADAE-495B-9D59-3A501556853E",
+          "rank": "normal",
+          "references": [
+            {
+              "hash": "9a24f7c0208b05d6be97077d855671d1dfdbc0dd",
+              "snaks": {
+                "P143": [
+                  {
+                    "snaktype": "value",
+                    "property": "P143",
+                    "hash": "d38375ffe6fe142663ff55cd783aa4df4301d83d",
+                    "datavalue": {
+                      "value": {
+                        "entity-type": "item",
+                        "numeric-id": 48183,
+                        "id": "Q48183"
+                      },
+                      "type": "wikibase-entityid"
+                    },
+                    "datatype": "wikibase-item"
+                  }
+                ]
+              },
+              "snaks-order": [
+                "P143"
+              ]
+            }
+          ]
+        }
+      ],
+      "P646": [
+        {
+          "mainsnak": {
+            "snaktype": "value",
+            "property": "P646",
+            "hash": "4ebfffad0bbbaeb43929461cebf168fb28ae8221",
+            "datavalue": {
+              "value": "/m/09gjv4g",
+              "type": "string"
+            },
+            "datatype": "external-id"
+          },
+          "type": "statement",
+          "id": "Q555463$5BDEE412-0680-4152-988B-61E721A13EFF",
+          "rank": "normal",
+          "references": [
+            {
+              "hash": "2b00cb481cddcac7623114367489b5c194901c4a",
+              "snaks": {
+                "P248": [
+                  {
+                    "snaktype": "value",
+                    "property": "P248",
+                    "hash": "a94b740202b097dd33355e0e6c00e54b9395e5e0",
+                    "datavalue": {
+                      "value": {
+                        "entity-type": "item",
+                        "numeric-id": 15241312,
+                        "id": "Q15241312"
+                      },
+                      "type": "wikibase-entityid"
+                    },
+                    "datatype": "wikibase-item"
+                  }
+                ],
+                "P577": [
+                  {
+                    "snaktype": "value",
+                    "property": "P577",
+                    "hash": "fde79ecb015112d2f29229ccc1ec514ed3e71fa2",
+                    "datavalue": {
+                      "value": {
+                        "time": "+2013-10-28T00:00:00Z",
+                        "timezone": 0,
+                        "before": 0,
+                        "after": 0,
+                        "precision": 11,
+                        "calendarmodel": "http://www.wikidata.org/entity/Q1985727"
+                      },
+                      "type": "time"
+                    },
+                    "datatype": "time"
+                  }
+                ]
+              },
+              "snaks-order": [
+                "P248",
+                "P577"
+              ]
+            }
+          ]
+        }
+      ],
+      "P31": [
+        {
+          "mainsnak": {
+            "snaktype": "value",
+            "property": "P31",
+            "hash": "baa1df9dcd37b9f3a062e7a14a8bef0c37078d32",
+            "datavalue": {
+              "value": {
+                "entity-type": "item",
+                "numeric-id": 178561,
+                "id": "Q178561"
+              },
+              "type": "wikibase-entityid"
+            },
+            "datatype": "wikibase-item"
+          },
+          "type": "statement",
+          "id": "Q555463$377ABCF3-D938-4633-9E09-A175E6F9B6AC",
+          "rank": "normal"
+        },
+        {
+          "mainsnak": {
+            "snaktype": "value",
+            "property": "P31",
+            "hash": "3517a081c2e578349b711ac04239b3463a812b58",
+            "datavalue": {
+              "value": {
+                "entity-type": "item",
+                "numeric-id": 4895508,
+                "id": "Q4895508"
+              },
+              "type": "wikibase-entityid"
+            },
+            "datatype": "wikibase-item"
+          },
+          "type": "statement",
+          "id": "Q555463$20aea630-4cfe-4c4a-10dd-570dc5a607c1",
+          "rank": "normal"
+        }
+      ],
+      "P1936": [
+        {
+          "mainsnak": {
+            "snaktype": "value",
+            "property": "P1936",
+            "hash": "7dc150b0535becab7e7343d4583c30cf78eed7e1",
+            "datavalue": {
+              "value": "21163",
+              "type": "string"
+            },
+            "datatype": "external-id"
+          },
+          "type": "statement",
+          "id": "Q555463$1BD29C0A-F534-403C-82A5-D02C2B09DA29",
+          "rank": "normal"
+        }
+      ],
+      "P276": [
+        {
+          "mainsnak": {
+            "snaktype": "value",
+            "property": "P276",
+            "hash": "f6b409e723eec6d3e205524ef9ed45cef77e4135",
+            "datavalue": {
+              "value": {
+                "entity-type": "item",
+                "numeric-id": 3783586,
+                "id": "Q3783586"
+              },
+              "type": "wikibase-entityid"
+            },
+            "datatype": "wikibase-item"
+          },
+          "type": "statement",
+          "id": "Q555463$edf9b420-4647-2143-acb1-804b687b90d0",
+          "rank": "normal"
+        }
+      ],
+      "P361": [
+        {
+          "mainsnak": {
+            "snaktype": "value",
+            "property": "P361",
+            "hash": "da8f04814546fddaa0e344988e662d238e66b887",
+            "datavalue": {
+              "value": {
+                "entity-type": "item",
+                "numeric-id": 329838,
+                "id": "Q329838"
+              },
+              "type": "wikibase-entityid"
+            },
+            "datatype": "wikibase-item"
+          },
+          "type": "statement",
+          "id": "Q555463$F6F1998A-7A1D-4118-BFC7-40CCA439E68F",
+          "rank": "normal"
+        }
+      ],
+      "P585": [
+        {
+          "mainsnak": {
+            "snaktype": "value",
+            "property": "P585",
+            "hash": "f5525d08a7c955b5ffbff796113ea1c26200df0a",
+            "datavalue": {
+              "value": {
+                "time": "+0235-00-00T00:00:00Z",
+                "timezone": 0,
+                "before": 0,
+                "after": 0,
+                "precision": 9,
+                "calendarmodel": "http://www.wikidata.org/entity/Q1985786"
+              },
+              "type": "time"
+            },
+            "datatype": "time"
+          },
+          "type": "statement",
+          "qualifiers": {
+            "P1480": [
+              {
+                "snaktype": "value",
+                "property": "P1480",
+                "hash": "cb40f2027a88b8d23735681aaccba1069a574f54",
+                "datavalue": {
+                  "value": {
+                    "entity-type": "item",
+                    "numeric-id": 5727902,
+                    "id": "Q5727902"
+                  },
+                  "type": "wikibase-entityid"
+                },
+                "datatype": "wikibase-item"
+              }
+            ]
+          },
+          "qualifiers-order": [
+            "P1480"
+          ],
+          "id": "Q555463$5196732f-4855-5e9f-81b9-e553a619cb06",
+          "rank": "normal"
+        }
+      ],
+      "P17": [
+        {
+          "mainsnak": {
+            "snaktype": "value",
+            "property": "P17",
+            "hash": "ef7247b704f4ec0a7df39e83306bb388fea17d5f",
+            "datavalue": {
+              "value": {
+                "entity-type": "item",
+                "numeric-id": 183,
+                "id": "Q183"
+              },
+              "type": "wikibase-entityid"
+            },
+            "datatype": "wikibase-item"
+          },
+          "type": "statement",
+          "id": "Q555463$d9333cc0-4eba-a3c0-4316-087ffbade51b",
+          "rank": "normal"
+        }
+      ],
+      "P131": [
+        {
+          "mainsnak": {
+            "snaktype": "value",
+            "property": "P131",
+            "hash": "def66418e25461b1a5b4e507941d23188c3509eb",
+            "datavalue": {
+              "value": {
+                "entity-type": "item",
+                "numeric-id": 559428,
+                "id": "Q559428"
+              },
+              "type": "wikibase-entityid"
+            },
+            "datatype": "wikibase-item"
+          },
+          "type": "statement",
+          "id": "Q555463$547b5293-4e6c-c4ee-c7aa-86bfb99fdb46",
+          "rank": "normal"
+        }
+      ],
+      "P710": [
+        {
+          "mainsnak": {
+            "snaktype": "value",
+            "property": "P710",
+            "hash": "4e224e60964e998c4938d4343fb89853877cc078",
+            "datavalue": {
+              "value": {
+                "entity-type": "item",
+                "numeric-id": 22633,
+                "id": "Q22633"
+              },
+              "type": "wikibase-entityid"
+            },
+            "datatype": "wikibase-item"
+          },
+          "type": "statement",
+          "id": "Q555463$B00AE991-2835-4A65-99C5-762955468284",
+          "rank": "normal"
+        },
+        {
+          "mainsnak": {
+            "snaktype": "value",
+            "property": "P710",
+            "hash": "365da9944bef318e4acb9591ec76e1712ae59f5a",
+            "datavalue": {
+              "value": {
+                "entity-type": "item",
+                "numeric-id": 1747689,
+                "id": "Q1747689"
+              },
+              "type": "wikibase-entityid"
+            },
+            "datatype": "wikibase-item"
+          },
+          "type": "statement",
+          "id": "Q555463$D9C8F8D5-65EC-4A18-B5D9-3B8623BB0B08",
+          "rank": "normal"
+        }
+      ],
+      "P227": [
+        {
+          "mainsnak": {
+            "snaktype": "value",
+            "property": "P227",
+            "hash": "c4bca23802af980b05bc5697c95796f1cd52a51e",
+            "datavalue": {
+              "value": "1051974372",
+              "type": "string"
+            },
+            "datatype": "external-id"
+          },
+          "type": "statement",
+          "id": "Q555463$4DCC3EF6-EB85-42B7-818C-FA42AE3E7980",
+          "rank": "normal",
+          "references": [
+            {
+              "hash": "9a24f7c0208b05d6be97077d855671d1dfdbc0dd",
+              "snaks": {
+                "P143": [
+                  {
+                    "snaktype": "value",
+                    "property": "P143",
+                    "hash": "d38375ffe6fe142663ff55cd783aa4df4301d83d",
+                    "datavalue": {
+                      "value": {
+                        "entity-type": "item",
+                        "numeric-id": 48183,
+                        "id": "Q48183"
+                      },
+                      "type": "wikibase-entityid"
+                    },
+                    "datatype": "wikibase-item"
+                  }
+                ]
+              },
+              "snaks-order": [
+                "P143"
+              ]
+            }
+          ]
+        }
+      ],
+      "P18": [
+        {
+          "mainsnak": {
+            "snaktype": "value",
+            "property": "P18",
+            "hash": "54c0470058fbe0e9a826fc5080b5121b5f1e8550",
+            "datavalue": {
+              "value": "Harzhorn Ausgrabungsbereich.jpg",
+              "type": "string"
+            },
+            "datatype": "commonsMedia"
+          },
+          "type": "statement",
+          "id": "Q555463$64E15BA7-3E4C-4F67-A6F4-FC4A77DD6EE5",
+          "rank": "normal",
+          "references": [
+            {
+              "hash": "620f20cc9dfd4725a281e51b7f4dfc8d603e9721",
+              "snaks": {
+                "P143": [
+                  {
+                    "snaktype": "value",
+                    "property": "P143",
+                    "hash": "e4f6d9441d0600513c4533c672b5ab472dc73694",
+                    "datavalue": {
+                      "value": {
+                        "entity-type": "item",
+                        "numeric-id": 328,
+                        "id": "Q328"
+                      },
+                      "type": "wikibase-entityid"
+                    },
+                    "datatype": "wikibase-item"
+                  }
+                ],
+                "P4656": [
+                  {
+                    "snaktype": "value",
+                    "property": "P4656",
+                    "hash": "4107505dba46f4dd883723ecc91425bdb2617853",
+                    "datavalue": {
+                      "value": "https://en.wikipedia.org/w/index.php?title=Battle_at_the_Harzhorn&oldid=856848062",
+                      "type": "string"
+                    },
+                    "datatype": "url"
+                  }
+                ]
+              },
+              "snaks-order": [
+                "P143",
+                "P4656"
+              ]
+            }
+          ]
+        }
+      ],
+      "P1481": [
+        {
+          "mainsnak": {
+            "snaktype": "value",
+            "property": "P1481",
+            "hash": "df7dfff8224c716d12eecd576a43db1695e1d7d9",
+            "datavalue": {
+              "value": "9947",
+              "type": "string"
+            },
+            "datatype": "external-id"
+          },
+          "type": "statement",
+          "id": "Q555463$3be2ea66-4275-110f-465d-de8ae6ad01d9",
+          "rank": "normal"
+        }
+      ],
+      "P373": [
+        {
+          "mainsnak": {
+            "snaktype": "value",
+            "property": "P373",
+            "hash": "dced7af5dc829fe25b0765560e97352dc33d03fa",
+            "datavalue": {
+              "value": "Harzhorn",
+              "type": "string"
+            },
+            "datatype": "string"
+          },
+          "type": "statement",
+          "id": "Q555463$3b3d565a-4d90-7214-554b-4a38d4cba23d",
+          "rank": "normal"
+        }
+      ]
+    },
+    "sitelinks": {
+      "cswiki": {
+        "site": "cswiki",
+        "title": "Bitva na Harzhornu",
+        "badges": [],
+        "url": "https://cs.wikipedia.org/wiki/Bitva_na_Harzhornu"
+      },
+      "dewiki": {
+        "site": "dewiki",
+        "title": "Harzhornereignis",
+        "badges": [
+          "Q17437798"
+        ],
+        "url": "https://de.wikipedia.org/wiki/Harzhornereignis"
+      },
+      "enwiki": {
+        "site": "enwiki",
+        "title": "Battle at the Harzhorn",
+        "badges": [],
+        "url": "https://en.wikipedia.org/wiki/Battle_at_the_Harzhorn"
+      },
+      "eswiki": {
+        "site": "eswiki",
+        "title": "Batalla en el Harzhorn",
+        "badges": [],
+        "url": "https://es.wikipedia.org/wiki/Batalla_en_el_Harzhorn"
+      },
+      "fiwiki": {
+        "site": "fiwiki",
+        "title": "Harzhornin taistelu",
+        "badges": [],
+        "url": "https://fi.wikipedia.org/wiki/Harzhornin_taistelu"
+      },
+      "frwiki": {
+        "site": "frwiki",
+        "title": "Site archéologique du Harzhorn",
+        "badges": [],
+        "url": "https://fr.wikipedia.org/wiki/Site_arch%C3%A9ologique_du_Harzhorn"
+      },
+      "itwiki": {
+        "site": "itwiki",
+        "title": "Battaglia di Harzhorn",
+        "badges": [],
+        "url": "https://it.wikipedia.org/wiki/Battaglia_di_Harzhorn"
+      },
+      "nlwiki": {
+        "site": "nlwiki",
+        "title": "Romeins slagveld bij Kalefeld",
+        "badges": [],
+        "url": "https://nl.wikipedia.org/wiki/Romeins_slagveld_bij_Kalefeld"
+      },
+      "plwiki": {
+        "site": "plwiki",
+        "title": "Kampania Maksymina Traka przeciwko Alamanom",
+        "badges": [],
+        "url": "https://pl.wikipedia.org/wiki/Kampania_Maksymina_Traka_przeciwko_Alamanom"
+      },
+      "svwiki": {
+        "site": "svwiki",
+        "title": "Slaget vid Harzhorn",
+        "badges": [],
+        "url": "https://sv.wikipedia.org/wiki/Slaget_vid_Harzhorn"
+      }
+    }
+  }
+}

@@ -1,0 +1,1023 @@
+{
+  "saved_at": "2026-03-07T16:52:42.277Z",
+  "value": {
+    "pageid": 9493023,
+    "ns": 0,
+    "title": "Q9386984",
+    "lastrevid": 2331093780,
+    "modified": "2025-03-27T08:28:35Z",
+    "type": "item",
+    "id": "Q9386984",
+    "labels": {
+      "pl": {
+        "language": "pl",
+        "value": "Zapora Serre-Ponçon"
+      },
+      "nb": {
+        "language": "nb",
+        "value": "Serre Ponçon-demningen"
+      },
+      "it": {
+        "language": "it",
+        "value": "diga di Serre Ponçon"
+      },
+      "fr": {
+        "language": "fr",
+        "value": "barrage de Serre-Ponçon"
+      },
+      "en": {
+        "language": "en",
+        "value": "Barrage de Serre-Ponçon"
+      },
+      "en-ca": {
+        "language": "en-ca",
+        "value": "Barrage de Serre-Ponçon"
+      },
+      "en-gb": {
+        "language": "en-gb",
+        "value": "Barrage de Serre-Ponçon"
+      },
+      "uk": {
+        "language": "uk",
+        "value": "ГЕС Сер-Понсон"
+      }
+    },
+    "descriptions": {
+      "nl": {
+        "language": "nl",
+        "value": "dam in Frankrijk"
+      },
+      "en-gb": {
+        "language": "en-gb",
+        "value": "dam in France"
+      },
+      "ar": {
+        "language": "ar",
+        "value": "سد في فرنسا"
+      },
+      "en": {
+        "language": "en",
+        "value": "dam in France"
+      },
+      "en-ca": {
+        "language": "en-ca",
+        "value": "dam in France"
+      },
+      "fr": {
+        "language": "fr",
+        "value": "barrage de France"
+      },
+      "de": {
+        "language": "de",
+        "value": "Talsperre in Frankreich"
+      }
+    },
+    "aliases": {
+      "nb": [
+        {
+          "language": "nb",
+          "value": "Serre Poncon-demningen"
+        }
+      ],
+      "en": [
+        {
+          "language": "en",
+          "value": "Serre-Ponçon Dam"
+        }
+      ],
+      "en-ca": [
+        {
+          "language": "en-ca",
+          "value": "Serre-Ponçon Dam"
+        }
+      ],
+      "en-gb": [
+        {
+          "language": "en-gb",
+          "value": "Serre-Ponçon Dam"
+        }
+      ]
+    },
+    "claims": {
+      "P31": [
+        {
+          "mainsnak": {
+            "snaktype": "value",
+            "property": "P31",
+            "hash": "ee2c3e384cdbd50fb785843446317ff66a6b9a80",
+            "datavalue": {
+              "value": {
+                "entity-type": "item",
+                "numeric-id": 1244922,
+                "id": "Q1244922"
+              },
+              "type": "wikibase-entityid"
+            },
+            "datatype": "wikibase-item"
+          },
+          "type": "statement",
+          "id": "Q9386984$692b9e02-45eb-c94c-34b0-467a3d58112a",
+          "rank": "normal"
+        },
+        {
+          "mainsnak": {
+            "snaktype": "value",
+            "property": "P31",
+            "hash": "43fc05f417abe003a4e9220dabc0617b771552d7",
+            "datavalue": {
+              "value": {
+                "entity-type": "item",
+                "numeric-id": 15911738,
+                "id": "Q15911738"
+              },
+              "type": "wikibase-entityid"
+            },
+            "datatype": "wikibase-item"
+          },
+          "type": "statement",
+          "id": "Q9386984$FDF679E0-25F5-4616-B476-4BA051941972",
+          "rank": "normal"
+        }
+      ],
+      "P17": [
+        {
+          "mainsnak": {
+            "snaktype": "value",
+            "property": "P17",
+            "hash": "c05db5d169c2560b9799d567a803d20a392f53e4",
+            "datavalue": {
+              "value": {
+                "entity-type": "item",
+                "numeric-id": 142,
+                "id": "Q142"
+              },
+              "type": "wikibase-entityid"
+            },
+            "datatype": "wikibase-item"
+          },
+          "type": "statement",
+          "id": "Q9386984$29eead00-4ebe-2ca5-806c-e70026542d26",
+          "rank": "normal",
+          "references": [
+            {
+              "hash": "60cce5d0acf0cc060796196012001192a048d885",
+              "snaks": {
+                "P143": [
+                  {
+                    "snaktype": "value",
+                    "property": "P143",
+                    "hash": "390e3b73e7cd926978cab220968d0e3451cfb814",
+                    "datavalue": {
+                      "value": {
+                        "entity-type": "item",
+                        "numeric-id": 199698,
+                        "id": "Q199698"
+                      },
+                      "type": "wikibase-entityid"
+                    },
+                    "datatype": "wikibase-item"
+                  }
+                ]
+              },
+              "snaks-order": [
+                "P143"
+              ]
+            }
+          ]
+        }
+      ],
+      "P625": [
+        {
+          "mainsnak": {
+            "snaktype": "value",
+            "property": "P625",
+            "hash": "c1af0f3b48c43f96f7ec29551287e60d1cd6df0f",
+            "datavalue": {
+              "value": {
+                "latitude": 44.4717173,
+                "longitude": 6.2707995,
+                "altitude": null,
+                "precision": 0.0000027777777777778,
+                "globe": "http://www.wikidata.org/entity/Q2"
+              },
+              "type": "globecoordinate"
+            },
+            "datatype": "globe-coordinate"
+          },
+          "type": "statement",
+          "id": "Q9386984$499d372a-4607-45c0-22cd-d14fe3c61c27",
+          "rank": "normal"
+        }
+      ],
+      "P131": [
+        {
+          "mainsnak": {
+            "snaktype": "value",
+            "property": "P131",
+            "hash": "8b895689a772a41ae31c91012085f96471f970c3",
+            "datavalue": {
+              "value": {
+                "entity-type": "item",
+                "numeric-id": 28094873,
+                "id": "Q28094873"
+              },
+              "type": "wikibase-entityid"
+            },
+            "datatype": "wikibase-item"
+          },
+          "type": "statement",
+          "id": "Q9386984$976e3e5e-4755-42a4-6861-c10b8f6b78c5",
+          "rank": "normal"
+        },
+        {
+          "mainsnak": {
+            "snaktype": "value",
+            "property": "P131",
+            "hash": "4aed33a169a3513e61e7ae33bb3c584155409117",
+            "datavalue": {
+              "value": {
+                "entity-type": "item",
+                "numeric-id": 938936,
+                "id": "Q938936"
+              },
+              "type": "wikibase-entityid"
+            },
+            "datatype": "wikibase-item"
+          },
+          "type": "statement",
+          "id": "Q9386984$962a00f6-49ac-3ff2-3195-8f6c6fb99679",
+          "rank": "normal"
+        }
+      ],
+      "P4661": [
+        {
+          "mainsnak": {
+            "snaktype": "value",
+            "property": "P4661",
+            "hash": "6102c1867e6f0821b48a99eb3ebdc5418a4f13ac",
+            "datavalue": {
+              "value": {
+                "entity-type": "item",
+                "numeric-id": 1799634,
+                "id": "Q1799634"
+              },
+              "type": "wikibase-entityid"
+            },
+            "datatype": "wikibase-item"
+          },
+          "type": "statement",
+          "id": "Q9386984$d7d9f8d1-4127-4945-6dbf-70af98bf813b",
+          "rank": "normal"
+        }
+      ],
+      "P18": [
+        {
+          "mainsnak": {
+            "snaktype": "value",
+            "property": "P18",
+            "hash": "3f772f9faef703e9c0b0c500ebcf2e98902491e0",
+            "datavalue": {
+              "value": "Barrage du Lac de Serre-Ponçon.JPG",
+              "type": "string"
+            },
+            "datatype": "commonsMedia"
+          },
+          "type": "statement",
+          "qualifiers": {
+            "P585": [
+              {
+                "snaktype": "value",
+                "property": "P585",
+                "hash": "4571f13a1b2e7a6b3241741b284810348bda781b",
+                "datavalue": {
+                  "value": {
+                    "time": "+2012-05-28T00:00:00Z",
+                    "timezone": 0,
+                    "before": 0,
+                    "after": 0,
+                    "precision": 11,
+                    "calendarmodel": "http://www.wikidata.org/entity/Q1985727"
+                  },
+                  "type": "time"
+                },
+                "datatype": "time"
+              }
+            ]
+          },
+          "qualifiers-order": [
+            "P585"
+          ],
+          "id": "Q9386984$a53e7b80-4a10-19e8-dfca-2fa70d7d5d25",
+          "rank": "normal"
+        }
+      ],
+      "P1435": [
+        {
+          "mainsnak": {
+            "snaktype": "value",
+            "property": "P1435",
+            "hash": "e40467dd8967a52c62a37d2406aec129cf94f113",
+            "datavalue": {
+              "value": {
+                "entity-type": "item",
+                "numeric-id": 3214312,
+                "id": "Q3214312"
+              },
+              "type": "wikibase-entityid"
+            },
+            "datatype": "wikibase-item"
+          },
+          "type": "statement",
+          "qualifiers": {
+            "P582": [
+              {
+                "snaktype": "value",
+                "property": "P582",
+                "hash": "50c160b6f7bf1edc8d684027db05a863bb844172",
+                "datavalue": {
+                  "value": {
+                    "time": "+2017-03-30T00:00:00Z",
+                    "timezone": 0,
+                    "before": 0,
+                    "after": 0,
+                    "precision": 11,
+                    "calendarmodel": "http://www.wikidata.org/entity/Q1985727"
+                  },
+                  "type": "time"
+                },
+                "datatype": "time"
+              }
+            ]
+          },
+          "qualifiers-order": [
+            "P582"
+          ],
+          "id": "Q9386984$1ecee699-443d-3cc2-eb58-b1f927d17f95",
+          "rank": "normal",
+          "references": [
+            {
+              "hash": "b4766a138a9f5ce7bf203ab643a7da94774c8477",
+              "snaks": {
+                "P248": [
+                  {
+                    "snaktype": "value",
+                    "property": "P248",
+                    "hash": "30fc6b4a633331d9f3121dc0d6554a3f346580aa",
+                    "datavalue": {
+                      "value": {
+                        "entity-type": "item",
+                        "numeric-id": 1815103,
+                        "id": "Q1815103"
+                      },
+                      "type": "wikibase-entityid"
+                    },
+                    "datatype": "wikibase-item"
+                  }
+                ],
+                "P464": [
+                  {
+                    "snaktype": "value",
+                    "property": "P464",
+                    "hash": "4a76cd3a791770f93157640c5ce2af44b02c8fdd",
+                    "datavalue": {
+                      "value": "MCCB1633582D",
+                      "type": "string"
+                    },
+                    "datatype": "external-id"
+                  }
+                ],
+                "P10551": [
+                  {
+                    "snaktype": "value",
+                    "property": "P10551",
+                    "hash": "2854c70a21fdea11a497ac9cc0ef1ea7f92ce7d9",
+                    "datavalue": {
+                      "value": {
+                        "entity-type": "property",
+                        "numeric-id": 582,
+                        "id": "P582"
+                      },
+                      "type": "wikibase-entityid"
+                    },
+                    "datatype": "wikibase-property"
+                  }
+                ]
+              },
+              "snaks-order": [
+                "P248",
+                "P464",
+                "P10551"
+              ]
+            }
+          ]
+        },
+        {
+          "mainsnak": {
+            "snaktype": "value",
+            "property": "P1435",
+            "hash": "478c092c61f519d287824cc723b48d09801e9f08",
+            "datavalue": {
+              "value": {
+                "entity-type": "item",
+                "numeric-id": 44078976,
+                "id": "Q44078976"
+              },
+              "type": "wikibase-entityid"
+            },
+            "datatype": "wikibase-item"
+          },
+          "type": "statement",
+          "qualifiers": {
+            "P580": [
+              {
+                "snaktype": "value",
+                "property": "P580",
+                "hash": "ae6c996f5f6b56e668bea3aeb81632b011269783",
+                "datavalue": {
+                  "value": {
+                    "time": "+2017-03-31T00:00:00Z",
+                    "timezone": 0,
+                    "before": 0,
+                    "after": 0,
+                    "precision": 11,
+                    "calendarmodel": "http://www.wikidata.org/entity/Q1985727"
+                  },
+                  "type": "time"
+                },
+                "datatype": "time"
+              }
+            ]
+          },
+          "qualifiers-order": [
+            "P580"
+          ],
+          "id": "Q9386984$761AB13F-DFEE-4320-B39A-94DAEB4ADDA9",
+          "rank": "normal",
+          "references": [
+            {
+              "hash": "d709174cc609072fbf310bb52ddfb7aa2332b473",
+              "snaks": {
+                "P248": [
+                  {
+                    "snaktype": "value",
+                    "property": "P248",
+                    "hash": "fc376b4e25f8c58fa7210b660e00a66558a3332b",
+                    "datavalue": {
+                      "value": {
+                        "entity-type": "item",
+                        "numeric-id": 809830,
+                        "id": "Q809830"
+                      },
+                      "type": "wikibase-entityid"
+                    },
+                    "datatype": "wikibase-item"
+                  }
+                ]
+              },
+              "snaks-order": [
+                "P248"
+              ]
+            },
+            {
+              "hash": "7556359c0c200052753a8cd40621ed37b2f2330d",
+              "snaks": {
+                "P248": [
+                  {
+                    "snaktype": "value",
+                    "property": "P248",
+                    "hash": "30fc6b4a633331d9f3121dc0d6554a3f346580aa",
+                    "datavalue": {
+                      "value": {
+                        "entity-type": "item",
+                        "numeric-id": 1815103,
+                        "id": "Q1815103"
+                      },
+                      "type": "wikibase-entityid"
+                    },
+                    "datatype": "wikibase-item"
+                  }
+                ],
+                "P464": [
+                  {
+                    "snaktype": "value",
+                    "property": "P464",
+                    "hash": "4a76cd3a791770f93157640c5ce2af44b02c8fdd",
+                    "datavalue": {
+                      "value": "MCCB1633582D",
+                      "type": "string"
+                    },
+                    "datatype": "external-id"
+                  }
+                ],
+                "P10551": [
+                  {
+                    "snaktype": "value",
+                    "property": "P10551",
+                    "hash": "784078f4649899be895cd63f97c12f40a5f4130d",
+                    "datavalue": {
+                      "value": {
+                        "entity-type": "property",
+                        "numeric-id": 580,
+                        "id": "P580"
+                      },
+                      "type": "wikibase-entityid"
+                    },
+                    "datatype": "wikibase-property"
+                  }
+                ]
+              },
+              "snaks-order": [
+                "P248",
+                "P464",
+                "P10551"
+              ]
+            }
+          ]
+        }
+      ],
+      "P380": [
+        {
+          "mainsnak": {
+            "snaktype": "value",
+            "property": "P380",
+            "hash": "a24ac987d93ab9a766eafd3f20ac6d7c8ad07c2a",
+            "datavalue": {
+              "value": "EA04141153",
+              "type": "string"
+            },
+            "datatype": "external-id"
+          },
+          "type": "statement",
+          "id": "Q9386984$099d535b-41bb-5fde-f886-e8e8d51d21f9",
+          "rank": "normal",
+          "references": [
+            {
+              "hash": "d709174cc609072fbf310bb52ddfb7aa2332b473",
+              "snaks": {
+                "P248": [
+                  {
+                    "snaktype": "value",
+                    "property": "P248",
+                    "hash": "fc376b4e25f8c58fa7210b660e00a66558a3332b",
+                    "datavalue": {
+                      "value": {
+                        "entity-type": "item",
+                        "numeric-id": 809830,
+                        "id": "Q809830"
+                      },
+                      "type": "wikibase-entityid"
+                    },
+                    "datatype": "wikibase-item"
+                  }
+                ]
+              },
+              "snaks-order": [
+                "P248"
+              ]
+            }
+          ]
+        },
+        {
+          "mainsnak": {
+            "snaktype": "value",
+            "property": "P380",
+            "hash": "1db6608acf5344714a61f4eb03b0aa24f49fe591",
+            "datavalue": {
+              "value": "ACR0001258",
+              "type": "string"
+            },
+            "datatype": "external-id"
+          },
+          "type": "statement",
+          "id": "Q9386984$8BED16A0-907F-47F5-8A46-612A46A2FBDA",
+          "rank": "normal",
+          "references": [
+            {
+              "hash": "d709174cc609072fbf310bb52ddfb7aa2332b473",
+              "snaks": {
+                "P248": [
+                  {
+                    "snaktype": "value",
+                    "property": "P248",
+                    "hash": "fc376b4e25f8c58fa7210b660e00a66558a3332b",
+                    "datavalue": {
+                      "value": {
+                        "entity-type": "item",
+                        "numeric-id": 809830,
+                        "id": "Q809830"
+                      },
+                      "type": "wikibase-entityid"
+                    },
+                    "datatype": "wikibase-item"
+                  }
+                ]
+              },
+              "snaks-order": [
+                "P248"
+              ]
+            }
+          ]
+        }
+      ],
+      "P373": [
+        {
+          "mainsnak": {
+            "snaktype": "value",
+            "property": "P373",
+            "hash": "e001a8f829a5e4296d210881f5bdf5396ef5b4e1",
+            "datavalue": {
+              "value": "Barrage de Serre-Ponçon",
+              "type": "string"
+            },
+            "datatype": "string"
+          },
+          "type": "statement",
+          "id": "Q9386984$c801e62f-4450-095f-798f-6e510007a904",
+          "rank": "normal"
+        }
+      ],
+      "P214": [
+        {
+          "mainsnak": {
+            "snaktype": "value",
+            "property": "P214",
+            "hash": "b690071605fe80a145aef8df826516cbe0b4f681",
+            "datavalue": {
+              "value": "315131203",
+              "type": "string"
+            },
+            "datatype": "external-id"
+          },
+          "type": "statement",
+          "id": "Q9386984$31982B18-BB95-4D0E-B546-A2F9FF00B457",
+          "rank": "normal"
+        }
+      ],
+      "P571": [
+        {
+          "mainsnak": {
+            "snaktype": "value",
+            "property": "P571",
+            "hash": "61cd6ca9d66770927f780df8fe38f04ce700abed",
+            "datavalue": {
+              "value": {
+                "time": "+1955-00-00T00:00:00Z",
+                "timezone": 0,
+                "before": 0,
+                "after": 0,
+                "precision": 9,
+                "calendarmodel": "http://www.wikidata.org/entity/Q1985727"
+              },
+              "type": "time"
+            },
+            "datatype": "time"
+          },
+          "type": "statement",
+          "id": "Q9386984$85AE7903-AD51-4479-B38F-0EB4218005B5",
+          "rank": "normal",
+          "references": [
+            {
+              "hash": "4fac97aec051bb182bb86e6e1e8e934042b7b862",
+              "snaks": {
+                "P143": [
+                  {
+                    "snaktype": "value",
+                    "property": "P143",
+                    "hash": "390e3b73e7cd926978cab220968d0e3451cfb814",
+                    "datavalue": {
+                      "value": {
+                        "entity-type": "item",
+                        "numeric-id": 199698,
+                        "id": "Q199698"
+                      },
+                      "type": "wikibase-entityid"
+                    },
+                    "datatype": "wikibase-item"
+                  }
+                ],
+                "P4656": [
+                  {
+                    "snaktype": "value",
+                    "property": "P4656",
+                    "hash": "93fdef4b33686804de7143e243b52a31f7d7510f",
+                    "datavalue": {
+                      "value": "https://uk.wikipedia.org/w/index.php?title=ГЕС_Сер-Понсон&oldid=20996182",
+                      "type": "string"
+                    },
+                    "datatype": "url"
+                  }
+                ]
+              },
+              "snaks-order": [
+                "P143",
+                "P4656"
+              ]
+            }
+          ]
+        }
+      ],
+      "P2043": [
+        {
+          "mainsnak": {
+            "snaktype": "value",
+            "property": "P2043",
+            "hash": "0dc26a5697046b96aac35116cb488fcbff72a114",
+            "datavalue": {
+              "value": {
+                "amount": "+630",
+                "unit": "http://www.wikidata.org/entity/Q11573"
+              },
+              "type": "quantity"
+            },
+            "datatype": "quantity"
+          },
+          "type": "statement",
+          "id": "Q9386984$D177CA01-A231-44F7-BBFF-97C7BF204E85",
+          "rank": "normal",
+          "references": [
+            {
+              "hash": "4fac97aec051bb182bb86e6e1e8e934042b7b862",
+              "snaks": {
+                "P143": [
+                  {
+                    "snaktype": "value",
+                    "property": "P143",
+                    "hash": "390e3b73e7cd926978cab220968d0e3451cfb814",
+                    "datavalue": {
+                      "value": {
+                        "entity-type": "item",
+                        "numeric-id": 199698,
+                        "id": "Q199698"
+                      },
+                      "type": "wikibase-entityid"
+                    },
+                    "datatype": "wikibase-item"
+                  }
+                ],
+                "P4656": [
+                  {
+                    "snaktype": "value",
+                    "property": "P4656",
+                    "hash": "93fdef4b33686804de7143e243b52a31f7d7510f",
+                    "datavalue": {
+                      "value": "https://uk.wikipedia.org/w/index.php?title=ГЕС_Сер-Понсон&oldid=20996182",
+                      "type": "string"
+                    },
+                    "datatype": "url"
+                  }
+                ]
+              },
+              "snaks-order": [
+                "P143",
+                "P4656"
+              ]
+            }
+          ]
+        }
+      ],
+      "P454": [
+        {
+          "mainsnak": {
+            "snaktype": "value",
+            "property": "P454",
+            "hash": "cb86dad4d408cda88e3fa185492888e7beaa536b",
+            "datavalue": {
+              "value": "20003762",
+              "type": "string"
+            },
+            "datatype": "external-id"
+          },
+          "type": "statement",
+          "id": "Q9386984$1D2D234B-EAB9-4232-B37D-FB8FCCE1AB38",
+          "rank": "normal"
+        }
+      ],
+      "P2671": [
+        {
+          "mainsnak": {
+            "snaktype": "value",
+            "property": "P2671",
+            "hash": "6e6c0a260be2b618a44efdb30148ecdcd3ef6340",
+            "datavalue": {
+              "value": "/g/121h828j",
+              "type": "string"
+            },
+            "datatype": "external-id"
+          },
+          "type": "statement",
+          "id": "Q9386984$A9968D80-F6C6-4B4B-B24F-E3B9D703170D",
+          "rank": "normal"
+        }
+      ],
+      "P2109": [
+        {
+          "mainsnak": {
+            "snaktype": "value",
+            "property": "P2109",
+            "hash": "8fb641fa8b9d7f4c6cbb0b89e255e194f16dcef3",
+            "datavalue": {
+              "value": {
+                "amount": "+352",
+                "unit": "http://www.wikidata.org/entity/Q6982035"
+              },
+              "type": "quantity"
+            },
+            "datatype": "quantity"
+          },
+          "type": "statement",
+          "id": "Q9386984$C363A5C0-A55C-4C48-90F2-36762E60AF98",
+          "rank": "normal",
+          "references": [
+            {
+              "hash": "89ce2ce2303c60072162127354e955b4c5df7362",
+              "snaks": {
+                "P143": [
+                  {
+                    "snaktype": "value",
+                    "property": "P143",
+                    "hash": "390e3b73e7cd926978cab220968d0e3451cfb814",
+                    "datavalue": {
+                      "value": {
+                        "entity-type": "item",
+                        "numeric-id": 199698,
+                        "id": "Q199698"
+                      },
+                      "type": "wikibase-entityid"
+                    },
+                    "datatype": "wikibase-item"
+                  }
+                ],
+                "P4656": [
+                  {
+                    "snaktype": "value",
+                    "property": "P4656",
+                    "hash": "a3e5992d52f9a9b822e31b442e95d3a56c8d058e",
+                    "datavalue": {
+                      "value": "https://uk.wikipedia.org/w/index.php?title=ГЕС_Сер-Понсон&oldid=26050314",
+                      "type": "string"
+                    },
+                    "datatype": "url"
+                  }
+                ]
+              },
+              "snaks-order": [
+                "P143",
+                "P4656"
+              ]
+            }
+          ]
+        }
+      ],
+      "P8645": [
+        {
+          "mainsnak": {
+            "snaktype": "value",
+            "property": "P8645",
+            "hash": "f70add2a8276c6263d8099e2db5de8b9031169d8",
+            "datavalue": {
+              "value": "17W100P100P02926",
+              "type": "string"
+            },
+            "datatype": "external-id"
+          },
+          "type": "statement",
+          "id": "Q9386984$8F79AF0D-9C39-4DAA-95A1-F43FACC43B99",
+          "rank": "normal"
+        },
+        {
+          "mainsnak": {
+            "snaktype": "value",
+            "property": "P8645",
+            "hash": "9ca71b52c81df41ea05fce3c6c78d12db0b7352b",
+            "datavalue": {
+              "value": "17W0000000126513",
+              "type": "string"
+            },
+            "datatype": "external-id"
+          },
+          "type": "statement",
+          "id": "Q9386984$54B65ADF-AC95-45F3-9F21-B75D40A70175",
+          "rank": "normal"
+        }
+      ],
+      "P138": [
+        {
+          "mainsnak": {
+            "snaktype": "value",
+            "property": "P138",
+            "hash": "4c2e44130e287d2746394f2394ee0588f91c525e",
+            "datavalue": {
+              "value": {
+                "entity-type": "item",
+                "numeric-id": 131396661,
+                "id": "Q131396661"
+              },
+              "type": "wikibase-entityid"
+            },
+            "datatype": "wikibase-item"
+          },
+          "type": "statement",
+          "id": "Q9386984$55ae6f0f-4066-c96a-a037-fdc7edbca3d1",
+          "rank": "normal"
+        }
+      ],
+      "P10689": [
+        {
+          "mainsnak": {
+            "snaktype": "value",
+            "property": "P10689",
+            "hash": "a23a300100dff2d96d9f9fc086c4da5af7ca78c1",
+            "datavalue": {
+              "value": "80671354",
+              "type": "string"
+            },
+            "datatype": "external-id"
+          },
+          "type": "statement",
+          "id": "Q9386984$3ed504ea-4f21-8e68-f73b-a825d5812fbc",
+          "rank": "normal"
+        }
+      ],
+      "P127": [
+        {
+          "mainsnak": {
+            "snaktype": "value",
+            "property": "P127",
+            "hash": "eb0716c16f89b9241e665aa5e6eeaa4185badbc0",
+            "datavalue": {
+              "value": {
+                "entity-type": "item",
+                "numeric-id": 274591,
+                "id": "Q274591"
+              },
+              "type": "wikibase-entityid"
+            },
+            "datatype": "wikibase-item"
+          },
+          "type": "statement",
+          "id": "Q9386984$760a396e-4ed3-a14d-f5be-7709f9156b41",
+          "rank": "normal"
+        }
+      ],
+      "P137": [
+        {
+          "mainsnak": {
+            "snaktype": "value",
+            "property": "P137",
+            "hash": "cec58b835110d157ec6e17d0fb3e8a4ca6658b9e",
+            "datavalue": {
+              "value": {
+                "entity-type": "item",
+                "numeric-id": 274591,
+                "id": "Q274591"
+              },
+              "type": "wikibase-entityid"
+            },
+            "datatype": "wikibase-item"
+          },
+          "type": "statement",
+          "id": "Q9386984$60560bdd-4879-6496-90d5-b086033f834e",
+          "rank": "normal"
+        }
+      ]
+    },
+    "sitelinks": {
+      "commonswiki": {
+        "site": "commonswiki",
+        "title": "Category:Barrage de Serre-Ponçon",
+        "badges": [],
+        "url": "https://commons.wikimedia.org/wiki/Category:Barrage_de_Serre-Pon%C3%A7on"
+      },
+      "frwiki": {
+        "site": "frwiki",
+        "title": "Barrage de Serre-Ponçon",
+        "badges": [],
+        "url": "https://fr.wikipedia.org/wiki/Barrage_de_Serre-Pon%C3%A7on"
+      },
+      "itwiki": {
+        "site": "itwiki",
+        "title": "Diga di Serre Ponçon",
+        "badges": [],
+        "url": "https://it.wikipedia.org/wiki/Diga_di_Serre_Pon%C3%A7on"
+      },
+      "nowiki": {
+        "site": "nowiki",
+        "title": "Serre Ponçon-demningen",
+        "badges": [],
+        "url": "https://no.wikipedia.org/wiki/Serre_Pon%C3%A7on-demningen"
+      },
+      "plwiki": {
+        "site": "plwiki",
+        "title": "Zapora Serre-Ponçon",
+        "badges": [],
+        "url": "https://pl.wikipedia.org/wiki/Zapora_Serre-Pon%C3%A7on"
+      },
+      "ukwiki": {
+        "site": "ukwiki",
+        "title": "ГЕС Сер-Понсон",
+        "badges": [],
+        "url": "https://uk.wikipedia.org/wiki/%D0%93%D0%95%D0%A1_%D0%A1%D0%B5%D1%80-%D0%9F%D0%BE%D0%BD%D1%81%D0%BE%D0%BD"
+      }
+    }
+  }
+}

@@ -1,0 +1,242 @@
+{
+  "saved_at": "2026-03-07T13:49:49.625Z",
+  "value": {
+    "pageid": 53070037,
+    "ns": 0,
+    "title": "Q52194140",
+    "lastrevid": 2460079292,
+    "modified": "2026-02-02T14:32:09Z",
+    "type": "item",
+    "id": "Q52194140",
+    "labels": {
+      "ar": {
+        "language": "ar",
+        "value": "1956 في تونس"
+      },
+      "en": {
+        "language": "en",
+        "value": "1956 in Tunisia"
+      },
+      "sv": {
+        "language": "sv",
+        "value": "1956 i Tunisien"
+      },
+      "de": {
+        "language": "de",
+        "value": "1956 in Tunesien"
+      },
+      "es": {
+        "language": "es",
+        "value": "Túnez en 1956"
+      },
+      "ml": {
+        "language": "ml",
+        "value": "1956 ടുണീഷ്യയിൽ"
+      },
+      "fr": {
+        "language": "fr",
+        "value": "1956 en Tunisie"
+      },
+      "ja": {
+        "language": "ja",
+        "value": "1956年のチュニジア"
+      },
+      "id": {
+        "language": "id",
+        "value": "Tunisia dalam tahun 1956"
+      }
+    },
+    "descriptions": {
+      "nl": {
+        "language": "nl",
+        "value": "gebeurtenis in jaar"
+      },
+      "sv": {
+        "language": "sv",
+        "value": "översikt över Tunisienrelaterade händelser under år 1956"
+      },
+      "en": {
+        "language": "en",
+        "value": "overview of Tunisia-related events during the year of 1956"
+      },
+      "de": {
+        "language": "de",
+        "value": "Ereignisse des Jahres 1956 in Tunesien"
+      },
+      "fr": {
+        "language": "fr",
+        "value": "chronologie de la Tunisie"
+      }
+    },
+    "aliases": {
+      "ar": [
+        {
+          "language": "ar",
+          "value": "١٩٥٦ في تونس"
+        }
+      ]
+    },
+    "claims": {
+      "P31": [
+        {
+          "mainsnak": {
+            "snaktype": "value",
+            "property": "P31",
+            "hash": "b9953cd69a9e5fc8f8fe263b847673b0013cf93f",
+            "datavalue": {
+              "value": {
+                "entity-type": "item",
+                "numeric-id": 18340514,
+                "id": "Q18340514"
+              },
+              "type": "wikibase-entityid"
+            },
+            "datatype": "wikibase-item"
+          },
+          "type": "statement",
+          "id": "Q52194140$D379198D-7026-421C-8042-484B25B2A49C",
+          "rank": "normal"
+        }
+      ],
+      "P585": [
+        {
+          "mainsnak": {
+            "snaktype": "value",
+            "property": "P585",
+            "hash": "541d389b6a794fdd13c299aa2dc9495ed63e6c57",
+            "datavalue": {
+              "value": {
+                "time": "+1956-01-01T00:00:00Z",
+                "timezone": 0,
+                "before": 0,
+                "after": 0,
+                "precision": 9,
+                "calendarmodel": "http://www.wikidata.org/entity/Q1985727"
+              },
+              "type": "time"
+            },
+            "datatype": "time"
+          },
+          "type": "statement",
+          "id": "Q52194140$287A134D-9899-4DAB-A68B-9EB6CECE36F5",
+          "rank": "normal"
+        }
+      ],
+      "P156": [
+        {
+          "mainsnak": {
+            "snaktype": "value",
+            "property": "P156",
+            "hash": "e1e7b331d573ce76332a2f8547ffbd60cfada7af",
+            "datavalue": {
+              "value": {
+                "entity-type": "item",
+                "numeric-id": 52194141,
+                "id": "Q52194141"
+              },
+              "type": "wikibase-entityid"
+            },
+            "datatype": "wikibase-item"
+          },
+          "type": "statement",
+          "id": "Q52194140$D8B89704-393C-4280-B693-7D1B928AF302",
+          "rank": "normal"
+        }
+      ],
+      "P155": [
+        {
+          "mainsnak": {
+            "snaktype": "value",
+            "property": "P155",
+            "hash": "7d27034c08c7cf1c1390402d9510088be20c3864",
+            "datavalue": {
+              "value": {
+                "entity-type": "item",
+                "numeric-id": 62262492,
+                "id": "Q62262492"
+              },
+              "type": "wikibase-entityid"
+            },
+            "datatype": "wikibase-item"
+          },
+          "type": "statement",
+          "id": "Q52194140$e9e383bc-4a88-663b-1b19-f7f623c91614",
+          "rank": "normal"
+        }
+      ],
+      "P910": [
+        {
+          "mainsnak": {
+            "snaktype": "value",
+            "property": "P910",
+            "hash": "e6ec0ebbaf17e240a4e034425cea720f8a8c4d61",
+            "datavalue": {
+              "value": {
+                "entity-type": "item",
+                "numeric-id": 8148132,
+                "id": "Q8148132"
+              },
+              "type": "wikibase-entityid"
+            },
+            "datatype": "wikibase-item"
+          },
+          "type": "statement",
+          "id": "Q52194140$8158fb77-4919-cddc-ea3f-5a73dced825c",
+          "rank": "normal"
+        }
+      ],
+      "P373": [
+        {
+          "mainsnak": {
+            "snaktype": "value",
+            "property": "P373",
+            "hash": "ba9aaafcdfbb535e5d9a9842aa327895c49f0564",
+            "datavalue": {
+              "value": "1956 in Tunisia",
+              "type": "string"
+            },
+            "datatype": "string"
+          },
+          "type": "statement",
+          "id": "Q52194140$36feff7f-4bbe-85da-858e-949a08a7b74d",
+          "rank": "normal"
+        }
+      ],
+      "P17": [
+        {
+          "mainsnak": {
+            "snaktype": "value",
+            "property": "P17",
+            "hash": "ea1471d8524246236fa68a75d628353b3c3f63cb",
+            "datavalue": {
+              "value": {
+                "entity-type": "item",
+                "numeric-id": 948,
+                "id": "Q948"
+              },
+              "type": "wikibase-entityid"
+            },
+            "datatype": "wikibase-item"
+          },
+          "type": "statement",
+          "id": "Q52194140$3F46FC91-3449-47C2-93B2-AF4B80B0EAC6",
+          "rank": "normal"
+        }
+      ]
+    },
+    "sitelinks": {
+      "arwiki": {
+        "site": "arwiki",
+        "title": "1956 في تونس",
+        "badges": [],
+        "url": "https://ar.wikipedia.org/wiki/1956_%D9%81%D9%8A_%D8%AA%D9%88%D9%86%D8%B3"
+      },
+      "frwiki": {
+        "site": "frwiki",
+        "title": "1956 en Tunisie",
+        "badges": [],
+        "url": "https://fr.wikipedia.org/wiki/1956_en_Tunisie"
+      }
+    }
+  }
+}

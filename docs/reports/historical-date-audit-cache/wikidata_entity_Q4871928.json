@@ -1,0 +1,309 @@
+{
+  "saved_at": "2026-03-07T15:09:34.954Z",
+  "value": {
+    "pageid": 4653634,
+    "ns": 0,
+    "title": "Q4871928",
+    "lastrevid": 2337740725,
+    "modified": "2025-04-14T01:14:40Z",
+    "type": "item",
+    "id": "Q4871928",
+    "labels": {
+      "ar": {
+        "language": "ar",
+        "value": "معركة نيم"
+      },
+      "en": {
+        "language": "en",
+        "value": "Battle of Nîmes"
+      },
+      "nl": {
+        "language": "nl",
+        "value": "Slag bij Nîmes"
+      },
+      "fr": {
+        "language": "fr",
+        "value": "bataille de Nîmes"
+      },
+      "es": {
+        "language": "es",
+        "value": "Batalla de Nîmes"
+      },
+      "ru": {
+        "language": "ru",
+        "value": "Взятие Нима"
+      },
+      "ga": {
+        "language": "ga",
+        "value": "Cath Nîmes"
+      },
+      "uz": {
+        "language": "uz",
+        "value": "Nîmes qamali"
+      }
+    },
+    "descriptions": {
+      "fr": {
+        "language": "fr",
+        "value": "bataille opposant les Francs aux Omeyyades"
+      },
+      "en": {
+        "language": "en",
+        "value": "8th-century siege in France"
+      }
+    },
+    "aliases": {
+      "en": [
+        {
+          "language": "en",
+          "value": "Battle of Nimes"
+        }
+      ],
+      "nl": [
+        {
+          "language": "nl",
+          "value": "Slag bij Nimes"
+        }
+      ]
+    },
+    "claims": {
+      "P625": [
+        {
+          "mainsnak": {
+            "snaktype": "value",
+            "property": "P625",
+            "hash": "aac5b56a0561839cb77b23c73632615e2c5d00bc",
+            "datavalue": {
+              "value": {
+                "latitude": 43.836699,
+                "longitude": 4.360054,
+                "altitude": null,
+                "precision": 0.00000277777777778,
+                "globe": "http://www.wikidata.org/entity/Q2"
+              },
+              "type": "globecoordinate"
+            },
+            "datatype": "globe-coordinate"
+          },
+          "type": "statement",
+          "id": "Q4871928$58071D57-9821-461C-B4BC-01E14C4D8414",
+          "rank": "normal",
+          "references": [
+            {
+              "hash": "fa278ebfc458360e5aed63d5058cca83c46134f1",
+              "snaks": {
+                "P143": [
+                  {
+                    "snaktype": "value",
+                    "property": "P143",
+                    "hash": "e4f6d9441d0600513c4533c672b5ab472dc73694",
+                    "datavalue": {
+                      "value": {
+                        "entity-type": "item",
+                        "numeric-id": 328,
+                        "id": "Q328"
+                      },
+                      "type": "wikibase-entityid"
+                    },
+                    "datatype": "wikibase-item"
+                  }
+                ]
+              },
+              "snaks-order": [
+                "P143"
+              ]
+            }
+          ]
+        }
+      ],
+      "P646": [
+        {
+          "mainsnak": {
+            "snaktype": "value",
+            "property": "P646",
+            "hash": "1c8208a375a85317bb6f68ecf39d816658b856c9",
+            "datavalue": {
+              "value": "/m/0d1rxz",
+              "type": "string"
+            },
+            "datatype": "external-id"
+          },
+          "type": "statement",
+          "id": "Q4871928$F6AF20CA-4D98-4EAA-A506-EFA3DE73D339",
+          "rank": "normal",
+          "references": [
+            {
+              "hash": "2b00cb481cddcac7623114367489b5c194901c4a",
+              "snaks": {
+                "P248": [
+                  {
+                    "snaktype": "value",
+                    "property": "P248",
+                    "hash": "a94b740202b097dd33355e0e6c00e54b9395e5e0",
+                    "datavalue": {
+                      "value": {
+                        "entity-type": "item",
+                        "numeric-id": 15241312,
+                        "id": "Q15241312"
+                      },
+                      "type": "wikibase-entityid"
+                    },
+                    "datatype": "wikibase-item"
+                  }
+                ],
+                "P577": [
+                  {
+                    "snaktype": "value",
+                    "property": "P577",
+                    "hash": "fde79ecb015112d2f29229ccc1ec514ed3e71fa2",
+                    "datavalue": {
+                      "value": {
+                        "time": "+2013-10-28T00:00:00Z",
+                        "timezone": 0,
+                        "before": 0,
+                        "after": 0,
+                        "precision": 11,
+                        "calendarmodel": "http://www.wikidata.org/entity/Q1985727"
+                      },
+                      "type": "time"
+                    },
+                    "datatype": "time"
+                  }
+                ]
+              },
+              "snaks-order": [
+                "P248",
+                "P577"
+              ]
+            }
+          ]
+        }
+      ],
+      "P31": [
+        {
+          "mainsnak": {
+            "snaktype": "value",
+            "property": "P31",
+            "hash": "baa1df9dcd37b9f3a062e7a14a8bef0c37078d32",
+            "datavalue": {
+              "value": {
+                "entity-type": "item",
+                "numeric-id": 178561,
+                "id": "Q178561"
+              },
+              "type": "wikibase-entityid"
+            },
+            "datatype": "wikibase-item"
+          },
+          "type": "statement",
+          "id": "Q4871928$42C3829C-D6F9-40AB-9557-E839CA59D240",
+          "rank": "normal"
+        }
+      ],
+      "P276": [
+        {
+          "mainsnak": {
+            "snaktype": "value",
+            "property": "P276",
+            "hash": "69d2c62d1bb0758197b5ed513fd9a84d931076c3",
+            "datavalue": {
+              "value": {
+                "entity-type": "item",
+                "numeric-id": 1747219,
+                "id": "Q1747219"
+              },
+              "type": "wikibase-entityid"
+            },
+            "datatype": "wikibase-item"
+          },
+          "type": "statement",
+          "id": "Q4871928$E18F228B-362E-418D-9A56-6B315C6B4766",
+          "rank": "normal"
+        }
+      ],
+      "P585": [
+        {
+          "mainsnak": {
+            "snaktype": "value",
+            "property": "P585",
+            "hash": "935de97d7a601a7dd2fc867b170e0fe2e6eef6e3",
+            "datavalue": {
+              "value": {
+                "time": "+0736-00-00T00:00:00Z",
+                "timezone": 0,
+                "before": 0,
+                "after": 0,
+                "precision": 9,
+                "calendarmodel": "http://www.wikidata.org/entity/Q1985786"
+              },
+              "type": "time"
+            },
+            "datatype": "time"
+          },
+          "type": "statement",
+          "id": "Q4871928$c1cf54c1-48db-b10a-9eda-0dea2cf9db69",
+          "rank": "normal"
+        }
+      ],
+      "P17": [
+        {
+          "mainsnak": {
+            "snaktype": "value",
+            "property": "P17",
+            "hash": "c05db5d169c2560b9799d567a803d20a392f53e4",
+            "datavalue": {
+              "value": {
+                "entity-type": "item",
+                "numeric-id": 142,
+                "id": "Q142"
+              },
+              "type": "wikibase-entityid"
+            },
+            "datatype": "wikibase-item"
+          },
+          "type": "statement",
+          "id": "Q4871928$5F5EFBC3-978C-4589-90D4-312B022E4AC6",
+          "rank": "normal"
+        }
+      ]
+    },
+    "sitelinks": {
+      "arwiki": {
+        "site": "arwiki",
+        "title": "معركة نيم",
+        "badges": [],
+        "url": "https://ar.wikipedia.org/wiki/%D9%85%D8%B9%D8%B1%D9%83%D8%A9_%D9%86%D9%8A%D9%85"
+      },
+      "enwiki": {
+        "site": "enwiki",
+        "title": "Siege of Nîmes",
+        "badges": [],
+        "url": "https://en.wikipedia.org/wiki/Siege_of_N%C3%AEmes"
+      },
+      "frwiki": {
+        "site": "frwiki",
+        "title": "Bataille de Nîmes",
+        "badges": [],
+        "url": "https://fr.wikipedia.org/wiki/Bataille_de_N%C3%AEmes"
+      },
+      "nlwiki": {
+        "site": "nlwiki",
+        "title": "Slag bij Nîmes",
+        "badges": [],
+        "url": "https://nl.wikipedia.org/wiki/Slag_bij_N%C3%AEmes"
+      },
+      "ruwiki": {
+        "site": "ruwiki",
+        "title": "Взятие Нима",
+        "badges": [],
+        "url": "https://ru.wikipedia.org/wiki/%D0%92%D0%B7%D1%8F%D1%82%D0%B8%D0%B5_%D0%9D%D0%B8%D0%BC%D0%B0"
+      },
+      "uzwiki": {
+        "site": "uzwiki",
+        "title": "Nîmes qamali",
+        "badges": [],
+        "url": "https://uz.wikipedia.org/wiki/N%C3%AEmes_qamali"
+      }
+    }
+  }
+}

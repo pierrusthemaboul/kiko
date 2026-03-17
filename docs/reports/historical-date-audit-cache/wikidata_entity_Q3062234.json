@@ -1,0 +1,582 @@
+{
+  "saved_at": "2026-03-07T13:35:33.029Z",
+  "value": {
+    "pageid": 2926930,
+    "ns": 0,
+    "title": "Q3062234",
+    "lastrevid": 2447969227,
+    "modified": "2025-12-27T23:04:42Z",
+    "type": "item",
+    "id": "Q3062234",
+    "labels": {
+      "cs": {
+        "language": "cs",
+        "value": "Koloniální výstava"
+      },
+      "fr": {
+        "language": "fr",
+        "value": "exposition coloniale"
+      },
+      "en": {
+        "language": "en",
+        "value": "colonial exhibition"
+      },
+      "es": {
+        "language": "es",
+        "value": "exposición colonial"
+      },
+      "he": {
+        "language": "he",
+        "value": "תערוכה קולוניאלית"
+      },
+      "pt": {
+        "language": "pt",
+        "value": "Exposição colonial"
+      },
+      "zh": {
+        "language": "zh",
+        "value": "殖民地博覽會"
+      },
+      "ja": {
+        "language": "ja",
+        "value": "植民地博覧会"
+      },
+      "ca": {
+        "language": "ca",
+        "value": "Exposició colonial"
+      },
+      "zh-hans": {
+        "language": "zh-hans",
+        "value": "殖民地博览会"
+      },
+      "nl": {
+        "language": "nl",
+        "value": "koloniale tentoonstelling"
+      },
+      "pl": {
+        "language": "pl",
+        "value": "wystawa kolonialna"
+      },
+      "de": {
+        "language": "de",
+        "value": "Kolonialausstellung"
+      },
+      "eu": {
+        "language": "eu",
+        "value": "Erakusketa kolonial"
+      },
+      "eo": {
+        "language": "eo",
+        "value": "kolonia ekspozicio"
+      },
+      "ar": {
+        "language": "ar",
+        "value": "المعرض الاستعماري"
+      },
+      "sl": {
+        "language": "sl",
+        "value": "kolonialna razstava"
+      },
+      "ru": {
+        "language": "ru",
+        "value": "колониальная выставка"
+      },
+      "gl": {
+        "language": "gl",
+        "value": "exposición colonial"
+      }
+    },
+    "descriptions": {
+      "en": {
+        "language": "en",
+        "value": "type of exhibition held to promote colonial empires"
+      },
+      "ca": {
+        "language": "ca",
+        "value": "Exposició internacional organitzada per donar suport als imperis colonials"
+      },
+      "pl": {
+        "language": "pl",
+        "value": "międzynarodowe targi wystawiennicze"
+      },
+      "sl": {
+        "language": "sl",
+        "value": "sejemska razstava za promocijo kolonialnega imperija"
+      },
+      "ru": {
+        "language": "ru",
+        "value": "тип выстовок, созданных для продвижения колониальных империй"
+      }
+    },
+    "aliases": {
+      "fr": [
+        {
+          "language": "fr",
+          "value": "Exposition Coloniale"
+        },
+        {
+          "language": "fr",
+          "value": "Expositions coloniales"
+        }
+      ],
+      "es": [
+        {
+          "language": "es",
+          "value": "Exposicion colonial"
+        },
+        {
+          "language": "es",
+          "value": "Exposición Colonial"
+        }
+      ],
+      "zh": [
+        {
+          "language": "zh",
+          "value": "殖民展覽"
+        },
+        {
+          "language": "zh",
+          "value": "殖民地展覽"
+        },
+        {
+          "language": "zh",
+          "value": "殖民地博览会"
+        }
+      ],
+      "ja": [
+        {
+          "language": "ja",
+          "value": "植民地展示会"
+        }
+      ],
+      "pl": [
+        {
+          "language": "pl",
+          "value": "colonial exhibition"
+        }
+      ],
+      "en": [
+        {
+          "language": "en",
+          "value": "colonial fair"
+        }
+      ],
+      "sl": [
+        {
+          "language": "sl",
+          "value": "kolonialni sejem"
+        }
+      ]
+    },
+    "claims": {
+      "P373": [
+        {
+          "mainsnak": {
+            "snaktype": "value",
+            "property": "P373",
+            "hash": "419a9b53ab3bdcd013878bf2e198d7b756d903cd",
+            "datavalue": {
+              "value": "Colonial exhibitions",
+              "type": "string"
+            },
+            "datatype": "string"
+          },
+          "type": "statement",
+          "id": "q3062234$B0E04961-C3D8-4600-AF5D-16D26481B14B",
+          "rank": "normal"
+        }
+      ],
+      "P646": [
+        {
+          "mainsnak": {
+            "snaktype": "value",
+            "property": "P646",
+            "hash": "aa162073c48a4b91c644f7b1c798f6df2c82eb25",
+            "datavalue": {
+              "value": "/m/0d1k92",
+              "type": "string"
+            },
+            "datatype": "external-id"
+          },
+          "type": "statement",
+          "id": "Q3062234$871820B8-8EFB-4EC6-A478-C6D8994AD380",
+          "rank": "normal",
+          "references": [
+            {
+              "hash": "2b00cb481cddcac7623114367489b5c194901c4a",
+              "snaks": {
+                "P248": [
+                  {
+                    "snaktype": "value",
+                    "property": "P248",
+                    "hash": "a94b740202b097dd33355e0e6c00e54b9395e5e0",
+                    "datavalue": {
+                      "value": {
+                        "entity-type": "item",
+                        "numeric-id": 15241312,
+                        "id": "Q15241312"
+                      },
+                      "type": "wikibase-entityid"
+                    },
+                    "datatype": "wikibase-item"
+                  }
+                ],
+                "P577": [
+                  {
+                    "snaktype": "value",
+                    "property": "P577",
+                    "hash": "fde79ecb015112d2f29229ccc1ec514ed3e71fa2",
+                    "datavalue": {
+                      "value": {
+                        "time": "+2013-10-28T00:00:00Z",
+                        "timezone": 0,
+                        "before": 0,
+                        "after": 0,
+                        "precision": 11,
+                        "calendarmodel": "http://www.wikidata.org/entity/Q1985727"
+                      },
+                      "type": "time"
+                    },
+                    "datatype": "time"
+                  }
+                ]
+              },
+              "snaks-order": [
+                "P248",
+                "P577"
+              ]
+            }
+          ]
+        }
+      ],
+      "P910": [
+        {
+          "mainsnak": {
+            "snaktype": "value",
+            "property": "P910",
+            "hash": "2261951fc7e272ecb64e63b1b4601fd37dab7808",
+            "datavalue": {
+              "value": {
+                "entity-type": "item",
+                "numeric-id": 8390067,
+                "id": "Q8390067"
+              },
+              "type": "wikibase-entityid"
+            },
+            "datatype": "wikibase-item"
+          },
+          "type": "statement",
+          "id": "Q3062234$BEDA119C-48FD-4E9B-AE72-4B0195A75B0F",
+          "rank": "normal",
+          "references": [
+            {
+              "hash": "d4bd87b862b12d99d26e86472d44f26858dee639",
+              "snaks": {
+                "P143": [
+                  {
+                    "snaktype": "value",
+                    "property": "P143",
+                    "hash": "f30cbd35620c4ea6d0633aaf0210a8916130469b",
+                    "datavalue": {
+                      "value": {
+                        "entity-type": "item",
+                        "numeric-id": 8447,
+                        "id": "Q8447"
+                      },
+                      "type": "wikibase-entityid"
+                    },
+                    "datatype": "wikibase-item"
+                  }
+                ]
+              },
+              "snaks-order": [
+                "P143"
+              ]
+            }
+          ]
+        }
+      ],
+      "P1014": [
+        {
+          "mainsnak": {
+            "snaktype": "value",
+            "property": "P1014",
+            "hash": "c5c81a8156636955f69d9b20a12546230ad5a669",
+            "datavalue": {
+              "value": "300260349",
+              "type": "string"
+            },
+            "datatype": "external-id"
+          },
+          "type": "statement",
+          "id": "Q3062234$9B5C2D85-88E2-4992-8EB7-3BF01B388135",
+          "rank": "normal"
+        }
+      ],
+      "P3219": [
+        {
+          "mainsnak": {
+            "snaktype": "value",
+            "property": "P3219",
+            "hash": "6c5a827eae9ca61d4961a5b183b76888c326ce1f",
+            "datavalue": {
+              "value": "expositions-coloniales",
+              "type": "string"
+            },
+            "datatype": "external-id"
+          },
+          "type": "statement",
+          "id": "Q3062234$CA4D7A37-FE5B-4C5A-9425-3DB6F0063418",
+          "rank": "normal"
+        }
+      ],
+      "P279": [
+        {
+          "mainsnak": {
+            "snaktype": "value",
+            "property": "P279",
+            "hash": "77206844d0045d1458abf8ec92d8c47f517b3bd3",
+            "datavalue": {
+              "value": {
+                "entity-type": "item",
+                "numeric-id": 288514,
+                "id": "Q288514"
+              },
+              "type": "wikibase-entityid"
+            },
+            "datatype": "wikibase-item"
+          },
+          "type": "statement",
+          "id": "Q3062234$ade87544-482d-b555-3ec4-4ba2ff0b67cd",
+          "rank": "normal",
+          "references": [
+            {
+              "hash": "35d791567a298f9c1bf498016aac4cc97d294383",
+              "snaks": {
+                "P248": [
+                  {
+                    "snaktype": "value",
+                    "property": "P248",
+                    "hash": "578482aa6aad544068482da29b1f8aae731fbc5d",
+                    "datavalue": {
+                      "value": {
+                        "entity-type": "item",
+                        "numeric-id": 611299,
+                        "id": "Q611299"
+                      },
+                      "type": "wikibase-entityid"
+                    },
+                    "datatype": "wikibase-item"
+                  }
+                ],
+                "P1014": [
+                  {
+                    "snaktype": "value",
+                    "property": "P1014",
+                    "hash": "c5c81a8156636955f69d9b20a12546230ad5a669",
+                    "datavalue": {
+                      "value": "300260349",
+                      "type": "string"
+                    },
+                    "datatype": "external-id"
+                  }
+                ],
+                "P813": [
+                  {
+                    "snaktype": "value",
+                    "property": "P813",
+                    "hash": "1fc17fba4ac259a9e05471c8ff5a0f7bc05b522a",
+                    "datavalue": {
+                      "value": {
+                        "time": "+2024-01-09T00:00:00Z",
+                        "timezone": 0,
+                        "before": 0,
+                        "after": 0,
+                        "precision": 11,
+                        "calendarmodel": "http://www.wikidata.org/entity/Q1985727"
+                      },
+                      "type": "time"
+                    },
+                    "datatype": "time"
+                  }
+                ]
+              },
+              "snaks-order": [
+                "P248",
+                "P1014",
+                "P813"
+              ]
+            }
+          ]
+        },
+        {
+          "mainsnak": {
+            "snaktype": "value",
+            "property": "P279",
+            "hash": "9daec526325888c1777efa0c63c7c37f5718cdbb",
+            "datavalue": {
+              "value": {
+                "entity-type": "item",
+                "numeric-id": 464980,
+                "id": "Q464980"
+              },
+              "type": "wikibase-entityid"
+            },
+            "datatype": "wikibase-item"
+          },
+          "type": "statement",
+          "id": "Q3062234$eff23de5-4236-a6f7-b2ec-3f5808a27fcc",
+          "rank": "normal"
+        }
+      ],
+      "P8408": [
+        {
+          "mainsnak": {
+            "snaktype": "value",
+            "property": "P8408",
+            "hash": "20681f3fb63b01f70919122aac0490d4a6e96a78",
+            "datavalue": {
+              "value": "ColonialExhibition",
+              "type": "string"
+            },
+            "datatype": "external-id"
+          },
+          "type": "statement",
+          "id": "Q3062234$0C7E6A73-E47E-4FB0-AE1F-34B53BDB0FD6",
+          "rank": "normal",
+          "references": [
+            {
+              "hash": "9a681f9dd95c90224547c404e11295f4f7dcf54e",
+              "snaks": {
+                "P248": [
+                  {
+                    "snaktype": "value",
+                    "property": "P248",
+                    "hash": "9d5780dddffa8746637a9929a936ab6b0f601e24",
+                    "datavalue": {
+                      "value": {
+                        "entity-type": "item",
+                        "numeric-id": 64139102,
+                        "id": "Q64139102"
+                      },
+                      "type": "wikibase-entityid"
+                    },
+                    "datatype": "wikibase-item"
+                  }
+                ],
+                "P813": [
+                  {
+                    "snaktype": "value",
+                    "property": "P813",
+                    "hash": "622a5a27fa5b25e7e7984974e9db494cf8460990",
+                    "datavalue": {
+                      "value": {
+                        "time": "+2020-07-09T00:00:00Z",
+                        "timezone": 0,
+                        "before": 0,
+                        "after": 0,
+                        "precision": 11,
+                        "calendarmodel": "http://www.wikidata.org/entity/Q1985727"
+                      },
+                      "type": "time"
+                    },
+                    "datatype": "time"
+                  }
+                ]
+              },
+              "snaks-order": [
+                "P248",
+                "P813"
+              ]
+            }
+          ]
+        }
+      ],
+      "P227": [
+        {
+          "mainsnak": {
+            "snaktype": "value",
+            "property": "P227",
+            "hash": "780705109bb5d4e0cf5f044d78af243f571b9a9e",
+            "datavalue": {
+              "value": "4751108-4",
+              "type": "string"
+            },
+            "datatype": "external-id"
+          },
+          "type": "statement",
+          "id": "Q3062234$5c9c7fd9-4c13-413b-f76a-d870848a48fa",
+          "rank": "normal"
+        }
+      ]
+    },
+    "sitelinks": {
+      "arwiki": {
+        "site": "arwiki",
+        "title": "المعرض الاستعماري",
+        "badges": [],
+        "url": "https://ar.wikipedia.org/wiki/%D8%A7%D9%84%D9%85%D8%B9%D8%B1%D8%B6_%D8%A7%D9%84%D8%A7%D8%B3%D8%AA%D8%B9%D9%85%D8%A7%D8%B1%D9%8A"
+      },
+      "cawiki": {
+        "site": "cawiki",
+        "title": "Exposició colonial",
+        "badges": [],
+        "url": "https://ca.wikipedia.org/wiki/Exposici%C3%B3_colonial"
+      },
+      "cswiki": {
+        "site": "cswiki",
+        "title": "Koloniální výstava",
+        "badges": [],
+        "url": "https://cs.wikipedia.org/wiki/Koloni%C3%A1ln%C3%AD_v%C3%BDstava"
+      },
+      "enwiki": {
+        "site": "enwiki",
+        "title": "Colonial exhibition",
+        "badges": [],
+        "url": "https://en.wikipedia.org/wiki/Colonial_exhibition"
+      },
+      "eswiki": {
+        "site": "eswiki",
+        "title": "Exposición colonial",
+        "badges": [],
+        "url": "https://es.wikipedia.org/wiki/Exposici%C3%B3n_colonial"
+      },
+      "euwiki": {
+        "site": "euwiki",
+        "title": "Erakusketa kolonial",
+        "badges": [],
+        "url": "https://eu.wikipedia.org/wiki/Erakusketa_kolonial"
+      },
+      "frwiki": {
+        "site": "frwiki",
+        "title": "Exposition coloniale",
+        "badges": [],
+        "url": "https://fr.wikipedia.org/wiki/Exposition_coloniale"
+      },
+      "hewiki": {
+        "site": "hewiki",
+        "title": "תערוכה קולוניאלית",
+        "badges": [],
+        "url": "https://he.wikipedia.org/wiki/%D7%AA%D7%A2%D7%A8%D7%95%D7%9B%D7%94_%D7%A7%D7%95%D7%9C%D7%95%D7%A0%D7%99%D7%90%D7%9C%D7%99%D7%AA"
+      },
+      "nlwiki": {
+        "site": "nlwiki",
+        "title": "Koloniale tentoonstelling",
+        "badges": [],
+        "url": "https://nl.wikipedia.org/wiki/Koloniale_tentoonstelling"
+      },
+      "ptwiki": {
+        "site": "ptwiki",
+        "title": "Exposição colonial",
+        "badges": [],
+        "url": "https://pt.wikipedia.org/wiki/Exposi%C3%A7%C3%A3o_colonial"
+      },
+      "zhwiki": {
+        "site": "zhwiki",
+        "title": "殖民博览会",
+        "badges": [],
+        "url": "https://zh.wikipedia.org/wiki/%E6%AE%96%E6%B0%91%E5%8D%9A%E8%A7%88%E4%BC%9A"
+      }
+    }
+  }
+}

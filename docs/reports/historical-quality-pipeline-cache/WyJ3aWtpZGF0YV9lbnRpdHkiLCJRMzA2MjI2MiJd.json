@@ -1,0 +1,184 @@
+{
+  "pageid": 2926957,
+  "ns": 0,
+  "title": "Q3062262",
+  "lastrevid": 2106964024,
+  "modified": "2024-03-20T14:56:52Z",
+  "type": "item",
+  "id": "Q3062262",
+  "labels": {
+    "fi": {
+      "language": "fi",
+      "value": "Pariisin maailmannäyttely"
+    },
+    "fr": {
+      "language": "fr",
+      "value": "Expositions universelles de Paris"
+    },
+    "it": {
+      "language": "it",
+      "value": "Esposizioni universali di Parigi"
+    },
+    "ro": {
+      "language": "ro",
+      "value": "Expozițiile Universale de la Paris"
+    }
+  },
+  "descriptions": {
+    "fi": {
+      "language": "fi",
+      "value": "täsmennyssivu"
+    }
+  },
+  "aliases": {
+    "fi": [
+      {
+        "language": "fi",
+        "value": "Pariisin maailmannäyttelyt"
+      }
+    ],
+    "fr": [
+      {
+        "language": "fr",
+        "value": "Exposition universelle, 1900"
+      },
+      {
+        "language": "fr",
+        "value": "Exposition Universelle de Paris"
+      },
+      {
+        "language": "fr",
+        "value": "Exposition universelle de paris"
+      },
+      {
+        "language": "fr",
+        "value": "Expositions universelles de paris"
+      },
+      {
+        "language": "fr",
+        "value": "Expositions Universelles De Paris"
+      },
+      {
+        "language": "fr",
+        "value": "Exposition universelle de Paris"
+      },
+      {
+        "language": "fr",
+        "value": "Exposition universelle à Paris"
+      }
+    ]
+  },
+  "claims": {
+    "P276": [
+      {
+        "mainsnak": {
+          "snaktype": "value",
+          "property": "P276",
+          "hash": "65737aff6befb67b52f4956ed02d8655213307f0",
+          "datavalue": {
+            "value": {
+              "entity-type": "item",
+              "numeric-id": 90,
+              "id": "Q90"
+            },
+            "type": "wikibase-entityid"
+          },
+          "datatype": "wikibase-item"
+        },
+        "type": "statement",
+        "id": "Q3062262$600937ac-486f-5e64-8114-798ee4a2ad87",
+        "rank": "normal"
+      }
+    ],
+    "P17": [
+      {
+        "mainsnak": {
+          "snaktype": "value",
+          "property": "P17",
+          "hash": "c05db5d169c2560b9799d567a803d20a392f53e4",
+          "datavalue": {
+            "value": {
+              "entity-type": "item",
+              "numeric-id": 142,
+              "id": "Q142"
+            },
+            "type": "wikibase-entityid"
+          },
+          "datatype": "wikibase-item"
+        },
+        "type": "statement",
+        "id": "Q3062262$9f472c07-4aa5-5c7e-32d8-f419c7da9b92",
+        "rank": "normal"
+      }
+    ],
+    "P910": [
+      {
+        "mainsnak": {
+          "snaktype": "value",
+          "property": "P910",
+          "hash": "65ea9ae6427a725b00df93270dcc293f337d507e",
+          "datavalue": {
+            "value": {
+              "entity-type": "item",
+              "numeric-id": 8952737,
+              "id": "Q8952737"
+            },
+            "type": "wikibase-entityid"
+          },
+          "datatype": "wikibase-item"
+        },
+        "type": "statement",
+        "id": "Q3062262$4d5281ee-6fe3-4858-8ebe-9a96572994e0",
+        "rank": "normal"
+      }
+    ],
+    "P2347": [
+      {
+        "mainsnak": {
+          "snaktype": "value",
+          "property": "P2347",
+          "hash": "a4b58112720729cd421c012b3969addfe9f3269a",
+          "datavalue": {
+            "value": "12808",
+            "type": "string"
+          },
+          "datatype": "external-id"
+        },
+        "type": "statement",
+        "id": "Q3062262$9A7D40B9-D0AC-42D8-ABD4-B89C5DF5B914",
+        "rank": "normal"
+      }
+    ],
+    "P2671": [
+      {
+        "mainsnak": {
+          "snaktype": "value",
+          "property": "P2671",
+          "hash": "370585c7ba346740aadf457a84417db01061d62a",
+          "datavalue": {
+            "value": "/g/1230_5hn",
+            "type": "string"
+          },
+          "datatype": "external-id"
+        },
+        "type": "statement",
+        "id": "Q3062262$53D7FFC2-5AFE-402B-9D7A-B071AA0C8D5A",
+        "rank": "normal"
+      }
+    ]
+  },
+  "sitelinks": {
+    "frwiki": {
+      "site": "frwiki",
+      "title": "Expositions universelles de Paris",
+      "badges": [],
+      "url": "https://fr.wikipedia.org/wiki/Expositions_universelles_de_Paris"
+    },
+    "itwiki": {
+      "site": "itwiki",
+      "title": "Esposizioni universali di Parigi",
+      "badges": [],
+      "url": "https://it.wikipedia.org/wiki/Esposizioni_universali_di_Parigi"
+    }
+  }
+}

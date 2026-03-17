@@ -1,0 +1,301 @@
+{
+  "saved_at": "2026-03-07T13:16:18.427Z",
+  "value": {
+    "pageid": 2908818,
+    "ns": 0,
+    "title": "Q3042914",
+    "lastrevid": 2421438888,
+    "modified": "2025-10-24T20:11:48Z",
+    "type": "item",
+    "id": "Q3042914",
+    "labels": {
+      "ca": {
+        "language": "ca",
+        "value": "història de la penicil·lina"
+      },
+      "en": {
+        "language": "en",
+        "value": "history of penicillin"
+      },
+      "fr": {
+        "language": "fr",
+        "value": "Découverte de la pénicilline"
+      },
+      "es": {
+        "language": "es",
+        "value": "historia de la penicilina"
+      },
+      "ar": {
+        "language": "ar",
+        "value": "تاريخ البنسلين"
+      },
+      "gl": {
+        "language": "gl",
+        "value": "historia da penicilina"
+      },
+      "zh": {
+        "language": "zh",
+        "value": "青黴素的歷史"
+      },
+      "ko": {
+        "language": "ko",
+        "value": "페니실린의 역사"
+      },
+      "sl": {
+        "language": "sl",
+        "value": "zgodovina penicilina"
+      }
+    },
+    "descriptions": {
+      "de": {
+        "language": "de",
+        "value": "Wikimedia-Geschichts-Artikel"
+      },
+      "fr": {
+        "language": "fr",
+        "value": "découverte médicale"
+      },
+      "en": {
+        "language": "en",
+        "value": "aspect of history"
+      },
+      "bn": {
+        "language": "bn",
+        "value": "ইতিহাসের বিভিন্ন দিক"
+      },
+      "uk": {
+        "language": "uk",
+        "value": "аспект історії"
+      },
+      "ko": {
+        "language": "ko",
+        "value": "페니실린에 관한 역사"
+      }
+    },
+    "aliases": {
+      "ca": [
+        {
+          "language": "ca",
+          "value": "Història de la penicil.lina"
+        },
+        {
+          "language": "ca",
+          "value": "Història de la penicil•lina"
+        },
+        {
+          "language": "ca",
+          "value": "Història de la peniciŀlina"
+        }
+      ],
+      "fr": [
+        {
+          "language": "fr",
+          "value": "Découverte de la Pénicilline"
+        },
+        {
+          "language": "fr",
+          "value": "Découverte de la Penicilline"
+        },
+        {
+          "language": "fr",
+          "value": "Découverte De La Pénicilline"
+        },
+        {
+          "language": "fr",
+          "value": "Decouverte de la penicilline"
+        }
+      ],
+      "en": [
+        {
+          "language": "en",
+          "value": "penicillin history"
+        }
+      ],
+      "es": [
+        {
+          "language": "es",
+          "value": "Anexo:Descubrimiento de la penicilina"
+        }
+      ]
+    },
+    "claims": {
+      "P31": [
+        {
+          "mainsnak": {
+            "snaktype": "value",
+            "property": "P31",
+            "hash": "7ad5c7929af39fc2ff8afed55f1192f80e71d936",
+            "datavalue": {
+              "value": {
+                "entity-type": "item",
+                "numeric-id": 17524420,
+                "id": "Q17524420"
+              },
+              "type": "wikibase-entityid"
+            },
+            "datatype": "wikibase-item"
+          },
+          "type": "statement",
+          "id": "Q3042914$11878204-142E-4107-9359-60FC7CE1B008",
+          "rank": "normal"
+        }
+      ],
+      "P3219": [
+        {
+          "mainsnak": {
+            "snaktype": "value",
+            "property": "P3219",
+            "hash": "89f7bafda4979f2e698333472f55f2bd471866d7",
+            "datavalue": {
+              "value": "fleming-decouverte-de-la-penicilline",
+              "type": "string"
+            },
+            "datatype": "external-id"
+          },
+          "type": "statement",
+          "id": "Q3042914$A13D7BC2-AD88-4257-AD61-71E1D33981FD",
+          "rank": "normal"
+        }
+      ],
+      "P646": [
+        {
+          "mainsnak": {
+            "snaktype": "value",
+            "property": "P646",
+            "hash": "2fd9ecccec17aaa6ef2c99e207e8be6251307d8c",
+            "datavalue": {
+              "value": "/m/0118gwh_",
+              "type": "string"
+            },
+            "datatype": "external-id"
+          },
+          "type": "statement",
+          "id": "Q3042914$BE971FB1-E62A-42F5-878F-DAB4B54C51CC",
+          "rank": "normal"
+        }
+      ],
+      "P4839": [
+        {
+          "mainsnak": {
+            "snaktype": "value",
+            "property": "P4839",
+            "hash": "49e1978a5e6792db1b681c6c0ba11b724f3b0ef9",
+            "datavalue": {
+              "value": "Entity[\"HistoricalEvent\", \"AlexanderFlemingDiscoversAntibioticPropertiesPenicillin\"]",
+              "type": "string"
+            },
+            "datatype": "external-id"
+          },
+          "type": "statement",
+          "id": "Q3042914$9A87E7B9-9573-4C47-BA9B-F931B111BFDC",
+          "rank": "normal"
+        }
+      ],
+      "P279": [
+        {
+          "mainsnak": {
+            "snaktype": "value",
+            "property": "P279",
+            "hash": "43fb9de281c284f1f66114018039b1dfe674066b",
+            "datavalue": {
+              "value": {
+                "entity-type": "item",
+                "numeric-id": 391148,
+                "id": "Q391148"
+              },
+              "type": "wikibase-entityid"
+            },
+            "datatype": "wikibase-item"
+          },
+          "type": "statement",
+          "id": "Q3042914$e0adb923-48f8-98c3-010e-e6442ee0c4f8",
+          "rank": "normal"
+        }
+      ],
+      "P1269": [
+        {
+          "mainsnak": {
+            "snaktype": "value",
+            "property": "P1269",
+            "hash": "2b853c0d6e93c76a2e981f306cab3d9b1ef70996",
+            "datavalue": {
+              "value": {
+                "entity-type": "item",
+                "numeric-id": 12190,
+                "id": "Q12190"
+              },
+              "type": "wikibase-entityid"
+            },
+            "datatype": "wikibase-item"
+          },
+          "type": "statement",
+          "id": "Q3042914$1a62579a-4a7e-6f7a-1f5c-5de10f4f11a4",
+          "rank": "normal"
+        }
+      ],
+      "P373": [
+        {
+          "mainsnak": {
+            "snaktype": "value",
+            "property": "P373",
+            "hash": "3b652f1964b0f38dd072ac9ea9edda91a38763fb",
+            "datavalue": {
+              "value": "Penicillin antibiotics",
+              "type": "string"
+            },
+            "datatype": "string"
+          },
+          "type": "statement",
+          "id": "Q3042914$109c5574-441e-c5c4-8326-4cc5fdd516c3",
+          "rank": "normal"
+        }
+      ]
+    },
+    "sitelinks": {
+      "arwiki": {
+        "site": "arwiki",
+        "title": "تاريخ البنسلين",
+        "badges": [],
+        "url": "https://ar.wikipedia.org/wiki/%D8%AA%D8%A7%D8%B1%D9%8A%D8%AE_%D8%A7%D9%84%D8%A8%D9%86%D8%B3%D9%84%D9%8A%D9%86"
+      },
+      "cawiki": {
+        "site": "cawiki",
+        "title": "Història de la penicil·lina",
+        "badges": [],
+        "url": "https://ca.wikipedia.org/wiki/Hist%C3%B2ria_de_la_penicil%C2%B7lina"
+      },
+      "enwiki": {
+        "site": "enwiki",
+        "title": "History of penicillin",
+        "badges": [
+          "Q17437798"
+        ],
+        "url": "https://en.wikipedia.org/wiki/History_of_penicillin"
+      },
+      "eswiki": {
+        "site": "eswiki",
+        "title": "Anexo:Descubrimiento de la penicilina",
+        "badges": [],
+        "url": "https://es.wikipedia.org/wiki/Anexo:Descubrimiento_de_la_penicilina"
+      },
+      "frwiki": {
+        "site": "frwiki",
+        "title": "Découverte de la pénicilline",
+        "badges": [],
+        "url": "https://fr.wikipedia.org/wiki/D%C3%A9couverte_de_la_p%C3%A9nicilline"
+      },
+      "glwiki": {
+        "site": "glwiki",
+        "title": "Historia da penicilina",
+        "badges": [],
+        "url": "https://gl.wikipedia.org/wiki/Historia_da_penicilina"
+      },
+      "kowiki": {
+        "site": "kowiki",
+        "title": "페니실린의 역사",
+        "badges": [],
+        "url": "https://ko.wikipedia.org/wiki/%ED%8E%98%EB%8B%88%EC%8B%A4%EB%A6%B0%EC%9D%98_%EC%97%AD%EC%82%AC"
+      }
+    }
+  }
+}

@@ -1,0 +1,322 @@
+{
+  "saved_at": "2026-03-07T15:28:52.854Z",
+  "value": {
+    "pageid": 107529981,
+    "ns": 0,
+    "title": "Q112651297",
+    "lastrevid": 2424988804,
+    "modified": "2025-11-03T11:45:58Z",
+    "type": "item",
+    "id": "Q112651297",
+    "labels": {
+      "cs": {
+        "language": "cs",
+        "value": "deportace Židů"
+      },
+      "en": {
+        "language": "en",
+        "value": "expulsion of Jews"
+      },
+      "de": {
+        "language": "de",
+        "value": "Vertreibung der Juden"
+      },
+      "sl": {
+        "language": "sl",
+        "value": "deportacija Judov"
+      },
+      "eo": {
+        "language": "eo",
+        "value": "deporto de judoj"
+      },
+      "ru": {
+        "language": "ru",
+        "value": "депортация евреев"
+      },
+      "es": {
+        "language": "es",
+        "value": "expulsión de judíos"
+      },
+      "ca": {
+        "language": "ca",
+        "value": "expulsió de jueus"
+      },
+      "gl": {
+        "language": "gl",
+        "value": "expulsión dos xudeus"
+      },
+      "fr": {
+        "language": "fr",
+        "value": "expulsion des Juifs"
+      },
+      "eu": {
+        "language": "eu",
+        "value": "Juduen kanporatzea"
+      }
+    },
+    "descriptions": {
+      "en": {
+        "language": "en",
+        "value": "expulsion of Jewish people from various countries"
+      }
+    },
+    "aliases": {
+      "de": [
+        {
+          "language": "de",
+          "value": "Abtransport"
+        },
+        {
+          "language": "de",
+          "value": "Judendeportation"
+        }
+      ],
+      "es": [
+        {
+          "language": "es",
+          "value": "deportación de judíos"
+        },
+        {
+          "language": "es",
+          "value": "expulsión de los judíos"
+        },
+        {
+          "language": "es",
+          "value": "Expulsiones de judíos"
+        }
+      ],
+      "en": [
+        {
+          "language": "en",
+          "value": "deportation of Jews"
+        },
+        {
+          "language": "en",
+          "value": "expelled Jews"
+        }
+      ],
+      "ca": [
+        {
+          "language": "ca",
+          "value": "deportació de jueus"
+        }
+      ],
+      "gl": [
+        {
+          "language": "gl",
+          "value": "deportación de xudeus"
+        }
+      ]
+    },
+    "claims": {
+      "P691": [
+        {
+          "mainsnak": {
+            "snaktype": "value",
+            "property": "P691",
+            "hash": "10b821e68ce1b235c1625f8ad6065fa59cd80ff2",
+            "datavalue": {
+              "value": "ph198683",
+              "type": "string"
+            },
+            "datatype": "external-id"
+          },
+          "type": "statement",
+          "qualifiers": {
+            "P1810": [
+              {
+                "snaktype": "value",
+                "property": "P1810",
+                "hash": "ca89931d681bba33d1219f0e772ed5d4903f0d1e",
+                "datavalue": {
+                  "value": "deportace Židů",
+                  "type": "string"
+                },
+                "datatype": "string"
+              }
+            ]
+          },
+          "qualifiers-order": [
+            "P1810"
+          ],
+          "id": "Q112651297$8292E24A-1829-4864-85BA-31C6F5B0F9D4",
+          "rank": "normal"
+        }
+      ],
+      "P279": [
+        {
+          "mainsnak": {
+            "snaktype": "value",
+            "property": "P279",
+            "hash": "97fbaf33243f6d58eda0708f78d8ebaab26e3ae7",
+            "datavalue": {
+              "value": {
+                "entity-type": "item",
+                "numeric-id": 878794,
+                "id": "Q878794"
+              },
+              "type": "wikibase-entityid"
+            },
+            "datatype": "wikibase-item"
+          },
+          "type": "statement",
+          "id": "Q112651297$d84529e6-48ad-1ff5-968b-c7925d3db9fc",
+          "rank": "normal"
+        },
+        {
+          "mainsnak": {
+            "snaktype": "value",
+            "property": "P279",
+            "hash": "dfe03e409f9b13859be22d651aa9ae0fe1f2cfa0",
+            "datavalue": {
+              "value": {
+                "entity-type": "item",
+                "numeric-id": 837556,
+                "id": "Q837556"
+              },
+              "type": "wikibase-entityid"
+            },
+            "datatype": "wikibase-item"
+          },
+          "type": "statement",
+          "id": "Q112651297$f954b713-4e47-1a11-e8e0-cdc0167d40be",
+          "rank": "normal"
+        }
+      ],
+      "P31": [
+        {
+          "mainsnak": {
+            "snaktype": "value",
+            "property": "P31",
+            "hash": "a4577a80255142c375caf61c2567bdf38d0e7b67",
+            "datavalue": {
+              "value": {
+                "entity-type": "item",
+                "numeric-id": 13418847,
+                "id": "Q13418847"
+              },
+              "type": "wikibase-entityid"
+            },
+            "datatype": "wikibase-item"
+          },
+          "type": "statement",
+          "id": "Q112651297$48050165-4c69-d02a-adfe-bc437e325c77",
+          "rank": "normal"
+        }
+      ],
+      "P8032": [
+        {
+          "mainsnak": {
+            "snaktype": "value",
+            "property": "P8032",
+            "hash": "e2766c8582eec73188f015adf24301b9aaa9fed7",
+            "datavalue": {
+              "value": {
+                "entity-type": "item",
+                "numeric-id": 7325,
+                "id": "Q7325"
+              },
+              "type": "wikibase-entityid"
+            },
+            "datatype": "wikibase-item"
+          },
+          "type": "statement",
+          "id": "Q112651297$bf4f4010-4f70-aa5f-2eb3-de55d9832803",
+          "rank": "normal"
+        }
+      ],
+      "P18": [
+        {
+          "mainsnak": {
+            "snaktype": "value",
+            "property": "P18",
+            "hash": "36b595ad1c8d0cbfc5bccd522f38a45712bd5752",
+            "datavalue": {
+              "value": "Expulsión de los judíos de Sevilla.jpg",
+              "type": "string"
+            },
+            "datatype": "commonsMedia"
+          },
+          "type": "statement",
+          "id": "Q112651297$f823fd5c-4e35-2854-97d3-c13b6736a8da",
+          "rank": "normal"
+        }
+      ],
+      "P910": [
+        {
+          "mainsnak": {
+            "snaktype": "value",
+            "property": "P910",
+            "hash": "c71e865e6b1b009428ca67f97e0fa15a9b9b620f",
+            "datavalue": {
+              "value": {
+                "entity-type": "item",
+                "numeric-id": 8432138,
+                "id": "Q8432138"
+              },
+              "type": "wikibase-entityid"
+            },
+            "datatype": "wikibase-item"
+          },
+          "type": "statement",
+          "id": "Q112651297$fd2d5496-487a-930f-f92a-91177e50709d",
+          "rank": "normal"
+        }
+      ],
+      "P373": [
+        {
+          "mainsnak": {
+            "snaktype": "value",
+            "property": "P373",
+            "hash": "2279338978055f9d826a3c62e874abfe1d6e6df2",
+            "datavalue": {
+              "value": "Expulsion of Jews",
+              "type": "string"
+            },
+            "datatype": "string"
+          },
+          "type": "statement",
+          "id": "Q112651297$e5ac0342-4b91-c2c2-760a-3c0384daf16c",
+          "rank": "normal"
+        }
+      ],
+      "P1621": [
+        {
+          "mainsnak": {
+            "snaktype": "value",
+            "property": "P1621",
+            "hash": "c538f53f3ee5bd594a3958882a1f9d4fc9b6b6c6",
+            "datavalue": {
+              "value": "Expulsion judios-en.svg",
+              "type": "string"
+            },
+            "datatype": "commonsMedia"
+          },
+          "type": "statement",
+          "id": "Q112651297$c52cf0eb-4375-8450-2f8e-f6872ee6ef2d",
+          "rank": "normal"
+        }
+      ]
+    },
+    "sitelinks": {
+      "eswiki": {
+        "site": "eswiki",
+        "title": "Expulsión de los judíos",
+        "badges": [],
+        "url": "https://es.wikipedia.org/wiki/Expulsi%C3%B3n_de_los_jud%C3%ADos"
+      },
+      "euwiki": {
+        "site": "euwiki",
+        "title": "Juduen kanporatzea",
+        "badges": [],
+        "url": "https://eu.wikipedia.org/wiki/Juduen_kanporatzea"
+      },
+      "frwiki": {
+        "site": "frwiki",
+        "title": "Expulsion des Juifs",
+        "badges": [],
+        "url": "https://fr.wikipedia.org/wiki/Expulsion_des_Juifs"
+      }
+    }
+  }
+}

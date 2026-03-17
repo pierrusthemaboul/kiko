@@ -1,0 +1,188 @@
+{
+  "saved_at": "2026-03-07T13:45:48.037Z",
+  "value": {
+    "pageid": 5185205,
+    "ns": 0,
+    "title": "Q5421337",
+    "lastrevid": 2255529729,
+    "modified": "2024-10-02T17:53:51Z",
+    "type": "item",
+    "id": "Q5421337",
+    "labels": {
+      "en": {
+        "language": "en",
+        "value": "Exploration of the Pacific"
+      },
+      "es": {
+        "language": "es",
+        "value": "Exploración del océano Pacífico"
+      },
+      "eo": {
+        "language": "eo",
+        "value": "Esplorado de la Pacifiko"
+      },
+      "ta": {
+        "language": "ta",
+        "value": "பசிபிக் ஆய்வு"
+      },
+      "ar": {
+        "language": "ar",
+        "value": "استكشاف المحيط الهادئ"
+      },
+      "eu": {
+        "language": "eu",
+        "value": "Ozeano Bareko esplorazioa"
+      },
+      "fr": {
+        "language": "fr",
+        "value": "Exploration du Pacifique"
+      },
+      "zh": {
+        "language": "zh",
+        "value": "太平洋的探索"
+      },
+      "sl": {
+        "language": "sl",
+        "value": "raziskovanje Tihega oceana"
+      }
+    },
+    "descriptions": {
+      "en": {
+        "language": "en",
+        "value": "overview of the exploration of the Pacific"
+      },
+      "es": {
+        "language": "es",
+        "value": "navegaciones de exploración en el océano Pacífico"
+      },
+      "sl": {
+        "language": "sl",
+        "value": "pregled raziskovanja Tihega oceana"
+      }
+    },
+    "aliases": {
+      "es": [
+        {
+          "language": "es",
+          "value": "Exploracion del oceano Pacifico"
+        }
+      ],
+      "sl": [
+        {
+          "language": "sl",
+          "value": "raziskovanje Pacifika"
+        }
+      ]
+    },
+    "claims": {
+      "P910": [
+        {
+          "mainsnak": {
+            "snaktype": "value",
+            "property": "P910",
+            "hash": "98181b668f46468360786742da62eb6bcbb71b8f",
+            "datavalue": {
+              "value": {
+                "entity-type": "item",
+                "numeric-id": 9530853,
+                "id": "Q9530853"
+              },
+              "type": "wikibase-entityid"
+            },
+            "datatype": "wikibase-item"
+          },
+          "type": "statement",
+          "id": "Q5421337$E00D7250-C392-41A7-B815-CA68DE3F9585",
+          "rank": "normal",
+          "references": [
+            {
+              "hash": "c456dc5cd2117249948c288206ff3f8b1bf574f0",
+              "snaks": {
+                "P143": [
+                  {
+                    "snaktype": "value",
+                    "property": "P143",
+                    "hash": "e17507043402fe54ae6c4d65cc51f46cec987de9",
+                    "datavalue": {
+                      "value": {
+                        "entity-type": "item",
+                        "numeric-id": 8449,
+                        "id": "Q8449"
+                      },
+                      "type": "wikibase-entityid"
+                    },
+                    "datatype": "wikibase-item"
+                  }
+                ]
+              },
+              "snaks-order": [
+                "P143"
+              ]
+            }
+          ]
+        }
+      ],
+      "P646": [
+        {
+          "mainsnak": {
+            "snaktype": "value",
+            "property": "P646",
+            "hash": "d3597f05fa2407f30604596167f1f24f7e5d7b00",
+            "datavalue": {
+              "value": "/m/0jt081b",
+              "type": "string"
+            },
+            "datatype": "external-id"
+          },
+          "type": "statement",
+          "id": "Q5421337$2208012F-11AA-405D-A723-CC985CBCC42B",
+          "rank": "normal"
+        }
+      ]
+    },
+    "sitelinks": {
+      "arwiki": {
+        "site": "arwiki",
+        "title": "استكشاف المحيط الهادئ",
+        "badges": [],
+        "url": "https://ar.wikipedia.org/wiki/%D8%A7%D8%B3%D8%AA%D9%83%D8%B4%D8%A7%D9%81_%D8%A7%D9%84%D9%85%D8%AD%D9%8A%D8%B7_%D8%A7%D9%84%D9%87%D8%A7%D8%AF%D8%A6"
+      },
+      "enwiki": {
+        "site": "enwiki",
+        "title": "Exploration of the Pacific",
+        "badges": [],
+        "url": "https://en.wikipedia.org/wiki/Exploration_of_the_Pacific"
+      },
+      "eowiki": {
+        "site": "eowiki",
+        "title": "Esplorado de la Pacifiko",
+        "badges": [],
+        "url": "https://eo.wikipedia.org/wiki/Esplorado_de_la_Pacifiko"
+      },
+      "eswiki": {
+        "site": "eswiki",
+        "title": "Exploración del océano Pacífico",
+        "badges": [],
+        "url": "https://es.wikipedia.org/wiki/Exploraci%C3%B3n_del_oc%C3%A9ano_Pac%C3%ADfico"
+      },
+      "euwiki": {
+        "site": "euwiki",
+        "title": "Ozeano Bareko esplorazioa",
+        "badges": [],
+        "url": "https://eu.wikipedia.org/wiki/Ozeano_Bareko_esplorazioa"
+      },
+      "frwiki": {
+        "site": "frwiki",
+        "title": "Exploration du Pacifique",
+        "badges": [],
+        "url": "https://fr.wikipedia.org/wiki/Exploration_du_Pacifique"
+      },
+      "zhwiki": {
+        "site": "zhwiki",
+        "title": "太平洋的探索",
+        "badges": [],
+        "url": "https://zh.wikipedia.org/wiki/%E5%A4%AA%E5%B9%B3%E6%B4%8B%E7%9A%84%E6%8E%A2%E7%B4%A2"
+      }
+    }
+  }
+}

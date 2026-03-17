@@ -1,0 +1,365 @@
+{
+  "saved_at": "2026-03-07T13:28:20.609Z",
+  "value": {
+    "pageid": 3418447,
+    "ns": 0,
+    "title": "Q3590018",
+    "lastrevid": 2403029980,
+    "modified": "2025-09-10T01:29:33Z",
+    "type": "item",
+    "id": "Q3590018",
+    "labels": {
+      "fr": {
+        "language": "fr",
+        "value": "équipe de France de cricket"
+      },
+      "en": {
+        "language": "en",
+        "value": "France national cricket team"
+      },
+      "bn": {
+        "language": "bn",
+        "value": "ফ্রান্স জাতীয় ক্রিকেট দল"
+      },
+      "ne": {
+        "language": "ne",
+        "value": "फ्रान्स राष्ट्रिय क्रिकेट टिम"
+      },
+      "eo": {
+        "language": "eo",
+        "value": "vira kriketa teamo de Francio"
+      },
+      "ar": {
+        "language": "ar",
+        "value": "منتخب فرنسا للكريكت"
+      },
+      "arz": {
+        "language": "arz",
+        "value": "منتخب فرنسا للكريكت"
+      },
+      "hi": {
+        "language": "hi",
+        "value": "फ़्रान्स क्रिकेट टीम"
+      },
+      "mr": {
+        "language": "mr",
+        "value": "फ्रान्स राष्ट्रीय क्रिकेट संघ"
+      },
+      "ur": {
+        "language": "ur",
+        "value": "فرانس قومی کرکٹ ٹیم"
+      }
+    },
+    "descriptions": {
+      "en": {
+        "language": "en",
+        "value": "cricket team"
+      },
+      "arz": {
+        "language": "arz",
+        "value": "منتخب رياضى فى فرنسا"
+      }
+    },
+    "aliases": {
+      "fr": [
+        {
+          "language": "fr",
+          "value": "Équipe de france de cricket"
+        },
+        {
+          "language": "fr",
+          "value": "Equipe de France de cricket"
+        }
+      ],
+      "mr": [
+        {
+          "language": "mr",
+          "value": "फ्रांस क्रिकेट"
+        },
+        {
+          "language": "mr",
+          "value": "फ्रान्स क्रिकेट"
+        }
+      ]
+    },
+    "claims": {
+      "P31": [
+        {
+          "mainsnak": {
+            "snaktype": "value",
+            "property": "P31",
+            "hash": "a033f416d4536184050287c9a212c1f38082c0a5",
+            "datavalue": {
+              "value": {
+                "entity-type": "item",
+                "numeric-id": 86255944,
+                "id": "Q86255944"
+              },
+              "type": "wikibase-entityid"
+            },
+            "datatype": "wikibase-item"
+          },
+          "type": "statement",
+          "id": "Q3590018$56DB5E3E-A2BB-45D3-AD2C-11CF37256BEA",
+          "rank": "normal"
+        }
+      ],
+      "P641": [
+        {
+          "mainsnak": {
+            "snaktype": "value",
+            "property": "P641",
+            "hash": "3631d3a49f58be6701cfd12d90767ce997a86c48",
+            "datavalue": {
+              "value": {
+                "entity-type": "item",
+                "numeric-id": 5375,
+                "id": "Q5375"
+              },
+              "type": "wikibase-entityid"
+            },
+            "datatype": "wikibase-item"
+          },
+          "type": "statement",
+          "id": "Q3590018$EB36F4F0-60FF-4B94-8632-B4FC0D8A9BE0",
+          "rank": "normal"
+        }
+      ],
+      "P17": [
+        {
+          "mainsnak": {
+            "snaktype": "value",
+            "property": "P17",
+            "hash": "c05db5d169c2560b9799d567a803d20a392f53e4",
+            "datavalue": {
+              "value": {
+                "entity-type": "item",
+                "numeric-id": 142,
+                "id": "Q142"
+              },
+              "type": "wikibase-entityid"
+            },
+            "datatype": "wikibase-item"
+          },
+          "type": "statement",
+          "id": "Q3590018$92E1A344-F99A-40E8-BB01-78D24EEC431A",
+          "rank": "normal"
+        }
+      ],
+      "P571": [
+        {
+          "mainsnak": {
+            "snaktype": "value",
+            "property": "P571",
+            "hash": "68ea71bd54996cb15d04c02db25177b904311970",
+            "datavalue": {
+              "value": {
+                "time": "+1987-01-01T00:00:00Z",
+                "timezone": 0,
+                "before": 0,
+                "after": 0,
+                "precision": 9,
+                "calendarmodel": "http://www.wikidata.org/entity/Q1985727"
+              },
+              "type": "time"
+            },
+            "datatype": "time"
+          },
+          "type": "statement",
+          "id": "Q3590018$80B39BBB-0BD3-4C53-96E7-840040BE2576",
+          "rank": "normal",
+          "references": [
+            {
+              "hash": "79d7a3773b7282faf84af93ffc703a02b4b1c313",
+              "snaks": {
+                "P813": [
+                  {
+                    "snaktype": "value",
+                    "property": "P813",
+                    "hash": "42d8808f552a1dae90d2d573532d49164f59037a",
+                    "datavalue": {
+                      "value": {
+                        "time": "+2019-06-28T00:00:00Z",
+                        "timezone": 0,
+                        "before": 0,
+                        "after": 0,
+                        "precision": 11,
+                        "calendarmodel": "http://www.wikidata.org/entity/Q1985727"
+                      },
+                      "type": "time"
+                    },
+                    "datatype": "time"
+                  }
+                ],
+                "P3452": [
+                  {
+                    "snaktype": "value",
+                    "property": "P3452",
+                    "hash": "218e5d0d282d3448746ed610f3b06470dcd43b59",
+                    "datavalue": {
+                      "value": {
+                        "entity-type": "item",
+                        "numeric-id": 8168958,
+                        "id": "Q8168958"
+                      },
+                      "type": "wikibase-entityid"
+                    },
+                    "datatype": "wikibase-item"
+                  }
+                ],
+                "P143": [
+                  {
+                    "snaktype": "value",
+                    "property": "P143",
+                    "hash": "e4f6d9441d0600513c4533c672b5ab472dc73694",
+                    "datavalue": {
+                      "value": {
+                        "entity-type": "item",
+                        "numeric-id": 328,
+                        "id": "Q328"
+                      },
+                      "type": "wikibase-entityid"
+                    },
+                    "datatype": "wikibase-item"
+                  }
+                ]
+              },
+              "snaks-order": [
+                "P813",
+                "P3452",
+                "P143"
+              ]
+            }
+          ]
+        }
+      ],
+      "P646": [
+        {
+          "mainsnak": {
+            "snaktype": "value",
+            "property": "P646",
+            "hash": "c9501d5980cc167fc0d294b8cefc1589316e4216",
+            "datavalue": {
+              "value": "/m/0b_nwg",
+              "type": "string"
+            },
+            "datatype": "external-id"
+          },
+          "type": "statement",
+          "id": "Q3590018$8156BAE7-9FC5-4A3D-A2BB-1C52DBDA3895",
+          "rank": "normal"
+        }
+      ],
+      "P286": [
+        {
+          "mainsnak": {
+            "snaktype": "value",
+            "property": "P286",
+            "hash": "4c1dd8b151c6b74767335cc3f40d4c0509d5333f",
+            "datavalue": {
+              "value": {
+                "entity-type": "item",
+                "numeric-id": 1981263,
+                "id": "Q1981263"
+              },
+              "type": "wikibase-entityid"
+            },
+            "datatype": "wikibase-item"
+          },
+          "type": "statement",
+          "id": "Q3590018$5E01C927-DDB0-4567-9DFD-2CF2994CAABA",
+          "rank": "normal",
+          "references": [
+            {
+              "hash": "7a59657aba5a9ad5945a453876e988e230a95acc",
+              "snaks": {
+                "P143": [
+                  {
+                    "snaktype": "value",
+                    "property": "P143",
+                    "hash": "e4f6d9441d0600513c4533c672b5ab472dc73694",
+                    "datavalue": {
+                      "value": {
+                        "entity-type": "item",
+                        "numeric-id": 328,
+                        "id": "Q328"
+                      },
+                      "type": "wikibase-entityid"
+                    },
+                    "datatype": "wikibase-item"
+                  }
+                ],
+                "P4656": [
+                  {
+                    "snaktype": "value",
+                    "property": "P4656",
+                    "hash": "d1b8c9275a0140833eedba7df49eef2ef894a554",
+                    "datavalue": {
+                      "value": "https://en.wikipedia.org/w/index.php?title=France_national_cricket_team&oldid=1307743182",
+                      "type": "string"
+                    },
+                    "datatype": "url"
+                  }
+                ]
+              },
+              "snaks-order": [
+                "P143",
+                "P4656"
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    "sitelinks": {
+      "arwiki": {
+        "site": "arwiki",
+        "title": "منتخب فرنسا للكريكت",
+        "badges": [],
+        "url": "https://ar.wikipedia.org/wiki/%D9%85%D9%86%D8%AA%D8%AE%D8%A8_%D9%81%D8%B1%D9%86%D8%B3%D8%A7_%D9%84%D9%84%D9%83%D8%B1%D9%8A%D9%83%D8%AA"
+      },
+      "arzwiki": {
+        "site": "arzwiki",
+        "title": "منتخب فرنسا للكريكت",
+        "badges": [],
+        "url": "https://arz.wikipedia.org/wiki/%D9%85%D9%86%D8%AA%D8%AE%D8%A8_%D9%81%D8%B1%D9%86%D8%B3%D8%A7_%D9%84%D9%84%D9%83%D8%B1%D9%8A%D9%83%D8%AA"
+      },
+      "enwiki": {
+        "site": "enwiki",
+        "title": "France national cricket team",
+        "badges": [],
+        "url": "https://en.wikipedia.org/wiki/France_national_cricket_team"
+      },
+      "frwiki": {
+        "site": "frwiki",
+        "title": "Équipe de France de cricket",
+        "badges": [],
+        "url": "https://fr.wikipedia.org/wiki/%C3%89quipe_de_France_de_cricket"
+      },
+      "hiwiki": {
+        "site": "hiwiki",
+        "title": "फ़्रान्स क्रिकेट टीम",
+        "badges": [],
+        "url": "https://hi.wikipedia.org/wiki/%E0%A4%AB%E0%A4%BC%E0%A5%8D%E0%A4%B0%E0%A4%BE%E0%A4%A8%E0%A5%8D%E0%A4%B8_%E0%A4%95%E0%A5%8D%E0%A4%B0%E0%A4%BF%E0%A4%95%E0%A5%87%E0%A4%9F_%E0%A4%9F%E0%A5%80%E0%A4%AE"
+      },
+      "mrwiki": {
+        "site": "mrwiki",
+        "title": "फ्रान्स राष्ट्रीय क्रिकेट संघ",
+        "badges": [],
+        "url": "https://mr.wikipedia.org/wiki/%E0%A4%AB%E0%A5%8D%E0%A4%B0%E0%A4%BE%E0%A4%A8%E0%A5%8D%E0%A4%B8_%E0%A4%B0%E0%A4%BE%E0%A4%B7%E0%A5%8D%E0%A4%9F%E0%A5%8D%E0%A4%B0%E0%A5%80%E0%A4%AF_%E0%A4%95%E0%A5%8D%E0%A4%B0%E0%A4%BF%E0%A4%95%E0%A5%87%E0%A4%9F_%E0%A4%B8%E0%A4%82%E0%A4%98"
+      },
+      "newiki": {
+        "site": "newiki",
+        "title": "फ्रान्स राष्ट्रिय क्रिकेट टिम",
+        "badges": [],
+        "url": "https://ne.wikipedia.org/wiki/%E0%A4%AB%E0%A5%8D%E0%A4%B0%E0%A4%BE%E0%A4%A8%E0%A5%8D%E0%A4%B8_%E0%A4%B0%E0%A4%BE%E0%A4%B7%E0%A5%8D%E0%A4%9F%E0%A5%8D%E0%A4%B0%E0%A4%BF%E0%A4%AF_%E0%A4%95%E0%A5%8D%E0%A4%B0%E0%A4%BF%E0%A4%95%E0%A5%87%E0%A4%9F_%E0%A4%9F%E0%A4%BF%E0%A4%AE"
+      },
+      "urwiki": {
+        "site": "urwiki",
+        "title": "فرانس قومی کرکٹ ٹیم",
+        "badges": [],
+        "url": "https://ur.wikipedia.org/wiki/%D9%81%D8%B1%D8%A7%D9%86%D8%B3_%D9%82%D9%88%D9%85%DB%8C_%DA%A9%D8%B1%DA%A9%D9%B9_%D9%B9%DB%8C%D9%85"
+      }
+    }
+  }
+}

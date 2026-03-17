@@ -1,0 +1,271 @@
+{
+  "saved_at": "2026-03-07T13:47:09.837Z",
+  "value": {
+    "pageid": 2832192,
+    "ns": 0,
+    "title": "Q2961396",
+    "lastrevid": 2469377539,
+    "modified": "2026-03-04T17:47:49Z",
+    "type": "item",
+    "id": "Q2961396",
+    "labels": {
+      "fr": {
+        "language": "fr",
+        "value": "chasse à la baleine en Islande"
+      },
+      "en": {
+        "language": "en",
+        "value": "whaling in Iceland"
+      },
+      "de": {
+        "language": "de",
+        "value": "Walfang vor Island"
+      },
+      "ru": {
+        "language": "ru",
+        "value": "Китобойный промысел в Исландии"
+      },
+      "ja": {
+        "language": "ja",
+        "value": "アイスランドの捕鯨"
+      },
+      "id": {
+        "language": "id",
+        "value": "Perburuan paus di Islandia"
+      },
+      "tr": {
+        "language": "tr",
+        "value": "İzlanda'da balina avcılığı"
+      },
+      "zh": {
+        "language": "zh",
+        "value": "冰島捕鯨業"
+      },
+      "ca": {
+        "language": "ca",
+        "value": "Caça de balenes a Islàndia"
+      },
+      "ckb": {
+        "language": "ckb",
+        "value": "ڕاوکردنی نەھەنگ لە ئایسلەند"
+      },
+      "et": {
+        "language": "et",
+        "value": "Vaalapüük Islandil"
+      }
+    },
+    "descriptions": {
+      "de": {
+        "language": "de",
+        "value": "Fischereizweig im Nordatlantik"
+      },
+      "en": {
+        "language": "en",
+        "value": "commercial hunting of whales in Iceland"
+      }
+    },
+    "aliases": {},
+    "claims": {
+      "P910": [
+        {
+          "mainsnak": {
+            "snaktype": "value",
+            "property": "P910",
+            "hash": "f825bedff62cbeac3c7e4e96cd4fc76b057c0620",
+            "datavalue": {
+              "value": {
+                "entity-type": "item",
+                "numeric-id": 8913740,
+                "id": "Q8913740"
+              },
+              "type": "wikibase-entityid"
+            },
+            "datatype": "wikibase-item"
+          },
+          "type": "statement",
+          "id": "Q2961396$512184A2-98D4-4775-B556-38522180B29E",
+          "rank": "normal"
+        }
+      ],
+      "P373": [
+        {
+          "mainsnak": {
+            "snaktype": "value",
+            "property": "P373",
+            "hash": "a13bf9f48cbf625ec1cd67b4edc477d7c4cd8779",
+            "datavalue": {
+              "value": "Whaling in Iceland",
+              "type": "string"
+            },
+            "datatype": "string"
+          },
+          "type": "statement",
+          "id": "Q2961396$C7585810-B0E0-40E3-96C0-BF6534DB8124",
+          "rank": "normal",
+          "references": [
+            {
+              "hash": "fa278ebfc458360e5aed63d5058cca83c46134f1",
+              "snaks": {
+                "P143": [
+                  {
+                    "snaktype": "value",
+                    "property": "P143",
+                    "hash": "e4f6d9441d0600513c4533c672b5ab472dc73694",
+                    "datavalue": {
+                      "value": {
+                        "entity-type": "item",
+                        "numeric-id": 328,
+                        "id": "Q328"
+                      },
+                      "type": "wikibase-entityid"
+                    },
+                    "datatype": "wikibase-item"
+                  }
+                ]
+              },
+              "snaks-order": [
+                "P143"
+              ]
+            }
+          ]
+        }
+      ],
+      "P18": [
+        {
+          "mainsnak": {
+            "snaktype": "value",
+            "property": "P18",
+            "hash": "796a8d186293cd7d292ac31eb17bdc9dfa8bc808",
+            "datavalue": {
+              "value": "Hvalskurður 026.jpg",
+              "type": "string"
+            },
+            "datatype": "commonsMedia"
+          },
+          "type": "statement",
+          "id": "Q2961396$A0DA76C9-F582-48C7-B29B-F2FCD25CF906",
+          "rank": "normal"
+        }
+      ],
+      "P31": [
+        {
+          "mainsnak": {
+            "snaktype": "value",
+            "property": "P31",
+            "hash": "c6a5021f8d2b73a08f3bd36e9df12cbd0eca2448",
+            "datavalue": {
+              "value": {
+                "entity-type": "item",
+                "numeric-id": 74817647,
+                "id": "Q74817647"
+              },
+              "type": "wikibase-entityid"
+            },
+            "datatype": "wikibase-item"
+          },
+          "type": "statement",
+          "id": "Q2961396$85a558ce-43df-72fe-194c-2246799e0ecf",
+          "rank": "normal"
+        }
+      ],
+      "P17": [
+        {
+          "mainsnak": {
+            "snaktype": "value",
+            "property": "P17",
+            "hash": "6cc5ac795fa1e8db18e5ac5c615ecc0c229c2a12",
+            "datavalue": {
+              "value": {
+                "entity-type": "item",
+                "numeric-id": 189,
+                "id": "Q189"
+              },
+              "type": "wikibase-entityid"
+            },
+            "datatype": "wikibase-item"
+          },
+          "type": "statement",
+          "id": "Q2961396$6e5c6251-452f-9b97-5478-7d88f619bcb0",
+          "rank": "normal"
+        }
+      ],
+      "P1269": [
+        {
+          "mainsnak": {
+            "snaktype": "value",
+            "property": "P1269",
+            "hash": "a18e8a73a1134528f131b9ca8f00e72dbd4c8cc2",
+            "datavalue": {
+              "value": {
+                "entity-type": "item",
+                "numeric-id": 42767,
+                "id": "Q42767"
+              },
+              "type": "wikibase-entityid"
+            },
+            "datatype": "wikibase-item"
+          },
+          "type": "statement",
+          "id": "Q2961396$71b839e9-4ee3-1948-a5ff-833d9354e46d",
+          "rank": "normal"
+        }
+      ]
+    },
+    "sitelinks": {
+      "cawiki": {
+        "site": "cawiki",
+        "title": "Caça de balenes a Islàndia",
+        "badges": [],
+        "url": "https://ca.wikipedia.org/wiki/Ca%C3%A7a_de_balenes_a_Isl%C3%A0ndia"
+      },
+      "ckbwiki": {
+        "site": "ckbwiki",
+        "title": "ڕاوکردنی نەھەنگ لە ئایسلەند",
+        "badges": [],
+        "url": "https://ckb.wikipedia.org/wiki/%DA%95%D8%A7%D9%88%DA%A9%D8%B1%D8%AF%D9%86%DB%8C_%D9%86%DB%95%DA%BE%DB%95%D9%86%DA%AF_%D9%84%DB%95_%D8%A6%D8%A7%DB%8C%D8%B3%D9%84%DB%95%D9%86%D8%AF"
+      },
+      "dewiki": {
+        "site": "dewiki",
+        "title": "Walfang vor Island",
+        "badges": [],
+        "url": "https://de.wikipedia.org/wiki/Walfang_vor_Island"
+      },
+      "enwiki": {
+        "site": "enwiki",
+        "title": "Whaling in Iceland",
+        "badges": [],
+        "url": "https://en.wikipedia.org/wiki/Whaling_in_Iceland"
+      },
+      "etwiki": {
+        "site": "etwiki",
+        "title": "Vaalapüük Islandil",
+        "badges": [],
+        "url": "https://et.wikipedia.org/wiki/Vaalap%C3%BC%C3%BCk_Islandil"
+      },
+      "frwiki": {
+        "site": "frwiki",
+        "title": "Chasse à la baleine en Islande",
+        "badges": [],
+        "url": "https://fr.wikipedia.org/wiki/Chasse_%C3%A0_la_baleine_en_Islande"
+      },
+      "idwiki": {
+        "site": "idwiki",
+        "title": "Perburuan paus di Islandia",
+        "badges": [],
+        "url": "https://id.wikipedia.org/wiki/Perburuan_paus_di_Islandia"
+      },
+      "ruwiki": {
+        "site": "ruwiki",
+        "title": "Китобойный промысел в Исландии",
+        "badges": [],
+        "url": "https://ru.wikipedia.org/wiki/%D0%9A%D0%B8%D1%82%D0%BE%D0%B1%D0%BE%D0%B9%D0%BD%D1%8B%D0%B9_%D0%BF%D1%80%D0%BE%D0%BC%D1%8B%D1%81%D0%B5%D0%BB_%D0%B2_%D0%98%D1%81%D0%BB%D0%B0%D0%BD%D0%B4%D0%B8%D0%B8"
+      },
+      "trwiki": {
+        "site": "trwiki",
+        "title": "İzlanda'da balina avcılığı",
+        "badges": [],
+        "url": "https://tr.wikipedia.org/wiki/%C4%B0zlanda%27da_balina_avc%C4%B1l%C4%B1%C4%9F%C4%B1"
+      }
+    }
+  }
+}

@@ -1,0 +1,1519 @@
+{
+  "saved_at": "2026-03-07T12:58:37.703Z",
+  "value": {
+    "pageid": 739387,
+    "ns": 0,
+    "title": "Q786387",
+    "lastrevid": 2384139986,
+    "modified": "2025-07-25T11:32:47Z",
+    "type": "item",
+    "id": "Q786387",
+    "labels": {
+      "pl": {
+        "language": "pl",
+        "value": "Reliance Building"
+      },
+      "de": {
+        "language": "de",
+        "value": "Reliance Building"
+      },
+      "en": {
+        "language": "en",
+        "value": "Reliance Building"
+      },
+      "fr": {
+        "language": "fr",
+        "value": "Reliance Building"
+      },
+      "it": {
+        "language": "it",
+        "value": "Reliance Building"
+      },
+      "nl": {
+        "language": "nl",
+        "value": "Reliance Building"
+      },
+      "sv": {
+        "language": "sv",
+        "value": "Reliance Building"
+      },
+      "es": {
+        "language": "es",
+        "value": "Reliance Building"
+      },
+      "zh-hant": {
+        "language": "zh-hant",
+        "value": "瑞萊斯大廈"
+      },
+      "zh-cn": {
+        "language": "zh-cn",
+        "value": "瑞莱斯大厦"
+      },
+      "ja": {
+        "language": "ja",
+        "value": "リライアンス・ビル"
+      },
+      "pt-br": {
+        "language": "pt-br",
+        "value": "Reliance Building"
+      },
+      "zh-hans": {
+        "language": "zh-hans",
+        "value": "瑞莱斯大厦"
+      },
+      "zh": {
+        "language": "zh",
+        "value": "瑞莱斯大厦"
+      },
+      "arz": {
+        "language": "arz",
+        "value": "مبنى ريلاينس"
+      }
+    },
+    "descriptions": {
+      "de": {
+        "language": "de",
+        "value": "Hochhaus in Chicago"
+      },
+      "en": {
+        "language": "en",
+        "value": "building"
+      },
+      "nl": {
+        "language": "nl",
+        "value": "gebouw in Illinois, Verenigde Staten van Amerika"
+      },
+      "he": {
+        "language": "he",
+        "value": "גורד שחקים בארצות הברית"
+      },
+      "sq": {
+        "language": "sq",
+        "value": "ndërtesë"
+      },
+      "ar": {
+        "language": "ar",
+        "value": "فندق في شيكاغو، الولايات المتحدة"
+      },
+      "pl": {
+        "language": "pl",
+        "value": "wieżowiec w Chicago w USA"
+      },
+      "uk": {
+        "language": "uk",
+        "value": "будівля"
+      },
+      "fr": {
+        "language": "fr",
+        "value": "bâtiment à Chicago"
+      }
+    },
+    "aliases": {},
+    "claims": {
+      "P373": [
+        {
+          "mainsnak": {
+            "snaktype": "value",
+            "property": "P373",
+            "hash": "9b22d3f318467e16ff61448ca0fc259080fb369a",
+            "datavalue": {
+              "value": "Reliance Building",
+              "type": "string"
+            },
+            "datatype": "string"
+          },
+          "type": "statement",
+          "id": "q786387$89A483EE-E3EF-4EA8-8B6A-658EDA53D58B",
+          "rank": "normal"
+        }
+      ],
+      "P649": [
+        {
+          "mainsnak": {
+            "snaktype": "value",
+            "property": "P649",
+            "hash": "eb7b2fed76c03d60a5f65859ea1ec046a80161b6",
+            "datavalue": {
+              "value": "70000237",
+              "type": "string"
+            },
+            "datatype": "external-id"
+          },
+          "type": "statement",
+          "id": "q786387$BF001BC2-E581-41F2-AD9B-AF11C2601B31",
+          "rank": "normal"
+        }
+      ],
+      "P625": [
+        {
+          "mainsnak": {
+            "snaktype": "value",
+            "property": "P625",
+            "hash": "3b6227aff1850f0e812c2f7981f64f239fd7f5d0",
+            "datavalue": {
+              "value": {
+                "latitude": 41.882778,
+                "longitude": -87.627778,
+                "altitude": null,
+                "precision": 0.001,
+                "globe": "http://www.wikidata.org/entity/Q2"
+              },
+              "type": "globecoordinate"
+            },
+            "datatype": "globe-coordinate"
+          },
+          "type": "statement",
+          "id": "q786387$1AA3D0BE-8CF9-4F19-A21F-5E9413785C14",
+          "rank": "normal",
+          "references": [
+            {
+              "hash": "fa278ebfc458360e5aed63d5058cca83c46134f1",
+              "snaks": {
+                "P143": [
+                  {
+                    "snaktype": "value",
+                    "property": "P143",
+                    "hash": "e4f6d9441d0600513c4533c672b5ab472dc73694",
+                    "datavalue": {
+                      "value": {
+                        "entity-type": "item",
+                        "numeric-id": 328,
+                        "id": "Q328"
+                      },
+                      "type": "wikibase-entityid"
+                    },
+                    "datatype": "wikibase-item"
+                  }
+                ]
+              },
+              "snaks-order": [
+                "P143"
+              ]
+            }
+          ]
+        }
+      ],
+      "P17": [
+        {
+          "mainsnak": {
+            "snaktype": "value",
+            "property": "P17",
+            "hash": "be4c6eafa2984964f04be85667263f5642ba1a72",
+            "datavalue": {
+              "value": {
+                "entity-type": "item",
+                "numeric-id": 30,
+                "id": "Q30"
+              },
+              "type": "wikibase-entityid"
+            },
+            "datatype": "wikibase-item"
+          },
+          "type": "statement",
+          "id": "q786387$D091491B-AA9B-4170-AB99-5E983629B51B",
+          "rank": "normal",
+          "references": [
+            {
+              "hash": "a82413899085ceb3954f6d73a22a7f38c07ce7ea",
+              "snaks": {
+                "P5383": [
+                  {
+                    "snaktype": "value",
+                    "property": "P5383",
+                    "hash": "db5e7172034f1924d4d610de7dda33986c004502",
+                    "datavalue": {
+                      "value": "6462",
+                      "type": "string"
+                    },
+                    "datatype": "external-id"
+                  }
+                ],
+                "P248": [
+                  {
+                    "snaktype": "value",
+                    "property": "P248",
+                    "hash": "c619cc6e0e5fe3733a8c4a47939343e5970e0e9d",
+                    "datavalue": {
+                      "value": {
+                        "entity-type": "item",
+                        "numeric-id": 265049,
+                        "id": "Q265049"
+                      },
+                      "type": "wikibase-entityid"
+                    },
+                    "datatype": "wikibase-item"
+                  }
+                ],
+                "P813": [
+                  {
+                    "snaktype": "value",
+                    "property": "P813",
+                    "hash": "6d14dc9d94cb9d5db17d8dcf3b67af81b57ccff1",
+                    "datavalue": {
+                      "value": {
+                        "time": "+2018-07-31T00:00:00Z",
+                        "timezone": 0,
+                        "before": 0,
+                        "after": 0,
+                        "precision": 11,
+                        "calendarmodel": "http://www.wikidata.org/entity/Q1985727"
+                      },
+                      "type": "time"
+                    },
+                    "datatype": "time"
+                  }
+                ]
+              },
+              "snaks-order": [
+                "P5383",
+                "P248",
+                "P813"
+              ]
+            }
+          ]
+        }
+      ],
+      "P131": [
+        {
+          "mainsnak": {
+            "snaktype": "value",
+            "property": "P131",
+            "hash": "6a36b227b668d4dd6b2dff4c1b24c38baa187184",
+            "datavalue": {
+              "value": {
+                "entity-type": "item",
+                "numeric-id": 1297,
+                "id": "Q1297"
+              },
+              "type": "wikibase-entityid"
+            },
+            "datatype": "wikibase-item"
+          },
+          "type": "statement",
+          "id": "Q786387$dcfe917a-49c6-ce7f-edf9-0f4610c923b8",
+          "rank": "normal",
+          "references": [
+            {
+              "hash": "a82413899085ceb3954f6d73a22a7f38c07ce7ea",
+              "snaks": {
+                "P5383": [
+                  {
+                    "snaktype": "value",
+                    "property": "P5383",
+                    "hash": "db5e7172034f1924d4d610de7dda33986c004502",
+                    "datavalue": {
+                      "value": "6462",
+                      "type": "string"
+                    },
+                    "datatype": "external-id"
+                  }
+                ],
+                "P248": [
+                  {
+                    "snaktype": "value",
+                    "property": "P248",
+                    "hash": "c619cc6e0e5fe3733a8c4a47939343e5970e0e9d",
+                    "datavalue": {
+                      "value": {
+                        "entity-type": "item",
+                        "numeric-id": 265049,
+                        "id": "Q265049"
+                      },
+                      "type": "wikibase-entityid"
+                    },
+                    "datatype": "wikibase-item"
+                  }
+                ],
+                "P813": [
+                  {
+                    "snaktype": "value",
+                    "property": "P813",
+                    "hash": "6d14dc9d94cb9d5db17d8dcf3b67af81b57ccff1",
+                    "datavalue": {
+                      "value": {
+                        "time": "+2018-07-31T00:00:00Z",
+                        "timezone": 0,
+                        "before": 0,
+                        "after": 0,
+                        "precision": 11,
+                        "calendarmodel": "http://www.wikidata.org/entity/Q1985727"
+                      },
+                      "type": "time"
+                    },
+                    "datatype": "time"
+                  }
+                ]
+              },
+              "snaks-order": [
+                "P5383",
+                "P248",
+                "P813"
+              ]
+            }
+          ]
+        }
+      ],
+      "P646": [
+        {
+          "mainsnak": {
+            "snaktype": "value",
+            "property": "P646",
+            "hash": "ceb592c287da5a5129a10805b6963fe58881b4f6",
+            "datavalue": {
+              "value": "/m/090m1n",
+              "type": "string"
+            },
+            "datatype": "external-id"
+          },
+          "type": "statement",
+          "id": "Q786387$4C6E7583-20E7-4122-8DC5-1A0DFCB9361D",
+          "rank": "normal",
+          "references": [
+            {
+              "hash": "2b00cb481cddcac7623114367489b5c194901c4a",
+              "snaks": {
+                "P248": [
+                  {
+                    "snaktype": "value",
+                    "property": "P248",
+                    "hash": "a94b740202b097dd33355e0e6c00e54b9395e5e0",
+                    "datavalue": {
+                      "value": {
+                        "entity-type": "item",
+                        "numeric-id": 15241312,
+                        "id": "Q15241312"
+                      },
+                      "type": "wikibase-entityid"
+                    },
+                    "datatype": "wikibase-item"
+                  }
+                ],
+                "P577": [
+                  {
+                    "snaktype": "value",
+                    "property": "P577",
+                    "hash": "fde79ecb015112d2f29229ccc1ec514ed3e71fa2",
+                    "datavalue": {
+                      "value": {
+                        "time": "+2013-10-28T00:00:00Z",
+                        "timezone": 0,
+                        "before": 0,
+                        "after": 0,
+                        "precision": 11,
+                        "calendarmodel": "http://www.wikidata.org/entity/Q1985727"
+                      },
+                      "type": "time"
+                    },
+                    "datatype": "time"
+                  }
+                ]
+              },
+              "snaks-order": [
+                "P248",
+                "P577"
+              ]
+            }
+          ]
+        }
+      ],
+      "P18": [
+        {
+          "mainsnak": {
+            "snaktype": "value",
+            "property": "P18",
+            "hash": "1ed587b6b8abd504e1ce7815c0b03eba82165bae",
+            "datavalue": {
+              "value": "Reliance Building, Chicago, Illinois (November 2005).jpg",
+              "type": "string"
+            },
+            "datatype": "commonsMedia"
+          },
+          "type": "statement",
+          "id": "Q786387$24D5D1DD-2D36-4B82-817A-A04742271FA9",
+          "rank": "normal",
+          "references": [
+            {
+              "hash": "732ec1c90a6f0694c7db9a71bf09fe7f2b674172",
+              "snaks": {
+                "P143": [
+                  {
+                    "snaktype": "value",
+                    "property": "P143",
+                    "hash": "9123b0de1cc9c3954366ba797d598e4e1ea4146f",
+                    "datavalue": {
+                      "value": {
+                        "entity-type": "item",
+                        "numeric-id": 10000,
+                        "id": "Q10000"
+                      },
+                      "type": "wikibase-entityid"
+                    },
+                    "datatype": "wikibase-item"
+                  }
+                ]
+              },
+              "snaks-order": [
+                "P143"
+              ]
+            }
+          ]
+        }
+      ],
+      "P1566": [
+        {
+          "mainsnak": {
+            "snaktype": "value",
+            "property": "P1566",
+            "hash": "5800dd9609cdba8f5a3f71f38ffebda8979a60bd",
+            "datavalue": {
+              "value": "4907348",
+              "type": "string"
+            },
+            "datatype": "external-id"
+          },
+          "type": "statement",
+          "id": "Q786387$043BA68F-8E0C-49AB-9DB3-3880BDD0589C",
+          "rank": "normal",
+          "references": [
+            {
+              "hash": "88694a0f4d1486770c269f7db16a1982f74da69d",
+              "snaks": {
+                "P248": [
+                  {
+                    "snaktype": "value",
+                    "property": "P248",
+                    "hash": "1b3ef912a2bd61e18dd43abd184337eb010b2e96",
+                    "datavalue": {
+                      "value": {
+                        "entity-type": "item",
+                        "numeric-id": 830106,
+                        "id": "Q830106"
+                      },
+                      "type": "wikibase-entityid"
+                    },
+                    "datatype": "wikibase-item"
+                  }
+                ]
+              },
+              "snaks-order": [
+                "P248"
+              ]
+            }
+          ]
+        }
+      ],
+      "P1435": [
+        {
+          "mainsnak": {
+            "snaktype": "value",
+            "property": "P1435",
+            "hash": "12ea958a6a42412ab8ef26b9126d1c1562c91422",
+            "datavalue": {
+              "value": {
+                "entity-type": "item",
+                "numeric-id": 624232,
+                "id": "Q624232"
+              },
+              "type": "wikibase-entityid"
+            },
+            "datatype": "wikibase-item"
+          },
+          "type": "statement",
+          "qualifiers": {
+            "P580": [
+              {
+                "snaktype": "value",
+                "property": "P580",
+                "hash": "d995ef93472a8c9329e7efae362441bdeaec94ce",
+                "datavalue": {
+                  "value": {
+                    "time": "+1976-01-07T00:00:00Z",
+                    "timezone": 0,
+                    "before": 0,
+                    "after": 0,
+                    "precision": 11,
+                    "calendarmodel": "http://www.wikidata.org/entity/Q1985727"
+                  },
+                  "type": "time"
+                },
+                "datatype": "time"
+              }
+            ]
+          },
+          "qualifiers-order": [
+            "P580"
+          ],
+          "id": "Q786387$4CFB8FB5-FA66-4266-ABB0-0C4EEC64BD54",
+          "rank": "normal",
+          "references": [
+            {
+              "hash": "fa278ebfc458360e5aed63d5058cca83c46134f1",
+              "snaks": {
+                "P143": [
+                  {
+                    "snaktype": "value",
+                    "property": "P143",
+                    "hash": "e4f6d9441d0600513c4533c672b5ab472dc73694",
+                    "datavalue": {
+                      "value": {
+                        "entity-type": "item",
+                        "numeric-id": 328,
+                        "id": "Q328"
+                      },
+                      "type": "wikibase-entityid"
+                    },
+                    "datatype": "wikibase-item"
+                  }
+                ]
+              },
+              "snaks-order": [
+                "P143"
+              ]
+            }
+          ]
+        },
+        {
+          "mainsnak": {
+            "snaktype": "value",
+            "property": "P1435",
+            "hash": "e9e351fb7bcaabb0fdc190586805e6bd23fc09d6",
+            "datavalue": {
+              "value": {
+                "entity-type": "item",
+                "numeric-id": 19558910,
+                "id": "Q19558910"
+              },
+              "type": "wikibase-entityid"
+            },
+            "datatype": "wikibase-item"
+          },
+          "type": "statement",
+          "qualifiers": {
+            "P580": [
+              {
+                "snaktype": "value",
+                "property": "P580",
+                "hash": "a1f615072451be5e44e543673ace1f5f1ba11bb6",
+                "datavalue": {
+                  "value": {
+                    "time": "+1970-10-15T00:00:00Z",
+                    "timezone": 0,
+                    "before": 0,
+                    "after": 0,
+                    "precision": 11,
+                    "calendarmodel": "http://www.wikidata.org/entity/Q1985727"
+                  },
+                  "type": "time"
+                },
+                "datatype": "time"
+              }
+            ],
+            "P1810": [
+              {
+                "snaktype": "value",
+                "property": "P1810",
+                "hash": "877ed7ddac72ae94a05ef2601677044f96738d1d",
+                "datavalue": {
+                  "value": "Reliance Building",
+                  "type": "string"
+                },
+                "datatype": "string"
+              }
+            ],
+            "P2868": [
+              {
+                "snaktype": "value",
+                "property": "P2868",
+                "hash": "7abb92f9a43a9c5d211f4ca38588722876ab6d4f",
+                "datavalue": {
+                  "value": {
+                    "entity-type": "item",
+                    "numeric-id": 47162123,
+                    "id": "Q47162123"
+                  },
+                  "type": "wikibase-entityid"
+                },
+                "datatype": "wikibase-item"
+              }
+            ],
+            "P1013": [
+              {
+                "snaktype": "value",
+                "property": "P1013",
+                "hash": "ad96e9744f4e56fce09def9c7f2a9c4e4dbb144b",
+                "datavalue": {
+                  "value": {
+                    "entity-type": "item",
+                    "numeric-id": 47035253,
+                    "id": "Q47035253"
+                  },
+                  "type": "wikibase-entityid"
+                },
+                "datatype": "wikibase-item"
+              }
+            ]
+          },
+          "qualifiers-order": [
+            "P580",
+            "P1810",
+            "P2868",
+            "P1013"
+          ],
+          "id": "Q786387$a9f2b6c2-4302-2d04-d729-929d6bf42c96",
+          "rank": "normal",
+          "references": [
+            {
+              "hash": "f5584cddf057dc40db2a6019ea0eb5c09badbd5a",
+              "snaks": {
+                "P248": [
+                  {
+                    "snaktype": "value",
+                    "property": "P248",
+                    "hash": "6dfc3059ccf88c0bcef10de810ed37f896bc12c4",
+                    "datavalue": {
+                      "value": {
+                        "entity-type": "item",
+                        "numeric-id": 3719,
+                        "id": "Q3719"
+                      },
+                      "type": "wikibase-entityid"
+                    },
+                    "datatype": "wikibase-item"
+                  }
+                ],
+                "P649": [
+                  {
+                    "snaktype": "value",
+                    "property": "P649",
+                    "hash": "eb7b2fed76c03d60a5f65859ea1ec046a80161b6",
+                    "datavalue": {
+                      "value": "70000237",
+                      "type": "string"
+                    },
+                    "datatype": "external-id"
+                  }
+                ]
+              },
+              "snaks-order": [
+                "P248",
+                "P649"
+              ]
+            },
+            {
+              "hash": "e86cb3ceca50edadb7c079e419edddee6f1e7b02",
+              "snaks": {
+                "P248": [
+                  {
+                    "snaktype": "value",
+                    "property": "P248",
+                    "hash": "6a66d1c5cedf87cf79e6cfd6118879f159aa28c4",
+                    "datavalue": {
+                      "value": {
+                        "entity-type": "item",
+                        "numeric-id": 113508718,
+                        "id": "Q113508718"
+                      },
+                      "type": "wikibase-entityid"
+                    },
+                    "datatype": "wikibase-item"
+                  }
+                ],
+                "P1225": [
+                  {
+                    "snaktype": "value",
+                    "property": "P1225",
+                    "hash": "5b36ade7acf3f63d9f4430f67aa2654135306b50",
+                    "datavalue": {
+                      "value": "28892535",
+                      "type": "string"
+                    },
+                    "datatype": "external-id"
+                  }
+                ]
+              },
+              "snaks-order": [
+                "P248",
+                "P1225"
+              ]
+            }
+          ]
+        },
+        {
+          "mainsnak": {
+            "snaktype": "value",
+            "property": "P1435",
+            "hash": "d39ad5259d07ec6fa0b3c5d1b4166c66c7104881",
+            "datavalue": {
+              "value": {
+                "entity-type": "item",
+                "numeric-id": 2222981,
+                "id": "Q2222981"
+              },
+              "type": "wikibase-entityid"
+            },
+            "datatype": "wikibase-item"
+          },
+          "type": "statement",
+          "qualifiers": {
+            "P580": [
+              {
+                "snaktype": "value",
+                "property": "P580",
+                "hash": "ece0a8507ffa0c965473cc1406810fe07fcadcad",
+                "datavalue": {
+                  "value": {
+                    "time": "+1975-07-11T00:00:00Z",
+                    "timezone": 0,
+                    "before": 0,
+                    "after": 0,
+                    "precision": 11,
+                    "calendarmodel": "http://www.wikidata.org/entity/Q1985727"
+                  },
+                  "type": "time"
+                },
+                "datatype": "time"
+              }
+            ]
+          },
+          "qualifiers-order": [
+            "P580"
+          ],
+          "id": "Q786387$dabe1fc4-44f9-e5dc-1208-99722e9db100",
+          "rank": "normal",
+          "references": [
+            {
+              "hash": "9e98e1af6408665ece776d2d47f74c04d966362b",
+              "snaks": {
+                "P854": [
+                  {
+                    "snaktype": "value",
+                    "property": "P854",
+                    "hash": "dcd295c870d786ce47a3c5f2bb8bf0b109ce84be",
+                    "datavalue": {
+                      "value": "http://www.cityofchicago.org/content/dam/city/depts/zlup/Historic_Preservation/Publications/Chicago_Landmark_Name_List_Apr2016.pdf",
+                      "type": "string"
+                    },
+                    "datatype": "url"
+                  }
+                ],
+                "P304": [
+                  {
+                    "snaktype": "value",
+                    "property": "P304",
+                    "hash": "587564898ba1c818316ca0a7af2bb0867f80d4bb",
+                    "datavalue": {
+                      "value": "18",
+                      "type": "string"
+                    },
+                    "datatype": "string"
+                  }
+                ],
+                "P813": [
+                  {
+                    "snaktype": "value",
+                    "property": "P813",
+                    "hash": "bd4fb28652c7b5811459210a9e6d53f7c250ba9d",
+                    "datavalue": {
+                      "value": {
+                        "time": "+2016-04-16T00:00:00Z",
+                        "timezone": 0,
+                        "before": 0,
+                        "after": 0,
+                        "precision": 11,
+                        "calendarmodel": "http://www.wikidata.org/entity/Q1985727"
+                      },
+                      "type": "time"
+                    },
+                    "datatype": "time"
+                  }
+                ]
+              },
+              "snaks-order": [
+                "P854",
+                "P304",
+                "P813"
+              ]
+            }
+          ]
+        }
+      ],
+      "P31": [
+        {
+          "mainsnak": {
+            "snaktype": "value",
+            "property": "P31",
+            "hash": "dd9afc84745239d0b2571add74d54b6d1ff7914a",
+            "datavalue": {
+              "value": {
+                "entity-type": "item",
+                "numeric-id": 11303,
+                "id": "Q11303"
+              },
+              "type": "wikibase-entityid"
+            },
+            "datatype": "wikibase-item"
+          },
+          "type": "statement",
+          "id": "Q786387$C47169B7-2724-4FC8-8973-9AEF3BE12E2A",
+          "rank": "normal"
+        },
+        {
+          "mainsnak": {
+            "snaktype": "value",
+            "property": "P31",
+            "hash": "07ca53d09e08208b99129c939590fc4b162e26ac",
+            "datavalue": {
+              "value": {
+                "entity-type": "item",
+                "numeric-id": 27686,
+                "id": "Q27686"
+              },
+              "type": "wikibase-entityid"
+            },
+            "datatype": "wikibase-item"
+          },
+          "type": "statement",
+          "id": "Q786387$ad171958-4dca-be8f-648d-5845bd84a7d1",
+          "rank": "normal"
+        }
+      ],
+      "P84": [
+        {
+          "mainsnak": {
+            "snaktype": "value",
+            "property": "P84",
+            "hash": "8cd93d0189ef7cccd5e83cc73c66dc70b89dc4ab",
+            "datavalue": {
+              "value": {
+                "entity-type": "item",
+                "numeric-id": 316639,
+                "id": "Q316639"
+              },
+              "type": "wikibase-entityid"
+            },
+            "datatype": "wikibase-item"
+          },
+          "type": "statement",
+          "id": "Q786387$DEF7AB0D-5799-47A6-A690-EE6EA44382D2",
+          "rank": "normal",
+          "references": [
+            {
+              "hash": "9a24f7c0208b05d6be97077d855671d1dfdbc0dd",
+              "snaks": {
+                "P143": [
+                  {
+                    "snaktype": "value",
+                    "property": "P143",
+                    "hash": "d38375ffe6fe142663ff55cd783aa4df4301d83d",
+                    "datavalue": {
+                      "value": {
+                        "entity-type": "item",
+                        "numeric-id": 48183,
+                        "id": "Q48183"
+                      },
+                      "type": "wikibase-entityid"
+                    },
+                    "datatype": "wikibase-item"
+                  }
+                ]
+              },
+              "snaks-order": [
+                "P143"
+              ]
+            }
+          ]
+        },
+        {
+          "mainsnak": {
+            "snaktype": "value",
+            "property": "P84",
+            "hash": "8509a57a2441cd82e2283b060197ba2593843d98",
+            "datavalue": {
+              "value": {
+                "entity-type": "item",
+                "numeric-id": 94005,
+                "id": "Q94005"
+              },
+              "type": "wikibase-entityid"
+            },
+            "datatype": "wikibase-item"
+          },
+          "type": "statement",
+          "id": "Q786387$3a562803-4edf-3d7f-c1a9-47d4f0cb4b35",
+          "rank": "normal"
+        }
+      ],
+      "P454": [
+        {
+          "mainsnak": {
+            "snaktype": "value",
+            "property": "P454",
+            "hash": "ee83c30432dd2ab4604bb02d7f8657ec32d78c6a",
+            "datavalue": {
+              "value": "2",
+              "type": "string"
+            },
+            "datatype": "external-id"
+          },
+          "type": "statement",
+          "id": "Q786387$B599A68A-7619-46BA-B085-8F373678DF9F",
+          "rank": "normal"
+        }
+      ],
+      "P1305": [
+        {
+          "mainsnak": {
+            "snaktype": "value",
+            "property": "P1305",
+            "hash": "1ac7ab1156ef68abe7a6139bbb75655a8c851c40",
+            "datavalue": {
+              "value": "9072",
+              "type": "string"
+            },
+            "datatype": "external-id"
+          },
+          "type": "statement",
+          "id": "Q786387$DD54610A-D687-4262-AB1F-B8E9A84423D7",
+          "rank": "normal",
+          "references": [
+            {
+              "hash": "cfc3fc925ddc31f71c67244753346f9fca7ab7d7",
+              "snaks": {
+                "P248": [
+                  {
+                    "snaktype": "value",
+                    "property": "P248",
+                    "hash": "a94b740202b097dd33355e0e6c00e54b9395e5e0",
+                    "datavalue": {
+                      "value": {
+                        "entity-type": "item",
+                        "numeric-id": 15241312,
+                        "id": "Q15241312"
+                      },
+                      "type": "wikibase-entityid"
+                    },
+                    "datatype": "wikibase-item"
+                  }
+                ]
+              },
+              "snaks-order": [
+                "P248"
+              ]
+            }
+          ]
+        }
+      ],
+      "P361": [
+        {
+          "mainsnak": {
+            "snaktype": "value",
+            "property": "P361",
+            "hash": "63aa7338f26be2a512c9d2dd496616e99ab9e3d0",
+            "datavalue": {
+              "value": {
+                "entity-type": "item",
+                "numeric-id": 6675813,
+                "id": "Q6675813"
+              },
+              "type": "wikibase-entityid"
+            },
+            "datatype": "wikibase-item"
+          },
+          "type": "statement",
+          "id": "Q786387$3236998c-4760-cb83-0632-84c146546ac1",
+          "rank": "normal"
+        }
+      ],
+      "P1417": [
+        {
+          "mainsnak": {
+            "snaktype": "value",
+            "property": "P1417",
+            "hash": "081f42f5afd5d20fe989022737a1e70360255152",
+            "datavalue": {
+              "value": "place/Reliance-Building",
+              "type": "string"
+            },
+            "datatype": "external-id"
+          },
+          "type": "statement",
+          "qualifiers": {
+            "P1810": [
+              {
+                "snaktype": "value",
+                "property": "P1810",
+                "hash": "877ed7ddac72ae94a05ef2601677044f96738d1d",
+                "datavalue": {
+                  "value": "Reliance Building",
+                  "type": "string"
+                },
+                "datatype": "string"
+              }
+            ]
+          },
+          "qualifiers-order": [
+            "P1810"
+          ],
+          "id": "Q786387$E949B21F-E6B5-49A8-9316-3284B41F572C",
+          "rank": "normal"
+        }
+      ],
+      "P5383": [
+        {
+          "mainsnak": {
+            "snaktype": "value",
+            "property": "P5383",
+            "hash": "db5e7172034f1924d4d610de7dda33986c004502",
+            "datavalue": {
+              "value": "6462",
+              "type": "string"
+            },
+            "datatype": "external-id"
+          },
+          "type": "statement",
+          "id": "Q786387$8918357E-30CA-4E91-8DC2-BAD596F382B6",
+          "rank": "normal",
+          "references": [
+            {
+              "hash": "fc5c0700e4ea82f652ee81db5553c3a44446a105",
+              "snaks": {
+                "P854": [
+                  {
+                    "snaktype": "value",
+                    "property": "P854",
+                    "hash": "bb385bc908e4615b60c060310f5723f66c443109",
+                    "datavalue": {
+                      "value": "https://www.archinform.net/service/wd_aipro.php",
+                      "type": "string"
+                    },
+                    "datatype": "url"
+                  }
+                ],
+                "P813": [
+                  {
+                    "snaktype": "value",
+                    "property": "P813",
+                    "hash": "775e4bc3406f34d4db423a7a92abe6c7af78a5e1",
+                    "datavalue": {
+                      "value": {
+                        "time": "+2018-07-02T00:00:00Z",
+                        "timezone": 0,
+                        "before": 0,
+                        "after": 0,
+                        "precision": 11,
+                        "calendarmodel": "http://www.wikidata.org/entity/Q1985727"
+                      },
+                      "type": "time"
+                    },
+                    "datatype": "time"
+                  }
+                ]
+              },
+              "snaks-order": [
+                "P854",
+                "P813"
+              ]
+            }
+          ]
+        }
+      ],
+      "P149": [
+        {
+          "mainsnak": {
+            "snaktype": "value",
+            "property": "P149",
+            "hash": "833ea27f8168e5acbbcfb8e7e2d4b806a3081cc8",
+            "datavalue": {
+              "value": {
+                "entity-type": "item",
+                "numeric-id": 1072060,
+                "id": "Q1072060"
+              },
+              "type": "wikibase-entityid"
+            },
+            "datatype": "wikibase-item"
+          },
+          "type": "statement",
+          "id": "Q786387$1C531940-E04E-4DDF-A690-1E5E5C71D035",
+          "rank": "normal",
+          "references": [
+            {
+              "hash": "d816921566c6e7b0925206484f0d7282489de897",
+              "snaks": {
+                "P143": [
+                  {
+                    "snaktype": "value",
+                    "property": "P143",
+                    "hash": "e4f6d9441d0600513c4533c672b5ab472dc73694",
+                    "datavalue": {
+                      "value": {
+                        "entity-type": "item",
+                        "numeric-id": 328,
+                        "id": "Q328"
+                      },
+                      "type": "wikibase-entityid"
+                    },
+                    "datatype": "wikibase-item"
+                  }
+                ],
+                "P4656": [
+                  {
+                    "snaktype": "value",
+                    "property": "P4656",
+                    "hash": "c44bd91256d0afb41960296efcb3852cf4dbb2f4",
+                    "datavalue": {
+                      "value": "https://en.wikipedia.org/w/index.php?title=Reliance_Building&oldid=874661301",
+                      "type": "string"
+                    },
+                    "datatype": "url"
+                  }
+                ]
+              },
+              "snaks-order": [
+                "P143",
+                "P4656"
+              ]
+            }
+          ]
+        }
+      ],
+      "P1101": [
+        {
+          "mainsnak": {
+            "snaktype": "value",
+            "property": "P1101",
+            "hash": "ebca4f47b499aa99e8f6e733f699f95b96cf6579",
+            "datavalue": {
+              "value": {
+                "amount": "+15",
+                "unit": "1"
+              },
+              "type": "quantity"
+            },
+            "datatype": "quantity"
+          },
+          "type": "statement",
+          "id": "Q786387$58DB3C10-D6D6-4C99-B84E-396FC014221F",
+          "rank": "normal",
+          "references": [
+            {
+              "hash": "d0d3a441ffac292a1c432df190a204cf6ae0d2c1",
+              "snaks": {
+                "P143": [
+                  {
+                    "snaktype": "value",
+                    "property": "P143",
+                    "hash": "d38375ffe6fe142663ff55cd783aa4df4301d83d",
+                    "datavalue": {
+                      "value": {
+                        "entity-type": "item",
+                        "numeric-id": 48183,
+                        "id": "Q48183"
+                      },
+                      "type": "wikibase-entityid"
+                    },
+                    "datatype": "wikibase-item"
+                  }
+                ],
+                "P4656": [
+                  {
+                    "snaktype": "value",
+                    "property": "P4656",
+                    "hash": "007a87383b6557a725c8e17ef86eccc19c5e93f7",
+                    "datavalue": {
+                      "value": "https://de.wikipedia.org/w/index.php?title=Reliance_Building&oldid=191868608",
+                      "type": "string"
+                    },
+                    "datatype": "url"
+                  }
+                ]
+              },
+              "snaks-order": [
+                "P143",
+                "P4656"
+              ]
+            }
+          ]
+        }
+      ],
+      "P571": [
+        {
+          "mainsnak": {
+            "snaktype": "value",
+            "property": "P571",
+            "hash": "2c58741a6b8481a7bfca1a43618049b307e5634a",
+            "datavalue": {
+              "value": {
+                "time": "+1895-00-00T00:00:00Z",
+                "timezone": 0,
+                "before": 0,
+                "after": 0,
+                "precision": 9,
+                "calendarmodel": "http://www.wikidata.org/entity/Q1985727"
+              },
+              "type": "time"
+            },
+            "datatype": "time"
+          },
+          "type": "statement",
+          "id": "Q786387$6204C5A6-A955-4FD4-BE52-1F31A92DD0FA",
+          "rank": "normal",
+          "references": [
+            {
+              "hash": "d0d3a441ffac292a1c432df190a204cf6ae0d2c1",
+              "snaks": {
+                "P143": [
+                  {
+                    "snaktype": "value",
+                    "property": "P143",
+                    "hash": "d38375ffe6fe142663ff55cd783aa4df4301d83d",
+                    "datavalue": {
+                      "value": {
+                        "entity-type": "item",
+                        "numeric-id": 48183,
+                        "id": "Q48183"
+                      },
+                      "type": "wikibase-entityid"
+                    },
+                    "datatype": "wikibase-item"
+                  }
+                ],
+                "P4656": [
+                  {
+                    "snaktype": "value",
+                    "property": "P4656",
+                    "hash": "007a87383b6557a725c8e17ef86eccc19c5e93f7",
+                    "datavalue": {
+                      "value": "https://de.wikipedia.org/w/index.php?title=Reliance_Building&oldid=191868608",
+                      "type": "string"
+                    },
+                    "datatype": "url"
+                  }
+                ]
+              },
+              "snaks-order": [
+                "P143",
+                "P4656"
+              ]
+            }
+          ]
+        }
+      ],
+      "P7958": [
+        {
+          "mainsnak": {
+            "snaktype": "value",
+            "property": "P7958",
+            "hash": "3e64684beae951a6eb62c7c065254f646be67e7c",
+            "datavalue": {
+              "value": "1412",
+              "type": "string"
+            },
+            "datatype": "external-id"
+          },
+          "type": "statement",
+          "id": "Q786387$E8D40710-9E5B-4DBA-B765-CF961048F076",
+          "rank": "normal"
+        }
+      ],
+      "P12701": [
+        {
+          "mainsnak": {
+            "snaktype": "value",
+            "property": "P12701",
+            "hash": "444237cb378a7687dbca5d2d341e72cfb743c75c",
+            "datavalue": {
+              "value": "3225",
+              "type": "string"
+            },
+            "datatype": "external-id"
+          },
+          "type": "statement",
+          "id": "Q786387$208AA1AB-3133-4C79-A910-52CD452CDD36",
+          "rank": "normal",
+          "references": [
+            {
+              "hash": "95917752f2c30611de4eb75cf8e350c0f31a1567",
+              "snaks": {
+                "P11797": [
+                  {
+                    "snaktype": "value",
+                    "property": "P11797",
+                    "hash": "868b5ced04c2f3c9e15fbf423567f8f3157b23a2",
+                    "datavalue": {
+                      "value": {
+                        "entity-type": "item",
+                        "numeric-id": 11409212,
+                        "id": "Q11409212"
+                      },
+                      "type": "wikibase-entityid"
+                    },
+                    "datatype": "wikibase-item"
+                  }
+                ],
+                "P1669": [
+                  {
+                    "snaktype": "value",
+                    "property": "P1669",
+                    "hash": "2badcb812221687aad35d4d82d4ca3cde5312aa0",
+                    "datavalue": {
+                      "value": "700076967",
+                      "type": "string"
+                    },
+                    "datatype": "external-id"
+                  }
+                ]
+              },
+              "snaks-order": [
+                "P11797",
+                "P1669"
+              ]
+            },
+            {
+              "hash": "2a79d19cf1ac2563107b0d8a5f39691cc34eb904",
+              "snaks": {
+                "P11797": [
+                  {
+                    "snaktype": "value",
+                    "property": "P11797",
+                    "hash": "a83db6344fbbcd9916d221d701cc72182a7455ee",
+                    "datavalue": {
+                      "value": {
+                        "entity-type": "item",
+                        "numeric-id": 830106,
+                        "id": "Q830106"
+                      },
+                      "type": "wikibase-entityid"
+                    },
+                    "datatype": "wikibase-item"
+                  }
+                ],
+                "P1566": [
+                  {
+                    "snaktype": "value",
+                    "property": "P1566",
+                    "hash": "5800dd9609cdba8f5a3f71f38ffebda8979a60bd",
+                    "datavalue": {
+                      "value": "4907348",
+                      "type": "string"
+                    },
+                    "datatype": "external-id"
+                  }
+                ]
+              },
+              "snaks-order": [
+                "P11797",
+                "P1566"
+              ]
+            }
+          ]
+        }
+      ],
+      "P1699": [
+        {
+          "mainsnak": {
+            "snaktype": "value",
+            "property": "P1699",
+            "hash": "823fb08bdb416e09ecf71b5a593d23f45e3cd6e2",
+            "datavalue": {
+              "value": "5783",
+              "type": "string"
+            },
+            "datatype": "external-id"
+          },
+          "type": "statement",
+          "id": "Q786387$732D9575-F773-4EFF-B8F5-92F09C46CF67",
+          "rank": "normal",
+          "references": [
+            {
+              "hash": "77701ab94b5d7c977b67de286dbf9c6ac5c41dbe",
+              "snaks": {
+                "P887": [
+                  {
+                    "snaktype": "value",
+                    "property": "P887",
+                    "hash": "cc0aed3cd9279f5c1a96e248e23f6e7c49a4c127",
+                    "datavalue": {
+                      "value": {
+                        "entity-type": "item",
+                        "numeric-id": 134479201,
+                        "id": "Q134479201"
+                      },
+                      "type": "wikibase-entityid"
+                    },
+                    "datatype": "wikibase-item"
+                  }
+                ]
+              },
+              "snaks-order": [
+                "P887"
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    "sitelinks": {
+      "arzwiki": {
+        "site": "arzwiki",
+        "title": "مبنى ريلاينس",
+        "badges": [],
+        "url": "https://arz.wikipedia.org/wiki/%D9%85%D8%A8%D9%86%D9%89_%D8%B1%D9%8A%D9%84%D8%A7%D9%8A%D9%86%D8%B3"
+      },
+      "commonswiki": {
+        "site": "commonswiki",
+        "title": "Category:Reliance Building",
+        "badges": [],
+        "url": "https://commons.wikimedia.org/wiki/Category:Reliance_Building"
+      },
+      "dewiki": {
+        "site": "dewiki",
+        "title": "Reliance Building",
+        "badges": [],
+        "url": "https://de.wikipedia.org/wiki/Reliance_Building"
+      },
+      "enwiki": {
+        "site": "enwiki",
+        "title": "Reliance Building",
+        "badges": [],
+        "url": "https://en.wikipedia.org/wiki/Reliance_Building"
+      },
+      "eswiki": {
+        "site": "eswiki",
+        "title": "Reliance Building",
+        "badges": [],
+        "url": "https://es.wikipedia.org/wiki/Reliance_Building"
+      },
+      "frwiki": {
+        "site": "frwiki",
+        "title": "Reliance Building",
+        "badges": [],
+        "url": "https://fr.wikipedia.org/wiki/Reliance_Building"
+      },
+      "itwiki": {
+        "site": "itwiki",
+        "title": "Reliance Building",
+        "badges": [],
+        "url": "https://it.wikipedia.org/wiki/Reliance_Building"
+      },
+      "nlwiki": {
+        "site": "nlwiki",
+        "title": "Reliance Building",
+        "badges": [],
+        "url": "https://nl.wikipedia.org/wiki/Reliance_Building"
+      },
+      "plwiki": {
+        "site": "plwiki",
+        "title": "Reliance Building",
+        "badges": [],
+        "url": "https://pl.wikipedia.org/wiki/Reliance_Building"
+      },
+      "svwiki": {
+        "site": "svwiki",
+        "title": "Reliance Building",
+        "badges": [],
+        "url": "https://sv.wikipedia.org/wiki/Reliance_Building"
+      }
+    }
+  }
+}

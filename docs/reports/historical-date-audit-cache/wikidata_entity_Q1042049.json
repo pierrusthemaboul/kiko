@@ -1,0 +1,641 @@
+{
+  "saved_at": "2026-03-07T16:43:57.889Z",
+  "value": {
+    "pageid": 991184,
+    "ns": 0,
+    "title": "Q1042049",
+    "lastrevid": 2378566980,
+    "modified": "2025-07-12T08:41:04Z",
+    "type": "item",
+    "id": "Q1042049",
+    "labels": {
+      "pl": {
+        "language": "pl",
+        "value": "Bitwa pod Jarnac"
+      },
+      "eu": {
+        "language": "eu",
+        "value": "Jarnaceko gudua"
+      },
+      "fr": {
+        "language": "fr",
+        "value": "bataille de Jarnac"
+      },
+      "en": {
+        "language": "en",
+        "value": "Battle of Jarnac"
+      },
+      "hu": {
+        "language": "hu",
+        "value": "jarnaci csata"
+      },
+      "nl": {
+        "language": "nl",
+        "value": "Slag bij Jarnac"
+      },
+      "it": {
+        "language": "it",
+        "value": "battaglia di Jarnac"
+      },
+      "ru": {
+        "language": "ru",
+        "value": "Битва при Жарнаке"
+      },
+      "zh-hant": {
+        "language": "zh-hant",
+        "value": "雅納克戰役"
+      },
+      "zh-cn": {
+        "language": "zh-cn",
+        "value": "雅纳克战役"
+      },
+      "zh-hans": {
+        "language": "zh-hans",
+        "value": "雅纳克战役"
+      },
+      "he": {
+        "language": "he",
+        "value": "קרב ג'רנק"
+      },
+      "es": {
+        "language": "es",
+        "value": "Batalla de Jarnac"
+      },
+      "bg": {
+        "language": "bg",
+        "value": "Битка при Жарнак"
+      },
+      "zh": {
+        "language": "zh",
+        "value": "雅纳克战役"
+      },
+      "de": {
+        "language": "de",
+        "value": "Schlacht bei Jarnac"
+      },
+      "yo": {
+        "language": "yo",
+        "value": "ogun Jarnac"
+      },
+      "sl": {
+        "language": "sl",
+        "value": "Bitka pri Jarnacu"
+      },
+      "el": {
+        "language": "el",
+        "value": "Μάχη του Ζαρνάκ"
+      },
+      "ga": {
+        "language": "ga",
+        "value": "Cath Jarnac"
+      },
+      "ro": {
+        "language": "ro",
+        "value": "Bătălia de la Jarnac"
+      }
+    },
+    "descriptions": {
+      "en": {
+        "language": "en",
+        "value": "1569 battle"
+      },
+      "fr": {
+        "language": "fr",
+        "value": "bataille des guerres de Religion"
+      },
+      "nl": {
+        "language": "nl",
+        "value": "veldslag in Frankrijk"
+      },
+      "it": {
+        "language": "it",
+        "value": "Battaglia"
+      },
+      "yo": {
+        "language": "yo",
+        "value": "ogun"
+      },
+      "de": {
+        "language": "de",
+        "value": "Kampfhandlung im Dritten Hugenottenkrieg"
+      },
+      "el": {
+        "language": "el",
+        "value": "μάχη των Θρησκευτικών Πολέμων"
+      },
+      "ro": {
+        "language": "ro",
+        "value": "bătălie din 1569 în Franța"
+      }
+    },
+    "aliases": {},
+    "claims": {
+      "P646": [
+        {
+          "mainsnak": {
+            "snaktype": "value",
+            "property": "P646",
+            "hash": "97a6ff58c6fc7154842adc116a43c8ba04e9b258",
+            "datavalue": {
+              "value": "/m/026b1pz",
+              "type": "string"
+            },
+            "datatype": "external-id"
+          },
+          "type": "statement",
+          "id": "Q1042049$4AB68E00-4C15-46AC-839B-DABFF1CD100F",
+          "rank": "normal",
+          "references": [
+            {
+              "hash": "2b00cb481cddcac7623114367489b5c194901c4a",
+              "snaks": {
+                "P248": [
+                  {
+                    "snaktype": "value",
+                    "property": "P248",
+                    "hash": "a94b740202b097dd33355e0e6c00e54b9395e5e0",
+                    "datavalue": {
+                      "value": {
+                        "entity-type": "item",
+                        "numeric-id": 15241312,
+                        "id": "Q15241312"
+                      },
+                      "type": "wikibase-entityid"
+                    },
+                    "datatype": "wikibase-item"
+                  }
+                ],
+                "P577": [
+                  {
+                    "snaktype": "value",
+                    "property": "P577",
+                    "hash": "fde79ecb015112d2f29229ccc1ec514ed3e71fa2",
+                    "datavalue": {
+                      "value": {
+                        "time": "+2013-10-28T00:00:00Z",
+                        "timezone": 0,
+                        "before": 0,
+                        "after": 0,
+                        "precision": 11,
+                        "calendarmodel": "http://www.wikidata.org/entity/Q1985727"
+                      },
+                      "type": "time"
+                    },
+                    "datatype": "time"
+                  }
+                ]
+              },
+              "snaks-order": [
+                "P248",
+                "P577"
+              ]
+            }
+          ]
+        }
+      ],
+      "P31": [
+        {
+          "mainsnak": {
+            "snaktype": "value",
+            "property": "P31",
+            "hash": "baa1df9dcd37b9f3a062e7a14a8bef0c37078d32",
+            "datavalue": {
+              "value": {
+                "entity-type": "item",
+                "numeric-id": 178561,
+                "id": "Q178561"
+              },
+              "type": "wikibase-entityid"
+            },
+            "datatype": "wikibase-item"
+          },
+          "type": "statement",
+          "id": "Q1042049$E8C27269-9336-49B1-980D-4AABF1C00082",
+          "rank": "normal",
+          "references": [
+            {
+              "hash": "d4bd87b862b12d99d26e86472d44f26858dee639",
+              "snaks": {
+                "P143": [
+                  {
+                    "snaktype": "value",
+                    "property": "P143",
+                    "hash": "f30cbd35620c4ea6d0633aaf0210a8916130469b",
+                    "datavalue": {
+                      "value": {
+                        "entity-type": "item",
+                        "numeric-id": 8447,
+                        "id": "Q8447"
+                      },
+                      "type": "wikibase-entityid"
+                    },
+                    "datatype": "wikibase-item"
+                  }
+                ]
+              },
+              "snaks-order": [
+                "P143"
+              ]
+            }
+          ]
+        }
+      ],
+      "P361": [
+        {
+          "mainsnak": {
+            "snaktype": "value",
+            "property": "P361",
+            "hash": "635bafe4d6e9c0e0d95b249f69da09e27f70263b",
+            "datavalue": {
+              "value": {
+                "entity-type": "item",
+                "numeric-id": 673175,
+                "id": "Q673175"
+              },
+              "type": "wikibase-entityid"
+            },
+            "datatype": "wikibase-item"
+          },
+          "type": "statement",
+          "id": "Q1042049$D05D2359-F4EF-4D8D-8560-8874B468D06C",
+          "rank": "normal",
+          "references": [
+            {
+              "hash": "d4bd87b862b12d99d26e86472d44f26858dee639",
+              "snaks": {
+                "P143": [
+                  {
+                    "snaktype": "value",
+                    "property": "P143",
+                    "hash": "f30cbd35620c4ea6d0633aaf0210a8916130469b",
+                    "datavalue": {
+                      "value": {
+                        "entity-type": "item",
+                        "numeric-id": 8447,
+                        "id": "Q8447"
+                      },
+                      "type": "wikibase-entityid"
+                    },
+                    "datatype": "wikibase-item"
+                  }
+                ]
+              },
+              "snaks-order": [
+                "P143"
+              ]
+            }
+          ]
+        }
+      ],
+      "P18": [
+        {
+          "mainsnak": {
+            "snaktype": "value",
+            "property": "P18",
+            "hash": "e76287eabd47750563cd37c5ab098c3e0c5ddfda",
+            "datavalue": {
+              "value": "Battle of Jarnac.jpg",
+              "type": "string"
+            },
+            "datatype": "commonsMedia"
+          },
+          "type": "statement",
+          "id": "Q1042049$5F408A41-1FFF-4FDE-ABED-11062EC00FB6",
+          "rank": "normal"
+        }
+      ],
+      "P276": [
+        {
+          "mainsnak": {
+            "snaktype": "value",
+            "property": "P276",
+            "hash": "c05a81c77b83354182f1ab1034fbc2ab51afa220",
+            "datavalue": {
+              "value": {
+                "entity-type": "item",
+                "numeric-id": 217173,
+                "id": "Q217173"
+              },
+              "type": "wikibase-entityid"
+            },
+            "datatype": "wikibase-item"
+          },
+          "type": "statement",
+          "id": "Q1042049$33342061-D34D-4B03-8F9F-1227D75F2EB5",
+          "rank": "normal",
+          "references": [
+            {
+              "hash": "d4bd87b862b12d99d26e86472d44f26858dee639",
+              "snaks": {
+                "P143": [
+                  {
+                    "snaktype": "value",
+                    "property": "P143",
+                    "hash": "f30cbd35620c4ea6d0633aaf0210a8916130469b",
+                    "datavalue": {
+                      "value": {
+                        "entity-type": "item",
+                        "numeric-id": 8447,
+                        "id": "Q8447"
+                      },
+                      "type": "wikibase-entityid"
+                    },
+                    "datatype": "wikibase-item"
+                  }
+                ]
+              },
+              "snaks-order": [
+                "P143"
+              ]
+            }
+          ]
+        }
+      ],
+      "P910": [
+        {
+          "mainsnak": {
+            "snaktype": "value",
+            "property": "P910",
+            "hash": "d64bd6fcde5bf5f193499a43e16d99484722a9a9",
+            "datavalue": {
+              "value": {
+                "entity-type": "item",
+                "numeric-id": 9538156,
+                "id": "Q9538156"
+              },
+              "type": "wikibase-entityid"
+            },
+            "datatype": "wikibase-item"
+          },
+          "type": "statement",
+          "id": "Q1042049$40AC77F6-6F84-46C4-8BAC-7139E1D94A55",
+          "rank": "normal",
+          "references": [
+            {
+              "hash": "d4bd87b862b12d99d26e86472d44f26858dee639",
+              "snaks": {
+                "P143": [
+                  {
+                    "snaktype": "value",
+                    "property": "P143",
+                    "hash": "f30cbd35620c4ea6d0633aaf0210a8916130469b",
+                    "datavalue": {
+                      "value": {
+                        "entity-type": "item",
+                        "numeric-id": 8447,
+                        "id": "Q8447"
+                      },
+                      "type": "wikibase-entityid"
+                    },
+                    "datatype": "wikibase-item"
+                  }
+                ]
+              },
+              "snaks-order": [
+                "P143"
+              ]
+            }
+          ]
+        }
+      ],
+      "P585": [
+        {
+          "mainsnak": {
+            "snaktype": "value",
+            "property": "P585",
+            "hash": "e0166cd7b97bc57f879a0a524f59ce99a61ad204",
+            "datavalue": {
+              "value": {
+                "time": "+1569-03-13T00:00:00Z",
+                "timezone": 0,
+                "before": 0,
+                "after": 0,
+                "precision": 11,
+                "calendarmodel": "http://www.wikidata.org/entity/Q1985727"
+              },
+              "type": "time"
+            },
+            "datatype": "time"
+          },
+          "type": "statement",
+          "id": "Q1042049$B91A6E67-E0D2-48A1-8722-5ACDBF8C90FC",
+          "rank": "normal",
+          "references": [
+            {
+              "hash": "d4bd87b862b12d99d26e86472d44f26858dee639",
+              "snaks": {
+                "P143": [
+                  {
+                    "snaktype": "value",
+                    "property": "P143",
+                    "hash": "f30cbd35620c4ea6d0633aaf0210a8916130469b",
+                    "datavalue": {
+                      "value": {
+                        "entity-type": "item",
+                        "numeric-id": 8447,
+                        "id": "Q8447"
+                      },
+                      "type": "wikibase-entityid"
+                    },
+                    "datatype": "wikibase-item"
+                  }
+                ]
+              },
+              "snaks-order": [
+                "P143"
+              ]
+            }
+          ]
+        }
+      ],
+      "P1417": [
+        {
+          "mainsnak": {
+            "snaktype": "value",
+            "property": "P1417",
+            "hash": "44195725485f84090a0007c69ead105d2b0a528d",
+            "datavalue": {
+              "value": "topic/Battle-of-Jarnac",
+              "type": "string"
+            },
+            "datatype": "external-id"
+          },
+          "type": "statement",
+          "qualifiers": {
+            "P1810": [
+              {
+                "snaktype": "value",
+                "property": "P1810",
+                "hash": "73515ed065bb80193869a51b0569ffaf23540f27",
+                "datavalue": {
+                  "value": "Battle of Jarnac",
+                  "type": "string"
+                },
+                "datatype": "string"
+              }
+            ]
+          },
+          "qualifiers-order": [
+            "P1810"
+          ],
+          "id": "Q1042049$66896744-2BF6-46C4-844E-594D20E3BA16",
+          "rank": "normal"
+        }
+      ],
+      "P17": [
+        {
+          "mainsnak": {
+            "snaktype": "value",
+            "property": "P17",
+            "hash": "c05db5d169c2560b9799d567a803d20a392f53e4",
+            "datavalue": {
+              "value": {
+                "entity-type": "item",
+                "numeric-id": 142,
+                "id": "Q142"
+              },
+              "type": "wikibase-entityid"
+            },
+            "datatype": "wikibase-item"
+          },
+          "type": "statement",
+          "id": "Q1042049$b99c5ff7-0388-4be2-974b-58d548797c56",
+          "rank": "normal"
+        }
+      ],
+      "P625": [
+        {
+          "mainsnak": {
+            "snaktype": "value",
+            "property": "P625",
+            "hash": "2bb483099f840cc748a54c91d8ae3561b4827ebb",
+            "datavalue": {
+              "value": {
+                "latitude": 45.681,
+                "longitude": -0.175,
+                "altitude": null,
+                "precision": 0.001,
+                "globe": "http://www.wikidata.org/entity/Q2"
+              },
+              "type": "globecoordinate"
+            },
+            "datatype": "globe-coordinate"
+          },
+          "type": "statement",
+          "id": "Q1042049$26bdd4c3-444b-4267-8a3e-74506212bbab",
+          "rank": "normal"
+        }
+      ],
+      "P1343": [
+        {
+          "mainsnak": {
+            "snaktype": "value",
+            "property": "P1343",
+            "hash": "b9298ad2260162aaa6d63bd3882e152ca2bb5f3f",
+            "datavalue": {
+              "value": {
+                "entity-type": "item",
+                "numeric-id": 16082057,
+                "id": "Q16082057"
+              },
+              "type": "wikibase-entityid"
+            },
+            "datatype": "wikibase-item"
+          },
+          "type": "statement",
+          "qualifiers": {
+            "P805": [
+              {
+                "snaktype": "value",
+                "property": "P805",
+                "hash": "c4371bbda0b386d88ece1260264cfa94b9bfc3e0",
+                "datavalue": {
+                  "value": {
+                    "entity-type": "item",
+                    "numeric-id": 124012283,
+                    "id": "Q124012283"
+                  },
+                  "type": "wikibase-entityid"
+                },
+                "datatype": "wikibase-item"
+              }
+            ]
+          },
+          "qualifiers-order": [
+            "P805"
+          ],
+          "id": "Q1042049$646FAE25-B315-4632-AAF6-CF1EA2743B37",
+          "rank": "normal"
+        }
+      ]
+    },
+    "sitelinks": {
+      "bgwiki": {
+        "site": "bgwiki",
+        "title": "Битка при Жарнак",
+        "badges": [],
+        "url": "https://bg.wikipedia.org/wiki/%D0%91%D0%B8%D1%82%D0%BA%D0%B0_%D0%BF%D1%80%D0%B8_%D0%96%D0%B0%D1%80%D0%BD%D0%B0%D0%BA"
+      },
+      "dewiki": {
+        "site": "dewiki",
+        "title": "Schlacht bei Jarnac",
+        "badges": [],
+        "url": "https://de.wikipedia.org/wiki/Schlacht_bei_Jarnac"
+      },
+      "enwiki": {
+        "site": "enwiki",
+        "title": "Battle of Jarnac",
+        "badges": [],
+        "url": "https://en.wikipedia.org/wiki/Battle_of_Jarnac"
+      },
+      "euwiki": {
+        "site": "euwiki",
+        "title": "Jarnaceko gudua",
+        "badges": [],
+        "url": "https://eu.wikipedia.org/wiki/Jarnaceko_gudua"
+      },
+      "frwiki": {
+        "site": "frwiki",
+        "title": "Bataille de Jarnac",
+        "badges": [],
+        "url": "https://fr.wikipedia.org/wiki/Bataille_de_Jarnac"
+      },
+      "huwiki": {
+        "site": "huwiki",
+        "title": "Jarnaci csata",
+        "badges": [],
+        "url": "https://hu.wikipedia.org/wiki/Jarnaci_csata"
+      },
+      "itwiki": {
+        "site": "itwiki",
+        "title": "Battaglia di Jarnac",
+        "badges": [],
+        "url": "https://it.wikipedia.org/wiki/Battaglia_di_Jarnac"
+      },
+      "nlwiki": {
+        "site": "nlwiki",
+        "title": "Slag bij Jarnac",
+        "badges": [],
+        "url": "https://nl.wikipedia.org/wiki/Slag_bij_Jarnac"
+      },
+      "plwiki": {
+        "site": "plwiki",
+        "title": "Bitwa pod Jarnac",
+        "badges": [],
+        "url": "https://pl.wikipedia.org/wiki/Bitwa_pod_Jarnac"
+      },
+      "ruwiki": {
+        "site": "ruwiki",
+        "title": "Битва при Жарнаке",
+        "badges": [],
+        "url": "https://ru.wikipedia.org/wiki/%D0%91%D0%B8%D1%82%D0%B2%D0%B0_%D0%BF%D1%80%D0%B8_%D0%96%D0%B0%D1%80%D0%BD%D0%B0%D0%BA%D0%B5"
+      },
+      "slwiki": {
+        "site": "slwiki",
+        "title": "Bitka pri Jarnacu",
+        "badges": [],
+        "url": "https://sl.wikipedia.org/wiki/Bitka_pri_Jarnacu"
+      }
+    }
+  }
+}

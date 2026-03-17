@@ -1,0 +1,233 @@
+{
+  "saved_at": "2026-03-07T14:12:48.294Z",
+  "value": {
+    "pageid": 2805358,
+    "ns": 0,
+    "title": "Q2932598",
+    "lastrevid": 2279929661,
+    "modified": "2024-11-26T10:54:41Z",
+    "type": "item",
+    "id": "Q2932598",
+    "labels": {
+      "fr": {
+        "language": "fr",
+        "value": "cadastre de France"
+      },
+      "de": {
+        "language": "de",
+        "value": "Cadastre de France"
+      }
+    },
+    "descriptions": {
+      "fr": {
+        "language": "fr",
+        "value": "ensemble de plans et fichiers administratifs recensant les propriétés foncières situées dans chaque commune française"
+      }
+    },
+    "aliases": {
+      "fr": [
+        {
+          "language": "fr",
+          "value": "cadastre (France)"
+        },
+        {
+          "language": "fr",
+          "value": "ancien cadastre"
+        },
+        {
+          "language": "fr",
+          "value": "parcelles cadastrales"
+        }
+      ]
+    },
+    "claims": {
+      "P17": [
+        {
+          "mainsnak": {
+            "snaktype": "value",
+            "property": "P17",
+            "hash": "c05db5d169c2560b9799d567a803d20a392f53e4",
+            "datavalue": {
+              "value": {
+                "entity-type": "item",
+                "numeric-id": 142,
+                "id": "Q142"
+              },
+              "type": "wikibase-entityid"
+            },
+            "datatype": "wikibase-item"
+          },
+          "type": "statement",
+          "id": "Q2932598$46FFFB19-5560-46EF-9A51-E740F7343B36",
+          "rank": "normal"
+        }
+      ],
+      "P856": [
+        {
+          "mainsnak": {
+            "snaktype": "value",
+            "property": "P856",
+            "hash": "cae0692c884562bf3af3b8c208a9d09fe04e591c",
+            "datavalue": {
+              "value": "https://www.cadastre.gouv.fr",
+              "type": "string"
+            },
+            "datatype": "url"
+          },
+          "type": "statement",
+          "qualifiers": {
+            "P407": [
+              {
+                "snaktype": "value",
+                "property": "P407",
+                "hash": "d197d0a5efa4b4c23a302a829dd3ef43684fe002",
+                "datavalue": {
+                  "value": {
+                    "entity-type": "item",
+                    "numeric-id": 150,
+                    "id": "Q150"
+                  },
+                  "type": "wikibase-entityid"
+                },
+                "datatype": "wikibase-item"
+              }
+            ]
+          },
+          "qualifiers-order": [
+            "P407"
+          ],
+          "id": "Q2932598$e444545c-4232-354f-dc1a-94148ac776e6",
+          "rank": "normal"
+        }
+      ],
+      "P31": [
+        {
+          "mainsnak": {
+            "snaktype": "value",
+            "property": "P31",
+            "hash": "a70454f9492cc7e764fc859102d41b48af32ca62",
+            "datavalue": {
+              "value": {
+                "entity-type": "item",
+                "numeric-id": 191072,
+                "id": "Q191072"
+              },
+              "type": "wikibase-entityid"
+            },
+            "datatype": "wikibase-item"
+          },
+          "type": "statement",
+          "id": "Q2932598$b34c1ab2-4665-1235-c55a-95f6621084c6",
+          "rank": "normal"
+        }
+      ],
+      "P2671": [
+        {
+          "mainsnak": {
+            "snaktype": "value",
+            "property": "P2671",
+            "hash": "3ceb05b1804edc7e235799a5b2605b64de81ae9c",
+            "datavalue": {
+              "value": "/g/123141dr",
+              "type": "string"
+            },
+            "datatype": "external-id"
+          },
+          "type": "statement",
+          "id": "Q2932598$7CD756D5-6EE8-46B6-8031-5FB65339D29F",
+          "rank": "normal"
+        }
+      ],
+      "P2670": [
+        {
+          "mainsnak": {
+            "snaktype": "value",
+            "property": "P2670",
+            "hash": "67440480eae291526f28d5e5947dd769636a3ef1",
+            "datavalue": {
+              "value": {
+                "entity-type": "item",
+                "numeric-id": 12043805,
+                "id": "Q12043805"
+              },
+              "type": "wikibase-entityid"
+            },
+            "datatype": "wikibase-item"
+          },
+          "type": "statement",
+          "id": "Q2932598$4f27d8e7-49ca-5b93-6906-77b84ca244b6",
+          "rank": "normal"
+        }
+      ],
+      "P3206": [
+        {
+          "mainsnak": {
+            "snaktype": "value",
+            "property": "P3206",
+            "hash": "9a6bdc053d516722b469ef19d6ca965abeddbc04",
+            "datavalue": {
+              "value": "58e5924b88ee3802ca255566",
+              "type": "string"
+            },
+            "datatype": "external-id"
+          },
+          "type": "statement",
+          "id": "Q2932598$7a4b2a8d-4b7b-af21-b050-277a41f4ae31",
+          "rank": "normal"
+        }
+      ],
+      "P361": [
+        {
+          "mainsnak": {
+            "snaktype": "value",
+            "property": "P361",
+            "hash": "d9faf6103484e07695550c6ac80e7706ecb0dae5",
+            "datavalue": {
+              "value": {
+                "entity-type": "item",
+                "numeric-id": 3029562,
+                "id": "Q3029562"
+              },
+              "type": "wikibase-entityid"
+            },
+            "datatype": "wikibase-item"
+          },
+          "type": "statement",
+          "id": "Q2932598$92fc7e7f-45be-afe9-339e-6782bc9024ff",
+          "rank": "normal"
+        }
+      ],
+      "P625": [
+        {
+          "mainsnak": {
+            "snaktype": "value",
+            "property": "P625",
+            "hash": "d54e28e628327002e8d3d069710d0a45694b89e9",
+            "datavalue": {
+              "value": {
+                "latitude": 48.840351,
+                "longitude": 2.377772,
+                "altitude": null,
+                "precision": 0.013648901472473296,
+                "globe": "http://www.wikidata.org/entity/Q2"
+              },
+              "type": "globecoordinate"
+            },
+            "datatype": "globe-coordinate"
+          },
+          "type": "statement",
+          "id": "Q2932598$196eb3c7-e850-403b-a913-e08474227f28",
+          "rank": "normal"
+        }
+      ]
+    },
+    "sitelinks": {
+      "frwiki": {
+        "site": "frwiki",
+        "title": "Cadastre de France",
+        "badges": [],
+        "url": "https://fr.wikipedia.org/wiki/Cadastre_de_France"
+      }
+    }
+  }
+}

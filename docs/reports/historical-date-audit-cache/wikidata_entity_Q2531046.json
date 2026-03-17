@@ -1,0 +1,422 @@
+{
+  "saved_at": "2026-03-07T13:30:17.646Z",
+  "value": {
+    "pageid": 2442769,
+    "ns": 0,
+    "title": "Q2531046",
+    "lastrevid": 2347355728,
+    "modified": "2025-05-11T09:21:15Z",
+    "type": "item",
+    "id": "Q2531046",
+    "labels": {
+      "pl": {
+        "language": "pl",
+        "value": "Bitwa pod Amblève"
+      },
+      "sh": {
+        "language": "sh",
+        "value": "Bitka kod Amblèvea"
+      },
+      "en": {
+        "language": "en",
+        "value": "Battle of Amblève"
+      },
+      "fy": {
+        "language": "fy",
+        "value": "Slach by Amel"
+      },
+      "nl": {
+        "language": "nl",
+        "value": "Slag bij Amel"
+      },
+      "it": {
+        "language": "it",
+        "value": "battaglia di Amblève"
+      },
+      "fr": {
+        "language": "fr",
+        "value": "bataille d'Amblève"
+      },
+      "zh": {
+        "language": "zh",
+        "value": "阿梅爾戰役"
+      },
+      "ja": {
+        "language": "ja",
+        "value": "アンブレーヴの戦い"
+      },
+      "ru": {
+        "language": "ru",
+        "value": "Сражение на Амблеве"
+      },
+      "ca": {
+        "language": "ca",
+        "value": "batalla d'Amel"
+      },
+      "cs": {
+        "language": "cs",
+        "value": "bitva u Amblève"
+      },
+      "pt-br": {
+        "language": "pt-br",
+        "value": "Batalha de Amblève"
+      },
+      "es": {
+        "language": "es",
+        "value": "Batalla de Amblève"
+      },
+      "yo": {
+        "language": "yo",
+        "value": "ogun Amblève"
+      },
+      "ga": {
+        "language": "ga",
+        "value": "Cath Amblève"
+      },
+      "sl": {
+        "language": "sl",
+        "value": "bitka pri Amblèvu"
+      }
+    },
+    "descriptions": {
+      "nl": {
+        "language": "nl",
+        "value": "veldslag in België"
+      },
+      "cs": {
+        "language": "cs",
+        "value": "bitva Karla Martela s Chilperichem II. z roku 716"
+      },
+      "yo": {
+        "language": "yo",
+        "value": "ogun"
+      },
+      "en": {
+        "language": "en",
+        "value": "716 battle"
+      },
+      "sl": {
+        "language": "sl",
+        "value": "bitka leta 716 med Karlom Martelom, med majordomom Avstrazije, ter njegovimi nevstrijskimi in frizijskimi rivali"
+      },
+      "pl": {
+        "language": "pl",
+        "value": "starcie zbrojne"
+      }
+    },
+    "aliases": {
+      "pl": [
+        {
+          "language": "pl",
+          "value": "Bitwa pod Ambleve"
+        }
+      ],
+      "sh": [
+        {
+          "language": "sh",
+          "value": "Amblève, bitka kod"
+        },
+        {
+          "language": "sh",
+          "value": "Ambleve, bitka kod"
+        },
+        {
+          "language": "sh",
+          "value": "Bitka kod Amblevea"
+        }
+      ],
+      "en": [
+        {
+          "language": "en",
+          "value": "Battle of Ambleve"
+        }
+      ]
+    },
+    "claims": {
+      "P646": [
+        {
+          "mainsnak": {
+            "snaktype": "value",
+            "property": "P646",
+            "hash": "2b6052046ccbb6ea3358f4ad4e99977a29fe6473",
+            "datavalue": {
+              "value": "/m/0cddg_",
+              "type": "string"
+            },
+            "datatype": "external-id"
+          },
+          "type": "statement",
+          "id": "Q2531046$4F771C1A-8472-4B62-A5FA-446B0BB2E58A",
+          "rank": "normal",
+          "references": [
+            {
+              "hash": "2b00cb481cddcac7623114367489b5c194901c4a",
+              "snaks": {
+                "P248": [
+                  {
+                    "snaktype": "value",
+                    "property": "P248",
+                    "hash": "a94b740202b097dd33355e0e6c00e54b9395e5e0",
+                    "datavalue": {
+                      "value": {
+                        "entity-type": "item",
+                        "numeric-id": 15241312,
+                        "id": "Q15241312"
+                      },
+                      "type": "wikibase-entityid"
+                    },
+                    "datatype": "wikibase-item"
+                  }
+                ],
+                "P577": [
+                  {
+                    "snaktype": "value",
+                    "property": "P577",
+                    "hash": "fde79ecb015112d2f29229ccc1ec514ed3e71fa2",
+                    "datavalue": {
+                      "value": {
+                        "time": "+2013-10-28T00:00:00Z",
+                        "timezone": 0,
+                        "before": 0,
+                        "after": 0,
+                        "precision": 11,
+                        "calendarmodel": "http://www.wikidata.org/entity/Q1985727"
+                      },
+                      "type": "time"
+                    },
+                    "datatype": "time"
+                  }
+                ]
+              },
+              "snaks-order": [
+                "P248",
+                "P577"
+              ]
+            }
+          ]
+        }
+      ],
+      "P31": [
+        {
+          "mainsnak": {
+            "snaktype": "value",
+            "property": "P31",
+            "hash": "baa1df9dcd37b9f3a062e7a14a8bef0c37078d32",
+            "datavalue": {
+              "value": {
+                "entity-type": "item",
+                "numeric-id": 178561,
+                "id": "Q178561"
+              },
+              "type": "wikibase-entityid"
+            },
+            "datatype": "wikibase-item"
+          },
+          "type": "statement",
+          "id": "Q2531046$372A15AA-79A9-4890-948C-00EF81045E01",
+          "rank": "normal"
+        }
+      ],
+      "P17": [
+        {
+          "mainsnak": {
+            "snaktype": "value",
+            "property": "P17",
+            "hash": "c2859f311753176d6bdfa7da54ceeeac7acb52c8",
+            "datavalue": {
+              "value": {
+                "entity-type": "item",
+                "numeric-id": 31,
+                "id": "Q31"
+              },
+              "type": "wikibase-entityid"
+            },
+            "datatype": "wikibase-item"
+          },
+          "type": "statement",
+          "id": "Q2531046$D2D371FF-7361-4FA6-9ED4-47E98B862340",
+          "rank": "normal"
+        }
+      ],
+      "P1417": [
+        {
+          "mainsnak": {
+            "snaktype": "value",
+            "property": "P1417",
+            "hash": "0d472530554bff6834ced29a17e7b28bcb5bee2d",
+            "datavalue": {
+              "value": "topic/battle-of-Ambleve",
+              "type": "string"
+            },
+            "datatype": "external-id"
+          },
+          "type": "statement",
+          "qualifiers": {
+            "P1810": [
+              {
+                "snaktype": "value",
+                "property": "P1810",
+                "hash": "24143c029fe71bd36d91236bdaa472cbb3d63c40",
+                "datavalue": {
+                  "value": "battle of Amblève",
+                  "type": "string"
+                },
+                "datatype": "string"
+              }
+            ]
+          },
+          "qualifiers-order": [
+            "P1810"
+          ],
+          "id": "Q2531046$D3302B34-B815-40A6-B8AC-7E1D01599799",
+          "rank": "normal"
+        }
+      ],
+      "P276": [
+        {
+          "mainsnak": {
+            "snaktype": "value",
+            "property": "P276",
+            "hash": "9c4b370161a23e4dfc04cd4b5dc3555d4ad4dc95",
+            "datavalue": {
+              "value": {
+                "entity-type": "item",
+                "numeric-id": 159868,
+                "id": "Q159868"
+              },
+              "type": "wikibase-entityid"
+            },
+            "datatype": "wikibase-item"
+          },
+          "type": "statement",
+          "id": "Q2531046$969f4a4a-450a-c176-a0af-37a5d61d1e0a",
+          "rank": "normal"
+        }
+      ],
+      "P585": [
+        {
+          "mainsnak": {
+            "snaktype": "value",
+            "property": "P585",
+            "hash": "bc1c5be8b550a32752e4b028f9fca442f7b864c8",
+            "datavalue": {
+              "value": {
+                "time": "+0716-00-00T00:00:00Z",
+                "timezone": 0,
+                "before": 0,
+                "after": 0,
+                "precision": 9,
+                "calendarmodel": "http://www.wikidata.org/entity/Q1985786"
+              },
+              "type": "time"
+            },
+            "datatype": "time"
+          },
+          "type": "statement",
+          "id": "Q2531046$6524e2c2-4841-2fd0-0b9e-c8cf443989ea",
+          "rank": "normal"
+        }
+      ],
+      "P625": [
+        {
+          "mainsnak": {
+            "snaktype": "value",
+            "property": "P625",
+            "hash": "8b85916c3b47efba84629ef9edf0bc0c2b44b35f",
+            "datavalue": {
+              "value": {
+                "latitude": 50.480034,
+                "longitude": 5.638627,
+                "altitude": null,
+                "precision": 0.000001,
+                "globe": "http://www.wikidata.org/entity/Q2"
+              },
+              "type": "globecoordinate"
+            },
+            "datatype": "globe-coordinate"
+          },
+          "type": "statement",
+          "id": "Q2531046$AC5FF510-16D7-4C1B-A622-3AD81A58044A",
+          "rank": "normal"
+        },
+        {
+          "mainsnak": {
+            "snaktype": "value",
+            "property": "P625",
+            "hash": "85102b2d39ec79e63153cc513f4f7787f3d4b59e",
+            "datavalue": {
+              "value": {
+                "latitude": 50.48,
+                "longitude": 5.63861,
+                "altitude": null,
+                "precision": 0.000001,
+                "globe": "http://www.wikidata.org/entity/Q2"
+              },
+              "type": "globecoordinate"
+            },
+            "datatype": "globe-coordinate"
+          },
+          "type": "statement",
+          "id": "Q2531046$F54A5641-9BA3-4227-86B8-D45FA3797FCE",
+          "rank": "normal"
+        }
+      ]
+    },
+    "sitelinks": {
+      "enwiki": {
+        "site": "enwiki",
+        "title": "Battle of Amblève",
+        "badges": [],
+        "url": "https://en.wikipedia.org/wiki/Battle_of_Ambl%C3%A8ve"
+      },
+      "frwiki": {
+        "site": "frwiki",
+        "title": "Bataille de l'Amblève (716)",
+        "badges": [],
+        "url": "https://fr.wikipedia.org/wiki/Bataille_de_l%27Ambl%C3%A8ve_(716)"
+      },
+      "fywiki": {
+        "site": "fywiki",
+        "title": "Slach by Amel",
+        "badges": [],
+        "url": "https://fy.wikipedia.org/wiki/Slach_by_Amel"
+      },
+      "itwiki": {
+        "site": "itwiki",
+        "title": "Battaglia di Amblève",
+        "badges": [],
+        "url": "https://it.wikipedia.org/wiki/Battaglia_di_Ambl%C3%A8ve"
+      },
+      "jawiki": {
+        "site": "jawiki",
+        "title": "アンブレーヴの戦い",
+        "badges": [],
+        "url": "https://ja.wikipedia.org/wiki/%E3%82%A2%E3%83%B3%E3%83%96%E3%83%AC%E3%83%BC%E3%83%B4%E3%81%AE%E6%88%A6%E3%81%84"
+      },
+      "nlwiki": {
+        "site": "nlwiki",
+        "title": "Slag bij Amel",
+        "badges": [],
+        "url": "https://nl.wikipedia.org/wiki/Slag_bij_Amel"
+      },
+      "plwiki": {
+        "site": "plwiki",
+        "title": "Bitwa pod Amblève",
+        "badges": [],
+        "url": "https://pl.wikipedia.org/wiki/Bitwa_pod_Ambl%C3%A8ve"
+      },
+      "ruwiki": {
+        "site": "ruwiki",
+        "title": "Сражение на Амблеве",
+        "badges": [],
+        "url": "https://ru.wikipedia.org/wiki/%D0%A1%D1%80%D0%B0%D0%B6%D0%B5%D0%BD%D0%B8%D0%B5_%D0%BD%D0%B0_%D0%90%D0%BC%D0%B1%D0%BB%D0%B5%D0%B2%D0%B5"
+      },
+      "shwiki": {
+        "site": "shwiki",
+        "title": "Bitka kod Amblèvea",
+        "badges": [],
+        "url": "https://sh.wikipedia.org/wiki/Bitka_kod_Ambl%C3%A8vea"
+      }
+    }
+  }
+}

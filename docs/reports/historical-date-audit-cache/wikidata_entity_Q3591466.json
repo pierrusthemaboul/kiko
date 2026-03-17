@@ -1,0 +1,130 @@
+{
+  "saved_at": "2026-03-07T15:05:27.629Z",
+  "value": {
+    "pageid": 3419886,
+    "ns": 0,
+    "title": "Q3591466",
+    "lastrevid": 1369769894,
+    "modified": "2021-02-25T08:55:43Z",
+    "type": "item",
+    "id": "Q3591466",
+    "labels": {
+      "fr": {
+        "language": "fr",
+        "value": "Éruption du Huaynaputina en 1600"
+      }
+    },
+    "descriptions": {},
+    "aliases": {},
+    "claims": {
+      "P31": [
+        {
+          "mainsnak": {
+            "snaktype": "value",
+            "property": "P31",
+            "hash": "0aa752994aed985dbbd6b6a6cf5fd7d42bedf8f3",
+            "datavalue": {
+              "value": {
+                "entity-type": "item",
+                "numeric-id": 7692360,
+                "id": "Q7692360"
+              },
+              "type": "wikibase-entityid"
+            },
+            "datatype": "wikibase-item"
+          },
+          "type": "statement",
+          "id": "Q3591466$4C5C839A-D7A8-43BC-AF7A-C0847B92DCBA",
+          "rank": "normal"
+        }
+      ],
+      "P3081": [
+        {
+          "mainsnak": {
+            "snaktype": "value",
+            "property": "P3081",
+            "hash": "865abcec77f1cc63393f690ed4115deee58c8ff4",
+            "datavalue": {
+              "value": {
+                "entity-type": "item",
+                "numeric-id": 159273,
+                "id": "Q159273"
+              },
+              "type": "wikibase-entityid"
+            },
+            "datatype": "wikibase-item"
+          },
+          "type": "statement",
+          "id": "Q3591466$8147a7e1-416b-6474-cf49-405ad940453d",
+          "rank": "normal"
+        }
+      ],
+      "P585": [
+        {
+          "mainsnak": {
+            "snaktype": "value",
+            "property": "P585",
+            "hash": "9e16b6f910e148f90c321e10146ccbf06d79539e",
+            "datavalue": {
+              "value": {
+                "time": "+1600-00-00T00:00:00Z",
+                "timezone": 0,
+                "before": 0,
+                "after": 0,
+                "precision": 9,
+                "calendarmodel": "http://www.wikidata.org/entity/Q1985727"
+              },
+              "type": "time"
+            },
+            "datatype": "time"
+          },
+          "type": "statement",
+          "id": "Q3591466$b96e101a-47f7-a374-31f4-9ff75da050ee",
+          "rank": "normal"
+        }
+      ],
+      "P18": [
+        {
+          "mainsnak": {
+            "snaktype": "value",
+            "property": "P18",
+            "hash": "d5df2e2c2aab9c3381964af1aecfccfb47d7febe",
+            "datavalue": {
+              "value": "Arequipa Ascheregen Huaynaputina 1600.jpg",
+              "type": "string"
+            },
+            "datatype": "commonsMedia"
+          },
+          "type": "statement",
+          "id": "Q3591466$c842270b-4ad1-ed17-64bd-90512847be3a",
+          "rank": "normal"
+        }
+      ],
+      "P2671": [
+        {
+          "mainsnak": {
+            "snaktype": "value",
+            "property": "P2671",
+            "hash": "c9a9ec5a6ed5fece2ee64bc7ef82ccf5e325812f",
+            "datavalue": {
+              "value": "/g/121_59z2",
+              "type": "string"
+            },
+            "datatype": "external-id"
+          },
+          "type": "statement",
+          "id": "Q3591466$50D13D0F-6809-4AD8-B087-211545E74D7E",
+          "rank": "normal"
+        }
+      ]
+    },
+    "sitelinks": {
+      "frwiki": {
+        "site": "frwiki",
+        "title": "Éruption du Huaynaputina en 1600",
+        "badges": [],
+        "url": "https://fr.wikipedia.org/wiki/%C3%89ruption_du_Huaynaputina_en_1600"
+      }
+    }
+  }
+}

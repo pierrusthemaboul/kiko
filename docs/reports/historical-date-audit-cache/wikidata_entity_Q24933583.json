@@ -1,0 +1,193 @@
+{
+  "saved_at": "2026-03-07T13:46:54.516Z",
+  "value": {
+    "pageid": 26893795,
+    "ns": 0,
+    "title": "Q24933583",
+    "lastrevid": 1385758441,
+    "modified": "2021-03-19T19:31:06Z",
+    "type": "item",
+    "id": "Q24933583",
+    "labels": {
+      "fr": {
+        "language": "fr",
+        "value": "La Véritable Histoire du soldat inconnu"
+      },
+      "nl": {
+        "language": "nl",
+        "value": "Het ware verhaal van de onbekende soldaat"
+      }
+    },
+    "descriptions": {
+      "nl": {
+        "language": "nl",
+        "value": "stripverhaal"
+      },
+      "fr": {
+        "language": "fr",
+        "value": "bande dessinée"
+      }
+    },
+    "aliases": {},
+    "claims": {
+      "P31": [
+        {
+          "mainsnak": {
+            "snaktype": "value",
+            "property": "P31",
+            "hash": "9c99b72d3149631f996d0a1f906629797f7e0a25",
+            "datavalue": {
+              "value": {
+                "entity-type": "item",
+                "numeric-id": 1004,
+                "id": "Q1004"
+              },
+              "type": "wikibase-entityid"
+            },
+            "datatype": "wikibase-item"
+          },
+          "type": "statement",
+          "id": "Q24933583$75C83736-6904-4542-97AF-F3D6B59F416F",
+          "rank": "normal",
+          "references": [
+            {
+              "hash": "732ec1c90a6f0694c7db9a71bf09fe7f2b674172",
+              "snaks": {
+                "P143": [
+                  {
+                    "snaktype": "value",
+                    "property": "P143",
+                    "hash": "9123b0de1cc9c3954366ba797d598e4e1ea4146f",
+                    "datavalue": {
+                      "value": {
+                        "entity-type": "item",
+                        "numeric-id": 10000,
+                        "id": "Q10000"
+                      },
+                      "type": "wikibase-entityid"
+                    },
+                    "datatype": "wikibase-item"
+                  }
+                ]
+              },
+              "snaks-order": [
+                "P143"
+              ]
+            }
+          ]
+        }
+      ],
+      "P3589": [
+        {
+          "mainsnak": {
+            "snaktype": "value",
+            "property": "P3589",
+            "hash": "2de32b9bb578d624f052db51a13db513a5603612",
+            "datavalue": {
+              "value": "36887",
+              "type": "string"
+            },
+            "datatype": "external-id"
+          },
+          "type": "statement",
+          "id": "Q24933583$34BC2B55-573B-4128-ACDE-5048405F0D69",
+          "rank": "normal"
+        }
+      ],
+      "P577": [
+        {
+          "mainsnak": {
+            "snaktype": "value",
+            "property": "P577",
+            "hash": "2067a3f5960dcc89754dc50fd77083e541034661",
+            "datavalue": {
+              "value": {
+                "time": "+1974-00-00T00:00:00Z",
+                "timezone": 0,
+                "before": 0,
+                "after": 0,
+                "precision": 9,
+                "calendarmodel": "http://www.wikidata.org/entity/Q1985727"
+              },
+              "type": "time"
+            },
+            "datatype": "time"
+          },
+          "type": "statement",
+          "id": "Q24933583$4A500593-5E5C-45C6-9D7A-3E9EBD01C67F",
+          "rank": "normal",
+          "references": [
+            {
+              "hash": "f2b2cf5c4d186c9ed508c7e64d037b73c455a10a",
+              "snaks": {
+                "P143": [
+                  {
+                    "snaktype": "value",
+                    "property": "P143",
+                    "hash": "f30cbd35620c4ea6d0633aaf0210a8916130469b",
+                    "datavalue": {
+                      "value": {
+                        "entity-type": "item",
+                        "numeric-id": 8447,
+                        "id": "Q8447"
+                      },
+                      "type": "wikibase-entityid"
+                    },
+                    "datatype": "wikibase-item"
+                  }
+                ],
+                "P4656": [
+                  {
+                    "snaktype": "value",
+                    "property": "P4656",
+                    "hash": "91a60524a0f3b1da42059a8d239153a1e969a284",
+                    "datavalue": {
+                      "value": "https://fr.wikipedia.org/w/index.php?title=La_Véritable_Histoire_du_soldat_inconnu&oldid=161655965",
+                      "type": "string"
+                    },
+                    "datatype": "url"
+                  }
+                ]
+              },
+              "snaks-order": [
+                "P143",
+                "P4656"
+              ]
+            }
+          ]
+        }
+      ],
+      "P2671": [
+        {
+          "mainsnak": {
+            "snaktype": "value",
+            "property": "P2671",
+            "hash": "24b71d0e17d673a504918eff399fc351dbac0b1b",
+            "datavalue": {
+              "value": "/g/1239jpnx",
+              "type": "string"
+            },
+            "datatype": "external-id"
+          },
+          "type": "statement",
+          "id": "Q24933583$6B523118-AB8D-4509-9A88-FEAD691B35E7",
+          "rank": "normal"
+        }
+      ]
+    },
+    "sitelinks": {
+      "frwiki": {
+        "site": "frwiki",
+        "title": "La Véritable Histoire du soldat inconnu",
+        "badges": [],
+        "url": "https://fr.wikipedia.org/wiki/La_V%C3%A9ritable_Histoire_du_soldat_inconnu"
+      },
+      "nlwiki": {
+        "site": "nlwiki",
+        "title": "Het ware verhaal van de onbekende soldaat",
+        "badges": [],
+        "url": "https://nl.wikipedia.org/wiki/Het_ware_verhaal_van_de_onbekende_soldaat"
+      }
+    }
+  }
+}

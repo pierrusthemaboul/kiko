@@ -1,0 +1,251 @@
+{
+  "saved_at": "2026-03-07T14:31:17.109Z",
+  "value": {
+    "pageid": 1173619,
+    "ns": 0,
+    "title": "Q1232351",
+    "lastrevid": 2408820417,
+    "modified": "2025-09-24T09:22:30Z",
+    "type": "item",
+    "id": "Q1232351",
+    "labels": {
+      "de": {
+        "language": "de",
+        "value": "Geschichte Tasmaniens"
+      },
+      "en": {
+        "language": "en",
+        "value": "history of Tasmania"
+      },
+      "es": {
+        "language": "es",
+        "value": "historia de Tasmania"
+      },
+      "fr": {
+        "language": "fr",
+        "value": "histoire de la Tasmanie"
+      },
+      "pt": {
+        "language": "pt",
+        "value": "história da Tasmânia"
+      },
+      "it": {
+        "language": "it",
+        "value": "storia della Tasmania"
+      },
+      "ms": {
+        "language": "ms",
+        "value": "Sejarah Tasmania"
+      },
+      "ru": {
+        "language": "ru",
+        "value": "история Тасмании"
+      },
+      "nl": {
+        "language": "nl",
+        "value": "geschiedenis van Tasmanië"
+      },
+      "tr": {
+        "language": "tr",
+        "value": "Tasmanya tarihi"
+      },
+      "sl": {
+        "language": "sl",
+        "value": "zgodovina Tasmanije"
+      }
+    },
+    "descriptions": {
+      "es": {
+        "language": "es",
+        "value": "narración y estudio de los hechos allí acontecidos o que afectan a ese territorio"
+      },
+      "de": {
+        "language": "de",
+        "value": "geschichtliche entwicklung Tasmaniens, seit der Entdeckung durch die Europäer"
+      },
+      "en": {
+        "language": "en",
+        "value": "History of the island of Tasmania"
+      },
+      "it": {
+        "language": "it",
+        "value": "storia del territorio dello stato o della civiltà"
+      }
+    },
+    "aliases": {
+      "en": [
+        {
+          "language": "en",
+          "value": "Tasmania history"
+        }
+      ]
+    },
+    "claims": {
+      "P910": [
+        {
+          "mainsnak": {
+            "snaktype": "value",
+            "property": "P910",
+            "hash": "4384fd048e8f36cc4ea24f3c4abb6fd4404bd112",
+            "datavalue": {
+              "value": {
+                "entity-type": "item",
+                "numeric-id": 8519389,
+                "id": "Q8519389"
+              },
+              "type": "wikibase-entityid"
+            },
+            "datatype": "wikibase-item"
+          },
+          "type": "statement",
+          "id": "Q1232351$F4CD480B-B9B8-4A69-A3C1-682F9C041F53",
+          "rank": "normal"
+        }
+      ],
+      "P31": [
+        {
+          "mainsnak": {
+            "snaktype": "value",
+            "property": "P31",
+            "hash": "7ad5c7929af39fc2ff8afed55f1192f80e71d936",
+            "datavalue": {
+              "value": {
+                "entity-type": "item",
+                "numeric-id": 17524420,
+                "id": "Q17524420"
+              },
+              "type": "wikibase-entityid"
+            },
+            "datatype": "wikibase-item"
+          },
+          "type": "statement",
+          "id": "Q1232351$D81B501E-7239-41C9-977F-5DF4E73904F9",
+          "rank": "normal"
+        }
+      ],
+      "P373": [
+        {
+          "mainsnak": {
+            "snaktype": "value",
+            "property": "P373",
+            "hash": "a6138eff051405398cfec9473551aff7b930e331",
+            "datavalue": {
+              "value": "History of Tasmania",
+              "type": "string"
+            },
+            "datatype": "string"
+          },
+          "type": "statement",
+          "id": "Q1232351$8425F275-ABA0-427F-AB99-AB326392ED96",
+          "rank": "normal",
+          "references": [
+            {
+              "hash": "fa278ebfc458360e5aed63d5058cca83c46134f1",
+              "snaks": {
+                "P143": [
+                  {
+                    "snaktype": "value",
+                    "property": "P143",
+                    "hash": "e4f6d9441d0600513c4533c672b5ab472dc73694",
+                    "datavalue": {
+                      "value": {
+                        "entity-type": "item",
+                        "numeric-id": 328,
+                        "id": "Q328"
+                      },
+                      "type": "wikibase-entityid"
+                    },
+                    "datatype": "wikibase-item"
+                  }
+                ]
+              },
+              "snaks-order": [
+                "P143"
+              ]
+            }
+          ]
+        }
+      ],
+      "P279": [
+        {
+          "mainsnak": {
+            "snaktype": "value",
+            "property": "P279",
+            "hash": "dadac6eb5426c476e18417bd7ef1d2284aeb33cf",
+            "datavalue": {
+              "value": {
+                "entity-type": "item",
+                "numeric-id": 174825,
+                "id": "Q174825"
+              },
+              "type": "wikibase-entityid"
+            },
+            "datatype": "wikibase-item"
+          },
+          "type": "statement",
+          "id": "Q1232351$50a23253-4916-afb9-93b9-90903659fc81",
+          "rank": "normal"
+        }
+      ],
+      "P1269": [
+        {
+          "mainsnak": {
+            "snaktype": "value",
+            "property": "P1269",
+            "hash": "ec35eeec411f24638394c331f56e40cd9b6392c5",
+            "datavalue": {
+              "value": {
+                "entity-type": "item",
+                "numeric-id": 34366,
+                "id": "Q34366"
+              },
+              "type": "wikibase-entityid"
+            },
+            "datatype": "wikibase-item"
+          },
+          "type": "statement",
+          "id": "Q1232351$3382e5bb-4c79-010a-30f5-ca83e50b0423",
+          "rank": "normal"
+        }
+      ]
+    },
+    "sitelinks": {
+      "dewiki": {
+        "site": "dewiki",
+        "title": "Geschichte Tasmaniens",
+        "badges": [],
+        "url": "https://de.wikipedia.org/wiki/Geschichte_Tasmaniens"
+      },
+      "enwiki": {
+        "site": "enwiki",
+        "title": "History of Tasmania",
+        "badges": [],
+        "url": "https://en.wikipedia.org/wiki/History_of_Tasmania"
+      },
+      "eswiki": {
+        "site": "eswiki",
+        "title": "Historia de Tasmania",
+        "badges": [],
+        "url": "https://es.wikipedia.org/wiki/Historia_de_Tasmania"
+      },
+      "frwiki": {
+        "site": "frwiki",
+        "title": "Histoire de la Tasmanie",
+        "badges": [],
+        "url": "https://fr.wikipedia.org/wiki/Histoire_de_la_Tasmanie"
+      },
+      "mswiki": {
+        "site": "mswiki",
+        "title": "Sejarah Tasmania",
+        "badges": [],
+        "url": "https://ms.wikipedia.org/wiki/Sejarah_Tasmania"
+      },
+      "ptwiki": {
+        "site": "ptwiki",
+        "title": "História da Tasmânia",
+        "badges": [],
+        "url": "https://pt.wikipedia.org/wiki/Hist%C3%B3ria_da_Tasm%C3%A2nia"
+      }
+    }
+  }
+}

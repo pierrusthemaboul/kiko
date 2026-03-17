@@ -1,0 +1,381 @@
+{
+  "saved_at": "2026-03-07T15:59:56.536Z",
+  "value": {
+    "pageid": 2690760,
+    "ns": 0,
+    "title": "Q2810002",
+    "lastrevid": 2460717146,
+    "modified": "2026-02-04T20:54:03Z",
+    "type": "item",
+    "id": "Q2810002",
+    "labels": {
+      "fr": {
+        "language": "fr",
+        "value": "1830 aux États-Unis"
+      },
+      "en": {
+        "language": "en",
+        "value": "1830 in the United States"
+      },
+      "he": {
+        "language": "he",
+        "value": "1830 בארצות הברית"
+      },
+      "nan": {
+        "language": "nan",
+        "value": "1830 nî Bí-kok"
+      },
+      "ru": {
+        "language": "ru",
+        "value": "1830 год в США"
+      },
+      "ja": {
+        "language": "ja",
+        "value": "1830年のアメリカ合衆国"
+      },
+      "ar": {
+        "language": "ar",
+        "value": "1830 في الولايات المتحدة"
+      },
+      "sv": {
+        "language": "sv",
+        "value": "1830 i USA"
+      },
+      "de": {
+        "language": "de",
+        "value": "1830 in den Vereinigten Staaten von Amerika"
+      },
+      "bn": {
+        "language": "bn",
+        "value": "১৮৩০-এ মার্কিন যুক্তরাষ্ট্র"
+      },
+      "es": {
+        "language": "es",
+        "value": "Anexo:Estados Unidos en 1830"
+      },
+      "th": {
+        "language": "th",
+        "value": "สหรัฐอเมริกาใน ค.ศ. 1830"
+      },
+      "yue": {
+        "language": "yue",
+        "value": "1830年嘅美國"
+      },
+      "ml": {
+        "language": "ml",
+        "value": "1830 യുണൈറ്റഡ് സ്റ്റേറ്റ്സിൽ"
+      },
+      "vi": {
+        "language": "vi",
+        "value": "Hoa Kỳ năm 1830"
+      },
+      "pt": {
+        "language": "pt",
+        "value": "1830 nos Estados Unidos"
+      },
+      "uk": {
+        "language": "uk",
+        "value": "1830 у США"
+      },
+      "id": {
+        "language": "id",
+        "value": "Amerika Serikat dalam tahun 1830"
+      },
+      "ro": {
+        "language": "ro",
+        "value": "1830 în Statele Unite ale Americii"
+      },
+      "tr": {
+        "language": "tr",
+        "value": "1830'da Amerika Birleşik Devletleri"
+      },
+      "zh": {
+        "language": "zh",
+        "value": "1830年美国"
+      }
+    },
+    "descriptions": {
+      "sv": {
+        "language": "sv",
+        "value": "översikt över USA-relaterade händelser under år 1830"
+      },
+      "en": {
+        "language": "en",
+        "value": "overview of USA-related events during the year of 1830"
+      },
+      "de": {
+        "language": "de",
+        "value": "Ereignisse des Jahres 1830 in den Vereinigten Staaten von Amerika"
+      },
+      "nl": {
+        "language": "nl",
+        "value": "gebeurtenis in jaar"
+      }
+    },
+    "aliases": {
+      "en": [
+        {
+          "language": "en",
+          "value": "1830 in United States"
+        },
+        {
+          "language": "en",
+          "value": "1830 in the USA"
+        },
+        {
+          "language": "en",
+          "value": "1830 in the United States of America"
+        },
+        {
+          "language": "en",
+          "value": "1830 in the US"
+        }
+      ],
+      "de": [
+        {
+          "language": "de",
+          "value": "1830 in den USA"
+        }
+      ],
+      "ar": [
+        {
+          "language": "ar",
+          "value": "١٨٣٠ في الولايات المتحدة"
+        }
+      ],
+      "sv": [
+        {
+          "language": "sv",
+          "value": "1830 i Amerikas förenta stater"
+        }
+      ]
+    },
+    "claims": {
+      "P910": [
+        {
+          "mainsnak": {
+            "snaktype": "value",
+            "property": "P910",
+            "hash": "75bc06e9beeef916a51553e391d1609967029038",
+            "datavalue": {
+              "value": {
+                "entity-type": "item",
+                "numeric-id": 6788016,
+                "id": "Q6788016"
+              },
+              "type": "wikibase-entityid"
+            },
+            "datatype": "wikibase-item"
+          },
+          "type": "statement",
+          "id": "Q2810002$C16DD708-7E47-4DA7-8030-9F3747142143",
+          "rank": "normal"
+        }
+      ],
+      "P373": [
+        {
+          "mainsnak": {
+            "snaktype": "value",
+            "property": "P373",
+            "hash": "d826b60ad2e14a4e0af206c02d0d137fcf8981f4",
+            "datavalue": {
+              "value": "1830 in the United States",
+              "type": "string"
+            },
+            "datatype": "string"
+          },
+          "type": "statement",
+          "id": "Q2810002$499F13FC-F33C-49D9-B986-169B3DF24A82",
+          "rank": "normal",
+          "references": [
+            {
+              "hash": "fa278ebfc458360e5aed63d5058cca83c46134f1",
+              "snaks": {
+                "P143": [
+                  {
+                    "snaktype": "value",
+                    "property": "P143",
+                    "hash": "e4f6d9441d0600513c4533c672b5ab472dc73694",
+                    "datavalue": {
+                      "value": {
+                        "entity-type": "item",
+                        "numeric-id": 328,
+                        "id": "Q328"
+                      },
+                      "type": "wikibase-entityid"
+                    },
+                    "datatype": "wikibase-item"
+                  }
+                ]
+              },
+              "snaks-order": [
+                "P143"
+              ]
+            }
+          ]
+        }
+      ],
+      "P31": [
+        {
+          "mainsnak": {
+            "snaktype": "value",
+            "property": "P31",
+            "hash": "b9953cd69a9e5fc8f8fe263b847673b0013cf93f",
+            "datavalue": {
+              "value": {
+                "entity-type": "item",
+                "numeric-id": 18340514,
+                "id": "Q18340514"
+              },
+              "type": "wikibase-entityid"
+            },
+            "datatype": "wikibase-item"
+          },
+          "type": "statement",
+          "id": "Q2810002$DFA93706-5B6F-4E34-962B-321B0EC3D74C",
+          "rank": "normal"
+        }
+      ],
+      "P1269": [
+        {
+          "mainsnak": {
+            "snaktype": "value",
+            "property": "P1269",
+            "hash": "2b7bb540972e8902d614b8fe25b7a7d731d5a16d",
+            "datavalue": {
+              "value": {
+                "entity-type": "item",
+                "numeric-id": 30,
+                "id": "Q30"
+              },
+              "type": "wikibase-entityid"
+            },
+            "datatype": "wikibase-item"
+          },
+          "type": "statement",
+          "id": "Q2810002$A234CE69-4C06-4D09-9DB5-C7172F31D462",
+          "rank": "normal"
+        }
+      ],
+      "P585": [
+        {
+          "mainsnak": {
+            "snaktype": "value",
+            "property": "P585",
+            "hash": "5b61f73633a3eabc600935635077c39c2546c470",
+            "datavalue": {
+              "value": {
+                "time": "+1830-01-01T00:00:00Z",
+                "timezone": 0,
+                "before": 0,
+                "after": 0,
+                "precision": 9,
+                "calendarmodel": "http://www.wikidata.org/entity/Q1985727"
+              },
+              "type": "time"
+            },
+            "datatype": "time"
+          },
+          "type": "statement",
+          "id": "Q2810002$2C07431F-48E1-4FEF-AD13-C92401B1C606",
+          "rank": "normal"
+        }
+      ],
+      "P155": [
+        {
+          "mainsnak": {
+            "snaktype": "value",
+            "property": "P155",
+            "hash": "22e2c6ffb80e7bfd026ebdf30b000eda69f42370",
+            "datavalue": {
+              "value": {
+                "entity-type": "item",
+                "numeric-id": 2809991,
+                "id": "Q2809991"
+              },
+              "type": "wikibase-entityid"
+            },
+            "datatype": "wikibase-item"
+          },
+          "type": "statement",
+          "id": "Q2810002$D773A726-1A8D-4C66-BF14-51B1BB880601",
+          "rank": "normal"
+        }
+      ],
+      "P156": [
+        {
+          "mainsnak": {
+            "snaktype": "value",
+            "property": "P156",
+            "hash": "67d9ce574d454c56b2e5f184319c256d5b96fb26",
+            "datavalue": {
+              "value": {
+                "entity-type": "item",
+                "numeric-id": 769707,
+                "id": "Q769707"
+              },
+              "type": "wikibase-entityid"
+            },
+            "datatype": "wikibase-item"
+          },
+          "type": "statement",
+          "id": "Q2810002$26E6578C-C2DC-4779-99BE-269AE025642A",
+          "rank": "normal"
+        }
+      ],
+      "P17": [
+        {
+          "mainsnak": {
+            "snaktype": "value",
+            "property": "P17",
+            "hash": "be4c6eafa2984964f04be85667263f5642ba1a72",
+            "datavalue": {
+              "value": {
+                "entity-type": "item",
+                "numeric-id": 30,
+                "id": "Q30"
+              },
+              "type": "wikibase-entityid"
+            },
+            "datatype": "wikibase-item"
+          },
+          "type": "statement",
+          "id": "Q2810002$286D3C9D-AB96-422C-B3F3-E503FE082188",
+          "rank": "normal"
+        }
+      ]
+    },
+    "sitelinks": {
+      "arwiki": {
+        "site": "arwiki",
+        "title": "1830 في الولايات المتحدة",
+        "badges": [],
+        "url": "https://ar.wikipedia.org/wiki/1830_%D9%81%D9%8A_%D8%A7%D9%84%D9%88%D9%84%D8%A7%D9%8A%D8%A7%D8%AA_%D8%A7%D9%84%D9%85%D8%AA%D8%AD%D8%AF%D8%A9"
+      },
+      "enwiki": {
+        "site": "enwiki",
+        "title": "1830 in the United States",
+        "badges": [],
+        "url": "https://en.wikipedia.org/wiki/1830_in_the_United_States"
+      },
+      "frwiki": {
+        "site": "frwiki",
+        "title": "1830 aux États-Unis",
+        "badges": [],
+        "url": "https://fr.wikipedia.org/wiki/1830_aux_%C3%89tats-Unis"
+      },
+      "hewiki": {
+        "site": "hewiki",
+        "title": "1830 בארצות הברית",
+        "badges": [],
+        "url": "https://he.wikipedia.org/wiki/1830_%D7%91%D7%90%D7%A8%D7%A6%D7%95%D7%AA_%D7%94%D7%91%D7%A8%D7%99%D7%AA"
+      },
+      "zh_min_nanwiki": {
+        "site": "zh_min_nanwiki",
+        "title": "1830 nî Bí-kok",
+        "badges": [],
+        "url": "https://zh-min-nan.wikipedia.org/wiki/1830_n%C3%AE_B%C3%AD-kok"
+      }
+    }
+  }
+}

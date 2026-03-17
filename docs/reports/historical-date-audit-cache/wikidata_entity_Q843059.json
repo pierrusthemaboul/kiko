@@ -1,0 +1,716 @@
+{
+  "saved_at": "2026-03-07T13:06:56.226Z",
+  "value": {
+    "pageid": 795239,
+    "ns": 0,
+    "title": "Q843059",
+    "lastrevid": 2324715264,
+    "modified": "2025-03-14T20:21:09Z",
+    "type": "item",
+    "id": "Q843059",
+    "labels": {
+      "de": {
+        "language": "de",
+        "value": "Pariser Riesenrad"
+      },
+      "cs": {
+        "language": "cs",
+        "value": "Obří kolo v Paříži"
+      },
+      "fr": {
+        "language": "fr",
+        "value": "Grande roue de Paris"
+      },
+      "en": {
+        "language": "en",
+        "value": "Grande roue de Paris"
+      },
+      "hu": {
+        "language": "hu",
+        "value": "Grande Roue de Paris"
+      },
+      "nl": {
+        "language": "nl",
+        "value": "Grande Roue de Paris"
+      },
+      "it": {
+        "language": "it",
+        "value": "Grande Roue de Paris"
+      },
+      "ja": {
+        "language": "ja",
+        "value": "ラ・グラン・ルー"
+      },
+      "es": {
+        "language": "es",
+        "value": "Grande Roue de Paris"
+      },
+      "nn": {
+        "language": "nn",
+        "value": "Grande Roue de Paris"
+      },
+      "sv": {
+        "language": "sv",
+        "value": "Grande Roue de Paris"
+      },
+      "vi": {
+        "language": "vi",
+        "value": "Grande roue de Paris"
+      },
+      "en-gb": {
+        "language": "en-gb",
+        "value": "Grande roue de Paris"
+      },
+      "tr": {
+        "language": "tr",
+        "value": "Grande roue de Paris"
+      }
+    },
+    "descriptions": {
+      "cs": {
+        "language": "cs",
+        "value": "atrakce v Paříži v roce 1900"
+      },
+      "nl": {
+        "language": "nl",
+        "value": "Voormalige reuzenrad in Parijs, Frankrijk"
+      },
+      "de": {
+        "language": "de",
+        "value": "Bestandteil der Weltausstellung von 1900"
+      },
+      "fr": {
+        "language": "fr",
+        "value": "ancienne grande roue à Paris, France"
+      },
+      "en": {
+        "language": "en",
+        "value": "former Ferris wheel in Paris, France"
+      },
+      "en-gb": {
+        "language": "en-gb",
+        "value": "former Ferris wheel in Paris, France"
+      },
+      "tr": {
+        "language": "tr",
+        "value": "Paris'te bulunan eski bir dönme dolap"
+      }
+    },
+    "aliases": {},
+    "claims": {
+      "P31": [
+        {
+          "mainsnak": {
+            "snaktype": "value",
+            "property": "P31",
+            "hash": "f37260d507532830965ed670ab09bd7398d0ce12",
+            "datavalue": {
+              "value": {
+                "entity-type": "item",
+                "numeric-id": 202570,
+                "id": "Q202570"
+              },
+              "type": "wikibase-entityid"
+            },
+            "datatype": "wikibase-item"
+          },
+          "type": "statement",
+          "id": "q843059$2F92F966-BE0B-4879-9AA7-FF3096A483DE",
+          "rank": "normal"
+        },
+        {
+          "mainsnak": {
+            "snaktype": "value",
+            "property": "P31",
+            "hash": "31445342cb3c7702ea76176c174d810e430e7f49",
+            "datavalue": {
+              "value": {
+                "entity-type": "item",
+                "numeric-id": 19860854,
+                "id": "Q19860854"
+              },
+              "type": "wikibase-entityid"
+            },
+            "datatype": "wikibase-item"
+          },
+          "type": "statement",
+          "id": "Q843059$2782C6F9-8A35-420E-9C7F-6127AEDBBD3D",
+          "rank": "normal"
+        }
+      ],
+      "P373": [
+        {
+          "mainsnak": {
+            "snaktype": "value",
+            "property": "P373",
+            "hash": "106123125fa2db802dd857b491e54ee0ecc7f074",
+            "datavalue": {
+              "value": "Grande roue de Paris",
+              "type": "string"
+            },
+            "datatype": "string"
+          },
+          "type": "statement",
+          "id": "q843059$72C04F42-6903-4747-8B5A-98B86EAA82DE",
+          "rank": "normal"
+        }
+      ],
+      "P646": [
+        {
+          "mainsnak": {
+            "snaktype": "value",
+            "property": "P646",
+            "hash": "f48db2e77ebef27a3765bfbde4635d2868aa1a35",
+            "datavalue": {
+              "value": "/m/02q6_z2",
+              "type": "string"
+            },
+            "datatype": "external-id"
+          },
+          "type": "statement",
+          "id": "Q843059$9D4573DA-3C5D-4396-A873-3C39553039A5",
+          "rank": "normal",
+          "references": [
+            {
+              "hash": "2b00cb481cddcac7623114367489b5c194901c4a",
+              "snaks": {
+                "P248": [
+                  {
+                    "snaktype": "value",
+                    "property": "P248",
+                    "hash": "a94b740202b097dd33355e0e6c00e54b9395e5e0",
+                    "datavalue": {
+                      "value": {
+                        "entity-type": "item",
+                        "numeric-id": 15241312,
+                        "id": "Q15241312"
+                      },
+                      "type": "wikibase-entityid"
+                    },
+                    "datatype": "wikibase-item"
+                  }
+                ],
+                "P577": [
+                  {
+                    "snaktype": "value",
+                    "property": "P577",
+                    "hash": "fde79ecb015112d2f29229ccc1ec514ed3e71fa2",
+                    "datavalue": {
+                      "value": {
+                        "time": "+2013-10-28T00:00:00Z",
+                        "timezone": 0,
+                        "before": 0,
+                        "after": 0,
+                        "precision": 11,
+                        "calendarmodel": "http://www.wikidata.org/entity/Q1985727"
+                      },
+                      "type": "time"
+                    },
+                    "datatype": "time"
+                  }
+                ]
+              },
+              "snaks-order": [
+                "P248",
+                "P577"
+              ]
+            }
+          ]
+        }
+      ],
+      "P17": [
+        {
+          "mainsnak": {
+            "snaktype": "value",
+            "property": "P17",
+            "hash": "c05db5d169c2560b9799d567a803d20a392f53e4",
+            "datavalue": {
+              "value": {
+                "entity-type": "item",
+                "numeric-id": 142,
+                "id": "Q142"
+              },
+              "type": "wikibase-entityid"
+            },
+            "datatype": "wikibase-item"
+          },
+          "type": "statement",
+          "id": "Q843059$F4E7F25C-8BDA-4885-82CA-45005A51C7E7",
+          "rank": "normal"
+        }
+      ],
+      "P18": [
+        {
+          "mainsnak": {
+            "snaktype": "value",
+            "property": "P18",
+            "hash": "23ff21eea3b08aeea325ef318e62e53c83cbdf62",
+            "datavalue": {
+              "value": "La grande roue, Paris, France, ca. 1890-1900.jpg",
+              "type": "string"
+            },
+            "datatype": "commonsMedia"
+          },
+          "type": "statement",
+          "id": "Q843059$E2184439-B2FA-4E33-A627-51C687ED156B",
+          "rank": "normal"
+        }
+      ],
+      "P1305": [
+        {
+          "mainsnak": {
+            "snaktype": "value",
+            "property": "P1305",
+            "hash": "fdbbef20c3a71009c5f19ec883d18d26ac467567",
+            "datavalue": {
+              "value": "16599",
+              "type": "string"
+            },
+            "datatype": "external-id"
+          },
+          "type": "statement",
+          "id": "Q843059$3267E696-582F-45AE-8F6E-8396BDFC0CB2",
+          "rank": "normal"
+        }
+      ],
+      "P131": [
+        {
+          "mainsnak": {
+            "snaktype": "value",
+            "property": "P131",
+            "hash": "2b4743b58955f8225301df378cfe08bd7cdba08b",
+            "datavalue": {
+              "value": {
+                "entity-type": "item",
+                "numeric-id": 191066,
+                "id": "Q191066"
+              },
+              "type": "wikibase-entityid"
+            },
+            "datatype": "wikibase-item"
+          },
+          "type": "statement",
+          "id": "Q843059$04D4C65A-C449-47B8-AB24-433A4287284C",
+          "rank": "normal"
+        }
+      ],
+      "P1838": [
+        {
+          "mainsnak": {
+            "snaktype": "value",
+            "property": "P1838",
+            "hash": "483b7d57afb8481ac3e860cc2a26ea258fff4339",
+            "datavalue": {
+              "value": "FR-75056-316",
+              "type": "string"
+            },
+            "datatype": "external-id"
+          },
+          "type": "statement",
+          "id": "Q843059$919C4206-DB64-4793-9490-E2D561F4C534",
+          "rank": "normal"
+        }
+      ],
+      "P2048": [
+        {
+          "mainsnak": {
+            "snaktype": "value",
+            "property": "P2048",
+            "hash": "76f03f1249e31cac3a4da1a846a0e9307f1cff85",
+            "datavalue": {
+              "value": {
+                "amount": "+96",
+                "unit": "http://www.wikidata.org/entity/Q11573"
+              },
+              "type": "quantity"
+            },
+            "datatype": "quantity"
+          },
+          "type": "statement",
+          "id": "Q843059$54694a6a-41b4-3c74-2a89-8d611d9a3b2a",
+          "rank": "normal",
+          "references": [
+            {
+              "hash": "d9c14d9b4a4fe35aa3b4ef84abb295f539452a63",
+              "snaks": {
+                "P854": [
+                  {
+                    "snaktype": "value",
+                    "property": "P854",
+                    "hash": "d398935c5d83afae156e60f21fdd44e1075e15ab",
+                    "datavalue": {
+                      "value": "https://www.worldfairs.info/expopavillondetails.php?expo_id=8&pavillon_id=504",
+                      "type": "string"
+                    },
+                    "datatype": "url"
+                  }
+                ],
+                "P813": [
+                  {
+                    "snaktype": "value",
+                    "property": "P813",
+                    "hash": "a2c482c4381b8ce33ae32b3998e8ec614fedebb7",
+                    "datavalue": {
+                      "value": {
+                        "time": "+2021-02-13T00:00:00Z",
+                        "timezone": 0,
+                        "before": 0,
+                        "after": 0,
+                        "precision": 11,
+                        "calendarmodel": "http://www.wikidata.org/entity/Q1985727"
+                      },
+                      "type": "time"
+                    },
+                    "datatype": "time"
+                  }
+                ]
+              },
+              "snaks-order": [
+                "P854",
+                "P813"
+              ]
+            }
+          ]
+        }
+      ],
+      "P5816": [
+        {
+          "mainsnak": {
+            "snaktype": "value",
+            "property": "P5816",
+            "hash": "d6c4840577ba6c097ffaaf909de0a2afa5e881b9",
+            "datavalue": {
+              "value": {
+                "entity-type": "item",
+                "numeric-id": 56556915,
+                "id": "Q56556915"
+              },
+              "type": "wikibase-entityid"
+            },
+            "datatype": "wikibase-item"
+          },
+          "type": "statement",
+          "id": "Q843059$15A3EF67-3614-461A-B4E1-26123AEBC740",
+          "rank": "normal"
+        }
+      ],
+      "P1619": [
+        {
+          "mainsnak": {
+            "snaktype": "value",
+            "property": "P1619",
+            "hash": "fb82b0155a62af4d5b631de04a172a9d0e8acb3a",
+            "datavalue": {
+              "value": {
+                "time": "+1900-00-00T00:00:00Z",
+                "timezone": 0,
+                "before": 0,
+                "after": 0,
+                "precision": 9,
+                "calendarmodel": "http://www.wikidata.org/entity/Q1985727"
+              },
+              "type": "time"
+            },
+            "datatype": "time"
+          },
+          "type": "statement",
+          "id": "Q843059$101d41f3-465b-c3d5-896a-d59417e33f91",
+          "rank": "normal"
+        }
+      ],
+      "P5652": [
+        {
+          "mainsnak": {
+            "snaktype": "value",
+            "property": "P5652",
+            "hash": "da9c2ad78e933c6b4bdc521c9ec9da2c357311e0",
+            "datavalue": {
+              "value": "7712",
+              "type": "string"
+            },
+            "datatype": "external-id"
+          },
+          "type": "statement",
+          "id": "Q843059$9b1e45d2-42aa-48a8-e0db-11b25ff96e2b",
+          "rank": "normal"
+        }
+      ],
+      "P455": [
+        {
+          "mainsnak": {
+            "snaktype": "value",
+            "property": "P455",
+            "hash": "9e82316d20a29e44eb2e45cfaeb3bf286537bf85",
+            "datavalue": {
+              "value": "1464178",
+              "type": "string"
+            },
+            "datatype": "external-id"
+          },
+          "type": "statement",
+          "id": "Q843059$a44d6ac2-4ac2-81ec-7dd8-2151f641b39d",
+          "rank": "normal"
+        }
+      ],
+      "P6375": [
+        {
+          "mainsnak": {
+            "snaktype": "value",
+            "property": "P6375",
+            "hash": "8a95e03dc01d0ec8b143a1aa803814be59ed504d",
+            "datavalue": {
+              "value": {
+                "text": "76 avenue de Suffren, Paris 75015, France",
+                "language": "fr"
+              },
+              "type": "monolingualtext"
+            },
+            "datatype": "monolingualtext"
+          },
+          "type": "statement",
+          "id": "Q843059$2a70b897-48a5-1595-c239-645e7c46056e",
+          "rank": "normal"
+        }
+      ],
+      "P276": [
+        {
+          "mainsnak": {
+            "snaktype": "value",
+            "property": "P276",
+            "hash": "f5426bae9ff64bdb13e7630bfc420ca2feaf703c",
+            "datavalue": {
+              "value": {
+                "entity-type": "item",
+                "numeric-id": 376896,
+                "id": "Q376896"
+              },
+              "type": "wikibase-entityid"
+            },
+            "datatype": "wikibase-item"
+          },
+          "type": "statement",
+          "id": "Q843059$5f5449f6-468a-412f-7533-6968b7f40133",
+          "rank": "normal"
+        }
+      ],
+      "P576": [
+        {
+          "mainsnak": {
+            "snaktype": "value",
+            "property": "P576",
+            "hash": "3ab48415ad7a3927d3b7906f1e6d1b899959f2ff",
+            "datavalue": {
+              "value": {
+                "time": "+1920-00-00T00:00:00Z",
+                "timezone": 0,
+                "before": 0,
+                "after": 0,
+                "precision": 9,
+                "calendarmodel": "http://www.wikidata.org/entity/Q1985727"
+              },
+              "type": "time"
+            },
+            "datatype": "time"
+          },
+          "type": "statement",
+          "id": "Q843059$f1afc58e-4724-9e29-7e00-cfcb2915d058",
+          "rank": "normal"
+        }
+      ],
+      "P1699": [
+        {
+          "mainsnak": {
+            "snaktype": "value",
+            "property": "P1699",
+            "hash": "f25e58333896876749bd1077c9b05a4af52ec92e",
+            "datavalue": {
+              "value": "60647",
+              "type": "string"
+            },
+            "datatype": "external-id"
+          },
+          "type": "statement",
+          "id": "Q843059$b769363d-4d3d-b385-1ef6-714f3587c8dc",
+          "rank": "normal"
+        }
+      ],
+      "P625": [
+        {
+          "mainsnak": {
+            "snaktype": "value",
+            "property": "P625",
+            "hash": "193e90efc762de35ecd5d94c15d450b274da9743",
+            "datavalue": {
+              "value": {
+                "latitude": 48.85180931545647,
+                "longitude": 2.299222731022239,
+                "altitude": null,
+                "precision": 1e-8,
+                "globe": "http://www.wikidata.org/entity/Q2"
+              },
+              "type": "globecoordinate"
+            },
+            "datatype": "globe-coordinate"
+          },
+          "type": "statement",
+          "id": "Q843059$e08ebcc5-4152-2a9c-4024-369f220dd641",
+          "rank": "normal"
+        }
+      ],
+      "P1889": [
+        {
+          "mainsnak": {
+            "snaktype": "value",
+            "property": "P1889",
+            "hash": "ebc10be8e983cea620b49352d5449830cfa2ed90",
+            "datavalue": {
+              "value": {
+                "entity-type": "item",
+                "numeric-id": 591769,
+                "id": "Q591769"
+              },
+              "type": "wikibase-entityid"
+            },
+            "datatype": "wikibase-item"
+          },
+          "type": "statement",
+          "id": "Q843059$bfa6e117-40f5-4b38-9f3a-0b933c11972f",
+          "rank": "normal"
+        }
+      ],
+      "P5817": [
+        {
+          "mainsnak": {
+            "snaktype": "value",
+            "property": "P5817",
+            "hash": "72bf9c5b5c8bbc435ef6d6024404e57affb92697",
+            "datavalue": {
+              "value": {
+                "entity-type": "item",
+                "numeric-id": 104664889,
+                "id": "Q104664889"
+              },
+              "type": "wikibase-entityid"
+            },
+            "datatype": "wikibase-item"
+          },
+          "type": "statement",
+          "id": "Q843059$901CD87E-2EB6-47E5-80A5-574204199F43",
+          "rank": "normal"
+        }
+      ],
+      "P669": [
+        {
+          "mainsnak": {
+            "snaktype": "value",
+            "property": "P669",
+            "hash": "0b0265539fedb8745656dd7eff2a140a0aed9a58",
+            "datavalue": {
+              "value": {
+                "entity-type": "item",
+                "numeric-id": 2873950,
+                "id": "Q2873950"
+              },
+              "type": "wikibase-entityid"
+            },
+            "datatype": "wikibase-item"
+          },
+          "type": "statement",
+          "qualifiers": {
+            "P670": [
+              {
+                "snaktype": "value",
+                "property": "P670",
+                "hash": "2f60ba76786d7e641a6ab7d8287f6332e69dfce0",
+                "datavalue": {
+                  "value": "76",
+                  "type": "string"
+                },
+                "datatype": "string"
+              }
+            ]
+          },
+          "qualifiers-order": [
+            "P670"
+          ],
+          "id": "Q843059$f18b9493-4e3e-ccf5-0b3d-e3ddebadc674",
+          "rank": "normal"
+        }
+      ]
+    },
+    "sitelinks": {
+      "commonswiki": {
+        "site": "commonswiki",
+        "title": "Category:Grande roue de Paris",
+        "badges": [],
+        "url": "https://commons.wikimedia.org/wiki/Category:Grande_roue_de_Paris"
+      },
+      "cswiki": {
+        "site": "cswiki",
+        "title": "Obří kolo v Paříži (1900)",
+        "badges": [],
+        "url": "https://cs.wikipedia.org/wiki/Ob%C5%99%C3%AD_kolo_v_Pa%C5%99%C3%AD%C5%BEi_(1900)"
+      },
+      "dewiki": {
+        "site": "dewiki",
+        "title": "Pariser Riesenrad",
+        "badges": [],
+        "url": "https://de.wikipedia.org/wiki/Pariser_Riesenrad"
+      },
+      "enwiki": {
+        "site": "enwiki",
+        "title": "Grande Roue de Paris",
+        "badges": [],
+        "url": "https://en.wikipedia.org/wiki/Grande_Roue_de_Paris"
+      },
+      "eswiki": {
+        "site": "eswiki",
+        "title": "Grande Roue de Paris",
+        "badges": [],
+        "url": "https://es.wikipedia.org/wiki/Grande_Roue_de_Paris"
+      },
+      "frwiki": {
+        "site": "frwiki",
+        "title": "Grande roue de Paris (Exposition universelle de 1900)",
+        "badges": [],
+        "url": "https://fr.wikipedia.org/wiki/Grande_roue_de_Paris_(Exposition_universelle_de_1900)"
+      },
+      "huwiki": {
+        "site": "huwiki",
+        "title": "Grande Roue de Paris",
+        "badges": [],
+        "url": "https://hu.wikipedia.org/wiki/Grande_Roue_de_Paris"
+      },
+      "itwiki": {
+        "site": "itwiki",
+        "title": "Grande Roue de Paris",
+        "badges": [],
+        "url": "https://it.wikipedia.org/wiki/Grande_Roue_de_Paris"
+      },
+      "jawiki": {
+        "site": "jawiki",
+        "title": "グランド・ルー・ド・パリ",
+        "badges": [],
+        "url": "https://ja.wikipedia.org/wiki/%E3%82%B0%E3%83%A9%E3%83%B3%E3%83%89%E3%83%BB%E3%83%AB%E3%83%BC%E3%83%BB%E3%83%89%E3%83%BB%E3%83%91%E3%83%AA"
+      },
+      "nnwiki": {
+        "site": "nnwiki",
+        "title": "Grande Roue de Paris",
+        "badges": [],
+        "url": "https://nn.wikipedia.org/wiki/Grande_Roue_de_Paris"
+      },
+      "svwiki": {
+        "site": "svwiki",
+        "title": "Grande Roue de Paris",
+        "badges": [],
+        "url": "https://sv.wikipedia.org/wiki/Grande_Roue_de_Paris"
+      },
+      "trwiki": {
+        "site": "trwiki",
+        "title": "Grande Roue de Paris",
+        "badges": [],
+        "url": "https://tr.wikipedia.org/wiki/Grande_Roue_de_Paris"
+      }
+    }
+  }
+}

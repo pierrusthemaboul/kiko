@@ -1,0 +1,786 @@
+{
+  "pageid": 5083720,
+  "ns": 0,
+  "title": "Q5315444",
+  "lastrevid": 2469157620,
+  "modified": "2026-03-03T22:50:31Z",
+  "type": "item",
+  "id": "Q5315444",
+  "labels": {
+    "en": {
+      "language": "en",
+      "value": "Dunlop"
+    },
+    "he": {
+      "language": "he",
+      "value": "דאנלופ"
+    },
+    "ja": {
+      "language": "ja",
+      "value": "ダンロップ"
+    },
+    "eo": {
+      "language": "eo",
+      "value": "Dunlop"
+    },
+    "it": {
+      "language": "it",
+      "value": "Dunlop"
+    },
+    "hr": {
+      "language": "hr",
+      "value": "Dunlop"
+    },
+    "fr": {
+      "language": "fr",
+      "value": "Dunlop"
+    },
+    "nb": {
+      "language": "nb",
+      "value": "Dunlop"
+    },
+    "bn": {
+      "language": "bn",
+      "value": "ডানলপ"
+    },
+    "zh": {
+      "language": "zh",
+      "value": "鄧祿普"
+    },
+    "ko": {
+      "language": "ko",
+      "value": "던롭"
+    },
+    "ast": {
+      "language": "ast",
+      "value": "Dunlop"
+    }
+  },
+  "descriptions": {
+    "en": {
+      "language": "en",
+      "value": "brands named after John Boyd Dunlop"
+    },
+    "ja": {
+      "language": "ja",
+      "value": "イギリス発祥のゴム・タイヤのブランド"
+    },
+    "he": {
+      "language": "he",
+      "value": "מותג בינלאומי"
+    },
+    "fr": {
+      "language": "fr",
+      "value": "fabricant de pneumatiques et d'équipements sportifs"
+    },
+    "bn": {
+      "language": "bn",
+      "value": "জন ব্যুও ডানলপের নামানুসারে ব্র্যান্ড সমূহ"
+    },
+    "ko": {
+      "language": "ko",
+      "value": "존 보이드 던롭의 이름을 딴 브랜드"
+    }
+  },
+  "aliases": {
+    "ja": [
+      {
+        "language": "ja",
+        "value": "Dunlop"
+      }
+    ]
+  },
+  "claims": {
+    "P31": [
+      {
+        "mainsnak": {
+          "snaktype": "value",
+          "property": "P31",
+          "hash": "372b9b9253902620bac3e4397c91029980ccce49",
+          "datavalue": {
+            "value": {
+              "entity-type": "item",
+              "numeric-id": 431289,
+              "id": "Q431289"
+            },
+            "type": "wikibase-entityid"
+          },
+          "datatype": "wikibase-item"
+        },
+        "type": "statement",
+        "id": "Q5315444$4d0f20cd-4ec1-6d28-29bf-28f710005aa1",
+        "rank": "normal"
+      },
+      {
+        "mainsnak": {
+          "snaktype": "value",
+          "property": "P31",
+          "hash": "f4f601be7047ae7ffdd0c73c66b309a417bedd93",
+          "datavalue": {
+            "value": {
+              "entity-type": "item",
+              "numeric-id": 3477381,
+              "id": "Q3477381"
+            },
+            "type": "wikibase-entityid"
+          },
+          "datatype": "wikibase-item"
+        },
+        "type": "statement",
+        "id": "Q5315444$a6746248-446b-6fbd-e02a-d36682761495",
+        "rank": "normal"
+      }
+    ],
+    "P373": [
+      {
+        "mainsnak": {
+          "snaktype": "value",
+          "property": "P373",
+          "hash": "db13518733e29a3b2f8b77f6756e0a2d0c3726cd",
+          "datavalue": {
+            "value": "Dunlop (brands)",
+            "type": "string"
+          },
+          "datatype": "string"
+        },
+        "type": "statement",
+        "id": "Q5315444$8e55554f-4e74-4d4f-73ca-5a5d82072a4e",
+        "rank": "normal"
+      }
+    ],
+    "P856": [
+      {
+        "mainsnak": {
+          "snaktype": "value",
+          "property": "P856",
+          "hash": "df9724406780503615688c73107db411417453f7",
+          "datavalue": {
+            "value": "http://www.dunlop.eu/",
+            "type": "string"
+          },
+          "datatype": "url"
+        },
+        "type": "statement",
+        "qualifiers": {
+          "P407": [
+            {
+              "snaktype": "value",
+              "property": "P407",
+              "hash": "daf1c4fcb58181b02dff9cc89deb084004ddae4b",
+              "datavalue": {
+                "value": {
+                  "entity-type": "item",
+                  "numeric-id": 1860,
+                  "id": "Q1860"
+                },
+                "type": "wikibase-entityid"
+              },
+              "datatype": "wikibase-item"
+            }
+          ]
+        },
+        "qualifiers-order": [
+          "P407"
+        ],
+        "id": "Q5315444$177F47EE-5970-4497-A2D7-6AE6CF8F8969",
+        "rank": "preferred",
+        "references": [
+          {
+            "hash": "256eca10838806b7c8f405d03155e3a0c6dc40e8",
+            "snaks": {
+              "P143": [
+                {
+                  "snaktype": "value",
+                  "property": "P143",
+                  "hash": "f30cbd35620c4ea6d0633aaf0210a8916130469b",
+                  "datavalue": {
+                    "value": {
+                      "entity-type": "item",
+                      "numeric-id": 8447,
+                      "id": "Q8447"
+                    },
+                    "type": "wikibase-entityid"
+                  },
+                  "datatype": "wikibase-item"
+                }
+              ],
+              "P4656": [
+                {
+                  "snaktype": "value",
+                  "property": "P4656",
+                  "hash": "2a5b58bdf06bae4073660ca225cca3a79b17c630",
+                  "datavalue": {
+                    "value": "https://fr.wikipedia.org/w/index.php?title=Dunlop&oldid=153163395",
+                    "type": "string"
+                  },
+                  "datatype": "url"
+                }
+              ]
+            },
+            "snaks-order": [
+              "P143",
+              "P4656"
+            ]
+          }
+        ]
+      },
+      {
+        "mainsnak": {
+          "snaktype": "value",
+          "property": "P856",
+          "hash": "2c52fb4c0729fe54d13c9063af17b67d9c922f03",
+          "datavalue": {
+            "value": "https://www.dunlopsuperdealer.com.au/",
+            "type": "string"
+          },
+          "datatype": "url"
+        },
+        "type": "statement",
+        "qualifiers": {
+          "P407": [
+            {
+              "snaktype": "value",
+              "property": "P407",
+              "hash": "daf1c4fcb58181b02dff9cc89deb084004ddae4b",
+              "datavalue": {
+                "value": {
+                  "entity-type": "item",
+                  "numeric-id": 1860,
+                  "id": "Q1860"
+                },
+                "type": "wikibase-entityid"
+              },
+              "datatype": "wikibase-item"
+            }
+          ]
+        },
+        "qualifiers-order": [
+          "P407"
+        ],
+        "id": "Q5315444$d9407e9a-43de-5320-e1b3-5ae4dcad621f",
+        "rank": "normal"
+      }
+    ],
+    "P571": [
+      {
+        "mainsnak": {
+          "snaktype": "value",
+          "property": "P571",
+          "hash": "9ca25f9fd089f2be68cae0a953ba10c3df7472df",
+          "datavalue": {
+            "value": {
+              "time": "+1889-00-00T00:00:00Z",
+              "timezone": 0,
+              "before": 0,
+              "after": 0,
+              "precision": 9,
+              "calendarmodel": "http://www.wikidata.org/entity/Q1985727"
+            },
+            "type": "time"
+          },
+          "datatype": "time"
+        },
+        "type": "statement",
+        "id": "Q5315444$9EF7740D-4E12-4A34-A0C0-83D1916669DF",
+        "rank": "normal",
+        "references": [
+          {
+            "hash": "8d0ce8855ff26494dd6a229f5f1bf25fc8e15b9e",
+            "snaks": {
+              "P143": [
+                {
+                  "snaktype": "value",
+                  "property": "P143",
+                  "hash": "5a343e7e758a4282a01316d3e959b6e653b767fc",
+                  "datavalue": {
+                    "value": {
+                      "entity-type": "item",
+                      "numeric-id": 11920,
+                      "id": "Q11920"
+                    },
+                    "type": "wikibase-entityid"
+                  },
+                  "datatype": "wikibase-item"
+                }
+              ],
+              "P4656": [
+                {
+                  "snaktype": "value",
+                  "property": "P4656",
+                  "hash": "9a1b4298ebf8448aaecdc3b60011736c56383d54",
+                  "datavalue": {
+                    "value": "https://it.wikipedia.org/w/index.php?title=Dunlop&oldid=101552191",
+                    "type": "string"
+                  },
+                  "datatype": "url"
+                }
+              ]
+            },
+            "snaks-order": [
+              "P143",
+              "P4656"
+            ]
+          }
+        ]
+      }
+    ],
+    "P17": [
+      {
+        "mainsnak": {
+          "snaktype": "value",
+          "property": "P17",
+          "hash": "a44880420787fb348836dc51d3babc5227c4ef7e",
+          "datavalue": {
+            "value": {
+              "entity-type": "item",
+              "numeric-id": 145,
+              "id": "Q145"
+            },
+            "type": "wikibase-entityid"
+          },
+          "datatype": "wikibase-item"
+        },
+        "type": "statement",
+        "id": "Q5315444$4D2656BD-911E-42D8-9888-ECBC7D9E5849",
+        "rank": "normal",
+        "references": [
+          {
+            "hash": "8d0ce8855ff26494dd6a229f5f1bf25fc8e15b9e",
+            "snaks": {
+              "P143": [
+                {
+                  "snaktype": "value",
+                  "property": "P143",
+                  "hash": "5a343e7e758a4282a01316d3e959b6e653b767fc",
+                  "datavalue": {
+                    "value": {
+                      "entity-type": "item",
+                      "numeric-id": 11920,
+                      "id": "Q11920"
+                    },
+                    "type": "wikibase-entityid"
+                  },
+                  "datatype": "wikibase-item"
+                }
+              ],
+              "P4656": [
+                {
+                  "snaktype": "value",
+                  "property": "P4656",
+                  "hash": "9a1b4298ebf8448aaecdc3b60011736c56383d54",
+                  "datavalue": {
+                    "value": "https://it.wikipedia.org/w/index.php?title=Dunlop&oldid=101552191",
+                    "type": "string"
+                  },
+                  "datatype": "url"
+                }
+              ]
+            },
+            "snaks-order": [
+              "P143",
+              "P4656"
+            ]
+          }
+        ]
+      }
+    ],
+    "P1417": [
+      {
+        "mainsnak": {
+          "snaktype": "value",
+          "property": "P1417",
+          "hash": "75114bf19200abf41f0f7aba00c4cad657bed225",
+          "datavalue": {
+            "value": "topic/Dunlop-Holdings-PLC",
+            "type": "string"
+          },
+          "datatype": "external-id"
+        },
+        "type": "statement",
+        "qualifiers": {
+          "P1810": [
+            {
+              "snaktype": "value",
+              "property": "P1810",
+              "hash": "9372a67475fca0ce5b1b7b451ab6f7fa5bafbda4",
+              "datavalue": {
+                "value": "Dunlop Holdings PLC",
+                "type": "string"
+              },
+              "datatype": "string"
+            }
+          ]
+        },
+        "qualifiers-order": [
+          "P1810"
+        ],
+        "id": "Q5315444$61f4178b-4274-cd34-930c-85cbeafe4034",
+        "rank": "normal"
+      }
+    ],
+    "P1889": [
+      {
+        "mainsnak": {
+          "snaktype": "value",
+          "property": "P1889",
+          "hash": "ab551fcf70045053cbf93fd460f527bcdf7c7a58",
+          "datavalue": {
+            "value": {
+              "entity-type": "item",
+              "numeric-id": 1266156,
+              "id": "Q1266156"
+            },
+            "type": "wikibase-entityid"
+          },
+          "datatype": "wikibase-item"
+        },
+        "type": "statement",
+        "id": "Q5315444$5b27d887-4d6f-ac9e-36a2-e0ea83cb3b13",
+        "rank": "normal"
+      },
+      {
+        "mainsnak": {
+          "snaktype": "value",
+          "property": "P1889",
+          "hash": "ce12ff8cdef1e4fd11662837c51c91db1ae869f2",
+          "datavalue": {
+            "value": {
+              "entity-type": "item",
+              "numeric-id": 5315458,
+              "id": "Q5315458"
+            },
+            "type": "wikibase-entityid"
+          },
+          "datatype": "wikibase-item"
+        },
+        "type": "statement",
+        "id": "Q5315444$7d5b6c8d-4afe-133d-481c-5b02164f4bcd",
+        "rank": "normal"
+      }
+    ],
+    "P1056": [
+      {
+        "mainsnak": {
+          "snaktype": "value",
+          "property": "P1056",
+          "hash": "644b1422f069483ad3228b6e97141da482c5f77e",
+          "datavalue": {
+            "value": {
+              "entity-type": "item",
+              "numeric-id": 169545,
+              "id": "Q169545"
+            },
+            "type": "wikibase-entityid"
+          },
+          "datatype": "wikibase-item"
+        },
+        "type": "statement",
+        "qualifiers": {
+          "P1716": [
+            {
+              "snaktype": "value",
+              "property": "P1716",
+              "hash": "1d3f9f53a1a4738952a937b3066e54459ecebb0c",
+              "datavalue": {
+                "value": {
+                  "entity-type": "item",
+                  "numeric-id": 168241,
+                  "id": "Q168241"
+                },
+                "type": "wikibase-entityid"
+              },
+              "datatype": "wikibase-item"
+            }
+          ]
+        },
+        "qualifiers-order": [
+          "P1716"
+        ],
+        "id": "Q5315444$FE93F4EE-D14E-4BD7-BE62-1A4960F85061",
+        "rank": "normal",
+        "references": [
+          {
+            "hash": "256eca10838806b7c8f405d03155e3a0c6dc40e8",
+            "snaks": {
+              "P143": [
+                {
+                  "snaktype": "value",
+                  "property": "P143",
+                  "hash": "f30cbd35620c4ea6d0633aaf0210a8916130469b",
+                  "datavalue": {
+                    "value": {
+                      "entity-type": "item",
+                      "numeric-id": 8447,
+                      "id": "Q8447"
+                    },
+                    "type": "wikibase-entityid"
+                  },
+                  "datatype": "wikibase-item"
+                }
+              ],
+              "P4656": [
+                {
+                  "snaktype": "value",
+                  "property": "P4656",
+                  "hash": "2a5b58bdf06bae4073660ca225cca3a79b17c630",
+                  "datavalue": {
+                    "value": "https://fr.wikipedia.org/w/index.php?title=Dunlop&oldid=153163395",
+                    "type": "string"
+                  },
+                  "datatype": "url"
+                }
+              ]
+            },
+            "snaks-order": [
+              "P143",
+              "P4656"
+            ]
+          }
+        ]
+      },
+      {
+        "mainsnak": {
+          "snaktype": "value",
+          "property": "P1056",
+          "hash": "ae626158ab6297d400622d1e4a2a64bd5540d6f5",
+          "datavalue": {
+            "value": {
+              "entity-type": "item",
+              "numeric-id": 18113858,
+              "id": "Q18113858"
+            },
+            "type": "wikibase-entityid"
+          },
+          "datatype": "wikibase-item"
+        },
+        "type": "statement",
+        "id": "Q5315444$bc926041-4975-d5ba-fc75-22d73281983d",
+        "rank": "normal"
+      }
+    ],
+    "P646": [
+      {
+        "mainsnak": {
+          "snaktype": "value",
+          "property": "P646",
+          "hash": "0cbe8693befe8765c1b013b358d9a73d40894dd9",
+          "datavalue": {
+            "value": "/m/03wd_1x",
+            "type": "string"
+          },
+          "datatype": "external-id"
+        },
+        "type": "statement",
+        "id": "Q5315444$4A536E74-65A4-46E0-827C-D0898C897FDD",
+        "rank": "normal"
+      }
+    ],
+    "P154": [
+      {
+        "mainsnak": {
+          "snaktype": "value",
+          "property": "P154",
+          "hash": "217d697d54d1ae70c5e0e84e6e71db8a51aaaf70",
+          "datavalue": {
+            "value": "Dunlop brand logo.svg",
+            "type": "string"
+          },
+          "datatype": "commonsMedia"
+        },
+        "type": "statement",
+        "id": "Q5315444$4b89d67d-4dfb-1ca8-30c8-3d07c8b1dbfd",
+        "rank": "normal"
+      }
+    ],
+    "P8253": [
+      {
+        "mainsnak": {
+          "snaktype": "value",
+          "property": "P8253",
+          "hash": "29b2d3a367e4ad761147f270cb8937dd379625e5",
+          "datavalue": {
+            "value": "dunlop-975e12",
+            "type": "string"
+          },
+          "datatype": "external-id"
+        },
+        "type": "statement",
+        "id": "Q5315444$B7E23037-0253-4622-826D-757270BDAC93",
+        "rank": "normal",
+        "references": [
+          {
+            "hash": "17b44e0865ba260d9e25a3eb6dd105da11a26206",
+            "snaks": {
+              "P248": [
+                {
+                  "snaktype": "value",
+                  "property": "P248",
+                  "hash": "bb9b2495417db83228e92ebc58dadf9e4c27c2b6",
+                  "datavalue": {
+                    "value": {
+                      "entity-type": "item",
+                      "numeric-id": 62108705,
+                      "id": "Q62108705"
+                    },
+                    "type": "wikibase-entityid"
+                  },
+                  "datatype": "wikibase-item"
+                }
+              ]
+            },
+            "snaks-order": [
+              "P248"
+            ]
+          }
+        ]
+      }
+    ],
+    "P8885": [
+      {
+        "mainsnak": {
+          "snaktype": "value",
+          "property": "P8885",
+          "hash": "687230cd31a83a65c2030aa3c09ad2f1f9566041",
+          "datavalue": {
+            "value": "던롭",
+            "type": "string"
+          },
+          "datatype": "external-id"
+        },
+        "type": "statement",
+        "id": "Q5315444$e6b046e3-4205-32e8-1de2-ee76ec64b2db",
+        "rank": "normal"
+      }
+    ],
+    "P5337": [
+      {
+        "mainsnak": {
+          "snaktype": "value",
+          "property": "P5337",
+          "hash": "9fced5f0326d438d8f39cba82ef1624537b07cd2",
+          "datavalue": {
+            "value": "CAAqJAgKIh5DQkFTRUFvS0wyMHZNRE4zWkY4eGVCSUNhbUVvQUFQAQ",
+            "type": "string"
+          },
+          "datatype": "external-id"
+        },
+        "type": "statement",
+        "id": "Q5315444$f2092278-4ed0-0409-4c3d-43c6d161111f",
+        "rank": "normal"
+      }
+    ],
+    "P112": [
+      {
+        "mainsnak": {
+          "snaktype": "value",
+          "property": "P112",
+          "hash": "c4ac5dac3507ca9ca9e9876f309d955be06dcf73",
+          "datavalue": {
+            "value": {
+              "entity-type": "item",
+              "numeric-id": 222116,
+              "id": "Q222116"
+            },
+            "type": "wikibase-entityid"
+          },
+          "datatype": "wikibase-item"
+        },
+        "type": "statement",
+        "id": "Q5315444$55459836-4b7b-ddda-68da-5121da36fc32",
+        "rank": "normal"
+      }
+    ],
+    "P127": [
+      {
+        "mainsnak": {
+          "snaktype": "value",
+          "property": "P127",
+          "hash": "570a933c673aca0efcfca1d6e1c5deb8ce000643",
+          "datavalue": {
+            "value": {
+              "entity-type": "item",
+              "numeric-id": 1648148,
+              "id": "Q1648148"
+            },
+            "type": "wikibase-entityid"
+          },
+          "datatype": "wikibase-item"
+        },
+        "type": "statement",
+        "id": "Q5315444$4aaa71ad-43d9-003c-14f4-ef602126307f",
+        "rank": "normal"
+      }
+    ],
+    "P910": [
+      {
+        "mainsnak": {
+          "snaktype": "value",
+          "property": "P910",
+          "hash": "2d3e8d82b926fe2b32295a2bfc25de78773a0c7a",
+          "datavalue": {
+            "value": {
+              "entity-type": "item",
+              "numeric-id": 18717811,
+              "id": "Q18717811"
+            },
+            "type": "wikibase-entityid"
+          },
+          "datatype": "wikibase-item"
+        },
+        "type": "statement",
+        "id": "Q5315444$4ce45cc4-43a2-9cfc-de75-5bc5bd1cf0c0",
+        "rank": "normal"
+      }
+    ]
+  },
+  "sitelinks": {
+    "enwiki": {
+      "site": "enwiki",
+      "title": "Dunlop (brands)",
+      "badges": [],
+      "url": "https://en.wikipedia.org/wiki/Dunlop_(brands)"
+    },
+    "eowiki": {
+      "site": "eowiki",
+      "title": "Dunlop",
+      "badges": [],
+      "url": "https://eo.wikipedia.org/wiki/Dunlop"
+    },
+    "frwiki": {
+      "site": "frwiki",
+      "title": "Dunlop",
+      "badges": [],
+      "url": "https://fr.wikipedia.org/wiki/Dunlop"
+    },
+    "hewiki": {
+      "site": "hewiki",
+      "title": "דאנלופ",
+      "badges": [],
+      "url": "https://he.wikipedia.org/wiki/%D7%93%D7%90%D7%A0%D7%9C%D7%95%D7%A4"
+    },
+    "hrwiki": {
+      "site": "hrwiki",
+      "title": "Dunlop",
+      "badges": [],
+      "url": "https://hr.wikipedia.org/wiki/Dunlop"
+    },
+    "jawiki": {
+      "site": "jawiki",
+      "title": "ダンロップ",
+      "badges": [],
+      "url": "https://ja.wikipedia.org/wiki/%E3%83%80%E3%83%B3%E3%83%AD%E3%83%83%E3%83%97"
+    },
+    "nowiki": {
+      "site": "nowiki",
+      "title": "Dunlop",
+      "badges": [],
+      "url": "https://no.wikipedia.org/wiki/Dunlop"
+    },
+    "zhwiki": {
+      "site": "zhwiki",
+      "title": "邓禄普",
+      "badges": [],
+      "url": "https://zh.wikipedia.org/wiki/%E9%82%93%E7%A6%84%E6%99%AE"
+    }
+  }
+}

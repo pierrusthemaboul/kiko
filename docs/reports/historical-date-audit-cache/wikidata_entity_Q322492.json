@@ -1,0 +1,189 @@
+{
+  "saved_at": "2026-03-07T16:23:59.527Z",
+  "value": {
+    "pageid": 309753,
+    "ns": 0,
+    "title": "Q322492",
+    "lastrevid": 2425030273,
+    "modified": "2025-11-03T14:00:43Z",
+    "type": "item",
+    "id": "Q322492",
+    "labels": {
+      "de": {
+        "language": "de",
+        "value": "Reunionspolitik"
+      },
+      "pl": {
+        "language": "pl",
+        "value": "Reuniony"
+      },
+      "fr": {
+        "language": "fr",
+        "value": "Politique des Réunions"
+      },
+      "fi": {
+        "language": "fi",
+        "value": "Reunionit"
+      },
+      "sl": {
+        "language": "sl",
+        "value": "reunije"
+      },
+      "ru": {
+        "language": "ru",
+        "value": "Политика присоединений"
+      },
+      "ja": {
+        "language": "ja",
+        "value": "再統合政策"
+      },
+      "bg": {
+        "language": "bg",
+        "value": "Политика на присъединенията (Реюнион)"
+      },
+      "uk": {
+        "language": "uk",
+        "value": "Політика приєднань"
+      }
+    },
+    "descriptions": {
+      "de": {
+        "language": "de",
+        "value": "Politik des französischen Königs in der zweiten Hälfte des 17. Jahrhunderts"
+      },
+      "fr": {
+        "language": "fr",
+        "value": "politique étrangère d'annexion de territoires menée aux frontières du royaume par Louis XIV"
+      }
+    },
+    "aliases": {
+      "pl": [
+        {
+          "language": "pl",
+          "value": "Polityka reunionów"
+        }
+      ],
+      "fr": [
+        {
+          "language": "fr",
+          "value": "Politique des Reunions"
+        },
+        {
+          "language": "fr",
+          "value": "La politique des Réunions"
+        }
+      ]
+    },
+    "claims": {
+      "P2671": [
+        {
+          "mainsnak": {
+            "snaktype": "value",
+            "property": "P2671",
+            "hash": "a46ab340a91ebbd454b881f837accdce349632c7",
+            "datavalue": {
+              "value": "/g/122hclts",
+              "type": "string"
+            },
+            "datatype": "external-id"
+          },
+          "type": "statement",
+          "id": "Q322492$9C65D09D-4E5C-4061-95F7-1DCA6D95CD97",
+          "rank": "normal"
+        }
+      ],
+      "P1343": [
+        {
+          "mainsnak": {
+            "snaktype": "value",
+            "property": "P1343",
+            "hash": "cc623969772776f2a8b109402b0ac5fa5c123233",
+            "datavalue": {
+              "value": {
+                "entity-type": "item",
+                "numeric-id": 19219752,
+                "id": "Q19219752"
+              },
+              "type": "wikibase-entityid"
+            },
+            "datatype": "wikibase-item"
+          },
+          "type": "statement",
+          "qualifiers": {
+            "P805": [
+              {
+                "snaktype": "value",
+                "property": "P805",
+                "hash": "686b920e869d8ee133a352b320e9c4a25b65b1f5",
+                "datavalue": {
+                  "value": {
+                    "entity-type": "item",
+                    "numeric-id": 134887837,
+                    "id": "Q134887837"
+                  },
+                  "type": "wikibase-entityid"
+                },
+                "datatype": "wikibase-item"
+              }
+            ]
+          },
+          "qualifiers-order": [
+            "P805"
+          ],
+          "id": "Q322492$F5F738EE-FA3B-4311-9351-05B1467D7565",
+          "rank": "normal"
+        }
+      ]
+    },
+    "sitelinks": {
+      "bgwiki": {
+        "site": "bgwiki",
+        "title": "Политика на присъединенията (Реюнион)",
+        "badges": [],
+        "url": "https://bg.wikipedia.org/wiki/%D0%9F%D0%BE%D0%BB%D0%B8%D1%82%D0%B8%D0%BA%D0%B0_%D0%BD%D0%B0_%D0%BF%D1%80%D0%B8%D1%81%D1%8A%D0%B5%D0%B4%D0%B8%D0%BD%D0%B5%D0%BD%D0%B8%D1%8F%D1%82%D0%B0_(%D0%A0%D0%B5%D1%8E%D0%BD%D0%B8%D0%BE%D0%BD)"
+      },
+      "dewiki": {
+        "site": "dewiki",
+        "title": "Reunionspolitik",
+        "badges": [],
+        "url": "https://de.wikipedia.org/wiki/Reunionspolitik"
+      },
+      "fiwiki": {
+        "site": "fiwiki",
+        "title": "Reunionit",
+        "badges": [],
+        "url": "https://fi.wikipedia.org/wiki/Reunionit"
+      },
+      "frwiki": {
+        "site": "frwiki",
+        "title": "Politique des Réunions",
+        "badges": [],
+        "url": "https://fr.wikipedia.org/wiki/Politique_des_R%C3%A9unions"
+      },
+      "plwiki": {
+        "site": "plwiki",
+        "title": "Reuniony",
+        "badges": [],
+        "url": "https://pl.wikipedia.org/wiki/Reuniony"
+      },
+      "ruwiki": {
+        "site": "ruwiki",
+        "title": "Политика присоединений",
+        "badges": [],
+        "url": "https://ru.wikipedia.org/wiki/%D0%9F%D0%BE%D0%BB%D0%B8%D1%82%D0%B8%D0%BA%D0%B0_%D0%BF%D1%80%D0%B8%D1%81%D0%BE%D0%B5%D0%B4%D0%B8%D0%BD%D0%B5%D0%BD%D0%B8%D0%B9"
+      },
+      "slwiki": {
+        "site": "slwiki",
+        "title": "Reunije",
+        "badges": [],
+        "url": "https://sl.wikipedia.org/wiki/Reunije"
+      },
+      "ukwiki": {
+        "site": "ukwiki",
+        "title": "Політика приєднань",
+        "badges": [],
+        "url": "https://uk.wikipedia.org/wiki/%D0%9F%D0%BE%D0%BB%D1%96%D1%82%D0%B8%D0%BA%D0%B0_%D0%BF%D1%80%D0%B8%D1%94%D0%B4%D0%BD%D0%B0%D0%BD%D1%8C"
+      }
+    }
+  }
+}

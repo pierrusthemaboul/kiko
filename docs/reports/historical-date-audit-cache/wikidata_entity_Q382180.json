@@ -1,0 +1,515 @@
+{
+  "saved_at": "2026-03-07T15:59:28.717Z",
+  "value": {
+    "pageid": 363649,
+    "ns": 0,
+    "title": "Q382180",
+    "lastrevid": 2347587397,
+    "modified": "2025-05-12T01:16:10Z",
+    "type": "item",
+    "id": "Q382180",
+    "labels": {
+      "ru": {
+        "language": "ru",
+        "value": "Дело о листовках"
+      },
+      "fr": {
+        "language": "fr",
+        "value": "affaire des Placards"
+      },
+      "en": {
+        "language": "en",
+        "value": "Affair of the Placards"
+      },
+      "pt": {
+        "language": "pt",
+        "value": "Caso dos cartazes"
+      },
+      "de": {
+        "language": "de",
+        "value": "Affaire des Placards"
+      },
+      "oc": {
+        "language": "oc",
+        "value": "Ahar deus Placards"
+      },
+      "it": {
+        "language": "it",
+        "value": "caso dei manifesti"
+      },
+      "hu": {
+        "language": "hu",
+        "value": "kiáltványügy"
+      },
+      "es": {
+        "language": "es",
+        "value": "Asunto de los pasquines"
+      },
+      "ja": {
+        "language": "ja",
+        "value": "檄文事件"
+      },
+      "pl": {
+        "language": "pl",
+        "value": "Afera plakatów"
+      },
+      "ko": {
+        "language": "ko",
+        "value": "벽보 사건"
+      },
+      "ca": {
+        "language": "ca",
+        "value": "assumpte dels pasquins"
+      },
+      "id": {
+        "language": "id",
+        "value": "Peristiwa Placards"
+      },
+      "zh": {
+        "language": "zh",
+        "value": "檄文事件"
+      }
+    },
+    "descriptions": {
+      "es": {
+        "language": "es",
+        "value": "acontecimiento en París en 1534"
+      },
+      "ca": {
+        "language": "ca",
+        "value": "esdeveniment a París el 1534"
+      },
+      "fr": {
+        "language": "fr",
+        "value": "polémique causée par le placardage clandestin d'un texte anticatholique en France en 1534"
+      },
+      "en": {
+        "language": "en",
+        "value": "1534 anti-Catholic protest in France"
+      }
+    },
+    "aliases": {
+      "fr": [
+        {
+          "language": "fr",
+          "value": "Affaire des placards"
+        },
+        {
+          "language": "fr",
+          "value": "Affaire Des Placards"
+        },
+        {
+          "language": "fr",
+          "value": "Scandale des Placards"
+        }
+      ],
+      "de": [
+        {
+          "language": "de",
+          "value": "Plakataffäre"
+        }
+      ],
+      "it": [
+        {
+          "language": "it",
+          "value": "Affaire des placards"
+        },
+        {
+          "language": "it",
+          "value": "Affare dei placards"
+        }
+      ],
+      "hu": [
+        {
+          "language": "hu",
+          "value": "kiáltványaffér"
+        }
+      ]
+    },
+    "claims": {
+      "P646": [
+        {
+          "mainsnak": {
+            "snaktype": "value",
+            "property": "P646",
+            "hash": "273ef63a6994dce661a7f3fe4be2a2dfa680c86d",
+            "datavalue": {
+              "value": "/m/03g8mc",
+              "type": "string"
+            },
+            "datatype": "external-id"
+          },
+          "type": "statement",
+          "id": "Q382180$D729E3C9-A531-4A34-AB80-45E373C1CD8D",
+          "rank": "normal",
+          "references": [
+            {
+              "hash": "2b00cb481cddcac7623114367489b5c194901c4a",
+              "snaks": {
+                "P248": [
+                  {
+                    "snaktype": "value",
+                    "property": "P248",
+                    "hash": "a94b740202b097dd33355e0e6c00e54b9395e5e0",
+                    "datavalue": {
+                      "value": {
+                        "entity-type": "item",
+                        "numeric-id": 15241312,
+                        "id": "Q15241312"
+                      },
+                      "type": "wikibase-entityid"
+                    },
+                    "datatype": "wikibase-item"
+                  }
+                ],
+                "P577": [
+                  {
+                    "snaktype": "value",
+                    "property": "P577",
+                    "hash": "fde79ecb015112d2f29229ccc1ec514ed3e71fa2",
+                    "datavalue": {
+                      "value": {
+                        "time": "+2013-10-28T00:00:00Z",
+                        "timezone": 0,
+                        "before": 0,
+                        "after": 0,
+                        "precision": 11,
+                        "calendarmodel": "http://www.wikidata.org/entity/Q1985727"
+                      },
+                      "type": "time"
+                    },
+                    "datatype": "time"
+                  }
+                ]
+              },
+              "snaks-order": [
+                "P248",
+                "P577"
+              ]
+            }
+          ]
+        }
+      ],
+      "P31": [
+        {
+          "mainsnak": {
+            "snaktype": "value",
+            "property": "P31",
+            "hash": "594cfdfbf98f2188c5eef35e07826a417d930f93",
+            "datavalue": {
+              "value": {
+                "entity-type": "item",
+                "numeric-id": 1190554,
+                "id": "Q1190554"
+              },
+              "type": "wikibase-entityid"
+            },
+            "datatype": "wikibase-item"
+          },
+          "type": "statement",
+          "id": "Q382180$064e0808-47f8-a2b2-b3d9-ad8050a73683",
+          "rank": "normal"
+        }
+      ],
+      "P585": [
+        {
+          "mainsnak": {
+            "snaktype": "value",
+            "property": "P585",
+            "hash": "3b7cb46d0c2afd82992acd066af3521b45ade4ad",
+            "datavalue": {
+              "value": {
+                "time": "+1534-10-17T00:00:00Z",
+                "timezone": 0,
+                "before": 0,
+                "after": 0,
+                "precision": 11,
+                "calendarmodel": "http://www.wikidata.org/entity/Q1985727"
+              },
+              "type": "time"
+            },
+            "datatype": "time"
+          },
+          "type": "statement",
+          "id": "Q382180$501f602e-4155-eb6d-2b85-c7c0f55a26b7",
+          "rank": "normal"
+        }
+      ],
+      "P276": [
+        {
+          "mainsnak": {
+            "snaktype": "value",
+            "property": "P276",
+            "hash": "65737aff6befb67b52f4956ed02d8655213307f0",
+            "datavalue": {
+              "value": {
+                "entity-type": "item",
+                "numeric-id": 90,
+                "id": "Q90"
+              },
+              "type": "wikibase-entityid"
+            },
+            "datatype": "wikibase-item"
+          },
+          "type": "statement",
+          "id": "Q382180$8a2ee391-4abf-c39c-1e5a-5568dacecb33",
+          "rank": "normal"
+        },
+        {
+          "mainsnak": {
+            "snaktype": "value",
+            "property": "P276",
+            "hash": "08f7d523b2c45edb06321187ec4336127127475c",
+            "datavalue": {
+              "value": {
+                "entity-type": "item",
+                "numeric-id": 288,
+                "id": "Q288"
+              },
+              "type": "wikibase-entityid"
+            },
+            "datatype": "wikibase-item"
+          },
+          "type": "statement",
+          "id": "Q382180$1a3d9673-4c0a-5cdd-c233-fe262136b321",
+          "rank": "normal"
+        },
+        {
+          "mainsnak": {
+            "snaktype": "value",
+            "property": "P276",
+            "hash": "e961e8b008b72b4ef0fdf54c229351ba9e285494",
+            "datavalue": {
+              "value": {
+                "entity-type": "item",
+                "numeric-id": 6548,
+                "id": "Q6548"
+              },
+              "type": "wikibase-entityid"
+            },
+            "datatype": "wikibase-item"
+          },
+          "type": "statement",
+          "id": "Q382180$76cfc772-4e06-fc3c-34d7-f62f746fb00f",
+          "rank": "normal"
+        }
+      ],
+      "P17": [
+        {
+          "mainsnak": {
+            "snaktype": "value",
+            "property": "P17",
+            "hash": "c05db5d169c2560b9799d567a803d20a392f53e4",
+            "datavalue": {
+              "value": {
+                "entity-type": "item",
+                "numeric-id": 142,
+                "id": "Q142"
+              },
+              "type": "wikibase-entityid"
+            },
+            "datatype": "wikibase-item"
+          },
+          "type": "statement",
+          "id": "Q382180$31a7b36c-4b12-c229-fa07-6c59d48b1fee",
+          "rank": "normal"
+        }
+      ],
+      "P6404": [
+        {
+          "mainsnak": {
+            "snaktype": "value",
+            "property": "P6404",
+            "hash": "557f4c7c0031ae0e323eae4cc1c1d64118e59753",
+            "datavalue": {
+              "value": "affare-dei-placards",
+              "type": "string"
+            },
+            "datatype": "external-id"
+          },
+          "type": "statement",
+          "qualifiers": {
+            "P1810": [
+              {
+                "snaktype": "value",
+                "property": "P1810",
+                "hash": "a764d672e03344e098af277358669ae0ee1a1522",
+                "datavalue": {
+                  "value": "placards, affare dei",
+                  "type": "string"
+                },
+                "datatype": "string"
+              }
+            ],
+            "P577": [
+              {
+                "snaktype": "value",
+                "property": "P577",
+                "hash": "d2a40d22655021267a9386d3086e000722b5a2d3",
+                "datavalue": {
+                  "value": {
+                    "time": "+2011-01-01T00:00:00Z",
+                    "timezone": 0,
+                    "before": 0,
+                    "after": 0,
+                    "precision": 9,
+                    "calendarmodel": "http://www.wikidata.org/entity/Q1985727"
+                  },
+                  "type": "time"
+                },
+                "datatype": "time"
+              }
+            ]
+          },
+          "qualifiers-order": [
+            "P1810",
+            "P577"
+          ],
+          "id": "Q382180$950209D6-B76F-4B16-84DF-B99FADA0CA47",
+          "rank": "normal"
+        }
+      ],
+      "P625": [
+        {
+          "mainsnak": {
+            "snaktype": "value",
+            "property": "P625",
+            "hash": "e6700c1bad76c5b49a75775ac8fad9388dc062a0",
+            "datavalue": {
+              "value": {
+                "latitude": 48.8567,
+                "longitude": 2.3522,
+                "altitude": null,
+                "precision": 0.013653358610504814,
+                "globe": "http://www.wikidata.org/entity/Q2"
+              },
+              "type": "globecoordinate"
+            },
+            "datatype": "globe-coordinate"
+          },
+          "type": "statement",
+          "id": "Q382180$9792d4c8-67d2-49c9-b4fd-1bebe593959c",
+          "rank": "normal",
+          "references": [
+            {
+              "hash": "b3fd5e254143d8b52cd96cff43af9af5e3a82358",
+              "snaks": {
+                "P143": [
+                  {
+                    "snaktype": "value",
+                    "property": "P143",
+                    "hash": "f13c99a16441677ec69fcea23f221d866f1fc98f",
+                    "datavalue": {
+                      "value": {
+                        "entity-type": "item",
+                        "numeric-id": 199693,
+                        "id": "Q199693"
+                      },
+                      "type": "wikibase-entityid"
+                    },
+                    "datatype": "wikibase-item"
+                  }
+                ]
+              },
+              "snaks-order": [
+                "P143"
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    "sitelinks": {
+      "cawiki": {
+        "site": "cawiki",
+        "title": "Assumpte dels pasquins",
+        "badges": [],
+        "url": "https://ca.wikipedia.org/wiki/Assumpte_dels_pasquins"
+      },
+      "dewiki": {
+        "site": "dewiki",
+        "title": "Affaire des Placards",
+        "badges": [],
+        "url": "https://de.wikipedia.org/wiki/Affaire_des_Placards"
+      },
+      "enwiki": {
+        "site": "enwiki",
+        "title": "Affair of the Placards",
+        "badges": [],
+        "url": "https://en.wikipedia.org/wiki/Affair_of_the_Placards"
+      },
+      "eswiki": {
+        "site": "eswiki",
+        "title": "Asunto de los Pasquines",
+        "badges": [],
+        "url": "https://es.wikipedia.org/wiki/Asunto_de_los_Pasquines"
+      },
+      "frwiki": {
+        "site": "frwiki",
+        "title": "Affaire des Placards",
+        "badges": [],
+        "url": "https://fr.wikipedia.org/wiki/Affaire_des_Placards"
+      },
+      "huwiki": {
+        "site": "huwiki",
+        "title": "Kiáltványügy",
+        "badges": [],
+        "url": "https://hu.wikipedia.org/wiki/Ki%C3%A1ltv%C3%A1ny%C3%BCgy"
+      },
+      "idwiki": {
+        "site": "idwiki",
+        "title": "Peristiwa Placards",
+        "badges": [],
+        "url": "https://id.wikipedia.org/wiki/Peristiwa_Placards"
+      },
+      "itwiki": {
+        "site": "itwiki",
+        "title": "Caso dei manifesti",
+        "badges": [],
+        "url": "https://it.wikipedia.org/wiki/Caso_dei_manifesti"
+      },
+      "jawiki": {
+        "site": "jawiki",
+        "title": "檄文事件",
+        "badges": [],
+        "url": "https://ja.wikipedia.org/wiki/%E6%AA%84%E6%96%87%E4%BA%8B%E4%BB%B6"
+      },
+      "kowiki": {
+        "site": "kowiki",
+        "title": "벽보 사건",
+        "badges": [],
+        "url": "https://ko.wikipedia.org/wiki/%EB%B2%BD%EB%B3%B4_%EC%82%AC%EA%B1%B4"
+      },
+      "ocwiki": {
+        "site": "ocwiki",
+        "title": "Ahar deus Placards",
+        "badges": [],
+        "url": "https://oc.wikipedia.org/wiki/Ahar_deus_Placards"
+      },
+      "plwiki": {
+        "site": "plwiki",
+        "title": "Afera plakatów",
+        "badges": [],
+        "url": "https://pl.wikipedia.org/wiki/Afera_plakat%C3%B3w"
+      },
+      "ptwiki": {
+        "site": "ptwiki",
+        "title": "Caso dos cartazes",
+        "badges": [],
+        "url": "https://pt.wikipedia.org/wiki/Caso_dos_cartazes"
+      },
+      "ruwiki": {
+        "site": "ruwiki",
+        "title": "Дело о листовках",
+        "badges": [],
+        "url": "https://ru.wikipedia.org/wiki/%D0%94%D0%B5%D0%BB%D0%BE_%D0%BE_%D0%BB%D0%B8%D1%81%D1%82%D0%BE%D0%B2%D0%BA%D0%B0%D1%85"
+      },
+      "zhwiki": {
+        "site": "zhwiki",
+        "title": "檄文事件",
+        "badges": [],
+        "url": "https://zh.wikipedia.org/wiki/%E6%AA%84%E6%96%87%E4%BA%8B%E4%BB%B6"
+      }
+    }
+  }
+}

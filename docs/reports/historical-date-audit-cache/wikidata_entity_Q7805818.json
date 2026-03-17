@@ -1,0 +1,126 @@
+{
+  "saved_at": "2026-03-07T16:53:39.680Z",
+  "value": {
+    "pageid": 7737450,
+    "ns": 0,
+    "title": "Q7805818",
+    "lastrevid": 1584581874,
+    "modified": "2022-02-28T17:41:41Z",
+    "type": "item",
+    "id": "Q7805818",
+    "labels": {
+      "en": {
+        "language": "en",
+        "value": "timeline of Mars Science Laboratory"
+      },
+      "fr": {
+        "language": "fr",
+        "value": "exploration de Mars par Curiosity"
+      },
+      "uk": {
+        "language": "uk",
+        "value": "Хронологія подій Марсіанської наукової лабораторії"
+      },
+      "zh": {
+        "language": "zh",
+        "value": "火星科学实验室任务年表"
+      }
+    },
+    "descriptions": {
+      "de": {
+        "language": "de",
+        "value": "Zeitleiste"
+      },
+      "en": {
+        "language": "en",
+        "value": "Progress of the mission that deployed the Curiosity rover to Mars"
+      },
+      "fr": {
+        "language": "fr",
+        "value": "exploration"
+      },
+      "it": {
+        "language": "it",
+        "value": "timeline"
+      }
+    },
+    "aliases": {
+      "fr": [
+        {
+          "language": "fr",
+          "value": "frise chronologique d'exploration de Mars par Curiosity"
+        }
+      ]
+    },
+    "claims": {
+      "P31": [
+        {
+          "mainsnak": {
+            "snaktype": "value",
+            "property": "P31",
+            "hash": "b8abbe4be41b51322810e319a338d2a04d824c35",
+            "datavalue": {
+              "value": {
+                "entity-type": "item",
+                "numeric-id": 186117,
+                "id": "Q186117"
+              },
+              "type": "wikibase-entityid"
+            },
+            "datatype": "wikibase-item"
+          },
+          "type": "statement",
+          "id": "Q7805818$32A986C7-4E96-4039-A934-8666AFAF91FB",
+          "rank": "normal"
+        }
+      ],
+      "P921": [
+        {
+          "mainsnak": {
+            "snaktype": "value",
+            "property": "P921",
+            "hash": "65a03a823d5681d4a44e97f555943c768d6c0431",
+            "datavalue": {
+              "value": {
+                "entity-type": "item",
+                "numeric-id": 48496,
+                "id": "Q48496"
+              },
+              "type": "wikibase-entityid"
+            },
+            "datatype": "wikibase-item"
+          },
+          "type": "statement",
+          "id": "Q7805818$5f883754-4fa2-27aa-5db4-ab4aa440a830",
+          "rank": "normal"
+        }
+      ]
+    },
+    "sitelinks": {
+      "enwiki": {
+        "site": "enwiki",
+        "title": "Timeline of Mars Science Laboratory",
+        "badges": [],
+        "url": "https://en.wikipedia.org/wiki/Timeline_of_Mars_Science_Laboratory"
+      },
+      "frwiki": {
+        "site": "frwiki",
+        "title": "Exploration de Mars par Curiosity",
+        "badges": [],
+        "url": "https://fr.wikipedia.org/wiki/Exploration_de_Mars_par_Curiosity"
+      },
+      "ukwiki": {
+        "site": "ukwiki",
+        "title": "Хронологія подій Марсіанської наукової лабораторії",
+        "badges": [],
+        "url": "https://uk.wikipedia.org/wiki/%D0%A5%D1%80%D0%BE%D0%BD%D0%BE%D0%BB%D0%BE%D0%B3%D1%96%D1%8F_%D0%BF%D0%BE%D0%B4%D1%96%D0%B9_%D0%9C%D0%B0%D1%80%D1%81%D1%96%D0%B0%D0%BD%D1%81%D1%8C%D0%BA%D0%BE%D1%97_%D0%BD%D0%B0%D1%83%D0%BA%D0%BE%D0%B2%D0%BE%D1%97_%D0%BB%D0%B0%D0%B1%D0%BE%D1%80%D0%B0%D1%82%D0%BE%D1%80%D1%96%D1%97"
+      },
+      "zhwiki": {
+        "site": "zhwiki",
+        "title": "火星科学实验室任务年表",
+        "badges": [],
+        "url": "https://zh.wikipedia.org/wiki/%E7%81%AB%E6%98%9F%E7%A7%91%E5%AD%A6%E5%AE%9E%E9%AA%8C%E5%AE%A4%E4%BB%BB%E5%8A%A1%E5%B9%B4%E8%A1%A8"
+      }
+    }
+  }
+}

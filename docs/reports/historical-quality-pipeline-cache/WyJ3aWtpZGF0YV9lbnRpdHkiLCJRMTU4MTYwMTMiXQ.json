@@ -1,0 +1,519 @@
+{
+  "pageid": 17444549,
+  "ns": 0,
+  "title": "Q15816013",
+  "lastrevid": 2422389279,
+  "modified": "2025-10-27T05:17:31Z",
+  "type": "item",
+  "id": "Q15816013",
+  "labels": {
+    "de": {
+      "language": "de",
+      "value": "Hospitality Management"
+    },
+    "en": {
+      "language": "en",
+      "value": "hospitality management studies"
+    },
+    "zh": {
+      "language": "zh",
+      "value": "接待管理学"
+    },
+    "ja": {
+      "language": "ja",
+      "value": "ホスピタリティマネジメント"
+    },
+    "ar": {
+      "language": "ar",
+      "value": "إدارة الضيافة"
+    },
+    "el": {
+      "language": "el",
+      "value": "διαχείριση ξενοδοχειακών επιχειρήσεων"
+    },
+    "fr": {
+      "language": "fr",
+      "value": "école hôtelière"
+    },
+    "zh-hant": {
+      "language": "zh-hant",
+      "value": "接待管理學"
+    },
+    "zh-tw": {
+      "language": "zh-tw",
+      "value": "接待管理學"
+    },
+    "ko": {
+      "language": "ko",
+      "value": "환대관리학"
+    },
+    "fa": {
+      "language": "fa",
+      "value": "مدیریت هتلداری و جهانگردی"
+    },
+    "uk": {
+      "language": "uk",
+      "value": "Готельний менеджмент та туризм"
+    }
+  },
+  "descriptions": {
+    "en": {
+      "language": "en",
+      "value": "study of the hospitality industry."
+    },
+    "de": {
+      "language": "de",
+      "value": "professionelle Beschäftigung mit infrastrukturellen und personenbezogenen Dienstleistungen für verschiedene staatliche, gemeinnützige und privatwirtschaftliche Einheiten"
+    }
+  },
+  "aliases": {
+    "fr": [
+      {
+        "language": "fr",
+        "value": "lycée hôtelier"
+      }
+    ],
+    "zh": [
+      {
+        "language": "zh",
+        "value": "酒店管理学"
+      },
+      {
+        "language": "zh",
+        "value": "餐饮管理学"
+      }
+    ],
+    "zh-hant": [
+      {
+        "language": "zh-hant",
+        "value": "餐飲管理學"
+      }
+    ],
+    "zh-tw": [
+      {
+        "language": "zh-tw",
+        "value": "餐旅管理學"
+      }
+    ],
+    "ja": [
+      {
+        "language": "ja",
+        "value": "ホスピタリティ管理"
+      }
+    ],
+    "ko": [
+      {
+        "language": "ko",
+        "value": "환대 관리학"
+      }
+    ]
+  },
+  "claims": {
+    "P31": [
+      {
+        "mainsnak": {
+          "snaktype": "value",
+          "property": "P31",
+          "hash": "76550899ff04a58a96afed514ab1cf22e8908771",
+          "datavalue": {
+            "value": {
+              "entity-type": "item",
+              "numeric-id": 11862829,
+              "id": "Q11862829"
+            },
+            "type": "wikibase-entityid"
+          },
+          "datatype": "wikibase-item"
+        },
+        "type": "statement",
+        "id": "Q15816013$840f3817-413e-9cb2-bbdc-2eabc385ef7c",
+        "rank": "normal"
+      }
+    ],
+    "P6366": [
+      {
+        "mainsnak": {
+          "snaktype": "value",
+          "property": "P6366",
+          "hash": "2a81f46efd1afae94704a907370de5f573b6ac56",
+          "datavalue": {
+            "value": "189705334",
+            "type": "string"
+          },
+          "datatype": "external-id"
+        },
+        "type": "statement",
+        "id": "Q15816013$2034BF2B-D33B-4282-A8CE-307028F8C853",
+        "rank": "normal"
+      }
+    ],
+    "P5922": [
+      {
+        "mainsnak": {
+          "snaktype": "value",
+          "property": "P5922",
+          "hash": "56913e96cc693ec81ba0b3284b591c8cb63ee489",
+          "datavalue": {
+            "value": "150402",
+            "type": "string"
+          },
+          "datatype": "external-id"
+        },
+        "type": "statement",
+        "qualifiers": {
+          "P1810": [
+            {
+              "snaktype": "value",
+              "property": "P1810",
+              "hash": "8423b359b972c6bc6706d6f88daff4f3a56e50e3",
+              "datavalue": {
+                "value": "Hospitality Management",
+                "type": "string"
+              },
+              "datatype": "string"
+            }
+          ]
+        },
+        "qualifiers-order": [
+          "P1810"
+        ],
+        "id": "Q15816013$6C2CEDC7-0B37-4D75-A903-70A40B71851C",
+        "rank": "normal",
+        "references": [
+          {
+            "hash": "aca21d228fc9c5c1729c6c32984fb0807bdf2acf",
+            "snaks": {
+              "P854": [
+                {
+                  "snaktype": "value",
+                  "property": "P854",
+                  "hash": "dbb7486ffe94fe9cefdc70ab1df27ce8841505e0",
+                  "datavalue": {
+                    "value": "https://www.abs.gov.au/AUSSTATS/abs@.nsf/DetailsPage/1297.02008?OpenDocument",
+                    "type": "string"
+                  },
+                  "datatype": "url"
+                }
+              ]
+            },
+            "snaks-order": [
+              "P854"
+            ]
+          }
+        ]
+      }
+    ],
+    "P8529": [
+      {
+        "mainsnak": {
+          "snaktype": "value",
+          "property": "P8529",
+          "hash": "36d44cd3f8aefbf977718faa6d36b53a14963c08",
+          "datavalue": {
+            "value": "350402",
+            "type": "string"
+          },
+          "datatype": "external-id"
+        },
+        "type": "statement",
+        "qualifiers": {
+          "P1810": [
+            {
+              "snaktype": "value",
+              "property": "P1810",
+              "hash": "caccbb708be761144f6ce2c103e80f2f2ea8dc74",
+              "datavalue": {
+                "value": "Hospitality management",
+                "type": "string"
+              },
+              "datatype": "string"
+            }
+          ]
+        },
+        "qualifiers-order": [
+          "P1810"
+        ],
+        "id": "Q15816013$AEBB265B-1C7E-45F0-AE6D-306DA86B682E",
+        "rank": "normal",
+        "references": [
+          {
+            "hash": "0ff4cf71ef08665b113306182a9062a398d62e07",
+            "snaks": {
+              "P854": [
+                {
+                  "snaktype": "value",
+                  "property": "P854",
+                  "hash": "e5b09df61b8c96c7f6e7af441bf7703b59aab265",
+                  "datavalue": {
+                    "value": "https://vocabs.ardc.edu.au/viewById/316",
+                    "type": "string"
+                  },
+                  "datatype": "url"
+                }
+              ]
+            },
+            "snaks-order": [
+              "P854"
+            ]
+          }
+        ]
+      }
+    ],
+    "P279": [
+      {
+        "mainsnak": {
+          "snaktype": "value",
+          "property": "P279",
+          "hash": "e62f862ad3c5d3a544049c0c1e75f3b120cddf67",
+          "datavalue": {
+            "value": {
+              "entity-type": "item",
+              "numeric-id": 2920921,
+              "id": "Q2920921"
+            },
+            "type": "wikibase-entityid"
+          },
+          "datatype": "wikibase-item"
+        },
+        "type": "statement",
+        "id": "Q15816013$c74898ad-46a2-76d5-f59d-172618866c6a",
+        "rank": "normal"
+      }
+    ],
+    "P361": [
+      {
+        "mainsnak": {
+          "snaktype": "value",
+          "property": "P361",
+          "hash": "92c68885e9aae523e72fd706974748ca7ce52e29",
+          "datavalue": {
+            "value": {
+              "entity-type": "item",
+              "numeric-id": 1495452,
+              "id": "Q1495452"
+            },
+            "type": "wikibase-entityid"
+          },
+          "datatype": "wikibase-item"
+        },
+        "type": "statement",
+        "id": "Q15816013$f4c1d41e-4621-a633-c5f7-2ec25a8979c7",
+        "rank": "normal"
+      }
+    ],
+    "P646": [
+      {
+        "mainsnak": {
+          "snaktype": "value",
+          "property": "P646",
+          "hash": "b996dadb8fb14f556a5ef6c9406309ae8919b94a",
+          "datavalue": {
+            "value": "/m/05gl9f",
+            "type": "string"
+          },
+          "datatype": "external-id"
+        },
+        "type": "statement",
+        "id": "Q15816013$9C943FE8-1799-49F6-B142-144CBEEB523D",
+        "rank": "normal"
+      }
+    ],
+    "P10283": [
+      {
+        "mainsnak": {
+          "snaktype": "value",
+          "property": "P10283",
+          "hash": "a10d99feefbeb61c141c4fdf3456ed1f1b57752d",
+          "datavalue": {
+            "value": "C189705334",
+            "type": "string"
+          },
+          "datatype": "external-id"
+        },
+        "type": "statement",
+        "id": "Q15816013$CDE69387-6E8A-4F2E-86B7-15B468F9AED6",
+        "rank": "normal",
+        "references": [
+          {
+            "hash": "e0b27d817c9a9b3247df341000fc490bafcba862",
+            "snaks": {
+              "P248": [
+                {
+                  "snaktype": "value",
+                  "property": "P248",
+                  "hash": "4a4f26a5361b5707266e48e425bf2be2f99fd2ab",
+                  "datavalue": {
+                    "value": {
+                      "entity-type": "item",
+                      "numeric-id": 107507571,
+                      "id": "Q107507571"
+                    },
+                    "type": "wikibase-entityid"
+                  },
+                  "datatype": "wikibase-item"
+                }
+              ],
+              "P813": [
+                {
+                  "snaktype": "value",
+                  "property": "P813",
+                  "hash": "435834d08182bb9f3dbe974ba9840af0f12899cc",
+                  "datavalue": {
+                    "value": {
+                      "time": "+2022-01-26T00:00:00Z",
+                      "timezone": 0,
+                      "before": 0,
+                      "after": 0,
+                      "precision": 11,
+                      "calendarmodel": "http://www.wikidata.org/entity/Q1985727"
+                    },
+                    "type": "time"
+                  },
+                  "datatype": "time"
+                }
+              ],
+              "P854": [
+                {
+                  "snaktype": "value",
+                  "property": "P854",
+                  "hash": "a4a4bf53f22268815c51ec10fed608da703c9c7f",
+                  "datavalue": {
+                    "value": "https://docs.openalex.org/download-snapshot/snapshot-data-format",
+                    "type": "string"
+                  },
+                  "datatype": "url"
+                }
+              ],
+              "P1065": [
+                {
+                  "snaktype": "value",
+                  "property": "P1065",
+                  "hash": "3134281f51e2490f88272d53c56ee95d9cc24e2c",
+                  "datavalue": {
+                    "value": "https://web.archive.org/web/20220125070108/https://docs.openalex.org/download-snapshot/snapshot-data-format",
+                    "type": "string"
+                  },
+                  "datatype": "url"
+                }
+              ],
+              "P2960": [
+                {
+                  "snaktype": "value",
+                  "property": "P2960",
+                  "hash": "f7ff3a0de7f9571ecb5e0740cba4122c6703e1ec",
+                  "datavalue": {
+                    "value": {
+                      "time": "+2022-01-25T00:00:00Z",
+                      "timezone": 0,
+                      "before": 0,
+                      "after": 0,
+                      "precision": 11,
+                      "calendarmodel": "http://www.wikidata.org/entity/Q1985727"
+                    },
+                    "type": "time"
+                  },
+                  "datatype": "time"
+                }
+              ]
+            },
+            "snaks-order": [
+              "P248",
+              "P813",
+              "P854",
+              "P1065",
+              "P2960"
+            ]
+          }
+        ]
+      }
+    ],
+    "P3095": [
+      {
+        "mainsnak": {
+          "snaktype": "value",
+          "property": "P3095",
+          "hash": "cd487d83ee842acc43776e92a5442d1723dad2a8",
+          "datavalue": {
+            "value": {
+              "entity-type": "item",
+              "numeric-id": 125448323,
+              "id": "Q125448323"
+            },
+            "type": "wikibase-entityid"
+          },
+          "datatype": "wikibase-item"
+        },
+        "type": "statement",
+        "id": "Q15816013$be7a1b6a-42d2-2c03-66a2-ece2e449451e",
+        "rank": "normal"
+      }
+    ],
+    "P2671": [
+      {
+        "mainsnak": {
+          "snaktype": "value",
+          "property": "P2671",
+          "hash": "99e2a889a935ff40d7313db6ecdc2e6f365cb07f",
+          "datavalue": {
+            "value": "/g/1229kzfl",
+            "type": "string"
+          },
+          "datatype": "external-id"
+        },
+        "type": "statement",
+        "id": "Q15816013$442E0E19-2DC8-4A6D-93AC-FA2D714E4407",
+        "rank": "normal"
+      }
+    ]
+  },
+  "sitelinks": {
+    "arwiki": {
+      "site": "arwiki",
+      "title": "إدارة الضيافة",
+      "badges": [],
+      "url": "https://ar.wikipedia.org/wiki/%D8%A5%D8%AF%D8%A7%D8%B1%D8%A9_%D8%A7%D9%84%D8%B6%D9%8A%D8%A7%D9%81%D8%A9"
+    },
+    "dewiki": {
+      "site": "dewiki",
+      "title": "Hospitality-Management",
+      "badges": [],
+      "url": "https://de.wikipedia.org/wiki/Hospitality-Management"
+    },
+    "enwiki": {
+      "site": "enwiki",
+      "title": "Hospitality management studies",
+      "badges": [],
+      "url": "https://en.wikipedia.org/wiki/Hospitality_management_studies"
+    },
+    "fawiki": {
+      "site": "fawiki",
+      "title": "مدیریت هتلداری و جهانگردی",
+      "badges": [],
+      "url": "https://fa.wikipedia.org/wiki/%D9%85%D8%AF%DB%8C%D8%B1%DB%8C%D8%AA_%D9%87%D8%AA%D9%84%D8%AF%D8%A7%D8%B1%DB%8C_%D9%88_%D8%AC%D9%87%D8%A7%D9%86%DA%AF%D8%B1%D8%AF%DB%8C"
+    },
+    "frwiki": {
+      "site": "frwiki",
+      "title": "École hôtelière",
+      "badges": [],
+      "url": "https://fr.wikipedia.org/wiki/%C3%89cole_h%C3%B4teli%C3%A8re"
+    },
+    "jawiki": {
+      "site": "jawiki",
+      "title": "ホスピタリティマネジメント",
+      "badges": [],
+      "url": "https://ja.wikipedia.org/wiki/%E3%83%9B%E3%82%B9%E3%83%94%E3%82%BF%E3%83%AA%E3%83%86%E3%82%A3%E3%83%9E%E3%83%8D%E3%82%B8%E3%83%A1%E3%83%B3%E3%83%88"
+    },
+    "kowiki": {
+      "site": "kowiki",
+      "title": "환대경영학",
+      "badges": [],
+      "url": "https://ko.wikipedia.org/wiki/%ED%99%98%EB%8C%80%EA%B2%BD%EC%98%81%ED%95%99"
+    },
+    "zhwiki": {
+      "site": "zhwiki",
+      "title": "酒店管理学",
+      "badges": [],
+      "url": "https://zh.wikipedia.org/wiki/%E9%85%92%E5%BA%97%E7%AE%A1%E7%90%86%E5%AD%A6"
+    }
+  }
+}

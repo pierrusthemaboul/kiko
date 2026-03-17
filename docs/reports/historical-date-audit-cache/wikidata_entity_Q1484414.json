@@ -1,0 +1,590 @@
+{
+  "saved_at": "2026-03-07T13:25:27.681Z",
+  "value": {
+    "pageid": 1422227,
+    "ns": 0,
+    "title": "Q1484414",
+    "lastrevid": 2431096335,
+    "modified": "2025-11-18T12:01:27Z",
+    "type": "item",
+    "id": "Q1484414",
+    "labels": {
+      "fr": {
+        "language": "fr",
+        "value": "sommet du G6 1975"
+      },
+      "en": {
+        "language": "en",
+        "value": "1st G6 summit"
+      },
+      "nl": {
+        "language": "nl",
+        "value": "Eerste jaarlijkse conferentie van de G6"
+      },
+      "ja": {
+        "language": "ja",
+        "value": "第1回先進国首脳会議"
+      },
+      "de": {
+        "language": "de",
+        "value": "G6-Gipfel in Rambouillet 1975"
+      },
+      "es": {
+        "language": "es",
+        "value": "1.ª Cumbre del G6"
+      },
+      "uk": {
+        "language": "uk",
+        "value": "1-й саміт G6"
+      },
+      "ar": {
+        "language": "ar",
+        "value": "القمة الأولى لمجموعة الستة"
+      },
+      "ko": {
+        "language": "ko",
+        "value": "제1회 G6 정상회담"
+      },
+      "zh": {
+        "language": "zh",
+        "value": "第1届六国集团峰会"
+      },
+      "it": {
+        "language": "it",
+        "value": "G6 del 1975"
+      },
+      "ca": {
+        "language": "ca",
+        "value": "1a cimera del G7"
+      },
+      "uz": {
+        "language": "uz",
+        "value": "1-G6 sammiti"
+      },
+      "ka": {
+        "language": "ka",
+        "value": "G6-ის I სამიტი"
+      }
+    },
+    "descriptions": {
+      "en": {
+        "language": "en",
+        "value": "historical economic geo-political event"
+      },
+      "ja": {
+        "language": "ja",
+        "value": "1975年にフランスのランブイエで開催された先進国首脳会議"
+      },
+      "it": {
+        "language": "it",
+        "value": "1° vertice del G6"
+      },
+      "de": {
+        "language": "de",
+        "value": "Gipfeltreffen der G6-Staaten im Jahr 1975 in Frankreich"
+      }
+    },
+    "aliases": {
+      "fr": [
+        {
+          "language": "fr",
+          "value": "Déclaration de Rambouillet"
+        },
+        {
+          "language": "fr",
+          "value": "1er sommet du G6"
+        }
+      ],
+      "es": [
+        {
+          "language": "es",
+          "value": "Primera Cumbre del G-6"
+        }
+      ],
+      "ja": [
+        {
+          "language": "ja",
+          "value": "ランブイエサミット"
+        },
+        {
+          "language": "ja",
+          "value": "ランブイエ会議"
+        },
+        {
+          "language": "ja",
+          "value": "第1回G6サミット"
+        },
+        {
+          "language": "ja",
+          "value": "1975 G6"
+        }
+      ]
+    },
+    "claims": {
+      "P646": [
+        {
+          "mainsnak": {
+            "snaktype": "value",
+            "property": "P646",
+            "hash": "9936b68a33ffaa36b5c74ee5a32071bfa994619e",
+            "datavalue": {
+              "value": "/m/0fjcj8",
+              "type": "string"
+            },
+            "datatype": "external-id"
+          },
+          "type": "statement",
+          "id": "Q1484414$ABA77A35-7A95-43FD-AE35-DB144739FC74",
+          "rank": "normal",
+          "references": [
+            {
+              "hash": "2b00cb481cddcac7623114367489b5c194901c4a",
+              "snaks": {
+                "P248": [
+                  {
+                    "snaktype": "value",
+                    "property": "P248",
+                    "hash": "a94b740202b097dd33355e0e6c00e54b9395e5e0",
+                    "datavalue": {
+                      "value": {
+                        "entity-type": "item",
+                        "numeric-id": 15241312,
+                        "id": "Q15241312"
+                      },
+                      "type": "wikibase-entityid"
+                    },
+                    "datatype": "wikibase-item"
+                  }
+                ],
+                "P577": [
+                  {
+                    "snaktype": "value",
+                    "property": "P577",
+                    "hash": "fde79ecb015112d2f29229ccc1ec514ed3e71fa2",
+                    "datavalue": {
+                      "value": {
+                        "time": "+2013-10-28T00:00:00Z",
+                        "timezone": 0,
+                        "before": 0,
+                        "after": 0,
+                        "precision": 11,
+                        "calendarmodel": "http://www.wikidata.org/entity/Q1985727"
+                      },
+                      "type": "time"
+                    },
+                    "datatype": "time"
+                  }
+                ]
+              },
+              "snaks-order": [
+                "P248",
+                "P577"
+              ]
+            }
+          ]
+        }
+      ],
+      "P31": [
+        {
+          "mainsnak": {
+            "snaktype": "value",
+            "property": "P31",
+            "hash": "fab44b4bacb8c411f256ede7987191280f6c895b",
+            "datavalue": {
+              "value": {
+                "entity-type": "item",
+                "numeric-id": 28966106,
+                "id": "Q28966106"
+              },
+              "type": "wikibase-entityid"
+            },
+            "datatype": "wikibase-item"
+          },
+          "type": "statement",
+          "id": "Q1484414$76bf4438-4c1d-fc81-8a92-8d601c1a5841",
+          "rank": "normal"
+        }
+      ],
+      "P276": [
+        {
+          "mainsnak": {
+            "snaktype": "value",
+            "property": "P276",
+            "hash": "18ee1dc42cd78cc00573096eb99bbcb773d9df51",
+            "datavalue": {
+              "value": {
+                "entity-type": "item",
+                "numeric-id": 191119,
+                "id": "Q191119"
+              },
+              "type": "wikibase-entityid"
+            },
+            "datatype": "wikibase-item"
+          },
+          "type": "statement",
+          "id": "Q1484414$761bcd69-4082-6368-56c7-8fc69d4450a5",
+          "rank": "normal"
+        }
+      ],
+      "P710": [
+        {
+          "mainsnak": {
+            "snaktype": "value",
+            "property": "P710",
+            "hash": "56ccd83632445cc4144e6f42e1d2ab4b23d5c318",
+            "datavalue": {
+              "value": {
+                "entity-type": "item",
+                "numeric-id": 10287157,
+                "id": "Q10287157"
+              },
+              "type": "wikibase-entityid"
+            },
+            "datatype": "wikibase-item"
+          },
+          "type": "statement",
+          "id": "Q1484414$50cba42b-498c-c1bf-2bb9-741d95f25e14",
+          "rank": "normal"
+        }
+      ],
+      "P580": [
+        {
+          "mainsnak": {
+            "snaktype": "value",
+            "property": "P580",
+            "hash": "9ce529b3dffc1f5a08eb7861d37e3bb2c1678d5c",
+            "datavalue": {
+              "value": {
+                "time": "+1975-11-15T00:00:00Z",
+                "timezone": 0,
+                "before": 0,
+                "after": 0,
+                "precision": 11,
+                "calendarmodel": "http://www.wikidata.org/entity/Q1985727"
+              },
+              "type": "time"
+            },
+            "datatype": "time"
+          },
+          "type": "statement",
+          "id": "Q1484414$25f04849-41e8-7475-fa13-cd6d9ebdd969",
+          "rank": "normal",
+          "references": [
+            {
+              "hash": "795936b76810068ac0704534a03525cddc37b200",
+              "snaks": {
+                "P854": [
+                  {
+                    "snaktype": "value",
+                    "property": "P854",
+                    "hash": "e5e36b5bac76eff8244003b0e9f74f3e427fd41a",
+                    "datavalue": {
+                      "value": "https://feltas.de/feiertage/1-g6-gipfel-1975-rambouillet.html",
+                      "type": "string"
+                    },
+                    "datatype": "url"
+                  }
+                ]
+              },
+              "snaks-order": [
+                "P854"
+              ]
+            }
+          ]
+        }
+      ],
+      "P582": [
+        {
+          "mainsnak": {
+            "snaktype": "value",
+            "property": "P582",
+            "hash": "1c98798be986a799bbb17ce44ab289be12980f56",
+            "datavalue": {
+              "value": {
+                "time": "+1975-11-17T00:00:00Z",
+                "timezone": 0,
+                "before": 0,
+                "after": 0,
+                "precision": 11,
+                "calendarmodel": "http://www.wikidata.org/entity/Q1985727"
+              },
+              "type": "time"
+            },
+            "datatype": "time"
+          },
+          "type": "statement",
+          "id": "Q1484414$1aabfe1d-4575-ccef-d840-0198f081c3f1",
+          "rank": "normal",
+          "references": [
+            {
+              "hash": "795936b76810068ac0704534a03525cddc37b200",
+              "snaks": {
+                "P854": [
+                  {
+                    "snaktype": "value",
+                    "property": "P854",
+                    "hash": "e5e36b5bac76eff8244003b0e9f74f3e427fd41a",
+                    "datavalue": {
+                      "value": "https://feltas.de/feiertage/1-g6-gipfel-1975-rambouillet.html",
+                      "type": "string"
+                    },
+                    "datatype": "url"
+                  }
+                ]
+              },
+              "snaks-order": [
+                "P854"
+              ]
+            }
+          ]
+        }
+      ],
+      "P156": [
+        {
+          "mainsnak": {
+            "snaktype": "value",
+            "property": "P156",
+            "hash": "6b194ed634864382f367ab31029db1b58f492677",
+            "datavalue": {
+              "value": {
+                "entity-type": "item",
+                "numeric-id": 684970,
+                "id": "Q684970"
+              },
+              "type": "wikibase-entityid"
+            },
+            "datatype": "wikibase-item"
+          },
+          "type": "statement",
+          "id": "Q1484414$fb9cb994-46e3-42a6-731d-0277948d9276",
+          "rank": "normal"
+        }
+      ],
+      "P131": [
+        {
+          "mainsnak": {
+            "snaktype": "value",
+            "property": "P131",
+            "hash": "9b05798e39f6581a516d57a093464c7ce45c2ccb",
+            "datavalue": {
+              "value": {
+                "entity-type": "item",
+                "numeric-id": 191119,
+                "id": "Q191119"
+              },
+              "type": "wikibase-entityid"
+            },
+            "datatype": "wikibase-item"
+          },
+          "type": "statement",
+          "id": "Q1484414$16e51070-473a-1b5d-00df-2ce640f1e08f",
+          "rank": "normal"
+        }
+      ],
+      "P17": [
+        {
+          "mainsnak": {
+            "snaktype": "value",
+            "property": "P17",
+            "hash": "c05db5d169c2560b9799d567a803d20a392f53e4",
+            "datavalue": {
+              "value": {
+                "entity-type": "item",
+                "numeric-id": 142,
+                "id": "Q142"
+              },
+              "type": "wikibase-entityid"
+            },
+            "datatype": "wikibase-item"
+          },
+          "type": "statement",
+          "id": "Q1484414$CAB0FF1C-5D0F-4ED0-97B1-559E33767EB7",
+          "rank": "normal"
+        }
+      ],
+      "P585": [
+        {
+          "mainsnak": {
+            "snaktype": "value",
+            "property": "P585",
+            "hash": "3211c7624dfe03b8a9d3c53b854d9fef872fc97c",
+            "datavalue": {
+              "value": {
+                "time": "+1975-11-17T00:00:00Z",
+                "timezone": 0,
+                "before": 0,
+                "after": 0,
+                "precision": 11,
+                "calendarmodel": "http://www.wikidata.org/entity/Q1985727"
+              },
+              "type": "time"
+            },
+            "datatype": "time"
+          },
+          "type": "statement",
+          "id": "Q1484414$8A0FC9BE-4ECA-429B-9869-FA8E4C87C6E7",
+          "rank": "normal",
+          "references": [
+            {
+              "hash": "8fcfcb4e2756e8f54704816ecdd6ade141701e7a",
+              "snaks": {
+                "P143": [
+                  {
+                    "snaktype": "value",
+                    "property": "P143",
+                    "hash": "e17507043402fe54ae6c4d65cc51f46cec987de9",
+                    "datavalue": {
+                      "value": {
+                        "entity-type": "item",
+                        "numeric-id": 8449,
+                        "id": "Q8449"
+                      },
+                      "type": "wikibase-entityid"
+                    },
+                    "datatype": "wikibase-item"
+                  }
+                ],
+                "P4656": [
+                  {
+                    "snaktype": "value",
+                    "property": "P4656",
+                    "hash": "397ee032d3233e6825a5b3460ddb1bdc8aea168c",
+                    "datavalue": {
+                      "value": "https://es.wikipedia.org/w/index.php?title=1.ª_Cumbre_del_G6&oldid=119093065",
+                      "type": "string"
+                    },
+                    "datatype": "url"
+                  }
+                ]
+              },
+              "snaks-order": [
+                "P143",
+                "P4656"
+              ]
+            }
+          ]
+        }
+      ],
+      "P373": [
+        {
+          "mainsnak": {
+            "snaktype": "value",
+            "property": "P373",
+            "hash": "f3677f2fdfe48259a53f7d12403a0e9bfadedca3",
+            "datavalue": {
+              "value": "1st G6 summit",
+              "type": "string"
+            },
+            "datatype": "string"
+          },
+          "type": "statement",
+          "id": "Q1484414$2E67FD26-5719-4683-B31B-0A68C76069E1",
+          "rank": "normal"
+        }
+      ],
+      "P18": [
+        {
+          "mainsnak": {
+            "snaktype": "value",
+            "property": "P18",
+            "hash": "998376f02b83f995e4e0a275bf0d2e2d91953706",
+            "datavalue": {
+              "value": "President Gerald R. Ford and French President Valery Giscard d'Estaing Walking outside of the Chateau de Rambouillet during the International Economic Summit Conference in Rambouillet, France - NARA - 23869201.jpg",
+              "type": "string"
+            },
+            "datatype": "commonsMedia"
+          },
+          "type": "statement",
+          "id": "Q1484414$9165700f-44cb-8d18-7fb4-dd8a164c594a",
+          "rank": "normal"
+        }
+      ]
+    },
+    "sitelinks": {
+      "arwiki": {
+        "site": "arwiki",
+        "title": "القمة الأولى لمجموعة الستة",
+        "badges": [],
+        "url": "https://ar.wikipedia.org/wiki/%D8%A7%D9%84%D9%82%D9%85%D8%A9_%D8%A7%D9%84%D8%A3%D9%88%D9%84%D9%89_%D9%84%D9%85%D8%AC%D9%85%D9%88%D8%B9%D8%A9_%D8%A7%D9%84%D8%B3%D8%AA%D8%A9"
+      },
+      "commonswiki": {
+        "site": "commonswiki",
+        "title": "Category:1st G6 summit",
+        "badges": [],
+        "url": "https://commons.wikimedia.org/wiki/Category:1st_G6_summit"
+      },
+      "dewiki": {
+        "site": "dewiki",
+        "title": "G6-Gipfel in Rambouillet 1975",
+        "badges": [],
+        "url": "https://de.wikipedia.org/wiki/G6-Gipfel_in_Rambouillet_1975"
+      },
+      "enwiki": {
+        "site": "enwiki",
+        "title": "1st G6 summit",
+        "badges": [],
+        "url": "https://en.wikipedia.org/wiki/1st_G6_summit"
+      },
+      "eswiki": {
+        "site": "eswiki",
+        "title": "1.ª Cumbre del G6",
+        "badges": [],
+        "url": "https://es.wikipedia.org/wiki/1.%C2%AA_Cumbre_del_G6"
+      },
+      "frwiki": {
+        "site": "frwiki",
+        "title": "Sommet de Rambouillet",
+        "badges": [],
+        "url": "https://fr.wikipedia.org/wiki/Sommet_de_Rambouillet"
+      },
+      "itwiki": {
+        "site": "itwiki",
+        "title": "G6 del 1975",
+        "badges": [],
+        "url": "https://it.wikipedia.org/wiki/G6_del_1975"
+      },
+      "jawiki": {
+        "site": "jawiki",
+        "title": "第1回先進国首脳会議",
+        "badges": [],
+        "url": "https://ja.wikipedia.org/wiki/%E7%AC%AC1%E5%9B%9E%E5%85%88%E9%80%B2%E5%9B%BD%E9%A6%96%E8%84%B3%E4%BC%9A%E8%AD%B0"
+      },
+      "kawiki": {
+        "site": "kawiki",
+        "title": "G6-ის 1-ლი სამიტი",
+        "badges": [],
+        "url": "https://ka.wikipedia.org/wiki/G6-%E1%83%98%E1%83%A1_1-%E1%83%9A%E1%83%98_%E1%83%A1%E1%83%90%E1%83%9B%E1%83%98%E1%83%A2%E1%83%98"
+      },
+      "kowiki": {
+        "site": "kowiki",
+        "title": "제1회 G6 정상회의",
+        "badges": [],
+        "url": "https://ko.wikipedia.org/wiki/%EC%A0%9C1%ED%9A%8C_G6_%EC%A0%95%EC%83%81%ED%9A%8C%EC%9D%98"
+      },
+      "nlwiki": {
+        "site": "nlwiki",
+        "title": "Eerste jaarlijkse conferentie van de G6",
+        "badges": [],
+        "url": "https://nl.wikipedia.org/wiki/Eerste_jaarlijkse_conferentie_van_de_G6"
+      },
+      "ukwiki": {
+        "site": "ukwiki",
+        "title": "1-й саміт G6",
+        "badges": [],
+        "url": "https://uk.wikipedia.org/wiki/1-%D0%B9_%D1%81%D0%B0%D0%BC%D1%96%D1%82_G6"
+      },
+      "uzwiki": {
+        "site": "uzwiki",
+        "title": "1-G6 sammiti",
+        "badges": [],
+        "url": "https://uz.wikipedia.org/wiki/1-G6_sammiti"
+      },
+      "zhwiki": {
+        "site": "zhwiki",
+        "title": "第1届六国集团峰会",
+        "badges": [],
+        "url": "https://zh.wikipedia.org/wiki/%E7%AC%AC1%E5%B1%8A%E5%85%AD%E5%9B%BD%E9%9B%86%E5%9B%A2%E5%B3%B0%E4%BC%9A"
+      }
+    }
+  }
+}

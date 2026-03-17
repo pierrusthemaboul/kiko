@@ -1,0 +1,204 @@
+{
+  "pageid": 3109249,
+  "ns": 0,
+  "title": "Q3258213",
+  "lastrevid": 2370731790,
+  "modified": "2025-06-30T15:10:51Z",
+  "type": "item",
+  "id": "Q3258213",
+  "labels": {
+    "fr": {
+      "language": "fr",
+      "value": "Loi Neuwirth du 28 décembre 1967 sur la contraception"
+    },
+    "en": {
+      "language": "en",
+      "value": "Neuwirth Law"
+    },
+    "es": {
+      "language": "es",
+      "value": "Ley Neuwirth"
+    },
+    "ja": {
+      "language": "ja",
+      "value": "ヌーヴィルト法"
+    }
+  },
+  "descriptions": {
+    "fr": {
+      "language": "fr",
+      "value": "loi française sur la contraception du 19 décembre 1967"
+    },
+    "en": {
+      "language": "en",
+      "value": "French law about birth control"
+    },
+    "ast": {
+      "language": "ast",
+      "value": "llei francesa"
+    }
+  },
+  "aliases": {
+    "fr": [
+      {
+        "language": "fr",
+        "value": "Loi Neuwirth"
+      },
+      {
+        "language": "fr",
+        "value": "Loi Neuwirth du 19 décembre 1967 sur la contraception"
+      }
+    ],
+    "en": [
+      {
+        "language": "en",
+        "value": "Neuwirth Act"
+      }
+    ]
+  },
+  "claims": {
+    "P31": [
+      {
+        "mainsnak": {
+          "snaktype": "value",
+          "property": "P31",
+          "hash": "26feacaf586ee8762b1a5523fb6432ebd6ffe651",
+          "datavalue": {
+            "value": {
+              "entity-type": "item",
+              "numeric-id": 13408009,
+              "id": "Q13408009"
+            },
+            "type": "wikibase-entityid"
+          },
+          "datatype": "wikibase-item"
+        },
+        "type": "statement",
+        "id": "Q3258213$16953215-924A-4A1B-8D56-9A14DE999FFF",
+        "rank": "normal"
+      }
+    ],
+    "P17": [
+      {
+        "mainsnak": {
+          "snaktype": "value",
+          "property": "P17",
+          "hash": "c05db5d169c2560b9799d567a803d20a392f53e4",
+          "datavalue": {
+            "value": {
+              "entity-type": "item",
+              "numeric-id": 142,
+              "id": "Q142"
+            },
+            "type": "wikibase-entityid"
+          },
+          "datatype": "wikibase-item"
+        },
+        "type": "statement",
+        "id": "Q3258213$44FB1999-E3B9-435F-AF0F-621233F6CB98",
+        "rank": "normal"
+      }
+    ],
+    "P953": [
+      {
+        "mainsnak": {
+          "snaktype": "value",
+          "property": "P953",
+          "hash": "9c01d32b8e8836a9c93f1103d6c2bf030230b09c",
+          "datavalue": {
+            "value": "http://www.legifrance.gouv.fr/affichTexte.do;jsessionid=0846D96C820EFA0F904A6ADA1E110D9E.tpdjo08v_3?cidTexte=JORFTEXT000000880754&categorieLien=id",
+            "type": "string"
+          },
+          "datatype": "url"
+        },
+        "type": "statement",
+        "id": "Q3258213$8FA14ECC-5D86-4C35-84B3-BFA9599D4B9B",
+        "rank": "normal",
+        "references": [
+          {
+            "hash": "d4bd87b862b12d99d26e86472d44f26858dee639",
+            "snaks": {
+              "P143": [
+                {
+                  "snaktype": "value",
+                  "property": "P143",
+                  "hash": "f30cbd35620c4ea6d0633aaf0210a8916130469b",
+                  "datavalue": {
+                    "value": {
+                      "entity-type": "item",
+                      "numeric-id": 8447,
+                      "id": "Q8447"
+                    },
+                    "type": "wikibase-entityid"
+                  },
+                  "datatype": "wikibase-item"
+                }
+              ]
+            },
+            "snaks-order": [
+              "P143"
+            ]
+          }
+        ]
+      }
+    ],
+    "P1001": [
+      {
+        "mainsnak": {
+          "snaktype": "value",
+          "property": "P1001",
+          "hash": "efe2878aed693a79dce942b2f853910a78c4e2a8",
+          "datavalue": {
+            "value": {
+              "entity-type": "item",
+              "numeric-id": 142,
+              "id": "Q142"
+            },
+            "type": "wikibase-entityid"
+          },
+          "datatype": "wikibase-item"
+        },
+        "type": "statement",
+        "id": "Q3258213$B70CCE1D-2F15-4285-B392-3793754E2AFE",
+        "rank": "normal"
+      }
+    ],
+    "P2671": [
+      {
+        "mainsnak": {
+          "snaktype": "value",
+          "property": "P2671",
+          "hash": "f8bdc4ac93690e176e9110f8078e8a0a2b18167c",
+          "datavalue": {
+            "value": "/g/122nc3r9",
+            "type": "string"
+          },
+          "datatype": "external-id"
+        },
+        "type": "statement",
+        "id": "Q3258213$5293016B-7646-4E3C-BF74-54F76F9BACF8",
+        "rank": "normal"
+      }
+    ]
+  },
+  "sitelinks": {
+    "enwiki": {
+      "site": "enwiki",
+      "title": "Neuwirth Law",
+      "badges": [],
+      "url": "https://en.wikipedia.org/wiki/Neuwirth_Law"
+    },
+    "eswiki": {
+      "site": "eswiki",
+      "title": "Ley Neuwirth",
+      "badges": [],
+      "url": "https://es.wikipedia.org/wiki/Ley_Neuwirth"
+    },
+    "frwiki": {
+      "site": "frwiki",
+      "title": "Loi Neuwirth",
+      "badges": [],
+      "url": "https://fr.wikipedia.org/wiki/Loi_Neuwirth"
+    }
+  }
+}

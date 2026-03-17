@@ -1,0 +1,105 @@
+{
+  "pageid": 2743563,
+  "ns": 0,
+  "title": "Q2865508",
+  "lastrevid": 1590106473,
+  "modified": "2022-03-09T12:32:16Z",
+  "type": "item",
+  "id": "Q2865508",
+  "labels": {
+    "fr": {
+      "language": "fr",
+      "value": "Article 18 de la Constitution de la Cinquième République française"
+    },
+    "ja": {
+      "language": "ja",
+      "value": "フランス第五共和国憲法第18条"
+    }
+  },
+  "descriptions": {},
+  "aliases": {
+    "fr": [
+      {
+        "language": "fr",
+        "value": "Article 18 de la constitution de la cinquième république française"
+      },
+      {
+        "language": "fr",
+        "value": "Article 18 de la Constitution de la cinquième République française"
+      },
+      {
+        "language": "fr",
+        "value": "discours du Congrès"
+      }
+    ]
+  },
+  "claims": {
+    "P31": [
+      {
+        "mainsnak": {
+          "snaktype": "value",
+          "property": "P31",
+          "hash": "ac86a9ed434b28d3ad42fecdfbf960c7b27c6d4b",
+          "datavalue": {
+            "value": {
+              "entity-type": "item",
+              "numeric-id": 19917774,
+              "id": "Q19917774"
+            },
+            "type": "wikibase-entityid"
+          },
+          "datatype": "wikibase-item"
+        },
+        "type": "statement",
+        "id": "Q2865508$C6B964F5-82C3-4AF0-8588-168F69C11E37",
+        "rank": "normal"
+      }
+    ],
+    "P361": [
+      {
+        "mainsnak": {
+          "snaktype": "value",
+          "property": "P361",
+          "hash": "ce939679282d71c83d1c91a6b3453fe390538d82",
+          "datavalue": {
+            "value": {
+              "entity-type": "item",
+              "numeric-id": 832508,
+              "id": "Q832508"
+            },
+            "type": "wikibase-entityid"
+          },
+          "datatype": "wikibase-item"
+        },
+        "type": "statement",
+        "id": "Q2865508$5BB18B29-B42D-42E5-9A47-370BBAC1E21C",
+        "rank": "normal"
+      }
+    ],
+    "P2671": [
+      {
+        "mainsnak": {
+          "snaktype": "value",
+          "property": "P2671",
+          "hash": "877a95323ac96059a36913daf13a5c87b9984738",
+          "datavalue": {
+            "value": "/g/121srb2g",
+            "type": "string"
+          },
+          "datatype": "external-id"
+        },
+        "type": "statement",
+        "id": "Q2865508$532CFFF5-C49A-4F48-BE19-CBB2E98069A4",
+        "rank": "normal"
+      }
+    ]
+  },
+  "sitelinks": {
+    "frwiki": {
+      "site": "frwiki",
+      "title": "Article 18 de la Constitution de la Cinquième République française",
+      "badges": [],
+      "url": "https://fr.wikipedia.org/wiki/Article_18_de_la_Constitution_de_la_Cinqui%C3%A8me_R%C3%A9publique_fran%C3%A7aise"
+    }
+  }
+}

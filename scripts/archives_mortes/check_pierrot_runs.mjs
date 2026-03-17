@@ -16,3 +16,4 @@ async function check() {
     runs?.forEach(r => console.log(`[${r.created_at}] Mode: ${r.mode} | Points: ${r.points}`));
 }
 check();
+

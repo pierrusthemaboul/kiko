@@ -1,0 +1,72 @@
+{
+  "saved_at": "2026-03-07T13:28:04.631Z",
+  "value": {
+    "pageid": 119857081,
+    "ns": 0,
+    "title": "Q125751227",
+    "lastrevid": 2146366001,
+    "modified": "2024-05-06T05:44:01Z",
+    "type": "item",
+    "id": "Q125751227",
+    "labels": {
+      "fr": {
+        "language": "fr",
+        "value": "histoire de Chartres"
+      }
+    },
+    "descriptions": {},
+    "aliases": {},
+    "claims": {
+      "P31": [
+        {
+          "mainsnak": {
+            "snaktype": "value",
+            "property": "P31",
+            "hash": "a482daf5b5a486cfa3207f349f7b6cee6f5dae9e",
+            "datavalue": {
+              "value": {
+                "entity-type": "item",
+                "numeric-id": 28747937,
+                "id": "Q28747937"
+              },
+              "type": "wikibase-entityid"
+            },
+            "datatype": "wikibase-item"
+          },
+          "type": "statement",
+          "id": "Q125751227$5b681a26-47a9-4ac0-dfc7-8a26ea380e8e",
+          "rank": "normal"
+        }
+      ],
+      "P1269": [
+        {
+          "mainsnak": {
+            "snaktype": "value",
+            "property": "P1269",
+            "hash": "460a84c4d4ed57bbdfe7a75ffa428ee5c26fc242",
+            "datavalue": {
+              "value": {
+                "entity-type": "item",
+                "numeric-id": 130272,
+                "id": "Q130272"
+              },
+              "type": "wikibase-entityid"
+            },
+            "datatype": "wikibase-item"
+          },
+          "type": "statement",
+          "id": "Q125751227$40fac608-42f6-5c85-71b7-6696c6bb5f64",
+          "rank": "normal"
+        }
+      ]
+    },
+    "sitelinks": {
+      "frwiki": {
+        "site": "frwiki",
+        "title": "Histoire de Chartres",
+        "badges": [],
+        "url": "https://fr.wikipedia.org/wiki/Histoire_de_Chartres"
+      }
+    }
+  }
+}

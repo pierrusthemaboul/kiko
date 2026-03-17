@@ -1,0 +1,381 @@
+{
+  "saved_at": "2026-03-07T14:50:51.711Z",
+  "value": {
+    "pageid": 714365,
+    "ns": 0,
+    "title": "Q759980",
+    "lastrevid": 2435510220,
+    "modified": "2025-11-29T08:37:31Z",
+    "type": "item",
+    "id": "Q759980",
+    "labels": {
+      "cs": {
+        "language": "cs",
+        "value": "Povstání maillotinů"
+      },
+      "ru": {
+        "language": "ru",
+        "value": "Восстание майотенов"
+      },
+      "fr": {
+        "language": "fr",
+        "value": "révolte des Maillotins"
+      },
+      "de": {
+        "language": "de",
+        "value": "Aufstand der Maillotins"
+      },
+      "uk": {
+        "language": "uk",
+        "value": "Повстання майотенів"
+      },
+      "sv": {
+        "language": "sv",
+        "value": "Maillotins"
+      },
+      "sr": {
+        "language": "sr",
+        "value": "Устанак буздована"
+      },
+      "he": {
+        "language": "he",
+        "value": "מרד הפטישאים"
+      },
+      "en": {
+        "language": "en",
+        "value": "Révolte des Maillotins"
+      },
+      "nl": {
+        "language": "nl",
+        "value": "Opstand van de Maillotins"
+      }
+    },
+    "descriptions": {
+      "cs": {
+        "language": "cs",
+        "value": "povstání v Paříži"
+      },
+      "en": {
+        "language": "en",
+        "value": "rebellion in Paris in 1382"
+      },
+      "he": {
+        "language": "he",
+        "value": "התקוממות של בורגנות העיר פריז נגד מדיניות המס של המלך-הילד שארל השישי, מלך צרפת ודודו, העוצר פיליפ השני, דוכס בורגונדיה"
+      },
+      "fr": {
+        "language": "fr",
+        "value": "soulèvement populaire à Paris en 1382"
+      },
+      "de": {
+        "language": "de",
+        "value": "Aufstand gegen französische Steuerpraxis 1382"
+      },
+      "nl": {
+        "language": "nl",
+        "value": "opstand in Parijs in 1382"
+      }
+    },
+    "aliases": {
+      "fr": [
+        {
+          "language": "fr",
+          "value": "Maillotins"
+        },
+        {
+          "language": "fr",
+          "value": "Révolte des maillotins"
+        },
+        {
+          "language": "fr",
+          "value": "Révolte des maillottins"
+        },
+        {
+          "language": "fr",
+          "value": "Revolte des Maillotins"
+        },
+        {
+          "language": "fr",
+          "value": "Revolte des Maillottins"
+        },
+        {
+          "language": "fr",
+          "value": "Révolte des Maillottins"
+        }
+      ],
+      "de": [
+        {
+          "language": "de",
+          "value": "Maillotins"
+        }
+      ],
+      "uk": [
+        {
+          "language": "uk",
+          "value": "Повстання майонетів"
+        }
+      ]
+    },
+    "claims": {
+      "P585": [
+        {
+          "mainsnak": {
+            "snaktype": "value",
+            "property": "P585",
+            "hash": "9ce09e73c2c55b83a7c82c1027037c5522e39ef6",
+            "datavalue": {
+              "value": {
+                "time": "+1382-01-09T00:00:00Z",
+                "timezone": 0,
+                "before": 0,
+                "after": 0,
+                "precision": 9,
+                "calendarmodel": "http://www.wikidata.org/entity/Q1985786"
+              },
+              "type": "time"
+            },
+            "datatype": "time"
+          },
+          "type": "statement",
+          "id": "Q759980$c04c105f-4c6b-ebc8-daf7-ebfdd13487cd",
+          "rank": "normal"
+        }
+      ],
+      "P1343": [
+        {
+          "mainsnak": {
+            "snaktype": "value",
+            "property": "P1343",
+            "hash": "3ff2ac8940073bc3a73debcbbba63bad5e2ba3ad",
+            "datavalue": {
+              "value": {
+                "entity-type": "item",
+                "numeric-id": 1766280,
+                "id": "Q1766280"
+              },
+              "type": "wikibase-entityid"
+            },
+            "datatype": "wikibase-item"
+          },
+          "type": "statement",
+          "id": "Q759980$1445D307-0B33-4EB8-8A48-AD8601B8B7B4",
+          "rank": "normal"
+        },
+        {
+          "mainsnak": {
+            "snaktype": "value",
+            "property": "P1343",
+            "hash": "18e6d3e5a4b2e8891df3becff7db1570f149a24e",
+            "datavalue": {
+              "value": {
+                "entity-type": "item",
+                "numeric-id": 20078554,
+                "id": "Q20078554"
+              },
+              "type": "wikibase-entityid"
+            },
+            "datatype": "wikibase-item"
+          },
+          "type": "statement",
+          "qualifiers": {
+            "P805": [
+              {
+                "snaktype": "value",
+                "property": "P805",
+                "hash": "17259ae8b816ec24de5c3bf112d864392d788081",
+                "datavalue": {
+                  "value": {
+                    "entity-type": "item",
+                    "numeric-id": 110876434,
+                    "id": "Q110876434"
+                  },
+                  "type": "wikibase-entityid"
+                },
+                "datatype": "wikibase-item"
+              }
+            ]
+          },
+          "qualifiers-order": [
+            "P805"
+          ],
+          "id": "Q759980$ab2a2a14-4d60-4786-b1f9-caa3cb941648",
+          "rank": "normal"
+        }
+      ],
+      "P31": [
+        {
+          "mainsnak": {
+            "snaktype": "value",
+            "property": "P31",
+            "hash": "3febdc198d71600de2740c66c3855034edd96251",
+            "datavalue": {
+              "value": {
+                "entity-type": "item",
+                "numeric-id": 124734,
+                "id": "Q124734"
+              },
+              "type": "wikibase-entityid"
+            },
+            "datatype": "wikibase-item"
+          },
+          "type": "statement",
+          "id": "Q759980$e7f3991a-44dc-fcbd-87f9-5d70c79cdbef",
+          "rank": "normal"
+        }
+      ],
+      "P276": [
+        {
+          "mainsnak": {
+            "snaktype": "value",
+            "property": "P276",
+            "hash": "65737aff6befb67b52f4956ed02d8655213307f0",
+            "datavalue": {
+              "value": {
+                "entity-type": "item",
+                "numeric-id": 90,
+                "id": "Q90"
+              },
+              "type": "wikibase-entityid"
+            },
+            "datatype": "wikibase-item"
+          },
+          "type": "statement",
+          "id": "Q759980$aba98184-4bc7-e110-0e5c-01f55caf32bd",
+          "rank": "normal"
+        }
+      ],
+      "P373": [
+        {
+          "mainsnak": {
+            "snaktype": "value",
+            "property": "P373",
+            "hash": "89177c78269ac96c7395cdcb74c5a09588b1621e",
+            "datavalue": {
+              "value": "Révolte des Maillotins",
+              "type": "string"
+            },
+            "datatype": "string"
+          },
+          "type": "statement",
+          "id": "Q759980$6d7ca3f2-428b-628a-1e56-790bc1b8a194",
+          "rank": "normal"
+        }
+      ],
+      "P3219": [
+        {
+          "mainsnak": {
+            "snaktype": "value",
+            "property": "P3219",
+            "hash": "cef43092b5d544fd4d6c04bcf50e1a0fb6a4949b",
+            "datavalue": {
+              "value": "maillotins",
+              "type": "string"
+            },
+            "datatype": "external-id"
+          },
+          "type": "statement",
+          "id": "Q759980$CB67026A-7578-464F-A065-62637FB3455B",
+          "rank": "normal"
+        }
+      ],
+      "P2671": [
+        {
+          "mainsnak": {
+            "snaktype": "value",
+            "property": "P2671",
+            "hash": "65d440f2f61cd9ab50195b0103f1addccec7cf24",
+            "datavalue": {
+              "value": "/g/122n5ptf",
+              "type": "string"
+            },
+            "datatype": "external-id"
+          },
+          "type": "statement",
+          "id": "Q759980$306CD624-6090-4A9D-9923-3E03119DC593",
+          "rank": "normal"
+        }
+      ],
+      "P18": [
+        {
+          "mainsnak": {
+            "snaktype": "value",
+            "property": "P18",
+            "hash": "8b9b39ce2c30646c758f28b2e2d641c346f2be75",
+            "datavalue": {
+              "value": "L'exécution des Maillotin Panneau décoratif. Hôtel de Ville de Paris. Paris Musées 20230614134131.jpg",
+              "type": "string"
+            },
+            "datatype": "commonsMedia"
+          },
+          "type": "statement",
+          "id": "Q759980$1a7c1e86-4fc9-d207-cd5f-a349c46bec86",
+          "rank": "normal"
+        }
+      ]
+    },
+    "sitelinks": {
+      "commonswiki": {
+        "site": "commonswiki",
+        "title": "Category:Révolte des Maillotins",
+        "badges": [],
+        "url": "https://commons.wikimedia.org/wiki/Category:R%C3%A9volte_des_Maillotins"
+      },
+      "cswiki": {
+        "site": "cswiki",
+        "title": "Povstání maillotinů",
+        "badges": [],
+        "url": "https://cs.wikipedia.org/wiki/Povst%C3%A1n%C3%AD_maillotin%C5%AF"
+      },
+      "dewiki": {
+        "site": "dewiki",
+        "title": "Aufstand der Maillotins",
+        "badges": [],
+        "url": "https://de.wikipedia.org/wiki/Aufstand_der_Maillotins"
+      },
+      "frwiki": {
+        "site": "frwiki",
+        "title": "Révolte des Maillotins",
+        "badges": [],
+        "url": "https://fr.wikipedia.org/wiki/R%C3%A9volte_des_Maillotins"
+      },
+      "hewiki": {
+        "site": "hewiki",
+        "title": "מרד הפטישאים",
+        "badges": [],
+        "url": "https://he.wikipedia.org/wiki/%D7%9E%D7%A8%D7%93_%D7%94%D7%A4%D7%98%D7%99%D7%A9%D7%90%D7%99%D7%9D"
+      },
+      "nlwiki": {
+        "site": "nlwiki",
+        "title": "Opstand van de Maillotins",
+        "badges": [],
+        "url": "https://nl.wikipedia.org/wiki/Opstand_van_de_Maillotins"
+      },
+      "ruwiki": {
+        "site": "ruwiki",
+        "title": "Восстание майотенов",
+        "badges": [
+          "Q17437798"
+        ],
+        "url": "https://ru.wikipedia.org/wiki/%D0%92%D0%BE%D1%81%D1%81%D1%82%D0%B0%D0%BD%D0%B8%D0%B5_%D0%BC%D0%B0%D0%B9%D0%BE%D1%82%D0%B5%D0%BD%D0%BE%D0%B2"
+      },
+      "srwiki": {
+        "site": "srwiki",
+        "title": "Устанак буздована",
+        "badges": [],
+        "url": "https://sr.wikipedia.org/wiki/%D0%A3%D1%81%D1%82%D0%B0%D0%BD%D0%B0%D0%BA_%D0%B1%D1%83%D0%B7%D0%B4%D0%BE%D0%B2%D0%B0%D0%BD%D0%B0"
+      },
+      "svwiki": {
+        "site": "svwiki",
+        "title": "Maillotins",
+        "badges": [],
+        "url": "https://sv.wikipedia.org/wiki/Maillotins"
+      },
+      "ukwiki": {
+        "site": "ukwiki",
+        "title": "Повстання майотенів",
+        "badges": [],
+        "url": "https://uk.wikipedia.org/wiki/%D0%9F%D0%BE%D0%B2%D1%81%D1%82%D0%B0%D0%BD%D0%BD%D1%8F_%D0%BC%D0%B0%D0%B9%D0%BE%D1%82%D0%B5%D0%BD%D1%96%D0%B2"
+      }
+    }
+  }
+}

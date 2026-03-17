@@ -1,0 +1,206 @@
+{
+  "saved_at": "2026-03-07T14:48:18.686Z",
+  "value": {
+    "pageid": 4531688,
+    "ns": 0,
+    "title": "Q4742397",
+    "lastrevid": 2465540174,
+    "modified": "2026-02-22T04:58:44Z",
+    "type": "item",
+    "id": "Q4742397",
+    "labels": {
+      "en": {
+        "language": "en",
+        "value": "Amendments to the Rome Statute of the International Criminal Court"
+      },
+      "de": {
+        "language": "de",
+        "value": "Änderungen des Römischen Statuts"
+      },
+      "ja": {
+        "language": "ja",
+        "value": "国際刑事裁判所ローマ規程の改正条項#第8条の改正（2010年）"
+      },
+      "fr": {
+        "language": "fr",
+        "value": "Amendements au Statut de Rome"
+      },
+      "it": {
+        "language": "it",
+        "value": "emendamenti allo Statuto di Roma"
+      }
+    },
+    "descriptions": {
+      "de": {
+        "language": "de",
+        "value": "Völkerrechtlicher Vertrag"
+      },
+      "fr": {
+        "language": "fr",
+        "value": "Modifications du Statut de la Cour pénale internationale"
+      }
+    },
+    "aliases": {
+      "ja": [
+        {
+          "language": "ja",
+          "value": "国際刑事裁判所ローマ規程#規程改正条項"
+        },
+        {
+          "language": "ja",
+          "value": "国際刑事裁判所ローマ規程の改正条項#第124条の改正（2015年）"
+        }
+      ],
+      "fr": [
+        {
+          "language": "fr",
+          "value": "Révision du Statut de Rome"
+        },
+        {
+          "language": "fr",
+          "value": "Amendements au Statut de la Cour pénale internationale"
+        },
+        {
+          "language": "fr",
+          "value": "Amendements au Statut de la CPI"
+        },
+        {
+          "language": "fr",
+          "value": "Révision du Statut de la Cour pénale internationale"
+        },
+        {
+          "language": "fr",
+          "value": "Révision du Statut de la CPI"
+        }
+      ]
+    },
+    "claims": {
+      "P31": [
+        {
+          "mainsnak": {
+            "snaktype": "value",
+            "property": "P31",
+            "hash": "b0e8db723228922bff4fcc3427ebd4e3289412c9",
+            "datavalue": {
+              "value": {
+                "entity-type": "item",
+                "numeric-id": 131569,
+                "id": "Q131569"
+              },
+              "type": "wikibase-entityid"
+            },
+            "datatype": "wikibase-item"
+          },
+          "type": "statement",
+          "id": "Q4742397$EC45C9A1-6C7A-48ED-8938-F021962CF2BB",
+          "rank": "normal"
+        }
+      ],
+      "P646": [
+        {
+          "mainsnak": {
+            "snaktype": "value",
+            "property": "P646",
+            "hash": "19d2d7d66f26e70f0c039dc587eccec5c6510311",
+            "datavalue": {
+              "value": "/m/0ggbdyb",
+              "type": "string"
+            },
+            "datatype": "external-id"
+          },
+          "type": "statement",
+          "id": "Q4742397$DD0BC386-E5DD-419F-A821-9D9BD4D518E4",
+          "rank": "normal"
+        }
+      ],
+      "P921": [
+        {
+          "mainsnak": {
+            "snaktype": "value",
+            "property": "P921",
+            "hash": "72ff82667434fa18d58c932fc708f3aa56043d05",
+            "datavalue": {
+              "value": {
+                "entity-type": "item",
+                "numeric-id": 1055905,
+                "id": "Q1055905"
+              },
+              "type": "wikibase-entityid"
+            },
+            "datatype": "wikibase-item"
+          },
+          "type": "statement",
+          "id": "Q4742397$251391f1-4aac-97d3-1098-e555a7e37b63",
+          "rank": "normal"
+        }
+      ],
+      "P279": [
+        {
+          "mainsnak": {
+            "snaktype": "value",
+            "property": "P279",
+            "hash": "a0e47c9e2152be422a4ace91465ed15ff5b2c034",
+            "datavalue": {
+              "value": {
+                "entity-type": "item",
+                "numeric-id": 1269627,
+                "id": "Q1269627"
+              },
+              "type": "wikibase-entityid"
+            },
+            "datatype": "wikibase-item"
+          },
+          "type": "statement",
+          "id": "Q4742397$1d87ec41-4800-65e5-72f6-17f0b5e24bea",
+          "rank": "normal",
+          "references": [
+            {
+              "hash": "113761d8f8a8011a46f12d33373fe327deccf95e",
+              "snaks": {
+                "P3452": [
+                  {
+                    "snaktype": "value",
+                    "property": "P3452",
+                    "hash": "ca354fb7de69d2e8b6995b8507b2a46595209185",
+                    "datavalue": {
+                      "value": {
+                        "entity-type": "item",
+                        "numeric-id": 69652283,
+                        "id": "Q69652283"
+                      },
+                      "type": "wikibase-entityid"
+                    },
+                    "datatype": "wikibase-item"
+                  }
+                ]
+              },
+              "snaks-order": [
+                "P3452"
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    "sitelinks": {
+      "dewiki": {
+        "site": "dewiki",
+        "title": "Änderungen des Römischen Statuts",
+        "badges": [],
+        "url": "https://de.wikipedia.org/wiki/%C3%84nderungen_des_R%C3%B6mischen_Statuts"
+      },
+      "enwiki": {
+        "site": "enwiki",
+        "title": "Amendments to the Rome Statute",
+        "badges": [],
+        "url": "https://en.wikipedia.org/wiki/Amendments_to_the_Rome_Statute"
+      },
+      "frwiki": {
+        "site": "frwiki",
+        "title": "Amendements au Statut de Rome",
+        "badges": [],
+        "url": "https://fr.wikipedia.org/wiki/Amendements_au_Statut_de_Rome"
+      }
+    }
+  }
+}

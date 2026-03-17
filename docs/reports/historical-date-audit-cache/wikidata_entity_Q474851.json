@@ -1,0 +1,1169 @@
+{
+  "saved_at": "2026-03-07T15:56:47.315Z",
+  "value": {
+    "pageid": 447584,
+    "ns": 0,
+    "title": "Q474851",
+    "lastrevid": 2395371634,
+    "modified": "2025-08-22T10:46:44Z",
+    "type": "item",
+    "id": "Q474851",
+    "labels": {
+      "de": {
+        "language": "de",
+        "value": "Clearstream-Affäre"
+      },
+      "ja": {
+        "language": "ja",
+        "value": "クリアストリーム事件"
+      },
+      "fr": {
+        "language": "fr",
+        "value": "affaire Clearstream 2"
+      },
+      "ar": {
+        "language": "ar",
+        "value": "قضية كليرستريم"
+      },
+      "en": {
+        "language": "en",
+        "value": "Clearstream 2 affair"
+      },
+      "fi": {
+        "language": "fi",
+        "value": "Clearstream-skandaali"
+      },
+      "zh": {
+        "language": "zh",
+        "value": "清泉门"
+      },
+      "mul": {
+        "language": "mul",
+        "value": "affaire Clearstream 2"
+      }
+    },
+    "descriptions": {
+      "de": {
+        "language": "de",
+        "value": "politische Affäre in Frankreich"
+      },
+      "ja": {
+        "language": "ja",
+        "value": "フランスの事件"
+      },
+      "en": {
+        "language": "en",
+        "value": "political scandal in France"
+      }
+    },
+    "aliases": {
+      "de": [
+        {
+          "language": "de",
+          "value": "Rabenaffäre"
+        },
+        {
+          "language": "de",
+          "value": "Affäre Clearstream II"
+        }
+      ],
+      "ar": [
+        {
+          "language": "ar",
+          "value": "قضية كلير ستريم"
+        }
+      ]
+    },
+    "claims": {
+      "P646": [
+        {
+          "mainsnak": {
+            "snaktype": "value",
+            "property": "P646",
+            "hash": "df176201ffbe167a8790a8dd458404bbe8c6b736",
+            "datavalue": {
+              "value": "/m/0b6f_5b",
+              "type": "string"
+            },
+            "datatype": "external-id"
+          },
+          "type": "statement",
+          "id": "Q474851$FFD94E18-F8EA-4BC1-A8B9-306F9185E31B",
+          "rank": "normal",
+          "references": [
+            {
+              "hash": "2b00cb481cddcac7623114367489b5c194901c4a",
+              "snaks": {
+                "P248": [
+                  {
+                    "snaktype": "value",
+                    "property": "P248",
+                    "hash": "a94b740202b097dd33355e0e6c00e54b9395e5e0",
+                    "datavalue": {
+                      "value": {
+                        "entity-type": "item",
+                        "numeric-id": 15241312,
+                        "id": "Q15241312"
+                      },
+                      "type": "wikibase-entityid"
+                    },
+                    "datatype": "wikibase-item"
+                  }
+                ],
+                "P577": [
+                  {
+                    "snaktype": "value",
+                    "property": "P577",
+                    "hash": "fde79ecb015112d2f29229ccc1ec514ed3e71fa2",
+                    "datavalue": {
+                      "value": {
+                        "time": "+2013-10-28T00:00:00Z",
+                        "timezone": 0,
+                        "before": 0,
+                        "after": 0,
+                        "precision": 11,
+                        "calendarmodel": "http://www.wikidata.org/entity/Q1985727"
+                      },
+                      "type": "time"
+                    },
+                    "datatype": "time"
+                  }
+                ]
+              },
+              "snaks-order": [
+                "P248",
+                "P577"
+              ]
+            }
+          ]
+        }
+      ],
+      "P31": [
+        {
+          "mainsnak": {
+            "snaktype": "value",
+            "property": "P31",
+            "hash": "e57613c58b05de28ebd154e4292eb0e9147c387e",
+            "datavalue": {
+              "value": {
+                "entity-type": "item",
+                "numeric-id": 934744,
+                "id": "Q934744"
+              },
+              "type": "wikibase-entityid"
+            },
+            "datatype": "wikibase-item"
+          },
+          "type": "statement",
+          "id": "Q474851$9F01B4FA-74DF-4E0A-9D68-F057686FC2B4",
+          "rank": "normal"
+        },
+        {
+          "mainsnak": {
+            "snaktype": "value",
+            "property": "P31",
+            "hash": "935c0a137ae65a010b459d5fa86f169c2af15357",
+            "datavalue": {
+              "value": {
+                "entity-type": "item",
+                "numeric-id": 8016240,
+                "id": "Q8016240"
+              },
+              "type": "wikibase-entityid"
+            },
+            "datatype": "wikibase-item"
+          },
+          "type": "statement",
+          "id": "Q474851$23b67d93-44bd-ccdc-7764-4139e1ebb932",
+          "rank": "normal"
+        }
+      ],
+      "P910": [
+        {
+          "mainsnak": {
+            "snaktype": "value",
+            "property": "P910",
+            "hash": "e7603a29fb58c091e575dfb1643a1cad88a3fb02",
+            "datavalue": {
+              "value": {
+                "entity-type": "item",
+                "numeric-id": 9428944,
+                "id": "Q9428944"
+              },
+              "type": "wikibase-entityid"
+            },
+            "datatype": "wikibase-item"
+          },
+          "type": "statement",
+          "id": "Q474851$49ECA007-257E-4A85-B288-FCFA3C9F0005",
+          "rank": "normal",
+          "references": [
+            {
+              "hash": "d4bd87b862b12d99d26e86472d44f26858dee639",
+              "snaks": {
+                "P143": [
+                  {
+                    "snaktype": "value",
+                    "property": "P143",
+                    "hash": "f30cbd35620c4ea6d0633aaf0210a8916130469b",
+                    "datavalue": {
+                      "value": {
+                        "entity-type": "item",
+                        "numeric-id": 8447,
+                        "id": "Q8447"
+                      },
+                      "type": "wikibase-entityid"
+                    },
+                    "datatype": "wikibase-item"
+                  }
+                ]
+              },
+              "snaks-order": [
+                "P143"
+              ]
+            }
+          ]
+        }
+      ],
+      "P17": [
+        {
+          "mainsnak": {
+            "snaktype": "value",
+            "property": "P17",
+            "hash": "c05db5d169c2560b9799d567a803d20a392f53e4",
+            "datavalue": {
+              "value": {
+                "entity-type": "item",
+                "numeric-id": 142,
+                "id": "Q142"
+              },
+              "type": "wikibase-entityid"
+            },
+            "datatype": "wikibase-item"
+          },
+          "type": "statement",
+          "id": "Q474851$3a5172eb-4241-6226-30c5-b560af3ca96c",
+          "rank": "normal"
+        },
+        {
+          "mainsnak": {
+            "snaktype": "value",
+            "property": "P17",
+            "hash": "291b10e8046c4951933718cade0398bbd5c9866d",
+            "datavalue": {
+              "value": {
+                "entity-type": "item",
+                "numeric-id": 32,
+                "id": "Q32"
+              },
+              "type": "wikibase-entityid"
+            },
+            "datatype": "wikibase-item"
+          },
+          "type": "statement",
+          "id": "Q474851$059fd5f8-47bf-8d71-dc4e-622f9d8a3cca",
+          "rank": "normal"
+        }
+      ],
+      "P155": [
+        {
+          "mainsnak": {
+            "snaktype": "value",
+            "property": "P155",
+            "hash": "23947c17f10f50fd7d1d29ddd9a03335eb768b54",
+            "datavalue": {
+              "value": {
+                "entity-type": "item",
+                "numeric-id": 2825756,
+                "id": "Q2825756"
+              },
+              "type": "wikibase-entityid"
+            },
+            "datatype": "wikibase-item"
+          },
+          "type": "statement",
+          "id": "Q474851$c03848d6-4692-72ab-cde6-641e41676fad",
+          "rank": "normal"
+        }
+      ],
+      "P710": [
+        {
+          "mainsnak": {
+            "snaktype": "value",
+            "property": "P710",
+            "hash": "811c1d73f6dd63ea1a47876ccd235387ef2f43ca",
+            "datavalue": {
+              "value": {
+                "entity-type": "item",
+                "numeric-id": 824314,
+                "id": "Q824314"
+              },
+              "type": "wikibase-entityid"
+            },
+            "datatype": "wikibase-item"
+          },
+          "type": "statement",
+          "id": "Q474851$a88a45a0-48c6-2e82-c038-872075481dcf",
+          "rank": "normal"
+        },
+        {
+          "mainsnak": {
+            "snaktype": "value",
+            "property": "P710",
+            "hash": "f092014a71d595ebebf716fb93b8c04fc108ced1",
+            "datavalue": {
+              "value": {
+                "entity-type": "item",
+                "numeric-id": 3166786,
+                "id": "Q3166786"
+              },
+              "type": "wikibase-entityid"
+            },
+            "datatype": "wikibase-item"
+          },
+          "type": "statement",
+          "id": "Q474851$0fe42402-4c7f-5cf7-75a3-f3bd038ade82",
+          "rank": "normal"
+        },
+        {
+          "mainsnak": {
+            "snaktype": "value",
+            "property": "P710",
+            "hash": "a1da3926b9abc294abaccfc22a63515f0123a26d",
+            "datavalue": {
+              "value": {
+                "entity-type": "item",
+                "numeric-id": 322719,
+                "id": "Q322719"
+              },
+              "type": "wikibase-entityid"
+            },
+            "datatype": "wikibase-item"
+          },
+          "type": "statement",
+          "id": "Q474851$9b5edf43-456b-2648-bfa2-7ea13b239fe1",
+          "rank": "normal"
+        },
+        {
+          "mainsnak": {
+            "snaktype": "value",
+            "property": "P710",
+            "hash": "95465db50c0744a6ca34898dc16b0d6b51a0f6d7",
+            "datavalue": {
+              "value": {
+                "entity-type": "item",
+                "numeric-id": 3379712,
+                "id": "Q3379712"
+              },
+              "type": "wikibase-entityid"
+            },
+            "datatype": "wikibase-item"
+          },
+          "type": "statement",
+          "id": "Q474851$aa5f297a-4430-d847-1d65-ace87ec4e7a9",
+          "rank": "normal"
+        },
+        {
+          "mainsnak": {
+            "snaktype": "value",
+            "property": "P710",
+            "hash": "58e9d5f5f63ac68107c212a9450846ff9ef0a257",
+            "datavalue": {
+              "value": {
+                "entity-type": "item",
+                "numeric-id": 329,
+                "id": "Q329"
+              },
+              "type": "wikibase-entityid"
+            },
+            "datatype": "wikibase-item"
+          },
+          "type": "statement",
+          "id": "Q474851$1a15c0fa-4555-8db0-6afa-e79712dba38e",
+          "rank": "normal"
+        },
+        {
+          "mainsnak": {
+            "snaktype": "value",
+            "property": "P710",
+            "hash": "3bcdb79faa897c4844fcf4290070f8618537750f",
+            "datavalue": {
+              "value": {
+                "entity-type": "item",
+                "numeric-id": 131660,
+                "id": "Q131660"
+              },
+              "type": "wikibase-entityid"
+            },
+            "datatype": "wikibase-item"
+          },
+          "type": "statement",
+          "id": "Q474851$7118ab68-4ba4-77bb-6865-b8bcc6270d1c",
+          "rank": "normal"
+        },
+        {
+          "mainsnak": {
+            "snaktype": "value",
+            "property": "P710",
+            "hash": "f4ff199b94f0e42f1b8ddce6dd7dff550345764b",
+            "datavalue": {
+              "value": {
+                "entity-type": "item",
+                "numeric-id": 3424965,
+                "id": "Q3424965"
+              },
+              "type": "wikibase-entityid"
+            },
+            "datatype": "wikibase-item"
+          },
+          "type": "statement",
+          "id": "Q474851$25111b8a-4054-6d7a-5326-cea07bbb8a62",
+          "rank": "normal"
+        },
+        {
+          "mainsnak": {
+            "snaktype": "value",
+            "property": "P710",
+            "hash": "f8edbfeabfcfc08b7c1f7bd57bb1ce989b67a945",
+            "datavalue": {
+              "value": {
+                "entity-type": "item",
+                "numeric-id": 2087725,
+                "id": "Q2087725"
+              },
+              "type": "wikibase-entityid"
+            },
+            "datatype": "wikibase-item"
+          },
+          "type": "statement",
+          "id": "Q474851$03a1a7ef-483d-ce52-f0f6-eb2cffcb89a5",
+          "rank": "normal"
+        },
+        {
+          "mainsnak": {
+            "snaktype": "value",
+            "property": "P710",
+            "hash": "dccfbea14c7c099f193f29366f7cf811bd11cf5c",
+            "datavalue": {
+              "value": {
+                "entity-type": "item",
+                "numeric-id": 3148855,
+                "id": "Q3148855"
+              },
+              "type": "wikibase-entityid"
+            },
+            "datatype": "wikibase-item"
+          },
+          "type": "statement",
+          "id": "Q474851$8c1a8026-454c-97d3-9172-542d29a4fbdb",
+          "rank": "normal"
+        },
+        {
+          "mainsnak": {
+            "snaktype": "value",
+            "property": "P710",
+            "hash": "95a40d6bdcca2f781e25b9eeb5b59f41bfe18ac9",
+            "datavalue": {
+              "value": {
+                "entity-type": "item",
+                "numeric-id": 927313,
+                "id": "Q927313"
+              },
+              "type": "wikibase-entityid"
+            },
+            "datatype": "wikibase-item"
+          },
+          "type": "statement",
+          "id": "Q474851$cb4d8ac2-412a-620e-3c16-7dd35fa49879",
+          "rank": "normal"
+        }
+      ],
+      "P18": [
+        {
+          "mainsnak": {
+            "snaktype": "value",
+            "property": "P18",
+            "hash": "97b3479a04f20882db06fef6c7ab5085b4d9ea72",
+            "datavalue": {
+              "value": "Affaire clearstream 2.jpg",
+              "type": "string"
+            },
+            "datatype": "commonsMedia"
+          },
+          "type": "statement",
+          "id": "Q474851$4a2bcaa8-47f8-1829-acf9-0d6373810559",
+          "rank": "normal"
+        }
+      ],
+      "P12800": [
+        {
+          "mainsnak": {
+            "snaktype": "value",
+            "property": "P12800",
+            "hash": "d9a0421e6c62a9b8cf5f5a9a3fcdd2f035a0e0ff",
+            "datavalue": {
+              "value": "fr:Affaire_Clearstream_2",
+              "type": "string"
+            },
+            "datatype": "external-id"
+          },
+          "type": "statement",
+          "id": "Q474851$3D861DA2-7E43-4C6A-9883-7FC1C1B7A246",
+          "rank": "normal"
+        }
+      ],
+      "P1591": [
+        {
+          "mainsnak": {
+            "snaktype": "value",
+            "property": "P1591",
+            "hash": "fa747e18208f5a7e2845fef4db1c80232e90c583",
+            "datavalue": {
+              "value": {
+                "entity-type": "item",
+                "numeric-id": 131660,
+                "id": "Q131660"
+              },
+              "type": "wikibase-entityid"
+            },
+            "datatype": "wikibase-item"
+          },
+          "type": "statement",
+          "id": "Q474851$9576d053-455a-f83c-4357-a01b20ed887c",
+          "rank": "normal",
+          "references": [
+            {
+              "hash": "ea4efb87e9ec85d9f3a3b02aa6d71f10fdeebac9",
+              "snaks": {
+                "P854": [
+                  {
+                    "snaktype": "value",
+                    "property": "P854",
+                    "hash": "7f7cfe2ca4267dfe723ca4365524a2aceced1d74",
+                    "datavalue": {
+                      "value": "https://www.lefigaro.fr/actualite-france/2010/01/28/01016-20100128ARTFIG00559-clearstream-gergorin-lahoud-et-bourges-condamnes-.php",
+                      "type": "string"
+                    },
+                    "datatype": "url"
+                  }
+                ],
+                "P813": [
+                  {
+                    "snaktype": "value",
+                    "property": "P813",
+                    "hash": "b4d2f0148b729d8b54ab857e3c1ee8706ba27f4d",
+                    "datavalue": {
+                      "value": {
+                        "time": "+2025-08-22T00:00:00Z",
+                        "timezone": 0,
+                        "before": 0,
+                        "after": 0,
+                        "precision": 11,
+                        "calendarmodel": "http://www.wikidata.org/entity/Q1985727"
+                      },
+                      "type": "time"
+                    },
+                    "datatype": "time"
+                  }
+                ]
+              },
+              "snaks-order": [
+                "P854",
+                "P813"
+              ]
+            }
+          ]
+        },
+        {
+          "mainsnak": {
+            "snaktype": "value",
+            "property": "P1591",
+            "hash": "9e384ad651819418a73b6a5b730db1f04b4903a7",
+            "datavalue": {
+              "value": {
+                "entity-type": "item",
+                "numeric-id": 3166786,
+                "id": "Q3166786"
+              },
+              "type": "wikibase-entityid"
+            },
+            "datatype": "wikibase-item"
+          },
+          "type": "statement",
+          "id": "Q474851$ec8ee3f2-402d-367b-2b23-8a623aa3dddb",
+          "rank": "normal",
+          "references": [
+            {
+              "hash": "ea4efb87e9ec85d9f3a3b02aa6d71f10fdeebac9",
+              "snaks": {
+                "P854": [
+                  {
+                    "snaktype": "value",
+                    "property": "P854",
+                    "hash": "7f7cfe2ca4267dfe723ca4365524a2aceced1d74",
+                    "datavalue": {
+                      "value": "https://www.lefigaro.fr/actualite-france/2010/01/28/01016-20100128ARTFIG00559-clearstream-gergorin-lahoud-et-bourges-condamnes-.php",
+                      "type": "string"
+                    },
+                    "datatype": "url"
+                  }
+                ],
+                "P813": [
+                  {
+                    "snaktype": "value",
+                    "property": "P813",
+                    "hash": "b4d2f0148b729d8b54ab857e3c1ee8706ba27f4d",
+                    "datavalue": {
+                      "value": {
+                        "time": "+2025-08-22T00:00:00Z",
+                        "timezone": 0,
+                        "before": 0,
+                        "after": 0,
+                        "precision": 11,
+                        "calendarmodel": "http://www.wikidata.org/entity/Q1985727"
+                      },
+                      "type": "time"
+                    },
+                    "datatype": "time"
+                  }
+                ]
+              },
+              "snaks-order": [
+                "P854",
+                "P813"
+              ]
+            }
+          ]
+        },
+        {
+          "mainsnak": {
+            "snaktype": "value",
+            "property": "P1591",
+            "hash": "c06aa820b58bdbded8121965b75acf941da9e322",
+            "datavalue": {
+              "value": {
+                "entity-type": "item",
+                "numeric-id": 3148855,
+                "id": "Q3148855"
+              },
+              "type": "wikibase-entityid"
+            },
+            "datatype": "wikibase-item"
+          },
+          "type": "statement",
+          "id": "Q474851$ae832dd7-4e27-f4d5-c6cd-2baf8d4cafaa",
+          "rank": "normal",
+          "references": [
+            {
+              "hash": "ea4efb87e9ec85d9f3a3b02aa6d71f10fdeebac9",
+              "snaks": {
+                "P854": [
+                  {
+                    "snaktype": "value",
+                    "property": "P854",
+                    "hash": "7f7cfe2ca4267dfe723ca4365524a2aceced1d74",
+                    "datavalue": {
+                      "value": "https://www.lefigaro.fr/actualite-france/2010/01/28/01016-20100128ARTFIG00559-clearstream-gergorin-lahoud-et-bourges-condamnes-.php",
+                      "type": "string"
+                    },
+                    "datatype": "url"
+                  }
+                ],
+                "P813": [
+                  {
+                    "snaktype": "value",
+                    "property": "P813",
+                    "hash": "b4d2f0148b729d8b54ab857e3c1ee8706ba27f4d",
+                    "datavalue": {
+                      "value": {
+                        "time": "+2025-08-22T00:00:00Z",
+                        "timezone": 0,
+                        "before": 0,
+                        "after": 0,
+                        "precision": 11,
+                        "calendarmodel": "http://www.wikidata.org/entity/Q1985727"
+                      },
+                      "type": "time"
+                    },
+                    "datatype": "time"
+                  }
+                ]
+              },
+              "snaks-order": [
+                "P854",
+                "P813"
+              ]
+            }
+          ]
+        },
+        {
+          "mainsnak": {
+            "snaktype": "value",
+            "property": "P1591",
+            "hash": "64aa2e0e702d8d71f26c0d3d1c2d08d99d4e5c6e",
+            "datavalue": {
+              "value": {
+                "entity-type": "item",
+                "numeric-id": 3074172,
+                "id": "Q3074172"
+              },
+              "type": "wikibase-entityid"
+            },
+            "datatype": "wikibase-item"
+          },
+          "type": "statement",
+          "id": "Q474851$d3b23850-4858-ae3d-2237-5b6a65ed97bb",
+          "rank": "normal",
+          "references": [
+            {
+              "hash": "ea4efb87e9ec85d9f3a3b02aa6d71f10fdeebac9",
+              "snaks": {
+                "P854": [
+                  {
+                    "snaktype": "value",
+                    "property": "P854",
+                    "hash": "7f7cfe2ca4267dfe723ca4365524a2aceced1d74",
+                    "datavalue": {
+                      "value": "https://www.lefigaro.fr/actualite-france/2010/01/28/01016-20100128ARTFIG00559-clearstream-gergorin-lahoud-et-bourges-condamnes-.php",
+                      "type": "string"
+                    },
+                    "datatype": "url"
+                  }
+                ],
+                "P813": [
+                  {
+                    "snaktype": "value",
+                    "property": "P813",
+                    "hash": "b4d2f0148b729d8b54ab857e3c1ee8706ba27f4d",
+                    "datavalue": {
+                      "value": {
+                        "time": "+2025-08-22T00:00:00Z",
+                        "timezone": 0,
+                        "before": 0,
+                        "after": 0,
+                        "precision": 11,
+                        "calendarmodel": "http://www.wikidata.org/entity/Q1985727"
+                      },
+                      "type": "time"
+                    },
+                    "datatype": "time"
+                  }
+                ]
+              },
+              "snaks-order": [
+                "P854",
+                "P813"
+              ]
+            }
+          ]
+        },
+        {
+          "mainsnak": {
+            "snaktype": "value",
+            "property": "P1591",
+            "hash": "ce167485c0fe14f64e8e40949d50921e226fad13",
+            "datavalue": {
+              "value": {
+                "entity-type": "item",
+                "numeric-id": 927313,
+                "id": "Q927313"
+              },
+              "type": "wikibase-entityid"
+            },
+            "datatype": "wikibase-item"
+          },
+          "type": "statement",
+          "id": "Q474851$272f8873-4f34-7a9b-6270-b29160fba4e6",
+          "rank": "normal",
+          "references": [
+            {
+              "hash": "ea4efb87e9ec85d9f3a3b02aa6d71f10fdeebac9",
+              "snaks": {
+                "P854": [
+                  {
+                    "snaktype": "value",
+                    "property": "P854",
+                    "hash": "7f7cfe2ca4267dfe723ca4365524a2aceced1d74",
+                    "datavalue": {
+                      "value": "https://www.lefigaro.fr/actualite-france/2010/01/28/01016-20100128ARTFIG00559-clearstream-gergorin-lahoud-et-bourges-condamnes-.php",
+                      "type": "string"
+                    },
+                    "datatype": "url"
+                  }
+                ],
+                "P813": [
+                  {
+                    "snaktype": "value",
+                    "property": "P813",
+                    "hash": "b4d2f0148b729d8b54ab857e3c1ee8706ba27f4d",
+                    "datavalue": {
+                      "value": {
+                        "time": "+2025-08-22T00:00:00Z",
+                        "timezone": 0,
+                        "before": 0,
+                        "after": 0,
+                        "precision": 11,
+                        "calendarmodel": "http://www.wikidata.org/entity/Q1985727"
+                      },
+                      "type": "time"
+                    },
+                    "datatype": "time"
+                  }
+                ]
+              },
+              "snaks-order": [
+                "P854",
+                "P813"
+              ]
+            }
+          ]
+        }
+      ],
+      "P1595": [
+        {
+          "mainsnak": {
+            "snaktype": "value",
+            "property": "P1595",
+            "hash": "d108faa9ef83703ac6fd3c0628b54fa8f595a14e",
+            "datavalue": {
+              "value": {
+                "entity-type": "item",
+                "numeric-id": 56308622,
+                "id": "Q56308622"
+              },
+              "type": "wikibase-entityid"
+            },
+            "datatype": "wikibase-item"
+          },
+          "type": "statement",
+          "id": "Q474851$c18b820c-440a-d3ed-9ae8-302d5fc5411e",
+          "rank": "normal",
+          "references": [
+            {
+              "hash": "ea4efb87e9ec85d9f3a3b02aa6d71f10fdeebac9",
+              "snaks": {
+                "P854": [
+                  {
+                    "snaktype": "value",
+                    "property": "P854",
+                    "hash": "7f7cfe2ca4267dfe723ca4365524a2aceced1d74",
+                    "datavalue": {
+                      "value": "https://www.lefigaro.fr/actualite-france/2010/01/28/01016-20100128ARTFIG00559-clearstream-gergorin-lahoud-et-bourges-condamnes-.php",
+                      "type": "string"
+                    },
+                    "datatype": "url"
+                  }
+                ],
+                "P813": [
+                  {
+                    "snaktype": "value",
+                    "property": "P813",
+                    "hash": "b4d2f0148b729d8b54ab857e3c1ee8706ba27f4d",
+                    "datavalue": {
+                      "value": {
+                        "time": "+2025-08-22T00:00:00Z",
+                        "timezone": 0,
+                        "before": 0,
+                        "after": 0,
+                        "precision": 11,
+                        "calendarmodel": "http://www.wikidata.org/entity/Q1985727"
+                      },
+                      "type": "time"
+                    },
+                    "datatype": "time"
+                  }
+                ]
+              },
+              "snaks-order": [
+                "P854",
+                "P813"
+              ]
+            }
+          ]
+        },
+        {
+          "mainsnak": {
+            "snaktype": "value",
+            "property": "P1595",
+            "hash": "a59b02d058842e7d5969078984199666699b9e46",
+            "datavalue": {
+              "value": {
+                "entity-type": "item",
+                "numeric-id": 51161299,
+                "id": "Q51161299"
+              },
+              "type": "wikibase-entityid"
+            },
+            "datatype": "wikibase-item"
+          },
+          "type": "statement",
+          "id": "Q474851$e96006c2-416b-6ad2-3db4-00532587a3c0",
+          "rank": "normal",
+          "references": [
+            {
+              "hash": "ea4efb87e9ec85d9f3a3b02aa6d71f10fdeebac9",
+              "snaks": {
+                "P854": [
+                  {
+                    "snaktype": "value",
+                    "property": "P854",
+                    "hash": "7f7cfe2ca4267dfe723ca4365524a2aceced1d74",
+                    "datavalue": {
+                      "value": "https://www.lefigaro.fr/actualite-france/2010/01/28/01016-20100128ARTFIG00559-clearstream-gergorin-lahoud-et-bourges-condamnes-.php",
+                      "type": "string"
+                    },
+                    "datatype": "url"
+                  }
+                ],
+                "P813": [
+                  {
+                    "snaktype": "value",
+                    "property": "P813",
+                    "hash": "b4d2f0148b729d8b54ab857e3c1ee8706ba27f4d",
+                    "datavalue": {
+                      "value": {
+                        "time": "+2025-08-22T00:00:00Z",
+                        "timezone": 0,
+                        "before": 0,
+                        "after": 0,
+                        "precision": 11,
+                        "calendarmodel": "http://www.wikidata.org/entity/Q1985727"
+                      },
+                      "type": "time"
+                    },
+                    "datatype": "time"
+                  }
+                ]
+              },
+              "snaks-order": [
+                "P854",
+                "P813"
+              ]
+            }
+          ]
+        },
+        {
+          "mainsnak": {
+            "snaktype": "value",
+            "property": "P1595",
+            "hash": "266a35250d11220d5f76cd978bc18b168576370e",
+            "datavalue": {
+              "value": {
+                "entity-type": "item",
+                "numeric-id": 3067608,
+                "id": "Q3067608"
+              },
+              "type": "wikibase-entityid"
+            },
+            "datatype": "wikibase-item"
+          },
+          "type": "statement",
+          "id": "Q474851$53e9cfdf-46fb-48f8-4008-d1cf8995af5c",
+          "rank": "normal",
+          "references": [
+            {
+              "hash": "ea4efb87e9ec85d9f3a3b02aa6d71f10fdeebac9",
+              "snaks": {
+                "P854": [
+                  {
+                    "snaktype": "value",
+                    "property": "P854",
+                    "hash": "7f7cfe2ca4267dfe723ca4365524a2aceced1d74",
+                    "datavalue": {
+                      "value": "https://www.lefigaro.fr/actualite-france/2010/01/28/01016-20100128ARTFIG00559-clearstream-gergorin-lahoud-et-bourges-condamnes-.php",
+                      "type": "string"
+                    },
+                    "datatype": "url"
+                  }
+                ],
+                "P813": [
+                  {
+                    "snaktype": "value",
+                    "property": "P813",
+                    "hash": "b4d2f0148b729d8b54ab857e3c1ee8706ba27f4d",
+                    "datavalue": {
+                      "value": {
+                        "time": "+2025-08-22T00:00:00Z",
+                        "timezone": 0,
+                        "before": 0,
+                        "after": 0,
+                        "precision": 11,
+                        "calendarmodel": "http://www.wikidata.org/entity/Q1985727"
+                      },
+                      "type": "time"
+                    },
+                    "datatype": "time"
+                  }
+                ]
+              },
+              "snaks-order": [
+                "P854",
+                "P813"
+              ]
+            }
+          ]
+        },
+        {
+          "mainsnak": {
+            "snaktype": "value",
+            "property": "P1595",
+            "hash": "435593ce02126396707782c6997f430aaca782dc",
+            "datavalue": {
+              "value": {
+                "entity-type": "item",
+                "numeric-id": 1220097,
+                "id": "Q1220097"
+              },
+              "type": "wikibase-entityid"
+            },
+            "datatype": "wikibase-item"
+          },
+          "type": "statement",
+          "id": "Q474851$367f024d-46b4-b7dc-69ee-71ac3d47b70f",
+          "rank": "normal",
+          "references": [
+            {
+              "hash": "ea4efb87e9ec85d9f3a3b02aa6d71f10fdeebac9",
+              "snaks": {
+                "P854": [
+                  {
+                    "snaktype": "value",
+                    "property": "P854",
+                    "hash": "7f7cfe2ca4267dfe723ca4365524a2aceced1d74",
+                    "datavalue": {
+                      "value": "https://www.lefigaro.fr/actualite-france/2010/01/28/01016-20100128ARTFIG00559-clearstream-gergorin-lahoud-et-bourges-condamnes-.php",
+                      "type": "string"
+                    },
+                    "datatype": "url"
+                  }
+                ],
+                "P813": [
+                  {
+                    "snaktype": "value",
+                    "property": "P813",
+                    "hash": "b4d2f0148b729d8b54ab857e3c1ee8706ba27f4d",
+                    "datavalue": {
+                      "value": {
+                        "time": "+2025-08-22T00:00:00Z",
+                        "timezone": 0,
+                        "before": 0,
+                        "after": 0,
+                        "precision": 11,
+                        "calendarmodel": "http://www.wikidata.org/entity/Q1985727"
+                      },
+                      "type": "time"
+                    },
+                    "datatype": "time"
+                  }
+                ]
+              },
+              "snaks-order": [
+                "P854",
+                "P813"
+              ]
+            }
+          ]
+        },
+        {
+          "mainsnak": {
+            "snaktype": "value",
+            "property": "P1595",
+            "hash": "ee8e070859c5354064d12d802dbe48f4c5d67544",
+            "datavalue": {
+              "value": {
+                "entity-type": "item",
+                "numeric-id": 55595337,
+                "id": "Q55595337"
+              },
+              "type": "wikibase-entityid"
+            },
+            "datatype": "wikibase-item"
+          },
+          "type": "statement",
+          "id": "Q474851$38d5f788-48c6-f13a-b469-816d52583f40",
+          "rank": "normal",
+          "references": [
+            {
+              "hash": "ea4efb87e9ec85d9f3a3b02aa6d71f10fdeebac9",
+              "snaks": {
+                "P854": [
+                  {
+                    "snaktype": "value",
+                    "property": "P854",
+                    "hash": "7f7cfe2ca4267dfe723ca4365524a2aceced1d74",
+                    "datavalue": {
+                      "value": "https://www.lefigaro.fr/actualite-france/2010/01/28/01016-20100128ARTFIG00559-clearstream-gergorin-lahoud-et-bourges-condamnes-.php",
+                      "type": "string"
+                    },
+                    "datatype": "url"
+                  }
+                ],
+                "P813": [
+                  {
+                    "snaktype": "value",
+                    "property": "P813",
+                    "hash": "b4d2f0148b729d8b54ab857e3c1ee8706ba27f4d",
+                    "datavalue": {
+                      "value": {
+                        "time": "+2025-08-22T00:00:00Z",
+                        "timezone": 0,
+                        "before": 0,
+                        "after": 0,
+                        "precision": 11,
+                        "calendarmodel": "http://www.wikidata.org/entity/Q1985727"
+                      },
+                      "type": "time"
+                    },
+                    "datatype": "time"
+                  }
+                ]
+              },
+              "snaks-order": [
+                "P854",
+                "P813"
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    "sitelinks": {
+      "arwiki": {
+        "site": "arwiki",
+        "title": "قضية كليرستريم",
+        "badges": [],
+        "url": "https://ar.wikipedia.org/wiki/%D9%82%D8%B6%D9%8A%D8%A9_%D9%83%D9%84%D9%8A%D8%B1%D8%B3%D8%AA%D8%B1%D9%8A%D9%85"
+      },
+      "dewiki": {
+        "site": "dewiki",
+        "title": "Clearstream-Affäre",
+        "badges": [],
+        "url": "https://de.wikipedia.org/wiki/Clearstream-Aff%C3%A4re"
+      },
+      "enwiki": {
+        "site": "enwiki",
+        "title": "Clearstream affair",
+        "badges": [],
+        "url": "https://en.wikipedia.org/wiki/Clearstream_affair"
+      },
+      "frwiki": {
+        "site": "frwiki",
+        "title": "Affaire Clearstream 2",
+        "badges": [],
+        "url": "https://fr.wikipedia.org/wiki/Affaire_Clearstream_2"
+      },
+      "jawiki": {
+        "site": "jawiki",
+        "title": "クリアストリーム事件",
+        "badges": [],
+        "url": "https://ja.wikipedia.org/wiki/%E3%82%AF%E3%83%AA%E3%82%A2%E3%82%B9%E3%83%88%E3%83%AA%E3%83%BC%E3%83%A0%E4%BA%8B%E4%BB%B6"
+      },
+      "zhwiki": {
+        "site": "zhwiki",
+        "title": "清泉门",
+        "badges": [],
+        "url": "https://zh.wikipedia.org/wiki/%E6%B8%85%E6%B3%89%E9%97%A8"
+      }
+    }
+  }
+}

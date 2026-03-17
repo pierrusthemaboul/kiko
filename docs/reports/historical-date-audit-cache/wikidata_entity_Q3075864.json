@@ -1,0 +1,108 @@
+{
+  "saved_at": "2026-03-07T13:53:54.362Z",
+  "value": {
+    "pageid": 2939832,
+    "ns": 0,
+    "title": "Q3075864",
+    "lastrevid": 2034526442,
+    "modified": "2023-12-23T00:10:55Z",
+    "type": "item",
+    "id": "Q3075864",
+    "labels": {
+      "fr": {
+        "language": "fr",
+        "value": "Fonds français pour la nature et l'environnement"
+      }
+    },
+    "descriptions": {
+      "fr": {
+        "language": "fr",
+        "value": "organisation non-gouvernementale française"
+      }
+    },
+    "aliases": {
+      "fr": [
+        {
+          "language": "fr",
+          "value": "Fonds Francais pour la Nature et l'Environnement"
+        },
+        {
+          "language": "fr",
+          "value": "Fonds Français pour la Nature et l'Environnement"
+        }
+      ]
+    },
+    "claims": {
+      "P571": [
+        {
+          "mainsnak": {
+            "snaktype": "value",
+            "property": "P571",
+            "hash": "cd972960221001609554b9b12ecc8195655c3c49",
+            "datavalue": {
+              "value": {
+                "time": "+1967-00-00T00:00:00Z",
+                "timezone": 0,
+                "before": 0,
+                "after": 0,
+                "precision": 9,
+                "calendarmodel": "http://www.wikidata.org/entity/Q1985727"
+              },
+              "type": "time"
+            },
+            "datatype": "time"
+          },
+          "type": "statement",
+          "id": "Q3075864$9f08f857-476a-4603-04ec-46dfca7bbde3",
+          "rank": "normal"
+        }
+      ],
+      "P112": [
+        {
+          "mainsnak": {
+            "snaktype": "value",
+            "property": "P112",
+            "hash": "7695a59a91c105d1bc3c9d872ddfe658c492fee3",
+            "datavalue": {
+              "value": {
+                "entity-type": "item",
+                "numeric-id": 3174528,
+                "id": "Q3174528"
+              },
+              "type": "wikibase-entityid"
+            },
+            "datatype": "wikibase-item"
+          },
+          "type": "statement",
+          "id": "Q3075864$3e292059-45ce-168a-5a03-0d4ffd1583a6",
+          "rank": "normal"
+        }
+      ],
+      "P2671": [
+        {
+          "mainsnak": {
+            "snaktype": "value",
+            "property": "P2671",
+            "hash": "e5d4894f2a576dafe3fcb79241fba61d72cc4c07",
+            "datavalue": {
+              "value": "/g/121dcjbs",
+              "type": "string"
+            },
+            "datatype": "external-id"
+          },
+          "type": "statement",
+          "id": "Q3075864$0E828B61-7262-452C-BDDE-527D7831EE59",
+          "rank": "normal"
+        }
+      ]
+    },
+    "sitelinks": {
+      "frwiki": {
+        "site": "frwiki",
+        "title": "Fonds français pour la nature et l'environnement",
+        "badges": [],
+        "url": "https://fr.wikipedia.org/wiki/Fonds_fran%C3%A7ais_pour_la_nature_et_l%27environnement"
+      }
+    }
+  }
+}

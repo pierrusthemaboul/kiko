@@ -1,0 +1,94 @@
+{
+  "saved_at": "2026-03-07T15:41:51.244Z",
+  "value": {
+    "pageid": 2720336,
+    "ns": 0,
+    "title": "Q2840353",
+    "lastrevid": 1368115657,
+    "modified": "2021-02-23T08:47:40Z",
+    "type": "item",
+    "id": "Q2840353",
+    "labels": {
+      "fr": {
+        "language": "fr",
+        "value": "Altercation Voltaire-Rohan"
+      }
+    },
+    "descriptions": {},
+    "aliases": {},
+    "claims": {
+      "P138": [
+        {
+          "mainsnak": {
+            "snaktype": "value",
+            "property": "P138",
+            "hash": "44533ad5b5f9e3a50ab291431ab41c1f20e61981",
+            "datavalue": {
+              "value": {
+                "entity-type": "item",
+                "numeric-id": 3121456,
+                "id": "Q3121456"
+              },
+              "type": "wikibase-entityid"
+            },
+            "datatype": "wikibase-item"
+          },
+          "type": "statement",
+          "id": "Q2840353$5cb384b6-4200-9edd-fc35-9170ca3bf2f4",
+          "rank": "normal",
+          "references": [
+            {
+              "hash": "d4bd87b862b12d99d26e86472d44f26858dee639",
+              "snaks": {
+                "P143": [
+                  {
+                    "snaktype": "value",
+                    "property": "P143",
+                    "hash": "f30cbd35620c4ea6d0633aaf0210a8916130469b",
+                    "datavalue": {
+                      "value": {
+                        "entity-type": "item",
+                        "numeric-id": 8447,
+                        "id": "Q8447"
+                      },
+                      "type": "wikibase-entityid"
+                    },
+                    "datatype": "wikibase-item"
+                  }
+                ]
+              },
+              "snaks-order": [
+                "P143"
+              ]
+            }
+          ]
+        }
+      ],
+      "P2671": [
+        {
+          "mainsnak": {
+            "snaktype": "value",
+            "property": "P2671",
+            "hash": "d1c850d6df9806f17417e58c1cf472048cfe5f44",
+            "datavalue": {
+              "value": "/g/121sx6k4",
+              "type": "string"
+            },
+            "datatype": "external-id"
+          },
+          "type": "statement",
+          "id": "Q2840353$8BEAD2CF-6DA5-4047-8F54-9989A0BC52B3",
+          "rank": "normal"
+        }
+      ]
+    },
+    "sitelinks": {
+      "frwiki": {
+        "site": "frwiki",
+        "title": "Altercation Voltaire-Rohan",
+        "badges": [],
+        "url": "https://fr.wikipedia.org/wiki/Altercation_Voltaire-Rohan"
+      }
+    }
+  }
+}

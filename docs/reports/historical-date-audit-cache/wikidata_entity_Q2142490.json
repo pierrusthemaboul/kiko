@@ -1,0 +1,459 @@
+{
+  "saved_at": "2026-03-07T14:31:47.268Z",
+  "value": {
+    "pageid": 2068333,
+    "ns": 0,
+    "title": "Q2142490",
+    "lastrevid": 2296577876,
+    "modified": "2025-01-09T22:59:45Z",
+    "type": "item",
+    "id": "Q2142490",
+    "labels": {
+      "pt": {
+        "language": "pt",
+        "value": "Termoscópio"
+      },
+      "de": {
+        "language": "de",
+        "value": "Thermoskop"
+      },
+      "fr": {
+        "language": "fr",
+        "value": "Thermoscope"
+      },
+      "en": {
+        "language": "en",
+        "value": "thermoscope"
+      },
+      "es": {
+        "language": "es",
+        "value": "termoscopio"
+      },
+      "ca": {
+        "language": "ca",
+        "value": "termoscopi"
+      },
+      "ru": {
+        "language": "ru",
+        "value": "Термоскоп"
+      },
+      "nl": {
+        "language": "nl",
+        "value": "thermoscoop"
+      },
+      "eo": {
+        "language": "eo",
+        "value": "Termoskopo"
+      },
+      "uk": {
+        "language": "uk",
+        "value": "Термоскоп"
+      },
+      "zh": {
+        "language": "zh",
+        "value": "測溫器"
+      },
+      "ar": {
+        "language": "ar",
+        "value": "مكشاف الحرارة"
+      }
+    },
+    "descriptions": {
+      "nl": {
+        "language": "nl",
+        "value": "instrument om temperaturen te vergelijken"
+      },
+      "en": {
+        "language": "en",
+        "value": "old version of modern thermometer that measures the heat by both temperature and pressure."
+      },
+      "de": {
+        "language": "de",
+        "value": "Gerät"
+      },
+      "fr": {
+        "language": "fr",
+        "value": "instrument de mesure"
+      },
+      "ar": {
+        "language": "ar",
+        "value": "نسخة قديمة من مقياس الحرارة الحديث تقيس الحرارة عن طريق درجة الحرارة والضغط"
+      }
+    },
+    "aliases": {
+      "pt": [
+        {
+          "language": "pt",
+          "value": "Termoscopio"
+        }
+      ],
+      "es": [
+        {
+          "language": "es",
+          "value": "termometro de Galileo"
+        }
+      ]
+    },
+    "claims": {
+      "P646": [
+        {
+          "mainsnak": {
+            "snaktype": "value",
+            "property": "P646",
+            "hash": "b8a9892524964510ac3af71acbab71bb1ad3886a",
+            "datavalue": {
+              "value": "/m/0j28wph",
+              "type": "string"
+            },
+            "datatype": "external-id"
+          },
+          "type": "statement",
+          "id": "Q2142490$9D8E3B79-7F21-4B08-8E33-3E8CC4E9D709",
+          "rank": "normal",
+          "references": [
+            {
+              "hash": "2b00cb481cddcac7623114367489b5c194901c4a",
+              "snaks": {
+                "P248": [
+                  {
+                    "snaktype": "value",
+                    "property": "P248",
+                    "hash": "a94b740202b097dd33355e0e6c00e54b9395e5e0",
+                    "datavalue": {
+                      "value": {
+                        "entity-type": "item",
+                        "numeric-id": 15241312,
+                        "id": "Q15241312"
+                      },
+                      "type": "wikibase-entityid"
+                    },
+                    "datatype": "wikibase-item"
+                  }
+                ],
+                "P577": [
+                  {
+                    "snaktype": "value",
+                    "property": "P577",
+                    "hash": "fde79ecb015112d2f29229ccc1ec514ed3e71fa2",
+                    "datavalue": {
+                      "value": {
+                        "time": "+2013-10-28T00:00:00Z",
+                        "timezone": 0,
+                        "before": 0,
+                        "after": 0,
+                        "precision": 11,
+                        "calendarmodel": "http://www.wikidata.org/entity/Q1985727"
+                      },
+                      "type": "time"
+                    },
+                    "datatype": "time"
+                  }
+                ]
+              },
+              "snaks-order": [
+                "P248",
+                "P577"
+              ]
+            }
+          ]
+        }
+      ],
+      "P373": [
+        {
+          "mainsnak": {
+            "snaktype": "value",
+            "property": "P373",
+            "hash": "1d92216235d440c3e60fe40756d91235fb6f80fc",
+            "datavalue": {
+              "value": "Thermoscopes",
+              "type": "string"
+            },
+            "datatype": "string"
+          },
+          "type": "statement",
+          "id": "Q2142490$D8129581-63D5-4370-B95B-F4E0839F0D7C",
+          "rank": "normal",
+          "references": [
+            {
+              "hash": "fa278ebfc458360e5aed63d5058cca83c46134f1",
+              "snaks": {
+                "P143": [
+                  {
+                    "snaktype": "value",
+                    "property": "P143",
+                    "hash": "e4f6d9441d0600513c4533c672b5ab472dc73694",
+                    "datavalue": {
+                      "value": {
+                        "entity-type": "item",
+                        "numeric-id": 328,
+                        "id": "Q328"
+                      },
+                      "type": "wikibase-entityid"
+                    },
+                    "datatype": "wikibase-item"
+                  }
+                ]
+              },
+              "snaks-order": [
+                "P143"
+              ]
+            }
+          ]
+        }
+      ],
+      "P1014": [
+        {
+          "mainsnak": {
+            "snaktype": "value",
+            "property": "P1014",
+            "hash": "130e2a231b2988800bd4b656a67fd89bd76e6533",
+            "datavalue": {
+              "value": "300204873",
+              "type": "string"
+            },
+            "datatype": "external-id"
+          },
+          "type": "statement",
+          "id": "Q2142490$680DF3A7-E366-48B4-B5C0-E5E4C45056EA",
+          "rank": "normal"
+        }
+      ],
+      "P1296": [
+        {
+          "mainsnak": {
+            "snaktype": "value",
+            "property": "P1296",
+            "hash": "09f927f5f8e9db5106ebf07772738facdf2732bf",
+            "datavalue": {
+              "value": "0145875",
+              "type": "string"
+            },
+            "datatype": "external-id"
+          },
+          "type": "statement",
+          "id": "Q2142490$67D4E4DC-7C24-474F-A10D-5401C447C3ED",
+          "rank": "normal"
+        }
+      ],
+      "P7749": [
+        {
+          "mainsnak": {
+            "snaktype": "value",
+            "property": "P7749",
+            "hash": "3152ff0d9ce3b5337870c785cdcb4d10877a1de0",
+            "datavalue": {
+              "value": "10256",
+              "type": "string"
+            },
+            "datatype": "external-id"
+          },
+          "type": "statement",
+          "id": "Q2142490$68D3E7EB-67E4-4AC3-A4ED-F9F185A49524",
+          "rank": "normal"
+        }
+      ],
+      "P6366": [
+        {
+          "mainsnak": {
+            "snaktype": "value",
+            "property": "P6366",
+            "hash": "65c198014562b1f5884e9d909b5d305c867988a8",
+            "datavalue": {
+              "value": "194298174",
+              "type": "string"
+            },
+            "datatype": "external-id"
+          },
+          "type": "statement",
+          "id": "Q2142490$01438B66-FC07-4203-BDA3-695652C30D7A",
+          "rank": "normal"
+        }
+      ],
+      "P18": [
+        {
+          "mainsnak": {
+            "snaktype": "value",
+            "property": "P18",
+            "hash": "dfdd20b0534741396681687923be2d8c1bbdfec0",
+            "datavalue": {
+              "value": "Musée des Arts et Métiers thermoscope de galilée 1592.JPG",
+              "type": "string"
+            },
+            "datatype": "commonsMedia"
+          },
+          "type": "statement",
+          "qualifiers": {
+            "P2096": [
+              {
+                "snaktype": "value",
+                "property": "P2096",
+                "hash": "0468d8c239663d9490abba810b76aa82586d0b1b",
+                "datavalue": {
+                  "value": {
+                    "text": "Montage démonstratif d'un thermoscope de Galilée au [[Musée des Arts et Métiers]] de Paris.",
+                    "language": "fr"
+                  },
+                  "type": "monolingualtext"
+                },
+                "datatype": "monolingualtext"
+              }
+            ]
+          },
+          "qualifiers-order": [
+            "P2096"
+          ],
+          "id": "Q2142490$bdf932db-4c2f-ae97-eea2-0995f554fccd",
+          "rank": "normal"
+        }
+      ],
+      "P61": [
+        {
+          "mainsnak": {
+            "snaktype": "value",
+            "property": "P61",
+            "hash": "b6b3f674907f88badc90fc7f8ef2bee05605c82a",
+            "datavalue": {
+              "value": {
+                "entity-type": "item",
+                "numeric-id": 334570,
+                "id": "Q334570"
+              },
+              "type": "wikibase-entityid"
+            },
+            "datatype": "wikibase-item"
+          },
+          "type": "statement",
+          "id": "Q2142490$7d4001b7-4866-fcfe-2999-b8c3d46aef31",
+          "rank": "normal"
+        }
+      ],
+      "P279": [
+        {
+          "mainsnak": {
+            "snaktype": "value",
+            "property": "P279",
+            "hash": "ba0a8f7b328b66c4e400f935de8e8b0e39e7a8b8",
+            "datavalue": {
+              "value": {
+                "entity-type": "item",
+                "numeric-id": 2041172,
+                "id": "Q2041172"
+              },
+              "type": "wikibase-entityid"
+            },
+            "datatype": "wikibase-item"
+          },
+          "type": "statement",
+          "id": "Q2142490$1250922e-4cde-9cfc-d80e-93bf0e5f7203",
+          "rank": "normal"
+        }
+      ],
+      "P366": [
+        {
+          "mainsnak": {
+            "snaktype": "value",
+            "property": "P366",
+            "hash": "bbb976acf9aba94b44647a8c5ffb05c4c9df9fa3",
+            "datavalue": {
+              "value": {
+                "entity-type": "item",
+                "numeric-id": 909741,
+                "id": "Q909741"
+              },
+              "type": "wikibase-entityid"
+            },
+            "datatype": "wikibase-item"
+          },
+          "type": "statement",
+          "id": "Q2142490$dcea7438-4423-5de8-bec2-89b12d81c15e",
+          "rank": "normal"
+        }
+      ],
+      "P12385": [
+        {
+          "mainsnak": {
+            "snaktype": "value",
+            "property": "P12385",
+            "hash": "e25f23b1752562cbc9b90217afa0ea999d1a697d",
+            "datavalue": {
+              "value": "termoscopi",
+              "type": "string"
+            },
+            "datatype": "external-id"
+          },
+          "type": "statement",
+          "id": "Q2142490$35b94cf1-7203-430d-b742-8a838c84f942",
+          "rank": "normal"
+        }
+      ]
+    },
+    "sitelinks": {
+      "cawiki": {
+        "site": "cawiki",
+        "title": "Termoscopi",
+        "badges": [],
+        "url": "https://ca.wikipedia.org/wiki/Termoscopi"
+      },
+      "commonswiki": {
+        "site": "commonswiki",
+        "title": "Category:Thermoscopes",
+        "badges": [],
+        "url": "https://commons.wikimedia.org/wiki/Category:Thermoscopes"
+      },
+      "dewiki": {
+        "site": "dewiki",
+        "title": "Thermoskop",
+        "badges": [],
+        "url": "https://de.wikipedia.org/wiki/Thermoskop"
+      },
+      "enwiki": {
+        "site": "enwiki",
+        "title": "Thermoscope",
+        "badges": [],
+        "url": "https://en.wikipedia.org/wiki/Thermoscope"
+      },
+      "eowiki": {
+        "site": "eowiki",
+        "title": "Termoskopo",
+        "badges": [],
+        "url": "https://eo.wikipedia.org/wiki/Termoskopo"
+      },
+      "eswiki": {
+        "site": "eswiki",
+        "title": "Termoscopio",
+        "badges": [],
+        "url": "https://es.wikipedia.org/wiki/Termoscopio"
+      },
+      "frwiki": {
+        "site": "frwiki",
+        "title": "Thermoscope",
+        "badges": [],
+        "url": "https://fr.wikipedia.org/wiki/Thermoscope"
+      },
+      "nlwiki": {
+        "site": "nlwiki",
+        "title": "Thermoscoop",
+        "badges": [],
+        "url": "https://nl.wikipedia.org/wiki/Thermoscoop"
+      },
+      "ptwiki": {
+        "site": "ptwiki",
+        "title": "Termoscópio",
+        "badges": [],
+        "url": "https://pt.wikipedia.org/wiki/Termosc%C3%B3pio"
+      },
+      "ruwiki": {
+        "site": "ruwiki",
+        "title": "Термоскоп",
+        "badges": [],
+        "url": "https://ru.wikipedia.org/wiki/%D0%A2%D0%B5%D1%80%D0%BC%D0%BE%D1%81%D0%BA%D0%BE%D0%BF"
+      },
+      "ukwiki": {
+        "site": "ukwiki",
+        "title": "Термоскоп",
+        "badges": [],
+        "url": "https://uk.wikipedia.org/wiki/%D0%A2%D0%B5%D1%80%D0%BC%D0%BE%D1%81%D0%BA%D0%BE%D0%BF"
+      }
+    }
+  }
+}

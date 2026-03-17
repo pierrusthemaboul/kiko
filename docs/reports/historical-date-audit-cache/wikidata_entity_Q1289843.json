@@ -1,0 +1,491 @@
+{
+  "saved_at": "2026-03-07T16:50:21.085Z",
+  "value": {
+    "pageid": 1230250,
+    "ns": 0,
+    "title": "Q1289843",
+    "lastrevid": 2347523533,
+    "modified": "2025-05-11T19:08:29Z",
+    "type": "item",
+    "id": "Q1289843",
+    "labels": {
+      "de": {
+        "language": "de",
+        "value": "Schlacht von Placentia"
+      },
+      "pl": {
+        "language": "pl",
+        "value": "Bitwa pod Piacenzą"
+      },
+      "fa": {
+        "language": "fa",
+        "value": "نبرد پلاچنتیا"
+      },
+      "bg": {
+        "language": "bg",
+        "value": "Битка при Плаценция"
+      },
+      "sh": {
+        "language": "sh",
+        "value": "Bitka kod Placentije"
+      },
+      "en": {
+        "language": "en",
+        "value": "Battle of Placentia"
+      },
+      "lmo": {
+        "language": "lmo",
+        "value": "Battaglia de Piasenza"
+      },
+      "nl": {
+        "language": "nl",
+        "value": "Slag bij Placentia"
+      },
+      "it": {
+        "language": "it",
+        "value": "battaglia di Piacenza"
+      },
+      "pt": {
+        "language": "pt",
+        "value": "Batalha de Placência"
+      },
+      "ja": {
+        "language": "ja",
+        "value": "プラセンティアの戦い (271年)"
+      },
+      "es": {
+        "language": "es",
+        "value": "batalla de Placentia"
+      },
+      "azb": {
+        "language": "azb",
+        "value": "پلاچنتیا دؤیوشو"
+      },
+      "cs": {
+        "language": "cs",
+        "value": "bitva u Placentie"
+      },
+      "yo": {
+        "language": "yo",
+        "value": "ogun Placentia"
+      },
+      "fr": {
+        "language": "fr",
+        "value": "bataille de Plaisance"
+      },
+      "ga": {
+        "language": "ga",
+        "value": "Cath Placentia"
+      },
+      "sl": {
+        "language": "sl",
+        "value": "Bitka pri Placentiji"
+      }
+    },
+    "descriptions": {
+      "nl": {
+        "language": "nl",
+        "value": "271"
+      },
+      "en": {
+        "language": "en",
+        "value": "bitka med rimsko-germanskimi vojnami (271)"
+      },
+      "es": {
+        "language": "es",
+        "value": "batalla de las guerras germánicas (271)"
+      },
+      "cs": {
+        "language": "cs",
+        "value": "bitva mezi Římany a Juthungy z roku 271"
+      },
+      "yo": {
+        "language": "yo",
+        "value": "ogun"
+      },
+      "pt": {
+        "language": "pt",
+        "value": "La batalla de Piacenza se libró en 271 entre las fuerzas del Imperio Romano dirigidas por el emperador Aureliano y los juthungs, una tribu germánica cerca de la moderna ciudad italiana de Piacenza"
+      },
+      "fr": {
+        "language": "fr",
+        "value": "bataille entre les Romains et les Juthunges près de Plaisance en 271"
+      }
+    },
+    "aliases": {
+      "lmo": [
+        {
+          "language": "lmo",
+          "value": "Bataja de Piasenza"
+        }
+      ]
+    },
+    "claims": {
+      "P646": [
+        {
+          "mainsnak": {
+            "snaktype": "value",
+            "property": "P646",
+            "hash": "4460b7aecf8483bbf796b5abba0082bba5bb34cf",
+            "datavalue": {
+              "value": "/m/08sx2m",
+              "type": "string"
+            },
+            "datatype": "external-id"
+          },
+          "type": "statement",
+          "id": "Q1289843$C8EAC869-BFFE-46BF-B9D6-23F4CA599F80",
+          "rank": "normal",
+          "references": [
+            {
+              "hash": "2b00cb481cddcac7623114367489b5c194901c4a",
+              "snaks": {
+                "P248": [
+                  {
+                    "snaktype": "value",
+                    "property": "P248",
+                    "hash": "a94b740202b097dd33355e0e6c00e54b9395e5e0",
+                    "datavalue": {
+                      "value": {
+                        "entity-type": "item",
+                        "numeric-id": 15241312,
+                        "id": "Q15241312"
+                      },
+                      "type": "wikibase-entityid"
+                    },
+                    "datatype": "wikibase-item"
+                  }
+                ],
+                "P577": [
+                  {
+                    "snaktype": "value",
+                    "property": "P577",
+                    "hash": "fde79ecb015112d2f29229ccc1ec514ed3e71fa2",
+                    "datavalue": {
+                      "value": {
+                        "time": "+2013-10-28T00:00:00Z",
+                        "timezone": 0,
+                        "before": 0,
+                        "after": 0,
+                        "precision": 11,
+                        "calendarmodel": "http://www.wikidata.org/entity/Q1985727"
+                      },
+                      "type": "time"
+                    },
+                    "datatype": "time"
+                  }
+                ]
+              },
+              "snaks-order": [
+                "P248",
+                "P577"
+              ]
+            }
+          ]
+        }
+      ],
+      "P625": [
+        {
+          "mainsnak": {
+            "snaktype": "value",
+            "property": "P625",
+            "hash": "c5bdd21e6f6daf53355010bbfe4b37c6de30e5af",
+            "datavalue": {
+              "value": {
+                "latitude": 45.05,
+                "longitude": 9.7,
+                "altitude": null,
+                "precision": 0.01271519752416,
+                "globe": "http://www.wikidata.org/entity/Q2"
+              },
+              "type": "globecoordinate"
+            },
+            "datatype": "globe-coordinate"
+          },
+          "type": "statement",
+          "id": "Q1289843$F4983EC7-1B9D-4560-93A1-91F773E813D6",
+          "rank": "normal",
+          "references": [
+            {
+              "hash": "fa278ebfc458360e5aed63d5058cca83c46134f1",
+              "snaks": {
+                "P143": [
+                  {
+                    "snaktype": "value",
+                    "property": "P143",
+                    "hash": "e4f6d9441d0600513c4533c672b5ab472dc73694",
+                    "datavalue": {
+                      "value": {
+                        "entity-type": "item",
+                        "numeric-id": 328,
+                        "id": "Q328"
+                      },
+                      "type": "wikibase-entityid"
+                    },
+                    "datatype": "wikibase-item"
+                  }
+                ]
+              },
+              "snaks-order": [
+                "P143"
+              ]
+            }
+          ]
+        }
+      ],
+      "P31": [
+        {
+          "mainsnak": {
+            "snaktype": "value",
+            "property": "P31",
+            "hash": "baa1df9dcd37b9f3a062e7a14a8bef0c37078d32",
+            "datavalue": {
+              "value": {
+                "entity-type": "item",
+                "numeric-id": 178561,
+                "id": "Q178561"
+              },
+              "type": "wikibase-entityid"
+            },
+            "datatype": "wikibase-item"
+          },
+          "type": "statement",
+          "id": "Q1289843$D22670C7-67D2-48AA-BD58-FCB86A71CE25",
+          "rank": "normal"
+        }
+      ],
+      "P361": [
+        {
+          "mainsnak": {
+            "snaktype": "value",
+            "property": "P361",
+            "hash": "84e93071d373c576fed0bf0c49ff61abbe2aab2d",
+            "datavalue": {
+              "value": {
+                "entity-type": "item",
+                "numeric-id": 1516956,
+                "id": "Q1516956"
+              },
+              "type": "wikibase-entityid"
+            },
+            "datatype": "wikibase-item"
+          },
+          "type": "statement",
+          "id": "Q1289843$E479D1AE-CF95-4A53-AB81-9AD8FFAD3CAA",
+          "rank": "normal"
+        },
+        {
+          "mainsnak": {
+            "snaktype": "value",
+            "property": "P361",
+            "hash": "a29b3780781c273bd55bb64502397abfa5f2dbc1",
+            "datavalue": {
+              "value": {
+                "entity-type": "item",
+                "numeric-id": 116860805,
+                "id": "Q116860805"
+              },
+              "type": "wikibase-entityid"
+            },
+            "datatype": "wikibase-item"
+          },
+          "type": "statement",
+          "id": "Q1289843$4ecbd473-4770-0be2-a20a-10f7117e241e",
+          "rank": "normal"
+        }
+      ],
+      "P585": [
+        {
+          "mainsnak": {
+            "snaktype": "value",
+            "property": "P585",
+            "hash": "47ad60b0254f0ba296ea77b3a4a95483fe08a2c3",
+            "datavalue": {
+              "value": {
+                "time": "+0271-00-00T00:00:00Z",
+                "timezone": 0,
+                "before": 0,
+                "after": 0,
+                "precision": 9,
+                "calendarmodel": "http://www.wikidata.org/entity/Q1985786"
+              },
+              "type": "time"
+            },
+            "datatype": "time"
+          },
+          "type": "statement",
+          "id": "Q1289843$b21acd9b-4771-0eee-d0fd-58c4000d7e0b",
+          "rank": "normal"
+        }
+      ],
+      "P276": [
+        {
+          "mainsnak": {
+            "snaktype": "value",
+            "property": "P276",
+            "hash": "841e6b4073b48ae2f20e5b88753dba51ef96e3a7",
+            "datavalue": {
+              "value": {
+                "entity-type": "item",
+                "numeric-id": 13329,
+                "id": "Q13329"
+              },
+              "type": "wikibase-entityid"
+            },
+            "datatype": "wikibase-item"
+          },
+          "type": "statement",
+          "id": "Q1289843$AFAB3B8A-6207-45D8-A8C3-8D2D4C9E442D",
+          "rank": "normal"
+        }
+      ],
+      "P710": [
+        {
+          "mainsnak": {
+            "snaktype": "value",
+            "property": "P710",
+            "hash": "365da9944bef318e4acb9591ec76e1712ae59f5a",
+            "datavalue": {
+              "value": {
+                "entity-type": "item",
+                "numeric-id": 1747689,
+                "id": "Q1747689"
+              },
+              "type": "wikibase-entityid"
+            },
+            "datatype": "wikibase-item"
+          },
+          "type": "statement",
+          "id": "Q1289843$FA5F4922-E9B6-4692-B73D-101A1CAF04B6",
+          "rank": "normal"
+        },
+        {
+          "mainsnak": {
+            "snaktype": "value",
+            "property": "P710",
+            "hash": "0b3952b09d459190a8cfeac52e6bb5b5a87f962f",
+            "datavalue": {
+              "value": {
+                "entity-type": "item",
+                "numeric-id": 378382,
+                "id": "Q378382"
+              },
+              "type": "wikibase-entityid"
+            },
+            "datatype": "wikibase-item"
+          },
+          "type": "statement",
+          "id": "Q1289843$70d99246-4a64-1379-d632-0324a394f09f",
+          "rank": "normal"
+        }
+      ],
+      "P17": [
+        {
+          "mainsnak": {
+            "snaktype": "value",
+            "property": "P17",
+            "hash": "b48529e9f7e0898ab1ddaefe8547cdb863e0167c",
+            "datavalue": {
+              "value": {
+                "entity-type": "item",
+                "numeric-id": 38,
+                "id": "Q38"
+              },
+              "type": "wikibase-entityid"
+            },
+            "datatype": "wikibase-item"
+          },
+          "type": "statement",
+          "id": "Q1289843$674B2EE0-A73C-4AEC-B7B4-4465062476CC",
+          "rank": "normal"
+        }
+      ]
+    },
+    "sitelinks": {
+      "azbwiki": {
+        "site": "azbwiki",
+        "title": "پلاچنتیا دؤیوشو (۲۷۱)",
+        "badges": [],
+        "url": "https://azb.wikipedia.org/wiki/%D9%BE%D9%84%D8%A7%DA%86%D9%86%D8%AA%DB%8C%D8%A7_%D8%AF%D8%A4%DB%8C%D9%88%D8%B4%D9%88_(%DB%B2%DB%B7%DB%B1)"
+      },
+      "bgwiki": {
+        "site": "bgwiki",
+        "title": "Битка при Плаценция (271)",
+        "badges": [],
+        "url": "https://bg.wikipedia.org/wiki/%D0%91%D0%B8%D1%82%D0%BA%D0%B0_%D0%BF%D1%80%D0%B8_%D0%9F%D0%BB%D0%B0%D1%86%D0%B5%D0%BD%D1%86%D0%B8%D1%8F_(271)"
+      },
+      "dewiki": {
+        "site": "dewiki",
+        "title": "Schlacht von Placentia",
+        "badges": [],
+        "url": "https://de.wikipedia.org/wiki/Schlacht_von_Placentia"
+      },
+      "enwiki": {
+        "site": "enwiki",
+        "title": "Battle of Placentia (271)",
+        "badges": [],
+        "url": "https://en.wikipedia.org/wiki/Battle_of_Placentia_(271)"
+      },
+      "eswiki": {
+        "site": "eswiki",
+        "title": "Batalla de Placentia",
+        "badges": [],
+        "url": "https://es.wikipedia.org/wiki/Batalla_de_Placentia"
+      },
+      "fawiki": {
+        "site": "fawiki",
+        "title": "نبرد پلاچنتیا",
+        "badges": [],
+        "url": "https://fa.wikipedia.org/wiki/%D9%86%D8%A8%D8%B1%D8%AF_%D9%BE%D9%84%D8%A7%DA%86%D9%86%D8%AA%DB%8C%D8%A7"
+      },
+      "frwiki": {
+        "site": "frwiki",
+        "title": "Bataille de Plaisance (271)",
+        "badges": [],
+        "url": "https://fr.wikipedia.org/wiki/Bataille_de_Plaisance_(271)"
+      },
+      "itwiki": {
+        "site": "itwiki",
+        "title": "Battaglia di Piacenza (271)",
+        "badges": [],
+        "url": "https://it.wikipedia.org/wiki/Battaglia_di_Piacenza_(271)"
+      },
+      "lmowiki": {
+        "site": "lmowiki",
+        "title": "Battaglia de Piasenza (271)",
+        "badges": [],
+        "url": "https://lmo.wikipedia.org/wiki/Battaglia_de_Piasenza_(271)"
+      },
+      "nlwiki": {
+        "site": "nlwiki",
+        "title": "Slag bij Placentia (271)",
+        "badges": [],
+        "url": "https://nl.wikipedia.org/wiki/Slag_bij_Placentia_(271)"
+      },
+      "plwiki": {
+        "site": "plwiki",
+        "title": "Bitwa pod Placentią",
+        "badges": [],
+        "url": "https://pl.wikipedia.org/wiki/Bitwa_pod_Placenti%C4%85"
+      },
+      "ptwiki": {
+        "site": "ptwiki",
+        "title": "Batalha de Placência (271)",
+        "badges": [],
+        "url": "https://pt.wikipedia.org/wiki/Batalha_de_Plac%C3%AAncia_(271)"
+      },
+      "shwiki": {
+        "site": "shwiki",
+        "title": "Bitka kod Placentije",
+        "badges": [],
+        "url": "https://sh.wikipedia.org/wiki/Bitka_kod_Placentije"
+      },
+      "slwiki": {
+        "site": "slwiki",
+        "title": "Bitka pri Placentiji",
+        "badges": [],
+        "url": "https://sl.wikipedia.org/wiki/Bitka_pri_Placentiji"
+      }
+    }
+  }
+}

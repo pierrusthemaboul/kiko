@@ -23,3 +23,4 @@ console.log(`d1: ${d1}, d2: ${d2}, diff: ${getTimeDifference(d1, d2)}`);
 const d3 = '1789-07-14';
 const d4 = '1789-07-14';
 console.log(`d3: ${d3}, d4: ${d4}, diff: ${getTimeDifference(d3, d4)}`);
+

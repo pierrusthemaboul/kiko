@@ -1,0 +1,1100 @@
+{
+  "saved_at": "2026-03-07T13:49:17.844Z",
+  "value": {
+    "pageid": 1040361,
+    "ns": 0,
+    "title": "Q1092673",
+    "lastrevid": 2393215425,
+    "modified": "2025-08-17T06:24:18Z",
+    "type": "item",
+    "id": "Q1092673",
+    "labels": {
+      "ru": {
+        "language": "ru",
+        "value": "Чомпи"
+      },
+      "fr": {
+        "language": "fr",
+        "value": "Ciompi"
+      },
+      "bg": {
+        "language": "bg",
+        "value": "Чомпи"
+      },
+      "zh": {
+        "language": "zh",
+        "value": "梳毛工起义"
+      },
+      "de": {
+        "language": "de",
+        "value": "Ciompi-Aufstand"
+      },
+      "it": {
+        "language": "it",
+        "value": "tumulto dei Ciompi"
+      },
+      "ar": {
+        "language": "ar",
+        "value": "تشيومبي"
+      },
+      "en": {
+        "language": "en",
+        "value": "Ciompi Revolt"
+      },
+      "ja": {
+        "language": "ja",
+        "value": "チョンピの乱"
+      },
+      "es": {
+        "language": "es",
+        "value": "Ciompi"
+      },
+      "he": {
+        "language": "he",
+        "value": "מהפכת כפכפי העץ"
+      },
+      "nl": {
+        "language": "nl",
+        "value": "Ciompi"
+      },
+      "pl": {
+        "language": "pl",
+        "value": "bunt Ciompich"
+      },
+      "eo": {
+        "language": "eo",
+        "value": "Ligna pantofla revolucio (1378)"
+      },
+      "pt": {
+        "language": "pt",
+        "value": "Revolta dos ciompis"
+      },
+      "tr": {
+        "language": "tr",
+        "value": "Ciompi İsyanı"
+      },
+      "ca": {
+        "language": "ca",
+        "value": "Ciompi"
+      },
+      "ko": {
+        "language": "ko",
+        "value": "치옴피 반란"
+      }
+    },
+    "descriptions": {
+      "pl": {
+        "language": "pl",
+        "value": "powstanie robotników we Florencji w 1378, domagających się praw wyborczych"
+      },
+      "it": {
+        "language": "it",
+        "value": "rivolta popolare avvenuta a Firenze nel 1378"
+      },
+      "ru": {
+        "language": "ru",
+        "value": "наёмные рабочие сукнодельческих мануфактур во Флоренци"
+      },
+      "en": {
+        "language": "en",
+        "value": "14th century rebellion in Florence, Italy"
+      },
+      "de": {
+        "language": "de",
+        "value": "war eine kurze erfolgreiche Erhebung der rechtlosen Unterklasse (popolo minuto) Florenz’ in den Sommermonaten des Jahres 1378"
+      }
+    },
+    "aliases": {
+      "ru": [
+        {
+          "language": "ru",
+          "value": "Восстание чомпи"
+        }
+      ],
+      "it": [
+        {
+          "language": "it",
+          "value": "Ciompi"
+        },
+        {
+          "language": "it",
+          "value": "rivolta dei Ciompi"
+        }
+      ],
+      "de": [
+        {
+          "language": "de",
+          "value": "Aufstand der Ciompi"
+        }
+      ],
+      "en": [
+        {
+          "language": "en",
+          "value": "Ciompi"
+        }
+      ],
+      "pl": [
+        {
+          "language": "pl",
+          "value": "powstanie Ciompich"
+        }
+      ]
+    },
+    "claims": {
+      "P508": [
+        {
+          "mainsnak": {
+            "snaktype": "value",
+            "property": "P508",
+            "hash": "39490419db4754fa2495c0105a43c7d9798f1c38",
+            "datavalue": {
+              "value": "29791",
+              "type": "string"
+            },
+            "datatype": "external-id"
+          },
+          "type": "statement",
+          "qualifiers": {
+            "P1810": [
+              {
+                "snaktype": "value",
+                "property": "P1810",
+                "hash": "bd31cffa90777bef3e64ff97a3662867f2ef66c8",
+                "datavalue": {
+                  "value": "Tumulto dei Ciompi <1378>",
+                  "type": "string"
+                },
+                "datatype": "string"
+              }
+            ]
+          },
+          "qualifiers-order": [
+            "P1810"
+          ],
+          "id": "q1092673$2E0680EE-B90D-4A0E-B36D-430A8844CD78",
+          "rank": "normal",
+          "references": [
+            {
+              "hash": "ff65511d37e885bcf005b99c2241192548c3f03a",
+              "snaks": {
+                "P248": [
+                  {
+                    "snaktype": "value",
+                    "property": "P248",
+                    "hash": "3b090a7bae73c288393b2c8b9846cc7ed9a58f91",
+                    "datavalue": {
+                      "value": {
+                        "entity-type": "item",
+                        "numeric-id": 16583225,
+                        "id": "Q16583225"
+                      },
+                      "type": "wikibase-entityid"
+                    },
+                    "datatype": "wikibase-item"
+                  }
+                ]
+              },
+              "snaks-order": [
+                "P248"
+              ]
+            }
+          ]
+        }
+      ],
+      "P646": [
+        {
+          "mainsnak": {
+            "snaktype": "value",
+            "property": "P646",
+            "hash": "cbc71aa5a3364ffc119b59c6d4bb610048ab61ae",
+            "datavalue": {
+              "value": "/m/045tdd",
+              "type": "string"
+            },
+            "datatype": "external-id"
+          },
+          "type": "statement",
+          "id": "Q1092673$D30ACD6E-9392-481B-93CB-E874C8CF880F",
+          "rank": "normal",
+          "references": [
+            {
+              "hash": "2b00cb481cddcac7623114367489b5c194901c4a",
+              "snaks": {
+                "P248": [
+                  {
+                    "snaktype": "value",
+                    "property": "P248",
+                    "hash": "a94b740202b097dd33355e0e6c00e54b9395e5e0",
+                    "datavalue": {
+                      "value": {
+                        "entity-type": "item",
+                        "numeric-id": 15241312,
+                        "id": "Q15241312"
+                      },
+                      "type": "wikibase-entityid"
+                    },
+                    "datatype": "wikibase-item"
+                  }
+                ],
+                "P577": [
+                  {
+                    "snaktype": "value",
+                    "property": "P577",
+                    "hash": "fde79ecb015112d2f29229ccc1ec514ed3e71fa2",
+                    "datavalue": {
+                      "value": {
+                        "time": "+2013-10-28T00:00:00Z",
+                        "timezone": 0,
+                        "before": 0,
+                        "after": 0,
+                        "precision": 11,
+                        "calendarmodel": "http://www.wikidata.org/entity/Q1985727"
+                      },
+                      "type": "time"
+                    },
+                    "datatype": "time"
+                  }
+                ]
+              },
+              "snaks-order": [
+                "P248",
+                "P577"
+              ]
+            }
+          ]
+        }
+      ],
+      "P31": [
+        {
+          "mainsnak": {
+            "snaktype": "value",
+            "property": "P31",
+            "hash": "68dd031d78296739bf49dfd8e3ae2e2d5215a69d",
+            "datavalue": {
+              "value": {
+                "entity-type": "item",
+                "numeric-id": 6107280,
+                "id": "Q6107280"
+              },
+              "type": "wikibase-entityid"
+            },
+            "datatype": "wikibase-item"
+          },
+          "type": "statement",
+          "id": "Q1092673$b613c9ef-4abf-98a4-38cd-ca9da61daf2a",
+          "rank": "normal"
+        }
+      ],
+      "P1417": [
+        {
+          "mainsnak": {
+            "snaktype": "value",
+            "property": "P1417",
+            "hash": "325bad81bce2b45979bc3b8d6f95d5a650529cd5",
+            "datavalue": {
+              "value": "event/Revolt-of-the-Ciompi",
+              "type": "string"
+            },
+            "datatype": "external-id"
+          },
+          "type": "statement",
+          "qualifiers": {
+            "P1810": [
+              {
+                "snaktype": "value",
+                "property": "P1810",
+                "hash": "388988d14ae07c91fa675b6c39aef60a5cfc404d",
+                "datavalue": {
+                  "value": "Revolt of the Ciompi",
+                  "type": "string"
+                },
+                "datatype": "string"
+              }
+            ]
+          },
+          "qualifiers-order": [
+            "P1810"
+          ],
+          "id": "Q1092673$98A1CDF4-C70C-4C03-8E37-D43D26DA546B",
+          "rank": "normal"
+        }
+      ],
+      "P244": [
+        {
+          "mainsnak": {
+            "snaktype": "value",
+            "property": "P244",
+            "hash": "081e1c74bf7af4bbb457cf819a07e17891cdc5fd",
+            "datavalue": {
+              "value": "sh85026040",
+              "type": "string"
+            },
+            "datatype": "external-id"
+          },
+          "type": "statement",
+          "id": "Q1092673$D21D2927-E8F9-4CAC-8C39-F3E900142FF1",
+          "rank": "normal",
+          "references": [
+            {
+              "hash": "ac5d47e9fbcc281bc0d27a205ae02e22ad24ce31",
+              "snaks": {
+                "P854": [
+                  {
+                    "snaktype": "value",
+                    "property": "P854",
+                    "hash": "b560dc6b281a39d061e189d2eb299a426a06f1a2",
+                    "datavalue": {
+                      "value": "https://github.com/JohnMarkOckerbloom/ftl/blob/master/data/wikimap",
+                      "type": "string"
+                    },
+                    "datatype": "url"
+                  }
+                ],
+                "P813": [
+                  {
+                    "snaktype": "value",
+                    "property": "P813",
+                    "hash": "0dcf4f64e93fdcc654e2c7534285881fe48b9f3d",
+                    "datavalue": {
+                      "value": {
+                        "time": "+2019-04-03T00:00:00Z",
+                        "timezone": 0,
+                        "before": 0,
+                        "after": 0,
+                        "precision": 11,
+                        "calendarmodel": "http://www.wikidata.org/entity/Q1985727"
+                      },
+                      "type": "time"
+                    },
+                    "datatype": "time"
+                  }
+                ]
+              },
+              "snaks-order": [
+                "P854",
+                "P813"
+              ]
+            }
+          ]
+        }
+      ],
+      "P131": [
+        {
+          "mainsnak": {
+            "snaktype": "value",
+            "property": "P131",
+            "hash": "592dce84ec4a20367daa3ee359d038069a964bc4",
+            "datavalue": {
+              "value": {
+                "entity-type": "item",
+                "numeric-id": 2044,
+                "id": "Q2044"
+              },
+              "type": "wikibase-entityid"
+            },
+            "datatype": "wikibase-item"
+          },
+          "type": "statement",
+          "id": "Q1092673$7f26845d-57a9-4dde-bb0f-76b1a1b5f50a",
+          "rank": "normal"
+        }
+      ],
+      "P17": [
+        {
+          "mainsnak": {
+            "snaktype": "value",
+            "property": "P17",
+            "hash": "4efd78df9be7ed7040f562455c2a4832ed6ff6a4",
+            "datavalue": {
+              "value": {
+                "entity-type": "item",
+                "numeric-id": 148540,
+                "id": "Q148540"
+              },
+              "type": "wikibase-entityid"
+            },
+            "datatype": "wikibase-item"
+          },
+          "type": "statement",
+          "id": "Q1092673$e3e36867-a6c7-4709-b960-c5b0da7fc108",
+          "rank": "normal"
+        }
+      ],
+      "P6404": [
+        {
+          "mainsnak": {
+            "snaktype": "value",
+            "property": "P6404",
+            "hash": "d8463fceba77ab86a6c6d0eede18bf212033e086",
+            "datavalue": {
+              "value": "tumulto-dei-ciompi",
+              "type": "string"
+            },
+            "datatype": "external-id"
+          },
+          "type": "statement",
+          "qualifiers": {
+            "P1810": [
+              {
+                "snaktype": "value",
+                "property": "P1810",
+                "hash": "cc604de699e1ef415c74ad5d6998c5a6b55e2923",
+                "datavalue": {
+                  "value": "Ciompi, tumulto dei",
+                  "type": "string"
+                },
+                "datatype": "string"
+              }
+            ],
+            "P577": [
+              {
+                "snaktype": "value",
+                "property": "P577",
+                "hash": "ee04033b93df56fec66997b219da63168dc08e80",
+                "datavalue": {
+                  "value": {
+                    "time": "+2010-01-01T00:00:00Z",
+                    "timezone": 0,
+                    "before": 0,
+                    "after": 0,
+                    "precision": 9,
+                    "calendarmodel": "http://www.wikidata.org/entity/Q1985727"
+                  },
+                  "type": "time"
+                },
+                "datatype": "time"
+              }
+            ]
+          },
+          "qualifiers-order": [
+            "P1810",
+            "P577"
+          ],
+          "id": "Q1092673$95CE20AF-5315-4B43-812A-79E0FD31A4D8",
+          "rank": "normal",
+          "references": [
+            {
+              "hash": "a33ca88435490246c1a797dbf545b93be9d6f471",
+              "snaks": {
+                "P248": [
+                  {
+                    "snaktype": "value",
+                    "property": "P248",
+                    "hash": "9b8ff7c54d58c85b0290abf7762621f6a059b3cf",
+                    "datavalue": {
+                      "value": {
+                        "entity-type": "item",
+                        "numeric-id": 84087675,
+                        "id": "Q84087675"
+                      },
+                      "type": "wikibase-entityid"
+                    },
+                    "datatype": "wikibase-item"
+                  }
+                ],
+                "P813": [
+                  {
+                    "snaktype": "value",
+                    "property": "P813",
+                    "hash": "421132a8763cbcb17b1a6dbf30e607ded0f8b238",
+                    "datavalue": {
+                      "value": {
+                        "time": "+2021-12-10T00:00:00Z",
+                        "timezone": 0,
+                        "before": 0,
+                        "after": 0,
+                        "precision": 11,
+                        "calendarmodel": "http://www.wikidata.org/entity/Q1985727"
+                      },
+                      "type": "time"
+                    },
+                    "datatype": "time"
+                  }
+                ]
+              },
+              "snaks-order": [
+                "P248",
+                "P813"
+              ]
+            }
+          ]
+        }
+      ],
+      "P2924": [
+        {
+          "mainsnak": {
+            "snaktype": "value",
+            "property": "P2924",
+            "hash": "d6be3997b4a54d5e5e86d1c3c6e58f374c509e95",
+            "datavalue": {
+              "value": "4687829",
+              "type": "string"
+            },
+            "datatype": "external-id"
+          },
+          "type": "statement",
+          "qualifiers": {
+            "P1810": [
+              {
+                "snaktype": "value",
+                "property": "P1810",
+                "hash": "e93d6a2b05eb97a0fe72a0d8ce2c6fd94ed4b780",
+                "datavalue": {
+                  "value": "ЧОМПИ",
+                  "type": "string"
+                },
+                "datatype": "string"
+              }
+            ]
+          },
+          "qualifiers-order": [
+            "P1810"
+          ],
+          "id": "Q1092673$0c76cf97-4327-0494-0043-482784ab0912",
+          "rank": "normal"
+        }
+      ],
+      "P7982": [
+        {
+          "mainsnak": {
+            "snaktype": "value",
+            "property": "P7982",
+            "hash": "b3a4c6411384d0b09ff075c9b2b103fa3746f0c2",
+            "datavalue": {
+              "value": "11905",
+              "type": "string"
+            },
+            "datatype": "external-id"
+          },
+          "type": "statement",
+          "id": "Q1092673$753ECEF7-1FF2-470F-B372-C8DF3C92B38A",
+          "rank": "normal"
+        }
+      ],
+      "P950": [
+        {
+          "mainsnak": {
+            "snaktype": "value",
+            "property": "P950",
+            "hash": "ccc99cc66f6570fbcd2551bb9dcbd9067bda591b",
+            "datavalue": {
+              "value": "XX5385154",
+              "type": "string"
+            },
+            "datatype": "external-id"
+          },
+          "type": "statement",
+          "qualifiers": {
+            "P1810": [
+              {
+                "snaktype": "value",
+                "property": "P1810",
+                "hash": "b60106a40e2126189f7ff3b76d1d0244697a058b",
+                "datavalue": {
+                  "value": "Revuelta de los Ciompi, 1378",
+                  "type": "string"
+                },
+                "datatype": "string"
+              }
+            ]
+          },
+          "qualifiers-order": [
+            "P1810"
+          ],
+          "id": "Q1092673$9eb4f78b-206f-49ea-836a-6afb21d4af4d",
+          "rank": "normal",
+          "references": [
+            {
+              "hash": "7dac35f4c71eb402ec035791b69c040b9aa4f0ec",
+              "snaks": {
+                "P248": [
+                  {
+                    "snaktype": "value",
+                    "property": "P248",
+                    "hash": "3b090a7bae73c288393b2c8b9846cc7ed9a58f91",
+                    "datavalue": {
+                      "value": {
+                        "entity-type": "item",
+                        "numeric-id": 16583225,
+                        "id": "Q16583225"
+                      },
+                      "type": "wikibase-entityid"
+                    },
+                    "datatype": "wikibase-item"
+                  }
+                ],
+                "P854": [
+                  {
+                    "snaktype": "value",
+                    "property": "P854",
+                    "hash": "5a4687c25e47b12f232c801c98c656e7ae95c316",
+                    "datavalue": {
+                      "value": "https://thes.bncf.firenze.sbn.it/termine.php?id=29791",
+                      "type": "string"
+                    },
+                    "datatype": "url"
+                  }
+                ],
+                "P813": [
+                  {
+                    "snaktype": "value",
+                    "property": "P813",
+                    "hash": "7721e97431215c374db84a9df785dc964a16bd17",
+                    "datavalue": {
+                      "value": {
+                        "time": "+2021-06-15T00:00:00Z",
+                        "timezone": 0,
+                        "before": 0,
+                        "after": 0,
+                        "precision": 11,
+                        "calendarmodel": "http://www.wikidata.org/entity/Q1985727"
+                      },
+                      "type": "time"
+                    },
+                    "datatype": "time"
+                  }
+                ]
+              },
+              "snaks-order": [
+                "P248",
+                "P854",
+                "P813"
+              ]
+            },
+            {
+              "hash": "07f90256001fbeba7ca2adb8df51d89d150f8f67",
+              "snaks": {
+                "P248": [
+                  {
+                    "snaktype": "value",
+                    "property": "P248",
+                    "hash": "f0094b041fc8f052ea2ba8614aa130e4dc59ce99",
+                    "datavalue": {
+                      "value": {
+                        "entity-type": "item",
+                        "numeric-id": 97285695,
+                        "id": "Q97285695"
+                      },
+                      "type": "wikibase-entityid"
+                    },
+                    "datatype": "wikibase-item"
+                  }
+                ],
+                "P1476": [
+                  {
+                    "snaktype": "value",
+                    "property": "P1476",
+                    "hash": "f5749e3a8641338fde01fd5b48823d07ffd4929f",
+                    "datavalue": {
+                      "value": {
+                        "text": "Registros de autoridad de \"Materia\" de la Biblioteca Nacional de España",
+                        "language": "es"
+                      },
+                      "type": "monolingualtext"
+                    },
+                    "datatype": "monolingualtext"
+                  }
+                ],
+                "P854": [
+                  {
+                    "snaktype": "value",
+                    "property": "P854",
+                    "hash": "68cb1f2679543f92423b7cbadc891a595dbdba89",
+                    "datavalue": {
+                      "value": "https://www.bne.es/media/datosgob/catalogo-autoridades/materia/materia-UTF8.zip",
+                      "type": "string"
+                    },
+                    "datatype": "url"
+                  }
+                ],
+                "P813": [
+                  {
+                    "snaktype": "value",
+                    "property": "P813",
+                    "hash": "11f94d433f27563cf0d9161bfc4a8dd9ec756612",
+                    "datavalue": {
+                      "value": {
+                        "time": "+2023-07-21T00:00:00Z",
+                        "timezone": 0,
+                        "before": 0,
+                        "after": 0,
+                        "precision": 11,
+                        "calendarmodel": "http://www.wikidata.org/entity/Q1985727"
+                      },
+                      "type": "time"
+                    },
+                    "datatype": "time"
+                  }
+                ]
+              },
+              "snaks-order": [
+                "P248",
+                "P1476",
+                "P854",
+                "P813"
+              ]
+            }
+          ]
+        }
+      ],
+      "P8189": [
+        {
+          "mainsnak": {
+            "snaktype": "value",
+            "property": "P8189",
+            "hash": "ffe6de1471cddb59b4818cffe6324acdd6141f9a",
+            "datavalue": {
+              "value": "987007286432205171",
+              "type": "string"
+            },
+            "datatype": "external-id"
+          },
+          "type": "statement",
+          "id": "Q1092673$3AB50F98-C3BA-4F4B-9F9D-816C40694C1A",
+          "rank": "normal",
+          "references": [
+            {
+              "hash": "c8a47202c92936005b390eb36ddd267921b51f43",
+              "snaks": {
+                "P248": [
+                  {
+                    "snaktype": "value",
+                    "property": "P248",
+                    "hash": "0ea73b3596b49258a7b7ec6495950779b99e875d",
+                    "datavalue": {
+                      "value": {
+                        "entity-type": "item",
+                        "numeric-id": 188915,
+                        "id": "Q188915"
+                      },
+                      "type": "wikibase-entityid"
+                    },
+                    "datatype": "wikibase-item"
+                  }
+                ]
+              },
+              "snaks-order": [
+                "P248"
+              ]
+            }
+          ]
+        }
+      ],
+      "P373": [
+        {
+          "mainsnak": {
+            "snaktype": "value",
+            "property": "P373",
+            "hash": "1081530df412c5d8d83c82e571870b72ef64d930",
+            "datavalue": {
+              "value": "Ciompi Revolt",
+              "type": "string"
+            },
+            "datatype": "string"
+          },
+          "type": "statement",
+          "id": "Q1092673$20628491-A7AE-4320-90D8-24D68787A2DF",
+          "rank": "normal"
+        }
+      ],
+      "P580": [
+        {
+          "mainsnak": {
+            "snaktype": "value",
+            "property": "P580",
+            "hash": "6e779fab4bfd09a6eac15f2ce40895dce2e340cb",
+            "datavalue": {
+              "value": {
+                "time": "+1378-06-00T00:00:00Z",
+                "timezone": 0,
+                "before": 0,
+                "after": 0,
+                "precision": 10,
+                "calendarmodel": "http://www.wikidata.org/entity/Q1985786"
+              },
+              "type": "time"
+            },
+            "datatype": "time"
+          },
+          "type": "statement",
+          "id": "Q1092673$0722a616-4d1d-1b12-5e18-8ed447236435",
+          "rank": "normal"
+        }
+      ],
+      "P582": [
+        {
+          "mainsnak": {
+            "snaktype": "value",
+            "property": "P582",
+            "hash": "91da23fed911a97ba87d0e7e2415b61d18ee0c00",
+            "datavalue": {
+              "value": {
+                "time": "+1378-08-00T00:00:00Z",
+                "timezone": 0,
+                "before": 0,
+                "after": 0,
+                "precision": 10,
+                "calendarmodel": "http://www.wikidata.org/entity/Q1985786"
+              },
+              "type": "time"
+            },
+            "datatype": "time"
+          },
+          "type": "statement",
+          "id": "Q1092673$ed116bdd-4523-20e6-aebc-4ed435e46206",
+          "rank": "normal"
+        }
+      ],
+      "P361": [
+        {
+          "mainsnak": {
+            "snaktype": "value",
+            "property": "P361",
+            "hash": "ca369288792b6f655aa28b2afbbcfdf443696bc5",
+            "datavalue": {
+              "value": {
+                "entity-type": "item",
+                "numeric-id": 3938047,
+                "id": "Q3938047"
+              },
+              "type": "wikibase-entityid"
+            },
+            "datatype": "wikibase-item"
+          },
+          "type": "statement",
+          "id": "Q1092673$25685596-48b9-ce6d-16b8-d58f328b43bb",
+          "rank": "normal"
+        }
+      ],
+      "P3847": [
+        {
+          "mainsnak": {
+            "snaktype": "value",
+            "property": "P3847",
+            "hash": "6b9e335802f9c0d68ba49d7f60583f0f9cf6fde7",
+            "datavalue": {
+              "value": "ciompi_revolt_of_the_1378",
+              "type": "string"
+            },
+            "datatype": "external-id"
+          },
+          "type": "statement",
+          "qualifiers": {
+            "P1810": [
+              {
+                "snaktype": "value",
+                "property": "P1810",
+                "hash": "37369a29740c84b1808a9f80516d493096431cf7",
+                "datavalue": {
+                  "value": "Ciompi, Revolt of the, 1378",
+                  "type": "string"
+                },
+                "datatype": "string"
+              }
+            ]
+          },
+          "qualifiers-order": [
+            "P1810"
+          ],
+          "id": "Q1092673$556a8340-455a-75a5-56b8-92b71b04100e",
+          "rank": "normal"
+        }
+      ],
+      "P625": [
+        {
+          "mainsnak": {
+            "snaktype": "value",
+            "property": "P625",
+            "hash": "ab6035bd0abb627002997e3a4358278888a9d0ab",
+            "datavalue": {
+              "value": {
+                "latitude": 43.7714,
+                "longitude": 11.2542,
+                "altitude": null,
+                "precision": 0.012440219896671626,
+                "globe": "http://www.wikidata.org/entity/Q2"
+              },
+              "type": "globecoordinate"
+            },
+            "datatype": "globe-coordinate"
+          },
+          "type": "statement",
+          "id": "Q1092673$bd49f902-0a12-44d1-9e65-e5be03894b51",
+          "rank": "normal",
+          "references": [
+            {
+              "hash": "b3fd5e254143d8b52cd96cff43af9af5e3a82358",
+              "snaks": {
+                "P143": [
+                  {
+                    "snaktype": "value",
+                    "property": "P143",
+                    "hash": "f13c99a16441677ec69fcea23f221d866f1fc98f",
+                    "datavalue": {
+                      "value": {
+                        "entity-type": "item",
+                        "numeric-id": 199693,
+                        "id": "Q199693"
+                      },
+                      "type": "wikibase-entityid"
+                    },
+                    "datatype": "wikibase-item"
+                  }
+                ]
+              },
+              "snaks-order": [
+                "P143"
+              ]
+            }
+          ]
+        }
+      ],
+      "P18": [
+        {
+          "mainsnak": {
+            "snaktype": "value",
+            "property": "P18",
+            "hash": "3c87050c0ffda4cb20bb9074e5b9921fd698098c",
+            "datavalue": {
+              "value": "G. L. Gatteri, Il tumulto dei ciompi, Trieste, CMSA.jpg",
+              "type": "string"
+            },
+            "datatype": "commonsMedia"
+          },
+          "type": "statement",
+          "id": "Q1092673$9649f371-4d74-bee4-55b6-27d595632718",
+          "rank": "normal"
+        }
+      ],
+      "P13591": [
+        {
+          "mainsnak": {
+            "snaktype": "value",
+            "property": "P13591",
+            "hash": "4e2d662dc2eb0c4c40e04dd49d9240ea3bfd57c4",
+            "datavalue": {
+              "value": "concept/96a1bef2-cd2e-4ac6-8695-0bfd8e9a759b",
+              "type": "string"
+            },
+            "datatype": "external-id"
+          },
+          "type": "statement",
+          "id": "Q1092673$4F33A4D2-C86F-4E21-B632-8FBD2697748B",
+          "rank": "normal"
+        }
+      ]
+    },
+    "sitelinks": {
+      "arwiki": {
+        "site": "arwiki",
+        "title": "تشيومبي",
+        "badges": [],
+        "url": "https://ar.wikipedia.org/wiki/%D8%AA%D8%B4%D9%8A%D9%88%D9%85%D8%A8%D9%8A"
+      },
+      "bgwiki": {
+        "site": "bgwiki",
+        "title": "Чомпи (въстание)",
+        "badges": [],
+        "url": "https://bg.wikipedia.org/wiki/%D0%A7%D0%BE%D0%BC%D0%BF%D0%B8_(%D0%B2%D1%8A%D1%81%D1%82%D0%B0%D0%BD%D0%B8%D0%B5)"
+      },
+      "cawiki": {
+        "site": "cawiki",
+        "title": "Ciompi",
+        "badges": [],
+        "url": "https://ca.wikipedia.org/wiki/Ciompi"
+      },
+      "commonswiki": {
+        "site": "commonswiki",
+        "title": "Category:Ciompi Revolt",
+        "badges": [],
+        "url": "https://commons.wikimedia.org/wiki/Category:Ciompi_Revolt"
+      },
+      "dewiki": {
+        "site": "dewiki",
+        "title": "Ciompi-Aufstand",
+        "badges": [],
+        "url": "https://de.wikipedia.org/wiki/Ciompi-Aufstand"
+      },
+      "enwiki": {
+        "site": "enwiki",
+        "title": "Ciompi Revolt",
+        "badges": [],
+        "url": "https://en.wikipedia.org/wiki/Ciompi_Revolt"
+      },
+      "eowiki": {
+        "site": "eowiki",
+        "title": "Ciompi-ribelo",
+        "badges": [],
+        "url": "https://eo.wikipedia.org/wiki/Ciompi-ribelo"
+      },
+      "eswiki": {
+        "site": "eswiki",
+        "title": "Ciompi",
+        "badges": [],
+        "url": "https://es.wikipedia.org/wiki/Ciompi"
+      },
+      "frwiki": {
+        "site": "frwiki",
+        "title": "Ciompi",
+        "badges": [],
+        "url": "https://fr.wikipedia.org/wiki/Ciompi"
+      },
+      "hewiki": {
+        "site": "hewiki",
+        "title": "מהפכת כפכפי העץ",
+        "badges": [],
+        "url": "https://he.wikipedia.org/wiki/%D7%9E%D7%94%D7%A4%D7%9B%D7%AA_%D7%9B%D7%A4%D7%9B%D7%A4%D7%99_%D7%94%D7%A2%D7%A5"
+      },
+      "itwiki": {
+        "site": "itwiki",
+        "title": "Tumulto dei Ciompi",
+        "badges": [
+          "Q17437796"
+        ],
+        "url": "https://it.wikipedia.org/wiki/Tumulto_dei_Ciompi"
+      },
+      "jawiki": {
+        "site": "jawiki",
+        "title": "チョンピの乱",
+        "badges": [],
+        "url": "https://ja.wikipedia.org/wiki/%E3%83%81%E3%83%A7%E3%83%B3%E3%83%94%E3%81%AE%E4%B9%B1"
+      },
+      "kowiki": {
+        "site": "kowiki",
+        "title": "치옴피 반란",
+        "badges": [],
+        "url": "https://ko.wikipedia.org/wiki/%EC%B9%98%EC%98%B4%ED%94%BC_%EB%B0%98%EB%9E%80"
+      },
+      "nlwiki": {
+        "site": "nlwiki",
+        "title": "Opstand van de ciompi",
+        "badges": [],
+        "url": "https://nl.wikipedia.org/wiki/Opstand_van_de_ciompi"
+      },
+      "plwiki": {
+        "site": "plwiki",
+        "title": "Bunt Ciompich",
+        "badges": [],
+        "url": "https://pl.wikipedia.org/wiki/Bunt_Ciompich"
+      },
+      "ptwiki": {
+        "site": "ptwiki",
+        "title": "Revolta dos ciompi",
+        "badges": [],
+        "url": "https://pt.wikipedia.org/wiki/Revolta_dos_ciompi"
+      },
+      "ruwiki": {
+        "site": "ruwiki",
+        "title": "Чомпи",
+        "badges": [],
+        "url": "https://ru.wikipedia.org/wiki/%D0%A7%D0%BE%D0%BC%D0%BF%D0%B8"
+      },
+      "zhwiki": {
+        "site": "zhwiki",
+        "title": "梳毛工起义",
+        "badges": [],
+        "url": "https://zh.wikipedia.org/wiki/%E6%A2%B3%E6%AF%9B%E5%B7%A5%E8%B5%B7%E4%B9%89"
+      }
+    }
+  }
+}

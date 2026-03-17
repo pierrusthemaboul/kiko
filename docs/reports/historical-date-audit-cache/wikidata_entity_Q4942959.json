@@ -1,0 +1,733 @@
+{
+  "saved_at": "2026-03-07T16:07:05.171Z",
+  "value": {
+    "pageid": 4723762,
+    "ns": 0,
+    "title": "Q4942959",
+    "lastrevid": 2350062437,
+    "modified": "2025-05-19T03:53:29Z",
+    "type": "item",
+    "id": "Q4942959",
+    "labels": {
+      "en": {
+        "language": "en",
+        "value": "Book Tower"
+      },
+      "pl": {
+        "language": "pl",
+        "value": "Book Tower"
+      },
+      "fr": {
+        "language": "fr",
+        "value": "Book Tower"
+      },
+      "zh": {
+        "language": "zh",
+        "value": "圖書大樓"
+      },
+      "es": {
+        "language": "es",
+        "value": "Book Tower"
+      },
+      "arz": {
+        "language": "arz",
+        "value": "برج الكتاب"
+      },
+      "et": {
+        "language": "et",
+        "value": "Book Tower"
+      },
+      "eu": {
+        "language": "eu",
+        "value": "Book Tower"
+      }
+    },
+    "descriptions": {
+      "nl": {
+        "language": "nl",
+        "value": "hoogbouw in Michigan, Verenigde Staten van Amerika"
+      },
+      "he": {
+        "language": "he",
+        "value": "גורד שחקים בארצות הברית"
+      },
+      "en": {
+        "language": "en",
+        "value": "skyscraper in Detroit, Michigan, United States"
+      },
+      "de": {
+        "language": "de",
+        "value": "Wolkenkratzer in den Vereinigten Staaten"
+      },
+      "arz": {
+        "language": "arz",
+        "value": "ناطحة سحاب فى امريكا"
+      },
+      "fr": {
+        "language": "fr",
+        "value": "gratte-ciel à Détroit, États-Unis"
+      },
+      "es": {
+        "language": "es",
+        "value": "rascacielos en Detroit, Míchigan, Estados Unidos"
+      },
+      "et": {
+        "language": "et",
+        "value": "1926. aastal valminud kõrghoone Detroidis"
+      }
+    },
+    "aliases": {},
+    "claims": {
+      "P373": [
+        {
+          "mainsnak": {
+            "snaktype": "value",
+            "property": "P373",
+            "hash": "0d04257a1415b7e1bac2b9340424532a4a2cc048",
+            "datavalue": {
+              "value": "Book Tower, Detroit",
+              "type": "string"
+            },
+            "datatype": "string"
+          },
+          "type": "statement",
+          "id": "q4942959$FC60E979-5C8E-40C3-AE15-FFD70740851D",
+          "rank": "normal"
+        }
+      ],
+      "P625": [
+        {
+          "mainsnak": {
+            "snaktype": "value",
+            "property": "P625",
+            "hash": "83275d81b42d46afc7e3b6a4572c96885bce2f06",
+            "datavalue": {
+              "value": {
+                "latitude": 42.3334,
+                "longitude": -83.0517,
+                "altitude": null,
+                "precision": 0.0001,
+                "globe": "http://www.wikidata.org/entity/Q2"
+              },
+              "type": "globecoordinate"
+            },
+            "datatype": "globe-coordinate"
+          },
+          "type": "statement",
+          "id": "q4942959$A1AA8094-50E0-4D15-82CF-8F1B271D4B23",
+          "rank": "normal",
+          "references": [
+            {
+              "hash": "fa278ebfc458360e5aed63d5058cca83c46134f1",
+              "snaks": {
+                "P143": [
+                  {
+                    "snaktype": "value",
+                    "property": "P143",
+                    "hash": "e4f6d9441d0600513c4533c672b5ab472dc73694",
+                    "datavalue": {
+                      "value": {
+                        "entity-type": "item",
+                        "numeric-id": 328,
+                        "id": "Q328"
+                      },
+                      "type": "wikibase-entityid"
+                    },
+                    "datatype": "wikibase-item"
+                  }
+                ]
+              },
+              "snaks-order": [
+                "P143"
+              ]
+            }
+          ]
+        }
+      ],
+      "P17": [
+        {
+          "mainsnak": {
+            "snaktype": "value",
+            "property": "P17",
+            "hash": "be4c6eafa2984964f04be85667263f5642ba1a72",
+            "datavalue": {
+              "value": {
+                "entity-type": "item",
+                "numeric-id": 30,
+                "id": "Q30"
+              },
+              "type": "wikibase-entityid"
+            },
+            "datatype": "wikibase-item"
+          },
+          "type": "statement",
+          "id": "q4942959$4DE8BEFA-4C2E-4F8B-8EF1-53D9389A3692",
+          "rank": "normal",
+          "references": [
+            {
+              "hash": "fa278ebfc458360e5aed63d5058cca83c46134f1",
+              "snaks": {
+                "P143": [
+                  {
+                    "snaktype": "value",
+                    "property": "P143",
+                    "hash": "e4f6d9441d0600513c4533c672b5ab472dc73694",
+                    "datavalue": {
+                      "value": {
+                        "entity-type": "item",
+                        "numeric-id": 328,
+                        "id": "Q328"
+                      },
+                      "type": "wikibase-entityid"
+                    },
+                    "datatype": "wikibase-item"
+                  }
+                ]
+              },
+              "snaks-order": [
+                "P143"
+              ]
+            }
+          ]
+        }
+      ],
+      "P131": [
+        {
+          "mainsnak": {
+            "snaktype": "value",
+            "property": "P131",
+            "hash": "caf1a8fa127e0a1c7976c8e4cd9093b9369cff15",
+            "datavalue": {
+              "value": {
+                "entity-type": "item",
+                "numeric-id": 1166,
+                "id": "Q1166"
+              },
+              "type": "wikibase-entityid"
+            },
+            "datatype": "wikibase-item"
+          },
+          "type": "statement",
+          "id": "q4942959$69735265-7EDB-4B33-B455-32A6BCC67BE2",
+          "rank": "normal",
+          "references": [
+            {
+              "hash": "fa278ebfc458360e5aed63d5058cca83c46134f1",
+              "snaks": {
+                "P143": [
+                  {
+                    "snaktype": "value",
+                    "property": "P143",
+                    "hash": "e4f6d9441d0600513c4533c672b5ab472dc73694",
+                    "datavalue": {
+                      "value": {
+                        "entity-type": "item",
+                        "numeric-id": 328,
+                        "id": "Q328"
+                      },
+                      "type": "wikibase-entityid"
+                    },
+                    "datatype": "wikibase-item"
+                  }
+                ]
+              },
+              "snaks-order": [
+                "P143"
+              ]
+            }
+          ]
+        }
+      ],
+      "P31": [
+        {
+          "mainsnak": {
+            "snaktype": "value",
+            "property": "P31",
+            "hash": "1e35db554cf8bd1085b49b4bc500bf59631951cf",
+            "datavalue": {
+              "value": {
+                "entity-type": "item",
+                "numeric-id": 18142,
+                "id": "Q18142"
+              },
+              "type": "wikibase-entityid"
+            },
+            "datatype": "wikibase-item"
+          },
+          "type": "statement",
+          "id": "Q4942959$5D33DAF6-0E01-4A18-A33E-4D19A4744547",
+          "rank": "normal"
+        },
+        {
+          "mainsnak": {
+            "snaktype": "value",
+            "property": "P31",
+            "hash": "dd9afc84745239d0b2571add74d54b6d1ff7914a",
+            "datavalue": {
+              "value": {
+                "entity-type": "item",
+                "numeric-id": 11303,
+                "id": "Q11303"
+              },
+              "type": "wikibase-entityid"
+            },
+            "datatype": "wikibase-item"
+          },
+          "type": "statement",
+          "id": "Q4942959$0765D34E-6C21-4258-BF20-700854B029A4",
+          "rank": "normal"
+        }
+      ],
+      "P84": [
+        {
+          "mainsnak": {
+            "snaktype": "value",
+            "property": "P84",
+            "hash": "15ad8761994e5566293920bf14dff6b1474cfe29",
+            "datavalue": {
+              "value": {
+                "entity-type": "item",
+                "numeric-id": 6687533,
+                "id": "Q6687533"
+              },
+              "type": "wikibase-entityid"
+            },
+            "datatype": "wikibase-item"
+          },
+          "type": "statement",
+          "id": "Q4942959$1EC81A6F-B907-435B-B6FD-065ADE170E5B",
+          "rank": "normal",
+          "references": [
+            {
+              "hash": "fa278ebfc458360e5aed63d5058cca83c46134f1",
+              "snaks": {
+                "P143": [
+                  {
+                    "snaktype": "value",
+                    "property": "P143",
+                    "hash": "e4f6d9441d0600513c4533c672b5ab472dc73694",
+                    "datavalue": {
+                      "value": {
+                        "entity-type": "item",
+                        "numeric-id": 328,
+                        "id": "Q328"
+                      },
+                      "type": "wikibase-entityid"
+                    },
+                    "datatype": "wikibase-item"
+                  }
+                ]
+              },
+              "snaks-order": [
+                "P143"
+              ]
+            }
+          ]
+        }
+      ],
+      "P18": [
+        {
+          "mainsnak": {
+            "snaktype": "value",
+            "property": "P18",
+            "hash": "72d468bbf79a2357a6f4a32e5e36af0a2fb524fc",
+            "datavalue": {
+              "value": "Book Tower 2010.jpg",
+              "type": "string"
+            },
+            "datatype": "commonsMedia"
+          },
+          "type": "statement",
+          "id": "Q4942959$24A7F7C1-F21C-4EE0-A395-D6A4C473A764",
+          "rank": "normal",
+          "references": [
+            {
+              "hash": "fa278ebfc458360e5aed63d5058cca83c46134f1",
+              "snaks": {
+                "P143": [
+                  {
+                    "snaktype": "value",
+                    "property": "P143",
+                    "hash": "e4f6d9441d0600513c4533c672b5ab472dc73694",
+                    "datavalue": {
+                      "value": {
+                        "entity-type": "item",
+                        "numeric-id": 328,
+                        "id": "Q328"
+                      },
+                      "type": "wikibase-entityid"
+                    },
+                    "datatype": "wikibase-item"
+                  }
+                ]
+              },
+              "snaks-order": [
+                "P143"
+              ]
+            }
+          ]
+        }
+      ],
+      "P454": [
+        {
+          "mainsnak": {
+            "snaktype": "value",
+            "property": "P454",
+            "hash": "7513e74abe5225dfc68c927c1b7c2e8481de8230",
+            "datavalue": {
+              "value": "20027663",
+              "type": "string"
+            },
+            "datatype": "external-id"
+          },
+          "type": "statement",
+          "id": "Q4942959$473F23FD-9312-4898-A1D2-05619B93A47C",
+          "rank": "normal"
+        }
+      ],
+      "P1305": [
+        {
+          "mainsnak": {
+            "snaktype": "value",
+            "property": "P1305",
+            "hash": "4657e6503f9c075f090981d40412d957d20d0bc0",
+            "datavalue": {
+              "value": "10575",
+              "type": "string"
+            },
+            "datatype": "external-id"
+          },
+          "type": "statement",
+          "id": "Q4942959$EA9BFE35-6884-484E-9B90-B45ACEBF6A07",
+          "rank": "normal",
+          "references": [
+            {
+              "hash": "cfc3fc925ddc31f71c67244753346f9fca7ab7d7",
+              "snaks": {
+                "P248": [
+                  {
+                    "snaktype": "value",
+                    "property": "P248",
+                    "hash": "a94b740202b097dd33355e0e6c00e54b9395e5e0",
+                    "datavalue": {
+                      "value": {
+                        "entity-type": "item",
+                        "numeric-id": 15241312,
+                        "id": "Q15241312"
+                      },
+                      "type": "wikibase-entityid"
+                    },
+                    "datatype": "wikibase-item"
+                  }
+                ]
+              },
+              "snaks-order": [
+                "P248"
+              ]
+            }
+          ]
+        }
+      ],
+      "P1699": [
+        {
+          "mainsnak": {
+            "snaktype": "value",
+            "property": "P1699",
+            "hash": "badf65c612e64f69d1acd8e97195127ada3b19dd",
+            "datavalue": {
+              "value": "1416",
+              "type": "string"
+            },
+            "datatype": "external-id"
+          },
+          "type": "statement",
+          "id": "Q4942959$ad31fc01-4904-9448-c001-09d77613f881",
+          "rank": "normal"
+        }
+      ],
+      "P455": [
+        {
+          "mainsnak": {
+            "snaktype": "value",
+            "property": "P455",
+            "hash": "163016d442cbad549b1cf44891cc20d330f0d5d9",
+            "datavalue": {
+              "value": "118554",
+              "type": "string"
+            },
+            "datatype": "external-id"
+          },
+          "type": "statement",
+          "id": "Q4942959$f9c0477a-416d-b77e-5502-d5f9bc24fde2",
+          "rank": "normal"
+        }
+      ],
+      "P571": [
+        {
+          "mainsnak": {
+            "snaktype": "value",
+            "property": "P571",
+            "hash": "22f8fd3749850ca3ae3feeee09f1d54eaf29af39",
+            "datavalue": {
+              "value": {
+                "time": "+1926-00-00T00:00:00Z",
+                "timezone": 0,
+                "before": 0,
+                "after": 0,
+                "precision": 9,
+                "calendarmodel": "http://www.wikidata.org/entity/Q1985727"
+              },
+              "type": "time"
+            },
+            "datatype": "time"
+          },
+          "type": "statement",
+          "id": "Q4942959$2D944010-95D2-40A2-96AD-4641650A0CFC",
+          "rank": "normal",
+          "references": [
+            {
+              "hash": "864c7226ea8b40f1f3a1e6e550b63a306557ff7f",
+              "snaks": {
+                "P143": [
+                  {
+                    "snaktype": "value",
+                    "property": "P143",
+                    "hash": "e4f6d9441d0600513c4533c672b5ab472dc73694",
+                    "datavalue": {
+                      "value": {
+                        "entity-type": "item",
+                        "numeric-id": 328,
+                        "id": "Q328"
+                      },
+                      "type": "wikibase-entityid"
+                    },
+                    "datatype": "wikibase-item"
+                  }
+                ],
+                "P4656": [
+                  {
+                    "snaktype": "value",
+                    "property": "P4656",
+                    "hash": "43b6bf93538dfc24bdc94032fc8afc863fdb7b1d",
+                    "datavalue": {
+                      "value": "https://en.wikipedia.org/w/index.php?title=Book_Tower&oldid=850940648",
+                      "type": "string"
+                    },
+                    "datatype": "url"
+                  }
+                ]
+              },
+              "snaks-order": [
+                "P143",
+                "P4656"
+              ]
+            }
+          ]
+        }
+      ],
+      "P1101": [
+        {
+          "mainsnak": {
+            "snaktype": "value",
+            "property": "P1101",
+            "hash": "8b1afddad29a4ec88f930a592866ea3822ab5089",
+            "datavalue": {
+              "value": {
+                "amount": "+38",
+                "unit": "1"
+              },
+              "type": "quantity"
+            },
+            "datatype": "quantity"
+          },
+          "type": "statement",
+          "id": "Q4942959$816A71B9-60CE-47D2-B7F2-39DD876267E7",
+          "rank": "normal",
+          "references": [
+            {
+              "hash": "93c6e479d5ed8623c6f195efe20d9c15199f1215",
+              "snaks": {
+                "P143": [
+                  {
+                    "snaktype": "value",
+                    "property": "P143",
+                    "hash": "f30cbd35620c4ea6d0633aaf0210a8916130469b",
+                    "datavalue": {
+                      "value": {
+                        "entity-type": "item",
+                        "numeric-id": 8447,
+                        "id": "Q8447"
+                      },
+                      "type": "wikibase-entityid"
+                    },
+                    "datatype": "wikibase-item"
+                  }
+                ],
+                "P4656": [
+                  {
+                    "snaktype": "value",
+                    "property": "P4656",
+                    "hash": "8ee98c4c40b384a00faeb0efa716e89ee6241f0b",
+                    "datavalue": {
+                      "value": "https://fr.wikipedia.org/w/index.php?title=Book_Tower&oldid=140564787",
+                      "type": "string"
+                    },
+                    "datatype": "url"
+                  }
+                ]
+              },
+              "snaks-order": [
+                "P143",
+                "P4656"
+              ]
+            }
+          ]
+        }
+      ],
+      "P149": [
+        {
+          "mainsnak": {
+            "snaktype": "value",
+            "property": "P149",
+            "hash": "adb8a85abcd88e4477887cf4ac1c1e50bdbdae20",
+            "datavalue": {
+              "value": {
+                "entity-type": "item",
+                "numeric-id": 54111,
+                "id": "Q54111"
+              },
+              "type": "wikibase-entityid"
+            },
+            "datatype": "wikibase-item"
+          },
+          "type": "statement",
+          "id": "Q4942959$9905C1A5-42A8-4F29-A4BB-4366B921F902",
+          "rank": "normal",
+          "references": [
+            {
+              "hash": "265748f7bca60ae435c843e87e8a2f89d36022f3",
+              "snaks": {
+                "P143": [
+                  {
+                    "snaktype": "value",
+                    "property": "P143",
+                    "hash": "e4f6d9441d0600513c4533c672b5ab472dc73694",
+                    "datavalue": {
+                      "value": {
+                        "entity-type": "item",
+                        "numeric-id": 328,
+                        "id": "Q328"
+                      },
+                      "type": "wikibase-entityid"
+                    },
+                    "datatype": "wikibase-item"
+                  }
+                ],
+                "P4656": [
+                  {
+                    "snaktype": "value",
+                    "property": "P4656",
+                    "hash": "3607fa47094d961c5213d971ac479ff7fe66a378",
+                    "datavalue": {
+                      "value": "https://en.wikipedia.org/w/index.php?title=Book_Tower&oldid=858703979",
+                      "type": "string"
+                    },
+                    "datatype": "url"
+                  }
+                ]
+              },
+              "snaks-order": [
+                "P143",
+                "P4656"
+              ]
+            }
+          ]
+        }
+      ],
+      "P7772": [
+        {
+          "mainsnak": {
+            "snaktype": "value",
+            "property": "P7772",
+            "hash": "ba04e99553e5f2b1b25d831e5c00f49cf37783d2",
+            "datavalue": {
+              "value": "the-book-tower-detroit-michigan",
+              "type": "string"
+            },
+            "datatype": "external-id"
+          },
+          "type": "statement",
+          "id": "Q4942959$FC77A0D5-13C8-480F-B61A-0806DB576805",
+          "rank": "normal"
+        }
+      ],
+      "P646": [
+        {
+          "mainsnak": {
+            "snaktype": "value",
+            "property": "P646",
+            "hash": "e9a8a60b6d48552d033a41e0542584c4807c778f",
+            "datavalue": {
+              "value": "/m/0fjg0b",
+              "type": "string"
+            },
+            "datatype": "external-id"
+          },
+          "type": "statement",
+          "id": "Q4942959$38E2A61B-CE71-45C2-941A-9E5EBFBAD283",
+          "rank": "normal"
+        }
+      ]
+    },
+    "sitelinks": {
+      "arzwiki": {
+        "site": "arzwiki",
+        "title": "برج الكتاب",
+        "badges": [],
+        "url": "https://arz.wikipedia.org/wiki/%D8%A8%D8%B1%D8%AC_%D8%A7%D9%84%D9%83%D8%AA%D8%A7%D8%A8"
+      },
+      "commonswiki": {
+        "site": "commonswiki",
+        "title": "Category:Book Tower, Detroit",
+        "badges": [],
+        "url": "https://commons.wikimedia.org/wiki/Category:Book_Tower,_Detroit"
+      },
+      "enwiki": {
+        "site": "enwiki",
+        "title": "Book Tower",
+        "badges": [],
+        "url": "https://en.wikipedia.org/wiki/Book_Tower"
+      },
+      "eswiki": {
+        "site": "eswiki",
+        "title": "Book Tower",
+        "badges": [],
+        "url": "https://es.wikipedia.org/wiki/Book_Tower"
+      },
+      "etwiki": {
+        "site": "etwiki",
+        "title": "Book Tower",
+        "badges": [],
+        "url": "https://et.wikipedia.org/wiki/Book_Tower"
+      },
+      "euwiki": {
+        "site": "euwiki",
+        "title": "Book Tower",
+        "badges": [],
+        "url": "https://eu.wikipedia.org/wiki/Book_Tower"
+      },
+      "frwiki": {
+        "site": "frwiki",
+        "title": "Book Tower",
+        "badges": [],
+        "url": "https://fr.wikipedia.org/wiki/Book_Tower"
+      },
+      "plwiki": {
+        "site": "plwiki",
+        "title": "Book Tower",
+        "badges": [],
+        "url": "https://pl.wikipedia.org/wiki/Book_Tower"
+      }
+    }
+  }
+}

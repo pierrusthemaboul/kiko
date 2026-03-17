@@ -1,0 +1,611 @@
+{
+  "pageid": 256899,
+  "ns": 0,
+  "title": "Q265032",
+  "lastrevid": 2330172505,
+  "modified": "2025-03-25T10:04:51Z",
+  "type": "item",
+  "id": "Q265032",
+  "labels": {
+    "de": {
+      "language": "de",
+      "value": "Schlacht bei Montlhéry"
+    },
+    "en": {
+      "language": "en",
+      "value": "Battle of Montlhéry"
+    },
+    "fr": {
+      "language": "fr",
+      "value": "bataille de Montlhéry"
+    },
+    "pl": {
+      "language": "pl",
+      "value": "Bitwa pod Montlhéry"
+    },
+    "nl": {
+      "language": "nl",
+      "value": "Slag bij Montlhéry"
+    },
+    "nb": {
+      "language": "nb",
+      "value": "Slaget ved Montlhery"
+    },
+    "ja": {
+      "language": "ja",
+      "value": "モンレリの戦い"
+    },
+    "he": {
+      "language": "he",
+      "value": "קרב מונלרי"
+    },
+    "zh-hant": {
+      "language": "zh-hant",
+      "value": "蒙特利里之戰"
+    },
+    "zh-hans": {
+      "language": "zh-hans",
+      "value": "蒙特利里之战"
+    },
+    "es": {
+      "language": "es",
+      "value": "batalla de Montlhéry"
+    },
+    "zh": {
+      "language": "zh",
+      "value": "蒙特利里之战"
+    },
+    "sr": {
+      "language": "sr",
+      "value": "Битка код Монлерија"
+    },
+    "yo": {
+      "language": "yo",
+      "value": "ogun Montlhéry"
+    },
+    "ru": {
+      "language": "ru",
+      "value": "Битва при Монлери"
+    },
+    "cs": {
+      "language": "cs",
+      "value": "bitva u Montlhéry"
+    },
+    "ga": {
+      "language": "ga",
+      "value": "Cath Montlhéry"
+    }
+  },
+  "descriptions": {
+    "en": {
+      "language": "en",
+      "value": "1465 battle between Louis XI and the League of the Public Weal"
+    },
+    "yo": {
+      "language": "yo",
+      "value": "ogun"
+    },
+    "pl": {
+      "language": "pl",
+      "value": "bitwa we Francji w XV wieku"
+    },
+    "cs": {
+      "language": "cs",
+      "value": "bitva mezi Ludvíkem XI. a Ligou veřejného blahobytu"
+    }
+  },
+  "aliases": {
+    "en": [
+      {
+        "language": "en",
+        "value": "Battle of Montlhery"
+      }
+    ],
+    "zh-hant": [
+      {
+        "language": "zh-hant",
+        "value": "蒙特利裏之戰"
+      }
+    ],
+    "nl": [
+      {
+        "language": "nl",
+        "value": "Slag bij Montlhery"
+      }
+    ]
+  },
+  "claims": {
+    "P646": [
+      {
+        "mainsnak": {
+          "snaktype": "value",
+          "property": "P646",
+          "hash": "b97f45398a4daa40683bf6032c77272fafe1b472",
+          "datavalue": {
+            "value": "/m/0gmgmd_",
+            "type": "string"
+          },
+          "datatype": "external-id"
+        },
+        "type": "statement",
+        "id": "Q265032$554E8592-9B9A-49E6-9EDE-93D3534706B6",
+        "rank": "normal",
+        "references": [
+          {
+            "hash": "2b00cb481cddcac7623114367489b5c194901c4a",
+            "snaks": {
+              "P248": [
+                {
+                  "snaktype": "value",
+                  "property": "P248",
+                  "hash": "a94b740202b097dd33355e0e6c00e54b9395e5e0",
+                  "datavalue": {
+                    "value": {
+                      "entity-type": "item",
+                      "numeric-id": 15241312,
+                      "id": "Q15241312"
+                    },
+                    "type": "wikibase-entityid"
+                  },
+                  "datatype": "wikibase-item"
+                }
+              ],
+              "P577": [
+                {
+                  "snaktype": "value",
+                  "property": "P577",
+                  "hash": "fde79ecb015112d2f29229ccc1ec514ed3e71fa2",
+                  "datavalue": {
+                    "value": {
+                      "time": "+2013-10-28T00:00:00Z",
+                      "timezone": 0,
+                      "before": 0,
+                      "after": 0,
+                      "precision": 11,
+                      "calendarmodel": "http://www.wikidata.org/entity/Q1985727"
+                    },
+                    "type": "time"
+                  },
+                  "datatype": "time"
+                }
+              ]
+            },
+            "snaks-order": [
+              "P248",
+              "P577"
+            ]
+          }
+        ]
+      }
+    ],
+    "P31": [
+      {
+        "mainsnak": {
+          "snaktype": "value",
+          "property": "P31",
+          "hash": "baa1df9dcd37b9f3a062e7a14a8bef0c37078d32",
+          "datavalue": {
+            "value": {
+              "entity-type": "item",
+              "numeric-id": 178561,
+              "id": "Q178561"
+            },
+            "type": "wikibase-entityid"
+          },
+          "datatype": "wikibase-item"
+        },
+        "type": "statement",
+        "id": "Q265032$C11F7AD8-0892-41CC-B097-F756FA7B4A7F",
+        "rank": "normal",
+        "references": [
+          {
+            "hash": "d4bd87b862b12d99d26e86472d44f26858dee639",
+            "snaks": {
+              "P143": [
+                {
+                  "snaktype": "value",
+                  "property": "P143",
+                  "hash": "f30cbd35620c4ea6d0633aaf0210a8916130469b",
+                  "datavalue": {
+                    "value": {
+                      "entity-type": "item",
+                      "numeric-id": 8447,
+                      "id": "Q8447"
+                    },
+                    "type": "wikibase-entityid"
+                  },
+                  "datatype": "wikibase-item"
+                }
+              ]
+            },
+            "snaks-order": [
+              "P143"
+            ]
+          }
+        ]
+      }
+    ],
+    "P361": [
+      {
+        "mainsnak": {
+          "snaktype": "value",
+          "property": "P361",
+          "hash": "4575af5f3b98e39b02fd7c1f98c4d2c60c5194e3",
+          "datavalue": {
+            "value": {
+              "entity-type": "item",
+              "numeric-id": 112762735,
+              "id": "Q112762735"
+            },
+            "type": "wikibase-entityid"
+          },
+          "datatype": "wikibase-item"
+        },
+        "type": "statement",
+        "id": "Q265032$59BA9192-25D6-4A0D-BFA8-DCF80454164B",
+        "rank": "normal"
+      }
+    ],
+    "P276": [
+      {
+        "mainsnak": {
+          "snaktype": "value",
+          "property": "P276",
+          "hash": "4bef51b1d9399916ae386d52caef917e8a8b4512",
+          "datavalue": {
+            "value": {
+              "entity-type": "item",
+              "numeric-id": 250024,
+              "id": "Q250024"
+            },
+            "type": "wikibase-entityid"
+          },
+          "datatype": "wikibase-item"
+        },
+        "type": "statement",
+        "id": "Q265032$7CBA15EF-A448-49A2-83F3-D8925BC8BBB9",
+        "rank": "normal",
+        "references": [
+          {
+            "hash": "d4bd87b862b12d99d26e86472d44f26858dee639",
+            "snaks": {
+              "P143": [
+                {
+                  "snaktype": "value",
+                  "property": "P143",
+                  "hash": "f30cbd35620c4ea6d0633aaf0210a8916130469b",
+                  "datavalue": {
+                    "value": {
+                      "entity-type": "item",
+                      "numeric-id": 8447,
+                      "id": "Q8447"
+                    },
+                    "type": "wikibase-entityid"
+                  },
+                  "datatype": "wikibase-item"
+                }
+              ]
+            },
+            "snaks-order": [
+              "P143"
+            ]
+          }
+        ]
+      }
+    ],
+    "P585": [
+      {
+        "mainsnak": {
+          "snaktype": "value",
+          "property": "P585",
+          "hash": "dc064f1c85022b6bc0f00b03ea14aae8f901f708",
+          "datavalue": {
+            "value": {
+              "time": "+1465-07-16T00:00:00Z",
+              "timezone": 0,
+              "before": 0,
+              "after": 0,
+              "precision": 11,
+              "calendarmodel": "http://www.wikidata.org/entity/Q1985727"
+            },
+            "type": "time"
+          },
+          "datatype": "time"
+        },
+        "type": "statement",
+        "id": "Q265032$220AADDE-0B8C-437D-8CF8-4FBB6B3111D8",
+        "rank": "normal",
+        "references": [
+          {
+            "hash": "d4bd87b862b12d99d26e86472d44f26858dee639",
+            "snaks": {
+              "P143": [
+                {
+                  "snaktype": "value",
+                  "property": "P143",
+                  "hash": "f30cbd35620c4ea6d0633aaf0210a8916130469b",
+                  "datavalue": {
+                    "value": {
+                      "entity-type": "item",
+                      "numeric-id": 8447,
+                      "id": "Q8447"
+                    },
+                    "type": "wikibase-entityid"
+                  },
+                  "datatype": "wikibase-item"
+                }
+              ]
+            },
+            "snaks-order": [
+              "P143"
+            ]
+          }
+        ]
+      }
+    ],
+    "P18": [
+      {
+        "mainsnak": {
+          "snaktype": "value",
+          "property": "P18",
+          "hash": "35e75e77853070613747aa7714d128b8f95c5fc5",
+          "datavalue": {
+            "value": "Bataille de Montlhéry.jpg",
+            "type": "string"
+          },
+          "datatype": "commonsMedia"
+        },
+        "type": "statement",
+        "id": "Q265032$72EA1C36-DDC3-4FB2-9D6C-844FB4765F74",
+        "rank": "normal"
+      }
+    ],
+    "P2581": [
+      {
+        "mainsnak": {
+          "snaktype": "value",
+          "property": "P2581",
+          "hash": "4de91dd577abb050c970bc5511b05cbc59145751",
+          "datavalue": {
+            "value": "02514826n",
+            "type": "string"
+          },
+          "datatype": "external-id"
+        },
+        "type": "statement",
+        "id": "Q265032$269E5EC4-0A96-471F-924D-1425A4A34F9F",
+        "rank": "normal",
+        "references": [
+          {
+            "hash": "248ac337a217a5f5eed7139a82a4e60931611af0",
+            "snaks": {
+              "P248": [
+                {
+                  "snaktype": "value",
+                  "property": "P248",
+                  "hash": "25b816aab41db18565946259c950aed6de05dd1e",
+                  "datavalue": {
+                    "value": {
+                      "entity-type": "item",
+                      "numeric-id": 4837690,
+                      "id": "Q4837690"
+                    },
+                    "type": "wikibase-entityid"
+                  },
+                  "datatype": "wikibase-item"
+                }
+              ]
+            },
+            "snaks-order": [
+              "P248"
+            ]
+          }
+        ]
+      }
+    ],
+    "P244": [
+      {
+        "mainsnak": {
+          "snaktype": "value",
+          "property": "P244",
+          "hash": "8992c6d284ee2538950560d91575f4b9f6f7e4f2",
+          "datavalue": {
+            "value": "sh85087073",
+            "type": "string"
+          },
+          "datatype": "external-id"
+        },
+        "type": "statement",
+        "id": "Q265032$08A04719-0CB8-4C6B-863F-287C10F97D70",
+        "rank": "normal",
+        "references": [
+          {
+            "hash": "ac5d47e9fbcc281bc0d27a205ae02e22ad24ce31",
+            "snaks": {
+              "P854": [
+                {
+                  "snaktype": "value",
+                  "property": "P854",
+                  "hash": "b560dc6b281a39d061e189d2eb299a426a06f1a2",
+                  "datavalue": {
+                    "value": "https://github.com/JohnMarkOckerbloom/ftl/blob/master/data/wikimap",
+                    "type": "string"
+                  },
+                  "datatype": "url"
+                }
+              ],
+              "P813": [
+                {
+                  "snaktype": "value",
+                  "property": "P813",
+                  "hash": "0dcf4f64e93fdcc654e2c7534285881fe48b9f3d",
+                  "datavalue": {
+                    "value": {
+                      "time": "+2019-04-03T00:00:00Z",
+                      "timezone": 0,
+                      "before": 0,
+                      "after": 0,
+                      "precision": 11,
+                      "calendarmodel": "http://www.wikidata.org/entity/Q1985727"
+                    },
+                    "type": "time"
+                  },
+                  "datatype": "time"
+                }
+              ]
+            },
+            "snaks-order": [
+              "P854",
+              "P813"
+            ]
+          }
+        ]
+      }
+    ],
+    "P8189": [
+      {
+        "mainsnak": {
+          "snaktype": "value",
+          "property": "P8189",
+          "hash": "1954e77f43a05d3a7d5d35000974e51ead0f2d12",
+          "datavalue": {
+            "value": "987007543682705171",
+            "type": "string"
+          },
+          "datatype": "external-id"
+        },
+        "type": "statement",
+        "id": "Q265032$C751F7AD-EE2C-4EEE-BF1A-13BC7B47932A",
+        "rank": "normal",
+        "references": [
+          {
+            "hash": "ecb7a39cf436eb1fba419853af168ef9f2ba1dab",
+            "snaks": {
+              "P248": [
+                {
+                  "snaktype": "value",
+                  "property": "P248",
+                  "hash": "a03bb6ffe37be9554492f4eea5bd18afcb57df19",
+                  "datavalue": {
+                    "value": {
+                      "entity-type": "item",
+                      "numeric-id": 106509962,
+                      "id": "Q106509962"
+                    },
+                    "type": "wikibase-entityid"
+                  },
+                  "datatype": "wikibase-item"
+                }
+              ]
+            },
+            "snaks-order": [
+              "P248"
+            ]
+          }
+        ]
+      }
+    ],
+    "P373": [
+      {
+        "mainsnak": {
+          "snaktype": "value",
+          "property": "P373",
+          "hash": "e991d11e9d9c1e5272d12c73cb631da0b5943ba6",
+          "datavalue": {
+            "value": "Battle of Montlhéry",
+            "type": "string"
+          },
+          "datatype": "string"
+        },
+        "type": "statement",
+        "id": "Q265032$a3a48ce8-997c-46d2-900a-3e33832958a0",
+        "rank": "normal"
+      }
+    ],
+    "P17": [
+      {
+        "mainsnak": {
+          "snaktype": "value",
+          "property": "P17",
+          "hash": "c05db5d169c2560b9799d567a803d20a392f53e4",
+          "datavalue": {
+            "value": {
+              "entity-type": "item",
+              "numeric-id": 142,
+              "id": "Q142"
+            },
+            "type": "wikibase-entityid"
+          },
+          "datatype": "wikibase-item"
+        },
+        "type": "statement",
+        "id": "Q265032$2DA22B99-A9B5-4FED-A9E2-D64BE09E1927",
+        "rank": "normal"
+      }
+    ]
+  },
+  "sitelinks": {
+    "commonswiki": {
+      "site": "commonswiki",
+      "title": "Category:Battle of Montlhéry",
+      "badges": [],
+      "url": "https://commons.wikimedia.org/wiki/Category:Battle_of_Montlh%C3%A9ry"
+    },
+    "dewiki": {
+      "site": "dewiki",
+      "title": "Schlacht bei Montlhéry",
+      "badges": [],
+      "url": "https://de.wikipedia.org/wiki/Schlacht_bei_Montlh%C3%A9ry"
+    },
+    "enwiki": {
+      "site": "enwiki",
+      "title": "Battle of Montlhéry",
+      "badges": [],
+      "url": "https://en.wikipedia.org/wiki/Battle_of_Montlh%C3%A9ry"
+    },
+    "eswiki": {
+      "site": "eswiki",
+      "title": "Batalla de Montlhéry",
+      "badges": [],
+      "url": "https://es.wikipedia.org/wiki/Batalla_de_Montlh%C3%A9ry"
+    },
+    "frwiki": {
+      "site": "frwiki",
+      "title": "Bataille de Montlhéry",
+      "badges": [],
+      "url": "https://fr.wikipedia.org/wiki/Bataille_de_Montlh%C3%A9ry"
+    },
+    "nlwiki": {
+      "site": "nlwiki",
+      "title": "Slag bij Montlhéry",
+      "badges": [],
+      "url": "https://nl.wikipedia.org/wiki/Slag_bij_Montlh%C3%A9ry"
+    },
+    "nowiki": {
+      "site": "nowiki",
+      "title": "Slaget ved Montlhéry",
+      "badges": [],
+      "url": "https://no.wikipedia.org/wiki/Slaget_ved_Montlh%C3%A9ry"
+    },
+    "plwiki": {
+      "site": "plwiki",
+      "title": "Bitwa pod Montlhéry",
+      "badges": [
+        "Q17437798"
+      ],
+      "url": "https://pl.wikipedia.org/wiki/Bitwa_pod_Montlh%C3%A9ry"
+    },
+    "ruwiki": {
+      "site": "ruwiki",
+      "title": "Битва при Монлери",
+      "badges": [],
+      "url": "https://ru.wikipedia.org/wiki/%D0%91%D0%B8%D1%82%D0%B2%D0%B0_%D0%BF%D1%80%D0%B8_%D0%9C%D0%BE%D0%BD%D0%BB%D0%B5%D1%80%D0%B8"
+    },
+    "srwiki": {
+      "site": "srwiki",
+      "title": "Битка код Монлерија",
+      "badges": [],
+      "url": "https://sr.wikipedia.org/wiki/%D0%91%D0%B8%D1%82%D0%BA%D0%B0_%D0%BA%D0%BE%D0%B4_%D0%9C%D0%BE%D0%BD%D0%BB%D0%B5%D1%80%D0%B8%D1%98%D0%B0"
+    }
+  }
+}

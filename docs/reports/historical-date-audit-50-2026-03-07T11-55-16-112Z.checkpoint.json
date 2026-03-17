@@ -1,0 +1,3137 @@
+{
+  "generated_at": "2026-03-07T11:59:21.583Z",
+  "sample_size": 50,
+  "model": "gemini-2.0-flash",
+  "selection": "random_time_stratified",
+  "run_stamp": "2026-03-07T11-55-16-112Z",
+  "runtime_options": {
+    "sampleSize": 50,
+    "periodBuckets": 5,
+    "maxBatchSize": 10,
+    "batchPauseMs": 1500,
+    "eventPauseMs": 0,
+    "checkpointEvery": 5,
+    "geminiRetries": 4,
+    "geminiRetryBaseMs": 2500,
+    "wikiSearchLimit": 5,
+    "resume": false
+  },
+  "sample_event_ids": [
+    "3879062c-9aa7-4d3e-8be5-27b3dcbd4cd4",
+    "59a9ae68-422c-476b-a203-c8612295e0ae",
+    "4ce8c049-63e1-4f27-b9e8-a2c6a7285ad7",
+    "a698d03e-9892-4f7d-ad69-be9109e068f4",
+    "b77ad91c-a1ef-4fd0-8433-f70820c54867",
+    "5e1d9c6e-f6ff-4464-bf9a-1457730dc95f",
+    "2790cdfb-8ef6-449b-906b-a539137b064d",
+    "9efe6701-d7b0-462e-b8c3-ad3da9896766",
+    "29b7a10e-d708-47f3-bf6b-085b9a10e875",
+    "932443c7-c3bd-40d0-afe5-cceec7e5527c",
+    "2dc05568-c5e0-4d2f-ba91-7dccd42b9149",
+    "c07f5a0c-9c6e-4b00-a654-3fe62b9ae528",
+    "d3dc2583-71e5-4c47-9832-97e567dfa3b4",
+    "f43b97f9-5d4c-4581-aaa9-0d6b0f5e5b2b",
+    "de44c6c1-e22c-47ab-838a-ccb9a9ad0687",
+    "886a60e3-25a8-4679-b052-97f3003c2be9",
+    "89645d96-cdf4-4e01-9fc3-400ac9a73371",
+    "995a208b-1704-4f54-b965-73f3776d96fe",
+    "9a8d5824-85ec-4185-a35a-e0e747b5ca98",
+    "84f31c9f-dbbc-4d8f-85bc-52885c38797e",
+    "8cef8fe0-f0a5-458d-8e22-993ecc8b252d",
+    "d9ca9ab3-5139-4f21-a421-fad020638759",
+    "335b3035-b959-4002-8b5c-75d7c312a9b6",
+    "f1210295-76f1-42f3-9f50-a6231a01a594",
+    "e54375d3-71cc-4124-8fe4-e437654c865f",
+    "15c1b8ce-1602-4008-a022-2607ed74ff08",
+    "fd189bbe-4510-4ab7-91d4-eaa1d4a19831",
+    "ab5c9d45-f227-4f35-8975-9859538d090f",
+    "6bc34beb-b068-4e1a-a3e2-d4aecaccc9c9",
+    "48499af6-0407-419f-a34d-d3dcd220a8b1",
+    "abe12f2d-9dd9-4308-b8d3-c023ada50cbe",
+    "9dbcda6b-867f-4ce5-8a92-741c6d7fd42a",
+    "0edd0a05-8f7a-4c39-ad51-934068df1f3c",
+    "2e878bf2-400a-4848-9aec-20776b9c17e5",
+    "a0e96571-47a8-47c0-b4a0-abd4d42d8ebe",
+    "f7ff3f47-e1d6-405b-8c0c-adec4a18c0eb",
+    "ea4fbd18-d662-4e4d-b270-4ab390a74ffc",
+    "1efb1855-1400-4912-aec8-0e47d7bf0a21",
+    "ec296b23-80a6-42d7-8e3f-6eff2b262f72",
+    "8737b509-b01b-41b3-a0d9-6957b80a222e",
+    "88e1b791-07c1-4de4-b35b-fd4c4c2c9e6b",
+    "cd1d8f65-12f9-4fe7-80e4-6d8414889910",
+    "6d342ee3-2de7-4e0a-b316-b3bb531b1aca",
+    "2d3e98e1-f162-4234-ad5a-5c93ad3d63d0",
+    "89a4507a-90e3-4c64-beb0-7ab3691d565b",
+    "4764b56c-be2e-43e6-85ee-033b2cee5d46",
+    "9050e398-e4b6-4785-8c02-042805f5a1b9",
+    "da5f94c5-1934-461e-9d74-302bfb22e68d",
+    "35b3914d-c281-41cf-949b-2a9b0333cc78",
+    "24297915-934d-4762-bc68-a2a215310eb6"
+  ],
+  "summary_by_status": {
+    "INSUFFICIENT_EVIDENCE": 10,
+    "CONFIRMED": 27,
+    "LIKELY_CORRECT": 13
+  },
+  "summary_by_bucket": {
+    "preuve_insuffisante": 1,
+    "absence_de_singularite": 1,
+    "confirme": 27,
+    "preuve_externe_faible": 6,
+    "annee_exacte_introuvable": 6,
+    "probable_mais_a_confirmer": 7,
+    "retrieval_insuffisant": 2
+  },
+  "checkpoint": false,
+  "completed": true,
+  "resumed_count": 0,
+  "results": [
+    {
+      "id": "3879062c-9aa7-4d3e-8be5-27b3dcbd4cd4",
+      "titre": "Modernisation de la Constitution française",
+      "date_in_db": "2008-01-01",
+      "year_in_db": "2008",
+      "date_candidate": null,
+      "year_candidate": null,
+      "precision": null,
+      "status": "INSUFFICIENT_EVIDENCE",
+      "result_bucket": "preuve_insuffisante",
+      "confidence": 0,
+      "needs_human_review": true,
+      "recommendation": "Rechercher des sources externes confirmant l'année exacte de la modernisation de la Constitution française.",
+      "matched_article_fr": null,
+      "matched_article_en": null,
+      "wikidata_id": "Q2865508",
+      "event_identity": "Modernisation de la Constitution française de 2008",
+      "is_disputed": false,
+      "ambiguous_identity": false,
+      "title_self_sufficient": true,
+      "title_not_self_sufficient": false,
+      "is_not_singular_event": false,
+      "is_time_span": false,
+      "is_period_based": false,
+      "exact_year_supported": true,
+      "reasoning_short": "Aucune source externe ne confirme l'année exacte de la modernisation de la Constitution française. L'article Wikipedia fourni concerne la Constitution de 1958, et non sa modernisation de 2008.",
+      "evidence_used": [],
+      "sources_checked": [
+        {
+          "source_id": "wikipedia_fr_article",
+          "source_type": "wikipedia_fr",
+          "title": "Article 18 de la Constitution de la Cinquième République française",
+          "url": "https://fr.wikipedia.org/wiki/Article_18_de_la_Constitution_de_la_Cinqui%C3%A8me_R%C3%A9publique_fran%C3%A7aise",
+          "date_iso": null,
+          "precision": null
+        }
+      ],
+      "source_quotes": [
+        {
+          "source_id": "wikipedia_fr_article",
+          "quote": "L’article 18 de la Constitution de la Ve République est un article de la Constitution française du 4 octobre 1958 qui précise les modalités de message du président de la République aux deux assemblées du Parlement."
+        }
+      ],
+      "conflicts": []
+    },
+    {
+      "id": "59a9ae68-422c-476b-a203-c8612295e0ae",
+      "titre": "Publication du Rapport sur le Développement Humain par l'ONU",
+      "date_in_db": "1999-01-01",
+      "year_in_db": "1999",
+      "date_candidate": null,
+      "year_candidate": null,
+      "precision": null,
+      "status": "INSUFFICIENT_EVIDENCE",
+      "result_bucket": "absence_de_singularite",
+      "confidence": 0,
+      "needs_human_review": true,
+      "recommendation": "Rechercher une source qui confirme l'année de publication du premier rapport.",
+      "matched_article_fr": "https://fr.wikipedia.org/wiki/Rapport_sur_le_d%C3%A9veloppement_humain",
+      "matched_article_en": null,
+      "wikidata_id": "Q1185686",
+      "event_identity": "Publication du Rapport sur le Développement Humain par l'ONU",
+      "is_disputed": false,
+      "ambiguous_identity": false,
+      "title_self_sufficient": true,
+      "title_not_self_sufficient": false,
+      "is_not_singular_event": true,
+      "is_time_span": false,
+      "is_period_based": true,
+      "exact_year_supported": false,
+      "reasoning_short": "Le titre et la source indiquent une publication annuelle, ce qui contredit l'exigence d'une année unique. Impossible de valider l'année 1999 sans preuve supplémentaire.",
+      "evidence_used": [],
+      "sources_checked": [
+        {
+          "source_id": "wikipedia_fr_article",
+          "source_type": "wikipedia_fr",
+          "title": "Rapport sur le développement humain",
+          "url": "https://fr.wikipedia.org/wiki/Rapport_sur_le_d%C3%A9veloppement_humain",
+          "date_iso": null,
+          "precision": null
+        }
+      ],
+      "source_quotes": [
+        {
+          "source_id": "wikipedia_fr_article",
+          "quote": "Le Rapport sur le développement humain (RDH) est une publication annuelle du Bureau du rapport sur le développement humain du Programme des Nations unies pour le développement (PNUD)."
+        }
+      ],
+      "conflicts": []
+    },
+    {
+      "id": "4ce8c049-63e1-4f27-b9e8-a2c6a7285ad7",
+      "titre": "Première de La Traviata de Giuseppe Verdi",
+      "date_in_db": "1853-03-06",
+      "year_in_db": "1853",
+      "date_candidate": "1853-01-01",
+      "year_candidate": "1853",
+      "precision": "year",
+      "status": "CONFIRMED",
+      "result_bucket": "confirme",
+      "confidence": 0.9,
+      "needs_human_review": false,
+      "recommendation": "Aucune modification nécessaire.",
+      "matched_article_fr": null,
+      "matched_article_en": null,
+      "wikidata_id": "Q7317",
+      "event_identity": "Première de La Traviata de Giuseppe Verdi",
+      "is_disputed": false,
+      "ambiguous_identity": false,
+      "title_self_sufficient": true,
+      "title_not_self_sufficient": false,
+      "is_not_singular_event": false,
+      "is_time_span": false,
+      "is_period_based": false,
+      "exact_year_supported": true,
+      "reasoning_short": "L'événement est la première de La Traviata. La description détaillée confirme que La Traviata a été créée en 1853.",
+      "evidence_used": [],
+      "sources_checked": [
+        {
+          "source_id": "wikipedia_fr_article",
+          "source_type": "wikipedia_fr",
+          "title": "Giuseppe Verdi",
+          "url": "https://fr.wikipedia.org/wiki/Giuseppe_Verdi",
+          "date_iso": null,
+          "precision": null
+        },
+        {
+          "source_id": "wikipedia_en_article",
+          "source_type": "wikipedia_en",
+          "title": "Giuseppe Verdi",
+          "url": "https://en.wikipedia.org/wiki/Giuseppe_Verdi",
+          "date_iso": null,
+          "precision": null
+        },
+        {
+          "source_id": "wikidata_1",
+          "source_type": "wikidata",
+          "title": "Q7317",
+          "url": "https://www.wikidata.org/wiki/Q7317",
+          "date_iso": "1813-04-10",
+          "precision": "day"
+        },
+        {
+          "source_id": "wikidata_2",
+          "source_type": "wikidata",
+          "title": "Q7317",
+          "url": "https://www.wikidata.org/wiki/Q7317",
+          "date_iso": "1813-10-10",
+          "precision": "day"
+        },
+        {
+          "source_id": "wikidata_3",
+          "source_type": "wikidata",
+          "title": "Q7317",
+          "url": "https://www.wikidata.org/wiki/Q7317",
+          "date_iso": "1901-01-27",
+          "precision": "day"
+        }
+      ],
+      "source_quotes": [
+        {
+          "source_id": "wikipedia_fr_article",
+          "quote": "Giuseppe Fortunino Francesco Verdi (/dʒuˈzɛppe fortuˈniːno franˈt͡ʃesko ˈverdi/), né Joseph Fortunin François Verdi le 10 octobre 1813 à Roncole et mort le 27 janvier 1901 à Milan, est un compositeur romantique italien. Son œuvre, composée essentiellement d'opéras, unissant le pouvoir mélodique à la profondeur psychologique et légendaire, est l'une des plus importantes de l'histoire du théâtre musical. Verdi est l'un des compositeurs d'opéras italiens les plus influents du XIXe siècle, son influence comparable à celle de Gioachino Rossini, Vincenzo Bellini, Gaetano Donizetti et Giacomo Puccini. Ses œuvres sont fréquemment jouées dans les opéras du monde entier et, dépassant les frontières du genre, certains de ses thèmes sont depuis longtemps inscrits dans la culture populaire comme « La donna è mobile » de Rigoletto, le « Brindisi » de La traviata, le « Va, pensiero » de Nabucco ou la …"
+        },
+        {
+          "source_id": "wikipedia_en_article",
+          "quote": "Giuseppe Fortunino Francesco Verdi ( VAIR-dee, Italian: [dʒuˈzɛppe ˈverdi]; 9 or 10 October 1813 – 27 January 1901) was an Italian composer best known for his operas. He was born near Busseto, a small town in the modern province of Parma, to a family of moderate means, receiving a musical education with the help of a local patron named Antonio Barezzi. Verdi came to dominate the Italian opera scene after the era of Gioachino Rossini, Vincenzo Bellini, and Gaetano Donizetti, whose works significantly influenced him. He was also strongly influenced by the French Grand opera style particularly by Giacomo Meyerbeer and Gaspare Spontini. In his early operas, Verdi demonstrated sympathy with the Risorgimento movement which sought the unification of Italy. He also served briefly as an elected politician. The chorus \"Va, pensiero\" from his early opera Nabucco (1842), and similar choruses in lat…"
+        },
+        {
+          "source_id": "wikidata_1",
+          "quote": "date of birth: 1813-04-10"
+        },
+        {
+          "source_id": "wikidata_2",
+          "quote": "date of birth: 1813-10-10"
+        },
+        {
+          "source_id": "wikidata_3",
+          "quote": "date of death: 1901-01-27"
+        }
+      ],
+      "conflicts": []
+    },
+    {
+      "id": "a698d03e-9892-4f7d-ad69-be9109e068f4",
+      "titre": "Signature du Concordat de Bologne",
+      "date_in_db": "1516-08-10",
+      "year_in_db": "1516",
+      "date_candidate": "1516-01-01",
+      "year_candidate": "1516",
+      "precision": "year",
+      "status": "CONFIRMED",
+      "result_bucket": "confirme",
+      "confidence": 1,
+      "needs_human_review": false,
+      "recommendation": "No change needed.",
+      "matched_article_fr": "Concordat de Bologne",
+      "matched_article_en": null,
+      "wikidata_id": "Q1627409",
+      "event_identity": "Signature du Concordat de Bologne",
+      "is_disputed": false,
+      "ambiguous_identity": false,
+      "title_self_sufficient": true,
+      "title_not_self_sufficient": false,
+      "is_not_singular_event": false,
+      "is_time_span": false,
+      "is_period_based": false,
+      "exact_year_supported": true,
+      "reasoning_short": "Both Wikipedia and Wikidata confirm the event occurred in 1516.",
+      "evidence_used": [
+        "wikipedia_fr_article",
+        "wikidata_1"
+      ],
+      "sources_checked": [
+        {
+          "source_id": "wikipedia_fr_article",
+          "source_type": "wikipedia_fr",
+          "title": "Concordat de Bologne",
+          "url": "https://fr.wikipedia.org/wiki/Concordat_de_Bologne",
+          "date_iso": null,
+          "precision": null
+        },
+        {
+          "source_id": "wikidata_1",
+          "source_type": "wikidata",
+          "title": "Q1627409",
+          "url": "https://www.wikidata.org/wiki/Q1627409",
+          "date_iso": "1516-08-18",
+          "precision": "day"
+        }
+      ],
+      "source_quotes": [
+        {
+          "source_id": "wikipedia_fr_article",
+          "quote": "Le concordat de Bologne est signé à Rome le 18 août 1516, lors du cinquième concile du Latran, entre le pape Léon X et le chancelier Antoine Duprat qui représentait le roi de France François Ier. Largement conçu par l'humaniste Jean de Pins, il est le fruit des discussions engagées à Bologne en décembre 1515 entre François Ier, auréolé du prestige de sa victoire de Marignan, et Léon X. Il régit les relations entre l'Église catholique romaine et le roi de France jusqu'en 1790. Il donne au roi de France un pouvoir sur l’Église dans son royaume dont ne disposait aucun autre souverain catholique."
+        },
+        {
+          "source_id": "wikidata_1",
+          "quote": "point in time: 1516-08-18"
+        }
+      ],
+      "conflicts": []
+    },
+    {
+      "id": "b77ad91c-a1ef-4fd0-8433-f70820c54867",
+      "titre": "Signature du traité d'Entrammes",
+      "date_in_db": "0863-01-01",
+      "year_in_db": "0863",
+      "date_candidate": "0863-01-01",
+      "year_candidate": "0863",
+      "precision": "year",
+      "status": "CONFIRMED",
+      "result_bucket": "confirme",
+      "confidence": 1,
+      "needs_human_review": false,
+      "recommendation": "Confirmer la date de 863 pour la signature du traité d'Entrammes.",
+      "matched_article_fr": "https://fr.wikipedia.org/wiki/Trait%C3%A9_d%27Entrammes",
+      "matched_article_en": null,
+      "wikidata_id": "Q3536732",
+      "event_identity": "Signature du traité d'Entrammes",
+      "is_disputed": false,
+      "ambiguous_identity": false,
+      "title_self_sufficient": true,
+      "title_not_self_sufficient": false,
+      "is_not_singular_event": false,
+      "is_time_span": false,
+      "is_period_based": false,
+      "exact_year_supported": true,
+      "reasoning_short": "Le traité d'Entrammes a été signé en 863, selon l'article Wikipédia correspondant.",
+      "evidence_used": [
+        "wikipedia_fr_article"
+      ],
+      "sources_checked": [
+        {
+          "source_id": "wikipedia_fr_article",
+          "source_type": "wikipedia_fr",
+          "title": "Traité d'Entrammes",
+          "url": "https://fr.wikipedia.org/wiki/Trait%C3%A9_d%27Entrammes",
+          "date_iso": null,
+          "precision": null
+        }
+      ],
+      "source_quotes": [
+        {
+          "source_id": "wikipedia_fr_article",
+          "quote": "Le traité d'Entrammes est un traité de paix de 863 entre Salomon de Bretagne et Charles le Chauve qui fut conclu à l'abbaye d'Entrammes"
+        }
+      ],
+      "conflicts": []
+    },
+    {
+      "id": "5e1d9c6e-f6ff-4464-bf9a-1457730dc95f",
+      "titre": "Construction de la cathédrale de Hildesheim",
+      "date_in_db": "1010-01-01",
+      "year_in_db": "1010",
+      "date_candidate": "1010-01-01",
+      "year_candidate": "1010",
+      "precision": "year",
+      "status": "LIKELY_CORRECT",
+      "result_bucket": "preuve_externe_faible",
+      "confidence": 0.8,
+      "needs_human_review": false,
+      "recommendation": "Confirmer la date de 1010 pour le début de la construction de la cathédrale de Hildesheim.",
+      "matched_article_fr": "Hildesheim",
+      "matched_article_en": null,
+      "wikidata_id": "Q3185",
+      "event_identity": "Construction de la cathédrale de Hildesheim",
+      "is_disputed": false,
+      "ambiguous_identity": false,
+      "title_self_sufficient": true,
+      "title_not_self_sufficient": false,
+      "is_not_singular_event": false,
+      "is_time_span": false,
+      "is_period_based": false,
+      "exact_year_supported": true,
+      "reasoning_short": "La description de l'événement et l'article Wikipédia sur Hildesheim confirment que la construction de la cathédrale a débuté en 1010.",
+      "evidence_used": [
+        "wikipedia_fr_article"
+      ],
+      "sources_checked": [
+        {
+          "source_id": "wikipedia_fr_article",
+          "source_type": "wikipedia_fr",
+          "title": "Hildesheim",
+          "url": "https://fr.wikipedia.org/wiki/Hildesheim",
+          "date_iso": null,
+          "precision": null
+        }
+      ],
+      "source_quotes": [
+        {
+          "source_id": "wikipedia_fr_article",
+          "quote": "Hildesheim ([ˈhɪl.dəs.ˌhaɪ̯m] ) est une ville allemande, située près de Hanovre, Basse-Saxe, peuplée d'environ 100 000 habitants. Les activités principales y sont l'administration, les services et l'enseignement. Hildesheim a une université et différentes écoles. Elle est aussi l'évêché du diocèse catholique de Hildesheim. Ce dernier administre la bibliothèque de la cathédrale de Hildesheim. Bien que détruit à 40 % pendant la Seconde Guerre mondiale, le centre historique, reconstruit ensuite, a conservé beaucoup de son ancien charme. La cathédrale Sainte-Marie et l'église Saint-Michel rappellent l'époque de l’évêque Bernward de Hildesheim (993-1022). Hildesheim, avec toute la région, était alors le centre de la dynastie des empereurs ottoniens qui aspiraient à la restauration de l'Empire romain. Saint Bernward voulait donner à sa résidence, un village de quelques paysans et marchands av…"
+        }
+      ],
+      "conflicts": []
+    },
+    {
+      "id": "2790cdfb-8ef6-449b-906b-a539137b064d",
+      "titre": "Régence de Baudouin V de Flandre sur le royaume de France",
+      "date_in_db": "1060-01-01",
+      "year_in_db": "1060",
+      "date_candidate": null,
+      "year_candidate": null,
+      "precision": null,
+      "status": "INSUFFICIENT_EVIDENCE",
+      "result_bucket": "annee_exacte_introuvable",
+      "confidence": 0,
+      "needs_human_review": true,
+      "recommendation": "Rechercher des sources externes qui confirment l'année exacte de la régence de Baudouin V.",
+      "matched_article_fr": null,
+      "matched_article_en": null,
+      "wikidata_id": "Q3454969",
+      "event_identity": "Régence de Baudouin V de Flandre sur le royaume de France en 1060.",
+      "is_disputed": false,
+      "ambiguous_identity": false,
+      "title_self_sufficient": true,
+      "title_not_self_sufficient": false,
+      "is_not_singular_event": false,
+      "is_time_span": false,
+      "is_period_based": false,
+      "exact_year_supported": false,
+      "reasoning_short": "Aucune source externe ne confirme l'année exacte de la régence de Baudouin V de Flandre sur le royaume de France. La source Wikipedia parle des régents de France en général, mais ne mentionne pas Baudouin V ni l'année 1060.",
+      "evidence_used": [],
+      "sources_checked": [
+        {
+          "source_id": "wikipedia_fr_article",
+          "source_type": "wikipedia_fr",
+          "title": "Régent de France",
+          "url": "https://fr.wikipedia.org/wiki/R%C3%A9gent_de_France",
+          "date_iso": null,
+          "precision": null
+        }
+      ],
+      "source_quotes": [
+        {
+          "source_id": "wikipedia_fr_article",
+          "quote": "Le régent ou la régente de France était le titre décerné à celui ou celle qui était désigné(e) pour exercer les prérogatives royales et gouverner le royaume de France pendant la minorité ou l'absence du roi de France. Des princes, reines et évêques ont été chargés de la régence par plusieurs modes de désignation. Le terme de cet exercice ayant été la majorité du roi, son retour en France ou sa mort (dans le cas du petit Jean Ier). Le titre de régent n'est attesté qu'en 1316, après la mort de Louis X le Hutin. Le frère du roi défunt, Philippe le Long, est le premier à le porter. L'article « se conform(e) à l'usage » et l'emploie pour désigner Suger, Adèle de Champagne et Blanche de Castille. À partir du XVe siècle et jusqu'à la fin de l'Ancien Régime, toutes les régences sont exercées par des femmes, à l'exception de celle de Philippe d'Orléans, de 1715 à 1723. À la Révolution, le comte …"
+        }
+      ],
+      "conflicts": []
+    },
+    {
+      "id": "9efe6701-d7b0-462e-b8c3-ad3da9896766",
+      "titre": "Publication des 95 thèses de Martin Luther",
+      "date_in_db": "1517-10-01",
+      "year_in_db": "1517",
+      "date_candidate": "1517-01-01",
+      "year_candidate": "1517",
+      "precision": "year",
+      "status": "CONFIRMED",
+      "result_bucket": "confirme",
+      "confidence": 0.9,
+      "needs_human_review": false,
+      "recommendation": "No change needed.",
+      "matched_article_fr": "wikipedia_fr_article",
+      "matched_article_en": "wikipedia_en_article",
+      "wikidata_id": "Q9554",
+      "event_identity": "Publication des 95 thèses de Martin Luther",
+      "is_disputed": false,
+      "ambiguous_identity": false,
+      "title_self_sufficient": true,
+      "title_not_self_sufficient": false,
+      "is_not_singular_event": false,
+      "is_time_span": false,
+      "is_period_based": false,
+      "exact_year_supported": true,
+      "reasoning_short": "Les articles Wikipédia en français et en anglais sur Martin Luther mentionnent la publication des 95 thèses en 1517.",
+      "evidence_used": [
+        "wikipedia_fr_article",
+        "wikipedia_en_article"
+      ],
+      "sources_checked": [
+        {
+          "source_id": "wikipedia_fr_article",
+          "source_type": "wikipedia_fr",
+          "title": "Martin Luther",
+          "url": "https://fr.wikipedia.org/wiki/Martin_Luther",
+          "date_iso": null,
+          "precision": null
+        },
+        {
+          "source_id": "wikipedia_en_article",
+          "source_type": "wikipedia_en",
+          "title": "Martin Luther",
+          "url": "https://en.wikipedia.org/wiki/Martin_Luther",
+          "date_iso": null,
+          "precision": null
+        },
+        {
+          "source_id": "wikidata_1",
+          "source_type": "wikidata",
+          "title": "Q9554",
+          "url": "https://www.wikidata.org/wiki/Q9554",
+          "date_iso": "1483-11-10",
+          "precision": "day"
+        },
+        {
+          "source_id": "wikidata_2",
+          "source_type": "wikidata",
+          "title": "Q9554",
+          "url": "https://www.wikidata.org/wiki/Q9554",
+          "date_iso": "1483-01-01",
+          "precision": "year"
+        },
+        {
+          "source_id": "wikidata_3",
+          "source_type": "wikidata",
+          "title": "Q9554",
+          "url": "https://www.wikidata.org/wiki/Q9554",
+          "date_iso": "1546-02-18",
+          "precision": "day"
+        }
+      ],
+      "source_quotes": [
+        {
+          "source_id": "wikipedia_fr_article",
+          "quote": "Martin Luther [maʁtɛ̃ lytɛʁ] (en allemand : [ˈmaʁtiːn ˈlʊtɐ] ), né le 10 novembre 1483 à Eisleben (Saxe) et mort le 18 février 1546 dans la même ville, est un prêtre augustin, théologien et professeur d'université allemand. Initiateur du protestantisme et réformateur de l'Église, ses idées exercèrent une grande influence sur la Réforme protestante, qui changea le cours de la civilisation occidentale. Préoccupé par les questions de la mort et du Salut qui caractérisent le christianisme du Moyen Âge tardif, il puise des réponses dans la Bible, particulièrement dans l'épître de Paul aux Romains. Selon Luther, le salut de l'âme est un libre don de Dieu, reçu par la repentance sincère et la foi authentique en Jésus-Christ comme le Messie, sans intercession possible de l'Église. Il défie l'autorité papale en tenant la Bible pour seule source légitime d'autorité chrétienne. Scandalisé par le c…"
+        },
+        {
+          "source_id": "wikipedia_en_article",
+          "quote": "Martin Luther ( LOO-thər; German: [ˈmaʁtiːn ˈlʊtɐ] ; 10 November 1483 – 18 February 1546) was a German priest, theologian, author, hymnwriter, professor, and former Augustinian friar. Luther was the seminal figure of the Protestant Reformation, and his theological beliefs form the basis of Lutheranism. He is widely regarded as one of the most influential figures in Western and Christian history. Born in Eisleben, Luther was ordained to the priesthood in 1507. He came to reject various teachings and practices of the Roman Catholic Church, in particular the view on indulgences and papal authority. Luther initiated an international debate on these in works like his Ninety-five Theses, which he authored in 1517. In 1520 Pope Leo X demanded that Luther renounce all of his writings, and when Luther refused to do so, excommunicated him in January 1521. Later that year, Holy Roman Emperor Charl…"
+        },
+        {
+          "source_id": "wikidata_1",
+          "quote": "date of birth: 1483-11-10"
+        },
+        {
+          "source_id": "wikidata_2",
+          "quote": "date of birth: 1483-01-01"
+        },
+        {
+          "source_id": "wikidata_3",
+          "quote": "date of death: 1546-02-18"
+        }
+      ],
+      "conflicts": []
+    },
+    {
+      "id": "29b7a10e-d708-47f3-bf6b-085b9a10e875",
+      "titre": "Expédition Deepsea Challenge (James Cameron)",
+      "date_in_db": "2012-01-01",
+      "year_in_db": "2012",
+      "date_candidate": "2012-01-01",
+      "year_candidate": "2012",
+      "precision": "year",
+      "status": "CONFIRMED",
+      "result_bucket": "confirme",
+      "confidence": 0.9,
+      "needs_human_review": false,
+      "recommendation": "Aucune modification nécessaire.",
+      "matched_article_fr": null,
+      "matched_article_en": null,
+      "wikidata_id": "Q42574",
+      "event_identity": "Expédition Deepsea Challenge de James Cameron en 2012.",
+      "is_disputed": false,
+      "ambiguous_identity": false,
+      "title_self_sufficient": true,
+      "title_not_self_sufficient": false,
+      "is_not_singular_event": false,
+      "is_time_span": false,
+      "is_period_based": false,
+      "exact_year_supported": true,
+      "reasoning_short": "Le titre et la description indiquent clairement que l'expédition Deepsea Challenge de James Cameron a eu lieu en 2012.",
+      "evidence_used": [],
+      "sources_checked": [
+        {
+          "source_id": "wikipedia_fr_article",
+          "source_type": "wikipedia_fr",
+          "title": "James Cameron",
+          "url": "https://fr.wikipedia.org/wiki/James_Cameron",
+          "date_iso": null,
+          "precision": null
+        },
+        {
+          "source_id": "wikipedia_en_article",
+          "source_type": "wikipedia_en",
+          "title": "James Cameron",
+          "url": "https://en.wikipedia.org/wiki/James_Cameron",
+          "date_iso": null,
+          "precision": null
+        },
+        {
+          "source_id": "wikidata_1",
+          "source_type": "wikidata",
+          "title": "Q42574",
+          "url": "https://www.wikidata.org/wiki/Q42574",
+          "date_iso": "1954-08-16",
+          "precision": "day"
+        }
+      ],
+      "source_quotes": [
+        {
+          "source_id": "wikipedia_fr_article",
+          "quote": "James Cameron [ d͡ʒeɪmz ˈkæmɹən], né le 16 août 1954 à Kapuskasing (Canada), est un réalisateur, scénariste, producteur et explorateur de fonds marins canadien. Il est également citoyen néo-zélandais depuis 2025. Il a écrit et réalisé les films Terminator (1984), Aliens, le retour (1986), Abyss (1989), Terminator 2 : Le Jugement dernier (1991), True Lies (1994), Titanic (1997), Avatar (2009), Avatar : La Voie de l'eau (2022) et Avatar : De feu et de cendres (2025). En 1997, Titanic, film doté d'un budget estimé à 200 millions de dollars qui se consacre au célèbre naufrage du navire éponyme est un triomphe public et critique. Immense succès planétaire, le film restera pendant onze ans le plus gros succès du box-office mondial. En 1998, lors de la 70e cérémonie des Oscars, l'œuvre remporte un total de 11 statuettes, dont l'Oscar du meilleur film, tandis que Cameron obtient l'Oscar du meil…"
+        },
+        {
+          "source_id": "wikipedia_en_article",
+          "quote": "James Francis Cameron (born August 16, 1954) is a Canadian filmmaker and deep-sea explorer. His films combine cutting-edge film technology with classical filmmaking techniques and have grossed over $10 billion worldwide, making him the second-highest-grossing film director of all time. A major figure in the post-New Hollywood era, Cameron has received numerous accolades, including three Academy Awards, two Primetime Emmy Awards, and four Golden Globe Awards, as well as nominations for six British Academy Film Awards. Born and raised in Ontario, Cameron moved to California aged 17 and enrolled at Fullerton Community College. Beginning his career with the short film Xenogenesis (1978), he first gained recognition for writing and directing the science fiction action film The Terminator (1984). He had further success with Aliens (1986), The Abyss (1989), Terminator 2: Judgment Day (1991), a…"
+        },
+        {
+          "source_id": "wikidata_1",
+          "quote": "date of birth: 1954-08-16"
+        }
+      ],
+      "conflicts": []
+    },
+    {
+      "id": "932443c7-c3bd-40d0-afe5-cceec7e5527c",
+      "titre": "Fondation de l'Académie royale de danse à Paris",
+      "date_in_db": "1661-01-01",
+      "year_in_db": "1661",
+      "date_candidate": "1661-01-01",
+      "year_candidate": "1661",
+      "precision": "year",
+      "status": "CONFIRMED",
+      "result_bucket": "confirme",
+      "confidence": 0.9,
+      "needs_human_review": false,
+      "recommendation": "No change needed.",
+      "matched_article_fr": "wikipedia_fr_article",
+      "matched_article_en": null,
+      "wikidata_id": "Q1925090",
+      "event_identity": "Fondation de l'Académie royale de danse à Paris",
+      "is_disputed": false,
+      "ambiguous_identity": false,
+      "title_self_sufficient": true,
+      "title_not_self_sufficient": false,
+      "is_not_singular_event": false,
+      "is_time_span": false,
+      "is_period_based": false,
+      "exact_year_supported": true,
+      "reasoning_short": "L'article Wikipédia en français confirme la fondation de l'Académie royale de danse en 1661.",
+      "evidence_used": [
+        "wikipedia_fr_article"
+      ],
+      "sources_checked": [
+        {
+          "source_id": "wikipedia_fr_article",
+          "source_type": "wikipedia_fr",
+          "title": "Académie royale de danse",
+          "url": "https://fr.wikipedia.org/wiki/Acad%C3%A9mie_royale_de_danse",
+          "date_iso": null,
+          "precision": null
+        },
+        {
+          "source_id": "wikipedia_en_article",
+          "source_type": "wikipedia_en",
+          "title": "Paris Opera Ballet",
+          "url": "https://en.wikipedia.org/wiki/Paris_Opera_Ballet",
+          "date_iso": null,
+          "precision": null
+        },
+        {
+          "source_id": "wikidata_1",
+          "source_type": "wikidata",
+          "title": "Q1925090",
+          "url": "https://www.wikidata.org/wiki/Q1925090",
+          "date_iso": "1661-01-01",
+          "precision": "year"
+        }
+      ],
+      "source_quotes": [
+        {
+          "source_id": "wikipedia_fr_article",
+          "quote": "Institution fondée à l'initiative de Louis XIV, l'Académie royale de danse reçoit ses lettres patentes en mars 1661. Prédécesseur de l'Académie d'Opéra (fondée en 1669) et dans laquelle seront intégrés les danseurs qui formeront le futur corps de ballet de l'Opéra national de Paris, l'Académie de Danse en tant que telle disparaîtra au début des années 1780. Au nombre de treize, les « académistes » font partie de l'entourage du roi et de la cour ; ils sont, pour la plupart, à la fois danseurs et musiciens. C'est ce qui motive la confrérie des musiciens de Saint-Julien à publier en 1664 un virulent factum contre les « prétendus Académiciens ». Cette longue plaidoirie, intitulée Le mariage de la musique avec la dance, est signée par Guillaume Dumanoir, « joueur de violon du cabinet de Sa Majesté, l'un des vingt-cinq de sa grand' Bande, & pourvu aussi de l'Office de Roy des Joueurs d'instru…"
+        },
+        {
+          "source_id": "wikipedia_en_article",
+          "quote": "The Paris Opera Ballet (French: Ballet de l'Opéra national de Paris) is a French ballet company that is an integral part of the Paris Opera. It is the oldest national ballet company, and many European and international ballet companies can trace their origins to it. It is still regarded as one of the most prominent ballet companies in the world, together with the Bolshoi Ballet in Moscow and the Royal Ballet in London. Since December 2022, the company has been under the direction of José Martínez, the director of dance. The ballet company consists of 154 dancers, among them 17 Danseurs Étoiles. The principal dancers give 180 dance performances each year, primarily at the Palais Garnier. Just as prestigious as the Paris Opera Ballet is its dance school, the Paris Opera Ballet School (French: École de danse de l'Opéra national de Paris), considered to be one of the world's best dance scho…"
+        },
+        {
+          "source_id": "wikidata_1",
+          "quote": "inception: 1661-01-01"
+        }
+      ],
+      "conflicts": []
+    },
+    {
+      "id": "2dc05568-c5e0-4d2f-ba91-7dccd42b9149",
+      "titre": "Conférence des femmes pour la paix (La Haye)",
+      "date_in_db": "1915-01-01",
+      "year_in_db": "1915",
+      "date_candidate": "1915-01-01",
+      "year_candidate": "1915",
+      "precision": "year",
+      "status": "CONFIRMED",
+      "result_bucket": "confirme",
+      "confidence": 0.9,
+      "needs_human_review": false,
+      "recommendation": "Confirmer la date de 1915.",
+      "matched_article_fr": "Ligue internationale des femmes pour la paix et la liberté",
+      "matched_article_en": null,
+      "wikidata_id": "Q689768",
+      "event_identity": "Conférence des femmes pour la paix à La Haye en 1915.",
+      "is_disputed": false,
+      "ambiguous_identity": false,
+      "title_self_sufficient": true,
+      "title_not_self_sufficient": false,
+      "is_not_singular_event": false,
+      "is_time_span": false,
+      "is_period_based": false,
+      "exact_year_supported": true,
+      "reasoning_short": "La Ligue internationale des femmes pour la paix et la liberté a été créée suite au congrès international des femmes de La Haye en 1915. Wikidata confirme la date de création en 1915.",
+      "evidence_used": [
+        "wikipedia_fr_article",
+        "wikidata_1"
+      ],
+      "sources_checked": [
+        {
+          "source_id": "wikipedia_fr_article",
+          "source_type": "wikipedia_fr",
+          "title": "Ligue internationale des femmes pour la paix et la liberté",
+          "url": "https://fr.wikipedia.org/wiki/Ligue_internationale_des_femmes_pour_la_paix_et_la_libert%C3%A9",
+          "date_iso": null,
+          "precision": null
+        },
+        {
+          "source_id": "wikidata_1",
+          "source_type": "wikidata",
+          "title": "Q689768",
+          "url": "https://www.wikidata.org/wiki/Q689768",
+          "date_iso": "1915-04-28",
+          "precision": "day"
+        }
+      ],
+      "source_quotes": [
+        {
+          "source_id": "wikipedia_fr_article",
+          "quote": "La Ligue internationale des femmes pour la paix et la liberté (en anglais : Women's International League for Peace and Freedom ; LIFPL ou WILPF) est une ONG internationale pacifiste et féministe créée en 1915 pour promouvoir le désarmement et la durabilité, autant que lutter contre l'exploitation, les discriminations et l'inégalité sociale. Siégeant à Genève (Suisse), elle dispose de sections nationales dans plusieurs pays. Elle est issue du congrès international des femmes de La Haye de 1915, un rassemblement de la minorité pacifiste du mouvement féministe international, qui n'avait pas accepté le ralliement de la plupart des organisations féministes de l'époque à l'effort de guerre dans leur patrie d'origine. Portant initialement le nom de Comité international des femmes pour la paix permanente, l'association devient officiellement la Ligue internationale des femmes pour la paix et la…"
+        },
+        {
+          "source_id": "wikidata_1",
+          "quote": "inception: 1915-04-28"
+        }
+      ],
+      "conflicts": []
+    },
+    {
+      "id": "c07f5a0c-9c6e-4b00-a654-3fe62b9ae528",
+      "titre": "Lancement du programme électronucléaire français",
+      "date_in_db": "1974-01-01",
+      "year_in_db": "1974",
+      "date_candidate": "1974-01-01",
+      "year_candidate": "1974",
+      "precision": "year",
+      "status": "LIKELY_CORRECT",
+      "result_bucket": "preuve_externe_faible",
+      "confidence": 0.8,
+      "needs_human_review": false,
+      "recommendation": "None",
+      "matched_article_fr": "Histoire du programme nucléaire civil de la France",
+      "matched_article_en": null,
+      "wikidata_id": "Q3137908",
+      "event_identity": "Lancement du programme électronucléaire français en 1974.",
+      "is_disputed": false,
+      "ambiguous_identity": false,
+      "title_self_sufficient": true,
+      "title_not_self_sufficient": false,
+      "is_not_singular_event": false,
+      "is_time_span": false,
+      "is_period_based": false,
+      "exact_year_supported": true,
+      "reasoning_short": "L'événement est le lancement du programme électronucléaire français. La description et le titre indiquent 1974. L'article Wikipédia confirme l'existence du programme nucléaire civil français.",
+      "evidence_used": [
+        "wikipedia_fr_article"
+      ],
+      "sources_checked": [
+        {
+          "source_id": "wikipedia_fr_article",
+          "source_type": "wikipedia_fr",
+          "title": "Histoire du programme nucléaire civil de la France",
+          "url": "https://fr.wikipedia.org/wiki/Histoire_du_programme_nucl%C3%A9aire_civil_de_la_France",
+          "date_iso": null,
+          "precision": null
+        }
+      ],
+      "source_quotes": [
+        {
+          "source_id": "wikipedia_fr_article",
+          "quote": "L'histoire du programme nucléaire civil de la France retrace le cheminement qui a conduit la France à devenir, à la fin du XXe siècle, le deuxième pays producteur d'électricité à base d'énergie nucléaire au monde, tant par le nombre de réacteurs en activité que par la puissance installée et la quantité d'électricité produite. Des années 1990 jusqu'aux années 2010, les trois quarts de l’électricité française sont d’origine nucléaire. À partir du milieu des années 2010, cette part baisse progressivement pour atteindre 65 % en 2023. Au début du XXe siècle, le pays participe pleinement à la découverte de la radioactivité et de ses premières applications. Dans les années 1930, la découverte de la radioactivité artificielle et des mécanismes de la fission nucléaire par des scientifiques français place le pays en tête dans le domaine, mais la Seconde Guerre mondiale met un terme aux ambitions …"
+        }
+      ],
+      "conflicts": []
+    },
+    {
+      "id": "d3dc2583-71e5-4c47-9832-97e567dfa3b4",
+      "titre": "Première de L'Enlèvement au sérail de Wolfgang Amadeus Mozart",
+      "date_in_db": "1782-07-16",
+      "year_in_db": "1782",
+      "date_candidate": "1782-01-01",
+      "year_candidate": "1782",
+      "precision": "year",
+      "status": "CONFIRMED",
+      "result_bucket": "confirme",
+      "confidence": 0.9,
+      "needs_human_review": false,
+      "recommendation": "No change needed.",
+      "matched_article_fr": null,
+      "matched_article_en": null,
+      "wikidata_id": "Q254",
+      "event_identity": "Première de L'Enlèvement au sérail de Wolfgang Amadeus Mozart",
+      "is_disputed": false,
+      "ambiguous_identity": false,
+      "title_self_sufficient": true,
+      "title_not_self_sufficient": false,
+      "is_not_singular_event": false,
+      "is_time_span": false,
+      "is_period_based": false,
+      "exact_year_supported": true,
+      "reasoning_short": "L'événement est la première de l'opéra de Mozart, et l'année 1782 est mentionnée dans la description détaillée.",
+      "evidence_used": [],
+      "sources_checked": [
+        {
+          "source_id": "wikipedia_fr_article",
+          "source_type": "wikipedia_fr",
+          "title": "Wolfgang Amadeus Mozart",
+          "url": "https://fr.wikipedia.org/wiki/Wolfgang_Amadeus_Mozart",
+          "date_iso": null,
+          "precision": null
+        },
+        {
+          "source_id": "wikidata_1",
+          "source_type": "wikidata",
+          "title": "Q254",
+          "url": "https://www.wikidata.org/wiki/Q254",
+          "date_iso": "1756-01-27",
+          "precision": "day"
+        },
+        {
+          "source_id": "wikidata_2",
+          "source_type": "wikidata",
+          "title": "Q254",
+          "url": "https://www.wikidata.org/wiki/Q254",
+          "date_iso": "1756-01-27",
+          "precision": "day"
+        },
+        {
+          "source_id": "wikidata_3",
+          "source_type": "wikidata",
+          "title": "Q254",
+          "url": "https://www.wikidata.org/wiki/Q254",
+          "date_iso": "1791-12-05",
+          "precision": "day"
+        }
+      ],
+      "source_quotes": [
+        {
+          "source_id": "wikipedia_fr_article",
+          "quote": "Wolfgang Amadeus Mozart ou Johannes Chrysostomus Wolfgangus Theophilus Mozart, né le 27 janvier 1756 à Salzbourg (principauté archiépiscopale de Salzbourg) et mort le 5 décembre 1791 à Vienne, est un compositeur germano-autrichien de la période classique. Il est considéré comme l'un des plus grands compositeurs de l'histoire. Avec Joseph Haydn et Ludwig van Beethoven, il porte à son apogée l'école classique viennoise. Enfant prodige et compositeur précoce, il est produit en public dès l'âge de sept ans à travers l'Europe, où il subjugue les assistances avec sa sœur Maria Anna. Mort à trente-cinq ans, il laisse une œuvre considérable : 893 œuvres sont répertoriées dans le catalogue Köchel. Selon le témoignage de ses contemporains, il est, au piano comme au violon, un virtuose. Il écrit dans tous les genres musicaux de son époque, et excelle dans chacun d'eux. Il est reconnu qu'il porte à…"
+        },
+        {
+          "source_id": "wikidata_1",
+          "quote": "date of birth: 1756-01-27"
+        },
+        {
+          "source_id": "wikidata_2",
+          "quote": "date of birth: 1756-01-27"
+        },
+        {
+          "source_id": "wikidata_3",
+          "quote": "date of death: 1791-12-05"
+        }
+      ],
+      "conflicts": []
+    },
+    {
+      "id": "f43b97f9-5d4c-4581-aaa9-0d6b0f5e5b2b",
+      "titre": "Construction de l'Hôpital de la Charité à Paris",
+      "date_in_db": "1606-01-01",
+      "year_in_db": "1606",
+      "date_candidate": "1606-01-01",
+      "year_candidate": "1606",
+      "precision": "year",
+      "status": "LIKELY_CORRECT",
+      "result_bucket": "probable_mais_a_confirmer",
+      "confidence": 0.8,
+      "needs_human_review": false,
+      "recommendation": "Confirmer la date de 1606 comme année de construction de l'Hôpital de la Charité à Paris.",
+      "matched_article_fr": "wikipedia_fr_article",
+      "matched_article_en": null,
+      "wikidata_id": "Q1643043",
+      "event_identity": "Construction de l'Hôpital de la Charité à Paris",
+      "is_disputed": false,
+      "ambiguous_identity": false,
+      "title_self_sufficient": true,
+      "title_not_self_sufficient": false,
+      "is_not_singular_event": false,
+      "is_time_span": false,
+      "is_period_based": false,
+      "exact_year_supported": true,
+      "reasoning_short": "L'article Wikipédia en français sur l'Hôpital de la Charité de Paris indique qu'il a été fondé au début du XVIIe siècle. La date de 1606 correspond au début du XVIIe siècle et est cohérente avec la description détaillée.",
+      "evidence_used": [
+        "wikipedia_fr_article"
+      ],
+      "sources_checked": [
+        {
+          "source_id": "wikipedia_fr_article",
+          "source_type": "wikipedia_fr",
+          "title": "Hôpital de la Charité de Paris",
+          "url": "https://fr.wikipedia.org/wiki/H%C3%B4pital_de_la_Charit%C3%A9_de_Paris",
+          "date_iso": null,
+          "precision": null
+        },
+        {
+          "source_id": "wikipedia_en_article",
+          "source_type": "wikipedia_en",
+          "title": "Hôtel-Dieu, Paris",
+          "url": "https://en.wikipedia.org/wiki/H%C3%B4tel-Dieu,_Paris",
+          "date_iso": null,
+          "precision": null
+        }
+      ],
+      "source_quotes": [
+        {
+          "source_id": "wikipedia_fr_article",
+          "quote": "L'hôpital de la Charité de Paris, également appelé hôpital des Frères-de-Saint-Jean-de-Dieu, est un ancien hôpital parisien fondé au début du XVIIe siècle. Il est fermé et détruit vers 1935 pour faire place à la nouvelle faculté de médecine. Situés au 45, rue des Saints-Pères, ces locaux abritent actuellement le campus Saint-Germain-des-Prés, l'un des sites de l'Université Paris-Cité."
+        },
+        {
+          "source_id": "wikipedia_en_article",
+          "quote": "The Hôtel-Dieu (French pronunciation: [otɛl djø]; \"God Shelter\") is a public hospital located on the Île de la Cité in the 4th arrondissement of Paris, on the parvis of Notre-Dame. Tradition has it that the hospital was founded by Saint Landry in 651 AD, but the first official records date it to 829, making it the oldest in France and possibly the oldest continuously operating hospital in the world. The Hôtel-Dieu was the only hospital in the city until the beginning of the 17th century. The original Hôtel-Dieu stood on the banks of the Seine on the southern side of the Île de la Cité. It was ravaged by fire several times and was rebuilt for the last time at its present location on the north side of the parvis of Notre Dame between 1867 and 1878, as part of Haussmann's renovation of Paris. Currently operated by Assistance publique – Hôpitaux de Paris (AP-HP), the Hôtel-Dieu is a teachin…"
+        }
+      ],
+      "conflicts": []
+    },
+    {
+      "id": "de44c6c1-e22c-47ab-838a-ccb9a9ad0687",
+      "titre": "Publication du premier volume de l'Encyclopédie",
+      "date_in_db": "1751-06-28",
+      "year_in_db": "1751",
+      "date_candidate": "1751-01-01",
+      "year_candidate": "1751",
+      "precision": "year",
+      "status": "CONFIRMED",
+      "result_bucket": "confirme",
+      "confidence": 1,
+      "needs_human_review": false,
+      "recommendation": "No change needed.",
+      "matched_article_fr": "Encyclopédie",
+      "matched_article_en": null,
+      "wikidata_id": "Q5292",
+      "event_identity": "Publication du premier volume de l'Encyclopédie de Diderot et d'Alembert.",
+      "is_disputed": false,
+      "ambiguous_identity": false,
+      "title_self_sufficient": true,
+      "title_not_self_sufficient": false,
+      "is_not_singular_event": false,
+      "is_time_span": false,
+      "is_period_based": false,
+      "exact_year_supported": true,
+      "reasoning_short": "La source Wikipedia confirme que le premier volume de l'Encyclopédie a été publié en 1751.",
+      "evidence_used": [
+        "wikipedia_fr_article"
+      ],
+      "sources_checked": [
+        {
+          "source_id": "wikipedia_fr_article",
+          "source_type": "wikipedia_fr",
+          "title": "Encyclopédie",
+          "url": "https://fr.wikipedia.org/wiki/Encyclop%C3%A9die",
+          "date_iso": null,
+          "precision": null
+        }
+      ],
+      "source_quotes": [
+        {
+          "source_id": "wikipedia_fr_article",
+          "quote": "Une encyclopédie est un ouvrage de référence (livre, ensemble de livres ou document numérique) visant à synthétiser toutes les connaissances pour édifier le savoir et à en montrer l'organisation de façon à les rendre accessibles au public, dans un but d'éducation, d'information ou de soutien à la mémoire culturelle. Basé sur des autorités ou des sources valides et souvent complété par des exemples et des illustrations, ce genre d'ouvrage privilégie un style concis et favorise la consultation par des tables et des index. Le terme a pris son sens moderne avec l'Encyclopédie ou Dictionnaire raisonné des sciences, des arts et des métiers (1751-1772). En principe, une encyclopédie est différente d'un dictionnaire, car ce dernier a pour objet le sens et l'emploi des mots d'une langue, et est donc intraduisible en tant que tel, alors que l'encyclopédie traite des choses ou réalités du monde et…"
+        }
+      ],
+      "conflicts": []
+    },
+    {
+      "id": "886a60e3-25a8-4679-b052-97f3003c2be9",
+      "titre": "Retrait monastique de Carloman",
+      "date_in_db": "0747-01-01",
+      "year_in_db": "0747",
+      "date_candidate": "0747-01-01",
+      "year_candidate": "0747",
+      "precision": "year",
+      "status": "LIKELY_CORRECT",
+      "result_bucket": "preuve_externe_faible",
+      "confidence": 0.5,
+      "needs_human_review": false,
+      "recommendation": "Ajouter des sources externes pour confirmer l'année du retrait monastique de Carloman.",
+      "matched_article_fr": null,
+      "matched_article_en": null,
+      "wikidata_id": null,
+      "event_identity": "Retrait monastique de Carloman en 747.",
+      "is_disputed": false,
+      "ambiguous_identity": false,
+      "title_self_sufficient": true,
+      "title_not_self_sufficient": false,
+      "is_not_singular_event": false,
+      "is_time_span": false,
+      "is_period_based": false,
+      "exact_year_supported": true,
+      "reasoning_short": "Aucune source externe n'est fournie pour confirmer l'année 747. La date est donc considérée comme non vérifiée.",
+      "evidence_used": [],
+      "sources_checked": [],
+      "source_quotes": [],
+      "conflicts": []
+    },
+    {
+      "id": "89645d96-cdf4-4e01-9fc3-400ac9a73371",
+      "titre": "Funérailles nationales de Victor Hugo",
+      "date_in_db": "1885-01-01",
+      "year_in_db": "1885",
+      "date_candidate": "1885-01-01",
+      "year_candidate": "1885",
+      "precision": "year",
+      "status": "CONFIRMED",
+      "result_bucket": "confirme",
+      "confidence": 1,
+      "needs_human_review": false,
+      "recommendation": "No change needed.",
+      "matched_article_fr": "https://fr.wikipedia.org/wiki/Victor_Hugo",
+      "matched_article_en": null,
+      "wikidata_id": "Q535",
+      "event_identity": "Funérailles nationales de Victor Hugo",
+      "is_disputed": false,
+      "ambiguous_identity": false,
+      "title_self_sufficient": true,
+      "title_not_self_sufficient": false,
+      "is_not_singular_event": false,
+      "is_time_span": false,
+      "is_period_based": false,
+      "exact_year_supported": true,
+      "reasoning_short": "Victor Hugo est mort en 1885. Les funérailles nationales ont donc eu lieu cette année-là.",
+      "evidence_used": [
+        "wikipedia_fr_article",
+        "wikidata_2"
+      ],
+      "sources_checked": [
+        {
+          "source_id": "wikipedia_fr_article",
+          "source_type": "wikipedia_fr",
+          "title": "Victor Hugo",
+          "url": "https://fr.wikipedia.org/wiki/Victor_Hugo",
+          "date_iso": null,
+          "precision": null
+        },
+        {
+          "source_id": "wikidata_1",
+          "source_type": "wikidata",
+          "title": "Q535",
+          "url": "https://www.wikidata.org/wiki/Q535",
+          "date_iso": "1802-02-26",
+          "precision": "day"
+        },
+        {
+          "source_id": "wikidata_2",
+          "source_type": "wikidata",
+          "title": "Q535",
+          "url": "https://www.wikidata.org/wiki/Q535",
+          "date_iso": "1885-05-22",
+          "precision": "day"
+        }
+      ],
+      "source_quotes": [
+        {
+          "source_id": "wikipedia_fr_article",
+          "quote": "Victor Hugo, né le 7 ventôse an X (26 février 1802) à Besançon et mort le 22 mai 1885 à Paris, est un poète, dramaturge, romancier et dessinateur français associé au romantisme. Il est considéré comme l'un des écrivains de la langue française et de la littérature mondiale les plus importants. Hugo est aussi une personnalité politique et un intellectuel engagé qui a un rôle idéologique majeur et occupe une place marquante dans l'histoire des lettres françaises au XIXe siècle. Au théâtre, Victor Hugo s'impose comme un des chefs de file du romantisme français en présentant sa conception du drame romantique dans les préfaces qui introduisent Cromwell en 1827, puis Hernani en 1830, qui sont de véritables manifestes, puis par ses autres œuvres dramatiques, en particulier Lucrèce Borgia en 1833 et Ruy Blas en 1838. Son œuvre poétique comprend plusieurs recueils de poèmes lyriques, dont les plu…"
+        },
+        {
+          "source_id": "wikidata_1",
+          "quote": "date of birth: 1802-02-26"
+        },
+        {
+          "source_id": "wikidata_2",
+          "quote": "date of death: 1885-05-22"
+        }
+      ],
+      "conflicts": []
+    },
+    {
+      "id": "995a208b-1704-4f54-b965-73f3776d96fe",
+      "titre": "Création du ministère du Travail",
+      "date_in_db": "1906-01-01",
+      "year_in_db": "1906",
+      "date_candidate": "1906-01-01",
+      "year_candidate": "1906",
+      "precision": "year",
+      "status": "CONFIRMED",
+      "result_bucket": "confirme",
+      "confidence": 0.9,
+      "needs_human_review": false,
+      "recommendation": "Confirmer la date de 1906.",
+      "matched_article_fr": "wikipedia_fr_article",
+      "matched_article_en": "wikipedia_en_article",
+      "wikidata_id": "Q1408517",
+      "event_identity": "Création du ministère du Travail en France.",
+      "is_disputed": false,
+      "ambiguous_identity": false,
+      "title_self_sufficient": true,
+      "title_not_self_sufficient": false,
+      "is_not_singular_event": false,
+      "is_time_span": false,
+      "is_period_based": false,
+      "exact_year_supported": true,
+      "reasoning_short": "Le titre est clair et les sources externes confirment la création du ministère du Travail en 1906.",
+      "evidence_used": [
+        "wikipedia_fr_article",
+        "wikidata_1"
+      ],
+      "sources_checked": [
+        {
+          "source_id": "wikipedia_fr_article",
+          "source_type": "wikipedia_fr",
+          "title": "Ministère du Travail (France)",
+          "url": "https://fr.wikipedia.org/wiki/Minist%C3%A8re_du_Travail_(France)",
+          "date_iso": null,
+          "precision": null
+        },
+        {
+          "source_id": "wikipedia_en_article",
+          "source_type": "wikipedia_en",
+          "title": "Direction Générale du Travail",
+          "url": "https://en.wikipedia.org/wiki/Direction_G%C3%A9n%C3%A9rale_du_Travail",
+          "date_iso": null,
+          "precision": null
+        },
+        {
+          "source_id": "wikidata_1",
+          "source_type": "wikidata",
+          "title": "Q1408517",
+          "url": "https://www.wikidata.org/wiki/Q1408517",
+          "date_iso": "1906-10-25",
+          "precision": "day"
+        }
+      ],
+      "source_quotes": [
+        {
+          "source_id": "wikipedia_fr_article",
+          "quote": "En France, le ministère du Travail est chargé des thématiques du travail, des relations avec les partenaires sociaux et des thématiques sociales, notamment de la politique générale d'action sociale. Entre sa création en 1906 et 1983, le ministère a quasiment continuellement porté le nom de « ministère du Travail ». Avec l'alternance de 1981, cette aire d'action administrative a souvent changé de nom, alternant les labels de solidarité ou d'affaires sociales, d'emploi ou de travail. En fonction de la composition du gouvernement, le ministère du Travail partage en commun certains services d’administration centrale avec le ministère de la Santé ; ils sont alors désignés sous le vocable de ministères sociaux. Situé hôtel du Châtelet (127, rue de Grenelle, 7e arrondissement), siège historique depuis sa création, c'est dans ce bâtiment du ministère du Travail que furent négociés et signés les…"
+        },
+        {
+          "source_id": "wikipedia_en_article",
+          "quote": "The Direction Générale du Travail (DGT) is a department of the French government, attached to the Ministry of Labor. The DGT's mission is to coordinate and direct labor policy in order to improve collective and individual relations and working conditions in companies, as well as the quality and effectiveness of the law governing them."
+        },
+        {
+          "source_id": "wikidata_1",
+          "quote": "inception: 1906-10-25"
+        }
+      ],
+      "conflicts": []
+    },
+    {
+      "id": "9a8d5824-85ec-4185-a35a-e0e747b5ca98",
+      "titre": "Edit de Saint-Germain-en-Laye sur la Réforme",
+      "date_in_db": "1562-01-01",
+      "year_in_db": "1562",
+      "date_candidate": null,
+      "year_candidate": null,
+      "precision": null,
+      "status": "INSUFFICIENT_EVIDENCE",
+      "result_bucket": "annee_exacte_introuvable",
+      "confidence": 0,
+      "needs_human_review": true,
+      "recommendation": "Rechercher des sources externes fiables mentionnant l'année exacte de l'Édit de Saint-Germain-en-Laye sur la Réforme.",
+      "matched_article_fr": null,
+      "matched_article_en": null,
+      "wikidata_id": "Q60847808",
+      "event_identity": "Edit de Saint-Germain-en-Laye sur la Réforme",
+      "is_disputed": false,
+      "ambiguous_identity": false,
+      "title_self_sufficient": true,
+      "title_not_self_sufficient": false,
+      "is_not_singular_event": false,
+      "is_time_span": false,
+      "is_period_based": false,
+      "exact_year_supported": false,
+      "reasoning_short": "Aucune source externe ne permet de confirmer l'année exacte de l'Édit de Saint-Germain-en-Laye sur la Réforme. Les sources fournies ne mentionnent pas cet événement.",
+      "evidence_used": [],
+      "sources_checked": [
+        {
+          "source_id": "wikipedia_fr_article",
+          "source_type": "wikipedia_fr",
+          "title": "Saint-Germain-en-Laye",
+          "url": "https://fr.wikipedia.org/wiki/Saint-Germain-en-Laye",
+          "date_iso": null,
+          "precision": null
+        },
+        {
+          "source_id": "wikidata_1",
+          "source_type": "wikidata",
+          "title": "Q60847808",
+          "url": "https://www.wikidata.org/wiki/Q60847808",
+          "date_iso": "1020-01-01",
+          "precision": "year"
+        }
+      ],
+      "source_quotes": [
+        {
+          "source_id": "wikipedia_fr_article",
+          "quote": "Saint-Germain-en-Laye (prononcé : [sɛ̃.ʒɛʁ.mɛ̃.ɑ̃.lɛ]) est une commune française située à 19 km à l'ouest de Paris dans le département des Yvelines en région Île-de-France. Elle a depuis le 1er janvier 2019 le statut de commune nouvelle à la suite de l’absorption à cette date de la commune de Fourqueux. L'histoire de la ville de Saint-Germain-en-Laye a été longtemps liée à la présence du château, qui fut une résidence régulière des rois de France dont l'importance diminua néanmoins par suite de l'installation de Louis XIV à Versailles, et à la forêt, ancien domaine de chasse royal. Au début du XXIe siècle, elle est le siège d'une sous-préfecture des Yvelines et est devenue une ville résidentielle recherchée, au caractère international marqué. Ses habitants sont appelés les Saint-Germanois. Il s'agit de la 150e ville la plus peuplée de France métropolitaine. Saint-Germain-en-Laye est cél…"
+        },
+        {
+          "source_id": "wikidata_1",
+          "quote": "inception: 1020-01-01"
+        }
+      ],
+      "conflicts": []
+    },
+    {
+      "id": "84f31c9f-dbbc-4d8f-85bc-52885c38797e",
+      "titre": "Mort de Charles XII",
+      "date_in_db": "1718-01-01",
+      "year_in_db": "1718",
+      "date_candidate": "1718-01-01",
+      "year_candidate": "1718",
+      "precision": "year",
+      "status": "CONFIRMED",
+      "result_bucket": "confirme",
+      "confidence": 0.9,
+      "needs_human_review": false,
+      "recommendation": "Confirmer la date de 1718.",
+      "matched_article_fr": "wikipedia_fr_article",
+      "matched_article_en": "wikipedia_en_article",
+      "wikidata_id": "Q52934",
+      "event_identity": "Mort de Charles XII de Suède.",
+      "is_disputed": false,
+      "ambiguous_identity": false,
+      "title_self_sufficient": true,
+      "title_not_self_sufficient": false,
+      "is_not_singular_event": false,
+      "is_time_span": false,
+      "is_period_based": false,
+      "exact_year_supported": true,
+      "reasoning_short": "Les articles Wikipédia et Wikidata concordent sur l'année de la mort de Charles XII, soit 1718.",
+      "evidence_used": [
+        "wikipedia_fr_article",
+        "wikipedia_en_article",
+        "wikidata_3",
+        "wikidata_4"
+      ],
+      "sources_checked": [
+        {
+          "source_id": "wikipedia_fr_article",
+          "source_type": "wikipedia_fr",
+          "title": "Charles XII",
+          "url": "https://fr.wikipedia.org/wiki/Charles_XII",
+          "date_iso": null,
+          "precision": null
+        },
+        {
+          "source_id": "wikipedia_en_article",
+          "source_type": "wikipedia_en",
+          "title": "Charles XII of Sweden",
+          "url": "https://en.wikipedia.org/wiki/Charles_XII_of_Sweden",
+          "date_iso": null,
+          "precision": null
+        },
+        {
+          "source_id": "wikidata_1",
+          "source_type": "wikidata",
+          "title": "Q52934",
+          "url": "https://www.wikidata.org/wiki/Q52934",
+          "date_iso": "1682-06-27",
+          "precision": "day"
+        },
+        {
+          "source_id": "wikidata_2",
+          "source_type": "wikidata",
+          "title": "Q52934",
+          "url": "https://www.wikidata.org/wiki/Q52934",
+          "date_iso": "1682-06-17",
+          "precision": "day"
+        },
+        {
+          "source_id": "wikidata_3",
+          "source_type": "wikidata",
+          "title": "Q52934",
+          "url": "https://www.wikidata.org/wiki/Q52934",
+          "date_iso": "1718-12-11",
+          "precision": "day"
+        },
+        {
+          "source_id": "wikidata_4",
+          "source_type": "wikidata",
+          "title": "Q52934",
+          "url": "https://www.wikidata.org/wiki/Q52934",
+          "date_iso": "1718-11-30",
+          "precision": "day"
+        }
+      ],
+      "source_quotes": [
+        {
+          "source_id": "wikipedia_fr_article",
+          "quote": "Charles XII (en suédois : Karl XII), appelé en latin Carolus Rex et en turc Demirbaş Şarl (« Charles Tête de Fer »), né le 17 juin 1682 (27 juin dans le calendrier grégorien) et mort le 30 novembre 1718 (11 décembre dans le calendrier grégorien), membre de la branche suédoise de la dynastie de Palatinat-Deux-Ponts, a été roi de Suède de 1697 à 1718. Son règne a été presque entièrement consacré à la grande guerre du Nord (1700-1721). Âgé de seulement 15 ans à la mort de son père, Charles se trouve en effet confronté à l'alliance du tsar de Russie, Pierre le Grand, de l'électeur de Saxe et roi de Pologne Auguste II et du roi de Danemark Frédéric IV, qui veulent s'emparer des territoires de l'empire établi par la Suède depuis le XVIe siècle. Contre toute attente, Charles XII réussit à prendre l'ascendant sur le Danemark (1700), la Pologne (1704) et la Saxe (1706), mais s'étant ensuite lanc…"
+        },
+        {
+          "source_id": "wikipedia_en_article",
+          "quote": "Charles XII, sometimes Carl XII (Swedish: Karl XII) or Carolus Rex (17 June 1682 – 30 November 1718 O.S.), was King of Sweden from 1697 to 1718. He belonged to the House of Palatinate-Zweibrücken, a branch line of the House of Wittelsbach. Charles was the only surviving son of Charles XI and Ulrika Eleonora the Elder. He assumed power, after a seven-month caretaker government, at the age of fifteen. In 1700, a triple alliance of Denmark–Norway, Saxony–Poland–Lithuania and Russia launched a threefold attack on the Swedish protectorate of Holstein-Gottorp and provinces of Livonia and Ingria, aiming to take advantage of the Swedish Empire being unaligned and ruled by a young and inexperienced king, thus initiating the Great Northern War. Leading the Swedish army against the alliance, Charles won multiple victories despite being significantly outnumbered. A major victory over a much larger …"
+        },
+        {
+          "source_id": "wikidata_1",
+          "quote": "date of birth: 1682-06-27"
+        },
+        {
+          "source_id": "wikidata_2",
+          "quote": "date of birth: 1682-06-17"
+        },
+        {
+          "source_id": "wikidata_3",
+          "quote": "date of death: 1718-12-11"
+        },
+        {
+          "source_id": "wikidata_4",
+          "quote": "date of death: 1718-11-30"
+        }
+      ],
+      "conflicts": []
+    },
+    {
+      "id": "8cef8fe0-f0a5-458d-8e22-993ecc8b252d",
+      "titre": "Ouverture du Girton College",
+      "date_in_db": "1869-01-01",
+      "year_in_db": "1869",
+      "date_candidate": null,
+      "year_candidate": null,
+      "precision": null,
+      "status": "INSUFFICIENT_EVIDENCE",
+      "result_bucket": "retrieval_insuffisant",
+      "confidence": 0,
+      "needs_human_review": true,
+      "recommendation": "Fournir des sources externes pour valider l'année d'ouverture du Girton College.",
+      "matched_article_fr": null,
+      "matched_article_en": null,
+      "wikidata_id": null,
+      "event_identity": "Ouverture du Girton College",
+      "is_disputed": false,
+      "ambiguous_identity": false,
+      "title_self_sufficient": true,
+      "title_not_self_sufficient": false,
+      "is_not_singular_event": false,
+      "is_time_span": false,
+      "is_period_based": false,
+      "exact_year_supported": true,
+      "reasoning_short": "Aucune source externe n'est fournie pour confirmer l'année d'ouverture du Girton College. La date de 1869 ne peut donc pas être validée.",
+      "evidence_used": [],
+      "sources_checked": [],
+      "source_quotes": [],
+      "conflicts": []
+    },
+    {
+      "id": "d9ca9ab3-5139-4f21-a421-fad020638759",
+      "titre": "Début de la construction du Dôme de Florence par Brunelleschi",
+      "date_in_db": "1420-01-01",
+      "year_in_db": "1420",
+      "date_candidate": null,
+      "year_candidate": null,
+      "precision": null,
+      "status": "INSUFFICIENT_EVIDENCE",
+      "result_bucket": "annee_exacte_introuvable",
+      "confidence": 0,
+      "needs_human_review": true,
+      "recommendation": "Ajouter des sources externes fiables pour confirmer l'année du début de la construction.",
+      "matched_article_fr": null,
+      "matched_article_en": null,
+      "wikidata_id": null,
+      "event_identity": "Début de la construction du Dôme de Florence par Brunelleschi",
+      "is_disputed": false,
+      "ambiguous_identity": false,
+      "title_self_sufficient": true,
+      "title_not_self_sufficient": false,
+      "is_not_singular_event": false,
+      "is_time_span": false,
+      "is_period_based": false,
+      "exact_year_supported": false,
+      "reasoning_short": "Aucune source externe n'est fournie pour confirmer l'année exacte du début de la construction du Dôme de Florence par Brunelleschi. La date de 1420 ne peut donc pas être validée.",
+      "evidence_used": [],
+      "sources_checked": [],
+      "source_quotes": [],
+      "conflicts": []
+    },
+    {
+      "id": "335b3035-b959-4002-8b5c-75d7c312a9b6",
+      "titre": "Massacre de Glencoe",
+      "date_in_db": "1692-01-01",
+      "year_in_db": "1692",
+      "date_candidate": "1692-01-01",
+      "year_candidate": "1692",
+      "precision": "year",
+      "status": "CONFIRMED",
+      "result_bucket": "confirme",
+      "confidence": 0.9,
+      "needs_human_review": false,
+      "recommendation": "Confirmer la date de 1692.",
+      "matched_article_fr": "wikipedia_fr_article",
+      "matched_article_en": "wikipedia_en_article",
+      "wikidata_id": "Q1254804",
+      "event_identity": "Massacre de Glencoe",
+      "is_disputed": false,
+      "ambiguous_identity": false,
+      "title_self_sufficient": true,
+      "title_not_self_sufficient": false,
+      "is_not_singular_event": false,
+      "is_time_span": false,
+      "is_period_based": false,
+      "exact_year_supported": true,
+      "reasoning_short": "Les articles Wikipédia en français et en anglais, ainsi que Wikidata, confirment que le massacre de Glencoe a eu lieu en 1692.",
+      "evidence_used": [
+        "wikipedia_fr_article",
+        "wikipedia_en_article"
+      ],
+      "sources_checked": [
+        {
+          "source_id": "wikipedia_fr_article",
+          "source_type": "wikipedia_fr",
+          "title": "Massacre de Glencoe",
+          "url": "https://fr.wikipedia.org/wiki/Massacre_de_Glencoe",
+          "date_iso": null,
+          "precision": null
+        },
+        {
+          "source_id": "wikipedia_en_article",
+          "source_type": "wikipedia_en",
+          "title": "Massacre of Glencoe",
+          "url": "https://en.wikipedia.org/wiki/Massacre_of_Glencoe",
+          "date_iso": null,
+          "precision": null
+        },
+        {
+          "source_id": "wikidata_1",
+          "source_type": "wikidata",
+          "title": "Q1254804",
+          "url": "https://www.wikidata.org/wiki/Q1254804",
+          "date_iso": "1692-02-13",
+          "precision": "day"
+        }
+      ],
+      "source_quotes": [
+        {
+          "source_id": "wikipedia_fr_article",
+          "quote": "Le massacre de Glencoe (écossais : Mort Ghlinne Comhann) s'est déroulé dans la vallée de Glen Coe en Écosse, tôt dans la matinée du 13 février 1692, à l'époque de la Glorieuse Révolution et du jacobitisme. Le massacre débuta simultanément en trois endroits de Glen Coe — Invercoe, Inverrigan et Achacon — mais les meurtres s'étendirent à toute la vallée lors de la fuite des MacDonald. Trente-huit hommes du clan Donald de Glencoe furent tués par ceux à qui ils avaient accordé l'hospitalité, et quarante femmes et enfants moururent de froid après l'incendie de leurs maisons. Les assassins, cent vingt hommes de troupe, avaient été envoyés par des conseillers du roi d'Angleterre Guillaume III."
+        },
+        {
+          "source_id": "wikipedia_en_article",
+          "quote": "The Massacre of Glencoe took place in Glen Coe in the Argyll region of the Scottish Highlands on 13 February 1692. An estimated 30 members and associates of the Clan MacDonald of Glencoe were killed by Scottish government forces, allegedly for failing to pledge allegiance to the new monarchs, William II/III and his wife Mary II. Although the Jacobite rising of 1689 had largely been suppressed by May 1690, a continuing need to police the Highlands diverted military resources from the Nine Years' War in Flanders. In late 1690, clan leaders loyal to the exiled House of Stuart agreed to swear allegiance to William and Mary, in return for a cash payment of £12,000. However, disagreements over how to divide this meant by December 1691 none of the clans had taken the oath. In response, Lord Stair, Scottish Secretary of State, decided to show the consequences of further delay. While others, inc…"
+        },
+        {
+          "source_id": "wikidata_1",
+          "quote": "point in time: 1692-02-13"
+        }
+      ],
+      "conflicts": []
+    },
+    {
+      "id": "f1210295-76f1-42f3-9f50-a6231a01a594",
+      "titre": "Prise d'Amiens par les Espagnols",
+      "date_in_db": "1597-01-01",
+      "year_in_db": "1597",
+      "date_candidate": "1597-01-01",
+      "year_candidate": "1597",
+      "precision": "year",
+      "status": "CONFIRMED",
+      "result_bucket": "confirme",
+      "confidence": 0.9,
+      "needs_human_review": false,
+      "recommendation": "Aucune action nécessaire.",
+      "matched_article_fr": "wikipedia_fr_article",
+      "matched_article_en": "wikipedia_en_article",
+      "wikidata_id": "Q3485809",
+      "event_identity": "Prise d'Amiens par les Espagnols en 1597.",
+      "is_disputed": false,
+      "ambiguous_identity": false,
+      "title_self_sufficient": true,
+      "title_not_self_sufficient": false,
+      "is_not_singular_event": false,
+      "is_time_span": false,
+      "is_period_based": false,
+      "exact_year_supported": true,
+      "reasoning_short": "Les articles Wikipédia en français et en anglais, ainsi que Wikidata, confirment que le siège d'Amiens a eu lieu en 1597.",
+      "evidence_used": [
+        "wikipedia_fr_article",
+        "wikipedia_en_article"
+      ],
+      "sources_checked": [
+        {
+          "source_id": "wikipedia_fr_article",
+          "source_type": "wikipedia_fr",
+          "title": "Siège d'Amiens (1597)",
+          "url": "https://fr.wikipedia.org/wiki/Si%C3%A8ge_d%27Amiens_(1597)",
+          "date_iso": null,
+          "precision": null
+        },
+        {
+          "source_id": "wikipedia_en_article",
+          "source_type": "wikipedia_en",
+          "title": "Siege of Amiens (1597)",
+          "url": "https://en.wikipedia.org/wiki/Siege_of_Amiens_(1597)",
+          "date_iso": null,
+          "precision": null
+        },
+        {
+          "source_id": "wikidata_1",
+          "source_type": "wikidata",
+          "title": "Q3485809",
+          "url": "https://www.wikidata.org/wiki/Q3485809",
+          "date_iso": "1597-05-13",
+          "precision": "day"
+        }
+      ],
+      "source_quotes": [
+        {
+          "source_id": "wikipedia_fr_article",
+          "quote": "Le siège d'Amiens oppose, en 1597, lors de la huitième guerre de Religion, les troupes françaises commandées par Henri IV aux troupes espagnoles. Il débouche sur une victoire française."
+        },
+        {
+          "source_id": "wikipedia_en_article",
+          "quote": "The siege of Amiens (French: Siège d'Amiens) was a siege and battle fought during the Franco-Spanish War (1595–1598), as part of both the French Wars of Religion and the Anglo-Spanish War (1585–1604), between 13 May and 25 September 1597. The Spanish, who had sent a large army in March, had captured the city of Amiens easily in a ruse. Henry IV of France, after the surprise of the capture, immediately and quickly built up an army which included a large English force and besieged Amiens on 13 May. An attempted relief force sent under the command of Ernst von Mansfeld and the Archduke of Austria repeatedly failed to dislodge the besiegers and afterwards the Spanish relief force retreated. Amiens ultimately fell back into Henry's hands with the surrender of the entire Spanish force. As a result of the victory, Henry was in a strong position to enact the Edict of Nantes and to negotiate the…"
+        },
+        {
+          "source_id": "wikidata_1",
+          "quote": "start time: 1597-05-13"
+        }
+      ],
+      "conflicts": []
+    },
+    {
+      "id": "e54375d3-71cc-4124-8fe4-e437654c865f",
+      "titre": "Règne de Charles V le Sage",
+      "date_in_db": "1364-01-01",
+      "year_in_db": "1364",
+      "date_candidate": "1364-01-01",
+      "year_candidate": "1364",
+      "precision": "year",
+      "status": "LIKELY_CORRECT",
+      "result_bucket": "probable_mais_a_confirmer",
+      "confidence": 0.9,
+      "needs_human_review": true,
+      "recommendation": "Confirmer que l'événement est bien le début du règne et non le règne entier.",
+      "matched_article_fr": "wikipedia_fr_article",
+      "matched_article_en": "wikipedia_en_article",
+      "wikidata_id": "Q167782",
+      "event_identity": "Règne de Charles V le Sage",
+      "is_disputed": false,
+      "ambiguous_identity": false,
+      "title_self_sufficient": true,
+      "title_not_self_sufficient": false,
+      "is_not_singular_event": true,
+      "is_time_span": true,
+      "is_period_based": true,
+      "exact_year_supported": true,
+      "reasoning_short": "Le règne de Charles V a débuté en 1364. Bien que le titre décrive une période, l'année de début de règne est identifiable.",
+      "evidence_used": [
+        "wikipedia_fr_article",
+        "wikipedia_en_article"
+      ],
+      "sources_checked": [
+        {
+          "source_id": "wikipedia_fr_article",
+          "source_type": "wikipedia_fr",
+          "title": "Charles V le Sage",
+          "url": "https://fr.wikipedia.org/wiki/Charles_V_le_Sage",
+          "date_iso": null,
+          "precision": null
+        },
+        {
+          "source_id": "wikipedia_en_article",
+          "source_type": "wikipedia_en",
+          "title": "Charles V of France",
+          "url": "https://en.wikipedia.org/wiki/Charles_V_of_France",
+          "date_iso": null,
+          "precision": null
+        },
+        {
+          "source_id": "wikidata_1",
+          "source_type": "wikidata",
+          "title": "Q167782",
+          "url": "https://www.wikidata.org/wiki/Q167782",
+          "date_iso": "1338-01-21",
+          "precision": "day"
+        },
+        {
+          "source_id": "wikidata_2",
+          "source_type": "wikidata",
+          "title": "Q167782",
+          "url": "https://www.wikidata.org/wiki/Q167782",
+          "date_iso": "1380-09-16",
+          "precision": "day"
+        }
+      ],
+      "source_quotes": [
+        {
+          "source_id": "wikipedia_fr_article",
+          "quote": "Charles V, dit le Sage, né le 21 janvier 1338 à Vincennes et mort le 16 septembre 1380 au château de Beauté (actuelle Nogent-sur-Marne), fils de Jean II le Bon, est roi de France de 1364 à 1380, troisième représentant de la dynastie des Valois, qui règne sur la France depuis 1328. Son règne marque la fin de la première partie de la guerre de Cent Ans. Il parvient à récupérer la quasi-totalité des territoires perdus par son père Jean II et son grand-père Philippe VI, à restaurer l'autorité royale et à sortir le royaume d'une période difficile marquée par les défaites de Crécy (1346) et de Poitiers (1356) contre les Anglais, par un conflit avec le roi de Navarre Charles II le Mauvais et par l'épidémie de peste noire des années 1347-1351, qui touche la quasi-totalité de l'Europe. Très instruit, il est connu pour avoir fondé la première librairie royale, ancêtre de la Bibliothèque nationale…"
+        },
+        {
+          "source_id": "wikipedia_en_article",
+          "quote": "Charles V (21 January 1338 – 16 September 1380), called the Wise (French: le Sage; Latin: Sapiens), was King of France from 1364 to his death in 1380. His reign marked an early high point for France during the Hundred Years' War as his armies recovered much of the territory held by the English and successfully reversed the military losses of his predecessors. Charles became regent of France when his father John II was captured by the English at the Battle of Poitiers in 1356. To pay for the defense of the kingdom, Charles raised taxes. As a result, he faced hostility from the nobility, led by Charles the Bad, King of Navarre; the opposition of the French bourgeoisie, which was channeled through the Estates-General led by Étienne Marcel; and with a peasant revolt known as the Jacquerie. Charles overcame all of these rebellions, but in order to liberate his father, he had to conclude the …"
+        },
+        {
+          "source_id": "wikidata_1",
+          "quote": "date of birth: 1338-01-21"
+        },
+        {
+          "source_id": "wikidata_2",
+          "quote": "date of death: 1380-09-16"
+        }
+      ],
+      "conflicts": []
+    },
+    {
+      "id": "15c1b8ce-1602-4008-a022-2607ed74ff08",
+      "titre": "Siège de Constantinople (Mourad II)",
+      "date_in_db": "1422-01-01",
+      "year_in_db": "1422",
+      "date_candidate": "1422-01-01",
+      "year_candidate": "1422",
+      "precision": "year",
+      "status": "CONFIRMED",
+      "result_bucket": "confirme",
+      "confidence": 1,
+      "needs_human_review": false,
+      "recommendation": "Confirmer la date de 1422.",
+      "matched_article_fr": "wikipedia_fr_article",
+      "matched_article_en": null,
+      "wikidata_id": "Q700886",
+      "event_identity": "Siège de Constantinople par Mourad II en 1422.",
+      "is_disputed": false,
+      "ambiguous_identity": false,
+      "title_self_sufficient": true,
+      "title_not_self_sufficient": false,
+      "is_not_singular_event": false,
+      "is_time_span": false,
+      "is_period_based": false,
+      "exact_year_supported": true,
+      "reasoning_short": "Le siège de Constantinople par Mourad II est confirmé en 1422 par l'article Wikipédia en français.",
+      "evidence_used": [
+        "wikipedia_fr_article"
+      ],
+      "sources_checked": [
+        {
+          "source_id": "wikipedia_fr_article",
+          "source_type": "wikipedia_fr",
+          "title": "Siège de Constantinople (1422)",
+          "url": "https://fr.wikipedia.org/wiki/Si%C3%A8ge_de_Constantinople_(1422)",
+          "date_iso": null,
+          "precision": null
+        },
+        {
+          "source_id": "wikipedia_en_article",
+          "source_type": "wikipedia_en",
+          "title": "Siege of Jerusalem (70 CE)",
+          "url": "https://en.wikipedia.org/wiki/Siege_of_Jerusalem_(70_CE)",
+          "date_iso": null,
+          "precision": null
+        },
+        {
+          "source_id": "wikidata_1",
+          "source_type": "wikidata",
+          "title": "Q700886",
+          "url": "https://www.wikidata.org/wiki/Q700886",
+          "date_iso": "1422-09-01",
+          "precision": "month"
+        },
+        {
+          "source_id": "wikidata_2",
+          "source_type": "wikidata",
+          "title": "Q700886",
+          "url": "https://www.wikidata.org/wiki/Q700886",
+          "date_iso": "1422-06-01",
+          "precision": "month"
+        }
+      ],
+      "source_quotes": [
+        {
+          "source_id": "wikipedia_fr_article",
+          "quote": "Le siège de Constantinople de 1422 est le premier siège de grande envergure organisé par les Ottomans après les blocus de 1391-1392 et 1394-1402. Il fait suite aux tentatives de l'empereur Manuel II Paléologue d'interférer dans la succession des sultans ottomans après la mort de Mehmed Ier en 1421. Cette stratégie fut souvent utilisée pour affaiblir leurs voisins."
+        },
+        {
+          "source_id": "wikipedia_en_article",
+          "quote": "The siege of Jerusalem in 70 CE was the decisive event of the First Jewish Revolt against the Roman Empire (66–73 CE). Roman forces led by Titus besieged the Jewish capital, the revolt's main stronghold. After months of fighting, they breached the defenses, destroyed the Second Temple, and razed the city, killing, enslaving, or displacing much of its population. The city's fall marked the effective end of the revolt and had far-reaching political, religious, and cultural consequences. In winter 69/70 CE, after a succession war in Rome, Titus led at least 48,000 troops—including four legions and auxiliary forces—back into Judaea. By spring, this army had encircled Jerusalem, the population of which had surged with refugees and Passover pilgrims. Inside the city, rival factions led by John of Gischala, Simon bar Giora and Eleazar ben Simon fought each other, destroying food supplies and w…"
+        },
+        {
+          "source_id": "wikidata_1",
+          "quote": "point in time: 1422-09-01"
+        },
+        {
+          "source_id": "wikidata_2",
+          "quote": "start time: 1422-06-01"
+        }
+      ],
+      "conflicts": []
+    },
+    {
+      "id": "fd189bbe-4510-4ab7-91d4-eaa1d4a19831",
+      "titre": "Indépendance du Soudan du Sud",
+      "date_in_db": "2011-01-01",
+      "year_in_db": "2011",
+      "date_candidate": "2011-01-01",
+      "year_candidate": "2011",
+      "precision": "year",
+      "status": "CONFIRMED",
+      "result_bucket": "confirme",
+      "confidence": 1,
+      "needs_human_review": false,
+      "recommendation": "Aucune modification nécessaire.",
+      "matched_article_fr": "Référendum sur l'indépendance du Soudan du Sud",
+      "matched_article_en": null,
+      "wikidata_id": "Q207950",
+      "event_identity": "Indépendance du Soudan du Sud",
+      "is_disputed": false,
+      "ambiguous_identity": false,
+      "title_self_sufficient": true,
+      "title_not_self_sufficient": false,
+      "is_not_singular_event": false,
+      "is_time_span": false,
+      "is_period_based": false,
+      "exact_year_supported": true,
+      "reasoning_short": "L'article Wikipédia confirme que l'indépendance du Soudan du Sud a été effective en 2011. Wikidata confirme aussi l'année 2011.",
+      "evidence_used": [
+        "wikipedia_fr_article",
+        "wikidata_1"
+      ],
+      "sources_checked": [
+        {
+          "source_id": "wikipedia_fr_article",
+          "source_type": "wikipedia_fr",
+          "title": "Référendum sur l'indépendance du Soudan du Sud",
+          "url": "https://fr.wikipedia.org/wiki/R%C3%A9f%C3%A9rendum_sur_l%27ind%C3%A9pendance_du_Soudan_du_Sud",
+          "date_iso": null,
+          "precision": null
+        },
+        {
+          "source_id": "wikidata_1",
+          "source_type": "wikidata",
+          "title": "Q207950",
+          "url": "https://www.wikidata.org/wiki/Q207950",
+          "date_iso": "2011-01-15",
+          "precision": "day"
+        }
+      ],
+      "source_quotes": [
+        {
+          "source_id": "wikipedia_fr_article",
+          "quote": "Le référendum sur l'indépendance du Soudan du Sud est une consultation de la population de ce qui était alors la Région autonome du Soudan du Sud qui s'est déroulée du 9 au 15 janvier 2011 pour qu'elle se prononce sur l'indépendance de cette région autonome. Les résultats officiels publiés le 7 février donnent un pourcentage de 98,83 % en faveur de l'indépendance avec une participation de 97,58 %. L'indépendance est effective depuis le 9 juillet 2011, date de la fin de la période prévue par les accords de paix de 2005, avec la proclamation de la République du Soudan du Sud."
+        },
+        {
+          "source_id": "wikidata_1",
+          "quote": "point in time: 2011-01-15"
+        }
+      ],
+      "conflicts": []
+    },
+    {
+      "id": "ab5c9d45-f227-4f35-8975-9859538d090f",
+      "titre": "L'Italie rejoint la Triple-Entente",
+      "date_in_db": "1915-01-01",
+      "year_in_db": "1915",
+      "date_candidate": null,
+      "year_candidate": null,
+      "precision": null,
+      "status": "INSUFFICIENT_EVIDENCE",
+      "result_bucket": "retrieval_insuffisant",
+      "confidence": 0,
+      "needs_human_review": true,
+      "recommendation": "Fournir des sources externes fiables pour confirmer l'année exacte de l'événement.",
+      "matched_article_fr": null,
+      "matched_article_en": null,
+      "wikidata_id": null,
+      "event_identity": "L'entrée de l'Italie dans la Première Guerre mondiale aux côtés de la Triple-Entente en 1915.",
+      "is_disputed": false,
+      "ambiguous_identity": false,
+      "title_self_sufficient": true,
+      "title_not_self_sufficient": false,
+      "is_not_singular_event": false,
+      "is_time_span": false,
+      "is_period_based": false,
+      "exact_year_supported": true,
+      "reasoning_short": "Aucune source externe n'est fournie pour confirmer l'année exacte de l'entrée de l'Italie dans la Triple-Entente. La date de 1915 est plausible, mais nécessite une vérification à partir de sources externes.",
+      "evidence_used": [],
+      "sources_checked": [],
+      "source_quotes": [],
+      "conflicts": []
+    },
+    {
+      "id": "6bc34beb-b068-4e1a-a3e2-d4aecaccc9c9",
+      "titre": "Mai 68 en France",
+      "date_in_db": "1968-01-01",
+      "year_in_db": "1968",
+      "date_candidate": "1968-01-01",
+      "year_candidate": "1968",
+      "precision": "year",
+      "status": "LIKELY_CORRECT",
+      "result_bucket": "preuve_externe_faible",
+      "confidence": 0.5,
+      "needs_human_review": false,
+      "recommendation": "Fournir des sources externes pour confirmer l'année de l'événement.",
+      "matched_article_fr": null,
+      "matched_article_en": null,
+      "wikidata_id": null,
+      "event_identity": "Mai 68 en France",
+      "is_disputed": false,
+      "ambiguous_identity": false,
+      "title_self_sufficient": true,
+      "title_not_self_sufficient": false,
+      "is_not_singular_event": false,
+      "is_time_span": false,
+      "is_period_based": false,
+      "exact_year_supported": true,
+      "reasoning_short": "Bien que le titre soit clair et que l'événement soit associé à une année spécifique, aucune source externe n'est fournie pour confirmer l'année 1968. Sans sources externes, la date ne peut être confirmée.",
+      "evidence_used": [],
+      "sources_checked": [],
+      "source_quotes": [],
+      "conflicts": []
+    },
+    {
+      "id": "48499af6-0407-419f-a34d-d3dcd220a8b1",
+      "titre": "Premier réacteur nucléaire contrôlé à Chicago",
+      "date_in_db": "1942-01-01",
+      "year_in_db": "1942",
+      "date_candidate": "1942-01-01",
+      "year_candidate": "1942",
+      "precision": "year",
+      "status": "CONFIRMED",
+      "result_bucket": "confirme",
+      "confidence": 0.9,
+      "needs_human_review": false,
+      "recommendation": "Chercher des sources externes confirmant l'année 1942 pour cet événement.",
+      "matched_article_fr": null,
+      "matched_article_en": null,
+      "wikidata_id": "Q80877",
+      "event_identity": "Premier réacteur nucléaire contrôlé à Chicago en 1942.",
+      "is_disputed": false,
+      "ambiguous_identity": false,
+      "title_self_sufficient": true,
+      "title_not_self_sufficient": false,
+      "is_not_singular_event": false,
+      "is_time_span": false,
+      "is_period_based": false,
+      "exact_year_supported": true,
+      "reasoning_short": "Bien que le titre soit clair et que la description détaillée confirme l'événement et l'année, aucune source externe ne confirme l'année exacte de l'événement. La source Wikipedia parle des réacteurs nucléaires en général, mais ne mentionne pas l'événement spécifique de 1942 à Chicago.",
+      "evidence_used": [],
+      "sources_checked": [
+        {
+          "source_id": "wikipedia_fr_article",
+          "source_type": "wikipedia_fr",
+          "title": "Réacteur nucléaire",
+          "url": "https://fr.wikipedia.org/wiki/R%C3%A9acteur_nucl%C3%A9aire",
+          "date_iso": null,
+          "precision": null
+        }
+      ],
+      "source_quotes": [
+        {
+          "source_id": "wikipedia_fr_article",
+          "quote": "Un réacteur nucléaire est un équipement industriel comprenant du combustible nucléaire, qui constitue son « cœur », dans lequel une réaction en chaîne peut être amorcée et contrôlée par des agents humains ou par des systèmes automatiques, suivant des protocoles et au moyen de dispositifs propres à la fission nucléaire. L'installation peut avoir des finalités diverses : production d'isotopes radioactifs à usage civil ou militaire, production de chaleur utilisable directement ou convertie en énergie électrique dans une centrale nucléaire."
+        }
+      ],
+      "conflicts": []
+    },
+    {
+      "id": "abe12f2d-9dd9-4308-b8d3-c023ada50cbe",
+      "titre": "Arrivée des Wisigoths en Aquitaine",
+      "date_in_db": "0418-01-01",
+      "year_in_db": "0418",
+      "date_candidate": "0418-01-01",
+      "year_candidate": "0418",
+      "precision": "year",
+      "status": "LIKELY_CORRECT",
+      "result_bucket": "preuve_externe_faible",
+      "confidence": 0.5,
+      "needs_human_review": false,
+      "recommendation": "Vérifier avec d'autres sources l'année exacte de l'arrivée des Wisigoths en Aquitaine.",
+      "matched_article_fr": "Wisigoths",
+      "matched_article_en": null,
+      "wikidata_id": "Q23693",
+      "event_identity": "Arrivée des Wisigoths en Aquitaine en tant que fédérés de l'Empire romain.",
+      "is_disputed": false,
+      "ambiguous_identity": false,
+      "title_self_sufficient": true,
+      "title_not_self_sufficient": false,
+      "is_not_singular_event": false,
+      "is_time_span": false,
+      "is_period_based": false,
+      "exact_year_supported": true,
+      "reasoning_short": "L'article Wikipédia sur les Wisigoths mentionne leur installation en Aquitaine, bien qu'il ne précise pas l'année exacte. La description détaillée de l'événement confirme l'année 418.",
+      "evidence_used": [
+        "wikipedia_fr_article"
+      ],
+      "sources_checked": [
+        {
+          "source_id": "wikipedia_fr_article",
+          "source_type": "wikipedia_fr",
+          "title": "Wisigoths",
+          "url": "https://fr.wikipedia.org/wiki/Wisigoths",
+          "date_iso": null,
+          "precision": null
+        }
+      ],
+      "source_quotes": [
+        {
+          "source_id": "wikipedia_fr_article",
+          "quote": "Les Wisigoths (« Goths sages » ou, comme dans le mot allemand et néerlandais Westgoten, « Goths de l'ouest ») ou Tervinges (« peuple de la forêt ») étaient un peuple germanique issu des Goths. Les Wisigoths sont ceux qui, migrant depuis la région de la mer Noire, s'installèrent vers 270-275 dans la province romaine abandonnée de Dacie (actuelle Roumanie), au sein de l'Empire romain, alors que les Ostrogoths (ou Greuthunges) s'installèrent, pour leur part, en Sarmatie (actuelle Ukraine). Les Wisigoths migrèrent à nouveau vers l'ouest dès 376 et vécurent au sein de l'Empire romain d'Occident, en Hispanie et en Aquitaine. Les Ostrogoths, eux, migrèrent aussi vers l'ouest, mais plus tard que les Wisigoths, et vécurent en Italie. Wisigoths et Ostrogoths sont classés dans la branche ostique des peuples germaniques. Après la chute de l'Empire romain d'Occident, en 476, les Wisigoths ont contin…"
+        }
+      ],
+      "conflicts": []
+    },
+    {
+      "id": "9dbcda6b-867f-4ce5-8a92-741c6d7fd42a",
+      "titre": "Début de la construction de Sainte-Sophie",
+      "date_in_db": "0532-01-01",
+      "year_in_db": "0532",
+      "date_candidate": "0532-01-01",
+      "year_candidate": "0532",
+      "precision": "year",
+      "status": "LIKELY_CORRECT",
+      "result_bucket": "probable_mais_a_confirmer",
+      "confidence": 0.7,
+      "needs_human_review": false,
+      "recommendation": "Confirmer la date de 532 comme début de la construction de Sainte-Sophie.",
+      "matched_article_fr": "https://fr.wikipedia.org/wiki/Sainte-Sophie_(Constantinople)",
+      "matched_article_en": null,
+      "wikidata_id": "Q12506",
+      "event_identity": "Début de la construction de Sainte-Sophie ordonnée par Justinien Ier après les émeutes de Nika.",
+      "is_disputed": false,
+      "ambiguous_identity": false,
+      "title_self_sufficient": true,
+      "title_not_self_sufficient": false,
+      "is_not_singular_event": false,
+      "is_time_span": false,
+      "is_period_based": false,
+      "exact_year_supported": true,
+      "reasoning_short": "L'événement est clair et le titre est précis. La description mentionne les émeutes de Nika en janvier 532 comme point de départ de la construction de Sainte-Sophie. Bien que Wikidata donne des dates de début différentes, la description de l'événement et le contexte permettent de confirmer 532 comme…",
+      "evidence_used": [],
+      "sources_checked": [
+        {
+          "source_id": "wikipedia_fr_article",
+          "source_type": "wikipedia_fr",
+          "title": "Sainte-Sophie (Constantinople)",
+          "url": "https://fr.wikipedia.org/wiki/Sainte-Sophie_(Constantinople)",
+          "date_iso": null,
+          "precision": null
+        },
+        {
+          "source_id": "wikidata_1",
+          "source_type": "wikidata",
+          "title": "Q12506",
+          "url": "https://www.wikidata.org/wiki/Q12506",
+          "date_iso": "0537-12-27",
+          "precision": "day"
+        },
+        {
+          "source_id": "wikidata_2",
+          "source_type": "wikidata",
+          "title": "Q12506",
+          "url": "https://www.wikidata.org/wiki/Q12506",
+          "date_iso": "0360-02-15",
+          "precision": "day"
+        }
+      ],
+      "source_quotes": [
+        {
+          "source_id": "wikipedia_fr_article",
+          "quote": "Sainte-Sophie (du grec Ἁγία Σοφία, Hagía Sophía, litt. « sagesse de Dieu », « sagesse divine », nom repris en turc sous la forme Ayasofya) est une ancienne basilique byzantine devenue mosquée, située à Istanbul, dans l'ancienne Constantinople, sur le côté ouest du Bosphore. À l'origine basilique chrétienne, elle est construite au IVe siècle, puis reconstruite bien plus grande au VIe siècle sous l'empereur byzantin Justinien, où elle acquiert sa forme actuelle. Souvent surnommée « la Grande Église », elle est le plus important monument de l'architecture byzantine et demeure l'une des plus prestigieuses églises de la chrétienté jusqu'au XVe siècle. Après la prise de Constantinople par les armées ottomanes en 1453, elle est convertie en mosquée sous le sultan Mehmet II, statut qu'elle conserve jusqu'à la fin de l'Empire ottoman. En 1934, elle perd son statut de lieu de culte pour devenir u…"
+        },
+        {
+          "source_id": "wikidata_1",
+          "quote": "inception: 0537-12-27"
+        },
+        {
+          "source_id": "wikidata_2",
+          "quote": "inception: 0360-02-15"
+        }
+      ],
+      "conflicts": []
+    },
+    {
+      "id": "0edd0a05-8f7a-4c39-ad51-934068df1f3c",
+      "titre": "Publication du Manifeste du Parti communiste",
+      "date_in_db": "1848-10-01",
+      "year_in_db": "1848",
+      "date_candidate": "1848-01-01",
+      "year_candidate": "1848",
+      "precision": "year",
+      "status": "CONFIRMED",
+      "result_bucket": "confirme",
+      "confidence": 1,
+      "needs_human_review": false,
+      "recommendation": "No change needed.",
+      "matched_article_fr": "https://fr.wikipedia.org/wiki/Manifeste_du_parti_communiste",
+      "matched_article_en": null,
+      "wikidata_id": "Q40591",
+      "event_identity": "Publication du Manifeste du Parti communiste",
+      "is_disputed": false,
+      "ambiguous_identity": false,
+      "title_self_sufficient": true,
+      "title_not_self_sufficient": false,
+      "is_not_singular_event": false,
+      "is_time_span": false,
+      "is_period_based": false,
+      "exact_year_supported": true,
+      "reasoning_short": "Le Manifeste du Parti communiste a été publié en 1848, selon Wikipedia et Wikidata.",
+      "evidence_used": [
+        "wikipedia_fr_article",
+        "wikidata_1"
+      ],
+      "sources_checked": [
+        {
+          "source_id": "wikipedia_fr_article",
+          "source_type": "wikipedia_fr",
+          "title": "Manifeste du parti communiste",
+          "url": "https://fr.wikipedia.org/wiki/Manifeste_du_parti_communiste",
+          "date_iso": null,
+          "precision": null
+        },
+        {
+          "source_id": "wikidata_1",
+          "source_type": "wikidata",
+          "title": "Q40591",
+          "url": "https://www.wikidata.org/wiki/Q40591",
+          "date_iso": "1848-02-21",
+          "precision": "day"
+        }
+      ],
+      "source_quotes": [
+        {
+          "source_id": "wikipedia_fr_article",
+          "quote": "Le Manifeste du parti communiste (en allemand : Manifest der Kommunistischen Partei) est un essai politico-philosophique commandé par la Ligue des communistes (ancienne Ligue des justes), et rédigé en allemand par Karl Marx (qui intègre dans le texte certains passages écrits antérieurement par Friedrich Engels). Écrit fin 1847 et début 1848 et publié en février 1848, il a été diffusé à l'origine sous le titre Manifest der kommunistischen Partei (Manifeste du parti communiste, bien qu'il n'existât alors aucun Parti communiste ; le terme « parti » désignait à l'époque l'ensemble des courants partisans du communisme), et il a ensuite été republié sous le titre Manifeste communiste."
+        },
+        {
+          "source_id": "wikidata_1",
+          "quote": "publication date: 1848-02-21"
+        }
+      ],
+      "conflicts": []
+    },
+    {
+      "id": "2e878bf2-400a-4848-9aec-20776b9c17e5",
+      "titre": "Arrestation d'Antonio Gramsci",
+      "date_in_db": "1926-01-01",
+      "year_in_db": "1926",
+      "date_candidate": "1926-01-01",
+      "year_candidate": "1926",
+      "precision": "year",
+      "status": "LIKELY_CORRECT",
+      "result_bucket": "probable_mais_a_confirmer",
+      "confidence": 0.8,
+      "needs_human_review": false,
+      "recommendation": "No change needed.",
+      "matched_article_fr": "https://fr.wikipedia.org/wiki/Antonio_Gramsci",
+      "matched_article_en": null,
+      "wikidata_id": "Q83003",
+      "event_identity": "Arrestation d'Antonio Gramsci par le régime mussolinien.",
+      "is_disputed": false,
+      "ambiguous_identity": false,
+      "title_self_sufficient": true,
+      "title_not_self_sufficient": false,
+      "is_not_singular_event": false,
+      "is_time_span": false,
+      "is_period_based": false,
+      "exact_year_supported": true,
+      "reasoning_short": "L'article Wikipédia en français sur Antonio Gramsci mentionne qu'il a été emprisonné par le régime mussolinien de 1926 à sa mort.",
+      "evidence_used": [
+        "wikipedia_fr_article"
+      ],
+      "sources_checked": [
+        {
+          "source_id": "wikipedia_fr_article",
+          "source_type": "wikipedia_fr",
+          "title": "Antonio Gramsci",
+          "url": "https://fr.wikipedia.org/wiki/Antonio_Gramsci",
+          "date_iso": null,
+          "precision": null
+        },
+        {
+          "source_id": "wikidata_1",
+          "source_type": "wikidata",
+          "title": "Q83003",
+          "url": "https://www.wikidata.org/wiki/Q83003",
+          "date_iso": "1891-01-22",
+          "precision": "day"
+        },
+        {
+          "source_id": "wikidata_2",
+          "source_type": "wikidata",
+          "title": "Q83003",
+          "url": "https://www.wikidata.org/wiki/Q83003",
+          "date_iso": "1891-01-23",
+          "precision": "day"
+        },
+        {
+          "source_id": "wikidata_3",
+          "source_type": "wikidata",
+          "title": "Q83003",
+          "url": "https://www.wikidata.org/wiki/Q83003",
+          "date_iso": "1937-04-27",
+          "precision": "day"
+        }
+      ],
+      "source_quotes": [
+        {
+          "source_id": "wikipedia_fr_article",
+          "quote": "Antonio Gramsci [anˈtɔːnjo ˈɡramʃi] , né le 22 janvier 1891 à Ales (Sardaigne) et mort le 27 avril 1937 à Rome, est un philosophe, écrivain et théoricien politique italien. Membre fondateur du Parti communiste italien, dont il assure un temps la direction, il est emprisonné par le régime mussolinien de 1926 à sa mort. En tant qu'intellectuel marxiste, il a notamment développé une théorie de l'hégémonie culturelle. Ses travaux, menés principalement pendant ses onze années d'emprisonnement, portent aussi sur l'histoire de l'Italie, le nationalisme, les partis politiques, la littérature (notamment l'œuvre de Machiavel), l'époque de la Renaissance et de la Réforme, ou encore le matérialisme historique, compilés dans les Cahiers de prison. Quoique marxiste-léniniste, Gramsci s'est fait connaître par ses positions hétérodoxes comme sa critique du stalinisme, par ses multiples développements t…"
+        },
+        {
+          "source_id": "wikidata_1",
+          "quote": "date of birth: 1891-01-22"
+        },
+        {
+          "source_id": "wikidata_2",
+          "quote": "date of birth: 1891-01-23"
+        },
+        {
+          "source_id": "wikidata_3",
+          "quote": "date of death: 1937-04-27"
+        }
+      ],
+      "conflicts": []
+    },
+    {
+      "id": "a0e96571-47a8-47c0-b4a0-abd4d42d8ebe",
+      "titre": "Naissance de la reine Victoria",
+      "date_in_db": "1819-01-01",
+      "year_in_db": "1819",
+      "date_candidate": "1819-01-01",
+      "year_candidate": "1819",
+      "precision": "year",
+      "status": "LIKELY_CORRECT",
+      "result_bucket": "probable_mais_a_confirmer",
+      "confidence": 0,
+      "needs_human_review": false,
+      "recommendation": "Ajouter une source fiable confirmant l'année de naissance de la reine Victoria.",
+      "matched_article_fr": null,
+      "matched_article_en": null,
+      "wikidata_id": "Q3024285",
+      "event_identity": "Naissance de la reine Victoria",
+      "is_disputed": false,
+      "ambiguous_identity": false,
+      "title_self_sufficient": true,
+      "title_not_self_sufficient": false,
+      "is_not_singular_event": false,
+      "is_time_span": false,
+      "is_period_based": false,
+      "exact_year_supported": true,
+      "reasoning_short": "Aucune source ne confirme l'année de naissance de la reine Victoria. L'information de la base de données n'est pas une preuve.",
+      "evidence_used": [],
+      "sources_checked": [
+        {
+          "source_id": "wikipedia_fr_article",
+          "source_type": "wikipedia_fr",
+          "title": "Descendance de la reine Victoria",
+          "url": "https://fr.wikipedia.org/wiki/Descendance_de_la_reine_Victoria",
+          "date_iso": null,
+          "precision": null
+        },
+        {
+          "source_id": "wikipedia_en_article",
+          "source_type": "wikipedia_en",
+          "title": "The Arrival of Queen Victoria at the Château d'Eu",
+          "url": "https://en.wikipedia.org/wiki/The_Arrival_of_Queen_Victoria_at_the_Ch%C3%A2teau_d%27Eu",
+          "date_iso": null,
+          "precision": null
+        }
+      ],
+      "source_quotes": [
+        {
+          "source_id": "wikipedia_fr_article",
+          "quote": "La descendance de la reine Victoria désigne l'ensemble des personnes ayant pour ancêtres Victoria du Royaume-Uni (1819-1901) et son mari le prince consort Albert de Saxe-Cobourg-Gotha (1819-1861). Leurs descendants, par de nombreux mariages et alliances, ont rejoint plusieurs cours royales européennes, au moins jusqu'à la Première Guerre mondiale, d'où le surnom de « grand-mère de l'Europe » donnée à la reine Victoria : en effet, certains de ses descendants sont aujourd'hui les monarques du Royaume-Uni, de la Norvège, de la Suède, du Danemark et de l'Espagne (en les personnes de Charles III du Royaume-Uni, Harald V de Norvège, Charles XVI Gustave de Suède, Frederik X de Danemark et Felipe VI d'Espagne), ou ont fourni d'anciens monarques en Allemagne, en Grèce, en Russie et en Yougoslavie, et divers autres descendants dans des familles nobles européennes. La reine Victoria et le prince A…"
+        },
+        {
+          "source_id": "wikipedia_en_article",
+          "quote": "The Arrival of Queen Victoria at the Château d'Eu (French: Arrivée de la reine Victoria au château d'Eu) is an oil on canvas history painting by the French artist Eugène Lami, from 1843."
+        }
+      ],
+      "conflicts": []
+    },
+    {
+      "id": "f7ff3f47-e1d6-405b-8c0c-adec4a18c0eb",
+      "titre": "Prise du château de Beynac par Richard Cœur de Lion",
+      "date_in_db": "1197-01-01",
+      "year_in_db": "1197",
+      "date_candidate": null,
+      "year_candidate": null,
+      "precision": null,
+      "status": "INSUFFICIENT_EVIDENCE",
+      "result_bucket": "annee_exacte_introuvable",
+      "confidence": 0,
+      "needs_human_review": true,
+      "recommendation": "Rechercher des sources historiques fiables qui mentionnent spécifiquement l'année de la prise du château de Beynac par Richard Cœur de Lion.",
+      "matched_article_fr": "https://fr.wikipedia.org/wiki/Ch%C3%A2teau_de_Beynac",
+      "matched_article_en": null,
+      "wikidata_id": "Q1011026",
+      "event_identity": "Prise du château de Beynac par Richard Cœur de Lion",
+      "is_disputed": false,
+      "ambiguous_identity": false,
+      "title_self_sufficient": true,
+      "title_not_self_sufficient": false,
+      "is_not_singular_event": false,
+      "is_time_span": false,
+      "is_period_based": false,
+      "exact_year_supported": false,
+      "reasoning_short": "Aucune source ne confirme l'année exacte de la prise du château de Beynac par Richard Cœur de Lion. Wikidata mentionne 1200 comme date d'inception du château, ce qui ne correspond pas à l'événement recherché.",
+      "evidence_used": [],
+      "sources_checked": [
+        {
+          "source_id": "wikipedia_fr_article",
+          "source_type": "wikipedia_fr",
+          "title": "Château de Beynac",
+          "url": "https://fr.wikipedia.org/wiki/Ch%C3%A2teau_de_Beynac",
+          "date_iso": null,
+          "precision": null
+        },
+        {
+          "source_id": "wikidata_1",
+          "source_type": "wikidata",
+          "title": "Q1011026",
+          "url": "https://www.wikidata.org/wiki/Q1011026",
+          "date_iso": "1200-01-01",
+          "precision": "year"
+        }
+      ],
+      "source_quotes": [
+        {
+          "source_id": "wikipedia_fr_article",
+          "quote": "Le château de Beynac est situé sur la commune française de Beynac-et-Cazenac, dans le département de la Dordogne (Périgord noir). Ce château, classé monument historique, est l'un des mieux conservés et l'un des plus réputés de la région."
+        },
+        {
+          "source_id": "wikidata_1",
+          "quote": "inception: 1200-01-01"
+        }
+      ],
+      "conflicts": []
+    },
+    {
+      "id": "ea4fbd18-d662-4e4d-b270-4ab390a74ffc",
+      "titre": "Loi Le Chapelier interdisant les corporations",
+      "date_in_db": "1791-01-01",
+      "year_in_db": "1791",
+      "date_candidate": "1791-01-01",
+      "year_candidate": "1791",
+      "precision": "year",
+      "status": "CONFIRMED",
+      "result_bucket": "confirme",
+      "confidence": 1,
+      "needs_human_review": false,
+      "recommendation": "No changes needed.",
+      "matched_article_fr": "https://fr.wikipedia.org/wiki/Loi_Le_Chapelier",
+      "matched_article_en": null,
+      "wikidata_id": "Q1518796",
+      "event_identity": "Loi Le Chapelier interdisant les corporations",
+      "is_disputed": false,
+      "ambiguous_identity": false,
+      "title_self_sufficient": true,
+      "title_not_self_sufficient": false,
+      "is_not_singular_event": false,
+      "is_time_span": false,
+      "is_period_based": false,
+      "exact_year_supported": true,
+      "reasoning_short": "La loi Le Chapelier a été promulguée en France le 14 juin 1791, selon Wikipedia et Wikidata.",
+      "evidence_used": [
+        "wikipedia_fr_article",
+        "wikidata_1"
+      ],
+      "sources_checked": [
+        {
+          "source_id": "wikipedia_fr_article",
+          "source_type": "wikipedia_fr",
+          "title": "Loi Le Chapelier",
+          "url": "https://fr.wikipedia.org/wiki/Loi_Le_Chapelier",
+          "date_iso": null,
+          "precision": null
+        },
+        {
+          "source_id": "wikidata_1",
+          "source_type": "wikidata",
+          "title": "Q1518796",
+          "url": "https://www.wikidata.org/wiki/Q1518796",
+          "date_iso": "1791-01-01",
+          "precision": "year"
+        }
+      ],
+      "source_quotes": [
+        {
+          "source_id": "wikipedia_fr_article",
+          "quote": "La loi Le Chapelier, promulguée en France le 14 juin 1791, est une loi interdisant tout groupement professionnel, que ce soit de gens de métier, le « maître de guilde », ou de leur ouvrier et apprenti. Cette loi s'inscrit dans une volonté de s'affranchir des groupes de pression qu'étaient devenues les corporations et les guildes sous l'Ancien-Régime, mais se concentre sur les associations d'ouvriers, interdisant de fait les syndicats ou autres revendications collectives. Cette loi fut précédée par le décret d'Allarde des 2 mars et 17 mars 1791 promulguant la liberté d'entreprise et supprimant expressément les corporations au nom de la liberté du travail, et de la libre concurrence."
+        },
+        {
+          "source_id": "wikidata_1",
+          "quote": "point in time: 1791-01-01"
+        }
+      ],
+      "conflicts": []
+    },
+    {
+      "id": "1efb1855-1400-4912-aec8-0e47d7bf0a21",
+      "titre": "Prise de Barcelone aux Musulmans d' Espagne",
+      "date_in_db": "0801-01-01",
+      "year_in_db": "0801",
+      "date_candidate": null,
+      "year_candidate": null,
+      "precision": null,
+      "status": "INSUFFICIENT_EVIDENCE",
+      "result_bucket": "annee_exacte_introuvable",
+      "confidence": 0,
+      "needs_human_review": true,
+      "recommendation": "Rechercher des sources historiques fiables qui confirment la date de la prise de Barcelone.",
+      "matched_article_fr": null,
+      "matched_article_en": null,
+      "wikidata_id": "Q1492",
+      "event_identity": "Prise de Barcelone par les forces carolingiennes en 801.",
+      "is_disputed": false,
+      "ambiguous_identity": false,
+      "title_self_sufficient": true,
+      "title_not_self_sufficient": false,
+      "is_not_singular_event": false,
+      "is_time_span": false,
+      "is_period_based": false,
+      "exact_year_supported": false,
+      "reasoning_short": "Aucune source externe ne confirme la date de 801 pour la prise de Barcelone. La source Wikipedia parle de la ville actuelle mais ne mentionne pas cet événement précis.",
+      "evidence_used": [],
+      "sources_checked": [
+        {
+          "source_id": "wikipedia_fr_article",
+          "source_type": "wikipedia_fr",
+          "title": "Barcelone",
+          "url": "https://fr.wikipedia.org/wiki/Barcelone",
+          "date_iso": null,
+          "precision": null
+        }
+      ],
+      "source_quotes": [
+        {
+          "source_id": "wikipedia_fr_article",
+          "quote": "Barcelone ([baʁsəlɔn] ; en catalan : Barcelona [bərsəˈɫonə] ; en espagnol : Barcelona [baɾθeˈlona] ) est la capitale administrative et économique de la Catalogne, de la province de Barcelone, de la comarque du Barcelonès ainsi que de son aire et de sa région métropolitaines, en Espagne. Barcelone est la deuxième ville d'Espagne au regard de la population, de l'économie et des activités, la onzième ville de l'Union européenne et la sixième en incluant sa banlieue : en 2023, 5,32 millions de personnes vivaient dans l'agglomération barcelonaise. La majeure partie des municipalités adjacentes sont en outre rassemblées dans l'aire métropolitaine de Barcelone. Située sur le littoral méditerranéen, elle est traversée par les fleuves Llobregat et Besòs et bordée à l'ouest par la serra de Collserola qui culmine à 512 mètres (sommet : Tibidabo). Elle est considérée comme ville mondiale en raison …"
+        }
+      ],
+      "conflicts": []
+    },
+    {
+      "id": "ec296b23-80a6-42d7-8e3f-6eff2b262f72",
+      "titre": "Pacte Briand-Kellogg",
+      "date_in_db": "1928-08-27",
+      "year_in_db": "1928",
+      "date_candidate": "1928-01-01",
+      "year_candidate": "1928",
+      "precision": "year",
+      "status": "CONFIRMED",
+      "result_bucket": "confirme",
+      "confidence": 1,
+      "needs_human_review": false,
+      "recommendation": "Aucune modification nécessaire.",
+      "matched_article_fr": "https://fr.wikipedia.org/wiki/Pacte_Briand-Kellogg",
+      "matched_article_en": null,
+      "wikidata_id": "Q205073",
+      "event_identity": "Pacte Briand-Kellogg",
+      "is_disputed": false,
+      "ambiguous_identity": false,
+      "title_self_sufficient": true,
+      "title_not_self_sufficient": false,
+      "is_not_singular_event": false,
+      "is_time_span": false,
+      "is_period_based": false,
+      "exact_year_supported": true,
+      "reasoning_short": "Le Pacte Briand-Kellogg a été signé en 1928, comme confirmé par Wikipedia et Wikidata.",
+      "evidence_used": [
+        "wikipedia_fr_article",
+        "wikidata_1"
+      ],
+      "sources_checked": [
+        {
+          "source_id": "wikipedia_fr_article",
+          "source_type": "wikipedia_fr",
+          "title": "Pacte Briand-Kellogg",
+          "url": "https://fr.wikipedia.org/wiki/Pacte_Briand-Kellogg",
+          "date_iso": null,
+          "precision": null
+        },
+        {
+          "source_id": "wikidata_1",
+          "source_type": "wikidata",
+          "title": "Q205073",
+          "url": "https://www.wikidata.org/wiki/Q205073",
+          "date_iso": "1928-08-27",
+          "precision": "day"
+        }
+      ],
+      "source_quotes": [
+        {
+          "source_id": "wikipedia_fr_article",
+          "quote": "Le pacte Briand-Kellogg, ou pacte de Paris, est un traité de paix signé en 1928 par soixante-trois pays qui « condamnent le recours à la guerre pour le règlement des différends internationaux et y renoncent en tant qu'instrument de politique nationale dans leurs relations mutuelles ». L'initiative de ce pacte revient à Aristide Briand, ministre français des Affaires étrangères, et Frank Kellogg, secrétaire d'État américain. Signé le 27 août 1928 à Paris, il entra en vigueur le 24 juillet 1929. C'est le climat détendu des relations internationales qui permet la signature de ce pacte, par 15 puissances dont la France, les États-Unis, le Royaume-Uni, l'Italie, l'Allemagne et le Japon, pour la renonciation générale à la guerre. Si le pacte est accueilli dans l'enthousiasme aux États-Unis, il suscite une réserve indéniable en Europe. Le texte avait en principe une portée limitée, dans la mes…"
+        },
+        {
+          "source_id": "wikidata_1",
+          "quote": "point in time: 1928-08-27"
+        }
+      ],
+      "conflicts": []
+    },
+    {
+      "id": "8737b509-b01b-41b3-a0d9-6957b80a222e",
+      "titre": "Début du règne de Gallien",
+      "date_in_db": "0253-01-01",
+      "year_in_db": "0253",
+      "date_candidate": "0253-01-01",
+      "year_candidate": "0253",
+      "precision": "year",
+      "status": "LIKELY_CORRECT",
+      "result_bucket": "probable_mais_a_confirmer",
+      "confidence": 0.8,
+      "needs_human_review": false,
+      "recommendation": "No change needed.",
+      "matched_article_fr": "Gallien",
+      "matched_article_en": null,
+      "wikidata_id": "Q104475",
+      "event_identity": "Début du règne de Gallien",
+      "is_disputed": false,
+      "ambiguous_identity": false,
+      "title_self_sufficient": true,
+      "title_not_self_sufficient": false,
+      "is_not_singular_event": false,
+      "is_time_span": false,
+      "is_period_based": false,
+      "exact_year_supported": true,
+      "reasoning_short": "Wikipedia FR confirme que Gallien est devenu empereur en octobre 253. Wikidata mentionne son règne à partir de 253.",
+      "evidence_used": [
+        "wikipedia_fr_article"
+      ],
+      "sources_checked": [
+        {
+          "source_id": "wikipedia_fr_article",
+          "source_type": "wikipedia_fr",
+          "title": "Gallien",
+          "url": "https://fr.wikipedia.org/wiki/Gallien",
+          "date_iso": null,
+          "precision": null
+        },
+        {
+          "source_id": "wikidata_1",
+          "source_type": "wikidata",
+          "title": "Q104475",
+          "url": "https://www.wikidata.org/wiki/Q104475",
+          "date_iso": "0218-01-01",
+          "precision": "year"
+        },
+        {
+          "source_id": "wikidata_2",
+          "source_type": "wikidata",
+          "title": "Q104475",
+          "url": "https://www.wikidata.org/wiki/Q104475",
+          "date_iso": "0268-01-01",
+          "precision": "year"
+        }
+      ],
+      "source_quotes": [
+        {
+          "source_id": "wikipedia_fr_article",
+          "quote": "Gallien (Publius Licinius Egnatius Gallienus) (v. 218 - septembre 268) est un empereur romain d'octobre 253 à septembre 268 ap. J.-C. D'abord coempereur, il partage le pouvoir avec son père Valérien jusqu'en 260. Son règne a été l'une des périodes les plus critiques pour l'Empire romain. Après la lourde défaite de Valérien contre les Perses et la capture de l'empereur, Gallien hérite d'une situation tragique, marquée par un grand nombre de rébellions, de tentatives d'usurpations et une reprise des invasions sur toute la longueur de la frontière européenne de l'empire, du Rhin au Danube. Face aux menaces intérieure et extérieure, il contient cependant les invasions et lutte contre les usurpateurs, notamment Postume en Gaule, tout en se conciliant Odénat en Orient, pour parer au plus pressé. Son règne extrêmement difficile est considéré par les sources antiques comme le fait d'un débauché…"
+        },
+        {
+          "source_id": "wikidata_1",
+          "quote": "date of birth: 0218-01-01"
+        },
+        {
+          "source_id": "wikidata_2",
+          "quote": "date of death: 0268-01-01"
+        }
+      ],
+      "conflicts": []
+    },
+    {
+      "id": "88e1b791-07c1-4de4-b35b-fd4c4c2c9e6b",
+      "titre": "Formation du gouvernement d’union nationale de Gaston Doumergue",
+      "date_in_db": "1934-01-01",
+      "year_in_db": "1934",
+      "date_candidate": "1934-01-01",
+      "year_candidate": "1934",
+      "precision": "year",
+      "status": "CONFIRMED",
+      "result_bucket": "confirme",
+      "confidence": 0.9,
+      "needs_human_review": false,
+      "recommendation": "No change needed.",
+      "matched_article_fr": "https://fr.wikipedia.org/wiki/Gaston_Doumergue",
+      "matched_article_en": null,
+      "wikidata_id": "Q296064",
+      "event_identity": "Formation du gouvernement d’union nationale de Gaston Doumergue en 1934.",
+      "is_disputed": false,
+      "ambiguous_identity": false,
+      "title_self_sufficient": true,
+      "title_not_self_sufficient": false,
+      "is_not_singular_event": false,
+      "is_time_span": false,
+      "is_period_based": false,
+      "exact_year_supported": true,
+      "reasoning_short": "The Wikipedia article on Gaston Doumergue mentions that he presided over a government of national unity during the crisis created by the riots of February 6, 1934.",
+      "evidence_used": [
+        "wikipedia_fr_article"
+      ],
+      "sources_checked": [
+        {
+          "source_id": "wikipedia_fr_article",
+          "source_type": "wikipedia_fr",
+          "title": "Gaston Doumergue",
+          "url": "https://fr.wikipedia.org/wiki/Gaston_Doumergue",
+          "date_iso": null,
+          "precision": null
+        },
+        {
+          "source_id": "wikidata_1",
+          "source_type": "wikidata",
+          "title": "Q296064",
+          "url": "https://www.wikidata.org/wiki/Q296064",
+          "date_iso": "1863-08-01",
+          "precision": "day"
+        },
+        {
+          "source_id": "wikidata_2",
+          "source_type": "wikidata",
+          "title": "Q296064",
+          "url": "https://www.wikidata.org/wiki/Q296064",
+          "date_iso": "1937-06-18",
+          "precision": "day"
+        }
+      ],
+      "source_quotes": [
+        {
+          "source_id": "wikipedia_fr_article",
+          "quote": "Gaston Doumergue, né le 1er août 1863 à Aigues-Vives (Gard) et mort le 18 juin 1937 dans la même ville, est un homme d'État français. Il est président de la République française du 13 juin 1924 au 13 juin 1931. Chargé d'importants portefeuilles ministériels, il est, une première fois, nommé président du Conseil en 1913, mais est contraint de laisser le pouvoir quelques mois après sa nomination. Élu président du Sénat en 1923, il est l'année suivante élu président de la République pour un mandat de sept ans ; il succède à Alexandre Millerand, démissionnaire. À l'issue de son mandat, refusant de concourir à sa succession, Doumergue se retire mais préside ensuite un gouvernement d'union nationale lors de la crise créée par les émeutes du 6 février 1934."
+        },
+        {
+          "source_id": "wikidata_1",
+          "quote": "date of birth: 1863-08-01"
+        },
+        {
+          "source_id": "wikidata_2",
+          "quote": "date of death: 1937-06-18"
+        }
+      ],
+      "conflicts": []
+    },
+    {
+      "id": "cd1d8f65-12f9-4fe7-80e4-6d8414889910",
+      "titre": "Instauration du service militaire de trois ans",
+      "date_in_db": "1913-08-07",
+      "year_in_db": "1913",
+      "date_candidate": "1913-01-01",
+      "year_candidate": "1913",
+      "precision": "year",
+      "status": "CONFIRMED",
+      "result_bucket": "confirme",
+      "confidence": 0.9,
+      "needs_human_review": false,
+      "recommendation": "None",
+      "matched_article_fr": null,
+      "matched_article_en": null,
+      "wikidata_id": "Q2813643",
+      "event_identity": "Instauration du service militaire de trois ans en France.",
+      "is_disputed": false,
+      "ambiguous_identity": false,
+      "title_self_sufficient": true,
+      "title_not_self_sufficient": false,
+      "is_not_singular_event": false,
+      "is_time_span": false,
+      "is_period_based": false,
+      "exact_year_supported": true,
+      "reasoning_short": "L'événement est l'instauration du service militaire de trois ans. La description détaillée indique que la loi a été adoptée le 7 août 1913.",
+      "evidence_used": [],
+      "sources_checked": [
+        {
+          "source_id": "wikipedia_fr_article",
+          "source_type": "wikipedia_fr",
+          "title": "Régiment du service militaire adapté de la Martinique",
+          "url": "https://fr.wikipedia.org/wiki/R%C3%A9giment_du_service_militaire_adapt%C3%A9_de_la_Martinique",
+          "date_iso": null,
+          "precision": null
+        },
+        {
+          "source_id": "wikidata_1",
+          "source_type": "wikidata",
+          "title": "Q2813643",
+          "url": "https://www.wikidata.org/wiki/Q2813643",
+          "date_iso": "1961-01-01",
+          "precision": "year"
+        }
+      ],
+      "source_quotes": [
+        {
+          "source_id": "wikipedia_fr_article",
+          "quote": "Le Régiment du Service Militaire Adapté de La Martinique (RSMA-M) est un régiment militaire français basé à Martinique, créé en 1961 par le Général Némo. Dépendant du Ministère de l'Intérieur et des Outre-Mer, c'est un dispositif militaire d'insertion sociale et professionnelle destiné aux jeunes Martiniquais éloignés de l'emploi, âgés de 18 à 25 ans."
+        },
+        {
+          "source_id": "wikidata_1",
+          "quote": "inception: 1961-01-01"
+        }
+      ],
+      "conflicts": []
+    },
+    {
+      "id": "6d342ee3-2de7-4e0a-b316-b3bb531b1aca",
+      "titre": "Premières preuves de la culture du thé en Chine",
+      "date_in_db": "0760-01-01",
+      "year_in_db": "0760",
+      "date_candidate": "0760-01-01",
+      "year_candidate": "0760",
+      "precision": "year",
+      "status": "LIKELY_CORRECT",
+      "result_bucket": "probable_mais_a_confirmer",
+      "confidence": 0.8,
+      "needs_human_review": false,
+      "recommendation": "Vérifier avec des sources spécialisées en histoire de l'agriculture chinoise pour confirmer la date de 760.",
+      "matched_article_fr": null,
+      "matched_article_en": null,
+      "wikidata_id": "Q148",
+      "event_identity": "Premières preuves de la culture du thé en Chine sous la dynastie Tang.",
+      "is_disputed": false,
+      "ambiguous_identity": false,
+      "title_self_sufficient": true,
+      "title_not_self_sufficient": false,
+      "is_not_singular_event": false,
+      "is_time_span": false,
+      "is_period_based": false,
+      "exact_year_supported": true,
+      "reasoning_short": "L'événement décrit une année spécifique (760) pour les premières preuves de la culture du thé en Chine. Bien que les sources fournies ne confirment pas directement cette date, le titre et la description sont suffisamment précis pour suggérer une date unique. La date de 760 est donc retenue avec une…",
+      "evidence_used": [],
+      "sources_checked": [
+        {
+          "source_id": "wikipedia_fr_article",
+          "source_type": "wikipedia_fr",
+          "title": "Chine",
+          "url": "https://fr.wikipedia.org/wiki/Chine",
+          "date_iso": null,
+          "precision": null
+        },
+        {
+          "source_id": "wikidata_1",
+          "source_type": "wikidata",
+          "title": "Q148",
+          "url": "https://www.wikidata.org/wiki/Q148",
+          "date_iso": "1949-10-01",
+          "precision": "day"
+        }
+      ],
+      "source_quotes": [
+        {
+          "source_id": "wikipedia_fr_article",
+          "quote": "La Chine (en chinois : 中国, zhōngguó), en forme longue la république populaire de Chine (RPC), également appelée de manière informelle Chine populaire et Chine communiste, est un pays d'Asie de l'Est. Avec plus de 1,4 milliard d'habitants, soit environ un sixième de la population mondiale, elle est, en 2023, le deuxième pays le plus peuplé du monde, après l'Inde. La principale partie de la population se trouve à l'est du pays. Elle compte six agglomérations de plus de dix millions d'habitants : la capitale Pékin, Shanghai, Chongqing, Tianjin, Canton et Shenzhen, ainsi que plus de trente villes d'au moins deux millions d'habitants. Avec une superficie de 9 600 000 km2 selon l'ONU ou de 9 596 960 km2 selon The World Factbook, la Chine est également le plus grand pays d'Asie orientale et le troisième ou quatrième plus grand pays du monde par la superficie. La Chine s'étend des côtes de l'oc…"
+        },
+        {
+          "source_id": "wikidata_1",
+          "quote": "inception: 1949-10-01"
+        }
+      ],
+      "conflicts": []
+    },
+    {
+      "id": "2d3e98e1-f162-4234-ad5a-5c93ad3d63d0",
+      "titre": "Traité de l'Élysée",
+      "date_in_db": "1963-01-22",
+      "year_in_db": "1963",
+      "date_candidate": "1963-01-01",
+      "year_candidate": "1963",
+      "precision": "year",
+      "status": "CONFIRMED",
+      "result_bucket": "confirme",
+      "confidence": 1,
+      "needs_human_review": false,
+      "recommendation": "Aucune modification nécessaire.",
+      "matched_article_fr": "wikipedia_fr_article",
+      "matched_article_en": "wikipedia_en_article",
+      "wikidata_id": "Q274811",
+      "event_identity": "Traité de l'Élysée",
+      "is_disputed": false,
+      "ambiguous_identity": false,
+      "title_self_sufficient": true,
+      "title_not_self_sufficient": false,
+      "is_not_singular_event": false,
+      "is_time_span": false,
+      "is_period_based": false,
+      "exact_year_supported": true,
+      "reasoning_short": "Le traité de l'Élysée a été signé en 1963, comme confirmé par les articles Wikipédia en français et en anglais.",
+      "evidence_used": [
+        "wikipedia_fr_article",
+        "wikipedia_en_article"
+      ],
+      "sources_checked": [
+        {
+          "source_id": "wikipedia_fr_article",
+          "source_type": "wikipedia_fr",
+          "title": "Traité de l'Élysée",
+          "url": "https://fr.wikipedia.org/wiki/Trait%C3%A9_de_l%27%C3%89lys%C3%A9e",
+          "date_iso": null,
+          "precision": null
+        },
+        {
+          "source_id": "wikipedia_en_article",
+          "source_type": "wikipedia_en",
+          "title": "Élysée Treaty",
+          "url": "https://en.wikipedia.org/wiki/%C3%89lys%C3%A9e_Treaty",
+          "date_iso": null,
+          "precision": null
+        },
+        {
+          "source_id": "wikidata_1",
+          "source_type": "wikidata",
+          "title": "Q274811",
+          "url": "https://www.wikidata.org/wiki/Q274811",
+          "date_iso": "1963-01-22",
+          "precision": "day"
+        }
+      ],
+      "source_quotes": [
+        {
+          "source_id": "wikipedia_fr_article",
+          "quote": "Le traité d'amitié franco-allemand (en allemand : deutsch-französischer Freundschaftsvertrag), dit traité de l'Élysée (Élysée-Vertrag), est un traité bilatéral entre la République fédérale d'Allemagne et la République française signé au palais de l'Élysée le 22 janvier 1963 par le chancelier allemand, Konrad Adenauer, et le président français, Charles de Gaulle. Il définit le cadre d'une coopération entre l'Allemagne et la France dans divers domaines."
+        },
+        {
+          "source_id": "wikipedia_en_article",
+          "quote": "The Élysée Treaty was a treaty of friendship between France and West Germany, signed by President Charles de Gaulle and Chancellor Konrad Adenauer on 22 January 1963 at the Élysée Palace in Paris. With the signing of this treaty, Germany and France established a new foundation for relations, bringing an end to centuries of French–German enmity and wars."
+        },
+        {
+          "source_id": "wikidata_1",
+          "quote": "point in time: 1963-01-22"
+        }
+      ],
+      "conflicts": []
+    },
+    {
+      "id": "89a4507a-90e3-4c64-beb0-7ab3691d565b",
+      "titre": "Explosion du dirigeable Hindenburg",
+      "date_in_db": "1937-05-06",
+      "year_in_db": "1937",
+      "date_candidate": "1937-01-01",
+      "year_candidate": "1937",
+      "precision": "year",
+      "status": "CONFIRMED",
+      "result_bucket": "confirme",
+      "confidence": 1,
+      "needs_human_review": false,
+      "recommendation": "Confirmer la date de 1937.",
+      "matched_article_fr": "Accident du Hindenburg",
+      "matched_article_en": null,
+      "wikidata_id": "Q3182723",
+      "event_identity": "Explosion du dirigeable Hindenburg",
+      "is_disputed": false,
+      "ambiguous_identity": false,
+      "title_self_sufficient": true,
+      "title_not_self_sufficient": false,
+      "is_not_singular_event": false,
+      "is_time_span": false,
+      "is_period_based": false,
+      "exact_year_supported": true,
+      "reasoning_short": "L'accident du Hindenburg est daté du 6 mai 1937 par Wikipedia et Wikidata.",
+      "evidence_used": [
+        "wikipedia_fr_article",
+        "wikidata_1"
+      ],
+      "sources_checked": [
+        {
+          "source_id": "wikipedia_fr_article",
+          "source_type": "wikipedia_fr",
+          "title": "Accident du Hindenburg",
+          "url": "https://fr.wikipedia.org/wiki/Accident_du_Hindenburg",
+          "date_iso": null,
+          "precision": null
+        },
+        {
+          "source_id": "wikidata_1",
+          "source_type": "wikidata",
+          "title": "Q3182723",
+          "url": "https://www.wikidata.org/wiki/Q3182723",
+          "date_iso": "1937-05-06",
+          "precision": "day"
+        }
+      ],
+      "source_quotes": [
+        {
+          "source_id": "wikipedia_fr_article",
+          "quote": "L'accident du Hindenburg est une catastrophe aérienne survenue le 6 mai 1937 à Lakehurst dans le New Jersey (États-Unis), au Hindenburg, dirigeable allemand de transport de passagers à l'hydrogène et plus grande machine volante de l'histoire. Le Zeppelin prit feu lors de sa tentative d'amarrage sur la base aéronavale de Lakehurst (en), provoquant la mort de 36 personnes dont 35 parmi les 97 présentes à bord (36 passagers et 61 membres d'équipage) et une au sol. Diverses théories furent avancées quant à la cause initiale de l’incendie. Celle d'un attentat, d'abord évoquée, a été jugée improbable. La plus généralement admise est une étincelle provoquée par de l'électricité statique, la haute inflammabilité de l'hydrogène ayant contribué à la propagation rapide du feu. L'accident fit l'objet d'une couverture très importante avec notamment des films d'actualités, des photographies ainsi qu'…"
+        },
+        {
+          "source_id": "wikidata_1",
+          "quote": "point in time: 1937-05-06"
+        }
+      ],
+      "conflicts": []
+    },
+    {
+      "id": "4764b56c-be2e-43e6-85ee-033b2cee5d46",
+      "titre": "Irène devient impératrice byzantine",
+      "date_in_db": "0797-01-01",
+      "year_in_db": "0797",
+      "date_candidate": null,
+      "year_candidate": null,
+      "precision": null,
+      "status": "INSUFFICIENT_EVIDENCE",
+      "result_bucket": "annee_exacte_introuvable",
+      "confidence": 0,
+      "needs_human_review": true,
+      "recommendation": "Rechercher des sources externes fiables qui confirment l'année exacte où Irène est devenue impératrice byzantine.",
+      "matched_article_fr": null,
+      "matched_article_en": null,
+      "wikidata_id": "Q233631",
+      "event_identity": "Irène devient impératrice byzantine",
+      "is_disputed": false,
+      "ambiguous_identity": false,
+      "title_self_sufficient": true,
+      "title_not_self_sufficient": false,
+      "is_not_singular_event": false,
+      "is_time_span": false,
+      "is_period_based": false,
+      "exact_year_supported": false,
+      "reasoning_short": "Aucune source externe ne confirme l'année 797 pour l'accession d'Irène au titre d'impératrice byzantine. Les sources fournies concernent Agnès de France, une autre impératrice byzantine, mais ne valident pas l'événement recherché.",
+      "evidence_used": [],
+      "sources_checked": [
+        {
+          "source_id": "wikipedia_fr_article",
+          "source_type": "wikipedia_fr",
+          "title": "Agnès de France (impératrice byzantine)",
+          "url": "https://fr.wikipedia.org/wiki/Agn%C3%A8s_de_France_(imp%C3%A9ratrice_byzantine)",
+          "date_iso": null,
+          "precision": null
+        },
+        {
+          "source_id": "wikidata_1",
+          "source_type": "wikidata",
+          "title": "Q233631",
+          "url": "https://www.wikidata.org/wiki/Q233631",
+          "date_iso": "1171-01-01",
+          "precision": "year"
+        },
+        {
+          "source_id": "wikidata_2",
+          "source_type": "wikidata",
+          "title": "Q233631",
+          "url": "https://www.wikidata.org/wiki/Q233631",
+          "date_iso": "1220-01-01",
+          "precision": "year"
+        },
+        {
+          "source_id": "wikidata_3",
+          "source_type": "wikidata",
+          "title": "Q233631",
+          "url": "https://www.wikidata.org/wiki/Q233631",
+          "date_iso": "1240-01-01",
+          "precision": "year"
+        }
+      ],
+      "source_quotes": [
+        {
+          "source_id": "wikipedia_fr_article",
+          "quote": "Agnès de France (1171- v. 1220/1240), ou Anne de France, est une impératrice byzantine, fille de Louis VII."
+        },
+        {
+          "source_id": "wikidata_1",
+          "quote": "date of birth: 1171-01-01"
+        },
+        {
+          "source_id": "wikidata_2",
+          "quote": "date of death: 1220-01-01"
+        },
+        {
+          "source_id": "wikidata_3",
+          "quote": "date of death: 1240-01-01"
+        }
+      ],
+      "conflicts": []
+    },
+    {
+      "id": "9050e398-e4b6-4785-8c02-042805f5a1b9",
+      "titre": "Festival de Woodstock",
+      "date_in_db": "1969-08-15",
+      "year_in_db": "1969",
+      "date_candidate": "1969-01-01",
+      "year_candidate": "1969",
+      "precision": "year",
+      "status": "CONFIRMED",
+      "result_bucket": "confirme",
+      "confidence": 1,
+      "needs_human_review": false,
+      "recommendation": "Confirmer la date de 1969.",
+      "matched_article_fr": "wikipedia_fr_article",
+      "matched_article_en": "wikipedia_en_article",
+      "wikidata_id": "Q164815",
+      "event_identity": "Festival de Woodstock",
+      "is_disputed": false,
+      "ambiguous_identity": false,
+      "title_self_sufficient": true,
+      "title_not_self_sufficient": false,
+      "is_not_singular_event": false,
+      "is_time_span": false,
+      "is_period_based": false,
+      "exact_year_supported": true,
+      "reasoning_short": "Le festival de Woodstock a eu lieu en 1969, comme confirmé par les articles Wikipédia en français et en anglais.",
+      "evidence_used": [
+        "wikipedia_fr_article",
+        "wikipedia_en_article"
+      ],
+      "sources_checked": [
+        {
+          "source_id": "wikipedia_fr_article",
+          "source_type": "wikipedia_fr",
+          "title": "Festival de Woodstock",
+          "url": "https://fr.wikipedia.org/wiki/Festival_de_Woodstock",
+          "date_iso": null,
+          "precision": null
+        },
+        {
+          "source_id": "wikipedia_en_article",
+          "source_type": "wikipedia_en",
+          "title": "Woodstock",
+          "url": "https://en.wikipedia.org/wiki/Woodstock",
+          "date_iso": null,
+          "precision": null
+        },
+        {
+          "source_id": "wikidata_1",
+          "source_type": "wikidata",
+          "title": "Q164815",
+          "url": "https://www.wikidata.org/wiki/Q164815",
+          "date_iso": "1969-08-15",
+          "precision": "day"
+        },
+        {
+          "source_id": "wikidata_2",
+          "source_type": "wikidata",
+          "title": "Q164815",
+          "url": "https://www.wikidata.org/wiki/Q164815",
+          "date_iso": "1969-01-01",
+          "precision": "year"
+        }
+      ],
+      "source_quotes": [
+        {
+          "source_id": "wikipedia_fr_article",
+          "quote": "Le Festival de Woodstock (Woodstock Music and Art Fair, ou Woodstock) est un festival de musique et un rassemblement emblématique de la culture hippie des années 1960, organisé à White Lake, hameau de Bethel, Comté de Sullivan, dans les montagnes Catskill, dans l'État de New York, sur les terres du fermier Max Yasgur, à une cinquantaine de miles (environ 80 kilomètres) au sud-ouest de Woodstock. Ce qui aurait pu tourner au fiasco par le mélange de drogues et météo désastreuse devient un des plus grands moments de l'histoire de la musique populaire, classé par le magazine Rolling Stone parmi les 50 moments qui ont changé l'histoire du rock 'n' roll, apothéose du mouvement hippie. Organisé pour se dérouler du 15 août 1969 au 17 août 1969 et accueillir 50 000 spectateurs, il en reçoit finalement environ un demi million, et se poursuit un jour de plus, soit jusqu'au 18 août 1969 au matin. L…"
+        },
+        {
+          "source_id": "wikipedia_en_article",
+          "quote": "The Woodstock Music and Art Fair, commonly referred to as Woodstock, was a music festival held from August 15 to 18, 1969, on Max Yasgur's dairy farm in Bethel, New York, 60 miles (95 km) southwest of the town of Woodstock. Billed as \"an Aquarian Exposition: 3 Days of Peace & Music\" and alternatively referred to as the Woodstock Rock Festival, it attracted an audience of more than 460,000. Thirty-two acts performed outdoors despite overcast skies and sporadic rain. It was one of the largest music festivals in history and would become the peak musical event to reflect the counterculture of the 1960s. The festival has become widely regarded as a pivotal moment in popular music history, as well as a defining event for the silent and early baby boomer generations. The event's significance was reinforced by a 1970 documentary film, an accompanying soundtrack album, and a song written by Joni…"
+        },
+        {
+          "source_id": "wikidata_1",
+          "quote": "start time: 1969-08-15"
+        },
+        {
+          "source_id": "wikidata_2",
+          "quote": "inception: 1969-01-01"
+        }
+      ],
+      "conflicts": []
+    },
+    {
+      "id": "da5f94c5-1934-461e-9d74-302bfb22e68d",
+      "titre": "Barents découvre le Spitzberg",
+      "date_in_db": "1596-01-01",
+      "year_in_db": "1596",
+      "date_candidate": "1596-01-01",
+      "year_candidate": "1596",
+      "precision": "year",
+      "status": "LIKELY_CORRECT",
+      "result_bucket": "preuve_externe_faible",
+      "confidence": 0,
+      "needs_human_review": false,
+      "recommendation": "Ajouter des sources externes fiables pour confirmer l'année de la découverte.",
+      "matched_article_fr": null,
+      "matched_article_en": null,
+      "wikidata_id": null,
+      "event_identity": "Découverte du Spitzberg par Willem Barents en 1596.",
+      "is_disputed": false,
+      "ambiguous_identity": false,
+      "title_self_sufficient": true,
+      "title_not_self_sufficient": false,
+      "is_not_singular_event": false,
+      "is_time_span": false,
+      "is_period_based": false,
+      "exact_year_supported": true,
+      "reasoning_short": "Aucune source externe n'est fournie pour confirmer l'année de la découverte du Spitzberg par Barents. La date de 1596 est donc invérifiable avec les sources disponibles.",
+      "evidence_used": [],
+      "sources_checked": [],
+      "source_quotes": [],
+      "conflicts": []
+    },
+    {
+      "id": "35b3914d-c281-41cf-949b-2a9b0333cc78",
+      "titre": "Accident nucléaire de Tchernobyl",
+      "date_in_db": "1986-01-01",
+      "year_in_db": "1986",
+      "date_candidate": "1986-01-01",
+      "year_candidate": "1986",
+      "precision": "year",
+      "status": "CONFIRMED",
+      "result_bucket": "confirme",
+      "confidence": 0.9,
+      "needs_human_review": false,
+      "recommendation": "Confirmer la date de 1986.",
+      "matched_article_fr": null,
+      "matched_article_en": null,
+      "wikidata_id": "Q1050926",
+      "event_identity": "Accident nucléaire de Tchernobyl",
+      "is_disputed": false,
+      "ambiguous_identity": false,
+      "title_self_sufficient": true,
+      "title_not_self_sufficient": false,
+      "is_not_singular_event": false,
+      "is_time_span": false,
+      "is_period_based": false,
+      "exact_year_supported": true,
+      "reasoning_short": "L'accident de Tchernobyl est un événement unique et bien défini. Wikidata indique une date de début en 1986.",
+      "evidence_used": [
+        "wikidata_1"
+      ],
+      "sources_checked": [
+        {
+          "source_id": "wikipedia_fr_article",
+          "source_type": "wikipedia_fr",
+          "title": "Zone d'exclusion de Tchernobyl",
+          "url": "https://fr.wikipedia.org/wiki/Zone_d%27exclusion_de_Tchernobyl",
+          "date_iso": null,
+          "precision": null
+        },
+        {
+          "source_id": "wikidata_1",
+          "source_type": "wikidata",
+          "title": "Q1050926",
+          "url": "https://www.wikidata.org/wiki/Q1050926",
+          "date_iso": "1986-04-27",
+          "precision": "day"
+        }
+      ],
+      "source_quotes": [
+        {
+          "source_id": "wikipedia_fr_article",
+          "quote": "La zone d'exclusion de Tchernobyl (également appelée la zone de 30 kilomètres ou encore tout simplement La Zone, en ukrainien Чорнобильська зона, Tchornobyl's'ka zona), officiellement la Zone d'aliénation de la centrale nucléaire de Tchernobyl (Зона відчуження Чорнобильської АЕС, Zona vidtchoujennia Tchornobyl's'koï AES), est une zone d'exclusion autour de la centrale nucléaire de Tchernobyl (à cheval entre les territoires ukrainien et biélorusse) mise en place par l'Armée soviétique peu de temps après la catastrophe de 1986 afin d'évacuer le personnel de Prypiat et des villages environnants et empêcher son accès au public. En 1991, à la suite de la dislocation de l'Union soviétique qui conduit à l'indépendance de l'Ukraine, son administration est confiée au ministère des Situations d'urgences d'Ukraine (le sarcophage et l'arche de la centrale sont cependant administrés séparément). Ell…"
+        },
+        {
+          "source_id": "wikidata_1",
+          "quote": "inception: 1986-04-27"
+        }
+      ],
+      "conflicts": []
+    },
+    {
+      "id": "24297915-934d-4762-bc68-a2a215310eb6",
+      "titre": "Annexion de la Crimée par la Russie",
+      "date_in_db": "2014-03-18",
+      "year_in_db": "2014",
+      "date_candidate": "2014-01-01",
+      "year_candidate": "2014",
+      "precision": "year",
+      "status": "CONFIRMED",
+      "result_bucket": "confirme",
+      "confidence": 0.9,
+      "needs_human_review": false,
+      "recommendation": "No change needed.",
+      "matched_article_fr": "https://fr.wikipedia.org/wiki/Annexion_de_la_Crim%C3%A9e_par_la_Russie_en_2014",
+      "matched_article_en": null,
+      "wikidata_id": "Q15920546",
+      "event_identity": "Annexion de la Crimée par la Russie",
+      "is_disputed": false,
+      "ambiguous_identity": false,
+      "title_self_sufficient": true,
+      "title_not_self_sufficient": false,
+      "is_not_singular_event": false,
+      "is_time_span": false,
+      "is_period_based": false,
+      "exact_year_supported": true,
+      "reasoning_short": "L'annexion de la Crimée par la Russie a eu lieu en 2014, selon Wikipedia et Wikidata.",
+      "evidence_used": [
+        "wikipedia_fr_article",
+        "wikidata_1"
+      ],
+      "sources_checked": [
+        {
+          "source_id": "wikipedia_fr_article",
+          "source_type": "wikipedia_fr",
+          "title": "Annexion de la Crimée par la Russie en 2014",
+          "url": "https://fr.wikipedia.org/wiki/Annexion_de_la_Crim%C3%A9e_par_la_Russie_en_2014",
+          "date_iso": null,
+          "precision": null
+        },
+        {
+          "source_id": "wikidata_1",
+          "source_type": "wikidata",
+          "title": "Q15920546",
+          "url": "https://www.wikidata.org/wiki/Q15920546",
+          "date_iso": "2014-01-01",
+          "precision": "year"
+        },
+        {
+          "source_id": "wikidata_2",
+          "source_type": "wikidata",
+          "title": "Q15920546",
+          "url": "https://www.wikidata.org/wiki/Q15920546",
+          "date_iso": "2014-02-20",
+          "precision": "day"
+        }
+      ],
+      "source_quotes": [
+        {
+          "source_id": "wikipedia_fr_article",
+          "quote": "L'annexion de la Crimée fait référence à l'invasion de la péninsule de Crimée (Ukraine) menée par la fédération de Russie en février et mars 2014, et à son rattachement ultérieur à la Russie le 18 mars 2014. Ce conflit post-soviétique a lieu au lendemain de la révolution ukrainienne de février 2014 et fait partie de la guerre russo-ukrainienne. À partir du 28 février 2014, des troupes russes occupent la péninsule de Crimée, puis des mouvements de troupes sont entrepris par l'armée de terre russe près de la frontière ukrainienne. Ces évènements provoquent une crise diplomatique internationale. Le déploiement de ces troupes russes fait suite aux manifestations de l'Euromaïdan en Ukraine ayant abouti à la destitution du président ukrainien pro-russe Viktor Ianoukovytch par le parlement, le 22 février 2014. La Russie considère que le nouveau gouvernement ukrainien est « illégitime ». Le gou…"
+        },
+        {
+          "source_id": "wikidata_1",
+          "quote": "point in time: 2014-01-01"
+        },
+        {
+          "source_id": "wikidata_2",
+          "quote": "start time: 2014-02-20"
+        }
+      ],
+      "conflicts": []
+    }
+  ]
+}

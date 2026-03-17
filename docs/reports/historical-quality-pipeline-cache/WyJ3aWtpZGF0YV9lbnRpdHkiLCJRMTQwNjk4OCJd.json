@@ -1,0 +1,209 @@
+{
+  "pageid": 1345936,
+  "ns": 0,
+  "title": "Q1406988",
+  "lastrevid": 2335833024,
+  "modified": "2025-04-08T09:55:59Z",
+  "type": "item",
+  "id": "Q1406988",
+  "labels": {
+    "de": {
+      "language": "de",
+      "value": "Großwohnsiedlung"
+    },
+    "en": {
+      "language": "en",
+      "value": "grand ensemble"
+    },
+    "fr": {
+      "language": "fr",
+      "value": "grand ensemble en France"
+    },
+    "is": {
+      "language": "is",
+      "value": "Klasahús"
+    },
+    "pl": {
+      "language": "pl",
+      "value": "Wielki zespół mieszkaniowy"
+    },
+    "sk": {
+      "language": "sk",
+      "value": "Sídlisko"
+    },
+    "zh": {
+      "language": "zh",
+      "value": "屋苑"
+    },
+    "zh-hk": {
+      "language": "zh-hk",
+      "value": "屋苑"
+    },
+    "zh-cn": {
+      "language": "zh-cn",
+      "value": "屋苑"
+    },
+    "ru": {
+      "language": "ru",
+      "value": "жилой комплекс"
+    },
+    "sl": {
+      "language": "sl",
+      "value": "veliko stanovanjsko naselje"
+    }
+  },
+  "descriptions": {
+    "en": {
+      "language": "en",
+      "value": "type of housing estate in France"
+    },
+    "fr": {
+      "language": "fr",
+      "value": "forme urbaine, cas de la France"
+    }
+  },
+  "aliases": {
+    "zh": [
+      {
+        "language": "zh",
+        "value": "集中式居民区"
+      }
+    ]
+  },
+  "claims": {
+    "P646": [
+      {
+        "mainsnak": {
+          "snaktype": "value",
+          "property": "P646",
+          "hash": "275c18a78864435e08081f436482274b193c706f",
+          "datavalue": {
+            "value": "/m/01rtvp",
+            "type": "string"
+          },
+          "datatype": "external-id"
+        },
+        "type": "statement",
+        "id": "Q1406988$70461FB7-2617-4915-875C-F7ADB772A541",
+        "rank": "normal",
+        "references": [
+          {
+            "hash": "2b00cb481cddcac7623114367489b5c194901c4a",
+            "snaks": {
+              "P248": [
+                {
+                  "snaktype": "value",
+                  "property": "P248",
+                  "hash": "a94b740202b097dd33355e0e6c00e54b9395e5e0",
+                  "datavalue": {
+                    "value": {
+                      "entity-type": "item",
+                      "numeric-id": 15241312,
+                      "id": "Q15241312"
+                    },
+                    "type": "wikibase-entityid"
+                  },
+                  "datatype": "wikibase-item"
+                }
+              ],
+              "P577": [
+                {
+                  "snaktype": "value",
+                  "property": "P577",
+                  "hash": "fde79ecb015112d2f29229ccc1ec514ed3e71fa2",
+                  "datavalue": {
+                    "value": {
+                      "time": "+2013-10-28T00:00:00Z",
+                      "timezone": 0,
+                      "before": 0,
+                      "after": 0,
+                      "precision": 11,
+                      "calendarmodel": "http://www.wikidata.org/entity/Q1985727"
+                    },
+                    "type": "time"
+                  },
+                  "datatype": "time"
+                }
+              ]
+            },
+            "snaks-order": [
+              "P248",
+              "P577"
+            ]
+          }
+        ]
+      }
+    ],
+    "P279": [
+      {
+        "mainsnak": {
+          "snaktype": "value",
+          "property": "P279",
+          "hash": "e751eef79a3e1fd62b0a6f0eceed2d18c45ed443",
+          "datavalue": {
+            "value": {
+              "entity-type": "item",
+              "numeric-id": 12104567,
+              "id": "Q12104567"
+            },
+            "type": "wikibase-entityid"
+          },
+          "datatype": "wikibase-item"
+        },
+        "type": "statement",
+        "id": "Q1406988$35f9eaf8-4550-8f07-3262-ef2df02d8193",
+        "rank": "normal"
+      }
+    ],
+    "P910": [
+      {
+        "mainsnak": {
+          "snaktype": "value",
+          "property": "P910",
+          "hash": "12cd0ccc9a122923cb7c457e8dd90875938b93fa",
+          "datavalue": {
+            "value": {
+              "entity-type": "item",
+              "numeric-id": 27883819,
+              "id": "Q27883819"
+            },
+            "type": "wikibase-entityid"
+          },
+          "datatype": "wikibase-item"
+        },
+        "type": "statement",
+        "id": "Q1406988$86a6d999-cbbf-4548-bf7a-72d9e2df3ce1",
+        "rank": "normal"
+      }
+    ],
+    "P17": [
+      {
+        "mainsnak": {
+          "snaktype": "value",
+          "property": "P17",
+          "hash": "c05db5d169c2560b9799d567a803d20a392f53e4",
+          "datavalue": {
+            "value": {
+              "entity-type": "item",
+              "numeric-id": 142,
+              "id": "Q142"
+            },
+            "type": "wikibase-entityid"
+          },
+          "datatype": "wikibase-item"
+        },
+        "type": "statement",
+        "id": "Q1406988$5a583851-4711-1cfa-1d75-066106ddab49",
+        "rank": "normal"
+      }
+    ]
+  },
+  "sitelinks": {
+    "frwiki": {
+      "site": "frwiki",
+      "title": "Grand ensemble en France",
+      "badges": [],
+      "url": "https://fr.wikipedia.org/wiki/Grand_ensemble_en_France"
+    }
+  }
+}

@@ -1,0 +1,806 @@
+{
+  "saved_at": "2026-03-07T14:30:51.067Z",
+  "value": {
+    "pageid": 615929,
+    "ns": 0,
+    "title": "Q654411",
+    "lastrevid": 2406152560,
+    "modified": "2025-09-16T20:52:35Z",
+    "type": "item",
+    "id": "Q654411",
+    "labels": {
+      "nl": {
+        "language": "nl",
+        "value": "Georges Philippar"
+      },
+      "de": {
+        "language": "de",
+        "value": "Georges Philippar"
+      },
+      "en": {
+        "language": "en",
+        "value": "MS Georges Philippar"
+      },
+      "fr": {
+        "language": "fr",
+        "value": "Georges Philippar"
+      },
+      "es": {
+        "language": "es",
+        "value": "Georges Philippar"
+      },
+      "ja": {
+        "language": "ja",
+        "value": "ジョルジュ・フィリッパー"
+      },
+      "pt": {
+        "language": "pt",
+        "value": "MS Georges Philippar"
+      },
+      "ru": {
+        "language": "ru",
+        "value": "Жорж Филиппар"
+      },
+      "ga": {
+        "language": "ga",
+        "value": "MS Georges Philippar"
+      }
+    },
+    "descriptions": {
+      "de": {
+        "language": "de",
+        "value": "Schiff"
+      },
+      "es": {
+        "language": "es",
+        "value": "paquebote francés de la década de 1930"
+      },
+      "en": {
+        "language": "en",
+        "value": "French liner"
+      },
+      "fr": {
+        "language": "fr",
+        "value": "paquebot des Messageries maritimes"
+      },
+      "nl": {
+        "language": "nl",
+        "value": "schip uit 1932"
+      },
+      "uk": {
+        "language": "uk",
+        "value": "судно"
+      }
+    },
+    "aliases": {
+      "ja": [
+        {
+          "language": "ja",
+          "value": "ジョージ・フィリパー号"
+        }
+      ]
+    },
+    "claims": {
+      "P31": [
+        {
+          "mainsnak": {
+            "snaktype": "value",
+            "property": "P31",
+            "hash": "cd5f419612df964b2dcbd02261bc75c4053e5a27",
+            "datavalue": {
+              "value": {
+                "entity-type": "item",
+                "numeric-id": 697196,
+                "id": "Q697196"
+              },
+              "type": "wikibase-entityid"
+            },
+            "datatype": "wikibase-item"
+          },
+          "type": "statement",
+          "id": "Q654411$28386402-F7E9-4061-8A6A-4D18DE4C1874",
+          "rank": "normal"
+        }
+      ],
+      "P625": [
+        {
+          "mainsnak": {
+            "snaktype": "value",
+            "property": "P625",
+            "hash": "191083a599c16b5cc4ea60d58029fca01c2c2bf4",
+            "datavalue": {
+              "value": {
+                "latitude": 11.83333,
+                "longitude": 51.29722,
+                "altitude": null,
+                "precision": 0.0001,
+                "globe": "http://www.wikidata.org/entity/Q2"
+              },
+              "type": "globecoordinate"
+            },
+            "datatype": "globe-coordinate"
+          },
+          "type": "statement",
+          "id": "Q654411$55F44DF1-8649-4040-A8E5-9B06730D1A24",
+          "rank": "normal",
+          "references": [
+            {
+              "hash": "732ec1c90a6f0694c7db9a71bf09fe7f2b674172",
+              "snaks": {
+                "P143": [
+                  {
+                    "snaktype": "value",
+                    "property": "P143",
+                    "hash": "9123b0de1cc9c3954366ba797d598e4e1ea4146f",
+                    "datavalue": {
+                      "value": {
+                        "entity-type": "item",
+                        "numeric-id": 10000,
+                        "id": "Q10000"
+                      },
+                      "type": "wikibase-entityid"
+                    },
+                    "datatype": "wikibase-item"
+                  }
+                ]
+              },
+              "snaks-order": [
+                "P143"
+              ]
+            }
+          ]
+        }
+      ],
+      "P646": [
+        {
+          "mainsnak": {
+            "snaktype": "value",
+            "property": "P646",
+            "hash": "cf52649b06bda776d5f3d397c31c8b8f0226febf",
+            "datavalue": {
+              "value": "/m/09gnc4k",
+              "type": "string"
+            },
+            "datatype": "external-id"
+          },
+          "type": "statement",
+          "id": "Q654411$0E9C4460-DF22-42F7-B9BA-166EFB9A8480",
+          "rank": "normal",
+          "references": [
+            {
+              "hash": "2b00cb481cddcac7623114367489b5c194901c4a",
+              "snaks": {
+                "P248": [
+                  {
+                    "snaktype": "value",
+                    "property": "P248",
+                    "hash": "a94b740202b097dd33355e0e6c00e54b9395e5e0",
+                    "datavalue": {
+                      "value": {
+                        "entity-type": "item",
+                        "numeric-id": 15241312,
+                        "id": "Q15241312"
+                      },
+                      "type": "wikibase-entityid"
+                    },
+                    "datatype": "wikibase-item"
+                  }
+                ],
+                "P577": [
+                  {
+                    "snaktype": "value",
+                    "property": "P577",
+                    "hash": "fde79ecb015112d2f29229ccc1ec514ed3e71fa2",
+                    "datavalue": {
+                      "value": {
+                        "time": "+2013-10-28T00:00:00Z",
+                        "timezone": 0,
+                        "before": 0,
+                        "after": 0,
+                        "precision": 11,
+                        "calendarmodel": "http://www.wikidata.org/entity/Q1985727"
+                      },
+                      "type": "time"
+                    },
+                    "datatype": "time"
+                  }
+                ]
+              },
+              "snaks-order": [
+                "P248",
+                "P577"
+              ]
+            }
+          ]
+        }
+      ],
+      "P138": [
+        {
+          "mainsnak": {
+            "snaktype": "value",
+            "property": "P138",
+            "hash": "9f89351e38afc8cf2b2b9b6c3e861d705f8b8990",
+            "datavalue": {
+              "value": {
+                "entity-type": "item",
+                "numeric-id": 3103334,
+                "id": "Q3103334"
+              },
+              "type": "wikibase-entityid"
+            },
+            "datatype": "wikibase-item"
+          },
+          "type": "statement",
+          "id": "Q654411$788ad9c2-48f6-938d-c01c-e9ae451fc088",
+          "rank": "normal"
+        }
+      ],
+      "P373": [
+        {
+          "mainsnak": {
+            "snaktype": "value",
+            "property": "P373",
+            "hash": "5da6ea32e082d13f7492c3a2872e66670ef4dd97",
+            "datavalue": {
+              "value": "Georges Philippar (ship, 1932)",
+              "type": "string"
+            },
+            "datatype": "string"
+          },
+          "type": "statement",
+          "id": "Q654411$D2F0D04E-921E-4AB2-A520-2A0483261818",
+          "rank": "normal"
+        }
+      ],
+      "P18": [
+        {
+          "mainsnak": {
+            "snaktype": "value",
+            "property": "P18",
+            "hash": "61fa5bc68735cd7fa55563cdf22599631f1b131c",
+            "datavalue": {
+              "value": "Paquebot Georges Philippar (1931).jpg",
+              "type": "string"
+            },
+            "datatype": "commonsMedia"
+          },
+          "type": "statement",
+          "id": "Q654411$78F1928D-1E17-409A-8F6E-7D287081822F",
+          "rank": "normal",
+          "references": [
+            {
+              "hash": "d4bd87b862b12d99d26e86472d44f26858dee639",
+              "snaks": {
+                "P143": [
+                  {
+                    "snaktype": "value",
+                    "property": "P143",
+                    "hash": "f30cbd35620c4ea6d0633aaf0210a8916130469b",
+                    "datavalue": {
+                      "value": {
+                        "entity-type": "item",
+                        "numeric-id": 8447,
+                        "id": "Q8447"
+                      },
+                      "type": "wikibase-entityid"
+                    },
+                    "datatype": "wikibase-item"
+                  }
+                ]
+              },
+              "snaks-order": [
+                "P143"
+              ]
+            }
+          ]
+        }
+      ],
+      "P176": [
+        {
+          "mainsnak": {
+            "snaktype": "value",
+            "property": "P176",
+            "hash": "d4a0fef035e441407d0faeb04fbf0c12058f80c7",
+            "datavalue": {
+              "value": {
+                "entity-type": "item",
+                "numeric-id": 765925,
+                "id": "Q765925"
+              },
+              "type": "wikibase-entityid"
+            },
+            "datatype": "wikibase-item"
+          },
+          "type": "statement",
+          "id": "Q654411$DE928F34-68AA-47B9-9902-201B26D0FD12",
+          "rank": "normal"
+        }
+      ],
+      "P2262": [
+        {
+          "mainsnak": {
+            "snaktype": "value",
+            "property": "P2262",
+            "hash": "e9f18dcb5244a8e932d793bc303ca87c62a404f2",
+            "datavalue": {
+              "value": {
+                "amount": "+13.35",
+                "unit": "http://www.wikidata.org/entity/Q11573"
+              },
+              "type": "quantity"
+            },
+            "datatype": "quantity"
+          },
+          "type": "statement",
+          "id": "Q654411$66E77754-CB92-4747-B4FA-1961580B9480",
+          "rank": "normal",
+          "references": [
+            {
+              "hash": "9a24f7c0208b05d6be97077d855671d1dfdbc0dd",
+              "snaks": {
+                "P143": [
+                  {
+                    "snaktype": "value",
+                    "property": "P143",
+                    "hash": "d38375ffe6fe142663ff55cd783aa4df4301d83d",
+                    "datavalue": {
+                      "value": {
+                        "entity-type": "item",
+                        "numeric-id": 48183,
+                        "id": "Q48183"
+                      },
+                      "type": "wikibase-entityid"
+                    },
+                    "datatype": "wikibase-item"
+                  }
+                ]
+              },
+              "snaks-order": [
+                "P143"
+              ]
+            }
+          ]
+        }
+      ],
+      "P2043": [
+        {
+          "mainsnak": {
+            "snaktype": "value",
+            "property": "P2043",
+            "hash": "75b1ca30137492ab11e600e15e152a874889e9dc",
+            "datavalue": {
+              "value": {
+                "amount": "+171.5",
+                "unit": "http://www.wikidata.org/entity/Q11573"
+              },
+              "type": "quantity"
+            },
+            "datatype": "quantity"
+          },
+          "type": "statement",
+          "id": "Q654411$D0148AF3-0F81-4274-A556-91BC5223DB52",
+          "rank": "normal",
+          "references": [
+            {
+              "hash": "9a24f7c0208b05d6be97077d855671d1dfdbc0dd",
+              "snaks": {
+                "P143": [
+                  {
+                    "snaktype": "value",
+                    "property": "P143",
+                    "hash": "d38375ffe6fe142663ff55cd783aa4df4301d83d",
+                    "datavalue": {
+                      "value": {
+                        "entity-type": "item",
+                        "numeric-id": 48183,
+                        "id": "Q48183"
+                      },
+                      "type": "wikibase-entityid"
+                    },
+                    "datatype": "wikibase-item"
+                  }
+                ]
+              },
+              "snaks-order": [
+                "P143"
+              ]
+            }
+          ]
+        }
+      ],
+      "P137": [
+        {
+          "mainsnak": {
+            "snaktype": "value",
+            "property": "P137",
+            "hash": "099583aec6c55bb944e25a28565b0acdf29e02e1",
+            "datavalue": {
+              "value": {
+                "entity-type": "item",
+                "numeric-id": 1259003,
+                "id": "Q1259003"
+              },
+              "type": "wikibase-entityid"
+            },
+            "datatype": "wikibase-item"
+          },
+          "type": "statement",
+          "id": "Q654411$FB429AED-5EE1-45CC-A875-7AEC103BA7BD",
+          "rank": "normal",
+          "references": [
+            {
+              "hash": "77f2517795d3b0bab226226b2ba2bbc31099063e",
+              "snaks": {
+                "P143": [
+                  {
+                    "snaktype": "value",
+                    "property": "P143",
+                    "hash": "d38375ffe6fe142663ff55cd783aa4df4301d83d",
+                    "datavalue": {
+                      "value": {
+                        "entity-type": "item",
+                        "numeric-id": 48183,
+                        "id": "Q48183"
+                      },
+                      "type": "wikibase-entityid"
+                    },
+                    "datatype": "wikibase-item"
+                  }
+                ],
+                "P4656": [
+                  {
+                    "snaktype": "value",
+                    "property": "P4656",
+                    "hash": "3bed6a5c6e3101df54de77f83e21900ea805b5c0",
+                    "datavalue": {
+                      "value": "https://de.wikipedia.org/w/index.php?title=Georges_Philippar_(Schiff)&oldid=183209392",
+                      "type": "string"
+                    },
+                    "datatype": "url"
+                  }
+                ]
+              },
+              "snaks-order": [
+                "P143",
+                "P4656"
+              ]
+            }
+          ]
+        }
+      ],
+      "P2261": [
+        {
+          "mainsnak": {
+            "snaktype": "value",
+            "property": "P2261",
+            "hash": "f9474a3cc010dc6162836fd53ad6254ca60cacf4",
+            "datavalue": {
+              "value": {
+                "amount": "+20.8",
+                "unit": "http://www.wikidata.org/entity/Q11573"
+              },
+              "type": "quantity"
+            },
+            "datatype": "quantity"
+          },
+          "type": "statement",
+          "id": "Q654411$15097D63-0E8C-4223-8678-94E347D90B17",
+          "rank": "normal",
+          "references": [
+            {
+              "hash": "77f2517795d3b0bab226226b2ba2bbc31099063e",
+              "snaks": {
+                "P143": [
+                  {
+                    "snaktype": "value",
+                    "property": "P143",
+                    "hash": "d38375ffe6fe142663ff55cd783aa4df4301d83d",
+                    "datavalue": {
+                      "value": {
+                        "entity-type": "item",
+                        "numeric-id": 48183,
+                        "id": "Q48183"
+                      },
+                      "type": "wikibase-entityid"
+                    },
+                    "datatype": "wikibase-item"
+                  }
+                ],
+                "P4656": [
+                  {
+                    "snaktype": "value",
+                    "property": "P4656",
+                    "hash": "3bed6a5c6e3101df54de77f83e21900ea805b5c0",
+                    "datavalue": {
+                      "value": "https://de.wikipedia.org/w/index.php?title=Georges_Philippar_(Schiff)&oldid=183209392",
+                      "type": "string"
+                    },
+                    "datatype": "url"
+                  }
+                ]
+              },
+              "snaks-order": [
+                "P143",
+                "P4656"
+              ]
+            }
+          ]
+        }
+      ],
+      "P504": [
+        {
+          "mainsnak": {
+            "snaktype": "value",
+            "property": "P504",
+            "hash": "ab1e3bb2bbe640eda0af84f2a627edcbacc61e7a",
+            "datavalue": {
+              "value": {
+                "entity-type": "item",
+                "numeric-id": 23482,
+                "id": "Q23482"
+              },
+              "type": "wikibase-entityid"
+            },
+            "datatype": "wikibase-item"
+          },
+          "type": "statement",
+          "id": "Q654411$C0212DA1-6D99-40AF-B540-990D4B08E52F",
+          "rank": "normal",
+          "references": [
+            {
+              "hash": "77f2517795d3b0bab226226b2ba2bbc31099063e",
+              "snaks": {
+                "P143": [
+                  {
+                    "snaktype": "value",
+                    "property": "P143",
+                    "hash": "d38375ffe6fe142663ff55cd783aa4df4301d83d",
+                    "datavalue": {
+                      "value": {
+                        "entity-type": "item",
+                        "numeric-id": 48183,
+                        "id": "Q48183"
+                      },
+                      "type": "wikibase-entityid"
+                    },
+                    "datatype": "wikibase-item"
+                  }
+                ],
+                "P4656": [
+                  {
+                    "snaktype": "value",
+                    "property": "P4656",
+                    "hash": "3bed6a5c6e3101df54de77f83e21900ea805b5c0",
+                    "datavalue": {
+                      "value": "https://de.wikipedia.org/w/index.php?title=Georges_Philippar_(Schiff)&oldid=183209392",
+                      "type": "string"
+                    },
+                    "datatype": "url"
+                  }
+                ]
+              },
+              "snaks-order": [
+                "P143",
+                "P4656"
+              ]
+            }
+          ]
+        }
+      ],
+      "P8047": [
+        {
+          "mainsnak": {
+            "snaktype": "value",
+            "property": "P8047",
+            "hash": "1df25dd020c29e92295066ab641e589999961786",
+            "datavalue": {
+              "value": {
+                "entity-type": "item",
+                "numeric-id": 142,
+                "id": "Q142"
+              },
+              "type": "wikibase-entityid"
+            },
+            "datatype": "wikibase-item"
+          },
+          "type": "statement",
+          "id": "Q654411$81C3CF88-720E-4CA1-AB94-700F7B862B24",
+          "rank": "normal"
+        }
+      ],
+      "P793": [
+        {
+          "mainsnak": {
+            "snaktype": "value",
+            "property": "P793",
+            "hash": "9c07cabdf7853afd9bdfbabcab2c237f8638be96",
+            "datavalue": {
+              "value": {
+                "entity-type": "item",
+                "numeric-id": 112841591,
+                "id": "Q112841591"
+              },
+              "type": "wikibase-entityid"
+            },
+            "datatype": "wikibase-item"
+          },
+          "type": "statement",
+          "id": "Q654411$975b4cb2-4cf7-aa72-b8fd-b7668558595c",
+          "rank": "normal"
+        }
+      ],
+      "P1619": [
+        {
+          "mainsnak": {
+            "snaktype": "value",
+            "property": "P1619",
+            "hash": "14e0115449f406bc136959fbbe3d11a5b5c16496",
+            "datavalue": {
+              "value": {
+                "time": "+1930-11-06T00:00:00Z",
+                "timezone": 0,
+                "before": 0,
+                "after": 0,
+                "precision": 11,
+                "calendarmodel": "http://www.wikidata.org/entity/Q1985727"
+              },
+              "type": "time"
+            },
+            "datatype": "time"
+          },
+          "type": "statement",
+          "id": "Q654411$10BB2B7F-129D-411D-950F-DFE77D9427D6",
+          "rank": "normal",
+          "references": [
+            {
+              "hash": "570935fe0f97d691164cc532b54f9592fefc0a48",
+              "snaks": {
+                "P143": [
+                  {
+                    "snaktype": "value",
+                    "property": "P143",
+                    "hash": "e17507043402fe54ae6c4d65cc51f46cec987de9",
+                    "datavalue": {
+                      "value": {
+                        "entity-type": "item",
+                        "numeric-id": 8449,
+                        "id": "Q8449"
+                      },
+                      "type": "wikibase-entityid"
+                    },
+                    "datatype": "wikibase-item"
+                  }
+                ],
+                "P4656": [
+                  {
+                    "snaktype": "value",
+                    "property": "P4656",
+                    "hash": "3580cc047c0f2483cd9389dd11fe25dcc1a374e0",
+                    "datavalue": {
+                      "value": "https://es.wikipedia.org/w/index.php?title=Georges_Philippar&oldid=148862742",
+                      "type": "string"
+                    },
+                    "datatype": "url"
+                  }
+                ]
+              },
+              "snaks-order": [
+                "P143",
+                "P4656"
+              ]
+            }
+          ]
+        }
+      ],
+      "P2052": [
+        {
+          "mainsnak": {
+            "snaktype": "value",
+            "property": "P2052",
+            "hash": "4fd52801b2b4c96e085214cd6a21a267f7e00f5a",
+            "datavalue": {
+              "value": {
+                "amount": "+18.5",
+                "unit": "http://www.wikidata.org/entity/Q128822"
+              },
+              "type": "quantity"
+            },
+            "datatype": "quantity"
+          },
+          "type": "statement",
+          "id": "Q654411$1313C83A-1019-4042-A719-718F2CA0B32D",
+          "rank": "normal",
+          "references": [
+            {
+              "hash": "b20c99133daa58ac34ff369132d52cf8c1e98a19",
+              "snaks": {
+                "P143": [
+                  {
+                    "snaktype": "value",
+                    "property": "P143",
+                    "hash": "d38375ffe6fe142663ff55cd783aa4df4301d83d",
+                    "datavalue": {
+                      "value": {
+                        "entity-type": "item",
+                        "numeric-id": 48183,
+                        "id": "Q48183"
+                      },
+                      "type": "wikibase-entityid"
+                    },
+                    "datatype": "wikibase-item"
+                  }
+                ],
+                "P4656": [
+                  {
+                    "snaktype": "value",
+                    "property": "P4656",
+                    "hash": "98293fc39ce6eea3babe440d0a8556fcad8420bf",
+                    "datavalue": {
+                      "value": "https://de.wikipedia.org/w/index.php?title=Georges_Philippar_(Schiff)&oldid=251611997",
+                      "type": "string"
+                    },
+                    "datatype": "url"
+                  }
+                ]
+              },
+              "snaks-order": [
+                "P143",
+                "P4656"
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    "sitelinks": {
+      "commonswiki": {
+        "site": "commonswiki",
+        "title": "Category:Georges Philippar (ship, 1932)",
+        "badges": [],
+        "url": "https://commons.wikimedia.org/wiki/Category:Georges_Philippar_(ship,_1932)"
+      },
+      "dewiki": {
+        "site": "dewiki",
+        "title": "Georges Philippar (Schiff)",
+        "badges": [],
+        "url": "https://de.wikipedia.org/wiki/Georges_Philippar_(Schiff)"
+      },
+      "enwiki": {
+        "site": "enwiki",
+        "title": "MS Georges Philippar",
+        "badges": [],
+        "url": "https://en.wikipedia.org/wiki/MS_Georges_Philippar"
+      },
+      "eswiki": {
+        "site": "eswiki",
+        "title": "Georges Philippar",
+        "badges": [],
+        "url": "https://es.wikipedia.org/wiki/Georges_Philippar"
+      },
+      "frwiki": {
+        "site": "frwiki",
+        "title": "Georges Philippar",
+        "badges": [],
+        "url": "https://fr.wikipedia.org/wiki/Georges_Philippar"
+      },
+      "nlwiki": {
+        "site": "nlwiki",
+        "title": "Georges Philippar (schip, 1932)",
+        "badges": [],
+        "url": "https://nl.wikipedia.org/wiki/Georges_Philippar_(schip,_1932)"
+      },
+      "ptwiki": {
+        "site": "ptwiki",
+        "title": "MS Georges Philippar",
+        "badges": [],
+        "url": "https://pt.wikipedia.org/wiki/MS_Georges_Philippar"
+      },
+      "ruwiki": {
+        "site": "ruwiki",
+        "title": "Жорж Филиппар",
+        "badges": [],
+        "url": "https://ru.wikipedia.org/wiki/%D0%96%D0%BE%D1%80%D0%B6_%D0%A4%D0%B8%D0%BB%D0%B8%D0%BF%D0%BF%D0%B0%D1%80"
+      }
+    }
+  }
+}

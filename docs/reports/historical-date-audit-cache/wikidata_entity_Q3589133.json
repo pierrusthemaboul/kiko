@@ -1,0 +1,143 @@
+{
+  "saved_at": "2026-03-07T14:25:27.176Z",
+  "value": {
+    "pageid": 3417613,
+    "ns": 0,
+    "title": "Q3589133",
+    "lastrevid": 1966694729,
+    "modified": "2023-09-02T15:09:19Z",
+    "type": "item",
+    "id": "Q3589133",
+    "labels": {
+      "fr": {
+        "language": "fr",
+        "value": "épidémie de chikungunya à La Réunion"
+      },
+      "en": {
+        "language": "en",
+        "value": "chikungunya epidemic on Réunion"
+      },
+      "de": {
+        "language": "de",
+        "value": "Chikungunyafieberepidemie auf Reunion"
+      },
+      "sl": {
+        "language": "sl",
+        "value": "epidemija čikungunje na Reunionu"
+      }
+    },
+    "descriptions": {
+      "de": {
+        "language": "de",
+        "value": "Chikungunyafieber-Epidemie auf der Insel Reunion 2005/2006"
+      },
+      "sl": {
+        "language": "sl",
+        "value": "Emepidemija mrzlice čikungunja na otoku Reunion v letih 2005/2006"
+      }
+    },
+    "aliases": {
+      "fr": [
+        {
+          "language": "fr",
+          "value": "Epidémie Chikungunya Réunion"
+        },
+        {
+          "language": "fr",
+          "value": "Epidémie de Chikungunya à la Réunion"
+        },
+        {
+          "language": "fr",
+          "value": "Épidémie de Chikungunya à la Réunion"
+        },
+        {
+          "language": "fr",
+          "value": "Épidémie de chikungunya à la réunion"
+        },
+        {
+          "language": "fr",
+          "value": "Épidémie de chikungunya à la Réunion"
+        },
+        {
+          "language": "fr",
+          "value": "Epidemie de chikungunya a La Reunion"
+        }
+      ],
+      "en": [
+        {
+          "language": "en",
+          "value": "chikungunya epidemic on Reunion"
+        }
+      ]
+    },
+    "claims": {
+      "P828": [
+        {
+          "mainsnak": {
+            "snaktype": "value",
+            "property": "P828",
+            "hash": "1f500619dd47c13a2a4ead250259623acdbee3ba",
+            "datavalue": {
+              "value": {
+                "entity-type": "item",
+                "numeric-id": 243257,
+                "id": "Q243257"
+              },
+              "type": "wikibase-entityid"
+            },
+            "datatype": "wikibase-item"
+          },
+          "type": "statement",
+          "id": "Q3589133$53771cef-4193-12fa-9878-98b375c02277",
+          "rank": "normal"
+        }
+      ],
+      "P31": [
+        {
+          "mainsnak": {
+            "snaktype": "value",
+            "property": "P31",
+            "hash": "66847dcdabd866815aa200e450f20ad9a798f522",
+            "datavalue": {
+              "value": {
+                "entity-type": "item",
+                "numeric-id": 89252833,
+                "id": "Q89252833"
+              },
+              "type": "wikibase-entityid"
+            },
+            "datatype": "wikibase-item"
+          },
+          "type": "statement",
+          "id": "Q3589133$a3796db5-4cff-bde4-bf7a-5bf43c573155",
+          "rank": "normal"
+        }
+      ],
+      "P2671": [
+        {
+          "mainsnak": {
+            "snaktype": "value",
+            "property": "P2671",
+            "hash": "6e1fed7edb21407f39191698e2a3797d6eb75e5d",
+            "datavalue": {
+              "value": "/g/1228rqm3",
+              "type": "string"
+            },
+            "datatype": "external-id"
+          },
+          "type": "statement",
+          "id": "Q3589133$AEF2F13D-9B1D-4693-B32F-0E5B98E64061",
+          "rank": "normal"
+        }
+      ]
+    },
+    "sitelinks": {
+      "frwiki": {
+        "site": "frwiki",
+        "title": "Épidémie de chikungunya à La Réunion",
+        "badges": [],
+        "url": "https://fr.wikipedia.org/wiki/%C3%89pid%C3%A9mie_de_chikungunya_%C3%A0_La_R%C3%A9union"
+      }
+    }
+  }
+}

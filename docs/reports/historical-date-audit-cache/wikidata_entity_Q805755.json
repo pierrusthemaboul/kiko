@@ -1,0 +1,258 @@
+{
+  "saved_at": "2026-03-07T15:27:25.084Z",
+  "value": {
+    "pageid": 758660,
+    "ns": 0,
+    "title": "Q805755",
+    "lastrevid": 1989065400,
+    "modified": "2023-10-09T05:01:11Z",
+    "type": "item",
+    "id": "Q805755",
+    "labels": {
+      "de": {
+        "language": "de",
+        "value": "Baltimoreklipper"
+      },
+      "en": {
+        "language": "en",
+        "value": "Baltimore clipper"
+      },
+      "fr": {
+        "language": "fr",
+        "value": "Baltimore Clipper"
+      },
+      "nl": {
+        "language": "nl",
+        "value": "Baltimore clipper"
+      }
+    },
+    "descriptions": {
+      "en": {
+        "language": "en",
+        "value": "type of fast sailing vessel traditional built on the mid-Atlantic seaboard of the United States"
+      }
+    },
+    "aliases": {
+      "de": [
+        {
+          "language": "de",
+          "value": "Baltimoreschoner"
+        },
+        {
+          "language": "de",
+          "value": "Baltimoreklipperschoner"
+        }
+      ],
+      "nl": [
+        {
+          "language": "nl",
+          "value": "Baltimore flyer"
+        }
+      ],
+      "en": [
+        {
+          "language": "en",
+          "value": "Baltimore Flyer"
+        }
+      ]
+    },
+    "claims": {
+      "P31": [
+        {
+          "mainsnak": {
+            "snaktype": "value",
+            "property": "P31",
+            "hash": "f5c2ca680c47d37fa48f584089eaba87bc3315db",
+            "datavalue": {
+              "value": {
+                "entity-type": "item",
+                "numeric-id": 2235308,
+                "id": "Q2235308"
+              },
+              "type": "wikibase-entityid"
+            },
+            "datatype": "wikibase-item"
+          },
+          "type": "statement",
+          "id": "Q805755$01F79A2F-A014-45BD-B341-4E8E8AC956C0",
+          "rank": "normal"
+        }
+      ],
+      "P1417": [
+        {
+          "mainsnak": {
+            "snaktype": "value",
+            "property": "P1417",
+            "hash": "b66dcf2d94c2d2d663a9250be03b39643bf5f642",
+            "datavalue": {
+              "value": "technology/Baltimore-clipper",
+              "type": "string"
+            },
+            "datatype": "external-id"
+          },
+          "type": "statement",
+          "qualifiers": {
+            "P1810": [
+              {
+                "snaktype": "value",
+                "property": "P1810",
+                "hash": "89de34eea4f942a8a32069e445cddf6dc3732f65",
+                "datavalue": {
+                  "value": "Baltimore clipper",
+                  "type": "string"
+                },
+                "datatype": "string"
+              }
+            ]
+          },
+          "qualifiers-order": [
+            "P1810"
+          ],
+          "id": "Q805755$6278CDE3-AFAC-4BBE-A79E-5959372AD9F8",
+          "rank": "normal"
+        }
+      ],
+      "P1014": [
+        {
+          "mainsnak": {
+            "snaktype": "value",
+            "property": "P1014",
+            "hash": "f184b0d6ca2959a4788acd33c5a528642ae374d2",
+            "datavalue": {
+              "value": "300232664",
+              "type": "string"
+            },
+            "datatype": "external-id"
+          },
+          "type": "statement",
+          "id": "Q805755$8709E61B-4176-4386-86EA-1D3274848B08",
+          "rank": "normal"
+        }
+      ],
+      "P7749": [
+        {
+          "mainsnak": {
+            "snaktype": "value",
+            "property": "P7749",
+            "hash": "2de933e75f275153edd9633fc0d24999f83d1b60",
+            "datavalue": {
+              "value": "12693",
+              "type": "string"
+            },
+            "datatype": "external-id"
+          },
+          "type": "statement",
+          "id": "Q805755$4213F8E5-E095-4A9C-A4E6-836842581553",
+          "rank": "normal"
+        }
+      ],
+      "P646": [
+        {
+          "mainsnak": {
+            "snaktype": "value",
+            "property": "P646",
+            "hash": "3be440072f50e70c98247b20f181dc5832bd7f4d",
+            "datavalue": {
+              "value": "/m/07qxmj",
+              "type": "string"
+            },
+            "datatype": "external-id"
+          },
+          "type": "statement",
+          "id": "Q805755$0FC50AA4-FE91-4BA7-93D6-5D4C960E0260",
+          "rank": "normal"
+        }
+      ],
+      "P18": [
+        {
+          "mainsnak": {
+            "snaktype": "value",
+            "property": "P18",
+            "hash": "681b6a4f77503bdb150b8a2ee441358c481a9292",
+            "datavalue": {
+              "value": "PrideofBaltimore1.jpg",
+              "type": "string"
+            },
+            "datatype": "commonsMedia"
+          },
+          "type": "statement",
+          "id": "Q805755$D5E8AF4F-BD31-4117-A10F-1930D4A836B8",
+          "rank": "normal"
+        },
+        {
+          "mainsnak": {
+            "snaktype": "value",
+            "property": "P18",
+            "hash": "d4bb695a36044d28d2d49566f5ed43c59e5d0978",
+            "datavalue": {
+              "value": "Bateaugoelette.jpg",
+              "type": "string"
+            },
+            "datatype": "commonsMedia"
+          },
+          "type": "statement",
+          "id": "Q805755$37445ADB-C35D-475E-96AA-763A2B975041",
+          "rank": "preferred"
+        }
+      ],
+      "P5555": [
+        {
+          "mainsnak": {
+            "snaktype": "value",
+            "property": "P5555",
+            "hash": "51c6e81512a1484447fadbd763245b25e5f7efb3",
+            "datavalue": {
+              "value": "Flying Fish Baltimore clipper.jpg",
+              "type": "string"
+            },
+            "datatype": "commonsMedia"
+          },
+          "type": "statement",
+          "id": "Q805755$63E4CE18-5B4D-4642-A3D5-FA010F1A254F",
+          "rank": "normal"
+        }
+      ],
+      "P279": [
+        {
+          "mainsnak": {
+            "snaktype": "value",
+            "property": "P279",
+            "hash": "b13edf884eeaf422ace642da539ff432fc6f2ee3",
+            "datavalue": {
+              "value": {
+                "entity-type": "item",
+                "numeric-id": 204577,
+                "id": "Q204577"
+              },
+              "type": "wikibase-entityid"
+            },
+            "datatype": "wikibase-item"
+          },
+          "type": "statement",
+          "id": "Q805755$3ea35d7e-4f14-5fea-f9e1-9d12b0906552",
+          "rank": "normal"
+        }
+      ]
+    },
+    "sitelinks": {
+      "dewiki": {
+        "site": "dewiki",
+        "title": "Baltimoreklipper",
+        "badges": [],
+        "url": "https://de.wikipedia.org/wiki/Baltimoreklipper"
+      },
+      "enwiki": {
+        "site": "enwiki",
+        "title": "Baltimore Clipper",
+        "badges": [],
+        "url": "https://en.wikipedia.org/wiki/Baltimore_Clipper"
+      },
+      "frwiki": {
+        "site": "frwiki",
+        "title": "Baltimore Clipper",
+        "badges": [],
+        "url": "https://fr.wikipedia.org/wiki/Baltimore_Clipper"
+      }
+    }
+  }
+}

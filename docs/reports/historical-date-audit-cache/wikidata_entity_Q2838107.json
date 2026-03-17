@@ -1,0 +1,284 @@
+{
+  "saved_at": "2026-03-07T14:28:07.146Z",
+  "value": {
+    "pageid": 2718225,
+    "ns": 0,
+    "title": "Q2838107",
+    "lastrevid": 2466361926,
+    "modified": "2026-02-24T16:03:27Z",
+    "type": "item",
+    "id": "Q2838107",
+    "labels": {
+      "fr": {
+        "language": "fr",
+        "value": "Alliance franco-américaine"
+      },
+      "en": {
+        "language": "en",
+        "value": "Franco-American alliance"
+      },
+      "pt": {
+        "language": "pt",
+        "value": "Aliança franco-americana"
+      },
+      "eo": {
+        "language": "eo",
+        "value": "Franc-usona alianco"
+      },
+      "zh": {
+        "language": "zh",
+        "value": "法美同盟"
+      },
+      "ar": {
+        "language": "ar",
+        "value": "التحالف الفرنسي الأمريكي"
+      },
+      "ca": {
+        "language": "ca",
+        "value": "Aliança franco-americana"
+      },
+      "ja": {
+        "language": "ja",
+        "value": "仏米同盟"
+      },
+      "id": {
+        "language": "id",
+        "value": "Aliansi Prancis-Amerika Serikat"
+      },
+      "he": {
+        "language": "he",
+        "value": "הברית הצרפתית-אמריקאית"
+      },
+      "ko": {
+        "language": "ko",
+        "value": "프랑스-미국 동맹"
+      }
+    },
+    "descriptions": {
+      "en": {
+        "language": "en",
+        "value": "French alliance with America"
+      }
+    },
+    "aliases": {},
+    "claims": {
+      "P646": [
+        {
+          "mainsnak": {
+            "snaktype": "value",
+            "property": "P646",
+            "hash": "436b60e634485d840e7661bf559ef9045a124cfb",
+            "datavalue": {
+              "value": "/m/065y7nm",
+              "type": "string"
+            },
+            "datatype": "external-id"
+          },
+          "type": "statement",
+          "id": "Q2838107$D1AD987D-932C-458E-A046-FF3406AA5FB2",
+          "rank": "normal",
+          "references": [
+            {
+              "hash": "2b00cb481cddcac7623114367489b5c194901c4a",
+              "snaks": {
+                "P248": [
+                  {
+                    "snaktype": "value",
+                    "property": "P248",
+                    "hash": "a94b740202b097dd33355e0e6c00e54b9395e5e0",
+                    "datavalue": {
+                      "value": {
+                        "entity-type": "item",
+                        "numeric-id": 15241312,
+                        "id": "Q15241312"
+                      },
+                      "type": "wikibase-entityid"
+                    },
+                    "datatype": "wikibase-item"
+                  }
+                ],
+                "P577": [
+                  {
+                    "snaktype": "value",
+                    "property": "P577",
+                    "hash": "fde79ecb015112d2f29229ccc1ec514ed3e71fa2",
+                    "datavalue": {
+                      "value": {
+                        "time": "+2013-10-28T00:00:00Z",
+                        "timezone": 0,
+                        "before": 0,
+                        "after": 0,
+                        "precision": 11,
+                        "calendarmodel": "http://www.wikidata.org/entity/Q1985727"
+                      },
+                      "type": "time"
+                    },
+                    "datatype": "time"
+                  }
+                ]
+              },
+              "snaks-order": [
+                "P248",
+                "P577"
+              ]
+            }
+          ]
+        }
+      ],
+      "P1417": [
+        {
+          "mainsnak": {
+            "snaktype": "value",
+            "property": "P1417",
+            "hash": "e9d2997b445b71f930596681e40ceb528d7ac5cf",
+            "datavalue": {
+              "value": "event/Franco-American-Alliance",
+              "type": "string"
+            },
+            "datatype": "external-id"
+          },
+          "type": "statement",
+          "qualifiers": {
+            "P1810": [
+              {
+                "snaktype": "value",
+                "property": "P1810",
+                "hash": "31c7fa0a508fb7da7624619545208071de737325",
+                "datavalue": {
+                  "value": "Franco-American Alliance",
+                  "type": "string"
+                },
+                "datatype": "string"
+              }
+            ]
+          },
+          "qualifiers-order": [
+            "P1810"
+          ],
+          "id": "Q2838107$6CE5E4D4-68E8-4EC8-9F53-E3355F439036",
+          "rank": "normal"
+        }
+      ],
+      "P17": [
+        {
+          "mainsnak": {
+            "snaktype": "value",
+            "property": "P17",
+            "hash": "c05db5d169c2560b9799d567a803d20a392f53e4",
+            "datavalue": {
+              "value": {
+                "entity-type": "item",
+                "numeric-id": 142,
+                "id": "Q142"
+              },
+              "type": "wikibase-entityid"
+            },
+            "datatype": "wikibase-item"
+          },
+          "type": "statement",
+          "id": "Q2838107$728542DC-D431-401C-94A0-0ECB813E322A",
+          "rank": "normal"
+        }
+      ],
+      "P1617": [
+        {
+          "mainsnak": {
+            "snaktype": "value",
+            "property": "P1617",
+            "hash": "53f96f9d298bb3b28e066e26ce08141b84af218d",
+            "datavalue": {
+              "value": "922372fe-56c0-4f89-9677-0581e5cc4b80",
+              "type": "string"
+            },
+            "datatype": "external-id"
+          },
+          "type": "statement",
+          "id": "Q2838107$40B03625-AF11-43C4-8542-EF58B904671E",
+          "rank": "normal",
+          "references": [
+            {
+              "hash": "8582d8416671f1f2567247201bac753552435ca5",
+              "snaks": {
+                "P248": [
+                  {
+                    "snaktype": "value",
+                    "property": "P248",
+                    "hash": "ea55dc6ac5c3ab77c77d4ae7979e3276d0d4cd20",
+                    "datavalue": {
+                      "value": {
+                        "entity-type": "item",
+                        "numeric-id": 18336371,
+                        "id": "Q18336371"
+                      },
+                      "type": "wikibase-entityid"
+                    },
+                    "datatype": "wikibase-item"
+                  }
+                ]
+              },
+              "snaks-order": [
+                "P248"
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    "sitelinks": {
+      "arwiki": {
+        "site": "arwiki",
+        "title": "التحالف الفرنسي الأمريكي",
+        "badges": [],
+        "url": "https://ar.wikipedia.org/wiki/%D8%A7%D9%84%D8%AA%D8%AD%D8%A7%D9%84%D9%81_%D8%A7%D9%84%D9%81%D8%B1%D9%86%D8%B3%D9%8A_%D8%A7%D9%84%D8%A3%D9%85%D8%B1%D9%8A%D9%83%D9%8A"
+      },
+      "dewiki": {
+        "site": "dewiki",
+        "title": "Französisch-amerikanischer Bündnisvertrag",
+        "badges": [],
+        "url": "https://de.wikipedia.org/wiki/Franz%C3%B6sisch-amerikanischer_B%C3%BCndnisvertrag"
+      },
+      "enwiki": {
+        "site": "enwiki",
+        "title": "Franco-American alliance",
+        "badges": [],
+        "url": "https://en.wikipedia.org/wiki/Franco-American_alliance"
+      },
+      "eowiki": {
+        "site": "eowiki",
+        "title": "Franc-usona alianco",
+        "badges": [],
+        "url": "https://eo.wikipedia.org/wiki/Franc-usona_alianco"
+      },
+      "frwiki": {
+        "site": "frwiki",
+        "title": "Alliance franco-américaine",
+        "badges": [],
+        "url": "https://fr.wikipedia.org/wiki/Alliance_franco-am%C3%A9ricaine"
+      },
+      "idwiki": {
+        "site": "idwiki",
+        "title": "Aliansi Prancis-Amerika Serikat",
+        "badges": [],
+        "url": "https://id.wikipedia.org/wiki/Aliansi_Prancis-Amerika_Serikat"
+      },
+      "kowiki": {
+        "site": "kowiki",
+        "title": "프랑스-미국 동맹",
+        "badges": [],
+        "url": "https://ko.wikipedia.org/wiki/%ED%94%84%EB%9E%91%EC%8A%A4-%EB%AF%B8%EA%B5%AD_%EB%8F%99%EB%A7%B9"
+      },
+      "ptwiki": {
+        "site": "ptwiki",
+        "title": "Aliança franco-americana",
+        "badges": [],
+        "url": "https://pt.wikipedia.org/wiki/Alian%C3%A7a_franco-americana"
+      },
+      "zhwiki": {
+        "site": "zhwiki",
+        "title": "法美同盟",
+        "badges": [],
+        "url": "https://zh.wikipedia.org/wiki/%E6%B3%95%E7%BE%8E%E5%90%8C%E7%9B%9F"
+      }
+    }
+  }
+}

@@ -1,0 +1,748 @@
+{
+  "saved_at": "2026-03-07T15:36:51.369Z",
+  "value": {
+    "pageid": 102145325,
+    "ns": 0,
+    "title": "Q106880989",
+    "lastrevid": 2173287669,
+    "modified": "2024-06-06T14:44:05Z",
+    "type": "item",
+    "id": "Q106880989",
+    "labels": {
+      "en": {
+        "language": "en",
+        "value": "Antoine Bernard de Saint-Affrique"
+      },
+      "de": {
+        "language": "de",
+        "value": "Antoine Bernard de Saint-Affrique"
+      },
+      "fr": {
+        "language": "fr",
+        "value": "Antoine Bernard de Saint-Affrique"
+      },
+      "es": {
+        "language": "es",
+        "value": "Antoine Bernard de Saint-Affrique"
+      },
+      "pt": {
+        "language": "pt",
+        "value": "Antoine Bernard de Saint-Affrique"
+      },
+      "nl": {
+        "language": "nl",
+        "value": "Antoine Bernard de Saint-Affrique"
+      },
+      "pt-br": {
+        "language": "pt-br",
+        "value": "Antoine Bernard de Saint-Affrique"
+      },
+      "ast": {
+        "language": "ast",
+        "value": "Antoine Bernard de Saint-Affrique"
+      },
+      "sq": {
+        "language": "sq",
+        "value": "Antoine Bernard de Saint-Affrique"
+      },
+      "sl": {
+        "language": "sl",
+        "value": "Antoine Bernard de Saint-Affrique"
+      },
+      "zh": {
+        "language": "zh",
+        "value": "盛睿安"
+      },
+      "it": {
+        "language": "it",
+        "value": "Antoine de Saint-Affrique"
+      },
+      "ca": {
+        "language": "ca",
+        "value": "Antoine de Saint-Affrique"
+      }
+    },
+    "descriptions": {
+      "nl": {
+        "language": "nl",
+        "value": "Frans zakenman/vrouw"
+      },
+      "ast": {
+        "language": "ast",
+        "value": "empresariu francés"
+      },
+      "en": {
+        "language": "en",
+        "value": "French businessman (born 1964)"
+      },
+      "fr": {
+        "language": "fr",
+        "value": "homme d'affaires français"
+      },
+      "ar": {
+        "language": "ar",
+        "value": "رائد أعمال فرنسي"
+      },
+      "ga": {
+        "language": "ga",
+        "value": "fear gnó Francach (rugadh 1964)"
+      }
+    },
+    "aliases": {
+      "fr": [
+        {
+          "language": "fr",
+          "value": "Antoine de Saint-Affrique"
+        }
+      ],
+      "en": [
+        {
+          "language": "en",
+          "value": "Antoine de Saint-Affrique"
+        },
+        {
+          "language": "en",
+          "value": "Antoine Bernard de Saint-Affrique"
+        }
+      ],
+      "de": [
+        {
+          "language": "de",
+          "value": "Antoine de Saint-Affrique"
+        }
+      ],
+      "es": [
+        {
+          "language": "es",
+          "value": "Antoine de Saint-Affrique"
+        }
+      ],
+      "ast": [
+        {
+          "language": "ast",
+          "value": "Antoine de Saint-Affrique"
+        }
+      ],
+      "nl": [
+        {
+          "language": "nl",
+          "value": "Antoine de Saint-Affrique"
+        }
+      ],
+      "sl": [
+        {
+          "language": "sl",
+          "value": "Antoine de Saint-Affrique"
+        }
+      ],
+      "sq": [
+        {
+          "language": "sq",
+          "value": "Antoine de Saint-Affrique"
+        }
+      ]
+    },
+    "claims": {
+      "P31": [
+        {
+          "mainsnak": {
+            "snaktype": "value",
+            "property": "P31",
+            "hash": "ad7d38a03cdd40cdc373de0dc4e7b7fcbccb31d9",
+            "datavalue": {
+              "value": {
+                "entity-type": "item",
+                "numeric-id": 5,
+                "id": "Q5"
+              },
+              "type": "wikibase-entityid"
+            },
+            "datatype": "wikibase-item"
+          },
+          "type": "statement",
+          "id": "Q106880989$1e40fb35-9fc4-4711-9343-3b78519d1e69",
+          "rank": "normal"
+        }
+      ],
+      "P569": [
+        {
+          "mainsnak": {
+            "snaktype": "value",
+            "property": "P569",
+            "hash": "9eb2600a896fc97e8e86f17662e5a7a2dab6e927",
+            "datavalue": {
+              "value": {
+                "time": "+1964-12-26T00:00:00Z",
+                "timezone": 0,
+                "before": 0,
+                "after": 0,
+                "precision": 11,
+                "calendarmodel": "http://www.wikidata.org/entity/Q1985727"
+              },
+              "type": "time"
+            },
+            "datatype": "time"
+          },
+          "type": "statement",
+          "id": "Q106880989$3db999d7-1e45-4b60-b081-c2e50b1c0200",
+          "rank": "normal",
+          "references": [
+            {
+              "hash": "7e5318aac2b629781d1919c480a04637bea23f7f",
+              "snaks": {
+                "P854": [
+                  {
+                    "snaktype": "value",
+                    "property": "P854",
+                    "hash": "705ff4c95c0d35fdb75587028caa7ca203797613",
+                    "datavalue": {
+                      "value": "https://gw.geneanet.org/wikifrat?lang=fr&n=bernard+de+saint+affrique&p=antoine",
+                      "type": "string"
+                    },
+                    "datatype": "url"
+                  }
+                ]
+              },
+              "snaks-order": [
+                "P854"
+              ]
+            },
+            {
+              "hash": "09a1e77e2b59cfdca31220d4b2b45ebfaf2f240e",
+              "snaks": {
+                "P4124": [
+                  {
+                    "snaktype": "value",
+                    "property": "P4124",
+                    "hash": "02cee4b6fd21395040ed5c4fce9dc16596d3755d",
+                    "datavalue": {
+                      "value": "47384",
+                      "type": "string"
+                    },
+                    "datatype": "external-id"
+                  }
+                ],
+                "P1810": [
+                  {
+                    "snaktype": "value",
+                    "property": "P1810",
+                    "hash": "da66f7029fd736687e5ef472ebd9eabfe51ef495",
+                    "datavalue": {
+                      "value": "Antoine de Saint-Affrique",
+                      "type": "string"
+                    },
+                    "datatype": "string"
+                  }
+                ]
+              },
+              "snaks-order": [
+                "P4124",
+                "P1810"
+              ]
+            }
+          ]
+        }
+      ],
+      "P106": [
+        {
+          "mainsnak": {
+            "snaktype": "value",
+            "property": "P106",
+            "hash": "4f8fe0c39e4ad88629f612b8357fa911b87e9101",
+            "datavalue": {
+              "value": {
+                "entity-type": "item",
+                "numeric-id": 43845,
+                "id": "Q43845"
+              },
+              "type": "wikibase-entityid"
+            },
+            "datatype": "wikibase-item"
+          },
+          "type": "statement",
+          "id": "Q106880989$4baffa3f-9d2f-4981-95d9-3bfc4cb71f59",
+          "rank": "normal"
+        },
+        {
+          "mainsnak": {
+            "snaktype": "value",
+            "property": "P106",
+            "hash": "2a8f1ecd8048d8fda447e0bd42e373bc3c3f444a",
+            "datavalue": {
+              "value": {
+                "entity-type": "item",
+                "numeric-id": 2961975,
+                "id": "Q2961975"
+              },
+              "type": "wikibase-entityid"
+            },
+            "datatype": "wikibase-item"
+          },
+          "type": "statement",
+          "id": "Q106880989$D00FD15E-EE80-4556-9C2E-33DB53F0962C",
+          "rank": "normal"
+        }
+      ],
+      "P21": [
+        {
+          "mainsnak": {
+            "snaktype": "value",
+            "property": "P21",
+            "hash": "85ad4b1c7348f7a5aac521135040d74e91fb5939",
+            "datavalue": {
+              "value": {
+                "entity-type": "item",
+                "numeric-id": 6581097,
+                "id": "Q6581097"
+              },
+              "type": "wikibase-entityid"
+            },
+            "datatype": "wikibase-item"
+          },
+          "type": "statement",
+          "id": "Q106880989$7689d20c-4eb5-d567-4651-485da62580e0",
+          "rank": "normal"
+        }
+      ],
+      "P27": [
+        {
+          "mainsnak": {
+            "snaktype": "value",
+            "property": "P27",
+            "hash": "a3d46fa4beeabd048657cdb76d1f1113c94ae554",
+            "datavalue": {
+              "value": {
+                "entity-type": "item",
+                "numeric-id": 142,
+                "id": "Q142"
+              },
+              "type": "wikibase-entityid"
+            },
+            "datatype": "wikibase-item"
+          },
+          "type": "statement",
+          "id": "Q106880989$985fad32-442a-e1d6-cc4b-890108a037ee",
+          "rank": "normal"
+        }
+      ],
+      "P735": [
+        {
+          "mainsnak": {
+            "snaktype": "value",
+            "property": "P735",
+            "hash": "ea624e1fe4cfef5d801b724838c8c739e3cfab1a",
+            "datavalue": {
+              "value": {
+                "entity-type": "item",
+                "numeric-id": 15235674,
+                "id": "Q15235674"
+              },
+              "type": "wikibase-entityid"
+            },
+            "datatype": "wikibase-item"
+          },
+          "type": "statement",
+          "id": "Q106880989$c1107ccb-478a-38c5-5ad9-3235c840120e",
+          "rank": "normal"
+        },
+        {
+          "mainsnak": {
+            "snaktype": "value",
+            "property": "P735",
+            "hash": "792d351d4375b9855fd13469ecf914f3e88a30e3",
+            "datavalue": {
+              "value": {
+                "entity-type": "item",
+                "numeric-id": 14649171,
+                "id": "Q14649171"
+              },
+              "type": "wikibase-entityid"
+            },
+            "datatype": "wikibase-item"
+          },
+          "type": "statement",
+          "id": "Q106880989$4fdd8d28-4c57-5256-a1a7-ef314364a02b",
+          "rank": "normal"
+        }
+      ],
+      "P19": [
+        {
+          "mainsnak": {
+            "snaktype": "value",
+            "property": "P19",
+            "hash": "6bf6e1c7d4fb533fc6c75f55518755973b2e0226",
+            "datavalue": {
+              "value": {
+                "entity-type": "item",
+                "numeric-id": 172455,
+                "id": "Q172455"
+              },
+              "type": "wikibase-entityid"
+            },
+            "datatype": "wikibase-item"
+          },
+          "type": "statement",
+          "id": "Q106880989$0e687e4c-4d3d-0208-6ed4-b542e188bb11",
+          "rank": "normal",
+          "references": [
+            {
+              "hash": "7e5318aac2b629781d1919c480a04637bea23f7f",
+              "snaks": {
+                "P854": [
+                  {
+                    "snaktype": "value",
+                    "property": "P854",
+                    "hash": "705ff4c95c0d35fdb75587028caa7ca203797613",
+                    "datavalue": {
+                      "value": "https://gw.geneanet.org/wikifrat?lang=fr&n=bernard+de+saint+affrique&p=antoine",
+                      "type": "string"
+                    },
+                    "datatype": "url"
+                  }
+                ]
+              },
+              "snaks-order": [
+                "P854"
+              ]
+            },
+            {
+              "hash": "34f0de6169c4257fffc1eaf8b638253882066d51",
+              "snaks": {
+                "P248": [
+                  {
+                    "snaktype": "value",
+                    "property": "P248",
+                    "hash": "6e807e65ae0641fbb151bb2cb10409905cd4b69e",
+                    "datavalue": {
+                      "value": {
+                        "entity-type": "item",
+                        "numeric-id": 5924723,
+                        "id": "Q5924723"
+                      },
+                      "type": "wikibase-entityid"
+                    },
+                    "datatype": "wikibase-item"
+                  }
+                ],
+                "P4124": [
+                  {
+                    "snaktype": "value",
+                    "property": "P4124",
+                    "hash": "02cee4b6fd21395040ed5c4fce9dc16596d3755d",
+                    "datavalue": {
+                      "value": "47384",
+                      "type": "string"
+                    },
+                    "datatype": "external-id"
+                  }
+                ],
+                "P813": [
+                  {
+                    "snaktype": "value",
+                    "property": "P813",
+                    "hash": "4ebd74962a9cd91addb8e34fb94271475ff2eefd",
+                    "datavalue": {
+                      "value": {
+                        "time": "+2018-07-00T00:00:00Z",
+                        "timezone": 0,
+                        "before": 0,
+                        "after": 0,
+                        "precision": 10,
+                        "calendarmodel": "http://www.wikidata.org/entity/Q1985727"
+                      },
+                      "type": "time"
+                    },
+                    "datatype": "time"
+                  }
+                ]
+              },
+              "snaks-order": [
+                "P248",
+                "P4124",
+                "P813"
+              ]
+            }
+          ]
+        }
+      ],
+      "P6104": [
+        {
+          "mainsnak": {
+            "snaktype": "value",
+            "property": "P6104",
+            "hash": "ac27a2a22c82148fb4293374af2fbdf0a3e143a7",
+            "datavalue": {
+              "value": {
+                "entity-type": "item",
+                "numeric-id": 113679743,
+                "id": "Q113679743"
+              },
+              "type": "wikibase-entityid"
+            },
+            "datatype": "wikibase-item"
+          },
+          "type": "statement",
+          "id": "Q106880989$B255C930-8CF2-419B-9B69-4606543F6960",
+          "rank": "normal"
+        }
+      ],
+      "P4124": [
+        {
+          "mainsnak": {
+            "snaktype": "value",
+            "property": "P4124",
+            "hash": "02cee4b6fd21395040ed5c4fce9dc16596d3755d",
+            "datavalue": {
+              "value": "47384",
+              "type": "string"
+            },
+            "datatype": "external-id"
+          },
+          "type": "statement",
+          "qualifiers": {
+            "P580": [
+              {
+                "snaktype": "value",
+                "property": "P580",
+                "hash": "c8744ad92625fe852e545a95a8d9c2ef6222d6f0",
+                "datavalue": {
+                  "value": {
+                    "time": "+2002-01-01T00:00:00Z",
+                    "timezone": 0,
+                    "before": 0,
+                    "after": 0,
+                    "precision": 9,
+                    "calendarmodel": "http://www.wikidata.org/entity/Q1985727"
+                  },
+                  "type": "time"
+                },
+                "datatype": "time"
+              }
+            ]
+          },
+          "qualifiers-order": [
+            "P580"
+          ],
+          "id": "Q106880989$2412A6D8-52EF-45E5-84A9-5F3771FD5AA8",
+          "rank": "normal",
+          "references": [
+            {
+              "hash": "b59e01efc68b1ef1491251fc61d7eed49328380b",
+              "snaks": {
+                "P813": [
+                  {
+                    "snaktype": "value",
+                    "property": "P813",
+                    "hash": "7fe72706996e4da079038a948d0a2c5877211f43",
+                    "datavalue": {
+                      "value": {
+                        "time": "+2018-07-01T00:00:00Z",
+                        "timezone": 0,
+                        "before": 0,
+                        "after": 0,
+                        "precision": 10,
+                        "calendarmodel": "http://www.wikidata.org/entity/Q1985727"
+                      },
+                      "type": "time"
+                    },
+                    "datatype": "time"
+                  }
+                ]
+              },
+              "snaks-order": [
+                "P813"
+              ]
+            }
+          ]
+        }
+      ],
+      "P1412": [
+        {
+          "mainsnak": {
+            "snaktype": "value",
+            "property": "P1412",
+            "hash": "543873045e76aaa5fc3d1324950d21da09e66612",
+            "datavalue": {
+              "value": {
+                "entity-type": "item",
+                "numeric-id": 150,
+                "id": "Q150"
+              },
+              "type": "wikibase-entityid"
+            },
+            "datatype": "wikibase-item"
+          },
+          "type": "statement",
+          "id": "Q106880989$DA20DD2D-8E90-45B9-9C4D-1B7D015A37AD",
+          "rank": "normal"
+        }
+      ],
+      "P1284": [
+        {
+          "mainsnak": {
+            "snaktype": "value",
+            "property": "P1284",
+            "hash": "6f18024d5a1e46287704360366dae753be02ebbf",
+            "datavalue": {
+              "value": "00000032477",
+              "type": "string"
+            },
+            "datatype": "external-id"
+          },
+          "type": "statement",
+          "id": "Q106880989$9B8C10F4-BDD8-4C0B-81A4-EF7AFC2BE519",
+          "rank": "normal"
+        }
+      ],
+      "P6231": [
+        {
+          "mainsnak": {
+            "snaktype": "value",
+            "property": "P6231",
+            "hash": "483e5ae59d5bd65a248c24b0a9a7cedffcf9f3a9",
+            "datavalue": {
+              "value": "93161",
+              "type": "string"
+            },
+            "datatype": "external-id"
+          },
+          "type": "statement",
+          "id": "Q106880989$766450EF-B099-4F33-9152-9B675A82B910",
+          "rank": "normal",
+          "references": [
+            {
+              "hash": "fa96a7cba8d7d939d19aab2bbd7738d7b868dc80",
+              "snaks": {
+                "P248": [
+                  {
+                    "snaktype": "value",
+                    "property": "P248",
+                    "hash": "6235532c8806be55f5dd87a69ed2c2618439485a",
+                    "datavalue": {
+                      "value": {
+                        "entity-type": "item",
+                        "numeric-id": 107482533,
+                        "id": "Q107482533"
+                      },
+                      "type": "wikibase-entityid"
+                    },
+                    "datatype": "wikibase-item"
+                  }
+                ]
+              },
+              "snaks-order": [
+                "P248"
+              ]
+            },
+            {
+              "hash": "c12bf762de84eb3efe8f6e119173f8e5e6baeeef",
+              "snaks": {
+                "P813": [
+                  {
+                    "snaktype": "value",
+                    "property": "P813",
+                    "hash": "cbb5b030809fc0178223e945333db349fb10c7aa",
+                    "datavalue": {
+                      "value": {
+                        "time": "+2023-06-12T00:00:00Z",
+                        "timezone": 0,
+                        "before": 0,
+                        "after": 0,
+                        "precision": 11,
+                        "calendarmodel": "http://www.wikidata.org/entity/Q1985727"
+                      },
+                      "type": "time"
+                    },
+                    "datatype": "time"
+                  }
+                ]
+              },
+              "snaks-order": [
+                "P813"
+              ]
+            }
+          ]
+        }
+      ],
+      "P734": [
+        {
+          "mainsnak": {
+            "snaktype": "value",
+            "property": "P734",
+            "hash": "0ed1107b6478ee1514880d9b64022c670a6000fb",
+            "datavalue": {
+              "value": {
+                "entity-type": "item",
+                "numeric-id": 63139853,
+                "id": "Q63139853"
+              },
+              "type": "wikibase-entityid"
+            },
+            "datatype": "wikibase-item"
+          },
+          "type": "statement",
+          "id": "Q106880989$78ae563c-4c2d-3b77-2adb-a21a2598ce98",
+          "rank": "normal"
+        }
+      ],
+      "P22": [
+        {
+          "mainsnak": {
+            "snaktype": "value",
+            "property": "P22",
+            "hash": "acd5e28b7b982e668dcc58518e519e9fe4ab14b0",
+            "datavalue": {
+              "value": {
+                "entity-type": "item",
+                "numeric-id": 122371631,
+                "id": "Q122371631"
+              },
+              "type": "wikibase-entityid"
+            },
+            "datatype": "wikibase-item"
+          },
+          "type": "statement",
+          "id": "Q106880989$37be97e0-4493-16ae-bf3c-8dd24236bb53",
+          "rank": "normal"
+        }
+      ],
+      "P2671": [
+        {
+          "mainsnak": {
+            "snaktype": "value",
+            "property": "P2671",
+            "hash": "a0149b22a6e33e34ad611fecccba33df77d9e351",
+            "datavalue": {
+              "value": "/g/11q1pqcpn3",
+              "type": "string"
+            },
+            "datatype": "external-id"
+          },
+          "type": "statement",
+          "id": "Q106880989$F845AF24-1E5D-424E-9A22-06407657D500",
+          "rank": "normal"
+        }
+      ]
+    },
+    "sitelinks": {
+      "enwiki": {
+        "site": "enwiki",
+        "title": "Antoine Bernard de Saint-Affrique",
+        "badges": [],
+        "url": "https://en.wikipedia.org/wiki/Antoine_Bernard_de_Saint-Affrique"
+      },
+      "frwiki": {
+        "site": "frwiki",
+        "title": "Antoine Bernard de Saint-Affrique",
+        "badges": [],
+        "url": "https://fr.wikipedia.org/wiki/Antoine_Bernard_de_Saint-Affrique"
+      },
+      "zhwiki": {
+        "site": "zhwiki",
+        "title": "盛睿安",
+        "badges": [],
+        "url": "https://zh.wikipedia.org/wiki/%E7%9B%9B%E7%9D%BF%E5%AE%89"
+      }
+    }
+  }
+}

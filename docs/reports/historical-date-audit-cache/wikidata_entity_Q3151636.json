@@ -1,0 +1,656 @@
+{
+  "saved_at": "2026-03-07T15:06:34.373Z",
+  "value": {
+    "pageid": 3010715,
+    "ns": 0,
+    "title": "Q3151636",
+    "lastrevid": 2356590742,
+    "modified": "2025-06-03T20:10:53Z",
+    "type": "item",
+    "id": "Q3151636",
+    "labels": {
+      "fr": {
+        "language": "fr",
+        "value": "Inspection générale des affaires culturelles"
+      }
+    },
+    "descriptions": {},
+    "aliases": {
+      "fr": [
+        {
+          "language": "fr",
+          "value": "Inspection générale de l'administration des Affaires culturelles"
+        },
+        {
+          "language": "fr",
+          "value": "IGAC"
+        }
+      ]
+    },
+    "claims": {
+      "P361": [
+        {
+          "mainsnak": {
+            "snaktype": "value",
+            "property": "P361",
+            "hash": "135e60bc56341bf97c0ec1a59dcf50dcf9ab9998",
+            "datavalue": {
+              "value": {
+                "entity-type": "item",
+                "numeric-id": 384602,
+                "id": "Q384602"
+              },
+              "type": "wikibase-entityid"
+            },
+            "datatype": "wikibase-item"
+          },
+          "type": "statement",
+          "id": "Q3151636$a3b7a62f-410d-fdce-f089-ce78dc25f8f8",
+          "rank": "normal"
+        }
+      ],
+      "P6671": [
+        {
+          "mainsnak": {
+            "snaktype": "value",
+            "property": "P6671",
+            "hash": "7d42e34232688667d9de1072f43fd68d0486b14c",
+            "datavalue": {
+              "value": "gouvernement/administration-centrale-ou-ministere_170718",
+              "type": "string"
+            },
+            "datatype": "external-id"
+          },
+          "type": "statement",
+          "id": "Q3151636$d2fa6376-42de-a19b-e3f0-0dbc1332c0cc",
+          "rank": "normal"
+        }
+      ],
+      "P17": [
+        {
+          "mainsnak": {
+            "snaktype": "value",
+            "property": "P17",
+            "hash": "c05db5d169c2560b9799d567a803d20a392f53e4",
+            "datavalue": {
+              "value": {
+                "entity-type": "item",
+                "numeric-id": 142,
+                "id": "Q142"
+              },
+              "type": "wikibase-entityid"
+            },
+            "datatype": "wikibase-item"
+          },
+          "type": "statement",
+          "id": "Q3151636$8141284c-4f9c-20b5-e8e2-5f9e1d33c4cc",
+          "rank": "normal"
+        }
+      ],
+      "P571": [
+        {
+          "mainsnak": {
+            "snaktype": "value",
+            "property": "P571",
+            "hash": "d8e50a022be1c71ce250e37a462a51d8f9a8b97a",
+            "datavalue": {
+              "value": {
+                "time": "+1973-11-22T00:00:00Z",
+                "timezone": 0,
+                "before": 0,
+                "after": 0,
+                "precision": 11,
+                "calendarmodel": "http://www.wikidata.org/entity/Q1985727"
+              },
+              "type": "time"
+            },
+            "datatype": "time"
+          },
+          "type": "statement",
+          "id": "Q3151636$e5ed8228-4548-f602-62a0-237e20e25496",
+          "rank": "normal",
+          "references": [
+            {
+              "hash": "d4bd87b862b12d99d26e86472d44f26858dee639",
+              "snaks": {
+                "P143": [
+                  {
+                    "snaktype": "value",
+                    "property": "P143",
+                    "hash": "f30cbd35620c4ea6d0633aaf0210a8916130469b",
+                    "datavalue": {
+                      "value": {
+                        "entity-type": "item",
+                        "numeric-id": 8447,
+                        "id": "Q8447"
+                      },
+                      "type": "wikibase-entityid"
+                    },
+                    "datatype": "wikibase-item"
+                  }
+                ]
+              },
+              "snaks-order": [
+                "P143"
+              ]
+            }
+          ]
+        }
+      ],
+      "P1448": [
+        {
+          "mainsnak": {
+            "snaktype": "value",
+            "property": "P1448",
+            "hash": "698b52291d6dacdcbb36802d98ca5064ad55870e",
+            "datavalue": {
+              "value": {
+                "text": "Inspection générale de l'administration des affaires culturelles",
+                "language": "fr"
+              },
+              "type": "monolingualtext"
+            },
+            "datatype": "monolingualtext"
+          },
+          "type": "statement",
+          "qualifiers": {
+            "P580": [
+              {
+                "snaktype": "value",
+                "property": "P580",
+                "hash": "c3c2c3511d59585c6d6c2afef4536eefe1ca49eb",
+                "datavalue": {
+                  "value": {
+                    "time": "+1973-11-22T00:00:00Z",
+                    "timezone": 0,
+                    "before": 0,
+                    "after": 0,
+                    "precision": 11,
+                    "calendarmodel": "http://www.wikidata.org/entity/Q1985727"
+                  },
+                  "type": "time"
+                },
+                "datatype": "time"
+              }
+            ],
+            "P582": [
+              {
+                "snaktype": "value",
+                "property": "P582",
+                "hash": "b5d8eb8bfee06766bbb37c4434f65291474d0ea0",
+                "datavalue": {
+                  "value": {
+                    "time": "+2008-02-15T00:00:00Z",
+                    "timezone": 0,
+                    "before": 0,
+                    "after": 0,
+                    "precision": 11,
+                    "calendarmodel": "http://www.wikidata.org/entity/Q1985727"
+                  },
+                  "type": "time"
+                },
+                "datatype": "time"
+              }
+            ]
+          },
+          "qualifiers-order": [
+            "P580",
+            "P582"
+          ],
+          "id": "Q3151636$3a3d519d-4a1e-f5a6-1395-aed548a10bda",
+          "rank": "normal",
+          "references": [
+            {
+              "hash": "d4bd87b862b12d99d26e86472d44f26858dee639",
+              "snaks": {
+                "P143": [
+                  {
+                    "snaktype": "value",
+                    "property": "P143",
+                    "hash": "f30cbd35620c4ea6d0633aaf0210a8916130469b",
+                    "datavalue": {
+                      "value": {
+                        "entity-type": "item",
+                        "numeric-id": 8447,
+                        "id": "Q8447"
+                      },
+                      "type": "wikibase-entityid"
+                    },
+                    "datatype": "wikibase-item"
+                  }
+                ]
+              },
+              "snaks-order": [
+                "P143"
+              ]
+            }
+          ]
+        },
+        {
+          "mainsnak": {
+            "snaktype": "value",
+            "property": "P1448",
+            "hash": "50918f76fa4193ea37f272a65b1e1a9cfad556e5",
+            "datavalue": {
+              "value": {
+                "text": "INSPECTION GENERALE DES AFFAIRES CULTURELLES",
+                "language": "fr"
+              },
+              "type": "monolingualtext"
+            },
+            "datatype": "monolingualtext"
+          },
+          "type": "statement",
+          "qualifiers": {
+            "P1013": [
+              {
+                "snaktype": "value",
+                "property": "P1013",
+                "hash": "459309ea1c2d5d2e4e91cc7b22a290e5219dfcf4",
+                "datavalue": {
+                  "value": {
+                    "entity-type": "item",
+                    "numeric-id": 131741681,
+                    "id": "Q131741681"
+                  },
+                  "type": "wikibase-entityid"
+                },
+                "datatype": "wikibase-item"
+              }
+            ]
+          },
+          "qualifiers-order": [
+            "P1013"
+          ],
+          "id": "Q3151636$4C0E316E-47A8-4937-B1AC-FFA3A8F244E6",
+          "rank": "normal",
+          "references": [
+            {
+              "hash": "335b4f30c7b5b33ab240d55e4673e3e427dd7dc3",
+              "snaks": {
+                "P248": [
+                  {
+                    "snaktype": "value",
+                    "property": "P248",
+                    "hash": "edd6a048cc3c96bc5b21a4cf77977f233b26ab76",
+                    "datavalue": {
+                      "value": {
+                        "entity-type": "item",
+                        "numeric-id": 3509449,
+                        "id": "Q3509449"
+                      },
+                      "type": "wikibase-entityid"
+                    },
+                    "datatype": "wikibase-item"
+                  }
+                ],
+                "P5017": [
+                  {
+                    "snaktype": "value",
+                    "property": "P5017",
+                    "hash": "8f64b283bdaf2a4bb9a50130f96cf28ee54f859f",
+                    "datavalue": {
+                      "value": {
+                        "time": "+2018-09-29T00:00:00Z",
+                        "timezone": 0,
+                        "before": 0,
+                        "after": 0,
+                        "precision": 11,
+                        "calendarmodel": "http://www.wikidata.org/entity/Q1985727"
+                      },
+                      "type": "time"
+                    },
+                    "datatype": "time"
+                  }
+                ]
+              },
+              "snaks-order": [
+                "P248",
+                "P5017"
+              ]
+            }
+          ]
+        }
+      ],
+      "P2671": [
+        {
+          "mainsnak": {
+            "snaktype": "value",
+            "property": "P2671",
+            "hash": "e6afe8411151e9aab20609497bffba704b790dde",
+            "datavalue": {
+              "value": "/g/121vrf7j",
+              "type": "string"
+            },
+            "datatype": "external-id"
+          },
+          "type": "statement",
+          "id": "Q3151636$6E75D5A7-5933-4F86-AF52-F8DDF75B65CC",
+          "rank": "normal"
+        }
+      ],
+      "P1454": [
+        {
+          "mainsnak": {
+            "snaktype": "value",
+            "property": "P1454",
+            "hash": "35672213d92b03017acc3b8cf6caedd2c48d6b24",
+            "datavalue": {
+              "value": {
+                "entity-type": "item",
+                "numeric-id": 87713500,
+                "id": "Q87713500"
+              },
+              "type": "wikibase-entityid"
+            },
+            "datatype": "wikibase-item"
+          },
+          "type": "statement",
+          "qualifiers": {
+            "P1013": [
+              {
+                "snaktype": "value",
+                "property": "P1013",
+                "hash": "0e3e8757f72513cfd931fbd4ab8b80672d4c71a0",
+                "datavalue": {
+                  "value": {
+                    "entity-type": "item",
+                    "numeric-id": 87711223,
+                    "id": "Q87711223"
+                  },
+                  "type": "wikibase-entityid"
+                },
+                "datatype": "wikibase-item"
+              }
+            ]
+          },
+          "qualifiers-order": [
+            "P1013"
+          ],
+          "id": "Q3151636$763FA505-A170-4771-8BFA-939D89F8C124",
+          "rank": "normal",
+          "references": [
+            {
+              "hash": "335b4f30c7b5b33ab240d55e4673e3e427dd7dc3",
+              "snaks": {
+                "P248": [
+                  {
+                    "snaktype": "value",
+                    "property": "P248",
+                    "hash": "edd6a048cc3c96bc5b21a4cf77977f233b26ab76",
+                    "datavalue": {
+                      "value": {
+                        "entity-type": "item",
+                        "numeric-id": 3509449,
+                        "id": "Q3509449"
+                      },
+                      "type": "wikibase-entityid"
+                    },
+                    "datatype": "wikibase-item"
+                  }
+                ],
+                "P5017": [
+                  {
+                    "snaktype": "value",
+                    "property": "P5017",
+                    "hash": "8f64b283bdaf2a4bb9a50130f96cf28ee54f859f",
+                    "datavalue": {
+                      "value": {
+                        "time": "+2018-09-29T00:00:00Z",
+                        "timezone": 0,
+                        "before": 0,
+                        "after": 0,
+                        "precision": 11,
+                        "calendarmodel": "http://www.wikidata.org/entity/Q1985727"
+                      },
+                      "type": "time"
+                    },
+                    "datatype": "time"
+                  }
+                ]
+              },
+              "snaks-order": [
+                "P248",
+                "P5017"
+              ]
+            }
+          ]
+        }
+      ],
+      "P452": [
+        {
+          "mainsnak": {
+            "snaktype": "value",
+            "property": "P452",
+            "hash": "6bb6b905b8a4d8cd832d9dec9d247baaec47b118",
+            "datavalue": {
+              "value": {
+                "entity-type": "item",
+                "numeric-id": 112166113,
+                "id": "Q112166113"
+              },
+              "type": "wikibase-entityid"
+            },
+            "datatype": "wikibase-item"
+          },
+          "type": "statement",
+          "qualifiers": {
+            "P1013": [
+              {
+                "snaktype": "value",
+                "property": "P1013",
+                "hash": "9d631ca93d929af0a89766e4235778c19f9d5902",
+                "datavalue": {
+                  "value": {
+                    "entity-type": "item",
+                    "numeric-id": 112111570,
+                    "id": "Q112111570"
+                  },
+                  "type": "wikibase-entityid"
+                },
+                "datatype": "wikibase-item"
+              }
+            ]
+          },
+          "qualifiers-order": [
+            "P1013"
+          ],
+          "id": "Q3151636$45343CDA-CF4A-4A11-B12F-4F21086DD36C",
+          "rank": "normal",
+          "references": [
+            {
+              "hash": "335b4f30c7b5b33ab240d55e4673e3e427dd7dc3",
+              "snaks": {
+                "P248": [
+                  {
+                    "snaktype": "value",
+                    "property": "P248",
+                    "hash": "edd6a048cc3c96bc5b21a4cf77977f233b26ab76",
+                    "datavalue": {
+                      "value": {
+                        "entity-type": "item",
+                        "numeric-id": 3509449,
+                        "id": "Q3509449"
+                      },
+                      "type": "wikibase-entityid"
+                    },
+                    "datatype": "wikibase-item"
+                  }
+                ],
+                "P5017": [
+                  {
+                    "snaktype": "value",
+                    "property": "P5017",
+                    "hash": "8f64b283bdaf2a4bb9a50130f96cf28ee54f859f",
+                    "datavalue": {
+                      "value": {
+                        "time": "+2018-09-29T00:00:00Z",
+                        "timezone": 0,
+                        "before": 0,
+                        "after": 0,
+                        "precision": 11,
+                        "calendarmodel": "http://www.wikidata.org/entity/Q1985727"
+                      },
+                      "type": "time"
+                    },
+                    "datatype": "time"
+                  }
+                ]
+              },
+              "snaks-order": [
+                "P248",
+                "P5017"
+              ]
+            }
+          ]
+        }
+      ],
+      "P31": [
+        {
+          "mainsnak": {
+            "snaktype": "value",
+            "property": "P31",
+            "hash": "20b3c9267c82af90c6e03e3b112a810207b32cc0",
+            "datavalue": {
+              "value": {
+                "entity-type": "item",
+                "numeric-id": 43229,
+                "id": "Q43229"
+              },
+              "type": "wikibase-entityid"
+            },
+            "datatype": "wikibase-item"
+          },
+          "type": "statement",
+          "id": "Q3151636$dbea718f-420a-2262-4cee-e2b02da4b4c9",
+          "rank": "normal"
+        }
+      ],
+      "P1320": [
+        {
+          "mainsnak": {
+            "snaktype": "value",
+            "property": "P1320",
+            "hash": "ca46a25f5083ee6692d47a24cd9a062a5e1651cd",
+            "datavalue": {
+              "value": "fr/130019367",
+              "type": "string"
+            },
+            "datatype": "external-id"
+          },
+          "type": "statement",
+          "id": "Q3151636$4312CC3B-B7DE-4051-8752-8B232A34F642",
+          "rank": "normal"
+        }
+      ],
+      "P1616": [
+        {
+          "mainsnak": {
+            "snaktype": "value",
+            "property": "P1616",
+            "hash": "302c4d83067b4fdd19dc5af7b644f4ee770c4605",
+            "datavalue": {
+              "value": "130019367",
+              "type": "string"
+            },
+            "datatype": "external-id"
+          },
+          "type": "statement",
+          "id": "Q3151636$09AC573E-1796-467A-BEE2-E36EFC6D54DD",
+          "rank": "normal",
+          "references": [
+            {
+              "hash": "335b4f30c7b5b33ab240d55e4673e3e427dd7dc3",
+              "snaks": {
+                "P248": [
+                  {
+                    "snaktype": "value",
+                    "property": "P248",
+                    "hash": "edd6a048cc3c96bc5b21a4cf77977f233b26ab76",
+                    "datavalue": {
+                      "value": {
+                        "entity-type": "item",
+                        "numeric-id": 3509449,
+                        "id": "Q3509449"
+                      },
+                      "type": "wikibase-entityid"
+                    },
+                    "datatype": "wikibase-item"
+                  }
+                ],
+                "P5017": [
+                  {
+                    "snaktype": "value",
+                    "property": "P5017",
+                    "hash": "8f64b283bdaf2a4bb9a50130f96cf28ee54f859f",
+                    "datavalue": {
+                      "value": {
+                        "time": "+2018-09-29T00:00:00Z",
+                        "timezone": 0,
+                        "before": 0,
+                        "after": 0,
+                        "precision": 11,
+                        "calendarmodel": "http://www.wikidata.org/entity/Q1985727"
+                      },
+                      "type": "time"
+                    },
+                    "datatype": "time"
+                  }
+                ]
+              },
+              "snaks-order": [
+                "P248",
+                "P5017"
+              ]
+            }
+          ]
+        }
+      ],
+      "P154": [
+        {
+          "mainsnak": {
+            "snaktype": "value",
+            "property": "P154",
+            "hash": "b20bbf8b6083011a259764e6daf5e1782b49f874",
+            "datavalue": {
+              "value": "Logo IGAC.jpg",
+              "type": "string"
+            },
+            "datatype": "commonsMedia"
+          },
+          "type": "statement",
+          "qualifiers": {
+            "P2096": [
+              {
+                "snaktype": "value",
+                "property": "P2096",
+                "hash": "0dbcde28e2e6279d01040d8818ac8385c18b2a2e",
+                "datavalue": {
+                  "value": {
+                    "text": "Logo de l'Inspection générale des affaires culturelles.",
+                    "language": "fr"
+                  },
+                  "type": "monolingualtext"
+                },
+                "datatype": "monolingualtext"
+              }
+            ]
+          },
+          "qualifiers-order": [
+            "P2096"
+          ],
+          "id": "Q3151636$e7af97f8-4b66-7eed-3a06-e3bc1dbfc88a",
+          "rank": "normal"
+        }
+      ]
+    },
+    "sitelinks": {
+      "frwiki": {
+        "site": "frwiki",
+        "title": "Inspection générale des affaires culturelles",
+        "badges": [],
+        "url": "https://fr.wikipedia.org/wiki/Inspection_g%C3%A9n%C3%A9rale_des_affaires_culturelles"
+      }
+    }
+  }
+}

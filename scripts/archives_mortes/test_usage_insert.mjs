@@ -26,3 +26,4 @@ async function check() {
     console.log("Insert WITH app_version:", err2?.message || "Success");
 }
 check();
+

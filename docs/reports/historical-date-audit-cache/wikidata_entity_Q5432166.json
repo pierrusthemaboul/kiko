@@ -1,0 +1,752 @@
+{
+  "saved_at": "2026-03-07T14:45:02.496Z",
+  "value": {
+    "pageid": 5194504,
+    "ns": 0,
+    "title": "Q5432166",
+    "lastrevid": 2394108618,
+    "modified": "2025-08-19T10:57:48Z",
+    "type": "item",
+    "id": "Q5432166",
+    "labels": {
+      "en": {
+        "language": "en",
+        "value": "Fall of Tripoli"
+      },
+      "es": {
+        "language": "es",
+        "value": "caída de Trípoli"
+      },
+      "ru": {
+        "language": "ru",
+        "value": "Осада Триполи (1289)"
+      },
+      "sr": {
+        "language": "sr",
+        "value": "Пад грофовије Триполи"
+      },
+      "fr": {
+        "language": "fr",
+        "value": "siège de Tripoli"
+      },
+      "hy": {
+        "language": "hy",
+        "value": "Տրիպոլիի պաշարում"
+      },
+      "ka": {
+        "language": "ka",
+        "value": "ტრიპოლის ალყა"
+      },
+      "ca": {
+        "language": "ca",
+        "value": "Setge de Trípoli (1289)"
+      },
+      "ar": {
+        "language": "ar",
+        "value": "فتح طرابلس الشام"
+      },
+      "fa": {
+        "language": "fa",
+        "value": "سقوط طرابلس (۱۲۸۹)"
+      },
+      "pnb": {
+        "language": "pnb",
+        "value": "فتح طرابلس 1289ء"
+      },
+      "ur": {
+        "language": "ur",
+        "value": "فتح طرابلس 1289ء"
+      },
+      "ja": {
+        "language": "ja",
+        "value": "トリポリの陥落"
+      },
+      "el": {
+        "language": "el",
+        "value": "Άλωση της Τρίπολης (1289)"
+      },
+      "zh": {
+        "language": "zh",
+        "value": "的黎波里的陷落"
+      },
+      "vec": {
+        "language": "vec",
+        "value": "Cascada de Trípoli"
+      },
+      "nl": {
+        "language": "nl",
+        "value": "Val van Tripoli (1289)"
+      },
+      "uk": {
+        "language": "uk",
+        "value": "Падіння Триполі (1289)"
+      }
+    },
+    "descriptions": {
+      "fr": {
+        "language": "fr",
+        "value": "(1289)"
+      },
+      "en": {
+        "language": "en",
+        "value": "1289 capture of city in the Crusades"
+      }
+    },
+    "aliases": {
+      "es": [
+        {
+          "language": "es",
+          "value": "caida de Tripoli"
+        },
+        {
+          "language": "es",
+          "value": "caida de Trípoli"
+        }
+      ],
+      "fr": [
+        {
+          "language": "fr",
+          "value": "Chute de Tripoli (1289)"
+        }
+      ]
+    },
+    "claims": {
+      "P31": [
+        {
+          "mainsnak": {
+            "snaktype": "value",
+            "property": "P31",
+            "hash": "4fa1783d4cfdddbd24616e28fab46d9c00a29a54",
+            "datavalue": {
+              "value": {
+                "entity-type": "item",
+                "numeric-id": 188055,
+                "id": "Q188055"
+              },
+              "type": "wikibase-entityid"
+            },
+            "datatype": "wikibase-item"
+          },
+          "type": "statement",
+          "id": "Q5432166$3FAA8DE7-97BE-4522-A26F-21CC5E1247BE",
+          "rank": "normal"
+        }
+      ],
+      "P18": [
+        {
+          "mainsnak": {
+            "snaktype": "value",
+            "property": "P18",
+            "hash": "a7a741ca0964140eb43d3c418718d3e2b91edf77",
+            "datavalue": {
+              "value": "Siege of Tripoli Painting (1289).jpg",
+              "type": "string"
+            },
+            "datatype": "commonsMedia"
+          },
+          "type": "statement",
+          "id": "Q5432166$44B82866-0200-46B5-8807-C5C73C6238C5",
+          "rank": "normal",
+          "references": [
+            {
+              "hash": "fa278ebfc458360e5aed63d5058cca83c46134f1",
+              "snaks": {
+                "P143": [
+                  {
+                    "snaktype": "value",
+                    "property": "P143",
+                    "hash": "e4f6d9441d0600513c4533c672b5ab472dc73694",
+                    "datavalue": {
+                      "value": {
+                        "entity-type": "item",
+                        "numeric-id": 328,
+                        "id": "Q328"
+                      },
+                      "type": "wikibase-entityid"
+                    },
+                    "datatype": "wikibase-item"
+                  }
+                ]
+              },
+              "snaks-order": [
+                "P143"
+              ]
+            }
+          ]
+        }
+      ],
+      "P361": [
+        {
+          "mainsnak": {
+            "snaktype": "value",
+            "property": "P361",
+            "hash": "0bb3f253e1ab0f6fe5959ae6db2891b64eb5b62f",
+            "datavalue": {
+              "value": {
+                "entity-type": "item",
+                "numeric-id": 115867251,
+                "id": "Q115867251"
+              },
+              "type": "wikibase-entityid"
+            },
+            "datatype": "wikibase-item"
+          },
+          "type": "statement",
+          "id": "Q5432166$BFF945B8-2F85-46B5-932E-BB8AC67095F9",
+          "rank": "normal"
+        }
+      ],
+      "P580": [
+        {
+          "mainsnak": {
+            "snaktype": "value",
+            "property": "P580",
+            "hash": "c190458006b541a8ceb4b36b5008b5b445f90767",
+            "datavalue": {
+              "value": {
+                "time": "+1289-03-00T00:00:00Z",
+                "timezone": 0,
+                "before": 0,
+                "after": 0,
+                "precision": 10,
+                "calendarmodel": "http://www.wikidata.org/entity/Q1985786"
+              },
+              "type": "time"
+            },
+            "datatype": "time"
+          },
+          "type": "statement",
+          "id": "Q5432166$52079398-1C7E-4050-81B7-B506CF231A47",
+          "rank": "normal"
+        }
+      ],
+      "P582": [
+        {
+          "mainsnak": {
+            "snaktype": "value",
+            "property": "P582",
+            "hash": "bb59ec992becf6bfd7361f6f2611cc17646b5ac0",
+            "datavalue": {
+              "value": {
+                "time": "+1289-04-26T00:00:00Z",
+                "timezone": 0,
+                "before": 0,
+                "after": 0,
+                "precision": 11,
+                "calendarmodel": "http://www.wikidata.org/entity/Q1985786"
+              },
+              "type": "time"
+            },
+            "datatype": "time"
+          },
+          "type": "statement",
+          "id": "Q5432166$B6716616-316B-4621-926B-26B59CBF62F1",
+          "rank": "normal"
+        }
+      ],
+      "P373": [
+        {
+          "mainsnak": {
+            "snaktype": "value",
+            "property": "P373",
+            "hash": "ebcf04b69a665224f70ea91b40808ad1b67542f5",
+            "datavalue": {
+              "value": "Fall of Tripoli",
+              "type": "string"
+            },
+            "datatype": "string"
+          },
+          "type": "statement",
+          "id": "Q5432166$22FD5BB6-6DE3-4D0E-9388-9EF369A3D81F",
+          "rank": "normal"
+        }
+      ],
+      "P276": [
+        {
+          "mainsnak": {
+            "snaktype": "value",
+            "property": "P276",
+            "hash": "7e99ab932f5fe321f92fb5ff3c96c9f03314b7d3",
+            "datavalue": {
+              "value": {
+                "entity-type": "item",
+                "numeric-id": 168954,
+                "id": "Q168954"
+              },
+              "type": "wikibase-entityid"
+            },
+            "datatype": "wikibase-item"
+          },
+          "type": "statement",
+          "id": "Q5432166$71b787bc-446d-63eb-19f8-c7879d069e4b",
+          "rank": "normal"
+        }
+      ],
+      "P625": [
+        {
+          "mainsnak": {
+            "snaktype": "value",
+            "property": "P625",
+            "hash": "f5e067c2c9f6ed8bf3ca82eaa1f9714ad9ad27e8",
+            "datavalue": {
+              "value": {
+                "latitude": 32.87519,
+                "longitude": 13.18746,
+                "altitude": null,
+                "precision": 0.000001,
+                "globe": "http://www.wikidata.org/entity/Q2"
+              },
+              "type": "globecoordinate"
+            },
+            "datatype": "globe-coordinate"
+          },
+          "type": "statement",
+          "id": "Q5432166$EFA1D7D6-C12C-4AB2-A7C2-6A4ACA1EFD7C",
+          "rank": "normal"
+        }
+      ],
+      "P1889": [
+        {
+          "mainsnak": {
+            "snaktype": "value",
+            "property": "P1889",
+            "hash": "301e46c8aadab482a40490e3793927d4d353660c",
+            "datavalue": {
+              "value": {
+                "entity-type": "item",
+                "numeric-id": 7510468,
+                "id": "Q7510468"
+              },
+              "type": "wikibase-entityid"
+            },
+            "datatype": "wikibase-item"
+          },
+          "type": "statement",
+          "id": "Q5432166$C6C5BFF3-2D81-4667-BF18-4868094423AD",
+          "rank": "normal"
+        },
+        {
+          "mainsnak": {
+            "snaktype": "value",
+            "property": "P1889",
+            "hash": "5d6958106405322ebdc2f0448e2b95fb0668c383",
+            "datavalue": {
+              "value": {
+                "entity-type": "item",
+                "numeric-id": 1723525,
+                "id": "Q1723525"
+              },
+              "type": "wikibase-entityid"
+            },
+            "datatype": "wikibase-item"
+          },
+          "type": "statement",
+          "id": "Q5432166$8A10FA1B-416C-47B1-A583-E6787A8051DC",
+          "rank": "normal"
+        },
+        {
+          "mainsnak": {
+            "snaktype": "value",
+            "property": "P1889",
+            "hash": "d426116a3804a9ee36aa9cfed80e586779ec07a2",
+            "datavalue": {
+              "value": {
+                "entity-type": "item",
+                "numeric-id": 2590023,
+                "id": "Q2590023"
+              },
+              "type": "wikibase-entityid"
+            },
+            "datatype": "wikibase-item"
+          },
+          "type": "statement",
+          "id": "Q5432166$E9FF9DA4-D97D-4E2F-9082-BC484EE5C1F3",
+          "rank": "normal"
+        },
+        {
+          "mainsnak": {
+            "snaktype": "value",
+            "property": "P1889",
+            "hash": "23812209192060350cc9642634e0a275d6fa1511",
+            "datavalue": {
+              "value": {
+                "entity-type": "item",
+                "numeric-id": 2860095,
+                "id": "Q2860095"
+              },
+              "type": "wikibase-entityid"
+            },
+            "datatype": "wikibase-item"
+          },
+          "type": "statement",
+          "id": "Q5432166$0EC977AC-3154-46E2-879C-0989B4E776AE",
+          "rank": "normal"
+        },
+        {
+          "mainsnak": {
+            "snaktype": "value",
+            "property": "P1889",
+            "hash": "ca2f52da46de09c9b4add31c43a4ed4ffa1f6aff",
+            "datavalue": {
+              "value": {
+                "entity-type": "item",
+                "numeric-id": 125945398,
+                "id": "Q125945398"
+              },
+              "type": "wikibase-entityid"
+            },
+            "datatype": "wikibase-item"
+          },
+          "type": "statement",
+          "id": "Q5432166$5E2C994F-1C4C-4A37-B81D-0EAE622467C8",
+          "rank": "normal"
+        },
+        {
+          "mainsnak": {
+            "snaktype": "value",
+            "property": "P1889",
+            "hash": "3732c9b86d71b63224f635d2fa6358087139add6",
+            "datavalue": {
+              "value": {
+                "entity-type": "item",
+                "numeric-id": 123243699,
+                "id": "Q123243699"
+              },
+              "type": "wikibase-entityid"
+            },
+            "datatype": "wikibase-item"
+          },
+          "type": "statement",
+          "id": "Q5432166$414ED62A-23EE-4B45-9B29-EABAE2D47EEE",
+          "rank": "normal"
+        }
+      ],
+      "P646": [
+        {
+          "mainsnak": {
+            "snaktype": "value",
+            "property": "P646",
+            "hash": "3406d3db3ec70ec85f9e5c5dae3e1e9729699305",
+            "datavalue": {
+              "value": "/m/03gv1bz",
+              "type": "string"
+            },
+            "datatype": "external-id"
+          },
+          "type": "statement",
+          "id": "Q5432166$14A865CA-12CA-4BB5-B7D6-329A8B618A6F",
+          "rank": "normal"
+        }
+      ],
+      "P17": [
+        {
+          "mainsnak": {
+            "snaktype": "value",
+            "property": "P17",
+            "hash": "b33c620c82d53cda8921ca91db3b621fce948e72",
+            "datavalue": {
+              "value": {
+                "entity-type": "item",
+                "numeric-id": 272033,
+                "id": "Q272033"
+              },
+              "type": "wikibase-entityid"
+            },
+            "datatype": "wikibase-item"
+          },
+          "type": "statement",
+          "id": "Q5432166$544a3655-40e1-2f79-52f0-096681640399",
+          "rank": "normal"
+        }
+      ],
+      "P710": [
+        {
+          "mainsnak": {
+            "snaktype": "value",
+            "property": "P710",
+            "hash": "b10590dfd23e0a5189df180705600896b3521d1a",
+            "datavalue": {
+              "value": {
+                "entity-type": "item",
+                "numeric-id": 282428,
+                "id": "Q282428"
+              },
+              "type": "wikibase-entityid"
+            },
+            "datatype": "wikibase-item"
+          },
+          "type": "statement",
+          "qualifiers": {
+            "P4791": [
+              {
+                "snaktype": "value",
+                "property": "P4791",
+                "hash": "05452079db632f8cffc0c72c6d4f26c4ee6bce78",
+                "datavalue": {
+                  "value": {
+                    "entity-type": "item",
+                    "numeric-id": 249121,
+                    "id": "Q249121"
+                  },
+                  "type": "wikibase-entityid"
+                },
+                "datatype": "wikibase-item"
+              }
+            ]
+          },
+          "qualifiers-order": [
+            "P4791"
+          ],
+          "id": "Q5432166$ecbccef9-4c0c-587f-adb0-09d7841cfd97",
+          "rank": "normal"
+        },
+        {
+          "mainsnak": {
+            "snaktype": "value",
+            "property": "P710",
+            "hash": "256687089fc33018a345defe6062cb938b933ef3",
+            "datavalue": {
+              "value": {
+                "entity-type": "item",
+                "numeric-id": 272033,
+                "id": "Q272033"
+              },
+              "type": "wikibase-entityid"
+            },
+            "datatype": "wikibase-item"
+          },
+          "type": "statement",
+          "qualifiers": {
+            "P4791": [
+              {
+                "snaktype": "value",
+                "property": "P4791",
+                "hash": "a2e3854053e0c9531f804263f3e5cc1279976c11",
+                "datavalue": {
+                  "value": {
+                    "entity-type": "item",
+                    "numeric-id": 269931,
+                    "id": "Q269931"
+                  },
+                  "type": "wikibase-entityid"
+                },
+                "datatype": "wikibase-item"
+              },
+              {
+                "snaktype": "value",
+                "property": "P4791",
+                "hash": "504fc59c6e4ee90f7ec3235a9685009b99bc2e43",
+                "datavalue": {
+                  "value": {
+                    "entity-type": "item",
+                    "numeric-id": 453370,
+                    "id": "Q453370"
+                  },
+                  "type": "wikibase-entityid"
+                },
+                "datatype": "wikibase-item"
+              },
+              {
+                "snaktype": "value",
+                "property": "P4791",
+                "hash": "976e90b8ac90a1373e57bbf419c85230601a49c2",
+                "datavalue": {
+                  "value": {
+                    "entity-type": "item",
+                    "numeric-id": 1685576,
+                    "id": "Q1685576"
+                  },
+                  "type": "wikibase-entityid"
+                },
+                "datatype": "wikibase-item"
+              }
+            ]
+          },
+          "qualifiers-order": [
+            "P4791"
+          ],
+          "id": "Q5432166$ec781d70-441a-f62c-1ae0-3b40a8c041dd",
+          "rank": "normal"
+        },
+        {
+          "mainsnak": {
+            "snaktype": "value",
+            "property": "P710",
+            "hash": "613104ed14554865a146747c327f8ed5cac6e3f5",
+            "datavalue": {
+              "value": {
+                "entity-type": "item",
+                "numeric-id": 41300,
+                "id": "Q41300"
+              },
+              "type": "wikibase-entityid"
+            },
+            "datatype": "wikibase-item"
+          },
+          "type": "statement",
+          "qualifiers": {
+            "P4791": [
+              {
+                "snaktype": "value",
+                "property": "P4791",
+                "hash": "434de8619c36805999949aa48ac31c3fd301fdeb",
+                "datavalue": {
+                  "value": {
+                    "entity-type": "item",
+                    "numeric-id": 111209174,
+                    "id": "Q111209174"
+                  },
+                  "type": "wikibase-entityid"
+                },
+                "datatype": "wikibase-item"
+              }
+            ]
+          },
+          "qualifiers-order": [
+            "P4791"
+          ],
+          "id": "Q5432166$03273432-42d9-3656-8b2a-47dde187fdc7",
+          "rank": "normal"
+        },
+        {
+          "mainsnak": {
+            "snaktype": "value",
+            "property": "P710",
+            "hash": "b5af12164f0a52aec9f005a19bd464fe4e09dc4a",
+            "datavalue": {
+              "value": {
+                "entity-type": "item",
+                "numeric-id": 187549,
+                "id": "Q187549"
+              },
+              "type": "wikibase-entityid"
+            },
+            "datatype": "wikibase-item"
+          },
+          "type": "statement",
+          "qualifiers": {
+            "P4791": [
+              {
+                "snaktype": "value",
+                "property": "P4791",
+                "hash": "f493a2467f294379797716aa3462b2a49132b46e",
+                "datavalue": {
+                  "value": {
+                    "entity-type": "item",
+                    "numeric-id": 1908657,
+                    "id": "Q1908657"
+                  },
+                  "type": "wikibase-entityid"
+                },
+                "datatype": "wikibase-item"
+              }
+            ]
+          },
+          "qualifiers-order": [
+            "P4791"
+          ],
+          "id": "Q5432166$7177e537-499a-2560-f3af-1fd2cf6f0900",
+          "rank": "normal"
+        }
+      ]
+    },
+    "sitelinks": {
+      "arwiki": {
+        "site": "arwiki",
+        "title": "فتح طرابلس الشام (1289)",
+        "badges": [],
+        "url": "https://ar.wikipedia.org/wiki/%D9%81%D8%AA%D8%AD_%D8%B7%D8%B1%D8%A7%D8%A8%D9%84%D8%B3_%D8%A7%D9%84%D8%B4%D8%A7%D9%85_(1289)"
+      },
+      "cawiki": {
+        "site": "cawiki",
+        "title": "Setge de Trípoli (1289)",
+        "badges": [],
+        "url": "https://ca.wikipedia.org/wiki/Setge_de_Tr%C3%ADpoli_(1289)"
+      },
+      "commonswiki": {
+        "site": "commonswiki",
+        "title": "Category:Fall of Tripoli",
+        "badges": [],
+        "url": "https://commons.wikimedia.org/wiki/Category:Fall_of_Tripoli"
+      },
+      "elwiki": {
+        "site": "elwiki",
+        "title": "Άλωση της Τρίπολης (1289)",
+        "badges": [],
+        "url": "https://el.wikipedia.org/wiki/%CE%86%CE%BB%CF%89%CF%83%CE%B7_%CF%84%CE%B7%CF%82_%CE%A4%CF%81%CE%AF%CF%80%CE%BF%CE%BB%CE%B7%CF%82_(1289)"
+      },
+      "enwiki": {
+        "site": "enwiki",
+        "title": "Fall of Tripoli (1289)",
+        "badges": [],
+        "url": "https://en.wikipedia.org/wiki/Fall_of_Tripoli_(1289)"
+      },
+      "eswiki": {
+        "site": "eswiki",
+        "title": "Caída de Trípoli",
+        "badges": [],
+        "url": "https://es.wikipedia.org/wiki/Ca%C3%ADda_de_Tr%C3%ADpoli"
+      },
+      "fawiki": {
+        "site": "fawiki",
+        "title": "محاصره طرابلس (۱۲۸۹)",
+        "badges": [],
+        "url": "https://fa.wikipedia.org/wiki/%D9%85%D8%AD%D8%A7%D8%B5%D8%B1%D9%87_%D8%B7%D8%B1%D8%A7%D8%A8%D9%84%D8%B3_(%DB%B1%DB%B2%DB%B8%DB%B9)"
+      },
+      "frwiki": {
+        "site": "frwiki",
+        "title": "Chute de Tripoli",
+        "badges": [],
+        "url": "https://fr.wikipedia.org/wiki/Chute_de_Tripoli"
+      },
+      "hywiki": {
+        "site": "hywiki",
+        "title": "Տրիպոլիի պաշարում (1289)",
+        "badges": [],
+        "url": "https://hy.wikipedia.org/wiki/%D5%8F%D6%80%D5%AB%D5%BA%D5%B8%D5%AC%D5%AB%D5%AB_%D5%BA%D5%A1%D5%B7%D5%A1%D6%80%D5%B8%D6%82%D5%B4_(1289)"
+      },
+      "kawiki": {
+        "site": "kawiki",
+        "title": "ტრიპოლის ალყა (1289)",
+        "badges": [],
+        "url": "https://ka.wikipedia.org/wiki/%E1%83%A2%E1%83%A0%E1%83%98%E1%83%9E%E1%83%9D%E1%83%9A%E1%83%98%E1%83%A1_%E1%83%90%E1%83%9A%E1%83%A7%E1%83%90_(1289)"
+      },
+      "nlwiki": {
+        "site": "nlwiki",
+        "title": "Val van Tripoli (1289)",
+        "badges": [],
+        "url": "https://nl.wikipedia.org/wiki/Val_van_Tripoli_(1289)"
+      },
+      "pnbwiki": {
+        "site": "pnbwiki",
+        "title": "فتح طرابلس 1289ء",
+        "badges": [],
+        "url": "https://pnb.wikipedia.org/wiki/%D9%81%D8%AA%D8%AD_%D8%B7%D8%B1%D8%A7%D8%A8%D9%84%D8%B3_1289%D8%A1"
+      },
+      "ruwiki": {
+        "site": "ruwiki",
+        "title": "Осада Триполи (1289)",
+        "badges": [],
+        "url": "https://ru.wikipedia.org/wiki/%D0%9E%D1%81%D0%B0%D0%B4%D0%B0_%D0%A2%D1%80%D0%B8%D0%BF%D0%BE%D0%BB%D0%B8_(1289)"
+      },
+      "srwiki": {
+        "site": "srwiki",
+        "title": "Пад грофовије Триполи",
+        "badges": [],
+        "url": "https://sr.wikipedia.org/wiki/%D0%9F%D0%B0%D0%B4_%D0%B3%D1%80%D0%BE%D1%84%D0%BE%D0%B2%D0%B8%D1%98%D0%B5_%D0%A2%D1%80%D0%B8%D0%BF%D0%BE%D0%BB%D0%B8"
+      },
+      "ukwiki": {
+        "site": "ukwiki",
+        "title": "Падіння Триполі (1289)",
+        "badges": [],
+        "url": "https://uk.wikipedia.org/wiki/%D0%9F%D0%B0%D0%B4%D1%96%D0%BD%D0%BD%D1%8F_%D0%A2%D1%80%D0%B8%D0%BF%D0%BE%D0%BB%D1%96_(1289)"
+      },
+      "urwiki": {
+        "site": "urwiki",
+        "title": "فتح طرابلس 1289ء",
+        "badges": [],
+        "url": "https://ur.wikipedia.org/wiki/%D9%81%D8%AA%D8%AD_%D8%B7%D8%B1%D8%A7%D8%A8%D9%84%D8%B3_1289%D8%A1"
+      }
+    }
+  }
+}

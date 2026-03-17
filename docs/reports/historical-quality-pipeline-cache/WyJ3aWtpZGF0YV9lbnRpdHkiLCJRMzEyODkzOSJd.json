@@ -1,0 +1,436 @@
+{
+  "pageid": 2989500,
+  "ns": 0,
+  "title": "Q3128939",
+  "lastrevid": 2460281568,
+  "modified": "2026-02-03T09:11:22Z",
+  "type": "item",
+  "id": "Q3128939",
+  "labels": {
+    "fr": {
+      "language": "fr",
+      "value": "Haïti espagnol"
+    },
+    "en": {
+      "language": "en",
+      "value": "Haitian occupation of Santo Domingo"
+    },
+    "es": {
+      "language": "es",
+      "value": "Ocupación haitiana de Santo Domingo"
+    },
+    "el": {
+      "language": "el",
+      "value": "Αϊτινή κατοχή του Σάντο Ντομίνγκο"
+    },
+    "ja": {
+      "language": "ja",
+      "value": "ハイチ共和国によるスペイン人ハイチ共和国占領"
+    },
+    "pt": {
+      "language": "pt",
+      "value": "Unificação de Hispaniola"
+    },
+    "vi": {
+      "language": "vi",
+      "value": "Liên minh Hispaniola"
+    },
+    "ht": {
+      "language": "ht",
+      "value": "Ayiti panyòl"
+    },
+    "id": {
+      "language": "id",
+      "value": "Penyatuan Hispaniola"
+    },
+    "ar": {
+      "language": "ar",
+      "value": "توحيد هسبنيولا"
+    },
+    "ur": {
+      "language": "ur",
+      "value": "اسپانیولا کا اتحاد"
+    },
+    "zh": {
+      "language": "zh",
+      "value": "海地占領聖多明哥"
+    },
+    "sk": {
+      "language": "sk",
+      "value": "Haitská okupácia Santo Dominga"
+    },
+    "it": {
+      "language": "it",
+      "value": "Occupazione haitiana di Santo Domingo"
+    }
+  },
+  "descriptions": {
+    "en": {
+      "language": "en",
+      "value": "1822 military invasion"
+    },
+    "pt": {
+      "language": "pt",
+      "value": "evento ocorrido no Haiti"
+    },
+    "es": {
+      "language": "es",
+      "value": "período histórico bajo la República de Haití"
+    },
+    "sk": {
+      "language": "sk",
+      "value": "vojenská invázia od roku 1822"
+    }
+  },
+  "aliases": {
+    "es": [
+      {
+        "language": "es",
+        "value": "Ocupacion haitiana de Santo Domingo"
+      }
+    ],
+    "en": [
+      {
+        "language": "en",
+        "value": "Hatian Invasion Of Dominican Republic"
+      }
+    ],
+    "ja": [
+      {
+        "language": "ja",
+        "value": "イスパニョーラ島の統一"
+      }
+    ]
+  },
+  "claims": {
+    "P646": [
+      {
+        "mainsnak": {
+          "snaktype": "value",
+          "property": "P646",
+          "hash": "4a66eb9f4d888a2638bc521356bf59b2399fa125",
+          "datavalue": {
+            "value": "/m/046509g",
+            "type": "string"
+          },
+          "datatype": "external-id"
+        },
+        "type": "statement",
+        "id": "Q3128939$9BB8AF56-AC50-4CD1-81A5-777CE87823BB",
+        "rank": "normal",
+        "references": [
+          {
+            "hash": "2b00cb481cddcac7623114367489b5c194901c4a",
+            "snaks": {
+              "P248": [
+                {
+                  "snaktype": "value",
+                  "property": "P248",
+                  "hash": "a94b740202b097dd33355e0e6c00e54b9395e5e0",
+                  "datavalue": {
+                    "value": {
+                      "entity-type": "item",
+                      "numeric-id": 15241312,
+                      "id": "Q15241312"
+                    },
+                    "type": "wikibase-entityid"
+                  },
+                  "datatype": "wikibase-item"
+                }
+              ],
+              "P577": [
+                {
+                  "snaktype": "value",
+                  "property": "P577",
+                  "hash": "fde79ecb015112d2f29229ccc1ec514ed3e71fa2",
+                  "datavalue": {
+                    "value": {
+                      "time": "+2013-10-28T00:00:00Z",
+                      "timezone": 0,
+                      "before": 0,
+                      "after": 0,
+                      "precision": 11,
+                      "calendarmodel": "http://www.wikidata.org/entity/Q1985727"
+                    },
+                    "type": "time"
+                  },
+                  "datatype": "time"
+                }
+              ]
+            },
+            "snaks-order": [
+              "P248",
+              "P577"
+            ]
+          }
+        ]
+      }
+    ],
+    "P31": [
+      {
+        "mainsnak": {
+          "snaktype": "value",
+          "property": "P31",
+          "hash": "feb571e40320759fed84e2439a888d21df876a4c",
+          "datavalue": {
+            "value": {
+              "entity-type": "item",
+              "numeric-id": 467011,
+              "id": "Q467011"
+            },
+            "type": "wikibase-entityid"
+          },
+          "datatype": "wikibase-item"
+        },
+        "type": "statement",
+        "id": "Q3128939$40869228-4cef-b355-8574-412eba7bd4c8",
+        "rank": "normal"
+      }
+    ],
+    "P17": [
+      {
+        "mainsnak": {
+          "snaktype": "value",
+          "property": "P17",
+          "hash": "9a301da4c51d6905de54be4f7781876dbe6048f7",
+          "datavalue": {
+            "value": {
+              "entity-type": "item",
+              "numeric-id": 790,
+              "id": "Q790"
+            },
+            "type": "wikibase-entityid"
+          },
+          "datatype": "wikibase-item"
+        },
+        "type": "statement",
+        "id": "Q3128939$98e44b45-45fb-f8e9-c472-d976eabf53e5",
+        "rank": "normal"
+      }
+    ],
+    "P242": [
+      {
+        "mainsnak": {
+          "snaktype": "value",
+          "property": "P242",
+          "hash": "ff7d28e91fab98b9e07f414b0192a789707bbf88",
+          "datavalue": {
+            "value": "Hispaniola 1822-1844.png",
+            "type": "string"
+          },
+          "datatype": "commonsMedia"
+        },
+        "type": "statement",
+        "id": "Q3128939$5EC29307-0F88-4CAF-98D8-813F9CCE591D",
+        "rank": "normal",
+        "references": [
+          {
+            "hash": "1dbbf6e9506b6f6b79ce65d770196ee61a5b4ff0",
+            "snaks": {
+              "P143": [
+                {
+                  "snaktype": "value",
+                  "property": "P143",
+                  "hash": "e17507043402fe54ae6c4d65cc51f46cec987de9",
+                  "datavalue": {
+                    "value": {
+                      "entity-type": "item",
+                      "numeric-id": 8449,
+                      "id": "Q8449"
+                    },
+                    "type": "wikibase-entityid"
+                  },
+                  "datatype": "wikibase-item"
+                }
+              ],
+              "P4656": [
+                {
+                  "snaktype": "value",
+                  "property": "P4656",
+                  "hash": "b85bea463c44bf9e082ac434b2fd685b84b9c78f",
+                  "datavalue": {
+                    "value": "https://es.wikipedia.org/w/index.php?title=Ocupación_haitiana_de_Santo_Domingo&oldid=123479296",
+                    "type": "string"
+                  },
+                  "datatype": "url"
+                }
+              ]
+            },
+            "snaks-order": [
+              "P143",
+              "P4656"
+            ]
+          }
+        ]
+      }
+    ],
+    "P580": [
+      {
+        "mainsnak": {
+          "snaktype": "value",
+          "property": "P580",
+          "hash": "8dffaf164b9bc46949882b514de340abfa30ee34",
+          "datavalue": {
+            "value": {
+              "time": "+1822-01-01T00:00:00Z",
+              "timezone": 0,
+              "before": 0,
+              "after": 0,
+              "precision": 9,
+              "calendarmodel": "http://www.wikidata.org/entity/Q1985727"
+            },
+            "type": "time"
+          },
+          "datatype": "time"
+        },
+        "type": "statement",
+        "id": "Q3128939$473FE0DB-8025-4862-AF5D-5C9F24000A68",
+        "rank": "normal",
+        "references": [
+          {
+            "hash": "fa278ebfc458360e5aed63d5058cca83c46134f1",
+            "snaks": {
+              "P143": [
+                {
+                  "snaktype": "value",
+                  "property": "P143",
+                  "hash": "e4f6d9441d0600513c4533c672b5ab472dc73694",
+                  "datavalue": {
+                    "value": {
+                      "entity-type": "item",
+                      "numeric-id": 328,
+                      "id": "Q328"
+                    },
+                    "type": "wikibase-entityid"
+                  },
+                  "datatype": "wikibase-item"
+                }
+              ]
+            },
+            "snaks-order": [
+              "P143"
+            ]
+          }
+        ]
+      }
+    ],
+    "P582": [
+      {
+        "mainsnak": {
+          "snaktype": "value",
+          "property": "P582",
+          "hash": "4459aa72e2581dc065053edb3c71ae5e8dd753cc",
+          "datavalue": {
+            "value": {
+              "time": "+1844-01-01T00:00:00Z",
+              "timezone": 0,
+              "before": 0,
+              "after": 0,
+              "precision": 9,
+              "calendarmodel": "http://www.wikidata.org/entity/Q1985727"
+            },
+            "type": "time"
+          },
+          "datatype": "time"
+        },
+        "type": "statement",
+        "id": "Q3128939$5EF63F37-5BB4-42B2-8252-67282272FEB1",
+        "rank": "normal",
+        "references": [
+          {
+            "hash": "fa278ebfc458360e5aed63d5058cca83c46134f1",
+            "snaks": {
+              "P143": [
+                {
+                  "snaktype": "value",
+                  "property": "P143",
+                  "hash": "e4f6d9441d0600513c4533c672b5ab472dc73694",
+                  "datavalue": {
+                    "value": {
+                      "entity-type": "item",
+                      "numeric-id": 328,
+                      "id": "Q328"
+                    },
+                    "type": "wikibase-entityid"
+                  },
+                  "datatype": "wikibase-item"
+                }
+              ]
+            },
+            "snaks-order": [
+              "P143"
+            ]
+          }
+        ]
+      }
+    ]
+  },
+  "sitelinks": {
+    "arwiki": {
+      "site": "arwiki",
+      "title": "توحيد هسبنيولا",
+      "badges": [],
+      "url": "https://ar.wikipedia.org/wiki/%D8%AA%D9%88%D8%AD%D9%8A%D8%AF_%D9%87%D8%B3%D8%A8%D9%86%D9%8A%D9%88%D9%84%D8%A7"
+    },
+    "enwiki": {
+      "site": "enwiki",
+      "title": "Haitian occupation of Santo Domingo",
+      "badges": [],
+      "url": "https://en.wikipedia.org/wiki/Haitian_occupation_of_Santo_Domingo"
+    },
+    "eswiki": {
+      "site": "eswiki",
+      "title": "Ocupación haitiana de Santo Domingo",
+      "badges": [],
+      "url": "https://es.wikipedia.org/wiki/Ocupaci%C3%B3n_haitiana_de_Santo_Domingo"
+    },
+    "frwiki": {
+      "site": "frwiki",
+      "title": "Occupation haïtienne de Saint-Domingue",
+      "badges": [],
+      "url": "https://fr.wikipedia.org/wiki/Occupation_ha%C3%AFtienne_de_Saint-Domingue"
+    },
+    "htwiki": {
+      "site": "htwiki",
+      "title": "Okipasyon Militè Ayisyen nan Santo Domingo",
+      "badges": [],
+      "url": "https://ht.wikipedia.org/wiki/Okipasyon_Milit%C3%A8_Ayisyen_nan_Santo_Domingo"
+    },
+    "idwiki": {
+      "site": "idwiki",
+      "title": "Penyatuan Hispaniola",
+      "badges": [],
+      "url": "https://id.wikipedia.org/wiki/Penyatuan_Hispaniola"
+    },
+    "itwiki": {
+      "site": "itwiki",
+      "title": "Occupazione haitiana di Santo Domingo",
+      "badges": [],
+      "url": "https://it.wikipedia.org/wiki/Occupazione_haitiana_di_Santo_Domingo"
+    },
+    "ptwiki": {
+      "site": "ptwiki",
+      "title": "Unificação de Hispaniola",
+      "badges": [],
+      "url": "https://pt.wikipedia.org/wiki/Unifica%C3%A7%C3%A3o_de_Hispaniola"
+    },
+    "skwiki": {
+      "site": "skwiki",
+      "title": "Haitská okupácia Santo Dominga",
+      "badges": [],
+      "url": "https://sk.wikipedia.org/wiki/Haitsk%C3%A1_okup%C3%A1cia_Santo_Dominga"
+    },
+    "urwiki": {
+      "site": "urwiki",
+      "title": "اسپانیولا کا اتحاد",
+      "badges": [],
+      "url": "https://ur.wikipedia.org/wiki/%D8%A7%D8%B3%D9%BE%D8%A7%D9%86%DB%8C%D9%88%D9%84%D8%A7_%DA%A9%D8%A7_%D8%A7%D8%AA%D8%AD%D8%A7%D8%AF"
+    },
+    "viwiki": {
+      "site": "viwiki",
+      "title": "Liên minh Hispaniola",
+      "badges": [],
+      "url": "https://vi.wikipedia.org/wiki/Li%C3%AAn_minh_Hispaniola"
+    }
+  }
+}

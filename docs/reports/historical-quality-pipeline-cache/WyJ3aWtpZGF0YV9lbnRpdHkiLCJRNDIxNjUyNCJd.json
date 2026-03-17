@@ -1,0 +1,141 @@
+{
+  "pageid": 4026082,
+  "ns": 0,
+  "title": "Q4216524",
+  "lastrevid": 1749510759,
+  "modified": "2022-10-12T23:06:47Z",
+  "type": "item",
+  "id": "Q4216524",
+  "labels": {
+    "id": {
+      "language": "id",
+      "value": "Pemerintahan Dinasti Han"
+    },
+    "sh": {
+      "language": "sh",
+      "value": "Uprava dinastije Han"
+    },
+    "en": {
+      "language": "en",
+      "value": "government of the Han dynasty"
+    },
+    "es": {
+      "language": "es",
+      "value": "Gobierno de la dinastía Han"
+    },
+    "fr": {
+      "language": "fr",
+      "value": "Gouvernement de la Chine sous la dynastie Han"
+    },
+    "vec": {
+      "language": "vec",
+      "value": "Goerno de ła dinastia Han"
+    },
+    "ko": {
+      "language": "ko",
+      "value": "한나라의 정부"
+    }
+  },
+  "descriptions": {
+    "en": {
+      "language": "en",
+      "value": "governance during the Chinese Han dynasty (202 BC–220 AD)"
+    },
+    "ko": {
+      "language": "ko",
+      "value": "중국 한 왕조의 통치(기원전 202년–서기 220년)"
+    }
+  },
+  "aliases": {
+    "es": [
+      {
+        "language": "es",
+        "value": "Gobierno de la dinastia Han"
+      }
+    ],
+    "en": [
+      {
+        "language": "en",
+        "value": "the Han dynasty government"
+      },
+      {
+        "language": "en",
+        "value": "Han dynasty government"
+      }
+    ]
+  },
+  "claims": {
+    "P31": [
+      {
+        "mainsnak": {
+          "snaktype": "value",
+          "property": "P31",
+          "hash": "d5828ee411170770d5ef20a6da9b3c87db06b2e4",
+          "datavalue": {
+            "value": {
+              "entity-type": "item",
+              "numeric-id": 7188,
+              "id": "Q7188"
+            },
+            "type": "wikibase-entityid"
+          },
+          "datatype": "wikibase-item"
+        },
+        "type": "statement",
+        "id": "Q4216524$b0f1d587-496c-1a5d-69a7-0b6109dad89c",
+        "rank": "normal"
+      }
+    ],
+    "P646": [
+      {
+        "mainsnak": {
+          "snaktype": "value",
+          "property": "P646",
+          "hash": "d575b01677381d36b6ca5feaccd919a91a6d6aa6",
+          "datavalue": {
+            "value": "/m/02wyfp9",
+            "type": "string"
+          },
+          "datatype": "external-id"
+        },
+        "type": "statement",
+        "id": "Q4216524$745A175F-4009-4E0D-9E1A-FCEA03E02508",
+        "rank": "normal"
+      }
+    ]
+  },
+  "sitelinks": {
+    "enwiki": {
+      "site": "enwiki",
+      "title": "Government of the Han dynasty",
+      "badges": [
+        "Q17437796"
+      ],
+      "url": "https://en.wikipedia.org/wiki/Government_of_the_Han_dynasty"
+    },
+    "eswiki": {
+      "site": "eswiki",
+      "title": "Gobierno de la dinastía Han",
+      "badges": [],
+      "url": "https://es.wikipedia.org/wiki/Gobierno_de_la_dinast%C3%ADa_Han"
+    },
+    "frwiki": {
+      "site": "frwiki",
+      "title": "Gouvernement de la Chine sous la dynastie Han",
+      "badges": [],
+      "url": "https://fr.wikipedia.org/wiki/Gouvernement_de_la_Chine_sous_la_dynastie_Han"
+    },
+    "idwiki": {
+      "site": "idwiki",
+      "title": "Pemerintahan Dinasti Han",
+      "badges": [],
+      "url": "https://id.wikipedia.org/wiki/Pemerintahan_Dinasti_Han"
+    },
+    "shwiki": {
+      "site": "shwiki",
+      "title": "Uprava dinastije Han",
+      "badges": [],
+      "url": "https://sh.wikipedia.org/wiki/Uprava_dinastije_Han"
+    }
+  }
+}

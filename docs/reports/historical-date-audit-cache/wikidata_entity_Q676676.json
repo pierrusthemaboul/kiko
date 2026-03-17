@@ -1,0 +1,520 @@
+{
+  "saved_at": "2026-03-07T14:17:30.871Z",
+  "value": {
+    "pageid": 637426,
+    "ns": 0,
+    "title": "Q676676",
+    "lastrevid": 2435889640,
+    "modified": "2025-11-30T02:04:42Z",
+    "type": "item",
+    "id": "Q676676",
+    "labels": {
+      "de": {
+        "language": "de",
+        "value": "Hay-Bunau-Varilla-Vertrag"
+      },
+      "ar": {
+        "language": "ar",
+        "value": "معاهدة هاي بونو فاريا"
+      },
+      "da": {
+        "language": "da",
+        "value": "Hay-Bunau Varilla-traktaten"
+      },
+      "en": {
+        "language": "en",
+        "value": "Hay–Bunau-Varilla Treaty"
+      },
+      "es": {
+        "language": "es",
+        "value": "Tratado Hay-Bunau Varilla"
+      },
+      "fr": {
+        "language": "fr",
+        "value": "traité Hay-Bunau-Varilla"
+      },
+      "it": {
+        "language": "it",
+        "value": "trattato Hay-Bunau Varilla"
+      },
+      "ja": {
+        "language": "ja",
+        "value": "パナマ運河条約"
+      },
+      "kk": {
+        "language": "kk",
+        "value": "Америка-Панама шарттары"
+      },
+      "ko": {
+        "language": "ko",
+        "value": "헤이-뷔노 바리야 조약"
+      },
+      "nl": {
+        "language": "nl",
+        "value": "Hay-Bunau Varilla Verdrag"
+      },
+      "pt": {
+        "language": "pt",
+        "value": "Tratado Hay-Bunau-Varilla"
+      },
+      "zh": {
+        "language": "zh",
+        "value": "美巴条约"
+      },
+      "nb": {
+        "language": "nb",
+        "value": "Hay-Bunau Varilla-traktaten"
+      },
+      "ru": {
+        "language": "ru",
+        "value": "Договор Хэя — Бюно-Варийи"
+      },
+      "ca": {
+        "language": "ca",
+        "value": "Tractat Hay-Bunau Varilla"
+      },
+      "uk": {
+        "language": "uk",
+        "value": "Договір Хея — Бюно-Варильї"
+      },
+      "hu": {
+        "language": "hu",
+        "value": "Hay–Bunau-Varilla-egyezmény"
+      },
+      "cs": {
+        "language": "cs",
+        "value": "Hay-Bunau-Varillova smlouva"
+      }
+    },
+    "descriptions": {
+      "de": {
+        "language": "de",
+        "value": "Völkerrechtlicher Vertrag"
+      },
+      "hu": {
+        "language": "hu",
+        "value": "nemzetközi szerződés"
+      },
+      "zh": {
+        "language": "zh",
+        "value": "1903年美巴两国关于巴拿马运河问题签订的条约"
+      },
+      "en": {
+        "language": "en",
+        "value": "1903 treaty between U.S. and Panama establishing the Panama Canal Zone"
+      },
+      "fr": {
+        "language": "fr",
+        "value": "traité sur l'exploitation et la construction du canal de Panama"
+      },
+      "es": {
+        "language": "es",
+        "value": "tratado firmado en 1903 por Panamá y los Estados Unidos para la construcción del Canal de Panamá"
+      },
+      "pt": {
+        "language": "pt",
+        "value": "tratado de 1903 entre EUA e Panamá para a construção do Canal do Panamá"
+      },
+      "ja": {
+        "language": "ja",
+        "value": "1903年にアメリカとパナマとの間で締結された条約"
+      },
+      "ru": {
+        "language": "ru",
+        "value": "договор"
+      }
+    },
+    "aliases": {
+      "en": [
+        {
+          "language": "en",
+          "value": "Hay-Bunau-Varilla Treaty"
+        }
+      ],
+      "cs": [
+        {
+          "language": "cs",
+          "value": "Hayova-Bunau-Varillova smlouva"
+        }
+      ]
+    },
+    "claims": {
+      "P646": [
+        {
+          "mainsnak": {
+            "snaktype": "value",
+            "property": "P646",
+            "hash": "0a316758e60130668fd5d1163d5dd308f53b5a42",
+            "datavalue": {
+              "value": "/m/01bj33",
+              "type": "string"
+            },
+            "datatype": "external-id"
+          },
+          "type": "statement",
+          "id": "Q676676$F3246AB8-D87A-4360-A8DD-F5FF88D676E0",
+          "rank": "normal",
+          "references": [
+            {
+              "hash": "2b00cb481cddcac7623114367489b5c194901c4a",
+              "snaks": {
+                "P248": [
+                  {
+                    "snaktype": "value",
+                    "property": "P248",
+                    "hash": "a94b740202b097dd33355e0e6c00e54b9395e5e0",
+                    "datavalue": {
+                      "value": {
+                        "entity-type": "item",
+                        "numeric-id": 15241312,
+                        "id": "Q15241312"
+                      },
+                      "type": "wikibase-entityid"
+                    },
+                    "datatype": "wikibase-item"
+                  }
+                ],
+                "P577": [
+                  {
+                    "snaktype": "value",
+                    "property": "P577",
+                    "hash": "fde79ecb015112d2f29229ccc1ec514ed3e71fa2",
+                    "datavalue": {
+                      "value": {
+                        "time": "+2013-10-28T00:00:00Z",
+                        "timezone": 0,
+                        "before": 0,
+                        "after": 0,
+                        "precision": 11,
+                        "calendarmodel": "http://www.wikidata.org/entity/Q1985727"
+                      },
+                      "type": "time"
+                    },
+                    "datatype": "time"
+                  }
+                ]
+              },
+              "snaks-order": [
+                "P248",
+                "P577"
+              ]
+            }
+          ]
+        }
+      ],
+      "P31": [
+        {
+          "mainsnak": {
+            "snaktype": "value",
+            "property": "P31",
+            "hash": "b0e8db723228922bff4fcc3427ebd4e3289412c9",
+            "datavalue": {
+              "value": {
+                "entity-type": "item",
+                "numeric-id": 131569,
+                "id": "Q131569"
+              },
+              "type": "wikibase-entityid"
+            },
+            "datatype": "wikibase-item"
+          },
+          "type": "statement",
+          "id": "Q676676$37CD3DB5-754C-494C-BBE6-A9E283E0129F",
+          "rank": "normal"
+        }
+      ],
+      "P1417": [
+        {
+          "mainsnak": {
+            "snaktype": "value",
+            "property": "P1417",
+            "hash": "2ea481ee4ddebab88544043b27e3f6be7a3dd568",
+            "datavalue": {
+              "value": "event/Hay-Bunau-Varilla-Treaty",
+              "type": "string"
+            },
+            "datatype": "external-id"
+          },
+          "type": "statement",
+          "qualifiers": {
+            "P1810": [
+              {
+                "snaktype": "value",
+                "property": "P1810",
+                "hash": "c2ff53b373fb87bcbeda70d630573126a7f15ce7",
+                "datavalue": {
+                  "value": "Hay–Bunau-Varilla Treaty",
+                  "type": "string"
+                },
+                "datatype": "string"
+              }
+            ]
+          },
+          "qualifiers-order": [
+            "P1810"
+          ],
+          "id": "Q676676$B98420FB-7CD5-4D90-ABAF-83B0C284B393",
+          "rank": "normal"
+        }
+      ],
+      "P373": [
+        {
+          "mainsnak": {
+            "snaktype": "value",
+            "property": "P373",
+            "hash": "8af7b64aca9728a925b70a67193782efe54444f4",
+            "datavalue": {
+              "value": "Hay–Bunau-Varilla Treaty",
+              "type": "string"
+            },
+            "datatype": "string"
+          },
+          "type": "statement",
+          "id": "Q676676$c57fcf59-b225-4ebe-b3ae-80778c57378e",
+          "rank": "normal"
+        }
+      ],
+      "P585": [
+        {
+          "mainsnak": {
+            "snaktype": "value",
+            "property": "P585",
+            "hash": "d389392ca23d1c611ec6c28f49333dfb0dbaef31",
+            "datavalue": {
+              "value": {
+                "time": "+1903-11-18T00:00:00Z",
+                "timezone": 0,
+                "before": 0,
+                "after": 0,
+                "precision": 11,
+                "calendarmodel": "http://www.wikidata.org/entity/Q1985727"
+              },
+              "type": "time"
+            },
+            "datatype": "time"
+          },
+          "type": "statement",
+          "id": "Q676676$4eb1719c-49f8-7a14-3b99-d273e42e6198",
+          "rank": "normal"
+        }
+      ],
+      "P710": [
+        {
+          "mainsnak": {
+            "snaktype": "value",
+            "property": "P710",
+            "hash": "d1d940bcd9c9d8aae87fc6a9355e7b56a21e0822",
+            "datavalue": {
+              "value": {
+                "entity-type": "item",
+                "numeric-id": 30,
+                "id": "Q30"
+              },
+              "type": "wikibase-entityid"
+            },
+            "datatype": "wikibase-item"
+          },
+          "type": "statement",
+          "id": "Q676676$bc5d6550-488e-1e3a-edcb-1b625a3ddbc4",
+          "rank": "normal"
+        },
+        {
+          "mainsnak": {
+            "snaktype": "value",
+            "property": "P710",
+            "hash": "d3560d4ac568e984cb92da7321e61a071f57149f",
+            "datavalue": {
+              "value": {
+                "entity-type": "item",
+                "numeric-id": 804,
+                "id": "Q804"
+              },
+              "type": "wikibase-entityid"
+            },
+            "datatype": "wikibase-item"
+          },
+          "type": "statement",
+          "id": "Q676676$cf839b55-4511-1fd6-15d3-48c23e578268",
+          "rank": "normal"
+        }
+      ],
+      "P1891": [
+        {
+          "mainsnak": {
+            "snaktype": "value",
+            "property": "P1891",
+            "hash": "1088680a7c335a63e05e12cc7d91ce9e79b6f579",
+            "datavalue": {
+              "value": {
+                "entity-type": "item",
+                "numeric-id": 117101,
+                "id": "Q117101"
+              },
+              "type": "wikibase-entityid"
+            },
+            "datatype": "wikibase-item"
+          },
+          "type": "statement",
+          "id": "Q676676$2c41c6ed-4795-ca68-d232-f68209e2ce0e",
+          "rank": "normal"
+        },
+        {
+          "mainsnak": {
+            "snaktype": "value",
+            "property": "P1891",
+            "hash": "ffa7a8eb7bb01b86fc3396d8236b8e763dede756",
+            "datavalue": {
+              "value": {
+                "entity-type": "item",
+                "numeric-id": 3099164,
+                "id": "Q3099164"
+              },
+              "type": "wikibase-entityid"
+            },
+            "datatype": "wikibase-item"
+          },
+          "type": "statement",
+          "id": "Q676676$17064ded-4509-8923-b27d-f4ff4fa353ab",
+          "rank": "normal"
+        }
+      ],
+      "P276": [
+        {
+          "mainsnak": {
+            "snaktype": "value",
+            "property": "P276",
+            "hash": "1071ae6d2d5a5e1d8e3be70c92efa3ad992a3b11",
+            "datavalue": {
+              "value": {
+                "entity-type": "item",
+                "numeric-id": 61,
+                "id": "Q61"
+              },
+              "type": "wikibase-entityid"
+            },
+            "datatype": "wikibase-item"
+          },
+          "type": "statement",
+          "id": "Q676676$9224204b-4802-c4fe-0a89-b55be55e1c49",
+          "rank": "normal"
+        }
+      ]
+    },
+    "sitelinks": {
+      "arwiki": {
+        "site": "arwiki",
+        "title": "معاهدة هاي بونو فاريا",
+        "badges": [],
+        "url": "https://ar.wikipedia.org/wiki/%D9%85%D8%B9%D8%A7%D9%87%D8%AF%D8%A9_%D9%87%D8%A7%D9%8A_%D8%A8%D9%88%D9%86%D9%88_%D9%81%D8%A7%D8%B1%D9%8A%D8%A7"
+      },
+      "commonswiki": {
+        "site": "commonswiki",
+        "title": "Category:Hay–Bunau-Varilla Treaty",
+        "badges": [],
+        "url": "https://commons.wikimedia.org/wiki/Category:Hay%E2%80%93Bunau-Varilla_Treaty"
+      },
+      "dawiki": {
+        "site": "dawiki",
+        "title": "Hay-Bunau Varilla-traktaten",
+        "badges": [],
+        "url": "https://da.wikipedia.org/wiki/Hay-Bunau_Varilla-traktaten"
+      },
+      "dewiki": {
+        "site": "dewiki",
+        "title": "Hay-Bunau-Varilla-Vertrag",
+        "badges": [],
+        "url": "https://de.wikipedia.org/wiki/Hay-Bunau-Varilla-Vertrag"
+      },
+      "enwiki": {
+        "site": "enwiki",
+        "title": "Hay–Bunau-Varilla Treaty",
+        "badges": [],
+        "url": "https://en.wikipedia.org/wiki/Hay%E2%80%93Bunau-Varilla_Treaty"
+      },
+      "enwikisource": {
+        "site": "enwikisource",
+        "title": "Hay–Bunau-Varilla Treaty",
+        "badges": [],
+        "url": "https://en.wikisource.org/wiki/Hay%E2%80%93Bunau-Varilla_Treaty"
+      },
+      "eswiki": {
+        "site": "eswiki",
+        "title": "Tratado Hay-Bunau Varilla",
+        "badges": [],
+        "url": "https://es.wikipedia.org/wiki/Tratado_Hay-Bunau_Varilla"
+      },
+      "frwiki": {
+        "site": "frwiki",
+        "title": "Traité Hay-Bunau-Varilla",
+        "badges": [],
+        "url": "https://fr.wikipedia.org/wiki/Trait%C3%A9_Hay-Bunau-Varilla"
+      },
+      "huwiki": {
+        "site": "huwiki",
+        "title": "Hay–Bunau-Varilla-egyezmény",
+        "badges": [],
+        "url": "https://hu.wikipedia.org/wiki/Hay%E2%80%93Bunau-Varilla-egyezm%C3%A9ny"
+      },
+      "itwiki": {
+        "site": "itwiki",
+        "title": "Trattato Hay-Bunau Varilla",
+        "badges": [],
+        "url": "https://it.wikipedia.org/wiki/Trattato_Hay-Bunau_Varilla"
+      },
+      "jawiki": {
+        "site": "jawiki",
+        "title": "パナマ運河条約",
+        "badges": [],
+        "url": "https://ja.wikipedia.org/wiki/%E3%83%91%E3%83%8A%E3%83%9E%E9%81%8B%E6%B2%B3%E6%9D%A1%E7%B4%84"
+      },
+      "kkwiki": {
+        "site": "kkwiki",
+        "title": "Америка-Панама шарттары",
+        "badges": [],
+        "url": "https://kk.wikipedia.org/wiki/%D0%90%D0%BC%D0%B5%D1%80%D0%B8%D0%BA%D0%B0-%D0%9F%D0%B0%D0%BD%D0%B0%D0%BC%D0%B0_%D1%88%D0%B0%D1%80%D1%82%D1%82%D0%B0%D1%80%D1%8B"
+      },
+      "kowiki": {
+        "site": "kowiki",
+        "title": "헤이-뷔노 바리야 조약",
+        "badges": [],
+        "url": "https://ko.wikipedia.org/wiki/%ED%97%A4%EC%9D%B4-%EB%B7%94%EB%85%B8_%EB%B0%94%EB%A6%AC%EC%95%BC_%EC%A1%B0%EC%95%BD"
+      },
+      "nlwiki": {
+        "site": "nlwiki",
+        "title": "Verdrag inzake de aanleg van een scheepvaartkanaal",
+        "badges": [],
+        "url": "https://nl.wikipedia.org/wiki/Verdrag_inzake_de_aanleg_van_een_scheepvaartkanaal"
+      },
+      "nowiki": {
+        "site": "nowiki",
+        "title": "Hay-Bunau Varilla-traktaten",
+        "badges": [],
+        "url": "https://no.wikipedia.org/wiki/Hay-Bunau_Varilla-traktaten"
+      },
+      "ptwiki": {
+        "site": "ptwiki",
+        "title": "Tratado Hay-Bunau-Varilla",
+        "badges": [],
+        "url": "https://pt.wikipedia.org/wiki/Tratado_Hay-Bunau-Varilla"
+      },
+      "ruwiki": {
+        "site": "ruwiki",
+        "title": "Договор Хея — Бюно-Варильи",
+        "badges": [],
+        "url": "https://ru.wikipedia.org/wiki/%D0%94%D0%BE%D0%B3%D0%BE%D0%B2%D0%BE%D1%80_%D0%A5%D0%B5%D1%8F_%E2%80%94_%D0%91%D1%8E%D0%BD%D0%BE-%D0%92%D0%B0%D1%80%D0%B8%D0%BB%D1%8C%D0%B8"
+      },
+      "ukwiki": {
+        "site": "ukwiki",
+        "title": "Договір Хея — Бюно-Варильї",
+        "badges": [],
+        "url": "https://uk.wikipedia.org/wiki/%D0%94%D0%BE%D0%B3%D0%BE%D0%B2%D1%96%D1%80_%D0%A5%D0%B5%D1%8F_%E2%80%94_%D0%91%D1%8E%D0%BD%D0%BE-%D0%92%D0%B0%D1%80%D0%B8%D0%BB%D1%8C%D1%97"
+      },
+      "zhwiki": {
+        "site": "zhwiki",
+        "title": "美巴条约",
+        "badges": [],
+        "url": "https://zh.wikipedia.org/wiki/%E7%BE%8E%E5%B7%B4%E6%9D%A1%E7%BA%A6"
+      }
+    }
+  }
+}

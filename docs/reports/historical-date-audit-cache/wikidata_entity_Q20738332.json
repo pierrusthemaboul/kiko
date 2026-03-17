@@ -1,0 +1,687 @@
+{
+  "saved_at": "2026-03-07T16:21:36.045Z",
+  "value": {
+    "pageid": 22483577,
+    "ns": 0,
+    "title": "Q20738332",
+    "lastrevid": 2415931622,
+    "modified": "2025-10-13T15:34:24Z",
+    "type": "item",
+    "id": "Q20738332",
+    "labels": {
+      "en": {
+        "language": "en",
+        "value": "Ligue Française pour le Droit des Femmes"
+      },
+      "fr": {
+        "language": "fr",
+        "value": "Ligue française pour le droit des femmes"
+      },
+      "es": {
+        "language": "es",
+        "value": "Liga Francesa por el Derecho de las Mujeres"
+      },
+      "cy": {
+        "language": "cy",
+        "value": "Cynghrair Ffrainc ar gyfer Hawliau Merched"
+      },
+      "ja": {
+        "language": "ja",
+        "value": "女性の権利協会"
+      },
+      "ar": {
+        "language": "ar",
+        "value": "الاتحاد الفرنسي لحقوق المرأة"
+      },
+      "sv": {
+        "language": "sv",
+        "value": "Ligue Française pour le Droit des Femmes"
+      },
+      "sw": {
+        "language": "sw",
+        "value": "Ligue Française pour le Droit des Femmes"
+      },
+      "ig": {
+        "language": "ig",
+        "value": "Njikọ France maka Ikike Ụmụ nwanyị"
+      },
+      "de": {
+        "language": "de",
+        "value": "Ligue française pour le droit des femmes"
+      },
+      "bn": {
+        "language": "bn",
+        "value": "মহিলাদের অধিকারের জন্য ফরাসি লীগ"
+      }
+    },
+    "descriptions": {
+      "es": {
+        "language": "es",
+        "value": "organización feminista francesa fundada por Léon Richer"
+      },
+      "en": {
+        "language": "en",
+        "value": "French feminist organisation founded by Léon Richer"
+      },
+      "fr": {
+        "language": "fr",
+        "value": "association féministe mixte et laïque pour l'amélioration des conditions des femmes"
+      },
+      "sv": {
+        "language": "sv",
+        "value": "fransk kvinnorättsorganisation"
+      },
+      "sw": {
+        "language": "sw",
+        "value": "Shirika la kifeministi la Ufaransa lililoanzishwa na Léon Richer"
+      },
+      "de": {
+        "language": "de",
+        "value": "1882 gegründete feministische Organisation"
+      }
+    },
+    "aliases": {
+      "ja": [
+        {
+          "language": "ja",
+          "value": "フランス女性の権利連盟"
+        },
+        {
+          "language": "ja",
+          "value": "女性の権利同盟"
+        }
+      ],
+      "es": [
+        {
+          "language": "es",
+          "value": "Ligue Française pour le Droit des Femmes"
+        }
+      ],
+      "fr": [
+        {
+          "language": "fr",
+          "value": "LFDF"
+        }
+      ]
+    },
+    "claims": {
+      "P17": [
+        {
+          "mainsnak": {
+            "snaktype": "value",
+            "property": "P17",
+            "hash": "c05db5d169c2560b9799d567a803d20a392f53e4",
+            "datavalue": {
+              "value": {
+                "entity-type": "item",
+                "numeric-id": 142,
+                "id": "Q142"
+              },
+              "type": "wikibase-entityid"
+            },
+            "datatype": "wikibase-item"
+          },
+          "type": "statement",
+          "id": "Q20738332$DA74AAFF-B468-4571-A8B7-0FFF01B29EB6",
+          "rank": "normal",
+          "references": [
+            {
+              "hash": "d4bd87b862b12d99d26e86472d44f26858dee639",
+              "snaks": {
+                "P143": [
+                  {
+                    "snaktype": "value",
+                    "property": "P143",
+                    "hash": "f30cbd35620c4ea6d0633aaf0210a8916130469b",
+                    "datavalue": {
+                      "value": {
+                        "entity-type": "item",
+                        "numeric-id": 8447,
+                        "id": "Q8447"
+                      },
+                      "type": "wikibase-entityid"
+                    },
+                    "datatype": "wikibase-item"
+                  }
+                ]
+              },
+              "snaks-order": [
+                "P143"
+              ]
+            }
+          ]
+        }
+      ],
+      "P571": [
+        {
+          "mainsnak": {
+            "snaktype": "value",
+            "property": "P571",
+            "hash": "7f22aa99b4cd7cc2e4cfd166f6077136e345b4e8",
+            "datavalue": {
+              "value": {
+                "time": "+1882-01-01T00:00:00Z",
+                "timezone": 0,
+                "before": 0,
+                "after": 0,
+                "precision": 9,
+                "calendarmodel": "http://www.wikidata.org/entity/Q1985727"
+              },
+              "type": "time"
+            },
+            "datatype": "time"
+          },
+          "type": "statement",
+          "id": "Q20738332$287A613C-CDDB-4D71-9D55-E50B0A7BECB1",
+          "rank": "normal",
+          "references": [
+            {
+              "hash": "5a0fc007cd272343dbcbbcb9dbc543f8df0563b0",
+              "snaks": {
+                "P813": [
+                  {
+                    "snaktype": "value",
+                    "property": "P813",
+                    "hash": "195108957eff26a4c4350918e0cbf092092eae69",
+                    "datavalue": {
+                      "value": {
+                        "time": "+2019-07-01T00:00:00Z",
+                        "timezone": 0,
+                        "before": 0,
+                        "after": 0,
+                        "precision": 11,
+                        "calendarmodel": "http://www.wikidata.org/entity/Q1985727"
+                      },
+                      "type": "time"
+                    },
+                    "datatype": "time"
+                  }
+                ],
+                "P3452": [
+                  {
+                    "snaktype": "value",
+                    "property": "P3452",
+                    "hash": "49280aa590d22e9aa1084b56180e900b727b225b",
+                    "datavalue": {
+                      "value": {
+                        "entity-type": "item",
+                        "numeric-id": 8118699,
+                        "id": "Q8118699"
+                      },
+                      "type": "wikibase-entityid"
+                    },
+                    "datatype": "wikibase-item"
+                  }
+                ],
+                "P143": [
+                  {
+                    "snaktype": "value",
+                    "property": "P143",
+                    "hash": "e4f6d9441d0600513c4533c672b5ab472dc73694",
+                    "datavalue": {
+                      "value": {
+                        "entity-type": "item",
+                        "numeric-id": 328,
+                        "id": "Q328"
+                      },
+                      "type": "wikibase-entityid"
+                    },
+                    "datatype": "wikibase-item"
+                  }
+                ]
+              },
+              "snaks-order": [
+                "P813",
+                "P3452",
+                "P143"
+              ]
+            }
+          ]
+        }
+      ],
+      "P31": [
+        {
+          "mainsnak": {
+            "snaktype": "value",
+            "property": "P31",
+            "hash": "4408670e34180382eb12f8437b257762ffd20c78",
+            "datavalue": {
+              "value": {
+                "entity-type": "item",
+                "numeric-id": 48204,
+                "id": "Q48204"
+              },
+              "type": "wikibase-entityid"
+            },
+            "datatype": "wikibase-item"
+          },
+          "type": "statement",
+          "id": "Q20738332$3d198a00-4370-c7cb-2bcb-b8ff62a1f89a",
+          "rank": "normal"
+        }
+      ],
+      "P646": [
+        {
+          "mainsnak": {
+            "snaktype": "value",
+            "property": "P646",
+            "hash": "442b21eb4249bdffc3ccf6974c985d58bf19bc18",
+            "datavalue": {
+              "value": "/m/013f1zw9",
+              "type": "string"
+            },
+            "datatype": "external-id"
+          },
+          "type": "statement",
+          "id": "Q20738332$F9AA152D-B6F7-4504-97D5-F2EBC1DAF326",
+          "rank": "normal"
+        }
+      ],
+      "P112": [
+        {
+          "mainsnak": {
+            "snaktype": "value",
+            "property": "P112",
+            "hash": "852bc920229d19d1aca307713045383deffc5f6c",
+            "datavalue": {
+              "value": {
+                "entity-type": "item",
+                "numeric-id": 449513,
+                "id": "Q449513"
+              },
+              "type": "wikibase-entityid"
+            },
+            "datatype": "wikibase-item"
+          },
+          "type": "statement",
+          "id": "Q20738332$870a322d-4348-a381-7bae-5fe6b3da84b7",
+          "rank": "normal"
+        }
+      ],
+      "P1454": [
+        {
+          "mainsnak": {
+            "snaktype": "value",
+            "property": "P1454",
+            "hash": "0e690ca6b55cc30921ca1f5176c792d49bdeb93d",
+            "datavalue": {
+              "value": {
+                "entity-type": "item",
+                "numeric-id": 15911314,
+                "id": "Q15911314"
+              },
+              "type": "wikibase-entityid"
+            },
+            "datatype": "wikibase-item"
+          },
+          "type": "statement",
+          "id": "Q20738332$9598b142-4a0d-1668-c574-94059051a8c1",
+          "rank": "normal"
+        }
+      ],
+      "P268": [
+        {
+          "mainsnak": {
+            "snaktype": "value",
+            "property": "P268",
+            "hash": "d0cba57fe1614b1a27ab29674a7e66de7db839b9",
+            "datavalue": {
+              "value": "12364431j",
+              "type": "string"
+            },
+            "datatype": "external-id"
+          },
+          "type": "statement",
+          "id": "Q20738332$5f6ee7a7-4f59-3422-5f48-85a82976882e",
+          "rank": "normal"
+        }
+      ],
+      "P159": [
+        {
+          "mainsnak": {
+            "snaktype": "value",
+            "property": "P159",
+            "hash": "801ca3c7c9013f90ceef9c3cdca2deecf5306a4a",
+            "datavalue": {
+              "value": {
+                "entity-type": "item",
+                "numeric-id": 90,
+                "id": "Q90"
+              },
+              "type": "wikibase-entityid"
+            },
+            "datatype": "wikibase-item"
+          },
+          "type": "statement",
+          "qualifiers": {
+            "P281": [
+              {
+                "snaktype": "value",
+                "property": "P281",
+                "hash": "ae244a7cb099b529ae3e5af4cf4e7d439c52de46",
+                "datavalue": {
+                  "value": "75000",
+                  "type": "string"
+                },
+                "datatype": "string"
+              }
+            ]
+          },
+          "qualifiers-order": [
+            "P281"
+          ],
+          "id": "Q20738332$e05d02fd-4822-ce4a-64ff-d76b40f81483",
+          "rank": "normal"
+        }
+      ],
+      "P807": [
+        {
+          "mainsnak": {
+            "snaktype": "value",
+            "property": "P807",
+            "hash": "fca7dc37d1fefa44c9751bef0b5d94253b5edbc1",
+            "datavalue": {
+              "value": {
+                "entity-type": "item",
+                "numeric-id": 90011443,
+                "id": "Q90011443"
+              },
+              "type": "wikibase-entityid"
+            },
+            "datatype": "wikibase-item"
+          },
+          "type": "statement",
+          "qualifiers": {
+            "P585": [
+              {
+                "snaktype": "value",
+                "property": "P585",
+                "hash": "0d8552504c8ea30ecaf9bab01cfd62995cb67d74",
+                "datavalue": {
+                  "value": {
+                    "time": "+1882-00-00T00:00:00Z",
+                    "timezone": 0,
+                    "before": 0,
+                    "after": 0,
+                    "precision": 9,
+                    "calendarmodel": "http://www.wikidata.org/entity/Q1985727"
+                  },
+                  "type": "time"
+                },
+                "datatype": "time"
+              }
+            ]
+          },
+          "qualifiers-order": [
+            "P585"
+          ],
+          "id": "Q20738332$465cc8b2-42ef-57a8-9c59-6feff737fc0d",
+          "rank": "normal"
+        }
+      ],
+      "P101": [
+        {
+          "mainsnak": {
+            "snaktype": "value",
+            "property": "P101",
+            "hash": "4e48e267e1707191ebfca4cabd6e61142bc98032",
+            "datavalue": {
+              "value": {
+                "entity-type": "item",
+                "numeric-id": 223569,
+                "id": "Q223569"
+              },
+              "type": "wikibase-entityid"
+            },
+            "datatype": "wikibase-item"
+          },
+          "type": "statement",
+          "id": "Q20738332$64c6e73b-4ff7-a291-2e85-77f4f39aac1f",
+          "rank": "normal"
+        },
+        {
+          "mainsnak": {
+            "snaktype": "value",
+            "property": "P101",
+            "hash": "5823b2b119a485dd076eefba2fa15a92a286b7ea",
+            "datavalue": {
+              "value": {
+                "entity-type": "item",
+                "numeric-id": 205204,
+                "id": "Q205204"
+              },
+              "type": "wikibase-entityid"
+            },
+            "datatype": "wikibase-item"
+          },
+          "type": "statement",
+          "id": "Q20738332$f61fda78-4482-1dd9-c178-6a941389ead8",
+          "rank": "normal"
+        }
+      ],
+      "P488": [
+        {
+          "mainsnak": {
+            "snaktype": "value",
+            "property": "P488",
+            "hash": "29b41ebf02b7965b67475055cb0d1c787c5cd029",
+            "datavalue": {
+              "value": {
+                "entity-type": "item",
+                "numeric-id": 449513,
+                "id": "Q449513"
+              },
+              "type": "wikibase-entityid"
+            },
+            "datatype": "wikibase-item"
+          },
+          "type": "statement",
+          "qualifiers": {
+            "P580": [
+              {
+                "snaktype": "value",
+                "property": "P580",
+                "hash": "dd3b1ab32e67297601bdfcdf5b812ba0a4b133e7",
+                "datavalue": {
+                  "value": {
+                    "time": "+1882-00-00T00:00:00Z",
+                    "timezone": 0,
+                    "before": 0,
+                    "after": 0,
+                    "precision": 9,
+                    "calendarmodel": "http://www.wikidata.org/entity/Q1985727"
+                  },
+                  "type": "time"
+                },
+                "datatype": "time"
+              }
+            ],
+            "P582": [
+              {
+                "snaktype": "value",
+                "property": "P582",
+                "hash": "24730c1f02fa9d487a94034a71b1a453271d0266",
+                "datavalue": {
+                  "value": {
+                    "time": "+1891-00-00T00:00:00Z",
+                    "timezone": 0,
+                    "before": 0,
+                    "after": 0,
+                    "precision": 9,
+                    "calendarmodel": "http://www.wikidata.org/entity/Q1985727"
+                  },
+                  "type": "time"
+                },
+                "datatype": "time"
+              }
+            ]
+          },
+          "qualifiers-order": [
+            "P580",
+            "P582"
+          ],
+          "id": "Q20738332$3ec0f3e8-42c9-12ca-d53c-56ed9d75bfcd",
+          "rank": "normal"
+        }
+      ],
+      "P214": [
+        {
+          "mainsnak": {
+            "snaktype": "value",
+            "property": "P214",
+            "hash": "a4cf872c24146cb3f9cff97f14db0a559b3854e2",
+            "datavalue": {
+              "value": "127698237",
+              "type": "string"
+            },
+            "datatype": "external-id"
+          },
+          "type": "statement",
+          "id": "Q20738332$3da3b790-4a70-9f81-c2fd-ed46b45511b3",
+          "rank": "normal"
+        }
+      ],
+      "P269": [
+        {
+          "mainsnak": {
+            "snaktype": "value",
+            "property": "P269",
+            "hash": "2130ae3193be518489e34678312547edfa7c0fa5",
+            "datavalue": {
+              "value": "032656629",
+              "type": "string"
+            },
+            "datatype": "external-id"
+          },
+          "type": "statement",
+          "id": "Q20738332$85f34ef7-4f00-2f79-5374-f7011f98960b",
+          "rank": "normal"
+        }
+      ],
+      "P3065": [
+        {
+          "mainsnak": {
+            "snaktype": "value",
+            "property": "P3065",
+            "hash": "c09696318328655a1196f4ed61a31e50ce94bae3",
+            "datavalue": {
+              "value": "A003521432",
+              "type": "string"
+            },
+            "datatype": "external-id"
+          },
+          "type": "statement",
+          "id": "Q20738332$81826ed7-405f-3178-6199-0c7fe1c5ae98",
+          "rank": "normal"
+        }
+      ],
+      "P227": [
+        {
+          "mainsnak": {
+            "snaktype": "value",
+            "property": "P227",
+            "hash": "6ac37ad5039a01318860221ef6a875cc3377e838",
+            "datavalue": {
+              "value": "1086462882",
+              "type": "string"
+            },
+            "datatype": "external-id"
+          },
+          "type": "statement",
+          "id": "Q20738332$c9d1a5cf-4f20-a15e-fd1a-e9b8f7482ac6",
+          "rank": "normal"
+        }
+      ],
+      "P244": [
+        {
+          "mainsnak": {
+            "snaktype": "value",
+            "property": "P244",
+            "hash": "7f9a8a545c9d182c16c722913513ac81a2a9078f",
+            "datavalue": {
+              "value": "no2021142473",
+              "type": "string"
+            },
+            "datatype": "external-id"
+          },
+          "type": "statement",
+          "id": "Q20738332$f399b29b-4741-b362-973d-7a1611f11464",
+          "rank": "normal"
+        }
+      ],
+      "P373": [
+        {
+          "mainsnak": {
+            "snaktype": "value",
+            "property": "P373",
+            "hash": "12f699dcb7f7c0247804169d88d1195f4e305374",
+            "datavalue": {
+              "value": "Ligue française pour le droit des femmes",
+              "type": "string"
+            },
+            "datatype": "string"
+          },
+          "type": "statement",
+          "id": "Q20738332$14451241-dbbb-4b50-8672-bd5d930c4a68",
+          "rank": "normal"
+        }
+      ]
+    },
+    "sitelinks": {
+      "arwiki": {
+        "site": "arwiki",
+        "title": "الاتحاد الفرنسي لحقوق المرأة",
+        "badges": [],
+        "url": "https://ar.wikipedia.org/wiki/%D8%A7%D9%84%D8%A7%D8%AA%D8%AD%D8%A7%D8%AF_%D8%A7%D9%84%D9%81%D8%B1%D9%86%D8%B3%D9%8A_%D9%84%D8%AD%D9%82%D9%88%D9%82_%D8%A7%D9%84%D9%85%D8%B1%D8%A3%D8%A9"
+      },
+      "bnwiki": {
+        "site": "bnwiki",
+        "title": "নারীদের অধিকারের জন্য ফরাসি লীগ",
+        "badges": [],
+        "url": "https://bn.wikipedia.org/wiki/%E0%A6%A8%E0%A6%BE%E0%A6%B0%E0%A7%80%E0%A6%A6%E0%A7%87%E0%A6%B0_%E0%A6%85%E0%A6%A7%E0%A6%BF%E0%A6%95%E0%A6%BE%E0%A6%B0%E0%A7%87%E0%A6%B0_%E0%A6%9C%E0%A6%A8%E0%A7%8D%E0%A6%AF_%E0%A6%AB%E0%A6%B0%E0%A6%BE%E0%A6%B8%E0%A6%BF_%E0%A6%B2%E0%A7%80%E0%A6%97"
+      },
+      "commonswiki": {
+        "site": "commonswiki",
+        "title": "Category:Ligue française pour le droit des femmes",
+        "badges": [],
+        "url": "https://commons.wikimedia.org/wiki/Category:Ligue_fran%C3%A7aise_pour_le_droit_des_femmes"
+      },
+      "dewiki": {
+        "site": "dewiki",
+        "title": "Ligue française pour le droit des femmes",
+        "badges": [],
+        "url": "https://de.wikipedia.org/wiki/Ligue_fran%C3%A7aise_pour_le_droit_des_femmes"
+      },
+      "enwiki": {
+        "site": "enwiki",
+        "title": "Ligue Française pour le Droit des Femmes",
+        "badges": [],
+        "url": "https://en.wikipedia.org/wiki/Ligue_Fran%C3%A7aise_pour_le_Droit_des_Femmes"
+      },
+      "eswiki": {
+        "site": "eswiki",
+        "title": "Liga Francesa por el Derecho de las Mujeres",
+        "badges": [],
+        "url": "https://es.wikipedia.org/wiki/Liga_Francesa_por_el_Derecho_de_las_Mujeres"
+      },
+      "frwiki": {
+        "site": "frwiki",
+        "title": "Ligue française pour le droit des femmes",
+        "badges": [],
+        "url": "https://fr.wikipedia.org/wiki/Ligue_fran%C3%A7aise_pour_le_droit_des_femmes"
+      },
+      "igwiki": {
+        "site": "igwiki",
+        "title": "Njikọ France maka Ikike Ụmụ nwanyị",
+        "badges": [],
+        "url": "https://ig.wikipedia.org/wiki/Njik%E1%BB%8D_France_maka_Ikike_%E1%BB%A4m%E1%BB%A5_nwany%E1%BB%8B"
+      },
+      "svwiki": {
+        "site": "svwiki",
+        "title": "Ligue Française pour le Droit des Femmes",
+        "badges": [],
+        "url": "https://sv.wikipedia.org/wiki/Ligue_Fran%C3%A7aise_pour_le_Droit_des_Femmes"
+      }
+    }
+  }
+}

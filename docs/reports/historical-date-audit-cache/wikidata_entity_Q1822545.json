@@ -1,0 +1,600 @@
+{
+  "saved_at": "2026-03-07T15:02:31.753Z",
+  "value": {
+    "pageid": 1753311,
+    "ns": 0,
+    "title": "Q1822545",
+    "lastrevid": 2386417571,
+    "modified": "2025-07-31T16:32:52Z",
+    "type": "item",
+    "id": "Q1822545",
+    "labels": {
+      "eu": {
+        "language": "eu",
+        "value": "Indietako Legeak"
+      },
+      "en": {
+        "language": "en",
+        "value": "Laws of the Indies"
+      },
+      "es": {
+        "language": "es",
+        "value": "Leyes de Indias"
+      },
+      "it": {
+        "language": "it",
+        "value": "Leggi delle Indie"
+      },
+      "sv": {
+        "language": "sv",
+        "value": "Indienlagarna"
+      },
+      "de": {
+        "language": "de",
+        "value": "Leyes de Indias"
+      },
+      "ja": {
+        "language": "ja",
+        "value": "インディアス法"
+      },
+      "fr": {
+        "language": "fr",
+        "value": "Lois des Indes"
+      },
+      "he": {
+        "language": "he",
+        "value": "חוקי איי הודו"
+      },
+      "zh": {
+        "language": "zh",
+        "value": "印度等地法律汇编"
+      },
+      "ga": {
+        "language": "ga",
+        "value": "Dlí na nIndiacha"
+      }
+    },
+    "descriptions": {
+      "en": {
+        "language": "en",
+        "value": "entire body of laws issued by the Spanish Crown for the American and the Philippine possessions of its empire"
+      },
+      "es": {
+        "language": "es",
+        "value": "legislación española para regular aspectos de los territorios americanos y asiáticos de la corona española"
+      }
+    },
+    "aliases": {
+      "eu": [
+        {
+          "language": "eu",
+          "value": "Leyes de Indias"
+        }
+      ],
+      "en": [
+        {
+          "language": "en",
+          "value": "Law of the Indies"
+        }
+      ]
+    },
+    "claims": {
+      "P646": [
+        {
+          "mainsnak": {
+            "snaktype": "value",
+            "property": "P646",
+            "hash": "bb2ec3af3943b3dc420590b6cbb0f165eab9d83f",
+            "datavalue": {
+              "value": "/m/026qkfv",
+              "type": "string"
+            },
+            "datatype": "external-id"
+          },
+          "type": "statement",
+          "id": "Q1822545$903B5E1E-B9D2-48D7-B8C9-11CBB7F30B9F",
+          "rank": "normal",
+          "references": [
+            {
+              "hash": "2b00cb481cddcac7623114367489b5c194901c4a",
+              "snaks": {
+                "P248": [
+                  {
+                    "snaktype": "value",
+                    "property": "P248",
+                    "hash": "a94b740202b097dd33355e0e6c00e54b9395e5e0",
+                    "datavalue": {
+                      "value": {
+                        "entity-type": "item",
+                        "numeric-id": 15241312,
+                        "id": "Q15241312"
+                      },
+                      "type": "wikibase-entityid"
+                    },
+                    "datatype": "wikibase-item"
+                  }
+                ],
+                "P577": [
+                  {
+                    "snaktype": "value",
+                    "property": "P577",
+                    "hash": "fde79ecb015112d2f29229ccc1ec514ed3e71fa2",
+                    "datavalue": {
+                      "value": {
+                        "time": "+2013-10-28T00:00:00Z",
+                        "timezone": 0,
+                        "before": 0,
+                        "after": 0,
+                        "precision": 11,
+                        "calendarmodel": "http://www.wikidata.org/entity/Q1985727"
+                      },
+                      "type": "time"
+                    },
+                    "datatype": "time"
+                  }
+                ]
+              },
+              "snaks-order": [
+                "P248",
+                "P577"
+              ]
+            }
+          ]
+        }
+      ],
+      "P1417": [
+        {
+          "mainsnak": {
+            "snaktype": "value",
+            "property": "P1417",
+            "hash": "ea1e4447c8986b7171b6ce4fa6344371ec2f7b53",
+            "datavalue": {
+              "value": "event/Laws-of-the-Indies",
+              "type": "string"
+            },
+            "datatype": "external-id"
+          },
+          "type": "statement",
+          "qualifiers": {
+            "P1810": [
+              {
+                "snaktype": "value",
+                "property": "P1810",
+                "hash": "9937b9006baac1ad966601fd6d17a5382863edbf",
+                "datavalue": {
+                  "value": "Laws of the Indies",
+                  "type": "string"
+                },
+                "datatype": "string"
+              }
+            ]
+          },
+          "qualifiers-order": [
+            "P1810"
+          ],
+          "id": "Q1822545$46C0562E-2C56-4A06-9795-63CA85C6B1BB",
+          "rank": "normal"
+        }
+      ],
+      "P31": [
+        {
+          "mainsnak": {
+            "snaktype": "value",
+            "property": "P31",
+            "hash": "e813d6818afa9a7215e2de34000f67743912662a",
+            "datavalue": {
+              "value": {
+                "entity-type": "item",
+                "numeric-id": 922203,
+                "id": "Q922203"
+              },
+              "type": "wikibase-entityid"
+            },
+            "datatype": "wikibase-item"
+          },
+          "type": "statement",
+          "id": "Q1822545$af4b74c6-479d-42a4-1fdf-e03773f4a5f1",
+          "rank": "normal"
+        }
+      ],
+      "P1001": [
+        {
+          "mainsnak": {
+            "snaktype": "value",
+            "property": "P1001",
+            "hash": "186fc458d49c8ab5295a04f0f2618cae8f23ee84",
+            "datavalue": {
+              "value": {
+                "entity-type": "item",
+                "numeric-id": 170603,
+                "id": "Q170603"
+              },
+              "type": "wikibase-entityid"
+            },
+            "datatype": "wikibase-item"
+          },
+          "type": "statement",
+          "id": "Q1822545$6319fb51-49d9-87c7-3076-aa8ca5274818",
+          "rank": "normal"
+        },
+        {
+          "mainsnak": {
+            "snaktype": "value",
+            "property": "P1001",
+            "hash": "e4b08222476f68569e168285fa72dd09aa0a1f8f",
+            "datavalue": {
+              "value": {
+                "entity-type": "item",
+                "numeric-id": 80702,
+                "id": "Q80702"
+              },
+              "type": "wikibase-entityid"
+            },
+            "datatype": "wikibase-item"
+          },
+          "type": "statement",
+          "id": "Q1822545$63ddf4db-40f3-9bcf-1c86-8998f105aff8",
+          "rank": "preferred",
+          "references": [
+            {
+              "hash": "7cf41e19450e128abe697ac14c909a1372cb13f8",
+              "snaks": {
+                "P1417": [
+                  {
+                    "snaktype": "value",
+                    "property": "P1417",
+                    "hash": "ea1e4447c8986b7171b6ce4fa6344371ec2f7b53",
+                    "datavalue": {
+                      "value": "event/Laws-of-the-Indies",
+                      "type": "string"
+                    },
+                    "datatype": "external-id"
+                  }
+                ]
+              },
+              "snaks-order": [
+                "P1417"
+              ]
+            }
+          ]
+        }
+      ],
+      "P527": [
+        {
+          "mainsnak": {
+            "snaktype": "value",
+            "property": "P527",
+            "hash": "0c2bfdf452d24af60670ac0260b28b68a1539ec1",
+            "datavalue": {
+              "value": {
+                "entity-type": "item",
+                "numeric-id": 441805,
+                "id": "Q441805"
+              },
+              "type": "wikibase-entityid"
+            },
+            "datatype": "wikibase-item"
+          },
+          "type": "statement",
+          "qualifiers": {
+            "P2241": [
+              {
+                "snaktype": "value",
+                "property": "P2241",
+                "hash": "60cf1edce27f0fd9ea3da666fb4aa6d1fa657e36",
+                "datavalue": {
+                  "value": {
+                    "entity-type": "item",
+                    "numeric-id": 28091153,
+                    "id": "Q28091153"
+                  },
+                  "type": "wikibase-entityid"
+                },
+                "datatype": "wikibase-item"
+              }
+            ]
+          },
+          "qualifiers-order": [
+            "P2241"
+          ],
+          "id": "Q1822545$2CB955E9-2E69-4D3E-9498-CB39539D494B",
+          "rank": "deprecated",
+          "references": [
+            {
+              "hash": "17a1b7d4f8541ddcc42afe223068ebb94c9b9d1e",
+              "snaks": {
+                "P4656": [
+                  {
+                    "snaktype": "value",
+                    "property": "P4656",
+                    "hash": "f38ca62e85e51c693f0d963f375ba10f6d931bfa",
+                    "datavalue": {
+                      "value": "https://en.wikipedia.org/wiki/Laws_of_the_Indies",
+                      "type": "string"
+                    },
+                    "datatype": "url"
+                  }
+                ],
+                "P1683": [
+                  {
+                    "snaktype": "value",
+                    "property": "P1683",
+                    "hash": "c40cd4e62faa334c846e2b4856296e8644b7a9c0",
+                    "datavalue": {
+                      "value": {
+                        "text": "The Laws of the Indies (Spanish: Leyes de las Indias) are the entire body of laws issued by the Spanish Crown for the American and the Philippine possessions of its empire.",
+                        "language": "en"
+                      },
+                      "type": "monolingualtext"
+                    },
+                    "datatype": "monolingualtext"
+                  }
+                ]
+              },
+              "snaks-order": [
+                "P4656",
+                "P1683"
+              ]
+            }
+          ]
+        }
+      ],
+      "P18": [
+        {
+          "mainsnak": {
+            "snaktype": "value",
+            "property": "P18",
+            "hash": "78700bd1656446cd2038e12929a63040853d7a81",
+            "datavalue": {
+              "value": "Tomo primero de la Cédula Real..gif",
+              "type": "string"
+            },
+            "datatype": "commonsMedia"
+          },
+          "type": "statement",
+          "id": "Q1822545$61B7ACF9-070F-4CBF-9602-F10247EC9381",
+          "rank": "normal",
+          "references": [
+            {
+              "hash": "6595533cfc3a01423bfc920dcd0298582383e204",
+              "snaks": {
+                "P143": [
+                  {
+                    "snaktype": "value",
+                    "property": "P143",
+                    "hash": "5a343e7e758a4282a01316d3e959b6e653b767fc",
+                    "datavalue": {
+                      "value": {
+                        "entity-type": "item",
+                        "numeric-id": 11920,
+                        "id": "Q11920"
+                      },
+                      "type": "wikibase-entityid"
+                    },
+                    "datatype": "wikibase-item"
+                  }
+                ],
+                "P4656": [
+                  {
+                    "snaktype": "value",
+                    "property": "P4656",
+                    "hash": "c7954e61975ad57518479bf7ca17a8754f909b78",
+                    "datavalue": {
+                      "value": "https://it.wikipedia.org/w/index.php?title=Leggi_delle_Indie&oldid=125939346",
+                      "type": "string"
+                    },
+                    "datatype": "url"
+                  }
+                ]
+              },
+              "snaks-order": [
+                "P143",
+                "P4656"
+              ]
+            }
+          ]
+        }
+      ],
+      "P407": [
+        {
+          "mainsnak": {
+            "snaktype": "value",
+            "property": "P407",
+            "hash": "ffe70325d10cfc55f0dca807ed80ca0b5b97c472",
+            "datavalue": {
+              "value": {
+                "entity-type": "item",
+                "numeric-id": 1321,
+                "id": "Q1321"
+              },
+              "type": "wikibase-entityid"
+            },
+            "datatype": "wikibase-item"
+          },
+          "type": "statement",
+          "id": "Q1822545$72EE05FE-7046-4809-A59E-1FEB1D5E504E",
+          "rank": "normal"
+        }
+      ],
+      "P1343": [
+        {
+          "mainsnak": {
+            "snaktype": "value",
+            "property": "P1343",
+            "hash": "1e87e0f7d2db06ab0ef5ccabd7c6275641f36553",
+            "datavalue": {
+              "value": {
+                "entity-type": "item",
+                "numeric-id": 867541,
+                "id": "Q867541"
+              },
+              "type": "wikibase-entityid"
+            },
+            "datatype": "wikibase-item"
+          },
+          "type": "statement",
+          "qualifiers": {
+            "P805": [
+              {
+                "snaktype": "value",
+                "property": "P805",
+                "hash": "8f2b94fb57158b5543483754003de8638a6e7aab",
+                "datavalue": {
+                  "value": {
+                    "entity-type": "item",
+                    "numeric-id": 120357294,
+                    "id": "Q120357294"
+                  },
+                  "type": "wikibase-entityid"
+                },
+                "datatype": "wikibase-item"
+              }
+            ]
+          },
+          "qualifiers-order": [
+            "P805"
+          ],
+          "id": "Q1822545$061B3176-B2BE-4E55-94C6-5EDE15B80ED2",
+          "rank": "normal"
+        }
+      ],
+      "P1433": [
+        {
+          "mainsnak": {
+            "snaktype": "value",
+            "property": "P1433",
+            "hash": "0d74c337328d8ddbd3c247b3974eb2b02772d1c1",
+            "datavalue": {
+              "value": {
+                "entity-type": "item",
+                "numeric-id": 4357290,
+                "id": "Q4357290"
+              },
+              "type": "wikibase-entityid"
+            },
+            "datatype": "wikibase-item"
+          },
+          "type": "statement",
+          "id": "Q1822545$4f310d8e-4bec-5560-cf28-43939cf36d44",
+          "rank": "normal"
+        }
+      ],
+      "P50": [
+        {
+          "mainsnak": {
+            "snaktype": "value",
+            "property": "P50",
+            "hash": "1235fe39bfb4364919e9ea975419f9355fd50bbe",
+            "datavalue": {
+              "value": {
+                "entity-type": "item",
+                "numeric-id": 2818964,
+                "id": "Q2818964"
+              },
+              "type": "wikibase-entityid"
+            },
+            "datatype": "wikibase-item"
+          },
+          "type": "statement",
+          "id": "Q1822545$50698689-09E2-434D-BB18-9F5ED308E2F3",
+          "rank": "normal",
+          "references": [
+            {
+              "hash": "04d73e29f244c2cf9c9c56aa8d8ff7678911faa4",
+              "snaks": {
+                "P143": [
+                  {
+                    "snaktype": "value",
+                    "property": "P143",
+                    "hash": "5a343e7e758a4282a01316d3e959b6e653b767fc",
+                    "datavalue": {
+                      "value": {
+                        "entity-type": "item",
+                        "numeric-id": 11920,
+                        "id": "Q11920"
+                      },
+                      "type": "wikibase-entityid"
+                    },
+                    "datatype": "wikibase-item"
+                  }
+                ],
+                "P4656": [
+                  {
+                    "snaktype": "value",
+                    "property": "P4656",
+                    "hash": "51c7e2c8cc986791e0310047802ade6b924b36e7",
+                    "datavalue": {
+                      "value": "https://it.wikipedia.org/w/index.php?title=Leggi_delle_Indie&oldid=141476989",
+                      "type": "string"
+                    },
+                    "datatype": "url"
+                  }
+                ]
+              },
+              "snaks-order": [
+                "P143",
+                "P4656"
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    "sitelinks": {
+      "dewiki": {
+        "site": "dewiki",
+        "title": "Leyes de Indias",
+        "badges": [],
+        "url": "https://de.wikipedia.org/wiki/Leyes_de_Indias"
+      },
+      "enwiki": {
+        "site": "enwiki",
+        "title": "Laws of the Indies",
+        "badges": [],
+        "url": "https://en.wikipedia.org/wiki/Laws_of_the_Indies"
+      },
+      "eswiki": {
+        "site": "eswiki",
+        "title": "Leyes de Indias",
+        "badges": [],
+        "url": "https://es.wikipedia.org/wiki/Leyes_de_Indias"
+      },
+      "euwiki": {
+        "site": "euwiki",
+        "title": "Indietako Legeak",
+        "badges": [],
+        "url": "https://eu.wikipedia.org/wiki/Indietako_Legeak"
+      },
+      "frwiki": {
+        "site": "frwiki",
+        "title": "Lois des Indes",
+        "badges": [],
+        "url": "https://fr.wikipedia.org/wiki/Lois_des_Indes"
+      },
+      "itwiki": {
+        "site": "itwiki",
+        "title": "Leggi delle Indie",
+        "badges": [],
+        "url": "https://it.wikipedia.org/wiki/Leggi_delle_Indie"
+      },
+      "jawiki": {
+        "site": "jawiki",
+        "title": "インディアス法",
+        "badges": [],
+        "url": "https://ja.wikipedia.org/wiki/%E3%82%A4%E3%83%B3%E3%83%87%E3%82%A3%E3%82%A2%E3%82%B9%E6%B3%95"
+      },
+      "svwiki": {
+        "site": "svwiki",
+        "title": "Indienlagarna",
+        "badges": [],
+        "url": "https://sv.wikipedia.org/wiki/Indienlagarna"
+      },
+      "zhwiki": {
+        "site": "zhwiki",
+        "title": "印度等地法律汇编",
+        "badges": [],
+        "url": "https://zh.wikipedia.org/wiki/%E5%8D%B0%E5%BA%A6%E7%AD%89%E5%9C%B0%E6%B3%95%E5%BE%8B%E6%B1%87%E7%BC%96"
+      }
+    }
+  }
+}

@@ -1,0 +1,100 @@
+{
+  "saved_at": "2026-03-07T16:55:20.708Z",
+  "value": {
+    "pageid": 2984093,
+    "ns": 0,
+    "title": "Q3123080",
+    "lastrevid": 1366234447,
+    "modified": "2021-02-21T00:31:15Z",
+    "type": "item",
+    "id": "Q3123080",
+    "labels": {
+      "fr": {
+        "language": "fr",
+        "value": "général des finances"
+      },
+      "it": {
+        "language": "it",
+        "value": "Général des finances"
+      },
+      "pl": {
+        "language": "pl",
+        "value": "Generał finansowy"
+      }
+    },
+    "descriptions": {
+      "fr": {
+        "language": "fr",
+        "value": "office de finances de l’administration française d’Ancien Régime"
+      }
+    },
+    "aliases": {
+      "pl": [
+        {
+          "language": "pl",
+          "value": "Generał finansów"
+        }
+      ]
+    },
+    "claims": {
+      "P31": [
+        {
+          "mainsnak": {
+            "snaktype": "value",
+            "property": "P31",
+            "hash": "22921a3d81e97a69bc1b06726862944caa1a093d",
+            "datavalue": {
+              "value": {
+                "entity-type": "item",
+                "numeric-id": 4164871,
+                "id": "Q4164871"
+              },
+              "type": "wikibase-entityid"
+            },
+            "datatype": "wikibase-item"
+          },
+          "type": "statement",
+          "id": "Q3123080$8A326EBD-21F2-4DC0-AD70-0642103650EF",
+          "rank": "normal"
+        }
+      ],
+      "P2671": [
+        {
+          "mainsnak": {
+            "snaktype": "value",
+            "property": "P2671",
+            "hash": "569320482dc7dbd756ede357374de29f0076efe0",
+            "datavalue": {
+              "value": "/g/12215qr6",
+              "type": "string"
+            },
+            "datatype": "external-id"
+          },
+          "type": "statement",
+          "id": "Q3123080$F1E92C8F-3D7A-4500-AA03-E974BFF92D4A",
+          "rank": "normal"
+        }
+      ]
+    },
+    "sitelinks": {
+      "frwiki": {
+        "site": "frwiki",
+        "title": "Général des finances",
+        "badges": [],
+        "url": "https://fr.wikipedia.org/wiki/G%C3%A9n%C3%A9ral_des_finances"
+      },
+      "itwiki": {
+        "site": "itwiki",
+        "title": "Général des finances",
+        "badges": [],
+        "url": "https://it.wikipedia.org/wiki/G%C3%A9n%C3%A9ral_des_finances"
+      },
+      "plwiki": {
+        "site": "plwiki",
+        "title": "Generał finansowy",
+        "badges": [],
+        "url": "https://pl.wikipedia.org/wiki/Genera%C5%82_finansowy"
+      }
+    }
+  }
+}

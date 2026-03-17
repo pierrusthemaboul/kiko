@@ -1,0 +1,425 @@
+{
+  "saved_at": "2026-03-07T16:52:01.804Z",
+  "value": {
+    "pageid": 3366809,
+    "ns": 0,
+    "title": "Q3536411",
+    "lastrevid": 2424200633,
+    "modified": "2025-11-01T09:04:30Z",
+    "type": "item",
+    "id": "Q3536411",
+    "labels": {
+      "fr": {
+        "language": "fr",
+        "value": "traductions de la Bible en français"
+      },
+      "en": {
+        "language": "en",
+        "value": "Bible translations into French"
+      },
+      "it": {
+        "language": "it",
+        "value": "Traduzioni della Bibbia in francese"
+      },
+      "eo": {
+        "language": "eo",
+        "value": "franclingva traduko de Biblio"
+      },
+      "ja": {
+        "language": "ja",
+        "value": "フランス語訳聖書"
+      },
+      "uz": {
+        "language": "uz",
+        "value": "Muqaddas kitobning fransuz tiliga tarjimasi"
+      },
+      "ko": {
+        "language": "ko",
+        "value": "프랑스어역 성경"
+      }
+    },
+    "descriptions": {
+      "fr": {
+        "language": "fr",
+        "value": "page de listes"
+      },
+      "en": {
+        "language": "en",
+        "value": "medieval and modern French versions of the Bible"
+      },
+      "it": {
+        "language": "it",
+        "value": "lista di un progetto Wikimedia"
+      }
+    },
+    "aliases": {
+      "fr": [
+        {
+          "language": "fr",
+          "value": "Traduction de la Bible en français"
+        },
+        {
+          "language": "fr",
+          "value": "Traduction française de la Bible"
+        },
+        {
+          "language": "fr",
+          "value": "Traductions de la Bible en francais"
+        },
+        {
+          "language": "fr",
+          "value": "Traductions de la bible en français"
+        },
+        {
+          "language": "fr",
+          "value": "Bible en français"
+        }
+      ],
+      "en": [
+        {
+          "language": "en",
+          "value": "Bible en français"
+        }
+      ]
+    },
+    "claims": {
+      "P910": [
+        {
+          "mainsnak": {
+            "snaktype": "value",
+            "property": "P910",
+            "hash": "07c97f713fdb84188f0f6766795b1f2e45cf3a6b",
+            "datavalue": {
+              "value": {
+                "entity-type": "item",
+                "numeric-id": 8299117,
+                "id": "Q8299117"
+              },
+              "type": "wikibase-entityid"
+            },
+            "datatype": "wikibase-item"
+          },
+          "type": "statement",
+          "id": "Q3536411$6D9F0D27-E83B-4049-B6AD-B32F837D3DE0",
+          "rank": "normal",
+          "references": [
+            {
+              "hash": "fa278ebfc458360e5aed63d5058cca83c46134f1",
+              "snaks": {
+                "P143": [
+                  {
+                    "snaktype": "value",
+                    "property": "P143",
+                    "hash": "e4f6d9441d0600513c4533c672b5ab472dc73694",
+                    "datavalue": {
+                      "value": {
+                        "entity-type": "item",
+                        "numeric-id": 328,
+                        "id": "Q328"
+                      },
+                      "type": "wikibase-entityid"
+                    },
+                    "datatype": "wikibase-item"
+                  }
+                ]
+              },
+              "snaks-order": [
+                "P143"
+              ]
+            }
+          ]
+        }
+      ],
+      "P279": [
+        {
+          "mainsnak": {
+            "snaktype": "value",
+            "property": "P279",
+            "hash": "d6f8e66862ecb205bc011dd7778ac8ba0decdee3",
+            "datavalue": {
+              "value": {
+                "entity-type": "item",
+                "numeric-id": 86860,
+                "id": "Q86860"
+              },
+              "type": "wikibase-entityid"
+            },
+            "datatype": "wikibase-item"
+          },
+          "type": "statement",
+          "id": "Q3536411$6cf493ad-4490-c6f2-a15b-9536096b6e69",
+          "rank": "normal"
+        }
+      ],
+      "P373": [
+        {
+          "mainsnak": {
+            "snaktype": "value",
+            "property": "P373",
+            "hash": "45a79c234a3b8313ca434062b14da07e69499411",
+            "datavalue": {
+              "value": "French bibles",
+              "type": "string"
+            },
+            "datatype": "string"
+          },
+          "type": "statement",
+          "id": "Q3536411$9f1561e9-4c04-497c-1af7-11acc9f2070c",
+          "rank": "normal"
+        }
+      ],
+      "P18": [
+        {
+          "mainsnak": {
+            "snaktype": "value",
+            "property": "P18",
+            "hash": "4eca364da292a75bdc14d15969583f8926ebeb7b",
+            "datavalue": {
+              "value": "Five French bibles.jpg",
+              "type": "string"
+            },
+            "datatype": "commonsMedia"
+          },
+          "type": "statement",
+          "id": "Q3536411$1206d56d-4e81-73ba-03b1-348821e8389a",
+          "rank": "normal"
+        }
+      ],
+      "P646": [
+        {
+          "mainsnak": {
+            "snaktype": "value",
+            "property": "P646",
+            "hash": "3623e56a2e50c2f356b04e6765929359eb6ac03b",
+            "datavalue": {
+              "value": "/m/0117n_69",
+              "type": "string"
+            },
+            "datatype": "external-id"
+          },
+          "type": "statement",
+          "id": "Q3536411$F14674E3-CD2C-4B28-BBA0-D6DC6A793215",
+          "rank": "normal"
+        }
+      ],
+      "P4549": [
+        {
+          "mainsnak": {
+            "snaktype": "value",
+            "property": "P4549",
+            "hash": "c496daecea7fd76b72fc69df872eec3174aeecff",
+            "datavalue": {
+              "value": "842",
+              "type": "string"
+            },
+            "datatype": "external-id"
+          },
+          "type": "statement",
+          "id": "Q3536411$494d85f6-4337-1c33-fb8b-f1349070764f",
+          "rank": "normal"
+        }
+      ],
+      "P31": [
+        {
+          "mainsnak": {
+            "snaktype": "value",
+            "property": "P31",
+            "hash": "56d2ce980dfb7e5844c4c8777065c37181767334",
+            "datavalue": {
+              "value": {
+                "entity-type": "item",
+                "numeric-id": 47461344,
+                "id": "Q47461344"
+              },
+              "type": "wikibase-entityid"
+            },
+            "datatype": "wikibase-item"
+          },
+          "type": "statement",
+          "id": "Q3536411$30c88f4a-4a6b-dbae-2437-9bbb42060917",
+          "rank": "normal"
+        },
+        {
+          "mainsnak": {
+            "snaktype": "value",
+            "property": "P31",
+            "hash": "99ac5408d003b0c915c504963bd942d59f3fbc56",
+            "datavalue": {
+              "value": {
+                "entity-type": "item",
+                "numeric-id": 179461,
+                "id": "Q179461"
+              },
+              "type": "wikibase-entityid"
+            },
+            "datatype": "wikibase-item"
+          },
+          "type": "statement",
+          "id": "Q3536411$F2DCCB30-D5BA-4940-9002-DCC8CB7728E4",
+          "rank": "normal"
+        },
+        {
+          "mainsnak": {
+            "snaktype": "value",
+            "property": "P31",
+            "hash": "a62e93e5d7a52fe93c44134ccfb4580f5cdbb039",
+            "datavalue": {
+              "value": {
+                "entity-type": "item",
+                "numeric-id": 7553,
+                "id": "Q7553"
+              },
+              "type": "wikibase-entityid"
+            },
+            "datatype": "wikibase-item"
+          },
+          "type": "statement",
+          "id": "Q3536411$E8A9DD6D-915B-4CED-A932-147501465B9F",
+          "rank": "normal"
+        },
+        {
+          "mainsnak": {
+            "snaktype": "value",
+            "property": "P31",
+            "hash": "fa799fd30d0b9e8a9cee20497c8416a532854db8",
+            "datavalue": {
+              "value": {
+                "entity-type": "item",
+                "numeric-id": 86860,
+                "id": "Q86860"
+              },
+              "type": "wikibase-entityid"
+            },
+            "datatype": "wikibase-item"
+          },
+          "type": "statement",
+          "id": "Q3536411$a64f8f24-403b-c0ab-9b02-7c50f4bf52cc",
+          "rank": "normal"
+        }
+      ],
+      "P407": [
+        {
+          "mainsnak": {
+            "snaktype": "value",
+            "property": "P407",
+            "hash": "ebe6ff9a0770b40375af95f15634dd794f84855b",
+            "datavalue": {
+              "value": {
+                "entity-type": "item",
+                "numeric-id": 35222,
+                "id": "Q35222"
+              },
+              "type": "wikibase-entityid"
+            },
+            "datatype": "wikibase-item"
+          },
+          "type": "statement",
+          "id": "Q3536411$E95E7C1D-00BC-4DF1-9DC2-FA1B35CC447F",
+          "rank": "normal"
+        },
+        {
+          "mainsnak": {
+            "snaktype": "value",
+            "property": "P407",
+            "hash": "5f5ff1a6dce3b17d7844a13f5990276a722dfc70",
+            "datavalue": {
+              "value": {
+                "entity-type": "item",
+                "numeric-id": 1473289,
+                "id": "Q1473289"
+              },
+              "type": "wikibase-entityid"
+            },
+            "datatype": "wikibase-item"
+          },
+          "type": "statement",
+          "id": "Q3536411$6D645D64-CE51-4D8B-901F-2D8CB00A829E",
+          "rank": "normal"
+        },
+        {
+          "mainsnak": {
+            "snaktype": "value",
+            "property": "P407",
+            "hash": "d197d0a5efa4b4c23a302a829dd3ef43684fe002",
+            "datavalue": {
+              "value": {
+                "entity-type": "item",
+                "numeric-id": 150,
+                "id": "Q150"
+              },
+              "type": "wikibase-entityid"
+            },
+            "datatype": "wikibase-item"
+          },
+          "type": "statement",
+          "id": "Q3536411$58f44476-4f9b-b346-7695-b78df92ce791",
+          "rank": "normal"
+        }
+      ],
+      "P8885": [
+        {
+          "mainsnak": {
+            "snaktype": "value",
+            "property": "P8885",
+            "hash": "1f1ad9d823506103e128fbbb5ddeda5ad74741ff",
+            "datavalue": {
+              "value": "성경/번역/프랑스어",
+              "type": "string"
+            },
+            "datatype": "external-id"
+          },
+          "type": "statement",
+          "id": "Q3536411$0f16f66f-48df-651f-649f-37e1eb163125",
+          "rank": "normal"
+        },
+        {
+          "mainsnak": {
+            "snaktype": "value",
+            "property": "P8885",
+            "hash": "fd08fb64da3e5d4e0724e75f7bc34f91792df2ec",
+            "datavalue": {
+              "value": "F/french-versions-of-the-holy-scriptures",
+              "type": "string"
+            },
+            "datatype": "external-id"
+          },
+          "type": "statement",
+          "id": "Q3536411$b49b5d5e-49f1-c1a0-2c68-5c74f52c0754",
+          "rank": "normal"
+        }
+      ]
+    },
+    "sitelinks": {
+      "enwiki": {
+        "site": "enwiki",
+        "title": "Bible translations into French",
+        "badges": [],
+        "url": "https://en.wikipedia.org/wiki/Bible_translations_into_French"
+      },
+      "frwiki": {
+        "site": "frwiki",
+        "title": "Liste de traductions de la Bible en français",
+        "badges": [],
+        "url": "https://fr.wikipedia.org/wiki/Liste_de_traductions_de_la_Bible_en_fran%C3%A7ais"
+      },
+      "itwiki": {
+        "site": "itwiki",
+        "title": "Traduzioni della Bibbia in francese",
+        "badges": [],
+        "url": "https://it.wikipedia.org/wiki/Traduzioni_della_Bibbia_in_francese"
+      },
+      "jawiki": {
+        "site": "jawiki",
+        "title": "フランス語訳聖書",
+        "badges": [],
+        "url": "https://ja.wikipedia.org/wiki/%E3%83%95%E3%83%A9%E3%83%B3%E3%82%B9%E8%AA%9E%E8%A8%B3%E8%81%96%E6%9B%B8"
+      },
+      "uzwiki": {
+        "site": "uzwiki",
+        "title": "Muqaddas kitobning fransuz tiliga tarjimasi",
+        "badges": [],
+        "url": "https://uz.wikipedia.org/wiki/Muqaddas_kitobning_fransuz_tiliga_tarjimasi"
+      }
+    }
+  }
+}

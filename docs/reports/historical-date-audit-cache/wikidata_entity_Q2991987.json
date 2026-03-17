@@ -1,0 +1,113 @@
+{
+  "saved_at": "2026-03-07T15:10:36.631Z",
+  "value": {
+    "pageid": 2860984,
+    "ns": 0,
+    "title": "Q2991987",
+    "lastrevid": 2326038125,
+    "modified": "2025-03-17T05:17:21Z",
+    "type": "item",
+    "id": "Q2991987",
+    "labels": {
+      "fr": {
+        "language": "fr",
+        "value": "concile de Charroux"
+      },
+      "en": {
+        "language": "en",
+        "value": "Council of Charroux"
+      }
+    },
+    "descriptions": {},
+    "aliases": {
+      "fr": [
+        {
+          "language": "fr",
+          "value": "Concile de charroux"
+        },
+        {
+          "language": "fr",
+          "value": "Concile De Charroux"
+        }
+      ]
+    },
+    "claims": {
+      "P31": [
+        {
+          "mainsnak": {
+            "snaktype": "value",
+            "property": "P31",
+            "hash": "3b90392ea0c29832a0a8b684a5d41bdb5b945b1f",
+            "datavalue": {
+              "value": {
+                "entity-type": "item",
+                "numeric-id": 10551516,
+                "id": "Q10551516"
+              },
+              "type": "wikibase-entityid"
+            },
+            "datatype": "wikibase-item"
+          },
+          "type": "statement",
+          "id": "Q2991987$AEB699C8-574B-4847-939C-388238BFFB72",
+          "rank": "normal"
+        }
+      ],
+      "P585": [
+        {
+          "mainsnak": {
+            "snaktype": "value",
+            "property": "P585",
+            "hash": "d0be5265b09f70054436923d324ce4611fd32ad0",
+            "datavalue": {
+              "value": {
+                "time": "+0989-06-01T00:00:00Z",
+                "timezone": 0,
+                "before": 0,
+                "after": 0,
+                "precision": 11,
+                "calendarmodel": "http://www.wikidata.org/entity/Q1985786"
+              },
+              "type": "time"
+            },
+            "datatype": "time"
+          },
+          "type": "statement",
+          "id": "Q2991987$eeaed920-4c7c-0b1d-c2f3-aa95d320111e",
+          "rank": "normal"
+        }
+      ],
+      "P2671": [
+        {
+          "mainsnak": {
+            "snaktype": "value",
+            "property": "P2671",
+            "hash": "9b94d5bf21d79e01276d53dc86b5573418b209e2",
+            "datavalue": {
+              "value": "/g/120xv2cc",
+              "type": "string"
+            },
+            "datatype": "external-id"
+          },
+          "type": "statement",
+          "id": "Q2991987$04C35B8A-A6BF-4284-A905-AD78EC4627DF",
+          "rank": "normal"
+        }
+      ]
+    },
+    "sitelinks": {
+      "enwiki": {
+        "site": "enwiki",
+        "title": "Council of Charroux",
+        "badges": [],
+        "url": "https://en.wikipedia.org/wiki/Council_of_Charroux"
+      },
+      "frwiki": {
+        "site": "frwiki",
+        "title": "Concile de Charroux",
+        "badges": [],
+        "url": "https://fr.wikipedia.org/wiki/Concile_de_Charroux"
+      }
+    }
+  }
+}

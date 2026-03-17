@@ -1,0 +1,200 @@
+{
+  "saved_at": "2026-03-07T12:56:00.813Z",
+  "value": {
+    "pageid": 18656334,
+    "ns": 0,
+    "title": "Q17049335",
+    "lastrevid": 2241424644,
+    "modified": "2024-09-01T10:22:02Z",
+    "type": "item",
+    "id": "Q17049335",
+    "labels": {
+      "en": {
+        "language": "en",
+        "value": "Bourse du Travail"
+      },
+      "fr": {
+        "language": "fr",
+        "value": "Bourse du travail"
+      },
+      "de": {
+        "language": "de",
+        "value": "Arbeiterbörse"
+      },
+      "zh": {
+        "language": "zh",
+        "value": "勞工交易所"
+      },
+      "ko": {
+        "language": "ko",
+        "value": "노동거래소"
+      }
+    },
+    "descriptions": {
+      "en": {
+        "language": "en",
+        "value": "French form of the labour council"
+      },
+      "de": {
+        "language": "de",
+        "value": "französische gewerkschaftliche Selbsthilfeeinreichtung"
+      },
+      "fr": {
+        "language": "fr",
+        "value": "Lieu géré par des syndicats en France"
+      }
+    },
+    "aliases": {},
+    "claims": {
+      "P3219": [
+        {
+          "mainsnak": {
+            "snaktype": "value",
+            "property": "P3219",
+            "hash": "10107ffd4d119d15f2cff8d1f8100bd10bf935af",
+            "datavalue": {
+              "value": "bourses-du-travail",
+              "type": "string"
+            },
+            "datatype": "external-id"
+          },
+          "type": "statement",
+          "id": "Q17049335$D765B2D9-FD69-45E1-9A51-B8D97E68B569",
+          "rank": "normal"
+        }
+      ],
+      "P910": [
+        {
+          "mainsnak": {
+            "snaktype": "value",
+            "property": "P910",
+            "hash": "3044a835d279b84972f969db278a0a2d60fcf1b6",
+            "datavalue": {
+              "value": {
+                "entity-type": "item",
+                "numeric-id": 9546561,
+                "id": "Q9546561"
+              },
+              "type": "wikibase-entityid"
+            },
+            "datatype": "wikibase-item"
+          },
+          "type": "statement",
+          "id": "Q17049335$ff18aac1-4776-3685-f6af-be8d435a5af3",
+          "rank": "normal"
+        }
+      ],
+      "P279": [
+        {
+          "mainsnak": {
+            "snaktype": "value",
+            "property": "P279",
+            "hash": "14111e4830bbd8e24742faccec886125cfa68cff",
+            "datavalue": {
+              "value": {
+                "entity-type": "item",
+                "numeric-id": 77115,
+                "id": "Q77115"
+              },
+              "type": "wikibase-entityid"
+            },
+            "datatype": "wikibase-item"
+          },
+          "type": "statement",
+          "id": "Q17049335$a3afcd23-4f97-6f45-290d-88fa5cc4cc5b",
+          "rank": "normal"
+        },
+        {
+          "mainsnak": {
+            "snaktype": "value",
+            "property": "P279",
+            "hash": "2d8284cc58ba70a3ac35f1798dd11e6efb295489",
+            "datavalue": {
+              "value": {
+                "entity-type": "item",
+                "numeric-id": 2447721,
+                "id": "Q2447721"
+              },
+              "type": "wikibase-entityid"
+            },
+            "datatype": "wikibase-item"
+          },
+          "type": "statement",
+          "id": "Q17049335$e2aea6ba-4240-fffc-7946-8573a13a73bb",
+          "rank": "normal"
+        }
+      ],
+      "P2671": [
+        {
+          "mainsnak": {
+            "snaktype": "value",
+            "property": "P2671",
+            "hash": "e9735505f0c1dc92dc1816e01457ae07fa8b5b42",
+            "datavalue": {
+              "value": "/g/11bc654s27",
+              "type": "string"
+            },
+            "datatype": "external-id"
+          },
+          "type": "statement",
+          "id": "Q17049335$5F6343B6-9BB9-45C9-8906-FE842AA73FE0",
+          "rank": "normal"
+        }
+      ],
+      "P18": [
+        {
+          "mainsnak": {
+            "snaktype": "value",
+            "property": "P18",
+            "hash": "d17091dece223a882f6231569f90c87b34271e3b",
+            "datavalue": {
+              "value": "Bourse du Travail Toulouse.jpg",
+              "type": "string"
+            },
+            "datatype": "commonsMedia"
+          },
+          "type": "statement",
+          "id": "Q17049335$3b008129-46c0-c942-223a-2ddf324eb59c",
+          "rank": "normal"
+        }
+      ],
+      "P373": [
+        {
+          "mainsnak": {
+            "snaktype": "value",
+            "property": "P373",
+            "hash": "94b38da3778300f4f30b8a1195d3f9377e50ea8f",
+            "datavalue": {
+              "value": "Trade union buildings in France",
+              "type": "string"
+            },
+            "datatype": "string"
+          },
+          "type": "statement",
+          "id": "Q17049335$bb5cd7f0-0f12-4590-92e6-a861d53289e3",
+          "rank": "normal"
+        }
+      ]
+    },
+    "sitelinks": {
+      "enwiki": {
+        "site": "enwiki",
+        "title": "Bourse du Travail",
+        "badges": [],
+        "url": "https://en.wikipedia.org/wiki/Bourse_du_Travail"
+      },
+      "frwiki": {
+        "site": "frwiki",
+        "title": "Bourse du travail",
+        "badges": [],
+        "url": "https://fr.wikipedia.org/wiki/Bourse_du_travail"
+      },
+      "kowiki": {
+        "site": "kowiki",
+        "title": "노동거래소 (프랑스)",
+        "badges": [],
+        "url": "https://ko.wikipedia.org/wiki/%EB%85%B8%EB%8F%99%EA%B1%B0%EB%9E%98%EC%86%8C_(%ED%94%84%EB%9E%91%EC%8A%A4)"
+      }
+    }
+  }
+}

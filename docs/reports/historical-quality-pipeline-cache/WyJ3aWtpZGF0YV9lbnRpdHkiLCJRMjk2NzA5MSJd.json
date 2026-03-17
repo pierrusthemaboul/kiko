@@ -1,0 +1,198 @@
+{
+  "pageid": 2837460,
+  "ns": 0,
+  "title": "Q2967091",
+  "lastrevid": 2461487755,
+  "modified": "2026-02-07T12:41:40Z",
+  "type": "item",
+  "id": "Q2967091",
+  "labels": {
+    "fr": {
+      "language": "fr",
+      "value": "chronologie de la télévision française"
+    },
+    "en": {
+      "language": "en",
+      "value": "Television in France by year"
+    },
+    "pt": {
+      "language": "pt",
+      "value": "Televisão da França por ano"
+    },
+    "sv": {
+      "language": "sv",
+      "value": "Franska TV-år"
+    },
+    "az": {
+      "language": "az",
+      "value": "İllərinə görə Fransada televiziya"
+    },
+    "bs": {
+      "language": "bs",
+      "value": "Godine na francuskoj televiziji"
+    },
+    "tr": {
+      "language": "tr",
+      "value": "Onyıla göre Fransa'da televizyon"
+    },
+    "sl": {
+      "language": "sl",
+      "value": "televizija v Franciji po letih"
+    }
+  },
+  "descriptions": {
+    "nl": {
+      "language": "nl",
+      "value": "gebeurtenis in jaar"
+    }
+  },
+  "aliases": {
+    "fr": [
+      {
+        "language": "fr",
+        "value": "Chronologie De La Télévision Française"
+      },
+      {
+        "language": "fr",
+        "value": "Chronologie de la television francaise"
+      }
+    ]
+  },
+  "claims": {
+    "P910": [
+      {
+        "mainsnak": {
+          "snaktype": "value",
+          "property": "P910",
+          "hash": "fc54142d8be19bc04b220f9c03206eb7ef1c8171",
+          "datavalue": {
+            "value": {
+              "entity-type": "item",
+              "numeric-id": 8955683,
+              "id": "Q8955683"
+            },
+            "type": "wikibase-entityid"
+          },
+          "datatype": "wikibase-item"
+        },
+        "type": "statement",
+        "id": "Q2967091$E14B33A0-253C-44DB-8410-EB95927310B2",
+        "rank": "normal",
+        "references": [
+          {
+            "hash": "d4bd87b862b12d99d26e86472d44f26858dee639",
+            "snaks": {
+              "P143": [
+                {
+                  "snaktype": "value",
+                  "property": "P143",
+                  "hash": "f30cbd35620c4ea6d0633aaf0210a8916130469b",
+                  "datavalue": {
+                    "value": {
+                      "entity-type": "item",
+                      "numeric-id": 8447,
+                      "id": "Q8447"
+                    },
+                    "type": "wikibase-entityid"
+                  },
+                  "datatype": "wikibase-item"
+                }
+              ]
+            },
+            "snaks-order": [
+              "P143"
+            ]
+          }
+        ]
+      }
+    ],
+    "P31": [
+      {
+        "mainsnak": {
+          "snaktype": "value",
+          "property": "P31",
+          "hash": "b9953cd69a9e5fc8f8fe263b847673b0013cf93f",
+          "datavalue": {
+            "value": {
+              "entity-type": "item",
+              "numeric-id": 18340514,
+              "id": "Q18340514"
+            },
+            "type": "wikibase-entityid"
+          },
+          "datatype": "wikibase-item"
+        },
+        "type": "statement",
+        "id": "Q2967091$5BC6AFF8-E1B8-4798-80CD-66316DBAB8F8",
+        "rank": "normal"
+      }
+    ],
+    "P1269": [
+      {
+        "mainsnak": {
+          "snaktype": "value",
+          "property": "P1269",
+          "hash": "a7a7e70ab37df06b5efdcab8a93c75180f96f271",
+          "datavalue": {
+            "value": {
+              "entity-type": "item",
+              "numeric-id": 3546742,
+              "id": "Q3546742"
+            },
+            "type": "wikibase-entityid"
+          },
+          "datatype": "wikibase-item"
+        },
+        "type": "statement",
+        "id": "Q2967091$bb6dcdd8-4b3d-ff37-55a3-8b5626ef903e",
+        "rank": "normal"
+      }
+    ],
+    "P2671": [
+      {
+        "mainsnak": {
+          "snaktype": "value",
+          "property": "P2671",
+          "hash": "7b6cf67e4e09d592e2bc89e0c262019ce5b4e69c",
+          "datavalue": {
+            "value": "/g/121_5b1_",
+            "type": "string"
+          },
+          "datatype": "external-id"
+        },
+        "type": "statement",
+        "id": "Q2967091$4549F7BC-3F1A-4D14-A3A6-22FF75F94176",
+        "rank": "normal"
+      }
+    ],
+    "P17": [
+      {
+        "mainsnak": {
+          "snaktype": "value",
+          "property": "P17",
+          "hash": "c05db5d169c2560b9799d567a803d20a392f53e4",
+          "datavalue": {
+            "value": {
+              "entity-type": "item",
+              "numeric-id": 142,
+              "id": "Q142"
+            },
+            "type": "wikibase-entityid"
+          },
+          "datatype": "wikibase-item"
+        },
+        "type": "statement",
+        "id": "Q2967091$8D07FE66-4FD1-41C1-9A49-F6AB537047E7",
+        "rank": "normal"
+      }
+    ]
+  },
+  "sitelinks": {
+    "frwiki": {
+      "site": "frwiki",
+      "title": "Chronologie de la télévision française",
+      "badges": [],
+      "url": "https://fr.wikipedia.org/wiki/Chronologie_de_la_t%C3%A9l%C3%A9vision_fran%C3%A7aise"
+    }
+  }
+}

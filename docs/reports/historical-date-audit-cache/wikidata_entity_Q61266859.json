@@ -1,0 +1,387 @@
+{
+  "saved_at": "2026-03-07T15:40:49.931Z",
+  "value": {
+    "pageid": 61119094,
+    "ns": 0,
+    "title": "Q61266859",
+    "lastrevid": 2362339231,
+    "modified": "2025-06-17T02:27:00Z",
+    "type": "item",
+    "id": "Q61266859",
+    "labels": {
+      "fr": {
+        "language": "fr",
+        "value": "vol de La Joconde"
+      },
+      "en": {
+        "language": "en",
+        "value": "theft of Mona Lisa"
+      },
+      "it": {
+        "language": "it",
+        "value": "furto della Gioconda"
+      },
+      "de": {
+        "language": "de",
+        "value": "Diebstahl der Mona Lisa"
+      },
+      "es": {
+        "language": "es",
+        "value": "robo de la Mona Lisa"
+      },
+      "ca": {
+        "language": "ca",
+        "value": "robatori de la Mona Lisa"
+      },
+      "fi": {
+        "language": "fi",
+        "value": "Mona Lisan varastus"
+      },
+      "cs": {
+        "language": "cs",
+        "value": "krádež Mony Lisy"
+      },
+      "sv": {
+        "language": "sv",
+        "value": "stölden av Mona Lisa"
+      },
+      "ga": {
+        "language": "ga",
+        "value": "goid an Mona Lisa"
+      },
+      "hu": {
+        "language": "hu",
+        "value": "a Mona Lisa elrablása"
+      },
+      "ko": {
+        "language": "ko",
+        "value": "모나리자 도난 사건"
+      },
+      "nb": {
+        "language": "nb",
+        "value": "tyveriet av Mona Lisa"
+      },
+      "sl": {
+        "language": "sl",
+        "value": "kraja Mone Lize"
+      },
+      "ru": {
+        "language": "ru",
+        "value": "кража Моны Лизы"
+      },
+      "pl": {
+        "language": "pl",
+        "value": "kradzież Mony Lisy"
+      }
+    },
+    "descriptions": {
+      "fr": {
+        "language": "fr",
+        "value": "vol du tableau de Léonard de Vinci en 1911"
+      },
+      "es": {
+        "language": "es",
+        "value": "robo del cuadro de Leonardo Da Vinci en 1911"
+      },
+      "cs": {
+        "language": "cs",
+        "value": "krádež uměleckého díla v roce 1911"
+      },
+      "sv": {
+        "language": "sv",
+        "value": "konststölden 1911"
+      },
+      "nb": {
+        "language": "nb",
+        "value": "kunsttyveri i 1911"
+      },
+      "en": {
+        "language": "en",
+        "value": "theft of Leonardo Da Vinci's painting in 1911"
+      },
+      "ru": {
+        "language": "ru",
+        "value": "событие в мире искусства"
+      },
+      "pl": {
+        "language": "pl",
+        "value": "kradzież obrazu autorstwa Leonarda da Vinci w 1911 roku"
+      }
+    },
+    "aliases": {
+      "cs": [
+        {
+          "language": "cs",
+          "value": "ukradení Mony Lisy"
+        }
+      ],
+      "hu": [
+        {
+          "language": "hu",
+          "value": "Mona Lisa elrablása"
+        }
+      ],
+      "ru": [
+        {
+          "language": "ru",
+          "value": "кража Джоконды"
+        }
+      ]
+    },
+    "claims": {
+      "P31": [
+        {
+          "mainsnak": {
+            "snaktype": "value",
+            "property": "P31",
+            "hash": "b2936778d1ce40086e7f0edcf23f375cf8bd6426",
+            "datavalue": {
+              "value": {
+                "entity-type": "item",
+                "numeric-id": 1756454,
+                "id": "Q1756454"
+              },
+              "type": "wikibase-entityid"
+            },
+            "datatype": "wikibase-item"
+          },
+          "type": "statement",
+          "id": "Q61266859$52b0151d-463d-6ff6-f278-69d24336190d",
+          "rank": "normal"
+        }
+      ],
+      "P17": [
+        {
+          "mainsnak": {
+            "snaktype": "value",
+            "property": "P17",
+            "hash": "c05db5d169c2560b9799d567a803d20a392f53e4",
+            "datavalue": {
+              "value": {
+                "entity-type": "item",
+                "numeric-id": 142,
+                "id": "Q142"
+              },
+              "type": "wikibase-entityid"
+            },
+            "datatype": "wikibase-item"
+          },
+          "type": "statement",
+          "id": "Q61266859$87ed6c38-4eea-f2ef-e0fb-741d476df2e9",
+          "rank": "normal"
+        }
+      ],
+      "P585": [
+        {
+          "mainsnak": {
+            "snaktype": "value",
+            "property": "P585",
+            "hash": "797313cbfdf0ef72ecaa9211fb3f2c65cfb1da5c",
+            "datavalue": {
+              "value": {
+                "time": "+1911-08-21T00:00:00Z",
+                "timezone": 0,
+                "before": 0,
+                "after": 0,
+                "precision": 11,
+                "calendarmodel": "http://www.wikidata.org/entity/Q1985727"
+              },
+              "type": "time"
+            },
+            "datatype": "time"
+          },
+          "type": "statement",
+          "id": "Q61266859$7ad93c5b-4f32-0fa7-1694-f74158f87c1b",
+          "rank": "normal"
+        }
+      ],
+      "P276": [
+        {
+          "mainsnak": {
+            "snaktype": "value",
+            "property": "P276",
+            "hash": "126fcf30d730ee8f1f7c4eeb1e4c1943a165770d",
+            "datavalue": {
+              "value": {
+                "entity-type": "item",
+                "numeric-id": 1075988,
+                "id": "Q1075988"
+              },
+              "type": "wikibase-entityid"
+            },
+            "datatype": "wikibase-item"
+          },
+          "type": "statement",
+          "id": "Q61266859$8c132639-4271-fb73-4c10-f90d37de5e49",
+          "rank": "normal"
+        }
+      ],
+      "P8031": [
+        {
+          "mainsnak": {
+            "snaktype": "value",
+            "property": "P8031",
+            "hash": "07ca60e941a78a736683ca74f577646f102a3548",
+            "datavalue": {
+              "value": {
+                "entity-type": "item",
+                "numeric-id": 361362,
+                "id": "Q361362"
+              },
+              "type": "wikibase-entityid"
+            },
+            "datatype": "wikibase-item"
+          },
+          "type": "statement",
+          "id": "Q61266859$6D0F6D63-7C00-4407-BAC3-320958EC2521",
+          "rank": "normal"
+        }
+      ],
+      "P6802": [
+        {
+          "mainsnak": {
+            "snaktype": "value",
+            "property": "P6802",
+            "hash": "08959577e34a88f946be341ff1f9f84d76b86801",
+            "datavalue": {
+              "value": "After photo for the return of Gioconda at the Louvre Museum 1914.jpg",
+              "type": "string"
+            },
+            "datatype": "commonsMedia"
+          },
+          "type": "statement",
+          "id": "Q61266859$1f68729c-40e3-8afa-a0f8-471e3253f293",
+          "rank": "normal"
+        }
+      ],
+      "P18": [
+        {
+          "mainsnak": {
+            "snaktype": "value",
+            "property": "P18",
+            "hash": "2442deab796ee668bed89f88f0cc8159ea0318c8",
+            "datavalue": {
+              "value": "Vincenzio Peruggia stealing Mona Lisa.jpg",
+              "type": "string"
+            },
+            "datatype": "commonsMedia"
+          },
+          "type": "statement",
+          "id": "Q61266859$9d22bdf1-4218-bd6f-76c2-d00158e93e7d",
+          "rank": "normal"
+        }
+      ],
+      "P3342": [
+        {
+          "mainsnak": {
+            "snaktype": "value",
+            "property": "P3342",
+            "hash": "2d613968389ead138adf6d80563a0da43c457d29",
+            "datavalue": {
+              "value": {
+                "entity-type": "item",
+                "numeric-id": 5593,
+                "id": "Q5593"
+              },
+              "type": "wikibase-entityid"
+            },
+            "datatype": "wikibase-item"
+          },
+          "type": "statement",
+          "qualifiers": {
+            "P2868": [
+              {
+                "snaktype": "value",
+                "property": "P2868",
+                "hash": "24bba06b6d9bf47aa140d1e96eec19841fa30170",
+                "datavalue": {
+                  "value": {
+                    "entity-type": "item",
+                    "numeric-id": 224952,
+                    "id": "Q224952"
+                  },
+                  "type": "wikibase-entityid"
+                },
+                "datatype": "wikibase-item"
+              }
+            ]
+          },
+          "qualifiers-order": [
+            "P2868"
+          ],
+          "id": "Q61266859$2f5282e5-479c-08bc-77f1-8504a11eac05",
+          "rank": "normal"
+        },
+        {
+          "mainsnak": {
+            "snaktype": "value",
+            "property": "P3342",
+            "hash": "0d4a2401e249e80ddd5d4aa15b498eb2320d6e75",
+            "datavalue": {
+              "value": {
+                "entity-type": "item",
+                "numeric-id": 133855,
+                "id": "Q133855"
+              },
+              "type": "wikibase-entityid"
+            },
+            "datatype": "wikibase-item"
+          },
+          "type": "statement",
+          "qualifiers": {
+            "P2868": [
+              {
+                "snaktype": "value",
+                "property": "P2868",
+                "hash": "24bba06b6d9bf47aa140d1e96eec19841fa30170",
+                "datavalue": {
+                  "value": {
+                    "entity-type": "item",
+                    "numeric-id": 224952,
+                    "id": "Q224952"
+                  },
+                  "type": "wikibase-entityid"
+                },
+                "datatype": "wikibase-item"
+              }
+            ]
+          },
+          "qualifiers-order": [
+            "P2868"
+          ],
+          "id": "Q61266859$4304d301-4af2-43e9-38f2-598692a3ed15",
+          "rank": "normal"
+        }
+      ],
+      "P12912": [
+        {
+          "mainsnak": {
+            "snaktype": "value",
+            "property": "P12912",
+            "hash": "17c5563e4b776547d3c25bfc7318ef5530a05c61",
+            "datavalue": {
+              "value": {
+                "entity-type": "item",
+                "numeric-id": 12418,
+                "id": "Q12418"
+              },
+              "type": "wikibase-entityid"
+            },
+            "datatype": "wikibase-item"
+          },
+          "type": "statement",
+          "id": "Q61266859$2a0c998b-40e6-b978-d408-66dd9b919d75",
+          "rank": "normal"
+        }
+      ]
+    },
+    "sitelinks": {
+      "frwiki": {
+        "site": "frwiki",
+        "title": "Vol de La Joconde",
+        "badges": [],
+        "url": "https://fr.wikipedia.org/wiki/Vol_de_La_Joconde"
+      }
+    }
+  }
+}

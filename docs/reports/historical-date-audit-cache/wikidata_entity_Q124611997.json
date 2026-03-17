@@ -1,0 +1,112 @@
+{
+  "saved_at": "2026-03-07T15:31:18.426Z",
+  "value": {
+    "pageid": 118761057,
+    "ns": 0,
+    "title": "Q124611997",
+    "lastrevid": 2360904804,
+    "modified": "2025-06-14T15:58:43Z",
+    "type": "item",
+    "id": "Q124611997",
+    "labels": {
+      "en": {
+        "language": "en",
+        "value": "Hagia Sophia, Edessa"
+      },
+      "fr": {
+        "language": "fr",
+        "value": "Sainte-Sophie (Édesse)"
+      }
+    },
+    "descriptions": {
+      "fr": {
+        "language": "fr",
+        "value": "ancien monument byzantin à Édesse"
+      },
+      "en": {
+        "language": "en",
+        "value": "former church in Edessa"
+      }
+    },
+    "aliases": {},
+    "claims": {
+      "P31": [
+        {
+          "mainsnak": {
+            "snaktype": "value",
+            "property": "P31",
+            "hash": "5701604a1a42c206e6d7dd025bfa5ab168ab95e9",
+            "datavalue": {
+              "value": {
+                "entity-type": "item",
+                "numeric-id": 24398318,
+                "id": "Q24398318"
+              },
+              "type": "wikibase-entityid"
+            },
+            "datatype": "wikibase-item"
+          },
+          "type": "statement",
+          "id": "Q124611997$7962793a-3b95-453f-b127-64bda836fb55",
+          "rank": "normal"
+        }
+      ],
+      "P5816": [
+        {
+          "mainsnak": {
+            "snaktype": "value",
+            "property": "P5816",
+            "hash": "d6c4840577ba6c097ffaaf909de0a2afa5e881b9",
+            "datavalue": {
+              "value": {
+                "entity-type": "item",
+                "numeric-id": 56556915,
+                "id": "Q56556915"
+              },
+              "type": "wikibase-entityid"
+            },
+            "datatype": "wikibase-item"
+          },
+          "type": "statement",
+          "id": "Q124611997$e09d95ac-415b-218f-9b4e-b3eb5e4db626",
+          "rank": "normal"
+        }
+      ],
+      "P131": [
+        {
+          "mainsnak": {
+            "snaktype": "value",
+            "property": "P131",
+            "hash": "0d0fdeb91f0628e44784f258fd12e6573290507e",
+            "datavalue": {
+              "value": {
+                "entity-type": "item",
+                "numeric-id": 1190403,
+                "id": "Q1190403"
+              },
+              "type": "wikibase-entityid"
+            },
+            "datatype": "wikibase-item"
+          },
+          "type": "statement",
+          "id": "Q124611997$7b3be24e-43e0-2196-d551-73b4dcfe5d76",
+          "rank": "normal"
+        }
+      ]
+    },
+    "sitelinks": {
+      "enwiki": {
+        "site": "enwiki",
+        "title": "Hagia Sophia, Edessa",
+        "badges": [],
+        "url": "https://en.wikipedia.org/wiki/Hagia_Sophia,_Edessa"
+      },
+      "frwiki": {
+        "site": "frwiki",
+        "title": "Sainte-Sophie (Édesse)",
+        "badges": [],
+        "url": "https://fr.wikipedia.org/wiki/Sainte-Sophie_(%C3%89desse)"
+      }
+    }
+  }
+}

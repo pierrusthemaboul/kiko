@@ -1,0 +1,641 @@
+{
+  "pageid": 31632208,
+  "ns": 0,
+  "title": "Q30018009",
+  "lastrevid": 2173935577,
+  "modified": "2024-06-07T18:14:03Z",
+  "type": "item",
+  "id": "Q30018009",
+  "labels": {
+    "en": {
+      "language": "en",
+      "value": "Hôpital Porte Madeleine d'Orléans"
+    },
+    "fr": {
+      "language": "fr",
+      "value": "hôpital Porte-Madeleine"
+    }
+  },
+  "descriptions": {
+    "fr": {
+      "language": "fr",
+      "value": "ancien hôpital français se situant à Orléans"
+    },
+    "ko": {
+      "language": "ko",
+      "value": "병원"
+    },
+    "de": {
+      "language": "de",
+      "value": "Krankenhaus"
+    },
+    "ar": {
+      "language": "ar",
+      "value": "مستشفى في أورليان، فرنسا"
+    },
+    "ast": {
+      "language": "ast",
+      "value": "hospital de Francia"
+    },
+    "id": {
+      "language": "id",
+      "value": "rumah sakit di Prancis"
+    },
+    "ace": {
+      "language": "ace",
+      "value": "rumoh sakét"
+    },
+    "jv": {
+      "language": "jv",
+      "value": "griya sakit"
+    },
+    "min": {
+      "language": "min",
+      "value": "rumah sakik"
+    },
+    "en": {
+      "language": "en",
+      "value": "former French hospital"
+    }
+  },
+  "aliases": {},
+  "claims": {
+    "P18": [
+      {
+        "mainsnak": {
+          "snaktype": "value",
+          "property": "P18",
+          "hash": "0ce50e5e8ce79e2278ab206a809e409e1fdd7ba0",
+          "datavalue": {
+            "value": "Hôpital Orléans Porte Madeleine 01.jpg",
+            "type": "string"
+          },
+          "datatype": "commonsMedia"
+        },
+        "type": "statement",
+        "qualifiers": {
+          "P585": [
+            {
+              "snaktype": "value",
+              "property": "P585",
+              "hash": "28a241a56e8b2b17c6614c0c33e41716fac1ee1f",
+              "datavalue": {
+                "value": {
+                  "time": "+2008-07-31T00:00:00Z",
+                  "timezone": 0,
+                  "before": 0,
+                  "after": 0,
+                  "precision": 11,
+                  "calendarmodel": "http://www.wikidata.org/entity/Q1985727"
+                },
+                "type": "time"
+              },
+              "datatype": "time"
+            }
+          ]
+        },
+        "qualifiers-order": [
+          "P585"
+        ],
+        "id": "Q30018009$7A6B3313-238F-4FB4-9B05-A48DC3AE1461",
+        "rank": "normal",
+        "references": [
+          {
+            "hash": "d4bd87b862b12d99d26e86472d44f26858dee639",
+            "snaks": {
+              "P143": [
+                {
+                  "snaktype": "value",
+                  "property": "P143",
+                  "hash": "f30cbd35620c4ea6d0633aaf0210a8916130469b",
+                  "datavalue": {
+                    "value": {
+                      "entity-type": "item",
+                      "numeric-id": 8447,
+                      "id": "Q8447"
+                    },
+                    "type": "wikibase-entityid"
+                  },
+                  "datatype": "wikibase-item"
+                }
+              ]
+            },
+            "snaks-order": [
+              "P143"
+            ]
+          }
+        ]
+      }
+    ],
+    "P625": [
+      {
+        "mainsnak": {
+          "snaktype": "value",
+          "property": "P625",
+          "hash": "5e265a18ba7762399283499e87da472e8fff831e",
+          "datavalue": {
+            "value": {
+              "latitude": 47.900826,
+              "longitude": 1.896111,
+              "altitude": null,
+              "precision": 0.0000027777777777778,
+              "globe": "http://www.wikidata.org/entity/Q2"
+            },
+            "type": "globecoordinate"
+          },
+          "datatype": "globe-coordinate"
+        },
+        "type": "statement",
+        "id": "Q30018009$1E37096B-87CE-48C5-8496-C032E799C104",
+        "rank": "normal",
+        "references": [
+          {
+            "hash": "d4bd87b862b12d99d26e86472d44f26858dee639",
+            "snaks": {
+              "P143": [
+                {
+                  "snaktype": "value",
+                  "property": "P143",
+                  "hash": "f30cbd35620c4ea6d0633aaf0210a8916130469b",
+                  "datavalue": {
+                    "value": {
+                      "entity-type": "item",
+                      "numeric-id": 8447,
+                      "id": "Q8447"
+                    },
+                    "type": "wikibase-entityid"
+                  },
+                  "datatype": "wikibase-item"
+                }
+              ]
+            },
+            "snaks-order": [
+              "P143"
+            ]
+          }
+        ]
+      }
+    ],
+    "P373": [
+      {
+        "mainsnak": {
+          "snaktype": "value",
+          "property": "P373",
+          "hash": "a15502e2c6c5844a1062f89527f70410d0c63da3",
+          "datavalue": {
+            "value": "Hôpital Porte Madeleine d'Orléans",
+            "type": "string"
+          },
+          "datatype": "string"
+        },
+        "type": "statement",
+        "id": "Q30018009$ED895BDB-215B-4E35-BC4A-463BD1F492FA",
+        "rank": "normal"
+      }
+    ],
+    "P380": [
+      {
+        "mainsnak": {
+          "snaktype": "value",
+          "property": "P380",
+          "hash": "e8ea29d0cad57ccff16e9db6434c130bab846783",
+          "datavalue": {
+            "value": "PA00098849",
+            "type": "string"
+          },
+          "datatype": "external-id"
+        },
+        "type": "statement",
+        "id": "Q30018009$B307B4A8-1BD2-4403-9BBE-7B4F0F0DD1DF",
+        "rank": "normal",
+        "references": [
+          {
+            "hash": "d709174cc609072fbf310bb52ddfb7aa2332b473",
+            "snaks": {
+              "P248": [
+                {
+                  "snaktype": "value",
+                  "property": "P248",
+                  "hash": "fc376b4e25f8c58fa7210b660e00a66558a3332b",
+                  "datavalue": {
+                    "value": {
+                      "entity-type": "item",
+                      "numeric-id": 809830,
+                      "id": "Q809830"
+                    },
+                    "type": "wikibase-entityid"
+                  },
+                  "datatype": "wikibase-item"
+                }
+              ]
+            },
+            "snaks-order": [
+              "P248"
+            ]
+          }
+        ]
+      }
+    ],
+    "P1435": [
+      {
+        "mainsnak": {
+          "snaktype": "value",
+          "property": "P1435",
+          "hash": "2a0d37ac7e76d305563257e91e85bb3847f90355",
+          "datavalue": {
+            "value": {
+              "entity-type": "item",
+              "numeric-id": 10387575,
+              "id": "Q10387575"
+            },
+            "type": "wikibase-entityid"
+          },
+          "datatype": "wikibase-item"
+        },
+        "type": "statement",
+        "qualifiers": {
+          "P580": [
+            {
+              "snaktype": "value",
+              "property": "P580",
+              "hash": "aa15ae09785c8ae5bdda01c4a393d8f126d6b0f5",
+              "datavalue": {
+                "value": {
+                  "time": "+1994-10-04T00:00:00Z",
+                  "timezone": 0,
+                  "before": 0,
+                  "after": 0,
+                  "precision": 11,
+                  "calendarmodel": "http://www.wikidata.org/entity/Q1985727"
+                },
+                "type": "time"
+              },
+              "datatype": "time"
+            }
+          ]
+        },
+        "qualifiers-order": [
+          "P580"
+        ],
+        "id": "Q30018009$F98B844E-5E0E-477A-97E0-9607460F4E41",
+        "rank": "normal",
+        "references": [
+          {
+            "hash": "d709174cc609072fbf310bb52ddfb7aa2332b473",
+            "snaks": {
+              "P248": [
+                {
+                  "snaktype": "value",
+                  "property": "P248",
+                  "hash": "fc376b4e25f8c58fa7210b660e00a66558a3332b",
+                  "datavalue": {
+                    "value": {
+                      "entity-type": "item",
+                      "numeric-id": 809830,
+                      "id": "Q809830"
+                    },
+                    "type": "wikibase-entityid"
+                  },
+                  "datatype": "wikibase-item"
+                }
+              ]
+            },
+            "snaks-order": [
+              "P248"
+            ]
+          }
+        ]
+      },
+      {
+        "mainsnak": {
+          "snaktype": "value",
+          "property": "P1435",
+          "hash": "47d4f633ccb039ebb1a08af61dffb908b5e07611",
+          "datavalue": {
+            "value": {
+              "entity-type": "item",
+              "numeric-id": 10387684,
+              "id": "Q10387684"
+            },
+            "type": "wikibase-entityid"
+          },
+          "datatype": "wikibase-item"
+        },
+        "type": "statement",
+        "qualifiers": {
+          "P580": [
+            {
+              "snaktype": "value",
+              "property": "P580",
+              "hash": "114d4367f5076f15186876d5622905b0dcc420e9",
+              "datavalue": {
+                "value": {
+                  "time": "+1997-07-17T00:00:00Z",
+                  "timezone": 0,
+                  "before": 0,
+                  "after": 0,
+                  "precision": 11,
+                  "calendarmodel": "http://www.wikidata.org/entity/Q1985727"
+                },
+                "type": "time"
+              },
+              "datatype": "time"
+            }
+          ]
+        },
+        "qualifiers-order": [
+          "P580"
+        ],
+        "id": "Q30018009$091EB273-302D-4758-895A-6DFE429E9E2F",
+        "rank": "normal",
+        "references": [
+          {
+            "hash": "d709174cc609072fbf310bb52ddfb7aa2332b473",
+            "snaks": {
+              "P248": [
+                {
+                  "snaktype": "value",
+                  "property": "P248",
+                  "hash": "fc376b4e25f8c58fa7210b660e00a66558a3332b",
+                  "datavalue": {
+                    "value": {
+                      "entity-type": "item",
+                      "numeric-id": 809830,
+                      "id": "Q809830"
+                    },
+                    "type": "wikibase-entityid"
+                  },
+                  "datatype": "wikibase-item"
+                }
+              ]
+            },
+            "snaks-order": [
+              "P248"
+            ]
+          }
+        ]
+      }
+    ],
+    "P17": [
+      {
+        "mainsnak": {
+          "snaktype": "value",
+          "property": "P17",
+          "hash": "c05db5d169c2560b9799d567a803d20a392f53e4",
+          "datavalue": {
+            "value": {
+              "entity-type": "item",
+              "numeric-id": 142,
+              "id": "Q142"
+            },
+            "type": "wikibase-entityid"
+          },
+          "datatype": "wikibase-item"
+        },
+        "type": "statement",
+        "id": "Q30018009$3B819369-F717-4F00-B7A7-08B0CD8825DD",
+        "rank": "normal"
+      }
+    ],
+    "P131": [
+      {
+        "mainsnak": {
+          "snaktype": "value",
+          "property": "P131",
+          "hash": "3039d7d25e87558d275109ce59ffe3d97bedcf82",
+          "datavalue": {
+            "value": {
+              "entity-type": "item",
+              "numeric-id": 6548,
+              "id": "Q6548"
+            },
+            "type": "wikibase-entityid"
+          },
+          "datatype": "wikibase-item"
+        },
+        "type": "statement",
+        "id": "Q30018009$84792A22-F65B-4E0E-9D5A-ADB8777E0507",
+        "rank": "normal"
+      }
+    ],
+    "P466": [
+      {
+        "mainsnak": {
+          "snaktype": "value",
+          "property": "P466",
+          "hash": "223d7569ab81130c78f9d18f8f12df13d5191176",
+          "datavalue": {
+            "value": {
+              "entity-type": "item",
+              "numeric-id": 2408177,
+              "id": "Q2408177"
+            },
+            "type": "wikibase-entityid"
+          },
+          "datatype": "wikibase-item"
+        },
+        "type": "statement",
+        "qualifiers": {
+          "P582": [
+            {
+              "snaktype": "value",
+              "property": "P582",
+              "hash": "85ebf02f8b80826a7e6dc78230ef266087006d1f",
+              "datavalue": {
+                "value": {
+                  "time": "+2015-00-00T00:00:00Z",
+                  "timezone": 0,
+                  "before": 0,
+                  "after": 0,
+                  "precision": 9,
+                  "calendarmodel": "http://www.wikidata.org/entity/Q1985727"
+                },
+                "type": "time"
+              },
+              "datatype": "time"
+            }
+          ]
+        },
+        "qualifiers-order": [
+          "P582"
+        ],
+        "id": "Q30018009$d46cd6b3-407e-4e26-77b9-dda30474d7c9",
+        "rank": "normal"
+      }
+    ],
+    "P31": [
+      {
+        "mainsnak": {
+          "snaktype": "value",
+          "property": "P31",
+          "hash": "2be06461a4b9778fb10baf466d3453acb9314bd4",
+          "datavalue": {
+            "value": {
+              "entity-type": "item",
+              "numeric-id": 16917,
+              "id": "Q16917"
+            },
+            "type": "wikibase-entityid"
+          },
+          "datatype": "wikibase-item"
+        },
+        "type": "statement",
+        "id": "Q30018009$39fa8ee7-4de8-a2a8-1df2-8892d1bfadee",
+        "rank": "normal"
+      },
+      {
+        "mainsnak": {
+          "snaktype": "value",
+          "property": "P31",
+          "hash": "0a7a1fd883088765ed1722cc0a935dbe4100c4c5",
+          "datavalue": {
+            "value": {
+              "entity-type": "item",
+              "numeric-id": 64578911,
+              "id": "Q64578911"
+            },
+            "type": "wikibase-entityid"
+          },
+          "datatype": "wikibase-item"
+        },
+        "type": "statement",
+        "id": "Q30018009$F0E4EF70-1FA7-4A04-A903-A67723D38013",
+        "rank": "normal",
+        "references": [
+          {
+            "hash": "73d98784d4a94c9f74e1497fc63574ccf4eef61a",
+            "snaks": {
+              "P143": [
+                {
+                  "snaktype": "value",
+                  "property": "P143",
+                  "hash": "f30cbd35620c4ea6d0633aaf0210a8916130469b",
+                  "datavalue": {
+                    "value": {
+                      "entity-type": "item",
+                      "numeric-id": 8447,
+                      "id": "Q8447"
+                    },
+                    "type": "wikibase-entityid"
+                  },
+                  "datatype": "wikibase-item"
+                }
+              ],
+              "P3452": [
+                {
+                  "snaktype": "value",
+                  "property": "P3452",
+                  "hash": "47e76f0c938288920483f04b784718e9d33ea54e",
+                  "datavalue": {
+                    "value": {
+                      "entity-type": "item",
+                      "numeric-id": 8941333,
+                      "id": "Q8941333"
+                    },
+                    "type": "wikibase-entityid"
+                  },
+                  "datatype": "wikibase-item"
+                }
+              ]
+            },
+            "snaks-order": [
+              "P143",
+              "P3452"
+            ]
+          }
+        ]
+      }
+    ],
+    "P84": [
+      {
+        "mainsnak": {
+          "snaktype": "value",
+          "property": "P84",
+          "hash": "eea00b964b8872552b2c89ac2f7eda96c4a1a9eb",
+          "datavalue": {
+            "value": {
+              "entity-type": "item",
+              "numeric-id": 3158954,
+              "id": "Q3158954"
+            },
+            "type": "wikibase-entityid"
+          },
+          "datatype": "wikibase-item"
+        },
+        "type": "statement",
+        "id": "Q30018009$42A2C61F-E798-4E26-8063-161366E05FF3",
+        "rank": "normal",
+        "references": [
+          {
+            "hash": "0037e043388cace0be91d912b5f220b0218de858",
+            "snaks": {
+              "P143": [
+                {
+                  "snaktype": "value",
+                  "property": "P143",
+                  "hash": "f30cbd35620c4ea6d0633aaf0210a8916130469b",
+                  "datavalue": {
+                    "value": {
+                      "entity-type": "item",
+                      "numeric-id": 8447,
+                      "id": "Q8447"
+                    },
+                    "type": "wikibase-entityid"
+                  },
+                  "datatype": "wikibase-item"
+                }
+              ],
+              "P4656": [
+                {
+                  "snaktype": "value",
+                  "property": "P4656",
+                  "hash": "5aba80af73cf7b92309ccef688f0ce3263f98546",
+                  "datavalue": {
+                    "value": "https://fr.wikipedia.org/w/index.php?title=Hôpital_Porte-Madeleine&oldid=157122101",
+                    "type": "string"
+                  },
+                  "datatype": "url"
+                }
+              ]
+            },
+            "snaks-order": [
+              "P143",
+              "P4656"
+            ]
+          }
+        ]
+      }
+    ],
+    "P2671": [
+      {
+        "mainsnak": {
+          "snaktype": "value",
+          "property": "P2671",
+          "hash": "0e0b19e6304ae8b68437fbc6ed46dcf63bcff0fd",
+          "datavalue": {
+            "value": "/g/11df0t1cgs",
+            "type": "string"
+          },
+          "datatype": "external-id"
+        },
+        "type": "statement",
+        "id": "Q30018009$BFFDD6A9-2A5B-4427-A5EF-FBC319A4B452",
+        "rank": "normal"
+      }
+    ]
+  },
+  "sitelinks": {
+    "commonswiki": {
+      "site": "commonswiki",
+      "title": "Category:Hôpital Porte Madeleine d'Orléans",
+      "badges": [],
+      "url": "https://commons.wikimedia.org/wiki/Category:H%C3%B4pital_Porte_Madeleine_d%27Orl%C3%A9ans"
+    },
+    "frwiki": {
+      "site": "frwiki",
+      "title": "Hôpital Porte-Madeleine",
+      "badges": [],
+      "url": "https://fr.wikipedia.org/wiki/H%C3%B4pital_Porte-Madeleine"
+    }
+  }
+}

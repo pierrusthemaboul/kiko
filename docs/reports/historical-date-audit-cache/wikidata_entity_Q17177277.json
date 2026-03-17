@@ -1,0 +1,164 @@
+{
+  "saved_at": "2026-03-07T14:26:05.901Z",
+  "value": {
+    "pageid": 18771716,
+    "ns": 0,
+    "title": "Q17177277",
+    "lastrevid": 2461802372,
+    "modified": "2026-02-08T18:02:19Z",
+    "type": "item",
+    "id": "Q17177277",
+    "labels": {
+      "fr": {
+        "language": "fr",
+        "value": "dissolution parlementaire"
+      },
+      "de": {
+        "language": "de",
+        "value": "Auflösung des französischen Parlaments"
+      },
+      "en": {
+        "language": "en",
+        "value": "early dissolution of the National Assembly"
+      },
+      "it": {
+        "language": "it",
+        "value": "Scioglimento parlamentare (Francia)"
+      },
+      "nl": {
+        "language": "nl",
+        "value": "Parlementaire ontbinding (Frankrijk)"
+      },
+      "pt": {
+        "language": "pt",
+        "value": "Dissolução parlamentar (França)"
+      },
+      "uk": {
+        "language": "uk",
+        "value": "Розпуск парламенту (Франція)"
+      }
+    },
+    "descriptions": {
+      "fr": {
+        "language": "fr",
+        "value": "dissolution parlementaire en France"
+      },
+      "en": {
+        "language": "en",
+        "value": "event that ends a parliament"
+      }
+    },
+    "aliases": {
+      "en": [
+        {
+          "language": "en",
+          "value": "early dissolution of the National Assembly (France)"
+        }
+      ],
+      "fr": [
+        {
+          "language": "fr",
+          "value": "dissolution parlementaire (France)"
+        }
+      ]
+    },
+    "claims": {
+      "P279": [
+        {
+          "mainsnak": {
+            "snaktype": "value",
+            "property": "P279",
+            "hash": "d0c7c9c230dc0a3f4b8ba72b8f09ed9912cffa30",
+            "datavalue": {
+              "value": {
+                "entity-type": "item",
+                "numeric-id": 741182,
+                "id": "Q741182"
+              },
+              "type": "wikibase-entityid"
+            },
+            "datatype": "wikibase-item"
+          },
+          "type": "statement",
+          "id": "Q17177277$a920047f-4d29-913a-bd15-26b71f3ef2b1",
+          "rank": "normal"
+        }
+      ],
+      "P17": [
+        {
+          "mainsnak": {
+            "snaktype": "value",
+            "property": "P17",
+            "hash": "c05db5d169c2560b9799d567a803d20a392f53e4",
+            "datavalue": {
+              "value": {
+                "entity-type": "item",
+                "numeric-id": 142,
+                "id": "Q142"
+              },
+              "type": "wikibase-entityid"
+            },
+            "datatype": "wikibase-item"
+          },
+          "type": "statement",
+          "id": "Q17177277$d8e2514d-456b-0bc5-6563-e9369efeef86",
+          "rank": "normal"
+        }
+      ],
+      "P1001": [
+        {
+          "mainsnak": {
+            "snaktype": "value",
+            "property": "P1001",
+            "hash": "efe2878aed693a79dce942b2f853910a78c4e2a8",
+            "datavalue": {
+              "value": {
+                "entity-type": "item",
+                "numeric-id": 142,
+                "id": "Q142"
+              },
+              "type": "wikibase-entityid"
+            },
+            "datatype": "wikibase-item"
+          },
+          "type": "statement",
+          "id": "Q17177277$25957df0-4032-9a74-5412-1ad8d886b6ae",
+          "rank": "normal"
+        }
+      ],
+      "P2671": [
+        {
+          "mainsnak": {
+            "snaktype": "value",
+            "property": "P2671",
+            "hash": "76032c1dd5142fd9b287a1514003b3cd97db5b1b",
+            "datavalue": {
+              "value": "/g/1q6jzf7sz",
+              "type": "string"
+            },
+            "datatype": "external-id"
+          },
+          "type": "statement",
+          "id": "Q17177277$453AD20E-606E-4926-ACB7-7873FB9CC902",
+          "rank": "normal"
+        }
+      ]
+    },
+    "sitelinks": {
+      "enwiki": {
+        "site": "enwiki",
+        "title": "Parliamentary dissolution (France)",
+        "badges": [],
+        "url": "https://en.wikipedia.org/wiki/Parliamentary_dissolution_(France)"
+      },
+      "frwiki": {
+        "site": "frwiki",
+        "title": "Dissolution de l'Assemblée nationale (France)",
+        "badges": [
+          "Q17437796"
+        ],
+        "url": "https://fr.wikipedia.org/wiki/Dissolution_de_l%27Assembl%C3%A9e_nationale_(France)"
+      }
+    }
+  }
+}

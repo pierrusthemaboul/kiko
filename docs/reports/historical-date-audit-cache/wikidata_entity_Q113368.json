@@ -1,0 +1,1087 @@
+{
+  "saved_at": "2026-03-07T15:06:29.829Z",
+  "value": {
+    "pageid": 115971,
+    "ns": 0,
+    "title": "Q113368",
+    "lastrevid": 2409661528,
+    "modified": "2025-09-26T16:13:26Z",
+    "type": "item",
+    "id": "Q113368",
+    "labels": {
+      "de": {
+        "language": "de",
+        "value": "Kernkraftwerk Phénix"
+      },
+      "en": {
+        "language": "en",
+        "value": "Phénix"
+      },
+      "fr": {
+        "language": "fr",
+        "value": "Phénix"
+      },
+      "it": {
+        "language": "it",
+        "value": "centrale elettronucleare Phénix"
+      },
+      "ja": {
+        "language": "ja",
+        "value": "フェニックス"
+      },
+      "ru": {
+        "language": "ru",
+        "value": "Феникс"
+      },
+      "ca": {
+        "language": "ca",
+        "value": "Phénix"
+      },
+      "oc": {
+        "language": "oc",
+        "value": "Phénix"
+      },
+      "nl": {
+        "language": "nl",
+        "value": "Phénix"
+      },
+      "nb": {
+        "language": "nb",
+        "value": "Phénix kjernekraftverk"
+      },
+      "es": {
+        "language": "es",
+        "value": "Phénix"
+      },
+      "zh": {
+        "language": "zh",
+        "value": "鳳凰號"
+      },
+      "uk": {
+        "language": "uk",
+        "value": "Фенікс (реактор)"
+      }
+    },
+    "descriptions": {
+      "en": {
+        "language": "en",
+        "value": "nuclear power plant"
+      },
+      "nl": {
+        "language": "nl",
+        "value": "kerncentrale in Frankrijk"
+      },
+      "fr": {
+        "language": "fr",
+        "value": "réacteur nucléaire français aujourd'hui à l'arrêt"
+      },
+      "de": {
+        "language": "de",
+        "value": "stillgelegter Brutreaktor in Marcoule, Frankreich"
+      },
+      "nb": {
+        "language": "nb",
+        "value": "nedlagt fransk kjernekraftverk"
+      },
+      "ru": {
+        "language": "ru",
+        "value": "французский энергетический реактор-размножитель на быстрых нейтронах с натриевым теплоносителем в ядерном центре Маркуль"
+      }
+    },
+    "aliases": {
+      "en": [
+        {
+          "language": "en",
+          "value": "Phenix"
+        },
+        {
+          "language": "en",
+          "value": "Phenix nuclear power plant"
+        }
+      ],
+      "nl": [
+        {
+          "language": "nl",
+          "value": "Phenix"
+        }
+      ]
+    },
+    "claims": {
+      "P625": [
+        {
+          "mainsnak": {
+            "snaktype": "value",
+            "property": "P625",
+            "hash": "9f0d3995cce85dc22823934702f3f7ec6fa66bd8",
+            "datavalue": {
+              "value": {
+                "latitude": 44.14333333,
+                "longitude": 4.71166667,
+                "altitude": null,
+                "precision": 0.00027777777777778,
+                "globe": "http://www.wikidata.org/entity/Q2"
+              },
+              "type": "globecoordinate"
+            },
+            "datatype": "globe-coordinate"
+          },
+          "type": "statement",
+          "id": "Q113368$A5672104-9E85-4160-8638-F9D8B8091AC2",
+          "rank": "normal",
+          "references": [
+            {
+              "hash": "9a24f7c0208b05d6be97077d855671d1dfdbc0dd",
+              "snaks": {
+                "P143": [
+                  {
+                    "snaktype": "value",
+                    "property": "P143",
+                    "hash": "d38375ffe6fe142663ff55cd783aa4df4301d83d",
+                    "datavalue": {
+                      "value": {
+                        "entity-type": "item",
+                        "numeric-id": 48183,
+                        "id": "Q48183"
+                      },
+                      "type": "wikibase-entityid"
+                    },
+                    "datatype": "wikibase-item"
+                  }
+                ]
+              },
+              "snaks-order": [
+                "P143"
+              ]
+            }
+          ]
+        }
+      ],
+      "P646": [
+        {
+          "mainsnak": {
+            "snaktype": "value",
+            "property": "P646",
+            "hash": "76e601f8491c4e8e6eeaef8a2b924ef5c81df2ea",
+            "datavalue": {
+              "value": "/m/02jlm5",
+              "type": "string"
+            },
+            "datatype": "external-id"
+          },
+          "type": "statement",
+          "id": "Q113368$4DDA4875-23F9-4D46-94BB-FB593A147559",
+          "rank": "normal",
+          "references": [
+            {
+              "hash": "2b00cb481cddcac7623114367489b5c194901c4a",
+              "snaks": {
+                "P248": [
+                  {
+                    "snaktype": "value",
+                    "property": "P248",
+                    "hash": "a94b740202b097dd33355e0e6c00e54b9395e5e0",
+                    "datavalue": {
+                      "value": {
+                        "entity-type": "item",
+                        "numeric-id": 15241312,
+                        "id": "Q15241312"
+                      },
+                      "type": "wikibase-entityid"
+                    },
+                    "datatype": "wikibase-item"
+                  }
+                ],
+                "P577": [
+                  {
+                    "snaktype": "value",
+                    "property": "P577",
+                    "hash": "fde79ecb015112d2f29229ccc1ec514ed3e71fa2",
+                    "datavalue": {
+                      "value": {
+                        "time": "+2013-10-28T00:00:00Z",
+                        "timezone": 0,
+                        "before": 0,
+                        "after": 0,
+                        "precision": 11,
+                        "calendarmodel": "http://www.wikidata.org/entity/Q1985727"
+                      },
+                      "type": "time"
+                    },
+                    "datatype": "time"
+                  }
+                ]
+              },
+              "snaks-order": [
+                "P248",
+                "P577"
+              ]
+            }
+          ]
+        }
+      ],
+      "P31": [
+        {
+          "mainsnak": {
+            "snaktype": "value",
+            "property": "P31",
+            "hash": "4e5c5f27e4832fc7e01084a790e2527cea5c58eb",
+            "datavalue": {
+              "value": {
+                "entity-type": "item",
+                "numeric-id": 134447,
+                "id": "Q134447"
+              },
+              "type": "wikibase-entityid"
+            },
+            "datatype": "wikibase-item"
+          },
+          "type": "statement",
+          "id": "Q113368$0f080c26-48df-ac61-a68c-f849fb9ed5cc",
+          "rank": "normal"
+        },
+        {
+          "mainsnak": {
+            "snaktype": "value",
+            "property": "P31",
+            "hash": "2c037021badd837669d0710e5e72846614ebc647",
+            "datavalue": {
+              "value": {
+                "entity-type": "item",
+                "numeric-id": 1058741,
+                "id": "Q1058741"
+              },
+              "type": "wikibase-entityid"
+            },
+            "datatype": "wikibase-item"
+          },
+          "type": "statement",
+          "id": "Q113368$9DD68346-030D-43D7-9490-19CDE1C342E0",
+          "rank": "normal"
+        }
+      ],
+      "P17": [
+        {
+          "mainsnak": {
+            "snaktype": "value",
+            "property": "P17",
+            "hash": "c05db5d169c2560b9799d567a803d20a392f53e4",
+            "datavalue": {
+              "value": {
+                "entity-type": "item",
+                "numeric-id": 142,
+                "id": "Q142"
+              },
+              "type": "wikibase-entityid"
+            },
+            "datatype": "wikibase-item"
+          },
+          "type": "statement",
+          "id": "Q113368$fa245597-4e59-0580-1e21-9b56f5768972",
+          "rank": "normal"
+        }
+      ],
+      "P18": [
+        {
+          "mainsnak": {
+            "snaktype": "value",
+            "property": "P18",
+            "hash": "d4ef729faf20a8f135644193b05c2e54e828ea2d",
+            "datavalue": {
+              "value": "CEA Marcoule Site.jpg",
+              "type": "string"
+            },
+            "datatype": "commonsMedia"
+          },
+          "type": "statement",
+          "id": "Q113368$A080ED33-97A2-4C86-A2DC-1D00CBAC5873",
+          "rank": "normal"
+        }
+      ],
+      "P588": [
+        {
+          "mainsnak": {
+            "snaktype": "value",
+            "property": "P588",
+            "hash": "5e567e09a1da294a2cc8a693cf55fe98df4d8e91",
+            "datavalue": {
+              "value": {
+                "entity-type": "item",
+                "numeric-id": 658,
+                "id": "Q658"
+              },
+              "type": "wikibase-entityid"
+            },
+            "datatype": "wikibase-item"
+          },
+          "type": "statement",
+          "id": "Q113368$4A1264E2-716F-490F-8250-D4B85D1E30DA",
+          "rank": "normal",
+          "references": [
+            {
+              "hash": "288ab581e7d2d02995a26dfa8b091d96e78457fc",
+              "snaks": {
+                "P143": [
+                  {
+                    "snaktype": "value",
+                    "property": "P143",
+                    "hash": "6a164248fc96bfa583bbb495cb63ae6401ec203c",
+                    "datavalue": {
+                      "value": {
+                        "entity-type": "item",
+                        "numeric-id": 206855,
+                        "id": "Q206855"
+                      },
+                      "type": "wikibase-entityid"
+                    },
+                    "datatype": "wikibase-item"
+                  }
+                ]
+              },
+              "snaks-order": [
+                "P143"
+              ]
+            }
+          ]
+        }
+      ],
+      "P361": [
+        {
+          "mainsnak": {
+            "snaktype": "value",
+            "property": "P361",
+            "hash": "2974536f083a675c05067805ad35b16886540d5f",
+            "datavalue": {
+              "value": {
+                "entity-type": "item",
+                "numeric-id": 580142,
+                "id": "Q580142"
+              },
+              "type": "wikibase-entityid"
+            },
+            "datatype": "wikibase-item"
+          },
+          "type": "statement",
+          "id": "Q113368$dcaed132-434f-6d96-5b9a-a02ddf298574",
+          "rank": "normal"
+        }
+      ],
+      "P131": [
+        {
+          "mainsnak": {
+            "snaktype": "value",
+            "property": "P131",
+            "hash": "9165c2b867963786e59478110826bd2f5730a231",
+            "datavalue": {
+              "value": {
+                "entity-type": "item",
+                "numeric-id": 244624,
+                "id": "Q244624"
+              },
+              "type": "wikibase-entityid"
+            },
+            "datatype": "wikibase-item"
+          },
+          "type": "statement",
+          "id": "Q113368$2305f92b-400e-03d4-504e-eac6b26e2970",
+          "rank": "normal"
+        }
+      ],
+      "P729": [
+        {
+          "mainsnak": {
+            "snaktype": "value",
+            "property": "P729",
+            "hash": "12035797d2a57647a404b7f0645038d1e2bbc46d",
+            "datavalue": {
+              "value": {
+                "time": "+1974-07-14T00:00:00Z",
+                "timezone": 0,
+                "before": 0,
+                "after": 0,
+                "precision": 11,
+                "calendarmodel": "http://www.wikidata.org/entity/Q1985727"
+              },
+              "type": "time"
+            },
+            "datatype": "time"
+          },
+          "type": "statement",
+          "id": "Q113368$a9b1c2e0-432c-cbbf-22a9-ba61a2469466",
+          "rank": "normal",
+          "references": [
+            {
+              "hash": "0b2f164edc3703eefcf34ee0e670331c4d8acc86",
+              "snaks": {
+                "P854": [
+                  {
+                    "snaktype": "value",
+                    "property": "P854",
+                    "hash": "bc41cb171f1e327efaf83aaeccb3c01f5eeffe18",
+                    "datavalue": {
+                      "value": "https://pris.iaea.org/PRIS/CountryStatistics/ReactorDetails.aspx?current=162",
+                      "type": "string"
+                    },
+                    "datatype": "url"
+                  }
+                ],
+                "P248": [
+                  {
+                    "snaktype": "value",
+                    "property": "P248",
+                    "hash": "7cc6ac897e0c601f0b52da1f684b4dbed7391ee7",
+                    "datavalue": {
+                      "value": {
+                        "entity-type": "item",
+                        "numeric-id": 72743160,
+                        "id": "Q72743160"
+                      },
+                      "type": "wikibase-entityid"
+                    },
+                    "datatype": "wikibase-item"
+                  }
+                ],
+                "P123": [
+                  {
+                    "snaktype": "value",
+                    "property": "P123",
+                    "hash": "7ef0f4e984d9879ac2a0f7ce2d3667fd5acb8c99",
+                    "datavalue": {
+                      "value": {
+                        "entity-type": "item",
+                        "numeric-id": 41984,
+                        "id": "Q41984"
+                      },
+                      "type": "wikibase-entityid"
+                    },
+                    "datatype": "wikibase-item"
+                  }
+                ]
+              },
+              "snaks-order": [
+                "P854",
+                "P248",
+                "P123"
+              ]
+            }
+          ]
+        }
+      ],
+      "P730": [
+        {
+          "mainsnak": {
+            "snaktype": "value",
+            "property": "P730",
+            "hash": "5b28ffcd157c43b9d7278020b001da0bafb00f9b",
+            "datavalue": {
+              "value": {
+                "time": "+2010-02-01T00:00:00Z",
+                "timezone": 0,
+                "before": 0,
+                "after": 0,
+                "precision": 11,
+                "calendarmodel": "http://www.wikidata.org/entity/Q1985727"
+              },
+              "type": "time"
+            },
+            "datatype": "time"
+          },
+          "type": "statement",
+          "id": "Q113368$aa42bf80-46c2-dd5c-a0db-ee6d90198168",
+          "rank": "normal",
+          "references": [
+            {
+              "hash": "0b2f164edc3703eefcf34ee0e670331c4d8acc86",
+              "snaks": {
+                "P854": [
+                  {
+                    "snaktype": "value",
+                    "property": "P854",
+                    "hash": "bc41cb171f1e327efaf83aaeccb3c01f5eeffe18",
+                    "datavalue": {
+                      "value": "https://pris.iaea.org/PRIS/CountryStatistics/ReactorDetails.aspx?current=162",
+                      "type": "string"
+                    },
+                    "datatype": "url"
+                  }
+                ],
+                "P248": [
+                  {
+                    "snaktype": "value",
+                    "property": "P248",
+                    "hash": "7cc6ac897e0c601f0b52da1f684b4dbed7391ee7",
+                    "datavalue": {
+                      "value": {
+                        "entity-type": "item",
+                        "numeric-id": 72743160,
+                        "id": "Q72743160"
+                      },
+                      "type": "wikibase-entityid"
+                    },
+                    "datatype": "wikibase-item"
+                  }
+                ],
+                "P123": [
+                  {
+                    "snaktype": "value",
+                    "property": "P123",
+                    "hash": "7ef0f4e984d9879ac2a0f7ce2d3667fd5acb8c99",
+                    "datavalue": {
+                      "value": {
+                        "entity-type": "item",
+                        "numeric-id": 41984,
+                        "id": "Q41984"
+                      },
+                      "type": "wikibase-entityid"
+                    },
+                    "datatype": "wikibase-item"
+                  }
+                ]
+              },
+              "snaks-order": [
+                "P854",
+                "P248",
+                "P123"
+              ]
+            }
+          ]
+        }
+      ],
+      "P137": [
+        {
+          "mainsnak": {
+            "snaktype": "value",
+            "property": "P137",
+            "hash": "eb50c3bca1ba262ccad35a5d3738d1ddb48c2b8d",
+            "datavalue": {
+              "value": {
+                "entity-type": "item",
+                "numeric-id": 868550,
+                "id": "Q868550"
+              },
+              "type": "wikibase-entityid"
+            },
+            "datatype": "wikibase-item"
+          },
+          "type": "statement",
+          "id": "Q113368$4AEB917C-E146-4C74-86BA-449728CF1A52",
+          "rank": "normal",
+          "references": [
+            {
+              "hash": "5b295c0d0ef2e77cfd3b16354b1d49bf83f9bae0",
+              "snaks": {
+                "P143": [
+                  {
+                    "snaktype": "value",
+                    "property": "P143",
+                    "hash": "e4f6d9441d0600513c4533c672b5ab472dc73694",
+                    "datavalue": {
+                      "value": {
+                        "entity-type": "item",
+                        "numeric-id": 328,
+                        "id": "Q328"
+                      },
+                      "type": "wikibase-entityid"
+                    },
+                    "datatype": "wikibase-item"
+                  }
+                ],
+                "P4656": [
+                  {
+                    "snaktype": "value",
+                    "property": "P4656",
+                    "hash": "c5c29629f491460868bd4818791dcf916a5e34a8",
+                    "datavalue": {
+                      "value": "https://en.wikipedia.org/w/index.php?title=Phénix&oldid=903844379",
+                      "type": "string"
+                    },
+                    "datatype": "url"
+                  }
+                ]
+              },
+              "snaks-order": [
+                "P143",
+                "P4656"
+              ]
+            }
+          ]
+        }
+      ],
+      "P571": [
+        {
+          "mainsnak": {
+            "snaktype": "value",
+            "property": "P571",
+            "hash": "f6ba7e70617ccf038687d948d1fba40afa7a9d51",
+            "datavalue": {
+              "value": {
+                "time": "+1968-11-01T00:00:00Z",
+                "timezone": 0,
+                "before": 0,
+                "after": 0,
+                "precision": 11,
+                "calendarmodel": "http://www.wikidata.org/entity/Q1985727"
+              },
+              "type": "time"
+            },
+            "datatype": "time"
+          },
+          "type": "statement",
+          "id": "Q113368$207d93ba-428d-da57-4bdf-f55b52295c83",
+          "rank": "normal"
+        }
+      ],
+      "P2109": [
+        {
+          "mainsnak": {
+            "snaktype": "value",
+            "property": "P2109",
+            "hash": "5f7da4bfc2875186d535db240fe3371ff4050a11",
+            "datavalue": {
+              "value": {
+                "amount": "+233",
+                "unit": "http://www.wikidata.org/entity/Q6982035"
+              },
+              "type": "quantity"
+            },
+            "datatype": "quantity"
+          },
+          "type": "statement",
+          "qualifiers": {
+            "P580": [
+              {
+                "snaktype": "value",
+                "property": "P580",
+                "hash": "dd39e8ca5409b8e3603542ffaa56775dedc4ef67",
+                "datavalue": {
+                  "value": {
+                    "time": "+1973-00-00T00:00:00Z",
+                    "timezone": 0,
+                    "before": 0,
+                    "after": 0,
+                    "precision": 9,
+                    "calendarmodel": "http://www.wikidata.org/entity/Q1985727"
+                  },
+                  "type": "time"
+                },
+                "datatype": "time"
+              }
+            ],
+            "P582": [
+              {
+                "snaktype": "value",
+                "property": "P582",
+                "hash": "00c43808551b0573a4d2c3f81e8e0c9eac2fd3a5",
+                "datavalue": {
+                  "value": {
+                    "time": "+1996-00-00T00:00:00Z",
+                    "timezone": 0,
+                    "before": 0,
+                    "after": 0,
+                    "precision": 9,
+                    "calendarmodel": "http://www.wikidata.org/entity/Q1985727"
+                  },
+                  "type": "time"
+                },
+                "datatype": "time"
+              }
+            ]
+          },
+          "qualifiers-order": [
+            "P580",
+            "P582"
+          ],
+          "id": "Q113368$cbc8cedd-4f47-767b-d50b-2023dcafd5c4",
+          "rank": "normal",
+          "references": [
+            {
+              "hash": "e20ba0b260eba87f876881c58b8d4bc66617c254",
+              "snaks": {
+                "P854": [
+                  {
+                    "snaktype": "value",
+                    "property": "P854",
+                    "hash": "698b2ac236379976b5e66000de27a6588f36a48e",
+                    "datavalue": {
+                      "value": "https://pris.iaea.org/PRIS/CountryStatistics/CountryDetails.aspx?current=FR",
+                      "type": "string"
+                    },
+                    "datatype": "url"
+                  }
+                ]
+              },
+              "snaks-order": [
+                "P854"
+              ]
+            }
+          ]
+        },
+        {
+          "mainsnak": {
+            "snaktype": "value",
+            "property": "P2109",
+            "hash": "abba2324bd1e23ae4274e16f7a4f3be3fca86bbd",
+            "datavalue": {
+              "value": {
+                "amount": "+130",
+                "unit": "http://www.wikidata.org/entity/Q6982035"
+              },
+              "type": "quantity"
+            },
+            "datatype": "quantity"
+          },
+          "type": "statement",
+          "qualifiers": {
+            "P580": [
+              {
+                "snaktype": "value",
+                "property": "P580",
+                "hash": "a49c8ed6875b6798d04009217a6aa45c567a440a",
+                "datavalue": {
+                  "value": {
+                    "time": "+1997-00-00T00:00:00Z",
+                    "timezone": 0,
+                    "before": 0,
+                    "after": 0,
+                    "precision": 9,
+                    "calendarmodel": "http://www.wikidata.org/entity/Q1985727"
+                  },
+                  "type": "time"
+                },
+                "datatype": "time"
+              }
+            ],
+            "P582": [
+              {
+                "snaktype": "value",
+                "property": "P582",
+                "hash": "6f4c37357db10714dc6c7a0ce30a4621b3ce0305",
+                "datavalue": {
+                  "value": {
+                    "time": "+2010-00-00T00:00:00Z",
+                    "timezone": 0,
+                    "before": 0,
+                    "after": 0,
+                    "precision": 9,
+                    "calendarmodel": "http://www.wikidata.org/entity/Q1985727"
+                  },
+                  "type": "time"
+                },
+                "datatype": "time"
+              }
+            ]
+          },
+          "qualifiers-order": [
+            "P580",
+            "P582"
+          ],
+          "id": "Q113368$2c20f818-47ed-57fc-4b13-cd99e80c7f79",
+          "rank": "preferred",
+          "references": [
+            {
+              "hash": "e20ba0b260eba87f876881c58b8d4bc66617c254",
+              "snaks": {
+                "P854": [
+                  {
+                    "snaktype": "value",
+                    "property": "P854",
+                    "hash": "698b2ac236379976b5e66000de27a6588f36a48e",
+                    "datavalue": {
+                      "value": "https://pris.iaea.org/PRIS/CountryStatistics/CountryDetails.aspx?current=FR",
+                      "type": "string"
+                    },
+                    "datatype": "url"
+                  }
+                ]
+              },
+              "snaks-order": [
+                "P854"
+              ]
+            }
+          ]
+        }
+      ],
+      "P4131": [
+        {
+          "mainsnak": {
+            "snaktype": "value",
+            "property": "P4131",
+            "hash": "5ca4fc2138910f14698dd38382b2cf71f51e4392",
+            "datavalue": {
+              "value": {
+                "amount": "+664",
+                "unit": "http://www.wikidata.org/entity/Q2051195"
+              },
+              "type": "quantity"
+            },
+            "datatype": "quantity"
+          },
+          "type": "statement",
+          "qualifiers": {
+            "P585": [
+              {
+                "snaktype": "value",
+                "property": "P585",
+                "hash": "43bdb90ab9b607c864931ed584115ff944210c6b",
+                "datavalue": {
+                  "value": {
+                    "time": "+2008-00-00T00:00:00Z",
+                    "timezone": 0,
+                    "before": 0,
+                    "after": 0,
+                    "precision": 9,
+                    "calendarmodel": "http://www.wikidata.org/entity/Q1985727"
+                  },
+                  "type": "time"
+                },
+                "datatype": "time"
+              }
+            ]
+          },
+          "qualifiers-order": [
+            "P585"
+          ],
+          "id": "Q113368$225128dd-40dd-7e11-ed39-8a8369209331",
+          "rank": "normal",
+          "references": [
+            {
+              "hash": "0b2f164edc3703eefcf34ee0e670331c4d8acc86",
+              "snaks": {
+                "P854": [
+                  {
+                    "snaktype": "value",
+                    "property": "P854",
+                    "hash": "bc41cb171f1e327efaf83aaeccb3c01f5eeffe18",
+                    "datavalue": {
+                      "value": "https://pris.iaea.org/PRIS/CountryStatistics/ReactorDetails.aspx?current=162",
+                      "type": "string"
+                    },
+                    "datatype": "url"
+                  }
+                ],
+                "P248": [
+                  {
+                    "snaktype": "value",
+                    "property": "P248",
+                    "hash": "7cc6ac897e0c601f0b52da1f684b4dbed7391ee7",
+                    "datavalue": {
+                      "value": {
+                        "entity-type": "item",
+                        "numeric-id": 72743160,
+                        "id": "Q72743160"
+                      },
+                      "type": "wikibase-entityid"
+                    },
+                    "datatype": "wikibase-item"
+                  }
+                ],
+                "P123": [
+                  {
+                    "snaktype": "value",
+                    "property": "P123",
+                    "hash": "7ef0f4e984d9879ac2a0f7ce2d3667fd5acb8c99",
+                    "datavalue": {
+                      "value": {
+                        "entity-type": "item",
+                        "numeric-id": 41984,
+                        "id": "Q41984"
+                      },
+                      "type": "wikibase-entityid"
+                    },
+                    "datatype": "wikibase-item"
+                  }
+                ]
+              },
+              "snaks-order": [
+                "P854",
+                "P248",
+                "P123"
+              ]
+            }
+          ]
+        }
+      ],
+      "P1705": [
+        {
+          "mainsnak": {
+            "snaktype": "value",
+            "property": "P1705",
+            "hash": "aa3b71495d16a6a3f666fff95b5032dc00e63531",
+            "datavalue": {
+              "value": {
+                "text": "Phénix",
+                "language": "fr"
+              },
+              "type": "monolingualtext"
+            },
+            "datatype": "monolingualtext"
+          },
+          "type": "statement",
+          "id": "Q113368$b5f60208-45ae-f5da-209f-5dc75ccaadf3",
+          "rank": "normal",
+          "references": [
+            {
+              "hash": "e5b898585164c03d83621a894349329134c36a47",
+              "snaks": {
+                "P143": [
+                  {
+                    "snaktype": "value",
+                    "property": "P143",
+                    "hash": "6a164248fc96bfa583bbb495cb63ae6401ec203c",
+                    "datavalue": {
+                      "value": {
+                        "entity-type": "item",
+                        "numeric-id": 206855,
+                        "id": "Q206855"
+                      },
+                      "type": "wikibase-entityid"
+                    },
+                    "datatype": "wikibase-item"
+                  }
+                ],
+                "P4656": [
+                  {
+                    "snaktype": "value",
+                    "property": "P4656",
+                    "hash": "198b80bd9ceebf25872a8ecc204146db97a3835c",
+                    "datavalue": {
+                      "value": "https://ru.wikipedia.org/?oldid=114132545",
+                      "type": "string"
+                    },
+                    "datatype": "url"
+                  }
+                ]
+              },
+              "snaks-order": [
+                "P143",
+                "P4656"
+              ]
+            }
+          ]
+        }
+      ],
+      "P5817": [
+        {
+          "mainsnak": {
+            "snaktype": "value",
+            "property": "P5817",
+            "hash": "bf41c80ae512fd5a17ab377274c6b26ce451ed4b",
+            "datavalue": {
+              "value": {
+                "entity-type": "item",
+                "numeric-id": 11639308,
+                "id": "Q11639308"
+              },
+              "type": "wikibase-entityid"
+            },
+            "datatype": "wikibase-item"
+          },
+          "type": "statement",
+          "id": "Q113368$A535374D-D8C6-4203-9B49-F794D665DAE2",
+          "rank": "normal"
+        }
+      ],
+      "P13333": [
+        {
+          "mainsnak": {
+            "snaktype": "value",
+            "property": "P13333",
+            "hash": "3e96d2e3e0fbb5e2cc7c09cefeac255882bcdffd",
+            "datavalue": {
+              "value": "Phenix_nuclear_power_plant",
+              "type": "string"
+            },
+            "datatype": "external-id"
+          },
+          "type": "statement",
+          "qualifiers": {
+            "P9675": [
+              {
+                "snaktype": "value",
+                "property": "P9675",
+                "hash": "3733e415738bd362f07b66de3e354630b9b2815a",
+                "datavalue": {
+                  "value": "66253",
+                  "type": "string"
+                },
+                "datatype": "string"
+              }
+            ]
+          },
+          "qualifiers-order": [
+            "P9675"
+          ],
+          "id": "Q113368$d8fc90b5-45da-5c62-68db-10ea7a162d3d",
+          "rank": "normal"
+        }
+      ]
+    },
+    "sitelinks": {
+      "dewiki": {
+        "site": "dewiki",
+        "title": "Kernkraftwerk Phénix",
+        "badges": [],
+        "url": "https://de.wikipedia.org/wiki/Kernkraftwerk_Ph%C3%A9nix"
+      },
+      "enwiki": {
+        "site": "enwiki",
+        "title": "Phénix",
+        "badges": [],
+        "url": "https://en.wikipedia.org/wiki/Ph%C3%A9nix"
+      },
+      "eswiki": {
+        "site": "eswiki",
+        "title": "Phénix",
+        "badges": [],
+        "url": "https://es.wikipedia.org/wiki/Ph%C3%A9nix"
+      },
+      "frwiki": {
+        "site": "frwiki",
+        "title": "Phénix (réacteur)",
+        "badges": [],
+        "url": "https://fr.wikipedia.org/wiki/Ph%C3%A9nix_(r%C3%A9acteur)"
+      },
+      "itwiki": {
+        "site": "itwiki",
+        "title": "Centrale elettronucleare Phénix",
+        "badges": [],
+        "url": "https://it.wikipedia.org/wiki/Centrale_elettronucleare_Ph%C3%A9nix"
+      },
+      "jawiki": {
+        "site": "jawiki",
+        "title": "フェニックス (原子炉)",
+        "badges": [],
+        "url": "https://ja.wikipedia.org/wiki/%E3%83%95%E3%82%A7%E3%83%8B%E3%83%83%E3%82%AF%E3%82%B9_(%E5%8E%9F%E5%AD%90%E7%82%89)"
+      },
+      "nlwiki": {
+        "site": "nlwiki",
+        "title": "Phénix",
+        "badges": [],
+        "url": "https://nl.wikipedia.org/wiki/Ph%C3%A9nix"
+      },
+      "nowiki": {
+        "site": "nowiki",
+        "title": "Phénix kjernekraftverk",
+        "badges": [],
+        "url": "https://no.wikipedia.org/wiki/Ph%C3%A9nix_kjernekraftverk"
+      },
+      "ruwiki": {
+        "site": "ruwiki",
+        "title": "Феникс (реактор)",
+        "badges": [],
+        "url": "https://ru.wikipedia.org/wiki/%D0%A4%D0%B5%D0%BD%D0%B8%D0%BA%D1%81_(%D1%80%D0%B5%D0%B0%D0%BA%D1%82%D0%BE%D1%80)"
+      },
+      "ukwiki": {
+        "site": "ukwiki",
+        "title": "Фенікс (реактор)",
+        "badges": [],
+        "url": "https://uk.wikipedia.org/wiki/%D0%A4%D0%B5%D0%BD%D1%96%D0%BA%D1%81_(%D1%80%D0%B5%D0%B0%D0%BA%D1%82%D0%BE%D1%80)"
+      },
+      "zhwiki": {
+        "site": "zhwiki",
+        "title": "鳳凰號 (反應爐)",
+        "badges": [],
+        "url": "https://zh.wikipedia.org/wiki/%E9%B3%B3%E5%87%B0%E8%99%9F_(%E5%8F%8D%E6%87%89%E7%88%90)"
+      }
+    }
+  }
+}

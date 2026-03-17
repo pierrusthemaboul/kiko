@@ -1,0 +1,304 @@
+{
+  "saved_at": "2026-03-07T11:26:44.929Z",
+  "value": {
+    "pageid": 3420990,
+    "ns": 0,
+    "title": "Q3592600",
+    "lastrevid": 2393797696,
+    "modified": "2025-08-18T16:29:49Z",
+    "type": "item",
+    "id": "Q3592600",
+    "labels": {
+      "fr": {
+        "language": "fr",
+        "value": "études de médecine en France"
+      },
+      "en": {
+        "language": "en",
+        "value": "Medical school in France"
+      },
+      "it": {
+        "language": "it",
+        "value": "Études de médecine en France"
+      },
+      "ja": {
+        "language": "ja",
+        "value": "フランスの医学校"
+      },
+      "ru": {
+        "language": "ru",
+        "value": "медицинская школа во Франции"
+      },
+      "ha": {
+        "language": "ha",
+        "value": "Ilimin likita a Faransa"
+      }
+    },
+    "descriptions": {
+      "en": {
+        "language": "en",
+        "value": "study of medical sciences in France"
+      }
+    },
+    "aliases": {
+      "fr": [
+        {
+          "language": "fr",
+          "value": "PCEM 2"
+        },
+        {
+          "language": "fr",
+          "value": "PCEM2"
+        },
+        {
+          "language": "fr",
+          "value": "Reçu-collé"
+        },
+        {
+          "language": "fr",
+          "value": "Études de médecine en france"
+        },
+        {
+          "language": "fr",
+          "value": "Etudes de medecine en France"
+        },
+        {
+          "language": "fr",
+          "value": "Faculté de médecine en France"
+        },
+        {
+          "language": "fr",
+          "value": "DCEM2"
+        },
+        {
+          "language": "fr",
+          "value": "MSBM"
+        },
+        {
+          "language": "fr",
+          "value": "DCEM1"
+        },
+        {
+          "language": "fr",
+          "value": "DCEM4"
+        },
+        {
+          "language": "fr",
+          "value": "TCEM"
+        },
+        {
+          "language": "fr",
+          "value": "Troisième cycle des études médicales"
+        },
+        {
+          "language": "fr",
+          "value": "PCEM"
+        },
+        {
+          "language": "fr",
+          "value": "Internat de médecine"
+        },
+        {
+          "language": "fr",
+          "value": "DCEM3"
+        },
+        {
+          "language": "fr",
+          "value": "Diplôme de formation générale en sciences médicales"
+        }
+      ]
+    },
+    "claims": {
+      "P31": [
+        {
+          "mainsnak": {
+            "snaktype": "value",
+            "property": "P31",
+            "hash": "87bd4b54eef671b890fb6c6a6bd097712d1f9ddd",
+            "datavalue": {
+              "value": {
+                "entity-type": "item",
+                "numeric-id": 3008375,
+                "id": "Q3008375"
+              },
+              "type": "wikibase-entityid"
+            },
+            "datatype": "wikibase-item"
+          },
+          "type": "statement",
+          "id": "Q3592600$7f276a04-4463-908f-7dc1-4afd6d3d89d4",
+          "rank": "normal"
+        }
+      ],
+      "P910": [
+        {
+          "mainsnak": {
+            "snaktype": "value",
+            "property": "P910",
+            "hash": "3b0046b9c1f5ad971350c996e9feedeb65bd246f",
+            "datavalue": {
+              "value": {
+                "entity-type": "item",
+                "numeric-id": 8616645,
+                "id": "Q8616645"
+              },
+              "type": "wikibase-entityid"
+            },
+            "datatype": "wikibase-item"
+          },
+          "type": "statement",
+          "id": "Q3592600$EA3FBA92-526F-432A-92CD-B93807D00831",
+          "rank": "normal",
+          "references": [
+            {
+              "hash": "d4bd87b862b12d99d26e86472d44f26858dee639",
+              "snaks": {
+                "P143": [
+                  {
+                    "snaktype": "value",
+                    "property": "P143",
+                    "hash": "f30cbd35620c4ea6d0633aaf0210a8916130469b",
+                    "datavalue": {
+                      "value": {
+                        "entity-type": "item",
+                        "numeric-id": 8447,
+                        "id": "Q8447"
+                      },
+                      "type": "wikibase-entityid"
+                    },
+                    "datatype": "wikibase-item"
+                  }
+                ]
+              },
+              "snaks-order": [
+                "P143"
+              ]
+            }
+          ]
+        }
+      ],
+      "P373": [
+        {
+          "mainsnak": {
+            "snaktype": "value",
+            "property": "P373",
+            "hash": "0703cddc325f5fb86a9698f84e472ebbe824b65f",
+            "datavalue": {
+              "value": "Medical education in France",
+              "type": "string"
+            },
+            "datatype": "string"
+          },
+          "type": "statement",
+          "id": "Q3592600$77F07D07-7387-491D-8B67-527DA96578C2",
+          "rank": "normal",
+          "references": [
+            {
+              "hash": "fa278ebfc458360e5aed63d5058cca83c46134f1",
+              "snaks": {
+                "P143": [
+                  {
+                    "snaktype": "value",
+                    "property": "P143",
+                    "hash": "e4f6d9441d0600513c4533c672b5ab472dc73694",
+                    "datavalue": {
+                      "value": {
+                        "entity-type": "item",
+                        "numeric-id": 328,
+                        "id": "Q328"
+                      },
+                      "type": "wikibase-entityid"
+                    },
+                    "datatype": "wikibase-item"
+                  }
+                ]
+              },
+              "snaks-order": [
+                "P143"
+              ]
+            }
+          ]
+        }
+      ],
+      "P279": [
+        {
+          "mainsnak": {
+            "snaktype": "value",
+            "property": "P279",
+            "hash": "46843937173743644bc581502189d99cd7cb7346",
+            "datavalue": {
+              "value": {
+                "entity-type": "item",
+                "numeric-id": 126945,
+                "id": "Q126945"
+              },
+              "type": "wikibase-entityid"
+            },
+            "datatype": "wikibase-item"
+          },
+          "type": "statement",
+          "id": "Q3592600$5d7e25b3-46e3-cfce-3d6c-e3cf1d74a168",
+          "rank": "normal"
+        }
+      ],
+      "P17": [
+        {
+          "mainsnak": {
+            "snaktype": "value",
+            "property": "P17",
+            "hash": "c05db5d169c2560b9799d567a803d20a392f53e4",
+            "datavalue": {
+              "value": {
+                "entity-type": "item",
+                "numeric-id": 142,
+                "id": "Q142"
+              },
+              "type": "wikibase-entityid"
+            },
+            "datatype": "wikibase-item"
+          },
+          "type": "statement",
+          "id": "Q3592600$E61E453B-AB12-40B7-91F8-70F1CE567302",
+          "rank": "normal"
+        }
+      ],
+      "P646": [
+        {
+          "mainsnak": {
+            "snaktype": "value",
+            "property": "P646",
+            "hash": "e93f7b3eea63fdf42409b8c5dd8772871e8cab21",
+            "datavalue": {
+              "value": "/m/01183zn3",
+              "type": "string"
+            },
+            "datatype": "external-id"
+          },
+          "type": "statement",
+          "id": "Q3592600$8042BFBC-1E2F-40AE-8CE4-9E5194C9489D",
+          "rank": "normal"
+        }
+      ]
+    },
+    "sitelinks": {
+      "enwiki": {
+        "site": "enwiki",
+        "title": "Medical education in France",
+        "badges": [],
+        "url": "https://en.wikipedia.org/wiki/Medical_education_in_France"
+      },
+      "frwiki": {
+        "site": "frwiki",
+        "title": "Études de médecine en France",
+        "badges": [],
+        "url": "https://fr.wikipedia.org/wiki/%C3%89tudes_de_m%C3%A9decine_en_France"
+      },
+      "hawiki": {
+        "site": "hawiki",
+        "title": "Ilimin likita a Faransa",
+        "badges": [],
+        "url": "https://ha.wikipedia.org/wiki/Ilimin_likita_a_Faransa"
+      }
+    }
+  }
+}

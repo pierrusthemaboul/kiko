@@ -9,3 +9,4 @@ async function check() {
     data.forEach(e => console.log(`${e.date}: ${e.titre}`));
 }
 check();
+

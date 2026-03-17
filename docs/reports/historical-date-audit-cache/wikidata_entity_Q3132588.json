@@ -1,0 +1,350 @@
+{
+  "saved_at": "2026-03-07T15:48:34.674Z",
+  "value": {
+    "pageid": 2992929,
+    "ns": 0,
+    "title": "Q3132588",
+    "lastrevid": 2372761570,
+    "modified": "2025-07-03T12:29:09Z",
+    "type": "item",
+    "id": "Q3132588",
+    "labels": {
+      "fr": {
+        "language": "fr",
+        "value": "affaire Dominique Strauss-Kahn"
+      },
+      "en": {
+        "language": "en",
+        "value": "New York v. Strauss-Kahn"
+      },
+      "es": {
+        "language": "es",
+        "value": "Caso Strauss-Kahn"
+      },
+      "ms": {
+        "language": "ms",
+        "value": "Kes serangan seksual Dominique Strauss-Kahn"
+      },
+      "ru": {
+        "language": "ru",
+        "value": "Дело Стросс-Кана"
+      }
+    },
+    "descriptions": {
+      "fr": {
+        "language": "fr",
+        "value": "affaire judiciaire"
+      },
+      "en": {
+        "language": "en",
+        "value": "American criminal case"
+      }
+    },
+    "aliases": {
+      "fr": [
+        {
+          "language": "fr",
+          "value": "Affaire Strauss-Kahn"
+        },
+        {
+          "language": "fr",
+          "value": "DSKgate"
+        },
+        {
+          "language": "fr",
+          "value": "Affaire du Sofitel de New York"
+        },
+        {
+          "language": "fr",
+          "value": "Affaire DSK"
+        },
+        {
+          "language": "fr",
+          "value": "Nafissatou Dialllo"
+        },
+        {
+          "language": "fr",
+          "value": "Affaire Dominique Strauss-Kahn à New York"
+        },
+        {
+          "language": "fr",
+          "value": "Procès de Dominique Strauss-Kahn"
+        }
+      ],
+      "es": [
+        {
+          "language": "es",
+          "value": "Affaire Dominique Strauss-Kahn"
+        }
+      ]
+    },
+    "claims": {
+      "P646": [
+        {
+          "mainsnak": {
+            "snaktype": "value",
+            "property": "P646",
+            "hash": "0ed9710c6aab04016a7ae53c6da7233ee2b153b4",
+            "datavalue": {
+              "value": "/m/0gtwfcx",
+              "type": "string"
+            },
+            "datatype": "external-id"
+          },
+          "type": "statement",
+          "id": "Q3132588$E3583506-F6C5-4EC3-AEAD-4630DF3C2E56",
+          "rank": "normal",
+          "references": [
+            {
+              "hash": "2b00cb481cddcac7623114367489b5c194901c4a",
+              "snaks": {
+                "P248": [
+                  {
+                    "snaktype": "value",
+                    "property": "P248",
+                    "hash": "a94b740202b097dd33355e0e6c00e54b9395e5e0",
+                    "datavalue": {
+                      "value": {
+                        "entity-type": "item",
+                        "numeric-id": 15241312,
+                        "id": "Q15241312"
+                      },
+                      "type": "wikibase-entityid"
+                    },
+                    "datatype": "wikibase-item"
+                  }
+                ],
+                "P577": [
+                  {
+                    "snaktype": "value",
+                    "property": "P577",
+                    "hash": "fde79ecb015112d2f29229ccc1ec514ed3e71fa2",
+                    "datavalue": {
+                      "value": {
+                        "time": "+2013-10-28T00:00:00Z",
+                        "timezone": 0,
+                        "before": 0,
+                        "after": 0,
+                        "precision": 11,
+                        "calendarmodel": "http://www.wikidata.org/entity/Q1985727"
+                      },
+                      "type": "time"
+                    },
+                    "datatype": "time"
+                  }
+                ]
+              },
+              "snaks-order": [
+                "P248",
+                "P577"
+              ]
+            }
+          ]
+        }
+      ],
+      "P31": [
+        {
+          "mainsnak": {
+            "snaktype": "value",
+            "property": "P31",
+            "hash": "935c0a137ae65a010b459d5fa86f169c2af15357",
+            "datavalue": {
+              "value": {
+                "entity-type": "item",
+                "numeric-id": 8016240,
+                "id": "Q8016240"
+              },
+              "type": "wikibase-entityid"
+            },
+            "datatype": "wikibase-item"
+          },
+          "type": "statement",
+          "id": "Q3132588$a2c2be15-4173-aed1-38ab-b9a1ffc29e6b",
+          "rank": "normal"
+        }
+      ],
+      "P373": [
+        {
+          "mainsnak": {
+            "snaktype": "value",
+            "property": "P373",
+            "hash": "5f53a007ae7ecc07ed175c4c1511398406e491e8",
+            "datavalue": {
+              "value": "New York v. Strauss-Kahn",
+              "type": "string"
+            },
+            "datatype": "string"
+          },
+          "type": "statement",
+          "id": "Q3132588$4E25CD16-CF4B-4416-B97B-383B5207B0E5",
+          "rank": "normal"
+        }
+      ],
+      "P1591": [
+        {
+          "mainsnak": {
+            "snaktype": "value",
+            "property": "P1591",
+            "hash": "49373768b1df7da46b2d8142e999aeeb2cd37671",
+            "datavalue": {
+              "value": {
+                "entity-type": "item",
+                "numeric-id": 385437,
+                "id": "Q385437"
+              },
+              "type": "wikibase-entityid"
+            },
+            "datatype": "wikibase-item"
+          },
+          "type": "statement",
+          "id": "Q3132588$f9e97ab0-449f-44c5-1ef7-3431ce2c77ed",
+          "rank": "normal"
+        }
+      ],
+      "P585": [
+        {
+          "mainsnak": {
+            "snaktype": "value",
+            "property": "P585",
+            "hash": "32bce10c948a62af8a071d684e626c488494aed0",
+            "datavalue": {
+              "value": {
+                "time": "+2011-05-14T00:00:00Z",
+                "timezone": 0,
+                "before": 0,
+                "after": 0,
+                "precision": 11,
+                "calendarmodel": "http://www.wikidata.org/entity/Q1985727"
+              },
+              "type": "time"
+            },
+            "datatype": "time"
+          },
+          "type": "statement",
+          "id": "Q3132588$4e443b35-41b1-2587-1c92-9cf654ce09b9",
+          "rank": "normal"
+        }
+      ],
+      "P276": [
+        {
+          "mainsnak": {
+            "snaktype": "value",
+            "property": "P276",
+            "hash": "b5b5d8163d01fc4f201200b560140e1bae73fe43",
+            "datavalue": {
+              "value": {
+                "entity-type": "item",
+                "numeric-id": 60,
+                "id": "Q60"
+              },
+              "type": "wikibase-entityid"
+            },
+            "datatype": "wikibase-item"
+          },
+          "type": "statement",
+          "id": "Q3132588$1bf987d6-4eb1-49e9-8426-86cfe91f1e2f",
+          "rank": "normal"
+        }
+      ],
+      "P17": [
+        {
+          "mainsnak": {
+            "snaktype": "value",
+            "property": "P17",
+            "hash": "be4c6eafa2984964f04be85667263f5642ba1a72",
+            "datavalue": {
+              "value": {
+                "entity-type": "item",
+                "numeric-id": 30,
+                "id": "Q30"
+              },
+              "type": "wikibase-entityid"
+            },
+            "datatype": "wikibase-item"
+          },
+          "type": "statement",
+          "id": "Q3132588$f5e2fbc0-4785-49a2-c94b-7f48359baa13",
+          "rank": "normal"
+        }
+      ],
+      "P9346": [
+        {
+          "mainsnak": {
+            "snaktype": "value",
+            "property": "P9346",
+            "hash": "c70e36d91e494dfee588279a1cfc7a854ec7cd05",
+            "datavalue": {
+              "value": "affaire-dsk",
+              "type": "string"
+            },
+            "datatype": "external-id"
+          },
+          "type": "statement",
+          "id": "Q3132588$19E46D6B-F224-4AB0-AECB-BC21A60AB378",
+          "rank": "normal"
+        }
+      ],
+      "P268": [
+        {
+          "mainsnak": {
+            "snaktype": "value",
+            "property": "P268",
+            "hash": "15bf1b7c40295a013d2b6f41bf48d803d20d7f2e",
+            "datavalue": {
+              "value": "165315483",
+              "type": "string"
+            },
+            "datatype": "external-id"
+          },
+          "type": "statement",
+          "id": "Q3132588$2ec1f7c8-4d30-2826-5fcf-566bdd82bb25",
+          "rank": "normal"
+        }
+      ]
+    },
+    "sitelinks": {
+      "commonswiki": {
+        "site": "commonswiki",
+        "title": "Category:New York v. Strauss-Kahn",
+        "badges": [],
+        "url": "https://commons.wikimedia.org/wiki/Category:New_York_v._Strauss-Kahn"
+      },
+      "enwiki": {
+        "site": "enwiki",
+        "title": "New York v. Strauss-Kahn",
+        "badges": [],
+        "url": "https://en.wikipedia.org/wiki/New_York_v._Strauss-Kahn"
+      },
+      "eswiki": {
+        "site": "eswiki",
+        "title": "Caso Strauss-Kahn",
+        "badges": [],
+        "url": "https://es.wikipedia.org/wiki/Caso_Strauss-Kahn"
+      },
+      "frwiki": {
+        "site": "frwiki",
+        "title": "Affaire Dominique Strauss-Kahn",
+        "badges": [],
+        "url": "https://fr.wikipedia.org/wiki/Affaire_Dominique_Strauss-Kahn"
+      },
+      "frwikinews": {
+        "site": "frwikinews",
+        "title": "Catégorie:Affaire Dominique Strauss-Kahn",
+        "badges": [],
+        "url": "https://fr.wikinews.org/wiki/Cat%C3%A9gorie:Affaire_Dominique_Strauss-Kahn"
+      },
+      "mswiki": {
+        "site": "mswiki",
+        "title": "Kes serangan seksual Dominique Strauss-Kahn",
+        "badges": [],
+        "url": "https://ms.wikipedia.org/wiki/Kes_serangan_seksual_Dominique_Strauss-Kahn"
+      },
+      "ruwiki": {
+        "site": "ruwiki",
+        "title": "Дело Стросс-Кана",
+        "badges": [],
+        "url": "https://ru.wikipedia.org/wiki/%D0%94%D0%B5%D0%BB%D0%BE_%D0%A1%D1%82%D1%80%D0%BE%D1%81%D1%81-%D0%9A%D0%B0%D0%BD%D0%B0"
+      }
+    }
+  }
+}

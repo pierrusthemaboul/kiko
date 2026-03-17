@@ -1,0 +1,1088 @@
+{
+  "saved_at": "2026-03-07T15:27:10.499Z",
+  "value": {
+    "pageid": 1137969,
+    "ns": 0,
+    "title": "Q1194034",
+    "lastrevid": 2321276367,
+    "modified": "2025-03-07T16:33:49Z",
+    "type": "item",
+    "id": "Q1194034",
+    "labels": {
+      "de": {
+        "language": "de",
+        "value": "HMS Royal George"
+      },
+      "ru": {
+        "language": "ru",
+        "value": "HMS Royal George"
+      },
+      "ko": {
+        "language": "ko",
+        "value": "HMS 로열 조지"
+      },
+      "fr": {
+        "language": "fr",
+        "value": "HMS Royal George"
+      },
+      "en": {
+        "language": "en",
+        "value": "HMS Royal George"
+      },
+      "es": {
+        "language": "es",
+        "value": "HMS Royal George"
+      },
+      "ca": {
+        "language": "ca",
+        "value": "HMS Royal George"
+      },
+      "it": {
+        "language": "it",
+        "value": "HMS Royal George"
+      },
+      "nl": {
+        "language": "nl",
+        "value": "HMS Royal George"
+      },
+      "fi": {
+        "language": "fi",
+        "value": "HMS Royal George"
+      },
+      "ja": {
+        "language": "ja",
+        "value": "ロイヤル・ジョージ"
+      },
+      "he": {
+        "language": "he",
+        "value": "רויאל ג'ורג'"
+      },
+      "ga": {
+        "language": "ga",
+        "value": "HMS Royal George"
+      },
+      "mul": {
+        "language": "mul",
+        "value": "HMS Royal George"
+      }
+    },
+    "descriptions": {
+      "fr": {
+        "language": "fr",
+        "value": "navire de guerre"
+      },
+      "en": {
+        "language": "en",
+        "value": "1756 first-rate ship of the line"
+      },
+      "nl": {
+        "language": "nl",
+        "value": "schip"
+      },
+      "de": {
+        "language": "de",
+        "value": "britisches Linienschiff, 1782 im Solent gesunken"
+      },
+      "he": {
+        "language": "he",
+        "value": "אוניית-קו בריטית 100 תותחים שטבעה בספיטהד ב-1782 בזמן שהוטתה על צידה לצורכי תיקון"
+      }
+    },
+    "aliases": {
+      "ru": [
+        {
+          "language": "ru",
+          "value": "Роял Джордж"
+        }
+      ],
+      "es": [
+        {
+          "language": "es",
+          "value": "Royal George"
+        }
+      ],
+      "ca": [
+        {
+          "language": "ca",
+          "value": "Royal Anne"
+        }
+      ],
+      "ja": [
+        {
+          "language": "ja",
+          "value": "ロイヤルジョージ (1等艦)"
+        }
+      ]
+    },
+    "claims": {
+      "P31": [
+        {
+          "mainsnak": {
+            "snaktype": "value",
+            "property": "P31",
+            "hash": "dea92281e9282fa349ff1c582774ec3a49face8f",
+            "datavalue": {
+              "value": {
+                "entity-type": "item",
+                "numeric-id": 892367,
+                "id": "Q892367"
+              },
+              "type": "wikibase-entityid"
+            },
+            "datatype": "wikibase-item"
+          },
+          "type": "statement",
+          "id": "Q1194034$7E1B84F9-494E-4192-9379-6ADEE302ECA1",
+          "rank": "normal",
+          "references": [
+            {
+              "hash": "288ab581e7d2d02995a26dfa8b091d96e78457fc",
+              "snaks": {
+                "P143": [
+                  {
+                    "snaktype": "value",
+                    "property": "P143",
+                    "hash": "6a164248fc96bfa583bbb495cb63ae6401ec203c",
+                    "datavalue": {
+                      "value": {
+                        "entity-type": "item",
+                        "numeric-id": 206855,
+                        "id": "Q206855"
+                      },
+                      "type": "wikibase-entityid"
+                    },
+                    "datatype": "wikibase-item"
+                  }
+                ]
+              },
+              "snaks-order": [
+                "P143"
+              ]
+            }
+          ]
+        },
+        {
+          "mainsnak": {
+            "snaktype": "value",
+            "property": "P31",
+            "hash": "652862fb1fb7231ec297940909f01bd3d561ced6",
+            "datavalue": {
+              "value": {
+                "entity-type": "item",
+                "numeric-id": 820382,
+                "id": "Q820382"
+              },
+              "type": "wikibase-entityid"
+            },
+            "datatype": "wikibase-item"
+          },
+          "type": "statement",
+          "id": "Q1194034$41974c2a-4240-026a-c666-bce3145e6693",
+          "rank": "normal"
+        },
+        {
+          "mainsnak": {
+            "snaktype": "value",
+            "property": "P31",
+            "hash": "48db4fa5fb6a9444fc43cbd484f6d0a3bea951c8",
+            "datavalue": {
+              "value": {
+                "entity-type": "item",
+                "numeric-id": 852190,
+                "id": "Q852190"
+              },
+              "type": "wikibase-entityid"
+            },
+            "datatype": "wikibase-item"
+          },
+          "type": "statement",
+          "id": "Q1194034$263c87b4-448e-f487-ce36-ece2957ba306",
+          "rank": "normal"
+        }
+      ],
+      "P625": [
+        {
+          "mainsnak": {
+            "snaktype": "value",
+            "property": "P625",
+            "hash": "1cd2e61b97a60d528c4a48f48fbf701195c39bd8",
+            "datavalue": {
+              "value": {
+                "latitude": 50.75715556,
+                "longitude": -1.11255,
+                "altitude": null,
+                "precision": 0.00000277777777778,
+                "globe": "http://www.wikidata.org/entity/Q2"
+              },
+              "type": "globecoordinate"
+            },
+            "datatype": "globe-coordinate"
+          },
+          "type": "statement",
+          "id": "Q1194034$D15B0C7D-77F9-4F9D-85B0-D6255CBF3F98",
+          "rank": "normal",
+          "references": [
+            {
+              "hash": "9a24f7c0208b05d6be97077d855671d1dfdbc0dd",
+              "snaks": {
+                "P143": [
+                  {
+                    "snaktype": "value",
+                    "property": "P143",
+                    "hash": "d38375ffe6fe142663ff55cd783aa4df4301d83d",
+                    "datavalue": {
+                      "value": {
+                        "entity-type": "item",
+                        "numeric-id": 48183,
+                        "id": "Q48183"
+                      },
+                      "type": "wikibase-entityid"
+                    },
+                    "datatype": "wikibase-item"
+                  }
+                ]
+              },
+              "snaks-order": [
+                "P143"
+              ]
+            }
+          ]
+        }
+      ],
+      "P646": [
+        {
+          "mainsnak": {
+            "snaktype": "value",
+            "property": "P646",
+            "hash": "d5d4b7e4d6abaefa806449f09f06189f82f9fc8a",
+            "datavalue": {
+              "value": "/m/05gd6v",
+              "type": "string"
+            },
+            "datatype": "external-id"
+          },
+          "type": "statement",
+          "id": "Q1194034$9F73BFA6-3993-4C44-969A-581DB9DE91DA",
+          "rank": "normal",
+          "references": [
+            {
+              "hash": "2b00cb481cddcac7623114367489b5c194901c4a",
+              "snaks": {
+                "P248": [
+                  {
+                    "snaktype": "value",
+                    "property": "P248",
+                    "hash": "a94b740202b097dd33355e0e6c00e54b9395e5e0",
+                    "datavalue": {
+                      "value": {
+                        "entity-type": "item",
+                        "numeric-id": 15241312,
+                        "id": "Q15241312"
+                      },
+                      "type": "wikibase-entityid"
+                    },
+                    "datatype": "wikibase-item"
+                  }
+                ],
+                "P577": [
+                  {
+                    "snaktype": "value",
+                    "property": "P577",
+                    "hash": "fde79ecb015112d2f29229ccc1ec514ed3e71fa2",
+                    "datavalue": {
+                      "value": {
+                        "time": "+2013-10-28T00:00:00Z",
+                        "timezone": 0,
+                        "before": 0,
+                        "after": 0,
+                        "precision": 11,
+                        "calendarmodel": "http://www.wikidata.org/entity/Q1985727"
+                      },
+                      "type": "time"
+                    },
+                    "datatype": "time"
+                  }
+                ]
+              },
+              "snaks-order": [
+                "P248",
+                "P577"
+              ]
+            }
+          ]
+        }
+      ],
+      "P18": [
+        {
+          "mainsnak": {
+            "snaktype": "value",
+            "property": "P18",
+            "hash": "8456ac6520626c5d082744c5c969197decab12b8",
+            "datavalue": {
+              "value": "John Cleveley the Elder, The Royal George at Deptford Showing the Launch of The Cambridge (1757).jpg",
+              "type": "string"
+            },
+            "datatype": "commonsMedia"
+          },
+          "type": "statement",
+          "id": "Q1194034$AEFDF588-3BB0-4FB1-A80A-BA868324F30D",
+          "rank": "normal",
+          "references": [
+            {
+              "hash": "fa278ebfc458360e5aed63d5058cca83c46134f1",
+              "snaks": {
+                "P143": [
+                  {
+                    "snaktype": "value",
+                    "property": "P143",
+                    "hash": "e4f6d9441d0600513c4533c672b5ab472dc73694",
+                    "datavalue": {
+                      "value": {
+                        "entity-type": "item",
+                        "numeric-id": 328,
+                        "id": "Q328"
+                      },
+                      "type": "wikibase-entityid"
+                    },
+                    "datatype": "wikibase-item"
+                  }
+                ]
+              },
+              "snaks-order": [
+                "P143"
+              ]
+            }
+          ]
+        }
+      ],
+      "P137": [
+        {
+          "mainsnak": {
+            "snaktype": "value",
+            "property": "P137",
+            "hash": "e49ff5554fc405c746c861ec1903fe03f75ff37e",
+            "datavalue": {
+              "value": {
+                "entity-type": "item",
+                "numeric-id": 172771,
+                "id": "Q172771"
+              },
+              "type": "wikibase-entityid"
+            },
+            "datatype": "wikibase-item"
+          },
+          "type": "statement",
+          "id": "Q1194034$FA8184A9-AD97-419A-9E40-C03A69BD5D60",
+          "rank": "normal",
+          "references": [
+            {
+              "hash": "fa278ebfc458360e5aed63d5058cca83c46134f1",
+              "snaks": {
+                "P143": [
+                  {
+                    "snaktype": "value",
+                    "property": "P143",
+                    "hash": "e4f6d9441d0600513c4533c672b5ab472dc73694",
+                    "datavalue": {
+                      "value": {
+                        "entity-type": "item",
+                        "numeric-id": 328,
+                        "id": "Q328"
+                      },
+                      "type": "wikibase-entityid"
+                    },
+                    "datatype": "wikibase-item"
+                  }
+                ]
+              },
+              "snaks-order": [
+                "P143"
+              ]
+            }
+          ]
+        }
+      ],
+      "P176": [
+        {
+          "mainsnak": {
+            "snaktype": "value",
+            "property": "P176",
+            "hash": "92852dce8352a6e8adfebd0f1702b43c27dc4d7a",
+            "datavalue": {
+              "value": {
+                "entity-type": "item",
+                "numeric-id": 2593294,
+                "id": "Q2593294"
+              },
+              "type": "wikibase-entityid"
+            },
+            "datatype": "wikibase-item"
+          },
+          "type": "statement",
+          "id": "Q1194034$D57FBD25-AA03-429E-B977-3A21E131D405",
+          "rank": "normal",
+          "references": [
+            {
+              "hash": "fa278ebfc458360e5aed63d5058cca83c46134f1",
+              "snaks": {
+                "P143": [
+                  {
+                    "snaktype": "value",
+                    "property": "P143",
+                    "hash": "e4f6d9441d0600513c4533c672b5ab472dc73694",
+                    "datavalue": {
+                      "value": {
+                        "entity-type": "item",
+                        "numeric-id": 328,
+                        "id": "Q328"
+                      },
+                      "type": "wikibase-entityid"
+                    },
+                    "datatype": "wikibase-item"
+                  }
+                ]
+              },
+              "snaks-order": [
+                "P143"
+              ]
+            }
+          ]
+        }
+      ],
+      "P2043": [
+        {
+          "mainsnak": {
+            "snaktype": "value",
+            "property": "P2043",
+            "hash": "7f1f8053a176a5944e72635098f0e5ab63cbcaa6",
+            "datavalue": {
+              "value": {
+                "amount": "+54.3",
+                "unit": "http://www.wikidata.org/entity/Q11573"
+              },
+              "type": "quantity"
+            },
+            "datatype": "quantity"
+          },
+          "type": "statement",
+          "id": "Q1194034$05BC55DE-EECB-4EEF-95D3-FA1CD8E5932A",
+          "rank": "normal",
+          "references": [
+            {
+              "hash": "9a24f7c0208b05d6be97077d855671d1dfdbc0dd",
+              "snaks": {
+                "P143": [
+                  {
+                    "snaktype": "value",
+                    "property": "P143",
+                    "hash": "d38375ffe6fe142663ff55cd783aa4df4301d83d",
+                    "datavalue": {
+                      "value": {
+                        "entity-type": "item",
+                        "numeric-id": 48183,
+                        "id": "Q48183"
+                      },
+                      "type": "wikibase-entityid"
+                    },
+                    "datatype": "wikibase-item"
+                  }
+                ]
+              },
+              "snaks-order": [
+                "P143"
+              ]
+            }
+          ]
+        }
+      ],
+      "P2262": [
+        {
+          "mainsnak": {
+            "snaktype": "value",
+            "property": "P2262",
+            "hash": "d17de7747480988a4f8151566cbc39619af15f2a",
+            "datavalue": {
+              "value": {
+                "amount": "+6.6",
+                "unit": "http://www.wikidata.org/entity/Q11573"
+              },
+              "type": "quantity"
+            },
+            "datatype": "quantity"
+          },
+          "type": "statement",
+          "id": "Q1194034$261FC8BC-85B4-460B-A5BC-15C897D55029",
+          "rank": "normal",
+          "references": [
+            {
+              "hash": "9a24f7c0208b05d6be97077d855671d1dfdbc0dd",
+              "snaks": {
+                "P143": [
+                  {
+                    "snaktype": "value",
+                    "property": "P143",
+                    "hash": "d38375ffe6fe142663ff55cd783aa4df4301d83d",
+                    "datavalue": {
+                      "value": {
+                        "entity-type": "item",
+                        "numeric-id": 48183,
+                        "id": "Q48183"
+                      },
+                      "type": "wikibase-entityid"
+                    },
+                    "datatype": "wikibase-item"
+                  }
+                ]
+              },
+              "snaks-order": [
+                "P143"
+              ]
+            }
+          ]
+        }
+      ],
+      "P373": [
+        {
+          "mainsnak": {
+            "snaktype": "value",
+            "property": "P373",
+            "hash": "c81766f91aaae12a14e96c003b5bc5d833fef824",
+            "datavalue": {
+              "value": "HMS Royal George (ship, 1756)",
+              "type": "string"
+            },
+            "datatype": "string"
+          },
+          "type": "statement",
+          "id": "Q1194034$FA3AB162-BB67-428E-9393-62B64D3D5068",
+          "rank": "normal"
+        }
+      ],
+      "P2261": [
+        {
+          "mainsnak": {
+            "snaktype": "value",
+            "property": "P2261",
+            "hash": "cc91dfb59c28b6752c4d65b23960bbb04af9b080",
+            "datavalue": {
+              "value": {
+                "amount": "+15.8",
+                "unit": "http://www.wikidata.org/entity/Q11573"
+              },
+              "type": "quantity"
+            },
+            "datatype": "quantity"
+          },
+          "type": "statement",
+          "id": "Q1194034$76F72511-8514-4BBE-8625-5A43C6D8EBDF",
+          "rank": "normal",
+          "references": [
+            {
+              "hash": "5593c9b3c72959bb033eb585b015e066d599f42d",
+              "snaks": {
+                "P143": [
+                  {
+                    "snaktype": "value",
+                    "property": "P143",
+                    "hash": "d38375ffe6fe142663ff55cd783aa4df4301d83d",
+                    "datavalue": {
+                      "value": {
+                        "entity-type": "item",
+                        "numeric-id": 48183,
+                        "id": "Q48183"
+                      },
+                      "type": "wikibase-entityid"
+                    },
+                    "datatype": "wikibase-item"
+                  }
+                ],
+                "P4656": [
+                  {
+                    "snaktype": "value",
+                    "property": "P4656",
+                    "hash": "948c81d8ba4c444adea62fe3a2bb7284eff92a30",
+                    "datavalue": {
+                      "value": "https://de.wikipedia.org/w/index.php?title=Royal_George_(Schiff)&oldid=179751417",
+                      "type": "string"
+                    },
+                    "datatype": "url"
+                  }
+                ]
+              },
+              "snaks-order": [
+                "P143",
+                "P4656"
+              ]
+            }
+          ]
+        }
+      ],
+      "P729": [
+        {
+          "mainsnak": {
+            "snaktype": "value",
+            "property": "P729",
+            "hash": "f51e04f328883987ab1678f542b165aab6fb7303",
+            "datavalue": {
+              "value": {
+                "time": "+1756-00-00T00:00:00Z",
+                "timezone": 0,
+                "before": 0,
+                "after": 0,
+                "precision": 9,
+                "calendarmodel": "http://www.wikidata.org/entity/Q1985727"
+              },
+              "type": "time"
+            },
+            "datatype": "time"
+          },
+          "type": "statement",
+          "id": "Q1194034$FFE18551-B3DA-4BFF-8D40-300D3C975946",
+          "rank": "normal"
+        }
+      ],
+      "P730": [
+        {
+          "mainsnak": {
+            "snaktype": "value",
+            "property": "P730",
+            "hash": "8767ad0f6b9c2738a6c43fe95913d771b26b3cb8",
+            "datavalue": {
+              "value": {
+                "time": "+1782-08-29T00:00:00Z",
+                "timezone": 0,
+                "before": 0,
+                "after": 0,
+                "precision": 11,
+                "calendarmodel": "http://www.wikidata.org/entity/Q1985727"
+              },
+              "type": "time"
+            },
+            "datatype": "time"
+          },
+          "type": "statement",
+          "id": "Q1194034$e1420315-49ad-974b-f0fa-9c457b1af08b",
+          "rank": "normal"
+        }
+      ],
+      "P793": [
+        {
+          "mainsnak": {
+            "snaktype": "value",
+            "property": "P793",
+            "hash": "12b09550f0f11ca19ad41e551b7a97af279099ab",
+            "datavalue": {
+              "value": {
+                "entity-type": "item",
+                "numeric-id": 14475832,
+                "id": "Q14475832"
+              },
+              "type": "wikibase-entityid"
+            },
+            "datatype": "wikibase-item"
+          },
+          "type": "statement",
+          "qualifiers": {
+            "P585": [
+              {
+                "snaktype": "value",
+                "property": "P585",
+                "hash": "ba6f291107de6224cae244959ed10c06b209ee3f",
+                "datavalue": {
+                  "value": {
+                    "time": "+1755-10-01T00:00:00Z",
+                    "timezone": 0,
+                    "before": 0,
+                    "after": 0,
+                    "precision": 10,
+                    "calendarmodel": "http://www.wikidata.org/entity/Q1985727"
+                  },
+                  "type": "time"
+                },
+                "datatype": "time"
+              }
+            ]
+          },
+          "qualifiers-order": [
+            "P585"
+          ],
+          "id": "Q1194034$B209C796-48B4-438D-B149-EEBD09C00905",
+          "rank": "normal"
+        },
+        {
+          "mainsnak": {
+            "snaktype": "value",
+            "property": "P793",
+            "hash": "fc955dc587acbec96f461971530e93e2bdd58c69",
+            "datavalue": {
+              "value": {
+                "entity-type": "item",
+                "numeric-id": 596643,
+                "id": "Q596643"
+              },
+              "type": "wikibase-entityid"
+            },
+            "datatype": "wikibase-item"
+          },
+          "type": "statement",
+          "qualifiers": {
+            "P585": [
+              {
+                "snaktype": "value",
+                "property": "P585",
+                "hash": "04c589c402c787a069d5c5fe4d64b4aff1b8ca00",
+                "datavalue": {
+                  "value": {
+                    "time": "+1756-02-18T00:00:00Z",
+                    "timezone": 0,
+                    "before": 0,
+                    "after": 0,
+                    "precision": 11,
+                    "calendarmodel": "http://www.wikidata.org/entity/Q1985727"
+                  },
+                  "type": "time"
+                },
+                "datatype": "time"
+              }
+            ]
+          },
+          "qualifiers-order": [
+            "P585"
+          ],
+          "id": "Q1194034$3A4C21DD-0DF5-4257-94D2-AF659D158944",
+          "rank": "normal"
+        },
+        {
+          "mainsnak": {
+            "snaktype": "value",
+            "property": "P793",
+            "hash": "23c527be7e314d0406564ab55bc69bae9a966cf5",
+            "datavalue": {
+              "value": {
+                "entity-type": "item",
+                "numeric-id": 14592615,
+                "id": "Q14592615"
+              },
+              "type": "wikibase-entityid"
+            },
+            "datatype": "wikibase-item"
+          },
+          "type": "statement",
+          "qualifiers": {
+            "P585": [
+              {
+                "snaktype": "value",
+                "property": "P585",
+                "hash": "7f9ba51d307969f94b431acc85a99ffd852e022c",
+                "datavalue": {
+                  "value": {
+                    "time": "+1747-01-08T00:00:00Z",
+                    "timezone": 0,
+                    "before": 0,
+                    "after": 0,
+                    "precision": 11,
+                    "calendarmodel": "http://www.wikidata.org/entity/Q1985727"
+                  },
+                  "type": "time"
+                },
+                "datatype": "time"
+              }
+            ]
+          },
+          "qualifiers-order": [
+            "P585"
+          ],
+          "id": "Q1194034$F997FDF0-9010-4B72-8DE5-B65996752FDE",
+          "rank": "normal"
+        }
+      ],
+      "P11085": [
+        {
+          "mainsnak": {
+            "snaktype": "value",
+            "property": "P11085",
+            "hash": "b3bd7ec37a42d295679bad5d8bda5bc77090e807",
+            "datavalue": {
+              "value": "15",
+              "type": "string"
+            },
+            "datatype": "external-id"
+          },
+          "type": "statement",
+          "id": "Q1194034$7F5BE380-7741-46AE-8542-EA8ADBA65EF4",
+          "rank": "normal"
+        }
+      ],
+      "P516": [
+        {
+          "mainsnak": {
+            "snaktype": "value",
+            "property": "P516",
+            "hash": "d3de99cbe87af15418e9e630ffa2a3a0fd8d45a2",
+            "datavalue": {
+              "value": {
+                "entity-type": "item",
+                "numeric-id": 25999,
+                "id": "Q25999"
+              },
+              "type": "wikibase-entityid"
+            },
+            "datatype": "wikibase-item"
+          },
+          "type": "statement",
+          "id": "Q1194034$DACFACE1-5C72-4418-B823-D938F8EB58F2",
+          "rank": "normal",
+          "references": [
+            {
+              "hash": "70c0f676a1143b342ad36bb52313b96ac30c8f77",
+              "snaks": {
+                "P143": [
+                  {
+                    "snaktype": "value",
+                    "property": "P143",
+                    "hash": "e17507043402fe54ae6c4d65cc51f46cec987de9",
+                    "datavalue": {
+                      "value": {
+                        "entity-type": "item",
+                        "numeric-id": 8449,
+                        "id": "Q8449"
+                      },
+                      "type": "wikibase-entityid"
+                    },
+                    "datatype": "wikibase-item"
+                  }
+                ],
+                "P4656": [
+                  {
+                    "snaktype": "value",
+                    "property": "P4656",
+                    "hash": "fd2e2fa5459d2bee76d93a132f9a000ca7a33fe6",
+                    "datavalue": {
+                      "value": "https://es.wikipedia.org/w/index.php?title=HMS_Royal_George_(1756)&oldid=137642358",
+                      "type": "string"
+                    },
+                    "datatype": "url"
+                  }
+                ]
+              },
+              "snaks-order": [
+                "P143",
+                "P4656"
+              ]
+            }
+          ]
+        }
+      ],
+      "P495": [
+        {
+          "mainsnak": {
+            "snaktype": "value",
+            "property": "P495",
+            "hash": "df7b64c8d2f8a3233632a590fb9ce446b31ef3a9",
+            "datavalue": {
+              "value": {
+                "entity-type": "item",
+                "numeric-id": 161885,
+                "id": "Q161885"
+              },
+              "type": "wikibase-entityid"
+            },
+            "datatype": "wikibase-item"
+          },
+          "type": "statement",
+          "id": "Q1194034$111B3259-48F0-4CFB-8FF0-7DF3A45A4E07",
+          "rank": "normal"
+        }
+      ],
+      "P1889": [
+        {
+          "mainsnak": {
+            "snaktype": "value",
+            "property": "P1889",
+            "hash": "7dc9d39400bf9d515a730a333b450223aa3382a8",
+            "datavalue": {
+              "value": {
+                "entity-type": "item",
+                "numeric-id": 2065598,
+                "id": "Q2065598"
+              },
+              "type": "wikibase-entityid"
+            },
+            "datatype": "wikibase-item"
+          },
+          "type": "statement",
+          "id": "Q1194034$6DF43586-A43E-4218-92A8-DFB806051037",
+          "rank": "normal"
+        },
+        {
+          "mainsnak": {
+            "snaktype": "value",
+            "property": "P1889",
+            "hash": "f1676809d350ef9aa8264f2048e803e53d793aab",
+            "datavalue": {
+              "value": {
+                "entity-type": "item",
+                "numeric-id": 5634122,
+                "id": "Q5634122"
+              },
+              "type": "wikibase-entityid"
+            },
+            "datatype": "wikibase-item"
+          },
+          "type": "statement",
+          "id": "Q1194034$6523AB8E-40F1-47B8-8AA1-E4A02B322099",
+          "rank": "normal"
+        },
+        {
+          "mainsnak": {
+            "snaktype": "value",
+            "property": "P1889",
+            "hash": "41494d41c7fa1cc24114b040cb3044a47418a0fe",
+            "datavalue": {
+              "value": {
+                "entity-type": "item",
+                "numeric-id": 5634123,
+                "id": "Q5634123"
+              },
+              "type": "wikibase-entityid"
+            },
+            "datatype": "wikibase-item"
+          },
+          "type": "statement",
+          "id": "Q1194034$685CF341-2132-497D-86D1-3D3000CEB6FD",
+          "rank": "normal"
+        }
+      ],
+      "P289": [
+        {
+          "mainsnak": {
+            "snaktype": "value",
+            "property": "P289",
+            "hash": "e5cc007d70ac2083fac2d777798bb5dd0e59600b",
+            "datavalue": {
+              "value": {
+                "entity-type": "item",
+                "numeric-id": 4552789,
+                "id": "Q4552789"
+              },
+              "type": "wikibase-entityid"
+            },
+            "datatype": "wikibase-item"
+          },
+          "type": "statement",
+          "id": "Q1194034$3FFB9302-4D71-444F-872E-DA9E7BDA2BFB",
+          "rank": "normal"
+        }
+      ],
+      "P2561": [
+        {
+          "mainsnak": {
+            "snaktype": "value",
+            "property": "P2561",
+            "hash": "ea3a888eeff340f609e22ef68fb4f84bc12d175b",
+            "datavalue": {
+              "value": {
+                "text": "HMS Royal George",
+                "language": "mul"
+              },
+              "type": "monolingualtext"
+            },
+            "datatype": "monolingualtext"
+          },
+          "type": "statement",
+          "qualifiers": {
+            "P137": [
+              {
+                "snaktype": "value",
+                "property": "P137",
+                "hash": "e49ff5554fc405c746c861ec1903fe03f75ff37e",
+                "datavalue": {
+                  "value": {
+                    "entity-type": "item",
+                    "numeric-id": 172771,
+                    "id": "Q172771"
+                  },
+                  "type": "wikibase-entityid"
+                },
+                "datatype": "wikibase-item"
+              }
+            ]
+          },
+          "qualifiers-order": [
+            "P137"
+          ],
+          "id": "Q1194034$D25FFD46-610C-4907-844A-F5515822625E",
+          "rank": "normal"
+        }
+      ]
+    },
+    "sitelinks": {
+      "cawiki": {
+        "site": "cawiki",
+        "title": "HMS Royal George",
+        "badges": [],
+        "url": "https://ca.wikipedia.org/wiki/HMS_Royal_George"
+      },
+      "commonswiki": {
+        "site": "commonswiki",
+        "title": "Category:HMS Royal George (ship, 1756)",
+        "badges": [],
+        "url": "https://commons.wikimedia.org/wiki/Category:HMS_Royal_George_(ship,_1756)"
+      },
+      "dewiki": {
+        "site": "dewiki",
+        "title": "Royal George (Schiff, 1756)",
+        "badges": [],
+        "url": "https://de.wikipedia.org/wiki/Royal_George_(Schiff,_1756)"
+      },
+      "enwiki": {
+        "site": "enwiki",
+        "title": "HMS Royal George (1756)",
+        "badges": [],
+        "url": "https://en.wikipedia.org/wiki/HMS_Royal_George_(1756)"
+      },
+      "eswiki": {
+        "site": "eswiki",
+        "title": "HMS Royal George (1756)",
+        "badges": [],
+        "url": "https://es.wikipedia.org/wiki/HMS_Royal_George_(1756)"
+      },
+      "fiwiki": {
+        "site": "fiwiki",
+        "title": "HMS Royal George (1756)",
+        "badges": [],
+        "url": "https://fi.wikipedia.org/wiki/HMS_Royal_George_(1756)"
+      },
+      "frwiki": {
+        "site": "frwiki",
+        "title": "HMS Royal George (1756)",
+        "badges": [],
+        "url": "https://fr.wikipedia.org/wiki/HMS_Royal_George_(1756)"
+      },
+      "hewiki": {
+        "site": "hewiki",
+        "title": "אה\"מ רויאל ג'ורג' (1756)",
+        "badges": [],
+        "url": "https://he.wikipedia.org/wiki/%D7%90%D7%94%22%D7%9E_%D7%A8%D7%95%D7%99%D7%90%D7%9C_%D7%92%27%D7%95%D7%A8%D7%92%27_(1756)"
+      },
+      "itwiki": {
+        "site": "itwiki",
+        "title": "HMS Royal George (1756)",
+        "badges": [],
+        "url": "https://it.wikipedia.org/wiki/HMS_Royal_George_(1756)"
+      },
+      "kowiki": {
+        "site": "kowiki",
+        "title": "HMS 로열 조지",
+        "badges": [],
+        "url": "https://ko.wikipedia.org/wiki/HMS_%EB%A1%9C%EC%97%B4_%EC%A1%B0%EC%A7%80"
+      },
+      "ruwiki": {
+        "site": "ruwiki",
+        "title": "HMS Royal George (1756)",
+        "badges": [],
+        "url": "https://ru.wikipedia.org/wiki/HMS_Royal_George_(1756)"
+      }
+    }
+  }
+}

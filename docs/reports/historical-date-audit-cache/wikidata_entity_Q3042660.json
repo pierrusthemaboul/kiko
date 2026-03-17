@@ -1,0 +1,149 @@
+{
+  "saved_at": "2026-03-07T15:41:19.178Z",
+  "value": {
+    "pageid": 2908576,
+    "ns": 0,
+    "title": "Q3042660",
+    "lastrevid": 2252942997,
+    "modified": "2024-09-25T23:07:40Z",
+    "type": "item",
+    "id": "Q3042660",
+    "labels": {
+      "fr": {
+        "language": "fr",
+        "value": "Déclaration d'indépendance de la Belgique"
+      },
+      "en": {
+        "language": "en",
+        "value": "Declaration of Independence of Belgium"
+      },
+      "nl": {
+        "language": "nl",
+        "value": "Belgische Onafhankelijkheidsverklaring"
+      },
+      "ru": {
+        "language": "ru",
+        "value": "Декларация независимости Бельгии"
+      },
+      "es": {
+        "language": "es",
+        "value": "Declaración de independencia de Bélgica"
+      },
+      "ga": {
+        "language": "ga",
+        "value": "Forógra Saoirse na Beilge"
+      }
+    },
+    "descriptions": {
+      "fr": {
+        "language": "fr",
+        "value": "textes de 1830 déclarant la sécession de la Belgique vis-à-vis du royaume uni des Pays-Bas"
+      }
+    },
+    "aliases": {
+      "fr": [
+        {
+          "language": "fr",
+          "value": "Décret Constitutionnel du 18 novembre 1830"
+        },
+        {
+          "language": "fr",
+          "value": "Déclaration d'indépendance belge"
+        }
+      ]
+    },
+    "claims": {
+      "P31": [
+        {
+          "mainsnak": {
+            "snaktype": "value",
+            "property": "P31",
+            "hash": "731db8df663d5ce7d6a29593340bc552839ada07",
+            "datavalue": {
+              "value": {
+                "entity-type": "item",
+                "numeric-id": 1464916,
+                "id": "Q1464916"
+              },
+              "type": "wikibase-entityid"
+            },
+            "datatype": "wikibase-item"
+          },
+          "type": "statement",
+          "id": "Q3042660$d7832c94-4c79-3759-7c7f-0f9d6f3b5157",
+          "rank": "normal"
+        }
+      ],
+      "P17": [
+        {
+          "mainsnak": {
+            "snaktype": "value",
+            "property": "P17",
+            "hash": "c2859f311753176d6bdfa7da54ceeeac7acb52c8",
+            "datavalue": {
+              "value": {
+                "entity-type": "item",
+                "numeric-id": 31,
+                "id": "Q31"
+              },
+              "type": "wikibase-entityid"
+            },
+            "datatype": "wikibase-item"
+          },
+          "type": "statement",
+          "id": "Q3042660$4C7932E8-F829-4B12-8849-515D612C935A",
+          "rank": "normal"
+        }
+      ],
+      "P577": [
+        {
+          "mainsnak": {
+            "snaktype": "value",
+            "property": "P577",
+            "hash": "1970b1a17eae9be560b4676f70ec65dd29e429dc",
+            "datavalue": {
+              "value": {
+                "time": "+1830-10-04T00:00:00Z",
+                "timezone": 0,
+                "before": 0,
+                "after": 0,
+                "precision": 11,
+                "calendarmodel": "http://www.wikidata.org/entity/Q1985727"
+              },
+              "type": "time"
+            },
+            "datatype": "time"
+          },
+          "type": "statement",
+          "id": "Q3042660$4305fb45-4e5d-0189-c477-f98a89e7314a",
+          "rank": "normal"
+        }
+      ],
+      "P2671": [
+        {
+          "mainsnak": {
+            "snaktype": "value",
+            "property": "P2671",
+            "hash": "040c4ec13f3f7329917c240723b982ed25bf70c3",
+            "datavalue": {
+              "value": "/g/122r2qc4",
+              "type": "string"
+            },
+            "datatype": "external-id"
+          },
+          "type": "statement",
+          "id": "Q3042660$0E4313E9-C164-47AF-9413-612D125BC02D",
+          "rank": "normal"
+        }
+      ]
+    },
+    "sitelinks": {
+      "frwiki": {
+        "site": "frwiki",
+        "title": "Déclaration d'indépendance de la Belgique",
+        "badges": [],
+        "url": "https://fr.wikipedia.org/wiki/D%C3%A9claration_d%27ind%C3%A9pendance_de_la_Belgique"
+      }
+    }
+  }
+}

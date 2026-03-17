@@ -1,0 +1,896 @@
+{
+  "pageid": 1446648,
+  "ns": 0,
+  "title": "Q1509365",
+  "lastrevid": 2458863921,
+  "modified": "2026-01-29T03:42:17Z",
+  "type": "item",
+  "id": "Q1509365",
+  "labels": {
+    "de": {
+      "language": "de",
+      "value": "Goldfranken"
+    },
+    "pl": {
+      "language": "pl",
+      "value": "Złoty frank"
+    },
+    "ru": {
+      "language": "ru",
+      "value": "золотой франк"
+    },
+    "fr": {
+      "language": "fr",
+      "value": "franc-or"
+    },
+    "en": {
+      "language": "en",
+      "value": "gold franc"
+    },
+    "sv": {
+      "language": "sv",
+      "value": "Guldfranc"
+    },
+    "ja": {
+      "language": "ja",
+      "value": "金フラン"
+    },
+    "sr": {
+      "language": "sr",
+      "value": "златни франак"
+    },
+    "eo": {
+      "language": "eo",
+      "value": "orfranko"
+    },
+    "vec": {
+      "language": "vec",
+      "value": "franco d'oro"
+    },
+    "ar": {
+      "language": "ar",
+      "value": "فرنك ذهبي"
+    },
+    "hy": {
+      "language": "hy",
+      "value": "Ոսկե ֆրանկ"
+    },
+    "hu": {
+      "language": "hu",
+      "value": "aranyfrank"
+    },
+    "cs": {
+      "language": "cs",
+      "value": "Zlatý frank"
+    },
+    "ms": {
+      "language": "ms",
+      "value": "franc emas"
+    },
+    "mk": {
+      "language": "mk",
+      "value": "Златен франк"
+    },
+    "zh": {
+      "language": "zh",
+      "value": "金法郎"
+    }
+  },
+  "descriptions": {
+    "en": {
+      "language": "en",
+      "value": "unit of account for the Bank for International Settlements from 1930 until April 1, 2003"
+    },
+    "fi": {
+      "language": "fi",
+      "value": "valuutta"
+    },
+    "ru": {
+      "language": "ru",
+      "value": "расчётная единица Банка международных расчётов (1930-2003)"
+    },
+    "nl": {
+      "language": "nl",
+      "value": "valuta"
+    },
+    "eo": {
+      "language": "eo",
+      "value": "eksa valuto de Banko por Internacia Kontoreguligo, uzita inter 1930 kaj 2003"
+    },
+    "fr": {
+      "language": "fr",
+      "value": "monnaie obsolète"
+    },
+    "de": {
+      "language": "de",
+      "value": "internationale Fiktivwährung zur Abrechnung von Post- und Fernmeldeleistungen zwischen 1920 und 2003"
+    },
+    "ar": {
+      "language": "ar",
+      "value": "وحدة حسابية لبنك التسويات الدولية من عام 1930 حتى 1 أبريل 2003"
+    },
+    "ms": {
+      "language": "ms",
+      "value": "unit akaun bagi Bank untuk Penyelesaian Antarabangsa dari 1930 hingga 2003"
+    },
+    "zh": {
+      "language": "zh",
+      "value": "国际清算银行从1930年至2003年4月1日使用的记账单位"
+    }
+  },
+  "aliases": {
+    "de": [
+      {
+        "language": "de",
+        "value": "Franc Poincaré"
+      },
+      {
+        "language": "de",
+        "value": "Franc germinal"
+      },
+      {
+        "language": "de",
+        "value": "XFO"
+      },
+      {
+        "language": "de",
+        "value": "Goldfranc"
+      },
+      {
+        "language": "de",
+        "value": "Franc Poincare"
+      },
+      {
+        "language": "de",
+        "value": "Gfr."
+      }
+    ],
+    "fr": [
+      {
+        "language": "fr",
+        "value": "franc or"
+      },
+      {
+        "language": "fr",
+        "value": "francs-or"
+      }
+    ],
+    "ru": [
+      {
+        "language": "ru",
+        "value": "франк"
+      }
+    ]
+  },
+  "claims": {
+    "P646": [
+      {
+        "mainsnak": {
+          "snaktype": "value",
+          "property": "P646",
+          "hash": "b3b40a2f615e96b1386a7dc9a8898a28797a0698",
+          "datavalue": {
+            "value": "/m/024l4x",
+            "type": "string"
+          },
+          "datatype": "external-id"
+        },
+        "type": "statement",
+        "qualifiers": {
+          "P1810": [
+            {
+              "snaktype": "value",
+              "property": "P1810",
+              "hash": "a21d5a5c5ce27c18269ca9adb829425ff19d9ece",
+              "datavalue": {
+                "value": "Gold franc",
+                "type": "string"
+              },
+              "datatype": "string"
+            }
+          ]
+        },
+        "qualifiers-order": [
+          "P1810"
+        ],
+        "id": "Q1509365$E85B6718-B443-4C38-BC35-67FE59C5567B",
+        "rank": "normal",
+        "references": [
+          {
+            "hash": "2b00cb481cddcac7623114367489b5c194901c4a",
+            "snaks": {
+              "P248": [
+                {
+                  "snaktype": "value",
+                  "property": "P248",
+                  "hash": "a94b740202b097dd33355e0e6c00e54b9395e5e0",
+                  "datavalue": {
+                    "value": {
+                      "entity-type": "item",
+                      "numeric-id": 15241312,
+                      "id": "Q15241312"
+                    },
+                    "type": "wikibase-entityid"
+                  },
+                  "datatype": "wikibase-item"
+                }
+              ],
+              "P577": [
+                {
+                  "snaktype": "value",
+                  "property": "P577",
+                  "hash": "fde79ecb015112d2f29229ccc1ec514ed3e71fa2",
+                  "datavalue": {
+                    "value": {
+                      "time": "+2013-10-28T00:00:00Z",
+                      "timezone": 0,
+                      "before": 0,
+                      "after": 0,
+                      "precision": 11,
+                      "calendarmodel": "http://www.wikidata.org/entity/Q1985727"
+                    },
+                    "type": "time"
+                  },
+                  "datatype": "time"
+                }
+              ]
+            },
+            "snaks-order": [
+              "P248",
+              "P577"
+            ]
+          }
+        ]
+      }
+    ],
+    "P498": [
+      {
+        "mainsnak": {
+          "snaktype": "value",
+          "property": "P498",
+          "hash": "2bd2f09876ce5525943cd702253e2e88c4fb822b",
+          "datavalue": {
+            "value": "XFO",
+            "type": "string"
+          },
+          "datatype": "external-id"
+        },
+        "type": "statement",
+        "qualifiers": {
+          "P582": [
+            {
+              "snaktype": "value",
+              "property": "P582",
+              "hash": "177e706af725f4f3c53c5be7c1c98d64e81c0592",
+              "datavalue": {
+                "value": {
+                  "time": "+2006-10-00T00:00:00Z",
+                  "timezone": 0,
+                  "before": 0,
+                  "after": 0,
+                  "precision": 10,
+                  "calendarmodel": "http://www.wikidata.org/entity/Q1985727"
+                },
+                "type": "time"
+              },
+              "datatype": "time"
+            }
+          ]
+        },
+        "qualifiers-order": [
+          "P582"
+        ],
+        "id": "Q1509365$9b44f422-41a2-62be-234a-0092bf29cdb1",
+        "rank": "deprecated",
+        "references": [
+          {
+            "hash": "841f8bf5de36dbe919240d8e83f1cb8a24aa883a",
+            "snaks": {
+              "P248": [
+                {
+                  "snaktype": "value",
+                  "property": "P248",
+                  "hash": "f11458d65e66d08ce89e5a436acf59d539932e04",
+                  "datavalue": {
+                    "value": {
+                      "entity-type": "item",
+                      "numeric-id": 37431,
+                      "id": "Q37431"
+                    },
+                    "type": "wikibase-entityid"
+                  },
+                  "datatype": "wikibase-item"
+                }
+              ]
+            },
+            "snaks-order": [
+              "P248"
+            ]
+          }
+        ]
+      }
+    ],
+    "P31": [
+      {
+        "mainsnak": {
+          "snaktype": "value",
+          "property": "P31",
+          "hash": "84bcfe1afc00e86d79872cddad66713695b02f27",
+          "datavalue": {
+            "value": {
+              "entity-type": "item",
+              "numeric-id": 28783456,
+              "id": "Q28783456"
+            },
+            "type": "wikibase-entityid"
+          },
+          "datatype": "wikibase-item"
+        },
+        "type": "statement",
+        "qualifiers": {
+          "P580": [
+            {
+              "snaktype": "value",
+              "property": "P580",
+              "hash": "11eb99420e40a99570c9de17a0aba5420f91b7bf",
+              "datavalue": {
+                "value": {
+                  "time": "+1920-00-00T00:00:00Z",
+                  "timezone": 0,
+                  "before": 0,
+                  "after": 0,
+                  "precision": 9,
+                  "calendarmodel": "http://www.wikidata.org/entity/Q1985727"
+                },
+                "type": "time"
+              },
+              "datatype": "time"
+            }
+          ],
+          "P582": [
+            {
+              "snaktype": "value",
+              "property": "P582",
+              "hash": "8cf42da636603cf5e981a4fdb48bd8a5fe9892dc",
+              "datavalue": {
+                "value": {
+                  "time": "+2003-00-00T00:00:00Z",
+                  "timezone": 0,
+                  "before": 0,
+                  "after": 0,
+                  "precision": 9,
+                  "calendarmodel": "http://www.wikidata.org/entity/Q1985727"
+                },
+                "type": "time"
+              },
+              "datatype": "time"
+            }
+          ]
+        },
+        "qualifiers-order": [
+          "P580",
+          "P582"
+        ],
+        "id": "Q1509365$0d57f35b-4ec9-02aa-1251-83c8c508b90f",
+        "rank": "normal"
+      }
+    ],
+    "P3347": [
+      {
+        "mainsnak": {
+          "snaktype": "value",
+          "property": "P3347",
+          "hash": "4e84f58f859f059709b70b8b47a780064e582263",
+          "datavalue": {
+            "value": "500283",
+            "type": "string"
+          },
+          "datatype": "external-id"
+        },
+        "type": "statement",
+        "qualifiers": {
+          "P1810": [
+            {
+              "snaktype": "value",
+              "property": "P1810",
+              "hash": "94bfd39b05e063716ec0373257e965c62b498d97",
+              "datavalue": {
+                "value": "Gold - Franc",
+                "type": "string"
+              },
+              "datatype": "string"
+            }
+          ]
+        },
+        "qualifiers-order": [
+          "P1810"
+        ],
+        "id": "Q1509365$211EBD12-41C9-49F5-929D-0C95DFE6D9B1",
+        "rank": "normal"
+      }
+    ],
+    "P582": [
+      {
+        "mainsnak": {
+          "snaktype": "value",
+          "property": "P582",
+          "hash": "cda99e11a4ebcff2fb7fb47745f311714cdf90eb",
+          "datavalue": {
+            "value": {
+              "time": "+2003-04-01T00:00:00Z",
+              "timezone": 0,
+              "before": 0,
+              "after": 0,
+              "precision": 11,
+              "calendarmodel": "http://www.wikidata.org/entity/Q1985727"
+            },
+            "type": "time"
+          },
+          "datatype": "time"
+        },
+        "type": "statement",
+        "id": "Q1509365$9c248438-4e48-5ee0-f379-4ef0ed0f8c08",
+        "rank": "normal"
+      }
+    ],
+    "P1813": [
+      {
+        "mainsnak": {
+          "snaktype": "value",
+          "property": "P1813",
+          "hash": "08fac6174373b963786003ef1559b9b3a6d99ce9",
+          "datavalue": {
+            "value": {
+              "text": "Gfr.",
+              "language": "de"
+            },
+            "type": "monolingualtext"
+          },
+          "datatype": "monolingualtext"
+        },
+        "type": "statement",
+        "id": "Q1509365$ef8c28b0-4def-0845-edc8-7d26fbcd479a",
+        "rank": "normal"
+      }
+    ],
+    "P17": [
+      {
+        "mainsnak": {
+          "snaktype": "value",
+          "property": "P17",
+          "hash": "14fbb83ed35733cd34c05643b1977964c5e35fa7",
+          "datavalue": {
+            "value": {
+              "entity-type": "item",
+              "numeric-id": 13780930,
+              "id": "Q13780930"
+            },
+            "type": "wikibase-entityid"
+          },
+          "datatype": "wikibase-item"
+        },
+        "type": "statement",
+        "id": "Q1509365$ae8a5c8f-4b96-3dcd-6405-b3f14017ca4b",
+        "rank": "normal"
+      }
+    ],
+    "P138": [
+      {
+        "mainsnak": {
+          "snaktype": "value",
+          "property": "P138",
+          "hash": "4226b86e4a621c58631580f82404afd239b8cdf2",
+          "datavalue": {
+            "value": {
+              "entity-type": "item",
+              "numeric-id": 184172,
+              "id": "Q184172"
+            },
+            "type": "wikibase-entityid"
+          },
+          "datatype": "wikibase-item"
+        },
+        "type": "statement",
+        "id": "Q1509365$8f587248-45b9-3536-e18b-f70e3a3a81c4",
+        "rank": "normal"
+      }
+    ],
+    "P580": [
+      {
+        "mainsnak": {
+          "snaktype": "value",
+          "property": "P580",
+          "hash": "91fdaafab7cb83ba649825821b7a6a64d94bfa3b",
+          "datavalue": {
+            "value": {
+              "time": "+1930-00-00T00:00:00Z",
+              "timezone": 0,
+              "before": 0,
+              "after": 0,
+              "precision": 9,
+              "calendarmodel": "http://www.wikidata.org/entity/Q1985727"
+            },
+            "type": "time"
+          },
+          "datatype": "time"
+        },
+        "type": "statement",
+        "id": "Q1509365$29bce4c3-4b2a-88d1-b575-dc31bd5b9f9c",
+        "rank": "normal",
+        "references": [
+          {
+            "hash": "1bf08f48dfa06b719cf7d71b0cdf70219d4228bc",
+            "snaks": {
+              "P854": [
+                {
+                  "snaktype": "value",
+                  "property": "P854",
+                  "hash": "d4fc1e2165558330490c007f7bc96b06a7e38582",
+                  "datavalue": {
+                    "value": "https://web.archive.org/web/20120501191940/http://www.bis.org/about/chronology/2000-2009.htm",
+                    "type": "string"
+                  },
+                  "datatype": "url"
+                }
+              ]
+            },
+            "snaks-order": [
+              "P854"
+            ]
+          }
+        ]
+      }
+    ],
+    "P1366": [
+      {
+        "mainsnak": {
+          "snaktype": "value",
+          "property": "P1366",
+          "hash": "c51a5cee1824d966ef68e462aa2e025d93ff2f36",
+          "datavalue": {
+            "value": {
+              "entity-type": "item",
+              "numeric-id": 363958,
+              "id": "Q363958"
+            },
+            "type": "wikibase-entityid"
+          },
+          "datatype": "wikibase-item"
+        },
+        "type": "statement",
+        "id": "Q1509365$94767f1a-4e8b-b28f-691a-d05e7dffba62",
+        "rank": "normal"
+      }
+    ],
+    "P562": [
+      {
+        "mainsnak": {
+          "snaktype": "value",
+          "property": "P562",
+          "hash": "1b2cc61cb6a280db63f458ec119c87edaabee14a",
+          "datavalue": {
+            "value": {
+              "entity-type": "item",
+              "numeric-id": 376150,
+              "id": "Q376150"
+            },
+            "type": "wikibase-entityid"
+          },
+          "datatype": "wikibase-item"
+        },
+        "type": "statement",
+        "id": "Q1509365$fe7ab081-4f03-fc80-9691-e12ddc48f0ce",
+        "rank": "deprecated"
+      },
+      {
+        "mainsnak": {
+          "snaktype": "value",
+          "property": "P562",
+          "hash": "edc6fe1a978c763ac161257fab8a4d8af549e3cd",
+          "datavalue": {
+            "value": {
+              "entity-type": "item",
+              "numeric-id": 17495,
+              "id": "Q17495"
+            },
+            "type": "wikibase-entityid"
+          },
+          "datatype": "wikibase-item"
+        },
+        "type": "statement",
+        "id": "Q1509365$0aa0cf2b-4fe8-a6ef-a76c-1afbd6f89ad4",
+        "rank": "normal"
+      }
+    ],
+    "P126": [
+      {
+        "mainsnak": {
+          "snaktype": "value",
+          "property": "P126",
+          "hash": "0f7e25f74165e4778d1e6dc80d686d49db1074fe",
+          "datavalue": {
+            "value": {
+              "entity-type": "item",
+              "numeric-id": 376150,
+              "id": "Q376150"
+            },
+            "type": "wikibase-entityid"
+          },
+          "datatype": "wikibase-item"
+        },
+        "type": "statement",
+        "id": "Q1509365$1c10a1b4-41b0-4402-cd50-636c69e09c78",
+        "rank": "normal"
+      },
+      {
+        "mainsnak": {
+          "snaktype": "value",
+          "property": "P126",
+          "hash": "6d5ac17a7325ba3ed7ca00c350115f11efdf81cc",
+          "datavalue": {
+            "value": {
+              "entity-type": "item",
+              "numeric-id": 17495,
+              "id": "Q17495"
+            },
+            "type": "wikibase-entityid"
+          },
+          "datatype": "wikibase-item"
+        },
+        "type": "statement",
+        "id": "Q1509365$2ac6e123-4d4f-18be-3ca1-87ad89390f43",
+        "rank": "normal"
+      }
+    ],
+    "P5061": [
+      {
+        "mainsnak": {
+          "snaktype": "value",
+          "property": "P5061",
+          "hash": "8216a428d544e078f405ee7622dcb7543fa6ec08",
+          "datavalue": {
+            "value": {
+              "text": "XFO",
+              "language": "mul"
+            },
+            "type": "monolingualtext"
+          },
+          "datatype": "monolingualtext"
+        },
+        "type": "statement",
+        "id": "Q1509365$1233d58a-4968-bef2-7746-6214c76b52ce",
+        "rank": "normal"
+      }
+    ],
+    "P1001": [
+      {
+        "mainsnak": {
+          "snaktype": "value",
+          "property": "P1001",
+          "hash": "d05ce56e71c243776229b47008f66a57af660841",
+          "datavalue": {
+            "value": {
+              "entity-type": "item",
+              "numeric-id": 13780930,
+              "id": "Q13780930"
+            },
+            "type": "wikibase-entityid"
+          },
+          "datatype": "wikibase-item"
+        },
+        "type": "statement",
+        "id": "Q1509365$504d45ba-49d2-3ca7-e0ed-1a890b6ad3e2",
+        "rank": "normal"
+      }
+    ],
+    "P973": [
+      {
+        "mainsnak": {
+          "snaktype": "value",
+          "property": "P973",
+          "hash": "c0df07ce4dd6b0b71f916bddd496c55af5ee6a78",
+          "datavalue": {
+            "value": "https://www.vgmi.ch/",
+            "type": "string"
+          },
+          "datatype": "url"
+        },
+        "type": "statement",
+        "qualifiers": {
+          "P407": [
+            {
+              "snaktype": "value",
+              "property": "P407",
+              "hash": "38fca081c87949f02d2b58bf4bebfc8193cc103c",
+              "datavalue": {
+                "value": {
+                  "entity-type": "item",
+                  "numeric-id": 1366643,
+                  "id": "Q1366643"
+                },
+                "type": "wikibase-entityid"
+              },
+              "datatype": "wikibase-item"
+            }
+          ],
+          "P813": [
+            {
+              "snaktype": "value",
+              "property": "P813",
+              "hash": "ec8101412ff0383d282e071a6c716ea0a5294638",
+              "datavalue": {
+                "value": {
+                  "time": "+2024-09-11T00:00:00Z",
+                  "timezone": 0,
+                  "before": 0,
+                  "after": 0,
+                  "precision": 11,
+                  "calendarmodel": "http://www.wikidata.org/entity/Q1985727"
+                },
+                "type": "time"
+              },
+              "datatype": "time"
+            }
+          ]
+        },
+        "qualifiers-order": [
+          "P407",
+          "P813"
+        ],
+        "id": "Q1509365$7c86ab20-4d70-20d2-587e-9b0e067811c1",
+        "rank": "normal"
+      }
+    ],
+    "P18": [
+      {
+        "mainsnak": {
+          "snaktype": "value",
+          "property": "P18",
+          "hash": "00fe5a2ce7b550b79326e3e6553b6cb79b4c397c",
+          "datavalue": {
+            "value": "Zog frang ar coin front.jpg",
+            "type": "string"
+          },
+          "datatype": "commonsMedia"
+        },
+        "type": "statement",
+        "qualifiers": {
+          "P585": [
+            {
+              "snaktype": "value",
+              "property": "P585",
+              "hash": "74a9d474135bfe5dd977cb2ea152e37a6e395669",
+              "datavalue": {
+                "value": {
+                  "time": "+2005-04-07T00:00:00Z",
+                  "timezone": 0,
+                  "before": 0,
+                  "after": 0,
+                  "precision": 11,
+                  "calendarmodel": "http://www.wikidata.org/entity/Q1985727"
+                },
+                "type": "time"
+              },
+              "datatype": "time"
+            }
+          ],
+          "P2096": [
+            {
+              "snaktype": "value",
+              "property": "P2096",
+              "hash": "65f255fd73d61048e4c62a51e650aba29c6c1cbf",
+              "datavalue": {
+                "value": {
+                  "text": "\"Gold Franc\" of King Zog of the Albanians (not made of gold)",
+                  "language": "en"
+                },
+                "type": "monolingualtext"
+              },
+              "datatype": "monolingualtext"
+            }
+          ],
+          "P180": [
+            {
+              "snaktype": "value",
+              "property": "P180",
+              "hash": "f3e0e47ba7aac720c7927c640da3f4246bb11ef3",
+              "datavalue": {
+                "value": {
+                  "entity-type": "item",
+                  "numeric-id": 60699,
+                  "id": "Q60699"
+                },
+                "type": "wikibase-entityid"
+              },
+              "datatype": "wikibase-item"
+            }
+          ]
+        },
+        "qualifiers-order": [
+          "P585",
+          "P2096",
+          "P180"
+        ],
+        "id": "Q1509365$12431da9-425b-d4cc-4bc5-5a49ce469882",
+        "rank": "preferred"
+      },
+      {
+        "mainsnak": {
+          "snaktype": "value",
+          "property": "P18",
+          "hash": "35bfa2c14918061123cf6e21f072ea3838a394ae",
+          "datavalue": {
+            "value": "Zog frang ar coin back.jpg",
+            "type": "string"
+          },
+          "datatype": "commonsMedia"
+        },
+        "type": "statement",
+        "id": "Q1509365$931917ef-40eb-d72b-249c-1143fa0bd559",
+        "rank": "normal"
+      }
+    ]
+  },
+  "sitelinks": {
+    "cswiki": {
+      "site": "cswiki",
+      "title": "Zlatý frank",
+      "badges": [],
+      "url": "https://cs.wikipedia.org/wiki/Zlat%C3%BD_frank"
+    },
+    "dewiki": {
+      "site": "dewiki",
+      "title": "Goldfranken",
+      "badges": [],
+      "url": "https://de.wikipedia.org/wiki/Goldfranken"
+    },
+    "enwiki": {
+      "site": "enwiki",
+      "title": "Gold franc",
+      "badges": [],
+      "url": "https://en.wikipedia.org/wiki/Gold_franc"
+    },
+    "frwiki": {
+      "site": "frwiki",
+      "title": "Franc-or",
+      "badges": [],
+      "url": "https://fr.wikipedia.org/wiki/Franc-or"
+    },
+    "hywiki": {
+      "site": "hywiki",
+      "title": "Ոսկե ֆրանկ",
+      "badges": [],
+      "url": "https://hy.wikipedia.org/wiki/%D5%88%D5%BD%D5%AF%D5%A5_%D6%86%D6%80%D5%A1%D5%B6%D5%AF"
+    },
+    "jawiki": {
+      "site": "jawiki",
+      "title": "金フラン",
+      "badges": [],
+      "url": "https://ja.wikipedia.org/wiki/%E9%87%91%E3%83%95%E3%83%A9%E3%83%B3"
+    },
+    "mkwiki": {
+      "site": "mkwiki",
+      "title": "Златен франк",
+      "badges": [],
+      "url": "https://mk.wikipedia.org/wiki/%D0%97%D0%BB%D0%B0%D1%82%D0%B5%D0%BD_%D1%84%D1%80%D0%B0%D0%BD%D0%BA"
+    },
+    "plwiki": {
+      "site": "plwiki",
+      "title": "Złoty frank",
+      "badges": [],
+      "url": "https://pl.wikipedia.org/wiki/Z%C5%82oty_frank"
+    },
+    "ruwiki": {
+      "site": "ruwiki",
+      "title": "Золотой франк",
+      "badges": [],
+      "url": "https://ru.wikipedia.org/wiki/%D0%97%D0%BE%D0%BB%D0%BE%D1%82%D0%BE%D0%B9_%D1%84%D1%80%D0%B0%D0%BD%D0%BA"
+    },
+    "svwiki": {
+      "site": "svwiki",
+      "title": "Guldfranc",
+      "badges": [],
+      "url": "https://sv.wikipedia.org/wiki/Guldfranc"
+    }
+  }
+}

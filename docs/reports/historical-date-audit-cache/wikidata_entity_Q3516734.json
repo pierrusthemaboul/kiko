@@ -1,0 +1,782 @@
+{
+  "saved_at": "2026-03-07T16:09:19.417Z",
+  "value": {
+    "pageid": 3348515,
+    "ns": 0,
+    "title": "Q3516734",
+    "lastrevid": 2274878133,
+    "modified": "2024-11-15T01:52:57Z",
+    "type": "item",
+    "id": "Q3516734",
+    "labels": {
+      "fr": {
+        "language": "fr",
+        "value": "station-service Teapot Dome"
+      },
+      "en": {
+        "language": "en",
+        "value": "Teapot Dome Service Station"
+      },
+      "nb": {
+        "language": "nb",
+        "value": "Teapot Dome"
+      },
+      "it": {
+        "language": "it",
+        "value": "Stazione di servizio Teapot Dome"
+      }
+    },
+    "descriptions": {
+      "fr": {
+        "language": "fr",
+        "value": "station-service américaine"
+      },
+      "nl": {
+        "language": "nl",
+        "value": "tankstation in Zillah, Verenigde Staten van Amerika"
+      },
+      "en": {
+        "language": "en",
+        "value": "service station shaped like a teapot"
+      }
+    },
+    "aliases": {},
+    "claims": {
+      "P373": [
+        {
+          "mainsnak": {
+            "snaktype": "value",
+            "property": "P373",
+            "hash": "9831beacc9e3990bee75c3046db0de0080e946b1",
+            "datavalue": {
+              "value": "Teapot Dome Service Station",
+              "type": "string"
+            },
+            "datatype": "string"
+          },
+          "type": "statement",
+          "id": "q3516734$E52BE462-2113-4B84-B45B-39B638ACFCC4",
+          "rank": "normal"
+        }
+      ],
+      "P649": [
+        {
+          "mainsnak": {
+            "snaktype": "value",
+            "property": "P649",
+            "hash": "f8d50c152e8c7f13b2af7a0e6bbb280fce91ea4f",
+            "datavalue": {
+              "value": "85001943",
+              "type": "string"
+            },
+            "datatype": "external-id"
+          },
+          "type": "statement",
+          "id": "q3516734$C56FD4B5-8160-4DFA-B619-F6A161D4F21D",
+          "rank": "normal"
+        }
+      ],
+      "P625": [
+        {
+          "mainsnak": {
+            "snaktype": "value",
+            "property": "P625",
+            "hash": "af529b7b62d9e9a9abe170f15397122d52a629a3",
+            "datavalue": {
+              "value": {
+                "latitude": 46.4036,
+                "longitude": -120.261,
+                "altitude": null,
+                "precision": null,
+                "globe": "http://www.wikidata.org/entity/Q2"
+              },
+              "type": "globecoordinate"
+            },
+            "datatype": "globe-coordinate"
+          },
+          "type": "statement",
+          "id": "q3516734$2CC71677-8742-40E3-853C-8BBCCC1850E8",
+          "rank": "normal",
+          "references": [
+            {
+              "hash": "fa278ebfc458360e5aed63d5058cca83c46134f1",
+              "snaks": {
+                "P143": [
+                  {
+                    "snaktype": "value",
+                    "property": "P143",
+                    "hash": "e4f6d9441d0600513c4533c672b5ab472dc73694",
+                    "datavalue": {
+                      "value": {
+                        "entity-type": "item",
+                        "numeric-id": 328,
+                        "id": "Q328"
+                      },
+                      "type": "wikibase-entityid"
+                    },
+                    "datatype": "wikibase-item"
+                  }
+                ]
+              },
+              "snaks-order": [
+                "P143"
+              ]
+            }
+          ]
+        }
+      ],
+      "P17": [
+        {
+          "mainsnak": {
+            "snaktype": "value",
+            "property": "P17",
+            "hash": "be4c6eafa2984964f04be85667263f5642ba1a72",
+            "datavalue": {
+              "value": {
+                "entity-type": "item",
+                "numeric-id": 30,
+                "id": "Q30"
+              },
+              "type": "wikibase-entityid"
+            },
+            "datatype": "wikibase-item"
+          },
+          "type": "statement",
+          "id": "q3516734$9845AEDA-CF9D-473C-B07C-5203D5B512EF",
+          "rank": "normal",
+          "references": [
+            {
+              "hash": "fa278ebfc458360e5aed63d5058cca83c46134f1",
+              "snaks": {
+                "P143": [
+                  {
+                    "snaktype": "value",
+                    "property": "P143",
+                    "hash": "e4f6d9441d0600513c4533c672b5ab472dc73694",
+                    "datavalue": {
+                      "value": {
+                        "entity-type": "item",
+                        "numeric-id": 328,
+                        "id": "Q328"
+                      },
+                      "type": "wikibase-entityid"
+                    },
+                    "datatype": "wikibase-item"
+                  }
+                ]
+              },
+              "snaks-order": [
+                "P143"
+              ]
+            }
+          ]
+        }
+      ],
+      "P131": [
+        {
+          "mainsnak": {
+            "snaktype": "value",
+            "property": "P131",
+            "hash": "6f20f0da56cd25097c01fbd27b8cf638f21e33d2",
+            "datavalue": {
+              "value": {
+                "entity-type": "item",
+                "numeric-id": 781706,
+                "id": "Q781706"
+              },
+              "type": "wikibase-entityid"
+            },
+            "datatype": "wikibase-item"
+          },
+          "type": "statement",
+          "id": "Q3516734$699a095d-4f72-494f-d575-580cafe2515e",
+          "rank": "normal",
+          "references": [
+            {
+              "hash": "8b54988000c25b6a69fd69c014f5ae42f56ea081",
+              "snaks": {
+                "P248": [
+                  {
+                    "snaktype": "value",
+                    "property": "P248",
+                    "hash": "6dfc3059ccf88c0bcef10de810ed37f896bc12c4",
+                    "datavalue": {
+                      "value": {
+                        "entity-type": "item",
+                        "numeric-id": 3719,
+                        "id": "Q3719"
+                      },
+                      "type": "wikibase-entityid"
+                    },
+                    "datatype": "wikibase-item"
+                  }
+                ],
+                "P649": [
+                  {
+                    "snaktype": "value",
+                    "property": "P649",
+                    "hash": "f8d50c152e8c7f13b2af7a0e6bbb280fce91ea4f",
+                    "datavalue": {
+                      "value": "85001943",
+                      "type": "string"
+                    },
+                    "datatype": "external-id"
+                  }
+                ]
+              },
+              "snaks-order": [
+                "P248",
+                "P649"
+              ]
+            }
+          ]
+        }
+      ],
+      "P31": [
+        {
+          "mainsnak": {
+            "snaktype": "value",
+            "property": "P31",
+            "hash": "77d95504ef95b7d752f8609fd3024ad9a4990f38",
+            "datavalue": {
+              "value": {
+                "entity-type": "item",
+                "numeric-id": 205495,
+                "id": "Q205495"
+              },
+              "type": "wikibase-entityid"
+            },
+            "datatype": "wikibase-item"
+          },
+          "type": "statement",
+          "id": "Q3516734$E6E7C957-A323-4522-8FAA-D8B9F933E690",
+          "rank": "normal",
+          "references": [
+            {
+              "hash": "8b916e6f762386583ba8a93066cd294c66d44eec",
+              "snaks": {
+                "P5383": [
+                  {
+                    "snaktype": "value",
+                    "property": "P5383",
+                    "hash": "050362b3cc93a06133b57a428a42af0947e65f2b",
+                    "datavalue": {
+                      "value": "70929",
+                      "type": "string"
+                    },
+                    "datatype": "external-id"
+                  }
+                ],
+                "P248": [
+                  {
+                    "snaktype": "value",
+                    "property": "P248",
+                    "hash": "c619cc6e0e5fe3733a8c4a47939343e5970e0e9d",
+                    "datavalue": {
+                      "value": {
+                        "entity-type": "item",
+                        "numeric-id": 265049,
+                        "id": "Q265049"
+                      },
+                      "type": "wikibase-entityid"
+                    },
+                    "datatype": "wikibase-item"
+                  }
+                ],
+                "P813": [
+                  {
+                    "snaktype": "value",
+                    "property": "P813",
+                    "hash": "4c0eff5068027bafbf6b5f8bb9b8c629ef0be226",
+                    "datavalue": {
+                      "value": {
+                        "time": "+2021-06-16T00:00:00Z",
+                        "timezone": 0,
+                        "before": 0,
+                        "after": 0,
+                        "precision": 11,
+                        "calendarmodel": "http://www.wikidata.org/entity/Q1985727"
+                      },
+                      "type": "time"
+                    },
+                    "datatype": "time"
+                  }
+                ]
+              },
+              "snaks-order": [
+                "P5383",
+                "P248",
+                "P813"
+              ]
+            }
+          ]
+        }
+      ],
+      "P18": [
+        {
+          "mainsnak": {
+            "snaktype": "value",
+            "property": "P18",
+            "hash": "4034de38df7c77689f09f8d1395ad56b534ee821",
+            "datavalue": {
+              "value": "Teapot Dome Service Station, Zillah WA.jpg",
+              "type": "string"
+            },
+            "datatype": "commonsMedia"
+          },
+          "type": "statement",
+          "id": "Q3516734$0E5D710A-6910-4A27-B020-68C9D0A38A4B",
+          "rank": "normal"
+        }
+      ],
+      "P1435": [
+        {
+          "mainsnak": {
+            "snaktype": "value",
+            "property": "P1435",
+            "hash": "e9e351fb7bcaabb0fdc190586805e6bd23fc09d6",
+            "datavalue": {
+              "value": {
+                "entity-type": "item",
+                "numeric-id": 19558910,
+                "id": "Q19558910"
+              },
+              "type": "wikibase-entityid"
+            },
+            "datatype": "wikibase-item"
+          },
+          "type": "statement",
+          "qualifiers": {
+            "P580": [
+              {
+                "snaktype": "value",
+                "property": "P580",
+                "hash": "9554ce5ed9571543d9ae27f937c17a95f8885d67",
+                "datavalue": {
+                  "value": {
+                    "time": "+1985-08-29T00:00:00Z",
+                    "timezone": 0,
+                    "before": 0,
+                    "after": 0,
+                    "precision": 11,
+                    "calendarmodel": "http://www.wikidata.org/entity/Q1985727"
+                  },
+                  "type": "time"
+                },
+                "datatype": "time"
+              }
+            ],
+            "P1810": [
+              {
+                "snaktype": "value",
+                "property": "P1810",
+                "hash": "270724a8ae0755bfa8b5b10ab13052a238d31103",
+                "datavalue": {
+                  "value": "Teapot Dome Service Station",
+                  "type": "string"
+                },
+                "datatype": "string"
+              }
+            ],
+            "P2868": [
+              {
+                "snaktype": "value",
+                "property": "P2868",
+                "hash": "7abb92f9a43a9c5d211f4ca38588722876ab6d4f",
+                "datavalue": {
+                  "value": {
+                    "entity-type": "item",
+                    "numeric-id": 47162123,
+                    "id": "Q47162123"
+                  },
+                  "type": "wikibase-entityid"
+                },
+                "datatype": "wikibase-item"
+              }
+            ],
+            "P1013": [
+              {
+                "snaktype": "value",
+                "property": "P1013",
+                "hash": "ad96e9744f4e56fce09def9c7f2a9c4e4dbb144b",
+                "datavalue": {
+                  "value": {
+                    "entity-type": "item",
+                    "numeric-id": 47035253,
+                    "id": "Q47035253"
+                  },
+                  "type": "wikibase-entityid"
+                },
+                "datatype": "wikibase-item"
+              }
+            ]
+          },
+          "qualifiers-order": [
+            "P580",
+            "P1810",
+            "P2868",
+            "P1013"
+          ],
+          "id": "Q3516734$b6ff30f2-42cb-8c00-a59c-ac20611e768a",
+          "rank": "normal",
+          "references": [
+            {
+              "hash": "8b54988000c25b6a69fd69c014f5ae42f56ea081",
+              "snaks": {
+                "P248": [
+                  {
+                    "snaktype": "value",
+                    "property": "P248",
+                    "hash": "6dfc3059ccf88c0bcef10de810ed37f896bc12c4",
+                    "datavalue": {
+                      "value": {
+                        "entity-type": "item",
+                        "numeric-id": 3719,
+                        "id": "Q3719"
+                      },
+                      "type": "wikibase-entityid"
+                    },
+                    "datatype": "wikibase-item"
+                  }
+                ],
+                "P649": [
+                  {
+                    "snaktype": "value",
+                    "property": "P649",
+                    "hash": "f8d50c152e8c7f13b2af7a0e6bbb280fce91ea4f",
+                    "datavalue": {
+                      "value": "85001943",
+                      "type": "string"
+                    },
+                    "datatype": "external-id"
+                  }
+                ]
+              },
+              "snaks-order": [
+                "P248",
+                "P649"
+              ]
+            },
+            {
+              "hash": "0bf9007fee8a5f733e85f6dd61d0df2aa1aeb280",
+              "snaks": {
+                "P248": [
+                  {
+                    "snaktype": "value",
+                    "property": "P248",
+                    "hash": "6a66d1c5cedf87cf79e6cfd6118879f159aa28c4",
+                    "datavalue": {
+                      "value": {
+                        "entity-type": "item",
+                        "numeric-id": 113508718,
+                        "id": "Q113508718"
+                      },
+                      "type": "wikibase-entityid"
+                    },
+                    "datatype": "wikibase-item"
+                  }
+                ],
+                "P1225": [
+                  {
+                    "snaktype": "value",
+                    "property": "P1225",
+                    "hash": "ea5787e69e8b3e1bf19527f54d6ae9fd43bbfd74",
+                    "datavalue": {
+                      "value": "75613752",
+                      "type": "string"
+                    },
+                    "datatype": "external-id"
+                  }
+                ]
+              },
+              "snaks-order": [
+                "P248",
+                "P1225"
+              ]
+            }
+          ]
+        }
+      ],
+      "P793": [
+        {
+          "mainsnak": {
+            "snaktype": "value",
+            "property": "P793",
+            "hash": "23db98c2dae78eaf160e2008602eed7c73f16ef8",
+            "datavalue": {
+              "value": {
+                "entity-type": "item",
+                "numeric-id": 385378,
+                "id": "Q385378"
+              },
+              "type": "wikibase-entityid"
+            },
+            "datatype": "wikibase-item"
+          },
+          "type": "statement",
+          "qualifiers": {
+            "P585": [
+              {
+                "snaktype": "value",
+                "property": "P585",
+                "hash": "2d5b17ed894925a03b82013ee93d7a53a1546dcf",
+                "datavalue": {
+                  "value": {
+                    "time": "+1922-00-00T00:00:00Z",
+                    "timezone": 0,
+                    "before": 0,
+                    "after": 0,
+                    "precision": 9,
+                    "calendarmodel": "http://www.wikidata.org/entity/Q1985727"
+                  },
+                  "type": "time"
+                },
+                "datatype": "time"
+              }
+            ]
+          },
+          "qualifiers-order": [
+            "P585"
+          ],
+          "id": "Q3516734$4fdfb9a3-47ac-4520-2095-d22d854a54af",
+          "rank": "normal"
+        }
+      ],
+      "P149": [
+        {
+          "mainsnak": {
+            "snaktype": "value",
+            "property": "P149",
+            "hash": "68175eb3cf830d3825a0fb9eaeb96d337b4b06f2",
+            "datavalue": {
+              "value": {
+                "entity-type": "item",
+                "numeric-id": 548879,
+                "id": "Q548879"
+              },
+              "type": "wikibase-entityid"
+            },
+            "datatype": "wikibase-item"
+          },
+          "type": "statement",
+          "id": "Q3516734$769f27de-46b9-b283-7129-e1ea17edaa8e",
+          "rank": "normal"
+        }
+      ],
+      "P1619": [
+        {
+          "mainsnak": {
+            "snaktype": "value",
+            "property": "P1619",
+            "hash": "023547c1e0489f0d54d9e81d9c00a9348d9f0bb1",
+            "datavalue": {
+              "value": {
+                "time": "+1922-00-00T00:00:00Z",
+                "timezone": 0,
+                "before": 0,
+                "after": 0,
+                "precision": 9,
+                "calendarmodel": "http://www.wikidata.org/entity/Q1985727"
+              },
+              "type": "time"
+            },
+            "datatype": "time"
+          },
+          "type": "statement",
+          "id": "Q3516734$CE840873-CD99-4126-A530-0FC2628F1CD8",
+          "rank": "normal"
+        }
+      ],
+      "P6375": [
+        {
+          "mainsnak": {
+            "snaktype": "value",
+            "property": "P6375",
+            "hash": "91adc8adacaa86db6e9193800f945e0942128321",
+            "datavalue": {
+              "value": {
+                "text": "117 First Avenue",
+                "language": "en"
+              },
+              "type": "monolingualtext"
+            },
+            "datatype": "monolingualtext"
+          },
+          "type": "statement",
+          "id": "Q3516734$56B6D4FC-9E9B-402A-861E-358D1E05A36B",
+          "rank": "normal"
+        }
+      ],
+      "P6486": [
+        {
+          "mainsnak": {
+            "snaktype": "value",
+            "property": "P6486",
+            "hash": "a4d310741e6b7955fdb6fe099395bc1fd435840d",
+            "datavalue": {
+              "value": "10929",
+              "type": "string"
+            },
+            "datatype": "external-id"
+          },
+          "type": "statement",
+          "id": "Q3516734$E1B8968C-3CB7-4481-8E45-945A27E46140",
+          "rank": "normal"
+        }
+      ],
+      "P5383": [
+        {
+          "mainsnak": {
+            "snaktype": "value",
+            "property": "P5383",
+            "hash": "050362b3cc93a06133b57a428a42af0947e65f2b",
+            "datavalue": {
+              "value": "70929",
+              "type": "string"
+            },
+            "datatype": "external-id"
+          },
+          "type": "statement",
+          "id": "Q3516734$A928ACF3-1509-432C-B7C2-811291FD074D",
+          "rank": "normal",
+          "references": [
+            {
+              "hash": "ec6eb706b793a7bc634ee4580a8bee2d04c48939",
+              "snaks": {
+                "P854": [
+                  {
+                    "snaktype": "value",
+                    "property": "P854",
+                    "hash": "bb385bc908e4615b60c060310f5723f66c443109",
+                    "datavalue": {
+                      "value": "https://www.archinform.net/service/wd_aipro.php",
+                      "type": "string"
+                    },
+                    "datatype": "url"
+                  }
+                ],
+                "P248": [
+                  {
+                    "snaktype": "value",
+                    "property": "P248",
+                    "hash": "c619cc6e0e5fe3733a8c4a47939343e5970e0e9d",
+                    "datavalue": {
+                      "value": {
+                        "entity-type": "item",
+                        "numeric-id": 265049,
+                        "id": "Q265049"
+                      },
+                      "type": "wikibase-entityid"
+                    },
+                    "datatype": "wikibase-item"
+                  }
+                ],
+                "P813": [
+                  {
+                    "snaktype": "value",
+                    "property": "P813",
+                    "hash": "4e0ff144406f4443ab3242b9a897cd784f1bc46f",
+                    "datavalue": {
+                      "value": {
+                        "time": "+2019-07-14T00:00:00Z",
+                        "timezone": 0,
+                        "before": 0,
+                        "after": 0,
+                        "precision": 11,
+                        "calendarmodel": "http://www.wikidata.org/entity/Q1985727"
+                      },
+                      "type": "time"
+                    },
+                    "datatype": "time"
+                  }
+                ]
+              },
+              "snaks-order": [
+                "P854",
+                "P248",
+                "P813"
+              ]
+            }
+          ]
+        }
+      ],
+      "P8499": [
+        {
+          "mainsnak": {
+            "snaktype": "value",
+            "property": "P8499",
+            "hash": "694361f24b3dc87d1e9f92784631701b64963d50",
+            "datavalue": {
+              "value": "662644",
+              "type": "string"
+            },
+            "datatype": "external-id"
+          },
+          "type": "statement",
+          "id": "Q3516734$d7103d81-4721-63a8-ccc6-e227aa07d2ad",
+          "rank": "normal"
+        }
+      ],
+      "P7772": [
+        {
+          "mainsnak": {
+            "snaktype": "value",
+            "property": "P7772",
+            "hash": "5cd7c286dfb8e0189cead580a1430a6611db6ce4",
+            "datavalue": {
+              "value": "teapot-dome-service-station",
+              "type": "string"
+            },
+            "datatype": "external-id"
+          },
+          "type": "statement",
+          "id": "Q3516734$14E06C0D-DB54-48E2-9FEF-F4046CA40289",
+          "rank": "normal"
+        }
+      ],
+      "P646": [
+        {
+          "mainsnak": {
+            "snaktype": "value",
+            "property": "P646",
+            "hash": "1fac87332c3f88806615a9f7aa145050066d2269",
+            "datavalue": {
+              "value": "/m/01xmgy2",
+              "type": "string"
+            },
+            "datatype": "external-id"
+          },
+          "type": "statement",
+          "id": "Q3516734$9F91277F-82F0-48C8-AB16-20A109A98ED7",
+          "rank": "normal"
+        }
+      ]
+    },
+    "sitelinks": {
+      "commonswiki": {
+        "site": "commonswiki",
+        "title": "Category:Teapot Dome Service Station",
+        "badges": [],
+        "url": "https://commons.wikimedia.org/wiki/Category:Teapot_Dome_Service_Station"
+      },
+      "enwiki": {
+        "site": "enwiki",
+        "title": "Teapot Dome Service Station",
+        "badges": [],
+        "url": "https://en.wikipedia.org/wiki/Teapot_Dome_Service_Station"
+      },
+      "frwiki": {
+        "site": "frwiki",
+        "title": "Station-service Teapot Dome",
+        "badges": [],
+        "url": "https://fr.wikipedia.org/wiki/Station-service_Teapot_Dome"
+      },
+      "itwiki": {
+        "site": "itwiki",
+        "title": "Stazione di servizio Teapot Dome",
+        "badges": [],
+        "url": "https://it.wikipedia.org/wiki/Stazione_di_servizio_Teapot_Dome"
+      }
+    }
+  }
+}

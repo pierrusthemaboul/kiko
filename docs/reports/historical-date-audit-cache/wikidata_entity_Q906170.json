@@ -1,0 +1,522 @@
+{
+  "saved_at": "2026-03-07T15:29:02.898Z",
+  "value": {
+    "pageid": 856885,
+    "ns": 0,
+    "title": "Q906170",
+    "lastrevid": 2451049095,
+    "modified": "2026-01-03T23:46:40Z",
+    "type": "item",
+    "id": "Q906170",
+    "labels": {
+      "pt": {
+        "language": "pt",
+        "value": "Costanera Center"
+      },
+      "ko": {
+        "language": "ko",
+        "value": "코스타네라 센터"
+      },
+      "fr": {
+        "language": "fr",
+        "value": "Costanera Center"
+      },
+      "es": {
+        "language": "es",
+        "value": "Costanera Center"
+      },
+      "en": {
+        "language": "en",
+        "value": "Costanera Center"
+      },
+      "nl": {
+        "language": "nl",
+        "value": "Costanera Center"
+      },
+      "ja": {
+        "language": "ja",
+        "value": "コスタネラセンター"
+      },
+      "zh-hant": {
+        "language": "zh-hant",
+        "value": "科斯塔內拉中心"
+      },
+      "zh-cn": {
+        "language": "zh-cn",
+        "value": "科斯塔内拉中心"
+      },
+      "de": {
+        "language": "de",
+        "value": "Costanera Center"
+      },
+      "zh-hans": {
+        "language": "zh-hans",
+        "value": "科斯塔内拉中心"
+      },
+      "zh": {
+        "language": "zh",
+        "value": "科斯塔内拉中心"
+      },
+      "fa": {
+        "language": "fa",
+        "value": "مرکز کاستانرا"
+      },
+      "tr": {
+        "language": "tr",
+        "value": "Costanera Center"
+      },
+      "la": {
+        "language": "la",
+        "value": "Costanera Center"
+      }
+    },
+    "descriptions": {
+      "es": {
+        "language": "es",
+        "value": "conjunto de edificios ubicados en Santiago, Chile"
+      },
+      "en": {
+        "language": "en",
+        "value": "commercial and business complex in Chile"
+      }
+    },
+    "aliases": {
+      "es": [
+        {
+          "language": "es",
+          "value": "Costanera Center Torre 1"
+        },
+        {
+          "language": "es",
+          "value": "Costanera Center Torre 3"
+        },
+        {
+          "language": "es",
+          "value": "Edificio Costanera Centro"
+        }
+      ]
+    },
+    "claims": {
+      "P373": [
+        {
+          "mainsnak": {
+            "snaktype": "value",
+            "property": "P373",
+            "hash": "d63a1cc49129658bc2dcc0e72b88615c36a74e16",
+            "datavalue": {
+              "value": "Gran Torre Costanera",
+              "type": "string"
+            },
+            "datatype": "string"
+          },
+          "type": "statement",
+          "id": "q906170$39A0A944-37F4-45E4-BC3E-0E4C03A7C796",
+          "rank": "normal"
+        }
+      ],
+      "P625": [
+        {
+          "mainsnak": {
+            "snaktype": "value",
+            "property": "P625",
+            "hash": "17f38be9c4352aaae487106b9a7c589e4abb1493",
+            "datavalue": {
+              "value": {
+                "latitude": -33.4175,
+                "longitude": -70.60666667,
+                "altitude": null,
+                "precision": 0.00027777777777778,
+                "globe": "http://www.wikidata.org/entity/Q2"
+              },
+              "type": "globecoordinate"
+            },
+            "datatype": "globe-coordinate"
+          },
+          "type": "statement",
+          "id": "Q906170$A2088AAD-4D66-4776-A7D8-7A696F90F793",
+          "rank": "normal",
+          "references": [
+            {
+              "hash": "fa278ebfc458360e5aed63d5058cca83c46134f1",
+              "snaks": {
+                "P143": [
+                  {
+                    "snaktype": "value",
+                    "property": "P143",
+                    "hash": "e4f6d9441d0600513c4533c672b5ab472dc73694",
+                    "datavalue": {
+                      "value": {
+                        "entity-type": "item",
+                        "numeric-id": 328,
+                        "id": "Q328"
+                      },
+                      "type": "wikibase-entityid"
+                    },
+                    "datatype": "wikibase-item"
+                  }
+                ]
+              },
+              "snaks-order": [
+                "P143"
+              ]
+            }
+          ]
+        }
+      ],
+      "P646": [
+        {
+          "mainsnak": {
+            "snaktype": "value",
+            "property": "P646",
+            "hash": "8943ae20d52251812a5b6016692697750241e8a0",
+            "datavalue": {
+              "value": "/m/0d84ks",
+              "type": "string"
+            },
+            "datatype": "external-id"
+          },
+          "type": "statement",
+          "id": "Q906170$6543363E-7617-43C6-9DF6-1E58E5056284",
+          "rank": "normal",
+          "references": [
+            {
+              "hash": "2b00cb481cddcac7623114367489b5c194901c4a",
+              "snaks": {
+                "P248": [
+                  {
+                    "snaktype": "value",
+                    "property": "P248",
+                    "hash": "a94b740202b097dd33355e0e6c00e54b9395e5e0",
+                    "datavalue": {
+                      "value": {
+                        "entity-type": "item",
+                        "numeric-id": 15241312,
+                        "id": "Q15241312"
+                      },
+                      "type": "wikibase-entityid"
+                    },
+                    "datatype": "wikibase-item"
+                  }
+                ],
+                "P577": [
+                  {
+                    "snaktype": "value",
+                    "property": "P577",
+                    "hash": "fde79ecb015112d2f29229ccc1ec514ed3e71fa2",
+                    "datavalue": {
+                      "value": {
+                        "time": "+2013-10-28T00:00:00Z",
+                        "timezone": 0,
+                        "before": 0,
+                        "after": 0,
+                        "precision": 11,
+                        "calendarmodel": "http://www.wikidata.org/entity/Q1985727"
+                      },
+                      "type": "time"
+                    },
+                    "datatype": "time"
+                  }
+                ]
+              },
+              "snaks-order": [
+                "P248",
+                "P577"
+              ]
+            }
+          ]
+        }
+      ],
+      "P18": [
+        {
+          "mainsnak": {
+            "snaktype": "value",
+            "property": "P18",
+            "hash": "2a93c466fcd7b2257886707c6ae5fb09180fe3ce",
+            "datavalue": {
+              "value": "Vista Parcial de Santiago de Chile 2013.jpg",
+              "type": "string"
+            },
+            "datatype": "commonsMedia"
+          },
+          "type": "statement",
+          "id": "Q906170$F988B435-7CDA-466D-870E-6351DBEDA89E",
+          "rank": "normal",
+          "references": [
+            {
+              "hash": "d4bd87b862b12d99d26e86472d44f26858dee639",
+              "snaks": {
+                "P143": [
+                  {
+                    "snaktype": "value",
+                    "property": "P143",
+                    "hash": "f30cbd35620c4ea6d0633aaf0210a8916130469b",
+                    "datavalue": {
+                      "value": {
+                        "entity-type": "item",
+                        "numeric-id": 8447,
+                        "id": "Q8447"
+                      },
+                      "type": "wikibase-entityid"
+                    },
+                    "datatype": "wikibase-item"
+                  }
+                ]
+              },
+              "snaks-order": [
+                "P143"
+              ]
+            }
+          ]
+        }
+      ],
+      "P17": [
+        {
+          "mainsnak": {
+            "snaktype": "value",
+            "property": "P17",
+            "hash": "e8ccd0e986dbab687e97e16135182ba3caa49071",
+            "datavalue": {
+              "value": {
+                "entity-type": "item",
+                "numeric-id": 298,
+                "id": "Q298"
+              },
+              "type": "wikibase-entityid"
+            },
+            "datatype": "wikibase-item"
+          },
+          "type": "statement",
+          "id": "Q906170$2461B33E-BABF-4649-80A7-4DEFEF89D274",
+          "rank": "normal"
+        }
+      ],
+      "P131": [
+        {
+          "mainsnak": {
+            "snaktype": "value",
+            "property": "P131",
+            "hash": "b1d0ffd053dde42f0afdb47dc51e77da4a622d0f",
+            "datavalue": {
+              "value": {
+                "entity-type": "item",
+                "numeric-id": 51587,
+                "id": "Q51587"
+              },
+              "type": "wikibase-entityid"
+            },
+            "datatype": "wikibase-item"
+          },
+          "type": "statement",
+          "id": "Q906170$EF1A2DA8-16B8-460B-AC13-52946663945B",
+          "rank": "normal",
+          "references": [
+            {
+              "hash": "c1ebb81b8a4cd89fb4411a31dca5e5432d06902a",
+              "snaks": {
+                "P143": [
+                  {
+                    "snaktype": "value",
+                    "property": "P143",
+                    "hash": "f30cbd35620c4ea6d0633aaf0210a8916130469b",
+                    "datavalue": {
+                      "value": {
+                        "entity-type": "item",
+                        "numeric-id": 8447,
+                        "id": "Q8447"
+                      },
+                      "type": "wikibase-entityid"
+                    },
+                    "datatype": "wikibase-item"
+                  }
+                ],
+                "P4656": [
+                  {
+                    "snaktype": "value",
+                    "property": "P4656",
+                    "hash": "d177589c4d8682622cd36506c20bb0e54251512c",
+                    "datavalue": {
+                      "value": "https://fr.wikipedia.org/w/index.php?title=Costanera_Center&oldid=141049755",
+                      "type": "string"
+                    },
+                    "datatype": "url"
+                  }
+                ]
+              },
+              "snaks-order": [
+                "P143",
+                "P4656"
+              ]
+            }
+          ]
+        }
+      ],
+      "P31": [
+        {
+          "mainsnak": {
+            "snaktype": "value",
+            "property": "P31",
+            "hash": "a4fabc6b93d596ee0c6e2ac996fc75a6e8473bda",
+            "datavalue": {
+              "value": {
+                "entity-type": "item",
+                "numeric-id": 1497364,
+                "id": "Q1497364"
+              },
+              "type": "wikibase-entityid"
+            },
+            "datatype": "wikibase-item"
+          },
+          "type": "statement",
+          "id": "Q906170$3bd4e90b-4928-2eba-45d5-e3ec083c006f",
+          "rank": "normal"
+        }
+      ],
+      "P1699": [
+        {
+          "mainsnak": {
+            "snaktype": "value",
+            "property": "P1699",
+            "hash": "95b98686116f49f88df045109295dc1c4e0aa531",
+            "datavalue": {
+              "value": "51953",
+              "type": "string"
+            },
+            "datatype": "external-id"
+          },
+          "type": "statement",
+          "id": "Q906170$79573DC5-839E-4288-B14B-6E133D202530",
+          "rank": "normal",
+          "references": [
+            {
+              "hash": "77701ab94b5d7c977b67de286dbf9c6ac5c41dbe",
+              "snaks": {
+                "P887": [
+                  {
+                    "snaktype": "value",
+                    "property": "P887",
+                    "hash": "cc0aed3cd9279f5c1a96e248e23f6e7c49a4c127",
+                    "datavalue": {
+                      "value": {
+                        "entity-type": "item",
+                        "numeric-id": 134479201,
+                        "id": "Q134479201"
+                      },
+                      "type": "wikibase-entityid"
+                    },
+                    "datatype": "wikibase-item"
+                  }
+                ]
+              },
+              "snaks-order": [
+                "P887"
+              ]
+            }
+          ]
+        },
+        {
+          "mainsnak": {
+            "snaktype": "value",
+            "property": "P1699",
+            "hash": "cdaaa6f15be6d4fbd56001972b8c8acb29ffcc68",
+            "datavalue": {
+              "value": "52010",
+              "type": "string"
+            },
+            "datatype": "external-id"
+          },
+          "type": "statement",
+          "id": "Q906170$F9525F00-6ADC-4AD3-A106-F80510CA2123",
+          "rank": "normal",
+          "references": [
+            {
+              "hash": "77701ab94b5d7c977b67de286dbf9c6ac5c41dbe",
+              "snaks": {
+                "P887": [
+                  {
+                    "snaktype": "value",
+                    "property": "P887",
+                    "hash": "cc0aed3cd9279f5c1a96e248e23f6e7c49a4c127",
+                    "datavalue": {
+                      "value": {
+                        "entity-type": "item",
+                        "numeric-id": 134479201,
+                        "id": "Q134479201"
+                      },
+                      "type": "wikibase-entityid"
+                    },
+                    "datatype": "wikibase-item"
+                  }
+                ]
+              },
+              "snaks-order": [
+                "P887"
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    "sitelinks": {
+      "commonswiki": {
+        "site": "commonswiki",
+        "title": "Category:Costanera Center",
+        "badges": [],
+        "url": "https://commons.wikimedia.org/wiki/Category:Costanera_Center"
+      },
+      "enwiki": {
+        "site": "enwiki",
+        "title": "Costanera Center",
+        "badges": [],
+        "url": "https://en.wikipedia.org/wiki/Costanera_Center"
+      },
+      "eswiki": {
+        "site": "eswiki",
+        "title": "Costanera Center",
+        "badges": [],
+        "url": "https://es.wikipedia.org/wiki/Costanera_Center"
+      },
+      "fawiki": {
+        "site": "fawiki",
+        "title": "مرکز کاستانرا",
+        "badges": [],
+        "url": "https://fa.wikipedia.org/wiki/%D9%85%D8%B1%DA%A9%D8%B2_%DA%A9%D8%A7%D8%B3%D8%AA%D8%A7%D9%86%D8%B1%D8%A7"
+      },
+      "frwiki": {
+        "site": "frwiki",
+        "title": "Costanera Center",
+        "badges": [],
+        "url": "https://fr.wikipedia.org/wiki/Costanera_Center"
+      },
+      "kowiki": {
+        "site": "kowiki",
+        "title": "코스타네라 센터",
+        "badges": [],
+        "url": "https://ko.wikipedia.org/wiki/%EC%BD%94%EC%8A%A4%ED%83%80%EB%84%A4%EB%9D%BC_%EC%84%BC%ED%84%B0"
+      },
+      "lawiki": {
+        "site": "lawiki",
+        "title": "Costanera Center",
+        "badges": [],
+        "url": "https://la.wikipedia.org/wiki/Costanera_Center"
+      },
+      "nlwiki": {
+        "site": "nlwiki",
+        "title": "Costanera Center",
+        "badges": [],
+        "url": "https://nl.wikipedia.org/wiki/Costanera_Center"
+      },
+      "ptwiki": {
+        "site": "ptwiki",
+        "title": "Costanera Center",
+        "badges": [],
+        "url": "https://pt.wikipedia.org/wiki/Costanera_Center"
+      },
+      "trwiki": {
+        "site": "trwiki",
+        "title": "Costanera Center",
+        "badges": [],
+        "url": "https://tr.wikipedia.org/wiki/Costanera_Center"
+      }
+    }
+  }
+}

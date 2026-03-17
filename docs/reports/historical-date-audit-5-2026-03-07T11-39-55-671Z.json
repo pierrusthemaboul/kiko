@@ -1,0 +1,356 @@
+{
+  "generated_at": "2026-03-07T11:40:22.013Z",
+  "sample_size": 5,
+  "model": "gemini-2.0-flash",
+  "selection": "random_time_stratified",
+  "run_stamp": "2026-03-07T11-39-55-671Z",
+  "runtime_options": {
+    "sampleSize": 5,
+    "periodBuckets": 5,
+    "maxBatchSize": 10,
+    "batchPauseMs": 1500,
+    "eventPauseMs": 0,
+    "checkpointEvery": 5,
+    "geminiRetries": 4,
+    "geminiRetryBaseMs": 2500,
+    "wikiSearchLimit": 5,
+    "resume": false
+  },
+  "sample_event_ids": [
+    "57263c5c-b035-4eaa-a498-b8f7b8e797a3",
+    "e765e846-1bf8-4c53-828b-e106c0ec7e6d",
+    "b83867ef-cbc6-4f5d-8ba5-31cad13c48bf",
+    "a6c0a199-8a72-4f00-ad8f-45f0c95b6bc1",
+    "2162be68-6e36-4284-87fb-d687b7e2cc7d"
+  ],
+  "summary_by_status": {
+    "CONFIRMED": 2,
+    "INSUFFICIENT_EVIDENCE": 2,
+    "LIKELY_CORRECT": 1
+  },
+  "summary_by_bucket": {
+    "confirme": 2,
+    "annee_exacte_introuvable": 2,
+    "probable_mais_a_confirmer": 1
+  },
+  "checkpoint": false,
+  "completed": true,
+  "resumed_count": 0,
+  "results": [
+    {
+      "id": "57263c5c-b035-4eaa-a498-b8f7b8e797a3",
+      "titre": "Bataille du Yarmouk conquête musulmane de la Syrie byzantine",
+      "date_in_db": "0636-01-01",
+      "year_in_db": "0636",
+      "date_candidate": "0636-01-01",
+      "year_candidate": "0636",
+      "precision": "year",
+      "status": "CONFIRMED",
+      "result_bucket": "confirme",
+      "confidence": 0.9,
+      "needs_human_review": false,
+      "recommendation": "Confirmer la date de 636 pour la bataille du Yarmouk.",
+      "matched_article_fr": "https://fr.wikipedia.org/wiki/Bataille_du_Yarmouk",
+      "matched_article_en": null,
+      "wikidata_id": "Q194226",
+      "event_identity": "Bataille du Yarmouk",
+      "is_disputed": false,
+      "ambiguous_identity": false,
+      "title_self_sufficient": true,
+      "title_not_self_sufficient": false,
+      "is_not_singular_event": false,
+      "is_time_span": false,
+      "is_period_based": false,
+      "exact_year_supported": true,
+      "reasoning_short": "La bataille du Yarmouk s'est déroulée en 636 selon Wikipedia et Wikidata.",
+      "evidence_used": [
+        "wikipedia_fr_article",
+        "wikidata_1"
+      ],
+      "sources_checked": [
+        {
+          "source_id": "wikipedia_fr_article",
+          "source_type": "wikipedia_fr",
+          "title": "Bataille du Yarmouk",
+          "url": "https://fr.wikipedia.org/wiki/Bataille_du_Yarmouk",
+          "date_iso": null,
+          "precision": null
+        },
+        {
+          "source_id": "wikidata_1",
+          "source_type": "wikidata",
+          "title": "Q194226",
+          "url": "https://www.wikidata.org/wiki/Q194226",
+          "date_iso": "0636-08-15",
+          "precision": "day"
+        }
+      ],
+      "source_quotes": [
+        {
+          "source_id": "wikipedia_fr_article",
+          "quote": "La bataille du Yarmouk (en arabe : معركة اليرموك, grec : , Ἱερομύαξ ou Iermouchas, Ιερμουχάς) est une bataille majeure entre les forces musulmanes conduites par le califat des Rachidoune et les armées de l’Empire romain d'Orient. La bataille consiste en une série d’engagements qui s’étalent sur une durée de six jours en août 636, près de la rivière Yarmouk qui marque aujourd’hui la frontière entre la Syrie et la Jordanie, au sud-est de la mer de Galilée. La bataille est une grande victoire pour les musulmans qui mettent fin à la domination byzantine en Syrie. Pour certains historiens, la bataille du Yarmouk est l’un des engagements majeurs de l’histoire et marque la première grande vague des conquêtes musulmanes. Elle est notamment à l’origine de l’expansion de l’islam au sein du Levant chrétien. À l’origine de cet affrontement figure la volonté d’Héraclius d’endiguer l’avance musulmane…"
+        },
+        {
+          "source_id": "wikidata_1",
+          "quote": "start time: 0636-08-15"
+        }
+      ],
+      "conflicts": []
+    },
+    {
+      "id": "e765e846-1bf8-4c53-828b-e106c0ec7e6d",
+      "titre": "Ouverture du Concile Vatican II",
+      "date_in_db": "1962-10-11",
+      "year_in_db": "1962",
+      "date_candidate": null,
+      "year_candidate": null,
+      "precision": null,
+      "status": "INSUFFICIENT_EVIDENCE",
+      "result_bucket": "annee_exacte_introuvable",
+      "confidence": 0,
+      "needs_human_review": true,
+      "recommendation": "Provide a reliable external source confirming the year of the event.",
+      "matched_article_fr": null,
+      "matched_article_en": null,
+      "wikidata_id": "Q172991",
+      "event_identity": "Ouverture du Concile Vatican II",
+      "is_disputed": false,
+      "ambiguous_identity": false,
+      "title_self_sufficient": true,
+      "title_not_self_sufficient": false,
+      "is_not_singular_event": false,
+      "is_time_span": false,
+      "is_period_based": false,
+      "exact_year_supported": false,
+      "reasoning_short": "No external source confirms the year of the opening of the Second Vatican Council. Therefore, I cannot confirm the year.",
+      "evidence_used": [],
+      "sources_checked": [
+        {
+          "source_id": "wikipedia_fr_article",
+          "source_type": "wikipedia_fr",
+          "title": "Concile de Trente",
+          "url": "https://fr.wikipedia.org/wiki/Concile_de_Trente",
+          "date_iso": null,
+          "precision": null
+        },
+        {
+          "source_id": "wikidata_1",
+          "source_type": "wikidata",
+          "title": "Q172991",
+          "url": "https://www.wikidata.org/wiki/Q172991",
+          "date_iso": "1545-12-13",
+          "precision": "day"
+        }
+      ],
+      "source_quotes": [
+        {
+          "source_id": "wikipedia_fr_article",
+          "quote": "Le concile de Trente est le dix-neuvième concile œcuménique qui est reconnu par l'Église catholique. Convoqué par le pape Paul III le 22 mai 1542, en réponse aux demandes formulées par Martin Luther et Jean Calvin dans le cadre de la Réforme protestante, il débute le 13 décembre 1545 et se termine le 4 décembre 1563. Étalées sur dix-huit ans, ses vingt-cinq sessions couvrent cinq pontificats (Paul III, Jules III, Marcel II, Paul IV et Pie IV) et se tiennent à Trente dans la cathédrale de San Vigilio, puis à Bologne et enfin à nouveau à Trente, dans l'église Santa Maria Maggiore. En réponse aux théories protestantes, le concile confirme la doctrine du péché originel affirmée lors du 16e concile de Carthage en 418, précise celle de la justification, de l’autorité de la Bible spécifique au catholicisme et confirme les sept sacrements, le culte des saints et des reliques ainsi que le dogme …"
+        },
+        {
+          "source_id": "wikidata_1",
+          "quote": "start time: 1545-12-13"
+        }
+      ],
+      "conflicts": []
+    },
+    {
+      "id": "b83867ef-cbc6-4f5d-8ba5-31cad13c48bf",
+      "titre": "Mort de François II",
+      "date_in_db": "1560-01-01",
+      "year_in_db": "1560",
+      "date_candidate": "1560-01-01",
+      "year_candidate": "1560",
+      "precision": "year",
+      "status": "CONFIRMED",
+      "result_bucket": "confirme",
+      "confidence": 1,
+      "needs_human_review": false,
+      "recommendation": "Confirmer la date de 1560.",
+      "matched_article_fr": "wikipedia_fr_article",
+      "matched_article_en": null,
+      "wikidata_id": "Q132548",
+      "event_identity": "Mort de François II, roi de France.",
+      "is_disputed": false,
+      "ambiguous_identity": false,
+      "title_self_sufficient": true,
+      "title_not_self_sufficient": false,
+      "is_not_singular_event": false,
+      "is_time_span": false,
+      "is_period_based": false,
+      "exact_year_supported": true,
+      "reasoning_short": "L'article Wikipédia en français et les données Wikidata indiquent que François II est mort en 1560.",
+      "evidence_used": [
+        "wikipedia_fr_article",
+        "wikidata_2"
+      ],
+      "sources_checked": [
+        {
+          "source_id": "wikipedia_fr_article",
+          "source_type": "wikipedia_fr",
+          "title": "François II (roi de France)",
+          "url": "https://fr.wikipedia.org/wiki/Fran%C3%A7ois_II_(roi_de_France)",
+          "date_iso": null,
+          "precision": null
+        },
+        {
+          "source_id": "wikipedia_en_article",
+          "source_type": "wikipedia_en",
+          "title": "François",
+          "url": "https://en.wikipedia.org/wiki/Fran%C3%A7ois",
+          "date_iso": null,
+          "precision": null
+        },
+        {
+          "source_id": "wikidata_1",
+          "source_type": "wikidata",
+          "title": "Q132548",
+          "url": "https://www.wikidata.org/wiki/Q132548",
+          "date_iso": "1544-01-19",
+          "precision": "day"
+        },
+        {
+          "source_id": "wikidata_2",
+          "source_type": "wikidata",
+          "title": "Q132548",
+          "url": "https://www.wikidata.org/wiki/Q132548",
+          "date_iso": "1560-12-05",
+          "precision": "day"
+        }
+      ],
+      "source_quotes": [
+        {
+          "source_id": "wikipedia_fr_article",
+          "quote": "François II, né à Fontainebleau le 19 janvier 1544 et mort à Orléans le 5 décembre 1560, est roi de France du 10 juillet 1559 jusqu'à sa mort. Fils aîné d'Henri II et de Catherine de Médicis, il monte sur le trône de France à l'âge de quinze ans après la mort accidentelle de son père le 10 juillet 1559. Son règne éphémère ne dure qu'un an et cinq mois mais constitue un prélude majeur au déclenchement des guerres de Religion. Son règne est en effet marqué par une importante crise politique et religieuse. À son avènement, il confie les rênes du gouvernement aux Guise, les oncles de son épouse Marie Stuart, reine d'Écosse, partisans d’une politique de répression à l'égard des protestants. Après la conjuration d’Amboise, il entame la mise en place d'une conciliation à l'égard des réformés mais se montre implacable face aux émeutiers qui mettent à mal son autorité dans les provinces. Son règ…"
+        },
+        {
+          "source_id": "wikipedia_en_article",
+          "quote": "François (French: [fʁɑ̃swa]) is a French masculine given name and surname, equivalent to the English name Francis."
+        },
+        {
+          "source_id": "wikidata_1",
+          "quote": "date of birth: 1544-01-19"
+        },
+        {
+          "source_id": "wikidata_2",
+          "quote": "date of death: 1560-12-05"
+        }
+      ],
+      "conflicts": []
+    },
+    {
+      "id": "a6c0a199-8a72-4f00-ad8f-45f0c95b6bc1",
+      "titre": "Réactions et interprétations françaises de la révolution russe de 1905",
+      "date_in_db": "1905-01-01",
+      "year_in_db": "1905",
+      "date_candidate": "1905-01-01",
+      "year_candidate": "1905",
+      "precision": "year",
+      "status": "LIKELY_CORRECT",
+      "result_bucket": "probable_mais_a_confirmer",
+      "confidence": 0.8,
+      "needs_human_review": false,
+      "recommendation": "Confirmer la date de 1905.",
+      "matched_article_fr": null,
+      "matched_article_en": null,
+      "wikidata_id": "Q8729",
+      "event_identity": "Réactions et interprétations françaises de la révolution russe de 1905",
+      "is_disputed": false,
+      "ambiguous_identity": false,
+      "title_self_sufficient": true,
+      "title_not_self_sufficient": false,
+      "is_not_singular_event": false,
+      "is_time_span": false,
+      "is_period_based": false,
+      "exact_year_supported": true,
+      "reasoning_short": "Le titre et la description indiquent clairement que l'événement se déroule en 1905. Bien que les sources externes parlent de la révolution russe de 1917, la description se concentre sur les réactions à la révolution de 1905.",
+      "evidence_used": [],
+      "sources_checked": [
+        {
+          "source_id": "wikipedia_fr_article",
+          "source_type": "wikipedia_fr",
+          "title": "Révolution russe",
+          "url": "https://fr.wikipedia.org/wiki/R%C3%A9volution_russe",
+          "date_iso": null,
+          "precision": null
+        },
+        {
+          "source_id": "wikidata_1",
+          "source_type": "wikidata",
+          "title": "Q8729",
+          "url": "https://www.wikidata.org/wiki/Q8729",
+          "date_iso": "1917-01-01",
+          "precision": "year"
+        }
+      ],
+      "source_quotes": [
+        {
+          "source_id": "wikipedia_fr_article",
+          "quote": "La révolution russe (en russe : русская революция [ˈruskɐjɐ rʲɪvɐˈlʲut͡sɨjɐ]) est l’ensemble des événements ayant conduit en février 1917 au renversement spontané du régime tsariste de Russie, puis en octobre de la même année à la prise de pouvoir par les bolcheviks et à l’installation d’un régime léniniste (« communiste »). Cette dernière débouche sur une guerre civile d'une grande violence, opposant les bolcheviks aux Armées blanches et à un ensemble d'autres adversaires (makhnovchtchina, Armées vertes, etc.). Le conflit est accompagné d'un effondrement de l'économie russe, qui avait débuté pendant la Première Guerre mondiale, et d'une famine particulièrement meurtrière : il s'achève par la victoire des bolcheviks et par la reconstitution, sous l'égide de l'URSS, de la majorité des territoires de l'ex-empire. La révolution en Russie donne également naissance au communisme, un régime p…"
+        },
+        {
+          "source_id": "wikidata_1",
+          "quote": "point in time: 1917-01-01"
+        }
+      ],
+      "conflicts": []
+    },
+    {
+      "id": "2162be68-6e36-4284-87fb-d687b7e2cc7d",
+      "titre": "Fondation de la Pennsylvanie",
+      "date_in_db": "1681-01-01",
+      "year_in_db": "1681",
+      "date_candidate": null,
+      "year_candidate": null,
+      "precision": null,
+      "status": "INSUFFICIENT_EVIDENCE",
+      "result_bucket": "annee_exacte_introuvable",
+      "confidence": 0,
+      "needs_human_review": true,
+      "recommendation": "Find a source that explicitly states the year of the founding of the Pennsylvania colony.",
+      "matched_article_fr": "https://fr.wikipedia.org/wiki/Pennsylvanie",
+      "matched_article_en": null,
+      "wikidata_id": "Q1400",
+      "event_identity": "Fondation de la Pennsylvanie",
+      "is_disputed": false,
+      "ambiguous_identity": false,
+      "title_self_sufficient": true,
+      "title_not_self_sufficient": false,
+      "is_not_singular_event": false,
+      "is_time_span": false,
+      "is_period_based": false,
+      "exact_year_supported": false,
+      "reasoning_short": "The provided sources do not contain information about the founding year of Pennsylvania. Wikidata mentions 1787 as inception, but this refers to the statehood, not the founding of the colony.",
+      "evidence_used": [],
+      "sources_checked": [
+        {
+          "source_id": "wikipedia_fr_article",
+          "source_type": "wikipedia_fr",
+          "title": "Pennsylvanie",
+          "url": "https://fr.wikipedia.org/wiki/Pennsylvanie",
+          "date_iso": null,
+          "precision": null
+        },
+        {
+          "source_id": "wikidata_1",
+          "source_type": "wikidata",
+          "title": "Q1400",
+          "url": "https://www.wikidata.org/wiki/Q1400",
+          "date_iso": "1787-12-12",
+          "precision": "day"
+        }
+      ],
+      "source_quotes": [
+        {
+          "source_id": "wikipedia_fr_article",
+          "quote": "La Pennsylvanie , officiellement le Commonwealth de Pennsylvanie (en anglais : Pennsylvania /ˌpɛn.səlˈveɪ.niə/ et Commonwealth of Pennsylvania), est un État des États-Unis, bordé au nord-ouest par le lac Érié, au nord par l'État de New York, à l'est par le New Jersey, au sud par le Delaware, le Maryland et la Virginie-Occidentale et à l'ouest par l'Ohio. En 2024, sa population s'élève à 13 078 751 habitants."
+        },
+        {
+          "source_id": "wikidata_1",
+          "quote": "inception: 1787-12-12"
+        }
+      ],
+      "conflicts": []
+    }
+  ]
+}

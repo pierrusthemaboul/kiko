@@ -1,0 +1,138 @@
+{
+  "saved_at": "2026-03-07T14:17:20.599Z",
+  "value": {
+    "pageid": 91366250,
+    "ns": 0,
+    "title": "Q92194452",
+    "lastrevid": 1990571798,
+    "modified": "2023-10-12T21:25:03Z",
+    "type": "item",
+    "id": "Q92194452",
+    "labels": {
+      "fr": {
+        "language": "fr",
+        "value": "Fonds de solidarité africain"
+      },
+      "en": {
+        "language": "en",
+        "value": "African Solidarity Fund (ASF)"
+      }
+    },
+    "descriptions": {
+      "en": {
+        "language": "en",
+        "value": "Financial organization"
+      }
+    },
+    "aliases": {},
+    "claims": {
+      "P2671": [
+        {
+          "mainsnak": {
+            "snaktype": "value",
+            "property": "P2671",
+            "hash": "a3b08b1ce241e5e5674d2de562b2aff9b1b985e1",
+            "datavalue": {
+              "value": "/g/11j5vlsf1p",
+              "type": "string"
+            },
+            "datatype": "external-id"
+          },
+          "type": "statement",
+          "id": "Q92194452$D9EA8553-D9B9-4C16-A446-CA08E8980678",
+          "rank": "normal"
+        }
+      ],
+      "P856": [
+        {
+          "mainsnak": {
+            "snaktype": "value",
+            "property": "P856",
+            "hash": "ba23065174055d0cad3e27ffe9ce9c7e2ff30845",
+            "datavalue": {
+              "value": "https://fondsolidariteafricain.org",
+              "type": "string"
+            },
+            "datatype": "url"
+          },
+          "type": "statement",
+          "qualifiers": {
+            "P407": [
+              {
+                "snaktype": "value",
+                "property": "P407",
+                "hash": "daf1c4fcb58181b02dff9cc89deb084004ddae4b",
+                "datavalue": {
+                  "value": {
+                    "entity-type": "item",
+                    "numeric-id": 1860,
+                    "id": "Q1860"
+                  },
+                  "type": "wikibase-entityid"
+                },
+                "datatype": "wikibase-item"
+              }
+            ]
+          },
+          "qualifiers-order": [
+            "P407"
+          ],
+          "id": "Q92194452$017b63d0-413c-2d4c-50d8-45add582a872",
+          "rank": "normal"
+        }
+      ],
+      "P31": [
+        {
+          "mainsnak": {
+            "snaktype": "value",
+            "property": "P31",
+            "hash": "1c677328d98f22a92f5e110c72dcd5161f72efb9",
+            "datavalue": {
+              "value": {
+                "entity-type": "item",
+                "numeric-id": 650241,
+                "id": "Q650241"
+              },
+              "type": "wikibase-entityid"
+            },
+            "datatype": "wikibase-item"
+          },
+          "type": "statement",
+          "id": "Q92194452$a1a86001-4ef9-7fcd-1c67-1f5cca9c0808",
+          "rank": "normal"
+        }
+      ],
+      "P11915": [
+        {
+          "mainsnak": {
+            "snaktype": "value",
+            "property": "P11915",
+            "hash": "0cb6c6425fdaf3e07058441e8b21ecca6f2e87dc",
+            "datavalue": {
+              "value": "1100046831",
+              "type": "string"
+            },
+            "datatype": "external-id"
+          },
+          "type": "statement",
+          "id": "Q92194452$9A5015AB-A43A-491E-A7D5-443A4ED30717",
+          "rank": "normal"
+        }
+      ]
+    },
+    "sitelinks": {
+      "enwiki": {
+        "site": "enwiki",
+        "title": "African Solidarity Fund",
+        "badges": [],
+        "url": "https://en.wikipedia.org/wiki/African_Solidarity_Fund"
+      },
+      "frwiki": {
+        "site": "frwiki",
+        "title": "Fonds de solidarité africain",
+        "badges": [],
+        "url": "https://fr.wikipedia.org/wiki/Fonds_de_solidarit%C3%A9_africain"
+      }
+    }
+  }
+}

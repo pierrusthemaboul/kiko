@@ -1,0 +1,493 @@
+{
+  "pageid": 3898497,
+  "ns": 0,
+  "title": "Q4090324",
+  "lastrevid": 2408593726,
+  "modified": "2025-09-23T14:53:29Z",
+  "type": "item",
+  "id": "Q4090324",
+  "labels": {
+    "ru": {
+      "language": "ru",
+      "value": "Бой у Бейрута (1912)"
+    },
+    "en": {
+      "language": "en",
+      "value": "Battle of Beirut"
+    },
+    "tr": {
+      "language": "tr",
+      "value": "Beyrut Muharebesi (1912)"
+    },
+    "fr": {
+      "language": "fr",
+      "value": "bataille de Beyrouth"
+    },
+    "ar": {
+      "language": "ar",
+      "value": "معركة بيروت"
+    },
+    "it": {
+      "language": "it",
+      "value": "battaglia di Beirut"
+    },
+    "azb": {
+      "language": "azb",
+      "value": "بیروت دؤیوشو"
+    },
+    "he": {
+      "language": "he",
+      "value": "קרב ביירות"
+    },
+    "de": {
+      "language": "de",
+      "value": "Seeschlacht von Beirut"
+    },
+    "es": {
+      "language": "es",
+      "value": "batalla de Beirut (1912)"
+    },
+    "yo": {
+      "language": "yo",
+      "value": "ogun Beirut"
+    },
+    "pl": {
+      "language": "pl",
+      "value": "Bitwa pod Bejrutem"
+    },
+    "arz": {
+      "language": "arz",
+      "value": "معركة بيروت (1912)"
+    },
+    "ka": {
+      "language": "ka",
+      "value": "1912 წლის ბეირუთის ბრძოლა"
+    },
+    "az": {
+      "language": "az",
+      "value": "Beyrut döyüşü (1912)"
+    }
+  },
+  "descriptions": {
+    "en": {
+      "language": "en",
+      "value": "1912 naval battle that occurred during the Italo-Turkish War"
+    },
+    "yo": {
+      "language": "yo",
+      "value": "ogun"
+    },
+    "tr": {
+      "language": "tr",
+      "value": "Osmanlı İmparatorluğu ile İtalya Krallığı arasında yapılan deniz savaşı"
+    },
+    "es": {
+      "language": "es",
+      "value": "batalla de la guerra ítalo-turca"
+    }
+  },
+  "aliases": {
+    "tr": [
+      {
+        "language": "tr",
+        "value": "Beyrut Savaşı(1912)"
+      },
+      {
+        "language": "tr",
+        "value": "Beyrut Savaşı (1912)"
+      },
+      {
+        "language": "tr",
+        "value": "Beyrut muharebesi (1912)"
+      }
+    ],
+    "ar": [
+      {
+        "language": "ar",
+        "value": "معركة بيروت (١٩١٢)"
+      }
+    ]
+  },
+  "claims": {
+    "P373": [
+      {
+        "mainsnak": {
+          "snaktype": "value",
+          "property": "P373",
+          "hash": "4855c7f202bb510fb29ffbb1f14755c0cdd5343e",
+          "datavalue": {
+            "value": "Battle of Beirut (1912)",
+            "type": "string"
+          },
+          "datatype": "string"
+        },
+        "type": "statement",
+        "id": "q4090324$8FF75FA3-8DC5-43B0-BD8B-A144F6FEEC77",
+        "rank": "normal"
+      }
+    ],
+    "P31": [
+      {
+        "mainsnak": {
+          "snaktype": "value",
+          "property": "P31",
+          "hash": "2f3a4fbd562cdefff5e16b8bb567ee5dd616f44a",
+          "datavalue": {
+            "value": {
+              "entity-type": "item",
+              "numeric-id": 1261499,
+              "id": "Q1261499"
+            },
+            "type": "wikibase-entityid"
+          },
+          "datatype": "wikibase-item"
+        },
+        "type": "statement",
+        "id": "Q4090324$ea7c3d74-41d9-e04c-5c96-74c0f73ea2ac",
+        "rank": "normal"
+      }
+    ],
+    "P361": [
+      {
+        "mainsnak": {
+          "snaktype": "value",
+          "property": "P361",
+          "hash": "e30c50bffe1f959d17122adb1f5b454a673f1ebb",
+          "datavalue": {
+            "value": {
+              "entity-type": "item",
+              "numeric-id": 203824,
+              "id": "Q203824"
+            },
+            "type": "wikibase-entityid"
+          },
+          "datatype": "wikibase-item"
+        },
+        "type": "statement",
+        "id": "Q4090324$1edf6829-41c1-7d34-412f-7a4ba586e5b2",
+        "rank": "normal"
+      }
+    ],
+    "P276": [
+      {
+        "mainsnak": {
+          "snaktype": "value",
+          "property": "P276",
+          "hash": "9bc18b7cbdb72c19e580367703e10d7711c4ff02",
+          "datavalue": {
+            "value": {
+              "entity-type": "item",
+              "numeric-id": 3820,
+              "id": "Q3820"
+            },
+            "type": "wikibase-entityid"
+          },
+          "datatype": "wikibase-item"
+        },
+        "type": "statement",
+        "qualifiers": {
+          "P1480": [
+            {
+              "snaktype": "value",
+              "property": "P1480",
+              "hash": "f89fd04e48d8e638afa968c5b5b44e66db781634",
+              "datavalue": {
+                "value": {
+                  "entity-type": "item",
+                  "numeric-id": 21818619,
+                  "id": "Q21818619"
+                },
+                "type": "wikibase-entityid"
+              },
+              "datatype": "wikibase-item"
+            }
+          ]
+        },
+        "qualifiers-order": [
+          "P1480"
+        ],
+        "id": "Q4090324$8bb59a59-4049-c673-1ba5-fe14c799c4f3",
+        "rank": "normal"
+      }
+    ],
+    "P585": [
+      {
+        "mainsnak": {
+          "snaktype": "value",
+          "property": "P585",
+          "hash": "c255acbc8d5aa7ef584161efa35715f558761055",
+          "datavalue": {
+            "value": {
+              "time": "+1912-02-24T00:00:00Z",
+              "timezone": 0,
+              "before": 0,
+              "after": 0,
+              "precision": 11,
+              "calendarmodel": "http://www.wikidata.org/entity/Q1985727"
+            },
+            "type": "time"
+          },
+          "datatype": "time"
+        },
+        "type": "statement",
+        "id": "Q4090324$d0c21995-4d50-9637-19de-fc4868b79a5f",
+        "rank": "normal"
+      }
+    ],
+    "P625": [
+      {
+        "mainsnak": {
+          "snaktype": "value",
+          "property": "P625",
+          "hash": "7e525b9c3400461e5fd0844a65b534c536c1375a",
+          "datavalue": {
+            "value": {
+              "latitude": 33.886944444444,
+              "longitude": 35.513055555556,
+              "altitude": null,
+              "precision": 0.00027777777777778,
+              "globe": "http://www.wikidata.org/entity/Q2"
+            },
+            "type": "globecoordinate"
+          },
+          "datatype": "globe-coordinate"
+        },
+        "type": "statement",
+        "id": "Q4090324$86361631-43c2-04ec-4d9f-fdce15407ead",
+        "rank": "normal"
+      }
+    ],
+    "P18": [
+      {
+        "mainsnak": {
+          "snaktype": "value",
+          "property": "P18",
+          "hash": "bdc198a300de72538979d1d7a224d8108a706bd4",
+          "datavalue": {
+            "value": "BattleOfBeirut1912.jpg",
+            "type": "string"
+          },
+          "datatype": "commonsMedia"
+        },
+        "type": "statement",
+        "id": "Q4090324$23F2851A-13E9-4810-B897-8494AB53D66D",
+        "rank": "normal",
+        "references": [
+          {
+            "hash": "fa278ebfc458360e5aed63d5058cca83c46134f1",
+            "snaks": {
+              "P143": [
+                {
+                  "snaktype": "value",
+                  "property": "P143",
+                  "hash": "e4f6d9441d0600513c4533c672b5ab472dc73694",
+                  "datavalue": {
+                    "value": {
+                      "entity-type": "item",
+                      "numeric-id": 328,
+                      "id": "Q328"
+                    },
+                    "type": "wikibase-entityid"
+                  },
+                  "datatype": "wikibase-item"
+                }
+              ]
+            },
+            "snaks-order": [
+              "P143"
+            ]
+          }
+        ]
+      }
+    ],
+    "P710": [
+      {
+        "mainsnak": {
+          "snaktype": "value",
+          "property": "P710",
+          "hash": "4a842283cc9d16449587e52ffced9845c6cd28a1",
+          "datavalue": {
+            "value": {
+              "entity-type": "item",
+              "numeric-id": 12560,
+              "id": "Q12560"
+            },
+            "type": "wikibase-entityid"
+          },
+          "datatype": "wikibase-item"
+        },
+        "type": "statement",
+        "qualifiers": {
+          "P4791": [
+            {
+              "snaktype": "value",
+              "property": "P4791",
+              "hash": "8adfc9cf986f955c94c6ef167efe468787b87236",
+              "datavalue": {
+                "value": {
+                  "entity-type": "item",
+                  "numeric-id": 153899,
+                  "id": "Q153899"
+                },
+                "type": "wikibase-entityid"
+              },
+              "datatype": "wikibase-item"
+            }
+          ]
+        },
+        "qualifiers-order": [
+          "P4791"
+        ],
+        "id": "Q4090324$B7A6EB2B-63E7-48C3-90A2-0778E04CABA3",
+        "rank": "normal"
+      },
+      {
+        "mainsnak": {
+          "snaktype": "value",
+          "property": "P710",
+          "hash": "6a821f7c2d5456e100b9f5d0e6d2b855b787fb1d",
+          "datavalue": {
+            "value": {
+              "entity-type": "item",
+              "numeric-id": 172579,
+              "id": "Q172579"
+            },
+            "type": "wikibase-entityid"
+          },
+          "datatype": "wikibase-item"
+        },
+        "type": "statement",
+        "qualifiers": {
+          "P4791": [
+            {
+              "snaktype": "value",
+              "property": "P4791",
+              "hash": "47bdb3ac1c1534d79108b8031bedfd220ea60f49",
+              "datavalue": {
+                "value": {
+                  "entity-type": "item",
+                  "numeric-id": 711569,
+                  "id": "Q711569"
+                },
+                "type": "wikibase-entityid"
+              },
+              "datatype": "wikibase-item"
+            }
+          ]
+        },
+        "qualifiers-order": [
+          "P4791"
+        ],
+        "id": "Q4090324$507a17bc-4199-cf92-e772-548f8a440771",
+        "rank": "normal"
+      }
+    ],
+    "P646": [
+      {
+        "mainsnak": {
+          "snaktype": "value",
+          "property": "P646",
+          "hash": "f90f4809f27b4e015e4cb37d1ca8f021ca3fb991",
+          "datavalue": {
+            "value": "/m/07s56sq",
+            "type": "string"
+          },
+          "datatype": "external-id"
+        },
+        "type": "statement",
+        "id": "Q4090324$F0E4F150-F780-4C92-B230-6B782DD4AB29",
+        "rank": "normal"
+      }
+    ]
+  },
+  "sitelinks": {
+    "arwiki": {
+      "site": "arwiki",
+      "title": "معركة بيروت (1912)",
+      "badges": [],
+      "url": "https://ar.wikipedia.org/wiki/%D9%85%D8%B9%D8%B1%D9%83%D8%A9_%D8%A8%D9%8A%D8%B1%D9%88%D8%AA_(1912)"
+    },
+    "arzwiki": {
+      "site": "arzwiki",
+      "title": "معركة بيروت (1912)",
+      "badges": [],
+      "url": "https://arz.wikipedia.org/wiki/%D9%85%D8%B9%D8%B1%D9%83%D8%A9_%D8%A8%D9%8A%D8%B1%D9%88%D8%AA_(1912)"
+    },
+    "azbwiki": {
+      "site": "azbwiki",
+      "title": "بیروت دؤیوشو (۱۹۱۲)",
+      "badges": [],
+      "url": "https://azb.wikipedia.org/wiki/%D8%A8%DB%8C%D8%B1%D9%88%D8%AA_%D8%AF%D8%A4%DB%8C%D9%88%D8%B4%D9%88_(%DB%B1%DB%B9%DB%B1%DB%B2)"
+    },
+    "azwiki": {
+      "site": "azwiki",
+      "title": "Beyrut döyüşü (1912)",
+      "badges": [],
+      "url": "https://az.wikipedia.org/wiki/Beyrut_d%C3%B6y%C3%BC%C5%9F%C3%BC_(1912)"
+    },
+    "commonswiki": {
+      "site": "commonswiki",
+      "title": "Category:Battle of Beirut (1912)",
+      "badges": [],
+      "url": "https://commons.wikimedia.org/wiki/Category:Battle_of_Beirut_(1912)"
+    },
+    "dewiki": {
+      "site": "dewiki",
+      "title": "Seeschlacht von Beirut",
+      "badges": [],
+      "url": "https://de.wikipedia.org/wiki/Seeschlacht_von_Beirut"
+    },
+    "enwiki": {
+      "site": "enwiki",
+      "title": "Battle of Beirut (1912)",
+      "badges": [
+        "Q17437798"
+      ],
+      "url": "https://en.wikipedia.org/wiki/Battle_of_Beirut_(1912)"
+    },
+    "eswiki": {
+      "site": "eswiki",
+      "title": "Batalla de Beirut (1912)",
+      "badges": [],
+      "url": "https://es.wikipedia.org/wiki/Batalla_de_Beirut_(1912)"
+    },
+    "frwiki": {
+      "site": "frwiki",
+      "title": "Bataille de Beyrouth",
+      "badges": [],
+      "url": "https://fr.wikipedia.org/wiki/Bataille_de_Beyrouth"
+    },
+    "itwiki": {
+      "site": "itwiki",
+      "title": "Battaglia di Beirut",
+      "badges": [],
+      "url": "https://it.wikipedia.org/wiki/Battaglia_di_Beirut"
+    },
+    "kawiki": {
+      "site": "kawiki",
+      "title": "ბეირუთის ბრძოლა (1912)",
+      "badges": [],
+      "url": "https://ka.wikipedia.org/wiki/%E1%83%91%E1%83%94%E1%83%98%E1%83%A0%E1%83%A3%E1%83%97%E1%83%98%E1%83%A1_%E1%83%91%E1%83%A0%E1%83%AB%E1%83%9D%E1%83%9A%E1%83%90_(1912)"
+    },
+    "plwiki": {
+      "site": "plwiki",
+      "title": "Bitwa pod Bejrutem",
+      "badges": [],
+      "url": "https://pl.wikipedia.org/wiki/Bitwa_pod_Bejrutem"
+    },
+    "ruwiki": {
+      "site": "ruwiki",
+      "title": "Бой у Бейрута (1912)",
+      "badges": [],
+      "url": "https://ru.wikipedia.org/wiki/%D0%91%D0%BE%D0%B9_%D1%83_%D0%91%D0%B5%D0%B9%D1%80%D1%83%D1%82%D0%B0_(1912)"
+    },
+    "trwiki": {
+      "site": "trwiki",
+      "title": "Beyrut Muharebesi (1912)",
+      "badges": [
+        "Q17437796"
+      ],
+      "url": "https://tr.wikipedia.org/wiki/Beyrut_Muharebesi_(1912)"
+    }
+  }
+}

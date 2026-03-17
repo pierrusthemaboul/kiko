@@ -1,0 +1,348 @@
+{
+  "pageid": 2645681,
+  "ns": 0,
+  "title": "Q2756472",
+  "lastrevid": 2408725697,
+  "modified": "2025-09-24T01:39:37Z",
+  "type": "item",
+  "id": "Q2756472",
+  "labels": {
+    "fr": {
+      "language": "fr",
+      "value": "Période fatimide de l'Égypte"
+    },
+    "it": {
+      "language": "it",
+      "value": "Storia dell'Egitto fatimide"
+    },
+    "en": {
+      "language": "en",
+      "value": "Fatimid Egypt"
+    },
+    "es": {
+      "language": "es",
+      "value": "Egipto fatimí"
+    },
+    "sl": {
+      "language": "sl",
+      "value": "fatimitski Egipt"
+    },
+    "ar": {
+      "language": "ar",
+      "value": "مصر الفاطمية"
+    },
+    "arz": {
+      "language": "arz",
+      "value": "الدوله الفاطميه فى مصر"
+    }
+  },
+  "descriptions": {
+    "it": {
+      "language": "it",
+      "value": "periodo della storia dell'Egitto (969-1171)"
+    },
+    "sl": {
+      "language": "sl",
+      "value": "obdobje egiptovske zgodovine (969–1171)"
+    }
+  },
+  "aliases": {
+    "fr": [
+      {
+        "language": "fr",
+        "value": "Periode fatimide de l'Egypte"
+      },
+      {
+        "language": "fr",
+        "value": "Égypte fatimide"
+      },
+      {
+        "language": "fr",
+        "value": "Égypte sous les Fatimides"
+      }
+    ],
+    "it": [
+      {
+        "language": "it",
+        "value": "L'impero dei fatimiti"
+      }
+    ],
+    "es": [
+      {
+        "language": "es",
+        "value": "Egipto fatimida"
+      }
+    ],
+    "sl": [
+      {
+        "language": "sl",
+        "value": "fatimidsko obdobje Egipta"
+      }
+    ],
+    "en": [
+      {
+        "language": "en",
+        "value": "Egypt under the Fatimids"
+      }
+    ],
+    "ar": [
+      {
+        "language": "ar",
+        "value": "مصر تحت الدولة الفاطمية"
+      },
+      {
+        "language": "ar",
+        "value": "الدولة الفاطمية في مصر"
+      }
+    ]
+  },
+  "claims": {
+    "P576": [
+      {
+        "mainsnak": {
+          "snaktype": "value",
+          "property": "P576",
+          "hash": "6868addb08fbd0b3dc87e7dd4de680b64c04d7ec",
+          "datavalue": {
+            "value": {
+              "time": "+1171-00-00T00:00:00Z",
+              "timezone": 0,
+              "before": 0,
+              "after": 0,
+              "precision": 9,
+              "calendarmodel": "http://www.wikidata.org/entity/Q1985786"
+            },
+            "type": "time"
+          },
+          "datatype": "time"
+        },
+        "type": "statement",
+        "id": "Q2756472$6b08c945-421a-af9c-e798-b0d1c4ca1861",
+        "rank": "normal"
+      }
+    ],
+    "P571": [
+      {
+        "mainsnak": {
+          "snaktype": "value",
+          "property": "P571",
+          "hash": "7d39b1c299b2be024f56e3015eeec540eb23182f",
+          "datavalue": {
+            "value": {
+              "time": "+0969-06-00T00:00:00Z",
+              "timezone": 0,
+              "before": 0,
+              "after": 0,
+              "precision": 10,
+              "calendarmodel": "http://www.wikidata.org/entity/Q1985727"
+            },
+            "type": "time"
+          },
+          "datatype": "time"
+        },
+        "type": "statement",
+        "id": "Q2756472$031111b0-4364-508a-7da3-0f8f5a60e7f3",
+        "rank": "normal"
+      }
+    ],
+    "P2671": [
+      {
+        "mainsnak": {
+          "snaktype": "value",
+          "property": "P2671",
+          "hash": "c96089a136d5a363a76bbc02eb1fb1d8b9866f2b",
+          "datavalue": {
+            "value": "/g/121vl85d",
+            "type": "string"
+          },
+          "datatype": "external-id"
+        },
+        "type": "statement",
+        "id": "Q2756472$69218D1C-799F-4079-8D86-ADF4E1058047",
+        "rank": "normal"
+      }
+    ],
+    "P4212": [
+      {
+        "mainsnak": {
+          "snaktype": "value",
+          "property": "P4212",
+          "hash": "41fdd6b00f254bf5b9dc7aa996ff036efb39955a",
+          "datavalue": {
+            "value": "pcrtltT3rY253j",
+            "type": "string"
+          },
+          "datatype": "external-id"
+        },
+        "type": "statement",
+        "id": "Q2756472$62D63BDE-8F37-4E8C-AB1F-FE4F912AAD9E",
+        "rank": "normal"
+      }
+    ],
+    "P361": [
+      {
+        "mainsnak": {
+          "snaktype": "value",
+          "property": "P361",
+          "hash": "a9f208002a2bfd56adca37cd9f7bb2ea02152666",
+          "datavalue": {
+            "value": {
+              "entity-type": "item",
+              "numeric-id": 185301,
+              "id": "Q185301"
+            },
+            "type": "wikibase-entityid"
+          },
+          "datatype": "wikibase-item"
+        },
+        "type": "statement",
+        "id": "Q2756472$165f2d4a-4ae7-6c35-5b97-ac532923427f",
+        "rank": "normal"
+      }
+    ],
+    "P17": [
+      {
+        "mainsnak": {
+          "snaktype": "value",
+          "property": "P17",
+          "hash": "1ef725abf7168253a4b18f033b9e03cfd778dea5",
+          "datavalue": {
+            "value": {
+              "entity-type": "item",
+              "numeric-id": 160307,
+              "id": "Q160307"
+            },
+            "type": "wikibase-entityid"
+          },
+          "datatype": "wikibase-item"
+        },
+        "type": "statement",
+        "id": "Q2756472$dcc08d38-403c-2c47-5cd1-6c344e48de19",
+        "rank": "preferred"
+      },
+      {
+        "mainsnak": {
+          "snaktype": "value",
+          "property": "P17",
+          "hash": "7bf9c4cd680d9122b1c90fdd14203a8c5c3f8fdc",
+          "datavalue": {
+            "value": {
+              "entity-type": "item",
+              "numeric-id": 79,
+              "id": "Q79"
+            },
+            "type": "wikibase-entityid"
+          },
+          "datatype": "wikibase-item"
+        },
+        "type": "statement",
+        "id": "Q2756472$36517E4A-29C2-4427-B1FD-F6CB67BC185C",
+        "rank": "normal"
+      }
+    ],
+    "P910": [
+      {
+        "mainsnak": {
+          "snaktype": "value",
+          "property": "P910",
+          "hash": "a4ad4db2288ec5b1f2e5273dcd91aa63d433431c",
+          "datavalue": {
+            "value": {
+              "entity-type": "item",
+              "numeric-id": 62061035,
+              "id": "Q62061035"
+            },
+            "type": "wikibase-entityid"
+          },
+          "datatype": "wikibase-item"
+        },
+        "type": "statement",
+        "id": "Q2756472$245bb0c4-459f-2a4f-c69a-385668c13181",
+        "rank": "normal"
+      }
+    ],
+    "P155": [
+      {
+        "mainsnak": {
+          "snaktype": "value",
+          "property": "P155",
+          "hash": "598b064812fbf37a051299912efe820b8d44e267",
+          "datavalue": {
+            "value": {
+              "entity-type": "item",
+              "numeric-id": 3973996,
+              "id": "Q3973996"
+            },
+            "type": "wikibase-entityid"
+          },
+          "datatype": "wikibase-item"
+        },
+        "type": "statement",
+        "id": "Q2756472$90E4266C-775C-4DF6-87EE-D0FC5341646A",
+        "rank": "normal"
+      }
+    ],
+    "P156": [
+      {
+        "mainsnak": {
+          "snaktype": "value",
+          "property": "P156",
+          "hash": "5a3d7eb87e5451421b388795a0336bf8080bb82a",
+          "datavalue": {
+            "value": {
+              "entity-type": "item",
+              "numeric-id": 3973995,
+              "id": "Q3973995"
+            },
+            "type": "wikibase-entityid"
+          },
+          "datatype": "wikibase-item"
+        },
+        "type": "statement",
+        "id": "Q2756472$2A10E374-A3A4-4642-AB0D-272E182D5F07",
+        "rank": "normal"
+      }
+    ],
+    "P31": [
+      {
+        "mainsnak": {
+          "snaktype": "value",
+          "property": "P31",
+          "hash": "c0e510dcab1d5b2084e7ef4aa34b86ed61d22f07",
+          "datavalue": {
+            "value": {
+              "entity-type": "item",
+              "numeric-id": 11514315,
+              "id": "Q11514315"
+            },
+            "type": "wikibase-entityid"
+          },
+          "datatype": "wikibase-item"
+        },
+        "type": "statement",
+        "id": "Q2756472$355d6aa7-4143-50db-9c29-f566ef70ce11",
+        "rank": "normal"
+      }
+    ]
+  },
+  "sitelinks": {
+    "arzwiki": {
+      "site": "arzwiki",
+      "title": "الدوله الفاطميه فى مصر",
+      "badges": [],
+      "url": "https://arz.wikipedia.org/wiki/%D8%A7%D9%84%D8%AF%D9%88%D9%84%D9%87_%D8%A7%D9%84%D9%81%D8%A7%D8%B7%D9%85%D9%8A%D9%87_%D9%81%D9%89_%D9%85%D8%B5%D8%B1"
+    },
+    "frwiki": {
+      "site": "frwiki",
+      "title": "Période fatimide de l'Égypte",
+      "badges": [],
+      "url": "https://fr.wikipedia.org/wiki/P%C3%A9riode_fatimide_de_l%27%C3%89gypte"
+    },
+    "itwiki": {
+      "site": "itwiki",
+      "title": "Storia dell'Egitto fatimide",
+      "badges": [],
+      "url": "https://it.wikipedia.org/wiki/Storia_dell%27Egitto_fatimide"
+    }
+  }
+}

@@ -1,0 +1,93 @@
+{
+  "saved_at": "2026-03-07T16:41:45.988Z",
+  "value": {
+    "pageid": 100462893,
+    "ns": 0,
+    "title": "Q105071173",
+    "lastrevid": 2357573283,
+    "modified": "2025-06-06T14:51:44Z",
+    "type": "item",
+    "id": "Q105071173",
+    "labels": {
+      "fr": {
+        "language": "fr",
+        "value": "Manufactures royales en France"
+      },
+      "en": {
+        "language": "en",
+        "value": "Royal Manufactures in France"
+      }
+    },
+    "descriptions": {
+      "en": {
+        "language": "en",
+        "value": "production centers developed in France during the XVII and XVIII centuries with the support of the French monarchy"
+      },
+      "fr": {
+        "language": "fr",
+        "value": "lieux de fabrication développés en France aux XVIIe et XVIIIe siècles avec le soutien du pouvoir royal"
+      }
+    },
+    "aliases": {},
+    "claims": {
+      "P279": [
+        {
+          "mainsnak": {
+            "snaktype": "value",
+            "property": "P279",
+            "hash": "b6084fa0151cb5edb2a69928316c92b02562194d",
+            "datavalue": {
+              "value": {
+                "entity-type": "item",
+                "numeric-id": 83405,
+                "id": "Q83405"
+              },
+              "type": "wikibase-entityid"
+            },
+            "datatype": "wikibase-item"
+          },
+          "type": "statement",
+          "id": "Q105071173$278bdc04-49a4-1188-fd4d-038ff30bf195",
+          "rank": "normal"
+        }
+      ],
+      "P276": [
+        {
+          "mainsnak": {
+            "snaktype": "value",
+            "property": "P276",
+            "hash": "8b0ec779b065477650db33917ff99d018700f11d",
+            "datavalue": {
+              "value": {
+                "entity-type": "item",
+                "numeric-id": 142,
+                "id": "Q142"
+              },
+              "type": "wikibase-entityid"
+            },
+            "datatype": "wikibase-item"
+          },
+          "type": "statement",
+          "id": "Q105071173$8d14bc25-4f90-eb02-7f5d-f2884885f1bb",
+          "rank": "normal"
+        }
+      ]
+    },
+    "sitelinks": {
+      "enwiki": {
+        "site": "enwiki",
+        "title": "Royal manufactories in France",
+        "badges": [],
+        "url": "https://en.wikipedia.org/wiki/Royal_manufactories_in_France"
+      },
+      "frwiki": {
+        "site": "frwiki",
+        "title": "Manufactures royales en France",
+        "badges": [
+          "Q17437798"
+        ],
+        "url": "https://fr.wikipedia.org/wiki/Manufactures_royales_en_France"
+      }
+    }
+  }
+}

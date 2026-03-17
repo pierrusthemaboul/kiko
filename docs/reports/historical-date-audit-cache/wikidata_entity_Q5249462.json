@@ -1,0 +1,362 @@
+{
+  "saved_at": "2026-03-07T13:54:52.910Z",
+  "value": {
+    "pageid": 5019003,
+    "ns": 0,
+    "title": "Q5249462",
+    "lastrevid": 2308051342,
+    "modified": "2025-02-07T05:06:29Z",
+    "type": "item",
+    "id": "Q5249462",
+    "labels": {
+      "en": {
+        "language": "en",
+        "value": "Declaration of the Clergy of France"
+      },
+      "fr": {
+        "language": "fr",
+        "value": "Déclaration des Quatre articles"
+      },
+      "ja": {
+        "language": "ja",
+        "value": "四箇条の宣言"
+      },
+      "eo": {
+        "language": "eo",
+        "value": "Deklaracio de Kvar Artikoloj"
+      },
+      "es": {
+        "language": "es",
+        "value": "Declaración de los cuatro artículos"
+      },
+      "it": {
+        "language": "it",
+        "value": "Dichiarazione del clero di Francia"
+      }
+    },
+    "descriptions": {
+      "en": {
+        "language": "en",
+        "value": "document approved by the 1681 Assembly of the French clergy which codified Gallicanism"
+      },
+      "eo": {
+        "language": "eo",
+        "value": "dokumento aprobita de la Asembleo de Klerikoj de Francio en 1682"
+      },
+      "es": {
+        "language": "es",
+        "value": "declaración del clero francés de 1681"
+      },
+      "it": {
+        "language": "it",
+        "value": "documento del 1681"
+      }
+    },
+    "aliases": {
+      "fr": [
+        {
+          "language": "fr",
+          "value": "Déclaration des quatre articles de 1682"
+        },
+        {
+          "language": "fr",
+          "value": "Quatre articles de 1682"
+        },
+        {
+          "language": "fr",
+          "value": "Declaration des quatre articles de 1682"
+        }
+      ],
+      "eo": [
+        {
+          "language": "eo",
+          "value": "Kvar Artikoloj de 1682"
+        }
+      ]
+    },
+    "claims": {
+      "P3219": [
+        {
+          "mainsnak": {
+            "snaktype": "value",
+            "property": "P3219",
+            "hash": "008de4f8a928250c00ea06fcede6301402343230",
+            "datavalue": {
+              "value": "declaration-des-quatre-articles",
+              "type": "string"
+            },
+            "datatype": "external-id"
+          },
+          "type": "statement",
+          "id": "Q5249462$A088F93B-2DB7-4BEF-B5A4-B82EDEC2536F",
+          "rank": "normal"
+        }
+      ],
+      "P17": [
+        {
+          "mainsnak": {
+            "snaktype": "value",
+            "property": "P17",
+            "hash": "c05db5d169c2560b9799d567a803d20a392f53e4",
+            "datavalue": {
+              "value": {
+                "entity-type": "item",
+                "numeric-id": 142,
+                "id": "Q142"
+              },
+              "type": "wikibase-entityid"
+            },
+            "datatype": "wikibase-item"
+          },
+          "type": "statement",
+          "id": "Q5249462$CD1B7C37-01F9-4D5E-AD11-24D32C3E90D5",
+          "rank": "normal"
+        }
+      ],
+      "P407": [
+        {
+          "mainsnak": {
+            "snaktype": "value",
+            "property": "P407",
+            "hash": "d197d0a5efa4b4c23a302a829dd3ef43684fe002",
+            "datavalue": {
+              "value": {
+                "entity-type": "item",
+                "numeric-id": 150,
+                "id": "Q150"
+              },
+              "type": "wikibase-entityid"
+            },
+            "datatype": "wikibase-item"
+          },
+          "type": "statement",
+          "id": "Q5249462$d33ac7c1-470d-93f3-39ee-7134cc88ef07",
+          "rank": "normal"
+        }
+      ],
+      "P921": [
+        {
+          "mainsnak": {
+            "snaktype": "value",
+            "property": "P921",
+            "hash": "0b2d00f2f3d2885f60f826951f2a2cf9bfc77247",
+            "datavalue": {
+              "value": {
+                "entity-type": "item",
+                "numeric-id": 740931,
+                "id": "Q740931"
+              },
+              "type": "wikibase-entityid"
+            },
+            "datatype": "wikibase-item"
+          },
+          "type": "statement",
+          "id": "Q5249462$136663f1-45fd-2d56-7ae2-ac8260988bfb",
+          "rank": "normal"
+        }
+      ],
+      "P31": [
+        {
+          "mainsnak": {
+            "snaktype": "value",
+            "property": "P31",
+            "hash": "280af839e0db506112894666827fce413dc7470f",
+            "datavalue": {
+              "value": {
+                "entity-type": "item",
+                "numeric-id": 46337,
+                "id": "Q46337"
+              },
+              "type": "wikibase-entityid"
+            },
+            "datatype": "wikibase-item"
+          },
+          "type": "statement",
+          "id": "Q5249462$88ed3bc2-4076-301c-c9f1-30e1806acda4",
+          "rank": "normal"
+        }
+      ],
+      "P577": [
+        {
+          "mainsnak": {
+            "snaktype": "value",
+            "property": "P577",
+            "hash": "b012c4bc73febd53d774532774590322e0592f8c",
+            "datavalue": {
+              "value": {
+                "time": "+1682-03-19T00:00:00Z",
+                "timezone": 0,
+                "before": 0,
+                "after": 0,
+                "precision": 11,
+                "calendarmodel": "http://www.wikidata.org/entity/Q1985727"
+              },
+              "type": "time"
+            },
+            "datatype": "time"
+          },
+          "type": "statement",
+          "id": "Q5249462$52a23523-4eb3-3d85-6b87-d89021f54945",
+          "rank": "normal"
+        }
+      ],
+      "P50": [
+        {
+          "mainsnak": {
+            "snaktype": "value",
+            "property": "P50",
+            "hash": "769170de949a19dbf223c7f326f7c60541070848",
+            "datavalue": {
+              "value": {
+                "entity-type": "item",
+                "numeric-id": 2958258,
+                "id": "Q2958258"
+              },
+              "type": "wikibase-entityid"
+            },
+            "datatype": "wikibase-item"
+          },
+          "type": "statement",
+          "id": "Q5249462$b9b42034-4d1c-e2e2-af7b-0958ec4b80fa",
+          "rank": "normal"
+        },
+        {
+          "mainsnak": {
+            "snaktype": "value",
+            "property": "P50",
+            "hash": "1c15e45bd38f1a4044ab20637861bc4c071855f8",
+            "datavalue": {
+              "value": {
+                "entity-type": "item",
+                "numeric-id": 3105895,
+                "id": "Q3105895"
+              },
+              "type": "wikibase-entityid"
+            },
+            "datatype": "wikibase-item"
+          },
+          "type": "statement",
+          "id": "Q5249462$0646ba39-46ab-d9a6-645e-5ecbbf0dece1",
+          "rank": "normal"
+        },
+        {
+          "mainsnak": {
+            "snaktype": "value",
+            "property": "P50",
+            "hash": "eaed9b0752ac70604f1af33c3381acbb827104a5",
+            "datavalue": {
+              "value": {
+                "entity-type": "item",
+                "numeric-id": 294100,
+                "id": "Q294100"
+              },
+              "type": "wikibase-entityid"
+            },
+            "datatype": "wikibase-item"
+          },
+          "type": "statement",
+          "id": "Q5249462$d4618bb1-456a-f7f5-6a81-5f958371db92",
+          "rank": "normal"
+        }
+      ],
+      "P790": [
+        {
+          "mainsnak": {
+            "snaktype": "value",
+            "property": "P790",
+            "hash": "eaf4237b7143805088ce8e68e1a546936a5642ca",
+            "datavalue": {
+              "value": {
+                "entity-type": "item",
+                "numeric-id": 2867066,
+                "id": "Q2867066"
+              },
+              "type": "wikibase-entityid"
+            },
+            "datatype": "wikibase-item"
+          },
+          "type": "statement",
+          "id": "Q5249462$e97b8879-4e33-5bf4-650c-0a9e53127491",
+          "rank": "normal"
+        }
+      ],
+      "P646": [
+        {
+          "mainsnak": {
+            "snaktype": "value",
+            "property": "P646",
+            "hash": "da4963229c989b4912750fe85bfd31aa9c0bae47",
+            "datavalue": {
+              "value": "/m/08n9r8",
+              "type": "string"
+            },
+            "datatype": "external-id"
+          },
+          "type": "statement",
+          "id": "Q5249462$FFF2D115-4DE3-46F2-85D4-501331268B1E",
+          "rank": "normal"
+        }
+      ],
+      "P1417": [
+        {
+          "mainsnak": {
+            "snaktype": "value",
+            "property": "P1417",
+            "hash": "ddf8e5a180fccc376b064ce0eca9544ad0819cf6",
+            "datavalue": {
+              "value": "topic/Declaration-des-quatre-articles",
+              "type": "string"
+            },
+            "datatype": "external-id"
+          },
+          "type": "statement",
+          "qualifiers": {
+            "P1810": [
+              {
+                "snaktype": "value",
+                "property": "P1810",
+                "hash": "1fe57bf38fd87e738d61c2feb4bbcf81502ba6dc",
+                "datavalue": {
+                  "value": "Déclaration des quatre articles",
+                  "type": "string"
+                },
+                "datatype": "string"
+              }
+            ]
+          },
+          "qualifiers-order": [
+            "P1810"
+          ],
+          "id": "Q5249462$AD6975E7-6442-4D20-8931-68AC5AB48005",
+          "rank": "normal"
+        }
+      ]
+    },
+    "sitelinks": {
+      "enwiki": {
+        "site": "enwiki",
+        "title": "Declaration of the Clergy of France",
+        "badges": [],
+        "url": "https://en.wikipedia.org/wiki/Declaration_of_the_Clergy_of_France"
+      },
+      "eswiki": {
+        "site": "eswiki",
+        "title": "Declaración de los cuatro artículos",
+        "badges": [],
+        "url": "https://es.wikipedia.org/wiki/Declaraci%C3%B3n_de_los_cuatro_art%C3%ADculos"
+      },
+      "frwiki": {
+        "site": "frwiki",
+        "title": "Déclaration des Quatre articles",
+        "badges": [],
+        "url": "https://fr.wikipedia.org/wiki/D%C3%A9claration_des_Quatre_articles"
+      },
+      "itwiki": {
+        "site": "itwiki",
+        "title": "Dichiarazione del clero di Francia",
+        "badges": [],
+        "url": "https://it.wikipedia.org/wiki/Dichiarazione_del_clero_di_Francia"
+      }
+    }
+  }
+}

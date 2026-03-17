@@ -1,0 +1,72 @@
+{
+  "saved_at": "2026-03-07T15:37:28.220Z",
+  "value": {
+    "pageid": 95615591,
+    "ns": 0,
+    "title": "Q97174972",
+    "lastrevid": 2469852462,
+    "modified": "2026-03-06T14:20:55Z",
+    "type": "item",
+    "id": "Q97174972",
+    "labels": {
+      "fr": {
+        "language": "fr",
+        "value": "Philippe de France"
+      },
+      "zh": {
+        "language": "zh",
+        "value": "法蘭西的腓力"
+      }
+    },
+    "descriptions": {},
+    "aliases": {},
+    "claims": {
+      "P2671": [
+        {
+          "mainsnak": {
+            "snaktype": "value",
+            "property": "P2671",
+            "hash": "9fc1096b1ff10f3b3f65414969a2c2701833bfc0",
+            "datavalue": {
+              "value": "/g/11jmzk425_",
+              "type": "string"
+            },
+            "datatype": "external-id"
+          },
+          "type": "statement",
+          "id": "Q97174972$5EA93451-B025-4CB2-AC6B-021F253935A5",
+          "rank": "normal"
+        }
+      ],
+      "P31": [
+        {
+          "mainsnak": {
+            "snaktype": "value",
+            "property": "P31",
+            "hash": "ad7d38a03cdd40cdc373de0dc4e7b7fcbccb31d9",
+            "datavalue": {
+              "value": {
+                "entity-type": "item",
+                "numeric-id": 5,
+                "id": "Q5"
+              },
+              "type": "wikibase-entityid"
+            },
+            "datatype": "wikibase-item"
+          },
+          "type": "statement",
+          "id": "Q97174972$70F564EC-B428-43ED-9478-B132DE8EDC5C",
+          "rank": "normal"
+        }
+      ]
+    },
+    "sitelinks": {
+      "frwiki": {
+        "site": "frwiki",
+        "title": "Philippe de France (1314-1322)",
+        "badges": [],
+        "url": "https://fr.wikipedia.org/wiki/Philippe_de_France_(1314-1322)"
+      }
+    }
+  }
+}

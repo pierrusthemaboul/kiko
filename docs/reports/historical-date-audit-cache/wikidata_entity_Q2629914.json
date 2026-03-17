@@ -1,0 +1,898 @@
+{
+  "saved_at": "2026-03-07T14:10:08.303Z",
+  "value": {
+    "pageid": 2535826,
+    "ns": 0,
+    "title": "Q2629914",
+    "lastrevid": 2451464551,
+    "modified": "2026-01-05T01:29:48Z",
+    "type": "item",
+    "id": "Q2629914",
+    "labels": {
+      "fa": {
+        "language": "fa",
+        "value": "گنجینه هاکسن"
+      },
+      "en": {
+        "language": "en",
+        "value": "Hoxne treasure"
+      },
+      "fr": {
+        "language": "fr",
+        "value": "Trésor de Hoxne"
+      },
+      "da": {
+        "language": "da",
+        "value": "Hoxne-skatten"
+      },
+      "it": {
+        "language": "it",
+        "value": "Tesoro di Hoxne"
+      },
+      "ar": {
+        "language": "ar",
+        "value": "كنز هوكسن"
+      },
+      "pt": {
+        "language": "pt",
+        "value": "Tesouro de Hoxne"
+      },
+      "de": {
+        "language": "de",
+        "value": "Depotfund von Hoxne"
+      },
+      "ru": {
+        "language": "ru",
+        "value": "Хоксненский клад"
+      },
+      "es": {
+        "language": "es",
+        "value": "Tesoro de Hoxne"
+      },
+      "ko": {
+        "language": "ko",
+        "value": "혹선의 퇴장화폐"
+      },
+      "zh": {
+        "language": "zh",
+        "value": "霍克森宝藏"
+      },
+      "nl": {
+        "language": "nl",
+        "value": "Hoxne treasure"
+      },
+      "ja": {
+        "language": "ja",
+        "value": "ホクスン財宝"
+      },
+      "ca": {
+        "language": "ca",
+        "value": "tresor de Hoxne"
+      },
+      "he": {
+        "language": "he",
+        "value": "אוצרו של הוקן"
+      },
+      "uk": {
+        "language": "uk",
+        "value": "Хоксненський скарб"
+      },
+      "pl": {
+        "language": "pl",
+        "value": "Skarb z Hoxne"
+      },
+      "gl": {
+        "language": "gl",
+        "value": "tesouro de Hoxne"
+      },
+      "et": {
+        "language": "et",
+        "value": "Hoxne'i aardeleid"
+      },
+      "eo": {
+        "language": "eo",
+        "value": "trezoro de Hoxne"
+      },
+      "sl": {
+        "language": "sl",
+        "value": "Zaklad iz Hoxneja"
+      }
+    },
+    "descriptions": {
+      "pl": {
+        "language": "pl",
+        "value": "znalezisko archeologiczne w Anglii"
+      },
+      "en": {
+        "language": "en",
+        "value": "largest hoard of late Roman silver and gold discovered in Britain"
+      },
+      "gl": {
+        "language": "gl",
+        "value": "tesouro de ouro e prata da Britania Romana"
+      },
+      "de": {
+        "language": "de",
+        "value": "in England entdeckter spätrömischer Hortfund"
+      },
+      "fr": {
+        "language": "fr",
+        "value": "Plus grand trésor d'or et d'argent de l'Antiquité"
+      },
+      "zh": {
+        "language": "zh",
+        "value": "一个英国罗马时期晚期金银窖藏"
+      },
+      "es": {
+        "language": "es",
+        "value": "tesoro romano encontrado en Inglaterra"
+      }
+    },
+    "aliases": {
+      "fa": [
+        {
+          "language": "fa",
+          "value": "گنجینهٔ هاکسن"
+        }
+      ],
+      "en": [
+        {
+          "language": "en",
+          "value": "Hoxne Hoard"
+        }
+      ]
+    },
+    "claims": {
+      "P276": [
+        {
+          "mainsnak": {
+            "snaktype": "value",
+            "property": "P276",
+            "hash": "aa05ad37825ce03118958fe12a5bdc0e49911090",
+            "datavalue": {
+              "value": {
+                "entity-type": "item",
+                "numeric-id": 6373,
+                "id": "Q6373"
+              },
+              "type": "wikibase-entityid"
+            },
+            "datatype": "wikibase-item"
+          },
+          "type": "statement",
+          "id": "q2629914$03059ac9-40e4-2aa4-14aa-916525b8de70",
+          "rank": "normal"
+        }
+      ],
+      "P189": [
+        {
+          "mainsnak": {
+            "snaktype": "value",
+            "property": "P189",
+            "hash": "6500e4ee32dde8eb0a4d37b6d664d8e9f5df90a2",
+            "datavalue": {
+              "value": {
+                "entity-type": "item",
+                "numeric-id": 239776,
+                "id": "Q239776"
+              },
+              "type": "wikibase-entityid"
+            },
+            "datatype": "wikibase-item"
+          },
+          "type": "statement",
+          "id": "q2629914$820ecdf0-46f2-8d9a-a280-e624e0e1daf2",
+          "rank": "normal"
+        }
+      ],
+      "P625": [
+        {
+          "mainsnak": {
+            "snaktype": "value",
+            "property": "P625",
+            "hash": "da28e57998eb44dd0904763f82dfa0ea94d15785",
+            "datavalue": {
+              "value": {
+                "latitude": 52.3425,
+                "longitude": 1.1875,
+                "altitude": null,
+                "precision": 0.0002777777777777778,
+                "globe": "http://www.wikidata.org/entity/Q2"
+              },
+              "type": "globecoordinate"
+            },
+            "datatype": "globe-coordinate"
+          },
+          "type": "statement",
+          "id": "q2629914$339E945F-8FCC-49BD-A054-5C86547ED5B4",
+          "rank": "normal",
+          "references": [
+            {
+              "hash": "fa278ebfc458360e5aed63d5058cca83c46134f1",
+              "snaks": {
+                "P143": [
+                  {
+                    "snaktype": "value",
+                    "property": "P143",
+                    "hash": "e4f6d9441d0600513c4533c672b5ab472dc73694",
+                    "datavalue": {
+                      "value": {
+                        "entity-type": "item",
+                        "numeric-id": 328,
+                        "id": "Q328"
+                      },
+                      "type": "wikibase-entityid"
+                    },
+                    "datatype": "wikibase-item"
+                  }
+                ]
+              },
+              "snaks-order": [
+                "P143"
+              ]
+            }
+          ]
+        }
+      ],
+      "P17": [
+        {
+          "mainsnak": {
+            "snaktype": "value",
+            "property": "P17",
+            "hash": "a44880420787fb348836dc51d3babc5227c4ef7e",
+            "datavalue": {
+              "value": {
+                "entity-type": "item",
+                "numeric-id": 145,
+                "id": "Q145"
+              },
+              "type": "wikibase-entityid"
+            },
+            "datatype": "wikibase-item"
+          },
+          "type": "statement",
+          "id": "Q2629914$2BA607B0-C19C-449D-9051-D460686EF835",
+          "rank": "normal",
+          "references": [
+            {
+              "hash": "fa278ebfc458360e5aed63d5058cca83c46134f1",
+              "snaks": {
+                "P143": [
+                  {
+                    "snaktype": "value",
+                    "property": "P143",
+                    "hash": "e4f6d9441d0600513c4533c672b5ab472dc73694",
+                    "datavalue": {
+                      "value": {
+                        "entity-type": "item",
+                        "numeric-id": 328,
+                        "id": "Q328"
+                      },
+                      "type": "wikibase-entityid"
+                    },
+                    "datatype": "wikibase-item"
+                  }
+                ]
+              },
+              "snaks-order": [
+                "P143"
+              ]
+            }
+          ]
+        }
+      ],
+      "P646": [
+        {
+          "mainsnak": {
+            "snaktype": "value",
+            "property": "P646",
+            "hash": "434df11f56460add3fb88b21a0405ba673757c55",
+            "datavalue": {
+              "value": "/m/0cls08",
+              "type": "string"
+            },
+            "datatype": "external-id"
+          },
+          "type": "statement",
+          "id": "Q2629914$BF2DFC16-3E65-4152-BE5C-461DCF129A4E",
+          "rank": "normal",
+          "references": [
+            {
+              "hash": "2b00cb481cddcac7623114367489b5c194901c4a",
+              "snaks": {
+                "P248": [
+                  {
+                    "snaktype": "value",
+                    "property": "P248",
+                    "hash": "a94b740202b097dd33355e0e6c00e54b9395e5e0",
+                    "datavalue": {
+                      "value": {
+                        "entity-type": "item",
+                        "numeric-id": 15241312,
+                        "id": "Q15241312"
+                      },
+                      "type": "wikibase-entityid"
+                    },
+                    "datatype": "wikibase-item"
+                  }
+                ],
+                "P577": [
+                  {
+                    "snaktype": "value",
+                    "property": "P577",
+                    "hash": "fde79ecb015112d2f29229ccc1ec514ed3e71fa2",
+                    "datavalue": {
+                      "value": {
+                        "time": "+2013-10-28T00:00:00Z",
+                        "timezone": 0,
+                        "before": 0,
+                        "after": 0,
+                        "precision": 11,
+                        "calendarmodel": "http://www.wikidata.org/entity/Q1985727"
+                      },
+                      "type": "time"
+                    },
+                    "datatype": "time"
+                  }
+                ]
+              },
+              "snaks-order": [
+                "P248",
+                "P577"
+              ]
+            }
+          ]
+        }
+      ],
+      "P935": [
+        {
+          "mainsnak": {
+            "snaktype": "value",
+            "property": "P935",
+            "hash": "ed5e8ebe2b6cf43ede11301dbd198308223e2521",
+            "datavalue": {
+              "value": "Hoxne Hoard",
+              "type": "string"
+            },
+            "datatype": "string"
+          },
+          "type": "statement",
+          "id": "Q2629914$BFADF9F1-0551-4DD3-903D-A1BA2E1BD2F2",
+          "rank": "normal"
+        }
+      ],
+      "P31": [
+        {
+          "mainsnak": {
+            "snaktype": "value",
+            "property": "P31",
+            "hash": "47ff114193a57d7b49d85ed65e5a808162a8bb9d",
+            "datavalue": {
+              "value": {
+                "entity-type": "item",
+                "numeric-id": 164099,
+                "id": "Q164099"
+              },
+              "type": "wikibase-entityid"
+            },
+            "datatype": "wikibase-item"
+          },
+          "type": "statement",
+          "id": "Q2629914$ADDE75C2-8069-44DA-AB09-74605F751DDF",
+          "rank": "normal"
+        },
+        {
+          "mainsnak": {
+            "snaktype": "value",
+            "property": "P31",
+            "hash": "18cc559abd3f235f29c3fa446e2e5964b1228610",
+            "datavalue": {
+              "value": {
+                "entity-type": "item",
+                "numeric-id": 15484785,
+                "id": "Q15484785"
+              },
+              "type": "wikibase-entityid"
+            },
+            "datatype": "wikibase-item"
+          },
+          "type": "statement",
+          "id": "Q2629914$2fcc52c3-4151-8633-6f69-6037bd12b788",
+          "rank": "normal"
+        }
+      ],
+      "P373": [
+        {
+          "mainsnak": {
+            "snaktype": "value",
+            "property": "P373",
+            "hash": "ba846fb4bf1a62c8821583b3c8d3d135b25c2459",
+            "datavalue": {
+              "value": "Hoxne hoard",
+              "type": "string"
+            },
+            "datatype": "string"
+          },
+          "type": "statement",
+          "id": "Q2629914$E523C2B2-C3DC-442F-8246-C8585A2890C5",
+          "rank": "normal",
+          "references": [
+            {
+              "hash": "9a24f7c0208b05d6be97077d855671d1dfdbc0dd",
+              "snaks": {
+                "P143": [
+                  {
+                    "snaktype": "value",
+                    "property": "P143",
+                    "hash": "d38375ffe6fe142663ff55cd783aa4df4301d83d",
+                    "datavalue": {
+                      "value": {
+                        "entity-type": "item",
+                        "numeric-id": 48183,
+                        "id": "Q48183"
+                      },
+                      "type": "wikibase-entityid"
+                    },
+                    "datatype": "wikibase-item"
+                  }
+                ]
+              },
+              "snaks-order": [
+                "P143"
+              ]
+            }
+          ]
+        }
+      ],
+      "P18": [
+        {
+          "mainsnak": {
+            "snaktype": "value",
+            "property": "P18",
+            "hash": "3f937d17983abfc982fe6e587c7a247d6be2c36f",
+            "datavalue": {
+              "value": "Hoxne Hoard 1.jpg",
+              "type": "string"
+            },
+            "datatype": "commonsMedia"
+          },
+          "type": "statement",
+          "id": "Q2629914$67e3ecff-4b11-adc7-21a4-4e6c658a4d21",
+          "rank": "normal"
+        }
+      ],
+      "P910": [
+        {
+          "mainsnak": {
+            "snaktype": "value",
+            "property": "P910",
+            "hash": "b3f839c95916c159edbb0171622b8c53843667eb",
+            "datavalue": {
+              "value": {
+                "entity-type": "item",
+                "numeric-id": 55290255,
+                "id": "Q55290255"
+              },
+              "type": "wikibase-entityid"
+            },
+            "datatype": "wikibase-item"
+          },
+          "type": "statement",
+          "id": "Q2629914$76EB8913-B1A5-45EF-A136-B6FCEADEE138",
+          "rank": "normal"
+        }
+      ],
+      "P7959": [
+        {
+          "mainsnak": {
+            "snaktype": "value",
+            "property": "P7959",
+            "hash": "3a65a8e5a14cd19a318c50dc877ff4fdda94ccb5",
+            "datavalue": {
+              "value": {
+                "entity-type": "item",
+                "numeric-id": 67574715,
+                "id": "Q67574715"
+              },
+              "type": "wikibase-entityid"
+            },
+            "datatype": "wikibase-item"
+          },
+          "type": "statement",
+          "id": "Q2629914$65530781-2d55-4ad5-909b-a9083f750419",
+          "rank": "normal"
+        }
+      ],
+      "P8406": [
+        {
+          "mainsnak": {
+            "snaktype": "value",
+            "property": "P8406",
+            "hash": "198e53a50ce42347b2d5160cff55d26b0eb0ba53",
+            "datavalue": {
+              "value": "T2080561",
+              "type": "string"
+            },
+            "datatype": "external-id"
+          },
+          "type": "statement",
+          "id": "Q2629914$F22E4CA6-5078-424B-9E86-43FEB1265C6D",
+          "rank": "normal"
+        }
+      ],
+      "P12190": [
+        {
+          "mainsnak": {
+            "snaktype": "value",
+            "property": "P12190",
+            "hash": "360661ead1bd25913d7dfcfb4fea1f2377176ae2",
+            "datavalue": {
+              "value": "2008",
+              "type": "string"
+            },
+            "datatype": "external-id"
+          },
+          "type": "statement",
+          "id": "Q2629914$52b17a48-436f-602d-111c-17c8af975e38",
+          "rank": "normal"
+        }
+      ],
+      "P575": [
+        {
+          "mainsnak": {
+            "snaktype": "value",
+            "property": "P575",
+            "hash": "daee21c99cbd82cf0c3d0287cc64517ba0604e39",
+            "datavalue": {
+              "value": {
+                "time": "+1992-11-16T00:00:00Z",
+                "timezone": 0,
+                "before": 0,
+                "after": 0,
+                "precision": 11,
+                "calendarmodel": "http://www.wikidata.org/entity/Q1985727"
+              },
+              "type": "time"
+            },
+            "datatype": "time"
+          },
+          "type": "statement",
+          "id": "Q2629914$90219f88-43ed-a3ab-6907-ebc6b026f763",
+          "rank": "normal"
+        }
+      ],
+      "P527": [
+        {
+          "mainsnak": {
+            "snaktype": "value",
+            "property": "P527",
+            "hash": "e82d440159bf8a5740d61be8b5350130e5a68c26",
+            "datavalue": {
+              "value": {
+                "entity-type": "item",
+                "numeric-id": 952064,
+                "id": "Q952064"
+              },
+              "type": "wikibase-entityid"
+            },
+            "datatype": "wikibase-item"
+          },
+          "type": "statement",
+          "qualifiers": {
+            "P1114": [
+              {
+                "snaktype": "value",
+                "property": "P1114",
+                "hash": "369524e124833d27f0b2cc17ec46bca371743b7a",
+                "datavalue": {
+                  "value": {
+                    "amount": "+14865",
+                    "unit": "1"
+                  },
+                  "type": "quantity"
+                },
+                "datatype": "quantity"
+              }
+            ]
+          },
+          "qualifiers-order": [
+            "P1114"
+          ],
+          "id": "Q2629914$0880f00d-411c-b432-a33c-d50ca2c52f6e",
+          "rank": "normal"
+        },
+        {
+          "mainsnak": {
+            "snaktype": "value",
+            "property": "P527",
+            "hash": "310885d5a9674035906409c2fb52b3deb758724f",
+            "datavalue": {
+              "value": {
+                "entity-type": "item",
+                "numeric-id": 220659,
+                "id": "Q220659"
+              },
+              "type": "wikibase-entityid"
+            },
+            "datatype": "wikibase-item"
+          },
+          "type": "statement",
+          "qualifiers": {
+            "P1114": [
+              {
+                "snaktype": "value",
+                "property": "P1114",
+                "hash": "a5f9535de6ba48b7a744a851c8d6e8dcc188a861",
+                "datavalue": {
+                  "value": {
+                    "amount": "+200",
+                    "unit": "1"
+                  },
+                  "type": "quantity"
+                },
+                "datatype": "quantity"
+              }
+            ]
+          },
+          "qualifiers-order": [
+            "P1114"
+          ],
+          "id": "Q2629914$1fa88b58-404d-df77-75ba-23d5f4c198a5",
+          "rank": "normal"
+        }
+      ],
+      "P186": [
+        {
+          "mainsnak": {
+            "snaktype": "value",
+            "property": "P186",
+            "hash": "ba98efee5f158223a7163de958af000e6b22e773",
+            "datavalue": {
+              "value": {
+                "entity-type": "item",
+                "numeric-id": 897,
+                "id": "Q897"
+              },
+              "type": "wikibase-entityid"
+            },
+            "datatype": "wikibase-item"
+          },
+          "type": "statement",
+          "id": "Q2629914$2fd77f62-42a1-df07-0ada-2383ce5c7e56",
+          "rank": "normal"
+        },
+        {
+          "mainsnak": {
+            "snaktype": "value",
+            "property": "P186",
+            "hash": "09efa96cc2c9bb17109d93794d68b1dfdebd6986",
+            "datavalue": {
+              "value": {
+                "entity-type": "item",
+                "numeric-id": 1090,
+                "id": "Q1090"
+              },
+              "type": "wikibase-entityid"
+            },
+            "datatype": "wikibase-item"
+          },
+          "type": "statement",
+          "id": "Q2629914$a7d6bc24-4bc9-8c40-aee3-cff69c1f8b7e",
+          "rank": "normal"
+        },
+        {
+          "mainsnak": {
+            "snaktype": "value",
+            "property": "P186",
+            "hash": "1aafd58b38495eb02b371701f0aff3ff4f8c1193",
+            "datavalue": {
+              "value": {
+                "entity-type": "item",
+                "numeric-id": 34095,
+                "id": "Q34095"
+              },
+              "type": "wikibase-entityid"
+            },
+            "datatype": "wikibase-item"
+          },
+          "type": "statement",
+          "id": "Q2629914$b84c00ff-498c-f133-b292-1cb655bceed8",
+          "rank": "normal"
+        },
+        {
+          "mainsnak": {
+            "snaktype": "value",
+            "property": "P186",
+            "hash": "9577d16fa52fa3cc326380e78056776f24902053",
+            "datavalue": {
+              "value": {
+                "entity-type": "item",
+                "numeric-id": 677,
+                "id": "Q677"
+              },
+              "type": "wikibase-entityid"
+            },
+            "datatype": "wikibase-item"
+          },
+          "type": "statement",
+          "id": "Q2629914$6cac7a74-477a-0589-d3a1-1a8949629e2e",
+          "rank": "normal"
+        }
+      ],
+      "P571": [
+        {
+          "mainsnak": {
+            "snaktype": "value",
+            "property": "P571",
+            "hash": "453f7cfcca09d89e1495339b95f25d033fc2fee1",
+            "datavalue": {
+              "value": {
+                "time": "+0400-00-00T00:00:00Z",
+                "timezone": 0,
+                "before": 0,
+                "after": 0,
+                "precision": 7,
+                "calendarmodel": "http://www.wikidata.org/entity/Q1985786"
+              },
+              "type": "time"
+            },
+            "datatype": "time"
+          },
+          "type": "statement",
+          "id": "Q2629914$82c99a67-4a9c-af6b-a448-4e67f3899294",
+          "rank": "normal"
+        },
+        {
+          "mainsnak": {
+            "snaktype": "value",
+            "property": "P571",
+            "hash": "859348bc28d22bad905f896ea204c6a1b9e1143e",
+            "datavalue": {
+              "value": {
+                "time": "+0500-00-00T00:00:00Z",
+                "timezone": 0,
+                "before": 0,
+                "after": 0,
+                "precision": 7,
+                "calendarmodel": "http://www.wikidata.org/entity/Q1985786"
+              },
+              "type": "time"
+            },
+            "datatype": "time"
+          },
+          "type": "statement",
+          "id": "Q2629914$d9bc5722-49c5-b036-82f9-ab26f3a2d347",
+          "rank": "normal"
+        }
+      ]
+    },
+    "sitelinks": {
+      "arwiki": {
+        "site": "arwiki",
+        "title": "كنز هوكسن",
+        "badges": [],
+        "url": "https://ar.wikipedia.org/wiki/%D9%83%D9%86%D8%B2_%D9%87%D9%88%D9%83%D8%B3%D9%86"
+      },
+      "cawiki": {
+        "site": "cawiki",
+        "title": "Tresor de Hoxne",
+        "badges": [],
+        "url": "https://ca.wikipedia.org/wiki/Tresor_de_Hoxne"
+      },
+      "commonswiki": {
+        "site": "commonswiki",
+        "title": "Hoxne Hoard",
+        "badges": [],
+        "url": "https://commons.wikimedia.org/wiki/Hoxne_Hoard"
+      },
+      "dawiki": {
+        "site": "dawiki",
+        "title": "Hoxne-skatten",
+        "badges": [],
+        "url": "https://da.wikipedia.org/wiki/Hoxne-skatten"
+      },
+      "dewiki": {
+        "site": "dewiki",
+        "title": "Depotfund von Hoxne",
+        "badges": [],
+        "url": "https://de.wikipedia.org/wiki/Depotfund_von_Hoxne"
+      },
+      "enwiki": {
+        "site": "enwiki",
+        "title": "Hoxne Hoard",
+        "badges": [
+          "Q17437796"
+        ],
+        "url": "https://en.wikipedia.org/wiki/Hoxne_Hoard"
+      },
+      "eswiki": {
+        "site": "eswiki",
+        "title": "Tesoro de Hoxne",
+        "badges": [],
+        "url": "https://es.wikipedia.org/wiki/Tesoro_de_Hoxne"
+      },
+      "etwiki": {
+        "site": "etwiki",
+        "title": "Hoxne'i aardeleid",
+        "badges": [],
+        "url": "https://et.wikipedia.org/wiki/Hoxne%27i_aardeleid"
+      },
+      "fawiki": {
+        "site": "fawiki",
+        "title": "گنجینه هاکسن",
+        "badges": [],
+        "url": "https://fa.wikipedia.org/wiki/%DA%AF%D9%86%D8%AC%DB%8C%D9%86%D9%87_%D9%87%D8%A7%DA%A9%D8%B3%D9%86"
+      },
+      "frwiki": {
+        "site": "frwiki",
+        "title": "Trésor de Hoxne",
+        "badges": [
+          "Q17437796"
+        ],
+        "url": "https://fr.wikipedia.org/wiki/Tr%C3%A9sor_de_Hoxne"
+      },
+      "glwiki": {
+        "site": "glwiki",
+        "title": "Tesouro de Hoxne",
+        "badges": [
+          "Q17437796"
+        ],
+        "url": "https://gl.wikipedia.org/wiki/Tesouro_de_Hoxne"
+      },
+      "itwiki": {
+        "site": "itwiki",
+        "title": "Tesoro di Hoxne",
+        "badges": [],
+        "url": "https://it.wikipedia.org/wiki/Tesoro_di_Hoxne"
+      },
+      "kowiki": {
+        "site": "kowiki",
+        "title": "혹선의 퇴장화폐",
+        "badges": [],
+        "url": "https://ko.wikipedia.org/wiki/%ED%98%B9%EC%84%A0%EC%9D%98_%ED%87%B4%EC%9E%A5%ED%99%94%ED%8F%90"
+      },
+      "plwiki": {
+        "site": "plwiki",
+        "title": "Skarb z Hoxne",
+        "badges": [],
+        "url": "https://pl.wikipedia.org/wiki/Skarb_z_Hoxne"
+      },
+      "ptwiki": {
+        "site": "ptwiki",
+        "title": "Tesouro de Hoxne",
+        "badges": [],
+        "url": "https://pt.wikipedia.org/wiki/Tesouro_de_Hoxne"
+      },
+      "ruwiki": {
+        "site": "ruwiki",
+        "title": "Хоксненский клад",
+        "badges": [],
+        "url": "https://ru.wikipedia.org/wiki/%D0%A5%D0%BE%D0%BA%D1%81%D0%BD%D0%B5%D0%BD%D1%81%D0%BA%D0%B8%D0%B9_%D0%BA%D0%BB%D0%B0%D0%B4"
+      },
+      "simplewiki": {
+        "site": "simplewiki",
+        "title": "Hoxne treasure",
+        "badges": [],
+        "url": "https://simple.wikipedia.org/wiki/Hoxne_treasure"
+      },
+      "slwiki": {
+        "site": "slwiki",
+        "title": "Zaklad iz Hoxneja",
+        "badges": [],
+        "url": "https://sl.wikipedia.org/wiki/Zaklad_iz_Hoxneja"
+      },
+      "ukwiki": {
+        "site": "ukwiki",
+        "title": "Хоксненський скарб",
+        "badges": [],
+        "url": "https://uk.wikipedia.org/wiki/%D0%A5%D0%BE%D0%BA%D1%81%D0%BD%D0%B5%D0%BD%D1%81%D1%8C%D0%BA%D0%B8%D0%B9_%D1%81%D0%BA%D0%B0%D1%80%D0%B1"
+      },
+      "zhwiki": {
+        "site": "zhwiki",
+        "title": "霍克森宝藏",
+        "badges": [],
+        "url": "https://zh.wikipedia.org/wiki/%E9%9C%8D%E5%85%8B%E6%A3%AE%E5%AE%9D%E8%97%8F"
+      }
+    }
+  }
+}

@@ -16,3 +16,4 @@ async function fixAll() {
     else console.log(`Mis à jour ${data.length} comptes.`);
 }
 fixAll();
+

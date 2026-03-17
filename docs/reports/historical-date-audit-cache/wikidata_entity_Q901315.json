@@ -1,0 +1,567 @@
+{
+  "saved_at": "2026-03-07T12:57:12.781Z",
+  "value": {
+    "pageid": 852099,
+    "ns": 0,
+    "title": "Q901315",
+    "lastrevid": 1504317358,
+    "modified": "2021-09-27T12:52:24Z",
+    "type": "item",
+    "id": "Q901315",
+    "labels": {
+      "de": {
+        "language": "de",
+        "value": "Explosion in Toulouse"
+      },
+      "es": {
+        "language": "es",
+        "value": "Explosión de AZF en Toulouse"
+      },
+      "en": {
+        "language": "en",
+        "value": "Explosion in AZF"
+      },
+      "ru": {
+        "language": "ru",
+        "value": "Взрыв на заводе AZF"
+      },
+      "oc": {
+        "language": "oc",
+        "value": "Explosion de l'usina AZF"
+      },
+      "fr": {
+        "language": "fr",
+        "value": "explosion de l'usine AZF de Toulouse"
+      },
+      "nl": {
+        "language": "nl",
+        "value": "AZF-ramp"
+      },
+      "zh": {
+        "language": "zh",
+        "value": "图卢兹AZF化工厂爆炸事件"
+      },
+      "zh-hant": {
+        "language": "zh-hant",
+        "value": "圖盧茲AZF化工廠爆炸事件"
+      },
+      "ar": {
+        "language": "ar",
+        "value": "انفجار مصنع تولوز للكيماويات"
+      },
+      "eu": {
+        "language": "eu",
+        "value": "AZF enpresaren leherketa"
+      }
+    },
+    "descriptions": {
+      "fr": {
+        "language": "fr",
+        "value": "explosion ayant eu lieu à Toulouse le 21 septembre 2001"
+      },
+      "de": {
+        "language": "de",
+        "value": "Explosion aufgrund ungeklärter Ursache von entsorgtem Düngemittel"
+      },
+      "en": {
+        "language": "en",
+        "value": "2001 chemical explosion in Toulouse"
+      }
+    },
+    "aliases": {
+      "es": [
+        {
+          "language": "es",
+          "value": "Explosion de AZF en Toulouse"
+        }
+      ],
+      "en": [
+        {
+          "language": "en",
+          "value": "Toulouse chemical factory explosion"
+        }
+      ]
+    },
+    "claims": {
+      "P373": [
+        {
+          "mainsnak": {
+            "snaktype": "value",
+            "property": "P373",
+            "hash": "503cece2961f61a7f907cc0afed7e4d2afc038f6",
+            "datavalue": {
+              "value": "Toulouse AZF factory explosion",
+              "type": "string"
+            },
+            "datatype": "string"
+          },
+          "type": "statement",
+          "id": "q901315$D184CCE7-4352-4D2C-889B-FCC15DD5C98D",
+          "rank": "normal",
+          "references": [
+            {
+              "hash": "fa278ebfc458360e5aed63d5058cca83c46134f1",
+              "snaks": {
+                "P143": [
+                  {
+                    "snaktype": "value",
+                    "property": "P143",
+                    "hash": "e4f6d9441d0600513c4533c672b5ab472dc73694",
+                    "datavalue": {
+                      "value": {
+                        "entity-type": "item",
+                        "numeric-id": 328,
+                        "id": "Q328"
+                      },
+                      "type": "wikibase-entityid"
+                    },
+                    "datatype": "wikibase-item"
+                  }
+                ]
+              },
+              "snaks-order": [
+                "P143"
+              ]
+            }
+          ]
+        }
+      ],
+      "P625": [
+        {
+          "mainsnak": {
+            "snaktype": "value",
+            "property": "P625",
+            "hash": "bc30a17973e472dd423d5aabf04a12a442abbaad",
+            "datavalue": {
+              "value": {
+                "latitude": 43.567222,
+                "longitude": 1.4275,
+                "altitude": null,
+                "precision": 0.00001,
+                "globe": "http://www.wikidata.org/entity/Q2"
+              },
+              "type": "globecoordinate"
+            },
+            "datatype": "globe-coordinate"
+          },
+          "type": "statement",
+          "id": "q901315$25DB4861-2B19-4C23-BD68-8CB8CC823330",
+          "rank": "normal",
+          "references": [
+            {
+              "hash": "732ec1c90a6f0694c7db9a71bf09fe7f2b674172",
+              "snaks": {
+                "P143": [
+                  {
+                    "snaktype": "value",
+                    "property": "P143",
+                    "hash": "9123b0de1cc9c3954366ba797d598e4e1ea4146f",
+                    "datavalue": {
+                      "value": {
+                        "entity-type": "item",
+                        "numeric-id": 10000,
+                        "id": "Q10000"
+                      },
+                      "type": "wikibase-entityid"
+                    },
+                    "datatype": "wikibase-item"
+                  }
+                ]
+              },
+              "snaks-order": [
+                "P143"
+              ]
+            }
+          ]
+        }
+      ],
+      "P131": [
+        {
+          "mainsnak": {
+            "snaktype": "value",
+            "property": "P131",
+            "hash": "3778c72adbe5156244f603957e364dee29186c0f",
+            "datavalue": {
+              "value": {
+                "entity-type": "item",
+                "numeric-id": 7880,
+                "id": "Q7880"
+              },
+              "type": "wikibase-entityid"
+            },
+            "datatype": "wikibase-item"
+          },
+          "type": "statement",
+          "id": "Q901315$a18e51e9-4133-5bb4-28de-99314cb42ed5",
+          "rank": "normal",
+          "references": [
+            {
+              "hash": "288ab581e7d2d02995a26dfa8b091d96e78457fc",
+              "snaks": {
+                "P143": [
+                  {
+                    "snaktype": "value",
+                    "property": "P143",
+                    "hash": "6a164248fc96bfa583bbb495cb63ae6401ec203c",
+                    "datavalue": {
+                      "value": {
+                        "entity-type": "item",
+                        "numeric-id": 206855,
+                        "id": "Q206855"
+                      },
+                      "type": "wikibase-entityid"
+                    },
+                    "datatype": "wikibase-item"
+                  }
+                ]
+              },
+              "snaks-order": [
+                "P143"
+              ]
+            }
+          ]
+        }
+      ],
+      "P18": [
+        {
+          "mainsnak": {
+            "snaktype": "value",
+            "property": "P18",
+            "hash": "bbd26655a6a227afccbc398a3a55564839fb3b8a",
+            "datavalue": {
+              "value": "AZF 20010921 -15Fi11165-01.jpg",
+              "type": "string"
+            },
+            "datatype": "commonsMedia"
+          },
+          "type": "statement",
+          "id": "Q901315$60fff3c1-426a-8105-f9b8-223a2474d9b6",
+          "rank": "normal"
+        }
+      ],
+      "P31": [
+        {
+          "mainsnak": {
+            "snaktype": "value",
+            "property": "P31",
+            "hash": "acefb34e5099e3bc89652eed1eca8b9ec4c7f43a",
+            "datavalue": {
+              "value": {
+                "entity-type": "item",
+                "numeric-id": 68800046,
+                "id": "Q68800046"
+              },
+              "type": "wikibase-entityid"
+            },
+            "datatype": "wikibase-item"
+          },
+          "type": "statement",
+          "id": "Q901315$9c3ce41c-4112-c823-1d32-6e6944014298",
+          "rank": "normal"
+        },
+        {
+          "mainsnak": {
+            "snaktype": "value",
+            "property": "P31",
+            "hash": "b10001b7532a1aa36737e4772c1e58542503ff70",
+            "datavalue": {
+              "value": {
+                "entity-type": "item",
+                "numeric-id": 179057,
+                "id": "Q179057"
+              },
+              "type": "wikibase-entityid"
+            },
+            "datatype": "wikibase-item"
+          },
+          "type": "statement",
+          "id": "Q901315$acc42028-4724-0f13-641e-4d11ec49510c",
+          "rank": "normal"
+        }
+      ],
+      "P1120": [
+        {
+          "mainsnak": {
+            "snaktype": "value",
+            "property": "P1120",
+            "hash": "17d33392341d71fcba6eab6c88a138c071d9d761",
+            "datavalue": {
+              "value": {
+                "amount": "+31",
+                "unit": "1"
+              },
+              "type": "quantity"
+            },
+            "datatype": "quantity"
+          },
+          "type": "statement",
+          "id": "Q901315$254fb784-4105-6323-cf73-9ace2ef4da0f",
+          "rank": "normal",
+          "references": [
+            {
+              "hash": "d4bd87b862b12d99d26e86472d44f26858dee639",
+              "snaks": {
+                "P143": [
+                  {
+                    "snaktype": "value",
+                    "property": "P143",
+                    "hash": "f30cbd35620c4ea6d0633aaf0210a8916130469b",
+                    "datavalue": {
+                      "value": {
+                        "entity-type": "item",
+                        "numeric-id": 8447,
+                        "id": "Q8447"
+                      },
+                      "type": "wikibase-entityid"
+                    },
+                    "datatype": "wikibase-item"
+                  }
+                ]
+              },
+              "snaks-order": [
+                "P143"
+              ]
+            }
+          ]
+        }
+      ],
+      "P17": [
+        {
+          "mainsnak": {
+            "snaktype": "value",
+            "property": "P17",
+            "hash": "c05db5d169c2560b9799d567a803d20a392f53e4",
+            "datavalue": {
+              "value": {
+                "entity-type": "item",
+                "numeric-id": 142,
+                "id": "Q142"
+              },
+              "type": "wikibase-entityid"
+            },
+            "datatype": "wikibase-item"
+          },
+          "type": "statement",
+          "id": "Q901315$b31c0dba-4915-18d0-31c4-5ffd501d3972",
+          "rank": "normal"
+        }
+      ],
+      "P3219": [
+        {
+          "mainsnak": {
+            "snaktype": "value",
+            "property": "P3219",
+            "hash": "6eaa58009981244bbbbf3a68d3d47916fe3294ad",
+            "datavalue": {
+              "value": "accident-de-l-usine-a-z-f",
+              "type": "string"
+            },
+            "datatype": "external-id"
+          },
+          "type": "statement",
+          "id": "Q901315$94F62258-1872-44BD-AE17-C173A52B442C",
+          "rank": "normal"
+        },
+        {
+          "mainsnak": {
+            "snaktype": "value",
+            "property": "P3219",
+            "hash": "67cf1f418bff3c36e966056593aec385038121c4",
+            "datavalue": {
+              "value": "accident-de-l-usine-azf",
+              "type": "string"
+            },
+            "datatype": "external-id"
+          },
+          "type": "statement",
+          "id": "Q901315$F98E6CAF-C3D9-4216-8336-4049DC103CBB",
+          "rank": "normal"
+        }
+      ],
+      "P585": [
+        {
+          "mainsnak": {
+            "snaktype": "value",
+            "property": "P585",
+            "hash": "39368576e2c2bdf7f6c60f43985cf42d51b0d20d",
+            "datavalue": {
+              "value": {
+                "time": "+2001-09-21T00:00:00Z",
+                "timezone": 0,
+                "before": 0,
+                "after": 0,
+                "precision": 11,
+                "calendarmodel": "http://www.wikidata.org/entity/Q1985727"
+              },
+              "type": "time"
+            },
+            "datatype": "time"
+          },
+          "type": "statement",
+          "id": "Q901315$ACCDD0FE-3273-4FED-8A16-35AC18ABFDE8",
+          "rank": "normal",
+          "references": [
+            {
+              "hash": "fba30a5eb682655370a148c6426013f2dad76f7e",
+              "snaks": {
+                "P143": [
+                  {
+                    "snaktype": "value",
+                    "property": "P143",
+                    "hash": "e4f6d9441d0600513c4533c672b5ab472dc73694",
+                    "datavalue": {
+                      "value": {
+                        "entity-type": "item",
+                        "numeric-id": 328,
+                        "id": "Q328"
+                      },
+                      "type": "wikibase-entityid"
+                    },
+                    "datatype": "wikibase-item"
+                  }
+                ],
+                "P4656": [
+                  {
+                    "snaktype": "value",
+                    "property": "P4656",
+                    "hash": "08d9bb7e71ed10a5713b8e086af3e7b4e0c55cc9",
+                    "datavalue": {
+                      "value": "https://en.wikipedia.org/w/index.php?title=Toulouse_chemical_factory_explosion&oldid=894168570",
+                      "type": "string"
+                    },
+                    "datatype": "url"
+                  }
+                ]
+              },
+              "snaks-order": [
+                "P143",
+                "P4656"
+              ]
+            }
+          ]
+        }
+      ],
+      "P2671": [
+        {
+          "mainsnak": {
+            "snaktype": "value",
+            "property": "P2671",
+            "hash": "39aa4a1bbb645772be1e159c052908ada5d84cbd",
+            "datavalue": {
+              "value": "/g/120lq85k",
+              "type": "string"
+            },
+            "datatype": "external-id"
+          },
+          "type": "statement",
+          "id": "Q901315$3A551F91-7AF3-4745-91DB-A58F9B43EE8F",
+          "rank": "normal"
+        }
+      ],
+      "P1339": [
+        {
+          "mainsnak": {
+            "snaktype": "value",
+            "property": "P1339",
+            "hash": "efd82ab8de248022f938f16ad9ac2a10a1fc3268",
+            "datavalue": {
+              "value": {
+                "amount": "+2500",
+                "unit": "1"
+              },
+              "type": "quantity"
+            },
+            "datatype": "quantity"
+          },
+          "type": "statement",
+          "id": "Q901315$547ba6ba-4d80-d910-dec5-7b8e09bbfa53",
+          "rank": "normal",
+          "references": [
+            {
+              "hash": "2727734ace906283bed9b938b2d3a028f9655474",
+              "snaks": {
+                "P854": [
+                  {
+                    "snaktype": "value",
+                    "property": "P854",
+                    "hash": "dba310956f4d62b94e9d114a0b76fa0cd99eb8b9",
+                    "datavalue": {
+                      "value": "https://www.lemonde.fr/les-decodeurs/article/2021/09/21/azf-vingt-ans-apres-ou-en-est-le-risque-industriel-en-france_6095402_4355770.html",
+                      "type": "string"
+                    },
+                    "datatype": "url"
+                  }
+                ]
+              },
+              "snaks-order": [
+                "P854"
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    "sitelinks": {
+      "arwiki": {
+        "site": "arwiki",
+        "title": "انفجار مصنع تولوز للكيماويات",
+        "badges": [],
+        "url": "https://ar.wikipedia.org/wiki/%D8%A7%D9%86%D9%81%D8%AC%D8%A7%D8%B1_%D9%85%D8%B5%D9%86%D8%B9_%D8%AA%D9%88%D9%84%D9%88%D8%B2_%D9%84%D9%84%D9%83%D9%8A%D9%85%D8%A7%D9%88%D9%8A%D8%A7%D8%AA"
+      },
+      "commonswiki": {
+        "site": "commonswiki",
+        "title": "Category:Toulouse AZF factory explosion",
+        "badges": [],
+        "url": "https://commons.wikimedia.org/wiki/Category:Toulouse_AZF_factory_explosion"
+      },
+      "dewiki": {
+        "site": "dewiki",
+        "title": "Explosion in Toulouse",
+        "badges": [],
+        "url": "https://de.wikipedia.org/wiki/Explosion_in_Toulouse"
+      },
+      "enwiki": {
+        "site": "enwiki",
+        "title": "Toulouse chemical factory explosion",
+        "badges": [],
+        "url": "https://en.wikipedia.org/wiki/Toulouse_chemical_factory_explosion"
+      },
+      "eswiki": {
+        "site": "eswiki",
+        "title": "Explosión de AZF en Toulouse",
+        "badges": [],
+        "url": "https://es.wikipedia.org/wiki/Explosi%C3%B3n_de_AZF_en_Toulouse"
+      },
+      "euwiki": {
+        "site": "euwiki",
+        "title": "AZF enpresaren leherketa",
+        "badges": [],
+        "url": "https://eu.wikipedia.org/wiki/AZF_enpresaren_leherketa"
+      },
+      "frwiki": {
+        "site": "frwiki",
+        "title": "Explosion de l'usine AZF de Toulouse",
+        "badges": [],
+        "url": "https://fr.wikipedia.org/wiki/Explosion_de_l%27usine_AZF_de_Toulouse"
+      },
+      "nlwiki": {
+        "site": "nlwiki",
+        "title": "AZF-ramp",
+        "badges": [],
+        "url": "https://nl.wikipedia.org/wiki/AZF-ramp"
+      },
+      "ocwiki": {
+        "site": "ocwiki",
+        "title": "Explosion de l'usina AZF",
+        "badges": [],
+        "url": "https://oc.wikipedia.org/wiki/Explosion_de_l%27usina_AZF"
+      },
+      "ruwiki": {
+        "site": "ruwiki",
+        "title": "Взрыв на заводе AZF",
+        "badges": [],
+        "url": "https://ru.wikipedia.org/wiki/%D0%92%D0%B7%D1%80%D1%8B%D0%B2_%D0%BD%D0%B0_%D0%B7%D0%B0%D0%B2%D0%BE%D0%B4%D0%B5_AZF"
+      }
+    }
+  }
+}

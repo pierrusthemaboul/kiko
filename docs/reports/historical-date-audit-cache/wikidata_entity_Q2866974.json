@@ -1,0 +1,421 @@
+{
+  "saved_at": "2026-03-07T15:00:07.518Z",
+  "value": {
+    "pageid": 2744930,
+    "ns": 0,
+    "title": "Q2866974",
+    "lastrevid": 2451873094,
+    "modified": "2026-01-05T22:14:02Z",
+    "type": "item",
+    "id": "Q2866974",
+    "labels": {
+      "fr": {
+        "language": "fr",
+        "value": "assassinat de Louis d'Orléans"
+      },
+      "en": {
+        "language": "en",
+        "value": "assassination of Louis I, Duke of Orléans"
+      },
+      "es": {
+        "language": "es",
+        "value": "asesinato de Luis de Valois"
+      },
+      "it": {
+        "language": "it",
+        "value": "Assassinio di Luigi I d'Orléans"
+      },
+      "ru": {
+        "language": "ru",
+        "value": "Убийство Людовика Орлеанского"
+      },
+      "et": {
+        "language": "et",
+        "value": "Orléansi hertsog Louis I atentaat"
+      },
+      "ja": {
+        "language": "ja",
+        "value": "オルレアン公ルイ1世の暗殺"
+      },
+      "de": {
+        "language": "de",
+        "value": "Tötung von Louis I, Herzog von Orléans"
+      },
+      "tr": {
+        "language": "tr",
+        "value": "Orléans Dükü I. Louis suikasti"
+      },
+      "ca": {
+        "language": "ca",
+        "value": "assassinat de Lluís I d'Orleans"
+      }
+    },
+    "descriptions": {
+      "fr": {
+        "language": "fr",
+        "value": "assassinat du duc d'Orléans en 1407"
+      },
+      "en": {
+        "language": "en",
+        "value": "1407 murder in Paris"
+      },
+      "it": {
+        "language": "it",
+        "value": "assassinio di Luigi I d'Orléans (23 novembre 1407)"
+      },
+      "ja": {
+        "language": "ja",
+        "value": "百年戦争中の1407年にパリで発生した暗殺事件"
+      },
+      "tr": {
+        "language": "tr",
+        "value": "Fransa Krallığı'nın Paris kentinde 1407 yılında işlenen cinayet"
+      }
+    },
+    "aliases": {
+      "fr": [
+        {
+          "language": "fr",
+          "value": "Assassinat de louis d'orléans"
+        },
+        {
+          "language": "fr",
+          "value": "Assassinat De Louis D'Orléans"
+        },
+        {
+          "language": "fr",
+          "value": "Assassinat de Louis d'Orleans"
+        },
+        {
+          "language": "fr",
+          "value": "Assassinat de Louis Ier d'Orléans"
+        }
+      ],
+      "en": [
+        {
+          "language": "en",
+          "value": "Louis I, Duke of Orléans assassination"
+        },
+        {
+          "language": "en",
+          "value": "Louis I, Duke of Orléans's assassination"
+        },
+        {
+          "language": "en",
+          "value": "murder of Louis I, Duke of Orléans"
+        },
+        {
+          "language": "en",
+          "value": "Louis I, Duke of Orléans's murder"
+        },
+        {
+          "language": "en",
+          "value": "Louis I, Duke of Orléans murder"
+        },
+        {
+          "language": "en",
+          "value": "killing of Louis I, Duke of Orléans"
+        },
+        {
+          "language": "en",
+          "value": "Louis I, Duke of Orléans's killing"
+        },
+        {
+          "language": "en",
+          "value": "Louis I, Duke of Orléans killing"
+        }
+      ]
+    },
+    "claims": {
+      "P585": [
+        {
+          "mainsnak": {
+            "snaktype": "value",
+            "property": "P585",
+            "hash": "e70acc6bf76545f791b09688d8a30db3cab8dbce",
+            "datavalue": {
+              "value": {
+                "time": "+1407-11-23T00:00:00Z",
+                "timezone": 0,
+                "before": 0,
+                "after": 0,
+                "precision": 11,
+                "calendarmodel": "http://www.wikidata.org/entity/Q1985786"
+              },
+              "type": "time"
+            },
+            "datatype": "time"
+          },
+          "type": "statement",
+          "id": "Q2866974$bd68cea3-4682-ef78-0416-7357ac4e512e",
+          "rank": "normal"
+        }
+      ],
+      "P17": [
+        {
+          "mainsnak": {
+            "snaktype": "value",
+            "property": "P17",
+            "hash": "2b7d86f7555d9e77641e33f3f283b88021a5e49a",
+            "datavalue": {
+              "value": {
+                "entity-type": "item",
+                "numeric-id": 70972,
+                "id": "Q70972"
+              },
+              "type": "wikibase-entityid"
+            },
+            "datatype": "wikibase-item"
+          },
+          "type": "statement",
+          "id": "Q2866974$f435d747-4ebe-da38-92f4-d1d1d0635582",
+          "rank": "normal"
+        }
+      ],
+      "P533": [
+        {
+          "mainsnak": {
+            "snaktype": "value",
+            "property": "P533",
+            "hash": "66cdfe2bbec2931c6d016637b0479b1f24816a4d",
+            "datavalue": {
+              "value": {
+                "entity-type": "item",
+                "numeric-id": 337057,
+                "id": "Q337057"
+              },
+              "type": "wikibase-entityid"
+            },
+            "datatype": "wikibase-item"
+          },
+          "type": "statement",
+          "id": "Q2866974$be0f9173-4591-9865-dbc1-964a83fe006d",
+          "rank": "normal"
+        }
+      ],
+      "P1542": [
+        {
+          "mainsnak": {
+            "snaktype": "value",
+            "property": "P1542",
+            "hash": "69d0a4b773a75a90a142f4799f6d19f8a4f5ac35",
+            "datavalue": {
+              "value": {
+                "entity-type": "item",
+                "numeric-id": 1021160,
+                "id": "Q1021160"
+              },
+              "type": "wikibase-entityid"
+            },
+            "datatype": "wikibase-item"
+          },
+          "type": "statement",
+          "id": "Q2866974$4a4aac9f-4f18-b348-a402-4864b5b4c159",
+          "rank": "normal"
+        }
+      ],
+      "P520": [
+        {
+          "mainsnak": {
+            "snaktype": "value",
+            "property": "P520",
+            "hash": "c462ebea20ae3055f48599c9d5f3273763780c96",
+            "datavalue": {
+              "value": {
+                "entity-type": "item",
+                "numeric-id": 39397,
+                "id": "Q39397"
+              },
+              "type": "wikibase-entityid"
+            },
+            "datatype": "wikibase-item"
+          },
+          "type": "statement",
+          "id": "Q2866974$b0fdaf88-4314-f0a3-276f-457dabece205",
+          "rank": "normal"
+        }
+      ],
+      "P18": [
+        {
+          "mainsnak": {
+            "snaktype": "value",
+            "property": "P18",
+            "hash": "1a5d1bf4a83eabee70306d434b7f81b392a7f4ca",
+            "datavalue": {
+              "value": "Assassinat louis orleans.jpg",
+              "type": "string"
+            },
+            "datatype": "commonsMedia"
+          },
+          "type": "statement",
+          "id": "Q2866974$c39431d7-4765-786e-29ba-e499df790656",
+          "rank": "normal"
+        }
+      ],
+      "P646": [
+        {
+          "mainsnak": {
+            "snaktype": "value",
+            "property": "P646",
+            "hash": "ed1c8dca29011ba7003ec8d98492ff0b8c529c94",
+            "datavalue": {
+              "value": "/m/05zpv6q",
+              "type": "string"
+            },
+            "datatype": "external-id"
+          },
+          "type": "statement",
+          "id": "Q2866974$BD29FAB1-27B0-4933-9385-2F909BDC09CF",
+          "rank": "normal"
+        }
+      ],
+      "P625": [
+        {
+          "mainsnak": {
+            "snaktype": "value",
+            "property": "P625",
+            "hash": "4468123dd6422080f4d99ef752598f6aed4cb407",
+            "datavalue": {
+              "value": {
+                "latitude": 48.859,
+                "longitude": 2.359,
+                "altitude": null,
+                "precision": 0.001,
+                "globe": "http://www.wikidata.org/entity/Q2"
+              },
+              "type": "globecoordinate"
+            },
+            "datatype": "globe-coordinate"
+          },
+          "type": "statement",
+          "id": "Q2866974$a68b9af1-0419-44c5-a472-7b4d88edc214",
+          "rank": "normal"
+        }
+      ],
+      "P31": [
+        {
+          "mainsnak": {
+            "snaktype": "value",
+            "property": "P31",
+            "hash": "ee59d1f9421161fff0a010cf07ef571416d76e65",
+            "datavalue": {
+              "value": {
+                "entity-type": "item",
+                "numeric-id": 1139665,
+                "id": "Q1139665"
+              },
+              "type": "wikibase-entityid"
+            },
+            "datatype": "wikibase-item"
+          },
+          "type": "statement",
+          "id": "Q2866974$70FD9FF2-120A-4CEB-A4B9-159DD99F97D7",
+          "rank": "normal"
+        }
+      ],
+      "P8032": [
+        {
+          "mainsnak": {
+            "snaktype": "value",
+            "property": "P8032",
+            "hash": "cd789a231ff9ba1de969b515e253a2c052c847aa",
+            "datavalue": {
+              "value": {
+                "entity-type": "item",
+                "numeric-id": 337057,
+                "id": "Q337057"
+              },
+              "type": "wikibase-entityid"
+            },
+            "datatype": "wikibase-item"
+          },
+          "type": "statement",
+          "id": "Q2866974$70CA8B15-370F-4586-914F-6AD2BAA80A8C",
+          "rank": "normal"
+        }
+      ],
+      "P373": [
+        {
+          "mainsnak": {
+            "snaktype": "value",
+            "property": "P373",
+            "hash": "a0bbfbabd5242a38f31ab7926621fa08bcb7b87d",
+            "datavalue": {
+              "value": "Assassination of Louis I, Duke of Orléans",
+              "type": "string"
+            },
+            "datatype": "string"
+          },
+          "type": "statement",
+          "id": "Q2866974$035fa3f1-a9e2-4bdb-ab36-51919daf997f",
+          "rank": "normal"
+        }
+      ],
+      "P276": [
+        {
+          "mainsnak": {
+            "snaktype": "value",
+            "property": "P276",
+            "hash": "65737aff6befb67b52f4956ed02d8655213307f0",
+            "datavalue": {
+              "value": {
+                "entity-type": "item",
+                "numeric-id": 90,
+                "id": "Q90"
+              },
+              "type": "wikibase-entityid"
+            },
+            "datatype": "wikibase-item"
+          },
+          "type": "statement",
+          "id": "Q2866974$0fa1a851-42e3-d471-4163-5d5cf51189c5",
+          "rank": "normal"
+        }
+      ]
+    },
+    "sitelinks": {
+      "commonswiki": {
+        "site": "commonswiki",
+        "title": "Category:Assassination of Louis I, Duke of Orléans",
+        "badges": [],
+        "url": "https://commons.wikimedia.org/wiki/Category:Assassination_of_Louis_I,_Duke_of_Orl%C3%A9ans"
+      },
+      "enwiki": {
+        "site": "enwiki",
+        "title": "Assassination of Louis I, Duke of Orléans",
+        "badges": [],
+        "url": "https://en.wikipedia.org/wiki/Assassination_of_Louis_I,_Duke_of_Orl%C3%A9ans"
+      },
+      "eswiki": {
+        "site": "eswiki",
+        "title": "Asesinato de Luis de Valois",
+        "badges": [],
+        "url": "https://es.wikipedia.org/wiki/Asesinato_de_Luis_de_Valois"
+      },
+      "etwiki": {
+        "site": "etwiki",
+        "title": "Orléansi hertsog Louis I atentaat",
+        "badges": [],
+        "url": "https://et.wikipedia.org/wiki/Orl%C3%A9ansi_hertsog_Louis_I_atentaat"
+      },
+      "frwiki": {
+        "site": "frwiki",
+        "title": "Assassinat de Louis Ier d'Orléans",
+        "badges": [],
+        "url": "https://fr.wikipedia.org/wiki/Assassinat_de_Louis_Ier_d%27Orl%C3%A9ans"
+      },
+      "itwiki": {
+        "site": "itwiki",
+        "title": "Assassinio di Luigi I d'Orléans",
+        "badges": [],
+        "url": "https://it.wikipedia.org/wiki/Assassinio_di_Luigi_I_d%27Orl%C3%A9ans"
+      },
+      "ruwiki": {
+        "site": "ruwiki",
+        "title": "Убийство Людовика Орлеанского",
+        "badges": [],
+        "url": "https://ru.wikipedia.org/wiki/%D0%A3%D0%B1%D0%B8%D0%B9%D1%81%D1%82%D0%B2%D0%BE_%D0%9B%D1%8E%D0%B4%D0%BE%D0%B2%D0%B8%D0%BA%D0%B0_%D0%9E%D1%80%D0%BB%D0%B5%D0%B0%D0%BD%D1%81%D0%BA%D0%BE%D0%B3%D0%BE"
+      }
+    }
+  }
+}

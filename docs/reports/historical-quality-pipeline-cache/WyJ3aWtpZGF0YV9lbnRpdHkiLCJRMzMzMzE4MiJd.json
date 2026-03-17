@@ -1,0 +1,544 @@
+{
+  "pageid": 3177773,
+  "ns": 0,
+  "title": "Q3333182",
+  "lastrevid": 2456065501,
+  "modified": "2026-01-19T09:57:00Z",
+  "type": "item",
+  "id": "Q3333182",
+  "labels": {
+    "fr": {
+      "language": "fr",
+      "value": "ménagerie royale de Versailles"
+    },
+    "it": {
+      "language": "it",
+      "value": "Ménagerie royale de Versailles"
+    },
+    "en": {
+      "language": "en",
+      "value": "Ménagerie royale de Versailles"
+    },
+    "nl": {
+      "language": "nl",
+      "value": "Ménagerie royale de Versailles"
+    },
+    "es": {
+      "language": "es",
+      "value": "Real Casa de las Fieras de Versalles"
+    },
+    "ru": {
+      "language": "ru",
+      "value": "Королевский зверинец (Версаль)"
+    },
+    "de": {
+      "language": "de",
+      "value": "Königliche Menagerie von Versailles"
+    }
+  },
+  "descriptions": {
+    "nl": {
+      "language": "nl",
+      "value": "dierentuin in Frankrijk"
+    },
+    "en": {
+      "language": "en",
+      "value": "building in Yvelines, France 1663–1800"
+    },
+    "it": {
+      "language": "it",
+      "value": "zoo scomparso di Versailles, Francia"
+    }
+  },
+  "aliases": {
+    "fr": [
+      {
+        "language": "fr",
+        "value": "Ménagerie royale de versailles"
+      },
+      {
+        "language": "fr",
+        "value": "Ménagerie Royale De Versailles"
+      },
+      {
+        "language": "fr",
+        "value": "Menagerie royale de Versailles"
+      },
+      {
+        "language": "fr",
+        "value": "Ménagerie de Versailles"
+      }
+    ],
+    "en": [
+      {
+        "language": "en",
+        "value": "Menagerie royale de Versailles"
+      }
+    ]
+  },
+  "claims": {
+    "P361": [
+      {
+        "mainsnak": {
+          "snaktype": "value",
+          "property": "P361",
+          "hash": "0cfaa6b62dfedc60c0e1f7239d38b9690cdabde8",
+          "datavalue": {
+            "value": {
+              "entity-type": "item",
+              "numeric-id": 2946,
+              "id": "Q2946"
+            },
+            "type": "wikibase-entityid"
+          },
+          "datatype": "wikibase-item"
+        },
+        "type": "statement",
+        "id": "Q3333182$744A2547-A70F-4A44-95E4-C29D00E2ACDB",
+        "rank": "normal"
+      }
+    ],
+    "P31": [
+      {
+        "mainsnak": {
+          "snaktype": "value",
+          "property": "P31",
+          "hash": "523ae01766866583d73f4a0cc87df4ecfff7cd87",
+          "datavalue": {
+            "value": {
+              "entity-type": "item",
+              "numeric-id": 43501,
+              "id": "Q43501"
+            },
+            "type": "wikibase-entityid"
+          },
+          "datatype": "wikibase-item"
+        },
+        "type": "statement",
+        "id": "Q3333182$CB0BCA55-B5DC-4B72-8AD8-EFB17FA2DB6A",
+        "rank": "normal"
+      },
+      {
+        "mainsnak": {
+          "snaktype": "value",
+          "property": "P31",
+          "hash": "31445342cb3c7702ea76176c174d810e430e7f49",
+          "datavalue": {
+            "value": {
+              "entity-type": "item",
+              "numeric-id": 19860854,
+              "id": "Q19860854"
+            },
+            "type": "wikibase-entityid"
+          },
+          "datatype": "wikibase-item"
+        },
+        "type": "statement",
+        "id": "Q3333182$a2163341-4f55-c0e4-45c2-728ba672d811",
+        "rank": "normal"
+      }
+    ],
+    "P17": [
+      {
+        "mainsnak": {
+          "snaktype": "value",
+          "property": "P17",
+          "hash": "c05db5d169c2560b9799d567a803d20a392f53e4",
+          "datavalue": {
+            "value": {
+              "entity-type": "item",
+              "numeric-id": 142,
+              "id": "Q142"
+            },
+            "type": "wikibase-entityid"
+          },
+          "datatype": "wikibase-item"
+        },
+        "type": "statement",
+        "id": "Q3333182$19838401-4D2A-4321-A9E0-FA9449B7CCD1",
+        "rank": "normal",
+        "references": [
+          {
+            "hash": "51f423ea8da4b46d074e9b933e48614f3eb65465",
+            "snaks": {
+              "P5383": [
+                {
+                  "snaktype": "value",
+                  "property": "P5383",
+                  "hash": "8d93508e07cbf0f35b3d0cbe43f59630ebd6812f",
+                  "datavalue": {
+                    "value": "15500",
+                    "type": "string"
+                  },
+                  "datatype": "external-id"
+                }
+              ],
+              "P248": [
+                {
+                  "snaktype": "value",
+                  "property": "P248",
+                  "hash": "c619cc6e0e5fe3733a8c4a47939343e5970e0e9d",
+                  "datavalue": {
+                    "value": {
+                      "entity-type": "item",
+                      "numeric-id": 265049,
+                      "id": "Q265049"
+                    },
+                    "type": "wikibase-entityid"
+                  },
+                  "datatype": "wikibase-item"
+                }
+              ],
+              "P813": [
+                {
+                  "snaktype": "value",
+                  "property": "P813",
+                  "hash": "1c2aeb96b78dfc88934ce3c410e36af4c25e7c8a",
+                  "datavalue": {
+                    "value": {
+                      "time": "+2018-07-30T00:00:00Z",
+                      "timezone": 0,
+                      "before": 0,
+                      "after": 0,
+                      "precision": 11,
+                      "calendarmodel": "http://www.wikidata.org/entity/Q1985727"
+                    },
+                    "type": "time"
+                  },
+                  "datatype": "time"
+                }
+              ]
+            },
+            "snaks-order": [
+              "P5383",
+              "P248",
+              "P813"
+            ]
+          }
+        ]
+      }
+    ],
+    "P3219": [
+      {
+        "mainsnak": {
+          "snaktype": "value",
+          "property": "P3219",
+          "hash": "eabb52aa1d6550f6b891d29e7fbab4830b06c833",
+          "datavalue": {
+            "value": "menagerie-royale-de-versailles",
+            "type": "string"
+          },
+          "datatype": "external-id"
+        },
+        "type": "statement",
+        "id": "Q3333182$5ADF25D9-AC80-4103-891C-0EAEC5A2599F",
+        "rank": "normal"
+      }
+    ],
+    "P5383": [
+      {
+        "mainsnak": {
+          "snaktype": "value",
+          "property": "P5383",
+          "hash": "8d93508e07cbf0f35b3d0cbe43f59630ebd6812f",
+          "datavalue": {
+            "value": "15500",
+            "type": "string"
+          },
+          "datatype": "external-id"
+        },
+        "type": "statement",
+        "id": "Q3333182$A1A2CC85-A4C0-4CA4-A1DA-D01648070BAE",
+        "rank": "normal",
+        "references": [
+          {
+            "hash": "fc5c0700e4ea82f652ee81db5553c3a44446a105",
+            "snaks": {
+              "P854": [
+                {
+                  "snaktype": "value",
+                  "property": "P854",
+                  "hash": "bb385bc908e4615b60c060310f5723f66c443109",
+                  "datavalue": {
+                    "value": "https://www.archinform.net/service/wd_aipro.php",
+                    "type": "string"
+                  },
+                  "datatype": "url"
+                }
+              ],
+              "P813": [
+                {
+                  "snaktype": "value",
+                  "property": "P813",
+                  "hash": "775e4bc3406f34d4db423a7a92abe6c7af78a5e1",
+                  "datavalue": {
+                    "value": {
+                      "time": "+2018-07-02T00:00:00Z",
+                      "timezone": 0,
+                      "before": 0,
+                      "after": 0,
+                      "precision": 11,
+                      "calendarmodel": "http://www.wikidata.org/entity/Q1985727"
+                    },
+                    "type": "time"
+                  },
+                  "datatype": "time"
+                }
+              ]
+            },
+            "snaks-order": [
+              "P854",
+              "P813"
+            ]
+          }
+        ]
+      }
+    ],
+    "P131": [
+      {
+        "mainsnak": {
+          "snaktype": "value",
+          "property": "P131",
+          "hash": "60220c2b576e277e5e856ba606888361952f402b",
+          "datavalue": {
+            "value": {
+              "entity-type": "item",
+              "numeric-id": 621,
+              "id": "Q621"
+            },
+            "type": "wikibase-entityid"
+          },
+          "datatype": "wikibase-item"
+        },
+        "type": "statement",
+        "id": "Q3333182$D1B202D1-2766-488C-BA98-16C37454B672",
+        "rank": "normal",
+        "references": [
+          {
+            "hash": "51f423ea8da4b46d074e9b933e48614f3eb65465",
+            "snaks": {
+              "P5383": [
+                {
+                  "snaktype": "value",
+                  "property": "P5383",
+                  "hash": "8d93508e07cbf0f35b3d0cbe43f59630ebd6812f",
+                  "datavalue": {
+                    "value": "15500",
+                    "type": "string"
+                  },
+                  "datatype": "external-id"
+                }
+              ],
+              "P248": [
+                {
+                  "snaktype": "value",
+                  "property": "P248",
+                  "hash": "c619cc6e0e5fe3733a8c4a47939343e5970e0e9d",
+                  "datavalue": {
+                    "value": {
+                      "entity-type": "item",
+                      "numeric-id": 265049,
+                      "id": "Q265049"
+                    },
+                    "type": "wikibase-entityid"
+                  },
+                  "datatype": "wikibase-item"
+                }
+              ],
+              "P813": [
+                {
+                  "snaktype": "value",
+                  "property": "P813",
+                  "hash": "1c2aeb96b78dfc88934ce3c410e36af4c25e7c8a",
+                  "datavalue": {
+                    "value": {
+                      "time": "+2018-07-30T00:00:00Z",
+                      "timezone": 0,
+                      "before": 0,
+                      "after": 0,
+                      "precision": 11,
+                      "calendarmodel": "http://www.wikidata.org/entity/Q1985727"
+                    },
+                    "type": "time"
+                  },
+                  "datatype": "time"
+                }
+              ]
+            },
+            "snaks-order": [
+              "P5383",
+              "P248",
+              "P813"
+            ]
+          }
+        ]
+      }
+    ],
+    "P2671": [
+      {
+        "mainsnak": {
+          "snaktype": "value",
+          "property": "P2671",
+          "hash": "ed7218f20b59087073c1782c6ccd846cb973d483",
+          "datavalue": {
+            "value": "/g/121hxrm9",
+            "type": "string"
+          },
+          "datatype": "external-id"
+        },
+        "type": "statement",
+        "id": "Q3333182$C5577253-DB7E-408E-B519-35C1AD7FB64D",
+        "rank": "normal"
+      }
+    ],
+    "P373": [
+      {
+        "mainsnak": {
+          "snaktype": "value",
+          "property": "P373",
+          "hash": "9708212f3114ee8d9cda49c26bbc2a107f35255e",
+          "datavalue": {
+            "value": "Ménagerie de Versailles",
+            "type": "string"
+          },
+          "datatype": "string"
+        },
+        "type": "statement",
+        "id": "Q3333182$46F567DA-FC99-45BB-8A10-9912C659FBCB",
+        "rank": "normal"
+      }
+    ],
+    "P625": [
+      {
+        "mainsnak": {
+          "snaktype": "value",
+          "property": "P625",
+          "hash": "f2cafcd1a2c86cbaf2e0c4b94735833a4caff981",
+          "datavalue": {
+            "value": {
+              "latitude": 48.803588,
+              "longitude": 2.094004,
+              "altitude": null,
+              "precision": 1e-8,
+              "globe": "http://www.wikidata.org/entity/Q2"
+            },
+            "type": "globecoordinate"
+          },
+          "datatype": "globe-coordinate"
+        },
+        "type": "statement",
+        "id": "Q3333182$97f0320f-4298-33ce-0124-cb02bbc93367",
+        "rank": "normal"
+      }
+    ],
+    "P18": [
+      {
+        "mainsnak": {
+          "snaktype": "value",
+          "property": "P18",
+          "hash": "e1d21d51af9eaf7a4149f189997f29c3f35c049a",
+          "datavalue": {
+            "value": "Plan de la ménagerie de Versailles sous Louis XV.jpg",
+            "type": "string"
+          },
+          "datatype": "commonsMedia"
+        },
+        "type": "statement",
+        "id": "Q3333182$9678e46a-497c-6df5-6c7a-673b079c496c",
+        "rank": "normal"
+      }
+    ],
+    "P571": [
+      {
+        "mainsnak": {
+          "snaktype": "value",
+          "property": "P571",
+          "hash": "8a1f0bd6a10fea0179510927e1e810da2bc7275a",
+          "datavalue": {
+            "value": {
+              "time": "+1663-00-00T00:00:00Z",
+              "timezone": 0,
+              "before": 0,
+              "after": 0,
+              "precision": 9,
+              "calendarmodel": "http://www.wikidata.org/entity/Q1985727"
+            },
+            "type": "time"
+          },
+          "datatype": "time"
+        },
+        "type": "statement",
+        "id": "Q3333182$2ef3bfe5-4ca2-6d7c-092d-76d3dce4963d",
+        "rank": "normal"
+      }
+    ],
+    "P576": [
+      {
+        "mainsnak": {
+          "snaktype": "value",
+          "property": "P576",
+          "hash": "7000bd77539df818b1f1b1e31435f2145c7d7d55",
+          "datavalue": {
+            "value": {
+              "time": "+1902-00-00T00:00:00Z",
+              "timezone": 0,
+              "before": 0,
+              "after": 0,
+              "precision": 9,
+              "calendarmodel": "http://www.wikidata.org/entity/Q1985727"
+            },
+            "type": "time"
+          },
+          "datatype": "time"
+        },
+        "type": "statement",
+        "id": "Q3333182$9b1471e2-4b3a-0622-9426-e76c89adfc75",
+        "rank": "normal"
+      }
+    ]
+  },
+  "sitelinks": {
+    "commonswiki": {
+      "site": "commonswiki",
+      "title": "Category:Ménagerie de Versailles",
+      "badges": [],
+      "url": "https://commons.wikimedia.org/wiki/Category:M%C3%A9nagerie_de_Versailles"
+    },
+    "dewiki": {
+      "site": "dewiki",
+      "title": "Königliche Menagerie von Versailles",
+      "badges": [],
+      "url": "https://de.wikipedia.org/wiki/K%C3%B6nigliche_Menagerie_von_Versailles"
+    },
+    "enwiki": {
+      "site": "enwiki",
+      "title": "Royal Menagerie of Versailles",
+      "badges": [],
+      "url": "https://en.wikipedia.org/wiki/Royal_Menagerie_of_Versailles"
+    },
+    "eswiki": {
+      "site": "eswiki",
+      "title": "Real Casa de las Fieras de Versalles",
+      "badges": [],
+      "url": "https://es.wikipedia.org/wiki/Real_Casa_de_las_Fieras_de_Versalles"
+    },
+    "frwiki": {
+      "site": "frwiki",
+      "title": "Ménagerie royale de Versailles",
+      "badges": [],
+      "url": "https://fr.wikipedia.org/wiki/M%C3%A9nagerie_royale_de_Versailles"
+    },
+    "itwiki": {
+      "site": "itwiki",
+      "title": "Ménagerie royale de Versailles",
+      "badges": [],
+      "url": "https://it.wikipedia.org/wiki/M%C3%A9nagerie_royale_de_Versailles"
+    },
+    "ruwiki": {
+      "site": "ruwiki",
+      "title": "Королевский зверинец (Версаль)",
+      "badges": [],
+      "url": "https://ru.wikipedia.org/wiki/%D0%9A%D0%BE%D1%80%D0%BE%D0%BB%D0%B5%D0%B2%D1%81%D0%BA%D0%B8%D0%B9_%D0%B7%D0%B2%D0%B5%D1%80%D0%B8%D0%BD%D0%B5%D1%86_(%D0%92%D0%B5%D1%80%D1%81%D0%B0%D0%BB%D1%8C)"
+    }
+  }
+}

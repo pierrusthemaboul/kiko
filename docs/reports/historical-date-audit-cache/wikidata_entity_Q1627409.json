@@ -1,0 +1,773 @@
+{
+  "saved_at": "2026-03-07T11:55:39.688Z",
+  "value": {
+    "pageid": 1561846,
+    "ns": 0,
+    "title": "Q1627409",
+    "lastrevid": 2359641351,
+    "modified": "2025-06-11T16:15:46Z",
+    "type": "item",
+    "id": "Q1627409",
+    "labels": {
+      "de": {
+        "language": "de",
+        "value": "Konkordat von Bologna"
+      },
+      "en": {
+        "language": "en",
+        "value": "Concordat of Bologna"
+      },
+      "es": {
+        "language": "es",
+        "value": "Concordato de Bolonia"
+      },
+      "fr": {
+        "language": "fr",
+        "value": "Concordat de Bologne"
+      },
+      "it": {
+        "language": "it",
+        "value": "concordato di Bologna"
+      },
+      "ka": {
+        "language": "ka",
+        "value": "ბოლონიის კონკორდატი"
+      },
+      "ru": {
+        "language": "ru",
+        "value": "Болонский Конкордат"
+      },
+      "uk": {
+        "language": "uk",
+        "value": "Болонський Конкордат"
+      },
+      "nl": {
+        "language": "nl",
+        "value": "Concordaat van Bologna"
+      },
+      "sr": {
+        "language": "sr",
+        "value": "Болоњски конкордат"
+      },
+      "pt": {
+        "language": "pt",
+        "value": "Concordata de Bolonha"
+      },
+      "zh": {
+        "language": "zh",
+        "value": "博洛尼亞協議"
+      },
+      "bg": {
+        "language": "bg",
+        "value": "Болонски конкордат"
+      },
+      "he": {
+        "language": "he",
+        "value": "הקונקורדט של בולוניה"
+      },
+      "eo": {
+        "language": "eo",
+        "value": "Konkordato de Bolonjo"
+      }
+    },
+    "descriptions": {
+      "de": {
+        "language": "de",
+        "value": "Übereinkunft zwischen König Franz I. von Frankreich und Papst Leo X 1516"
+      },
+      "fr": {
+        "language": "fr",
+        "value": "acte juridique entre le Royaume de France et le Vatican"
+      },
+      "en": {
+        "language": "en",
+        "value": "1515 treaty between France & Pope Leo X"
+      },
+      "eo": {
+        "language": "eo",
+        "value": "traktato de 1515 inter Francio kaj la Vatikano"
+      }
+    },
+    "aliases": {},
+    "claims": {
+      "P244": [
+        {
+          "mainsnak": {
+            "snaktype": "value",
+            "property": "P244",
+            "hash": "06a2bd32b8b041b7de48d864123f23d0b3047223",
+            "datavalue": {
+              "value": "n95084570",
+              "type": "string"
+            },
+            "datatype": "external-id"
+          },
+          "type": "statement",
+          "id": "q1627409$965A438F-EE35-4FD4-AC47-C3EE5EDC2F0F",
+          "rank": "normal",
+          "references": [
+            {
+              "hash": "d4bd87b862b12d99d26e86472d44f26858dee639",
+              "snaks": {
+                "P143": [
+                  {
+                    "snaktype": "value",
+                    "property": "P143",
+                    "hash": "f30cbd35620c4ea6d0633aaf0210a8916130469b",
+                    "datavalue": {
+                      "value": {
+                        "entity-type": "item",
+                        "numeric-id": 8447,
+                        "id": "Q8447"
+                      },
+                      "type": "wikibase-entityid"
+                    },
+                    "datatype": "wikibase-item"
+                  }
+                ]
+              },
+              "snaks-order": [
+                "P143"
+              ]
+            }
+          ]
+        }
+      ],
+      "P269": [
+        {
+          "mainsnak": {
+            "snaktype": "value",
+            "property": "P269",
+            "hash": "23369b43cdf00148ff2c358fbc0838dc9de0e646",
+            "datavalue": {
+              "value": "030611474",
+              "type": "string"
+            },
+            "datatype": "external-id"
+          },
+          "type": "statement",
+          "id": "q1627409$18EC1C7C-8350-4BA5-A171-32DC69455F5F",
+          "rank": "normal",
+          "references": [
+            {
+              "hash": "d4bd87b862b12d99d26e86472d44f26858dee639",
+              "snaks": {
+                "P143": [
+                  {
+                    "snaktype": "value",
+                    "property": "P143",
+                    "hash": "f30cbd35620c4ea6d0633aaf0210a8916130469b",
+                    "datavalue": {
+                      "value": {
+                        "entity-type": "item",
+                        "numeric-id": 8447,
+                        "id": "Q8447"
+                      },
+                      "type": "wikibase-entityid"
+                    },
+                    "datatype": "wikibase-item"
+                  }
+                ]
+              },
+              "snaks-order": [
+                "P143"
+              ]
+            }
+          ]
+        }
+      ],
+      "P268": [
+        {
+          "mainsnak": {
+            "snaktype": "value",
+            "property": "P268",
+            "hash": "444ac58f49ce0c9a3ce0f066ad1bc227ac425249",
+            "datavalue": {
+              "value": "12199196s",
+              "type": "string"
+            },
+            "datatype": "external-id"
+          },
+          "type": "statement",
+          "id": "q1627409$37B5278A-82A8-413B-98D5-72335202B8F7",
+          "rank": "normal",
+          "references": [
+            {
+              "hash": "d4bd87b862b12d99d26e86472d44f26858dee639",
+              "snaks": {
+                "P143": [
+                  {
+                    "snaktype": "value",
+                    "property": "P143",
+                    "hash": "f30cbd35620c4ea6d0633aaf0210a8916130469b",
+                    "datavalue": {
+                      "value": {
+                        "entity-type": "item",
+                        "numeric-id": 8447,
+                        "id": "Q8447"
+                      },
+                      "type": "wikibase-entityid"
+                    },
+                    "datatype": "wikibase-item"
+                  }
+                ]
+              },
+              "snaks-order": [
+                "P143"
+              ]
+            }
+          ]
+        }
+      ],
+      "P17": [
+        {
+          "mainsnak": {
+            "snaktype": "value",
+            "property": "P17",
+            "hash": "d79294f8761b15d50810c238184b5c36b47a45be",
+            "datavalue": {
+              "value": {
+                "entity-type": "item",
+                "numeric-id": 237,
+                "id": "Q237"
+              },
+              "type": "wikibase-entityid"
+            },
+            "datatype": "wikibase-item"
+          },
+          "type": "statement",
+          "id": "q1627409$7ABE8C16-038A-4EF8-843B-6A31877A2F01",
+          "rank": "normal"
+        }
+      ],
+      "P646": [
+        {
+          "mainsnak": {
+            "snaktype": "value",
+            "property": "P646",
+            "hash": "e20849aa41968cdabe4f407f044ae1e69fb11b56",
+            "datavalue": {
+              "value": "/m/0bcql4",
+              "type": "string"
+            },
+            "datatype": "external-id"
+          },
+          "type": "statement",
+          "id": "Q1627409$8B33FF06-16DF-499A-9FD5-F3BFCCA232E8",
+          "rank": "normal",
+          "references": [
+            {
+              "hash": "2b00cb481cddcac7623114367489b5c194901c4a",
+              "snaks": {
+                "P248": [
+                  {
+                    "snaktype": "value",
+                    "property": "P248",
+                    "hash": "a94b740202b097dd33355e0e6c00e54b9395e5e0",
+                    "datavalue": {
+                      "value": {
+                        "entity-type": "item",
+                        "numeric-id": 15241312,
+                        "id": "Q15241312"
+                      },
+                      "type": "wikibase-entityid"
+                    },
+                    "datatype": "wikibase-item"
+                  }
+                ],
+                "P577": [
+                  {
+                    "snaktype": "value",
+                    "property": "P577",
+                    "hash": "fde79ecb015112d2f29229ccc1ec514ed3e71fa2",
+                    "datavalue": {
+                      "value": {
+                        "time": "+2013-10-28T00:00:00Z",
+                        "timezone": 0,
+                        "before": 0,
+                        "after": 0,
+                        "precision": 11,
+                        "calendarmodel": "http://www.wikidata.org/entity/Q1985727"
+                      },
+                      "type": "time"
+                    },
+                    "datatype": "time"
+                  }
+                ]
+              },
+              "snaks-order": [
+                "P248",
+                "P577"
+              ]
+            }
+          ]
+        }
+      ],
+      "P2924": [
+        {
+          "mainsnak": {
+            "snaktype": "value",
+            "property": "P2924",
+            "hash": "514514f9e3f5912ecedba8297f436e3aa1d1e626",
+            "datavalue": {
+              "value": "1876101",
+              "type": "string"
+            },
+            "datatype": "external-id"
+          },
+          "type": "statement",
+          "qualifiers": {
+            "P1810": [
+              {
+                "snaktype": "value",
+                "property": "P1810",
+                "hash": "25a6d68fb3e6007fe7f2241ac70c4e95da8bfd4b",
+                "datavalue": {
+                  "value": "БОЛОНСКИЙ КОНКОРДАТ 1516",
+                  "type": "string"
+                },
+                "datatype": "string"
+              }
+            ]
+          },
+          "qualifiers-order": [
+            "P1810"
+          ],
+          "id": "Q1627409$7DCEBE12-3ABE-414B-85CB-811248586612",
+          "rank": "normal"
+        }
+      ],
+      "P3219": [
+        {
+          "mainsnak": {
+            "snaktype": "value",
+            "property": "P3219",
+            "hash": "74fa9ffc981756ab7b068f17733dae34c14b4695",
+            "datavalue": {
+              "value": "promulgation-du-concordat-de-bologne",
+              "type": "string"
+            },
+            "datatype": "external-id"
+          },
+          "type": "statement",
+          "id": "Q1627409$C0ED7AB2-8B29-45B8-A6C2-849F8BA79EDC",
+          "rank": "normal"
+        }
+      ],
+      "P31": [
+        {
+          "mainsnak": {
+            "snaktype": "value",
+            "property": "P31",
+            "hash": "c3d2ea2cbaecd5c30f6943cb97716450a10ea812",
+            "datavalue": {
+              "value": {
+                "entity-type": "item",
+                "numeric-id": 9557810,
+                "id": "Q9557810"
+              },
+              "type": "wikibase-entityid"
+            },
+            "datatype": "wikibase-item"
+          },
+          "type": "statement",
+          "id": "Q1627409$fd0a813c-48f4-fe44-b738-c9daec1ba1cd",
+          "rank": "normal"
+        },
+        {
+          "mainsnak": {
+            "snaktype": "value",
+            "property": "P31",
+            "hash": "b2efdae6e301b08a8b1761120df67eb3688ebf59",
+            "datavalue": {
+              "value": {
+                "entity-type": "item",
+                "numeric-id": 213541,
+                "id": "Q213541"
+              },
+              "type": "wikibase-entityid"
+            },
+            "datatype": "wikibase-item"
+          },
+          "type": "statement",
+          "id": "Q1627409$1f46ab99-4e28-815d-6e43-f48549ab4786",
+          "rank": "normal"
+        }
+      ],
+      "P585": [
+        {
+          "mainsnak": {
+            "snaktype": "value",
+            "property": "P585",
+            "hash": "0a81a65c884432e4b49708f4f34dd3b4ec506a69",
+            "datavalue": {
+              "value": {
+                "time": "+1516-08-18T00:00:00Z",
+                "timezone": 0,
+                "before": 0,
+                "after": 0,
+                "precision": 11,
+                "calendarmodel": "http://www.wikidata.org/entity/Q1985786"
+              },
+              "type": "time"
+            },
+            "datatype": "time"
+          },
+          "type": "statement",
+          "id": "Q1627409$e30824dd-4aea-1ae1-34d0-515f5ca43228",
+          "rank": "normal"
+        }
+      ],
+      "P214": [
+        {
+          "mainsnak": {
+            "snaktype": "value",
+            "property": "P214",
+            "hash": "8e8351cf847f641fbae021987204b60fe37ba12a",
+            "datavalue": {
+              "value": "186396489",
+              "type": "string"
+            },
+            "datatype": "external-id"
+          },
+          "type": "statement",
+          "id": "Q1627409$3FB0236D-E640-4229-B41D-65F2D60D8BEE",
+          "rank": "normal",
+          "references": [
+            {
+              "hash": "2e44b0afa82b36a1003d7bd84b0f9c963c326e36",
+              "snaks": {
+                "P248": [
+                  {
+                    "snaktype": "value",
+                    "property": "P248",
+                    "hash": "6b7d4330c4aac4caec4ede9de0311ce273f88ecd",
+                    "datavalue": {
+                      "value": {
+                        "entity-type": "item",
+                        "numeric-id": 54919,
+                        "id": "Q54919"
+                      },
+                      "type": "wikibase-entityid"
+                    },
+                    "datatype": "wikibase-item"
+                  }
+                ],
+                "P214": [
+                  {
+                    "snaktype": "value",
+                    "property": "P214",
+                    "hash": "8e8351cf847f641fbae021987204b60fe37ba12a",
+                    "datavalue": {
+                      "value": "186396489",
+                      "type": "string"
+                    },
+                    "datatype": "external-id"
+                  }
+                ],
+                "P813": [
+                  {
+                    "snaktype": "value",
+                    "property": "P813",
+                    "hash": "a1b98b5c8bb6eca02829acaf6200c3e4a45b4dd0",
+                    "datavalue": {
+                      "value": {
+                        "time": "+2018-10-07T00:00:00Z",
+                        "timezone": 0,
+                        "before": 0,
+                        "after": 0,
+                        "precision": 11,
+                        "calendarmodel": "http://www.wikidata.org/entity/Q1985727"
+                      },
+                      "type": "time"
+                    },
+                    "datatype": "time"
+                  }
+                ]
+              },
+              "snaks-order": [
+                "P248",
+                "P214",
+                "P813"
+              ]
+            }
+          ]
+        }
+      ],
+      "P1417": [
+        {
+          "mainsnak": {
+            "snaktype": "value",
+            "property": "P1417",
+            "hash": "e871d6017f0d3e2c0f6fd4a569f7ed1eec52f0c5",
+            "datavalue": {
+              "value": "topic/Concordat-of-Bologna",
+              "type": "string"
+            },
+            "datatype": "external-id"
+          },
+          "type": "statement",
+          "qualifiers": {
+            "P1810": [
+              {
+                "snaktype": "value",
+                "property": "P1810",
+                "hash": "1cd4c2123cc1e0b08c817a0d1cf7c216ac208b44",
+                "datavalue": {
+                  "value": "Concordat of Bologna",
+                  "type": "string"
+                },
+                "datatype": "string"
+              }
+            ]
+          },
+          "qualifiers-order": [
+            "P1810"
+          ],
+          "id": "Q1627409$E7FC8A90-819B-45D0-BF70-4438D691E693",
+          "rank": "normal"
+        }
+      ],
+      "P276": [
+        {
+          "mainsnak": {
+            "snaktype": "value",
+            "property": "P276",
+            "hash": "5508822b2d25d9633ff04c696794f3b9c3fae480",
+            "datavalue": {
+              "value": {
+                "entity-type": "item",
+                "numeric-id": 1891,
+                "id": "Q1891"
+              },
+              "type": "wikibase-entityid"
+            },
+            "datatype": "wikibase-item"
+          },
+          "type": "statement",
+          "id": "Q1627409$94d12841-4ffc-045e-1416-fc30e784129a",
+          "rank": "normal"
+        }
+      ],
+      "P1891": [
+        {
+          "mainsnak": {
+            "snaktype": "value",
+            "property": "P1891",
+            "hash": "0c0fa1baa72a6a538e9a6f73aea1724b2839a873",
+            "datavalue": {
+              "value": {
+                "entity-type": "item",
+                "numeric-id": 129857,
+                "id": "Q129857"
+              },
+              "type": "wikibase-entityid"
+            },
+            "datatype": "wikibase-item"
+          },
+          "type": "statement",
+          "id": "Q1627409$26cf3c8a-4b71-6ff5-aab9-3e27334cf3cb",
+          "rank": "normal"
+        },
+        {
+          "mainsnak": {
+            "snaktype": "value",
+            "property": "P1891",
+            "hash": "b18f133c834ecca8a40f640332528dc8978f3187",
+            "datavalue": {
+              "value": {
+                "entity-type": "item",
+                "numeric-id": 49237,
+                "id": "Q49237"
+              },
+              "type": "wikibase-entityid"
+            },
+            "datatype": "wikibase-item"
+          },
+          "type": "statement",
+          "id": "Q1627409$8c038b52-4a16-c03f-21a9-95a198f6cfb6",
+          "rank": "normal"
+        }
+      ],
+      "P1365": [
+        {
+          "mainsnak": {
+            "snaktype": "value",
+            "property": "P1365",
+            "hash": "76f04d166ef44ae5c87efa19615681ea2b308162",
+            "datavalue": {
+              "value": {
+                "entity-type": "item",
+                "numeric-id": 1611703,
+                "id": "Q1611703"
+              },
+              "type": "wikibase-entityid"
+            },
+            "datatype": "wikibase-item"
+          },
+          "type": "statement",
+          "id": "Q1627409$e96ad1f7-42f5-4e04-bf21-8cf7e8487c5c",
+          "rank": "normal"
+        }
+      ],
+      "P576": [
+        {
+          "mainsnak": {
+            "snaktype": "value",
+            "property": "P576",
+            "hash": "257a58e21ab955e80d9e1c888b2303cf58db0f61",
+            "datavalue": {
+              "value": {
+                "time": "+1682-00-00T00:00:00Z",
+                "timezone": 0,
+                "before": 0,
+                "after": 0,
+                "precision": 9,
+                "calendarmodel": "http://www.wikidata.org/entity/Q1985727"
+              },
+              "type": "time"
+            },
+            "datatype": "time"
+          },
+          "type": "statement",
+          "id": "Q1627409$e2de8b99-4ebc-d9be-6159-8618b6e93fab",
+          "rank": "normal"
+        }
+      ],
+      "P8189": [
+        {
+          "mainsnak": {
+            "snaktype": "value",
+            "property": "P8189",
+            "hash": "7094b3e9a0343856f5d2c4ad1eb5df74e43ca855",
+            "datavalue": {
+              "value": "987007502097705171",
+              "type": "string"
+            },
+            "datatype": "external-id"
+          },
+          "type": "statement",
+          "id": "Q1627409$9C2846A4-8405-4E4D-B07E-B32610FE1AB2",
+          "rank": "normal",
+          "references": [
+            {
+              "hash": "ecb7a39cf436eb1fba419853af168ef9f2ba1dab",
+              "snaks": {
+                "P248": [
+                  {
+                    "snaktype": "value",
+                    "property": "P248",
+                    "hash": "a03bb6ffe37be9554492f4eea5bd18afcb57df19",
+                    "datavalue": {
+                      "value": {
+                        "entity-type": "item",
+                        "numeric-id": 106509962,
+                        "id": "Q106509962"
+                      },
+                      "type": "wikibase-entityid"
+                    },
+                    "datatype": "wikibase-item"
+                  }
+                ]
+              },
+              "snaks-order": [
+                "P248"
+              ]
+            }
+          ]
+        }
+      ],
+      "P12800": [
+        {
+          "mainsnak": {
+            "snaktype": "value",
+            "property": "P12800",
+            "hash": "19c0ce3d2fa7e42bad7430cdb50d946dd729ec1c",
+            "datavalue": {
+              "value": "fr:Concordat_de_Bologne",
+              "type": "string"
+            },
+            "datatype": "external-id"
+          },
+          "type": "statement",
+          "id": "Q1627409$F10C9335-AB97-4FE9-A4B5-523EF428664B",
+          "rank": "normal"
+        }
+      ]
+    },
+    "sitelinks": {
+      "bgwiki": {
+        "site": "bgwiki",
+        "title": "Болонски конкордат",
+        "badges": [],
+        "url": "https://bg.wikipedia.org/wiki/%D0%91%D0%BE%D0%BB%D0%BE%D0%BD%D1%81%D0%BA%D0%B8_%D0%BA%D0%BE%D0%BD%D0%BA%D0%BE%D1%80%D0%B4%D0%B0%D1%82"
+      },
+      "dewiki": {
+        "site": "dewiki",
+        "title": "Konkordat von Bologna",
+        "badges": [],
+        "url": "https://de.wikipedia.org/wiki/Konkordat_von_Bologna"
+      },
+      "enwiki": {
+        "site": "enwiki",
+        "title": "Concordat of Bologna",
+        "badges": [],
+        "url": "https://en.wikipedia.org/wiki/Concordat_of_Bologna"
+      },
+      "eswiki": {
+        "site": "eswiki",
+        "title": "Concordato de Bolonia",
+        "badges": [],
+        "url": "https://es.wikipedia.org/wiki/Concordato_de_Bolonia"
+      },
+      "frwiki": {
+        "site": "frwiki",
+        "title": "Concordat de Bologne",
+        "badges": [],
+        "url": "https://fr.wikipedia.org/wiki/Concordat_de_Bologne"
+      },
+      "itwiki": {
+        "site": "itwiki",
+        "title": "Concordato di Bologna",
+        "badges": [],
+        "url": "https://it.wikipedia.org/wiki/Concordato_di_Bologna"
+      },
+      "kawiki": {
+        "site": "kawiki",
+        "title": "ბოლონიის კონკორდატი",
+        "badges": [],
+        "url": "https://ka.wikipedia.org/wiki/%E1%83%91%E1%83%9D%E1%83%9A%E1%83%9D%E1%83%9C%E1%83%98%E1%83%98%E1%83%A1_%E1%83%99%E1%83%9D%E1%83%9C%E1%83%99%E1%83%9D%E1%83%A0%E1%83%93%E1%83%90%E1%83%A2%E1%83%98"
+      },
+      "nlwiki": {
+        "site": "nlwiki",
+        "title": "Concordaat van Bologna",
+        "badges": [],
+        "url": "https://nl.wikipedia.org/wiki/Concordaat_van_Bologna"
+      },
+      "ptwiki": {
+        "site": "ptwiki",
+        "title": "Concordata de Bolonha",
+        "badges": [],
+        "url": "https://pt.wikipedia.org/wiki/Concordata_de_Bolonha"
+      },
+      "ruwiki": {
+        "site": "ruwiki",
+        "title": "Болонский конкордат",
+        "badges": [],
+        "url": "https://ru.wikipedia.org/wiki/%D0%91%D0%BE%D0%BB%D0%BE%D0%BD%D1%81%D0%BA%D0%B8%D0%B9_%D0%BA%D0%BE%D0%BD%D0%BA%D0%BE%D1%80%D0%B4%D0%B0%D1%82"
+      },
+      "srwiki": {
+        "site": "srwiki",
+        "title": "Болоњски конкордат",
+        "badges": [],
+        "url": "https://sr.wikipedia.org/wiki/%D0%91%D0%BE%D0%BB%D0%BE%D1%9A%D1%81%D0%BA%D0%B8_%D0%BA%D0%BE%D0%BD%D0%BA%D0%BE%D1%80%D0%B4%D0%B0%D1%82"
+      },
+      "ukwiki": {
+        "site": "ukwiki",
+        "title": "Болонський конкордат",
+        "badges": [],
+        "url": "https://uk.wikipedia.org/wiki/%D0%91%D0%BE%D0%BB%D0%BE%D0%BD%D1%81%D1%8C%D0%BA%D0%B8%D0%B9_%D0%BA%D0%BE%D0%BD%D0%BA%D0%BE%D1%80%D0%B4%D0%B0%D1%82"
+      }
+    }
+  }
+}

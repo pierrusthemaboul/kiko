@@ -1,0 +1,822 @@
+{
+  "saved_at": "2026-03-07T16:13:10.066Z",
+  "value": {
+    "pageid": 2764777,
+    "ns": 0,
+    "title": "Q2888122",
+    "lastrevid": 2296652251,
+    "modified": "2025-01-10T08:17:41Z",
+    "type": "item",
+    "id": "Q2888122",
+    "labels": {
+      "fa": {
+        "language": "fa",
+        "value": "نبرد بصره (۲۰۰۸)"
+      },
+      "fr": {
+        "language": "fr",
+        "value": "bataille de Bassorah"
+      },
+      "en": {
+        "language": "en",
+        "value": "Battle of Basra"
+      },
+      "ar": {
+        "language": "ar",
+        "value": "عملية صولة الفرسان"
+      },
+      "pl": {
+        "language": "pl",
+        "value": "Bitwa pod Basrą (2008)"
+      },
+      "nb": {
+        "language": "nb",
+        "value": "Slaget om Basra 2008"
+      },
+      "ja": {
+        "language": "ja",
+        "value": "バスラの戦い (2008年)"
+      },
+      "fi": {
+        "language": "fi",
+        "value": "Basran taistelu"
+      },
+      "pt": {
+        "language": "pt",
+        "value": "Batalha de Baçorá"
+      },
+      "azb": {
+        "language": "azb",
+        "value": "بصره دؤیوشو"
+      },
+      "he": {
+        "language": "he",
+        "value": "קרב בצרה"
+      },
+      "es": {
+        "language": "es",
+        "value": "Batalla de Basra"
+      },
+      "be": {
+        "language": "be",
+        "value": "Бітва за Басру (2008)"
+      },
+      "yo": {
+        "language": "yo",
+        "value": "ogun Basra"
+      },
+      "zh": {
+        "language": "zh",
+        "value": "騎士衝鋒行動"
+      },
+      "ga": {
+        "language": "ga",
+        "value": "Cath Basra"
+      }
+    },
+    "descriptions": {
+      "en": {
+        "language": "en",
+        "value": "battle which began on March 25, 2008"
+      },
+      "he": {
+        "language": "he",
+        "value": "מבצע צבאי שנערך בעיר בצרה שבעיראק בשנת 2008"
+      }
+    },
+    "aliases": {
+      "fa": [
+        {
+          "language": "fa",
+          "value": "نبرد بصره (2008)"
+        }
+      ],
+      "ar": [
+        {
+          "language": "ar",
+          "value": "صولة الفرسان"
+        }
+      ]
+    },
+    "claims": {
+      "P373": [
+        {
+          "mainsnak": {
+            "snaktype": "value",
+            "property": "P373",
+            "hash": "8cc0439037b8145f302a40abd1bac700ebfffede",
+            "datavalue": {
+              "value": "Battle of Basra (2008)",
+              "type": "string"
+            },
+            "datatype": "string"
+          },
+          "type": "statement",
+          "id": "q2888122$8C0E3DD8-35B9-499A-B1D5-D0D16D80CF7E",
+          "rank": "normal",
+          "references": [
+            {
+              "hash": "fa278ebfc458360e5aed63d5058cca83c46134f1",
+              "snaks": {
+                "P143": [
+                  {
+                    "snaktype": "value",
+                    "property": "P143",
+                    "hash": "e4f6d9441d0600513c4533c672b5ab472dc73694",
+                    "datavalue": {
+                      "value": {
+                        "entity-type": "item",
+                        "numeric-id": 328,
+                        "id": "Q328"
+                      },
+                      "type": "wikibase-entityid"
+                    },
+                    "datatype": "wikibase-item"
+                  }
+                ]
+              },
+              "snaks-order": [
+                "P143"
+              ]
+            }
+          ]
+        }
+      ],
+      "P646": [
+        {
+          "mainsnak": {
+            "snaktype": "value",
+            "property": "P646",
+            "hash": "a44ab272990e4a43681456395a1fcbf69bdde76a",
+            "datavalue": {
+              "value": "/m/03ybrl7",
+              "type": "string"
+            },
+            "datatype": "external-id"
+          },
+          "type": "statement",
+          "id": "Q2888122$38DD13DA-DAD8-4B7E-B04E-2C9CDC438F54",
+          "rank": "normal",
+          "references": [
+            {
+              "hash": "2b00cb481cddcac7623114367489b5c194901c4a",
+              "snaks": {
+                "P248": [
+                  {
+                    "snaktype": "value",
+                    "property": "P248",
+                    "hash": "a94b740202b097dd33355e0e6c00e54b9395e5e0",
+                    "datavalue": {
+                      "value": {
+                        "entity-type": "item",
+                        "numeric-id": 15241312,
+                        "id": "Q15241312"
+                      },
+                      "type": "wikibase-entityid"
+                    },
+                    "datatype": "wikibase-item"
+                  }
+                ],
+                "P577": [
+                  {
+                    "snaktype": "value",
+                    "property": "P577",
+                    "hash": "fde79ecb015112d2f29229ccc1ec514ed3e71fa2",
+                    "datavalue": {
+                      "value": {
+                        "time": "+2013-10-28T00:00:00Z",
+                        "timezone": 0,
+                        "before": 0,
+                        "after": 0,
+                        "precision": 11,
+                        "calendarmodel": "http://www.wikidata.org/entity/Q1985727"
+                      },
+                      "type": "time"
+                    },
+                    "datatype": "time"
+                  }
+                ]
+              },
+              "snaks-order": [
+                "P248",
+                "P577"
+              ]
+            }
+          ]
+        }
+      ],
+      "P31": [
+        {
+          "mainsnak": {
+            "snaktype": "value",
+            "property": "P31",
+            "hash": "baa1df9dcd37b9f3a062e7a14a8bef0c37078d32",
+            "datavalue": {
+              "value": {
+                "entity-type": "item",
+                "numeric-id": 178561,
+                "id": "Q178561"
+              },
+              "type": "wikibase-entityid"
+            },
+            "datatype": "wikibase-item"
+          },
+          "type": "statement",
+          "id": "Q2888122$AEF59DFF-3A92-428A-AA31-8A60ACA4EE0D",
+          "rank": "normal",
+          "references": [
+            {
+              "hash": "d4bd87b862b12d99d26e86472d44f26858dee639",
+              "snaks": {
+                "P143": [
+                  {
+                    "snaktype": "value",
+                    "property": "P143",
+                    "hash": "f30cbd35620c4ea6d0633aaf0210a8916130469b",
+                    "datavalue": {
+                      "value": {
+                        "entity-type": "item",
+                        "numeric-id": 8447,
+                        "id": "Q8447"
+                      },
+                      "type": "wikibase-entityid"
+                    },
+                    "datatype": "wikibase-item"
+                  }
+                ]
+              },
+              "snaks-order": [
+                "P143"
+              ]
+            }
+          ]
+        }
+      ],
+      "P361": [
+        {
+          "mainsnak": {
+            "snaktype": "value",
+            "property": "P361",
+            "hash": "440e00bd87b2ca39d6d53a3623b082fbb4239cc4",
+            "datavalue": {
+              "value": {
+                "entity-type": "item",
+                "numeric-id": 545449,
+                "id": "Q545449"
+              },
+              "type": "wikibase-entityid"
+            },
+            "datatype": "wikibase-item"
+          },
+          "type": "statement",
+          "id": "Q2888122$5F5AF7AC-4820-4D0B-8D5A-0B3CD6464D2C",
+          "rank": "normal",
+          "references": [
+            {
+              "hash": "d4bd87b862b12d99d26e86472d44f26858dee639",
+              "snaks": {
+                "P143": [
+                  {
+                    "snaktype": "value",
+                    "property": "P143",
+                    "hash": "f30cbd35620c4ea6d0633aaf0210a8916130469b",
+                    "datavalue": {
+                      "value": {
+                        "entity-type": "item",
+                        "numeric-id": 8447,
+                        "id": "Q8447"
+                      },
+                      "type": "wikibase-entityid"
+                    },
+                    "datatype": "wikibase-item"
+                  }
+                ]
+              },
+              "snaks-order": [
+                "P143"
+              ]
+            }
+          ]
+        }
+      ],
+      "P625": [
+        {
+          "mainsnak": {
+            "snaktype": "value",
+            "property": "P625",
+            "hash": "22955fe0ba43791ea781fb30ea66fec8d014de1c",
+            "datavalue": {
+              "value": {
+                "latitude": 30.5,
+                "longitude": 47.8,
+                "altitude": null,
+                "precision": 0.016666666666667,
+                "globe": "http://www.wikidata.org/entity/Q2"
+              },
+              "type": "globecoordinate"
+            },
+            "datatype": "globe-coordinate"
+          },
+          "type": "statement",
+          "id": "Q2888122$441d3db1-4fac-5632-fa7b-5a908ec96948",
+          "rank": "normal"
+        }
+      ],
+      "P580": [
+        {
+          "mainsnak": {
+            "snaktype": "value",
+            "property": "P580",
+            "hash": "0bc9bbcb0580d1c0a96b230605b9e444288fc652",
+            "datavalue": {
+              "value": {
+                "time": "+2008-03-25T00:00:00Z",
+                "timezone": 0,
+                "before": 0,
+                "after": 0,
+                "precision": 11,
+                "calendarmodel": "http://www.wikidata.org/entity/Q1985727"
+              },
+              "type": "time"
+            },
+            "datatype": "time"
+          },
+          "type": "statement",
+          "id": "Q2888122$A07C3C0C-BDBC-4495-B6C0-02478451FF6E",
+          "rank": "normal"
+        }
+      ],
+      "P582": [
+        {
+          "mainsnak": {
+            "snaktype": "value",
+            "property": "P582",
+            "hash": "9a814a8db5619229e224318d1d2763b22f7a9ba8",
+            "datavalue": {
+              "value": {
+                "time": "+2008-03-31T00:00:00Z",
+                "timezone": 0,
+                "before": 0,
+                "after": 0,
+                "precision": 11,
+                "calendarmodel": "http://www.wikidata.org/entity/Q1985727"
+              },
+              "type": "time"
+            },
+            "datatype": "time"
+          },
+          "type": "statement",
+          "id": "Q2888122$43CFAC4A-8265-452B-B960-2A877BE8D42D",
+          "rank": "normal"
+        }
+      ],
+      "P276": [
+        {
+          "mainsnak": {
+            "snaktype": "value",
+            "property": "P276",
+            "hash": "434ef56f6ef97c17e373726d9b7b4458f537d8cd",
+            "datavalue": {
+              "value": {
+                "entity-type": "item",
+                "numeric-id": 48195,
+                "id": "Q48195"
+              },
+              "type": "wikibase-entityid"
+            },
+            "datatype": "wikibase-item"
+          },
+          "type": "statement",
+          "id": "Q2888122$83DA85EB-B34F-4EDA-B466-D26B49751AE7",
+          "rank": "normal"
+        }
+      ],
+      "P710": [
+        {
+          "mainsnak": {
+            "snaktype": "value",
+            "property": "P710",
+            "hash": "0122fd89fce770e98b885f08f28cd6dc72a54fd5",
+            "datavalue": {
+              "value": {
+                "entity-type": "item",
+                "numeric-id": 897614,
+                "id": "Q897614"
+              },
+              "type": "wikibase-entityid"
+            },
+            "datatype": "wikibase-item"
+          },
+          "type": "statement",
+          "id": "Q2888122$79969390-1DCB-4655-96CA-A0F2F175C785",
+          "rank": "normal"
+        },
+        {
+          "mainsnak": {
+            "snaktype": "value",
+            "property": "P710",
+            "hash": "b7c292b942f4128e04e833c9814250b7557143e3",
+            "datavalue": {
+              "value": {
+                "entity-type": "item",
+                "numeric-id": 145,
+                "id": "Q145"
+              },
+              "type": "wikibase-entityid"
+            },
+            "datatype": "wikibase-item"
+          },
+          "type": "statement",
+          "id": "Q2888122$db8675cf-48ed-ae7e-3a40-04c110c9ecbe",
+          "rank": "normal"
+        },
+        {
+          "mainsnak": {
+            "snaktype": "value",
+            "property": "P710",
+            "hash": "d1d940bcd9c9d8aae87fc6a9355e7b56a21e0822",
+            "datavalue": {
+              "value": {
+                "entity-type": "item",
+                "numeric-id": 30,
+                "id": "Q30"
+              },
+              "type": "wikibase-entityid"
+            },
+            "datatype": "wikibase-item"
+          },
+          "type": "statement",
+          "id": "Q2888122$049e2a21-4364-3378-fa5f-d49acaa0207e",
+          "rank": "normal"
+        },
+        {
+          "mainsnak": {
+            "snaktype": "value",
+            "property": "P710",
+            "hash": "5ed55beb2a0b8ea5dcb79338c66eada2746115fa",
+            "datavalue": {
+              "value": {
+                "entity-type": "item",
+                "numeric-id": 2994636,
+                "id": "Q2994636"
+              },
+              "type": "wikibase-entityid"
+            },
+            "datatype": "wikibase-item"
+          },
+          "type": "statement",
+          "qualifiers": {
+            "P1810": [
+              {
+                "snaktype": "value",
+                "property": "P1810",
+                "hash": "0ba78a28f8767a65a29e917dbbac95a29c9638be",
+                "datavalue": {
+                  "value": "Badr Brigades",
+                  "type": "string"
+                },
+                "datatype": "string"
+              }
+            ]
+          },
+          "qualifiers-order": [
+            "P1810"
+          ],
+          "id": "Q2888122$0FFF76D5-F6C5-4E32-B93E-4721F988E3A0",
+          "rank": "normal"
+        },
+        {
+          "mainsnak": {
+            "snaktype": "value",
+            "property": "P710",
+            "hash": "5be828a24b894a1bb4b5564dca13a706cd374f13",
+            "datavalue": {
+              "value": {
+                "entity-type": "item",
+                "numeric-id": 861979,
+                "id": "Q861979"
+              },
+              "type": "wikibase-entityid"
+            },
+            "datatype": "wikibase-item"
+          },
+          "type": "statement",
+          "id": "Q2888122$9C372AC8-81CA-4011-910E-237D9909EEAA",
+          "rank": "normal"
+        },
+        {
+          "mainsnak": {
+            "snaktype": "value",
+            "property": "P710",
+            "hash": "fc17239ccd173bf872d172eeafbdbfb0b42d1b08",
+            "datavalue": {
+              "value": {
+                "entity-type": "item",
+                "numeric-id": 7574579,
+                "id": "Q7574579"
+              },
+              "type": "wikibase-entityid"
+            },
+            "datatype": "wikibase-item"
+          },
+          "type": "statement",
+          "id": "Q2888122$00E125B0-6662-4003-B207-26BAC6CD4D5C",
+          "rank": "normal"
+        },
+        {
+          "mainsnak": {
+            "snaktype": "value",
+            "property": "P710",
+            "hash": "67ce03e6614ce874cd29dc4160d796986e2fac85",
+            "datavalue": {
+              "value": {
+                "entity-type": "item",
+                "numeric-id": 3408639,
+                "id": "Q3408639"
+              },
+              "type": "wikibase-entityid"
+            },
+            "datatype": "wikibase-item"
+          },
+          "type": "statement",
+          "id": "Q2888122$2DA1E9AE-5939-4107-B6E0-F01B1D27718C",
+          "rank": "normal"
+        },
+        {
+          "mainsnak": {
+            "snaktype": "value",
+            "property": "P710",
+            "hash": "52df67b3ccf7c7018ea7c5dbda30f4670d8c4324",
+            "datavalue": {
+              "value": {
+                "entity-type": "item",
+                "numeric-id": 216826,
+                "id": "Q216826"
+              },
+              "type": "wikibase-entityid"
+            },
+            "datatype": "wikibase-item"
+          },
+          "type": "statement",
+          "id": "Q2888122$942E4BB8-4A9A-4AB8-B958-6C23C2546DC3",
+          "rank": "normal"
+        },
+        {
+          "mainsnak": {
+            "snaktype": "value",
+            "property": "P710",
+            "hash": "752f65d373f292f2420b4e2f6d7f1329db5fd614",
+            "datavalue": {
+              "value": {
+                "entity-type": "item",
+                "numeric-id": 57673,
+                "id": "Q57673"
+              },
+              "type": "wikibase-entityid"
+            },
+            "datatype": "wikibase-item"
+          },
+          "type": "statement",
+          "id": "Q2888122$DDF2EABD-363E-4F12-9276-BE562DCC2706",
+          "rank": "normal"
+        },
+        {
+          "mainsnak": {
+            "snaktype": "value",
+            "property": "P710",
+            "hash": "3c9c4c711437fcb841deaabc92bc253733b06eb4",
+            "datavalue": {
+              "value": {
+                "entity-type": "item",
+                "numeric-id": 4724805,
+                "id": "Q4724805"
+              },
+              "type": "wikibase-entityid"
+            },
+            "datatype": "wikibase-item"
+          },
+          "type": "statement",
+          "id": "Q2888122$6F84597E-5357-44BD-98D9-507A096B004A",
+          "rank": "normal"
+        },
+        {
+          "mainsnak": {
+            "snaktype": "value",
+            "property": "P710",
+            "hash": "e81b824992ab6a23ebdf533170606bc7863707d1",
+            "datavalue": {
+              "value": {
+                "entity-type": "item",
+                "numeric-id": 6893610,
+                "id": "Q6893610"
+              },
+              "type": "wikibase-entityid"
+            },
+            "datatype": "wikibase-item"
+          },
+          "type": "statement",
+          "id": "Q2888122$0E46F07D-EBA8-42DD-AB12-E824172AD5AB",
+          "rank": "normal"
+        }
+      ],
+      "P18": [
+        {
+          "mainsnak": {
+            "snaktype": "value",
+            "property": "P18",
+            "hash": "a18c74736f5a9215d5314d1918b5fd25fc756381",
+            "datavalue": {
+              "value": "Basra location.PNG",
+              "type": "string"
+            },
+            "datatype": "commonsMedia"
+          },
+          "type": "statement",
+          "id": "Q2888122$875F9947-65CA-4FA3-81DF-E2B608BB040F",
+          "rank": "normal",
+          "references": [
+            {
+              "hash": "fa278ebfc458360e5aed63d5058cca83c46134f1",
+              "snaks": {
+                "P143": [
+                  {
+                    "snaktype": "value",
+                    "property": "P143",
+                    "hash": "e4f6d9441d0600513c4533c672b5ab472dc73694",
+                    "datavalue": {
+                      "value": {
+                        "entity-type": "item",
+                        "numeric-id": 328,
+                        "id": "Q328"
+                      },
+                      "type": "wikibase-entityid"
+                    },
+                    "datatype": "wikibase-item"
+                  }
+                ]
+              },
+              "snaks-order": [
+                "P143"
+              ]
+            }
+          ]
+        }
+      ],
+      "P1889": [
+        {
+          "mainsnak": {
+            "snaktype": "value",
+            "property": "P1889",
+            "hash": "e0ce92195ac64138cc3e041d37edc30ada03855b",
+            "datavalue": {
+              "value": {
+                "entity-type": "item",
+                "numeric-id": 1218500,
+                "id": "Q1218500"
+              },
+              "type": "wikibase-entityid"
+            },
+            "datatype": "wikibase-item"
+          },
+          "type": "statement",
+          "id": "Q2888122$23FA2178-60FC-4BF3-AD71-79C749D17C11",
+          "rank": "normal",
+          "references": [
+            {
+              "hash": "f8916bb825dee5fe0862eb95a90d61bb3c1945bf",
+              "snaks": {
+                "P143": [
+                  {
+                    "snaktype": "value",
+                    "property": "P143",
+                    "hash": "39224a9c2e8ce5424defbd16603d25771956c7fc",
+                    "datavalue": {
+                      "value": {
+                        "entity-type": "item",
+                        "numeric-id": 1551807,
+                        "id": "Q1551807"
+                      },
+                      "type": "wikibase-entityid"
+                    },
+                    "datatype": "wikibase-item"
+                  }
+                ],
+                "P4656": [
+                  {
+                    "snaktype": "value",
+                    "property": "P4656",
+                    "hash": "0ab5d1ea0d5239e654647d7ec3042b5171a8d842",
+                    "datavalue": {
+                      "value": "https://pl.wikipedia.org/w/index.php?title=Bitwa_pod_Basrą_(2008)&oldid=61335967",
+                      "type": "string"
+                    },
+                    "datatype": "url"
+                  }
+                ]
+              },
+              "snaks-order": [
+                "P143",
+                "P4656"
+              ]
+            }
+          ]
+        }
+      ],
+      "P17": [
+        {
+          "mainsnak": {
+            "snaktype": "value",
+            "property": "P17",
+            "hash": "8f3fa18321ad37dc612da635717040a8a8c05871",
+            "datavalue": {
+              "value": {
+                "entity-type": "item",
+                "numeric-id": 796,
+                "id": "Q796"
+              },
+              "type": "wikibase-entityid"
+            },
+            "datatype": "wikibase-item"
+          },
+          "type": "statement",
+          "id": "Q2888122$B41D11BE-14B1-450B-95CD-1DAD54CE74CC",
+          "rank": "normal"
+        }
+      ]
+    },
+    "sitelinks": {
+      "arwiki": {
+        "site": "arwiki",
+        "title": "عملية صولة الفرسان",
+        "badges": [],
+        "url": "https://ar.wikipedia.org/wiki/%D8%B9%D9%85%D9%84%D9%8A%D8%A9_%D8%B5%D9%88%D9%84%D8%A9_%D8%A7%D9%84%D9%81%D8%B1%D8%B3%D8%A7%D9%86"
+      },
+      "azbwiki": {
+        "site": "azbwiki",
+        "title": "بصره دؤیوشو (۲۰۰۸)",
+        "badges": [],
+        "url": "https://azb.wikipedia.org/wiki/%D8%A8%D8%B5%D8%B1%D9%87_%D8%AF%D8%A4%DB%8C%D9%88%D8%B4%D9%88_(%DB%B2%DB%B0%DB%B0%DB%B8)"
+      },
+      "bewiki": {
+        "site": "bewiki",
+        "title": "Бітва за Басру (2008)",
+        "badges": [],
+        "url": "https://be.wikipedia.org/wiki/%D0%91%D1%96%D1%82%D0%B2%D0%B0_%D0%B7%D0%B0_%D0%91%D0%B0%D1%81%D1%80%D1%83_(2008)"
+      },
+      "commonswiki": {
+        "site": "commonswiki",
+        "title": "Category:Battle of Basra (2008)",
+        "badges": [],
+        "url": "https://commons.wikimedia.org/wiki/Category:Battle_of_Basra_(2008)"
+      },
+      "enwiki": {
+        "site": "enwiki",
+        "title": "Battle of Basra (2008)",
+        "badges": [],
+        "url": "https://en.wikipedia.org/wiki/Battle_of_Basra_(2008)"
+      },
+      "fawiki": {
+        "site": "fawiki",
+        "title": "نبرد بصره (۲۰۰۸)",
+        "badges": [],
+        "url": "https://fa.wikipedia.org/wiki/%D9%86%D8%A8%D8%B1%D8%AF_%D8%A8%D8%B5%D8%B1%D9%87_(%DB%B2%DB%B0%DB%B0%DB%B8)"
+      },
+      "fiwiki": {
+        "site": "fiwiki",
+        "title": "Basran taistelu (2008)",
+        "badges": [],
+        "url": "https://fi.wikipedia.org/wiki/Basran_taistelu_(2008)"
+      },
+      "frwiki": {
+        "site": "frwiki",
+        "title": "Bataille de Bassorah (2008)",
+        "badges": [],
+        "url": "https://fr.wikipedia.org/wiki/Bataille_de_Bassorah_(2008)"
+      },
+      "hewiki": {
+        "site": "hewiki",
+        "title": "קרב בצרה (2008)",
+        "badges": [],
+        "url": "https://he.wikipedia.org/wiki/%D7%A7%D7%A8%D7%91_%D7%91%D7%A6%D7%A8%D7%94_(2008)"
+      },
+      "nowiki": {
+        "site": "nowiki",
+        "title": "Slaget om Basra 2008",
+        "badges": [],
+        "url": "https://no.wikipedia.org/wiki/Slaget_om_Basra_2008"
+      },
+      "plwiki": {
+        "site": "plwiki",
+        "title": "Bitwa pod Basrą (2008)",
+        "badges": [],
+        "url": "https://pl.wikipedia.org/wiki/Bitwa_pod_Basr%C4%85_(2008)"
+      },
+      "ptwiki": {
+        "site": "ptwiki",
+        "title": "Batalha de Baçorá (2008)",
+        "badges": [],
+        "url": "https://pt.wikipedia.org/wiki/Batalha_de_Ba%C3%A7or%C3%A1_(2008)"
+      }
+    }
+  }
+}

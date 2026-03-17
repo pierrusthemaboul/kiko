@@ -1,0 +1,100 @@
+{
+  "saved_at": "2026-03-07T14:35:42.903Z",
+  "value": {
+    "pageid": 5105291,
+    "ns": 0,
+    "title": "Q5338009",
+    "lastrevid": 2250132141,
+    "modified": "2024-09-19T16:13:06Z",
+    "type": "item",
+    "id": "Q5338009",
+    "labels": {
+      "en": {
+        "language": "en",
+        "value": "Edict of Compiègne"
+      },
+      "es": {
+        "language": "es",
+        "value": "Edicto de Compiègne"
+      },
+      "fr": {
+        "language": "fr",
+        "value": "Édit de Compiègne"
+      }
+    },
+    "descriptions": {
+      "fr": {
+        "language": "fr",
+        "value": "texte de loi français de 1557"
+      }
+    },
+    "aliases": {
+      "en": [
+        {
+          "language": "en",
+          "value": "Edict of Compiegne"
+        }
+      ]
+    },
+    "claims": {
+      "P646": [
+        {
+          "mainsnak": {
+            "snaktype": "value",
+            "property": "P646",
+            "hash": "d91eae5a3a44761cfb81ec1da33509802c6dddeb",
+            "datavalue": {
+              "value": "/m/03c504c",
+              "type": "string"
+            },
+            "datatype": "external-id"
+          },
+          "type": "statement",
+          "id": "Q5338009$1C0EDB95-F9C5-4FAD-95E1-10C3D9665B32",
+          "rank": "normal"
+        }
+      ],
+      "P17": [
+        {
+          "mainsnak": {
+            "snaktype": "value",
+            "property": "P17",
+            "hash": "c05db5d169c2560b9799d567a803d20a392f53e4",
+            "datavalue": {
+              "value": {
+                "entity-type": "item",
+                "numeric-id": 142,
+                "id": "Q142"
+              },
+              "type": "wikibase-entityid"
+            },
+            "datatype": "wikibase-item"
+          },
+          "type": "statement",
+          "id": "Q5338009$8FFBEF6C-8109-47DB-8A69-DEDEDB4FD7ED",
+          "rank": "normal"
+        }
+      ]
+    },
+    "sitelinks": {
+      "enwiki": {
+        "site": "enwiki",
+        "title": "Edict of Compiègne",
+        "badges": [],
+        "url": "https://en.wikipedia.org/wiki/Edict_of_Compi%C3%A8gne"
+      },
+      "eswiki": {
+        "site": "eswiki",
+        "title": "Edicto de Compiègne",
+        "badges": [],
+        "url": "https://es.wikipedia.org/wiki/Edicto_de_Compi%C3%A8gne"
+      },
+      "frwiki": {
+        "site": "frwiki",
+        "title": "Édit de Compiègne",
+        "badges": [],
+        "url": "https://fr.wikipedia.org/wiki/%C3%89dit_de_Compi%C3%A8gne"
+      }
+    }
+  }
+}

@@ -1,0 +1,731 @@
+{
+  "saved_at": "2026-03-07T14:47:40.482Z",
+  "value": {
+    "pageid": 628978,
+    "ns": 0,
+    "title": "Q668008",
+    "lastrevid": 2433204548,
+    "modified": "2025-11-24T05:48:40Z",
+    "type": "item",
+    "id": "Q668008",
+    "labels": {
+      "de": {
+        "language": "de",
+        "value": "Schlacht bei Grandson"
+      },
+      "gsw": {
+        "language": "gsw",
+        "value": "D Schlacht bi Grandson"
+      },
+      "ja": {
+        "language": "ja",
+        "value": "グランソンの戦い"
+      },
+      "pl": {
+        "language": "pl",
+        "value": "Bitwa pod Grandson"
+      },
+      "ko": {
+        "language": "ko",
+        "value": "그랑송 전투"
+      },
+      "ru": {
+        "language": "ru",
+        "value": "Битва при Грансоне"
+      },
+      "fr": {
+        "language": "fr",
+        "value": "bataille de Grandson"
+      },
+      "en": {
+        "language": "en",
+        "value": "Battle of Grandson"
+      },
+      "it": {
+        "language": "it",
+        "value": "battaglia di Grandson"
+      },
+      "nl": {
+        "language": "nl",
+        "value": "Slag bij Grandson"
+      },
+      "eo": {
+        "language": "eo",
+        "value": "Batalo de Grandson"
+      },
+      "ka": {
+        "language": "ka",
+        "value": "გრანსონის ბრძოლა"
+      },
+      "uk": {
+        "language": "uk",
+        "value": "Битва під Грансоном"
+      },
+      "es": {
+        "language": "es",
+        "value": "Batalla de Grandson"
+      },
+      "sr": {
+        "language": "sr",
+        "value": "Битка код Грансона"
+      },
+      "sh": {
+        "language": "sh",
+        "value": "Bitka kod Grandsona"
+      },
+      "hu": {
+        "language": "hu",
+        "value": "grandsoni csata"
+      },
+      "zh-hant": {
+        "language": "zh-hant",
+        "value": "格朗鬆戰役"
+      },
+      "zh-hans": {
+        "language": "zh-hans",
+        "value": "格朗松战役"
+      },
+      "zh": {
+        "language": "zh",
+        "value": "格朗松战役"
+      },
+      "yo": {
+        "language": "yo",
+        "value": "ogun Grandson"
+      },
+      "ar": {
+        "language": "ar",
+        "value": "معركة غراندسن"
+      },
+      "hy": {
+        "language": "hy",
+        "value": "Գրանդսոնի ճակատամարտ"
+      },
+      "ga": {
+        "language": "ga",
+        "value": "Cath Grandson"
+      },
+      "id": {
+        "language": "id",
+        "value": "Pertempuran Grandson"
+      }
+    },
+    "descriptions": {
+      "eo": {
+        "language": "eo",
+        "value": "Batalo en Svislando"
+      },
+      "de": {
+        "language": "de",
+        "value": "Schlacht in der Schweiz (1476)"
+      },
+      "en": {
+        "language": "en",
+        "value": "Burgundian defeat in the Burgundian Wars, 2 March 1476"
+      },
+      "it": {
+        "language": "it",
+        "value": "battaglia in Svizzera"
+      },
+      "fr": {
+        "language": "fr",
+        "value": "bataille de la guerre de Bourgogne"
+      },
+      "yo": {
+        "language": "yo",
+        "value": "ogun"
+      }
+    },
+    "aliases": {
+      "de": [
+        {
+          "language": "de",
+          "value": "Schlacht von Grandson"
+        }
+      ],
+      "zh-hant": [
+        {
+          "language": "zh-hant",
+          "value": "格朗松戰役"
+        }
+      ]
+    },
+    "claims": {
+      "P646": [
+        {
+          "mainsnak": {
+            "snaktype": "value",
+            "property": "P646",
+            "hash": "1b94eec08eb1fb781d7393fb41dd97abca00911b",
+            "datavalue": {
+              "value": "/m/07pt4_",
+              "type": "string"
+            },
+            "datatype": "external-id"
+          },
+          "type": "statement",
+          "id": "Q668008$E400E0AC-2E63-4C13-BA1B-225F2DAD3F38",
+          "rank": "normal",
+          "references": [
+            {
+              "hash": "2b00cb481cddcac7623114367489b5c194901c4a",
+              "snaks": {
+                "P248": [
+                  {
+                    "snaktype": "value",
+                    "property": "P248",
+                    "hash": "a94b740202b097dd33355e0e6c00e54b9395e5e0",
+                    "datavalue": {
+                      "value": {
+                        "entity-type": "item",
+                        "numeric-id": 15241312,
+                        "id": "Q15241312"
+                      },
+                      "type": "wikibase-entityid"
+                    },
+                    "datatype": "wikibase-item"
+                  }
+                ],
+                "P577": [
+                  {
+                    "snaktype": "value",
+                    "property": "P577",
+                    "hash": "fde79ecb015112d2f29229ccc1ec514ed3e71fa2",
+                    "datavalue": {
+                      "value": {
+                        "time": "+2013-10-28T00:00:00Z",
+                        "timezone": 0,
+                        "before": 0,
+                        "after": 0,
+                        "precision": 11,
+                        "calendarmodel": "http://www.wikidata.org/entity/Q1985727"
+                      },
+                      "type": "time"
+                    },
+                    "datatype": "time"
+                  }
+                ]
+              },
+              "snaks-order": [
+                "P248",
+                "P577"
+              ]
+            }
+          ]
+        }
+      ],
+      "P31": [
+        {
+          "mainsnak": {
+            "snaktype": "value",
+            "property": "P31",
+            "hash": "baa1df9dcd37b9f3a062e7a14a8bef0c37078d32",
+            "datavalue": {
+              "value": {
+                "entity-type": "item",
+                "numeric-id": 178561,
+                "id": "Q178561"
+              },
+              "type": "wikibase-entityid"
+            },
+            "datatype": "wikibase-item"
+          },
+          "type": "statement",
+          "id": "Q668008$7EA3DCF8-C993-4B8F-B180-001120050896",
+          "rank": "normal",
+          "references": [
+            {
+              "hash": "d4bd87b862b12d99d26e86472d44f26858dee639",
+              "snaks": {
+                "P143": [
+                  {
+                    "snaktype": "value",
+                    "property": "P143",
+                    "hash": "f30cbd35620c4ea6d0633aaf0210a8916130469b",
+                    "datavalue": {
+                      "value": {
+                        "entity-type": "item",
+                        "numeric-id": 8447,
+                        "id": "Q8447"
+                      },
+                      "type": "wikibase-entityid"
+                    },
+                    "datatype": "wikibase-item"
+                  }
+                ]
+              },
+              "snaks-order": [
+                "P143"
+              ]
+            }
+          ]
+        }
+      ],
+      "P361": [
+        {
+          "mainsnak": {
+            "snaktype": "value",
+            "property": "P361",
+            "hash": "dc0272768bfe49f6c3f1b7116caee87a649af460",
+            "datavalue": {
+              "value": {
+                "entity-type": "item",
+                "numeric-id": 315342,
+                "id": "Q315342"
+              },
+              "type": "wikibase-entityid"
+            },
+            "datatype": "wikibase-item"
+          },
+          "type": "statement",
+          "id": "Q668008$B7317228-7AC7-4CD0-97B4-6930C144DD56",
+          "rank": "normal",
+          "references": [
+            {
+              "hash": "d4bd87b862b12d99d26e86472d44f26858dee639",
+              "snaks": {
+                "P143": [
+                  {
+                    "snaktype": "value",
+                    "property": "P143",
+                    "hash": "f30cbd35620c4ea6d0633aaf0210a8916130469b",
+                    "datavalue": {
+                      "value": {
+                        "entity-type": "item",
+                        "numeric-id": 8447,
+                        "id": "Q8447"
+                      },
+                      "type": "wikibase-entityid"
+                    },
+                    "datatype": "wikibase-item"
+                  }
+                ]
+              },
+              "snaks-order": [
+                "P143"
+              ]
+            }
+          ]
+        }
+      ],
+      "P18": [
+        {
+          "mainsnak": {
+            "snaktype": "value",
+            "property": "P18",
+            "hash": "d6a6f2599dea9da4b563e034fd15331d390dacd8",
+            "datavalue": {
+              "value": "Luzerner Schilling Battle of Grandson.jpg",
+              "type": "string"
+            },
+            "datatype": "commonsMedia"
+          },
+          "type": "statement",
+          "id": "Q668008$1E443D0C-83C9-4F92-AF2F-5B2859776371",
+          "rank": "normal"
+        },
+        {
+          "mainsnak": {
+            "snaktype": "value",
+            "property": "P18",
+            "hash": "3cd969eda1b32d5662c47eabb699d4c3acc93cfa",
+            "datavalue": {
+              "value": "Belagerung Grandson.jpg",
+              "type": "string"
+            },
+            "datatype": "commonsMedia"
+          },
+          "type": "statement",
+          "id": "Q668008$EA59FC1F-BC7E-4685-BFA3-FFA03DA75D54",
+          "rank": "normal"
+        },
+        {
+          "mainsnak": {
+            "snaktype": "value",
+            "property": "P18",
+            "hash": "baeb4d967f13c8c88f7067677e36008592bcb17f",
+            "datavalue": {
+              "value": "Pluenderung Grandson.jpg",
+              "type": "string"
+            },
+            "datatype": "commonsMedia"
+          },
+          "type": "statement",
+          "id": "Q668008$5A3ECEEF-39E6-47CB-9854-35FE87C3DE8A",
+          "rank": "normal"
+        },
+        {
+          "mainsnak": {
+            "snaktype": "value",
+            "property": "P18",
+            "hash": "fb1952f8a8275aa8eb51f7e76dca40632e403155",
+            "datavalue": {
+              "value": "Berner Chronik Eidgenossen beten vor Schlacht bei Grandson.jpg",
+              "type": "string"
+            },
+            "datatype": "commonsMedia"
+          },
+          "type": "statement",
+          "id": "Q668008$DFBFBCC6-B735-42CA-AC83-89502CFDE4F7",
+          "rank": "normal"
+        }
+      ],
+      "P276": [
+        {
+          "mainsnak": {
+            "snaktype": "value",
+            "property": "P276",
+            "hash": "a653fdcdbde5f3aec29bb3cf3a77b53c792075c5",
+            "datavalue": {
+              "value": {
+                "entity-type": "item",
+                "numeric-id": 70199,
+                "id": "Q70199"
+              },
+              "type": "wikibase-entityid"
+            },
+            "datatype": "wikibase-item"
+          },
+          "type": "statement",
+          "id": "Q668008$0BD9C14B-A132-4E00-82C7-41C9692BA1E8",
+          "rank": "normal",
+          "references": [
+            {
+              "hash": "d4bd87b862b12d99d26e86472d44f26858dee639",
+              "snaks": {
+                "P143": [
+                  {
+                    "snaktype": "value",
+                    "property": "P143",
+                    "hash": "f30cbd35620c4ea6d0633aaf0210a8916130469b",
+                    "datavalue": {
+                      "value": {
+                        "entity-type": "item",
+                        "numeric-id": 8447,
+                        "id": "Q8447"
+                      },
+                      "type": "wikibase-entityid"
+                    },
+                    "datatype": "wikibase-item"
+                  }
+                ]
+              },
+              "snaks-order": [
+                "P143"
+              ]
+            }
+          ]
+        }
+      ],
+      "P373": [
+        {
+          "mainsnak": {
+            "snaktype": "value",
+            "property": "P373",
+            "hash": "08e3c7ed6bb4e301727a6caec27ce30f1163ea13",
+            "datavalue": {
+              "value": "Battle of Grandson",
+              "type": "string"
+            },
+            "datatype": "string"
+          },
+          "type": "statement",
+          "id": "Q668008$93444D8A-5EDC-4750-84C9-C07197EB448E",
+          "rank": "normal"
+        }
+      ],
+      "P625": [
+        {
+          "mainsnak": {
+            "snaktype": "value",
+            "property": "P625",
+            "hash": "e0e854d5ce80b6f51354a3cfad9b9733b0e43f0f",
+            "datavalue": {
+              "value": {
+                "latitude": 46.816944444444,
+                "longitude": 6.6330555555556,
+                "altitude": null,
+                "precision": 0.00027777777777778,
+                "globe": "http://www.wikidata.org/entity/Q2"
+              },
+              "type": "globecoordinate"
+            },
+            "datatype": "globe-coordinate"
+          },
+          "type": "statement",
+          "id": "Q668008$23cab35a-4b68-b60f-86a8-fe468b1f8746",
+          "rank": "normal"
+        }
+      ],
+      "P585": [
+        {
+          "mainsnak": {
+            "snaktype": "value",
+            "property": "P585",
+            "hash": "fdc6ec3863fba91b5dcbc41c43fa7d8327706b31",
+            "datavalue": {
+              "value": {
+                "time": "+1476-03-02T00:00:00Z",
+                "timezone": 0,
+                "before": 0,
+                "after": 0,
+                "precision": 11,
+                "calendarmodel": "http://www.wikidata.org/entity/Q1985727"
+              },
+              "type": "time"
+            },
+            "datatype": "time"
+          },
+          "type": "statement",
+          "id": "Q668008$D947C935-3B8A-4710-89FE-445D1D46879E",
+          "rank": "normal",
+          "references": [
+            {
+              "hash": "d4bd87b862b12d99d26e86472d44f26858dee639",
+              "snaks": {
+                "P143": [
+                  {
+                    "snaktype": "value",
+                    "property": "P143",
+                    "hash": "f30cbd35620c4ea6d0633aaf0210a8916130469b",
+                    "datavalue": {
+                      "value": {
+                        "entity-type": "item",
+                        "numeric-id": 8447,
+                        "id": "Q8447"
+                      },
+                      "type": "wikibase-entityid"
+                    },
+                    "datatype": "wikibase-item"
+                  }
+                ]
+              },
+              "snaks-order": [
+                "P143"
+              ]
+            }
+          ]
+        }
+      ],
+      "P508": [
+        {
+          "mainsnak": {
+            "snaktype": "value",
+            "property": "P508",
+            "hash": "7202aae2439ac2dfaec0b0aa5d568b4f71229963",
+            "datavalue": {
+              "value": "51081",
+              "type": "string"
+            },
+            "datatype": "external-id"
+          },
+          "type": "statement",
+          "id": "Q668008$39889FEC-A63B-4AE9-B571-81B4F191A810",
+          "rank": "normal",
+          "references": [
+            {
+              "hash": "ff65511d37e885bcf005b99c2241192548c3f03a",
+              "snaks": {
+                "P248": [
+                  {
+                    "snaktype": "value",
+                    "property": "P248",
+                    "hash": "3b090a7bae73c288393b2c8b9846cc7ed9a58f91",
+                    "datavalue": {
+                      "value": {
+                        "entity-type": "item",
+                        "numeric-id": 16583225,
+                        "id": "Q16583225"
+                      },
+                      "type": "wikibase-entityid"
+                    },
+                    "datatype": "wikibase-item"
+                  }
+                ]
+              },
+              "snaks-order": [
+                "P248"
+              ]
+            }
+          ]
+        }
+      ],
+      "P2581": [
+        {
+          "mainsnak": {
+            "snaktype": "value",
+            "property": "P2581",
+            "hash": "ebd455e1c8caa663abca0cba620c3a876e6d76e5",
+            "datavalue": {
+              "value": "01937602n",
+              "type": "string"
+            },
+            "datatype": "external-id"
+          },
+          "type": "statement",
+          "id": "Q668008$25D1D758-9DBE-4096-890F-EC4C83B53BD9",
+          "rank": "normal",
+          "references": [
+            {
+              "hash": "248ac337a217a5f5eed7139a82a4e60931611af0",
+              "snaks": {
+                "P248": [
+                  {
+                    "snaktype": "value",
+                    "property": "P248",
+                    "hash": "25b816aab41db18565946259c950aed6de05dd1e",
+                    "datavalue": {
+                      "value": {
+                        "entity-type": "item",
+                        "numeric-id": 4837690,
+                        "id": "Q4837690"
+                      },
+                      "type": "wikibase-entityid"
+                    },
+                    "datatype": "wikibase-item"
+                  }
+                ]
+              },
+              "snaks-order": [
+                "P248"
+              ]
+            }
+          ]
+        }
+      ],
+      "P902": [
+        {
+          "mainsnak": {
+            "snaktype": "value",
+            "property": "P902",
+            "hash": "d29cdff504e8c41499d018a26494d55759d7ac9c",
+            "datavalue": {
+              "value": "008883",
+              "type": "string"
+            },
+            "datatype": "external-id"
+          },
+          "type": "statement",
+          "id": "Q668008$34D8D1DE-7E13-4C54-AF14-E1FA92ECB20D",
+          "rank": "normal"
+        }
+      ]
+    },
+    "sitelinks": {
+      "alswiki": {
+        "site": "alswiki",
+        "title": "Schlacht bei Grandson",
+        "badges": [],
+        "url": "https://als.wikipedia.org/wiki/Schlacht_bei_Grandson"
+      },
+      "commonswiki": {
+        "site": "commonswiki",
+        "title": "Category:Battle of Grandson",
+        "badges": [],
+        "url": "https://commons.wikimedia.org/wiki/Category:Battle_of_Grandson"
+      },
+      "dewiki": {
+        "site": "dewiki",
+        "title": "Schlacht bei Grandson",
+        "badges": [],
+        "url": "https://de.wikipedia.org/wiki/Schlacht_bei_Grandson"
+      },
+      "enwiki": {
+        "site": "enwiki",
+        "title": "Battle of Grandson",
+        "badges": [],
+        "url": "https://en.wikipedia.org/wiki/Battle_of_Grandson"
+      },
+      "eowiki": {
+        "site": "eowiki",
+        "title": "Batalo de Grandson",
+        "badges": [],
+        "url": "https://eo.wikipedia.org/wiki/Batalo_de_Grandson"
+      },
+      "eswiki": {
+        "site": "eswiki",
+        "title": "Batalla de Grandson",
+        "badges": [],
+        "url": "https://es.wikipedia.org/wiki/Batalla_de_Grandson"
+      },
+      "frwiki": {
+        "site": "frwiki",
+        "title": "Bataille de Grandson",
+        "badges": [],
+        "url": "https://fr.wikipedia.org/wiki/Bataille_de_Grandson"
+      },
+      "huwiki": {
+        "site": "huwiki",
+        "title": "Grandsoni csata",
+        "badges": [],
+        "url": "https://hu.wikipedia.org/wiki/Grandsoni_csata"
+      },
+      "idwiki": {
+        "site": "idwiki",
+        "title": "Pertempuran Grandson",
+        "badges": [],
+        "url": "https://id.wikipedia.org/wiki/Pertempuran_Grandson"
+      },
+      "itwiki": {
+        "site": "itwiki",
+        "title": "Battaglia di Grandson",
+        "badges": [],
+        "url": "https://it.wikipedia.org/wiki/Battaglia_di_Grandson"
+      },
+      "jawiki": {
+        "site": "jawiki",
+        "title": "グランソンの戦い",
+        "badges": [],
+        "url": "https://ja.wikipedia.org/wiki/%E3%82%B0%E3%83%A9%E3%83%B3%E3%82%BD%E3%83%B3%E3%81%AE%E6%88%A6%E3%81%84"
+      },
+      "kawiki": {
+        "site": "kawiki",
+        "title": "გრანსონის ბრძოლა",
+        "badges": [],
+        "url": "https://ka.wikipedia.org/wiki/%E1%83%92%E1%83%A0%E1%83%90%E1%83%9C%E1%83%A1%E1%83%9D%E1%83%9C%E1%83%98%E1%83%A1_%E1%83%91%E1%83%A0%E1%83%AB%E1%83%9D%E1%83%9A%E1%83%90"
+      },
+      "kowiki": {
+        "site": "kowiki",
+        "title": "그랑송 전투",
+        "badges": [],
+        "url": "https://ko.wikipedia.org/wiki/%EA%B7%B8%EB%9E%91%EC%86%A1_%EC%A0%84%ED%88%AC"
+      },
+      "nlwiki": {
+        "site": "nlwiki",
+        "title": "Slag bij Grandson",
+        "badges": [],
+        "url": "https://nl.wikipedia.org/wiki/Slag_bij_Grandson"
+      },
+      "plwiki": {
+        "site": "plwiki",
+        "title": "Bitwa pod Grandson",
+        "badges": [],
+        "url": "https://pl.wikipedia.org/wiki/Bitwa_pod_Grandson"
+      },
+      "ruwiki": {
+        "site": "ruwiki",
+        "title": "Битва при Грансоне",
+        "badges": [],
+        "url": "https://ru.wikipedia.org/wiki/%D0%91%D0%B8%D1%82%D0%B2%D0%B0_%D0%BF%D1%80%D0%B8_%D0%93%D1%80%D0%B0%D0%BD%D1%81%D0%BE%D0%BD%D0%B5"
+      },
+      "shwiki": {
+        "site": "shwiki",
+        "title": "Bitka kod Grandsona",
+        "badges": [],
+        "url": "https://sh.wikipedia.org/wiki/Bitka_kod_Grandsona"
+      },
+      "srwiki": {
+        "site": "srwiki",
+        "title": "Битка код Грансона",
+        "badges": [],
+        "url": "https://sr.wikipedia.org/wiki/%D0%91%D0%B8%D1%82%D0%BA%D0%B0_%D0%BA%D0%BE%D0%B4_%D0%93%D1%80%D0%B0%D0%BD%D1%81%D0%BE%D0%BD%D0%B0"
+      },
+      "ukwiki": {
+        "site": "ukwiki",
+        "title": "Битва під Грансоном",
+        "badges": [],
+        "url": "https://uk.wikipedia.org/wiki/%D0%91%D0%B8%D1%82%D0%B2%D0%B0_%D0%BF%D1%96%D0%B4_%D0%93%D1%80%D0%B0%D0%BD%D1%81%D0%BE%D0%BD%D0%BE%D0%BC"
+      }
+    }
+  }
+}

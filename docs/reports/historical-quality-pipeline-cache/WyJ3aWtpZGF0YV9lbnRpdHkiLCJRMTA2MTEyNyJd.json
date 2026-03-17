@@ -1,0 +1,485 @@
+{
+  "pageid": 1009860,
+  "ns": 0,
+  "title": "Q1061127",
+  "lastrevid": 2468297813,
+  "modified": "2026-03-01T09:09:49Z",
+  "type": "item",
+  "id": "Q1061127",
+  "labels": {
+    "ru": {
+      "language": "ru",
+      "value": "Шампанские ярмарки"
+    },
+    "fr": {
+      "language": "fr",
+      "value": "Foires de Champagne"
+    },
+    "en": {
+      "language": "en",
+      "value": "Champagne fairs"
+    },
+    "zh": {
+      "language": "zh",
+      "value": "香槟集市"
+    },
+    "de": {
+      "language": "de",
+      "value": "Champagnemesse"
+    },
+    "it": {
+      "language": "it",
+      "value": "Fiere della Champagne"
+    },
+    "da": {
+      "language": "da",
+      "value": "Champagnemesserne"
+    },
+    "ar": {
+      "language": "ar",
+      "value": "معارض شمبانيا"
+    },
+    "uk": {
+      "language": "uk",
+      "value": "Шампанські ярмарки"
+    },
+    "nl": {
+      "language": "nl",
+      "value": "Jaarmarkten van Champagne"
+    },
+    "ja": {
+      "language": "ja",
+      "value": "シャンパーニュの大市"
+    },
+    "he": {
+      "language": "he",
+      "value": "ירידי שמפאן"
+    },
+    "pl": {
+      "language": "pl",
+      "value": "Jarmarki szampańskie"
+    },
+    "es": {
+      "language": "es",
+      "value": "Ferias de Champaña"
+    },
+    "id": {
+      "language": "id",
+      "value": "Pekan raya Champagne"
+    },
+    "pt": {
+      "language": "pt",
+      "value": "Feiras de Champagne"
+    },
+    "cs": {
+      "language": "cs",
+      "value": "Trhy v Champagni"
+    }
+  },
+  "descriptions": {
+    "en": {
+      "language": "en",
+      "value": "medieval trade fairs"
+    },
+    "de": {
+      "language": "de",
+      "value": "mittelalterliche Handelsmesse"
+    },
+    "fr": {
+      "language": "fr",
+      "value": "anciennes foires très achalandées du comté de Champagne"
+    },
+    "it": {
+      "language": "it",
+      "value": "fiere medievali in Francia"
+    },
+    "nl": {
+      "language": "nl",
+      "value": "belangrijkste jaarmarkten in Europa gedurende de Hoge middeleeuwen"
+    },
+    "es": {
+      "language": "es",
+      "value": "conjunto de ferias que se celebraban desde el siglo XII en el dominio de los condes de Champaña, región de la actual Francia"
+    },
+    "cs": {
+      "language": "cs",
+      "value": "středověké trhy ve Francii"
+    }
+  },
+  "aliases": {
+    "fr": [
+      {
+        "language": "fr",
+        "value": "Foires de champagne"
+      },
+      {
+        "language": "fr",
+        "value": "Foires De Champagne"
+      },
+      {
+        "language": "fr",
+        "value": "Foire de Champagne"
+      }
+    ],
+    "da": [
+      {
+        "language": "da",
+        "value": "Champagnemesser"
+      }
+    ],
+    "ja": [
+      {
+        "language": "ja",
+        "value": "シャンパーニュ大市"
+      }
+    ],
+    "he": [
+      {
+        "language": "he",
+        "value": "יריד שמפאן"
+      },
+      {
+        "language": "he",
+        "value": "ירידי שמפן"
+      },
+      {
+        "language": "he",
+        "value": "יריד שמפן"
+      }
+    ],
+    "cs": [
+      {
+        "language": "cs",
+        "value": "Foires de Champagne"
+      }
+    ]
+  },
+  "claims": {
+    "P646": [
+      {
+        "mainsnak": {
+          "snaktype": "value",
+          "property": "P646",
+          "hash": "cb2045ac9361a09c0339a83d125b21f1d69f1d61",
+          "datavalue": {
+            "value": "/m/03yhrg7",
+            "type": "string"
+          },
+          "datatype": "external-id"
+        },
+        "type": "statement",
+        "id": "Q1061127$B4412655-3341-4181-9DDD-A76AD87ADBD4",
+        "rank": "normal",
+        "references": [
+          {
+            "hash": "2b00cb481cddcac7623114367489b5c194901c4a",
+            "snaks": {
+              "P248": [
+                {
+                  "snaktype": "value",
+                  "property": "P248",
+                  "hash": "a94b740202b097dd33355e0e6c00e54b9395e5e0",
+                  "datavalue": {
+                    "value": {
+                      "entity-type": "item",
+                      "numeric-id": 15241312,
+                      "id": "Q15241312"
+                    },
+                    "type": "wikibase-entityid"
+                  },
+                  "datatype": "wikibase-item"
+                }
+              ],
+              "P577": [
+                {
+                  "snaktype": "value",
+                  "property": "P577",
+                  "hash": "fde79ecb015112d2f29229ccc1ec514ed3e71fa2",
+                  "datavalue": {
+                    "value": {
+                      "time": "+2013-10-28T00:00:00Z",
+                      "timezone": 0,
+                      "before": 0,
+                      "after": 0,
+                      "precision": 11,
+                      "calendarmodel": "http://www.wikidata.org/entity/Q1985727"
+                    },
+                    "type": "time"
+                  },
+                  "datatype": "time"
+                }
+              ]
+            },
+            "snaks-order": [
+              "P248",
+              "P577"
+            ]
+          }
+        ]
+      }
+    ],
+    "P3219": [
+      {
+        "mainsnak": {
+          "snaktype": "value",
+          "property": "P3219",
+          "hash": "46e71ec02713d4d56931afda9bef4fbedafec4af",
+          "datavalue": {
+            "value": "foires-de-champagne",
+            "type": "string"
+          },
+          "datatype": "external-id"
+        },
+        "type": "statement",
+        "id": "Q1061127$A5C2D27E-AC6D-478A-B7AE-821CADF95DAE",
+        "rank": "normal"
+      }
+    ],
+    "P1417": [
+      {
+        "mainsnak": {
+          "snaktype": "value",
+          "property": "P1417",
+          "hash": "e707d9b0d8b4f056fc0428eb53dc8c82f7847fec",
+          "datavalue": {
+            "value": "topic/Champagne-Fair",
+            "type": "string"
+          },
+          "datatype": "external-id"
+        },
+        "type": "statement",
+        "qualifiers": {
+          "P1810": [
+            {
+              "snaktype": "value",
+              "property": "P1810",
+              "hash": "89efc69e97e7d271f2155fa61b9cb9060d2f58cb",
+              "datavalue": {
+                "value": "Champagne Fair",
+                "type": "string"
+              },
+              "datatype": "string"
+            }
+          ]
+        },
+        "qualifiers-order": [
+          "P1810"
+        ],
+        "id": "Q1061127$FE63CF27-AF64-45F2-A61E-40BA0B8DD4A6",
+        "rank": "normal"
+      }
+    ],
+    "P279": [
+      {
+        "mainsnak": {
+          "snaktype": "value",
+          "property": "P279",
+          "hash": "77206844d0045d1458abf8ec92d8c47f517b3bd3",
+          "datavalue": {
+            "value": {
+              "entity-type": "item",
+              "numeric-id": 288514,
+              "id": "Q288514"
+            },
+            "type": "wikibase-entityid"
+          },
+          "datatype": "wikibase-item"
+        },
+        "type": "statement",
+        "id": "Q1061127$5579c4eb-4c2d-3b0c-e4ec-09bc807332e6",
+        "rank": "normal"
+      }
+    ],
+    "P276": [
+      {
+        "mainsnak": {
+          "snaktype": "value",
+          "property": "P276",
+          "hash": "1c7863d6f37dade23c302f5f8bebf7c7575c22aa",
+          "datavalue": {
+            "value": {
+              "entity-type": "item",
+              "numeric-id": 273827,
+              "id": "Q273827"
+            },
+            "type": "wikibase-entityid"
+          },
+          "datatype": "wikibase-item"
+        },
+        "type": "statement",
+        "id": "Q1061127$59d50512-4469-5939-a450-ea9e67a7fa29",
+        "rank": "normal"
+      }
+    ],
+    "P8313": [
+      {
+        "mainsnak": {
+          "snaktype": "value",
+          "property": "P8313",
+          "hash": "b78420234eb79d7e2a5215e15e731e6c4810d050",
+          "datavalue": {
+            "value": "Champagnemesserne",
+            "type": "string"
+          },
+          "datatype": "external-id"
+        },
+        "type": "statement",
+        "id": "Q1061127$D5D0AB5D-5A8A-43DA-9559-745E8A1356FB",
+        "rank": "normal"
+      }
+    ],
+    "P31": [
+      {
+        "mainsnak": {
+          "snaktype": "value",
+          "property": "P31",
+          "hash": "19dbd477b52162e95960850789e3e5046eb0f846",
+          "datavalue": {
+            "value": {
+              "entity-type": "item",
+              "numeric-id": 288514,
+              "id": "Q288514"
+            },
+            "type": "wikibase-entityid"
+          },
+          "datatype": "wikibase-item"
+        },
+        "type": "statement",
+        "id": "Q1061127$70241EE4-D08A-4FB9-AC01-A6D0EEE50ECD",
+        "rank": "normal"
+      }
+    ],
+    "P2671": [
+      {
+        "mainsnak": {
+          "snaktype": "value",
+          "property": "P2671",
+          "hash": "910660cdb2cccde7a5f9ea4e513347a60ac64f17",
+          "datavalue": {
+            "value": "/g/120r4y61",
+            "type": "string"
+          },
+          "datatype": "external-id"
+        },
+        "type": "statement",
+        "id": "Q1061127$04E4A19A-3BA9-41CF-AADE-96D70CDC2758",
+        "rank": "normal"
+      }
+    ],
+    "P12800": [
+      {
+        "mainsnak": {
+          "snaktype": "value",
+          "property": "P12800",
+          "hash": "cf23ac033b94fa0ea8537f38783dafd3f6927972",
+          "datavalue": {
+            "value": "fr:Foires_de_Champagne",
+            "type": "string"
+          },
+          "datatype": "external-id"
+        },
+        "type": "statement",
+        "id": "Q1061127$3B438EE4-647D-4290-A3F5-EDAA1DFF6965",
+        "rank": "normal"
+      }
+    ]
+  },
+  "sitelinks": {
+    "arwiki": {
+      "site": "arwiki",
+      "title": "معارض شمبانيا",
+      "badges": [],
+      "url": "https://ar.wikipedia.org/wiki/%D9%85%D8%B9%D8%A7%D8%B1%D8%B6_%D8%B4%D9%85%D8%A8%D8%A7%D9%86%D9%8A%D8%A7"
+    },
+    "dawiki": {
+      "site": "dawiki",
+      "title": "Champagnemesserne",
+      "badges": [],
+      "url": "https://da.wikipedia.org/wiki/Champagnemesserne"
+    },
+    "dewiki": {
+      "site": "dewiki",
+      "title": "Champagnemesse",
+      "badges": [],
+      "url": "https://de.wikipedia.org/wiki/Champagnemesse"
+    },
+    "enwiki": {
+      "site": "enwiki",
+      "title": "Champagne fairs",
+      "badges": [],
+      "url": "https://en.wikipedia.org/wiki/Champagne_fairs"
+    },
+    "eswiki": {
+      "site": "eswiki",
+      "title": "Ferias de Champaña",
+      "badges": [],
+      "url": "https://es.wikipedia.org/wiki/Ferias_de_Champa%C3%B1a"
+    },
+    "frwiki": {
+      "site": "frwiki",
+      "title": "Foires de Champagne",
+      "badges": [],
+      "url": "https://fr.wikipedia.org/wiki/Foires_de_Champagne"
+    },
+    "hewiki": {
+      "site": "hewiki",
+      "title": "ירידי שמפאן",
+      "badges": [],
+      "url": "https://he.wikipedia.org/wiki/%D7%99%D7%A8%D7%99%D7%93%D7%99_%D7%A9%D7%9E%D7%A4%D7%90%D7%9F"
+    },
+    "idwiki": {
+      "site": "idwiki",
+      "title": "Pekan raya Champagne",
+      "badges": [],
+      "url": "https://id.wikipedia.org/wiki/Pekan_raya_Champagne"
+    },
+    "itwiki": {
+      "site": "itwiki",
+      "title": "Fiere della Champagne",
+      "badges": [],
+      "url": "https://it.wikipedia.org/wiki/Fiere_della_Champagne"
+    },
+    "jawiki": {
+      "site": "jawiki",
+      "title": "シャンパーニュの大市",
+      "badges": [],
+      "url": "https://ja.wikipedia.org/wiki/%E3%82%B7%E3%83%A3%E3%83%B3%E3%83%91%E3%83%BC%E3%83%8B%E3%83%A5%E3%81%AE%E5%A4%A7%E5%B8%82"
+    },
+    "nlwiki": {
+      "site": "nlwiki",
+      "title": "Jaarmarkten van Champagne",
+      "badges": [],
+      "url": "https://nl.wikipedia.org/wiki/Jaarmarkten_van_Champagne"
+    },
+    "plwiki": {
+      "site": "plwiki",
+      "title": "Jarmarki szampańskie",
+      "badges": [],
+      "url": "https://pl.wikipedia.org/wiki/Jarmarki_szampa%C5%84skie"
+    },
+    "ptwiki": {
+      "site": "ptwiki",
+      "title": "Feiras de Champagne",
+      "badges": [],
+      "url": "https://pt.wikipedia.org/wiki/Feiras_de_Champagne"
+    },
+    "ruwiki": {
+      "site": "ruwiki",
+      "title": "Шампанские ярмарки",
+      "badges": [],
+      "url": "https://ru.wikipedia.org/wiki/%D0%A8%D0%B0%D0%BC%D0%BF%D0%B0%D0%BD%D1%81%D0%BA%D0%B8%D0%B5_%D1%8F%D1%80%D0%BC%D0%B0%D1%80%D0%BA%D0%B8"
+    },
+    "ukwiki": {
+      "site": "ukwiki",
+      "title": "Шампанські ярмарки",
+      "badges": [],
+      "url": "https://uk.wikipedia.org/wiki/%D0%A8%D0%B0%D0%BC%D0%BF%D0%B0%D0%BD%D1%81%D1%8C%D0%BA%D1%96_%D1%8F%D1%80%D0%BC%D0%B0%D1%80%D0%BA%D0%B8"
+    },
+    "zhwiki": {
+      "site": "zhwiki",
+      "title": "香槟集市",
+      "badges": [],
+      "url": "https://zh.wikipedia.org/wiki/%E9%A6%99%E6%A7%9F%E9%9B%86%E5%B8%82"
+    }
+  }
+}

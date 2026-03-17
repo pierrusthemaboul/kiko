@@ -1,0 +1,619 @@
+{
+  "saved_at": "2026-03-07T15:43:31.244Z",
+  "value": {
+    "pageid": 1590924,
+    "ns": 0,
+    "title": "Q1657253",
+    "lastrevid": 2443852271,
+    "modified": "2025-12-18T19:47:32Z",
+    "type": "item",
+    "id": "Q1657253",
+    "labels": {
+      "id": {
+        "language": "id",
+        "value": "Deklarasi Kemerdekaan Chili"
+      },
+      "fr": {
+        "language": "fr",
+        "value": "Déclaration d'indépendance du Chili"
+      },
+      "en": {
+        "language": "en",
+        "value": "Chilean Declaration of Independence"
+      },
+      "es": {
+        "language": "es",
+        "value": "Acta de Independencia de Chile"
+      },
+      "da": {
+        "language": "da",
+        "value": "Chiles uafhængighedserklæring"
+      },
+      "zh": {
+        "language": "zh",
+        "value": "智利獨立宣言"
+      },
+      "ja": {
+        "language": "ja",
+        "value": "チリ独立宣言"
+      },
+      "cs": {
+        "language": "cs",
+        "value": "Deklarace nezávislosti Chile"
+      },
+      "ca": {
+        "language": "ca",
+        "value": "Acta d'Independència de Xile"
+      },
+      "ast": {
+        "language": "ast",
+        "value": "Acta d'Independencia de Chile"
+      }
+    },
+    "descriptions": {
+      "es": {
+        "language": "es",
+        "value": "Proclama de independencia de la República de Chile"
+      },
+      "cs": {
+        "language": "cs",
+        "value": "dokument vyhlašující nezávislost Chile na Španělsku"
+      },
+      "en": {
+        "language": "en",
+        "value": "1818 Proclamation"
+      },
+      "id": {
+        "language": "id",
+        "value": "proklamasi tahun 1818"
+      }
+    },
+    "aliases": {
+      "es": [
+        {
+          "language": "es",
+          "value": "Proclamacion de la Independencia de Chile"
+        },
+        {
+          "language": "es",
+          "value": "Jura de la Independencia de Chile"
+        },
+        {
+          "language": "es",
+          "value": "Declaracion de la Independencia de Chile"
+        },
+        {
+          "language": "es",
+          "value": "Proclamación de la Independencia de Chile"
+        },
+        {
+          "language": "es",
+          "value": "Declaracion de Independencia de Chile"
+        },
+        {
+          "language": "es",
+          "value": "Declaración de la Independencia de Chile"
+        },
+        {
+          "language": "es",
+          "value": "Declaración de Independencia de Chile"
+        },
+        {
+          "language": "es",
+          "value": "Declaración de la independencia de Chile"
+        },
+        {
+          "language": "es",
+          "value": "Declaracion de la independencia de Chile"
+        }
+      ]
+    },
+    "claims": {
+      "P646": [
+        {
+          "mainsnak": {
+            "snaktype": "value",
+            "property": "P646",
+            "hash": "91b0b47c0a96901f6fa5ad303bcdba0553dcae99",
+            "datavalue": {
+              "value": "/m/04y9v4p",
+              "type": "string"
+            },
+            "datatype": "external-id"
+          },
+          "type": "statement",
+          "id": "Q1657253$96255D6F-E716-45BA-989A-A77316265C14",
+          "rank": "normal",
+          "references": [
+            {
+              "hash": "2b00cb481cddcac7623114367489b5c194901c4a",
+              "snaks": {
+                "P248": [
+                  {
+                    "snaktype": "value",
+                    "property": "P248",
+                    "hash": "a94b740202b097dd33355e0e6c00e54b9395e5e0",
+                    "datavalue": {
+                      "value": {
+                        "entity-type": "item",
+                        "numeric-id": 15241312,
+                        "id": "Q15241312"
+                      },
+                      "type": "wikibase-entityid"
+                    },
+                    "datatype": "wikibase-item"
+                  }
+                ],
+                "P577": [
+                  {
+                    "snaktype": "value",
+                    "property": "P577",
+                    "hash": "fde79ecb015112d2f29229ccc1ec514ed3e71fa2",
+                    "datavalue": {
+                      "value": {
+                        "time": "+2013-10-28T00:00:00Z",
+                        "timezone": 0,
+                        "before": 0,
+                        "after": 0,
+                        "precision": 11,
+                        "calendarmodel": "http://www.wikidata.org/entity/Q1985727"
+                      },
+                      "type": "time"
+                    },
+                    "datatype": "time"
+                  }
+                ]
+              },
+              "snaks-order": [
+                "P248",
+                "P577"
+              ]
+            }
+          ]
+        }
+      ],
+      "P18": [
+        {
+          "mainsnak": {
+            "snaktype": "value",
+            "property": "P18",
+            "hash": "98fefe54c578b884223c3d50726674a378b10ff1",
+            "datavalue": {
+              "value": "Proclamacion de la independencia-congreso01.jpg",
+              "type": "string"
+            },
+            "datatype": "commonsMedia"
+          },
+          "type": "statement",
+          "qualifiers": {
+            "P2096": [
+              {
+                "snaktype": "value",
+                "property": "P2096",
+                "hash": "51ea8dad5408b0e5d11b930f8a22d615b7ad9535",
+                "datavalue": {
+                  "value": {
+                    "text": "Proclamació de la Independència de Xile manuscrita, exhibida al Congrés Nacional de Xile",
+                    "language": "ca"
+                  },
+                  "type": "monolingualtext"
+                },
+                "datatype": "monolingualtext"
+              }
+            ]
+          },
+          "qualifiers-order": [
+            "P2096"
+          ],
+          "id": "Q1657253$48468B1D-F2C2-409A-822E-B400BBAF2FBB",
+          "rank": "normal"
+        }
+      ],
+      "P577": [
+        {
+          "mainsnak": {
+            "snaktype": "value",
+            "property": "P577",
+            "hash": "05052c83cd06f3abc38eea620ad9b6532344dbd7",
+            "datavalue": {
+              "value": {
+                "time": "+1818-01-01T00:00:00Z",
+                "timezone": 0,
+                "before": 0,
+                "after": 0,
+                "precision": 11,
+                "calendarmodel": "http://www.wikidata.org/entity/Q1985727"
+              },
+              "type": "time"
+            },
+            "datatype": "time"
+          },
+          "type": "statement",
+          "qualifiers": {
+            "P7452": [
+              {
+                "snaktype": "value",
+                "property": "P7452",
+                "hash": "f9f842b41f249e5504d48025c7ad6d7b5bfc7496",
+                "datavalue": {
+                  "value": {
+                    "entity-type": "item",
+                    "numeric-id": 71536040,
+                    "id": "Q71536040"
+                  },
+                  "type": "wikibase-entityid"
+                },
+                "datatype": "wikibase-item"
+              }
+            ]
+          },
+          "qualifiers-order": [
+            "P7452"
+          ],
+          "id": "Q1657253$1b9a4a9d-49b3-ca44-b1b1-6222515dda21",
+          "rank": "preferred"
+        },
+        {
+          "mainsnak": {
+            "snaktype": "value",
+            "property": "P577",
+            "hash": "2499f23389d07c58b92f6737e17f518cb530d705",
+            "datavalue": {
+              "value": {
+                "time": "+1818-00-00T00:00:00Z",
+                "timezone": 0,
+                "before": 0,
+                "after": 0,
+                "precision": 9,
+                "calendarmodel": "http://www.wikidata.org/entity/Q1985727"
+              },
+              "type": "time"
+            },
+            "datatype": "time"
+          },
+          "type": "statement",
+          "id": "Q1657253$22831db1-4553-4d28-a8da-e46173b92c1d",
+          "rank": "normal"
+        }
+      ],
+      "P31": [
+        {
+          "mainsnak": {
+            "snaktype": "value",
+            "property": "P31",
+            "hash": "731db8df663d5ce7d6a29593340bc552839ada07",
+            "datavalue": {
+              "value": {
+                "entity-type": "item",
+                "numeric-id": 1464916,
+                "id": "Q1464916"
+              },
+              "type": "wikibase-entityid"
+            },
+            "datatype": "wikibase-item"
+          },
+          "type": "statement",
+          "id": "Q1657253$40e7c189-4ff4-8543-48d4-52ccc9a254a7",
+          "rank": "normal"
+        },
+        {
+          "mainsnak": {
+            "snaktype": "value",
+            "property": "P31",
+            "hash": "7d261aaf92dd9be13f2bd79d7024b98d449f1f89",
+            "datavalue": {
+              "value": {
+                "entity-type": "item",
+                "numeric-id": 3331189,
+                "id": "Q3331189"
+              },
+              "type": "wikibase-entityid"
+            },
+            "datatype": "wikibase-item"
+          },
+          "type": "statement",
+          "id": "Q1657253$aabb60cd-f94b-4d08-b947-956ccd409acb",
+          "rank": "normal"
+        }
+      ],
+      "P6216": [
+        {
+          "mainsnak": {
+            "snaktype": "value",
+            "property": "P6216",
+            "hash": "f69dc45ce9c48664155022498b34100d801bd549",
+            "datavalue": {
+              "value": {
+                "entity-type": "item",
+                "numeric-id": 19652,
+                "id": "Q19652"
+              },
+              "type": "wikibase-entityid"
+            },
+            "datatype": "wikibase-item"
+          },
+          "type": "statement",
+          "qualifiers": {
+            "P1001": [
+              {
+                "snaktype": "value",
+                "property": "P1001",
+                "hash": "fd03a46bac885aad8c96834e86183c078494dce6",
+                "datavalue": {
+                  "value": {
+                    "entity-type": "item",
+                    "numeric-id": 30,
+                    "id": "Q30"
+                  },
+                  "type": "wikibase-entityid"
+                },
+                "datatype": "wikibase-item"
+              }
+            ],
+            "P459": [
+              {
+                "snaktype": "value",
+                "property": "P459",
+                "hash": "e8a997f8c7723e2bc8daa542a8b44577d4b3b7eb",
+                "datavalue": {
+                  "value": {
+                    "entity-type": "item",
+                    "numeric-id": 47246828,
+                    "id": "Q47246828"
+                  },
+                  "type": "wikibase-entityid"
+                },
+                "datatype": "wikibase-item"
+              }
+            ]
+          },
+          "qualifiers-order": [
+            "P1001",
+            "P459"
+          ],
+          "id": "Q1657253$C55B70BC-56F1-4EF8-9A73-DC4A6D4B9DF8",
+          "rank": "normal"
+        }
+      ],
+      "P291": [
+        {
+          "mainsnak": {
+            "snaktype": "value",
+            "property": "P291",
+            "hash": "dada64470ef99c6e6087422cc8587fef47bd7832",
+            "datavalue": {
+              "value": {
+                "entity-type": "item",
+                "numeric-id": 1880,
+                "id": "Q1880"
+              },
+              "type": "wikibase-entityid"
+            },
+            "datatype": "wikibase-item"
+          },
+          "type": "statement",
+          "id": "Q1657253$8d3254e0-49b7-c0dd-ce25-7a7d8953f49c",
+          "rank": "normal"
+        }
+      ],
+      "P1957": [
+        {
+          "mainsnak": {
+            "snaktype": "value",
+            "property": "P1957",
+            "hash": "77bba6e0173e7d415a30b5382a0e260fb15f01ec",
+            "datavalue": {
+              "value": "https://es.wikisource.org/wiki/Índice:Proclamacion_de_la_independencia-firmada01.jpg",
+              "type": "string"
+            },
+            "datatype": "url"
+          },
+          "type": "statement",
+          "id": "Q1657253$2127B766-3EF8-4F98-B86A-5D612F6EB576",
+          "rank": "normal"
+        }
+      ],
+      "P1476": [
+        {
+          "mainsnak": {
+            "snaktype": "value",
+            "property": "P1476",
+            "hash": "18f67ef6e757e5ddfbdbb0132292e21094350794",
+            "datavalue": {
+              "value": {
+                "text": "Declaración de la independencia de Chile",
+                "language": "es"
+              },
+              "type": "monolingualtext"
+            },
+            "datatype": "monolingualtext"
+          },
+          "type": "statement",
+          "id": "Q1657253$eb23da08-0a29-4af1-b978-bfaf6dd1d459",
+          "rank": "normal"
+        }
+      ],
+      "P50": [
+        {
+          "mainsnak": {
+            "snaktype": "value",
+            "property": "P50",
+            "hash": "fcbe72bc82b0289aa0ad37a839a464310cde9bf5",
+            "datavalue": {
+              "value": {
+                "entity-type": "item",
+                "numeric-id": 10499987,
+                "id": "Q10499987"
+              },
+              "type": "wikibase-entityid"
+            },
+            "datatype": "wikibase-item"
+          },
+          "type": "statement",
+          "id": "Q1657253$ccde90a6-89ba-4257-975b-0e0e9610971e",
+          "rank": "normal",
+          "references": [
+            {
+              "hash": "d55541791c38c7d7c524be2dad3d5bf6f97ac094",
+              "snaks": {
+                "P5997": [
+                  {
+                    "snaktype": "value",
+                    "property": "P5997",
+                    "hash": "7cb71e7a86c50b577db051d85da465d90ebfd604",
+                    "datavalue": {
+                      "value": "Chile",
+                      "type": "string"
+                    },
+                    "datatype": "string"
+                  }
+                ]
+              },
+              "snaks-order": [
+                "P5997"
+              ]
+            }
+          ]
+        }
+      ],
+      "P872": [
+        {
+          "mainsnak": {
+            "snaktype": "somevalue",
+            "property": "P872",
+            "hash": "c2ffa2d4fa3198a9874dbcbae48e7241de13a708",
+            "datatype": "wikibase-item"
+          },
+          "type": "statement",
+          "id": "Q1657253$015836d6-84d1-4433-976e-95f2185a38d3",
+          "rank": "normal",
+          "references": [
+            {
+              "hash": "3c76d1505e4a38457580d0cfa680e645c3f6618a",
+              "snaks": {
+                "P5997": [
+                  {
+                    "snaktype": "value",
+                    "property": "P5997",
+                    "hash": "8ab08f13a29b1fb21a9f0c500ceff8fca2ae55f7",
+                    "datavalue": {
+                      "value": "Biblioteca del Congreso Nacional de Chile",
+                      "type": "string"
+                    },
+                    "datatype": "string"
+                  }
+                ]
+              },
+              "snaks-order": [
+                "P5997"
+              ]
+            }
+          ]
+        }
+      ],
+      "P996": [
+        {
+          "mainsnak": {
+            "snaktype": "value",
+            "property": "P996",
+            "hash": "b43a2a630678f85664883e97fb79311c66c1abfd",
+            "datavalue": {
+              "value": "Proclamacion de la independencia-firmada01.jpg",
+              "type": "string"
+            },
+            "datatype": "commonsMedia"
+          },
+          "type": "statement",
+          "qualifiers": {
+            "P4714": [
+              {
+                "snaktype": "value",
+                "property": "P4714",
+                "hash": "0542f77967dc3a5832878f5aafaf991ed1b8ee0c",
+                "datavalue": {
+                  "value": {
+                    "amount": "+1",
+                    "unit": "1"
+                  },
+                  "type": "quantity"
+                },
+                "datatype": "quantity"
+              }
+            ]
+          },
+          "qualifiers-order": [
+            "P4714"
+          ],
+          "id": "Q1657253$348241c7-8120-492b-a754-e83374f5663a",
+          "rank": "normal"
+        }
+      ]
+    },
+    "sitelinks": {
+      "astwiki": {
+        "site": "astwiki",
+        "title": "Acta d'Independencia de Chile",
+        "badges": [],
+        "url": "https://ast.wikipedia.org/wiki/Acta_d%27Independencia_de_Chile"
+      },
+      "cawiki": {
+        "site": "cawiki",
+        "title": "Acta d'Independència de Xile",
+        "badges": [],
+        "url": "https://ca.wikipedia.org/wiki/Acta_d%27Independ%C3%A8ncia_de_Xile"
+      },
+      "cswiki": {
+        "site": "cswiki",
+        "title": "Deklarace nezávislosti Chile",
+        "badges": [],
+        "url": "https://cs.wikipedia.org/wiki/Deklarace_nez%C3%A1vislosti_Chile"
+      },
+      "dawiki": {
+        "site": "dawiki",
+        "title": "Chiles uafhængighedserklæring",
+        "badges": [],
+        "url": "https://da.wikipedia.org/wiki/Chiles_uafh%C3%A6ngighedserkl%C3%A6ring"
+      },
+      "enwiki": {
+        "site": "enwiki",
+        "title": "Chilean Declaration of Independence",
+        "badges": [],
+        "url": "https://en.wikipedia.org/wiki/Chilean_Declaration_of_Independence"
+      },
+      "eswiki": {
+        "site": "eswiki",
+        "title": "Acta de Independencia de Chile",
+        "badges": [
+          "Q17437798"
+        ],
+        "url": "https://es.wikipedia.org/wiki/Acta_de_Independencia_de_Chile"
+      },
+      "eswikisource": {
+        "site": "eswikisource",
+        "title": "Declaración de la independencia de Chile",
+        "badges": [
+          "Q20748093"
+        ],
+        "url": "https://es.wikisource.org/wiki/Declaraci%C3%B3n_de_la_independencia_de_Chile"
+      },
+      "frwiki": {
+        "site": "frwiki",
+        "title": "Déclaration d'indépendance du Chili",
+        "badges": [],
+        "url": "https://fr.wikipedia.org/wiki/D%C3%A9claration_d%27ind%C3%A9pendance_du_Chili"
+      },
+      "idwiki": {
+        "site": "idwiki",
+        "title": "Deklarasi Kemerdekaan Chili",
+        "badges": [],
+        "url": "https://id.wikipedia.org/wiki/Deklarasi_Kemerdekaan_Chili"
+      },
+      "zhwiki": {
+        "site": "zhwiki",
+        "title": "智利獨立宣言",
+        "badges": [],
+        "url": "https://zh.wikipedia.org/wiki/%E6%99%BA%E5%88%A9%E7%8D%A8%E7%AB%8B%E5%AE%A3%E8%A8%80"
+      }
+    }
+  }
+}

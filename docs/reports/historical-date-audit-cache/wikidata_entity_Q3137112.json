@@ -1,0 +1,224 @@
+{
+  "saved_at": "2026-03-07T16:30:08.864Z",
+  "value": {
+    "pageid": 2997169,
+    "ns": 0,
+    "title": "Q3137112",
+    "lastrevid": 2302879836,
+    "modified": "2025-01-27T00:49:26Z",
+    "type": "item",
+    "id": "Q3137112",
+    "labels": {
+      "fr": {
+        "language": "fr",
+        "value": "histoire de la Nouvelle-Calédonie"
+      },
+      "it": {
+        "language": "it",
+        "value": "storia della Nuova Caledonia"
+      },
+      "es": {
+        "language": "es",
+        "value": "historia de Nueva Caledonia"
+      },
+      "ru": {
+        "language": "ru",
+        "value": "история Новой Каледонии"
+      },
+      "uk": {
+        "language": "uk",
+        "value": "історія островів Нової Каледонії"
+      },
+      "en": {
+        "language": "en",
+        "value": "history of New Caledonia"
+      },
+      "eo": {
+        "language": "eo",
+        "value": "historio de Nov-Kaledonio"
+      },
+      "az": {
+        "language": "az",
+        "value": "Yeni Kaledoniya tarixi"
+      }
+    },
+    "descriptions": {
+      "es": {
+        "language": "es",
+        "value": "narración y estudio de los hechos allí acontecidos o que afectan a ese país"
+      }
+    },
+    "aliases": {
+      "fr": [
+        {
+          "language": "fr",
+          "value": "Histoire de la nouvelle-calédonie"
+        },
+        {
+          "language": "fr",
+          "value": "Histoire De La Nouvelle-Calédonie"
+        },
+        {
+          "language": "fr",
+          "value": "Histoire de la Nouvelle-Caledonie"
+        }
+      ],
+      "es": [
+        {
+          "language": "es",
+          "value": "Historia de nueva caledonia"
+        }
+      ]
+    },
+    "claims": {
+      "P910": [
+        {
+          "mainsnak": {
+            "snaktype": "value",
+            "property": "P910",
+            "hash": "4fdda64079e2505b87efbcda63dbdfbab15ea82f",
+            "datavalue": {
+              "value": {
+                "entity-type": "item",
+                "numeric-id": 8518814,
+                "id": "Q8518814"
+              },
+              "type": "wikibase-entityid"
+            },
+            "datatype": "wikibase-item"
+          },
+          "type": "statement",
+          "id": "Q3137112$51C2A40D-0C2D-44C6-B6C3-79DD7044DDB7",
+          "rank": "normal",
+          "references": [
+            {
+              "hash": "c456dc5cd2117249948c288206ff3f8b1bf574f0",
+              "snaks": {
+                "P143": [
+                  {
+                    "snaktype": "value",
+                    "property": "P143",
+                    "hash": "e17507043402fe54ae6c4d65cc51f46cec987de9",
+                    "datavalue": {
+                      "value": {
+                        "entity-type": "item",
+                        "numeric-id": 8449,
+                        "id": "Q8449"
+                      },
+                      "type": "wikibase-entityid"
+                    },
+                    "datatype": "wikibase-item"
+                  }
+                ]
+              },
+              "snaks-order": [
+                "P143"
+              ]
+            }
+          ]
+        }
+      ],
+      "P373": [
+        {
+          "mainsnak": {
+            "snaktype": "value",
+            "property": "P373",
+            "hash": "c80d37e8957b852233f90c6a1664d81f3380b6a8",
+            "datavalue": {
+              "value": "History of New Caledonia",
+              "type": "string"
+            },
+            "datatype": "string"
+          },
+          "type": "statement",
+          "id": "Q3137112$60ABB45C-836F-4C0C-A975-90AF53CF867B",
+          "rank": "normal"
+        }
+      ],
+      "P31": [
+        {
+          "mainsnak": {
+            "snaktype": "value",
+            "property": "P31",
+            "hash": "7ad5c7929af39fc2ff8afed55f1192f80e71d936",
+            "datavalue": {
+              "value": {
+                "entity-type": "item",
+                "numeric-id": 17524420,
+                "id": "Q17524420"
+              },
+              "type": "wikibase-entityid"
+            },
+            "datatype": "wikibase-item"
+          },
+          "type": "statement",
+          "id": "Q3137112$F68FCD0A-0B3F-459D-8DE9-F765590061C2",
+          "rank": "normal"
+        }
+      ],
+      "P18": [
+        {
+          "mainsnak": {
+            "snaktype": "value",
+            "property": "P18",
+            "hash": "c7d15ec4a0e01eb21a032f3c8f94e4cb774a614a",
+            "datavalue": {
+              "value": "King Jacques and his Queen.jpg",
+              "type": "string"
+            },
+            "datatype": "commonsMedia"
+          },
+          "type": "statement",
+          "id": "Q3137112$6f7b1551-40bc-3012-1c8f-e0305e3b3880",
+          "rank": "normal"
+        }
+      ]
+    },
+    "sitelinks": {
+      "azwiki": {
+        "site": "azwiki",
+        "title": "Yeni Kaledoniya tarixi",
+        "badges": [],
+        "url": "https://az.wikipedia.org/wiki/Yeni_Kaledoniya_tarixi"
+      },
+      "enwiki": {
+        "site": "enwiki",
+        "title": "History of New Caledonia",
+        "badges": [
+          "Q70894304"
+        ],
+        "url": "https://en.wikipedia.org/wiki/History_of_New_Caledonia"
+      },
+      "eswiki": {
+        "site": "eswiki",
+        "title": "Historia de Nueva Caledonia",
+        "badges": [],
+        "url": "https://es.wikipedia.org/wiki/Historia_de_Nueva_Caledonia"
+      },
+      "frwiki": {
+        "site": "frwiki",
+        "title": "Histoire de la Nouvelle-Calédonie",
+        "badges": [],
+        "url": "https://fr.wikipedia.org/wiki/Histoire_de_la_Nouvelle-Cal%C3%A9donie"
+      },
+      "itwiki": {
+        "site": "itwiki",
+        "title": "Storia della Nuova Caledonia",
+        "badges": [],
+        "url": "https://it.wikipedia.org/wiki/Storia_della_Nuova_Caledonia"
+      },
+      "ruwiki": {
+        "site": "ruwiki",
+        "title": "История Новой Каледонии",
+        "badges": [],
+        "url": "https://ru.wikipedia.org/wiki/%D0%98%D1%81%D1%82%D0%BE%D1%80%D0%B8%D1%8F_%D0%9D%D0%BE%D0%B2%D0%BE%D0%B9_%D0%9A%D0%B0%D0%BB%D0%B5%D0%B4%D0%BE%D0%BD%D0%B8%D0%B8"
+      },
+      "ukwiki": {
+        "site": "ukwiki",
+        "title": "Історія Нової Каледонії",
+        "badges": [],
+        "url": "https://uk.wikipedia.org/wiki/%D0%86%D1%81%D1%82%D0%BE%D1%80%D1%96%D1%8F_%D0%9D%D0%BE%D0%B2%D0%BE%D1%97_%D0%9A%D0%B0%D0%BB%D0%B5%D0%B4%D0%BE%D0%BD%D1%96%D1%97"
+      }
+    }
+  }
+}

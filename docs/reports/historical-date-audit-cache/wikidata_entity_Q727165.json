@@ -1,0 +1,1023 @@
+{
+  "saved_at": "2026-03-07T15:41:11.429Z",
+  "value": {
+    "pageid": 683617,
+    "ns": 0,
+    "title": "Q727165",
+    "lastrevid": 2416166134,
+    "modified": "2025-10-14T04:32:56Z",
+    "type": "item",
+    "id": "Q727165",
+    "labels": {
+      "pl": {
+        "language": "pl",
+        "value": "Robert I z Wormacji"
+      },
+      "fr": {
+        "language": "fr",
+        "value": "Robert Ier de Hesbaye"
+      },
+      "nl": {
+        "language": "nl",
+        "value": "Robert I van de Haspengouw"
+      },
+      "en": {
+        "language": "en",
+        "value": "Robert I, Count of Hesbaye"
+      },
+      "ca": {
+        "language": "ca",
+        "value": "Robert I d'Hesbaye"
+      },
+      "pt": {
+        "language": "pt",
+        "value": "Roberto I de Hesbaye"
+      },
+      "de": {
+        "language": "de",
+        "value": "Robert I."
+      },
+      "id": {
+        "language": "id",
+        "value": "Robert I dari Hesbaye"
+      },
+      "ar": {
+        "language": "ar",
+        "value": "روبرت الأول، دوق نيوستريا"
+      },
+      "bg": {
+        "language": "bg",
+        "value": "Роберт I"
+      },
+      "zh-hant": {
+        "language": "zh-hant",
+        "value": "埃斯拜伯爵羅貝爾一世"
+      },
+      "zh-cn": {
+        "language": "zh-cn",
+        "value": "埃斯拜伯爵罗贝尔一世"
+      },
+      "he": {
+        "language": "he",
+        "value": "רובר הראשון, רוזן אסביי"
+      },
+      "el": {
+        "language": "el",
+        "value": "Ροβέρτος Α΄ του Εσμπαί"
+      },
+      "ru": {
+        "language": "ru",
+        "value": "Роберт I де Эсбе"
+      },
+      "zh-hans": {
+        "language": "zh-hans",
+        "value": "埃斯拜伯爵罗贝尔一世"
+      },
+      "es": {
+        "language": "es",
+        "value": "Robert I, Count of Hesbaye"
+      },
+      "it": {
+        "language": "it",
+        "value": "Roberto I di Hesbaye"
+      },
+      "zh": {
+        "language": "zh",
+        "value": "埃斯拜伯爵罗贝尔一世"
+      },
+      "sq": {
+        "language": "sq",
+        "value": "Robert I, Count of Hesbaye"
+      },
+      "pt-br": {
+        "language": "pt-br",
+        "value": "Roberto I de Hesbaye"
+      },
+      "cy": {
+        "language": "cy",
+        "value": "Robert I"
+      }
+    },
+    "descriptions": {
+      "de": {
+        "language": "de",
+        "value": "Graf im Worms- und Oberrheingau"
+      },
+      "ru": {
+        "language": "ru",
+        "value": "граф Эсбе"
+      },
+      "nl": {
+        "language": "nl",
+        "value": "diplomaat"
+      },
+      "en": {
+        "language": "en",
+        "value": "Peerage person ID=672512"
+      },
+      "cy": {
+        "language": "cy",
+        "value": "diplomydd (697-764)"
+      }
+    },
+    "aliases": {
+      "en": [
+        {
+          "language": "en",
+          "value": "Robert I."
+        },
+        {
+          "language": "en",
+          "value": "Robert von Hesbaye"
+        }
+      ],
+      "fr": [
+        {
+          "language": "fr",
+          "value": "Robert I."
+        }
+      ],
+      "nl": [
+        {
+          "language": "nl",
+          "value": "Robert I."
+        },
+        {
+          "language": "nl",
+          "value": "Robert von Hesbaye"
+        }
+      ]
+    },
+    "claims": {
+      "P31": [
+        {
+          "mainsnak": {
+            "snaktype": "value",
+            "property": "P31",
+            "hash": "ad7d38a03cdd40cdc373de0dc4e7b7fcbccb31d9",
+            "datavalue": {
+              "value": {
+                "entity-type": "item",
+                "numeric-id": 5,
+                "id": "Q5"
+              },
+              "type": "wikibase-entityid"
+            },
+            "datatype": "wikibase-item"
+          },
+          "type": "statement",
+          "id": "Q727165$1E2FD81C-A35B-4990-B92B-B1D571C6D58C",
+          "rank": "normal"
+        }
+      ],
+      "P21": [
+        {
+          "mainsnak": {
+            "snaktype": "value",
+            "property": "P21",
+            "hash": "85ad4b1c7348f7a5aac521135040d74e91fb5939",
+            "datavalue": {
+              "value": {
+                "entity-type": "item",
+                "numeric-id": 6581097,
+                "id": "Q6581097"
+              },
+              "type": "wikibase-entityid"
+            },
+            "datatype": "wikibase-item"
+          },
+          "type": "statement",
+          "id": "Q727165$234EE9F1-D6BE-458A-B397-E85B1CC77E2C",
+          "rank": "normal",
+          "references": [
+            {
+              "hash": "3913844e06e055e8cd81608f22bad0e604d89d2d",
+              "snaks": {
+                "P248": [
+                  {
+                    "snaktype": "value",
+                    "property": "P248",
+                    "hash": "2cb827dc711b8ec4594187170c0bce6d67f54fbe",
+                    "datavalue": {
+                      "value": {
+                        "entity-type": "item",
+                        "numeric-id": 21401824,
+                        "id": "Q21401824"
+                      },
+                      "type": "wikibase-entityid"
+                    },
+                    "datatype": "wikibase-item"
+                  }
+                ]
+              },
+              "snaks-order": [
+                "P248"
+              ]
+            }
+          ]
+        }
+      ],
+      "P569": [
+        {
+          "mainsnak": {
+            "snaktype": "value",
+            "property": "P569",
+            "hash": "bb7b8a4ffe1e9a286b84a20eebf265f86e89d2bb",
+            "datavalue": {
+              "value": {
+                "time": "+0697-01-01T00:00:00Z",
+                "timezone": 0,
+                "before": 0,
+                "after": 0,
+                "precision": 9,
+                "calendarmodel": "http://www.wikidata.org/entity/Q1985727"
+              },
+              "type": "time"
+            },
+            "datatype": "time"
+          },
+          "type": "statement",
+          "qualifiers": {
+            "P31": [
+              {
+                "snaktype": "value",
+                "property": "P31",
+                "hash": "d5ac6d02e7a8948b72184d9e39cf10acbc5e61ed",
+                "datavalue": {
+                  "value": {
+                    "entity-type": "item",
+                    "numeric-id": 26961029,
+                    "id": "Q26961029"
+                  },
+                  "type": "wikibase-entityid"
+                },
+                "datatype": "wikibase-item"
+              }
+            ]
+          },
+          "qualifiers-order": [
+            "P31"
+          ],
+          "id": "Q727165$AFA17484-68A8-45C7-BA5D-B4820CE61319",
+          "rank": "normal"
+        }
+      ],
+      "P570": [
+        {
+          "mainsnak": {
+            "snaktype": "value",
+            "property": "P570",
+            "hash": "4c8d9f400494ca8fe954a00653a5794a819214d7",
+            "datavalue": {
+              "value": {
+                "time": "+0764-01-01T00:00:00Z",
+                "timezone": 0,
+                "before": 0,
+                "after": 0,
+                "precision": 9,
+                "calendarmodel": "http://www.wikidata.org/entity/Q1985727"
+              },
+              "type": "time"
+            },
+            "datatype": "time"
+          },
+          "type": "statement",
+          "qualifiers": {
+            "P31": [
+              {
+                "snaktype": "value",
+                "property": "P31",
+                "hash": "d5ac6d02e7a8948b72184d9e39cf10acbc5e61ed",
+                "datavalue": {
+                  "value": {
+                    "entity-type": "item",
+                    "numeric-id": 26961029,
+                    "id": "Q26961029"
+                  },
+                  "type": "wikibase-entityid"
+                },
+                "datatype": "wikibase-item"
+              }
+            ]
+          },
+          "qualifiers-order": [
+            "P31"
+          ],
+          "id": "Q727165$E6F3E6F8-E8A3-42D8-8C8A-AF94135F4C47",
+          "rank": "normal"
+        }
+      ],
+      "P735": [
+        {
+          "mainsnak": {
+            "snaktype": "value",
+            "property": "P735",
+            "hash": "90b80308e52facb9a97c030de03f09c0537cbe29",
+            "datavalue": {
+              "value": {
+                "entity-type": "item",
+                "numeric-id": 4927937,
+                "id": "Q4927937"
+              },
+              "type": "wikibase-entityid"
+            },
+            "datatype": "wikibase-item"
+          },
+          "type": "statement",
+          "id": "Q727165$BF8D0191-A685-4DA7-8BEE-8B5F5297BC60",
+          "rank": "normal"
+        }
+      ],
+      "P40": [
+        {
+          "mainsnak": {
+            "snaktype": "value",
+            "property": "P40",
+            "hash": "56a1af0979f19c00a143908ea5dec27b4c490dd9",
+            "datavalue": {
+              "value": {
+                "entity-type": "item",
+                "numeric-id": 9363052,
+                "id": "Q9363052"
+              },
+              "type": "wikibase-entityid"
+            },
+            "datatype": "wikibase-item"
+          },
+          "type": "statement",
+          "id": "Q727165$c2ac4f75-4be5-24ba-b1bc-48cd72c131f3",
+          "rank": "normal"
+        },
+        {
+          "mainsnak": {
+            "snaktype": "value",
+            "property": "P40",
+            "hash": "afda9bb468b343e976c24267b8dfa0e6210f460f",
+            "datavalue": {
+              "value": {
+                "entity-type": "item",
+                "numeric-id": 706099,
+                "id": "Q706099"
+              },
+              "type": "wikibase-entityid"
+            },
+            "datatype": "wikibase-item"
+          },
+          "type": "statement",
+          "id": "Q727165$a3bded48-45f6-45de-617c-9eeb9d024625",
+          "rank": "normal"
+        },
+        {
+          "mainsnak": {
+            "snaktype": "value",
+            "property": "P40",
+            "hash": "dde2f4b849d0ad3506814513ad8552fb3d2656ea",
+            "datavalue": {
+              "value": {
+                "entity-type": "item",
+                "numeric-id": 1784665,
+                "id": "Q1784665"
+              },
+              "type": "wikibase-entityid"
+            },
+            "datatype": "wikibase-item"
+          },
+          "type": "statement",
+          "id": "Q727165$44E792BE-0F12-413D-BBEB-AAC9DD86BE40",
+          "rank": "normal",
+          "references": [
+            {
+              "hash": "3913844e06e055e8cd81608f22bad0e604d89d2d",
+              "snaks": {
+                "P248": [
+                  {
+                    "snaktype": "value",
+                    "property": "P248",
+                    "hash": "2cb827dc711b8ec4594187170c0bce6d67f54fbe",
+                    "datavalue": {
+                      "value": {
+                        "entity-type": "item",
+                        "numeric-id": 21401824,
+                        "id": "Q21401824"
+                      },
+                      "type": "wikibase-entityid"
+                    },
+                    "datatype": "wikibase-item"
+                  }
+                ]
+              },
+              "snaks-order": [
+                "P248"
+              ]
+            }
+          ]
+        }
+      ],
+      "P22": [
+        {
+          "mainsnak": {
+            "snaktype": "value",
+            "property": "P22",
+            "hash": "29d4f963253576bcfbbe5b62b4b5420a3736c470",
+            "datavalue": {
+              "value": {
+                "entity-type": "item",
+                "numeric-id": 16034275,
+                "id": "Q16034275"
+              },
+              "type": "wikibase-entityid"
+            },
+            "datatype": "wikibase-item"
+          },
+          "type": "statement",
+          "id": "Q727165$643a4d64-4eea-8422-2789-5ad8ce4fcf48",
+          "rank": "normal",
+          "references": [
+            {
+              "hash": "3913844e06e055e8cd81608f22bad0e604d89d2d",
+              "snaks": {
+                "P248": [
+                  {
+                    "snaktype": "value",
+                    "property": "P248",
+                    "hash": "2cb827dc711b8ec4594187170c0bce6d67f54fbe",
+                    "datavalue": {
+                      "value": {
+                        "entity-type": "item",
+                        "numeric-id": 21401824,
+                        "id": "Q21401824"
+                      },
+                      "type": "wikibase-entityid"
+                    },
+                    "datatype": "wikibase-item"
+                  }
+                ]
+              },
+              "snaks-order": [
+                "P248"
+              ]
+            }
+          ]
+        }
+      ],
+      "P4159": [
+        {
+          "mainsnak": {
+            "snaktype": "value",
+            "property": "P4159",
+            "hash": "f98934af3f70854ce932b915a809eb0ec80d1c63",
+            "datavalue": {
+              "value": "Robert_I_of_Hesbaye_(1)",
+              "type": "string"
+            },
+            "datatype": "external-id"
+          },
+          "type": "statement",
+          "id": "Q727165$E76E7681-CC72-49A4-9485-42253E5F38DB",
+          "rank": "normal"
+        }
+      ],
+      "P97": [
+        {
+          "mainsnak": {
+            "snaktype": "value",
+            "property": "P97",
+            "hash": "6550e8411e936e7da8c5c0bce627404acd7c107b",
+            "datavalue": {
+              "value": {
+                "entity-type": "item",
+                "numeric-id": 22932,
+                "id": "Q22932"
+              },
+              "type": "wikibase-entityid"
+            },
+            "datatype": "wikibase-item"
+          },
+          "type": "statement",
+          "id": "Q727165$e9bbd344-6cc4-4522-9535-7fe6f5b7ed81",
+          "rank": "normal",
+          "references": [
+            {
+              "hash": "c2846fbe52e9c6bfb9a0ef5a98e5f8ce126dca65",
+              "snaks": {
+                "P143": [
+                  {
+                    "snaktype": "value",
+                    "property": "P143",
+                    "hash": "3839383ba71d8062f3f4252832ea51984e4db85d",
+                    "datavalue": {
+                      "value": {
+                        "entity-type": "item",
+                        "numeric-id": 11913,
+                        "id": "Q11913"
+                      },
+                      "type": "wikibase-entityid"
+                    },
+                    "datatype": "wikibase-item"
+                  }
+                ]
+              },
+              "snaks-order": [
+                "P143"
+              ]
+            }
+          ]
+        }
+      ],
+      "P1185": [
+        {
+          "mainsnak": {
+            "snaktype": "value",
+            "property": "P1185",
+            "hash": "1dcc863bb4654c9704662eae65b8b97a7167d8b8",
+            "datavalue": {
+              "value": "28231",
+              "type": "string"
+            },
+            "datatype": "external-id"
+          },
+          "type": "statement",
+          "id": "Q727165$67274c1a-4c88-a750-f2b6-240d1e2ac1a0",
+          "rank": "normal"
+        },
+        {
+          "mainsnak": {
+            "snaktype": "value",
+            "property": "P1185",
+            "hash": "f246d5277ff04cef5856430c9419a886ece7089a",
+            "datavalue": {
+              "value": "221882",
+              "type": "string"
+            },
+            "datatype": "external-id"
+          },
+          "type": "statement",
+          "id": "Q727165$747bb08a-f283-4ed2-b0ca-bb17b0ccb840",
+          "rank": "normal"
+        }
+      ],
+      "P106": [
+        {
+          "mainsnak": {
+            "snaktype": "value",
+            "property": "P106",
+            "hash": "e7ea5ccd569016f7f6767a58519e933b8a01634e",
+            "datavalue": {
+              "value": {
+                "entity-type": "item",
+                "numeric-id": 193391,
+                "id": "Q193391"
+              },
+              "type": "wikibase-entityid"
+            },
+            "datatype": "wikibase-item"
+          },
+          "type": "statement",
+          "id": "Q727165$de7ca1b0-ed55-45ce-a84e-2622064749f3",
+          "rank": "normal",
+          "references": [
+            {
+              "hash": "9424852ca7d9d48269148c57acbefacca1899882",
+              "snaks": {
+                "P143": [
+                  {
+                    "snaktype": "value",
+                    "property": "P143",
+                    "hash": "b7f8bea3bb10c237323eb448dc4798948923bd5c",
+                    "datavalue": {
+                      "value": {
+                        "entity-type": "item",
+                        "numeric-id": 11921,
+                        "id": "Q11921"
+                      },
+                      "type": "wikibase-entityid"
+                    },
+                    "datatype": "wikibase-item"
+                  }
+                ]
+              },
+              "snaks-order": [
+                "P143"
+              ]
+            }
+          ]
+        }
+      ],
+      "P2671": [
+        {
+          "mainsnak": {
+            "snaktype": "value",
+            "property": "P2671",
+            "hash": "e67a37a91a1c3d33993d664e9c0a229b771f3513",
+            "datavalue": {
+              "value": "/g/1222c9n2",
+              "type": "string"
+            },
+            "datatype": "external-id"
+          },
+          "type": "statement",
+          "id": "Q727165$08EB7D96-EF52-4812-8C58-79CF433E2E69",
+          "rank": "normal"
+        }
+      ],
+      "P1819": [
+        {
+          "mainsnak": {
+            "snaktype": "value",
+            "property": "P1819",
+            "hash": "f84e6ebc75b40902c62116c0f3415e136e5ef558",
+            "datavalue": {
+              "value": "I00020378",
+              "type": "string"
+            },
+            "datatype": "external-id"
+          },
+          "type": "statement",
+          "id": "Q727165$45df633b-4481-619e-8932-7b60c1ffd3d5",
+          "rank": "normal"
+        }
+      ],
+      "P7929": [
+        {
+          "mainsnak": {
+            "snaktype": "value",
+            "property": "P7929",
+            "hash": "b7a6c56ce2f2988bd4becc4661f9a9a7ba6a5431",
+            "datavalue": {
+              "value": "p=robert;n=de hesbaye",
+              "type": "string"
+            },
+            "datatype": "external-id"
+          },
+          "type": "statement",
+          "id": "Q727165$afb7da22-4075-dec4-7f78-06684ede4a59",
+          "rank": "normal"
+        }
+      ],
+      "P4638": [
+        {
+          "mainsnak": {
+            "snaktype": "value",
+            "property": "P4638",
+            "hash": "23abdf6b1b6215b40d0df83c6fc5d043d36f1fe9",
+            "datavalue": {
+              "value": "p67252.htm#i672512",
+              "type": "string"
+            },
+            "datatype": "external-id"
+          },
+          "type": "statement",
+          "id": "Q727165$C2A96E7E-ECD0-4036-AAEF-8EF84A9D9E2C",
+          "rank": "normal"
+        }
+      ],
+      "P26": [
+        {
+          "mainsnak": {
+            "snaktype": "value",
+            "property": "P26",
+            "hash": "1e6aa62c26a2d04e64a4ab8e09293732bc46b0ca",
+            "datavalue": {
+              "value": {
+                "entity-type": "item",
+                "numeric-id": 76300854,
+                "id": "Q76300854"
+              },
+              "type": "wikibase-entityid"
+            },
+            "datatype": "wikibase-item"
+          },
+          "type": "statement",
+          "id": "Q727165$E06072B6-5BB3-43BA-8DE5-1BFB1A6E3811",
+          "rank": "normal",
+          "references": [
+            {
+              "hash": "f398fbac52ee5d26827f3630a490a30f7e27d5cd",
+              "snaks": {
+                "P4638": [
+                  {
+                    "snaktype": "value",
+                    "property": "P4638",
+                    "hash": "23abdf6b1b6215b40d0df83c6fc5d043d36f1fe9",
+                    "datavalue": {
+                      "value": "p67252.htm#i672512",
+                      "type": "string"
+                    },
+                    "datatype": "external-id"
+                  }
+                ],
+                "P813": [
+                  {
+                    "snaktype": "value",
+                    "property": "P813",
+                    "hash": "e2b008912fe31b38fa64992d832ce82b9cf32f6f",
+                    "datavalue": {
+                      "value": {
+                        "time": "+2020-08-07T00:00:00Z",
+                        "timezone": 0,
+                        "before": 0,
+                        "after": 0,
+                        "precision": 11,
+                        "calendarmodel": "http://www.wikidata.org/entity/Q1985727"
+                      },
+                      "type": "time"
+                    },
+                    "datatype": "time"
+                  }
+                ]
+              },
+              "snaks-order": [
+                "P4638",
+                "P813"
+              ]
+            }
+          ]
+        }
+      ],
+      "P1559": [
+        {
+          "mainsnak": {
+            "snaktype": "value",
+            "property": "P1559",
+            "hash": "fe8bc4f6a06b093e02f1788b90ab850357d37843",
+            "datavalue": {
+              "value": {
+                "text": "Robert Ier de Hesbaye",
+                "language": "fr"
+              },
+              "type": "monolingualtext"
+            },
+            "datatype": "monolingualtext"
+          },
+          "type": "statement",
+          "id": "Q727165$139bfae6-4b2a-d8e3-12ab-9b21966ac5f3",
+          "rank": "normal"
+        }
+      ],
+      "P27": [
+        {
+          "mainsnak": {
+            "snaktype": "value",
+            "property": "P27",
+            "hash": "98546c50a6d897136766177856b7e8b5fb12ef2f",
+            "datavalue": {
+              "value": {
+                "entity-type": "item",
+                "numeric-id": 106577,
+                "id": "Q106577"
+              },
+              "type": "wikibase-entityid"
+            },
+            "datatype": "wikibase-item"
+          },
+          "type": "statement",
+          "id": "Q727165$b29732d1-4c22-4298-646e-1c429a79e9f1",
+          "rank": "normal"
+        }
+      ],
+      "P2949": [
+        {
+          "mainsnak": {
+            "snaktype": "value",
+            "property": "P2949",
+            "hash": "a86d966384688b5eb4386e602a391eff4c6e22c0",
+            "datavalue": {
+              "value": "Robertian-11",
+              "type": "string"
+            },
+            "datatype": "external-id"
+          },
+          "type": "statement",
+          "qualifiers": {
+            "P1810": [
+              {
+                "snaktype": "value",
+                "property": "P1810",
+                "hash": "8146959198f1664d38f3e9dc2a957afad75b883b",
+                "datavalue": {
+                  "value": "Count Ruprecht Robert Comte de Hesbaie Hesbaye (Robertian) aka von Worms und Rheingau (est. 700 - est. 764)",
+                  "type": "string"
+                },
+                "datatype": "string"
+              }
+            ]
+          },
+          "qualifiers-order": [
+            "P1810"
+          ],
+          "id": "Q727165$E9BF6608-6255-47B7-B8FE-A9929175D3D6",
+          "rank": "normal"
+        }
+      ],
+      "P227": [
+        {
+          "mainsnak": {
+            "snaktype": "value",
+            "property": "P227",
+            "hash": "ca9c4dad31fb8df5346206d435a698378a5a9834",
+            "datavalue": {
+              "value": "139537066",
+              "type": "string"
+            },
+            "datatype": "external-id"
+          },
+          "type": "statement",
+          "id": "Q727165$E4A30556-FD99-4923-B692-1DB6ADF9DCD3",
+          "rank": "normal",
+          "references": [
+            {
+              "hash": "12c6f53324f69fe301869d4ee92a93f91899e393",
+              "snaks": {
+                "P143": [
+                  {
+                    "snaktype": "value",
+                    "property": "P143",
+                    "hash": "d38375ffe6fe142663ff55cd783aa4df4301d83d",
+                    "datavalue": {
+                      "value": {
+                        "entity-type": "item",
+                        "numeric-id": 48183,
+                        "id": "Q48183"
+                      },
+                      "type": "wikibase-entityid"
+                    },
+                    "datatype": "wikibase-item"
+                  }
+                ],
+                "P4656": [
+                  {
+                    "snaktype": "value",
+                    "property": "P4656",
+                    "hash": "9c112737906d095e4b87022df3a39ccfc4dc5d01",
+                    "datavalue": {
+                      "value": "https://de.wikipedia.org/w/index.php?title=Robert_I._(Worms-_und_Oberrheingau)&oldid=246197027",
+                      "type": "string"
+                    },
+                    "datatype": "url"
+                  }
+                ]
+              },
+              "snaks-order": [
+                "P143",
+                "P4656"
+              ]
+            }
+          ]
+        }
+      ],
+      "P214": [
+        {
+          "mainsnak": {
+            "snaktype": "value",
+            "property": "P214",
+            "hash": "7009daf71b7a40114fbc03422eb6bc687e4538c3",
+            "datavalue": {
+              "value": "101265915",
+              "type": "string"
+            },
+            "datatype": "external-id"
+          },
+          "type": "statement",
+          "id": "Q727165$10733294-477C-4354-901D-75B6A0E3FD83",
+          "rank": "normal",
+          "references": [
+            {
+              "hash": "12c6f53324f69fe301869d4ee92a93f91899e393",
+              "snaks": {
+                "P143": [
+                  {
+                    "snaktype": "value",
+                    "property": "P143",
+                    "hash": "d38375ffe6fe142663ff55cd783aa4df4301d83d",
+                    "datavalue": {
+                      "value": {
+                        "entity-type": "item",
+                        "numeric-id": 48183,
+                        "id": "Q48183"
+                      },
+                      "type": "wikibase-entityid"
+                    },
+                    "datatype": "wikibase-item"
+                  }
+                ],
+                "P4656": [
+                  {
+                    "snaktype": "value",
+                    "property": "P4656",
+                    "hash": "9c112737906d095e4b87022df3a39ccfc4dc5d01",
+                    "datavalue": {
+                      "value": "https://de.wikipedia.org/w/index.php?title=Robert_I._(Worms-_und_Oberrheingau)&oldid=246197027",
+                      "type": "string"
+                    },
+                    "datatype": "url"
+                  }
+                ]
+              },
+              "snaks-order": [
+                "P143",
+                "P4656"
+              ]
+            }
+          ]
+        }
+      ],
+      "P7902": [
+        {
+          "mainsnak": {
+            "snaktype": "value",
+            "property": "P7902",
+            "hash": "eac5a0e6a537e98a5136d21dc693e8c2ef7ec63d",
+            "datavalue": {
+              "value": "139537066",
+              "type": "string"
+            },
+            "datatype": "external-id"
+          },
+          "type": "statement",
+          "id": "Q727165$13200C5B-093C-4C1D-A731-95D7072D5A4E",
+          "rank": "normal"
+        }
+      ]
+    },
+    "sitelinks": {
+      "arwiki": {
+        "site": "arwiki",
+        "title": "روبرت الأول، دوق نيوستريا",
+        "badges": [],
+        "url": "https://ar.wikipedia.org/wiki/%D8%B1%D9%88%D8%A8%D8%B1%D8%AA_%D8%A7%D9%84%D8%A3%D9%88%D9%84%D8%8C_%D8%AF%D9%88%D9%82_%D9%86%D9%8A%D9%88%D8%B3%D8%AA%D8%B1%D9%8A%D8%A7"
+      },
+      "bgwiki": {
+        "site": "bgwiki",
+        "title": "Роберт I (Хеспенгау)",
+        "badges": [],
+        "url": "https://bg.wikipedia.org/wiki/%D0%A0%D0%BE%D0%B1%D0%B5%D1%80%D1%82_I_(%D0%A5%D0%B5%D1%81%D0%BF%D0%B5%D0%BD%D0%B3%D0%B0%D1%83)"
+      },
+      "cawiki": {
+        "site": "cawiki",
+        "title": "Robert I d'Hesbaye",
+        "badges": [],
+        "url": "https://ca.wikipedia.org/wiki/Robert_I_d%27Hesbaye"
+      },
+      "dewiki": {
+        "site": "dewiki",
+        "title": "Robert I. (Worms- und Oberrheingau)",
+        "badges": [],
+        "url": "https://de.wikipedia.org/wiki/Robert_I._(Worms-_und_Oberrheingau)"
+      },
+      "elwiki": {
+        "site": "elwiki",
+        "title": "Ροβέρτος Α΄ του Εσμπαί",
+        "badges": [],
+        "url": "https://el.wikipedia.org/wiki/%CE%A1%CE%BF%CE%B2%CE%AD%CF%81%CF%84%CE%BF%CF%82_%CE%91%CE%84_%CF%84%CE%BF%CF%85_%CE%95%CF%83%CE%BC%CF%80%CE%B1%CE%AF"
+      },
+      "enwiki": {
+        "site": "enwiki",
+        "title": "Robert I, Count of Hesbaye",
+        "badges": [],
+        "url": "https://en.wikipedia.org/wiki/Robert_I,_Count_of_Hesbaye"
+      },
+      "frwiki": {
+        "site": "frwiki",
+        "title": "Robert Ier de Hesbaye",
+        "badges": [],
+        "url": "https://fr.wikipedia.org/wiki/Robert_Ier_de_Hesbaye"
+      },
+      "hewiki": {
+        "site": "hewiki",
+        "title": "רובר הראשון, רוזן אסביי",
+        "badges": [],
+        "url": "https://he.wikipedia.org/wiki/%D7%A8%D7%95%D7%91%D7%A8_%D7%94%D7%A8%D7%90%D7%A9%D7%95%D7%9F,_%D7%A8%D7%95%D7%96%D7%9F_%D7%90%D7%A1%D7%91%D7%99%D7%99"
+      },
+      "idwiki": {
+        "site": "idwiki",
+        "title": "Robert I dari Hesbaye",
+        "badges": [],
+        "url": "https://id.wikipedia.org/wiki/Robert_I_dari_Hesbaye"
+      },
+      "itwiki": {
+        "site": "itwiki",
+        "title": "Roberto I di Hesbaye",
+        "badges": [],
+        "url": "https://it.wikipedia.org/wiki/Roberto_I_di_Hesbaye"
+      },
+      "nlwiki": {
+        "site": "nlwiki",
+        "title": "Robert I van de Haspengouw",
+        "badges": [],
+        "url": "https://nl.wikipedia.org/wiki/Robert_I_van_de_Haspengouw"
+      },
+      "plwiki": {
+        "site": "plwiki",
+        "title": "Robert I z Wormacji",
+        "badges": [],
+        "url": "https://pl.wikipedia.org/wiki/Robert_I_z_Wormacji"
+      },
+      "ptwiki": {
+        "site": "ptwiki",
+        "title": "Roberto I de Hesbaye",
+        "badges": [],
+        "url": "https://pt.wikipedia.org/wiki/Roberto_I_de_Hesbaye"
+      }
+    }
+  }
+}

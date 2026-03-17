@@ -1,0 +1,162 @@
+{
+  "saved_at": "2026-03-07T14:49:13.889Z",
+  "value": {
+    "pageid": 29834035,
+    "ns": 0,
+    "title": "Q28135979",
+    "lastrevid": 1331897981,
+    "modified": "2020-12-30T21:02:33Z",
+    "type": "item",
+    "id": "Q28135979",
+    "labels": {
+      "fr": {
+        "language": "fr",
+        "value": "1924 aux échecs"
+      },
+      "en": {
+        "language": "en",
+        "value": "1924 in chess"
+      },
+      "ru": {
+        "language": "ru",
+        "value": "1924 год в шахматах"
+      },
+      "bn": {
+        "language": "bn",
+        "value": "১৯২৪-এ দাবা"
+      },
+      "ar": {
+        "language": "ar",
+        "value": "1924 في الشطرنج"
+      },
+      "es": {
+        "language": "es",
+        "value": "Anexo:Ajedrez en 1924"
+      },
+      "ml": {
+        "language": "ml",
+        "value": "1924 ചെസ്സിൽ"
+      }
+    },
+    "descriptions": {},
+    "aliases": {},
+    "claims": {
+      "P31": [
+        {
+          "mainsnak": {
+            "snaktype": "value",
+            "property": "P31",
+            "hash": "b9953cd69a9e5fc8f8fe263b847673b0013cf93f",
+            "datavalue": {
+              "value": {
+                "entity-type": "item",
+                "numeric-id": 18340514,
+                "id": "Q18340514"
+              },
+              "type": "wikibase-entityid"
+            },
+            "datatype": "wikibase-item"
+          },
+          "type": "statement",
+          "id": "Q28135979$56C010E8-D0FA-4548-9F40-43382AB7286E",
+          "rank": "normal"
+        }
+      ],
+      "P1269": [
+        {
+          "mainsnak": {
+            "snaktype": "value",
+            "property": "P1269",
+            "hash": "4f6f94843b930d37535ccfd339b77b4a8e9e5587",
+            "datavalue": {
+              "value": {
+                "entity-type": "item",
+                "numeric-id": 718,
+                "id": "Q718"
+              },
+              "type": "wikibase-entityid"
+            },
+            "datatype": "wikibase-item"
+          },
+          "type": "statement",
+          "id": "Q28135979$0910AEE9-6B5B-4A2C-80C6-663CF90E0543",
+          "rank": "normal"
+        }
+      ],
+      "P585": [
+        {
+          "mainsnak": {
+            "snaktype": "value",
+            "property": "P585",
+            "hash": "855839718d8f79f3b33363137a54206a3ddf20d2",
+            "datavalue": {
+              "value": {
+                "time": "+1924-01-01T00:00:00Z",
+                "timezone": 0,
+                "before": 0,
+                "after": 0,
+                "precision": 9,
+                "calendarmodel": "http://www.wikidata.org/entity/Q1985727"
+              },
+              "type": "time"
+            },
+            "datatype": "time"
+          },
+          "type": "statement",
+          "id": "Q28135979$D0B8DC37-7ED7-49E6-BE7F-E65C31058A3F",
+          "rank": "normal"
+        }
+      ],
+      "P155": [
+        {
+          "mainsnak": {
+            "snaktype": "value",
+            "property": "P155",
+            "hash": "33c26183519c124e9440fabc320406f09d8d6f4a",
+            "datavalue": {
+              "value": {
+                "entity-type": "item",
+                "numeric-id": 28135977,
+                "id": "Q28135977"
+              },
+              "type": "wikibase-entityid"
+            },
+            "datatype": "wikibase-item"
+          },
+          "type": "statement",
+          "id": "Q28135979$3B7F7492-F0ED-4F81-BD56-97CA790175E3",
+          "rank": "normal"
+        }
+      ],
+      "P156": [
+        {
+          "mainsnak": {
+            "snaktype": "value",
+            "property": "P156",
+            "hash": "2aa3bc214f6a8af5c06fd83b3baaaf4bce8d6e70",
+            "datavalue": {
+              "value": {
+                "entity-type": "item",
+                "numeric-id": 28135981,
+                "id": "Q28135981"
+              },
+              "type": "wikibase-entityid"
+            },
+            "datatype": "wikibase-item"
+          },
+          "type": "statement",
+          "id": "Q28135979$419F433A-DF25-43ED-ACDC-EB1A6608262D",
+          "rank": "normal"
+        }
+      ]
+    },
+    "sitelinks": {
+      "frwiki": {
+        "site": "frwiki",
+        "title": "1924 aux échecs",
+        "badges": [],
+        "url": "https://fr.wikipedia.org/wiki/1924_aux_%C3%A9checs"
+      }
+    }
+  }
+}

@@ -8,3 +8,4 @@ async function recent() {
     data.forEach(p => console.log(`${p.id} | ${p.display_name} | ${p.last_play_date} | ${p.updated_at}`));
 }
 recent();
+

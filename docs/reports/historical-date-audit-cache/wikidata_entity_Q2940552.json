@@ -1,0 +1,435 @@
+{
+  "saved_at": "2026-03-07T13:41:24.816Z",
+  "value": {
+    "pageid": 2812666,
+    "ns": 0,
+    "title": "Q2940552",
+    "lastrevid": 2385254738,
+    "modified": "2025-07-28T11:23:32Z",
+    "type": "item",
+    "id": "Q2940552",
+    "labels": {
+      "fr": {
+        "language": "fr",
+        "value": "Cartel des gauches"
+      },
+      "en": {
+        "language": "en",
+        "value": "Cartel des Gauches"
+      },
+      "uk": {
+        "language": "uk",
+        "value": "Картель лівих"
+      },
+      "fi": {
+        "language": "fi",
+        "value": "Cartel des Gauches"
+      },
+      "zh-hant": {
+        "language": "zh-hant",
+        "value": "左翼聯盟"
+      },
+      "zh-cn": {
+        "language": "zh-cn",
+        "value": "左翼联盟"
+      },
+      "ja": {
+        "language": "ja",
+        "value": "左翼連合"
+      },
+      "zh-hans": {
+        "language": "zh-hans",
+        "value": "左翼联盟"
+      },
+      "es": {
+        "language": "es",
+        "value": "Cartel des Gauches"
+      },
+      "zh": {
+        "language": "zh",
+        "value": "左翼联盟"
+      },
+      "ru": {
+        "language": "ru",
+        "value": "Картель левых"
+      },
+      "de": {
+        "language": "de",
+        "value": "Cartel des gauches (Frankreich)"
+      },
+      "ca": {
+        "language": "ca",
+        "value": "Cartel des Gauches"
+      },
+      "pt": {
+        "language": "pt",
+        "value": "Cartel das Esquerdas (França)"
+      }
+    },
+    "descriptions": {
+      "en": {
+        "language": "en",
+        "value": "political coalition in France"
+      },
+      "fr": {
+        "language": "fr",
+        "value": "coalition électorale française de l'entre-deux-guerres"
+      },
+      "de": {
+        "language": "de",
+        "value": "linkes Wahlbündnis in Frankreich für die Parlamentswahlen 1924"
+      }
+    },
+    "aliases": {
+      "fr": [
+        {
+          "language": "fr",
+          "value": "Cartels des gauche"
+        },
+        {
+          "language": "fr",
+          "value": "Cartels des gauches"
+        },
+        {
+          "language": "fr",
+          "value": "Cartel Des Gauches"
+        },
+        {
+          "language": "fr",
+          "value": "Cartels de gauche"
+        },
+        {
+          "language": "fr",
+          "value": "Cartel des Gauches"
+        }
+      ],
+      "ja": [
+        {
+          "language": "ja",
+          "value": "カルテル・デ・ゴーシュ"
+        }
+      ],
+      "zh": [
+        {
+          "language": "zh",
+          "value": "卡特尔集团"
+        },
+        {
+          "language": "zh",
+          "value": "左翼卡特爾"
+        },
+        {
+          "language": "zh",
+          "value": "左翼联合"
+        },
+        {
+          "language": "zh",
+          "value": "左翼集团"
+        }
+      ]
+    },
+    "claims": {
+      "P646": [
+        {
+          "mainsnak": {
+            "snaktype": "value",
+            "property": "P646",
+            "hash": "ad6c1fb6aee2d655993ae2733b4e15832a59c3ca",
+            "datavalue": {
+              "value": "/m/05j2w0",
+              "type": "string"
+            },
+            "datatype": "external-id"
+          },
+          "type": "statement",
+          "id": "Q2940552$C1CF96E0-71DD-43D7-A4C1-959396955A7D",
+          "rank": "normal",
+          "references": [
+            {
+              "hash": "2b00cb481cddcac7623114367489b5c194901c4a",
+              "snaks": {
+                "P248": [
+                  {
+                    "snaktype": "value",
+                    "property": "P248",
+                    "hash": "a94b740202b097dd33355e0e6c00e54b9395e5e0",
+                    "datavalue": {
+                      "value": {
+                        "entity-type": "item",
+                        "numeric-id": 15241312,
+                        "id": "Q15241312"
+                      },
+                      "type": "wikibase-entityid"
+                    },
+                    "datatype": "wikibase-item"
+                  }
+                ],
+                "P577": [
+                  {
+                    "snaktype": "value",
+                    "property": "P577",
+                    "hash": "fde79ecb015112d2f29229ccc1ec514ed3e71fa2",
+                    "datavalue": {
+                      "value": {
+                        "time": "+2013-10-28T00:00:00Z",
+                        "timezone": 0,
+                        "before": 0,
+                        "after": 0,
+                        "precision": 11,
+                        "calendarmodel": "http://www.wikidata.org/entity/Q1985727"
+                      },
+                      "type": "time"
+                    },
+                    "datatype": "time"
+                  }
+                ]
+              },
+              "snaks-order": [
+                "P248",
+                "P577"
+              ]
+            }
+          ]
+        }
+      ],
+      "P31": [
+        {
+          "mainsnak": {
+            "snaktype": "value",
+            "property": "P31",
+            "hash": "30ecab9292c4bcea7ad059d72827bbef919f071c",
+            "datavalue": {
+              "value": {
+                "entity-type": "item",
+                "numeric-id": 6138528,
+                "id": "Q6138528"
+              },
+              "type": "wikibase-entityid"
+            },
+            "datatype": "wikibase-item"
+          },
+          "type": "statement",
+          "id": "Q2940552$fb99de09-46ad-a5db-61c5-2e2a35d193e0",
+          "rank": "normal"
+        }
+      ],
+      "P17": [
+        {
+          "mainsnak": {
+            "snaktype": "value",
+            "property": "P17",
+            "hash": "c05db5d169c2560b9799d567a803d20a392f53e4",
+            "datavalue": {
+              "value": {
+                "entity-type": "item",
+                "numeric-id": 142,
+                "id": "Q142"
+              },
+              "type": "wikibase-entityid"
+            },
+            "datatype": "wikibase-item"
+          },
+          "type": "statement",
+          "id": "Q2940552$39301af9-417e-caa4-bfbb-c706c0f3ccfb",
+          "rank": "normal"
+        }
+      ],
+      "P3219": [
+        {
+          "mainsnak": {
+            "snaktype": "value",
+            "property": "P3219",
+            "hash": "019d1a6a19fffcb2160eb9660666e1c118b2613c",
+            "datavalue": {
+              "value": "cartel-des-gauches",
+              "type": "string"
+            },
+            "datatype": "external-id"
+          },
+          "type": "statement",
+          "id": "Q2940552$41136BA3-1ABF-4169-9E7F-13648C934E75",
+          "rank": "normal"
+        }
+      ],
+      "P1417": [
+        {
+          "mainsnak": {
+            "snaktype": "value",
+            "property": "P1417",
+            "hash": "ca24a5e7b541f666645ef04cded719f0f3de5596",
+            "datavalue": {
+              "value": "topic/Cartel-des-Gauches",
+              "type": "string"
+            },
+            "datatype": "external-id"
+          },
+          "type": "statement",
+          "qualifiers": {
+            "P1810": [
+              {
+                "snaktype": "value",
+                "property": "P1810",
+                "hash": "f853527f2a6f98db41e9aa17dafe14fa5edd0af2",
+                "datavalue": {
+                  "value": "Cartel des Gauches",
+                  "type": "string"
+                },
+                "datatype": "string"
+              }
+            ]
+          },
+          "qualifiers-order": [
+            "P1810"
+          ],
+          "id": "Q2940552$C43625B5-459F-4019-9266-6753BD3C32DE",
+          "rank": "normal"
+        }
+      ],
+      "P159": [
+        {
+          "mainsnak": {
+            "snaktype": "value",
+            "property": "P159",
+            "hash": "801ca3c7c9013f90ceef9c3cdca2deecf5306a4a",
+            "datavalue": {
+              "value": {
+                "entity-type": "item",
+                "numeric-id": 90,
+                "id": "Q90"
+              },
+              "type": "wikibase-entityid"
+            },
+            "datatype": "wikibase-item"
+          },
+          "type": "statement",
+          "id": "Q2940552$10F8D029-1BEC-4FFE-B66B-0791AB4545E0",
+          "rank": "normal",
+          "references": [
+            {
+              "hash": "bb580c816aec2d30152f654b0c94c74b115b5bbb",
+              "snaks": {
+                "P143": [
+                  {
+                    "snaktype": "value",
+                    "property": "P143",
+                    "hash": "e4f6d9441d0600513c4533c672b5ab472dc73694",
+                    "datavalue": {
+                      "value": {
+                        "entity-type": "item",
+                        "numeric-id": 328,
+                        "id": "Q328"
+                      },
+                      "type": "wikibase-entityid"
+                    },
+                    "datatype": "wikibase-item"
+                  }
+                ],
+                "P4656": [
+                  {
+                    "snaktype": "value",
+                    "property": "P4656",
+                    "hash": "2a726d0187ea8deaee330c5c0bf29d7766632b7d",
+                    "datavalue": {
+                      "value": "https://en.wikipedia.org/w/index.php?title=Cartel_des_Gauches&oldid=878032754",
+                      "type": "string"
+                    },
+                    "datatype": "url"
+                  }
+                ]
+              },
+              "snaks-order": [
+                "P143",
+                "P4656"
+              ]
+            }
+          ]
+        }
+      ],
+      "P571": [
+        {
+          "mainsnak": {
+            "snaktype": "value",
+            "property": "P571",
+            "hash": "3c1b63ba942f31912fd7de1d5cef2f6597a85018",
+            "datavalue": {
+              "value": {
+                "time": "+1924-00-00T00:00:00Z",
+                "timezone": 0,
+                "before": 0,
+                "after": 0,
+                "precision": 9,
+                "calendarmodel": "http://www.wikidata.org/entity/Q1985727"
+              },
+              "type": "time"
+            },
+            "datatype": "time"
+          },
+          "type": "statement",
+          "id": "Q2940552$a6fb985e-4043-27b6-7636-76c8dd7776fa",
+          "rank": "normal"
+        }
+      ],
+      "P12800": [
+        {
+          "mainsnak": {
+            "snaktype": "value",
+            "property": "P12800",
+            "hash": "3aed62bbf85672d44180dec652d9922f3cb1ec0a",
+            "datavalue": {
+              "value": "fr:Cartel_des_gauches",
+              "type": "string"
+            },
+            "datatype": "external-id"
+          },
+          "type": "statement",
+          "id": "Q2940552$581307C8-BCDC-4E90-A6BF-A1FE2F188243",
+          "rank": "normal"
+        }
+      ]
+    },
+    "sitelinks": {
+      "dewiki": {
+        "site": "dewiki",
+        "title": "Cartel des gauches",
+        "badges": [],
+        "url": "https://de.wikipedia.org/wiki/Cartel_des_gauches"
+      },
+      "enwiki": {
+        "site": "enwiki",
+        "title": "Cartel des Gauches",
+        "badges": [],
+        "url": "https://en.wikipedia.org/wiki/Cartel_des_Gauches"
+      },
+      "eswiki": {
+        "site": "eswiki",
+        "title": "Cartel des Gauches",
+        "badges": [],
+        "url": "https://es.wikipedia.org/wiki/Cartel_des_Gauches"
+      },
+      "fiwiki": {
+        "site": "fiwiki",
+        "title": "Vasemmistokartelli",
+        "badges": [],
+        "url": "https://fi.wikipedia.org/wiki/Vasemmistokartelli"
+      },
+      "frwiki": {
+        "site": "frwiki",
+        "title": "Cartel des gauches",
+        "badges": [],
+        "url": "https://fr.wikipedia.org/wiki/Cartel_des_gauches"
+      },
+      "ptwiki": {
+        "site": "ptwiki",
+        "title": "Cartel das Esquerdas (França)",
+        "badges": [],
+        "url": "https://pt.wikipedia.org/wiki/Cartel_das_Esquerdas_(Fran%C3%A7a)"
+      },
+      "ukwiki": {
+        "site": "ukwiki",
+        "title": "Картель лівих",
+        "badges": [],
+        "url": "https://uk.wikipedia.org/wiki/%D0%9A%D0%B0%D1%80%D1%82%D0%B5%D0%BB%D1%8C_%D0%BB%D1%96%D0%B2%D0%B8%D1%85"
+      }
+    }
+  }
+}

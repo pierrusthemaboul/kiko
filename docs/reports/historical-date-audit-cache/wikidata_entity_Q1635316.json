@@ -1,0 +1,437 @@
+{
+  "saved_at": "2026-03-07T13:04:36.400Z",
+  "value": {
+    "pageid": 1569652,
+    "ns": 0,
+    "title": "Q1635316",
+    "lastrevid": 2369361864,
+    "modified": "2025-06-28T16:01:04Z",
+    "type": "item",
+    "id": "Q1635316",
+    "labels": {
+      "de": {
+        "language": "de",
+        "value": "Mehlkrieg"
+      },
+      "ca": {
+        "language": "ca",
+        "value": "Guerra de les farines"
+      },
+      "en": {
+        "language": "en",
+        "value": "Flour War"
+      },
+      "es": {
+        "language": "es",
+        "value": "Guerra de las harinas"
+      },
+      "fr": {
+        "language": "fr",
+        "value": "guerre des farines"
+      },
+      "it": {
+        "language": "it",
+        "value": "guerra delle farine"
+      },
+      "ja": {
+        "language": "ja",
+        "value": "小麦粉戦争"
+      },
+      "zh": {
+        "language": "zh",
+        "value": "面粉战争"
+      },
+      "eo": {
+        "language": "eo",
+        "value": "Farunmilito"
+      },
+      "sv": {
+        "language": "sv",
+        "value": "mjölkriget"
+      },
+      "he": {
+        "language": "he",
+        "value": "מלחמת הקמח"
+      },
+      "et": {
+        "language": "et",
+        "value": "Jahusõda"
+      },
+      "br": {
+        "language": "br",
+        "value": "Brezel ar bleudoù"
+      },
+      "ko": {
+        "language": "ko",
+        "value": "밀가루 전쟁"
+      }
+    },
+    "descriptions": {
+      "de": {
+        "language": "de",
+        "value": "Aufstand in Frankreich gegen als zu hoch empfundene Mehl- und Brotpreise im Jahr 1775"
+      },
+      "en": {
+        "language": "en",
+        "value": "wave of riots, prelude of French Revolution"
+      },
+      "fr": {
+        "language": "fr",
+        "value": "révolte frumentaire française de 1775"
+      },
+      "ca": {
+        "language": "ca",
+        "value": "motí causat per l'excessiu preu del pa a França"
+      }
+    },
+    "aliases": {
+      "ja": [
+        {
+          "language": "ja",
+          "value": "食糧暴動"
+        }
+      ]
+    },
+    "claims": {
+      "P646": [
+        {
+          "mainsnak": {
+            "snaktype": "value",
+            "property": "P646",
+            "hash": "80e9599900f82ded62642f70582656052f11ff3c",
+            "datavalue": {
+              "value": "/m/09v7zzb",
+              "type": "string"
+            },
+            "datatype": "external-id"
+          },
+          "type": "statement",
+          "id": "Q1635316$14B2267F-B376-449C-8F82-0FF14CFEA1AF",
+          "rank": "normal",
+          "references": [
+            {
+              "hash": "2b00cb481cddcac7623114367489b5c194901c4a",
+              "snaks": {
+                "P248": [
+                  {
+                    "snaktype": "value",
+                    "property": "P248",
+                    "hash": "a94b740202b097dd33355e0e6c00e54b9395e5e0",
+                    "datavalue": {
+                      "value": {
+                        "entity-type": "item",
+                        "numeric-id": 15241312,
+                        "id": "Q15241312"
+                      },
+                      "type": "wikibase-entityid"
+                    },
+                    "datatype": "wikibase-item"
+                  }
+                ],
+                "P577": [
+                  {
+                    "snaktype": "value",
+                    "property": "P577",
+                    "hash": "fde79ecb015112d2f29229ccc1ec514ed3e71fa2",
+                    "datavalue": {
+                      "value": {
+                        "time": "+2013-10-28T00:00:00Z",
+                        "timezone": 0,
+                        "before": 0,
+                        "after": 0,
+                        "precision": 11,
+                        "calendarmodel": "http://www.wikidata.org/entity/Q1985727"
+                      },
+                      "type": "time"
+                    },
+                    "datatype": "time"
+                  }
+                ]
+              },
+              "snaks-order": [
+                "P248",
+                "P577"
+              ]
+            }
+          ]
+        }
+      ],
+      "P31": [
+        {
+          "mainsnak": {
+            "snaktype": "value",
+            "property": "P31",
+            "hash": "d1e2fa2fb35799a11c37b0beffda09e207bbae87",
+            "datavalue": {
+              "value": {
+                "entity-type": "item",
+                "numeric-id": 511866,
+                "id": "Q511866"
+              },
+              "type": "wikibase-entityid"
+            },
+            "datatype": "wikibase-item"
+          },
+          "type": "statement",
+          "id": "Q1635316$f4a7d1ea-4b0d-857a-6d62-eea17a639772",
+          "rank": "normal"
+        },
+        {
+          "mainsnak": {
+            "snaktype": "value",
+            "property": "P31",
+            "hash": "3328ea459859ad3c0cc186ddf94343e532a5872a",
+            "datavalue": {
+              "value": {
+                "entity-type": "item",
+                "numeric-id": 5465517,
+                "id": "Q5465517"
+              },
+              "type": "wikibase-entityid"
+            },
+            "datatype": "wikibase-item"
+          },
+          "type": "statement",
+          "id": "Q1635316$40991fc7-4597-295f-0470-b00b7d3f7564",
+          "rank": "normal"
+        }
+      ],
+      "P585": [
+        {
+          "mainsnak": {
+            "snaktype": "value",
+            "property": "P585",
+            "hash": "809d8c962a514ab00b2890c593b606fa082b2f70",
+            "datavalue": {
+              "value": {
+                "time": "+1775-00-00T00:00:00Z",
+                "timezone": 0,
+                "before": 0,
+                "after": 0,
+                "precision": 9,
+                "calendarmodel": "http://www.wikidata.org/entity/Q1985727"
+              },
+              "type": "time"
+            },
+            "datatype": "time"
+          },
+          "type": "statement",
+          "id": "Q1635316$b8117cab-47fd-35b5-d64b-f916259b9c38",
+          "rank": "normal"
+        }
+      ],
+      "P17": [
+        {
+          "mainsnak": {
+            "snaktype": "value",
+            "property": "P17",
+            "hash": "c05db5d169c2560b9799d567a803d20a392f53e4",
+            "datavalue": {
+              "value": {
+                "entity-type": "item",
+                "numeric-id": 142,
+                "id": "Q142"
+              },
+              "type": "wikibase-entityid"
+            },
+            "datatype": "wikibase-item"
+          },
+          "type": "statement",
+          "id": "Q1635316$b0bf3890-4b17-b130-9d89-8125e556e45f",
+          "rank": "normal"
+        }
+      ],
+      "P3417": [
+        {
+          "mainsnak": {
+            "snaktype": "value",
+            "property": "P3417",
+            "hash": "429c2d57a2cae28696e89ef0f776d4ecc0dacc95",
+            "datavalue": {
+              "value": "Flour-War",
+              "type": "string"
+            },
+            "datatype": "external-id"
+          },
+          "type": "statement",
+          "id": "Q1635316$A2DDEC8E-040B-4CF4-B16D-CD98D03156BB",
+          "rank": "normal",
+          "references": [
+            {
+              "hash": "3b0a5bb3c1f955edce73740124f7d935698092ad",
+              "snaks": {
+                "P248": [
+                  {
+                    "snaktype": "value",
+                    "property": "P248",
+                    "hash": "3ac9682e789a3a3791d4fd088b265ea03abef101",
+                    "datavalue": {
+                      "value": {
+                        "entity-type": "item",
+                        "numeric-id": 51711,
+                        "id": "Q51711"
+                      },
+                      "type": "wikibase-entityid"
+                    },
+                    "datatype": "wikibase-item"
+                  }
+                ]
+              },
+              "snaks-order": [
+                "P248"
+              ]
+            }
+          ]
+        }
+      ],
+      "P3219": [
+        {
+          "mainsnak": {
+            "snaktype": "value",
+            "property": "P3219",
+            "hash": "0f11703cd0c2075f192846caf3d1a31ebba030c2",
+            "datavalue": {
+              "value": "guerre-des-farines",
+              "type": "string"
+            },
+            "datatype": "external-id"
+          },
+          "type": "statement",
+          "id": "Q1635316$C72F310F-8D3B-4E74-B37B-0C3F398FB706",
+          "rank": "normal"
+        }
+      ],
+      "P9000": [
+        {
+          "mainsnak": {
+            "snaktype": "value",
+            "property": "P9000",
+            "hash": "6544e0cd6ebeb90577423be6039cee1923551328",
+            "datavalue": {
+              "value": "Flour_War",
+              "type": "string"
+            },
+            "datatype": "external-id"
+          },
+          "type": "statement",
+          "id": "Q1635316$F1F84369-76F4-44DC-B5ED-7364196BA75C",
+          "rank": "normal"
+        }
+      ],
+      "P373": [
+        {
+          "mainsnak": {
+            "snaktype": "value",
+            "property": "P373",
+            "hash": "0c702cc4260643295e21fc38ca55a21c9ac82800",
+            "datavalue": {
+              "value": "Guerre des farines",
+              "type": "string"
+            },
+            "datatype": "string"
+          },
+          "type": "statement",
+          "id": "Q1635316$627085dc-7a93-4248-a3c5-8d9e6abf218a",
+          "rank": "normal"
+        }
+      ],
+      "P18": [
+        {
+          "mainsnak": {
+            "snaktype": "value",
+            "property": "P18",
+            "hash": "f02d458bbd695bed20fc24ba9053bfd77acb63c9",
+            "datavalue": {
+              "value": "Robing the bakeries in Paris during the Flour War, 1775 (É. Bayard).png",
+              "type": "string"
+            },
+            "datatype": "commonsMedia"
+          },
+          "type": "statement",
+          "id": "Q1635316$5280883e-4f53-9a9d-6e87-1ef1822a98eb",
+          "rank": "normal"
+        }
+      ]
+    },
+    "sitelinks": {
+      "brwiki": {
+        "site": "brwiki",
+        "title": "Brezel ar bleudoù",
+        "badges": [],
+        "url": "https://br.wikipedia.org/wiki/Brezel_ar_bleudo%C3%B9"
+      },
+      "cawiki": {
+        "site": "cawiki",
+        "title": "Guerra de les farines",
+        "badges": [],
+        "url": "https://ca.wikipedia.org/wiki/Guerra_de_les_farines"
+      },
+      "commonswiki": {
+        "site": "commonswiki",
+        "title": "Category:Guerre des farines",
+        "badges": [],
+        "url": "https://commons.wikimedia.org/wiki/Category:Guerre_des_farines"
+      },
+      "dewiki": {
+        "site": "dewiki",
+        "title": "Mehlkrieg",
+        "badges": [],
+        "url": "https://de.wikipedia.org/wiki/Mehlkrieg"
+      },
+      "enwiki": {
+        "site": "enwiki",
+        "title": "Flour War",
+        "badges": [],
+        "url": "https://en.wikipedia.org/wiki/Flour_War"
+      },
+      "eowiki": {
+        "site": "eowiki",
+        "title": "Farunmilito",
+        "badges": [],
+        "url": "https://eo.wikipedia.org/wiki/Farunmilito"
+      },
+      "eswiki": {
+        "site": "eswiki",
+        "title": "Guerra de las harinas",
+        "badges": [],
+        "url": "https://es.wikipedia.org/wiki/Guerra_de_las_harinas"
+      },
+      "etwiki": {
+        "site": "etwiki",
+        "title": "Jahusõda",
+        "badges": [],
+        "url": "https://et.wikipedia.org/wiki/Jahus%C3%B5da"
+      },
+      "frwiki": {
+        "site": "frwiki",
+        "title": "Guerre des farines",
+        "badges": [],
+        "url": "https://fr.wikipedia.org/wiki/Guerre_des_farines"
+      },
+      "itwiki": {
+        "site": "itwiki",
+        "title": "Guerra delle farine",
+        "badges": [],
+        "url": "https://it.wikipedia.org/wiki/Guerra_delle_farine"
+      },
+      "kowiki": {
+        "site": "kowiki",
+        "title": "밀가루 전쟁",
+        "badges": [],
+        "url": "https://ko.wikipedia.org/wiki/%EB%B0%80%EA%B0%80%EB%A3%A8_%EC%A0%84%EC%9F%81"
+      },
+      "svwiki": {
+        "site": "svwiki",
+        "title": "Mjölkriget",
+        "badges": [],
+        "url": "https://sv.wikipedia.org/wiki/Mj%C3%B6lkriget"
+      },
+      "zhwiki": {
+        "site": "zhwiki",
+        "title": "面粉战争",
+        "badges": [],
+        "url": "https://zh.wikipedia.org/wiki/%E9%9D%A2%E7%B2%89%E6%88%98%E4%BA%89"
+      }
+    }
+  }
+}

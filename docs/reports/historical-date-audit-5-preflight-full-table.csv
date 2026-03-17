@@ -1,0 +1,6 @@
+id,titre,date_in_db,date_candidate,precision,status,result_bucket,confidence,needs_human_review,recommendation,matched_article_fr,matched_article_en,wikidata_id
+7c5f2ae8-94cb-4217-9689-78c139082eea,Locke publie l'Essai sur l'entendement,1690-01-01,1690-01-01,year,CONFIRMED,confirme,0.9,false,No change needed.,https://fr.wikipedia.org/wiki/Essai_sur_l%27entendement_humain,,Q482438
+d5620c09-cc62-4478-81a8-3393fab4fea0,Agila I devient roi des Wisigoths,0549-01-01,0549-01-01,year,LIKELY_CORRECT,preuve_externe_faible,0.5,false,"Ideally, find external sources to confirm the year.",,,
+07a6be06-aeab-4971-a206-c9c4b10a960a,Election de Raymond Poincaré à la présidence du Conseil,1912-01-01,1912-01-01,year,LIKELY_CORRECT,probable_mais_a_confirmer,0.8,false,No change needed.,https://fr.wikipedia.org/wiki/Raymond_Poincar%C3%A9,,Q191974
+c32861c4-0b01-4c1f-b109-e2d02ea119f3,Découverte des satellites de Jupiter par Galilée,1610-01-07,1610-01-01,year,LIKELY_CORRECT,preuve_externe_faible,0,false,Ajouter des sources externes fiables confirmant l'année de la découverte.,,,Q37638
+2e857537-e07e-43f8-b72b-f689229728f1,Signature des accords de Dayton,1995-12-14,1995-01-01,year,CONFIRMED,confirme,1,false,Confirmer la date de 1995.,https://fr.wikipedia.org/wiki/Accords_de_Dayton,,Q190315

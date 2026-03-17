@@ -1,0 +1,219 @@
+{
+  "saved_at": "2026-03-07T11:26:41.697Z",
+  "value": {
+    "pageid": 3169703,
+    "ns": 0,
+    "title": "Q3324481",
+    "lastrevid": 2443682972,
+    "modified": "2025-12-18T09:48:27Z",
+    "type": "item",
+    "id": "Q3324481",
+    "labels": {
+      "fr": {
+        "language": "fr",
+        "value": "mort de Louis XIV"
+      },
+      "it": {
+        "language": "it",
+        "value": "morte di Luigi XIV di Francia"
+      },
+      "en": {
+        "language": "en",
+        "value": "death of Louis XIV of France"
+      },
+      "ru": {
+        "language": "ru",
+        "value": "смерть Людовика XIV"
+      },
+      "eu": {
+        "language": "eu",
+        "value": "Luis XIV.a Frantziakoaren heriotza"
+      },
+      "cs": {
+        "language": "cs",
+        "value": "Smrt Ludvíka XIV."
+      }
+    },
+    "descriptions": {
+      "fr": {
+        "language": "fr",
+        "value": "mort du roi Louis XIV"
+      }
+    },
+    "aliases": {
+      "en": [
+        {
+          "language": "en",
+          "value": "Louis XIV of France's death"
+        },
+        {
+          "language": "en",
+          "value": "Louis XIV of France death"
+        }
+      ]
+    },
+    "claims": {
+      "P31": [
+        {
+          "mainsnak": {
+            "snaktype": "value",
+            "property": "P31",
+            "hash": "440e12b97105146939e3e8bee5b185433bc581ac",
+            "datavalue": {
+              "value": {
+                "entity-type": "item",
+                "numeric-id": 4,
+                "id": "Q4"
+              },
+              "type": "wikibase-entityid"
+            },
+            "datatype": "wikibase-item"
+          },
+          "type": "statement",
+          "id": "Q3324481$443552fc-4820-ae52-efaf-e85922421b3f",
+          "rank": "normal",
+          "references": [
+            {
+              "hash": "4d664fee538bab7fe7022b1e5682516f610354ee",
+              "snaks": {
+                "P854": [
+                  {
+                    "snaktype": "value",
+                    "property": "P854",
+                    "hash": "7890a2147e834869ae2a7581080d58005f3a7ea0",
+                    "datavalue": {
+                      "value": "https://people.com/louis-xiv-cause-of-death-revealed-from-dna-mummified-heart-11864894",
+                      "type": "string"
+                    },
+                    "datatype": "url"
+                  }
+                ]
+              },
+              "snaks-order": [
+                "P854"
+              ]
+            }
+          ]
+        }
+      ],
+      "P585": [
+        {
+          "mainsnak": {
+            "snaktype": "value",
+            "property": "P585",
+            "hash": "0d6c4f91076751b9237e92c656faa6df24a76fdc",
+            "datavalue": {
+              "value": {
+                "time": "+1715-09-01T00:00:00Z",
+                "timezone": 0,
+                "before": 0,
+                "after": 0,
+                "precision": 11,
+                "calendarmodel": "http://www.wikidata.org/entity/Q1985727"
+              },
+              "type": "time"
+            },
+            "datatype": "time"
+          },
+          "type": "statement",
+          "id": "Q3324481$48d3c3ae-444e-1266-3cb2-8031969d4962",
+          "rank": "normal"
+        }
+      ],
+      "P276": [
+        {
+          "mainsnak": {
+            "snaktype": "value",
+            "property": "P276",
+            "hash": "1d103d29a64df60a816a95df08f148a67038a155",
+            "datavalue": {
+              "value": {
+                "entity-type": "item",
+                "numeric-id": 30014145,
+                "id": "Q30014145"
+              },
+              "type": "wikibase-entityid"
+            },
+            "datatype": "wikibase-item"
+          },
+          "type": "statement",
+          "id": "Q3324481$2eb8a3f4-40d7-c4fa-b616-2378f49f6593",
+          "rank": "normal"
+        }
+      ],
+      "P2671": [
+        {
+          "mainsnak": {
+            "snaktype": "value",
+            "property": "P2671",
+            "hash": "35462ab968cb02dae3dbbae2d17802f745ff8dce",
+            "datavalue": {
+              "value": "/g/1234t7ty",
+              "type": "string"
+            },
+            "datatype": "external-id"
+          },
+          "type": "statement",
+          "id": "Q3324481$77BD8EDD-EFCE-45B4-A587-D36EDE4755D5",
+          "rank": "normal"
+        }
+      ],
+      "P1269": [
+        {
+          "mainsnak": {
+            "snaktype": "value",
+            "property": "P1269",
+            "hash": "a4c6ea48eb2d70aa76d2e164308d45898bfa99f8",
+            "datavalue": {
+              "value": {
+                "entity-type": "item",
+                "numeric-id": 7742,
+                "id": "Q7742"
+              },
+              "type": "wikibase-entityid"
+            },
+            "datatype": "wikibase-item"
+          },
+          "type": "statement",
+          "id": "Q3324481$c8ed62e9-4e37-5e6c-ebc6-8e6993568958",
+          "rank": "normal"
+        }
+      ],
+      "P17": [
+        {
+          "mainsnak": {
+            "snaktype": "value",
+            "property": "P17",
+            "hash": "2b7d86f7555d9e77641e33f3f283b88021a5e49a",
+            "datavalue": {
+              "value": {
+                "entity-type": "item",
+                "numeric-id": 70972,
+                "id": "Q70972"
+              },
+              "type": "wikibase-entityid"
+            },
+            "datatype": "wikibase-item"
+          },
+          "type": "statement",
+          "id": "Q3324481$221e8b91-43ae-4bce-0891-fd6b4e3c9752",
+          "rank": "normal"
+        }
+      ]
+    },
+    "sitelinks": {
+      "cswiki": {
+        "site": "cswiki",
+        "title": "Smrt Ludvíka XIV.",
+        "badges": [],
+        "url": "https://cs.wikipedia.org/wiki/Smrt_Ludv%C3%ADka_XIV."
+      },
+      "frwiki": {
+        "site": "frwiki",
+        "title": "Mort de Louis XIV",
+        "badges": [],
+        "url": "https://fr.wikipedia.org/wiki/Mort_de_Louis_XIV"
+      }
+    }
+  }
+}

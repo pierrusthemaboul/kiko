@@ -1,0 +1,844 @@
+{
+  "saved_at": "2026-03-07T14:59:25.544Z",
+  "value": {
+    "pageid": 508683,
+    "ns": 0,
+    "title": "Q540121",
+    "lastrevid": 2372602942,
+    "modified": "2025-07-03T06:02:19Z",
+    "type": "item",
+    "id": "Q540121",
+    "labels": {
+      "it": {
+        "language": "it",
+        "value": "assedio di Maastricht"
+      },
+      "cs": {
+        "language": "cs",
+        "value": "Obléhání Maastrichtu"
+      },
+      "en": {
+        "language": "en",
+        "value": "Siege of Maastricht"
+      },
+      "es": {
+        "language": "es",
+        "value": "Sitio de Maastricht"
+      },
+      "fr": {
+        "language": "fr",
+        "value": "siège de Maastricht"
+      },
+      "id": {
+        "language": "id",
+        "value": "Pengepungan Maastricht"
+      },
+      "nl": {
+        "language": "nl",
+        "value": "Beleg van Maastricht (1673)"
+      },
+      "nn": {
+        "language": "nn",
+        "value": "Omleiringa av Maastricht"
+      },
+      "pl": {
+        "language": "pl",
+        "value": "Oblężenie Maastricht"
+      },
+      "pt": {
+        "language": "pt",
+        "value": "Cerco de Maastricht"
+      },
+      "nb": {
+        "language": "nb",
+        "value": "Beleiringen av Maastricht"
+      },
+      "de": {
+        "language": "de",
+        "value": "Belagerung von Maastricht (1673)"
+      },
+      "ru": {
+        "language": "ru",
+        "value": "Осада Маастрихта"
+      },
+      "ja": {
+        "language": "ja",
+        "value": "マーストリヒト包囲戦"
+      },
+      "br": {
+        "language": "br",
+        "value": "Seziz Maastricht"
+      },
+      "zh": {
+        "language": "zh",
+        "value": "馬斯垂克之圍"
+      },
+      "he": {
+        "language": "he",
+        "value": "המצור על מאסטריכט"
+      },
+      "vec": {
+        "language": "vec",
+        "value": "Asèdio de Maastricht"
+      },
+      "ga": {
+        "language": "ga",
+        "value": "Léigear Maastricht (1673)"
+      },
+      "ca": {
+        "language": "ca",
+        "value": "Setge de Maastricht (1673)"
+      },
+      "sl": {
+        "language": "sl",
+        "value": "obleganje Maastrichta (1673)"
+      },
+      "eo": {
+        "language": "eo",
+        "value": "Sieĝo de Mastriĥto"
+      }
+    },
+    "descriptions": {
+      "nl": {
+        "language": "nl",
+        "value": "Beleg en inname van Maastricht door de Fransen o.l.v. Lodewijk XIV tijdens de Hollandse Oorlog (1672–1678)"
+      },
+      "it": {
+        "language": "it",
+        "value": "azione bellica del 1673"
+      },
+      "fr": {
+        "language": "fr",
+        "value": "siège de Maastricht par Louis XIV en 1673"
+      },
+      "en": {
+        "language": "en",
+        "value": "French siege of Maastricht by Louis XIV during the Franco-Dutch War (1672–1678)"
+      },
+      "sl": {
+        "language": "sl",
+        "value": "francosko obleganje Maastrichta pod vodstvom Ludvika XIV. v francosko-nizozemski vojni (1672–1678)"
+      },
+      "eo": {
+        "language": "eo",
+        "value": "Franca sieĝo de Mastriĥto fare de Ludoviko la 14-a dum la Franca-Nederlanda Milito (1672-1678)"
+      }
+    },
+    "aliases": {
+      "es": [
+        {
+          "language": "es",
+          "value": "Asedio de Maastricht"
+        }
+      ]
+    },
+    "claims": {
+      "P625": [
+        {
+          "mainsnak": {
+            "snaktype": "value",
+            "property": "P625",
+            "hash": "ced655032b54e2a9db33d5a0a4734533737e3ac1",
+            "datavalue": {
+              "value": {
+                "latitude": 50.85,
+                "longitude": 5.68333333,
+                "altitude": null,
+                "precision": 0.016666666666667,
+                "globe": "http://www.wikidata.org/entity/Q2"
+              },
+              "type": "globecoordinate"
+            },
+            "datatype": "globe-coordinate"
+          },
+          "type": "statement",
+          "id": "Q540121$DCF438C4-80C0-407F-A523-151DE8EA74F4",
+          "rank": "normal",
+          "references": [
+            {
+              "hash": "fa278ebfc458360e5aed63d5058cca83c46134f1",
+              "snaks": {
+                "P143": [
+                  {
+                    "snaktype": "value",
+                    "property": "P143",
+                    "hash": "e4f6d9441d0600513c4533c672b5ab472dc73694",
+                    "datavalue": {
+                      "value": {
+                        "entity-type": "item",
+                        "numeric-id": 328,
+                        "id": "Q328"
+                      },
+                      "type": "wikibase-entityid"
+                    },
+                    "datatype": "wikibase-item"
+                  }
+                ]
+              },
+              "snaks-order": [
+                "P143"
+              ]
+            }
+          ]
+        },
+        {
+          "mainsnak": {
+            "snaktype": "value",
+            "property": "P625",
+            "hash": "56f5636d9bab3abc358b6fae8f7dd71e8dee4852",
+            "datavalue": {
+              "value": {
+                "latitude": 50.866666666667,
+                "longitude": 5.6833333333333,
+                "altitude": null,
+                "precision": 0.00001,
+                "globe": "http://www.wikidata.org/entity/Q2"
+              },
+              "type": "globecoordinate"
+            },
+            "datatype": "globe-coordinate"
+          },
+          "type": "statement",
+          "id": "Q540121$93DC3403-0307-4792-9866-E8EE96274743",
+          "rank": "deprecated"
+        }
+      ],
+      "P646": [
+        {
+          "mainsnak": {
+            "snaktype": "value",
+            "property": "P646",
+            "hash": "ddc11de950dd07712010a1d1d108c438ad8cdb02",
+            "datavalue": {
+              "value": "/m/064y7p",
+              "type": "string"
+            },
+            "datatype": "external-id"
+          },
+          "type": "statement",
+          "id": "Q540121$E65D3DCA-578D-4EDB-BA96-4F700924021E",
+          "rank": "normal",
+          "references": [
+            {
+              "hash": "2b00cb481cddcac7623114367489b5c194901c4a",
+              "snaks": {
+                "P248": [
+                  {
+                    "snaktype": "value",
+                    "property": "P248",
+                    "hash": "a94b740202b097dd33355e0e6c00e54b9395e5e0",
+                    "datavalue": {
+                      "value": {
+                        "entity-type": "item",
+                        "numeric-id": 15241312,
+                        "id": "Q15241312"
+                      },
+                      "type": "wikibase-entityid"
+                    },
+                    "datatype": "wikibase-item"
+                  }
+                ],
+                "P577": [
+                  {
+                    "snaktype": "value",
+                    "property": "P577",
+                    "hash": "fde79ecb015112d2f29229ccc1ec514ed3e71fa2",
+                    "datavalue": {
+                      "value": {
+                        "time": "+2013-10-28T00:00:00Z",
+                        "timezone": 0,
+                        "before": 0,
+                        "after": 0,
+                        "precision": 11,
+                        "calendarmodel": "http://www.wikidata.org/entity/Q1985727"
+                      },
+                      "type": "time"
+                    },
+                    "datatype": "time"
+                  }
+                ]
+              },
+              "snaks-order": [
+                "P248",
+                "P577"
+              ]
+            }
+          ]
+        }
+      ],
+      "P31": [
+        {
+          "mainsnak": {
+            "snaktype": "value",
+            "property": "P31",
+            "hash": "4fa1783d4cfdddbd24616e28fab46d9c00a29a54",
+            "datavalue": {
+              "value": {
+                "entity-type": "item",
+                "numeric-id": 188055,
+                "id": "Q188055"
+              },
+              "type": "wikibase-entityid"
+            },
+            "datatype": "wikibase-item"
+          },
+          "type": "statement",
+          "id": "Q540121$34B8920F-F54F-4A89-AA90-EBD734F28B1E",
+          "rank": "normal"
+        }
+      ],
+      "P18": [
+        {
+          "mainsnak": {
+            "snaktype": "value",
+            "property": "P18",
+            "hash": "d08f34afc2a91d7962368b28f4c5b1c4618d5a2c",
+            "datavalue": {
+              "value": "1673 marot.jpg",
+              "type": "string"
+            },
+            "datatype": "commonsMedia"
+          },
+          "type": "statement",
+          "id": "Q540121$3BCEA784-BBD3-4562-B4DB-1905C68B4E5F",
+          "rank": "normal",
+          "references": [
+            {
+              "hash": "732ec1c90a6f0694c7db9a71bf09fe7f2b674172",
+              "snaks": {
+                "P143": [
+                  {
+                    "snaktype": "value",
+                    "property": "P143",
+                    "hash": "9123b0de1cc9c3954366ba797d598e4e1ea4146f",
+                    "datavalue": {
+                      "value": {
+                        "entity-type": "item",
+                        "numeric-id": 10000,
+                        "id": "Q10000"
+                      },
+                      "type": "wikibase-entityid"
+                    },
+                    "datatype": "wikibase-item"
+                  }
+                ]
+              },
+              "snaks-order": [
+                "P143"
+              ]
+            }
+          ]
+        }
+      ],
+      "P373": [
+        {
+          "mainsnak": {
+            "snaktype": "value",
+            "property": "P373",
+            "hash": "e8fd9f1163e65082fb1c47351bca6a00c30fa0f6",
+            "datavalue": {
+              "value": "Siege of Maastricht (1673)",
+              "type": "string"
+            },
+            "datatype": "string"
+          },
+          "type": "statement",
+          "id": "Q540121$0108709a-4117-4ebf-2676-fb4dedc8c709",
+          "rank": "normal"
+        }
+      ],
+      "P580": [
+        {
+          "mainsnak": {
+            "snaktype": "value",
+            "property": "P580",
+            "hash": "6069cb219abcc14cd675614c951ab6cda7e004b2",
+            "datavalue": {
+              "value": {
+                "time": "+1673-06-13T00:00:00Z",
+                "timezone": 0,
+                "before": 0,
+                "after": 0,
+                "precision": 11,
+                "calendarmodel": "http://www.wikidata.org/entity/Q1985727"
+              },
+              "type": "time"
+            },
+            "datatype": "time"
+          },
+          "type": "statement",
+          "id": "Q540121$f6cb0564-492e-a2fb-bf2d-f354dcbcbd94",
+          "rank": "normal"
+        }
+      ],
+      "P582": [
+        {
+          "mainsnak": {
+            "snaktype": "value",
+            "property": "P582",
+            "hash": "caafb65cd2152331ab326c25020898618ff2f81a",
+            "datavalue": {
+              "value": {
+                "time": "+1673-06-26T00:00:00Z",
+                "timezone": 0,
+                "before": 0,
+                "after": 0,
+                "precision": 11,
+                "calendarmodel": "http://www.wikidata.org/entity/Q1985727"
+              },
+              "type": "time"
+            },
+            "datatype": "time"
+          },
+          "type": "statement",
+          "id": "Q540121$1c5ff83e-4f1d-b9f1-3e29-df684116a3bd",
+          "rank": "normal"
+        }
+      ],
+      "P361": [
+        {
+          "mainsnak": {
+            "snaktype": "value",
+            "property": "P361",
+            "hash": "3e44bb346bb4cf27706c0a57ab6903b830842ce0",
+            "datavalue": {
+              "value": {
+                "entity-type": "item",
+                "numeric-id": 646322,
+                "id": "Q646322"
+              },
+              "type": "wikibase-entityid"
+            },
+            "datatype": "wikibase-item"
+          },
+          "type": "statement",
+          "id": "Q540121$fb1801fc-4876-de5d-da67-c1b84253edb4",
+          "rank": "normal"
+        }
+      ],
+      "P17": [
+        {
+          "mainsnak": {
+            "snaktype": "value",
+            "property": "P17",
+            "hash": "3255495294545a1c2713e0724b0d3ba98a5f16db",
+            "datavalue": {
+              "value": {
+                "entity-type": "item",
+                "numeric-id": 55,
+                "id": "Q55"
+              },
+              "type": "wikibase-entityid"
+            },
+            "datatype": "wikibase-item"
+          },
+          "type": "statement",
+          "id": "Q540121$B4239AB6-24FF-4DC0-9741-B35B5EA9B727",
+          "rank": "normal"
+        }
+      ],
+      "P276": [
+        {
+          "mainsnak": {
+            "snaktype": "value",
+            "property": "P276",
+            "hash": "ee7b3325bd612dfcc73f9f2691b7fa4b69fe259e",
+            "datavalue": {
+              "value": {
+                "entity-type": "item",
+                "numeric-id": 1309,
+                "id": "Q1309"
+              },
+              "type": "wikibase-entityid"
+            },
+            "datatype": "wikibase-item"
+          },
+          "type": "statement",
+          "id": "Q540121$A60ABBB7-CD00-40B5-A03D-9936895F52B8",
+          "rank": "normal"
+        }
+      ],
+      "P585": [
+        {
+          "mainsnak": {
+            "snaktype": "value",
+            "property": "P585",
+            "hash": "c90dff834bf9c41ed844c475bf900657a737c948",
+            "datavalue": {
+              "value": {
+                "time": "+1673-00-00T00:00:00Z",
+                "timezone": 0,
+                "before": 0,
+                "after": 0,
+                "precision": 9,
+                "calendarmodel": "http://www.wikidata.org/entity/Q1985727"
+              },
+              "type": "time"
+            },
+            "datatype": "time"
+          },
+          "type": "statement",
+          "id": "Q540121$D5F8DAB9-55AE-4E85-988D-19CEA5C5120C",
+          "rank": "normal"
+        }
+      ],
+      "P1343": [
+        {
+          "mainsnak": {
+            "snaktype": "value",
+            "property": "P1343",
+            "hash": "838bca4d129e7db69c9b411c07d03542437bccbb",
+            "datavalue": {
+              "value": {
+                "entity-type": "item",
+                "numeric-id": 4114391,
+                "id": "Q4114391"
+              },
+              "type": "wikibase-entityid"
+            },
+            "datatype": "wikibase-item"
+          },
+          "type": "statement",
+          "qualifiers": {
+            "P805": [
+              {
+                "snaktype": "value",
+                "property": "P805",
+                "hash": "1fc8041986686c8be8ca8575877cf8e60e183130",
+                "datavalue": {
+                  "value": {
+                    "entity-type": "item",
+                    "numeric-id": 25397870,
+                    "id": "Q25397870"
+                  },
+                  "type": "wikibase-entityid"
+                },
+                "datatype": "wikibase-item"
+              }
+            ]
+          },
+          "qualifiers-order": [
+            "P805"
+          ],
+          "id": "Q540121$0c854f52-43e9-0295-9cc9-26b0b34fb1d0",
+          "rank": "normal"
+        }
+      ],
+      "P1889": [
+        {
+          "mainsnak": {
+            "snaktype": "value",
+            "property": "P1889",
+            "hash": "aa0d9ee767be826d57148847fc86f0ded8fd09e3",
+            "datavalue": {
+              "value": {
+                "entity-type": "item",
+                "numeric-id": 23306238,
+                "id": "Q23306238"
+              },
+              "type": "wikibase-entityid"
+            },
+            "datatype": "wikibase-item"
+          },
+          "type": "statement",
+          "id": "Q540121$56505D10-D8B6-43F8-BC91-7EA6C1066787",
+          "rank": "normal"
+        },
+        {
+          "mainsnak": {
+            "snaktype": "value",
+            "property": "P1889",
+            "hash": "41c41941d1f00b2185f67a53022282f1a0721933",
+            "datavalue": {
+              "value": {
+                "entity-type": "item",
+                "numeric-id": 2056637,
+                "id": "Q2056637"
+              },
+              "type": "wikibase-entityid"
+            },
+            "datatype": "wikibase-item"
+          },
+          "type": "statement",
+          "id": "Q540121$5F9B0117-DE4E-4E0F-B95A-65797AE56FD9",
+          "rank": "normal"
+        },
+        {
+          "mainsnak": {
+            "snaktype": "value",
+            "property": "P1889",
+            "hash": "01129cd0941d36d9336c5a2c7d5b3926b327b6f4",
+            "datavalue": {
+              "value": {
+                "entity-type": "item",
+                "numeric-id": 2758693,
+                "id": "Q2758693"
+              },
+              "type": "wikibase-entityid"
+            },
+            "datatype": "wikibase-item"
+          },
+          "type": "statement",
+          "id": "Q540121$922AE84A-AE9C-4A4C-8DF4-E7065E9269CC",
+          "rank": "normal"
+        },
+        {
+          "mainsnak": {
+            "snaktype": "value",
+            "property": "P1889",
+            "hash": "535b484a71a55582881db118fa7c822eebd66464",
+            "datavalue": {
+              "value": {
+                "entity-type": "item",
+                "numeric-id": 18002298,
+                "id": "Q18002298"
+              },
+              "type": "wikibase-entityid"
+            },
+            "datatype": "wikibase-item"
+          },
+          "type": "statement",
+          "id": "Q540121$8E7617F9-F312-4DE2-BE37-E5EC48E587A1",
+          "rank": "normal"
+        },
+        {
+          "mainsnak": {
+            "snaktype": "value",
+            "property": "P1889",
+            "hash": "a92914ab5bcd7a7204dd85366e261c03148a72d3",
+            "datavalue": {
+              "value": {
+                "entity-type": "item",
+                "numeric-id": 18002261,
+                "id": "Q18002261"
+              },
+              "type": "wikibase-entityid"
+            },
+            "datatype": "wikibase-item"
+          },
+          "type": "statement",
+          "id": "Q540121$43399F2B-5D49-4914-98E0-F6E997DFB09E",
+          "rank": "normal"
+        },
+        {
+          "mainsnak": {
+            "snaktype": "value",
+            "property": "P1889",
+            "hash": "4c85b85eca93d2570d91f95b67c11981ed70aee7",
+            "datavalue": {
+              "value": {
+                "entity-type": "item",
+                "numeric-id": 18002246,
+                "id": "Q18002246"
+              },
+              "type": "wikibase-entityid"
+            },
+            "datatype": "wikibase-item"
+          },
+          "type": "statement",
+          "id": "Q540121$09F1D476-4BDA-4BA8-9C2D-1BC44B0855AC",
+          "rank": "normal"
+        },
+        {
+          "mainsnak": {
+            "snaktype": "value",
+            "property": "P1889",
+            "hash": "fcad0f2b11f4b3164915d3bfaad11f1eaa50994a",
+            "datavalue": {
+              "value": {
+                "entity-type": "item",
+                "numeric-id": 17332638,
+                "id": "Q17332638"
+              },
+              "type": "wikibase-entityid"
+            },
+            "datatype": "wikibase-item"
+          },
+          "type": "statement",
+          "id": "Q540121$110F7864-B806-46FD-B03F-C4C3E38B659B",
+          "rank": "normal"
+        },
+        {
+          "mainsnak": {
+            "snaktype": "value",
+            "property": "P1889",
+            "hash": "1a355101da5cbe2e15f77f9e9f155184757c54c4",
+            "datavalue": {
+              "value": {
+                "entity-type": "item",
+                "numeric-id": 3625493,
+                "id": "Q3625493"
+              },
+              "type": "wikibase-entityid"
+            },
+            "datatype": "wikibase-item"
+          },
+          "type": "statement",
+          "id": "Q540121$AAE00677-19A7-448F-928B-CA9410D6C2B6",
+          "rank": "normal"
+        },
+        {
+          "mainsnak": {
+            "snaktype": "value",
+            "property": "P1889",
+            "hash": "dbfcc525eb34118465c29d3b1e67380dd3ba189b",
+            "datavalue": {
+              "value": {
+                "entity-type": "item",
+                "numeric-id": 3485935,
+                "id": "Q3485935"
+              },
+              "type": "wikibase-entityid"
+            },
+            "datatype": "wikibase-item"
+          },
+          "type": "statement",
+          "id": "Q540121$421E32A4-61E9-4561-9ACE-26EC0A1A7685",
+          "rank": "normal"
+        },
+        {
+          "mainsnak": {
+            "snaktype": "value",
+            "property": "P1889",
+            "hash": "b0fed6587a734580352f1d50b0db8eb80b0bb6f9",
+            "datavalue": {
+              "value": {
+                "entity-type": "item",
+                "numeric-id": 289609,
+                "id": "Q289609"
+              },
+              "type": "wikibase-entityid"
+            },
+            "datatype": "wikibase-item"
+          },
+          "type": "statement",
+          "id": "Q540121$5BAD119E-8594-4EAE-96D4-7CA10713A040",
+          "rank": "normal"
+        },
+        {
+          "mainsnak": {
+            "snaktype": "value",
+            "property": "P1889",
+            "hash": "2d76a4e2d9d78a5c6699c4243ae051b2be7e3983",
+            "datavalue": {
+              "value": {
+                "entity-type": "item",
+                "numeric-id": 18002290,
+                "id": "Q18002290"
+              },
+              "type": "wikibase-entityid"
+            },
+            "datatype": "wikibase-item"
+          },
+          "type": "statement",
+          "id": "Q540121$36766ED0-2B17-4965-9D21-D8FB98534A26",
+          "rank": "normal"
+        }
+      ]
+    },
+    "sitelinks": {
+      "brwiki": {
+        "site": "brwiki",
+        "title": "Seziz Maastricht (1673)",
+        "badges": [],
+        "url": "https://br.wikipedia.org/wiki/Seziz_Maastricht_(1673)"
+      },
+      "commonswiki": {
+        "site": "commonswiki",
+        "title": "Category:Siege of Maastricht (1673)",
+        "badges": [],
+        "url": "https://commons.wikimedia.org/wiki/Category:Siege_of_Maastricht_(1673)"
+      },
+      "cswiki": {
+        "site": "cswiki",
+        "title": "Obléhání Maastrichtu (1673)",
+        "badges": [],
+        "url": "https://cs.wikipedia.org/wiki/Obl%C3%A9h%C3%A1n%C3%AD_Maastrichtu_(1673)"
+      },
+      "dewiki": {
+        "site": "dewiki",
+        "title": "Belagerung von Maastricht (1673)",
+        "badges": [],
+        "url": "https://de.wikipedia.org/wiki/Belagerung_von_Maastricht_(1673)"
+      },
+      "enwiki": {
+        "site": "enwiki",
+        "title": "Siege of Maastricht (1673)",
+        "badges": [],
+        "url": "https://en.wikipedia.org/wiki/Siege_of_Maastricht_(1673)"
+      },
+      "eswiki": {
+        "site": "eswiki",
+        "title": "Sitio de Maastricht (1673)",
+        "badges": [],
+        "url": "https://es.wikipedia.org/wiki/Sitio_de_Maastricht_(1673)"
+      },
+      "frwiki": {
+        "site": "frwiki",
+        "title": "Siège de Maastricht (1673)",
+        "badges": [],
+        "url": "https://fr.wikipedia.org/wiki/Si%C3%A8ge_de_Maastricht_(1673)"
+      },
+      "idwiki": {
+        "site": "idwiki",
+        "title": "Pengepungan Maastricht (1673)",
+        "badges": [],
+        "url": "https://id.wikipedia.org/wiki/Pengepungan_Maastricht_(1673)"
+      },
+      "itwiki": {
+        "site": "itwiki",
+        "title": "Assedio di Maastricht (1673)",
+        "badges": [],
+        "url": "https://it.wikipedia.org/wiki/Assedio_di_Maastricht_(1673)"
+      },
+      "jawiki": {
+        "site": "jawiki",
+        "title": "マーストリヒト包囲戦 (1673年)",
+        "badges": [],
+        "url": "https://ja.wikipedia.org/wiki/%E3%83%9E%E3%83%BC%E3%82%B9%E3%83%88%E3%83%AA%E3%83%92%E3%83%88%E5%8C%85%E5%9B%B2%E6%88%A6_(1673%E5%B9%B4)"
+      },
+      "nlwiki": {
+        "site": "nlwiki",
+        "title": "Beleg van Maastricht (1673)",
+        "badges": [],
+        "url": "https://nl.wikipedia.org/wiki/Beleg_van_Maastricht_(1673)"
+      },
+      "nnwiki": {
+        "site": "nnwiki",
+        "title": "Omleiringa av Maastricht",
+        "badges": [],
+        "url": "https://nn.wikipedia.org/wiki/Omleiringa_av_Maastricht"
+      },
+      "nowiki": {
+        "site": "nowiki",
+        "title": "Beleiringen av Maastricht",
+        "badges": [],
+        "url": "https://no.wikipedia.org/wiki/Beleiringen_av_Maastricht"
+      },
+      "plwiki": {
+        "site": "plwiki",
+        "title": "Oblężenie Maastricht",
+        "badges": [],
+        "url": "https://pl.wikipedia.org/wiki/Obl%C4%99%C5%BCenie_Maastricht"
+      },
+      "ptwiki": {
+        "site": "ptwiki",
+        "title": "Cerco de Maastricht",
+        "badges": [],
+        "url": "https://pt.wikipedia.org/wiki/Cerco_de_Maastricht"
+      },
+      "ruwiki": {
+        "site": "ruwiki",
+        "title": "Осада Маастрихта (1673)",
+        "badges": [],
+        "url": "https://ru.wikipedia.org/wiki/%D0%9E%D1%81%D0%B0%D0%B4%D0%B0_%D0%9C%D0%B0%D0%B0%D1%81%D1%82%D1%80%D0%B8%D1%85%D1%82%D0%B0_(1673)"
+      },
+      "zhwiki": {
+        "site": "zhwiki",
+        "title": "馬斯垂克圍城戰 (1673年)",
+        "badges": [],
+        "url": "https://zh.wikipedia.org/wiki/%E9%A6%AC%E6%96%AF%E5%9E%82%E5%85%8B%E5%9C%8D%E5%9F%8E%E6%88%B0_(1673%E5%B9%B4)"
+      }
+    }
+  }
+}

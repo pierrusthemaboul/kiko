@@ -1,0 +1,825 @@
+{
+  "saved_at": "2026-03-07T11:57:08.636Z",
+  "value": {
+    "pageid": 3319678,
+    "ns": 0,
+    "title": "Q3485809",
+    "lastrevid": 2451864244,
+    "modified": "2026-01-05T21:33:06Z",
+    "type": "item",
+    "id": "Q3485809",
+    "labels": {
+      "fr": {
+        "language": "fr",
+        "value": "siège d'Amiens"
+      },
+      "en": {
+        "language": "en",
+        "value": "Siege of Amiens"
+      },
+      "de": {
+        "language": "de",
+        "value": "Belagerung von Amiens"
+      },
+      "ru": {
+        "language": "ru",
+        "value": "Осада Амьена"
+      },
+      "zh-hant": {
+        "language": "zh-hant",
+        "value": "亞眠圍攻戰"
+      },
+      "zh-cn": {
+        "language": "zh-cn",
+        "value": "亚眠围攻战"
+      },
+      "es": {
+        "language": "es",
+        "value": "sitio de Amiens (1597)"
+      },
+      "he": {
+        "language": "he",
+        "value": "המצור על אמיין"
+      },
+      "zh-hans": {
+        "language": "zh-hans",
+        "value": "亚眠围攻战"
+      },
+      "zh": {
+        "language": "zh",
+        "value": "1597年亚眠战役"
+      },
+      "ja": {
+        "language": "ja",
+        "value": "アミアン包囲戦"
+      },
+      "vec": {
+        "language": "vec",
+        "value": "Asèdio de Amiens"
+      },
+      "ca": {
+        "language": "ca",
+        "value": "setge d'Amiens"
+      },
+      "ga": {
+        "language": "ga",
+        "value": "Léigear Amiens"
+      },
+      "nl": {
+        "language": "nl",
+        "value": "Beleg van Amiens"
+      },
+      "ar": {
+        "language": "ar",
+        "value": "حصار أميان"
+      },
+      "pt": {
+        "language": "pt",
+        "value": "Cerco de Amiens (1597)"
+      },
+      "sl": {
+        "language": "sl",
+        "value": "obleganje Amiensa (1597"
+      }
+    },
+    "descriptions": {
+      "es": {
+        "language": "es",
+        "value": "asedio"
+      },
+      "ru": {
+        "language": "ru",
+        "value": "осада города Амьен в рамках Восьмой Религиозной войны"
+      },
+      "de": {
+        "language": "de",
+        "value": "militärische Aktion 1597"
+      },
+      "en": {
+        "language": "en",
+        "value": "1597 siege"
+      },
+      "fr": {
+        "language": "fr",
+        "value": "1597"
+      },
+      "sl": {
+        "language": "sl",
+        "value": "vojaška bitka leta v nizozemski osamosvojitveni vojni"
+      }
+    },
+    "aliases": {
+      "fr": [
+        {
+          "language": "fr",
+          "value": "Siege d'Amiens"
+        },
+        {
+          "language": "fr",
+          "value": "Prise d'Amiens"
+        },
+        {
+          "language": "fr",
+          "value": "Siège de velours"
+        },
+        {
+          "language": "fr",
+          "value": "Siège d’Amiens"
+        }
+      ],
+      "zh-hans": [
+        {
+          "language": "zh-hans",
+          "value": "1597年亚眠战役"
+        }
+      ],
+      "zh-hant": [
+        {
+          "language": "zh-hant",
+          "value": "1597年亞眠戰役"
+        }
+      ]
+    },
+    "claims": {
+      "P31": [
+        {
+          "mainsnak": {
+            "snaktype": "value",
+            "property": "P31",
+            "hash": "4fa1783d4cfdddbd24616e28fab46d9c00a29a54",
+            "datavalue": {
+              "value": {
+                "entity-type": "item",
+                "numeric-id": 188055,
+                "id": "Q188055"
+              },
+              "type": "wikibase-entityid"
+            },
+            "datatype": "wikibase-item"
+          },
+          "type": "statement",
+          "id": "Q3485809$7C6663ED-A2A9-4F5E-99CE-EA22239DE439",
+          "rank": "normal"
+        }
+      ],
+      "P18": [
+        {
+          "mainsnak": {
+            "snaktype": "value",
+            "property": "P18",
+            "hash": "d10f236a1e9e9e51b60ec4171018b9b2bdcd7797",
+            "datavalue": {
+              "value": "Henry IV at Amiens 1597.jpg",
+              "type": "string"
+            },
+            "datatype": "commonsMedia"
+          },
+          "type": "statement",
+          "id": "Q3485809$480F3F8A-00A5-474F-B1B0-20F5A9ED94D3",
+          "rank": "normal",
+          "references": [
+            {
+              "hash": "fa278ebfc458360e5aed63d5058cca83c46134f1",
+              "snaks": {
+                "P143": [
+                  {
+                    "snaktype": "value",
+                    "property": "P143",
+                    "hash": "e4f6d9441d0600513c4533c672b5ab472dc73694",
+                    "datavalue": {
+                      "value": {
+                        "entity-type": "item",
+                        "numeric-id": 328,
+                        "id": "Q328"
+                      },
+                      "type": "wikibase-entityid"
+                    },
+                    "datatype": "wikibase-item"
+                  }
+                ]
+              },
+              "snaks-order": [
+                "P143"
+              ]
+            }
+          ]
+        }
+      ],
+      "P361": [
+        {
+          "mainsnak": {
+            "snaktype": "value",
+            "property": "P361",
+            "hash": "49628875b9a0c58525370807500b25ccc741e51e",
+            "datavalue": {
+              "value": {
+                "entity-type": "item",
+                "numeric-id": 97165187,
+                "id": "Q97165187"
+              },
+              "type": "wikibase-entityid"
+            },
+            "datatype": "wikibase-item"
+          },
+          "type": "statement",
+          "id": "Q3485809$FC1CC9EB-4D80-4C36-A651-F12C05618B04",
+          "rank": "normal"
+        },
+        {
+          "mainsnak": {
+            "snaktype": "value",
+            "property": "P361",
+            "hash": "2afc5596925d66ff7d0ffb54b782416bc0efdcc5",
+            "datavalue": {
+              "value": {
+                "entity-type": "item",
+                "numeric-id": 430726,
+                "id": "Q430726"
+              },
+              "type": "wikibase-entityid"
+            },
+            "datatype": "wikibase-item"
+          },
+          "type": "statement",
+          "id": "Q3485809$3cb8e516-46ff-a43e-ff0f-79bf60d7b0d1",
+          "rank": "normal"
+        }
+      ],
+      "P580": [
+        {
+          "mainsnak": {
+            "snaktype": "value",
+            "property": "P580",
+            "hash": "23edc37174895ef2e692e1a253c1295c53e99050",
+            "datavalue": {
+              "value": {
+                "time": "+1597-05-13T00:00:00Z",
+                "timezone": 0,
+                "before": 0,
+                "after": 0,
+                "precision": 11,
+                "calendarmodel": "http://www.wikidata.org/entity/Q1985727"
+              },
+              "type": "time"
+            },
+            "datatype": "time"
+          },
+          "type": "statement",
+          "id": "Q3485809$608BBCC0-37FC-4427-AB6A-4EC8FF142D18",
+          "rank": "normal",
+          "references": [
+            {
+              "hash": "2dd6e365d8c85cc87447775f5f0ccbd2647567e5",
+              "snaks": {
+                "P143": [
+                  {
+                    "snaktype": "value",
+                    "property": "P143",
+                    "hash": "e4f6d9441d0600513c4533c672b5ab472dc73694",
+                    "datavalue": {
+                      "value": {
+                        "entity-type": "item",
+                        "numeric-id": 328,
+                        "id": "Q328"
+                      },
+                      "type": "wikibase-entityid"
+                    },
+                    "datatype": "wikibase-item"
+                  }
+                ],
+                "P813": [
+                  {
+                    "snaktype": "value",
+                    "property": "P813",
+                    "hash": "107d76411f9aa4e5b9d0a5d58dd995b70a8ab64b",
+                    "datavalue": {
+                      "value": {
+                        "time": "+2018-03-23T00:00:00Z",
+                        "timezone": 0,
+                        "before": 0,
+                        "after": 0,
+                        "precision": 11,
+                        "calendarmodel": "http://www.wikidata.org/entity/Q1985727"
+                      },
+                      "type": "time"
+                    },
+                    "datatype": "time"
+                  }
+                ]
+              },
+              "snaks-order": [
+                "P143",
+                "P813"
+              ]
+            }
+          ]
+        }
+      ],
+      "P582": [
+        {
+          "mainsnak": {
+            "snaktype": "value",
+            "property": "P582",
+            "hash": "37a70034ec247ec372aa313d4436ccb1fe21b091",
+            "datavalue": {
+              "value": {
+                "time": "+1597-09-25T00:00:00Z",
+                "timezone": 0,
+                "before": 0,
+                "after": 0,
+                "precision": 11,
+                "calendarmodel": "http://www.wikidata.org/entity/Q1985727"
+              },
+              "type": "time"
+            },
+            "datatype": "time"
+          },
+          "type": "statement",
+          "id": "Q3485809$6287FDC0-0E82-4E49-98C1-5BEC3B9870CB",
+          "rank": "normal",
+          "references": [
+            {
+              "hash": "2dd6e365d8c85cc87447775f5f0ccbd2647567e5",
+              "snaks": {
+                "P143": [
+                  {
+                    "snaktype": "value",
+                    "property": "P143",
+                    "hash": "e4f6d9441d0600513c4533c672b5ab472dc73694",
+                    "datavalue": {
+                      "value": {
+                        "entity-type": "item",
+                        "numeric-id": 328,
+                        "id": "Q328"
+                      },
+                      "type": "wikibase-entityid"
+                    },
+                    "datatype": "wikibase-item"
+                  }
+                ],
+                "P813": [
+                  {
+                    "snaktype": "value",
+                    "property": "P813",
+                    "hash": "107d76411f9aa4e5b9d0a5d58dd995b70a8ab64b",
+                    "datavalue": {
+                      "value": {
+                        "time": "+2018-03-23T00:00:00Z",
+                        "timezone": 0,
+                        "before": 0,
+                        "after": 0,
+                        "precision": 11,
+                        "calendarmodel": "http://www.wikidata.org/entity/Q1985727"
+                      },
+                      "type": "time"
+                    },
+                    "datatype": "time"
+                  }
+                ]
+              },
+              "snaks-order": [
+                "P143",
+                "P813"
+              ]
+            }
+          ]
+        }
+      ],
+      "P276": [
+        {
+          "mainsnak": {
+            "snaktype": "value",
+            "property": "P276",
+            "hash": "10cea65ba3972feb9819811b2b2a1e816d229aba",
+            "datavalue": {
+              "value": {
+                "entity-type": "item",
+                "numeric-id": 41604,
+                "id": "Q41604"
+              },
+              "type": "wikibase-entityid"
+            },
+            "datatype": "wikibase-item"
+          },
+          "type": "statement",
+          "id": "Q3485809$C671ADED-9559-4739-9668-FA7F5C4D45E3",
+          "rank": "normal",
+          "references": [
+            {
+              "hash": "2adb80abdc59b6a9847078babfb510f3263b4690",
+              "snaks": {
+                "P143": [
+                  {
+                    "snaktype": "value",
+                    "property": "P143",
+                    "hash": "e4f6d9441d0600513c4533c672b5ab472dc73694",
+                    "datavalue": {
+                      "value": {
+                        "entity-type": "item",
+                        "numeric-id": 328,
+                        "id": "Q328"
+                      },
+                      "type": "wikibase-entityid"
+                    },
+                    "datatype": "wikibase-item"
+                  }
+                ],
+                "P4656": [
+                  {
+                    "snaktype": "value",
+                    "property": "P4656",
+                    "hash": "5cce8cf727fca8780a5d4951e07a6621364b7b49",
+                    "datavalue": {
+                      "value": "https://en.wikipedia.org/w/index.php?title=Siege_of_Amiens_(1597)&oldid=849320379",
+                      "type": "string"
+                    },
+                    "datatype": "url"
+                  }
+                ]
+              },
+              "snaks-order": [
+                "P143",
+                "P4656"
+              ]
+            }
+          ]
+        }
+      ],
+      "P625": [
+        {
+          "mainsnak": {
+            "snaktype": "value",
+            "property": "P625",
+            "hash": "40888b907052fae06ed4fe0b7a9b7f5323014e9e",
+            "datavalue": {
+              "value": {
+                "latitude": 49.891944444444,
+                "longitude": 2.2977777777778,
+                "altitude": null,
+                "precision": 0.00001,
+                "globe": "http://www.wikidata.org/entity/Q2"
+              },
+              "type": "globecoordinate"
+            },
+            "datatype": "globe-coordinate"
+          },
+          "type": "statement",
+          "id": "Q3485809$59ABEE90-EA53-4B1E-8E36-BFA56A98E05D",
+          "rank": "normal"
+        }
+      ],
+      "P646": [
+        {
+          "mainsnak": {
+            "snaktype": "value",
+            "property": "P646",
+            "hash": "5bcfb4c0d142d6365736416b18b8489b2a29e2ed",
+            "datavalue": {
+              "value": "/m/0j9m5n0",
+              "type": "string"
+            },
+            "datatype": "external-id"
+          },
+          "type": "statement",
+          "id": "Q3485809$F5F9060A-493F-4767-8D56-946DBB4ECBD2",
+          "rank": "normal"
+        }
+      ],
+      "P1889": [
+        {
+          "mainsnak": {
+            "snaktype": "value",
+            "property": "P1889",
+            "hash": "8c0a88eaf5ceefd6ab6f4772aed5c9b6f6623a34",
+            "datavalue": {
+              "value": {
+                "entity-type": "item",
+                "numeric-id": 111211629,
+                "id": "Q111211629"
+              },
+              "type": "wikibase-entityid"
+            },
+            "datatype": "wikibase-item"
+          },
+          "type": "statement",
+          "id": "Q3485809$F8AD5CC2-570B-464C-A282-EE9ADD1EEF9F",
+          "rank": "normal"
+        }
+      ],
+      "P373": [
+        {
+          "mainsnak": {
+            "snaktype": "value",
+            "property": "P373",
+            "hash": "baebf94d2be971c44f3655c009ecf70c7658315f",
+            "datavalue": {
+              "value": "Siege of Amiens (1597)",
+              "type": "string"
+            },
+            "datatype": "string"
+          },
+          "type": "statement",
+          "id": "Q3485809$a3db584b-fadc-453b-929e-f23851fdba53",
+          "rank": "normal"
+        }
+      ],
+      "P17": [
+        {
+          "mainsnak": {
+            "snaktype": "value",
+            "property": "P17",
+            "hash": "2b7d86f7555d9e77641e33f3f283b88021a5e49a",
+            "datavalue": {
+              "value": {
+                "entity-type": "item",
+                "numeric-id": 70972,
+                "id": "Q70972"
+              },
+              "type": "wikibase-entityid"
+            },
+            "datatype": "wikibase-item"
+          },
+          "type": "statement",
+          "id": "Q3485809$5326f254-4b2f-52f4-8562-c77bb0b04672",
+          "rank": "normal"
+        }
+      ],
+      "P710": [
+        {
+          "mainsnak": {
+            "snaktype": "value",
+            "property": "P710",
+            "hash": "d305ad30e2848fa4a092d31633e67df891f45171",
+            "datavalue": {
+              "value": {
+                "entity-type": "item",
+                "numeric-id": 766543,
+                "id": "Q766543"
+              },
+              "type": "wikibase-entityid"
+            },
+            "datatype": "wikibase-item"
+          },
+          "type": "statement",
+          "qualifiers": {
+            "P4791": [
+              {
+                "snaktype": "value",
+                "property": "P4791",
+                "hash": "fed53790f35068ac085062bebc7b0f4d6b3f4d15",
+                "datavalue": {
+                  "value": {
+                    "entity-type": "item",
+                    "numeric-id": 311452,
+                    "id": "Q311452"
+                  },
+                  "type": "wikibase-entityid"
+                },
+                "datatype": "wikibase-item"
+              },
+              {
+                "snaktype": "value",
+                "property": "P4791",
+                "hash": "20e227c5c02e455455a46636977f383f972570b5",
+                "datavalue": {
+                  "value": {
+                    "entity-type": "item",
+                    "numeric-id": 97369154,
+                    "id": "Q97369154"
+                  },
+                  "type": "wikibase-entityid"
+                },
+                "datatype": "wikibase-item"
+              },
+              {
+                "snaktype": "value",
+                "property": "P4791",
+                "hash": "5e74590518943c9527a50f1652d7aa163d863775",
+                "datavalue": {
+                  "value": {
+                    "entity-type": "item",
+                    "numeric-id": 1527024,
+                    "id": "Q1527024"
+                  },
+                  "type": "wikibase-entityid"
+                },
+                "datatype": "wikibase-item"
+              },
+              {
+                "snaktype": "value",
+                "property": "P4791",
+                "hash": "084afcaca2c6eebc3f81a0632eec162aa0f9a9dc",
+                "datavalue": {
+                  "value": {
+                    "entity-type": "item",
+                    "numeric-id": 701932,
+                    "id": "Q701932"
+                  },
+                  "type": "wikibase-entityid"
+                },
+                "datatype": "wikibase-item"
+              }
+            ]
+          },
+          "qualifiers-order": [
+            "P4791"
+          ],
+          "id": "Q3485809$37934513-4431-a946-f924-8c72b9397ad4",
+          "rank": "normal"
+        },
+        {
+          "mainsnak": {
+            "snaktype": "value",
+            "property": "P710",
+            "hash": "8a9ea07e5e69e9e51e5c91cad488fa1c0428f5bc",
+            "datavalue": {
+              "value": {
+                "entity-type": "item",
+                "numeric-id": 70972,
+                "id": "Q70972"
+              },
+              "type": "wikibase-entityid"
+            },
+            "datatype": "wikibase-item"
+          },
+          "type": "statement",
+          "qualifiers": {
+            "P4791": [
+              {
+                "snaktype": "value",
+                "property": "P4791",
+                "hash": "4952c28529db9be461eddf7ca019ed8c4fa2c54e",
+                "datavalue": {
+                  "value": {
+                    "entity-type": "item",
+                    "numeric-id": 936976,
+                    "id": "Q936976"
+                  },
+                  "type": "wikibase-entityid"
+                },
+                "datatype": "wikibase-item"
+              },
+              {
+                "snaktype": "value",
+                "property": "P4791",
+                "hash": "36d77978b34f044e6880e056177a1b1e82e3bdd8",
+                "datavalue": {
+                  "value": {
+                    "entity-type": "item",
+                    "numeric-id": 379953,
+                    "id": "Q379953"
+                  },
+                  "type": "wikibase-entityid"
+                },
+                "datatype": "wikibase-item"
+              },
+              {
+                "snaktype": "value",
+                "property": "P4791",
+                "hash": "102d872fe9c9afb961c5aee9eaadc5faad0bd313",
+                "datavalue": {
+                  "value": {
+                    "entity-type": "item",
+                    "numeric-id": 524562,
+                    "id": "Q524562"
+                  },
+                  "type": "wikibase-entityid"
+                },
+                "datatype": "wikibase-item"
+              },
+              {
+                "snaktype": "value",
+                "property": "P4791",
+                "hash": "afb4e7c1b4828037abfbb3e94969288c90187930",
+                "datavalue": {
+                  "value": {
+                    "entity-type": "item",
+                    "numeric-id": 1066570,
+                    "id": "Q1066570"
+                  },
+                  "type": "wikibase-entityid"
+                },
+                "datatype": "wikibase-item"
+              }
+            ]
+          },
+          "qualifiers-order": [
+            "P4791"
+          ],
+          "id": "Q3485809$d55780c1-4a57-cdc1-7427-cd5c431b56c2",
+          "rank": "normal"
+        },
+        {
+          "mainsnak": {
+            "snaktype": "value",
+            "property": "P710",
+            "hash": "94757bdc48d787b52e28d494639cbea583aad352",
+            "datavalue": {
+              "value": {
+                "entity-type": "item",
+                "numeric-id": 179876,
+                "id": "Q179876"
+              },
+              "type": "wikibase-entityid"
+            },
+            "datatype": "wikibase-item"
+          },
+          "type": "statement",
+          "qualifiers": {
+            "P4791": [
+              {
+                "snaktype": "value",
+                "property": "P4791",
+                "hash": "c1536414ebedfa1885ea6a3a6549914466fc8be5",
+                "datavalue": {
+                  "value": {
+                    "entity-type": "item",
+                    "numeric-id": 7787452,
+                    "id": "Q7787452"
+                  },
+                  "type": "wikibase-entityid"
+                },
+                "datatype": "wikibase-item"
+              },
+              {
+                "snaktype": "value",
+                "property": "P4791",
+                "hash": "8e15f1572229ba848f812e88791526fc8c5225f6",
+                "datavalue": {
+                  "value": {
+                    "entity-type": "item",
+                    "numeric-id": 2485335,
+                    "id": "Q2485335"
+                  },
+                  "type": "wikibase-entityid"
+                },
+                "datatype": "wikibase-item"
+              }
+            ]
+          },
+          "qualifiers-order": [
+            "P4791"
+          ],
+          "id": "Q3485809$aee58239-478e-cdfa-4de6-37ea0dabe18e",
+          "rank": "normal"
+        }
+      ]
+    },
+    "sitelinks": {
+      "arwiki": {
+        "site": "arwiki",
+        "title": "حصار أميان (1597)",
+        "badges": [],
+        "url": "https://ar.wikipedia.org/wiki/%D8%AD%D8%B5%D8%A7%D8%B1_%D8%A3%D9%85%D9%8A%D8%A7%D9%86_(1597)"
+      },
+      "commonswiki": {
+        "site": "commonswiki",
+        "title": "Category:Siege of Amiens (1597)",
+        "badges": [],
+        "url": "https://commons.wikimedia.org/wiki/Category:Siege_of_Amiens_(1597)"
+      },
+      "dewiki": {
+        "site": "dewiki",
+        "title": "Belagerung von Amiens",
+        "badges": [],
+        "url": "https://de.wikipedia.org/wiki/Belagerung_von_Amiens"
+      },
+      "enwiki": {
+        "site": "enwiki",
+        "title": "Siege of Amiens (1597)",
+        "badges": [],
+        "url": "https://en.wikipedia.org/wiki/Siege_of_Amiens_(1597)"
+      },
+      "frwiki": {
+        "site": "frwiki",
+        "title": "Siège d'Amiens (1597)",
+        "badges": [],
+        "url": "https://fr.wikipedia.org/wiki/Si%C3%A8ge_d%27Amiens_(1597)"
+      },
+      "nlwiki": {
+        "site": "nlwiki",
+        "title": "Beleg van Amiens",
+        "badges": [],
+        "url": "https://nl.wikipedia.org/wiki/Beleg_van_Amiens"
+      },
+      "ptwiki": {
+        "site": "ptwiki",
+        "title": "Cerco de Amiens (1597)",
+        "badges": [],
+        "url": "https://pt.wikipedia.org/wiki/Cerco_de_Amiens_(1597)"
+      },
+      "ruwiki": {
+        "site": "ruwiki",
+        "title": "Осада Амьена (1597)",
+        "badges": [],
+        "url": "https://ru.wikipedia.org/wiki/%D0%9E%D1%81%D0%B0%D0%B4%D0%B0_%D0%90%D0%BC%D1%8C%D0%B5%D0%BD%D0%B0_(1597)"
+      },
+      "zhwiki": {
+        "site": "zhwiki",
+        "title": "亞眠圍城戰 (1597年)",
+        "badges": [],
+        "url": "https://zh.wikipedia.org/wiki/%E4%BA%9E%E7%9C%A0%E5%9C%8D%E5%9F%8E%E6%88%B0_(1597%E5%B9%B4)"
+      }
+    }
+  }
+}

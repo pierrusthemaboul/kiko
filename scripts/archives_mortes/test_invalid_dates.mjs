@@ -21,3 +21,4 @@ const d2 = 'another_invalid';
 const diff = getTimeDifference(d1, d2);
 console.log(`d1: ${d1}, d2: ${d2}, diff: ${diff}, diff !== 0: ${diff !== 0}`);
 console.log(`isNaN(diff): ${isNaN(diff)}`);
+

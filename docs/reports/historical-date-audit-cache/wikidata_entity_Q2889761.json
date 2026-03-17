@@ -1,0 +1,310 @@
+{
+  "saved_at": "2026-03-07T13:30:54.991Z",
+  "value": {
+    "pageid": 2766331,
+    "ns": 0,
+    "title": "Q2889761",
+    "lastrevid": 2393111520,
+    "modified": "2025-08-16T23:22:01Z",
+    "type": "item",
+    "id": "Q2889761",
+    "labels": {
+      "fr": {
+        "language": "fr",
+        "value": "bataille de Rethel"
+      },
+      "zh-hant": {
+        "language": "zh-hant",
+        "value": "雷特爾之戰"
+      },
+      "ja": {
+        "language": "ja",
+        "value": "ルテルの戦い"
+      },
+      "de": {
+        "language": "de",
+        "value": "Schlacht bei Rethel"
+      },
+      "en": {
+        "language": "en",
+        "value": "Bataille de Rethel-Beaulieu"
+      },
+      "es": {
+        "language": "es",
+        "value": "Batalla de Rethel-Beaulieu"
+      },
+      "zh": {
+        "language": "zh",
+        "value": "勒泰勒战役"
+      },
+      "ru": {
+        "language": "ru",
+        "value": "Ретельское сражение"
+      }
+    },
+    "descriptions": {
+      "en": {
+        "language": "en",
+        "value": "1650 battle"
+      }
+    },
+    "aliases": {
+      "fr": [
+        {
+          "language": "fr",
+          "value": "Bataille de rethel"
+        },
+        {
+          "language": "fr",
+          "value": "Bataille De Rethel"
+        }
+      ]
+    },
+    "claims": {
+      "P31": [
+        {
+          "mainsnak": {
+            "snaktype": "value",
+            "property": "P31",
+            "hash": "baa1df9dcd37b9f3a062e7a14a8bef0c37078d32",
+            "datavalue": {
+              "value": {
+                "entity-type": "item",
+                "numeric-id": 178561,
+                "id": "Q178561"
+              },
+              "type": "wikibase-entityid"
+            },
+            "datatype": "wikibase-item"
+          },
+          "type": "statement",
+          "id": "Q2889761$EDE1B7DB-B0C7-40A9-92BF-DA54A788687F",
+          "rank": "normal",
+          "references": [
+            {
+              "hash": "d4bd87b862b12d99d26e86472d44f26858dee639",
+              "snaks": {
+                "P143": [
+                  {
+                    "snaktype": "value",
+                    "property": "P143",
+                    "hash": "f30cbd35620c4ea6d0633aaf0210a8916130469b",
+                    "datavalue": {
+                      "value": {
+                        "entity-type": "item",
+                        "numeric-id": 8447,
+                        "id": "Q8447"
+                      },
+                      "type": "wikibase-entityid"
+                    },
+                    "datatype": "wikibase-item"
+                  }
+                ]
+              },
+              "snaks-order": [
+                "P143"
+              ]
+            }
+          ]
+        }
+      ],
+      "P585": [
+        {
+          "mainsnak": {
+            "snaktype": "value",
+            "property": "P585",
+            "hash": "b155f0045dffced1e932e2c7f14b1f52b0de70d6",
+            "datavalue": {
+              "value": {
+                "time": "+1650-12-15T00:00:00Z",
+                "timezone": 0,
+                "before": 0,
+                "after": 0,
+                "precision": 11,
+                "calendarmodel": "http://www.wikidata.org/entity/Q1985727"
+              },
+              "type": "time"
+            },
+            "datatype": "time"
+          },
+          "type": "statement",
+          "id": "Q2889761$14B83BA8-1CA5-47D4-8782-00A62E471AB4",
+          "rank": "normal",
+          "references": [
+            {
+              "hash": "d4bd87b862b12d99d26e86472d44f26858dee639",
+              "snaks": {
+                "P143": [
+                  {
+                    "snaktype": "value",
+                    "property": "P143",
+                    "hash": "f30cbd35620c4ea6d0633aaf0210a8916130469b",
+                    "datavalue": {
+                      "value": {
+                        "entity-type": "item",
+                        "numeric-id": 8447,
+                        "id": "Q8447"
+                      },
+                      "type": "wikibase-entityid"
+                    },
+                    "datatype": "wikibase-item"
+                  }
+                ]
+              },
+              "snaks-order": [
+                "P143"
+              ]
+            }
+          ]
+        }
+      ],
+      "P361": [
+        {
+          "mainsnak": {
+            "snaktype": "value",
+            "property": "P361",
+            "hash": "c38a855310895a95d0a89ea9bfb173caf3f92025",
+            "datavalue": {
+              "value": {
+                "entity-type": "item",
+                "numeric-id": 617333,
+                "id": "Q617333"
+              },
+              "type": "wikibase-entityid"
+            },
+            "datatype": "wikibase-item"
+          },
+          "type": "statement",
+          "id": "Q2889761$A12B123F-A447-4C4E-9F83-3479D6A7FB9B",
+          "rank": "normal",
+          "references": [
+            {
+              "hash": "9a24f7c0208b05d6be97077d855671d1dfdbc0dd",
+              "snaks": {
+                "P143": [
+                  {
+                    "snaktype": "value",
+                    "property": "P143",
+                    "hash": "d38375ffe6fe142663ff55cd783aa4df4301d83d",
+                    "datavalue": {
+                      "value": {
+                        "entity-type": "item",
+                        "numeric-id": 48183,
+                        "id": "Q48183"
+                      },
+                      "type": "wikibase-entityid"
+                    },
+                    "datatype": "wikibase-item"
+                  }
+                ]
+              },
+              "snaks-order": [
+                "P143"
+              ]
+            }
+          ]
+        }
+      ],
+      "P18": [
+        {
+          "mainsnak": {
+            "snaktype": "value",
+            "property": "P18",
+            "hash": "05e1cbf66d5fee5fbd34266e54d0db873ba1dafa",
+            "datavalue": {
+              "value": "Bataille de Rethel 405.JPG",
+              "type": "string"
+            },
+            "datatype": "commonsMedia"
+          },
+          "type": "statement",
+          "id": "Q2889761$16f988de-40d7-c661-9501-2270b298250e",
+          "rank": "normal"
+        }
+      ],
+      "P373": [
+        {
+          "mainsnak": {
+            "snaktype": "value",
+            "property": "P373",
+            "hash": "82efc42a12a8f89dfa73189467f3ef0505c2d227",
+            "datavalue": {
+              "value": "Battle of Rethel-Beaulieu",
+              "type": "string"
+            },
+            "datatype": "string"
+          },
+          "type": "statement",
+          "id": "Q2889761$9EFF74CB-8524-4D3E-B0B3-139E8E77DC66",
+          "rank": "normal"
+        }
+      ],
+      "P625": [
+        {
+          "mainsnak": {
+            "snaktype": "value",
+            "property": "P625",
+            "hash": "c699f5a43e45d56815a574bf7f3d79b554e1a32d",
+            "datavalue": {
+              "value": {
+                "latitude": 49.275278,
+                "longitude": 4.521667,
+                "altitude": null,
+                "precision": 0.000001,
+                "globe": "http://www.wikidata.org/entity/Q2"
+              },
+              "type": "globecoordinate"
+            },
+            "datatype": "globe-coordinate"
+          },
+          "type": "statement",
+          "id": "Q2889761$6455A05C-E485-40C3-8C9D-DE0399070E56",
+          "rank": "normal"
+        }
+      ],
+      "P2671": [
+        {
+          "mainsnak": {
+            "snaktype": "value",
+            "property": "P2671",
+            "hash": "aebc87713e16a10fc15a432b711cfcc906e98b71",
+            "datavalue": {
+              "value": "/g/1233f9cd",
+              "type": "string"
+            },
+            "datatype": "external-id"
+          },
+          "type": "statement",
+          "id": "Q2889761$8B4B8F81-6E18-4DF0-B382-77D30DA5E0ED",
+          "rank": "normal"
+        }
+      ]
+    },
+    "sitelinks": {
+      "commonswiki": {
+        "site": "commonswiki",
+        "title": "Category:Battle of Rethel-Beaulieu",
+        "badges": [],
+        "url": "https://commons.wikimedia.org/wiki/Category:Battle_of_Rethel-Beaulieu"
+      },
+      "dewiki": {
+        "site": "dewiki",
+        "title": "Schlacht bei Rethel",
+        "badges": [],
+        "url": "https://de.wikipedia.org/wiki/Schlacht_bei_Rethel"
+      },
+      "frwiki": {
+        "site": "frwiki",
+        "title": "Bataille de Rethel (1650)",
+        "badges": [],
+        "url": "https://fr.wikipedia.org/wiki/Bataille_de_Rethel_(1650)"
+      },
+      "ruwiki": {
+        "site": "ruwiki",
+        "title": "Ретельское сражение",
+        "badges": [],
+        "url": "https://ru.wikipedia.org/wiki/%D0%A0%D0%B5%D1%82%D0%B5%D0%BB%D1%8C%D1%81%D0%BA%D0%BE%D0%B5_%D1%81%D1%80%D0%B0%D0%B6%D0%B5%D0%BD%D0%B8%D0%B5"
+      }
+    }
+  }
+}

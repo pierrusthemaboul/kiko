@@ -1,0 +1,518 @@
+{
+  "saved_at": "2026-03-07T16:45:18.531Z",
+  "value": {
+    "pageid": 15157454,
+    "ns": 0,
+    "title": "Q13479645",
+    "lastrevid": 2468665030,
+    "modified": "2026-03-02T08:17:13Z",
+    "type": "item",
+    "id": "Q13479645",
+    "labels": {
+      "de": {
+        "language": "de",
+        "value": "Atlantiküberquerung"
+      },
+      "en": {
+        "language": "en",
+        "value": "Transatlantic crossing"
+      },
+      "fr": {
+        "language": "fr",
+        "value": "traversée transatlantique"
+      },
+      "it": {
+        "language": "it",
+        "value": "Traversata transatlantica"
+      },
+      "es": {
+        "language": "es",
+        "value": "Travesía del Atlántico"
+      },
+      "eo": {
+        "language": "eo",
+        "value": "Transiroj de Atlantika Oceano"
+      },
+      "et": {
+        "language": "et",
+        "value": "Atlandi ookeani ületamine"
+      },
+      "ar": {
+        "language": "ar",
+        "value": "العبور عبر الأطلسي"
+      },
+      "zh": {
+        "language": "zh",
+        "value": "橫跨大西洋"
+      },
+      "sv": {
+        "language": "sv",
+        "value": "Atlantöverfart"
+      },
+      "th": {
+        "language": "th",
+        "value": "การข้ามมหาสมุทรแอตแลนติก"
+      }
+    },
+    "descriptions": {
+      "en": {
+        "language": "en",
+        "value": "passages of passengers and cargo across the Atlantic Ocean"
+      },
+      "sv": {
+        "language": "sv",
+        "value": "förflyttning av passagerare och last över Atlanten"
+      },
+      "de": {
+        "language": "de",
+        "value": "Begriff der Überquerung des Atlantik nach oder von Amerika"
+      },
+      "it": {
+        "language": "it",
+        "value": "trasporto di passeggeri e merci attraverso l'Oceano Atlantico"
+      },
+      "es": {
+        "language": "es",
+        "value": "ruta a través del océano Atlántico"
+      }
+    },
+    "aliases": {
+      "de": [
+        {
+          "language": "de",
+          "value": "Transatlantikflug"
+        }
+      ],
+      "fr": [
+        {
+          "language": "fr",
+          "value": "traversée de l'Atlantique"
+        }
+      ],
+      "es": [
+        {
+          "language": "es",
+          "value": "Travesia del Atlantico"
+        }
+      ]
+    },
+    "claims": {
+      "P227": [
+        {
+          "mainsnak": {
+            "snaktype": "value",
+            "property": "P227",
+            "hash": "a37df78f4fdb20517a39ae06e71fb664baffd844",
+            "datavalue": {
+              "value": "4196279-5",
+              "type": "string"
+            },
+            "datatype": "external-id"
+          },
+          "type": "statement",
+          "id": "Q13479645$3F847C3D-E96E-4C4A-8CB3-C40092C537D4",
+          "rank": "normal",
+          "references": [
+            {
+              "hash": "9a24f7c0208b05d6be97077d855671d1dfdbc0dd",
+              "snaks": {
+                "P143": [
+                  {
+                    "snaktype": "value",
+                    "property": "P143",
+                    "hash": "d38375ffe6fe142663ff55cd783aa4df4301d83d",
+                    "datavalue": {
+                      "value": {
+                        "entity-type": "item",
+                        "numeric-id": 48183,
+                        "id": "Q48183"
+                      },
+                      "type": "wikibase-entityid"
+                    },
+                    "datatype": "wikibase-item"
+                  }
+                ]
+              },
+              "snaks-order": [
+                "P143"
+              ]
+            }
+          ]
+        }
+      ],
+      "P646": [
+        {
+          "mainsnak": {
+            "snaktype": "value",
+            "property": "P646",
+            "hash": "2190c1635ebf84369fb296b2e3a75df75d213e98",
+            "datavalue": {
+              "value": "/m/01ssfy",
+              "type": "string"
+            },
+            "datatype": "external-id"
+          },
+          "type": "statement",
+          "id": "Q13479645$ED8120DB-8048-44BA-83C3-B5A3575D6D1B",
+          "rank": "normal"
+        }
+      ],
+      "P244": [
+        {
+          "mainsnak": {
+            "snaktype": "value",
+            "property": "P244",
+            "hash": "8e5a1be995df328491c1f77eb9e4cb9a3c86cf12",
+            "datavalue": {
+              "value": "sh85148890",
+              "type": "string"
+            },
+            "datatype": "external-id"
+          },
+          "type": "statement",
+          "qualifiers": {
+            "P1810": [
+              {
+                "snaktype": "value",
+                "property": "P1810",
+                "hash": "e57cb91031f96fd3fb6800939784026e9c0380f2",
+                "datavalue": {
+                  "value": "Yacht racing",
+                  "type": "string"
+                },
+                "datatype": "string"
+              }
+            ]
+          },
+          "qualifiers-order": [
+            "P1810"
+          ],
+          "id": "Q13479645$7349B223-3E55-4A89-93FF-30E8F488BF11",
+          "rank": "normal",
+          "references": [
+            {
+              "hash": "ced024eb12b5fe38ed87cb5720ea18f3c54229a9",
+              "snaks": {
+                "P248": [
+                  {
+                    "snaktype": "value",
+                    "property": "P248",
+                    "hash": "019a50b7de741e0068bde41c9d9955b22a5de47b",
+                    "datavalue": {
+                      "value": {
+                        "entity-type": "item",
+                        "numeric-id": 36578,
+                        "id": "Q36578"
+                      },
+                      "type": "wikibase-entityid"
+                    },
+                    "datatype": "wikibase-item"
+                  }
+                ]
+              },
+              "snaks-order": [
+                "P248"
+              ]
+            }
+          ]
+        }
+      ],
+      "P279": [
+        {
+          "mainsnak": {
+            "snaktype": "value",
+            "property": "P279",
+            "hash": "e3bf7af8f880a2249b57c626bf022c91eddf998e",
+            "datavalue": {
+              "value": {
+                "entity-type": "item",
+                "numeric-id": 1322323,
+                "id": "Q1322323"
+              },
+              "type": "wikibase-entityid"
+            },
+            "datatype": "wikibase-item"
+          },
+          "type": "statement",
+          "id": "Q13479645$93f55a29-45dd-84f3-b52a-6cfc355fc0cc",
+          "rank": "normal"
+        }
+      ],
+      "P8189": [
+        {
+          "mainsnak": {
+            "snaktype": "value",
+            "property": "P8189",
+            "hash": "1f5bcf5409f5ed8686d3862f910c2bb916f7c7a3",
+            "datavalue": {
+              "value": "987007529618105171",
+              "type": "string"
+            },
+            "datatype": "external-id"
+          },
+          "type": "statement",
+          "id": "Q13479645$AA48E9B6-A316-4DA3-8C40-09FFCD274028",
+          "rank": "normal",
+          "references": [
+            {
+              "hash": "ecb7a39cf436eb1fba419853af168ef9f2ba1dab",
+              "snaks": {
+                "P248": [
+                  {
+                    "snaktype": "value",
+                    "property": "P248",
+                    "hash": "a03bb6ffe37be9554492f4eea5bd18afcb57df19",
+                    "datavalue": {
+                      "value": {
+                        "entity-type": "item",
+                        "numeric-id": 106509962,
+                        "id": "Q106509962"
+                      },
+                      "type": "wikibase-entityid"
+                    },
+                    "datatype": "wikibase-item"
+                  }
+                ]
+              },
+              "snaks-order": [
+                "P248"
+              ]
+            }
+          ]
+        }
+      ],
+      "P373": [
+        {
+          "mainsnak": {
+            "snaktype": "value",
+            "property": "P373",
+            "hash": "81099d271a417325062b9e983a2f0ee0a1f96830",
+            "datavalue": {
+              "value": "Transatlantic crossing",
+              "type": "string"
+            },
+            "datatype": "string"
+          },
+          "type": "statement",
+          "id": "Q13479645$ba10ff6e-9fd4-47ff-a2d0-e1dc6bbe5967",
+          "rank": "normal"
+        }
+      ],
+      "P8168": [
+        {
+          "mainsnak": {
+            "snaktype": "value",
+            "property": "P8168",
+            "hash": "7559552de0ade520cbca90a37ea20cac53f50156",
+            "datavalue": {
+              "value": "Q1347228",
+              "type": "string"
+            },
+            "datatype": "external-id"
+          },
+          "type": "statement",
+          "id": "Q13479645$8A004A29-DB28-4E9D-9D22-D081160F5E79",
+          "rank": "normal",
+          "references": [
+            {
+              "hash": "20306e77692ae0b78e29eaae8ceb090666304836",
+              "snaks": {
+                "P248": [
+                  {
+                    "snaktype": "value",
+                    "property": "P248",
+                    "hash": "e4afc4ad60f2160201385d29d076e0794f815f1e",
+                    "datavalue": {
+                      "value": {
+                        "entity-type": "item",
+                        "numeric-id": 90405608,
+                        "id": "Q90405608"
+                      },
+                      "type": "wikibase-entityid"
+                    },
+                    "datatype": "wikibase-item"
+                  }
+                ],
+                "P813": [
+                  {
+                    "snaktype": "value",
+                    "property": "P813",
+                    "hash": "29605db3e9f11b7af1a7ca99c082d681b82395a3",
+                    "datavalue": {
+                      "value": {
+                        "time": "+2025-06-11T00:00:00Z",
+                        "timezone": 0,
+                        "before": 0,
+                        "after": 0,
+                        "precision": 11,
+                        "calendarmodel": "http://www.wikidata.org/entity/Q1985727"
+                      },
+                      "type": "time"
+                    },
+                    "datatype": "time"
+                  }
+                ]
+              },
+              "snaks-order": [
+                "P248",
+                "P813"
+              ]
+            }
+          ]
+        }
+      ],
+      "P13591": [
+        {
+          "mainsnak": {
+            "snaktype": "value",
+            "property": "P13591",
+            "hash": "e67f6a584702d48df476e75775c876c470ba2511",
+            "datavalue": {
+              "value": "concept/ae518db9-2ca5-42b6-8472-ef06bcbea78e",
+              "type": "string"
+            },
+            "datatype": "external-id"
+          },
+          "type": "statement",
+          "id": "Q13479645$05A86F0B-E9CD-40C0-8BAB-EC0D6EDDF62B",
+          "rank": "normal"
+        }
+      ],
+      "P443": [
+        {
+          "mainsnak": {
+            "snaktype": "value",
+            "property": "P443",
+            "hash": "4eaf35fc066c3ce04df98e20930ec1bf27570973",
+            "datavalue": {
+              "value": "De-Atlantiküberquerung.ogg",
+              "type": "string"
+            },
+            "datatype": "commonsMedia"
+          },
+          "type": "statement",
+          "qualifiers": {
+            "P407": [
+              {
+                "snaktype": "value",
+                "property": "P407",
+                "hash": "46bfd327b830f66f7061ea92d1be430c135fa91f",
+                "datavalue": {
+                  "value": {
+                    "entity-type": "item",
+                    "numeric-id": 188,
+                    "id": "Q188"
+                  },
+                  "type": "wikibase-entityid"
+                },
+                "datatype": "wikibase-item"
+              }
+            ],
+            "P898": [
+              {
+                "snaktype": "value",
+                "property": "P898",
+                "hash": "735983393a88df8550b9e2622e4d4467d38f6caa",
+                "datavalue": {
+                  "value": "atˈlantɪkʔyːbɐˌkveːʁʊŋ",
+                  "type": "string"
+                },
+                "datatype": "string"
+              }
+            ],
+            "P5168": [
+              {
+                "snaktype": "value",
+                "property": "P5168",
+                "hash": "488f9fff6ce53cc45c678a456e51c3d587c7c682",
+                "datavalue": {
+                  "value": {
+                    "text": "Atlantiküberquerung",
+                    "language": "de"
+                  },
+                  "type": "monolingualtext"
+                },
+                "datatype": "monolingualtext"
+              }
+            ]
+          },
+          "qualifiers-order": [
+            "P407",
+            "P898",
+            "P5168"
+          ],
+          "id": "Q13479645$418d7c2f-4484-30e6-1e31-088393f8f70a",
+          "rank": "normal"
+        }
+      ]
+    },
+    "sitelinks": {
+      "arwiki": {
+        "site": "arwiki",
+        "title": "العبور عبر الأطلسي",
+        "badges": [],
+        "url": "https://ar.wikipedia.org/wiki/%D8%A7%D9%84%D8%B9%D8%A8%D9%88%D8%B1_%D8%B9%D8%A8%D8%B1_%D8%A7%D9%84%D8%A3%D8%B7%D9%84%D8%B3%D9%8A"
+      },
+      "commonswiki": {
+        "site": "commonswiki",
+        "title": "Category:Transatlantic crossing",
+        "badges": [],
+        "url": "https://commons.wikimedia.org/wiki/Category:Transatlantic_crossing"
+      },
+      "dewiki": {
+        "site": "dewiki",
+        "title": "Atlantiküberquerung",
+        "badges": [],
+        "url": "https://de.wikipedia.org/wiki/Atlantik%C3%BCberquerung"
+      },
+      "dewikivoyage": {
+        "site": "dewikivoyage",
+        "title": "Atlantiküberquerung",
+        "badges": [],
+        "url": "https://de.wikivoyage.org/wiki/Atlantik%C3%BCberquerung"
+      },
+      "enwiki": {
+        "site": "enwiki",
+        "title": "Transatlantic crossing",
+        "badges": [],
+        "url": "https://en.wikipedia.org/wiki/Transatlantic_crossing"
+      },
+      "eowiki": {
+        "site": "eowiki",
+        "title": "Transiroj de Atlantika Oceano",
+        "badges": [],
+        "url": "https://eo.wikipedia.org/wiki/Transiroj_de_Atlantika_Oceano"
+      },
+      "eswiki": {
+        "site": "eswiki",
+        "title": "Travesía del Atlántico",
+        "badges": [],
+        "url": "https://es.wikipedia.org/wiki/Traves%C3%ADa_del_Atl%C3%A1ntico"
+      },
+      "etwiki": {
+        "site": "etwiki",
+        "title": "Atlandi ookeani ületus",
+        "badges": [],
+        "url": "https://et.wikipedia.org/wiki/Atlandi_ookeani_%C3%BCletus"
+      },
+      "frwiki": {
+        "site": "frwiki",
+        "title": "Traversée de l'Atlantique",
+        "badges": [],
+        "url": "https://fr.wikipedia.org/wiki/Travers%C3%A9e_de_l%27Atlantique"
+      },
+      "itwiki": {
+        "site": "itwiki",
+        "title": "Traversate transatlantiche",
+        "badges": [],
+        "url": "https://it.wikipedia.org/wiki/Traversate_transatlantiche"
+      },
+      "thwiki": {
+        "site": "thwiki",
+        "title": "การข้ามมหาสมุทรแอตแลนติก",
+        "badges": [],
+        "url": "https://th.wikipedia.org/wiki/%E0%B8%81%E0%B8%B2%E0%B8%A3%E0%B8%82%E0%B9%89%E0%B8%B2%E0%B8%A1%E0%B8%A1%E0%B8%AB%E0%B8%B2%E0%B8%AA%E0%B8%A1%E0%B8%B8%E0%B8%97%E0%B8%A3%E0%B9%81%E0%B8%AD%E0%B8%95%E0%B9%81%E0%B8%A5%E0%B8%99%E0%B8%95%E0%B8%B4%E0%B8%81"
+      }
+    }
+  }
+}

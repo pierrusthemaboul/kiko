@@ -1,0 +1,361 @@
+{
+  "saved_at": "2026-03-07T15:10:27.842Z",
+  "value": {
+    "pageid": 1330407,
+    "ns": 0,
+    "title": "Q1391310",
+    "lastrevid": 2443139969,
+    "modified": "2025-12-16T20:53:36Z",
+    "type": "item",
+    "id": "Q1391310",
+    "labels": {
+      "pt": {
+        "language": "pt",
+        "value": "Execução de Maria Antonieta"
+      },
+      "cs": {
+        "language": "cs",
+        "value": "Poprava Marie Antoinetty"
+      },
+      "fr": {
+        "language": "fr",
+        "value": "Exécution de Marie-Antoinette d'Autriche"
+      },
+      "es": {
+        "language": "es",
+        "value": "Ejecución de María Antonieta"
+      },
+      "en": {
+        "language": "en",
+        "value": "Death of Marie Antoinette of Austria"
+      },
+      "gl": {
+        "language": "gl",
+        "value": "Execución de María Antonieta de Austria"
+      },
+      "ru": {
+        "language": "ru",
+        "value": "Казнь Марии-Антуанетты"
+      },
+      "ja": {
+        "language": "ja",
+        "value": "マリー・アントワネットの処刑"
+      },
+      "de": {
+        "language": "de",
+        "value": "Hinrichtung Marie-Antoinettes"
+      }
+    },
+    "descriptions": {
+      "en": {
+        "language": "en",
+        "value": "decapitation"
+      },
+      "cs": {
+        "language": "cs",
+        "value": "Historická událost ve Francii"
+      },
+      "gl": {
+        "language": "gl",
+        "value": "evento histórico da Revolución francesa"
+      },
+      "fr": {
+        "language": "fr",
+        "value": "exécution de l'ancienne reine de France Marie-Antoinette le 16 octobre 1793"
+      },
+      "ja": {
+        "language": "ja",
+        "value": "処刑"
+      },
+      "pt": {
+        "language": "pt",
+        "value": "execução da rainha francesa Maria Antonieta na guilhotina"
+      }
+    },
+    "aliases": {
+      "fr": [
+        {
+          "language": "fr",
+          "value": "Execution de Marie-Antoinette d'Autriche"
+        }
+      ],
+      "en": [
+        {
+          "language": "en",
+          "value": "Marie Antoinette of Austria's death"
+        },
+        {
+          "language": "en",
+          "value": "Marie Antoinette of Austria death"
+        },
+        {
+          "language": "en",
+          "value": "Execution of Marie Antoinette"
+        }
+      ],
+      "ja": [
+        {
+          "language": "ja",
+          "value": "マリー・アントワネットの死"
+        }
+      ]
+    },
+    "claims": {
+      "P373": [
+        {
+          "mainsnak": {
+            "snaktype": "value",
+            "property": "P373",
+            "hash": "84fa9ed6c17c00563455715dd8e61ca953349f24",
+            "datavalue": {
+              "value": "Death of Marie Antoinette of Austria",
+              "type": "string"
+            },
+            "datatype": "string"
+          },
+          "type": "statement",
+          "id": "q1391310$9C6A255A-E0FA-43BC-9E0B-5AF7A2D9AEF3",
+          "rank": "normal"
+        }
+      ],
+      "P625": [
+        {
+          "mainsnak": {
+            "snaktype": "value",
+            "property": "P625",
+            "hash": "6b65484e02b59e2b868a3b53cb0212b1fb560fb0",
+            "datavalue": {
+              "value": {
+                "latitude": 48.8655,
+                "longitude": 2.3211,
+                "altitude": null,
+                "precision": 0.06827879685951,
+                "globe": "http://www.wikidata.org/entity/Q2"
+              },
+              "type": "globecoordinate"
+            },
+            "datatype": "globe-coordinate"
+          },
+          "type": "statement",
+          "id": "Q1391310$F5DABD14-F53E-47E3-A9E6-FC80374474FC",
+          "rank": "normal",
+          "references": [
+            {
+              "hash": "d4bd87b862b12d99d26e86472d44f26858dee639",
+              "snaks": {
+                "P143": [
+                  {
+                    "snaktype": "value",
+                    "property": "P143",
+                    "hash": "f30cbd35620c4ea6d0633aaf0210a8916130469b",
+                    "datavalue": {
+                      "value": {
+                        "entity-type": "item",
+                        "numeric-id": 8447,
+                        "id": "Q8447"
+                      },
+                      "type": "wikibase-entityid"
+                    },
+                    "datatype": "wikibase-item"
+                  }
+                ]
+              },
+              "snaks-order": [
+                "P143"
+              ]
+            }
+          ]
+        }
+      ],
+      "P31": [
+        {
+          "mainsnak": {
+            "snaktype": "value",
+            "property": "P31",
+            "hash": "3b9d4eb9c831fd4064cd6a030d81304b82ea42fd",
+            "datavalue": {
+              "value": {
+                "entity-type": "item",
+                "numeric-id": 204933,
+                "id": "Q204933"
+              },
+              "type": "wikibase-entityid"
+            },
+            "datatype": "wikibase-item"
+          },
+          "type": "statement",
+          "id": "Q1391310$65d9df44-4956-7273-b546-aa72a61339ff",
+          "rank": "normal"
+        }
+      ],
+      "P585": [
+        {
+          "mainsnak": {
+            "snaktype": "value",
+            "property": "P585",
+            "hash": "409c658c355c2f0eaf5e3b13f1719c15822184d2",
+            "datavalue": {
+              "value": {
+                "time": "+1793-10-16T00:00:00Z",
+                "timezone": 0,
+                "before": 0,
+                "after": 0,
+                "precision": 11,
+                "calendarmodel": "http://www.wikidata.org/entity/Q1985727"
+              },
+              "type": "time"
+            },
+            "datatype": "time"
+          },
+          "type": "statement",
+          "id": "Q1391310$7ab3b68b-4ed0-1f2f-c62b-fe3a6d6bc7ef",
+          "rank": "normal"
+        }
+      ],
+      "P17": [
+        {
+          "mainsnak": {
+            "snaktype": "value",
+            "property": "P17",
+            "hash": "c05db5d169c2560b9799d567a803d20a392f53e4",
+            "datavalue": {
+              "value": {
+                "entity-type": "item",
+                "numeric-id": 142,
+                "id": "Q142"
+              },
+              "type": "wikibase-entityid"
+            },
+            "datatype": "wikibase-item"
+          },
+          "type": "statement",
+          "id": "Q1391310$D8A930B3-BF38-4801-B22F-45103899B745",
+          "rank": "normal"
+        }
+      ],
+      "P2671": [
+        {
+          "mainsnak": {
+            "snaktype": "value",
+            "property": "P2671",
+            "hash": "265064e6f7a9f58bec24b0bf42e742f693e720eb",
+            "datavalue": {
+              "value": "/g/12111l7s",
+              "type": "string"
+            },
+            "datatype": "external-id"
+          },
+          "type": "statement",
+          "id": "Q1391310$40E07453-7403-49AC-9280-22B759D06F57",
+          "rank": "normal"
+        }
+      ],
+      "P1478": [
+        {
+          "mainsnak": {
+            "snaktype": "value",
+            "property": "P1478",
+            "hash": "eb748089033ca1a328e69a4c674cba26334aafac",
+            "datavalue": {
+              "value": {
+                "entity-type": "item",
+                "numeric-id": 1440659,
+                "id": "Q1440659"
+              },
+              "type": "wikibase-entityid"
+            },
+            "datatype": "wikibase-item"
+          },
+          "type": "statement",
+          "id": "Q1391310$DBD359C4-D55E-40C6-B063-37B8D0CDCEFF",
+          "rank": "normal",
+          "references": [
+            {
+              "hash": "374170b619fb88877312805e611e25918ccc2323",
+              "snaks": {
+                "P143": [
+                  {
+                    "snaktype": "value",
+                    "property": "P143",
+                    "hash": "f30cbd35620c4ea6d0633aaf0210a8916130469b",
+                    "datavalue": {
+                      "value": {
+                        "entity-type": "item",
+                        "numeric-id": 8447,
+                        "id": "Q8447"
+                      },
+                      "type": "wikibase-entityid"
+                    },
+                    "datatype": "wikibase-item"
+                  }
+                ],
+                "P4656": [
+                  {
+                    "snaktype": "value",
+                    "property": "P4656",
+                    "hash": "c741de2b090cc1d48e8eac30e70ae8a90491c9ea",
+                    "datavalue": {
+                      "value": "https://fr.wikipedia.org/w/index.php?title=Exécution_de_Marie-Antoinette_d'Autriche&oldid=154954901",
+                      "type": "string"
+                    },
+                    "datatype": "url"
+                  }
+                ]
+              },
+              "snaks-order": [
+                "P143",
+                "P4656"
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    "sitelinks": {
+      "commonswiki": {
+        "site": "commonswiki",
+        "title": "Category:Death of Marie Antoinette of Austria",
+        "badges": [],
+        "url": "https://commons.wikimedia.org/wiki/Category:Death_of_Marie_Antoinette_of_Austria"
+      },
+      "cswiki": {
+        "site": "cswiki",
+        "title": "Poprava Marie Antoinetty",
+        "badges": [],
+        "url": "https://cs.wikipedia.org/wiki/Poprava_Marie_Antoinetty"
+      },
+      "enwiki": {
+        "site": "enwiki",
+        "title": "Execution of Marie Antoinette",
+        "badges": [
+          "Q70893996"
+        ],
+        "url": "https://en.wikipedia.org/wiki/Execution_of_Marie_Antoinette"
+      },
+      "eswiki": {
+        "site": "eswiki",
+        "title": "Ejecución de María Antonieta",
+        "badges": [],
+        "url": "https://es.wikipedia.org/wiki/Ejecuci%C3%B3n_de_Mar%C3%ADa_Antonieta"
+      },
+      "frwiki": {
+        "site": "frwiki",
+        "title": "Exécution de Marie-Antoinette",
+        "badges": [],
+        "url": "https://fr.wikipedia.org/wiki/Ex%C3%A9cution_de_Marie-Antoinette"
+      },
+      "ptwiki": {
+        "site": "ptwiki",
+        "title": "Execução de Maria Antonieta",
+        "badges": [],
+        "url": "https://pt.wikipedia.org/wiki/Execu%C3%A7%C3%A3o_de_Maria_Antonieta"
+      },
+      "ruwiki": {
+        "site": "ruwiki",
+        "title": "Казнь Марии-Антуанетты",
+        "badges": [],
+        "url": "https://ru.wikipedia.org/wiki/%D0%9A%D0%B0%D0%B7%D0%BD%D1%8C_%D0%9C%D0%B0%D1%80%D0%B8%D0%B8-%D0%90%D0%BD%D1%82%D1%83%D0%B0%D0%BD%D0%B5%D1%82%D1%82%D1%8B"
+      }
+    }
+  }
+}

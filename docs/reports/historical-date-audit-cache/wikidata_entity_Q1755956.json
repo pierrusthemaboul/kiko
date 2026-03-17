@@ -1,0 +1,1123 @@
+{
+  "saved_at": "2026-03-07T14:08:58.517Z",
+  "value": {
+    "pageid": 1688610,
+    "ns": 0,
+    "title": "Q1755956",
+    "lastrevid": 2321556583,
+    "modified": "2025-03-08T08:32:57Z",
+    "type": "item",
+    "id": "Q1755956",
+    "labels": {
+      "de": {
+        "language": "de",
+        "value": "Torrey Canyon"
+      },
+      "br": {
+        "language": "br",
+        "value": "Lanv du an Torrey Canyon"
+      },
+      "pl": {
+        "language": "pl",
+        "value": "Torrey Canyon"
+      },
+      "fr": {
+        "language": "fr",
+        "value": "Torrey Canyon"
+      },
+      "en": {
+        "language": "en",
+        "value": "Torrey Canyon"
+      },
+      "es": {
+        "language": "es",
+        "value": "Torrey Canyon"
+      },
+      "tr": {
+        "language": "tr",
+        "value": "Torrey Canyon"
+      },
+      "ca": {
+        "language": "ca",
+        "value": "Torrey Canyon"
+      },
+      "nl": {
+        "language": "nl",
+        "value": "Torrey Canyon"
+      },
+      "sv": {
+        "language": "sv",
+        "value": "Torrey Canyon"
+      },
+      "it": {
+        "language": "it",
+        "value": "Torrey Canyon"
+      },
+      "vi": {
+        "language": "vi",
+        "value": "Torrey Canyon"
+      },
+      "fi": {
+        "language": "fi",
+        "value": "Torrey Canyon"
+      },
+      "ja": {
+        "language": "ja",
+        "value": "トリー・キャニオン"
+      },
+      "de-ch": {
+        "language": "de-ch",
+        "value": "Torrey Canyon"
+      },
+      "en-ca": {
+        "language": "en-ca",
+        "value": "SS Torrey Canyon"
+      },
+      "en-gb": {
+        "language": "en-gb",
+        "value": "SS Torrey Canyon"
+      },
+      "he": {
+        "language": "he",
+        "value": "טורי קניון"
+      },
+      "io": {
+        "language": "io",
+        "value": "Torrey Canyon"
+      },
+      "ar": {
+        "language": "ar",
+        "value": "توري كانيون"
+      },
+      "uk": {
+        "language": "uk",
+        "value": "Torrey Canyon"
+      },
+      "cs": {
+        "language": "cs",
+        "value": "Torrey Canyon"
+      }
+    },
+    "descriptions": {
+      "nl": {
+        "language": "nl",
+        "value": "schip"
+      },
+      "de": {
+        "language": "de",
+        "value": "Öltanker der vor der Küste Südenglands sank und damit die erste große Ölpest verursachte."
+      },
+      "en": {
+        "language": "en",
+        "value": "Suezmax class oil tanker wrecked off the western coast of Cornwall"
+      },
+      "fr": {
+        "language": "fr",
+        "value": "pétrolier à l'origine d'une des premières marées noires"
+      },
+      "cs": {
+        "language": "cs",
+        "value": "Ropný tanker potopený u západního pobřeží Cornwallu"
+      }
+    },
+    "aliases": {
+      "br": [
+        {
+          "language": "br",
+          "value": "Torrey Canyon"
+        },
+        {
+          "language": "br",
+          "value": "Peñse an Torrey Canyon"
+        }
+      ],
+      "fr": [
+        {
+          "language": "fr",
+          "value": "Naufrage du Torrey Canyon"
+        }
+      ],
+      "ja": [
+        {
+          "language": "ja",
+          "value": "トリーキャニオン号"
+        }
+      ]
+    },
+    "claims": {
+      "P31": [
+        {
+          "mainsnak": {
+            "snaktype": "value",
+            "property": "P31",
+            "hash": "8bcc0c29c80ce7509006b0ea7a23a0d21fd59c75",
+            "datavalue": {
+              "value": {
+                "entity-type": "item",
+                "numeric-id": 14928,
+                "id": "Q14928"
+              },
+              "type": "wikibase-entityid"
+            },
+            "datatype": "wikibase-item"
+          },
+          "type": "statement",
+          "id": "q1755956$5EC22D21-44E2-4336-9D04-7EBB04E9642E",
+          "rank": "normal"
+        }
+      ],
+      "P625": [
+        {
+          "mainsnak": {
+            "snaktype": "value",
+            "property": "P625",
+            "hash": "1a8722430c3e87f3d7294f7c4858bfca88345cf9",
+            "datavalue": {
+              "value": {
+                "latitude": 50.041667,
+                "longitude": -6.128833,
+                "altitude": null,
+                "precision": 0.00000277777777778,
+                "globe": "http://www.wikidata.org/entity/Q2"
+              },
+              "type": "globecoordinate"
+            },
+            "datatype": "globe-coordinate"
+          },
+          "type": "statement",
+          "id": "Q1755956$B08C0A1C-2AD8-442E-863D-424279A09E5A",
+          "rank": "normal",
+          "references": [
+            {
+              "hash": "9a24f7c0208b05d6be97077d855671d1dfdbc0dd",
+              "snaks": {
+                "P143": [
+                  {
+                    "snaktype": "value",
+                    "property": "P143",
+                    "hash": "d38375ffe6fe142663ff55cd783aa4df4301d83d",
+                    "datavalue": {
+                      "value": {
+                        "entity-type": "item",
+                        "numeric-id": 48183,
+                        "id": "Q48183"
+                      },
+                      "type": "wikibase-entityid"
+                    },
+                    "datatype": "wikibase-item"
+                  }
+                ]
+              },
+              "snaks-order": [
+                "P143"
+              ]
+            }
+          ]
+        }
+      ],
+      "P127": [
+        {
+          "mainsnak": {
+            "snaktype": "value",
+            "property": "P127",
+            "hash": "8568297d950da1f133166b8a1d00724b03288217",
+            "datavalue": {
+              "value": {
+                "entity-type": "item",
+                "numeric-id": 1393497,
+                "id": "Q1393497"
+              },
+              "type": "wikibase-entityid"
+            },
+            "datatype": "wikibase-item"
+          },
+          "type": "statement",
+          "id": "Q1755956$BA6919D8-D77B-4ECC-8B7C-AEECF58989F8",
+          "rank": "normal",
+          "references": [
+            {
+              "hash": "fa278ebfc458360e5aed63d5058cca83c46134f1",
+              "snaks": {
+                "P143": [
+                  {
+                    "snaktype": "value",
+                    "property": "P143",
+                    "hash": "e4f6d9441d0600513c4533c672b5ab472dc73694",
+                    "datavalue": {
+                      "value": {
+                        "entity-type": "item",
+                        "numeric-id": 328,
+                        "id": "Q328"
+                      },
+                      "type": "wikibase-entityid"
+                    },
+                    "datatype": "wikibase-item"
+                  }
+                ]
+              },
+              "snaks-order": [
+                "P143"
+              ]
+            }
+          ]
+        }
+      ],
+      "P646": [
+        {
+          "mainsnak": {
+            "snaktype": "value",
+            "property": "P646",
+            "hash": "265387b41064008d9d0681bcfdfcd0a6bda843e2",
+            "datavalue": {
+              "value": "/m/03jfl3",
+              "type": "string"
+            },
+            "datatype": "external-id"
+          },
+          "type": "statement",
+          "id": "Q1755956$C71B5FA5-31AB-4C08-B6E0-17F268E03A44",
+          "rank": "normal",
+          "references": [
+            {
+              "hash": "2b00cb481cddcac7623114367489b5c194901c4a",
+              "snaks": {
+                "P248": [
+                  {
+                    "snaktype": "value",
+                    "property": "P248",
+                    "hash": "a94b740202b097dd33355e0e6c00e54b9395e5e0",
+                    "datavalue": {
+                      "value": {
+                        "entity-type": "item",
+                        "numeric-id": 15241312,
+                        "id": "Q15241312"
+                      },
+                      "type": "wikibase-entityid"
+                    },
+                    "datatype": "wikibase-item"
+                  }
+                ],
+                "P577": [
+                  {
+                    "snaktype": "value",
+                    "property": "P577",
+                    "hash": "fde79ecb015112d2f29229ccc1ec514ed3e71fa2",
+                    "datavalue": {
+                      "value": {
+                        "time": "+2013-10-28T00:00:00Z",
+                        "timezone": 0,
+                        "before": 0,
+                        "after": 0,
+                        "precision": 11,
+                        "calendarmodel": "http://www.wikidata.org/entity/Q1985727"
+                      },
+                      "type": "time"
+                    },
+                    "datatype": "time"
+                  }
+                ]
+              },
+              "snaks-order": [
+                "P248",
+                "P577"
+              ]
+            }
+          ]
+        }
+      ],
+      "P617": [
+        {
+          "mainsnak": {
+            "snaktype": "value",
+            "property": "P617",
+            "hash": "59fcf280ba41d1173ea28683c917f32eddd946f8",
+            "datavalue": {
+              "value": "532",
+              "type": "string"
+            },
+            "datatype": "string"
+          },
+          "type": "statement",
+          "id": "Q1755956$153E9290-D282-406E-9716-C3FC32283BDB",
+          "rank": "normal",
+          "references": [
+            {
+              "hash": "fa278ebfc458360e5aed63d5058cca83c46134f1",
+              "snaks": {
+                "P143": [
+                  {
+                    "snaktype": "value",
+                    "property": "P143",
+                    "hash": "e4f6d9441d0600513c4533c672b5ab472dc73694",
+                    "datavalue": {
+                      "value": {
+                        "entity-type": "item",
+                        "numeric-id": 328,
+                        "id": "Q328"
+                      },
+                      "type": "wikibase-entityid"
+                    },
+                    "datatype": "wikibase-item"
+                  }
+                ]
+              },
+              "snaks-order": [
+                "P143"
+              ]
+            }
+          ]
+        }
+      ],
+      "P137": [
+        {
+          "mainsnak": {
+            "snaktype": "value",
+            "property": "P137",
+            "hash": "f0712a427d41cf8ea528fc0babafe9ba0e478274",
+            "datavalue": {
+              "value": {
+                "entity-type": "item",
+                "numeric-id": 152057,
+                "id": "Q152057"
+              },
+              "type": "wikibase-entityid"
+            },
+            "datatype": "wikibase-item"
+          },
+          "type": "statement",
+          "id": "Q1755956$7D0AE215-7039-4260-AF84-BCD520EBF940",
+          "rank": "normal",
+          "references": [
+            {
+              "hash": "fa278ebfc458360e5aed63d5058cca83c46134f1",
+              "snaks": {
+                "P143": [
+                  {
+                    "snaktype": "value",
+                    "property": "P143",
+                    "hash": "e4f6d9441d0600513c4533c672b5ab472dc73694",
+                    "datavalue": {
+                      "value": {
+                        "entity-type": "item",
+                        "numeric-id": 328,
+                        "id": "Q328"
+                      },
+                      "type": "wikibase-entityid"
+                    },
+                    "datatype": "wikibase-item"
+                  }
+                ]
+              },
+              "snaks-order": [
+                "P143"
+              ]
+            }
+          ]
+        }
+      ],
+      "P176": [
+        {
+          "mainsnak": {
+            "snaktype": "value",
+            "property": "P176",
+            "hash": "10b5069f914ced79b018d61d574e8d82c26cd2cf",
+            "datavalue": {
+              "value": {
+                "entity-type": "item",
+                "numeric-id": 82610,
+                "id": "Q82610"
+              },
+              "type": "wikibase-entityid"
+            },
+            "datatype": "wikibase-item"
+          },
+          "type": "statement",
+          "id": "Q1755956$CB4CE975-36D3-4BC5-98C6-4EE7A9323A1F",
+          "rank": "normal",
+          "references": [
+            {
+              "hash": "9a24f7c0208b05d6be97077d855671d1dfdbc0dd",
+              "snaks": {
+                "P143": [
+                  {
+                    "snaktype": "value",
+                    "property": "P143",
+                    "hash": "d38375ffe6fe142663ff55cd783aa4df4301d83d",
+                    "datavalue": {
+                      "value": {
+                        "entity-type": "item",
+                        "numeric-id": 48183,
+                        "id": "Q48183"
+                      },
+                      "type": "wikibase-entityid"
+                    },
+                    "datatype": "wikibase-item"
+                  }
+                ]
+              },
+              "snaks-order": [
+                "P143"
+              ]
+            }
+          ]
+        }
+      ],
+      "P1417": [
+        {
+          "mainsnak": {
+            "snaktype": "value",
+            "property": "P1417",
+            "hash": "2ff619389d8bd7cd61b1ff947a0d3171af66e233",
+            "datavalue": {
+              "value": "topic/Torrey-Canyon",
+              "type": "string"
+            },
+            "datatype": "external-id"
+          },
+          "type": "statement",
+          "qualifiers": {
+            "P1810": [
+              {
+                "snaktype": "value",
+                "property": "P1810",
+                "hash": "7c482584ce0c2ab230c44aceb1b37c12031d89ff",
+                "datavalue": {
+                  "value": "Torrey Canyon oil spill",
+                  "type": "string"
+                },
+                "datatype": "string"
+              }
+            ]
+          },
+          "qualifiers-order": [
+            "P1810"
+          ],
+          "id": "Q1755956$79A7B12E-D0C1-4E98-9BA4-5A53B7CCAFA6",
+          "rank": "normal"
+        }
+      ],
+      "P2043": [
+        {
+          "mainsnak": {
+            "snaktype": "value",
+            "property": "P2043",
+            "hash": "92fa2474dd4647ebef957613d1783eb6eee39fdc",
+            "datavalue": {
+              "value": {
+                "amount": "+246.90",
+                "unit": "http://www.wikidata.org/entity/Q11573"
+              },
+              "type": "quantity"
+            },
+            "datatype": "quantity"
+          },
+          "type": "statement",
+          "id": "Q1755956$F605AA1F-7AF2-43D6-98AC-F33F47A6C610",
+          "rank": "normal",
+          "references": [
+            {
+              "hash": "9a24f7c0208b05d6be97077d855671d1dfdbc0dd",
+              "snaks": {
+                "P143": [
+                  {
+                    "snaktype": "value",
+                    "property": "P143",
+                    "hash": "d38375ffe6fe142663ff55cd783aa4df4301d83d",
+                    "datavalue": {
+                      "value": {
+                        "entity-type": "item",
+                        "numeric-id": 48183,
+                        "id": "Q48183"
+                      },
+                      "type": "wikibase-entityid"
+                    },
+                    "datatype": "wikibase-item"
+                  }
+                ]
+              },
+              "snaks-order": [
+                "P143"
+              ]
+            }
+          ]
+        }
+      ],
+      "P793": [
+        {
+          "mainsnak": {
+            "snaktype": "value",
+            "property": "P793",
+            "hash": "0acb0a22deecf47461e2cfa973af6f93c59807ee",
+            "datavalue": {
+              "value": {
+                "entity-type": "item",
+                "numeric-id": 906512,
+                "id": "Q906512"
+              },
+              "type": "wikibase-entityid"
+            },
+            "datatype": "wikibase-item"
+          },
+          "type": "statement",
+          "qualifiers": {
+            "P585": [
+              {
+                "snaktype": "value",
+                "property": "P585",
+                "hash": "9971a8fd4225f5037705a396f8ad8bb88698b41c",
+                "datavalue": {
+                  "value": {
+                    "time": "+1967-03-18T00:00:00Z",
+                    "timezone": 0,
+                    "before": 0,
+                    "after": 0,
+                    "precision": 11,
+                    "calendarmodel": "http://www.wikidata.org/entity/Q1985727"
+                  },
+                  "type": "time"
+                },
+                "datatype": "time"
+              }
+            ],
+            "P276": [
+              {
+                "snaktype": "value",
+                "property": "P276",
+                "hash": "a207deb0b2c28612dbd80a727cb3a16c079e6603",
+                "datavalue": {
+                  "value": {
+                    "entity-type": "item",
+                    "numeric-id": 1826067,
+                    "id": "Q1826067"
+                  },
+                  "type": "wikibase-entityid"
+                },
+                "datatype": "wikibase-item"
+              }
+            ],
+            "P770": [
+              {
+                "snaktype": "value",
+                "property": "P770",
+                "hash": "89a37cd9c765b584667cc4037b679ee6a5d30b50",
+                "datavalue": {
+                  "value": {
+                    "entity-type": "item",
+                    "numeric-id": 14920473,
+                    "id": "Q14920473"
+                  },
+                  "type": "wikibase-entityid"
+                },
+                "datatype": "wikibase-item"
+              }
+            ],
+            "P625": [
+              {
+                "snaktype": "value",
+                "property": "P625",
+                "hash": "7236661be29dba6eb70ee8b1798bb62446c72d08",
+                "datavalue": {
+                  "value": {
+                    "latitude": 50.041666666666664,
+                    "longitude": -6.128833333333334,
+                    "altitude": null,
+                    "precision": 0.00002777777777777778,
+                    "globe": "http://www.wikidata.org/entity/Q2"
+                  },
+                  "type": "globecoordinate"
+                },
+                "datatype": "globe-coordinate"
+              }
+            ]
+          },
+          "qualifiers-order": [
+            "P585",
+            "P276",
+            "P770",
+            "P625"
+          ],
+          "id": "Q1755956$0581e300-47c9-d20d-89b0-24c7412ec472",
+          "rank": "normal"
+        },
+        {
+          "mainsnak": {
+            "snaktype": "value",
+            "property": "P793",
+            "hash": "23c527be7e314d0406564ab55bc69bae9a966cf5",
+            "datavalue": {
+              "value": {
+                "entity-type": "item",
+                "numeric-id": 14592615,
+                "id": "Q14592615"
+              },
+              "type": "wikibase-entityid"
+            },
+            "datatype": "wikibase-item"
+          },
+          "type": "statement",
+          "qualifiers": {
+            "P585": [
+              {
+                "snaktype": "value",
+                "property": "P585",
+                "hash": "ebf74eca181dffca690647fc4c0c5c320fbf2569",
+                "datavalue": {
+                  "value": {
+                    "time": "+1959-00-00T00:00:00Z",
+                    "timezone": 0,
+                    "before": 0,
+                    "after": 0,
+                    "precision": 9,
+                    "calendarmodel": "http://www.wikidata.org/entity/Q1985727"
+                  },
+                  "type": "time"
+                },
+                "datatype": "time"
+              }
+            ]
+          },
+          "qualifiers-order": [
+            "P585"
+          ],
+          "id": "Q1755956$79D7E276-07A8-42F2-A4FC-2BBF0F5AC0F9",
+          "rank": "normal"
+        }
+      ],
+      "P458": [
+        {
+          "mainsnak": {
+            "snaktype": "value",
+            "property": "P458",
+            "hash": "80864ff73e1462f268633c681646cb6a14cacae6",
+            "datavalue": {
+              "value": "5365352",
+              "type": "string"
+            },
+            "datatype": "external-id"
+          },
+          "type": "statement",
+          "id": "Q1755956$7dc4a61d-4c4d-c3d9-d2d1-25bb20d56feb",
+          "rank": "normal"
+        }
+      ],
+      "P2261": [
+        {
+          "mainsnak": {
+            "snaktype": "value",
+            "property": "P2261",
+            "hash": "7ef8da882918d2888f8c7fe65e9248c66f35c3c9",
+            "datavalue": {
+              "value": {
+                "amount": "+38.2",
+                "unit": "http://www.wikidata.org/entity/Q11573"
+              },
+              "type": "quantity"
+            },
+            "datatype": "quantity"
+          },
+          "type": "statement",
+          "id": "Q1755956$f50f232e-4517-fae6-f872-29143c2cffe2",
+          "rank": "normal"
+        }
+      ],
+      "P2262": [
+        {
+          "mainsnak": {
+            "snaktype": "value",
+            "property": "P2262",
+            "hash": "9512a1d4b028534bd98a2a25dd0ce58d5346e4db",
+            "datavalue": {
+              "value": {
+                "amount": "+20.9",
+                "unit": "http://www.wikidata.org/entity/Q11573"
+              },
+              "type": "quantity"
+            },
+            "datatype": "quantity"
+          },
+          "type": "statement",
+          "id": "Q1755956$c7069533-4dc7-f2bd-6ccf-b57415aaf488",
+          "rank": "normal"
+        }
+      ],
+      "P2052": [
+        {
+          "mainsnak": {
+            "snaktype": "value",
+            "property": "P2052",
+            "hash": "658675d8e4b9f95aa5ae455856a951a74e5a11f7",
+            "datavalue": {
+              "value": {
+                "amount": "+17",
+                "unit": "http://www.wikidata.org/entity/Q128822"
+              },
+              "type": "quantity"
+            },
+            "datatype": "quantity"
+          },
+          "type": "statement",
+          "id": "Q1755956$5637A535-7B0F-4070-A87C-51BC76870F30",
+          "rank": "normal"
+        }
+      ],
+      "P504": [
+        {
+          "mainsnak": {
+            "snaktype": "value",
+            "property": "P504",
+            "hash": "526563d0e04badbbc85f4b30f5c317185b8c7284",
+            "datavalue": {
+              "value": {
+                "entity-type": "item",
+                "numeric-id": 3748,
+                "id": "Q3748"
+              },
+              "type": "wikibase-entityid"
+            },
+            "datatype": "wikibase-item"
+          },
+          "type": "statement",
+          "id": "Q1755956$38BF190C-2672-417C-8D72-40915DDDEF07",
+          "rank": "normal",
+          "references": [
+            {
+              "hash": "b74b75e34716fff138df3598450a344b621cb3de",
+              "snaks": {
+                "P143": [
+                  {
+                    "snaktype": "value",
+                    "property": "P143",
+                    "hash": "d38375ffe6fe142663ff55cd783aa4df4301d83d",
+                    "datavalue": {
+                      "value": {
+                        "entity-type": "item",
+                        "numeric-id": 48183,
+                        "id": "Q48183"
+                      },
+                      "type": "wikibase-entityid"
+                    },
+                    "datatype": "wikibase-item"
+                  }
+                ],
+                "P4656": [
+                  {
+                    "snaktype": "value",
+                    "property": "P4656",
+                    "hash": "39167bf1dbc7f6c23ec8854c72e6bb462974dd69",
+                    "datavalue": {
+                      "value": "https://de.wikipedia.org/w/index.php?title=Torrey_Canyon&oldid=182545783",
+                      "type": "string"
+                    },
+                    "datatype": "url"
+                  }
+                ]
+              },
+              "snaks-order": [
+                "P143",
+                "P4656"
+              ]
+            }
+          ]
+        }
+      ],
+      "P1441": [
+        {
+          "mainsnak": {
+            "snaktype": "value",
+            "property": "P1441",
+            "hash": "da1a896fcd94fe92a1800940627f9b9aada19ba4",
+            "datavalue": {
+              "value": {
+                "entity-type": "item",
+                "numeric-id": 75748331,
+                "id": "Q75748331"
+              },
+              "type": "wikibase-entityid"
+            },
+            "datatype": "wikibase-item"
+          },
+          "type": "statement",
+          "id": "Q1755956$26c31a17-4167-b0f8-3d78-4999f3db48c2",
+          "rank": "normal"
+        }
+      ],
+      "P729": [
+        {
+          "mainsnak": {
+            "snaktype": "value",
+            "property": "P729",
+            "hash": "fa5fefc76e7d6bc51fb60a4c0faddc2ebea5b03d",
+            "datavalue": {
+              "value": {
+                "time": "+1959-00-00T00:00:00Z",
+                "timezone": 0,
+                "before": 0,
+                "after": 0,
+                "precision": 9,
+                "calendarmodel": "http://www.wikidata.org/entity/Q1985727"
+              },
+              "type": "time"
+            },
+            "datatype": "time"
+          },
+          "type": "statement",
+          "id": "Q1755956$714865BF-3038-4B12-8E24-D1BA59D90C84",
+          "rank": "normal"
+        }
+      ],
+      "P10913": [
+        {
+          "mainsnak": {
+            "snaktype": "value",
+            "property": "P10913",
+            "hash": "66f9d8261ae7a53485107110e9e961e4a77043fb",
+            "datavalue": {
+              "value": "f8/mt805/17070/17073",
+              "type": "string"
+            },
+            "datatype": "external-id"
+          },
+          "type": "statement",
+          "qualifiers": {
+            "P1810": [
+              {
+                "snaktype": "value",
+                "property": "P1810",
+                "hash": "5c52b75e762e80ed302be27fddea93e87c70d015",
+                "datavalue": {
+                  "value": "Torrey Canyon incident",
+                  "type": "string"
+                },
+                "datatype": "string"
+              }
+            ]
+          },
+          "qualifiers-order": [
+            "P1810"
+          ],
+          "id": "Q1755956$9F439035-0F61-48F5-8822-D0340B42299E",
+          "rank": "normal",
+          "references": [
+            {
+              "hash": "125f5c80b5c55af4416e0ff1e2af8348ef4fcd4e",
+              "snaks": {
+                "P813": [
+                  {
+                    "snaktype": "value",
+                    "property": "P813",
+                    "hash": "94a9d74d5e15edf6d20d20383de5ed56c5419fb8",
+                    "datavalue": {
+                      "value": {
+                        "time": "+2022-08-23T00:00:00Z",
+                        "timezone": 0,
+                        "before": 0,
+                        "after": 0,
+                        "precision": 11,
+                        "calendarmodel": "http://www.wikidata.org/entity/Q1985727"
+                      },
+                      "type": "time"
+                    },
+                    "datatype": "time"
+                  }
+                ]
+              },
+              "snaks-order": [
+                "P813"
+              ]
+            }
+          ]
+        }
+      ],
+      "P1617": [
+        {
+          "mainsnak": {
+            "snaktype": "value",
+            "property": "P1617",
+            "hash": "af3070e8031e1aa1df9fd83311b19a94471ce23e",
+            "datavalue": {
+              "value": "c4f78bc0-13c4-4cae-afbe-fe71e8a179d4",
+              "type": "string"
+            },
+            "datatype": "external-id"
+          },
+          "type": "statement",
+          "id": "Q1755956$720E64C2-5251-472E-81C6-E60680651C42",
+          "rank": "normal",
+          "references": [
+            {
+              "hash": "8582d8416671f1f2567247201bac753552435ca5",
+              "snaks": {
+                "P248": [
+                  {
+                    "snaktype": "value",
+                    "property": "P248",
+                    "hash": "ea55dc6ac5c3ab77c77d4ae7979e3276d0d4cd20",
+                    "datavalue": {
+                      "value": {
+                        "entity-type": "item",
+                        "numeric-id": 18336371,
+                        "id": "Q18336371"
+                      },
+                      "type": "wikibase-entityid"
+                    },
+                    "datatype": "wikibase-item"
+                  }
+                ]
+              },
+              "snaks-order": [
+                "P248"
+              ]
+            }
+          ]
+        }
+      ],
+      "P8189": [
+        {
+          "mainsnak": {
+            "snaktype": "value",
+            "property": "P8189",
+            "hash": "cc88a10c9301db8038d89683eb485dc6b7d3b866",
+            "datavalue": {
+              "value": "987007589951205171",
+              "type": "string"
+            },
+            "datatype": "external-id"
+          },
+          "type": "statement",
+          "id": "Q1755956$3B4A90BE-6358-443B-9416-C98139ED135F",
+          "rank": "normal",
+          "references": [
+            {
+              "hash": "ecb7a39cf436eb1fba419853af168ef9f2ba1dab",
+              "snaks": {
+                "P248": [
+                  {
+                    "snaktype": "value",
+                    "property": "P248",
+                    "hash": "a03bb6ffe37be9554492f4eea5bd18afcb57df19",
+                    "datavalue": {
+                      "value": {
+                        "entity-type": "item",
+                        "numeric-id": 106509962,
+                        "id": "Q106509962"
+                      },
+                      "type": "wikibase-entityid"
+                    },
+                    "datatype": "wikibase-item"
+                  }
+                ]
+              },
+              "snaks-order": [
+                "P248"
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    "sitelinks": {
+      "arwiki": {
+        "site": "arwiki",
+        "title": "توري كانيون",
+        "badges": [],
+        "url": "https://ar.wikipedia.org/wiki/%D8%AA%D9%88%D8%B1%D9%8A_%D9%83%D8%A7%D9%86%D9%8A%D9%88%D9%86"
+      },
+      "brwiki": {
+        "site": "brwiki",
+        "title": "Lanv du an Torrey Canyon",
+        "badges": [],
+        "url": "https://br.wikipedia.org/wiki/Lanv_du_an_Torrey_Canyon"
+      },
+      "cawiki": {
+        "site": "cawiki",
+        "title": "Torrey Canyon",
+        "badges": [],
+        "url": "https://ca.wikipedia.org/wiki/Torrey_Canyon"
+      },
+      "cswiki": {
+        "site": "cswiki",
+        "title": "Torrey Canyon",
+        "badges": [],
+        "url": "https://cs.wikipedia.org/wiki/Torrey_Canyon"
+      },
+      "dewiki": {
+        "site": "dewiki",
+        "title": "Torrey Canyon",
+        "badges": [],
+        "url": "https://de.wikipedia.org/wiki/Torrey_Canyon"
+      },
+      "enwiki": {
+        "site": "enwiki",
+        "title": "SS Torrey Canyon",
+        "badges": [],
+        "url": "https://en.wikipedia.org/wiki/SS_Torrey_Canyon"
+      },
+      "eswiki": {
+        "site": "eswiki",
+        "title": "Torrey Canyon",
+        "badges": [],
+        "url": "https://es.wikipedia.org/wiki/Torrey_Canyon"
+      },
+      "fiwiki": {
+        "site": "fiwiki",
+        "title": "Torrey Canyon",
+        "badges": [],
+        "url": "https://fi.wikipedia.org/wiki/Torrey_Canyon"
+      },
+      "frwiki": {
+        "site": "frwiki",
+        "title": "Torrey Canyon",
+        "badges": [],
+        "url": "https://fr.wikipedia.org/wiki/Torrey_Canyon"
+      },
+      "iowiki": {
+        "site": "iowiki",
+        "title": "Torrey Canyon",
+        "badges": [],
+        "url": "https://io.wikipedia.org/wiki/Torrey_Canyon"
+      },
+      "itwiki": {
+        "site": "itwiki",
+        "title": "Torrey Canyon",
+        "badges": [],
+        "url": "https://it.wikipedia.org/wiki/Torrey_Canyon"
+      },
+      "nlwiki": {
+        "site": "nlwiki",
+        "title": "Torrey Canyon (schip, 1959)",
+        "badges": [],
+        "url": "https://nl.wikipedia.org/wiki/Torrey_Canyon_(schip,_1959)"
+      },
+      "plwiki": {
+        "site": "plwiki",
+        "title": "Torrey Canyon",
+        "badges": [],
+        "url": "https://pl.wikipedia.org/wiki/Torrey_Canyon"
+      },
+      "svwiki": {
+        "site": "svwiki",
+        "title": "Torrey Canyon",
+        "badges": [],
+        "url": "https://sv.wikipedia.org/wiki/Torrey_Canyon"
+      },
+      "trwiki": {
+        "site": "trwiki",
+        "title": "Torrey Canyon",
+        "badges": [],
+        "url": "https://tr.wikipedia.org/wiki/Torrey_Canyon"
+      },
+      "ukwiki": {
+        "site": "ukwiki",
+        "title": "Torrey Canyon",
+        "badges": [],
+        "url": "https://uk.wikipedia.org/wiki/Torrey_Canyon"
+      },
+      "viwiki": {
+        "site": "viwiki",
+        "title": "Torrey Canyon",
+        "badges": [],
+        "url": "https://vi.wikipedia.org/wiki/Torrey_Canyon"
+      }
+    }
+  }
+}

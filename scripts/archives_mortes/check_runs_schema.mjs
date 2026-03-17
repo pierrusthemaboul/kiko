@@ -8,3 +8,4 @@ async function checkRunsSchema() {
     console.log("Exemple de run:", data);
 }
 checkRunsSchema();
+

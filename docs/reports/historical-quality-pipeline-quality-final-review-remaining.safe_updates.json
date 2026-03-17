@@ -1,0 +1,32 @@
+[
+  {
+    "id": "5aee30ef-9b8e-45db-b3d2-8d8de47e17de",
+    "current_title": "Loi SRU : obligation de construire des logements sociaux dans les communes",
+    "current_date": "2001-01-01",
+    "current_description": "La loi Solidarité et Renouvellement Urbains (SRU), portée par le gouvernement Jospin et la ministre Dominique Voynet, est adoptée en 2000 (promulguée en décembre) pour lutter contre la ségrégation sociale et favoriser la mixité en imposant aux communes de plus de 3 500 habitants un quota minimal de 20% (puis 25%) de logements sociaux. Elle fait suite à des constats de forte inégalité territoriale et de manque de logements abordables.",
+    "status": "POTENTIAL_DATE_ERROR",
+    "result_bucket": "divergence_date",
+    "date_candidate": "2000-01-01",
+    "matched_article_fr": null,
+    "matched_article_en": null,
+    "wikidata_id": null,
+    "sources_checked": [],
+    "decision": "UPDATE_DATE",
+    "proposed_title": null,
+    "proposed_date_iso": "2000-12-01",
+    "delete_reason": null,
+    "confidence": 0.9,
+    "evidence_level": "A",
+    "official_name_respected": true,
+    "title_in_french": true,
+    "title_unambiguous": true,
+    "title_has_no_date": true,
+    "event_is_singular": true,
+    "description_consistent": true,
+    "reasoning_short": "La description indique clairement que la loi a été adoptée et promulguée en décembre 2000. Plusieurs sources confirment que la loi SRU a été promulguée le 13 décembre 2000. Utiliser le premier jour du mois est une simplification acceptable.",
+    "recommendation": "Mettre à jour la date au 1er décembre 2000.",
+    "key_sources": [],
+    "review_required": false,
+    "final_decision": "UPDATE_DATE"
+  }
+]

@@ -1,0 +1,118 @@
+{
+  "saved_at": "2026-03-07T16:07:16.653Z",
+  "value": {
+    "pageid": 3291004,
+    "ns": 0,
+    "title": "Q3454781",
+    "lastrevid": 2469749637,
+    "modified": "2026-03-06T06:39:35Z",
+    "type": "item",
+    "id": "Q3454781",
+    "labels": {
+      "fr": {
+        "language": "fr",
+        "value": "réforme des retraites en France en 2010"
+      },
+      "en": {
+        "language": "en",
+        "value": "2010 French pension reform"
+      },
+      "ru": {
+        "language": "ru",
+        "value": "Французская пенсионная реформа 2010 года"
+      },
+      "uk": {
+        "language": "uk",
+        "value": "Французька пенсійна реформа 2010 року"
+      }
+    },
+    "descriptions": {},
+    "aliases": {
+      "fr": [
+        {
+          "language": "fr",
+          "value": "Réforme 2010 des retraites"
+        },
+        {
+          "language": "fr",
+          "value": "Réforme des retraites"
+        },
+        {
+          "language": "fr",
+          "value": "Réforme 2010 des retraites en France"
+        }
+      ]
+    },
+    "claims": {
+      "P373": [
+        {
+          "mainsnak": {
+            "snaktype": "value",
+            "property": "P373",
+            "hash": "9f4890f795c87e6c84194c36e766fd8464715890",
+            "datavalue": {
+              "value": "2010 French pension reform",
+              "type": "string"
+            },
+            "datatype": "string"
+          },
+          "type": "statement",
+          "id": "Q3454781$93506e5a-4587-16ed-7357-ff6e91bb4bd3",
+          "rank": "normal"
+        }
+      ],
+      "P2671": [
+        {
+          "mainsnak": {
+            "snaktype": "value",
+            "property": "P2671",
+            "hash": "8a6ea722f722b25e89ed421366da82f144dbf4b2",
+            "datavalue": {
+              "value": "/g/122cntnt",
+              "type": "string"
+            },
+            "datatype": "external-id"
+          },
+          "type": "statement",
+          "id": "Q3454781$948DF111-1E7B-45AD-97AA-2BFB8AA02E82",
+          "rank": "normal"
+        }
+      ],
+      "P31": [
+        {
+          "mainsnak": {
+            "snaktype": "value",
+            "property": "P31",
+            "hash": "14ad9f52c5c6d5d5eb015dcd5c3feaf5e8743b2f",
+            "datavalue": {
+              "value": {
+                "entity-type": "item",
+                "numeric-id": 1244421,
+                "id": "Q1244421"
+              },
+              "type": "wikibase-entityid"
+            },
+            "datatype": "wikibase-item"
+          },
+          "type": "statement",
+          "id": "Q3454781$a3e3da26-4070-8ac8-4c0d-b47802d42682",
+          "rank": "normal"
+        }
+      ]
+    },
+    "sitelinks": {
+      "commonswiki": {
+        "site": "commonswiki",
+        "title": "Category:2010 French pension reform",
+        "badges": [],
+        "url": "https://commons.wikimedia.org/wiki/Category:2010_French_pension_reform"
+      },
+      "frwiki": {
+        "site": "frwiki",
+        "title": "Réforme des retraites en France en 2010",
+        "badges": [],
+        "url": "https://fr.wikipedia.org/wiki/R%C3%A9forme_des_retraites_en_France_en_2010"
+      }
+    }
+  }
+}

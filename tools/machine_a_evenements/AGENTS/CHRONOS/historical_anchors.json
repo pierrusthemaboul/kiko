@@ -1,0 +1,350 @@
+{
+    "universal_forbidden": [
+        "smartphones",
+        "digital screens",
+        "wristwatches",
+        "plastic materials",
+        "modern eyeglasses",
+        "zippers",
+        "neon lighting",
+        "robots"
+    ],
+    "eras": [
+        {
+            "name": "Antiquity (Post-100 AD)",
+            "start_year": 100,
+            "end_year": 476,
+            "medium_anchor": "Fresco or Mosaic textures, classical oil painting style, warm mineral pigments",
+            "clothing_anchors": [
+                "toga",
+                "stola",
+                "palla",
+                "sandals",
+                "roman tunic",
+                "lorica segmentata armor"
+            ],
+            "forbidden": [
+                "hats with brims",
+                "buttons",
+                "printed fabric",
+                "medieval architecture",
+                "modern glass"
+            ],
+            "material_anchors": [
+                "marbe",
+                "pounded earth",
+                "coarse linen",
+                "bronze",
+                "terracotta"
+            ]
+        },
+        {
+            "name": "Early Middle Ages",
+            "start_year": 477,
+            "end_year": 1000,
+            "medium_anchor": "Illuminated manuscript aesthetics, heavy chiaroscuro, dark atmospheric painting",
+            "clothing_anchors": [
+                "chainmail",
+                "tunic with embroidery",
+                "woolen cloak",
+                "leather boots",
+                "circular brooch"
+            ],
+            "forbidden": [
+                "plate armor",
+                "buttons",
+                "spectacles",
+                "stonework with fine joints"
+            ],
+            "material_anchors": [
+                "rough-hewn wood",
+                "iron",
+                "thick wool",
+                "animal furs",
+                "mud-caked stone"
+            ]
+        },
+        {
+            "name": "High Middle Ages (14th Century focus)",
+            "start_year": 1001,
+            "end_year": 1450,
+            "medium_anchor": "Gothic oil painting on wood panels, rich deep pigments, gold leaf accents",
+            "clothing_anchors": [
+                "gambeson",
+                "surcoat",
+                "cotte",
+                "houppelande",
+                "hood with liripipe",
+                "bascinet helmet"
+            ],
+            "forbidden": [
+                "muskets",
+                "complete plate armor suits (pre-1400)",
+                "neckties",
+                "modern windows"
+            ],
+            "material_anchors": [
+                "hand-woven hemp",
+                "rough velvet",
+                "timber frames",
+                "leaded glass windows",
+                "cast iron"
+            ]
+        },
+        {
+            "name": "Renaissance",
+            "start_year": 1451,
+            "end_year": 1600,
+            "medium_anchor": "Renaissance oil painting, sfumato, perspective, rich saturation",
+            "clothing_anchors": [
+                "doublet",
+                "trunk hose",
+                "ruff collar",
+                "codpiece",
+                "slashed sleeves",
+                "velvet beret"
+            ],
+            "forbidden": [
+                "neckties",
+                "tricorn hats",
+                "rifles",
+                "modern watches"
+            ],
+            "material_anchors": [
+                "silk damask",
+                "brocade",
+                "polished marble",
+                "wrought iron",
+                "fine oil paints"
+            ]
+        },
+        {
+            "name": "Early 17th Century (Musketeers Era)",
+            "start_year": 1601,
+            "end_year": 1660,
+            "medium_anchor": "Cinematic historical drama style, 35mm film grain, earthy color palette, textures of wood and stone",
+            "land_medium": "Landlocked indoor setting, heavy stone walls, flickering torches, no windows to the outside",
+            "clothing_anchors": [
+                "wide-brimmed felt hat with feather",
+                "leather doublet",
+                "large lace collar",
+                "thigh-high leather boots",
+                "cloak",
+                "rapier"
+            ],
+            "forbidden": [
+                "tricorn hats",
+                "justacorps (pre-1660)",
+                "zippers",
+                "smartphones",
+                "modern eyeglasses"
+            ],
+            "material_anchors": [
+                "rough leather",
+                "hammered iron",
+                "coarse linen",
+                "oak wood",
+                "mud"
+            ]
+        },
+        {
+            "name": "Late 17th - 18th Century (Age of Absolutism)",
+            "start_year": 1661,
+            "end_year": 1789,
+            "medium_anchor": "Classical court painting style, rich textures of velvet and gold, chiaroscuro lighting",
+            "land_medium": "Enclosed palatial interior, thick tapestries covering walls, no view of the horizon",
+            "clothing_anchors": [
+                "justacorps",
+                "waistcoat",
+                "cravat",
+                "breeches",
+                "powdered wig",
+                "tricorne hat"
+            ],
+            "forbidden": [
+                "zippers",
+                "smartphones",
+                "modern eyeglasses",
+                "wristwatches"
+            ],
+            "material_anchors": [
+                "silk damask",
+                "heavy velvet",
+                "gilded moldings",
+                "crystal",
+                "parquet"
+            ]
+        },
+        {
+            "name": "Early 19th Century (Napoleonic/Victorian)",
+            "start_year": 1790,
+            "end_year": 1850,
+            "medium_anchor": "Romantic oil painting style, fine canvas texture, subtle brushwork",
+            "clothing_anchors": [
+                "shako",
+                "bicorne hat",
+                "frock coat",
+                "high-waisted dress",
+                "top hat (early form)",
+                "kepi"
+            ],
+            "forbidden": [
+                "zippers",
+                "peaked caps (modern style)",
+                "steamships with 4 funnels",
+                "electric cables"
+            ],
+            "material_anchors": [
+                "heavy wool",
+                "brass buttons",
+                "wooden stagecoach",
+                "canal water",
+                "cast iron"
+            ]
+        },
+        {
+            "name": "Late 19th Century (Dawn of Photo)",
+            "start_year": 1851,
+            "end_year": 1900,
+            "medium_anchor": "Collodion wet plate photography, daguerreotype grain, sepia tones, vignetting",
+            "clothing_anchors": [
+                "top hat",
+                "bowler hat",
+                "bustle dress",
+                "morning coat",
+                "stiff wing collar",
+                "kepi"
+            ],
+            "forbidden": [
+                "peaked caps (modern style)",
+                "cars",
+                "wristwatches",
+                "airplanes"
+            ],
+            "material_anchors": [
+                "black iron",
+                "steam engine soot",
+                "starched linen",
+                "bricks and gaslight"
+            ]
+        },
+        {
+            "name": "Early 20th Century",
+            "start_year": 1901,
+            "end_year": 1945,
+            "medium_anchor": "Early black & white film photography, nitrate film grain, silver gelatin print",
+            "clothing_anchors": [
+                "peaked cap",
+                "fedora",
+                "trench coat",
+                "cloche hat",
+                "overalls",
+                "early suit"
+            ],
+            "forbidden": [
+                "smartphones",
+                "digital screens",
+                "modern casual wear",
+                "jet planes"
+            ],
+            "material_anchors": [
+                "riveted steel",
+                "bakelite",
+                "smooth leather",
+                "concrete",
+                "newsprint"
+            ]
+        },
+        {
+            "name": "Modern & Digital Era",
+            "start_year": 1946,
+            "end_year": 2100,
+            "medium_anchor": "Sharp color photography, television broadcast aesthetic for late 20th century, high-definition digital for 21st century",
+            "clothing_anchors": [
+                "technical sportswear",
+                "polyester jerseys",
+                "modern sneakers",
+                "baseball caps",
+                "commercial logos on clothing",
+                "business suits",
+                "casual contemporary wear"
+            ],
+            "forbidden": [
+                "tricornes",
+                "powdered wigs",
+                "muskets",
+                "inkwells",
+                "horse-drawn carriages in urban settings"
+            ],
+            "material_anchors": [
+                "plastic",
+                "plexiglass",
+                "brushed steel",
+                "glossy synthetic surfaces",
+                "stadium floodlights",
+                "digital displays",
+                "asphalt"
+            ]
+        }
+    ],
+    "context_anchors": {
+        "Nautical_ONLY": [
+            "rigging",
+            "wooden deck",
+            "sea spray",
+            "canvas sails",
+            "ocean horizon"
+        ],
+        "Battle_Land": [
+            "dust clouds",
+            "cannon smoke",
+            "pitted metal",
+            "trampled earth",
+            "deep inland",
+            "landlocked battlefield"
+        ],
+        "Intellectual": [
+            "writing desk",
+            "inkwells",
+            "stacked manuscripts",
+            "dust motes in sunbeams",
+            "interior room"
+        ],
+        "Urban": [
+            "cobblestones",
+            "iron railings",
+            "stone facades",
+            "street noise",
+            "city center far from sea"
+        ],
+        "Interior_Palatial": [
+            "ornate moldings",
+            "parquet floors",
+            "heavy velvet curtains",
+            "high ceilings",
+            "enclosed royal chamber"
+        ],
+        "Interior_Humble": [
+            "exposed wooden beams",
+            "rough plastered walls",
+            "wicker baskets",
+            "earthenware pottery",
+            "dimly lit cottage"
+        ],
+        "Countryside": [
+            "thatched roofs",
+            "dirt paths",
+            "farmland",
+            "distant rolling hills",
+            "vast green meadows",
+            "no water in sight"
+        ],
+        "Social_Gathering": [
+            "crowd in period dress",
+            "ambient conversation",
+            "public square",
+            "gesturing hands",
+            "town center"
+        ]
+    }
+}

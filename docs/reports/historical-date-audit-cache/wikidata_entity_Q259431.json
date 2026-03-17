@@ -1,0 +1,635 @@
+{
+  "saved_at": "2026-03-07T16:57:49.567Z",
+  "value": {
+    "pageid": 251693,
+    "ns": 0,
+    "title": "Q259431",
+    "lastrevid": 2378556144,
+    "modified": "2025-07-12T08:12:31Z",
+    "type": "item",
+    "id": "Q259431",
+    "labels": {
+      "bar": {
+        "language": "bar",
+        "value": "Synode vo Sutri"
+      },
+      "de": {
+        "language": "de",
+        "value": "Synode von Sutri"
+      },
+      "en": {
+        "language": "en",
+        "value": "Council of Sutri"
+      },
+      "fr": {
+        "language": "fr",
+        "value": "synode de Sutri"
+      },
+      "it": {
+        "language": "it",
+        "value": "Concilio di Sutri"
+      },
+      "nl": {
+        "language": "nl",
+        "value": "Synode van Sutri"
+      },
+      "pl": {
+        "language": "pl",
+        "value": "Synod w Sutri"
+      },
+      "sh": {
+        "language": "sh",
+        "value": "Koncil u Sutriju"
+      },
+      "sv": {
+        "language": "sv",
+        "value": "Synoden i Sutri"
+      },
+      "es": {
+        "language": "es",
+        "value": "sinodo de sutri"
+      },
+      "cs": {
+        "language": "cs",
+        "value": "Synoda v Sutri"
+      },
+      "eo": {
+        "language": "eo",
+        "value": "Sinodo de Sutri"
+      },
+      "id": {
+        "language": "id",
+        "value": "Konsili Sutri"
+      },
+      "ja": {
+        "language": "ja",
+        "value": "スートリ教会会議"
+      },
+      "tr": {
+        "language": "tr",
+        "value": "Sutri Konsili"
+      }
+    },
+    "descriptions": {
+      "en": {
+        "language": "en",
+        "value": "synod"
+      },
+      "cs": {
+        "language": "cs",
+        "value": "koncil v Sutri, papežské schizma, rok 1016"
+      },
+      "de": {
+        "language": "de",
+        "value": "Zusammenkunft geistlicher und weltlicher Würdenträger am 20. Dezember 1046"
+      },
+      "it": {
+        "language": "it",
+        "value": "sinodo cristiano del 1046"
+      }
+    },
+    "aliases": {
+      "en": [
+        {
+          "language": "en",
+          "value": "Synod of Sutri"
+        }
+      ]
+    },
+    "claims": {
+      "P646": [
+        {
+          "mainsnak": {
+            "snaktype": "value",
+            "property": "P646",
+            "hash": "a76683552840e5e69d08495c4f80f5a581a80fa1",
+            "datavalue": {
+              "value": "/m/08jq01",
+              "type": "string"
+            },
+            "datatype": "external-id"
+          },
+          "type": "statement",
+          "id": "Q259431$ABE51FCC-2D80-476E-98DF-54D5907C675B",
+          "rank": "normal",
+          "references": [
+            {
+              "hash": "2b00cb481cddcac7623114367489b5c194901c4a",
+              "snaks": {
+                "P248": [
+                  {
+                    "snaktype": "value",
+                    "property": "P248",
+                    "hash": "a94b740202b097dd33355e0e6c00e54b9395e5e0",
+                    "datavalue": {
+                      "value": {
+                        "entity-type": "item",
+                        "numeric-id": 15241312,
+                        "id": "Q15241312"
+                      },
+                      "type": "wikibase-entityid"
+                    },
+                    "datatype": "wikibase-item"
+                  }
+                ],
+                "P577": [
+                  {
+                    "snaktype": "value",
+                    "property": "P577",
+                    "hash": "fde79ecb015112d2f29229ccc1ec514ed3e71fa2",
+                    "datavalue": {
+                      "value": {
+                        "time": "+2013-10-28T00:00:00Z",
+                        "timezone": 0,
+                        "before": 0,
+                        "after": 0,
+                        "precision": 11,
+                        "calendarmodel": "http://www.wikidata.org/entity/Q1985727"
+                      },
+                      "type": "time"
+                    },
+                    "datatype": "time"
+                  }
+                ]
+              },
+              "snaks-order": [
+                "P248",
+                "P577"
+              ]
+            }
+          ]
+        }
+      ],
+      "P31": [
+        {
+          "mainsnak": {
+            "snaktype": "value",
+            "property": "P31",
+            "hash": "ee1bf3975a4767b9bce68a3b3271dcc515b67e8a",
+            "datavalue": {
+              "value": {
+                "entity-type": "item",
+                "numeric-id": 111161,
+                "id": "Q111161"
+              },
+              "type": "wikibase-entityid"
+            },
+            "datatype": "wikibase-item"
+          },
+          "type": "statement",
+          "id": "Q259431$DB3C63A6-41FB-452F-A06E-737420BFE374",
+          "rank": "normal"
+        }
+      ],
+      "P214": [
+        {
+          "mainsnak": {
+            "snaktype": "value",
+            "property": "P214",
+            "hash": "ac6574992b25b92cfbd6635a127872cdaa5f8989",
+            "datavalue": {
+              "value": "153649542",
+              "type": "string"
+            },
+            "datatype": "external-id"
+          },
+          "type": "statement",
+          "id": "Q259431$89E2FAFE-E691-487B-B024-52F820359A96",
+          "rank": "normal",
+          "references": [
+            {
+              "hash": "ffb7008c3b41d9efd69c450e837f49eebb1b6dce",
+              "snaks": {
+                "P248": [
+                  {
+                    "snaktype": "value",
+                    "property": "P248",
+                    "hash": "6b7d4330c4aac4caec4ede9de0311ce273f88ecd",
+                    "datavalue": {
+                      "value": {
+                        "entity-type": "item",
+                        "numeric-id": 54919,
+                        "id": "Q54919"
+                      },
+                      "type": "wikibase-entityid"
+                    },
+                    "datatype": "wikibase-item"
+                  }
+                ],
+                "P813": [
+                  {
+                    "snaktype": "value",
+                    "property": "P813",
+                    "hash": "76142c1ac740096f18ea230da7fb62353d1c531f",
+                    "datavalue": {
+                      "value": {
+                        "time": "+2015-08-03T00:00:00Z",
+                        "timezone": 0,
+                        "before": 0,
+                        "after": 0,
+                        "precision": 11,
+                        "calendarmodel": "http://www.wikidata.org/entity/Q1985727"
+                      },
+                      "type": "time"
+                    },
+                    "datatype": "time"
+                  }
+                ]
+              },
+              "snaks-order": [
+                "P248",
+                "P813"
+              ]
+            }
+          ]
+        }
+      ],
+      "P580": [
+        {
+          "mainsnak": {
+            "snaktype": "value",
+            "property": "P580",
+            "hash": "de1572bc30f0def978d0aff47414a5f006f912ce",
+            "datavalue": {
+              "value": {
+                "time": "+1046-12-20T00:00:00Z",
+                "timezone": 0,
+                "before": 0,
+                "after": 0,
+                "precision": 11,
+                "calendarmodel": "http://www.wikidata.org/entity/Q1985786"
+              },
+              "type": "time"
+            },
+            "datatype": "time"
+          },
+          "type": "statement",
+          "id": "Q259431$0777ce88-4226-e9e0-d79c-4b9b9ab160e6",
+          "rank": "normal"
+        }
+      ],
+      "P582": [
+        {
+          "mainsnak": {
+            "snaktype": "value",
+            "property": "P582",
+            "hash": "69018b92b16aaa5d12388dbc7343d27bc3ab871d",
+            "datavalue": {
+              "value": {
+                "time": "+1046-12-25T00:00:00Z",
+                "timezone": 0,
+                "before": 0,
+                "after": 0,
+                "precision": 11,
+                "calendarmodel": "http://www.wikidata.org/entity/Q1985786"
+              },
+              "type": "time"
+            },
+            "datatype": "time"
+          },
+          "type": "statement",
+          "id": "Q259431$d0ee36aa-4360-2751-7b37-6dcd6f8c4e90",
+          "rank": "normal"
+        }
+      ],
+      "P276": [
+        {
+          "mainsnak": {
+            "snaktype": "value",
+            "property": "P276",
+            "hash": "234b1a41099e89431922f34ce837399d061fdecd",
+            "datavalue": {
+              "value": {
+                "entity-type": "item",
+                "numeric-id": 177741,
+                "id": "Q177741"
+              },
+              "type": "wikibase-entityid"
+            },
+            "datatype": "wikibase-item"
+          },
+          "type": "statement",
+          "id": "Q259431$7046df20-4d5d-888b-5b58-8c996fa8b7f3",
+          "rank": "normal"
+        },
+        {
+          "mainsnak": {
+            "snaktype": "value",
+            "property": "P276",
+            "hash": "3e9ba5952237444e0aa113f017ea9b5bd9f4bc10",
+            "datavalue": {
+              "value": {
+                "entity-type": "item",
+                "numeric-id": 220,
+                "id": "Q220"
+              },
+              "type": "wikibase-entityid"
+            },
+            "datatype": "wikibase-item"
+          },
+          "type": "statement",
+          "id": "Q259431$6821e21b-43b2-0fef-d901-816c7a136ee0",
+          "rank": "normal"
+        }
+      ],
+      "P227": [
+        {
+          "mainsnak": {
+            "snaktype": "value",
+            "property": "P227",
+            "hash": "d6c61cb4dfd5a3d09605f3e05c6f1805c80ac0c0",
+            "datavalue": {
+              "value": "4039650-2",
+              "type": "string"
+            },
+            "datatype": "external-id"
+          },
+          "type": "statement",
+          "id": "Q259431$D2EB2DD9-B98F-4013-9898-C659F6133296",
+          "rank": "normal"
+        }
+      ],
+      "P244": [
+        {
+          "mainsnak": {
+            "snaktype": "value",
+            "property": "P244",
+            "hash": "8fc53b8784b3446071bf1cf2990938cde5a3bff1",
+            "datavalue": {
+              "value": "n83233295",
+              "type": "string"
+            },
+            "datatype": "external-id"
+          },
+          "type": "statement",
+          "id": "Q259431$EF49A6FB-ED77-4D07-A836-20206ED58566",
+          "rank": "normal"
+        }
+      ],
+      "P268": [
+        {
+          "mainsnak": {
+            "snaktype": "value",
+            "property": "P268",
+            "hash": "d871617b82565c02d9af1df369536bb31be856dd",
+            "datavalue": {
+              "value": "11997822x",
+              "type": "string"
+            },
+            "datatype": "external-id"
+          },
+          "type": "statement",
+          "id": "Q259431$1540CD6A-DE25-44E9-891C-038A50FF854D",
+          "rank": "normal"
+        }
+      ],
+      "P269": [
+        {
+          "mainsnak": {
+            "snaktype": "value",
+            "property": "P269",
+            "hash": "4a418f8e0406477b5bda5eff3a96a7c119426802",
+            "datavalue": {
+              "value": "02806951X",
+              "type": "string"
+            },
+            "datatype": "external-id"
+          },
+          "type": "statement",
+          "id": "Q259431$063385A9-219C-4A96-8288-E66E8942EA64",
+          "rank": "normal",
+          "references": [
+            {
+              "hash": "f19745dbf7ab87e5705e9fb74bf735b7a723fc43",
+              "snaks": {
+                "P248": [
+                  {
+                    "snaktype": "value",
+                    "property": "P248",
+                    "hash": "6b7d4330c4aac4caec4ede9de0311ce273f88ecd",
+                    "datavalue": {
+                      "value": {
+                        "entity-type": "item",
+                        "numeric-id": 54919,
+                        "id": "Q54919"
+                      },
+                      "type": "wikibase-entityid"
+                    },
+                    "datatype": "wikibase-item"
+                  }
+                ],
+                "P214": [
+                  {
+                    "snaktype": "value",
+                    "property": "P214",
+                    "hash": "ac6574992b25b92cfbd6635a127872cdaa5f8989",
+                    "datavalue": {
+                      "value": "153649542",
+                      "type": "string"
+                    },
+                    "datatype": "external-id"
+                  }
+                ],
+                "P813": [
+                  {
+                    "snaktype": "value",
+                    "property": "P813",
+                    "hash": "a1b98b5c8bb6eca02829acaf6200c3e4a45b4dd0",
+                    "datavalue": {
+                      "value": {
+                        "time": "+2018-10-07T00:00:00Z",
+                        "timezone": 0,
+                        "before": 0,
+                        "after": 0,
+                        "precision": 11,
+                        "calendarmodel": "http://www.wikidata.org/entity/Q1985727"
+                      },
+                      "type": "time"
+                    },
+                    "datatype": "time"
+                  }
+                ]
+              },
+              "snaks-order": [
+                "P248",
+                "P214",
+                "P813"
+              ]
+            }
+          ]
+        }
+      ],
+      "P1417": [
+        {
+          "mainsnak": {
+            "snaktype": "value",
+            "property": "P1417",
+            "hash": "003a322d9354d52d4e24c1eab558d94de300b3e5",
+            "datavalue": {
+              "value": "topic/Synod-of-Sutri",
+              "type": "string"
+            },
+            "datatype": "external-id"
+          },
+          "type": "statement",
+          "qualifiers": {
+            "P1810": [
+              {
+                "snaktype": "value",
+                "property": "P1810",
+                "hash": "b92593a056677b6201d48fa6b7adc7cf634d6249",
+                "datavalue": {
+                  "value": "Synod of Sutri",
+                  "type": "string"
+                },
+                "datatype": "string"
+              }
+            ]
+          },
+          "qualifiers-order": [
+            "P1810"
+          ],
+          "id": "Q259431$56769775-C57C-470E-B2F2-CA8631AD72C7",
+          "rank": "normal"
+        }
+      ],
+      "P373": [
+        {
+          "mainsnak": {
+            "snaktype": "value",
+            "property": "P373",
+            "hash": "f7ea1e74c2cbb957f797f0b7c823575a7a24ac0e",
+            "datavalue": {
+              "value": "Synod of Sutri",
+              "type": "string"
+            },
+            "datatype": "string"
+          },
+          "type": "statement",
+          "id": "Q259431$5396bb80-9d36-43ef-95bb-54f637f09657",
+          "rank": "normal"
+        }
+      ],
+      "P8636": [
+        {
+          "mainsnak": {
+            "snaktype": "value",
+            "property": "P8636",
+            "hash": "5c557ca1d3a496404b8d97ec58e0e341dde159ad",
+            "datavalue": {
+              "value": "S/sutri",
+              "type": "string"
+            },
+            "datatype": "external-id"
+          },
+          "type": "statement",
+          "id": "Q259431$995BE2A5-CE9C-4392-8381-7A99B64D553F",
+          "rank": "normal"
+        }
+      ],
+      "P13591": [
+        {
+          "mainsnak": {
+            "snaktype": "value",
+            "property": "P13591",
+            "hash": "e8514c6bd2056029cbcb2c0e8f9a76a596f90ee4",
+            "datavalue": {
+              "value": "group/d4fea708-e5af-4d81-a868-b32c8ae652e8",
+              "type": "string"
+            },
+            "datatype": "external-id"
+          },
+          "type": "statement",
+          "id": "Q259431$7C177C4A-D8CD-45EF-99CA-6DBCBCD7222A",
+          "rank": "normal"
+        }
+      ]
+    },
+    "sitelinks": {
+      "barwiki": {
+        "site": "barwiki",
+        "title": "Synode vo Sutri",
+        "badges": [],
+        "url": "https://bar.wikipedia.org/wiki/Synode_vo_Sutri"
+      },
+      "commonswiki": {
+        "site": "commonswiki",
+        "title": "Category:Synod of Sutri",
+        "badges": [],
+        "url": "https://commons.wikimedia.org/wiki/Category:Synod_of_Sutri"
+      },
+      "cswiki": {
+        "site": "cswiki",
+        "title": "Synoda v Sutri",
+        "badges": [],
+        "url": "https://cs.wikipedia.org/wiki/Synoda_v_Sutri"
+      },
+      "dewiki": {
+        "site": "dewiki",
+        "title": "Synode von Sutri",
+        "badges": [],
+        "url": "https://de.wikipedia.org/wiki/Synode_von_Sutri"
+      },
+      "enwiki": {
+        "site": "enwiki",
+        "title": "Council of Sutri",
+        "badges": [],
+        "url": "https://en.wikipedia.org/wiki/Council_of_Sutri"
+      },
+      "eswiki": {
+        "site": "eswiki",
+        "title": "Concilio de Sutri",
+        "badges": [],
+        "url": "https://es.wikipedia.org/wiki/Concilio_de_Sutri"
+      },
+      "frwiki": {
+        "site": "frwiki",
+        "title": "Synode de Sutri",
+        "badges": [],
+        "url": "https://fr.wikipedia.org/wiki/Synode_de_Sutri"
+      },
+      "idwiki": {
+        "site": "idwiki",
+        "title": "Konsili Sutri",
+        "badges": [],
+        "url": "https://id.wikipedia.org/wiki/Konsili_Sutri"
+      },
+      "itwiki": {
+        "site": "itwiki",
+        "title": "Concilio di Sutri",
+        "badges": [],
+        "url": "https://it.wikipedia.org/wiki/Concilio_di_Sutri"
+      },
+      "nlwiki": {
+        "site": "nlwiki",
+        "title": "Synode van Sutri",
+        "badges": [],
+        "url": "https://nl.wikipedia.org/wiki/Synode_van_Sutri"
+      },
+      "plwiki": {
+        "site": "plwiki",
+        "title": "Synod w Sutri",
+        "badges": [],
+        "url": "https://pl.wikipedia.org/wiki/Synod_w_Sutri"
+      },
+      "shwiki": {
+        "site": "shwiki",
+        "title": "Koncil u Sutriju",
+        "badges": [],
+        "url": "https://sh.wikipedia.org/wiki/Koncil_u_Sutriju"
+      },
+      "svwiki": {
+        "site": "svwiki",
+        "title": "Synoden i Sutri",
+        "badges": [],
+        "url": "https://sv.wikipedia.org/wiki/Synoden_i_Sutri"
+      },
+      "trwiki": {
+        "site": "trwiki",
+        "title": "Sutri Konsili",
+        "badges": [],
+        "url": "https://tr.wikipedia.org/wiki/Sutri_Konsili"
+      }
+    }
+  }
+}

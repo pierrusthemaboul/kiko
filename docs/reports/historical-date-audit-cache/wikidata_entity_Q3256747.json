@@ -1,0 +1,704 @@
+{
+  "saved_at": "2026-03-07T15:40:02.532Z",
+  "value": {
+    "pageid": 3107919,
+    "ns": 0,
+    "title": "Q3256747",
+    "lastrevid": 2319217304,
+    "modified": "2025-03-03T04:47:22Z",
+    "type": "item",
+    "id": "Q3256747",
+    "labels": {
+      "fr": {
+        "language": "fr",
+        "value": "Littérature"
+      },
+      "en": {
+        "language": "en",
+        "value": "Littérature"
+      },
+      "ru": {
+        "language": "ru",
+        "value": "Littérature"
+      },
+      "ja": {
+        "language": "ja",
+        "value": "リテラチュール"
+      },
+      "ro": {
+        "language": "ro",
+        "value": "Littérature (revistă)"
+      }
+    },
+    "descriptions": {
+      "fr": {
+        "language": "fr",
+        "value": "revue littéraire surréaliste (1919-1924)"
+      },
+      "en": {
+        "language": "en",
+        "value": "dadaist literary magazine (1919-1924)"
+      },
+      "ru": {
+        "language": "ru",
+        "value": "дадаистский литературный журнал 1919 — 1924 гг"
+      }
+    },
+    "aliases": {
+      "en": [
+        {
+          "language": "en",
+          "value": "Litterature"
+        }
+      ]
+    },
+    "claims": {
+      "P31": [
+        {
+          "mainsnak": {
+            "snaktype": "value",
+            "property": "P31",
+            "hash": "fb7666e2e8ef0fcade84a1db13a7740ac93e8426",
+            "datavalue": {
+              "value": {
+                "entity-type": "item",
+                "numeric-id": 41298,
+                "id": "Q41298"
+              },
+              "type": "wikibase-entityid"
+            },
+            "datatype": "wikibase-item"
+          },
+          "type": "statement",
+          "id": "Q3256747$00C6AA9A-E25C-45CF-AB88-164645E82C30",
+          "rank": "normal"
+        },
+        {
+          "mainsnak": {
+            "snaktype": "value",
+            "property": "P31",
+            "hash": "08104c015b6d33d4edd5ac7cca1eb1a4634ade5b",
+            "datavalue": {
+              "value": {
+                "entity-type": "item",
+                "numeric-id": 685935,
+                "id": "Q685935"
+              },
+              "type": "wikibase-entityid"
+            },
+            "datatype": "wikibase-item"
+          },
+          "type": "statement",
+          "id": "Q3256747$8DC60B0D-BB28-4D78-BB20-3DA244FCF2BC",
+          "rank": "normal"
+        }
+      ],
+      "P236": [
+        {
+          "mainsnak": {
+            "snaktype": "value",
+            "property": "P236",
+            "hash": "bb5810002fe0f83303fb13d8c5a8a438ddb228dc",
+            "datavalue": {
+              "value": "0221-1769",
+              "type": "string"
+            },
+            "datatype": "external-id"
+          },
+          "type": "statement",
+          "qualifiers": {
+            "P1810": [
+              {
+                "snaktype": "value",
+                "property": "P1810",
+                "hash": "f3b9a71860cdbc32355e5e22661fb0247b68bc82",
+                "datavalue": {
+                  "value": "Littérature (Paris. 1919)",
+                  "type": "string"
+                },
+                "datatype": "string"
+              }
+            ],
+            "P437": [
+              {
+                "snaktype": "value",
+                "property": "P437",
+                "hash": "740efe54118a78473c6a596896830ec77b53c578",
+                "datavalue": {
+                  "value": {
+                    "entity-type": "item",
+                    "numeric-id": 1261026,
+                    "id": "Q1261026"
+                  },
+                  "type": "wikibase-entityid"
+                },
+                "datatype": "wikibase-item"
+              }
+            ]
+          },
+          "qualifiers-order": [
+            "P1810",
+            "P437"
+          ],
+          "id": "Q3256747$6F3B440A-4AD2-4DCE-B82A-7656A7DBCCBE",
+          "rank": "normal",
+          "references": [
+            {
+              "hash": "d4bd87b862b12d99d26e86472d44f26858dee639",
+              "snaks": {
+                "P143": [
+                  {
+                    "snaktype": "value",
+                    "property": "P143",
+                    "hash": "f30cbd35620c4ea6d0633aaf0210a8916130469b",
+                    "datavalue": {
+                      "value": {
+                        "entity-type": "item",
+                        "numeric-id": 8447,
+                        "id": "Q8447"
+                      },
+                      "type": "wikibase-entityid"
+                    },
+                    "datatype": "wikibase-item"
+                  }
+                ]
+              },
+              "snaks-order": [
+                "P143"
+              ]
+            }
+          ]
+        }
+      ],
+      "P571": [
+        {
+          "mainsnak": {
+            "snaktype": "value",
+            "property": "P571",
+            "hash": "9989cee8400a6dca193537a68ff5b5dc3eb8e972",
+            "datavalue": {
+              "value": {
+                "time": "+1919-01-01T00:00:00Z",
+                "timezone": 0,
+                "before": 0,
+                "after": 0,
+                "precision": 9,
+                "calendarmodel": "http://www.wikidata.org/entity/Q1985727"
+              },
+              "type": "time"
+            },
+            "datatype": "time"
+          },
+          "type": "statement",
+          "id": "Q3256747$DF83B357-A4BA-456D-94D2-8BF5D0F180B5",
+          "rank": "normal",
+          "references": [
+            {
+              "hash": "fa278ebfc458360e5aed63d5058cca83c46134f1",
+              "snaks": {
+                "P143": [
+                  {
+                    "snaktype": "value",
+                    "property": "P143",
+                    "hash": "e4f6d9441d0600513c4533c672b5ab472dc73694",
+                    "datavalue": {
+                      "value": {
+                        "entity-type": "item",
+                        "numeric-id": 328,
+                        "id": "Q328"
+                      },
+                      "type": "wikibase-entityid"
+                    },
+                    "datatype": "wikibase-item"
+                  }
+                ]
+              },
+              "snaks-order": [
+                "P143"
+              ]
+            }
+          ]
+        }
+      ],
+      "P407": [
+        {
+          "mainsnak": {
+            "snaktype": "value",
+            "property": "P407",
+            "hash": "d197d0a5efa4b4c23a302a829dd3ef43684fe002",
+            "datavalue": {
+              "value": {
+                "entity-type": "item",
+                "numeric-id": 150,
+                "id": "Q150"
+              },
+              "type": "wikibase-entityid"
+            },
+            "datatype": "wikibase-item"
+          },
+          "type": "statement",
+          "id": "Q3256747$3DE46A14-4B75-44BE-BFD1-7298082C5121",
+          "rank": "normal",
+          "references": [
+            {
+              "hash": "d4bd87b862b12d99d26e86472d44f26858dee639",
+              "snaks": {
+                "P143": [
+                  {
+                    "snaktype": "value",
+                    "property": "P143",
+                    "hash": "f30cbd35620c4ea6d0633aaf0210a8916130469b",
+                    "datavalue": {
+                      "value": {
+                        "entity-type": "item",
+                        "numeric-id": 8447,
+                        "id": "Q8447"
+                      },
+                      "type": "wikibase-entityid"
+                    },
+                    "datatype": "wikibase-item"
+                  }
+                ]
+              },
+              "snaks-order": [
+                "P143"
+              ]
+            },
+            {
+              "hash": "05bd37a4955938fa17bdac8906e0e6354ad844b7",
+              "snaks": {
+                "P248": [
+                  {
+                    "snaktype": "value",
+                    "property": "P248",
+                    "hash": "eb6cb701bdaaae80dfa220d3b09a959c96736325",
+                    "datavalue": {
+                      "value": {
+                        "entity-type": "item",
+                        "numeric-id": 70460099,
+                        "id": "Q70460099"
+                      },
+                      "type": "wikibase-entityid"
+                    },
+                    "datatype": "wikibase-item"
+                  }
+                ],
+                "P236": [
+                  {
+                    "snaktype": "value",
+                    "property": "P236",
+                    "hash": "bb5810002fe0f83303fb13d8c5a8a438ddb228dc",
+                    "datavalue": {
+                      "value": "0221-1769",
+                      "type": "string"
+                    },
+                    "datatype": "external-id"
+                  }
+                ]
+              },
+              "snaks-order": [
+                "P248",
+                "P236"
+              ]
+            }
+          ]
+        }
+      ],
+      "P576": [
+        {
+          "mainsnak": {
+            "snaktype": "value",
+            "property": "P576",
+            "hash": "7d3fb8c9ebcf66835b1aa07fb2bce7ee571f9230",
+            "datavalue": {
+              "value": {
+                "time": "+1924-06-00T00:00:00Z",
+                "timezone": 0,
+                "before": 0,
+                "after": 0,
+                "precision": 10,
+                "calendarmodel": "http://www.wikidata.org/entity/Q1985727"
+              },
+              "type": "time"
+            },
+            "datatype": "time"
+          },
+          "type": "statement",
+          "id": "Q3256747$9D7DE5EE-1735-4E92-BE57-B6DAC236DE96",
+          "rank": "normal",
+          "references": [
+            {
+              "hash": "d4bd87b862b12d99d26e86472d44f26858dee639",
+              "snaks": {
+                "P143": [
+                  {
+                    "snaktype": "value",
+                    "property": "P143",
+                    "hash": "f30cbd35620c4ea6d0633aaf0210a8916130469b",
+                    "datavalue": {
+                      "value": {
+                        "entity-type": "item",
+                        "numeric-id": 8447,
+                        "id": "Q8447"
+                      },
+                      "type": "wikibase-entityid"
+                    },
+                    "datatype": "wikibase-item"
+                  }
+                ]
+              },
+              "snaks-order": [
+                "P143"
+              ]
+            }
+          ]
+        }
+      ],
+      "P1417": [
+        {
+          "mainsnak": {
+            "snaktype": "value",
+            "property": "P1417",
+            "hash": "47a87c19b0ecd2f26c726098c7a5507ce87dbdce",
+            "datavalue": {
+              "value": "topic/Litterature",
+              "type": "string"
+            },
+            "datatype": "external-id"
+          },
+          "type": "statement",
+          "qualifiers": {
+            "P1810": [
+              {
+                "snaktype": "value",
+                "property": "P1810",
+                "hash": "5f1353c5df76020a66832dbb90dad0c1de451bbd",
+                "datavalue": {
+                  "value": "Littérature",
+                  "type": "string"
+                },
+                "datatype": "string"
+              }
+            ]
+          },
+          "qualifiers-order": [
+            "P1810"
+          ],
+          "id": "Q3256747$5E187FCE-D68A-4A87-A906-B7074B9F3D46",
+          "rank": "normal"
+        }
+      ],
+      "P6981": [
+        {
+          "mainsnak": {
+            "snaktype": "value",
+            "property": "P6981",
+            "hash": "fea35f699d4c810da53f320bfafa8201c3185169",
+            "datavalue": {
+              "value": "2114101",
+              "type": "string"
+            },
+            "datatype": "external-id"
+          },
+          "type": "statement",
+          "id": "Q3256747$16BA6DCA-3ED5-49B4-BFF9-11AA9B41599A",
+          "rank": "normal",
+          "references": [
+            {
+              "hash": "70502447127e610f73a48450aa0b7b666cc07b8a",
+              "snaks": {
+                "P248": [
+                  {
+                    "snaktype": "value",
+                    "property": "P248",
+                    "hash": "3ec4a7729b1fc3a56dc3cfe2424d9083464075f9",
+                    "datavalue": {
+                      "value": {
+                        "entity-type": "item",
+                        "numeric-id": 3600584,
+                        "id": "Q3600584"
+                      },
+                      "type": "wikibase-entityid"
+                    },
+                    "datatype": "wikibase-item"
+                  }
+                ],
+                "P813": [
+                  {
+                    "snaktype": "value",
+                    "property": "P813",
+                    "hash": "5007031adc7f0a10d8c4d0a712ddffeb9a1e7282",
+                    "datavalue": {
+                      "value": {
+                        "time": "+2020-04-04T00:00:00Z",
+                        "timezone": 0,
+                        "before": 0,
+                        "after": 0,
+                        "precision": 11,
+                        "calendarmodel": "http://www.wikidata.org/entity/Q1985727"
+                      },
+                      "type": "time"
+                    },
+                    "datatype": "time"
+                  }
+                ]
+              },
+              "snaks-order": [
+                "P248",
+                "P813"
+              ]
+            }
+          ]
+        }
+      ],
+      "P135": [
+        {
+          "mainsnak": {
+            "snaktype": "value",
+            "property": "P135",
+            "hash": "53d477fcd5964c46623a971c3cceed0c311f60f6",
+            "datavalue": {
+              "value": {
+                "entity-type": "item",
+                "numeric-id": 6034,
+                "id": "Q6034"
+              },
+              "type": "wikibase-entityid"
+            },
+            "datatype": "wikibase-item"
+          },
+          "type": "statement",
+          "id": "Q3256747$a2da3e66-4057-aefe-d550-99c0fae5c899",
+          "rank": "normal"
+        },
+        {
+          "mainsnak": {
+            "snaktype": "value",
+            "property": "P135",
+            "hash": "5ff736756e32ef9bb5db26063140b63a0a6332b9",
+            "datavalue": {
+              "value": {
+                "entity-type": "item",
+                "numeric-id": 39427,
+                "id": "Q39427"
+              },
+              "type": "wikibase-entityid"
+            },
+            "datatype": "wikibase-item"
+          },
+          "type": "statement",
+          "id": "Q3256747$4876cefc-457a-edee-f21c-e0acadcfd1ff",
+          "rank": "normal"
+        }
+      ],
+      "P646": [
+        {
+          "mainsnak": {
+            "snaktype": "value",
+            "property": "P646",
+            "hash": "1837c130c2f75f22386ffc0f51b08d2d7ddc30a4",
+            "datavalue": {
+              "value": "/m/0b6lhpr",
+              "type": "string"
+            },
+            "datatype": "external-id"
+          },
+          "type": "statement",
+          "id": "Q3256747$74740D40-787A-481E-A147-02ED0FBDA0D1",
+          "rank": "normal"
+        }
+      ],
+      "P1476": [
+        {
+          "mainsnak": {
+            "snaktype": "value",
+            "property": "P1476",
+            "hash": "f53c95272bb43ffb0636ea89e3529e880b9a9459",
+            "datavalue": {
+              "value": {
+                "text": "Littérature",
+                "language": "fr"
+              },
+              "type": "monolingualtext"
+            },
+            "datatype": "monolingualtext"
+          },
+          "type": "statement",
+          "id": "Q3256747$D5063AE1-FDDE-44F6-A7B2-C77F5CA869C2",
+          "rank": "normal",
+          "references": [
+            {
+              "hash": "05bd37a4955938fa17bdac8906e0e6354ad844b7",
+              "snaks": {
+                "P248": [
+                  {
+                    "snaktype": "value",
+                    "property": "P248",
+                    "hash": "eb6cb701bdaaae80dfa220d3b09a959c96736325",
+                    "datavalue": {
+                      "value": {
+                        "entity-type": "item",
+                        "numeric-id": 70460099,
+                        "id": "Q70460099"
+                      },
+                      "type": "wikibase-entityid"
+                    },
+                    "datatype": "wikibase-item"
+                  }
+                ],
+                "P236": [
+                  {
+                    "snaktype": "value",
+                    "property": "P236",
+                    "hash": "bb5810002fe0f83303fb13d8c5a8a438ddb228dc",
+                    "datavalue": {
+                      "value": "0221-1769",
+                      "type": "string"
+                    },
+                    "datatype": "external-id"
+                  }
+                ]
+              },
+              "snaks-order": [
+                "P248",
+                "P236"
+              ]
+            }
+          ]
+        }
+      ],
+      "P495": [
+        {
+          "mainsnak": {
+            "snaktype": "value",
+            "property": "P495",
+            "hash": "f707ab9792279b2ccec78f8736a8e5d28c8b7fc7",
+            "datavalue": {
+              "value": {
+                "entity-type": "item",
+                "numeric-id": 142,
+                "id": "Q142"
+              },
+              "type": "wikibase-entityid"
+            },
+            "datatype": "wikibase-item"
+          },
+          "type": "statement",
+          "id": "Q3256747$30F14EDA-271F-4915-8BA3-06BDAB098EAC",
+          "rank": "normal",
+          "references": [
+            {
+              "hash": "05bd37a4955938fa17bdac8906e0e6354ad844b7",
+              "snaks": {
+                "P248": [
+                  {
+                    "snaktype": "value",
+                    "property": "P248",
+                    "hash": "eb6cb701bdaaae80dfa220d3b09a959c96736325",
+                    "datavalue": {
+                      "value": {
+                        "entity-type": "item",
+                        "numeric-id": 70460099,
+                        "id": "Q70460099"
+                      },
+                      "type": "wikibase-entityid"
+                    },
+                    "datatype": "wikibase-item"
+                  }
+                ],
+                "P236": [
+                  {
+                    "snaktype": "value",
+                    "property": "P236",
+                    "hash": "bb5810002fe0f83303fb13d8c5a8a438ddb228dc",
+                    "datavalue": {
+                      "value": "0221-1769",
+                      "type": "string"
+                    },
+                    "datatype": "external-id"
+                  }
+                ]
+              },
+              "snaks-order": [
+                "P248",
+                "P236"
+              ]
+            }
+          ]
+        }
+      ],
+      "P7363": [
+        {
+          "mainsnak": {
+            "snaktype": "value",
+            "property": "P7363",
+            "hash": "385a41d443579ed4634891bdcb393ba8aa5c35cc",
+            "datavalue": {
+              "value": "0221-1769",
+              "type": "string"
+            },
+            "datatype": "external-id"
+          },
+          "type": "statement",
+          "id": "Q3256747$6694ECBF-ACF4-43AE-8308-3839464A531F",
+          "rank": "normal"
+        }
+      ],
+      "P373": [
+        {
+          "mainsnak": {
+            "snaktype": "value",
+            "property": "P373",
+            "hash": "c5745133ff9b8912074aa413d80676316d9fc49f",
+            "datavalue": {
+              "value": "Littérature (revue)",
+              "type": "string"
+            },
+            "datatype": "string"
+          },
+          "type": "statement",
+          "id": "Q3256747$5bac3bf6-d5bc-4db8-8835-d2a205de0b39",
+          "rank": "normal"
+        }
+      ]
+    },
+    "sitelinks": {
+      "commonswiki": {
+        "site": "commonswiki",
+        "title": "Category:Littérature (revue)",
+        "badges": [],
+        "url": "https://commons.wikimedia.org/wiki/Category:Litt%C3%A9rature_(revue)"
+      },
+      "enwiki": {
+        "site": "enwiki",
+        "title": "Littérature",
+        "badges": [],
+        "url": "https://en.wikipedia.org/wiki/Litt%C3%A9rature"
+      },
+      "frwiki": {
+        "site": "frwiki",
+        "title": "Littérature (revue)",
+        "badges": [],
+        "url": "https://fr.wikipedia.org/wiki/Litt%C3%A9rature_(revue)"
+      },
+      "frwikisource": {
+        "site": "frwikisource",
+        "title": "Littérature (revue)",
+        "badges": [],
+        "url": "https://fr.wikisource.org/wiki/Litt%C3%A9rature_(revue)"
+      },
+      "jawiki": {
+        "site": "jawiki",
+        "title": "リテラチュール",
+        "badges": [],
+        "url": "https://ja.wikipedia.org/wiki/%E3%83%AA%E3%83%86%E3%83%A9%E3%83%81%E3%83%A5%E3%83%BC%E3%83%AB"
+      },
+      "rowiki": {
+        "site": "rowiki",
+        "title": "Littérature (revistă)",
+        "badges": [],
+        "url": "https://ro.wikipedia.org/wiki/Litt%C3%A9rature_(revist%C4%83)"
+      }
+    }
+  }
+}

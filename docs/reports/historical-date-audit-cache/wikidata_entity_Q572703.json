@@ -1,0 +1,1190 @@
+{
+  "saved_at": "2026-03-07T13:10:05.798Z",
+  "value": {
+    "pageid": 538736,
+    "ns": 0,
+    "title": "Q572703",
+    "lastrevid": 2359574521,
+    "modified": "2025-06-11T13:06:30Z",
+    "type": "item",
+    "id": "Q572703",
+    "labels": {
+      "de": {
+        "language": "de",
+        "value": "Marco Polo Cycling Donckers Koffie"
+      },
+      "en": {
+        "language": "en",
+        "value": "Marco Polo Cycling-Donckers Koffie"
+      },
+      "es": {
+        "language": "es",
+        "value": "Marco Polo Cycling Team"
+      },
+      "fr": {
+        "language": "fr",
+        "value": "Marco Polo Donckers Koffie"
+      },
+      "nl": {
+        "language": "nl",
+        "value": "Marco Polo Cycling-Donckers Koffie"
+      },
+      "ca": {
+        "language": "ca",
+        "value": "Marco Polo Donckers Koffie"
+      },
+      "ru": {
+        "language": "ru",
+        "value": "Marco Polo Donckers Koffie"
+      }
+    },
+    "descriptions": {
+      "en": {
+        "language": "en",
+        "value": "cycling team"
+      },
+      "fr": {
+        "language": "fr",
+        "value": "équipe cycliste Marco Polo Donckers Koffie"
+      },
+      "de": {
+        "language": "de",
+        "value": "äthiopisches Radrennteam"
+      },
+      "ar": {
+        "language": "ar",
+        "value": "فريق دراجات هوائية"
+      },
+      "ru": {
+        "language": "ru",
+        "value": "китайская эфиопская велокоманда (2003-2012)"
+      },
+      "nl": {
+        "language": "nl",
+        "value": "Wielerploeg"
+      }
+    },
+    "aliases": {
+      "fr": [
+        {
+          "language": "fr",
+          "value": "Marco Polo"
+        },
+        {
+          "language": "fr",
+          "value": "Discovery Channel-Marco Polo"
+        },
+        {
+          "language": "fr",
+          "value": "Trek-Marco Polo"
+        }
+      ],
+      "en": [
+        {
+          "language": "en",
+          "value": "Trek Marco Polo"
+        }
+      ],
+      "ru": [
+        {
+          "language": "ru",
+          "value": "Marco Polo Cycling"
+        }
+      ]
+    },
+    "claims": {
+      "P646": [
+        {
+          "mainsnak": {
+            "snaktype": "value",
+            "property": "P646",
+            "hash": "d3a663c730827a06fa520d2e1ee8976a3f151f79",
+            "datavalue": {
+              "value": "/m/03qkfm_",
+              "type": "string"
+            },
+            "datatype": "external-id"
+          },
+          "type": "statement",
+          "id": "Q572703$91F0DCAE-0886-48DE-9F26-BB2CFB8E05D6",
+          "rank": "normal",
+          "references": [
+            {
+              "hash": "2b00cb481cddcac7623114367489b5c194901c4a",
+              "snaks": {
+                "P248": [
+                  {
+                    "snaktype": "value",
+                    "property": "P248",
+                    "hash": "a94b740202b097dd33355e0e6c00e54b9395e5e0",
+                    "datavalue": {
+                      "value": {
+                        "entity-type": "item",
+                        "numeric-id": 15241312,
+                        "id": "Q15241312"
+                      },
+                      "type": "wikibase-entityid"
+                    },
+                    "datatype": "wikibase-item"
+                  }
+                ],
+                "P577": [
+                  {
+                    "snaktype": "value",
+                    "property": "P577",
+                    "hash": "fde79ecb015112d2f29229ccc1ec514ed3e71fa2",
+                    "datavalue": {
+                      "value": {
+                        "time": "+2013-10-28T00:00:00Z",
+                        "timezone": 0,
+                        "before": 0,
+                        "after": 0,
+                        "precision": 11,
+                        "calendarmodel": "http://www.wikidata.org/entity/Q1985727"
+                      },
+                      "type": "time"
+                    },
+                    "datatype": "time"
+                  }
+                ]
+              },
+              "snaks-order": [
+                "P248",
+                "P577"
+              ]
+            }
+          ]
+        }
+      ],
+      "P18": [
+        {
+          "mainsnak": {
+            "snaktype": "value",
+            "property": "P18",
+            "hash": "acdc6a5fa7c32538ad703aef6ecc8759d6bf927a",
+            "datavalue": {
+              "value": "Tour de Rijke 2011 Marco Polo Cycling Team.jpg",
+              "type": "string"
+            },
+            "datatype": "commonsMedia"
+          },
+          "type": "statement",
+          "id": "Q572703$1F7E294A-9082-4ED3-9E15-657F721C603B",
+          "rank": "normal",
+          "references": [
+            {
+              "hash": "732ec1c90a6f0694c7db9a71bf09fe7f2b674172",
+              "snaks": {
+                "P143": [
+                  {
+                    "snaktype": "value",
+                    "property": "P143",
+                    "hash": "9123b0de1cc9c3954366ba797d598e4e1ea4146f",
+                    "datavalue": {
+                      "value": {
+                        "entity-type": "item",
+                        "numeric-id": 10000,
+                        "id": "Q10000"
+                      },
+                      "type": "wikibase-entityid"
+                    },
+                    "datatype": "wikibase-item"
+                  }
+                ]
+              },
+              "snaks-order": [
+                "P143"
+              ]
+            }
+          ]
+        }
+      ],
+      "P31": [
+        {
+          "mainsnak": {
+            "snaktype": "value",
+            "property": "P31",
+            "hash": "00884b8ee2c774ea3a266f0f4cf5db892d21968d",
+            "datavalue": {
+              "value": {
+                "entity-type": "item",
+                "numeric-id": 20653566,
+                "id": "Q20653566"
+              },
+              "type": "wikibase-entityid"
+            },
+            "datatype": "wikibase-item"
+          },
+          "type": "statement",
+          "qualifiers": {
+            "P580": [
+              {
+                "snaktype": "value",
+                "property": "P580",
+                "hash": "05038d5d0fd23c067a48301252f21993a10ee995",
+                "datavalue": {
+                  "value": {
+                    "time": "+2003-00-00T00:00:00Z",
+                    "timezone": 0,
+                    "before": 0,
+                    "after": 0,
+                    "precision": 9,
+                    "calendarmodel": "http://www.wikidata.org/entity/Q1985727"
+                  },
+                  "type": "time"
+                },
+                "datatype": "time"
+              }
+            ],
+            "P582": [
+              {
+                "snaktype": "value",
+                "property": "P582",
+                "hash": "396a8a418d2d3af6444e59183215234da844a671",
+                "datavalue": {
+                  "value": {
+                    "time": "+2004-00-00T00:00:00Z",
+                    "timezone": 0,
+                    "before": 0,
+                    "after": 0,
+                    "precision": 9,
+                    "calendarmodel": "http://www.wikidata.org/entity/Q1985727"
+                  },
+                  "type": "time"
+                },
+                "datatype": "time"
+              }
+            ]
+          },
+          "qualifiers-order": [
+            "P580",
+            "P582"
+          ],
+          "id": "Q572703$9FD7E7E5-C36A-4B40-BBC5-623DEA464B29",
+          "rank": "normal"
+        },
+        {
+          "mainsnak": {
+            "snaktype": "value",
+            "property": "P31",
+            "hash": "ce4c7cea0f6cb19c32025e2807be8e7a71f12459",
+            "datavalue": {
+              "value": {
+                "entity-type": "item",
+                "numeric-id": 1756006,
+                "id": "Q1756006"
+              },
+              "type": "wikibase-entityid"
+            },
+            "datatype": "wikibase-item"
+          },
+          "type": "statement",
+          "qualifiers": {
+            "P580": [
+              {
+                "snaktype": "value",
+                "property": "P580",
+                "hash": "9ef7f99b41c28cf258cbce173bea2317c62abaf2",
+                "datavalue": {
+                  "value": {
+                    "time": "+2005-00-00T00:00:00Z",
+                    "timezone": 0,
+                    "before": 0,
+                    "after": 0,
+                    "precision": 9,
+                    "calendarmodel": "http://www.wikidata.org/entity/Q1985727"
+                  },
+                  "type": "time"
+                },
+                "datatype": "time"
+              }
+            ],
+            "P582": [
+              {
+                "snaktype": "value",
+                "property": "P582",
+                "hash": "a8a2458eeea238180eef8b0bcbab57b73b40d76b",
+                "datavalue": {
+                  "value": {
+                    "time": "+2012-00-00T00:00:00Z",
+                    "timezone": 0,
+                    "before": 0,
+                    "after": 0,
+                    "precision": 9,
+                    "calendarmodel": "http://www.wikidata.org/entity/Q1985727"
+                  },
+                  "type": "time"
+                },
+                "datatype": "time"
+              }
+            ]
+          },
+          "qualifiers-order": [
+            "P580",
+            "P582"
+          ],
+          "id": "Q572703$5d323e9c-48a6-41a9-578f-8eb35e393c48",
+          "rank": "normal"
+        },
+        {
+          "mainsnak": {
+            "snaktype": "value",
+            "property": "P31",
+            "hash": "719622ce7dc9498c258048a25defb73abace0e72",
+            "datavalue": {
+              "value": {
+                "entity-type": "item",
+                "numeric-id": 20652655,
+                "id": "Q20652655"
+              },
+              "type": "wikibase-entityid"
+            },
+            "datatype": "wikibase-item"
+          },
+          "type": "statement",
+          "qualifiers": {
+            "P582": [
+              {
+                "snaktype": "value",
+                "property": "P582",
+                "hash": "f84ab79307da73e0195993b8bfe549b6607b374f",
+                "datavalue": {
+                  "value": {
+                    "time": "+2002-00-00T00:00:00Z",
+                    "timezone": 0,
+                    "before": 0,
+                    "after": 0,
+                    "precision": 9,
+                    "calendarmodel": "http://www.wikidata.org/entity/Q1985727"
+                  },
+                  "type": "time"
+                },
+                "datatype": "time"
+              }
+            ],
+            "P580": [
+              {
+                "snaktype": "value",
+                "property": "P580",
+                "hash": "8752b82cdffad4bcee274913d130a05ca27d08b0",
+                "datavalue": {
+                  "value": {
+                    "time": "+2001-00-00T00:00:00Z",
+                    "timezone": 0,
+                    "before": 0,
+                    "after": 0,
+                    "precision": 9,
+                    "calendarmodel": "http://www.wikidata.org/entity/Q1985727"
+                  },
+                  "type": "time"
+                },
+                "datatype": "time"
+              }
+            ]
+          },
+          "qualifiers-order": [
+            "P582",
+            "P580"
+          ],
+          "id": "Q572703$afe09bf3-464d-c856-0e8f-6293e0e55de0",
+          "rank": "normal"
+        }
+      ],
+      "P641": [
+        {
+          "mainsnak": {
+            "snaktype": "value",
+            "property": "P641",
+            "hash": "b93128afe81288b6ed10540a9c4d6b174774bd45",
+            "datavalue": {
+              "value": {
+                "entity-type": "item",
+                "numeric-id": 3609,
+                "id": "Q3609"
+              },
+              "type": "wikibase-entityid"
+            },
+            "datatype": "wikibase-item"
+          },
+          "type": "statement",
+          "id": "Q572703$6D2ECACC-5D25-48BD-B4FF-D20848571D2A",
+          "rank": "normal"
+        }
+      ],
+      "P571": [
+        {
+          "mainsnak": {
+            "snaktype": "value",
+            "property": "P571",
+            "hash": "bf126b3cd5af871333f6890b1a39a40572b90c06",
+            "datavalue": {
+              "value": {
+                "time": "+2003-00-00T00:00:00Z",
+                "timezone": 0,
+                "before": 0,
+                "after": 0,
+                "precision": 9,
+                "calendarmodel": "http://www.wikidata.org/entity/Q1985727"
+              },
+              "type": "time"
+            },
+            "datatype": "time"
+          },
+          "type": "statement",
+          "id": "Q572703$e19de19f-41cd-3235-2c66-1d4166f574ff",
+          "rank": "normal"
+        }
+      ],
+      "P576": [
+        {
+          "mainsnak": {
+            "snaktype": "value",
+            "property": "P576",
+            "hash": "2608e848794c3f5e9ee0a5b53f0710d399d372da",
+            "datavalue": {
+              "value": {
+                "time": "+2012-00-00T00:00:00Z",
+                "timezone": 0,
+                "before": 0,
+                "after": 0,
+                "precision": 9,
+                "calendarmodel": "http://www.wikidata.org/entity/Q1985727"
+              },
+              "type": "time"
+            },
+            "datatype": "time"
+          },
+          "type": "statement",
+          "id": "Q572703$8905b42d-4d1f-0bb4-f348-9a736f45421d",
+          "rank": "normal"
+        }
+      ],
+      "P1998": [
+        {
+          "mainsnak": {
+            "snaktype": "value",
+            "property": "P1998",
+            "hash": "b622c1f2ee291db138d51230a46faddb00de16c7",
+            "datavalue": {
+              "value": "MPC",
+              "type": "string"
+            },
+            "datatype": "string"
+          },
+          "type": "statement",
+          "qualifiers": {
+            "P580": [
+              {
+                "snaktype": "value",
+                "property": "P580",
+                "hash": "05038d5d0fd23c067a48301252f21993a10ee995",
+                "datavalue": {
+                  "value": {
+                    "time": "+2003-00-00T00:00:00Z",
+                    "timezone": 0,
+                    "before": 0,
+                    "after": 0,
+                    "precision": 9,
+                    "calendarmodel": "http://www.wikidata.org/entity/Q1985727"
+                  },
+                  "type": "time"
+                },
+                "datatype": "time"
+              }
+            ],
+            "P582": [
+              {
+                "snaktype": "value",
+                "property": "P582",
+                "hash": "a8a2458eeea238180eef8b0bcbab57b73b40d76b",
+                "datavalue": {
+                  "value": {
+                    "time": "+2012-00-00T00:00:00Z",
+                    "timezone": 0,
+                    "before": 0,
+                    "after": 0,
+                    "precision": 9,
+                    "calendarmodel": "http://www.wikidata.org/entity/Q1985727"
+                  },
+                  "type": "time"
+                },
+                "datatype": "time"
+              }
+            ]
+          },
+          "qualifiers-order": [
+            "P580",
+            "P582"
+          ],
+          "id": "Q572703$44fd4ec5-4c8b-b59e-3b81-849695ab2874",
+          "rank": "normal"
+        }
+      ],
+      "P1448": [
+        {
+          "mainsnak": {
+            "snaktype": "value",
+            "property": "P1448",
+            "hash": "5d568e20627ff6799c6e9d3e1fd9c43441ba0b78",
+            "datavalue": {
+              "value": {
+                "text": "Marco Polo",
+                "language": "en"
+              },
+              "type": "monolingualtext"
+            },
+            "datatype": "monolingualtext"
+          },
+          "type": "statement",
+          "qualifiers": {
+            "P580": [
+              {
+                "snaktype": "value",
+                "property": "P580",
+                "hash": "8752b82cdffad4bcee274913d130a05ca27d08b0",
+                "datavalue": {
+                  "value": {
+                    "time": "+2001-00-00T00:00:00Z",
+                    "timezone": 0,
+                    "before": 0,
+                    "after": 0,
+                    "precision": 9,
+                    "calendarmodel": "http://www.wikidata.org/entity/Q1985727"
+                  },
+                  "type": "time"
+                },
+                "datatype": "time"
+              }
+            ],
+            "P582": [
+              {
+                "snaktype": "value",
+                "property": "P582",
+                "hash": "460b1b2fb2394fae690a345123b9cdc15bc1afa7",
+                "datavalue": {
+                  "value": {
+                    "time": "+2006-00-00T00:00:00Z",
+                    "timezone": 0,
+                    "before": 0,
+                    "after": 0,
+                    "precision": 9,
+                    "calendarmodel": "http://www.wikidata.org/entity/Q1985727"
+                  },
+                  "type": "time"
+                },
+                "datatype": "time"
+              }
+            ]
+          },
+          "qualifiers-order": [
+            "P580",
+            "P582"
+          ],
+          "id": "Q572703$f312da2d-42f1-858e-9875-00e26dbbdd4e",
+          "rank": "normal"
+        },
+        {
+          "mainsnak": {
+            "snaktype": "value",
+            "property": "P1448",
+            "hash": "af3973ba5a92ec2e0c9ea7486f62a501fe2c622d",
+            "datavalue": {
+              "value": {
+                "text": "Discovery Channel-Marco Polo",
+                "language": "en"
+              },
+              "type": "monolingualtext"
+            },
+            "datatype": "monolingualtext"
+          },
+          "type": "statement",
+          "qualifiers": {
+            "P580": [
+              {
+                "snaktype": "value",
+                "property": "P580",
+                "hash": "2ff980d429ca62a9f912808fc44b6488fe02ca1c",
+                "datavalue": {
+                  "value": {
+                    "time": "+2007-00-00T00:00:00Z",
+                    "timezone": 0,
+                    "before": 0,
+                    "after": 0,
+                    "precision": 9,
+                    "calendarmodel": "http://www.wikidata.org/entity/Q1985727"
+                  },
+                  "type": "time"
+                },
+                "datatype": "time"
+              }
+            ],
+            "P582": [
+              {
+                "snaktype": "value",
+                "property": "P582",
+                "hash": "9fc80f116cd7029ee0893c410d1b454ec3d06872",
+                "datavalue": {
+                  "value": {
+                    "time": "+2007-00-00T00:00:00Z",
+                    "timezone": 0,
+                    "before": 0,
+                    "after": 0,
+                    "precision": 9,
+                    "calendarmodel": "http://www.wikidata.org/entity/Q1985727"
+                  },
+                  "type": "time"
+                },
+                "datatype": "time"
+              }
+            ]
+          },
+          "qualifiers-order": [
+            "P580",
+            "P582"
+          ],
+          "id": "Q572703$9cc9310b-488d-68e2-fabc-50b79a041e7d",
+          "rank": "normal"
+        },
+        {
+          "mainsnak": {
+            "snaktype": "value",
+            "property": "P1448",
+            "hash": "421ef1fe51986c6262d459bfd2df671e2b690e02",
+            "datavalue": {
+              "value": {
+                "text": "Trek-Marco Polo",
+                "language": "en"
+              },
+              "type": "monolingualtext"
+            },
+            "datatype": "monolingualtext"
+          },
+          "type": "statement",
+          "qualifiers": {
+            "P580": [
+              {
+                "snaktype": "value",
+                "property": "P580",
+                "hash": "bd4aa5c434ced58f8ac39be7e53116a89da4aa89",
+                "datavalue": {
+                  "value": {
+                    "time": "+2008-00-00T00:00:00Z",
+                    "timezone": 0,
+                    "before": 0,
+                    "after": 0,
+                    "precision": 9,
+                    "calendarmodel": "http://www.wikidata.org/entity/Q1985727"
+                  },
+                  "type": "time"
+                },
+                "datatype": "time"
+              }
+            ],
+            "P582": [
+              {
+                "snaktype": "value",
+                "property": "P582",
+                "hash": "f52cccf49da12dade7f191d0b8339eb57ccae88a",
+                "datavalue": {
+                  "value": {
+                    "time": "+2009-00-00T00:00:00Z",
+                    "timezone": 0,
+                    "before": 0,
+                    "after": 0,
+                    "precision": 9,
+                    "calendarmodel": "http://www.wikidata.org/entity/Q1985727"
+                  },
+                  "type": "time"
+                },
+                "datatype": "time"
+              }
+            ]
+          },
+          "qualifiers-order": [
+            "P580",
+            "P582"
+          ],
+          "id": "Q572703$b867416a-4d24-fb02-e73b-4c7720e530c0",
+          "rank": "normal"
+        },
+        {
+          "mainsnak": {
+            "snaktype": "value",
+            "property": "P1448",
+            "hash": "5d568e20627ff6799c6e9d3e1fd9c43441ba0b78",
+            "datavalue": {
+              "value": {
+                "text": "Marco Polo",
+                "language": "en"
+              },
+              "type": "monolingualtext"
+            },
+            "datatype": "monolingualtext"
+          },
+          "type": "statement",
+          "qualifiers": {
+            "P580": [
+              {
+                "snaktype": "value",
+                "property": "P580",
+                "hash": "f40f7a3b9b28e53e1034a3e8568f93a60b52188e",
+                "datavalue": {
+                  "value": {
+                    "time": "+2010-00-00T00:00:00Z",
+                    "timezone": 0,
+                    "before": 0,
+                    "after": 0,
+                    "precision": 9,
+                    "calendarmodel": "http://www.wikidata.org/entity/Q1985727"
+                  },
+                  "type": "time"
+                },
+                "datatype": "time"
+              }
+            ],
+            "P582": [
+              {
+                "snaktype": "value",
+                "property": "P582",
+                "hash": "f8612f95221010acb3bf2e187932c458ab880b91",
+                "datavalue": {
+                  "value": {
+                    "time": "+2011-00-00T00:00:00Z",
+                    "timezone": 0,
+                    "before": 0,
+                    "after": 0,
+                    "precision": 9,
+                    "calendarmodel": "http://www.wikidata.org/entity/Q1985727"
+                  },
+                  "type": "time"
+                },
+                "datatype": "time"
+              }
+            ]
+          },
+          "qualifiers-order": [
+            "P580",
+            "P582"
+          ],
+          "id": "Q572703$8cae285e-4ded-fae0-ff08-322899cbf496",
+          "rank": "normal"
+        },
+        {
+          "mainsnak": {
+            "snaktype": "value",
+            "property": "P1448",
+            "hash": "df1f79ad15dfc096dfb7452dd318aaa64aab9bd8",
+            "datavalue": {
+              "value": {
+                "text": "Marco Polo Donckers Koffie",
+                "language": "en"
+              },
+              "type": "monolingualtext"
+            },
+            "datatype": "monolingualtext"
+          },
+          "type": "statement",
+          "qualifiers": {
+            "P580": [
+              {
+                "snaktype": "value",
+                "property": "P580",
+                "hash": "cade80b55b5e9645fe81d5cef13e5e41df69a393",
+                "datavalue": {
+                  "value": {
+                    "time": "+2012-00-00T00:00:00Z",
+                    "timezone": 0,
+                    "before": 0,
+                    "after": 0,
+                    "precision": 9,
+                    "calendarmodel": "http://www.wikidata.org/entity/Q1985727"
+                  },
+                  "type": "time"
+                },
+                "datatype": "time"
+              }
+            ],
+            "P582": [
+              {
+                "snaktype": "value",
+                "property": "P582",
+                "hash": "a8a2458eeea238180eef8b0bcbab57b73b40d76b",
+                "datavalue": {
+                  "value": {
+                    "time": "+2012-00-00T00:00:00Z",
+                    "timezone": 0,
+                    "before": 0,
+                    "after": 0,
+                    "precision": 9,
+                    "calendarmodel": "http://www.wikidata.org/entity/Q1985727"
+                  },
+                  "type": "time"
+                },
+                "datatype": "time"
+              }
+            ]
+          },
+          "qualifiers-order": [
+            "P580",
+            "P582"
+          ],
+          "id": "Q572703$825d3a97-4ff1-facd-6d2a-4f0cfeec3af6",
+          "rank": "normal"
+        }
+      ],
+      "P17": [
+        {
+          "mainsnak": {
+            "snaktype": "value",
+            "property": "P17",
+            "hash": "30e172796b0726589e92b001c327f5d55fa0782e",
+            "datavalue": {
+              "value": {
+                "entity-type": "item",
+                "numeric-id": 148,
+                "id": "Q148"
+              },
+              "type": "wikibase-entityid"
+            },
+            "datatype": "wikibase-item"
+          },
+          "type": "statement",
+          "qualifiers": {
+            "P580": [
+              {
+                "snaktype": "value",
+                "property": "P580",
+                "hash": "9ef7f99b41c28cf258cbce173bea2317c62abaf2",
+                "datavalue": {
+                  "value": {
+                    "time": "+2005-00-00T00:00:00Z",
+                    "timezone": 0,
+                    "before": 0,
+                    "after": 0,
+                    "precision": 9,
+                    "calendarmodel": "http://www.wikidata.org/entity/Q1985727"
+                  },
+                  "type": "time"
+                },
+                "datatype": "time"
+              }
+            ],
+            "P582": [
+              {
+                "snaktype": "value",
+                "property": "P582",
+                "hash": "f8612f95221010acb3bf2e187932c458ab880b91",
+                "datavalue": {
+                  "value": {
+                    "time": "+2011-00-00T00:00:00Z",
+                    "timezone": 0,
+                    "before": 0,
+                    "after": 0,
+                    "precision": 9,
+                    "calendarmodel": "http://www.wikidata.org/entity/Q1985727"
+                  },
+                  "type": "time"
+                },
+                "datatype": "time"
+              }
+            ]
+          },
+          "qualifiers-order": [
+            "P580",
+            "P582"
+          ],
+          "id": "Q572703$4a4d5cda-44c9-2300-cded-91466d0ec3dd",
+          "rank": "normal"
+        },
+        {
+          "mainsnak": {
+            "snaktype": "value",
+            "property": "P17",
+            "hash": "56496dbdb38921ad67605189d78cab9018454623",
+            "datavalue": {
+              "value": {
+                "entity-type": "item",
+                "numeric-id": 115,
+                "id": "Q115"
+              },
+              "type": "wikibase-entityid"
+            },
+            "datatype": "wikibase-item"
+          },
+          "type": "statement",
+          "qualifiers": {
+            "P580": [
+              {
+                "snaktype": "value",
+                "property": "P580",
+                "hash": "cade80b55b5e9645fe81d5cef13e5e41df69a393",
+                "datavalue": {
+                  "value": {
+                    "time": "+2012-00-00T00:00:00Z",
+                    "timezone": 0,
+                    "before": 0,
+                    "after": 0,
+                    "precision": 9,
+                    "calendarmodel": "http://www.wikidata.org/entity/Q1985727"
+                  },
+                  "type": "time"
+                },
+                "datatype": "time"
+              }
+            ],
+            "P582": [
+              {
+                "snaktype": "value",
+                "property": "P582",
+                "hash": "a8a2458eeea238180eef8b0bcbab57b73b40d76b",
+                "datavalue": {
+                  "value": {
+                    "time": "+2012-00-00T00:00:00Z",
+                    "timezone": 0,
+                    "before": 0,
+                    "after": 0,
+                    "precision": 9,
+                    "calendarmodel": "http://www.wikidata.org/entity/Q1985727"
+                  },
+                  "type": "time"
+                },
+                "datatype": "time"
+              }
+            ]
+          },
+          "qualifiers-order": [
+            "P580",
+            "P582"
+          ],
+          "id": "Q572703$8c1d2b6e-43cc-e8b0-d3e7-2e12e22370c7",
+          "rank": "normal"
+        },
+        {
+          "mainsnak": {
+            "snaktype": "value",
+            "property": "P17",
+            "hash": "c77932dc6c000dfebeca99f12fbdef36a25754c1",
+            "datavalue": {
+              "value": {
+                "entity-type": "item",
+                "numeric-id": 8646,
+                "id": "Q8646"
+              },
+              "type": "wikibase-entityid"
+            },
+            "datatype": "wikibase-item"
+          },
+          "type": "statement",
+          "qualifiers": {
+            "P580": [
+              {
+                "snaktype": "value",
+                "property": "P580",
+                "hash": "05038d5d0fd23c067a48301252f21993a10ee995",
+                "datavalue": {
+                  "value": {
+                    "time": "+2003-00-00T00:00:00Z",
+                    "timezone": 0,
+                    "before": 0,
+                    "after": 0,
+                    "precision": 9,
+                    "calendarmodel": "http://www.wikidata.org/entity/Q1985727"
+                  },
+                  "type": "time"
+                },
+                "datatype": "time"
+              }
+            ],
+            "P582": [
+              {
+                "snaktype": "value",
+                "property": "P582",
+                "hash": "396a8a418d2d3af6444e59183215234da844a671",
+                "datavalue": {
+                  "value": {
+                    "time": "+2004-00-00T00:00:00Z",
+                    "timezone": 0,
+                    "before": 0,
+                    "after": 0,
+                    "precision": 9,
+                    "calendarmodel": "http://www.wikidata.org/entity/Q1985727"
+                  },
+                  "type": "time"
+                },
+                "datatype": "time"
+              }
+            ]
+          },
+          "qualifiers-order": [
+            "P580",
+            "P582"
+          ],
+          "id": "Q572703$64c2f5ec-4319-f501-e40f-cf5856c96165",
+          "rank": "normal"
+        }
+      ],
+      "P131": [
+        {
+          "mainsnak": {
+            "snaktype": "value",
+            "property": "P131",
+            "hash": "cc10ff43aa188cb43e47caa397294e975550db28",
+            "datavalue": {
+              "value": {
+                "entity-type": "item",
+                "numeric-id": 8646,
+                "id": "Q8646"
+              },
+              "type": "wikibase-entityid"
+            },
+            "datatype": "wikibase-item"
+          },
+          "type": "statement",
+          "qualifiers": {
+            "P580": [
+              {
+                "snaktype": "value",
+                "property": "P580",
+                "hash": "05038d5d0fd23c067a48301252f21993a10ee995",
+                "datavalue": {
+                  "value": {
+                    "time": "+2003-00-00T00:00:00Z",
+                    "timezone": 0,
+                    "before": 0,
+                    "after": 0,
+                    "precision": 9,
+                    "calendarmodel": "http://www.wikidata.org/entity/Q1985727"
+                  },
+                  "type": "time"
+                },
+                "datatype": "time"
+              }
+            ],
+            "P582": [
+              {
+                "snaktype": "value",
+                "property": "P582",
+                "hash": "396a8a418d2d3af6444e59183215234da844a671",
+                "datavalue": {
+                  "value": {
+                    "time": "+2004-00-00T00:00:00Z",
+                    "timezone": 0,
+                    "before": 0,
+                    "after": 0,
+                    "precision": 9,
+                    "calendarmodel": "http://www.wikidata.org/entity/Q1985727"
+                  },
+                  "type": "time"
+                },
+                "datatype": "time"
+              }
+            ]
+          },
+          "qualifiers-order": [
+            "P580",
+            "P582"
+          ],
+          "id": "Q572703$AC4362A5-CD74-406F-A354-99916C767727",
+          "rank": "normal"
+        }
+      ],
+      "P527": [
+        {
+          "mainsnak": {
+            "snaktype": "value",
+            "property": "P527",
+            "hash": "16a5bf35731d326886e33fa224fb1ede934de63f",
+            "datavalue": {
+              "value": {
+                "entity-type": "item",
+                "numeric-id": 1259408,
+                "id": "Q1259408"
+              },
+              "type": "wikibase-entityid"
+            },
+            "datatype": "wikibase-item"
+          },
+          "type": "statement",
+          "id": "Q572703$036D666F-9334-4A03-A1D7-51380618122A",
+          "rank": "normal"
+        },
+        {
+          "mainsnak": {
+            "snaktype": "value",
+            "property": "P527",
+            "hash": "13b298cf1b48c6c53d372947e1b9234f5b55d078",
+            "datavalue": {
+              "value": {
+                "entity-type": "item",
+                "numeric-id": 1893868,
+                "id": "Q1893868"
+              },
+              "type": "wikibase-entityid"
+            },
+            "datatype": "wikibase-item"
+          },
+          "type": "statement",
+          "id": "Q572703$253C2FAE-8528-4E05-9AD7-D81DE731F08B",
+          "rank": "normal"
+        },
+        {
+          "mainsnak": {
+            "snaktype": "value",
+            "property": "P527",
+            "hash": "c6d0072cf3e259bc4fd06b6331e86d78182e1202",
+            "datavalue": {
+              "value": {
+                "entity-type": "item",
+                "numeric-id": 13573623,
+                "id": "Q13573623"
+              },
+              "type": "wikibase-entityid"
+            },
+            "datatype": "wikibase-item"
+          },
+          "type": "statement",
+          "id": "Q572703$42884233-B04E-42F7-BB73-19748ACD8610",
+          "rank": "normal"
+        }
+      ]
+    },
+    "sitelinks": {
+      "cawiki": {
+        "site": "cawiki",
+        "title": "Marco Polo Donckers Koffie",
+        "badges": [],
+        "url": "https://ca.wikipedia.org/wiki/Marco_Polo_Donckers_Koffie"
+      },
+      "dewiki": {
+        "site": "dewiki",
+        "title": "Marco Polo Cycling Donckers Koffie",
+        "badges": [],
+        "url": "https://de.wikipedia.org/wiki/Marco_Polo_Cycling_Donckers_Koffie"
+      },
+      "enwiki": {
+        "site": "enwiki",
+        "title": "Marco Polo Cycling–Donckers Koffie",
+        "badges": [],
+        "url": "https://en.wikipedia.org/wiki/Marco_Polo_Cycling%E2%80%93Donckers_Koffie"
+      },
+      "eswiki": {
+        "site": "eswiki",
+        "title": "Marco Polo Cycling Team",
+        "badges": [],
+        "url": "https://es.wikipedia.org/wiki/Marco_Polo_Cycling_Team"
+      },
+      "frwiki": {
+        "site": "frwiki",
+        "title": "Équipe cycliste Marco Polo Donckers Koffie",
+        "badges": [],
+        "url": "https://fr.wikipedia.org/wiki/%C3%89quipe_cycliste_Marco_Polo_Donckers_Koffie"
+      },
+      "nlwiki": {
+        "site": "nlwiki",
+        "title": "Marco Polo Cycling-Donckers Koffie",
+        "badges": [],
+        "url": "https://nl.wikipedia.org/wiki/Marco_Polo_Cycling-Donckers_Koffie"
+      }
+    }
+  }
+}

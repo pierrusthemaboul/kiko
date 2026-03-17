@@ -34,3 +34,4 @@ async function checkTiers() {
     console.log("Samples:", allEvents.slice(0, 10).map(e => e.notoriete));
 }
 checkTiers();
+

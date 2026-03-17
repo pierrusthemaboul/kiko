@@ -221,3 +221,4 @@ function generateReport(allEvents, globalUsage) {
 }
 
 runSimulation();
+

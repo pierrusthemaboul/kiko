@@ -1,0 +1,3215 @@
+{
+  "pageid": 259964,
+  "ns": 0,
+  "title": "Q268411",
+  "lastrevid": 2462123138,
+  "modified": "2026-02-09T22:02:29Z",
+  "type": "item",
+  "id": "Q268411",
+  "labels": {
+    "en": {
+      "language": "en",
+      "value": "Royal Veterinary College, University of London"
+    },
+    "zh": {
+      "language": "zh",
+      "value": "皇家兽医学院"
+    },
+    "fr": {
+      "language": "fr",
+      "value": "Royal Veterinary College"
+    },
+    "ja": {
+      "language": "ja",
+      "value": "王立獣医校"
+    },
+    "ur": {
+      "language": "ur",
+      "value": "رائل ویٹرنری کالج"
+    },
+    "en-gb": {
+      "language": "en-gb",
+      "value": "The Royal Veterinary College"
+    },
+    "he": {
+      "language": "he",
+      "value": "הקולג' הווטרינרי המלכותי"
+    },
+    "ar": {
+      "language": "ar",
+      "value": "الكلية الملكية للطب البيطري"
+    },
+    "fa": {
+      "language": "fa",
+      "value": "کالج سلطنتی دامپزشکی"
+    },
+    "sl": {
+      "language": "sl",
+      "value": "Kraljevi veterinarski kolidž"
+    },
+    "de": {
+      "language": "de",
+      "value": "Royal Veterinary College"
+    },
+    "ga": {
+      "language": "ga",
+      "value": "an Coláiste Ríoga Tréidliachta"
+    },
+    "da": {
+      "language": "da",
+      "value": "Royal Veterinary College"
+    }
+  },
+  "descriptions": {
+    "en": {
+      "language": "en",
+      "value": "veterinary school in London"
+    },
+    "en-gb": {
+      "language": "en-gb",
+      "value": "college in Camden, UK"
+    },
+    "sl": {
+      "language": "sl",
+      "value": "veterinarska šola v Londonu (Združeno kraljestvo)"
+    },
+    "de": {
+      "language": "de",
+      "value": "tiermedizinische Hochschule in London"
+    },
+    "ga": {
+      "language": "ga",
+      "value": "scoil tréidliachta i Londain"
+    },
+    "da": {
+      "language": "da",
+      "value": "veterinærskole samt en del af University of London, England"
+    },
+    "ar": {
+      "language": "ar",
+      "value": "الكلية المكلية للطب البيطري تأسست عام 1791"
+    }
+  },
+  "aliases": {
+    "ja": [
+      {
+        "language": "ja",
+        "value": "王立獣医科大学"
+      }
+    ],
+    "sl": [
+      {
+        "language": "sl",
+        "value": "Royal Veterinary College"
+      },
+      {
+        "language": "sl",
+        "value": "RVC"
+      }
+    ],
+    "de": [
+      {
+        "language": "de",
+        "value": "RVC"
+      }
+    ],
+    "da": [
+      {
+        "language": "da",
+        "value": "RVC"
+      }
+    ]
+  },
+  "claims": {
+    "P910": [
+      {
+        "mainsnak": {
+          "snaktype": "value",
+          "property": "P910",
+          "hash": "1a5aa1852a7c73ea13997608cda8d077ade85d10",
+          "datavalue": {
+            "value": {
+              "entity-type": "item",
+              "numeric-id": 8685368,
+              "id": "Q8685368"
+            },
+            "type": "wikibase-entityid"
+          },
+          "datatype": "wikibase-item"
+        },
+        "type": "statement",
+        "id": "Q268411$54D0F36D-51EE-4F8E-9BA2-CC6891234139",
+        "rank": "normal"
+      }
+    ],
+    "P625": [
+      {
+        "mainsnak": {
+          "snaktype": "value",
+          "property": "P625",
+          "hash": "08d056da9936cf2b52bb360e71719ffd6dd6baab",
+          "datavalue": {
+            "value": {
+              "latitude": 51.5368,
+              "longitude": -0.134,
+              "altitude": null,
+              "precision": 0.0001,
+              "globe": "http://www.wikidata.org/entity/Q2"
+            },
+            "type": "globecoordinate"
+          },
+          "datatype": "globe-coordinate"
+        },
+        "type": "statement",
+        "id": "Q268411$74E3975C-E4E9-49BD-9CE4-930DB5983E8C",
+        "rank": "normal",
+        "references": [
+          {
+            "hash": "fa278ebfc458360e5aed63d5058cca83c46134f1",
+            "snaks": {
+              "P143": [
+                {
+                  "snaktype": "value",
+                  "property": "P143",
+                  "hash": "e4f6d9441d0600513c4533c672b5ab472dc73694",
+                  "datavalue": {
+                    "value": {
+                      "entity-type": "item",
+                      "numeric-id": 328,
+                      "id": "Q328"
+                    },
+                    "type": "wikibase-entityid"
+                  },
+                  "datatype": "wikibase-item"
+                }
+              ]
+            },
+            "snaks-order": [
+              "P143"
+            ]
+          }
+        ]
+      }
+    ],
+    "P17": [
+      {
+        "mainsnak": {
+          "snaktype": "value",
+          "property": "P17",
+          "hash": "a44880420787fb348836dc51d3babc5227c4ef7e",
+          "datavalue": {
+            "value": {
+              "entity-type": "item",
+              "numeric-id": 145,
+              "id": "Q145"
+            },
+            "type": "wikibase-entityid"
+          },
+          "datatype": "wikibase-item"
+        },
+        "type": "statement",
+        "id": "Q268411$2C447A7A-08A1-4739-BEBD-14D1578C40F7",
+        "rank": "normal",
+        "references": [
+          {
+            "hash": "fa278ebfc458360e5aed63d5058cca83c46134f1",
+            "snaks": {
+              "P143": [
+                {
+                  "snaktype": "value",
+                  "property": "P143",
+                  "hash": "e4f6d9441d0600513c4533c672b5ab472dc73694",
+                  "datavalue": {
+                    "value": {
+                      "entity-type": "item",
+                      "numeric-id": 328,
+                      "id": "Q328"
+                    },
+                    "type": "wikibase-entityid"
+                  },
+                  "datatype": "wikibase-item"
+                }
+              ]
+            },
+            "snaks-order": [
+              "P143"
+            ]
+          },
+          {
+            "hash": "b2b24fb6dc313957a3d8db5eb6072f9dd54652eb",
+            "snaks": {
+              "P2253": [
+                {
+                  "snaktype": "value",
+                  "property": "P2253",
+                  "hash": "e758eb1dfae8726d9deb1571792afeceaf87e3f3",
+                  "datavalue": {
+                    "value": "133859",
+                    "type": "string"
+                  },
+                  "datatype": "external-id"
+                }
+              ],
+              "P813": [
+                {
+                  "snaktype": "value",
+                  "property": "P813",
+                  "hash": "a1634d762ab99904f32c98de932a13d40506bbc9",
+                  "datavalue": {
+                    "value": {
+                      "time": "+2019-07-27T00:00:00Z",
+                      "timezone": 0,
+                      "before": 0,
+                      "after": 0,
+                      "precision": 11,
+                      "calendarmodel": "http://www.wikidata.org/entity/Q1985727"
+                    },
+                    "type": "time"
+                  },
+                  "datatype": "time"
+                }
+              ]
+            },
+            "snaks-order": [
+              "P2253",
+              "P813"
+            ]
+          }
+        ]
+      }
+    ],
+    "P856": [
+      {
+        "mainsnak": {
+          "snaktype": "value",
+          "property": "P856",
+          "hash": "c2785f263804363934a87295cc3e4059700fa67b",
+          "datavalue": {
+            "value": "http://www.rvc.ac.uk",
+            "type": "string"
+          },
+          "datatype": "url"
+        },
+        "type": "statement",
+        "id": "Q268411$703D227F-A518-4EA9-A664-9BD7D5284312",
+        "rank": "normal",
+        "references": [
+          {
+            "hash": "fa278ebfc458360e5aed63d5058cca83c46134f1",
+            "snaks": {
+              "P143": [
+                {
+                  "snaktype": "value",
+                  "property": "P143",
+                  "hash": "e4f6d9441d0600513c4533c672b5ab472dc73694",
+                  "datavalue": {
+                    "value": {
+                      "entity-type": "item",
+                      "numeric-id": 328,
+                      "id": "Q328"
+                    },
+                    "type": "wikibase-entityid"
+                  },
+                  "datatype": "wikibase-item"
+                }
+              ]
+            },
+            "snaks-order": [
+              "P143"
+            ]
+          },
+          {
+            "hash": "b2b24fb6dc313957a3d8db5eb6072f9dd54652eb",
+            "snaks": {
+              "P2253": [
+                {
+                  "snaktype": "value",
+                  "property": "P2253",
+                  "hash": "e758eb1dfae8726d9deb1571792afeceaf87e3f3",
+                  "datavalue": {
+                    "value": "133859",
+                    "type": "string"
+                  },
+                  "datatype": "external-id"
+                }
+              ],
+              "P813": [
+                {
+                  "snaktype": "value",
+                  "property": "P813",
+                  "hash": "a1634d762ab99904f32c98de932a13d40506bbc9",
+                  "datavalue": {
+                    "value": {
+                      "time": "+2019-07-27T00:00:00Z",
+                      "timezone": 0,
+                      "before": 0,
+                      "after": 0,
+                      "precision": 11,
+                      "calendarmodel": "http://www.wikidata.org/entity/Q1985727"
+                    },
+                    "type": "time"
+                  },
+                  "datatype": "time"
+                }
+              ]
+            },
+            "snaks-order": [
+              "P2253",
+              "P813"
+            ]
+          }
+        ]
+      },
+      {
+        "mainsnak": {
+          "snaktype": "value",
+          "property": "P856",
+          "hash": "c2785f263804363934a87295cc3e4059700fa67b",
+          "datavalue": {
+            "value": "http://www.rvc.ac.uk",
+            "type": "string"
+          },
+          "datatype": "url"
+        },
+        "type": "statement",
+        "qualifiers": {
+          "P407": [
+            {
+              "snaktype": "value",
+              "property": "P407",
+              "hash": "daf1c4fcb58181b02dff9cc89deb084004ddae4b",
+              "datavalue": {
+                "value": {
+                  "entity-type": "item",
+                  "numeric-id": 1860,
+                  "id": "Q1860"
+                },
+                "type": "wikibase-entityid"
+              },
+              "datatype": "wikibase-item"
+            }
+          ]
+        },
+        "qualifiers-order": [
+          "P407"
+        ],
+        "id": "Q268411$235F3D4C-527F-4292-A622-979519617DC2",
+        "rank": "normal",
+        "references": [
+          {
+            "hash": "3479cb7dd4539c17904d97582d19e86677316363",
+            "snaks": {
+              "P2253": [
+                {
+                  "snaktype": "value",
+                  "property": "P2253",
+                  "hash": "e758eb1dfae8726d9deb1571792afeceaf87e3f3",
+                  "datavalue": {
+                    "value": "133859",
+                    "type": "string"
+                  },
+                  "datatype": "external-id"
+                }
+              ],
+              "P813": [
+                {
+                  "snaktype": "value",
+                  "property": "P813",
+                  "hash": "d154280a8b69a0fc255aafcb8cb95bbb2861c279",
+                  "datavalue": {
+                    "value": {
+                      "time": "+2021-12-06T00:00:00Z",
+                      "timezone": 0,
+                      "before": 0,
+                      "after": 0,
+                      "precision": 11,
+                      "calendarmodel": "http://www.wikidata.org/entity/Q1985727"
+                    },
+                    "type": "time"
+                  },
+                  "datatype": "time"
+                }
+              ]
+            },
+            "snaks-order": [
+              "P2253",
+              "P813"
+            ]
+          }
+        ]
+      }
+    ],
+    "P373": [
+      {
+        "mainsnak": {
+          "snaktype": "value",
+          "property": "P373",
+          "hash": "8553617bd94b38e3961686cfaee29f00979e3798",
+          "datavalue": {
+            "value": "Royal Veterinary College",
+            "type": "string"
+          },
+          "datatype": "string"
+        },
+        "type": "statement",
+        "id": "Q268411$CCBA4B38-D019-4B5D-AF14-B5726A293FE0",
+        "rank": "normal",
+        "references": [
+          {
+            "hash": "fa278ebfc458360e5aed63d5058cca83c46134f1",
+            "snaks": {
+              "P143": [
+                {
+                  "snaktype": "value",
+                  "property": "P143",
+                  "hash": "e4f6d9441d0600513c4533c672b5ab472dc73694",
+                  "datavalue": {
+                    "value": {
+                      "entity-type": "item",
+                      "numeric-id": 328,
+                      "id": "Q328"
+                    },
+                    "type": "wikibase-entityid"
+                  },
+                  "datatype": "wikibase-item"
+                }
+              ]
+            },
+            "snaks-order": [
+              "P143"
+            ]
+          }
+        ]
+      }
+    ],
+    "P31": [
+      {
+        "mainsnak": {
+          "snaktype": "value",
+          "property": "P31",
+          "hash": "53d868a228b567fd8632b4c5d6755bf43292b544",
+          "datavalue": {
+            "value": {
+              "entity-type": "item",
+              "numeric-id": 1384955,
+              "id": "Q1384955"
+            },
+            "type": "wikibase-entityid"
+          },
+          "datatype": "wikibase-item"
+        },
+        "type": "statement",
+        "id": "Q268411$DA58C6AF-B162-4FD1-90F2-D78E84D30077",
+        "rank": "normal"
+      },
+      {
+        "mainsnak": {
+          "snaktype": "value",
+          "property": "P31",
+          "hash": "00b01fad2007a8365b35f9b373906ae69f600270",
+          "datavalue": {
+            "value": {
+              "entity-type": "item",
+              "numeric-id": 5341295,
+              "id": "Q5341295"
+            },
+            "type": "wikibase-entityid"
+          },
+          "datatype": "wikibase-item"
+        },
+        "type": "statement",
+        "id": "Q268411$C555AC6C-77F6-4AD9-96D3-A3647A93C1F7",
+        "rank": "normal",
+        "references": [
+          {
+            "hash": "3479cb7dd4539c17904d97582d19e86677316363",
+            "snaks": {
+              "P2253": [
+                {
+                  "snaktype": "value",
+                  "property": "P2253",
+                  "hash": "e758eb1dfae8726d9deb1571792afeceaf87e3f3",
+                  "datavalue": {
+                    "value": "133859",
+                    "type": "string"
+                  },
+                  "datatype": "external-id"
+                }
+              ],
+              "P813": [
+                {
+                  "snaktype": "value",
+                  "property": "P813",
+                  "hash": "d154280a8b69a0fc255aafcb8cb95bbb2861c279",
+                  "datavalue": {
+                    "value": {
+                      "time": "+2021-12-06T00:00:00Z",
+                      "timezone": 0,
+                      "before": 0,
+                      "after": 0,
+                      "precision": 11,
+                      "calendarmodel": "http://www.wikidata.org/entity/Q1985727"
+                    },
+                    "type": "time"
+                  },
+                  "datatype": "time"
+                }
+              ]
+            },
+            "snaks-order": [
+              "P2253",
+              "P813"
+            ]
+          }
+        ]
+      }
+    ],
+    "P1602": [
+      {
+        "mainsnak": {
+          "snaktype": "value",
+          "property": "P1602",
+          "hash": "92af8db572b6f47ab1b450137bda0c8e2656d231",
+          "datavalue": {
+            "value": "royal-veterinary-college-7081",
+            "type": "string"
+          },
+          "datatype": "external-id"
+        },
+        "type": "statement",
+        "id": "Q268411$77AA68F7-645A-44B8-8BAD-DA0378D53CDF",
+        "rank": "normal"
+      }
+    ],
+    "P18": [
+      {
+        "mainsnak": {
+          "snaktype": "value",
+          "property": "P18",
+          "hash": "ce80a336d49e349a237e2c46e5458ced85925683",
+          "datavalue": {
+            "value": "Royalvetcoll.jpg",
+            "type": "string"
+          },
+          "datatype": "commonsMedia"
+        },
+        "type": "statement",
+        "id": "Q268411$312AA8F4-C502-4204-86F2-FF4DCD5C73CB",
+        "rank": "normal"
+      }
+    ],
+    "P571": [
+      {
+        "mainsnak": {
+          "snaktype": "value",
+          "property": "P571",
+          "hash": "0307af5b5c042173daaea7962622e3a63a971165",
+          "datavalue": {
+            "value": {
+              "time": "+1791-00-00T00:00:00Z",
+              "timezone": 0,
+              "before": 0,
+              "after": 0,
+              "precision": 9,
+              "calendarmodel": "http://www.wikidata.org/entity/Q1985727"
+            },
+            "type": "time"
+          },
+          "datatype": "time"
+        },
+        "type": "statement",
+        "id": "Q268411$E28D5E0B-518C-4DD5-8480-55F07F6BFF23",
+        "rank": "normal",
+        "references": [
+          {
+            "hash": "d4bd87b862b12d99d26e86472d44f26858dee639",
+            "snaks": {
+              "P143": [
+                {
+                  "snaktype": "value",
+                  "property": "P143",
+                  "hash": "f30cbd35620c4ea6d0633aaf0210a8916130469b",
+                  "datavalue": {
+                    "value": {
+                      "entity-type": "item",
+                      "numeric-id": 8447,
+                      "id": "Q8447"
+                    },
+                    "type": "wikibase-entityid"
+                  },
+                  "datatype": "wikibase-item"
+                }
+              ]
+            },
+            "snaks-order": [
+              "P143"
+            ]
+          }
+        ]
+      }
+    ],
+    "P131": [
+      {
+        "mainsnak": {
+          "snaktype": "value",
+          "property": "P131",
+          "hash": "e7d3b1232d4278a5cbbad24e0ad17063ea606caa",
+          "datavalue": {
+            "value": {
+              "entity-type": "item",
+              "numeric-id": 202088,
+              "id": "Q202088"
+            },
+            "type": "wikibase-entityid"
+          },
+          "datatype": "wikibase-item"
+        },
+        "type": "statement",
+        "id": "Q268411$31CC75F8-CC54-45F9-815D-363C55F59DFA",
+        "rank": "normal",
+        "references": [
+          {
+            "hash": "b2b24fb6dc313957a3d8db5eb6072f9dd54652eb",
+            "snaks": {
+              "P2253": [
+                {
+                  "snaktype": "value",
+                  "property": "P2253",
+                  "hash": "e758eb1dfae8726d9deb1571792afeceaf87e3f3",
+                  "datavalue": {
+                    "value": "133859",
+                    "type": "string"
+                  },
+                  "datatype": "external-id"
+                }
+              ],
+              "P813": [
+                {
+                  "snaktype": "value",
+                  "property": "P813",
+                  "hash": "a1634d762ab99904f32c98de932a13d40506bbc9",
+                  "datavalue": {
+                    "value": {
+                      "time": "+2019-07-27T00:00:00Z",
+                      "timezone": 0,
+                      "before": 0,
+                      "after": 0,
+                      "precision": 11,
+                      "calendarmodel": "http://www.wikidata.org/entity/Q1985727"
+                    },
+                    "type": "time"
+                  },
+                  "datatype": "time"
+                }
+              ]
+            },
+            "snaks-order": [
+              "P2253",
+              "P813"
+            ]
+          }
+        ]
+      }
+    ],
+    "P463": [
+      {
+        "mainsnak": {
+          "snaktype": "value",
+          "property": "P463",
+          "hash": "75786e71fb1fff498aef84f9e016bbd3fd0afdb6",
+          "datavalue": {
+            "value": {
+              "entity-type": "item",
+              "numeric-id": 19861084,
+              "id": "Q19861084"
+            },
+            "type": "wikibase-entityid"
+          },
+          "datatype": "wikibase-item"
+        },
+        "type": "statement",
+        "id": "Q268411$FA042D4C-9E12-40EB-9D9F-31EC08CE32BA",
+        "rank": "normal",
+        "references": [
+          {
+            "hash": "3924c73f1c32cd57e23c485d6336c99700b9fb33",
+            "snaks": {
+              "P854": [
+                {
+                  "snaktype": "value",
+                  "property": "P854",
+                  "hash": "9197a3bcd3440f4735782af6c57867d3fb30443b",
+                  "datavalue": {
+                    "value": "https://orcid.org/members/001G000001tY55uIAC-royal-veterinary-college-university-of-london",
+                    "type": "string"
+                  },
+                  "datatype": "url"
+                }
+              ]
+            },
+            "snaks-order": [
+              "P854"
+            ]
+          }
+        ]
+      },
+      {
+        "mainsnak": {
+          "snaktype": "value",
+          "property": "P463",
+          "hash": "9d70692146d9739e2b24afc1871a2b9aa2de7f7b",
+          "datavalue": {
+            "value": {
+              "entity-type": "item",
+              "numeric-id": 7894986,
+              "id": "Q7894986"
+            },
+            "type": "wikibase-entityid"
+          },
+          "datatype": "wikibase-item"
+        },
+        "type": "statement",
+        "qualifiers": {
+          "P11327": [
+            {
+              "snaktype": "value",
+              "property": "P11327",
+              "hash": "f44a64407a7c6dcb151f1b28c1fb2bba715e14e9",
+              "datavalue": {
+                "value": "LE234",
+                "type": "string"
+              },
+              "datatype": "string"
+            }
+          ]
+        },
+        "qualifiers-order": [
+          "P11327"
+        ],
+        "id": "Q268411$04F52428-39A7-4621-9149-0D13AF90FA1F",
+        "rank": "normal",
+        "references": [
+          {
+            "hash": "d4960e5afabe2fae7b474e28a12fe938bb3da36e",
+            "snaks": {
+              "P854": [
+                {
+                  "snaktype": "value",
+                  "property": "P854",
+                  "hash": "2a3d7b16646d7d560dafb77262d1ff019c8f20a9",
+                  "datavalue": {
+                    "value": "https://www.ucu.org.uk/article/13538/UCU-branches-in-JNCHES-2024-25",
+                    "type": "string"
+                  },
+                  "datatype": "url"
+                }
+              ],
+              "P1810": [
+                {
+                  "snaktype": "value",
+                  "property": "P1810",
+                  "hash": "57969171daccbb2e9715c71d80262943a0b710a1",
+                  "datavalue": {
+                    "value": "Royal Veterinary College, University of London",
+                    "type": "string"
+                  },
+                  "datatype": "string"
+                }
+              ]
+            },
+            "snaks-order": [
+              "P854",
+              "P1810"
+            ]
+          }
+        ]
+      }
+    ],
+    "P213": [
+      {
+        "mainsnak": {
+          "snaktype": "value",
+          "property": "P213",
+          "hash": "378592a37f3ed79485cbb9c0f04fa62762592bc8",
+          "datavalue": {
+            "value": "000000040425573X",
+            "type": "string"
+          },
+          "datatype": "external-id"
+        },
+        "type": "statement",
+        "id": "Q268411$B4F8351C-53E0-47F4-9EEC-887B7D2CFD87",
+        "rank": "normal",
+        "references": [
+          {
+            "hash": "5a761c7a986f4a5cf8cefbfc18e5a5ae5133d44b",
+            "snaks": {
+              "P248": [
+                {
+                  "snaktype": "value",
+                  "property": "P248",
+                  "hash": "2e92dfb9200a54eef9b44e474b97c4dd6dd90461",
+                  "datavalue": {
+                    "value": {
+                      "entity-type": "item",
+                      "numeric-id": 53705033,
+                      "id": "Q53705033"
+                    },
+                    "type": "wikibase-entityid"
+                  },
+                  "datatype": "wikibase-item"
+                }
+              ]
+            },
+            "snaks-order": [
+              "P248"
+            ]
+          }
+        ]
+      }
+    ],
+    "P3500": [
+      {
+        "mainsnak": {
+          "snaktype": "value",
+          "property": "P3500",
+          "hash": "64e44bebb9a9868a1fae334f34b9ade9cf5ed766",
+          "datavalue": {
+            "value": "4912",
+            "type": "string"
+          },
+          "datatype": "external-id"
+        },
+        "type": "statement",
+        "id": "Q268411$4F329331-17D4-490A-A87A-ED22095C3618",
+        "rank": "normal",
+        "references": [
+          {
+            "hash": "2834ac5da275724a6354a73d2d2a89ae956042a9",
+            "snaks": {
+              "P248": [
+                {
+                  "snaktype": "value",
+                  "property": "P248",
+                  "hash": "654ac97d41e766b6860b1b7acd87f11a6b00c4f9",
+                  "datavalue": {
+                    "value": {
+                      "entity-type": "item",
+                      "numeric-id": 64159407,
+                      "id": "Q64159407"
+                    },
+                    "type": "wikibase-entityid"
+                  },
+                  "datatype": "wikibase-item"
+                }
+              ]
+            },
+            "snaks-order": [
+              "P248"
+            ]
+          }
+        ]
+      }
+    ],
+    "P2002": [
+      {
+        "mainsnak": {
+          "snaktype": "value",
+          "property": "P2002",
+          "hash": "d04ab57f38c469991da97792341069bd83740167",
+          "datavalue": {
+            "value": "RoyalVetCollege",
+            "type": "string"
+          },
+          "datatype": "external-id"
+        },
+        "type": "statement",
+        "qualifiers": {
+          "P3744": [
+            {
+              "snaktype": "value",
+              "property": "P3744",
+              "hash": "2a50ab3d4a757d568faaa812eeb6607b815be20c",
+              "datavalue": {
+                "value": {
+                  "amount": "+14100",
+                  "unit": "1"
+                },
+                "type": "quantity"
+              },
+              "datatype": "quantity"
+            }
+          ],
+          "P6552": [
+            {
+              "snaktype": "value",
+              "property": "P6552",
+              "hash": "bbff570224e416b0c4ca192f995a0d87384232ac",
+              "datavalue": {
+                "value": "76962112",
+                "type": "string"
+              },
+              "datatype": "external-id"
+            }
+          ],
+          "P585": [
+            {
+              "snaktype": "value",
+              "property": "P585",
+              "hash": "5db48cf4d011c3882931889ed5e2d04f10f3c76f",
+              "datavalue": {
+                "value": {
+                  "time": "+2018-05-10T00:00:00Z",
+                  "timezone": 0,
+                  "before": 0,
+                  "after": 0,
+                  "precision": 11,
+                  "calendarmodel": "http://www.wikidata.org/entity/Q1985727"
+                },
+                "type": "time"
+              },
+              "datatype": "time"
+            }
+          ],
+          "P580": [
+            {
+              "snaktype": "value",
+              "property": "P580",
+              "hash": "f9f5c5bb24daa6389645722f9ca6625d97b0a42c",
+              "datavalue": {
+                "value": {
+                  "time": "+2009-09-24T00:00:00Z",
+                  "timezone": 0,
+                  "before": 0,
+                  "after": 0,
+                  "precision": 11,
+                  "calendarmodel": "http://www.wikidata.org/entity/Q1985727"
+                },
+                "type": "time"
+              },
+              "datatype": "time"
+            }
+          ]
+        },
+        "qualifiers-order": [
+          "P3744",
+          "P6552",
+          "P585",
+          "P580"
+        ],
+        "id": "Q268411$8467D9F2-64BC-4EC5-A7CA-72A00ECB2361",
+        "rank": "normal",
+        "references": [
+          {
+            "hash": "4990dcb7c173b9c22968a8b7627707aa76ac5a14",
+            "snaks": {
+              "P854": [
+                {
+                  "snaktype": "value",
+                  "property": "P854",
+                  "hash": "6f18076bdc7d2a67ee8e7d7a6efa09b2037830d0",
+                  "datavalue": {
+                    "value": "https://twitter.com/search?q=Royal+Veterinary+College&src=typd",
+                    "type": "string"
+                  },
+                  "datatype": "url"
+                }
+              ]
+            },
+            "snaks-order": [
+              "P854"
+            ]
+          }
+        ]
+      }
+    ],
+    "P3642": [
+      {
+        "mainsnak": {
+          "snaktype": "value",
+          "property": "P3642",
+          "hash": "8f81083a4ad1e883749ede5c174c60c0de4dbfb4",
+          "datavalue": {
+            "value": "1510",
+            "type": "string"
+          },
+          "datatype": "external-id"
+        },
+        "type": "statement",
+        "qualifiers": {
+          "P1810": [
+            {
+              "snaktype": "value",
+              "property": "P1810",
+              "hash": "0a20d352b550675f3b29f1e5c86bf6057faae096",
+              "datavalue": {
+                "value": "London University: Royal Veterinary College",
+                "type": "string"
+              },
+              "datatype": "string"
+            }
+          ]
+        },
+        "qualifiers-order": [
+          "P1810"
+        ],
+        "id": "Q268411$0EF6B4C1-92DE-43AE-B80A-70818EA2D1B9",
+        "rank": "normal",
+        "references": [
+          {
+            "hash": "b0d445d190d30448d93858a87e1c056007d2493d",
+            "snaks": {
+              "P813": [
+                {
+                  "snaktype": "value",
+                  "property": "P813",
+                  "hash": "6bc69dcb7b2c41fb7e2c86608be36afb272b9849",
+                  "datavalue": {
+                    "value": {
+                      "time": "+2022-06-14T00:00:00Z",
+                      "timezone": 0,
+                      "before": 0,
+                      "after": 0,
+                      "precision": 11,
+                      "calendarmodel": "http://www.wikidata.org/entity/Q1985727"
+                    },
+                    "type": "time"
+                  },
+                  "datatype": "time"
+                }
+              ]
+            },
+            "snaks-order": [
+              "P813"
+            ]
+          }
+        ]
+      }
+    ],
+    "P749": [
+      {
+        "mainsnak": {
+          "snaktype": "value",
+          "property": "P749",
+          "hash": "e129760c1b57775262b2e294c3eea02cce119512",
+          "datavalue": {
+            "value": {
+              "entity-type": "item",
+              "numeric-id": 170027,
+              "id": "Q170027"
+            },
+            "type": "wikibase-entityid"
+          },
+          "datatype": "wikibase-item"
+        },
+        "type": "statement",
+        "id": "Q268411$7DD9A0D3-4105-4F61-9C34-1AA8B5E6C9CD",
+        "rank": "normal",
+        "references": [
+          {
+            "hash": "265b12374606ecc2611dec97871ad0beee5bec9f",
+            "snaks": {
+              "P2427": [
+                {
+                  "snaktype": "value",
+                  "property": "P2427",
+                  "hash": "0cd1faca508ea45a23c13889a2796320767bfbdb",
+                  "datavalue": {
+                    "value": "grid.20931.39",
+                    "type": "string"
+                  },
+                  "datatype": "external-id"
+                }
+              ]
+            },
+            "snaks-order": [
+              "P2427"
+            ]
+          }
+        ]
+      }
+    ],
+    "P4971": [
+      {
+        "mainsnak": {
+          "snaktype": "value",
+          "property": "P4971",
+          "hash": "3bc0370ab0c31256c6f5c78940f13c12da7a0912",
+          "datavalue": {
+            "value": "10007779",
+            "type": "string"
+          },
+          "datatype": "external-id"
+        },
+        "type": "statement",
+        "id": "Q268411$15C303A1-8EB7-4482-8DE4-857FB3542404",
+        "rank": "normal",
+        "references": [
+          {
+            "hash": "265b12374606ecc2611dec97871ad0beee5bec9f",
+            "snaks": {
+              "P2427": [
+                {
+                  "snaktype": "value",
+                  "property": "P2427",
+                  "hash": "0cd1faca508ea45a23c13889a2796320767bfbdb",
+                  "datavalue": {
+                    "value": "grid.20931.39",
+                    "type": "string"
+                  },
+                  "datatype": "external-id"
+                }
+              ]
+            },
+            "snaks-order": [
+              "P2427"
+            ]
+          },
+          {
+            "hash": "b2b24fb6dc313957a3d8db5eb6072f9dd54652eb",
+            "snaks": {
+              "P2253": [
+                {
+                  "snaktype": "value",
+                  "property": "P2253",
+                  "hash": "e758eb1dfae8726d9deb1571792afeceaf87e3f3",
+                  "datavalue": {
+                    "value": "133859",
+                    "type": "string"
+                  },
+                  "datatype": "external-id"
+                }
+              ],
+              "P813": [
+                {
+                  "snaktype": "value",
+                  "property": "P813",
+                  "hash": "a1634d762ab99904f32c98de932a13d40506bbc9",
+                  "datavalue": {
+                    "value": {
+                      "time": "+2019-07-27T00:00:00Z",
+                      "timezone": 0,
+                      "before": 0,
+                      "after": 0,
+                      "precision": 11,
+                      "calendarmodel": "http://www.wikidata.org/entity/Q1985727"
+                    },
+                    "type": "time"
+                  },
+                  "datatype": "time"
+                }
+              ]
+            },
+            "snaks-order": [
+              "P2253",
+              "P813"
+            ]
+          }
+        ]
+      }
+    ],
+    "P3876": [
+      {
+        "mainsnak": {
+          "snaktype": "value",
+          "property": "P3876",
+          "hash": "bbb8a650879786874ff1572eddabc94d6c7af0c6",
+          "datavalue": {
+            "value": {
+              "entity-type": "item",
+              "numeric-id": 8237306,
+              "id": "Q8237306"
+            },
+            "type": "wikibase-entityid"
+          },
+          "datatype": "wikibase-item"
+        },
+        "type": "statement",
+        "id": "Q268411$9F2BFB94-56B6-41A8-95C6-E626FD071914",
+        "rank": "normal"
+      }
+    ],
+    "P2427": [
+      {
+        "mainsnak": {
+          "snaktype": "value",
+          "property": "P2427",
+          "hash": "0cd1faca508ea45a23c13889a2796320767bfbdb",
+          "datavalue": {
+            "value": "grid.20931.39",
+            "type": "string"
+          },
+          "datatype": "external-id"
+        },
+        "type": "statement",
+        "id": "Q268411$9F5AEAA1-88F2-4F80-A353-21006EDF6538",
+        "rank": "normal",
+        "references": [
+          {
+            "hash": "40fdc7f3ce7f6771a8f285a1267bfc3f3de154d9",
+            "snaks": {
+              "P248": [
+                {
+                  "snaktype": "value",
+                  "property": "P248",
+                  "hash": "858e5db66e8139829fa8f88e7e16ea6af5213e4b",
+                  "datavalue": {
+                    "value": {
+                      "entity-type": "item",
+                      "numeric-id": 53869345,
+                      "id": "Q53869345"
+                    },
+                    "type": "wikibase-entityid"
+                  },
+                  "datatype": "wikibase-item"
+                }
+              ]
+            },
+            "snaks-order": [
+              "P248"
+            ]
+          },
+          {
+            "hash": "a1914c8952a5bc482eafeb26be4fda504fe701f9",
+            "snaks": {
+              "P248": [
+                {
+                  "snaktype": "value",
+                  "property": "P248",
+                  "hash": "31f77799b27e462a188007d80e9cae011a037bca",
+                  "datavalue": {
+                    "value": {
+                      "entity-type": "item",
+                      "numeric-id": 53705036,
+                      "id": "Q53705036"
+                    },
+                    "type": "wikibase-entityid"
+                  },
+                  "datatype": "wikibase-item"
+                }
+              ]
+            },
+            "snaks-order": [
+              "P248"
+            ]
+          }
+        ]
+      }
+    ],
+    "P1416": [
+      {
+        "mainsnak": {
+          "snaktype": "value",
+          "property": "P1416",
+          "hash": "b0c4e645a33c63031ed933c24233abcbe01ecdb0",
+          "datavalue": {
+            "value": {
+              "entity-type": "item",
+              "numeric-id": 170027,
+              "id": "Q170027"
+            },
+            "type": "wikibase-entityid"
+          },
+          "datatype": "wikibase-item"
+        },
+        "type": "statement",
+        "id": "Q268411$117F1295-CFBD-4869-9E5F-A3DEC4A9A775",
+        "rank": "normal",
+        "references": [
+          {
+            "hash": "b3c0ef9007cd6e2c4f0129baf885586a9cae8e5d",
+            "snaks": {
+              "P143": [
+                {
+                  "snaktype": "value",
+                  "property": "P143",
+                  "hash": "e4f6d9441d0600513c4533c672b5ab472dc73694",
+                  "datavalue": {
+                    "value": {
+                      "entity-type": "item",
+                      "numeric-id": 328,
+                      "id": "Q328"
+                    },
+                    "type": "wikibase-entityid"
+                  },
+                  "datatype": "wikibase-item"
+                }
+              ],
+              "P4656": [
+                {
+                  "snaktype": "value",
+                  "property": "P4656",
+                  "hash": "af6343f445388b43d7e51f53f2e07efe78afc58b",
+                  "datavalue": {
+                    "value": "https://en.wikipedia.org/w/index.php?title=Royal_Veterinary_College&oldid=851974337",
+                    "type": "string"
+                  },
+                  "datatype": "url"
+                }
+              ]
+            },
+            "snaks-order": [
+              "P143",
+              "P4656"
+            ]
+          }
+        ]
+      }
+    ],
+    "P5586": [
+      {
+        "mainsnak": {
+          "snaktype": "value",
+          "property": "P5586",
+          "hash": "1fe29b5d6067fe74a5f425a566db588da5940dd5",
+          "datavalue": {
+            "value": "royal-veterinary-college",
+            "type": "string"
+          },
+          "datatype": "external-id"
+        },
+        "type": "statement",
+        "id": "Q268411$0321471C-5CC2-4464-9FF5-1E450342B489",
+        "rank": "normal"
+      }
+    ],
+    "P3749": [
+      {
+        "mainsnak": {
+          "snaktype": "value",
+          "property": "P3749",
+          "hash": "3b7ca56c2fe8d016ab6709f2cd5c970900caaf1a",
+          "datavalue": {
+            "value": "16013454900763898126",
+            "type": "string"
+          },
+          "datatype": "external-id"
+        },
+        "type": "statement",
+        "id": "Q268411$65247840-206D-4CC9-86A5-8DB7213AD2DD",
+        "rank": "normal"
+      }
+    ],
+    "P5600": [
+      {
+        "mainsnak": {
+          "snaktype": "value",
+          "property": "P5600",
+          "hash": "3e56a3a8eedfd9c68b85141b9f0941e86828ab4c",
+          "datavalue": {
+            "value": "royal-veterinary-college",
+            "type": "string"
+          },
+          "datatype": "external-id"
+        },
+        "type": "statement",
+        "id": "Q268411$6845C3D3-6AAE-4A39-9105-9126AC64C98E",
+        "rank": "normal"
+      }
+    ],
+    "P6366": [
+      {
+        "mainsnak": {
+          "snaktype": "value",
+          "property": "P6366",
+          "hash": "6bfa6f7de5d0083f3638ead6eec11fa9d98714e4",
+          "datavalue": {
+            "value": "133836048",
+            "type": "string"
+          },
+          "datatype": "external-id"
+        },
+        "type": "statement",
+        "id": "Q268411$77E11F2D-F0B6-4511-84FD-21E7C05BCCEB",
+        "rank": "normal",
+        "references": [
+          {
+            "hash": "ed4265f3d45a255928c9b45a52bb6ea0369c1b5e",
+            "snaks": {
+              "P248": [
+                {
+                  "snaktype": "value",
+                  "property": "P248",
+                  "hash": "2995ad06d424d751f036cb92149fada89fe252d9",
+                  "datavalue": {
+                    "value": {
+                      "entity-type": "item",
+                      "numeric-id": 60683589,
+                      "id": "Q60683589"
+                    },
+                    "type": "wikibase-entityid"
+                  },
+                  "datatype": "wikibase-item"
+                }
+              ],
+              "P2427": [
+                {
+                  "snaktype": "value",
+                  "property": "P2427",
+                  "hash": "0cd1faca508ea45a23c13889a2796320767bfbdb",
+                  "datavalue": {
+                    "value": "grid.20931.39",
+                    "type": "string"
+                  },
+                  "datatype": "external-id"
+                }
+              ],
+              "P813": [
+                {
+                  "snaktype": "value",
+                  "property": "P813",
+                  "hash": "74c664545729bbe3e2b6db4bfa3d58ebdeb8e9f0",
+                  "datavalue": {
+                    "value": {
+                      "time": "+2019-01-19T00:00:00Z",
+                      "timezone": 0,
+                      "before": 0,
+                      "after": 0,
+                      "precision": 11,
+                      "calendarmodel": "http://www.wikidata.org/entity/Q1985727"
+                    },
+                    "type": "time"
+                  },
+                  "datatype": "time"
+                }
+              ]
+            },
+            "snaks-order": [
+              "P248",
+              "P2427",
+              "P813"
+            ]
+          }
+        ]
+      }
+    ],
+    "P2013": [
+      {
+        "mainsnak": {
+          "snaktype": "value",
+          "property": "P2013",
+          "hash": "08849e14c759e58f86ff11b7519608e23c96b843",
+          "datavalue": {
+            "value": "theRVC",
+            "type": "string"
+          },
+          "datatype": "external-id"
+        },
+        "type": "statement",
+        "id": "Q268411$88434874-E1AC-4BBB-AEDB-A0CC1A90FA8B",
+        "rank": "normal",
+        "references": [
+          {
+            "hash": "2c9fe10d6ad88b6b2a3a2ed00639f16159f2f4ca",
+            "snaks": {
+              "P854": [
+                {
+                  "snaktype": "value",
+                  "property": "P854",
+                  "hash": "1feab3f36eb383b8f99c5688265d766901df573f",
+                  "datavalue": {
+                    "value": "http://www.rvc.ac.uk",
+                    "type": "string"
+                  },
+                  "datatype": "url"
+                }
+              ],
+              "P813": [
+                {
+                  "snaktype": "value",
+                  "property": "P813",
+                  "hash": "b878c506460bfde5171b53b8dabada6fbe4301af",
+                  "datavalue": {
+                    "value": {
+                      "time": "+2019-05-22T00:00:00Z",
+                      "timezone": 0,
+                      "before": 0,
+                      "after": 0,
+                      "precision": 11,
+                      "calendarmodel": "http://www.wikidata.org/entity/Q1985727"
+                    },
+                    "type": "time"
+                  },
+                  "datatype": "time"
+                }
+              ]
+            },
+            "snaks-order": [
+              "P854",
+              "P813"
+            ]
+          }
+        ]
+      }
+    ],
+    "P2003": [
+      {
+        "mainsnak": {
+          "snaktype": "value",
+          "property": "P2003",
+          "hash": "c3a383e9a4304815e79c8aa53d73977173eb68de",
+          "datavalue": {
+            "value": "royalvetcollege",
+            "type": "string"
+          },
+          "datatype": "external-id"
+        },
+        "type": "statement",
+        "id": "Q268411$22391438-C334-4A73-AB21-2971206536E0",
+        "rank": "normal",
+        "references": [
+          {
+            "hash": "2c9fe10d6ad88b6b2a3a2ed00639f16159f2f4ca",
+            "snaks": {
+              "P854": [
+                {
+                  "snaktype": "value",
+                  "property": "P854",
+                  "hash": "1feab3f36eb383b8f99c5688265d766901df573f",
+                  "datavalue": {
+                    "value": "http://www.rvc.ac.uk",
+                    "type": "string"
+                  },
+                  "datatype": "url"
+                }
+              ],
+              "P813": [
+                {
+                  "snaktype": "value",
+                  "property": "P813",
+                  "hash": "b878c506460bfde5171b53b8dabada6fbe4301af",
+                  "datavalue": {
+                    "value": {
+                      "time": "+2019-05-22T00:00:00Z",
+                      "timezone": 0,
+                      "before": 0,
+                      "after": 0,
+                      "precision": 11,
+                      "calendarmodel": "http://www.wikidata.org/entity/Q1985727"
+                    },
+                    "type": "time"
+                  },
+                  "datatype": "time"
+                }
+              ]
+            },
+            "snaks-order": [
+              "P854",
+              "P813"
+            ]
+          }
+        ]
+      }
+    ],
+    "P6782": [
+      {
+        "mainsnak": {
+          "snaktype": "value",
+          "property": "P6782",
+          "hash": "322bbb60061a2b95bf307805738a7e90227da62a",
+          "datavalue": {
+            "value": "01wka8n18",
+            "type": "string"
+          },
+          "datatype": "external-id"
+        },
+        "type": "statement",
+        "id": "Q268411$29FBE707-0F5A-492E-BF6E-C58C0724B99B",
+        "rank": "normal"
+      }
+    ],
+    "P6375": [
+      {
+        "mainsnak": {
+          "snaktype": "value",
+          "property": "P6375",
+          "hash": "1b579e5261e3c38e81d0cd8cce853e604b16dd2a",
+          "datavalue": {
+            "value": {
+              "text": "The Royal Veterinary College, Royal College Street, London, NW1 0TU",
+              "language": "en-gb"
+            },
+            "type": "monolingualtext"
+          },
+          "datatype": "monolingualtext"
+        },
+        "type": "statement",
+        "id": "Q268411$F7EA572C-2AE4-4D53-A131-E8C9D74D0056",
+        "rank": "normal",
+        "references": [
+          {
+            "hash": "b2b24fb6dc313957a3d8db5eb6072f9dd54652eb",
+            "snaks": {
+              "P2253": [
+                {
+                  "snaktype": "value",
+                  "property": "P2253",
+                  "hash": "e758eb1dfae8726d9deb1571792afeceaf87e3f3",
+                  "datavalue": {
+                    "value": "133859",
+                    "type": "string"
+                  },
+                  "datatype": "external-id"
+                }
+              ],
+              "P813": [
+                {
+                  "snaktype": "value",
+                  "property": "P813",
+                  "hash": "a1634d762ab99904f32c98de932a13d40506bbc9",
+                  "datavalue": {
+                    "value": {
+                      "time": "+2019-07-27T00:00:00Z",
+                      "timezone": 0,
+                      "before": 0,
+                      "after": 0,
+                      "precision": 11,
+                      "calendarmodel": "http://www.wikidata.org/entity/Q1985727"
+                    },
+                    "type": "time"
+                  },
+                  "datatype": "time"
+                }
+              ]
+            },
+            "snaks-order": [
+              "P2253",
+              "P813"
+            ]
+          }
+        ]
+      }
+    ],
+    "P281": [
+      {
+        "mainsnak": {
+          "snaktype": "value",
+          "property": "P281",
+          "hash": "bed513636b992ce0e0295a06ea6b238d1aa02aef",
+          "datavalue": {
+            "value": "NW1 0TU",
+            "type": "string"
+          },
+          "datatype": "string"
+        },
+        "type": "statement",
+        "id": "Q268411$E080A793-4944-4762-A941-CBA9B0CA0AD4",
+        "rank": "normal",
+        "references": [
+          {
+            "hash": "b2b24fb6dc313957a3d8db5eb6072f9dd54652eb",
+            "snaks": {
+              "P2253": [
+                {
+                  "snaktype": "value",
+                  "property": "P2253",
+                  "hash": "e758eb1dfae8726d9deb1571792afeceaf87e3f3",
+                  "datavalue": {
+                    "value": "133859",
+                    "type": "string"
+                  },
+                  "datatype": "external-id"
+                }
+              ],
+              "P813": [
+                {
+                  "snaktype": "value",
+                  "property": "P813",
+                  "hash": "a1634d762ab99904f32c98de932a13d40506bbc9",
+                  "datavalue": {
+                    "value": {
+                      "time": "+2019-07-27T00:00:00Z",
+                      "timezone": 0,
+                      "before": 0,
+                      "after": 0,
+                      "precision": 11,
+                      "calendarmodel": "http://www.wikidata.org/entity/Q1985727"
+                    },
+                    "type": "time"
+                  },
+                  "datatype": "time"
+                }
+              ]
+            },
+            "snaks-order": [
+              "P2253",
+              "P813"
+            ]
+          }
+        ]
+      }
+    ],
+    "P1329": [
+      {
+        "mainsnak": {
+          "snaktype": "value",
+          "property": "P1329",
+          "hash": "354eb5c7a7cffa4d156267d708e1c4a60f6fd848",
+          "datavalue": {
+            "value": "+44-20-7468-5000",
+            "type": "string"
+          },
+          "datatype": "string"
+        },
+        "type": "statement",
+        "id": "Q268411$3B104CBF-709C-46C5-99B7-B974DDD9D3A7",
+        "rank": "normal",
+        "references": [
+          {
+            "hash": "b2b24fb6dc313957a3d8db5eb6072f9dd54652eb",
+            "snaks": {
+              "P2253": [
+                {
+                  "snaktype": "value",
+                  "property": "P2253",
+                  "hash": "e758eb1dfae8726d9deb1571792afeceaf87e3f3",
+                  "datavalue": {
+                    "value": "133859",
+                    "type": "string"
+                  },
+                  "datatype": "external-id"
+                }
+              ],
+              "P813": [
+                {
+                  "snaktype": "value",
+                  "property": "P813",
+                  "hash": "a1634d762ab99904f32c98de932a13d40506bbc9",
+                  "datavalue": {
+                    "value": {
+                      "time": "+2019-07-27T00:00:00Z",
+                      "timezone": 0,
+                      "before": 0,
+                      "after": 0,
+                      "precision": 11,
+                      "calendarmodel": "http://www.wikidata.org/entity/Q1985727"
+                    },
+                    "type": "time"
+                  },
+                  "datatype": "time"
+                }
+              ]
+            },
+            "snaks-order": [
+              "P2253",
+              "P813"
+            ]
+          },
+          {
+            "hash": "1101d78175037cc923e5b7b5ca8968067abc6571",
+            "snaks": {
+              "P2253": [
+                {
+                  "snaktype": "value",
+                  "property": "P2253",
+                  "hash": "e758eb1dfae8726d9deb1571792afeceaf87e3f3",
+                  "datavalue": {
+                    "value": "133859",
+                    "type": "string"
+                  },
+                  "datatype": "external-id"
+                }
+              ],
+              "P813": [
+                {
+                  "snaktype": "value",
+                  "property": "P813",
+                  "hash": "6df6e50210d9d75b974d10f743a2104e339915ab",
+                  "datavalue": {
+                    "value": {
+                      "time": "+2020-03-07T00:00:00Z",
+                      "timezone": 0,
+                      "before": 0,
+                      "after": 0,
+                      "precision": 11,
+                      "calendarmodel": "http://www.wikidata.org/entity/Q1985727"
+                    },
+                    "type": "time"
+                  },
+                  "datatype": "time"
+                }
+              ]
+            },
+            "snaks-order": [
+              "P2253",
+              "P813"
+            ]
+          }
+        ]
+      },
+      {
+        "mainsnak": {
+          "snaktype": "value",
+          "property": "P1329",
+          "hash": "8778a6de7c7ca9022d0edd76c7c1ebf210262336",
+          "datavalue": {
+            "value": "+44-2074685000",
+            "type": "string"
+          },
+          "datatype": "string"
+        },
+        "type": "statement",
+        "id": "Q268411$2081B794-B788-48AC-BAB6-AA4932AD88CE",
+        "rank": "normal",
+        "references": [
+          {
+            "hash": "e6dcec8c114ab3657f6510a127f0e732e29433ad",
+            "snaks": {
+              "P2253": [
+                {
+                  "snaktype": "value",
+                  "property": "P2253",
+                  "hash": "e758eb1dfae8726d9deb1571792afeceaf87e3f3",
+                  "datavalue": {
+                    "value": "133859",
+                    "type": "string"
+                  },
+                  "datatype": "external-id"
+                }
+              ],
+              "P813": [
+                {
+                  "snaktype": "value",
+                  "property": "P813",
+                  "hash": "0b5927d7fdacb03cf0689afea5ed909a5b0f2723",
+                  "datavalue": {
+                    "value": {
+                      "time": "+2021-03-14T00:00:00Z",
+                      "timezone": 0,
+                      "before": 0,
+                      "after": 0,
+                      "precision": 11,
+                      "calendarmodel": "http://www.wikidata.org/entity/Q1985727"
+                    },
+                    "type": "time"
+                  },
+                  "datatype": "time"
+                }
+              ]
+            },
+            "snaks-order": [
+              "P2253",
+              "P813"
+            ]
+          },
+          {
+            "hash": "3479cb7dd4539c17904d97582d19e86677316363",
+            "snaks": {
+              "P2253": [
+                {
+                  "snaktype": "value",
+                  "property": "P2253",
+                  "hash": "e758eb1dfae8726d9deb1571792afeceaf87e3f3",
+                  "datavalue": {
+                    "value": "133859",
+                    "type": "string"
+                  },
+                  "datatype": "external-id"
+                }
+              ],
+              "P813": [
+                {
+                  "snaktype": "value",
+                  "property": "P813",
+                  "hash": "d154280a8b69a0fc255aafcb8cb95bbb2861c279",
+                  "datavalue": {
+                    "value": {
+                      "time": "+2021-12-06T00:00:00Z",
+                      "timezone": 0,
+                      "before": 0,
+                      "after": 0,
+                      "precision": 11,
+                      "calendarmodel": "http://www.wikidata.org/entity/Q1985727"
+                    },
+                    "type": "time"
+                  },
+                  "datatype": "time"
+                }
+              ]
+            },
+            "snaks-order": [
+              "P2253",
+              "P813"
+            ]
+          }
+        ]
+      }
+    ],
+    "P276": [
+      {
+        "mainsnak": {
+          "snaktype": "value",
+          "property": "P276",
+          "hash": "f5b2a3ea5fc95ba0a28bec4aaa58b82a0a6cbe27",
+          "datavalue": {
+            "value": {
+              "entity-type": "item",
+              "numeric-id": 84,
+              "id": "Q84"
+            },
+            "type": "wikibase-entityid"
+          },
+          "datatype": "wikibase-item"
+        },
+        "type": "statement",
+        "id": "Q268411$84D51CE6-772A-40B5-8D73-7622163E4D23",
+        "rank": "normal",
+        "references": [
+          {
+            "hash": "b2b24fb6dc313957a3d8db5eb6072f9dd54652eb",
+            "snaks": {
+              "P2253": [
+                {
+                  "snaktype": "value",
+                  "property": "P2253",
+                  "hash": "e758eb1dfae8726d9deb1571792afeceaf87e3f3",
+                  "datavalue": {
+                    "value": "133859",
+                    "type": "string"
+                  },
+                  "datatype": "external-id"
+                }
+              ],
+              "P813": [
+                {
+                  "snaktype": "value",
+                  "property": "P813",
+                  "hash": "a1634d762ab99904f32c98de932a13d40506bbc9",
+                  "datavalue": {
+                    "value": {
+                      "time": "+2019-07-27T00:00:00Z",
+                      "timezone": 0,
+                      "before": 0,
+                      "after": 0,
+                      "precision": 11,
+                      "calendarmodel": "http://www.wikidata.org/entity/Q1985727"
+                    },
+                    "type": "time"
+                  },
+                  "datatype": "time"
+                }
+              ]
+            },
+            "snaks-order": [
+              "P2253",
+              "P813"
+            ]
+          }
+        ]
+      }
+    ],
+    "P2253": [
+      {
+        "mainsnak": {
+          "snaktype": "value",
+          "property": "P2253",
+          "hash": "e758eb1dfae8726d9deb1571792afeceaf87e3f3",
+          "datavalue": {
+            "value": "133859",
+            "type": "string"
+          },
+          "datatype": "external-id"
+        },
+        "type": "statement",
+        "id": "Q268411$67989DBA-4152-41C6-B745-66445BDA7B13",
+        "rank": "normal",
+        "references": [
+          {
+            "hash": "b2b24fb6dc313957a3d8db5eb6072f9dd54652eb",
+            "snaks": {
+              "P2253": [
+                {
+                  "snaktype": "value",
+                  "property": "P2253",
+                  "hash": "e758eb1dfae8726d9deb1571792afeceaf87e3f3",
+                  "datavalue": {
+                    "value": "133859",
+                    "type": "string"
+                  },
+                  "datatype": "external-id"
+                }
+              ],
+              "P813": [
+                {
+                  "snaktype": "value",
+                  "property": "P813",
+                  "hash": "a1634d762ab99904f32c98de932a13d40506bbc9",
+                  "datavalue": {
+                    "value": {
+                      "time": "+2019-07-27T00:00:00Z",
+                      "timezone": 0,
+                      "before": 0,
+                      "after": 0,
+                      "precision": 11,
+                      "calendarmodel": "http://www.wikidata.org/entity/Q1985727"
+                    },
+                    "type": "time"
+                  },
+                  "datatype": "time"
+                }
+              ]
+            },
+            "snaks-order": [
+              "P2253",
+              "P813"
+            ]
+          }
+        ]
+      }
+    ],
+    "P7959": [
+      {
+        "mainsnak": {
+          "snaktype": "value",
+          "property": "P7959",
+          "hash": "ed099a4e7a2fcf7c7f67c7fd7785bd92bbf4ef89",
+          "datavalue": {
+            "value": {
+              "entity-type": "item",
+              "numeric-id": 19186,
+              "id": "Q19186"
+            },
+            "type": "wikibase-entityid"
+          },
+          "datatype": "wikibase-item"
+        },
+        "type": "statement",
+        "id": "Q268411$0B57B076-EAA2-4FE6-8F2E-830FAB1CE924",
+        "rank": "normal"
+      }
+    ],
+    "P8167": [
+      {
+        "mainsnak": {
+          "snaktype": "value",
+          "property": "P8167",
+          "hash": "e84abe445bb31a8728d4a8c30f24af67eaaffb09",
+          "datavalue": {
+            "value": "royal_veterinary_college",
+            "type": "string"
+          },
+          "datatype": "external-id"
+        },
+        "type": "statement",
+        "qualifiers": {
+          "P1810": [
+            {
+              "snaktype": "value",
+              "property": "P1810",
+              "hash": "63d533eec1ad6798e82f70a294d66176b2f99379",
+              "datavalue": {
+                "value": "Royal Veterinary College",
+                "type": "string"
+              },
+              "datatype": "string"
+            }
+          ]
+        },
+        "qualifiers-order": [
+          "P1810"
+        ],
+        "id": "Q268411$7F9238BA-17EE-4C1E-B142-CA4D6EFABC7C",
+        "rank": "normal"
+      }
+    ],
+    "P6269": [
+      {
+        "mainsnak": {
+          "snaktype": "value",
+          "property": "P6269",
+          "hash": "93578bea46759a1693fbfed82600b2638cd699dd",
+          "datavalue": {
+            "value": "https://idp.rvc.ac.uk/oala/metadata",
+            "type": "string"
+          },
+          "datatype": "url"
+        },
+        "type": "statement",
+        "qualifiers": {
+          "P2700": [
+            {
+              "snaktype": "value",
+              "property": "P2700",
+              "hash": "ab0fe890dd6c21397aa3b2e6f85b482ebdce5641",
+              "datavalue": {
+                "value": {
+                  "entity-type": "item",
+                  "numeric-id": 458022,
+                  "id": "Q458022"
+                },
+                "type": "wikibase-entityid"
+              },
+              "datatype": "wikibase-item"
+            }
+          ]
+        },
+        "qualifiers-order": [
+          "P2700"
+        ],
+        "id": "Q268411$3674044B-1BC4-45D2-9595-EC849E958AD6",
+        "rank": "normal",
+        "references": [
+          {
+            "hash": "19f351fefd610a866859a3ffe6a2a2413936521f",
+            "snaks": {
+              "P854": [
+                {
+                  "snaktype": "value",
+                  "property": "P854",
+                  "hash": "fd3f04d862fd1838980a35ab37b301b1bb6fddc1",
+                  "datavalue": {
+                    "value": "https://orcid.org/signin",
+                    "type": "string"
+                  },
+                  "datatype": "url"
+                }
+              ],
+              "P813": [
+                {
+                  "snaktype": "value",
+                  "property": "P813",
+                  "hash": "3664b042ef7e508d2149e8f5c2cf86ce8f1e8cd3",
+                  "datavalue": {
+                    "value": {
+                      "time": "+2020-06-23T00:00:00Z",
+                      "timezone": 0,
+                      "before": 0,
+                      "after": 0,
+                      "precision": 11,
+                      "calendarmodel": "http://www.wikidata.org/entity/Q1985727"
+                    },
+                    "type": "time"
+                  },
+                  "datatype": "time"
+                }
+              ]
+            },
+            "snaks-order": [
+              "P854",
+              "P813"
+            ]
+          }
+        ]
+      }
+    ],
+    "P8687": [
+      {
+        "mainsnak": {
+          "snaktype": "value",
+          "property": "P8687",
+          "hash": "39be65085bdcea723aaf9825ffba1cef5b8fbb33",
+          "datavalue": {
+            "value": {
+              "amount": "+20625",
+              "unit": "1"
+            },
+            "type": "quantity"
+          },
+          "datatype": "quantity"
+        },
+        "type": "statement",
+        "qualifiers": {
+          "P6552": [
+            {
+              "snaktype": "value",
+              "property": "P6552",
+              "hash": "bbff570224e416b0c4ca192f995a0d87384232ac",
+              "datavalue": {
+                "value": "76962112",
+                "type": "string"
+              },
+              "datatype": "external-id"
+            }
+          ],
+          "P585": [
+            {
+              "snaktype": "value",
+              "property": "P585",
+              "hash": "9e91ae9f10ae076b7a0b5ce11a8d6dd5b9421240",
+              "datavalue": {
+                "value": {
+                  "time": "+2021-01-02T00:00:00Z",
+                  "timezone": 0,
+                  "before": 0,
+                  "after": 0,
+                  "precision": 11,
+                  "calendarmodel": "http://www.wikidata.org/entity/Q1985727"
+                },
+                "type": "time"
+              },
+              "datatype": "time"
+            }
+          ]
+        },
+        "qualifiers-order": [
+          "P6552",
+          "P585"
+        ],
+        "id": "Q268411$fcb1b65e-714b-4498-b589-d3c98616a850",
+        "rank": "normal"
+      },
+      {
+        "mainsnak": {
+          "snaktype": "value",
+          "property": "P8687",
+          "hash": "bfa2fc605f0bcd210f814bd283a8d1d2d7c5708b",
+          "datavalue": {
+            "value": {
+              "amount": "+14100",
+              "unit": "1"
+            },
+            "type": "quantity"
+          },
+          "datatype": "quantity"
+        },
+        "type": "statement",
+        "qualifiers": {
+          "P6552": [
+            {
+              "snaktype": "value",
+              "property": "P6552",
+              "hash": "bbff570224e416b0c4ca192f995a0d87384232ac",
+              "datavalue": {
+                "value": "76962112",
+                "type": "string"
+              },
+              "datatype": "external-id"
+            }
+          ],
+          "P585": [
+            {
+              "snaktype": "value",
+              "property": "P585",
+              "hash": "5db48cf4d011c3882931889ed5e2d04f10f3c76f",
+              "datavalue": {
+                "value": {
+                  "time": "+2018-05-10T00:00:00Z",
+                  "timezone": 0,
+                  "before": 0,
+                  "after": 0,
+                  "precision": 11,
+                  "calendarmodel": "http://www.wikidata.org/entity/Q1985727"
+                },
+                "type": "time"
+              },
+              "datatype": "time"
+            }
+          ]
+        },
+        "qualifiers-order": [
+          "P6552",
+          "P585"
+        ],
+        "id": "Q268411$693e4819-f943-49d0-bd95-d7028573ff12",
+        "rank": "normal"
+      },
+      {
+        "mainsnak": {
+          "snaktype": "value",
+          "property": "P8687",
+          "hash": "333d3dc44d265cb33d5f1c93294a9a5faa24d200",
+          "datavalue": {
+            "value": {
+              "amount": "+22708",
+              "unit": "1"
+            },
+            "type": "quantity"
+          },
+          "datatype": "quantity"
+        },
+        "type": "statement",
+        "qualifiers": {
+          "P6552": [
+            {
+              "snaktype": "value",
+              "property": "P6552",
+              "hash": "bbff570224e416b0c4ca192f995a0d87384232ac",
+              "datavalue": {
+                "value": "76962112",
+                "type": "string"
+              },
+              "datatype": "external-id"
+            }
+          ],
+          "P585": [
+            {
+              "snaktype": "value",
+              "property": "P585",
+              "hash": "cc204b5b4738cf214a068d626dc55342010de10f",
+              "datavalue": {
+                "value": {
+                  "time": "+2022-03-01T00:00:00Z",
+                  "timezone": 0,
+                  "before": 0,
+                  "after": 0,
+                  "precision": 11,
+                  "calendarmodel": "http://www.wikidata.org/entity/Q1985727"
+                },
+                "type": "time"
+              },
+              "datatype": "time"
+            }
+          ]
+        },
+        "qualifiers-order": [
+          "P6552",
+          "P585"
+        ],
+        "id": "Q268411$064fb846-fe87-4289-89db-4df6d9d8d75a",
+        "rank": "normal"
+      },
+      {
+        "mainsnak": {
+          "snaktype": "value",
+          "property": "P8687",
+          "hash": "503707ef3a9224f50c34bdafc779f79d835c7dca",
+          "datavalue": {
+            "value": {
+              "amount": "+24256",
+              "unit": "1"
+            },
+            "type": "quantity"
+          },
+          "datatype": "quantity"
+        },
+        "type": "statement",
+        "qualifiers": {
+          "P6552": [
+            {
+              "snaktype": "value",
+              "property": "P6552",
+              "hash": "bbff570224e416b0c4ca192f995a0d87384232ac",
+              "datavalue": {
+                "value": "76962112",
+                "type": "string"
+              },
+              "datatype": "external-id"
+            }
+          ],
+          "P585": [
+            {
+              "snaktype": "value",
+              "property": "P585",
+              "hash": "596010e3d9e410de5f7da3069e3f982f8e312b93",
+              "datavalue": {
+                "value": {
+                  "time": "+2023-02-12T00:00:00Z",
+                  "timezone": 0,
+                  "before": 0,
+                  "after": 0,
+                  "precision": 11,
+                  "calendarmodel": "http://www.wikidata.org/entity/Q1985727"
+                },
+                "type": "time"
+              },
+              "datatype": "time"
+            }
+          ]
+        },
+        "qualifiers-order": [
+          "P6552",
+          "P585"
+        ],
+        "id": "Q268411$945a42e2-1d22-4a9c-b6b8-306e0c680002",
+        "rank": "preferred"
+      }
+    ],
+    "P646": [
+      {
+        "mainsnak": {
+          "snaktype": "value",
+          "property": "P646",
+          "hash": "361deb914f29de3662d6f9ffdef77ca6aac0b31d",
+          "datavalue": {
+            "value": "/m/02mfvg",
+            "type": "string"
+          },
+          "datatype": "external-id"
+        },
+        "type": "statement",
+        "id": "Q268411$3EE2BD9E-CC7A-4FCA-83F8-B1B36FBA834A",
+        "rank": "normal"
+      }
+    ],
+    "P4527": [
+      {
+        "mainsnak": {
+          "snaktype": "value",
+          "property": "P4527",
+          "hash": "4a645c10584675e77b54f0835f29fa6c5d2c3938",
+          "datavalue": {
+            "value": "67197",
+            "type": "string"
+          },
+          "datatype": "external-id"
+        },
+        "type": "statement",
+        "qualifiers": {
+          "P1810": [
+            {
+              "snaktype": "value",
+              "property": "P1810",
+              "hash": "63d533eec1ad6798e82f70a294d66176b2f99379",
+              "datavalue": {
+                "value": "Royal Veterinary College",
+                "type": "string"
+              },
+              "datatype": "string"
+            }
+          ]
+        },
+        "qualifiers-order": [
+          "P1810"
+        ],
+        "id": "Q268411$110E1B78-4385-42D4-B4BC-000DB805BD86",
+        "rank": "normal"
+      }
+    ],
+    "P2088": [
+      {
+        "mainsnak": {
+          "snaktype": "value",
+          "property": "P2088",
+          "hash": "e73c2cfc216c648c0a1d597ad34420b856b3b7f2",
+          "datavalue": {
+            "value": "royal-veterinary-college",
+            "type": "string"
+          },
+          "datatype": "external-id"
+        },
+        "type": "statement",
+        "id": "Q268411$BD4875E7-EBC8-4196-B150-BFDB52CEBB3F",
+        "rank": "normal",
+        "references": [
+          {
+            "hash": "f32196d27bb2ce8f8522c8b72bd1c491a519cd17",
+            "snaks": {
+              "P854": [
+                {
+                  "snaktype": "value",
+                  "property": "P854",
+                  "hash": "68d41b23616d5154639b03a23aff612f0b1e09df",
+                  "datavalue": {
+                    "value": "http://km.aifb.kit.edu/services/crunchbase/",
+                    "type": "string"
+                  },
+                  "datatype": "url"
+                }
+              ],
+              "P1065": [
+                {
+                  "snaktype": "value",
+                  "property": "P1065",
+                  "hash": "30b53300fd5fb9bf55e05f9fb71f703ef06fe5f5",
+                  "datavalue": {
+                    "value": "https://web.archive.org/web/20210820174330/http://km.aifb.kit.edu/services/crunchbase/",
+                    "type": "string"
+                  },
+                  "datatype": "url"
+                }
+              ],
+              "P2960": [
+                {
+                  "snaktype": "value",
+                  "property": "P2960",
+                  "hash": "d14933aa4f3427d423d637324196a9f3fbf9898b",
+                  "datavalue": {
+                    "value": {
+                      "time": "+2021-08-20T00:00:00Z",
+                      "timezone": 0,
+                      "before": 0,
+                      "after": 0,
+                      "precision": 11,
+                      "calendarmodel": "http://www.wikidata.org/entity/Q1985727"
+                    },
+                    "type": "time"
+                  },
+                  "datatype": "time"
+                }
+              ]
+            },
+            "snaks-order": [
+              "P854",
+              "P1065",
+              "P2960"
+            ]
+          }
+        ]
+      }
+    ],
+    "P10283": [
+      {
+        "mainsnak": {
+          "snaktype": "value",
+          "property": "P10283",
+          "hash": "71a0304aef3d86f76ad09ef7869c0209704868e2",
+          "datavalue": {
+            "value": "I133836048",
+            "type": "string"
+          },
+          "datatype": "external-id"
+        },
+        "type": "statement",
+        "id": "Q268411$20AEB342-E6D3-44C2-B430-BF6B231BDADC",
+        "rank": "normal",
+        "references": [
+          {
+            "hash": "decfbfa71977c9b0e5cec1f4a4dfb7dfafa59ea9",
+            "snaks": {
+              "P248": [
+                {
+                  "snaktype": "value",
+                  "property": "P248",
+                  "hash": "4a4f26a5361b5707266e48e425bf2be2f99fd2ab",
+                  "datavalue": {
+                    "value": {
+                      "entity-type": "item",
+                      "numeric-id": 107507571,
+                      "id": "Q107507571"
+                    },
+                    "type": "wikibase-entityid"
+                  },
+                  "datatype": "wikibase-item"
+                }
+              ],
+              "P813": [
+                {
+                  "snaktype": "value",
+                  "property": "P813",
+                  "hash": "08529d064baad71a9df22dc3308e931aca9bd537",
+                  "datavalue": {
+                    "value": {
+                      "time": "+2022-01-25T00:00:00Z",
+                      "timezone": 0,
+                      "before": 0,
+                      "after": 0,
+                      "precision": 11,
+                      "calendarmodel": "http://www.wikidata.org/entity/Q1985727"
+                    },
+                    "type": "time"
+                  },
+                  "datatype": "time"
+                }
+              ],
+              "P854": [
+                {
+                  "snaktype": "value",
+                  "property": "P854",
+                  "hash": "a4a4bf53f22268815c51ec10fed608da703c9c7f",
+                  "datavalue": {
+                    "value": "https://docs.openalex.org/download-snapshot/snapshot-data-format",
+                    "type": "string"
+                  },
+                  "datatype": "url"
+                }
+              ],
+              "P1065": [
+                {
+                  "snaktype": "value",
+                  "property": "P1065",
+                  "hash": "3134281f51e2490f88272d53c56ee95d9cc24e2c",
+                  "datavalue": {
+                    "value": "https://web.archive.org/web/20220125070108/https://docs.openalex.org/download-snapshot/snapshot-data-format",
+                    "type": "string"
+                  },
+                  "datatype": "url"
+                }
+              ],
+              "P2960": [
+                {
+                  "snaktype": "value",
+                  "property": "P2960",
+                  "hash": "f7ff3a0de7f9571ecb5e0740cba4122c6703e1ec",
+                  "datavalue": {
+                    "value": {
+                      "time": "+2022-01-25T00:00:00Z",
+                      "timezone": 0,
+                      "before": 0,
+                      "after": 0,
+                      "precision": 11,
+                      "calendarmodel": "http://www.wikidata.org/entity/Q1985727"
+                    },
+                    "type": "time"
+                  },
+                  "datatype": "time"
+                }
+              ]
+            },
+            "snaks-order": [
+              "P248",
+              "P813",
+              "P854",
+              "P1065",
+              "P2960"
+            ]
+          }
+        ]
+      }
+    ],
+    "P3153": [
+      {
+        "mainsnak": {
+          "snaktype": "value",
+          "property": "P3153",
+          "hash": "7324fe579eaac7b06aa66ce938c8b9e2fa0d5bfc",
+          "datavalue": {
+            "value": "100015226",
+            "type": "string"
+          },
+          "datatype": "external-id"
+        },
+        "type": "statement",
+        "qualifiers": {
+          "P1810": [
+            {
+              "snaktype": "value",
+              "property": "P1810",
+              "hash": "63d533eec1ad6798e82f70a294d66176b2f99379",
+              "datavalue": {
+                "value": "Royal Veterinary College",
+                "type": "string"
+              },
+              "datatype": "string"
+            }
+          ]
+        },
+        "qualifiers-order": [
+          "P1810"
+        ],
+        "id": "Q268411$4D407508-06A9-4E48-8D31-1191C1A75856",
+        "rank": "normal",
+        "references": [
+          {
+            "hash": "88585eed91caddd2a260d10e0c846f11738ddc22",
+            "snaks": {
+              "P248": [
+                {
+                  "snaktype": "value",
+                  "property": "P248",
+                  "hash": "83147c094cf208a26f5e2d54c061e85d5d5740e1",
+                  "datavalue": {
+                    "value": {
+                      "entity-type": "item",
+                      "numeric-id": 19822542,
+                      "id": "Q19822542"
+                    },
+                    "type": "wikibase-entityid"
+                  },
+                  "datatype": "wikibase-item"
+                }
+              ],
+              "P3153": [
+                {
+                  "snaktype": "value",
+                  "property": "P3153",
+                  "hash": "7324fe579eaac7b06aa66ce938c8b9e2fa0d5bfc",
+                  "datavalue": {
+                    "value": "100015226",
+                    "type": "string"
+                  },
+                  "datatype": "external-id"
+                }
+              ],
+              "P854": [
+                {
+                  "snaktype": "value",
+                  "property": "P854",
+                  "hash": "4ee70ccd7bf3d689f84fd5ddd515a02a1496a97d",
+                  "datavalue": {
+                    "value": "http://dx.doi.org/10.13039/100015226",
+                    "type": "string"
+                  },
+                  "datatype": "url"
+                }
+              ],
+              "P813": [
+                {
+                  "snaktype": "value",
+                  "property": "P813",
+                  "hash": "83943bb885eb1f30579e2c290348f47a3e8577ed",
+                  "datavalue": {
+                    "value": {
+                      "time": "+2022-04-09T00:00:00Z",
+                      "timezone": 0,
+                      "before": 0,
+                      "after": 0,
+                      "precision": 11,
+                      "calendarmodel": "http://www.wikidata.org/entity/Q1985727"
+                    },
+                    "type": "time"
+                  },
+                  "datatype": "time"
+                }
+              ]
+            },
+            "snaks-order": [
+              "P248",
+              "P3153",
+              "P854",
+              "P813"
+            ]
+          }
+        ]
+      }
+    ],
+    "P2936": [
+      {
+        "mainsnak": {
+          "snaktype": "value",
+          "property": "P2936",
+          "hash": "57845055da39d9444d989086e65266217b4fe2bd",
+          "datavalue": {
+            "value": {
+              "entity-type": "item",
+              "numeric-id": 1860,
+              "id": "Q1860"
+            },
+            "type": "wikibase-entityid"
+          },
+          "datatype": "wikibase-item"
+        },
+        "type": "statement",
+        "id": "Q268411$3BFFD2A8-7435-4E0F-A6F4-0D8F2C659ED2",
+        "rank": "normal",
+        "references": [
+          {
+            "hash": "fb5d789e8d1676e44644857ea7b90aa048d7bfc1",
+            "snaks": {
+              "P887": [
+                {
+                  "snaktype": "value",
+                  "property": "P887",
+                  "hash": "55abda5c8b7ab2fcd84013838ae150705250aa60",
+                  "datavalue": {
+                    "value": {
+                      "entity-type": "item",
+                      "numeric-id": 84423633,
+                      "id": "Q84423633"
+                    },
+                    "type": "wikibase-entityid"
+                  },
+                  "datatype": "wikibase-item"
+                }
+              ]
+            },
+            "snaks-order": [
+              "P887"
+            ]
+          }
+        ]
+      }
+    ],
+    "P10565": [
+      {
+        "mainsnak": {
+          "snaktype": "value",
+          "property": "P10565",
+          "hash": "f975c9451a7c3f04a15e5048edbb5cdd3aab1dd9",
+          "datavalue": {
+            "value": "202263",
+            "type": "string"
+          },
+          "datatype": "external-id"
+        },
+        "type": "statement",
+        "id": "Q268411$300DE6E9-26E2-4027-B289-FD75977D573E",
+        "rank": "normal"
+      }
+    ],
+    "P1320": [
+      {
+        "mainsnak": {
+          "snaktype": "value",
+          "property": "P1320",
+          "hash": "82adc13d16ce32cfc94cd132b3570ce19111e406",
+          "datavalue": {
+            "value": "gb/RC000532",
+            "type": "string"
+          },
+          "datatype": "external-id"
+        },
+        "type": "statement",
+        "id": "Q268411$AE6C72E6-7722-4749-918C-9C758DE9902A",
+        "rank": "normal",
+        "references": [
+          {
+            "hash": "7f3891fe117dd5afc4b24a739310166261dba17d",
+            "snaks": {
+              "P248": [
+                {
+                  "snaktype": "value",
+                  "property": "P248",
+                  "hash": "60b051d1cc18991404fce0ff5dbfe27fd9edf6a2",
+                  "datavalue": {
+                    "value": {
+                      "entity-type": "item",
+                      "numeric-id": 7095760,
+                      "id": "Q7095760"
+                    },
+                    "type": "wikibase-entityid"
+                  },
+                  "datatype": "wikibase-item"
+                }
+              ],
+              "P854": [
+                {
+                  "snaktype": "value",
+                  "property": "P854",
+                  "hash": "37f4ee4aa82d4077cee261f58c1d6ecd70e0cc6d",
+                  "datavalue": {
+                    "value": "https://opencorporates.com/companies/gb/RC000532",
+                    "type": "string"
+                  },
+                  "datatype": "url"
+                }
+              ],
+              "P813": [
+                {
+                  "snaktype": "value",
+                  "property": "P813",
+                  "hash": "b0974e2517a8f4e56fe837ff86ed35dcb3599d55",
+                  "datavalue": {
+                    "value": {
+                      "time": "+2022-12-17T00:00:00Z",
+                      "timezone": 0,
+                      "before": 0,
+                      "after": 0,
+                      "precision": 11,
+                      "calendarmodel": "http://www.wikidata.org/entity/Q1985727"
+                    },
+                    "type": "time"
+                  },
+                  "datatype": "time"
+                }
+              ]
+            },
+            "snaks-order": [
+              "P248",
+              "P854",
+              "P813"
+            ]
+          }
+        ]
+      }
+    ],
+    "P2622": [
+      {
+        "mainsnak": {
+          "snaktype": "value",
+          "property": "P2622",
+          "hash": "c7c91e59810d4fd5e27f65ab300bc35ba3f5cc2e",
+          "datavalue": {
+            "value": "RC000532",
+            "type": "string"
+          },
+          "datatype": "external-id"
+        },
+        "type": "statement",
+        "id": "Q268411$95430B0E-7C89-43BE-87FC-84E38CAF7E4E",
+        "rank": "normal",
+        "references": [
+          {
+            "hash": "13a7a113bc9fc9e8b46198f7be7d23ac1f65d2b2",
+            "snaks": {
+              "P248": [
+                {
+                  "snaktype": "value",
+                  "property": "P248",
+                  "hash": "003bc694fd28f5b95ae0d43521447d5a6da0ff7b",
+                  "datavalue": {
+                    "value": {
+                      "entity-type": "item",
+                      "numeric-id": 108302777,
+                      "id": "Q108302777"
+                    },
+                    "type": "wikibase-entityid"
+                  },
+                  "datatype": "wikibase-item"
+                }
+              ],
+              "P854": [
+                {
+                  "snaktype": "value",
+                  "property": "P854",
+                  "hash": "688fcbadb2bab20a503c74ce977a4d949cdf8886",
+                  "datavalue": {
+                    "value": "https://find-and-update.company-information.service.gov.uk/company/RC000532",
+                    "type": "string"
+                  },
+                  "datatype": "url"
+                }
+              ],
+              "P813": [
+                {
+                  "snaktype": "value",
+                  "property": "P813",
+                  "hash": "b0974e2517a8f4e56fe837ff86ed35dcb3599d55",
+                  "datavalue": {
+                    "value": {
+                      "time": "+2022-12-17T00:00:00Z",
+                      "timezone": 0,
+                      "before": 0,
+                      "after": 0,
+                      "precision": 11,
+                      "calendarmodel": "http://www.wikidata.org/entity/Q1985727"
+                    },
+                    "type": "time"
+                  },
+                  "datatype": "time"
+                }
+              ]
+            },
+            "snaks-order": [
+              "P248",
+              "P854",
+              "P813"
+            ]
+          }
+        ]
+      }
+    ],
+    "P2888": [
+      {
+        "mainsnak": {
+          "snaktype": "value",
+          "property": "P2888",
+          "hash": "fb4ce144c6e3e9baca1ca0056618f917314701e2",
+          "datavalue": {
+            "value": "https://findthatcharity.uk/orgid/XI-ROR-01wka8n18",
+            "type": "string"
+          },
+          "datatype": "url"
+        },
+        "type": "statement",
+        "id": "Q268411$E1294AEA-A650-4735-9761-8EEFF0A6E003",
+        "rank": "normal",
+        "references": [
+          {
+            "hash": "3a6b4f1154c1eeee8732a00cfc2124658bc86667",
+            "snaks": {
+              "P248": [
+                {
+                  "snaktype": "value",
+                  "property": "P248",
+                  "hash": "fc5f78859bfd15ed5212fff870ea80afba0313b3",
+                  "datavalue": {
+                    "value": {
+                      "entity-type": "item",
+                      "numeric-id": 64590294,
+                      "id": "Q64590294"
+                    },
+                    "type": "wikibase-entityid"
+                  },
+                  "datatype": "wikibase-item"
+                }
+              ],
+              "P854": [
+                {
+                  "snaktype": "value",
+                  "property": "P854",
+                  "hash": "120f2d4176f271403bb14990d57071789edc50ca",
+                  "datavalue": {
+                    "value": "https://findthatcharity.uk/orgid/XI-ROR-01wka8n18",
+                    "type": "string"
+                  },
+                  "datatype": "url"
+                }
+              ],
+              "P813": [
+                {
+                  "snaktype": "value",
+                  "property": "P813",
+                  "hash": "b0974e2517a8f4e56fe837ff86ed35dcb3599d55",
+                  "datavalue": {
+                    "value": {
+                      "time": "+2022-12-17T00:00:00Z",
+                      "timezone": 0,
+                      "before": 0,
+                      "after": 0,
+                      "precision": 11,
+                      "calendarmodel": "http://www.wikidata.org/entity/Q1985727"
+                    },
+                    "type": "time"
+                  },
+                  "datatype": "time"
+                }
+              ]
+            },
+            "snaks-order": [
+              "P248",
+              "P854",
+              "P813"
+            ]
+          }
+        ]
+      }
+    ],
+    "P10689": [
+      {
+        "mainsnak": {
+          "snaktype": "value",
+          "property": "P10689",
+          "hash": "b75d37c00d50b1a9f3bc3a5f2c4f6f93c4907044",
+          "datavalue": {
+            "value": "81625514",
+            "type": "string"
+          },
+          "datatype": "external-id"
+        },
+        "type": "statement",
+        "id": "Q268411$8D11784A-5496-4DA5-AD7F-C58D444EAAA0",
+        "rank": "normal"
+      }
+    ],
+    "P1617": [
+      {
+        "mainsnak": {
+          "snaktype": "value",
+          "property": "P1617",
+          "hash": "d462c2235e7230d336a1d11f092955fa2143368c",
+          "datavalue": {
+            "value": "86a1d5fe-700c-423f-87ec-099b9b4123cf",
+            "type": "string"
+          },
+          "datatype": "external-id"
+        },
+        "type": "statement",
+        "id": "Q268411$f17aa007-4466-dc3b-2eb9-7eaf2afc2095",
+        "rank": "normal",
+        "references": [
+          {
+            "hash": "8582d8416671f1f2567247201bac753552435ca5",
+            "snaks": {
+              "P248": [
+                {
+                  "snaktype": "value",
+                  "property": "P248",
+                  "hash": "ea55dc6ac5c3ab77c77d4ae7979e3276d0d4cd20",
+                  "datavalue": {
+                    "value": {
+                      "entity-type": "item",
+                      "numeric-id": 18336371,
+                      "id": "Q18336371"
+                    },
+                    "type": "wikibase-entityid"
+                  },
+                  "datatype": "wikibase-item"
+                }
+              ]
+            },
+            "snaks-order": [
+              "P248"
+            ]
+          }
+        ]
+      }
+    ],
+    "P13591": [
+      {
+        "mainsnak": {
+          "snaktype": "value",
+          "property": "P13591",
+          "hash": "aa626617dd94c89abd94c76396637fe075b25928",
+          "datavalue": {
+            "value": "group/de8ee2bd-67e5-45f1-9006-ebd414d0206e",
+            "type": "string"
+          },
+          "datatype": "external-id"
+        },
+        "type": "statement",
+        "id": "Q268411$B33F366D-7426-4356-A250-AB2804E6663C",
+        "rank": "normal"
+      }
+    ],
+    "P4081": [
+      {
+        "mainsnak": {
+          "snaktype": "value",
+          "property": "P4081",
+          "hash": "1935b429dc7bf91abca4775ec493e55b92ed3042",
+          "datavalue": {
+            "value": "199440",
+            "type": "string"
+          },
+          "datatype": "external-id"
+        },
+        "type": "statement",
+        "id": "Q268411$BE35A1BC-63E1-489C-A21E-87C413E2885E",
+        "rank": "normal"
+      }
+    ],
+    "P3106": [
+      {
+        "mainsnak": {
+          "snaktype": "value",
+          "property": "P3106",
+          "hash": "67fb854a36e9e368674005c33af1a9890abe682a",
+          "datavalue": {
+            "value": "education/royalveterinarycollege",
+            "type": "string"
+          },
+          "datatype": "external-id"
+        },
+        "type": "statement",
+        "id": "Q268411$FCE5AA13-268F-465F-8214-087A63C54655",
+        "rank": "normal"
+      }
+    ]
+  },
+  "sitelinks": {
+    "arwiki": {
+      "site": "arwiki",
+      "title": "الكلية الملكية للطب البيطري",
+      "badges": [],
+      "url": "https://ar.wikipedia.org/wiki/%D8%A7%D9%84%D9%83%D9%84%D9%8A%D8%A9_%D8%A7%D9%84%D9%85%D9%84%D9%83%D9%8A%D8%A9_%D9%84%D9%84%D8%B7%D8%A8_%D8%A7%D9%84%D8%A8%D9%8A%D8%B7%D8%B1%D9%8A"
+    },
+    "dewiki": {
+      "site": "dewiki",
+      "title": "Royal Veterinary College",
+      "badges": [],
+      "url": "https://de.wikipedia.org/wiki/Royal_Veterinary_College"
+    },
+    "enwiki": {
+      "site": "enwiki",
+      "title": "Royal Veterinary College",
+      "badges": [],
+      "url": "https://en.wikipedia.org/wiki/Royal_Veterinary_College"
+    },
+    "fawiki": {
+      "site": "fawiki",
+      "title": "کالج سلطنتی دامپزشکی",
+      "badges": [],
+      "url": "https://fa.wikipedia.org/wiki/%DA%A9%D8%A7%D9%84%D8%AC_%D8%B3%D9%84%D8%B7%D9%86%D8%AA%DB%8C_%D8%AF%D8%A7%D9%85%D9%BE%D8%B2%D8%B4%DA%A9%DB%8C"
+    },
+    "frwiki": {
+      "site": "frwiki",
+      "title": "Royal Veterinary College",
+      "badges": [],
+      "url": "https://fr.wikipedia.org/wiki/Royal_Veterinary_College"
+    },
+    "jawiki": {
+      "site": "jawiki",
+      "title": "王立獣医学校",
+      "badges": [],
+      "url": "https://ja.wikipedia.org/wiki/%E7%8E%8B%E7%AB%8B%E7%8D%A3%E5%8C%BB%E5%AD%A6%E6%A0%A1"
+    },
+    "simplewiki": {
+      "site": "simplewiki",
+      "title": "Royal Veterinary College",
+      "badges": [],
+      "url": "https://simple.wikipedia.org/wiki/Royal_Veterinary_College"
+    },
+    "urwiki": {
+      "site": "urwiki",
+      "title": "رائل ویٹرنری کالج",
+      "badges": [],
+      "url": "https://ur.wikipedia.org/wiki/%D8%B1%D8%A7%D8%A6%D9%84_%D9%88%DB%8C%D9%B9%D8%B1%D9%86%D8%B1%DB%8C_%DA%A9%D8%A7%D9%84%D8%AC"
+    },
+    "zhwiki": {
+      "site": "zhwiki",
+      "title": "皇家獸醫學院",
+      "badges": [],
+      "url": "https://zh.wikipedia.org/wiki/%E7%9A%87%E5%AE%B6%E7%8D%B8%E9%86%AB%E5%AD%B8%E9%99%A2"
+    }
+  }
+}

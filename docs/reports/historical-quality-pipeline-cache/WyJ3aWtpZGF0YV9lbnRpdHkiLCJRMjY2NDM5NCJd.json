@@ -1,0 +1,567 @@
+{
+  "pageid": 2567309,
+  "ns": 0,
+  "title": "Q2664394",
+  "lastrevid": 2460222739,
+  "modified": "2026-02-03T02:32:29Z",
+  "type": "item",
+  "id": "Q2664394",
+  "labels": {
+    "pt": {
+      "language": "pt",
+      "value": "religião na França"
+    },
+    "cs": {
+      "language": "cs",
+      "value": "náboženství ve Francii"
+    },
+    "ru": {
+      "language": "ru",
+      "value": "религия во Франции"
+    },
+    "fr": {
+      "language": "fr",
+      "value": "religion en France"
+    },
+    "en": {
+      "language": "en",
+      "value": "religion in France"
+    },
+    "mk": {
+      "language": "mk",
+      "value": "Религија во Франција"
+    },
+    "pl": {
+      "language": "pl",
+      "value": "Religia we Francji"
+    },
+    "nl": {
+      "language": "nl",
+      "value": "religie in Frankrijk"
+    },
+    "ro": {
+      "language": "ro",
+      "value": "Religia în Franța"
+    },
+    "ar": {
+      "language": "ar",
+      "value": "الدين في فرنسا"
+    },
+    "hr": {
+      "language": "hr",
+      "value": "Religija u Francuskoj"
+    },
+    "de": {
+      "language": "de",
+      "value": "Religion in Frankreich"
+    },
+    "fi": {
+      "language": "fi",
+      "value": "uskonto Ranskassa"
+    },
+    "zh": {
+      "language": "zh",
+      "value": "其他"
+    },
+    "eo": {
+      "language": "eo",
+      "value": "religio en Francio"
+    },
+    "tr": {
+      "language": "tr",
+      "value": "Fransa'da din"
+    },
+    "eu": {
+      "language": "eu",
+      "value": "Erlijioa Frantzian"
+    },
+    "it": {
+      "language": "it",
+      "value": "Religioni in Francia"
+    },
+    "es": {
+      "language": "es",
+      "value": "religión en Francia"
+    },
+    "zh-hans": {
+      "language": "zh-hans",
+      "value": "法国宗教"
+    },
+    "az": {
+      "language": "az",
+      "value": "Fransada din"
+    },
+    "uk": {
+      "language": "uk",
+      "value": "Релігія у Франції"
+    },
+    "tg": {
+      "language": "tg",
+      "value": "Дин дар Фаронса"
+    },
+    "sv": {
+      "language": "sv",
+      "value": "Religion i Frankrike"
+    },
+    "id": {
+      "language": "id",
+      "value": "Agama di Prancis"
+    },
+    "be": {
+      "language": "be",
+      "value": "рэлігія ў Францыі"
+    },
+    "nb": {
+      "language": "nb",
+      "value": "Religion i Frankrike"
+    },
+    "sl": {
+      "language": "sl",
+      "value": "religija v Franciji"
+    },
+    "ca": {
+      "language": "ca",
+      "value": "religió a França"
+    },
+    "ja": {
+      "language": "ja",
+      "value": "フランスの宗教"
+    },
+    "sq": {
+      "language": "sq",
+      "value": "Feja në Francë"
+    },
+    "ga": {
+      "language": "ga",
+      "value": "creideamh sa Fhrainc"
+    }
+  },
+  "descriptions": {
+    "en": {
+      "language": "en",
+      "value": "overview of the religion share in France"
+    },
+    "fr": {
+      "language": "fr",
+      "value": "religion d'une zone"
+    }
+  },
+  "aliases": {
+    "pt": [
+      {
+        "language": "pt",
+        "value": "Religião em França"
+      }
+    ],
+    "zh": [
+      {
+        "language": "zh",
+        "value": "法國宗教"
+      },
+      {
+        "language": "zh",
+        "value": "法国宗教"
+      }
+    ]
+  },
+  "claims": {
+    "P910": [
+      {
+        "mainsnak": {
+          "snaktype": "value",
+          "property": "P910",
+          "hash": "921a7b956cb1258d3c4816be2774f173afd00f39",
+          "datavalue": {
+            "value": {
+              "entity-type": "item",
+              "numeric-id": 6958470,
+              "id": "Q6958470"
+            },
+            "type": "wikibase-entityid"
+          },
+          "datatype": "wikibase-item"
+        },
+        "type": "statement",
+        "id": "Q2664394$3589267E-9238-49E4-BF26-965471C6E187",
+        "rank": "normal"
+      }
+    ],
+    "P373": [
+      {
+        "mainsnak": {
+          "snaktype": "value",
+          "property": "P373",
+          "hash": "4c6a03cb0398be8120b7928aaf945079000a8a49",
+          "datavalue": {
+            "value": "Religion in France",
+            "type": "string"
+          },
+          "datatype": "string"
+        },
+        "type": "statement",
+        "id": "Q2664394$8B8BF74A-9CC4-4AC3-B822-4688157CAA8B",
+        "rank": "normal",
+        "references": [
+          {
+            "hash": "fa278ebfc458360e5aed63d5058cca83c46134f1",
+            "snaks": {
+              "P143": [
+                {
+                  "snaktype": "value",
+                  "property": "P143",
+                  "hash": "e4f6d9441d0600513c4533c672b5ab472dc73694",
+                  "datavalue": {
+                    "value": {
+                      "entity-type": "item",
+                      "numeric-id": 328,
+                      "id": "Q328"
+                    },
+                    "type": "wikibase-entityid"
+                  },
+                  "datatype": "wikibase-item"
+                }
+              ]
+            },
+            "snaks-order": [
+              "P143"
+            ]
+          }
+        ]
+      }
+    ],
+    "P3417": [
+      {
+        "mainsnak": {
+          "snaktype": "value",
+          "property": "P3417",
+          "hash": "43a237eb24bbc5986874db745dd1eefb7c18fa35",
+          "datavalue": {
+            "value": "Religion-in-France",
+            "type": "string"
+          },
+          "datatype": "external-id"
+        },
+        "type": "statement",
+        "id": "Q2664394$BE3724F5-77EB-4BC9-BD1A-9901756E7D01",
+        "rank": "normal",
+        "references": [
+          {
+            "hash": "3b0a5bb3c1f955edce73740124f7d935698092ad",
+            "snaks": {
+              "P248": [
+                {
+                  "snaktype": "value",
+                  "property": "P248",
+                  "hash": "3ac9682e789a3a3791d4fd088b265ea03abef101",
+                  "datavalue": {
+                    "value": {
+                      "entity-type": "item",
+                      "numeric-id": 51711,
+                      "id": "Q51711"
+                    },
+                    "type": "wikibase-entityid"
+                  },
+                  "datatype": "wikibase-item"
+                }
+              ]
+            },
+            "snaks-order": [
+              "P248"
+            ]
+          }
+        ]
+      }
+    ],
+    "P1269": [
+      {
+        "mainsnak": {
+          "snaktype": "value",
+          "property": "P1269",
+          "hash": "1960961b0af26aba5518d53fd7136120862e8c14",
+          "datavalue": {
+            "value": {
+              "entity-type": "item",
+              "numeric-id": 142,
+              "id": "Q142"
+            },
+            "type": "wikibase-entityid"
+          },
+          "datatype": "wikibase-item"
+        },
+        "type": "statement",
+        "id": "Q2664394$C568B954-0B2B-42FF-8482-A40E1CE40F6E",
+        "rank": "normal"
+      }
+    ],
+    "P31": [
+      {
+        "mainsnak": {
+          "snaktype": "value",
+          "property": "P31",
+          "hash": "4d245680b8c3f1d37022fc819823f3836dd718c8",
+          "datavalue": {
+            "value": {
+              "entity-type": "item",
+              "numeric-id": 66374263,
+              "id": "Q66374263"
+            },
+            "type": "wikibase-entityid"
+          },
+          "datatype": "wikibase-item"
+        },
+        "type": "statement",
+        "id": "Q2664394$879dbf79-4bc3-b75a-a9e7-075c85f1f276",
+        "rank": "normal",
+        "references": [
+          {
+            "hash": "9190d61e0d4cdfa308fa92f8e390a88c7880fb5b",
+            "snaks": {
+              "P813": [
+                {
+                  "snaktype": "value",
+                  "property": "P813",
+                  "hash": "4cf996bfd5b9b0ecc8fb3b612b043e3ed3f4fbec",
+                  "datavalue": {
+                    "value": {
+                      "time": "+2023-03-07T00:00:00Z",
+                      "timezone": 0,
+                      "before": 0,
+                      "after": 0,
+                      "precision": 11,
+                      "calendarmodel": "http://www.wikidata.org/entity/Q1985727"
+                    },
+                    "type": "time"
+                  },
+                  "datatype": "time"
+                }
+              ]
+            },
+            "snaks-order": [
+              "P813"
+            ]
+          }
+        ]
+      }
+    ],
+    "P4342": [
+      {
+        "mainsnak": {
+          "snaktype": "value",
+          "property": "P4342",
+          "hash": "fa8f4d8476fde748b049e17a53a88256af6f47ac",
+          "datavalue": {
+            "value": "Religion_i_Frankrike",
+            "type": "string"
+          },
+          "datatype": "external-id"
+        },
+        "type": "statement",
+        "id": "Q2664394$26A4A466-83A2-44A5-BEE6-B085B03E7C7F",
+        "rank": "normal"
+      }
+    ],
+    "P279": [
+      {
+        "mainsnak": {
+          "snaktype": "value",
+          "property": "P279",
+          "hash": "9404a4ca7c65285356768552f51ef0f376c54fc4",
+          "datavalue": {
+            "value": {
+              "entity-type": "item",
+              "numeric-id": 13198592,
+              "id": "Q13198592"
+            },
+            "type": "wikibase-entityid"
+          },
+          "datatype": "wikibase-item"
+        },
+        "type": "statement",
+        "id": "Q2664394$6cb09abe-434a-b083-273a-b24d6ab5f484",
+        "rank": "normal"
+      }
+    ],
+    "P17": [
+      {
+        "mainsnak": {
+          "snaktype": "value",
+          "property": "P17",
+          "hash": "c05db5d169c2560b9799d567a803d20a392f53e4",
+          "datavalue": {
+            "value": {
+              "entity-type": "item",
+              "numeric-id": 142,
+              "id": "Q142"
+            },
+            "type": "wikibase-entityid"
+          },
+          "datatype": "wikibase-item"
+        },
+        "type": "statement",
+        "id": "Q2664394$f7d95307-4067-eebb-c872-9bce3bc822f0",
+        "rank": "normal"
+      }
+    ],
+    "P361": [
+      {
+        "mainsnak": {
+          "snaktype": "value",
+          "property": "P361",
+          "hash": "91558cfa140e560112a9be29ab9647c3c2f1c533",
+          "datavalue": {
+            "value": {
+              "entity-type": "item",
+              "numeric-id": 1985804,
+              "id": "Q1985804"
+            },
+            "type": "wikibase-entityid"
+          },
+          "datatype": "wikibase-item"
+        },
+        "type": "statement",
+        "id": "Q2664394$365299c3-481c-4acf-5864-b4b1055063fd",
+        "rank": "normal"
+      }
+    ]
+  },
+  "sitelinks": {
+    "arwiki": {
+      "site": "arwiki",
+      "title": "الدين في فرنسا",
+      "badges": [],
+      "url": "https://ar.wikipedia.org/wiki/%D8%A7%D9%84%D8%AF%D9%8A%D9%86_%D9%81%D9%8A_%D9%81%D8%B1%D9%86%D8%B3%D8%A7"
+    },
+    "azwiki": {
+      "site": "azwiki",
+      "title": "Fransada din",
+      "badges": [],
+      "url": "https://az.wikipedia.org/wiki/Fransada_din"
+    },
+    "cswiki": {
+      "site": "cswiki",
+      "title": "Náboženství ve Francii",
+      "badges": [],
+      "url": "https://cs.wikipedia.org/wiki/N%C3%A1bo%C5%BEenstv%C3%AD_ve_Francii"
+    },
+    "dewikinews": {
+      "site": "dewikinews",
+      "title": "Kategorie:Religion in Frankreich",
+      "badges": [],
+      "url": "https://de.wikinews.org/wiki/Kategorie:Religion_in_Frankreich"
+    },
+    "enwiki": {
+      "site": "enwiki",
+      "title": "Religion in France",
+      "badges": [],
+      "url": "https://en.wikipedia.org/wiki/Religion_in_France"
+    },
+    "enwikiquote": {
+      "site": "enwikiquote",
+      "title": "Religion in France",
+      "badges": [],
+      "url": "https://en.wikiquote.org/wiki/Religion_in_France"
+    },
+    "eswiki": {
+      "site": "eswiki",
+      "title": "Religión en Francia",
+      "badges": [],
+      "url": "https://es.wikipedia.org/wiki/Religi%C3%B3n_en_Francia"
+    },
+    "euwiki": {
+      "site": "euwiki",
+      "title": "Erlijioa Frantzian",
+      "badges": [],
+      "url": "https://eu.wikipedia.org/wiki/Erlijioa_Frantzian"
+    },
+    "fiwiki": {
+      "site": "fiwiki",
+      "title": "Uskonto Ranskassa",
+      "badges": [],
+      "url": "https://fi.wikipedia.org/wiki/Uskonto_Ranskassa"
+    },
+    "frwiki": {
+      "site": "frwiki",
+      "title": "Religion en France",
+      "badges": [],
+      "url": "https://fr.wikipedia.org/wiki/Religion_en_France"
+    },
+    "hrwiki": {
+      "site": "hrwiki",
+      "title": "Religija u Francuskoj",
+      "badges": [],
+      "url": "https://hr.wikipedia.org/wiki/Religija_u_Francuskoj"
+    },
+    "itwiki": {
+      "site": "itwiki",
+      "title": "Religioni in Francia",
+      "badges": [],
+      "url": "https://it.wikipedia.org/wiki/Religioni_in_Francia"
+    },
+    "mkwiki": {
+      "site": "mkwiki",
+      "title": "Религија во Франција",
+      "badges": [],
+      "url": "https://mk.wikipedia.org/wiki/%D0%A0%D0%B5%D0%BB%D0%B8%D0%B3%D0%B8%D1%98%D0%B0_%D0%B2%D0%BE_%D0%A4%D1%80%D0%B0%D0%BD%D1%86%D0%B8%D1%98%D0%B0"
+    },
+    "nlwiki": {
+      "site": "nlwiki",
+      "title": "Religie in Frankrijk",
+      "badges": [],
+      "url": "https://nl.wikipedia.org/wiki/Religie_in_Frankrijk"
+    },
+    "plwiki": {
+      "site": "plwiki",
+      "title": "Religia we Francji",
+      "badges": [],
+      "url": "https://pl.wikipedia.org/wiki/Religia_we_Francji"
+    },
+    "ptwiki": {
+      "site": "ptwiki",
+      "title": "Religião na França",
+      "badges": [],
+      "url": "https://pt.wikipedia.org/wiki/Religi%C3%A3o_na_Fran%C3%A7a"
+    },
+    "rowiki": {
+      "site": "rowiki",
+      "title": "Religia în Franța",
+      "badges": [],
+      "url": "https://ro.wikipedia.org/wiki/Religia_%C3%AEn_Fran%C8%9Ba"
+    },
+    "ruwiki": {
+      "site": "ruwiki",
+      "title": "Религия во Франции",
+      "badges": [],
+      "url": "https://ru.wikipedia.org/wiki/%D0%A0%D0%B5%D0%BB%D0%B8%D0%B3%D0%B8%D1%8F_%D0%B2%D0%BE_%D0%A4%D1%80%D0%B0%D0%BD%D1%86%D0%B8%D0%B8"
+    },
+    "ruwikinews": {
+      "site": "ruwikinews",
+      "title": "Категория:Религия во Франции",
+      "badges": [],
+      "url": "https://ru.wikinews.org/wiki/%D0%9A%D0%B0%D1%82%D0%B5%D0%B3%D0%BE%D1%80%D0%B8%D1%8F:%D0%A0%D0%B5%D0%BB%D0%B8%D0%B3%D0%B8%D1%8F_%D0%B2%D0%BE_%D0%A4%D1%80%D0%B0%D0%BD%D1%86%D0%B8%D0%B8"
+    },
+    "sqwiki": {
+      "site": "sqwiki",
+      "title": "Feja në Francë",
+      "badges": [],
+      "url": "https://sq.wikipedia.org/wiki/Feja_n%C3%AB_Franc%C3%AB"
+    },
+    "tgwiki": {
+      "site": "tgwiki",
+      "title": "Дин дар Фаронса",
+      "badges": [],
+      "url": "https://tg.wikipedia.org/wiki/%D0%94%D0%B8%D0%BD_%D0%B4%D0%B0%D1%80_%D0%A4%D0%B0%D1%80%D0%BE%D0%BD%D1%81%D0%B0"
+    },
+    "trwiki": {
+      "site": "trwiki",
+      "title": "Fransa'da din",
+      "badges": [],
+      "url": "https://tr.wikipedia.org/wiki/Fransa%27da_din"
+    },
+    "ukwiki": {
+      "site": "ukwiki",
+      "title": "Релігія у Франції",
+      "badges": [],
+      "url": "https://uk.wikipedia.org/wiki/%D0%A0%D0%B5%D0%BB%D1%96%D0%B3%D1%96%D1%8F_%D1%83_%D0%A4%D1%80%D0%B0%D0%BD%D1%86%D1%96%D1%97"
+    }
+  }
+}

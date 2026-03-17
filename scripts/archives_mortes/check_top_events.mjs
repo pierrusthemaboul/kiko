@@ -14,3 +14,4 @@ async function checkTop() {
     top.forEach(([t, c]) => console.log(`${c} - ${t}`));
 }
 checkTop();
+

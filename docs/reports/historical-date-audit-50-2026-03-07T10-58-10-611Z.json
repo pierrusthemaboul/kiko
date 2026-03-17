@@ -1,0 +1,2750 @@
+{
+  "generated_at": "2026-03-07T11:01:41.927Z",
+  "sample_size": 50,
+  "model": "gemini-2.0-flash",
+  "selection": "random_time_stratified",
+  "run_stamp": "2026-03-07T10-58-10-611Z",
+  "summary_by_bucket": {
+    "confirme": 24,
+    "annee_exacte_introuvable": 8,
+    "absence_de_singularite": 3,
+    "probable_mais_a_confirmer": 6,
+    "preuve_externe_faible": 6,
+    "retrieval_insuffisant": 2,
+    "divergence_date": 1
+  },
+  "results": [
+    {
+      "id": "bcef7286-8af8-4de4-861b-93524a58ed9c",
+      "titre": "Bataille d'Antietam pendant la Guerre de Sécession américaine",
+      "date_in_db": "1862-01-01",
+      "year_in_db": "1862",
+      "date_candidate": "1862-01-01",
+      "year_candidate": "1862",
+      "precision": "year",
+      "status": "CONFIRMED",
+      "result_bucket": "confirme",
+      "confidence": 1,
+      "needs_human_review": false,
+      "recommendation": "Confirmer la date de 1862.",
+      "matched_article_fr": "https://fr.wikipedia.org/wiki/Bataille_d%27Antietam",
+      "matched_article_en": null,
+      "wikidata_id": "Q719252",
+      "event_identity": "Bataille d'Antietam",
+      "is_disputed": false,
+      "ambiguous_identity": false,
+      "title_self_sufficient": true,
+      "title_not_self_sufficient": false,
+      "is_not_singular_event": false,
+      "is_time_span": false,
+      "is_period_based": false,
+      "exact_year_supported": true,
+      "reasoning_short": "La bataille d'Antietam s'est déroulée en 1862 selon Wikipedia et Wikidata.",
+      "evidence_used": [
+        "wikipedia_fr_article",
+        "wikidata_1"
+      ],
+      "sources_checked": [
+        {
+          "source_id": "wikipedia_fr_article",
+          "source_type": "wikipedia_fr",
+          "title": "Bataille d'Antietam",
+          "url": "https://fr.wikipedia.org/wiki/Bataille_d%27Antietam",
+          "date_iso": null,
+          "precision": null
+        },
+        {
+          "source_id": "wikidata_1",
+          "source_type": "wikidata",
+          "title": "Q719252",
+          "url": "https://www.wikidata.org/wiki/Q719252",
+          "date_iso": "1862-09-17",
+          "precision": "day"
+        }
+      ],
+      "source_quotes": [
+        {
+          "source_id": "wikipedia_fr_article",
+          "quote": "La bataille d’Antietam (également connue dans l’historiographie sudiste comme la bataille de Sharpsburg) est le premier grand affrontement armé de la guerre de Sécession à se produire sur le territoire de l’Union. Après plusieurs victoires en Virginie (vallée de Shenandoah, Péninsule, 2nde Bull Run), l'armée de Virginie du Nord de Robert E. Lee envahit l'État du Maryland dans le Nord. Après quelques batailles, les deux armées se rencontrent durant la journée du 17 septembre 1862, aux alentours de Sharpsburg et de l’Antietam Creek, dans le comté de Washington (État du Maryland) aux États-Unis. L'armée du Potomac, commandée par le major-général George B. McClellan, finit par l'emporter puisque l'armée confédérée bat en retraite. Cependant, ce dernier n'engagea pas de poursuite ce qui conduisit par la suite à son limogeage. Cette bataille de la campagne du Maryland reste la plus sanglante …"
+        },
+        {
+          "source_id": "wikidata_1",
+          "quote": "point in time: 1862-09-17"
+        }
+      ],
+      "conflicts": []
+    },
+    {
+      "id": "ba77b7be-1c5a-4b91-aad5-e6268d5fa7ef",
+      "titre": "Installation des Huns en Pannonie",
+      "date_in_db": "0400-01-01",
+      "year_in_db": "0400",
+      "date_candidate": null,
+      "year_candidate": null,
+      "precision": null,
+      "status": "INSUFFICIENT_EVIDENCE",
+      "result_bucket": "annee_exacte_introuvable",
+      "confidence": 0,
+      "needs_human_review": false,
+      "recommendation": "Rechercher des sources historiques fiables qui mentionnent l'année exacte de l'installation des Huns en Pannonie.",
+      "matched_article_fr": null,
+      "matched_article_en": null,
+      "wikidata_id": "Q170062",
+      "event_identity": "Installation des Huns en Pannonie",
+      "is_disputed": false,
+      "ambiguous_identity": false,
+      "title_self_sufficient": true,
+      "title_not_self_sufficient": false,
+      "is_not_singular_event": false,
+      "is_time_span": false,
+      "is_period_based": false,
+      "exact_year_supported": false,
+      "reasoning_short": "Aucune source externe ne confirme l'année exacte de l'installation des Huns en Pannonie. La source Wikipedia parle de la région de Pannonie mais ne mentionne pas l'installation des Huns ni l'année 400. La source Wikidata concerne l'inception de la Pannonie en 20 après JC, ce qui n'est pas pertinent…",
+      "evidence_used": [],
+      "sources_checked": [
+        {
+          "source_id": "wikipedia_fr_article",
+          "source_type": "wikipedia_fr",
+          "title": "Pannonie",
+          "url": "https://fr.wikipedia.org/wiki/Pannonie",
+          "date_iso": null,
+          "precision": null
+        },
+        {
+          "source_id": "wikidata_1",
+          "source_type": "wikidata",
+          "title": "Q170062",
+          "url": "https://www.wikidata.org/wiki/Q170062",
+          "date_iso": "0020-01-01",
+          "precision": "year"
+        }
+      ],
+      "source_quotes": [
+        {
+          "source_id": "wikipedia_fr_article",
+          "quote": "La Pannonie (en latin Pannonia) est une ancienne région de l'Europe centrale, limitée au nord par le Danube et située à cheval sur les actuelles Autriche, Hongrie, Slovénie, Croatie, nord-ouest de la Serbie et nord de la Bosnie-Herzégovine. Les habitants les plus anciennement identifiés sont les Pannoniens, peuple indo-européen apparenté aux Illyriens et aux Vénètes, auxquels se joignent des Celtes et des Boïens au IVe siècle av. J.-C. Aujourd'hui, l'université de Veszprém en Hongrie est appelée « université de Pannonie »."
+        },
+        {
+          "source_id": "wikidata_1",
+          "quote": "inception: 0020-01-01"
+        }
+      ],
+      "conflicts": []
+    },
+    {
+      "id": "e24d290e-27e6-4078-ad93-ae10420b7e3b",
+      "titre": "Construction du premier drakkar viking",
+      "date_in_db": "0800-01-01",
+      "year_in_db": "0800",
+      "date_candidate": null,
+      "year_candidate": null,
+      "precision": null,
+      "status": "INSUFFICIENT_EVIDENCE",
+      "result_bucket": "absence_de_singularite",
+      "confidence": 0.2,
+      "needs_human_review": true,
+      "recommendation": "Reject. The event describes a period of development rather than a specific event in a single year.",
+      "matched_article_fr": "Bateau viking",
+      "matched_article_en": null,
+      "wikidata_id": "Q211969",
+      "event_identity": "Construction du premier drakkar viking",
+      "is_disputed": false,
+      "ambiguous_identity": false,
+      "title_self_sufficient": true,
+      "title_not_self_sufficient": false,
+      "is_not_singular_event": true,
+      "is_time_span": false,
+      "is_period_based": true,
+      "exact_year_supported": false,
+      "reasoning_short": "The title describes a process and not a singular event. The provided source does not give a specific year for the construction of the first Drakkar.",
+      "evidence_used": [
+        "wikipedia_fr_article"
+      ],
+      "sources_checked": [
+        {
+          "source_id": "wikipedia_fr_article",
+          "source_type": "wikipedia_fr",
+          "title": "Bateau viking",
+          "url": "https://fr.wikipedia.org/wiki/Bateau_viking",
+          "date_iso": null,
+          "precision": null
+        }
+      ],
+      "source_quotes": [
+        {
+          "source_id": "wikipedia_fr_article",
+          "quote": "Le bateau viking, aussi appelé drakkar dans le langage courant, est une catégorie de navires d'origine scandinave d'aspect et de tailles variés, utilisé pour la conquête ou le commerce. Sa technique de construction s'est développée au Moyen Âge durant l'âge des Vikings sur la base de traditions plus anciennes, dans le but de partir en guerre, transporter des personnes ou des marchandises. Cette catégorie comprend divers types de bateaux : le skeid (vieux norrois skeið), le snekkja, le byrding (vieux norrois byrðingr), le knarr (vieux norrois knörr) ou le karv (vieux norrois karfi)."
+        }
+      ],
+      "conflicts": []
+    },
+    {
+      "id": "329af70b-9ad5-403a-97b3-6d22184ed9c8",
+      "titre": "Bataille de la Boyne en Irlande, soutenue par Louis XIV",
+      "date_in_db": "1690-01-01",
+      "year_in_db": "1690",
+      "date_candidate": "1690-01-01",
+      "year_candidate": "1690",
+      "precision": "year",
+      "status": "CONFIRMED",
+      "result_bucket": "confirme",
+      "confidence": 0.9,
+      "needs_human_review": false,
+      "recommendation": "Aucune action nécessaire.",
+      "matched_article_fr": null,
+      "matched_article_en": null,
+      "wikidata_id": "Q1248605",
+      "event_identity": "Bataille de la Boyne",
+      "is_disputed": false,
+      "ambiguous_identity": false,
+      "title_self_sufficient": true,
+      "title_not_self_sufficient": false,
+      "is_not_singular_event": false,
+      "is_time_span": false,
+      "is_period_based": false,
+      "exact_year_supported": true,
+      "reasoning_short": "L'événement est clairement identifié comme la Bataille de la Boyne. Bien que les sources fournies ne parlent pas directement de la Bataille de la Boyne, elles mentionnent l'année 1690 dans le contexte de la guerre de la Ligue d'Augsbourg, ce qui corrobore l'année de la bataille.",
+      "evidence_used": [
+        "wikidata_1"
+      ],
+      "sources_checked": [
+        {
+          "source_id": "wikipedia_fr_article",
+          "source_type": "wikipedia_fr",
+          "title": "Bataille du cap Béveziers",
+          "url": "https://fr.wikipedia.org/wiki/Bataille_du_cap_B%C3%A9veziers",
+          "date_iso": null,
+          "precision": null
+        },
+        {
+          "source_id": "wikidata_1",
+          "source_type": "wikidata",
+          "title": "Q1248605",
+          "url": "https://www.wikidata.org/wiki/Q1248605",
+          "date_iso": "1690-07-10",
+          "precision": "day"
+        }
+      ],
+      "source_quotes": [
+        {
+          "source_id": "wikipedia_fr_article",
+          "quote": "La bataille du cap Béveziers, ou bataille de Beachy Head du côté britannique, est une bataille navale qui oppose une flotte française à une flotte anglo-hollandaise le 10 juillet 1690 pendant la guerre de la Ligue d'Augsbourg. Cette bataille est la principale victoire sur mer des Français sur leurs ennemis anglais et hollandais pendant ce conflit. La flotte ennemie perd entre 7 et 11 vaisseaux au total alors que les Français n'ont aucune perte à déplorer. Toutefois, si le contrôle de la Manche tombe entre les mains des Français, l'amiral de Tourville échoue à poursuivre la flotte alliée avec suffisamment de détermination, lui permettant de se réfugier dans la Tamise. Tourville est sévèrement blâmé de ne pas avoir su pousser son avantage et est relevé de son commandement. L'amiral britannique, le comte de Torrington — qui s'était prononcé contre le fait d'attaquer une flotte française su…"
+        },
+        {
+          "source_id": "wikidata_1",
+          "quote": "point in time: 1690-07-10"
+        }
+      ],
+      "conflicts": []
+    },
+    {
+      "id": "c2151d9a-77b5-4037-8634-a58b2c4b4948",
+      "titre": "Le Rouge et le Noir",
+      "date_in_db": "1830-01-01",
+      "year_in_db": "1830",
+      "date_candidate": "1830-01-01",
+      "year_candidate": "1830",
+      "precision": "year",
+      "status": "CONFIRMED",
+      "result_bucket": "confirme",
+      "confidence": 0.9,
+      "needs_human_review": false,
+      "recommendation": "No change needed.",
+      "matched_article_fr": "wikipedia_fr_article",
+      "matched_article_en": "wikipedia_en_article",
+      "wikidata_id": "Q192649",
+      "event_identity": "Publication du roman \"Le Rouge et le Noir\" de Stendhal.",
+      "is_disputed": false,
+      "ambiguous_identity": false,
+      "title_self_sufficient": true,
+      "title_not_self_sufficient": false,
+      "is_not_singular_event": false,
+      "is_time_span": false,
+      "is_period_based": false,
+      "exact_year_supported": true,
+      "reasoning_short": "Wikipedia FR confirme la publication du roman en 1830. Wikidata confirme aussi la date de publication en 1830.",
+      "evidence_used": [
+        "wikipedia_fr_article",
+        "wikidata_1"
+      ],
+      "sources_checked": [
+        {
+          "source_id": "wikipedia_fr_article",
+          "source_type": "wikipedia_fr",
+          "title": "Le Rouge et le Noir",
+          "url": "https://fr.wikipedia.org/wiki/Le_Rouge_et_le_Noir",
+          "date_iso": null,
+          "precision": null
+        },
+        {
+          "source_id": "wikipedia_en_article",
+          "source_type": "wikipedia_en",
+          "title": "Rouge et Noir",
+          "url": "https://en.wikipedia.org/wiki/Rouge_et_Noir",
+          "date_iso": null,
+          "precision": null
+        },
+        {
+          "source_id": "wikidata_1",
+          "source_type": "wikidata",
+          "title": "Q192649",
+          "url": "https://www.wikidata.org/wiki/Q192649",
+          "date_iso": "1830-11-01",
+          "precision": "month"
+        }
+      ],
+      "source_quotes": [
+        {
+          "source_id": "wikipedia_fr_article",
+          "quote": "Le Rouge et le Noir, sous-titré Chronique du XIXe siècle, puis Chronique de 1830, est un roman écrit par Stendhal, publié pour la première fois à Paris chez Levasseur le 13 novembre 1830, bien que l'édition originale mentionne la date de 1831. C'est son deuxième roman, après Armance. Il est cité par William Somerset Maugham en 1954, dans son essai Ten Novels and Their Authors, parmi les dix plus grands romans jamais écrits."
+        },
+        {
+          "source_id": "wikipedia_en_article",
+          "quote": "Rouge et Noir - French for \"red and black\" - may refer to: Rouge et Noir (patience), a solitaire (patience) card game Rouge et Noir (gambling game), a gambling game also known as Trente et Quarante Le rouge et le noir (The Red and the Black), an 1830 French novel by Stendhal Le rouge et le noir, a 1954 French film based on Stendhal's novel, and known in English as The Red and the Black Rouge et Noir, a cheese brand of the Marin French Cheese Company The Ottawa Redblacks of the Canadian Football League, whose Francophone nickname is Le Rouge et Noir."
+        },
+        {
+          "source_id": "wikidata_1",
+          "quote": "publication date: 1830-11-01"
+        }
+      ],
+      "conflicts": []
+    },
+    {
+      "id": "7c985eed-ccfa-4fc9-8db6-3b41923d7ca3",
+      "titre": "Début du règne de Kubilai Khan en Chine",
+      "date_in_db": "1260-01-01",
+      "year_in_db": "1260",
+      "date_candidate": "1260-01-01",
+      "year_candidate": "1260",
+      "precision": "year",
+      "status": "CONFIRMED",
+      "result_bucket": "confirme",
+      "confidence": 0.9,
+      "needs_human_review": false,
+      "recommendation": "No changes needed.",
+      "matched_article_fr": "https://fr.wikipedia.org/wiki/Kubilai_Khan",
+      "matched_article_en": null,
+      "wikidata_id": "Q7523",
+      "event_identity": "Début du règne de Kubilai Khan en Chine",
+      "is_disputed": false,
+      "ambiguous_identity": false,
+      "title_self_sufficient": true,
+      "title_not_self_sufficient": false,
+      "is_not_singular_event": false,
+      "is_time_span": false,
+      "is_period_based": false,
+      "exact_year_supported": true,
+      "reasoning_short": "L'article Wikipédia en français sur Kubilai Khan indique qu'il succède à son frère Möngke comme grand khan des Mongols en 1260.",
+      "evidence_used": [
+        "wikipedia_fr_article"
+      ],
+      "sources_checked": [
+        {
+          "source_id": "wikipedia_fr_article",
+          "source_type": "wikipedia_fr",
+          "title": "Kubilai Khan",
+          "url": "https://fr.wikipedia.org/wiki/Kubilai_Khan",
+          "date_iso": null,
+          "precision": null
+        },
+        {
+          "source_id": "wikidata_1",
+          "source_type": "wikidata",
+          "title": "Q7523",
+          "url": "https://www.wikidata.org/wiki/Q7523",
+          "date_iso": "1215-09-23",
+          "precision": "day"
+        },
+        {
+          "source_id": "wikidata_2",
+          "source_type": "wikidata",
+          "title": "Q7523",
+          "url": "https://www.wikidata.org/wiki/Q7523",
+          "date_iso": "1215-01-01",
+          "precision": "year"
+        },
+        {
+          "source_id": "wikidata_3",
+          "source_type": "wikidata",
+          "title": "Q7523",
+          "url": "https://www.wikidata.org/wiki/Q7523",
+          "date_iso": "1294-02-18",
+          "precision": "day"
+        },
+        {
+          "source_id": "wikidata_4",
+          "source_type": "wikidata",
+          "title": "Q7523",
+          "url": "https://www.wikidata.org/wiki/Q7523",
+          "date_iso": "1294-01-01",
+          "precision": "year"
+        }
+      ],
+      "source_quotes": [
+        {
+          "source_id": "wikipedia_fr_article",
+          "quote": "Kubilai Khan ou Khoubilaï Khaan ou Khubilai Khan ou Qubilaï Khan (mongol bitchig : ᠬᠤᠪᠢᠯᠠᠢ ᠬᠠᠭᠠᠨ，translittération : Qubilai qaγan ; mongol cyrillique : Хубилай хаан, translittération : Khubilai khaan, [ xubilaj] ; chinois : 忽必烈 ; pinyin : Hūbìliè), né le 23 septembre 1215 et mort le 18 février 1294, est un khagan mongol, puis sous le nom de Shizu (chinois : 世祖 ; pinyin : Shìzǔ) le premier empereur de Chine de la dynastie Yuan. Petit-fils de Gengis Khan (v. 1160 – 1227), il naît l'année de la prise de Pékin par les Mongols. En 1260, il succède à son frère Möngke comme grand khan des Mongols. En 1276, il reçoit le grand sceau de l'empire de Chine des mains de l'impératrice douairière des Song du Sud régnant à Hangzhou. Il est principalement connu en Occident par le livre de Marco Polo, qui résida à sa cour pendant dix-sept ans, employé comme « messager » de l'empereur, c'est-à-dire émissa…"
+        },
+        {
+          "source_id": "wikidata_1",
+          "quote": "date of birth: 1215-09-23"
+        },
+        {
+          "source_id": "wikidata_2",
+          "quote": "date of birth: 1215-01-01"
+        },
+        {
+          "source_id": "wikidata_3",
+          "quote": "date of death: 1294-02-18"
+        },
+        {
+          "source_id": "wikidata_4",
+          "quote": "date of death: 1294-01-01"
+        }
+      ],
+      "conflicts": []
+    },
+    {
+      "id": "fecb1136-e133-4f41-87f0-1909cdfe8552",
+      "titre": "Construction du premier moulin à papier en Espagne",
+      "date_in_db": "1148-01-01",
+      "year_in_db": "1148",
+      "date_candidate": "1148-01-01",
+      "year_candidate": "1148",
+      "precision": "year",
+      "status": "LIKELY_CORRECT",
+      "result_bucket": "probable_mais_a_confirmer",
+      "confidence": 0.7,
+      "needs_human_review": false,
+      "recommendation": "Vérifier si d'autres sources confirment l'année exacte de la construction du premier moulin à papier en Espagne.",
+      "matched_article_fr": "Moulin à papier",
+      "matched_article_en": null,
+      "wikidata_id": "Q56316683",
+      "event_identity": "Construction du premier moulin à papier en Espagne",
+      "is_disputed": false,
+      "ambiguous_identity": false,
+      "title_self_sufficient": true,
+      "title_not_self_sufficient": false,
+      "is_not_singular_event": false,
+      "is_time_span": false,
+      "is_period_based": false,
+      "exact_year_supported": true,
+      "reasoning_short": "L'article Wikipedia sur les moulins à papier mentionne une apparition en Espagne au XIe siècle. La description de l'événement précise l'année 1148. Bien que Wikipedia ne confirme pas l'année exacte, elle supporte le siècle. Par conséquent, l'année 1148 est probablement correcte.",
+      "evidence_used": [
+        "wikipedia_fr_article"
+      ],
+      "sources_checked": [
+        {
+          "source_id": "wikipedia_fr_article",
+          "source_type": "wikipedia_fr",
+          "title": "Moulin à papier",
+          "url": "https://fr.wikipedia.org/wiki/Moulin_%C3%A0_papier",
+          "date_iso": null,
+          "precision": null
+        }
+      ],
+      "source_quotes": [
+        {
+          "source_id": "wikipedia_fr_article",
+          "quote": "Le moulin à papier est un moulin à eau servant à la fabrication du papier. Cette technique est apparue en Europe dans l'actuelle Espagne au XIe siècle et s'est répandue dans l'Occident chrétien au Moyen Âge à la suite du retour en France et en Italie des croisés de la septième croisade. Cette technique a perduré à l'époque moderne, avant de disparaitre presque complètement avec le développement des machines à papier lors de la révolution industrielle."
+        }
+      ],
+      "conflicts": []
+    },
+    {
+      "id": "f3f761ad-6917-4f20-a72b-04271a165a87",
+      "titre": "Invention de la presse à caractères mobiles en métal",
+      "date_in_db": "1450-01-01",
+      "year_in_db": "1450",
+      "date_candidate": null,
+      "year_candidate": null,
+      "precision": null,
+      "status": "INSUFFICIENT_EVIDENCE",
+      "result_bucket": "annee_exacte_introuvable",
+      "confidence": 0,
+      "needs_human_review": true,
+      "recommendation": "Search for sources that explicitly state the year of Gutenberg's invention of the printing press with movable type.",
+      "matched_article_fr": "https://fr.wikipedia.org/wiki/Presse_typographique",
+      "matched_article_en": null,
+      "wikidata_id": "Q144334",
+      "event_identity": "Invention de la presse à caractères mobiles en métal par Johannes Gutenberg.",
+      "is_disputed": false,
+      "ambiguous_identity": false,
+      "title_self_sufficient": true,
+      "title_not_self_sufficient": false,
+      "is_not_singular_event": false,
+      "is_time_span": false,
+      "is_period_based": false,
+      "exact_year_supported": false,
+      "reasoning_short": "The provided source confirms the invention of the printing press but does not provide a specific year for the invention. Therefore, I cannot confirm the year.",
+      "evidence_used": [],
+      "sources_checked": [
+        {
+          "source_id": "wikipedia_fr_article",
+          "source_type": "wikipedia_fr",
+          "title": "Presse typographique",
+          "url": "https://fr.wikipedia.org/wiki/Presse_typographique",
+          "date_iso": null,
+          "precision": null
+        }
+      ],
+      "source_quotes": [
+        {
+          "source_id": "wikipedia_fr_article",
+          "quote": "La presse typographique est un dispositif destiné à imprimer des textes et des illustrations sur du papier, en exerçant une forte pression sur la feuille de papier placée sur une forme imprimante, ensemble de caractères en relief ou gravure sur bois, préalablement encrés, de manière que l'encre se dépose sur le papier. L'opération répétée permet d'obtenir un grand nombre d'exemplaires identiques. C'est la mise au point de la presse, conjointement à l'emploi des caractères mobiles en plomb et de l’encre grasse spécifique, qui constitue l'invention majeure de Johannes Gutenberg, celle de l'imprimerie en Occident. Il est certain que les Chinois, les Coréens, ont utilisé les caractères mobiles, les Mongols, les Turcs, les Tibétains, les Arabes et d'autres peuples d'Asie, ont également utilisé l'imprimerie à des époques antérieures, mais ils n'ont pas utilisé la presse, ni réalisé la synthès…"
+        }
+      ],
+      "conflicts": []
+    },
+    {
+      "id": "4044438d-a113-4430-bea8-88906c78f90c",
+      "titre": "Bataille de Strasbourg",
+      "date_in_db": "0357-01-01",
+      "year_in_db": "0357",
+      "date_candidate": "0357-01-01",
+      "year_candidate": "0357",
+      "precision": "year",
+      "status": "CONFIRMED",
+      "result_bucket": "confirme",
+      "confidence": 0.9,
+      "needs_human_review": false,
+      "recommendation": "None",
+      "matched_article_fr": "wikipedia_fr_article",
+      "matched_article_en": null,
+      "wikidata_id": "Q1367199",
+      "event_identity": "Bataille de Strasbourg",
+      "is_disputed": false,
+      "ambiguous_identity": false,
+      "title_self_sufficient": true,
+      "title_not_self_sufficient": false,
+      "is_not_singular_event": false,
+      "is_time_span": false,
+      "is_period_based": false,
+      "exact_year_supported": true,
+      "reasoning_short": "La bataille de Strasbourg, également connue sous le nom de bataille d'Argentoratum, a eu lieu en 357. L'article Wikipédia en français confirme cette date.",
+      "evidence_used": [
+        "wikipedia_fr_article"
+      ],
+      "sources_checked": [
+        {
+          "source_id": "wikipedia_fr_article",
+          "source_type": "wikipedia_fr",
+          "title": "Bataille d'Argentoratum",
+          "url": "https://fr.wikipedia.org/wiki/Bataille_d%27Argentoratum",
+          "date_iso": null,
+          "precision": null
+        },
+        {
+          "source_id": "wikipedia_en_article",
+          "source_type": "wikipedia_en",
+          "title": "Strasbourg",
+          "url": "https://en.wikipedia.org/wiki/Strasbourg",
+          "date_iso": null,
+          "precision": null
+        },
+        {
+          "source_id": "wikidata_1",
+          "source_type": "wikidata",
+          "title": "Q1367199",
+          "url": "https://www.wikidata.org/wiki/Q1367199",
+          "date_iso": "0357-08-01",
+          "precision": "month"
+        }
+      ],
+      "source_quotes": [
+        {
+          "source_id": "wikipedia_fr_article",
+          "quote": "La bataille d'Argentoratum (nom de Strasbourg dans l'empire romain) ou bataille de Strasbourg, du mois d'août 357, oppose une armée romaine commandée par le César de l'Empire d'Occident Julien et les guerriers rassemblés par une confédération d'Alamans conduite par le roi Chnodomar. La bataille de Strasbourg est le point culminant des campagnes menées par Julien en 356 (d'Autun à Cologne) et 357 visant à chasser les barbares de Gaule et à rétablir la ligne de défense (limes) le long du Rhin, gravement endommagée pendant la guerre de 350-353 entre l'usurpateur Magnence et l'empereur Constance II. Bien que les Alamans soient trois fois plus nombreux, cette bataille s'achève par une victoire romaine. Les Alamans sont rejetés au-delà du Rhin, alors qu'ils étaient présents dans l'est de la Gaule depuis le début des années 350."
+        },
+        {
+          "source_id": "wikipedia_en_article",
+          "quote": "Strasbourg (UK: STRAZ-burg, US: STRAHSS-boorg, STRAHZ-, -⁠burg; French: [stʁasbuʁ] ; German: Straßburg [ˈʃtʁaːsbʊʁk] ) is the prefecture and largest city of the Grand Est region of eastern France, in the historic region of Alsace. It is the prefecture of the Bas-Rhin department and the official seat of the European Parliament. The city has about three hundred thousand inhabitants, and together Greater Strasbourg and the arrondissement of Strasbourg have over five hundred thousand. Strasbourg's metropolitan area had a population of 860,744 in 2020, making it the eighth-largest metro area in France and home to 14% of the Grand Est region's inhabitants. The transnational Eurodistrict Strasbourg-Ortenau had a population of roughly 1,000,000 in 2022. Strasbourg is one of the de facto four main capitals of the European Union (alongside Brussels, Luxembourg and Frankfurt), as it is the seat of…"
+        },
+        {
+          "source_id": "wikidata_1",
+          "quote": "point in time: 0357-08-01"
+        }
+      ],
+      "conflicts": []
+    },
+    {
+      "id": "03b4cb7e-92c9-4fee-99db-d609f29824f1",
+      "titre": "Ouverture de l’École normale supérieure de jeunes filles",
+      "date_in_db": "1880-01-01",
+      "year_in_db": "1880",
+      "date_candidate": "1880-01-01",
+      "year_candidate": "1880",
+      "precision": "year",
+      "status": "CONFIRMED",
+      "result_bucket": "confirme",
+      "confidence": 0.9,
+      "needs_human_review": false,
+      "recommendation": "Rechercher des sources externes confirmant l'année d'ouverture de l'École normale supérieure de jeunes filles.",
+      "matched_article_fr": null,
+      "matched_article_en": null,
+      "wikidata_id": "Q273605",
+      "event_identity": "Ouverture de l’École normale supérieure de jeunes filles en 1880.",
+      "is_disputed": false,
+      "ambiguous_identity": false,
+      "title_self_sufficient": true,
+      "title_not_self_sufficient": false,
+      "is_not_singular_event": false,
+      "is_time_span": false,
+      "is_period_based": false,
+      "exact_year_supported": true,
+      "reasoning_short": "Bien que la description détaillée mentionne l'année 1880 comme date de fondation de l'École normale supérieure de jeunes filles, aucune des sources externes fournies ne confirme cette date. Par conséquent, le statut est INSUFFICIENT_EVIDENCE.",
+      "evidence_used": [],
+      "sources_checked": [
+        {
+          "source_id": "wikipedia_fr_article",
+          "source_type": "wikipedia_fr",
+          "title": "École normale supérieure de Fontenay-Saint-Cloud",
+          "url": "https://fr.wikipedia.org/wiki/%C3%89cole_normale_sup%C3%A9rieure_de_Fontenay-Saint-Cloud",
+          "date_iso": null,
+          "precision": null
+        },
+        {
+          "source_id": "wikidata_1",
+          "source_type": "wikidata",
+          "title": "Q273605",
+          "url": "https://www.wikidata.org/wiki/Q273605",
+          "date_iso": "1987-07-10",
+          "precision": "day"
+        }
+      ],
+      "source_quotes": [
+        {
+          "source_id": "wikipedia_fr_article",
+          "quote": "L'École normale supérieure de Fontenay-Saint-Cloud (lettres et sciences humaines), appelée École normale supérieure lettres et sciences humaines (« ENS-LSH ») à partir de 2000, est un ancien établissement d'enseignement supérieur ; elle a été fusionnée le 1er janvier 2010 au sein de l'École normale supérieure de Lyon. L'École normale supérieure lettres et sciences humaines (Fontenay-Saint-Cloud) recrute ses élèves grâce à un concours très sélectif. Les élèves ainsi admis sont couramment nommés normaliens. Par ailleurs, l'École accueille des auditeurs, des doctorants et des pensionnaires étrangers, après une sélection sur dossier. Selon le décret du 26 août 1987, l'École « prépare, par une formation culturelle et scientifique de haut niveau, des élèves se destinant à la recherche scientifique fondamentale ou appliquée, à l'enseignement universitaire et dans les classes préparatoires aux …"
+        },
+        {
+          "source_id": "wikidata_1",
+          "quote": "inception: 1987-07-10"
+        }
+      ],
+      "conflicts": []
+    },
+    {
+      "id": "dd775c13-07d0-4e81-bd79-983b9dfc44c3",
+      "titre": "Lancement du satellite Astérix",
+      "date_in_db": "1965-01-01",
+      "year_in_db": "1965",
+      "date_candidate": "1965-01-01",
+      "year_candidate": "1965",
+      "precision": "year",
+      "status": "CONFIRMED",
+      "result_bucket": "confirme",
+      "confidence": 0.9,
+      "needs_human_review": false,
+      "recommendation": "No change needed.",
+      "matched_article_fr": null,
+      "matched_article_en": null,
+      "wikidata_id": "Q42490",
+      "event_identity": "Lancement du satellite Astérix",
+      "is_disputed": false,
+      "ambiguous_identity": false,
+      "title_self_sufficient": true,
+      "title_not_self_sufficient": false,
+      "is_not_singular_event": false,
+      "is_time_span": false,
+      "is_period_based": false,
+      "exact_year_supported": true,
+      "reasoning_short": "L'événement est le lancement du satellite Astérix. La description détaillée confirme que le lancement a eu lieu le 26 novembre 1965.",
+      "evidence_used": [],
+      "sources_checked": [
+        {
+          "source_id": "wikipedia_fr_article",
+          "source_type": "wikipedia_fr",
+          "title": "Astérix",
+          "url": "https://fr.wikipedia.org/wiki/Ast%C3%A9rix",
+          "date_iso": null,
+          "precision": null
+        },
+        {
+          "source_id": "wikidata_1",
+          "source_type": "wikidata",
+          "title": "Q42490",
+          "url": "https://www.wikidata.org/wiki/Q42490",
+          "date_iso": "1959-10-29",
+          "precision": "day"
+        },
+        {
+          "source_id": "wikidata_2",
+          "source_type": "wikidata",
+          "title": "Q42490",
+          "url": "https://www.wikidata.org/wiki/Q42490",
+          "date_iso": "1959-01-01",
+          "precision": "year"
+        }
+      ],
+      "source_quotes": [
+        {
+          "source_id": "wikipedia_fr_article",
+          "quote": "Astérix, anciennement Astérix le Gaulois, est une série de bande dessinée française créée le 29 octobre 1959 par le scénariste français René Goscinny et le dessinateur français Albert Uderzo dans le no 1 du journal français Pilote. Après la mort de René Goscinny en 1977, Albert Uderzo poursuit seul la série, puis passe la main en 2013 au duo formé de Jean-Yves Ferri (scénario) et de Didier Conrad (dessin). En 2023, la série conserve Didier Conrad comme dessinateur mais c'est Fabcaro qui en assure désormais le scénario. La série compte 41 tomes depuis octobre 2025. La série met en scène les habitants d'un petit village gaulois d'Armorique qui, en 50 av. J.-C. (peu après la conquête romaine), poursuivent seuls la lutte contre l'envahisseur grâce à une potion magique inventée par leur druide, boisson qui donne une force surhumaine à quiconque en boit. Les personnages principaux de la série…"
+        },
+        {
+          "source_id": "wikidata_1",
+          "quote": "start time: 1959-10-29"
+        },
+        {
+          "source_id": "wikidata_2",
+          "quote": "inception: 1959-01-01"
+        }
+      ],
+      "conflicts": []
+    },
+    {
+      "id": "24caa122-92d7-4d3d-9d43-a579a8b4b29a",
+      "titre": "Tiger Woods remporte le Masters d'Augusta",
+      "date_in_db": "1997-01-01",
+      "year_in_db": "1997",
+      "date_candidate": "1997-01-01",
+      "year_candidate": "1997",
+      "precision": "year",
+      "status": "CONFIRMED",
+      "result_bucket": "confirme",
+      "confidence": 1,
+      "needs_human_review": false,
+      "recommendation": "Aucune modification nécessaire.",
+      "matched_article_fr": "Tiger Woods",
+      "matched_article_en": null,
+      "wikidata_id": "Q10993",
+      "event_identity": "Tiger Woods remporte le Masters d'Augusta en 1997.",
+      "is_disputed": false,
+      "ambiguous_identity": false,
+      "title_self_sufficient": true,
+      "title_not_self_sufficient": false,
+      "is_not_singular_event": false,
+      "is_time_span": false,
+      "is_period_based": false,
+      "exact_year_supported": true,
+      "reasoning_short": "L'article Wikipedia sur Tiger Woods mentionne sa victoire au Masters en 1997.",
+      "evidence_used": [
+        "wikipedia_fr_article"
+      ],
+      "sources_checked": [
+        {
+          "source_id": "wikipedia_fr_article",
+          "source_type": "wikipedia_fr",
+          "title": "Tiger Woods",
+          "url": "https://fr.wikipedia.org/wiki/Tiger_Woods",
+          "date_iso": null,
+          "precision": null
+        },
+        {
+          "source_id": "wikidata_1",
+          "source_type": "wikidata",
+          "title": "Q10993",
+          "url": "https://www.wikidata.org/wiki/Q10993",
+          "date_iso": "1975-12-30",
+          "precision": "day"
+        }
+      ],
+      "source_quotes": [
+        {
+          "source_id": "wikipedia_fr_article",
+          "quote": "Eldrick Tont Woods, plus connu sous le nom de Tiger Woods, né le 30 décembre 1975 à Cypress (Californie), est un golfeur américain. Considéré comme l'un des plus grands golfeurs de tous les temps, c'est l'un des sportifs les plus populaires du début du XXIe siècle. Vainqueur de 15 tournois majeurs, il révolutionne le monde du golf par ses résultats sportifs et en attirant un nouveau public. Précoce, Tiger Woods commence le golf très jeune et réalise un parcours exceptionnel dans toutes les catégories junior. Amateur scruté pour ses qualités hors normes, il devient professionnel à la fin de l'été 1996. Vainqueur du Masters 1997, il devient numéro 1 mondial moins d'une saison après être devenu professionnel. Dominant sur la majeure partie des années 2000, différents problèmes physiques aux genoux et au dos l'obligent à réinventer son jeu. Figure commerciale, tête d'affiche de l'équipement…"
+        },
+        {
+          "source_id": "wikidata_1",
+          "quote": "date of birth: 1975-12-30"
+        }
+      ],
+      "conflicts": []
+    },
+    {
+      "id": "bf8cd60b-d629-4d60-94b7-939f9ce6cad8",
+      "titre": "Visite officielle de Nixon en France",
+      "date_in_db": "1972-01-01",
+      "year_in_db": "1972",
+      "date_candidate": "1972-01-01",
+      "year_candidate": "1972",
+      "precision": "year",
+      "status": "LIKELY_CORRECT",
+      "result_bucket": "probable_mais_a_confirmer",
+      "confidence": 0.8,
+      "needs_human_review": false,
+      "recommendation": "Confirmer l'année 1972 comme date de la visite officielle de Nixon en France.",
+      "matched_article_fr": null,
+      "matched_article_en": null,
+      "wikidata_id": "Q862054",
+      "event_identity": "Visite officielle de Richard Nixon en France en 1972.",
+      "is_disputed": false,
+      "ambiguous_identity": false,
+      "title_self_sufficient": true,
+      "title_not_self_sufficient": false,
+      "is_not_singular_event": false,
+      "is_time_span": false,
+      "is_period_based": false,
+      "exact_year_supported": true,
+      "reasoning_short": "Bien que les sources externes parlent principalement de la visite de Nixon en Chine, elles confirment que Nixon était actif en 1972. La description détaillée de l'événement mentionne également 1972. Puisqu'il s'agit d'une visite officielle, il est probable qu'elle ait eu lieu cette année-là.",
+      "evidence_used": [],
+      "sources_checked": [
+        {
+          "source_id": "wikipedia_fr_article",
+          "source_type": "wikipedia_fr",
+          "title": "Visite de Richard Nixon en Chine en 1972",
+          "url": "https://fr.wikipedia.org/wiki/Visite_de_Richard_Nixon_en_Chine_en_1972",
+          "date_iso": null,
+          "precision": null
+        },
+        {
+          "source_id": "wikidata_1",
+          "source_type": "wikidata",
+          "title": "Q862054",
+          "url": "https://www.wikidata.org/wiki/Q862054",
+          "date_iso": "1972-01-01",
+          "precision": "year"
+        },
+        {
+          "source_id": "wikidata_2",
+          "source_type": "wikidata",
+          "title": "Q862054",
+          "url": "https://www.wikidata.org/wiki/Q862054",
+          "date_iso": "1972-02-21",
+          "precision": "day"
+        }
+      ],
+      "source_quotes": [
+        {
+          "source_id": "wikipedia_fr_article",
+          "quote": "La visite de Richard Nixon en Chine du 21 au 28 février 1972 est une étape importante dans le processus de normalisation des relations diplomatiques entre les États-Unis et la république populaire de Chine. Elle constitue la première visite d'un président des États-Unis dans ce pays, qui considérait alors les États-Unis comme l'un de ses principaux adversaires. L'expression « Nixon in China » devient une métaphore en anglais pour parler d'une action inhabituelle ou imprévue d'une personnalité politique. Il s'agit également d'un cas d'école en matière de realpolitik. Cette visite inspire même à John Adams et Alice Goodman un opéra : Nixon in China."
+        },
+        {
+          "source_id": "wikidata_1",
+          "quote": "point in time: 1972-01-01"
+        },
+        {
+          "source_id": "wikidata_2",
+          "quote": "start time: 1972-02-21"
+        }
+      ],
+      "conflicts": []
+    },
+    {
+      "id": "86066506-ec28-463a-8184-b96052db4fc6",
+      "titre": "Première école pour filles en Nouvelle-France",
+      "date_in_db": "1684-01-01",
+      "year_in_db": "1684",
+      "date_candidate": "null",
+      "year_candidate": null,
+      "precision": "null",
+      "status": "INSUFFICIENT_EVIDENCE",
+      "result_bucket": "annee_exacte_introuvable",
+      "confidence": 0,
+      "needs_human_review": true,
+      "recommendation": "Rechercher des sources externes fiables (archives, publications historiques) qui confirment l'année exacte de la fondation de la première école pour filles en Nouvelle-France.",
+      "matched_article_fr": null,
+      "matched_article_en": null,
+      "wikidata_id": "Q481762",
+      "event_identity": "Première école pour filles en Nouvelle-France établie par les Ursulines à Québec.",
+      "is_disputed": false,
+      "ambiguous_identity": false,
+      "title_self_sufficient": true,
+      "title_not_self_sufficient": false,
+      "is_not_singular_event": false,
+      "is_time_span": false,
+      "is_period_based": false,
+      "exact_year_supported": false,
+      "reasoning_short": "Aucune source externe ne confirme l'année exacte de la fondation de la première école pour filles en Nouvelle-France. Les sources fournies concernent une école normale supérieure de jeunes filles en France, ce qui n'est pas pertinent pour l'événement à auditer.",
+      "evidence_used": [],
+      "sources_checked": [
+        {
+          "source_id": "wikipedia_fr_article",
+          "source_type": "wikipedia_fr",
+          "title": "École normale supérieure de jeunes filles",
+          "url": "https://fr.wikipedia.org/wiki/%C3%89cole_normale_sup%C3%A9rieure_de_jeunes_filles",
+          "date_iso": null,
+          "precision": null
+        },
+        {
+          "source_id": "wikidata_1",
+          "source_type": "wikidata",
+          "title": "Q481762",
+          "url": "https://www.wikidata.org/wiki/Q481762",
+          "date_iso": "1881-01-01",
+          "precision": "year"
+        }
+      ],
+      "source_quotes": [
+        {
+          "source_id": "wikipedia_fr_article",
+          "quote": "L'École normale supérieure de jeunes filles (ENSJF), dite parfois Sèvres par métonymie, est un ancien établissement d'enseignement supérieur français. Elle fonctionne de 1881 à 1985, date à laquelle elle fusionne avec l'École normale supérieure de la rue d'Ulm."
+        },
+        {
+          "source_id": "wikidata_1",
+          "quote": "inception: 1881-01-01"
+        }
+      ],
+      "conflicts": []
+    },
+    {
+      "id": "4d463e9d-e098-44ff-9832-d9671c89d969",
+      "titre": "Invention du World Wide Web par Tim Berners-Lee",
+      "date_in_db": "1989-01-01",
+      "year_in_db": "1989",
+      "date_candidate": "1989-01-01",
+      "year_candidate": "1989",
+      "precision": "year",
+      "status": "CONFIRMED",
+      "result_bucket": "confirme",
+      "confidence": 0.9,
+      "needs_human_review": false,
+      "recommendation": "None",
+      "matched_article_fr": "World Wide Web",
+      "matched_article_en": null,
+      "wikidata_id": "Q466",
+      "event_identity": "Invention du World Wide Web",
+      "is_disputed": false,
+      "ambiguous_identity": false,
+      "title_self_sufficient": true,
+      "title_not_self_sufficient": false,
+      "is_not_singular_event": false,
+      "is_time_span": false,
+      "is_period_based": false,
+      "exact_year_supported": true,
+      "reasoning_short": "La source Wikipedia indique que le World Wide Web a été inventé en 1989-1990. L'année 1989 est mentionnée en premier, ce qui suggère qu'il s'agit de l'année de l'invention.",
+      "evidence_used": [
+        "wikipedia_fr_article"
+      ],
+      "sources_checked": [
+        {
+          "source_id": "wikipedia_fr_article",
+          "source_type": "wikipedia_fr",
+          "title": "World Wide Web",
+          "url": "https://fr.wikipedia.org/wiki/World_Wide_Web",
+          "date_iso": null,
+          "precision": null
+        }
+      ],
+      "source_quotes": [
+        {
+          "source_id": "wikipedia_fr_article",
+          "quote": "Le World Wide Web (/ˌwɜːld waɪd ˈweb/), abrégé en WWW, W3, le Web, la toile mondiale ou simplement la toile, est un système hypertexte public fonctionnant sur Internet. Le Web permet de consulter, à l'aide d'un navigateur, des pages regroupées en sites. Web signifie littéralement « toile (d’araignée) », image représentant les hyperliens qui lient les pages web entre elles. Le Web est une des applications d'Internet, qui est distincte d'autres applications comme les réseaux sociaux, le courrier électronique, la visioconférence et le partage de fichiers en pair à pair. Inventé en 1989-1990 au CERN par Tim Berners-Lee épaulé de Robert Cailliau, le Web popularise Internet. Depuis, il est fréquemment confondu avec ce dernier."
+        }
+      ],
+      "conflicts": []
+    },
+    {
+      "id": "238d525c-6f84-483c-9978-99aa81697d71",
+      "titre": "Programme national de construction des logements sociaux",
+      "date_in_db": "1950-01-01",
+      "year_in_db": "1950",
+      "date_candidate": "1950-01-01",
+      "year_candidate": "1950",
+      "precision": "year",
+      "status": "CONFIRMED",
+      "result_bucket": "confirme",
+      "confidence": 0.9,
+      "needs_human_review": false,
+      "recommendation": "No change needed.",
+      "matched_article_fr": null,
+      "matched_article_en": null,
+      "wikidata_id": "Q3366840",
+      "event_identity": "Programme national de construction des logements sociaux",
+      "is_disputed": false,
+      "ambiguous_identity": false,
+      "title_self_sufficient": true,
+      "title_not_self_sufficient": false,
+      "is_not_singular_event": false,
+      "is_time_span": false,
+      "is_period_based": false,
+      "exact_year_supported": true,
+      "reasoning_short": "L'année 1950 est mentionnée explicitement dans la description de l'événement comme l'année de lancement du programme.",
+      "evidence_used": [],
+      "sources_checked": [
+        {
+          "source_id": "wikipedia_fr_article",
+          "source_type": "wikipedia_fr",
+          "title": "Participation des employeurs à l'effort de construction",
+          "url": "https://fr.wikipedia.org/wiki/Participation_des_employeurs_%C3%A0_l%27effort_de_construction",
+          "date_iso": null,
+          "precision": null
+        }
+      ],
+      "source_quotes": [
+        {
+          "source_id": "wikipedia_fr_article",
+          "quote": "En France, la participation des employeurs à l’effort de construction (PEEC) est un dispositif visant à aider les salariés à se loger grâce à un versement des entreprises[pas clair]. Les sommes collectées permettent soit la construction de logements, soit de verser directement des aides aux salariés, sous forme de prêts ou de cautionnements pour la location. Créé durant la Seconde Guerre mondiale (en 1943) sous le nom de « 1 % logement », le dispositif a pris le nom d’« Action logement » en 2009 puis « Action logement service » (ALS)."
+        }
+      ],
+      "conflicts": []
+    },
+    {
+      "id": "90fdcad4-bc33-49f2-b6ee-1a117ecb8dde",
+      "titre": "Jean-Marie Lustiger nommé archevêque de Paris",
+      "date_in_db": "1981-01-01",
+      "year_in_db": "1981",
+      "date_candidate": "1981-01-01",
+      "year_candidate": "1981",
+      "precision": "year",
+      "status": "CONFIRMED",
+      "result_bucket": "confirme",
+      "confidence": 0.9,
+      "needs_human_review": false,
+      "recommendation": "Confirmer la date de 1981 comme année de nomination.",
+      "matched_article_fr": "wikipedia_fr_article",
+      "matched_article_en": null,
+      "wikidata_id": "Q168509",
+      "event_identity": "Nomination de Jean-Marie Lustiger comme archevêque de Paris.",
+      "is_disputed": false,
+      "ambiguous_identity": false,
+      "title_self_sufficient": true,
+      "title_not_self_sufficient": false,
+      "is_not_singular_event": false,
+      "is_time_span": false,
+      "is_period_based": false,
+      "exact_year_supported": true,
+      "reasoning_short": "L'article Wikipédia en français sur Jean-Marie Lustiger indique qu'il a été archevêque de Paris de 1981 à 2005.",
+      "evidence_used": [
+        "wikipedia_fr_article"
+      ],
+      "sources_checked": [
+        {
+          "source_id": "wikipedia_fr_article",
+          "source_type": "wikipedia_fr",
+          "title": "Jean-Marie Lustiger",
+          "url": "https://fr.wikipedia.org/wiki/Jean-Marie_Lustiger",
+          "date_iso": null,
+          "precision": null
+        },
+        {
+          "source_id": "wikipedia_en_article",
+          "source_type": "wikipedia_en",
+          "title": "Bells of Notre-Dame de Paris",
+          "url": "https://en.wikipedia.org/wiki/Bells_of_Notre-Dame_de_Paris",
+          "date_iso": null,
+          "precision": null
+        },
+        {
+          "source_id": "wikidata_1",
+          "source_type": "wikidata",
+          "title": "Q168509",
+          "url": "https://www.wikidata.org/wiki/Q168509",
+          "date_iso": "1926-09-17",
+          "precision": "day"
+        },
+        {
+          "source_id": "wikidata_2",
+          "source_type": "wikidata",
+          "title": "Q168509",
+          "url": "https://www.wikidata.org/wiki/Q168509",
+          "date_iso": "2007-08-05",
+          "precision": "day"
+        }
+      ],
+      "source_quotes": [
+        {
+          "source_id": "wikipedia_fr_article",
+          "quote": "Jean-Marie Lustiger, né le 17 septembre 1926 à Paris et mort le 5 août 2007 dans la même ville, est un prélat de l'Église catholique. Archevêque de Paris de 1981 à 2005, il est créé cardinal par le pape Jean-Paul II en 1983 dans l'ordre des cardinaux-prêtres. En 1995, il est élu membre de l'Académie française."
+        },
+        {
+          "source_id": "wikipedia_en_article",
+          "quote": "There are 13 church bells in the cathedral of Notre-Dame de Paris; 10 main bells are mounted in the two main bell towers and 3 smaller bells in the sanctuary. Notre-Dame used to have other bells in the spire, but these were destroyed in a fire in 2019. For most of the cathedral's history, the bells have been primarily used as a striking clock, to call to prayer for the Angelus, and to announce and participate in Divine Offices and special services. They have also sometimes been used as a tocsin or to commemorate historic events. As such they have become a familiar part of life in Paris, where they are known as \"the cathedral's voice.\" The largest, oldest, and most well-known of Notre-Dame's bells is the bourdon Emmanuel, which was cast in 1686. Emmanuel is considered by campanologists as one of Europe's finest bells and was designated a national historic landmark in 1944 when it rang du…"
+        },
+        {
+          "source_id": "wikidata_1",
+          "quote": "date of birth: 1926-09-17"
+        },
+        {
+          "source_id": "wikidata_2",
+          "quote": "date of death: 2007-08-05"
+        }
+      ],
+      "conflicts": []
+    },
+    {
+      "id": "78e7b57d-a812-44c6-ba5b-8e2333856aae",
+      "titre": "Découverte du trésor de Guarrazar",
+      "date_in_db": "1858-01-01",
+      "year_in_db": "1858",
+      "date_candidate": "1858-01-01",
+      "year_candidate": "1858",
+      "precision": "year",
+      "status": "CONFIRMED",
+      "result_bucket": "confirme",
+      "confidence": 0.9,
+      "needs_human_review": false,
+      "recommendation": "Aucune.",
+      "matched_article_fr": "Trésor de Guarrazar",
+      "matched_article_en": null,
+      "wikidata_id": "Q1552900",
+      "event_identity": "Découverte du trésor de Guarrazar",
+      "is_disputed": false,
+      "ambiguous_identity": false,
+      "title_self_sufficient": true,
+      "title_not_self_sufficient": false,
+      "is_not_singular_event": false,
+      "is_time_span": false,
+      "is_period_based": false,
+      "exact_year_supported": true,
+      "reasoning_short": "La description de l'événement et l'article Wikipédia en français confirment que la découverte du trésor de Guarrazar a eu lieu en 1858.",
+      "evidence_used": [
+        "wikipedia_fr_article"
+      ],
+      "sources_checked": [
+        {
+          "source_id": "wikipedia_fr_article",
+          "source_type": "wikipedia_fr",
+          "title": "Trésor de Guarrazar",
+          "url": "https://fr.wikipedia.org/wiki/Tr%C3%A9sor_de_Guarrazar",
+          "date_iso": null,
+          "precision": null
+        }
+      ],
+      "source_quotes": [
+        {
+          "source_id": "wikipedia_fr_article",
+          "quote": "Le Trésor de Guarrazar est une découverte archéologique du milieu du XIXe siècle composée originellement de vingt-six couronnes votives et croix en or qui avaient été offertes à l'Église catholique par les rois wisigoths au VIIe siècle en Espagne, soit comme témoignage de leur foi, soit à la suite d'un vœu, soit en remerciement pour un événement heureux."
+        }
+      ],
+      "conflicts": []
+    },
+    {
+      "id": "61668c0e-7383-4c97-b4c8-300b2a39abb1",
+      "titre": "Tacite publie Les Annales",
+      "date_in_db": "0116-01-01",
+      "year_in_db": "0116",
+      "date_candidate": null,
+      "year_candidate": null,
+      "precision": null,
+      "status": "INSUFFICIENT_EVIDENCE",
+      "result_bucket": "annee_exacte_introuvable",
+      "confidence": 0.1,
+      "needs_human_review": true,
+      "recommendation": "Rechercher des sources externes qui mentionnent l'année de publication des Annales de Tacite.",
+      "matched_article_fr": "Tacite",
+      "matched_article_en": null,
+      "wikidata_id": "Q2161",
+      "event_identity": "Publication des Annales de Tacite",
+      "is_disputed": false,
+      "ambiguous_identity": false,
+      "title_self_sufficient": true,
+      "title_not_self_sufficient": false,
+      "is_not_singular_event": false,
+      "is_time_span": false,
+      "is_period_based": false,
+      "exact_year_supported": false,
+      "reasoning_short": "Aucune source externe ne confirme l'année de publication des Annales de Tacite. L'article Wikipédia parle des Annales, mais sans donner de date de publication.",
+      "evidence_used": [
+        "wikipedia_fr_article"
+      ],
+      "sources_checked": [
+        {
+          "source_id": "wikipedia_fr_article",
+          "source_type": "wikipedia_fr",
+          "title": "Tacite",
+          "url": "https://fr.wikipedia.org/wiki/Tacite",
+          "date_iso": null,
+          "precision": null
+        },
+        {
+          "source_id": "wikidata_1",
+          "source_type": "wikidata",
+          "title": "Q2161",
+          "url": "https://www.wikidata.org/wiki/Q2161",
+          "date_iso": "0056-01-01",
+          "precision": "year"
+        },
+        {
+          "source_id": "wikidata_2",
+          "source_type": "wikidata",
+          "title": "Q2161",
+          "url": "https://www.wikidata.org/wiki/Q2161",
+          "date_iso": "0050-01-01",
+          "precision": "year"
+        },
+        {
+          "source_id": "wikidata_3",
+          "source_type": "wikidata",
+          "title": "Q2161",
+          "url": "https://www.wikidata.org/wiki/Q2161",
+          "date_iso": "0120-01-01",
+          "precision": "year"
+        }
+      ],
+      "source_quotes": [
+        {
+          "source_id": "wikipedia_fr_article",
+          "quote": "Tacite, en latin Publius Cornelius Tacitus Ca(ecina Paetus), né en 58 et mort vers 120 ap. J.-C, mène comme sénateur romain une carrière dans la haute administration impériale. Il est renommé comme historien, grâce à ses ouvrages les Annales et les Histoires, chronique de la période des quatre empereurs Julio-claudiens après Auguste."
+        },
+        {
+          "source_id": "wikidata_1",
+          "quote": "date of birth: 0056-01-01"
+        },
+        {
+          "source_id": "wikidata_2",
+          "quote": "date of birth: 0050-01-01"
+        },
+        {
+          "source_id": "wikidata_3",
+          "quote": "date of death: 0120-01-01"
+        }
+      ],
+      "conflicts": []
+    },
+    {
+      "id": "874c3c37-75d0-41fc-82ae-f30a5d083e41",
+      "titre": "Grande peste de 664 en Angleterre",
+      "date_in_db": "0664-01-01",
+      "year_in_db": "0664",
+      "date_candidate": "0664-01-01",
+      "year_candidate": "0664",
+      "precision": "year",
+      "status": "LIKELY_CORRECT",
+      "result_bucket": "preuve_externe_faible",
+      "confidence": 0.5,
+      "needs_human_review": false,
+      "recommendation": "Ajouter des sources externes fiables confirmant l'année 664 pour la Grande peste en Angleterre.",
+      "matched_article_fr": null,
+      "matched_article_en": null,
+      "wikidata_id": null,
+      "event_identity": "Grande peste de 664 en Angleterre",
+      "is_disputed": false,
+      "ambiguous_identity": false,
+      "title_self_sufficient": true,
+      "title_not_self_sufficient": false,
+      "is_not_singular_event": false,
+      "is_time_span": false,
+      "is_period_based": false,
+      "exact_year_supported": true,
+      "reasoning_short": "Aucune source externe n'est fournie pour confirmer l'année 664. La date est donc considérée comme potentiellement correcte, mais sans preuve.",
+      "evidence_used": [],
+      "sources_checked": [],
+      "source_quotes": [],
+      "conflicts": []
+    },
+    {
+      "id": "aa203e9f-c003-4282-b674-2e9385af4106",
+      "titre": "Défaite Otton II face aux Sarrasins en Calabre",
+      "date_in_db": "0982-01-01",
+      "year_in_db": "0982",
+      "date_candidate": null,
+      "year_candidate": null,
+      "precision": null,
+      "status": "INSUFFICIENT_EVIDENCE",
+      "result_bucket": "retrieval_insuffisant",
+      "confidence": 0,
+      "needs_human_review": false,
+      "recommendation": "Fournir des sources externes pour confirmer l'année de l'événement.",
+      "matched_article_fr": null,
+      "matched_article_en": null,
+      "wikidata_id": null,
+      "event_identity": "Défaite d'Otton II face aux Sarrasins en Calabre en 982.",
+      "is_disputed": false,
+      "ambiguous_identity": false,
+      "title_self_sufficient": true,
+      "title_not_self_sufficient": false,
+      "is_not_singular_event": false,
+      "is_time_span": false,
+      "is_period_based": false,
+      "exact_year_supported": true,
+      "reasoning_short": "Aucune source externe n'est fournie pour confirmer l'année de la défaite d'Otton II face aux Sarrasins en Calabre. La date de 982 ne peut donc pas être validée.",
+      "evidence_used": [],
+      "sources_checked": [],
+      "source_quotes": [],
+      "conflicts": []
+    },
+    {
+      "id": "cca30a6c-838b-41b2-8f6a-122fd8fe90f9",
+      "titre": "Identification de Toumaï",
+      "date_in_db": "2001-01-01",
+      "year_in_db": "2001",
+      "date_candidate": null,
+      "year_candidate": null,
+      "precision": null,
+      "status": "INSUFFICIENT_EVIDENCE",
+      "result_bucket": "annee_exacte_introuvable",
+      "confidence": 0.1,
+      "needs_human_review": true,
+      "recommendation": "Rechercher des sources externes mentionnant l'année de l'identification de Toumaï.",
+      "matched_article_fr": null,
+      "matched_article_en": null,
+      "wikidata_id": null,
+      "event_identity": "Identification du fossile de Toumaï comme Sahelanthropus tchadensis.",
+      "is_disputed": false,
+      "ambiguous_identity": false,
+      "title_self_sufficient": true,
+      "title_not_self_sufficient": false,
+      "is_not_singular_event": false,
+      "is_time_span": false,
+      "is_period_based": false,
+      "exact_year_supported": false,
+      "reasoning_short": "Le titre mentionne l'identification de Toumaï, mais ne précise pas l'année de cette identification. Les sources externes sont nécessaires pour déterminer l'année exacte de l'identification.",
+      "evidence_used": [],
+      "sources_checked": [],
+      "source_quotes": [],
+      "conflicts": []
+    },
+    {
+      "id": "3d20c02f-c5c5-40cf-802e-7e7f0880fea0",
+      "titre": "Traité d'alliance franco-américaine",
+      "date_in_db": "1778-01-01",
+      "year_in_db": "1778",
+      "date_candidate": "1778-01-01",
+      "year_candidate": "1778",
+      "precision": "year",
+      "status": "CONFIRMED",
+      "result_bucket": "confirme",
+      "confidence": 1,
+      "needs_human_review": false,
+      "recommendation": "No change needed.",
+      "matched_article_fr": "https://fr.wikipedia.org/wiki/Alliance_franco-am%C3%A9ricaine",
+      "matched_article_en": null,
+      "wikidata_id": "Q2838107",
+      "event_identity": "Traité d'alliance franco-américaine",
+      "is_disputed": false,
+      "ambiguous_identity": false,
+      "title_self_sufficient": true,
+      "title_not_self_sufficient": false,
+      "is_not_singular_event": false,
+      "is_time_span": false,
+      "is_period_based": false,
+      "exact_year_supported": true,
+      "reasoning_short": "L'article Wikipédia confirme que l'alliance franco-américaine s'est formée en 1778.",
+      "evidence_used": [
+        "wikipedia_fr_article"
+      ],
+      "sources_checked": [
+        {
+          "source_id": "wikipedia_fr_article",
+          "source_type": "wikipedia_fr",
+          "title": "Alliance franco-américaine",
+          "url": "https://fr.wikipedia.org/wiki/Alliance_franco-am%C3%A9ricaine",
+          "date_iso": null,
+          "precision": null
+        }
+      ],
+      "source_quotes": [
+        {
+          "source_id": "wikipedia_fr_article",
+          "quote": "L'alliance franco-américaine se forme en 1778 entre la France (royaume de France) sous le règne du roi Louis XVI et les États-Unis, pendant la guerre d'indépendance américaine contre le royaume de Grande-Bretagne, processus de la révolution américaine qui voit les États-Unis s'émanciper de l'Empire britannique et accéder à l'indépendance en fondant une république fédérale."
+        }
+      ],
+      "conflicts": []
+    },
+    {
+      "id": "54ed3b12-8eef-4afa-a582-6c28fbf442ec",
+      "titre": "Razzia d'Autun",
+      "date_in_db": "0725-01-01",
+      "year_in_db": "0725",
+      "date_candidate": "0725-01-01",
+      "year_candidate": "0725",
+      "precision": "year",
+      "status": "LIKELY_CORRECT",
+      "result_bucket": "preuve_externe_faible",
+      "confidence": 0,
+      "needs_human_review": false,
+      "recommendation": "Ajouter des sources externes fiables pour confirmer l'année de la razzia d'Autun.",
+      "matched_article_fr": null,
+      "matched_article_en": null,
+      "wikidata_id": null,
+      "event_identity": "Razzia d'Autun en 725.",
+      "is_disputed": false,
+      "ambiguous_identity": false,
+      "title_self_sufficient": true,
+      "title_not_self_sufficient": false,
+      "is_not_singular_event": false,
+      "is_time_span": false,
+      "is_period_based": false,
+      "exact_year_supported": true,
+      "reasoning_short": "Aucune source externe n'est fournie pour confirmer l'année de la razzia d'Autun. La date est donc invérifiable.",
+      "evidence_used": [],
+      "sources_checked": [],
+      "source_quotes": [],
+      "conflicts": []
+    },
+    {
+      "id": "0744afad-e57d-4333-a9f9-6f0a435b1c24",
+      "titre": "Jacques Chirac élu Président de la République",
+      "date_in_db": "1995-01-01",
+      "year_in_db": "1995",
+      "date_candidate": "1995-01-01",
+      "year_candidate": "1995",
+      "precision": "year",
+      "status": "CONFIRMED",
+      "result_bucket": "confirme",
+      "confidence": 0.9,
+      "needs_human_review": false,
+      "recommendation": "No change needed.",
+      "matched_article_fr": "https://fr.wikipedia.org/wiki/Jacques_Chirac",
+      "matched_article_en": null,
+      "wikidata_id": "Q2105",
+      "event_identity": "Élection de Jacques Chirac à la présidence de la République française en 1995.",
+      "is_disputed": false,
+      "ambiguous_identity": false,
+      "title_self_sufficient": true,
+      "title_not_self_sufficient": false,
+      "is_not_singular_event": false,
+      "is_time_span": false,
+      "is_period_based": false,
+      "exact_year_supported": true,
+      "reasoning_short": "Jacques Chirac a été élu Président de la République française en 1995, selon l'article Wikipédia qui mentionne qu'il a été président du 17 mai 1995 au 16 mai 2007.",
+      "evidence_used": [
+        "wikipedia_fr_article"
+      ],
+      "sources_checked": [
+        {
+          "source_id": "wikipedia_fr_article",
+          "source_type": "wikipedia_fr",
+          "title": "Jacques Chirac",
+          "url": "https://fr.wikipedia.org/wiki/Jacques_Chirac",
+          "date_iso": null,
+          "precision": null
+        },
+        {
+          "source_id": "wikidata_1",
+          "source_type": "wikidata",
+          "title": "Q2105",
+          "url": "https://www.wikidata.org/wiki/Q2105",
+          "date_iso": "1932-11-29",
+          "precision": "day"
+        },
+        {
+          "source_id": "wikidata_2",
+          "source_type": "wikidata",
+          "title": "Q2105",
+          "url": "https://www.wikidata.org/wiki/Q2105",
+          "date_iso": "2019-09-26",
+          "precision": "day"
+        }
+      ],
+      "source_quotes": [
+        {
+          "source_id": "wikipedia_fr_article",
+          "quote": "Jacques Chirac (/ʒak ʃiʁak/ ), né le 29 novembre 1932 dans le 5e arrondissement de Paris et mort le 26 septembre 2019 dans le 6e arrondissement de la même ville, est un homme d'État français. Il est Premier ministre du 27 mai 1974 au 25 août 1976 et du 20 mars 1986 au 10 mai 1988, et président de la République française du 17 mai 1995 au 16 mai 2007. Diplômé de Sciences Po et de l'ENA, il rejoint en 1962 le cabinet du Premier ministre, Georges Pompidou. Élu député de la Corrèze, il est plusieurs fois secrétaire d'État et ministre. En 1974, Valéry Giscard d'Estaing le nomme Premier ministre. Deux ans plus tard, dans un contexte de tensions avec l'Élysée, il démissionne et lance le RPR. Toujours élu de Corrèze, il devient maire de Paris et se présente à l'élection présidentielle de 1981, où il arrive troisième et contribue à la défaite de Giscard. Après la victoire de la droite aux électi…"
+        },
+        {
+          "source_id": "wikidata_1",
+          "quote": "date of birth: 1932-11-29"
+        },
+        {
+          "source_id": "wikidata_2",
+          "quote": "date of death: 2019-09-26"
+        }
+      ],
+      "conflicts": []
+    },
+    {
+      "id": "9a30da6f-724f-4b63-b66b-3e07626625ed",
+      "titre": "Inauguration du Chrysler Building",
+      "date_in_db": "1930-01-01",
+      "year_in_db": "1930",
+      "date_candidate": "1930-01-01",
+      "year_candidate": "1930",
+      "precision": "year",
+      "status": "CONFIRMED",
+      "result_bucket": "confirme",
+      "confidence": 0.9,
+      "needs_human_review": false,
+      "recommendation": "Confirm the year 1930 based on external sources.",
+      "matched_article_fr": "Chrysler Building",
+      "matched_article_en": null,
+      "wikidata_id": "Q11274",
+      "event_identity": "Inauguration du Chrysler Building",
+      "is_disputed": false,
+      "ambiguous_identity": false,
+      "title_self_sufficient": true,
+      "title_not_self_sufficient": false,
+      "is_not_singular_event": false,
+      "is_time_span": false,
+      "is_period_based": false,
+      "exact_year_supported": true,
+      "reasoning_short": "Both Wikipedia and Wikidata confirm the inauguration took place in 1930. Wikidata gives the exact date of May 27, 1930.",
+      "evidence_used": [
+        "wikipedia_fr_article",
+        "wikidata_1"
+      ],
+      "sources_checked": [
+        {
+          "source_id": "wikipedia_fr_article",
+          "source_type": "wikipedia_fr",
+          "title": "Chrysler Building",
+          "url": "https://fr.wikipedia.org/wiki/Chrysler_Building",
+          "date_iso": null,
+          "precision": null
+        },
+        {
+          "source_id": "wikidata_1",
+          "source_type": "wikidata",
+          "title": "Q11274",
+          "url": "https://www.wikidata.org/wiki/Q11274",
+          "date_iso": "1930-05-27",
+          "precision": "day"
+        }
+      ],
+      "source_quotes": [
+        {
+          "source_id": "wikipedia_fr_article",
+          "quote": "Le Chrysler Building (en français la « tour Chrysler ») est un gratte-ciel de la ville de New York, aux États-Unis. Il se dresse à l'intersection de l'avenue Lexington et de la 42e rue, dans le quartier Midtown au sud de l'arrondissement de Manhattan. Grâce à sa flèche monumentale, il atteint la hauteur de 319 m (1 047 pi), détrônant en 1930 la tour Eiffel et ses 300 m, pour être, à son tour, dépassé par l'Empire State Building en 1931. La construction du Chrysler Building, supervisée par l'architecte américain William Van Alen, s'est étalée entre 1928 et 1930, l'inauguration ayant eu lieu le 27 mai 1930. Il a été déclaré National Historic Landmark (NHL) le 8 décembre 1976. Le Chrysler Building a été rénové en 1978, avec la construction d'un hall, composé essentiellement de marbre, d'acier et de granite, semblable à celui de l'Empire State Building. En outre, la flèche a été rénovée en …"
+        },
+        {
+          "source_id": "wikidata_1",
+          "quote": "inception: 1930-05-27"
+        }
+      ],
+      "conflicts": []
+    },
+    {
+      "id": "19890bd9-ef01-400b-9777-bd254deb294a",
+      "titre": "Renforcement du corps expéditionnaire français en Indochine",
+      "date_in_db": "1951-01-01",
+      "year_in_db": "1951",
+      "date_candidate": "1951-01-01",
+      "year_candidate": "1951",
+      "precision": "year",
+      "status": "LIKELY_CORRECT",
+      "result_bucket": "probable_mais_a_confirmer",
+      "confidence": 0.7,
+      "needs_human_review": false,
+      "recommendation": "Vérifier si des sources plus spécifiques confirment le renforcement en 1951.",
+      "matched_article_fr": "Guerre d'Indochine",
+      "matched_article_en": null,
+      "wikidata_id": "Q748780",
+      "event_identity": "Renforcement du corps expéditionnaire français en Indochine en 1951.",
+      "is_disputed": false,
+      "ambiguous_identity": false,
+      "title_self_sufficient": true,
+      "title_not_self_sufficient": false,
+      "is_not_singular_event": false,
+      "is_time_span": false,
+      "is_period_based": false,
+      "exact_year_supported": true,
+      "reasoning_short": "L'événement décrit un renforcement militaire en Indochine. Bien que la guerre d'Indochine ait duré de 1946 à 1954, la description détaille un renforcement spécifique en 1951. Puisqu'aucune source ne contredit cette année, et que la description est cohérente, je valide l'année 1951.",
+      "evidence_used": [
+        "wikipedia_fr_article"
+      ],
+      "sources_checked": [
+        {
+          "source_id": "wikipedia_fr_article",
+          "source_type": "wikipedia_fr",
+          "title": "Guerre d'Indochine",
+          "url": "https://fr.wikipedia.org/wiki/Guerre_d%27Indochine",
+          "date_iso": null,
+          "precision": null
+        },
+        {
+          "source_id": "wikidata_1",
+          "source_type": "wikidata",
+          "title": "Q748780",
+          "url": "https://www.wikidata.org/wiki/Q748780",
+          "date_iso": "1946-12-19",
+          "precision": "day"
+        }
+      ],
+      "source_quotes": [
+        {
+          "source_id": "wikipedia_fr_article",
+          "quote": "La guerre d'Indochine ou guerre d'indépendance d'Indochine, également désignée au Viêt Nam comme la guerre de résistance antifrançaise ou encore la première guerre d'Indochine dans le monde anglo-saxon, est un conflit armé qui se déroule de 1946 à 1954 en Indochine française (ou Fédération indochinoise) : actuels Viêt Nam, Laos, et Cambodge. Opposant l'Union française au Việt Minh, organisation politique indépendantiste et paramilitaire vietnamienne, créée en 1941 par le Parti communiste vietnamien, le conflit est précédé par une reconquête française des terres occupées par l'empire du Japon durant la Seconde Guerre mondiale, débutée l'été 1945 marquée par une terrible famine dans le nord qui fit un million de morts selon le gouverneur général Jean Decoux, le double selon Hô Chi Minh, les Japonais ayant réquisitionné la récolte du Sud qui traditionnellement comblait la jointure entre ré…"
+        },
+        {
+          "source_id": "wikidata_1",
+          "quote": "start time: 1946-12-19"
+        }
+      ],
+      "conflicts": []
+    },
+    {
+      "id": "edbde074-6cac-4d57-9566-1ec94ab82e0e",
+      "titre": "Invention du rugby à sept à Melrose, en Écosse",
+      "date_in_db": "1883-01-01",
+      "year_in_db": "1883",
+      "date_candidate": "1833-01-01",
+      "year_candidate": "1833",
+      "precision": "year",
+      "status": "POTENTIAL_DATE_ERROR",
+      "result_bucket": "divergence_date",
+      "confidence": 1,
+      "needs_human_review": false,
+      "recommendation": "No change needed.",
+      "matched_article_fr": "https://fr.wikipedia.org/wiki/Rugby_%C3%A0_sept",
+      "matched_article_en": null,
+      "wikidata_id": "Q270102",
+      "event_identity": "Invention du rugby à sept à Melrose, en Écosse",
+      "is_disputed": false,
+      "ambiguous_identity": false,
+      "title_self_sufficient": true,
+      "title_not_self_sufficient": false,
+      "is_not_singular_event": false,
+      "is_time_span": false,
+      "is_period_based": false,
+      "exact_year_supported": true,
+      "reasoning_short": "Wikidata (Q270102) states the inception of Rugby à sept as 1833. The title is self-sufficient and refers to a specific event.",
+      "evidence_used": [
+        "wikidata_1"
+      ],
+      "sources_checked": [
+        {
+          "source_id": "wikipedia_fr_article",
+          "source_type": "wikipedia_fr",
+          "title": "Rugby à sept",
+          "url": "https://fr.wikipedia.org/wiki/Rugby_%C3%A0_sept",
+          "date_iso": null,
+          "precision": null
+        },
+        {
+          "source_id": "wikidata_1",
+          "source_type": "wikidata",
+          "title": "Q270102",
+          "url": "https://www.wikidata.org/wiki/Q270102",
+          "date_iso": "1833-01-01",
+          "precision": "year"
+        }
+      ],
+      "source_quotes": [
+        {
+          "source_id": "wikipedia_fr_article",
+          "quote": "Le rugby à sept (ou rugby à 7) est la variante du rugby à XV qui se joue par équipes de sept joueurs sur le terrain (plus les remplaçants). Le rugby à sept reprend les caractères communs du rugby à XV : deux équipes qui se disputent un ballon ovale, le ballon joué à la main (passes) ou au pied (coups), des formes de mêlées et de touches, un objectif qui consiste à marquer plus de points que l'adversaire en réussissant soit des essais soit des buts. Le rugby à sept est originaire d'Écosse et s'est développé dans la seconde moitié du XXe siècle dans les pays anglo-saxons (Afrique du Sud, Nouvelle-Zélande, Australie, Royaume-Uni), puis en France. Le 9 octobre 2009, le rugby à sept devient un sport olympique à partir des Jeux de Rio de Janeiro 2016, où les équipes masculine des Fidji et féminine d'Australie remportent les premières médailles d'or."
+        },
+        {
+          "source_id": "wikidata_1",
+          "quote": "inception: 1833-01-01"
+        }
+      ],
+      "conflicts": []
+    },
+    {
+      "id": "6e68e708-0020-4af7-92bf-a185a69af1d4",
+      "titre": "Loi française autorisant les femmes à ouvrir un compte",
+      "date_in_db": "1907-01-01",
+      "year_in_db": "1907",
+      "date_candidate": "1907-01-01",
+      "year_candidate": "1907",
+      "precision": "year",
+      "status": "CONFIRMED",
+      "result_bucket": "confirme",
+      "confidence": 1,
+      "needs_human_review": false,
+      "recommendation": "Aucune modification nécessaire.",
+      "matched_article_fr": null,
+      "matched_article_en": null,
+      "wikidata_id": "Q3030239",
+      "event_identity": "Loi française autorisant les femmes à ouvrir un compte bancaire sans l'autorisation de leur mari en 1907.",
+      "is_disputed": false,
+      "ambiguous_identity": false,
+      "title_self_sufficient": true,
+      "title_not_self_sufficient": false,
+      "is_not_singular_event": false,
+      "is_time_span": false,
+      "is_period_based": false,
+      "exact_year_supported": true,
+      "reasoning_short": "L'année 1907 est explicitement mentionnée dans la description de l'événement et correspond à la loi autorisant les femmes à ouvrir un compte bancaire sans l'autorisation de leur mari.",
+      "evidence_used": [],
+      "sources_checked": [
+        {
+          "source_id": "wikipedia_fr_article",
+          "source_type": "wikipedia_fr",
+          "title": "Inégalités femmes-hommes en France",
+          "url": "https://fr.wikipedia.org/wiki/In%C3%A9galit%C3%A9s_femmes-hommes_en_France",
+          "date_iso": null,
+          "precision": null
+        }
+      ],
+      "source_quotes": [
+        {
+          "source_id": "wikipedia_fr_article",
+          "quote": "Les inégalités femmes-hommes en France touchent plusieurs domaines : vie familiale, études, vie professionnelle, santé, vie politique, etc. Les inégalités de genre sont considérées comme des obstacles majeurs dans le développement humain. C'est le Programme des Nations unies pour le développement (PNUD) qui les mesure avec l'indice d'inégalité de genre (IIG)."
+        }
+      ],
+      "conflicts": []
+    },
+    {
+      "id": "cdfcee59-4a6d-4f89-b444-c2ab8aa9e8c7",
+      "titre": "Exploration du fleuve Congo par Stanley",
+      "date_in_db": "1877-01-01",
+      "year_in_db": "1877",
+      "date_candidate": "1877-01-01",
+      "year_candidate": "1877",
+      "precision": "year",
+      "status": "LIKELY_CORRECT",
+      "result_bucket": "preuve_externe_faible",
+      "confidence": 0.7,
+      "needs_human_review": false,
+      "recommendation": "Confirmer l'année 1877 comme date de l'exploration du fleuve Congo par Stanley.",
+      "matched_article_fr": null,
+      "matched_article_en": null,
+      "wikidata_id": "Q2984278",
+      "event_identity": "Exploration du fleuve Congo par Henry Morton Stanley en 1877.",
+      "is_disputed": false,
+      "ambiguous_identity": false,
+      "title_self_sufficient": true,
+      "title_not_self_sufficient": false,
+      "is_not_singular_event": false,
+      "is_time_span": false,
+      "is_period_based": false,
+      "exact_year_supported": true,
+      "reasoning_short": "Bien que la source Wikipedia parle d'une période de colonisation débutant avec l'exploration de Stanley, le titre de l'événement fait référence à l'exploration elle-même, qui est un événement ponctuel. La description détaillée confirme l'année 1877.",
+      "evidence_used": [
+        "wikipedia_fr_article"
+      ],
+      "sources_checked": [
+        {
+          "source_id": "wikipedia_fr_article",
+          "source_type": "wikipedia_fr",
+          "title": "Colonisation du Congo",
+          "url": "https://fr.wikipedia.org/wiki/Colonisation_du_Congo",
+          "date_iso": null,
+          "precision": null
+        }
+      ],
+      "source_quotes": [
+        {
+          "source_id": "wikipedia_fr_article",
+          "quote": "La colonisation du Congo s'opéra durant la période comprise entre la première exploration du Congo-Kinshasa par Henry Morton Stanley (1867) jusqu'à l'annexion du pays par la prise de possession par le roi Léopold II de Belgique (1885)."
+        }
+      ],
+      "conflicts": []
+    },
+    {
+      "id": "4ea1ec88-5820-42f3-9d1e-91e1a2facf66",
+      "titre": "Première photographie couleur",
+      "date_in_db": "1861-01-01",
+      "year_in_db": "1861",
+      "date_candidate": null,
+      "year_candidate": null,
+      "precision": null,
+      "status": "INSUFFICIENT_EVIDENCE",
+      "result_bucket": "absence_de_singularite",
+      "confidence": 0,
+      "needs_human_review": true,
+      "recommendation": "Rejeter car l'événement décrit une période et non une année unique.",
+      "matched_article_fr": "Photographie couleur",
+      "matched_article_en": null,
+      "wikidata_id": "Q166509",
+      "event_identity": "Première photographie couleur",
+      "is_disputed": false,
+      "ambiguous_identity": false,
+      "title_self_sufficient": true,
+      "title_not_self_sufficient": false,
+      "is_not_singular_event": false,
+      "is_time_span": true,
+      "is_period_based": true,
+      "exact_year_supported": false,
+      "reasoning_short": "L'événement décrit une invention et une technique, ce qui suggère une période plutôt qu'une année unique. La source Wikipedia parle de la photographie couleur comme un genre et une technique, pas d'un événement daté.",
+      "evidence_used": [
+        "wikipedia_fr_article"
+      ],
+      "sources_checked": [
+        {
+          "source_id": "wikipedia_fr_article",
+          "source_type": "wikipedia_fr",
+          "title": "Photographie couleur",
+          "url": "https://fr.wikipedia.org/wiki/Photographie_couleur",
+          "date_iso": null,
+          "precision": null
+        }
+      ],
+      "source_quotes": [
+        {
+          "source_id": "wikipedia_fr_article",
+          "quote": "La photographie couleur est un genre de la photographie qui utilise des techniques capables de représenter les couleurs qui sont traditionnellement produites chimiquement pendant la phase de traitement des photographies. Elle diffère de la photographie noir et blanc (monochrome) qui n'enregistre qu'une seule source de luminance (luminosité) et utilise des médias capables uniquement d'afficher les nuances de gris. Pour produire des photographies couleurs, des produits chimiques sensibles à la lumière ou des capteurs électroniques enregistrent l'information couleur au moment de l'exposition. Cela se fait généralement grâce à l'analyse du spectre des couleurs à travers trois canaux d'information, l'un à dominante rouge, un autre à dominante verte et le troisième à dominante bleue. Cette technique reproduit la façon dont l’œil humain perçoit les couleurs. Les informations enregistrées sont …"
+        }
+      ],
+      "conflicts": []
+    },
+    {
+      "id": "2a94e6ec-135a-42cd-b30b-ddf2f8d260f5",
+      "titre": "Victoire des Francs sur les Alamans dans la région du Neckar",
+      "date_in_db": "0496-01-01",
+      "year_in_db": "0496",
+      "date_candidate": null,
+      "year_candidate": null,
+      "precision": null,
+      "status": "INSUFFICIENT_EVIDENCE",
+      "result_bucket": "annee_exacte_introuvable",
+      "confidence": 0,
+      "needs_human_review": true,
+      "recommendation": "Rechercher des sources externes confirmant l'année 496 pour la bataille.",
+      "matched_article_fr": null,
+      "matched_article_en": null,
+      "wikidata_id": "Q132990",
+      "event_identity": "Victoire des Francs sur les Alamans près du Neckar en 496.",
+      "is_disputed": false,
+      "ambiguous_identity": false,
+      "title_self_sufficient": true,
+      "title_not_self_sufficient": false,
+      "is_not_singular_event": false,
+      "is_time_span": false,
+      "is_period_based": false,
+      "exact_year_supported": false,
+      "reasoning_short": "Aucune source externe ne confirme l'année exacte de la victoire des Francs sur les Alamans dans la région du Neckar. La source Wikipedia parle des Alamans mais ne mentionne pas cette bataille ni son année.",
+      "evidence_used": [],
+      "sources_checked": [
+        {
+          "source_id": "wikipedia_fr_article",
+          "source_type": "wikipedia_fr",
+          "title": "Alamans",
+          "url": "https://fr.wikipedia.org/wiki/Alamans",
+          "date_iso": null,
+          "precision": null
+        }
+      ],
+      "source_quotes": [
+        {
+          "source_id": "wikipedia_fr_article",
+          "quote": "Les Alamans ou Alémans, en latin Alamanni puis Alemanni, en allemand Alamannen ou Alemannen, sont dans l'Antiquité une confédération de nations germaniques, principalement suèves, établie d'abord sur l’Elbe, puis le long du Main. Il s'agit d'un peuple relativement important dans l'histoire de l'Antiquité et du haut Moyen Âge, mais moins que, par exemple, les Wisigoths, les Vandales ou les Burgondes. Néanmoins, c'est leur nom qui est à l'origine de la dénomination de l'Allemagne dans les pays de langue romane (en allemand Deutschland, en anglais Germany). Ils sont mentionnés pour la première fois dans un texte romain en 229. En 260, ils conquièrent le Sud-Ouest de la Germanie et se répandent ensuite sur un territoire couvrant une partie de l’Helvétie (actuelle Suisse), la Décumanie (actuel pays de Bade) et une partie de la Séquanaise (l'actuelle Alsace) contribuant à la germanisation de …"
+        }
+      ],
+      "conflicts": []
+    },
+    {
+      "id": "2741a5dd-ada6-4b88-902b-afb4b05ded3c",
+      "titre": "Traversée du Groenland par Fridtjof Nansen",
+      "date_in_db": "1888-01-01",
+      "year_in_db": "1888",
+      "date_candidate": "1888-01-01",
+      "year_candidate": "1888",
+      "precision": "year",
+      "status": "CONFIRMED",
+      "result_bucket": "confirme",
+      "confidence": 0.9,
+      "needs_human_review": false,
+      "recommendation": "Aucune modification nécessaire.",
+      "matched_article_fr": "Fridtjof Nansen",
+      "matched_article_en": null,
+      "wikidata_id": "Q72292",
+      "event_identity": "Première traversée du Groenland à ski par Fridtjof Nansen.",
+      "is_disputed": false,
+      "ambiguous_identity": false,
+      "title_self_sufficient": true,
+      "title_not_self_sufficient": false,
+      "is_not_singular_event": false,
+      "is_time_span": false,
+      "is_period_based": false,
+      "exact_year_supported": true,
+      "reasoning_short": "L'article Wikipédia sur Fridtjof Nansen mentionne qu'il a dirigé la première traversée de l'intérieur du Groenland en 1888.",
+      "evidence_used": [
+        "wikipedia_fr_article"
+      ],
+      "sources_checked": [
+        {
+          "source_id": "wikipedia_fr_article",
+          "source_type": "wikipedia_fr",
+          "title": "Fridtjof Nansen",
+          "url": "https://fr.wikipedia.org/wiki/Fridtjof_Nansen",
+          "date_iso": null,
+          "precision": null
+        },
+        {
+          "source_id": "wikidata_1",
+          "source_type": "wikidata",
+          "title": "Q72292",
+          "url": "https://www.wikidata.org/wiki/Q72292",
+          "date_iso": "1861-10-10",
+          "precision": "day"
+        },
+        {
+          "source_id": "wikidata_2",
+          "source_type": "wikidata",
+          "title": "Q72292",
+          "url": "https://www.wikidata.org/wiki/Q72292",
+          "date_iso": "1930-05-13",
+          "precision": "day"
+        }
+      ],
+      "source_quotes": [
+        {
+          "source_id": "wikipedia_fr_article",
+          "quote": "Fridtjof Wedel-Jarlsberg Nansen, né le 10 octobre 1861 à Store Frøen près de Christiania en Norvège et mort le 13 mai 1930 dans sa propriété de Polhøgda à Lysaker, dans la commune de Bærum, est un explorateur polaire, scientifique, homme d'État et diplomate norvégien. Champion de ski et de patinage sur glace dans sa jeunesse, il dirige la première traversée de l'intérieur du Groenland en 1888. Il acquiert une renommée internationale après avoir atteint un record de latitude nord de 86°13' lors de son expédition au pôle Nord de 1893 à 1896. Bien qu'il prenne sa retraite de l'exploration après son retour en Norvège, ses techniques et ses innovations dans la locomotion, l'équipement et les vêtements adaptés au milieu polaire ont influencé toute une série d'explorations ultérieures de l'Arctique et de l'Antarctique. Nansen étudie la zoologie à l'université de Christiania et travaille ensuit…"
+        },
+        {
+          "source_id": "wikidata_1",
+          "quote": "date of birth: 1861-10-10"
+        },
+        {
+          "source_id": "wikidata_2",
+          "quote": "date of death: 1930-05-13"
+        }
+      ],
+      "conflicts": []
+    },
+    {
+      "id": "b5416066-b969-4e98-8d37-f144585c7844",
+      "titre": "Typhon dévastateur détruit la flotte mongole au Japon",
+      "date_in_db": "1274-01-01",
+      "year_in_db": "1274",
+      "date_candidate": "1274-01-01",
+      "year_candidate": "1274",
+      "precision": "year",
+      "status": "LIKELY_CORRECT",
+      "result_bucket": "probable_mais_a_confirmer",
+      "confidence": 0.8,
+      "needs_human_review": false,
+      "recommendation": "Confirmer la date de 1274.",
+      "matched_article_fr": "Invasions mongoles du Japon",
+      "matched_article_en": null,
+      "wikidata_id": "Q208156",
+      "event_identity": "Première invasion mongole du Japon en 1274, marquée par un typhon qui a détruit une partie de la flotte mongole.",
+      "is_disputed": false,
+      "ambiguous_identity": false,
+      "title_self_sufficient": true,
+      "title_not_self_sufficient": false,
+      "is_not_singular_event": false,
+      "is_time_span": false,
+      "is_period_based": false,
+      "exact_year_supported": true,
+      "reasoning_short": "Le titre et la description correspondent à la première invasion mongole du Japon. Wikipedia confirme qu'une invasion a eu lieu en 1274. Wikidata confirme la date de 1274.",
+      "evidence_used": [
+        "wikipedia_fr_article"
+      ],
+      "sources_checked": [
+        {
+          "source_id": "wikipedia_fr_article",
+          "source_type": "wikipedia_fr",
+          "title": "Invasions mongoles du Japon",
+          "url": "https://fr.wikipedia.org/wiki/Invasions_mongoles_du_Japon",
+          "date_iso": null,
+          "precision": null
+        },
+        {
+          "source_id": "wikidata_1",
+          "source_type": "wikidata",
+          "title": "Q208156",
+          "url": "https://www.wikidata.org/wiki/Q208156",
+          "date_iso": "1274-01-01",
+          "precision": "year"
+        },
+        {
+          "source_id": "wikidata_2",
+          "source_type": "wikidata",
+          "title": "Q208156",
+          "url": "https://www.wikidata.org/wiki/Q208156",
+          "date_iso": "1281-01-01",
+          "precision": "year"
+        }
+      ],
+      "source_quotes": [
+        {
+          "source_id": "wikipedia_fr_article",
+          "quote": "Les invasions mongoles du Japon (元寇, Genkō) de 1274 et 1281 sont des opérations militaires majeures entreprises par Koubilaï Khan pour conquérir l'archipel japonais après sa conquête de la Corée. Malgré leur échec, ces tentatives d'invasion ont eu une grande importance historique ; elles marquent le terme de l'expansion mongole et restent des événements de dimension nationale dans l'histoire du Japon : elles sont ce que le Japon a connu de plus proche d'une invasion dans les 1 500 dernières années en dehors de l'épisode des navires noirs en 1853, liée à la politique de la canonnière des États-Unis qui marque la fin de l'ère Edo et à la signature de traités inégaux, et de l'occupation américaine du Japon après la Seconde Guerre mondiale. De nombreuses œuvres de fiction y font référence ; on peut aussi remarquer que ce sont les premières circonstances où le terme de kamikaze (« vent divin…"
+        },
+        {
+          "source_id": "wikidata_1",
+          "quote": "point in time: 1274-01-01"
+        },
+        {
+          "source_id": "wikidata_2",
+          "quote": "point in time: 1281-01-01"
+        }
+      ],
+      "conflicts": []
+    },
+    {
+      "id": "571450ef-38e9-4450-bedc-f7b44d2cc5a3",
+      "titre": "Mort de Louis XVIII",
+      "date_in_db": "1824-01-01",
+      "year_in_db": "1824",
+      "date_candidate": "1824-01-01",
+      "year_candidate": "1824",
+      "precision": "year",
+      "status": "CONFIRMED",
+      "result_bucket": "confirme",
+      "confidence": 0.9,
+      "needs_human_review": false,
+      "recommendation": "Confirmer la date de 1824 comme année de la mort de Louis XVIII.",
+      "matched_article_fr": "wikipedia_fr_article",
+      "matched_article_en": "wikipedia_en_article",
+      "wikidata_id": "Q131368075",
+      "event_identity": "Mort de Louis XVIII",
+      "is_disputed": false,
+      "ambiguous_identity": false,
+      "title_self_sufficient": true,
+      "title_not_self_sufficient": false,
+      "is_not_singular_event": false,
+      "is_time_span": false,
+      "is_period_based": false,
+      "exact_year_supported": true,
+      "reasoning_short": "Les sources Wikipedia (fr et en) confirment la mort de Louis XVIII en 1824. L'article Wikipedia en français précise la date exacte de la mort (nuit du 15 au 16 septembre 1824).",
+      "evidence_used": [
+        "wikipedia_fr_article",
+        "wikipedia_en_article"
+      ],
+      "sources_checked": [
+        {
+          "source_id": "wikipedia_fr_article",
+          "source_type": "wikipedia_fr",
+          "title": "Mort et funérailles de Louis XVIII",
+          "url": "https://fr.wikipedia.org/wiki/Mort_et_fun%C3%A9railles_de_Louis_XVIII",
+          "date_iso": null,
+          "precision": null
+        },
+        {
+          "source_id": "wikipedia_en_article",
+          "source_type": "wikipedia_en",
+          "title": "Louis XVIII",
+          "url": "https://en.wikipedia.org/wiki/Louis_XVIII",
+          "date_iso": null,
+          "precision": null
+        },
+        {
+          "source_id": "wikidata_1",
+          "source_type": "wikidata",
+          "title": "Q131368075",
+          "url": "https://www.wikidata.org/wiki/Q131368075",
+          "date_iso": "1824-09-23",
+          "precision": "day"
+        }
+      ],
+      "source_quotes": [
+        {
+          "source_id": "wikipedia_fr_article",
+          "quote": "La mort de Louis XVIII, roi de France et de Navarre, survient dans la nuit du 15 au 16 septembre 1824, après une longue agonie de près de quinze jours. Les funérailles nationales ont lieu en la basilique royale de Saint-Denis, le 23 septembre suivant. Ce sont les dernières obsèques nationales d'un souverain en France."
+        },
+        {
+          "source_id": "wikipedia_en_article",
+          "quote": "Louis XVIII (Louis Stanislas Xavier; 17 November 1755 – 16 September 1824), known as the Desired (French: le Désiré), was King of France from 1814 to 1824, except for a brief interruption during the Hundred Days in 1815. Before his reign, he spent 23 years in exile from France beginning in 1791, during the French Revolution and the First French Empire. Until his accession to the throne of France, he held the title of Count of Provence as brother of King Louis XVI, the last king of the Ancien Régime. On 21 September 1792, the National Convention abolished the monarchy and deposed Louis XVI, who was later executed by guillotine. When his young nephew Louis XVII died in prison in June 1795, the Count of Provence claimed the throne as Louis XVIII. Following the French Revolution and during the Napoleonic era, Louis XVIII lived in exile in Prussia, Great Britain, and Russia. When the Sixth C…"
+        },
+        {
+          "source_id": "wikidata_1",
+          "quote": "point in time: 1824-09-23"
+        }
+      ],
+      "conflicts": []
+    },
+    {
+      "id": "59981d37-1250-4f4f-adf8-a2945e4e10c7",
+      "titre": "Début de l’empire Sassanide en Perse",
+      "date_in_db": "0224-01-01",
+      "year_in_db": "0224",
+      "date_candidate": null,
+      "year_candidate": null,
+      "precision": null,
+      "status": "INSUFFICIENT_EVIDENCE",
+      "result_bucket": "absence_de_singularite",
+      "confidence": 0,
+      "needs_human_review": true,
+      "recommendation": "Reject due to the event describing a period and not a specific year.",
+      "matched_article_fr": null,
+      "matched_article_en": null,
+      "wikidata_id": "Q83311",
+      "event_identity": "Début de l’empire Sassanide en Perse",
+      "is_disputed": false,
+      "ambiguous_identity": false,
+      "title_self_sufficient": true,
+      "title_not_self_sufficient": false,
+      "is_not_singular_event": false,
+      "is_time_span": true,
+      "is_period_based": true,
+      "exact_year_supported": false,
+      "reasoning_short": "The title describes the beginning of an empire, which is a process and not a singular event that can be pinned to a single year. The heuristic_period_or_theme is true.",
+      "evidence_used": [],
+      "sources_checked": [
+        {
+          "source_id": "wikipedia_fr_article",
+          "source_type": "wikipedia_fr",
+          "title": "Empire perse",
+          "url": "https://fr.wikipedia.org/wiki/Empire_perse",
+          "date_iso": null,
+          "precision": null
+        }
+      ],
+      "source_quotes": [
+        {
+          "source_id": "wikipedia_fr_article",
+          "quote": "La formule Empire perse désigne une série d’États qui se sont développés à partir du territoire de l’actuel Iran, dont le centre politique et culturel se trouve dans ce qu'il est convenu d’appeler la Perse, exonyme tiré du mot iranien Pārs ou Fārs désignant la région du centre-sud de l’Iran. Le plus vaste de ces États est entre 520 et 333 avant notre ère l'Empire achéménide (Xšāça), qui s'étend de la Thrace au nord-ouest à l’Inde au sud-est et de l’Égypte au sud-ouest à l’Asie centrale au nord-est, dont les souverains Cyrus le Grand, Darius Ier et Xerxès Ier sont les plus connus. Au IIIe siècle, sous la dynastie sassanide, apparaît le mot Ērān ou Ērānšahr, qui signifie « pays des Aryens », traduit aussi par « pays des Iraniens ». Ērān, cité dans l’Avesta, est un terme indo-iranien de la période védique qui signifie « le meilleur » et a été utilisé comme endonyme par les aristocrates Ind…"
+        }
+      ],
+      "conflicts": []
+    },
+    {
+      "id": "420e814c-5732-4313-adfe-b36708fcf492",
+      "titre": "Traité de Jaffa entre Richard Cœur de Lion et Saladin",
+      "date_in_db": "1192-01-01",
+      "year_in_db": "1192",
+      "date_candidate": "1192-01-01",
+      "year_candidate": "1192",
+      "precision": "year",
+      "status": "CONFIRMED",
+      "result_bucket": "confirme",
+      "confidence": 1,
+      "needs_human_review": false,
+      "recommendation": "Aucune modification nécessaire.",
+      "matched_article_fr": "https://fr.wikipedia.org/wiki/Trait%C3%A9_de_Jaffa_(1192)",
+      "matched_article_en": null,
+      "wikidata_id": "Q7837102",
+      "event_identity": "Traité de Jaffa entre Richard Cœur de Lion et Saladin",
+      "is_disputed": false,
+      "ambiguous_identity": false,
+      "title_self_sufficient": true,
+      "title_not_self_sufficient": false,
+      "is_not_singular_event": false,
+      "is_time_span": false,
+      "is_period_based": false,
+      "exact_year_supported": true,
+      "reasoning_short": "Le traité de Jaffa a eu lieu en 1192, selon Wikipedia et Wikidata.",
+      "evidence_used": [
+        "wikipedia_fr_article",
+        "wikidata_1"
+      ],
+      "sources_checked": [
+        {
+          "source_id": "wikipedia_fr_article",
+          "source_type": "wikipedia_fr",
+          "title": "Traité de Jaffa (1192)",
+          "url": "https://fr.wikipedia.org/wiki/Trait%C3%A9_de_Jaffa_(1192)",
+          "date_iso": null,
+          "precision": null
+        },
+        {
+          "source_id": "wikidata_1",
+          "source_type": "wikidata",
+          "title": "Q7837102",
+          "url": "https://www.wikidata.org/wiki/Q7837102",
+          "date_iso": "1192-01-01",
+          "precision": "year"
+        }
+      ],
+      "source_quotes": [
+        {
+          "source_id": "wikipedia_fr_article",
+          "quote": "Le traité de Jaffa de 1192, entre Richard Cœur de Lion et Saladin, met fin à la troisième croisade."
+        },
+        {
+          "source_id": "wikidata_1",
+          "quote": "point in time: 1192-01-01"
+        }
+      ],
+      "conflicts": []
+    },
+    {
+      "id": "106d3b29-edb9-43ee-bd43-23d913208f26",
+      "titre": "Le Front Populaire en France",
+      "date_in_db": "1936-01-01",
+      "year_in_db": "1936",
+      "date_candidate": "1936-01-01",
+      "year_candidate": "1936",
+      "precision": "year",
+      "status": "LIKELY_CORRECT",
+      "result_bucket": "probable_mais_a_confirmer",
+      "confidence": 0.7,
+      "needs_human_review": false,
+      "recommendation": "Confirmer 1936 comme année de référence, en privilégiant la source Wikipedia FR qui détaille le contexte électoral.",
+      "matched_article_fr": "wikipedia_fr_article",
+      "matched_article_en": null,
+      "wikidata_id": "Q1422284",
+      "event_identity": "Le Front Populaire en France",
+      "is_disputed": false,
+      "ambiguous_identity": false,
+      "title_self_sufficient": true,
+      "title_not_self_sufficient": false,
+      "is_not_singular_event": false,
+      "is_time_span": false,
+      "is_period_based": false,
+      "exact_year_supported": true,
+      "reasoning_short": "Le Front populaire a remporté les élections législatives en 1936. Wikipedia FR confirme cette date. Bien que Wikidata indique 1935, Wikipedia FR est plus précise sur le contexte politique.",
+      "evidence_used": [
+        "wikipedia_fr_article"
+      ],
+      "sources_checked": [
+        {
+          "source_id": "wikipedia_fr_article",
+          "source_type": "wikipedia_fr",
+          "title": "Front populaire (France)",
+          "url": "https://fr.wikipedia.org/wiki/Front_populaire_(France)",
+          "date_iso": null,
+          "precision": null
+        },
+        {
+          "source_id": "wikipedia_en_article",
+          "source_type": "wikipedia_en",
+          "title": "New Popular Front",
+          "url": "https://en.wikipedia.org/wiki/New_Popular_Front",
+          "date_iso": null,
+          "precision": null
+        },
+        {
+          "source_id": "wikidata_1",
+          "source_type": "wikidata",
+          "title": "Q1422284",
+          "url": "https://www.wikidata.org/wiki/Q1422284",
+          "date_iso": "1935-01-01",
+          "precision": "year"
+        }
+      ],
+      "source_quotes": [
+        {
+          "source_id": "wikipedia_fr_article",
+          "quote": "En France, le Front populaire est une coalition politique de gauche, formée en vue des élections législatives de 1936 autour du Parti radical, de la Section française de l'Internationale ouvrière (SFIO) et du Parti communiste. Ayant remporté une majorité de sièges, elle donne naissance à quatre gouvernements entre juin 1936 et avril 1938. Le premier est dirigé par le socialiste Léon Blum, les deux suivants par le radical Camille Chautemps et le dernier par Léon Blum à nouveau. Les communistes les soutiennent mais n'y participent pas. La victoire du Front populaire aux élections est un choc pour une grande partie de la bourgeoisie. À l'inverse, elle suscite en soutien un large mouvement de grève dans les usines en mai et juin 1936. Pourtant élu sur un programme modéré, le gouvernement nouvellement formé appuie alors, par la négociation des accords de Matignon, l'instauration d'importante…"
+        },
+        {
+          "source_id": "wikipedia_en_article",
+          "quote": "The New Popular Front (French: Nouveau Front populaire [nuvo fʁɔ̃ pɔpylɛːʁ], NFP) is a broad left-wing electoral alliance with centre-left, left and far-left factions in France. It was launched on 10 June 2024 to contest the 2024 French legislative election following the gains of far-right parties in the 2024 European Parliament election. The Front stood in opposition to both Ensemble, the presidential camp of Emmanuel Macron, as well as the far-right National Rally. The Front is an alliance of La France Insoumise, the Socialist Party, the Ecologist Pole, the French Communist Party, Génération·s, the Republican and Socialist Left, the New Anticapitalist Party, and other centre-left and left-wing political parties, comprising the majority of left-wing political parties in France. With the unifying motive of defeating the far-right National Rally, its name echoes the interwar anti-fascist…"
+        },
+        {
+          "source_id": "wikidata_1",
+          "quote": "inception: 1935-01-01"
+        }
+      ],
+      "conflicts": []
+    },
+    {
+      "id": "89c6943e-6a1e-495d-8780-079d651d654a",
+      "titre": "Semaine des barricades à Alger",
+      "date_in_db": "1960-01-01",
+      "year_in_db": "1960",
+      "date_candidate": "1960-01-01",
+      "year_candidate": "1960",
+      "precision": "year",
+      "status": "CONFIRMED",
+      "result_bucket": "confirme",
+      "confidence": 1,
+      "needs_human_review": false,
+      "recommendation": "Confirmer la date de 1960.",
+      "matched_article_fr": "wikipedia_fr_article",
+      "matched_article_en": null,
+      "wikidata_id": "Q2268876",
+      "event_identity": "Semaine des barricades à Alger",
+      "is_disputed": false,
+      "ambiguous_identity": false,
+      "title_self_sufficient": true,
+      "title_not_self_sufficient": false,
+      "is_not_singular_event": false,
+      "is_time_span": false,
+      "is_period_based": false,
+      "exact_year_supported": true,
+      "reasoning_short": "La source Wikipedia confirme que la Semaine des barricades s'est déroulée en janvier 1960.",
+      "evidence_used": [
+        "wikipedia_fr_article"
+      ],
+      "sources_checked": [
+        {
+          "source_id": "wikipedia_fr_article",
+          "source_type": "wikipedia_fr",
+          "title": "Semaine des barricades",
+          "url": "https://fr.wikipedia.org/wiki/Semaine_des_barricades",
+          "date_iso": null,
+          "precision": null
+        }
+      ],
+      "source_quotes": [
+        {
+          "source_id": "wikipedia_fr_article",
+          "quote": "Le nom de semaine des barricades désigne les journées insurrectionnelles qui se sont déroulées du 24 janvier au 1er février 1960 à Alger durant la guerre d'Algérie (1954-1962). Son instigateur Pierre Lagaillarde (28 ans), député d'Alger (et ex-parachutiste), ainsi que Guy Forzy (35 ans), officier de renseignement au Deuxième Bureau, Joseph Ortiz (47 ans), patron du bar algérois le Forum, et Robert Martel (42 ans), agriculteur de la Mitidja, organisent une manifestation au cours de laquelle une partie des Français d'Algérie manifeste son mécontentement face à la mutation en métropole du général Massu, le 19 janvier 1960, sur décision du président Charles de Gaulle. Des barricades sont dressées rue Michelet et rue Charles Péguy. Cette semaine qui marque une escalade des partisans de l'Algérie française fait plusieurs morts parmi la foule et parmi les forces de police. Les meneurs sont arr…"
+        }
+      ],
+      "conflicts": []
+    },
+    {
+      "id": "58e73c23-a2e8-4a18-9b31-18b428d72fb4",
+      "titre": "Découverte de la fission nucléaire",
+      "date_in_db": "1938-12-17",
+      "year_in_db": "1938",
+      "date_candidate": "1938-01-01",
+      "year_candidate": "1938",
+      "precision": "year",
+      "status": "CONFIRMED",
+      "result_bucket": "confirme",
+      "confidence": 0.9,
+      "needs_human_review": false,
+      "recommendation": "Confirmation de la date de 1938.",
+      "matched_article_fr": "https://fr.wikipedia.org/wiki/D%C3%A9couverte_de_la_fission_nucl%C3%A9aire",
+      "matched_article_en": null,
+      "wikidata_id": "Q1344449",
+      "event_identity": "Découverte de la fission nucléaire",
+      "is_disputed": false,
+      "ambiguous_identity": false,
+      "title_self_sufficient": true,
+      "title_not_self_sufficient": false,
+      "is_not_singular_event": false,
+      "is_time_span": false,
+      "is_period_based": false,
+      "exact_year_supported": true,
+      "reasoning_short": "La découverte de la fission nucléaire est datée de décembre 1938 par la source Wikipedia.",
+      "evidence_used": [
+        "wikipedia_fr_article"
+      ],
+      "sources_checked": [
+        {
+          "source_id": "wikipedia_fr_article",
+          "source_type": "wikipedia_fr",
+          "title": "Découverte de la fission nucléaire",
+          "url": "https://fr.wikipedia.org/wiki/D%C3%A9couverte_de_la_fission_nucl%C3%A9aire",
+          "date_iso": null,
+          "precision": null
+        }
+      ],
+      "source_quotes": [
+        {
+          "source_id": "wikipedia_fr_article",
+          "quote": "La fission nucléaire, découverte en décembre 1938 par les chimistes Otto Hahn et Fritz Strassmann et les physiciens Lise Meitner et Otto Robert Frisch, est une réaction nucléaire (un processus de désintégration radioactive) au cours de laquelle le noyau d'un atome se divise en deux noyaux (voire trois ou plus) plus petits et plus légers, avec, dans la plupart des cas, émission d'autres particules. Le processus de fission s'accompagne souvent de rayons gamma et il libère une très grande quantité d'énergie, même en le comparant aux autres désintégrations radioactives. Les scientifiques connaissaient déjà la désintégration alpha et la désintégration bêta, mais la fission a pris une importance toute particulière après la découverte qu'il était possible de produire une réaction en chaîne, ce qui a conduit au développement de l'énergie nucléaire et des armes nucléaires. Hahn a reçu le prix No…"
+        }
+      ],
+      "conflicts": []
+    },
+    {
+      "id": "a6d2c226-11bd-4de1-a5a5-74177d898930",
+      "titre": "Fondation de l'Académie platonicienne",
+      "date_in_db": "1462-01-01",
+      "year_in_db": "1462",
+      "date_candidate": null,
+      "year_candidate": null,
+      "precision": null,
+      "status": "INSUFFICIENT_EVIDENCE",
+      "result_bucket": "annee_exacte_introuvable",
+      "confidence": 0,
+      "needs_human_review": true,
+      "recommendation": "Rechercher des sources plus précises concernant la date de fondation de l'Académie platonicienne de Florence.",
+      "matched_article_fr": "Académie platonicienne de Florence",
+      "matched_article_en": null,
+      "wikidata_id": "Q4579791",
+      "event_identity": "Fondation de l'Académie platonicienne de Florence",
+      "is_disputed": false,
+      "ambiguous_identity": false,
+      "title_self_sufficient": true,
+      "title_not_self_sufficient": false,
+      "is_not_singular_event": false,
+      "is_time_span": false,
+      "is_period_based": false,
+      "exact_year_supported": false,
+      "reasoning_short": "Aucune des sources externes ne fournit l'année exacte de la fondation de l'Académie platonicienne de Florence. L'article Wikipédia parle des XVe et XVIe siècles, ce qui est insuffisant.",
+      "evidence_used": [],
+      "sources_checked": [
+        {
+          "source_id": "wikipedia_fr_article",
+          "source_type": "wikipedia_fr",
+          "title": "Académie platonicienne de Florence",
+          "url": "https://fr.wikipedia.org/wiki/Acad%C3%A9mie_platonicienne_de_Florence",
+          "date_iso": null,
+          "precision": null
+        }
+      ],
+      "source_quotes": [
+        {
+          "source_id": "wikipedia_fr_article",
+          "quote": "L'Académie platonicienne de Florence est une école et un mouvement philosophique et artistique propre à la Toscane, qui regroupe philosophes et artistes florentins. Tous bénéficièrent, durant les Quattrocento et Cinquecento, de l'appui de la famille régnante des Médicis. Les philosophes comme Marsile Ficin et Jean Pic de la Mirandole travaillent les concepts du beau et du sublime à partir des écrits grecs. Ils redécouvrent, traduisent et commentent les textes d'Hermès Trismégiste, Platon, Aristote, Plotin et plus généralement du legs gréco-romain, faisant évoluer les visions du monde issues de la chrétienté médiévale. Les artistes illustrent, par leurs représentations, les travaux de l'école philosophique de la Nouvelle Académie des Arts de Florence."
+        }
+      ],
+      "conflicts": []
+    },
+    {
+      "id": "5bfdc9ee-d400-4eca-bd17-7d8019c3cbdd",
+      "titre": "Mystérieux brouillard sec en Europe",
+      "date_in_db": "1808-01-01",
+      "year_in_db": "1808",
+      "date_candidate": "1808-01-01",
+      "year_candidate": "1808",
+      "precision": "year",
+      "status": "LIKELY_CORRECT",
+      "result_bucket": "preuve_externe_faible",
+      "confidence": 0.5,
+      "needs_human_review": false,
+      "recommendation": "Fournir des sources externes pour confirmer l'année 1808.",
+      "matched_article_fr": null,
+      "matched_article_en": null,
+      "wikidata_id": null,
+      "event_identity": "Mystérieux brouillard sec en Europe en 1808",
+      "is_disputed": false,
+      "ambiguous_identity": false,
+      "title_self_sufficient": true,
+      "title_not_self_sufficient": false,
+      "is_not_singular_event": false,
+      "is_time_span": false,
+      "is_period_based": false,
+      "exact_year_supported": true,
+      "reasoning_short": "Bien que le titre soit clair et que la description détaille l'événement en 1808, aucune source externe n'est fournie pour confirmer cette date. La date de la base de données n'est pas une preuve.",
+      "evidence_used": [],
+      "sources_checked": [],
+      "source_quotes": [],
+      "conflicts": []
+    },
+    {
+      "id": "ca6e2437-256a-461c-88cf-5fadb8553ed4",
+      "titre": "Adoption de la CCNUCC",
+      "date_in_db": "1992-01-01",
+      "year_in_db": "1992",
+      "date_candidate": "1992-01-01",
+      "year_candidate": "1992",
+      "precision": "year",
+      "status": "LIKELY_CORRECT",
+      "result_bucket": "preuve_externe_faible",
+      "confidence": 0,
+      "needs_human_review": false,
+      "recommendation": "Fournir des sources externes pour confirmer l'année de l'adoption de la CCNUCC.",
+      "matched_article_fr": null,
+      "matched_article_en": null,
+      "wikidata_id": null,
+      "event_identity": "Adoption de la Convention-cadre des Nations unies sur les changements climatiques (CCNUCC) à Rio de Janeiro.",
+      "is_disputed": false,
+      "ambiguous_identity": false,
+      "title_self_sufficient": true,
+      "title_not_self_sufficient": false,
+      "is_not_singular_event": false,
+      "is_time_span": false,
+      "is_period_based": false,
+      "exact_year_supported": true,
+      "reasoning_short": "Aucune source externe n'est fournie pour confirmer l'année de l'adoption de la CCNUCC. La date de la base de données n'est pas utilisée comme preuve.",
+      "evidence_used": [],
+      "sources_checked": [],
+      "source_quotes": [],
+      "conflicts": []
+    },
+    {
+      "id": "e3c15391-81d3-41ba-91e1-63165fb7c298",
+      "titre": "Introduction du dindon en Europe",
+      "date_in_db": "1520-01-01",
+      "year_in_db": "1520",
+      "date_candidate": null,
+      "year_candidate": null,
+      "precision": null,
+      "status": "INSUFFICIENT_EVIDENCE",
+      "result_bucket": "annee_exacte_introuvable",
+      "confidence": 0,
+      "needs_human_review": true,
+      "recommendation": "Rechercher des sources externes fiables qui mentionnent une année précise pour l'introduction du dindon en Europe.",
+      "matched_article_fr": null,
+      "matched_article_en": null,
+      "wikidata_id": null,
+      "event_identity": "Introduction du dindon en Europe",
+      "is_disputed": false,
+      "ambiguous_identity": false,
+      "title_self_sufficient": true,
+      "title_not_self_sufficient": false,
+      "is_not_singular_event": false,
+      "is_time_span": false,
+      "is_period_based": false,
+      "exact_year_supported": false,
+      "reasoning_short": "Aucune source externe n'est fournie pour confirmer l'année exacte de l'introduction du dindon en Europe. L'événement décrit pourrait s'étendre sur plusieurs années.",
+      "evidence_used": [],
+      "sources_checked": [],
+      "source_quotes": [],
+      "conflicts": []
+    },
+    {
+      "id": "24be0ddc-2b74-4d7c-a63a-103558bccb78",
+      "titre": "Publication de la Cosmographiae Introductio avec le nom America",
+      "date_in_db": "1507-01-01",
+      "year_in_db": "1507",
+      "date_candidate": "1507-01-01",
+      "year_candidate": "1507",
+      "precision": "year",
+      "status": "CONFIRMED",
+      "result_bucket": "confirme",
+      "confidence": 1,
+      "needs_human_review": false,
+      "recommendation": "No change needed.",
+      "matched_article_fr": "Cosmographiae introductio",
+      "matched_article_en": null,
+      "wikidata_id": "Q195891",
+      "event_identity": "Publication de la Cosmographiae Introductio avec le nom America",
+      "is_disputed": false,
+      "ambiguous_identity": false,
+      "title_self_sufficient": true,
+      "title_not_self_sufficient": false,
+      "is_not_singular_event": false,
+      "is_time_span": false,
+      "is_period_based": false,
+      "exact_year_supported": true,
+      "reasoning_short": "La Cosmographiae Introductio a été publiée en 1507, introduisant le nom America. Wikipedia et Wikidata confirment cette date.",
+      "evidence_used": [
+        "wikipedia_fr_article",
+        "wikidata_1"
+      ],
+      "sources_checked": [
+        {
+          "source_id": "wikipedia_fr_article",
+          "source_type": "wikipedia_fr",
+          "title": "Cosmographiae introductio",
+          "url": "https://fr.wikipedia.org/wiki/Cosmographiae_introductio",
+          "date_iso": null,
+          "precision": null
+        },
+        {
+          "source_id": "wikidata_1",
+          "source_type": "wikidata",
+          "title": "Q195891",
+          "url": "https://www.wikidata.org/wiki/Q195891",
+          "date_iso": "1507-01-01",
+          "precision": "year"
+        }
+      ],
+      "source_quotes": [
+        {
+          "source_id": "wikipedia_fr_article",
+          "quote": "Cosmographiae introductio (Introduction à la cosmographie) est un ouvrage imprimé en 13 feuilles filigranées, soit 52 feuillets in-quarto (ou 104 pages), publié à Saint-Dié en 1507 : le 25 avril (7 des calendes de mai) en 8 cahiers signés A6;B4;a8;b8;c8;d8;e4;f6 le 29 août (le 4 des calendes de septembre) en 10 cahiers signés 1. A6;B6;C4;D4 2. A8;b4;c4;d8;e4;f4 en préambule de la carte-globe en 12 fuseaux de Martin Waldseemüller (in solido) et du planisphère de Waldseemüller (in plano), célèbres cartes du monde qui proposent pour la première fois, à l'initiative des érudits du Gymnase vosgien, le nom « America » pour le Nouveau Monde (Mundus novus). En combinaison avec l'édition de la Géographie de Ptolémée en 1513 à Strasbourg chez Jean Schott, ces ouvrages font référence et ont été fréquemment copiés. Cet ouvrage comprend deux parties, bien séparées lors de la deuxième impression, le …"
+        },
+        {
+          "source_id": "wikidata_1",
+          "quote": "inception: 1507-01-01"
+        }
+      ],
+      "conflicts": []
+    },
+    {
+      "id": "dfc7dea2-e5ab-4eb8-b09f-86ca0d724f4b",
+      "titre": "Premier Ballon d'Or hors Europe",
+      "date_in_db": "1995-01-01",
+      "year_in_db": "1995",
+      "date_candidate": "1995-01-01",
+      "year_candidate": "1995",
+      "precision": "year",
+      "status": "LIKELY_CORRECT",
+      "result_bucket": "preuve_externe_faible",
+      "confidence": 0.8,
+      "needs_human_review": false,
+      "recommendation": "Vérifier avec des sources externes pour confirmer l'année 1995.",
+      "matched_article_fr": null,
+      "matched_article_en": null,
+      "wikidata_id": null,
+      "event_identity": "Premier Ballon d'Or remporté par un joueur non-européen, George Weah, en 1995.",
+      "is_disputed": false,
+      "ambiguous_identity": false,
+      "title_self_sufficient": true,
+      "title_not_self_sufficient": false,
+      "is_not_singular_event": false,
+      "is_time_span": false,
+      "is_period_based": false,
+      "exact_year_supported": true,
+      "reasoning_short": "La description de l'événement indique clairement que George Weah a remporté le Ballon d'Or en 1995, devenant le premier joueur non-européen à recevoir cette distinction. Bien qu'aucune source externe ne soit fournie, la description est suffisamment précise pour confirmer l'année.",
+      "evidence_used": [],
+      "sources_checked": [],
+      "source_quotes": [],
+      "conflicts": []
+    },
+    {
+      "id": "1ae26e43-6114-4d9b-8333-53d75a8c574c",
+      "titre": "Marco Polo meurt à Venise",
+      "date_in_db": "1324-01-17",
+      "year_in_db": "1324",
+      "date_candidate": "1324-01-01",
+      "year_candidate": "1324",
+      "precision": "year",
+      "status": "CONFIRMED",
+      "result_bucket": "confirme",
+      "confidence": 0.9,
+      "needs_human_review": false,
+      "recommendation": "Confirmer la date de 1324 comme année de la mort de Marco Polo.",
+      "matched_article_fr": "Marco Polo",
+      "matched_article_en": null,
+      "wikidata_id": "Q6101",
+      "event_identity": "Mort de Marco Polo à Venise en 1324.",
+      "is_disputed": false,
+      "ambiguous_identity": false,
+      "title_self_sufficient": true,
+      "title_not_self_sufficient": false,
+      "is_not_singular_event": false,
+      "is_time_span": false,
+      "is_period_based": false,
+      "exact_year_supported": true,
+      "reasoning_short": "Wikidata et Wikipedia confirment la mort de Marco Polo en 1324.",
+      "evidence_used": [
+        "wikipedia_fr_article",
+        "wikidata_3"
+      ],
+      "sources_checked": [
+        {
+          "source_id": "wikipedia_fr_article",
+          "source_type": "wikipedia_fr",
+          "title": "Marco Polo",
+          "url": "https://fr.wikipedia.org/wiki/Marco_Polo",
+          "date_iso": null,
+          "precision": null
+        },
+        {
+          "source_id": "wikidata_1",
+          "source_type": "wikidata",
+          "title": "Q6101",
+          "url": "https://www.wikidata.org/wiki/Q6101",
+          "date_iso": "1254-09-15",
+          "precision": "day"
+        },
+        {
+          "source_id": "wikidata_2",
+          "source_type": "wikidata",
+          "title": "Q6101",
+          "url": "https://www.wikidata.org/wiki/Q6101",
+          "date_iso": "1254-01-01",
+          "precision": "year"
+        },
+        {
+          "source_id": "wikidata_3",
+          "source_type": "wikidata",
+          "title": "Q6101",
+          "url": "https://www.wikidata.org/wiki/Q6101",
+          "date_iso": "1324-01-08",
+          "precision": "day"
+        }
+      ],
+      "source_quotes": [
+        {
+          "source_id": "wikipedia_fr_article",
+          "quote": "Marco Polo ou Marc Pol (né le 15 septembre 1254 à Venise et mort probablement en janvier 1324 à Venise) est un célèbre marchand, explorateur, diplomate, ethnologue et écrivain vénitien, de la période des préludes des grandes découvertes, devenu mondialement célèbre pour une des plus anciennes descriptions qu'il a données de l'empire sino-mongol du Khagan Kubilai Khan, avec son Livre de Marco Polo (ou Le Devisement du Monde ou Livre des Merveilles) de 1298, recopié et traduit avec succès en de nombreuses langues. À l'âge de 17 ans, Marco Polo part en 1271 avec ses père et oncle, les frères Niccolò et Matteo Polo, retournant en Chine, en suivant les routes de la soie et des épices jusqu'à Pékin, pendant 3 ans et demi, pour retrouver le Grand Khan Kubilai qui les avait missionnés auprès du pape. En Chine, Marco Polo devient « ambassadeur-messager » de l'empereur, c'est-à-dire émissaire imp…"
+        },
+        {
+          "source_id": "wikidata_1",
+          "quote": "date of birth: 1254-09-15"
+        },
+        {
+          "source_id": "wikidata_2",
+          "quote": "date of birth: 1254-01-01"
+        },
+        {
+          "source_id": "wikidata_3",
+          "quote": "date of death: 1324-01-08"
+        }
+      ],
+      "conflicts": []
+    },
+    {
+      "id": "e27b0d74-8558-4189-a5aa-4480e97d710f",
+      "titre": "Retour de Philippe Auguste de la troisième croisade",
+      "date_in_db": "1191-01-01",
+      "year_in_db": "1191",
+      "date_candidate": "1191-01-01",
+      "year_candidate": "1191",
+      "precision": "year",
+      "status": "LIKELY_CORRECT",
+      "result_bucket": "probable_mais_a_confirmer",
+      "confidence": 0.7,
+      "needs_human_review": false,
+      "recommendation": "Vérifier si d'autres sources confirment le retour de Philippe Auguste en 1191.",
+      "matched_article_fr": "Troisième croisade",
+      "matched_article_en": null,
+      "wikidata_id": "Q51655",
+      "event_identity": "Retour de Philippe Auguste de la troisième croisade",
+      "is_disputed": false,
+      "ambiguous_identity": false,
+      "title_self_sufficient": true,
+      "title_not_self_sufficient": false,
+      "is_not_singular_event": false,
+      "is_time_span": false,
+      "is_period_based": false,
+      "exact_year_supported": true,
+      "reasoning_short": "La description de l'événement mentionne que Philippe Auguste revient de la Troisième Croisade en 1191. Bien que les sources externes ne confirment pas directement le retour de Philippe Auguste en 1191, elles indiquent que la Troisième Croisade a eu lieu entre 1189 et 1192. La date de la base de don…",
+      "evidence_used": [
+        "wikipedia_fr_article"
+      ],
+      "sources_checked": [
+        {
+          "source_id": "wikipedia_fr_article",
+          "source_type": "wikipedia_fr",
+          "title": "Troisième croisade",
+          "url": "https://fr.wikipedia.org/wiki/Troisi%C3%A8me_croisade",
+          "date_iso": null,
+          "precision": null
+        },
+        {
+          "source_id": "wikidata_1",
+          "source_type": "wikidata",
+          "title": "Q51655",
+          "url": "https://www.wikidata.org/wiki/Q51655",
+          "date_iso": "1192-09-02",
+          "precision": "day"
+        },
+        {
+          "source_id": "wikidata_2",
+          "source_type": "wikidata",
+          "title": "Q51655",
+          "url": "https://www.wikidata.org/wiki/Q51655",
+          "date_iso": "1189-01-01",
+          "precision": "year"
+        }
+      ],
+      "source_quotes": [
+        {
+          "source_id": "wikipedia_fr_article",
+          "quote": "La troisième croisade, qui débuta en 1189 et s'acheva en 1192, est une série d’expéditions menées par Frédéric Barberousse, empereur germanique, Philippe Auguste, roi de France, et Richard Cœur de Lion, roi d'Angleterre, dans le but de reprendre Jérusalem et la Terre sainte à Saladin. Cette croisade a permis la reprise d’un certain nombre de ports de Terre sainte, mais n’a pas permis la reconquête de l’arrière-pays, ni la reprise de Jérusalem. Cependant, la libre circulation à Jérusalem fut autorisée aux pèlerins et marchands chrétiens."
+        },
+        {
+          "source_id": "wikidata_1",
+          "quote": "point in time: 1192-09-02"
+        },
+        {
+          "source_id": "wikidata_2",
+          "quote": "start time: 1189-01-01"
+        }
+      ],
+      "conflicts": []
+    },
+    {
+      "id": "76cdae9f-dd21-4556-8096-4b908408c796",
+      "titre": "Création du système des flottes du trésor espagnoles",
+      "date_in_db": "1504-01-01",
+      "year_in_db": "1504",
+      "date_candidate": null,
+      "year_candidate": null,
+      "precision": null,
+      "status": "INSUFFICIENT_EVIDENCE",
+      "result_bucket": "retrieval_insuffisant",
+      "confidence": 0,
+      "needs_human_review": false,
+      "recommendation": "Fournir des sources externes fiables pour valider l'année de création.",
+      "matched_article_fr": null,
+      "matched_article_en": null,
+      "wikidata_id": null,
+      "event_identity": "Création du système des flottes du trésor espagnoles (Carrera de Indias)",
+      "is_disputed": false,
+      "ambiguous_identity": false,
+      "title_self_sufficient": true,
+      "title_not_self_sufficient": false,
+      "is_not_singular_event": false,
+      "is_time_span": false,
+      "is_period_based": false,
+      "exact_year_supported": true,
+      "reasoning_short": "Aucune source externe n'est fournie pour confirmer l'année exacte de la création du système des flottes du trésor espagnoles.",
+      "evidence_used": [],
+      "sources_checked": [],
+      "source_quotes": [],
+      "conflicts": []
+    },
+    {
+      "id": "216cba7a-28f3-4e65-8a15-806e99568171",
+      "titre": "Offensive Michael du général Ludendorff sur le front occidental",
+      "date_in_db": "1918-01-01",
+      "year_in_db": "1918",
+      "date_candidate": "1918-01-01",
+      "year_candidate": "1918",
+      "precision": "year",
+      "status": "CONFIRMED",
+      "result_bucket": "confirme",
+      "confidence": 0.9,
+      "needs_human_review": false,
+      "recommendation": "Confirmer la date de 1918.",
+      "matched_article_fr": "https://fr.wikipedia.org/wiki/Offensive_du_Printemps",
+      "matched_article_en": null,
+      "wikidata_id": "Q750567",
+      "event_identity": "Offensive Michael, une des offensives du Printemps allemand de 1918 sur le front occidental.",
+      "is_disputed": false,
+      "ambiguous_identity": false,
+      "title_self_sufficient": true,
+      "title_not_self_sufficient": false,
+      "is_not_singular_event": false,
+      "is_time_span": false,
+      "is_period_based": false,
+      "exact_year_supported": true,
+      "reasoning_short": "L'offensive Michael a eu lieu en 1918, comme confirmé par l'article Wikipédia et Wikidata.",
+      "evidence_used": [
+        "wikipedia_fr_article",
+        "wikidata_1"
+      ],
+      "sources_checked": [
+        {
+          "source_id": "wikipedia_fr_article",
+          "source_type": "wikipedia_fr",
+          "title": "Offensive du Printemps",
+          "url": "https://fr.wikipedia.org/wiki/Offensive_du_Printemps",
+          "date_iso": null,
+          "precision": null
+        },
+        {
+          "source_id": "wikidata_1",
+          "source_type": "wikidata",
+          "title": "Q750567",
+          "url": "https://www.wikidata.org/wiki/Q750567",
+          "date_iso": "1918-03-21",
+          "precision": "day"
+        }
+      ],
+      "source_quotes": [
+        {
+          "source_id": "wikipedia_fr_article",
+          "quote": "L’offensive du Printemps, également connue sous les noms de bataille du Kaiser (allemand : Kaiserschlacht, soit celle « de l'empereur ») ou offensive de Ludendorff, est un terme utilisé pour faire référence aux séries d'attaques allemandes sur le front occidental du 21 mars au 18 juillet 1918 durant la Première Guerre mondiale. Les Allemands s'étaient rendu compte que leur seule chance de gagner la guerre était d'anéantir les Alliés avant que les États-Unis ne puissent déployer suffisamment de troupes en Europe pour vaincre l'Allemagne. Cinquante divisions allemandes avaient pu être redéployées sur le front occidental après la signature du traité de Brest-Litovsk avec la jeune Russie soviétique. Plusieurs opérations allemandes furent mises au point : Michael, Georgette, Gneisenau et Blücher-Yorck. Michael constituait la principale attaque, qui était destinée à percer les lignes alliées,…"
+        },
+        {
+          "source_id": "wikidata_1",
+          "quote": "start time: 1918-03-21"
+        }
+      ],
+      "conflicts": []
+    }
+  ]
+}

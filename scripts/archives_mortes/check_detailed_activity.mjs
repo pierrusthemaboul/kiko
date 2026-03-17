@@ -28,3 +28,4 @@ async function checkDetailedActivity() {
     runs?.forEach(r => console.log(`- [${r.created_at}] User: ${r.user_id} | Mode: ${r.mode} | Points: ${r.points} | economy_applied_at: ${r.economy_applied_at}`));
 }
 checkDetailedActivity();
+

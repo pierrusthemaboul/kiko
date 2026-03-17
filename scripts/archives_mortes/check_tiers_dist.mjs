@@ -23,3 +23,4 @@ async function checkTiers() {
     console.log(`TOTAL: ${events.length}`);
 }
 checkTiers();
+

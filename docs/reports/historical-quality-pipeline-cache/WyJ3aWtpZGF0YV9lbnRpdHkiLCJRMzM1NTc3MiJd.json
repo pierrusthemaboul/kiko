@@ -1,0 +1,536 @@
+{
+  "pageid": 3198586,
+  "ns": 0,
+  "title": "Q3355772",
+  "lastrevid": 2468831536,
+  "modified": "2026-03-02T21:27:33Z",
+  "type": "item",
+  "id": "Q3355772",
+  "labels": {
+    "fr": {
+      "language": "fr",
+      "value": "Ordre nouveau"
+    },
+    "en": {
+      "language": "en",
+      "value": "Ordre Nouveau"
+    },
+    "it": {
+      "language": "it",
+      "value": "Ordre Nouveau"
+    },
+    "ja": {
+      "language": "ja",
+      "value": "新秩序"
+    },
+    "ca": {
+      "language": "ca",
+      "value": "Ordre Nouveau"
+    },
+    "de": {
+      "language": "de",
+      "value": "Ordre Nouveau"
+    },
+    "es": {
+      "language": "es",
+      "value": "Ordre Nouveau"
+    },
+    "eu": {
+      "language": "eu",
+      "value": "Ordre Nouveau"
+    },
+    "nl": {
+      "language": "nl",
+      "value": "Ordre Nouveau"
+    },
+    "pt": {
+      "language": "pt",
+      "value": "Ordre Nouveau"
+    },
+    "zh": {
+      "language": "zh",
+      "value": "新秩序"
+    },
+    "sl": {
+      "language": "sl",
+      "value": "Ordre Nouveau"
+    }
+  },
+  "descriptions": {
+    "fr": {
+      "language": "fr",
+      "value": "ancien mouvement politique français"
+    },
+    "en": {
+      "language": "en",
+      "value": "neofascist movement in France (1969–1973)"
+    },
+    "ca": {
+      "language": "ca",
+      "value": "moviment neofeixista francès"
+    },
+    "sl": {
+      "language": "sl",
+      "value": "neofašistično gibanje v Franciji (1969–1973)"
+    }
+  },
+  "aliases": {
+    "fr": [
+      {
+        "language": "fr",
+        "value": "Ordre Nouveau (groupuscule)"
+      },
+      {
+        "language": "fr",
+        "value": "Ordre Nouveau (nationalisme français)"
+      },
+      {
+        "language": "fr",
+        "value": "Ordre Nouveau (parti politique français)"
+      },
+      {
+        "language": "fr",
+        "value": "Ordre Nouveau (mouvement)"
+      }
+    ]
+  },
+  "claims": {
+    "P646": [
+      {
+        "mainsnak": {
+          "snaktype": "value",
+          "property": "P646",
+          "hash": "4e9df053618e4abd75163ef385821f51557a904d",
+          "datavalue": {
+            "value": "/m/09gbrj5",
+            "type": "string"
+          },
+          "datatype": "external-id"
+        },
+        "type": "statement",
+        "id": "Q3355772$69AF6E22-4DF8-4499-BCF6-2A7ABFF6DBC6",
+        "rank": "normal",
+        "references": [
+          {
+            "hash": "2b00cb481cddcac7623114367489b5c194901c4a",
+            "snaks": {
+              "P248": [
+                {
+                  "snaktype": "value",
+                  "property": "P248",
+                  "hash": "a94b740202b097dd33355e0e6c00e54b9395e5e0",
+                  "datavalue": {
+                    "value": {
+                      "entity-type": "item",
+                      "numeric-id": 15241312,
+                      "id": "Q15241312"
+                    },
+                    "type": "wikibase-entityid"
+                  },
+                  "datatype": "wikibase-item"
+                }
+              ],
+              "P577": [
+                {
+                  "snaktype": "value",
+                  "property": "P577",
+                  "hash": "fde79ecb015112d2f29229ccc1ec514ed3e71fa2",
+                  "datavalue": {
+                    "value": {
+                      "time": "+2013-10-28T00:00:00Z",
+                      "timezone": 0,
+                      "before": 0,
+                      "after": 0,
+                      "precision": 11,
+                      "calendarmodel": "http://www.wikidata.org/entity/Q1985727"
+                    },
+                    "type": "time"
+                  },
+                  "datatype": "time"
+                }
+              ]
+            },
+            "snaks-order": [
+              "P248",
+              "P577"
+            ]
+          }
+        ]
+      }
+    ],
+    "P31": [
+      {
+        "mainsnak": {
+          "snaktype": "value",
+          "property": "P31",
+          "hash": "1e0d441a5c8a130f09c44047c70a02c4710522ed",
+          "datavalue": {
+            "value": {
+              "entity-type": "item",
+              "numeric-id": 2738074,
+              "id": "Q2738074"
+            },
+            "type": "wikibase-entityid"
+          },
+          "datatype": "wikibase-item"
+        },
+        "type": "statement",
+        "id": "Q3355772$3c81e2d3-4bde-3afa-7e0a-026ca4f3a747",
+        "rank": "normal"
+      }
+    ],
+    "P17": [
+      {
+        "mainsnak": {
+          "snaktype": "value",
+          "property": "P17",
+          "hash": "c05db5d169c2560b9799d567a803d20a392f53e4",
+          "datavalue": {
+            "value": {
+              "entity-type": "item",
+              "numeric-id": 142,
+              "id": "Q142"
+            },
+            "type": "wikibase-entityid"
+          },
+          "datatype": "wikibase-item"
+        },
+        "type": "statement",
+        "id": "Q3355772$7069680a-4940-92f0-4d5e-437d37b829d5",
+        "rank": "normal"
+      }
+    ],
+    "P1142": [
+      {
+        "mainsnak": {
+          "snaktype": "value",
+          "property": "P1142",
+          "hash": "0eeb7a4c8d6a777cdc06446fb0725157ea01a06d",
+          "datavalue": {
+            "value": {
+              "entity-type": "item",
+              "numeric-id": 3336986,
+              "id": "Q3336986"
+            },
+            "type": "wikibase-entityid"
+          },
+          "datatype": "wikibase-item"
+        },
+        "type": "statement",
+        "id": "Q3355772$f642afcd-4a0d-7ef0-261d-3b350c176bfb",
+        "rank": "normal"
+      },
+      {
+        "mainsnak": {
+          "snaktype": "value",
+          "property": "P1142",
+          "hash": "258bd8ea521b2bdb1721647d266e0ad975122fcd",
+          "datavalue": {
+            "value": {
+              "entity-type": "item",
+              "numeric-id": 696116,
+              "id": "Q696116"
+            },
+            "type": "wikibase-entityid"
+          },
+          "datatype": "wikibase-item"
+        },
+        "type": "statement",
+        "id": "Q3355772$04daac74-486a-f9d9-9bf4-db23d0039222",
+        "rank": "normal"
+      },
+      {
+        "mainsnak": {
+          "snaktype": "value",
+          "property": "P1142",
+          "hash": "8d80beade501f68923621e0ddf8b39ebf42def8e",
+          "datavalue": {
+            "value": {
+              "entity-type": "item",
+              "numeric-id": 3874022,
+              "id": "Q3874022"
+            },
+            "type": "wikibase-entityid"
+          },
+          "datatype": "wikibase-item"
+        },
+        "type": "statement",
+        "id": "Q3355772$3b6b1c9c-4598-299c-6b39-121f004e6f99",
+        "rank": "normal"
+      }
+    ],
+    "P910": [
+      {
+        "mainsnak": {
+          "snaktype": "value",
+          "property": "P910",
+          "hash": "866b33257d341b8ab8a37db846b4e005441cdf9e",
+          "datavalue": {
+            "value": {
+              "entity-type": "item",
+              "numeric-id": 13338885,
+              "id": "Q13338885"
+            },
+            "type": "wikibase-entityid"
+          },
+          "datatype": "wikibase-item"
+        },
+        "type": "statement",
+        "id": "Q3355772$57c3000e-71c2-406b-af75-21e3d898dfa0",
+        "rank": "normal"
+      }
+    ],
+    "P268": [
+      {
+        "mainsnak": {
+          "snaktype": "value",
+          "property": "P268",
+          "hash": "a54d7ba485035423d2b2079e7f7716389c450638",
+          "datavalue": {
+            "value": "12767067v",
+            "type": "string"
+          },
+          "datatype": "external-id"
+        },
+        "type": "statement",
+        "id": "Q3355772$0f8379c0-464e-4a07-5899-4579003e948d",
+        "rank": "normal"
+      }
+    ],
+    "P576": [
+      {
+        "mainsnak": {
+          "snaktype": "value",
+          "property": "P576",
+          "hash": "a81ef59a11aa4ec2c5aecb93ef9028fc1d3a5c73",
+          "datavalue": {
+            "value": {
+              "time": "+1973-06-28T00:00:00Z",
+              "timezone": 0,
+              "before": 0,
+              "after": 0,
+              "precision": 11,
+              "calendarmodel": "http://www.wikidata.org/entity/Q1985727"
+            },
+            "type": "time"
+          },
+          "datatype": "time"
+        },
+        "type": "statement",
+        "id": "Q3355772$2422d674-43a1-1cd1-3f47-5d28e340d1c2",
+        "rank": "normal"
+      }
+    ],
+    "P214": [
+      {
+        "mainsnak": {
+          "snaktype": "value",
+          "property": "P214",
+          "hash": "085e6c0875782e276d9b8fa7e4f51eb42079a1b4",
+          "datavalue": {
+            "value": "261777053",
+            "type": "string"
+          },
+          "datatype": "external-id"
+        },
+        "type": "statement",
+        "id": "Q3355772$1beed7fd-40fe-37ec-a883-ffbccba8af1a",
+        "rank": "normal"
+      }
+    ],
+    "P571": [
+      {
+        "mainsnak": {
+          "snaktype": "value",
+          "property": "P571",
+          "hash": "9724f88a622160554d3c1f73cd60295827e22491",
+          "datavalue": {
+            "value": {
+              "time": "+1969-12-15T00:00:00Z",
+              "timezone": 0,
+              "before": 0,
+              "after": 0,
+              "precision": 11,
+              "calendarmodel": "http://www.wikidata.org/entity/Q1985727"
+            },
+            "type": "time"
+          },
+          "datatype": "time"
+        },
+        "type": "statement",
+        "id": "Q3355772$31a019ae-4d0a-3709-43aa-301cecadfdf1",
+        "rank": "normal"
+      }
+    ],
+    "P112": [
+      {
+        "mainsnak": {
+          "snaktype": "value",
+          "property": "P112",
+          "hash": "706b37e882cc771c7f5cfeac70057d25e2edab5d",
+          "datavalue": {
+            "value": {
+              "entity-type": "item",
+              "numeric-id": 3165615,
+              "id": "Q3165615"
+            },
+            "type": "wikibase-entityid"
+          },
+          "datatype": "wikibase-item"
+        },
+        "type": "statement",
+        "id": "Q3355772$12c3b81f-412c-e926-6449-fc0bd7292378",
+        "rank": "normal"
+      }
+    ],
+    "P154": [
+      {
+        "mainsnak": {
+          "snaktype": "value",
+          "property": "P154",
+          "hash": "080ca01bb7274676ce858a7388a407c5f23982d8",
+          "datavalue": {
+            "value": "Celtic-style crossed circle.svg",
+            "type": "string"
+          },
+          "datatype": "commonsMedia"
+        },
+        "type": "statement",
+        "qualifiers": {
+          "P2096": [
+            {
+              "snaktype": "value",
+              "property": "P2096",
+              "hash": "a86d30df03154ab3bda5c8633caf65bb83b06049",
+              "datavalue": {
+                "value": {
+                  "text": "Croce celtica, simbolo del movimento",
+                  "language": "it"
+                },
+                "type": "monolingualtext"
+              },
+              "datatype": "monolingualtext"
+            }
+          ]
+        },
+        "qualifiers-order": [
+          "P2096"
+        ],
+        "id": "Q3355772$093e0a2c-4648-a8a2-ce05-ccfed1570143",
+        "rank": "normal"
+      }
+    ],
+    "P1387": [
+      {
+        "mainsnak": {
+          "snaktype": "value",
+          "property": "P1387",
+          "hash": "0d4765e3242ab7ff9026cf4ce6f4ef871dde6ec2",
+          "datavalue": {
+            "value": {
+              "entity-type": "item",
+              "numeric-id": 204481,
+              "id": "Q204481"
+            },
+            "type": "wikibase-entityid"
+          },
+          "datatype": "wikibase-item"
+        },
+        "type": "statement",
+        "id": "Q3355772$4ecbd017-4d60-c4c4-7dd6-3b3346d0d32a",
+        "rank": "normal"
+      }
+    ],
+    "P1365": [
+      {
+        "mainsnak": {
+          "snaktype": "value",
+          "property": "P1365",
+          "hash": "b35a42bc1605ba715d52ae4bfbb30fcc8e16796b",
+          "datavalue": {
+            "value": {
+              "entity-type": "item",
+              "numeric-id": 3083781,
+              "id": "Q3083781"
+            },
+            "type": "wikibase-entityid"
+          },
+          "datatype": "wikibase-item"
+        },
+        "type": "statement",
+        "id": "Q3355772$a237d503-47d7-563e-7e88-926177462083",
+        "rank": "normal"
+      }
+    ],
+    "P373": [
+      {
+        "mainsnak": {
+          "snaktype": "value",
+          "property": "P373",
+          "hash": "7bccbe0fe149a9a67bb781ea5009139ea2ea8a91",
+          "datavalue": {
+            "value": "Ordre nouveau",
+            "type": "string"
+          },
+          "datatype": "string"
+        },
+        "type": "statement",
+        "id": "Q3355772$0f116d84-4083-f0d9-a91b-0399e0d879ab",
+        "rank": "normal"
+      }
+    ],
+    "P1366": [
+      {
+        "mainsnak": {
+          "snaktype": "value",
+          "property": "P1366",
+          "hash": "f395e12e61bf19e1caed541d98b63e7f0249655e",
+          "datavalue": {
+            "value": {
+              "entity-type": "item",
+              "numeric-id": 2985453,
+              "id": "Q2985453"
+            },
+            "type": "wikibase-entityid"
+          },
+          "datatype": "wikibase-item"
+        },
+        "type": "statement",
+        "id": "Q3355772$f5ffa3cd-4a27-f311-28f0-d08ee59b8b0f",
+        "rank": "normal"
+      }
+    ]
+  },
+  "sitelinks": {
+    "cawiki": {
+      "site": "cawiki",
+      "title": "Ordre Nouveau",
+      "badges": [],
+      "url": "https://ca.wikipedia.org/wiki/Ordre_Nouveau"
+    },
+    "enwiki": {
+      "site": "enwiki",
+      "title": "Ordre Nouveau (1960s)",
+      "badges": [],
+      "url": "https://en.wikipedia.org/wiki/Ordre_Nouveau_(1960s)"
+    },
+    "euwiki": {
+      "site": "euwiki",
+      "title": "Ordre Nouveau",
+      "badges": [],
+      "url": "https://eu.wikipedia.org/wiki/Ordre_Nouveau"
+    },
+    "frwiki": {
+      "site": "frwiki",
+      "title": "Ordre nouveau (mouvement)",
+      "badges": [],
+      "url": "https://fr.wikipedia.org/wiki/Ordre_nouveau_(mouvement)"
+    },
+    "itwiki": {
+      "site": "itwiki",
+      "title": "Ordre nouveau",
+      "badges": [],
+      "url": "https://it.wikipedia.org/wiki/Ordre_nouveau"
+    }
+  }
+}

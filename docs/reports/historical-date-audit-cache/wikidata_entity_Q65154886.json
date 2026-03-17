@@ -1,0 +1,165 @@
+{
+  "saved_at": "2026-03-07T15:58:57.832Z",
+  "value": {
+    "pageid": 64795078,
+    "ns": 0,
+    "title": "Q65154886",
+    "lastrevid": 1608213387,
+    "modified": "2022-04-02T03:46:51Z",
+    "type": "item",
+    "id": "Q65154886",
+    "labels": {
+      "hr": {
+        "language": "hr",
+        "value": "Medicina u 1630."
+      },
+      "fr": {
+        "language": "fr",
+        "value": "1630 en santé et médecine"
+      },
+      "en": {
+        "language": "en",
+        "value": "1630 in health and medicine"
+      },
+      "es": {
+        "language": "es",
+        "value": "salud y medicina en 1630"
+      },
+      "ml": {
+        "language": "ml",
+        "value": "1630 ആരോഗ്യത്തിലും മരുന്നുകളിലും"
+      },
+      "sv": {
+        "language": "sv",
+        "value": "Hälso- och medicinåret 1630"
+      }
+    },
+    "descriptions": {},
+    "aliases": {
+      "es": [
+        {
+          "language": "es",
+          "value": "medicina en 1630"
+        }
+      ]
+    },
+    "claims": {
+      "P31": [
+        {
+          "mainsnak": {
+            "snaktype": "value",
+            "property": "P31",
+            "hash": "b9953cd69a9e5fc8f8fe263b847673b0013cf93f",
+            "datavalue": {
+              "value": {
+                "entity-type": "item",
+                "numeric-id": 18340514,
+                "id": "Q18340514"
+              },
+              "type": "wikibase-entityid"
+            },
+            "datatype": "wikibase-item"
+          },
+          "type": "statement",
+          "id": "Q65154886$4320EC2C-1BF4-4A80-BB01-34A65FC360B4",
+          "rank": "normal"
+        }
+      ],
+      "P585": [
+        {
+          "mainsnak": {
+            "snaktype": "value",
+            "property": "P585",
+            "hash": "24879900e70453d6a896abfce332f599c6c4d5c8",
+            "datavalue": {
+              "value": {
+                "time": "+1630-00-00T00:00:00Z",
+                "timezone": 0,
+                "before": 0,
+                "after": 0,
+                "precision": 9,
+                "calendarmodel": "http://www.wikidata.org/entity/Q1985727"
+              },
+              "type": "time"
+            },
+            "datatype": "time"
+          },
+          "type": "statement",
+          "id": "Q65154886$B3F50970-7373-49B5-9C7D-85A9675D1873",
+          "rank": "normal"
+        }
+      ],
+      "P1269": [
+        {
+          "mainsnak": {
+            "snaktype": "value",
+            "property": "P1269",
+            "hash": "521aaf1d0a2e0381ae49cbf289fb3f227a89bba4",
+            "datavalue": {
+              "value": {
+                "entity-type": "item",
+                "numeric-id": 72083407,
+                "id": "Q72083407"
+              },
+              "type": "wikibase-entityid"
+            },
+            "datatype": "wikibase-item"
+          },
+          "type": "statement",
+          "id": "Q65154886$2A544221-4555-44DF-8B89-B6EA529C906E",
+          "rank": "normal"
+        }
+      ],
+      "P155": [
+        {
+          "mainsnak": {
+            "snaktype": "value",
+            "property": "P155",
+            "hash": "958c078c25d13e9ca1ed9d2434da0cda2f3a8ce5",
+            "datavalue": {
+              "value": {
+                "entity-type": "item",
+                "numeric-id": 65154885,
+                "id": "Q65154885"
+              },
+              "type": "wikibase-entityid"
+            },
+            "datatype": "wikibase-item"
+          },
+          "type": "statement",
+          "id": "Q65154886$456B20EC-20B8-44B7-B460-E289168F870D",
+          "rank": "normal"
+        }
+      ],
+      "P156": [
+        {
+          "mainsnak": {
+            "snaktype": "value",
+            "property": "P156",
+            "hash": "62ba5de2e968a7a1a1bc2c79c593a1e23f2db89a",
+            "datavalue": {
+              "value": {
+                "entity-type": "item",
+                "numeric-id": 65154887,
+                "id": "Q65154887"
+              },
+              "type": "wikibase-entityid"
+            },
+            "datatype": "wikibase-item"
+          },
+          "type": "statement",
+          "id": "Q65154886$A343928F-2324-43CD-BA70-450487FF1FB8",
+          "rank": "normal"
+        }
+      ]
+    },
+    "sitelinks": {
+      "frwiki": {
+        "site": "frwiki",
+        "title": "1630 en santé et médecine",
+        "badges": [],
+        "url": "https://fr.wikipedia.org/wiki/1630_en_sant%C3%A9_et_m%C3%A9decine"
+      }
+    }
+  }
+}

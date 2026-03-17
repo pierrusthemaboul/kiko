@@ -1,0 +1,476 @@
+{
+  "pageid": 3322339,
+  "ns": 0,
+  "title": "Q3488641",
+  "lastrevid": 2448934639,
+  "modified": "2025-12-30T07:14:38Z",
+  "type": "item",
+  "id": "Q3488641",
+  "labels": {
+    "fr": {
+      "language": "fr",
+      "value": "Société royale de médecine"
+    },
+    "en": {
+      "language": "en",
+      "value": "Société royale de médecine"
+    },
+    "cy": {
+      "language": "cy",
+      "value": "Société royale de médecine"
+    },
+    "de": {
+      "language": "de",
+      "value": "Société royale de médecine"
+    },
+    "de-ch": {
+      "language": "de-ch",
+      "value": "Société royale de médecine"
+    },
+    "ja": {
+      "language": "ja",
+      "value": "王立医学会"
+    }
+  },
+  "descriptions": {
+    "de": {
+      "language": "de",
+      "value": "Königlich medizinische Gesellschaft in Frankreich"
+    },
+    "ar": {
+      "language": "ar",
+      "value": "منظمة فرنسية"
+    },
+    "en": {
+      "language": "en",
+      "value": "French medical organization"
+    }
+  },
+  "aliases": {
+    "fr": [
+      {
+        "language": "fr",
+        "value": "Societe royale de Medecine"
+      },
+      {
+        "language": "fr",
+        "value": "Société royale de Médecine"
+      }
+    ],
+    "en": [
+      {
+        "language": "en",
+        "value": "Societe royale de medecine"
+      }
+    ]
+  },
+  "claims": {
+    "P373": [
+      {
+        "mainsnak": {
+          "snaktype": "value",
+          "property": "P373",
+          "hash": "423f887c6a8a2081b93f7c1aee00a80686db1a6b",
+          "datavalue": {
+            "value": "Société royale de médecine",
+            "type": "string"
+          },
+          "datatype": "string"
+        },
+        "type": "statement",
+        "id": "Q3488641$7D6D170E-5B86-42BB-926B-2ED1078B5B8E",
+        "rank": "normal"
+      }
+    ],
+    "P227": [
+      {
+        "mainsnak": {
+          "snaktype": "value",
+          "property": "P227",
+          "hash": "93d10eee64ccabfa60a6698be53bc664eccaeff5",
+          "datavalue": {
+            "value": "65886-8",
+            "type": "string"
+          },
+          "datatype": "external-id"
+        },
+        "type": "statement",
+        "id": "Q3488641$E308633D-21A8-430B-BDD1-EF5B6860924C",
+        "rank": "normal",
+        "references": [
+          {
+            "hash": "9a24f7c0208b05d6be97077d855671d1dfdbc0dd",
+            "snaks": {
+              "P143": [
+                {
+                  "snaktype": "value",
+                  "property": "P143",
+                  "hash": "d38375ffe6fe142663ff55cd783aa4df4301d83d",
+                  "datavalue": {
+                    "value": {
+                      "entity-type": "item",
+                      "numeric-id": 48183,
+                      "id": "Q48183"
+                    },
+                    "type": "wikibase-entityid"
+                  },
+                  "datatype": "wikibase-item"
+                }
+              ]
+            },
+            "snaks-order": [
+              "P143"
+            ]
+          }
+        ]
+      }
+    ],
+    "P214": [
+      {
+        "mainsnak": {
+          "snaktype": "value",
+          "property": "P214",
+          "hash": "9c8a8e091560ee058aa6e86699a74ce8668bca71",
+          "datavalue": {
+            "value": "168079374",
+            "type": "string"
+          },
+          "datatype": "external-id"
+        },
+        "type": "statement",
+        "id": "Q3488641$E249308B-1C1B-47FD-9EE1-0DE30AED3AA5",
+        "rank": "normal",
+        "references": [
+          {
+            "hash": "6aeb1f90c0a8fb13a36ac198cc24ac6a17678e38",
+            "snaks": {
+              "P143": [
+                {
+                  "snaktype": "value",
+                  "property": "P143",
+                  "hash": "d38375ffe6fe142663ff55cd783aa4df4301d83d",
+                  "datavalue": {
+                    "value": {
+                      "entity-type": "item",
+                      "numeric-id": 48183,
+                      "id": "Q48183"
+                    },
+                    "type": "wikibase-entityid"
+                  },
+                  "datatype": "wikibase-item"
+                }
+              ],
+              "P4656": [
+                {
+                  "snaktype": "value",
+                  "property": "P4656",
+                  "hash": "7bc29446227f24b2bd17e7d58a5f9a6a8b4ad40d",
+                  "datavalue": {
+                    "value": "https://de.wikipedia.org/w/index.php?title=Société_royale_de_médecine&oldid=183760435",
+                    "type": "string"
+                  },
+                  "datatype": "url"
+                }
+              ]
+            },
+            "snaks-order": [
+              "P143",
+              "P4656"
+            ]
+          }
+        ]
+      }
+    ],
+    "P571": [
+      {
+        "mainsnak": {
+          "snaktype": "value",
+          "property": "P571",
+          "hash": "212c7798eadb8fe2eee262cdff3f1ac31aadcdc8",
+          "datavalue": {
+            "value": {
+              "time": "+1778-00-00T00:00:00Z",
+              "timezone": 0,
+              "before": 0,
+              "after": 0,
+              "precision": 9,
+              "calendarmodel": "http://www.wikidata.org/entity/Q1985727"
+            },
+            "type": "time"
+          },
+          "datatype": "time"
+        },
+        "type": "statement",
+        "id": "Q3488641$f4246b7f-4c65-ae2e-d7f3-29e02166dd77",
+        "rank": "normal",
+        "references": [
+          {
+            "hash": "310edefa69285a457eeb25b749a7f5ccff8be5a9",
+            "snaks": {
+              "P854": [
+                {
+                  "snaktype": "value",
+                  "property": "P854",
+                  "hash": "94542ba498baf7a30b17badb10a01d6ecb502ec1",
+                  "datavalue": {
+                    "value": "https://gallica.bnf.fr/ark:/12148/btv1b8615526b.image",
+                    "type": "string"
+                  },
+                  "datatype": "url"
+                }
+              ]
+            },
+            "snaks-order": [
+              "P854"
+            ]
+          }
+        ]
+      }
+    ],
+    "P576": [
+      {
+        "mainsnak": {
+          "snaktype": "value",
+          "property": "P576",
+          "hash": "8fe08096a43a3350f93c653601bcdc61d95fdc1b",
+          "datavalue": {
+            "value": {
+              "time": "+1793-00-00T00:00:00Z",
+              "timezone": 0,
+              "before": 0,
+              "after": 0,
+              "precision": 9,
+              "calendarmodel": "http://www.wikidata.org/entity/Q1985727"
+            },
+            "type": "time"
+          },
+          "datatype": "time"
+        },
+        "type": "statement",
+        "id": "Q3488641$2c03662a-44d2-711c-b7da-f5002e7ac6f6",
+        "rank": "normal"
+      }
+    ],
+    "P17": [
+      {
+        "mainsnak": {
+          "snaktype": "value",
+          "property": "P17",
+          "hash": "2b7d86f7555d9e77641e33f3f283b88021a5e49a",
+          "datavalue": {
+            "value": {
+              "entity-type": "item",
+              "numeric-id": 70972,
+              "id": "Q70972"
+            },
+            "type": "wikibase-entityid"
+          },
+          "datatype": "wikibase-item"
+        },
+        "type": "statement",
+        "id": "Q3488641$3ba74275-40c7-4cbd-b3fa-1b92316653a8",
+        "rank": "normal"
+      }
+    ],
+    "P101": [
+      {
+        "mainsnak": {
+          "snaktype": "value",
+          "property": "P101",
+          "hash": "900fa03cba6292f220e1beeaa0b18ac3f0e5b4c2",
+          "datavalue": {
+            "value": {
+              "entity-type": "item",
+              "numeric-id": 11190,
+              "id": "Q11190"
+            },
+            "type": "wikibase-entityid"
+          },
+          "datatype": "wikibase-item"
+        },
+        "type": "statement",
+        "id": "Q3488641$cdddefdc-4848-f83c-eec4-4a07fea13ed1",
+        "rank": "normal"
+      }
+    ],
+    "P2671": [
+      {
+        "mainsnak": {
+          "snaktype": "value",
+          "property": "P2671",
+          "hash": "ab5470af14a40ed21c4795e471a7e0f11a858b55",
+          "datavalue": {
+            "value": "/g/122kcm78",
+            "type": "string"
+          },
+          "datatype": "external-id"
+        },
+        "type": "statement",
+        "id": "Q3488641$6D98A6E9-B245-4D6C-B01E-D0AFF71E30D0",
+        "rank": "normal"
+      }
+    ],
+    "P31": [
+      {
+        "mainsnak": {
+          "snaktype": "value",
+          "property": "P31",
+          "hash": "231496addf8af5cf2a7050e5be83e82662e96046",
+          "datavalue": {
+            "value": {
+              "entity-type": "item",
+              "numeric-id": 955824,
+              "id": "Q955824"
+            },
+            "type": "wikibase-entityid"
+          },
+          "datatype": "wikibase-item"
+        },
+        "type": "statement",
+        "id": "Q3488641$9b651003-46f2-86cf-244e-c7f207aa7f81",
+        "rank": "normal"
+      }
+    ],
+    "P8168": [
+      {
+        "mainsnak": {
+          "snaktype": "value",
+          "property": "P8168",
+          "hash": "8837250803d49a3d003762764d0d18adf86ab40c",
+          "datavalue": {
+            "value": "Q153587",
+            "type": "string"
+          },
+          "datatype": "external-id"
+        },
+        "type": "statement",
+        "id": "Q3488641$1FE66584-DC0E-4584-9875-12EC1560F1C9",
+        "rank": "normal"
+      }
+    ],
+    "P244": [
+      {
+        "mainsnak": {
+          "snaktype": "value",
+          "property": "P244",
+          "hash": "2b4062126c3eef30dbbf122d4ca7ade76d187e4a",
+          "datavalue": {
+            "value": "n83218025",
+            "type": "string"
+          },
+          "datatype": "external-id"
+        },
+        "type": "statement",
+        "id": "Q3488641$BA6F8843-DE46-4883-98CB-F91076890FA7",
+        "rank": "normal",
+        "references": [
+          {
+            "hash": "2ea7d9cf6569a6790a1abd706c97a06fdef003c3",
+            "snaks": {
+              "P11797": [
+                {
+                  "snaktype": "value",
+                  "property": "P11797",
+                  "hash": "395c2c5dc64a74fb596f0b959e9ac6c9307e2068",
+                  "datavalue": {
+                    "value": {
+                      "entity-type": "item",
+                      "numeric-id": 76630151,
+                      "id": "Q76630151"
+                    },
+                    "type": "wikibase-entityid"
+                  },
+                  "datatype": "wikibase-item"
+                }
+              ]
+            },
+            "snaks-order": [
+              "P11797"
+            ]
+          }
+        ]
+      }
+    ],
+    "P452": [
+      {
+        "mainsnak": {
+          "snaktype": "value",
+          "property": "P452",
+          "hash": "4263ce4d8fbe09d81d825e3051f1ed57a116d9ac",
+          "datavalue": {
+            "value": {
+              "entity-type": "item",
+              "numeric-id": 136822,
+              "id": "Q136822"
+            },
+            "type": "wikibase-entityid"
+          },
+          "datatype": "wikibase-item"
+        },
+        "type": "statement",
+        "id": "Q3488641$ED44FAE0-397F-47C5-8CE2-A90F71023359",
+        "rank": "normal"
+      }
+    ],
+    "P9964": [
+      {
+        "mainsnak": {
+          "snaktype": "value",
+          "property": "P9964",
+          "hash": "269ecdfd21ce49ea077008d4eafa2ec4a3b16d12",
+          "datavalue": {
+            "value": "65886-8",
+            "type": "string"
+          },
+          "datatype": "external-id"
+        },
+        "type": "statement",
+        "id": "Q3488641$9804E1BD-9F39-4D9D-8A14-FADEDE072C5C",
+        "rank": "normal"
+      }
+    ],
+    "P13591": [
+      {
+        "mainsnak": {
+          "snaktype": "value",
+          "property": "P13591",
+          "hash": "8c7037f9ffe6d2e788b1fb5903a861f8d6e27dba",
+          "datavalue": {
+            "value": "group/64183947-464d-4056-bf5a-f6934916850f",
+            "type": "string"
+          },
+          "datatype": "external-id"
+        },
+        "type": "statement",
+        "id": "Q3488641$02EE2BA4-02EA-4A6D-BB47-C78933CC0C05",
+        "rank": "normal"
+      }
+    ]
+  },
+  "sitelinks": {
+    "commonswiki": {
+      "site": "commonswiki",
+      "title": "Category:Société royale de médecine",
+      "badges": [],
+      "url": "https://commons.wikimedia.org/wiki/Category:Soci%C3%A9t%C3%A9_royale_de_m%C3%A9decine"
+    },
+    "dewiki": {
+      "site": "dewiki",
+      "title": "Société royale de médecine",
+      "badges": [],
+      "url": "https://de.wikipedia.org/wiki/Soci%C3%A9t%C3%A9_royale_de_m%C3%A9decine"
+    },
+    "enwiki": {
+      "site": "enwiki",
+      "title": "Société royale de médecine",
+      "badges": [],
+      "url": "https://en.wikipedia.org/wiki/Soci%C3%A9t%C3%A9_royale_de_m%C3%A9decine"
+    },
+    "frwiki": {
+      "site": "frwiki",
+      "title": "Société royale de médecine",
+      "badges": [],
+      "url": "https://fr.wikipedia.org/wiki/Soci%C3%A9t%C3%A9_royale_de_m%C3%A9decine"
+    }
+  }
+}

@@ -1,0 +1,73 @@
+🦁 Lancement immédiat du fichier predateur_tempete.mjs
+[DEBUG] import.meta.url=file:///C:/Users/Pierre/kiko/tools/machine_a_evenements/tempete/predateur_tempete.mjs
+[DEBUG] argv[1]=C:\Users\Pierre\kiko\machine_a_evenements\tempete\predateur_tempete.mjs
+[DEBUG] isEntryScript=true
+✅ Imports OK, entrée dans main()
+[2026-03-02T19:01:42.234Z] 🦁 Prédateur Tempête — cycles=450 | seuil=0.7 | model=gemini-2.0-flash
+[2026-03-02T19:01:42.235Z] [DB] Vérification tables locales...
+[2026-03-02T19:01:42.278Z] [DB] OK: ratoire + ratoire_embeddings + ratoire_pistes accessibles.
+[2026-03-02T19:01:42.283Z] 🎲 Démarrage aléatoire: thème tiré="TEST" + année=453
+[2026-03-02T19:01:42.284Z] 🧭 Démarrage: année initiale=453 (plage 0-2026)
+[2026-03-02T19:01:42.286Z] 📒 Chargement des pistes existantes...
+[2026-03-02T19:01:42.292Z] 📒 Pistes chargées: 80
+[2026-03-02T19:01:42.292Z] 🧪 Mission Endorphine active: 20 cycle(s) restant(s).
+[2026-03-02T19:01:42.293Z] 🦁 L'animal suit un thème gagnant: "TEST" et explore 197...
+[2026-03-02T19:01:47.369Z] [Wikipedia] titre="Janvier : Septime Sévère entre en Gaule par l'est après avoir traversé la Germanie supérieure ; Clodius Albinus l'attend à Lugdunum . Son avant-garde est battue à Tinurtium ( Tournus ) et se replie sur Lyon 1 ."
+[2026-03-02T19:01:49.353Z] 🧬 Piste ajoutée (#139): "Septime Sévère" (personnage) depuis 197.
+[2026-03-02T19:01:49.363Z] 🧬 Piste ajoutée (#140): "Clodius Albinus" (personnage) depuis 197.
+[2026-03-02T19:01:49.373Z] 🧬 Piste ajoutée (#141): "Lugdunum" (lieu) depuis 197.
+[2026-03-02T19:01:49.373Z] [Wikipedia] titre="17 février 1 ou 19 février : Septime Sévère bat Clodius Albinus à la bataille de Lugdunum ; grâce à cette victoire sur son dernier rival, il parvient à restaurer l'unité de l' Empire romain . Lyon , qui avait embrassé la cause de Clodius Albinus, est mise à sac. Clodius Albinus se suicide 3 . La Bretagne est partagée en deux provinces, Bretagne inférieure et Bretagne supérieure 4 ."
+[2026-03-02T19:01:50.720Z] 🧬 Piste ajoutée (#142): "Bataille de Lugdunum" (lieu) depuis 197.
+[2026-03-02T19:01:50.729Z] 🧬 Piste ajoutée (#143): "Bretagne" (lieu) depuis 197.
+[2026-03-02T19:01:50.730Z] [Wikipedia] titre="9 juin : Septime Sévère est de retour à Rome où il confronte les partisans d'Albinus devant le Sénat . Soixante-quatre sénateurs sont dénoncés comme complices de Clodius Albinus et vingt-neuf sont mis à morts 5 ."
+[2026-03-02T19:01:52.244Z] 🧬 Piste ajoutée (#144): "Septime Sévère" (personnage) depuis 197.
+[2026-03-02T19:01:52.254Z] 🧬 Piste ajoutée (#145): "Clodius Albinus" (personnage) depuis 197.
+[2026-03-02T19:01:52.263Z] 🧬 Piste ajoutée (#146): "Sénat romain" (lieu) depuis 197.
+[2026-03-02T19:01:52.263Z] [Wikipedia] titre="Juin - juillet : Septime Sévère retourne en Orient pour continuer sa campagne contre les Parthes (197-202). Dès son arrivée en Syrie , il avance sur Nisibe et lève le siège de la ville entrepris par Vologèse V 3 ."
+[2026-03-02T19:01:54.068Z] 🧬 Piste ajoutée (#147): "Septime Sévère" (personnage) depuis 197.
+[2026-03-02T19:01:54.077Z] 🧬 Piste ajoutée (#148): "Nisibe" (lieu) depuis 197.
+[2026-03-02T19:01:54.086Z] 🧬 Piste ajoutée (#149): "Campagne contre les Parthes" (theme) depuis 197.
+[2026-03-02T19:01:54.086Z] [Wikipedia] titre="Automne : Septime Sévère reprend Babylone désertée, puis Séleucie du Tigre et la capitale des Parthes Ctésiphon 3 ."
+[2026-03-02T19:01:55.949Z] 🧬 Piste ajoutée (#150): "Septime Sévère" (personnage) depuis 197.
+[2026-03-02T19:01:55.959Z] 🧬 Piste ajoutée (#151): "Babylone" (lieu) depuis 197.
+[2026-03-02T19:01:55.968Z] 🧬 Piste ajoutée (#152): "Séleucie du Tigre" (lieu) depuis 197.
+[2026-03-02T19:01:55.969Z] [Wikipedia] titre="L’évêque de Rome Victor menace d’excommunier les quartodécimans pour régler la querelle pascale. Une lettre d’ Irénée de Lyon l’incite à la modération 6 ."
+[2026-03-02T19:01:57.672Z] 🧬 Piste ajoutée (#153): "Querelle pascale" (theme) depuis 197.
+[2026-03-02T19:01:57.682Z] 🧬 Piste ajoutée (#154): "Victor (évêque de Rome)" (personnage) depuis 197.
+[2026-03-02T19:01:57.691Z] 🧬 Piste ajoutée (#155): "Irénée de Lyon" (personnage) depuis 197.
+[2026-03-02T19:01:57.691Z] [Wikipedia] titre="↑ a et b (en) John Drinkwater et Timothy Venning, Chronology of the Roman Empire , London/New York, Continuum International Publishing Group , 2011 ( ISBN 978-1-4411-5478-1 , présentation en ligne )"
+[2026-03-02T19:01:58.935Z] 🧬 Piste ajoutée (#156): "Empire Romain" (theme) depuis 197.
+[2026-03-02T19:01:58.936Z] [Wikipedia] titre="↑ Léon Homo, Nouvelle histoire romaine , Fayard , 1969 ( présentation en ligne )"
+[2026-03-02T19:01:59.954Z] 🧬 Piste ajoutée (#157): "Histoire romaine" (theme) depuis 197.
+[2026-03-02T19:01:59.954Z] 🐾 L'animal n'a pas trouvé de pépite exploitable en 197.
+[2026-03-02T19:01:59.954Z] ❌ Aucune pépite retenue pour 197. échecs=1
+[2026-03-02T19:01:59.955Z] 🧪 Mission Endorphine active: 19 cycle(s) restant(s).
+[2026-03-02T19:01:59.955Z] 🦁 L'animal suit un thème gagnant: "TEST" et explore 1196...
+[2026-03-02T19:02:14.841Z] [Wikipedia] titre="20 février : bulle du pape Célestin III pour l’instauration à Chypre d’une hiérarchie ecclésiastique latine parallèle à la grecque 3 ."
+[2026-03-02T19:02:16.546Z] [Wikipedia] titre="8 avril 4 : à la mort de Knut Eriksson , la Suède connaît des querelles dynastiques incessantes jusqu’au milieu du XIII siècle. Début du règne de Sverker II de Suède ."
+[2026-03-02T19:02:18.495Z] 🧬 Piste ajoutée (#158): "Sverker II de Suède" (personnage) depuis 1196.
+[2026-03-02T19:02:18.504Z] 🧬 Piste ajoutée (#159): "Knut Eriksson" (personnage) depuis 1196.
+[2026-03-02T19:02:18.514Z] 🧬 Piste ajoutée (#160): "Querelles dynastiques en Suède" (theme) depuis 1196.
+[2026-03-02T19:02:18.514Z] [Wikipedia] titre="23 avril : début du règne de Emeric de Hongrie , roi de Hongrie (fin en 1205 ) 5 ."
+[2026-03-02T19:02:20.079Z] 🧬 Piste ajoutée (#161): "Emeric de Hongrie" (personnage) depuis 1196.
+[2026-03-02T19:02:20.088Z] 🧬 Piste ajoutée (#162): "Hongrie" (lieu) depuis 1196.
+[2026-03-02T19:02:20.088Z] [Wikipedia] titre="25 avril : mort d’ Alphonse le Chaste 6 . Début du règne de Pierre II le Catholique ( 1174 - 1213 ), roi d’Aragon (confirmé par les cortes de Daroca en septembre 7 ). Il étend son autorité sur toute la Catalogne et se fait couronner par le pape auquel il prête hommage de vassalité, ce qui provoque un scandale."
+[2026-03-02T19:02:21.820Z] 🧬 Piste ajoutée (#163): "Pierre II le Catholique" (personnage) depuis 1196.
+[2026-03-02T19:02:21.830Z] 🧬 Piste ajoutée (#164): "Couronnement de Pierre II" (theme) depuis 1196.
+[2026-03-02T19:02:21.830Z] [Wikipedia] titre="Début du règne d’ Alphonse II de Provence (fin en 1209 ) 6 ."
+[2026-03-02T19:02:23.189Z] 🧬 Piste ajoutée (#165): "Alphonse II de Provence" (personnage) depuis 1196.
+[2026-03-02T19:02:23.189Z] [Wikipedia] titre="5 mai : concile de Paris 8 sur le divorce de Philippe Auguste, réunit après que le pape Célestin III a annulé la décision du synode de Compiègne de 1193 9 . Il ne décide rien."
+[2026-03-02T19:02:25.116Z] 🧬 Piste ajoutée (#166): "Philippe Auguste" (personnage) depuis 1196.
+[2026-03-02T19:02:25.126Z] 🧬 Piste ajoutée (#167): "Concile de Paris" (lieu) depuis 1196.
+[2026-03-02T19:02:25.135Z] 🧬 Piste ajoutée (#168): "Divorce" (theme) depuis 1196.
+[2026-03-02T19:02:25.135Z] [Wikipedia] titre="1 juin 10 ou 16 juin 11 : à Compiègne , Philippe Auguste épouse en troisièmes noces Agnès de Méranie , après avoir répudié sa deuxième femme Ingeburge de Danemark au terme de la nuit de noces. Après interventions des papes Célestin III et Innocent III ils seront obligés de se séparer en 1200 ."
+[2026-03-02T19:02:27.286Z] 🧬 Piste ajoutée (#169): "Philippe Auguste" (personnage) depuis 1196.
+[2026-03-02T19:02:27.295Z] 🧬 Piste ajoutée (#170): "Agnès de Méranie" (personnage) depuis 1196.
+[2026-03-02T19:02:27.303Z] 🧬 Piste ajoutée (#171): "Mariage royal" (theme) depuis 1196.
+[2026-03-02T19:02:27.304Z] [Wikipedia] titre="3 juillet : Al-Adel entre dans Damas 12 . Al-Adel, à qui son frère Saladin avait confié les châteaux pris à Renaud de Châtillon sur la rive est du Jourdain, arrache Damas à son neveu Al-Afdhal , qui s’était montré incapable de gouverner, laissant le pouvoir à son vizir Diyaeddin Ibn al-Athir pour s’adonner à l’alcool et aux plaisirs du harem . Son oncle s’en débarrasse à la faveur d’un complot et l’exile dans la forteresse de Salkhad , où il abandonne sa vie dissolue pour se consacrer à la prière et à la méditation."
+[2026-03-02T19:02:29.148Z] 🧬 Piste ajoutée (#172): "Al-Adel" (personnage) depuis 1196.
+[2026-03-02T19:02:29.158Z] 🧬 Piste ajoutée (#173): "Damas" (lieu) depuis 1196.
+[2026-03-02T19:02:29.158Z] 🐾 L'animal n'a pas trouvé de pépite exploitable en 1196.
+[2026-03-02T19:02:29.158Z] ❌ Aucune pépite retenue pour 1196. échecs=2
+[2026-03-02T19:02:29.158Z] 🧪 Mission Endorphine active: 18 cycle(s) restant(s).
+[2026-03-02T19:02:29.159Z] 🦁 L'animal suit un thème gagnant: "TEST" et explore 1774...

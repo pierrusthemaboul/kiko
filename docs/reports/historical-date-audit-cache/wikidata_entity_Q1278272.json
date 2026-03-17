@@ -1,0 +1,1108 @@
+{
+  "saved_at": "2026-03-07T14:41:26.814Z",
+  "value": {
+    "pageid": 1218799,
+    "ns": 0,
+    "title": "Q1278272",
+    "lastrevid": 2406144456,
+    "modified": "2025-09-16T20:36:55Z",
+    "type": "item",
+    "id": "Q1278272",
+    "labels": {
+      "fr": {
+        "language": "fr",
+        "value": "Eastland"
+      },
+      "en": {
+        "language": "en",
+        "value": "SS Eastland"
+      },
+      "cs": {
+        "language": "cs",
+        "value": "Eastland"
+      },
+      "fi": {
+        "language": "fi",
+        "value": "SS Eastland"
+      },
+      "de": {
+        "language": "de",
+        "value": "Eastland"
+      },
+      "pl": {
+        "language": "pl",
+        "value": "SS Eastland"
+      },
+      "fa": {
+        "language": "fa",
+        "value": "اس‌اس ایستلند"
+      },
+      "ja": {
+        "language": "ja",
+        "value": "イーストランド"
+      },
+      "hu": {
+        "language": "hu",
+        "value": "SS Eastland"
+      },
+      "it": {
+        "language": "it",
+        "value": "SS Eastland"
+      },
+      "he": {
+        "language": "he",
+        "value": "SS איסטלנד"
+      },
+      "ga": {
+        "language": "ga",
+        "value": "SS Eastland"
+      },
+      "zh": {
+        "language": "zh",
+        "value": "伊斯特兰号客船"
+      },
+      "es": {
+        "language": "es",
+        "value": "SS Eastland"
+      },
+      "mul": {
+        "language": "mul",
+        "value": "SS Eastland"
+      }
+    },
+    "descriptions": {
+      "de": {
+        "language": "de",
+        "value": "Schiff"
+      },
+      "en": {
+        "language": "en",
+        "value": "passenger ship that rolled over in Chicago in 1915"
+      },
+      "it": {
+        "language": "it",
+        "value": "nave passeggeri statunitense"
+      },
+      "fr": {
+        "language": "fr",
+        "value": "navire de croisière à vapeur"
+      },
+      "cs": {
+        "language": "cs",
+        "value": "druhé jméno parníku, který se převrátil v Chicagu"
+      },
+      "uk": {
+        "language": "uk",
+        "value": "судно"
+      }
+    },
+    "aliases": {
+      "cs": [
+        {
+          "language": "cs",
+          "value": "SS Eastland"
+        },
+        {
+          "language": "cs",
+          "value": "Wilmette"
+        }
+      ],
+      "de": [
+        {
+          "language": "de",
+          "value": "SS Eastland"
+        },
+        {
+          "language": "de",
+          "value": "USS Wilmette (IX-29)"
+        }
+      ],
+      "pl": [
+        {
+          "language": "pl",
+          "value": "USS Wilmette"
+        }
+      ],
+      "en": [
+        {
+          "language": "en",
+          "value": "Speed Queen of the Great Lakes"
+        },
+        {
+          "language": "en",
+          "value": "USS Wilmette"
+        }
+      ]
+    },
+    "claims": {
+      "P373": [
+        {
+          "mainsnak": {
+            "snaktype": "value",
+            "property": "P373",
+            "hash": "fa67f981aae9dc780ff92c82622c9e91889723db",
+            "datavalue": {
+              "value": "Eastland (ship, 1903)",
+              "type": "string"
+            },
+            "datatype": "string"
+          },
+          "type": "statement",
+          "id": "q1278272$B995A44D-63C9-4D22-B616-28ED6423AE80",
+          "rank": "normal",
+          "references": [
+            {
+              "hash": "fa278ebfc458360e5aed63d5058cca83c46134f1",
+              "snaks": {
+                "P143": [
+                  {
+                    "snaktype": "value",
+                    "property": "P143",
+                    "hash": "e4f6d9441d0600513c4533c672b5ab472dc73694",
+                    "datavalue": {
+                      "value": {
+                        "entity-type": "item",
+                        "numeric-id": 328,
+                        "id": "Q328"
+                      },
+                      "type": "wikibase-entityid"
+                    },
+                    "datatype": "wikibase-item"
+                  }
+                ]
+              },
+              "snaks-order": [
+                "P143"
+              ]
+            }
+          ]
+        }
+      ],
+      "P31": [
+        {
+          "mainsnak": {
+            "snaktype": "value",
+            "property": "P31",
+            "hash": "5612292eb067f88ce4599728e1d34fc09885f9b5",
+            "datavalue": {
+              "value": {
+                "entity-type": "item",
+                "numeric-id": 12859788,
+                "id": "Q12859788"
+              },
+              "type": "wikibase-entityid"
+            },
+            "datatype": "wikibase-item"
+          },
+          "type": "statement",
+          "id": "Q1278272$B35E1F7B-DF99-4566-9653-C1C8298AE267",
+          "rank": "normal"
+        }
+      ],
+      "P646": [
+        {
+          "mainsnak": {
+            "snaktype": "value",
+            "property": "P646",
+            "hash": "84affb100c2e042c10edc1da279bdeae6c685d72",
+            "datavalue": {
+              "value": "/m/0bktp",
+              "type": "string"
+            },
+            "datatype": "external-id"
+          },
+          "type": "statement",
+          "id": "Q1278272$879194F1-E244-4B20-9038-5FEDBCE6FEFB",
+          "rank": "normal",
+          "references": [
+            {
+              "hash": "2b00cb481cddcac7623114367489b5c194901c4a",
+              "snaks": {
+                "P248": [
+                  {
+                    "snaktype": "value",
+                    "property": "P248",
+                    "hash": "a94b740202b097dd33355e0e6c00e54b9395e5e0",
+                    "datavalue": {
+                      "value": {
+                        "entity-type": "item",
+                        "numeric-id": 15241312,
+                        "id": "Q15241312"
+                      },
+                      "type": "wikibase-entityid"
+                    },
+                    "datatype": "wikibase-item"
+                  }
+                ],
+                "P577": [
+                  {
+                    "snaktype": "value",
+                    "property": "P577",
+                    "hash": "fde79ecb015112d2f29229ccc1ec514ed3e71fa2",
+                    "datavalue": {
+                      "value": {
+                        "time": "+2013-10-28T00:00:00Z",
+                        "timezone": 0,
+                        "before": 0,
+                        "after": 0,
+                        "precision": 11,
+                        "calendarmodel": "http://www.wikidata.org/entity/Q1985727"
+                      },
+                      "type": "time"
+                    },
+                    "datatype": "time"
+                  }
+                ]
+              },
+              "snaks-order": [
+                "P248",
+                "P577"
+              ]
+            }
+          ]
+        }
+      ],
+      "P18": [
+        {
+          "mainsnak": {
+            "snaktype": "value",
+            "property": "P18",
+            "hash": "5963d248876e6be9374f10b7fb246992d279df36",
+            "datavalue": {
+              "value": "S.S. Eastland c.1911.jpg",
+              "type": "string"
+            },
+            "datatype": "commonsMedia"
+          },
+          "type": "statement",
+          "id": "Q1278272$5B79A428-BD2E-46FC-B3FE-165079AFCC1F",
+          "rank": "normal",
+          "references": [
+            {
+              "hash": "fa278ebfc458360e5aed63d5058cca83c46134f1",
+              "snaks": {
+                "P143": [
+                  {
+                    "snaktype": "value",
+                    "property": "P143",
+                    "hash": "e4f6d9441d0600513c4533c672b5ab472dc73694",
+                    "datavalue": {
+                      "value": {
+                        "entity-type": "item",
+                        "numeric-id": 328,
+                        "id": "Q328"
+                      },
+                      "type": "wikibase-entityid"
+                    },
+                    "datatype": "wikibase-item"
+                  }
+                ]
+              },
+              "snaks-order": [
+                "P143"
+              ]
+            }
+          ]
+        }
+      ],
+      "P137": [
+        {
+          "mainsnak": {
+            "snaktype": "value",
+            "property": "P137",
+            "hash": "607c441cea9b504c6c85948cbc9adad5f2679540",
+            "datavalue": {
+              "value": {
+                "entity-type": "item",
+                "numeric-id": 11220,
+                "id": "Q11220"
+              },
+              "type": "wikibase-entityid"
+            },
+            "datatype": "wikibase-item"
+          },
+          "type": "statement",
+          "qualifiers": {
+            "P580": [
+              {
+                "snaktype": "value",
+                "property": "P580",
+                "hash": "bcecdc49b05260261ec6291688de5a564399c174",
+                "datavalue": {
+                  "value": {
+                    "time": "+1917-00-00T00:00:00Z",
+                    "timezone": 0,
+                    "before": 0,
+                    "after": 0,
+                    "precision": 9,
+                    "calendarmodel": "http://www.wikidata.org/entity/Q1985727"
+                  },
+                  "type": "time"
+                },
+                "datatype": "time"
+              }
+            ]
+          },
+          "qualifiers-order": [
+            "P580"
+          ],
+          "id": "Q1278272$F3F53799-9069-41FB-A47F-272DBD00660C",
+          "rank": "normal",
+          "references": [
+            {
+              "hash": "fa278ebfc458360e5aed63d5058cca83c46134f1",
+              "snaks": {
+                "P143": [
+                  {
+                    "snaktype": "value",
+                    "property": "P143",
+                    "hash": "e4f6d9441d0600513c4533c672b5ab472dc73694",
+                    "datavalue": {
+                      "value": {
+                        "entity-type": "item",
+                        "numeric-id": 328,
+                        "id": "Q328"
+                      },
+                      "type": "wikibase-entityid"
+                    },
+                    "datatype": "wikibase-item"
+                  }
+                ]
+              },
+              "snaks-order": [
+                "P143"
+              ]
+            }
+          ]
+        }
+      ],
+      "P2262": [
+        {
+          "mainsnak": {
+            "snaktype": "value",
+            "property": "P2262",
+            "hash": "66b3e330394792b7413b4d591d0669bd0f205864",
+            "datavalue": {
+              "value": {
+                "amount": "+6.91",
+                "unit": "http://www.wikidata.org/entity/Q11573"
+              },
+              "type": "quantity"
+            },
+            "datatype": "quantity"
+          },
+          "type": "statement",
+          "id": "Q1278272$F349B175-6479-45B0-8227-F894B0305823",
+          "rank": "normal",
+          "references": [
+            {
+              "hash": "9a24f7c0208b05d6be97077d855671d1dfdbc0dd",
+              "snaks": {
+                "P143": [
+                  {
+                    "snaktype": "value",
+                    "property": "P143",
+                    "hash": "d38375ffe6fe142663ff55cd783aa4df4301d83d",
+                    "datavalue": {
+                      "value": {
+                        "entity-type": "item",
+                        "numeric-id": 48183,
+                        "id": "Q48183"
+                      },
+                      "type": "wikibase-entityid"
+                    },
+                    "datatype": "wikibase-item"
+                  }
+                ]
+              },
+              "snaks-order": [
+                "P143"
+              ]
+            }
+          ]
+        }
+      ],
+      "P2043": [
+        {
+          "mainsnak": {
+            "snaktype": "value",
+            "property": "P2043",
+            "hash": "d6816ca7e0152539e4f0c2fdaa834e1b64ef7cf6",
+            "datavalue": {
+              "value": {
+                "amount": "+80.77",
+                "unit": "http://www.wikidata.org/entity/Q11573"
+              },
+              "type": "quantity"
+            },
+            "datatype": "quantity"
+          },
+          "type": "statement",
+          "id": "Q1278272$A71080BA-40A9-4157-90F2-57918C923C2A",
+          "rank": "normal",
+          "references": [
+            {
+              "hash": "9a24f7c0208b05d6be97077d855671d1dfdbc0dd",
+              "snaks": {
+                "P143": [
+                  {
+                    "snaktype": "value",
+                    "property": "P143",
+                    "hash": "d38375ffe6fe142663ff55cd783aa4df4301d83d",
+                    "datavalue": {
+                      "value": {
+                        "entity-type": "item",
+                        "numeric-id": 48183,
+                        "id": "Q48183"
+                      },
+                      "type": "wikibase-entityid"
+                    },
+                    "datatype": "wikibase-item"
+                  }
+                ]
+              },
+              "snaks-order": [
+                "P143"
+              ]
+            }
+          ]
+        }
+      ],
+      "P2261": [
+        {
+          "mainsnak": {
+            "snaktype": "value",
+            "property": "P2261",
+            "hash": "1e2bcde87bc470c8dadd3a6c0190a3586627b816",
+            "datavalue": {
+              "value": {
+                "amount": "+11.58",
+                "unit": "http://www.wikidata.org/entity/Q11573"
+              },
+              "type": "quantity"
+            },
+            "datatype": "quantity"
+          },
+          "type": "statement",
+          "id": "Q1278272$332D4AE4-1242-48A4-97F6-8B01EBA8D7CA",
+          "rank": "normal",
+          "references": [
+            {
+              "hash": "926b96e8c67b5a11da2068a4655758e6a985bd39",
+              "snaks": {
+                "P143": [
+                  {
+                    "snaktype": "value",
+                    "property": "P143",
+                    "hash": "d38375ffe6fe142663ff55cd783aa4df4301d83d",
+                    "datavalue": {
+                      "value": {
+                        "entity-type": "item",
+                        "numeric-id": 48183,
+                        "id": "Q48183"
+                      },
+                      "type": "wikibase-entityid"
+                    },
+                    "datatype": "wikibase-item"
+                  }
+                ],
+                "P4656": [
+                  {
+                    "snaktype": "value",
+                    "property": "P4656",
+                    "hash": "306a400851abad04127888080ca38d52ddb54967",
+                    "datavalue": {
+                      "value": "https://de.wikipedia.org/w/index.php?title=Eastland_(Schiff)&oldid=155511666",
+                      "type": "string"
+                    },
+                    "datatype": "url"
+                  }
+                ]
+              },
+              "snaks-order": [
+                "P143",
+                "P4656"
+              ]
+            }
+          ]
+        }
+      ],
+      "P504": [
+        {
+          "mainsnak": {
+            "snaktype": "value",
+            "property": "P504",
+            "hash": "734e3a802d5483b9ab621d6035c3202f970a933d",
+            "datavalue": {
+              "value": {
+                "entity-type": "item",
+                "numeric-id": 1297,
+                "id": "Q1297"
+              },
+              "type": "wikibase-entityid"
+            },
+            "datatype": "wikibase-item"
+          },
+          "type": "statement",
+          "id": "Q1278272$43C35239-A917-42B6-82E9-0C1E5882077A",
+          "rank": "normal",
+          "references": [
+            {
+              "hash": "926b96e8c67b5a11da2068a4655758e6a985bd39",
+              "snaks": {
+                "P143": [
+                  {
+                    "snaktype": "value",
+                    "property": "P143",
+                    "hash": "d38375ffe6fe142663ff55cd783aa4df4301d83d",
+                    "datavalue": {
+                      "value": {
+                        "entity-type": "item",
+                        "numeric-id": 48183,
+                        "id": "Q48183"
+                      },
+                      "type": "wikibase-entityid"
+                    },
+                    "datatype": "wikibase-item"
+                  }
+                ],
+                "P4656": [
+                  {
+                    "snaktype": "value",
+                    "property": "P4656",
+                    "hash": "306a400851abad04127888080ca38d52ddb54967",
+                    "datavalue": {
+                      "value": "https://de.wikipedia.org/w/index.php?title=Eastland_(Schiff)&oldid=155511666",
+                      "type": "string"
+                    },
+                    "datatype": "url"
+                  }
+                ]
+              },
+              "snaks-order": [
+                "P143",
+                "P4656"
+              ]
+            }
+          ]
+        }
+      ],
+      "P1417": [
+        {
+          "mainsnak": {
+            "snaktype": "value",
+            "property": "P1417",
+            "hash": "db3c3ab921966da9c3b4cef6ce35c5a1159b6f2f",
+            "datavalue": {
+              "value": "topic/Wilmette-ship",
+              "type": "string"
+            },
+            "datatype": "external-id"
+          },
+          "type": "statement",
+          "qualifiers": {
+            "P1810": [
+              {
+                "snaktype": "value",
+                "property": "P1810",
+                "hash": "e304f6301b3c1256016601d0e9602453e169842b",
+                "datavalue": {
+                  "value": "Wilmette",
+                  "type": "string"
+                },
+                "datatype": "string"
+              }
+            ]
+          },
+          "qualifiers-order": [
+            "P1810"
+          ],
+          "id": "Q1278272$F47601CC-ADD8-4FB4-B74F-AC3C8EC9DEF2",
+          "rank": "normal"
+        }
+      ],
+      "P8047": [
+        {
+          "mainsnak": {
+            "snaktype": "value",
+            "property": "P8047",
+            "hash": "84fa94448bbf34f070068298a120824cc7bde545",
+            "datavalue": {
+              "value": {
+                "entity-type": "item",
+                "numeric-id": 30,
+                "id": "Q30"
+              },
+              "type": "wikibase-entityid"
+            },
+            "datatype": "wikibase-item"
+          },
+          "type": "statement",
+          "id": "Q1278272$5DC3A0E0-9A61-416B-B2EF-4873B9AA129B",
+          "rank": "normal"
+        }
+      ],
+      "P625": [
+        {
+          "mainsnak": {
+            "snaktype": "value",
+            "property": "P625",
+            "hash": "389b8b7177127e3b139644c2198465ec71004006",
+            "datavalue": {
+              "value": {
+                "latitude": 41.88722222222222,
+                "longitude": -87.63169444444443,
+                "altitude": null,
+                "precision": 0.00002777777777777778,
+                "globe": "http://www.wikidata.org/entity/Q2"
+              },
+              "type": "globecoordinate"
+            },
+            "datatype": "globe-coordinate"
+          },
+          "type": "statement",
+          "id": "Q1278272$f724c62c-2657-4ce4-abc9-760548490578",
+          "rank": "normal"
+        }
+      ],
+      "P793": [
+        {
+          "mainsnak": {
+            "snaktype": "value",
+            "property": "P793",
+            "hash": "c98317599741eca488b42784c13eaba952c02f29",
+            "datavalue": {
+              "value": {
+                "entity-type": "item",
+                "numeric-id": 111767806,
+                "id": "Q111767806"
+              },
+              "type": "wikibase-entityid"
+            },
+            "datatype": "wikibase-item"
+          },
+          "type": "statement",
+          "id": "Q1278272$18f6f840-4748-b66b-d84b-33ef7f82c97c",
+          "rank": "normal",
+          "references": [
+            {
+              "hash": "938b91311a6f2c834a87ab8c01d5f15caf43cca6",
+              "snaks": {
+                "P854": [
+                  {
+                    "snaktype": "value",
+                    "property": "P854",
+                    "hash": "4af2fd7ee51b91d2e2aa5da1b79dbc2bf8c1e9a5",
+                    "datavalue": {
+                      "value": "https://www.britannica.com/event/Eastland-disaster",
+                      "type": "string"
+                    },
+                    "datatype": "url"
+                  }
+                ]
+              },
+              "snaks-order": [
+                "P854"
+              ]
+            }
+          ]
+        },
+        {
+          "mainsnak": {
+            "snaktype": "value",
+            "property": "P793",
+            "hash": "fc955dc587acbec96f461971530e93e2bdd58c69",
+            "datavalue": {
+              "value": {
+                "entity-type": "item",
+                "numeric-id": 596643,
+                "id": "Q596643"
+              },
+              "type": "wikibase-entityid"
+            },
+            "datatype": "wikibase-item"
+          },
+          "type": "statement",
+          "qualifiers": {
+            "P585": [
+              {
+                "snaktype": "value",
+                "property": "P585",
+                "hash": "6de581a587aa74971769d55b726c67c34b3ee590",
+                "datavalue": {
+                  "value": {
+                    "time": "+1903-05-06T00:00:00Z",
+                    "timezone": 0,
+                    "before": 0,
+                    "after": 0,
+                    "precision": 11,
+                    "calendarmodel": "http://www.wikidata.org/entity/Q1985727"
+                  },
+                  "type": "time"
+                },
+                "datatype": "time"
+              }
+            ]
+          },
+          "qualifiers-order": [
+            "P585"
+          ],
+          "id": "Q1278272$0EBB89EB-54E8-4CE5-9267-33740B4D3AB5",
+          "rank": "normal"
+        },
+        {
+          "mainsnak": {
+            "snaktype": "value",
+            "property": "P793",
+            "hash": "ae71e56ceb5dbd62a3429f513db037e57fa6a5eb",
+            "datavalue": {
+              "value": {
+                "entity-type": "item",
+                "numeric-id": 7497952,
+                "id": "Q7497952"
+              },
+              "type": "wikibase-entityid"
+            },
+            "datatype": "wikibase-item"
+          },
+          "type": "statement",
+          "qualifiers": {
+            "P585": [
+              {
+                "snaktype": "value",
+                "property": "P585",
+                "hash": "9c7b439f0d1da77b13f7fd8d0fcb40d5bc30c051",
+                "datavalue": {
+                  "value": {
+                    "time": "+1919-07-09T00:00:00Z",
+                    "timezone": 0,
+                    "before": 0,
+                    "after": 0,
+                    "precision": 11,
+                    "calendarmodel": "http://www.wikidata.org/entity/Q1985727"
+                  },
+                  "type": "time"
+                },
+                "datatype": "time"
+              },
+              {
+                "snaktype": "value",
+                "property": "P585",
+                "hash": "5645f63a7ff3600a3a4cb8154378d94ca89a2f93",
+                "datavalue": {
+                  "value": {
+                    "time": "+1940-02-15T00:00:00Z",
+                    "timezone": 0,
+                    "before": 0,
+                    "after": 0,
+                    "precision": 11,
+                    "calendarmodel": "http://www.wikidata.org/entity/Q1985727"
+                  },
+                  "type": "time"
+                },
+                "datatype": "time"
+              },
+              {
+                "snaktype": "value",
+                "property": "P585",
+                "hash": "315e031765ee6787cb72331f049586f531d84056",
+                "datavalue": {
+                  "value": {
+                    "time": "+1945-11-28T00:00:00Z",
+                    "timezone": 0,
+                    "before": 0,
+                    "after": 0,
+                    "precision": 11,
+                    "calendarmodel": "http://www.wikidata.org/entity/Q1985727"
+                  },
+                  "type": "time"
+                },
+                "datatype": "time"
+              }
+            ]
+          },
+          "qualifiers-order": [
+            "P585"
+          ],
+          "id": "Q1278272$AA25F6E9-19D9-4D70-8DA6-4DF72C5FC8FE",
+          "rank": "normal"
+        },
+        {
+          "mainsnak": {
+            "snaktype": "value",
+            "property": "P793",
+            "hash": "81a257bc3eef3033c6e92dbdc9073a59685981cc",
+            "datavalue": {
+              "value": {
+                "entity-type": "item",
+                "numeric-id": 52681713,
+                "id": "Q52681713"
+              },
+              "type": "wikibase-entityid"
+            },
+            "datatype": "wikibase-item"
+          },
+          "type": "statement",
+          "qualifiers": {
+            "P585": [
+              {
+                "snaktype": "value",
+                "property": "P585",
+                "hash": "0c4aabb1e10df219d682c5af12eab81225df305e",
+                "datavalue": {
+                  "value": {
+                    "time": "+1920-06-29T00:00:00Z",
+                    "timezone": 0,
+                    "before": 0,
+                    "after": 0,
+                    "precision": 11,
+                    "calendarmodel": "http://www.wikidata.org/entity/Q1985727"
+                  },
+                  "type": "time"
+                },
+                "datatype": "time"
+              },
+              {
+                "snaktype": "value",
+                "property": "P585",
+                "hash": "e50e821e26051b633e0bb1dc6ff2ceb6b1b50408",
+                "datavalue": {
+                  "value": {
+                    "time": "+1945-04-09T00:00:00Z",
+                    "timezone": 0,
+                    "before": 0,
+                    "after": 0,
+                    "precision": 11,
+                    "calendarmodel": "http://www.wikidata.org/entity/Q1985727"
+                  },
+                  "type": "time"
+                },
+                "datatype": "time"
+              }
+            ]
+          },
+          "qualifiers-order": [
+            "P585"
+          ],
+          "id": "Q1278272$651F2BB8-7F17-4B87-AFCB-FE59826E9A7F",
+          "rank": "normal"
+        }
+      ],
+      "P13298": [
+        {
+          "mainsnak": {
+            "snaktype": "value",
+            "property": "P13298",
+            "hash": "f4ad6188a5e31e93d05a71831d7ff2b9054db44b",
+            "datavalue": {
+              "value": "435807",
+              "type": "string"
+            },
+            "datatype": "external-id"
+          },
+          "type": "statement",
+          "id": "Q1278272$8edbfd13-4992-f71f-3456-968a78a8b969",
+          "rank": "normal"
+        }
+      ],
+      "P1083": [
+        {
+          "mainsnak": {
+            "snaktype": "value",
+            "property": "P1083",
+            "hash": "8d62b0b4f6d6d35089bd67b943b38da5b8210af9",
+            "datavalue": {
+              "value": {
+                "amount": "+2752",
+                "unit": "http://www.wikidata.org/entity/Q319604"
+              },
+              "type": "quantity"
+            },
+            "datatype": "quantity"
+          },
+          "type": "statement",
+          "id": "Q1278272$1425DF14-61BA-4027-8C06-0BE0D3FEBF31",
+          "rank": "normal",
+          "references": [
+            {
+              "hash": "ec3ed559acf8816e9aa4ac57cd415d2f087e51c2",
+              "snaks": {
+                "P143": [
+                  {
+                    "snaktype": "value",
+                    "property": "P143",
+                    "hash": "d38375ffe6fe142663ff55cd783aa4df4301d83d",
+                    "datavalue": {
+                      "value": {
+                        "entity-type": "item",
+                        "numeric-id": 48183,
+                        "id": "Q48183"
+                      },
+                      "type": "wikibase-entityid"
+                    },
+                    "datatype": "wikibase-item"
+                  }
+                ],
+                "P4656": [
+                  {
+                    "snaktype": "value",
+                    "property": "P4656",
+                    "hash": "65568dcf65b17e49971be43ab49d3ac999f1f5ef",
+                    "datavalue": {
+                      "value": "https://de.wikipedia.org/w/index.php?title=Eastland_(Schiff)&oldid=243259940",
+                      "type": "string"
+                    },
+                    "datatype": "url"
+                  }
+                ]
+              },
+              "snaks-order": [
+                "P143",
+                "P4656"
+              ]
+            }
+          ]
+        }
+      ],
+      "P2052": [
+        {
+          "mainsnak": {
+            "snaktype": "value",
+            "property": "P2052",
+            "hash": "31922bdaadcb8f644eb4a8ff09c086852fb6d5aa",
+            "datavalue": {
+              "value": {
+                "amount": "+16.5",
+                "unit": "http://www.wikidata.org/entity/Q128822"
+              },
+              "type": "quantity"
+            },
+            "datatype": "quantity"
+          },
+          "type": "statement",
+          "id": "Q1278272$F4B8F6CA-2C40-437B-AAB5-D949F018AF5C",
+          "rank": "normal",
+          "references": [
+            {
+              "hash": "ec3ed559acf8816e9aa4ac57cd415d2f087e51c2",
+              "snaks": {
+                "P143": [
+                  {
+                    "snaktype": "value",
+                    "property": "P143",
+                    "hash": "d38375ffe6fe142663ff55cd783aa4df4301d83d",
+                    "datavalue": {
+                      "value": {
+                        "entity-type": "item",
+                        "numeric-id": 48183,
+                        "id": "Q48183"
+                      },
+                      "type": "wikibase-entityid"
+                    },
+                    "datatype": "wikibase-item"
+                  }
+                ],
+                "P4656": [
+                  {
+                    "snaktype": "value",
+                    "property": "P4656",
+                    "hash": "65568dcf65b17e49971be43ab49d3ac999f1f5ef",
+                    "datavalue": {
+                      "value": "https://de.wikipedia.org/w/index.php?title=Eastland_(Schiff)&oldid=243259940",
+                      "type": "string"
+                    },
+                    "datatype": "url"
+                  }
+                ]
+              },
+              "snaks-order": [
+                "P143",
+                "P4656"
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    "sitelinks": {
+      "commonswiki": {
+        "site": "commonswiki",
+        "title": "Category:Eastland (ship, 1903)",
+        "badges": [],
+        "url": "https://commons.wikimedia.org/wiki/Category:Eastland_(ship,_1903)"
+      },
+      "cswiki": {
+        "site": "cswiki",
+        "title": "SS Eastland",
+        "badges": [],
+        "url": "https://cs.wikipedia.org/wiki/SS_Eastland"
+      },
+      "dewiki": {
+        "site": "dewiki",
+        "title": "Eastland (Schiff)",
+        "badges": [],
+        "url": "https://de.wikipedia.org/wiki/Eastland_(Schiff)"
+      },
+      "enwiki": {
+        "site": "enwiki",
+        "title": "SS Eastland",
+        "badges": [],
+        "url": "https://en.wikipedia.org/wiki/SS_Eastland"
+      },
+      "eswiki": {
+        "site": "eswiki",
+        "title": "SS Eastland",
+        "badges": [],
+        "url": "https://es.wikipedia.org/wiki/SS_Eastland"
+      },
+      "fawiki": {
+        "site": "fawiki",
+        "title": "اس‌اس ایستلند",
+        "badges": [],
+        "url": "https://fa.wikipedia.org/wiki/%D8%A7%D8%B3%E2%80%8C%D8%A7%D8%B3_%D8%A7%DB%8C%D8%B3%D8%AA%D9%84%D9%86%D8%AF"
+      },
+      "fiwiki": {
+        "site": "fiwiki",
+        "title": "SS Eastland",
+        "badges": [],
+        "url": "https://fi.wikipedia.org/wiki/SS_Eastland"
+      },
+      "frwiki": {
+        "site": "frwiki",
+        "title": "Eastland",
+        "badges": [],
+        "url": "https://fr.wikipedia.org/wiki/Eastland"
+      },
+      "huwiki": {
+        "site": "huwiki",
+        "title": "SS Eastland",
+        "badges": [],
+        "url": "https://hu.wikipedia.org/wiki/SS_Eastland"
+      },
+      "itwiki": {
+        "site": "itwiki",
+        "title": "SS Eastland",
+        "badges": [],
+        "url": "https://it.wikipedia.org/wiki/SS_Eastland"
+      },
+      "jawiki": {
+        "site": "jawiki",
+        "title": "イーストランド (客船)",
+        "badges": [],
+        "url": "https://ja.wikipedia.org/wiki/%E3%82%A4%E3%83%BC%E3%82%B9%E3%83%88%E3%83%A9%E3%83%B3%E3%83%89_(%E5%AE%A2%E8%88%B9)"
+      },
+      "plwiki": {
+        "site": "plwiki",
+        "title": "SS Eastland",
+        "badges": [],
+        "url": "https://pl.wikipedia.org/wiki/SS_Eastland"
+      },
+      "simplewiki": {
+        "site": "simplewiki",
+        "title": "SS Eastland",
+        "badges": [],
+        "url": "https://simple.wikipedia.org/wiki/SS_Eastland"
+      }
+    }
+  }
+}

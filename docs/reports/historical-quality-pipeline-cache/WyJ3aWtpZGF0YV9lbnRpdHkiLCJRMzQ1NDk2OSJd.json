@@ -1,0 +1,162 @@
+{
+  "pageid": 3291180,
+  "ns": 0,
+  "title": "Q3454969",
+  "lastrevid": 2258782430,
+  "modified": "2024-10-10T15:44:02Z",
+  "type": "item",
+  "id": "Q3454969",
+  "labels": {
+    "fr": {
+      "language": "fr",
+      "value": "régent de France"
+    },
+    "ar": {
+      "language": "ar",
+      "value": "أوصياء مملكة فرنسا"
+    },
+    "de": {
+      "language": "de",
+      "value": "Regent von Frankreich"
+    },
+    "nb": {
+      "language": "nb",
+      "value": "regent i Frankrike"
+    },
+    "zh": {
+      "language": "zh",
+      "value": "法國攝政"
+    },
+    "en": {
+      "language": "en",
+      "value": "regent of France"
+    },
+    "es": {
+      "language": "es",
+      "value": "regente de Francia"
+    },
+    "sl": {
+      "language": "sl",
+      "value": "regent Francije"
+    }
+  },
+  "descriptions": {
+    "fr": {
+      "language": "fr",
+      "value": "titre du dirigeant de la France, pendant la minorité ou l’absence du roi"
+    },
+    "en": {
+      "language": "en",
+      "value": "title of the leader of France, during the minority or absence of the king"
+    },
+    "es": {
+      "language": "es",
+      "value": "título del gobernante de Francia, durante la minoría o la ausencia del rey"
+    },
+    "de": {
+      "language": "de",
+      "value": "Titel des französischen Staatsoberhauptes während der Minderheit oder Abwesenheit des Königs"
+    },
+    "ar": {
+      "language": "ar",
+      "value": "منصب الحاكم خلال قاصر الملك أو غيابه أو مرضه"
+    },
+    "zh": {
+      "language": "zh",
+      "value": "法国领导人的头衔，在国王少数或缺席期间"
+    },
+    "sl": {
+      "language": "sl",
+      "value": "naslov francoskega voditelja države v času kraljevega mandata ali odsotnosti"
+    }
+  },
+  "aliases": {
+    "sl": [
+      {
+        "language": "sl",
+        "value": "francoski regent"
+      }
+    ]
+  },
+  "claims": {
+    "P2671": [
+      {
+        "mainsnak": {
+          "snaktype": "value",
+          "property": "P2671",
+          "hash": "c8e793e5025eee48000784c28bd150ff313e5fa4",
+          "datavalue": {
+            "value": "/g/122jqw04",
+            "type": "string"
+          },
+          "datatype": "external-id"
+        },
+        "type": "statement",
+        "id": "Q3454969$768F13B7-CC8C-44B2-8F1D-A5CF6238D25A",
+        "rank": "normal"
+      }
+    ],
+    "P279": [
+      {
+        "mainsnak": {
+          "snaktype": "value",
+          "property": "P279",
+          "hash": "198c375a2b659775f93c8484434aa8388b0e5bb5",
+          "datavalue": {
+            "value": {
+              "entity-type": "item",
+              "numeric-id": 477406,
+              "id": "Q477406"
+            },
+            "type": "wikibase-entityid"
+          },
+          "datatype": "wikibase-item"
+        },
+        "type": "statement",
+        "id": "Q3454969$639be348-4c9f-9d39-b695-e6a4d5c12ee8",
+        "rank": "normal"
+      }
+    ],
+    "P17": [
+      {
+        "mainsnak": {
+          "snaktype": "value",
+          "property": "P17",
+          "hash": "2b7d86f7555d9e77641e33f3f283b88021a5e49a",
+          "datavalue": {
+            "value": {
+              "entity-type": "item",
+              "numeric-id": 70972,
+              "id": "Q70972"
+            },
+            "type": "wikibase-entityid"
+          },
+          "datatype": "wikibase-item"
+        },
+        "type": "statement",
+        "id": "Q3454969$8149e58b-4cc8-51c5-87c5-48eafe8e70b6",
+        "rank": "normal"
+      }
+    ]
+  },
+  "sitelinks": {
+    "arwiki": {
+      "site": "arwiki",
+      "title": "أوصياء مملكة فرنسا",
+      "badges": [],
+      "url": "https://ar.wikipedia.org/wiki/%D8%A3%D9%88%D8%B5%D9%8A%D8%A7%D8%A1_%D9%85%D9%85%D9%84%D9%83%D8%A9_%D9%81%D8%B1%D9%86%D8%B3%D8%A7"
+    },
+    "dewiki": {
+      "site": "dewiki",
+      "title": "Regent von Frankreich",
+      "badges": [],
+      "url": "https://de.wikipedia.org/wiki/Regent_von_Frankreich"
+    },
+    "frwiki": {
+      "site": "frwiki",
+      "title": "Régent de France",
+      "badges": [],
+      "url": "https://fr.wikipedia.org/wiki/R%C3%A9gent_de_France"
+    }
+  }
+}

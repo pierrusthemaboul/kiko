@@ -1,0 +1,489 @@
+{
+  "saved_at": "2026-03-07T13:02:51.949Z",
+  "value": {
+    "pageid": 880749,
+    "ns": 0,
+    "title": "Q930416",
+    "lastrevid": 2303000113,
+    "modified": "2025-01-27T10:28:05Z",
+    "type": "item",
+    "id": "Q930416",
+    "labels": {
+      "pt": {
+        "language": "pt",
+        "value": "Relatório Stern"
+      },
+      "zh-hans": {
+        "language": "zh-hans",
+        "value": "斯特恩报告"
+      },
+      "zh-hant": {
+        "language": "zh-hant",
+        "value": "斯特恩報告"
+      },
+      "zh-hk": {
+        "language": "zh-hk",
+        "value": "斯特恩報告"
+      },
+      "pl": {
+        "language": "pl",
+        "value": "Raport Sterna"
+      },
+      "fr": {
+        "language": "fr",
+        "value": "Rapport Stern"
+      },
+      "en": {
+        "language": "en",
+        "value": "Stern Review"
+      },
+      "es": {
+        "language": "es",
+        "value": "Informe Stern"
+      },
+      "fi": {
+        "language": "fi",
+        "value": "Sternin raportti"
+      },
+      "hu": {
+        "language": "hu",
+        "value": "Stern-jelentés"
+      },
+      "de": {
+        "language": "de",
+        "value": "Stern-Report"
+      },
+      "ja": {
+        "language": "ja",
+        "value": "スターン報告"
+      },
+      "cs": {
+        "language": "cs",
+        "value": "Sternova zpráva"
+      },
+      "sv": {
+        "language": "sv",
+        "value": "Sternrapporten"
+      },
+      "zh": {
+        "language": "zh",
+        "value": "斯特恩报告"
+      },
+      "nb": {
+        "language": "nb",
+        "value": "Sternrapporten"
+      },
+      "nl": {
+        "language": "nl",
+        "value": "Stern Review"
+      },
+      "ar": {
+        "language": "ar",
+        "value": "تقرير ستيرن"
+      },
+      "he": {
+        "language": "he",
+        "value": "דו\"ח סטרן"
+      }
+    },
+    "descriptions": {
+      "de": {
+        "language": "de",
+        "value": "am 30. Oktober 2006 veröffentlichter Bericht des ehemaligen Weltbank-Chefökonomen"
+      },
+      "en": {
+        "language": "en",
+        "value": "700-page report released for the Government of the United Kingdom on 30 October 2006 by economist Nicholas Stern"
+      },
+      "es": {
+        "language": "es",
+        "value": "informe sobre el impacto del cambio climático y el calentamiento global"
+      },
+      "ar": {
+        "language": "ar",
+        "value": "تقرير"
+      },
+      "sv": {
+        "language": "sv",
+        "value": "rapport av ekonomen Nicholas Stern"
+      }
+    },
+    "aliases": {
+      "es": [
+        {
+          "language": "es",
+          "value": "Stern Review"
+        },
+        {
+          "language": "es",
+          "value": "Stern Review on the Economics of Climate Change"
+        }
+      ],
+      "fi": [
+        {
+          "language": "fi",
+          "value": "Stern Review"
+        },
+        {
+          "language": "fi",
+          "value": "Stern Review on the Economics of Climate Change"
+        }
+      ],
+      "de": [
+        {
+          "language": "de",
+          "value": "Stern Review"
+        },
+        {
+          "language": "de",
+          "value": "Stern Report"
+        }
+      ],
+      "ja": [
+        {
+          "language": "ja",
+          "value": "スターン報告書"
+        },
+        {
+          "language": "ja",
+          "value": "気候変動の経済学"
+        },
+        {
+          "language": "ja",
+          "value": "スターン・レビュー"
+        }
+      ],
+      "sv": [
+        {
+          "language": "sv",
+          "value": "Stern-rapporten"
+        }
+      ]
+    },
+    "claims": {
+      "P646": [
+        {
+          "mainsnak": {
+            "snaktype": "value",
+            "property": "P646",
+            "hash": "74e29ab4bb5b94ab9a0224ce76cb7f1374df0899",
+            "datavalue": {
+              "value": "/m/026939s",
+              "type": "string"
+            },
+            "datatype": "external-id"
+          },
+          "type": "statement",
+          "id": "Q930416$A444BF62-A293-4CB4-A720-9FC7BB034B9C",
+          "rank": "normal",
+          "references": [
+            {
+              "hash": "2b00cb481cddcac7623114367489b5c194901c4a",
+              "snaks": {
+                "P248": [
+                  {
+                    "snaktype": "value",
+                    "property": "P248",
+                    "hash": "a94b740202b097dd33355e0e6c00e54b9395e5e0",
+                    "datavalue": {
+                      "value": {
+                        "entity-type": "item",
+                        "numeric-id": 15241312,
+                        "id": "Q15241312"
+                      },
+                      "type": "wikibase-entityid"
+                    },
+                    "datatype": "wikibase-item"
+                  }
+                ],
+                "P577": [
+                  {
+                    "snaktype": "value",
+                    "property": "P577",
+                    "hash": "fde79ecb015112d2f29229ccc1ec514ed3e71fa2",
+                    "datavalue": {
+                      "value": {
+                        "time": "+2013-10-28T00:00:00Z",
+                        "timezone": 0,
+                        "before": 0,
+                        "after": 0,
+                        "precision": 11,
+                        "calendarmodel": "http://www.wikidata.org/entity/Q1985727"
+                      },
+                      "type": "time"
+                    },
+                    "datatype": "time"
+                  }
+                ]
+              },
+              "snaks-order": [
+                "P248",
+                "P577"
+              ]
+            }
+          ]
+        }
+      ],
+      "P227": [
+        {
+          "mainsnak": {
+            "snaktype": "value",
+            "property": "P227",
+            "hash": "66da05bf3c33588481d452e64f1288e7dcbd37ee",
+            "datavalue": {
+              "value": "7832685-0",
+              "type": "string"
+            },
+            "datatype": "external-id"
+          },
+          "type": "statement",
+          "id": "Q930416$1FC62E1D-C7B8-4F7D-A459-7E1DE7CBD90A",
+          "rank": "normal",
+          "references": [
+            {
+              "hash": "9a24f7c0208b05d6be97077d855671d1dfdbc0dd",
+              "snaks": {
+                "P143": [
+                  {
+                    "snaktype": "value",
+                    "property": "P143",
+                    "hash": "d38375ffe6fe142663ff55cd783aa4df4301d83d",
+                    "datavalue": {
+                      "value": {
+                        "entity-type": "item",
+                        "numeric-id": 48183,
+                        "id": "Q48183"
+                      },
+                      "type": "wikibase-entityid"
+                    },
+                    "datatype": "wikibase-item"
+                  }
+                ]
+              },
+              "snaks-order": [
+                "P143"
+              ]
+            }
+          ]
+        }
+      ],
+      "P214": [
+        {
+          "mainsnak": {
+            "snaktype": "value",
+            "property": "P214",
+            "hash": "c8b110d729d5183770a649e0199590ce33d3eb76",
+            "datavalue": {
+              "value": "243264952",
+              "type": "string"
+            },
+            "datatype": "external-id"
+          },
+          "type": "statement",
+          "id": "Q930416$8C978E97-A299-4BC8-8166-02E1B32E88BC",
+          "rank": "normal",
+          "references": [
+            {
+              "hash": "9a24f7c0208b05d6be97077d855671d1dfdbc0dd",
+              "snaks": {
+                "P143": [
+                  {
+                    "snaktype": "value",
+                    "property": "P143",
+                    "hash": "d38375ffe6fe142663ff55cd783aa4df4301d83d",
+                    "datavalue": {
+                      "value": {
+                        "entity-type": "item",
+                        "numeric-id": 48183,
+                        "id": "Q48183"
+                      },
+                      "type": "wikibase-entityid"
+                    },
+                    "datatype": "wikibase-item"
+                  }
+                ]
+              },
+              "snaks-order": [
+                "P143"
+              ]
+            }
+          ]
+        }
+      ],
+      "P5008": [
+        {
+          "mainsnak": {
+            "snaktype": "value",
+            "property": "P5008",
+            "hash": "fade5e94397da60f78df68fd121baff9cd7b836d",
+            "datavalue": {
+              "value": {
+                "entity-type": "item",
+                "numeric-id": 15305047,
+                "id": "Q15305047"
+              },
+              "type": "wikibase-entityid"
+            },
+            "datatype": "wikibase-item"
+          },
+          "type": "statement",
+          "id": "Q930416$A10819A9-381A-4F1A-BEF9-B3B850444504",
+          "rank": "normal"
+        }
+      ],
+      "P6366": [
+        {
+          "mainsnak": {
+            "snaktype": "value",
+            "property": "P6366",
+            "hash": "5a92a3fdbe00f5fbeb1de5426a03e7e52d5cc90e",
+            "datavalue": {
+              "value": "2778541077",
+              "type": "string"
+            },
+            "datatype": "external-id"
+          },
+          "type": "statement",
+          "id": "Q930416$96FFE88C-4594-4740-A163-4DCCF299EBC7",
+          "rank": "normal"
+        }
+      ],
+      "P31": [
+        {
+          "mainsnak": {
+            "snaktype": "value",
+            "property": "P31",
+            "hash": "8dcee22a2def369b9b5837a02ee41bbbd34b566d",
+            "datavalue": {
+              "value": {
+                "entity-type": "item",
+                "numeric-id": 10870555,
+                "id": "Q10870555"
+              },
+              "type": "wikibase-entityid"
+            },
+            "datatype": "wikibase-item"
+          },
+          "type": "statement",
+          "id": "Q930416$5bf3e701-4ffb-ce29-45e9-bd9fc92d396f",
+          "rank": "normal"
+        }
+      ],
+      "P3222": [
+        {
+          "mainsnak": {
+            "snaktype": "value",
+            "property": "P3222",
+            "hash": "7c65c29a0ab741a37d793de4d950240ff443b4da",
+            "datavalue": {
+              "value": "sternrapporten",
+              "type": "string"
+            },
+            "datatype": "external-id"
+          },
+          "type": "statement",
+          "id": "Q930416$9E62278F-CAB6-4BFE-B9F1-55B06EC9CB72",
+          "rank": "normal"
+        }
+      ]
+    },
+    "sitelinks": {
+      "arwiki": {
+        "site": "arwiki",
+        "title": "تقرير ستيرن",
+        "badges": [],
+        "url": "https://ar.wikipedia.org/wiki/%D8%AA%D9%82%D8%B1%D9%8A%D8%B1_%D8%B3%D8%AA%D9%8A%D8%B1%D9%86"
+      },
+      "cswiki": {
+        "site": "cswiki",
+        "title": "Sternova zpráva",
+        "badges": [],
+        "url": "https://cs.wikipedia.org/wiki/Sternova_zpr%C3%A1va"
+      },
+      "dewiki": {
+        "site": "dewiki",
+        "title": "Stern-Report",
+        "badges": [],
+        "url": "https://de.wikipedia.org/wiki/Stern-Report"
+      },
+      "enwiki": {
+        "site": "enwiki",
+        "title": "Stern Review",
+        "badges": [],
+        "url": "https://en.wikipedia.org/wiki/Stern_Review"
+      },
+      "eswiki": {
+        "site": "eswiki",
+        "title": "Informe Stern",
+        "badges": [],
+        "url": "https://es.wikipedia.org/wiki/Informe_Stern"
+      },
+      "fiwiki": {
+        "site": "fiwiki",
+        "title": "Sternin raportti",
+        "badges": [],
+        "url": "https://fi.wikipedia.org/wiki/Sternin_raportti"
+      },
+      "frwiki": {
+        "site": "frwiki",
+        "title": "Rapport Stern",
+        "badges": [],
+        "url": "https://fr.wikipedia.org/wiki/Rapport_Stern"
+      },
+      "huwiki": {
+        "site": "huwiki",
+        "title": "Stern-jelentés",
+        "badges": [],
+        "url": "https://hu.wikipedia.org/wiki/Stern-jelent%C3%A9s"
+      },
+      "jawiki": {
+        "site": "jawiki",
+        "title": "スターン報告",
+        "badges": [],
+        "url": "https://ja.wikipedia.org/wiki/%E3%82%B9%E3%82%BF%E3%83%BC%E3%83%B3%E5%A0%B1%E5%91%8A"
+      },
+      "nlwiki": {
+        "site": "nlwiki",
+        "title": "Stern Review",
+        "badges": [],
+        "url": "https://nl.wikipedia.org/wiki/Stern_Review"
+      },
+      "nowiki": {
+        "site": "nowiki",
+        "title": "Sternrapporten",
+        "badges": [],
+        "url": "https://no.wikipedia.org/wiki/Sternrapporten"
+      },
+      "plwiki": {
+        "site": "plwiki",
+        "title": "Raport Sterna",
+        "badges": [],
+        "url": "https://pl.wikipedia.org/wiki/Raport_Sterna"
+      },
+      "ptwiki": {
+        "site": "ptwiki",
+        "title": "Relatório Stern",
+        "badges": [],
+        "url": "https://pt.wikipedia.org/wiki/Relat%C3%B3rio_Stern"
+      },
+      "simplewiki": {
+        "site": "simplewiki",
+        "title": "Stern Review",
+        "badges": [],
+        "url": "https://simple.wikipedia.org/wiki/Stern_Review"
+      },
+      "svwiki": {
+        "site": "svwiki",
+        "title": "Sternrapporten",
+        "badges": [],
+        "url": "https://sv.wikipedia.org/wiki/Sternrapporten"
+      },
+      "zhwiki": {
+        "site": "zhwiki",
+        "title": "斯特恩报告",
+        "badges": [],
+        "url": "https://zh.wikipedia.org/wiki/%E6%96%AF%E7%89%B9%E6%81%A9%E6%8A%A5%E5%91%8A"
+      }
+    }
+  }
+}

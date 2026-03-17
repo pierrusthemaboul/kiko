@@ -1,0 +1,269 @@
+{
+  "saved_at": "2026-03-07T14:57:26.153Z",
+  "value": {
+    "pageid": 1240416,
+    "ns": 0,
+    "title": "Q1300356",
+    "lastrevid": 2404134127,
+    "modified": "2025-09-13T01:47:24Z",
+    "type": "item",
+    "id": "Q1300356",
+    "labels": {
+      "de": {
+        "language": "de",
+        "value": "Konzil von Tours"
+      },
+      "ca": {
+        "language": "ca",
+        "value": "Concili de Tours"
+      },
+      "es": {
+        "language": "es",
+        "value": "Concilio de Tours"
+      },
+      "fr": {
+        "language": "fr",
+        "value": "concile de Tours"
+      },
+      "nl": {
+        "language": "nl",
+        "value": "Synode van Tours"
+      },
+      "it": {
+        "language": "it",
+        "value": "Concilio di Tours"
+      },
+      "gl": {
+        "language": "gl",
+        "value": "Concilio de Tours"
+      },
+      "ast": {
+        "language": "ast",
+        "value": "Conceyu de Tours"
+      },
+      "el": {
+        "language": "el",
+        "value": "Σύνοδος της Τουρ"
+      },
+      "la": {
+        "language": "la",
+        "value": "Concilium Turonense (813)"
+      },
+      "en": {
+        "language": "en",
+        "value": "Council of Tours#Council of Tours 813"
+      }
+    },
+    "descriptions": {
+      "it": {
+        "language": "it",
+        "value": "sinodo cristiano dell'813"
+      },
+      "de": {
+        "language": "de",
+        "value": "Konzil mit sprach- und kirchenhistorisch bedeutenden Beschlüssen"
+      },
+      "el": {
+        "language": "el",
+        "value": "Σύνοδος με γλωσσολογική και θρησκευτική σημασία"
+      }
+    },
+    "aliases": {},
+    "claims": {
+      "P31": [
+        {
+          "mainsnak": {
+            "snaktype": "value",
+            "property": "P31",
+            "hash": "3b90392ea0c29832a0a8b684a5d41bdb5b945b1f",
+            "datavalue": {
+              "value": {
+                "entity-type": "item",
+                "numeric-id": 10551516,
+                "id": "Q10551516"
+              },
+              "type": "wikibase-entityid"
+            },
+            "datatype": "wikibase-item"
+          },
+          "type": "statement",
+          "id": "Q1300356$3BA7441E-A625-4D8B-AED0-1EAE712992F7",
+          "rank": "normal"
+        }
+      ],
+      "P585": [
+        {
+          "mainsnak": {
+            "snaktype": "value",
+            "property": "P585",
+            "hash": "35f44fc8535758d5731be1d4ee7b52319379ff12",
+            "datavalue": {
+              "value": {
+                "time": "+0813-05-00T00:00:00Z",
+                "timezone": 0,
+                "before": 0,
+                "after": 0,
+                "precision": 10,
+                "calendarmodel": "http://www.wikidata.org/entity/Q1985786"
+              },
+              "type": "time"
+            },
+            "datatype": "time"
+          },
+          "type": "statement",
+          "id": "Q1300356$ee6a31e3-488a-b85b-63fb-5d379cc6b70a",
+          "rank": "normal"
+        }
+      ],
+      "P131": [
+        {
+          "mainsnak": {
+            "snaktype": "value",
+            "property": "P131",
+            "hash": "dd68007030779e48942a36cbf60433c6fee59a25",
+            "datavalue": {
+              "value": {
+                "entity-type": "item",
+                "numeric-id": 288,
+                "id": "Q288"
+              },
+              "type": "wikibase-entityid"
+            },
+            "datatype": "wikibase-item"
+          },
+          "type": "statement",
+          "id": "Q1300356$20b6ec88-46e8-454e-4045-af3d135b7cc3",
+          "rank": "normal"
+        }
+      ],
+      "P17": [
+        {
+          "mainsnak": {
+            "snaktype": "value",
+            "property": "P17",
+            "hash": "c05db5d169c2560b9799d567a803d20a392f53e4",
+            "datavalue": {
+              "value": {
+                "entity-type": "item",
+                "numeric-id": 142,
+                "id": "Q142"
+              },
+              "type": "wikibase-entityid"
+            },
+            "datatype": "wikibase-item"
+          },
+          "type": "statement",
+          "id": "Q1300356$82A0C9E2-01E8-4B11-8054-9D0F27505204",
+          "rank": "normal",
+          "references": [
+            {
+              "hash": "4b25816c0043886968fb81cb8862ff1b455486ce",
+              "snaks": {
+                "P3452": [
+                  {
+                    "snaktype": "value",
+                    "property": "P3452",
+                    "hash": "fb68d342c946b865c2c48ccfaafbf736f7802a26",
+                    "datavalue": {
+                      "value": {
+                        "entity-type": "item",
+                        "numeric-id": 288,
+                        "id": "Q288"
+                      },
+                      "type": "wikibase-entityid"
+                    },
+                    "datatype": "wikibase-item"
+                  }
+                ]
+              },
+              "snaks-order": [
+                "P3452"
+              ]
+            }
+          ]
+        }
+      ],
+      "P2671": [
+        {
+          "mainsnak": {
+            "snaktype": "value",
+            "property": "P2671",
+            "hash": "9cfbac194ac0621bc23d2801512d7415b8aa6bd6",
+            "datavalue": {
+              "value": "/g/121yn50t",
+              "type": "string"
+            },
+            "datatype": "external-id"
+          },
+          "type": "statement",
+          "id": "Q1300356$1465B118-2A2C-41B2-B13F-9032573F5556",
+          "rank": "normal"
+        }
+      ]
+    },
+    "sitelinks": {
+      "astwiki": {
+        "site": "astwiki",
+        "title": "Conceyu de Tours",
+        "badges": [],
+        "url": "https://ast.wikipedia.org/wiki/Conceyu_de_Tours"
+      },
+      "cawiki": {
+        "site": "cawiki",
+        "title": "Concili de Tours",
+        "badges": [],
+        "url": "https://ca.wikipedia.org/wiki/Concili_de_Tours"
+      },
+      "dewiki": {
+        "site": "dewiki",
+        "title": "Konzil von Tours (813)",
+        "badges": [],
+        "url": "https://de.wikipedia.org/wiki/Konzil_von_Tours_(813)"
+      },
+      "elwiki": {
+        "site": "elwiki",
+        "title": "Σύνοδος της Τουρ (813)",
+        "badges": [],
+        "url": "https://el.wikipedia.org/wiki/%CE%A3%CF%8D%CE%BD%CE%BF%CE%B4%CE%BF%CF%82_%CF%84%CE%B7%CF%82_%CE%A4%CE%BF%CF%85%CF%81_(813)"
+      },
+      "eswiki": {
+        "site": "eswiki",
+        "title": "Concilio de Tours",
+        "badges": [
+          "Q70893996"
+        ],
+        "url": "https://es.wikipedia.org/wiki/Concilio_de_Tours"
+      },
+      "frwiki": {
+        "site": "frwiki",
+        "title": "Concile de Tours (813)",
+        "badges": [],
+        "url": "https://fr.wikipedia.org/wiki/Concile_de_Tours_(813)"
+      },
+      "glwiki": {
+        "site": "glwiki",
+        "title": "Concilio de Tours",
+        "badges": [],
+        "url": "https://gl.wikipedia.org/wiki/Concilio_de_Tours"
+      },
+      "itwiki": {
+        "site": "itwiki",
+        "title": "Concilio di Tours (813)",
+        "badges": [],
+        "url": "https://it.wikipedia.org/wiki/Concilio_di_Tours_(813)"
+      },
+      "lawikisource": {
+        "site": "lawikisource",
+        "title": "Concilium Turonense (813)",
+        "badges": [],
+        "url": "https://la.wikisource.org/wiki/Concilium_Turonense_(813)"
+      },
+      "nlwiki": {
+        "site": "nlwiki",
+        "title": "Synode van Tours",
+        "badges": [],
+        "url": "https://nl.wikipedia.org/wiki/Synode_van_Tours"
+      }
+    }
+  }
+}

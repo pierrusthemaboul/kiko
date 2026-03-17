@@ -1,0 +1,525 @@
+{
+  "saved_at": "2026-03-07T14:57:15.626Z",
+  "value": {
+    "pageid": 18536705,
+    "ns": 0,
+    "title": "Q16933898",
+    "lastrevid": 2361990860,
+    "modified": "2025-06-16T13:01:08Z",
+    "type": "item",
+    "id": "Q16933898",
+    "labels": {
+      "en": {
+        "language": "en",
+        "value": "French invasion of Normandy"
+      },
+      "fr": {
+        "language": "fr",
+        "value": "invasion française de la Normandie"
+      },
+      "sr": {
+        "language": "sr",
+        "value": "Англо-француски рат"
+      },
+      "nan": {
+        "language": "nan",
+        "value": "Hoat-kok tùi Normandie ê chhim-ji̍p"
+      },
+      "id": {
+        "language": "id",
+        "value": "invasi Normandy oleh Prancis"
+      },
+      "ar": {
+        "language": "ar",
+        "value": "الحملة الفرنسية على نورماندي (1202–1204)"
+      },
+      "ja": {
+        "language": "ja",
+        "value": "フランスのノルマンディー侵攻 (1202年-1204年)"
+      },
+      "zh": {
+        "language": "zh",
+        "value": "法國入侵諾曼第 (1202年－1204年)"
+      },
+      "fa": {
+        "language": "fa",
+        "value": "تهاجم فرانسه به نورماندی (۱۲۰۲-۱۲۰۴)"
+      },
+      "sl": {
+        "language": "sl",
+        "value": "francoska invazija na Normandijo"
+      },
+      "es": {
+        "language": "es",
+        "value": "invasión francesa de Normandía"
+      },
+      "vec": {
+        "language": "vec",
+        "value": "invazion franseza de Normandia"
+      },
+      "ca": {
+        "language": "ca",
+        "value": "invasió francesa de Normandia"
+      },
+      "lv": {
+        "language": "lv",
+        "value": "Normandijas iekarošana"
+      }
+    },
+    "descriptions": {
+      "en": {
+        "language": "en",
+        "value": "wars in Normandy from 1200 to 1204"
+      },
+      "id": {
+        "language": "id",
+        "value": "perang di Normandy dari 1200 hingga 1204"
+      },
+      "sl": {
+        "language": "sl",
+        "value": "vojne v Normandiji med letoma 1200 in 1204"
+      }
+    },
+    "aliases": {
+      "en": [
+        {
+          "language": "en",
+          "value": "Normandy Campaigns"
+        }
+      ],
+      "id": [
+        {
+          "language": "id",
+          "value": "Kampanye Normandy"
+        }
+      ]
+    },
+    "claims": {
+      "P31": [
+        {
+          "mainsnak": {
+            "snaktype": "value",
+            "property": "P31",
+            "hash": "9565c30f04dc02f1cfff5baa28b89ddc708fc7fa",
+            "datavalue": {
+              "value": {
+                "entity-type": "item",
+                "numeric-id": 198,
+                "id": "Q198"
+              },
+              "type": "wikibase-entityid"
+            },
+            "datatype": "wikibase-item"
+          },
+          "type": "statement",
+          "id": "Q16933898$ABFE7835-9AE4-443E-9ABC-A2BED497AE71",
+          "rank": "normal"
+        }
+      ],
+      "P361": [
+        {
+          "mainsnak": {
+            "snaktype": "value",
+            "property": "P361",
+            "hash": "e837e61d3ac8605401ad80d830d66aadbdef064f",
+            "datavalue": {
+              "value": {
+                "entity-type": "item",
+                "numeric-id": 4763630,
+                "id": "Q4763630"
+              },
+              "type": "wikibase-entityid"
+            },
+            "datatype": "wikibase-item"
+          },
+          "type": "statement",
+          "id": "Q16933898$b6c6e732-4597-e825-808b-6a12d3fd4068",
+          "rank": "normal"
+        }
+      ],
+      "P580": [
+        {
+          "mainsnak": {
+            "snaktype": "value",
+            "property": "P580",
+            "hash": "ffe6d27b7f48e7a53a048779640040073ae460ed",
+            "datavalue": {
+              "value": {
+                "time": "+1202-00-00T00:00:00Z",
+                "timezone": 0,
+                "before": 0,
+                "after": 0,
+                "precision": 9,
+                "calendarmodel": "http://www.wikidata.org/entity/Q1985786"
+              },
+              "type": "time"
+            },
+            "datatype": "time"
+          },
+          "type": "statement",
+          "id": "Q16933898$c32d2298-4220-7397-2c44-56858ef8b9d1",
+          "rank": "normal"
+        }
+      ],
+      "P582": [
+        {
+          "mainsnak": {
+            "snaktype": "value",
+            "property": "P582",
+            "hash": "f2ef4019a8c8b5bd3d4c562dec8b1b2e13640490",
+            "datavalue": {
+              "value": {
+                "time": "+1204-00-00T00:00:00Z",
+                "timezone": 0,
+                "before": 0,
+                "after": 0,
+                "precision": 9,
+                "calendarmodel": "http://www.wikidata.org/entity/Q1985786"
+              },
+              "type": "time"
+            },
+            "datatype": "time"
+          },
+          "type": "statement",
+          "id": "Q16933898$4a6a8450-49a0-ebb0-afe9-74d4bdd824fe",
+          "rank": "normal"
+        }
+      ],
+      "P276": [
+        {
+          "mainsnak": {
+            "snaktype": "value",
+            "property": "P276",
+            "hash": "5465aa25bbe05116c84fded68780d33ef30ee03a",
+            "datavalue": {
+              "value": {
+                "entity-type": "item",
+                "numeric-id": 15878,
+                "id": "Q15878"
+              },
+              "type": "wikibase-entityid"
+            },
+            "datatype": "wikibase-item"
+          },
+          "type": "statement",
+          "id": "Q16933898$DEAB7541-D9CC-4753-BC2B-022AAFB0845B",
+          "rank": "normal"
+        }
+      ],
+      "P710": [
+        {
+          "mainsnak": {
+            "snaktype": "value",
+            "property": "P710",
+            "hash": "94757bdc48d787b52e28d494639cbea583aad352",
+            "datavalue": {
+              "value": {
+                "entity-type": "item",
+                "numeric-id": 179876,
+                "id": "Q179876"
+              },
+              "type": "wikibase-entityid"
+            },
+            "datatype": "wikibase-item"
+          },
+          "type": "statement",
+          "id": "Q16933898$717F617F-33DA-41D8-89A7-76131A8D42C5",
+          "rank": "normal"
+        },
+        {
+          "mainsnak": {
+            "snaktype": "value",
+            "property": "P710",
+            "hash": "8a9ea07e5e69e9e51e5c91cad488fa1c0428f5bc",
+            "datavalue": {
+              "value": {
+                "entity-type": "item",
+                "numeric-id": 70972,
+                "id": "Q70972"
+              },
+              "type": "wikibase-entityid"
+            },
+            "datatype": "wikibase-item"
+          },
+          "type": "statement",
+          "id": "Q16933898$475442ec-47ce-6dd1-1fd8-e88243c1f4bd",
+          "rank": "normal"
+        },
+        {
+          "mainsnak": {
+            "snaktype": "value",
+            "property": "P710",
+            "hash": "9a7409a9b4076f100e00debba639e2e17837e862",
+            "datavalue": {
+              "value": {
+                "entity-type": "item",
+                "numeric-id": 71747,
+                "id": "Q71747"
+              },
+              "type": "wikibase-entityid"
+            },
+            "datatype": "wikibase-item"
+          },
+          "type": "statement",
+          "id": "Q16933898$943e5929-49d6-ed04-2cce-450cd76765fc",
+          "rank": "normal"
+        },
+        {
+          "mainsnak": {
+            "snaktype": "value",
+            "property": "P710",
+            "hash": "95f26d64791febc3b0808d79af40756b1d29b79e",
+            "datavalue": {
+              "value": {
+                "entity-type": "item",
+                "numeric-id": 378193,
+                "id": "Q378193"
+              },
+              "type": "wikibase-entityid"
+            },
+            "datatype": "wikibase-item"
+          },
+          "type": "statement",
+          "id": "Q16933898$462c7e33-4b06-2e3a-2a7a-e5a6ef577855",
+          "rank": "normal"
+        },
+        {
+          "mainsnak": {
+            "snaktype": "value",
+            "property": "P710",
+            "hash": "3466a7acfd4ec1283b41a348df2db2d2c1d7d2dc",
+            "datavalue": {
+              "value": {
+                "entity-type": "item",
+                "numeric-id": 34428,
+                "id": "Q34428"
+              },
+              "type": "wikibase-entityid"
+            },
+            "datatype": "wikibase-item"
+          },
+          "type": "statement",
+          "id": "Q16933898$C4D3250B-40DD-46BB-B8A5-6CD2380D43DB",
+          "rank": "normal"
+        },
+        {
+          "mainsnak": {
+            "snaktype": "value",
+            "property": "P710",
+            "hash": "b0161fea018a712a9f2357d8211f4575ab824926",
+            "datavalue": {
+              "value": {
+                "entity-type": "item",
+                "numeric-id": 129308,
+                "id": "Q129308"
+              },
+              "type": "wikibase-entityid"
+            },
+            "datatype": "wikibase-item"
+          },
+          "type": "statement",
+          "id": "Q16933898$4D8831F5-7AB6-494E-87A7-182A24767EDE",
+          "rank": "normal"
+        },
+        {
+          "mainsnak": {
+            "snaktype": "value",
+            "property": "P710",
+            "hash": "94d92846ff928c21d378a912dca7fd7d3560ae00",
+            "datavalue": {
+              "value": {
+                "entity-type": "item",
+                "numeric-id": 363800,
+                "id": "Q363800"
+              },
+              "type": "wikibase-entityid"
+            },
+            "datatype": "wikibase-item"
+          },
+          "type": "statement",
+          "id": "Q16933898$67A6B5CA-4387-472E-A9F1-A5962019FCE2",
+          "rank": "normal"
+        },
+        {
+          "mainsnak": {
+            "snaktype": "value",
+            "property": "P710",
+            "hash": "a52895e246a9b19ca8f1b096f2c82bbc370a2e8f",
+            "datavalue": {
+              "value": {
+                "entity-type": "item",
+                "numeric-id": 257036,
+                "id": "Q257036"
+              },
+              "type": "wikibase-entityid"
+            },
+            "datatype": "wikibase-item"
+          },
+          "type": "statement",
+          "id": "Q16933898$670B6489-AC9B-409C-8346-4FAFD94CCEE7",
+          "rank": "normal"
+        },
+        {
+          "mainsnak": {
+            "snaktype": "value",
+            "property": "P710",
+            "hash": "97abc3685cb7ee8b0fadd328740822f4c0e58561",
+            "datavalue": {
+              "value": {
+                "entity-type": "item",
+                "numeric-id": 267040,
+                "id": "Q267040"
+              },
+              "type": "wikibase-entityid"
+            },
+            "datatype": "wikibase-item"
+          },
+          "type": "statement",
+          "id": "Q16933898$B004833D-8E54-4A54-B602-58F00F3C9A98",
+          "rank": "normal"
+        },
+        {
+          "mainsnak": {
+            "snaktype": "value",
+            "property": "P710",
+            "hash": "299afa2c0fc188ad999a2abf0385a84c29d73294",
+            "datavalue": {
+              "value": {
+                "entity-type": "item",
+                "numeric-id": 348911,
+                "id": "Q348911"
+              },
+              "type": "wikibase-entityid"
+            },
+            "datatype": "wikibase-item"
+          },
+          "type": "statement",
+          "id": "Q16933898$f2a8a008-4846-ed1d-38e5-8c58c8c94f4f",
+          "rank": "normal"
+        }
+      ],
+      "P18": [
+        {
+          "mainsnak": {
+            "snaktype": "value",
+            "property": "P18",
+            "hash": "2a87b59cc1187374d5fd340f6c39d12eaf738ce8",
+            "datavalue": {
+              "value": "Normandy campaign 1204.png",
+              "type": "string"
+            },
+            "datatype": "commonsMedia"
+          },
+          "type": "statement",
+          "id": "Q16933898$FBC473ED-8D37-4CE3-8C3F-03FEAD62974F",
+          "rank": "normal",
+          "references": [
+            {
+              "hash": "fa278ebfc458360e5aed63d5058cca83c46134f1",
+              "snaks": {
+                "P143": [
+                  {
+                    "snaktype": "value",
+                    "property": "P143",
+                    "hash": "e4f6d9441d0600513c4533c672b5ab472dc73694",
+                    "datavalue": {
+                      "value": {
+                        "entity-type": "item",
+                        "numeric-id": 328,
+                        "id": "Q328"
+                      },
+                      "type": "wikibase-entityid"
+                    },
+                    "datatype": "wikibase-item"
+                  }
+                ]
+              },
+              "snaks-order": [
+                "P143"
+              ]
+            }
+          ]
+        }
+      ],
+      "P646": [
+        {
+          "mainsnak": {
+            "snaktype": "value",
+            "property": "P646",
+            "hash": "200464b39b64c681f682f1bdaaac0e7f9a78486b",
+            "datavalue": {
+              "value": "/m/0gfdzn_",
+              "type": "string"
+            },
+            "datatype": "external-id"
+          },
+          "type": "statement",
+          "id": "Q16933898$33FA1008-A770-4854-B6C5-7E4B8EBF5334",
+          "rank": "normal"
+        }
+      ]
+    },
+    "sitelinks": {
+      "arwiki": {
+        "site": "arwiki",
+        "title": "الحملة الفرنسية على نورماندي (1202–1204)",
+        "badges": [],
+        "url": "https://ar.wikipedia.org/wiki/%D8%A7%D9%84%D8%AD%D9%85%D9%84%D8%A9_%D8%A7%D9%84%D9%81%D8%B1%D9%86%D8%B3%D9%8A%D8%A9_%D8%B9%D9%84%D9%89_%D9%86%D9%88%D8%B1%D9%85%D8%A7%D9%86%D8%AF%D9%8A_(1202%E2%80%931204)"
+      },
+      "enwiki": {
+        "site": "enwiki",
+        "title": "Invasion of Normandy by Philip II of France",
+        "badges": [],
+        "url": "https://en.wikipedia.org/wiki/Invasion_of_Normandy_by_Philip_II_of_France"
+      },
+      "fawiki": {
+        "site": "fawiki",
+        "title": "تهاجم فرانسه به نورماندی (۱۲۰۲-۱۲۰۴)",
+        "badges": [],
+        "url": "https://fa.wikipedia.org/wiki/%D8%AA%D9%87%D8%A7%D8%AC%D9%85_%D9%81%D8%B1%D8%A7%D9%86%D8%B3%D9%87_%D8%A8%D9%87_%D9%86%D9%88%D8%B1%D9%85%D8%A7%D9%86%D8%AF%DB%8C_(%DB%B1%DB%B2%DB%B0%DB%B2-%DB%B1%DB%B2%DB%B0%DB%B4)"
+      },
+      "frwiki": {
+        "site": "frwiki",
+        "title": "Invasion française de la Normandie",
+        "badges": [],
+        "url": "https://fr.wikipedia.org/wiki/Invasion_fran%C3%A7aise_de_la_Normandie"
+      },
+      "idwiki": {
+        "site": "idwiki",
+        "title": "Invasi Normandia oleh Prancis",
+        "badges": [],
+        "url": "https://id.wikipedia.org/wiki/Invasi_Normandia_oleh_Prancis"
+      },
+      "jawiki": {
+        "site": "jawiki",
+        "title": "フランスのノルマンディー侵攻 (1202年-1204年)",
+        "badges": [],
+        "url": "https://ja.wikipedia.org/wiki/%E3%83%95%E3%83%A9%E3%83%B3%E3%82%B9%E3%81%AE%E3%83%8E%E3%83%AB%E3%83%9E%E3%83%B3%E3%83%87%E3%82%A3%E3%83%BC%E4%BE%B5%E6%94%BB_(1202%E5%B9%B4-1204%E5%B9%B4)"
+      },
+      "lvwiki": {
+        "site": "lvwiki",
+        "title": "Normandijas iekarošana",
+        "badges": [],
+        "url": "https://lv.wikipedia.org/wiki/Normandijas_iekaro%C5%A1ana"
+      },
+      "srwiki": {
+        "site": "srwiki",
+        "title": "Англо-француски рат (1202—1204)",
+        "badges": [],
+        "url": "https://sr.wikipedia.org/wiki/%D0%90%D0%BD%D0%B3%D0%BB%D0%BE-%D1%84%D1%80%D0%B0%D0%BD%D1%86%D1%83%D1%81%D0%BA%D0%B8_%D1%80%D0%B0%D1%82_(1202%E2%80%941204)"
+      },
+      "zh_min_nanwiki": {
+        "site": "zh_min_nanwiki",
+        "title": "Hoat-kok tùi Normandie ê chhim-ji̍p",
+        "badges": [],
+        "url": "https://zh-min-nan.wikipedia.org/wiki/Hoat-kok_t%C3%B9i_Normandie_%C3%AA_chhim-ji%CC%8Dp"
+      },
+      "zhwiki": {
+        "site": "zhwiki",
+        "title": "法國入侵諾曼第",
+        "badges": [],
+        "url": "https://zh.wikipedia.org/wiki/%E6%B3%95%E5%9C%8B%E5%85%A5%E4%BE%B5%E8%AB%BE%E6%9B%BC%E7%AC%AC"
+      }
+    }
+  }
+}

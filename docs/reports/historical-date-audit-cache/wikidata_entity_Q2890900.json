@@ -1,0 +1,510 @@
+{
+  "saved_at": "2026-03-07T13:51:29.654Z",
+  "value": {
+    "pageid": 2767416,
+    "ns": 0,
+    "title": "Q2890900",
+    "lastrevid": 2343532265,
+    "modified": "2025-05-01T01:44:01Z",
+    "type": "item",
+    "id": "Q2890900",
+    "labels": {
+      "fr": {
+        "language": "fr",
+        "value": "bataille du faubourg Saint-Antoine"
+      },
+      "en": {
+        "language": "en",
+        "value": "Battle of the Faubourg St Antoine"
+      },
+      "ja": {
+        "language": "ja",
+        "value": "フォーブール・サントノレの戦い"
+      },
+      "ru": {
+        "language": "ru",
+        "value": "Битва в Сент-Антуанском предместье"
+      },
+      "cs": {
+        "language": "cs",
+        "value": "Bitva na předměstí Saint-Antoine"
+      },
+      "ca": {
+        "language": "ca",
+        "value": "batalla del Faubourg Saint-Antoine"
+      },
+      "sv": {
+        "language": "sv",
+        "value": "slaget i Faubourg Saint-Antoine"
+      },
+      "nl": {
+        "language": "nl",
+        "value": "Slag bij de faubourg Saint-Antoine"
+      },
+      "yo": {
+        "language": "yo",
+        "value": "ogun the Faubourg St Antoine"
+      },
+      "pt": {
+        "language": "pt",
+        "value": "Batalha do Faubourg St Antoine"
+      },
+      "hu": {
+        "language": "hu",
+        "value": "Faubourg Saint-Antoine-i csata"
+      },
+      "de": {
+        "language": "de",
+        "value": "Schlacht bei Faubourg Saint-Antoine"
+      },
+      "zh": {
+        "language": "zh",
+        "value": "聖安托萬郊區戰役"
+      },
+      "sk": {
+        "language": "sk",
+        "value": "Bitka na predmestí Saint-Antoine"
+      },
+      "it": {
+        "language": "it",
+        "value": "battaglia nella Rue de Faubourg Saint-Antoine"
+      },
+      "es": {
+        "language": "es",
+        "value": "batalla del Faubourg Saint-Antoine"
+      }
+    },
+    "descriptions": {
+      "fr": {
+        "language": "fr",
+        "value": "combat du faubourg Saint-Antoine"
+      },
+      "cs": {
+        "language": "cs",
+        "value": "bitva v Paříži"
+      },
+      "en": {
+        "language": "en",
+        "value": "1652 battle in France"
+      },
+      "yo": {
+        "language": "yo",
+        "value": "ogun"
+      },
+      "nl": {
+        "language": "nl",
+        "value": "Frans gevecht"
+      },
+      "hu": {
+        "language": "hu",
+        "value": "a Fronde csatája (1652)"
+      },
+      "de": {
+        "language": "de",
+        "value": "Schlacht des Fronde-Aufstandes"
+      },
+      "sk": {
+        "language": "sk",
+        "value": "bitka v Paríži (1652)"
+      }
+    },
+    "aliases": {
+      "ja": [
+        {
+          "language": "ja",
+          "value": "フォーブール・サン・タントワーヌの戦い"
+        }
+      ],
+      "hu": [
+        {
+          "language": "hu",
+          "value": "Faubourg St. Antoine-i csata"
+        },
+        {
+          "language": "hu",
+          "value": "Faubourg St Antoine-i csata"
+        }
+      ],
+      "de": [
+        {
+          "language": "de",
+          "value": "Schlacht bei Faubourg St Antoine"
+        },
+        {
+          "language": "de",
+          "value": "Schlacht im Faubourg Saint-Antoine"
+        }
+      ]
+    },
+    "claims": {
+      "P31": [
+        {
+          "mainsnak": {
+            "snaktype": "value",
+            "property": "P31",
+            "hash": "baa1df9dcd37b9f3a062e7a14a8bef0c37078d32",
+            "datavalue": {
+              "value": {
+                "entity-type": "item",
+                "numeric-id": 178561,
+                "id": "Q178561"
+              },
+              "type": "wikibase-entityid"
+            },
+            "datatype": "wikibase-item"
+          },
+          "type": "statement",
+          "id": "Q2890900$3E544396-7A94-4A7E-B7B2-EF0CB91B8AA3",
+          "rank": "normal",
+          "references": [
+            {
+              "hash": "d4bd87b862b12d99d26e86472d44f26858dee639",
+              "snaks": {
+                "P143": [
+                  {
+                    "snaktype": "value",
+                    "property": "P143",
+                    "hash": "f30cbd35620c4ea6d0633aaf0210a8916130469b",
+                    "datavalue": {
+                      "value": {
+                        "entity-type": "item",
+                        "numeric-id": 8447,
+                        "id": "Q8447"
+                      },
+                      "type": "wikibase-entityid"
+                    },
+                    "datatype": "wikibase-item"
+                  }
+                ]
+              },
+              "snaks-order": [
+                "P143"
+              ]
+            }
+          ]
+        }
+      ],
+      "P276": [
+        {
+          "mainsnak": {
+            "snaktype": "value",
+            "property": "P276",
+            "hash": "30c39b2b0f1d218b56f9c7f4ce07e5bd8a3cf5cf",
+            "datavalue": {
+              "value": {
+                "entity-type": "item",
+                "numeric-id": 3398946,
+                "id": "Q3398946"
+              },
+              "type": "wikibase-entityid"
+            },
+            "datatype": "wikibase-item"
+          },
+          "type": "statement",
+          "id": "Q2890900$B2FE8D4C-8BEA-412B-A3EC-844BDC497C47",
+          "rank": "normal"
+        }
+      ],
+      "P361": [
+        {
+          "mainsnak": {
+            "snaktype": "value",
+            "property": "P361",
+            "hash": "662c237b39a5f2bbfb968e989b907b13fec10c80",
+            "datavalue": {
+              "value": {
+                "entity-type": "item",
+                "numeric-id": 656186,
+                "id": "Q656186"
+              },
+              "type": "wikibase-entityid"
+            },
+            "datatype": "wikibase-item"
+          },
+          "type": "statement",
+          "id": "Q2890900$043b0561-4d6d-624a-b2e7-244c91e0f83c",
+          "rank": "normal"
+        }
+      ],
+      "P585": [
+        {
+          "mainsnak": {
+            "snaktype": "value",
+            "property": "P585",
+            "hash": "09015e93300fe9677b98382998b9216bf974c225",
+            "datavalue": {
+              "value": {
+                "time": "+1652-07-02T00:00:00Z",
+                "timezone": 0,
+                "before": 0,
+                "after": 0,
+                "precision": 11,
+                "calendarmodel": "http://www.wikidata.org/entity/Q1985727"
+              },
+              "type": "time"
+            },
+            "datatype": "time"
+          },
+          "type": "statement",
+          "id": "Q2890900$3658BDD6-039B-4CA5-8D47-38D764900769",
+          "rank": "normal",
+          "references": [
+            {
+              "hash": "d4bd87b862b12d99d26e86472d44f26858dee639",
+              "snaks": {
+                "P143": [
+                  {
+                    "snaktype": "value",
+                    "property": "P143",
+                    "hash": "f30cbd35620c4ea6d0633aaf0210a8916130469b",
+                    "datavalue": {
+                      "value": {
+                        "entity-type": "item",
+                        "numeric-id": 8447,
+                        "id": "Q8447"
+                      },
+                      "type": "wikibase-entityid"
+                    },
+                    "datatype": "wikibase-item"
+                  }
+                ]
+              },
+              "snaks-order": [
+                "P143"
+              ]
+            }
+          ]
+        }
+      ],
+      "P18": [
+        {
+          "mainsnak": {
+            "snaktype": "value",
+            "property": "P18",
+            "hash": "b15211bcd1022827a40af5e4b39e764c4a8b9184",
+            "datavalue": {
+              "value": "Combat de deux cavaliers lors de la Fronde, faubourg Saint-Antoine, sous les murs de la Bastille.jpg",
+              "type": "string"
+            },
+            "datatype": "commonsMedia"
+          },
+          "type": "statement",
+          "id": "Q2890900$afc47e4f-4519-624c-1c59-81ab9cb32a55",
+          "rank": "normal"
+        }
+      ],
+      "P1417": [
+        {
+          "mainsnak": {
+            "snaktype": "value",
+            "property": "P1417",
+            "hash": "c2757e89979daa42254041b77335cc3f20e5c50c",
+            "datavalue": {
+              "value": "topic/Battle-of-the-Faubourg-Saint-Antoine",
+              "type": "string"
+            },
+            "datatype": "external-id"
+          },
+          "type": "statement",
+          "qualifiers": {
+            "P1810": [
+              {
+                "snaktype": "value",
+                "property": "P1810",
+                "hash": "e216e257ddbd67417528db65b2a3a8da6e48c5cd",
+                "datavalue": {
+                  "value": "Battle of the Faubourg Saint-Antoine",
+                  "type": "string"
+                },
+                "datatype": "string"
+              }
+            ]
+          },
+          "qualifiers-order": [
+            "P1810"
+          ],
+          "id": "Q2890900$EFF60145-0601-43EB-9872-C55F9990CFF7",
+          "rank": "normal"
+        }
+      ],
+      "P646": [
+        {
+          "mainsnak": {
+            "snaktype": "value",
+            "property": "P646",
+            "hash": "e0e582458bc877548695b5de5fa55fc3c4a30fa4",
+            "datavalue": {
+              "value": "/m/0h55hj6",
+              "type": "string"
+            },
+            "datatype": "external-id"
+          },
+          "type": "statement",
+          "id": "Q2890900$A479956A-7223-442F-8505-9D6F7B5CC77D",
+          "rank": "normal"
+        }
+      ],
+      "P373": [
+        {
+          "mainsnak": {
+            "snaktype": "value",
+            "property": "P373",
+            "hash": "66dea8ecffdec2fd8211d7f6e018a7ec3b138ef1",
+            "datavalue": {
+              "value": "Battle of the Faubourg Saint-Antoine",
+              "type": "string"
+            },
+            "datatype": "string"
+          },
+          "type": "statement",
+          "id": "Q2890900$e2219a70-2b12-44c0-b420-39ce222be988",
+          "rank": "normal"
+        }
+      ],
+      "P17": [
+        {
+          "mainsnak": {
+            "snaktype": "value",
+            "property": "P17",
+            "hash": "2b7d86f7555d9e77641e33f3f283b88021a5e49a",
+            "datavalue": {
+              "value": {
+                "entity-type": "item",
+                "numeric-id": 70972,
+                "id": "Q70972"
+              },
+              "type": "wikibase-entityid"
+            },
+            "datatype": "wikibase-item"
+          },
+          "type": "statement",
+          "id": "Q2890900$682E4230-7431-4D88-A36C-BAEF647A0D3D",
+          "rank": "normal"
+        }
+      ],
+      "P710": [
+        {
+          "mainsnak": {
+            "snaktype": "value",
+            "property": "P710",
+            "hash": "8a9ea07e5e69e9e51e5c91cad488fa1c0428f5bc",
+            "datavalue": {
+              "value": {
+                "entity-type": "item",
+                "numeric-id": 70972,
+                "id": "Q70972"
+              },
+              "type": "wikibase-entityid"
+            },
+            "datatype": "wikibase-item"
+          },
+          "type": "statement",
+          "qualifiers": {
+            "P4791": [
+              {
+                "snaktype": "value",
+                "property": "P4791",
+                "hash": "56e0463d12dfca3f89aea8e174b4fdd9f53511fa",
+                "datavalue": {
+                  "value": {
+                    "entity-type": "item",
+                    "numeric-id": 303216,
+                    "id": "Q303216"
+                  },
+                  "type": "wikibase-entityid"
+                },
+                "datatype": "wikibase-item"
+              }
+            ]
+          },
+          "qualifiers-order": [
+            "P4791"
+          ],
+          "id": "Q2890900$d69a2de1-40f6-8d6c-9e4c-db56dd6bf061",
+          "rank": "normal"
+        },
+        {
+          "mainsnak": {
+            "snaktype": "value",
+            "property": "P710",
+            "hash": "71029d83febc08047a496d70f63927ff6dc6040d",
+            "datavalue": {
+              "value": {
+                "entity-type": "item",
+                "numeric-id": 310837,
+                "id": "Q310837"
+              },
+              "type": "wikibase-entityid"
+            },
+            "datatype": "wikibase-item"
+          },
+          "type": "statement",
+          "id": "Q2890900$f2d2b33b-4c30-85bb-afd1-084f24322453",
+          "rank": "normal"
+        }
+      ]
+    },
+    "sitelinks": {
+      "commonswiki": {
+        "site": "commonswiki",
+        "title": "Category:Battle of the Faubourg Saint-Antoine",
+        "badges": [],
+        "url": "https://commons.wikimedia.org/wiki/Category:Battle_of_the_Faubourg_Saint-Antoine"
+      },
+      "cswiki": {
+        "site": "cswiki",
+        "title": "Bitva na předměstí Saint-Antoine",
+        "badges": [],
+        "url": "https://cs.wikipedia.org/wiki/Bitva_na_p%C5%99edm%C4%9Bst%C3%AD_Saint-Antoine"
+      },
+      "dewiki": {
+        "site": "dewiki",
+        "title": "Schlacht im Faubourg Saint-Antoine",
+        "badges": [],
+        "url": "https://de.wikipedia.org/wiki/Schlacht_im_Faubourg_Saint-Antoine"
+      },
+      "enwiki": {
+        "site": "enwiki",
+        "title": "Battle of the Faubourg St Antoine",
+        "badges": [],
+        "url": "https://en.wikipedia.org/wiki/Battle_of_the_Faubourg_St_Antoine"
+      },
+      "frwiki": {
+        "site": "frwiki",
+        "title": "Bataille du faubourg Saint-Antoine",
+        "badges": [],
+        "url": "https://fr.wikipedia.org/wiki/Bataille_du_faubourg_Saint-Antoine"
+      },
+      "itwiki": {
+        "site": "itwiki",
+        "title": "Battaglia nella Rue de Faubourg Saint-Antoine",
+        "badges": [],
+        "url": "https://it.wikipedia.org/wiki/Battaglia_nella_Rue_de_Faubourg_Saint-Antoine"
+      },
+      "nlwiki": {
+        "site": "nlwiki",
+        "title": "Slag bij de faubourg Saint-Antoine",
+        "badges": [],
+        "url": "https://nl.wikipedia.org/wiki/Slag_bij_de_faubourg_Saint-Antoine"
+      },
+      "ptwiki": {
+        "site": "ptwiki",
+        "title": "Batalha do Faubourg St Antoine",
+        "badges": [],
+        "url": "https://pt.wikipedia.org/wiki/Batalha_do_Faubourg_St_Antoine"
+      },
+      "ruwiki": {
+        "site": "ruwiki",
+        "title": "Битва в Сент-Антуанском предместье",
+        "badges": [],
+        "url": "https://ru.wikipedia.org/wiki/%D0%91%D0%B8%D1%82%D0%B2%D0%B0_%D0%B2_%D0%A1%D0%B5%D0%BD%D1%82-%D0%90%D0%BD%D1%82%D1%83%D0%B0%D0%BD%D1%81%D0%BA%D0%BE%D0%BC_%D0%BF%D1%80%D0%B5%D0%B4%D0%BC%D0%B5%D1%81%D1%82%D1%8C%D0%B5"
+      },
+      "skwiki": {
+        "site": "skwiki",
+        "title": "Bitka na predmestí Saint-Antoine",
+        "badges": [],
+        "url": "https://sk.wikipedia.org/wiki/Bitka_na_predmest%C3%AD_Saint-Antoine"
+      }
+    }
+  }
+}

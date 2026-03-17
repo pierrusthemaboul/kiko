@@ -1,0 +1,446 @@
+{
+  "pageid": 551522,
+  "ns": 0,
+  "title": "Q586186",
+  "lastrevid": 2329682794,
+  "modified": "2025-03-24T08:21:03Z",
+  "type": "item",
+  "id": "Q586186",
+  "labels": {
+    "de": {
+      "language": "de",
+      "value": "Bretonische Mark"
+    },
+    "bg": {
+      "language": "bg",
+      "value": "Бретонска марка"
+    },
+    "ca": {
+      "language": "ca",
+      "value": "Marca de Bretanya"
+    },
+    "eu": {
+      "language": "eu",
+      "value": "Bretainiako marka"
+    },
+    "fr": {
+      "language": "fr",
+      "value": "Marche de Bretagne"
+    },
+    "ru": {
+      "language": "ru",
+      "value": "Бретонская марка"
+    },
+    "uk": {
+      "language": "uk",
+      "value": "Бретонська марка"
+    },
+    "br": {
+      "language": "br",
+      "value": "Marz Breizh"
+    },
+    "es": {
+      "language": "es",
+      "value": "Marca de Bretaña"
+    },
+    "sr": {
+      "language": "sr",
+      "value": "бретонска марка"
+    },
+    "pl": {
+      "language": "pl",
+      "value": "Marchia Bretońska"
+    },
+    "ja": {
+      "language": "ja",
+      "value": "ブルターニュ公国の国境"
+    },
+    "gl": {
+      "language": "gl",
+      "value": "Marca da Bretaña"
+    },
+    "zh": {
+      "language": "zh",
+      "value": "布列塔尼边界行政区"
+    },
+    "zh-hant": {
+      "language": "zh-hant",
+      "value": "布列塔尼邊界行政區"
+    },
+    "cs": {
+      "language": "cs",
+      "value": "Bretaňská marka"
+    },
+    "en": {
+      "language": "en",
+      "value": "Breton March"
+    },
+    "nl": {
+      "language": "nl",
+      "value": "Bretonse Mark"
+    }
+  },
+  "descriptions": {
+    "fr": {
+      "language": "fr",
+      "value": "ancienne zone tampon militaire entre la Bretagne et l'Empire Carolingien"
+    },
+    "cs": {
+      "language": "cs",
+      "value": "historický státní útvar"
+    }
+  },
+  "aliases": {
+    "zh": [
+      {
+        "language": "zh",
+        "value": "布列塔尼边境管理区"
+      },
+      {
+        "language": "zh",
+        "value": "布列塔尼边区"
+      }
+    ]
+  },
+  "claims": {
+    "P910": [
+      {
+        "mainsnak": {
+          "snaktype": "value",
+          "property": "P910",
+          "hash": "6cc21cbcd08bda2cf7e1c7d7233cad5c80a7261f",
+          "datavalue": {
+            "value": {
+              "entity-type": "item",
+              "numeric-id": 9914679,
+              "id": "Q9914679"
+            },
+            "type": "wikibase-entityid"
+          },
+          "datatype": "wikibase-item"
+        },
+        "type": "statement",
+        "id": "Q586186$4257AD02-2B13-4E74-BF6F-61F85419355E",
+        "rank": "normal",
+        "references": [
+          {
+            "hash": "d4bd87b862b12d99d26e86472d44f26858dee639",
+            "snaks": {
+              "P143": [
+                {
+                  "snaktype": "value",
+                  "property": "P143",
+                  "hash": "f30cbd35620c4ea6d0633aaf0210a8916130469b",
+                  "datavalue": {
+                    "value": {
+                      "entity-type": "item",
+                      "numeric-id": 8447,
+                      "id": "Q8447"
+                    },
+                    "type": "wikibase-entityid"
+                  },
+                  "datatype": "wikibase-item"
+                }
+              ]
+            },
+            "snaks-order": [
+              "P143"
+            ]
+          }
+        ]
+      }
+    ],
+    "P17": [
+      {
+        "mainsnak": {
+          "snaktype": "value",
+          "property": "P17",
+          "hash": "ecbaaceaeb6da810c4badcc28fe967096e8cc0f3",
+          "datavalue": {
+            "value": {
+              "entity-type": "item",
+              "numeric-id": 146246,
+              "id": "Q146246"
+            },
+            "type": "wikibase-entityid"
+          },
+          "datatype": "wikibase-item"
+        },
+        "type": "statement",
+        "id": "Q586186$B9628D56-4F84-4242-A6D3-FD3B50A054F3",
+        "rank": "normal"
+      }
+    ],
+    "P2671": [
+      {
+        "mainsnak": {
+          "snaktype": "value",
+          "property": "P2671",
+          "hash": "6fb7a634f7bc2f50ebb90f3aa5aa051a33a0b22c",
+          "datavalue": {
+            "value": "/g/121v7y50",
+            "type": "string"
+          },
+          "datatype": "external-id"
+        },
+        "type": "statement",
+        "id": "Q586186$6D6AC54D-01FB-4074-9574-2A27EEF33502",
+        "rank": "normal"
+      }
+    ],
+    "P31": [
+      {
+        "mainsnak": {
+          "snaktype": "value",
+          "property": "P31",
+          "hash": "abd447215fffa3557942cea54bdbab5287b9dfc9",
+          "datavalue": {
+            "value": {
+              "entity-type": "item",
+              "numeric-id": 19953632,
+              "id": "Q19953632"
+            },
+            "type": "wikibase-entityid"
+          },
+          "datatype": "wikibase-item"
+        },
+        "type": "statement",
+        "id": "Q586186$71c2e68e-4b40-bb34-5ece-fb1114baee90",
+        "rank": "normal"
+      },
+      {
+        "mainsnak": {
+          "snaktype": "value",
+          "property": "P31",
+          "hash": "028812d91cc2dfa960d261f279a7d51b173fe34f",
+          "datavalue": {
+            "value": {
+              "entity-type": "item",
+              "numeric-id": 7695,
+              "id": "Q7695"
+            },
+            "type": "wikibase-entityid"
+          },
+          "datatype": "wikibase-item"
+        },
+        "type": "statement",
+        "id": "Q586186$457a8ca2-4720-a117-780f-63965c2f5220",
+        "rank": "normal"
+      }
+    ],
+    "P131": [
+      {
+        "mainsnak": {
+          "snaktype": "value",
+          "property": "P131",
+          "hash": "0099055930908bcdaf56c3f2f56b6a2d614a8354",
+          "datavalue": {
+            "value": {
+              "entity-type": "item",
+              "numeric-id": 106577,
+              "id": "Q106577"
+            },
+            "type": "wikibase-entityid"
+          },
+          "datatype": "wikibase-item"
+        },
+        "type": "statement",
+        "id": "Q586186$89862c28-431e-cec3-8adb-4cd08c1668f4",
+        "rank": "normal"
+      }
+    ],
+    "P625": [
+      {
+        "mainsnak": {
+          "snaktype": "value",
+          "property": "P625",
+          "hash": "24a378d2793f58f00580ca48055acce2139c14f8",
+          "datavalue": {
+            "value": {
+              "latitude": 47.8,
+              "longitude": -1.5,
+              "altitude": null,
+              "precision": 1,
+              "globe": "http://www.wikidata.org/entity/Q2"
+            },
+            "type": "globecoordinate"
+          },
+          "datatype": "globe-coordinate"
+        },
+        "type": "statement",
+        "id": "Q586186$987b761e-430d-c20f-81f2-9114dfad37c9",
+        "rank": "normal"
+      }
+    ],
+    "P1313": [
+      {
+        "mainsnak": {
+          "snaktype": "value",
+          "property": "P1313",
+          "hash": "7dce2fb6aa9cf58d4d35842cf200d70f0762b387",
+          "datavalue": {
+            "value": {
+              "entity-type": "item",
+              "numeric-id": 105725298,
+              "id": "Q105725298"
+            },
+            "type": "wikibase-entityid"
+          },
+          "datatype": "wikibase-item"
+        },
+        "type": "statement",
+        "id": "Q586186$d5cb5c93-4274-6822-2cf2-85d0bb08469e",
+        "rank": "normal"
+      }
+    ],
+    "P156": [
+      {
+        "mainsnak": {
+          "snaktype": "value",
+          "property": "P156",
+          "hash": "4cfbb9b350a802d1e5a9163a5d4eca6052c69c1a",
+          "datavalue": {
+            "value": {
+              "entity-type": "item",
+              "numeric-id": 771193,
+              "id": "Q771193"
+            },
+            "type": "wikibase-entityid"
+          },
+          "datatype": "wikibase-item"
+        },
+        "type": "statement",
+        "id": "Q586186$b60052ce-4628-bf83-e872-90f46158040c",
+        "rank": "normal"
+      }
+    ],
+    "P268": [
+      {
+        "mainsnak": {
+          "snaktype": "value",
+          "property": "P268",
+          "hash": "ccf2619aa6e109e5773ec011c799afc1dffff09d",
+          "datavalue": {
+            "value": "12423080r",
+            "type": "string"
+          },
+          "datatype": "external-id"
+        },
+        "type": "statement",
+        "id": "Q586186$948073d3-4467-7846-829e-1e75dda1bbe3",
+        "rank": "normal"
+      }
+    ],
+    "P1621": [
+      {
+        "mainsnak": {
+          "snaktype": "value",
+          "property": "P1621",
+          "hash": "402d5703b6a5fec156eda5c94738cbd68797482d",
+          "datavalue": {
+            "value": "Empire carolingien 768-811.jpg",
+            "type": "string"
+          },
+          "datatype": "commonsMedia"
+        },
+        "type": "statement",
+        "qualifiers": {
+          "P2096": [
+            {
+              "snaktype": "value",
+              "property": "P2096",
+              "hash": "3bb5a6bba3e52b448466f097e503ea056f4cf2f6",
+              "datavalue": {
+                "value": {
+                  "text": "La Marca de Bretanya en l'Imperi Carolingi",
+                  "language": "ca"
+                },
+                "type": "monolingualtext"
+              },
+              "datatype": "monolingualtext"
+            }
+          ]
+        },
+        "qualifiers-order": [
+          "P2096"
+        ],
+        "id": "Q586186$1d55049c-4b60-139e-b340-f401eac372ab",
+        "rank": "normal"
+      }
+    ]
+  },
+  "sitelinks": {
+    "bgwiki": {
+      "site": "bgwiki",
+      "title": "Бретонска марка",
+      "badges": [],
+      "url": "https://bg.wikipedia.org/wiki/%D0%91%D1%80%D0%B5%D1%82%D0%BE%D0%BD%D1%81%D0%BA%D0%B0_%D0%BC%D0%B0%D1%80%D0%BA%D0%B0"
+    },
+    "brwiki": {
+      "site": "brwiki",
+      "title": "Marz Breizh",
+      "badges": [],
+      "url": "https://br.wikipedia.org/wiki/Marz_Breizh"
+    },
+    "cawiki": {
+      "site": "cawiki",
+      "title": "Marca de Bretanya",
+      "badges": [],
+      "url": "https://ca.wikipedia.org/wiki/Marca_de_Bretanya"
+    },
+    "dewiki": {
+      "site": "dewiki",
+      "title": "Bretonische Mark",
+      "badges": [],
+      "url": "https://de.wikipedia.org/wiki/Bretonische_Mark"
+    },
+    "eswiki": {
+      "site": "eswiki",
+      "title": "Marca de Bretaña",
+      "badges": [],
+      "url": "https://es.wikipedia.org/wiki/Marca_de_Breta%C3%B1a"
+    },
+    "euwiki": {
+      "site": "euwiki",
+      "title": "Bretainiako Marka",
+      "badges": [],
+      "url": "https://eu.wikipedia.org/wiki/Bretainiako_Marka"
+    },
+    "frwiki": {
+      "site": "frwiki",
+      "title": "Marche de Bretagne",
+      "badges": [],
+      "url": "https://fr.wikipedia.org/wiki/Marche_de_Bretagne"
+    },
+    "glwiki": {
+      "site": "glwiki",
+      "title": "Marca da Bretaña",
+      "badges": [],
+      "url": "https://gl.wikipedia.org/wiki/Marca_da_Breta%C3%B1a"
+    },
+    "nlwiki": {
+      "site": "nlwiki",
+      "title": "Bretonse Mark",
+      "badges": [],
+      "url": "https://nl.wikipedia.org/wiki/Bretonse_Mark"
+    },
+    "plwiki": {
+      "site": "plwiki",
+      "title": "Marchia Bretońska",
+      "badges": [],
+      "url": "https://pl.wikipedia.org/wiki/Marchia_Breto%C5%84ska"
+    },
+    "ruwiki": {
+      "site": "ruwiki",
+      "title": "Бретонская марка",
+      "badges": [],
+      "url": "https://ru.wikipedia.org/wiki/%D0%91%D1%80%D0%B5%D1%82%D0%BE%D0%BD%D1%81%D0%BA%D0%B0%D1%8F_%D0%BC%D0%B0%D1%80%D0%BA%D0%B0"
+    },
+    "ukwiki": {
+      "site": "ukwiki",
+      "title": "Бретонська марка",
+      "badges": [],
+      "url": "https://uk.wikipedia.org/wiki/%D0%91%D1%80%D0%B5%D1%82%D0%BE%D0%BD%D1%81%D1%8C%D0%BA%D0%B0_%D0%BC%D0%B0%D1%80%D0%BA%D0%B0"
+    }
+  }
+}

@@ -1,0 +1,497 @@
+{
+  "saved_at": "2026-03-07T16:41:41.932Z",
+  "value": {
+    "pageid": 3208744,
+    "ns": 0,
+    "title": "Q3366840",
+    "lastrevid": 1833983916,
+    "modified": "2023-02-14T17:17:26Z",
+    "type": "item",
+    "id": "Q3366840",
+    "labels": {
+      "fr": {
+        "language": "fr",
+        "value": "Participation des employeurs à l'effort de construction"
+      }
+    },
+    "descriptions": {},
+    "aliases": {
+      "fr": [
+        {
+          "language": "fr",
+          "value": "1% patronal"
+        },
+        {
+          "language": "fr",
+          "value": "1% Logement"
+        },
+        {
+          "language": "fr",
+          "value": "1% logement"
+        },
+        {
+          "language": "fr",
+          "value": "Prêt employeur (1% patronal)"
+        },
+        {
+          "language": "fr",
+          "value": "Pret Employeur (1% patronal)"
+        },
+        {
+          "language": "fr",
+          "value": "Prêt Employeur (1% patronal)"
+        },
+        {
+          "language": "fr",
+          "value": "Action logement"
+        },
+        {
+          "language": "fr",
+          "value": "Prêt Employeur (1 % patronal)"
+        },
+        {
+          "language": "fr",
+          "value": "1 % logement"
+        },
+        {
+          "language": "fr",
+          "value": "1 % Logement"
+        }
+      ]
+    },
+    "claims": {
+      "P31": [
+        {
+          "mainsnak": {
+            "snaktype": "value",
+            "property": "P31",
+            "hash": "083234a337ff9d907985f2e6764796ce74f616a4",
+            "datavalue": {
+              "value": {
+                "entity-type": "item",
+                "numeric-id": 3445707,
+                "id": "Q3445707"
+              },
+              "type": "wikibase-entityid"
+            },
+            "datatype": "wikibase-item"
+          },
+          "type": "statement",
+          "id": "Q3366840$c032316b-43b0-8388-fa95-5b691821f71f",
+          "rank": "normal"
+        },
+        {
+          "mainsnak": {
+            "snaktype": "value",
+            "property": "P31",
+            "hash": "7334ad5a95abe5bc663a210b150e80c85885781e",
+            "datavalue": {
+              "value": {
+                "entity-type": "item",
+                "numeric-id": 8161,
+                "id": "Q8161"
+              },
+              "type": "wikibase-entityid"
+            },
+            "datatype": "wikibase-item"
+          },
+          "type": "statement",
+          "id": "Q3366840$A04408BC-631A-4190-87C8-CF195097EFB1",
+          "rank": "normal"
+        }
+      ],
+      "P856": [
+        {
+          "mainsnak": {
+            "snaktype": "value",
+            "property": "P856",
+            "hash": "936171dc426ed2ca71bb2828efc5939846f878ab",
+            "datavalue": {
+              "value": "http://actionlogement.fr",
+              "type": "string"
+            },
+            "datatype": "url"
+          },
+          "type": "statement",
+          "id": "Q3366840$F4D687E3-4B62-4C3E-ABBC-8B3A1C0E4713",
+          "rank": "normal",
+          "references": [
+            {
+              "hash": "d4bd87b862b12d99d26e86472d44f26858dee639",
+              "snaks": {
+                "P143": [
+                  {
+                    "snaktype": "value",
+                    "property": "P143",
+                    "hash": "f30cbd35620c4ea6d0633aaf0210a8916130469b",
+                    "datavalue": {
+                      "value": {
+                        "entity-type": "item",
+                        "numeric-id": 8447,
+                        "id": "Q8447"
+                      },
+                      "type": "wikibase-entityid"
+                    },
+                    "datatype": "wikibase-item"
+                  }
+                ]
+              },
+              "snaks-order": [
+                "P143"
+              ]
+            }
+          ]
+        }
+      ],
+      "P1813": [
+        {
+          "mainsnak": {
+            "snaktype": "value",
+            "property": "P1813",
+            "hash": "42b27e1209c57ff7e9e953b608de71d40084b85c",
+            "datavalue": {
+              "value": {
+                "text": "PEEC",
+                "language": "fr"
+              },
+              "type": "monolingualtext"
+            },
+            "datatype": "monolingualtext"
+          },
+          "type": "statement",
+          "id": "Q3366840$51a5c7f0-4b02-83af-9f76-da38200e039e",
+          "rank": "normal"
+        }
+      ],
+      "P92": [
+        {
+          "mainsnak": {
+            "snaktype": "value",
+            "property": "P92",
+            "hash": "61122fa830a89b82ad6a6709963168e65c01821b",
+            "datavalue": {
+              "value": {
+                "entity-type": "item",
+                "numeric-id": 263814,
+                "id": "Q263814"
+              },
+              "type": "wikibase-entityid"
+            },
+            "datatype": "wikibase-item"
+          },
+          "type": "statement",
+          "qualifiers": {
+            "P958": [
+              {
+                "snaktype": "value",
+                "property": "P958",
+                "hash": "fe59ec0c44583ffbaf4a8dc173c0523057a97e65",
+                "datavalue": {
+                  "value": "235 bis",
+                  "type": "string"
+                },
+                "datatype": "string"
+              }
+            ],
+            "P580": [
+              {
+                "snaktype": "value",
+                "property": "P580",
+                "hash": "dea7f253af21bd035a1c4edd6c4d6a534ac412dc",
+                "datavalue": {
+                  "value": {
+                    "time": "+1979-07-01T00:00:00Z",
+                    "timezone": 0,
+                    "before": 0,
+                    "after": 0,
+                    "precision": 11,
+                    "calendarmodel": "http://www.wikidata.org/entity/Q1985727"
+                  },
+                  "type": "time"
+                },
+                "datatype": "time"
+              }
+            ]
+          },
+          "qualifiers-order": [
+            "P958",
+            "P580"
+          ],
+          "id": "Q3366840$2b8dcd0b-43cf-1469-08fd-5d929f857aad",
+          "rank": "normal"
+        },
+        {
+          "mainsnak": {
+            "snaktype": "value",
+            "property": "P92",
+            "hash": "e90f97f10d2aceee4fb2ffa889ffe99bb78f3d38",
+            "datavalue": {
+              "value": {
+                "entity-type": "item",
+                "numeric-id": 2981494,
+                "id": "Q2981494"
+              },
+              "type": "wikibase-entityid"
+            },
+            "datatype": "wikibase-item"
+          },
+          "type": "statement",
+          "qualifiers": {
+            "P958": [
+              {
+                "snaktype": "value",
+                "property": "P958",
+                "hash": "897ddd68ab82bba1be36647f44da99c609e23509",
+                "datavalue": {
+                  "value": "L313-1",
+                  "type": "string"
+                },
+                "datatype": "string"
+              }
+            ]
+          },
+          "qualifiers-order": [
+            "P958"
+          ],
+          "id": "Q3366840$3d22b6e8-4c95-6400-cf37-1b392b990768",
+          "rank": "normal",
+          "references": [
+            {
+              "hash": "5a390465acb6af91e5229b2e35a8e871dfaae50b",
+              "snaks": {
+                "P854": [
+                  {
+                    "snaktype": "value",
+                    "property": "P854",
+                    "hash": "cff142b23a2a579d13e597f97a1e5459b18e4139",
+                    "datavalue": {
+                      "value": "https://www.performance-publique.budget.gouv.fr/sites/performance_publique/files/farandole/ressources/2019/pap/pdf/VMT1-2019.pdf",
+                      "type": "string"
+                    },
+                    "datatype": "url"
+                  }
+                ],
+                "P304": [
+                  {
+                    "snaktype": "value",
+                    "property": "P304",
+                    "hash": "729c78e3a8e3aecf0691bc023515f4287d0883b2",
+                    "datavalue": {
+                      "value": "174",
+                      "type": "string"
+                    },
+                    "datatype": "string"
+                  }
+                ]
+              },
+              "snaks-order": [
+                "P854",
+                "P304"
+              ]
+            }
+          ]
+        }
+      ],
+      "P825": [
+        {
+          "mainsnak": {
+            "snaktype": "value",
+            "property": "P825",
+            "hash": "213c378225d5d2f865d2a515e89f725c3f25fcdd",
+            "datavalue": {
+              "value": {
+                "entity-type": "item",
+                "numeric-id": 3075873,
+                "id": "Q3075873"
+              },
+              "type": "wikibase-entityid"
+            },
+            "datatype": "wikibase-item"
+          },
+          "type": "statement",
+          "id": "Q3366840$f94a8151-4afc-0362-8928-d2fece351247",
+          "rank": "normal"
+        },
+        {
+          "mainsnak": {
+            "snaktype": "value",
+            "property": "P825",
+            "hash": "2842c71fc5dc3ec086a40fffb26c409fd5aed846",
+            "datavalue": {
+              "value": {
+                "entity-type": "item",
+                "numeric-id": 98755057,
+                "id": "Q98755057"
+              },
+              "type": "wikibase-entityid"
+            },
+            "datatype": "wikibase-item"
+          },
+          "type": "statement",
+          "id": "Q3366840$7bcbaa46-410a-69c6-3153-774a288d7a36",
+          "rank": "normal",
+          "references": [
+            {
+              "hash": "5a390465acb6af91e5229b2e35a8e871dfaae50b",
+              "snaks": {
+                "P854": [
+                  {
+                    "snaktype": "value",
+                    "property": "P854",
+                    "hash": "cff142b23a2a579d13e597f97a1e5459b18e4139",
+                    "datavalue": {
+                      "value": "https://www.performance-publique.budget.gouv.fr/sites/performance_publique/files/farandole/ressources/2019/pap/pdf/VMT1-2019.pdf",
+                      "type": "string"
+                    },
+                    "datatype": "url"
+                  }
+                ],
+                "P304": [
+                  {
+                    "snaktype": "value",
+                    "property": "P304",
+                    "hash": "729c78e3a8e3aecf0691bc023515f4287d0883b2",
+                    "datavalue": {
+                      "value": "174",
+                      "type": "string"
+                    },
+                    "datatype": "string"
+                  }
+                ]
+              },
+              "snaks-order": [
+                "P854",
+                "P304"
+              ]
+            }
+          ]
+        }
+      ],
+      "P1001": [
+        {
+          "mainsnak": {
+            "snaktype": "value",
+            "property": "P1001",
+            "hash": "efe2878aed693a79dce942b2f853910a78c4e2a8",
+            "datavalue": {
+              "value": {
+                "entity-type": "item",
+                "numeric-id": 142,
+                "id": "Q142"
+              },
+              "type": "wikibase-entityid"
+            },
+            "datatype": "wikibase-item"
+          },
+          "type": "statement",
+          "id": "Q3366840$7fc07bad-480a-4e16-1349-4396dea13545",
+          "rank": "normal"
+        }
+      ],
+      "P2139": [
+        {
+          "mainsnak": {
+            "snaktype": "value",
+            "property": "P2139",
+            "hash": "961265357713a40bf4513d3a2d781b3cbb5aaaaa",
+            "datavalue": {
+              "value": {
+                "amount": "+1749000000",
+                "unit": "http://www.wikidata.org/entity/Q4916"
+              },
+              "type": "quantity"
+            },
+            "datatype": "quantity"
+          },
+          "type": "statement",
+          "qualifiers": {
+            "P585": [
+              {
+                "snaktype": "value",
+                "property": "P585",
+                "hash": "c34a8cfb745b0cda47dffa6967839b8f92bcb653",
+                "datavalue": {
+                  "value": {
+                    "time": "+2017-00-00T00:00:00Z",
+                    "timezone": 0,
+                    "before": 0,
+                    "after": 0,
+                    "precision": 9,
+                    "calendarmodel": "http://www.wikidata.org/entity/Q1985727"
+                  },
+                  "type": "time"
+                },
+                "datatype": "time"
+              }
+            ]
+          },
+          "qualifiers-order": [
+            "P585"
+          ],
+          "id": "Q3366840$941e3864-4a4d-974f-e428-c3f2d7619268",
+          "rank": "normal",
+          "references": [
+            {
+              "hash": "5a390465acb6af91e5229b2e35a8e871dfaae50b",
+              "snaks": {
+                "P854": [
+                  {
+                    "snaktype": "value",
+                    "property": "P854",
+                    "hash": "cff142b23a2a579d13e597f97a1e5459b18e4139",
+                    "datavalue": {
+                      "value": "https://www.performance-publique.budget.gouv.fr/sites/performance_publique/files/farandole/ressources/2019/pap/pdf/VMT1-2019.pdf",
+                      "type": "string"
+                    },
+                    "datatype": "url"
+                  }
+                ],
+                "P304": [
+                  {
+                    "snaktype": "value",
+                    "property": "P304",
+                    "hash": "729c78e3a8e3aecf0691bc023515f4287d0883b2",
+                    "datavalue": {
+                      "value": "174",
+                      "type": "string"
+                    },
+                    "datatype": "string"
+                  }
+                ]
+              },
+              "snaks-order": [
+                "P854",
+                "P304"
+              ]
+            }
+          ]
+        }
+      ],
+      "P2671": [
+        {
+          "mainsnak": {
+            "snaktype": "value",
+            "property": "P2671",
+            "hash": "71c6c3fed72778b413530ea2c2104c8e270e881c",
+            "datavalue": {
+              "value": "/g/121qyn_l",
+              "type": "string"
+            },
+            "datatype": "external-id"
+          },
+          "type": "statement",
+          "id": "Q3366840$728E7BBC-5223-4A79-9225-C62C11969A7F",
+          "rank": "normal"
+        }
+      ]
+    },
+    "sitelinks": {
+      "frwiki": {
+        "site": "frwiki",
+        "title": "Participation des employeurs à l'effort de construction",
+        "badges": [],
+        "url": "https://fr.wikipedia.org/wiki/Participation_des_employeurs_%C3%A0_l%27effort_de_construction"
+      }
+    }
+  }
+}

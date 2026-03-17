@@ -1,0 +1,290 @@
+{
+  "saved_at": "2026-03-07T14:59:11.817Z",
+  "value": {
+    "pageid": 4782059,
+    "ns": 0,
+    "title": "Q5004697",
+    "lastrevid": 2352315747,
+    "modified": "2025-05-25T17:38:00Z",
+    "type": "item",
+    "id": "Q5004697",
+    "labels": {
+      "en": {
+        "language": "en",
+        "value": "Byzantine Empire under the Macedonian dynasty"
+      },
+      "ja": {
+        "language": "ja",
+        "value": "マケドニア朝のビザンティン帝国"
+      },
+      "fa": {
+        "language": "fa",
+        "value": "امپراتوری بیزانس تحت حکومت سلسله مقدونیه‌ای"
+      },
+      "id": {
+        "language": "id",
+        "value": "Kekaisaran Romawi Timur di bawah dinasti Makedonia"
+      },
+      "fr": {
+        "language": "fr",
+        "value": "Empire byzantin sous les Macédoniens"
+      },
+      "ar": {
+        "language": "ar",
+        "value": "الإمبراطورية البيزنطية تحت حكم السلالة المقدونية"
+      },
+      "el": {
+        "language": "el",
+        "value": "Ιστορία της Βυζαντινής Αυτοκρατορίας υπό την δυναστεία των Μακεδόνων"
+      },
+      "es": {
+        "language": "es",
+        "value": "Imperio bizantino bajo la dinastía macedónica"
+      },
+      "it": {
+        "language": "it",
+        "value": "Impero bizantino durante la dinastia macedone"
+      },
+      "vec": {
+        "language": "vec",
+        "value": "Inpero bizantin durante de ła dinastia macèdona"
+      },
+      "ur": {
+        "language": "ur",
+        "value": "مقدونیائی شاہی سلسلہ کے تحت بازنطینی سلطنت"
+      },
+      "tr": {
+        "language": "tr",
+        "value": "Makedon Hanedanı döneminde Bizans İmparatorluğu"
+      }
+    },
+    "descriptions": {
+      "it": {
+        "language": "it",
+        "value": "Impero bizantino dall'867 al 1057"
+      },
+      "en": {
+        "language": "en",
+        "value": "Byzantine Empire from 867 to 1057"
+      },
+      "id": {
+        "language": "id",
+        "value": "Romawi Timur tahun 867–1057"
+      },
+      "tr": {
+        "language": "tr",
+        "value": "Doğu Roma tarihinin 867-1057 yıllarını kapsayan bir dönemi"
+      },
+      "es": {
+        "language": "es",
+        "value": "Imperio romano de oriente de 867-1057"
+      }
+    },
+    "aliases": {
+      "id": [
+        {
+          "language": "id",
+          "value": "Romawi Timur Dinasti Makedonia"
+        },
+        {
+          "language": "id",
+          "value": "Romawi Dinasti Makedonia"
+        }
+      ]
+    },
+    "claims": {
+      "P576": [
+        {
+          "mainsnak": {
+            "snaktype": "value",
+            "property": "P576",
+            "hash": "0341f3a9f8e82762dc45f8925b623a63eda5329f",
+            "datavalue": {
+              "value": {
+                "time": "+1057-01-01T00:00:00Z",
+                "timezone": 0,
+                "before": 0,
+                "after": 0,
+                "precision": 9,
+                "calendarmodel": "http://www.wikidata.org/entity/Q1985727"
+              },
+              "type": "time"
+            },
+            "datatype": "time"
+          },
+          "type": "statement",
+          "qualifiers": {
+            "P31": [
+              {
+                "snaktype": "value",
+                "property": "P31",
+                "hash": "d5ac6d02e7a8948b72184d9e39cf10acbc5e61ed",
+                "datavalue": {
+                  "value": {
+                    "entity-type": "item",
+                    "numeric-id": 26961029,
+                    "id": "Q26961029"
+                  },
+                  "type": "wikibase-entityid"
+                },
+                "datatype": "wikibase-item"
+              }
+            ]
+          },
+          "qualifiers-order": [
+            "P31"
+          ],
+          "id": "Q5004697$67DF1DE8-522A-45CB-8806-A865B910467F",
+          "rank": "normal",
+          "references": [
+            {
+              "hash": "fa278ebfc458360e5aed63d5058cca83c46134f1",
+              "snaks": {
+                "P143": [
+                  {
+                    "snaktype": "value",
+                    "property": "P143",
+                    "hash": "e4f6d9441d0600513c4533c672b5ab472dc73694",
+                    "datavalue": {
+                      "value": {
+                        "entity-type": "item",
+                        "numeric-id": 328,
+                        "id": "Q328"
+                      },
+                      "type": "wikibase-entityid"
+                    },
+                    "datatype": "wikibase-item"
+                  }
+                ]
+              },
+              "snaks-order": [
+                "P143"
+              ]
+            }
+          ]
+        }
+      ],
+      "P2671": [
+        {
+          "mainsnak": {
+            "snaktype": "value",
+            "property": "P2671",
+            "hash": "898624ad7073cbaa501cd6a79c94e393fe8d7ab8",
+            "datavalue": {
+              "value": "/g/11dd_tq_c4",
+              "type": "string"
+            },
+            "datatype": "external-id"
+          },
+          "type": "statement",
+          "id": "Q5004697$85C03727-587A-43E2-84FF-C36D38B1F050",
+          "rank": "normal"
+        }
+      ],
+      "P31": [
+        {
+          "mainsnak": {
+            "snaktype": "value",
+            "property": "P31",
+            "hash": "c0e510dcab1d5b2084e7ef4aa34b86ed61d22f07",
+            "datavalue": {
+              "value": {
+                "entity-type": "item",
+                "numeric-id": 11514315,
+                "id": "Q11514315"
+              },
+              "type": "wikibase-entityid"
+            },
+            "datatype": "wikibase-item"
+          },
+          "type": "statement",
+          "id": "Q5004697$07522058-7237-4FE3-9718-F3CC80518EC1",
+          "rank": "normal"
+        }
+      ],
+      "P1269": [
+        {
+          "mainsnak": {
+            "snaktype": "value",
+            "property": "P1269",
+            "hash": "9a8907505fbe6b1759828b5a5067ead15b209304",
+            "datavalue": {
+              "value": {
+                "entity-type": "item",
+                "numeric-id": 12544,
+                "id": "Q12544"
+              },
+              "type": "wikibase-entityid"
+            },
+            "datatype": "wikibase-item"
+          },
+          "type": "statement",
+          "id": "Q5004697$50101DBA-F6AB-4C8D-B2A6-B99A8C0BC820",
+          "rank": "normal"
+        }
+      ]
+    },
+    "sitelinks": {
+      "arwiki": {
+        "site": "arwiki",
+        "title": "الإمبراطورية البيزنطية تحت حكم السلالة المقدونية",
+        "badges": [],
+        "url": "https://ar.wikipedia.org/wiki/%D8%A7%D9%84%D8%A5%D9%85%D8%A8%D8%B1%D8%A7%D8%B7%D9%88%D8%B1%D9%8A%D8%A9_%D8%A7%D9%84%D8%A8%D9%8A%D8%B2%D9%86%D8%B7%D9%8A%D8%A9_%D8%AA%D8%AD%D8%AA_%D8%AD%D9%83%D9%85_%D8%A7%D9%84%D8%B3%D9%84%D8%A7%D9%84%D8%A9_%D8%A7%D9%84%D9%85%D9%82%D8%AF%D9%88%D9%86%D9%8A%D8%A9"
+      },
+      "elwiki": {
+        "site": "elwiki",
+        "title": "Βυζαντινή Αυτοκρατορία υπό τη Δυναστεία των Μακεδόνων",
+        "badges": [],
+        "url": "https://el.wikipedia.org/wiki/%CE%92%CF%85%CE%B6%CE%B1%CE%BD%CF%84%CE%B9%CE%BD%CE%AE_%CE%91%CF%85%CF%84%CE%BF%CE%BA%CF%81%CE%B1%CF%84%CE%BF%CF%81%CE%AF%CE%B1_%CF%85%CF%80%CF%8C_%CF%84%CE%B7_%CE%94%CF%85%CE%BD%CE%B1%CF%83%CF%84%CE%B5%CE%AF%CE%B1_%CF%84%CF%89%CE%BD_%CE%9C%CE%B1%CE%BA%CE%B5%CE%B4%CF%8C%CE%BD%CF%89%CE%BD"
+      },
+      "enwiki": {
+        "site": "enwiki",
+        "title": "Byzantine Empire under the Macedonian dynasty",
+        "badges": [],
+        "url": "https://en.wikipedia.org/wiki/Byzantine_Empire_under_the_Macedonian_dynasty"
+      },
+      "eswiki": {
+        "site": "eswiki",
+        "title": "Imperio bizantino bajo la dinastía macedonia",
+        "badges": [],
+        "url": "https://es.wikipedia.org/wiki/Imperio_bizantino_bajo_la_dinast%C3%ADa_macedonia"
+      },
+      "fawiki": {
+        "site": "fawiki",
+        "title": "امپراتوری بیزانس تحت دودمان مقدونیه‌ای",
+        "badges": [],
+        "url": "https://fa.wikipedia.org/wiki/%D8%A7%D9%85%D9%BE%D8%B1%D8%A7%D8%AA%D9%88%D8%B1%DB%8C_%D8%A8%DB%8C%D8%B2%D8%A7%D9%86%D8%B3_%D8%AA%D8%AD%D8%AA_%D8%AF%D9%88%D8%AF%D9%85%D8%A7%D9%86_%D9%85%D9%82%D8%AF%D9%88%D9%86%DB%8C%D9%87%E2%80%8C%D8%A7%DB%8C"
+      },
+      "frwiki": {
+        "site": "frwiki",
+        "title": "Empire byzantin sous les Macédoniens",
+        "badges": [],
+        "url": "https://fr.wikipedia.org/wiki/Empire_byzantin_sous_les_Mac%C3%A9doniens"
+      },
+      "idwiki": {
+        "site": "idwiki",
+        "title": "Kekaisaran Romawi Timur di bawah dinasti Makedonia",
+        "badges": [],
+        "url": "https://id.wikipedia.org/wiki/Kekaisaran_Romawi_Timur_di_bawah_dinasti_Makedonia"
+      },
+      "itwiki": {
+        "site": "itwiki",
+        "title": "Impero bizantino durante la dinastia macedone",
+        "badges": [],
+        "url": "https://it.wikipedia.org/wiki/Impero_bizantino_durante_la_dinastia_macedone"
+      },
+      "trwiki": {
+        "site": "trwiki",
+        "title": "Makedon Hanedanı döneminde Bizans İmparatorluğu",
+        "badges": [],
+        "url": "https://tr.wikipedia.org/wiki/Makedon_Hanedan%C4%B1_d%C3%B6neminde_Bizans_%C4%B0mparatorlu%C4%9Fu"
+      },
+      "urwiki": {
+        "site": "urwiki",
+        "title": "مقدونیائی شاہی سلسلہ کے تحت بازنطینی سلطنت",
+        "badges": [],
+        "url": "https://ur.wikipedia.org/wiki/%D9%85%D9%82%D8%AF%D9%88%D9%86%DB%8C%D8%A7%D8%A6%DB%8C_%D8%B4%D8%A7%DB%81%DB%8C_%D8%B3%D9%84%D8%B3%D9%84%DB%81_%DA%A9%DB%92_%D8%AA%D8%AD%D8%AA_%D8%A8%D8%A7%D8%B2%D9%86%D8%B7%DB%8C%D9%86%DB%8C_%D8%B3%D9%84%D8%B7%D9%86%D8%AA"
+      }
+    }
+  }
+}

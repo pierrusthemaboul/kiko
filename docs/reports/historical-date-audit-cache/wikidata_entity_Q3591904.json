@@ -1,0 +1,114 @@
+{
+  "saved_at": "2026-03-07T16:02:40.542Z",
+  "value": {
+    "pageid": 3420311,
+    "ns": 0,
+    "title": "Q3591904",
+    "lastrevid": 2325519007,
+    "modified": "2025-03-16T07:40:45Z",
+    "type": "item",
+    "id": "Q3591904",
+    "labels": {
+      "fr": {
+        "language": "fr",
+        "value": "États généraux de 1302"
+      },
+      "it": {
+        "language": "it",
+        "value": "Stati Generali del 1302"
+      },
+      "ja": {
+        "language": "ja",
+        "value": "1302年全国三部会"
+      },
+      "zh": {
+        "language": "zh",
+        "value": "1302年法國三級會議"
+      }
+    },
+    "descriptions": {
+      "fr": {
+        "language": "fr",
+        "value": "première assemblée des trois ordres (noblesse, clergé et tiers état) du Royaume de France, convoqués par le Roi Philippe IV le Bel"
+      }
+    },
+    "aliases": {
+      "fr": [
+        {
+          "language": "fr",
+          "value": "États Généraux de 1302"
+        },
+        {
+          "language": "fr",
+          "value": "Etats generaux de 1302"
+        }
+      ],
+      "zh": [
+        {
+          "language": "zh",
+          "value": "1302年法国三级会议"
+        }
+      ]
+    },
+    "claims": {
+      "P31": [
+        {
+          "mainsnak": {
+            "snaktype": "value",
+            "property": "P31",
+            "hash": "26d1323543c7eb0589a5897d22a77c8a4a5b8688",
+            "datavalue": {
+              "value": {
+                "entity-type": "item",
+                "numeric-id": 207304,
+                "id": "Q207304"
+              },
+              "type": "wikibase-entityid"
+            },
+            "datatype": "wikibase-item"
+          },
+          "type": "statement",
+          "id": "Q3591904$C613B9A6-9FAA-4B8E-8894-03C2B8624350",
+          "rank": "normal"
+        }
+      ],
+      "P2671": [
+        {
+          "mainsnak": {
+            "snaktype": "value",
+            "property": "P2671",
+            "hash": "5affcc403ddf58127856d7412ca704119c0801ef",
+            "datavalue": {
+              "value": "/g/1pzpdgr9w",
+              "type": "string"
+            },
+            "datatype": "external-id"
+          },
+          "type": "statement",
+          "id": "Q3591904$74CE322D-3E8A-4A60-B19D-E8A182FDA052",
+          "rank": "normal"
+        }
+      ]
+    },
+    "sitelinks": {
+      "frwiki": {
+        "site": "frwiki",
+        "title": "États généraux de 1302-1303",
+        "badges": [],
+        "url": "https://fr.wikipedia.org/wiki/%C3%89tats_g%C3%A9n%C3%A9raux_de_1302-1303"
+      },
+      "itwiki": {
+        "site": "itwiki",
+        "title": "Stati Generali del 1302",
+        "badges": [],
+        "url": "https://it.wikipedia.org/wiki/Stati_Generali_del_1302"
+      },
+      "zhwiki": {
+        "site": "zhwiki",
+        "title": "1302年法國三級會議",
+        "badges": [],
+        "url": "https://zh.wikipedia.org/wiki/1302%E5%B9%B4%E6%B3%95%E5%9C%8B%E4%B8%89%E7%B4%9A%E6%9C%83%E8%AD%B0"
+      }
+    }
+  }
+}

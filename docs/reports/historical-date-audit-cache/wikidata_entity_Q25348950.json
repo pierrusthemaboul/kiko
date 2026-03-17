@@ -1,0 +1,93 @@
+{
+  "saved_at": "2026-03-07T14:29:08.688Z",
+  "value": {
+    "pageid": 27301857,
+    "ns": 0,
+    "title": "Q25348950",
+    "lastrevid": 2377092091,
+    "modified": "2025-07-10T00:11:47Z",
+    "type": "item",
+    "id": "Q25348950",
+    "labels": {
+      "en": {
+        "language": "en",
+        "value": "1976 IMF Crisis"
+      },
+      "fr": {
+        "language": "fr",
+        "value": "Crise de la livre sterling de 1976"
+      },
+      "ko": {
+        "language": "ko",
+        "value": "1976년 스털링 위기"
+      }
+    },
+    "descriptions": {
+      "en": {
+        "language": "en",
+        "value": "situation of prolonged doubt in Britain's pound"
+      }
+    },
+    "aliases": {},
+    "claims": {
+      "P2671": [
+        {
+          "mainsnak": {
+            "snaktype": "value",
+            "property": "P2671",
+            "hash": "2d83785d9caef64b2d26a9e1a4b4e9f77b0717d1",
+            "datavalue": {
+              "value": "/g/11bxfjv8r7",
+              "type": "string"
+            },
+            "datatype": "external-id"
+          },
+          "type": "statement",
+          "id": "Q25348950$87C0029D-8EA2-423E-8631-FF602B6A345C",
+          "rank": "normal"
+        }
+      ],
+      "P31": [
+        {
+          "mainsnak": {
+            "snaktype": "value",
+            "property": "P31",
+            "hash": "8e69ac15ac10bd180f84dd77f8814d4fa676775f",
+            "datavalue": {
+              "value": {
+                "entity-type": "item",
+                "numeric-id": 114380,
+                "id": "Q114380"
+              },
+              "type": "wikibase-entityid"
+            },
+            "datatype": "wikibase-item"
+          },
+          "type": "statement",
+          "id": "Q25348950$7d22b04d-49a8-2439-94db-376d05e84fab",
+          "rank": "normal"
+        }
+      ]
+    },
+    "sitelinks": {
+      "enwiki": {
+        "site": "enwiki",
+        "title": "1976 sterling crisis",
+        "badges": [],
+        "url": "https://en.wikipedia.org/wiki/1976_sterling_crisis"
+      },
+      "frwiki": {
+        "site": "frwiki",
+        "title": "Crise monétaire européenne de l'année 1976",
+        "badges": [],
+        "url": "https://fr.wikipedia.org/wiki/Crise_mon%C3%A9taire_europ%C3%A9enne_de_l%27ann%C3%A9e_1976"
+      },
+      "kowiki": {
+        "site": "kowiki",
+        "title": "1976년 스털링 위기",
+        "badges": [],
+        "url": "https://ko.wikipedia.org/wiki/1976%EB%85%84_%EC%8A%A4%ED%84%B8%EB%A7%81_%EC%9C%84%EA%B8%B0"
+      }
+    }
+  }
+}

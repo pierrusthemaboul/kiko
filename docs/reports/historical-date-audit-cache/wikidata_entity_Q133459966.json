@@ -1,0 +1,215 @@
+{
+  "saved_at": "2026-03-07T15:45:38.497Z",
+  "value": {
+    "pageid": 127310531,
+    "ns": 0,
+    "title": "Q133459966",
+    "lastrevid": 2470168393,
+    "modified": "2026-03-07T12:56:38Z",
+    "type": "item",
+    "id": "Q133459966",
+    "labels": {
+      "it": {
+        "language": "it",
+        "value": "Nobiltà civica nella Marca pontificia"
+      },
+      "en": {
+        "language": "en",
+        "value": "Civic nobility in the Papal States' March of Ancona"
+      },
+      "fr": {
+        "language": "fr",
+        "value": "Noblesse civique dans la Marche pontificale"
+      }
+    },
+    "descriptions": {
+      "it": {
+        "language": "it",
+        "value": "ceto nobiliare dello Stato Pontificio"
+      },
+      "en": {
+        "language": "en",
+        "value": "Urban patriciates of the Papal States' March of Ancona (16th–18th centuries)"
+      },
+      "fr": {
+        "language": "fr",
+        "value": "Patriciats urbains de la Marche d'Ancône dans les États pontificaux (XVIe-XVIIIe siècles)"
+      }
+    },
+    "aliases": {
+      "it": [
+        {
+          "language": "it",
+          "value": "Nobiltà marchigiana"
+        },
+        {
+          "language": "it",
+          "value": "Nobiltà della Marca di Ancona"
+        }
+      ]
+    },
+    "claims": {
+      "P31": [
+        {
+          "mainsnak": {
+            "snaktype": "value",
+            "property": "P31",
+            "hash": "5330da3d1548929c5c31fbbc93722a7f12cf829d",
+            "datavalue": {
+              "value": {
+                "entity-type": "item",
+                "numeric-id": 187588,
+                "id": "Q187588"
+              },
+              "type": "wikibase-entityid"
+            },
+            "datatype": "wikibase-item"
+          },
+          "type": "statement",
+          "id": "Q133459966$156e9ddf-482e-90e6-2bc0-c3ad1f40297b",
+          "rank": "normal"
+        }
+      ],
+      "P279": [
+        {
+          "mainsnak": {
+            "snaktype": "value",
+            "property": "P279",
+            "hash": "24af69a5e9620c683759dfad7187e791a49f38f6",
+            "datavalue": {
+              "value": {
+                "entity-type": "item",
+                "numeric-id": 1424672,
+                "id": "Q1424672"
+              },
+              "type": "wikibase-entityid"
+            },
+            "datatype": "wikibase-item"
+          },
+          "type": "statement",
+          "id": "Q133459966$e1106083-4e86-6cd5-319d-9c1f21dceeb0",
+          "rank": "normal"
+        }
+      ],
+      "P17": [
+        {
+          "mainsnak": {
+            "snaktype": "value",
+            "property": "P17",
+            "hash": "7be7b205d8051c1881449da32a5ee02799830e02",
+            "datavalue": {
+              "value": {
+                "entity-type": "item",
+                "numeric-id": 170174,
+                "id": "Q170174"
+              },
+              "type": "wikibase-entityid"
+            },
+            "datatype": "wikibase-item"
+          },
+          "type": "statement",
+          "qualifiers": {
+            "P518": [
+              {
+                "snaktype": "value",
+                "property": "P518",
+                "hash": "4c2750ca1660d68d4b621ae4c5831e7923f5adef",
+                "datavalue": {
+                  "value": {
+                    "entity-type": "item",
+                    "numeric-id": 1054409,
+                    "id": "Q1054409"
+                  },
+                  "type": "wikibase-entityid"
+                },
+                "datatype": "wikibase-item"
+              }
+            ]
+          },
+          "qualifiers-order": [
+            "P518"
+          ],
+          "id": "Q133459966$f8d56974-46d1-c0ce-37ab-92f0e398cf92",
+          "rank": "normal"
+        }
+      ],
+      "P5008": [
+        {
+          "mainsnak": {
+            "snaktype": "value",
+            "property": "P5008",
+            "hash": "e1e931edd59ad552ffc26e5d749209fbe5813419",
+            "datavalue": {
+              "value": {
+                "entity-type": "item",
+                "numeric-id": 124512489,
+                "id": "Q124512489"
+              },
+              "type": "wikibase-entityid"
+            },
+            "datatype": "wikibase-item"
+          },
+          "type": "statement",
+          "id": "Q133459966$4a14b43b-4733-ebee-c366-e4f4bfbbd7ff",
+          "rank": "normal"
+        }
+      ]
+    },
+    "sitelinks": {
+      "dewiki": {
+        "site": "dewiki",
+        "title": "Städtisches Patriziat in der päpstlichen Mark",
+        "badges": [],
+        "url": "https://de.wikipedia.org/wiki/St%C3%A4dtisches_Patriziat_in_der_p%C3%A4pstlichen_Mark"
+      },
+      "enwiki": {
+        "site": "enwiki",
+        "title": "Civic nobility in the Papal States' March of Ancona",
+        "badges": [],
+        "url": "https://en.wikipedia.org/wiki/Civic_nobility_in_the_Papal_States%27_March_of_Ancona"
+      },
+      "eswiki": {
+        "site": "eswiki",
+        "title": "Nobleza cívica en la Marca pontificia",
+        "badges": [],
+        "url": "https://es.wikipedia.org/wiki/Nobleza_c%C3%ADvica_en_la_Marca_pontificia"
+      },
+      "frwiki": {
+        "site": "frwiki",
+        "title": "Noblesse civique dans la Marche pontificale",
+        "badges": [],
+        "url": "https://fr.wikipedia.org/wiki/Noblesse_civique_dans_la_Marche_pontificale"
+      },
+      "itwiki": {
+        "site": "itwiki",
+        "title": "Nobiltà civica nella Marca pontificia",
+        "badges": [],
+        "url": "https://it.wikipedia.org/wiki/Nobilt%C3%A0_civica_nella_Marca_pontificia"
+      },
+      "lawiki": {
+        "site": "lawiki",
+        "title": "Nobilitas civica in Marca Pontificia",
+        "badges": [],
+        "url": "https://la.wikipedia.org/wiki/Nobilitas_civica_in_Marca_Pontificia"
+      },
+      "nlwiki": {
+        "site": "nlwiki",
+        "title": "Burgerlijke adel in de Pauselijke Mark",
+        "badges": [],
+        "url": "https://nl.wikipedia.org/wiki/Burgerlijke_adel_in_de_Pauselijke_Mark"
+      },
+      "plwiki": {
+        "site": "plwiki",
+        "title": "Szlachta miejska w marchii ankońskiej Państwa Kościelnego",
+        "badges": [],
+        "url": "https://pl.wikipedia.org/wiki/Szlachta_miejska_w_marchii_anko%C5%84skiej_Pa%C5%84stwa_Ko%C5%9Bcielnego"
+      },
+      "ptwiki": {
+        "site": "ptwiki",
+        "title": "Nobreza cívica na Marca Pontifícia",
+        "badges": [],
+        "url": "https://pt.wikipedia.org/wiki/Nobreza_c%C3%ADvica_na_Marca_Pontif%C3%ADcia"
+      }
+    }
+  }
+}

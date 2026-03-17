@@ -1,0 +1,977 @@
+{
+  "saved_at": "2026-03-07T16:37:56.832Z",
+  "value": {
+    "pageid": 592692,
+    "ns": 0,
+    "title": "Q630142",
+    "lastrevid": 2428338612,
+    "modified": "2025-11-11T16:29:21Z",
+    "type": "item",
+    "id": "Q630142",
+    "labels": {
+      "es": {
+        "language": "es",
+        "value": "Batalla de Alerheim"
+      },
+      "de": {
+        "language": "de",
+        "value": "Schlacht von Alerheim"
+      },
+      "en": {
+        "language": "en",
+        "value": "Battle of Nördlingen"
+      },
+      "fr": {
+        "language": "fr",
+        "value": "bataille d'Alerheim"
+      },
+      "it": {
+        "language": "it",
+        "value": "battaglia di Nördlingen"
+      },
+      "pl": {
+        "language": "pl",
+        "value": "II bitwa pod Nördlingen"
+      },
+      "pt": {
+        "language": "pt",
+        "value": "Segunda Batalha de Nördlingen"
+      },
+      "ru": {
+        "language": "ru",
+        "value": "Битва при Нёрдлингене"
+      },
+      "gsw": {
+        "language": "gsw",
+        "value": "D Schlacht bi Alerheim"
+      },
+      "nl": {
+        "language": "nl",
+        "value": "Battle of Nördlingen"
+      },
+      "ja": {
+        "language": "ja",
+        "value": "ネルトリンゲンの戦い (1645年)"
+      },
+      "hu": {
+        "language": "hu",
+        "value": "alerheimi csata"
+      },
+      "he": {
+        "language": "he",
+        "value": "קרב נורדלינגן (1645)"
+      },
+      "zh": {
+        "language": "zh",
+        "value": "诺德林根会战"
+      },
+      "yo": {
+        "language": "yo",
+        "value": "ogun Nördlingen (1645)"
+      },
+      "nan": {
+        "language": "nan",
+        "value": "Nördlingen chiàn-e̍k (1645)"
+      },
+      "cs": {
+        "language": "cs",
+        "value": "bitva u Nördlingenu"
+      },
+      "ga": {
+        "language": "ga",
+        "value": "Cath Nördlingen"
+      }
+    },
+    "descriptions": {
+      "de": {
+        "language": "de",
+        "value": "Schlacht des Dreißigjährigen Kriegs"
+      },
+      "fr": {
+        "language": "fr",
+        "value": "bataille de la guerre de Trente Ans"
+      },
+      "ru": {
+        "language": "ru",
+        "value": "сражение Тридцатилетней войны"
+      },
+      "hu": {
+        "language": "hu",
+        "value": "a harmincéves háború csatája"
+      },
+      "en": {
+        "language": "en",
+        "value": "1645 battle of the Thirty Years' War"
+      },
+      "yo": {
+        "language": "yo",
+        "value": "ogun"
+      }
+    },
+    "aliases": {
+      "hu": [
+        {
+          "language": "hu",
+          "value": "alerheimi csata (1645)"
+        },
+        {
+          "language": "hu",
+          "value": "nördlingeni csata (1645)"
+        },
+        {
+          "language": "hu",
+          "value": "második nördlingeni csata"
+        }
+      ],
+      "de": [
+        {
+          "language": "de",
+          "value": "Zweite Schlacht bei Nördlingen"
+        }
+      ],
+      "en": [
+        {
+          "language": "en",
+          "value": "Battle of Allerheim"
+        },
+        {
+          "language": "en",
+          "value": "second Battle of Nördlingen"
+        },
+        {
+          "language": "en",
+          "value": "Battle of Alerheim"
+        }
+      ],
+      "cs": [
+        {
+          "language": "cs",
+          "value": "bitva u Nördlingenu (1645 : Nördlingen, Německo)"
+        }
+      ],
+      "es": [
+        {
+          "language": "es",
+          "value": "Segunda batalla de Nördlingen"
+        },
+        {
+          "language": "es",
+          "value": "Batalla de Nördlingen (1645)"
+        }
+      ]
+    },
+    "claims": {
+      "P373": [
+        {
+          "mainsnak": {
+            "snaktype": "value",
+            "property": "P373",
+            "hash": "d9e3167d399a9f3be352c7414b5b6383f3ab464e",
+            "datavalue": {
+              "value": "Battle of Nördlingen (1645)",
+              "type": "string"
+            },
+            "datatype": "string"
+          },
+          "type": "statement",
+          "id": "q630142$1EA8EC94-9B47-4786-92AA-04A282D353F1",
+          "rank": "normal",
+          "references": [
+            {
+              "hash": "9a24f7c0208b05d6be97077d855671d1dfdbc0dd",
+              "snaks": {
+                "P143": [
+                  {
+                    "snaktype": "value",
+                    "property": "P143",
+                    "hash": "d38375ffe6fe142663ff55cd783aa4df4301d83d",
+                    "datavalue": {
+                      "value": {
+                        "entity-type": "item",
+                        "numeric-id": 48183,
+                        "id": "Q48183"
+                      },
+                      "type": "wikibase-entityid"
+                    },
+                    "datatype": "wikibase-item"
+                  }
+                ]
+              },
+              "snaks-order": [
+                "P143"
+              ]
+            }
+          ]
+        }
+      ],
+      "P31": [
+        {
+          "mainsnak": {
+            "snaktype": "value",
+            "property": "P31",
+            "hash": "baa1df9dcd37b9f3a062e7a14a8bef0c37078d32",
+            "datavalue": {
+              "value": {
+                "entity-type": "item",
+                "numeric-id": 178561,
+                "id": "Q178561"
+              },
+              "type": "wikibase-entityid"
+            },
+            "datatype": "wikibase-item"
+          },
+          "type": "statement",
+          "id": "Q630142$61D5C93D-B7AC-4EFD-99C2-CEAB7EE6723B",
+          "rank": "normal",
+          "references": [
+            {
+              "hash": "d4bd87b862b12d99d26e86472d44f26858dee639",
+              "snaks": {
+                "P143": [
+                  {
+                    "snaktype": "value",
+                    "property": "P143",
+                    "hash": "f30cbd35620c4ea6d0633aaf0210a8916130469b",
+                    "datavalue": {
+                      "value": {
+                        "entity-type": "item",
+                        "numeric-id": 8447,
+                        "id": "Q8447"
+                      },
+                      "type": "wikibase-entityid"
+                    },
+                    "datatype": "wikibase-item"
+                  }
+                ]
+              },
+              "snaks-order": [
+                "P143"
+              ]
+            }
+          ]
+        }
+      ],
+      "P361": [
+        {
+          "mainsnak": {
+            "snaktype": "value",
+            "property": "P361",
+            "hash": "5ca9894849e22f6afc7135c29d7de534846a92c9",
+            "datavalue": {
+              "value": {
+                "entity-type": "item",
+                "numeric-id": 2487,
+                "id": "Q2487"
+              },
+              "type": "wikibase-entityid"
+            },
+            "datatype": "wikibase-item"
+          },
+          "type": "statement",
+          "id": "Q630142$32919EB2-9716-4222-8A43-2E2A3AB4E85C",
+          "rank": "normal",
+          "references": [
+            {
+              "hash": "d4bd87b862b12d99d26e86472d44f26858dee639",
+              "snaks": {
+                "P143": [
+                  {
+                    "snaktype": "value",
+                    "property": "P143",
+                    "hash": "f30cbd35620c4ea6d0633aaf0210a8916130469b",
+                    "datavalue": {
+                      "value": {
+                        "entity-type": "item",
+                        "numeric-id": 8447,
+                        "id": "Q8447"
+                      },
+                      "type": "wikibase-entityid"
+                    },
+                    "datatype": "wikibase-item"
+                  }
+                ]
+              },
+              "snaks-order": [
+                "P143"
+              ]
+            }
+          ]
+        }
+      ],
+      "P646": [
+        {
+          "mainsnak": {
+            "snaktype": "value",
+            "property": "P646",
+            "hash": "89eea55729780412b04f45bbe99aefbacc7abcc4",
+            "datavalue": {
+              "value": "/m/011kx1",
+              "type": "string"
+            },
+            "datatype": "external-id"
+          },
+          "type": "statement",
+          "id": "Q630142$5F8AF3E8-DA6B-4651-9320-108DBC7DB0BE",
+          "rank": "normal",
+          "references": [
+            {
+              "hash": "2b00cb481cddcac7623114367489b5c194901c4a",
+              "snaks": {
+                "P248": [
+                  {
+                    "snaktype": "value",
+                    "property": "P248",
+                    "hash": "a94b740202b097dd33355e0e6c00e54b9395e5e0",
+                    "datavalue": {
+                      "value": {
+                        "entity-type": "item",
+                        "numeric-id": 15241312,
+                        "id": "Q15241312"
+                      },
+                      "type": "wikibase-entityid"
+                    },
+                    "datatype": "wikibase-item"
+                  }
+                ],
+                "P577": [
+                  {
+                    "snaktype": "value",
+                    "property": "P577",
+                    "hash": "fde79ecb015112d2f29229ccc1ec514ed3e71fa2",
+                    "datavalue": {
+                      "value": {
+                        "time": "+2013-10-28T00:00:00Z",
+                        "timezone": 0,
+                        "before": 0,
+                        "after": 0,
+                        "precision": 11,
+                        "calendarmodel": "http://www.wikidata.org/entity/Q1985727"
+                      },
+                      "type": "time"
+                    },
+                    "datatype": "time"
+                  }
+                ]
+              },
+              "snaks-order": [
+                "P248",
+                "P577"
+              ]
+            }
+          ]
+        }
+      ],
+      "P276": [
+        {
+          "mainsnak": {
+            "snaktype": "value",
+            "property": "P276",
+            "hash": "bc5b3c4613516cc5e8c94bdcc296675868867198",
+            "datavalue": {
+              "value": {
+                "entity-type": "item",
+                "numeric-id": 489902,
+                "id": "Q489902"
+              },
+              "type": "wikibase-entityid"
+            },
+            "datatype": "wikibase-item"
+          },
+          "type": "statement",
+          "id": "Q630142$FA9BCBA7-798E-4416-B5E5-2C9357714544",
+          "rank": "normal",
+          "references": [
+            {
+              "hash": "d4bd87b862b12d99d26e86472d44f26858dee639",
+              "snaks": {
+                "P143": [
+                  {
+                    "snaktype": "value",
+                    "property": "P143",
+                    "hash": "f30cbd35620c4ea6d0633aaf0210a8916130469b",
+                    "datavalue": {
+                      "value": {
+                        "entity-type": "item",
+                        "numeric-id": 8447,
+                        "id": "Q8447"
+                      },
+                      "type": "wikibase-entityid"
+                    },
+                    "datatype": "wikibase-item"
+                  }
+                ]
+              },
+              "snaks-order": [
+                "P143"
+              ]
+            }
+          ]
+        }
+      ],
+      "P625": [
+        {
+          "mainsnak": {
+            "snaktype": "value",
+            "property": "P625",
+            "hash": "b844096ef67e01eee318615ac6e16b2bd1a6f992",
+            "datavalue": {
+              "value": {
+                "latitude": 48.85,
+                "longitude": 10.6167,
+                "altitude": null,
+                "precision": 0.013651531539909,
+                "globe": "http://www.wikidata.org/entity/Q2"
+              },
+              "type": "globecoordinate"
+            },
+            "datatype": "globe-coordinate"
+          },
+          "type": "statement",
+          "id": "Q630142$2D0D0EA8-37F3-4063-B74D-D906AB96572E",
+          "rank": "normal",
+          "references": [
+            {
+              "hash": "d4bd87b862b12d99d26e86472d44f26858dee639",
+              "snaks": {
+                "P143": [
+                  {
+                    "snaktype": "value",
+                    "property": "P143",
+                    "hash": "f30cbd35620c4ea6d0633aaf0210a8916130469b",
+                    "datavalue": {
+                      "value": {
+                        "entity-type": "item",
+                        "numeric-id": 8447,
+                        "id": "Q8447"
+                      },
+                      "type": "wikibase-entityid"
+                    },
+                    "datatype": "wikibase-item"
+                  }
+                ]
+              },
+              "snaks-order": [
+                "P143"
+              ]
+            }
+          ]
+        }
+      ],
+      "P585": [
+        {
+          "mainsnak": {
+            "snaktype": "value",
+            "property": "P585",
+            "hash": "6288809102bc200a4afa479f5ceda3f85bffda27",
+            "datavalue": {
+              "value": {
+                "time": "+1645-08-03T00:00:00Z",
+                "timezone": 0,
+                "before": 0,
+                "after": 0,
+                "precision": 11,
+                "calendarmodel": "http://www.wikidata.org/entity/Q1985727"
+              },
+              "type": "time"
+            },
+            "datatype": "time"
+          },
+          "type": "statement",
+          "id": "Q630142$8B3B33F1-7BD5-459D-8E44-F929B4D2DD89",
+          "rank": "normal",
+          "references": [
+            {
+              "hash": "d4bd87b862b12d99d26e86472d44f26858dee639",
+              "snaks": {
+                "P143": [
+                  {
+                    "snaktype": "value",
+                    "property": "P143",
+                    "hash": "f30cbd35620c4ea6d0633aaf0210a8916130469b",
+                    "datavalue": {
+                      "value": {
+                        "entity-type": "item",
+                        "numeric-id": 8447,
+                        "id": "Q8447"
+                      },
+                      "type": "wikibase-entityid"
+                    },
+                    "datatype": "wikibase-item"
+                  }
+                ]
+              },
+              "snaks-order": [
+                "P143"
+              ]
+            }
+          ]
+        }
+      ],
+      "P18": [
+        {
+          "mainsnak": {
+            "snaktype": "value",
+            "property": "P18",
+            "hash": "173052314437143e68456d2219730abafb315553",
+            "datavalue": {
+              "value": "Schlacht bei Alerheim 1645.jpg",
+              "type": "string"
+            },
+            "datatype": "commonsMedia"
+          },
+          "type": "statement",
+          "id": "Q630142$58018F33-9778-41C8-B57A-C9D7C2D8ADF2",
+          "rank": "normal",
+          "references": [
+            {
+              "hash": "fa278ebfc458360e5aed63d5058cca83c46134f1",
+              "snaks": {
+                "P143": [
+                  {
+                    "snaktype": "value",
+                    "property": "P143",
+                    "hash": "e4f6d9441d0600513c4533c672b5ab472dc73694",
+                    "datavalue": {
+                      "value": {
+                        "entity-type": "item",
+                        "numeric-id": 328,
+                        "id": "Q328"
+                      },
+                      "type": "wikibase-entityid"
+                    },
+                    "datatype": "wikibase-item"
+                  }
+                ]
+              },
+              "snaks-order": [
+                "P143"
+              ]
+            }
+          ]
+        }
+      ],
+      "P1343": [
+        {
+          "mainsnak": {
+            "snaktype": "value",
+            "property": "P1343",
+            "hash": "838bca4d129e7db69c9b411c07d03542437bccbb",
+            "datavalue": {
+              "value": {
+                "entity-type": "item",
+                "numeric-id": 4114391,
+                "id": "Q4114391"
+              },
+              "type": "wikibase-entityid"
+            },
+            "datatype": "wikibase-item"
+          },
+          "type": "statement",
+          "qualifiers": {
+            "P805": [
+              {
+                "snaktype": "value",
+                "property": "P805",
+                "hash": "39ab0100f2107e0f6397c81f2d42bae301eb8eac",
+                "datavalue": {
+                  "value": {
+                    "entity-type": "item",
+                    "numeric-id": 25369303,
+                    "id": "Q25369303"
+                  },
+                  "type": "wikibase-entityid"
+                },
+                "datatype": "wikibase-item"
+              }
+            ]
+          },
+          "qualifiers-order": [
+            "P805"
+          ],
+          "id": "Q630142$01cdaaec-4423-3fb6-7fdf-2a4ab1d9592f",
+          "rank": "normal"
+        },
+        {
+          "mainsnak": {
+            "snaktype": "value",
+            "property": "P1343",
+            "hash": "88389772f86dcd7d415ddd029f601412e5cc894a",
+            "datavalue": {
+              "value": {
+                "entity-type": "item",
+                "numeric-id": 602358,
+                "id": "Q602358"
+              },
+              "type": "wikibase-entityid"
+            },
+            "datatype": "wikibase-item"
+          },
+          "type": "statement",
+          "qualifiers": {
+            "P805": [
+              {
+                "snaktype": "value",
+                "property": "P805",
+                "hash": "2e46d9a43248fb08f39ec08824dc6823b7485e8b",
+                "datavalue": {
+                  "value": {
+                    "entity-type": "item",
+                    "numeric-id": 24330289,
+                    "id": "Q24330289"
+                  },
+                  "type": "wikibase-entityid"
+                },
+                "datatype": "wikibase-item"
+              }
+            ]
+          },
+          "qualifiers-order": [
+            "P805"
+          ],
+          "id": "Q630142$6c12625f-4a18-40a5-d4f8-96e784287948",
+          "rank": "normal"
+        }
+      ],
+      "P710": [
+        {
+          "mainsnak": {
+            "snaktype": "value",
+            "property": "P710",
+            "hash": "953b909a478c6b889aafa66d26a6378cd09a0fa6",
+            "datavalue": {
+              "value": {
+                "entity-type": "item",
+                "numeric-id": 12548,
+                "id": "Q12548"
+              },
+              "type": "wikibase-entityid"
+            },
+            "datatype": "wikibase-item"
+          },
+          "type": "statement",
+          "id": "Q630142$FEEF7A7B-AC5D-45B2-B00B-159D1D0711A7",
+          "rank": "normal"
+        }
+      ],
+      "P1417": [
+        {
+          "mainsnak": {
+            "snaktype": "value",
+            "property": "P1417",
+            "hash": "1ce4fb66d70e95202d87cc832909ff2664537693",
+            "datavalue": {
+              "value": "topic/Battle-of-Nordlingen-European-history-1645",
+              "type": "string"
+            },
+            "datatype": "external-id"
+          },
+          "type": "statement",
+          "qualifiers": {
+            "P1810": [
+              {
+                "snaktype": "value",
+                "property": "P1810",
+                "hash": "75c33e6705f93905246a8314b5e2672462bee93a",
+                "datavalue": {
+                  "value": "Battle of Nördlingen",
+                  "type": "string"
+                },
+                "datatype": "string"
+              }
+            ]
+          },
+          "qualifiers-order": [
+            "P1810"
+          ],
+          "id": "Q630142$B4913D9F-F47E-4563-AC98-901257FFD25B",
+          "rank": "normal"
+        },
+        {
+          "mainsnak": {
+            "snaktype": "value",
+            "property": "P1417",
+            "hash": "48eca314e5eac868056d877d168d02a66ba6945f",
+            "datavalue": {
+              "value": "topic/Battle-of-Allerheim",
+              "type": "string"
+            },
+            "datatype": "external-id"
+          },
+          "type": "statement",
+          "qualifiers": {
+            "P1810": [
+              {
+                "snaktype": "value",
+                "property": "P1810",
+                "hash": "12a64f597dc10e45ca1dbd0316e7f3c9331acb03",
+                "datavalue": {
+                  "value": "Battle of Allerheim",
+                  "type": "string"
+                },
+                "datatype": "string"
+              }
+            ]
+          },
+          "qualifiers-order": [
+            "P1810"
+          ],
+          "id": "Q630142$7CF60005-6B0D-4391-A271-A07DB65887C7",
+          "rank": "normal"
+        }
+      ],
+      "P691": [
+        {
+          "mainsnak": {
+            "snaktype": "value",
+            "property": "P691",
+            "hash": "426d76b3801ae9e937cfe6bbb2f96c4cb22b55e4",
+            "datavalue": {
+              "value": "ph549722",
+              "type": "string"
+            },
+            "datatype": "external-id"
+          },
+          "type": "statement",
+          "qualifiers": {
+            "P1810": [
+              {
+                "snaktype": "value",
+                "property": "P1810",
+                "hash": "59d50e09b1f6a85a7c54b396aad3b771a94e7888",
+                "datavalue": {
+                  "value": "bitva u Nördlingenu (1645 : Nördlingen, Německo)",
+                  "type": "string"
+                },
+                "datatype": "string"
+              }
+            ]
+          },
+          "qualifiers-order": [
+            "P1810"
+          ],
+          "id": "Q630142$9465787F-AE4C-42E0-8C42-BB7AC9F5B3E4",
+          "rank": "normal"
+        }
+      ],
+      "P7847": [
+        {
+          "mainsnak": {
+            "snaktype": "value",
+            "property": "P7847",
+            "hash": "0670c621bef1d25c414e439e28b2654d38f31859",
+            "datavalue": {
+              "value": "029997026044",
+              "type": "string"
+            },
+            "datatype": "external-id"
+          },
+          "type": "statement",
+          "id": "Q630142$8331a689-4000-b948-c4ee-ee2359404f5f",
+          "rank": "normal"
+        }
+      ],
+      "P1248": [
+        {
+          "mainsnak": {
+            "snaktype": "value",
+            "property": "P1248",
+            "hash": "e5264a839f6a6eca76494aa417e30fc5f6a90673",
+            "datavalue": {
+              "value": "04289302-6520-43b0-b61c-86e6f78009c7",
+              "type": "string"
+            },
+            "datatype": "external-id"
+          },
+          "type": "statement",
+          "qualifiers": {
+            "P972": [
+              {
+                "snaktype": "value",
+                "property": "P972",
+                "hash": "2a0b031ad58d5a983430f696d1e876c2cdcafec1",
+                "datavalue": {
+                  "value": {
+                    "entity-type": "item",
+                    "numeric-id": 60042824,
+                    "id": "Q60042824"
+                  },
+                  "type": "wikibase-entityid"
+                },
+                "datatype": "wikibase-item"
+              }
+            ]
+          },
+          "qualifiers-order": [
+            "P972"
+          ],
+          "id": "Q630142$ecd0c770-4589-cab6-4a69-87595b995e89",
+          "rank": "normal"
+        }
+      ],
+      "P8168": [
+        {
+          "mainsnak": {
+            "snaktype": "value",
+            "property": "P8168",
+            "hash": "41914b517cc08b2d89967c19b279af9653bc17e0",
+            "datavalue": {
+              "value": "Q1247341",
+              "type": "string"
+            },
+            "datatype": "external-id"
+          },
+          "type": "statement",
+          "id": "Q630142$0CDB9D5D-C0C7-41D2-B6A3-95AD1849B5DA",
+          "rank": "normal",
+          "references": [
+            {
+              "hash": "4e881f645086274f0480b59146d848c470293731",
+              "snaks": {
+                "P248": [
+                  {
+                    "snaktype": "value",
+                    "property": "P248",
+                    "hash": "e4afc4ad60f2160201385d29d076e0794f815f1e",
+                    "datavalue": {
+                      "value": {
+                        "entity-type": "item",
+                        "numeric-id": 90405608,
+                        "id": "Q90405608"
+                      },
+                      "type": "wikibase-entityid"
+                    },
+                    "datatype": "wikibase-item"
+                  }
+                ],
+                "P813": [
+                  {
+                    "snaktype": "value",
+                    "property": "P813",
+                    "hash": "96ccb0aeae2083f830b578f97fe2675633560517",
+                    "datavalue": {
+                      "value": {
+                        "time": "+2025-03-31T00:00:00Z",
+                        "timezone": 0,
+                        "before": 0,
+                        "after": 0,
+                        "precision": 11,
+                        "calendarmodel": "http://www.wikidata.org/entity/Q1985727"
+                      },
+                      "type": "time"
+                    },
+                    "datatype": "time"
+                  }
+                ]
+              },
+              "snaks-order": [
+                "P248",
+                "P813"
+              ]
+            }
+          ]
+        }
+      ],
+      "P17": [
+        {
+          "mainsnak": {
+            "snaktype": "value",
+            "property": "P17",
+            "hash": "ef7247b704f4ec0a7df39e83306bb388fea17d5f",
+            "datavalue": {
+              "value": {
+                "entity-type": "item",
+                "numeric-id": 183,
+                "id": "Q183"
+              },
+              "type": "wikibase-entityid"
+            },
+            "datatype": "wikibase-item"
+          },
+          "type": "statement",
+          "id": "Q630142$A680EA56-468A-4003-ABF8-C24F4B32304C",
+          "rank": "normal"
+        }
+      ]
+    },
+    "sitelinks": {
+      "alswiki": {
+        "site": "alswiki",
+        "title": "Schlacht bei Alerheim",
+        "badges": [],
+        "url": "https://als.wikipedia.org/wiki/Schlacht_bei_Alerheim"
+      },
+      "commonswiki": {
+        "site": "commonswiki",
+        "title": "Category:Battle of Nördlingen (1645)",
+        "badges": [],
+        "url": "https://commons.wikimedia.org/wiki/Category:Battle_of_N%C3%B6rdlingen_(1645)"
+      },
+      "dewiki": {
+        "site": "dewiki",
+        "title": "Schlacht bei Alerheim",
+        "badges": [],
+        "url": "https://de.wikipedia.org/wiki/Schlacht_bei_Alerheim"
+      },
+      "enwiki": {
+        "site": "enwiki",
+        "title": "Battle of Nördlingen (1645)",
+        "badges": [],
+        "url": "https://en.wikipedia.org/wiki/Battle_of_N%C3%B6rdlingen_(1645)"
+      },
+      "eswiki": {
+        "site": "eswiki",
+        "title": "Batalla de Alerheim",
+        "badges": [],
+        "url": "https://es.wikipedia.org/wiki/Batalla_de_Alerheim"
+      },
+      "frwiki": {
+        "site": "frwiki",
+        "title": "Bataille d'Alerheim",
+        "badges": [],
+        "url": "https://fr.wikipedia.org/wiki/Bataille_d%27Alerheim"
+      },
+      "itwiki": {
+        "site": "itwiki",
+        "title": "Battaglia di Nördlingen (1645)",
+        "badges": [],
+        "url": "https://it.wikipedia.org/wiki/Battaglia_di_N%C3%B6rdlingen_(1645)"
+      },
+      "nlwiki": {
+        "site": "nlwiki",
+        "title": "Slag bij Allerheim",
+        "badges": [],
+        "url": "https://nl.wikipedia.org/wiki/Slag_bij_Allerheim"
+      },
+      "plwiki": {
+        "site": "plwiki",
+        "title": "II bitwa pod Nördlingen",
+        "badges": [],
+        "url": "https://pl.wikipedia.org/wiki/II_bitwa_pod_N%C3%B6rdlingen"
+      },
+      "ptwiki": {
+        "site": "ptwiki",
+        "title": "Segunda Batalha de Nördlingen",
+        "badges": [],
+        "url": "https://pt.wikipedia.org/wiki/Segunda_Batalha_de_N%C3%B6rdlingen"
+      },
+      "ruwiki": {
+        "site": "ruwiki",
+        "title": "Битва при Нёрдлингене (1645)",
+        "badges": [],
+        "url": "https://ru.wikipedia.org/wiki/%D0%91%D0%B8%D1%82%D0%B2%D0%B0_%D0%BF%D1%80%D0%B8_%D0%9D%D1%91%D1%80%D0%B4%D0%BB%D0%B8%D0%BD%D0%B3%D0%B5%D0%BD%D0%B5_(1645)"
+      },
+      "zh_min_nanwiki": {
+        "site": "zh_min_nanwiki",
+        "title": "Nördlingen chiàn-e̍k (1645)",
+        "badges": [],
+        "url": "https://zh-min-nan.wikipedia.org/wiki/N%C3%B6rdlingen_chi%C3%A0n-e%CC%8Dk_(1645)"
+      },
+      "zhwiki": {
+        "site": "zhwiki",
+        "title": "阿勒海姆之戰",
+        "badges": [],
+        "url": "https://zh.wikipedia.org/wiki/%E9%98%BF%E5%8B%92%E6%B5%B7%E5%A7%86%E4%B9%8B%E6%88%B0"
+      }
+    }
+  }
+}

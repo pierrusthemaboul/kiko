@@ -1,0 +1,375 @@
+{
+  "saved_at": "2026-03-07T16:44:32.858Z",
+  "value": {
+    "pageid": 87458632,
+    "ns": 0,
+    "title": "Q88215531",
+    "lastrevid": 2370209044,
+    "modified": "2025-06-29T21:36:53Z",
+    "type": "item",
+    "id": "Q88215531",
+    "labels": {
+      "ht": {
+        "language": "ht",
+        "value": "Konfinman an 2020 nan Frans"
+      },
+      "fr": {
+        "language": "fr",
+        "value": "confinements de 2020 et 2021 en France"
+      },
+      "ca": {
+        "language": "ca",
+        "value": "confinament de França de 2020"
+      },
+      "en": {
+        "language": "en",
+        "value": "lockdown in France in 2020-2021 during Covid-19 pandemic"
+      },
+      "ja": {
+        "language": "ja",
+        "value": "2020年フランスにおけるロックダウン"
+      },
+      "it": {
+        "language": "it",
+        "value": "Misure di confinamento in Francia dovute alla pandemia di COVID-19"
+      },
+      "ar": {
+        "language": "ar",
+        "value": "الحجر الصحي المرتبط بجائحة كورونا في فرنسا"
+      },
+      "es": {
+        "language": "es",
+        "value": "Confinamiento por la pandemia de COVID-19 en Francia"
+      },
+      "sl": {
+        "language": "sl",
+        "value": "zapora javnega življenja zaradi pandemije covida-19 v letih 2020 in 2021 v Franciji"
+      }
+    },
+    "descriptions": {
+      "fr": {
+        "language": "fr",
+        "value": "ensemble de politiques de restrictions de contacts humains et de déplacements, en réponse à la pandémie de la Covid-19, en France"
+      }
+    },
+    "aliases": {},
+    "claims": {
+      "P31": [
+        {
+          "mainsnak": {
+            "snaktype": "value",
+            "property": "P31",
+            "hash": "d3f5569991f127e473a1193551d60b5398ea18ce",
+            "datavalue": {
+              "value": {
+                "entity-type": "item",
+                "numeric-id": 6665312,
+                "id": "Q6665312"
+              },
+              "type": "wikibase-entityid"
+            },
+            "datatype": "wikibase-item"
+          },
+          "type": "statement",
+          "id": "Q88215531$30E08BA7-259A-44D3-AE88-F591EDDD838A",
+          "rank": "normal"
+        }
+      ],
+      "P361": [
+        {
+          "mainsnak": {
+            "snaktype": "value",
+            "property": "P361",
+            "hash": "20bf71b87d2ef3d15563a91181b47d77d9d5a8d6",
+            "datavalue": {
+              "value": {
+                "entity-type": "item",
+                "numeric-id": 87866152,
+                "id": "Q87866152"
+              },
+              "type": "wikibase-entityid"
+            },
+            "datatype": "wikibase-item"
+          },
+          "type": "statement",
+          "id": "Q88215531$886278A4-8520-48F8-93E4-E791C73B0D7F",
+          "rank": "normal"
+        }
+      ],
+      "P17": [
+        {
+          "mainsnak": {
+            "snaktype": "value",
+            "property": "P17",
+            "hash": "c05db5d169c2560b9799d567a803d20a392f53e4",
+            "datavalue": {
+              "value": {
+                "entity-type": "item",
+                "numeric-id": 142,
+                "id": "Q142"
+              },
+              "type": "wikibase-entityid"
+            },
+            "datatype": "wikibase-item"
+          },
+          "type": "statement",
+          "id": "Q88215531$B47C65D0-4DF1-4B53-A8C9-A481122C6112",
+          "rank": "normal"
+        }
+      ],
+      "P1269": [
+        {
+          "mainsnak": {
+            "snaktype": "value",
+            "property": "P1269",
+            "hash": "2323294779d6f27cad4c950e1067def8ba35b85f",
+            "datavalue": {
+              "value": {
+                "entity-type": "item",
+                "numeric-id": 83873593,
+                "id": "Q83873593"
+              },
+              "type": "wikibase-entityid"
+            },
+            "datatype": "wikibase-item"
+          },
+          "type": "statement",
+          "id": "Q88215531$B181D843-656F-4FCB-9C0E-22C4CA166F48",
+          "rank": "normal"
+        }
+      ],
+      "P5008": [
+        {
+          "mainsnak": {
+            "snaktype": "value",
+            "property": "P5008",
+            "hash": "a618d54ea6b5f5305b2db01b541d05934fb70cf5",
+            "datavalue": {
+              "value": {
+                "entity-type": "item",
+                "numeric-id": 87748614,
+                "id": "Q87748614"
+              },
+              "type": "wikibase-entityid"
+            },
+            "datatype": "wikibase-item"
+          },
+          "type": "statement",
+          "id": "Q88215531$88DED7A8-9665-4BEB-B1C7-3ED896157CD6",
+          "rank": "normal"
+        }
+      ],
+      "P580": [
+        {
+          "mainsnak": {
+            "snaktype": "value",
+            "property": "P580",
+            "hash": "c8dce601967c11c045db5cacc76bd3b7605fe0af",
+            "datavalue": {
+              "value": {
+                "time": "+2020-03-17T00:00:00Z",
+                "timezone": 0,
+                "before": 0,
+                "after": 0,
+                "precision": 11,
+                "calendarmodel": "http://www.wikidata.org/entity/Q1985727"
+              },
+              "type": "time"
+            },
+            "datatype": "time"
+          },
+          "type": "statement",
+          "id": "Q88215531$1daaa0d4-404e-03d2-4f02-6f8a0fc20867",
+          "rank": "normal"
+        },
+        {
+          "mainsnak": {
+            "snaktype": "value",
+            "property": "P580",
+            "hash": "f8878e8628522cc2b40688f4a360f09cc34b0ba2",
+            "datavalue": {
+              "value": {
+                "time": "+2020-10-30T00:00:00Z",
+                "timezone": 0,
+                "before": 0,
+                "after": 0,
+                "precision": 11,
+                "calendarmodel": "http://www.wikidata.org/entity/Q1985727"
+              },
+              "type": "time"
+            },
+            "datatype": "time"
+          },
+          "type": "statement",
+          "id": "Q88215531$f68f74e0-479f-1e4f-53d4-b4d661003448",
+          "rank": "normal"
+        },
+        {
+          "mainsnak": {
+            "snaktype": "value",
+            "property": "P580",
+            "hash": "fcc9284d23e48492c650e9ef3a9ed988a6969f52",
+            "datavalue": {
+              "value": {
+                "time": "+2021-04-04T00:00:00Z",
+                "timezone": 0,
+                "before": 0,
+                "after": 0,
+                "precision": 11,
+                "calendarmodel": "http://www.wikidata.org/entity/Q1985727"
+              },
+              "type": "time"
+            },
+            "datatype": "time"
+          },
+          "type": "statement",
+          "id": "Q88215531$48ad96ae-4d10-dd43-fd64-706f6914a1b0",
+          "rank": "normal"
+        }
+      ],
+      "P582": [
+        {
+          "mainsnak": {
+            "snaktype": "value",
+            "property": "P582",
+            "hash": "181f77a94fb8482a2989844409addda457d00a74",
+            "datavalue": {
+              "value": {
+                "time": "+2020-05-11T00:00:00Z",
+                "timezone": 0,
+                "before": 0,
+                "after": 0,
+                "precision": 11,
+                "calendarmodel": "http://www.wikidata.org/entity/Q1985727"
+              },
+              "type": "time"
+            },
+            "datatype": "time"
+          },
+          "type": "statement",
+          "id": "Q88215531$97f989fc-4c22-9ee7-c8fc-4b18369408b0",
+          "rank": "normal"
+        },
+        {
+          "mainsnak": {
+            "snaktype": "value",
+            "property": "P582",
+            "hash": "42798c1786685feca63298672988472076aa44bc",
+            "datavalue": {
+              "value": {
+                "time": "+2020-12-04T00:00:00Z",
+                "timezone": 0,
+                "before": 0,
+                "after": 0,
+                "precision": 11,
+                "calendarmodel": "http://www.wikidata.org/entity/Q1985727"
+              },
+              "type": "time"
+            },
+            "datatype": "time"
+          },
+          "type": "statement",
+          "id": "Q88215531$af104f60-4c37-f03e-03d0-c1e1f662764f",
+          "rank": "normal"
+        },
+        {
+          "mainsnak": {
+            "snaktype": "value",
+            "property": "P582",
+            "hash": "3d78796b37069bf46a3f94e22683b7a1e8820fd3",
+            "datavalue": {
+              "value": {
+                "time": "+2021-05-05T00:00:00Z",
+                "timezone": 0,
+                "before": 0,
+                "after": 0,
+                "precision": 11,
+                "calendarmodel": "http://www.wikidata.org/entity/Q1985727"
+              },
+              "type": "time"
+            },
+            "datatype": "time"
+          },
+          "type": "statement",
+          "id": "Q88215531$539f0521-46e8-b7df-a9ff-b706397bd330",
+          "rank": "normal"
+        }
+      ],
+      "P2671": [
+        {
+          "mainsnak": {
+            "snaktype": "value",
+            "property": "P2671",
+            "hash": "a4bbb911eec682a6932edcec68ac660fd90e9409",
+            "datavalue": {
+              "value": "/g/11j95vr0k3",
+              "type": "string"
+            },
+            "datatype": "external-id"
+          },
+          "type": "statement",
+          "id": "Q88215531$6A268F33-954F-47EB-A7EB-E27C265807EC",
+          "rank": "normal"
+        }
+      ],
+      "P373": [
+        {
+          "mainsnak": {
+            "snaktype": "value",
+            "property": "P373",
+            "hash": "3c0de5e6dbc3cb0947e41ab8f917bdc6a166afae",
+            "datavalue": {
+              "value": "2020 quarantine in France",
+              "type": "string"
+            },
+            "datatype": "string"
+          },
+          "type": "statement",
+          "id": "Q88215531$665D7D92-1523-4D5A-A3E3-82272A53F501",
+          "rank": "normal"
+        }
+      ],
+      "P279": [
+        {
+          "mainsnak": {
+            "snaktype": "value",
+            "property": "P279",
+            "hash": "f7c35e6e48b19f0ce7e6118ae1ae6980e1476a51",
+            "datavalue": {
+              "value": {
+                "entity-type": "item",
+                "numeric-id": 87491759,
+                "id": "Q87491759"
+              },
+              "type": "wikibase-entityid"
+            },
+            "datatype": "wikibase-item"
+          },
+          "type": "statement",
+          "id": "Q88215531$87976C7F-1027-44AD-9033-BF0CC46804B8",
+          "rank": "normal"
+        }
+      ]
+    },
+    "sitelinks": {
+      "commonswiki": {
+        "site": "commonswiki",
+        "title": "Category:2020 quarantine in France",
+        "badges": [],
+        "url": "https://commons.wikimedia.org/wiki/Category:2020_quarantine_in_France"
+      },
+      "frwiki": {
+        "site": "frwiki",
+        "title": "Confinements liés à la pandémie de Covid-19 en France",
+        "badges": [],
+        "url": "https://fr.wikipedia.org/wiki/Confinements_li%C3%A9s_%C3%A0_la_pand%C3%A9mie_de_Covid-19_en_France"
+      },
+      "htwiki": {
+        "site": "htwiki",
+        "title": "Konfinman an 2020 nan Frans",
+        "badges": [],
+        "url": "https://ht.wikipedia.org/wiki/Konfinman_an_2020_nan_Frans"
+      }
+    }
+  }
+}

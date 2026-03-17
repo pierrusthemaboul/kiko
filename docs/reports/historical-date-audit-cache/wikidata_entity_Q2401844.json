@@ -1,0 +1,410 @@
+{
+  "saved_at": "2026-03-07T14:47:24.320Z",
+  "value": {
+    "pageid": 2320234,
+    "ns": 0,
+    "title": "Q2401844",
+    "lastrevid": 2289094717,
+    "modified": "2024-12-18T12:54:17Z",
+    "type": "item",
+    "id": "Q2401844",
+    "labels": {
+      "fr": {
+        "language": "fr",
+        "value": "Marche pour l'égalité et contre le racisme"
+      },
+      "en": {
+        "language": "en",
+        "value": "March for Equality and against Racism"
+      },
+      "ja": {
+        "language": "ja",
+        "value": "ブールの行進"
+      },
+      "ht": {
+        "language": "ht",
+        "value": "Mach pou egalite ak kont rasis"
+      }
+    },
+    "descriptions": {
+      "fr": {
+        "language": "fr",
+        "value": "marche antiraciste qui s'est déroulée en France en 1983"
+      },
+      "en": {
+        "language": "en",
+        "value": "antiraciste march in France"
+      }
+    },
+    "aliases": {
+      "fr": [
+        {
+          "language": "fr",
+          "value": "Marche des beurs"
+        }
+      ]
+    },
+    "claims": {
+      "P31": [
+        {
+          "mainsnak": {
+            "snaktype": "value",
+            "property": "P31",
+            "hash": "cafe9127e9fea483ad70159fcaa8b7c8763cd160",
+            "datavalue": {
+              "value": {
+                "entity-type": "item",
+                "numeric-id": 175331,
+                "id": "Q175331"
+              },
+              "type": "wikibase-entityid"
+            },
+            "datatype": "wikibase-item"
+          },
+          "type": "statement",
+          "id": "Q2401844$f1d2d3e1-46fe-3cf4-83ec-416dea6c2fd2",
+          "rank": "normal"
+        }
+      ],
+      "P17": [
+        {
+          "mainsnak": {
+            "snaktype": "value",
+            "property": "P17",
+            "hash": "c05db5d169c2560b9799d567a803d20a392f53e4",
+            "datavalue": {
+              "value": {
+                "entity-type": "item",
+                "numeric-id": 142,
+                "id": "Q142"
+              },
+              "type": "wikibase-entityid"
+            },
+            "datatype": "wikibase-item"
+          },
+          "type": "statement",
+          "id": "Q2401844$1e8ef5aa-40ae-f0de-47b8-ce879c8ca641",
+          "rank": "normal"
+        }
+      ],
+      "P580": [
+        {
+          "mainsnak": {
+            "snaktype": "value",
+            "property": "P580",
+            "hash": "e0f57958115860e0fc2a1d25ed83670daaf1852d",
+            "datavalue": {
+              "value": {
+                "time": "+1983-10-15T00:00:00Z",
+                "timezone": 0,
+                "before": 0,
+                "after": 0,
+                "precision": 11,
+                "calendarmodel": "http://www.wikidata.org/entity/Q1985727"
+              },
+              "type": "time"
+            },
+            "datatype": "time"
+          },
+          "type": "statement",
+          "id": "Q2401844$60f432e9-4c7e-9b97-4122-b9fa9062ee57",
+          "rank": "normal"
+        }
+      ],
+      "P582": [
+        {
+          "mainsnak": {
+            "snaktype": "value",
+            "property": "P582",
+            "hash": "62d494955cc21648e7e6d1ba894d6e4a4b67824a",
+            "datavalue": {
+              "value": {
+                "time": "+1983-12-03T00:00:00Z",
+                "timezone": 0,
+                "before": 0,
+                "after": 0,
+                "precision": 11,
+                "calendarmodel": "http://www.wikidata.org/entity/Q1985727"
+              },
+              "type": "time"
+            },
+            "datatype": "time"
+          },
+          "type": "statement",
+          "id": "Q2401844$80465130-49d5-ce97-d444-0691b93fe6c9",
+          "rank": "normal"
+        }
+      ],
+      "P135": [
+        {
+          "mainsnak": {
+            "snaktype": "value",
+            "property": "P135",
+            "hash": "1a998dd2ebfcb409eb520a670ca3103d35306201",
+            "datavalue": {
+              "value": {
+                "entity-type": "item",
+                "numeric-id": 582965,
+                "id": "Q582965"
+              },
+              "type": "wikibase-entityid"
+            },
+            "datatype": "wikibase-item"
+          },
+          "type": "statement",
+          "id": "Q2401844$2adf2834-4e83-d1b8-5337-3f8efc582758",
+          "rank": "normal"
+        }
+      ],
+      "P856": [
+        {
+          "mainsnak": {
+            "snaktype": "value",
+            "property": "P856",
+            "hash": "fbdfd82decfed6c9894400d4311a99189a9ed6c1",
+            "datavalue": {
+              "value": "https://marcheegalite1983.wordpress.com/",
+              "type": "string"
+            },
+            "datatype": "url"
+          },
+          "type": "statement",
+          "id": "Q2401844$6d5b7ff0-42f8-5964-8768-84b88db7ca56",
+          "rank": "normal",
+          "references": [
+            {
+              "hash": "d4bd87b862b12d99d26e86472d44f26858dee639",
+              "snaks": {
+                "P143": [
+                  {
+                    "snaktype": "value",
+                    "property": "P143",
+                    "hash": "f30cbd35620c4ea6d0633aaf0210a8916130469b",
+                    "datavalue": {
+                      "value": {
+                        "entity-type": "item",
+                        "numeric-id": 8447,
+                        "id": "Q8447"
+                      },
+                      "type": "wikibase-entityid"
+                    },
+                    "datatype": "wikibase-item"
+                  }
+                ]
+              },
+              "snaks-order": [
+                "P143"
+              ]
+            }
+          ]
+        }
+      ],
+      "P710": [
+        {
+          "mainsnak": {
+            "snaktype": "value",
+            "property": "P710",
+            "hash": "320c570537b8b562c057bdae1261d97c76a458c0",
+            "datavalue": {
+              "value": {
+                "entity-type": "item",
+                "numeric-id": 2965209,
+                "id": "Q2965209"
+              },
+              "type": "wikibase-entityid"
+            },
+            "datatype": "wikibase-item"
+          },
+          "type": "statement",
+          "id": "Q2401844$c8aecfe2-42a4-cdb3-2d66-8fc643dec884",
+          "rank": "normal",
+          "references": [
+            {
+              "hash": "18cdd8837bf50ac1cd41bf74a193a4141fbee265",
+              "snaks": {
+                "P854": [
+                  {
+                    "snaktype": "value",
+                    "property": "P854",
+                    "hash": "dfdb085a887db58a7b29a58d6cc515e7365507b8",
+                    "datavalue": {
+                      "value": "https://marcheegalite1983.wordpress.com/qui-somme-nous/",
+                      "type": "string"
+                    },
+                    "datatype": "url"
+                  }
+                ]
+              },
+              "snaks-order": [
+                "P854"
+              ]
+            }
+          ]
+        },
+        {
+          "mainsnak": {
+            "snaktype": "value",
+            "property": "P710",
+            "hash": "e772fb565c24eeb8b4014e62492315132f11f373",
+            "datavalue": {
+              "value": {
+                "entity-type": "item",
+                "numeric-id": 104243890,
+                "id": "Q104243890"
+              },
+              "type": "wikibase-entityid"
+            },
+            "datatype": "wikibase-item"
+          },
+          "type": "statement",
+          "id": "Q2401844$49433976-4dba-1122-9f3b-dcc315dc7b8d",
+          "rank": "normal",
+          "references": [
+            {
+              "hash": "98be12f5fdf46466fdbb9a01149a09718a591f3e",
+              "snaks": {
+                "P854": [
+                  {
+                    "snaktype": "value",
+                    "property": "P854",
+                    "hash": "e8cc245fb6285761fba90784a2774c7a1cbd25fc",
+                    "datavalue": {
+                      "value": "https://www.la-croix.com/Religion/Mort-pasteur-Jean-Costil-grande-figure-Marche-legalite-2020-12-17-1201130718",
+                      "type": "string"
+                    },
+                    "datatype": "url"
+                  }
+                ]
+              },
+              "snaks-order": [
+                "P854"
+              ]
+            }
+          ]
+        }
+      ],
+      "P646": [
+        {
+          "mainsnak": {
+            "snaktype": "value",
+            "property": "P646",
+            "hash": "26450f193d0c4f0e67d5b02379d89a0cacb65d24",
+            "datavalue": {
+              "value": "/m/0j43p5k",
+              "type": "string"
+            },
+            "datatype": "external-id"
+          },
+          "type": "statement",
+          "id": "Q2401844$4BE62EF1-FAC5-4D19-8533-4A8A39A1E804",
+          "rank": "normal"
+        }
+      ],
+      "P214": [
+        {
+          "mainsnak": {
+            "snaktype": "value",
+            "property": "P214",
+            "hash": "4ae4e047c4ccce0f90a878b67a8aa8e44a08691c",
+            "datavalue": {
+              "value": "305376752",
+              "type": "string"
+            },
+            "datatype": "external-id"
+          },
+          "type": "statement",
+          "id": "Q2401844$5f62f0e3-48e0-3a01-5c2a-654a0bfdf6c8",
+          "rank": "normal"
+        }
+      ],
+      "P8179": [
+        {
+          "mainsnak": {
+            "snaktype": "value",
+            "property": "P8179",
+            "hash": "fdea89f7acf33fffe5dc4b684caa8a675938f52a",
+            "datavalue": {
+              "value": "ncf11036952",
+              "type": "string"
+            },
+            "datatype": "external-id"
+          },
+          "type": "statement",
+          "id": "Q2401844$a14b75b2-4d71-f107-23f5-2cedc0b451b7",
+          "rank": "normal"
+        }
+      ],
+      "P8189": [
+        {
+          "mainsnak": {
+            "snaktype": "value",
+            "property": "P8189",
+            "hash": "44a1cf65bba615bc1e2a13ee9a0b3c20ec3653c5",
+            "datavalue": {
+              "value": "987011427312305171",
+              "type": "string"
+            },
+            "datatype": "external-id"
+          },
+          "type": "statement",
+          "id": "Q2401844$382c1324-472e-da50-b884-518ca3c2faf4",
+          "rank": "normal"
+        }
+      ],
+      "P244": [
+        {
+          "mainsnak": {
+            "snaktype": "value",
+            "property": "P244",
+            "hash": "442930cdb6506ae208dd1de8fe3b558b7e082761",
+            "datavalue": {
+              "value": "no2013121318",
+              "type": "string"
+            },
+            "datatype": "external-id"
+          },
+          "type": "statement",
+          "id": "Q2401844$a2d92eba-4edb-519b-ac46-eb4ad130fbe0",
+          "rank": "normal"
+        }
+      ],
+      "P9346": [
+        {
+          "mainsnak": {
+            "snaktype": "value",
+            "property": "P9346",
+            "hash": "8e15c59b455444370a454265ce919ab884275d78",
+            "datavalue": {
+              "value": "marche-des-beurs",
+              "type": "string"
+            },
+            "datatype": "external-id"
+          },
+          "type": "statement",
+          "id": "Q2401844$4BF49549-F7E5-41F5-B0A9-D46A545F65BA",
+          "rank": "normal"
+        }
+      ]
+    },
+    "sitelinks": {
+      "enwiki": {
+        "site": "enwiki",
+        "title": "March for Equality and Against Racism",
+        "badges": [],
+        "url": "https://en.wikipedia.org/wiki/March_for_Equality_and_Against_Racism"
+      },
+      "frwiki": {
+        "site": "frwiki",
+        "title": "Marche pour l'égalité et contre le racisme",
+        "badges": [],
+        "url": "https://fr.wikipedia.org/wiki/Marche_pour_l%27%C3%A9galit%C3%A9_et_contre_le_racisme"
+      },
+      "htwiki": {
+        "site": "htwiki",
+        "title": "Mach pou egalite ak kont rasis",
+        "badges": [],
+        "url": "https://ht.wikipedia.org/wiki/Mach_pou_egalite_ak_kont_rasis"
+      }
+    }
+  }
+}

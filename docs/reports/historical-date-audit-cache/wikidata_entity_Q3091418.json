@@ -1,0 +1,1113 @@
+{
+  "saved_at": "2026-03-07T13:09:41.067Z",
+  "value": {
+    "pageid": 2954473,
+    "ns": 0,
+    "title": "Q3091418",
+    "lastrevid": 2444009009,
+    "modified": "2025-12-19T09:06:09Z",
+    "type": "item",
+    "id": "Q3091418",
+    "labels": {
+      "fr": {
+        "language": "fr",
+        "value": "France Nature Environnement Auvergne-Rhône-Alpes"
+      }
+    },
+    "descriptions": {
+      "en": {
+        "language": "en",
+        "value": "organization"
+      },
+      "fi": {
+        "language": "fi",
+        "value": "organisaatio"
+      },
+      "sq": {
+        "language": "sq",
+        "value": "organizatë"
+      },
+      "de": {
+        "language": "de",
+        "value": "französische Organisation"
+      },
+      "nl": {
+        "language": "nl",
+        "value": "organisatie uit Frankrijk"
+      },
+      "ar": {
+        "language": "ar",
+        "value": "منظمة فرنسية"
+      },
+      "hy": {
+        "language": "hy",
+        "value": "կազմակերպություն"
+      },
+      "bn": {
+        "language": "bn",
+        "value": "সংস্থা"
+      },
+      "uk": {
+        "language": "uk",
+        "value": "організація"
+      }
+    },
+    "aliases": {
+      "fr": [
+        {
+          "language": "fr",
+          "value": "FRAPNA"
+        },
+        {
+          "language": "fr",
+          "value": "FNE Auvergne-Rhône-Alpes"
+        },
+        {
+          "language": "fr",
+          "value": "Fédération Rhône-Alpes de protection de la nature"
+        },
+        {
+          "language": "fr",
+          "value": "FRANCE NATURE ENVIRONNEMENT AUVERGNE-RHONE-ALPES"
+        }
+      ]
+    },
+    "claims": {
+      "P31": [
+        {
+          "mainsnak": {
+            "snaktype": "value",
+            "property": "P31",
+            "hash": "5b555715d82fb2edce40e2f5a3854aa5b5ea0f76",
+            "datavalue": {
+              "value": {
+                "entity-type": "item",
+                "numeric-id": 163740,
+                "id": "Q163740"
+              },
+              "type": "wikibase-entityid"
+            },
+            "datatype": "wikibase-item"
+          },
+          "type": "statement",
+          "id": "Q3091418$71AB8397-2F12-4CEC-97DA-8A8EACAAAFF7",
+          "rank": "normal",
+          "references": [
+            {
+              "hash": "faea4b2c5d79a7b50de3e802d95e482b085485b0",
+              "snaks": {
+                "P248": [
+                  {
+                    "snaktype": "value",
+                    "property": "P248",
+                    "hash": "6e6074e676d53f8fd152a47907c6438d1c09feba",
+                    "datavalue": {
+                      "value": {
+                        "entity-type": "item",
+                        "numeric-id": 27136690,
+                        "id": "Q27136690"
+                      },
+                      "type": "wikibase-entityid"
+                    },
+                    "datatype": "wikibase-item"
+                  }
+                ]
+              },
+              "snaks-order": [
+                "P248"
+              ]
+            }
+          ]
+        }
+      ],
+      "P17": [
+        {
+          "mainsnak": {
+            "snaktype": "value",
+            "property": "P17",
+            "hash": "c05db5d169c2560b9799d567a803d20a392f53e4",
+            "datavalue": {
+              "value": {
+                "entity-type": "item",
+                "numeric-id": 142,
+                "id": "Q142"
+              },
+              "type": "wikibase-entityid"
+            },
+            "datatype": "wikibase-item"
+          },
+          "type": "statement",
+          "id": "Q3091418$C910C9F2-9191-4036-90A0-92433DC7AE26",
+          "rank": "normal"
+        }
+      ],
+      "P856": [
+        {
+          "mainsnak": {
+            "snaktype": "value",
+            "property": "P856",
+            "hash": "e9ae4f680f35e762a8d341ea8057c3f4916108d3",
+            "datavalue": {
+              "value": "https://www.fne-aura.org/",
+              "type": "string"
+            },
+            "datatype": "url"
+          },
+          "type": "statement",
+          "qualifiers": {
+            "P407": [
+              {
+                "snaktype": "value",
+                "property": "P407",
+                "hash": "d197d0a5efa4b4c23a302a829dd3ef43684fe002",
+                "datavalue": {
+                  "value": {
+                    "entity-type": "item",
+                    "numeric-id": 150,
+                    "id": "Q150"
+                  },
+                  "type": "wikibase-entityid"
+                },
+                "datatype": "wikibase-item"
+              }
+            ]
+          },
+          "qualifiers-order": [
+            "P407"
+          ],
+          "id": "Q3091418$F5BA7CB2-D5A5-4567-896D-7D2E40D3862F",
+          "rank": "normal",
+          "references": [
+            {
+              "hash": "d4bd87b862b12d99d26e86472d44f26858dee639",
+              "snaks": {
+                "P143": [
+                  {
+                    "snaktype": "value",
+                    "property": "P143",
+                    "hash": "f30cbd35620c4ea6d0633aaf0210a8916130469b",
+                    "datavalue": {
+                      "value": {
+                        "entity-type": "item",
+                        "numeric-id": 8447,
+                        "id": "Q8447"
+                      },
+                      "type": "wikibase-entityid"
+                    },
+                    "datatype": "wikibase-item"
+                  }
+                ]
+              },
+              "snaks-order": [
+                "P143"
+              ]
+            }
+          ]
+        }
+      ],
+      "P571": [
+        {
+          "mainsnak": {
+            "snaktype": "value",
+            "property": "P571",
+            "hash": "0d8665f0da3ba2f522613d47245a0bc77de4942d",
+            "datavalue": {
+              "value": {
+                "time": "+1971-07-15T00:00:00Z",
+                "timezone": 0,
+                "before": 0,
+                "after": 0,
+                "precision": 11,
+                "calendarmodel": "http://www.wikidata.org/entity/Q1985727"
+              },
+              "type": "time"
+            },
+            "datatype": "time"
+          },
+          "type": "statement",
+          "id": "Q3091418$BD308382-324E-48A0-A699-7CE6A415A2B9",
+          "rank": "normal",
+          "references": [
+            {
+              "hash": "c7f790bcde93399f6242bfe720e5f5f515cc5342",
+              "snaks": {
+                "P854": [
+                  {
+                    "snaktype": "value",
+                    "property": "P854",
+                    "hash": "ba9f4829e70c6c65ae9c38fb41a7d7805ab07b66",
+                    "datavalue": {
+                      "value": "https://www.archives.developpement-durable.gouv.fr/fonds-federation-rhone-alpes-de-protection-de-la-a48305.html",
+                      "type": "string"
+                    },
+                    "datatype": "url"
+                  }
+                ]
+              },
+              "snaks-order": [
+                "P854"
+              ]
+            }
+          ]
+        },
+        {
+          "mainsnak": {
+            "snaktype": "value",
+            "property": "P571",
+            "hash": "4bb8b5bd48312c8924dd00201b7062097ce025f9",
+            "datavalue": {
+              "value": {
+                "time": "+1979-01-01T00:00:00Z",
+                "timezone": 0,
+                "before": 0,
+                "after": 0,
+                "precision": 11,
+                "calendarmodel": "http://www.wikidata.org/entity/Q1985727"
+              },
+              "type": "time"
+            },
+            "datatype": "time"
+          },
+          "type": "statement",
+          "id": "Q3091418$4734C492-CC72-4172-A21E-A797464BA039",
+          "rank": "normal",
+          "references": [
+            {
+              "hash": "f5ced3ede60326c8065592ab93636d3478f8198f",
+              "snaks": {
+                "P248": [
+                  {
+                    "snaktype": "value",
+                    "property": "P248",
+                    "hash": "edd6a048cc3c96bc5b21a4cf77977f233b26ab76",
+                    "datavalue": {
+                      "value": {
+                        "entity-type": "item",
+                        "numeric-id": 3509449,
+                        "id": "Q3509449"
+                      },
+                      "type": "wikibase-entityid"
+                    },
+                    "datatype": "wikibase-item"
+                  }
+                ],
+                "P5017": [
+                  {
+                    "snaktype": "value",
+                    "property": "P5017",
+                    "hash": "ab3f7a263b8a29e2cdd7bdd785694e6061a89b56",
+                    "datavalue": {
+                      "value": {
+                        "time": "+2024-03-22T00:00:00Z",
+                        "timezone": 0,
+                        "before": 0,
+                        "after": 0,
+                        "precision": 11,
+                        "calendarmodel": "http://www.wikidata.org/entity/Q1985727"
+                      },
+                      "type": "time"
+                    },
+                    "datatype": "time"
+                  }
+                ]
+              },
+              "snaks-order": [
+                "P248",
+                "P5017"
+              ]
+            }
+          ]
+        }
+      ],
+      "P213": [
+        {
+          "mainsnak": {
+            "snaktype": "value",
+            "property": "P213",
+            "hash": "ef90b6dedf69288e5c7083d3ddb096f2368e86d1",
+            "datavalue": {
+              "value": "0000000106672834",
+              "type": "string"
+            },
+            "datatype": "external-id"
+          },
+          "type": "statement",
+          "id": "Q3091418$A096FBD4-8CBA-4F47-BE5D-930307DC7C28",
+          "rank": "normal"
+        }
+      ],
+      "P268": [
+        {
+          "mainsnak": {
+            "snaktype": "value",
+            "property": "P268",
+            "hash": "27cad079eb25410e4a8d4c0c45bb665801d25cb3",
+            "datavalue": {
+              "value": "118759046",
+              "type": "string"
+            },
+            "datatype": "external-id"
+          },
+          "type": "statement",
+          "id": "Q3091418$863a3c34-48cb-c0eb-ab65-1b7f2ccaa814",
+          "rank": "normal"
+        }
+      ],
+      "P214": [
+        {
+          "mainsnak": {
+            "snaktype": "value",
+            "property": "P214",
+            "hash": "5bea281d83768cb447d798888f2bdf94ff6dc4c6",
+            "datavalue": {
+              "value": "142147593",
+              "type": "string"
+            },
+            "datatype": "external-id"
+          },
+          "type": "statement",
+          "id": "Q3091418$05344fdd-417b-287a-a8c6-6b4827541c28",
+          "rank": "normal"
+        }
+      ],
+      "P2671": [
+        {
+          "mainsnak": {
+            "snaktype": "value",
+            "property": "P2671",
+            "hash": "03140df57b678be28e416d85f52fa730140ebaa3",
+            "datavalue": {
+              "value": "/g/121qybys",
+              "type": "string"
+            },
+            "datatype": "external-id"
+          },
+          "type": "statement",
+          "id": "Q3091418$BD671CFF-4286-442A-97DD-9C0C87CE3C6E",
+          "rank": "normal"
+        }
+      ],
+      "P269": [
+        {
+          "mainsnak": {
+            "snaktype": "value",
+            "property": "P269",
+            "hash": "ed4ff23da5357ef7513158243e14dff58737b556",
+            "datavalue": {
+              "value": "026527642",
+              "type": "string"
+            },
+            "datatype": "external-id"
+          },
+          "type": "statement",
+          "id": "Q3091418$CFDD00FB-868F-475C-99E8-C2FFCA66410F",
+          "rank": "normal",
+          "references": [
+            {
+              "hash": "3c522706b11f0d2ff9be510ecf182f0d4603a278",
+              "snaks": {
+                "P248": [
+                  {
+                    "snaktype": "value",
+                    "property": "P248",
+                    "hash": "6b7d4330c4aac4caec4ede9de0311ce273f88ecd",
+                    "datavalue": {
+                      "value": {
+                        "entity-type": "item",
+                        "numeric-id": 54919,
+                        "id": "Q54919"
+                      },
+                      "type": "wikibase-entityid"
+                    },
+                    "datatype": "wikibase-item"
+                  }
+                ],
+                "P813": [
+                  {
+                    "snaktype": "value",
+                    "property": "P813",
+                    "hash": "9c07da73b84889803ebd6601ba04b4579c39577d",
+                    "datavalue": {
+                      "value": {
+                        "time": "+2022-07-06T00:00:00Z",
+                        "timezone": 0,
+                        "before": 0,
+                        "after": 0,
+                        "precision": 11,
+                        "calendarmodel": "http://www.wikidata.org/entity/Q1985727"
+                      },
+                      "type": "time"
+                    },
+                    "datatype": "time"
+                  }
+                ],
+                "P214": [
+                  {
+                    "snaktype": "value",
+                    "property": "P214",
+                    "hash": "5bea281d83768cb447d798888f2bdf94ff6dc4c6",
+                    "datavalue": {
+                      "value": "142147593",
+                      "type": "string"
+                    },
+                    "datatype": "external-id"
+                  }
+                ]
+              },
+              "snaks-order": [
+                "P248",
+                "P813",
+                "P214"
+              ]
+            }
+          ]
+        }
+      ],
+      "P4081": [
+        {
+          "mainsnak": {
+            "snaktype": "value",
+            "property": "P4081",
+            "hash": "da614adf7ee3fdf74a945b50744ff794a594342b",
+            "datavalue": {
+              "value": "265217",
+              "type": "string"
+            },
+            "datatype": "external-id"
+          },
+          "type": "statement",
+          "id": "Q3091418$BB76FA81-FD83-48C4-913A-9D3A932F2E64",
+          "rank": "normal"
+        }
+      ],
+      "P488": [
+        {
+          "mainsnak": {
+            "snaktype": "value",
+            "property": "P488",
+            "hash": "6cfeff510dbb3bbcd58afc2bf12e56887140a749",
+            "datavalue": {
+              "value": {
+                "entity-type": "item",
+                "numeric-id": 89055368,
+                "id": "Q89055368"
+              },
+              "type": "wikibase-entityid"
+            },
+            "datatype": "wikibase-item"
+          },
+          "type": "statement",
+          "id": "Q3091418$9b62d8cf-4fa8-7cd3-b125-99567c4b12dc",
+          "rank": "normal"
+        }
+      ],
+      "P159": [
+        {
+          "mainsnak": {
+            "snaktype": "value",
+            "property": "P159",
+            "hash": "ff5a99f780843886a7d515d3381506a2a3e79b65",
+            "datavalue": {
+              "value": {
+                "entity-type": "item",
+                "numeric-id": 456,
+                "id": "Q456"
+              },
+              "type": "wikibase-entityid"
+            },
+            "datatype": "wikibase-item"
+          },
+          "type": "statement",
+          "id": "Q3091418$994c1379-4827-26d9-1591-77fec32d7a04",
+          "rank": "normal"
+        }
+      ],
+      "P1416": [
+        {
+          "mainsnak": {
+            "snaktype": "value",
+            "property": "P1416",
+            "hash": "ec6897548f613adab3719145eb7fac9e5fa1913b",
+            "datavalue": {
+              "value": {
+                "entity-type": "item",
+                "numeric-id": 3080797,
+                "id": "Q3080797"
+              },
+              "type": "wikibase-entityid"
+            },
+            "datatype": "wikibase-item"
+          },
+          "type": "statement",
+          "id": "Q3091418$20b05f9e-48cb-a9eb-f831-a466075421af",
+          "rank": "normal"
+        }
+      ],
+      "P1451": [
+        {
+          "mainsnak": {
+            "snaktype": "value",
+            "property": "P1451",
+            "hash": "11ddcd1828ed2694de0878ce3a1f81cde6472816",
+            "datavalue": {
+              "value": {
+                "text": "Réconcilier l'Humain et son environnement",
+                "language": "fr"
+              },
+              "type": "monolingualtext"
+            },
+            "datatype": "monolingualtext"
+          },
+          "type": "statement",
+          "id": "Q3091418$9e4c4d84-417e-691e-f2e1-c41b795eefb4",
+          "rank": "normal"
+        }
+      ],
+      "P2541": [
+        {
+          "mainsnak": {
+            "snaktype": "value",
+            "property": "P2541",
+            "hash": "e53980771aa50b6087c5febd2d0d04af0db5f63d",
+            "datavalue": {
+              "value": {
+                "entity-type": "item",
+                "numeric-id": 18338206,
+                "id": "Q18338206"
+              },
+              "type": "wikibase-entityid"
+            },
+            "datatype": "wikibase-item"
+          },
+          "type": "statement",
+          "id": "Q3091418$c32787ff-4124-c4e7-dd2a-d4a02fb8b2a3",
+          "rank": "normal"
+        }
+      ],
+      "P1616": [
+        {
+          "mainsnak": {
+            "snaktype": "value",
+            "property": "P1616",
+            "hash": "81e1cbaa5a91d18d85dc542b2df69957f8d0eb34",
+            "datavalue": {
+              "value": "314938093",
+              "type": "string"
+            },
+            "datatype": "external-id"
+          },
+          "type": "statement",
+          "id": "Q3091418$ed9e0a28-4378-f839-2c1f-33e13641bb9e",
+          "rank": "normal",
+          "references": [
+            {
+              "hash": "28c8232fc561b28c44370b347f5d386cc87479f8",
+              "snaks": {
+                "P854": [
+                  {
+                    "snaktype": "value",
+                    "property": "P854",
+                    "hash": "13ae2fa22e3edc29655ca9ad0c1ca8dc81589954",
+                    "datavalue": {
+                      "value": "https://annuaire-entreprises.data.gouv.fr/entreprise/314938093",
+                      "type": "string"
+                    },
+                    "datatype": "url"
+                  }
+                ]
+              },
+              "snaks-order": [
+                "P854"
+              ]
+            },
+            {
+              "hash": "f5ced3ede60326c8065592ab93636d3478f8198f",
+              "snaks": {
+                "P248": [
+                  {
+                    "snaktype": "value",
+                    "property": "P248",
+                    "hash": "edd6a048cc3c96bc5b21a4cf77977f233b26ab76",
+                    "datavalue": {
+                      "value": {
+                        "entity-type": "item",
+                        "numeric-id": 3509449,
+                        "id": "Q3509449"
+                      },
+                      "type": "wikibase-entityid"
+                    },
+                    "datatype": "wikibase-item"
+                  }
+                ],
+                "P5017": [
+                  {
+                    "snaktype": "value",
+                    "property": "P5017",
+                    "hash": "ab3f7a263b8a29e2cdd7bdd785694e6061a89b56",
+                    "datavalue": {
+                      "value": {
+                        "time": "+2024-03-22T00:00:00Z",
+                        "timezone": 0,
+                        "before": 0,
+                        "after": 0,
+                        "precision": 11,
+                        "calendarmodel": "http://www.wikidata.org/entity/Q1985727"
+                      },
+                      "type": "time"
+                    },
+                    "datatype": "time"
+                  }
+                ]
+              },
+              "snaks-order": [
+                "P248",
+                "P5017"
+              ]
+            }
+          ]
+        }
+      ],
+      "P1454": [
+        {
+          "mainsnak": {
+            "snaktype": "value",
+            "property": "P1454",
+            "hash": "5efaafb950002d3872c753217e4bbd65cc7c98cf",
+            "datavalue": {
+              "value": {
+                "entity-type": "item",
+                "numeric-id": 111166550,
+                "id": "Q111166550"
+              },
+              "type": "wikibase-entityid"
+            },
+            "datatype": "wikibase-item"
+          },
+          "type": "statement",
+          "qualifiers": {
+            "P1013": [
+              {
+                "snaktype": "value",
+                "property": "P1013",
+                "hash": "0e3e8757f72513cfd931fbd4ab8b80672d4c71a0",
+                "datavalue": {
+                  "value": {
+                    "entity-type": "item",
+                    "numeric-id": 87711223,
+                    "id": "Q87711223"
+                  },
+                  "type": "wikibase-entityid"
+                },
+                "datatype": "wikibase-item"
+              }
+            ]
+          },
+          "qualifiers-order": [
+            "P1013"
+          ],
+          "id": "Q3091418$253682bc-4bc8-450c-04c1-ddd826aa087c",
+          "rank": "normal",
+          "references": [
+            {
+              "hash": "f5ced3ede60326c8065592ab93636d3478f8198f",
+              "snaks": {
+                "P248": [
+                  {
+                    "snaktype": "value",
+                    "property": "P248",
+                    "hash": "edd6a048cc3c96bc5b21a4cf77977f233b26ab76",
+                    "datavalue": {
+                      "value": {
+                        "entity-type": "item",
+                        "numeric-id": 3509449,
+                        "id": "Q3509449"
+                      },
+                      "type": "wikibase-entityid"
+                    },
+                    "datatype": "wikibase-item"
+                  }
+                ],
+                "P5017": [
+                  {
+                    "snaktype": "value",
+                    "property": "P5017",
+                    "hash": "ab3f7a263b8a29e2cdd7bdd785694e6061a89b56",
+                    "datavalue": {
+                      "value": {
+                        "time": "+2024-03-22T00:00:00Z",
+                        "timezone": 0,
+                        "before": 0,
+                        "after": 0,
+                        "precision": 11,
+                        "calendarmodel": "http://www.wikidata.org/entity/Q1985727"
+                      },
+                      "type": "time"
+                    },
+                    "datatype": "time"
+                  }
+                ]
+              },
+              "snaks-order": [
+                "P248",
+                "P5017"
+              ]
+            }
+          ]
+        }
+      ],
+      "P3918": [
+        {
+          "mainsnak": {
+            "snaktype": "value",
+            "property": "P3918",
+            "hash": "49b8a89d4fe2d6ae6c38dfbc33cf96ebc5e9826d",
+            "datavalue": {
+              "value": "W691093305",
+              "type": "string"
+            },
+            "datatype": "external-id"
+          },
+          "type": "statement",
+          "id": "Q3091418$95461ddf-4054-8d5d-44e0-889565c089d6",
+          "rank": "normal",
+          "references": [
+            {
+              "hash": "c1e726fc91fb659726ead6ace5bcbd0a89effe5d",
+              "snaks": {
+                "P854": [
+                  {
+                    "snaktype": "value",
+                    "property": "P854",
+                    "hash": "e5a96a917ffe10651a4492e13b13b0f0823b1f8f",
+                    "datavalue": {
+                      "value": "https://www.data-asso.fr/annuaire/association/W691093305",
+                      "type": "string"
+                    },
+                    "datatype": "url"
+                  }
+                ]
+              },
+              "snaks-order": [
+                "P854"
+              ]
+            }
+          ]
+        }
+      ],
+      "P5514": [
+        {
+          "mainsnak": {
+            "snaktype": "value",
+            "property": "P5514",
+            "hash": "cee26112581954ad05ed8178ebb3239940bc2fb3",
+            "datavalue": {
+              "value": {
+                "entity-type": "item",
+                "numeric-id": 3422045,
+                "id": "Q3422045"
+              },
+              "type": "wikibase-entityid"
+            },
+            "datatype": "wikibase-item"
+          },
+          "type": "statement",
+          "qualifiers": {
+            "P580": [
+              {
+                "snaktype": "value",
+                "property": "P580",
+                "hash": "410c9db655f77f371784f4511111b69be43a00dd",
+                "datavalue": {
+                  "value": {
+                    "time": "+1984-06-21T00:00:00Z",
+                    "timezone": 0,
+                    "before": 0,
+                    "after": 0,
+                    "precision": 11,
+                    "calendarmodel": "http://www.wikidata.org/entity/Q1985727"
+                  },
+                  "type": "time"
+                },
+                "datatype": "time"
+              }
+            ]
+          },
+          "qualifiers-order": [
+            "P580"
+          ],
+          "id": "Q3091418$9f70179d-49a0-54d1-1ec7-81992fa25bc7",
+          "rank": "normal",
+          "references": [
+            {
+              "hash": "c7f790bcde93399f6242bfe720e5f5f515cc5342",
+              "snaks": {
+                "P854": [
+                  {
+                    "snaktype": "value",
+                    "property": "P854",
+                    "hash": "ba9f4829e70c6c65ae9c38fb41a7d7805ab07b66",
+                    "datavalue": {
+                      "value": "https://www.archives.developpement-durable.gouv.fr/fonds-federation-rhone-alpes-de-protection-de-la-a48305.html",
+                      "type": "string"
+                    },
+                    "datatype": "url"
+                  }
+                ]
+              },
+              "snaks-order": [
+                "P854"
+              ]
+            }
+          ]
+        }
+      ],
+      "P3712": [
+        {
+          "mainsnak": {
+            "snaktype": "value",
+            "property": "P3712",
+            "hash": "9f28beb4b308a285f2082af6103383ea37c4b135",
+            "datavalue": {
+              "value": {
+                "entity-type": "item",
+                "numeric-id": 832237,
+                "id": "Q832237"
+              },
+              "type": "wikibase-entityid"
+            },
+            "datatype": "wikibase-item"
+          },
+          "type": "statement",
+          "id": "Q3091418$028c9187-4526-8eee-9b9f-88f7ed55a442",
+          "rank": "normal"
+        }
+      ],
+      "P1320": [
+        {
+          "mainsnak": {
+            "snaktype": "value",
+            "property": "P1320",
+            "hash": "2a3d2e980e6ad33c8f12e7c2ca1724f15e90ed11",
+            "datavalue": {
+              "value": "fr/314938093",
+              "type": "string"
+            },
+            "datatype": "external-id"
+          },
+          "type": "statement",
+          "id": "Q3091418$722800C3-4D76-4299-B3A0-8B2CAA0C1B2A",
+          "rank": "normal",
+          "references": [
+            {
+              "hash": "8df73e9c1fab62dc437ac403394608a94b098d71",
+              "snaks": {
+                "P3452": [
+                  {
+                    "snaktype": "value",
+                    "property": "P3452",
+                    "hash": "8d10129ea33574a2f72b74fdbeeed5ea5ce7476c",
+                    "datavalue": {
+                      "value": {
+                        "entity-type": "item",
+                        "numeric-id": 15817081,
+                        "id": "Q15817081"
+                      },
+                      "type": "wikibase-entityid"
+                    },
+                    "datatype": "wikibase-item"
+                  }
+                ]
+              },
+              "snaks-order": [
+                "P3452"
+              ]
+            }
+          ]
+        }
+      ],
+      "P452": [
+        {
+          "mainsnak": {
+            "snaktype": "value",
+            "property": "P452",
+            "hash": "189e3a50d7688f06378c0a027062c3723602de9a",
+            "datavalue": {
+              "value": {
+                "entity-type": "item",
+                "numeric-id": 112166193,
+                "id": "Q112166193"
+              },
+              "type": "wikibase-entityid"
+            },
+            "datatype": "wikibase-item"
+          },
+          "type": "statement",
+          "qualifiers": {
+            "P1013": [
+              {
+                "snaktype": "value",
+                "property": "P1013",
+                "hash": "9d631ca93d929af0a89766e4235778c19f9d5902",
+                "datavalue": {
+                  "value": {
+                    "entity-type": "item",
+                    "numeric-id": 112111570,
+                    "id": "Q112111570"
+                  },
+                  "type": "wikibase-entityid"
+                },
+                "datatype": "wikibase-item"
+              }
+            ]
+          },
+          "qualifiers-order": [
+            "P1013"
+          ],
+          "id": "Q3091418$39EDC936-6277-4BC8-BDC8-B773766D0905",
+          "rank": "normal",
+          "references": [
+            {
+              "hash": "f5ced3ede60326c8065592ab93636d3478f8198f",
+              "snaks": {
+                "P248": [
+                  {
+                    "snaktype": "value",
+                    "property": "P248",
+                    "hash": "edd6a048cc3c96bc5b21a4cf77977f233b26ab76",
+                    "datavalue": {
+                      "value": {
+                        "entity-type": "item",
+                        "numeric-id": 3509449,
+                        "id": "Q3509449"
+                      },
+                      "type": "wikibase-entityid"
+                    },
+                    "datatype": "wikibase-item"
+                  }
+                ],
+                "P5017": [
+                  {
+                    "snaktype": "value",
+                    "property": "P5017",
+                    "hash": "ab3f7a263b8a29e2cdd7bdd785694e6061a89b56",
+                    "datavalue": {
+                      "value": {
+                        "time": "+2024-03-22T00:00:00Z",
+                        "timezone": 0,
+                        "before": 0,
+                        "after": 0,
+                        "precision": 11,
+                        "calendarmodel": "http://www.wikidata.org/entity/Q1985727"
+                      },
+                      "type": "time"
+                    },
+                    "datatype": "time"
+                  }
+                ]
+              },
+              "snaks-order": [
+                "P248",
+                "P5017"
+              ]
+            }
+          ]
+        }
+      ],
+      "P1448": [
+        {
+          "mainsnak": {
+            "snaktype": "value",
+            "property": "P1448",
+            "hash": "fd33bdff052e5a202992414ffa1c71729da4a3ab",
+            "datavalue": {
+              "value": {
+                "text": "FRANCE NATURE ENVIRONNEMENT AUVERGNE-RHONE-ALPES",
+                "language": "fr"
+              },
+              "type": "monolingualtext"
+            },
+            "datatype": "monolingualtext"
+          },
+          "type": "statement",
+          "qualifiers": {
+            "P1013": [
+              {
+                "snaktype": "value",
+                "property": "P1013",
+                "hash": "459309ea1c2d5d2e4e91cc7b22a290e5219dfcf4",
+                "datavalue": {
+                  "value": {
+                    "entity-type": "item",
+                    "numeric-id": 131741681,
+                    "id": "Q131741681"
+                  },
+                  "type": "wikibase-entityid"
+                },
+                "datatype": "wikibase-item"
+              }
+            ]
+          },
+          "qualifiers-order": [
+            "P1013"
+          ],
+          "id": "Q3091418$67FD5371-85CA-4222-9852-035B1B40C25B",
+          "rank": "normal",
+          "references": [
+            {
+              "hash": "f5ced3ede60326c8065592ab93636d3478f8198f",
+              "snaks": {
+                "P248": [
+                  {
+                    "snaktype": "value",
+                    "property": "P248",
+                    "hash": "edd6a048cc3c96bc5b21a4cf77977f233b26ab76",
+                    "datavalue": {
+                      "value": {
+                        "entity-type": "item",
+                        "numeric-id": 3509449,
+                        "id": "Q3509449"
+                      },
+                      "type": "wikibase-entityid"
+                    },
+                    "datatype": "wikibase-item"
+                  }
+                ],
+                "P5017": [
+                  {
+                    "snaktype": "value",
+                    "property": "P5017",
+                    "hash": "ab3f7a263b8a29e2cdd7bdd785694e6061a89b56",
+                    "datavalue": {
+                      "value": {
+                        "time": "+2024-03-22T00:00:00Z",
+                        "timezone": 0,
+                        "before": 0,
+                        "after": 0,
+                        "precision": 11,
+                        "calendarmodel": "http://www.wikidata.org/entity/Q1985727"
+                      },
+                      "type": "time"
+                    },
+                    "datatype": "time"
+                  }
+                ]
+              },
+              "snaks-order": [
+                "P248",
+                "P5017"
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    "sitelinks": {
+      "frwiki": {
+        "site": "frwiki",
+        "title": "Fédération Rhône-Alpes de protection de la nature",
+        "badges": [],
+        "url": "https://fr.wikipedia.org/wiki/F%C3%A9d%C3%A9ration_Rh%C3%B4ne-Alpes_de_protection_de_la_nature"
+      }
+    }
+  }
+}

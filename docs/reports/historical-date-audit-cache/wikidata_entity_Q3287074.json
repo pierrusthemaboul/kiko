@@ -1,0 +1,456 @@
+{
+  "saved_at": "2026-03-07T13:48:08.627Z",
+  "value": {
+    "pageid": 3135063,
+    "ns": 0,
+    "title": "Q3287074",
+    "lastrevid": 2383716114,
+    "modified": "2025-07-24T15:40:45Z",
+    "type": "item",
+    "id": "Q3287074",
+    "labels": {
+      "fr": {
+        "language": "fr",
+        "value": "manufacture royale de glaces de miroirs"
+      },
+      "en": {
+        "language": "en",
+        "value": "Manufacture royale de glaces de miroirs"
+      },
+      "ca": {
+        "language": "ca",
+        "value": "Manufactura Reial de vidres de miralls"
+      }
+    },
+    "descriptions": {
+      "fr": {
+        "language": "fr",
+        "value": "manufacture à Saint-Gobain (Aisne)"
+      },
+      "nl": {
+        "language": "nl",
+        "value": "manufactuur in Saint-Gobain, Frankrijk"
+      },
+      "ko": {
+        "language": "ko",
+        "value": "등재된 사적"
+      }
+    },
+    "aliases": {
+      "fr": [
+        {
+          "language": "fr",
+          "value": "manufacture des Glaces"
+        },
+        {
+          "language": "fr",
+          "value": "manufacture des glaces"
+        }
+      ]
+    },
+    "claims": {
+      "P17": [
+        {
+          "mainsnak": {
+            "snaktype": "value",
+            "property": "P17",
+            "hash": "c05db5d169c2560b9799d567a803d20a392f53e4",
+            "datavalue": {
+              "value": {
+                "entity-type": "item",
+                "numeric-id": 142,
+                "id": "Q142"
+              },
+              "type": "wikibase-entityid"
+            },
+            "datatype": "wikibase-item"
+          },
+          "type": "statement",
+          "id": "q3287074$60B109E8-6454-4702-8E2A-91168E4E488B",
+          "rank": "normal",
+          "references": [
+            {
+              "hash": "d709174cc609072fbf310bb52ddfb7aa2332b473",
+              "snaks": {
+                "P248": [
+                  {
+                    "snaktype": "value",
+                    "property": "P248",
+                    "hash": "fc376b4e25f8c58fa7210b660e00a66558a3332b",
+                    "datavalue": {
+                      "value": {
+                        "entity-type": "item",
+                        "numeric-id": 809830,
+                        "id": "Q809830"
+                      },
+                      "type": "wikibase-entityid"
+                    },
+                    "datatype": "wikibase-item"
+                  }
+                ]
+              },
+              "snaks-order": [
+                "P248"
+              ]
+            }
+          ]
+        }
+      ],
+      "P131": [
+        {
+          "mainsnak": {
+            "snaktype": "value",
+            "property": "P131",
+            "hash": "ceffbc196a566e5266dad0fe6addace4b6e327be",
+            "datavalue": {
+              "value": {
+                "entity-type": "item",
+                "numeric-id": 325680,
+                "id": "Q325680"
+              },
+              "type": "wikibase-entityid"
+            },
+            "datatype": "wikibase-item"
+          },
+          "type": "statement",
+          "id": "Q3287074$BF37110B-F259-42CE-BC3F-0A4DB23939A3",
+          "rank": "normal",
+          "references": [
+            {
+              "hash": "d709174cc609072fbf310bb52ddfb7aa2332b473",
+              "snaks": {
+                "P248": [
+                  {
+                    "snaktype": "value",
+                    "property": "P248",
+                    "hash": "fc376b4e25f8c58fa7210b660e00a66558a3332b",
+                    "datavalue": {
+                      "value": {
+                        "entity-type": "item",
+                        "numeric-id": 809830,
+                        "id": "Q809830"
+                      },
+                      "type": "wikibase-entityid"
+                    },
+                    "datatype": "wikibase-item"
+                  }
+                ]
+              },
+              "snaks-order": [
+                "P248"
+              ]
+            }
+          ]
+        }
+      ],
+      "P1435": [
+        {
+          "mainsnak": {
+            "snaktype": "value",
+            "property": "P1435",
+            "hash": "2a0d37ac7e76d305563257e91e85bb3847f90355",
+            "datavalue": {
+              "value": {
+                "entity-type": "item",
+                "numeric-id": 10387575,
+                "id": "Q10387575"
+              },
+              "type": "wikibase-entityid"
+            },
+            "datatype": "wikibase-item"
+          },
+          "type": "statement",
+          "qualifiers": {
+            "P580": [
+              {
+                "snaktype": "value",
+                "property": "P580",
+                "hash": "97eb30fd88fb8863adc6c775f6115da0c18a9bca",
+                "datavalue": {
+                  "value": {
+                    "time": "+1995-03-15T00:00:00Z",
+                    "timezone": 0,
+                    "before": 0,
+                    "after": 0,
+                    "precision": 11,
+                    "calendarmodel": "http://www.wikidata.org/entity/Q1985727"
+                  },
+                  "type": "time"
+                },
+                "datatype": "time"
+              }
+            ]
+          },
+          "qualifiers-order": [
+            "P580"
+          ],
+          "id": "Q3287074$56005679-EA2F-42A2-AD15-DBBD8B567628",
+          "rank": "normal",
+          "references": [
+            {
+              "hash": "d709174cc609072fbf310bb52ddfb7aa2332b473",
+              "snaks": {
+                "P248": [
+                  {
+                    "snaktype": "value",
+                    "property": "P248",
+                    "hash": "fc376b4e25f8c58fa7210b660e00a66558a3332b",
+                    "datavalue": {
+                      "value": {
+                        "entity-type": "item",
+                        "numeric-id": 809830,
+                        "id": "Q809830"
+                      },
+                      "type": "wikibase-entityid"
+                    },
+                    "datatype": "wikibase-item"
+                  }
+                ]
+              },
+              "snaks-order": [
+                "P248"
+              ]
+            }
+          ]
+        }
+      ],
+      "P380": [
+        {
+          "mainsnak": {
+            "snaktype": "value",
+            "property": "P380",
+            "hash": "28876a81430575b8c431be63dbac8a4f8315aa44",
+            "datavalue": {
+              "value": "PA00135569",
+              "type": "string"
+            },
+            "datatype": "external-id"
+          },
+          "type": "statement",
+          "id": "Q3287074$f59422b1-4af0-120d-27c9-6061f4e5e177",
+          "rank": "normal",
+          "references": [
+            {
+              "hash": "d709174cc609072fbf310bb52ddfb7aa2332b473",
+              "snaks": {
+                "P248": [
+                  {
+                    "snaktype": "value",
+                    "property": "P248",
+                    "hash": "fc376b4e25f8c58fa7210b660e00a66558a3332b",
+                    "datavalue": {
+                      "value": {
+                        "entity-type": "item",
+                        "numeric-id": 809830,
+                        "id": "Q809830"
+                      },
+                      "type": "wikibase-entityid"
+                    },
+                    "datatype": "wikibase-item"
+                  }
+                ]
+              },
+              "snaks-order": [
+                "P248"
+              ]
+            }
+          ]
+        }
+      ],
+      "P18": [
+        {
+          "mainsnak": {
+            "snaktype": "value",
+            "property": "P18",
+            "hash": "92f9e8e79cde56aa938352e62b6e8cd64e375838",
+            "datavalue": {
+              "value": "P5210019 DxO copie.jpg",
+              "type": "string"
+            },
+            "datatype": "commonsMedia"
+          },
+          "type": "statement",
+          "qualifiers": {
+            "P585": [
+              {
+                "snaktype": "value",
+                "property": "P585",
+                "hash": "ac6b62ef6e1747ac17a85d049eb9ea15b5019105",
+                "datavalue": {
+                  "value": {
+                    "time": "+2012-05-21T00:00:00Z",
+                    "timezone": 0,
+                    "before": 0,
+                    "after": 0,
+                    "precision": 11,
+                    "calendarmodel": "http://www.wikidata.org/entity/Q1985727"
+                  },
+                  "type": "time"
+                },
+                "datatype": "time"
+              }
+            ]
+          },
+          "qualifiers-order": [
+            "P585"
+          ],
+          "id": "Q3287074$40825858-4ec5-172a-3195-4d69de08e29c",
+          "rank": "normal"
+        }
+      ],
+      "P31": [
+        {
+          "mainsnak": {
+            "snaktype": "value",
+            "property": "P31",
+            "hash": "a37242c1d3988b2a21410c9a25d8ca2c069763c8",
+            "datavalue": {
+              "value": {
+                "entity-type": "item",
+                "numeric-id": 380342,
+                "id": "Q380342"
+              },
+              "type": "wikibase-entityid"
+            },
+            "datatype": "wikibase-item"
+          },
+          "type": "statement",
+          "id": "Q3287074$058558ef-4e28-ff90-c554-a54f38f1f33e",
+          "rank": "normal"
+        },
+        {
+          "mainsnak": {
+            "snaktype": "value",
+            "property": "P31",
+            "hash": "04daab37231e4c745b38df7df0f8e854c8087c66",
+            "datavalue": {
+              "value": {
+                "entity-type": "item",
+                "numeric-id": 111243552,
+                "id": "Q111243552"
+              },
+              "type": "wikibase-entityid"
+            },
+            "datatype": "wikibase-item"
+          },
+          "type": "statement",
+          "id": "Q3287074$07935d21-448f-c650-adbf-10abcc8484d1",
+          "rank": "normal"
+        }
+      ],
+      "P625": [
+        {
+          "mainsnak": {
+            "snaktype": "value",
+            "property": "P625",
+            "hash": "c345f66dd5b1bec7559d5415994dfea060e8647c",
+            "datavalue": {
+              "value": {
+                "latitude": 49.599,
+                "longitude": 3.377,
+                "altitude": null,
+                "precision": 1e-7,
+                "globe": "http://www.wikidata.org/entity/Q2"
+              },
+              "type": "globecoordinate"
+            },
+            "datatype": "globe-coordinate"
+          },
+          "type": "statement",
+          "id": "Q3287074$40d79e63-e901-47ac-92a9-58b99dd7d1b7",
+          "rank": "normal"
+        }
+      ],
+      "P373": [
+        {
+          "mainsnak": {
+            "snaktype": "value",
+            "property": "P373",
+            "hash": "ae7f9008cff828099aa3696158e2a5e4bd03d50e",
+            "datavalue": {
+              "value": "Manufacture royale de glaces de miroirs",
+              "type": "string"
+            },
+            "datatype": "string"
+          },
+          "type": "statement",
+          "id": "Q3287074$e85a5fde-444e-8d6c-9549-1be2f013c1c2",
+          "rank": "normal"
+        }
+      ],
+      "P1417": [
+        {
+          "mainsnak": {
+            "snaktype": "value",
+            "property": "P1417",
+            "hash": "9a52efd074d15e67892e0c59bb1763e1e6ac2a7a",
+            "datavalue": {
+              "value": "topic/Manufacture-Royale-de-Glace",
+              "type": "string"
+            },
+            "datatype": "external-id"
+          },
+          "type": "statement",
+          "qualifiers": {
+            "P1810": [
+              {
+                "snaktype": "value",
+                "property": "P1810",
+                "hash": "dde47845052671ace01045af92897fddaedfc1bd",
+                "datavalue": {
+                  "value": "Manufacture Royale de Glace",
+                  "type": "string"
+                },
+                "datatype": "string"
+              }
+            ]
+          },
+          "qualifiers-order": [
+            "P1810"
+          ],
+          "id": "Q3287074$6DE57EA8-540F-4602-B693-9C9BF6E5E8F7",
+          "rank": "normal"
+        }
+      ],
+      "P646": [
+        {
+          "mainsnak": {
+            "snaktype": "value",
+            "property": "P646",
+            "hash": "9fa8af9b3ccbe9ebb400105cd435c22fd9c09895",
+            "datavalue": {
+              "value": "/m/047s_3h",
+              "type": "string"
+            },
+            "datatype": "external-id"
+          },
+          "type": "statement",
+          "id": "Q3287074$F91FC981-C9BE-4F62-9DBF-4EA052E33CBA",
+          "rank": "normal"
+        }
+      ]
+    },
+    "sitelinks": {
+      "commonswiki": {
+        "site": "commonswiki",
+        "title": "Category:Manufacture royale de glaces de miroirs",
+        "badges": [],
+        "url": "https://commons.wikimedia.org/wiki/Category:Manufacture_royale_de_glaces_de_miroirs"
+      },
+      "enwiki": {
+        "site": "enwiki",
+        "title": "Manufacture royale de glaces de miroirs",
+        "badges": [
+          "Q70893996"
+        ],
+        "url": "https://en.wikipedia.org/wiki/Manufacture_royale_de_glaces_de_miroirs"
+      },
+      "frwiki": {
+        "site": "frwiki",
+        "title": "Manufacture royale de glaces de miroirs",
+        "badges": [],
+        "url": "https://fr.wikipedia.org/wiki/Manufacture_royale_de_glaces_de_miroirs"
+      }
+    }
+  }
+}

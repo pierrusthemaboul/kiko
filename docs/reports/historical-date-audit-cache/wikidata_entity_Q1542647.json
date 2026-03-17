@@ -1,0 +1,530 @@
+{
+  "saved_at": "2026-03-07T15:30:14.145Z",
+  "value": {
+    "pageid": 1479249,
+    "ns": 0,
+    "title": "Q1542647",
+    "lastrevid": 2339032762,
+    "modified": "2025-04-18T06:12:10Z",
+    "type": "item",
+    "id": "Q1542647",
+    "labels": {
+      "de": {
+        "language": "de",
+        "value": "Schlacht von Brissarthe"
+      },
+      "en": {
+        "language": "en",
+        "value": "Battle of Brissarthe"
+      },
+      "es": {
+        "language": "es",
+        "value": "Batalla de Brissarthe"
+      },
+      "fi": {
+        "language": "fi",
+        "value": "Brissarthen taistelu"
+      },
+      "fr": {
+        "language": "fr",
+        "value": "bataille de Brissarthe"
+      },
+      "it": {
+        "language": "it",
+        "value": "battaglia di Brissarthe"
+      },
+      "pl": {
+        "language": "pl",
+        "value": "Bitwa pod Brissarthe"
+      },
+      "nl": {
+        "language": "nl",
+        "value": "Battle of Brissarthe"
+      },
+      "ru": {
+        "language": "ru",
+        "value": "Сражение при Бриссарте"
+      },
+      "ja": {
+        "language": "ja",
+        "value": "ブリサルトの戦い"
+      },
+      "cs": {
+        "language": "cs",
+        "value": "Bitva u Brissarthe"
+      },
+      "zh": {
+        "language": "zh",
+        "value": "布里萨尔特战役"
+      },
+      "zh-hant": {
+        "language": "zh-hant",
+        "value": "布里薩爾特戰役"
+      },
+      "yo": {
+        "language": "yo",
+        "value": "ogun Brissarthe"
+      },
+      "uk": {
+        "language": "uk",
+        "value": "Битва при Брісарте"
+      },
+      "gv": {
+        "language": "gv",
+        "value": "Cah Brissarthe"
+      },
+      "ga": {
+        "language": "ga",
+        "value": "Cath Brissarthe"
+      }
+    },
+    "descriptions": {
+      "en": {
+        "language": "en",
+        "value": "866 middle ages battle"
+      },
+      "nl": {
+        "language": "nl",
+        "value": "veldslag in Frankische Rijk"
+      },
+      "yo": {
+        "language": "yo",
+        "value": "ogun"
+      },
+      "fi": {
+        "language": "fi",
+        "value": "viikinkien ja bretonien taistelu frankkeja vastaan 866"
+      }
+    },
+    "aliases": {},
+    "claims": {
+      "P646": [
+        {
+          "mainsnak": {
+            "snaktype": "value",
+            "property": "P646",
+            "hash": "6758f34570aeaae3a8336a487ab23d8348a9cd4a",
+            "datavalue": {
+              "value": "/m/025v9xk",
+              "type": "string"
+            },
+            "datatype": "external-id"
+          },
+          "type": "statement",
+          "id": "Q1542647$85A72A3A-457B-43A4-9F78-C4AE289D6703",
+          "rank": "normal",
+          "references": [
+            {
+              "hash": "2b00cb481cddcac7623114367489b5c194901c4a",
+              "snaks": {
+                "P248": [
+                  {
+                    "snaktype": "value",
+                    "property": "P248",
+                    "hash": "a94b740202b097dd33355e0e6c00e54b9395e5e0",
+                    "datavalue": {
+                      "value": {
+                        "entity-type": "item",
+                        "numeric-id": 15241312,
+                        "id": "Q15241312"
+                      },
+                      "type": "wikibase-entityid"
+                    },
+                    "datatype": "wikibase-item"
+                  }
+                ],
+                "P577": [
+                  {
+                    "snaktype": "value",
+                    "property": "P577",
+                    "hash": "fde79ecb015112d2f29229ccc1ec514ed3e71fa2",
+                    "datavalue": {
+                      "value": {
+                        "time": "+2013-10-28T00:00:00Z",
+                        "timezone": 0,
+                        "before": 0,
+                        "after": 0,
+                        "precision": 11,
+                        "calendarmodel": "http://www.wikidata.org/entity/Q1985727"
+                      },
+                      "type": "time"
+                    },
+                    "datatype": "time"
+                  }
+                ]
+              },
+              "snaks-order": [
+                "P248",
+                "P577"
+              ]
+            }
+          ]
+        }
+      ],
+      "P31": [
+        {
+          "mainsnak": {
+            "snaktype": "value",
+            "property": "P31",
+            "hash": "baa1df9dcd37b9f3a062e7a14a8bef0c37078d32",
+            "datavalue": {
+              "value": {
+                "entity-type": "item",
+                "numeric-id": 178561,
+                "id": "Q178561"
+              },
+              "type": "wikibase-entityid"
+            },
+            "datatype": "wikibase-item"
+          },
+          "type": "statement",
+          "id": "Q1542647$5C66E693-4B28-4EFB-AF20-0A13BE4110E9",
+          "rank": "normal"
+        }
+      ],
+      "P585": [
+        {
+          "mainsnak": {
+            "snaktype": "value",
+            "property": "P585",
+            "hash": "9c1f373f002fcb10a455038e2ff43c6ef1994a96",
+            "datavalue": {
+              "value": {
+                "time": "+0866-07-02T00:00:00Z",
+                "timezone": 0,
+                "before": 0,
+                "after": 0,
+                "precision": 11,
+                "calendarmodel": "http://www.wikidata.org/entity/Q1985786"
+              },
+              "type": "time"
+            },
+            "datatype": "time"
+          },
+          "type": "statement",
+          "id": "Q1542647$729d1343-4f4f-8a2e-04f2-5d4f1036dc5e",
+          "rank": "normal",
+          "references": [
+            {
+              "hash": "6fdaef715e16ded693b7adb27096d9d096114772",
+              "snaks": {
+                "P854": [
+                  {
+                    "snaktype": "value",
+                    "property": "P854",
+                    "hash": "9c3761084e460841dc7ebc1829956518d7309c28",
+                    "datavalue": {
+                      "value": "http://fmg.ac/Projects/MedLands/CAPET.htm#Robertdied866B",
+                      "type": "string"
+                    },
+                    "datatype": "url"
+                  }
+                ],
+                "P1476": [
+                  {
+                    "snaktype": "value",
+                    "property": "P1476",
+                    "hash": "15890b9758d08dec40c958d693fc68c12239d51c",
+                    "datavalue": {
+                      "value": {
+                        "text": "FMG",
+                        "language": "fr"
+                      },
+                      "type": "monolingualtext"
+                    },
+                    "datatype": "monolingualtext"
+                  }
+                ]
+              },
+              "snaks-order": [
+                "P854",
+                "P1476"
+              ]
+            }
+          ]
+        }
+      ],
+      "P276": [
+        {
+          "mainsnak": {
+            "snaktype": "value",
+            "property": "P276",
+            "hash": "50b06913171a2c7aeae2941a7de8f7bac8aafed4",
+            "datavalue": {
+              "value": {
+                "entity-type": "item",
+                "numeric-id": 1104304,
+                "id": "Q1104304"
+              },
+              "type": "wikibase-entityid"
+            },
+            "datatype": "wikibase-item"
+          },
+          "type": "statement",
+          "id": "Q1542647$B96C6FFF-F556-4FCC-996A-B322927576A6",
+          "rank": "normal"
+        }
+      ],
+      "P17": [
+        {
+          "mainsnak": {
+            "snaktype": "value",
+            "property": "P17",
+            "hash": "ecbaaceaeb6da810c4badcc28fe967096e8cc0f3",
+            "datavalue": {
+              "value": {
+                "entity-type": "item",
+                "numeric-id": 146246,
+                "id": "Q146246"
+              },
+              "type": "wikibase-entityid"
+            },
+            "datatype": "wikibase-item"
+          },
+          "type": "statement",
+          "qualifiers": {
+            "P131": [
+              {
+                "snaktype": "value",
+                "property": "P131",
+                "hash": "0099055930908bcdaf56c3f2f56b6a2d614a8354",
+                "datavalue": {
+                  "value": {
+                    "entity-type": "item",
+                    "numeric-id": 106577,
+                    "id": "Q106577"
+                  },
+                  "type": "wikibase-entityid"
+                },
+                "datatype": "wikibase-item"
+              }
+            ]
+          },
+          "qualifiers-order": [
+            "P131"
+          ],
+          "id": "Q1542647$4E8DE77C-74AF-45C2-84ED-386EEE25D15D",
+          "rank": "normal"
+        },
+        {
+          "mainsnak": {
+            "snaktype": "value",
+            "property": "P17",
+            "hash": "c05db5d169c2560b9799d567a803d20a392f53e4",
+            "datavalue": {
+              "value": {
+                "entity-type": "item",
+                "numeric-id": 142,
+                "id": "Q142"
+              },
+              "type": "wikibase-entityid"
+            },
+            "datatype": "wikibase-item"
+          },
+          "type": "statement",
+          "id": "Q1542647$823B4232-BB12-412F-93CA-706CAF260BEA",
+          "rank": "normal"
+        }
+      ],
+      "P710": [
+        {
+          "mainsnak": {
+            "snaktype": "value",
+            "property": "P710",
+            "hash": "5383df461de8ad83337ebbeea36fadf9355a5523",
+            "datavalue": {
+              "value": {
+                "entity-type": "item",
+                "numeric-id": 43482,
+                "id": "Q43482"
+              },
+              "type": "wikibase-entityid"
+            },
+            "datatype": "wikibase-item"
+          },
+          "type": "statement",
+          "id": "Q1542647$F481BF91-040F-4CA7-9A28-01FDC59CEF5D",
+          "rank": "normal"
+        },
+        {
+          "mainsnak": {
+            "snaktype": "value",
+            "property": "P710",
+            "hash": "3468b1ad2fd735ba7b39963456a6e6459c353859",
+            "datavalue": {
+              "value": {
+                "entity-type": "item",
+                "numeric-id": 309197,
+                "id": "Q309197"
+              },
+              "type": "wikibase-entityid"
+            },
+            "datatype": "wikibase-item"
+          },
+          "type": "statement",
+          "id": "Q1542647$BF600494-8BE8-40B1-85AE-7FF2BC960018",
+          "rank": "normal"
+        },
+        {
+          "mainsnak": {
+            "snaktype": "value",
+            "property": "P710",
+            "hash": "ff766dc47fe2e9bce258a847d249658bf563d9d9",
+            "datavalue": {
+              "value": {
+                "entity-type": "item",
+                "numeric-id": 12567,
+                "id": "Q12567"
+              },
+              "type": "wikibase-entityid"
+            },
+            "datatype": "wikibase-item"
+          },
+          "type": "statement",
+          "id": "Q1542647$9E631973-9843-4554-A349-FB406718C7B4",
+          "rank": "normal"
+        }
+      ],
+      "P18": [
+        {
+          "mainsnak": {
+            "snaktype": "value",
+            "property": "P18",
+            "hash": "eb4b7a55aaeba84bc85a7bd6da13e028f70b1455",
+            "datavalue": {
+              "value": "Mort de Robert le Fort au combat de Brisserte, 25 juillet 866.jpg",
+              "type": "string"
+            },
+            "datatype": "commonsMedia"
+          },
+          "type": "statement",
+          "id": "Q1542647$8315961A-515C-4F30-89B7-64B22F6B8779",
+          "rank": "normal"
+        }
+      ],
+      "P625": [
+        {
+          "mainsnak": {
+            "snaktype": "value",
+            "property": "P625",
+            "hash": "083aa5bec17d85fbf8b280387062df39bfa53f49",
+            "datavalue": {
+              "value": {
+                "latitude": 47.699813,
+                "longitude": -0.453717,
+                "altitude": null,
+                "precision": 0.000001,
+                "globe": "http://www.wikidata.org/entity/Q2"
+              },
+              "type": "globecoordinate"
+            },
+            "datatype": "globe-coordinate"
+          },
+          "type": "statement",
+          "id": "Q1542647$166862A1-6D23-4DE7-A685-5CEA9F00FD27",
+          "rank": "normal"
+        },
+        {
+          "mainsnak": {
+            "snaktype": "value",
+            "property": "P625",
+            "hash": "b23739c55c7337ea41070c35d62c4978f7b7fb91",
+            "datavalue": {
+              "value": {
+                "latitude": 47.70167,
+                "longitude": 0.44917,
+                "altitude": null,
+                "precision": 0.000001,
+                "globe": "http://www.wikidata.org/entity/Q2"
+              },
+              "type": "globecoordinate"
+            },
+            "datatype": "globe-coordinate"
+          },
+          "type": "statement",
+          "id": "Q1542647$958F8850-6DAB-4178-AF94-7CD55D55B563",
+          "rank": "normal"
+        }
+      ],
+      "P373": [
+        {
+          "mainsnak": {
+            "snaktype": "value",
+            "property": "P373",
+            "hash": "8c95830e2d8b80b958d110be88e14e30fc685f6d",
+            "datavalue": {
+              "value": "Battle of Brissarthe",
+              "type": "string"
+            },
+            "datatype": "string"
+          },
+          "type": "statement",
+          "id": "Q1542647$ec8eea30-a681-4446-b321-2da766fea9d0",
+          "rank": "normal"
+        }
+      ]
+    },
+    "sitelinks": {
+      "commonswiki": {
+        "site": "commonswiki",
+        "title": "Category:Battle of Brissarthe",
+        "badges": [],
+        "url": "https://commons.wikimedia.org/wiki/Category:Battle_of_Brissarthe"
+      },
+      "cswiki": {
+        "site": "cswiki",
+        "title": "Bitva u Brissarthe",
+        "badges": [],
+        "url": "https://cs.wikipedia.org/wiki/Bitva_u_Brissarthe"
+      },
+      "dewiki": {
+        "site": "dewiki",
+        "title": "Schlacht von Brissarthe",
+        "badges": [],
+        "url": "https://de.wikipedia.org/wiki/Schlacht_von_Brissarthe"
+      },
+      "enwiki": {
+        "site": "enwiki",
+        "title": "Battle of Brissarthe",
+        "badges": [],
+        "url": "https://en.wikipedia.org/wiki/Battle_of_Brissarthe"
+      },
+      "eswiki": {
+        "site": "eswiki",
+        "title": "Batalla de Brissarthe",
+        "badges": [],
+        "url": "https://es.wikipedia.org/wiki/Batalla_de_Brissarthe"
+      },
+      "fiwiki": {
+        "site": "fiwiki",
+        "title": "Brissarthen taistelu",
+        "badges": [],
+        "url": "https://fi.wikipedia.org/wiki/Brissarthen_taistelu"
+      },
+      "frwiki": {
+        "site": "frwiki",
+        "title": "Bataille de Brissarthe",
+        "badges": [],
+        "url": "https://fr.wikipedia.org/wiki/Bataille_de_Brissarthe"
+      },
+      "itwiki": {
+        "site": "itwiki",
+        "title": "Battaglia di Brissarthe",
+        "badges": [],
+        "url": "https://it.wikipedia.org/wiki/Battaglia_di_Brissarthe"
+      },
+      "plwiki": {
+        "site": "plwiki",
+        "title": "Bitwa pod Brissarthe",
+        "badges": [],
+        "url": "https://pl.wikipedia.org/wiki/Bitwa_pod_Brissarthe"
+      },
+      "ruwiki": {
+        "site": "ruwiki",
+        "title": "Сражение при Бриссарте",
+        "badges": [],
+        "url": "https://ru.wikipedia.org/wiki/%D0%A1%D1%80%D0%B0%D0%B6%D0%B5%D0%BD%D0%B8%D0%B5_%D0%BF%D1%80%D0%B8_%D0%91%D1%80%D0%B8%D1%81%D1%81%D0%B0%D1%80%D1%82%D0%B5"
+      }
+    }
+  }
+}

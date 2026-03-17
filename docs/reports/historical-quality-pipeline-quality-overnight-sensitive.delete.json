@@ -1,0 +1,139 @@
+[
+  {
+    "id": "20c97f90-d3a0-4187-8171-975202f331ca",
+    "current_title": "Le règne de Christine de Suède",
+    "current_date": "1632-01-01",
+    "current_description": "Le règne de Christine de Suède, de 1632 à 1654, fut marqué par son extravagance, son mécénat artistique et scientifique, et sa conversion controversée au catholicisme. Cette dernière conduisit à son abdication, un événement sans précédent pour une reine protestante.",
+    "status": "AMBIGUOUS_TITLE",
+    "result_bucket": "titre_ambigu_ou_collision",
+    "date_candidate": null,
+    "matched_article_fr": "https://fr.wikipedia.org/wiki/Christine_de_Su%C3%A8de",
+    "matched_article_en": null,
+    "wikidata_id": "Q52937",
+    "sources_checked": [
+      {
+        "source_id": "wikipedia_fr_article",
+        "source_type": "wikipedia_fr",
+        "title": "Christine de Suède",
+        "url": "https://fr.wikipedia.org/wiki/Christine_de_Su%C3%A8de",
+        "quote": "Christine de Suède (en suédois : Kristina av Sverige), née le 18 décembre 1626 à Stockholm (Suède-Finlande) et morte le 19 avril 1689 à Rome (États pontificaux), règne sur la Suède de 1632 à 1654. Bien qu'elle soit également connue comme la reine Christine (en suédois : Drottning Kristina), son titre réel est « roi de Suède » et non « reine », conformément au souhait de son père de lui permettre ainsi de monter sur le trône. Élevée comme un prince, elle est brillante et férue d’érudition. Elle s’impose dans les affaires du royaume à partir de 1644, favorise le développement des arts, des lettres et des sciences, et attire à sa cour des intellectuels et artistes européens, dont le philosophe René Descartes. Refusant le mariage et d'avoir un héritier, épuisée par l’exercice du pouvoir et profondément attirée par le catholicisme, Christine abdique en 1654 en faveur de son cousin Charles X …",
+        "wikidata_id": "Q52937",
+        "date_iso": null,
+        "precision": null
+      },
+      {
+        "source_id": "P569_1",
+        "source_type": "wikidata",
+        "title": "Q52937",
+        "url": "https://www.wikidata.org/wiki/Q52937",
+        "quote": "date of birth: 1626-12-18",
+        "date_iso": "1626-12-18",
+        "precision": "day",
+        "wikidata_id": "Q52937"
+      },
+      {
+        "source_id": "P569_2",
+        "source_type": "wikidata",
+        "title": "Q52937",
+        "url": "https://www.wikidata.org/wiki/Q52937",
+        "quote": "date of birth: 1626-12-07",
+        "date_iso": "1626-12-07",
+        "precision": "day",
+        "wikidata_id": "Q52937"
+      },
+      {
+        "source_id": "P570_3",
+        "source_type": "wikidata",
+        "title": "Q52937",
+        "url": "https://www.wikidata.org/wiki/Q52937",
+        "quote": "date of death: 1689-04-19",
+        "date_iso": "1689-04-19",
+        "precision": "day",
+        "wikidata_id": "Q52937"
+      },
+      {
+        "source_id": "P570_4",
+        "source_type": "wikidata",
+        "title": "Q52937",
+        "url": "https://www.wikidata.org/wiki/Q52937",
+        "quote": "date of death: 1689-04-09",
+        "date_iso": "1689-04-09",
+        "precision": "day",
+        "wikidata_id": "Q52937"
+      }
+    ],
+    "decision": "DELETE",
+    "proposed_title": null,
+    "proposed_date_iso": null,
+    "delete_reason": "L'événement décrit une période (règne) et non un événement singulier datable précisément.",
+    "confidence": 1,
+    "evidence_level": "A",
+    "official_name_respected": true,
+    "title_in_french": true,
+    "title_unambiguous": true,
+    "title_has_no_date": true,
+    "event_is_singular": false,
+    "description_consistent": true,
+    "reasoning_short": "Le titre et la description indiquent une période, le règne de Christine de Suède, qui s'étend de 1632 à 1654. Ce n'est pas un événement unique qui peut être associé à une date précise.",
+    "recommendation": "Supprimer car il s'agit d'une période et non d'un événement singulier.",
+    "key_sources": [
+      "wikipedia_fr_article"
+    ],
+    "review_required": true,
+    "final_decision": "DELETE"
+  },
+  {
+    "id": "96ade0f1-cb2e-40a5-a9fa-f009e6fdaffc",
+    "current_title": "Petite ère glaciaire",
+    "current_date": "1350-01-01",
+    "current_description": "La Petite Ère Glaciaire, débutant vers 1350, a entraîné un refroidissement global, affectant durablement les sociétés. Hivers rigoureux, étés frais et avancées glaciaires bouleversèrent l'agriculture et favorisèrent famines et épidémies.",
+    "status": "POTENTIAL_DATE_ERROR",
+    "result_bucket": "divergence_date",
+    "date_candidate": "1303-01-01",
+    "matched_article_fr": "Petit âge glaciaire",
+    "matched_article_en": null,
+    "wikidata_id": "Q190530",
+    "sources_checked": [
+      {
+        "source_id": "wikipedia_fr_article",
+        "source_type": "wikipedia_fr",
+        "title": "Petit âge glaciaire",
+        "url": "https://fr.wikipedia.org/wiki/Petit_%C3%A2ge_glaciaire",
+        "quote": "Le petit âge glaciaire (parfois abrégé en PAG) est une période climatique froide, particulièrement intense dans l'Atlantique nord, ayant approximativement eu lieu entre le début du XIVe siècle et la fin du XIXe siècle. Elle est caractérisée par une série d'hivers longs et froids en Europe et en Amérique du Nord. Elle porte plusieurs noms, dont « petit âge de glace », « petite période glaciaire » ou encore « petite glaciation ». Elle se caractérise par des périodes de crues glaciaires, auxquelles correspondent plusieurs minimums de températures moyennes très nets. Elle succède à l'optimum climatique médiéval (OCM), période plus chaude. Ce terme est introduit de manière informelle en 1939 par le géologue François E. Matthes pour désigner initialement les 4 000 dernières années. Cette expression « petit âge glaciaire » est aussi maintenant attribuée à la période qui a suivi les trois érupt…",
+        "wikidata_id": "Q190530",
+        "date_iso": null,
+        "precision": null
+      },
+      {
+        "source_id": "P580_1",
+        "source_type": "wikidata",
+        "title": "Q190530",
+        "url": "https://www.wikidata.org/wiki/Q190530",
+        "quote": "start time: 1303-01-01",
+        "date_iso": "1303-01-01",
+        "precision": "year",
+        "wikidata_id": "Q190530"
+      }
+    ],
+    "decision": "UPDATE_DATE",
+    "proposed_title": null,
+    "proposed_date_iso": "1303-01-01",
+    "delete_reason": null,
+    "confidence": 0.9,
+    "evidence_level": "A",
+    "official_name_respected": true,
+    "title_in_french": true,
+    "title_unambiguous": true,
+    "title_has_no_date": true,
+    "event_is_singular": false,
+    "description_consistent": true,
+    "reasoning_short": "Wikidata et l'article Wikipédia en français indiquent 1303 comme date de début. La description est cohérente avec cette date. L'événement est une période, pas un événement singulier.",
+    "recommendation": "Mettre à jour la date avec 1303-01-01. Considérer l'ajout d'une date de fin si possible.",
+    "key_sources": [
+      "wikipedia_fr_article",
+      "P580_1"
+    ],
+    "review_required": true,
+    "final_decision": "DELETE"
+  }
+]

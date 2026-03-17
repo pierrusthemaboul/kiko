@@ -1,0 +1,1686 @@
+{
+  "pageid": 978249,
+  "ns": 0,
+  "title": "Q1028956",
+  "lastrevid": 2379303058,
+  "modified": "2025-07-14T02:23:15Z",
+  "type": "item",
+  "id": "Q1028956",
+  "labels": {
+    "ru": {
+      "language": "ru",
+      "value": "Гутай (группа)"
+    },
+    "fr": {
+      "language": "fr",
+      "value": "Gutai"
+    },
+    "en": {
+      "language": "en",
+      "value": "Gutai group"
+    },
+    "nl": {
+      "language": "nl",
+      "value": "Gutai"
+    },
+    "ca": {
+      "language": "ca",
+      "value": "Gutai"
+    },
+    "tr": {
+      "language": "tr",
+      "value": "Gutai"
+    },
+    "it": {
+      "language": "it",
+      "value": "Gutai"
+    },
+    "hu": {
+      "language": "hu",
+      "value": "Gutai csoport"
+    },
+    "es": {
+      "language": "es",
+      "value": "Gutai"
+    },
+    "ja": {
+      "language": "ja",
+      "value": "具体美術協会"
+    },
+    "pl": {
+      "language": "pl",
+      "value": "Grupa Gutai"
+    },
+    "pt": {
+      "language": "pt",
+      "value": "Grupo Gutai"
+    },
+    "ar": {
+      "language": "ar",
+      "value": "غوتاي"
+    },
+    "eu": {
+      "language": "eu",
+      "value": "Gutai taldea"
+    },
+    "de": {
+      "language": "de",
+      "value": "Gutai group"
+    }
+  },
+  "descriptions": {
+    "en": {
+      "language": "en",
+      "value": "Japanese art group"
+    },
+    "fr": {
+      "language": "fr",
+      "value": "mouvement artistique japonais"
+    },
+    "nl": {
+      "language": "nl",
+      "value": "Japanse kunstenaarsgroep"
+    },
+    "de": {
+      "language": "de",
+      "value": "Künstlergruppe in Japan"
+    },
+    "ja": {
+      "language": "ja",
+      "value": "日本のアートグループ"
+    }
+  },
+  "aliases": {
+    "fr": [
+      {
+        "language": "fr",
+        "value": "Gutaï"
+      }
+    ],
+    "nl": [
+      {
+        "language": "nl",
+        "value": "Goetaigroep"
+      },
+      {
+        "language": "nl",
+        "value": "Gutai-groep"
+      }
+    ],
+    "ja": [
+      {
+        "language": "ja",
+        "value": "具体美術"
+      },
+      {
+        "language": "ja",
+        "value": "具体"
+      },
+      {
+        "language": "ja",
+        "value": "GUTAI"
+      }
+    ],
+    "en": [
+      {
+        "language": "en",
+        "value": "Gutai"
+      },
+      {
+        "language": "en",
+        "value": "Gutai Bijutsu Kyokai"
+      },
+      {
+        "language": "en",
+        "value": "Gutai Art Association"
+      }
+    ]
+  },
+  "claims": {
+    "P646": [
+      {
+        "mainsnak": {
+          "snaktype": "value",
+          "property": "P646",
+          "hash": "7c536281a9c598dff0637e4309c280aee661da73",
+          "datavalue": {
+            "value": "/m/02qkhkw",
+            "type": "string"
+          },
+          "datatype": "external-id"
+        },
+        "type": "statement",
+        "id": "Q1028956$4168BF93-C99B-4B66-89F2-0A973F60E30D",
+        "rank": "normal",
+        "references": [
+          {
+            "hash": "2b00cb481cddcac7623114367489b5c194901c4a",
+            "snaks": {
+              "P248": [
+                {
+                  "snaktype": "value",
+                  "property": "P248",
+                  "hash": "a94b740202b097dd33355e0e6c00e54b9395e5e0",
+                  "datavalue": {
+                    "value": {
+                      "entity-type": "item",
+                      "numeric-id": 15241312,
+                      "id": "Q15241312"
+                    },
+                    "type": "wikibase-entityid"
+                  },
+                  "datatype": "wikibase-item"
+                }
+              ],
+              "P577": [
+                {
+                  "snaktype": "value",
+                  "property": "P577",
+                  "hash": "fde79ecb015112d2f29229ccc1ec514ed3e71fa2",
+                  "datavalue": {
+                    "value": {
+                      "time": "+2013-10-28T00:00:00Z",
+                      "timezone": 0,
+                      "before": 0,
+                      "after": 0,
+                      "precision": 11,
+                      "calendarmodel": "http://www.wikidata.org/entity/Q1985727"
+                    },
+                    "type": "time"
+                  },
+                  "datatype": "time"
+                }
+              ]
+            },
+            "snaks-order": [
+              "P248",
+              "P577"
+            ]
+          }
+        ]
+      }
+    ],
+    "P31": [
+      {
+        "mainsnak": {
+          "snaktype": "value",
+          "property": "P31",
+          "hash": "5463086c68c6d87abc4777075219652a60e130de",
+          "datavalue": {
+            "value": {
+              "entity-type": "item",
+              "numeric-id": 1400264,
+              "id": "Q1400264"
+            },
+            "type": "wikibase-entityid"
+          },
+          "datatype": "wikibase-item"
+        },
+        "type": "statement",
+        "id": "Q1028956$3FF90594-8E4C-4804-916A-05CA01186A0A",
+        "rank": "normal"
+      },
+      {
+        "mainsnak": {
+          "snaktype": "value",
+          "property": "P31",
+          "hash": "bd510cfac351f05636c2bc1a57c4f4aa70652475",
+          "datavalue": {
+            "value": {
+              "entity-type": "item",
+              "numeric-id": 4502119,
+              "id": "Q4502119"
+            },
+            "type": "wikibase-entityid"
+          },
+          "datatype": "wikibase-item"
+        },
+        "type": "statement",
+        "id": "Q1028956$0f5eda2c-4f47-86eb-4fed-6c95dfeed487",
+        "rank": "normal"
+      }
+    ],
+    "P214": [
+      {
+        "mainsnak": {
+          "snaktype": "value",
+          "property": "P214",
+          "hash": "398b9e239b32e3f3d1ea2bd9370ac192cceece26",
+          "datavalue": {
+            "value": "148830718",
+            "type": "string"
+          },
+          "datatype": "external-id"
+        },
+        "type": "statement",
+        "id": "Q1028956$78DEEC21-0DB2-4904-A59E-7644B90EB1F2",
+        "rank": "normal",
+        "references": [
+          {
+            "hash": "8b703add300f239205b1a25278dcedba0df43d15",
+            "snaks": {
+              "P248": [
+                {
+                  "snaktype": "value",
+                  "property": "P248",
+                  "hash": "6b7d4330c4aac4caec4ede9de0311ce273f88ecd",
+                  "datavalue": {
+                    "value": {
+                      "entity-type": "item",
+                      "numeric-id": 54919,
+                      "id": "Q54919"
+                    },
+                    "type": "wikibase-entityid"
+                  },
+                  "datatype": "wikibase-item"
+                }
+              ],
+              "P813": [
+                {
+                  "snaktype": "value",
+                  "property": "P813",
+                  "hash": "9652be8264645c206f9a01b9be2d1dbaf6ac2228",
+                  "datavalue": {
+                    "value": {
+                      "time": "+2015-08-07T00:00:00Z",
+                      "timezone": 0,
+                      "before": 0,
+                      "after": 0,
+                      "precision": 11,
+                      "calendarmodel": "http://www.wikidata.org/entity/Q1985727"
+                    },
+                    "type": "time"
+                  },
+                  "datatype": "time"
+                }
+              ]
+            },
+            "snaks-order": [
+              "P248",
+              "P813"
+            ]
+          },
+          {
+            "hash": "8e442488563fc235d4f8520c8f4335e61ceda44c",
+            "snaks": {
+              "P248": [
+                {
+                  "snaktype": "value",
+                  "property": "P248",
+                  "hash": "b09baac32eb0d06cecfd287182405f4371d8c4a2",
+                  "datavalue": {
+                    "value": {
+                      "entity-type": "item",
+                      "numeric-id": 115920372,
+                      "id": "Q115920372"
+                    },
+                    "type": "wikibase-entityid"
+                  },
+                  "datatype": "wikibase-item"
+                }
+              ],
+              "P11496": [
+                {
+                  "snaktype": "value",
+                  "property": "P11496",
+                  "hash": "857dcf896edc56496f0eb94cabad12454f05464e",
+                  "datavalue": {
+                    "value": "1140845216776375680",
+                    "type": "string"
+                  },
+                  "datatype": "external-id"
+                }
+              ],
+              "P813": [
+                {
+                  "snaktype": "value",
+                  "property": "P813",
+                  "hash": "f52e6fcc770ad380879e125bf0a7a481b01e0ca3",
+                  "datavalue": {
+                    "value": {
+                      "time": "+2023-02-15T00:00:00Z",
+                      "timezone": 0,
+                      "before": 0,
+                      "after": 0,
+                      "precision": 11,
+                      "calendarmodel": "http://www.wikidata.org/entity/Q1985727"
+                    },
+                    "type": "time"
+                  },
+                  "datatype": "time"
+                }
+              ]
+            },
+            "snaks-order": [
+              "P248",
+              "P11496",
+              "P813"
+            ]
+          }
+        ]
+      }
+    ],
+    "P3417": [
+      {
+        "mainsnak": {
+          "snaktype": "value",
+          "property": "P3417",
+          "hash": "b0dcf0fe2ead31bfb26545b7280af9ccb3986623",
+          "datavalue": {
+            "value": "Gutai-Group",
+            "type": "string"
+          },
+          "datatype": "external-id"
+        },
+        "type": "statement",
+        "id": "Q1028956$9B113EF5-95A1-4E83-8D5A-8E089F2A865B",
+        "rank": "normal",
+        "references": [
+          {
+            "hash": "3b0a5bb3c1f955edce73740124f7d935698092ad",
+            "snaks": {
+              "P248": [
+                {
+                  "snaktype": "value",
+                  "property": "P248",
+                  "hash": "3ac9682e789a3a3791d4fd088b265ea03abef101",
+                  "datavalue": {
+                    "value": {
+                      "entity-type": "item",
+                      "numeric-id": 51711,
+                      "id": "Q51711"
+                    },
+                    "type": "wikibase-entityid"
+                  },
+                  "datatype": "wikibase-item"
+                }
+              ]
+            },
+            "snaks-order": [
+              "P248"
+            ]
+          }
+        ]
+      }
+    ],
+    "P373": [
+      {
+        "mainsnak": {
+          "snaktype": "value",
+          "property": "P373",
+          "hash": "fdf4845eb5ba07af3e8531f2265b4ee6f854a52d",
+          "datavalue": {
+            "value": "Gutai group",
+            "type": "string"
+          },
+          "datatype": "string"
+        },
+        "type": "statement",
+        "id": "Q1028956$9CE629FB-5EA9-498D-93B0-BC79DEB11858",
+        "rank": "normal"
+      }
+    ],
+    "P349": [
+      {
+        "mainsnak": {
+          "snaktype": "value",
+          "property": "P349",
+          "hash": "7f9bbe4c7490641c471c8c59bdfc2f5db649249d",
+          "datavalue": {
+            "value": "00633017",
+            "type": "string"
+          },
+          "datatype": "external-id"
+        },
+        "type": "statement",
+        "id": "Q1028956$09f83c6d-4e86-98b5-a57d-2f3566ca028a",
+        "rank": "normal"
+      }
+    ],
+    "P271": [
+      {
+        "mainsnak": {
+          "snaktype": "value",
+          "property": "P271",
+          "hash": "311d8a9e92fbb329d8af61198fc993dbd8e5914a",
+          "datavalue": {
+            "value": "DA03750062",
+            "type": "string"
+          },
+          "datatype": "external-id"
+        },
+        "type": "statement",
+        "id": "Q1028956$c63a600f-4d75-765e-1473-7fd6c9f4d9fb",
+        "rank": "normal",
+        "references": [
+          {
+            "hash": "8e442488563fc235d4f8520c8f4335e61ceda44c",
+            "snaks": {
+              "P248": [
+                {
+                  "snaktype": "value",
+                  "property": "P248",
+                  "hash": "b09baac32eb0d06cecfd287182405f4371d8c4a2",
+                  "datavalue": {
+                    "value": {
+                      "entity-type": "item",
+                      "numeric-id": 115920372,
+                      "id": "Q115920372"
+                    },
+                    "type": "wikibase-entityid"
+                  },
+                  "datatype": "wikibase-item"
+                }
+              ],
+              "P11496": [
+                {
+                  "snaktype": "value",
+                  "property": "P11496",
+                  "hash": "857dcf896edc56496f0eb94cabad12454f05464e",
+                  "datavalue": {
+                    "value": "1140845216776375680",
+                    "type": "string"
+                  },
+                  "datatype": "external-id"
+                }
+              ],
+              "P813": [
+                {
+                  "snaktype": "value",
+                  "property": "P813",
+                  "hash": "f52e6fcc770ad380879e125bf0a7a481b01e0ca3",
+                  "datavalue": {
+                    "value": {
+                      "time": "+2023-02-15T00:00:00Z",
+                      "timezone": 0,
+                      "before": 0,
+                      "after": 0,
+                      "precision": 11,
+                      "calendarmodel": "http://www.wikidata.org/entity/Q1985727"
+                    },
+                    "type": "time"
+                  },
+                  "datatype": "time"
+                }
+              ]
+            },
+            "snaks-order": [
+              "P248",
+              "P11496",
+              "P813"
+            ]
+          }
+        ]
+      }
+    ],
+    "P227": [
+      {
+        "mainsnak": {
+          "snaktype": "value",
+          "property": "P227",
+          "hash": "a11983188d600fbdb3764836f566c1a8ec1d16bd",
+          "datavalue": {
+            "value": "16151937-4",
+            "type": "string"
+          },
+          "datatype": "external-id"
+        },
+        "type": "statement",
+        "id": "Q1028956$d36430bc-4b60-7261-fbc8-e1a26a9fade4",
+        "rank": "normal"
+      }
+    ],
+    "P244": [
+      {
+        "mainsnak": {
+          "snaktype": "value",
+          "property": "P244",
+          "hash": "e8c9caeaa4f106f5a152eae2ac9deaf3484aa81c",
+          "datavalue": {
+            "value": "nr91000299",
+            "type": "string"
+          },
+          "datatype": "external-id"
+        },
+        "type": "statement",
+        "id": "Q1028956$1e3de59b-49e2-3ffe-462a-23f5a166e2de",
+        "rank": "normal"
+      }
+    ],
+    "P949": [
+      {
+        "mainsnak": {
+          "snaktype": "value",
+          "property": "P949",
+          "hash": "03fcec3aa06f2f5d5533578b6433812065187ec8",
+          "datavalue": {
+            "value": "002089372",
+            "type": "string"
+          },
+          "datatype": "external-id"
+        },
+        "type": "statement",
+        "id": "Q1028956$e595a51d-491f-096b-1775-ac68e946dea4",
+        "rank": "normal"
+      }
+    ],
+    "P269": [
+      {
+        "mainsnak": {
+          "snaktype": "value",
+          "property": "P269",
+          "hash": "bb3a82adc5da7f3049579bb3b2c20953754b150c",
+          "datavalue": {
+            "value": "034131744",
+            "type": "string"
+          },
+          "datatype": "external-id"
+        },
+        "type": "statement",
+        "id": "Q1028956$948DB47A-2DC3-4ABB-BFC7-CA3E2CD32288",
+        "rank": "normal",
+        "references": [
+          {
+            "hash": "08986c1577f851cbaac06cdd53b78601c98ea010",
+            "snaks": {
+              "P248": [
+                {
+                  "snaktype": "value",
+                  "property": "P248",
+                  "hash": "e5f853298b310a45c2ee3b01a2a4940640f7985a",
+                  "datavalue": {
+                    "value": {
+                      "entity-type": "item",
+                      "numeric-id": 47757534,
+                      "id": "Q47757534"
+                    },
+                    "type": "wikibase-entityid"
+                  },
+                  "datatype": "wikibase-item"
+                }
+              ]
+            },
+            "snaks-order": [
+              "P248"
+            ]
+          }
+        ]
+      }
+    ],
+    "P1273": [
+      {
+        "mainsnak": {
+          "snaktype": "value",
+          "property": "P1273",
+          "hash": "f2c8935b699fe8aa122f1ccdef3ef4c0e020dbfa",
+          "datavalue": {
+            "value": "a11816387",
+            "type": "string"
+          },
+          "datatype": "external-id"
+        },
+        "type": "statement",
+        "id": "Q1028956$04ced3dd-4859-c541-918b-3ed9ef5d3a48",
+        "rank": "normal"
+      }
+    ],
+    "P3219": [
+      {
+        "mainsnak": {
+          "snaktype": "value",
+          "property": "P3219",
+          "hash": "707ee51b48c89c3f5c1151676db10f5547e18c1c",
+          "datavalue": {
+            "value": "gutai",
+            "type": "string"
+          },
+          "datatype": "external-id"
+        },
+        "type": "statement",
+        "id": "Q1028956$62E41DF0-BC2A-4474-98F4-32968D0B61AA",
+        "rank": "normal"
+      }
+    ],
+    "P213": [
+      {
+        "mainsnak": {
+          "snaktype": "value",
+          "property": "P213",
+          "hash": "0f51557229af2be43ca6f34328cf432eb8adcaaf",
+          "datavalue": {
+            "value": "0000000118825121",
+            "type": "string"
+          },
+          "datatype": "external-id"
+        },
+        "type": "statement",
+        "id": "Q1028956$85087850-467E-41F0-ABB7-E746D8A2B6AF",
+        "rank": "normal",
+        "references": [
+          {
+            "hash": "a605cc92f4063f656d34bb26e0654b6e26b2c764",
+            "snaks": {
+              "P248": [
+                {
+                  "snaktype": "value",
+                  "property": "P248",
+                  "hash": "6b7d4330c4aac4caec4ede9de0311ce273f88ecd",
+                  "datavalue": {
+                    "value": {
+                      "entity-type": "item",
+                      "numeric-id": 54919,
+                      "id": "Q54919"
+                    },
+                    "type": "wikibase-entityid"
+                  },
+                  "datatype": "wikibase-item"
+                }
+              ],
+              "P214": [
+                {
+                  "snaktype": "value",
+                  "property": "P214",
+                  "hash": "398b9e239b32e3f3d1ea2bd9370ac192cceece26",
+                  "datavalue": {
+                    "value": "148830718",
+                    "type": "string"
+                  },
+                  "datatype": "external-id"
+                }
+              ],
+              "P813": [
+                {
+                  "snaktype": "value",
+                  "property": "P813",
+                  "hash": "a1b98b5c8bb6eca02829acaf6200c3e4a45b4dd0",
+                  "datavalue": {
+                    "value": {
+                      "time": "+2018-10-07T00:00:00Z",
+                      "timezone": 0,
+                      "before": 0,
+                      "after": 0,
+                      "precision": 11,
+                      "calendarmodel": "http://www.wikidata.org/entity/Q1985727"
+                    },
+                    "type": "time"
+                  },
+                  "datatype": "time"
+                }
+              ]
+            },
+            "snaks-order": [
+              "P248",
+              "P214",
+              "P813"
+            ]
+          }
+        ]
+      }
+    ],
+    "P3782": [
+      {
+        "mainsnak": {
+          "snaktype": "value",
+          "property": "P3782",
+          "hash": "81b0953e548bc11a0898ce8893a0494ecf8bd9df",
+          "datavalue": {
+            "value": "gutai-group",
+            "type": "string"
+          },
+          "datatype": "external-id"
+        },
+        "type": "statement",
+        "id": "Q1028956$844FB73C-4EAD-4837-8DEA-F0E0FB084608",
+        "rank": "normal"
+      }
+    ],
+    "P1988": [
+      {
+        "mainsnak": {
+          "snaktype": "value",
+          "property": "P1988",
+          "hash": "d1227e8f9f3e54ca546f1b792caba3331f72bc49",
+          "datavalue": {
+            "value": "2645_artiste_GUTAI",
+            "type": "string"
+          },
+          "datatype": "external-id"
+        },
+        "type": "statement",
+        "id": "Q1028956$80BBCB4D-F2AC-4E85-A2FD-3545E1A9A5E8",
+        "rank": "normal"
+      }
+    ],
+    "P17": [
+      {
+        "mainsnak": {
+          "snaktype": "value",
+          "property": "P17",
+          "hash": "55178c20e031f1579d34d802f16f6b9951b631e1",
+          "datavalue": {
+            "value": {
+              "entity-type": "item",
+              "numeric-id": 17,
+              "id": "Q17"
+            },
+            "type": "wikibase-entityid"
+          },
+          "datatype": "wikibase-item"
+        },
+        "type": "statement",
+        "id": "Q1028956$37926c5f-4d8b-c82d-150a-908c6dfffcec",
+        "rank": "normal",
+        "references": [
+          {
+            "hash": "c894766e77e7acd5805209dae6d9ec5c7c5b0c19",
+            "snaks": {
+              "P854": [
+                {
+                  "snaktype": "value",
+                  "property": "P854",
+                  "hash": "eefcf80619161872006d401c936206cb3b578756",
+                  "datavalue": {
+                    "value": "https://www.tate.org.uk/art/art-terms/g/gutai",
+                    "type": "string"
+                  },
+                  "datatype": "url"
+                }
+              ],
+              "P813": [
+                {
+                  "snaktype": "value",
+                  "property": "P813",
+                  "hash": "64c6dff51f3c6728757d17d46a603e50fc74d9e6",
+                  "datavalue": {
+                    "value": {
+                      "time": "+2019-07-26T00:00:00Z",
+                      "timezone": 0,
+                      "before": 0,
+                      "after": 0,
+                      "precision": 11,
+                      "calendarmodel": "http://www.wikidata.org/entity/Q1985727"
+                    },
+                    "type": "time"
+                  },
+                  "datatype": "time"
+                }
+              ]
+            },
+            "snaks-order": [
+              "P854",
+              "P813"
+            ]
+          }
+        ]
+      }
+    ],
+    "P571": [
+      {
+        "mainsnak": {
+          "snaktype": "value",
+          "property": "P571",
+          "hash": "010da0071e4fa33b1f0ba7a7f92ac89aa016de38",
+          "datavalue": {
+            "value": {
+              "time": "+1954-00-00T00:00:00Z",
+              "timezone": 0,
+              "before": 0,
+              "after": 0,
+              "precision": 9,
+              "calendarmodel": "http://www.wikidata.org/entity/Q1985727"
+            },
+            "type": "time"
+          },
+          "datatype": "time"
+        },
+        "type": "statement",
+        "id": "Q1028956$90e7d3af-450e-7628-a089-2a8fc7dd71f6",
+        "rank": "normal",
+        "references": [
+          {
+            "hash": "c894766e77e7acd5805209dae6d9ec5c7c5b0c19",
+            "snaks": {
+              "P854": [
+                {
+                  "snaktype": "value",
+                  "property": "P854",
+                  "hash": "eefcf80619161872006d401c936206cb3b578756",
+                  "datavalue": {
+                    "value": "https://www.tate.org.uk/art/art-terms/g/gutai",
+                    "type": "string"
+                  },
+                  "datatype": "url"
+                }
+              ],
+              "P813": [
+                {
+                  "snaktype": "value",
+                  "property": "P813",
+                  "hash": "64c6dff51f3c6728757d17d46a603e50fc74d9e6",
+                  "datavalue": {
+                    "value": {
+                      "time": "+2019-07-26T00:00:00Z",
+                      "timezone": 0,
+                      "before": 0,
+                      "after": 0,
+                      "precision": 11,
+                      "calendarmodel": "http://www.wikidata.org/entity/Q1985727"
+                    },
+                    "type": "time"
+                  },
+                  "datatype": "time"
+                }
+              ]
+            },
+            "snaks-order": [
+              "P854",
+              "P813"
+            ]
+          }
+        ]
+      }
+    ],
+    "P112": [
+      {
+        "mainsnak": {
+          "snaktype": "value",
+          "property": "P112",
+          "hash": "3edd609644e98011700abc936ba081b40c15eaa0",
+          "datavalue": {
+            "value": {
+              "entity-type": "item",
+              "numeric-id": 2303860,
+              "id": "Q2303860"
+            },
+            "type": "wikibase-entityid"
+          },
+          "datatype": "wikibase-item"
+        },
+        "type": "statement",
+        "id": "Q1028956$bc802f05-4cd8-42f7-da41-efbbc71eb577",
+        "rank": "normal",
+        "references": [
+          {
+            "hash": "c894766e77e7acd5805209dae6d9ec5c7c5b0c19",
+            "snaks": {
+              "P854": [
+                {
+                  "snaktype": "value",
+                  "property": "P854",
+                  "hash": "eefcf80619161872006d401c936206cb3b578756",
+                  "datavalue": {
+                    "value": "https://www.tate.org.uk/art/art-terms/g/gutai",
+                    "type": "string"
+                  },
+                  "datatype": "url"
+                }
+              ],
+              "P813": [
+                {
+                  "snaktype": "value",
+                  "property": "P813",
+                  "hash": "64c6dff51f3c6728757d17d46a603e50fc74d9e6",
+                  "datavalue": {
+                    "value": {
+                      "time": "+2019-07-26T00:00:00Z",
+                      "timezone": 0,
+                      "before": 0,
+                      "after": 0,
+                      "precision": 11,
+                      "calendarmodel": "http://www.wikidata.org/entity/Q1985727"
+                    },
+                    "type": "time"
+                  },
+                  "datatype": "time"
+                }
+              ]
+            },
+            "snaks-order": [
+              "P854",
+              "P813"
+            ]
+          }
+        ]
+      },
+      {
+        "mainsnak": {
+          "snaktype": "value",
+          "property": "P112",
+          "hash": "3cac35bcd255465e28d24f2de9e41f1827674886",
+          "datavalue": {
+            "value": {
+              "entity-type": "item",
+              "numeric-id": 3460771,
+              "id": "Q3460771"
+            },
+            "type": "wikibase-entityid"
+          },
+          "datatype": "wikibase-item"
+        },
+        "type": "statement",
+        "id": "Q1028956$89d9ac0b-481b-9ce2-feb8-c136d2854f9c",
+        "rank": "normal",
+        "references": [
+          {
+            "hash": "c894766e77e7acd5805209dae6d9ec5c7c5b0c19",
+            "snaks": {
+              "P854": [
+                {
+                  "snaktype": "value",
+                  "property": "P854",
+                  "hash": "eefcf80619161872006d401c936206cb3b578756",
+                  "datavalue": {
+                    "value": "https://www.tate.org.uk/art/art-terms/g/gutai",
+                    "type": "string"
+                  },
+                  "datatype": "url"
+                }
+              ],
+              "P813": [
+                {
+                  "snaktype": "value",
+                  "property": "P813",
+                  "hash": "64c6dff51f3c6728757d17d46a603e50fc74d9e6",
+                  "datavalue": {
+                    "value": {
+                      "time": "+2019-07-26T00:00:00Z",
+                      "timezone": 0,
+                      "before": 0,
+                      "after": 0,
+                      "precision": 11,
+                      "calendarmodel": "http://www.wikidata.org/entity/Q1985727"
+                    },
+                    "type": "time"
+                  },
+                  "datatype": "time"
+                }
+              ]
+            },
+            "snaks-order": [
+              "P854",
+              "P813"
+            ]
+          }
+        ]
+      },
+      {
+        "mainsnak": {
+          "snaktype": "value",
+          "property": "P112",
+          "hash": "412117ba9d4dde1788ee14bef9169c14c5388724",
+          "datavalue": {
+            "value": {
+              "entity-type": "item",
+              "numeric-id": 1421445,
+              "id": "Q1421445"
+            },
+            "type": "wikibase-entityid"
+          },
+          "datatype": "wikibase-item"
+        },
+        "type": "statement",
+        "id": "Q1028956$10cbe1d6-44f5-a788-bf50-88eb82429af8",
+        "rank": "normal",
+        "references": [
+          {
+            "hash": "c894766e77e7acd5805209dae6d9ec5c7c5b0c19",
+            "snaks": {
+              "P854": [
+                {
+                  "snaktype": "value",
+                  "property": "P854",
+                  "hash": "eefcf80619161872006d401c936206cb3b578756",
+                  "datavalue": {
+                    "value": "https://www.tate.org.uk/art/art-terms/g/gutai",
+                    "type": "string"
+                  },
+                  "datatype": "url"
+                }
+              ],
+              "P813": [
+                {
+                  "snaktype": "value",
+                  "property": "P813",
+                  "hash": "64c6dff51f3c6728757d17d46a603e50fc74d9e6",
+                  "datavalue": {
+                    "value": {
+                      "time": "+2019-07-26T00:00:00Z",
+                      "timezone": 0,
+                      "before": 0,
+                      "after": 0,
+                      "precision": 11,
+                      "calendarmodel": "http://www.wikidata.org/entity/Q1985727"
+                    },
+                    "type": "time"
+                  },
+                  "datatype": "time"
+                }
+              ]
+            },
+            "snaks-order": [
+              "P854",
+              "P813"
+            ]
+          }
+        ]
+      },
+      {
+        "mainsnak": {
+          "snaktype": "value",
+          "property": "P112",
+          "hash": "4c8e415f4c8954f6465947574d506e424f4065d6",
+          "datavalue": {
+            "value": {
+              "entity-type": "item",
+              "numeric-id": 2551656,
+              "id": "Q2551656"
+            },
+            "type": "wikibase-entityid"
+          },
+          "datatype": "wikibase-item"
+        },
+        "type": "statement",
+        "id": "Q1028956$2f6974ff-45ad-db21-d3ca-690c0a79d8be",
+        "rank": "normal",
+        "references": [
+          {
+            "hash": "c894766e77e7acd5805209dae6d9ec5c7c5b0c19",
+            "snaks": {
+              "P854": [
+                {
+                  "snaktype": "value",
+                  "property": "P854",
+                  "hash": "eefcf80619161872006d401c936206cb3b578756",
+                  "datavalue": {
+                    "value": "https://www.tate.org.uk/art/art-terms/g/gutai",
+                    "type": "string"
+                  },
+                  "datatype": "url"
+                }
+              ],
+              "P813": [
+                {
+                  "snaktype": "value",
+                  "property": "P813",
+                  "hash": "64c6dff51f3c6728757d17d46a603e50fc74d9e6",
+                  "datavalue": {
+                    "value": {
+                      "time": "+2019-07-26T00:00:00Z",
+                      "timezone": 0,
+                      "before": 0,
+                      "after": 0,
+                      "precision": 11,
+                      "calendarmodel": "http://www.wikidata.org/entity/Q1985727"
+                    },
+                    "type": "time"
+                  },
+                  "datatype": "time"
+                }
+              ]
+            },
+            "snaks-order": [
+              "P854",
+              "P813"
+            ]
+          }
+        ]
+      },
+      {
+        "mainsnak": {
+          "snaktype": "value",
+          "property": "P112",
+          "hash": "b418037ec63f8803e13effe76ddfa8a9dc1850fb",
+          "datavalue": {
+            "value": {
+              "entity-type": "item",
+              "numeric-id": 3192581,
+              "id": "Q3192581"
+            },
+            "type": "wikibase-entityid"
+          },
+          "datatype": "wikibase-item"
+        },
+        "type": "statement",
+        "id": "Q1028956$a761bf0d-4131-34eb-37d7-7c5466e9511a",
+        "rank": "normal",
+        "references": [
+          {
+            "hash": "c894766e77e7acd5805209dae6d9ec5c7c5b0c19",
+            "snaks": {
+              "P854": [
+                {
+                  "snaktype": "value",
+                  "property": "P854",
+                  "hash": "eefcf80619161872006d401c936206cb3b578756",
+                  "datavalue": {
+                    "value": "https://www.tate.org.uk/art/art-terms/g/gutai",
+                    "type": "string"
+                  },
+                  "datatype": "url"
+                }
+              ],
+              "P813": [
+                {
+                  "snaktype": "value",
+                  "property": "P813",
+                  "hash": "64c6dff51f3c6728757d17d46a603e50fc74d9e6",
+                  "datavalue": {
+                    "value": {
+                      "time": "+2019-07-26T00:00:00Z",
+                      "timezone": 0,
+                      "before": 0,
+                      "after": 0,
+                      "precision": 11,
+                      "calendarmodel": "http://www.wikidata.org/entity/Q1985727"
+                    },
+                    "type": "time"
+                  },
+                  "datatype": "time"
+                }
+              ]
+            },
+            "snaks-order": [
+              "P854",
+              "P813"
+            ]
+          }
+        ]
+      }
+    ],
+    "P576": [
+      {
+        "mainsnak": {
+          "snaktype": "value",
+          "property": "P576",
+          "hash": "d269f621ddb09f539f3136988c1c99dc05443e33",
+          "datavalue": {
+            "value": {
+              "time": "+1972-00-00T00:00:00Z",
+              "timezone": 0,
+              "before": 0,
+              "after": 0,
+              "precision": 9,
+              "calendarmodel": "http://www.wikidata.org/entity/Q1985727"
+            },
+            "type": "time"
+          },
+          "datatype": "time"
+        },
+        "type": "statement",
+        "id": "Q1028956$e3bc9d19-4552-ab28-1e70-f397c7076991",
+        "rank": "normal",
+        "references": [
+          {
+            "hash": "c894766e77e7acd5805209dae6d9ec5c7c5b0c19",
+            "snaks": {
+              "P854": [
+                {
+                  "snaktype": "value",
+                  "property": "P854",
+                  "hash": "eefcf80619161872006d401c936206cb3b578756",
+                  "datavalue": {
+                    "value": "https://www.tate.org.uk/art/art-terms/g/gutai",
+                    "type": "string"
+                  },
+                  "datatype": "url"
+                }
+              ],
+              "P813": [
+                {
+                  "snaktype": "value",
+                  "property": "P813",
+                  "hash": "64c6dff51f3c6728757d17d46a603e50fc74d9e6",
+                  "datavalue": {
+                    "value": {
+                      "time": "+2019-07-26T00:00:00Z",
+                      "timezone": 0,
+                      "before": 0,
+                      "after": 0,
+                      "precision": 11,
+                      "calendarmodel": "http://www.wikidata.org/entity/Q1985727"
+                    },
+                    "type": "time"
+                  },
+                  "datatype": "time"
+                }
+              ]
+            },
+            "snaks-order": [
+              "P854",
+              "P813"
+            ]
+          }
+        ]
+      }
+    ],
+    "P6379": [
+      {
+        "mainsnak": {
+          "snaktype": "value",
+          "property": "P6379",
+          "hash": "433be6675f7297a00159624bbf32623b9a989209",
+          "datavalue": {
+            "value": {
+              "entity-type": "item",
+              "numeric-id": 11614836,
+              "id": "Q11614836"
+            },
+            "type": "wikibase-entityid"
+          },
+          "datatype": "wikibase-item"
+        },
+        "type": "statement",
+        "id": "Q1028956$260004c7-4d5d-ff96-7fcd-a8d2211c628f",
+        "rank": "normal",
+        "references": [
+          {
+            "hash": "c894766e77e7acd5805209dae6d9ec5c7c5b0c19",
+            "snaks": {
+              "P854": [
+                {
+                  "snaktype": "value",
+                  "property": "P854",
+                  "hash": "eefcf80619161872006d401c936206cb3b578756",
+                  "datavalue": {
+                    "value": "https://www.tate.org.uk/art/art-terms/g/gutai",
+                    "type": "string"
+                  },
+                  "datatype": "url"
+                }
+              ],
+              "P813": [
+                {
+                  "snaktype": "value",
+                  "property": "P813",
+                  "hash": "64c6dff51f3c6728757d17d46a603e50fc74d9e6",
+                  "datavalue": {
+                    "value": {
+                      "time": "+2019-07-26T00:00:00Z",
+                      "timezone": 0,
+                      "before": 0,
+                      "after": 0,
+                      "precision": 11,
+                      "calendarmodel": "http://www.wikidata.org/entity/Q1985727"
+                    },
+                    "type": "time"
+                  },
+                  "datatype": "time"
+                }
+              ]
+            },
+            "snaks-order": [
+              "P854",
+              "P813"
+            ]
+          }
+        ]
+      }
+    ],
+    "P8406": [
+      {
+        "mainsnak": {
+          "snaktype": "value",
+          "property": "P8406",
+          "hash": "475622c6adb1057fa12a03b92a92b8092624be80",
+          "datavalue": {
+            "value": "T035754",
+            "type": "string"
+          },
+          "datatype": "external-id"
+        },
+        "type": "statement",
+        "id": "Q1028956$EC7AD25C-89DA-4155-A0D4-DDF8305AB53D",
+        "rank": "normal"
+      }
+    ],
+    "P5909": [
+      {
+        "mainsnak": {
+          "snaktype": "value",
+          "property": "P5909",
+          "hash": "cc13d5a006bd1a99df15da1d8fa934f460bf63ab",
+          "datavalue": {
+            "value": "9811114388703406",
+            "type": "string"
+          },
+          "datatype": "external-id"
+        },
+        "type": "statement",
+        "id": "Q1028956$F2C19C10-469D-4502-92C9-3A57E9DB2408",
+        "rank": "normal"
+      }
+    ],
+    "P7763": [
+      {
+        "mainsnak": {
+          "snaktype": "value",
+          "property": "P7763",
+          "hash": "0caedd22a4d9f17e8035f795a39553128874ae04",
+          "datavalue": {
+            "value": {
+              "entity-type": "item",
+              "numeric-id": 73555012,
+              "id": "Q73555012"
+            },
+            "type": "wikibase-entityid"
+          },
+          "datatype": "wikibase-item"
+        },
+        "type": "statement",
+        "qualifiers": {
+          "P1001": [
+            {
+              "snaktype": "value",
+              "property": "P1001",
+              "hash": "b46ca00cee57d75597fd08d6f5e031ad3a3b4819",
+              "datavalue": {
+                "value": {
+                  "entity-type": "item",
+                  "numeric-id": 104905121,
+                  "id": "Q104905121"
+                },
+                "type": "wikibase-entityid"
+              },
+              "datatype": "wikibase-item"
+            }
+          ]
+        },
+        "qualifiers-order": [
+          "P1001"
+        ],
+        "id": "Q1028956$93503be7-d4ce-4884-bf34-8666ead4c0b8",
+        "rank": "normal",
+        "references": [
+          {
+            "hash": "d3b3dcbce02cee3a245a237963b57264c3c7246e",
+            "snaks": {
+              "P813": [
+                {
+                  "snaktype": "value",
+                  "property": "P813",
+                  "hash": "739a6f358e21b8434c53959befd8881057df9217",
+                  "datavalue": {
+                    "value": {
+                      "time": "+2021-01-21T00:00:00Z",
+                      "timezone": 0,
+                      "before": 0,
+                      "after": 0,
+                      "precision": 11,
+                      "calendarmodel": "http://www.wikidata.org/entity/Q1985727"
+                    },
+                    "type": "time"
+                  },
+                  "datatype": "time"
+                }
+              ],
+              "P887": [
+                {
+                  "snaktype": "value",
+                  "property": "P887",
+                  "hash": "f6a52bb4ddd7d0c3b272ca638c308e0b940ecdf8",
+                  "datavalue": {
+                    "value": {
+                      "entity-type": "item",
+                      "numeric-id": 104986025,
+                      "id": "Q104986025"
+                    },
+                    "type": "wikibase-entityid"
+                  },
+                  "datatype": "wikibase-item"
+                }
+              ]
+            },
+            "snaks-order": [
+              "P813",
+              "P887"
+            ]
+          }
+        ]
+      }
+    ],
+    "P8189": [
+      {
+        "mainsnak": {
+          "snaktype": "value",
+          "property": "P8189",
+          "hash": "c5fd227fcde4c96694cc2f5f6686f7eb548f4c7f",
+          "datavalue": {
+            "value": "987007596840605171",
+            "type": "string"
+          },
+          "datatype": "external-id"
+        },
+        "type": "statement",
+        "id": "Q1028956$390BE190-E095-4690-9A4E-ADEADE74C320",
+        "rank": "normal"
+      }
+    ],
+    "P11496": [
+      {
+        "mainsnak": {
+          "snaktype": "value",
+          "property": "P11496",
+          "hash": "857dcf896edc56496f0eb94cabad12454f05464e",
+          "datavalue": {
+            "value": "1140845216776375680",
+            "type": "string"
+          },
+          "datatype": "external-id"
+        },
+        "type": "statement",
+        "id": "Q1028956$9360ABBA-202D-4217-B9FB-68EF7A12E7C3",
+        "rank": "normal"
+      }
+    ],
+    "P9984": [
+      {
+        "mainsnak": {
+          "snaktype": "value",
+          "property": "P9984",
+          "hash": "11e50fb1f9b9bb89b2c44e3a5ff11cfd61e42fc2",
+          "datavalue": {
+            "value": "981058509104006706",
+            "type": "string"
+          },
+          "datatype": "external-id"
+        },
+        "type": "statement",
+        "id": "Q1028956$DF36785A-B9E8-42CD-AFEB-D3BD9A45914B",
+        "rank": "normal",
+        "references": [
+          {
+            "hash": "c0e1374276c1069641fe2ac3c3fe1368b33996c7",
+            "snaks": {
+              "P214": [
+                {
+                  "snaktype": "value",
+                  "property": "P214",
+                  "hash": "398b9e239b32e3f3d1ea2bd9370ac192cceece26",
+                  "datavalue": {
+                    "value": "148830718",
+                    "type": "string"
+                  },
+                  "datatype": "external-id"
+                }
+              ]
+            },
+            "snaks-order": [
+              "P214"
+            ]
+          }
+        ]
+      }
+    ],
+    "P11686": [
+      {
+        "mainsnak": {
+          "snaktype": "value",
+          "property": "P11686",
+          "hash": "866e798e40718eb76c8cc4db861fb9775e839ca0",
+          "datavalue": {
+            "value": "981058509104006706",
+            "type": "string"
+          },
+          "datatype": "external-id"
+        },
+        "type": "statement",
+        "id": "Q1028956$79CE1C0B-2872-4DA6-B611-3E58A66EEB07",
+        "rank": "normal",
+        "references": [
+          {
+            "hash": "c0e1374276c1069641fe2ac3c3fe1368b33996c7",
+            "snaks": {
+              "P214": [
+                {
+                  "snaktype": "value",
+                  "property": "P214",
+                  "hash": "398b9e239b32e3f3d1ea2bd9370ac192cceece26",
+                  "datavalue": {
+                    "value": "148830718",
+                    "type": "string"
+                  },
+                  "datatype": "external-id"
+                }
+              ]
+            },
+            "snaks-order": [
+              "P214"
+            ]
+          }
+        ]
+      }
+    ],
+    "P7886": [
+      {
+        "mainsnak": {
+          "snaktype": "value",
+          "property": "P7886",
+          "hash": "eab6ccfc0d0f3b818e2abc05af75dba9144533f6",
+          "datavalue": {
+            "value": "C403651",
+            "type": "string"
+          },
+          "datatype": "external-id"
+        },
+        "type": "statement",
+        "id": "Q1028956$68950c2a-493a-a295-7bb9-9e3619debf66",
+        "rank": "normal"
+      }
+    ],
+    "P13591": [
+      {
+        "mainsnak": {
+          "snaktype": "value",
+          "property": "P13591",
+          "hash": "d4f71d3cabd69aa6b6b69dbdc33d49f842bad3f0",
+          "datavalue": {
+            "value": "group/83aadd45-a6f0-4557-8ce1-46746f3125c5",
+            "type": "string"
+          },
+          "datatype": "external-id"
+        },
+        "type": "statement",
+        "id": "Q1028956$C65A2D80-5DFE-49F8-8474-3DB50529F1A2",
+        "rank": "normal"
+      }
+    ]
+  },
+  "sitelinks": {
+    "arwiki": {
+      "site": "arwiki",
+      "title": "غوتاي",
+      "badges": [],
+      "url": "https://ar.wikipedia.org/wiki/%D8%BA%D9%88%D8%AA%D8%A7%D9%8A"
+    },
+    "cawiki": {
+      "site": "cawiki",
+      "title": "Gutai",
+      "badges": [],
+      "url": "https://ca.wikipedia.org/wiki/Gutai"
+    },
+    "commonswiki": {
+      "site": "commonswiki",
+      "title": "Category:Gutai group",
+      "badges": [],
+      "url": "https://commons.wikimedia.org/wiki/Category:Gutai_group"
+    },
+    "dewiki": {
+      "site": "dewiki",
+      "title": "Gutai Art Association",
+      "badges": [],
+      "url": "https://de.wikipedia.org/wiki/Gutai_Art_Association"
+    },
+    "enwiki": {
+      "site": "enwiki",
+      "title": "Gutai Art Association",
+      "badges": [],
+      "url": "https://en.wikipedia.org/wiki/Gutai_Art_Association"
+    },
+    "eswiki": {
+      "site": "eswiki",
+      "title": "Gutai",
+      "badges": [],
+      "url": "https://es.wikipedia.org/wiki/Gutai"
+    },
+    "euwiki": {
+      "site": "euwiki",
+      "title": "Gutai",
+      "badges": [],
+      "url": "https://eu.wikipedia.org/wiki/Gutai"
+    },
+    "frwiki": {
+      "site": "frwiki",
+      "title": "Gutai",
+      "badges": [],
+      "url": "https://fr.wikipedia.org/wiki/Gutai"
+    },
+    "huwiki": {
+      "site": "huwiki",
+      "title": "Gutai csoport",
+      "badges": [],
+      "url": "https://hu.wikipedia.org/wiki/Gutai_csoport"
+    },
+    "itwiki": {
+      "site": "itwiki",
+      "title": "Gutai",
+      "badges": [],
+      "url": "https://it.wikipedia.org/wiki/Gutai"
+    },
+    "jawiki": {
+      "site": "jawiki",
+      "title": "具体美術協会",
+      "badges": [],
+      "url": "https://ja.wikipedia.org/wiki/%E5%85%B7%E4%BD%93%E7%BE%8E%E8%A1%93%E5%8D%94%E4%BC%9A"
+    },
+    "nlwiki": {
+      "site": "nlwiki",
+      "title": "Gutai-groep",
+      "badges": [],
+      "url": "https://nl.wikipedia.org/wiki/Gutai-groep"
+    },
+    "plwiki": {
+      "site": "plwiki",
+      "title": "Grupa Gutai",
+      "badges": [],
+      "url": "https://pl.wikipedia.org/wiki/Grupa_Gutai"
+    },
+    "ptwiki": {
+      "site": "ptwiki",
+      "title": "Grupo Gutai",
+      "badges": [],
+      "url": "https://pt.wikipedia.org/wiki/Grupo_Gutai"
+    },
+    "ruwiki": {
+      "site": "ruwiki",
+      "title": "Гутай (группа)",
+      "badges": [],
+      "url": "https://ru.wikipedia.org/wiki/%D0%93%D1%83%D1%82%D0%B0%D0%B9_(%D0%B3%D1%80%D1%83%D0%BF%D0%BF%D0%B0)"
+    },
+    "trwiki": {
+      "site": "trwiki",
+      "title": "Gutai",
+      "badges": [],
+      "url": "https://tr.wikipedia.org/wiki/Gutai"
+    }
+  }
+}

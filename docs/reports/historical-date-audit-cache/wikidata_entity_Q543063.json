@@ -1,0 +1,441 @@
+{
+  "saved_at": "2026-03-07T15:57:32.607Z",
+  "value": {
+    "pageid": 511520,
+    "ns": 0,
+    "title": "Q543063",
+    "lastrevid": 2465883045,
+    "modified": "2026-02-23T06:47:02Z",
+    "type": "item",
+    "id": "Q543063",
+    "labels": {
+      "fr": {
+        "language": "fr",
+        "value": "affaire des avions renifleurs"
+      },
+      "en": {
+        "language": "en",
+        "value": "Great Oil Sniffer Hoax"
+      },
+      "de": {
+        "language": "de",
+        "value": "Affaire des avions renifleurs"
+      },
+      "id": {
+        "language": "id",
+        "value": "Hoaks Pendeteksi Minyak Hebat"
+      },
+      "ar": {
+        "language": "ar",
+        "value": "صفقة الطائرات الشمامة"
+      }
+    },
+    "descriptions": {
+      "fr": {
+        "language": "fr",
+        "value": "escroquerie d'Elf de 1975 à 1979"
+      },
+      "en": {
+        "language": "en",
+        "value": "confidence trick"
+      },
+      "de": {
+        "language": "de",
+        "value": "Betrugsskandal bei der Firma Elf Aquitaine"
+      }
+    },
+    "aliases": {
+      "en": [
+        {
+          "language": "en",
+          "value": "Sniffer Planes Swindle"
+        }
+      ]
+    },
+    "claims": {
+      "P17": [
+        {
+          "mainsnak": {
+            "snaktype": "value",
+            "property": "P17",
+            "hash": "c05db5d169c2560b9799d567a803d20a392f53e4",
+            "datavalue": {
+              "value": {
+                "entity-type": "item",
+                "numeric-id": 142,
+                "id": "Q142"
+              },
+              "type": "wikibase-entityid"
+            },
+            "datatype": "wikibase-item"
+          },
+          "type": "statement",
+          "id": "Q543063$b6de0de4-47eb-c8a2-8d7e-e7502c1993e1",
+          "rank": "normal"
+        }
+      ],
+      "P31": [
+        {
+          "mainsnak": {
+            "snaktype": "value",
+            "property": "P31",
+            "hash": "f1a547c5711e6ddb34e73cf7b5f8548b4779487f",
+            "datavalue": {
+              "value": {
+                "entity-type": "item",
+                "numeric-id": 7023752,
+                "id": "Q7023752"
+              },
+              "type": "wikibase-entityid"
+            },
+            "datatype": "wikibase-item"
+          },
+          "type": "statement",
+          "id": "Q543063$0f2cdb14-472d-ef03-1d01-30379d6605ae",
+          "rank": "normal"
+        }
+      ],
+      "P1264": [
+        {
+          "mainsnak": {
+            "snaktype": "value",
+            "property": "P1264",
+            "hash": "33c3ce2678b76ce2dae6ad4634ffec092f2c5980",
+            "datavalue": {
+              "value": {
+                "entity-type": "item",
+                "numeric-id": 2479,
+                "id": "Q2479"
+              },
+              "type": "wikibase-entityid"
+            },
+            "datatype": "wikibase-item"
+          },
+          "type": "statement",
+          "id": "Q543063$0edb69a0-4b78-498d-a21b-d7227aa5f075",
+          "rank": "normal",
+          "references": [
+            {
+              "hash": "d4bd87b862b12d99d26e86472d44f26858dee639",
+              "snaks": {
+                "P143": [
+                  {
+                    "snaktype": "value",
+                    "property": "P143",
+                    "hash": "f30cbd35620c4ea6d0633aaf0210a8916130469b",
+                    "datavalue": {
+                      "value": {
+                        "entity-type": "item",
+                        "numeric-id": 8447,
+                        "id": "Q8447"
+                      },
+                      "type": "wikibase-entityid"
+                    },
+                    "datatype": "wikibase-item"
+                  }
+                ]
+              },
+              "snaks-order": [
+                "P143"
+              ]
+            }
+          ]
+        },
+        {
+          "mainsnak": {
+            "snaktype": "value",
+            "property": "P1264",
+            "hash": "fe9323ae9040d776b2e09abdd72e56428ac297f0",
+            "datavalue": {
+              "value": {
+                "entity-type": "item",
+                "numeric-id": 2480,
+                "id": "Q2480"
+              },
+              "type": "wikibase-entityid"
+            },
+            "datatype": "wikibase-item"
+          },
+          "type": "statement",
+          "id": "Q543063$a11a94bf-4f06-7159-7348-06c952d8802b",
+          "rank": "normal"
+        },
+        {
+          "mainsnak": {
+            "snaktype": "value",
+            "property": "P1264",
+            "hash": "2638be53f22da4233878e02970c37ee2983a5a75",
+            "datavalue": {
+              "value": {
+                "entity-type": "item",
+                "numeric-id": 2481,
+                "id": "Q2481"
+              },
+              "type": "wikibase-entityid"
+            },
+            "datatype": "wikibase-item"
+          },
+          "type": "statement",
+          "id": "Q543063$9e22225c-4978-8429-328e-31e333d865e8",
+          "rank": "normal"
+        },
+        {
+          "mainsnak": {
+            "snaktype": "value",
+            "property": "P1264",
+            "hash": "f44bd127e1f25939d008cc88577a0964deeb296f",
+            "datavalue": {
+              "value": {
+                "entity-type": "item",
+                "numeric-id": 2483,
+                "id": "Q2483"
+              },
+              "type": "wikibase-entityid"
+            },
+            "datatype": "wikibase-item"
+          },
+          "type": "statement",
+          "id": "Q543063$2e4c4d1c-41d9-8e56-5ab0-56bd04ed2318",
+          "rank": "normal"
+        },
+        {
+          "mainsnak": {
+            "snaktype": "value",
+            "property": "P1264",
+            "hash": "c67bff705a988bffda22361768adc8ac7dcfa774",
+            "datavalue": {
+              "value": {
+                "entity-type": "item",
+                "numeric-id": 2484,
+                "id": "Q2484"
+              },
+              "type": "wikibase-entityid"
+            },
+            "datatype": "wikibase-item"
+          },
+          "type": "statement",
+          "id": "Q543063$87dcef7a-420e-99ca-dbed-2db063ef0dd8",
+          "rank": "normal"
+        }
+      ],
+      "P585": [
+        {
+          "mainsnak": {
+            "snaktype": "value",
+            "property": "P585",
+            "hash": "8d820f875d7ded06e0ac38d88b44df5cd4b81d24",
+            "datavalue": {
+              "value": {
+                "time": "+1975-00-00T00:00:00Z",
+                "timezone": 0,
+                "before": 0,
+                "after": 0,
+                "precision": 9,
+                "calendarmodel": "http://www.wikidata.org/entity/Q1985727"
+              },
+              "type": "time"
+            },
+            "datatype": "time"
+          },
+          "type": "statement",
+          "qualifiers": {
+            "P582": [
+              {
+                "snaktype": "value",
+                "property": "P582",
+                "hash": "0aad49620aab1004df30f9ace27bc5d9cffae959",
+                "datavalue": {
+                  "value": {
+                    "time": "+1979-00-00T00:00:00Z",
+                    "timezone": 0,
+                    "before": 0,
+                    "after": 0,
+                    "precision": 9,
+                    "calendarmodel": "http://www.wikidata.org/entity/Q1985727"
+                  },
+                  "type": "time"
+                },
+                "datatype": "time"
+              }
+            ],
+            "P580": [
+              {
+                "snaktype": "value",
+                "property": "P580",
+                "hash": "f7a6fe61ade9471cad1a55305c2d080bc13c680f",
+                "datavalue": {
+                  "value": {
+                    "time": "+1975-00-00T00:00:00Z",
+                    "timezone": 0,
+                    "before": 0,
+                    "after": 0,
+                    "precision": 9,
+                    "calendarmodel": "http://www.wikidata.org/entity/Q1985727"
+                  },
+                  "type": "time"
+                },
+                "datatype": "time"
+              }
+            ]
+          },
+          "qualifiers-order": [
+            "P582",
+            "P580"
+          ],
+          "id": "Q543063$bd818a00-40b8-08fe-ec11-4f001f9bf548",
+          "rank": "normal"
+        }
+      ],
+      "P646": [
+        {
+          "mainsnak": {
+            "snaktype": "value",
+            "property": "P646",
+            "hash": "0f7982f9fd2587d72185b14ae9efc1664e195267",
+            "datavalue": {
+              "value": "/m/073grn",
+              "type": "string"
+            },
+            "datatype": "external-id"
+          },
+          "type": "statement",
+          "id": "Q543063$97D84D1A-51EA-4025-B01B-68A267165421",
+          "rank": "normal"
+        }
+      ],
+      "P3342": [
+        {
+          "mainsnak": {
+            "snaktype": "value",
+            "property": "P3342",
+            "hash": "4a141b4f4a1c7c1c01ebb80194afdf6c18756a5a",
+            "datavalue": {
+              "value": {
+                "entity-type": "item",
+                "numeric-id": 129448732,
+                "id": "Q129448732"
+              },
+              "type": "wikibase-entityid"
+            },
+            "datatype": "wikibase-item"
+          },
+          "type": "statement",
+          "id": "Q543063$2cd0d95f-4219-55c5-799e-94d3a4a7ef19",
+          "rank": "normal",
+          "references": [
+            {
+              "hash": "c37d8fb7f83f21117eac4d82ece10ce58485c322",
+              "snaks": {
+                "P854": [
+                  {
+                    "snaktype": "value",
+                    "property": "P854",
+                    "hash": "a3b66321fc19cae939ac36581364ac60481f21db",
+                    "datavalue": {
+                      "value": "https://www.imdb.com/title/tt7837406/",
+                      "type": "string"
+                    },
+                    "datatype": "url"
+                  }
+                ]
+              },
+              "snaks-order": [
+                "P854"
+              ]
+            }
+          ]
+        },
+        {
+          "mainsnak": {
+            "snaktype": "value",
+            "property": "P3342",
+            "hash": "e5eef5339e9873c9560f6710e0f78dcb7f3923d8",
+            "datavalue": {
+              "value": {
+                "entity-type": "item",
+                "numeric-id": 129453446,
+                "id": "Q129453446"
+              },
+              "type": "wikibase-entityid"
+            },
+            "datatype": "wikibase-item"
+          },
+          "type": "statement",
+          "id": "Q543063$dcde1111-4623-8f94-ccbf-da8477d83ce8",
+          "rank": "normal",
+          "references": [
+            {
+              "hash": "7e6f01162368257310c62df1221fd47f55321f85",
+              "snaks": {
+                "P854": [
+                  {
+                    "snaktype": "value",
+                    "property": "P854",
+                    "hash": "6be744105b4c2d940e089b1ace1fd1921c4d6776",
+                    "datavalue": {
+                      "value": "https://www.hangarflying.eu/2020/09/les-avions-renifleurs-de-la-compagnie-europeenne-de-recherches/",
+                      "type": "string"
+                    },
+                    "datatype": "url"
+                  }
+                ]
+              },
+              "snaks-order": [
+                "P854"
+              ]
+            }
+          ]
+        }
+      ],
+      "P973": [
+        {
+          "mainsnak": {
+            "snaktype": "value",
+            "property": "P973",
+            "hash": "75b10392b92cfe6c1f4d1197d11c45450739358a",
+            "datavalue": {
+              "value": "https://conspiracydossiers.com/2022/05/04/sniffer-planes-swindle-its-perpetrators/",
+              "type": "string"
+            },
+            "datatype": "url"
+          },
+          "type": "statement",
+          "id": "Q543063$b746cd45-41e9-8619-ab00-807e959e8cd7",
+          "rank": "normal"
+        }
+      ]
+    },
+    "sitelinks": {
+      "arwiki": {
+        "site": "arwiki",
+        "title": "صفقة الطائرات الشمامة",
+        "badges": [],
+        "url": "https://ar.wikipedia.org/wiki/%D8%B5%D9%81%D9%82%D8%A9_%D8%A7%D9%84%D8%B7%D8%A7%D8%A6%D8%B1%D8%A7%D8%AA_%D8%A7%D9%84%D8%B4%D9%85%D8%A7%D9%85%D8%A9"
+      },
+      "dewiki": {
+        "site": "dewiki",
+        "title": "Affaire des avions renifleurs",
+        "badges": [],
+        "url": "https://de.wikipedia.org/wiki/Affaire_des_avions_renifleurs"
+      },
+      "enwiki": {
+        "site": "enwiki",
+        "title": "Great Oil Sniffer Hoax",
+        "badges": [],
+        "url": "https://en.wikipedia.org/wiki/Great_Oil_Sniffer_Hoax"
+      },
+      "frwiki": {
+        "site": "frwiki",
+        "title": "Affaire des Avions renifleurs",
+        "badges": [],
+        "url": "https://fr.wikipedia.org/wiki/Affaire_des_Avions_renifleurs"
+      },
+      "idwiki": {
+        "site": "idwiki",
+        "title": "Hoaks Pendeteksi Minyak Hebat",
+        "badges": [],
+        "url": "https://id.wikipedia.org/wiki/Hoaks_Pendeteksi_Minyak_Hebat"
+      }
+    }
+  }
+}

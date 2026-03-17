@@ -1,0 +1,532 @@
+{
+  "pageid": 307032,
+  "ns": 0,
+  "title": "Q319602",
+  "lastrevid": 2353775329,
+  "modified": "2025-05-28T11:49:21Z",
+  "type": "item",
+  "id": "Q319602",
+  "labels": {
+    "gsw": {
+      "language": "gsw",
+      "value": "Gschicht vum Elsass"
+    },
+    "de": {
+      "language": "de",
+      "value": "Geschichte des Elsass"
+    },
+    "ru": {
+      "language": "ru",
+      "value": "история Эльзаса"
+    },
+    "fr": {
+      "language": "fr",
+      "value": "histoire de l'Alsace"
+    },
+    "lt": {
+      "language": "lt",
+      "value": "Elzaso istorija"
+    },
+    "en": {
+      "language": "en",
+      "value": "history of Alsace"
+    },
+    "ar": {
+      "language": "ar",
+      "value": "تاريخ ألزاس"
+    },
+    "el": {
+      "language": "el",
+      "value": "Ιστορία της Αλσατίας"
+    },
+    "en-ca": {
+      "language": "en-ca",
+      "value": "history of Alsace"
+    },
+    "en-gb": {
+      "language": "en-gb",
+      "value": "history of Alsace"
+    },
+    "ja": {
+      "language": "ja",
+      "value": "アルザスの歴史"
+    },
+    "es": {
+      "language": "es",
+      "value": "Historia de Alsacia"
+    },
+    "nb": {
+      "language": "nb",
+      "value": "Alsace - historie"
+    },
+    "eo": {
+      "language": "eo",
+      "value": "historio de Alzaco"
+    },
+    "sl": {
+      "language": "sl",
+      "value": "zgodovina Alzacije"
+    },
+    "zh": {
+      "language": "zh",
+      "value": "阿尔萨斯历史"
+    },
+    "ca": {
+      "language": "ca",
+      "value": "història d'Alsàcia"
+    }
+  },
+  "descriptions": {
+    "de": {
+      "language": "de",
+      "value": "Wikimedia-Geschichts-Artikel"
+    },
+    "en": {
+      "language": "en",
+      "value": "aspect of history"
+    },
+    "bn": {
+      "language": "bn",
+      "value": "ইতিহাসের বিভিন্ন দিক"
+    },
+    "ja": {
+      "language": "ja",
+      "value": "アルザス／エルザス地方の歴史"
+    },
+    "fr": {
+      "language": "fr",
+      "value": "histoire de l'Alsace de la Préhistoire à aujourd'hui"
+    },
+    "uk": {
+      "language": "uk",
+      "value": "аспект історії"
+    }
+  },
+  "aliases": {
+    "de": [
+      {
+        "language": "de",
+        "value": "Geschichte des Elsasses"
+      },
+      {
+        "language": "de",
+        "value": "Landgrafschaft Elsass"
+      }
+    ],
+    "en": [
+      {
+        "language": "en",
+        "value": "Alsace history"
+      }
+    ],
+    "eo": [
+      {
+        "language": "eo",
+        "value": "historio de Elzaco"
+      }
+    ]
+  },
+  "claims": {
+    "P31": [
+      {
+        "mainsnak": {
+          "snaktype": "value",
+          "property": "P31",
+          "hash": "7ad5c7929af39fc2ff8afed55f1192f80e71d936",
+          "datavalue": {
+            "value": {
+              "entity-type": "item",
+              "numeric-id": 17524420,
+              "id": "Q17524420"
+            },
+            "type": "wikibase-entityid"
+          },
+          "datatype": "wikibase-item"
+        },
+        "type": "statement",
+        "id": "Q319602$A9D80827-6944-43E5-B982-DC5F783157CA",
+        "rank": "normal"
+      }
+    ],
+    "P910": [
+      {
+        "mainsnak": {
+          "snaktype": "value",
+          "property": "P910",
+          "hash": "a38d5fe095769390a32bfc08dc0f39f0e9cfd10d",
+          "datavalue": {
+            "value": {
+              "entity-type": "item",
+              "numeric-id": 6370400,
+              "id": "Q6370400"
+            },
+            "type": "wikibase-entityid"
+          },
+          "datatype": "wikibase-item"
+        },
+        "type": "statement",
+        "id": "Q319602$1C1D7C94-8633-4654-81CB-776D6732DD15",
+        "rank": "normal",
+        "references": [
+          {
+            "hash": "d4bd87b862b12d99d26e86472d44f26858dee639",
+            "snaks": {
+              "P143": [
+                {
+                  "snaktype": "value",
+                  "property": "P143",
+                  "hash": "f30cbd35620c4ea6d0633aaf0210a8916130469b",
+                  "datavalue": {
+                    "value": {
+                      "entity-type": "item",
+                      "numeric-id": 8447,
+                      "id": "Q8447"
+                    },
+                    "type": "wikibase-entityid"
+                  },
+                  "datatype": "wikibase-item"
+                }
+              ]
+            },
+            "snaks-order": [
+              "P143"
+            ]
+          }
+        ]
+      }
+    ],
+    "P373": [
+      {
+        "mainsnak": {
+          "snaktype": "value",
+          "property": "P373",
+          "hash": "c4b981f9edd82a409b691c27bfad24680b9ea537",
+          "datavalue": {
+            "value": "History of Alsace",
+            "type": "string"
+          },
+          "datatype": "string"
+        },
+        "type": "statement",
+        "id": "Q319602$20501E09-A574-4FB3-8C6A-7AB9B59C94BB",
+        "rank": "normal"
+      }
+    ],
+    "P268": [
+      {
+        "mainsnak": {
+          "snaktype": "value",
+          "property": "P268",
+          "hash": "874c6f126dc393d91719afb9d45493d507d2b64e",
+          "datavalue": {
+            "value": "11933359p",
+            "type": "string"
+          },
+          "datatype": "external-id"
+        },
+        "type": "statement",
+        "id": "Q319602$DDA5A585-96F7-42D4-AD6F-97AB2EE24905",
+        "rank": "normal",
+        "references": [
+          {
+            "hash": "d4bd87b862b12d99d26e86472d44f26858dee639",
+            "snaks": {
+              "P143": [
+                {
+                  "snaktype": "value",
+                  "property": "P143",
+                  "hash": "f30cbd35620c4ea6d0633aaf0210a8916130469b",
+                  "datavalue": {
+                    "value": {
+                      "entity-type": "item",
+                      "numeric-id": 8447,
+                      "id": "Q8447"
+                    },
+                    "type": "wikibase-entityid"
+                  },
+                  "datatype": "wikibase-item"
+                }
+              ]
+            },
+            "snaks-order": [
+              "P143"
+            ]
+          }
+        ]
+      }
+    ],
+    "P1343": [
+      {
+        "mainsnak": {
+          "snaktype": "value",
+          "property": "P1343",
+          "hash": "88389772f86dcd7d415ddd029f601412e5cc894a",
+          "datavalue": {
+            "value": {
+              "entity-type": "item",
+              "numeric-id": 602358,
+              "id": "Q602358"
+            },
+            "type": "wikibase-entityid"
+          },
+          "datatype": "wikibase-item"
+        },
+        "type": "statement",
+        "qualifiers": {
+          "P805": [
+            {
+              "snaktype": "value",
+              "property": "P805",
+              "hash": "8bf7f6e0aed367ede664d94a5896b85b1799604f",
+              "datavalue": {
+                "value": {
+                  "entity-type": "item",
+                  "numeric-id": 24506496,
+                  "id": "Q24506496"
+                },
+                "type": "wikibase-entityid"
+              },
+              "datatype": "wikibase-item"
+            }
+          ]
+        },
+        "qualifiers-order": [
+          "P805"
+        ],
+        "id": "Q319602$5FEEBA26-4E01-407F-B636-7B767F8A49E6",
+        "rank": "normal"
+      },
+      {
+        "mainsnak": {
+          "snaktype": "value",
+          "property": "P1343",
+          "hash": "7d6f86cef085693a10b0e0663a0960f58d0e15e2",
+          "datavalue": {
+            "value": {
+              "entity-type": "item",
+              "numeric-id": 4173137,
+              "id": "Q4173137"
+            },
+            "type": "wikibase-entityid"
+          },
+          "datatype": "wikibase-item"
+        },
+        "type": "statement",
+        "qualifiers": {
+          "P805": [
+            {
+              "snaktype": "value",
+              "property": "P805",
+              "hash": "6e01f54878f9cb92820a01e3fb52f00439e8629a",
+              "datavalue": {
+                "value": {
+                  "entity-type": "item",
+                  "numeric-id": 24917025,
+                  "id": "Q24917025"
+                },
+                "type": "wikibase-entityid"
+              },
+              "datatype": "wikibase-item"
+            }
+          ]
+        },
+        "qualifiers-order": [
+          "P805"
+        ],
+        "id": "Q319602$1B24F7D4-3F94-471E-B471-1566375348EF",
+        "rank": "normal"
+      }
+    ],
+    "P2671": [
+      {
+        "mainsnak": {
+          "snaktype": "value",
+          "property": "P2671",
+          "hash": "5a9a06d7bd8daf39e9c3f46714be7d852a3be2b6",
+          "datavalue": {
+            "value": "/g/122x7l0h",
+            "type": "string"
+          },
+          "datatype": "external-id"
+        },
+        "type": "statement",
+        "id": "Q319602$A4BEF897-8DEC-4377-A70F-2D2B16933D9A",
+        "rank": "normal"
+      }
+    ],
+    "P625": [
+      {
+        "mainsnak": {
+          "snaktype": "value",
+          "property": "P625",
+          "hash": "2adbb0598cad16ab028e79fb937789f084328465",
+          "datavalue": {
+            "value": {
+              "latitude": 48.5,
+              "longitude": 7.5,
+              "altitude": null,
+              "precision": 0.016666666666666666,
+              "globe": "http://www.wikidata.org/entity/Q2"
+            },
+            "type": "globecoordinate"
+          },
+          "datatype": "globe-coordinate"
+        },
+        "type": "statement",
+        "id": "Q319602$4a0fdab2-bb35-4b90-98c1-7449f043ec8b",
+        "rank": "normal"
+      }
+    ],
+    "P279": [
+      {
+        "mainsnak": {
+          "snaktype": "value",
+          "property": "P279",
+          "hash": "bd0575c12191f74ca33f36a47b486b7bc9383d0c",
+          "datavalue": {
+            "value": {
+              "entity-type": "item",
+              "numeric-id": 309,
+              "id": "Q309"
+            },
+            "type": "wikibase-entityid"
+          },
+          "datatype": "wikibase-item"
+        },
+        "type": "statement",
+        "id": "Q319602$ce4d6b10-470e-8f0e-4cba-78c8535f515b",
+        "rank": "normal"
+      }
+    ],
+    "P1269": [
+      {
+        "mainsnak": {
+          "snaktype": "value",
+          "property": "P1269",
+          "hash": "2d29a808727321c14b35344e2e7af227bde99944",
+          "datavalue": {
+            "value": {
+              "entity-type": "item",
+              "numeric-id": 1142,
+              "id": "Q1142"
+            },
+            "type": "wikibase-entityid"
+          },
+          "datatype": "wikibase-item"
+        },
+        "type": "statement",
+        "id": "Q319602$B53F1EF4-D5B1-4625-88B3-9282CA5193D6",
+        "rank": "normal"
+      }
+    ],
+    "P4342": [
+      {
+        "mainsnak": {
+          "snaktype": "value",
+          "property": "P4342",
+          "hash": "b662a0341282c036fc86b265fd59d7f8f644c2c1",
+          "datavalue": {
+            "value": "Alsace_-_historie",
+            "type": "string"
+          },
+          "datatype": "external-id"
+        },
+        "type": "statement",
+        "id": "Q319602$916FFEFA-8AE7-4622-8744-C0D22EF40C1F",
+        "rank": "normal"
+      }
+    ],
+    "P1889": [
+      {
+        "mainsnak": {
+          "snaktype": "value",
+          "property": "P1889",
+          "hash": "0b46dae2f2013328557dde4770c1a4b0541e766d",
+          "datavalue": {
+            "value": {
+              "entity-type": "item",
+              "numeric-id": 119950879,
+              "id": "Q119950879"
+            },
+            "type": "wikibase-entityid"
+          },
+          "datatype": "wikibase-item"
+        },
+        "type": "statement",
+        "id": "Q319602$5afbaa45-4efb-a754-eace-30762587fa7e",
+        "rank": "normal"
+      }
+    ],
+    "P17": [
+      {
+        "mainsnak": {
+          "snaktype": "value",
+          "property": "P17",
+          "hash": "c05db5d169c2560b9799d567a803d20a392f53e4",
+          "datavalue": {
+            "value": {
+              "entity-type": "item",
+              "numeric-id": 142,
+              "id": "Q142"
+            },
+            "type": "wikibase-entityid"
+          },
+          "datatype": "wikibase-item"
+        },
+        "type": "statement",
+        "id": "Q319602$C242CB2D-0660-44C2-9AA6-A74103CD4B19",
+        "rank": "normal"
+      }
+    ]
+  },
+  "sitelinks": {
+    "alswiki": {
+      "site": "alswiki",
+      "title": "Geschichte des Elsass",
+      "badges": [],
+      "url": "https://als.wikipedia.org/wiki/Geschichte_des_Elsass"
+    },
+    "dewiki": {
+      "site": "dewiki",
+      "title": "Geschichte des Elsass",
+      "badges": [],
+      "url": "https://de.wikipedia.org/wiki/Geschichte_des_Elsass"
+    },
+    "elwiki": {
+      "site": "elwiki",
+      "title": "Ιστορία της Αλσατίας",
+      "badges": [],
+      "url": "https://el.wikipedia.org/wiki/%CE%99%CF%83%CF%84%CE%BF%CF%81%CE%AF%CE%B1_%CF%84%CE%B7%CF%82_%CE%91%CE%BB%CF%83%CE%B1%CF%84%CE%AF%CE%B1%CF%82"
+    },
+    "enwiki": {
+      "site": "enwiki",
+      "title": "History of Alsace",
+      "badges": [],
+      "url": "https://en.wikipedia.org/wiki/History_of_Alsace"
+    },
+    "frwiki": {
+      "site": "frwiki",
+      "title": "Histoire de l'Alsace",
+      "badges": [],
+      "url": "https://fr.wikipedia.org/wiki/Histoire_de_l%27Alsace"
+    },
+    "jawiki": {
+      "site": "jawiki",
+      "title": "アルザスの歴史",
+      "badges": [],
+      "url": "https://ja.wikipedia.org/wiki/%E3%82%A2%E3%83%AB%E3%82%B6%E3%82%B9%E3%81%AE%E6%AD%B4%E5%8F%B2"
+    },
+    "ltwiki": {
+      "site": "ltwiki",
+      "title": "Elzaso istorija",
+      "badges": [],
+      "url": "https://lt.wikipedia.org/wiki/Elzaso_istorija"
+    },
+    "ruwiki": {
+      "site": "ruwiki",
+      "title": "История Эльзаса",
+      "badges": [],
+      "url": "https://ru.wikipedia.org/wiki/%D0%98%D1%81%D1%82%D0%BE%D1%80%D0%B8%D1%8F_%D0%AD%D0%BB%D1%8C%D0%B7%D0%B0%D1%81%D0%B0"
+    }
+  }
+}

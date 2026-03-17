@@ -1,0 +1,1158 @@
+{
+  "saved_at": "2026-03-07T13:19:12.500Z",
+  "value": {
+    "pageid": 9544,
+    "ns": 0,
+    "title": "Q8250",
+    "lastrevid": 2464694447,
+    "modified": "2026-02-19T12:26:16Z",
+    "type": "item",
+    "id": "Q8250",
+    "labels": {
+      "fr": {
+        "language": "fr",
+        "value": "église Saint-Nizier de Lyon"
+      },
+      "en": {
+        "language": "en",
+        "value": "Église Saint-Nizier"
+      },
+      "en-ca": {
+        "language": "en-ca",
+        "value": "Église Saint-Nizier"
+      },
+      "en-gb": {
+        "language": "en-gb",
+        "value": "Église Saint-Nizier"
+      },
+      "it": {
+        "language": "it",
+        "value": "chiesa di Saint-Nizier"
+      },
+      "zh": {
+        "language": "zh",
+        "value": "圣尼济耶教堂"
+      },
+      "es": {
+        "language": "es",
+        "value": "iglesia de San Niceto"
+      },
+      "de": {
+        "language": "de",
+        "value": "Église Saint-Nizier"
+      },
+      "nl": {
+        "language": "nl",
+        "value": "Église Saint-Nizier"
+      },
+      "ca": {
+        "language": "ca",
+        "value": "Église Saint-Nizier"
+      },
+      "oc": {
+        "language": "oc",
+        "value": "Église Saint-Nizier"
+      },
+      "cs": {
+        "language": "cs",
+        "value": "Kostel svatého Niziera"
+      },
+      "ja": {
+        "language": "ja",
+        "value": "サン・ニジエ教会"
+      }
+    },
+    "descriptions": {
+      "en": {
+        "language": "en",
+        "value": "church of the city of Lyon, France"
+      },
+      "it": {
+        "language": "it",
+        "value": "chiesa parrocchiale della città di Lione"
+      },
+      "es": {
+        "language": "es",
+        "value": "iglesia en Lyon, Francia"
+      },
+      "de": {
+        "language": "de",
+        "value": "Kirche in Lyon, Region Auvergne-Rhône-Alpes, Frankreich"
+      },
+      "fr": {
+        "language": "fr",
+        "value": "église catholique à Lyon"
+      },
+      "nl": {
+        "language": "nl",
+        "value": "kerkgebouw in Frankrijk"
+      },
+      "hy": {
+        "language": "hy",
+        "value": "եկեղեցի Ֆրանսիայում"
+      },
+      "sq": {
+        "language": "sq",
+        "value": "kishë"
+      },
+      "cs": {
+        "language": "cs",
+        "value": "kostel v centru Lyonu ve Francii"
+      }
+    },
+    "aliases": {
+      "en": [
+        {
+          "language": "en",
+          "value": "Church of Saint-Nizier"
+        },
+        {
+          "language": "en",
+          "value": "Eglise Saint-Nizier"
+        }
+      ]
+    },
+    "claims": {
+      "P380": [
+        {
+          "mainsnak": {
+            "snaktype": "value",
+            "property": "P380",
+            "hash": "5ffdcea2f68015472011759e55b8028f9caee7c8",
+            "datavalue": {
+              "value": "PA00117801",
+              "type": "string"
+            },
+            "datatype": "external-id"
+          },
+          "type": "statement",
+          "id": "Q8250$f215c793-469c-8eed-5ebc-d46f0db0da81",
+          "rank": "normal",
+          "references": [
+            {
+              "hash": "d709174cc609072fbf310bb52ddfb7aa2332b473",
+              "snaks": {
+                "P248": [
+                  {
+                    "snaktype": "value",
+                    "property": "P248",
+                    "hash": "fc376b4e25f8c58fa7210b660e00a66558a3332b",
+                    "datavalue": {
+                      "value": {
+                        "entity-type": "item",
+                        "numeric-id": 809830,
+                        "id": "Q809830"
+                      },
+                      "type": "wikibase-entityid"
+                    },
+                    "datatype": "wikibase-item"
+                  }
+                ]
+              },
+              "snaks-order": [
+                "P248"
+              ]
+            }
+          ]
+        }
+      ],
+      "P373": [
+        {
+          "mainsnak": {
+            "snaktype": "value",
+            "property": "P373",
+            "hash": "c1cd76b0f661520ef5ded77a1d19aa358e386ecc",
+            "datavalue": {
+              "value": "Église Saint-Nizier de Lyon",
+              "type": "string"
+            },
+            "datatype": "string"
+          },
+          "type": "statement",
+          "id": "q8250$E5C2E3BF-A624-44C6-A794-D4D9AFD9316D",
+          "rank": "normal"
+        }
+      ],
+      "P17": [
+        {
+          "mainsnak": {
+            "snaktype": "value",
+            "property": "P17",
+            "hash": "c05db5d169c2560b9799d567a803d20a392f53e4",
+            "datavalue": {
+              "value": {
+                "entity-type": "item",
+                "numeric-id": 142,
+                "id": "Q142"
+              },
+              "type": "wikibase-entityid"
+            },
+            "datatype": "wikibase-item"
+          },
+          "type": "statement",
+          "id": "q8250$03867BEE-4169-4CB1-A946-16A2032AA546",
+          "rank": "normal",
+          "references": [
+            {
+              "hash": "d709174cc609072fbf310bb52ddfb7aa2332b473",
+              "snaks": {
+                "P248": [
+                  {
+                    "snaktype": "value",
+                    "property": "P248",
+                    "hash": "fc376b4e25f8c58fa7210b660e00a66558a3332b",
+                    "datavalue": {
+                      "value": {
+                        "entity-type": "item",
+                        "numeric-id": 809830,
+                        "id": "Q809830"
+                      },
+                      "type": "wikibase-entityid"
+                    },
+                    "datatype": "wikibase-item"
+                  }
+                ]
+              },
+              "snaks-order": [
+                "P248"
+              ]
+            }
+          ]
+        }
+      ],
+      "P131": [
+        {
+          "mainsnak": {
+            "snaktype": "value",
+            "property": "P131",
+            "hash": "4cbb0fa328b834e408098d1156ca7a1e3fe0d581",
+            "datavalue": {
+              "value": {
+                "entity-type": "item",
+                "numeric-id": 3344,
+                "id": "Q3344"
+              },
+              "type": "wikibase-entityid"
+            },
+            "datatype": "wikibase-item"
+          },
+          "type": "statement",
+          "id": "Q8250$DCEFB538-1624-43A2-B9D1-9C1544AA267C",
+          "rank": "normal",
+          "references": [
+            {
+              "hash": "d709174cc609072fbf310bb52ddfb7aa2332b473",
+              "snaks": {
+                "P248": [
+                  {
+                    "snaktype": "value",
+                    "property": "P248",
+                    "hash": "fc376b4e25f8c58fa7210b660e00a66558a3332b",
+                    "datavalue": {
+                      "value": {
+                        "entity-type": "item",
+                        "numeric-id": 809830,
+                        "id": "Q809830"
+                      },
+                      "type": "wikibase-entityid"
+                    },
+                    "datatype": "wikibase-item"
+                  }
+                ]
+              },
+              "snaks-order": [
+                "P248"
+              ]
+            }
+          ]
+        }
+      ],
+      "P708": [
+        {
+          "mainsnak": {
+            "snaktype": "value",
+            "property": "P708",
+            "hash": "fd677ae1f39c907ba65637e214761511e8842d65",
+            "datavalue": {
+              "value": {
+                "entity-type": "item",
+                "numeric-id": 1364921,
+                "id": "Q1364921"
+              },
+              "type": "wikibase-entityid"
+            },
+            "datatype": "wikibase-item"
+          },
+          "type": "statement",
+          "id": "Q8250$11B876A1-F310-4EA6-A099-968D91EDE0B2",
+          "rank": "normal",
+          "references": [
+            {
+              "hash": "d5847b9b6032aa8b13dae3c2dfd9ed5d114d21b3",
+              "snaks": {
+                "P143": [
+                  {
+                    "snaktype": "value",
+                    "property": "P143",
+                    "hash": "5a343e7e758a4282a01316d3e959b6e653b767fc",
+                    "datavalue": {
+                      "value": {
+                        "entity-type": "item",
+                        "numeric-id": 11920,
+                        "id": "Q11920"
+                      },
+                      "type": "wikibase-entityid"
+                    },
+                    "datatype": "wikibase-item"
+                  }
+                ]
+              },
+              "snaks-order": [
+                "P143"
+              ]
+            }
+          ]
+        }
+      ],
+      "P646": [
+        {
+          "mainsnak": {
+            "snaktype": "value",
+            "property": "P646",
+            "hash": "04370501d0a839d5b713e63d123a68b5a67ce515",
+            "datavalue": {
+              "value": "/m/026thk_",
+              "type": "string"
+            },
+            "datatype": "external-id"
+          },
+          "type": "statement",
+          "id": "Q8250$61512AE1-6E76-4F6F-B655-925F77B0922C",
+          "rank": "normal",
+          "references": [
+            {
+              "hash": "2b00cb481cddcac7623114367489b5c194901c4a",
+              "snaks": {
+                "P248": [
+                  {
+                    "snaktype": "value",
+                    "property": "P248",
+                    "hash": "a94b740202b097dd33355e0e6c00e54b9395e5e0",
+                    "datavalue": {
+                      "value": {
+                        "entity-type": "item",
+                        "numeric-id": 15241312,
+                        "id": "Q15241312"
+                      },
+                      "type": "wikibase-entityid"
+                    },
+                    "datatype": "wikibase-item"
+                  }
+                ],
+                "P577": [
+                  {
+                    "snaktype": "value",
+                    "property": "P577",
+                    "hash": "fde79ecb015112d2f29229ccc1ec514ed3e71fa2",
+                    "datavalue": {
+                      "value": {
+                        "time": "+2013-10-28T00:00:00Z",
+                        "timezone": 0,
+                        "before": 0,
+                        "after": 0,
+                        "precision": 11,
+                        "calendarmodel": "http://www.wikidata.org/entity/Q1985727"
+                      },
+                      "type": "time"
+                    },
+                    "datatype": "time"
+                  }
+                ]
+              },
+              "snaks-order": [
+                "P248",
+                "P577"
+              ]
+            }
+          ]
+        }
+      ],
+      "P84": [
+        {
+          "mainsnak": {
+            "snaktype": "value",
+            "property": "P84",
+            "hash": "e4d7b7ab88f17ad2671bb465e78e3abee1e8071b",
+            "datavalue": {
+              "value": {
+                "entity-type": "item",
+                "numeric-id": 440053,
+                "id": "Q440053"
+              },
+              "type": "wikibase-entityid"
+            },
+            "datatype": "wikibase-item"
+          },
+          "type": "statement",
+          "id": "Q8250$0A31F380-9EB6-4016-96D7-E116B78F058A",
+          "rank": "normal",
+          "references": [
+            {
+              "hash": "d4bd87b862b12d99d26e86472d44f26858dee639",
+              "snaks": {
+                "P143": [
+                  {
+                    "snaktype": "value",
+                    "property": "P143",
+                    "hash": "f30cbd35620c4ea6d0633aaf0210a8916130469b",
+                    "datavalue": {
+                      "value": {
+                        "entity-type": "item",
+                        "numeric-id": 8447,
+                        "id": "Q8447"
+                      },
+                      "type": "wikibase-entityid"
+                    },
+                    "datatype": "wikibase-item"
+                  }
+                ]
+              },
+              "snaks-order": [
+                "P143"
+              ]
+            }
+          ]
+        }
+      ],
+      "P18": [
+        {
+          "mainsnak": {
+            "snaktype": "value",
+            "property": "P18",
+            "hash": "ffdfbb7a2f40fcba6168074a08feda6a3a636a82",
+            "datavalue": {
+              "value": "Église St Nizier Lyon 5.jpg",
+              "type": "string"
+            },
+            "datatype": "commonsMedia"
+          },
+          "type": "statement",
+          "qualifiers": {
+            "P585": [
+              {
+                "snaktype": "value",
+                "property": "P585",
+                "hash": "177e2df636880536be4515699559ad006c9fb1fc",
+                "datavalue": {
+                  "value": {
+                    "time": "+2018-09-21T00:00:00Z",
+                    "timezone": 0,
+                    "before": 0,
+                    "after": 0,
+                    "precision": 11,
+                    "calendarmodel": "http://www.wikidata.org/entity/Q1985727"
+                  },
+                  "type": "time"
+                },
+                "datatype": "time"
+              }
+            ]
+          },
+          "qualifiers-order": [
+            "P585"
+          ],
+          "id": "Q8250$9DEA6C9C-303C-4041-81DF-43D3A9C14147",
+          "rank": "normal"
+        }
+      ],
+      "P1435": [
+        {
+          "mainsnak": {
+            "snaktype": "value",
+            "property": "P1435",
+            "hash": "47d4f633ccb039ebb1a08af61dffb908b5e07611",
+            "datavalue": {
+              "value": {
+                "entity-type": "item",
+                "numeric-id": 10387684,
+                "id": "Q10387684"
+              },
+              "type": "wikibase-entityid"
+            },
+            "datatype": "wikibase-item"
+          },
+          "type": "statement",
+          "qualifiers": {
+            "P580": [
+              {
+                "snaktype": "value",
+                "property": "P580",
+                "hash": "adba3177490bda61a634a30be2b57077044b80f6",
+                "datavalue": {
+                  "value": {
+                    "time": "+1840-00-00T00:00:00Z",
+                    "timezone": 0,
+                    "before": 0,
+                    "after": 0,
+                    "precision": 9,
+                    "calendarmodel": "http://www.wikidata.org/entity/Q1985727"
+                  },
+                  "type": "time"
+                },
+                "datatype": "time"
+              }
+            ]
+          },
+          "qualifiers-order": [
+            "P580"
+          ],
+          "id": "Q8250$22F01840-DE13-4E65-A2D4-22254B2AE6D2",
+          "rank": "normal",
+          "references": [
+            {
+              "hash": "d709174cc609072fbf310bb52ddfb7aa2332b473",
+              "snaks": {
+                "P248": [
+                  {
+                    "snaktype": "value",
+                    "property": "P248",
+                    "hash": "fc376b4e25f8c58fa7210b660e00a66558a3332b",
+                    "datavalue": {
+                      "value": {
+                        "entity-type": "item",
+                        "numeric-id": 809830,
+                        "id": "Q809830"
+                      },
+                      "type": "wikibase-entityid"
+                    },
+                    "datatype": "wikibase-item"
+                  }
+                ]
+              },
+              "snaks-order": [
+                "P248"
+              ]
+            }
+          ]
+        }
+      ],
+      "P31": [
+        {
+          "mainsnak": {
+            "snaktype": "value",
+            "property": "P31",
+            "hash": "1e9bc38e4fd13408f190f2431739c6b48ff02ded",
+            "datavalue": {
+              "value": {
+                "entity-type": "item",
+                "numeric-id": 1088552,
+                "id": "Q1088552"
+              },
+              "type": "wikibase-entityid"
+            },
+            "datatype": "wikibase-item"
+          },
+          "type": "statement",
+          "id": "Q8250$6A1639C3-6DA6-49CA-8B33-7EE6DC0439DA",
+          "rank": "normal",
+          "references": [
+            {
+              "hash": "d709174cc609072fbf310bb52ddfb7aa2332b473",
+              "snaks": {
+                "P248": [
+                  {
+                    "snaktype": "value",
+                    "property": "P248",
+                    "hash": "fc376b4e25f8c58fa7210b660e00a66558a3332b",
+                    "datavalue": {
+                      "value": {
+                        "entity-type": "item",
+                        "numeric-id": 809830,
+                        "id": "Q809830"
+                      },
+                      "type": "wikibase-entityid"
+                    },
+                    "datatype": "wikibase-item"
+                  }
+                ]
+              },
+              "snaks-order": [
+                "P248"
+              ]
+            }
+          ]
+        }
+      ],
+      "P625": [
+        {
+          "mainsnak": {
+            "snaktype": "value",
+            "property": "P625",
+            "hash": "45d73a30b3228c2d64a5114c6d785e1f4ce55de5",
+            "datavalue": {
+              "value": {
+                "latitude": 45.764711111111,
+                "longitude": 4.8335972222222,
+                "altitude": null,
+                "precision": 0.0000027777777777778,
+                "globe": "http://www.wikidata.org/entity/Q2"
+              },
+              "type": "globecoordinate"
+            },
+            "datatype": "globe-coordinate"
+          },
+          "type": "statement",
+          "id": "q8250$EDB5CBDF-C232-42C2-B6B3-E2D2F7F904F9",
+          "rank": "normal",
+          "references": [
+            {
+              "hash": "fa278ebfc458360e5aed63d5058cca83c46134f1",
+              "snaks": {
+                "P143": [
+                  {
+                    "snaktype": "value",
+                    "property": "P143",
+                    "hash": "e4f6d9441d0600513c4533c672b5ab472dc73694",
+                    "datavalue": {
+                      "value": {
+                        "entity-type": "item",
+                        "numeric-id": 328,
+                        "id": "Q328"
+                      },
+                      "type": "wikibase-entityid"
+                    },
+                    "datatype": "wikibase-item"
+                  }
+                ]
+              },
+              "snaks-order": [
+                "P143"
+              ]
+            }
+          ]
+        }
+      ],
+      "P1644": [
+        {
+          "mainsnak": {
+            "snaktype": "value",
+            "property": "P1644",
+            "hash": "8e5459f5ae7ab89732bc2728fb9ba4ec9499c5f6",
+            "datavalue": {
+              "value": "69/lyon-02/saint-nizier",
+              "type": "string"
+            },
+            "datatype": "external-id"
+          },
+          "type": "statement",
+          "id": "Q8250$433DC4F4-FEEB-48E1-AD02-264E94787D56",
+          "rank": "normal"
+        }
+      ],
+      "P856": [
+        {
+          "mainsnak": {
+            "snaktype": "value",
+            "property": "P856",
+            "hash": "39cd7b21d708f216ee64af1dd5dd05c4c337feaa",
+            "datavalue": {
+              "value": "http://www.saintnizier-lyon.catholique.fr/",
+              "type": "string"
+            },
+            "datatype": "url"
+          },
+          "type": "statement",
+          "id": "Q8250$D1554332-ED2F-4433-A456-9DE8F7EEB100",
+          "rank": "normal",
+          "references": [
+            {
+              "hash": "d5847b9b6032aa8b13dae3c2dfd9ed5d114d21b3",
+              "snaks": {
+                "P143": [
+                  {
+                    "snaktype": "value",
+                    "property": "P143",
+                    "hash": "5a343e7e758a4282a01316d3e959b6e653b767fc",
+                    "datavalue": {
+                      "value": {
+                        "entity-type": "item",
+                        "numeric-id": 11920,
+                        "id": "Q11920"
+                      },
+                      "type": "wikibase-entityid"
+                    },
+                    "datatype": "wikibase-item"
+                  }
+                ]
+              },
+              "snaks-order": [
+                "P143"
+              ]
+            }
+          ]
+        }
+      ],
+      "P3963": [
+        {
+          "mainsnak": {
+            "snaktype": "value",
+            "property": "P3963",
+            "hash": "4310c8d52172beb48112c27169ec1c815f78151c",
+            "datavalue": {
+              "value": "69/accueil_69382g",
+              "type": "string"
+            },
+            "datatype": "external-id"
+          },
+          "type": "statement",
+          "id": "Q8250$5F6EBABB-DBC3-4C19-933E-59CA3FD61F95",
+          "rank": "normal"
+        }
+      ],
+      "P149": [
+        {
+          "mainsnak": {
+            "snaktype": "value",
+            "property": "P149",
+            "hash": "dd808475c396b3649c12f483b0851dd5686669e7",
+            "datavalue": {
+              "value": {
+                "entity-type": "item",
+                "numeric-id": 176483,
+                "id": "Q176483"
+              },
+              "type": "wikibase-entityid"
+            },
+            "datatype": "wikibase-item"
+          },
+          "type": "statement",
+          "id": "Q8250$0A7B12F3-6D17-4F79-BAA1-5A3FED09B5B6",
+          "rank": "normal"
+        }
+      ],
+      "P1838": [
+        {
+          "mainsnak": {
+            "snaktype": "value",
+            "property": "P1838",
+            "hash": "75ab239e7c8a1dec069123709a2b59ea635a3f45",
+            "datavalue": {
+              "value": "FR-69123-1402",
+              "type": "string"
+            },
+            "datatype": "external-id"
+          },
+          "type": "statement",
+          "id": "Q8250$3D89E6B3-E98C-4608-A885-639D4ECD8C72",
+          "rank": "normal"
+        }
+      ],
+      "P5383": [
+        {
+          "mainsnak": {
+            "snaktype": "value",
+            "property": "P5383",
+            "hash": "6e86e86fa9bbd37354a77131f7cd787dea1b6177",
+            "datavalue": {
+              "value": "15018",
+              "type": "string"
+            },
+            "datatype": "external-id"
+          },
+          "type": "statement",
+          "id": "Q8250$8CB653E3-40C1-4A79-91F2-F14864F6916D",
+          "rank": "normal",
+          "references": [
+            {
+              "hash": "844cfe9bfdf204b3c7e3d5a561fbccc642757ab4",
+              "snaks": {
+                "P854": [
+                  {
+                    "snaktype": "value",
+                    "property": "P854",
+                    "hash": "bb385bc908e4615b60c060310f5723f66c443109",
+                    "datavalue": {
+                      "value": "https://www.archinform.net/service/wd_aipro.php",
+                      "type": "string"
+                    },
+                    "datatype": "url"
+                  }
+                ],
+                "P248": [
+                  {
+                    "snaktype": "value",
+                    "property": "P248",
+                    "hash": "c619cc6e0e5fe3733a8c4a47939343e5970e0e9d",
+                    "datavalue": {
+                      "value": {
+                        "entity-type": "item",
+                        "numeric-id": 265049,
+                        "id": "Q265049"
+                      },
+                      "type": "wikibase-entityid"
+                    },
+                    "datatype": "wikibase-item"
+                  }
+                ],
+                "P813": [
+                  {
+                    "snaktype": "value",
+                    "property": "P813",
+                    "hash": "55d7a195cda2d3d4ee971cbd65bee765aabe5bb9",
+                    "datavalue": {
+                      "value": {
+                        "time": "+2018-12-14T00:00:00Z",
+                        "timezone": 0,
+                        "before": 0,
+                        "after": 0,
+                        "precision": 11,
+                        "calendarmodel": "http://www.wikidata.org/entity/Q1985727"
+                      },
+                      "type": "time"
+                    },
+                    "datatype": "time"
+                  }
+                ]
+              },
+              "snaks-order": [
+                "P854",
+                "P248",
+                "P813"
+              ]
+            }
+          ]
+        }
+      ],
+      "P6375": [
+        {
+          "mainsnak": {
+            "snaktype": "value",
+            "property": "P6375",
+            "hash": "1bc5e334b9df1e5337e71f15ef61f40c149f16f4",
+            "datavalue": {
+              "value": {
+                "text": "1 rue Saint-Nizier, 69002 Lyon, France",
+                "language": "fr"
+              },
+              "type": "monolingualtext"
+            },
+            "datatype": "monolingualtext"
+          },
+          "type": "statement",
+          "id": "Q8250$1170bac9-4751-617b-2218-ffc57625b47f",
+          "rank": "normal"
+        }
+      ],
+      "P140": [
+        {
+          "mainsnak": {
+            "snaktype": "value",
+            "property": "P140",
+            "hash": "1d37cef459ae3310e8856a343b4f5d0ceaee71e2",
+            "datavalue": {
+              "value": {
+                "entity-type": "item",
+                "numeric-id": 1841,
+                "id": "Q1841"
+              },
+              "type": "wikibase-entityid"
+            },
+            "datatype": "wikibase-item"
+          },
+          "type": "statement",
+          "id": "Q8250$D4A5155A-D02F-4AD5-A3A5-C9D77476D973",
+          "rank": "normal"
+        }
+      ],
+      "P2971": [
+        {
+          "mainsnak": {
+            "snaktype": "value",
+            "property": "P2971",
+            "hash": "92b1ae2df13952a6763ce8b8316d1879b9c979aa",
+            "datavalue": {
+              "value": "57021",
+              "type": "string"
+            },
+            "datatype": "external-id"
+          },
+          "type": "statement",
+          "id": "Q8250$bf47ab42-cf52-4871-a9cf-c4b911db8b9e",
+          "rank": "normal"
+        }
+      ],
+      "P5607": [
+        {
+          "mainsnak": {
+            "snaktype": "value",
+            "property": "P5607",
+            "hash": "7bcccb2d4c9a39fb3a0a219fa68cb0c9ca282258",
+            "datavalue": {
+              "value": {
+                "entity-type": "item",
+                "numeric-id": 100963553,
+                "id": "Q100963553"
+              },
+              "type": "wikibase-entityid"
+            },
+            "datatype": "wikibase-item"
+          },
+          "type": "statement",
+          "id": "Q8250$38596488-3834-462a-9d56-50bf5e5f3649",
+          "rank": "normal",
+          "references": [
+            {
+              "hash": "bb45319c42401f3b74b654aa99d803a1bf5ab33e",
+              "snaks": {
+                "P854": [
+                  {
+                    "snaktype": "value",
+                    "property": "P854",
+                    "hash": "e1f92c9d04d74c17018d389b8cd3f28dc5ab0453",
+                    "datavalue": {
+                      "value": "https://messes.info/lieu/69/lyon-02/saint-nizier",
+                      "type": "string"
+                    },
+                    "datatype": "url"
+                  }
+                ]
+              },
+              "snaks-order": [
+                "P854"
+              ]
+            }
+          ]
+        }
+      ],
+      "P7561": [
+        {
+          "mainsnak": {
+            "snaktype": "value",
+            "property": "P7561",
+            "hash": "f089979b1e6f7523d3e73c5b187d2abaf1935800",
+            "datavalue": {
+              "value": {
+                "entity-type": "item",
+                "numeric-id": 104566778,
+                "id": "Q104566778"
+              },
+              "type": "wikibase-entityid"
+            },
+            "datatype": "wikibase-item"
+          },
+          "type": "statement",
+          "id": "Q8250$9e313d38-ee49-40c0-aa9a-93cc8126a3ee",
+          "rank": "normal"
+        }
+      ],
+      "P5775": [
+        {
+          "mainsnak": {
+            "snaktype": "value",
+            "property": "P5775",
+            "hash": "719fee4631e36c583be855c1754c1a713b527cba",
+            "datavalue": {
+              "value": "Lyon Église Saint-Nizier Intérieure Nef Est 1.jpg",
+              "type": "string"
+            },
+            "datatype": "commonsMedia"
+          },
+          "type": "statement",
+          "id": "Q8250$fd9f162e-45dd-31e0-67f4-b6ef7fbec831",
+          "rank": "normal"
+        }
+      ],
+      "P825": [
+        {
+          "mainsnak": {
+            "snaktype": "value",
+            "property": "P825",
+            "hash": "1a0ff0bf5d29b09d82444a74f6bdcf5eb3331077",
+            "datavalue": {
+              "value": {
+                "entity-type": "item",
+                "numeric-id": 2356035,
+                "id": "Q2356035"
+              },
+              "type": "wikibase-entityid"
+            },
+            "datatype": "wikibase-item"
+          },
+          "type": "statement",
+          "id": "Q8250$70336ede-8fda-49ba-bcdc-7ab22be7320d",
+          "rank": "normal",
+          "references": [
+            {
+              "hash": "d4bd87b862b12d99d26e86472d44f26858dee639",
+              "snaks": {
+                "P143": [
+                  {
+                    "snaktype": "value",
+                    "property": "P143",
+                    "hash": "f30cbd35620c4ea6d0633aaf0210a8916130469b",
+                    "datavalue": {
+                      "value": {
+                        "entity-type": "item",
+                        "numeric-id": 8447,
+                        "id": "Q8447"
+                      },
+                      "type": "wikibase-entityid"
+                    },
+                    "datatype": "wikibase-item"
+                  }
+                ]
+              },
+              "snaks-order": [
+                "P143"
+              ]
+            }
+          ]
+        }
+      ],
+      "P9721": [
+        {
+          "mainsnak": {
+            "snaktype": "value",
+            "property": "P9721",
+            "hash": "fea8a2865c9aeca6d45c96f18366cf628272e087",
+            "datavalue": {
+              "value": "Lyon - Église Saint-Nizier, portail ouest 1.jpg",
+              "type": "string"
+            },
+            "datatype": "commonsMedia"
+          },
+          "type": "statement",
+          "id": "Q8250$3325554b-456f-be1b-28da-3ac5e1456c46",
+          "rank": "normal"
+        }
+      ],
+      "P5517": [
+        {
+          "mainsnak": {
+            "snaktype": "value",
+            "property": "P5517",
+            "hash": "cf70dde4b7164d8406a800ddc8586bcc819c7be7",
+            "datavalue": {
+              "value": "IA69005950",
+              "type": "string"
+            },
+            "datatype": "external-id"
+          },
+          "type": "statement",
+          "id": "Q8250$A4D64DC3-B713-48F0-8B95-FAC4EE88F915",
+          "rank": "normal"
+        }
+      ],
+      "P3501": [
+        {
+          "mainsnak": {
+            "snaktype": "value",
+            "property": "P3501",
+            "hash": "6625c2116039d72e46b1665c05bcffde3a0b1a36",
+            "datavalue": {
+              "value": {
+                "entity-type": "item",
+                "numeric-id": 730757,
+                "id": "Q730757"
+              },
+              "type": "wikibase-entityid"
+            },
+            "datatype": "wikibase-item"
+          },
+          "type": "statement",
+          "id": "Q8250$bcc216c3-e666-49f2-844b-341995bd17ed",
+          "rank": "normal",
+          "references": [
+            {
+              "hash": "134b0624deb9f68c9c0867ad09dde84f49bca090",
+              "snaks": {
+                "P854": [
+                  {
+                    "snaktype": "value",
+                    "property": "P854",
+                    "hash": "e55f04a19c6cb87d0b9aeb5f01bfe3a824be0b02",
+                    "datavalue": {
+                      "value": "http://www.gcatholic.org/c/57021",
+                      "type": "string"
+                    },
+                    "datatype": "url"
+                  }
+                ]
+              },
+              "snaks-order": [
+                "P854"
+              ]
+            }
+          ]
+        }
+      ],
+      "P10689": [
+        {
+          "mainsnak": {
+            "snaktype": "value",
+            "property": "P10689",
+            "hash": "90cce73eff5a7190fb256bc3a78d14591495111a",
+            "datavalue": {
+              "value": "60801683",
+              "type": "string"
+            },
+            "datatype": "external-id"
+          },
+          "type": "statement",
+          "id": "Q8250$c8227dda-48cc-5c19-0919-023793b7f58e",
+          "rank": "normal"
+        }
+      ]
+    },
+    "sitelinks": {
+      "commonswiki": {
+        "site": "commonswiki",
+        "title": "Category:Église Saint-Nizier de Lyon",
+        "badges": [],
+        "url": "https://commons.wikimedia.org/wiki/Category:%C3%89glise_Saint-Nizier_de_Lyon"
+      },
+      "cswiki": {
+        "site": "cswiki",
+        "title": "Kostel svatého Niziera",
+        "badges": [],
+        "url": "https://cs.wikipedia.org/wiki/Kostel_svat%C3%A9ho_Niziera"
+      },
+      "dewiki": {
+        "site": "dewiki",
+        "title": "St-Nizier (Lyon)",
+        "badges": [],
+        "url": "https://de.wikipedia.org/wiki/St-Nizier_(Lyon)"
+      },
+      "enwiki": {
+        "site": "enwiki",
+        "title": "Saint-Nizier Church",
+        "badges": [],
+        "url": "https://en.wikipedia.org/wiki/Saint-Nizier_Church"
+      },
+      "frwiki": {
+        "site": "frwiki",
+        "title": "Église Saint-Nizier de Lyon",
+        "badges": [],
+        "url": "https://fr.wikipedia.org/wiki/%C3%89glise_Saint-Nizier_de_Lyon"
+      },
+      "frwikisource": {
+        "site": "frwikisource",
+        "title": "Catégorie:Église Saint-Nizier de Lyon",
+        "badges": [],
+        "url": "https://fr.wikisource.org/wiki/Cat%C3%A9gorie:%C3%89glise_Saint-Nizier_de_Lyon"
+      },
+      "itwiki": {
+        "site": "itwiki",
+        "title": "Chiesa di Saint-Nizier",
+        "badges": [],
+        "url": "https://it.wikipedia.org/wiki/Chiesa_di_Saint-Nizier"
+      },
+      "zhwiki": {
+        "site": "zhwiki",
+        "title": "圣尼济耶教堂",
+        "badges": [],
+        "url": "https://zh.wikipedia.org/wiki/%E5%9C%A3%E5%B0%BC%E6%B5%8E%E8%80%B6%E6%95%99%E5%A0%82"
+      }
+    }
+  }
+}

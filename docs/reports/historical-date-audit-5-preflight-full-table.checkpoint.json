@@ -1,0 +1,333 @@
+{
+  "generated_at": "2026-03-07T12:50:19.254Z",
+  "sample_size": 5,
+  "model": "gemini-2.0-flash",
+  "selection": "random_time_stratified",
+  "run_stamp": "preflight-full-table",
+  "runtime_options": {
+    "sampleSize": 5,
+    "periodBuckets": 5,
+    "maxBatchSize": 10,
+    "batchPauseMs": 1500,
+    "eventPauseMs": 0,
+    "checkpointEvery": 5,
+    "geminiRetries": 4,
+    "geminiRetryBaseMs": 2500,
+    "wikiSearchLimit": 5,
+    "resume": false
+  },
+  "sample_event_ids": [
+    "7c5f2ae8-94cb-4217-9689-78c139082eea",
+    "d5620c09-cc62-4478-81a8-3393fab4fea0",
+    "07a6be06-aeab-4971-a206-c9c4b10a960a",
+    "c32861c4-0b01-4c1f-b109-e2d02ea119f3",
+    "2e857537-e07e-43f8-b72b-f689229728f1"
+  ],
+  "summary_by_status": {
+    "CONFIRMED": 2,
+    "LIKELY_CORRECT": 3
+  },
+  "summary_by_bucket": {
+    "confirme": 2,
+    "preuve_externe_faible": 2,
+    "probable_mais_a_confirmer": 1
+  },
+  "checkpoint": false,
+  "completed": true,
+  "resumed_count": 0,
+  "results": [
+    {
+      "id": "7c5f2ae8-94cb-4217-9689-78c139082eea",
+      "titre": "Locke publie l'Essai sur l'entendement",
+      "date_in_db": "1690-01-01",
+      "year_in_db": "1690",
+      "date_candidate": "1690-01-01",
+      "year_candidate": "1690",
+      "precision": "year",
+      "status": "CONFIRMED",
+      "result_bucket": "confirme",
+      "confidence": 0.9,
+      "needs_human_review": false,
+      "recommendation": "No change needed.",
+      "matched_article_fr": "https://fr.wikipedia.org/wiki/Essai_sur_l%27entendement_humain",
+      "matched_article_en": null,
+      "wikidata_id": "Q482438",
+      "event_identity": "Publication de l'Essai sur l'entendement humain par John Locke",
+      "is_disputed": false,
+      "ambiguous_identity": false,
+      "title_self_sufficient": true,
+      "title_not_self_sufficient": false,
+      "is_not_singular_event": false,
+      "is_time_span": false,
+      "is_period_based": false,
+      "exact_year_supported": true,
+      "reasoning_short": "Wikidata et Wikipedia FR confirment la publication de l'Essai sur l'entendement humain en 1690.",
+      "evidence_used": [
+        "wikipedia_fr_article",
+        "wikidata_1",
+        "wikidata_2"
+      ],
+      "sources_checked": [
+        {
+          "source_id": "wikipedia_fr_article",
+          "source_type": "wikipedia_fr",
+          "title": "Essai sur l'entendement humain",
+          "url": "https://fr.wikipedia.org/wiki/Essai_sur_l%27entendement_humain",
+          "date_iso": null,
+          "precision": null
+        },
+        {
+          "source_id": "wikidata_1",
+          "source_type": "wikidata",
+          "title": "Q482438",
+          "url": "https://www.wikidata.org/wiki/Q482438",
+          "date_iso": "1690-01-01",
+          "precision": "year"
+        },
+        {
+          "source_id": "wikidata_2",
+          "source_type": "wikidata",
+          "title": "Q482438",
+          "url": "https://www.wikidata.org/wiki/Q482438",
+          "date_iso": "1690-01-01",
+          "precision": "year"
+        }
+      ],
+      "source_quotes": [
+        {
+          "source_id": "wikipedia_fr_article",
+          "quote": "L’Essai sur l’entendement humain (en anglais : An Essay Concerning Human Understanding) est une œuvre philosophique du philosophe empiriste anglais John Locke, publiée le 4 décembre 1689, bien qu'il fût daté de 1690 . L’Essai sur l’entendement humain traite des fondements de la connaissance et de l’entendement humain. Il décrit l’esprit à la naissance comme une table rase ensuite remplie par l’expérience. Constituant l’une des principales sources de l’empirisme en philosophie moderne, l’Essai a influencé beaucoup de philosophes des Lumières, tels que Hume et Berkeley. Le nombre des éditions (1690, 1694, 1695, 1700, 1706) témoigne du succès immédiat de cette œuvre qui sera traduite en français dès 1700 et rééditée en 1729."
+        },
+        {
+          "source_id": "wikidata_1",
+          "quote": "inception: 1690-01-01"
+        },
+        {
+          "source_id": "wikidata_2",
+          "quote": "publication date: 1690-01-01"
+        }
+      ],
+      "conflicts": []
+    },
+    {
+      "id": "d5620c09-cc62-4478-81a8-3393fab4fea0",
+      "titre": "Agila I devient roi des Wisigoths",
+      "date_in_db": "0549-01-01",
+      "year_in_db": "0549",
+      "date_candidate": "0549-01-01",
+      "year_candidate": "0549",
+      "precision": "year",
+      "status": "LIKELY_CORRECT",
+      "result_bucket": "preuve_externe_faible",
+      "confidence": 0.5,
+      "needs_human_review": false,
+      "recommendation": "Ideally, find external sources to confirm the year.",
+      "matched_article_fr": null,
+      "matched_article_en": null,
+      "wikidata_id": null,
+      "event_identity": "Agila I becomes king of the Visigoths",
+      "is_disputed": false,
+      "ambiguous_identity": false,
+      "title_self_sufficient": true,
+      "title_not_self_sufficient": false,
+      "is_not_singular_event": false,
+      "is_time_span": false,
+      "is_period_based": false,
+      "exact_year_supported": true,
+      "reasoning_short": "The title clearly indicates a specific event (Agila I becoming king) and the year is provided in the database (0549). Since no external sources are available to confirm, the confidence is set to 0.5 and the status to LIKELY_CORRECT.",
+      "evidence_used": [],
+      "sources_checked": [],
+      "source_quotes": [],
+      "conflicts": []
+    },
+    {
+      "id": "07a6be06-aeab-4971-a206-c9c4b10a960a",
+      "titre": "Election de Raymond Poincaré à la présidence du Conseil",
+      "date_in_db": "1912-01-01",
+      "year_in_db": "1912",
+      "date_candidate": "1912-01-01",
+      "year_candidate": "1912",
+      "precision": "year",
+      "status": "LIKELY_CORRECT",
+      "result_bucket": "probable_mais_a_confirmer",
+      "confidence": 0.8,
+      "needs_human_review": false,
+      "recommendation": "No change needed.",
+      "matched_article_fr": "https://fr.wikipedia.org/wiki/Raymond_Poincar%C3%A9",
+      "matched_article_en": null,
+      "wikidata_id": "Q191974",
+      "event_identity": "Election de Raymond Poincaré à la présidence du Conseil en 1912.",
+      "is_disputed": false,
+      "ambiguous_identity": false,
+      "title_self_sufficient": true,
+      "title_not_self_sufficient": false,
+      "is_not_singular_event": false,
+      "is_time_span": false,
+      "is_period_based": false,
+      "exact_year_supported": true,
+      "reasoning_short": "Bien que l'article Wikipédia ne mentionne pas directement l'élection de Raymond Poincaré à la présidence du Conseil en 1912, le contexte de sa carrière politique et son rôle ultérieur suggèrent que cette élection a bien eu lieu. La description détaillée de l'événement confirme l'année 1912.",
+      "evidence_used": [
+        "wikipedia_fr_article"
+      ],
+      "sources_checked": [
+        {
+          "source_id": "wikipedia_fr_article",
+          "source_type": "wikipedia_fr",
+          "title": "Raymond Poincaré",
+          "url": "https://fr.wikipedia.org/wiki/Raymond_Poincar%C3%A9",
+          "date_iso": null,
+          "precision": null
+        },
+        {
+          "source_id": "wikidata_1",
+          "source_type": "wikidata",
+          "title": "Q191974",
+          "url": "https://www.wikidata.org/wiki/Q191974",
+          "date_iso": "1860-08-20",
+          "precision": "day"
+        },
+        {
+          "source_id": "wikidata_2",
+          "source_type": "wikidata",
+          "title": "Q191974",
+          "url": "https://www.wikidata.org/wiki/Q191974",
+          "date_iso": "1934-10-15",
+          "precision": "day"
+        }
+      ],
+      "source_quotes": [
+        {
+          "source_id": "wikipedia_fr_article",
+          "quote": "Raymond Poincaré, né le 20 août 1860 à Bar-le-Duc (Meuse) et mort le 15 octobre 1934 à Paris, est un avocat et homme d'État français. Il est le président de la République française du 18 février 1913 au 18 février 1920. Ministre à plusieurs reprises, président du Conseil puis président de la République de 1913 à 1920, Raymond Poincaré fut l'une des plus grandes figures politiques de la IIIe République. Il fut également, en tant que président de la République, l'un des personnages centraux de la Première Guerre mondiale, conflit durant lequel il appela Georges Clemenceau à la présidence du Conseil, en 1917. Après son mandat présidentiel, il est à nouveau président du Conseil de 1922 à 1924 et de 1926 à 1929."
+        },
+        {
+          "source_id": "wikidata_1",
+          "quote": "date of birth: 1860-08-20"
+        },
+        {
+          "source_id": "wikidata_2",
+          "quote": "date of death: 1934-10-15"
+        }
+      ],
+      "conflicts": []
+    },
+    {
+      "id": "c32861c4-0b01-4c1f-b109-e2d02ea119f3",
+      "titre": "Découverte des satellites de Jupiter par Galilée",
+      "date_in_db": "1610-01-07",
+      "year_in_db": "1610",
+      "date_candidate": "1610-01-01",
+      "year_candidate": "1610",
+      "precision": "year",
+      "status": "LIKELY_CORRECT",
+      "result_bucket": "preuve_externe_faible",
+      "confidence": 0,
+      "needs_human_review": false,
+      "recommendation": "Ajouter des sources externes fiables confirmant l'année de la découverte.",
+      "matched_article_fr": null,
+      "matched_article_en": null,
+      "wikidata_id": "Q37638",
+      "event_identity": "Découverte des satellites de Jupiter par Galilée",
+      "is_disputed": false,
+      "ambiguous_identity": false,
+      "title_self_sufficient": true,
+      "title_not_self_sufficient": false,
+      "is_not_singular_event": false,
+      "is_time_span": false,
+      "is_period_based": false,
+      "exact_year_supported": true,
+      "reasoning_short": "Aucune source externe ne confirme l'année exacte de la découverte des satellites de Jupiter par Galilée. La date de 1610 ne peut donc pas être validée.",
+      "evidence_used": [],
+      "sources_checked": [
+        {
+          "source_id": "wikipedia_fr_article",
+          "source_type": "wikipedia_fr",
+          "title": "Satellites naturels du Système solaire",
+          "url": "https://fr.wikipedia.org/wiki/Satellites_naturels_du_Syst%C3%A8me_solaire",
+          "date_iso": null,
+          "precision": null
+        }
+      ],
+      "source_quotes": [
+        {
+          "source_id": "wikipedia_fr_article",
+          "quote": "Dans le Système solaire, 220 satellites naturels (aussi nommés lunes) ont été mis en évidence comme orbitant autour d'une planète ou d'une planète naine. On en dénombre près de 345 autour de planètes mineures et des découvertes sont annoncées régulièrement. Parmi ces satellites, seuls 19 ont une masse suffisante pour avoir acquis une forme sphéroïdale sous l'effet de leur propre gravité. En fonction des caractéristiques de son orbite, une lune relève de l'une des deux catégories suivantes : soit celle de satellite régulier (lune régulière), au mouvement prograde sur un plan orbital proche du plan équatorial de sa planète ; soit celle de satellite irrégulier (lune irrégulière), au mouvement prograde ou rétrograde sur une orbite souvent inclinée avec un angle élevé par rapport au plan équatorial de sa planète. L'origine des lunes irrégulières s'explique probablement par l’existence de pla…"
+        }
+      ],
+      "conflicts": []
+    },
+    {
+      "id": "2e857537-e07e-43f8-b72b-f689229728f1",
+      "titre": "Signature des accords de Dayton",
+      "date_in_db": "1995-12-14",
+      "year_in_db": "1995",
+      "date_candidate": "1995-01-01",
+      "year_candidate": "1995",
+      "precision": "year",
+      "status": "CONFIRMED",
+      "result_bucket": "confirme",
+      "confidence": 1,
+      "needs_human_review": false,
+      "recommendation": "Confirmer la date de 1995.",
+      "matched_article_fr": "https://fr.wikipedia.org/wiki/Accords_de_Dayton",
+      "matched_article_en": null,
+      "wikidata_id": "Q190315",
+      "event_identity": "Signature des accords de Dayton",
+      "is_disputed": false,
+      "ambiguous_identity": false,
+      "title_self_sufficient": true,
+      "title_not_self_sufficient": false,
+      "is_not_singular_event": false,
+      "is_time_span": false,
+      "is_period_based": false,
+      "exact_year_supported": true,
+      "reasoning_short": "Les accords de Dayton ont été signés en 1995, selon Wikipedia et Wikidata.",
+      "evidence_used": [
+        "wikipedia_fr_article",
+        "wikidata_1",
+        "wikidata_2"
+      ],
+      "sources_checked": [
+        {
+          "source_id": "wikipedia_fr_article",
+          "source_type": "wikipedia_fr",
+          "title": "Accords de Dayton",
+          "url": "https://fr.wikipedia.org/wiki/Accords_de_Dayton",
+          "date_iso": null,
+          "precision": null
+        },
+        {
+          "source_id": "wikidata_1",
+          "source_type": "wikidata",
+          "title": "Q190315",
+          "url": "https://www.wikidata.org/wiki/Q190315",
+          "date_iso": "1995-12-14",
+          "precision": "day"
+        },
+        {
+          "source_id": "wikidata_2",
+          "source_type": "wikidata",
+          "title": "Q190315",
+          "url": "https://www.wikidata.org/wiki/Q190315",
+          "date_iso": "1995-11-21",
+          "precision": "day"
+        }
+      ],
+      "source_quotes": [
+        {
+          "source_id": "wikipedia_fr_article",
+          "quote": "Les accords de Dayton, signés le 14 décembre 1995 à Paris, ont officiellement mis fin à la guerre en Bosnie-Herzégovine. Bien que la cérémonie de signature se soit tenue en France, ces accords tirent leur nom de la ville américaine de Dayton dans l'Ohio, où les principales négociations s’étaient déroulées quelques semaines plus tôt, sur la base aérienne Wright-Patterson. Ils marquent un tournant majeur dans l’histoire des Balkans, en mettant un terme à l’un des conflits les plus meurtriers de l’Europe post-guerre froide."
+        },
+        {
+          "source_id": "wikidata_1",
+          "quote": "point in time: 1995-12-14"
+        },
+        {
+          "source_id": "wikidata_2",
+          "quote": "point in time: 1995-11-21"
+        }
+      ],
+      "conflicts": []
+    }
+  ]
+}

@@ -1,0 +1,271 @@
+{
+  "saved_at": "2026-03-07T13:46:30.310Z",
+  "value": {
+    "pageid": 948748,
+    "ns": 0,
+    "title": "Q999206",
+    "lastrevid": 2412519706,
+    "modified": "2025-10-04T10:32:32Z",
+    "type": "item",
+    "id": "Q999206",
+    "labels": {
+      "zh-hans": {
+        "language": "zh-hans",
+        "value": "费里法"
+      },
+      "zh-hant": {
+        "language": "zh-hant",
+        "value": "費里法"
+      },
+      "zh-hk": {
+        "language": "zh-hk",
+        "value": "費里法"
+      },
+      "fr": {
+        "language": "fr",
+        "value": "Lois Jules Ferry"
+      },
+      "en": {
+        "language": "en",
+        "value": "Jules Ferry laws"
+      },
+      "sv": {
+        "language": "sv",
+        "value": "Marsdekreten"
+      },
+      "zh": {
+        "language": "zh",
+        "value": "费里法"
+      },
+      "sh": {
+        "language": "sh",
+        "value": "Ferryjevi zakoni"
+      },
+      "ja": {
+        "language": "ja",
+        "value": "公教育法"
+      },
+      "es": {
+        "language": "es",
+        "value": "Leyes de Jules Ferry"
+      },
+      "nb": {
+        "language": "nb",
+        "value": "Marsdekretene"
+      },
+      "ru": {
+        "language": "ru",
+        "value": "Законы Жюля Ферри"
+      },
+      "it": {
+        "language": "it",
+        "value": "Leggi Jules Ferry"
+      },
+      "he": {
+        "language": "he",
+        "value": "חוקי ז'ול פרי"
+      }
+    },
+    "descriptions": {
+      "fr": {
+        "language": "fr",
+        "value": "lois mises en place par Jules Ferry sous la Troisième République"
+      },
+      "en": {
+        "language": "en",
+        "value": "Laws put in place by Jules Ferry during the French Third Republic"
+      },
+      "es": {
+        "language": "es",
+        "value": "leyes establecidas por Jules Ferry durante la Tercera República Francesa"
+      }
+    },
+    "aliases": {
+      "fr": [
+        {
+          "language": "fr",
+          "value": "Lois Ferry"
+        },
+        {
+          "language": "fr",
+          "value": "Loi Jules Ferry"
+        },
+        {
+          "language": "fr",
+          "value": "Loi Ferry"
+        }
+      ],
+      "en": [
+        {
+          "language": "en",
+          "value": "Ferry laws"
+        }
+      ],
+      "ja": [
+        {
+          "language": "ja",
+          "value": "ジュール・フェリー法"
+        }
+      ]
+    },
+    "claims": {
+      "P646": [
+        {
+          "mainsnak": {
+            "snaktype": "value",
+            "property": "P646",
+            "hash": "f190d701f3d469fa8201944fb7782e5c7dc6c00a",
+            "datavalue": {
+              "value": "/m/0fnkrg",
+              "type": "string"
+            },
+            "datatype": "external-id"
+          },
+          "type": "statement",
+          "id": "Q999206$3A4455F9-F260-490F-B629-90BBB1DD65EC",
+          "rank": "normal",
+          "references": [
+            {
+              "hash": "2b00cb481cddcac7623114367489b5c194901c4a",
+              "snaks": {
+                "P248": [
+                  {
+                    "snaktype": "value",
+                    "property": "P248",
+                    "hash": "a94b740202b097dd33355e0e6c00e54b9395e5e0",
+                    "datavalue": {
+                      "value": {
+                        "entity-type": "item",
+                        "numeric-id": 15241312,
+                        "id": "Q15241312"
+                      },
+                      "type": "wikibase-entityid"
+                    },
+                    "datatype": "wikibase-item"
+                  }
+                ],
+                "P577": [
+                  {
+                    "snaktype": "value",
+                    "property": "P577",
+                    "hash": "fde79ecb015112d2f29229ccc1ec514ed3e71fa2",
+                    "datavalue": {
+                      "value": {
+                        "time": "+2013-10-28T00:00:00Z",
+                        "timezone": 0,
+                        "before": 0,
+                        "after": 0,
+                        "precision": 11,
+                        "calendarmodel": "http://www.wikidata.org/entity/Q1985727"
+                      },
+                      "type": "time"
+                    },
+                    "datatype": "time"
+                  }
+                ]
+              },
+              "snaks-order": [
+                "P248",
+                "P577"
+              ]
+            }
+          ]
+        }
+      ],
+      "P1001": [
+        {
+          "mainsnak": {
+            "snaktype": "value",
+            "property": "P1001",
+            "hash": "efe2878aed693a79dce942b2f853910a78c4e2a8",
+            "datavalue": {
+              "value": {
+                "entity-type": "item",
+                "numeric-id": 142,
+                "id": "Q142"
+              },
+              "type": "wikibase-entityid"
+            },
+            "datatype": "wikibase-item"
+          },
+          "type": "statement",
+          "id": "Q999206$23778249-F78A-4003-BDD4-57E623779B67",
+          "rank": "normal"
+        }
+      ],
+      "P12800": [
+        {
+          "mainsnak": {
+            "snaktype": "value",
+            "property": "P12800",
+            "hash": "33452dc8bd135fdf7a61943cc0542f0d3d6ac58d",
+            "datavalue": {
+              "value": "fr:Lois_Jules_Ferry",
+              "type": "string"
+            },
+            "datatype": "external-id"
+          },
+          "type": "statement",
+          "id": "Q999206$F81E4112-6D42-4972-B89E-420462E84E22",
+          "rank": "normal"
+        }
+      ]
+    },
+    "sitelinks": {
+      "enwiki": {
+        "site": "enwiki",
+        "title": "Jules Ferry laws",
+        "badges": [],
+        "url": "https://en.wikipedia.org/wiki/Jules_Ferry_laws"
+      },
+      "eswiki": {
+        "site": "eswiki",
+        "title": "Leyes de Jules Ferry",
+        "badges": [],
+        "url": "https://es.wikipedia.org/wiki/Leyes_de_Jules_Ferry"
+      },
+      "frwiki": {
+        "site": "frwiki",
+        "title": "Lois Jules Ferry",
+        "badges": [],
+        "url": "https://fr.wikipedia.org/wiki/Lois_Jules_Ferry"
+      },
+      "itwiki": {
+        "site": "itwiki",
+        "title": "Leggi Jules Ferry",
+        "badges": [],
+        "url": "https://it.wikipedia.org/wiki/Leggi_Jules_Ferry"
+      },
+      "nowiki": {
+        "site": "nowiki",
+        "title": "Marsdekretene",
+        "badges": [],
+        "url": "https://no.wikipedia.org/wiki/Marsdekretene"
+      },
+      "ruwiki": {
+        "site": "ruwiki",
+        "title": "Законы Жюля Ферри",
+        "badges": [],
+        "url": "https://ru.wikipedia.org/wiki/%D0%97%D0%B0%D0%BA%D0%BE%D0%BD%D1%8B_%D0%96%D1%8E%D0%BB%D1%8F_%D0%A4%D0%B5%D1%80%D1%80%D0%B8"
+      },
+      "shwiki": {
+        "site": "shwiki",
+        "title": "Ferryjevi zakoni",
+        "badges": [],
+        "url": "https://sh.wikipedia.org/wiki/Ferryjevi_zakoni"
+      },
+      "svwiki": {
+        "site": "svwiki",
+        "title": "Marsdekreten",
+        "badges": [],
+        "url": "https://sv.wikipedia.org/wiki/Marsdekreten"
+      },
+      "zhwiki": {
+        "site": "zhwiki",
+        "title": "费里法",
+        "badges": [],
+        "url": "https://zh.wikipedia.org/wiki/%E8%B4%B9%E9%87%8C%E6%B3%95"
+      }
+    }
+  }
+}

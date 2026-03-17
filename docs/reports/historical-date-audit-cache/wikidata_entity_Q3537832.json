@@ -1,0 +1,627 @@
+{
+  "saved_at": "2026-03-07T15:49:20.472Z",
+  "value": {
+    "pageid": 3368093,
+    "ns": 0,
+    "title": "Q3537832",
+    "lastrevid": 2379215250,
+    "modified": "2025-07-13T20:09:55Z",
+    "type": "item",
+    "id": "Q3537832",
+    "labels": {
+      "fr": {
+        "language": "fr",
+        "value": "transport ferroviaire aux États-Unis"
+      },
+      "en": {
+        "language": "en",
+        "value": "rail transport in the United States"
+      },
+      "hu": {
+        "language": "hu",
+        "value": "az Amerikai Egyesült Államok vasúti közlekedése"
+      },
+      "pt": {
+        "language": "pt",
+        "value": "Transporte ferroviário nos Estados Unidos da América"
+      },
+      "sv": {
+        "language": "sv",
+        "value": "järnväg i USA"
+      },
+      "nl": {
+        "language": "nl",
+        "value": "spoorwegen in de Verenigde Staten"
+      },
+      "ru": {
+        "language": "ru",
+        "value": "железнодорожный транспорт в США"
+      },
+      "de": {
+        "language": "de",
+        "value": "Schienenverkehr in den USA"
+      },
+      "zh": {
+        "language": "zh",
+        "value": "美國鐵路運輸"
+      },
+      "nb": {
+        "language": "nb",
+        "value": "Jernbane i USA"
+      },
+      "ja": {
+        "language": "ja",
+        "value": "アメリカ合衆国の鉄道"
+      },
+      "cs": {
+        "language": "cs",
+        "value": "Železniční doprava ve Spojených státech amerických"
+      },
+      "es": {
+        "language": "es",
+        "value": "ferrocarril en Estados Unidos"
+      },
+      "ro": {
+        "language": "ro",
+        "value": "Transportul feroviar în Statele Unite"
+      },
+      "id": {
+        "language": "id",
+        "value": "Transportasi rel di Amerika Serikat"
+      },
+      "pl": {
+        "language": "pl",
+        "value": "Transport kolejowy w Stanach Zjednoczonych"
+      },
+      "it": {
+        "language": "it",
+        "value": "Ferrovie negli Stati Uniti d'America"
+      },
+      "fa": {
+        "language": "fa",
+        "value": "حمل و نقل ریلی در ایالات متحده آمریکا"
+      },
+      "tr": {
+        "language": "tr",
+        "value": "Amerika Birleşik Devletleri'nde demiryolu ulaşımı"
+      },
+      "sl": {
+        "language": "sl",
+        "value": "železniški promet v Združenih državah Amerike"
+      },
+      "he": {
+        "language": "he",
+        "value": "מסילות הברזל בארצות הברית"
+      }
+    },
+    "descriptions": {
+      "en": {
+        "language": "en",
+        "value": "overview of rail transport in the United States of America"
+      },
+      "tr": {
+        "language": "tr",
+        "value": "Amerika Birleşik Devletleri'nde demiryolu ulaşımına genel bakış"
+      },
+      "hu": {
+        "language": "hu",
+        "value": "Vasúti közlekedés az USA-ban"
+      },
+      "es": {
+        "language": "es",
+        "value": "transporte ferroviario en Estados Unidos"
+      }
+    },
+    "aliases": {
+      "fr": [
+        {
+          "language": "fr",
+          "value": "Réseau ferroviaire américain"
+        }
+      ],
+      "de": [
+        {
+          "language": "de",
+          "value": "Bahnreisen in den USA"
+        },
+        {
+          "language": "de",
+          "value": "Schienenverkehr in den Vereinigten Staaten von Amerika"
+        },
+        {
+          "language": "de",
+          "value": "Eisenbahn in den USA"
+        },
+        {
+          "language": "de",
+          "value": "Eisenbahn in den Vereinigten Staaten von Amerika"
+        }
+      ],
+      "ru": [
+        {
+          "language": "ru",
+          "value": "железнодорожный транспорт США"
+        }
+      ],
+      "tr": [
+        {
+          "language": "tr",
+          "value": "Amerika Birleşik Devletleri'nde demiryolu taşımacılığı"
+        }
+      ],
+      "sl": [
+        {
+          "language": "sl",
+          "value": "železniški promet v ZDA"
+        }
+      ]
+    },
+    "claims": {
+      "P373": [
+        {
+          "mainsnak": {
+            "snaktype": "value",
+            "property": "P373",
+            "hash": "546df1391159647a76beee1febe124156891b870",
+            "datavalue": {
+              "value": "Rail transport in the United States",
+              "type": "string"
+            },
+            "datatype": "string"
+          },
+          "type": "statement",
+          "id": "q3537832$03309731-426F-4546-A70E-459C786F13AA",
+          "rank": "normal",
+          "references": [
+            {
+              "hash": "fa278ebfc458360e5aed63d5058cca83c46134f1",
+              "snaks": {
+                "P143": [
+                  {
+                    "snaktype": "value",
+                    "property": "P143",
+                    "hash": "e4f6d9441d0600513c4533c672b5ab472dc73694",
+                    "datavalue": {
+                      "value": {
+                        "entity-type": "item",
+                        "numeric-id": 328,
+                        "id": "Q328"
+                      },
+                      "type": "wikibase-entityid"
+                    },
+                    "datatype": "wikibase-item"
+                  }
+                ]
+              },
+              "snaks-order": [
+                "P143"
+              ]
+            }
+          ]
+        }
+      ],
+      "P910": [
+        {
+          "mainsnak": {
+            "snaktype": "value",
+            "property": "P910",
+            "hash": "5bfd5279efbfb920259a7755d14ed6cff3e24f25",
+            "datavalue": {
+              "value": {
+                "entity-type": "item",
+                "numeric-id": 6927445,
+                "id": "Q6927445"
+              },
+              "type": "wikibase-entityid"
+            },
+            "datatype": "wikibase-item"
+          },
+          "type": "statement",
+          "id": "Q3537832$7229C8A0-CD6E-439D-8E9E-3D6DAA1BAEBE",
+          "rank": "normal"
+        }
+      ],
+      "P31": [
+        {
+          "mainsnak": {
+            "snaktype": "value",
+            "property": "P31",
+            "hash": "27a32391ccd05172fbc33dbc1ef69d3e4056fe4e",
+            "datavalue": {
+              "value": {
+                "entity-type": "item",
+                "numeric-id": 104666804,
+                "id": "Q104666804"
+              },
+              "type": "wikibase-entityid"
+            },
+            "datatype": "wikibase-item"
+          },
+          "type": "statement",
+          "id": "Q3537832$12089463-C56C-43A5-8B6D-F96A76F8DE41",
+          "rank": "normal"
+        }
+      ],
+      "P948": [
+        {
+          "mainsnak": {
+            "snaktype": "value",
+            "property": "P948",
+            "hash": "4f086b9c9779e7b1ecc6c255b4ab0300948bd582",
+            "datavalue": {
+              "value": "Amtrak California Zephyr banner.jpg",
+              "type": "string"
+            },
+            "datatype": "commonsMedia"
+          },
+          "type": "statement",
+          "id": "Q3537832$8110B9DA-56BD-4089-9B8F-A141CA7A2C56",
+          "rank": "normal"
+        }
+      ],
+      "P1424": [
+        {
+          "mainsnak": {
+            "snaktype": "value",
+            "property": "P1424",
+            "hash": "8a649f316c4fdfc1e19232059067bb492dfd95bd",
+            "datavalue": {
+              "value": {
+                "entity-type": "item",
+                "numeric-id": 8167183,
+                "id": "Q8167183"
+              },
+              "type": "wikibase-entityid"
+            },
+            "datatype": "wikibase-item"
+          },
+          "type": "statement",
+          "id": "Q3537832$07F08879-63CE-4955-B1E1-F308EF2C178E",
+          "rank": "normal",
+          "references": [
+            {
+              "hash": "7e69eebb52ec4b860dc18a4d8b2652afb378b890",
+              "snaks": {
+                "P3452": [
+                  {
+                    "snaktype": "value",
+                    "property": "P3452",
+                    "hash": "9a87be1549cf30f022cec0c365bffa94e05abbc3",
+                    "datavalue": {
+                      "value": {
+                        "entity-type": "item",
+                        "numeric-id": 8167183,
+                        "id": "Q8167183"
+                      },
+                      "type": "wikibase-entityid"
+                    },
+                    "datatype": "wikibase-item"
+                  }
+                ]
+              },
+              "snaks-order": [
+                "P3452"
+              ]
+            }
+          ]
+        }
+      ],
+      "P17": [
+        {
+          "mainsnak": {
+            "snaktype": "value",
+            "property": "P17",
+            "hash": "be4c6eafa2984964f04be85667263f5642ba1a72",
+            "datavalue": {
+              "value": {
+                "entity-type": "item",
+                "numeric-id": 30,
+                "id": "Q30"
+              },
+              "type": "wikibase-entityid"
+            },
+            "datatype": "wikibase-item"
+          },
+          "type": "statement",
+          "id": "Q3537832$d1a57247-41dc-979c-a679-ba99b0a4f38e",
+          "rank": "normal"
+        }
+      ],
+      "P244": [
+        {
+          "mainsnak": {
+            "snaktype": "value",
+            "property": "P244",
+            "hash": "e23e66266b73704afd500c3bd91a658d7a6bbb52",
+            "datavalue": {
+              "value": "sh85111146",
+              "type": "string"
+            },
+            "datatype": "external-id"
+          },
+          "type": "statement",
+          "id": "Q3537832$6A867DE1-D416-463A-8C62-E56AB3D46FE7",
+          "rank": "normal",
+          "references": [
+            {
+              "hash": "ac5d47e9fbcc281bc0d27a205ae02e22ad24ce31",
+              "snaks": {
+                "P854": [
+                  {
+                    "snaktype": "value",
+                    "property": "P854",
+                    "hash": "b560dc6b281a39d061e189d2eb299a426a06f1a2",
+                    "datavalue": {
+                      "value": "https://github.com/JohnMarkOckerbloom/ftl/blob/master/data/wikimap",
+                      "type": "string"
+                    },
+                    "datatype": "url"
+                  }
+                ],
+                "P813": [
+                  {
+                    "snaktype": "value",
+                    "property": "P813",
+                    "hash": "0dcf4f64e93fdcc654e2c7534285881fe48b9f3d",
+                    "datavalue": {
+                      "value": {
+                        "time": "+2019-04-03T00:00:00Z",
+                        "timezone": 0,
+                        "before": 0,
+                        "after": 0,
+                        "precision": 11,
+                        "calendarmodel": "http://www.wikidata.org/entity/Q1985727"
+                      },
+                      "type": "time"
+                    },
+                    "datatype": "time"
+                  }
+                ]
+              },
+              "snaks-order": [
+                "P854",
+                "P813"
+              ]
+            }
+          ]
+        }
+      ],
+      "P2184": [
+        {
+          "mainsnak": {
+            "snaktype": "value",
+            "property": "P2184",
+            "hash": "d14200901e21fedeaa5f55abed612950a4736e0c",
+            "datavalue": {
+              "value": {
+                "entity-type": "item",
+                "numeric-id": 1080165,
+                "id": "Q1080165"
+              },
+              "type": "wikibase-entityid"
+            },
+            "datatype": "wikibase-item"
+          },
+          "type": "statement",
+          "id": "Q3537832$E2E320D5-BFE9-4929-BF37-9E70E30D2CF6",
+          "rank": "normal"
+        }
+      ],
+      "P646": [
+        {
+          "mainsnak": {
+            "snaktype": "value",
+            "property": "P646",
+            "hash": "888bec76b2b6fbc49f502c3c87206485dcdda56b",
+            "datavalue": {
+              "value": "/m/0118n_3d",
+              "type": "string"
+            },
+            "datatype": "external-id"
+          },
+          "type": "statement",
+          "id": "Q3537832$DD5125C6-4AEE-4982-8FD0-DF96CCC27980",
+          "rank": "normal"
+        }
+      ],
+      "P1269": [
+        {
+          "mainsnak": {
+            "snaktype": "value",
+            "property": "P1269",
+            "hash": "17d66e1cdfe7556a641dba2adb87af67fb945bce",
+            "datavalue": {
+              "value": {
+                "entity-type": "item",
+                "numeric-id": 3565868,
+                "id": "Q3565868"
+              },
+              "type": "wikibase-entityid"
+            },
+            "datatype": "wikibase-item"
+          },
+          "type": "statement",
+          "id": "Q3537832$6692DF8E-314E-4E21-8541-F1A699CC5AA4",
+          "rank": "normal"
+        }
+      ],
+      "P8189": [
+        {
+          "mainsnak": {
+            "snaktype": "value",
+            "property": "P8189",
+            "hash": "1e3d6075ae2b5b8329b15c85871acca1d3b552d7",
+            "datavalue": {
+              "value": "987007560706205171",
+              "type": "string"
+            },
+            "datatype": "external-id"
+          },
+          "type": "statement",
+          "id": "Q3537832$E01557E6-EDB7-47AF-B8BC-3B769DC24027",
+          "rank": "normal",
+          "references": [
+            {
+              "hash": "ecb7a39cf436eb1fba419853af168ef9f2ba1dab",
+              "snaks": {
+                "P248": [
+                  {
+                    "snaktype": "value",
+                    "property": "P248",
+                    "hash": "a03bb6ffe37be9554492f4eea5bd18afcb57df19",
+                    "datavalue": {
+                      "value": {
+                        "entity-type": "item",
+                        "numeric-id": 106509962,
+                        "id": "Q106509962"
+                      },
+                      "type": "wikibase-entityid"
+                    },
+                    "datatype": "wikibase-item"
+                  }
+                ]
+              },
+              "snaks-order": [
+                "P248"
+              ]
+            }
+          ]
+        }
+      ],
+      "P8313": [
+        {
+          "mainsnak": {
+            "snaktype": "value",
+            "property": "P8313",
+            "hash": "831a8569e116fe2ff1d8847aa577ab4fe17422f3",
+            "datavalue": {
+              "value": "USA's_jernbaner",
+              "type": "string"
+            },
+            "datatype": "external-id"
+          },
+          "type": "statement",
+          "id": "Q3537832$903c2301-4c1d-ce3f-ff93-a158c5d3e81e",
+          "rank": "normal"
+        }
+      ],
+      "P13591": [
+        {
+          "mainsnak": {
+            "snaktype": "value",
+            "property": "P13591",
+            "hash": "32df6c62044dbbed870b3415c85dbc55b4db96e7",
+            "datavalue": {
+              "value": "concept/ea97eb8e-0583-4b04-a3ed-4a9f9be4e77a",
+              "type": "string"
+            },
+            "datatype": "external-id"
+          },
+          "type": "statement",
+          "id": "Q3537832$FD160666-61C6-401B-9C96-EF3BB7BE4024",
+          "rank": "normal"
+        }
+      ]
+    },
+    "sitelinks": {
+      "cswiki": {
+        "site": "cswiki",
+        "title": "Železniční doprava ve Spojených státech amerických",
+        "badges": [],
+        "url": "https://cs.wikipedia.org/wiki/%C5%BDelezni%C4%8Dn%C3%AD_doprava_ve_Spojen%C3%BDch_st%C3%A1tech_americk%C3%BDch"
+      },
+      "dewikivoyage": {
+        "site": "dewikivoyage",
+        "title": "Bahnreisen in den USA",
+        "badges": [],
+        "url": "https://de.wikivoyage.org/wiki/Bahnreisen_in_den_USA"
+      },
+      "enwiki": {
+        "site": "enwiki",
+        "title": "Rail transportation in the United States",
+        "badges": [],
+        "url": "https://en.wikipedia.org/wiki/Rail_transportation_in_the_United_States"
+      },
+      "enwikivoyage": {
+        "site": "enwikivoyage",
+        "title": "Rail travel in the United States",
+        "badges": [
+          "Q17437798"
+        ],
+        "url": "https://en.wikivoyage.org/wiki/Rail_travel_in_the_United_States"
+      },
+      "eswiki": {
+        "site": "eswiki",
+        "title": "Ferrocarril en Estados Unidos",
+        "badges": [],
+        "url": "https://es.wikipedia.org/wiki/Ferrocarril_en_Estados_Unidos"
+      },
+      "fawiki": {
+        "site": "fawiki",
+        "title": "ترابری ریلی در ایالات متحده آمریکا",
+        "badges": [],
+        "url": "https://fa.wikipedia.org/wiki/%D8%AA%D8%B1%D8%A7%D8%A8%D8%B1%DB%8C_%D8%B1%DB%8C%D9%84%DB%8C_%D8%AF%D8%B1_%D8%A7%DB%8C%D8%A7%D9%84%D8%A7%D8%AA_%D9%85%D8%AA%D8%AD%D8%AF%D9%87_%D8%A2%D9%85%D8%B1%DB%8C%DA%A9%D8%A7"
+      },
+      "frwiki": {
+        "site": "frwiki",
+        "title": "Transport ferroviaire aux États-Unis",
+        "badges": [],
+        "url": "https://fr.wikipedia.org/wiki/Transport_ferroviaire_aux_%C3%89tats-Unis"
+      },
+      "huwiki": {
+        "site": "huwiki",
+        "title": "Az Amerikai Egyesült Államok vasúti közlekedése",
+        "badges": [],
+        "url": "https://hu.wikipedia.org/wiki/Az_Amerikai_Egyes%C3%BClt_%C3%81llamok_vas%C3%BAti_k%C3%B6zleked%C3%A9se"
+      },
+      "jawiki": {
+        "site": "jawiki",
+        "title": "アメリカ合衆国の鉄道",
+        "badges": [],
+        "url": "https://ja.wikipedia.org/wiki/%E3%82%A2%E3%83%A1%E3%83%AA%E3%82%AB%E5%90%88%E8%A1%86%E5%9B%BD%E3%81%AE%E9%89%84%E9%81%93"
+      },
+      "nlwiki": {
+        "site": "nlwiki",
+        "title": "Spoorwegen in de Verenigde Staten",
+        "badges": [],
+        "url": "https://nl.wikipedia.org/wiki/Spoorwegen_in_de_Verenigde_Staten"
+      },
+      "nowiki": {
+        "site": "nowiki",
+        "title": "Jernbane i USA",
+        "badges": [],
+        "url": "https://no.wikipedia.org/wiki/Jernbane_i_USA"
+      },
+      "plwikivoyage": {
+        "site": "plwikivoyage",
+        "title": "Koleją po Stanach Zjednoczonych",
+        "badges": [],
+        "url": "https://pl.wikivoyage.org/wiki/Kolej%C4%85_po_Stanach_Zjednoczonych"
+      },
+      "ptwiki": {
+        "site": "ptwiki",
+        "title": "Transporte ferroviário nos Estados Unidos",
+        "badges": [],
+        "url": "https://pt.wikipedia.org/wiki/Transporte_ferrovi%C3%A1rio_nos_Estados_Unidos"
+      },
+      "ruwiki": {
+        "site": "ruwiki",
+        "title": "Железнодорожный транспорт в США",
+        "badges": [],
+        "url": "https://ru.wikipedia.org/wiki/%D0%96%D0%B5%D0%BB%D0%B5%D0%B7%D0%BD%D0%BE%D0%B4%D0%BE%D1%80%D0%BE%D0%B6%D0%BD%D1%8B%D0%B9_%D1%82%D1%80%D0%B0%D0%BD%D1%81%D0%BF%D0%BE%D1%80%D1%82_%D0%B2_%D0%A1%D0%A8%D0%90"
+      },
+      "svwiki": {
+        "site": "svwiki",
+        "title": "USA:s järnvägar",
+        "badges": [],
+        "url": "https://sv.wikipedia.org/wiki/USA:s_j%C3%A4rnv%C3%A4gar"
+      },
+      "zhwiki": {
+        "site": "zhwiki",
+        "title": "美國鐵路運輸",
+        "badges": [],
+        "url": "https://zh.wikipedia.org/wiki/%E7%BE%8E%E5%9C%8B%E9%90%B5%E8%B7%AF%E9%81%8B%E8%BC%B8"
+      }
+    }
+  }
+}

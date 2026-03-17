@@ -1,0 +1,126 @@
+{
+  "saved_at": "2026-03-07T12:55:39.939Z",
+  "value": {
+    "pageid": 104484730,
+    "ns": 0,
+    "title": "Q109315196",
+    "lastrevid": 1537005524,
+    "modified": "2021-12-01T12:07:16Z",
+    "type": "item",
+    "id": "Q109315196",
+    "labels": {
+      "fr": {
+        "language": "fr",
+        "value": "Loi du 2 décembre 1945 relative à la nationalisation de la Banque de France et des grandes banques et à l'organisation du crédit"
+      },
+      "en": {
+        "language": "en",
+        "value": "nationalization of the Bank of France"
+      }
+    },
+    "descriptions": {
+      "en": {
+        "language": "en",
+        "value": "Law of 2 December 1945 on the nationalization of the Banque de France and the large banks and on the organization of credit"
+      }
+    },
+    "aliases": {},
+    "claims": {
+      "P31": [
+        {
+          "mainsnak": {
+            "snaktype": "value",
+            "property": "P31",
+            "hash": "26feacaf586ee8762b1a5523fb6432ebd6ffe651",
+            "datavalue": {
+              "value": {
+                "entity-type": "item",
+                "numeric-id": 13408009,
+                "id": "Q13408009"
+              },
+              "type": "wikibase-entityid"
+            },
+            "datatype": "wikibase-item"
+          },
+          "type": "statement",
+          "id": "Q109315196$f6d18256-4a66-87c6-09ad-c68dca4df757",
+          "rank": "normal"
+        }
+      ],
+      "P1001": [
+        {
+          "mainsnak": {
+            "snaktype": "value",
+            "property": "P1001",
+            "hash": "efe2878aed693a79dce942b2f853910a78c4e2a8",
+            "datavalue": {
+              "value": {
+                "entity-type": "item",
+                "numeric-id": 142,
+                "id": "Q142"
+              },
+              "type": "wikibase-entityid"
+            },
+            "datatype": "wikibase-item"
+          },
+          "type": "statement",
+          "id": "Q109315196$2a5a782d-4013-6749-57c3-6879bb1b05e4",
+          "rank": "normal"
+        }
+      ],
+      "P17": [
+        {
+          "mainsnak": {
+            "snaktype": "value",
+            "property": "P17",
+            "hash": "c05db5d169c2560b9799d567a803d20a392f53e4",
+            "datavalue": {
+              "value": {
+                "entity-type": "item",
+                "numeric-id": 142,
+                "id": "Q142"
+              },
+              "type": "wikibase-entityid"
+            },
+            "datatype": "wikibase-item"
+          },
+          "type": "statement",
+          "id": "Q109315196$606bfaf1-4df3-bca1-771d-2c976a5c96aa",
+          "rank": "normal"
+        }
+      ],
+      "P577": [
+        {
+          "mainsnak": {
+            "snaktype": "value",
+            "property": "P577",
+            "hash": "4ab9266110655875aca074cf477eccbedcd41242",
+            "datavalue": {
+              "value": {
+                "time": "+1945-12-02T00:00:00Z",
+                "timezone": 0,
+                "before": 0,
+                "after": 0,
+                "precision": 11,
+                "calendarmodel": "http://www.wikidata.org/entity/Q1985727"
+              },
+              "type": "time"
+            },
+            "datatype": "time"
+          },
+          "type": "statement",
+          "id": "Q109315196$861afac4-455c-6981-7c1b-a0304e8ac4a6",
+          "rank": "normal"
+        }
+      ]
+    },
+    "sitelinks": {
+      "frwiki": {
+        "site": "frwiki",
+        "title": "Loi du 2 décembre 1945 relative à la nationalisation de la Banque de France et des grandes banques et à l'organisation du crédit",
+        "badges": [],
+        "url": "https://fr.wikipedia.org/wiki/Loi_du_2_d%C3%A9cembre_1945_relative_%C3%A0_la_nationalisation_de_la_Banque_de_France_et_des_grandes_banques_et_%C3%A0_l%27organisation_du_cr%C3%A9dit"
+      }
+    }
+  }
+}

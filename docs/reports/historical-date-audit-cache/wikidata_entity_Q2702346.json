@@ -1,0 +1,356 @@
+{
+  "saved_at": "2026-03-07T15:30:46.523Z",
+  "value": {
+    "pageid": 2599857,
+    "ns": 0,
+    "title": "Q2702346",
+    "lastrevid": 2468755683,
+    "modified": "2026-03-02T16:06:01Z",
+    "type": "item",
+    "id": "Q2702346",
+    "labels": {
+      "fr": {
+        "language": "fr",
+        "value": "Élargissement du canal de Panama"
+      },
+      "es": {
+        "language": "es",
+        "value": "Ampliación del Canal de Panamá"
+      },
+      "en": {
+        "language": "en",
+        "value": "Panama Canal expansion project"
+      },
+      "tr": {
+        "language": "tr",
+        "value": "Panama Kanalı genişleme projesi"
+      },
+      "it": {
+        "language": "it",
+        "value": "Progetto di espansione del Canale di Panama"
+      },
+      "sv": {
+        "language": "sv",
+        "value": "Panamakanalens utbyggnad"
+      },
+      "zh": {
+        "language": "zh",
+        "value": "巴拿馬運河擴建"
+      },
+      "pt": {
+        "language": "pt",
+        "value": "Projeto de expansão do Canal do Panamá"
+      },
+      "bn": {
+        "language": "bn",
+        "value": "পানামা খাল সম্প্রসারণ প্রকল্প"
+      },
+      "zh-hant": {
+        "language": "zh-hant",
+        "value": "巴拿马运河扩张計畫"
+      },
+      "ca": {
+        "language": "ca",
+        "value": "Ampliació del canal de Panamà"
+      },
+      "ru": {
+        "language": "ru",
+        "value": "Проект расширения Панамского канала"
+      }
+    },
+    "descriptions": {
+      "es": {
+        "language": "es",
+        "value": "expansión de dicha obra en Panamá"
+      },
+      "en": {
+        "language": "en",
+        "value": "2007-16 construction of larger locks on Panama Canal"
+      },
+      "pt": {
+        "language": "pt",
+        "value": "construção de eclusas maiores no Canal do Panamá em 2007–16"
+      }
+    },
+    "aliases": {
+      "fr": [
+        {
+          "language": "fr",
+          "value": "Proposition d'elargissement du canal de Panama"
+        },
+        {
+          "language": "fr",
+          "value": "Proposition d'élargissement du canal de Panama"
+        }
+      ],
+      "es": [
+        {
+          "language": "es",
+          "value": "Ampliacion del Canal de Panama"
+        },
+        {
+          "language": "es",
+          "value": "Ampliación del Canal de Panama"
+        },
+        {
+          "language": "es",
+          "value": "Expansión del Canal de Panama"
+        },
+        {
+          "language": "es",
+          "value": "Expansion del Canal de Panama"
+        },
+        {
+          "language": "es",
+          "value": "Ampliacion del Canal de Panamá"
+        },
+        {
+          "language": "es",
+          "value": "Proyecto de expansión del Canal del Panamá"
+        },
+        {
+          "language": "es",
+          "value": "Expansion del Canal de Panamá"
+        },
+        {
+          "language": "es",
+          "value": "Ampliacion del canal"
+        },
+        {
+          "language": "es",
+          "value": "Proyecto de expansion del Canal del Panama"
+        }
+      ],
+      "zh": [
+        {
+          "language": "zh",
+          "value": "巴拿馬運河拓寬計畫"
+        },
+        {
+          "language": "zh",
+          "value": "巴拿马运河扩张计划"
+        }
+      ]
+    },
+    "claims": {
+      "P625": [
+        {
+          "mainsnak": {
+            "snaktype": "value",
+            "property": "P625",
+            "hash": "ffada4aa0cbb58cbe8464063310f59719142bb10",
+            "datavalue": {
+              "value": {
+                "latitude": 8.98472222,
+                "longitude": -79.58916667,
+                "altitude": null,
+                "precision": 0.00027777777777778,
+                "globe": "http://www.wikidata.org/entity/Q2"
+              },
+              "type": "globecoordinate"
+            },
+            "datatype": "globe-coordinate"
+          },
+          "type": "statement",
+          "id": "Q2702346$46B62C24-FC66-46C3-BB02-C87870219B17",
+          "rank": "normal",
+          "references": [
+            {
+              "hash": "fa278ebfc458360e5aed63d5058cca83c46134f1",
+              "snaks": {
+                "P143": [
+                  {
+                    "snaktype": "value",
+                    "property": "P143",
+                    "hash": "e4f6d9441d0600513c4533c672b5ab472dc73694",
+                    "datavalue": {
+                      "value": {
+                        "entity-type": "item",
+                        "numeric-id": 328,
+                        "id": "Q328"
+                      },
+                      "type": "wikibase-entityid"
+                    },
+                    "datatype": "wikibase-item"
+                  }
+                ]
+              },
+              "snaks-order": [
+                "P143"
+              ]
+            }
+          ]
+        }
+      ],
+      "P646": [
+        {
+          "mainsnak": {
+            "snaktype": "value",
+            "property": "P646",
+            "hash": "0ff5695ef5fb9128ee3414eb3cf5391b285420e2",
+            "datavalue": {
+              "value": "/m/0dnxt8",
+              "type": "string"
+            },
+            "datatype": "external-id"
+          },
+          "type": "statement",
+          "id": "Q2702346$6199B1EC-EBDD-47DE-8B51-8B0E30484B86",
+          "rank": "normal",
+          "references": [
+            {
+              "hash": "2b00cb481cddcac7623114367489b5c194901c4a",
+              "snaks": {
+                "P248": [
+                  {
+                    "snaktype": "value",
+                    "property": "P248",
+                    "hash": "a94b740202b097dd33355e0e6c00e54b9395e5e0",
+                    "datavalue": {
+                      "value": {
+                        "entity-type": "item",
+                        "numeric-id": 15241312,
+                        "id": "Q15241312"
+                      },
+                      "type": "wikibase-entityid"
+                    },
+                    "datatype": "wikibase-item"
+                  }
+                ],
+                "P577": [
+                  {
+                    "snaktype": "value",
+                    "property": "P577",
+                    "hash": "fde79ecb015112d2f29229ccc1ec514ed3e71fa2",
+                    "datavalue": {
+                      "value": {
+                        "time": "+2013-10-28T00:00:00Z",
+                        "timezone": 0,
+                        "before": 0,
+                        "after": 0,
+                        "precision": 11,
+                        "calendarmodel": "http://www.wikidata.org/entity/Q1985727"
+                      },
+                      "type": "time"
+                    },
+                    "datatype": "time"
+                  }
+                ]
+              },
+              "snaks-order": [
+                "P248",
+                "P577"
+              ]
+            }
+          ]
+        }
+      ],
+      "P373": [
+        {
+          "mainsnak": {
+            "snaktype": "value",
+            "property": "P373",
+            "hash": "42dac4066a20ad179aa65bbc8adbaa6a5e88c0b6",
+            "datavalue": {
+              "value": "Panama Canal expansion project",
+              "type": "string"
+            },
+            "datatype": "string"
+          },
+          "type": "statement",
+          "id": "Q2702346$3C3C0589-C13D-497F-B3DB-153A4AD57CF6",
+          "rank": "normal"
+        }
+      ],
+      "P1542": [
+        {
+          "mainsnak": {
+            "snaktype": "value",
+            "property": "P1542",
+            "hash": "2d2698ae5a71ed32ea000b8c195762ade41ac661",
+            "datavalue": {
+              "value": {
+                "entity-type": "item",
+                "numeric-id": 60195619,
+                "id": "Q60195619"
+              },
+              "type": "wikibase-entityid"
+            },
+            "datatype": "wikibase-item"
+          },
+          "type": "statement",
+          "id": "Q2702346$6c71abec-4292-615b-d84e-92bcfc3c2d32",
+          "rank": "normal"
+        }
+      ]
+    },
+    "sitelinks": {
+      "bnwiki": {
+        "site": "bnwiki",
+        "title": "পানামা খাল সম্প্রসারণ প্রকল্প",
+        "badges": [],
+        "url": "https://bn.wikipedia.org/wiki/%E0%A6%AA%E0%A6%BE%E0%A6%A8%E0%A6%BE%E0%A6%AE%E0%A6%BE_%E0%A6%96%E0%A6%BE%E0%A6%B2_%E0%A6%B8%E0%A6%AE%E0%A7%8D%E0%A6%AA%E0%A7%8D%E0%A6%B0%E0%A6%B8%E0%A6%BE%E0%A6%B0%E0%A6%A3_%E0%A6%AA%E0%A7%8D%E0%A6%B0%E0%A6%95%E0%A6%B2%E0%A7%8D%E0%A6%AA"
+      },
+      "cawiki": {
+        "site": "cawiki",
+        "title": "Ampliació del canal de Panamà",
+        "badges": [],
+        "url": "https://ca.wikipedia.org/wiki/Ampliaci%C3%B3_del_canal_de_Panam%C3%A0"
+      },
+      "commonswiki": {
+        "site": "commonswiki",
+        "title": "Category:Panama Canal expansion project",
+        "badges": [],
+        "url": "https://commons.wikimedia.org/wiki/Category:Panama_Canal_expansion_project"
+      },
+      "enwiki": {
+        "site": "enwiki",
+        "title": "Panama Canal expansion project",
+        "badges": [],
+        "url": "https://en.wikipedia.org/wiki/Panama_Canal_expansion_project"
+      },
+      "eswiki": {
+        "site": "eswiki",
+        "title": "Ampliación del canal de Panamá",
+        "badges": [],
+        "url": "https://es.wikipedia.org/wiki/Ampliaci%C3%B3n_del_canal_de_Panam%C3%A1"
+      },
+      "frwiki": {
+        "site": "frwiki",
+        "title": "Élargissement du canal de Panama",
+        "badges": [],
+        "url": "https://fr.wikipedia.org/wiki/%C3%89largissement_du_canal_de_Panama"
+      },
+      "itwiki": {
+        "site": "itwiki",
+        "title": "Espansione del Canale di Panama",
+        "badges": [],
+        "url": "https://it.wikipedia.org/wiki/Espansione_del_Canale_di_Panama"
+      },
+      "ptwiki": {
+        "site": "ptwiki",
+        "title": "Expansão do Canal do Panamá",
+        "badges": [],
+        "url": "https://pt.wikipedia.org/wiki/Expans%C3%A3o_do_Canal_do_Panam%C3%A1"
+      },
+      "ruwiki": {
+        "site": "ruwiki",
+        "title": "Проект расширения Панамского канала",
+        "badges": [],
+        "url": "https://ru.wikipedia.org/wiki/%D0%9F%D1%80%D0%BE%D0%B5%D0%BA%D1%82_%D1%80%D0%B0%D1%81%D1%88%D0%B8%D1%80%D0%B5%D0%BD%D0%B8%D1%8F_%D0%9F%D0%B0%D0%BD%D0%B0%D0%BC%D1%81%D0%BA%D0%BE%D0%B3%D0%BE_%D0%BA%D0%B0%D0%BD%D0%B0%D0%BB%D0%B0"
+      },
+      "svwiki": {
+        "site": "svwiki",
+        "title": "Panamakanalens utbyggnad",
+        "badges": [],
+        "url": "https://sv.wikipedia.org/wiki/Panamakanalens_utbyggnad"
+      },
+      "trwiki": {
+        "site": "trwiki",
+        "title": "Panama Kanalı genişleme projesi",
+        "badges": [],
+        "url": "https://tr.wikipedia.org/wiki/Panama_Kanal%C4%B1_geni%C5%9Fleme_projesi"
+      }
+    }
+  }
+}

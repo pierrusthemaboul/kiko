@@ -1,0 +1,118 @@
+{
+  "saved_at": "2026-03-07T11:55:43.704Z",
+  "value": {
+    "pageid": 3367112,
+    "ns": 0,
+    "title": "Q3536732",
+    "lastrevid": 2161182890,
+    "modified": "2024-05-21T23:27:02Z",
+    "type": "item",
+    "id": "Q3536732",
+    "labels": {
+      "fr": {
+        "language": "fr",
+        "value": "traité d'Entrammes"
+      },
+      "br": {
+        "language": "br",
+        "value": "Feur-emglev Entrammes"
+      },
+      "ru": {
+        "language": "ru",
+        "value": "Антраммский договор"
+      },
+      "ca": {
+        "language": "ca",
+        "value": "Tractat d'Entrammes"
+      }
+    },
+    "descriptions": {},
+    "aliases": {},
+    "claims": {
+      "P31": [
+        {
+          "mainsnak": {
+            "snaktype": "value",
+            "property": "P31",
+            "hash": "b0e8db723228922bff4fcc3427ebd4e3289412c9",
+            "datavalue": {
+              "value": {
+                "entity-type": "item",
+                "numeric-id": 131569,
+                "id": "Q131569"
+              },
+              "type": "wikibase-entityid"
+            },
+            "datatype": "wikibase-item"
+          },
+          "type": "statement",
+          "id": "Q3536732$D9B91DBA-D80A-493D-8EA2-AC7C95E969E0",
+          "rank": "normal",
+          "references": [
+            {
+              "hash": "d4bd87b862b12d99d26e86472d44f26858dee639",
+              "snaks": {
+                "P143": [
+                  {
+                    "snaktype": "value",
+                    "property": "P143",
+                    "hash": "f30cbd35620c4ea6d0633aaf0210a8916130469b",
+                    "datavalue": {
+                      "value": {
+                        "entity-type": "item",
+                        "numeric-id": 8447,
+                        "id": "Q8447"
+                      },
+                      "type": "wikibase-entityid"
+                    },
+                    "datatype": "wikibase-item"
+                  }
+                ]
+              },
+              "snaks-order": [
+                "P143"
+              ]
+            }
+          ]
+        }
+      ],
+      "P2671": [
+        {
+          "mainsnak": {
+            "snaktype": "value",
+            "property": "P2671",
+            "hash": "8cb82e8e259f01d47c64cf536b06b9d2cfaa6cda",
+            "datavalue": {
+              "value": "/g/11cfv5s17",
+              "type": "string"
+            },
+            "datatype": "external-id"
+          },
+          "type": "statement",
+          "id": "Q3536732$A5D2293A-1655-4495-AD5E-E7BA1CFEB21F",
+          "rank": "normal"
+        }
+      ]
+    },
+    "sitelinks": {
+      "brwiki": {
+        "site": "brwiki",
+        "title": "Feur-emglev Entrammes",
+        "badges": [],
+        "url": "https://br.wikipedia.org/wiki/Feur-emglev_Entrammes"
+      },
+      "frwiki": {
+        "site": "frwiki",
+        "title": "Traité d'Entrammes",
+        "badges": [],
+        "url": "https://fr.wikipedia.org/wiki/Trait%C3%A9_d%27Entrammes"
+      },
+      "ruwiki": {
+        "site": "ruwiki",
+        "title": "Антраммский договор",
+        "badges": [],
+        "url": "https://ru.wikipedia.org/wiki/%D0%90%D0%BD%D1%82%D1%80%D0%B0%D0%BC%D0%BC%D1%81%D0%BA%D0%B8%D0%B9_%D0%B4%D0%BE%D0%B3%D0%BE%D0%B2%D0%BE%D1%80"
+      }
+    }
+  }
+}

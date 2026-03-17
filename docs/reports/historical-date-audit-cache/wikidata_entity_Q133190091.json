@@ -1,0 +1,320 @@
+{
+  "saved_at": "2026-03-07T14:17:51.278Z",
+  "value": {
+    "pageid": 127044565,
+    "ns": 0,
+    "title": "Q133190091",
+    "lastrevid": 2432184002,
+    "modified": "2025-11-21T14:52:26Z",
+    "type": "item",
+    "id": "Q133190091",
+    "labels": {
+      "en": {
+        "language": "en",
+        "value": "John Law's Bank"
+      },
+      "hy": {
+        "language": "hy",
+        "value": "Ջոն Լոյի բանկ"
+      },
+      "az": {
+        "language": "az",
+        "value": "Banque générale"
+      },
+      "es": {
+        "language": "es",
+        "value": "Banco General (Francia)"
+      },
+      "fr": {
+        "language": "fr",
+        "value": "Banque générale"
+      },
+      "ru": {
+        "language": "ru",
+        "value": "Banque générale"
+      },
+      "mul": {
+        "language": "mul",
+        "value": "La Banque Royale"
+      }
+    },
+    "descriptions": {
+      "en": {
+        "language": "en",
+        "value": "defunct financial institution"
+      },
+      "fr": {
+        "language": "fr",
+        "value": "Banque française fondée sous la Régence"
+      }
+    },
+    "aliases": {
+      "en": [
+        {
+          "language": "en",
+          "value": "Banque générale"
+        }
+      ],
+      "fr": [
+        {
+          "language": "fr",
+          "value": "Banque royale"
+        },
+        {
+          "language": "fr",
+          "value": "La Banque Royale"
+        }
+      ],
+      "mul": [
+        {
+          "language": "mul",
+          "value": "Banque générale"
+        }
+      ]
+    },
+    "claims": {
+      "P31": [
+        {
+          "mainsnak": {
+            "snaktype": "value",
+            "property": "P31",
+            "hash": "326e3d41d1e9c34715e880be6e1c6a1e822e4317",
+            "datavalue": {
+              "value": {
+                "entity-type": "item",
+                "numeric-id": 4830453,
+                "id": "Q4830453"
+              },
+              "type": "wikibase-entityid"
+            },
+            "datatype": "wikibase-item"
+          },
+          "type": "statement",
+          "id": "Q133190091$faaf933b-412c-49f8-b2c4-6e7182e1b8de",
+          "rank": "normal"
+        }
+      ],
+      "P571": [
+        {
+          "mainsnak": {
+            "snaktype": "value",
+            "property": "P571",
+            "hash": "3c54362d7afe1c4a0417a89104a5a9f2f0a179ab",
+            "datavalue": {
+              "value": {
+                "time": "+1716-05-02T00:00:00Z",
+                "timezone": 0,
+                "before": 0,
+                "after": 0,
+                "precision": 11,
+                "calendarmodel": "http://www.wikidata.org/entity/Q1985727"
+              },
+              "type": "time"
+            },
+            "datatype": "time"
+          },
+          "type": "statement",
+          "id": "Q133190091$6560429d-4673-c1e5-9a5c-899c86424bd1",
+          "rank": "normal",
+          "references": [
+            {
+              "hash": "5747029ec3f5585a2803ad5aaf04eac11894f705",
+              "snaks": {
+                "P143": [
+                  {
+                    "snaktype": "value",
+                    "property": "P143",
+                    "hash": "6a164248fc96bfa583bbb495cb63ae6401ec203c",
+                    "datavalue": {
+                      "value": {
+                        "entity-type": "item",
+                        "numeric-id": 206855,
+                        "id": "Q206855"
+                      },
+                      "type": "wikibase-entityid"
+                    },
+                    "datatype": "wikibase-item"
+                  }
+                ],
+                "P4656": [
+                  {
+                    "snaktype": "value",
+                    "property": "P4656",
+                    "hash": "f263fa6d2b8833f271a3b0d45cb99879357759f6",
+                    "datavalue": {
+                      "value": "https://ru.wikipedia.org/?oldid=144077966",
+                      "type": "string"
+                    },
+                    "datatype": "url"
+                  }
+                ]
+              },
+              "snaks-order": [
+                "P143",
+                "P4656"
+              ]
+            }
+          ]
+        }
+      ],
+      "P576": [
+        {
+          "mainsnak": {
+            "snaktype": "value",
+            "property": "P576",
+            "hash": "98133ec449350d50eb35d4f3d865aa84f8e9b026",
+            "datavalue": {
+              "value": {
+                "time": "+1720-00-00T00:00:00Z",
+                "timezone": 0,
+                "before": 0,
+                "after": 0,
+                "precision": 9,
+                "calendarmodel": "http://www.wikidata.org/entity/Q1985727"
+              },
+              "type": "time"
+            },
+            "datatype": "time"
+          },
+          "type": "statement",
+          "id": "Q133190091$1f258a5d-454e-446d-7fe3-b683f2403ac2",
+          "rank": "normal",
+          "references": [
+            {
+              "hash": "5747029ec3f5585a2803ad5aaf04eac11894f705",
+              "snaks": {
+                "P143": [
+                  {
+                    "snaktype": "value",
+                    "property": "P143",
+                    "hash": "6a164248fc96bfa583bbb495cb63ae6401ec203c",
+                    "datavalue": {
+                      "value": {
+                        "entity-type": "item",
+                        "numeric-id": 206855,
+                        "id": "Q206855"
+                      },
+                      "type": "wikibase-entityid"
+                    },
+                    "datatype": "wikibase-item"
+                  }
+                ],
+                "P4656": [
+                  {
+                    "snaktype": "value",
+                    "property": "P4656",
+                    "hash": "f263fa6d2b8833f271a3b0d45cb99879357759f6",
+                    "datavalue": {
+                      "value": "https://ru.wikipedia.org/?oldid=144077966",
+                      "type": "string"
+                    },
+                    "datatype": "url"
+                  }
+                ]
+              },
+              "snaks-order": [
+                "P143",
+                "P4656"
+              ]
+            }
+          ]
+        }
+      ],
+      "P214": [
+        {
+          "mainsnak": {
+            "snaktype": "value",
+            "property": "P214",
+            "hash": "bc9d4f3db7ea81f3cea31ea1a7419aaf97f86c38",
+            "datavalue": {
+              "value": "316913299",
+              "type": "string"
+            },
+            "datatype": "external-id"
+          },
+          "type": "statement",
+          "id": "Q133190091$a5e7b8bb-442d-f2b9-a0e0-9df10aaa730d",
+          "rank": "normal"
+        }
+      ],
+      "P8179": [
+        {
+          "mainsnak": {
+            "snaktype": "value",
+            "property": "P8179",
+            "hash": "adc6ad6d790475f300ecb17508c783d133241808",
+            "datavalue": {
+              "value": "ncf10793818",
+              "type": "string"
+            },
+            "datatype": "external-id"
+          },
+          "type": "statement",
+          "id": "Q133190091$a9f4e15e-40ae-a159-4b27-54058d813280",
+          "rank": "normal"
+        }
+      ],
+      "P3280": [
+        {
+          "mainsnak": {
+            "snaktype": "value",
+            "property": "P3280",
+            "hash": "b204997a3bed3e7912f7800f3b3fb5c9493670c1",
+            "datavalue": {
+              "value": "0000101653",
+              "type": "string"
+            },
+            "datatype": "external-id"
+          },
+          "type": "statement",
+          "id": "Q133190091$b5fbfa9c-419a-3053-39ed-227fb86676d2",
+          "rank": "normal"
+        }
+      ]
+    },
+    "sitelinks": {
+      "azwiki": {
+        "site": "azwiki",
+        "title": "Banque générale",
+        "badges": [],
+        "url": "https://az.wikipedia.org/wiki/Banque_g%C3%A9n%C3%A9rale"
+      },
+      "commonswiki": {
+        "site": "commonswiki",
+        "title": "Category:La Banque Royale",
+        "badges": [],
+        "url": "https://commons.wikimedia.org/wiki/Category:La_Banque_Royale"
+      },
+      "enwiki": {
+        "site": "enwiki",
+        "title": "John Law's Bank",
+        "badges": [],
+        "url": "https://en.wikipedia.org/wiki/John_Law%27s_Bank"
+      },
+      "eswiki": {
+        "site": "eswiki",
+        "title": "Banco General (Francia)",
+        "badges": [],
+        "url": "https://es.wikipedia.org/wiki/Banco_General_(Francia)"
+      },
+      "frwiki": {
+        "site": "frwiki",
+        "title": "Banque générale",
+        "badges": [],
+        "url": "https://fr.wikipedia.org/wiki/Banque_g%C3%A9n%C3%A9rale"
+      },
+      "hywiki": {
+        "site": "hywiki",
+        "title": "Ջոն Լոյի բանկ",
+        "badges": [],
+        "url": "https://hy.wikipedia.org/wiki/%D5%8B%D5%B8%D5%B6_%D4%BC%D5%B8%D5%B5%D5%AB_%D5%A2%D5%A1%D5%B6%D5%AF"
+      },
+      "ruwiki": {
+        "site": "ruwiki",
+        "title": "Banque générale",
+        "badges": [],
+        "url": "https://ru.wikipedia.org/wiki/Banque_g%C3%A9n%C3%A9rale"
+      }
+    }
+  }
+}

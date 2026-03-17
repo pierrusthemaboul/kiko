@@ -1,0 +1,189 @@
+{
+  "pageid": 494464,
+  "ns": 0,
+  "title": "Q525466",
+  "lastrevid": 2450913186,
+  "modified": "2026-01-03T15:08:04Z",
+  "type": "item",
+  "id": "Q525466",
+  "labels": {
+    "en": {
+      "language": "en",
+      "value": "non-intervention in the Spanish Civil War"
+    },
+    "ar": {
+      "language": "ar",
+      "value": "عدم التدخل في الحرب الأهلية الإسبانية"
+    },
+    "uk": {
+      "language": "uk",
+      "value": "невтручання в громадянську війну в Іспанії"
+    },
+    "sl": {
+      "language": "sl",
+      "value": "neintervencionizem v španski državljanski vojni"
+    }
+  },
+  "descriptions": {
+    "en": {
+      "language": "en",
+      "value": "foreign policy to deter interference in Spanish Civil War"
+    }
+  },
+  "aliases": {},
+  "claims": {
+    "P646": [
+      {
+        "mainsnak": {
+          "snaktype": "value",
+          "property": "P646",
+          "hash": "06f6adf952a74cbc101e0a156b6ecea6b9fb5fb5",
+          "datavalue": {
+            "value": "/m/02qx33z",
+            "type": "string"
+          },
+          "datatype": "external-id"
+        },
+        "type": "statement",
+        "id": "Q525466$F6D31C95-783E-4407-B687-B7CC883175C0",
+        "rank": "normal",
+        "references": [
+          {
+            "hash": "2b00cb481cddcac7623114367489b5c194901c4a",
+            "snaks": {
+              "P248": [
+                {
+                  "snaktype": "value",
+                  "property": "P248",
+                  "hash": "a94b740202b097dd33355e0e6c00e54b9395e5e0",
+                  "datavalue": {
+                    "value": {
+                      "entity-type": "item",
+                      "numeric-id": 15241312,
+                      "id": "Q15241312"
+                    },
+                    "type": "wikibase-entityid"
+                  },
+                  "datatype": "wikibase-item"
+                }
+              ],
+              "P577": [
+                {
+                  "snaktype": "value",
+                  "property": "P577",
+                  "hash": "fde79ecb015112d2f29229ccc1ec514ed3e71fa2",
+                  "datavalue": {
+                    "value": {
+                      "time": "+2013-10-28T00:00:00Z",
+                      "timezone": 0,
+                      "before": 0,
+                      "after": 0,
+                      "precision": 11,
+                      "calendarmodel": "http://www.wikidata.org/entity/Q1985727"
+                    },
+                    "type": "time"
+                  },
+                  "datatype": "time"
+                }
+              ]
+            },
+            "snaks-order": [
+              "P248",
+              "P577"
+            ]
+          }
+        ]
+      }
+    ],
+    "P279": [
+      {
+        "mainsnak": {
+          "snaktype": "value",
+          "property": "P279",
+          "hash": "1df4f5efba8a97dd611eadfc3814b504eabc1ced",
+          "datavalue": {
+            "value": {
+              "entity-type": "item",
+              "numeric-id": 1203128,
+              "id": "Q1203128"
+            },
+            "type": "wikibase-entityid"
+          },
+          "datatype": "wikibase-item"
+        },
+        "type": "statement",
+        "id": "Q525466$42a23619-4bc6-4fd8-db41-75ce5fa0148f",
+        "rank": "normal"
+      }
+    ],
+    "P1269": [
+      {
+        "mainsnak": {
+          "snaktype": "value",
+          "property": "P1269",
+          "hash": "db41332315a168d86c9afd0a9d5fefb8c0472edf",
+          "datavalue": {
+            "value": {
+              "entity-type": "item",
+              "numeric-id": 2827802,
+              "id": "Q2827802"
+            },
+            "type": "wikibase-entityid"
+          },
+          "datatype": "wikibase-item"
+        },
+        "type": "statement",
+        "id": "Q525466$bc13edab-4231-306a-28e7-39a73823d246",
+        "rank": "normal"
+      }
+    ]
+  },
+  "sitelinks": {
+    "arwiki": {
+      "site": "arwiki",
+      "title": "عدم التدخل في الحرب الأهلية الإسبانية",
+      "badges": [],
+      "url": "https://ar.wikipedia.org/wiki/%D8%B9%D8%AF%D9%85_%D8%A7%D9%84%D8%AA%D8%AF%D8%AE%D9%84_%D9%81%D9%8A_%D8%A7%D9%84%D8%AD%D8%B1%D8%A8_%D8%A7%D9%84%D8%A3%D9%87%D9%84%D9%8A%D8%A9_%D8%A7%D9%84%D8%A5%D8%B3%D8%A8%D8%A7%D9%86%D9%8A%D8%A9"
+    },
+    "dewiki": {
+      "site": "dewiki",
+      "title": "Appeasement-Politik der europäischen Großmächte zu Beginn des Spanischen Bürgerkrieges",
+      "badges": [
+        "Q70894304"
+      ],
+      "url": "https://de.wikipedia.org/wiki/Appeasement-Politik_der_europ%C3%A4ischen_Gro%C3%9Fm%C3%A4chte_zu_Beginn_des_Spanischen_B%C3%BCrgerkrieges"
+    },
+    "enwiki": {
+      "site": "enwiki",
+      "title": "Non-intervention in the Spanish Civil War",
+      "badges": [
+        "Q17437798"
+      ],
+      "url": "https://en.wikipedia.org/wiki/Non-intervention_in_the_Spanish_Civil_War"
+    },
+    "fiwiki": {
+      "site": "fiwiki",
+      "title": "Espanjan sisällissodan puuttumattomuussopimus",
+      "badges": [],
+      "url": "https://fi.wikipedia.org/wiki/Espanjan_sis%C3%A4llissodan_puuttumattomuussopimus"
+    },
+    "frwiki": {
+      "site": "frwiki",
+      "title": "Non-intervention (guerre d'Espagne)",
+      "badges": [],
+      "url": "https://fr.wikipedia.org/wiki/Non-intervention_(guerre_d%27Espagne)"
+    },
+    "kowiki": {
+      "site": "kowiki",
+      "title": "불간섭 조약 (스페인 내전)",
+      "badges": [],
+      "url": "https://ko.wikipedia.org/wiki/%EB%B6%88%EA%B0%84%EC%84%AD_%EC%A1%B0%EC%95%BD_(%EC%8A%A4%ED%8E%98%EC%9D%B8_%EB%82%B4%EC%A0%84)"
+    },
+    "ukwiki": {
+      "site": "ukwiki",
+      "title": "Невтручання в громадянську війну в Іспанії",
+      "badges": [],
+      "url": "https://uk.wikipedia.org/wiki/%D0%9D%D0%B5%D0%B2%D1%82%D1%80%D1%83%D1%87%D0%B0%D0%BD%D0%BD%D1%8F_%D0%B2_%D0%B3%D1%80%D0%BE%D0%BC%D0%B0%D0%B4%D1%8F%D0%BD%D1%81%D1%8C%D0%BA%D1%83_%D0%B2%D1%96%D0%B9%D0%BD%D1%83_%D0%B2_%D0%86%D1%81%D0%BF%D0%B0%D0%BD%D1%96%D1%97"
+    }
+  }
+}

@@ -1,0 +1,932 @@
+{
+  "saved_at": "2026-03-07T15:31:50.153Z",
+  "value": {
+    "pageid": 404742,
+    "ns": 0,
+    "title": "Q428972",
+    "lastrevid": 2398463380,
+    "modified": "2025-08-30T19:17:53Z",
+    "type": "item",
+    "id": "Q428972",
+    "labels": {
+      "it": {
+        "language": "it",
+        "value": "battaglia di Wittstock"
+      },
+      "cs": {
+        "language": "cs",
+        "value": "Bitva u Wittstocku"
+      },
+      "de": {
+        "language": "de",
+        "value": "Schlacht bei Wittstock"
+      },
+      "en": {
+        "language": "en",
+        "value": "Battle of Wittstock"
+      },
+      "fr": {
+        "language": "fr",
+        "value": "bataille de Wittstock"
+      },
+      "ja": {
+        "language": "ja",
+        "value": "ヴィットストックの戦い"
+      },
+      "pl": {
+        "language": "pl",
+        "value": "Bitwa pod Wittstock"
+      },
+      "pt": {
+        "language": "pt",
+        "value": "Batalha de Wittstock"
+      },
+      "ru": {
+        "language": "ru",
+        "value": "Битва при Виттштоке"
+      },
+      "sv": {
+        "language": "sv",
+        "value": "Slaget vid Wittstock"
+      },
+      "nl": {
+        "language": "nl",
+        "value": "Battle of Wittstock"
+      },
+      "es": {
+        "language": "es",
+        "value": "Batalla de Wittstock"
+      },
+      "zh": {
+        "language": "zh",
+        "value": "維特施托克戰役"
+      },
+      "bg": {
+        "language": "bg",
+        "value": "Битка при Витщок"
+      },
+      "hu": {
+        "language": "hu",
+        "value": "wittstocki csata"
+      },
+      "he": {
+        "language": "he",
+        "value": "קרב ויסטוק (1636)"
+      },
+      "yo": {
+        "language": "yo",
+        "value": "ogun Wittstock"
+      },
+      "ga": {
+        "language": "ga",
+        "value": "Cath Wittstock"
+      }
+    },
+    "descriptions": {
+      "de": {
+        "language": "de",
+        "value": "Schlacht des Dreißigjährigen Kriegs"
+      },
+      "fr": {
+        "language": "fr",
+        "value": "bataille de la guerre de Trente Ans"
+      },
+      "en": {
+        "language": "en",
+        "value": "battle (1636) during the Thirty Years' War in which a Swedish-allied army decisively defeated a combined Imperial-Saxon army"
+      },
+      "hu": {
+        "language": "hu",
+        "value": "a harmincéves háború csatája, 1636"
+      },
+      "yo": {
+        "language": "yo",
+        "value": "ogun"
+      },
+      "sv": {
+        "language": "sv",
+        "value": "slag under trettioåriga kriget"
+      }
+    },
+    "aliases": {},
+    "claims": {
+      "P31": [
+        {
+          "mainsnak": {
+            "snaktype": "value",
+            "property": "P31",
+            "hash": "baa1df9dcd37b9f3a062e7a14a8bef0c37078d32",
+            "datavalue": {
+              "value": {
+                "entity-type": "item",
+                "numeric-id": 178561,
+                "id": "Q178561"
+              },
+              "type": "wikibase-entityid"
+            },
+            "datatype": "wikibase-item"
+          },
+          "type": "statement",
+          "id": "Q428972$7CC4C05C-7167-4BA8-BEF0-759C29C1A753",
+          "rank": "normal",
+          "references": [
+            {
+              "hash": "d4bd87b862b12d99d26e86472d44f26858dee639",
+              "snaks": {
+                "P143": [
+                  {
+                    "snaktype": "value",
+                    "property": "P143",
+                    "hash": "f30cbd35620c4ea6d0633aaf0210a8916130469b",
+                    "datavalue": {
+                      "value": {
+                        "entity-type": "item",
+                        "numeric-id": 8447,
+                        "id": "Q8447"
+                      },
+                      "type": "wikibase-entityid"
+                    },
+                    "datatype": "wikibase-item"
+                  }
+                ]
+              },
+              "snaks-order": [
+                "P143"
+              ]
+            }
+          ]
+        }
+      ],
+      "P361": [
+        {
+          "mainsnak": {
+            "snaktype": "value",
+            "property": "P361",
+            "hash": "5ca9894849e22f6afc7135c29d7de534846a92c9",
+            "datavalue": {
+              "value": {
+                "entity-type": "item",
+                "numeric-id": 2487,
+                "id": "Q2487"
+              },
+              "type": "wikibase-entityid"
+            },
+            "datatype": "wikibase-item"
+          },
+          "type": "statement",
+          "id": "Q428972$9C66FF4F-F928-4198-8815-97C8BB1BACFE",
+          "rank": "normal",
+          "references": [
+            {
+              "hash": "d4bd87b862b12d99d26e86472d44f26858dee639",
+              "snaks": {
+                "P143": [
+                  {
+                    "snaktype": "value",
+                    "property": "P143",
+                    "hash": "f30cbd35620c4ea6d0633aaf0210a8916130469b",
+                    "datavalue": {
+                      "value": {
+                        "entity-type": "item",
+                        "numeric-id": 8447,
+                        "id": "Q8447"
+                      },
+                      "type": "wikibase-entityid"
+                    },
+                    "datatype": "wikibase-item"
+                  }
+                ]
+              },
+              "snaks-order": [
+                "P143"
+              ]
+            }
+          ]
+        }
+      ],
+      "P646": [
+        {
+          "mainsnak": {
+            "snaktype": "value",
+            "property": "P646",
+            "hash": "20f0cf79e4c00b83d31718fb1636201a13b5016d",
+            "datavalue": {
+              "value": "/m/012ry6",
+              "type": "string"
+            },
+            "datatype": "external-id"
+          },
+          "type": "statement",
+          "id": "Q428972$FB587FE4-E368-453B-80E7-159D66EA480C",
+          "rank": "normal",
+          "references": [
+            {
+              "hash": "2b00cb481cddcac7623114367489b5c194901c4a",
+              "snaks": {
+                "P248": [
+                  {
+                    "snaktype": "value",
+                    "property": "P248",
+                    "hash": "a94b740202b097dd33355e0e6c00e54b9395e5e0",
+                    "datavalue": {
+                      "value": {
+                        "entity-type": "item",
+                        "numeric-id": 15241312,
+                        "id": "Q15241312"
+                      },
+                      "type": "wikibase-entityid"
+                    },
+                    "datatype": "wikibase-item"
+                  }
+                ],
+                "P577": [
+                  {
+                    "snaktype": "value",
+                    "property": "P577",
+                    "hash": "fde79ecb015112d2f29229ccc1ec514ed3e71fa2",
+                    "datavalue": {
+                      "value": {
+                        "time": "+2013-10-28T00:00:00Z",
+                        "timezone": 0,
+                        "before": 0,
+                        "after": 0,
+                        "precision": 11,
+                        "calendarmodel": "http://www.wikidata.org/entity/Q1985727"
+                      },
+                      "type": "time"
+                    },
+                    "datatype": "time"
+                  }
+                ]
+              },
+              "snaks-order": [
+                "P248",
+                "P577"
+              ]
+            }
+          ]
+        }
+      ],
+      "P18": [
+        {
+          "mainsnak": {
+            "snaktype": "value",
+            "property": "P18",
+            "hash": "401c6d60be454a12bd47c9bc79b09d70eb4dadd4",
+            "datavalue": {
+              "value": "The Battle of Wittstock 1636.jpg",
+              "type": "string"
+            },
+            "datatype": "commonsMedia"
+          },
+          "type": "statement",
+          "id": "Q428972$4718beed-4269-f07b-465f-460cf22bc2d2",
+          "rank": "normal"
+        }
+      ],
+      "P276": [
+        {
+          "mainsnak": {
+            "snaktype": "value",
+            "property": "P276",
+            "hash": "5c4a563e2a942964295cefeab1e0968b426b314e",
+            "datavalue": {
+              "value": {
+                "entity-type": "item",
+                "numeric-id": 159572,
+                "id": "Q159572"
+              },
+              "type": "wikibase-entityid"
+            },
+            "datatype": "wikibase-item"
+          },
+          "type": "statement",
+          "id": "Q428972$5480A56E-949D-4D1D-8F8E-3F1B2A417DCA",
+          "rank": "normal"
+        }
+      ],
+      "P625": [
+        {
+          "mainsnak": {
+            "snaktype": "value",
+            "property": "P625",
+            "hash": "788fdb4751636e4bf12bb921a743d409ccb9abd0",
+            "datavalue": {
+              "value": {
+                "latitude": 53.1636,
+                "longitude": 12.4855,
+                "altitude": null,
+                "precision": 0.014983604065273,
+                "globe": "http://www.wikidata.org/entity/Q2"
+              },
+              "type": "globecoordinate"
+            },
+            "datatype": "globe-coordinate"
+          },
+          "type": "statement",
+          "id": "Q428972$ED4B9F1B-9DB2-457B-9829-8D32422B8A13",
+          "rank": "normal",
+          "references": [
+            {
+              "hash": "d4bd87b862b12d99d26e86472d44f26858dee639",
+              "snaks": {
+                "P143": [
+                  {
+                    "snaktype": "value",
+                    "property": "P143",
+                    "hash": "f30cbd35620c4ea6d0633aaf0210a8916130469b",
+                    "datavalue": {
+                      "value": {
+                        "entity-type": "item",
+                        "numeric-id": 8447,
+                        "id": "Q8447"
+                      },
+                      "type": "wikibase-entityid"
+                    },
+                    "datatype": "wikibase-item"
+                  }
+                ]
+              },
+              "snaks-order": [
+                "P143"
+              ]
+            }
+          ]
+        }
+      ],
+      "P585": [
+        {
+          "mainsnak": {
+            "snaktype": "value",
+            "property": "P585",
+            "hash": "075c6adcc1b0ae39e08732ea977f86811b771cdb",
+            "datavalue": {
+              "value": {
+                "time": "+1636-10-04T00:00:00Z",
+                "timezone": 0,
+                "before": 0,
+                "after": 0,
+                "precision": 11,
+                "calendarmodel": "http://www.wikidata.org/entity/Q1985727"
+              },
+              "type": "time"
+            },
+            "datatype": "time"
+          },
+          "type": "statement",
+          "id": "Q428972$FA454A7B-76C6-4AC4-979E-36BAE688AB61",
+          "rank": "normal",
+          "references": [
+            {
+              "hash": "d4bd87b862b12d99d26e86472d44f26858dee639",
+              "snaks": {
+                "P143": [
+                  {
+                    "snaktype": "value",
+                    "property": "P143",
+                    "hash": "f30cbd35620c4ea6d0633aaf0210a8916130469b",
+                    "datavalue": {
+                      "value": {
+                        "entity-type": "item",
+                        "numeric-id": 8447,
+                        "id": "Q8447"
+                      },
+                      "type": "wikibase-entityid"
+                    },
+                    "datatype": "wikibase-item"
+                  }
+                ]
+              },
+              "snaks-order": [
+                "P143"
+              ]
+            }
+          ]
+        }
+      ],
+      "P2581": [
+        {
+          "mainsnak": {
+            "snaktype": "value",
+            "property": "P2581",
+            "hash": "986c123338525c89dab69708a44bf89711d3a986",
+            "datavalue": {
+              "value": "00678795n",
+              "type": "string"
+            },
+            "datatype": "external-id"
+          },
+          "type": "statement",
+          "id": "Q428972$79FE8CDE-95FA-4AC9-96B6-A78C31F79F74",
+          "rank": "normal",
+          "references": [
+            {
+              "hash": "248ac337a217a5f5eed7139a82a4e60931611af0",
+              "snaks": {
+                "P248": [
+                  {
+                    "snaktype": "value",
+                    "property": "P248",
+                    "hash": "25b816aab41db18565946259c950aed6de05dd1e",
+                    "datavalue": {
+                      "value": {
+                        "entity-type": "item",
+                        "numeric-id": 4837690,
+                        "id": "Q4837690"
+                      },
+                      "type": "wikibase-entityid"
+                    },
+                    "datatype": "wikibase-item"
+                  }
+                ]
+              },
+              "snaks-order": [
+                "P248"
+              ]
+            }
+          ]
+        }
+      ],
+      "P1417": [
+        {
+          "mainsnak": {
+            "snaktype": "value",
+            "property": "P1417",
+            "hash": "b109604fe61a4f16978c5b733f83da4958cc1535",
+            "datavalue": {
+              "value": "event/Battle-of-Wittstock",
+              "type": "string"
+            },
+            "datatype": "external-id"
+          },
+          "type": "statement",
+          "qualifiers": {
+            "P1810": [
+              {
+                "snaktype": "value",
+                "property": "P1810",
+                "hash": "35ff776d6a84c2fb4dc3038d5223b4df231ea4fe",
+                "datavalue": {
+                  "value": "Battle of Wittstock",
+                  "type": "string"
+                },
+                "datatype": "string"
+              }
+            ]
+          },
+          "qualifiers-order": [
+            "P1810"
+          ],
+          "id": "Q428972$57AA30F4-9EA9-4CEF-ACEE-8534D036BA03",
+          "rank": "normal"
+        }
+      ],
+      "P710": [
+        {
+          "mainsnak": {
+            "snaktype": "value",
+            "property": "P710",
+            "hash": "953b909a478c6b889aafa66d26a6378cd09a0fa6",
+            "datavalue": {
+              "value": {
+                "entity-type": "item",
+                "numeric-id": 12548,
+                "id": "Q12548"
+              },
+              "type": "wikibase-entityid"
+            },
+            "datatype": "wikibase-item"
+          },
+          "type": "statement",
+          "id": "Q428972$CEC2993D-94CA-4F16-8B4A-D49039126029",
+          "rank": "normal"
+        }
+      ],
+      "P244": [
+        {
+          "mainsnak": {
+            "snaktype": "value",
+            "property": "P244",
+            "hash": "1dd0953537552caad918b90a5174605a91920065",
+            "datavalue": {
+              "value": "sh85147185",
+              "type": "string"
+            },
+            "datatype": "external-id"
+          },
+          "type": "statement",
+          "id": "Q428972$D397EBAA-F29B-40F5-9DB6-EA6302815A41",
+          "rank": "normal",
+          "references": [
+            {
+              "hash": "ac5d47e9fbcc281bc0d27a205ae02e22ad24ce31",
+              "snaks": {
+                "P854": [
+                  {
+                    "snaktype": "value",
+                    "property": "P854",
+                    "hash": "b560dc6b281a39d061e189d2eb299a426a06f1a2",
+                    "datavalue": {
+                      "value": "https://github.com/JohnMarkOckerbloom/ftl/blob/master/data/wikimap",
+                      "type": "string"
+                    },
+                    "datatype": "url"
+                  }
+                ],
+                "P813": [
+                  {
+                    "snaktype": "value",
+                    "property": "P813",
+                    "hash": "0dcf4f64e93fdcc654e2c7534285881fe48b9f3d",
+                    "datavalue": {
+                      "value": {
+                        "time": "+2019-04-03T00:00:00Z",
+                        "timezone": 0,
+                        "before": 0,
+                        "after": 0,
+                        "precision": 11,
+                        "calendarmodel": "http://www.wikidata.org/entity/Q1985727"
+                      },
+                      "type": "time"
+                    },
+                    "datatype": "time"
+                  }
+                ]
+              },
+              "snaks-order": [
+                "P854",
+                "P813"
+              ]
+            }
+          ]
+        }
+      ],
+      "P1260": [
+        {
+          "mainsnak": {
+            "snaktype": "value",
+            "property": "P1260",
+            "hash": "4d275f979f4ca8d882d325a88fa16017f17b9b3a",
+            "datavalue": {
+              "value": "LSH/events/2380",
+              "type": "string"
+            },
+            "datatype": "external-id"
+          },
+          "type": "statement",
+          "id": "Q428972$13dbd508-4c96-d5f4-2af0-d95557df15ab",
+          "rank": "normal"
+        }
+      ],
+      "P691": [
+        {
+          "mainsnak": {
+            "snaktype": "value",
+            "property": "P691",
+            "hash": "b172ca752b2888a98899bd93f80bd48842d4aef3",
+            "datavalue": {
+              "value": "ph369440",
+              "type": "string"
+            },
+            "datatype": "external-id"
+          },
+          "type": "statement",
+          "qualifiers": {
+            "P1810": [
+              {
+                "snaktype": "value",
+                "property": "P1810",
+                "hash": "4d58ba3e58e89d34f15381b594fb9287e6bbea1c",
+                "datavalue": {
+                  "value": "bitva u Wittstocku (1636 : Wittstock, Německo)",
+                  "type": "string"
+                },
+                "datatype": "string"
+              }
+            ]
+          },
+          "qualifiers-order": [
+            "P1810"
+          ],
+          "id": "Q428972$857f963c-4f59-bbde-313d-392c402af2b5",
+          "rank": "normal"
+        }
+      ],
+      "P4839": [
+        {
+          "mainsnak": {
+            "snaktype": "value",
+            "property": "P4839",
+            "hash": "f2bd1fcbb70ea0db2284b72bf690529eaedd773d",
+            "datavalue": {
+              "value": "Entity[\"HistoricalEvent\", \"BattleOfWittstock\"]",
+              "type": "string"
+            },
+            "datatype": "external-id"
+          },
+          "type": "statement",
+          "id": "Q428972$D42FFE12-4076-4421-B8A7-25A36F4B7EC4",
+          "rank": "normal"
+        }
+      ],
+      "P8189": [
+        {
+          "mainsnak": {
+            "snaktype": "value",
+            "property": "P8189",
+            "hash": "19a6fa89faea0c2a5c49448dfa2b32aeb4327c54",
+            "datavalue": {
+              "value": "987007558564005171",
+              "type": "string"
+            },
+            "datatype": "external-id"
+          },
+          "type": "statement",
+          "id": "Q428972$EBBE44BE-1627-49BD-B832-46A7C665C4E7",
+          "rank": "normal",
+          "references": [
+            {
+              "hash": "ecb7a39cf436eb1fba419853af168ef9f2ba1dab",
+              "snaks": {
+                "P248": [
+                  {
+                    "snaktype": "value",
+                    "property": "P248",
+                    "hash": "a03bb6ffe37be9554492f4eea5bd18afcb57df19",
+                    "datavalue": {
+                      "value": {
+                        "entity-type": "item",
+                        "numeric-id": 106509962,
+                        "id": "Q106509962"
+                      },
+                      "type": "wikibase-entityid"
+                    },
+                    "datatype": "wikibase-item"
+                  }
+                ]
+              },
+              "snaks-order": [
+                "P248"
+              ]
+            }
+          ]
+        }
+      ],
+      "P9495": [
+        {
+          "mainsnak": {
+            "snaktype": "value",
+            "property": "P9495",
+            "hash": "97f6331dd3d7a6cb17898d7ae2c6ee45733bd901",
+            "datavalue": {
+              "value": "histevent/4BAD2B41-B0D4-4813-BA0E-4B5BD6AAD8D3",
+              "type": "string"
+            },
+            "datatype": "external-id"
+          },
+          "type": "statement",
+          "id": "Q428972$34D642D8-8A65-481E-A84D-560F05E91751",
+          "rank": "normal"
+        }
+      ],
+      "P373": [
+        {
+          "mainsnak": {
+            "snaktype": "value",
+            "property": "P373",
+            "hash": "8b39b2cf351b24dba4980c683fc549d2ee4883ac",
+            "datavalue": {
+              "value": "Battle of Wittstock",
+              "type": "string"
+            },
+            "datatype": "string"
+          },
+          "type": "statement",
+          "id": "Q428972$e7609bbc-9138-4626-8068-b80215e0596d",
+          "rank": "normal"
+        }
+      ],
+      "P7847": [
+        {
+          "mainsnak": {
+            "snaktype": "value",
+            "property": "P7847",
+            "hash": "c09b9ebe97e98b2c5d4a1bd29e86bda9bafe8170",
+            "datavalue": {
+              "value": "029996972786",
+              "type": "string"
+            },
+            "datatype": "external-id"
+          },
+          "type": "statement",
+          "id": "Q428972$8c405b38-4cac-aa0f-57f1-e7941fcb2699",
+          "rank": "normal"
+        }
+      ],
+      "P1248": [
+        {
+          "mainsnak": {
+            "snaktype": "value",
+            "property": "P1248",
+            "hash": "9fb750090b9b5163717d5bc837cbc31819d7215c",
+            "datavalue": {
+              "value": "92b4c2fe-bb55-4f88-a402-84403fa95531",
+              "type": "string"
+            },
+            "datatype": "external-id"
+          },
+          "type": "statement",
+          "qualifiers": {
+            "P972": [
+              {
+                "snaktype": "value",
+                "property": "P972",
+                "hash": "2a0b031ad58d5a983430f696d1e876c2cdcafec1",
+                "datavalue": {
+                  "value": {
+                    "entity-type": "item",
+                    "numeric-id": 60042824,
+                    "id": "Q60042824"
+                  },
+                  "type": "wikibase-entityid"
+                },
+                "datatype": "wikibase-item"
+              }
+            ]
+          },
+          "qualifiers-order": [
+            "P972"
+          ],
+          "id": "Q428972$403f2af6-4d13-c4a1-8eea-0a01b5ba8e16",
+          "rank": "normal"
+        }
+      ],
+      "P8168": [
+        {
+          "mainsnak": {
+            "snaktype": "value",
+            "property": "P8168",
+            "hash": "b7eb635ba370c29a71281f80db0fb3404f3850db",
+            "datavalue": {
+              "value": "Q1247338",
+              "type": "string"
+            },
+            "datatype": "external-id"
+          },
+          "type": "statement",
+          "id": "Q428972$448F9261-44CA-425C-80F5-403C0F87E64E",
+          "rank": "normal",
+          "references": [
+            {
+              "hash": "4e881f645086274f0480b59146d848c470293731",
+              "snaks": {
+                "P248": [
+                  {
+                    "snaktype": "value",
+                    "property": "P248",
+                    "hash": "e4afc4ad60f2160201385d29d076e0794f815f1e",
+                    "datavalue": {
+                      "value": {
+                        "entity-type": "item",
+                        "numeric-id": 90405608,
+                        "id": "Q90405608"
+                      },
+                      "type": "wikibase-entityid"
+                    },
+                    "datatype": "wikibase-item"
+                  }
+                ],
+                "P813": [
+                  {
+                    "snaktype": "value",
+                    "property": "P813",
+                    "hash": "96ccb0aeae2083f830b578f97fe2675633560517",
+                    "datavalue": {
+                      "value": {
+                        "time": "+2025-03-31T00:00:00Z",
+                        "timezone": 0,
+                        "before": 0,
+                        "after": 0,
+                        "precision": 11,
+                        "calendarmodel": "http://www.wikidata.org/entity/Q1985727"
+                      },
+                      "type": "time"
+                    },
+                    "datatype": "time"
+                  }
+                ]
+              },
+              "snaks-order": [
+                "P248",
+                "P813"
+              ]
+            }
+          ]
+        }
+      ],
+      "P13591": [
+        {
+          "mainsnak": {
+            "snaktype": "value",
+            "property": "P13591",
+            "hash": "72a5b65336756e0acf5d062ef75d48f5f15cfd35",
+            "datavalue": {
+              "value": "concept/f2437e67-cf0a-404c-a121-3dc24ff11f8b",
+              "type": "string"
+            },
+            "datatype": "external-id"
+          },
+          "type": "statement",
+          "id": "Q428972$C3B1013C-3165-4D80-832E-F1DC493D476B",
+          "rank": "normal"
+        }
+      ]
+    },
+    "sitelinks": {
+      "bgwiki": {
+        "site": "bgwiki",
+        "title": "Битка при Витщок",
+        "badges": [],
+        "url": "https://bg.wikipedia.org/wiki/%D0%91%D0%B8%D1%82%D0%BA%D0%B0_%D0%BF%D1%80%D0%B8_%D0%92%D0%B8%D1%82%D1%89%D0%BE%D0%BA"
+      },
+      "commonswiki": {
+        "site": "commonswiki",
+        "title": "Category:Battle of Wittstock",
+        "badges": [],
+        "url": "https://commons.wikimedia.org/wiki/Category:Battle_of_Wittstock"
+      },
+      "cswiki": {
+        "site": "cswiki",
+        "title": "Bitva u Wittstocku",
+        "badges": [],
+        "url": "https://cs.wikipedia.org/wiki/Bitva_u_Wittstocku"
+      },
+      "dewiki": {
+        "site": "dewiki",
+        "title": "Schlacht bei Wittstock",
+        "badges": [],
+        "url": "https://de.wikipedia.org/wiki/Schlacht_bei_Wittstock"
+      },
+      "enwiki": {
+        "site": "enwiki",
+        "title": "Battle of Wittstock",
+        "badges": [],
+        "url": "https://en.wikipedia.org/wiki/Battle_of_Wittstock"
+      },
+      "eswiki": {
+        "site": "eswiki",
+        "title": "Batalla de Wittstock",
+        "badges": [],
+        "url": "https://es.wikipedia.org/wiki/Batalla_de_Wittstock"
+      },
+      "frwiki": {
+        "site": "frwiki",
+        "title": "Bataille de Wittstock",
+        "badges": [],
+        "url": "https://fr.wikipedia.org/wiki/Bataille_de_Wittstock"
+      },
+      "itwiki": {
+        "site": "itwiki",
+        "title": "Battaglia di Wittstock",
+        "badges": [],
+        "url": "https://it.wikipedia.org/wiki/Battaglia_di_Wittstock"
+      },
+      "jawiki": {
+        "site": "jawiki",
+        "title": "ヴィットストックの戦い",
+        "badges": [],
+        "url": "https://ja.wikipedia.org/wiki/%E3%83%B4%E3%82%A3%E3%83%83%E3%83%88%E3%82%B9%E3%83%88%E3%83%83%E3%82%AF%E3%81%AE%E6%88%A6%E3%81%84"
+      },
+      "nlwiki": {
+        "site": "nlwiki",
+        "title": "Slag bij Wittstock",
+        "badges": [],
+        "url": "https://nl.wikipedia.org/wiki/Slag_bij_Wittstock"
+      },
+      "plwiki": {
+        "site": "plwiki",
+        "title": "Bitwa pod Wittstock",
+        "badges": [],
+        "url": "https://pl.wikipedia.org/wiki/Bitwa_pod_Wittstock"
+      },
+      "ptwiki": {
+        "site": "ptwiki",
+        "title": "Batalha de Wittstock",
+        "badges": [],
+        "url": "https://pt.wikipedia.org/wiki/Batalha_de_Wittstock"
+      },
+      "ruwiki": {
+        "site": "ruwiki",
+        "title": "Битва при Виттштоке",
+        "badges": [],
+        "url": "https://ru.wikipedia.org/wiki/%D0%91%D0%B8%D1%82%D0%B2%D0%B0_%D0%BF%D1%80%D0%B8_%D0%92%D0%B8%D1%82%D1%82%D1%88%D1%82%D0%BE%D0%BA%D0%B5"
+      },
+      "svwiki": {
+        "site": "svwiki",
+        "title": "Slaget vid Wittstock",
+        "badges": [],
+        "url": "https://sv.wikipedia.org/wiki/Slaget_vid_Wittstock"
+      }
+    }
+  }
+}

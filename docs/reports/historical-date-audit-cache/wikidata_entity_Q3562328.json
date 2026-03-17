@@ -1,0 +1,169 @@
+{
+  "saved_at": "2026-03-07T15:48:14.237Z",
+  "value": {
+    "pageid": 3391255,
+    "ns": 0,
+    "title": "Q3562328",
+    "lastrevid": 2428984816,
+    "modified": "2025-11-13T07:55:16Z",
+    "type": "item",
+    "id": "Q3562328",
+    "labels": {
+      "en": {
+        "language": "en",
+        "value": "Islamic scarf controversy in France"
+      },
+      "fr": {
+        "language": "fr",
+        "value": "Voile islamique dans les écoles en France"
+      },
+      "it": {
+        "language": "it",
+        "value": "Caso del velo islamico in Francia"
+      },
+      "ja": {
+        "language": "ja",
+        "value": "スカーフ事件"
+      },
+      "es": {
+        "language": "es",
+        "value": "controversia del velo islámico en Francia"
+      },
+      "ar": {
+        "language": "ar",
+        "value": "الجدل حول الحجاب في فرنسا"
+      }
+    },
+    "descriptions": {
+      "fr": {
+        "language": "fr",
+        "value": "Fait divers français"
+      },
+      "en": {
+        "language": "en",
+        "value": "controversy over wearing Muslim head coverings in France"
+      },
+      "es": {
+        "language": "es",
+        "value": "controversia sobre el uso de cubrimientos faciales islámicos en Francia"
+      },
+      "ar": {
+        "language": "ar",
+        "value": "جدل حول ارتداء الحجاب في فرنسا"
+      }
+    },
+    "aliases": {
+      "fr": [
+        {
+          "language": "fr",
+          "value": "Voile Islamique en France"
+        },
+        {
+          "language": "fr",
+          "value": "Voile islamique en france"
+        },
+        {
+          "language": "fr",
+          "value": "Voile islamique dans les ecoles en France"
+        },
+        {
+          "language": "fr",
+          "value": "Voile islamique en France"
+        }
+      ],
+      "en": [
+        {
+          "language": "en",
+          "value": "french hijab controversy"
+        }
+      ],
+      "it": [
+        {
+          "language": "it",
+          "value": "Velo islamico in Francia"
+        }
+      ]
+    },
+    "claims": {
+      "P31": [
+        {
+          "mainsnak": {
+            "snaktype": "value",
+            "property": "P31",
+            "hash": "9bec41026e5bb23409d75a2faa9554ce504c34ae",
+            "datavalue": {
+              "value": {
+                "entity-type": "item",
+                "numeric-id": 1255828,
+                "id": "Q1255828"
+              },
+              "type": "wikibase-entityid"
+            },
+            "datatype": "wikibase-item"
+          },
+          "type": "statement",
+          "id": "Q3562328$7aeacde1-4087-06d5-773c-a21cffef851a",
+          "rank": "normal"
+        }
+      ],
+      "P646": [
+        {
+          "mainsnak": {
+            "snaktype": "value",
+            "property": "P646",
+            "hash": "81674a740ea597a16685b4913f51f66950229db0",
+            "datavalue": {
+              "value": "/m/0118b2gt",
+              "type": "string"
+            },
+            "datatype": "external-id"
+          },
+          "type": "statement",
+          "id": "Q3562328$9B884BBA-1FAA-46FB-ACDE-508B953F00B2",
+          "rank": "normal"
+        }
+      ],
+      "P1269": [
+        {
+          "mainsnak": {
+            "snaktype": "value",
+            "property": "P1269",
+            "hash": "cd49616fa9e5871a5b9901209a22882c20e44a9f",
+            "datavalue": {
+              "value": {
+                "entity-type": "item",
+                "numeric-id": 16010121,
+                "id": "Q16010121"
+              },
+              "type": "wikibase-entityid"
+            },
+            "datatype": "wikibase-item"
+          },
+          "type": "statement",
+          "id": "Q3562328$b086b32f-4d4d-f221-88c0-02e7ec73424a",
+          "rank": "normal"
+        }
+      ]
+    },
+    "sitelinks": {
+      "arwiki": {
+        "site": "arwiki",
+        "title": "الجدل حول الحجاب الإسلامي في فرنسا",
+        "badges": [],
+        "url": "https://ar.wikipedia.org/wiki/%D8%A7%D9%84%D8%AC%D8%AF%D9%84_%D8%AD%D9%88%D9%84_%D8%A7%D9%84%D8%AD%D8%AC%D8%A7%D8%A8_%D8%A7%D9%84%D8%A5%D8%B3%D9%84%D8%A7%D9%85%D9%8A_%D9%81%D9%8A_%D9%81%D8%B1%D9%86%D8%B3%D8%A7"
+      },
+      "enwiki": {
+        "site": "enwiki",
+        "title": "Islamic scarf controversy in France",
+        "badges": [],
+        "url": "https://en.wikipedia.org/wiki/Islamic_scarf_controversy_in_France"
+      },
+      "frwiki": {
+        "site": "frwiki",
+        "title": "Voile islamique dans les écoles en France",
+        "badges": [],
+        "url": "https://fr.wikipedia.org/wiki/Voile_islamique_dans_les_%C3%A9coles_en_France"
+      }
+    }
+  }
+}

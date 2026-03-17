@@ -1,0 +1,102 @@
+{
+  "pageid": 94109682,
+  "ns": 0,
+  "title": "Q95185384",
+  "lastrevid": 1281077359,
+  "modified": "2020-09-23T09:18:04Z",
+  "type": "item",
+  "id": "Q95185384",
+  "labels": {
+    "fr": {
+      "language": "fr",
+      "value": "chronologie des droits des femmes en France"
+    }
+  },
+  "descriptions": {
+    "fr": {
+      "language": "fr",
+      "value": "Chronologie du statut juridique des femmes et de leur émancipation en France"
+    }
+  },
+  "aliases": {
+    "fr": [
+      {
+        "language": "fr",
+        "value": "Chronologie du statut des femmes en France"
+      }
+    ]
+  },
+  "claims": {
+    "P31": [
+      {
+        "mainsnak": {
+          "snaktype": "value",
+          "property": "P31",
+          "hash": "b8abbe4be41b51322810e319a338d2a04d824c35",
+          "datavalue": {
+            "value": {
+              "entity-type": "item",
+              "numeric-id": 186117,
+              "id": "Q186117"
+            },
+            "type": "wikibase-entityid"
+          },
+          "datatype": "wikibase-item"
+        },
+        "type": "statement",
+        "id": "Q95185384$98196256-41dd-6529-3087-cc829a8cca80",
+        "rank": "normal"
+      }
+    ],
+    "P1269": [
+      {
+        "mainsnak": {
+          "snaktype": "value",
+          "property": "P1269",
+          "hash": "2fb2e56e593b5182c406681944281bd91b8c3a44",
+          "datavalue": {
+            "value": {
+              "entity-type": "item",
+              "numeric-id": 223569,
+              "id": "Q223569"
+            },
+            "type": "wikibase-entityid"
+          },
+          "datatype": "wikibase-item"
+        },
+        "type": "statement",
+        "id": "Q95185384$d056b26f-4a0f-8ab1-ead7-4916f2936b3e",
+        "rank": "normal"
+      }
+    ],
+    "P17": [
+      {
+        "mainsnak": {
+          "snaktype": "value",
+          "property": "P17",
+          "hash": "c05db5d169c2560b9799d567a803d20a392f53e4",
+          "datavalue": {
+            "value": {
+              "entity-type": "item",
+              "numeric-id": 142,
+              "id": "Q142"
+            },
+            "type": "wikibase-entityid"
+          },
+          "datatype": "wikibase-item"
+        },
+        "type": "statement",
+        "id": "Q95185384$39b5c84a-442d-b107-8561-45e48b687f99",
+        "rank": "normal"
+      }
+    ]
+  },
+  "sitelinks": {
+    "frwiki": {
+      "site": "frwiki",
+      "title": "Chronologie des droits des femmes en France",
+      "badges": [],
+      "url": "https://fr.wikipedia.org/wiki/Chronologie_des_droits_des_femmes_en_France"
+    }
+  }
+}

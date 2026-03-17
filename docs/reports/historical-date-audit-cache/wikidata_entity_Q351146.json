@@ -1,0 +1,672 @@
+{
+  "saved_at": "2026-03-07T12:55:50.286Z",
+  "value": {
+    "pageid": 335432,
+    "ns": 0,
+    "title": "Q351146",
+    "lastrevid": 2262376356,
+    "modified": "2024-10-19T11:02:52Z",
+    "type": "item",
+    "id": "Q351146",
+    "labels": {
+      "de": {
+        "language": "de",
+        "value": "Roncaglia"
+      },
+      "fr": {
+        "language": "fr",
+        "value": "Roncaglia"
+      },
+      "it": {
+        "language": "it",
+        "value": "Roncaglia"
+      },
+      "nl": {
+        "language": "nl",
+        "value": "Roncaglia"
+      },
+      "en": {
+        "language": "en",
+        "value": "Roncaglia"
+      },
+      "eml": {
+        "language": "eml",
+        "value": "Runcäia"
+      },
+      "la": {
+        "language": "la",
+        "value": "Roncaliae"
+      },
+      "sr": {
+        "language": "sr",
+        "value": "Roncaglia"
+      },
+      "sh": {
+        "language": "sh",
+        "value": "Roncaglia"
+      },
+      "hu": {
+        "language": "hu",
+        "value": "Roncaglia"
+      },
+      "ja": {
+        "language": "ja",
+        "value": "ロンカーリャ"
+      },
+      "ceb": {
+        "language": "ceb",
+        "value": "Roncaglia"
+      },
+      "tt": {
+        "language": "tt",
+        "value": "Ронкальия (Пяченца)"
+      },
+      "ce": {
+        "language": "ce",
+        "value": "Ронкальия (Пяченца)"
+      },
+      "lmo": {
+        "language": "lmo",
+        "value": "Roncaja (Piasenza)"
+      },
+      "tr": {
+        "language": "tr",
+        "value": "Roncaglia"
+      }
+    },
+    "descriptions": {
+      "nl": {
+        "language": "nl",
+        "value": "plaats in Piacenza"
+      },
+      "it": {
+        "language": "it",
+        "value": "frazione del comune italiano di Piacenza"
+      },
+      "fr": {
+        "language": "fr",
+        "value": "hameau italien"
+      },
+      "en": {
+        "language": "en",
+        "value": "settlement in Piacenza, Italy"
+      },
+      "hu": {
+        "language": "hu",
+        "value": "olasz frazione"
+      },
+      "ceb": {
+        "language": "ceb",
+        "value": "lungsod sa Italya, Emilia-Romagna"
+      },
+      "de": {
+        "language": "de",
+        "value": "Ortschaft in Italien"
+      },
+      "tr": {
+        "language": "tr",
+        "value": "İtalya'nın Emilia-Romagna bölgesinde, Piacenza ili, merkez ilçesine bağlı yerleşim yeri"
+      }
+    },
+    "aliases": {
+      "de": [
+        {
+          "language": "de",
+          "value": "Ronkalische Felder"
+        },
+        {
+          "language": "de",
+          "value": "Hoftag auf den Ronkalischen Feldern"
+        }
+      ],
+      "ja": [
+        {
+          "language": "ja",
+          "value": "ロンカリア"
+        }
+      ],
+      "tr": [
+        {
+          "language": "tr",
+          "value": "Roncaglia (Piacenza, Piacenza)"
+        },
+        {
+          "language": "tr",
+          "value": "Roncaglia (Piacenza)"
+        }
+      ]
+    },
+    "claims": {
+      "P131": [
+        {
+          "mainsnak": {
+            "snaktype": "value",
+            "property": "P131",
+            "hash": "cfdb65e6e209f2c3a1c7de6e4239ce3a6cb64e6d",
+            "datavalue": {
+              "value": {
+                "entity-type": "item",
+                "numeric-id": 13329,
+                "id": "Q13329"
+              },
+              "type": "wikibase-entityid"
+            },
+            "datatype": "wikibase-item"
+          },
+          "type": "statement",
+          "id": "q351146$D5CEF728-2D8B-45AB-9336-04D754B1A758",
+          "rank": "normal"
+        }
+      ],
+      "P31": [
+        {
+          "mainsnak": {
+            "snaktype": "value",
+            "property": "P31",
+            "hash": "343a2b40401308d5b11378960e4157f5199cbff2",
+            "datavalue": {
+              "value": {
+                "entity-type": "item",
+                "numeric-id": 1134686,
+                "id": "Q1134686"
+              },
+              "type": "wikibase-entityid"
+            },
+            "datatype": "wikibase-item"
+          },
+          "type": "statement",
+          "id": "q351146$2E423AC5-03C7-4D2C-861E-9EB1044DB259",
+          "rank": "normal",
+          "references": [
+            {
+              "hash": "732ec1c90a6f0694c7db9a71bf09fe7f2b674172",
+              "snaks": {
+                "P143": [
+                  {
+                    "snaktype": "value",
+                    "property": "P143",
+                    "hash": "9123b0de1cc9c3954366ba797d598e4e1ea4146f",
+                    "datavalue": {
+                      "value": {
+                        "entity-type": "item",
+                        "numeric-id": 10000,
+                        "id": "Q10000"
+                      },
+                      "type": "wikibase-entityid"
+                    },
+                    "datatype": "wikibase-item"
+                  }
+                ]
+              },
+              "snaks-order": [
+                "P143"
+              ]
+            }
+          ]
+        }
+      ],
+      "P17": [
+        {
+          "mainsnak": {
+            "snaktype": "value",
+            "property": "P17",
+            "hash": "b48529e9f7e0898ab1ddaefe8547cdb863e0167c",
+            "datavalue": {
+              "value": {
+                "entity-type": "item",
+                "numeric-id": 38,
+                "id": "Q38"
+              },
+              "type": "wikibase-entityid"
+            },
+            "datatype": "wikibase-item"
+          },
+          "type": "statement",
+          "id": "Q351146$B999E946-21DD-466D-BAC4-95E8C18A2BAE",
+          "rank": "normal"
+        }
+      ],
+      "P1566": [
+        {
+          "mainsnak": {
+            "snaktype": "value",
+            "property": "P1566",
+            "hash": "47aae7b17b72bcb1277eae3b355c143f78b884bb",
+            "datavalue": {
+              "value": "3169026",
+              "type": "string"
+            },
+            "datatype": "external-id"
+          },
+          "type": "statement",
+          "id": "Q351146$5DB8FC9E-EE13-4439-8074-F813E64ABFAE",
+          "rank": "normal",
+          "references": [
+            {
+              "hash": "d0803e2b0f1149c9e82d42c919545a7e3fdb1442",
+              "snaks": {
+                "P143": [
+                  {
+                    "snaktype": "value",
+                    "property": "P143",
+                    "hash": "97a0638609bbd3988f36abac478d7c1dd8b140f3",
+                    "datavalue": {
+                      "value": {
+                        "entity-type": "item",
+                        "numeric-id": 58679,
+                        "id": "Q58679"
+                      },
+                      "type": "wikibase-entityid"
+                    },
+                    "datatype": "wikibase-item"
+                  }
+                ]
+              },
+              "snaks-order": [
+                "P143"
+              ]
+            }
+          ]
+        }
+      ],
+      "P281": [
+        {
+          "mainsnak": {
+            "snaktype": "value",
+            "property": "P281",
+            "hash": "248539b32ed5740ed280c86aecd6483175798b3f",
+            "datavalue": {
+              "value": "29100",
+              "type": "string"
+            },
+            "datatype": "string"
+          },
+          "type": "statement",
+          "id": "Q351146$8B73CE50-79C4-44B1-A172-AC484D5738D7",
+          "rank": "normal",
+          "references": [
+            {
+              "hash": "d5847b9b6032aa8b13dae3c2dfd9ed5d114d21b3",
+              "snaks": {
+                "P143": [
+                  {
+                    "snaktype": "value",
+                    "property": "P143",
+                    "hash": "5a343e7e758a4282a01316d3e959b6e653b767fc",
+                    "datavalue": {
+                      "value": {
+                        "entity-type": "item",
+                        "numeric-id": 11920,
+                        "id": "Q11920"
+                      },
+                      "type": "wikibase-entityid"
+                    },
+                    "datatype": "wikibase-item"
+                  }
+                ]
+              },
+              "snaks-order": [
+                "P143"
+              ]
+            }
+          ]
+        }
+      ],
+      "P473": [
+        {
+          "mainsnak": {
+            "snaktype": "value",
+            "property": "P473",
+            "hash": "13b4f12a25c7dd07458d3e32ddc17442b158bf99",
+            "datavalue": {
+              "value": "0523",
+              "type": "string"
+            },
+            "datatype": "string"
+          },
+          "type": "statement",
+          "id": "Q351146$40A71C28-896B-43B0-8B18-9C06AE955F80",
+          "rank": "normal",
+          "references": [
+            {
+              "hash": "d5847b9b6032aa8b13dae3c2dfd9ed5d114d21b3",
+              "snaks": {
+                "P143": [
+                  {
+                    "snaktype": "value",
+                    "property": "P143",
+                    "hash": "5a343e7e758a4282a01316d3e959b6e653b767fc",
+                    "datavalue": {
+                      "value": {
+                        "entity-type": "item",
+                        "numeric-id": 11920,
+                        "id": "Q11920"
+                      },
+                      "type": "wikibase-entityid"
+                    },
+                    "datatype": "wikibase-item"
+                  }
+                ]
+              },
+              "snaks-order": [
+                "P143"
+              ]
+            }
+          ]
+        }
+      ],
+      "P6766": [
+        {
+          "mainsnak": {
+            "snaktype": "value",
+            "property": "P6766",
+            "hash": "2f1a84a05a38579c0958e2a7d1c455cf069a6b40",
+            "datavalue": {
+              "value": "1126053799",
+              "type": "string"
+            },
+            "datatype": "external-id"
+          },
+          "type": "statement",
+          "id": "Q351146$A12421A4-0D88-41E8-8F18-156DC28C5B5D",
+          "rank": "normal"
+        }
+      ],
+      "P6706": [
+        {
+          "mainsnak": {
+            "snaktype": "value",
+            "property": "P6706",
+            "hash": "f506a330cfb6171643861fdfc781fddaa7de7e9a",
+            "datavalue": {
+              "value": "Roncàglia",
+              "type": "string"
+            },
+            "datatype": "external-id"
+          },
+          "type": "statement",
+          "qualifiers": {
+            "P1810": [
+              {
+                "snaktype": "value",
+                "property": "P1810",
+                "hash": "3b5e91c30ecbf581ac980bf8e3faacdb42d5aee0",
+                "datavalue": {
+                  "value": "Roncàglia",
+                  "type": "string"
+                },
+                "datatype": "string"
+              }
+            ]
+          },
+          "qualifiers-order": [
+            "P1810"
+          ],
+          "id": "Q351146$C6B6DEC6-F95D-4B93-9042-4D0EB7B6B0E7",
+          "rank": "normal"
+        }
+      ],
+      "P373": [
+        {
+          "mainsnak": {
+            "snaktype": "value",
+            "property": "P373",
+            "hash": "fd5caa66e2dc42f17306adf5701908141890b722",
+            "datavalue": {
+              "value": "Roncaglia",
+              "type": "string"
+            },
+            "datatype": "string"
+          },
+          "type": "statement",
+          "id": "Q351146$6af74f80-41af-18ed-017d-931a3a9ac826",
+          "rank": "normal"
+        }
+      ],
+      "P2671": [
+        {
+          "mainsnak": {
+            "snaktype": "value",
+            "property": "P2671",
+            "hash": "c0ea8223d03433094aa859bf33d4e2bc2b536983",
+            "datavalue": {
+              "value": "/g/12221l0q",
+              "type": "string"
+            },
+            "datatype": "external-id"
+          },
+          "type": "statement",
+          "id": "Q351146$07AF4DB0-F47E-4963-BF67-ADF6310CF8F5",
+          "rank": "normal"
+        }
+      ],
+      "P421": [
+        {
+          "mainsnak": {
+            "snaktype": "value",
+            "property": "P421",
+            "hash": "53ab731bb59fd06a123a2d042d206bd52199e918",
+            "datavalue": {
+              "value": {
+                "entity-type": "item",
+                "numeric-id": 6655,
+                "id": "Q6655"
+              },
+              "type": "wikibase-entityid"
+            },
+            "datatype": "wikibase-item"
+          },
+          "type": "statement",
+          "qualifiers": {
+            "P1264": [
+              {
+                "snaktype": "value",
+                "property": "P1264",
+                "hash": "5a71e6a321809311ea1a1998db98d29c34b5226d",
+                "datavalue": {
+                  "value": {
+                    "entity-type": "item",
+                    "numeric-id": 1777301,
+                    "id": "Q1777301"
+                  },
+                  "type": "wikibase-entityid"
+                },
+                "datatype": "wikibase-item"
+              }
+            ]
+          },
+          "qualifiers-order": [
+            "P1264"
+          ],
+          "id": "Q351146$4444ff05-01ce-4fb2-b211-1b4842516e0e",
+          "rank": "normal"
+        },
+        {
+          "mainsnak": {
+            "snaktype": "value",
+            "property": "P421",
+            "hash": "2f5d88b20f122f125387179df70f54990074d5a8",
+            "datavalue": {
+              "value": {
+                "entity-type": "item",
+                "numeric-id": 6723,
+                "id": "Q6723"
+              },
+              "type": "wikibase-entityid"
+            },
+            "datatype": "wikibase-item"
+          },
+          "type": "statement",
+          "qualifiers": {
+            "P1264": [
+              {
+                "snaktype": "value",
+                "property": "P1264",
+                "hash": "bbce95c43e978fcfb784754a6507030a95cf31f3",
+                "datavalue": {
+                  "value": {
+                    "entity-type": "item",
+                    "numeric-id": 36669,
+                    "id": "Q36669"
+                  },
+                  "type": "wikibase-entityid"
+                },
+                "datatype": "wikibase-item"
+              }
+            ]
+          },
+          "qualifiers-order": [
+            "P1264"
+          ],
+          "id": "Q351146$b3c80c7d-8d78-499b-b302-61ecc2182636",
+          "rank": "normal"
+        }
+      ],
+      "P625": [
+        {
+          "mainsnak": {
+            "snaktype": "value",
+            "property": "P625",
+            "hash": "228cb6bac6bd220a9ca1365caa88225170cb2db9",
+            "datavalue": {
+              "value": {
+                "latitude": 45.04372,
+                "longitude": 9.79575,
+                "altitude": null,
+                "precision": 0.00001,
+                "globe": "http://www.wikidata.org/entity/Q2"
+              },
+              "type": "globecoordinate"
+            },
+            "datatype": "globe-coordinate"
+          },
+          "type": "statement",
+          "id": "Q351146$3c508de5-4781-4d3f-c7ce-12df7062ae0b",
+          "rank": "normal"
+        }
+      ],
+      "P2326": [
+        {
+          "mainsnak": {
+            "snaktype": "value",
+            "property": "P2326",
+            "hash": "fbe8ecc442bdae670ef63ed8e1d9ad295bd927f8",
+            "datavalue": {
+              "value": "-126738",
+              "type": "string"
+            },
+            "datatype": "external-id"
+          },
+          "type": "statement",
+          "id": "Q351146$D58740BF-799F-480A-A60D-79D30F8BC73B",
+          "rank": "normal"
+        }
+      ],
+      "P18": [
+        {
+          "mainsnak": {
+            "snaktype": "value",
+            "property": "P18",
+            "hash": "b69cd8ac7add306e545b1c853b9a24ce6306b160",
+            "datavalue": {
+              "value": "Piacenza - frazione Roncaglia - chiesa di San Bartolomeo Apostolo.jpg",
+              "type": "string"
+            },
+            "datatype": "commonsMedia"
+          },
+          "type": "statement",
+          "id": "Q351146$c4a4ef42-4027-08dd-b816-248d774ecf0f",
+          "rank": "normal"
+        }
+      ]
+    },
+    "sitelinks": {
+      "cebwiki": {
+        "site": "cebwiki",
+        "title": "Roncaglia (lungsod sa Italya, Emilia-Romagna)",
+        "badges": [],
+        "url": "https://ceb.wikipedia.org/wiki/Roncaglia_(lungsod_sa_Italya,_Emilia-Romagna)"
+      },
+      "cewiki": {
+        "site": "cewiki",
+        "title": "Ронкальия (Пяченца)",
+        "badges": [],
+        "url": "https://ce.wikipedia.org/wiki/%D0%A0%D0%BE%D0%BD%D0%BA%D0%B0%D0%BB%D1%8C%D0%B8%D1%8F_(%D0%9F%D1%8F%D1%87%D0%B5%D0%BD%D1%86%D0%B0)"
+      },
+      "commonswiki": {
+        "site": "commonswiki",
+        "title": "Category:Roncaglia (Piacenza)",
+        "badges": [],
+        "url": "https://commons.wikimedia.org/wiki/Category:Roncaglia_(Piacenza)"
+      },
+      "dewiki": {
+        "site": "dewiki",
+        "title": "Roncaglia",
+        "badges": [],
+        "url": "https://de.wikipedia.org/wiki/Roncaglia"
+      },
+      "emlwiki": {
+        "site": "emlwiki",
+        "title": "Runcäia",
+        "badges": [],
+        "url": "https://eml.wikipedia.org/wiki/Runc%C3%A4ia"
+      },
+      "enwiki": {
+        "site": "enwiki",
+        "title": "Roncaglia (Piacenza)",
+        "badges": [
+          "Q70893996"
+        ],
+        "url": "https://en.wikipedia.org/wiki/Roncaglia_(Piacenza)"
+      },
+      "frwiki": {
+        "site": "frwiki",
+        "title": "Roncaglia",
+        "badges": [],
+        "url": "https://fr.wikipedia.org/wiki/Roncaglia"
+      },
+      "itwiki": {
+        "site": "itwiki",
+        "title": "Roncaglia",
+        "badges": [],
+        "url": "https://it.wikipedia.org/wiki/Roncaglia"
+      },
+      "lawiki": {
+        "site": "lawiki",
+        "title": "Roncaliae",
+        "badges": [],
+        "url": "https://la.wikipedia.org/wiki/Roncaliae"
+      },
+      "lmowiki": {
+        "site": "lmowiki",
+        "title": "Roncaja (Piasenza)",
+        "badges": [],
+        "url": "https://lmo.wikipedia.org/wiki/Roncaja_(Piasenza)"
+      },
+      "nlwiki": {
+        "site": "nlwiki",
+        "title": "Roncaglia",
+        "badges": [],
+        "url": "https://nl.wikipedia.org/wiki/Roncaglia"
+      },
+      "shwiki": {
+        "site": "shwiki",
+        "title": "Roncaglia, Piacenza",
+        "badges": [],
+        "url": "https://sh.wikipedia.org/wiki/Roncaglia,_Piacenza"
+      },
+      "srwiki": {
+        "site": "srwiki",
+        "title": "Ронкаљија (Пјаченца)",
+        "badges": [],
+        "url": "https://sr.wikipedia.org/wiki/%D0%A0%D0%BE%D0%BD%D0%BA%D0%B0%D1%99%D0%B8%D1%98%D0%B0_(%D0%9F%D1%98%D0%B0%D1%87%D0%B5%D0%BD%D1%86%D0%B0)"
+      },
+      "ttwiki": {
+        "site": "ttwiki",
+        "title": "Ронкальия (Пяченца)",
+        "badges": [],
+        "url": "https://tt.wikipedia.org/wiki/%D0%A0%D0%BE%D0%BD%D0%BA%D0%B0%D0%BB%D1%8C%D0%B8%D1%8F_(%D0%9F%D1%8F%D1%87%D0%B5%D0%BD%D1%86%D0%B0)"
+      }
+    }
+  }
+}

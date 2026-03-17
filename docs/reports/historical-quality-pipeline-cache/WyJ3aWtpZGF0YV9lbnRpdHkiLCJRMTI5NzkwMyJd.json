@@ -1,0 +1,954 @@
+{
+  "pageid": 1238033,
+  "ns": 0,
+  "title": "Q1297903",
+  "lastrevid": 2403217036,
+  "modified": "2025-09-10T14:42:59Z",
+  "type": "item",
+  "id": "Q1297903",
+  "labels": {
+    "de": {
+      "language": "de",
+      "value": "Berg der Barmherzigkeit"
+    },
+    "en": {
+      "language": "en",
+      "value": "mount of piety"
+    },
+    "es": {
+      "language": "es",
+      "value": "Monte de Piedad"
+    },
+    "fr": {
+      "language": "fr",
+      "value": "mont-de-piété"
+    },
+    "it": {
+      "language": "it",
+      "value": "Monte di Pietà"
+    },
+    "nl": {
+      "language": "nl",
+      "value": "berg van barmhartigheid"
+    },
+    "pl": {
+      "language": "pl",
+      "value": "Bank pobożny"
+    },
+    "pt": {
+      "language": "pt",
+      "value": "montepio"
+    },
+    "ca": {
+      "language": "ca",
+      "value": "mont de pietat"
+    },
+    "ar": {
+      "language": "ar",
+      "value": "جبل التقوى"
+    },
+    "ja": {
+      "language": "ja",
+      "value": "モンテ・ディ・ピエタ"
+    },
+    "gl": {
+      "language": "gl",
+      "value": "Monte de piedade"
+    },
+    "eo": {
+      "language": "eo",
+      "value": "monto de pio"
+    },
+    "ru": {
+      "language": "ru",
+      "value": "Монте ди пьета"
+    },
+    "la": {
+      "language": "la",
+      "value": "Mons Pietatis"
+    },
+    "zh": {
+      "language": "zh",
+      "value": "聖憐山"
+    },
+    "zh-cn": {
+      "language": "zh-cn",
+      "value": "圣怜山"
+    },
+    "fa": {
+      "language": "fa",
+      "value": "بانک‌های مونته"
+    }
+  },
+  "descriptions": {
+    "it": {
+      "language": "it",
+      "value": "istituzione finanziaria medievale italiana senza scopo di lucro"
+    },
+    "en": {
+      "language": "en",
+      "value": "institutional pawnbroker run as a charity"
+    },
+    "es": {
+      "language": "es",
+      "value": "tipo de entidad benéfica"
+    },
+    "fr": {
+      "language": "fr",
+      "value": "organisme de prêt sur gage"
+    },
+    "gl": {
+      "language": "gl",
+      "value": "institución benéfica adicada á concesión de préstamos"
+    },
+    "ru": {
+      "language": "ru",
+      "value": "католический некоммерческий ломбард"
+    },
+    "nl": {
+      "language": "nl",
+      "value": "openbare kredietinstelling"
+    },
+    "ar": {
+      "language": "ar",
+      "value": "منظمة في أوروبا"
+    },
+    "de": {
+      "language": "de",
+      "value": "Pfandleihgeschäfte im späten Mittelalter und der Frühen Neuzzeit"
+    },
+    "zh": {
+      "language": "zh",
+      "value": "意大利文艺复兴时期金融机构"
+    }
+  },
+  "aliases": {
+    "es": [
+      {
+        "language": "es",
+        "value": "montepío"
+      }
+    ],
+    "fa": [
+      {
+        "language": "fa",
+        "value": "مونت‌دی‌پیه‌تا"
+      }
+    ]
+  },
+  "claims": {
+    "P646": [
+      {
+        "mainsnak": {
+          "snaktype": "value",
+          "property": "P646",
+          "hash": "26fa8d6184076be4576fb1ee2cd007e065f390b5",
+          "datavalue": {
+            "value": "/m/08sfml",
+            "type": "string"
+          },
+          "datatype": "external-id"
+        },
+        "type": "statement",
+        "id": "Q1297903$6B0048C7-877F-4432-BBE1-F33080444A28",
+        "rank": "normal",
+        "references": [
+          {
+            "hash": "2b00cb481cddcac7623114367489b5c194901c4a",
+            "snaks": {
+              "P248": [
+                {
+                  "snaktype": "value",
+                  "property": "P248",
+                  "hash": "a94b740202b097dd33355e0e6c00e54b9395e5e0",
+                  "datavalue": {
+                    "value": {
+                      "entity-type": "item",
+                      "numeric-id": 15241312,
+                      "id": "Q15241312"
+                    },
+                    "type": "wikibase-entityid"
+                  },
+                  "datatype": "wikibase-item"
+                }
+              ],
+              "P577": [
+                {
+                  "snaktype": "value",
+                  "property": "P577",
+                  "hash": "fde79ecb015112d2f29229ccc1ec514ed3e71fa2",
+                  "datavalue": {
+                    "value": {
+                      "time": "+2013-10-28T00:00:00Z",
+                      "timezone": 0,
+                      "before": 0,
+                      "after": 0,
+                      "precision": 11,
+                      "calendarmodel": "http://www.wikidata.org/entity/Q1985727"
+                    },
+                    "type": "time"
+                  },
+                  "datatype": "time"
+                }
+              ]
+            },
+            "snaks-order": [
+              "P248",
+              "P577"
+            ]
+          }
+        ]
+      }
+    ],
+    "P214": [
+      {
+        "mainsnak": {
+          "snaktype": "value",
+          "property": "P214",
+          "hash": "c255aaa3db24f89f50d5957875231aab1d6bdb52",
+          "datavalue": {
+            "value": "125725987",
+            "type": "string"
+          },
+          "datatype": "external-id"
+        },
+        "type": "statement",
+        "id": "Q1297903$DA25EE7B-CB76-4BD0-84AD-F97E808810EE",
+        "rank": "normal",
+        "references": [
+          {
+            "hash": "43542bf5190be938de61dc716cc2e5e475ce7bd3",
+            "snaks": {
+              "P248": [
+                {
+                  "snaktype": "value",
+                  "property": "P248",
+                  "hash": "6b7d4330c4aac4caec4ede9de0311ce273f88ecd",
+                  "datavalue": {
+                    "value": {
+                      "entity-type": "item",
+                      "numeric-id": 54919,
+                      "id": "Q54919"
+                    },
+                    "type": "wikibase-entityid"
+                  },
+                  "datatype": "wikibase-item"
+                }
+              ],
+              "P813": [
+                {
+                  "snaktype": "value",
+                  "property": "P813",
+                  "hash": "90dd15224de75b113810f54078f6c711c765441c",
+                  "datavalue": {
+                    "value": {
+                      "time": "+2015-08-10T00:00:00Z",
+                      "timezone": 0,
+                      "before": 0,
+                      "after": 0,
+                      "precision": 11,
+                      "calendarmodel": "http://www.wikidata.org/entity/Q1985727"
+                    },
+                    "type": "time"
+                  },
+                  "datatype": "time"
+                }
+              ]
+            },
+            "snaks-order": [
+              "P248",
+              "P813"
+            ]
+          }
+        ]
+      }
+    ],
+    "P373": [
+      {
+        "mainsnak": {
+          "snaktype": "value",
+          "property": "P373",
+          "hash": "69f19dd96568dc87e3b1e94a7f74f89e4b84783f",
+          "datavalue": {
+            "value": "Mons Pietatis",
+            "type": "string"
+          },
+          "datatype": "string"
+        },
+        "type": "statement",
+        "id": "Q1297903$59D6B12B-7F42-4A21-A696-79DEDE8BB1F5",
+        "rank": "normal"
+      }
+    ],
+    "P3241": [
+      {
+        "mainsnak": {
+          "snaktype": "value",
+          "property": "P3241",
+          "hash": "6810bc76a734053f0384df462bac023f106a4ab9",
+          "datavalue": {
+            "value": "10534d",
+            "type": "string"
+          },
+          "datatype": "external-id"
+        },
+        "type": "statement",
+        "id": "Q1297903$26E7A1C8-410C-4125-AD95-A998C36FA43A",
+        "rank": "normal"
+      }
+    ],
+    "P227": [
+      {
+        "mainsnak": {
+          "snaktype": "value",
+          "property": "P227",
+          "hash": "2c2374b8903c941f50cc75cbf59bb50cb5ac0dcd",
+          "datavalue": {
+            "value": "4542073-7",
+            "type": "string"
+          },
+          "datatype": "external-id"
+        },
+        "type": "statement",
+        "id": "Q1297903$B9537F05-A5CA-4849-9239-E633BA80572F",
+        "rank": "normal",
+        "references": [
+          {
+            "hash": "9a24f7c0208b05d6be97077d855671d1dfdbc0dd",
+            "snaks": {
+              "P143": [
+                {
+                  "snaktype": "value",
+                  "property": "P143",
+                  "hash": "d38375ffe6fe142663ff55cd783aa4df4301d83d",
+                  "datavalue": {
+                    "value": {
+                      "entity-type": "item",
+                      "numeric-id": 48183,
+                      "id": "Q48183"
+                    },
+                    "type": "wikibase-entityid"
+                  },
+                  "datatype": "wikibase-item"
+                }
+              ]
+            },
+            "snaks-order": [
+              "P143"
+            ]
+          }
+        ]
+      }
+    ],
+    "P279": [
+      {
+        "mainsnak": {
+          "snaktype": "value",
+          "property": "P279",
+          "hash": "d2b00a7d2d931b0369bf42116a73f66ce5c51d22",
+          "datavalue": {
+            "value": {
+              "entity-type": "item",
+              "numeric-id": 176637,
+              "id": "Q176637"
+            },
+            "type": "wikibase-entityid"
+          },
+          "datatype": "wikibase-item"
+        },
+        "type": "statement",
+        "id": "Q1297903$371d526e-4342-0dbc-4723-c8e4a2f2bc6c",
+        "rank": "normal"
+      },
+      {
+        "mainsnak": {
+          "snaktype": "value",
+          "property": "P279",
+          "hash": "fb75db4041843a764384f005b8c3fa8092645f01",
+          "datavalue": {
+            "value": {
+              "entity-type": "item",
+              "numeric-id": 108315671,
+              "id": "Q108315671"
+            },
+            "type": "wikibase-entityid"
+          },
+          "datatype": "wikibase-item"
+        },
+        "type": "statement",
+        "id": "Q1297903$8faffc09-4a3f-f42c-d135-6a4db3db2671",
+        "rank": "normal"
+      }
+    ],
+    "P1417": [
+      {
+        "mainsnak": {
+          "snaktype": "value",
+          "property": "P1417",
+          "hash": "fed0f85f9c1e4aedc18040363b711bfaf23664ac",
+          "datavalue": {
+            "value": "topic/montes-pietatis",
+            "type": "string"
+          },
+          "datatype": "external-id"
+        },
+        "type": "statement",
+        "qualifiers": {
+          "P1810": [
+            {
+              "snaktype": "value",
+              "property": "P1810",
+              "hash": "8fec8207dbae22b78cda18f1fa9deb3d51bc53bf",
+              "datavalue": {
+                "value": "montes pietatis",
+                "type": "string"
+              },
+              "datatype": "string"
+            }
+          ]
+        },
+        "qualifiers-order": [
+          "P1810"
+        ],
+        "id": "Q1297903$AA8BDD5A-20AA-435E-97A6-ABC2C4EA89B6",
+        "rank": "normal"
+      }
+    ],
+    "P1296": [
+      {
+        "mainsnak": {
+          "snaktype": "value",
+          "property": "P1296",
+          "hash": "6863d72dbe7499f0d94c99444b3f4c3a3deb83a0",
+          "datavalue": {
+            "value": "0195210",
+            "type": "string"
+          },
+          "datatype": "external-id"
+        },
+        "type": "statement",
+        "id": "Q1297903$5E55E5B9-BA0B-4933-A5EA-C08E5DE7C4B7",
+        "rank": "normal"
+      }
+    ],
+    "P6404": [
+      {
+        "mainsnak": {
+          "snaktype": "value",
+          "property": "P6404",
+          "hash": "665308908488dff7d857a1181e7343ea16ab7620",
+          "datavalue": {
+            "value": "monte-di-pieta",
+            "type": "string"
+          },
+          "datatype": "external-id"
+        },
+        "type": "statement",
+        "qualifiers": {
+          "P1810": [
+            {
+              "snaktype": "value",
+              "property": "P1810",
+              "hash": "d140ecaa9574638f7559bf9662078f523d06c08c",
+              "datavalue": {
+                "value": "monte di pietà",
+                "type": "string"
+              },
+              "datatype": "string"
+            }
+          ],
+          "P577": [
+            {
+              "snaktype": "value",
+              "property": "P577",
+              "hash": "ee04033b93df56fec66997b219da63168dc08e80",
+              "datavalue": {
+                "value": {
+                  "time": "+2010-01-01T00:00:00Z",
+                  "timezone": 0,
+                  "before": 0,
+                  "after": 0,
+                  "precision": 9,
+                  "calendarmodel": "http://www.wikidata.org/entity/Q1985727"
+                },
+                "type": "time"
+              },
+              "datatype": "time"
+            }
+          ]
+        },
+        "qualifiers-order": [
+          "P1810",
+          "P577"
+        ],
+        "id": "Q1297903$8FB909ED-A8D8-4302-BF6F-FC1683DF9B5F",
+        "rank": "normal"
+      }
+    ],
+    "P1343": [
+      {
+        "mainsnak": {
+          "snaktype": "value",
+          "property": "P1343",
+          "hash": "4cfd4eb1fe49d401455df557a7d9b1154f22a725",
+          "datavalue": {
+            "value": {
+              "entity-type": "item",
+              "numeric-id": 3181656,
+              "id": "Q3181656"
+            },
+            "type": "wikibase-entityid"
+          },
+          "datatype": "wikibase-item"
+        },
+        "type": "statement",
+        "qualifiers": {
+          "P1810": [
+            {
+              "snaktype": "value",
+              "property": "P1810",
+              "hash": "94e7ed99f2aacd1eec56c86f957b6df567ffe31b",
+              "datavalue": {
+                "value": "Mont de Piété",
+                "type": "string"
+              },
+              "datatype": "string"
+            }
+          ]
+        },
+        "qualifiers-order": [
+          "P1810"
+        ],
+        "id": "Q1297903$f88fb69c-43cc-00b6-d293-b4c102aaf3ac",
+        "rank": "normal"
+      },
+      {
+        "mainsnak": {
+          "snaktype": "value",
+          "property": "P1343",
+          "hash": "0f49d4f810e3e3876c84561b8135bdd01d3cf746",
+          "datavalue": {
+            "value": {
+              "entity-type": "item",
+              "numeric-id": 302556,
+              "id": "Q302556"
+            },
+            "type": "wikibase-entityid"
+          },
+          "datatype": "wikibase-item"
+        },
+        "type": "statement",
+        "qualifiers": {
+          "P805": [
+            {
+              "snaktype": "value",
+              "property": "P805",
+              "hash": "eff72b5c7ebc6c0f57c5967b0fcc4e41d373d6f6",
+              "datavalue": {
+                "value": {
+                  "entity-type": "item",
+                  "numeric-id": 99222946,
+                  "id": "Q99222946"
+                },
+                "type": "wikibase-entityid"
+              },
+              "datatype": "wikibase-item"
+            }
+          ]
+        },
+        "qualifiers-order": [
+          "P805"
+        ],
+        "id": "Q1297903$F61648CE-CFEE-4B8B-9C91-670C3EF6DE3C",
+        "rank": "normal"
+      }
+    ],
+    "P12385": [
+      {
+        "mainsnak": {
+          "snaktype": "value",
+          "property": "P12385",
+          "hash": "4a26e3ad903c1cb754c5e34be9ab5cf14df475cc",
+          "datavalue": {
+            "value": "mont-de-pietat",
+            "type": "string"
+          },
+          "datatype": "external-id"
+        },
+        "type": "statement",
+        "id": "Q1297903$173ca48d-e6fc-4350-b150-a4487ff6b237",
+        "rank": "normal"
+      }
+    ],
+    "P12782": [
+      {
+        "mainsnak": {
+          "snaktype": "value",
+          "property": "P12782",
+          "hash": "b95d65a0c1e7df3052312bc812b25d46dd88c141",
+          "datavalue": {
+            "value": "bank  pobozny",
+            "type": "string"
+          },
+          "datatype": "external-id"
+        },
+        "type": "statement",
+        "id": "Q1297903$5C0EF045-8564-4891-AF85-161936D78191",
+        "rank": "normal"
+      }
+    ],
+    "P1705": [
+      {
+        "mainsnak": {
+          "snaktype": "value",
+          "property": "P1705",
+          "hash": "be1ec6d28beb97221ad1eb94b100ce70a3d5d532",
+          "datavalue": {
+            "value": {
+              "text": "montes pietatis",
+              "language": "la"
+            },
+            "type": "monolingualtext"
+          },
+          "datatype": "monolingualtext"
+        },
+        "type": "statement",
+        "id": "Q1297903$f0f269af-4735-400c-51e8-26255ae72bab",
+        "rank": "normal",
+        "references": [
+          {
+            "hash": "0178d54c0936ce8fca95c45f900a1412287d8eb2",
+            "snaks": {
+              "P143": [
+                {
+                  "snaktype": "value",
+                  "property": "P143",
+                  "hash": "6a164248fc96bfa583bbb495cb63ae6401ec203c",
+                  "datavalue": {
+                    "value": {
+                      "entity-type": "item",
+                      "numeric-id": 206855,
+                      "id": "Q206855"
+                    },
+                    "type": "wikibase-entityid"
+                  },
+                  "datatype": "wikibase-item"
+                }
+              ],
+              "P4656": [
+                {
+                  "snaktype": "value",
+                  "property": "P4656",
+                  "hash": "da00c6ae3ae6c1d658643745d465dc7ebeb2fcea",
+                  "datavalue": {
+                    "value": "https://ru.wikipedia.org/?oldid=148254101",
+                    "type": "string"
+                  },
+                  "datatype": "url"
+                }
+              ]
+            },
+            "snaks-order": [
+              "P143",
+              "P4656"
+            ]
+          }
+        ]
+      },
+      {
+        "mainsnak": {
+          "snaktype": "value",
+          "property": "P1705",
+          "hash": "6a0266e270a50d2272429cb0b43201626c834cfb",
+          "datavalue": {
+            "value": {
+              "text": "monte di pietà",
+              "language": "it"
+            },
+            "type": "monolingualtext"
+          },
+          "datatype": "monolingualtext"
+        },
+        "type": "statement",
+        "id": "Q1297903$6009805d-4b67-d1b5-a869-9235f6ece543",
+        "rank": "normal",
+        "references": [
+          {
+            "hash": "0178d54c0936ce8fca95c45f900a1412287d8eb2",
+            "snaks": {
+              "P143": [
+                {
+                  "snaktype": "value",
+                  "property": "P143",
+                  "hash": "6a164248fc96bfa583bbb495cb63ae6401ec203c",
+                  "datavalue": {
+                    "value": {
+                      "entity-type": "item",
+                      "numeric-id": 206855,
+                      "id": "Q206855"
+                    },
+                    "type": "wikibase-entityid"
+                  },
+                  "datatype": "wikibase-item"
+                }
+              ],
+              "P4656": [
+                {
+                  "snaktype": "value",
+                  "property": "P4656",
+                  "hash": "da00c6ae3ae6c1d658643745d465dc7ebeb2fcea",
+                  "datavalue": {
+                    "value": "https://ru.wikipedia.org/?oldid=148254101",
+                    "type": "string"
+                  },
+                  "datatype": "url"
+                }
+              ]
+            },
+            "snaks-order": [
+              "P143",
+              "P4656"
+            ]
+          }
+        ]
+      }
+    ],
+    "P571": [
+      {
+        "mainsnak": {
+          "snaktype": "value",
+          "property": "P571",
+          "hash": "5d5dfdff6d71fee0ce80cb08d2437ae9d00e2e61",
+          "datavalue": {
+            "value": {
+              "time": "+1462-00-00T00:00:00Z",
+              "timezone": 0,
+              "before": 0,
+              "after": 0,
+              "precision": 9,
+              "calendarmodel": "http://www.wikidata.org/entity/Q1985786"
+            },
+            "type": "time"
+          },
+          "datatype": "time"
+        },
+        "type": "statement",
+        "id": "Q1297903$08cab822-4529-f0c2-bed9-9f4c92b45a7d",
+        "rank": "normal",
+        "references": [
+          {
+            "hash": "0178d54c0936ce8fca95c45f900a1412287d8eb2",
+            "snaks": {
+              "P143": [
+                {
+                  "snaktype": "value",
+                  "property": "P143",
+                  "hash": "6a164248fc96bfa583bbb495cb63ae6401ec203c",
+                  "datavalue": {
+                    "value": {
+                      "entity-type": "item",
+                      "numeric-id": 206855,
+                      "id": "Q206855"
+                    },
+                    "type": "wikibase-entityid"
+                  },
+                  "datatype": "wikibase-item"
+                }
+              ],
+              "P4656": [
+                {
+                  "snaktype": "value",
+                  "property": "P4656",
+                  "hash": "da00c6ae3ae6c1d658643745d465dc7ebeb2fcea",
+                  "datavalue": {
+                    "value": "https://ru.wikipedia.org/?oldid=148254101",
+                    "type": "string"
+                  },
+                  "datatype": "url"
+                }
+              ]
+            },
+            "snaks-order": [
+              "P143",
+              "P4656"
+            ]
+          }
+        ]
+      }
+    ],
+    "P18": [
+      {
+        "mainsnak": {
+          "snaktype": "value",
+          "property": "P18",
+          "hash": "6149c638e3ba69ceb8d64fc765fc8a26f9b3675e",
+          "datavalue": {
+            "value": "The Mount of piety in Milan (1872), by Domenico Induno.jpg",
+            "type": "string"
+          },
+          "datatype": "commonsMedia"
+        },
+        "type": "statement",
+        "qualifiers": {
+          "P2096": [
+            {
+              "snaktype": "value",
+              "property": "P2096",
+              "hash": "2e4f51f265f5331c0105e976dc41445d732a3f6e",
+              "datavalue": {
+                "value": {
+                  "text": "Доменико Индуно. Монте ди пьета в Милане. 1872",
+                  "language": "ru"
+                },
+                "type": "monolingualtext"
+              },
+              "datatype": "monolingualtext"
+            }
+          ]
+        },
+        "qualifiers-order": [
+          "P2096"
+        ],
+        "id": "Q1297903$f5b513ec-4083-8911-d88d-d09751d99be3",
+        "rank": "normal",
+        "references": [
+          {
+            "hash": "0178d54c0936ce8fca95c45f900a1412287d8eb2",
+            "snaks": {
+              "P143": [
+                {
+                  "snaktype": "value",
+                  "property": "P143",
+                  "hash": "6a164248fc96bfa583bbb495cb63ae6401ec203c",
+                  "datavalue": {
+                    "value": {
+                      "entity-type": "item",
+                      "numeric-id": 206855,
+                      "id": "Q206855"
+                    },
+                    "type": "wikibase-entityid"
+                  },
+                  "datatype": "wikibase-item"
+                }
+              ],
+              "P4656": [
+                {
+                  "snaktype": "value",
+                  "property": "P4656",
+                  "hash": "da00c6ae3ae6c1d658643745d465dc7ebeb2fcea",
+                  "datavalue": {
+                    "value": "https://ru.wikipedia.org/?oldid=148254101",
+                    "type": "string"
+                  },
+                  "datatype": "url"
+                }
+              ]
+            },
+            "snaks-order": [
+              "P143",
+              "P4656"
+            ]
+          }
+        ]
+      }
+    ]
+  },
+  "sitelinks": {
+    "arwiki": {
+      "site": "arwiki",
+      "title": "جبل التقوى",
+      "badges": [],
+      "url": "https://ar.wikipedia.org/wiki/%D8%AC%D8%A8%D9%84_%D8%A7%D9%84%D8%AA%D9%82%D9%88%D9%89"
+    },
+    "cawiki": {
+      "site": "cawiki",
+      "title": "Mont de pietat",
+      "badges": [],
+      "url": "https://ca.wikipedia.org/wiki/Mont_de_pietat"
+    },
+    "commonswiki": {
+      "site": "commonswiki",
+      "title": "Category:Mons Pietatis",
+      "badges": [],
+      "url": "https://commons.wikimedia.org/wiki/Category:Mons_Pietatis"
+    },
+    "dewiki": {
+      "site": "dewiki",
+      "title": "Monte di Pietà",
+      "badges": [],
+      "url": "https://de.wikipedia.org/wiki/Monte_di_Piet%C3%A0"
+    },
+    "enwiki": {
+      "site": "enwiki",
+      "title": "Mount of piety",
+      "badges": [],
+      "url": "https://en.wikipedia.org/wiki/Mount_of_piety"
+    },
+    "eswiki": {
+      "site": "eswiki",
+      "title": "Monte de piedad",
+      "badges": [],
+      "url": "https://es.wikipedia.org/wiki/Monte_de_piedad"
+    },
+    "fawiki": {
+      "site": "fawiki",
+      "title": "بانک‌های مونته",
+      "badges": [],
+      "url": "https://fa.wikipedia.org/wiki/%D8%A8%D8%A7%D9%86%DA%A9%E2%80%8C%D9%87%D8%A7%DB%8C_%D9%85%D9%88%D9%86%D8%AA%D9%87"
+    },
+    "frwiki": {
+      "site": "frwiki",
+      "title": "Mont-de-piété",
+      "badges": [],
+      "url": "https://fr.wikipedia.org/wiki/Mont-de-pi%C3%A9t%C3%A9"
+    },
+    "glwiki": {
+      "site": "glwiki",
+      "title": "Monte de piedade",
+      "badges": [],
+      "url": "https://gl.wikipedia.org/wiki/Monte_de_piedade"
+    },
+    "itwiki": {
+      "site": "itwiki",
+      "title": "Monte di Pietà",
+      "badges": [],
+      "url": "https://it.wikipedia.org/wiki/Monte_di_Piet%C3%A0"
+    },
+    "jawiki": {
+      "site": "jawiki",
+      "title": "モンテ・ディ・ピエタ",
+      "badges": [],
+      "url": "https://ja.wikipedia.org/wiki/%E3%83%A2%E3%83%B3%E3%83%86%E3%83%BB%E3%83%87%E3%82%A3%E3%83%BB%E3%83%94%E3%82%A8%E3%82%BF"
+    },
+    "nlwiki": {
+      "site": "nlwiki",
+      "title": "Berg van barmhartigheid",
+      "badges": [],
+      "url": "https://nl.wikipedia.org/wiki/Berg_van_barmhartigheid"
+    },
+    "plwiki": {
+      "site": "plwiki",
+      "title": "Bank pobożny",
+      "badges": [],
+      "url": "https://pl.wikipedia.org/wiki/Bank_pobo%C5%BCny"
+    },
+    "ptwiki": {
+      "site": "ptwiki",
+      "title": "Montepio",
+      "badges": [],
+      "url": "https://pt.wikipedia.org/wiki/Montepio"
+    },
+    "ruwiki": {
+      "site": "ruwiki",
+      "title": "Монте ди пьета",
+      "badges": [],
+      "url": "https://ru.wikipedia.org/wiki/%D0%9C%D0%BE%D0%BD%D1%82%D0%B5_%D0%B4%D0%B8_%D0%BF%D1%8C%D0%B5%D1%82%D0%B0"
+    },
+    "zhwiki": {
+      "site": "zhwiki",
+      "title": "聖憐山",
+      "badges": [],
+      "url": "https://zh.wikipedia.org/wiki/%E8%81%96%E6%86%90%E5%B1%B1"
+    }
+  }
+}

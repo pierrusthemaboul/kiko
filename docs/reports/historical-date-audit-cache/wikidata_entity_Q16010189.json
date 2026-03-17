@@ -1,0 +1,68 @@
+{
+  "saved_at": "2026-03-07T16:49:43.636Z",
+  "value": {
+    "pageid": 17627695,
+    "ns": 0,
+    "title": "Q16010189",
+    "lastrevid": 1369345749,
+    "modified": "2021-02-24T21:01:32Z",
+    "type": "item",
+    "id": "Q16010189",
+    "labels": {
+      "fr": {
+        "language": "fr",
+        "value": "Aides pour la protection de l'environnement en France"
+      }
+    },
+    "descriptions": {},
+    "aliases": {},
+    "claims": {
+      "P17": [
+        {
+          "mainsnak": {
+            "snaktype": "value",
+            "property": "P17",
+            "hash": "c05db5d169c2560b9799d567a803d20a392f53e4",
+            "datavalue": {
+              "value": {
+                "entity-type": "item",
+                "numeric-id": 142,
+                "id": "Q142"
+              },
+              "type": "wikibase-entityid"
+            },
+            "datatype": "wikibase-item"
+          },
+          "type": "statement",
+          "id": "Q16010189$0C7D138C-76BF-4F7B-B31E-EC56B416CB0F",
+          "rank": "normal"
+        }
+      ],
+      "P2671": [
+        {
+          "mainsnak": {
+            "snaktype": "value",
+            "property": "P2671",
+            "hash": "d676a442d26e7db9abb132782f1d06a818fa8506",
+            "datavalue": {
+              "value": "/g/1yp37q5p_",
+              "type": "string"
+            },
+            "datatype": "external-id"
+          },
+          "type": "statement",
+          "id": "Q16010189$6492F754-1567-4DF9-954F-5C3B031B43FF",
+          "rank": "normal"
+        }
+      ]
+    },
+    "sitelinks": {
+      "frwiki": {
+        "site": "frwiki",
+        "title": "Aides pour la protection de l'environnement en France",
+        "badges": [],
+        "url": "https://fr.wikipedia.org/wiki/Aides_pour_la_protection_de_l%27environnement_en_France"
+      }
+    }
+  }
+}

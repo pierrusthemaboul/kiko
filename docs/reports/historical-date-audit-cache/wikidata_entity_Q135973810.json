@@ -1,0 +1,248 @@
+{
+  "saved_at": "2026-03-07T16:43:14.029Z",
+  "value": {
+    "pageid": 129707727,
+    "ns": 0,
+    "title": "Q135973810",
+    "lastrevid": 2433406881,
+    "modified": "2025-11-24T15:32:38Z",
+    "type": "item",
+    "id": "Q135973810",
+    "labels": {
+      "it": {
+        "language": "it",
+        "value": "orologio meccanico"
+      },
+      "en": {
+        "language": "en",
+        "value": "mechanical clock"
+      },
+      "fr": {
+        "language": "fr",
+        "value": "horloge mécanique"
+      },
+      "de": {
+        "language": "de",
+        "value": "Mechanische Uhr"
+      }
+    },
+    "descriptions": {},
+    "aliases": {
+      "it": [
+        {
+          "language": "it",
+          "value": "orologi meccanici"
+        }
+      ]
+    },
+    "claims": {
+      "P279": [
+        {
+          "mainsnak": {
+            "snaktype": "value",
+            "property": "P279",
+            "hash": "bd1ccbe5134a3eb2845ef37ebbe2bbe15fcd8ab4",
+            "datavalue": {
+              "value": {
+                "entity-type": "item",
+                "numeric-id": 376,
+                "id": "Q376"
+              },
+              "type": "wikibase-entityid"
+            },
+            "datatype": "wikibase-item"
+          },
+          "type": "statement",
+          "id": "Q135973810$cc12e9ec-4e46-c935-0522-7f54cbb59a16",
+          "rank": "normal"
+        }
+      ],
+      "P1014": [
+        {
+          "mainsnak": {
+            "snaktype": "value",
+            "property": "P1014",
+            "hash": "30cbbcf96b006827794c834cdc8f10a223f1885a",
+            "datavalue": {
+              "value": "300197847",
+              "type": "string"
+            },
+            "datatype": "external-id"
+          },
+          "type": "statement",
+          "qualifiers": {
+            "P1810": [
+              {
+                "snaktype": "value",
+                "property": "P1810",
+                "hash": "325caf77b014ba104f953ff0504529d7e0a7d3b9",
+                "datavalue": {
+                  "value": "mechanical clocks",
+                  "type": "string"
+                },
+                "datatype": "string"
+              }
+            ]
+          },
+          "qualifiers-order": [
+            "P1810"
+          ],
+          "id": "Q135973810$a05cde98-471d-5e31-a150-24c8a32a905b",
+          "rank": "normal"
+        }
+      ],
+      "P508": [
+        {
+          "mainsnak": {
+            "snaktype": "value",
+            "property": "P508",
+            "hash": "82829a11fe69a7a6b6ce4cf79b7bc07049bdd13b",
+            "datavalue": {
+              "value": "78682",
+              "type": "string"
+            },
+            "datatype": "external-id"
+          },
+          "type": "statement",
+          "qualifiers": {
+            "P1810": [
+              {
+                "snaktype": "value",
+                "property": "P1810",
+                "hash": "cb016da453cb98c024c901dfa657046d79b00aab",
+                "datavalue": {
+                  "value": "Orologi meccanici",
+                  "type": "string"
+                },
+                "datatype": "string"
+              }
+            ]
+          },
+          "qualifiers-order": [
+            "P1810"
+          ],
+          "id": "Q135973810$b3c1f90a-4454-69f5-e518-5863065f4ee0",
+          "rank": "normal"
+        }
+      ],
+      "P227": [
+        {
+          "mainsnak": {
+            "snaktype": "value",
+            "property": "P227",
+            "hash": "e92cd6be45a482bd13c160b8c1a6ba4fe307b110",
+            "datavalue": {
+              "value": "4247637-9",
+              "type": "string"
+            },
+            "datatype": "external-id"
+          },
+          "type": "statement",
+          "qualifiers": {
+            "P1810": [
+              {
+                "snaktype": "value",
+                "property": "P1810",
+                "hash": "1627e434732180abd4520e28dba3932b28b6eaf0",
+                "datavalue": {
+                  "value": "Mechanische Uhr",
+                  "type": "string"
+                },
+                "datatype": "string"
+              }
+            ]
+          },
+          "qualifiers-order": [
+            "P1810"
+          ],
+          "id": "Q135973810$a1b1de94-48d9-2c0f-07b7-db6841941467",
+          "rank": "normal"
+        }
+      ],
+      "P1036": [
+        {
+          "mainsnak": {
+            "snaktype": "value",
+            "property": "P1036",
+            "hash": "dc102e938d97ad33ea0d791c96936a9c4c5c78e4",
+            "datavalue": {
+              "value": "681.113",
+              "type": "string"
+            },
+            "datatype": "external-id"
+          },
+          "type": "statement",
+          "id": "Q135973810$DACFFED0-2C07-4D84-B2D8-2EA97F5B41D7",
+          "rank": "normal",
+          "references": [
+            {
+              "hash": "54ad2f443feb3dfca050308846e0a914edc3dcc4",
+              "snaks": {
+                "P248": [
+                  {
+                    "snaktype": "value",
+                    "property": "P248",
+                    "hash": "019a50b7de741e0068bde41c9d9955b22a5de47b",
+                    "datavalue": {
+                      "value": {
+                        "entity-type": "item",
+                        "numeric-id": 36578,
+                        "id": "Q36578"
+                      },
+                      "type": "wikibase-entityid"
+                    },
+                    "datatype": "wikibase-item"
+                  }
+                ],
+                "P227": [
+                  {
+                    "snaktype": "value",
+                    "property": "P227",
+                    "hash": "e92cd6be45a482bd13c160b8c1a6ba4fe307b110",
+                    "datavalue": {
+                      "value": "4247637-9",
+                      "type": "string"
+                    },
+                    "datatype": "external-id"
+                  }
+                ],
+                "P813": [
+                  {
+                    "snaktype": "value",
+                    "property": "P813",
+                    "hash": "9c5e4cd814e272ef5594154b203b6deeeaa93f8f",
+                    "datavalue": {
+                      "value": {
+                        "time": "+2025-11-23T00:00:00Z",
+                        "timezone": 0,
+                        "before": 0,
+                        "after": 0,
+                        "precision": 11,
+                        "calendarmodel": "http://www.wikidata.org/entity/Q1985727"
+                      },
+                      "type": "time"
+                    },
+                    "datatype": "time"
+                  }
+                ]
+              },
+              "snaks-order": [
+                "P248",
+                "P227",
+                "P813"
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    "sitelinks": {
+      "frwiki": {
+        "site": "frwiki",
+        "title": "Horloge mécanique",
+        "badges": [],
+        "url": "https://fr.wikipedia.org/wiki/Horloge_m%C3%A9canique"
+      }
+    }
+  }
+}

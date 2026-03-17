@@ -1,0 +1,361 @@
+{
+  "saved_at": "2026-03-07T13:11:56.702Z",
+  "value": {
+    "pageid": 3644065,
+    "ns": 0,
+    "title": "Q3820832",
+    "lastrevid": 2292749999,
+    "modified": "2024-12-30T00:15:00Z",
+    "type": "item",
+    "id": "Q3820832",
+    "labels": {
+      "pl": {
+        "language": "pl",
+        "value": "Bitwa w rejonie Essex"
+      },
+      "en": {
+        "language": "en",
+        "value": "Massacre of the Ninth Legion"
+      },
+      "ca": {
+        "language": "ca",
+        "value": "massacre de la Legió IX"
+      },
+      "pt": {
+        "language": "pt",
+        "value": "Batalha de Camuloduno"
+      },
+      "zh": {
+        "language": "zh",
+        "value": "Camulodunum戰役"
+      },
+      "fr": {
+        "language": "fr",
+        "value": "bataille de Camulodunum"
+      },
+      "it": {
+        "language": "it",
+        "value": "Battaglia di Camulodunum"
+      }
+    },
+    "descriptions": {
+      "fr": {
+        "language": "fr",
+        "value": "bataille durant la révolte de Boadicée contre l'occupation romaine de la Grande-Bretagne"
+      }
+    },
+    "aliases": {
+      "pl": [
+        {
+          "language": "pl",
+          "value": "Zdobycie Colchester"
+        }
+      ],
+      "zh": [
+        {
+          "language": "zh",
+          "value": "卡姆洛多努戰役"
+        }
+      ]
+    },
+    "claims": {
+      "P646": [
+        {
+          "mainsnak": {
+            "snaktype": "value",
+            "property": "P646",
+            "hash": "e7596d998e1e5118195d92e652f0ec914660362c",
+            "datavalue": {
+              "value": "/m/03m5x3j",
+              "type": "string"
+            },
+            "datatype": "external-id"
+          },
+          "type": "statement",
+          "id": "Q3820832$F619C59D-13C8-488B-8BBE-447E3824A8C1",
+          "rank": "normal",
+          "references": [
+            {
+              "hash": "2b00cb481cddcac7623114367489b5c194901c4a",
+              "snaks": {
+                "P248": [
+                  {
+                    "snaktype": "value",
+                    "property": "P248",
+                    "hash": "a94b740202b097dd33355e0e6c00e54b9395e5e0",
+                    "datavalue": {
+                      "value": {
+                        "entity-type": "item",
+                        "numeric-id": 15241312,
+                        "id": "Q15241312"
+                      },
+                      "type": "wikibase-entityid"
+                    },
+                    "datatype": "wikibase-item"
+                  }
+                ],
+                "P577": [
+                  {
+                    "snaktype": "value",
+                    "property": "P577",
+                    "hash": "fde79ecb015112d2f29229ccc1ec514ed3e71fa2",
+                    "datavalue": {
+                      "value": {
+                        "time": "+2013-10-28T00:00:00Z",
+                        "timezone": 0,
+                        "before": 0,
+                        "after": 0,
+                        "precision": 11,
+                        "calendarmodel": "http://www.wikidata.org/entity/Q1985727"
+                      },
+                      "type": "time"
+                    },
+                    "datatype": "time"
+                  }
+                ]
+              },
+              "snaks-order": [
+                "P248",
+                "P577"
+              ]
+            }
+          ]
+        }
+      ],
+      "P31": [
+        {
+          "mainsnak": {
+            "snaktype": "value",
+            "property": "P31",
+            "hash": "baa1df9dcd37b9f3a062e7a14a8bef0c37078d32",
+            "datavalue": {
+              "value": {
+                "entity-type": "item",
+                "numeric-id": 178561,
+                "id": "Q178561"
+              },
+              "type": "wikibase-entityid"
+            },
+            "datatype": "wikibase-item"
+          },
+          "type": "statement",
+          "id": "Q3820832$AF3EA756-047F-4735-8139-0B0A352FD8EC",
+          "rank": "normal"
+        }
+      ],
+      "P18": [
+        {
+          "mainsnak": {
+            "snaktype": "value",
+            "property": "P18",
+            "hash": "79d8b3180b8969909eda3c95f3d6f5234f79c21e",
+            "datavalue": {
+              "value": "Essex UK location map.svg",
+              "type": "string"
+            },
+            "datatype": "commonsMedia"
+          },
+          "type": "statement",
+          "id": "Q3820832$09A60E7D-B85D-4657-BEC3-281E6F804286",
+          "rank": "normal",
+          "references": [
+            {
+              "hash": "fa278ebfc458360e5aed63d5058cca83c46134f1",
+              "snaks": {
+                "P143": [
+                  {
+                    "snaktype": "value",
+                    "property": "P143",
+                    "hash": "e4f6d9441d0600513c4533c672b5ab472dc73694",
+                    "datavalue": {
+                      "value": {
+                        "entity-type": "item",
+                        "numeric-id": 328,
+                        "id": "Q328"
+                      },
+                      "type": "wikibase-entityid"
+                    },
+                    "datatype": "wikibase-item"
+                  }
+                ]
+              },
+              "snaks-order": [
+                "P143"
+              ]
+            }
+          ]
+        }
+      ],
+      "P710": [
+        {
+          "mainsnak": {
+            "snaktype": "value",
+            "property": "P710",
+            "hash": "365da9944bef318e4acb9591ec76e1712ae59f5a",
+            "datavalue": {
+              "value": {
+                "entity-type": "item",
+                "numeric-id": 1747689,
+                "id": "Q1747689"
+              },
+              "type": "wikibase-entityid"
+            },
+            "datatype": "wikibase-item"
+          },
+          "type": "statement",
+          "id": "Q3820832$3D6C3081-8F7C-4759-9E61-8153D3880680",
+          "rank": "normal",
+          "references": [
+            {
+              "hash": "fa278ebfc458360e5aed63d5058cca83c46134f1",
+              "snaks": {
+                "P143": [
+                  {
+                    "snaktype": "value",
+                    "property": "P143",
+                    "hash": "e4f6d9441d0600513c4533c672b5ab472dc73694",
+                    "datavalue": {
+                      "value": {
+                        "entity-type": "item",
+                        "numeric-id": 328,
+                        "id": "Q328"
+                      },
+                      "type": "wikibase-entityid"
+                    },
+                    "datatype": "wikibase-item"
+                  }
+                ]
+              },
+              "snaks-order": [
+                "P143"
+              ]
+            }
+          ]
+        }
+      ],
+      "P361": [
+        {
+          "mainsnak": {
+            "snaktype": "value",
+            "property": "P361",
+            "hash": "2691049bb3219d66dd5702ec93da4e19f9b12e8a",
+            "datavalue": {
+              "value": {
+                "entity-type": "item",
+                "numeric-id": 56324566,
+                "id": "Q56324566"
+              },
+              "type": "wikibase-entityid"
+            },
+            "datatype": "wikibase-item"
+          },
+          "type": "statement",
+          "id": "Q3820832$D9D58E66-0B7F-47CA-8E10-301B736131EA",
+          "rank": "normal",
+          "references": [
+            {
+              "hash": "594d1d014234c1c2f0302b67f1751abdb8bd5d26",
+              "snaks": {
+                "P143": [
+                  {
+                    "snaktype": "value",
+                    "property": "P143",
+                    "hash": "f13c99a16441677ec69fcea23f221d866f1fc98f",
+                    "datavalue": {
+                      "value": {
+                        "entity-type": "item",
+                        "numeric-id": 199693,
+                        "id": "Q199693"
+                      },
+                      "type": "wikibase-entityid"
+                    },
+                    "datatype": "wikibase-item"
+                  }
+                ],
+                "P4656": [
+                  {
+                    "snaktype": "value",
+                    "property": "P4656",
+                    "hash": "705cbc39d2be1b44440de56dcc59369ce8ae616d",
+                    "datavalue": {
+                      "value": "https://ca.wikipedia.org/w/index.php?title=Batalla_de_Camulodunum&oldid=21407549",
+                      "type": "string"
+                    },
+                    "datatype": "url"
+                  }
+                ]
+              },
+              "snaks-order": [
+                "P143",
+                "P4656"
+              ]
+            }
+          ]
+        }
+      ],
+      "P625": [
+        {
+          "mainsnak": {
+            "snaktype": "value",
+            "property": "P625",
+            "hash": "70e62ee4cca09a75975208bf94331f5c41de1c7c",
+            "datavalue": {
+              "value": {
+                "latitude": 51.891944,
+                "longitude": 0.898056,
+                "altitude": null,
+                "precision": 0.000001,
+                "globe": "http://www.wikidata.org/entity/Q2"
+              },
+              "type": "globecoordinate"
+            },
+            "datatype": "globe-coordinate"
+          },
+          "type": "statement",
+          "id": "Q3820832$B42193F2-3F9F-482B-99A1-B44B177307D0",
+          "rank": "normal"
+        }
+      ]
+    },
+    "sitelinks": {
+      "cawiki": {
+        "site": "cawiki",
+        "title": "Batalla de Camulodunum",
+        "badges": [],
+        "url": "https://ca.wikipedia.org/wiki/Batalla_de_Camulodunum"
+      },
+      "enwiki": {
+        "site": "enwiki",
+        "title": "Battle of Camulodunum",
+        "badges": [
+          "Q70893996"
+        ],
+        "url": "https://en.wikipedia.org/wiki/Battle_of_Camulodunum"
+      },
+      "frwiki": {
+        "site": "frwiki",
+        "title": "Bataille de Camulodunum",
+        "badges": [],
+        "url": "https://fr.wikipedia.org/wiki/Bataille_de_Camulodunum"
+      },
+      "itwiki": {
+        "site": "itwiki",
+        "title": "Battaglia di Camulodunum",
+        "badges": [],
+        "url": "https://it.wikipedia.org/wiki/Battaglia_di_Camulodunum"
+      },
+      "plwiki": {
+        "site": "plwiki",
+        "title": "Zdobycie Colchester",
+        "badges": [],
+        "url": "https://pl.wikipedia.org/wiki/Zdobycie_Colchester"
+      },
+      "ptwiki": {
+        "site": "ptwiki",
+        "title": "Batalha de Camuloduno",
+        "badges": [],
+        "url": "https://pt.wikipedia.org/wiki/Batalha_de_Camuloduno"
+      }
+    }
+  }
+}

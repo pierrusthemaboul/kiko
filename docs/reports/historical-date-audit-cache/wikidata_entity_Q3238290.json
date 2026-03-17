@@ -1,0 +1,246 @@
+{
+  "saved_at": "2026-03-07T14:32:23.228Z",
+  "value": {
+    "pageid": 3091026,
+    "ns": 0,
+    "title": "Q3238290",
+    "lastrevid": 2013439987,
+    "modified": "2023-11-18T12:35:51Z",
+    "type": "item",
+    "id": "Q3238290",
+    "labels": {
+      "fr": {
+        "language": "fr",
+        "value": "lieutenant général de police"
+      },
+      "el": {
+        "language": "el",
+        "value": "Αντιστράτηγος (Αστυνομίας)"
+      },
+      "en": {
+        "language": "en",
+        "value": "police lieutenant general"
+      },
+      "pt-br": {
+        "language": "pt-br",
+        "value": "tenente-general da polícia"
+      },
+      "vec": {
+        "language": "vec",
+        "value": "tenente zenerałe de połisia"
+      },
+      "it": {
+        "language": "it",
+        "value": "Lieutenant général de police"
+      }
+    },
+    "descriptions": {
+      "fr": {
+        "language": "fr",
+        "value": "charge de justice dans la France d'Ancien Régime"
+      }
+    },
+    "aliases": {
+      "fr": [
+        {
+          "language": "fr",
+          "value": "Lieutenant Général De Police"
+        },
+        {
+          "language": "fr",
+          "value": "Lieutenant general de police"
+        },
+        {
+          "language": "fr",
+          "value": "Lieutenant-général de police"
+        },
+        {
+          "language": "fr",
+          "value": "Lieutenant général de police"
+        },
+        {
+          "language": "fr",
+          "value": "Lieutenance générale de police"
+        },
+        {
+          "language": "fr",
+          "value": "Lieutenant général de police en France sous l'Ancien Régime"
+        },
+        {
+          "language": "fr",
+          "value": "Lieutenant-général de police en France sous l'Ancien Régime"
+        },
+        {
+          "language": "fr",
+          "value": "Lieutenant général de police de Paris"
+        }
+      ]
+    },
+    "claims": {
+      "P17": [
+        {
+          "mainsnak": {
+            "snaktype": "value",
+            "property": "P17",
+            "hash": "c05db5d169c2560b9799d567a803d20a392f53e4",
+            "datavalue": {
+              "value": {
+                "entity-type": "item",
+                "numeric-id": 142,
+                "id": "Q142"
+              },
+              "type": "wikibase-entityid"
+            },
+            "datatype": "wikibase-item"
+          },
+          "type": "statement",
+          "id": "Q3238290$62F4FDF6-5636-45A1-AF40-36667C118382",
+          "rank": "normal"
+        }
+      ],
+      "P1001": [
+        {
+          "mainsnak": {
+            "snaktype": "value",
+            "property": "P1001",
+            "hash": "efe2878aed693a79dce942b2f853910a78c4e2a8",
+            "datavalue": {
+              "value": {
+                "entity-type": "item",
+                "numeric-id": 142,
+                "id": "Q142"
+              },
+              "type": "wikibase-entityid"
+            },
+            "datatype": "wikibase-item"
+          },
+          "type": "statement",
+          "id": "Q3238290$9D0F7BC1-57EC-48FB-96FA-CED728A17FA3",
+          "rank": "normal"
+        }
+      ],
+      "P31": [
+        {
+          "mainsnak": {
+            "snaktype": "value",
+            "property": "P31",
+            "hash": "22921a3d81e97a69bc1b06726862944caa1a093d",
+            "datavalue": {
+              "value": {
+                "entity-type": "item",
+                "numeric-id": 4164871,
+                "id": "Q4164871"
+              },
+              "type": "wikibase-entityid"
+            },
+            "datatype": "wikibase-item"
+          },
+          "type": "statement",
+          "id": "Q3238290$4ae79dda-4844-6bef-df16-fd2521456f4b",
+          "rank": "normal"
+        },
+        {
+          "mainsnak": {
+            "snaktype": "value",
+            "property": "P31",
+            "hash": "864f4f6124c60ed97c50d36b5a050bccc123e775",
+            "datavalue": {
+              "value": {
+                "entity-type": "item",
+                "numeric-id": 12737077,
+                "id": "Q12737077"
+              },
+              "type": "wikibase-entityid"
+            },
+            "datatype": "wikibase-item"
+          },
+          "type": "statement",
+          "id": "Q3238290$32703e40-4971-6a91-991f-cdd3c0a86805",
+          "rank": "normal"
+        }
+      ],
+      "P571": [
+        {
+          "mainsnak": {
+            "snaktype": "value",
+            "property": "P571",
+            "hash": "0c2eb268ac1b56891a3dd02a53629b3539af8eff",
+            "datavalue": {
+              "value": {
+                "time": "+1667-00-00T00:00:00Z",
+                "timezone": 0,
+                "before": 0,
+                "after": 0,
+                "precision": 9,
+                "calendarmodel": "http://www.wikidata.org/entity/Q1985727"
+              },
+              "type": "time"
+            },
+            "datatype": "time"
+          },
+          "type": "statement",
+          "id": "Q3238290$bc3b3d3e-45ae-634f-f439-48aab660bb97",
+          "rank": "normal"
+        }
+      ],
+      "P2671": [
+        {
+          "mainsnak": {
+            "snaktype": "value",
+            "property": "P2671",
+            "hash": "8c59539c3348e7adbd7c7def198e276b24046ec8",
+            "datavalue": {
+              "value": "/g/11ksghbv9",
+              "type": "string"
+            },
+            "datatype": "external-id"
+          },
+          "type": "statement",
+          "id": "Q3238290$32486CE1-47EF-41E1-B77E-E9DE55950007",
+          "rank": "normal"
+        }
+      ],
+      "P2354": [
+        {
+          "mainsnak": {
+            "snaktype": "value",
+            "property": "P2354",
+            "hash": "0c46a00ffd781da685215559a919a76d6e441368",
+            "datavalue": {
+              "value": {
+                "entity-type": "item",
+                "numeric-id": 22248768,
+                "id": "Q22248768"
+              },
+              "type": "wikibase-entityid"
+            },
+            "datatype": "wikibase-item"
+          },
+          "type": "statement",
+          "id": "Q3238290$4bfcc7a7-4383-49e8-4697-8dcc0c9569a0",
+          "rank": "normal"
+        }
+      ]
+    },
+    "sitelinks": {
+      "elwiki": {
+        "site": "elwiki",
+        "title": "Αντιστράτηγος (Αστυνομίας)",
+        "badges": [],
+        "url": "https://el.wikipedia.org/wiki/%CE%91%CE%BD%CF%84%CE%B9%CF%83%CF%84%CF%81%CE%AC%CF%84%CE%B7%CE%B3%CE%BF%CF%82_(%CE%91%CF%83%CF%84%CF%85%CE%BD%CE%BF%CE%BC%CE%AF%CE%B1%CF%82)"
+      },
+      "frwiki": {
+        "site": "frwiki",
+        "title": "Lieutenant général de police",
+        "badges": [],
+        "url": "https://fr.wikipedia.org/wiki/Lieutenant_g%C3%A9n%C3%A9ral_de_police"
+      },
+      "itwiki": {
+        "site": "itwiki",
+        "title": "Lieutenant général de police",
+        "badges": [],
+        "url": "https://it.wikipedia.org/wiki/Lieutenant_g%C3%A9n%C3%A9ral_de_police"
+      }
+    }
+  }
+}

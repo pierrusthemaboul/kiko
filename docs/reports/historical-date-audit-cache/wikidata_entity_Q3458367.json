@@ -1,0 +1,214 @@
+{
+  "saved_at": "2026-03-07T16:46:29.613Z",
+  "value": {
+    "pageid": 3294395,
+    "ns": 0,
+    "title": "Q3458367",
+    "lastrevid": 1367706131,
+    "modified": "2021-02-22T20:51:32Z",
+    "type": "item",
+    "id": "Q3458367",
+    "labels": {
+      "fr": {
+        "language": "fr",
+        "value": "Révolution culturelle au Tibet"
+      },
+      "en": {
+        "language": "en",
+        "value": "Cultural Revolution in Tibet"
+      },
+      "eo": {
+        "language": "eo",
+        "value": "Kultura Revolucio en Tibeto"
+      }
+    },
+    "descriptions": {},
+    "aliases": {},
+    "claims": {
+      "P373": [
+        {
+          "mainsnak": {
+            "snaktype": "value",
+            "property": "P373",
+            "hash": "181a38f99baa83e94db8bb643587f2fba42af187",
+            "datavalue": {
+              "value": "Cultural Revolution in Tibet",
+              "type": "string"
+            },
+            "datatype": "string"
+          },
+          "type": "statement",
+          "id": "Q3458367$23957F05-0364-44B9-BD6D-685F05336D22",
+          "rank": "normal",
+          "references": [
+            {
+              "hash": "d4bd87b862b12d99d26e86472d44f26858dee639",
+              "snaks": {
+                "P143": [
+                  {
+                    "snaktype": "value",
+                    "property": "P143",
+                    "hash": "f30cbd35620c4ea6d0633aaf0210a8916130469b",
+                    "datavalue": {
+                      "value": {
+                        "entity-type": "item",
+                        "numeric-id": 8447,
+                        "id": "Q8447"
+                      },
+                      "type": "wikibase-entityid"
+                    },
+                    "datatype": "wikibase-item"
+                  }
+                ]
+              },
+              "snaks-order": [
+                "P143"
+              ]
+            }
+          ]
+        }
+      ],
+      "P361": [
+        {
+          "mainsnak": {
+            "snaktype": "value",
+            "property": "P361",
+            "hash": "906dd234a4d30545bc67cd8e05fc4aeaebac55cf",
+            "datavalue": {
+              "value": {
+                "entity-type": "item",
+                "numeric-id": 8690,
+                "id": "Q8690"
+              },
+              "type": "wikibase-entityid"
+            },
+            "datatype": "wikibase-item"
+          },
+          "type": "statement",
+          "id": "Q3458367$cceeb0ff-4a05-610e-169c-eb4f47e68026",
+          "rank": "normal"
+        }
+      ],
+      "P276": [
+        {
+          "mainsnak": {
+            "snaktype": "value",
+            "property": "P276",
+            "hash": "5304faad2c9d45dbf17ea63ad71f3d9909102665",
+            "datavalue": {
+              "value": {
+                "entity-type": "item",
+                "numeric-id": 34800,
+                "id": "Q34800"
+              },
+              "type": "wikibase-entityid"
+            },
+            "datatype": "wikibase-item"
+          },
+          "type": "statement",
+          "id": "Q3458367$25513016-4e4c-e1df-fe3c-c053f2502b50",
+          "rank": "normal"
+        }
+      ],
+      "P17": [
+        {
+          "mainsnak": {
+            "snaktype": "value",
+            "property": "P17",
+            "hash": "30e172796b0726589e92b001c327f5d55fa0782e",
+            "datavalue": {
+              "value": {
+                "entity-type": "item",
+                "numeric-id": 148,
+                "id": "Q148"
+              },
+              "type": "wikibase-entityid"
+            },
+            "datatype": "wikibase-item"
+          },
+          "type": "statement",
+          "id": "Q3458367$c8abfcc6-4893-5092-e2e5-03fddc0749fd",
+          "rank": "normal"
+        }
+      ],
+      "P18": [
+        {
+          "mainsnak": {
+            "snaktype": "value",
+            "property": "P18",
+            "hash": "69e261f2570aef91de1e9b64f35b927fc71c60c9",
+            "datavalue": {
+              "value": "Tholing Monastery, damaged buddhist statues because of Cultural Revolution.jpg",
+              "type": "string"
+            },
+            "datatype": "commonsMedia"
+          },
+          "type": "statement",
+          "id": "Q3458367$4df62a3c-4b81-ce92-4d3c-8f6077b80320",
+          "rank": "normal"
+        },
+        {
+          "mainsnak": {
+            "snaktype": "value",
+            "property": "P18",
+            "hash": "67e30443fa9f898729a8bca1ede5c57f4e6a1d07",
+            "datavalue": {
+              "value": "Sampho Tsewang Rigzin during Cultural Revolution.jpg",
+              "type": "string"
+            },
+            "datatype": "commonsMedia"
+          },
+          "type": "statement",
+          "id": "Q3458367$6a1aaebd-45f4-f736-5b6f-b41aac7a6adb",
+          "rank": "normal"
+        },
+        {
+          "mainsnak": {
+            "snaktype": "value",
+            "property": "P18",
+            "hash": "e47929dad02dcbaa6525c9f988e4f0b5911789b3",
+            "datavalue": {
+              "value": "Thamzing of Tibetan woman circa 1958.jpg",
+              "type": "string"
+            },
+            "datatype": "commonsMedia"
+          },
+          "type": "statement",
+          "id": "Q3458367$4dd81d6a-434a-e291-95f0-5f06811887b8",
+          "rank": "normal"
+        }
+      ],
+      "P2671": [
+        {
+          "mainsnak": {
+            "snaktype": "value",
+            "property": "P2671",
+            "hash": "84e7d214e0fa53ae2c99c0304f63ee97b47851f9",
+            "datavalue": {
+              "value": "/g/120scwwz",
+              "type": "string"
+            },
+            "datatype": "external-id"
+          },
+          "type": "statement",
+          "id": "Q3458367$C4A5E274-8E6F-4777-8E34-CFE9AA3AD5BF",
+          "rank": "normal"
+        }
+      ]
+    },
+    "sitelinks": {
+      "commonswiki": {
+        "site": "commonswiki",
+        "title": "Category:Cultural Revolution in Tibet",
+        "badges": [],
+        "url": "https://commons.wikimedia.org/wiki/Category:Cultural_Revolution_in_Tibet"
+      },
+      "frwiki": {
+        "site": "frwiki",
+        "title": "Révolution culturelle au Tibet",
+        "badges": [],
+        "url": "https://fr.wikipedia.org/wiki/R%C3%A9volution_culturelle_au_Tibet"
+      }
+    }
+  }
+}

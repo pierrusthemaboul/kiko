@@ -19,3 +19,4 @@ async function check() {
     console.log("Scores with 13581:", scores);
 }
 check();
+

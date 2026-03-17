@@ -1,0 +1,805 @@
+{
+  "saved_at": "2026-03-07T15:56:53.457Z",
+  "value": {
+    "pageid": 1714963,
+    "ns": 0,
+    "title": "Q1783252",
+    "lastrevid": 2427567571,
+    "modified": "2025-11-09T15:48:50Z",
+    "type": "item",
+    "id": "Q1783252",
+    "labels": {
+      "pt": {
+        "language": "pt",
+        "value": "Batalha de Seneffe"
+      },
+      "de": {
+        "language": "de",
+        "value": "Schlacht bei Seneffe"
+      },
+      "ja": {
+        "language": "ja",
+        "value": "スネッフの戦い"
+      },
+      "cs": {
+        "language": "cs",
+        "value": "Bitva u Seneffe"
+      },
+      "pl": {
+        "language": "pl",
+        "value": "Bitwa pod Seneffe"
+      },
+      "fr": {
+        "language": "fr",
+        "value": "bataille de Seneffe"
+      },
+      "ru": {
+        "language": "ru",
+        "value": "Сражение при Сенефе"
+      },
+      "en": {
+        "language": "en",
+        "value": "Battle of Seneffe"
+      },
+      "es": {
+        "language": "es",
+        "value": "Batalla de Seneffe"
+      },
+      "nl": {
+        "language": "nl",
+        "value": "Slag bij Seneffe"
+      },
+      "zh": {
+        "language": "zh",
+        "value": "塞納夫戰役"
+      },
+      "it": {
+        "language": "it",
+        "value": "battaglia di Seneffe"
+      },
+      "eu": {
+        "language": "eu",
+        "value": "Seneffeko gudua"
+      },
+      "oc": {
+        "language": "oc",
+        "value": "Batalha de Seneffe"
+      },
+      "br": {
+        "language": "br",
+        "value": "Emgann Seneffe"
+      },
+      "bg": {
+        "language": "bg",
+        "value": "Битка при Сенефе"
+      },
+      "ckb": {
+        "language": "ckb",
+        "value": "شەڕی سانێفێ"
+      },
+      "yo": {
+        "language": "yo",
+        "value": "ogun Seneffe"
+      },
+      "ar": {
+        "language": "ar",
+        "value": "معركة سينيف"
+      },
+      "ga": {
+        "language": "ga",
+        "value": "Cath Seneffe"
+      }
+    },
+    "descriptions": {
+      "de": {
+        "language": "de",
+        "value": "Schlacht im Holländischen Krieg 11. August 1674"
+      },
+      "nl": {
+        "language": "nl",
+        "value": "veldslag die op 11 augustus 1674 nabij Seneffe werd geleverd tussen een Frans leger onder maarschalk Condé en een Nederlands-Spaans-Oostenrijks-Duits leger onder stadhouder Willem III"
+      },
+      "en": {
+        "language": "en",
+        "value": "1674 battle during the Franco-Dutch War"
+      },
+      "yo": {
+        "language": "yo",
+        "value": "ogun"
+      },
+      "es": {
+        "language": "es",
+        "value": "batalla de la guerra franco-holandesa"
+      }
+    },
+    "aliases": {
+      "de": [
+        {
+          "language": "de",
+          "value": "Schlacht von Seneffe"
+        }
+      ],
+      "fr": [
+        {
+          "language": "fr",
+          "value": "Journée de Seneffe"
+        },
+        {
+          "language": "fr",
+          "value": "Senef"
+        },
+        {
+          "language": "fr",
+          "value": "Sénef"
+        }
+      ]
+    },
+    "claims": {
+      "P625": [
+        {
+          "mainsnak": {
+            "snaktype": "value",
+            "property": "P625",
+            "hash": "0a9022399e61b8696f6baedf25f6b9799816a198",
+            "datavalue": {
+              "value": {
+                "latitude": 50.5287063,
+                "longitude": 4.2596054,
+                "altitude": null,
+                "precision": 0.00000277777777778,
+                "globe": "http://www.wikidata.org/entity/Q2"
+              },
+              "type": "globecoordinate"
+            },
+            "datatype": "globe-coordinate"
+          },
+          "type": "statement",
+          "id": "Q1783252$E2A6C06C-8AC7-4951-A639-35B06787622B",
+          "rank": "normal",
+          "references": [
+            {
+              "hash": "d4bd87b862b12d99d26e86472d44f26858dee639",
+              "snaks": {
+                "P143": [
+                  {
+                    "snaktype": "value",
+                    "property": "P143",
+                    "hash": "f30cbd35620c4ea6d0633aaf0210a8916130469b",
+                    "datavalue": {
+                      "value": {
+                        "entity-type": "item",
+                        "numeric-id": 8447,
+                        "id": "Q8447"
+                      },
+                      "type": "wikibase-entityid"
+                    },
+                    "datatype": "wikibase-item"
+                  }
+                ]
+              },
+              "snaks-order": [
+                "P143"
+              ]
+            }
+          ]
+        }
+      ],
+      "P646": [
+        {
+          "mainsnak": {
+            "snaktype": "value",
+            "property": "P646",
+            "hash": "322fea90c84dc35bffb3afd8512b34ee3f851725",
+            "datavalue": {
+              "value": "/m/014rry",
+              "type": "string"
+            },
+            "datatype": "external-id"
+          },
+          "type": "statement",
+          "id": "Q1783252$4DE647D3-7451-475B-8A82-FC0AA88281E5",
+          "rank": "normal",
+          "references": [
+            {
+              "hash": "2b00cb481cddcac7623114367489b5c194901c4a",
+              "snaks": {
+                "P248": [
+                  {
+                    "snaktype": "value",
+                    "property": "P248",
+                    "hash": "a94b740202b097dd33355e0e6c00e54b9395e5e0",
+                    "datavalue": {
+                      "value": {
+                        "entity-type": "item",
+                        "numeric-id": 15241312,
+                        "id": "Q15241312"
+                      },
+                      "type": "wikibase-entityid"
+                    },
+                    "datatype": "wikibase-item"
+                  }
+                ],
+                "P577": [
+                  {
+                    "snaktype": "value",
+                    "property": "P577",
+                    "hash": "fde79ecb015112d2f29229ccc1ec514ed3e71fa2",
+                    "datavalue": {
+                      "value": {
+                        "time": "+2013-10-28T00:00:00Z",
+                        "timezone": 0,
+                        "before": 0,
+                        "after": 0,
+                        "precision": 11,
+                        "calendarmodel": "http://www.wikidata.org/entity/Q1985727"
+                      },
+                      "type": "time"
+                    },
+                    "datatype": "time"
+                  }
+                ]
+              },
+              "snaks-order": [
+                "P248",
+                "P577"
+              ]
+            }
+          ]
+        }
+      ],
+      "P31": [
+        {
+          "mainsnak": {
+            "snaktype": "value",
+            "property": "P31",
+            "hash": "baa1df9dcd37b9f3a062e7a14a8bef0c37078d32",
+            "datavalue": {
+              "value": {
+                "entity-type": "item",
+                "numeric-id": 178561,
+                "id": "Q178561"
+              },
+              "type": "wikibase-entityid"
+            },
+            "datatype": "wikibase-item"
+          },
+          "type": "statement",
+          "id": "Q1783252$856B4972-7BB1-4A3C-AC96-F523F6CC4DDA",
+          "rank": "normal",
+          "references": [
+            {
+              "hash": "d4bd87b862b12d99d26e86472d44f26858dee639",
+              "snaks": {
+                "P143": [
+                  {
+                    "snaktype": "value",
+                    "property": "P143",
+                    "hash": "f30cbd35620c4ea6d0633aaf0210a8916130469b",
+                    "datavalue": {
+                      "value": {
+                        "entity-type": "item",
+                        "numeric-id": 8447,
+                        "id": "Q8447"
+                      },
+                      "type": "wikibase-entityid"
+                    },
+                    "datatype": "wikibase-item"
+                  }
+                ]
+              },
+              "snaks-order": [
+                "P143"
+              ]
+            }
+          ]
+        }
+      ],
+      "P361": [
+        {
+          "mainsnak": {
+            "snaktype": "value",
+            "property": "P361",
+            "hash": "3e44bb346bb4cf27706c0a57ab6903b830842ce0",
+            "datavalue": {
+              "value": {
+                "entity-type": "item",
+                "numeric-id": 646322,
+                "id": "Q646322"
+              },
+              "type": "wikibase-entityid"
+            },
+            "datatype": "wikibase-item"
+          },
+          "type": "statement",
+          "id": "Q1783252$5E5AF18A-183B-47FF-BC4B-CA811DC6556F",
+          "rank": "normal",
+          "references": [
+            {
+              "hash": "d4bd87b862b12d99d26e86472d44f26858dee639",
+              "snaks": {
+                "P143": [
+                  {
+                    "snaktype": "value",
+                    "property": "P143",
+                    "hash": "f30cbd35620c4ea6d0633aaf0210a8916130469b",
+                    "datavalue": {
+                      "value": {
+                        "entity-type": "item",
+                        "numeric-id": 8447,
+                        "id": "Q8447"
+                      },
+                      "type": "wikibase-entityid"
+                    },
+                    "datatype": "wikibase-item"
+                  }
+                ]
+              },
+              "snaks-order": [
+                "P143"
+              ]
+            }
+          ]
+        }
+      ],
+      "P17": [
+        {
+          "mainsnak": {
+            "snaktype": "value",
+            "property": "P17",
+            "hash": "c2859f311753176d6bdfa7da54ceeeac7acb52c8",
+            "datavalue": {
+              "value": {
+                "entity-type": "item",
+                "numeric-id": 31,
+                "id": "Q31"
+              },
+              "type": "wikibase-entityid"
+            },
+            "datatype": "wikibase-item"
+          },
+          "type": "statement",
+          "id": "Q1783252$7CA93AE5-F5D4-4842-9DFC-624BE67986F9",
+          "rank": "normal"
+        }
+      ],
+      "P18": [
+        {
+          "mainsnak": {
+            "snaktype": "value",
+            "property": "P18",
+            "hash": "8e551ea37c3edb3b36df23c228066d3354334837",
+            "datavalue": {
+              "value": "Bataille de Seneffe de B.Gagneraux.JPG",
+              "type": "string"
+            },
+            "datatype": "commonsMedia"
+          },
+          "type": "statement",
+          "id": "Q1783252$237C1B6C-B5AC-4C97-93AF-CFFCD2995194",
+          "rank": "normal"
+        },
+        {
+          "mainsnak": {
+            "snaktype": "value",
+            "property": "P18",
+            "hash": "9d6bc17c88257a81337750675ed4ef3603d099a8",
+            "datavalue": {
+              "value": "Bataille de Seneffe.jpg",
+              "type": "string"
+            },
+            "datatype": "commonsMedia"
+          },
+          "type": "statement",
+          "id": "Q1783252$E8B882E9-B6B5-4FE2-A868-0CAB33025E5C",
+          "rank": "normal"
+        },
+        {
+          "mainsnak": {
+            "snaktype": "value",
+            "property": "P18",
+            "hash": "e4e49fab0b711a2a6976f3bcdbd1a56b8b688f80",
+            "datavalue": {
+              "value": "Bataille de seneffe.jpg",
+              "type": "string"
+            },
+            "datatype": "commonsMedia"
+          },
+          "type": "statement",
+          "id": "Q1783252$58E08BF8-1FA3-4EE7-AD08-386E1087C004",
+          "rank": "normal"
+        }
+      ],
+      "P276": [
+        {
+          "mainsnak": {
+            "snaktype": "value",
+            "property": "P276",
+            "hash": "4b57dd966ae6690315e5d81228417fefadf40f9b",
+            "datavalue": {
+              "value": {
+                "entity-type": "item",
+                "numeric-id": 669051,
+                "id": "Q669051"
+              },
+              "type": "wikibase-entityid"
+            },
+            "datatype": "wikibase-item"
+          },
+          "type": "statement",
+          "id": "Q1783252$C27B6A3F-9C0E-4749-9C8A-82B42C3CC797",
+          "rank": "normal",
+          "references": [
+            {
+              "hash": "d4bd87b862b12d99d26e86472d44f26858dee639",
+              "snaks": {
+                "P143": [
+                  {
+                    "snaktype": "value",
+                    "property": "P143",
+                    "hash": "f30cbd35620c4ea6d0633aaf0210a8916130469b",
+                    "datavalue": {
+                      "value": {
+                        "entity-type": "item",
+                        "numeric-id": 8447,
+                        "id": "Q8447"
+                      },
+                      "type": "wikibase-entityid"
+                    },
+                    "datatype": "wikibase-item"
+                  }
+                ]
+              },
+              "snaks-order": [
+                "P143"
+              ]
+            }
+          ]
+        }
+      ],
+      "P373": [
+        {
+          "mainsnak": {
+            "snaktype": "value",
+            "property": "P373",
+            "hash": "be0c9116b9ae9db93907273b014b76b31e80c300",
+            "datavalue": {
+              "value": "Battle of Seneffe",
+              "type": "string"
+            },
+            "datatype": "string"
+          },
+          "type": "statement",
+          "id": "Q1783252$F5B1A14A-2890-41B4-876A-C3DBAD5CF3D8",
+          "rank": "normal"
+        }
+      ],
+      "P585": [
+        {
+          "mainsnak": {
+            "snaktype": "value",
+            "property": "P585",
+            "hash": "0330ec424a3c421cb44f09531a30f0b4f16f4da3",
+            "datavalue": {
+              "value": {
+                "time": "+1674-08-11T00:00:00Z",
+                "timezone": 0,
+                "before": 0,
+                "after": 0,
+                "precision": 11,
+                "calendarmodel": "http://www.wikidata.org/entity/Q1985727"
+              },
+              "type": "time"
+            },
+            "datatype": "time"
+          },
+          "type": "statement",
+          "id": "Q1783252$8D8EB652-3307-48DE-81EC-FE39587373BC",
+          "rank": "normal",
+          "references": [
+            {
+              "hash": "d4bd87b862b12d99d26e86472d44f26858dee639",
+              "snaks": {
+                "P143": [
+                  {
+                    "snaktype": "value",
+                    "property": "P143",
+                    "hash": "f30cbd35620c4ea6d0633aaf0210a8916130469b",
+                    "datavalue": {
+                      "value": {
+                        "entity-type": "item",
+                        "numeric-id": 8447,
+                        "id": "Q8447"
+                      },
+                      "type": "wikibase-entityid"
+                    },
+                    "datatype": "wikibase-item"
+                  }
+                ]
+              },
+              "snaks-order": [
+                "P143"
+              ]
+            }
+          ]
+        }
+      ],
+      "P1299": [
+        {
+          "mainsnak": {
+            "snaktype": "value",
+            "property": "P1299",
+            "hash": "5f7822e74197950c1e77d447db3095a30ed1994e",
+            "datavalue": {
+              "value": {
+                "entity-type": "item",
+                "numeric-id": 22032052,
+                "id": "Q22032052"
+              },
+              "type": "wikibase-entityid"
+            },
+            "datatype": "wikibase-item"
+          },
+          "type": "statement",
+          "id": "Q1783252$4443aa64-45c9-ab58-d691-31b7f7d75466",
+          "rank": "normal"
+        }
+      ],
+      "P710": [
+        {
+          "mainsnak": {
+            "snaktype": "value",
+            "property": "P710",
+            "hash": "953b909a478c6b889aafa66d26a6378cd09a0fa6",
+            "datavalue": {
+              "value": {
+                "entity-type": "item",
+                "numeric-id": 12548,
+                "id": "Q12548"
+              },
+              "type": "wikibase-entityid"
+            },
+            "datatype": "wikibase-item"
+          },
+          "type": "statement",
+          "id": "Q1783252$822C81C3-667E-4AF3-9C0E-A306D7054103",
+          "rank": "normal"
+        }
+      ],
+      "P244": [
+        {
+          "mainsnak": {
+            "snaktype": "value",
+            "property": "P244",
+            "hash": "efaa5859986c22098ee81372b079a648f8cbf3fa",
+            "datavalue": {
+              "value": "sh85119999",
+              "type": "string"
+            },
+            "datatype": "external-id"
+          },
+          "type": "statement",
+          "id": "Q1783252$277C088D-DA0D-4175-8BB2-7231041D43E8",
+          "rank": "normal",
+          "references": [
+            {
+              "hash": "ac5d47e9fbcc281bc0d27a205ae02e22ad24ce31",
+              "snaks": {
+                "P854": [
+                  {
+                    "snaktype": "value",
+                    "property": "P854",
+                    "hash": "b560dc6b281a39d061e189d2eb299a426a06f1a2",
+                    "datavalue": {
+                      "value": "https://github.com/JohnMarkOckerbloom/ftl/blob/master/data/wikimap",
+                      "type": "string"
+                    },
+                    "datatype": "url"
+                  }
+                ],
+                "P813": [
+                  {
+                    "snaktype": "value",
+                    "property": "P813",
+                    "hash": "0dcf4f64e93fdcc654e2c7534285881fe48b9f3d",
+                    "datavalue": {
+                      "value": {
+                        "time": "+2019-04-03T00:00:00Z",
+                        "timezone": 0,
+                        "before": 0,
+                        "after": 0,
+                        "precision": 11,
+                        "calendarmodel": "http://www.wikidata.org/entity/Q1985727"
+                      },
+                      "type": "time"
+                    },
+                    "datatype": "time"
+                  }
+                ]
+              },
+              "snaks-order": [
+                "P854",
+                "P813"
+              ]
+            }
+          ]
+        }
+      ],
+      "P8189": [
+        {
+          "mainsnak": {
+            "snaktype": "value",
+            "property": "P8189",
+            "hash": "8fbc0c16a25e61aa1e044e8c2cecec8eb7c2f4ea",
+            "datavalue": {
+              "value": "987007531620205171",
+              "type": "string"
+            },
+            "datatype": "external-id"
+          },
+          "type": "statement",
+          "id": "Q1783252$A26E4D17-4653-4652-A0D6-36F0E3FCFEB0",
+          "rank": "normal",
+          "references": [
+            {
+              "hash": "ecb7a39cf436eb1fba419853af168ef9f2ba1dab",
+              "snaks": {
+                "P248": [
+                  {
+                    "snaktype": "value",
+                    "property": "P248",
+                    "hash": "a03bb6ffe37be9554492f4eea5bd18afcb57df19",
+                    "datavalue": {
+                      "value": {
+                        "entity-type": "item",
+                        "numeric-id": 106509962,
+                        "id": "Q106509962"
+                      },
+                      "type": "wikibase-entityid"
+                    },
+                    "datatype": "wikibase-item"
+                  }
+                ]
+              },
+              "snaks-order": [
+                "P248"
+              ]
+            }
+          ]
+        }
+      ],
+      "P13591": [
+        {
+          "mainsnak": {
+            "snaktype": "value",
+            "property": "P13591",
+            "hash": "0f3bbca7bf3289b6497c048fb1d0c6fab2fb39dd",
+            "datavalue": {
+              "value": "concept/5b869c21-b968-407a-8668-c47eda628978",
+              "type": "string"
+            },
+            "datatype": "external-id"
+          },
+          "type": "statement",
+          "id": "Q1783252$50EBBD97-2E9B-4F8B-81BD-487A0AB1E93A",
+          "rank": "normal"
+        }
+      ]
+    },
+    "sitelinks": {
+      "arwiki": {
+        "site": "arwiki",
+        "title": "معركة سينيف",
+        "badges": [],
+        "url": "https://ar.wikipedia.org/wiki/%D9%85%D8%B9%D8%B1%D9%83%D8%A9_%D8%B3%D9%8A%D9%86%D9%8A%D9%81"
+      },
+      "bgwiki": {
+        "site": "bgwiki",
+        "title": "Битка при Сенефе",
+        "badges": [],
+        "url": "https://bg.wikipedia.org/wiki/%D0%91%D0%B8%D1%82%D0%BA%D0%B0_%D0%BF%D1%80%D0%B8_%D0%A1%D0%B5%D0%BD%D0%B5%D1%84%D0%B5"
+      },
+      "brwiki": {
+        "site": "brwiki",
+        "title": "Emgann Seneffe",
+        "badges": [],
+        "url": "https://br.wikipedia.org/wiki/Emgann_Seneffe"
+      },
+      "ckbwiki": {
+        "site": "ckbwiki",
+        "title": "شەڕی سانێفێ",
+        "badges": [],
+        "url": "https://ckb.wikipedia.org/wiki/%D8%B4%DB%95%DA%95%DB%8C_%D8%B3%D8%A7%D9%86%DB%8E%D9%81%DB%8E"
+      },
+      "commonswiki": {
+        "site": "commonswiki",
+        "title": "Category:Battle of Seneffe",
+        "badges": [],
+        "url": "https://commons.wikimedia.org/wiki/Category:Battle_of_Seneffe"
+      },
+      "cswiki": {
+        "site": "cswiki",
+        "title": "Bitva u Seneffe",
+        "badges": [],
+        "url": "https://cs.wikipedia.org/wiki/Bitva_u_Seneffe"
+      },
+      "dewiki": {
+        "site": "dewiki",
+        "title": "Schlacht bei Seneffe",
+        "badges": [],
+        "url": "https://de.wikipedia.org/wiki/Schlacht_bei_Seneffe"
+      },
+      "enwiki": {
+        "site": "enwiki",
+        "title": "Battle of Seneffe",
+        "badges": [],
+        "url": "https://en.wikipedia.org/wiki/Battle_of_Seneffe"
+      },
+      "eswiki": {
+        "site": "eswiki",
+        "title": "Batalla de Seneffe",
+        "badges": [],
+        "url": "https://es.wikipedia.org/wiki/Batalla_de_Seneffe"
+      },
+      "euwiki": {
+        "site": "euwiki",
+        "title": "Seneffeko gudua",
+        "badges": [],
+        "url": "https://eu.wikipedia.org/wiki/Seneffeko_gudua"
+      },
+      "frwiki": {
+        "site": "frwiki",
+        "title": "Bataille de Seneffe",
+        "badges": [],
+        "url": "https://fr.wikipedia.org/wiki/Bataille_de_Seneffe"
+      },
+      "itwiki": {
+        "site": "itwiki",
+        "title": "Battaglia di Seneffe",
+        "badges": [],
+        "url": "https://it.wikipedia.org/wiki/Battaglia_di_Seneffe"
+      },
+      "jawiki": {
+        "site": "jawiki",
+        "title": "スネッフの戦い",
+        "badges": [],
+        "url": "https://ja.wikipedia.org/wiki/%E3%82%B9%E3%83%8D%E3%83%83%E3%83%95%E3%81%AE%E6%88%A6%E3%81%84"
+      },
+      "nlwiki": {
+        "site": "nlwiki",
+        "title": "Slag bij Seneffe",
+        "badges": [],
+        "url": "https://nl.wikipedia.org/wiki/Slag_bij_Seneffe"
+      },
+      "ocwiki": {
+        "site": "ocwiki",
+        "title": "Batalha de Seneffe",
+        "badges": [],
+        "url": "https://oc.wikipedia.org/wiki/Batalha_de_Seneffe"
+      },
+      "plwiki": {
+        "site": "plwiki",
+        "title": "Bitwa pod Seneffe",
+        "badges": [],
+        "url": "https://pl.wikipedia.org/wiki/Bitwa_pod_Seneffe"
+      },
+      "ptwiki": {
+        "site": "ptwiki",
+        "title": "Batalha de Seneffe",
+        "badges": [],
+        "url": "https://pt.wikipedia.org/wiki/Batalha_de_Seneffe"
+      },
+      "ruwiki": {
+        "site": "ruwiki",
+        "title": "Сражение при Сенефе",
+        "badges": [],
+        "url": "https://ru.wikipedia.org/wiki/%D0%A1%D1%80%D0%B0%D0%B6%D0%B5%D0%BD%D0%B8%D0%B5_%D0%BF%D1%80%D0%B8_%D0%A1%D0%B5%D0%BD%D0%B5%D1%84%D0%B5"
+      },
+      "zhwiki": {
+        "site": "zhwiki",
+        "title": "瑟內夫之戰",
+        "badges": [],
+        "url": "https://zh.wikipedia.org/wiki/%E7%91%9F%E5%85%A7%E5%A4%AB%E4%B9%8B%E6%88%B0"
+      }
+    }
+  }
+}

@@ -1,0 +1,223 @@
+{
+  "saved_at": "2026-03-07T13:52:47.808Z",
+  "value": {
+    "pageid": 60700971,
+    "ns": 0,
+    "title": "Q60845789",
+    "lastrevid": 2344376735,
+    "modified": "2025-05-04T01:00:43Z",
+    "type": "item",
+    "id": "Q60845789",
+    "labels": {
+      "fr": {
+        "language": "fr",
+        "value": "Baptême de Clovis"
+      },
+      "en": {
+        "language": "en",
+        "value": "Baptism of Clovis I"
+      },
+      "nrm": {
+        "language": "nrm",
+        "value": "Baptême à Clovis"
+      },
+      "pt": {
+        "language": "pt",
+        "value": "Batismo de Clóvis"
+      }
+    },
+    "descriptions": {
+      "fr": {
+        "language": "fr",
+        "value": "évenement de l'Histoire de France"
+      },
+      "en": {
+        "language": "en",
+        "value": "historical event"
+      }
+    },
+    "aliases": {},
+    "claims": {
+      "P2671": [
+        {
+          "mainsnak": {
+            "snaktype": "value",
+            "property": "P2671",
+            "hash": "dee9f06f2850e75c9e0f9d467dbfcf1e3c38cd1c",
+            "datavalue": {
+              "value": "/g/11g_rljw6b",
+              "type": "string"
+            },
+            "datatype": "external-id"
+          },
+          "type": "statement",
+          "id": "Q60845789$02D0138D-DEE2-473D-8EBE-6A2C74A9F90B",
+          "rank": "normal"
+        }
+      ],
+      "P373": [
+        {
+          "mainsnak": {
+            "snaktype": "value",
+            "property": "P373",
+            "hash": "3ad331071934d57aa7fa673b2a3c7f3080a892be",
+            "datavalue": {
+              "value": "Baptism of Clovis I",
+              "type": "string"
+            },
+            "datatype": "string"
+          },
+          "type": "statement",
+          "id": "Q60845789$c031c5e5-6fed-47b1-aa98-3aaf789978de",
+          "rank": "normal"
+        }
+      ],
+      "P31": [
+        {
+          "mainsnak": {
+            "snaktype": "value",
+            "property": "P31",
+            "hash": "a4577a80255142c375caf61c2567bdf38d0e7b67",
+            "datavalue": {
+              "value": {
+                "entity-type": "item",
+                "numeric-id": 13418847,
+                "id": "Q13418847"
+              },
+              "type": "wikibase-entityid"
+            },
+            "datatype": "wikibase-item"
+          },
+          "type": "statement",
+          "id": "Q60845789$dbad9a5a-4a8a-b1d6-3a85-a796fe991ea5",
+          "rank": "normal"
+        }
+      ],
+      "P12800": [
+        {
+          "mainsnak": {
+            "snaktype": "value",
+            "property": "P12800",
+            "hash": "d19b7f39fa4d84b37379b523ab846226664816f7",
+            "datavalue": {
+              "value": "fr:Baptême_de_Clovis",
+              "type": "string"
+            },
+            "datatype": "external-id"
+          },
+          "type": "statement",
+          "id": "Q60845789$16A59C83-B0E0-4708-A270-C1EAC09C3CCF",
+          "rank": "normal"
+        }
+      ],
+      "P710": [
+        {
+          "mainsnak": {
+            "snaktype": "value",
+            "property": "P710",
+            "hash": "1ebc6a68d20ff54a059b8c8a8ff15a84318c00af",
+            "datavalue": {
+              "value": {
+                "entity-type": "item",
+                "numeric-id": 82339,
+                "id": "Q82339"
+              },
+              "type": "wikibase-entityid"
+            },
+            "datatype": "wikibase-item"
+          },
+          "type": "statement",
+          "qualifiers": {
+            "P3831": [
+              {
+                "snaktype": "value",
+                "property": "P3831",
+                "hash": "534f3541bb52adca08a2db7b3af3372a0f4d83a3",
+                "datavalue": {
+                  "value": {
+                    "entity-type": "item",
+                    "numeric-id": 35856,
+                    "id": "Q35856"
+                  },
+                  "type": "wikibase-entityid"
+                },
+                "datatype": "wikibase-item"
+              }
+            ]
+          },
+          "qualifiers-order": [
+            "P3831"
+          ],
+          "id": "Q60845789$3f49bd2f-46f6-d8ae-7c06-976579bc25ea",
+          "rank": "normal"
+        },
+        {
+          "mainsnak": {
+            "snaktype": "value",
+            "property": "P710",
+            "hash": "67f878cdb78a40b83a881e23ab2c0dabcd74196f",
+            "datavalue": {
+              "value": {
+                "entity-type": "item",
+                "numeric-id": 367208,
+                "id": "Q367208"
+              },
+              "type": "wikibase-entityid"
+            },
+            "datatype": "wikibase-item"
+          },
+          "type": "statement",
+          "qualifiers": {
+            "P3831": [
+              {
+                "snaktype": "value",
+                "property": "P3831",
+                "hash": "1be0e4969ff470e3acd2e7e95c34f670b566e033",
+                "datavalue": {
+                  "value": {
+                    "entity-type": "item",
+                    "numeric-id": 250867,
+                    "id": "Q250867"
+                  },
+                  "type": "wikibase-entityid"
+                },
+                "datatype": "wikibase-item"
+              }
+            ]
+          },
+          "qualifiers-order": [
+            "P3831"
+          ],
+          "id": "Q60845789$1f3d03bd-4381-a6b0-fc32-6945fffa9e5f",
+          "rank": "normal"
+        }
+      ]
+    },
+    "sitelinks": {
+      "commonswiki": {
+        "site": "commonswiki",
+        "title": "Category:Baptism of Clovis I",
+        "badges": [],
+        "url": "https://commons.wikimedia.org/wiki/Category:Baptism_of_Clovis_I"
+      },
+      "frwiki": {
+        "site": "frwiki",
+        "title": "Baptême de Clovis",
+        "badges": [],
+        "url": "https://fr.wikipedia.org/wiki/Bapt%C3%AAme_de_Clovis"
+      },
+      "nrmwiki": {
+        "site": "nrmwiki",
+        "title": "Baptême à Clovis",
+        "badges": [],
+        "url": "https://nrm.wikipedia.org/wiki/Bapt%C3%AAme_%C3%A0_Clovis"
+      },
+      "ptwiki": {
+        "site": "ptwiki",
+        "title": "Batismo de Clóvis",
+        "badges": [],
+        "url": "https://pt.wikipedia.org/wiki/Batismo_de_Cl%C3%B3vis"
+      }
+    }
+  }
+}

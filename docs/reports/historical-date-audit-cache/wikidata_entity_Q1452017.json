@@ -1,0 +1,284 @@
+{
+  "saved_at": "2026-03-07T14:43:20.239Z",
+  "value": {
+    "pageid": 1390187,
+    "ns": 0,
+    "title": "Q1452017",
+    "lastrevid": 2470049817,
+    "modified": "2026-03-07T04:17:11Z",
+    "type": "item",
+    "id": "Q1452017",
+    "labels": {
+      "pt": {
+        "language": "pt",
+        "value": "Morte de Napoleão Bonaparte"
+      },
+      "pl": {
+        "language": "pl",
+        "value": "Śmierć Napoleona"
+      },
+      "fr": {
+        "language": "fr",
+        "value": "mort de Napoléon Ier"
+      },
+      "it": {
+        "language": "it",
+        "value": "teorie alternative sulla morte di Napoleone Bonaparte"
+      },
+      "cs": {
+        "language": "cs",
+        "value": "Smrt Napoleona Bonaparta"
+      },
+      "es": {
+        "language": "es",
+        "value": "muerte de Napoleón Bonaparte"
+      },
+      "en": {
+        "language": "en",
+        "value": "death of Napoleon"
+      },
+      "hu": {
+        "language": "hu",
+        "value": "Napóleon halála"
+      },
+      "de": {
+        "language": "de",
+        "value": "Tod von Napoleon"
+      },
+      "zh": {
+        "language": "zh",
+        "value": "拿破仑之死"
+      },
+      "ar": {
+        "language": "ar",
+        "value": "وفاة نابليون"
+      }
+    },
+    "descriptions": {
+      "hu": {
+        "language": "hu",
+        "value": "I. Napóleon francia császár halála Szent Ilona szigetén"
+      },
+      "en": {
+        "language": "en",
+        "value": "historical event"
+      },
+      "fr": {
+        "language": "fr",
+        "value": "événement historique"
+      },
+      "it": {
+        "language": "it",
+        "value": "evento storico (5 maggio 1821)"
+      }
+    },
+    "aliases": {
+      "fr": [
+        {
+          "language": "fr",
+          "value": "mort de Napoléon"
+        },
+        {
+          "language": "fr",
+          "value": "mort de Napoléon Bonaparte"
+        }
+      ],
+      "it": [
+        {
+          "language": "it",
+          "value": "morte di Napoleone"
+        }
+      ]
+    },
+    "claims": {
+      "P1269": [
+        {
+          "mainsnak": {
+            "snaktype": "value",
+            "property": "P1269",
+            "hash": "8c62ae636b7c4b6939d0d2cedc87d2db886a5e4c",
+            "datavalue": {
+              "value": {
+                "entity-type": "item",
+                "numeric-id": 517,
+                "id": "Q517"
+              },
+              "type": "wikibase-entityid"
+            },
+            "datatype": "wikibase-item"
+          },
+          "type": "statement",
+          "id": "Q1452017$c037291d-48b1-88e4-0282-31e9d43a4e89",
+          "rank": "normal"
+        }
+      ],
+      "P31": [
+        {
+          "mainsnak": {
+            "snaktype": "value",
+            "property": "P31",
+            "hash": "440e12b97105146939e3e8bee5b185433bc581ac",
+            "datavalue": {
+              "value": {
+                "entity-type": "item",
+                "numeric-id": 4,
+                "id": "Q4"
+              },
+              "type": "wikibase-entityid"
+            },
+            "datatype": "wikibase-item"
+          },
+          "type": "statement",
+          "id": "Q1452017$884f446f-4076-8f77-e07b-0b0153eab3e2",
+          "rank": "normal"
+        }
+      ],
+      "P585": [
+        {
+          "mainsnak": {
+            "snaktype": "value",
+            "property": "P585",
+            "hash": "81968b6b7a34e7da0f12e4a14c1172da7b9c2c2f",
+            "datavalue": {
+              "value": {
+                "time": "+1821-05-05T00:00:00Z",
+                "timezone": 0,
+                "before": 0,
+                "after": 0,
+                "precision": 11,
+                "calendarmodel": "http://www.wikidata.org/entity/Q1985727"
+              },
+              "type": "time"
+            },
+            "datatype": "time"
+          },
+          "type": "statement",
+          "id": "Q1452017$cd232558-43ad-92df-9d9d-f3a090068d34",
+          "rank": "normal"
+        }
+      ],
+      "P17": [
+        {
+          "mainsnak": {
+            "snaktype": "value",
+            "property": "P17",
+            "hash": "d900b378b5be5c1f2d87cb0fbcb5d98d8efc811a",
+            "datavalue": {
+              "value": {
+                "entity-type": "item",
+                "numeric-id": 34497,
+                "id": "Q34497"
+              },
+              "type": "wikibase-entityid"
+            },
+            "datatype": "wikibase-item"
+          },
+          "type": "statement",
+          "id": "Q1452017$fcc8ac17-4d11-d55d-d242-5790a0ba5f75",
+          "rank": "normal"
+        }
+      ],
+      "P2671": [
+        {
+          "mainsnak": {
+            "snaktype": "value",
+            "property": "P2671",
+            "hash": "da1a0ea3623e84911ebb87b16369dc06def18d2c",
+            "datavalue": {
+              "value": "/g/11b72zdzd1",
+              "type": "string"
+            },
+            "datatype": "external-id"
+          },
+          "type": "statement",
+          "id": "Q1452017$6366ADD7-527F-4B21-86E5-B9D761CD180D",
+          "rank": "normal"
+        }
+      ],
+      "P18": [
+        {
+          "mainsnak": {
+            "snaktype": "value",
+            "property": "P18",
+            "hash": "b172265710f8d0a192f528a790db02bb16e75a2a",
+            "datavalue": {
+              "value": "Napoleon death-Charles von Steuben-IMG 1512.JPG",
+              "type": "string"
+            },
+            "datatype": "commonsMedia"
+          },
+          "type": "statement",
+          "id": "Q1452017$745d74e0-4994-5356-45d9-af5724e8941e",
+          "rank": "normal"
+        }
+      ],
+      "P373": [
+        {
+          "mainsnak": {
+            "snaktype": "value",
+            "property": "P373",
+            "hash": "3cc367f397975fed2fc8f6d768e00cca3732ad85",
+            "datavalue": {
+              "value": "Death of Napoleon I",
+              "type": "string"
+            },
+            "datatype": "string"
+          },
+          "type": "statement",
+          "id": "Q1452017$cfc23a45-4ee2-7922-445d-99d9716c30cd",
+          "rank": "normal"
+        }
+      ]
+    },
+    "sitelinks": {
+      "arwiki": {
+        "site": "arwiki",
+        "title": "وفاة نابليون",
+        "badges": [],
+        "url": "https://ar.wikipedia.org/wiki/%D9%88%D9%81%D8%A7%D8%A9_%D9%86%D8%A7%D8%A8%D9%84%D9%8A%D9%88%D9%86"
+      },
+      "commonswiki": {
+        "site": "commonswiki",
+        "title": "Category:Death of Napoleon I",
+        "badges": [],
+        "url": "https://commons.wikimedia.org/wiki/Category:Death_of_Napoleon_I"
+      },
+      "cswiki": {
+        "site": "cswiki",
+        "title": "Smrt Napoleona Bonaparta",
+        "badges": [],
+        "url": "https://cs.wikipedia.org/wiki/Smrt_Napoleona_Bonaparta"
+      },
+      "enwiki": {
+        "site": "enwiki",
+        "title": "Death of Napoleon",
+        "badges": [],
+        "url": "https://en.wikipedia.org/wiki/Death_of_Napoleon"
+      },
+      "frwiki": {
+        "site": "frwiki",
+        "title": "Mort de Napoléon Ier",
+        "badges": [],
+        "url": "https://fr.wikipedia.org/wiki/Mort_de_Napol%C3%A9on_Ier"
+      },
+      "itwiki": {
+        "site": "itwiki",
+        "title": "Teorie alternative sulla morte di Napoleone Bonaparte",
+        "badges": [],
+        "url": "https://it.wikipedia.org/wiki/Teorie_alternative_sulla_morte_di_Napoleone_Bonaparte"
+      },
+      "plwiki": {
+        "site": "plwiki",
+        "title": "Śmierć Napoleona",
+        "badges": [],
+        "url": "https://pl.wikipedia.org/wiki/%C5%9Amier%C4%87_Napoleona"
+      },
+      "ptwiki": {
+        "site": "ptwiki",
+        "title": "Morte de Napoleão Bonaparte",
+        "badges": [],
+        "url": "https://pt.wikipedia.org/wiki/Morte_de_Napole%C3%A3o_Bonaparte"
+      }
+    }
+  }
+}

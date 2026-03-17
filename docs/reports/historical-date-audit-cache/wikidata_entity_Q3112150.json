@@ -1,0 +1,604 @@
+{
+  "saved_at": "2026-03-07T14:19:07.852Z",
+  "value": {
+    "pageid": 2973827,
+    "ns": 0,
+    "title": "Q3112150",
+    "lastrevid": 2413835393,
+    "modified": "2025-10-07T21:33:44Z",
+    "type": "item",
+    "id": "Q3112150",
+    "labels": {
+      "eo": {
+        "language": "eo",
+        "value": "Ministraro dua de Jacques Chirac"
+      },
+      "fr": {
+        "language": "fr",
+        "value": "gouvernement Jacques Chirac II"
+      },
+      "tr": {
+        "language": "tr",
+        "value": "2. Jacques Chirac Hükümeti"
+      },
+      "es": {
+        "language": "es",
+        "value": "segundo gobierno de Jacques Chirac"
+      },
+      "de": {
+        "language": "de",
+        "value": "Kabinett Chirac II"
+      },
+      "he": {
+        "language": "he",
+        "value": "ממשלת ז'אק שיראק השניה"
+      },
+      "en": {
+        "language": "en",
+        "value": "Second Chirac government"
+      },
+      "ko": {
+        "language": "ko",
+        "value": "제2차 시라크 내각"
+      },
+      "ar": {
+        "language": "ar",
+        "value": "حكومة جاك شيراك الثانية"
+      },
+      "ca": {
+        "language": "ca",
+        "value": "segon govern de Jacques Chirac"
+      },
+      "vec": {
+        "language": "vec",
+        "value": "secondo goerno de Jacques Chirac"
+      },
+      "nl": {
+        "language": "nl",
+        "value": "Regering-Chirac II"
+      },
+      "sv": {
+        "language": "sv",
+        "value": "regeringen Chirac II"
+      },
+      "sl": {
+        "language": "sl",
+        "value": "drugi kabinet Jacquesa Chiraca"
+      }
+    },
+    "descriptions": {
+      "fr": {
+        "language": "fr",
+        "value": "19e gouvernement de la Cinquième République française"
+      },
+      "ar": {
+        "language": "ar",
+        "value": "الحكومة الثانية التي ترأسها جاك شيراك"
+      },
+      "de": {
+        "language": "de",
+        "value": "Regierung Frankreichs von März 1986 bis Mai 1988"
+      },
+      "en": {
+        "language": "en",
+        "value": "19th Government of the French Fifth Republic"
+      }
+    },
+    "aliases": {
+      "fr": [
+        {
+          "language": "fr",
+          "value": "Gouvernement jacques chirac (2)"
+        },
+        {
+          "language": "fr",
+          "value": "Second gouvernement de Jacques Chirac"
+        }
+      ]
+    },
+    "claims": {
+      "P31": [
+        {
+          "mainsnak": {
+            "snaktype": "value",
+            "property": "P31",
+            "hash": "88767a83ecd2d8df230085e36107333e77ecda32",
+            "datavalue": {
+              "value": {
+                "entity-type": "item",
+                "numeric-id": 1450662,
+                "id": "Q1450662"
+              },
+              "type": "wikibase-entityid"
+            },
+            "datatype": "wikibase-item"
+          },
+          "type": "statement",
+          "id": "Q3112150$0BF1EC38-C3C7-4ABE-A3E3-2096A5CCB579",
+          "rank": "normal"
+        },
+        {
+          "mainsnak": {
+            "snaktype": "value",
+            "property": "P31",
+            "hash": "d5828ee411170770d5ef20a6da9b3c87db06b2e4",
+            "datavalue": {
+              "value": {
+                "entity-type": "item",
+                "numeric-id": 7188,
+                "id": "Q7188"
+              },
+              "type": "wikibase-entityid"
+            },
+            "datatype": "wikibase-item"
+          },
+          "type": "statement",
+          "id": "Q3112150$f1e5be56-40d0-de01-a732-65a03c179ff7",
+          "rank": "normal"
+        }
+      ],
+      "P1366": [
+        {
+          "mainsnak": {
+            "snaktype": "value",
+            "property": "P1366",
+            "hash": "e32709b07b76b4f3cc0d152142ee6466b6fa9e2f",
+            "datavalue": {
+              "value": {
+                "entity-type": "item",
+                "numeric-id": 391594,
+                "id": "Q391594"
+              },
+              "type": "wikibase-entityid"
+            },
+            "datatype": "wikibase-item"
+          },
+          "type": "statement",
+          "id": "Q3112150$871BC1E8-B13A-4A09-B7A4-2289E80699D8",
+          "rank": "normal",
+          "references": [
+            {
+              "hash": "d4bd87b862b12d99d26e86472d44f26858dee639",
+              "snaks": {
+                "P143": [
+                  {
+                    "snaktype": "value",
+                    "property": "P143",
+                    "hash": "f30cbd35620c4ea6d0633aaf0210a8916130469b",
+                    "datavalue": {
+                      "value": {
+                        "entity-type": "item",
+                        "numeric-id": 8447,
+                        "id": "Q8447"
+                      },
+                      "type": "wikibase-entityid"
+                    },
+                    "datatype": "wikibase-item"
+                  }
+                ]
+              },
+              "snaks-order": [
+                "P143"
+              ]
+            }
+          ]
+        }
+      ],
+      "P1365": [
+        {
+          "mainsnak": {
+            "snaktype": "value",
+            "property": "P1365",
+            "hash": "10a21f2a9da7174f76aaf97e054346f2009ff84b",
+            "datavalue": {
+              "value": {
+                "entity-type": "item",
+                "numeric-id": 2783565,
+                "id": "Q2783565"
+              },
+              "type": "wikibase-entityid"
+            },
+            "datatype": "wikibase-item"
+          },
+          "type": "statement",
+          "id": "Q3112150$D602E5AA-4211-47FD-AADB-7B7A6B7CFC1B",
+          "rank": "normal",
+          "references": [
+            {
+              "hash": "d4bd87b862b12d99d26e86472d44f26858dee639",
+              "snaks": {
+                "P143": [
+                  {
+                    "snaktype": "value",
+                    "property": "P143",
+                    "hash": "f30cbd35620c4ea6d0633aaf0210a8916130469b",
+                    "datavalue": {
+                      "value": {
+                        "entity-type": "item",
+                        "numeric-id": 8447,
+                        "id": "Q8447"
+                      },
+                      "type": "wikibase-entityid"
+                    },
+                    "datatype": "wikibase-item"
+                  }
+                ]
+              },
+              "snaks-order": [
+                "P143"
+              ]
+            }
+          ]
+        }
+      ],
+      "P17": [
+        {
+          "mainsnak": {
+            "snaktype": "value",
+            "property": "P17",
+            "hash": "c05db5d169c2560b9799d567a803d20a392f53e4",
+            "datavalue": {
+              "value": {
+                "entity-type": "item",
+                "numeric-id": 142,
+                "id": "Q142"
+              },
+              "type": "wikibase-entityid"
+            },
+            "datatype": "wikibase-item"
+          },
+          "type": "statement",
+          "id": "Q3112150$BED129A7-E495-4DD2-80DC-682C24D7C647",
+          "rank": "normal"
+        }
+      ],
+      "P580": [
+        {
+          "mainsnak": {
+            "snaktype": "value",
+            "property": "P580",
+            "hash": "47f1417b7b7ca9306b6fff378aa4ade874e0172b",
+            "datavalue": {
+              "value": {
+                "time": "+1986-03-20T00:00:00Z",
+                "timezone": 0,
+                "before": 0,
+                "after": 0,
+                "precision": 11,
+                "calendarmodel": "http://www.wikidata.org/entity/Q1985727"
+              },
+              "type": "time"
+            },
+            "datatype": "time"
+          },
+          "type": "statement",
+          "id": "Q3112150$8a7118de-4097-2c4c-2eba-e9d819d368cd",
+          "rank": "normal"
+        }
+      ],
+      "P582": [
+        {
+          "mainsnak": {
+            "snaktype": "value",
+            "property": "P582",
+            "hash": "63105e1e485cf6a1a7f3418a7c4b852715b3b18b",
+            "datavalue": {
+              "value": {
+                "time": "+1988-05-10T00:00:00Z",
+                "timezone": 0,
+                "before": 0,
+                "after": 0,
+                "precision": 11,
+                "calendarmodel": "http://www.wikidata.org/entity/Q1985727"
+              },
+              "type": "time"
+            },
+            "datatype": "time"
+          },
+          "type": "statement",
+          "id": "Q3112150$933dad51-4839-30ba-6252-21f74a4d127d",
+          "rank": "normal"
+        }
+      ],
+      "P6": [
+        {
+          "mainsnak": {
+            "snaktype": "value",
+            "property": "P6",
+            "hash": "6fba88655ddf271ad3f1a41cd6e1532230ce11dc",
+            "datavalue": {
+              "value": {
+                "entity-type": "item",
+                "numeric-id": 2105,
+                "id": "Q2105"
+              },
+              "type": "wikibase-entityid"
+            },
+            "datatype": "wikibase-item"
+          },
+          "type": "statement",
+          "id": "Q3112150$244a7cd6-47aa-0fb8-7d9b-6897ffe15479",
+          "rank": "normal"
+        }
+      ],
+      "P35": [
+        {
+          "mainsnak": {
+            "snaktype": "value",
+            "property": "P35",
+            "hash": "3e8adfb455e4c2d9b1218d28b67a5dd979419c8a",
+            "datavalue": {
+              "value": {
+                "entity-type": "item",
+                "numeric-id": 2038,
+                "id": "Q2038"
+              },
+              "type": "wikibase-entityid"
+            },
+            "datatype": "wikibase-item"
+          },
+          "type": "statement",
+          "id": "Q3112150$fa6399f0-401e-7d46-3707-013c46bd3a62",
+          "rank": "normal"
+        }
+      ],
+      "P122": [
+        {
+          "mainsnak": {
+            "snaktype": "value",
+            "property": "P122",
+            "hash": "1171c7b136a687b1d731cda57084d8653fc51785",
+            "datavalue": {
+              "value": {
+                "entity-type": "item",
+                "numeric-id": 200686,
+                "id": "Q200686"
+              },
+              "type": "wikibase-entityid"
+            },
+            "datatype": "wikibase-item"
+          },
+          "type": "statement",
+          "id": "Q3112150$d604e2d3-4dfb-0bd2-2b6c-a98ff5c8cd61",
+          "rank": "normal"
+        }
+      ],
+      "P2937": [
+        {
+          "mainsnak": {
+            "snaktype": "value",
+            "property": "P2937",
+            "hash": "e9acf0cd60a0ce4c8ea2e8a7d02e651bb8f1f2bf",
+            "datavalue": {
+              "value": {
+                "entity-type": "item",
+                "numeric-id": 3552944,
+                "id": "Q3552944"
+              },
+              "type": "wikibase-entityid"
+            },
+            "datatype": "wikibase-item"
+          },
+          "type": "statement",
+          "id": "Q3112150$35e4f71d-45d7-4979-d994-53479b57117d",
+          "rank": "normal"
+        }
+      ],
+      "P2671": [
+        {
+          "mainsnak": {
+            "snaktype": "value",
+            "property": "P2671",
+            "hash": "3ece78b1ba77599aae202cfc14b35b3754c79a6e",
+            "datavalue": {
+              "value": "/g/120jxm9w",
+              "type": "string"
+            },
+            "datatype": "external-id"
+          },
+          "type": "statement",
+          "id": "Q3112150$158092CA-5DC0-465B-971C-3A228B39E33F",
+          "rank": "normal"
+        }
+      ],
+      "P18": [
+        {
+          "mainsnak": {
+            "snaktype": "value",
+            "property": "P18",
+            "hash": "4112fd24b45d70efeb7977e97c22418ec9209aa6",
+            "datavalue": {
+              "value": "Chirac II.png",
+              "type": "string"
+            },
+            "datatype": "commonsMedia"
+          },
+          "type": "statement",
+          "id": "Q3112150$17e3ce17-4936-b14f-a330-75b2a08e2a45",
+          "rank": "normal"
+        }
+      ],
+      "P373": [
+        {
+          "mainsnak": {
+            "snaktype": "value",
+            "property": "P373",
+            "hash": "f51954c892ab16bbc8491d44ace711109bedc001",
+            "datavalue": {
+              "value": "Ministers of Jacques Chirac (2)",
+              "type": "string"
+            },
+            "datatype": "string"
+          },
+          "type": "statement",
+          "id": "Q3112150$11cf6fcf-afb1-44de-ad80-4297cc8e8018",
+          "rank": "normal"
+        }
+      ],
+      "P571": [
+        {
+          "mainsnak": {
+            "snaktype": "value",
+            "property": "P571",
+            "hash": "429163c3692b8765f2bf9bec8bf06e8f673625ca",
+            "datavalue": {
+              "value": {
+                "time": "+1986-03-20T00:00:00Z",
+                "timezone": 0,
+                "before": 0,
+                "after": 0,
+                "precision": 11,
+                "calendarmodel": "http://www.wikidata.org/entity/Q1985727"
+              },
+              "type": "time"
+            },
+            "datatype": "time"
+          },
+          "type": "statement",
+          "id": "Q3112150$0542159B-524B-4B2C-B3DF-0BAD34D246BD",
+          "rank": "normal",
+          "references": [
+            {
+              "hash": "12b7089cef25a1a1bb5be9a4a51bcc68bec9422a",
+              "snaks": {
+                "P143": [
+                  {
+                    "snaktype": "value",
+                    "property": "P143",
+                    "hash": "f30cbd35620c4ea6d0633aaf0210a8916130469b",
+                    "datavalue": {
+                      "value": {
+                        "entity-type": "item",
+                        "numeric-id": 8447,
+                        "id": "Q8447"
+                      },
+                      "type": "wikibase-entityid"
+                    },
+                    "datatype": "wikibase-item"
+                  }
+                ],
+                "P4656": [
+                  {
+                    "snaktype": "value",
+                    "property": "P4656",
+                    "hash": "0781c55dbeb1e964aca345763547d7a25bbd33b9",
+                    "datavalue": {
+                      "value": "https://fr.wikipedia.org/w/index.php?title=Gouvernement_Jacques_Chirac_(2)&oldid=214069477",
+                      "type": "string"
+                    },
+                    "datatype": "url"
+                  }
+                ]
+              },
+              "snaks-order": [
+                "P143",
+                "P4656"
+              ]
+            }
+          ]
+        }
+      ],
+      "P576": [
+        {
+          "mainsnak": {
+            "snaktype": "value",
+            "property": "P576",
+            "hash": "e1af6f8ecec848968fa94c7951b09e9adfa27b2d",
+            "datavalue": {
+              "value": {
+                "time": "+1988-05-10T00:00:00Z",
+                "timezone": 0,
+                "before": 0,
+                "after": 0,
+                "precision": 11,
+                "calendarmodel": "http://www.wikidata.org/entity/Q1985727"
+              },
+              "type": "time"
+            },
+            "datatype": "time"
+          },
+          "type": "statement",
+          "id": "Q3112150$CFC81704-3753-4167-9BB4-734A13917498",
+          "rank": "normal",
+          "references": [
+            {
+              "hash": "12b7089cef25a1a1bb5be9a4a51bcc68bec9422a",
+              "snaks": {
+                "P143": [
+                  {
+                    "snaktype": "value",
+                    "property": "P143",
+                    "hash": "f30cbd35620c4ea6d0633aaf0210a8916130469b",
+                    "datavalue": {
+                      "value": {
+                        "entity-type": "item",
+                        "numeric-id": 8447,
+                        "id": "Q8447"
+                      },
+                      "type": "wikibase-entityid"
+                    },
+                    "datatype": "wikibase-item"
+                  }
+                ],
+                "P4656": [
+                  {
+                    "snaktype": "value",
+                    "property": "P4656",
+                    "hash": "0781c55dbeb1e964aca345763547d7a25bbd33b9",
+                    "datavalue": {
+                      "value": "https://fr.wikipedia.org/w/index.php?title=Gouvernement_Jacques_Chirac_(2)&oldid=214069477",
+                      "type": "string"
+                    },
+                    "datatype": "url"
+                  }
+                ]
+              },
+              "snaks-order": [
+                "P143",
+                "P4656"
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    "sitelinks": {
+      "commonswiki": {
+        "site": "commonswiki",
+        "title": "Category:Ministers of Jacques Chirac (2)",
+        "badges": [],
+        "url": "https://commons.wikimedia.org/wiki/Category:Ministers_of_Jacques_Chirac_(2)"
+      },
+      "dewiki": {
+        "site": "dewiki",
+        "title": "Kabinett Chirac II",
+        "badges": [],
+        "url": "https://de.wikipedia.org/wiki/Kabinett_Chirac_II"
+      },
+      "eowiki": {
+        "site": "eowiki",
+        "title": "Ministraro dua de Jacques Chirac",
+        "badges": [],
+        "url": "https://eo.wikipedia.org/wiki/Ministraro_dua_de_Jacques_Chirac"
+      },
+      "frwiki": {
+        "site": "frwiki",
+        "title": "Gouvernement Chirac II",
+        "badges": [],
+        "url": "https://fr.wikipedia.org/wiki/Gouvernement_Chirac_II"
+      },
+      "nlwiki": {
+        "site": "nlwiki",
+        "title": "Regering-Chirac II",
+        "badges": [],
+        "url": "https://nl.wikipedia.org/wiki/Regering-Chirac_II"
+      },
+      "trwiki": {
+        "site": "trwiki",
+        "title": "2. Jacques Chirac Hükûmeti",
+        "badges": [],
+        "url": "https://tr.wikipedia.org/wiki/2._Jacques_Chirac_H%C3%BCk%C3%BBmeti"
+      }
+    }
+  }
+}

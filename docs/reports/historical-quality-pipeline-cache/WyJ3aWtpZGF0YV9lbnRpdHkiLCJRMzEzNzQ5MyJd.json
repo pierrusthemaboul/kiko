@@ -1,0 +1,72 @@
+{
+  "pageid": 2997528,
+  "ns": 0,
+  "title": "Q3137493",
+  "lastrevid": 1368174794,
+  "modified": "2021-02-23T10:43:05Z",
+  "type": "item",
+  "id": "Q3137493",
+  "labels": {
+    "fr": {
+      "language": "fr",
+      "value": "histoire des conseils de prud'hommes en France"
+    }
+  },
+  "descriptions": {},
+  "aliases": {
+    "fr": [
+      {
+        "language": "fr",
+        "value": "Conseil de Prud'hommes en France - Histoire"
+      }
+    ]
+  },
+  "claims": {
+    "P31": [
+      {
+        "mainsnak": {
+          "snaktype": "value",
+          "property": "P31",
+          "hash": "7ad5c7929af39fc2ff8afed55f1192f80e71d936",
+          "datavalue": {
+            "value": {
+              "entity-type": "item",
+              "numeric-id": 17524420,
+              "id": "Q17524420"
+            },
+            "type": "wikibase-entityid"
+          },
+          "datatype": "wikibase-item"
+        },
+        "type": "statement",
+        "id": "Q3137493$EE99917F-AF59-45E5-B5CE-27CEAF72CDF2",
+        "rank": "normal"
+      }
+    ],
+    "P2671": [
+      {
+        "mainsnak": {
+          "snaktype": "value",
+          "property": "P2671",
+          "hash": "72e9b568e76a13fef22c6451a7b41763b9eaf88b",
+          "datavalue": {
+            "value": "/g/121ln0j_",
+            "type": "string"
+          },
+          "datatype": "external-id"
+        },
+        "type": "statement",
+        "id": "Q3137493$41582CA3-8046-4D1B-AE61-F65CF54F3F4F",
+        "rank": "normal"
+      }
+    ]
+  },
+  "sitelinks": {
+    "frwiki": {
+      "site": "frwiki",
+      "title": "Histoire des conseils de prud'hommes en France",
+      "badges": [],
+      "url": "https://fr.wikipedia.org/wiki/Histoire_des_conseils_de_prud%27hommes_en_France"
+    }
+  }
+}

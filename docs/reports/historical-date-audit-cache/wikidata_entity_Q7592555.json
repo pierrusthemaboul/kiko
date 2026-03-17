@@ -1,0 +1,1316 @@
+{
+  "saved_at": "2026-03-07T15:17:27.518Z",
+  "value": {
+    "pageid": 7511115,
+    "ns": 0,
+    "title": "Q7592555",
+    "lastrevid": 2453399902,
+    "modified": "2026-01-09T23:55:03Z",
+    "type": "item",
+    "id": "Q7592555",
+    "labels": {
+      "en": {
+        "language": "en",
+        "value": "St Augustine Gospels"
+      },
+      "fr": {
+        "language": "fr",
+        "value": "Évangéliaire de saint Augustin"
+      },
+      "pl": {
+        "language": "pl",
+        "value": "Ewangeliarz św. Augustyna"
+      },
+      "de": {
+        "language": "de",
+        "value": "Augustinus-Evangeliar"
+      },
+      "it": {
+        "language": "it",
+        "value": "Vangeli di Sant'Agostino"
+      },
+      "be": {
+        "language": "be",
+        "value": "Евангелле Святога Аўгусціна"
+      },
+      "nl": {
+        "language": "nl",
+        "value": "Evangeliarium van Augustinus van Canterbury"
+      },
+      "la": {
+        "language": "la",
+        "value": "Evangelia Cantuariensia"
+      },
+      "id": {
+        "language": "id",
+        "value": "Kitab Injil Santo Agustinus"
+      },
+      "es": {
+        "language": "es",
+        "value": "Evangelario de San Agustín de Canterbury"
+      },
+      "ru": {
+        "language": "ru",
+        "value": "Евангелие святого Августина"
+      }
+    },
+    "descriptions": {
+      "en": {
+        "language": "en",
+        "value": "illuminated 6th-century gospel book"
+      },
+      "ru": {
+        "language": "ru",
+        "value": "иллюминированный манускрипт Евангелия 6 века"
+      },
+      "it": {
+        "language": "it",
+        "value": "evangeliario miniato in latino (VI secolo)"
+      }
+    },
+    "aliases": {
+      "en": [
+        {
+          "language": "en",
+          "value": "Corpus Christi Cambridge MS 286"
+        }
+      ],
+      "es": [
+        {
+          "language": "es",
+          "value": "Evangeliario de San Agustín de Canterbury"
+        }
+      ],
+      "ru": [
+        {
+          "language": "ru",
+          "value": "CCCC MS. 286"
+        }
+      ]
+    },
+    "claims": {
+      "P373": [
+        {
+          "mainsnak": {
+            "snaktype": "value",
+            "property": "P373",
+            "hash": "d7ba30ae6269925229c47a2c8c2ddc75b949b915",
+            "datavalue": {
+              "value": "Augustine Gospels",
+              "type": "string"
+            },
+            "datatype": "string"
+          },
+          "type": "statement",
+          "id": "q7592555$fca7ccb4-4ae9-4fb9-eea9-31473ea0ece8",
+          "rank": "normal"
+        }
+      ],
+      "P18": [
+        {
+          "mainsnak": {
+            "snaktype": "value",
+            "property": "P18",
+            "hash": "15ba5e7fd61c2fe7fd47134d03ff630cae7fbe07",
+            "datavalue": {
+              "value": "AugsutineGospelsFolio129vStLuke.jpg",
+              "type": "string"
+            },
+            "datatype": "commonsMedia"
+          },
+          "type": "statement",
+          "id": "Q7592555$A4901E79-FE0D-47FA-95AC-9E1D2D36DBF2",
+          "rank": "normal",
+          "references": [
+            {
+              "hash": "d4bd87b862b12d99d26e86472d44f26858dee639",
+              "snaks": {
+                "P143": [
+                  {
+                    "snaktype": "value",
+                    "property": "P143",
+                    "hash": "f30cbd35620c4ea6d0633aaf0210a8916130469b",
+                    "datavalue": {
+                      "value": {
+                        "entity-type": "item",
+                        "numeric-id": 8447,
+                        "id": "Q8447"
+                      },
+                      "type": "wikibase-entityid"
+                    },
+                    "datatype": "wikibase-item"
+                  }
+                ]
+              },
+              "snaks-order": [
+                "P143"
+              ]
+            }
+          ]
+        }
+      ],
+      "P31": [
+        {
+          "mainsnak": {
+            "snaktype": "value",
+            "property": "P31",
+            "hash": "79c2189dab73959fdece09c59f53d621c1aef01d",
+            "datavalue": {
+              "value": {
+                "entity-type": "item",
+                "numeric-id": 48498,
+                "id": "Q48498"
+              },
+              "type": "wikibase-entityid"
+            },
+            "datatype": "wikibase-item"
+          },
+          "type": "statement",
+          "id": "Q7592555$CE0B4B09-7DBC-49D2-BE5C-FE95BA73F410",
+          "rank": "normal",
+          "references": [
+            {
+              "hash": "bb92b66862c972d7dd191c0a991459faf7e9bf14",
+              "snaks": {
+                "P248": [
+                  {
+                    "snaktype": "value",
+                    "property": "P248",
+                    "hash": "d4236a0225c9d76c784939fa97836985540aaa03",
+                    "datavalue": {
+                      "value": {
+                        "entity-type": "item",
+                        "numeric-id": 7138341,
+                        "id": "Q7138341"
+                      },
+                      "type": "wikibase-entityid"
+                    },
+                    "datatype": "wikibase-item"
+                  }
+                ],
+                "P1476": [
+                  {
+                    "snaktype": "value",
+                    "property": "P1476",
+                    "hash": "7d6252e41a93bc609c2027f77fd865c9e688c1c4",
+                    "datavalue": {
+                      "value": {
+                        "text": "Cambridge, Corpus Christi College, MS 286: Gospels of St Augustine.",
+                        "language": "en"
+                      },
+                      "type": "monolingualtext"
+                    },
+                    "datatype": "monolingualtext"
+                  }
+                ],
+                "P854": [
+                  {
+                    "snaktype": "value",
+                    "property": "P854",
+                    "hash": "0b74472fd766d741bffa1af2458a1f837b8e480f",
+                    "datavalue": {
+                      "value": "https://parker.stanford.edu/parker/catalog/mk707wk3350",
+                      "type": "string"
+                    },
+                    "datatype": "url"
+                  }
+                ]
+              },
+              "snaks-order": [
+                "P248",
+                "P1476",
+                "P854"
+              ]
+            }
+          ]
+        }
+      ],
+      "P195": [
+        {
+          "mainsnak": {
+            "snaktype": "value",
+            "property": "P195",
+            "hash": "8bf21cef2ef658f9bf5ef6820b244b44d43930ef",
+            "datavalue": {
+              "value": {
+                "entity-type": "item",
+                "numeric-id": 536282,
+                "id": "Q536282"
+              },
+              "type": "wikibase-entityid"
+            },
+            "datatype": "wikibase-item"
+          },
+          "type": "statement",
+          "id": "Q7592555$ecaeb935-414d-179a-75c6-1dd27cc84a8a",
+          "rank": "normal",
+          "references": [
+            {
+              "hash": "bb92b66862c972d7dd191c0a991459faf7e9bf14",
+              "snaks": {
+                "P248": [
+                  {
+                    "snaktype": "value",
+                    "property": "P248",
+                    "hash": "d4236a0225c9d76c784939fa97836985540aaa03",
+                    "datavalue": {
+                      "value": {
+                        "entity-type": "item",
+                        "numeric-id": 7138341,
+                        "id": "Q7138341"
+                      },
+                      "type": "wikibase-entityid"
+                    },
+                    "datatype": "wikibase-item"
+                  }
+                ],
+                "P1476": [
+                  {
+                    "snaktype": "value",
+                    "property": "P1476",
+                    "hash": "7d6252e41a93bc609c2027f77fd865c9e688c1c4",
+                    "datavalue": {
+                      "value": {
+                        "text": "Cambridge, Corpus Christi College, MS 286: Gospels of St Augustine.",
+                        "language": "en"
+                      },
+                      "type": "monolingualtext"
+                    },
+                    "datatype": "monolingualtext"
+                  }
+                ],
+                "P854": [
+                  {
+                    "snaktype": "value",
+                    "property": "P854",
+                    "hash": "0b74472fd766d741bffa1af2458a1f837b8e480f",
+                    "datavalue": {
+                      "value": "https://parker.stanford.edu/parker/catalog/mk707wk3350",
+                      "type": "string"
+                    },
+                    "datatype": "url"
+                  }
+                ]
+              },
+              "snaks-order": [
+                "P248",
+                "P1476",
+                "P854"
+              ]
+            }
+          ]
+        }
+      ],
+      "P217": [
+        {
+          "mainsnak": {
+            "snaktype": "value",
+            "property": "P217",
+            "hash": "89f96ccbf934539e107d3b6aae6d807cb997cd20",
+            "datavalue": {
+              "value": "CCCC MS 286",
+              "type": "string"
+            },
+            "datatype": "string"
+          },
+          "type": "statement",
+          "qualifiers": {
+            "P195": [
+              {
+                "snaktype": "value",
+                "property": "P195",
+                "hash": "8bf21cef2ef658f9bf5ef6820b244b44d43930ef",
+                "datavalue": {
+                  "value": {
+                    "entity-type": "item",
+                    "numeric-id": 536282,
+                    "id": "Q536282"
+                  },
+                  "type": "wikibase-entityid"
+                },
+                "datatype": "wikibase-item"
+              }
+            ]
+          },
+          "qualifiers-order": [
+            "P195"
+          ],
+          "id": "Q7592555$5fe6a2ab-468c-d530-a7d4-1981c3bfd0dd",
+          "rank": "normal",
+          "references": [
+            {
+              "hash": "bb92b66862c972d7dd191c0a991459faf7e9bf14",
+              "snaks": {
+                "P248": [
+                  {
+                    "snaktype": "value",
+                    "property": "P248",
+                    "hash": "d4236a0225c9d76c784939fa97836985540aaa03",
+                    "datavalue": {
+                      "value": {
+                        "entity-type": "item",
+                        "numeric-id": 7138341,
+                        "id": "Q7138341"
+                      },
+                      "type": "wikibase-entityid"
+                    },
+                    "datatype": "wikibase-item"
+                  }
+                ],
+                "P1476": [
+                  {
+                    "snaktype": "value",
+                    "property": "P1476",
+                    "hash": "7d6252e41a93bc609c2027f77fd865c9e688c1c4",
+                    "datavalue": {
+                      "value": {
+                        "text": "Cambridge, Corpus Christi College, MS 286: Gospels of St Augustine.",
+                        "language": "en"
+                      },
+                      "type": "monolingualtext"
+                    },
+                    "datatype": "monolingualtext"
+                  }
+                ],
+                "P854": [
+                  {
+                    "snaktype": "value",
+                    "property": "P854",
+                    "hash": "0b74472fd766d741bffa1af2458a1f837b8e480f",
+                    "datavalue": {
+                      "value": "https://parker.stanford.edu/parker/catalog/mk707wk3350",
+                      "type": "string"
+                    },
+                    "datatype": "url"
+                  }
+                ]
+              },
+              "snaks-order": [
+                "P248",
+                "P1476",
+                "P854"
+              ]
+            }
+          ]
+        }
+      ],
+      "P571": [
+        {
+          "mainsnak": {
+            "snaktype": "value",
+            "property": "P571",
+            "hash": "771f8045996d0eed06990d4b9ae636fc0ad92d41",
+            "datavalue": {
+              "value": {
+                "time": "+0600-00-00T00:00:00Z",
+                "timezone": 0,
+                "before": 0,
+                "after": 0,
+                "precision": 7,
+                "calendarmodel": "http://www.wikidata.org/entity/Q1985786"
+              },
+              "type": "time"
+            },
+            "datatype": "time"
+          },
+          "type": "statement",
+          "id": "Q7592555$77660884-4a7b-4ab4-291d-b970dad640a6",
+          "rank": "normal",
+          "references": [
+            {
+              "hash": "bb92b66862c972d7dd191c0a991459faf7e9bf14",
+              "snaks": {
+                "P248": [
+                  {
+                    "snaktype": "value",
+                    "property": "P248",
+                    "hash": "d4236a0225c9d76c784939fa97836985540aaa03",
+                    "datavalue": {
+                      "value": {
+                        "entity-type": "item",
+                        "numeric-id": 7138341,
+                        "id": "Q7138341"
+                      },
+                      "type": "wikibase-entityid"
+                    },
+                    "datatype": "wikibase-item"
+                  }
+                ],
+                "P1476": [
+                  {
+                    "snaktype": "value",
+                    "property": "P1476",
+                    "hash": "7d6252e41a93bc609c2027f77fd865c9e688c1c4",
+                    "datavalue": {
+                      "value": {
+                        "text": "Cambridge, Corpus Christi College, MS 286: Gospels of St Augustine.",
+                        "language": "en"
+                      },
+                      "type": "monolingualtext"
+                    },
+                    "datatype": "monolingualtext"
+                  }
+                ],
+                "P854": [
+                  {
+                    "snaktype": "value",
+                    "property": "P854",
+                    "hash": "0b74472fd766d741bffa1af2458a1f837b8e480f",
+                    "datavalue": {
+                      "value": "https://parker.stanford.edu/parker/catalog/mk707wk3350",
+                      "type": "string"
+                    },
+                    "datatype": "url"
+                  }
+                ]
+              },
+              "snaks-order": [
+                "P248",
+                "P1476",
+                "P854"
+              ]
+            }
+          ]
+        }
+      ],
+      "P186": [
+        {
+          "mainsnak": {
+            "snaktype": "value",
+            "property": "P186",
+            "hash": "7f3e17a78196b07cf3fcfbd51e4dc2d05f04f2c4",
+            "datavalue": {
+              "value": {
+                "entity-type": "item",
+                "numeric-id": 378274,
+                "id": "Q378274"
+              },
+              "type": "wikibase-entityid"
+            },
+            "datatype": "wikibase-item"
+          },
+          "type": "statement",
+          "id": "Q7592555$4db83bb1-4050-076f-0233-9483a90e6f85",
+          "rank": "normal",
+          "references": [
+            {
+              "hash": "bb92b66862c972d7dd191c0a991459faf7e9bf14",
+              "snaks": {
+                "P248": [
+                  {
+                    "snaktype": "value",
+                    "property": "P248",
+                    "hash": "d4236a0225c9d76c784939fa97836985540aaa03",
+                    "datavalue": {
+                      "value": {
+                        "entity-type": "item",
+                        "numeric-id": 7138341,
+                        "id": "Q7138341"
+                      },
+                      "type": "wikibase-entityid"
+                    },
+                    "datatype": "wikibase-item"
+                  }
+                ],
+                "P1476": [
+                  {
+                    "snaktype": "value",
+                    "property": "P1476",
+                    "hash": "7d6252e41a93bc609c2027f77fd865c9e688c1c4",
+                    "datavalue": {
+                      "value": {
+                        "text": "Cambridge, Corpus Christi College, MS 286: Gospels of St Augustine.",
+                        "language": "en"
+                      },
+                      "type": "monolingualtext"
+                    },
+                    "datatype": "monolingualtext"
+                  }
+                ],
+                "P854": [
+                  {
+                    "snaktype": "value",
+                    "property": "P854",
+                    "hash": "0b74472fd766d741bffa1af2458a1f837b8e480f",
+                    "datavalue": {
+                      "value": "https://parker.stanford.edu/parker/catalog/mk707wk3350",
+                      "type": "string"
+                    },
+                    "datatype": "url"
+                  }
+                ]
+              },
+              "snaks-order": [
+                "P248",
+                "P1476",
+                "P854"
+              ]
+            }
+          ]
+        }
+      ],
+      "P276": [
+        {
+          "mainsnak": {
+            "snaktype": "value",
+            "property": "P276",
+            "hash": "932f6296e53e5a26169ec778584fda9fae7516d2",
+            "datavalue": {
+              "value": {
+                "entity-type": "item",
+                "numeric-id": 536282,
+                "id": "Q536282"
+              },
+              "type": "wikibase-entityid"
+            },
+            "datatype": "wikibase-item"
+          },
+          "type": "statement",
+          "id": "Q7592555$096d5067-4ef9-fe63-6e8a-952ba2d293cc",
+          "rank": "normal",
+          "references": [
+            {
+              "hash": "bb92b66862c972d7dd191c0a991459faf7e9bf14",
+              "snaks": {
+                "P248": [
+                  {
+                    "snaktype": "value",
+                    "property": "P248",
+                    "hash": "d4236a0225c9d76c784939fa97836985540aaa03",
+                    "datavalue": {
+                      "value": {
+                        "entity-type": "item",
+                        "numeric-id": 7138341,
+                        "id": "Q7138341"
+                      },
+                      "type": "wikibase-entityid"
+                    },
+                    "datatype": "wikibase-item"
+                  }
+                ],
+                "P1476": [
+                  {
+                    "snaktype": "value",
+                    "property": "P1476",
+                    "hash": "7d6252e41a93bc609c2027f77fd865c9e688c1c4",
+                    "datavalue": {
+                      "value": {
+                        "text": "Cambridge, Corpus Christi College, MS 286: Gospels of St Augustine.",
+                        "language": "en"
+                      },
+                      "type": "monolingualtext"
+                    },
+                    "datatype": "monolingualtext"
+                  }
+                ],
+                "P854": [
+                  {
+                    "snaktype": "value",
+                    "property": "P854",
+                    "hash": "0b74472fd766d741bffa1af2458a1f837b8e480f",
+                    "datavalue": {
+                      "value": "https://parker.stanford.edu/parker/catalog/mk707wk3350",
+                      "type": "string"
+                    },
+                    "datatype": "url"
+                  }
+                ]
+              },
+              "snaks-order": [
+                "P248",
+                "P1476",
+                "P854"
+              ]
+            }
+          ]
+        }
+      ],
+      "P1448": [
+        {
+          "mainsnak": {
+            "snaktype": "value",
+            "property": "P1448",
+            "hash": "c5421b7d35e3a3eb91146d092f1808301d2bf973",
+            "datavalue": {
+              "value": {
+                "text": "Cambridge, Corpus Christi College, MS 286: Gospels of St Augustine",
+                "language": "en"
+              },
+              "type": "monolingualtext"
+            },
+            "datatype": "monolingualtext"
+          },
+          "type": "statement",
+          "id": "Q7592555$c60b659b-422e-3dff-ccc4-1205e4ab47f6",
+          "rank": "normal",
+          "references": [
+            {
+              "hash": "bb92b66862c972d7dd191c0a991459faf7e9bf14",
+              "snaks": {
+                "P248": [
+                  {
+                    "snaktype": "value",
+                    "property": "P248",
+                    "hash": "d4236a0225c9d76c784939fa97836985540aaa03",
+                    "datavalue": {
+                      "value": {
+                        "entity-type": "item",
+                        "numeric-id": 7138341,
+                        "id": "Q7138341"
+                      },
+                      "type": "wikibase-entityid"
+                    },
+                    "datatype": "wikibase-item"
+                  }
+                ],
+                "P1476": [
+                  {
+                    "snaktype": "value",
+                    "property": "P1476",
+                    "hash": "7d6252e41a93bc609c2027f77fd865c9e688c1c4",
+                    "datavalue": {
+                      "value": {
+                        "text": "Cambridge, Corpus Christi College, MS 286: Gospels of St Augustine.",
+                        "language": "en"
+                      },
+                      "type": "monolingualtext"
+                    },
+                    "datatype": "monolingualtext"
+                  }
+                ],
+                "P854": [
+                  {
+                    "snaktype": "value",
+                    "property": "P854",
+                    "hash": "0b74472fd766d741bffa1af2458a1f837b8e480f",
+                    "datavalue": {
+                      "value": "https://parker.stanford.edu/parker/catalog/mk707wk3350",
+                      "type": "string"
+                    },
+                    "datatype": "url"
+                  }
+                ]
+              },
+              "snaks-order": [
+                "P248",
+                "P1476",
+                "P854"
+              ]
+            }
+          ]
+        },
+        {
+          "mainsnak": {
+            "snaktype": "value",
+            "property": "P1448",
+            "hash": "5025e7500a73e70110097408290f731fd26c9cc0",
+            "datavalue": {
+              "value": {
+                "text": "Evangelia Cantuariensia",
+                "language": "la"
+              },
+              "type": "monolingualtext"
+            },
+            "datatype": "monolingualtext"
+          },
+          "type": "statement",
+          "id": "Q7592555$464bf60c-454d-d114-746c-9c5941c537df",
+          "rank": "normal",
+          "references": [
+            {
+              "hash": "bb92b66862c972d7dd191c0a991459faf7e9bf14",
+              "snaks": {
+                "P248": [
+                  {
+                    "snaktype": "value",
+                    "property": "P248",
+                    "hash": "d4236a0225c9d76c784939fa97836985540aaa03",
+                    "datavalue": {
+                      "value": {
+                        "entity-type": "item",
+                        "numeric-id": 7138341,
+                        "id": "Q7138341"
+                      },
+                      "type": "wikibase-entityid"
+                    },
+                    "datatype": "wikibase-item"
+                  }
+                ],
+                "P1476": [
+                  {
+                    "snaktype": "value",
+                    "property": "P1476",
+                    "hash": "7d6252e41a93bc609c2027f77fd865c9e688c1c4",
+                    "datavalue": {
+                      "value": {
+                        "text": "Cambridge, Corpus Christi College, MS 286: Gospels of St Augustine.",
+                        "language": "en"
+                      },
+                      "type": "monolingualtext"
+                    },
+                    "datatype": "monolingualtext"
+                  }
+                ],
+                "P854": [
+                  {
+                    "snaktype": "value",
+                    "property": "P854",
+                    "hash": "0b74472fd766d741bffa1af2458a1f837b8e480f",
+                    "datavalue": {
+                      "value": "https://parker.stanford.edu/parker/catalog/mk707wk3350",
+                      "type": "string"
+                    },
+                    "datatype": "url"
+                  }
+                ]
+              },
+              "snaks-order": [
+                "P248",
+                "P1476",
+                "P854"
+              ]
+            }
+          ]
+        }
+      ],
+      "P407": [
+        {
+          "mainsnak": {
+            "snaktype": "value",
+            "property": "P407",
+            "hash": "a793ff44bd72361987bc339912d379e650462d64",
+            "datavalue": {
+              "value": {
+                "entity-type": "item",
+                "numeric-id": 397,
+                "id": "Q397"
+              },
+              "type": "wikibase-entityid"
+            },
+            "datatype": "wikibase-item"
+          },
+          "type": "statement",
+          "id": "Q7592555$2862facf-4929-99dc-03d6-9e81bf41616d",
+          "rank": "normal",
+          "references": [
+            {
+              "hash": "bb92b66862c972d7dd191c0a991459faf7e9bf14",
+              "snaks": {
+                "P248": [
+                  {
+                    "snaktype": "value",
+                    "property": "P248",
+                    "hash": "d4236a0225c9d76c784939fa97836985540aaa03",
+                    "datavalue": {
+                      "value": {
+                        "entity-type": "item",
+                        "numeric-id": 7138341,
+                        "id": "Q7138341"
+                      },
+                      "type": "wikibase-entityid"
+                    },
+                    "datatype": "wikibase-item"
+                  }
+                ],
+                "P1476": [
+                  {
+                    "snaktype": "value",
+                    "property": "P1476",
+                    "hash": "7d6252e41a93bc609c2027f77fd865c9e688c1c4",
+                    "datavalue": {
+                      "value": {
+                        "text": "Cambridge, Corpus Christi College, MS 286: Gospels of St Augustine.",
+                        "language": "en"
+                      },
+                      "type": "monolingualtext"
+                    },
+                    "datatype": "monolingualtext"
+                  }
+                ],
+                "P854": [
+                  {
+                    "snaktype": "value",
+                    "property": "P854",
+                    "hash": "0b74472fd766d741bffa1af2458a1f837b8e480f",
+                    "datavalue": {
+                      "value": "https://parker.stanford.edu/parker/catalog/mk707wk3350",
+                      "type": "string"
+                    },
+                    "datatype": "url"
+                  }
+                ]
+              },
+              "snaks-order": [
+                "P248",
+                "P1476",
+                "P854"
+              ]
+            }
+          ]
+        },
+        {
+          "mainsnak": {
+            "snaktype": "value",
+            "property": "P407",
+            "hash": "74384a92576268af25dfea18387cd915ea42e605",
+            "datavalue": {
+              "value": {
+                "entity-type": "item",
+                "numeric-id": 42365,
+                "id": "Q42365"
+              },
+              "type": "wikibase-entityid"
+            },
+            "datatype": "wikibase-item"
+          },
+          "type": "statement",
+          "id": "Q7592555$48c850f7-4768-b9f0-5839-a3726a164a2c",
+          "rank": "normal",
+          "references": [
+            {
+              "hash": "bb92b66862c972d7dd191c0a991459faf7e9bf14",
+              "snaks": {
+                "P248": [
+                  {
+                    "snaktype": "value",
+                    "property": "P248",
+                    "hash": "d4236a0225c9d76c784939fa97836985540aaa03",
+                    "datavalue": {
+                      "value": {
+                        "entity-type": "item",
+                        "numeric-id": 7138341,
+                        "id": "Q7138341"
+                      },
+                      "type": "wikibase-entityid"
+                    },
+                    "datatype": "wikibase-item"
+                  }
+                ],
+                "P1476": [
+                  {
+                    "snaktype": "value",
+                    "property": "P1476",
+                    "hash": "7d6252e41a93bc609c2027f77fd865c9e688c1c4",
+                    "datavalue": {
+                      "value": {
+                        "text": "Cambridge, Corpus Christi College, MS 286: Gospels of St Augustine.",
+                        "language": "en"
+                      },
+                      "type": "monolingualtext"
+                    },
+                    "datatype": "monolingualtext"
+                  }
+                ],
+                "P854": [
+                  {
+                    "snaktype": "value",
+                    "property": "P854",
+                    "hash": "0b74472fd766d741bffa1af2458a1f837b8e480f",
+                    "datavalue": {
+                      "value": "https://parker.stanford.edu/parker/catalog/mk707wk3350",
+                      "type": "string"
+                    },
+                    "datatype": "url"
+                  }
+                ]
+              },
+              "snaks-order": [
+                "P248",
+                "P1476",
+                "P854"
+              ]
+            }
+          ]
+        }
+      ],
+      "P608": [
+        {
+          "mainsnak": {
+            "snaktype": "value",
+            "property": "P608",
+            "hash": "5d5636ea497490b5944f8c379d4fd6c919cfbf95",
+            "datavalue": {
+              "value": {
+                "entity-type": "item",
+                "numeric-id": 59591760,
+                "id": "Q59591760"
+              },
+              "type": "wikibase-entityid"
+            },
+            "datatype": "wikibase-item"
+          },
+          "type": "statement",
+          "qualifiers": {
+            "P580": [
+              {
+                "snaktype": "value",
+                "property": "P580",
+                "hash": "95b11fc7c0e91dbb9bfb19e64f8a6a7e50a51df0",
+                "datavalue": {
+                  "value": {
+                    "time": "+2018-10-19T00:00:00Z",
+                    "timezone": 0,
+                    "before": 0,
+                    "after": 0,
+                    "precision": 11,
+                    "calendarmodel": "http://www.wikidata.org/entity/Q1985727"
+                  },
+                  "type": "time"
+                },
+                "datatype": "time"
+              }
+            ],
+            "P582": [
+              {
+                "snaktype": "value",
+                "property": "P582",
+                "hash": "67dfc1a547c2a9cd5a098ee2b3c255c1903b0b90",
+                "datavalue": {
+                  "value": {
+                    "time": "+2019-02-19T00:00:00Z",
+                    "timezone": 0,
+                    "before": 0,
+                    "after": 0,
+                    "precision": 11,
+                    "calendarmodel": "http://www.wikidata.org/entity/Q1985727"
+                  },
+                  "type": "time"
+                },
+                "datatype": "time"
+              }
+            ],
+            "P276": [
+              {
+                "snaktype": "value",
+                "property": "P276",
+                "hash": "ef762da1d0c80c554b9c013f20aaf0d5e0912349",
+                "datavalue": {
+                  "value": {
+                    "entity-type": "item",
+                    "numeric-id": 23308,
+                    "id": "Q23308"
+                  },
+                  "type": "wikibase-entityid"
+                },
+                "datatype": "wikibase-item"
+              }
+            ]
+          },
+          "qualifiers-order": [
+            "P580",
+            "P582",
+            "P276"
+          ],
+          "id": "Q7592555$5F960737-BD2D-4DB9-845D-CD834C810E83",
+          "rank": "normal",
+          "references": [
+            {
+              "hash": "3c83dcadb45cf192bca540e8c3d7fce4cbbda7ed",
+              "snaks": {
+                "P854": [
+                  {
+                    "snaktype": "value",
+                    "property": "P854",
+                    "hash": "74728670d1ceb316bea237537a206cc62c44fd25",
+                    "datavalue": {
+                      "value": "https://www.bl.uk/collection-items/st-augustine-gospels",
+                      "type": "string"
+                    },
+                    "datatype": "url"
+                  }
+                ],
+                "P1476": [
+                  {
+                    "snaktype": "value",
+                    "property": "P1476",
+                    "hash": "56661972f399b2169750acccd16625027fa0446a",
+                    "datavalue": {
+                      "value": {
+                        "text": "St Augustine Gospels",
+                        "language": "en"
+                      },
+                      "type": "monolingualtext"
+                    },
+                    "datatype": "monolingualtext"
+                  }
+                ],
+                "P50": [
+                  {
+                    "snaktype": "value",
+                    "property": "P50",
+                    "hash": "49bf9b646d76013fb468445c35f2619f70036ab8",
+                    "datavalue": {
+                      "value": {
+                        "entity-type": "item",
+                        "numeric-id": 23308,
+                        "id": "Q23308"
+                      },
+                      "type": "wikibase-entityid"
+                    },
+                    "datatype": "wikibase-item"
+                  }
+                ],
+                "P813": [
+                  {
+                    "snaktype": "value",
+                    "property": "P813",
+                    "hash": "152d90d4f72203e55409725e7497e52f967abdff",
+                    "datavalue": {
+                      "value": {
+                        "time": "+2018-12-28T00:00:00Z",
+                        "timezone": 0,
+                        "before": 0,
+                        "after": 0,
+                        "precision": 11,
+                        "calendarmodel": "http://www.wikidata.org/entity/Q1985727"
+                      },
+                      "type": "time"
+                    },
+                    "datatype": "time"
+                  }
+                ]
+              },
+              "snaks-order": [
+                "P854",
+                "P1476",
+                "P50",
+                "P813"
+              ]
+            }
+          ]
+        }
+      ],
+      "P8406": [
+        {
+          "mainsnak": {
+            "snaktype": "value",
+            "property": "P8406",
+            "hash": "8b3e49fbf28759a431dfec334aae06facb8c3bdf",
+            "datavalue": {
+              "value": "T075031",
+              "type": "string"
+            },
+            "datatype": "external-id"
+          },
+          "type": "statement",
+          "id": "Q7592555$A52EC26F-0861-45E3-8E4B-077B95425419",
+          "rank": "normal"
+        }
+      ],
+      "P646": [
+        {
+          "mainsnak": {
+            "snaktype": "value",
+            "property": "P646",
+            "hash": "c1408bce57bdb6ae2a8a049d38cba125f21a8ee7",
+            "datavalue": {
+              "value": "/m/04vbmm",
+              "type": "string"
+            },
+            "datatype": "external-id"
+          },
+          "type": "statement",
+          "id": "Q7592555$6E230B71-35F6-49F4-9075-9EF2128AC369",
+          "rank": "normal"
+        }
+      ],
+      "P2671": [
+        {
+          "mainsnak": {
+            "snaktype": "value",
+            "property": "P2671",
+            "hash": "fc4cc787e5a7cc2b8d808c516aac3420c9193eea",
+            "datavalue": {
+              "value": "/g/11ft3czbx8",
+              "type": "string"
+            },
+            "datatype": "external-id"
+          },
+          "type": "statement",
+          "id": "Q7592555$6AF18A60-DF32-4FF3-BF23-66FADB5E5B4D",
+          "rank": "normal"
+        }
+      ],
+      "P2049": [
+        {
+          "mainsnak": {
+            "snaktype": "value",
+            "property": "P2049",
+            "hash": "166d6df0a6ca4658bc38b705f99af8d9cd744daf",
+            "datavalue": {
+              "value": {
+                "amount": "+19",
+                "unit": "http://www.wikidata.org/entity/Q174728"
+              },
+              "type": "quantity"
+            },
+            "datatype": "quantity"
+          },
+          "type": "statement",
+          "id": "Q7592555$1DD1CC44-614B-4350-B42D-02315F4F8A0A",
+          "rank": "normal",
+          "references": [
+            {
+              "hash": "21fbe18b3818f27d3f06754845083c9579bbbd04",
+              "snaks": {
+                "P143": [
+                  {
+                    "snaktype": "value",
+                    "property": "P143",
+                    "hash": "5a343e7e758a4282a01316d3e959b6e653b767fc",
+                    "datavalue": {
+                      "value": {
+                        "entity-type": "item",
+                        "numeric-id": 11920,
+                        "id": "Q11920"
+                      },
+                      "type": "wikibase-entityid"
+                    },
+                    "datatype": "wikibase-item"
+                  }
+                ],
+                "P4656": [
+                  {
+                    "snaktype": "value",
+                    "property": "P4656",
+                    "hash": "1f3e392170ff483f06911afce8e25f84cf3074d4",
+                    "datavalue": {
+                      "value": "https://it.wikipedia.org/w/index.php?title=Vangeli_di_Sant'Agostino&oldid=120666791",
+                      "type": "string"
+                    },
+                    "datatype": "url"
+                  }
+                ]
+              },
+              "snaks-order": [
+                "P143",
+                "P4656"
+              ]
+            }
+          ]
+        }
+      ],
+      "P2048": [
+        {
+          "mainsnak": {
+            "snaktype": "value",
+            "property": "P2048",
+            "hash": "d8554d9f613aa5ad9189369c7ba51c40e50ac1f7",
+            "datavalue": {
+              "value": {
+                "amount": "+24.5",
+                "unit": "http://www.wikidata.org/entity/Q174728"
+              },
+              "type": "quantity"
+            },
+            "datatype": "quantity"
+          },
+          "type": "statement",
+          "id": "Q7592555$AB264330-8B29-4314-9A1F-3AF4571478ED",
+          "rank": "normal",
+          "references": [
+            {
+              "hash": "8b19efce51405d3e47d56ee947a9cc410adc9d69",
+              "snaks": {
+                "P143": [
+                  {
+                    "snaktype": "value",
+                    "property": "P143",
+                    "hash": "5a343e7e758a4282a01316d3e959b6e653b767fc",
+                    "datavalue": {
+                      "value": {
+                        "entity-type": "item",
+                        "numeric-id": 11920,
+                        "id": "Q11920"
+                      },
+                      "type": "wikibase-entityid"
+                    },
+                    "datatype": "wikibase-item"
+                  }
+                ],
+                "P4656": [
+                  {
+                    "snaktype": "value",
+                    "property": "P4656",
+                    "hash": "f0e6891686e52d2e1c0e29ddeb9ed664378f0a24",
+                    "datavalue": {
+                      "value": "https://it.wikipedia.org/w/index.php?title=Vangeli_di_Sant'Agostino&oldid=123062170",
+                      "type": "string"
+                    },
+                    "datatype": "url"
+                  }
+                ]
+              },
+              "snaks-order": [
+                "P143",
+                "P4656"
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    "sitelinks": {
+      "commonswiki": {
+        "site": "commonswiki",
+        "title": "Category:Augustine Gospels",
+        "badges": [],
+        "url": "https://commons.wikimedia.org/wiki/Category:Augustine_Gospels"
+      },
+      "dewiki": {
+        "site": "dewiki",
+        "title": "Augustinus-Evangeliar",
+        "badges": [],
+        "url": "https://de.wikipedia.org/wiki/Augustinus-Evangeliar"
+      },
+      "enwiki": {
+        "site": "enwiki",
+        "title": "St Augustine Gospels",
+        "badges": [],
+        "url": "https://en.wikipedia.org/wiki/St_Augustine_Gospels"
+      },
+      "eswiki": {
+        "site": "eswiki",
+        "title": "Evangelios de San Agustín",
+        "badges": [],
+        "url": "https://es.wikipedia.org/wiki/Evangelios_de_San_Agust%C3%ADn"
+      },
+      "frwiki": {
+        "site": "frwiki",
+        "title": "Évangéliaire de saint Augustin",
+        "badges": [],
+        "url": "https://fr.wikipedia.org/wiki/%C3%89vang%C3%A9liaire_de_saint_Augustin"
+      },
+      "idwiki": {
+        "site": "idwiki",
+        "title": "Kitab Injil Santo Agustinus",
+        "badges": [],
+        "url": "https://id.wikipedia.org/wiki/Kitab_Injil_Santo_Agustinus"
+      },
+      "itwiki": {
+        "site": "itwiki",
+        "title": "Vangeli di Sant'Agostino",
+        "badges": [],
+        "url": "https://it.wikipedia.org/wiki/Vangeli_di_Sant%27Agostino"
+      },
+      "nlwiki": {
+        "site": "nlwiki",
+        "title": "Evangeliarium van Augustinus van Canterbury",
+        "badges": [],
+        "url": "https://nl.wikipedia.org/wiki/Evangeliarium_van_Augustinus_van_Canterbury"
+      },
+      "plwiki": {
+        "site": "plwiki",
+        "title": "Ewangeliarz św. Augustyna",
+        "badges": [],
+        "url": "https://pl.wikipedia.org/wiki/Ewangeliarz_%C5%9Bw._Augustyna"
+      },
+      "ruwiki": {
+        "site": "ruwiki",
+        "title": "Евангелие святого Августина",
+        "badges": [],
+        "url": "https://ru.wikipedia.org/wiki/%D0%95%D0%B2%D0%B0%D0%BD%D0%B3%D0%B5%D0%BB%D0%B8%D0%B5_%D1%81%D0%B2%D1%8F%D1%82%D0%BE%D0%B3%D0%BE_%D0%90%D0%B2%D0%B3%D1%83%D1%81%D1%82%D0%B8%D0%BD%D0%B0"
+      }
+    }
+  }
+}

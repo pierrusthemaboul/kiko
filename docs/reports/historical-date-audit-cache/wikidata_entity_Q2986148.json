@@ -1,0 +1,698 @@
+{
+  "saved_at": "2026-03-07T14:43:11.508Z",
+  "value": {
+    "pageid": 2855469,
+    "ns": 0,
+    "title": "Q2986148",
+    "lastrevid": 1992937530,
+    "modified": "2023-10-18T05:26:18Z",
+    "type": "item",
+    "id": "Q2986148",
+    "labels": {
+      "fr": {
+        "language": "fr",
+        "value": "Comment j'ai retrouvé Livingstone"
+      },
+      "nl": {
+        "language": "nl",
+        "value": "Comment j'ai retrouvé Livingstone"
+      },
+      "en": {
+        "language": "en",
+        "value": "How I Found Livingstone"
+      },
+      "de": {
+        "language": "de",
+        "value": "Wie ich Livingstone fand"
+      }
+    },
+    "descriptions": {
+      "nl": {
+        "language": "nl",
+        "value": "boek van Henry Morton Stanley"
+      },
+      "he": {
+        "language": "he",
+        "value": "ספר מאת הנרי מורטון סטנלי"
+      },
+      "ar": {
+        "language": "ar",
+        "value": "كتاب من تأليف هنري مورتون ستانلي"
+      },
+      "fr": {
+        "language": "fr",
+        "value": "livre de Henry Morton Stanley"
+      },
+      "en": {
+        "language": "en",
+        "value": "book by Henry Morton Stanley"
+      },
+      "de": {
+        "language": "de",
+        "value": "Buch von Henry Morton Stanley"
+      },
+      "es": {
+        "language": "es",
+        "value": "libro de Henry Morton Stanley"
+      },
+      "uk": {
+        "language": "uk",
+        "value": "книга"
+      }
+    },
+    "aliases": {
+      "fr": [
+        {
+          "language": "fr",
+          "value": "Comment j'ai retrouvé livingstone"
+        }
+      ]
+    },
+    "claims": {
+      "P50": [
+        {
+          "mainsnak": {
+            "snaktype": "value",
+            "property": "P50",
+            "hash": "0d2cbad476d1a4ac2c3073bd0f178e61cbc85d3b",
+            "datavalue": {
+              "value": {
+                "entity-type": "item",
+                "numeric-id": 171421,
+                "id": "Q171421"
+              },
+              "type": "wikibase-entityid"
+            },
+            "datatype": "wikibase-item"
+          },
+          "type": "statement",
+          "id": "Q2986148$2486D98D-78D0-4A2B-91DD-9E8490C86E57",
+          "rank": "normal",
+          "references": [
+            {
+              "hash": "d4bd87b862b12d99d26e86472d44f26858dee639",
+              "snaks": {
+                "P143": [
+                  {
+                    "snaktype": "value",
+                    "property": "P143",
+                    "hash": "f30cbd35620c4ea6d0633aaf0210a8916130469b",
+                    "datavalue": {
+                      "value": {
+                        "entity-type": "item",
+                        "numeric-id": 8447,
+                        "id": "Q8447"
+                      },
+                      "type": "wikibase-entityid"
+                    },
+                    "datatype": "wikibase-item"
+                  }
+                ]
+              },
+              "snaks-order": [
+                "P143"
+              ]
+            }
+          ]
+        }
+      ],
+      "P31": [
+        {
+          "mainsnak": {
+            "snaktype": "value",
+            "property": "P31",
+            "hash": "56d2ce980dfb7e5844c4c8777065c37181767334",
+            "datavalue": {
+              "value": {
+                "entity-type": "item",
+                "numeric-id": 47461344,
+                "id": "Q47461344"
+              },
+              "type": "wikibase-entityid"
+            },
+            "datatype": "wikibase-item"
+          },
+          "type": "statement",
+          "id": "Q2986148$796AECE0-AD59-4848-A5D8-B44CB4E4A138",
+          "rank": "normal"
+        }
+      ],
+      "P136": [
+        {
+          "mainsnak": {
+            "snaktype": "value",
+            "property": "P136",
+            "hash": "e29471e3da872f720d67cb2e74731a409e549e5b",
+            "datavalue": {
+              "value": {
+                "entity-type": "item",
+                "numeric-id": 1164267,
+                "id": "Q1164267"
+              },
+              "type": "wikibase-entityid"
+            },
+            "datatype": "wikibase-item"
+          },
+          "type": "statement",
+          "id": "Q2986148$516e32cd-49ce-17b4-d342-a9622246d145",
+          "rank": "normal"
+        }
+      ],
+      "P495": [
+        {
+          "mainsnak": {
+            "snaktype": "value",
+            "property": "P495",
+            "hash": "7fff5adac725cc34fb5c6dcfe502e2a7bbd045b2",
+            "datavalue": {
+              "value": {
+                "entity-type": "item",
+                "numeric-id": 145,
+                "id": "Q145"
+              },
+              "type": "wikibase-entityid"
+            },
+            "datatype": "wikibase-item"
+          },
+          "type": "statement",
+          "id": "Q2986148$dad8ed44-4037-7467-cc36-64d850ff96c8",
+          "rank": "normal"
+        }
+      ],
+      "P1476": [
+        {
+          "mainsnak": {
+            "snaktype": "value",
+            "property": "P1476",
+            "hash": "04d8645f0513286da066807a7e32134ace938b0a",
+            "datavalue": {
+              "value": {
+                "text": "How I Found Livingstone",
+                "language": "en-gb"
+              },
+              "type": "monolingualtext"
+            },
+            "datatype": "monolingualtext"
+          },
+          "type": "statement",
+          "id": "Q2986148$3af0a174-4b2c-8cc7-274e-7be91040fd14",
+          "rank": "normal"
+        },
+        {
+          "mainsnak": {
+            "snaktype": "value",
+            "property": "P1476",
+            "hash": "c9c148dfaeac6b88698e82e104b9c6950a6c0d3c",
+            "datavalue": {
+              "value": {
+                "text": "How I found Livingstone",
+                "language": "en"
+              },
+              "type": "monolingualtext"
+            },
+            "datatype": "monolingualtext"
+          },
+          "type": "statement",
+          "id": "Q2986148$02A53239-2C12-48A2-878F-2F9E9C1442DD",
+          "rank": "preferred"
+        },
+        {
+          "mainsnak": {
+            "snaktype": "value",
+            "property": "P1476",
+            "hash": "2d81e8224e4e28caa5cc7b05f037a2b69e56b11c",
+            "datavalue": {
+              "value": {
+                "text": "Wie ich Livingstone fand",
+                "language": "de"
+              },
+              "type": "monolingualtext"
+            },
+            "datatype": "monolingualtext"
+          },
+          "type": "statement",
+          "qualifiers": {
+            "P1680": [
+              {
+                "snaktype": "value",
+                "property": "P1680",
+                "hash": "014b5e81771cf67c1d2c9026bf41350140c5e62b",
+                "datavalue": {
+                  "value": {
+                    "text": "Reisen, Abenteuer und Entdeckungen in Central-Afrika",
+                    "language": "de"
+                  },
+                  "type": "monolingualtext"
+                },
+                "datatype": "monolingualtext"
+              }
+            ]
+          },
+          "qualifiers-order": [
+            "P1680"
+          ],
+          "id": "Q2986148$40073C80-334A-44D0-B7C6-C8787CFD34B5",
+          "rank": "normal"
+        },
+        {
+          "mainsnak": {
+            "snaktype": "value",
+            "property": "P1476",
+            "hash": "a03527dd8f06d3faf62702399d86d818042d52bf",
+            "datavalue": {
+              "value": {
+                "text": "Travels, adventures and discoveries in Central Africa including four months residence with Dr Livingstone",
+                "language": "en"
+              },
+              "type": "monolingualtext"
+            },
+            "datatype": "monolingualtext"
+          },
+          "type": "statement",
+          "id": "Q2986148$E5B4E30B-D3FF-4C06-BF11-94C230D97EFA",
+          "rank": "normal"
+        }
+      ],
+      "P1680": [
+        {
+          "mainsnak": {
+            "snaktype": "value",
+            "property": "P1680",
+            "hash": "a17d871185e0ef83f3087820c6f378af5dfb8903",
+            "datavalue": {
+              "value": {
+                "text": "travels, adventures, and discoveries in Central Africa",
+                "language": "en-gb"
+              },
+              "type": "monolingualtext"
+            },
+            "datatype": "monolingualtext"
+          },
+          "type": "statement",
+          "id": "Q2986148$0f8d9e0a-48e9-db2c-ff7d-d36e1367b9dc",
+          "rank": "normal"
+        }
+      ],
+      "P577": [
+        {
+          "mainsnak": {
+            "snaktype": "value",
+            "property": "P577",
+            "hash": "c19b2f83af11ff3729d7431ed842098ebc70e094",
+            "datavalue": {
+              "value": {
+                "time": "+1874-00-00T00:00:00Z",
+                "timezone": 0,
+                "before": 0,
+                "after": 0,
+                "precision": 9,
+                "calendarmodel": "http://www.wikidata.org/entity/Q1985727"
+              },
+              "type": "time"
+            },
+            "datatype": "time"
+          },
+          "type": "statement",
+          "id": "Q2986148$b257e68f-4d0f-66ad-6b92-f08d2fab040a",
+          "rank": "normal"
+        },
+        {
+          "mainsnak": {
+            "snaktype": "value",
+            "property": "P577",
+            "hash": "41977fbd698e1a8a7647cdb0e1d189055c2683a2",
+            "datavalue": {
+              "value": {
+                "time": "+1872-00-00T00:00:00Z",
+                "timezone": 0,
+                "before": 0,
+                "after": 0,
+                "precision": 9,
+                "calendarmodel": "http://www.wikidata.org/entity/Q1985727"
+              },
+              "type": "time"
+            },
+            "datatype": "time"
+          },
+          "type": "statement",
+          "id": "Q2986148$3618AC3D-E1FF-493E-B304-2CB1EDDF2314",
+          "rank": "normal"
+        }
+      ],
+      "P407": [
+        {
+          "mainsnak": {
+            "snaktype": "value",
+            "property": "P407",
+            "hash": "daf1c4fcb58181b02dff9cc89deb084004ddae4b",
+            "datavalue": {
+              "value": {
+                "entity-type": "item",
+                "numeric-id": 1860,
+                "id": "Q1860"
+              },
+              "type": "wikibase-entityid"
+            },
+            "datatype": "wikibase-item"
+          },
+          "type": "statement",
+          "id": "Q2986148$124ECA6F-3353-42F1-869B-3A3060E6C4B4",
+          "rank": "normal",
+          "references": [
+            {
+              "hash": "d4bd87b862b12d99d26e86472d44f26858dee639",
+              "snaks": {
+                "P143": [
+                  {
+                    "snaktype": "value",
+                    "property": "P143",
+                    "hash": "f30cbd35620c4ea6d0633aaf0210a8916130469b",
+                    "datavalue": {
+                      "value": {
+                        "entity-type": "item",
+                        "numeric-id": 8447,
+                        "id": "Q8447"
+                      },
+                      "type": "wikibase-entityid"
+                    },
+                    "datatype": "wikibase-item"
+                  }
+                ]
+              },
+              "snaks-order": [
+                "P143"
+              ]
+            }
+          ]
+        }
+      ],
+      "P6216": [
+        {
+          "mainsnak": {
+            "snaktype": "value",
+            "property": "P6216",
+            "hash": "f69dc45ce9c48664155022498b34100d801bd549",
+            "datavalue": {
+              "value": {
+                "entity-type": "item",
+                "numeric-id": 19652,
+                "id": "Q19652"
+              },
+              "type": "wikibase-entityid"
+            },
+            "datatype": "wikibase-item"
+          },
+          "type": "statement",
+          "qualifiers": {
+            "P1001": [
+              {
+                "snaktype": "value",
+                "property": "P1001",
+                "hash": "fd03a46bac885aad8c96834e86183c078494dce6",
+                "datavalue": {
+                  "value": {
+                    "entity-type": "item",
+                    "numeric-id": 30,
+                    "id": "Q30"
+                  },
+                  "type": "wikibase-entityid"
+                },
+                "datatype": "wikibase-item"
+              }
+            ],
+            "P459": [
+              {
+                "snaktype": "value",
+                "property": "P459",
+                "hash": "e8a997f8c7723e2bc8daa542a8b44577d4b3b7eb",
+                "datavalue": {
+                  "value": {
+                    "entity-type": "item",
+                    "numeric-id": 47246828,
+                    "id": "Q47246828"
+                  },
+                  "type": "wikibase-entityid"
+                },
+                "datatype": "wikibase-item"
+              }
+            ]
+          },
+          "qualifiers-order": [
+            "P1001",
+            "P459"
+          ],
+          "id": "Q2986148$102C26C2-5FF8-419A-BE23-4E5FC49E6894",
+          "rank": "normal"
+        },
+        {
+          "mainsnak": {
+            "snaktype": "value",
+            "property": "P6216",
+            "hash": "f69dc45ce9c48664155022498b34100d801bd549",
+            "datavalue": {
+              "value": {
+                "entity-type": "item",
+                "numeric-id": 19652,
+                "id": "Q19652"
+              },
+              "type": "wikibase-entityid"
+            },
+            "datatype": "wikibase-item"
+          },
+          "type": "statement",
+          "qualifiers": {
+            "P1001": [
+              {
+                "snaktype": "value",
+                "property": "P1001",
+                "hash": "91dce20cb7cf8d03dc976a70e56b19939881d751",
+                "datavalue": {
+                  "value": {
+                    "entity-type": "item",
+                    "numeric-id": 60332278,
+                    "id": "Q60332278"
+                  },
+                  "type": "wikibase-entityid"
+                },
+                "datatype": "wikibase-item"
+              }
+            ],
+            "P459": [
+              {
+                "snaktype": "value",
+                "property": "P459",
+                "hash": "8f1a08d7359ea45500b600d7ad0f13a7f032145e",
+                "datavalue": {
+                  "value": {
+                    "entity-type": "item",
+                    "numeric-id": 29940705,
+                    "id": "Q29940705"
+                  },
+                  "type": "wikibase-entityid"
+                },
+                "datatype": "wikibase-item"
+              }
+            ]
+          },
+          "qualifiers-order": [
+            "P1001",
+            "P459"
+          ],
+          "id": "Q2986148$7ACA5DEA-96CC-49D1-BDDB-82D3E1353ED6",
+          "rank": "normal"
+        }
+      ],
+      "P646": [
+        {
+          "mainsnak": {
+            "snaktype": "value",
+            "property": "P646",
+            "hash": "84ae98cb8d672585e66d0b2ea55f48fb4100caa8",
+            "datavalue": {
+              "value": "/m/04w5vjc",
+              "type": "string"
+            },
+            "datatype": "external-id"
+          },
+          "type": "statement",
+          "id": "Q2986148$24298FF0-9744-4D86-9012-03BC83012174",
+          "rank": "normal"
+        }
+      ],
+      "P1417": [
+        {
+          "mainsnak": {
+            "snaktype": "value",
+            "property": "P1417",
+            "hash": "0cc49c2c23097484e9ccb0199afe510faa7f256d",
+            "datavalue": {
+              "value": "topic/How-I-Found-Livingstone",
+              "type": "string"
+            },
+            "datatype": "external-id"
+          },
+          "type": "statement",
+          "qualifiers": {
+            "P1810": [
+              {
+                "snaktype": "value",
+                "property": "P1810",
+                "hash": "d63013cc661edfae3c10a86fd55abb7925c34d05",
+                "datavalue": {
+                  "value": "How I Found Livingstone",
+                  "type": "string"
+                },
+                "datatype": "string"
+              }
+            ]
+          },
+          "qualifiers-order": [
+            "P1810"
+          ],
+          "id": "Q2986148$9EF85ACD-86DA-47C5-8607-87F0FC955CBF",
+          "rank": "normal"
+        }
+      ],
+      "P373": [
+        {
+          "mainsnak": {
+            "snaktype": "value",
+            "property": "P373",
+            "hash": "f41a334190226dd0864db74d3923162ff3c24272",
+            "datavalue": {
+              "value": "How I found Livingstone",
+              "type": "string"
+            },
+            "datatype": "string"
+          },
+          "type": "statement",
+          "id": "Q2986148$94047A61-9E58-434C-8983-4CBF6DDDF98E",
+          "rank": "normal"
+        }
+      ],
+      "P18": [
+        {
+          "mainsnak": {
+            "snaktype": "value",
+            "property": "P18",
+            "hash": "1c19f8b2b1966f27c47c1289d9cf9003178da2e7",
+            "datavalue": {
+              "value": "Henry M. Stanley; How I found Livingstone... Wellcome L0027690.jpg",
+              "type": "string"
+            },
+            "datatype": "commonsMedia"
+          },
+          "type": "statement",
+          "id": "Q2986148$7004D292-23F9-42E4-B107-9DDBB8A89BD7",
+          "rank": "normal"
+        }
+      ],
+      "P227": [
+        {
+          "mainsnak": {
+            "snaktype": "value",
+            "property": "P227",
+            "hash": "25277a00638f8a89a12d298191d567b00a72c11f",
+            "datavalue": {
+              "value": "1231471301",
+              "type": "string"
+            },
+            "datatype": "external-id"
+          },
+          "type": "statement",
+          "id": "Q2986148$184D60E0-FDBA-4EA2-A755-F3823B3D78A5",
+          "rank": "normal"
+        }
+      ],
+      "P747": [
+        {
+          "mainsnak": {
+            "snaktype": "value",
+            "property": "P747",
+            "hash": "590871d376f141828396e468604e5a3ade48f984",
+            "datavalue": {
+              "value": {
+                "entity-type": "item",
+                "numeric-id": 123113821,
+                "id": "Q123113821"
+              },
+              "type": "wikibase-entityid"
+            },
+            "datatype": "wikibase-item"
+          },
+          "type": "statement",
+          "qualifiers": {
+            "P407": [
+              {
+                "snaktype": "value",
+                "property": "P407",
+                "hash": "d197d0a5efa4b4c23a302a829dd3ef43684fe002",
+                "datavalue": {
+                  "value": {
+                    "entity-type": "item",
+                    "numeric-id": 150,
+                    "id": "Q150"
+                  },
+                  "type": "wikibase-entityid"
+                },
+                "datatype": "wikibase-item"
+              }
+            ],
+            "P577": [
+              {
+                "snaktype": "value",
+                "property": "P577",
+                "hash": "06f9974cda83ad6117100927861448859d17f8c4",
+                "datavalue": {
+                  "value": {
+                    "time": "+1884-00-00T00:00:00Z",
+                    "timezone": 0,
+                    "before": 0,
+                    "after": 0,
+                    "precision": 9,
+                    "calendarmodel": "http://www.wikidata.org/entity/Q1985727"
+                  },
+                  "type": "time"
+                },
+                "datatype": "time"
+              }
+            ],
+            "P393": [
+              {
+                "snaktype": "value",
+                "property": "P393",
+                "hash": "bc94083997ab2b911ead4f80cbbc024e9ef7569e",
+                "datavalue": {
+                  "value": "4",
+                  "type": "string"
+                },
+                "datatype": "string"
+              }
+            ]
+          },
+          "qualifiers-order": [
+            "P407",
+            "P577",
+            "P393"
+          ],
+          "id": "Q2986148$5027d00e-4134-9c91-46c7-ed58c9aadf13",
+          "rank": "normal"
+        }
+      ]
+    },
+    "sitelinks": {
+      "commonswiki": {
+        "site": "commonswiki",
+        "title": "Category:How I found Livingstone",
+        "badges": [],
+        "url": "https://commons.wikimedia.org/wiki/Category:How_I_found_Livingstone"
+      },
+      "frwiki": {
+        "site": "frwiki",
+        "title": "Comment j'ai retrouvé Livingstone",
+        "badges": [],
+        "url": "https://fr.wikipedia.org/wiki/Comment_j%27ai_retrouv%C3%A9_Livingstone"
+      }
+    }
+  }
+}

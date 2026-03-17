@@ -1,0 +1,416 @@
+{
+  "saved_at": "2026-03-07T14:44:05.429Z",
+  "value": {
+    "pageid": 115271269,
+    "ns": 0,
+    "title": "Q120823474",
+    "lastrevid": 2183053718,
+    "modified": "2024-06-18T17:24:27Z",
+    "type": "item",
+    "id": "Q120823474",
+    "labels": {
+      "en": {
+        "language": "en",
+        "value": "Independence Cup"
+      },
+      "fr": {
+        "language": "fr",
+        "value": "Coupe de l'indépendance du Maroc de football"
+      }
+    },
+    "descriptions": {
+      "en": {
+        "language": "en",
+        "value": "international football competition"
+      },
+      "uk": {
+        "language": "uk",
+        "value": "міжнародні футбольні змагання"
+      }
+    },
+    "aliases": {
+      "en": [
+        {
+          "language": "en",
+          "value": "Moroccan Independence Cup"
+        }
+      ]
+    },
+    "claims": {
+      "P641": [
+        {
+          "mainsnak": {
+            "snaktype": "value",
+            "property": "P641",
+            "hash": "1624e15e061523279bc14bb6497168e45caacb32",
+            "datavalue": {
+              "value": {
+                "entity-type": "item",
+                "numeric-id": 2736,
+                "id": "Q2736"
+              },
+              "type": "wikibase-entityid"
+            },
+            "datatype": "wikibase-item"
+          },
+          "type": "statement",
+          "id": "Q120823474$9d42d736-3c68-47d0-9297-5a5819bef83f",
+          "rank": "normal"
+        }
+      ],
+      "P31": [
+        {
+          "mainsnak": {
+            "snaktype": "value",
+            "property": "P31",
+            "hash": "ecbb916a7543708b066e45ad27981718c3e43d13",
+            "datavalue": {
+              "value": {
+                "entity-type": "item",
+                "numeric-id": 27020041,
+                "id": "Q27020041"
+              },
+              "type": "wikibase-entityid"
+            },
+            "datatype": "wikibase-item"
+          },
+          "type": "statement",
+          "id": "Q120823474$0d851b6d-f785-4747-ab85-b810f736b263",
+          "rank": "normal"
+        },
+        {
+          "mainsnak": {
+            "snaktype": "value",
+            "property": "P31",
+            "hash": "58e4840c7f6c4af442e84f4f9a60711e9287c6a1",
+            "datavalue": {
+              "value": {
+                "entity-type": "item",
+                "numeric-id": 1478437,
+                "id": "Q1478437"
+              },
+              "type": "wikibase-entityid"
+            },
+            "datatype": "wikibase-item"
+          },
+          "type": "statement",
+          "id": "Q120823474$F9F6FA6E-80DD-4053-9ACF-53DB3F8B35BD",
+          "rank": "normal"
+        }
+      ],
+      "P17": [
+        {
+          "mainsnak": {
+            "snaktype": "value",
+            "property": "P17",
+            "hash": "882c688f4851777a2a3ec6d7ab769323b175f3c7",
+            "datavalue": {
+              "value": {
+                "entity-type": "item",
+                "numeric-id": 1028,
+                "id": "Q1028"
+              },
+              "type": "wikibase-entityid"
+            },
+            "datatype": "wikibase-item"
+          },
+          "type": "statement",
+          "id": "Q120823474$83C42582-82A1-4044-BE79-A271410716E9",
+          "rank": "normal",
+          "references": [
+            {
+              "hash": "d4bd87b862b12d99d26e86472d44f26858dee639",
+              "snaks": {
+                "P143": [
+                  {
+                    "snaktype": "value",
+                    "property": "P143",
+                    "hash": "f30cbd35620c4ea6d0633aaf0210a8916130469b",
+                    "datavalue": {
+                      "value": {
+                        "entity-type": "item",
+                        "numeric-id": 8447,
+                        "id": "Q8447"
+                      },
+                      "type": "wikibase-entityid"
+                    },
+                    "datatype": "wikibase-item"
+                  }
+                ]
+              },
+              "snaks-order": [
+                "P143"
+              ]
+            }
+          ]
+        }
+      ],
+      "P393": [
+        {
+          "mainsnak": {
+            "snaktype": "value",
+            "property": "P393",
+            "hash": "b5add4b6e7969c37155ccceb4815a31ff80dfe2a",
+            "datavalue": {
+              "value": "1",
+              "type": "string"
+            },
+            "datatype": "string"
+          },
+          "type": "statement",
+          "id": "Q120823474$2A2BD485-F263-4C62-BC78-8609F0E8BFBC",
+          "rank": "normal",
+          "references": [
+            {
+              "hash": "0cd7b2d410bd420f40458024830bc6ae0988ae30",
+              "snaks": {
+                "P143": [
+                  {
+                    "snaktype": "value",
+                    "property": "P143",
+                    "hash": "f30cbd35620c4ea6d0633aaf0210a8916130469b",
+                    "datavalue": {
+                      "value": {
+                        "entity-type": "item",
+                        "numeric-id": 8447,
+                        "id": "Q8447"
+                      },
+                      "type": "wikibase-entityid"
+                    },
+                    "datatype": "wikibase-item"
+                  }
+                ],
+                "P4656": [
+                  {
+                    "snaktype": "value",
+                    "property": "P4656",
+                    "hash": "bc905aa2f3e91400875876eb1a5fdb3d2f5fa245",
+                    "datavalue": {
+                      "value": "https://fr.wikipedia.org/w/index.php?title=Coupe_de_l'Indépendance_(Maroc)&oldid=152800752",
+                      "type": "string"
+                    },
+                    "datatype": "url"
+                  }
+                ]
+              },
+              "snaks-order": [
+                "P143",
+                "P4656"
+              ]
+            }
+          ]
+        }
+      ],
+      "P1132": [
+        {
+          "mainsnak": {
+            "snaktype": "value",
+            "property": "P1132",
+            "hash": "0eee3746e1f773df9d57e546a949e15c8bf4523c",
+            "datavalue": {
+              "value": {
+                "amount": "+64",
+                "unit": "1"
+              },
+              "type": "quantity"
+            },
+            "datatype": "quantity"
+          },
+          "type": "statement",
+          "id": "Q120823474$D4434044-4CC1-4F70-92E0-7C4698E1A5E8",
+          "rank": "normal",
+          "references": [
+            {
+              "hash": "0cd7b2d410bd420f40458024830bc6ae0988ae30",
+              "snaks": {
+                "P143": [
+                  {
+                    "snaktype": "value",
+                    "property": "P143",
+                    "hash": "f30cbd35620c4ea6d0633aaf0210a8916130469b",
+                    "datavalue": {
+                      "value": {
+                        "entity-type": "item",
+                        "numeric-id": 8447,
+                        "id": "Q8447"
+                      },
+                      "type": "wikibase-entityid"
+                    },
+                    "datatype": "wikibase-item"
+                  }
+                ],
+                "P4656": [
+                  {
+                    "snaktype": "value",
+                    "property": "P4656",
+                    "hash": "bc905aa2f3e91400875876eb1a5fdb3d2f5fa245",
+                    "datavalue": {
+                      "value": "https://fr.wikipedia.org/w/index.php?title=Coupe_de_l'Indépendance_(Maroc)&oldid=152800752",
+                      "type": "string"
+                    },
+                    "datatype": "url"
+                  }
+                ]
+              },
+              "snaks-order": [
+                "P143",
+                "P4656"
+              ]
+            }
+          ]
+        }
+      ],
+      "P664": [
+        {
+          "mainsnak": {
+            "snaktype": "value",
+            "property": "P664",
+            "hash": "0372ce36026e906b1418f94a77e73343b9e3b60e",
+            "datavalue": {
+              "value": {
+                "entity-type": "item",
+                "numeric-id": 3116927,
+                "id": "Q3116927"
+              },
+              "type": "wikibase-entityid"
+            },
+            "datatype": "wikibase-item"
+          },
+          "type": "statement",
+          "id": "Q120823474$20D2EA30-D90D-414A-B7AF-81B0FF4D21A6",
+          "rank": "normal",
+          "references": [
+            {
+              "hash": "0cd7b2d410bd420f40458024830bc6ae0988ae30",
+              "snaks": {
+                "P143": [
+                  {
+                    "snaktype": "value",
+                    "property": "P143",
+                    "hash": "f30cbd35620c4ea6d0633aaf0210a8916130469b",
+                    "datavalue": {
+                      "value": {
+                        "entity-type": "item",
+                        "numeric-id": 8447,
+                        "id": "Q8447"
+                      },
+                      "type": "wikibase-entityid"
+                    },
+                    "datatype": "wikibase-item"
+                  }
+                ],
+                "P4656": [
+                  {
+                    "snaktype": "value",
+                    "property": "P4656",
+                    "hash": "bc905aa2f3e91400875876eb1a5fdb3d2f5fa245",
+                    "datavalue": {
+                      "value": "https://fr.wikipedia.org/w/index.php?title=Coupe_de_l'Indépendance_(Maroc)&oldid=152800752",
+                      "type": "string"
+                    },
+                    "datatype": "url"
+                  }
+                ]
+              },
+              "snaks-order": [
+                "P143",
+                "P4656"
+              ]
+            }
+          ]
+        }
+      ],
+      "P2671": [
+        {
+          "mainsnak": {
+            "snaktype": "value",
+            "property": "P2671",
+            "hash": "58d390a76e01195759930efc22313c22b0c62586",
+            "datavalue": {
+              "value": "/g/11bc87x0wt",
+              "type": "string"
+            },
+            "datatype": "external-id"
+          },
+          "type": "statement",
+          "id": "Q120823474$21FF386E-3415-44E1-AEDE-08695B7549A7",
+          "rank": "normal"
+        }
+      ],
+      "P276": [
+        {
+          "mainsnak": {
+            "snaktype": "value",
+            "property": "P276",
+            "hash": "d134802284c5fc6583a9276accb64ff4e69434de",
+            "datavalue": {
+              "value": {
+                "entity-type": "item",
+                "numeric-id": 12183875,
+                "id": "Q12183875"
+              },
+              "type": "wikibase-entityid"
+            },
+            "datatype": "wikibase-item"
+          },
+          "type": "statement",
+          "id": "Q120823474$401D54E6-9E99-481C-95C0-CFFCA9E38636",
+          "rank": "normal",
+          "references": [
+            {
+              "hash": "e861c67da158a1b02d9ee66011945044bd1af9d7",
+              "snaks": {
+                "P143": [
+                  {
+                    "snaktype": "value",
+                    "property": "P143",
+                    "hash": "f30cbd35620c4ea6d0633aaf0210a8916130469b",
+                    "datavalue": {
+                      "value": {
+                        "entity-type": "item",
+                        "numeric-id": 8447,
+                        "id": "Q8447"
+                      },
+                      "type": "wikibase-entityid"
+                    },
+                    "datatype": "wikibase-item"
+                  }
+                ],
+                "P4656": [
+                  {
+                    "snaktype": "value",
+                    "property": "P4656",
+                    "hash": "5e9292836df2f1c2d771036996109632b8128a06",
+                    "datavalue": {
+                      "value": "https://fr.wikipedia.org/w/index.php?title=Coupe_de_l'Indépendance_(Maroc)&oldid=204262702",
+                      "type": "string"
+                    },
+                    "datatype": "url"
+                  }
+                ]
+              },
+              "snaks-order": [
+                "P143",
+                "P4656"
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    "sitelinks": {
+      "enwiki": {
+        "site": "enwiki",
+        "title": "Independence Cup (Morocco)",
+        "badges": [],
+        "url": "https://en.wikipedia.org/wiki/Independence_Cup_(Morocco)"
+      },
+      "frwiki": {
+        "site": "frwiki",
+        "title": "Coupe de l'Indépendance (Maroc)",
+        "badges": [],
+        "url": "https://fr.wikipedia.org/wiki/Coupe_de_l%27Ind%C3%A9pendance_(Maroc)"
+      }
+    }
+  }
+}

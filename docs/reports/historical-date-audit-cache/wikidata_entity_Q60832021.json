@@ -1,0 +1,460 @@
+{
+  "saved_at": "2026-03-07T16:06:37.711Z",
+  "value": {
+    "pageid": 60687204,
+    "ns": 0,
+    "title": "Q60832021",
+    "lastrevid": 2400128533,
+    "modified": "2025-09-03T23:26:11Z",
+    "type": "item",
+    "id": "Q60832021",
+    "labels": {
+      "fr": {
+        "language": "fr",
+        "value": "assassinat d'Henri IV"
+      },
+      "en": {
+        "language": "en",
+        "value": "Assassination of Henry IV"
+      },
+      "es": {
+        "language": "es",
+        "value": "Asesinato de Enrique IV"
+      },
+      "ru": {
+        "language": "ru",
+        "value": "Убийство Генриха IV"
+      },
+      "tr": {
+        "language": "tr",
+        "value": "IV. Henri suikasti"
+      },
+      "de": {
+        "language": "de",
+        "value": "Ermordung von Heinrich IV."
+      }
+    },
+    "descriptions": {
+      "fr": {
+        "language": "fr",
+        "value": "assassinat d'Henri IV et ses conséquences"
+      },
+      "en": {
+        "language": "en",
+        "value": "1610 killing of the French king in Paris"
+      }
+    },
+    "aliases": {
+      "en": [
+        {
+          "language": "en",
+          "value": "Henry IV assassination"
+        },
+        {
+          "language": "en",
+          "value": "Henry IV's assassination"
+        },
+        {
+          "language": "en",
+          "value": "murder of Henry IV"
+        },
+        {
+          "language": "en",
+          "value": "Henry IV's murder"
+        },
+        {
+          "language": "en",
+          "value": "Henry IV murder"
+        },
+        {
+          "language": "en",
+          "value": "killing of Henry IV"
+        },
+        {
+          "language": "en",
+          "value": "Henry IV's killing"
+        },
+        {
+          "language": "en",
+          "value": "Henry IV killing"
+        }
+      ]
+    },
+    "claims": {
+      "P31": [
+        {
+          "mainsnak": {
+            "snaktype": "value",
+            "property": "P31",
+            "hash": "3cebca568044666ac0f36d6b9474154bd8452057",
+            "datavalue": {
+              "value": {
+                "entity-type": "item",
+                "numeric-id": 3882219,
+                "id": "Q3882219"
+              },
+              "type": "wikibase-entityid"
+            },
+            "datatype": "wikibase-item"
+          },
+          "type": "statement",
+          "id": "Q60832021$221e64fa-4661-7896-42a1-0481dc6c0fe6",
+          "rank": "normal"
+        }
+      ],
+      "P585": [
+        {
+          "mainsnak": {
+            "snaktype": "value",
+            "property": "P585",
+            "hash": "d26afc3a3418e8651ff77e9be9d99ddcd1b156eb",
+            "datavalue": {
+              "value": {
+                "time": "+1610-05-14T00:00:00Z",
+                "timezone": 0,
+                "before": 0,
+                "after": 0,
+                "precision": 11,
+                "calendarmodel": "http://www.wikidata.org/entity/Q1985727"
+              },
+              "type": "time"
+            },
+            "datatype": "time"
+          },
+          "type": "statement",
+          "qualifiers": {
+            "P4241": [
+              {
+                "snaktype": "value",
+                "property": "P4241",
+                "hash": "ff888f3bf3df9c25e496ec395ccf0fcea6619b92",
+                "datavalue": {
+                  "value": {
+                    "entity-type": "item",
+                    "numeric-id": 55812393,
+                    "id": "Q55812393"
+                  },
+                  "type": "wikibase-entityid"
+                },
+                "datatype": "wikibase-item"
+              }
+            ]
+          },
+          "qualifiers-order": [
+            "P4241"
+          ],
+          "id": "Q60832021$b524bb68-4951-b1cf-73b8-df904b49daa8",
+          "rank": "normal"
+        }
+      ],
+      "P17": [
+        {
+          "mainsnak": {
+            "snaktype": "value",
+            "property": "P17",
+            "hash": "c05db5d169c2560b9799d567a803d20a392f53e4",
+            "datavalue": {
+              "value": {
+                "entity-type": "item",
+                "numeric-id": 142,
+                "id": "Q142"
+              },
+              "type": "wikibase-entityid"
+            },
+            "datatype": "wikibase-item"
+          },
+          "type": "statement",
+          "id": "Q60832021$36d3fbf9-485e-f847-4a06-55722decf48f",
+          "rank": "normal"
+        }
+      ],
+      "P276": [
+        {
+          "mainsnak": {
+            "snaktype": "value",
+            "property": "P276",
+            "hash": "01de8833f9e79f2ece6966c8a058b5be75c3382d",
+            "datavalue": {
+              "value": {
+                "entity-type": "item",
+                "numeric-id": 3451419,
+                "id": "Q3451419"
+              },
+              "type": "wikibase-entityid"
+            },
+            "datatype": "wikibase-item"
+          },
+          "type": "statement",
+          "id": "Q60832021$07c9a7f9-4071-8e14-cb06-91e7afb3b1f1",
+          "rank": "normal"
+        }
+      ],
+      "P1120": [
+        {
+          "mainsnak": {
+            "snaktype": "value",
+            "property": "P1120",
+            "hash": "8a4b795363cb3d8bc4895e91da93741f7a9c2802",
+            "datavalue": {
+              "value": {
+                "amount": "+1",
+                "unit": "1"
+              },
+              "type": "quantity"
+            },
+            "datatype": "quantity"
+          },
+          "type": "statement",
+          "id": "Q60832021$5e9dae17-4c13-75a7-10f5-14a3ffaec895",
+          "rank": "normal"
+        }
+      ],
+      "P625": [
+        {
+          "mainsnak": {
+            "snaktype": "value",
+            "property": "P625",
+            "hash": "c4157a5b2a86b64030d59260a4b218b30d247120",
+            "datavalue": {
+              "value": {
+                "latitude": 48.860245,
+                "longitude": 2.347728,
+                "altitude": null,
+                "precision": 0.000001,
+                "globe": "http://www.wikidata.org/entity/Q2"
+              },
+              "type": "globecoordinate"
+            },
+            "datatype": "globe-coordinate"
+          },
+          "type": "statement",
+          "id": "Q60832021$b2881490-4284-b123-b060-ce239b074be4",
+          "rank": "normal"
+        }
+      ],
+      "P131": [
+        {
+          "mainsnak": {
+            "snaktype": "value",
+            "property": "P131",
+            "hash": "c18aa849f40672ea7738950d73963d87e44414d2",
+            "datavalue": {
+              "value": {
+                "entity-type": "item",
+                "numeric-id": 161741,
+                "id": "Q161741"
+              },
+              "type": "wikibase-entityid"
+            },
+            "datatype": "wikibase-item"
+          },
+          "type": "statement",
+          "id": "Q60832021$f79bc8e3-4b06-71d7-cf65-1b09e7001b44",
+          "rank": "normal"
+        },
+        {
+          "mainsnak": {
+            "snaktype": "value",
+            "property": "P131",
+            "hash": "22ac05a1462e2cb078c3eaf435f5ec86f5ab9b19",
+            "datavalue": {
+              "value": {
+                "entity-type": "item",
+                "numeric-id": 90,
+                "id": "Q90"
+              },
+              "type": "wikibase-entityid"
+            },
+            "datatype": "wikibase-item"
+          },
+          "type": "statement",
+          "id": "Q60832021$57eead73-4a43-eabb-aae8-90aa846fbe57",
+          "rank": "normal"
+        }
+      ],
+      "P1801": [
+        {
+          "mainsnak": {
+            "snaktype": "value",
+            "property": "P1801",
+            "hash": "1c8165a217918b33669d31d2584d2fff3eea25b8",
+            "datavalue": {
+              "value": "Plaque assassinat henri4.jpg",
+              "type": "string"
+            },
+            "datatype": "commonsMedia"
+          },
+          "type": "statement",
+          "id": "Q60832021$bdc1744e-4ee7-edbd-a8cd-60c4be3b819a",
+          "rank": "normal"
+        }
+      ],
+      "P18": [
+        {
+          "mainsnak": {
+            "snaktype": "value",
+            "property": "P18",
+            "hash": "fbccdae3fb52cfec4a34fdc3ce0217bf4c0ed1e0",
+            "datavalue": {
+              "value": "Assassinat d’Henri IV et l’arrestation de Ravaillac par Charles-Gustave Housez.jpg",
+              "type": "string"
+            },
+            "datatype": "commonsMedia"
+          },
+          "type": "statement",
+          "id": "Q60832021$84a20b71-403f-7c06-c5eb-6ea8149b4238",
+          "rank": "normal"
+        }
+      ],
+      "P520": [
+        {
+          "mainsnak": {
+            "snaktype": "value",
+            "property": "P520",
+            "hash": "f300433015be6a2ab26020cd67fc4f607ef18a27",
+            "datavalue": {
+              "value": {
+                "entity-type": "item",
+                "numeric-id": 32489,
+                "id": "Q32489"
+              },
+              "type": "wikibase-entityid"
+            },
+            "datatype": "wikibase-item"
+          },
+          "type": "statement",
+          "id": "Q60832021$9155b773-47c0-f6ec-0a0a-d6284367b76f",
+          "rank": "normal"
+        }
+      ],
+      "P533": [
+        {
+          "mainsnak": {
+            "snaktype": "value",
+            "property": "P533",
+            "hash": "812c895d8c4ad4b5f51f43ca76eb5648920b780c",
+            "datavalue": {
+              "value": {
+                "entity-type": "item",
+                "numeric-id": 936976,
+                "id": "Q936976"
+              },
+              "type": "wikibase-entityid"
+            },
+            "datatype": "wikibase-item"
+          },
+          "type": "statement",
+          "id": "Q60832021$846ee502-4db9-b311-c1c7-51372d346afc",
+          "rank": "normal"
+        }
+      ],
+      "P8032": [
+        {
+          "mainsnak": {
+            "snaktype": "value",
+            "property": "P8032",
+            "hash": "8e9a05e53f563f8c0c139fe8d614056856659550",
+            "datavalue": {
+              "value": {
+                "entity-type": "item",
+                "numeric-id": 936976,
+                "id": "Q936976"
+              },
+              "type": "wikibase-entityid"
+            },
+            "datatype": "wikibase-item"
+          },
+          "type": "statement",
+          "qualifiers": {
+            "P3629": [
+              {
+                "snaktype": "value",
+                "property": "P3629",
+                "hash": "253eda67d112633621b54cc52d0028a3159d01cb",
+                "datavalue": {
+                  "value": {
+                    "amount": "+56",
+                    "unit": "http://www.wikidata.org/entity/Q24564698"
+                  },
+                  "type": "quantity"
+                },
+                "datatype": "quantity"
+              }
+            ]
+          },
+          "qualifiers-order": [
+            "P3629"
+          ],
+          "id": "Q60832021$b2880ab4-4dbb-0f27-baf5-6e3308df8c4b",
+          "rank": "normal"
+        }
+      ],
+      "P373": [
+        {
+          "mainsnak": {
+            "snaktype": "value",
+            "property": "P373",
+            "hash": "15214285b6a4eeb904e1a482adc0c4dbb8f15eb8",
+            "datavalue": {
+              "value": "Assassination of Henry IV",
+              "type": "string"
+            },
+            "datatype": "string"
+          },
+          "type": "statement",
+          "id": "Q60832021$a1967c7e-48ef-0fa1-0cdc-86ed7d6c987d",
+          "rank": "normal"
+        }
+      ],
+      "P2671": [
+        {
+          "mainsnak": {
+            "snaktype": "value",
+            "property": "P2671",
+            "hash": "36fad04a69c78443b1cc9a5edab158a89b431308",
+            "datavalue": {
+              "value": "/g/11h32yf6nz",
+              "type": "string"
+            },
+            "datatype": "external-id"
+          },
+          "type": "statement",
+          "id": "Q60832021$93F7E7D3-9E02-4ABA-A80C-E17DA01B147C",
+          "rank": "normal"
+        }
+      ]
+    },
+    "sitelinks": {
+      "commonswiki": {
+        "site": "commonswiki",
+        "title": "Category:Assassination of Henry IV",
+        "badges": [],
+        "url": "https://commons.wikimedia.org/wiki/Category:Assassination_of_Henry_IV"
+      },
+      "dewiki": {
+        "site": "dewiki",
+        "title": "Ermordung von Heinrich IV.",
+        "badges": [],
+        "url": "https://de.wikipedia.org/wiki/Ermordung_von_Heinrich_IV."
+      },
+      "enwiki": {
+        "site": "enwiki",
+        "title": "Assassination of Henry IV",
+        "badges": [],
+        "url": "https://en.wikipedia.org/wiki/Assassination_of_Henry_IV"
+      },
+      "frwiki": {
+        "site": "frwiki",
+        "title": "Assassinat d'Henri IV",
+        "badges": [],
+        "url": "https://fr.wikipedia.org/wiki/Assassinat_d%27Henri_IV"
+      },
+      "ruwiki": {
+        "site": "ruwiki",
+        "title": "Убийство Генриха IV",
+        "badges": [],
+        "url": "https://ru.wikipedia.org/wiki/%D0%A3%D0%B1%D0%B8%D0%B9%D1%81%D1%82%D0%B2%D0%BE_%D0%93%D0%B5%D0%BD%D1%80%D0%B8%D1%85%D0%B0_IV"
+      }
+    }
+  }
+}

@@ -1,0 +1,420 @@
+{
+  "saved_at": "2026-03-07T14:21:25.536Z",
+  "value": {
+    "pageid": 5635175,
+    "ns": 0,
+    "title": "Q5867586",
+    "lastrevid": 2348269106,
+    "modified": "2025-05-13T20:35:28Z",
+    "type": "item",
+    "id": "Q5867586",
+    "labels": {
+      "en": {
+        "language": "en",
+        "value": "history of cotton"
+      },
+      "ja": {
+        "language": "ja",
+        "value": "木綿の歴史"
+      },
+      "fr": {
+        "language": "fr",
+        "value": "histoire de la culture du coton"
+      },
+      "zh": {
+        "language": "zh",
+        "value": "棉"
+      },
+      "es": {
+        "language": "es",
+        "value": "historia del algodón"
+      },
+      "pa": {
+        "language": "pa",
+        "value": "ਕਪਾਹ ਦਾ ਇਤਿਹਾਸ"
+      },
+      "he": {
+        "language": "he",
+        "value": "היסטוריה של כותנה"
+      },
+      "ko": {
+        "language": "ko",
+        "value": "면화의 역사"
+      },
+      "ru": {
+        "language": "ru",
+        "value": "история хлопководства"
+      },
+      "tr": {
+        "language": "tr",
+        "value": "pamuğun tarihi"
+      }
+    },
+    "descriptions": {
+      "gu": {
+        "language": "gu",
+        "value": "cotten"
+      },
+      "en": {
+        "language": "en",
+        "value": "aspect of history"
+      },
+      "bn": {
+        "language": "bn",
+        "value": "ইতিহাসের বিভিন্ন দিক"
+      },
+      "ko": {
+        "language": "ko",
+        "value": "면화에 대한 역사"
+      },
+      "uk": {
+        "language": "uk",
+        "value": "аспект історії"
+      },
+      "fr": {
+        "language": "fr",
+        "value": "aspect de l'histoire relatant la culture du coton"
+      }
+    },
+    "aliases": {
+      "ru": [
+        {
+          "language": "ru",
+          "value": "история хлопка"
+        }
+      ]
+    },
+    "claims": {
+      "P910": [
+        {
+          "mainsnak": {
+            "snaktype": "value",
+            "property": "P910",
+            "hash": "0b90e75094cd68724df8d722e96f5e683aebe1a7",
+            "datavalue": {
+              "value": {
+                "entity-type": "item",
+                "numeric-id": 13325553,
+                "id": "Q13325553"
+              },
+              "type": "wikibase-entityid"
+            },
+            "datatype": "wikibase-item"
+          },
+          "type": "statement",
+          "id": "Q5867586$FCF17A13-BEBA-4983-A164-EF57A5E29A86",
+          "rank": "normal",
+          "references": [
+            {
+              "hash": "d4bd87b862b12d99d26e86472d44f26858dee639",
+              "snaks": {
+                "P143": [
+                  {
+                    "snaktype": "value",
+                    "property": "P143",
+                    "hash": "f30cbd35620c4ea6d0633aaf0210a8916130469b",
+                    "datavalue": {
+                      "value": {
+                        "entity-type": "item",
+                        "numeric-id": 8447,
+                        "id": "Q8447"
+                      },
+                      "type": "wikibase-entityid"
+                    },
+                    "datatype": "wikibase-item"
+                  }
+                ]
+              },
+              "snaks-order": [
+                "P143"
+              ]
+            }
+          ]
+        }
+      ],
+      "P279": [
+        {
+          "mainsnak": {
+            "snaktype": "value",
+            "property": "P279",
+            "hash": "d45581bc2da83ee52c040454cc763689bb7d46c8",
+            "datavalue": {
+              "value": {
+                "entity-type": "item",
+                "numeric-id": 48258816,
+                "id": "Q48258816"
+              },
+              "type": "wikibase-entityid"
+            },
+            "datatype": "wikibase-item"
+          },
+          "type": "statement",
+          "id": "Q5867586$deb946b4-4b20-afc1-7bc6-3554f00fc132",
+          "rank": "normal"
+        },
+        {
+          "mainsnak": {
+            "snaktype": "value",
+            "property": "P279",
+            "hash": "f5f2a88a7bf39829cf74699ceeb0006b42f10317",
+            "datavalue": {
+              "value": {
+                "entity-type": "item",
+                "numeric-id": 952080,
+                "id": "Q952080"
+              },
+              "type": "wikibase-entityid"
+            },
+            "datatype": "wikibase-item"
+          },
+          "type": "statement",
+          "id": "Q5867586$fc06e74a-4dec-48f8-335a-3ba86fac79ea",
+          "rank": "normal"
+        }
+      ],
+      "P1269": [
+        {
+          "mainsnak": {
+            "snaktype": "value",
+            "property": "P1269",
+            "hash": "f298d0f6cc3b51520b7287216f200855c84be966",
+            "datavalue": {
+              "value": {
+                "entity-type": "item",
+                "numeric-id": 11457,
+                "id": "Q11457"
+              },
+              "type": "wikibase-entityid"
+            },
+            "datatype": "wikibase-item"
+          },
+          "type": "statement",
+          "id": "Q5867586$e2025d15-4521-3c5c-c8cc-c5c7664d973c",
+          "rank": "normal"
+        },
+        {
+          "mainsnak": {
+            "snaktype": "value",
+            "property": "P1269",
+            "hash": "5e8b5cd840ea6b3165811ddabbe1b650dcfde903",
+            "datavalue": {
+              "value": {
+                "entity-type": "item",
+                "numeric-id": 3695916,
+                "id": "Q3695916"
+              },
+              "type": "wikibase-entityid"
+            },
+            "datatype": "wikibase-item"
+          },
+          "type": "statement",
+          "id": "Q5867586$e72e2b3f-489d-0c8a-35fe-830c97584e33",
+          "rank": "normal"
+        },
+        {
+          "mainsnak": {
+            "snaktype": "value",
+            "property": "P1269",
+            "hash": "976f975e6959d09345be92b2ef9ba9ddb16a68df",
+            "datavalue": {
+              "value": {
+                "entity-type": "item",
+                "numeric-id": 12080077,
+                "id": "Q12080077"
+              },
+              "type": "wikibase-entityid"
+            },
+            "datatype": "wikibase-item"
+          },
+          "type": "statement",
+          "id": "Q5867586$1d436d48-46c8-2654-0699-045ab6049b18",
+          "rank": "normal"
+        }
+      ],
+      "P4293": [
+        {
+          "mainsnak": {
+            "snaktype": "value",
+            "property": "P4293",
+            "hash": "2520d61b57078282139dccd80da917020a5ce47f",
+            "datavalue": {
+              "value": "wa/142089,141728",
+              "type": "string"
+            },
+            "datatype": "external-id"
+          },
+          "type": "statement",
+          "qualifiers": {
+            "P3740": [
+              {
+                "snaktype": "value",
+                "property": "P3740",
+                "hash": "f910ccd7aa091f5266cf888fe5819e9dd26610b5",
+                "datavalue": {
+                  "value": {
+                    "amount": "+1261",
+                    "unit": "1"
+                  },
+                  "type": "quantity"
+                },
+                "datatype": "quantity"
+              }
+            ],
+            "P5592": [
+              {
+                "snaktype": "value",
+                "property": "P5592",
+                "hash": "921b1f983b31864eefed8eb96b04622a3abe842a",
+                "datavalue": {
+                  "value": {
+                    "amount": "+1261",
+                    "unit": "1"
+                  },
+                  "type": "quantity"
+                },
+                "datatype": "quantity"
+              }
+            ],
+            "P1810": [
+              {
+                "snaktype": "value",
+                "property": "P1810",
+                "hash": "7b578fb9551a7818d3f475d4d4c93fafc70054cf",
+                "datavalue": {
+                  "value": "Baumwolle : Welt",
+                  "type": "string"
+                },
+                "datatype": "string"
+              }
+            ]
+          },
+          "qualifiers-order": [
+            "P3740",
+            "P5592",
+            "P1810"
+          ],
+          "id": "Q5867586$7285bfd2-4f96-7a9f-99eb-b168563c73ad",
+          "rank": "normal"
+        }
+      ],
+      "P2671": [
+        {
+          "mainsnak": {
+            "snaktype": "value",
+            "property": "P2671",
+            "hash": "1ec9a88fa19e5373dc9a5662a8fa31d57d56adf8",
+            "datavalue": {
+              "value": "/g/120x5n43",
+              "type": "string"
+            },
+            "datatype": "external-id"
+          },
+          "type": "statement",
+          "id": "Q5867586$6A0EDD07-6C10-487D-85BD-41C4618792E3",
+          "rank": "normal"
+        }
+      ],
+      "P31": [
+        {
+          "mainsnak": {
+            "snaktype": "value",
+            "property": "P31",
+            "hash": "7ad5c7929af39fc2ff8afed55f1192f80e71d936",
+            "datavalue": {
+              "value": {
+                "entity-type": "item",
+                "numeric-id": 17524420,
+                "id": "Q17524420"
+              },
+              "type": "wikibase-entityid"
+            },
+            "datatype": "wikibase-item"
+          },
+          "type": "statement",
+          "id": "Q5867586$ccab3cfc-44ee-a753-3fac-bc28c79afac6",
+          "rank": "normal"
+        }
+      ],
+      "P1343": [
+        {
+          "mainsnak": {
+            "snaktype": "value",
+            "property": "P1343",
+            "hash": "1e87e0f7d2db06ab0ef5ccabd7c6275641f36553",
+            "datavalue": {
+              "value": {
+                "entity-type": "item",
+                "numeric-id": 867541,
+                "id": "Q867541"
+              },
+              "type": "wikibase-entityid"
+            },
+            "datatype": "wikibase-item"
+          },
+          "type": "statement",
+          "qualifiers": {
+            "P805": [
+              {
+                "snaktype": "value",
+                "property": "P805",
+                "hash": "c4a507c2719ac7b1b69fdfe2d9cdde1956d23c9a",
+                "datavalue": {
+                  "value": {
+                    "entity-type": "item",
+                    "numeric-id": 84688531,
+                    "id": "Q84688531"
+                  },
+                  "type": "wikibase-entityid"
+                },
+                "datatype": "wikibase-item"
+              }
+            ]
+          },
+          "qualifiers-order": [
+            "P805"
+          ],
+          "id": "Q5867586$E48379DF-116D-43FE-AD74-8891527B3A7F",
+          "rank": "normal"
+        }
+      ]
+    },
+    "sitelinks": {
+      "enwiki": {
+        "site": "enwiki",
+        "title": "History of cotton",
+        "badges": [],
+        "url": "https://en.wikipedia.org/wiki/History_of_cotton"
+      },
+      "eswiki": {
+        "site": "eswiki",
+        "title": "Historia del algodón",
+        "badges": [],
+        "url": "https://es.wikipedia.org/wiki/Historia_del_algod%C3%B3n"
+      },
+      "frwiki": {
+        "site": "frwiki",
+        "title": "Histoire de la culture du coton",
+        "badges": [],
+        "url": "https://fr.wikipedia.org/wiki/Histoire_de_la_culture_du_coton"
+      },
+      "hewiki": {
+        "site": "hewiki",
+        "title": "היסטוריה של כותנה",
+        "badges": [],
+        "url": "https://he.wikipedia.org/wiki/%D7%94%D7%99%D7%A1%D7%98%D7%95%D7%A8%D7%99%D7%94_%D7%A9%D7%9C_%D7%9B%D7%95%D7%AA%D7%A0%D7%94"
+      },
+      "kowiki": {
+        "site": "kowiki",
+        "title": "면화의 역사",
+        "badges": [],
+        "url": "https://ko.wikipedia.org/wiki/%EB%A9%B4%ED%99%94%EC%9D%98_%EC%97%AD%EC%82%AC"
+      },
+      "pawiki": {
+        "site": "pawiki",
+        "title": "ਕਪਾਹ ਦਾ ਇਤਿਹਾਸ",
+        "badges": [],
+        "url": "https://pa.wikipedia.org/wiki/%E0%A8%95%E0%A8%AA%E0%A8%BE%E0%A8%B9_%E0%A8%A6%E0%A8%BE_%E0%A8%87%E0%A8%A4%E0%A8%BF%E0%A8%B9%E0%A8%BE%E0%A8%B8"
+      }
+    }
+  }
+}

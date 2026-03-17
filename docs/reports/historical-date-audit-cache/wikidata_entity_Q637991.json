@@ -1,0 +1,725 @@
+{
+  "saved_at": "2026-03-07T14:38:14.261Z",
+  "value": {
+    "pageid": 600236,
+    "ns": 0,
+    "title": "Q637991",
+    "lastrevid": 2406150694,
+    "modified": "2025-09-16T20:49:08Z",
+    "type": "item",
+    "id": "Q637991",
+    "labels": {
+      "fr": {
+        "language": "fr",
+        "value": "SS Arctic"
+      },
+      "en": {
+        "language": "en",
+        "value": "SS Arctic"
+      },
+      "nl": {
+        "language": "nl",
+        "value": "SS Arctic"
+      },
+      "de": {
+        "language": "de",
+        "value": "Arctic (Schiff, 1850)"
+      },
+      "fa": {
+        "language": "fa",
+        "value": "اس‌اس آرکتیک"
+      },
+      "ru": {
+        "language": "ru",
+        "value": "Арктик"
+      },
+      "ja": {
+        "language": "ja",
+        "value": "アークティック (蒸気船)"
+      },
+      "ga": {
+        "language": "ga",
+        "value": "SS Arctic"
+      },
+      "fi": {
+        "language": "fi",
+        "value": "SS Arctic"
+      },
+      "es": {
+        "language": "es",
+        "value": "SS Arctic"
+      },
+      "uk": {
+        "language": "uk",
+        "value": "Арктик (пароплав)"
+      }
+    },
+    "descriptions": {
+      "en": {
+        "language": "en",
+        "value": "paddle steamer of the 1850s"
+      },
+      "nl": {
+        "language": "nl",
+        "value": "schip"
+      },
+      "de": {
+        "language": "de",
+        "value": "Passagierschiff der US-amerikanischen Reederei Collins Line"
+      },
+      "fi": {
+        "language": "fi",
+        "value": "siipiratasalus"
+      }
+    },
+    "aliases": {
+      "fr": [
+        {
+          "language": "fr",
+          "value": "SS Artic"
+        }
+      ],
+      "nl": [
+        {
+          "language": "nl",
+          "value": "Arctic"
+        }
+      ],
+      "en": [
+        {
+          "language": "en",
+          "value": "Arctic"
+        }
+      ]
+    },
+    "claims": {
+      "P373": [
+        {
+          "mainsnak": {
+            "snaktype": "value",
+            "property": "P373",
+            "hash": "1b7a2aa9078af774cd9288034cfd77755fedc130",
+            "datavalue": {
+              "value": "Arctic (ship, 1850)",
+              "type": "string"
+            },
+            "datatype": "string"
+          },
+          "type": "statement",
+          "id": "q637991$A8D4CAAE-41DB-4D71-8B35-1D65225C7E18",
+          "rank": "normal",
+          "references": [
+            {
+              "hash": "fa278ebfc458360e5aed63d5058cca83c46134f1",
+              "snaks": {
+                "P143": [
+                  {
+                    "snaktype": "value",
+                    "property": "P143",
+                    "hash": "e4f6d9441d0600513c4533c672b5ab472dc73694",
+                    "datavalue": {
+                      "value": {
+                        "entity-type": "item",
+                        "numeric-id": 328,
+                        "id": "Q328"
+                      },
+                      "type": "wikibase-entityid"
+                    },
+                    "datatype": "wikibase-item"
+                  }
+                ]
+              },
+              "snaks-order": [
+                "P143"
+              ]
+            }
+          ]
+        }
+      ],
+      "P31": [
+        {
+          "mainsnak": {
+            "snaktype": "value",
+            "property": "P31",
+            "hash": "5075dfeec37b75ce11b909769a94cf65d66009a6",
+            "datavalue": {
+              "value": {
+                "entity-type": "item",
+                "numeric-id": 1121471,
+                "id": "Q1121471"
+              },
+              "type": "wikibase-entityid"
+            },
+            "datatype": "wikibase-item"
+          },
+          "type": "statement",
+          "id": "Q637991$24f76c3a-4671-b3a8-3e8c-59954d3b69ff",
+          "rank": "normal"
+        }
+      ],
+      "P127": [
+        {
+          "mainsnak": {
+            "snaktype": "value",
+            "property": "P127",
+            "hash": "7afb0c84c3f2b8c42fa004df574f11d7571f133f",
+            "datavalue": {
+              "value": {
+                "entity-type": "item",
+                "numeric-id": 1109806,
+                "id": "Q1109806"
+              },
+              "type": "wikibase-entityid"
+            },
+            "datatype": "wikibase-item"
+          },
+          "type": "statement",
+          "id": "Q637991$9795F5D8-A221-4434-92C6-44D80B51F32A",
+          "rank": "normal",
+          "references": [
+            {
+              "hash": "fa278ebfc458360e5aed63d5058cca83c46134f1",
+              "snaks": {
+                "P143": [
+                  {
+                    "snaktype": "value",
+                    "property": "P143",
+                    "hash": "e4f6d9441d0600513c4533c672b5ab472dc73694",
+                    "datavalue": {
+                      "value": {
+                        "entity-type": "item",
+                        "numeric-id": 328,
+                        "id": "Q328"
+                      },
+                      "type": "wikibase-entityid"
+                    },
+                    "datatype": "wikibase-item"
+                  }
+                ]
+              },
+              "snaks-order": [
+                "P143"
+              ]
+            }
+          ]
+        }
+      ],
+      "P646": [
+        {
+          "mainsnak": {
+            "snaktype": "value",
+            "property": "P646",
+            "hash": "5b5a8f95adf869b6a329afe9665224a35ef68e08",
+            "datavalue": {
+              "value": "/m/03c5_7c",
+              "type": "string"
+            },
+            "datatype": "external-id"
+          },
+          "type": "statement",
+          "id": "Q637991$FE93BA63-7FC2-4376-A5A4-89BE3D6E3CFB",
+          "rank": "normal",
+          "references": [
+            {
+              "hash": "2b00cb481cddcac7623114367489b5c194901c4a",
+              "snaks": {
+                "P248": [
+                  {
+                    "snaktype": "value",
+                    "property": "P248",
+                    "hash": "a94b740202b097dd33355e0e6c00e54b9395e5e0",
+                    "datavalue": {
+                      "value": {
+                        "entity-type": "item",
+                        "numeric-id": 15241312,
+                        "id": "Q15241312"
+                      },
+                      "type": "wikibase-entityid"
+                    },
+                    "datatype": "wikibase-item"
+                  }
+                ],
+                "P577": [
+                  {
+                    "snaktype": "value",
+                    "property": "P577",
+                    "hash": "fde79ecb015112d2f29229ccc1ec514ed3e71fa2",
+                    "datavalue": {
+                      "value": {
+                        "time": "+2013-10-28T00:00:00Z",
+                        "timezone": 0,
+                        "before": 0,
+                        "after": 0,
+                        "precision": 11,
+                        "calendarmodel": "http://www.wikidata.org/entity/Q1985727"
+                      },
+                      "type": "time"
+                    },
+                    "datatype": "time"
+                  }
+                ]
+              },
+              "snaks-order": [
+                "P248",
+                "P577"
+              ]
+            }
+          ]
+        }
+      ],
+      "P18": [
+        {
+          "mainsnak": {
+            "snaktype": "value",
+            "property": "P18",
+            "hash": "e44eb04f87ef3bfc03b6c7d44735bf98f06b4342",
+            "datavalue": {
+              "value": "USM steamship Arctic (1850).jpg",
+              "type": "string"
+            },
+            "datatype": "commonsMedia"
+          },
+          "type": "statement",
+          "id": "Q637991$BC4B2403-7CA3-4A46-BE3C-51EBD81F5525",
+          "rank": "normal",
+          "references": [
+            {
+              "hash": "fa278ebfc458360e5aed63d5058cca83c46134f1",
+              "snaks": {
+                "P143": [
+                  {
+                    "snaktype": "value",
+                    "property": "P143",
+                    "hash": "e4f6d9441d0600513c4533c672b5ab472dc73694",
+                    "datavalue": {
+                      "value": {
+                        "entity-type": "item",
+                        "numeric-id": 328,
+                        "id": "Q328"
+                      },
+                      "type": "wikibase-entityid"
+                    },
+                    "datatype": "wikibase-item"
+                  }
+                ]
+              },
+              "snaks-order": [
+                "P143"
+              ]
+            }
+          ]
+        }
+      ],
+      "P2043": [
+        {
+          "mainsnak": {
+            "snaktype": "value",
+            "property": "P2043",
+            "hash": "6de28e3c0f657f8ec8debb07f950490acd2e1fef",
+            "datavalue": {
+              "value": {
+                "amount": "+284",
+                "unit": "http://www.wikidata.org/entity/Q3710",
+                "upperBound": "+284",
+                "lowerBound": "+284"
+              },
+              "type": "quantity"
+            },
+            "datatype": "quantity"
+          },
+          "type": "statement",
+          "id": "Q637991$3a5ed3a1-4053-e201-63de-db9119c7b9ea",
+          "rank": "normal"
+        }
+      ],
+      "P2262": [
+        {
+          "mainsnak": {
+            "snaktype": "value",
+            "property": "P2262",
+            "hash": "596789046e147854604b6e1ac8e17f177cc0b284",
+            "datavalue": {
+              "value": {
+                "amount": "+9.6",
+                "unit": "http://www.wikidata.org/entity/Q11573"
+              },
+              "type": "quantity"
+            },
+            "datatype": "quantity"
+          },
+          "type": "statement",
+          "id": "Q637991$35A7D599-08CB-40E7-8528-EACF448887BA",
+          "rank": "normal",
+          "references": [
+            {
+              "hash": "9a24f7c0208b05d6be97077d855671d1dfdbc0dd",
+              "snaks": {
+                "P143": [
+                  {
+                    "snaktype": "value",
+                    "property": "P143",
+                    "hash": "d38375ffe6fe142663ff55cd783aa4df4301d83d",
+                    "datavalue": {
+                      "value": {
+                        "entity-type": "item",
+                        "numeric-id": 48183,
+                        "id": "Q48183"
+                      },
+                      "type": "wikibase-entityid"
+                    },
+                    "datatype": "wikibase-item"
+                  }
+                ]
+              },
+              "snaks-order": [
+                "P143"
+              ]
+            }
+          ]
+        }
+      ],
+      "P137": [
+        {
+          "mainsnak": {
+            "snaktype": "value",
+            "property": "P137",
+            "hash": "7edf27404ac9cc96aa60add37d3b7fc42b215d7c",
+            "datavalue": {
+              "value": {
+                "entity-type": "item",
+                "numeric-id": 1109806,
+                "id": "Q1109806"
+              },
+              "type": "wikibase-entityid"
+            },
+            "datatype": "wikibase-item"
+          },
+          "type": "statement",
+          "id": "Q637991$6CB65695-294A-4917-B998-99AADE89E99B",
+          "rank": "normal",
+          "references": [
+            {
+              "hash": "5b1bbf0cea839241ffb6ce3bfbf6fb34b8a2256a",
+              "snaks": {
+                "P143": [
+                  {
+                    "snaktype": "value",
+                    "property": "P143",
+                    "hash": "d38375ffe6fe142663ff55cd783aa4df4301d83d",
+                    "datavalue": {
+                      "value": {
+                        "entity-type": "item",
+                        "numeric-id": 48183,
+                        "id": "Q48183"
+                      },
+                      "type": "wikibase-entityid"
+                    },
+                    "datatype": "wikibase-item"
+                  }
+                ],
+                "P4656": [
+                  {
+                    "snaktype": "value",
+                    "property": "P4656",
+                    "hash": "93d3b93c8e02f7a2d0c85656af683713d1a5d651",
+                    "datavalue": {
+                      "value": "https://de.wikipedia.org/w/index.php?title=Arctic_(Schiff,_1850)&oldid=155512866",
+                      "type": "string"
+                    },
+                    "datatype": "url"
+                  }
+                ]
+              },
+              "snaks-order": [
+                "P143",
+                "P4656"
+              ]
+            }
+          ]
+        }
+      ],
+      "P2261": [
+        {
+          "mainsnak": {
+            "snaktype": "value",
+            "property": "P2261",
+            "hash": "5335152ba674bce45d720dc9c741cbb765f7e424",
+            "datavalue": {
+              "value": {
+                "amount": "+14",
+                "unit": "http://www.wikidata.org/entity/Q11573"
+              },
+              "type": "quantity"
+            },
+            "datatype": "quantity"
+          },
+          "type": "statement",
+          "id": "Q637991$C9683314-C2A6-4C93-8778-4CEB496810E8",
+          "rank": "normal",
+          "references": [
+            {
+              "hash": "5b1bbf0cea839241ffb6ce3bfbf6fb34b8a2256a",
+              "snaks": {
+                "P143": [
+                  {
+                    "snaktype": "value",
+                    "property": "P143",
+                    "hash": "d38375ffe6fe142663ff55cd783aa4df4301d83d",
+                    "datavalue": {
+                      "value": {
+                        "entity-type": "item",
+                        "numeric-id": 48183,
+                        "id": "Q48183"
+                      },
+                      "type": "wikibase-entityid"
+                    },
+                    "datatype": "wikibase-item"
+                  }
+                ],
+                "P4656": [
+                  {
+                    "snaktype": "value",
+                    "property": "P4656",
+                    "hash": "93d3b93c8e02f7a2d0c85656af683713d1a5d651",
+                    "datavalue": {
+                      "value": "https://de.wikipedia.org/w/index.php?title=Arctic_(Schiff,_1850)&oldid=155512866",
+                      "type": "string"
+                    },
+                    "datatype": "url"
+                  }
+                ]
+              },
+              "snaks-order": [
+                "P143",
+                "P4656"
+              ]
+            }
+          ]
+        }
+      ],
+      "P504": [
+        {
+          "mainsnak": {
+            "snaktype": "value",
+            "property": "P504",
+            "hash": "96acb8506a4cbce22abe23706d72ab1a7d28e8c0",
+            "datavalue": {
+              "value": {
+                "entity-type": "item",
+                "numeric-id": 60,
+                "id": "Q60"
+              },
+              "type": "wikibase-entityid"
+            },
+            "datatype": "wikibase-item"
+          },
+          "type": "statement",
+          "id": "Q637991$31218AA1-CC37-48E3-B3AB-1E8641C9EA93",
+          "rank": "normal",
+          "references": [
+            {
+              "hash": "20e2ec45bc901423d834bea29593e4ebb6846974",
+              "snaks": {
+                "P143": [
+                  {
+                    "snaktype": "value",
+                    "property": "P143",
+                    "hash": "d38375ffe6fe142663ff55cd783aa4df4301d83d",
+                    "datavalue": {
+                      "value": {
+                        "entity-type": "item",
+                        "numeric-id": 48183,
+                        "id": "Q48183"
+                      },
+                      "type": "wikibase-entityid"
+                    },
+                    "datatype": "wikibase-item"
+                  }
+                ],
+                "P4656": [
+                  {
+                    "snaktype": "value",
+                    "property": "P4656",
+                    "hash": "a2dbb7ff6dec6acac2d66cf75df54cdd4f14a628",
+                    "datavalue": {
+                      "value": "https://de.wikipedia.org/w/index.php?title=Arctic_(Schiff,_1850)&oldid=184578754",
+                      "type": "string"
+                    },
+                    "datatype": "url"
+                  }
+                ]
+              },
+              "snaks-order": [
+                "P143",
+                "P4656"
+              ]
+            }
+          ]
+        }
+      ],
+      "P1343": [
+        {
+          "mainsnak": {
+            "snaktype": "value",
+            "property": "P1343",
+            "hash": "69e8312cfc334feaddfe181369f1ab6ac747bafa",
+            "datavalue": {
+              "value": {
+                "entity-type": "item",
+                "numeric-id": 19240319,
+                "id": "Q19240319"
+              },
+              "type": "wikibase-entityid"
+            },
+            "datatype": "wikibase-item"
+          },
+          "type": "statement",
+          "qualifiers": {
+            "P1433": [
+              {
+                "snaktype": "value",
+                "property": "P1433",
+                "hash": "5b6211c15b8683ece995d60580a37fbbf6ceb615",
+                "datavalue": {
+                  "value": {
+                    "entity-type": "item",
+                    "numeric-id": 655617,
+                    "id": "Q655617"
+                  },
+                  "type": "wikibase-entityid"
+                },
+                "datatype": "wikibase-item"
+              }
+            ]
+          },
+          "qualifiers-order": [
+            "P1433"
+          ],
+          "id": "Q637991$a3060685-49af-f38b-cfc8-4bc951c6d628",
+          "rank": "normal"
+        }
+      ],
+      "P2052": [
+        {
+          "mainsnak": {
+            "snaktype": "value",
+            "property": "P2052",
+            "hash": "156993a2bb7b95046cdf985ecda5736f985c018d",
+            "datavalue": {
+              "value": {
+                "amount": "+12",
+                "unit": "http://www.wikidata.org/entity/Q128822"
+              },
+              "type": "quantity"
+            },
+            "datatype": "quantity"
+          },
+          "type": "statement",
+          "id": "Q637991$C0997034-5D48-45F3-B8BF-F5B31643B064",
+          "rank": "normal",
+          "references": [
+            {
+              "hash": "8b94cbabf1aa783ace729c8a4bac2eeb0b1b5426",
+              "snaks": {
+                "P143": [
+                  {
+                    "snaktype": "value",
+                    "property": "P143",
+                    "hash": "d38375ffe6fe142663ff55cd783aa4df4301d83d",
+                    "datavalue": {
+                      "value": {
+                        "entity-type": "item",
+                        "numeric-id": 48183,
+                        "id": "Q48183"
+                      },
+                      "type": "wikibase-entityid"
+                    },
+                    "datatype": "wikibase-item"
+                  }
+                ],
+                "P4656": [
+                  {
+                    "snaktype": "value",
+                    "property": "P4656",
+                    "hash": "c9b2873e993f81eea486ec29f0a69746c6db33fc",
+                    "datavalue": {
+                      "value": "https://de.wikipedia.org/w/index.php?title=Arctic_(Schiff,_1850)&oldid=257154873",
+                      "type": "string"
+                    },
+                    "datatype": "url"
+                  }
+                ]
+              },
+              "snaks-order": [
+                "P143",
+                "P4656"
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    "sitelinks": {
+      "commonswiki": {
+        "site": "commonswiki",
+        "title": "Category:Arctic (ship, 1850)",
+        "badges": [],
+        "url": "https://commons.wikimedia.org/wiki/Category:Arctic_(ship,_1850)"
+      },
+      "dewiki": {
+        "site": "dewiki",
+        "title": "Arctic (Schiff, 1850)",
+        "badges": [],
+        "url": "https://de.wikipedia.org/wiki/Arctic_(Schiff,_1850)"
+      },
+      "enwiki": {
+        "site": "enwiki",
+        "title": "SS Arctic",
+        "badges": [],
+        "url": "https://en.wikipedia.org/wiki/SS_Arctic"
+      },
+      "eswiki": {
+        "site": "eswiki",
+        "title": "SS Arctic",
+        "badges": [],
+        "url": "https://es.wikipedia.org/wiki/SS_Arctic"
+      },
+      "fawiki": {
+        "site": "fawiki",
+        "title": "اس‌اس آرکتیک",
+        "badges": [],
+        "url": "https://fa.wikipedia.org/wiki/%D8%A7%D8%B3%E2%80%8C%D8%A7%D8%B3_%D8%A2%D8%B1%DA%A9%D8%AA%DB%8C%DA%A9"
+      },
+      "fiwiki": {
+        "site": "fiwiki",
+        "title": "SS Arctic",
+        "badges": [],
+        "url": "https://fi.wikipedia.org/wiki/SS_Arctic"
+      },
+      "frwiki": {
+        "site": "frwiki",
+        "title": "SS Arctic",
+        "badges": [],
+        "url": "https://fr.wikipedia.org/wiki/SS_Arctic"
+      },
+      "nlwiki": {
+        "site": "nlwiki",
+        "title": "Arctic (schip, 1850)",
+        "badges": [],
+        "url": "https://nl.wikipedia.org/wiki/Arctic_(schip,_1850)"
+      },
+      "ruwiki": {
+        "site": "ruwiki",
+        "title": "Арктик (колёсный пароход)",
+        "badges": [],
+        "url": "https://ru.wikipedia.org/wiki/%D0%90%D1%80%D0%BA%D1%82%D0%B8%D0%BA_(%D0%BA%D0%BE%D0%BB%D1%91%D1%81%D0%BD%D1%8B%D0%B9_%D0%BF%D0%B0%D1%80%D0%BE%D1%85%D0%BE%D0%B4)"
+      },
+      "ukwiki": {
+        "site": "ukwiki",
+        "title": "Арктик (пароплав)",
+        "badges": [],
+        "url": "https://uk.wikipedia.org/wiki/%D0%90%D1%80%D0%BA%D1%82%D0%B8%D0%BA_(%D0%BF%D0%B0%D1%80%D0%BE%D0%BF%D0%BB%D0%B0%D0%B2)"
+      }
+    }
+  }
+}

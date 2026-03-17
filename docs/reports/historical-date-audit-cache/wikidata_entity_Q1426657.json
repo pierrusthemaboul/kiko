@@ -1,0 +1,876 @@
+{
+  "saved_at": "2026-03-07T15:12:34.145Z",
+  "value": {
+    "pageid": 1365224,
+    "ns": 0,
+    "title": "Q1426657",
+    "lastrevid": 2449851172,
+    "modified": "2025-12-31T20:22:32Z",
+    "type": "item",
+    "id": "Q1426657",
+    "labels": {
+      "de": {
+        "language": "de",
+        "value": "Schatz von Pietroasa"
+      },
+      "fr": {
+        "language": "fr",
+        "value": "Trésor de Pietroasa"
+      },
+      "en": {
+        "language": "en",
+        "value": "Pietroasa Treasure"
+      },
+      "ro": {
+        "language": "ro",
+        "value": "Tezaurul de la Pietroasa"
+      },
+      "it": {
+        "language": "it",
+        "value": "Tesoro di Pietroasele"
+      },
+      "ru": {
+        "language": "ru",
+        "value": "Клад Петроасы"
+      },
+      "be": {
+        "language": "be",
+        "value": "Пьетраасельскі скарб"
+      },
+      "sl": {
+        "language": "sl",
+        "value": "Zaklad iz Pietroasele"
+      },
+      "bg": {
+        "language": "bg",
+        "value": "Петроаско съкровище"
+      },
+      "ca": {
+        "language": "ca",
+        "value": "Tresor de Pietroasele"
+      },
+      "es": {
+        "language": "es",
+        "value": "El tesoro de Pietroasa"
+      }
+    },
+    "descriptions": {
+      "en": {
+        "language": "en",
+        "value": "Gothic treasure"
+      },
+      "de": {
+        "language": "de",
+        "value": "archäologischen Fund in Rumänien"
+      },
+      "ro": {
+        "language": "ro",
+        "value": "comoară gotică"
+      }
+    },
+    "aliases": {
+      "de": [
+        {
+          "language": "de",
+          "value": "Gotenschatz"
+        }
+      ],
+      "ro": [
+        {
+          "language": "ro",
+          "value": "Cloșca cu puii de aur"
+        }
+      ]
+    },
+    "claims": {
+      "P373": [
+        {
+          "mainsnak": {
+            "snaktype": "value",
+            "property": "P373",
+            "hash": "e79e211f44e9a309ed3ff6e4c55554f6a91dabd2",
+            "datavalue": {
+              "value": "Pietroasele treasure",
+              "type": "string"
+            },
+            "datatype": "string"
+          },
+          "type": "statement",
+          "id": "q1426657$AF6B3DA6-1A07-4B56-A457-7294F2D08244",
+          "rank": "normal",
+          "references": [
+            {
+              "hash": "fa278ebfc458360e5aed63d5058cca83c46134f1",
+              "snaks": {
+                "P143": [
+                  {
+                    "snaktype": "value",
+                    "property": "P143",
+                    "hash": "e4f6d9441d0600513c4533c672b5ab472dc73694",
+                    "datavalue": {
+                      "value": {
+                        "entity-type": "item",
+                        "numeric-id": 328,
+                        "id": "Q328"
+                      },
+                      "type": "wikibase-entityid"
+                    },
+                    "datatype": "wikibase-item"
+                  }
+                ]
+              },
+              "snaks-order": [
+                "P143"
+              ]
+            }
+          ]
+        }
+      ],
+      "P646": [
+        {
+          "mainsnak": {
+            "snaktype": "value",
+            "property": "P646",
+            "hash": "6126a814bc27352de1c4ccaff7cdfca8c09123ce",
+            "datavalue": {
+              "value": "/m/027wvq5",
+              "type": "string"
+            },
+            "datatype": "external-id"
+          },
+          "type": "statement",
+          "id": "Q1426657$398F59A4-C50E-4068-8E9E-2D938DE5914D",
+          "rank": "normal",
+          "references": [
+            {
+              "hash": "2b00cb481cddcac7623114367489b5c194901c4a",
+              "snaks": {
+                "P248": [
+                  {
+                    "snaktype": "value",
+                    "property": "P248",
+                    "hash": "a94b740202b097dd33355e0e6c00e54b9395e5e0",
+                    "datavalue": {
+                      "value": {
+                        "entity-type": "item",
+                        "numeric-id": 15241312,
+                        "id": "Q15241312"
+                      },
+                      "type": "wikibase-entityid"
+                    },
+                    "datatype": "wikibase-item"
+                  }
+                ],
+                "P577": [
+                  {
+                    "snaktype": "value",
+                    "property": "P577",
+                    "hash": "fde79ecb015112d2f29229ccc1ec514ed3e71fa2",
+                    "datavalue": {
+                      "value": {
+                        "time": "+2013-10-28T00:00:00Z",
+                        "timezone": 0,
+                        "before": 0,
+                        "after": 0,
+                        "precision": 11,
+                        "calendarmodel": "http://www.wikidata.org/entity/Q1985727"
+                      },
+                      "type": "time"
+                    },
+                    "datatype": "time"
+                  }
+                ]
+              },
+              "snaks-order": [
+                "P248",
+                "P577"
+              ]
+            }
+          ]
+        }
+      ],
+      "P2924": [
+        {
+          "mainsnak": {
+            "snaktype": "value",
+            "property": "P2924",
+            "hash": "37838c341adec362a37cb100f82f4862dccb6642",
+            "datavalue": {
+              "value": "3136066",
+              "type": "string"
+            },
+            "datatype": "external-id"
+          },
+          "type": "statement",
+          "qualifiers": {
+            "P1810": [
+              {
+                "snaktype": "value",
+                "property": "P1810",
+                "hash": "30795ee7f92e4399fe86fcf28809960e1bd8ff46",
+                "datavalue": {
+                  "value": "ПЕТРОАСА",
+                  "type": "string"
+                },
+                "datatype": "string"
+              }
+            ]
+          },
+          "qualifiers-order": [
+            "P1810"
+          ],
+          "id": "Q1426657$a685f3f4-4733-c924-aa04-579b835cf67a",
+          "rank": "normal"
+        }
+      ],
+      "P18": [
+        {
+          "mainsnak": {
+            "snaktype": "value",
+            "property": "P18",
+            "hash": "ced823f8b62c13fd5af882ef7803a81181f7252e",
+            "datavalue": {
+              "value": "Tesaurul de la Petrosa.jpg",
+              "type": "string"
+            },
+            "datatype": "commonsMedia"
+          },
+          "type": "statement",
+          "qualifiers": {
+            "P2096": [
+              {
+                "snaktype": "value",
+                "property": "P2096",
+                "hash": "55c95f91a04d0eaff95f4d49620388908978bfa7",
+                "datavalue": {
+                  "value": {
+                    "text": "Ilustrația realizată de [[Henric Trenk]] pentru coperta primului volum ''Le Trésor de Pétrossa'' publicat de [[Alexandru Odobescu]] în anul [[1889]]",
+                    "language": "ro"
+                  },
+                  "type": "monolingualtext"
+                },
+                "datatype": "monolingualtext"
+              },
+              {
+                "snaktype": "value",
+                "property": "P2096",
+                "hash": "cfb3a952a2029a9283615df847586d2bcc1282b1",
+                "datavalue": {
+                  "value": {
+                    "text": "Frontispici del Tresor de Petroasa d'Alexandru Odobescu (1889), d'Henri Trenk.",
+                    "language": "ca"
+                  },
+                  "type": "monolingualtext"
+                },
+                "datatype": "monolingualtext"
+              }
+            ]
+          },
+          "qualifiers-order": [
+            "P2096"
+          ],
+          "id": "Q1426657$b243e030-4863-4f2e-5fb5-1ba648e4623f",
+          "rank": "normal"
+        }
+      ],
+      "P31": [
+        {
+          "mainsnak": {
+            "snaktype": "value",
+            "property": "P31",
+            "hash": "10c35564a9f8f147d81ecf21aa247355d5971254",
+            "datavalue": {
+              "value": {
+                "entity-type": "item",
+                "numeric-id": 272937,
+                "id": "Q272937"
+              },
+              "type": "wikibase-entityid"
+            },
+            "datatype": "wikibase-item"
+          },
+          "type": "statement",
+          "id": "Q1426657$28e7d5fc-4231-0118-93e8-b1aae2b973a0",
+          "rank": "normal"
+        }
+      ],
+      "P571": [
+        {
+          "mainsnak": {
+            "snaktype": "value",
+            "property": "P571",
+            "hash": "3172c8d6f9193bad0294e5b37eb408c057c94e05",
+            "datavalue": {
+              "value": {
+                "time": "+0381-00-00T00:00:00Z",
+                "timezone": 0,
+                "before": 0,
+                "after": 0,
+                "precision": 9,
+                "calendarmodel": "http://www.wikidata.org/entity/Q1985786"
+              },
+              "type": "time"
+            },
+            "datatype": "time"
+          },
+          "type": "statement",
+          "id": "Q1426657$d4392aee-4b9d-00d2-9050-ecc21dfe5431",
+          "rank": "normal"
+        }
+      ],
+      "P135": [
+        {
+          "mainsnak": {
+            "snaktype": "value",
+            "property": "P135",
+            "hash": "c031a419e27853c0d52ff3f8ecfda4f22f5c57f3",
+            "datavalue": {
+              "value": {
+                "entity-type": "item",
+                "numeric-id": 217050,
+                "id": "Q217050"
+              },
+              "type": "wikibase-entityid"
+            },
+            "datatype": "wikibase-item"
+          },
+          "type": "statement",
+          "id": "Q1426657$8790b195-44ca-4369-c9db-4a70adca8c68",
+          "rank": "normal"
+        }
+      ],
+      "P276": [
+        {
+          "mainsnak": {
+            "snaktype": "value",
+            "property": "P276",
+            "hash": "d66a8ce5c8bbed1c0a6191ffe6e5b4f292a6e452",
+            "datavalue": {
+              "value": {
+                "entity-type": "item",
+                "numeric-id": 179283,
+                "id": "Q179283"
+              },
+              "type": "wikibase-entityid"
+            },
+            "datatype": "wikibase-item"
+          },
+          "type": "statement",
+          "qualifiers": {
+            "P131": [
+              {
+                "snaktype": "value",
+                "property": "P131",
+                "hash": "36dc77b000984bca1f6205488a5df9cabf2a525e",
+                "datavalue": {
+                  "value": {
+                    "entity-type": "item",
+                    "numeric-id": 19660,
+                    "id": "Q19660"
+                  },
+                  "type": "wikibase-entityid"
+                },
+                "datatype": "wikibase-item"
+              }
+            ]
+          },
+          "qualifiers-order": [
+            "P131"
+          ],
+          "id": "Q1426657$3181af50-4eed-8969-f87b-e7edcccb2cb0",
+          "rank": "normal"
+        }
+      ],
+      "P170": [
+        {
+          "mainsnak": {
+            "snaktype": "value",
+            "property": "P170",
+            "hash": "3c6c7367590d2739a18c71452304b4992478551a",
+            "datavalue": {
+              "value": {
+                "entity-type": "item",
+                "numeric-id": 23693,
+                "id": "Q23693"
+              },
+              "type": "wikibase-entityid"
+            },
+            "datatype": "wikibase-item"
+          },
+          "type": "statement",
+          "id": "Q1426657$07afd4fc-4960-4e83-eb9c-45c719b743f3",
+          "rank": "normal"
+        }
+      ],
+      "P186": [
+        {
+          "mainsnak": {
+            "snaktype": "value",
+            "property": "P186",
+            "hash": "ba98efee5f158223a7163de958af000e6b22e773",
+            "datavalue": {
+              "value": {
+                "entity-type": "item",
+                "numeric-id": 897,
+                "id": "Q897"
+              },
+              "type": "wikibase-entityid"
+            },
+            "datatype": "wikibase-item"
+          },
+          "type": "statement",
+          "id": "Q1426657$2a4180f1-45f1-4e72-b01f-482c50f2af43",
+          "rank": "normal"
+        },
+        {
+          "mainsnak": {
+            "snaktype": "value",
+            "property": "P186",
+            "hash": "09efa96cc2c9bb17109d93794d68b1dfdebd6986",
+            "datavalue": {
+              "value": {
+                "entity-type": "item",
+                "numeric-id": 1090,
+                "id": "Q1090"
+              },
+              "type": "wikibase-entityid"
+            },
+            "datatype": "wikibase-item"
+          },
+          "type": "statement",
+          "id": "Q1426657$42672807-4b48-ed68-8b02-5b2cfbf8de69",
+          "rank": "normal"
+        },
+        {
+          "mainsnak": {
+            "snaktype": "value",
+            "property": "P186",
+            "hash": "1aafd58b38495eb02b371701f0aff3ff4f8c1193",
+            "datavalue": {
+              "value": {
+                "entity-type": "item",
+                "numeric-id": 34095,
+                "id": "Q34095"
+              },
+              "type": "wikibase-entityid"
+            },
+            "datatype": "wikibase-item"
+          },
+          "type": "statement",
+          "id": "Q1426657$ff17f411-4f33-5277-e67f-da50fd30f2c6",
+          "rank": "normal"
+        },
+        {
+          "mainsnak": {
+            "snaktype": "value",
+            "property": "P186",
+            "hash": "d3de35d41ace76d670d123d7fe3c957f82f7f67d",
+            "datavalue": {
+              "value": {
+                "entity-type": "item",
+                "numeric-id": 105368,
+                "id": "Q105368"
+              },
+              "type": "wikibase-entityid"
+            },
+            "datatype": "wikibase-item"
+          },
+          "type": "statement",
+          "id": "Q1426657$c447184c-4ec7-70e3-0736-54079e750721",
+          "rank": "normal"
+        },
+        {
+          "mainsnak": {
+            "snaktype": "value",
+            "property": "P186",
+            "hash": "350afe7fc059d0ca3c06f2831502abe20afc4d4a",
+            "datavalue": {
+              "value": {
+                "entity-type": "item",
+                "numeric-id": 43513,
+                "id": "Q43513"
+              },
+              "type": "wikibase-entityid"
+            },
+            "datatype": "wikibase-item"
+          },
+          "type": "statement",
+          "id": "Q1426657$23c90c5c-40c2-ee1c-db6e-d8c78c4f34af",
+          "rank": "normal"
+        },
+        {
+          "mainsnak": {
+            "snaktype": "value",
+            "property": "P186",
+            "hash": "3cf276e3b5af82393cf31e8bf2f2ffffeaff63b9",
+            "datavalue": {
+              "value": {
+                "entity-type": "item",
+                "numeric-id": 43436,
+                "id": "Q43436"
+              },
+              "type": "wikibase-entityid"
+            },
+            "datatype": "wikibase-item"
+          },
+          "type": "statement",
+          "id": "Q1426657$5ca11a75-428b-1d4c-a741-a6a0423c2629",
+          "rank": "normal"
+        },
+        {
+          "mainsnak": {
+            "snaktype": "value",
+            "property": "P186",
+            "hash": "69b059ef8dae700d12212ffb763d9c9b1322167e",
+            "datavalue": {
+              "value": {
+                "entity-type": "item",
+                "numeric-id": 273663,
+                "id": "Q273663"
+              },
+              "type": "wikibase-entityid"
+            },
+            "datatype": "wikibase-item"
+          },
+          "type": "statement",
+          "id": "Q1426657$a4e79875-40d8-2948-e989-1ed134661110",
+          "rank": "normal"
+        },
+        {
+          "mainsnak": {
+            "snaktype": "value",
+            "property": "P186",
+            "hash": "90672e81a726cddb655380fd781dbd45f2f5fde3",
+            "datavalue": {
+              "value": {
+                "entity-type": "item",
+                "numeric-id": 179911,
+                "id": "Q179911"
+              },
+              "type": "wikibase-entityid"
+            },
+            "datatype": "wikibase-item"
+          },
+          "type": "statement",
+          "id": "Q1426657$b9a18fca-4fb5-a1d0-c5bf-edfaae3c4162",
+          "rank": "normal"
+        },
+        {
+          "mainsnak": {
+            "snaktype": "value",
+            "property": "P186",
+            "hash": "5d9dfd8569cd562886cbe72c961ecf3fd53474cd",
+            "datavalue": {
+              "value": {
+                "entity-type": "item",
+                "numeric-id": 165254,
+                "id": "Q165254"
+              },
+              "type": "wikibase-entityid"
+            },
+            "datatype": "wikibase-item"
+          },
+          "type": "statement",
+          "id": "Q1426657$8256a7d1-4934-6b91-482a-ebdf144d054d",
+          "rank": "normal"
+        },
+        {
+          "mainsnak": {
+            "snaktype": "value",
+            "property": "P186",
+            "hash": "afdd242b1e201c9f1319c608a4ef330af47bfca1",
+            "datavalue": {
+              "value": {
+                "entity-type": "item",
+                "numeric-id": 11469,
+                "id": "Q11469"
+              },
+              "type": "wikibase-entityid"
+            },
+            "datatype": "wikibase-item"
+          },
+          "type": "statement",
+          "id": "Q1426657$e35e8a87-419f-6b28-3276-5b522f581aa2",
+          "rank": "normal"
+        },
+        {
+          "mainsnak": {
+            "snaktype": "value",
+            "property": "P186",
+            "hash": "51c7f752bd6910787bf2812dbbdaa8f97db67be1",
+            "datavalue": {
+              "value": {
+                "entity-type": "item",
+                "numeric-id": 43010,
+                "id": "Q43010"
+              },
+              "type": "wikibase-entityid"
+            },
+            "datatype": "wikibase-item"
+          },
+          "type": "statement",
+          "id": "Q1426657$0a1f3755-4b6c-409e-9120-cea10170497e",
+          "rank": "normal"
+        }
+      ],
+      "P189": [
+        {
+          "mainsnak": {
+            "snaktype": "value",
+            "property": "P189",
+            "hash": "32092ce75ea1d839f7667ae276342f4aef38c825",
+            "datavalue": {
+              "value": {
+                "entity-type": "item",
+                "numeric-id": 18541104,
+                "id": "Q18541104"
+              },
+              "type": "wikibase-entityid"
+            },
+            "datatype": "wikibase-item"
+          },
+          "type": "statement",
+          "id": "Q1426657$84d9bb5c-486a-d39d-a116-b0c20af531e6",
+          "rank": "normal"
+        },
+        {
+          "mainsnak": {
+            "snaktype": "value",
+            "property": "P189",
+            "hash": "62ff688b708fdcd839936be5441ddda48c6b9a48",
+            "datavalue": {
+              "value": {
+                "entity-type": "item",
+                "numeric-id": 5112342,
+                "id": "Q5112342"
+              },
+              "type": "wikibase-entityid"
+            },
+            "datatype": "wikibase-item"
+          },
+          "type": "statement",
+          "id": "Q1426657$0e5c2b7d-4ead-b5ae-dedd-cf466c21b5a8",
+          "rank": "normal"
+        }
+      ],
+      "P2067": [
+        {
+          "mainsnak": {
+            "snaktype": "value",
+            "property": "P2067",
+            "hash": "56784811656eebe4b5a925f58075013d6d2b5522",
+            "datavalue": {
+              "value": {
+                "amount": "+19755.33",
+                "unit": "http://www.wikidata.org/entity/Q41803"
+              },
+              "type": "quantity"
+            },
+            "datatype": "quantity"
+          },
+          "type": "statement",
+          "id": "Q1426657$6cd0caa5-4ed6-e62a-e8cc-fdf7e6ca029f",
+          "rank": "normal"
+        }
+      ],
+      "P17": [
+        {
+          "mainsnak": {
+            "snaktype": "value",
+            "property": "P17",
+            "hash": "8ef322efb0810d012f9b4799c2413f3721f6387a",
+            "datavalue": {
+              "value": {
+                "entity-type": "item",
+                "numeric-id": 218,
+                "id": "Q218"
+              },
+              "type": "wikibase-entityid"
+            },
+            "datatype": "wikibase-item"
+          },
+          "type": "statement",
+          "id": "Q1426657$b5e3119e-422b-63fa-a172-76314c703073",
+          "rank": "normal"
+        }
+      ],
+      "P131": [
+        {
+          "mainsnak": {
+            "snaktype": "value",
+            "property": "P131",
+            "hash": "36dc77b000984bca1f6205488a5df9cabf2a525e",
+            "datavalue": {
+              "value": {
+                "entity-type": "item",
+                "numeric-id": 19660,
+                "id": "Q19660"
+              },
+              "type": "wikibase-entityid"
+            },
+            "datatype": "wikibase-item"
+          },
+          "type": "statement",
+          "id": "Q1426657$6bad3262-42da-b4e5-3a5e-2ca3a66dcd4b",
+          "rank": "normal"
+        }
+      ],
+      "P2635": [
+        {
+          "mainsnak": {
+            "snaktype": "value",
+            "property": "P2635",
+            "hash": "bf01e6d9856aab56b85773b09467403228b0f743",
+            "datavalue": {
+              "value": {
+                "amount": "+12",
+                "unit": "1"
+              },
+              "type": "quantity"
+            },
+            "datatype": "quantity"
+          },
+          "type": "statement",
+          "id": "Q1426657$95ebfb08-451d-5ea9-1b06-fb4a0ff33f06",
+          "rank": "normal"
+        }
+      ],
+      "P625": [
+        {
+          "mainsnak": {
+            "snaktype": "value",
+            "property": "P625",
+            "hash": "d93e3d7da9d869e2ba4b66d05c97a1948d1e2402",
+            "datavalue": {
+              "value": {
+                "latitude": 45.09453111111111,
+                "longitude": 26.57726111111111,
+                "altitude": null,
+                "precision": 2.7777777777777776e-7,
+                "globe": "http://www.wikidata.org/entity/Q2"
+              },
+              "type": "globecoordinate"
+            },
+            "datatype": "globe-coordinate"
+          },
+          "type": "statement",
+          "id": "Q1426657$0197400d-4e23-6a5a-e806-e0aadb87e266",
+          "rank": "normal"
+        }
+      ],
+      "P4896": [
+        {
+          "mainsnak": {
+            "snaktype": "value",
+            "property": "P4896",
+            "hash": "67334ccd91e6f0ab08f5ca59107536ba06f5323b",
+            "datavalue": {
+              "value": "Modelare 3D a zonei Pietroasa.jpg",
+              "type": "string"
+            },
+            "datatype": "commonsMedia"
+          },
+          "type": "statement",
+          "qualifiers": {
+            "P2096": [
+              {
+                "snaktype": "value",
+                "property": "P2096",
+                "hash": "947ca7e3c576904d2677a6598c98ec3d28839d30",
+                "datavalue": {
+                  "value": {
+                    "text": "Locul presupus al descoperirii tezaurului de la Pietroasa (română)",
+                    "language": "ro"
+                  },
+                  "type": "monolingualtext"
+                },
+                "datatype": "monolingualtext"
+              }
+            ]
+          },
+          "qualifiers-order": [
+            "P2096"
+          ],
+          "id": "Q1426657$603cd3ac-4f2c-506f-bb69-b5408665dc88",
+          "rank": "normal"
+        }
+      ]
+    },
+    "sitelinks": {
+      "bewiki": {
+        "site": "bewiki",
+        "title": "П’етраасельскі скарб",
+        "badges": [],
+        "url": "https://be.wikipedia.org/wiki/%D0%9F%E2%80%99%D0%B5%D1%82%D1%80%D0%B0%D0%B0%D1%81%D0%B5%D0%BB%D1%8C%D1%81%D0%BA%D1%96_%D1%81%D0%BA%D0%B0%D1%80%D0%B1"
+      },
+      "bgwiki": {
+        "site": "bgwiki",
+        "title": "Петроаско съкровище",
+        "badges": [],
+        "url": "https://bg.wikipedia.org/wiki/%D0%9F%D0%B5%D1%82%D1%80%D0%BE%D0%B0%D1%81%D0%BA%D0%BE_%D1%81%D1%8A%D0%BA%D1%80%D0%BE%D0%B2%D0%B8%D1%89%D0%B5"
+      },
+      "cawiki": {
+        "site": "cawiki",
+        "title": "Tresor de Pietroasele",
+        "badges": [],
+        "url": "https://ca.wikipedia.org/wiki/Tresor_de_Pietroasele"
+      },
+      "commonswiki": {
+        "site": "commonswiki",
+        "title": "Category:Pietroasele treasure",
+        "badges": [],
+        "url": "https://commons.wikimedia.org/wiki/Category:Pietroasele_treasure"
+      },
+      "dewiki": {
+        "site": "dewiki",
+        "title": "Schatz von Pietroasa",
+        "badges": [],
+        "url": "https://de.wikipedia.org/wiki/Schatz_von_Pietroasa"
+      },
+      "enwiki": {
+        "site": "enwiki",
+        "title": "Pietroasele Treasure",
+        "badges": [],
+        "url": "https://en.wikipedia.org/wiki/Pietroasele_Treasure"
+      },
+      "eswiki": {
+        "site": "eswiki",
+        "title": "El tesoro de Pietroasa",
+        "badges": [],
+        "url": "https://es.wikipedia.org/wiki/El_tesoro_de_Pietroasa"
+      },
+      "frwiki": {
+        "site": "frwiki",
+        "title": "Trésor de Pietroasa",
+        "badges": [],
+        "url": "https://fr.wikipedia.org/wiki/Tr%C3%A9sor_de_Pietroasa"
+      },
+      "itwiki": {
+        "site": "itwiki",
+        "title": "Tesoro di Pietroasele",
+        "badges": [],
+        "url": "https://it.wikipedia.org/wiki/Tesoro_di_Pietroasele"
+      },
+      "rowiki": {
+        "site": "rowiki",
+        "title": "Tezaurul de la Pietroasa",
+        "badges": [
+          "Q17437796"
+        ],
+        "url": "https://ro.wikipedia.org/wiki/Tezaurul_de_la_Pietroasa"
+      },
+      "ruwiki": {
+        "site": "ruwiki",
+        "title": "Клад Петроасы",
+        "badges": [],
+        "url": "https://ru.wikipedia.org/wiki/%D0%9A%D0%BB%D0%B0%D0%B4_%D0%9F%D0%B5%D1%82%D1%80%D0%BE%D0%B0%D1%81%D1%8B"
+      },
+      "slwiki": {
+        "site": "slwiki",
+        "title": "Zaklad iz Pietroasele",
+        "badges": [],
+        "url": "https://sl.wikipedia.org/wiki/Zaklad_iz_Pietroasele"
+      }
+    }
+  }
+}

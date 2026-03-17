@@ -1,0 +1,860 @@
+{
+  "pageid": 2203593,
+  "ns": 0,
+  "title": "Q2281298",
+  "lastrevid": 2331332455,
+  "modified": "2025-03-28T00:00:50Z",
+  "type": "item",
+  "id": "Q2281298",
+  "labels": {
+    "de": {
+      "language": "de",
+      "value": "Sicherheitsniederrad"
+    },
+    "en": {
+      "language": "en",
+      "value": "safety bicycle"
+    },
+    "ja": {
+      "language": "ja",
+      "value": "安全型自転車"
+    },
+    "en-gb": {
+      "language": "en-gb",
+      "value": "safety bicycle"
+    },
+    "fr": {
+      "language": "fr",
+      "value": "bicyclette de sécurité"
+    },
+    "pt": {
+      "language": "pt",
+      "value": "bicicleta segura"
+    },
+    "fi": {
+      "language": "fi",
+      "value": "Turvapolkupyörä"
+    },
+    "it": {
+      "language": "it",
+      "value": "Bicicletta di sicurezza"
+    },
+    "zh-hant": {
+      "language": "zh-hant",
+      "value": "安全型自行車"
+    },
+    "zh-cn": {
+      "language": "zh-cn",
+      "value": "安全型自行车"
+    },
+    "zh": {
+      "language": "zh",
+      "value": "安全型自行車"
+    },
+    "he": {
+      "language": "he",
+      "value": "אופני בטיחות"
+    },
+    "es": {
+      "language": "es",
+      "value": "Bicicleta de seguridad"
+    },
+    "ro": {
+      "language": "ro",
+      "value": "bicicletă de siguranță"
+    },
+    "eu": {
+      "language": "eu",
+      "value": "Segurtasun-bizikleta"
+    },
+    "ast": {
+      "language": "ast",
+      "value": "bicicleta de seguridá"
+    },
+    "ru": {
+      "language": "ru",
+      "value": "безопасный велосипед"
+    },
+    "lv": {
+      "language": "lv",
+      "value": "drošais velosipēds"
+    },
+    "sv": {
+      "language": "sv",
+      "value": "säkerhetscykel"
+    },
+    "ar": {
+      "language": "ar",
+      "value": "دراجة السلامة"
+    },
+    "nb": {
+      "language": "nb",
+      "value": "sikkerhetssykkelen"
+    },
+    "sl": {
+      "language": "sl",
+      "value": "varnostno dvokolo"
+    }
+  },
+  "descriptions": {
+    "de": {
+      "language": "de",
+      "value": "Urform des modernen Fahrrads"
+    },
+    "en": {
+      "language": "en",
+      "value": "archaic term for pedal-driven bicycles with equal-size front and rear wheels, geartrain and tires (\"common\" bicycle)"
+    },
+    "sv": {
+      "language": "sv",
+      "value": "variant av pedalbaserat fordon"
+    },
+    "nb": {
+      "language": "nb",
+      "value": "utdatert navn på sykler med like store for- og bakhjul, drivverk og dekk (\"vanlig\" sykkel)"
+    },
+    "ar": {
+      "language": "ar",
+      "value": "دراجة قديمة تسمى دراجة الامان"
+    }
+  },
+  "aliases": {
+    "en": [
+      {
+        "language": "en",
+        "value": "safety bike"
+      },
+      {
+        "language": "en",
+        "value": "safety"
+      }
+    ],
+    "sl": [
+      {
+        "language": "sl",
+        "value": "varnostno kolo"
+      }
+    ]
+  },
+  "claims": {
+    "P1814": [
+      {
+        "mainsnak": {
+          "snaktype": "value",
+          "property": "P1814",
+          "hash": "c3dce1af5a54d78d2529c722b505d7f85f049c43",
+          "datavalue": {
+            "value": "あんぜんがたじてんしゃ",
+            "type": "string"
+          },
+          "datatype": "string"
+        },
+        "type": "statement",
+        "id": "Q2281298$70F36488-7B4A-458A-8A20-8E2F5AF652A9",
+        "rank": "normal",
+        "references": [
+          {
+            "hash": "a29a646602abf65105ed0f39a44231c962ece9ee",
+            "snaks": {
+              "P143": [
+                {
+                  "snaktype": "value",
+                  "property": "P143",
+                  "hash": "c6f1777471211df31724ac60175786f3872c83e9",
+                  "datavalue": {
+                    "value": {
+                      "entity-type": "item",
+                      "numeric-id": 177837,
+                      "id": "Q177837"
+                    },
+                    "type": "wikibase-entityid"
+                  },
+                  "datatype": "wikibase-item"
+                }
+              ]
+            },
+            "snaks-order": [
+              "P143"
+            ]
+          }
+        ]
+      }
+    ],
+    "P279": [
+      {
+        "mainsnak": {
+          "snaktype": "value",
+          "property": "P279",
+          "hash": "f2ca63dfccb0ceb5666d95b16c67ef1c4c45f171",
+          "datavalue": {
+            "value": {
+              "entity-type": "item",
+              "numeric-id": 11442,
+              "id": "Q11442"
+            },
+            "type": "wikibase-entityid"
+          },
+          "datatype": "wikibase-item"
+        },
+        "type": "statement",
+        "id": "Q2281298$6473f1c2-4fb9-25e9-2e79-7acb39a352e6",
+        "rank": "normal"
+      }
+    ],
+    "P18": [
+      {
+        "mainsnak": {
+          "snaktype": "value",
+          "property": "P18",
+          "hash": "1856706d6e236add160d6720c920d06114fce007",
+          "datavalue": {
+            "value": "Rover safety bicycle of 1885 (right).jpg",
+            "type": "string"
+          },
+          "datatype": "commonsMedia"
+        },
+        "type": "statement",
+        "id": "Q2281298$053d6234-4fa7-1727-f5dd-9799168761d8",
+        "rank": "normal"
+      }
+    ],
+    "P1417": [
+      {
+        "mainsnak": {
+          "snaktype": "value",
+          "property": "P1417",
+          "hash": "06857789aad4ef3d3613588f96c364eda10feb91",
+          "datavalue": {
+            "value": "technology/safety-bicycle",
+            "type": "string"
+          },
+          "datatype": "external-id"
+        },
+        "type": "statement",
+        "qualifiers": {
+          "P1810": [
+            {
+              "snaktype": "value",
+              "property": "P1810",
+              "hash": "bed902320b5ad5c9afd8d6aea3d4fe9d6b72b2e9",
+              "datavalue": {
+                "value": "safety bicycle",
+                "type": "string"
+              },
+              "datatype": "string"
+            }
+          ]
+        },
+        "qualifiers-order": [
+          "P1810"
+        ],
+        "id": "Q2281298$0278BC11-C8D0-42BD-BC23-46940B8311BC",
+        "rank": "normal"
+      }
+    ],
+    "P646": [
+      {
+        "mainsnak": {
+          "snaktype": "value",
+          "property": "P646",
+          "hash": "4339f1b6de066f8b2b098215c33c41c2427bd03f",
+          "datavalue": {
+            "value": "/m/0492d_",
+            "type": "string"
+          },
+          "datatype": "external-id"
+        },
+        "type": "statement",
+        "id": "Q2281298$F3CC7717-5244-40A9-838F-2CF00C6585F5",
+        "rank": "normal"
+      }
+    ],
+    "P4839": [
+      {
+        "mainsnak": {
+          "snaktype": "value",
+          "property": "P4839",
+          "hash": "92558e43952c3ee923cb99c7c484658d1d9924ca",
+          "datavalue": {
+            "value": "Entity[\"Concept\", \"SafetyBicycle::7m895\"]",
+            "type": "string"
+          },
+          "datatype": "external-id"
+        },
+        "type": "statement",
+        "id": "Q2281298$643ACFCE-52D9-420E-9FEA-58080267C2BA",
+        "rank": "normal"
+      }
+    ],
+    "P12596": [
+      {
+        "mainsnak": {
+          "snaktype": "value",
+          "property": "P12596",
+          "hash": "7ad97d68ef7f5ad9599afbc1f2201f9977167391",
+          "datavalue": {
+            "value": "32526",
+            "type": "string"
+          },
+          "datatype": "external-id"
+        },
+        "type": "statement",
+        "id": "Q2281298$F966C07A-262D-4F8C-9651-6F1548003FB6",
+        "rank": "normal"
+      }
+    ],
+    "P287": [
+      {
+        "mainsnak": {
+          "snaktype": "value",
+          "property": "P287",
+          "hash": "0fb0ed0228e1dcf0fc4922d67827c1452b1158f2",
+          "datavalue": {
+            "value": {
+              "entity-type": "item",
+              "numeric-id": 8034931,
+              "id": "Q8034931"
+            },
+            "type": "wikibase-entityid"
+          },
+          "datatype": "wikibase-item"
+        },
+        "type": "statement",
+        "id": "Q2281298$2969C622-527F-4A4F-A3A7-23814A2BA005",
+        "rank": "normal",
+        "references": [
+          {
+            "hash": "7e67e795521cb8e4f70a0b8a8626e586ef841b11",
+            "snaks": {
+              "P143": [
+                {
+                  "snaktype": "value",
+                  "property": "P143",
+                  "hash": "e4f6d9441d0600513c4533c672b5ab472dc73694",
+                  "datavalue": {
+                    "value": {
+                      "entity-type": "item",
+                      "numeric-id": 328,
+                      "id": "Q328"
+                    },
+                    "type": "wikibase-entityid"
+                  },
+                  "datatype": "wikibase-item"
+                }
+              ],
+              "P813": [
+                {
+                  "snaktype": "value",
+                  "property": "P813",
+                  "hash": "48f0e7a98c7b6c7785da77d75ca6f651c3f4e67f",
+                  "datavalue": {
+                    "value": {
+                      "time": "+2024-05-21T00:00:00Z",
+                      "timezone": 0,
+                      "before": 0,
+                      "after": 0,
+                      "precision": 11,
+                      "calendarmodel": "http://www.wikidata.org/entity/Q1985727"
+                    },
+                    "type": "time"
+                  },
+                  "datatype": "time"
+                }
+              ],
+              "P4656": [
+                {
+                  "snaktype": "value",
+                  "property": "P4656",
+                  "hash": "0335fc0675d05c156e40d745c10d77acefb95f19",
+                  "datavalue": {
+                    "value": "https://en.wikipedia.org/w/index.php?title=Safety_bicycle&oldid=1221141395",
+                    "type": "string"
+                  },
+                  "datatype": "url"
+                }
+              ]
+            },
+            "snaks-order": [
+              "P143",
+              "P813",
+              "P4656"
+            ]
+          }
+        ]
+      }
+    ],
+    "P176": [
+      {
+        "mainsnak": {
+          "snaktype": "value",
+          "property": "P176",
+          "hash": "3a118b3e7bffdae8cd6b719956d692a379b029b0",
+          "datavalue": {
+            "value": {
+              "entity-type": "item",
+              "numeric-id": 24525607,
+              "id": "Q24525607"
+            },
+            "type": "wikibase-entityid"
+          },
+          "datatype": "wikibase-item"
+        },
+        "type": "statement",
+        "id": "Q2281298$CF874A34-A626-46C1-8E21-9CEBE82C5E70",
+        "rank": "normal",
+        "references": [
+          {
+            "hash": "7e67e795521cb8e4f70a0b8a8626e586ef841b11",
+            "snaks": {
+              "P143": [
+                {
+                  "snaktype": "value",
+                  "property": "P143",
+                  "hash": "e4f6d9441d0600513c4533c672b5ab472dc73694",
+                  "datavalue": {
+                    "value": {
+                      "entity-type": "item",
+                      "numeric-id": 328,
+                      "id": "Q328"
+                    },
+                    "type": "wikibase-entityid"
+                  },
+                  "datatype": "wikibase-item"
+                }
+              ],
+              "P813": [
+                {
+                  "snaktype": "value",
+                  "property": "P813",
+                  "hash": "48f0e7a98c7b6c7785da77d75ca6f651c3f4e67f",
+                  "datavalue": {
+                    "value": {
+                      "time": "+2024-05-21T00:00:00Z",
+                      "timezone": 0,
+                      "before": 0,
+                      "after": 0,
+                      "precision": 11,
+                      "calendarmodel": "http://www.wikidata.org/entity/Q1985727"
+                    },
+                    "type": "time"
+                  },
+                  "datatype": "time"
+                }
+              ],
+              "P4656": [
+                {
+                  "snaktype": "value",
+                  "property": "P4656",
+                  "hash": "0335fc0675d05c156e40d745c10d77acefb95f19",
+                  "datavalue": {
+                    "value": "https://en.wikipedia.org/w/index.php?title=Safety_bicycle&oldid=1221141395",
+                    "type": "string"
+                  },
+                  "datatype": "url"
+                }
+              ]
+            },
+            "snaks-order": [
+              "P143",
+              "P813",
+              "P4656"
+            ]
+          }
+        ]
+      },
+      {
+        "mainsnak": {
+          "snaktype": "value",
+          "property": "P176",
+          "hash": "4d35875758daefdcf6cafbae9022f49479cb2702",
+          "datavalue": {
+            "value": {
+              "entity-type": "item",
+              "numeric-id": 848620,
+              "id": "Q848620"
+            },
+            "type": "wikibase-entityid"
+          },
+          "datatype": "wikibase-item"
+        },
+        "type": "statement",
+        "id": "Q2281298$DB21AC26-5F4D-4887-8423-DB20F3BF6296",
+        "rank": "normal",
+        "references": [
+          {
+            "hash": "7e67e795521cb8e4f70a0b8a8626e586ef841b11",
+            "snaks": {
+              "P143": [
+                {
+                  "snaktype": "value",
+                  "property": "P143",
+                  "hash": "e4f6d9441d0600513c4533c672b5ab472dc73694",
+                  "datavalue": {
+                    "value": {
+                      "entity-type": "item",
+                      "numeric-id": 328,
+                      "id": "Q328"
+                    },
+                    "type": "wikibase-entityid"
+                  },
+                  "datatype": "wikibase-item"
+                }
+              ],
+              "P813": [
+                {
+                  "snaktype": "value",
+                  "property": "P813",
+                  "hash": "48f0e7a98c7b6c7785da77d75ca6f651c3f4e67f",
+                  "datavalue": {
+                    "value": {
+                      "time": "+2024-05-21T00:00:00Z",
+                      "timezone": 0,
+                      "before": 0,
+                      "after": 0,
+                      "precision": 11,
+                      "calendarmodel": "http://www.wikidata.org/entity/Q1985727"
+                    },
+                    "type": "time"
+                  },
+                  "datatype": "time"
+                }
+              ],
+              "P4656": [
+                {
+                  "snaktype": "value",
+                  "property": "P4656",
+                  "hash": "0335fc0675d05c156e40d745c10d77acefb95f19",
+                  "datavalue": {
+                    "value": "https://en.wikipedia.org/w/index.php?title=Safety_bicycle&oldid=1221141395",
+                    "type": "string"
+                  },
+                  "datatype": "url"
+                }
+              ]
+            },
+            "snaks-order": [
+              "P143",
+              "P813",
+              "P4656"
+            ]
+          }
+        ]
+      }
+    ],
+    "P1889": [
+      {
+        "mainsnak": {
+          "snaktype": "value",
+          "property": "P1889",
+          "hash": "1b8ef8d080d49aa5610a5f9fc548ac47be47f178",
+          "datavalue": {
+            "value": {
+              "entity-type": "item",
+              "numeric-id": 750483,
+              "id": "Q750483"
+            },
+            "type": "wikibase-entityid"
+          },
+          "datatype": "wikibase-item"
+        },
+        "type": "statement",
+        "id": "Q2281298$75C9A9B1-599F-4455-AEF8-421CC3F8ABF8",
+        "rank": "normal",
+        "references": [
+          {
+            "hash": "7e67e795521cb8e4f70a0b8a8626e586ef841b11",
+            "snaks": {
+              "P143": [
+                {
+                  "snaktype": "value",
+                  "property": "P143",
+                  "hash": "e4f6d9441d0600513c4533c672b5ab472dc73694",
+                  "datavalue": {
+                    "value": {
+                      "entity-type": "item",
+                      "numeric-id": 328,
+                      "id": "Q328"
+                    },
+                    "type": "wikibase-entityid"
+                  },
+                  "datatype": "wikibase-item"
+                }
+              ],
+              "P813": [
+                {
+                  "snaktype": "value",
+                  "property": "P813",
+                  "hash": "48f0e7a98c7b6c7785da77d75ca6f651c3f4e67f",
+                  "datavalue": {
+                    "value": {
+                      "time": "+2024-05-21T00:00:00Z",
+                      "timezone": 0,
+                      "before": 0,
+                      "after": 0,
+                      "precision": 11,
+                      "calendarmodel": "http://www.wikidata.org/entity/Q1985727"
+                    },
+                    "type": "time"
+                  },
+                  "datatype": "time"
+                }
+              ],
+              "P4656": [
+                {
+                  "snaktype": "value",
+                  "property": "P4656",
+                  "hash": "0335fc0675d05c156e40d745c10d77acefb95f19",
+                  "datavalue": {
+                    "value": "https://en.wikipedia.org/w/index.php?title=Safety_bicycle&oldid=1221141395",
+                    "type": "string"
+                  },
+                  "datatype": "url"
+                }
+              ]
+            },
+            "snaks-order": [
+              "P143",
+              "P813",
+              "P4656"
+            ]
+          }
+        ]
+      },
+      {
+        "mainsnak": {
+          "snaktype": "value",
+          "property": "P1889",
+          "hash": "ccda91c40406c7caffa758d7a6de6a20dd39cef5",
+          "datavalue": {
+            "value": {
+              "entity-type": "item",
+              "numeric-id": 1554036,
+              "id": "Q1554036"
+            },
+            "type": "wikibase-entityid"
+          },
+          "datatype": "wikibase-item"
+        },
+        "type": "statement",
+        "id": "Q2281298$B98379CF-F33A-4788-8F8E-30EEE8D2982C",
+        "rank": "normal",
+        "references": [
+          {
+            "hash": "7e67e795521cb8e4f70a0b8a8626e586ef841b11",
+            "snaks": {
+              "P143": [
+                {
+                  "snaktype": "value",
+                  "property": "P143",
+                  "hash": "e4f6d9441d0600513c4533c672b5ab472dc73694",
+                  "datavalue": {
+                    "value": {
+                      "entity-type": "item",
+                      "numeric-id": 328,
+                      "id": "Q328"
+                    },
+                    "type": "wikibase-entityid"
+                  },
+                  "datatype": "wikibase-item"
+                }
+              ],
+              "P813": [
+                {
+                  "snaktype": "value",
+                  "property": "P813",
+                  "hash": "48f0e7a98c7b6c7785da77d75ca6f651c3f4e67f",
+                  "datavalue": {
+                    "value": {
+                      "time": "+2024-05-21T00:00:00Z",
+                      "timezone": 0,
+                      "before": 0,
+                      "after": 0,
+                      "precision": 11,
+                      "calendarmodel": "http://www.wikidata.org/entity/Q1985727"
+                    },
+                    "type": "time"
+                  },
+                  "datatype": "time"
+                }
+              ],
+              "P4656": [
+                {
+                  "snaktype": "value",
+                  "property": "P4656",
+                  "hash": "0335fc0675d05c156e40d745c10d77acefb95f19",
+                  "datavalue": {
+                    "value": "https://en.wikipedia.org/w/index.php?title=Safety_bicycle&oldid=1221141395",
+                    "type": "string"
+                  },
+                  "datatype": "url"
+                }
+              ]
+            },
+            "snaks-order": [
+              "P143",
+              "P813",
+              "P4656"
+            ]
+          }
+        ]
+      }
+    ],
+    "P580": [
+      {
+        "mainsnak": {
+          "snaktype": "value",
+          "property": "P580",
+          "hash": "ab1b87f1773efdfc6ab851172d027317aceebf43",
+          "datavalue": {
+            "value": {
+              "time": "+1880-00-00T00:00:00Z",
+              "timezone": 0,
+              "before": 0,
+              "after": 0,
+              "precision": 8,
+              "calendarmodel": "http://www.wikidata.org/entity/Q1985727"
+            },
+            "type": "time"
+          },
+          "datatype": "time"
+        },
+        "type": "statement",
+        "id": "Q2281298$8B7614AD-0750-4D4A-9E20-5356CD1E957B",
+        "rank": "normal",
+        "references": [
+          {
+            "hash": "7e67e795521cb8e4f70a0b8a8626e586ef841b11",
+            "snaks": {
+              "P143": [
+                {
+                  "snaktype": "value",
+                  "property": "P143",
+                  "hash": "e4f6d9441d0600513c4533c672b5ab472dc73694",
+                  "datavalue": {
+                    "value": {
+                      "entity-type": "item",
+                      "numeric-id": 328,
+                      "id": "Q328"
+                    },
+                    "type": "wikibase-entityid"
+                  },
+                  "datatype": "wikibase-item"
+                }
+              ],
+              "P813": [
+                {
+                  "snaktype": "value",
+                  "property": "P813",
+                  "hash": "48f0e7a98c7b6c7785da77d75ca6f651c3f4e67f",
+                  "datavalue": {
+                    "value": {
+                      "time": "+2024-05-21T00:00:00Z",
+                      "timezone": 0,
+                      "before": 0,
+                      "after": 0,
+                      "precision": 11,
+                      "calendarmodel": "http://www.wikidata.org/entity/Q1985727"
+                    },
+                    "type": "time"
+                  },
+                  "datatype": "time"
+                }
+              ],
+              "P4656": [
+                {
+                  "snaktype": "value",
+                  "property": "P4656",
+                  "hash": "0335fc0675d05c156e40d745c10d77acefb95f19",
+                  "datavalue": {
+                    "value": "https://en.wikipedia.org/w/index.php?title=Safety_bicycle&oldid=1221141395",
+                    "type": "string"
+                  },
+                  "datatype": "url"
+                }
+              ]
+            },
+            "snaks-order": [
+              "P143",
+              "P813",
+              "P4656"
+            ]
+          }
+        ]
+      }
+    ]
+  },
+  "sitelinks": {
+    "arwiki": {
+      "site": "arwiki",
+      "title": "دراجة السلامة",
+      "badges": [],
+      "url": "https://ar.wikipedia.org/wiki/%D8%AF%D8%B1%D8%A7%D8%AC%D8%A9_%D8%A7%D9%84%D8%B3%D9%84%D8%A7%D9%85%D8%A9"
+    },
+    "dewiki": {
+      "site": "dewiki",
+      "title": "Sicherheitsniederrad",
+      "badges": [],
+      "url": "https://de.wikipedia.org/wiki/Sicherheitsniederrad"
+    },
+    "enwiki": {
+      "site": "enwiki",
+      "title": "Safety bicycle",
+      "badges": [],
+      "url": "https://en.wikipedia.org/wiki/Safety_bicycle"
+    },
+    "eswiki": {
+      "site": "eswiki",
+      "title": "Bicicleta de seguridad",
+      "badges": [],
+      "url": "https://es.wikipedia.org/wiki/Bicicleta_de_seguridad"
+    },
+    "euwiki": {
+      "site": "euwiki",
+      "title": "Segurtasun-bizikleta",
+      "badges": [],
+      "url": "https://eu.wikipedia.org/wiki/Segurtasun-bizikleta"
+    },
+    "fiwiki": {
+      "site": "fiwiki",
+      "title": "Turvapolkupyörä",
+      "badges": [],
+      "url": "https://fi.wikipedia.org/wiki/Turvapolkupy%C3%B6r%C3%A4"
+    },
+    "frwiki": {
+      "site": "frwiki",
+      "title": "Bicyclette de sécurité",
+      "badges": [],
+      "url": "https://fr.wikipedia.org/wiki/Bicyclette_de_s%C3%A9curit%C3%A9"
+    },
+    "itwiki": {
+      "site": "itwiki",
+      "title": "Bicicletta di sicurezza",
+      "badges": [],
+      "url": "https://it.wikipedia.org/wiki/Bicicletta_di_sicurezza"
+    },
+    "jawiki": {
+      "site": "jawiki",
+      "title": "安全型自転車",
+      "badges": [],
+      "url": "https://ja.wikipedia.org/wiki/%E5%AE%89%E5%85%A8%E5%9E%8B%E8%87%AA%E8%BB%A2%E8%BB%8A"
+    },
+    "lvwiki": {
+      "site": "lvwiki",
+      "title": "Drošais velosipēds",
+      "badges": [],
+      "url": "https://lv.wikipedia.org/wiki/Dro%C5%A1ais_velosip%C4%93ds"
+    },
+    "ptwiki": {
+      "site": "ptwiki",
+      "title": "Bicicleta segura",
+      "badges": [],
+      "url": "https://pt.wikipedia.org/wiki/Bicicleta_segura"
+    },
+    "svwiki": {
+      "site": "svwiki",
+      "title": "Säkerhetscykel",
+      "badges": [],
+      "url": "https://sv.wikipedia.org/wiki/S%C3%A4kerhetscykel"
+    }
+  }
+}

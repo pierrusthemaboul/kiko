@@ -1,0 +1,444 @@
+{
+  "saved_at": "2026-03-07T16:58:38.605Z",
+  "value": {
+    "pageid": 519589,
+    "ns": 0,
+    "title": "Q551432",
+    "lastrevid": 2442513123,
+    "modified": "2025-12-15T03:53:13Z",
+    "type": "item",
+    "id": "Q551432",
+    "labels": {
+      "de": {
+        "language": "de",
+        "value": "Gefecht bei Villersexel"
+      },
+      "pl": {
+        "language": "pl",
+        "value": "Bitwa pod Villersexel"
+      },
+      "vi": {
+        "language": "vi",
+        "value": "Trận Villersexel"
+      },
+      "fr": {
+        "language": "fr",
+        "value": "bataille de Villersexel"
+      },
+      "en": {
+        "language": "en",
+        "value": "Battle of Villersexel"
+      },
+      "it": {
+        "language": "it",
+        "value": "battaglia di Villersexel"
+      },
+      "nl": {
+        "language": "nl",
+        "value": "Battle of Villersexel"
+      },
+      "es": {
+        "language": "es",
+        "value": "Batalla de Villersexel"
+      },
+      "zh": {
+        "language": "zh",
+        "value": "维莱塞克塞勒战役"
+      },
+      "yo": {
+        "language": "yo",
+        "value": "ogun Villersexel"
+      },
+      "ja": {
+        "language": "ja",
+        "value": "ヴィレキセルの戦い"
+      },
+      "ga": {
+        "language": "ga",
+        "value": "Cath Villersexel"
+      },
+      "ar": {
+        "language": "ar",
+        "value": "معركة فيلرسيكسيل"
+      },
+      "oc": {
+        "language": "oc",
+        "value": "Batalha de Villersexel"
+      }
+    },
+    "descriptions": {
+      "fr": {
+        "language": "fr",
+        "value": "bataille de la guerre franco-prussienne de 1870"
+      },
+      "de": {
+        "language": "de",
+        "value": "Schlacht des Deutsch-Französischen Kriegs"
+      },
+      "en": {
+        "language": "en",
+        "value": "1871 battle"
+      },
+      "yo": {
+        "language": "yo",
+        "value": "ogun"
+      }
+    },
+    "aliases": {
+      "vi": [
+        {
+          "language": "vi",
+          "value": "Trận đánh Villersexel"
+        },
+        {
+          "language": "vi",
+          "value": "Trận chiến Villersexel"
+        }
+      ]
+    },
+    "claims": {
+      "P31": [
+        {
+          "mainsnak": {
+            "snaktype": "value",
+            "property": "P31",
+            "hash": "baa1df9dcd37b9f3a062e7a14a8bef0c37078d32",
+            "datavalue": {
+              "value": {
+                "entity-type": "item",
+                "numeric-id": 178561,
+                "id": "Q178561"
+              },
+              "type": "wikibase-entityid"
+            },
+            "datatype": "wikibase-item"
+          },
+          "type": "statement",
+          "id": "Q551432$20145957-48fa-9ed5-a380-8076db2443f4",
+          "rank": "normal"
+        }
+      ],
+      "P361": [
+        {
+          "mainsnak": {
+            "snaktype": "value",
+            "property": "P361",
+            "hash": "7ced786dedb7309292a837d00c77114dab8bd636",
+            "datavalue": {
+              "value": {
+                "entity-type": "item",
+                "numeric-id": 46083,
+                "id": "Q46083"
+              },
+              "type": "wikibase-entityid"
+            },
+            "datatype": "wikibase-item"
+          },
+          "type": "statement",
+          "id": "Q551432$7b735f6c-4df6-1cf2-1852-c24af4694904",
+          "rank": "normal"
+        }
+      ],
+      "P585": [
+        {
+          "mainsnak": {
+            "snaktype": "value",
+            "property": "P585",
+            "hash": "d2ce73e5cac32cd316b1c9f4bef33ecfc694b501",
+            "datavalue": {
+              "value": {
+                "time": "+1871-01-09T00:00:00Z",
+                "timezone": 0,
+                "before": 0,
+                "after": 0,
+                "precision": 11,
+                "calendarmodel": "http://www.wikidata.org/entity/Q1985727"
+              },
+              "type": "time"
+            },
+            "datatype": "time"
+          },
+          "type": "statement",
+          "id": "Q551432$5e457c68-466a-3788-0a48-0598e5324cc5",
+          "rank": "normal",
+          "references": [
+            {
+              "hash": "d4bd87b862b12d99d26e86472d44f26858dee639",
+              "snaks": {
+                "P143": [
+                  {
+                    "snaktype": "value",
+                    "property": "P143",
+                    "hash": "f30cbd35620c4ea6d0633aaf0210a8916130469b",
+                    "datavalue": {
+                      "value": {
+                        "entity-type": "item",
+                        "numeric-id": 8447,
+                        "id": "Q8447"
+                      },
+                      "type": "wikibase-entityid"
+                    },
+                    "datatype": "wikibase-item"
+                  }
+                ]
+              },
+              "snaks-order": [
+                "P143"
+              ]
+            }
+          ]
+        }
+      ],
+      "P18": [
+        {
+          "mainsnak": {
+            "snaktype": "value",
+            "property": "P18",
+            "hash": "3d0d2fb7fbf791d86a9e7048b10e86b744b98e10",
+            "datavalue": {
+              "value": "Bataille de Villersexel - 01.jpg",
+              "type": "string"
+            },
+            "datatype": "commonsMedia"
+          },
+          "type": "statement",
+          "id": "Q551432$0A4CADFD-F497-4FF6-9021-3C9166BFD99B",
+          "rank": "normal"
+        }
+      ],
+      "P646": [
+        {
+          "mainsnak": {
+            "snaktype": "value",
+            "property": "P646",
+            "hash": "14185d5308262c2d18c9eecd4ab03a8b1b477478",
+            "datavalue": {
+              "value": "/m/0417kvk",
+              "type": "string"
+            },
+            "datatype": "external-id"
+          },
+          "type": "statement",
+          "id": "Q551432$EC90F808-162E-46CC-9E50-21E8BCC630BE",
+          "rank": "normal",
+          "references": [
+            {
+              "hash": "2b00cb481cddcac7623114367489b5c194901c4a",
+              "snaks": {
+                "P248": [
+                  {
+                    "snaktype": "value",
+                    "property": "P248",
+                    "hash": "a94b740202b097dd33355e0e6c00e54b9395e5e0",
+                    "datavalue": {
+                      "value": {
+                        "entity-type": "item",
+                        "numeric-id": 15241312,
+                        "id": "Q15241312"
+                      },
+                      "type": "wikibase-entityid"
+                    },
+                    "datatype": "wikibase-item"
+                  }
+                ],
+                "P577": [
+                  {
+                    "snaktype": "value",
+                    "property": "P577",
+                    "hash": "fde79ecb015112d2f29229ccc1ec514ed3e71fa2",
+                    "datavalue": {
+                      "value": {
+                        "time": "+2013-10-28T00:00:00Z",
+                        "timezone": 0,
+                        "before": 0,
+                        "after": 0,
+                        "precision": 11,
+                        "calendarmodel": "http://www.wikidata.org/entity/Q1985727"
+                      },
+                      "type": "time"
+                    },
+                    "datatype": "time"
+                  }
+                ]
+              },
+              "snaks-order": [
+                "P248",
+                "P577"
+              ]
+            }
+          ]
+        }
+      ],
+      "P625": [
+        {
+          "mainsnak": {
+            "snaktype": "value",
+            "property": "P625",
+            "hash": "74caa8edcb028c1cddb445c3d9b501b55f791ef9",
+            "datavalue": {
+              "value": {
+                "latitude": 47.5514,
+                "longitude": 6.43389,
+                "altitude": null,
+                "precision": 0.01,
+                "globe": "http://www.wikidata.org/entity/Q2"
+              },
+              "type": "globecoordinate"
+            },
+            "datatype": "globe-coordinate"
+          },
+          "type": "statement",
+          "id": "Q551432$243F6ECC-4E23-48E4-ADF9-D60A62CEEBD8",
+          "rank": "normal",
+          "references": [
+            {
+              "hash": "d4bd87b862b12d99d26e86472d44f26858dee639",
+              "snaks": {
+                "P143": [
+                  {
+                    "snaktype": "value",
+                    "property": "P143",
+                    "hash": "f30cbd35620c4ea6d0633aaf0210a8916130469b",
+                    "datavalue": {
+                      "value": {
+                        "entity-type": "item",
+                        "numeric-id": 8447,
+                        "id": "Q8447"
+                      },
+                      "type": "wikibase-entityid"
+                    },
+                    "datatype": "wikibase-item"
+                  }
+                ]
+              },
+              "snaks-order": [
+                "P143"
+              ]
+            }
+          ]
+        }
+      ],
+      "P276": [
+        {
+          "mainsnak": {
+            "snaktype": "value",
+            "property": "P276",
+            "hash": "40ea63f889d60ad14a8d0871fea7498952a0674b",
+            "datavalue": {
+              "value": {
+                "entity-type": "item",
+                "numeric-id": 989788,
+                "id": "Q989788"
+              },
+              "type": "wikibase-entityid"
+            },
+            "datatype": "wikibase-item"
+          },
+          "type": "statement",
+          "id": "Q551432$860F54D2-DEC7-4A1C-8629-D1FA68E271D7",
+          "rank": "normal"
+        }
+      ],
+      "P373": [
+        {
+          "mainsnak": {
+            "snaktype": "value",
+            "property": "P373",
+            "hash": "65751b4534b26b0e26126a80de7612b9892011eb",
+            "datavalue": {
+              "value": "Bataille de Villersexel",
+              "type": "string"
+            },
+            "datatype": "string"
+          },
+          "type": "statement",
+          "id": "Q551432$F5F04CB4-936C-47E9-9784-6677F4C974E5",
+          "rank": "normal"
+        }
+      ],
+      "P17": [
+        {
+          "mainsnak": {
+            "snaktype": "value",
+            "property": "P17",
+            "hash": "c05db5d169c2560b9799d567a803d20a392f53e4",
+            "datavalue": {
+              "value": {
+                "entity-type": "item",
+                "numeric-id": 142,
+                "id": "Q142"
+              },
+              "type": "wikibase-entityid"
+            },
+            "datatype": "wikibase-item"
+          },
+          "type": "statement",
+          "id": "Q551432$721AF6B2-0474-4EEF-9E33-762514E178D9",
+          "rank": "normal"
+        }
+      ]
+    },
+    "sitelinks": {
+      "arwiki": {
+        "site": "arwiki",
+        "title": "معركة فيلرسيكسيل",
+        "badges": [],
+        "url": "https://ar.wikipedia.org/wiki/%D9%85%D8%B9%D8%B1%D9%83%D8%A9_%D9%81%D9%8A%D9%84%D8%B1%D8%B3%D9%8A%D9%83%D8%B3%D9%8A%D9%84"
+      },
+      "commonswiki": {
+        "site": "commonswiki",
+        "title": "Category:Bataille de Villersexel",
+        "badges": [],
+        "url": "https://commons.wikimedia.org/wiki/Category:Bataille_de_Villersexel"
+      },
+      "dewiki": {
+        "site": "dewiki",
+        "title": "Gefecht bei Villersexel",
+        "badges": [],
+        "url": "https://de.wikipedia.org/wiki/Gefecht_bei_Villersexel"
+      },
+      "enwiki": {
+        "site": "enwiki",
+        "title": "Battle of Villersexel",
+        "badges": [],
+        "url": "https://en.wikipedia.org/wiki/Battle_of_Villersexel"
+      },
+      "frwiki": {
+        "site": "frwiki",
+        "title": "Bataille de Villersexel",
+        "badges": [],
+        "url": "https://fr.wikipedia.org/wiki/Bataille_de_Villersexel"
+      },
+      "itwiki": {
+        "site": "itwiki",
+        "title": "Battaglia di Villersexel",
+        "badges": [],
+        "url": "https://it.wikipedia.org/wiki/Battaglia_di_Villersexel"
+      },
+      "ocwiki": {
+        "site": "ocwiki",
+        "title": "Batalha de Villersexel",
+        "badges": [],
+        "url": "https://oc.wikipedia.org/wiki/Batalha_de_Villersexel"
+      },
+      "plwiki": {
+        "site": "plwiki",
+        "title": "Bitwa pod Villersexel",
+        "badges": [],
+        "url": "https://pl.wikipedia.org/wiki/Bitwa_pod_Villersexel"
+      },
+      "viwiki": {
+        "site": "viwiki",
+        "title": "Trận Villersexel",
+        "badges": [],
+        "url": "https://vi.wikipedia.org/wiki/Tr%E1%BA%ADn_Villersexel"
+      },
+      "zhwiki": {
+        "site": "zhwiki",
+        "title": "維萊塞克塞勒之戰",
+        "badges": [],
+        "url": "https://zh.wikipedia.org/wiki/%E7%B6%AD%E8%90%8A%E5%A1%9E%E5%85%8B%E5%A1%9E%E5%8B%92%E4%B9%8B%E6%88%B0"
+      }
+    }
+  }
+}

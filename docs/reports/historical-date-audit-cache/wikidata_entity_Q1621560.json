@@ -1,0 +1,2125 @@
+{
+  "saved_at": "2026-03-07T16:56:25.245Z",
+  "value": {
+    "pageid": 1556076,
+    "ns": 0,
+    "title": "Q1621560",
+    "lastrevid": 2419622686,
+    "modified": "2025-10-21T00:51:44Z",
+    "type": "item",
+    "id": "Q1621560",
+    "labels": {
+      "fr": {
+        "language": "fr",
+        "value": "Ville de Hobart"
+      },
+      "en": {
+        "language": "en",
+        "value": "City of Hobart"
+      },
+      "nl": {
+        "language": "nl",
+        "value": "City of Hobart"
+      },
+      "zh": {
+        "language": "zh",
+        "value": "霍巴特市"
+      },
+      "de": {
+        "language": "de",
+        "value": "Hobart City"
+      },
+      "it": {
+        "language": "it",
+        "value": "città di Hobart"
+      },
+      "pl": {
+        "language": "pl",
+        "value": "City of Hobart"
+      },
+      "es": {
+        "language": "es",
+        "value": "Hobart"
+      },
+      "ceb": {
+        "language": "ceb",
+        "value": "Hobart"
+      },
+      "sc": {
+        "language": "sc",
+        "value": "tzitade de Hobart"
+      },
+      "ja": {
+        "language": "ja",
+        "value": "シティ・オブ・ホバート"
+      },
+      "sv": {
+        "language": "sv",
+        "value": "City of Hobart"
+      },
+      "sl": {
+        "language": "sl",
+        "value": "City of Hobart"
+      }
+    },
+    "descriptions": {
+      "en": {
+        "language": "en",
+        "value": "local government area in Tasmania"
+      },
+      "fr": {
+        "language": "fr",
+        "value": "zone d'administration locale d'Australie"
+      },
+      "de": {
+        "language": "de",
+        "value": "australischer Verwaltungsbezirk (LGA) auf Tasmanien"
+      },
+      "it": {
+        "language": "it",
+        "value": "Local Government Area australiana"
+      },
+      "es": {
+        "language": "es",
+        "value": "área de gobierno local de Tasmania"
+      },
+      "ar": {
+        "language": "ar",
+        "value": "منظمة أسترالية"
+      },
+      "nl": {
+        "language": "nl",
+        "value": "Local Government Area in Tasmanië, Australië"
+      },
+      "sv": {
+        "language": "sv",
+        "value": "region"
+      },
+      "sl": {
+        "language": "sl",
+        "value": "lokalno upravno območje (LGA) Avstralije"
+      }
+    },
+    "aliases": {
+      "nl": [
+        {
+          "language": "nl",
+          "value": "Hobart City Council"
+        }
+      ],
+      "de": [
+        {
+          "language": "de",
+          "value": "City of Hobart"
+        }
+      ],
+      "en": [
+        {
+          "language": "en",
+          "value": "Hobart City"
+        },
+        {
+          "language": "en",
+          "value": "Hobart"
+        }
+      ]
+    },
+    "claims": {
+      "P31": [
+        {
+          "mainsnak": {
+            "snaktype": "value",
+            "property": "P31",
+            "hash": "cced26c10b28aae826f7a67b21b71ecccecc1917",
+            "datavalue": {
+              "value": {
+                "entity-type": "item",
+                "numeric-id": 55687066,
+                "id": "Q55687066"
+              },
+              "type": "wikibase-entityid"
+            },
+            "datatype": "wikibase-item"
+          },
+          "type": "statement",
+          "id": "Q1621560$80867D4C-DE06-4B41-8DEC-C07B1513A192",
+          "rank": "normal"
+        }
+      ],
+      "P17": [
+        {
+          "mainsnak": {
+            "snaktype": "value",
+            "property": "P17",
+            "hash": "47a4df2f191b139665df3bd52a8081d3e7303b3e",
+            "datavalue": {
+              "value": {
+                "entity-type": "item",
+                "numeric-id": 408,
+                "id": "Q408"
+              },
+              "type": "wikibase-entityid"
+            },
+            "datatype": "wikibase-item"
+          },
+          "type": "statement",
+          "id": "q1621560$01BA0654-4789-4E66-94CD-E24CDC233E88",
+          "rank": "normal",
+          "references": [
+            {
+              "hash": "43a0088c51fd85e5a85d1b46412c3a635e6d4edc",
+              "snaks": {
+                "P143": [
+                  {
+                    "snaktype": "value",
+                    "property": "P143",
+                    "hash": "d8fbf8671e3c630db61bfac691068cfb6857f243",
+                    "datavalue": {
+                      "value": {
+                        "entity-type": "item",
+                        "numeric-id": 837615,
+                        "id": "Q837615"
+                      },
+                      "type": "wikibase-entityid"
+                    },
+                    "datatype": "wikibase-item"
+                  }
+                ]
+              },
+              "snaks-order": [
+                "P143"
+              ]
+            }
+          ]
+        }
+      ],
+      "P131": [
+        {
+          "mainsnak": {
+            "snaktype": "value",
+            "property": "P131",
+            "hash": "47179e88884def72e525dd521faf132ed52bf749",
+            "datavalue": {
+              "value": {
+                "entity-type": "item",
+                "numeric-id": 34366,
+                "id": "Q34366"
+              },
+              "type": "wikibase-entityid"
+            },
+            "datatype": "wikibase-item"
+          },
+          "type": "statement",
+          "id": "q1621560$55164398-3DFE-4830-8474-136EA9A14F89",
+          "rank": "normal"
+        }
+      ],
+      "P625": [
+        {
+          "mainsnak": {
+            "snaktype": "value",
+            "property": "P625",
+            "hash": "6c1d8d49475b3d4b404e59f425c90a885f8b646f",
+            "datavalue": {
+              "value": {
+                "latitude": -42.88,
+                "longitude": 147.29,
+                "altitude": null,
+                "precision": 0.00027777777777778,
+                "globe": "http://www.wikidata.org/entity/Q2"
+              },
+              "type": "globecoordinate"
+            },
+            "datatype": "globe-coordinate"
+          },
+          "type": "statement",
+          "id": "q1621560$84D485F7-1516-4C7F-95BD-CA75C22624E2",
+          "rank": "normal"
+        }
+      ],
+      "P646": [
+        {
+          "mainsnak": {
+            "snaktype": "value",
+            "property": "P646",
+            "hash": "0b32d8cfef3a006b23f3a07382d0889424832c32",
+            "datavalue": {
+              "value": "/m/025rps2",
+              "type": "string"
+            },
+            "datatype": "external-id"
+          },
+          "type": "statement",
+          "id": "Q1621560$20C775EE-3CFC-408E-98BA-29181502B363",
+          "rank": "normal",
+          "references": [
+            {
+              "hash": "2b00cb481cddcac7623114367489b5c194901c4a",
+              "snaks": {
+                "P248": [
+                  {
+                    "snaktype": "value",
+                    "property": "P248",
+                    "hash": "a94b740202b097dd33355e0e6c00e54b9395e5e0",
+                    "datavalue": {
+                      "value": {
+                        "entity-type": "item",
+                        "numeric-id": 15241312,
+                        "id": "Q15241312"
+                      },
+                      "type": "wikibase-entityid"
+                    },
+                    "datatype": "wikibase-item"
+                  }
+                ],
+                "P577": [
+                  {
+                    "snaktype": "value",
+                    "property": "P577",
+                    "hash": "fde79ecb015112d2f29229ccc1ec514ed3e71fa2",
+                    "datavalue": {
+                      "value": {
+                        "time": "+2013-10-28T00:00:00Z",
+                        "timezone": 0,
+                        "before": 0,
+                        "after": 0,
+                        "precision": 11,
+                        "calendarmodel": "http://www.wikidata.org/entity/Q1985727"
+                      },
+                      "type": "time"
+                    },
+                    "datatype": "time"
+                  }
+                ]
+              },
+              "snaks-order": [
+                "P248",
+                "P577"
+              ]
+            }
+          ]
+        }
+      ],
+      "P150": [
+        {
+          "mainsnak": {
+            "snaktype": "value",
+            "property": "P150",
+            "hash": "47e70ee0bdec6b111a63a6d3fe69f1f1ee801c69",
+            "datavalue": {
+              "value": {
+                "entity-type": "item",
+                "numeric-id": 4869876,
+                "id": "Q4869876"
+              },
+              "type": "wikibase-entityid"
+            },
+            "datatype": "wikibase-item"
+          },
+          "type": "statement",
+          "id": "Q1621560$126B355F-7006-4F23-8B90-07924D46ADFF",
+          "rank": "normal"
+        },
+        {
+          "mainsnak": {
+            "snaktype": "value",
+            "property": "P150",
+            "hash": "b80f1beb6ec48f4cfb2c7f2e87183a48e0c32c22",
+            "datavalue": {
+              "value": {
+                "entity-type": "item",
+                "numeric-id": 5048197,
+                "id": "Q5048197"
+              },
+              "type": "wikibase-entityid"
+            },
+            "datatype": "wikibase-item"
+          },
+          "type": "statement",
+          "id": "Q1621560$2EEA1399-E7FD-4C07-BD5F-9B8858A16FAE",
+          "rank": "normal"
+        },
+        {
+          "mainsnak": {
+            "snaktype": "value",
+            "property": "P150",
+            "hash": "7c742bb7272dda91adcc76c65ef78fe2410207e6",
+            "datavalue": {
+              "value": {
+                "entity-type": "item",
+                "numeric-id": 5171193,
+                "id": "Q5171193"
+              },
+              "type": "wikibase-entityid"
+            },
+            "datatype": "wikibase-item"
+          },
+          "type": "statement",
+          "id": "Q1621560$A1A2A435-F737-4334-8D94-ECD31C3D687D",
+          "rank": "normal"
+        },
+        {
+          "mainsnak": {
+            "snaktype": "value",
+            "property": "P150",
+            "hash": "0566062c72b5a2e2a55595c79a57d7a5c2e90a64",
+            "datavalue": {
+              "value": {
+                "entity-type": "item",
+                "numeric-id": 5319222,
+                "id": "Q5319222"
+              },
+              "type": "wikibase-entityid"
+            },
+            "datatype": "wikibase-item"
+          },
+          "type": "statement",
+          "id": "Q1621560$E10D94E5-9222-40EC-891A-26F910C1141A",
+          "rank": "normal"
+        },
+        {
+          "mainsnak": {
+            "snaktype": "value",
+            "property": "P150",
+            "hash": "6d1873e14d6fb9080375074a8e818c856ab1a57c",
+            "datavalue": {
+              "value": {
+                "entity-type": "item",
+                "numeric-id": 5444485,
+                "id": "Q5444485"
+              },
+              "type": "wikibase-entityid"
+            },
+            "datatype": "wikibase-item"
+          },
+          "type": "statement",
+          "id": "Q1621560$1AA7FE07-1ED6-4236-BADC-1D38534B8963",
+          "rank": "normal"
+        },
+        {
+          "mainsnak": {
+            "snaktype": "value",
+            "property": "P150",
+            "hash": "bf2a29330f10cfe8982ad4e589860e4d73277008",
+            "datavalue": {
+              "value": {
+                "entity-type": "item",
+                "numeric-id": 5567425,
+                "id": "Q5567425"
+              },
+              "type": "wikibase-entityid"
+            },
+            "datatype": "wikibase-item"
+          },
+          "type": "statement",
+          "id": "Q1621560$89EC550B-8E0F-4384-92B2-BEAAF505B9ED",
+          "rank": "normal"
+        },
+        {
+          "mainsnak": {
+            "snaktype": "value",
+            "property": "P150",
+            "hash": "ee2ee48eb9f3853a74b98d4b36343fcab04888d9",
+            "datavalue": {
+              "value": {
+                "entity-type": "item",
+                "numeric-id": 5874777,
+                "id": "Q5874777"
+              },
+              "type": "wikibase-entityid"
+            },
+            "datatype": "wikibase-item"
+          },
+          "type": "statement",
+          "id": "Q1621560$9326FF00-1367-4853-812B-40A283773D4F",
+          "rank": "normal"
+        },
+        {
+          "mainsnak": {
+            "snaktype": "value",
+            "property": "P150",
+            "hash": "4e53615094ef4468bfe988a6bfaef16cb6e31023",
+            "datavalue": {
+              "value": {
+                "entity-type": "item",
+                "numeric-id": 6522224,
+                "id": "Q6522224"
+              },
+              "type": "wikibase-entityid"
+            },
+            "datatype": "wikibase-item"
+          },
+          "type": "statement",
+          "id": "Q1621560$E2B85A69-B87F-48E5-9C81-1D4220D0055C",
+          "rank": "normal"
+        },
+        {
+          "mainsnak": {
+            "snaktype": "value",
+            "property": "P150",
+            "hash": "d188b29f6c93da62e991100ec3a69d24f602578b",
+            "datavalue": {
+              "value": {
+                "entity-type": "item",
+                "numeric-id": 6922380,
+                "id": "Q6922380"
+              },
+              "type": "wikibase-entityid"
+            },
+            "datatype": "wikibase-item"
+          },
+          "type": "statement",
+          "id": "Q1621560$9F65DB03-BC92-4574-A57E-4AA1CC217924",
+          "rank": "normal"
+        },
+        {
+          "mainsnak": {
+            "snaktype": "value",
+            "property": "P150",
+            "hash": "292178aea2950230c1cfc379033f9bd8563094ba",
+            "datavalue": {
+              "value": {
+                "entity-type": "item",
+                "numeric-id": 14935633,
+                "id": "Q14935633"
+              },
+              "type": "wikibase-entityid"
+            },
+            "datatype": "wikibase-item"
+          },
+          "type": "statement",
+          "id": "Q1621560$8DD93909-2C08-4BE4-BB26-A7FB90B9928D",
+          "rank": "normal"
+        },
+        {
+          "mainsnak": {
+            "snaktype": "value",
+            "property": "P150",
+            "hash": "771cf822a848f1fab979696a942afd982326a511",
+            "datavalue": {
+              "value": {
+                "entity-type": "item",
+                "numeric-id": 14935638,
+                "id": "Q14935638"
+              },
+              "type": "wikibase-entityid"
+            },
+            "datatype": "wikibase-item"
+          },
+          "type": "statement",
+          "id": "Q1621560$216D4632-B304-4027-B223-5B36054F15A9",
+          "rank": "normal"
+        },
+        {
+          "mainsnak": {
+            "snaktype": "value",
+            "property": "P150",
+            "hash": "5b39d15c4f03c22005e9e9bfde725eec7a45e401",
+            "datavalue": {
+              "value": {
+                "entity-type": "item",
+                "numeric-id": 7055645,
+                "id": "Q7055645"
+              },
+              "type": "wikibase-entityid"
+            },
+            "datatype": "wikibase-item"
+          },
+          "type": "statement",
+          "id": "Q1621560$3016F430-915D-48EA-A41E-C60D9F870B78",
+          "rank": "normal"
+        },
+        {
+          "mainsnak": {
+            "snaktype": "value",
+            "property": "P150",
+            "hash": "bde33b15a697175aefd8f4169c5a4b842ea303c5",
+            "datavalue": {
+              "value": {
+                "entity-type": "item",
+                "numeric-id": 7332812,
+                "id": "Q7332812"
+              },
+              "type": "wikibase-entityid"
+            },
+            "datatype": "wikibase-item"
+          },
+          "type": "statement",
+          "id": "Q1621560$4D5F15B7-E324-406C-B111-8787B9E3BF39",
+          "rank": "normal"
+        },
+        {
+          "mainsnak": {
+            "snaktype": "value",
+            "property": "P150",
+            "hash": "8ff3fd9d43b33c8e174391eca9e554072ffc611f",
+            "datavalue": {
+              "value": {
+                "entity-type": "item",
+                "numeric-id": 7417154,
+                "id": "Q7417154"
+              },
+              "type": "wikibase-entityid"
+            },
+            "datatype": "wikibase-item"
+          },
+          "type": "statement",
+          "id": "Q1621560$906B495B-E2E2-4A2C-8672-8D8BA5E4B801",
+          "rank": "normal"
+        },
+        {
+          "mainsnak": {
+            "snaktype": "value",
+            "property": "P150",
+            "hash": "1b70308ba807077d92098d3a17b9bfaf8171a1ec",
+            "datavalue": {
+              "value": {
+                "entity-type": "item",
+                "numeric-id": 7567497,
+                "id": "Q7567497"
+              },
+              "type": "wikibase-entityid"
+            },
+            "datatype": "wikibase-item"
+          },
+          "type": "statement",
+          "id": "Q1621560$8161B67F-B2CA-42A9-85A1-F36D8038495A",
+          "rank": "normal"
+        },
+        {
+          "mainsnak": {
+            "snaktype": "value",
+            "property": "P150",
+            "hash": "434fbe2e5eeb72362f782df2e432947b5df34641",
+            "datavalue": {
+              "value": {
+                "entity-type": "item",
+                "numeric-id": 7814444,
+                "id": "Q7814444"
+              },
+              "type": "wikibase-entityid"
+            },
+            "datatype": "wikibase-item"
+          },
+          "type": "statement",
+          "id": "Q1621560$11B486C7-1856-4065-8AB6-6758E69B5C72",
+          "rank": "normal"
+        },
+        {
+          "mainsnak": {
+            "snaktype": "value",
+            "property": "P150",
+            "hash": "8f3034df0471c26934a08e5f5c491c933e5231f1",
+            "datavalue": {
+              "value": {
+                "entity-type": "item",
+                "numeric-id": 7985404,
+                "id": "Q7985404"
+              },
+              "type": "wikibase-entityid"
+            },
+            "datatype": "wikibase-item"
+          },
+          "type": "statement",
+          "id": "Q1621560$97392DF6-3E80-47C7-B01A-5FF98A40505F",
+          "rank": "normal"
+        }
+      ],
+      "P47": [
+        {
+          "mainsnak": {
+            "snaktype": "value",
+            "property": "P47",
+            "hash": "be465ded1e05a4f034c44c7f355298ca20a3c1fc",
+            "datavalue": {
+              "value": {
+                "entity-type": "item",
+                "numeric-id": 1095386,
+                "id": "Q1095386"
+              },
+              "type": "wikibase-entityid"
+            },
+            "datatype": "wikibase-item"
+          },
+          "type": "statement",
+          "id": "Q1621560$98bca478-4771-d734-2623-824527942263",
+          "rank": "normal"
+        },
+        {
+          "mainsnak": {
+            "snaktype": "value",
+            "property": "P47",
+            "hash": "eff183b7cb2eb0e319fa8499a644ee3d2d93bfda",
+            "datavalue": {
+              "value": {
+                "entity-type": "item",
+                "numeric-id": 1435919,
+                "id": "Q1435919"
+              },
+              "type": "wikibase-entityid"
+            },
+            "datatype": "wikibase-item"
+          },
+          "type": "statement",
+          "id": "Q1621560$b17a5f2d-4d1e-0e49-319b-991e3bc9006f",
+          "rank": "normal"
+        },
+        {
+          "mainsnak": {
+            "snaktype": "value",
+            "property": "P47",
+            "hash": "948c64a564cdff52225ea685a74cb98b10aff897",
+            "datavalue": {
+              "value": {
+                "entity-type": "item",
+                "numeric-id": 1742110,
+                "id": "Q1742110"
+              },
+              "type": "wikibase-entityid"
+            },
+            "datatype": "wikibase-item"
+          },
+          "type": "statement",
+          "id": "Q1621560$bb6ba373-4ced-edff-4e9c-35ed84ea7c3a",
+          "rank": "normal"
+        }
+      ],
+      "P1082": [
+        {
+          "mainsnak": {
+            "snaktype": "value",
+            "property": "P1082",
+            "hash": "37e244dcf50b5b86ba77d24f7cec67556b634828",
+            "datavalue": {
+              "value": {
+                "amount": "+48703",
+                "unit": "1"
+              },
+              "type": "quantity"
+            },
+            "datatype": "quantity"
+          },
+          "type": "statement",
+          "qualifiers": {
+            "P585": [
+              {
+                "snaktype": "value",
+                "property": "P585",
+                "hash": "1277780215cd5ca03e85ca9c50830783b4fedfe1",
+                "datavalue": {
+                  "value": {
+                    "time": "+2011-00-00T00:00:00Z",
+                    "timezone": 0,
+                    "before": 0,
+                    "after": 0,
+                    "precision": 9,
+                    "calendarmodel": "http://www.wikidata.org/entity/Q1985727"
+                  },
+                  "type": "time"
+                },
+                "datatype": "time"
+              }
+            ],
+            "P459": [
+              {
+                "snaktype": "value",
+                "property": "P459",
+                "hash": "2368ad6d87606bd0ed31a0f53b35f91a597a5a1a",
+                "datavalue": {
+                  "value": {
+                    "entity-type": "item",
+                    "numeric-id": 91632502,
+                    "id": "Q91632502"
+                  },
+                  "type": "wikibase-entityid"
+                },
+                "datatype": "wikibase-item"
+              }
+            ]
+          },
+          "qualifiers-order": [
+            "P585",
+            "P459"
+          ],
+          "id": "Q1621560$c9f5ad9f-4a7c-f621-27fc-2423ee2b55dd",
+          "rank": "normal",
+          "references": [
+            {
+              "hash": "3d3671b2d188317c084c594a0f6b1282e8b5d4e7",
+              "snaks": {
+                "P248": [
+                  {
+                    "snaktype": "value",
+                    "property": "P248",
+                    "hash": "ac908e598c32c735f8e1f3707a08584606388f99",
+                    "datavalue": {
+                      "value": {
+                        "entity-type": "item",
+                        "numeric-id": 123347,
+                        "id": "Q123347"
+                      },
+                      "type": "wikibase-entityid"
+                    },
+                    "datatype": "wikibase-item"
+                  }
+                ],
+                "P854": [
+                  {
+                    "snaktype": "value",
+                    "property": "P854",
+                    "hash": "f2e43bf4951b9ddf554200cf480e4c3460e23d60",
+                    "datavalue": {
+                      "value": "https://www.abs.gov.au/census/find-census-data/quickstats/2011/LGA62810",
+                      "type": "string"
+                    },
+                    "datatype": "url"
+                  }
+                ],
+                "P577": [
+                  {
+                    "snaktype": "value",
+                    "property": "P577",
+                    "hash": "310c7f64e72223d28b9d2269147a49f96748a3bc",
+                    "datavalue": {
+                      "value": {
+                        "time": "+2013-03-28T00:00:00Z",
+                        "timezone": 0,
+                        "before": 0,
+                        "after": 0,
+                        "precision": 11,
+                        "calendarmodel": "http://www.wikidata.org/entity/Q1985727"
+                      },
+                      "type": "time"
+                    },
+                    "datatype": "time"
+                  }
+                ]
+              },
+              "snaks-order": [
+                "P248",
+                "P854",
+                "P577"
+              ]
+            }
+          ]
+        },
+        {
+          "mainsnak": {
+            "snaktype": "value",
+            "property": "P1082",
+            "hash": "e36f280ab9506a79c3daa2ecbb20d72921f3ef24",
+            "datavalue": {
+              "value": {
+                "amount": "+50439",
+                "unit": "1"
+              },
+              "type": "quantity"
+            },
+            "datatype": "quantity"
+          },
+          "type": "statement",
+          "qualifiers": {
+            "P585": [
+              {
+                "snaktype": "value",
+                "property": "P585",
+                "hash": "c921fabbf36db1b6c45b8e118ca0bb21fa4311d3",
+                "datavalue": {
+                  "value": {
+                    "time": "+2016-08-09T00:00:00Z",
+                    "timezone": 0,
+                    "before": 0,
+                    "after": 0,
+                    "precision": 11,
+                    "calendarmodel": "http://www.wikidata.org/entity/Q1985727"
+                  },
+                  "type": "time"
+                },
+                "datatype": "time"
+              }
+            ],
+            "P459": [
+              {
+                "snaktype": "value",
+                "property": "P459",
+                "hash": "df9ffd1ecfbdaefd577a08dca3ede36a97f74f6d",
+                "datavalue": {
+                  "value": {
+                    "entity-type": "item",
+                    "numeric-id": 33128519,
+                    "id": "Q33128519"
+                  },
+                  "type": "wikibase-entityid"
+                },
+                "datatype": "wikibase-item"
+              }
+            ]
+          },
+          "qualifiers-order": [
+            "P585",
+            "P459"
+          ],
+          "id": "Q1621560$323ac686-41f8-ee26-a634-788ff51b2a93",
+          "rank": "normal",
+          "references": [
+            {
+              "hash": "5bc37bbee7cd8376f633f018498d461ed153a13e",
+              "snaks": {
+                "P248": [
+                  {
+                    "snaktype": "value",
+                    "property": "P248",
+                    "hash": "ac908e598c32c735f8e1f3707a08584606388f99",
+                    "datavalue": {
+                      "value": {
+                        "entity-type": "item",
+                        "numeric-id": 123347,
+                        "id": "Q123347"
+                      },
+                      "type": "wikibase-entityid"
+                    },
+                    "datatype": "wikibase-item"
+                  }
+                ],
+                "P854": [
+                  {
+                    "snaktype": "value",
+                    "property": "P854",
+                    "hash": "b8798e63021e5d86c21dedb297e846874a85c92d",
+                    "datavalue": {
+                      "value": "https://www.abs.gov.au/census/find-census-data/quickstats/2016/LGA62810",
+                      "type": "string"
+                    },
+                    "datatype": "url"
+                  }
+                ],
+                "P577": [
+                  {
+                    "snaktype": "value",
+                    "property": "P577",
+                    "hash": "2b10090db0b99b065e68fd8ed3ee8bb0a94c37cf",
+                    "datavalue": {
+                      "value": {
+                        "time": "+2017-06-27T00:00:00Z",
+                        "timezone": 0,
+                        "before": 0,
+                        "after": 0,
+                        "precision": 11,
+                        "calendarmodel": "http://www.wikidata.org/entity/Q1985727"
+                      },
+                      "type": "time"
+                    },
+                    "datatype": "time"
+                  }
+                ]
+              },
+              "snaks-order": [
+                "P248",
+                "P854",
+                "P577"
+              ]
+            }
+          ]
+        },
+        {
+          "mainsnak": {
+            "snaktype": "value",
+            "property": "P1082",
+            "hash": "1c7c2b02b202434a5fbcce2fe5f58d46013c8768",
+            "datavalue": {
+              "value": {
+                "amount": "+55077",
+                "unit": "1"
+              },
+              "type": "quantity"
+            },
+            "datatype": "quantity"
+          },
+          "type": "statement",
+          "qualifiers": {
+            "P585": [
+              {
+                "snaktype": "value",
+                "property": "P585",
+                "hash": "598964e043380743d795240d15ed63ffc4b8277d",
+                "datavalue": {
+                  "value": {
+                    "time": "+2021-08-10T00:00:00Z",
+                    "timezone": 0,
+                    "before": 0,
+                    "after": 0,
+                    "precision": 11,
+                    "calendarmodel": "http://www.wikidata.org/entity/Q1985727"
+                  },
+                  "type": "time"
+                },
+                "datatype": "time"
+              }
+            ],
+            "P459": [
+              {
+                "snaktype": "value",
+                "property": "P459",
+                "hash": "f4632b1a369649fe312a15b7b00016b3430011d3",
+                "datavalue": {
+                  "value": {
+                    "entity-type": "item",
+                    "numeric-id": 60745365,
+                    "id": "Q60745365"
+                  },
+                  "type": "wikibase-entityid"
+                },
+                "datatype": "wikibase-item"
+              }
+            ]
+          },
+          "qualifiers-order": [
+            "P585",
+            "P459"
+          ],
+          "id": "Q1621560$95CEFCBF-AFB4-437B-AD43-99FB60931D54",
+          "rank": "preferred",
+          "references": [
+            {
+              "hash": "f13741f6d88b0aae5afbbef8fb10eb12f5d6c059",
+              "snaks": {
+                "P854": [
+                  {
+                    "snaktype": "value",
+                    "property": "P854",
+                    "hash": "32148009e9604f310f666bd3b47ef9a56c125266",
+                    "datavalue": {
+                      "value": "https://www.abs.gov.au/census/find-census-data/quickstats/2021/LGA62810",
+                      "type": "string"
+                    },
+                    "datatype": "url"
+                  }
+                ],
+                "P813": [
+                  {
+                    "snaktype": "value",
+                    "property": "P813",
+                    "hash": "052c181a0e24e01c95590da04d5dc070ea66c37a",
+                    "datavalue": {
+                      "value": {
+                        "time": "+2022-06-28T00:00:00Z",
+                        "timezone": 0,
+                        "before": 0,
+                        "after": 0,
+                        "precision": 11,
+                        "calendarmodel": "http://www.wikidata.org/entity/Q1985727"
+                      },
+                      "type": "time"
+                    },
+                    "datatype": "time"
+                  }
+                ],
+                "P1433": [
+                  {
+                    "snaktype": "value",
+                    "property": "P1433",
+                    "hash": "a99fb76da51679bb33fc83066f987adc3b721ddc",
+                    "datavalue": {
+                      "value": {
+                        "entity-type": "item",
+                        "numeric-id": 112119348,
+                        "id": "Q112119348"
+                      },
+                      "type": "wikibase-entityid"
+                    },
+                    "datatype": "wikibase-item"
+                  }
+                ],
+                "P577": [
+                  {
+                    "snaktype": "value",
+                    "property": "P577",
+                    "hash": "ea943c31597f1e366aab7c8a144431f0def32eba",
+                    "datavalue": {
+                      "value": {
+                        "time": "+2022-06-28T00:00:00Z",
+                        "timezone": 0,
+                        "before": 0,
+                        "after": 0,
+                        "precision": 11,
+                        "calendarmodel": "http://www.wikidata.org/entity/Q1985727"
+                      },
+                      "type": "time"
+                    },
+                    "datatype": "time"
+                  }
+                ],
+                "P10112": [
+                  {
+                    "snaktype": "value",
+                    "property": "P10112",
+                    "hash": "563ee05cdc9d3e4ab49f1a0150e0b91f7d4a6249",
+                    "datavalue": {
+                      "value": "LGA62810",
+                      "type": "string"
+                    },
+                    "datatype": "external-id"
+                  }
+                ]
+              },
+              "snaks-order": [
+                "P854",
+                "P813",
+                "P1433",
+                "P577",
+                "P10112"
+              ]
+            }
+          ]
+        }
+      ],
+      "P4014": [
+        {
+          "mainsnak": {
+            "snaktype": "value",
+            "property": "P4014",
+            "hash": "6eef0f0388efc8abd486300188dcbc987f9e8d18",
+            "datavalue": {
+              "value": "LGA62810",
+              "type": "string"
+            },
+            "datatype": "external-id"
+          },
+          "type": "statement",
+          "id": "Q1621560$6B15B19B-C04B-4B56-8E01-983BA2527A8D",
+          "rank": "normal"
+        }
+      ],
+      "P4093": [
+        {
+          "mainsnak": {
+            "snaktype": "value",
+            "property": "P4093",
+            "hash": "fb69f8f4d693b813e7499e2874a8c124edcf17b7",
+            "datavalue": {
+              "value": "LGA62810",
+              "type": "string"
+            },
+            "datatype": "external-id"
+          },
+          "type": "statement",
+          "id": "Q1621560$9992BE4D-D101-44C0-9932-85E984FE87B8",
+          "rank": "normal"
+        }
+      ],
+      "P1566": [
+        {
+          "mainsnak": {
+            "snaktype": "value",
+            "property": "P1566",
+            "hash": "429a0e6e8b8b896ce6287c9028b1ecc3dfd96bb9",
+            "datavalue": {
+              "value": "7839672",
+              "type": "string"
+            },
+            "datatype": "external-id"
+          },
+          "type": "statement",
+          "id": "Q1621560$016b6667-4f46-57e5-3451-af82eebdee4d",
+          "rank": "normal"
+        }
+      ],
+      "P2044": [
+        {
+          "mainsnak": {
+            "snaktype": "value",
+            "property": "P2044",
+            "hash": "023ae0163ac9469c59b2c104a986c0136d8817bf",
+            "datavalue": {
+              "value": {
+                "amount": "+170",
+                "unit": "http://www.wikidata.org/entity/Q11573"
+              },
+              "type": "quantity"
+            },
+            "datatype": "quantity"
+          },
+          "type": "statement",
+          "id": "Q1621560$EF7A135C-E82C-44A6-9DBA-8EA0AD948C2A",
+          "rank": "normal"
+        }
+      ],
+      "P856": [
+        {
+          "mainsnak": {
+            "snaktype": "value",
+            "property": "P856",
+            "hash": "6a59b80d40b4f0ab77c5efd5e3410a4a5d114154",
+            "datavalue": {
+              "value": "http://www.hobartcity.com.au",
+              "type": "string"
+            },
+            "datatype": "url"
+          },
+          "type": "statement",
+          "qualifiers": {
+            "P407": [
+              {
+                "snaktype": "value",
+                "property": "P407",
+                "hash": "daf1c4fcb58181b02dff9cc89deb084004ddae4b",
+                "datavalue": {
+                  "value": {
+                    "entity-type": "item",
+                    "numeric-id": 1860,
+                    "id": "Q1860"
+                  },
+                  "type": "wikibase-entityid"
+                },
+                "datatype": "wikibase-item"
+              }
+            ]
+          },
+          "qualifiers-order": [
+            "P407"
+          ],
+          "id": "Q1621560$b5c4ca3f-48e6-36da-4906-26e9eac2cf67",
+          "rank": "normal"
+        }
+      ],
+      "P8714": [
+        {
+          "mainsnak": {
+            "snaktype": "value",
+            "property": "P8714",
+            "hash": "3f629a1bf69f1ed8bfa5e9979fa03755d1db746a",
+            "datavalue": {
+              "value": "AUS.9.15_1",
+              "type": "string"
+            },
+            "datatype": "external-id"
+          },
+          "type": "statement",
+          "id": "Q1621560$4B3C2245-1270-49C8-995B-0E3A99A7FA3B",
+          "rank": "normal"
+        }
+      ],
+      "P402": [
+        {
+          "mainsnak": {
+            "snaktype": "value",
+            "property": "P402",
+            "hash": "0a19fb3ae5199e7294b54dd227cc5500e574b926",
+            "datavalue": {
+              "value": "10625466",
+              "type": "string"
+            },
+            "datatype": "external-id"
+          },
+          "type": "statement",
+          "id": "Q1621560$13f0da35-4aa6-f6b5-604d-ba47d6b875d6",
+          "rank": "normal"
+        }
+      ],
+      "P1313": [
+        {
+          "mainsnak": {
+            "snaktype": "value",
+            "property": "P1313",
+            "hash": "d8fe7b848d2a7214ab410ad68a385432802695c0",
+            "datavalue": {
+              "value": {
+                "entity-type": "item",
+                "numeric-id": 47011112,
+                "id": "Q47011112"
+              },
+              "type": "wikibase-entityid"
+            },
+            "datatype": "wikibase-item"
+          },
+          "type": "statement",
+          "id": "Q1621560$2001989a-46a1-17d6-5426-e60e3b45151d",
+          "rank": "normal"
+        }
+      ],
+      "P18": [
+        {
+          "mainsnak": {
+            "snaktype": "value",
+            "property": "P18",
+            "hash": "2e63d7d5b945517442c6e99d47146bd16eeff3bd",
+            "datavalue": {
+              "value": "City centre - panoramio (1).jpg",
+              "type": "string"
+            },
+            "datatype": "commonsMedia"
+          },
+          "type": "statement",
+          "id": "Q1621560$407DC306-DEC9-4ECD-A67D-2723FC6FDFE3",
+          "rank": "normal"
+        }
+      ],
+      "P7471": [
+        {
+          "mainsnak": {
+            "snaktype": "value",
+            "property": "P7471",
+            "hash": "77c82b45320a380edc0a35d7b9a1c91a7dd9702f",
+            "datavalue": {
+              "value": "14576",
+              "type": "string"
+            },
+            "datatype": "external-id"
+          },
+          "type": "statement",
+          "id": "Q1621560$99421D7D-F3DC-4405-8F94-A44D8B1C9C77",
+          "rank": "normal",
+          "references": [
+            {
+              "hash": "cd265fa9f8591b5905bba6f0b4fd1d62328dc775",
+              "snaks": {
+                "P248": [
+                  {
+                    "snaktype": "value",
+                    "property": "P248",
+                    "hash": "c2f50f16b9b3f2fb15e6f376ad31872737d27fc1",
+                    "datavalue": {
+                      "value": {
+                        "entity-type": "item",
+                        "numeric-id": 16958215,
+                        "id": "Q16958215"
+                      },
+                      "type": "wikibase-entityid"
+                    },
+                    "datatype": "wikibase-item"
+                  }
+                ],
+                "P813": [
+                  {
+                    "snaktype": "value",
+                    "property": "P813",
+                    "hash": "4cc18df9c2293cccb3c32fe5fa19a669b1875932",
+                    "datavalue": {
+                      "value": {
+                        "time": "+2021-04-25T00:00:00Z",
+                        "timezone": 0,
+                        "before": 0,
+                        "after": 0,
+                        "precision": 11,
+                        "calendarmodel": "http://www.wikidata.org/entity/Q1985727"
+                      },
+                      "type": "time"
+                    },
+                    "datatype": "time"
+                  }
+                ],
+                "P854": [
+                  {
+                    "snaktype": "value",
+                    "property": "P854",
+                    "hash": "f41baedd414e0500ea077cc9f6af295ff25e1d30",
+                    "datavalue": {
+                      "value": "https://www.inaturalist.org/places/inaturalist-places.csv.zip",
+                      "type": "string"
+                    },
+                    "datatype": "url"
+                  }
+                ]
+              },
+              "snaks-order": [
+                "P248",
+                "P813",
+                "P854"
+              ]
+            }
+          ]
+        }
+      ],
+      "P10112": [
+        {
+          "mainsnak": {
+            "snaktype": "value",
+            "property": "P10112",
+            "hash": "563ee05cdc9d3e4ab49f1a0150e0b91f7d4a6249",
+            "datavalue": {
+              "value": "LGA62810",
+              "type": "string"
+            },
+            "datatype": "external-id"
+          },
+          "type": "statement",
+          "id": "Q1621560$E243A323-05E2-479E-BED9-BA7CA68B6641",
+          "rank": "normal"
+        }
+      ],
+      "P373": [
+        {
+          "mainsnak": {
+            "snaktype": "value",
+            "property": "P373",
+            "hash": "06b5792c0413556ead82903dd03eeb9b192efe7b",
+            "datavalue": {
+              "value": "City of Hobart",
+              "type": "string"
+            },
+            "datatype": "string"
+          },
+          "type": "statement",
+          "id": "Q1621560$f8e2dae2-1b38-4a4c-9db3-29e72bf90ddc",
+          "rank": "normal"
+        }
+      ],
+      "P3335": [
+        {
+          "mainsnak": {
+            "snaktype": "value",
+            "property": "P3335",
+            "hash": "9aff04bcbad3b6beff421bcc6f905cbc1544f9f1",
+            "datavalue": {
+              "value": {
+                "entity-type": "item",
+                "numeric-id": 104880945,
+                "id": "Q104880945"
+              },
+              "type": "wikibase-entityid"
+            },
+            "datatype": "wikibase-item"
+          },
+          "type": "statement",
+          "qualifiers": {
+            "P580": [
+              {
+                "snaktype": "value",
+                "property": "P580",
+                "hash": "07584d6042c93e50d1c53ce78de16b81e23352f4",
+                "datavalue": {
+                  "value": {
+                    "time": "+2019-06-11T00:00:00Z",
+                    "timezone": 0,
+                    "before": 0,
+                    "after": 0,
+                    "precision": 11,
+                    "calendarmodel": "http://www.wikidata.org/entity/Q1985727"
+                  },
+                  "type": "time"
+                },
+                "datatype": "time"
+              }
+            ]
+          },
+          "qualifiers-order": [
+            "P580"
+          ],
+          "id": "Q1621560$ae145008-4993-5f5d-a409-dcbe4c68c381",
+          "rank": "normal",
+          "references": [
+            {
+              "hash": "d5630e6b781321b017526402c4696408272bc9e1",
+              "snaks": {
+                "P854": [
+                  {
+                    "snaktype": "value",
+                    "property": "P854",
+                    "hash": "50b0a12ca3aa1d94f364103d7d3882b3899631e7",
+                    "datavalue": {
+                      "value": "https://www.examiner.com.au/story/6989545/states-fourth-council-declares-climate-emergency/",
+                      "type": "string"
+                    },
+                    "datatype": "url"
+                  }
+                ],
+                "P577": [
+                  {
+                    "snaktype": "value",
+                    "property": "P577",
+                    "hash": "4545ee288adc8ae8cd11448247f40e199a792757",
+                    "datavalue": {
+                      "value": {
+                        "time": "+2020-10-28T00:00:00Z",
+                        "timezone": 0,
+                        "before": 0,
+                        "after": 0,
+                        "precision": 11,
+                        "calendarmodel": "http://www.wikidata.org/entity/Q1985727"
+                      },
+                      "type": "time"
+                    },
+                    "datatype": "time"
+                  }
+                ]
+              },
+              "snaks-order": [
+                "P854",
+                "P577"
+              ]
+            }
+          ]
+        }
+      ],
+      "P36": [
+        {
+          "mainsnak": {
+            "snaktype": "value",
+            "property": "P36",
+            "hash": "0cb6e47b83261ad4fccfc57045795ff74a02a255",
+            "datavalue": {
+              "value": {
+                "entity-type": "item",
+                "numeric-id": 5874777,
+                "id": "Q5874777"
+              },
+              "type": "wikibase-entityid"
+            },
+            "datatype": "wikibase-item"
+          },
+          "type": "statement",
+          "id": "Q1621560$d0ee0282-44a0-caf4-85df-f64fb601e35f",
+          "rank": "normal"
+        }
+      ],
+      "P242": [
+        {
+          "mainsnak": {
+            "snaktype": "value",
+            "property": "P242",
+            "hash": "f389f492ad7d8c445008e330a4715c1f37bd287b",
+            "datavalue": {
+              "value": "LGA Tas SE Hobart.png",
+              "type": "string"
+            },
+            "datatype": "commonsMedia"
+          },
+          "type": "statement",
+          "qualifiers": {
+            "P585": [
+              {
+                "snaktype": "value",
+                "property": "P585",
+                "hash": "ba4e903e603892e17bd9796e98b823725cab176a",
+                "datavalue": {
+                  "value": {
+                    "time": "+2004-00-00T00:00:00Z",
+                    "timezone": 0,
+                    "before": 0,
+                    "after": 0,
+                    "precision": 9,
+                    "calendarmodel": "http://www.wikidata.org/entity/Q1985727"
+                  },
+                  "type": "time"
+                },
+                "datatype": "time"
+              }
+            ]
+          },
+          "qualifiers-order": [
+            "P585"
+          ],
+          "id": "Q1621560$58c150fa-462b-d75e-c9ce-58c4b471b20b",
+          "rank": "normal"
+        },
+        {
+          "mainsnak": {
+            "snaktype": "value",
+            "property": "P242",
+            "hash": "19f072f79903fc4509b5450004dd46b1b58179f7",
+            "datavalue": {
+              "value": "Hobart City LGA Tasmania locator map.svg",
+              "type": "string"
+            },
+            "datatype": "commonsMedia"
+          },
+          "type": "statement",
+          "qualifiers": {
+            "P585": [
+              {
+                "snaktype": "value",
+                "property": "P585",
+                "hash": "c34a8cfb745b0cda47dffa6967839b8f92bcb653",
+                "datavalue": {
+                  "value": {
+                    "time": "+2017-00-00T00:00:00Z",
+                    "timezone": 0,
+                    "before": 0,
+                    "after": 0,
+                    "precision": 9,
+                    "calendarmodel": "http://www.wikidata.org/entity/Q1985727"
+                  },
+                  "type": "time"
+                },
+                "datatype": "time"
+              }
+            ]
+          },
+          "qualifiers-order": [
+            "P585"
+          ],
+          "id": "Q1621560$4977ea34-433a-4de2-7a84-fc3b61c1b28d",
+          "rank": "normal"
+        },
+        {
+          "mainsnak": {
+            "snaktype": "value",
+            "property": "P242",
+            "hash": "1a0b8fedabb57e03e975fd7679d62cc872f8a26f",
+            "datavalue": {
+              "value": "Hobart City LGA Tasmania locator map inset.svg",
+              "type": "string"
+            },
+            "datatype": "commonsMedia"
+          },
+          "type": "statement",
+          "qualifiers": {
+            "P585": [
+              {
+                "snaktype": "value",
+                "property": "P585",
+                "hash": "c34a8cfb745b0cda47dffa6967839b8f92bcb653",
+                "datavalue": {
+                  "value": {
+                    "time": "+2017-00-00T00:00:00Z",
+                    "timezone": 0,
+                    "before": 0,
+                    "after": 0,
+                    "precision": 9,
+                    "calendarmodel": "http://www.wikidata.org/entity/Q1985727"
+                  },
+                  "type": "time"
+                },
+                "datatype": "time"
+              }
+            ]
+          },
+          "qualifiers-order": [
+            "P585"
+          ],
+          "id": "Q1621560$d2e4e23a-41b9-bd84-88d3-c9b7d7087058",
+          "rank": "normal"
+        }
+      ],
+      "P194": [
+        {
+          "mainsnak": {
+            "snaktype": "value",
+            "property": "P194",
+            "hash": "5ebda3c5fac9f86ac629c43a093eaca016b23354",
+            "datavalue": {
+              "value": {
+                "entity-type": "item",
+                "numeric-id": 135011413,
+                "id": "Q135011413"
+              },
+              "type": "wikibase-entityid"
+            },
+            "datatype": "wikibase-item"
+          },
+          "type": "statement",
+          "id": "Q1621560$3d0f8f14-45bd-9670-1a29-dc3870b15a81",
+          "rank": "normal"
+        }
+      ],
+      "P6": [
+        {
+          "mainsnak": {
+            "snaktype": "value",
+            "property": "P6",
+            "hash": "dd12e319c62807cf218b47b84c137b0213a34efe",
+            "datavalue": {
+              "value": {
+                "entity-type": "item",
+                "numeric-id": 102046769,
+                "id": "Q102046769"
+              },
+              "type": "wikibase-entityid"
+            },
+            "datatype": "wikibase-item"
+          },
+          "type": "statement",
+          "qualifiers": {
+            "P580": [
+              {
+                "snaktype": "value",
+                "property": "P580",
+                "hash": "36b567473eb40bb7403da513d6fbe83768d5ef84",
+                "datavalue": {
+                  "value": {
+                    "time": "+2018-00-00T00:00:00Z",
+                    "timezone": 0,
+                    "before": 0,
+                    "after": 0,
+                    "precision": 9,
+                    "calendarmodel": "http://www.wikidata.org/entity/Q1985727"
+                  },
+                  "type": "time"
+                },
+                "datatype": "time"
+              }
+            ]
+          },
+          "qualifiers-order": [
+            "P580"
+          ],
+          "id": "Q1621560$a1deabd8-4d6b-511e-1f44-454f6b66406d",
+          "rank": "normal"
+        }
+      ],
+      "P41": [
+        {
+          "mainsnak": {
+            "snaktype": "value",
+            "property": "P41",
+            "hash": "289f5c92272a9f9e870d7f03df19bcf5e4ebc498",
+            "datavalue": {
+              "value": "City of Hobart Flag.svg",
+              "type": "string"
+            },
+            "datatype": "commonsMedia"
+          },
+          "type": "statement",
+          "id": "Q1621560$a2d04e27-4604-5c75-5931-a1648ce323d3",
+          "rank": "normal"
+        }
+      ],
+      "P94": [
+        {
+          "mainsnak": {
+            "snaktype": "value",
+            "property": "P94",
+            "hash": "32b3e405a2bf2a00630c7be15bfd3113609faa8a",
+            "datavalue": {
+              "value": "Hobart COA.gif",
+              "type": "string"
+            },
+            "datatype": "commonsMedia"
+          },
+          "type": "statement",
+          "id": "Q1621560$25d056db-4576-7b2d-5b41-be36956d3bf1",
+          "rank": "normal"
+        }
+      ],
+      "P2013": [
+        {
+          "mainsnak": {
+            "snaktype": "value",
+            "property": "P2013",
+            "hash": "1d8df339eb758fbdc707b1c987f8d7ab3a9e7bc0",
+            "datavalue": {
+              "value": "CityofHobartOfficial",
+              "type": "string"
+            },
+            "datatype": "external-id"
+          },
+          "type": "statement",
+          "id": "Q1621560$8c0e9827-476d-74da-878a-62dfe0c6557d",
+          "rank": "normal"
+        }
+      ],
+      "P2003": [
+        {
+          "mainsnak": {
+            "snaktype": "value",
+            "property": "P2003",
+            "hash": "6143f7f7a0bbc1fa244166943138b5323c1d09b1",
+            "datavalue": {
+              "value": "cityofhobarttas",
+              "type": "string"
+            },
+            "datatype": "external-id"
+          },
+          "type": "statement",
+          "id": "Q1621560$29e5a1c6-421b-de9e-019d-3e148fd09b03",
+          "rank": "normal"
+        }
+      ],
+      "P4264": [
+        {
+          "mainsnak": {
+            "snaktype": "value",
+            "property": "P4264",
+            "hash": "3a733734a939ee6e2d76b52d08cde315c2d75f00",
+            "datavalue": {
+              "value": "cityofhobarttas",
+              "type": "string"
+            },
+            "datatype": "external-id"
+          },
+          "type": "statement",
+          "id": "Q1621560$bd1136ab-4a6a-8b50-fea9-e49d2be5163b",
+          "rank": "normal"
+        }
+      ],
+      "P2002": [
+        {
+          "mainsnak": {
+            "snaktype": "value",
+            "property": "P2002",
+            "hash": "bc905e9e4e15d58c28d7ca994f682230db86e01b",
+            "datavalue": {
+              "value": "cityofhobarttas",
+              "type": "string"
+            },
+            "datatype": "external-id"
+          },
+          "type": "statement",
+          "qualifiers": {
+            "P580": [
+              {
+                "snaktype": "value",
+                "property": "P580",
+                "hash": "0ef0704ae3e94970d88e55fe1f41022bf162191b",
+                "datavalue": {
+                  "value": {
+                    "time": "+2018-04-00T00:00:00Z",
+                    "timezone": 0,
+                    "before": 0,
+                    "after": 0,
+                    "precision": 10,
+                    "calendarmodel": "http://www.wikidata.org/entity/Q1985727"
+                  },
+                  "type": "time"
+                },
+                "datatype": "time"
+              }
+            ],
+            "P6552": [
+              {
+                "snaktype": "value",
+                "property": "P6552",
+                "hash": "19b921086a96cc38611bff68f38cf9f0fdcf19d8",
+                "datavalue": {
+                  "value": "988229792951517184",
+                  "type": "string"
+                },
+                "datatype": "external-id"
+              }
+            ]
+          },
+          "qualifiers-order": [
+            "P580",
+            "P6552"
+          ],
+          "id": "Q1621560$3d1a273c-4ed8-57a3-2a61-132c7fde2f9f",
+          "rank": "normal"
+        }
+      ],
+      "P2397": [
+        {
+          "mainsnak": {
+            "snaktype": "value",
+            "property": "P2397",
+            "hash": "4b321fc74b12e8cc9af332687882383e69b6b965",
+            "datavalue": {
+              "value": "UCrIBiZ0bXHUfnOAj8OAxqtA",
+              "type": "string"
+            },
+            "datatype": "external-id"
+          },
+          "type": "statement",
+          "qualifiers": {
+            "P1810": [
+              {
+                "snaktype": "value",
+                "property": "P1810",
+                "hash": "bbec0d1a8391c5e36a03d372262d85c24810fd42",
+                "datavalue": {
+                  "value": "City of Hobart",
+                  "type": "string"
+                },
+                "datatype": "string"
+              }
+            ],
+            "P3744": [
+              {
+                "snaktype": "value",
+                "property": "P3744",
+                "hash": "6ace2e60d2466dfa39afe45926bc0bb2077643bf",
+                "datavalue": {
+                  "value": {
+                    "amount": "+1120",
+                    "unit": "1"
+                  },
+                  "type": "quantity"
+                },
+                "datatype": "quantity"
+              }
+            ],
+            "P3740": [
+              {
+                "snaktype": "value",
+                "property": "P3740",
+                "hash": "ad8ff28858cdcfcc97f07030a4b2ce46e5f8d838",
+                "datavalue": {
+                  "value": {
+                    "amount": "+527",
+                    "unit": "1"
+                  },
+                  "type": "quantity"
+                },
+                "datatype": "quantity"
+              }
+            ],
+            "P5436": [
+              {
+                "snaktype": "value",
+                "property": "P5436",
+                "hash": "ee85e2558548ff8e37ebd88a7e5d3b5bec90abfa",
+                "datavalue": {
+                  "value": {
+                    "amount": "+183950",
+                    "unit": "1"
+                  },
+                  "type": "quantity"
+                },
+                "datatype": "quantity"
+              }
+            ],
+            "P580": [
+              {
+                "snaktype": "value",
+                "property": "P580",
+                "hash": "0750736ad3adde6d00a94784acf521772d513314",
+                "datavalue": {
+                  "value": {
+                    "time": "+2015-01-29T00:00:00Z",
+                    "timezone": 0,
+                    "before": 0,
+                    "after": 0,
+                    "precision": 11,
+                    "calendarmodel": "http://www.wikidata.org/entity/Q1985727"
+                  },
+                  "type": "time"
+                },
+                "datatype": "time"
+              }
+            ],
+            "P585": [
+              {
+                "snaktype": "value",
+                "property": "P585",
+                "hash": "43f3eccd1c7f6efb0f0582073492a4b86fb9bb62",
+                "datavalue": {
+                  "value": {
+                    "time": "+2025-06-29T00:00:00Z",
+                    "timezone": 0,
+                    "before": 0,
+                    "after": 0,
+                    "precision": 11,
+                    "calendarmodel": "http://www.wikidata.org/entity/Q1985727"
+                  },
+                  "type": "time"
+                },
+                "datatype": "time"
+              }
+            ]
+          },
+          "qualifiers-order": [
+            "P1810",
+            "P3744",
+            "P3740",
+            "P5436",
+            "P580",
+            "P585"
+          ],
+          "id": "Q1621560$5ed1b209-458f-a580-9218-c77d469c785c",
+          "rank": "normal"
+        }
+      ],
+      "P1889": [
+        {
+          "mainsnak": {
+            "snaktype": "value",
+            "property": "P1889",
+            "hash": "0446b0eb57be4981b581cf3f4e88d9858ca6f23f",
+            "datavalue": {
+              "value": {
+                "entity-type": "item",
+                "numeric-id": 135011413,
+                "id": "Q135011413"
+              },
+              "type": "wikibase-entityid"
+            },
+            "datatype": "wikibase-item"
+          },
+          "type": "statement",
+          "id": "Q1621560$d63427b9-41a3-d138-d374-8125bf9611a7",
+          "rank": "normal"
+        },
+        {
+          "mainsnak": {
+            "snaktype": "value",
+            "property": "P1889",
+            "hash": "4200103592595594e3c08aae8db968d7141cb475",
+            "datavalue": {
+              "value": {
+                "entity-type": "item",
+                "numeric-id": 40191,
+                "id": "Q40191"
+              },
+              "type": "wikibase-entityid"
+            },
+            "datatype": "wikibase-item"
+          },
+          "type": "statement",
+          "id": "Q1621560$6467e146-424e-aacd-727c-906a502f1fab",
+          "rank": "normal"
+        }
+      ],
+      "P11245": [
+        {
+          "mainsnak": {
+            "snaktype": "value",
+            "property": "P11245",
+            "hash": "42ba043884ec6a9a1f624e403bc2788cd0fafa29",
+            "datavalue": {
+              "value": "cityofhobart",
+              "type": "string"
+            },
+            "datatype": "external-id"
+          },
+          "type": "statement",
+          "qualifiers": {
+            "P2397": [
+              {
+                "snaktype": "value",
+                "property": "P2397",
+                "hash": "4b321fc74b12e8cc9af332687882383e69b6b965",
+                "datavalue": {
+                  "value": "UCrIBiZ0bXHUfnOAj8OAxqtA",
+                  "type": "string"
+                },
+                "datatype": "external-id"
+              }
+            ],
+            "P585": [
+              {
+                "snaktype": "value",
+                "property": "P585",
+                "hash": "7cb00c1b7a68f01ad5dbcc5c4938b4a8c355b599",
+                "datavalue": {
+                  "value": {
+                    "time": "+2025-10-21T00:00:00Z",
+                    "timezone": 0,
+                    "before": 0,
+                    "after": 0,
+                    "precision": 11,
+                    "calendarmodel": "http://www.wikidata.org/entity/Q1985727"
+                  },
+                  "type": "time"
+                },
+                "datatype": "time"
+              }
+            ]
+          },
+          "qualifiers-order": [
+            "P2397",
+            "P585"
+          ],
+          "id": "Q1621560$1d78768b-2b95-49bc-a62f-e0dbaa20ea88",
+          "rank": "normal",
+          "references": [
+            {
+              "hash": "1a9f42c21f9c34d81e9e87de7e180e41013e8ec9",
+              "snaks": {
+                "P813": [
+                  {
+                    "snaktype": "value",
+                    "property": "P813",
+                    "hash": "9d436b4f199cd0782e3842f5c869535ec224e93a",
+                    "datavalue": {
+                      "value": {
+                        "time": "+2025-10-21T00:00:00Z",
+                        "timezone": 0,
+                        "before": 0,
+                        "after": 0,
+                        "precision": 11,
+                        "calendarmodel": "http://www.wikidata.org/entity/Q1985727"
+                      },
+                      "type": "time"
+                    },
+                    "datatype": "time"
+                  }
+                ],
+                "P248": [
+                  {
+                    "snaktype": "value",
+                    "property": "P248",
+                    "hash": "e6e6374525f7d680f01ff599745f367fb1369b87",
+                    "datavalue": {
+                      "value": {
+                        "entity-type": "item",
+                        "numeric-id": 8056784,
+                        "id": "Q8056784"
+                      },
+                      "type": "wikibase-entityid"
+                    },
+                    "datatype": "wikibase-item"
+                  }
+                ]
+              },
+              "snaks-order": [
+                "P813",
+                "P248"
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    "sitelinks": {
+      "cebwiki": {
+        "site": "cebwiki",
+        "title": "Hobart (rehiyon)",
+        "badges": [],
+        "url": "https://ceb.wikipedia.org/wiki/Hobart_(rehiyon)"
+      },
+      "commonswiki": {
+        "site": "commonswiki",
+        "title": "Category:City of Hobart",
+        "badges": [],
+        "url": "https://commons.wikimedia.org/wiki/Category:City_of_Hobart"
+      },
+      "dewiki": {
+        "site": "dewiki",
+        "title": "Hobart City",
+        "badges": [],
+        "url": "https://de.wikipedia.org/wiki/Hobart_City"
+      },
+      "enwiki": {
+        "site": "enwiki",
+        "title": "City of Hobart",
+        "badges": [],
+        "url": "https://en.wikipedia.org/wiki/City_of_Hobart"
+      },
+      "frwiki": {
+        "site": "frwiki",
+        "title": "Ville de Hobart",
+        "badges": [],
+        "url": "https://fr.wikipedia.org/wiki/Ville_de_Hobart"
+      },
+      "itwiki": {
+        "site": "itwiki",
+        "title": "Città di Hobart",
+        "badges": [],
+        "url": "https://it.wikipedia.org/wiki/Citt%C3%A0_di_Hobart"
+      },
+      "nlwiki": {
+        "site": "nlwiki",
+        "title": "City of Hobart",
+        "badges": [],
+        "url": "https://nl.wikipedia.org/wiki/City_of_Hobart"
+      },
+      "plwiki": {
+        "site": "plwiki",
+        "title": "City of Hobart",
+        "badges": [],
+        "url": "https://pl.wikipedia.org/wiki/City_of_Hobart"
+      },
+      "svwiki": {
+        "site": "svwiki",
+        "title": "City of Hobart",
+        "badges": [],
+        "url": "https://sv.wikipedia.org/wiki/City_of_Hobart"
+      },
+      "zhwiki": {
+        "site": "zhwiki",
+        "title": "霍巴特市",
+        "badges": [],
+        "url": "https://zh.wikipedia.org/wiki/%E9%9C%8D%E5%B7%B4%E7%89%B9%E5%B8%82"
+      }
+    }
+  }
+}

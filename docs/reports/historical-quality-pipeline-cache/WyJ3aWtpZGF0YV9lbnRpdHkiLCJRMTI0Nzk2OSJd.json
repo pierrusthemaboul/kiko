@@ -1,0 +1,2056 @@
+{
+  "pageid": 1189042,
+  "ns": 0,
+  "title": "Q1247969",
+  "lastrevid": 2437749398,
+  "modified": "2025-12-03T20:35:25Z",
+  "type": "item",
+  "id": "Q1247969",
+  "labels": {
+    "de": {
+      "language": "de",
+      "value": "St-Paul-St-Louis"
+    },
+    "cs": {
+      "language": "cs",
+      "value": "Kostel svatého Pavla a Ludvíka"
+    },
+    "en": {
+      "language": "en",
+      "value": "church Saint-Paul-Saint-Louis of Paris"
+    },
+    "fr": {
+      "language": "fr",
+      "value": "église Saint-Paul-Saint-Louis de Paris"
+    },
+    "it": {
+      "language": "it",
+      "value": "chiesa di Saint-Paul-Saint-Louis"
+    },
+    "nl": {
+      "language": "nl",
+      "value": "Église Saint-Paul-Saint-Louis"
+    },
+    "zh": {
+      "language": "zh",
+      "value": "圣保禄圣路易教堂"
+    },
+    "ru": {
+      "language": "ru",
+      "value": "Сен-Поль-Сен-Луи"
+    },
+    "sv": {
+      "language": "sv",
+      "value": "Saint-Paul-Saint-Louis"
+    },
+    "es": {
+      "language": "es",
+      "value": "iglesia de San Pablo-San Luis"
+    },
+    "arz": {
+      "language": "arz",
+      "value": "كنيسه سان بول سانت لويس"
+    },
+    "nb": {
+      "language": "nb",
+      "value": "Saint-Paul-Saint-Louis"
+    },
+    "nn": {
+      "language": "nn",
+      "value": "Saint-Paul-Saint-Louis"
+    },
+    "ur": {
+      "language": "ur",
+      "value": "ساں پال-ساں لوئی"
+    },
+    "id": {
+      "language": "id",
+      "value": "Saint-Paul-Saint-Louis"
+    },
+    "ms": {
+      "language": "ms",
+      "value": "Église Saint-Paul-Saint-Louis"
+    },
+    "he": {
+      "language": "he",
+      "value": "סן-פול-סן-לואי"
+    }
+  },
+  "descriptions": {
+    "fr": {
+      "language": "fr",
+      "value": "église située à Paris, en France"
+    },
+    "de": {
+      "language": "de",
+      "value": "Kirchengebäude in Paris"
+    },
+    "cs": {
+      "language": "cs",
+      "value": "kostel v Paříži"
+    },
+    "nl": {
+      "language": "nl",
+      "value": "kerkgebouw in Frankrijk"
+    },
+    "en": {
+      "language": "en",
+      "value": "church located in Paris, in France"
+    },
+    "ru": {
+      "language": "ru",
+      "value": "церковь в Париже (Франция)"
+    },
+    "es": {
+      "language": "es",
+      "value": "iglesia situada en París, en Francia"
+    },
+    "ar": {
+      "language": "ar",
+      "value": "كنيسة في فرنسا"
+    },
+    "pt": {
+      "language": "pt",
+      "value": "igreja em França"
+    },
+    "hy": {
+      "language": "hy",
+      "value": "եկեղեցի Ֆրանսիայում"
+    },
+    "sq": {
+      "language": "sq",
+      "value": "kishë"
+    },
+    "nb": {
+      "language": "nb",
+      "value": "kirke i Paris"
+    },
+    "uk": {
+      "language": "uk",
+      "value": "церква у Франції"
+    },
+    "tr": {
+      "language": "tr",
+      "value": "Fransa'da kilise"
+    }
+  },
+  "aliases": {
+    "ru": [
+      {
+        "language": "ru",
+        "value": "церковь Святого Павла и Святого Людовика"
+      }
+    ],
+    "nl": [
+      {
+        "language": "nl",
+        "value": "Eglise Saint-Paul-Saint-Louis"
+      }
+    ]
+  },
+  "claims": {
+    "P17": [
+      {
+        "mainsnak": {
+          "snaktype": "value",
+          "property": "P17",
+          "hash": "c05db5d169c2560b9799d567a803d20a392f53e4",
+          "datavalue": {
+            "value": {
+              "entity-type": "item",
+              "numeric-id": 142,
+              "id": "Q142"
+            },
+            "type": "wikibase-entityid"
+          },
+          "datatype": "wikibase-item"
+        },
+        "type": "statement",
+        "id": "q1247969$3827DED4-38A8-44C5-92A2-30E676A09D99",
+        "rank": "normal",
+        "references": [
+          {
+            "hash": "d709174cc609072fbf310bb52ddfb7aa2332b473",
+            "snaks": {
+              "P248": [
+                {
+                  "snaktype": "value",
+                  "property": "P248",
+                  "hash": "fc376b4e25f8c58fa7210b660e00a66558a3332b",
+                  "datavalue": {
+                    "value": {
+                      "entity-type": "item",
+                      "numeric-id": 809830,
+                      "id": "Q809830"
+                    },
+                    "type": "wikibase-entityid"
+                  },
+                  "datatype": "wikibase-item"
+                }
+              ]
+            },
+            "snaks-order": [
+              "P248"
+            ]
+          },
+          {
+            "hash": "7aeda103899550794566810b2dc466874504613a",
+            "snaks": {
+              "P5383": [
+                {
+                  "snaktype": "value",
+                  "property": "P5383",
+                  "hash": "4b4bad4157da7d79e475b09997dc201c6351c619",
+                  "datavalue": {
+                    "value": "12245",
+                    "type": "string"
+                  },
+                  "datatype": "external-id"
+                }
+              ],
+              "P248": [
+                {
+                  "snaktype": "value",
+                  "property": "P248",
+                  "hash": "c619cc6e0e5fe3733a8c4a47939343e5970e0e9d",
+                  "datavalue": {
+                    "value": {
+                      "entity-type": "item",
+                      "numeric-id": 265049,
+                      "id": "Q265049"
+                    },
+                    "type": "wikibase-entityid"
+                  },
+                  "datatype": "wikibase-item"
+                }
+              ],
+              "P813": [
+                {
+                  "snaktype": "value",
+                  "property": "P813",
+                  "hash": "6d14dc9d94cb9d5db17d8dcf3b67af81b57ccff1",
+                  "datavalue": {
+                    "value": {
+                      "time": "+2018-07-31T00:00:00Z",
+                      "timezone": 0,
+                      "before": 0,
+                      "after": 0,
+                      "precision": 11,
+                      "calendarmodel": "http://www.wikidata.org/entity/Q1985727"
+                    },
+                    "type": "time"
+                  },
+                  "datatype": "time"
+                }
+              ]
+            },
+            "snaks-order": [
+              "P5383",
+              "P248",
+              "P813"
+            ]
+          }
+        ]
+      }
+    ],
+    "P373": [
+      {
+        "mainsnak": {
+          "snaktype": "value",
+          "property": "P373",
+          "hash": "b3a12e5d1c8cc87ae491cfd8914810306f7cefa3",
+          "datavalue": {
+            "value": "Église Saint-Paul-Saint-Louis (Paris)",
+            "type": "string"
+          },
+          "datatype": "string"
+        },
+        "type": "statement",
+        "id": "q1247969$8808595A-C48C-4D72-915A-330AD9F13E77",
+        "rank": "normal",
+        "references": [
+          {
+            "hash": "fa278ebfc458360e5aed63d5058cca83c46134f1",
+            "snaks": {
+              "P143": [
+                {
+                  "snaktype": "value",
+                  "property": "P143",
+                  "hash": "e4f6d9441d0600513c4533c672b5ab472dc73694",
+                  "datavalue": {
+                    "value": {
+                      "entity-type": "item",
+                      "numeric-id": 328,
+                      "id": "Q328"
+                    },
+                    "type": "wikibase-entityid"
+                  },
+                  "datatype": "wikibase-item"
+                }
+              ]
+            },
+            "snaks-order": [
+              "P143"
+            ]
+          }
+        ]
+      }
+    ],
+    "P31": [
+      {
+        "mainsnak": {
+          "snaktype": "value",
+          "property": "P31",
+          "hash": "fe3e98790529edca4e494c5b753fa3abef71052c",
+          "datavalue": {
+            "value": {
+              "entity-type": "item",
+              "numeric-id": 16970,
+              "id": "Q16970"
+            },
+            "type": "wikibase-entityid"
+          },
+          "datatype": "wikibase-item"
+        },
+        "type": "statement",
+        "id": "Q1247969$C29BC564-14D5-440F-A848-56372D2E2444",
+        "rank": "normal",
+        "references": [
+          {
+            "hash": "d709174cc609072fbf310bb52ddfb7aa2332b473",
+            "snaks": {
+              "P248": [
+                {
+                  "snaktype": "value",
+                  "property": "P248",
+                  "hash": "fc376b4e25f8c58fa7210b660e00a66558a3332b",
+                  "datavalue": {
+                    "value": {
+                      "entity-type": "item",
+                      "numeric-id": 809830,
+                      "id": "Q809830"
+                    },
+                    "type": "wikibase-entityid"
+                  },
+                  "datatype": "wikibase-item"
+                }
+              ]
+            },
+            "snaks-order": [
+              "P248"
+            ]
+          },
+          {
+            "hash": "7aeda103899550794566810b2dc466874504613a",
+            "snaks": {
+              "P5383": [
+                {
+                  "snaktype": "value",
+                  "property": "P5383",
+                  "hash": "4b4bad4157da7d79e475b09997dc201c6351c619",
+                  "datavalue": {
+                    "value": "12245",
+                    "type": "string"
+                  },
+                  "datatype": "external-id"
+                }
+              ],
+              "P248": [
+                {
+                  "snaktype": "value",
+                  "property": "P248",
+                  "hash": "c619cc6e0e5fe3733a8c4a47939343e5970e0e9d",
+                  "datavalue": {
+                    "value": {
+                      "entity-type": "item",
+                      "numeric-id": 265049,
+                      "id": "Q265049"
+                    },
+                    "type": "wikibase-entityid"
+                  },
+                  "datatype": "wikibase-item"
+                }
+              ],
+              "P813": [
+                {
+                  "snaktype": "value",
+                  "property": "P813",
+                  "hash": "6d14dc9d94cb9d5db17d8dcf3b67af81b57ccff1",
+                  "datavalue": {
+                    "value": {
+                      "time": "+2018-07-31T00:00:00Z",
+                      "timezone": 0,
+                      "before": 0,
+                      "after": 0,
+                      "precision": 11,
+                      "calendarmodel": "http://www.wikidata.org/entity/Q1985727"
+                    },
+                    "type": "time"
+                  },
+                  "datatype": "time"
+                }
+              ]
+            },
+            "snaks-order": [
+              "P5383",
+              "P248",
+              "P813"
+            ]
+          }
+        ]
+      }
+    ],
+    "P625": [
+      {
+        "mainsnak": {
+          "snaktype": "value",
+          "property": "P625",
+          "hash": "ba9a660ea6606e76b67d316bb5a241a590497e36",
+          "datavalue": {
+            "value": {
+              "latitude": 48.854672222222,
+              "longitude": 2.3615583333333,
+              "altitude": null,
+              "precision": 0.0000027777777777778,
+              "globe": "http://www.wikidata.org/entity/Q2"
+            },
+            "type": "globecoordinate"
+          },
+          "datatype": "globe-coordinate"
+        },
+        "type": "statement",
+        "id": "q1247969$B8A9F272-C274-4D3E-B325-F3EDD393300A",
+        "rank": "normal",
+        "references": [
+          {
+            "hash": "732ec1c90a6f0694c7db9a71bf09fe7f2b674172",
+            "snaks": {
+              "P143": [
+                {
+                  "snaktype": "value",
+                  "property": "P143",
+                  "hash": "9123b0de1cc9c3954366ba797d598e4e1ea4146f",
+                  "datavalue": {
+                    "value": {
+                      "entity-type": "item",
+                      "numeric-id": 10000,
+                      "id": "Q10000"
+                    },
+                    "type": "wikibase-entityid"
+                  },
+                  "datatype": "wikibase-item"
+                }
+              ]
+            },
+            "snaks-order": [
+              "P143"
+            ]
+          }
+        ]
+      }
+    ],
+    "P18": [
+      {
+        "mainsnak": {
+          "snaktype": "value",
+          "property": "P18",
+          "hash": "bbece4eb0e047e5fef2b5d9120156de24f4ab516",
+          "datavalue": {
+            "value": "Paris Saint-Paul-Saint-Louis 2023-04-04.jpg",
+            "type": "string"
+          },
+          "datatype": "commonsMedia"
+        },
+        "type": "statement",
+        "qualifiers": {
+          "P585": [
+            {
+              "snaktype": "value",
+              "property": "P585",
+              "hash": "dfb0ee28d96cb4f672463fa2b1de6703172545d3",
+              "datavalue": {
+                "value": {
+                  "time": "+2023-04-04T00:00:00Z",
+                  "timezone": 0,
+                  "before": 0,
+                  "after": 0,
+                  "precision": 11,
+                  "calendarmodel": "http://www.wikidata.org/entity/Q1985727"
+                },
+                "type": "time"
+              },
+              "datatype": "time"
+            }
+          ]
+        },
+        "qualifiers-order": [
+          "P585"
+        ],
+        "id": "q1247969$6E7E723D-3B38-4C26-9239-ACC049FAB114",
+        "rank": "normal"
+      }
+    ],
+    "P380": [
+      {
+        "mainsnak": {
+          "snaktype": "value",
+          "property": "P380",
+          "hash": "f2980815770404b36a06530def6a5cebf50ec613",
+          "datavalue": {
+            "value": "PA00086260",
+            "type": "string"
+          },
+          "datatype": "external-id"
+        },
+        "type": "statement",
+        "id": "Q1247969$E34157C5-0F8F-4DFA-99A7-509EC6D2A10C",
+        "rank": "normal",
+        "references": [
+          {
+            "hash": "d709174cc609072fbf310bb52ddfb7aa2332b473",
+            "snaks": {
+              "P248": [
+                {
+                  "snaktype": "value",
+                  "property": "P248",
+                  "hash": "fc376b4e25f8c58fa7210b660e00a66558a3332b",
+                  "datavalue": {
+                    "value": {
+                      "entity-type": "item",
+                      "numeric-id": 809830,
+                      "id": "Q809830"
+                    },
+                    "type": "wikibase-entityid"
+                  },
+                  "datatype": "wikibase-item"
+                }
+              ]
+            },
+            "snaks-order": [
+              "P248"
+            ]
+          }
+        ]
+      }
+    ],
+    "P669": [
+      {
+        "mainsnak": {
+          "snaktype": "value",
+          "property": "P669",
+          "hash": "70d8847ffbf898caefa48e0564658178b707f9ba",
+          "datavalue": {
+            "value": {
+              "entity-type": "item",
+              "numeric-id": 1478811,
+              "id": "Q1478811"
+            },
+            "type": "wikibase-entityid"
+          },
+          "datatype": "wikibase-item"
+        },
+        "type": "statement",
+        "qualifiers": {
+          "P670": [
+            {
+              "snaktype": "value",
+              "property": "P670",
+              "hash": "68005b72b3be9f75e03ca4c8149413d80d6a87b8",
+              "datavalue": {
+                "value": "99",
+                "type": "string"
+              },
+              "datatype": "string"
+            },
+            {
+              "snaktype": "value",
+              "property": "P670",
+              "hash": "def338273feea6d9fb434cce35755c3b0339b340",
+              "datavalue": {
+                "value": "101",
+                "type": "string"
+              },
+              "datatype": "string"
+            }
+          ]
+        },
+        "qualifiers-order": [
+          "P670"
+        ],
+        "id": "Q1247969$C6FF2060-DB89-4441-B7F0-CE3ECB6BF498",
+        "rank": "normal"
+      }
+    ],
+    "P646": [
+      {
+        "mainsnak": {
+          "snaktype": "value",
+          "property": "P646",
+          "hash": "520ae8c790befc4b17b1a072a88cdd8d9918da26",
+          "datavalue": {
+            "value": "/m/0h3q582",
+            "type": "string"
+          },
+          "datatype": "external-id"
+        },
+        "type": "statement",
+        "id": "Q1247969$8ECF3D7C-7ACB-4BC3-A729-502A3351AE6E",
+        "rank": "normal",
+        "references": [
+          {
+            "hash": "2b00cb481cddcac7623114367489b5c194901c4a",
+            "snaks": {
+              "P248": [
+                {
+                  "snaktype": "value",
+                  "property": "P248",
+                  "hash": "a94b740202b097dd33355e0e6c00e54b9395e5e0",
+                  "datavalue": {
+                    "value": {
+                      "entity-type": "item",
+                      "numeric-id": 15241312,
+                      "id": "Q15241312"
+                    },
+                    "type": "wikibase-entityid"
+                  },
+                  "datatype": "wikibase-item"
+                }
+              ],
+              "P577": [
+                {
+                  "snaktype": "value",
+                  "property": "P577",
+                  "hash": "fde79ecb015112d2f29229ccc1ec514ed3e71fa2",
+                  "datavalue": {
+                    "value": {
+                      "time": "+2013-10-28T00:00:00Z",
+                      "timezone": 0,
+                      "before": 0,
+                      "after": 0,
+                      "precision": 11,
+                      "calendarmodel": "http://www.wikidata.org/entity/Q1985727"
+                    },
+                    "type": "time"
+                  },
+                  "datatype": "time"
+                }
+              ]
+            },
+            "snaks-order": [
+              "P248",
+              "P577"
+            ]
+          }
+        ]
+      }
+    ],
+    "P708": [
+      {
+        "mainsnak": {
+          "snaktype": "value",
+          "property": "P708",
+          "hash": "f64c49f95cc90ae55d7236bd647e8f1f44bf6a10",
+          "datavalue": {
+            "value": {
+              "entity-type": "item",
+              "numeric-id": 1242250,
+              "id": "Q1242250"
+            },
+            "type": "wikibase-entityid"
+          },
+          "datatype": "wikibase-item"
+        },
+        "type": "statement",
+        "id": "Q1247969$52948B2B-96B6-4DA5-87FC-1B42E53D5048",
+        "rank": "normal",
+        "references": [
+          {
+            "hash": "3bf39867b037e8e494a8389ae8a03bad6825a7fc",
+            "snaks": {
+              "P143": [
+                {
+                  "snaktype": "value",
+                  "property": "P143",
+                  "hash": "5946b91c53409c48f5f1fb0319ed41fc67a764da",
+                  "datavalue": {
+                    "value": {
+                      "entity-type": "item",
+                      "numeric-id": 191168,
+                      "id": "Q191168"
+                    },
+                    "type": "wikibase-entityid"
+                  },
+                  "datatype": "wikibase-item"
+                }
+              ]
+            },
+            "snaks-order": [
+              "P143"
+            ]
+          }
+        ]
+      }
+    ],
+    "P149": [
+      {
+        "mainsnak": {
+          "snaktype": "value",
+          "property": "P149",
+          "hash": "d693aedc7e1ee10b3de330d583499491e33e2370",
+          "datavalue": {
+            "value": {
+              "entity-type": "item",
+              "numeric-id": 170292,
+              "id": "Q170292"
+            },
+            "type": "wikibase-entityid"
+          },
+          "datatype": "wikibase-item"
+        },
+        "type": "statement",
+        "id": "Q1247969$09C03318-A385-46B2-A01B-CE3F9FDA2EF9",
+        "rank": "normal",
+        "references": [
+          {
+            "hash": "3bf39867b037e8e494a8389ae8a03bad6825a7fc",
+            "snaks": {
+              "P143": [
+                {
+                  "snaktype": "value",
+                  "property": "P143",
+                  "hash": "5946b91c53409c48f5f1fb0319ed41fc67a764da",
+                  "datavalue": {
+                    "value": {
+                      "entity-type": "item",
+                      "numeric-id": 191168,
+                      "id": "Q191168"
+                    },
+                    "type": "wikibase-entityid"
+                  },
+                  "datatype": "wikibase-item"
+                }
+              ]
+            },
+            "snaks-order": [
+              "P143"
+            ]
+          }
+        ]
+      }
+    ],
+    "P1435": [
+      {
+        "mainsnak": {
+          "snaktype": "value",
+          "property": "P1435",
+          "hash": "47d4f633ccb039ebb1a08af61dffb908b5e07611",
+          "datavalue": {
+            "value": {
+              "entity-type": "item",
+              "numeric-id": 10387684,
+              "id": "Q10387684"
+            },
+            "type": "wikibase-entityid"
+          },
+          "datatype": "wikibase-item"
+        },
+        "type": "statement",
+        "qualifiers": {
+          "P580": [
+            {
+              "snaktype": "value",
+              "property": "P580",
+              "hash": "60a16714d08792b889c8c2a3bb1d7291b21c1786",
+              "datavalue": {
+                "value": {
+                  "time": "+1887-02-10T00:00:00Z",
+                  "timezone": 0,
+                  "before": 0,
+                  "after": 0,
+                  "precision": 11,
+                  "calendarmodel": "http://www.wikidata.org/entity/Q1985727"
+                },
+                "type": "time"
+              },
+              "datatype": "time"
+            }
+          ]
+        },
+        "qualifiers-order": [
+          "P580"
+        ],
+        "id": "Q1247969$B36D0E04-56A8-49D9-8561-DDEFC725C5D5",
+        "rank": "normal",
+        "references": [
+          {
+            "hash": "d709174cc609072fbf310bb52ddfb7aa2332b473",
+            "snaks": {
+              "P248": [
+                {
+                  "snaktype": "value",
+                  "property": "P248",
+                  "hash": "fc376b4e25f8c58fa7210b660e00a66558a3332b",
+                  "datavalue": {
+                    "value": {
+                      "entity-type": "item",
+                      "numeric-id": 809830,
+                      "id": "Q809830"
+                    },
+                    "type": "wikibase-entityid"
+                  },
+                  "datatype": "wikibase-item"
+                }
+              ]
+            },
+            "snaks-order": [
+              "P248"
+            ]
+          }
+        ]
+      }
+    ],
+    "P1644": [
+      {
+        "mainsnak": {
+          "snaktype": "value",
+          "property": "P1644",
+          "hash": "715d989f3350065f899a0783bdf99aff8799b588",
+          "datavalue": {
+            "value": "75/paris-04/saint-paul-saint-louis",
+            "type": "string"
+          },
+          "datatype": "external-id"
+        },
+        "type": "statement",
+        "id": "Q1247969$F730DB95-1697-4B1F-AB7B-F2C80CBB8F1B",
+        "rank": "normal"
+      }
+    ],
+    "P214": [
+      {
+        "mainsnak": {
+          "snaktype": "value",
+          "property": "P214",
+          "hash": "5040eef955bb28e8dc5821ea258be0094eda18f5",
+          "datavalue": {
+            "value": "131429140",
+            "type": "string"
+          },
+          "datatype": "external-id"
+        },
+        "type": "statement",
+        "id": "Q1247969$31FF7B64-2B83-42F7-9DA9-C563BA44B17F",
+        "rank": "normal",
+        "references": [
+          {
+            "hash": "07bf3e9a3426ab5ce3b2354ef5f1a265064a8dad",
+            "snaks": {
+              "P248": [
+                {
+                  "snaktype": "value",
+                  "property": "P248",
+                  "hash": "6b7d4330c4aac4caec4ede9de0311ce273f88ecd",
+                  "datavalue": {
+                    "value": {
+                      "entity-type": "item",
+                      "numeric-id": 54919,
+                      "id": "Q54919"
+                    },
+                    "type": "wikibase-entityid"
+                  },
+                  "datatype": "wikibase-item"
+                }
+              ],
+              "P813": [
+                {
+                  "snaktype": "value",
+                  "property": "P813",
+                  "hash": "ab1c3d6f5ce072bb7a2abc5df06d35bcbee51fde",
+                  "datavalue": {
+                    "value": {
+                      "time": "+2015-08-09T00:00:00Z",
+                      "timezone": 0,
+                      "before": 0,
+                      "after": 0,
+                      "precision": 11,
+                      "calendarmodel": "http://www.wikidata.org/entity/Q1985727"
+                    },
+                    "type": "time"
+                  },
+                  "datatype": "time"
+                }
+              ]
+            },
+            "snaks-order": [
+              "P248",
+              "P813"
+            ]
+          }
+        ]
+      }
+    ],
+    "P84": [
+      {
+        "mainsnak": {
+          "snaktype": "value",
+          "property": "P84",
+          "hash": "6890640d6513c430fe7f342de8624aa4ae4c95c3",
+          "datavalue": {
+            "value": {
+              "entity-type": "item",
+              "numeric-id": 3592270,
+              "id": "Q3592270"
+            },
+            "type": "wikibase-entityid"
+          },
+          "datatype": "wikibase-item"
+        },
+        "type": "statement",
+        "id": "Q1247969$252cbc5b-46b8-33d4-5fc7-75355331f105",
+        "rank": "normal"
+      },
+      {
+        "mainsnak": {
+          "snaktype": "value",
+          "property": "P84",
+          "hash": "b9c0101602d32edd40e93930c9ad9c6690ee55d7",
+          "datavalue": {
+            "value": {
+              "entity-type": "item",
+              "numeric-id": 3084427,
+              "id": "Q3084427"
+            },
+            "type": "wikibase-entityid"
+          },
+          "datatype": "wikibase-item"
+        },
+        "type": "statement",
+        "id": "Q1247969$e2bc4a44-4b7e-ba76-5af7-c0432ed6bd4d",
+        "rank": "normal"
+      }
+    ],
+    "P1838": [
+      {
+        "mainsnak": {
+          "snaktype": "value",
+          "property": "P1838",
+          "hash": "6819b5b52e04a863edefaeb573d168b549ce30cc",
+          "datavalue": {
+            "value": "FR-75056-17799",
+            "type": "string"
+          },
+          "datatype": "external-id"
+        },
+        "type": "statement",
+        "id": "Q1247969$896A594B-2D71-4BCC-AF34-E1B2F58B5864",
+        "rank": "normal"
+      }
+    ],
+    "P856": [
+      {
+        "mainsnak": {
+          "snaktype": "value",
+          "property": "P856",
+          "hash": "bbdf0da8ab4040f2949f1a99309a69653bede711",
+          "datavalue": {
+            "value": "https://www.spsl.fr/",
+            "type": "string"
+          },
+          "datatype": "url"
+        },
+        "type": "statement",
+        "qualifiers": {
+          "P407": [
+            {
+              "snaktype": "value",
+              "property": "P407",
+              "hash": "d197d0a5efa4b4c23a302a829dd3ef43684fe002",
+              "datavalue": {
+                "value": {
+                  "entity-type": "item",
+                  "numeric-id": 150,
+                  "id": "Q150"
+                },
+                "type": "wikibase-entityid"
+              },
+              "datatype": "wikibase-item"
+            }
+          ]
+        },
+        "qualifiers-order": [
+          "P407"
+        ],
+        "id": "Q1247969$6C6A89D7-A7C6-4734-9D3C-E15598DAB4D2",
+        "rank": "normal",
+        "references": [
+          {
+            "hash": "fa278ebfc458360e5aed63d5058cca83c46134f1",
+            "snaks": {
+              "P143": [
+                {
+                  "snaktype": "value",
+                  "property": "P143",
+                  "hash": "e4f6d9441d0600513c4533c672b5ab472dc73694",
+                  "datavalue": {
+                    "value": {
+                      "entity-type": "item",
+                      "numeric-id": 328,
+                      "id": "Q328"
+                    },
+                    "type": "wikibase-entityid"
+                  },
+                  "datatype": "wikibase-item"
+                }
+              ]
+            },
+            "snaks-order": [
+              "P143"
+            ]
+          }
+        ]
+      }
+    ],
+    "P417": [
+      {
+        "mainsnak": {
+          "snaktype": "value",
+          "property": "P417",
+          "hash": "e1adff153449eae830c0041a71936df2f5c9cf2d",
+          "datavalue": {
+            "value": {
+              "entity-type": "item",
+              "numeric-id": 346,
+              "id": "Q346"
+            },
+            "type": "wikibase-entityid"
+          },
+          "datatype": "wikibase-item"
+        },
+        "type": "statement",
+        "id": "Q1247969$3A1BF497-0CE2-44E5-8522-D7740315D23A",
+        "rank": "normal"
+      }
+    ],
+    "P3371": [
+      {
+        "mainsnak": {
+          "snaktype": "value",
+          "property": "P3371",
+          "hash": "12bf5f43da6980802767660dd77c54a2fa7ee7b1",
+          "datavalue": {
+            "value": "172769",
+            "type": "string"
+          },
+          "datatype": "external-id"
+        },
+        "type": "statement",
+        "id": "Q1247969$341BBA71-3D2F-4BC2-B9F2-9E4EE339F7A9",
+        "rank": "normal"
+      }
+    ],
+    "P3977": [
+      {
+        "mainsnak": {
+          "snaktype": "value",
+          "property": "P3977",
+          "hash": "0c2bd9573e97ecfc12f049146240b7dddb232c3c",
+          "datavalue": {
+            "value": "2549514",
+            "type": "string"
+          },
+          "datatype": "external-id"
+        },
+        "type": "statement",
+        "id": "Q1247969$5c798743-44ad-9669-1984-76d7992c375a",
+        "rank": "normal"
+      }
+    ],
+    "P3963": [
+      {
+        "mainsnak": {
+          "snaktype": "value",
+          "property": "P3963",
+          "hash": "929b5c7a0c7fad0b11e13ff75bb755ae2ae51fe7",
+          "datavalue": {
+            "value": "75/accueil_75104a",
+            "type": "string"
+          },
+          "datatype": "external-id"
+        },
+        "type": "statement",
+        "id": "Q1247969$FB135EE3-D100-403E-B8A1-E213A85D744E",
+        "rank": "normal"
+      }
+    ],
+    "P910": [
+      {
+        "mainsnak": {
+          "snaktype": "value",
+          "property": "P910",
+          "hash": "8be4e5df81b245ea857245a3a4396a963891b0fd",
+          "datavalue": {
+            "value": {
+              "entity-type": "item",
+              "numeric-id": 48700463,
+              "id": "Q48700463"
+            },
+            "type": "wikibase-entityid"
+          },
+          "datatype": "wikibase-item"
+        },
+        "type": "statement",
+        "id": "Q1247969$6c5a71d7-473a-b7bf-2377-c5771f819aa1",
+        "rank": "normal"
+      }
+    ],
+    "P5383": [
+      {
+        "mainsnak": {
+          "snaktype": "value",
+          "property": "P5383",
+          "hash": "4b4bad4157da7d79e475b09997dc201c6351c619",
+          "datavalue": {
+            "value": "12245",
+            "type": "string"
+          },
+          "datatype": "external-id"
+        },
+        "type": "statement",
+        "id": "Q1247969$2AF5351B-F7BF-4871-9790-378E3B7071BB",
+        "rank": "normal",
+        "references": [
+          {
+            "hash": "fc5c0700e4ea82f652ee81db5553c3a44446a105",
+            "snaks": {
+              "P854": [
+                {
+                  "snaktype": "value",
+                  "property": "P854",
+                  "hash": "bb385bc908e4615b60c060310f5723f66c443109",
+                  "datavalue": {
+                    "value": "https://www.archinform.net/service/wd_aipro.php",
+                    "type": "string"
+                  },
+                  "datatype": "url"
+                }
+              ],
+              "P813": [
+                {
+                  "snaktype": "value",
+                  "property": "P813",
+                  "hash": "775e4bc3406f34d4db423a7a92abe6c7af78a5e1",
+                  "datavalue": {
+                    "value": {
+                      "time": "+2018-07-02T00:00:00Z",
+                      "timezone": 0,
+                      "before": 0,
+                      "after": 0,
+                      "precision": 11,
+                      "calendarmodel": "http://www.wikidata.org/entity/Q1985727"
+                    },
+                    "type": "time"
+                  },
+                  "datatype": "time"
+                }
+              ]
+            },
+            "snaks-order": [
+              "P854",
+              "P813"
+            ]
+          }
+        ]
+      }
+    ],
+    "P131": [
+      {
+        "mainsnak": {
+          "snaktype": "value",
+          "property": "P131",
+          "hash": "66b5ccf756d8908b582f34c4c668d14cfe247f5c",
+          "datavalue": {
+            "value": {
+              "entity-type": "item",
+              "numeric-id": 3413113,
+              "id": "Q3413113"
+            },
+            "type": "wikibase-entityid"
+          },
+          "datatype": "wikibase-item"
+        },
+        "type": "statement",
+        "id": "Q1247969$B2FA7317-24C4-472F-B9A1-B6E480443886",
+        "rank": "normal",
+        "references": [
+          {
+            "hash": "7aeda103899550794566810b2dc466874504613a",
+            "snaks": {
+              "P5383": [
+                {
+                  "snaktype": "value",
+                  "property": "P5383",
+                  "hash": "4b4bad4157da7d79e475b09997dc201c6351c619",
+                  "datavalue": {
+                    "value": "12245",
+                    "type": "string"
+                  },
+                  "datatype": "external-id"
+                }
+              ],
+              "P248": [
+                {
+                  "snaktype": "value",
+                  "property": "P248",
+                  "hash": "c619cc6e0e5fe3733a8c4a47939343e5970e0e9d",
+                  "datavalue": {
+                    "value": {
+                      "entity-type": "item",
+                      "numeric-id": 265049,
+                      "id": "Q265049"
+                    },
+                    "type": "wikibase-entityid"
+                  },
+                  "datatype": "wikibase-item"
+                }
+              ],
+              "P813": [
+                {
+                  "snaktype": "value",
+                  "property": "P813",
+                  "hash": "6d14dc9d94cb9d5db17d8dcf3b67af81b57ccff1",
+                  "datavalue": {
+                    "value": {
+                      "time": "+2018-07-31T00:00:00Z",
+                      "timezone": 0,
+                      "before": 0,
+                      "after": 0,
+                      "precision": 11,
+                      "calendarmodel": "http://www.wikidata.org/entity/Q1985727"
+                    },
+                    "type": "time"
+                  },
+                  "datatype": "time"
+                }
+              ]
+            },
+            "snaks-order": [
+              "P5383",
+              "P248",
+              "P813"
+            ]
+          }
+        ]
+      },
+      {
+        "mainsnak": {
+          "snaktype": "value",
+          "property": "P131",
+          "hash": "e9086befe72b1ee28f9fbbbc8faf509be8bd5bb4",
+          "datavalue": {
+            "value": {
+              "entity-type": "item",
+              "numeric-id": 230127,
+              "id": "Q230127"
+            },
+            "type": "wikibase-entityid"
+          },
+          "datatype": "wikibase-item"
+        },
+        "type": "statement",
+        "id": "Q1247969$DCF34AD2-CB81-41CF-A369-C86E5AE68C1F",
+        "rank": "normal"
+      }
+    ],
+    "P6375": [
+      {
+        "mainsnak": {
+          "snaktype": "value",
+          "property": "P6375",
+          "hash": "f1f460621da4ab5781554ffea9815576b1d06cd3",
+          "datavalue": {
+            "value": {
+              "text": "99, rue Saint-Antoine, 75004 Paris",
+              "language": "fr"
+            },
+            "type": "monolingualtext"
+          },
+          "datatype": "monolingualtext"
+        },
+        "type": "statement",
+        "id": "Q1247969$405E0082-33ED-4E0A-87EF-2E4C55D395B9",
+        "rank": "normal",
+        "references": [
+          {
+            "hash": "3bf39867b037e8e494a8389ae8a03bad6825a7fc",
+            "snaks": {
+              "P143": [
+                {
+                  "snaktype": "value",
+                  "property": "P143",
+                  "hash": "5946b91c53409c48f5f1fb0319ed41fc67a764da",
+                  "datavalue": {
+                    "value": {
+                      "entity-type": "item",
+                      "numeric-id": 191168,
+                      "id": "Q191168"
+                    },
+                    "type": "wikibase-entityid"
+                  },
+                  "datatype": "wikibase-item"
+                }
+              ]
+            },
+            "snaks-order": [
+              "P143"
+            ]
+          }
+        ]
+      }
+    ],
+    "P244": [
+      {
+        "mainsnak": {
+          "snaktype": "value",
+          "property": "P244",
+          "hash": "1cacb849ec6096f8323b35852a67847027a3fc52",
+          "datavalue": {
+            "value": "n86008693",
+            "type": "string"
+          },
+          "datatype": "external-id"
+        },
+        "type": "statement",
+        "id": "Q1247969$2F098839-FD3B-454A-A065-93098C2726B3",
+        "rank": "normal"
+      }
+    ],
+    "P5775": [
+      {
+        "mainsnak": {
+          "snaktype": "value",
+          "property": "P5775",
+          "hash": "965a28fb39ae2ae14e2ba7a9015532889a5fabb2",
+          "datavalue": {
+            "value": "St Paul et St. Louis, Paris 02.JPG",
+            "type": "string"
+          },
+          "datatype": "commonsMedia"
+        },
+        "type": "statement",
+        "id": "Q1247969$24840b82-4160-a5a6-3935-2ea211b573a1",
+        "rank": "normal"
+      }
+    ],
+    "P138": [
+      {
+        "mainsnak": {
+          "snaktype": "value",
+          "property": "P138",
+          "hash": "fe4c4de5181dc85761418cfc839864c7cdcb83af",
+          "datavalue": {
+            "value": {
+              "entity-type": "item",
+              "numeric-id": 9200,
+              "id": "Q9200"
+            },
+            "type": "wikibase-entityid"
+          },
+          "datatype": "wikibase-item"
+        },
+        "type": "statement",
+        "id": "Q1247969$16c4ddb6-c169-4467-807b-10d8f107501b",
+        "rank": "normal",
+        "references": [
+          {
+            "hash": "d4bd87b862b12d99d26e86472d44f26858dee639",
+            "snaks": {
+              "P143": [
+                {
+                  "snaktype": "value",
+                  "property": "P143",
+                  "hash": "f30cbd35620c4ea6d0633aaf0210a8916130469b",
+                  "datavalue": {
+                    "value": {
+                      "entity-type": "item",
+                      "numeric-id": 8447,
+                      "id": "Q8447"
+                    },
+                    "type": "wikibase-entityid"
+                  },
+                  "datatype": "wikibase-item"
+                }
+              ]
+            },
+            "snaks-order": [
+              "P143"
+            ]
+          }
+        ]
+      }
+    ],
+    "P571": [
+      {
+        "mainsnak": {
+          "snaktype": "value",
+          "property": "P571",
+          "hash": "240d4ac4ef6b454391cd3a99541b99b1252b0bc9",
+          "datavalue": {
+            "value": {
+              "time": "+1641-05-09T00:00:00Z",
+              "timezone": 0,
+              "before": 0,
+              "after": 0,
+              "precision": 11,
+              "calendarmodel": "http://www.wikidata.org/entity/Q1985727"
+            },
+            "type": "time"
+          },
+          "datatype": "time"
+        },
+        "type": "statement",
+        "id": "Q1247969$46C37A90-3346-43AB-8F13-6A9667461020",
+        "rank": "normal",
+        "references": [
+          {
+            "hash": "344ee99f4bfb33348eeec0fa2dcad6d3354fcfa0",
+            "snaks": {
+              "P143": [
+                {
+                  "snaktype": "value",
+                  "property": "P143",
+                  "hash": "5a343e7e758a4282a01316d3e959b6e653b767fc",
+                  "datavalue": {
+                    "value": {
+                      "entity-type": "item",
+                      "numeric-id": 11920,
+                      "id": "Q11920"
+                    },
+                    "type": "wikibase-entityid"
+                  },
+                  "datatype": "wikibase-item"
+                }
+              ],
+              "P4656": [
+                {
+                  "snaktype": "value",
+                  "property": "P4656",
+                  "hash": "fbdd6fb6ea5efb076b339bb68d4807eb1e08ae9e",
+                  "datavalue": {
+                    "value": "https://it.wikipedia.org/w/index.php?title=Chiesa_di_Saint-Paul-Saint-Louis&oldid=105366577",
+                    "type": "string"
+                  },
+                  "datatype": "url"
+                }
+              ]
+            },
+            "snaks-order": [
+              "P143",
+              "P4656"
+            ]
+          }
+        ]
+      }
+    ],
+    "P7561": [
+      {
+        "mainsnak": {
+          "snaktype": "value",
+          "property": "P7561",
+          "hash": "d7fb4e56f1d05235ce530d5a41577d845ea525f3",
+          "datavalue": {
+            "value": {
+              "entity-type": "item",
+              "numeric-id": 75115884,
+              "id": "Q75115884"
+            },
+            "type": "wikibase-entityid"
+          },
+          "datatype": "wikibase-item"
+        },
+        "type": "statement",
+        "id": "Q1247969$8A1D5949-4381-4C86-BCEC-BD72101EEF63",
+        "rank": "normal"
+      }
+    ],
+    "P140": [
+      {
+        "mainsnak": {
+          "snaktype": "value",
+          "property": "P140",
+          "hash": "1d37cef459ae3310e8856a343b4f5d0ceaee71e2",
+          "datavalue": {
+            "value": {
+              "entity-type": "item",
+              "numeric-id": 1841,
+              "id": "Q1841"
+            },
+            "type": "wikibase-entityid"
+          },
+          "datatype": "wikibase-item"
+        },
+        "type": "statement",
+        "id": "Q1247969$2C3B269D-4C65-4E20-9437-BD0917D4719E",
+        "rank": "normal",
+        "references": [
+          {
+            "hash": "ea79a2b47530f32edc3864c2ed775eb2e2c87a1a",
+            "snaks": {
+              "P143": [
+                {
+                  "snaktype": "value",
+                  "property": "P143",
+                  "hash": "5a343e7e758a4282a01316d3e959b6e653b767fc",
+                  "datavalue": {
+                    "value": {
+                      "entity-type": "item",
+                      "numeric-id": 11920,
+                      "id": "Q11920"
+                    },
+                    "type": "wikibase-entityid"
+                  },
+                  "datatype": "wikibase-item"
+                }
+              ],
+              "P813": [
+                {
+                  "snaktype": "value",
+                  "property": "P813",
+                  "hash": "c707868fc0cb79f775f05154cf5744f2cbd9f8bd",
+                  "datavalue": {
+                    "value": {
+                      "time": "+2021-01-06T00:00:00Z",
+                      "timezone": 0,
+                      "before": 0,
+                      "after": 0,
+                      "precision": 11,
+                      "calendarmodel": "http://www.wikidata.org/entity/Q1985727"
+                    },
+                    "type": "time"
+                  },
+                  "datatype": "time"
+                }
+              ]
+            },
+            "snaks-order": [
+              "P143",
+              "P813"
+            ]
+          }
+        ]
+      }
+    ],
+    "P127": [
+      {
+        "mainsnak": {
+          "snaktype": "value",
+          "property": "P127",
+          "hash": "1460ddd759d52ea725ae1f0412bcbc2382acd8ba",
+          "datavalue": {
+            "value": {
+              "entity-type": "item",
+              "numeric-id": 3278478,
+              "id": "Q3278478"
+            },
+            "type": "wikibase-entityid"
+          },
+          "datatype": "wikibase-item"
+        },
+        "type": "statement",
+        "id": "Q1247969$3F7419CD-B42F-4618-A787-A3970A3344AE",
+        "rank": "normal",
+        "references": [
+          {
+            "hash": "d709174cc609072fbf310bb52ddfb7aa2332b473",
+            "snaks": {
+              "P248": [
+                {
+                  "snaktype": "value",
+                  "property": "P248",
+                  "hash": "fc376b4e25f8c58fa7210b660e00a66558a3332b",
+                  "datavalue": {
+                    "value": {
+                      "entity-type": "item",
+                      "numeric-id": 809830,
+                      "id": "Q809830"
+                    },
+                    "type": "wikibase-entityid"
+                  },
+                  "datatype": "wikibase-item"
+                }
+              ]
+            },
+            "snaks-order": [
+              "P248"
+            ]
+          }
+        ]
+      }
+    ],
+    "P2013": [
+      {
+        "mainsnak": {
+          "snaktype": "value",
+          "property": "P2013",
+          "hash": "7b001649cc30cfff13c2622bdbaec6f80ef3a072",
+          "datavalue": {
+            "value": "Paroisse-Saint-Paul-Saint-Louis-317864501561473",
+            "type": "string"
+          },
+          "datatype": "external-id"
+        },
+        "type": "statement",
+        "id": "Q1247969$4c0dfa5b-4d3f-5c4f-5e22-de4c00e52962",
+        "rank": "normal"
+      }
+    ],
+    "P5607": [
+      {
+        "mainsnak": {
+          "snaktype": "value",
+          "property": "P5607",
+          "hash": "50b6129d5d042080c1d32e36bbd7d3a160273ec1",
+          "datavalue": {
+            "value": {
+              "entity-type": "item",
+              "numeric-id": 100978662,
+              "id": "Q100978662"
+            },
+            "type": "wikibase-entityid"
+          },
+          "datatype": "wikibase-item"
+        },
+        "type": "statement",
+        "id": "Q1247969$537ae3f4-6e47-4572-b653-f1d53430f575",
+        "rank": "normal",
+        "references": [
+          {
+            "hash": "bcd39e6059adace0e4542659a721bebac9fc1b08",
+            "snaks": {
+              "P854": [
+                {
+                  "snaktype": "value",
+                  "property": "P854",
+                  "hash": "efd516ab3d6bfa92da39720da544cd4d8da21667",
+                  "datavalue": {
+                    "value": "https://messes.info/lieu/75/paris-04/saint-paul-saint-louis",
+                    "type": "string"
+                  },
+                  "datatype": "url"
+                }
+              ]
+            },
+            "snaks-order": [
+              "P854"
+            ]
+          }
+        ]
+      }
+    ],
+    "P3501": [
+      {
+        "mainsnak": {
+          "snaktype": "value",
+          "property": "P3501",
+          "hash": "6625c2116039d72e46b1665c05bcffde3a0b1a36",
+          "datavalue": {
+            "value": {
+              "entity-type": "item",
+              "numeric-id": 730757,
+              "id": "Q730757"
+            },
+            "type": "wikibase-entityid"
+          },
+          "datatype": "wikibase-item"
+        },
+        "type": "statement",
+        "id": "Q1247969$36BA9A05-BF2C-499C-8970-7CE9D51E14C6",
+        "rank": "normal",
+        "references": [
+          {
+            "hash": "d5847b9b6032aa8b13dae3c2dfd9ed5d114d21b3",
+            "snaks": {
+              "P143": [
+                {
+                  "snaktype": "value",
+                  "property": "P143",
+                  "hash": "5a343e7e758a4282a01316d3e959b6e653b767fc",
+                  "datavalue": {
+                    "value": {
+                      "entity-type": "item",
+                      "numeric-id": 11920,
+                      "id": "Q11920"
+                    },
+                    "type": "wikibase-entityid"
+                  },
+                  "datatype": "wikibase-item"
+                }
+              ]
+            },
+            "snaks-order": [
+              "P143"
+            ]
+          }
+        ]
+      }
+    ],
+    "P8596": [
+      {
+        "mainsnak": {
+          "snaktype": "value",
+          "property": "P8596",
+          "hash": "32b8ac6ac1439c3e2453c8e6a742495d9c372cb1",
+          "datavalue": {
+            "value": {
+              "entity-type": "item",
+              "numeric-id": 107399114,
+              "id": "Q107399114"
+            },
+            "type": "wikibase-entityid"
+          },
+          "datatype": "wikibase-item"
+        },
+        "type": "statement",
+        "id": "Q1247969$6cc039cd-def5-48d5-857c-2d8e9b393ff5",
+        "rank": "normal"
+      }
+    ],
+    "P4146": [
+      {
+        "mainsnak": {
+          "snaktype": "value",
+          "property": "P4146",
+          "hash": "d71c257ac048260524887107a981393405dbebc2",
+          "datavalue": {
+            "value": "5259",
+            "type": "string"
+          },
+          "datatype": "external-id"
+        },
+        "type": "statement",
+        "id": "Q1247969$5A69926B-0812-4808-9E8A-29EF4FA3342D",
+        "rank": "normal"
+      }
+    ],
+    "P9189": [
+      {
+        "mainsnak": {
+          "snaktype": "value",
+          "property": "P9189",
+          "hash": "e31f3dd7401e903f77ab76b12846c5803fe8e9bf",
+          "datavalue": {
+            "value": "50281",
+            "type": "string"
+          },
+          "datatype": "external-id"
+        },
+        "type": "statement",
+        "id": "Q1247969$98B51640-A886-4EA7-82E8-B2A41AFC68B9",
+        "rank": "normal"
+      }
+    ],
+    "P1004": [
+      {
+        "mainsnak": {
+          "snaktype": "value",
+          "property": "P1004",
+          "hash": "8a071bade41d9b87b5089278d266aaa2657e3340",
+          "datavalue": {
+            "value": "36187a45-bcec-476e-b9f4-b7b9257e9453",
+            "type": "string"
+          },
+          "datatype": "external-id"
+        },
+        "type": "statement",
+        "id": "Q1247969$edca75e8-a406-4c1e-9bac-309675692c4e",
+        "rank": "normal",
+        "references": [
+          {
+            "hash": "d82214a3008a473cf25476b79c323535be6a99e9",
+            "snaks": {
+              "P248": [
+                {
+                  "snaktype": "value",
+                  "property": "P248",
+                  "hash": "623cc8f0e2f65afe4d66b91962d354a2f3aa9a27",
+                  "datavalue": {
+                    "value": {
+                      "entity-type": "item",
+                      "numeric-id": 14005,
+                      "id": "Q14005"
+                    },
+                    "type": "wikibase-entityid"
+                  },
+                  "datatype": "wikibase-item"
+                }
+              ],
+              "P813": [
+                {
+                  "snaktype": "value",
+                  "property": "P813",
+                  "hash": "f2245dc41aabfbdaedd88242c80199d198151390",
+                  "datavalue": {
+                    "value": {
+                      "time": "+2022-05-11T00:00:00Z",
+                      "timezone": 0,
+                      "before": 0,
+                      "after": 0,
+                      "precision": 11,
+                      "calendarmodel": "http://www.wikidata.org/entity/Q1985727"
+                    },
+                    "type": "time"
+                  },
+                  "datatype": "time"
+                }
+              ]
+            },
+            "snaks-order": [
+              "P248",
+              "P813"
+            ]
+          }
+        ]
+      }
+    ],
+    "P276": [
+      {
+        "mainsnak": {
+          "snaktype": "value",
+          "property": "P276",
+          "hash": "65737aff6befb67b52f4956ed02d8655213307f0",
+          "datavalue": {
+            "value": {
+              "entity-type": "item",
+              "numeric-id": 90,
+              "id": "Q90"
+            },
+            "type": "wikibase-entityid"
+          },
+          "datatype": "wikibase-item"
+        },
+        "type": "statement",
+        "id": "Q1247969$7ab5d6e5-4f35-7ea4-5f2d-15fc2e3f0ee8",
+        "rank": "normal"
+      }
+    ],
+    "P281": [
+      {
+        "mainsnak": {
+          "snaktype": "value",
+          "property": "P281",
+          "hash": "5af952ac51a4922d07f4b6e1d8f5057f0287739c",
+          "datavalue": {
+            "value": "75004",
+            "type": "string"
+          },
+          "datatype": "string"
+        },
+        "type": "statement",
+        "id": "Q1247969$46556e04-451e-15f2-fd80-9ce4df9edf94",
+        "rank": "normal"
+      }
+    ],
+    "P912": [
+      {
+        "mainsnak": {
+          "snaktype": "value",
+          "property": "P912",
+          "hash": "cf2a644ffa7d7d61d8d1330094fa288eec097e2a",
+          "datavalue": {
+            "value": {
+              "entity-type": "item",
+              "numeric-id": 129165885,
+              "id": "Q129165885"
+            },
+            "type": "wikibase-entityid"
+          },
+          "datatype": "wikibase-item"
+        },
+        "type": "statement",
+        "qualifiers": {
+          "P18": [
+            {
+              "snaktype": "value",
+              "property": "P18",
+              "hash": "7ba3348e6841df7441cacfed3480a8af1a34c475",
+              "datavalue": {
+                "value": "Eglise Saint-Paul-Saint-Louis Horloge.JPG",
+                "type": "string"
+              },
+              "datatype": "commonsMedia"
+            }
+          ]
+        },
+        "qualifiers-order": [
+          "P18"
+        ],
+        "id": "Q1247969$75ad8811-49f3-e3d3-229e-37c45d1339da",
+        "rank": "normal"
+      }
+    ],
+    "P10689": [
+      {
+        "mainsnak": {
+          "snaktype": "value",
+          "property": "P10689",
+          "hash": "d42cb88a0720a459e82aeca74a598a8fa9703085",
+          "datavalue": {
+            "value": "56046786",
+            "type": "string"
+          },
+          "datatype": "external-id"
+        },
+        "type": "statement",
+        "id": "Q1247969$9506cad1-46da-09b5-9c5d-df97ac97bb77",
+        "rank": "normal"
+      }
+    ],
+    "P13591": [
+      {
+        "mainsnak": {
+          "snaktype": "value",
+          "property": "P13591",
+          "hash": "b5212885007775ff12fa4078c78eb71d6244e051",
+          "datavalue": {
+            "value": "group/0f8e05a9-6e9c-4805-9201-40beb0906848",
+            "type": "string"
+          },
+          "datatype": "external-id"
+        },
+        "type": "statement",
+        "id": "Q1247969$966C9A62-33CD-49AC-9C18-9B472D04AA0B",
+        "rank": "normal"
+      }
+    ],
+    "P361": [
+      {
+        "mainsnak": {
+          "snaktype": "value",
+          "property": "P361",
+          "hash": "517dbea2d1a25fda0fbfa50c09a60d4c0a54f277",
+          "datavalue": {
+            "value": {
+              "entity-type": "item",
+              "numeric-id": 3280257,
+              "id": "Q3280257"
+            },
+            "type": "wikibase-entityid"
+          },
+          "datatype": "wikibase-item"
+        },
+        "type": "statement",
+        "qualifiers": {
+          "P582": [
+            {
+              "snaktype": "value",
+              "property": "P582",
+              "hash": "8c1f1793389b7e693d1f22a15a9a0e92bc8fc79e",
+              "datavalue": {
+                "value": {
+                  "time": "+1764-00-00T00:00:00Z",
+                  "timezone": 0,
+                  "before": 0,
+                  "after": 0,
+                  "precision": 9,
+                  "calendarmodel": "http://www.wikidata.org/entity/Q1985727"
+                },
+                "type": "time"
+              },
+              "datatype": "time"
+            }
+          ]
+        },
+        "qualifiers-order": [
+          "P582"
+        ],
+        "id": "Q1247969$bcf22c94-4e65-8dd0-faba-222aa3cd3487",
+        "rank": "normal"
+      }
+    ]
+  },
+  "sitelinks": {
+    "arzwiki": {
+      "site": "arzwiki",
+      "title": "كنيسه سان بول سانت لويس",
+      "badges": [],
+      "url": "https://arz.wikipedia.org/wiki/%D9%83%D9%86%D9%8A%D8%B3%D9%87_%D8%B3%D8%A7%D9%86_%D8%A8%D9%88%D9%84_%D8%B3%D8%A7%D9%86%D8%AA_%D9%84%D9%88%D9%8A%D8%B3"
+    },
+    "cswiki": {
+      "site": "cswiki",
+      "title": "Kostel svatého Pavla a Ludvíka",
+      "badges": [],
+      "url": "https://cs.wikipedia.org/wiki/Kostel_svat%C3%A9ho_Pavla_a_Ludv%C3%ADka"
+    },
+    "dewiki": {
+      "site": "dewiki",
+      "title": "St-Paul-St-Louis (Paris)",
+      "badges": [],
+      "url": "https://de.wikipedia.org/wiki/St-Paul-St-Louis_(Paris)"
+    },
+    "enwiki": {
+      "site": "enwiki",
+      "title": "Saint-Paul-Saint-Louis",
+      "badges": [],
+      "url": "https://en.wikipedia.org/wiki/Saint-Paul-Saint-Louis"
+    },
+    "eswiki": {
+      "site": "eswiki",
+      "title": "Iglesia de San Pablo y San Luis (París)",
+      "badges": [],
+      "url": "https://es.wikipedia.org/wiki/Iglesia_de_San_Pablo_y_San_Luis_(Par%C3%ADs)"
+    },
+    "frwiki": {
+      "site": "frwiki",
+      "title": "Église Saint-Paul-Saint-Louis",
+      "badges": [],
+      "url": "https://fr.wikipedia.org/wiki/%C3%89glise_Saint-Paul-Saint-Louis"
+    },
+    "idwiki": {
+      "site": "idwiki",
+      "title": "Saint-Paul-Saint-Louis",
+      "badges": [],
+      "url": "https://id.wikipedia.org/wiki/Saint-Paul-Saint-Louis"
+    },
+    "itwiki": {
+      "site": "itwiki",
+      "title": "Chiesa di Saint-Paul-Saint-Louis",
+      "badges": [],
+      "url": "https://it.wikipedia.org/wiki/Chiesa_di_Saint-Paul-Saint-Louis"
+    },
+    "mswiki": {
+      "site": "mswiki",
+      "title": "Église Saint-Paul-Saint-Louis",
+      "badges": [],
+      "url": "https://ms.wikipedia.org/wiki/%C3%89glise_Saint-Paul-Saint-Louis"
+    },
+    "nlwiki": {
+      "site": "nlwiki",
+      "title": "Église Saint-Paul-Saint-Louis",
+      "badges": [],
+      "url": "https://nl.wikipedia.org/wiki/%C3%89glise_Saint-Paul-Saint-Louis"
+    },
+    "simplewiki": {
+      "site": "simplewiki",
+      "title": "Church Saint-Paul-Saint-Louis",
+      "badges": [],
+      "url": "https://simple.wikipedia.org/wiki/Church_Saint-Paul-Saint-Louis"
+    },
+    "svwiki": {
+      "site": "svwiki",
+      "title": "Saint-Paul-Saint-Louis",
+      "badges": [],
+      "url": "https://sv.wikipedia.org/wiki/Saint-Paul-Saint-Louis"
+    },
+    "urwiki": {
+      "site": "urwiki",
+      "title": "ساں پال-ساں لوئی",
+      "badges": [],
+      "url": "https://ur.wikipedia.org/wiki/%D8%B3%D8%A7%DA%BA_%D9%BE%D8%A7%D9%84-%D8%B3%D8%A7%DA%BA_%D9%84%D9%88%D8%A6%DB%8C"
+    },
+    "zhwiki": {
+      "site": "zhwiki",
+      "title": "圣保禄圣路易教堂",
+      "badges": [],
+      "url": "https://zh.wikipedia.org/wiki/%E5%9C%A3%E4%BF%9D%E7%A6%84%E5%9C%A3%E8%B7%AF%E6%98%93%E6%95%99%E5%A0%82"
+    }
+  }
+}

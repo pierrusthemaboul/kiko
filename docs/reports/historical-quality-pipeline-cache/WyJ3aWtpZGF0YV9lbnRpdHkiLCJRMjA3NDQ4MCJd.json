@@ -1,0 +1,110 @@
+{
+  "pageid": 2001586,
+  "ns": 0,
+  "title": "Q2074480",
+  "lastrevid": 1737600470,
+  "modified": "2022-09-27T12:23:01Z",
+  "type": "item",
+  "id": "Q2074480",
+  "labels": {
+    "nl": {
+      "language": "nl",
+      "value": "geschiedenis van gewapend beton"
+    },
+    "fr": {
+      "language": "fr",
+      "value": "histoire du béton de ciment"
+    }
+  },
+  "descriptions": {
+    "de": {
+      "language": "de",
+      "value": "Wikimedia-Geschichts-Artikel"
+    },
+    "fr": {
+      "language": "fr",
+      "value": "découverte et amélioration des liants hydrauliques cimentaires"
+    }
+  },
+  "aliases": {
+    "fr": [
+      {
+        "language": "fr",
+        "value": "Histoire Du Béton"
+      },
+      {
+        "language": "fr",
+        "value": "Histoire du beton"
+      }
+    ]
+  },
+  "claims": {
+    "P31": [
+      {
+        "mainsnak": {
+          "snaktype": "value",
+          "property": "P31",
+          "hash": "7ad5c7929af39fc2ff8afed55f1192f80e71d936",
+          "datavalue": {
+            "value": {
+              "entity-type": "item",
+              "numeric-id": 17524420,
+              "id": "Q17524420"
+            },
+            "type": "wikibase-entityid"
+          },
+          "datatype": "wikibase-item"
+        },
+        "type": "statement",
+        "id": "Q2074480$718EAAE9-FF76-4885-8717-28DF17098072",
+        "rank": "normal"
+      }
+    ],
+    "P2671": [
+      {
+        "mainsnak": {
+          "snaktype": "value",
+          "property": "P2671",
+          "hash": "da85aea6c3526157ebb876fae9ad07d452e583f6",
+          "datavalue": {
+            "value": "/g/12257t8z",
+            "type": "string"
+          },
+          "datatype": "external-id"
+        },
+        "type": "statement",
+        "id": "Q2074480$594EA7A7-67C2-4231-961A-F9224175DC6C",
+        "rank": "normal"
+      },
+      {
+        "mainsnak": {
+          "snaktype": "value",
+          "property": "P2671",
+          "hash": "a4f94457bf56ce504f6d313ab49805f1f26125a2",
+          "datavalue": {
+            "value": "/g/11b6cfxwvl",
+            "type": "string"
+          },
+          "datatype": "external-id"
+        },
+        "type": "statement",
+        "id": "Q2074480$859339E4-79B7-4ECE-8F0A-F43EAF5DC1C9",
+        "rank": "normal"
+      }
+    ]
+  },
+  "sitelinks": {
+    "frwiki": {
+      "site": "frwiki",
+      "title": "Histoire du béton de ciment",
+      "badges": [],
+      "url": "https://fr.wikipedia.org/wiki/Histoire_du_b%C3%A9ton_de_ciment"
+    },
+    "nlwiki": {
+      "site": "nlwiki",
+      "title": "Geschiedenis van gewapend beton",
+      "badges": [],
+      "url": "https://nl.wikipedia.org/wiki/Geschiedenis_van_gewapend_beton"
+    }
+  }
+}

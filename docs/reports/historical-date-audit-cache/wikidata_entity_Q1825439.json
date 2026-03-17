@@ -1,0 +1,153 @@
+{
+  "saved_at": "2026-03-07T16:05:48.481Z",
+  "value": {
+    "pageid": 1756191,
+    "ns": 0,
+    "title": "Q1825439",
+    "lastrevid": 2319165710,
+    "modified": "2025-03-03T02:14:41Z",
+    "type": "item",
+    "id": "Q1825439",
+    "labels": {
+      "de": {
+        "language": "de",
+        "value": "Limesfall"
+      },
+      "fr": {
+        "language": "fr",
+        "value": "Chute du limes de Germanie"
+      },
+      "nl": {
+        "language": "nl",
+        "value": "val van de Limes Germanicus"
+      },
+      "en": {
+        "language": "en",
+        "value": "Limesfall"
+      },
+      "ru": {
+        "language": "ru",
+        "value": "Падение лимеса"
+      },
+      "uk": {
+        "language": "uk",
+        "value": "Падіння лімеса"
+      }
+    },
+    "descriptions": {
+      "de": {
+        "language": "de",
+        "value": "Aufgabe des Limes bei Rückzug der Römer nach 260"
+      }
+    },
+    "aliases": {
+      "de": [
+        {
+          "language": "de",
+          "value": "Alamannensturm"
+        }
+      ]
+    },
+    "claims": {
+      "P2671": [
+        {
+          "mainsnak": {
+            "snaktype": "value",
+            "property": "P2671",
+            "hash": "82fab41f44b4f4097fd71d2f490f0fa5c69c9a07",
+            "datavalue": {
+              "value": "/g/1228rhg_",
+              "type": "string"
+            },
+            "datatype": "external-id"
+          },
+          "type": "statement",
+          "id": "Q1825439$2B604021-A185-4BA2-B3B0-EADD4C8179E9",
+          "rank": "normal"
+        }
+      ],
+      "P1269": [
+        {
+          "mainsnak": {
+            "snaktype": "value",
+            "property": "P1269",
+            "hash": "340361aacc781dec1256302feeb3a79e1ab6452d",
+            "datavalue": {
+              "value": {
+                "entity-type": "item",
+                "numeric-id": 707801,
+                "id": "Q707801"
+              },
+              "type": "wikibase-entityid"
+            },
+            "datatype": "wikibase-item"
+          },
+          "type": "statement",
+          "id": "Q1825439$856eb8bc-464c-bf9d-0a9a-4af536219b33",
+          "rank": "normal"
+        }
+      ],
+      "P31": [
+        {
+          "mainsnak": {
+            "snaktype": "value",
+            "property": "P31",
+            "hash": "7ad5c7929af39fc2ff8afed55f1192f80e71d936",
+            "datavalue": {
+              "value": {
+                "entity-type": "item",
+                "numeric-id": 17524420,
+                "id": "Q17524420"
+              },
+              "type": "wikibase-entityid"
+            },
+            "datatype": "wikibase-item"
+          },
+          "type": "statement",
+          "id": "Q1825439$6d003570-40ef-9b10-5e98-8c10c7ffe0cf",
+          "rank": "normal"
+        }
+      ]
+    },
+    "sitelinks": {
+      "dewiki": {
+        "site": "dewiki",
+        "title": "Limesfall",
+        "badges": [
+          "Q17437796"
+        ],
+        "url": "https://de.wikipedia.org/wiki/Limesfall"
+      },
+      "enwiki": {
+        "site": "enwiki",
+        "title": "Limesfall",
+        "badges": [],
+        "url": "https://en.wikipedia.org/wiki/Limesfall"
+      },
+      "frwiki": {
+        "site": "frwiki",
+        "title": "Chute du limes de Germanie",
+        "badges": [],
+        "url": "https://fr.wikipedia.org/wiki/Chute_du_limes_de_Germanie"
+      },
+      "nlwiki": {
+        "site": "nlwiki",
+        "title": "Val van de Limes Germanicus",
+        "badges": [],
+        "url": "https://nl.wikipedia.org/wiki/Val_van_de_Limes_Germanicus"
+      },
+      "ruwiki": {
+        "site": "ruwiki",
+        "title": "Падение лимеса",
+        "badges": [],
+        "url": "https://ru.wikipedia.org/wiki/%D0%9F%D0%B0%D0%B4%D0%B5%D0%BD%D0%B8%D0%B5_%D0%BB%D0%B8%D0%BC%D0%B5%D1%81%D0%B0"
+      },
+      "ukwiki": {
+        "site": "ukwiki",
+        "title": "Падіння лімеса",
+        "badges": [],
+        "url": "https://uk.wikipedia.org/wiki/%D0%9F%D0%B0%D0%B4%D1%96%D0%BD%D0%BD%D1%8F_%D0%BB%D1%96%D0%BC%D0%B5%D1%81%D0%B0"
+      }
+    }
+  }
+}

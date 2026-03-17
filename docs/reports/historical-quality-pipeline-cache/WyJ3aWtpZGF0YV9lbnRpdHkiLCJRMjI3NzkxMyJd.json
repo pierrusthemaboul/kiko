@@ -1,0 +1,933 @@
+{
+  "pageid": 2200290,
+  "ns": 0,
+  "title": "Q2277913",
+  "lastrevid": 2419973626,
+  "modified": "2025-10-21T14:37:09Z",
+  "type": "item",
+  "id": "Q2277913",
+  "labels": {
+    "nl": {
+      "language": "nl",
+      "value": "spoorlijn van de Sommebaai"
+    },
+    "en": {
+      "language": "en",
+      "value": "Chemin de Fer de la Baie de Somme"
+    },
+    "fr": {
+      "language": "fr",
+      "value": "chemin de fer de la baie de Somme"
+    },
+    "de": {
+      "language": "de",
+      "value": "Chemin de Fer de la Baie de Somme"
+    },
+    "hu": {
+      "language": "hu",
+      "value": "Chemin de Fer de la Baie de Somme"
+    },
+    "zh": {
+      "language": "zh",
+      "value": "索姆湾铁路"
+    }
+  },
+  "descriptions": {
+    "en": {
+      "language": "en",
+      "value": "Heritage railway in France"
+    },
+    "fr": {
+      "language": "fr",
+      "value": "ligne de chemin de fer touristique française"
+    },
+    "nl": {
+      "language": "nl",
+      "value": "spoorlijn in Frankrijk"
+    },
+    "pl": {
+      "language": "pl",
+      "value": "linia kolejowa we Francji"
+    },
+    "ar": {
+      "language": "ar",
+      "value": "خط سكة حديد في فرنسا"
+    },
+    "de": {
+      "language": "de",
+      "value": "Museumseisenbahn in Frankreich"
+    }
+  },
+  "aliases": {
+    "nl": [
+      {
+        "language": "nl",
+        "value": "Spoorlijn van de Sommebaai"
+      }
+    ],
+    "de": [
+      {
+        "language": "de",
+        "value": "Somme-Bucht-Eisenbahn"
+      }
+    ]
+  },
+  "claims": {
+    "P373": [
+      {
+        "mainsnak": {
+          "snaktype": "value",
+          "property": "P373",
+          "hash": "446b70bc244b68cd8d60651f8934d3d784fc3988",
+          "datavalue": {
+            "value": "Chemin de fer de la Baie de la Somme",
+            "type": "string"
+          },
+          "datatype": "string"
+        },
+        "type": "statement",
+        "id": "q2277913$DB8EDDDB-C45C-453A-B7F6-0D6E1C3BCCE9",
+        "rank": "normal"
+      }
+    ],
+    "P31": [
+      {
+        "mainsnak": {
+          "snaktype": "value",
+          "property": "P31",
+          "hash": "f571114b912da19ea4621422f24d7d0c352798d0",
+          "datavalue": {
+            "value": {
+              "entity-type": "item",
+              "numeric-id": 420962,
+              "id": "Q420962"
+            },
+            "type": "wikibase-entityid"
+          },
+          "datatype": "wikibase-item"
+        },
+        "type": "statement",
+        "id": "Q2277913$2e2bb8db-4498-be44-1c21-65a06bc38e8d",
+        "rank": "normal"
+      },
+      {
+        "mainsnak": {
+          "snaktype": "value",
+          "property": "P31",
+          "hash": "8e9bc16e2854672fc803b5c4abc4b91ec4d8fde1",
+          "datavalue": {
+            "value": {
+              "entity-type": "item",
+              "numeric-id": 18325841,
+              "id": "Q18325841"
+            },
+            "type": "wikibase-entityid"
+          },
+          "datatype": "wikibase-item"
+        },
+        "type": "statement",
+        "id": "Q2277913$b5951a72-4041-50cc-c8c2-2f0ead91a627",
+        "rank": "normal"
+      }
+    ],
+    "P17": [
+      {
+        "mainsnak": {
+          "snaktype": "value",
+          "property": "P17",
+          "hash": "c05db5d169c2560b9799d567a803d20a392f53e4",
+          "datavalue": {
+            "value": {
+              "entity-type": "item",
+              "numeric-id": 142,
+              "id": "Q142"
+            },
+            "type": "wikibase-entityid"
+          },
+          "datatype": "wikibase-item"
+        },
+        "type": "statement",
+        "id": "q2277913$B01CCB32-C30A-460F-BBB1-D29B2CDCE2AF",
+        "rank": "normal"
+      }
+    ],
+    "P242": [
+      {
+        "mainsnak": {
+          "snaktype": "value",
+          "property": "P242",
+          "hash": "078da94a489e76bc43892a093e1c0b7ccc2d10d9",
+          "datavalue": {
+            "value": "Réseau CFBS.JPG",
+            "type": "string"
+          },
+          "datatype": "commonsMedia"
+        },
+        "type": "statement",
+        "id": "Q2277913$82BC4A83-E354-4FB8-855B-8D5AAE8B96D2",
+        "rank": "normal"
+      }
+    ],
+    "P646": [
+      {
+        "mainsnak": {
+          "snaktype": "value",
+          "property": "P646",
+          "hash": "f23cad74ad3f33bbc334011997b339ae5d5d2acf",
+          "datavalue": {
+            "value": "/m/026bjqs",
+            "type": "string"
+          },
+          "datatype": "external-id"
+        },
+        "type": "statement",
+        "id": "Q2277913$877AA6D7-C1EF-4446-B591-328746C87EFF",
+        "rank": "normal",
+        "references": [
+          {
+            "hash": "2b00cb481cddcac7623114367489b5c194901c4a",
+            "snaks": {
+              "P248": [
+                {
+                  "snaktype": "value",
+                  "property": "P248",
+                  "hash": "a94b740202b097dd33355e0e6c00e54b9395e5e0",
+                  "datavalue": {
+                    "value": {
+                      "entity-type": "item",
+                      "numeric-id": 15241312,
+                      "id": "Q15241312"
+                    },
+                    "type": "wikibase-entityid"
+                  },
+                  "datatype": "wikibase-item"
+                }
+              ],
+              "P577": [
+                {
+                  "snaktype": "value",
+                  "property": "P577",
+                  "hash": "fde79ecb015112d2f29229ccc1ec514ed3e71fa2",
+                  "datavalue": {
+                    "value": {
+                      "time": "+2013-10-28T00:00:00Z",
+                      "timezone": 0,
+                      "before": 0,
+                      "after": 0,
+                      "precision": 11,
+                      "calendarmodel": "http://www.wikidata.org/entity/Q1985727"
+                    },
+                    "type": "time"
+                  },
+                  "datatype": "time"
+                }
+              ]
+            },
+            "snaks-order": [
+              "P248",
+              "P577"
+            ]
+          }
+        ]
+      }
+    ],
+    "P1064": [
+      {
+        "mainsnak": {
+          "snaktype": "value",
+          "property": "P1064",
+          "hash": "b98dbd2a2700e103b7633e11c9fff42199f3a7b9",
+          "datavalue": {
+            "value": {
+              "entity-type": "item",
+              "numeric-id": 24609,
+              "id": "Q24609"
+            },
+            "type": "wikibase-entityid"
+          },
+          "datatype": "wikibase-item"
+        },
+        "type": "statement",
+        "id": "Q2277913$B6845DD2-9D8C-45DF-B5B0-E156C5D8803B",
+        "rank": "normal"
+      },
+      {
+        "mainsnak": {
+          "snaktype": "value",
+          "property": "P1064",
+          "hash": "14c5a6efb96b32dede4d21cf8b63352e45d3c92d",
+          "datavalue": {
+            "value": {
+              "entity-type": "item",
+              "numeric-id": 1999572,
+              "id": "Q1999572"
+            },
+            "type": "wikibase-entityid"
+          },
+          "datatype": "wikibase-item"
+        },
+        "type": "statement",
+        "id": "Q2277913$6E43CF86-BE93-45E4-964F-E73A33638F2E",
+        "rank": "normal"
+      }
+    ],
+    "P18": [
+      {
+        "mainsnak": {
+          "snaktype": "value",
+          "property": "P18",
+          "hash": "0ede68f89e05c809b4e7e69d3e7459e4be3c5519",
+          "datavalue": {
+            "value": "NOYELLES - Le Pont de Noyelles sur la Somme.jpg",
+            "type": "string"
+          },
+          "datatype": "commonsMedia"
+        },
+        "type": "statement",
+        "id": "Q2277913$8DE8AD50-46B7-48BE-9F32-52CD694B05AC",
+        "rank": "normal",
+        "references": [
+          {
+            "hash": "9a24f7c0208b05d6be97077d855671d1dfdbc0dd",
+            "snaks": {
+              "P143": [
+                {
+                  "snaktype": "value",
+                  "property": "P143",
+                  "hash": "d38375ffe6fe142663ff55cd783aa4df4301d83d",
+                  "datavalue": {
+                    "value": {
+                      "entity-type": "item",
+                      "numeric-id": 48183,
+                      "id": "Q48183"
+                    },
+                    "type": "wikibase-entityid"
+                  },
+                  "datatype": "wikibase-item"
+                }
+              ]
+            },
+            "snaks-order": [
+              "P143"
+            ]
+          }
+        ]
+      }
+    ],
+    "P571": [
+      {
+        "mainsnak": {
+          "snaktype": "value",
+          "property": "P571",
+          "hash": "c78c2f63fca93bf386013c477c8d24199c6a2005",
+          "datavalue": {
+            "value": {
+              "time": "+1971-00-00T00:00:00Z",
+              "timezone": 0,
+              "before": 0,
+              "after": 0,
+              "precision": 9,
+              "calendarmodel": "http://www.wikidata.org/entity/Q1985727"
+            },
+            "type": "time"
+          },
+          "datatype": "time"
+        },
+        "type": "statement",
+        "id": "Q2277913$1301AFBA-B1F6-4767-86D7-B67F7C2F02FD",
+        "rank": "normal",
+        "references": [
+          {
+            "hash": "fa278ebfc458360e5aed63d5058cca83c46134f1",
+            "snaks": {
+              "P143": [
+                {
+                  "snaktype": "value",
+                  "property": "P143",
+                  "hash": "e4f6d9441d0600513c4533c672b5ab472dc73694",
+                  "datavalue": {
+                    "value": {
+                      "entity-type": "item",
+                      "numeric-id": 328,
+                      "id": "Q328"
+                    },
+                    "type": "wikibase-entityid"
+                  },
+                  "datatype": "wikibase-item"
+                }
+              ]
+            },
+            "snaks-order": [
+              "P143"
+            ]
+          }
+        ]
+      }
+    ],
+    "P15": [
+      {
+        "mainsnak": {
+          "snaktype": "value",
+          "property": "P15",
+          "hash": "95cf71068ba8e6076d21a9d1fe740d98e8013c08",
+          "datavalue": {
+            "value": "Réseau CFBS.JPG",
+            "type": "string"
+          },
+          "datatype": "commonsMedia"
+        },
+        "type": "statement",
+        "id": "Q2277913$2BC50FD1-6A59-41D1-AC12-5D51F4A83B0D",
+        "rank": "normal",
+        "references": [
+          {
+            "hash": "d4bd87b862b12d99d26e86472d44f26858dee639",
+            "snaks": {
+              "P143": [
+                {
+                  "snaktype": "value",
+                  "property": "P143",
+                  "hash": "f30cbd35620c4ea6d0633aaf0210a8916130469b",
+                  "datavalue": {
+                    "value": {
+                      "entity-type": "item",
+                      "numeric-id": 8447,
+                      "id": "Q8447"
+                    },
+                    "type": "wikibase-entityid"
+                  },
+                  "datatype": "wikibase-item"
+                }
+              ]
+            },
+            "snaks-order": [
+              "P143"
+            ]
+          }
+        ]
+      },
+      {
+        "mainsnak": {
+          "snaktype": "value",
+          "property": "P15",
+          "hash": "f70634df3a54e147811e140ec055083ec95c2cde",
+          "datavalue": {
+            "value": "Plan Chemin de fer de la baie de Somme.svg",
+            "type": "string"
+          },
+          "datatype": "commonsMedia"
+        },
+        "type": "statement",
+        "id": "Q2277913$5ab5c76d-4f40-a188-b6c9-ab492d2fdbf2",
+        "rank": "preferred"
+      }
+    ],
+    "P214": [
+      {
+        "mainsnak": {
+          "snaktype": "value",
+          "property": "P214",
+          "hash": "0cfb977ffc3e9a8aa8abbb90f69a422702c73244",
+          "datavalue": {
+            "value": "142747430",
+            "type": "string"
+          },
+          "datatype": "external-id"
+        },
+        "type": "statement",
+        "id": "Q2277913$78276D5D-1326-4F85-A403-57153A565B41",
+        "rank": "normal"
+      }
+    ],
+    "P1619": [
+      {
+        "mainsnak": {
+          "snaktype": "value",
+          "property": "P1619",
+          "hash": "5761b28a74767347fae36fc959b9dc443dab04ed",
+          "datavalue": {
+            "value": {
+              "time": "+1887-00-00T00:00:00Z",
+              "timezone": 0,
+              "before": 0,
+              "after": 0,
+              "precision": 9,
+              "calendarmodel": "http://www.wikidata.org/entity/Q1985727"
+            },
+            "type": "time"
+          },
+          "datatype": "time"
+        },
+        "type": "statement",
+        "id": "Q2277913$1893D8AD-03EC-481E-A1FB-E50FDA4D02C1",
+        "rank": "normal",
+        "references": [
+          {
+            "hash": "d27d468799551aa9ac813b03d7df21747b9063a0",
+            "snaks": {
+              "P143": [
+                {
+                  "snaktype": "value",
+                  "property": "P143",
+                  "hash": "f30cbd35620c4ea6d0633aaf0210a8916130469b",
+                  "datavalue": {
+                    "value": {
+                      "entity-type": "item",
+                      "numeric-id": 8447,
+                      "id": "Q8447"
+                    },
+                    "type": "wikibase-entityid"
+                  },
+                  "datatype": "wikibase-item"
+                }
+              ],
+              "P4656": [
+                {
+                  "snaktype": "value",
+                  "property": "P4656",
+                  "hash": "acf551af2397426be7b78091d1138749fda79375",
+                  "datavalue": {
+                    "value": "https://fr.wikipedia.org/w/index.php?title=Chemin_de_fer_de_la_baie_de_Somme&oldid=169002904",
+                    "type": "string"
+                  },
+                  "datatype": "url"
+                }
+              ]
+            },
+            "snaks-order": [
+              "P143",
+              "P4656"
+            ]
+          }
+        ]
+      }
+    ],
+    "P2043": [
+      {
+        "mainsnak": {
+          "snaktype": "value",
+          "property": "P2043",
+          "hash": "de59ee1edbb1624653e9ec9db38dc78aa0873ef5",
+          "datavalue": {
+            "value": {
+              "amount": "+27",
+              "unit": "http://www.wikidata.org/entity/Q828224"
+            },
+            "type": "quantity"
+          },
+          "datatype": "quantity"
+        },
+        "type": "statement",
+        "id": "Q2277913$3009BC6F-F56D-4FA5-A5E7-7D10F447F3E2",
+        "rank": "normal",
+        "references": [
+          {
+            "hash": "d27d468799551aa9ac813b03d7df21747b9063a0",
+            "snaks": {
+              "P143": [
+                {
+                  "snaktype": "value",
+                  "property": "P143",
+                  "hash": "f30cbd35620c4ea6d0633aaf0210a8916130469b",
+                  "datavalue": {
+                    "value": {
+                      "entity-type": "item",
+                      "numeric-id": 8447,
+                      "id": "Q8447"
+                    },
+                    "type": "wikibase-entityid"
+                  },
+                  "datatype": "wikibase-item"
+                }
+              ],
+              "P4656": [
+                {
+                  "snaktype": "value",
+                  "property": "P4656",
+                  "hash": "acf551af2397426be7b78091d1138749fda79375",
+                  "datavalue": {
+                    "value": "https://fr.wikipedia.org/w/index.php?title=Chemin_de_fer_de_la_baie_de_Somme&oldid=169002904",
+                    "type": "string"
+                  },
+                  "datatype": "url"
+                }
+              ]
+            },
+            "snaks-order": [
+              "P143",
+              "P4656"
+            ]
+          }
+        ]
+      }
+    ],
+    "P127": [
+      {
+        "mainsnak": {
+          "snaktype": "value",
+          "property": "P127",
+          "hash": "b80597784808e93f3505d5c5d80e79a765d23d85",
+          "datavalue": {
+            "value": {
+              "entity-type": "item",
+              "numeric-id": 23782134,
+              "id": "Q23782134"
+            },
+            "type": "wikibase-entityid"
+          },
+          "datatype": "wikibase-item"
+        },
+        "type": "statement",
+        "id": "Q2277913$0DEF5391-8F1C-46D6-BA3A-68FBCA0A3FA6",
+        "rank": "normal",
+        "references": [
+          {
+            "hash": "d27d468799551aa9ac813b03d7df21747b9063a0",
+            "snaks": {
+              "P143": [
+                {
+                  "snaktype": "value",
+                  "property": "P143",
+                  "hash": "f30cbd35620c4ea6d0633aaf0210a8916130469b",
+                  "datavalue": {
+                    "value": {
+                      "entity-type": "item",
+                      "numeric-id": 8447,
+                      "id": "Q8447"
+                    },
+                    "type": "wikibase-entityid"
+                  },
+                  "datatype": "wikibase-item"
+                }
+              ],
+              "P4656": [
+                {
+                  "snaktype": "value",
+                  "property": "P4656",
+                  "hash": "acf551af2397426be7b78091d1138749fda79375",
+                  "datavalue": {
+                    "value": "https://fr.wikipedia.org/w/index.php?title=Chemin_de_fer_de_la_baie_de_Somme&oldid=169002904",
+                    "type": "string"
+                  },
+                  "datatype": "url"
+                }
+              ]
+            },
+            "snaks-order": [
+              "P143",
+              "P4656"
+            ]
+          }
+        ]
+      }
+    ],
+    "P269": [
+      {
+        "mainsnak": {
+          "snaktype": "value",
+          "property": "P269",
+          "hash": "6aabec94443604bd30de06bb80352feb4314c776",
+          "datavalue": {
+            "value": "029074878",
+            "type": "string"
+          },
+          "datatype": "external-id"
+        },
+        "type": "statement",
+        "id": "Q2277913$EB6323B7-BE36-41FB-BA9B-EFC7970E7F54",
+        "rank": "normal",
+        "references": [
+          {
+            "hash": "c464e9e6186936317f791cac55c7cdf03dcf2287",
+            "snaks": {
+              "P248": [
+                {
+                  "snaktype": "value",
+                  "property": "P248",
+                  "hash": "6b7d4330c4aac4caec4ede9de0311ce273f88ecd",
+                  "datavalue": {
+                    "value": {
+                      "entity-type": "item",
+                      "numeric-id": 54919,
+                      "id": "Q54919"
+                    },
+                    "type": "wikibase-entityid"
+                  },
+                  "datatype": "wikibase-item"
+                }
+              ],
+              "P813": [
+                {
+                  "snaktype": "value",
+                  "property": "P813",
+                  "hash": "9c07da73b84889803ebd6601ba04b4579c39577d",
+                  "datavalue": {
+                    "value": {
+                      "time": "+2022-07-06T00:00:00Z",
+                      "timezone": 0,
+                      "before": 0,
+                      "after": 0,
+                      "precision": 11,
+                      "calendarmodel": "http://www.wikidata.org/entity/Q1985727"
+                    },
+                    "type": "time"
+                  },
+                  "datatype": "time"
+                }
+              ],
+              "P214": [
+                {
+                  "snaktype": "value",
+                  "property": "P214",
+                  "hash": "0cfb977ffc3e9a8aa8abbb90f69a422702c73244",
+                  "datavalue": {
+                    "value": "142747430",
+                    "type": "string"
+                  },
+                  "datatype": "external-id"
+                }
+              ]
+            },
+            "snaks-order": [
+              "P248",
+              "P813",
+              "P214"
+            ]
+          }
+        ]
+      }
+    ],
+    "P625": [
+      {
+        "mainsnak": {
+          "snaktype": "value",
+          "property": "P625",
+          "hash": "dd4313774df33fb5031253d79772b70df4a66bcd",
+          "datavalue": {
+            "value": {
+              "latitude": 50.1772,
+              "longitude": 1.64518,
+              "altitude": null,
+              "precision": 0.00001,
+              "globe": "http://www.wikidata.org/entity/Q2"
+            },
+            "type": "globecoordinate"
+          },
+          "datatype": "globe-coordinate"
+        },
+        "type": "statement",
+        "id": "Q2277913$136d751f-4cb6-73fe-65d8-2a1e6bbcecdb",
+        "rank": "normal"
+      }
+    ],
+    "P1424": [
+      {
+        "mainsnak": {
+          "snaktype": "value",
+          "property": "P1424",
+          "hash": "36227c8c5a4081b1c0888b5f6596ed89c129e9a9",
+          "datavalue": {
+            "value": {
+              "entity-type": "item",
+              "numeric-id": 19607216,
+              "id": "Q19607216"
+            },
+            "type": "wikibase-entityid"
+          },
+          "datatype": "wikibase-item"
+        },
+        "type": "statement",
+        "id": "Q2277913$e990ada5-48b7-05ee-7dce-ee5fec7c7f4f",
+        "rank": "normal"
+      }
+    ],
+    "P121": [
+      {
+        "mainsnak": {
+          "snaktype": "value",
+          "property": "P121",
+          "hash": "f8e73e69c79f87a40524ebb224079ec59ad40ca9",
+          "datavalue": {
+            "value": {
+              "entity-type": "item",
+              "numeric-id": 116786812,
+              "id": "Q116786812"
+            },
+            "type": "wikibase-entityid"
+          },
+          "datatype": "wikibase-item"
+        },
+        "type": "statement",
+        "id": "Q2277913$51d375b0-4d86-6725-73dd-fe32fc1f9a2a",
+        "rank": "normal"
+      },
+      {
+        "mainsnak": {
+          "snaktype": "value",
+          "property": "P121",
+          "hash": "d85bbdead74ba9efd067589784e11b19a1242323",
+          "datavalue": {
+            "value": {
+              "entity-type": "item",
+              "numeric-id": 106629931,
+              "id": "Q106629931"
+            },
+            "type": "wikibase-entityid"
+          },
+          "datatype": "wikibase-item"
+        },
+        "type": "statement",
+        "id": "Q2277913$bc1abb45-4ee3-54a4-48f0-c0e16f0d568e",
+        "rank": "normal"
+      },
+      {
+        "mainsnak": {
+          "snaktype": "value",
+          "property": "P121",
+          "hash": "b46d8efc325e771cdc477cb84fb10ec574a89638",
+          "datavalue": {
+            "value": {
+              "entity-type": "item",
+              "numeric-id": 120330462,
+              "id": "Q120330462"
+            },
+            "type": "wikibase-entityid"
+          },
+          "datatype": "wikibase-item"
+        },
+        "type": "statement",
+        "id": "Q2277913$7aa18758-47d5-ded2-7da4-590a15b09eaa",
+        "rank": "normal"
+      }
+    ],
+    "P5817": [
+      {
+        "mainsnak": {
+          "snaktype": "value",
+          "property": "P5817",
+          "hash": "a7abb6cecc7011d098fd17e44eec2e64430f6eed",
+          "datavalue": {
+            "value": {
+              "entity-type": "item",
+              "numeric-id": 109551035,
+              "id": "Q109551035"
+            },
+            "type": "wikibase-entityid"
+          },
+          "datatype": "wikibase-item"
+        },
+        "type": "statement",
+        "id": "Q2277913$743f2239-4f42-5527-63ec-a97603259cf2",
+        "rank": "normal"
+      }
+    ],
+    "P10832": [
+      {
+        "mainsnak": {
+          "snaktype": "value",
+          "property": "P10832",
+          "hash": "e8217f6c985f800e0b084ae28d82f7b40417d7b8",
+          "datavalue": {
+            "value": "E39PBJvRVHRwFt9XGtV4pxWMT3",
+            "type": "string"
+          },
+          "datatype": "external-id"
+        },
+        "type": "statement",
+        "id": "Q2277913$1E92D9D2-19B4-4427-904E-60A896C36427",
+        "rank": "normal",
+        "references": [
+          {
+            "hash": "f29fae60045913a6105883b51cfad886dc0458c4",
+            "snaks": {
+              "P11797": [
+                {
+                  "snaktype": "value",
+                  "property": "P11797",
+                  "hash": "3b992a8b1d7f5bfbb710fb1b091cc424c4e3e7db",
+                  "datavalue": {
+                    "value": {
+                      "entity-type": "item",
+                      "numeric-id": 54919,
+                      "id": "Q54919"
+                    },
+                    "type": "wikibase-entityid"
+                  },
+                  "datatype": "wikibase-item"
+                }
+              ],
+              "P214": [
+                {
+                  "snaktype": "value",
+                  "property": "P214",
+                  "hash": "0cfb977ffc3e9a8aa8abbb90f69a422702c73244",
+                  "datavalue": {
+                    "value": "142747430",
+                    "type": "string"
+                  },
+                  "datatype": "external-id"
+                }
+              ],
+              "P813": [
+                {
+                  "snaktype": "value",
+                  "property": "P813",
+                  "hash": "37012f06242d935d14d753b9830aa88ca7fc1b51",
+                  "datavalue": {
+                    "value": {
+                      "time": "+2024-06-05T00:00:00Z",
+                      "timezone": 0,
+                      "before": 0,
+                      "after": 0,
+                      "precision": 11,
+                      "calendarmodel": "http://www.wikidata.org/entity/Q1985727"
+                    },
+                    "type": "time"
+                  },
+                  "datatype": "time"
+                }
+              ]
+            },
+            "snaks-order": [
+              "P11797",
+              "P214",
+              "P813"
+            ]
+          }
+        ]
+      }
+    ]
+  },
+  "sitelinks": {
+    "commonswiki": {
+      "site": "commonswiki",
+      "title": "Category:Chemin de fer de la Baie de la Somme",
+      "badges": [],
+      "url": "https://commons.wikimedia.org/wiki/Category:Chemin_de_fer_de_la_Baie_de_la_Somme"
+    },
+    "dewiki": {
+      "site": "dewiki",
+      "title": "Chemin de Fer de la Baie de Somme",
+      "badges": [],
+      "url": "https://de.wikipedia.org/wiki/Chemin_de_Fer_de_la_Baie_de_Somme"
+    },
+    "enwiki": {
+      "site": "enwiki",
+      "title": "Chemin de fer de la Baie de Somme",
+      "badges": [],
+      "url": "https://en.wikipedia.org/wiki/Chemin_de_fer_de_la_Baie_de_Somme"
+    },
+    "frwiki": {
+      "site": "frwiki",
+      "title": "Chemin de fer de la baie de Somme",
+      "badges": [],
+      "url": "https://fr.wikipedia.org/wiki/Chemin_de_fer_de_la_baie_de_Somme"
+    },
+    "nlwiki": {
+      "site": "nlwiki",
+      "title": "Spoorlijn van de Sommebaai",
+      "badges": [],
+      "url": "https://nl.wikipedia.org/wiki/Spoorlijn_van_de_Sommebaai"
+    }
+  }
+}

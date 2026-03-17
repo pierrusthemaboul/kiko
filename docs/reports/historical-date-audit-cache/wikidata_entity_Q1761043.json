@@ -1,0 +1,1087 @@
+{
+  "saved_at": "2026-03-07T14:08:40.079Z",
+  "value": {
+    "pageid": 1693515,
+    "ns": 0,
+    "title": "Q1761043",
+    "lastrevid": 2379022969,
+    "modified": "2025-07-13T11:31:55Z",
+    "type": "item",
+    "id": "Q1761043",
+    "labels": {
+      "de": {
+        "language": "de",
+        "value": "Schlacht von Algier"
+      },
+      "br": {
+        "language": "br",
+        "value": "emgann Aljer"
+      },
+      "fr": {
+        "language": "fr",
+        "value": "bataille d'Alger"
+      },
+      "en": {
+        "language": "en",
+        "value": "Battle of Algiers"
+      },
+      "ar": {
+        "language": "ar",
+        "value": "معركة مدينة الجزائر"
+      },
+      "nb": {
+        "language": "nb",
+        "value": "Slaget om Alger"
+      },
+      "sh": {
+        "language": "sh",
+        "value": "Bitka za Alžir"
+      },
+      "ja": {
+        "language": "ja",
+        "value": "アルジェの戦い (1956年 - 1957年)"
+      },
+      "eu": {
+        "language": "eu",
+        "value": "Aljerko gudua"
+      },
+      "azb": {
+        "language": "azb",
+        "value": "الجزیره دؤیوشو"
+      },
+      "he": {
+        "language": "he",
+        "value": "קרב אלג'יר"
+      },
+      "es": {
+        "language": "es",
+        "value": "Batalla de Argel"
+      },
+      "ca": {
+        "language": "ca",
+        "value": "Batalla d'Alger (1956-1957)"
+      },
+      "it": {
+        "language": "it",
+        "value": "Battaglia di Algeri (1957)"
+      },
+      "yo": {
+        "language": "yo",
+        "value": "ogun Algiers"
+      },
+      "zh": {
+        "language": "zh",
+        "value": "阿尔及尔战役"
+      },
+      "ga": {
+        "language": "ga",
+        "value": "Cath Chathair na hAilgéire"
+      },
+      "kab": {
+        "language": "kab",
+        "value": "Imenɣi n Lezzayer (1956-1957)"
+      },
+      "nl": {
+        "language": "nl",
+        "value": "Slag bij Algiers (1956-1957)"
+      }
+    },
+    "descriptions": {
+      "en": {
+        "language": "en",
+        "value": "1956 urban guerrilla warfare carried out by the National Liberation Front (FLN) against the French Algerian authorities"
+      },
+      "fr": {
+        "language": "fr",
+        "value": "bataille de la guerre d'Algérie"
+      },
+      "de": {
+        "language": "de",
+        "value": "militärische Auseinandersetzung zwischen französischer Armee und der algerischen Rebellenorganisation FLN (1957)"
+      },
+      "yo": {
+        "language": "yo",
+        "value": "ogun"
+      },
+      "es": {
+        "language": "es",
+        "value": "batalla de la Guerra de Argelia"
+      },
+      "it": {
+        "language": "it",
+        "value": "battaglia per l'indipendenza dell'Algeria"
+      }
+    },
+    "aliases": {},
+    "claims": {
+      "P625": [
+        {
+          "mainsnak": {
+            "snaktype": "value",
+            "property": "P625",
+            "hash": "34bb23cd71b7e0e632a3dc982a4a7ec64aa8a959",
+            "datavalue": {
+              "value": {
+                "latitude": 36.776111111111,
+                "longitude": 3.06,
+                "altitude": null,
+                "precision": 0.00027777777777778,
+                "globe": "http://www.wikidata.org/entity/Q2"
+              },
+              "type": "globecoordinate"
+            },
+            "datatype": "globe-coordinate"
+          },
+          "type": "statement",
+          "id": "Q1761043$a0b191a2-47be-e2cb-5b24-9efb0fe282aa",
+          "rank": "normal"
+        }
+      ],
+      "P646": [
+        {
+          "mainsnak": {
+            "snaktype": "value",
+            "property": "P646",
+            "hash": "41522ed804fc587d22807e0b377cabbee5fb6787",
+            "datavalue": {
+              "value": "/m/03gvt9s",
+              "type": "string"
+            },
+            "datatype": "external-id"
+          },
+          "type": "statement",
+          "id": "Q1761043$E23E690A-4213-4300-9C70-76C1AC8ABFAA",
+          "rank": "normal",
+          "references": [
+            {
+              "hash": "2b00cb481cddcac7623114367489b5c194901c4a",
+              "snaks": {
+                "P248": [
+                  {
+                    "snaktype": "value",
+                    "property": "P248",
+                    "hash": "a94b740202b097dd33355e0e6c00e54b9395e5e0",
+                    "datavalue": {
+                      "value": {
+                        "entity-type": "item",
+                        "numeric-id": 15241312,
+                        "id": "Q15241312"
+                      },
+                      "type": "wikibase-entityid"
+                    },
+                    "datatype": "wikibase-item"
+                  }
+                ],
+                "P577": [
+                  {
+                    "snaktype": "value",
+                    "property": "P577",
+                    "hash": "fde79ecb015112d2f29229ccc1ec514ed3e71fa2",
+                    "datavalue": {
+                      "value": {
+                        "time": "+2013-10-28T00:00:00Z",
+                        "timezone": 0,
+                        "before": 0,
+                        "after": 0,
+                        "precision": 11,
+                        "calendarmodel": "http://www.wikidata.org/entity/Q1985727"
+                      },
+                      "type": "time"
+                    },
+                    "datatype": "time"
+                  }
+                ]
+              },
+              "snaks-order": [
+                "P248",
+                "P577"
+              ]
+            }
+          ]
+        }
+      ],
+      "P31": [
+        {
+          "mainsnak": {
+            "snaktype": "value",
+            "property": "P31",
+            "hash": "baa1df9dcd37b9f3a062e7a14a8bef0c37078d32",
+            "datavalue": {
+              "value": {
+                "entity-type": "item",
+                "numeric-id": 178561,
+                "id": "Q178561"
+              },
+              "type": "wikibase-entityid"
+            },
+            "datatype": "wikibase-item"
+          },
+          "type": "statement",
+          "id": "Q1761043$EA5948C8-AE33-4671-8EC7-B97A4F1A8254",
+          "rank": "normal",
+          "references": [
+            {
+              "hash": "d4bd87b862b12d99d26e86472d44f26858dee639",
+              "snaks": {
+                "P143": [
+                  {
+                    "snaktype": "value",
+                    "property": "P143",
+                    "hash": "f30cbd35620c4ea6d0633aaf0210a8916130469b",
+                    "datavalue": {
+                      "value": {
+                        "entity-type": "item",
+                        "numeric-id": 8447,
+                        "id": "Q8447"
+                      },
+                      "type": "wikibase-entityid"
+                    },
+                    "datatype": "wikibase-item"
+                  }
+                ]
+              },
+              "snaks-order": [
+                "P143"
+              ]
+            }
+          ]
+        }
+      ],
+      "P361": [
+        {
+          "mainsnak": {
+            "snaktype": "value",
+            "property": "P361",
+            "hash": "fc16a12b93e514529045389cc3fc88b14f7fa32b",
+            "datavalue": {
+              "value": {
+                "entity-type": "item",
+                "numeric-id": 200790,
+                "id": "Q200790"
+              },
+              "type": "wikibase-entityid"
+            },
+            "datatype": "wikibase-item"
+          },
+          "type": "statement",
+          "id": "Q1761043$1ECDA793-EAD3-4F12-B19B-018CB16F7EEB",
+          "rank": "normal",
+          "references": [
+            {
+              "hash": "d4bd87b862b12d99d26e86472d44f26858dee639",
+              "snaks": {
+                "P143": [
+                  {
+                    "snaktype": "value",
+                    "property": "P143",
+                    "hash": "f30cbd35620c4ea6d0633aaf0210a8916130469b",
+                    "datavalue": {
+                      "value": {
+                        "entity-type": "item",
+                        "numeric-id": 8447,
+                        "id": "Q8447"
+                      },
+                      "type": "wikibase-entityid"
+                    },
+                    "datatype": "wikibase-item"
+                  }
+                ]
+              },
+              "snaks-order": [
+                "P143"
+              ]
+            }
+          ]
+        }
+      ],
+      "P582": [
+        {
+          "mainsnak": {
+            "snaktype": "value",
+            "property": "P582",
+            "hash": "8594be0c8716649741f37880fb1f2d17117a2cfb",
+            "datavalue": {
+              "value": {
+                "time": "+1957-10-09T00:00:00Z",
+                "timezone": 0,
+                "before": 0,
+                "after": 0,
+                "precision": 11,
+                "calendarmodel": "http://www.wikidata.org/entity/Q1985727"
+              },
+              "type": "time"
+            },
+            "datatype": "time"
+          },
+          "type": "statement",
+          "id": "Q1761043$30BBD5AA-69EE-4F99-9E0C-21AEE92C4A59",
+          "rank": "normal",
+          "references": [
+            {
+              "hash": "d4bd87b862b12d99d26e86472d44f26858dee639",
+              "snaks": {
+                "P143": [
+                  {
+                    "snaktype": "value",
+                    "property": "P143",
+                    "hash": "f30cbd35620c4ea6d0633aaf0210a8916130469b",
+                    "datavalue": {
+                      "value": {
+                        "entity-type": "item",
+                        "numeric-id": 8447,
+                        "id": "Q8447"
+                      },
+                      "type": "wikibase-entityid"
+                    },
+                    "datatype": "wikibase-item"
+                  }
+                ]
+              },
+              "snaks-order": [
+                "P143"
+              ]
+            }
+          ]
+        }
+      ],
+      "P276": [
+        {
+          "mainsnak": {
+            "snaktype": "value",
+            "property": "P276",
+            "hash": "c2d974f45eb738d1b48665adfb368551387f7ac5",
+            "datavalue": {
+              "value": {
+                "entity-type": "item",
+                "numeric-id": 3561,
+                "id": "Q3561"
+              },
+              "type": "wikibase-entityid"
+            },
+            "datatype": "wikibase-item"
+          },
+          "type": "statement",
+          "id": "Q1761043$D7C42311-6634-4E4C-A45D-990FDA621F5C",
+          "rank": "normal",
+          "references": [
+            {
+              "hash": "d4bd87b862b12d99d26e86472d44f26858dee639",
+              "snaks": {
+                "P143": [
+                  {
+                    "snaktype": "value",
+                    "property": "P143",
+                    "hash": "f30cbd35620c4ea6d0633aaf0210a8916130469b",
+                    "datavalue": {
+                      "value": {
+                        "entity-type": "item",
+                        "numeric-id": 8447,
+                        "id": "Q8447"
+                      },
+                      "type": "wikibase-entityid"
+                    },
+                    "datatype": "wikibase-item"
+                  }
+                ]
+              },
+              "snaks-order": [
+                "P143"
+              ]
+            }
+          ]
+        }
+      ],
+      "P580": [
+        {
+          "mainsnak": {
+            "snaktype": "value",
+            "property": "P580",
+            "hash": "3e3c8463a27c9c144c5130f8a1c217486c24e0a5",
+            "datavalue": {
+              "value": {
+                "time": "+1957-01-07T00:00:00Z",
+                "timezone": 0,
+                "before": 0,
+                "after": 0,
+                "precision": 11,
+                "calendarmodel": "http://www.wikidata.org/entity/Q1985727"
+              },
+              "type": "time"
+            },
+            "datatype": "time"
+          },
+          "type": "statement",
+          "id": "Q1761043$ae00eef5-4db2-4335-9b10-135dea9f4fa5",
+          "rank": "normal",
+          "references": [
+            {
+              "hash": "d4bd87b862b12d99d26e86472d44f26858dee639",
+              "snaks": {
+                "P143": [
+                  {
+                    "snaktype": "value",
+                    "property": "P143",
+                    "hash": "f30cbd35620c4ea6d0633aaf0210a8916130469b",
+                    "datavalue": {
+                      "value": {
+                        "entity-type": "item",
+                        "numeric-id": 8447,
+                        "id": "Q8447"
+                      },
+                      "type": "wikibase-entityid"
+                    },
+                    "datatype": "wikibase-item"
+                  }
+                ]
+              },
+              "snaks-order": [
+                "P143"
+              ]
+            }
+          ]
+        }
+      ],
+      "P18": [
+        {
+          "mainsnak": {
+            "snaktype": "value",
+            "property": "P18",
+            "hash": "d6be3061180bef1f99cfbe243b4920f34de0dbfe",
+            "datavalue": {
+              "value": "Casbah-cache-Ali-lapointe.jpg",
+              "type": "string"
+            },
+            "datatype": "commonsMedia"
+          },
+          "type": "statement",
+          "id": "Q1761043$CB8E5587-C960-4263-8FD0-C1A3F432AE5C",
+          "rank": "normal",
+          "references": [
+            {
+              "hash": "fa278ebfc458360e5aed63d5058cca83c46134f1",
+              "snaks": {
+                "P143": [
+                  {
+                    "snaktype": "value",
+                    "property": "P143",
+                    "hash": "e4f6d9441d0600513c4533c672b5ab472dc73694",
+                    "datavalue": {
+                      "value": {
+                        "entity-type": "item",
+                        "numeric-id": 328,
+                        "id": "Q328"
+                      },
+                      "type": "wikibase-entityid"
+                    },
+                    "datatype": "wikibase-item"
+                  }
+                ]
+              },
+              "snaks-order": [
+                "P143"
+              ]
+            }
+          ]
+        },
+        {
+          "mainsnak": {
+            "snaktype": "value",
+            "property": "P18",
+            "hash": "99eba47878aecb75e4d3390b3c9efddd9b441f49",
+            "datavalue": {
+              "value": "Djamila-Bouazza-22-ans (cropped).jpg",
+              "type": "string"
+            },
+            "datatype": "commonsMedia"
+          },
+          "type": "statement",
+          "id": "Q1761043$e5d42c12-4528-99b9-1fd0-16229dec95ac",
+          "rank": "normal"
+        },
+        {
+          "mainsnak": {
+            "snaktype": "value",
+            "property": "P18",
+            "hash": "86cafd5e8ed57dead5cc5976f0f6b87e01037845",
+            "datavalue": {
+              "value": "Ali-la-pointe-Mort.jpg",
+              "type": "string"
+            },
+            "datatype": "commonsMedia"
+          },
+          "type": "statement",
+          "id": "Q1761043$d7e8a618-4b73-c6f3-a059-cd14abbaa746",
+          "rank": "normal"
+        },
+        {
+          "mainsnak": {
+            "snaktype": "value",
+            "property": "P18",
+            "hash": "7914beee6e487d414e867d5159bae9beb03b44b1",
+            "datavalue": {
+              "value": "Les poseuses de bombes 2.jpg",
+              "type": "string"
+            },
+            "datatype": "commonsMedia"
+          },
+          "type": "statement",
+          "id": "Q1761043$6e5db856-488d-e0a7-29f0-17a548c712c1",
+          "rank": "normal"
+        },
+        {
+          "mainsnak": {
+            "snaktype": "value",
+            "property": "P18",
+            "hash": "0c2677e2e50d571b9933e2fe07a83f49cd2392e0",
+            "datavalue": {
+              "value": "Démantèlement du réseau bombes (Bataille d'Alger).jpg",
+              "type": "string"
+            },
+            "datatype": "commonsMedia"
+          },
+          "type": "statement",
+          "id": "Q1761043$562ee11d-4107-33dc-1453-8c1cfd307b33",
+          "rank": "normal"
+        },
+        {
+          "mainsnak": {
+            "snaktype": "value",
+            "property": "P18",
+            "hash": "9dae9bfa86b424dcd7c811aea98bcdcd0d697be2",
+            "datavalue": {
+              "value": "مدخل البيت الذي كان يختبئ فيه الفدائيون خلال معركة مدينة الجزائر (1956 - 1957).jpg",
+              "type": "string"
+            },
+            "datatype": "commonsMedia"
+          },
+          "type": "statement",
+          "id": "Q1761043$6ca47f31-4ad3-695b-77a0-1f7e985fcef5",
+          "rank": "normal"
+        },
+        {
+          "mainsnak": {
+            "snaktype": "value",
+            "property": "P18",
+            "hash": "62c531bd5b1b58bf8fe2ec932a842d012d4fef77",
+            "datavalue": {
+              "value": "Bataille d'Alger.jpg",
+              "type": "string"
+            },
+            "datatype": "commonsMedia"
+          },
+          "type": "statement",
+          "id": "Q1761043$9736095c-49bc-51a6-d8f2-9b0dbdba2ead",
+          "rank": "normal"
+        },
+        {
+          "mainsnak": {
+            "snaktype": "value",
+            "property": "P18",
+            "hash": "c87021aa8d704ee0071531c669ee0f36d8f9cf62",
+            "datavalue": {
+              "value": "Milk Bar-Bataille d'Alger.jpg",
+              "type": "string"
+            },
+            "datatype": "commonsMedia"
+          },
+          "type": "statement",
+          "id": "Q1761043$04f38bfe-4fb2-21f3-7872-19f6dbe26d80",
+          "rank": "normal"
+        },
+        {
+          "mainsnak": {
+            "snaktype": "value",
+            "property": "P18",
+            "hash": "7672e8fc5500c7efc4575f911f263659dc232313",
+            "datavalue": {
+              "value": "Organisation pyramidale de la Zone autonome d’Alger (ZAA) 1957.jpg",
+              "type": "string"
+            },
+            "datatype": "commonsMedia"
+          },
+          "type": "statement",
+          "id": "Q1761043$8533d658-4507-fba6-d462-8bc7a7787a5a",
+          "rank": "normal"
+        },
+        {
+          "mainsnak": {
+            "snaktype": "value",
+            "property": "P18",
+            "hash": "a8b8cd83270562813657f72c3834585903bfb8db",
+            "datavalue": {
+              "value": "Yacef Saadi portrait.jpg",
+              "type": "string"
+            },
+            "datatype": "commonsMedia"
+          },
+          "type": "statement",
+          "id": "Q1761043$8d340905-4435-1f07-0327-2d586652f1e0",
+          "rank": "normal"
+        },
+        {
+          "mainsnak": {
+            "snaktype": "value",
+            "property": "P18",
+            "hash": "6ff5d53f082cb23ced772081cba3ad3a83da6608",
+            "datavalue": {
+              "value": "Ali-la-pointe.png",
+              "type": "string"
+            },
+            "datatype": "commonsMedia"
+          },
+          "type": "statement",
+          "id": "Q1761043$f081ae31-45de-d89d-42b8-82c789546680",
+          "rank": "normal"
+        },
+        {
+          "mainsnak": {
+            "snaktype": "value",
+            "property": "P18",
+            "hash": "99d03ad1497ec8e750112d359ddc945d1db64a03",
+            "datavalue": {
+              "value": "Ben mhidi.jpg",
+              "type": "string"
+            },
+            "datatype": "commonsMedia"
+          },
+          "type": "statement",
+          "id": "Q1761043$0efc18ba-440b-6602-aab9-87ad2e52bd66",
+          "rank": "normal"
+        },
+        {
+          "mainsnak": {
+            "snaktype": "value",
+            "property": "P18",
+            "hash": "1f8ba3068abb8b6b5aa2f4149ad14cf457ef3b56",
+            "datavalue": {
+              "value": "Hassiba Ben Bouali.jpg",
+              "type": "string"
+            },
+            "datatype": "commonsMedia"
+          },
+          "type": "statement",
+          "id": "Q1761043$0157d207-4661-a2a3-f110-01f78badd5e3",
+          "rank": "normal"
+        },
+        {
+          "mainsnak": {
+            "snaktype": "value",
+            "property": "P18",
+            "hash": "40b149aaf747e2a4394f8ef95b98101cc04053b7",
+            "datavalue": {
+              "value": "L'arrestation de Zohra Drif en 1957.jpg",
+              "type": "string"
+            },
+            "datatype": "commonsMedia"
+          },
+          "type": "statement",
+          "id": "Q1761043$2f956aa9-4a3a-85c9-208b-1005968c3c06",
+          "rank": "normal"
+        },
+        {
+          "mainsnak": {
+            "snaktype": "value",
+            "property": "P18",
+            "hash": "1e1dee299bdeacd1231bb0b545b9fcb7c753804c",
+            "datavalue": {
+              "value": "Larbi Ben M'hidi - 1957.JPG",
+              "type": "string"
+            },
+            "datatype": "commonsMedia"
+          },
+          "type": "statement",
+          "id": "Q1761043$6937c93a-4d30-626b-92b4-2b28ddad8f35",
+          "rank": "normal"
+        },
+        {
+          "mainsnak": {
+            "snaktype": "value",
+            "property": "P18",
+            "hash": "270d54c52b39530e02ec16f4667fbcda7118162c",
+            "datavalue": {
+              "value": "Les poseuses de bombes (cropped).jpg",
+              "type": "string"
+            },
+            "datatype": "commonsMedia"
+          },
+          "type": "statement",
+          "id": "Q1761043$2d32eca2-4fc9-4b78-e775-45225d0b1fd0",
+          "rank": "normal"
+        },
+        {
+          "mainsnak": {
+            "snaktype": "value",
+            "property": "P18",
+            "hash": "51e819859f7de1cf25391b697168e14bdc914115",
+            "datavalue": {
+              "value": "Petit-Omar (Omar Yacef).png",
+              "type": "string"
+            },
+            "datatype": "commonsMedia"
+          },
+          "type": "statement",
+          "id": "Q1761043$e710911a-4247-fd39-71eb-fd7404095c05",
+          "rank": "normal"
+        },
+        {
+          "mainsnak": {
+            "snaktype": "value",
+            "property": "P18",
+            "hash": "88fe859e16727f57886fdd062596bdce1b8a05bc",
+            "datavalue": {
+              "value": "Generaal Massu.jpg",
+              "type": "string"
+            },
+            "datatype": "commonsMedia"
+          },
+          "type": "statement",
+          "id": "Q1761043$28e0b1d9-4239-6df8-0a54-b8fb38d32fca",
+          "rank": "normal"
+        },
+        {
+          "mainsnak": {
+            "snaktype": "value",
+            "property": "P18",
+            "hash": "6f376f0e3d5e74fecd1e57412a2e3952516dc689",
+            "datavalue": {
+              "value": "General Marcel Bigeard young.jpg",
+              "type": "string"
+            },
+            "datatype": "commonsMedia"
+          },
+          "type": "statement",
+          "id": "Q1761043$83681809-401c-7063-fe2a-daf5df47e463",
+          "rank": "normal"
+        },
+        {
+          "mainsnak": {
+            "snaktype": "value",
+            "property": "P18",
+            "hash": "1ee680065b69167358f5c6f8a4ba1610d97973e7",
+            "datavalue": {
+              "value": "Paul Aussaresses Img 3254.jpg",
+              "type": "string"
+            },
+            "datatype": "commonsMedia"
+          },
+          "type": "statement",
+          "id": "Q1761043$7e5cf78b-404b-959f-3168-0813516f856b",
+          "rank": "normal"
+        },
+        {
+          "mainsnak": {
+            "snaktype": "value",
+            "property": "P18",
+            "hash": "cdf5c68c6a00d1ac2e0cee39dc81f17d5b617b25",
+            "datavalue": {
+              "value": "منزل ياسف سعدي خلال معركة مدينة الجزائر.jpg",
+              "type": "string"
+            },
+            "datatype": "commonsMedia"
+          },
+          "type": "statement",
+          "id": "Q1761043$7b018459-4ac3-6922-6936-723019294125",
+          "rank": "normal"
+        }
+      ],
+      "P2581": [
+        {
+          "mainsnak": {
+            "snaktype": "value",
+            "property": "P2581",
+            "hash": "7c99a853d390452701727f8c941627290475f8cb",
+            "datavalue": {
+              "value": "15487133n",
+              "type": "string"
+            },
+            "datatype": "external-id"
+          },
+          "type": "statement",
+          "id": "Q1761043$912CE4A4-AE42-48CC-A03D-58C5F7ED49A4",
+          "rank": "normal",
+          "references": [
+            {
+              "hash": "248ac337a217a5f5eed7139a82a4e60931611af0",
+              "snaks": {
+                "P248": [
+                  {
+                    "snaktype": "value",
+                    "property": "P248",
+                    "hash": "25b816aab41db18565946259c950aed6de05dd1e",
+                    "datavalue": {
+                      "value": {
+                        "entity-type": "item",
+                        "numeric-id": 4837690,
+                        "id": "Q4837690"
+                      },
+                      "type": "wikibase-entityid"
+                    },
+                    "datatype": "wikibase-item"
+                  }
+                ]
+              },
+              "snaks-order": [
+                "P248"
+              ]
+            }
+          ]
+        }
+      ],
+      "P5986": [
+        {
+          "mainsnak": {
+            "snaktype": "value",
+            "property": "P5986",
+            "hash": "1a58e8509ac0d3f5c4a11ae009a0386074e1e3c7",
+            "datavalue": {
+              "value": "901001743",
+              "type": "string"
+            },
+            "datatype": "external-id"
+          },
+          "type": "statement",
+          "id": "Q1761043$47B4C153-2D19-4D6B-9F26-62331A57EAAF",
+          "rank": "normal"
+        }
+      ],
+      "P585": [
+        {
+          "mainsnak": {
+            "snaktype": "value",
+            "property": "P585",
+            "hash": "a17f96d09e71d55b278dfd0ca3894b906346fb2d",
+            "datavalue": {
+              "value": {
+                "time": "+1956-09-30T00:00:00Z",
+                "timezone": 0,
+                "before": 0,
+                "after": 0,
+                "precision": 11,
+                "calendarmodel": "http://www.wikidata.org/entity/Q1985727"
+              },
+              "type": "time"
+            },
+            "datatype": "time"
+          },
+          "type": "statement",
+          "id": "Q1761043$D5968A2C-B580-4573-A1A1-D763D4D41BE7",
+          "rank": "normal",
+          "references": [
+            {
+              "hash": "bc15b572005834613e8d53220f13ad00ccb800c6",
+              "snaks": {
+                "P143": [
+                  {
+                    "snaktype": "value",
+                    "property": "P143",
+                    "hash": "e4f6d9441d0600513c4533c672b5ab472dc73694",
+                    "datavalue": {
+                      "value": {
+                        "entity-type": "item",
+                        "numeric-id": 328,
+                        "id": "Q328"
+                      },
+                      "type": "wikibase-entityid"
+                    },
+                    "datatype": "wikibase-item"
+                  }
+                ],
+                "P4656": [
+                  {
+                    "snaktype": "value",
+                    "property": "P4656",
+                    "hash": "c7ffb0c8169f81d595512b3d056735a21adb266c",
+                    "datavalue": {
+                      "value": "https://en.wikipedia.org/w/index.php?title=Battle_of_Algiers_(1956–57)&oldid=941632079",
+                      "type": "string"
+                    },
+                    "datatype": "url"
+                  }
+                ]
+              },
+              "snaks-order": [
+                "P143",
+                "P4656"
+              ]
+            }
+          ]
+        }
+      ],
+      "P373": [
+        {
+          "mainsnak": {
+            "snaktype": "value",
+            "property": "P373",
+            "hash": "96354295c373d7633c2af87ac8c2dd6f424c5aa9",
+            "datavalue": {
+              "value": "Battle of Algiers",
+              "type": "string"
+            },
+            "datatype": "string"
+          },
+          "type": "statement",
+          "id": "Q1761043$e6041339-4893-c19f-6b12-a525aa4785dd",
+          "rank": "normal"
+        }
+      ],
+      "P269": [
+        {
+          "mainsnak": {
+            "snaktype": "value",
+            "property": "P269",
+            "hash": "a762a4c18b0002c910ecf750788c182b71945ad6",
+            "datavalue": {
+              "value": "032127510",
+              "type": "string"
+            },
+            "datatype": "external-id"
+          },
+          "type": "statement",
+          "id": "Q1761043$ed75666e-417c-f2e4-ce73-e48085d0a402",
+          "rank": "normal"
+        }
+      ],
+      "P268": [
+        {
+          "mainsnak": {
+            "snaktype": "value",
+            "property": "P268",
+            "hash": "1976a716974a3edd335bce35d8845a9310220e33",
+            "datavalue": {
+              "value": "12321739k",
+              "type": "string"
+            },
+            "datatype": "external-id"
+          },
+          "type": "statement",
+          "id": "Q1761043$7dcaee2f-43be-1a3d-3fef-bdc400ee4e27",
+          "rank": "normal"
+        }
+      ],
+      "P17": [
+        {
+          "mainsnak": {
+            "snaktype": "value",
+            "property": "P17",
+            "hash": "bcef080c4d500a56f9aea0440abcad86dc4fde31",
+            "datavalue": {
+              "value": {
+                "entity-type": "item",
+                "numeric-id": 262,
+                "id": "Q262"
+              },
+              "type": "wikibase-entityid"
+            },
+            "datatype": "wikibase-item"
+          },
+          "type": "statement",
+          "id": "Q1761043$6B524EE8-AF49-4ADE-BDC0-325836C374C3",
+          "rank": "normal"
+        }
+      ],
+      "P910": [
+        {
+          "mainsnak": {
+            "snaktype": "value",
+            "property": "P910",
+            "hash": "c00912363cc7f682a7a7a882cc8088caef098a7f",
+            "datavalue": {
+              "value": {
+                "entity-type": "item",
+                "numeric-id": 125084875,
+                "id": "Q125084875"
+              },
+              "type": "wikibase-entityid"
+            },
+            "datatype": "wikibase-item"
+          },
+          "type": "statement",
+          "id": "Q1761043$b8e9dbcf-4d99-2f73-83c3-04e2508d83f4",
+          "rank": "normal"
+        }
+      ]
+    },
+    "sitelinks": {
+      "arwiki": {
+        "site": "arwiki",
+        "title": "معركة مدينة الجزائر (1956–1957)",
+        "badges": [],
+        "url": "https://ar.wikipedia.org/wiki/%D9%85%D8%B9%D8%B1%D9%83%D8%A9_%D9%85%D8%AF%D9%8A%D9%86%D8%A9_%D8%A7%D9%84%D8%AC%D8%B2%D8%A7%D8%A6%D8%B1_(1956%E2%80%931957)"
+      },
+      "azbwiki": {
+        "site": "azbwiki",
+        "title": "الجزیره دؤیوشو (۱۹۵۶–۵۷)",
+        "badges": [],
+        "url": "https://azb.wikipedia.org/wiki/%D8%A7%D9%84%D8%AC%D8%B2%DB%8C%D8%B1%D9%87_%D8%AF%D8%A4%DB%8C%D9%88%D8%B4%D9%88_(%DB%B1%DB%B9%DB%B5%DB%B6%E2%80%93%DB%B5%DB%B7)"
+      },
+      "brwiki": {
+        "site": "brwiki",
+        "title": "Emgann Aljer",
+        "badges": [],
+        "url": "https://br.wikipedia.org/wiki/Emgann_Aljer"
+      },
+      "dewiki": {
+        "site": "dewiki",
+        "title": "Schlacht von Algier",
+        "badges": [],
+        "url": "https://de.wikipedia.org/wiki/Schlacht_von_Algier"
+      },
+      "enwiki": {
+        "site": "enwiki",
+        "title": "Battle of Algiers (1956–1957)",
+        "badges": [],
+        "url": "https://en.wikipedia.org/wiki/Battle_of_Algiers_(1956%E2%80%931957)"
+      },
+      "eswiki": {
+        "site": "eswiki",
+        "title": "Batalla de Argel",
+        "badges": [],
+        "url": "https://es.wikipedia.org/wiki/Batalla_de_Argel"
+      },
+      "euwiki": {
+        "site": "euwiki",
+        "title": "Aljerko Gudua",
+        "badges": [
+          "Q17437796"
+        ],
+        "url": "https://eu.wikipedia.org/wiki/Aljerko_Gudua"
+      },
+      "frwiki": {
+        "site": "frwiki",
+        "title": "Bataille d'Alger",
+        "badges": [],
+        "url": "https://fr.wikipedia.org/wiki/Bataille_d%27Alger"
+      },
+      "itwiki": {
+        "site": "itwiki",
+        "title": "Battaglia di Algeri (1957)",
+        "badges": [],
+        "url": "https://it.wikipedia.org/wiki/Battaglia_di_Algeri_(1957)"
+      },
+      "kabwiki": {
+        "site": "kabwiki",
+        "title": "Imenɣi n Lezzayer (1956-1957)",
+        "badges": [],
+        "url": "https://kab.wikipedia.org/wiki/Imen%C9%A3i_n_Lezzayer_(1956-1957)"
+      },
+      "nlwiki": {
+        "site": "nlwiki",
+        "title": "Slag bij Algiers (1956-1957)",
+        "badges": [],
+        "url": "https://nl.wikipedia.org/wiki/Slag_bij_Algiers_(1956-1957)"
+      },
+      "nowiki": {
+        "site": "nowiki",
+        "title": "Slaget om Alger",
+        "badges": [],
+        "url": "https://no.wikipedia.org/wiki/Slaget_om_Alger"
+      },
+      "shwiki": {
+        "site": "shwiki",
+        "title": "Bitka za Alžir",
+        "badges": [],
+        "url": "https://sh.wikipedia.org/wiki/Bitka_za_Al%C5%BEir"
+      }
+    }
+  }
+}

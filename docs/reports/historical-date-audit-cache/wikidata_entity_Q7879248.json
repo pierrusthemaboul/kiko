@@ -1,0 +1,480 @@
+{
+  "saved_at": "2026-03-07T13:17:52.066Z",
+  "value": {
+    "pageid": 7816054,
+    "ns": 0,
+    "title": "Q7879248",
+    "lastrevid": 2415812865,
+    "modified": "2025-10-13T07:23:53Z",
+    "type": "item",
+    "id": "Q7879248",
+    "labels": {
+      "pt": {
+        "language": "pt",
+        "value": "Cerco de Mézières"
+      },
+      "fr": {
+        "language": "fr",
+        "value": "siège de Mézières"
+      },
+      "es": {
+        "language": "es",
+        "value": "sitio de Mézières"
+      },
+      "it": {
+        "language": "it",
+        "value": "Assedio di Mézières"
+      },
+      "en": {
+        "language": "en",
+        "value": "Siege of Mézières"
+      },
+      "zh": {
+        "language": "zh",
+        "value": "梅濟耶爾圍城戰"
+      },
+      "ga": {
+        "language": "ga",
+        "value": "Léigear Mézières"
+      },
+      "zh-hant": {
+        "language": "zh-hant",
+        "value": "梅濟耶爾圍城戰"
+      },
+      "nl": {
+        "language": "nl",
+        "value": "Beleg van Mézières"
+      }
+    },
+    "descriptions": {
+      "fr": {
+        "language": "fr",
+        "value": "1521"
+      },
+      "en": {
+        "language": "en",
+        "value": "1521 siege"
+      }
+    },
+    "aliases": {
+      "fr": [
+        {
+          "language": "fr",
+          "value": "Siege de Mezieres"
+        }
+      ],
+      "es": [
+        {
+          "language": "es",
+          "value": "sitio de Mézieres"
+        },
+        {
+          "language": "es",
+          "value": "sitio de Mezières"
+        },
+        {
+          "language": "es",
+          "value": "sitio de Mezieres"
+        }
+      ]
+    },
+    "claims": {
+      "P361": [
+        {
+          "mainsnak": {
+            "snaktype": "value",
+            "property": "P361",
+            "hash": "9a3020161888c3b4dbbf307c499fe5c8e50344eb",
+            "datavalue": {
+              "value": {
+                "entity-type": "item",
+                "numeric-id": 698281,
+                "id": "Q698281"
+              },
+              "type": "wikibase-entityid"
+            },
+            "datatype": "wikibase-item"
+          },
+          "type": "statement",
+          "id": "Q7879248$3F2498AC-909B-45FB-A861-968D6D3A6420",
+          "rank": "normal",
+          "references": [
+            {
+              "hash": "d4bd87b862b12d99d26e86472d44f26858dee639",
+              "snaks": {
+                "P143": [
+                  {
+                    "snaktype": "value",
+                    "property": "P143",
+                    "hash": "f30cbd35620c4ea6d0633aaf0210a8916130469b",
+                    "datavalue": {
+                      "value": {
+                        "entity-type": "item",
+                        "numeric-id": 8447,
+                        "id": "Q8447"
+                      },
+                      "type": "wikibase-entityid"
+                    },
+                    "datatype": "wikibase-item"
+                  }
+                ]
+              },
+              "snaks-order": [
+                "P143"
+              ]
+            }
+          ]
+        }
+      ],
+      "P18": [
+        {
+          "mainsnak": {
+            "snaktype": "value",
+            "property": "P18",
+            "hash": "d2aba1917f2e367101f629648ad5882b410665a5",
+            "datavalue": {
+              "value": "Charleville-Mezieres Siege de 1521 Gustave Toudouz 1909.jpg",
+              "type": "string"
+            },
+            "datatype": "commonsMedia"
+          },
+          "type": "statement",
+          "id": "Q7879248$8B463737-E233-46CF-A98F-A070AC109A18",
+          "rank": "normal"
+        }
+      ],
+      "P31": [
+        {
+          "mainsnak": {
+            "snaktype": "value",
+            "property": "P31",
+            "hash": "4fa1783d4cfdddbd24616e28fab46d9c00a29a54",
+            "datavalue": {
+              "value": {
+                "entity-type": "item",
+                "numeric-id": 188055,
+                "id": "Q188055"
+              },
+              "type": "wikibase-entityid"
+            },
+            "datatype": "wikibase-item"
+          },
+          "type": "statement",
+          "id": "Q7879248$EC3E6889-2924-400A-9F5B-DE8A25D0401E",
+          "rank": "normal"
+        }
+      ],
+      "P276": [
+        {
+          "mainsnak": {
+            "snaktype": "value",
+            "property": "P276",
+            "hash": "1c3eed0b69230955437231507c9707e0978266ea",
+            "datavalue": {
+              "value": {
+                "entity-type": "item",
+                "numeric-id": 16011499,
+                "id": "Q16011499"
+              },
+              "type": "wikibase-entityid"
+            },
+            "datatype": "wikibase-item"
+          },
+          "type": "statement",
+          "id": "Q7879248$239920e6-4164-8a9c-e335-5e924ff2e60d",
+          "rank": "normal"
+        }
+      ],
+      "P2047": [
+        {
+          "mainsnak": {
+            "snaktype": "value",
+            "property": "P2047",
+            "hash": "2c100fc1731a7f4f939d5bbdf1568a00bed6c30c",
+            "datavalue": {
+              "value": {
+                "amount": "+6",
+                "unit": "http://www.wikidata.org/entity/Q23387"
+              },
+              "type": "quantity"
+            },
+            "datatype": "quantity"
+          },
+          "type": "statement",
+          "id": "Q7879248$197b0df6-4109-d33e-7a8c-027cfd869ad6",
+          "rank": "normal"
+        }
+      ],
+      "P625": [
+        {
+          "mainsnak": {
+            "snaktype": "value",
+            "property": "P625",
+            "hash": "0627f0ba69701a58cb6925c5e5f27fc3af56e598",
+            "datavalue": {
+              "value": {
+                "latitude": 49.7608508,
+                "longitude": 4.7165251,
+                "altitude": null,
+                "precision": 0.00001,
+                "globe": "http://www.wikidata.org/entity/Q2"
+              },
+              "type": "globecoordinate"
+            },
+            "datatype": "globe-coordinate"
+          },
+          "type": "statement",
+          "id": "Q7879248$487AE895-AB06-48BC-A3CF-DF72F1766738",
+          "rank": "normal"
+        }
+      ],
+      "P2671": [
+        {
+          "mainsnak": {
+            "snaktype": "value",
+            "property": "P2671",
+            "hash": "4994b3c9a1d5825b271fa9d8bb591a49766c5b42",
+            "datavalue": {
+              "value": "/g/122cz7mc",
+              "type": "string"
+            },
+            "datatype": "external-id"
+          },
+          "type": "statement",
+          "id": "Q7879248$E344C5BF-CFCF-4368-89F1-33B9B97E25BC",
+          "rank": "normal"
+        }
+      ],
+      "P1889": [
+        {
+          "mainsnak": {
+            "snaktype": "value",
+            "property": "P1889",
+            "hash": "2d3396f713445c571a66cbde10db5b89c48c10bc",
+            "datavalue": {
+              "value": {
+                "entity-type": "item",
+                "numeric-id": 10751240,
+                "id": "Q10751240"
+              },
+              "type": "wikibase-entityid"
+            },
+            "datatype": "wikibase-item"
+          },
+          "type": "statement",
+          "id": "Q7879248$dbd27c12-4a66-e0d4-a39c-95fc7a5e31fc",
+          "rank": "normal"
+        }
+      ],
+      "P17": [
+        {
+          "mainsnak": {
+            "snaktype": "value",
+            "property": "P17",
+            "hash": "2b7d86f7555d9e77641e33f3f283b88021a5e49a",
+            "datavalue": {
+              "value": {
+                "entity-type": "item",
+                "numeric-id": 70972,
+                "id": "Q70972"
+              },
+              "type": "wikibase-entityid"
+            },
+            "datatype": "wikibase-item"
+          },
+          "type": "statement",
+          "id": "Q7879248$bb3423e3-4ca2-a0e9-0134-6a71bf445662",
+          "rank": "normal"
+        }
+      ],
+      "P580": [
+        {
+          "mainsnak": {
+            "snaktype": "value",
+            "property": "P580",
+            "hash": "30efbe9821ac06181c66a23efb85ea4632ef84f3",
+            "datavalue": {
+              "value": {
+                "time": "+1521-08-00T00:00:00Z",
+                "timezone": 0,
+                "before": 0,
+                "after": 0,
+                "precision": 10,
+                "calendarmodel": "http://www.wikidata.org/entity/Q1985786"
+              },
+              "type": "time"
+            },
+            "datatype": "time"
+          },
+          "type": "statement",
+          "id": "Q7879248$1aef5e8d-4aad-1936-88fc-fa6a9908774f",
+          "rank": "normal"
+        }
+      ],
+      "P582": [
+        {
+          "mainsnak": {
+            "snaktype": "value",
+            "property": "P582",
+            "hash": "c555a652a13ceab97fb1a10bb1617c8757db02f1",
+            "datavalue": {
+              "value": {
+                "time": "+1521-09-00T00:00:00Z",
+                "timezone": 0,
+                "before": 0,
+                "after": 0,
+                "precision": 10,
+                "calendarmodel": "http://www.wikidata.org/entity/Q1985786"
+              },
+              "type": "time"
+            },
+            "datatype": "time"
+          },
+          "type": "statement",
+          "id": "Q7879248$e3cd7f3a-4a36-578e-062b-9c1006e93154",
+          "rank": "normal"
+        }
+      ],
+      "P710": [
+        {
+          "mainsnak": {
+            "snaktype": "value",
+            "property": "P710",
+            "hash": "8a9ea07e5e69e9e51e5c91cad488fa1c0428f5bc",
+            "datavalue": {
+              "value": {
+                "entity-type": "item",
+                "numeric-id": 70972,
+                "id": "Q70972"
+              },
+              "type": "wikibase-entityid"
+            },
+            "datatype": "wikibase-item"
+          },
+          "type": "statement",
+          "qualifiers": {
+            "P4791": [
+              {
+                "snaktype": "value",
+                "property": "P4791",
+                "hash": "e3130b03917badb2981362735fb72fd72697c09b",
+                "datavalue": {
+                  "value": {
+                    "entity-type": "item",
+                    "numeric-id": 552017,
+                    "id": "Q552017"
+                  },
+                  "type": "wikibase-entityid"
+                },
+                "datatype": "wikibase-item"
+              },
+              {
+                "snaktype": "value",
+                "property": "P4791",
+                "hash": "aa862060414954ca092d7f605ef0c3beae940832",
+                "datavalue": {
+                  "value": {
+                    "entity-type": "item",
+                    "numeric-id": 356952,
+                    "id": "Q356952"
+                  },
+                  "type": "wikibase-entityid"
+                },
+                "datatype": "wikibase-item"
+              }
+            ]
+          },
+          "qualifiers-order": [
+            "P4791"
+          ],
+          "id": "Q7879248$a21f0dc1-4421-0392-b2e4-2a9b07f52d20",
+          "rank": "normal"
+        },
+        {
+          "mainsnak": {
+            "snaktype": "value",
+            "property": "P710",
+            "hash": "953b909a478c6b889aafa66d26a6378cd09a0fa6",
+            "datavalue": {
+              "value": {
+                "entity-type": "item",
+                "numeric-id": 12548,
+                "id": "Q12548"
+              },
+              "type": "wikibase-entityid"
+            },
+            "datatype": "wikibase-item"
+          },
+          "type": "statement",
+          "qualifiers": {
+            "P4791": [
+              {
+                "snaktype": "value",
+                "property": "P4791",
+                "hash": "6ce21a8851e4a1cdc1f48f59403e0b1ef6aa0f0c",
+                "datavalue": {
+                  "value": {
+                    "entity-type": "item",
+                    "numeric-id": 69450,
+                    "id": "Q69450"
+                  },
+                  "type": "wikibase-entityid"
+                },
+                "datatype": "wikibase-item"
+              }
+            ]
+          },
+          "qualifiers-order": [
+            "P4791"
+          ],
+          "id": "Q7879248$90b4f1c0-4776-9da4-1f83-f7ddf20c6047",
+          "rank": "normal"
+        }
+      ]
+    },
+    "sitelinks": {
+      "enwiki": {
+        "site": "enwiki",
+        "title": "Siege of Mézières",
+        "badges": [],
+        "url": "https://en.wikipedia.org/wiki/Siege_of_M%C3%A9zi%C3%A8res"
+      },
+      "eswiki": {
+        "site": "eswiki",
+        "title": "Sitio de Mézières",
+        "badges": [],
+        "url": "https://es.wikipedia.org/wiki/Sitio_de_M%C3%A9zi%C3%A8res"
+      },
+      "frwiki": {
+        "site": "frwiki",
+        "title": "Siège de Mézières (1521)",
+        "badges": [],
+        "url": "https://fr.wikipedia.org/wiki/Si%C3%A8ge_de_M%C3%A9zi%C3%A8res_(1521)"
+      },
+      "itwiki": {
+        "site": "itwiki",
+        "title": "Assedio di Mézières",
+        "badges": [],
+        "url": "https://it.wikipedia.org/wiki/Assedio_di_M%C3%A9zi%C3%A8res"
+      },
+      "nlwiki": {
+        "site": "nlwiki",
+        "title": "Beleg van Mézières",
+        "badges": [],
+        "url": "https://nl.wikipedia.org/wiki/Beleg_van_M%C3%A9zi%C3%A8res"
+      },
+      "ptwiki": {
+        "site": "ptwiki",
+        "title": "Cerco de Mézières",
+        "badges": [],
+        "url": "https://pt.wikipedia.org/wiki/Cerco_de_M%C3%A9zi%C3%A8res"
+      },
+      "zhwiki": {
+        "site": "zhwiki",
+        "title": "梅濟耶爾圍城戰",
+        "badges": [],
+        "url": "https://zh.wikipedia.org/wiki/%E6%A2%85%E6%BF%9F%E8%80%B6%E7%88%BE%E5%9C%8D%E5%9F%8E%E6%88%B0"
+      }
+    }
+  }
+}

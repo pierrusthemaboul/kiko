@@ -1,0 +1,237 @@
+{
+  "saved_at": "2026-03-07T15:31:00.950Z",
+  "value": {
+    "pageid": 2979653,
+    "ns": 0,
+    "title": "Q3118411",
+    "lastrevid": 2057008641,
+    "modified": "2024-01-18T20:36:18Z",
+    "type": "item",
+    "id": "Q3118411",
+    "labels": {
+      "fr": {
+        "language": "fr",
+        "value": "grèves de 1995 en France"
+      },
+      "en": {
+        "language": "en",
+        "value": "1995 strikes in France"
+      },
+      "pt": {
+        "language": "pt",
+        "value": "Greves de 1995 na França"
+      },
+      "ja": {
+        "language": "ja",
+        "value": "フランスの1995年のストライキ"
+      },
+      "uk": {
+        "language": "uk",
+        "value": "страйки у Франції 1995"
+      },
+      "de": {
+        "language": "de",
+        "value": "Streiks in Frankreich von 1995"
+      },
+      "eo": {
+        "language": "eo",
+        "value": "strikoj en Francio enn 1995"
+      },
+      "nl": {
+        "language": "nl",
+        "value": "stakingen in Frankrijk in 1995"
+      },
+      "hu": {
+        "language": "hu",
+        "value": "1995-ös franciaországi sztrájkok"
+      },
+      "br": {
+        "language": "br",
+        "value": "harz-labour 1995 e Frañs"
+      }
+    },
+    "descriptions": {
+      "fr": {
+        "language": "fr",
+        "value": "mouvement social français"
+      },
+      "en": {
+        "language": "en",
+        "value": "series of general strikes in France"
+      }
+    },
+    "aliases": {
+      "fr": [
+        {
+          "language": "fr",
+          "value": "grèves de 1995"
+        },
+        {
+          "language": "fr",
+          "value": "grèves de décembre 1995"
+        }
+      ]
+    },
+    "claims": {
+      "P646": [
+        {
+          "mainsnak": {
+            "snaktype": "value",
+            "property": "P646",
+            "hash": "f7f095fda6304bd2cf6ffd81856cf9455a23e0e1",
+            "datavalue": {
+              "value": "/m/02759ny",
+              "type": "string"
+            },
+            "datatype": "external-id"
+          },
+          "type": "statement",
+          "id": "Q3118411$E915F1C2-183A-4244-9D6B-735B2731DA4B",
+          "rank": "normal",
+          "references": [
+            {
+              "hash": "2b00cb481cddcac7623114367489b5c194901c4a",
+              "snaks": {
+                "P248": [
+                  {
+                    "snaktype": "value",
+                    "property": "P248",
+                    "hash": "a94b740202b097dd33355e0e6c00e54b9395e5e0",
+                    "datavalue": {
+                      "value": {
+                        "entity-type": "item",
+                        "numeric-id": 15241312,
+                        "id": "Q15241312"
+                      },
+                      "type": "wikibase-entityid"
+                    },
+                    "datatype": "wikibase-item"
+                  }
+                ],
+                "P577": [
+                  {
+                    "snaktype": "value",
+                    "property": "P577",
+                    "hash": "fde79ecb015112d2f29229ccc1ec514ed3e71fa2",
+                    "datavalue": {
+                      "value": {
+                        "time": "+2013-10-28T00:00:00Z",
+                        "timezone": 0,
+                        "before": 0,
+                        "after": 0,
+                        "precision": 11,
+                        "calendarmodel": "http://www.wikidata.org/entity/Q1985727"
+                      },
+                      "type": "time"
+                    },
+                    "datatype": "time"
+                  }
+                ]
+              },
+              "snaks-order": [
+                "P248",
+                "P577"
+              ]
+            }
+          ]
+        }
+      ],
+      "P5004": [
+        {
+          "mainsnak": {
+            "snaktype": "value",
+            "property": "P5004",
+            "hash": "4f09fd6bc4f7640f6834d0e2e5de7735a9c17ea6",
+            "datavalue": {
+              "value": {
+                "entity-type": "item",
+                "numeric-id": 3391140,
+                "id": "Q3391140"
+              },
+              "type": "wikibase-entityid"
+            },
+            "datatype": "wikibase-item"
+          },
+          "type": "statement",
+          "id": "Q3118411$D0530FBE-502E-4E2D-B770-EE32263E6F7F",
+          "rank": "normal",
+          "references": [
+            {
+              "hash": "7c408f1ec9eafde5252de07a2b64791e119bdadd",
+              "snaks": {
+                "P4656": [
+                  {
+                    "snaktype": "value",
+                    "property": "P4656",
+                    "hash": "d98ab65047296440661a5a267654babc98d874b2",
+                    "datavalue": {
+                      "value": "https://www.wikidata.org/w/index.php?title=Wikidata:Property_proposal/en_opposition_à&oldid=659792566",
+                      "type": "string"
+                    },
+                    "datatype": "url"
+                  }
+                ]
+              },
+              "snaks-order": [
+                "P4656"
+              ]
+            }
+          ]
+        }
+      ],
+      "P31": [
+        {
+          "mainsnak": {
+            "snaktype": "value",
+            "property": "P31",
+            "hash": "6a6cfbea11e942f6166b5b08f73a3d3d250027ee",
+            "datavalue": {
+              "value": {
+                "entity-type": "item",
+                "numeric-id": 51329196,
+                "id": "Q51329196"
+              },
+              "type": "wikibase-entityid"
+            },
+            "datatype": "wikibase-item"
+          },
+          "type": "statement",
+          "id": "Q3118411$bf40235d-4430-4791-8d29-c6f335b90a75",
+          "rank": "normal"
+        }
+      ]
+    },
+    "sitelinks": {
+      "enwiki": {
+        "site": "enwiki",
+        "title": "1995 strikes in France",
+        "badges": [],
+        "url": "https://en.wikipedia.org/wiki/1995_strikes_in_France"
+      },
+      "frwiki": {
+        "site": "frwiki",
+        "title": "Grèves de 1995 en France",
+        "badges": [],
+        "url": "https://fr.wikipedia.org/wiki/Gr%C3%A8ves_de_1995_en_France"
+      },
+      "huwiki": {
+        "site": "huwiki",
+        "title": "1995-ös franciaországi sztrájkok",
+        "badges": [],
+        "url": "https://hu.wikipedia.org/wiki/1995-%C3%B6s_franciaorsz%C3%A1gi_sztr%C3%A1jkok"
+      },
+      "jawiki": {
+        "site": "jawiki",
+        "title": "フランスのストライキ (1995年)",
+        "badges": [],
+        "url": "https://ja.wikipedia.org/wiki/%E3%83%95%E3%83%A9%E3%83%B3%E3%82%B9%E3%81%AE%E3%82%B9%E3%83%88%E3%83%A9%E3%82%A4%E3%82%AD_(1995%E5%B9%B4)"
+      },
+      "ptwiki": {
+        "site": "ptwiki",
+        "title": "Greves de 1995 na França",
+        "badges": [],
+        "url": "https://pt.wikipedia.org/wiki/Greves_de_1995_na_Fran%C3%A7a"
+      }
+    }
+  }
+}

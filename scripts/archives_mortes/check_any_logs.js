@@ -31,3 +31,4 @@ async function checkAnonymousLogs() {
 }
 
 checkAnonymousLogs();
+

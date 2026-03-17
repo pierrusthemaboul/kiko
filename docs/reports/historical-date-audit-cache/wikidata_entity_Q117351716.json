@@ -1,0 +1,266 @@
+{
+  "saved_at": "2026-03-07T15:38:06.190Z",
+  "value": {
+    "pageid": 112137292,
+    "ns": 0,
+    "title": "Q117351716",
+    "lastrevid": 1962084474,
+    "modified": "2023-08-27T03:15:31Z",
+    "type": "item",
+    "id": "Q117351716",
+    "labels": {
+      "sv": {
+        "language": "sv",
+        "value": "Volleyball Canada"
+      },
+      "en": {
+        "language": "en",
+        "value": "Volleyball Canada"
+      },
+      "de": {
+        "language": "de",
+        "value": "Volleyball Canada"
+      },
+      "fi": {
+        "language": "fi",
+        "value": "Volleyball Canada"
+      },
+      "fr": {
+        "language": "fr",
+        "value": "Volleyball Canada"
+      },
+      "pt": {
+        "language": "pt",
+        "value": "Volleyball Canadá"
+      }
+    },
+    "descriptions": {
+      "sv": {
+        "language": "sv",
+        "value": "idrottsförbund som organiserar volleyboll i Kanada"
+      },
+      "en": {
+        "language": "en",
+        "value": "sports governing body organizing volleyball in Canada"
+      }
+    },
+    "aliases": {},
+    "claims": {
+      "P31": [
+        {
+          "mainsnak": {
+            "snaktype": "value",
+            "property": "P31",
+            "hash": "3db75ee6a697c53580a8524844ab3e95b537a4b5",
+            "datavalue": {
+              "value": {
+                "entity-type": "item",
+                "numeric-id": 2485448,
+                "id": "Q2485448"
+              },
+              "type": "wikibase-entityid"
+            },
+            "datatype": "wikibase-item"
+          },
+          "type": "statement",
+          "id": "Q117351716$9146DC9B-6736-4CD9-9668-349EB4918A7B",
+          "rank": "normal"
+        }
+      ],
+      "P17": [
+        {
+          "mainsnak": {
+            "snaktype": "value",
+            "property": "P17",
+            "hash": "a3723c4c3601569aebcc86e0f0c5c3697821da1b",
+            "datavalue": {
+              "value": {
+                "entity-type": "item",
+                "numeric-id": 16,
+                "id": "Q16"
+              },
+              "type": "wikibase-entityid"
+            },
+            "datatype": "wikibase-item"
+          },
+          "type": "statement",
+          "id": "Q117351716$459AEB1D-3A20-45CA-8844-1D86B27B3F1C",
+          "rank": "normal"
+        }
+      ],
+      "P159": [
+        {
+          "mainsnak": {
+            "snaktype": "value",
+            "property": "P159",
+            "hash": "98c750929fd23ddf6f1c0481695935cef8255469",
+            "datavalue": {
+              "value": {
+                "entity-type": "item",
+                "numeric-id": 1930,
+                "id": "Q1930"
+              },
+              "type": "wikibase-entityid"
+            },
+            "datatype": "wikibase-item"
+          },
+          "type": "statement",
+          "id": "Q117351716$C7462908-AB07-426E-A6F7-5410818736C3",
+          "rank": "normal",
+          "references": [
+            {
+              "hash": "b6876aaeb111b08f50f9349c63d9811bc27485f0",
+              "snaks": {
+                "P143": [
+                  {
+                    "snaktype": "value",
+                    "property": "P143",
+                    "hash": "b7f8bea3bb10c237323eb448dc4798948923bd5c",
+                    "datavalue": {
+                      "value": {
+                        "entity-type": "item",
+                        "numeric-id": 11921,
+                        "id": "Q11921"
+                      },
+                      "type": "wikibase-entityid"
+                    },
+                    "datatype": "wikibase-item"
+                  }
+                ],
+                "P4656": [
+                  {
+                    "snaktype": "value",
+                    "property": "P4656",
+                    "hash": "7626edccc0fc008baf3067784243ac2dc26ed8e4",
+                    "datavalue": {
+                      "value": "https://pt.wikipedia.org/w/index.php?title=Volleyball_Canadá&oldid=52252221",
+                      "type": "string"
+                    },
+                    "datatype": "url"
+                  }
+                ]
+              },
+              "snaks-order": [
+                "P143",
+                "P4656"
+              ]
+            }
+          ]
+        }
+      ],
+      "P641": [
+        {
+          "mainsnak": {
+            "snaktype": "value",
+            "property": "P641",
+            "hash": "9b6da10f0c3cf2ca3c11449c11ce3897c37d3139",
+            "datavalue": {
+              "value": {
+                "entity-type": "item",
+                "numeric-id": 1734,
+                "id": "Q1734"
+              },
+              "type": "wikibase-entityid"
+            },
+            "datatype": "wikibase-item"
+          },
+          "type": "statement",
+          "id": "Q117351716$21CF461E-61CA-4F57-ACC1-DCBD28A8238A",
+          "rank": "normal"
+        }
+      ],
+      "P856": [
+        {
+          "mainsnak": {
+            "snaktype": "value",
+            "property": "P856",
+            "hash": "4bb5bdc7b2bf8c766ee9185991665a319d971a2b",
+            "datavalue": {
+              "value": "http://www.volleyball.ca/",
+              "type": "string"
+            },
+            "datatype": "url"
+          },
+          "type": "statement",
+          "qualifiers": {
+            "P407": [
+              {
+                "snaktype": "value",
+                "property": "P407",
+                "hash": "daf1c4fcb58181b02dff9cc89deb084004ddae4b",
+                "datavalue": {
+                  "value": {
+                    "entity-type": "item",
+                    "numeric-id": 1860,
+                    "id": "Q1860"
+                  },
+                  "type": "wikibase-entityid"
+                },
+                "datatype": "wikibase-item"
+              },
+              {
+                "snaktype": "value",
+                "property": "P407",
+                "hash": "d197d0a5efa4b4c23a302a829dd3ef43684fe002",
+                "datavalue": {
+                  "value": {
+                    "entity-type": "item",
+                    "numeric-id": 150,
+                    "id": "Q150"
+                  },
+                  "type": "wikibase-entityid"
+                },
+                "datatype": "wikibase-item"
+              }
+            ]
+          },
+          "qualifiers-order": [
+            "P407"
+          ],
+          "id": "Q117351716$86B10239-D794-473B-A896-C220B7FCDC53",
+          "rank": "normal",
+          "references": [
+            {
+              "hash": "d5847b9b6032aa8b13dae3c2dfd9ed5d114d21b3",
+              "snaks": {
+                "P143": [
+                  {
+                    "snaktype": "value",
+                    "property": "P143",
+                    "hash": "5a343e7e758a4282a01316d3e959b6e653b767fc",
+                    "datavalue": {
+                      "value": {
+                        "entity-type": "item",
+                        "numeric-id": 11920,
+                        "id": "Q11920"
+                      },
+                      "type": "wikibase-entityid"
+                    },
+                    "datatype": "wikibase-item"
+                  }
+                ]
+              },
+              "snaks-order": [
+                "P143"
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    "sitelinks": {
+      "frwiki": {
+        "site": "frwiki",
+        "title": "Volleyball Canada",
+        "badges": [],
+        "url": "https://fr.wikipedia.org/wiki/Volleyball_Canada"
+      },
+      "ptwiki": {
+        "site": "ptwiki",
+        "title": "Volleyball Canada",
+        "badges": [],
+        "url": "https://pt.wikipedia.org/wiki/Volleyball_Canada"
+      }
+    }
+  }
+}

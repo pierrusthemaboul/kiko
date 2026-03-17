@@ -1,0 +1,126 @@
+{
+  "saved_at": "2026-03-07T14:56:24.429Z",
+  "value": {
+    "pageid": 4706933,
+    "ns": 0,
+    "title": "Q4926055",
+    "lastrevid": 2295443420,
+    "modified": "2025-01-06T09:47:14Z",
+    "type": "item",
+    "id": "Q4926055",
+    "labels": {
+      "en": {
+        "language": "en",
+        "value": "Blenheim order of battle"
+      },
+      "zh-hant": {
+        "language": "zh-hant",
+        "value": "布倫漢姆戰役戰鬥序列"
+      },
+      "zh-cn": {
+        "language": "zh-cn",
+        "value": "布伦汉姆战役战斗序列"
+      },
+      "fr": {
+        "language": "fr",
+        "value": "ordre de bataille à Blenheim"
+      },
+      "it": {
+        "language": "it",
+        "value": "Ordine di battaglia di Blenheim"
+      }
+    },
+    "descriptions": {
+      "en": {
+        "language": "en",
+        "value": "list of units and commanders present at the Battle of Blenheim"
+      },
+      "fr": {
+        "language": "fr",
+        "value": "description des forces lors de la bataille de la guerre de Succession d'Espagne"
+      }
+    },
+    "aliases": {},
+    "claims": {
+      "P31": [
+        {
+          "mainsnak": {
+            "snaktype": "value",
+            "property": "P31",
+            "hash": "d28a1233ed690b57dd95b4dde69749a55ea16ce4",
+            "datavalue": {
+              "value": {
+                "entity-type": "item",
+                "numeric-id": 11167066,
+                "id": "Q11167066"
+              },
+              "type": "wikibase-entityid"
+            },
+            "datatype": "wikibase-item"
+          },
+          "type": "statement",
+          "id": "Q4926055$014886bc-4c6c-f558-4bd7-98fd8b3115ce",
+          "rank": "normal"
+        }
+      ],
+      "P2671": [
+        {
+          "mainsnak": {
+            "snaktype": "value",
+            "property": "P2671",
+            "hash": "b7776612a8dd633f5ee141f290caf27c0cc01335",
+            "datavalue": {
+              "value": "/g/11g6yp_cts",
+              "type": "string"
+            },
+            "datatype": "external-id"
+          },
+          "type": "statement",
+          "id": "Q4926055$36CD54F2-3D32-4DB2-B3BB-09A15670F31A",
+          "rank": "normal"
+        }
+      ],
+      "P607": [
+        {
+          "mainsnak": {
+            "snaktype": "value",
+            "property": "P607",
+            "hash": "0bccb0138f3691468763d9e2d96c2f8158b6d09a",
+            "datavalue": {
+              "value": {
+                "entity-type": "item",
+                "numeric-id": 154635,
+                "id": "Q154635"
+              },
+              "type": "wikibase-entityid"
+            },
+            "datatype": "wikibase-item"
+          },
+          "type": "statement",
+          "id": "Q4926055$783B766A-A10E-478E-B07B-DF78F4A981D0",
+          "rank": "normal"
+        }
+      ]
+    },
+    "sitelinks": {
+      "enwiki": {
+        "site": "enwiki",
+        "title": "Battle of Blenheim order of battle",
+        "badges": [],
+        "url": "https://en.wikipedia.org/wiki/Battle_of_Blenheim_order_of_battle"
+      },
+      "frwiki": {
+        "site": "frwiki",
+        "title": "Ordre de bataille à Blenheim (1704)",
+        "badges": [],
+        "url": "https://fr.wikipedia.org/wiki/Ordre_de_bataille_%C3%A0_Blenheim_(1704)"
+      },
+      "itwiki": {
+        "site": "itwiki",
+        "title": "Ordine di battaglia di Blenheim",
+        "badges": [],
+        "url": "https://it.wikipedia.org/wiki/Ordine_di_battaglia_di_Blenheim"
+      }
+    }
+  }
+}

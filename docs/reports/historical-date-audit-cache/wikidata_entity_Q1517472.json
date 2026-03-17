@@ -1,0 +1,392 @@
+{
+  "saved_at": "2026-03-07T15:28:37.007Z",
+  "value": {
+    "pageid": 1454654,
+    "ns": 0,
+    "title": "Q1517472",
+    "lastrevid": 2458114748,
+    "modified": "2026-01-27T01:32:23Z",
+    "type": "item",
+    "id": "Q1517472",
+    "labels": {
+      "lv": {
+        "language": "lv",
+        "value": "Radara vēsture"
+      },
+      "fr": {
+        "language": "fr",
+        "value": "histoire du radar"
+      },
+      "en": {
+        "language": "en",
+        "value": "history of radar"
+      },
+      "fi": {
+        "language": "fi",
+        "value": "Tutkan historia"
+      },
+      "de": {
+        "language": "de",
+        "value": "Geschichte des Radars"
+      },
+      "ja": {
+        "language": "ja",
+        "value": "レーダーの歴史"
+      },
+      "ar": {
+        "language": "ar",
+        "value": "تاريخ الرادار"
+      },
+      "eo": {
+        "language": "eo",
+        "value": "historio de radaro"
+      },
+      "ca": {
+        "language": "ca",
+        "value": "Història del radar"
+      },
+      "sl": {
+        "language": "sl",
+        "value": "zgodovina radarja"
+      },
+      "bn": {
+        "language": "bn",
+        "value": "রাডারের ইতিহাস"
+      },
+      "ps": {
+        "language": "ps",
+        "value": "د رادار تاريخ"
+      },
+      "ko": {
+        "language": "ko",
+        "value": "레이더의 역사"
+      }
+    },
+    "descriptions": {
+      "de": {
+        "language": "de",
+        "value": "Entwicklung von Radarsystemen von den ersten Versuchen bis zu den neuesten Technologien in der Raumfahrt"
+      },
+      "en": {
+        "language": "en",
+        "value": "aspect of history"
+      },
+      "bn": {
+        "language": "bn",
+        "value": "ইতিহাসের বিভিন্ন দিক"
+      },
+      "uk": {
+        "language": "uk",
+        "value": "аспект історії"
+      },
+      "ca": {
+        "language": "ca",
+        "value": "Article d'història del radar"
+      }
+    },
+    "aliases": {
+      "en": [
+        {
+          "language": "en",
+          "value": "radar history"
+        }
+      ]
+    },
+    "claims": {
+      "P646": [
+        {
+          "mainsnak": {
+            "snaktype": "value",
+            "property": "P646",
+            "hash": "33d7da2419cedce9992a3200da9927e01dac7d79",
+            "datavalue": {
+              "value": "/m/09v8j9y",
+              "type": "string"
+            },
+            "datatype": "external-id"
+          },
+          "type": "statement",
+          "id": "Q1517472$14D77BFA-F06D-4ACC-BAD2-222A62305CB8",
+          "rank": "normal",
+          "references": [
+            {
+              "hash": "2b00cb481cddcac7623114367489b5c194901c4a",
+              "snaks": {
+                "P248": [
+                  {
+                    "snaktype": "value",
+                    "property": "P248",
+                    "hash": "a94b740202b097dd33355e0e6c00e54b9395e5e0",
+                    "datavalue": {
+                      "value": {
+                        "entity-type": "item",
+                        "numeric-id": 15241312,
+                        "id": "Q15241312"
+                      },
+                      "type": "wikibase-entityid"
+                    },
+                    "datatype": "wikibase-item"
+                  }
+                ],
+                "P577": [
+                  {
+                    "snaktype": "value",
+                    "property": "P577",
+                    "hash": "fde79ecb015112d2f29229ccc1ec514ed3e71fa2",
+                    "datavalue": {
+                      "value": {
+                        "time": "+2013-10-28T00:00:00Z",
+                        "timezone": 0,
+                        "before": 0,
+                        "after": 0,
+                        "precision": 11,
+                        "calendarmodel": "http://www.wikidata.org/entity/Q1985727"
+                      },
+                      "type": "time"
+                    },
+                    "datatype": "time"
+                  }
+                ]
+              },
+              "snaks-order": [
+                "P248",
+                "P577"
+              ]
+            }
+          ]
+        }
+      ],
+      "P31": [
+        {
+          "mainsnak": {
+            "snaktype": "value",
+            "property": "P31",
+            "hash": "7ad5c7929af39fc2ff8afed55f1192f80e71d936",
+            "datavalue": {
+              "value": {
+                "entity-type": "item",
+                "numeric-id": 17524420,
+                "id": "Q17524420"
+              },
+              "type": "wikibase-entityid"
+            },
+            "datatype": "wikibase-item"
+          },
+          "type": "statement",
+          "id": "Q1517472$AD1E967C-A984-419F-9131-A5A88CC5AEAA",
+          "rank": "normal"
+        }
+      ],
+      "P910": [
+        {
+          "mainsnak": {
+            "snaktype": "value",
+            "property": "P910",
+            "hash": "22352159f0e4342203ab3546a166b2532289e333",
+            "datavalue": {
+              "value": {
+                "entity-type": "item",
+                "numeric-id": 13325706,
+                "id": "Q13325706"
+              },
+              "type": "wikibase-entityid"
+            },
+            "datatype": "wikibase-item"
+          },
+          "type": "statement",
+          "id": "Q1517472$D5D3D620-7188-495F-BC99-814AF5D886F6",
+          "rank": "normal",
+          "references": [
+            {
+              "hash": "d4bd87b862b12d99d26e86472d44f26858dee639",
+              "snaks": {
+                "P143": [
+                  {
+                    "snaktype": "value",
+                    "property": "P143",
+                    "hash": "f30cbd35620c4ea6d0633aaf0210a8916130469b",
+                    "datavalue": {
+                      "value": {
+                        "entity-type": "item",
+                        "numeric-id": 8447,
+                        "id": "Q8447"
+                      },
+                      "type": "wikibase-entityid"
+                    },
+                    "datatype": "wikibase-item"
+                  }
+                ]
+              },
+              "snaks-order": [
+                "P143"
+              ]
+            }
+          ]
+        }
+      ],
+      "P373": [
+        {
+          "mainsnak": {
+            "snaktype": "value",
+            "property": "P373",
+            "hash": "928fcac925705c483865e87c6e77bce9347c62d0",
+            "datavalue": {
+              "value": "Radars",
+              "type": "string"
+            },
+            "datatype": "string"
+          },
+          "type": "statement",
+          "id": "Q1517472$4BA6CF78-860C-4493-BE08-45CE649E1884",
+          "rank": "normal",
+          "references": [
+            {
+              "hash": "fa278ebfc458360e5aed63d5058cca83c46134f1",
+              "snaks": {
+                "P143": [
+                  {
+                    "snaktype": "value",
+                    "property": "P143",
+                    "hash": "e4f6d9441d0600513c4533c672b5ab472dc73694",
+                    "datavalue": {
+                      "value": {
+                        "entity-type": "item",
+                        "numeric-id": 328,
+                        "id": "Q328"
+                      },
+                      "type": "wikibase-entityid"
+                    },
+                    "datatype": "wikibase-item"
+                  }
+                ]
+              },
+              "snaks-order": [
+                "P143"
+              ]
+            }
+          ]
+        }
+      ],
+      "P18": [
+        {
+          "mainsnak": {
+            "snaktype": "value",
+            "property": "P18",
+            "hash": "25156a3fe969fdc3b2c785f40a373ac1564e2012",
+            "datavalue": {
+              "value": "Radarops.gif",
+              "type": "string"
+            },
+            "datatype": "commonsMedia"
+          },
+          "type": "statement",
+          "qualifiers": {
+            "P2096": [
+              {
+                "snaktype": "value",
+                "property": "P2096",
+                "hash": "13949e3616243f51d814d11dfddd40eecb7e2a3e",
+                "datavalue": {
+                  "value": {
+                    "text": "Principe du sondage radar.",
+                    "language": "fr"
+                  },
+                  "type": "monolingualtext"
+                },
+                "datatype": "monolingualtext"
+              }
+            ]
+          },
+          "qualifiers-order": [
+            "P2096"
+          ],
+          "id": "Q1517472$a8c7a9f9-4483-938d-f1d5-046aac94d576",
+          "rank": "normal"
+        }
+      ],
+      "P1269": [
+        {
+          "mainsnak": {
+            "snaktype": "value",
+            "property": "P1269",
+            "hash": "0f7514c97a0bd53c64260a87f0f871454d1e7677",
+            "datavalue": {
+              "value": {
+                "entity-type": "item",
+                "numeric-id": 47528,
+                "id": "Q47528"
+              },
+              "type": "wikibase-entityid"
+            },
+            "datatype": "wikibase-item"
+          },
+          "type": "statement",
+          "id": "Q1517472$242aaac5-48cb-b9a8-4095-afda3ae9b9c5",
+          "rank": "normal"
+        }
+      ]
+    },
+    "sitelinks": {
+      "arwiki": {
+        "site": "arwiki",
+        "title": "تاريخ الرادار",
+        "badges": [],
+        "url": "https://ar.wikipedia.org/wiki/%D8%AA%D8%A7%D8%B1%D9%8A%D8%AE_%D8%A7%D9%84%D8%B1%D8%A7%D8%AF%D8%A7%D8%B1"
+      },
+      "cawiki": {
+        "site": "cawiki",
+        "title": "Història del radar",
+        "badges": [],
+        "url": "https://ca.wikipedia.org/wiki/Hist%C3%B2ria_del_radar"
+      },
+      "dewiki": {
+        "site": "dewiki",
+        "title": "Geschichte des Radars",
+        "badges": [],
+        "url": "https://de.wikipedia.org/wiki/Geschichte_des_Radars"
+      },
+      "enwiki": {
+        "site": "enwiki",
+        "title": "History of radar",
+        "badges": [],
+        "url": "https://en.wikipedia.org/wiki/History_of_radar"
+      },
+      "fiwiki": {
+        "site": "fiwiki",
+        "title": "Tutkan historia",
+        "badges": [],
+        "url": "https://fi.wikipedia.org/wiki/Tutkan_historia"
+      },
+      "frwiki": {
+        "site": "frwiki",
+        "title": "Histoire du radar",
+        "badges": [],
+        "url": "https://fr.wikipedia.org/wiki/Histoire_du_radar"
+      },
+      "jawiki": {
+        "site": "jawiki",
+        "title": "レーダーの歴史",
+        "badges": [],
+        "url": "https://ja.wikipedia.org/wiki/%E3%83%AC%E3%83%BC%E3%83%80%E3%83%BC%E3%81%AE%E6%AD%B4%E5%8F%B2"
+      },
+      "kowiki": {
+        "site": "kowiki",
+        "title": "레이더의 역사",
+        "badges": [],
+        "url": "https://ko.wikipedia.org/wiki/%EB%A0%88%EC%9D%B4%EB%8D%94%EC%9D%98_%EC%97%AD%EC%82%AC"
+      },
+      "lvwiki": {
+        "site": "lvwiki",
+        "title": "Radara vēsture",
+        "badges": [],
+        "url": "https://lv.wikipedia.org/wiki/Radara_v%C4%93sture"
+      },
+      "pswiki": {
+        "site": "pswiki",
+        "title": "د رادار تاريخ",
+        "badges": [],
+        "url": "https://ps.wikipedia.org/wiki/%D8%AF_%D8%B1%D8%A7%D8%AF%D8%A7%D8%B1_%D8%AA%D8%A7%D8%B1%D9%8A%D8%AE"
+      }
+    }
+  }
+}

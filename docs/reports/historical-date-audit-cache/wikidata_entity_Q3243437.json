@@ -1,0 +1,182 @@
+{
+  "saved_at": "2026-03-07T16:17:58.095Z",
+  "value": {
+    "pageid": 3095709,
+    "ns": 0,
+    "title": "Q3243437",
+    "lastrevid": 2231667969,
+    "modified": "2024-08-19T20:45:50Z",
+    "type": "item",
+    "id": "Q3243437",
+    "labels": {
+      "fr": {
+        "language": "fr",
+        "value": "Chaînes de télévision associatives en France"
+      },
+      "ast": {
+        "language": "ast",
+        "value": "Chaînes de télévision associatives en France"
+      }
+    },
+    "descriptions": {
+      "en": {
+        "language": "en",
+        "value": "France associative televisions channels"
+      },
+      "fr": {
+        "language": "fr",
+        "value": "télévision associative ou tiers secteur audiovisuel en France"
+      },
+      "de": {
+        "language": "de",
+        "value": "Fernsehkanal"
+      },
+      "ast": {
+        "language": "ast",
+        "value": "canal de televisión de Francia"
+      }
+    },
+    "aliases": {
+      "fr": [
+        {
+          "language": "fr",
+          "value": "Tiers Secteur Audiovisuel"
+        },
+        {
+          "language": "fr",
+          "value": "TSA"
+        }
+      ]
+    },
+    "claims": {
+      "P31": [
+        {
+          "mainsnak": {
+            "snaktype": "value",
+            "property": "P31",
+            "hash": "b868cb7869fd5c2e6ac4b9a1b2088ea75cf0e4a4",
+            "datavalue": {
+              "value": {
+                "entity-type": "item",
+                "numeric-id": 2001305,
+                "id": "Q2001305"
+              },
+              "type": "wikibase-entityid"
+            },
+            "datatype": "wikibase-item"
+          },
+          "type": "statement",
+          "id": "Q3243437$4BE000C9-5D12-4C09-8BF6-D20815B50ABF",
+          "rank": "normal"
+        },
+        {
+          "mainsnak": {
+            "snaktype": "value",
+            "property": "P31",
+            "hash": "5b555715d82fb2edce40e2f5a3854aa5b5ea0f76",
+            "datavalue": {
+              "value": {
+                "entity-type": "item",
+                "numeric-id": 163740,
+                "id": "Q163740"
+              },
+              "type": "wikibase-entityid"
+            },
+            "datatype": "wikibase-item"
+          },
+          "type": "statement",
+          "id": "Q3243437$8ED33934-9A5A-4393-A5BA-73102C1B391E",
+          "rank": "normal"
+        }
+      ],
+      "P360": [
+        {
+          "mainsnak": {
+            "snaktype": "value",
+            "property": "P360",
+            "hash": "ac5911699f0e838ba26718601aa4412337020b39",
+            "datavalue": {
+              "value": {
+                "entity-type": "item",
+                "numeric-id": 1254874,
+                "id": "Q1254874"
+              },
+              "type": "wikibase-entityid"
+            },
+            "datatype": "wikibase-item"
+          },
+          "type": "statement",
+          "id": "Q3243437$D4E14C20-C033-49BE-8E07-4000135F7DC9",
+          "rank": "normal"
+        }
+      ],
+      "P17": [
+        {
+          "mainsnak": {
+            "snaktype": "value",
+            "property": "P17",
+            "hash": "c05db5d169c2560b9799d567a803d20a392f53e4",
+            "datavalue": {
+              "value": {
+                "entity-type": "item",
+                "numeric-id": 142,
+                "id": "Q142"
+              },
+              "type": "wikibase-entityid"
+            },
+            "datatype": "wikibase-item"
+          },
+          "type": "statement",
+          "id": "Q3243437$9c96bdf4-4911-f91b-51b3-d8937b042ee9",
+          "rank": "normal"
+        }
+      ],
+      "P1454": [
+        {
+          "mainsnak": {
+            "snaktype": "value",
+            "property": "P1454",
+            "hash": "b3139135d90ef80c624536ba51a418d388195c41",
+            "datavalue": {
+              "value": {
+                "entity-type": "item",
+                "numeric-id": 11513034,
+                "id": "Q11513034"
+              },
+              "type": "wikibase-entityid"
+            },
+            "datatype": "wikibase-item"
+          },
+          "type": "statement",
+          "id": "Q3243437$1EF5AB6D-D0F1-42C0-84AC-0FE9FC3AF133",
+          "rank": "normal"
+        }
+      ],
+      "P2671": [
+        {
+          "mainsnak": {
+            "snaktype": "value",
+            "property": "P2671",
+            "hash": "723128733882be6c0864dbb542779bfe5b7d1a35",
+            "datavalue": {
+              "value": "/g/11c53kbs9f",
+              "type": "string"
+            },
+            "datatype": "external-id"
+          },
+          "type": "statement",
+          "id": "Q3243437$175C30F3-D3B3-4A6B-83F9-DF9D650CA373",
+          "rank": "normal"
+        }
+      ]
+    },
+    "sitelinks": {
+      "frwiki": {
+        "site": "frwiki",
+        "title": "Télévisions associatives en France",
+        "badges": [],
+        "url": "https://fr.wikipedia.org/wiki/T%C3%A9l%C3%A9visions_associatives_en_France"
+      }
+    }
+  }
+}

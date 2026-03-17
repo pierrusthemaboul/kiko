@@ -1,0 +1,102 @@
+{
+  "saved_at": "2026-03-07T13:02:29.076Z",
+  "value": {
+    "pageid": 112788968,
+    "ns": 0,
+    "title": "Q118279347",
+    "lastrevid": 2436654180,
+    "modified": "2025-12-01T15:38:42Z",
+    "type": "item",
+    "id": "Q118279347",
+    "labels": {
+      "en": {
+        "language": "en",
+        "value": "learning process"
+      },
+      "fr": {
+        "language": "fr",
+        "value": "Processus d'apprentissage des adultes"
+      },
+      "ar": {
+        "language": "ar",
+        "value": "عملية التعلُّم"
+      },
+      "da": {
+        "language": "da",
+        "value": "læringsforløb"
+      }
+    },
+    "descriptions": {
+      "en": {
+        "language": "en",
+        "value": "process by which a person acquires knowledge or skills"
+      }
+    },
+    "aliases": {},
+    "claims": {
+      "P3916": [
+        {
+          "mainsnak": {
+            "snaktype": "value",
+            "property": "P3916",
+            "hash": "19719e0783c60aaad5c0e4c92eef08e658e2e420",
+            "datavalue": {
+              "value": "concept1514",
+              "type": "string"
+            },
+            "datatype": "external-id"
+          },
+          "type": "statement",
+          "id": "Q118279347$B5B9AF5C-8E18-463D-84E2-B02AF3A8C2F3",
+          "rank": "normal"
+        }
+      ],
+      "P279": [
+        {
+          "mainsnak": {
+            "snaktype": "value",
+            "property": "P279",
+            "hash": "dbdefe71160f7a20b159bf1424565441e8d4b28d",
+            "datavalue": {
+              "value": {
+                "entity-type": "item",
+                "numeric-id": 133500,
+                "id": "Q133500"
+              },
+              "type": "wikibase-entityid"
+            },
+            "datatype": "wikibase-item"
+          },
+          "type": "statement",
+          "id": "Q118279347$c7d16da9-49e4-dc0a-01e1-bb82c3031d1d",
+          "rank": "normal"
+        }
+      ],
+      "P2671": [
+        {
+          "mainsnak": {
+            "snaktype": "value",
+            "property": "P2671",
+            "hash": "e2fb076decd931bb8741376dc8cc33df8decf3d1",
+            "datavalue": {
+              "value": "/g/11dxb9bnsb",
+              "type": "string"
+            },
+            "datatype": "external-id"
+          },
+          "type": "statement",
+          "id": "Q118279347$F3DB40E8-7920-4CB2-99BC-BD0638D2C625",
+          "rank": "normal"
+        }
+      ]
+    },
+    "sitelinks": {
+      "frwiki": {
+        "site": "frwiki",
+        "title": "Processus d'apprentissage",
+        "badges": [],
+        "url": "https://fr.wikipedia.org/wiki/Processus_d%27apprentissage"
+      }
+    }
+  }
+}

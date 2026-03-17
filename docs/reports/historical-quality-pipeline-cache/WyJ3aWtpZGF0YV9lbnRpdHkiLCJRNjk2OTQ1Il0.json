@@ -1,0 +1,788 @@
+{
+  "pageid": 656315,
+  "ns": 0,
+  "title": "Q696945",
+  "lastrevid": 2353455783,
+  "modified": "2025-05-27T17:41:09Z",
+  "type": "item",
+  "id": "Q696945",
+  "labels": {
+    "pt": {
+      "language": "pt",
+      "value": "Batalha de Schellenberg"
+    },
+    "pl": {
+      "language": "pl",
+      "value": "Bitwa pod Donauwörth"
+    },
+    "fr": {
+      "language": "fr",
+      "value": "bataille de Schellenberg"
+    },
+    "ko": {
+      "language": "ko",
+      "value": "셸렌베르크 전투"
+    },
+    "en": {
+      "language": "en",
+      "value": "Battle of Schellenberg"
+    },
+    "es": {
+      "language": "es",
+      "value": "Batalla de Schellenberg"
+    },
+    "sr-el": {
+      "language": "sr-el",
+      "value": "Bitka kod Šelenberga"
+    },
+    "sr-ec": {
+      "language": "sr-ec",
+      "value": "Битка код Шеленберга"
+    },
+    "ca": {
+      "language": "ca",
+      "value": "batalla de Schellenberg"
+    },
+    "it": {
+      "language": "it",
+      "value": "battaglia di Schellenberg"
+    },
+    "gl": {
+      "language": "gl",
+      "value": "Batalla de Schellenberg"
+    },
+    "de": {
+      "language": "de",
+      "value": "Schlacht am Schellenberg"
+    },
+    "nn": {
+      "language": "nn",
+      "value": "Slaget ved Schellenberg"
+    },
+    "ja": {
+      "language": "ja",
+      "value": "シェレンベルクの戦い"
+    },
+    "ro": {
+      "language": "ro",
+      "value": "Bătălia de la Schellenberg"
+    },
+    "sr": {
+      "language": "sr",
+      "value": "Битка код Шеленберга"
+    },
+    "ru": {
+      "language": "ru",
+      "value": "Битва при Шелленберге"
+    },
+    "nl": {
+      "language": "nl",
+      "value": "Slag bij Schellenberg"
+    },
+    "zh": {
+      "language": "zh",
+      "value": "谢伦山之战"
+    },
+    "nb": {
+      "language": "nb",
+      "value": "Slaget ved Schellenberg"
+    },
+    "bg": {
+      "language": "bg",
+      "value": "Битка при Шеленберг"
+    },
+    "ast": {
+      "language": "ast",
+      "value": "Batalla de Schellenberg"
+    },
+    "yo": {
+      "language": "yo",
+      "value": "ogun Schellenberg"
+    },
+    "ga": {
+      "language": "ga",
+      "value": "Cath Schellenberg"
+    }
+  },
+  "descriptions": {
+    "de": {
+      "language": "de",
+      "value": "Schlacht des Spanischen Erbfolgekriegs"
+    },
+    "en": {
+      "language": "en",
+      "value": "1704 battle"
+    },
+    "ru": {
+      "language": "ru",
+      "value": "сражение Войны за испанское наследство"
+    },
+    "fr": {
+      "language": "fr",
+      "value": "bataille de la guerre de Succession d'Espagne"
+    },
+    "yo": {
+      "language": "yo",
+      "value": "ogun"
+    }
+  },
+  "aliases": {
+    "ko": [
+      {
+        "language": "ko",
+        "value": "쉘렌베르크 전투"
+      }
+    ],
+    "it": [
+      {
+        "language": "it",
+        "value": "Battaglia di Donauwörth"
+      }
+    ],
+    "de": [
+      {
+        "language": "de",
+        "value": "Schlacht bei Schellenberg"
+      }
+    ],
+    "nn": [
+      {
+        "language": "nn",
+        "value": "Slaget ved Donauwörth"
+      }
+    ],
+    "zh-hant": [
+      {
+        "language": "zh-hant",
+        "value": "突擊多瑙沃特"
+      }
+    ],
+    "zh-cn": [
+      {
+        "language": "zh-cn",
+        "value": "突击多瑙沃特"
+      }
+    ],
+    "ru": [
+      {
+        "language": "ru",
+        "value": "Битва при Донаувёрте"
+      }
+    ]
+  },
+  "claims": {
+    "P625": [
+      {
+        "mainsnak": {
+          "snaktype": "value",
+          "property": "P625",
+          "hash": "003fde35d5b9d785f5444536ee4accf572d7513c",
+          "datavalue": {
+            "value": {
+              "latitude": 48.7,
+              "longitude": 10.8,
+              "altitude": null,
+              "precision": 0.016666666666667,
+              "globe": "http://www.wikidata.org/entity/Q2"
+            },
+            "type": "globecoordinate"
+          },
+          "datatype": "globe-coordinate"
+        },
+        "type": "statement",
+        "id": "Q696945$F7F74A45-602A-4B07-8C24-B0087A098D4B",
+        "rank": "normal",
+        "references": [
+          {
+            "hash": "d4bd87b862b12d99d26e86472d44f26858dee639",
+            "snaks": {
+              "P143": [
+                {
+                  "snaktype": "value",
+                  "property": "P143",
+                  "hash": "f30cbd35620c4ea6d0633aaf0210a8916130469b",
+                  "datavalue": {
+                    "value": {
+                      "entity-type": "item",
+                      "numeric-id": 8447,
+                      "id": "Q8447"
+                    },
+                    "type": "wikibase-entityid"
+                  },
+                  "datatype": "wikibase-item"
+                }
+              ]
+            },
+            "snaks-order": [
+              "P143"
+            ]
+          }
+        ]
+      }
+    ],
+    "P31": [
+      {
+        "mainsnak": {
+          "snaktype": "value",
+          "property": "P31",
+          "hash": "baa1df9dcd37b9f3a062e7a14a8bef0c37078d32",
+          "datavalue": {
+            "value": {
+              "entity-type": "item",
+              "numeric-id": 178561,
+              "id": "Q178561"
+            },
+            "type": "wikibase-entityid"
+          },
+          "datatype": "wikibase-item"
+        },
+        "type": "statement",
+        "id": "Q696945$F47A7FC8-E9FC-4381-8AE3-D5268195CC44",
+        "rank": "normal",
+        "references": [
+          {
+            "hash": "d4bd87b862b12d99d26e86472d44f26858dee639",
+            "snaks": {
+              "P143": [
+                {
+                  "snaktype": "value",
+                  "property": "P143",
+                  "hash": "f30cbd35620c4ea6d0633aaf0210a8916130469b",
+                  "datavalue": {
+                    "value": {
+                      "entity-type": "item",
+                      "numeric-id": 8447,
+                      "id": "Q8447"
+                    },
+                    "type": "wikibase-entityid"
+                  },
+                  "datatype": "wikibase-item"
+                }
+              ]
+            },
+            "snaks-order": [
+              "P143"
+            ]
+          }
+        ]
+      }
+    ],
+    "P361": [
+      {
+        "mainsnak": {
+          "snaktype": "value",
+          "property": "P361",
+          "hash": "fe6aa611295d0cd11b44d76c65d6224113f721e0",
+          "datavalue": {
+            "value": {
+              "entity-type": "item",
+              "numeric-id": 150701,
+              "id": "Q150701"
+            },
+            "type": "wikibase-entityid"
+          },
+          "datatype": "wikibase-item"
+        },
+        "type": "statement",
+        "id": "Q696945$2B5EE35D-F37E-4EC1-A42F-1A1D2FBC7687",
+        "rank": "normal",
+        "references": [
+          {
+            "hash": "d4bd87b862b12d99d26e86472d44f26858dee639",
+            "snaks": {
+              "P143": [
+                {
+                  "snaktype": "value",
+                  "property": "P143",
+                  "hash": "f30cbd35620c4ea6d0633aaf0210a8916130469b",
+                  "datavalue": {
+                    "value": {
+                      "entity-type": "item",
+                      "numeric-id": 8447,
+                      "id": "Q8447"
+                    },
+                    "type": "wikibase-entityid"
+                  },
+                  "datatype": "wikibase-item"
+                }
+              ]
+            },
+            "snaks-order": [
+              "P143"
+            ]
+          }
+        ]
+      }
+    ],
+    "P18": [
+      {
+        "mainsnak": {
+          "snaktype": "value",
+          "property": "P18",
+          "hash": "462f3646db3e1b4b64af595339ddaf8da7fd095a",
+          "datavalue": {
+            "value": "Schellenberg 1704.jpg",
+            "type": "string"
+          },
+          "datatype": "commonsMedia"
+        },
+        "type": "statement",
+        "qualifiers": {
+          "P2096": [
+            {
+              "snaktype": "value",
+              "property": "P2096",
+              "hash": "32fc42fd176ae9b80829a89c8d9313859772a50a",
+              "datavalue": {
+                "value": {
+                  "text": "Grabáu de la batalla.",
+                  "language": "ast"
+                },
+                "type": "monolingualtext"
+              },
+              "datatype": "monolingualtext"
+            }
+          ]
+        },
+        "qualifiers-order": [
+          "P2096"
+        ],
+        "id": "Q696945$6433E9C5-CEF8-44E0-B316-4BD658021391",
+        "rank": "normal"
+      }
+    ],
+    "P276": [
+      {
+        "mainsnak": {
+          "snaktype": "value",
+          "property": "P276",
+          "hash": "05888d42fc7b7daa83148e92e3e6efd7474580b8",
+          "datavalue": {
+            "value": {
+              "entity-type": "item",
+              "numeric-id": 53742,
+              "id": "Q53742"
+            },
+            "type": "wikibase-entityid"
+          },
+          "datatype": "wikibase-item"
+        },
+        "type": "statement",
+        "id": "Q696945$F596F76A-02CB-4534-B11C-5CB6223A3437",
+        "rank": "normal",
+        "references": [
+          {
+            "hash": "d4bd87b862b12d99d26e86472d44f26858dee639",
+            "snaks": {
+              "P143": [
+                {
+                  "snaktype": "value",
+                  "property": "P143",
+                  "hash": "f30cbd35620c4ea6d0633aaf0210a8916130469b",
+                  "datavalue": {
+                    "value": {
+                      "entity-type": "item",
+                      "numeric-id": 8447,
+                      "id": "Q8447"
+                    },
+                    "type": "wikibase-entityid"
+                  },
+                  "datatype": "wikibase-item"
+                }
+              ]
+            },
+            "snaks-order": [
+              "P143"
+            ]
+          }
+        ]
+      }
+    ],
+    "P373": [
+      {
+        "mainsnak": {
+          "snaktype": "value",
+          "property": "P373",
+          "hash": "9e6fd85b36507a32a4d8fddfb7e594a823e48fde",
+          "datavalue": {
+            "value": "Battle of Schellenberg",
+            "type": "string"
+          },
+          "datatype": "string"
+        },
+        "type": "statement",
+        "id": "Q696945$FB86586D-8D1C-4787-A086-B3EC2463183C",
+        "rank": "normal"
+      }
+    ],
+    "P585": [
+      {
+        "mainsnak": {
+          "snaktype": "value",
+          "property": "P585",
+          "hash": "537001e3606f4bb20e538e8c45414dd368724fc7",
+          "datavalue": {
+            "value": {
+              "time": "+1704-07-02T00:00:00Z",
+              "timezone": 0,
+              "before": 0,
+              "after": 0,
+              "precision": 11,
+              "calendarmodel": "http://www.wikidata.org/entity/Q1985727"
+            },
+            "type": "time"
+          },
+          "datatype": "time"
+        },
+        "type": "statement",
+        "id": "Q696945$BEC74886-1CE4-4B7D-8474-FDA24C019552",
+        "rank": "normal",
+        "references": [
+          {
+            "hash": "d4bd87b862b12d99d26e86472d44f26858dee639",
+            "snaks": {
+              "P143": [
+                {
+                  "snaktype": "value",
+                  "property": "P143",
+                  "hash": "f30cbd35620c4ea6d0633aaf0210a8916130469b",
+                  "datavalue": {
+                    "value": {
+                      "entity-type": "item",
+                      "numeric-id": 8447,
+                      "id": "Q8447"
+                    },
+                    "type": "wikibase-entityid"
+                  },
+                  "datatype": "wikibase-item"
+                }
+              ]
+            },
+            "snaks-order": [
+              "P143"
+            ]
+          }
+        ]
+      }
+    ],
+    "P1343": [
+      {
+        "mainsnak": {
+          "snaktype": "value",
+          "property": "P1343",
+          "hash": "838bca4d129e7db69c9b411c07d03542437bccbb",
+          "datavalue": {
+            "value": {
+              "entity-type": "item",
+              "numeric-id": 4114391,
+              "id": "Q4114391"
+            },
+            "type": "wikibase-entityid"
+          },
+          "datatype": "wikibase-item"
+        },
+        "type": "statement",
+        "qualifiers": {
+          "P805": [
+            {
+              "snaktype": "value",
+              "property": "P805",
+              "hash": "a65808aba0f7b2eaa44d553c1e6f7a535db5f267",
+              "datavalue": {
+                "value": {
+                  "entity-type": "item",
+                  "numeric-id": 25376223,
+                  "id": "Q25376223"
+                },
+                "type": "wikibase-entityid"
+              },
+              "datatype": "wikibase-item"
+            }
+          ]
+        },
+        "qualifiers-order": [
+          "P805"
+        ],
+        "id": "Q696945$daad819e-4f80-80ab-2191-951a779cdac2",
+        "rank": "normal"
+      },
+      {
+        "mainsnak": {
+          "snaktype": "value",
+          "property": "P1343",
+          "hash": "42346dfe9209b7359c1f5db829a368b38d407797",
+          "datavalue": {
+            "value": {
+              "entity-type": "item",
+              "numeric-id": 19180675,
+              "id": "Q19180675"
+            },
+            "type": "wikibase-entityid"
+          },
+          "datatype": "wikibase-item"
+        },
+        "type": "statement",
+        "qualifiers": {
+          "P805": [
+            {
+              "snaktype": "value",
+              "property": "P805",
+              "hash": "b17ea193f26edd57084ea7f7d7e7f722f246e597",
+              "datavalue": {
+                "value": {
+                  "entity-type": "item",
+                  "numeric-id": 24739820,
+                  "id": "Q24739820"
+                },
+                "type": "wikibase-entityid"
+              },
+              "datatype": "wikibase-item"
+            }
+          ]
+        },
+        "qualifiers-order": [
+          "P805"
+        ],
+        "id": "Q696945$16dc2484-4e86-11ea-2201-d8f41c5b4664",
+        "rank": "normal"
+      }
+    ],
+    "P4220": [
+      {
+        "mainsnak": {
+          "snaktype": "value",
+          "property": "P4220",
+          "hash": "e9c6ffbd6f1a66a4660b9f18c33d8d8169a9076c",
+          "datavalue": {
+            "value": {
+              "entity-type": "item",
+              "numeric-id": 7431108,
+              "id": "Q7431108"
+            },
+            "type": "wikibase-entityid"
+          },
+          "datatype": "wikibase-item"
+        },
+        "type": "statement",
+        "id": "Q696945$a1fbe8c4-4107-53d8-dbfc-a671f40f7d31",
+        "rank": "normal"
+      }
+    ],
+    "P646": [
+      {
+        "mainsnak": {
+          "snaktype": "value",
+          "property": "P646",
+          "hash": "da03ac80ab7ae55daba48d6c4ce07fc1c491084d",
+          "datavalue": {
+            "value": "/m/050bhl",
+            "type": "string"
+          },
+          "datatype": "external-id"
+        },
+        "type": "statement",
+        "id": "Q696945$727CE653-7A0A-46B6-A257-E2B95F10B5CC",
+        "rank": "normal"
+      }
+    ],
+    "P227": [
+      {
+        "mainsnak": {
+          "snaktype": "value",
+          "property": "P227",
+          "hash": "6312c6e0707b65b874b5c279cf5c0f7f69dae36e",
+          "datavalue": {
+            "value": "4651480-6",
+            "type": "string"
+          },
+          "datatype": "external-id"
+        },
+        "type": "statement",
+        "id": "Q696945$9842e4c9-4ce6-ce7a-8ef6-ef4c30b92d47",
+        "rank": "normal"
+      }
+    ],
+    "P710": [
+      {
+        "mainsnak": {
+          "snaktype": "value",
+          "property": "P710",
+          "hash": "94757bdc48d787b52e28d494639cbea583aad352",
+          "datavalue": {
+            "value": {
+              "entity-type": "item",
+              "numeric-id": 179876,
+              "id": "Q179876"
+            },
+            "type": "wikibase-entityid"
+          },
+          "datatype": "wikibase-item"
+        },
+        "type": "statement",
+        "id": "Q696945$545244CD-4D7F-4DB7-8449-D6801C475A6E",
+        "rank": "normal"
+      }
+    ],
+    "P17": [
+      {
+        "mainsnak": {
+          "snaktype": "value",
+          "property": "P17",
+          "hash": "ef7247b704f4ec0a7df39e83306bb388fea17d5f",
+          "datavalue": {
+            "value": {
+              "entity-type": "item",
+              "numeric-id": 183,
+              "id": "Q183"
+            },
+            "type": "wikibase-entityid"
+          },
+          "datatype": "wikibase-item"
+        },
+        "type": "statement",
+        "id": "Q696945$2D070369-E806-41BE-8C9D-CA82145D4E8D",
+        "rank": "normal"
+      }
+    ]
+  },
+  "sitelinks": {
+    "astwiki": {
+      "site": "astwiki",
+      "title": "Batalla de Schellenberg",
+      "badges": [
+        "Q17437796"
+      ],
+      "url": "https://ast.wikipedia.org/wiki/Batalla_de_Schellenberg"
+    },
+    "bgwiki": {
+      "site": "bgwiki",
+      "title": "Битка при Шеленберг",
+      "badges": [],
+      "url": "https://bg.wikipedia.org/wiki/%D0%91%D0%B8%D1%82%D0%BA%D0%B0_%D0%BF%D1%80%D0%B8_%D0%A8%D0%B5%D0%BB%D0%B5%D0%BD%D0%B1%D0%B5%D1%80%D0%B3"
+    },
+    "cawiki": {
+      "site": "cawiki",
+      "title": "Batalla de Schellenberg",
+      "badges": [],
+      "url": "https://ca.wikipedia.org/wiki/Batalla_de_Schellenberg"
+    },
+    "commonswiki": {
+      "site": "commonswiki",
+      "title": "Category:Battle of Schellenberg",
+      "badges": [],
+      "url": "https://commons.wikimedia.org/wiki/Category:Battle_of_Schellenberg"
+    },
+    "dewiki": {
+      "site": "dewiki",
+      "title": "Schlacht am Schellenberg",
+      "badges": [],
+      "url": "https://de.wikipedia.org/wiki/Schlacht_am_Schellenberg"
+    },
+    "dewikisource": {
+      "site": "dewikisource",
+      "title": "Schlacht am Schellenberg",
+      "badges": [],
+      "url": "https://de.wikisource.org/wiki/Schlacht_am_Schellenberg"
+    },
+    "enwiki": {
+      "site": "enwiki",
+      "title": "Battle of Schellenberg",
+      "badges": [],
+      "url": "https://en.wikipedia.org/wiki/Battle_of_Schellenberg"
+    },
+    "eswiki": {
+      "site": "eswiki",
+      "title": "Batalla de Schellenberg",
+      "badges": [
+        "Q17437796"
+      ],
+      "url": "https://es.wikipedia.org/wiki/Batalla_de_Schellenberg"
+    },
+    "frwiki": {
+      "site": "frwiki",
+      "title": "Bataille de Schellenberg",
+      "badges": [],
+      "url": "https://fr.wikipedia.org/wiki/Bataille_de_Schellenberg"
+    },
+    "glwiki": {
+      "site": "glwiki",
+      "title": "Batalla de Schellenberg",
+      "badges": [],
+      "url": "https://gl.wikipedia.org/wiki/Batalla_de_Schellenberg"
+    },
+    "itwiki": {
+      "site": "itwiki",
+      "title": "Battaglia di Schellenberg",
+      "badges": [],
+      "url": "https://it.wikipedia.org/wiki/Battaglia_di_Schellenberg"
+    },
+    "jawiki": {
+      "site": "jawiki",
+      "title": "シェレンベルクの戦い",
+      "badges": [],
+      "url": "https://ja.wikipedia.org/wiki/%E3%82%B7%E3%82%A7%E3%83%AC%E3%83%B3%E3%83%99%E3%83%AB%E3%82%AF%E3%81%AE%E6%88%A6%E3%81%84"
+    },
+    "kowiki": {
+      "site": "kowiki",
+      "title": "셸렌베르크 전투",
+      "badges": [],
+      "url": "https://ko.wikipedia.org/wiki/%EC%85%B8%EB%A0%8C%EB%B2%A0%EB%A5%B4%ED%81%AC_%EC%A0%84%ED%88%AC"
+    },
+    "nlwiki": {
+      "site": "nlwiki",
+      "title": "Slag bij Schellenberg",
+      "badges": [],
+      "url": "https://nl.wikipedia.org/wiki/Slag_bij_Schellenberg"
+    },
+    "nnwiki": {
+      "site": "nnwiki",
+      "title": "Slaget ved Schellenberg",
+      "badges": [],
+      "url": "https://nn.wikipedia.org/wiki/Slaget_ved_Schellenberg"
+    },
+    "nowiki": {
+      "site": "nowiki",
+      "title": "Slaget ved Schellenberg",
+      "badges": [],
+      "url": "https://no.wikipedia.org/wiki/Slaget_ved_Schellenberg"
+    },
+    "plwiki": {
+      "site": "plwiki",
+      "title": "Bitwa pod Donauwörth",
+      "badges": [],
+      "url": "https://pl.wikipedia.org/wiki/Bitwa_pod_Donauw%C3%B6rth"
+    },
+    "ptwiki": {
+      "site": "ptwiki",
+      "title": "Batalha de Schellenberg",
+      "badges": [],
+      "url": "https://pt.wikipedia.org/wiki/Batalha_de_Schellenberg"
+    },
+    "rowiki": {
+      "site": "rowiki",
+      "title": "Bătălia de la Schellenberg",
+      "badges": [],
+      "url": "https://ro.wikipedia.org/wiki/B%C4%83t%C4%83lia_de_la_Schellenberg"
+    },
+    "ruwiki": {
+      "site": "ruwiki",
+      "title": "Битва при Шелленберге",
+      "badges": [],
+      "url": "https://ru.wikipedia.org/wiki/%D0%91%D0%B8%D1%82%D0%B2%D0%B0_%D0%BF%D1%80%D0%B8_%D0%A8%D0%B5%D0%BB%D0%BB%D0%B5%D0%BD%D0%B1%D0%B5%D1%80%D0%B3%D0%B5"
+    },
+    "srwiki": {
+      "site": "srwiki",
+      "title": "Битка код Шеленберга",
+      "badges": [],
+      "url": "https://sr.wikipedia.org/wiki/%D0%91%D0%B8%D1%82%D0%BA%D0%B0_%D0%BA%D0%BE%D0%B4_%D0%A8%D0%B5%D0%BB%D0%B5%D0%BD%D0%B1%D0%B5%D1%80%D0%B3%D0%B0"
+    },
+    "zhwiki": {
+      "site": "zhwiki",
+      "title": "谢伦山之战",
+      "badges": [
+        "Q17437796"
+      ],
+      "url": "https://zh.wikipedia.org/wiki/%E8%B0%A2%E4%BC%A6%E5%B1%B1%E4%B9%8B%E6%88%98"
+    }
+  }
+}

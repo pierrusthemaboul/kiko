@@ -1,0 +1,153 @@
+{
+  "saved_at": "2026-03-07T15:27:28.844Z",
+  "value": {
+    "pageid": 2191506,
+    "ns": 0,
+    "title": "Q2268876",
+    "lastrevid": 2133514172,
+    "modified": "2024-04-20T12:18:49Z",
+    "type": "item",
+    "id": "Q2268876",
+    "labels": {
+      "fr": {
+        "language": "fr",
+        "value": "Semaine des barricades"
+      },
+      "de": {
+        "language": "de",
+        "value": "Semaine des barricades à Alger"
+      },
+      "ja": {
+        "language": "ja",
+        "value": "バリケードの1週間"
+      }
+    },
+    "descriptions": {
+      "fr": {
+        "language": "fr",
+        "value": "manifestations"
+      }
+    },
+    "aliases": {},
+    "claims": {
+      "P607": [
+        {
+          "mainsnak": {
+            "snaktype": "value",
+            "property": "P607",
+            "hash": "c6359de42c144d4f3ee87fa587353ce22cedce83",
+            "datavalue": {
+              "value": {
+                "entity-type": "item",
+                "numeric-id": 200790,
+                "id": "Q200790"
+              },
+              "type": "wikibase-entityid"
+            },
+            "datatype": "wikibase-item"
+          },
+          "type": "statement",
+          "id": "Q2268876$3EE128D9-96B1-4FB4-9D86-5DB922DEDDD4",
+          "rank": "normal"
+        }
+      ],
+      "P18": [
+        {
+          "mainsnak": {
+            "snaktype": "value",
+            "property": "P18",
+            "hash": "fb0863c94485f164a316e37006f95f137474b1d4",
+            "datavalue": {
+              "value": "Semaine des barricades Alger 1960 Haute Qualité.jpg",
+              "type": "string"
+            },
+            "datatype": "commonsMedia"
+          },
+          "type": "statement",
+          "id": "Q2268876$C356D095-D22C-4017-9970-92D13D0A5C49",
+          "rank": "normal",
+          "references": [
+            {
+              "hash": "d4bd87b862b12d99d26e86472d44f26858dee639",
+              "snaks": {
+                "P143": [
+                  {
+                    "snaktype": "value",
+                    "property": "P143",
+                    "hash": "f30cbd35620c4ea6d0633aaf0210a8916130469b",
+                    "datavalue": {
+                      "value": {
+                        "entity-type": "item",
+                        "numeric-id": 8447,
+                        "id": "Q8447"
+                      },
+                      "type": "wikibase-entityid"
+                    },
+                    "datatype": "wikibase-item"
+                  }
+                ]
+              },
+              "snaks-order": [
+                "P143"
+              ]
+            }
+          ]
+        }
+      ],
+      "P2671": [
+        {
+          "mainsnak": {
+            "snaktype": "value",
+            "property": "P2671",
+            "hash": "051c72c7b278a784276994ea52c5705fbdf0eb0f",
+            "datavalue": {
+              "value": "/g/1211qf1h",
+              "type": "string"
+            },
+            "datatype": "external-id"
+          },
+          "type": "statement",
+          "id": "Q2268876$4EF8AA52-E528-4F09-962A-DE8BC4F59141",
+          "rank": "normal"
+        }
+      ],
+      "P373": [
+        {
+          "mainsnak": {
+            "snaktype": "value",
+            "property": "P373",
+            "hash": "c6f9cda059a4d67c453de4c60544669016dc649b",
+            "datavalue": {
+              "value": "Semaine des barricades",
+              "type": "string"
+            },
+            "datatype": "string"
+          },
+          "type": "statement",
+          "id": "Q2268876$e1b6e7d4-4d28-b3de-48a8-e226db61b36e",
+          "rank": "normal"
+        }
+      ]
+    },
+    "sitelinks": {
+      "commonswiki": {
+        "site": "commonswiki",
+        "title": "Category:Semaine des barricades",
+        "badges": [],
+        "url": "https://commons.wikimedia.org/wiki/Category:Semaine_des_barricades"
+      },
+      "dewiki": {
+        "site": "dewiki",
+        "title": "Semaine des barricades à Alger",
+        "badges": [],
+        "url": "https://de.wikipedia.org/wiki/Semaine_des_barricades_%C3%A0_Alger"
+      },
+      "frwiki": {
+        "site": "frwiki",
+        "title": "Semaine des barricades",
+        "badges": [],
+        "url": "https://fr.wikipedia.org/wiki/Semaine_des_barricades"
+      }
+    }
+  }
+}

@@ -1,0 +1,423 @@
+{
+  "saved_at": "2026-03-07T12:56:57.925Z",
+  "value": {
+    "pageid": 2706382,
+    "ns": 0,
+    "title": "Q2825778",
+    "lastrevid": 2463080947,
+    "modified": "2026-02-13T07:30:04Z",
+    "type": "item",
+    "id": "Q2825778",
+    "labels": {
+      "fr": {
+        "language": "fr",
+        "value": "affaire Elf"
+      },
+      "ar": {
+        "language": "ar",
+        "value": "قضية ألف"
+      },
+      "it": {
+        "language": "it",
+        "value": "Affare Elf"
+      },
+      "en": {
+        "language": "en",
+        "value": "Elf case"
+      }
+    },
+    "descriptions": {
+      "fr": {
+        "language": "fr",
+        "value": "affaire politico-financière"
+      },
+      "en": {
+        "language": "en",
+        "value": "scandal in France"
+      }
+    },
+    "aliases": {
+      "fr": [
+        {
+          "language": "fr",
+          "value": "affaire ELF"
+        },
+        {
+          "language": "fr",
+          "value": "affaire Elf-Aquitane"
+        }
+      ]
+    },
+    "claims": {
+      "P31": [
+        {
+          "mainsnak": {
+            "snaktype": "value",
+            "property": "P31",
+            "hash": "e57613c58b05de28ebd154e4292eb0e9147c387e",
+            "datavalue": {
+              "value": {
+                "entity-type": "item",
+                "numeric-id": 934744,
+                "id": "Q934744"
+              },
+              "type": "wikibase-entityid"
+            },
+            "datatype": "wikibase-item"
+          },
+          "type": "statement",
+          "id": "Q2825778$8A6A7675-EF0F-4372-A785-9A1B768CD0B6",
+          "rank": "normal"
+        }
+      ],
+      "P910": [
+        {
+          "mainsnak": {
+            "snaktype": "value",
+            "property": "P910",
+            "hash": "f6b247ed27a17a2cd8497c48265e695d33368069",
+            "datavalue": {
+              "value": {
+                "entity-type": "item",
+                "numeric-id": 9428958,
+                "id": "Q9428958"
+              },
+              "type": "wikibase-entityid"
+            },
+            "datatype": "wikibase-item"
+          },
+          "type": "statement",
+          "id": "Q2825778$82438CDB-EF14-42EC-84A9-0CE7DB303A8C",
+          "rank": "normal",
+          "references": [
+            {
+              "hash": "d4bd87b862b12d99d26e86472d44f26858dee639",
+              "snaks": {
+                "P143": [
+                  {
+                    "snaktype": "value",
+                    "property": "P143",
+                    "hash": "f30cbd35620c4ea6d0633aaf0210a8916130469b",
+                    "datavalue": {
+                      "value": {
+                        "entity-type": "item",
+                        "numeric-id": 8447,
+                        "id": "Q8447"
+                      },
+                      "type": "wikibase-entityid"
+                    },
+                    "datatype": "wikibase-item"
+                  }
+                ]
+              },
+              "snaks-order": [
+                "P143"
+              ]
+            }
+          ]
+        }
+      ],
+      "P2671": [
+        {
+          "mainsnak": {
+            "snaktype": "value",
+            "property": "P2671",
+            "hash": "1c2ae8981ab4c87098f6a9540963fc38d816763a",
+            "datavalue": {
+              "value": "/g/1211jjpp",
+              "type": "string"
+            },
+            "datatype": "external-id"
+          },
+          "type": "statement",
+          "id": "Q2825778$EDA967CD-0C72-4194-BAE5-4C399062AA5D",
+          "rank": "normal"
+        }
+      ],
+      "P268": [
+        {
+          "mainsnak": {
+            "snaktype": "value",
+            "property": "P268",
+            "hash": "582cfb6c4d3e9f56af0f768c37c44145f2f7b6ae",
+            "datavalue": {
+              "value": "13328088p",
+              "type": "string"
+            },
+            "datatype": "external-id"
+          },
+          "type": "statement",
+          "id": "Q2825778$869bc3e4-4440-8231-b3b2-1f7647f42bbf",
+          "rank": "normal"
+        }
+      ],
+      "P17": [
+        {
+          "mainsnak": {
+            "snaktype": "value",
+            "property": "P17",
+            "hash": "c05db5d169c2560b9799d567a803d20a392f53e4",
+            "datavalue": {
+              "value": {
+                "entity-type": "item",
+                "numeric-id": 142,
+                "id": "Q142"
+              },
+              "type": "wikibase-entityid"
+            },
+            "datatype": "wikibase-item"
+          },
+          "type": "statement",
+          "id": "Q2825778$4eb695f4-4e75-5e60-9313-f7b8d81368fc",
+          "rank": "normal"
+        }
+      ],
+      "P710": [
+        {
+          "mainsnak": {
+            "snaktype": "value",
+            "property": "P710",
+            "hash": "f62e4a96b33748db1b687d2aac1a77bac6747c83",
+            "datavalue": {
+              "value": {
+                "entity-type": "item",
+                "numeric-id": 1872728,
+                "id": "Q1872728"
+              },
+              "type": "wikibase-entityid"
+            },
+            "datatype": "wikibase-item"
+          },
+          "type": "statement",
+          "id": "Q2825778$75b2eaf2-4ed5-63c3-6aea-3d279f15ee41",
+          "rank": "normal",
+          "references": [
+            {
+              "hash": "50d10c67ca428707c8fbf36952ee7be6603e6115",
+              "snaks": {
+                "P854": [
+                  {
+                    "snaktype": "value",
+                    "property": "P854",
+                    "hash": "3838576a490a679a1ea2e49eb943a51f7adcd60a",
+                    "datavalue": {
+                      "value": "https://www.dw.com/en/elf-corruption-trial-reaches-french-courts/a-811008",
+                      "type": "string"
+                    },
+                    "datatype": "url"
+                  }
+                ]
+              },
+              "snaks-order": [
+                "P854"
+              ]
+            }
+          ]
+        },
+        {
+          "mainsnak": {
+            "snaktype": "value",
+            "property": "P710",
+            "hash": "fdb1057e1bb9f17b4a533153aab8cf023076c651",
+            "datavalue": {
+              "value": {
+                "entity-type": "item",
+                "numeric-id": 616308,
+                "id": "Q616308"
+              },
+              "type": "wikibase-entityid"
+            },
+            "datatype": "wikibase-item"
+          },
+          "type": "statement",
+          "id": "Q2825778$f5d59a15-43fc-0260-4a6c-5bcddc2314b7",
+          "rank": "normal",
+          "references": [
+            {
+              "hash": "2f7915c20dd1d9bf59145fe3e7e32f926df0caad",
+              "snaks": {
+                "P854": [
+                  {
+                    "snaktype": "value",
+                    "property": "P854",
+                    "hash": "aea0c190e67b8ad81f3385852b52e0a2630e814e",
+                    "datavalue": {
+                      "value": "http://news.bbc.co.uk/1/hi/world/europe/1156086.stm",
+                      "type": "string"
+                    },
+                    "datatype": "url"
+                  }
+                ]
+              },
+              "snaks-order": [
+                "P854"
+              ]
+            }
+          ]
+        },
+        {
+          "mainsnak": {
+            "snaktype": "value",
+            "property": "P710",
+            "hash": "45d20eab8d204e1fff73f0a60bf54a95adfb685f",
+            "datavalue": {
+              "value": {
+                "entity-type": "item",
+                "numeric-id": 2848687,
+                "id": "Q2848687"
+              },
+              "type": "wikibase-entityid"
+            },
+            "datatype": "wikibase-item"
+          },
+          "type": "statement",
+          "id": "Q2825778$2d119306-4bd7-3b01-3794-075ef2a9c987",
+          "rank": "normal",
+          "references": [
+            {
+              "hash": "dc1d8b1672d65f1c826511dafe52b41a25847737",
+              "snaks": {
+                "P854": [
+                  {
+                    "snaktype": "value",
+                    "property": "P854",
+                    "hash": "dc5b9923ff9ccd6a22a6cfa55c238a7d73d96dd5",
+                    "datavalue": {
+                      "value": "https://www.theguardian.com/business/2003/nov/13/france.oilandpetrol",
+                      "type": "string"
+                    },
+                    "datatype": "url"
+                  }
+                ]
+              },
+              "snaks-order": [
+                "P854"
+              ]
+            }
+          ]
+        },
+        {
+          "mainsnak": {
+            "snaktype": "value",
+            "property": "P710",
+            "hash": "e3e8ddcf9baf6f608dc1d286a46b6497007113c9",
+            "datavalue": {
+              "value": {
+                "entity-type": "item",
+                "numeric-id": 544299,
+                "id": "Q544299"
+              },
+              "type": "wikibase-entityid"
+            },
+            "datatype": "wikibase-item"
+          },
+          "type": "statement",
+          "id": "Q2825778$de77de62-48dc-daa3-0273-3655d9fef952",
+          "rank": "normal",
+          "references": [
+            {
+              "hash": "f8d06c8f04e8c1b86bf8eedd2a22b64f16e16f0c",
+              "snaks": {
+                "P854": [
+                  {
+                    "snaktype": "value",
+                    "property": "P854",
+                    "hash": "4856115211a580a5b7e94215a447ec4e2d4fbbe2",
+                    "datavalue": {
+                      "value": "https://www.theguardian.com/world/2001/jan/22/jonhenley",
+                      "type": "string"
+                    },
+                    "datatype": "url"
+                  }
+                ]
+              },
+              "snaks-order": [
+                "P854"
+              ]
+            }
+          ]
+        },
+        {
+          "mainsnak": {
+            "snaktype": "value",
+            "property": "P710",
+            "hash": "e092fddcae4961f66633ba5e87a8b4fbc5e062be",
+            "datavalue": {
+              "value": {
+                "entity-type": "item",
+                "numeric-id": 547525,
+                "id": "Q547525"
+              },
+              "type": "wikibase-entityid"
+            },
+            "datatype": "wikibase-item"
+          },
+          "type": "statement",
+          "id": "Q2825778$a3ba5783-405d-abe6-d279-66696c81e163",
+          "rank": "normal",
+          "references": [
+            {
+              "hash": "194c4ffd2d377b553b1fc772dafda174dd069206",
+              "snaks": {
+                "P854": [
+                  {
+                    "snaktype": "value",
+                    "property": "P854",
+                    "hash": "b98c359a6dc441b7f63b3eb8638ca9e8f359f89e",
+                    "datavalue": {
+                      "value": "https://www.nouvelobs.com/politique/20130405.OBS6989/rainbow-warrior-urba-mnef-ces-affaires-qui-ont-eclabousse-le-ps.html",
+                      "type": "string"
+                    },
+                    "datatype": "url"
+                  }
+                ]
+              },
+              "snaks-order": [
+                "P854"
+              ]
+            }
+          ]
+        },
+        {
+          "mainsnak": {
+            "snaktype": "value",
+            "property": "P710",
+            "hash": "b9ed9910c38deaab4a05d545d018741ae5da15a0",
+            "datavalue": {
+              "value": {
+                "entity-type": "item",
+                "numeric-id": 172450,
+                "id": "Q172450"
+              },
+              "type": "wikibase-entityid"
+            },
+            "datatype": "wikibase-item"
+          },
+          "type": "statement",
+          "id": "Q2825778$dffbe09e-46e9-22f6-c3e9-d49ba8ca248b",
+          "rank": "normal"
+        }
+      ]
+    },
+    "sitelinks": {
+      "arwiki": {
+        "site": "arwiki",
+        "title": "قضية ألف",
+        "badges": [],
+        "url": "https://ar.wikipedia.org/wiki/%D9%82%D8%B6%D9%8A%D8%A9_%D8%A3%D9%84%D9%81"
+      },
+      "frwiki": {
+        "site": "frwiki",
+        "title": "Affaire Elf",
+        "badges": [],
+        "url": "https://fr.wikipedia.org/wiki/Affaire_Elf"
+      },
+      "itwiki": {
+        "site": "itwiki",
+        "title": "Affare Elf",
+        "badges": [],
+        "url": "https://it.wikipedia.org/wiki/Affare_Elf"
+      }
+    }
+  }
+}

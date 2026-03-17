@@ -1,0 +1,314 @@
+{
+  "pageid": 3926592,
+  "ns": 0,
+  "title": "Q4118844",
+  "lastrevid": 2379037298,
+  "modified": "2025-07-13T12:12:56Z",
+  "type": "item",
+  "id": "Q4118844",
+  "labels": {
+    "ru": {
+      "language": "ru",
+      "value": "Нападение берберских пиратов на Балтимор"
+    },
+    "en": {
+      "language": "en",
+      "value": "Sack of Baltimore"
+    },
+    "ar": {
+      "language": "ar",
+      "value": "نهب بالتمور"
+    },
+    "es": {
+      "language": "es",
+      "value": "saqueo de Baltimore"
+    },
+    "fr": {
+      "language": "fr",
+      "value": "sac de Baltimore"
+    },
+    "ast": {
+      "language": "ast",
+      "value": "Saquéu de Baltimore"
+    },
+    "tr": {
+      "language": "tr",
+      "value": "Baltimore Talanı"
+    },
+    "it": {
+      "language": "it",
+      "value": "Sacco di Baltimore"
+    },
+    "sv": {
+      "language": "sv",
+      "value": "Räden mot Baltimore"
+    },
+    "nl": {
+      "language": "nl",
+      "value": "Plundering van Baltimore"
+    }
+  },
+  "descriptions": {
+    "en": {
+      "language": "en",
+      "value": "1631 Slaver raid on Irish village"
+    },
+    "ar": {
+      "language": "ar",
+      "value": "معركة دارت في بالتيمور، إيرلندا"
+    },
+    "sv": {
+      "language": "sv",
+      "value": "slavräd utförd av osmanska barbareskpirater från Alger i Osmanska Nordafrika"
+    },
+    "es": {
+      "language": "es",
+      "value": "incursión esclavista en aldea irlandesa"
+    }
+  },
+  "aliases": {
+    "ar": [
+      {
+        "language": "ar",
+        "value": "غزوة بالتمور"
+      }
+    ]
+  },
+  "claims": {
+    "P646": [
+      {
+        "mainsnak": {
+          "snaktype": "value",
+          "property": "P646",
+          "hash": "24089631d336ab86dacedb097d4b09eb206acf62",
+          "datavalue": {
+            "value": "/m/05hkhl",
+            "type": "string"
+          },
+          "datatype": "external-id"
+        },
+        "type": "statement",
+        "id": "Q4118844$3852C246-56F7-4440-A626-02DD35B407AE",
+        "rank": "normal",
+        "references": [
+          {
+            "hash": "2b00cb481cddcac7623114367489b5c194901c4a",
+            "snaks": {
+              "P248": [
+                {
+                  "snaktype": "value",
+                  "property": "P248",
+                  "hash": "a94b740202b097dd33355e0e6c00e54b9395e5e0",
+                  "datavalue": {
+                    "value": {
+                      "entity-type": "item",
+                      "numeric-id": 15241312,
+                      "id": "Q15241312"
+                    },
+                    "type": "wikibase-entityid"
+                  },
+                  "datatype": "wikibase-item"
+                }
+              ],
+              "P577": [
+                {
+                  "snaktype": "value",
+                  "property": "P577",
+                  "hash": "fde79ecb015112d2f29229ccc1ec514ed3e71fa2",
+                  "datavalue": {
+                    "value": {
+                      "time": "+2013-10-28T00:00:00Z",
+                      "timezone": 0,
+                      "before": 0,
+                      "after": 0,
+                      "precision": 11,
+                      "calendarmodel": "http://www.wikidata.org/entity/Q1985727"
+                    },
+                    "type": "time"
+                  },
+                  "datatype": "time"
+                }
+              ]
+            },
+            "snaks-order": [
+              "P248",
+              "P577"
+            ]
+          }
+        ]
+      }
+    ],
+    "P625": [
+      {
+        "mainsnak": {
+          "snaktype": "value",
+          "property": "P625",
+          "hash": "1ff40b4c35dab85d47c221f0511571645fee205d",
+          "datavalue": {
+            "value": {
+              "latitude": 51.48341,
+              "longitude": -9.37168,
+              "altitude": null,
+              "precision": 0.00001,
+              "globe": "http://www.wikidata.org/entity/Q2"
+            },
+            "type": "globecoordinate"
+          },
+          "datatype": "globe-coordinate"
+        },
+        "type": "statement",
+        "id": "Q4118844$2d831cc8-6e0d-447e-b3cf-fe28b69c264e",
+        "rank": "normal"
+      }
+    ],
+    "P31": [
+      {
+        "mainsnak": {
+          "snaktype": "value",
+          "property": "P31",
+          "hash": "30448723839cfc6a457e9a54a6d47787fe70ec92",
+          "datavalue": {
+            "value": {
+              "entity-type": "item",
+              "numeric-id": 7539194,
+              "id": "Q7539194"
+            },
+            "type": "wikibase-entityid"
+          },
+          "datatype": "wikibase-item"
+        },
+        "type": "statement",
+        "id": "Q4118844$bf1f71ec-42d5-cae4-8a30-a87a49dc5c59",
+        "rank": "normal"
+      }
+    ],
+    "P585": [
+      {
+        "mainsnak": {
+          "snaktype": "value",
+          "property": "P585",
+          "hash": "4935cf8e990f10d8c8909976e59e07b5352d54ae",
+          "datavalue": {
+            "value": {
+              "time": "+1631-06-20T00:00:00Z",
+              "timezone": 0,
+              "before": 0,
+              "after": 0,
+              "precision": 11,
+              "calendarmodel": "http://www.wikidata.org/entity/Q1985727"
+            },
+            "type": "time"
+          },
+          "datatype": "time"
+        },
+        "type": "statement",
+        "id": "Q4118844$396c439e-4e27-52ed-e0af-14e4811acd6d",
+        "rank": "normal"
+      }
+    ],
+    "P276": [
+      {
+        "mainsnak": {
+          "snaktype": "value",
+          "property": "P276",
+          "hash": "b9188a2ab2227202ae5dc3c855ebd1adfe095895",
+          "datavalue": {
+            "value": {
+              "entity-type": "item",
+              "numeric-id": 805740,
+              "id": "Q805740"
+            },
+            "type": "wikibase-entityid"
+          },
+          "datatype": "wikibase-item"
+        },
+        "type": "statement",
+        "id": "Q4118844$7c973528-4ff7-9b1e-3bd0-f78a51e66a85",
+        "rank": "normal"
+      }
+    ],
+    "P361": [
+      {
+        "mainsnak": {
+          "snaktype": "value",
+          "property": "P361",
+          "hash": "ef109ad9016da6e7e23400d4d1a336f50ace6cbc",
+          "datavalue": {
+            "value": {
+              "entity-type": "item",
+              "numeric-id": 4859497,
+              "id": "Q4859497"
+            },
+            "type": "wikibase-entityid"
+          },
+          "datatype": "wikibase-item"
+        },
+        "type": "statement",
+        "id": "Q4118844$10b47d63-49be-3eeb-6c34-a8214f4ea0e3",
+        "rank": "normal"
+      }
+    ]
+  },
+  "sitelinks": {
+    "arwiki": {
+      "site": "arwiki",
+      "title": "نهب بالتمور",
+      "badges": [],
+      "url": "https://ar.wikipedia.org/wiki/%D9%86%D9%87%D8%A8_%D8%A8%D8%A7%D9%84%D8%AA%D9%85%D9%88%D8%B1"
+    },
+    "astwiki": {
+      "site": "astwiki",
+      "title": "Saquéu de Baltimore",
+      "badges": [],
+      "url": "https://ast.wikipedia.org/wiki/Saqu%C3%A9u_de_Baltimore"
+    },
+    "enwiki": {
+      "site": "enwiki",
+      "title": "Sack of Baltimore",
+      "badges": [],
+      "url": "https://en.wikipedia.org/wiki/Sack_of_Baltimore"
+    },
+    "eswiki": {
+      "site": "eswiki",
+      "title": "Saqueo de Baltimore",
+      "badges": [],
+      "url": "https://es.wikipedia.org/wiki/Saqueo_de_Baltimore"
+    },
+    "frwiki": {
+      "site": "frwiki",
+      "title": "Sac de Baltimore",
+      "badges": [],
+      "url": "https://fr.wikipedia.org/wiki/Sac_de_Baltimore"
+    },
+    "itwiki": {
+      "site": "itwiki",
+      "title": "Sacco di Baltimore",
+      "badges": [],
+      "url": "https://it.wikipedia.org/wiki/Sacco_di_Baltimore"
+    },
+    "nlwiki": {
+      "site": "nlwiki",
+      "title": "Plundering van Baltimore",
+      "badges": [],
+      "url": "https://nl.wikipedia.org/wiki/Plundering_van_Baltimore"
+    },
+    "ruwiki": {
+      "site": "ruwiki",
+      "title": "Нападение берберских пиратов на Болтимор",
+      "badges": [],
+      "url": "https://ru.wikipedia.org/wiki/%D0%9D%D0%B0%D0%BF%D0%B0%D0%B4%D0%B5%D0%BD%D0%B8%D0%B5_%D0%B1%D0%B5%D1%80%D0%B1%D0%B5%D1%80%D1%81%D0%BA%D0%B8%D1%85_%D0%BF%D0%B8%D1%80%D0%B0%D1%82%D0%BE%D0%B2_%D0%BD%D0%B0_%D0%91%D0%BE%D0%BB%D1%82%D0%B8%D0%BC%D0%BE%D1%80"
+    },
+    "svwiki": {
+      "site": "svwiki",
+      "title": "Räden mot Baltimore",
+      "badges": [],
+      "url": "https://sv.wikipedia.org/wiki/R%C3%A4den_mot_Baltimore"
+    },
+    "trwiki": {
+      "site": "trwiki",
+      "title": "Baltimore Talanı",
+      "badges": [],
+      "url": "https://tr.wikipedia.org/wiki/Baltimore_Talan%C4%B1"
+    }
+  }
+}

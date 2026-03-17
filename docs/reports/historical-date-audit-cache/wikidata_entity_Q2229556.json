@@ -1,0 +1,421 @@
+{
+  "saved_at": "2026-03-07T15:25:47.764Z",
+  "value": {
+    "pageid": 2153271,
+    "ns": 0,
+    "title": "Q2229556",
+    "lastrevid": 2428009166,
+    "modified": "2025-11-10T19:17:23Z",
+    "type": "item",
+    "id": "Q2229556",
+    "labels": {
+      "de": {
+        "language": "de",
+        "value": "Schachspiel Karls des Großen"
+      },
+      "pt": {
+        "language": "pt",
+        "value": "Peças de Carlos Magno"
+      },
+      "fr": {
+        "language": "fr",
+        "value": "échiquier de Charlemagne"
+      },
+      "ar": {
+        "language": "ar",
+        "value": "قطع شارلمان الشطرنجية"
+      },
+      "en": {
+        "language": "en",
+        "value": "Charlemagne chessmen"
+      },
+      "ru": {
+        "language": "ru",
+        "value": "Шахматные фигуры Карла Великого"
+      },
+      "uk": {
+        "language": "uk",
+        "value": "Шахівниця Карла Великого"
+      },
+      "eu": {
+        "language": "eu",
+        "value": "Karlomagnoren xake piezak"
+      },
+      "it": {
+        "language": "it",
+        "value": "scacchi di Carlo Magno"
+      }
+    },
+    "descriptions": {
+      "de": {
+        "language": "de",
+        "value": "legendäre Schachfiguren"
+      },
+      "en": {
+        "language": "en",
+        "value": "group of 11th-century chess pieces"
+      },
+      "fr": {
+        "language": "fr",
+        "value": "ensemble de pièces d'échecs en ivoire datant de la fin du XIe siècle"
+      },
+      "it": {
+        "language": "it",
+        "value": "set di scacchi medievali (XI secolo)"
+      }
+    },
+    "aliases": {},
+    "claims": {
+      "P373": [
+        {
+          "mainsnak": {
+            "snaktype": "value",
+            "property": "P373",
+            "hash": "4e18675f3ca2c20fb04157f2cf5613e51d4c72e4",
+            "datavalue": {
+              "value": "Charlemagne chessmen",
+              "type": "string"
+            },
+            "datatype": "string"
+          },
+          "type": "statement",
+          "id": "Q2229556$9F506764-8563-4408-9356-F4F332B52DDE",
+          "rank": "normal"
+        }
+      ],
+      "P31": [
+        {
+          "mainsnak": {
+            "snaktype": "value",
+            "property": "P31",
+            "hash": "17d3dd5c0cf0194140c1e9e159fdd693fe2926d0",
+            "datavalue": {
+              "value": {
+                "entity-type": "item",
+                "numeric-id": 208440,
+                "id": "Q208440"
+              },
+              "type": "wikibase-entityid"
+            },
+            "datatype": "wikibase-item"
+          },
+          "type": "statement",
+          "id": "Q2229556$fc1aba7b-4296-dd11-88f2-a09f9d93ee7a",
+          "rank": "normal"
+        }
+      ],
+      "P18": [
+        {
+          "mainsnak": {
+            "snaktype": "value",
+            "property": "P18",
+            "hash": "dcdd3763781b1e5579fea53e9f9e65d4a8daff63",
+            "datavalue": {
+              "value": "Paris 2e Bibliothèque nationale Site Richelieu-Louvois Musée de la BnF Ivoires 873 (cropped).jpg",
+              "type": "string"
+            },
+            "datatype": "commonsMedia"
+          },
+          "type": "statement",
+          "id": "Q2229556$F51C13EF-14D3-43A6-B171-729BBF582DEA",
+          "rank": "normal"
+        }
+      ],
+      "P2671": [
+        {
+          "mainsnak": {
+            "snaktype": "value",
+            "property": "P2671",
+            "hash": "babb5e96224251d0e2aff248d6c2f5b555e7fca0",
+            "datavalue": {
+              "value": "/g/121m2st6",
+              "type": "string"
+            },
+            "datatype": "external-id"
+          },
+          "type": "statement",
+          "id": "Q2229556$FBFA1707-D4EF-41AC-A8F6-0A1515C286BA",
+          "rank": "normal"
+        }
+      ],
+      "P361": [
+        {
+          "mainsnak": {
+            "snaktype": "value",
+            "property": "P361",
+            "hash": "16c6e8870f682ba7450b3ec7df1d61050e51206e",
+            "datavalue": {
+              "value": {
+                "entity-type": "item",
+                "numeric-id": 3541335,
+                "id": "Q3541335"
+              },
+              "type": "wikibase-entityid"
+            },
+            "datatype": "wikibase-item"
+          },
+          "type": "statement",
+          "id": "Q2229556$a8a492c2-45c4-43b4-f595-80d417a43067",
+          "rank": "normal"
+        }
+      ],
+      "P195": [
+        {
+          "mainsnak": {
+            "snaktype": "value",
+            "property": "P195",
+            "hash": "429486b32a20d14fca17b6a550150224023814a3",
+            "datavalue": {
+              "value": {
+                "entity-type": "item",
+                "numeric-id": 549143,
+                "id": "Q549143"
+              },
+              "type": "wikibase-entityid"
+            },
+            "datatype": "wikibase-item"
+          },
+          "type": "statement",
+          "id": "Q2229556$adc4d4af-4f13-5448-38ea-aa0aab74d9a0",
+          "rank": "normal"
+        }
+      ],
+      "P217": [
+        {
+          "mainsnak": {
+            "snaktype": "value",
+            "property": "P217",
+            "hash": "a3bfd71fb809563f9ebe1524e8dbb040768114f7",
+            "datavalue": {
+              "value": "inv.55.311",
+              "type": "string"
+            },
+            "datatype": "string"
+          },
+          "type": "statement",
+          "qualifiers": {
+            "P195": [
+              {
+                "snaktype": "value",
+                "property": "P195",
+                "hash": "429486b32a20d14fca17b6a550150224023814a3",
+                "datavalue": {
+                  "value": {
+                    "entity-type": "item",
+                    "numeric-id": 549143,
+                    "id": "Q549143"
+                  },
+                  "type": "wikibase-entityid"
+                },
+                "datatype": "wikibase-item"
+              }
+            ],
+            "P518": [
+              {
+                "snaktype": "value",
+                "property": "P518",
+                "hash": "93c4ca391270eacef7136b4c218db21fb3cf85a0",
+                "datavalue": {
+                  "value": {
+                    "entity-type": "item",
+                    "numeric-id": 138,
+                    "id": "Q138"
+                  },
+                  "type": "wikibase-entityid"
+                },
+                "datatype": "wikibase-item"
+              }
+            ]
+          },
+          "qualifiers-order": [
+            "P195",
+            "P518"
+          ],
+          "id": "Q2229556$2e36d96d-4684-7ec8-d884-29dbec979bf7",
+          "rank": "normal"
+        },
+        {
+          "mainsnak": {
+            "snaktype": "value",
+            "property": "P217",
+            "hash": "4190f3f2e99d2366131b31df4983f2ad360b1f98",
+            "datavalue": {
+              "value": "Inv.55.323",
+              "type": "string"
+            },
+            "datatype": "string"
+          },
+          "type": "statement",
+          "qualifiers": {
+            "P195": [
+              {
+                "snaktype": "value",
+                "property": "P195",
+                "hash": "429486b32a20d14fca17b6a550150224023814a3",
+                "datavalue": {
+                  "value": {
+                    "entity-type": "item",
+                    "numeric-id": 549143,
+                    "id": "Q549143"
+                  },
+                  "type": "wikibase-entityid"
+                },
+                "datatype": "wikibase-item"
+              }
+            ],
+            "P518": [
+              {
+                "snaktype": "value",
+                "property": "P518",
+                "hash": "9c475b1d7d2c59e49bf8efd3d594b2eba016915b",
+                "datavalue": {
+                  "value": {
+                    "entity-type": "item",
+                    "numeric-id": 135,
+                    "id": "Q135"
+                  },
+                  "type": "wikibase-entityid"
+                },
+                "datatype": "wikibase-item"
+              }
+            ]
+          },
+          "qualifiers-order": [
+            "P195",
+            "P518"
+          ],
+          "id": "Q2229556$9e2f6caa-464c-f7c2-525d-429482b197c2",
+          "rank": "normal"
+        }
+      ],
+      "P1889": [
+        {
+          "mainsnak": {
+            "snaktype": "value",
+            "property": "P1889",
+            "hash": "502a8349a163a957e561a83f10312888e046c556",
+            "datavalue": {
+              "value": {
+                "entity-type": "item",
+                "numeric-id": 132348273,
+                "id": "Q132348273"
+              },
+              "type": "wikibase-entityid"
+            },
+            "datatype": "wikibase-item"
+          },
+          "type": "statement",
+          "id": "Q2229556$c0df254c-40e0-c9c7-9157-7c01a29fb7b9",
+          "rank": "normal"
+        }
+      ],
+      "P186": [
+        {
+          "mainsnak": {
+            "snaktype": "value",
+            "property": "P186",
+            "hash": "f9a46b92b4290446bdc4f9ee16605a9e96e96c89",
+            "datavalue": {
+              "value": {
+                "entity-type": "item",
+                "numeric-id": 82001,
+                "id": "Q82001"
+              },
+              "type": "wikibase-entityid"
+            },
+            "datatype": "wikibase-item"
+          },
+          "type": "statement",
+          "id": "Q2229556$d3828bd1-4d5a-9394-b271-b0672d6a3520",
+          "rank": "normal"
+        }
+      ],
+      "P571": [
+        {
+          "mainsnak": {
+            "snaktype": "value",
+            "property": "P571",
+            "hash": "8bca676fc5011efc34eb9d1929edbad61444f8fa",
+            "datavalue": {
+              "value": {
+                "time": "+1100-00-00T00:00:00Z",
+                "timezone": 0,
+                "before": 0,
+                "after": 0,
+                "precision": 7,
+                "calendarmodel": "http://www.wikidata.org/entity/Q1985786"
+              },
+              "type": "time"
+            },
+            "datatype": "time"
+          },
+          "type": "statement",
+          "id": "Q2229556$09d25ad0-4afa-6cdd-18c1-ddfae3ae22d4",
+          "rank": "normal"
+        }
+      ]
+    },
+    "sitelinks": {
+      "arwiki": {
+        "site": "arwiki",
+        "title": "قطع شارلمان الشطرنجية",
+        "badges": [],
+        "url": "https://ar.wikipedia.org/wiki/%D9%82%D8%B7%D8%B9_%D8%B4%D8%A7%D8%B1%D9%84%D9%85%D8%A7%D9%86_%D8%A7%D9%84%D8%B4%D8%B7%D8%B1%D9%86%D8%AC%D9%8A%D8%A9"
+      },
+      "commonswiki": {
+        "site": "commonswiki",
+        "title": "Category:Charlemagne chessmen",
+        "badges": [],
+        "url": "https://commons.wikimedia.org/wiki/Category:Charlemagne_chessmen"
+      },
+      "dewiki": {
+        "site": "dewiki",
+        "title": "Schachspiel Karls des Großen",
+        "badges": [],
+        "url": "https://de.wikipedia.org/wiki/Schachspiel_Karls_des_Gro%C3%9Fen"
+      },
+      "enwiki": {
+        "site": "enwiki",
+        "title": "Charlemagne chessmen",
+        "badges": [],
+        "url": "https://en.wikipedia.org/wiki/Charlemagne_chessmen"
+      },
+      "euwiki": {
+        "site": "euwiki",
+        "title": "Karlomagnoren xake piezak",
+        "badges": [],
+        "url": "https://eu.wikipedia.org/wiki/Karlomagnoren_xake_piezak"
+      },
+      "frwiki": {
+        "site": "frwiki",
+        "title": "Échiquier de Charlemagne",
+        "badges": [],
+        "url": "https://fr.wikipedia.org/wiki/%C3%89chiquier_de_Charlemagne"
+      },
+      "itwiki": {
+        "site": "itwiki",
+        "title": "Scacchi di Carlo Magno",
+        "badges": [],
+        "url": "https://it.wikipedia.org/wiki/Scacchi_di_Carlo_Magno"
+      },
+      "ptwiki": {
+        "site": "ptwiki",
+        "title": "Peças de Carlos Magno",
+        "badges": [],
+        "url": "https://pt.wikipedia.org/wiki/Pe%C3%A7as_de_Carlos_Magno"
+      },
+      "ruwiki": {
+        "site": "ruwiki",
+        "title": "Шахматные фигуры Карла Великого",
+        "badges": [],
+        "url": "https://ru.wikipedia.org/wiki/%D0%A8%D0%B0%D1%85%D0%BC%D0%B0%D1%82%D0%BD%D1%8B%D0%B5_%D1%84%D0%B8%D0%B3%D1%83%D1%80%D1%8B_%D0%9A%D0%B0%D1%80%D0%BB%D0%B0_%D0%92%D0%B5%D0%BB%D0%B8%D0%BA%D0%BE%D0%B3%D0%BE"
+      },
+      "ukwiki": {
+        "site": "ukwiki",
+        "title": "Шахівниця Карла Великого",
+        "badges": [],
+        "url": "https://uk.wikipedia.org/wiki/%D0%A8%D0%B0%D1%85%D1%96%D0%B2%D0%BD%D0%B8%D1%86%D1%8F_%D0%9A%D0%B0%D1%80%D0%BB%D0%B0_%D0%92%D0%B5%D0%BB%D0%B8%D0%BA%D0%BE%D0%B3%D0%BE"
+      }
+    }
+  }
+}

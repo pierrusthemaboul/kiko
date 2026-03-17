@@ -1,0 +1,72 @@
+{
+  "saved_at": "2026-03-07T15:20:47.413Z",
+  "value": {
+    "pageid": 120031367,
+    "ns": 0,
+    "title": "Q125948291",
+    "lastrevid": 2156210268,
+    "modified": "2024-05-16T18:33:19Z",
+    "type": "item",
+    "id": "Q125948291",
+    "labels": {
+      "fr": {
+        "language": "fr",
+        "value": "Bourgogne arlésienne"
+      }
+    },
+    "descriptions": {},
+    "aliases": {},
+    "claims": {
+      "P31": [
+        {
+          "mainsnak": {
+            "snaktype": "value",
+            "property": "P31",
+            "hash": "abd447215fffa3557942cea54bdbab5287b9dfc9",
+            "datavalue": {
+              "value": {
+                "entity-type": "item",
+                "numeric-id": 19953632,
+                "id": "Q19953632"
+              },
+              "type": "wikibase-entityid"
+            },
+            "datatype": "wikibase-item"
+          },
+          "type": "statement",
+          "id": "Q125948291$5fbfe58d-2395-4c29-89ff-e5ca2a266f24",
+          "rank": "normal"
+        }
+      ],
+      "P131": [
+        {
+          "mainsnak": {
+            "snaktype": "value",
+            "property": "P131",
+            "hash": "9ca8e1cd7df4d31e53ac82c14eafaf9f902d5785",
+            "datavalue": {
+              "value": {
+                "entity-type": "item",
+                "numeric-id": 91329095,
+                "id": "Q91329095"
+              },
+              "type": "wikibase-entityid"
+            },
+            "datatype": "wikibase-item"
+          },
+          "type": "statement",
+          "id": "Q125948291$90a44320-489e-31b2-239a-0f3b21034744",
+          "rank": "normal"
+        }
+      ]
+    },
+    "sitelinks": {
+      "frwiki": {
+        "site": "frwiki",
+        "title": "Bourgogne arlésienne",
+        "badges": [],
+        "url": "https://fr.wikipedia.org/wiki/Bourgogne_arl%C3%A9sienne"
+      }
+    }
+  }
+}

@@ -1,0 +1,155 @@
+{
+  "pageid": 104234338,
+  "ns": 0,
+  "title": "Q109017902",
+  "lastrevid": 1984598621,
+  "modified": "2023-09-30T20:26:26Z",
+  "type": "item",
+  "id": "Q109017902",
+  "labels": {
+    "fr": {
+      "language": "fr",
+      "value": "Carrière militaire de Francisco Franco au Maroc"
+    },
+    "es": {
+      "language": "es",
+      "value": "carrera militar de Francisco Franco en Marruecos"
+    },
+    "en": {
+      "language": "en",
+      "value": "military career of Francisco Franco in Morocco"
+    }
+  },
+  "descriptions": {
+    "fr": {
+      "language": "fr",
+      "value": "période de la carrière du général Francisco Franco"
+    },
+    "es": {
+      "language": "es",
+      "value": "periodo de la carrera del militar y dictador Francisco Franco"
+    }
+  },
+  "aliases": {},
+  "claims": {
+    "P17": [
+      {
+        "mainsnak": {
+          "snaktype": "value",
+          "property": "P17",
+          "hash": "9c10f5ee565afa434463bdeb7a1d0436c70e675a",
+          "datavalue": {
+            "value": {
+              "entity-type": "item",
+              "numeric-id": 457242,
+              "id": "Q457242"
+            },
+            "type": "wikibase-entityid"
+          },
+          "datatype": "wikibase-item"
+        },
+        "type": "statement",
+        "id": "Q109017902$A77B58FB-BBD8-414B-85D7-4A922158EF99",
+        "rank": "normal"
+      }
+    ],
+    "P31": [
+      {
+        "mainsnak": {
+          "snaktype": "value",
+          "property": "P31",
+          "hash": "569445db6c4d5081346c977df28021bbf651d89b",
+          "datavalue": {
+            "value": {
+              "entity-type": "item",
+              "numeric-id": 20872118,
+              "id": "Q20872118"
+            },
+            "type": "wikibase-entityid"
+          },
+          "datatype": "wikibase-item"
+        },
+        "type": "statement",
+        "id": "Q109017902$6c98f4ae-4923-53be-e50e-4df28af0823d",
+        "rank": "normal"
+      }
+    ],
+    "P1269": [
+      {
+        "mainsnak": {
+          "snaktype": "value",
+          "property": "P1269",
+          "hash": "ee9ec847878dfdf2edd9dcb22a988a4215646f1d",
+          "datavalue": {
+            "value": {
+              "entity-type": "item",
+              "numeric-id": 29179,
+              "id": "Q29179"
+            },
+            "type": "wikibase-entityid"
+          },
+          "datatype": "wikibase-item"
+        },
+        "type": "statement",
+        "id": "Q109017902$9580d951-4eb4-016c-817f-b6df6aea30e2",
+        "rank": "normal"
+      }
+    ],
+    "P580": [
+      {
+        "mainsnak": {
+          "snaktype": "value",
+          "property": "P580",
+          "hash": "3266a3516873d3ba6fbf8e74764613c79fbfddbd",
+          "datavalue": {
+            "value": {
+              "time": "+1912-02-17T00:00:00Z",
+              "timezone": 0,
+              "before": 0,
+              "after": 0,
+              "precision": 11,
+              "calendarmodel": "http://www.wikidata.org/entity/Q1985727"
+            },
+            "type": "time"
+          },
+          "datatype": "time"
+        },
+        "type": "statement",
+        "id": "Q109017902$355a107e-4ee0-b171-fd64-bfdb6060d5cd",
+        "rank": "normal"
+      }
+    ],
+    "P582": [
+      {
+        "mainsnak": {
+          "snaktype": "value",
+          "property": "P582",
+          "hash": "39b8aed3d74386d3933c0320030592df68680e9b",
+          "datavalue": {
+            "value": {
+              "time": "+1926-02-00T00:00:00Z",
+              "timezone": 0,
+              "before": 0,
+              "after": 0,
+              "precision": 10,
+              "calendarmodel": "http://www.wikidata.org/entity/Q1985727"
+            },
+            "type": "time"
+          },
+          "datatype": "time"
+        },
+        "type": "statement",
+        "id": "Q109017902$dbe6724a-4b52-3f9d-5189-4fd2f41e4076",
+        "rank": "normal"
+      }
+    ]
+  },
+  "sitelinks": {
+    "frwiki": {
+      "site": "frwiki",
+      "title": "Carrière militaire de Francisco Franco au Maroc",
+      "badges": [],
+      "url": "https://fr.wikipedia.org/wiki/Carri%C3%A8re_militaire_de_Francisco_Franco_au_Maroc"
+    }
+  }
+}

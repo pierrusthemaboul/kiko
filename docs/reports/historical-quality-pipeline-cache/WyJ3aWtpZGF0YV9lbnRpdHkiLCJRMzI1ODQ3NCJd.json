@@ -1,0 +1,170 @@
+{
+  "pageid": 3109492,
+  "ns": 0,
+  "title": "Q3258474",
+  "lastrevid": 2317347334,
+  "modified": "2025-02-26T15:55:53Z",
+  "type": "item",
+  "id": "Q3258474",
+  "labels": {
+    "fr": {
+      "language": "fr",
+      "value": "Loi du 31 mars 2006 pour l'égalité des chances"
+    },
+    "sv": {
+      "language": "sv",
+      "value": "Lagen om lika möjligheter"
+    }
+  },
+  "descriptions": {
+    "ast": {
+      "language": "ast",
+      "value": "llei francesa"
+    },
+    "fr": {
+      "language": "fr",
+      "value": "loi française"
+    }
+  },
+  "aliases": {
+    "fr": [
+      {
+        "language": "fr",
+        "value": "Projet de loi pour l'égalité des chances"
+      },
+      {
+        "language": "fr",
+        "value": "Loi sur l'égalité des chances"
+      },
+      {
+        "language": "fr",
+        "value": "Loi Pour L'égalité Des Chances"
+      },
+      {
+        "language": "fr",
+        "value": "Loi pour l'egalite des chances"
+      },
+      {
+        "language": "fr",
+        "value": "Loi n° 2006-396 du 31 mars 2006"
+      },
+      {
+        "language": "fr",
+        "value": "Loi pour l'égalité des chances"
+      }
+    ]
+  },
+  "claims": {
+    "P31": [
+      {
+        "mainsnak": {
+          "snaktype": "value",
+          "property": "P31",
+          "hash": "26feacaf586ee8762b1a5523fb6432ebd6ffe651",
+          "datavalue": {
+            "value": {
+              "entity-type": "item",
+              "numeric-id": 13408009,
+              "id": "Q13408009"
+            },
+            "type": "wikibase-entityid"
+          },
+          "datatype": "wikibase-item"
+        },
+        "type": "statement",
+        "id": "Q3258474$B736B8A4-3876-4E5B-9653-CC1B90CCCFF7",
+        "rank": "normal"
+      }
+    ],
+    "P17": [
+      {
+        "mainsnak": {
+          "snaktype": "value",
+          "property": "P17",
+          "hash": "c05db5d169c2560b9799d567a803d20a392f53e4",
+          "datavalue": {
+            "value": {
+              "entity-type": "item",
+              "numeric-id": 142,
+              "id": "Q142"
+            },
+            "type": "wikibase-entityid"
+          },
+          "datatype": "wikibase-item"
+        },
+        "type": "statement",
+        "id": "Q3258474$74928149-B379-4AB1-8194-BFBE044A2EB6",
+        "rank": "normal"
+      }
+    ],
+    "P1001": [
+      {
+        "mainsnak": {
+          "snaktype": "value",
+          "property": "P1001",
+          "hash": "efe2878aed693a79dce942b2f853910a78c4e2a8",
+          "datavalue": {
+            "value": {
+              "entity-type": "item",
+              "numeric-id": 142,
+              "id": "Q142"
+            },
+            "type": "wikibase-entityid"
+          },
+          "datatype": "wikibase-item"
+        },
+        "type": "statement",
+        "id": "Q3258474$B8E3B4E2-3E6B-4AEF-8C9F-DFAF03520FF4",
+        "rank": "normal"
+      }
+    ],
+    "P464": [
+      {
+        "mainsnak": {
+          "snaktype": "value",
+          "property": "P464",
+          "hash": "ecb99f0c0f5956ada0d17d1be6557c643c94bcdf",
+          "datavalue": {
+            "value": "SOCX0500298L",
+            "type": "string"
+          },
+          "datatype": "external-id"
+        },
+        "type": "statement",
+        "id": "Q3258474$9fa73df6-4bce-d523-6e54-73ee7769add3",
+        "rank": "normal"
+      }
+    ],
+    "P2671": [
+      {
+        "mainsnak": {
+          "snaktype": "value",
+          "property": "P2671",
+          "hash": "5b5bc5f0b1575e6fcfa411645e16ed4f7ccb95d4",
+          "datavalue": {
+            "value": "/g/11bbxnxrds",
+            "type": "string"
+          },
+          "datatype": "external-id"
+        },
+        "type": "statement",
+        "id": "Q3258474$918BC9A7-BEFE-46E8-BD64-5336BBCF80F3",
+        "rank": "normal"
+      }
+    ]
+  },
+  "sitelinks": {
+    "frwiki": {
+      "site": "frwiki",
+      "title": "Loi pour l'égalité des chances",
+      "badges": [],
+      "url": "https://fr.wikipedia.org/wiki/Loi_pour_l%27%C3%A9galit%C3%A9_des_chances"
+    },
+    "svwiki": {
+      "site": "svwiki",
+      "title": "Lagen om lika möjligheter",
+      "badges": [],
+      "url": "https://sv.wikipedia.org/wiki/Lagen_om_lika_m%C3%B6jligheter"
+    }
+  }
+}

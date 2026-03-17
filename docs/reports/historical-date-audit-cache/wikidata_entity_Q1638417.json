@@ -1,0 +1,490 @@
+{
+  "saved_at": "2026-03-07T16:42:50.502Z",
+  "value": {
+    "pageid": 1572668,
+    "ns": 0,
+    "title": "Q1638417",
+    "lastrevid": 2434938294,
+    "modified": "2025-11-28T02:09:32Z",
+    "type": "item",
+    "id": "Q1638417",
+    "labels": {
+      "de": {
+        "language": "de",
+        "value": "mechanisches Fernsehen"
+      },
+      "ja": {
+        "language": "ja",
+        "value": "機械式テレビジョン"
+      },
+      "ru": {
+        "language": "ru",
+        "value": "механическое телевидение"
+      },
+      "en": {
+        "language": "en",
+        "value": "mechanical television"
+      },
+      "es": {
+        "language": "es",
+        "value": "televisión electromecánica"
+      },
+      "ca": {
+        "language": "ca",
+        "value": "televisió electromecànica"
+      },
+      "hu": {
+        "language": "hu",
+        "value": "elektromechanikus televíziókészülék"
+      },
+      "fr": {
+        "language": "fr",
+        "value": "télévision mécanique"
+      },
+      "uk": {
+        "language": "uk",
+        "value": "механічне телебачення"
+      },
+      "he": {
+        "language": "he",
+        "value": "טלוויזיה מכנית"
+      },
+      "ar": {
+        "language": "ar",
+        "value": "تلفاز ميكانيكي"
+      },
+      "zh": {
+        "language": "zh",
+        "value": "機械掃描電視"
+      },
+      "ko": {
+        "language": "ko",
+        "value": "기계식 텔레비전"
+      },
+      "fa": {
+        "language": "fa",
+        "value": "تلویزیون مکانیکی"
+      },
+      "pt": {
+        "language": "pt",
+        "value": "Televisão mecânica"
+      },
+      "sl": {
+        "language": "sl",
+        "value": "mehanska televizija"
+      }
+    },
+    "descriptions": {
+      "en": {
+        "language": "en",
+        "value": "a television system that relies on a mechanical scanning device, to both scan and reproduce the video signal"
+      },
+      "es": {
+        "language": "es",
+        "value": "sistema de televisión"
+      },
+      "ru": {
+        "language": "ru",
+        "value": "разновидность телевидения, использующая электромеханические устройства"
+      },
+      "fr": {
+        "language": "fr",
+        "value": "système de télévision"
+      },
+      "de": {
+        "language": "de",
+        "value": "erstes bestehendes Fernsehverfahren"
+      },
+      "fa": {
+        "language": "fa",
+        "value": "یک سیستم تلویزیونی که برای اسکن و بازتولید سیگنال ویدئویی به یک دستگاه اسکن مکانیکی متکی است."
+      },
+      "uk": {
+        "language": "uk",
+        "value": "різновид телебачення, що використовує електромеханічні пристрої як для сканування, так і відтворення відеосигналу"
+      },
+      "sl": {
+        "language": "sl",
+        "value": "televizijski sistem, ki za skeniranje in reprodukcijo videosignala uporablja mehansko napravo za skeniranje"
+      }
+    },
+    "aliases": {
+      "de": [
+        {
+          "language": "de",
+          "value": "telegrafisches Sehen"
+        },
+        {
+          "language": "de",
+          "value": "elektrisches Teleskop"
+        }
+      ],
+      "ru": [
+        {
+          "language": "ru",
+          "value": "малострочное телевидение"
+        },
+        {
+          "language": "ru",
+          "value": "электромеханическое телевидение"
+        }
+      ],
+      "es": [
+        {
+          "language": "es",
+          "value": "television electromecanica"
+        },
+        {
+          "language": "es",
+          "value": "television electromecánica"
+        },
+        {
+          "language": "es",
+          "value": "televisión electromecanica"
+        }
+      ],
+      "en": [
+        {
+          "language": "en",
+          "value": "mechanical scan television"
+        }
+      ],
+      "ar": [
+        {
+          "language": "ar",
+          "value": "تلویزیون اسکن مکانیکی"
+        }
+      ]
+    },
+    "claims": {
+      "P646": [
+        {
+          "mainsnak": {
+            "snaktype": "value",
+            "property": "P646",
+            "hash": "9b8d6176f134769f574e2bc08cc85c5904624480",
+            "datavalue": {
+              "value": "/m/04wqv2",
+              "type": "string"
+            },
+            "datatype": "external-id"
+          },
+          "type": "statement",
+          "id": "Q1638417$8AA8A693-5337-48B9-B5CE-A1ACFB9D6864",
+          "rank": "normal",
+          "references": [
+            {
+              "hash": "2b00cb481cddcac7623114367489b5c194901c4a",
+              "snaks": {
+                "P248": [
+                  {
+                    "snaktype": "value",
+                    "property": "P248",
+                    "hash": "a94b740202b097dd33355e0e6c00e54b9395e5e0",
+                    "datavalue": {
+                      "value": {
+                        "entity-type": "item",
+                        "numeric-id": 15241312,
+                        "id": "Q15241312"
+                      },
+                      "type": "wikibase-entityid"
+                    },
+                    "datatype": "wikibase-item"
+                  }
+                ],
+                "P577": [
+                  {
+                    "snaktype": "value",
+                    "property": "P577",
+                    "hash": "fde79ecb015112d2f29229ccc1ec514ed3e71fa2",
+                    "datavalue": {
+                      "value": {
+                        "time": "+2013-10-28T00:00:00Z",
+                        "timezone": 0,
+                        "before": 0,
+                        "after": 0,
+                        "precision": 11,
+                        "calendarmodel": "http://www.wikidata.org/entity/Q1985727"
+                      },
+                      "type": "time"
+                    },
+                    "datatype": "time"
+                  }
+                ]
+              },
+              "snaks-order": [
+                "P248",
+                "P577"
+              ]
+            }
+          ]
+        }
+      ],
+      "P279": [
+        {
+          "mainsnak": {
+            "snaktype": "value",
+            "property": "P279",
+            "hash": "f94af0e024af56bb1e141895cd7006937986513e",
+            "datavalue": {
+              "value": {
+                "entity-type": "item",
+                "numeric-id": 258137,
+                "id": "Q258137"
+              },
+              "type": "wikibase-entityid"
+            },
+            "datatype": "wikibase-item"
+          },
+          "type": "statement",
+          "id": "Q1638417$7be31d8b-4ba4-581f-a416-92b7e05e30eb",
+          "rank": "normal"
+        },
+        {
+          "mainsnak": {
+            "snaktype": "value",
+            "property": "P279",
+            "hash": "8ba00b3360ae7984a43dc01b38d42c6e6e9de9a5",
+            "datavalue": {
+              "value": {
+                "entity-type": "item",
+                "numeric-id": 7697144,
+                "id": "Q7697144"
+              },
+              "type": "wikibase-entityid"
+            },
+            "datatype": "wikibase-item"
+          },
+          "type": "statement",
+          "id": "Q1638417$9A358B56-1123-4D23-B6FA-51A0A5987514",
+          "rank": "normal"
+        }
+      ],
+      "P571": [
+        {
+          "mainsnak": {
+            "snaktype": "value",
+            "property": "P571",
+            "hash": "4d12bafdcb6011d6303338609ce5f7117df7bd4d",
+            "datavalue": {
+              "value": {
+                "time": "+1920-00-00T00:00:00Z",
+                "timezone": 0,
+                "before": 0,
+                "after": 0,
+                "precision": 8,
+                "calendarmodel": "http://www.wikidata.org/entity/Q1985727"
+              },
+              "type": "time"
+            },
+            "datatype": "time"
+          },
+          "type": "statement",
+          "id": "Q1638417$a840391e-43b9-060e-8735-b2d9c60cef25",
+          "rank": "normal"
+        }
+      ],
+      "P373": [
+        {
+          "mainsnak": {
+            "snaktype": "value",
+            "property": "P373",
+            "hash": "0554e04a7667822ac05e9121dae9cefb5ccb7988",
+            "datavalue": {
+              "value": "Mechanical-scan television systems",
+              "type": "string"
+            },
+            "datatype": "string"
+          },
+          "type": "statement",
+          "id": "Q1638417$7BA927CB-8537-4448-98E3-75AF84ABE104",
+          "rank": "normal"
+        }
+      ],
+      "P61": [
+        {
+          "mainsnak": {
+            "snaktype": "value",
+            "property": "P61",
+            "hash": "7c2696dace1b9ab16a22c927285b9be46453ee6d",
+            "datavalue": {
+              "value": {
+                "entity-type": "item",
+                "numeric-id": 133544,
+                "id": "Q133544"
+              },
+              "type": "wikibase-entityid"
+            },
+            "datatype": "wikibase-item"
+          },
+          "type": "statement",
+          "id": "Q1638417$83d9b00d-4759-993c-4fc2-f1490e755c99",
+          "rank": "normal"
+        }
+      ],
+      "P3417": [
+        {
+          "mainsnak": {
+            "snaktype": "value",
+            "property": "P3417",
+            "hash": "624492b8494163c01a16894b437b079ebb9b13fd",
+            "datavalue": {
+              "value": "Mechanical-Television",
+              "type": "string"
+            },
+            "datatype": "external-id"
+          },
+          "type": "statement",
+          "id": "Q1638417$9B532B3A-8CAD-4698-ABDB-2B4A48C6A2DC",
+          "rank": "normal",
+          "references": [
+            {
+              "hash": "3b0a5bb3c1f955edce73740124f7d935698092ad",
+              "snaks": {
+                "P248": [
+                  {
+                    "snaktype": "value",
+                    "property": "P248",
+                    "hash": "3ac9682e789a3a3791d4fd088b265ea03abef101",
+                    "datavalue": {
+                      "value": {
+                        "entity-type": "item",
+                        "numeric-id": 51711,
+                        "id": "Q51711"
+                      },
+                      "type": "wikibase-entityid"
+                    },
+                    "datatype": "wikibase-item"
+                  }
+                ]
+              },
+              "snaks-order": [
+                "P248"
+              ]
+            }
+          ]
+        }
+      ],
+      "P4431": [
+        {
+          "mainsnak": {
+            "snaktype": "value",
+            "property": "P4431",
+            "hash": "103032ea9259cd275eaecd9b6188ce5228f6357a",
+            "datavalue": {
+              "value": "90th-anniversary-of-the-first-demonstration-of-television",
+              "type": "string"
+            },
+            "datatype": "external-id"
+          },
+          "type": "statement",
+          "id": "Q1638417$c499d33e-409a-904e-31a5-03f816c180f9",
+          "rank": "normal"
+        }
+      ],
+      "P6366": [
+        {
+          "mainsnak": {
+            "snaktype": "value",
+            "property": "P6366",
+            "hash": "96931b8ed64d43b16ce7ebc7ecdac7cc17cab92a",
+            "datavalue": {
+              "value": "2777974602",
+              "type": "string"
+            },
+            "datatype": "external-id"
+          },
+          "type": "statement",
+          "id": "Q1638417$4CEAD308-743D-45BD-A691-74A14A331C68",
+          "rank": "normal"
+        }
+      ]
+    },
+    "sitelinks": {
+      "arwiki": {
+        "site": "arwiki",
+        "title": "تلفاز ميكانيكي",
+        "badges": [],
+        "url": "https://ar.wikipedia.org/wiki/%D8%AA%D9%84%D9%81%D8%A7%D8%B2_%D9%85%D9%8A%D9%83%D8%A7%D9%86%D9%8A%D9%83%D9%8A"
+      },
+      "cawiki": {
+        "site": "cawiki",
+        "title": "Televisió electromecànica",
+        "badges": [],
+        "url": "https://ca.wikipedia.org/wiki/Televisi%C3%B3_electromec%C3%A0nica"
+      },
+      "commonswiki": {
+        "site": "commonswiki",
+        "title": "Category:Mechanical-scan television systems",
+        "badges": [],
+        "url": "https://commons.wikimedia.org/wiki/Category:Mechanical-scan_television_systems"
+      },
+      "dewiki": {
+        "site": "dewiki",
+        "title": "Mechanisches Fernsehen",
+        "badges": [],
+        "url": "https://de.wikipedia.org/wiki/Mechanisches_Fernsehen"
+      },
+      "enwiki": {
+        "site": "enwiki",
+        "title": "Mechanical television",
+        "badges": [],
+        "url": "https://en.wikipedia.org/wiki/Mechanical_television"
+      },
+      "eswiki": {
+        "site": "eswiki",
+        "title": "Televisión electromecánica",
+        "badges": [],
+        "url": "https://es.wikipedia.org/wiki/Televisi%C3%B3n_electromec%C3%A1nica"
+      },
+      "frwiki": {
+        "site": "frwiki",
+        "title": "Télévision mécanique",
+        "badges": [],
+        "url": "https://fr.wikipedia.org/wiki/T%C3%A9l%C3%A9vision_m%C3%A9canique"
+      },
+      "hewiki": {
+        "site": "hewiki",
+        "title": "טלוויזיה מכנית",
+        "badges": [],
+        "url": "https://he.wikipedia.org/wiki/%D7%98%D7%9C%D7%95%D7%95%D7%99%D7%96%D7%99%D7%94_%D7%9E%D7%9B%D7%A0%D7%99%D7%AA"
+      },
+      "jawiki": {
+        "site": "jawiki",
+        "title": "機械式テレビジョン",
+        "badges": [],
+        "url": "https://ja.wikipedia.org/wiki/%E6%A9%9F%E6%A2%B0%E5%BC%8F%E3%83%86%E3%83%AC%E3%83%93%E3%82%B8%E3%83%A7%E3%83%B3"
+      },
+      "kowiki": {
+        "site": "kowiki",
+        "title": "기계식 텔레비전",
+        "badges": [],
+        "url": "https://ko.wikipedia.org/wiki/%EA%B8%B0%EA%B3%84%EC%8B%9D_%ED%85%94%EB%A0%88%EB%B9%84%EC%A0%84"
+      },
+      "ptwiki": {
+        "site": "ptwiki",
+        "title": "Televisão mecânica",
+        "badges": [],
+        "url": "https://pt.wikipedia.org/wiki/Televis%C3%A3o_mec%C3%A2nica"
+      },
+      "ruwiki": {
+        "site": "ruwiki",
+        "title": "Механическое телевидение",
+        "badges": [],
+        "url": "https://ru.wikipedia.org/wiki/%D0%9C%D0%B5%D1%85%D0%B0%D0%BD%D0%B8%D1%87%D0%B5%D1%81%D0%BA%D0%BE%D0%B5_%D1%82%D0%B5%D0%BB%D0%B5%D0%B2%D0%B8%D0%B4%D0%B5%D0%BD%D0%B8%D0%B5"
+      },
+      "ukwiki": {
+        "site": "ukwiki",
+        "title": "Механічне телебачення",
+        "badges": [],
+        "url": "https://uk.wikipedia.org/wiki/%D0%9C%D0%B5%D1%85%D0%B0%D0%BD%D1%96%D1%87%D0%BD%D0%B5_%D1%82%D0%B5%D0%BB%D0%B5%D0%B1%D0%B0%D1%87%D0%B5%D0%BD%D0%BD%D1%8F"
+      },
+      "zhwiki": {
+        "site": "zhwiki",
+        "title": "機械掃描電視",
+        "badges": [],
+        "url": "https://zh.wikipedia.org/wiki/%E6%A9%9F%E6%A2%B0%E6%8E%83%E6%8F%8F%E9%9B%BB%E8%A6%96"
+      }
+    }
+  }
+}

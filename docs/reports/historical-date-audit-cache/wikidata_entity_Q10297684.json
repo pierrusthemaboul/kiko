@@ -1,0 +1,145 @@
+{
+  "saved_at": "2026-03-07T15:27:13.814Z",
+  "value": {
+    "pageid": 11602446,
+    "ns": 0,
+    "title": "Q10297684",
+    "lastrevid": 1827286122,
+    "modified": "2023-02-06T00:07:17Z",
+    "type": "item",
+    "id": "Q10297684",
+    "labels": {
+      "pt": {
+        "language": "pt",
+        "value": "história dos jardins botânicos"
+      },
+      "es": {
+        "language": "es",
+        "value": "historia de los jardines botánicos"
+      },
+      "fr": {
+        "language": "fr",
+        "value": "histoire des jardins botaniques"
+      }
+    },
+    "descriptions": {},
+    "aliases": {
+      "pt": [
+        {
+          "language": "pt",
+          "value": "História do jardim botânico"
+        }
+      ],
+      "es": [
+        {
+          "language": "es",
+          "value": "Historia de los jardines botanicos"
+        }
+      ]
+    },
+    "claims": {
+      "P31": [
+        {
+          "mainsnak": {
+            "snaktype": "value",
+            "property": "P31",
+            "hash": "7ad5c7929af39fc2ff8afed55f1192f80e71d936",
+            "datavalue": {
+              "value": {
+                "entity-type": "item",
+                "numeric-id": 17524420,
+                "id": "Q17524420"
+              },
+              "type": "wikibase-entityid"
+            },
+            "datatype": "wikibase-item"
+          },
+          "type": "statement",
+          "id": "Q10297684$0AC1B709-6EE9-4151-B541-9060F5DE53D6",
+          "rank": "normal"
+        }
+      ],
+      "P2671": [
+        {
+          "mainsnak": {
+            "snaktype": "value",
+            "property": "P2671",
+            "hash": "766e970e3c58ba8a6657d2b7b38b992fb77408c5",
+            "datavalue": {
+              "value": "/g/122_gmrt",
+              "type": "string"
+            },
+            "datatype": "external-id"
+          },
+          "type": "statement",
+          "id": "Q10297684$AEB34A05-4C54-43DE-9E23-6651A429CEC0",
+          "rank": "normal"
+        }
+      ],
+      "P279": [
+        {
+          "mainsnak": {
+            "snaktype": "value",
+            "property": "P279",
+            "hash": "05c9929894e4fc7da9ac50b7fd188431b9d6dab3",
+            "datavalue": {
+              "value": {
+                "entity-type": "item",
+                "numeric-id": 2495041,
+                "id": "Q2495041"
+              },
+              "type": "wikibase-entityid"
+            },
+            "datatype": "wikibase-item"
+          },
+          "type": "statement",
+          "id": "Q10297684$fbbf4cfe-47c8-2125-3430-8ebc0a647a38",
+          "rank": "normal"
+        }
+      ],
+      "P1269": [
+        {
+          "mainsnak": {
+            "snaktype": "value",
+            "property": "P1269",
+            "hash": "bf29fc1902e4769e5a6652ae0e0b5aa4dc645aa7",
+            "datavalue": {
+              "value": {
+                "entity-type": "item",
+                "numeric-id": 167346,
+                "id": "Q167346"
+              },
+              "type": "wikibase-entityid"
+            },
+            "datatype": "wikibase-item"
+          },
+          "type": "statement",
+          "id": "Q10297684$ce8a903a-4ad9-412e-8df6-43239d15417e",
+          "rank": "normal"
+        }
+      ]
+    },
+    "sitelinks": {
+      "eswiki": {
+        "site": "eswiki",
+        "title": "Historia de los jardines botánicos",
+        "badges": [],
+        "url": "https://es.wikipedia.org/wiki/Historia_de_los_jardines_bot%C3%A1nicos"
+      },
+      "frwiki": {
+        "site": "frwiki",
+        "title": "Histoire des jardins botaniques",
+        "badges": [],
+        "url": "https://fr.wikipedia.org/wiki/Histoire_des_jardins_botaniques"
+      },
+      "ptwiki": {
+        "site": "ptwiki",
+        "title": "História dos jardins botânicos",
+        "badges": [
+          "Q70893996"
+        ],
+        "url": "https://pt.wikipedia.org/wiki/Hist%C3%B3ria_dos_jardins_bot%C3%A2nicos"
+      }
+    }
+  }
+}

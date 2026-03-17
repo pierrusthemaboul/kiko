@@ -1,0 +1,1521 @@
+{
+  "saved_at": "2026-03-07T15:06:09.732Z",
+  "value": {
+    "pageid": 446331,
+    "ns": 0,
+    "title": "Q473423",
+    "lastrevid": 2465642791,
+    "modified": "2026-02-22T13:01:53Z",
+    "type": "item",
+    "id": "Q473423",
+    "labels": {
+      "de": {
+        "language": "de",
+        "value": "Festival von Avignon"
+      },
+      "cv": {
+        "language": "cv",
+        "value": "Авиньон фестивалĕ"
+      },
+      "en": {
+        "language": "en",
+        "value": "Festival d'Avignon"
+      },
+      "es": {
+        "language": "es",
+        "value": "Festival de Aviñón"
+      },
+      "fr": {
+        "language": "fr",
+        "value": "Festival d'Avignon"
+      },
+      "he": {
+        "language": "he",
+        "value": "פסטיבל אביניון"
+      },
+      "it": {
+        "language": "it",
+        "value": "Festival di Avignone"
+      },
+      "ja": {
+        "language": "ja",
+        "value": "アヴィニョン演劇祭"
+      },
+      "nl": {
+        "language": "nl",
+        "value": "Festival van Avignon"
+      },
+      "pl": {
+        "language": "pl",
+        "value": "Festiwal Teatralny w Awinionie"
+      },
+      "ru": {
+        "language": "ru",
+        "value": "Авиньонский фестиваль"
+      },
+      "sv": {
+        "language": "sv",
+        "value": "Avignonfestivalen"
+      },
+      "tr": {
+        "language": "tr",
+        "value": "Avignon Festivali"
+      },
+      "uk": {
+        "language": "uk",
+        "value": "Авіньйонський фестиваль"
+      },
+      "vi": {
+        "language": "vi",
+        "value": "Festival Avignon"
+      },
+      "ko": {
+        "language": "ko",
+        "value": "아비뇽 연극제"
+      },
+      "zh": {
+        "language": "zh",
+        "value": "阿维尼翁节"
+      },
+      "et": {
+        "language": "et",
+        "value": "Avignoni teatrifestival"
+      },
+      "eu": {
+        "language": "eu",
+        "value": "Avignongo Jaialdia"
+      },
+      "fa": {
+        "language": "fa",
+        "value": "جشنواره آوینیون"
+      },
+      "eo": {
+        "language": "eo",
+        "value": "Festivalo de Avignon"
+      },
+      "cs": {
+        "language": "cs",
+        "value": "Divadelní festival v Avignonu"
+      },
+      "ro": {
+        "language": "ro",
+        "value": "Festivalul de Teatru de la Avignon"
+      },
+      "hu": {
+        "language": "hu",
+        "value": "Avignoni Fesztivál"
+      },
+      "el": {
+        "language": "el",
+        "value": "Φεστιβάλ της Αβινιόν"
+      },
+      "ca": {
+        "language": "ca",
+        "value": "Festival d'Avinyó"
+      }
+    },
+    "descriptions": {
+      "en": {
+        "language": "en",
+        "value": "theatrical festival"
+      },
+      "fr": {
+        "language": "fr",
+        "value": "festival de théâtre et de spectacle vivant se déroulant annuellement en Avignon"
+      },
+      "ja": {
+        "language": "ja",
+        "value": "フランスのアヴィニョンで開かれている芸術祭"
+      },
+      "hu": {
+        "language": "hu",
+        "value": "színházi, tánc és dalfesztivál Avignonban"
+      },
+      "de": {
+        "language": "de",
+        "value": "Theater-, Tanz- und Gesangsfestival in Avignon"
+      },
+      "el": {
+        "language": "el",
+        "value": "ετήσιο καλλιτεχνικό φεστιβάλ"
+      }
+    },
+    "aliases": {},
+    "claims": {
+      "P373": [
+        {
+          "mainsnak": {
+            "snaktype": "value",
+            "property": "P373",
+            "hash": "6cb53471067696a1865c966c75938ccc0db24515",
+            "datavalue": {
+              "value": "Festival d'Avignon",
+              "type": "string"
+            },
+            "datatype": "string"
+          },
+          "type": "statement",
+          "id": "q473423$D99A611E-C2B5-488C-86E4-47BA701893E7",
+          "rank": "normal"
+        }
+      ],
+      "P17": [
+        {
+          "mainsnak": {
+            "snaktype": "value",
+            "property": "P17",
+            "hash": "c05db5d169c2560b9799d567a803d20a392f53e4",
+            "datavalue": {
+              "value": {
+                "entity-type": "item",
+                "numeric-id": 142,
+                "id": "Q142"
+              },
+              "type": "wikibase-entityid"
+            },
+            "datatype": "wikibase-item"
+          },
+          "type": "statement",
+          "id": "q473423$B3E918A0-4608-4CE6-86EA-29DDF1175F9B",
+          "rank": "normal",
+          "references": [
+            {
+              "hash": "fa278ebfc458360e5aed63d5058cca83c46134f1",
+              "snaks": {
+                "P143": [
+                  {
+                    "snaktype": "value",
+                    "property": "P143",
+                    "hash": "e4f6d9441d0600513c4533c672b5ab472dc73694",
+                    "datavalue": {
+                      "value": {
+                        "entity-type": "item",
+                        "numeric-id": 328,
+                        "id": "Q328"
+                      },
+                      "type": "wikibase-entityid"
+                    },
+                    "datatype": "wikibase-item"
+                  }
+                ]
+              },
+              "snaks-order": [
+                "P143"
+              ]
+            }
+          ]
+        }
+      ],
+      "P646": [
+        {
+          "mainsnak": {
+            "snaktype": "value",
+            "property": "P646",
+            "hash": "8b6d5c313576b9547c41b267ae61782ab43ec1a0",
+            "datavalue": {
+              "value": "/m/0bwl8l",
+              "type": "string"
+            },
+            "datatype": "external-id"
+          },
+          "type": "statement",
+          "id": "Q473423$3A5CB3A4-BAC2-413A-B605-A9829D59A662",
+          "rank": "normal",
+          "references": [
+            {
+              "hash": "2b00cb481cddcac7623114367489b5c194901c4a",
+              "snaks": {
+                "P248": [
+                  {
+                    "snaktype": "value",
+                    "property": "P248",
+                    "hash": "a94b740202b097dd33355e0e6c00e54b9395e5e0",
+                    "datavalue": {
+                      "value": {
+                        "entity-type": "item",
+                        "numeric-id": 15241312,
+                        "id": "Q15241312"
+                      },
+                      "type": "wikibase-entityid"
+                    },
+                    "datatype": "wikibase-item"
+                  }
+                ],
+                "P577": [
+                  {
+                    "snaktype": "value",
+                    "property": "P577",
+                    "hash": "fde79ecb015112d2f29229ccc1ec514ed3e71fa2",
+                    "datavalue": {
+                      "value": {
+                        "time": "+2013-10-28T00:00:00Z",
+                        "timezone": 0,
+                        "before": 0,
+                        "after": 0,
+                        "precision": 11,
+                        "calendarmodel": "http://www.wikidata.org/entity/Q1985727"
+                      },
+                      "type": "time"
+                    },
+                    "datatype": "time"
+                  }
+                ]
+              },
+              "snaks-order": [
+                "P248",
+                "P577"
+              ]
+            }
+          ]
+        }
+      ],
+      "P31": [
+        {
+          "mainsnak": {
+            "snaktype": "value",
+            "property": "P31",
+            "hash": "557dc217e7f3f4be2c1cbe2d2341905f93bb826c",
+            "datavalue": {
+              "value": {
+                "entity-type": "item",
+                "numeric-id": 132241,
+                "id": "Q132241"
+              },
+              "type": "wikibase-entityid"
+            },
+            "datatype": "wikibase-item"
+          },
+          "type": "statement",
+          "id": "Q473423$ff853106-4a4d-b64d-3d84-6c198addc5d1",
+          "rank": "normal"
+        }
+      ],
+      "P856": [
+        {
+          "mainsnak": {
+            "snaktype": "value",
+            "property": "P856",
+            "hash": "158e973dc3abea5edffb8759dc167529a7a3e1b9",
+            "datavalue": {
+              "value": "https://www.festival-avignon.com/",
+              "type": "string"
+            },
+            "datatype": "url"
+          },
+          "type": "statement",
+          "qualifiers": {
+            "P407": [
+              {
+                "snaktype": "value",
+                "property": "P407",
+                "hash": "d197d0a5efa4b4c23a302a829dd3ef43684fe002",
+                "datavalue": {
+                  "value": {
+                    "entity-type": "item",
+                    "numeric-id": 150,
+                    "id": "Q150"
+                  },
+                  "type": "wikibase-entityid"
+                },
+                "datatype": "wikibase-item"
+              },
+              {
+                "snaktype": "value",
+                "property": "P407",
+                "hash": "daf1c4fcb58181b02dff9cc89deb084004ddae4b",
+                "datavalue": {
+                  "value": {
+                    "entity-type": "item",
+                    "numeric-id": 1860,
+                    "id": "Q1860"
+                  },
+                  "type": "wikibase-entityid"
+                },
+                "datatype": "wikibase-item"
+              }
+            ]
+          },
+          "qualifiers-order": [
+            "P407"
+          ],
+          "id": "Q473423$b9a463f5-4a00-cfeb-5164-f9c4f30f0c12",
+          "rank": "normal"
+        }
+      ],
+      "P18": [
+        {
+          "mainsnak": {
+            "snaktype": "value",
+            "property": "P18",
+            "hash": "e408e463de57f8ddbcadcdcc44b8ea005b212a41",
+            "datavalue": {
+              "value": "Jean Vilar au festival d'Avignon 1967 en compagnie d'Antoine Bourseiller et François Billetdoux.jpg",
+              "type": "string"
+            },
+            "datatype": "commonsMedia"
+          },
+          "type": "statement",
+          "id": "Q473423$bfd4b468-4954-8cdc-caaf-0e1053b71c2d",
+          "rank": "normal"
+        }
+      ],
+      "P2013": [
+        {
+          "mainsnak": {
+            "snaktype": "value",
+            "property": "P2013",
+            "hash": "edf7d4c77a333e6d34206798eee2b5e44a767198",
+            "datavalue": {
+              "value": "festival.avignon",
+              "type": "string"
+            },
+            "datatype": "external-id"
+          },
+          "type": "statement",
+          "id": "Q473423$ed350875-484c-0538-62c8-7a5d3b72be59",
+          "rank": "normal"
+        }
+      ],
+      "P2002": [
+        {
+          "mainsnak": {
+            "snaktype": "value",
+            "property": "P2002",
+            "hash": "58b11c6b19d342cb73fb56d3239adbd64dff6149",
+            "datavalue": {
+              "value": "FestivalAvignon",
+              "type": "string"
+            },
+            "datatype": "external-id"
+          },
+          "type": "statement",
+          "qualifiers": {
+            "P3744": [
+              {
+                "snaktype": "value",
+                "property": "P3744",
+                "hash": "b67dc2a6485d45320e0feff88b174570260f914e",
+                "datavalue": {
+                  "value": {
+                    "amount": "+33807",
+                    "unit": "1"
+                  },
+                  "type": "quantity"
+                },
+                "datatype": "quantity"
+              }
+            ],
+            "P6552": [
+              {
+                "snaktype": "value",
+                "property": "P6552",
+                "hash": "091d170d3e7197e6e03148c2978e07d2ec5c8457",
+                "datavalue": {
+                  "value": "322614516",
+                  "type": "string"
+                },
+                "datatype": "external-id"
+              }
+            ],
+            "P585": [
+              {
+                "snaktype": "value",
+                "property": "P585",
+                "hash": "5db48cf4d011c3882931889ed5e2d04f10f3c76f",
+                "datavalue": {
+                  "value": {
+                    "time": "+2018-05-10T00:00:00Z",
+                    "timezone": 0,
+                    "before": 0,
+                    "after": 0,
+                    "precision": 11,
+                    "calendarmodel": "http://www.wikidata.org/entity/Q1985727"
+                  },
+                  "type": "time"
+                },
+                "datatype": "time"
+              }
+            ],
+            "P580": [
+              {
+                "snaktype": "value",
+                "property": "P580",
+                "hash": "b468a0f4f16a72c9c9a9a005d107e6b80a29e4a2",
+                "datavalue": {
+                  "value": {
+                    "time": "+2011-06-23T00:00:00Z",
+                    "timezone": 0,
+                    "before": 0,
+                    "after": 0,
+                    "precision": 11,
+                    "calendarmodel": "http://www.wikidata.org/entity/Q1985727"
+                  },
+                  "type": "time"
+                },
+                "datatype": "time"
+              }
+            ]
+          },
+          "qualifiers-order": [
+            "P3744",
+            "P6552",
+            "P585",
+            "P580"
+          ],
+          "id": "Q473423$a3f13b77-4bc7-9815-57d9-599ceb3b887a",
+          "rank": "normal"
+        }
+      ],
+      "P2003": [
+        {
+          "mainsnak": {
+            "snaktype": "value",
+            "property": "P2003",
+            "hash": "f5b089af363d27406e15d48856e3435a1e1a696c",
+            "datavalue": {
+              "value": "festivaldavignon",
+              "type": "string"
+            },
+            "datatype": "external-id"
+          },
+          "type": "statement",
+          "id": "Q473423$5badefbb-4724-f2ae-f009-f33a89bc5fde",
+          "rank": "normal"
+        }
+      ],
+      "P571": [
+        {
+          "mainsnak": {
+            "snaktype": "value",
+            "property": "P571",
+            "hash": "906bfa7d6dd8eb18cb61675acadca6c131384353",
+            "datavalue": {
+              "value": {
+                "time": "+1947-00-00T00:00:00Z",
+                "timezone": 0,
+                "before": 0,
+                "after": 0,
+                "precision": 9,
+                "calendarmodel": "http://www.wikidata.org/entity/Q1985727"
+              },
+              "type": "time"
+            },
+            "datatype": "time"
+          },
+          "type": "statement",
+          "id": "Q473423$5DB1CE0F-83C8-4088-B955-6A8781AA9FDF",
+          "rank": "normal",
+          "references": [
+            {
+              "hash": "d4bd87b862b12d99d26e86472d44f26858dee639",
+              "snaks": {
+                "P143": [
+                  {
+                    "snaktype": "value",
+                    "property": "P143",
+                    "hash": "f30cbd35620c4ea6d0633aaf0210a8916130469b",
+                    "datavalue": {
+                      "value": {
+                        "entity-type": "item",
+                        "numeric-id": 8447,
+                        "id": "Q8447"
+                      },
+                      "type": "wikibase-entityid"
+                    },
+                    "datatype": "wikibase-item"
+                  }
+                ]
+              },
+              "snaks-order": [
+                "P143"
+              ]
+            }
+          ]
+        }
+      ],
+      "P910": [
+        {
+          "mainsnak": {
+            "snaktype": "value",
+            "property": "P910",
+            "hash": "4807a1ebc163b7b87436311f534052a198254a31",
+            "datavalue": {
+              "value": {
+                "entity-type": "item",
+                "numeric-id": 23498631,
+                "id": "Q23498631"
+              },
+              "type": "wikibase-entityid"
+            },
+            "datatype": "wikibase-item"
+          },
+          "type": "statement",
+          "id": "Q473423$3024fed3-4b9e-3b30-b320-2e1552251d08",
+          "rank": "normal"
+        }
+      ],
+      "P3820": [
+        {
+          "mainsnak": {
+            "snaktype": "value",
+            "property": "P3820",
+            "hash": "56907cf921fc5fc8f5db3d39cf11e79fe96bdaa6",
+            "datavalue": {
+              "value": "135795",
+              "type": "string"
+            },
+            "datatype": "external-id"
+          },
+          "type": "statement",
+          "id": "Q473423$B034C657-C69C-4C93-9D7A-86387A726E19",
+          "rank": "normal"
+        }
+      ],
+      "P281": [
+        {
+          "mainsnak": {
+            "snaktype": "value",
+            "property": "P281",
+            "hash": "5fd3b6c31627d160f756b3a61b8a37bb9379a7b8",
+            "datavalue": {
+              "value": "84000",
+              "type": "string"
+            },
+            "datatype": "string"
+          },
+          "type": "statement",
+          "id": "Q473423$798B5A89-82FA-4F61-AFD6-63A2F30D7CDE",
+          "rank": "normal"
+        }
+      ],
+      "P3219": [
+        {
+          "mainsnak": {
+            "snaktype": "value",
+            "property": "P3219",
+            "hash": "e0ca5557c7ceab3c18cc8c21d65fff5993fa8544",
+            "datavalue": {
+              "value": "avignon-reperes-chronologiques",
+              "type": "string"
+            },
+            "datatype": "external-id"
+          },
+          "type": "statement",
+          "id": "Q473423$58E0B298-7290-4A34-8190-E0CACA6D4521",
+          "rank": "normal"
+        },
+        {
+          "mainsnak": {
+            "snaktype": "value",
+            "property": "P3219",
+            "hash": "2fc9d44f2f88ecc283f5ab2313946c8af197ed5f",
+            "datavalue": {
+              "value": "creation-du-festival-d-avignon",
+              "type": "string"
+            },
+            "datatype": "external-id"
+          },
+          "type": "statement",
+          "id": "Q473423$2B833C33-BA07-44C2-9A5C-60040E9717A3",
+          "rank": "normal"
+        }
+      ],
+      "P276": [
+        {
+          "mainsnak": {
+            "snaktype": "value",
+            "property": "P276",
+            "hash": "f896ff7291e3361c684a0859764875b53e61368e",
+            "datavalue": {
+              "value": {
+                "entity-type": "item",
+                "numeric-id": 6397,
+                "id": "Q6397"
+              },
+              "type": "wikibase-entityid"
+            },
+            "datatype": "wikibase-item"
+          },
+          "type": "statement",
+          "id": "Q473423$6CE67053-88A3-4580-B346-F6E57B0EABC0",
+          "rank": "normal"
+        }
+      ],
+      "P101": [
+        {
+          "mainsnak": {
+            "snaktype": "value",
+            "property": "P101",
+            "hash": "d4365dd8e4461eca40046ab8f444838e78672838",
+            "datavalue": {
+              "value": {
+                "entity-type": "item",
+                "numeric-id": 184485,
+                "id": "Q184485"
+              },
+              "type": "wikibase-entityid"
+            },
+            "datatype": "wikibase-item"
+          },
+          "type": "statement",
+          "id": "Q473423$B20174AF-DF25-414C-90ED-596E7B2CD08B",
+          "rank": "normal"
+        }
+      ],
+      "P691": [
+        {
+          "mainsnak": {
+            "snaktype": "value",
+            "property": "P691",
+            "hash": "b2b5d05aa0e1d3dbed833a430f21af154a558efa",
+            "datavalue": {
+              "value": "kn20100205004",
+              "type": "string"
+            },
+            "datatype": "external-id"
+          },
+          "type": "statement",
+          "qualifiers": {
+            "P1810": [
+              {
+                "snaktype": "value",
+                "property": "P1810",
+                "hash": "348cd2db6c79b91a666757d7cec2aaf604eb5d29",
+                "datavalue": {
+                  "value": "Festival d'Avignon",
+                  "type": "string"
+                },
+                "datatype": "string"
+              }
+            ]
+          },
+          "qualifiers-order": [
+            "P1810"
+          ],
+          "id": "Q473423$5E068F1A-F3BE-473F-86B4-B793600B9DB1",
+          "rank": "normal",
+          "references": [
+            {
+              "hash": "eb5115599e6a93f57647d90eedf5a498d0532466",
+              "snaks": {
+                "P248": [
+                  {
+                    "snaktype": "value",
+                    "property": "P248",
+                    "hash": "80047f9d5b0d2daf06989e71bd5f4ba15b215fd6",
+                    "datavalue": {
+                      "value": {
+                        "entity-type": "item",
+                        "numeric-id": 13550863,
+                        "id": "Q13550863"
+                      },
+                      "type": "wikibase-entityid"
+                    },
+                    "datatype": "wikibase-item"
+                  }
+                ],
+                "P813": [
+                  {
+                    "snaktype": "value",
+                    "property": "P813",
+                    "hash": "55192c6e3b71ad8602db9e8f797dad61974080f3",
+                    "datavalue": {
+                      "value": {
+                        "time": "+2020-02-02T00:00:00Z",
+                        "timezone": 0,
+                        "before": 0,
+                        "after": 0,
+                        "precision": 11,
+                        "calendarmodel": "http://www.wikidata.org/entity/Q1985727"
+                      },
+                      "type": "time"
+                    },
+                    "datatype": "time"
+                  }
+                ]
+              },
+              "snaks-order": [
+                "P248",
+                "P813"
+              ]
+            }
+          ]
+        }
+      ],
+      "P214": [
+        {
+          "mainsnak": {
+            "snaktype": "value",
+            "property": "P214",
+            "hash": "4cb27c6f1b6a290cb0767d24dd0fe498c15ac4d4",
+            "datavalue": {
+              "value": "25149233351076510834",
+              "type": "string"
+            },
+            "datatype": "external-id"
+          },
+          "type": "statement",
+          "id": "Q473423$b821632b-f1de-4c32-91aa-6ef0e4288132",
+          "rank": "normal",
+          "references": [
+            {
+              "hash": "8386c45d84d801d31f34687d54b862900359ebd4",
+              "snaks": {
+                "P214": [
+                  {
+                    "snaktype": "value",
+                    "property": "P214",
+                    "hash": "4cb27c6f1b6a290cb0767d24dd0fe498c15ac4d4",
+                    "datavalue": {
+                      "value": "25149233351076510834",
+                      "type": "string"
+                    },
+                    "datatype": "external-id"
+                  }
+                ],
+                "P248": [
+                  {
+                    "snaktype": "value",
+                    "property": "P248",
+                    "hash": "6b7d4330c4aac4caec4ede9de0311ce273f88ecd",
+                    "datavalue": {
+                      "value": {
+                        "entity-type": "item",
+                        "numeric-id": 54919,
+                        "id": "Q54919"
+                      },
+                      "type": "wikibase-entityid"
+                    },
+                    "datatype": "wikibase-item"
+                  }
+                ],
+                "P813": [
+                  {
+                    "snaktype": "value",
+                    "property": "P813",
+                    "hash": "6a99d2d937da50af94540303a000b8c780be02ac",
+                    "datavalue": {
+                      "value": {
+                        "time": "+2020-06-01T00:00:00Z",
+                        "timezone": 0,
+                        "before": 0,
+                        "after": 0,
+                        "precision": 11,
+                        "calendarmodel": "http://www.wikidata.org/entity/Q1985727"
+                      },
+                      "type": "time"
+                    },
+                    "datatype": "time"
+                  }
+                ]
+              },
+              "snaks-order": [
+                "P214",
+                "P248",
+                "P813"
+              ]
+            }
+          ]
+        }
+      ],
+      "P213": [
+        {
+          "mainsnak": {
+            "snaktype": "value",
+            "property": "P213",
+            "hash": "77a9cfd2bf1918f1888015b114521bfcb9569a64",
+            "datavalue": {
+              "value": "0000000121670909",
+              "type": "string"
+            },
+            "datatype": "external-id"
+          },
+          "type": "statement",
+          "id": "Q473423$07d76e00-4604-17ff-96a2-60ded2fe68f2",
+          "rank": "normal"
+        }
+      ],
+      "P5652": [
+        {
+          "mainsnak": {
+            "snaktype": "value",
+            "property": "P5652",
+            "hash": "900d859715e9a82fd5c673d5f039a0fff65bc5ae",
+            "datavalue": {
+              "value": "6809",
+              "type": "string"
+            },
+            "datatype": "external-id"
+          },
+          "type": "statement",
+          "id": "Q473423$e0acface-4951-56cc-b3c6-001a55a0ffde",
+          "rank": "normal"
+        }
+      ],
+      "P8687": [
+        {
+          "mainsnak": {
+            "snaktype": "value",
+            "property": "P8687",
+            "hash": "aed9c962959efc656b290f1b9d2f3271850a71de",
+            "datavalue": {
+              "value": {
+                "amount": "+36314",
+                "unit": "1"
+              },
+              "type": "quantity"
+            },
+            "datatype": "quantity"
+          },
+          "type": "statement",
+          "qualifiers": {
+            "P6552": [
+              {
+                "snaktype": "value",
+                "property": "P6552",
+                "hash": "091d170d3e7197e6e03148c2978e07d2ec5c8457",
+                "datavalue": {
+                  "value": "322614516",
+                  "type": "string"
+                },
+                "datatype": "external-id"
+              }
+            ],
+            "P585": [
+              {
+                "snaktype": "value",
+                "property": "P585",
+                "hash": "1fae305dda221f606eda84f91ee0db6d70492cf1",
+                "datavalue": {
+                  "value": {
+                    "time": "+2021-01-04T00:00:00Z",
+                    "timezone": 0,
+                    "before": 0,
+                    "after": 0,
+                    "precision": 11,
+                    "calendarmodel": "http://www.wikidata.org/entity/Q1985727"
+                  },
+                  "type": "time"
+                },
+                "datatype": "time"
+              }
+            ]
+          },
+          "qualifiers-order": [
+            "P6552",
+            "P585"
+          ],
+          "id": "Q473423$763b3271-d332-4523-ab6d-6ba9c29d5ae1",
+          "rank": "normal"
+        },
+        {
+          "mainsnak": {
+            "snaktype": "value",
+            "property": "P8687",
+            "hash": "292f25605b7452100c2f38ca3145b79c0c8f7a9b",
+            "datavalue": {
+              "value": {
+                "amount": "+33807",
+                "unit": "1"
+              },
+              "type": "quantity"
+            },
+            "datatype": "quantity"
+          },
+          "type": "statement",
+          "qualifiers": {
+            "P6552": [
+              {
+                "snaktype": "value",
+                "property": "P6552",
+                "hash": "091d170d3e7197e6e03148c2978e07d2ec5c8457",
+                "datavalue": {
+                  "value": "322614516",
+                  "type": "string"
+                },
+                "datatype": "external-id"
+              }
+            ],
+            "P585": [
+              {
+                "snaktype": "value",
+                "property": "P585",
+                "hash": "5db48cf4d011c3882931889ed5e2d04f10f3c76f",
+                "datavalue": {
+                  "value": {
+                    "time": "+2018-05-10T00:00:00Z",
+                    "timezone": 0,
+                    "before": 0,
+                    "after": 0,
+                    "precision": 11,
+                    "calendarmodel": "http://www.wikidata.org/entity/Q1985727"
+                  },
+                  "type": "time"
+                },
+                "datatype": "time"
+              }
+            ]
+          },
+          "qualifiers-order": [
+            "P6552",
+            "P585"
+          ],
+          "id": "Q473423$b59505f2-94c2-43a2-bb87-10e8ef05f9e2",
+          "rank": "normal"
+        },
+        {
+          "mainsnak": {
+            "snaktype": "value",
+            "property": "P8687",
+            "hash": "344e32ef219493f08d6d4c9a3348dca0fc8af776",
+            "datavalue": {
+              "value": {
+                "amount": "+36923",
+                "unit": "1"
+              },
+              "type": "quantity"
+            },
+            "datatype": "quantity"
+          },
+          "type": "statement",
+          "qualifiers": {
+            "P6552": [
+              {
+                "snaktype": "value",
+                "property": "P6552",
+                "hash": "091d170d3e7197e6e03148c2978e07d2ec5c8457",
+                "datavalue": {
+                  "value": "322614516",
+                  "type": "string"
+                },
+                "datatype": "external-id"
+              }
+            ],
+            "P585": [
+              {
+                "snaktype": "value",
+                "property": "P585",
+                "hash": "e85995cb44f934b4f593a8d349017a4b94817d8a",
+                "datavalue": {
+                  "value": {
+                    "time": "+2022-01-08T00:00:00Z",
+                    "timezone": 0,
+                    "before": 0,
+                    "after": 0,
+                    "precision": 11,
+                    "calendarmodel": "http://www.wikidata.org/entity/Q1985727"
+                  },
+                  "type": "time"
+                },
+                "datatype": "time"
+              }
+            ]
+          },
+          "qualifiers-order": [
+            "P6552",
+            "P585"
+          ],
+          "id": "Q473423$2d00446b-6a41-415c-8f93-9962091ae7c4",
+          "rank": "normal"
+        },
+        {
+          "mainsnak": {
+            "snaktype": "value",
+            "property": "P8687",
+            "hash": "f15c3813443e3c9341961b2c84d181aff45a8091",
+            "datavalue": {
+              "value": {
+                "amount": "+37446",
+                "unit": "1"
+              },
+              "type": "quantity"
+            },
+            "datatype": "quantity"
+          },
+          "type": "statement",
+          "qualifiers": {
+            "P6552": [
+              {
+                "snaktype": "value",
+                "property": "P6552",
+                "hash": "091d170d3e7197e6e03148c2978e07d2ec5c8457",
+                "datavalue": {
+                  "value": "322614516",
+                  "type": "string"
+                },
+                "datatype": "external-id"
+              }
+            ],
+            "P585": [
+              {
+                "snaktype": "value",
+                "property": "P585",
+                "hash": "7ab39e77dd1d3321d069213aa797b846bc8988f8",
+                "datavalue": {
+                  "value": {
+                    "time": "+2023-02-06T00:00:00Z",
+                    "timezone": 0,
+                    "before": 0,
+                    "after": 0,
+                    "precision": 11,
+                    "calendarmodel": "http://www.wikidata.org/entity/Q1985727"
+                  },
+                  "type": "time"
+                },
+                "datatype": "time"
+              }
+            ]
+          },
+          "qualifiers-order": [
+            "P6552",
+            "P585"
+          ],
+          "id": "Q473423$5494a626-3b69-4528-a874-975c4926a645",
+          "rank": "preferred"
+        }
+      ],
+      "P8974": [
+        {
+          "mainsnak": {
+            "snaktype": "value",
+            "property": "P8974",
+            "hash": "a56bcbbcb2ec079fca41c930f69cde9980f89d3e",
+            "datavalue": {
+              "value": "a/a045da8d-a318-48a5-a77d-c7b7150f9494",
+              "type": "string"
+            },
+            "datatype": "external-id"
+          },
+          "type": "statement",
+          "id": "Q473423$A6A51AB4-1A48-4D53-9323-C74DB7FFC922",
+          "rank": "normal"
+        }
+      ],
+      "P8189": [
+        {
+          "mainsnak": {
+            "snaktype": "value",
+            "property": "P8189",
+            "hash": "d676a7c6aa5781bfd951979a3ea17eef640156e6",
+            "datavalue": {
+              "value": "987007378134905171",
+              "type": "string"
+            },
+            "datatype": "external-id"
+          },
+          "type": "statement",
+          "id": "Q473423$CEB35980-186E-4FB7-A696-53D5809145DC",
+          "rank": "normal"
+        }
+      ],
+      "P244": [
+        {
+          "mainsnak": {
+            "snaktype": "value",
+            "property": "P244",
+            "hash": "dc6c48de4d4fad616ad509fe0528aebd8d766b57",
+            "datavalue": {
+              "value": "n83222054",
+              "type": "string"
+            },
+            "datatype": "external-id"
+          },
+          "type": "statement",
+          "id": "Q473423$B3DE7C20-8998-4BF4-9533-052626B05CF7",
+          "rank": "normal"
+        }
+      ],
+      "P268": [
+        {
+          "mainsnak": {
+            "snaktype": "value",
+            "property": "P268",
+            "hash": "a6e4cc3828b155aba2aeada56a9f3d653aa050ea",
+            "datavalue": {
+              "value": "11866332t",
+              "type": "string"
+            },
+            "datatype": "external-id"
+          },
+          "type": "statement",
+          "id": "Q473423$F3963593-E9ED-4515-85B5-D2DC09D66DAC",
+          "rank": "normal"
+        }
+      ],
+      "P269": [
+        {
+          "mainsnak": {
+            "snaktype": "value",
+            "property": "P269",
+            "hash": "21627f5b8661142e1f00503d8b77969564d6d7d7",
+            "datavalue": {
+              "value": "027696251",
+              "type": "string"
+            },
+            "datatype": "external-id"
+          },
+          "type": "statement",
+          "id": "Q473423$05CFFA73-7914-467B-ACC4-654F76BD4E17",
+          "rank": "normal"
+        }
+      ],
+      "P3342": [
+        {
+          "mainsnak": {
+            "snaktype": "value",
+            "property": "P3342",
+            "hash": "8b67c7cd8471cf5622d31d93befeddf54844a1af",
+            "datavalue": {
+              "value": {
+                "entity-type": "item",
+                "numeric-id": 952945,
+                "id": "Q952945"
+              },
+              "type": "wikibase-entityid"
+            },
+            "datatype": "wikibase-item"
+          },
+          "type": "statement",
+          "id": "Q473423$9da5667b-4cef-76db-fe30-ec7b5dd657c4",
+          "rank": "normal"
+        },
+        {
+          "mainsnak": {
+            "snaktype": "value",
+            "property": "P3342",
+            "hash": "a4d41d7842ba8d2dd7fcc6a74603d9468fd3a961",
+            "datavalue": {
+              "value": {
+                "entity-type": "item",
+                "numeric-id": 150662,
+                "id": "Q150662"
+              },
+              "type": "wikibase-entityid"
+            },
+            "datatype": "wikibase-item"
+          },
+          "type": "statement",
+          "id": "Q473423$ddae34fa-4325-f0e3-5df4-9d4247aead55",
+          "rank": "normal"
+        }
+      ],
+      "P625": [
+        {
+          "mainsnak": {
+            "snaktype": "value",
+            "property": "P625",
+            "hash": "43005b58350b21b986a1ad6ecfbbdc4bbe878d65",
+            "datavalue": {
+              "value": {
+                "latitude": 43.95054,
+                "longitude": 4.807305,
+                "altitude": null,
+                "precision": 0.00001,
+                "globe": "http://www.wikidata.org/entity/Q2"
+              },
+              "type": "globecoordinate"
+            },
+            "datatype": "globe-coordinate"
+          },
+          "type": "statement",
+          "id": "Q473423$2138deac-1104-4eb9-ad38-849841f9d3ea",
+          "rank": "normal"
+        }
+      ],
+      "P12674": [
+        {
+          "mainsnak": {
+            "snaktype": "value",
+            "property": "P12674",
+            "hash": "d34703869da9b002c04d8d278a97b85d93bd2db9",
+            "datavalue": {
+              "value": "Q184780",
+              "type": "string"
+            },
+            "datatype": "external-id"
+          },
+          "type": "statement",
+          "id": "Q473423$0C35711C-21DF-44A9-842F-DAA46DFEF37B",
+          "rank": "normal"
+        }
+      ],
+      "P9346": [
+        {
+          "mainsnak": {
+            "snaktype": "value",
+            "property": "P9346",
+            "hash": "f04fd1c9993eafc92bcb4d2160b3d1570f07e366",
+            "datavalue": {
+              "value": "festival-d-avignon",
+              "type": "string"
+            },
+            "datatype": "external-id"
+          },
+          "type": "statement",
+          "id": "Q473423$A0BBB6CE-EC4D-46C2-89E4-D954E55DDBBD",
+          "rank": "normal"
+        }
+      ],
+      "P485": [
+        {
+          "mainsnak": {
+            "snaktype": "value",
+            "property": "P485",
+            "hash": "3b560f012ad4f353c9895cada9c3afd6392afd28",
+            "datavalue": {
+              "value": {
+                "entity-type": "item",
+                "numeric-id": 193563,
+                "id": "Q193563"
+              },
+              "type": "wikibase-entityid"
+            },
+            "datatype": "wikibase-item"
+          },
+          "type": "statement",
+          "id": "Q473423$6b32fd73-41af-bf54-c525-d294c42c591d",
+          "rank": "normal",
+          "references": [
+            {
+              "hash": "17d4c834defc67dfd2f5d412a5f73c91b609d23a",
+              "snaks": {
+                "P854": [
+                  {
+                    "snaktype": "value",
+                    "property": "P854",
+                    "hash": "edc0b04de67105d6c0420819c14405ffcb770ec5",
+                    "datavalue": {
+                      "value": "https://maisonjeanvilar.org/collections-et-archives/",
+                      "type": "string"
+                    },
+                    "datatype": "url"
+                  }
+                ]
+              },
+              "snaks-order": [
+                "P854"
+              ]
+            }
+          ]
+        }
+      ],
+      "P154": [
+        {
+          "mainsnak": {
+            "snaktype": "value",
+            "property": "P154",
+            "hash": "bd22b4712af2412045a10b47a68418be57d236b1",
+            "datavalue": {
+              "value": "Logo-off-fond-noir-©af-c.png",
+              "type": "string"
+            },
+            "datatype": "commonsMedia"
+          },
+          "type": "statement",
+          "id": "Q473423$30ef47b7-4b63-6fd7-317d-9bd4e643db81",
+          "rank": "normal"
+        }
+      ],
+      "P361": [
+        {
+          "mainsnak": {
+            "snaktype": "value",
+            "property": "P361",
+            "hash": "fe4b20fbf362cb789cb719db8292e549ed6044bf",
+            "datavalue": {
+              "value": {
+                "entity-type": "item",
+                "numeric-id": 138398073,
+                "id": "Q138398073"
+              },
+              "type": "wikibase-entityid"
+            },
+            "datatype": "wikibase-item"
+          },
+          "type": "statement",
+          "id": "Q473423$0eedcafe-426a-8682-96fd-c8597c1babe0",
+          "rank": "normal"
+        }
+      ],
+      "P2922": [
+        {
+          "mainsnak": {
+            "snaktype": "value",
+            "property": "P2922",
+            "hash": "9a97da198a71c15bc37fda7721787159640ea7b4",
+            "datavalue": {
+              "value": {
+                "entity-type": "item",
+                "numeric-id": 121,
+                "id": "Q121"
+              },
+              "type": "wikibase-entityid"
+            },
+            "datatype": "wikibase-item"
+          },
+          "type": "statement",
+          "id": "Q473423$b83bde6d-4b86-3ddf-49be-d54d08e9aa03",
+          "rank": "normal"
+        }
+      ]
+    },
+    "sitelinks": {
+      "commonswiki": {
+        "site": "commonswiki",
+        "title": "Category:Festival d'Avignon 2014",
+        "badges": [],
+        "url": "https://commons.wikimedia.org/wiki/Category:Festival_d%27Avignon_2014"
+      },
+      "cswiki": {
+        "site": "cswiki",
+        "title": "Divadelní festival v Avignonu",
+        "badges": [],
+        "url": "https://cs.wikipedia.org/wiki/Divadeln%C3%AD_festival_v_Avignonu"
+      },
+      "cvwiki": {
+        "site": "cvwiki",
+        "title": "Авиньон фестивалĕ",
+        "badges": [],
+        "url": "https://cv.wikipedia.org/wiki/%D0%90%D0%B2%D0%B8%D0%BD%D1%8C%D0%BE%D0%BD_%D1%84%D0%B5%D1%81%D1%82%D0%B8%D0%B2%D0%B0%D0%BB%C4%95"
+      },
+      "dewiki": {
+        "site": "dewiki",
+        "title": "Festival von Avignon",
+        "badges": [],
+        "url": "https://de.wikipedia.org/wiki/Festival_von_Avignon"
+      },
+      "elwiki": {
+        "site": "elwiki",
+        "title": "Φεστιβάλ της Αβινιόν",
+        "badges": [],
+        "url": "https://el.wikipedia.org/wiki/%CE%A6%CE%B5%CF%83%CF%84%CE%B9%CE%B2%CE%AC%CE%BB_%CF%84%CE%B7%CF%82_%CE%91%CE%B2%CE%B9%CE%BD%CE%B9%CF%8C%CE%BD"
+      },
+      "enwiki": {
+        "site": "enwiki",
+        "title": "Festival d'Avignon",
+        "badges": [],
+        "url": "https://en.wikipedia.org/wiki/Festival_d%27Avignon"
+      },
+      "eowiki": {
+        "site": "eowiki",
+        "title": "Festivalo de Avignon",
+        "badges": [],
+        "url": "https://eo.wikipedia.org/wiki/Festivalo_de_Avignon"
+      },
+      "eswiki": {
+        "site": "eswiki",
+        "title": "Festival de Aviñón",
+        "badges": [],
+        "url": "https://es.wikipedia.org/wiki/Festival_de_Avi%C3%B1%C3%B3n"
+      },
+      "etwiki": {
+        "site": "etwiki",
+        "title": "Avignoni teatrifestival",
+        "badges": [],
+        "url": "https://et.wikipedia.org/wiki/Avignoni_teatrifestival"
+      },
+      "euwiki": {
+        "site": "euwiki",
+        "title": "Avignongo Jaialdia",
+        "badges": [],
+        "url": "https://eu.wikipedia.org/wiki/Avignongo_Jaialdia"
+      },
+      "fawiki": {
+        "site": "fawiki",
+        "title": "جشنواره آوینیون",
+        "badges": [],
+        "url": "https://fa.wikipedia.org/wiki/%D8%AC%D8%B4%D9%86%D9%88%D8%A7%D8%B1%D9%87_%D8%A2%D9%88%DB%8C%D9%86%DB%8C%D9%88%D9%86"
+      },
+      "frwiki": {
+        "site": "frwiki",
+        "title": "Festival d'Avignon",
+        "badges": [],
+        "url": "https://fr.wikipedia.org/wiki/Festival_d%27Avignon"
+      },
+      "frwikinews": {
+        "site": "frwikinews",
+        "title": "Catégorie:Festival d'Avignon",
+        "badges": [],
+        "url": "https://fr.wikinews.org/wiki/Cat%C3%A9gorie:Festival_d%27Avignon"
+      },
+      "hewiki": {
+        "site": "hewiki",
+        "title": "פסטיבל אביניון",
+        "badges": [],
+        "url": "https://he.wikipedia.org/wiki/%D7%A4%D7%A1%D7%98%D7%99%D7%91%D7%9C_%D7%90%D7%91%D7%99%D7%A0%D7%99%D7%95%D7%9F"
+      },
+      "itwiki": {
+        "site": "itwiki",
+        "title": "Festival d'Avignone",
+        "badges": [],
+        "url": "https://it.wikipedia.org/wiki/Festival_d%27Avignone"
+      },
+      "jawiki": {
+        "site": "jawiki",
+        "title": "アヴィニョン演劇祭",
+        "badges": [],
+        "url": "https://ja.wikipedia.org/wiki/%E3%82%A2%E3%83%B4%E3%82%A3%E3%83%8B%E3%83%A7%E3%83%B3%E6%BC%94%E5%8A%87%E7%A5%AD"
+      },
+      "kowiki": {
+        "site": "kowiki",
+        "title": "아비뇽 연극제",
+        "badges": [],
+        "url": "https://ko.wikipedia.org/wiki/%EC%95%84%EB%B9%84%EB%87%BD_%EC%97%B0%EA%B7%B9%EC%A0%9C"
+      },
+      "nlwiki": {
+        "site": "nlwiki",
+        "title": "Festival van Avignon",
+        "badges": [],
+        "url": "https://nl.wikipedia.org/wiki/Festival_van_Avignon"
+      },
+      "plwiki": {
+        "site": "plwiki",
+        "title": "Festiwal Teatralny w Awinionie",
+        "badges": [],
+        "url": "https://pl.wikipedia.org/wiki/Festiwal_Teatralny_w_Awinionie"
+      },
+      "rowiki": {
+        "site": "rowiki",
+        "title": "Festivalul de Teatru de la Avignon",
+        "badges": [],
+        "url": "https://ro.wikipedia.org/wiki/Festivalul_de_Teatru_de_la_Avignon"
+      },
+      "ruwiki": {
+        "site": "ruwiki",
+        "title": "Авиньонский фестиваль",
+        "badges": [],
+        "url": "https://ru.wikipedia.org/wiki/%D0%90%D0%B2%D0%B8%D0%BD%D1%8C%D0%BE%D0%BD%D1%81%D0%BA%D0%B8%D0%B9_%D1%84%D0%B5%D1%81%D1%82%D0%B8%D0%B2%D0%B0%D0%BB%D1%8C"
+      },
+      "svwiki": {
+        "site": "svwiki",
+        "title": "Avignonfestivalen",
+        "badges": [],
+        "url": "https://sv.wikipedia.org/wiki/Avignonfestivalen"
+      },
+      "trwiki": {
+        "site": "trwiki",
+        "title": "Avignon Festivali",
+        "badges": [],
+        "url": "https://tr.wikipedia.org/wiki/Avignon_Festivali"
+      },
+      "ukwiki": {
+        "site": "ukwiki",
+        "title": "Авіньйонський фестиваль",
+        "badges": [],
+        "url": "https://uk.wikipedia.org/wiki/%D0%90%D0%B2%D1%96%D0%BD%D1%8C%D0%B9%D0%BE%D0%BD%D1%81%D1%8C%D0%BA%D0%B8%D0%B9_%D1%84%D0%B5%D1%81%D1%82%D0%B8%D0%B2%D0%B0%D0%BB%D1%8C"
+      },
+      "viwiki": {
+        "site": "viwiki",
+        "title": "Festival Avignon",
+        "badges": [],
+        "url": "https://vi.wikipedia.org/wiki/Festival_Avignon"
+      },
+      "zhwiki": {
+        "site": "zhwiki",
+        "title": "阿维尼翁节",
+        "badges": [],
+        "url": "https://zh.wikipedia.org/wiki/%E9%98%BF%E7%BB%B4%E5%B0%BC%E7%BF%81%E8%8A%82"
+      }
+    }
+  }
+}

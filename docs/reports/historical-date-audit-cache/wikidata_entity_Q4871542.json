@@ -1,0 +1,294 @@
+{
+  "saved_at": "2026-03-07T15:44:22.054Z",
+  "value": {
+    "pageid": 4653276,
+    "ns": 0,
+    "title": "Q4871542",
+    "lastrevid": 2430974885,
+    "modified": "2025-11-18T05:29:40Z",
+    "type": "item",
+    "id": "Q4871542",
+    "labels": {
+      "en": {
+        "language": "en",
+        "value": "Battle of Launac"
+      },
+      "es": {
+        "language": "es",
+        "value": "Batalla de Launac"
+      },
+      "fr": {
+        "language": "fr",
+        "value": "bataille de Launac"
+      },
+      "ga": {
+        "language": "ga",
+        "value": "Cath Launac"
+      },
+      "ca": {
+        "language": "ca",
+        "value": "batalla de Launac"
+      },
+      "de": {
+        "language": "de",
+        "value": "Schlacht von Launac"
+      }
+    },
+    "descriptions": {
+      "en": {
+        "language": "en",
+        "value": "1362 battle"
+      },
+      "ca": {
+        "language": "ca",
+        "value": "combat a Occitània (1632)"
+      },
+      "de": {
+        "language": "de",
+        "value": "militärische Auseinandersetzung zwischen französischen Adelsfamilien (1362)"
+      }
+    },
+    "aliases": {
+      "ca": [
+        {
+          "language": "ca",
+          "value": "batalha de Launac"
+        }
+      ]
+    },
+    "claims": {
+      "P31": [
+        {
+          "mainsnak": {
+            "snaktype": "value",
+            "property": "P31",
+            "hash": "baa1df9dcd37b9f3a062e7a14a8bef0c37078d32",
+            "datavalue": {
+              "value": {
+                "entity-type": "item",
+                "numeric-id": 178561,
+                "id": "Q178561"
+              },
+              "type": "wikibase-entityid"
+            },
+            "datatype": "wikibase-item"
+          },
+          "type": "statement",
+          "id": "Q4871542$DBDEC2D2-7027-4A1A-88D8-73BABDC213DF",
+          "rank": "normal"
+        }
+      ],
+      "P585": [
+        {
+          "mainsnak": {
+            "snaktype": "value",
+            "property": "P585",
+            "hash": "6902f8d89ac0345ef715f159f685d6ec573b9025",
+            "datavalue": {
+              "value": {
+                "time": "+1362-12-05T00:00:00Z",
+                "timezone": 0,
+                "before": 0,
+                "after": 0,
+                "precision": 11,
+                "calendarmodel": "http://www.wikidata.org/entity/Q1985727"
+              },
+              "type": "time"
+            },
+            "datatype": "time"
+          },
+          "type": "statement",
+          "id": "Q4871542$04974BD9-7D16-4C97-8A4B-A5E17F52DA1B",
+          "rank": "normal",
+          "references": [
+            {
+              "hash": "2dd6e365d8c85cc87447775f5f0ccbd2647567e5",
+              "snaks": {
+                "P143": [
+                  {
+                    "snaktype": "value",
+                    "property": "P143",
+                    "hash": "e4f6d9441d0600513c4533c672b5ab472dc73694",
+                    "datavalue": {
+                      "value": {
+                        "entity-type": "item",
+                        "numeric-id": 328,
+                        "id": "Q328"
+                      },
+                      "type": "wikibase-entityid"
+                    },
+                    "datatype": "wikibase-item"
+                  }
+                ],
+                "P813": [
+                  {
+                    "snaktype": "value",
+                    "property": "P813",
+                    "hash": "107d76411f9aa4e5b9d0a5d58dd995b70a8ab64b",
+                    "datavalue": {
+                      "value": {
+                        "time": "+2018-03-23T00:00:00Z",
+                        "timezone": 0,
+                        "before": 0,
+                        "after": 0,
+                        "precision": 11,
+                        "calendarmodel": "http://www.wikidata.org/entity/Q1985727"
+                      },
+                      "type": "time"
+                    },
+                    "datatype": "time"
+                  }
+                ]
+              },
+              "snaks-order": [
+                "P143",
+                "P813"
+              ]
+            }
+          ]
+        }
+      ],
+      "P276": [
+        {
+          "mainsnak": {
+            "snaktype": "value",
+            "property": "P276",
+            "hash": "8fa3009a6b8f27a4571c11b39808c906d70f95cd",
+            "datavalue": {
+              "value": {
+                "entity-type": "item",
+                "numeric-id": 1616330,
+                "id": "Q1616330"
+              },
+              "type": "wikibase-entityid"
+            },
+            "datatype": "wikibase-item"
+          },
+          "type": "statement",
+          "id": "Q4871542$88FE7E8A-73AE-49BF-A458-B390113BB7C4",
+          "rank": "normal",
+          "references": [
+            {
+              "hash": "caff3577bb220382a2ef127011bfe4f7270c00e1",
+              "snaks": {
+                "P143": [
+                  {
+                    "snaktype": "value",
+                    "property": "P143",
+                    "hash": "e4f6d9441d0600513c4533c672b5ab472dc73694",
+                    "datavalue": {
+                      "value": {
+                        "entity-type": "item",
+                        "numeric-id": 328,
+                        "id": "Q328"
+                      },
+                      "type": "wikibase-entityid"
+                    },
+                    "datatype": "wikibase-item"
+                  }
+                ],
+                "P4656": [
+                  {
+                    "snaktype": "value",
+                    "property": "P4656",
+                    "hash": "4d9797a8fdc7160f37a27db435fda5e6789485c0",
+                    "datavalue": {
+                      "value": "https://en.wikipedia.org/w/index.php?title=Battle_of_Launac&oldid=862629080",
+                      "type": "string"
+                    },
+                    "datatype": "url"
+                  }
+                ]
+              },
+              "snaks-order": [
+                "P143",
+                "P4656"
+              ]
+            }
+          ]
+        }
+      ],
+      "P646": [
+        {
+          "mainsnak": {
+            "snaktype": "value",
+            "property": "P646",
+            "hash": "d4c7f61ebe09466b3b0c6ac77732547583365d22",
+            "datavalue": {
+              "value": "/m/0h94bvl",
+              "type": "string"
+            },
+            "datatype": "external-id"
+          },
+          "type": "statement",
+          "id": "Q4871542$66985BDD-10E0-4149-98E4-681662BB8E18",
+          "rank": "normal"
+        }
+      ],
+      "P2671": [
+        {
+          "mainsnak": {
+            "snaktype": "value",
+            "property": "P2671",
+            "hash": "73e1e70bc7001eb50d76852bbb1a546b4faca69a",
+            "datavalue": {
+              "value": "/g/11h24f1tc5",
+              "type": "string"
+            },
+            "datatype": "external-id"
+          },
+          "type": "statement",
+          "id": "Q4871542$903FFE24-C5B0-477C-BA4C-D647C4AE174F",
+          "rank": "normal"
+        }
+      ],
+      "P17": [
+        {
+          "mainsnak": {
+            "snaktype": "value",
+            "property": "P17",
+            "hash": "c05db5d169c2560b9799d567a803d20a392f53e4",
+            "datavalue": {
+              "value": {
+                "entity-type": "item",
+                "numeric-id": 142,
+                "id": "Q142"
+              },
+              "type": "wikibase-entityid"
+            },
+            "datatype": "wikibase-item"
+          },
+          "type": "statement",
+          "id": "Q4871542$77405478-15B0-46CC-B5D9-AED7D8F13048",
+          "rank": "normal"
+        }
+      ]
+    },
+    "sitelinks": {
+      "dewiki": {
+        "site": "dewiki",
+        "title": "Schlacht von Launac",
+        "badges": [],
+        "url": "https://de.wikipedia.org/wiki/Schlacht_von_Launac"
+      },
+      "enwiki": {
+        "site": "enwiki",
+        "title": "Battle of Launac",
+        "badges": [],
+        "url": "https://en.wikipedia.org/wiki/Battle_of_Launac"
+      },
+      "eswiki": {
+        "site": "eswiki",
+        "title": "Batalla de Launac",
+        "badges": [],
+        "url": "https://es.wikipedia.org/wiki/Batalla_de_Launac"
+      },
+      "frwiki": {
+        "site": "frwiki",
+        "title": "Bataille de Launac",
+        "badges": [],
+        "url": "https://fr.wikipedia.org/wiki/Bataille_de_Launac"
+      }
+    }
+  }
+}

@@ -1,0 +1,685 @@
+{
+  "saved_at": "2026-03-07T16:00:17.404Z",
+  "value": {
+    "pageid": 908284,
+    "ns": 0,
+    "title": "Q958440",
+    "lastrevid": 2287137516,
+    "modified": "2024-12-14T08:31:52Z",
+    "type": "item",
+    "id": "Q958440",
+    "labels": {
+      "fr": {
+        "language": "fr",
+        "value": "hôtel-Dieu de Château-Thierry"
+      },
+      "de": {
+        "language": "de",
+        "value": "Hôtel Dieu"
+      },
+      "en": {
+        "language": "en",
+        "value": "Hôtel-Dieu de Château-Thierry"
+      },
+      "nl": {
+        "language": "nl",
+        "value": "Hôtel-Dieu de Château-Thierry"
+      }
+    },
+    "descriptions": {
+      "en": {
+        "language": "en",
+        "value": "former hospital"
+      },
+      "nl": {
+        "language": "nl",
+        "value": "ziekenhuis in Frankrijk"
+      },
+      "fr": {
+        "language": "fr",
+        "value": "hôpital à Château-Thierry (Aisne)"
+      },
+      "he": {
+        "language": "he",
+        "value": "בית חולים בצרפת"
+      },
+      "id": {
+        "language": "id",
+        "value": "rumah sakit di Prancis"
+      },
+      "de": {
+        "language": "de",
+        "value": "ehemaliges Krankenhaus in Château-Thierry, einer Stadt im Département Aisne in der französischen Region Picardie"
+      },
+      "ar": {
+        "language": "ar",
+        "value": "مستشفى"
+      },
+      "ko": {
+        "language": "ko",
+        "value": "등재된 사적"
+      },
+      "ast": {
+        "language": "ast",
+        "value": "hospital de Francia"
+      },
+      "ace": {
+        "language": "ace",
+        "value": "rumoh sakét"
+      },
+      "jv": {
+        "language": "jv",
+        "value": "griya sakit"
+      },
+      "min": {
+        "language": "min",
+        "value": "rumah sakik"
+      }
+    },
+    "aliases": {
+      "de": [
+        {
+          "language": "de",
+          "value": "Hôtel Dieu de Château-Thierry"
+        },
+        {
+          "language": "de",
+          "value": "Hôtel-Dieu (Château-Thierry)"
+        }
+      ],
+      "en": [
+        {
+          "language": "en",
+          "value": "Hotel-Dieu de Chateau-Thierry"
+        },
+        {
+          "language": "en",
+          "value": "Hôtel-Dieu (Château-Thierry)"
+        }
+      ]
+    },
+    "claims": {
+      "P31": [
+        {
+          "mainsnak": {
+            "snaktype": "value",
+            "property": "P31",
+            "hash": "2be06461a4b9778fb10baf466d3453acb9314bd4",
+            "datavalue": {
+              "value": {
+                "entity-type": "item",
+                "numeric-id": 16917,
+                "id": "Q16917"
+              },
+              "type": "wikibase-entityid"
+            },
+            "datatype": "wikibase-item"
+          },
+          "type": "statement",
+          "id": "Q958440$F9E469C5-5A0B-4A3A-918D-B286E6558825",
+          "rank": "normal",
+          "references": [
+            {
+              "hash": "9a24f7c0208b05d6be97077d855671d1dfdbc0dd",
+              "snaks": {
+                "P143": [
+                  {
+                    "snaktype": "value",
+                    "property": "P143",
+                    "hash": "d38375ffe6fe142663ff55cd783aa4df4301d83d",
+                    "datavalue": {
+                      "value": {
+                        "entity-type": "item",
+                        "numeric-id": 48183,
+                        "id": "Q48183"
+                      },
+                      "type": "wikibase-entityid"
+                    },
+                    "datatype": "wikibase-item"
+                  }
+                ]
+              },
+              "snaks-order": [
+                "P143"
+              ]
+            }
+          ]
+        },
+        {
+          "mainsnak": {
+            "snaktype": "value",
+            "property": "P31",
+            "hash": "0a7a1fd883088765ed1722cc0a935dbe4100c4c5",
+            "datavalue": {
+              "value": {
+                "entity-type": "item",
+                "numeric-id": 64578911,
+                "id": "Q64578911"
+              },
+              "type": "wikibase-entityid"
+            },
+            "datatype": "wikibase-item"
+          },
+          "type": "statement",
+          "id": "Q958440$8D75EC77-2A25-4176-BB7A-D6358180EE73",
+          "rank": "normal"
+        }
+      ],
+      "P17": [
+        {
+          "mainsnak": {
+            "snaktype": "value",
+            "property": "P17",
+            "hash": "c05db5d169c2560b9799d567a803d20a392f53e4",
+            "datavalue": {
+              "value": {
+                "entity-type": "item",
+                "numeric-id": 142,
+                "id": "Q142"
+              },
+              "type": "wikibase-entityid"
+            },
+            "datatype": "wikibase-item"
+          },
+          "type": "statement",
+          "id": "q958440$532788C3-FFE8-4BB6-9CE3-435843695BF0",
+          "rank": "normal",
+          "references": [
+            {
+              "hash": "d709174cc609072fbf310bb52ddfb7aa2332b473",
+              "snaks": {
+                "P248": [
+                  {
+                    "snaktype": "value",
+                    "property": "P248",
+                    "hash": "fc376b4e25f8c58fa7210b660e00a66558a3332b",
+                    "datavalue": {
+                      "value": {
+                        "entity-type": "item",
+                        "numeric-id": 809830,
+                        "id": "Q809830"
+                      },
+                      "type": "wikibase-entityid"
+                    },
+                    "datatype": "wikibase-item"
+                  }
+                ]
+              },
+              "snaks-order": [
+                "P248"
+              ]
+            }
+          ]
+        }
+      ],
+      "P373": [
+        {
+          "mainsnak": {
+            "snaktype": "value",
+            "property": "P373",
+            "hash": "b14fcad3a8a531eb8ff965306e03256a28d2d17c",
+            "datavalue": {
+              "value": "Hôtel Dieu de Château-Thierry",
+              "type": "string"
+            },
+            "datatype": "string"
+          },
+          "type": "statement",
+          "id": "q958440$DA910B87-3362-44FE-8625-FBCABAF16804",
+          "rank": "normal"
+        }
+      ],
+      "P131": [
+        {
+          "mainsnak": {
+            "snaktype": "value",
+            "property": "P131",
+            "hash": "b332d78dea0b744b1871620380e8641f5b2afa81",
+            "datavalue": {
+              "value": {
+                "entity-type": "item",
+                "numeric-id": 194145,
+                "id": "Q194145"
+              },
+              "type": "wikibase-entityid"
+            },
+            "datatype": "wikibase-item"
+          },
+          "type": "statement",
+          "id": "Q958440$6610E6FB-7A33-4693-94C7-44C1490381D4",
+          "rank": "normal",
+          "references": [
+            {
+              "hash": "d709174cc609072fbf310bb52ddfb7aa2332b473",
+              "snaks": {
+                "P248": [
+                  {
+                    "snaktype": "value",
+                    "property": "P248",
+                    "hash": "fc376b4e25f8c58fa7210b660e00a66558a3332b",
+                    "datavalue": {
+                      "value": {
+                        "entity-type": "item",
+                        "numeric-id": 809830,
+                        "id": "Q809830"
+                      },
+                      "type": "wikibase-entityid"
+                    },
+                    "datatype": "wikibase-item"
+                  }
+                ]
+              },
+              "snaks-order": [
+                "P248"
+              ]
+            }
+          ]
+        }
+      ],
+      "P625": [
+        {
+          "mainsnak": {
+            "snaktype": "value",
+            "property": "P625",
+            "hash": "5ce3624b96aee1e1eb13f72b57df99e3f9e70d95",
+            "datavalue": {
+              "value": {
+                "latitude": 49.04602778,
+                "longitude": 3.40452778,
+                "altitude": null,
+                "precision": 0.00002777777777778,
+                "globe": "http://www.wikidata.org/entity/Q2"
+              },
+              "type": "globecoordinate"
+            },
+            "datatype": "globe-coordinate"
+          },
+          "type": "statement",
+          "id": "Q958440$C9438BB9-C432-460F-9FB3-3880BB6D0197",
+          "rank": "normal",
+          "references": [
+            {
+              "hash": "9a24f7c0208b05d6be97077d855671d1dfdbc0dd",
+              "snaks": {
+                "P143": [
+                  {
+                    "snaktype": "value",
+                    "property": "P143",
+                    "hash": "d38375ffe6fe142663ff55cd783aa4df4301d83d",
+                    "datavalue": {
+                      "value": {
+                        "entity-type": "item",
+                        "numeric-id": 48183,
+                        "id": "Q48183"
+                      },
+                      "type": "wikibase-entityid"
+                    },
+                    "datatype": "wikibase-item"
+                  }
+                ]
+              },
+              "snaks-order": [
+                "P143"
+              ]
+            }
+          ]
+        }
+      ],
+      "P380": [
+        {
+          "mainsnak": {
+            "snaktype": "value",
+            "property": "P380",
+            "hash": "38829e0607aacb0859862d7f731b6ac0c22d83f1",
+            "datavalue": {
+              "value": "PA02000063",
+              "type": "string"
+            },
+            "datatype": "external-id"
+          },
+          "type": "statement",
+          "id": "Q958440$48173ABD-26AB-4C58-AA66-C899AA75B533",
+          "rank": "normal",
+          "references": [
+            {
+              "hash": "d709174cc609072fbf310bb52ddfb7aa2332b473",
+              "snaks": {
+                "P248": [
+                  {
+                    "snaktype": "value",
+                    "property": "P248",
+                    "hash": "fc376b4e25f8c58fa7210b660e00a66558a3332b",
+                    "datavalue": {
+                      "value": {
+                        "entity-type": "item",
+                        "numeric-id": 809830,
+                        "id": "Q809830"
+                      },
+                      "type": "wikibase-entityid"
+                    },
+                    "datatype": "wikibase-item"
+                  }
+                ]
+              },
+              "snaks-order": [
+                "P248"
+              ]
+            }
+          ]
+        }
+      ],
+      "P18": [
+        {
+          "mainsnak": {
+            "snaktype": "value",
+            "property": "P18",
+            "hash": "eb72ee9463f06bbd4168a94fa2d67c5b6ec4489b",
+            "datavalue": {
+              "value": "Chateau-Thierry Hotel-Dieu Dscn2095.jpg",
+              "type": "string"
+            },
+            "datatype": "commonsMedia"
+          },
+          "type": "statement",
+          "qualifiers": {
+            "P585": [
+              {
+                "snaktype": "value",
+                "property": "P585",
+                "hash": "b2d590169589c914a9cc979977d42279a385a31f",
+                "datavalue": {
+                  "value": {
+                    "time": "+2005-01-01T00:00:00Z",
+                    "timezone": 0,
+                    "before": 0,
+                    "after": 0,
+                    "precision": 9,
+                    "calendarmodel": "http://www.wikidata.org/entity/Q1985727"
+                  },
+                  "type": "time"
+                },
+                "datatype": "time"
+              }
+            ]
+          },
+          "qualifiers-order": [
+            "P585"
+          ],
+          "id": "Q958440$BBF4D5BC-B4FD-4764-988D-BF19E8B6A752",
+          "rank": "normal"
+        }
+      ],
+      "P1435": [
+        {
+          "mainsnak": {
+            "snaktype": "value",
+            "property": "P1435",
+            "hash": "2a0d37ac7e76d305563257e91e85bb3847f90355",
+            "datavalue": {
+              "value": {
+                "entity-type": "item",
+                "numeric-id": 10387575,
+                "id": "Q10387575"
+              },
+              "type": "wikibase-entityid"
+            },
+            "datatype": "wikibase-item"
+          },
+          "type": "statement",
+          "qualifiers": {
+            "P580": [
+              {
+                "snaktype": "value",
+                "property": "P580",
+                "hash": "a401fb523b165cbf093ae61e10ca11297b10c75f",
+                "datavalue": {
+                  "value": {
+                    "time": "+2007-01-26T00:00:00Z",
+                    "timezone": 0,
+                    "before": 0,
+                    "after": 0,
+                    "precision": 11,
+                    "calendarmodel": "http://www.wikidata.org/entity/Q1985727"
+                  },
+                  "type": "time"
+                },
+                "datatype": "time"
+              }
+            ]
+          },
+          "qualifiers-order": [
+            "P580"
+          ],
+          "id": "Q958440$6A306C8B-12C1-437E-9EF9-58DB1D043C67",
+          "rank": "normal",
+          "references": [
+            {
+              "hash": "d709174cc609072fbf310bb52ddfb7aa2332b473",
+              "snaks": {
+                "P248": [
+                  {
+                    "snaktype": "value",
+                    "property": "P248",
+                    "hash": "fc376b4e25f8c58fa7210b660e00a66558a3332b",
+                    "datavalue": {
+                      "value": {
+                        "entity-type": "item",
+                        "numeric-id": 809830,
+                        "id": "Q809830"
+                      },
+                      "type": "wikibase-entityid"
+                    },
+                    "datatype": "wikibase-item"
+                  }
+                ]
+              },
+              "snaks-order": [
+                "P248"
+              ]
+            }
+          ]
+        },
+        {
+          "mainsnak": {
+            "snaktype": "value",
+            "property": "P1435",
+            "hash": "434da8b417b3cbb6d5352da9d7f6bd8d04c27977",
+            "datavalue": {
+              "value": {
+                "entity-type": "item",
+                "numeric-id": 54556283,
+                "id": "Q54556283"
+              },
+              "type": "wikibase-entityid"
+            },
+            "datatype": "wikibase-item"
+          },
+          "type": "statement",
+          "id": "Q958440$5116471D-9992-4CC3-94ED-040E35B093E0",
+          "rank": "normal"
+        }
+      ],
+      "P856": [
+        {
+          "mainsnak": {
+            "snaktype": "value",
+            "property": "P856",
+            "hash": "516dc396f6c624fd4bf5112fb7562119ab63a57b",
+            "datavalue": {
+              "value": "http://www.hotel-dieu-chateau-thierry.fr",
+              "type": "string"
+            },
+            "datatype": "url"
+          },
+          "type": "statement",
+          "id": "Q958440$7E08BF47-D8B9-495F-87E3-D2B28621B87D",
+          "rank": "normal",
+          "references": [
+            {
+              "hash": "d4bd87b862b12d99d26e86472d44f26858dee639",
+              "snaks": {
+                "P143": [
+                  {
+                    "snaktype": "value",
+                    "property": "P143",
+                    "hash": "f30cbd35620c4ea6d0633aaf0210a8916130469b",
+                    "datavalue": {
+                      "value": {
+                        "entity-type": "item",
+                        "numeric-id": 8447,
+                        "id": "Q8447"
+                      },
+                      "type": "wikibase-entityid"
+                    },
+                    "datatype": "wikibase-item"
+                  }
+                ]
+              },
+              "snaks-order": [
+                "P143"
+              ]
+            }
+          ]
+        }
+      ],
+      "P84": [
+        {
+          "mainsnak": {
+            "snaktype": "value",
+            "property": "P84",
+            "hash": "8bdabde2f7a26458383e34b746c660e4edb31160",
+            "datavalue": {
+              "value": {
+                "entity-type": "item",
+                "numeric-id": 1307649,
+                "id": "Q1307649"
+              },
+              "type": "wikibase-entityid"
+            },
+            "datatype": "wikibase-item"
+          },
+          "type": "statement",
+          "id": "Q958440$2AFD9A1C-FCC9-4186-9066-E5AE95CD15F9",
+          "rank": "normal",
+          "references": [
+            {
+              "hash": "d4bd87b862b12d99d26e86472d44f26858dee639",
+              "snaks": {
+                "P143": [
+                  {
+                    "snaktype": "value",
+                    "property": "P143",
+                    "hash": "f30cbd35620c4ea6d0633aaf0210a8916130469b",
+                    "datavalue": {
+                      "value": {
+                        "entity-type": "item",
+                        "numeric-id": 8447,
+                        "id": "Q8447"
+                      },
+                      "type": "wikibase-entityid"
+                    },
+                    "datatype": "wikibase-item"
+                  }
+                ]
+              },
+              "snaks-order": [
+                "P143"
+              ]
+            }
+          ]
+        }
+      ],
+      "P6375": [
+        {
+          "mainsnak": {
+            "snaktype": "value",
+            "property": "P6375",
+            "hash": "ac86eebe3707b60d2462ff4d9566a9225bdc92f7",
+            "datavalue": {
+              "value": {
+                "text": "rue du château",
+                "language": "fr"
+              },
+              "type": "monolingualtext"
+            },
+            "datatype": "monolingualtext"
+          },
+          "type": "statement",
+          "id": "Q958440$7B858624-2129-4028-907B-A0247278EF9A",
+          "rank": "normal"
+        }
+      ],
+      "P2671": [
+        {
+          "mainsnak": {
+            "snaktype": "value",
+            "property": "P2671",
+            "hash": "77a3c9b3f3aed160565ff18267361cd79dabfb3c",
+            "datavalue": {
+              "value": "/g/12z84q0m4",
+              "type": "string"
+            },
+            "datatype": "external-id"
+          },
+          "type": "statement",
+          "id": "Q958440$551FEC43-A794-420C-ACC1-DF0F5B1FEF89",
+          "rank": "normal"
+        }
+      ],
+      "P9875": [
+        {
+          "mainsnak": {
+            "snaktype": "value",
+            "property": "P9875",
+            "hash": "e5763074fae238712651c655e2375362f160bafc",
+            "datavalue": {
+              "value": "l-hotel-dieu-de-chateau-thierry",
+              "type": "string"
+            },
+            "datatype": "external-id"
+          },
+          "type": "statement",
+          "id": "Q958440$49C6FC06-6F89-4BCF-A584-BF158275072E",
+          "rank": "normal"
+        }
+      ],
+      "P9168": [
+        {
+          "mainsnak": {
+            "snaktype": "value",
+            "property": "P9168",
+            "hash": "c3e49dc448185ba01d77fb960d70e6bbb6295b6e",
+            "datavalue": {
+              "value": "IA00127912",
+              "type": "string"
+            },
+            "datatype": "external-id"
+          },
+          "type": "statement",
+          "id": "Q958440$DD3260A4-F2AE-4353-9E84-473844FF11C6",
+          "rank": "normal"
+        }
+      ]
+    },
+    "sitelinks": {
+      "commonswiki": {
+        "site": "commonswiki",
+        "title": "Category:Hôtel Dieu de Château-Thierry",
+        "badges": [],
+        "url": "https://commons.wikimedia.org/wiki/Category:H%C3%B4tel_Dieu_de_Ch%C3%A2teau-Thierry"
+      },
+      "dewiki": {
+        "site": "dewiki",
+        "title": "Hôtel-Dieu (Château-Thierry)",
+        "badges": [],
+        "url": "https://de.wikipedia.org/wiki/H%C3%B4tel-Dieu_(Ch%C3%A2teau-Thierry)"
+      },
+      "frwiki": {
+        "site": "frwiki",
+        "title": "Hôtel-Dieu de Château-Thierry",
+        "badges": [],
+        "url": "https://fr.wikipedia.org/wiki/H%C3%B4tel-Dieu_de_Ch%C3%A2teau-Thierry"
+      }
+    }
+  }
+}

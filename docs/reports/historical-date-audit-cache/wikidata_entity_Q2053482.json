@@ -1,0 +1,275 @@
+{
+  "saved_at": "2026-03-07T13:23:18.444Z",
+  "value": {
+    "pageid": 1980929,
+    "ns": 0,
+    "title": "Q2053482",
+    "lastrevid": 2447419011,
+    "modified": "2025-12-26T14:56:52Z",
+    "type": "item",
+    "id": "Q2053482",
+    "labels": {
+      "ru": {
+        "language": "ru",
+        "value": "Келлский синод"
+      },
+      "en": {
+        "language": "en",
+        "value": "Synod of Kells"
+      },
+      "uk": {
+        "language": "uk",
+        "value": "Келлський синод"
+      },
+      "it": {
+        "language": "it",
+        "value": "Sinodo di Kells"
+      },
+      "fr": {
+        "language": "fr",
+        "value": "synode de Kells"
+      },
+      "nl": {
+        "language": "nl",
+        "value": "Synode van Kells"
+      },
+      "ja": {
+        "language": "ja",
+        "value": "ケルズ教会会議"
+      },
+      "es": {
+        "language": "es",
+        "value": "Sínodo de Kells"
+      },
+      "eo": {
+        "language": "eo",
+        "value": "Sinodo de Kells"
+      },
+      "zh": {
+        "language": "zh",
+        "value": "凯尔斯-梅利丰会议"
+      },
+      "ga": {
+        "language": "ga",
+        "value": "Sionad Cheanannais"
+      },
+      "pt": {
+        "language": "pt",
+        "value": "Sínodo de Kells"
+      }
+    },
+    "descriptions": {
+      "it": {
+        "language": "it",
+        "value": "sinodo cristiano del 1152"
+      }
+    },
+    "aliases": {
+      "ja": [
+        {
+          "language": "ja",
+          "value": "教会会議"
+        }
+      ],
+      "es": [
+        {
+          "language": "es",
+          "value": "Sinodo de Kells"
+        }
+      ],
+      "fr": [
+        {
+          "language": "fr",
+          "value": "synode de Kells-Mellifont"
+        }
+      ]
+    },
+    "claims": {
+      "P646": [
+        {
+          "mainsnak": {
+            "snaktype": "value",
+            "property": "P646",
+            "hash": "6ed9835079f7518cbe8569f58441d02775ee2a0e",
+            "datavalue": {
+              "value": "/m/026381d",
+              "type": "string"
+            },
+            "datatype": "external-id"
+          },
+          "type": "statement",
+          "id": "Q2053482$290208F9-2959-48B1-9622-3263AF25A03D",
+          "rank": "normal",
+          "references": [
+            {
+              "hash": "2b00cb481cddcac7623114367489b5c194901c4a",
+              "snaks": {
+                "P248": [
+                  {
+                    "snaktype": "value",
+                    "property": "P248",
+                    "hash": "a94b740202b097dd33355e0e6c00e54b9395e5e0",
+                    "datavalue": {
+                      "value": {
+                        "entity-type": "item",
+                        "numeric-id": 15241312,
+                        "id": "Q15241312"
+                      },
+                      "type": "wikibase-entityid"
+                    },
+                    "datatype": "wikibase-item"
+                  }
+                ],
+                "P577": [
+                  {
+                    "snaktype": "value",
+                    "property": "P577",
+                    "hash": "fde79ecb015112d2f29229ccc1ec514ed3e71fa2",
+                    "datavalue": {
+                      "value": {
+                        "time": "+2013-10-28T00:00:00Z",
+                        "timezone": 0,
+                        "before": 0,
+                        "after": 0,
+                        "precision": 11,
+                        "calendarmodel": "http://www.wikidata.org/entity/Q1985727"
+                      },
+                      "type": "time"
+                    },
+                    "datatype": "time"
+                  }
+                ]
+              },
+              "snaks-order": [
+                "P248",
+                "P577"
+              ]
+            }
+          ]
+        }
+      ],
+      "P31": [
+        {
+          "mainsnak": {
+            "snaktype": "value",
+            "property": "P31",
+            "hash": "ee1bf3975a4767b9bce68a3b3271dcc515b67e8a",
+            "datavalue": {
+              "value": {
+                "entity-type": "item",
+                "numeric-id": 111161,
+                "id": "Q111161"
+              },
+              "type": "wikibase-entityid"
+            },
+            "datatype": "wikibase-item"
+          },
+          "type": "statement",
+          "id": "Q2053482$31EDF868-F950-48D0-93A8-1AC8FEAEA2F3",
+          "rank": "normal"
+        }
+      ],
+      "P585": [
+        {
+          "mainsnak": {
+            "snaktype": "value",
+            "property": "P585",
+            "hash": "e3fd9a282f5272e55eedd3c12abbd2df3feaed84",
+            "datavalue": {
+              "value": {
+                "time": "+1152-00-00T00:00:00Z",
+                "timezone": 0,
+                "before": 0,
+                "after": 0,
+                "precision": 9,
+                "calendarmodel": "http://www.wikidata.org/entity/Q1985786"
+              },
+              "type": "time"
+            },
+            "datatype": "time"
+          },
+          "type": "statement",
+          "id": "Q2053482$6e603115-40b2-cc69-2e77-f0857aca3c06",
+          "rank": "normal"
+        }
+      ],
+      "P276": [
+        {
+          "mainsnak": {
+            "snaktype": "value",
+            "property": "P276",
+            "hash": "6e4fc4e811d07ac11beabf98fe273f070f779b4a",
+            "datavalue": {
+              "value": {
+                "entity-type": "item",
+                "numeric-id": 917848,
+                "id": "Q917848"
+              },
+              "type": "wikibase-entityid"
+            },
+            "datatype": "wikibase-item"
+          },
+          "type": "statement",
+          "id": "Q2053482$b5d8cc49-4cf2-d6e9-6f20-4e6f2c565c62",
+          "rank": "normal"
+        }
+      ]
+    },
+    "sitelinks": {
+      "enwiki": {
+        "site": "enwiki",
+        "title": "Synod of Kells",
+        "badges": [],
+        "url": "https://en.wikipedia.org/wiki/Synod_of_Kells"
+      },
+      "eswiki": {
+        "site": "eswiki",
+        "title": "Sínodo de Kells",
+        "badges": [],
+        "url": "https://es.wikipedia.org/wiki/S%C3%ADnodo_de_Kells"
+      },
+      "frwiki": {
+        "site": "frwiki",
+        "title": "Synode de Kells",
+        "badges": [],
+        "url": "https://fr.wikipedia.org/wiki/Synode_de_Kells"
+      },
+      "gawiki": {
+        "site": "gawiki",
+        "title": "Sionad Cheanannais",
+        "badges": [],
+        "url": "https://ga.wikipedia.org/wiki/Sionad_Cheanannais"
+      },
+      "itwiki": {
+        "site": "itwiki",
+        "title": "Sinodo di Kells",
+        "badges": [],
+        "url": "https://it.wikipedia.org/wiki/Sinodo_di_Kells"
+      },
+      "nlwiki": {
+        "site": "nlwiki",
+        "title": "Synode van Kells",
+        "badges": [],
+        "url": "https://nl.wikipedia.org/wiki/Synode_van_Kells"
+      },
+      "ptwiki": {
+        "site": "ptwiki",
+        "title": "Sínodo de Kells",
+        "badges": [],
+        "url": "https://pt.wikipedia.org/wiki/S%C3%ADnodo_de_Kells"
+      },
+      "ruwiki": {
+        "site": "ruwiki",
+        "title": "Келлский синод",
+        "badges": [],
+        "url": "https://ru.wikipedia.org/wiki/%D0%9A%D0%B5%D0%BB%D0%BB%D1%81%D0%BA%D0%B8%D0%B9_%D1%81%D0%B8%D0%BD%D0%BE%D0%B4"
+      },
+      "ukwiki": {
+        "site": "ukwiki",
+        "title": "Келлський синод",
+        "badges": [],
+        "url": "https://uk.wikipedia.org/wiki/%D0%9A%D0%B5%D0%BB%D0%BB%D1%81%D1%8C%D0%BA%D0%B8%D0%B9_%D1%81%D0%B8%D0%BD%D0%BE%D0%B4"
+      }
+    }
+  }
+}

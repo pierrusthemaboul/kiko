@@ -1,0 +1,579 @@
+{
+  "saved_at": "2026-03-07T16:25:35.051Z",
+  "value": {
+    "pageid": 178019,
+    "ns": 0,
+    "title": "Q178624",
+    "lastrevid": 2457810382,
+    "modified": "2026-01-26T03:00:19Z",
+    "type": "item",
+    "id": "Q178624",
+    "labels": {
+      "de": {
+        "language": "de",
+        "value": "Schatz von Boscoreale"
+      },
+      "fr": {
+        "language": "fr",
+        "value": "trésor de Boscoreale"
+      },
+      "it": {
+        "language": "it",
+        "value": "tesoro di Boscoreale"
+      },
+      "en": {
+        "language": "en",
+        "value": "Boscoreale Treasure"
+      },
+      "la": {
+        "language": "la",
+        "value": "Thesaurus Boscoregalensis"
+      },
+      "nl": {
+        "language": "nl",
+        "value": "Boscoreale Treasure"
+      },
+      "pl": {
+        "language": "pl",
+        "value": "Skarb z Boscoreale"
+      },
+      "ru": {
+        "language": "ru",
+        "value": "Бос­ко­ре­аль­ский клад"
+      },
+      "id": {
+        "language": "id",
+        "value": "Harta karun Boscoreale"
+      },
+      "sl": {
+        "language": "sl",
+        "value": "Zaklad iz Boscoreale"
+      },
+      "zh": {
+        "language": "zh",
+        "value": "伯斯科雷阿萊寶藏"
+      },
+      "fa": {
+        "language": "fa",
+        "value": "گنجینه بوسکورئاله"
+      },
+      "ha": {
+        "language": "ha",
+        "value": "Dukiyar Boscoreale"
+      }
+    },
+    "descriptions": {
+      "fr": {
+        "language": "fr",
+        "value": "ensemble de plus d'une centaine d'objets, principalement en argent"
+      },
+      "en": {
+        "language": "en",
+        "value": "set of Roman tableware"
+      },
+      "de": {
+        "language": "de",
+        "value": "Römische Luxusgegenstände"
+      },
+      "pl": {
+        "language": "pl",
+        "value": "zespół cennych obiektów z I w. n.e. odkryty w rzymskiej willi k. Pompei"
+      }
+    },
+    "aliases": {
+      "ru": [
+        {
+          "language": "ru",
+          "value": "клад Боскореале"
+        },
+        {
+          "language": "ru",
+          "value": "клад в Боскореале"
+        }
+      ],
+      "zh": [
+        {
+          "language": "zh",
+          "value": "奢華銀器收藏"
+        }
+      ]
+    },
+    "claims": {
+      "P31": [
+        {
+          "mainsnak": {
+            "snaktype": "value",
+            "property": "P31",
+            "hash": "4c32ffe9a66ab2bdc8c4db5da8323bae6176894c",
+            "datavalue": {
+              "value": {
+                "entity-type": "item",
+                "numeric-id": 7328910,
+                "id": "Q7328910"
+              },
+              "type": "wikibase-entityid"
+            },
+            "datatype": "wikibase-item"
+          },
+          "type": "statement",
+          "id": "Q178624$78b396b3-4042-25b6-ecb6-2d29219c1d6a",
+          "rank": "normal"
+        },
+        {
+          "mainsnak": {
+            "snaktype": "value",
+            "property": "P31",
+            "hash": "10c35564a9f8f147d81ecf21aa247355d5971254",
+            "datavalue": {
+              "value": {
+                "entity-type": "item",
+                "numeric-id": 272937,
+                "id": "Q272937"
+              },
+              "type": "wikibase-entityid"
+            },
+            "datatype": "wikibase-item"
+          },
+          "type": "statement",
+          "id": "Q178624$0f0c46e1-4bca-0d16-09b6-85317720e285",
+          "rank": "normal"
+        }
+      ],
+      "P373": [
+        {
+          "mainsnak": {
+            "snaktype": "value",
+            "property": "P373",
+            "hash": "8905ecf0ab97a10845d97ac0a319ba3ade175928",
+            "datavalue": {
+              "value": "Boscoreale Treasure",
+              "type": "string"
+            },
+            "datatype": "string"
+          },
+          "type": "statement",
+          "id": "q178624$9CF18AD0-626C-4278-BF26-291E97E03EAE",
+          "rank": "normal"
+        }
+      ],
+      "P575": [
+        {
+          "mainsnak": {
+            "snaktype": "value",
+            "property": "P575",
+            "hash": "36067658adc8377dc8430cf07e6b7b1ac49ea3eb",
+            "datavalue": {
+              "value": {
+                "time": "+1895-01-01T00:00:00Z",
+                "timezone": 0,
+                "before": 0,
+                "after": 0,
+                "precision": 9,
+                "calendarmodel": "http://www.wikidata.org/entity/Q1985727"
+              },
+              "type": "time"
+            },
+            "datatype": "time"
+          },
+          "type": "statement",
+          "id": "Q178624$3d0afdac-4e33-abea-4902-67b1756c8ed5",
+          "rank": "normal"
+        }
+      ],
+      "P276": [
+        {
+          "mainsnak": {
+            "snaktype": "value",
+            "property": "P276",
+            "hash": "ad8d24ff92afe3177736f1997a22023d1ad2b17a",
+            "datavalue": {
+              "value": {
+                "entity-type": "item",
+                "numeric-id": 19278398,
+                "id": "Q19278398"
+              },
+              "type": "wikibase-entityid"
+            },
+            "datatype": "wikibase-item"
+          },
+          "type": "statement",
+          "id": "Q178624$3C157172-98A6-4790-BCD2-18DD36DBF334",
+          "rank": "normal"
+        }
+      ],
+      "P973": [
+        {
+          "mainsnak": {
+            "snaktype": "value",
+            "property": "P973",
+            "hash": "1367b2f62d37b2e632d8265edcc73827ac5348d0",
+            "datavalue": {
+              "value": "http://www.louvre.fr/en/oeuvre-notices/boscoreale-treasure-0",
+              "type": "string"
+            },
+            "datatype": "url"
+          },
+          "type": "statement",
+          "qualifiers": {
+            "P407": [
+              {
+                "snaktype": "value",
+                "property": "P407",
+                "hash": "daf1c4fcb58181b02dff9cc89deb084004ddae4b",
+                "datavalue": {
+                  "value": {
+                    "entity-type": "item",
+                    "numeric-id": 1860,
+                    "id": "Q1860"
+                  },
+                  "type": "wikibase-entityid"
+                },
+                "datatype": "wikibase-item"
+              }
+            ]
+          },
+          "qualifiers-order": [
+            "P407"
+          ],
+          "id": "Q178624$33cae77b-4e10-92b5-0854-9cbc898eac81",
+          "rank": "normal"
+        },
+        {
+          "mainsnak": {
+            "snaktype": "value",
+            "property": "P973",
+            "hash": "f71955c9039d14d91933f567213272b1aa79546c",
+            "datavalue": {
+              "value": "http://www.louvre.fr/oeuvre-notices/tresor-de-boscoreale",
+              "type": "string"
+            },
+            "datatype": "url"
+          },
+          "type": "statement",
+          "qualifiers": {
+            "P407": [
+              {
+                "snaktype": "value",
+                "property": "P407",
+                "hash": "d197d0a5efa4b4c23a302a829dd3ef43684fe002",
+                "datavalue": {
+                  "value": {
+                    "entity-type": "item",
+                    "numeric-id": 150,
+                    "id": "Q150"
+                  },
+                  "type": "wikibase-entityid"
+                },
+                "datatype": "wikibase-item"
+              }
+            ]
+          },
+          "qualifiers-order": [
+            "P407"
+          ],
+          "id": "Q178624$56dac1ff-4744-8c6f-3ce6-459863221ebf",
+          "rank": "normal"
+        }
+      ],
+      "P186": [
+        {
+          "mainsnak": {
+            "snaktype": "value",
+            "property": "P186",
+            "hash": "09efa96cc2c9bb17109d93794d68b1dfdebd6986",
+            "datavalue": {
+              "value": {
+                "entity-type": "item",
+                "numeric-id": 1090,
+                "id": "Q1090"
+              },
+              "type": "wikibase-entityid"
+            },
+            "datatype": "wikibase-item"
+          },
+          "type": "statement",
+          "id": "Q178624$f31bb45b-4d74-57ac-2831-ea038b572e36",
+          "rank": "normal"
+        }
+      ],
+      "P195": [
+        {
+          "mainsnak": {
+            "snaktype": "value",
+            "property": "P195",
+            "hash": "3a7c8468c03c50fd73dfefdd4fb04f53dcff97f7",
+            "datavalue": {
+              "value": {
+                "entity-type": "item",
+                "numeric-id": 3044747,
+                "id": "Q3044747"
+              },
+              "type": "wikibase-entityid"
+            },
+            "datatype": "wikibase-item"
+          },
+          "type": "statement",
+          "id": "Q178624$0b06cb22-4874-66e5-ff27-accde5e1ca45",
+          "rank": "normal"
+        }
+      ],
+      "P361": [
+        {
+          "mainsnak": {
+            "snaktype": "value",
+            "property": "P361",
+            "hash": "bed3ade950f380a730175e9ef8714153da2f8a8d",
+            "datavalue": {
+              "value": {
+                "entity-type": "item",
+                "numeric-id": 3044747,
+                "id": "Q3044747"
+              },
+              "type": "wikibase-entityid"
+            },
+            "datatype": "wikibase-item"
+          },
+          "type": "statement",
+          "id": "Q178624$07b9597c-4d62-a6ef-e4e4-2489b4a8c1b6",
+          "rank": "normal"
+        }
+      ],
+      "P18": [
+        {
+          "mainsnak": {
+            "snaktype": "value",
+            "property": "P18",
+            "hash": "acca3795200281c798bc847b486698c6e9f2a9f4",
+            "datavalue": {
+              "value": "Trésor de Boscoreale – Musée du Louvre – Q178624 – a.jpg",
+              "type": "string"
+            },
+            "datatype": "commonsMedia"
+          },
+          "type": "statement",
+          "id": "Q178624$edda3b5d-48b9-201b-2dff-49249caa19fe",
+          "rank": "normal"
+        }
+      ],
+      "P2581": [
+        {
+          "mainsnak": {
+            "snaktype": "value",
+            "property": "P2581",
+            "hash": "0e37c7a9ea6f098d268456c2d06bc145f4669f3b",
+            "datavalue": {
+              "value": "16120809n",
+              "type": "string"
+            },
+            "datatype": "external-id"
+          },
+          "type": "statement",
+          "id": "Q178624$EC851116-F5E0-47E4-9717-6EFAE454797D",
+          "rank": "normal",
+          "references": [
+            {
+              "hash": "248ac337a217a5f5eed7139a82a4e60931611af0",
+              "snaks": {
+                "P248": [
+                  {
+                    "snaktype": "value",
+                    "property": "P248",
+                    "hash": "25b816aab41db18565946259c950aed6de05dd1e",
+                    "datavalue": {
+                      "value": {
+                        "entity-type": "item",
+                        "numeric-id": 4837690,
+                        "id": "Q4837690"
+                      },
+                      "type": "wikibase-entityid"
+                    },
+                    "datatype": "wikibase-item"
+                  }
+                ]
+              },
+              "snaks-order": [
+                "P248"
+              ]
+            }
+          ]
+        }
+      ],
+      "P646": [
+        {
+          "mainsnak": {
+            "snaktype": "value",
+            "property": "P646",
+            "hash": "913372d90ef290e5f5ef5f962c73102586862140",
+            "datavalue": {
+              "value": "/m/01258t3c",
+              "type": "string"
+            },
+            "datatype": "external-id"
+          },
+          "type": "statement",
+          "id": "Q178624$6E41DB92-BBA9-46F8-9541-66E97413EC96",
+          "rank": "normal"
+        }
+      ],
+      "P9394": [
+        {
+          "mainsnak": {
+            "snaktype": "novalue",
+            "property": "P9394",
+            "hash": "77fe0ab60a7dc8274db62e461f2b4f965cf5aa5a",
+            "datatype": "external-id"
+          },
+          "type": "statement",
+          "id": "Q178624$9b180a41-4457-5ae3-a78f-e1d13361c50d",
+          "rank": "normal"
+        }
+      ],
+      "P170": [
+        {
+          "mainsnak": {
+            "snaktype": "somevalue",
+            "property": "P170",
+            "hash": "d3550e860f988c6675fff913440993f58f5c40c5",
+            "datatype": "wikibase-item"
+          },
+          "type": "statement",
+          "id": "Q178624$D7ADA1DB-96DF-4574-A1AE-3D6929213C35",
+          "rank": "normal"
+        }
+      ],
+      "P625": [
+        {
+          "mainsnak": {
+            "snaktype": "value",
+            "property": "P625",
+            "hash": "1e99d85824988dcb736a4ad15a08c8abe4d15f35",
+            "datavalue": {
+              "value": {
+                "latitude": 48.8603,
+                "longitude": 2.3375,
+                "altitude": null,
+                "precision": 0.0001,
+                "globe": "http://www.wikidata.org/entity/Q2"
+              },
+              "type": "globecoordinate"
+            },
+            "datatype": "globe-coordinate"
+          },
+          "type": "statement",
+          "id": "Q178624$8bf921fd-b91f-41ef-8d0a-f79865eba7f3",
+          "rank": "normal"
+        }
+      ],
+      "P127": [
+        {
+          "mainsnak": {
+            "snaktype": "value",
+            "property": "P127",
+            "hash": "925454b70d04851919316e9a759c97b70a245a37",
+            "datavalue": {
+              "value": {
+                "entity-type": "item",
+                "numeric-id": 3591845,
+                "id": "Q3591845"
+              },
+              "type": "wikibase-entityid"
+            },
+            "datatype": "wikibase-item"
+          },
+          "type": "statement",
+          "id": "Q178624$CE9AF9C3-A11E-4CC3-8DAC-CF0932B3FE9D",
+          "rank": "normal"
+        }
+      ],
+      "P17": [
+        {
+          "mainsnak": {
+            "snaktype": "value",
+            "property": "P17",
+            "hash": "c05db5d169c2560b9799d567a803d20a392f53e4",
+            "datavalue": {
+              "value": {
+                "entity-type": "item",
+                "numeric-id": 142,
+                "id": "Q142"
+              },
+              "type": "wikibase-entityid"
+            },
+            "datatype": "wikibase-item"
+          },
+          "type": "statement",
+          "id": "Q178624$AAC6CC72-F9C8-4D6D-88F7-21A937B36AFD",
+          "rank": "normal"
+        }
+      ]
+    },
+    "sitelinks": {
+      "commonswiki": {
+        "site": "commonswiki",
+        "title": "Category:Boscoreale Treasure",
+        "badges": [],
+        "url": "https://commons.wikimedia.org/wiki/Category:Boscoreale_Treasure"
+      },
+      "dewiki": {
+        "site": "dewiki",
+        "title": "Schatz von Boscoreale",
+        "badges": [],
+        "url": "https://de.wikipedia.org/wiki/Schatz_von_Boscoreale"
+      },
+      "enwiki": {
+        "site": "enwiki",
+        "title": "Boscoreale Treasure",
+        "badges": [],
+        "url": "https://en.wikipedia.org/wiki/Boscoreale_Treasure"
+      },
+      "fawiki": {
+        "site": "fawiki",
+        "title": "گنجینه بوسکورئاله",
+        "badges": [],
+        "url": "https://fa.wikipedia.org/wiki/%DA%AF%D9%86%D8%AC%DB%8C%D9%86%D9%87_%D8%A8%D9%88%D8%B3%DA%A9%D9%88%D8%B1%D8%A6%D8%A7%D9%84%D9%87"
+      },
+      "frwiki": {
+        "site": "frwiki",
+        "title": "Trésor de Boscoreale",
+        "badges": [],
+        "url": "https://fr.wikipedia.org/wiki/Tr%C3%A9sor_de_Boscoreale"
+      },
+      "hawiki": {
+        "site": "hawiki",
+        "title": "Dukiyar Boscoreale",
+        "badges": [],
+        "url": "https://ha.wikipedia.org/wiki/Dukiyar_Boscoreale"
+      },
+      "idwiki": {
+        "site": "idwiki",
+        "title": "Harta karun Boscoreale",
+        "badges": [],
+        "url": "https://id.wikipedia.org/wiki/Harta_karun_Boscoreale"
+      },
+      "itwiki": {
+        "site": "itwiki",
+        "title": "Tesoro di Boscoreale",
+        "badges": [],
+        "url": "https://it.wikipedia.org/wiki/Tesoro_di_Boscoreale"
+      },
+      "lawiki": {
+        "site": "lawiki",
+        "title": "Thesaurus Boscoregalensis",
+        "badges": [],
+        "url": "https://la.wikipedia.org/wiki/Thesaurus_Boscoregalensis"
+      },
+      "plwiki": {
+        "site": "plwiki",
+        "title": "Skarb z Boscoreale",
+        "badges": [],
+        "url": "https://pl.wikipedia.org/wiki/Skarb_z_Boscoreale"
+      },
+      "slwiki": {
+        "site": "slwiki",
+        "title": "Zaklad iz Boscoreale",
+        "badges": [],
+        "url": "https://sl.wikipedia.org/wiki/Zaklad_iz_Boscoreale"
+      }
+    }
+  }
+}

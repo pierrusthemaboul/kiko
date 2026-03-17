@@ -1,0 +1,463 @@
+{
+  "saved_at": "2026-03-07T13:24:38.698Z",
+  "value": {
+    "pageid": 2978950,
+    "ns": 0,
+    "title": "Q3117640",
+    "lastrevid": 2379401591,
+    "modified": "2025-07-14T08:16:14Z",
+    "type": "item",
+    "id": "Q3117640",
+    "labels": {
+      "fr": {
+        "language": "fr",
+        "value": "Groupe d'information sur les prisons"
+      },
+      "ja": {
+        "language": "ja",
+        "value": "監獄情報グループ"
+      },
+      "en": {
+        "language": "en",
+        "value": "Groupe d'information sur les prisons"
+      }
+    },
+    "descriptions": {
+      "fr": {
+        "language": "fr",
+        "value": "Mouvement d'action et d'information"
+      }
+    },
+    "aliases": {
+      "fr": [
+        {
+          "language": "fr",
+          "value": "Groupe d'Information sur les Prisons"
+        },
+        {
+          "language": "fr",
+          "value": "Groupe Information Prisons"
+        },
+        {
+          "language": "fr",
+          "value": "Groupe information prisons"
+        },
+        {
+          "language": "fr",
+          "value": "Groupe D'information Sur Les Prisons"
+        }
+      ]
+    },
+    "claims": {
+      "P112": [
+        {
+          "mainsnak": {
+            "snaktype": "value",
+            "property": "P112",
+            "hash": "f3d1a500758430e068acabfc62977c0c47c79aaf",
+            "datavalue": {
+              "value": {
+                "entity-type": "item",
+                "numeric-id": 44272,
+                "id": "Q44272"
+              },
+              "type": "wikibase-entityid"
+            },
+            "datatype": "wikibase-item"
+          },
+          "type": "statement",
+          "id": "Q3117640$3bcb6909-4981-336b-4740-533b5721933b",
+          "rank": "normal"
+        },
+        {
+          "mainsnak": {
+            "snaktype": "value",
+            "property": "P112",
+            "hash": "bd20719cb13d8db5a8996b36d3077e18f8aae0ba",
+            "datavalue": {
+              "value": {
+                "entity-type": "item",
+                "numeric-id": 632875,
+                "id": "Q632875"
+              },
+              "type": "wikibase-entityid"
+            },
+            "datatype": "wikibase-item"
+          },
+          "type": "statement",
+          "id": "Q3117640$f6897d80-46b3-7165-9c85-334f177209aa",
+          "rank": "normal"
+        }
+      ],
+      "P31": [
+        {
+          "mainsnak": {
+            "snaktype": "value",
+            "property": "P31",
+            "hash": "5b555715d82fb2edce40e2f5a3854aa5b5ea0f76",
+            "datavalue": {
+              "value": {
+                "entity-type": "item",
+                "numeric-id": 163740,
+                "id": "Q163740"
+              },
+              "type": "wikibase-entityid"
+            },
+            "datatype": "wikibase-item"
+          },
+          "type": "statement",
+          "id": "Q3117640$F92E1417-F62A-4E21-8709-DF2DE70D7FE6",
+          "rank": "normal"
+        }
+      ],
+      "P571": [
+        {
+          "mainsnak": {
+            "snaktype": "value",
+            "property": "P571",
+            "hash": "c78c2f63fca93bf386013c477c8d24199c6a2005",
+            "datavalue": {
+              "value": {
+                "time": "+1971-00-00T00:00:00Z",
+                "timezone": 0,
+                "before": 0,
+                "after": 0,
+                "precision": 9,
+                "calendarmodel": "http://www.wikidata.org/entity/Q1985727"
+              },
+              "type": "time"
+            },
+            "datatype": "time"
+          },
+          "type": "statement",
+          "id": "Q3117640$053936e5-4b4f-992a-2ffa-5cd75051feec",
+          "rank": "normal"
+        }
+      ],
+      "P17": [
+        {
+          "mainsnak": {
+            "snaktype": "value",
+            "property": "P17",
+            "hash": "c05db5d169c2560b9799d567a803d20a392f53e4",
+            "datavalue": {
+              "value": {
+                "entity-type": "item",
+                "numeric-id": 142,
+                "id": "Q142"
+              },
+              "type": "wikibase-entityid"
+            },
+            "datatype": "wikibase-item"
+          },
+          "type": "statement",
+          "id": "Q3117640$9ee95c67-4267-6b2e-dc8e-f2e9ab95d35c",
+          "rank": "normal"
+        }
+      ],
+      "P213": [
+        {
+          "mainsnak": {
+            "snaktype": "value",
+            "property": "P213",
+            "hash": "476f65a31422900c43ae0d5340a26b9407946165",
+            "datavalue": {
+              "value": "0000000119425912",
+              "type": "string"
+            },
+            "datatype": "external-id"
+          },
+          "type": "statement",
+          "id": "Q3117640$874BB8D9-3078-43BA-8057-02B4E2DF67A1",
+          "rank": "normal"
+        }
+      ],
+      "P1454": [
+        {
+          "mainsnak": {
+            "snaktype": "value",
+            "property": "P1454",
+            "hash": "b3139135d90ef80c624536ba51a418d388195c41",
+            "datavalue": {
+              "value": {
+                "entity-type": "item",
+                "numeric-id": 11513034,
+                "id": "Q11513034"
+              },
+              "type": "wikibase-entityid"
+            },
+            "datatype": "wikibase-item"
+          },
+          "type": "statement",
+          "id": "Q3117640$63BEC656-4D34-4E2E-940A-C722734BB53A",
+          "rank": "normal"
+        }
+      ],
+      "P691": [
+        {
+          "mainsnak": {
+            "snaktype": "value",
+            "property": "P691",
+            "hash": "eb0b093087ca17b23c64f64760d4bdc9d66b4973",
+            "datavalue": {
+              "value": "ko2016908888",
+              "type": "string"
+            },
+            "datatype": "external-id"
+          },
+          "type": "statement",
+          "qualifiers": {
+            "P1810": [
+              {
+                "snaktype": "value",
+                "property": "P1810",
+                "hash": "88e4ea0b0d3ad2ba3334d145052f83ee153d5ca2",
+                "datavalue": {
+                  "value": "Groupe d'information sur les prisons",
+                  "type": "string"
+                },
+                "datatype": "string"
+              }
+            ]
+          },
+          "qualifiers-order": [
+            "P1810"
+          ],
+          "id": "Q3117640$2E254CE1-DE69-49F2-A433-6D92622413DB",
+          "rank": "normal",
+          "references": [
+            {
+              "hash": "58a9aeb6551e29109e6e06b9bc34c40fc18cd88a",
+              "snaks": {
+                "P248": [
+                  {
+                    "snaktype": "value",
+                    "property": "P248",
+                    "hash": "80047f9d5b0d2daf06989e71bd5f4ba15b215fd6",
+                    "datavalue": {
+                      "value": {
+                        "entity-type": "item",
+                        "numeric-id": 13550863,
+                        "id": "Q13550863"
+                      },
+                      "type": "wikibase-entityid"
+                    },
+                    "datatype": "wikibase-item"
+                  }
+                ],
+                "P813": [
+                  {
+                    "snaktype": "value",
+                    "property": "P813",
+                    "hash": "3756277ea3db3c5c7ee5523dd3aae9aa81b396b6",
+                    "datavalue": {
+                      "value": {
+                        "time": "+2018-12-20T00:00:00Z",
+                        "timezone": 0,
+                        "before": 0,
+                        "after": 0,
+                        "precision": 11,
+                        "calendarmodel": "http://www.wikidata.org/entity/Q1985727"
+                      },
+                      "type": "time"
+                    },
+                    "datatype": "time"
+                  }
+                ]
+              },
+              "snaks-order": [
+                "P248",
+                "P813"
+              ]
+            }
+          ]
+        }
+      ],
+      "P244": [
+        {
+          "mainsnak": {
+            "snaktype": "value",
+            "property": "P244",
+            "hash": "860b40b3ac845c8ea000ea6f4d5b40efa85fa404",
+            "datavalue": {
+              "value": "n2004092379",
+              "type": "string"
+            },
+            "datatype": "external-id"
+          },
+          "type": "statement",
+          "id": "Q3117640$ABFED490-D08B-42BE-8584-26970866E6AC",
+          "rank": "normal",
+          "references": [
+            {
+              "hash": "14fa5898ac764e0660517aa07ea0bbba505f262b",
+              "snaks": {
+                "P248": [
+                  {
+                    "snaktype": "value",
+                    "property": "P248",
+                    "hash": "6b7d4330c4aac4caec4ede9de0311ce273f88ecd",
+                    "datavalue": {
+                      "value": {
+                        "entity-type": "item",
+                        "numeric-id": 54919,
+                        "id": "Q54919"
+                      },
+                      "type": "wikibase-entityid"
+                    },
+                    "datatype": "wikibase-item"
+                  }
+                ],
+                "P813": [
+                  {
+                    "snaktype": "value",
+                    "property": "P813",
+                    "hash": "e0d08f96012770600b942d5e8563b2a3499cba8e",
+                    "datavalue": {
+                      "value": {
+                        "time": "+2019-03-06T00:00:00Z",
+                        "timezone": 0,
+                        "before": 0,
+                        "after": 0,
+                        "precision": 11,
+                        "calendarmodel": "http://www.wikidata.org/entity/Q1985727"
+                      },
+                      "type": "time"
+                    },
+                    "datatype": "time"
+                  }
+                ]
+              },
+              "snaks-order": [
+                "P248",
+                "P813"
+              ]
+            }
+          ]
+        }
+      ],
+      "P214": [
+        {
+          "mainsnak": {
+            "snaktype": "value",
+            "property": "P214",
+            "hash": "dc13b68b7a5931cfe3fe14a7d91e52aeaadff739",
+            "datavalue": {
+              "value": "153584598",
+              "type": "string"
+            },
+            "datatype": "external-id"
+          },
+          "type": "statement",
+          "id": "Q3117640$2207511A-B2FC-4E65-B6CE-6F6FB296BB15",
+          "rank": "normal"
+        }
+      ],
+      "P2671": [
+        {
+          "mainsnak": {
+            "snaktype": "value",
+            "property": "P2671",
+            "hash": "11674428a5130e64238b0584312bcffb68838d9d",
+            "datavalue": {
+              "value": "/g/120jfc7m",
+              "type": "string"
+            },
+            "datatype": "external-id"
+          },
+          "type": "statement",
+          "id": "Q3117640$8138615A-B8C1-4FD3-8D8D-7777F1BA61CC",
+          "rank": "normal"
+        }
+      ],
+      "P8189": [
+        {
+          "mainsnak": {
+            "snaktype": "value",
+            "property": "P8189",
+            "hash": "75ad0c6c1d77d590948e0ca9fca8e0b7178bc5be",
+            "datavalue": {
+              "value": "987007356163005171",
+              "type": "string"
+            },
+            "datatype": "external-id"
+          },
+          "type": "statement",
+          "id": "Q3117640$485945CB-372C-4CA2-95DF-5E0F48D64A8F",
+          "rank": "normal",
+          "references": [
+            {
+              "hash": "ecb7a39cf436eb1fba419853af168ef9f2ba1dab",
+              "snaks": {
+                "P248": [
+                  {
+                    "snaktype": "value",
+                    "property": "P248",
+                    "hash": "a03bb6ffe37be9554492f4eea5bd18afcb57df19",
+                    "datavalue": {
+                      "value": {
+                        "entity-type": "item",
+                        "numeric-id": 106509962,
+                        "id": "Q106509962"
+                      },
+                      "type": "wikibase-entityid"
+                    },
+                    "datatype": "wikibase-item"
+                  }
+                ]
+              },
+              "snaks-order": [
+                "P248"
+              ]
+            }
+          ]
+        }
+      ],
+      "P1813": [
+        {
+          "mainsnak": {
+            "snaktype": "value",
+            "property": "P1813",
+            "hash": "3b3f34afcdc054793b5fb77e6e268d5c66ca90e4",
+            "datavalue": {
+              "value": {
+                "text": "GIP",
+                "language": "fr"
+              },
+              "type": "monolingualtext"
+            },
+            "datatype": "monolingualtext"
+          },
+          "type": "statement",
+          "id": "Q3117640$794c10eb-45b4-c741-6cd9-7904a719c355",
+          "rank": "normal"
+        }
+      ],
+      "P13591": [
+        {
+          "mainsnak": {
+            "snaktype": "value",
+            "property": "P13591",
+            "hash": "88272973fa5296455a9afa0e3336ff76dc42c976",
+            "datavalue": {
+              "value": "group/73acf2ee-f47a-432a-8a02-63f2f074aef5",
+              "type": "string"
+            },
+            "datatype": "external-id"
+          },
+          "type": "statement",
+          "id": "Q3117640$91F02080-C58D-41F1-ACB7-65DBC8EF4348",
+          "rank": "normal"
+        }
+      ]
+    },
+    "sitelinks": {
+      "frwiki": {
+        "site": "frwiki",
+        "title": "Groupe d'information sur les prisons",
+        "badges": [],
+        "url": "https://fr.wikipedia.org/wiki/Groupe_d%27information_sur_les_prisons"
+      }
+    }
+  }
+}

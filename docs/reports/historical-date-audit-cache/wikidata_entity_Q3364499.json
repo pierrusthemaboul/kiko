@@ -1,0 +1,1567 @@
+{
+  "saved_at": "2026-03-07T14:04:10.934Z",
+  "value": {
+    "pageid": 3206581,
+    "ns": 0,
+    "title": "Q3364499",
+    "lastrevid": 2344261254,
+    "modified": "2025-05-03T16:41:21Z",
+    "type": "item",
+    "id": "Q3364499",
+    "labels": {
+      "fr": {
+        "language": "fr",
+        "value": "parc national de forêts"
+      },
+      "en": {
+        "language": "en",
+        "value": "Forêts National Park"
+      },
+      "ca": {
+        "language": "ca",
+        "value": "Parc Nacional de Boscos"
+      },
+      "nl": {
+        "language": "nl",
+        "value": "Nationaal park Forêts"
+      },
+      "es": {
+        "language": "es",
+        "value": "Parque nacional de forêts"
+      },
+      "it": {
+        "language": "it",
+        "value": "Parco nazionale delle Forêts"
+      },
+      "zh": {
+        "language": "zh",
+        "value": "森林國家公園"
+      },
+      "ban": {
+        "language": "ban",
+        "value": "Taman Nasional Forêts"
+      },
+      "pt": {
+        "language": "pt",
+        "value": "Parque Nacional de Forêts"
+      },
+      "sl": {
+        "language": "sl",
+        "value": "Narodni gozdni park"
+      },
+      "de": {
+        "language": "de",
+        "value": "Nationalpark Forêts"
+      }
+    },
+    "descriptions": {
+      "fr": {
+        "language": "fr",
+        "value": "parc national en France"
+      },
+      "en": {
+        "language": "en",
+        "value": "national park in France"
+      },
+      "ca": {
+        "language": "ca",
+        "value": "parc nacional de França"
+      },
+      "es": {
+        "language": "es",
+        "value": "área protegida de Francia"
+      },
+      "sl": {
+        "language": "sl",
+        "value": "narodni park v Franciji"
+      },
+      "de": {
+        "language": "de",
+        "value": "Nationalpark in Frankreich"
+      }
+    },
+    "aliases": {
+      "nl": [
+        {
+          "language": "nl",
+          "value": "Nationaal park Forets"
+        },
+        {
+          "language": "nl",
+          "value": "parc national de forêts"
+        }
+      ],
+      "en": [
+        {
+          "language": "en",
+          "value": "Forets National Park"
+        },
+        {
+          "language": "en",
+          "value": "parc national de forêts"
+        }
+      ]
+    },
+    "claims": {
+      "P31": [
+        {
+          "mainsnak": {
+            "snaktype": "value",
+            "property": "P31",
+            "hash": "b5da2553a8e25482a07df4644bad62d1d2afbf2d",
+            "datavalue": {
+              "value": {
+                "entity-type": "item",
+                "numeric-id": 943017,
+                "id": "Q943017"
+              },
+              "type": "wikibase-entityid"
+            },
+            "datatype": "wikibase-item"
+          },
+          "type": "statement",
+          "id": "Q3364499$8393b50f-4e85-5019-8943-adb800fdbb4d",
+          "rank": "normal"
+        },
+        {
+          "mainsnak": {
+            "snaktype": "value",
+            "property": "P31",
+            "hash": "ed64c38ca48d70baf72e6e3f6e6392ff5c54bdc4",
+            "datavalue": {
+              "value": {
+                "entity-type": "item",
+                "numeric-id": 2828309,
+                "id": "Q2828309"
+              },
+              "type": "wikibase-entityid"
+            },
+            "datatype": "wikibase-item"
+          },
+          "type": "statement",
+          "id": "Q3364499$baa4b72d-425c-4208-f03a-28ffe63c6e1d",
+          "rank": "normal"
+        },
+        {
+          "mainsnak": {
+            "snaktype": "value",
+            "property": "P31",
+            "hash": "7530c09f06ad827559689b437ac1a0c9458adf7a",
+            "datavalue": {
+              "value": {
+                "entity-type": "item",
+                "numeric-id": 46169,
+                "id": "Q46169"
+              },
+              "type": "wikibase-entityid"
+            },
+            "datatype": "wikibase-item"
+          },
+          "type": "statement",
+          "id": "Q3364499$f8b49b8e-4cf7-9bf5-2062-eba643dbc0d0",
+          "rank": "normal"
+        }
+      ],
+      "P17": [
+        {
+          "mainsnak": {
+            "snaktype": "value",
+            "property": "P17",
+            "hash": "c05db5d169c2560b9799d567a803d20a392f53e4",
+            "datavalue": {
+              "value": {
+                "entity-type": "item",
+                "numeric-id": 142,
+                "id": "Q142"
+              },
+              "type": "wikibase-entityid"
+            },
+            "datatype": "wikibase-item"
+          },
+          "type": "statement",
+          "id": "Q3364499$7D548454-E4D0-40E0-A37E-C3CB810CE9FF",
+          "rank": "normal",
+          "references": [
+            {
+              "hash": "2b0b0a0a111fb94791a26090a9935424c25bab3a",
+              "snaks": {
+                "P248": [
+                  {
+                    "snaktype": "value",
+                    "property": "P248",
+                    "hash": "1863be7c0d56a0480f21de1660c0b453fea62a6a",
+                    "datavalue": {
+                      "value": {
+                        "entity-type": "item",
+                        "numeric-id": 1116062,
+                        "id": "Q1116062"
+                      },
+                      "type": "wikibase-entityid"
+                    },
+                    "datatype": "wikibase-item"
+                  }
+                ],
+                "P813": [
+                  {
+                    "snaktype": "value",
+                    "property": "P813",
+                    "hash": "b65d2831818e0f4932b60acb70401e6921da7467",
+                    "datavalue": {
+                      "value": {
+                        "time": "+2021-06-26T00:00:00Z",
+                        "timezone": 0,
+                        "before": 0,
+                        "after": 0,
+                        "precision": 11,
+                        "calendarmodel": "http://www.wikidata.org/entity/Q1985727"
+                      },
+                      "type": "time"
+                    },
+                    "datatype": "time"
+                  }
+                ]
+              },
+              "snaks-order": [
+                "P248",
+                "P813"
+              ]
+            }
+          ]
+        }
+      ],
+      "P625": [
+        {
+          "mainsnak": {
+            "snaktype": "value",
+            "property": "P625",
+            "hash": "1a7341a693fb2a56428e44d709e6d6e5b4fc598e",
+            "datavalue": {
+              "value": {
+                "latitude": 47.9,
+                "longitude": 4.83,
+                "altitude": null,
+                "precision": 0.1,
+                "globe": "http://www.wikidata.org/entity/Q2"
+              },
+              "type": "globecoordinate"
+            },
+            "datatype": "globe-coordinate"
+          },
+          "type": "statement",
+          "id": "Q3364499$CE878527-1E04-4195-93C6-E7693A743DB6",
+          "rank": "normal",
+          "references": [
+            {
+              "hash": "d4bd87b862b12d99d26e86472d44f26858dee639",
+              "snaks": {
+                "P143": [
+                  {
+                    "snaktype": "value",
+                    "property": "P143",
+                    "hash": "f30cbd35620c4ea6d0633aaf0210a8916130469b",
+                    "datavalue": {
+                      "value": {
+                        "entity-type": "item",
+                        "numeric-id": 8447,
+                        "id": "Q8447"
+                      },
+                      "type": "wikibase-entityid"
+                    },
+                    "datatype": "wikibase-item"
+                  }
+                ]
+              },
+              "snaks-order": [
+                "P143"
+              ]
+            }
+          ]
+        }
+      ],
+      "P18": [
+        {
+          "mainsnak": {
+            "snaktype": "value",
+            "property": "P18",
+            "hash": "561c44697c3a1c47e919681c1e95182b5e4efaf1",
+            "datavalue": {
+              "value": "Forêt d'Arc-en-Barrois en Haute-Marne.JPG",
+              "type": "string"
+            },
+            "datatype": "commonsMedia"
+          },
+          "type": "statement",
+          "id": "Q3364499$F2DD0DD4-E152-4CDE-AF91-F50EC73BFF88",
+          "rank": "normal",
+          "references": [
+            {
+              "hash": "d4bd87b862b12d99d26e86472d44f26858dee639",
+              "snaks": {
+                "P143": [
+                  {
+                    "snaktype": "value",
+                    "property": "P143",
+                    "hash": "f30cbd35620c4ea6d0633aaf0210a8916130469b",
+                    "datavalue": {
+                      "value": {
+                        "entity-type": "item",
+                        "numeric-id": 8447,
+                        "id": "Q8447"
+                      },
+                      "type": "wikibase-entityid"
+                    },
+                    "datatype": "wikibase-item"
+                  }
+                ]
+              },
+              "snaks-order": [
+                "P143"
+              ]
+            }
+          ]
+        }
+      ],
+      "P856": [
+        {
+          "mainsnak": {
+            "snaktype": "value",
+            "property": "P856",
+            "hash": "51e481e617ad43144b580b00379d9e1671960fc2",
+            "datavalue": {
+              "value": "http://www.forets-parcnational.fr/fr",
+              "type": "string"
+            },
+            "datatype": "url"
+          },
+          "type": "statement",
+          "qualifiers": {
+            "P407": [
+              {
+                "snaktype": "value",
+                "property": "P407",
+                "hash": "d197d0a5efa4b4c23a302a829dd3ef43684fe002",
+                "datavalue": {
+                  "value": {
+                    "entity-type": "item",
+                    "numeric-id": 150,
+                    "id": "Q150"
+                  },
+                  "type": "wikibase-entityid"
+                },
+                "datatype": "wikibase-item"
+              }
+            ]
+          },
+          "qualifiers-order": [
+            "P407"
+          ],
+          "id": "Q3364499$B862436D-5386-4E59-89A0-645E3DB91E21",
+          "rank": "normal",
+          "references": [
+            {
+              "hash": "d4bd87b862b12d99d26e86472d44f26858dee639",
+              "snaks": {
+                "P143": [
+                  {
+                    "snaktype": "value",
+                    "property": "P143",
+                    "hash": "f30cbd35620c4ea6d0633aaf0210a8916130469b",
+                    "datavalue": {
+                      "value": {
+                        "entity-type": "item",
+                        "numeric-id": 8447,
+                        "id": "Q8447"
+                      },
+                      "type": "wikibase-entityid"
+                    },
+                    "datatype": "wikibase-item"
+                  }
+                ]
+              },
+              "snaks-order": [
+                "P143"
+              ]
+            }
+          ]
+        }
+      ],
+      "P131": [
+        {
+          "mainsnak": {
+            "snaktype": "value",
+            "property": "P131",
+            "hash": "0befe3b233fd39bd3053a402bb26b894fd83aa5a",
+            "datavalue": {
+              "value": {
+                "entity-type": "item",
+                "numeric-id": 3342,
+                "id": "Q3342"
+              },
+              "type": "wikibase-entityid"
+            },
+            "datatype": "wikibase-item"
+          },
+          "type": "statement",
+          "id": "Q3364499$c1a0bbb8-4b25-a40b-c9eb-62b2e17d3344",
+          "rank": "normal"
+        },
+        {
+          "mainsnak": {
+            "snaktype": "value",
+            "property": "P131",
+            "hash": "e1206754d00d6f2235c258ea92b1516c6da80931",
+            "datavalue": {
+              "value": {
+                "entity-type": "item",
+                "numeric-id": 12607,
+                "id": "Q12607"
+              },
+              "type": "wikibase-entityid"
+            },
+            "datatype": "wikibase-item"
+          },
+          "type": "statement",
+          "id": "Q3364499$e86216ae-46cd-eccd-380f-2f9674cac049",
+          "rank": "normal"
+        }
+      ],
+      "P7153": [
+        {
+          "mainsnak": {
+            "snaktype": "value",
+            "property": "P7153",
+            "hash": "e2029bf6675fe72f846d562343feec24591a83e7",
+            "datavalue": {
+              "value": {
+                "entity-type": "item",
+                "numeric-id": 244707,
+                "id": "Q244707"
+              },
+              "type": "wikibase-entityid"
+            },
+            "datatype": "wikibase-item"
+          },
+          "type": "statement",
+          "qualifiers": {
+            "P3831": [
+              {
+                "snaktype": "value",
+                "property": "P3831",
+                "hash": "f2238222bb690bc6fb94077f86e2a86fa95151e0",
+                "datavalue": {
+                  "value": {
+                    "entity-type": "item",
+                    "numeric-id": 72025746,
+                    "id": "Q72025746"
+                  },
+                  "type": "wikibase-entityid"
+                },
+                "datatype": "wikibase-item"
+              }
+            ]
+          },
+          "qualifiers-order": [
+            "P3831"
+          ],
+          "id": "Q3364499$2D306B50-0FA6-4F31-AC09-F5CB7E5F2B6D",
+          "rank": "normal",
+          "references": [
+            {
+              "hash": "d4bd87b862b12d99d26e86472d44f26858dee639",
+              "snaks": {
+                "P143": [
+                  {
+                    "snaktype": "value",
+                    "property": "P143",
+                    "hash": "f30cbd35620c4ea6d0633aaf0210a8916130469b",
+                    "datavalue": {
+                      "value": {
+                        "entity-type": "item",
+                        "numeric-id": 8447,
+                        "id": "Q8447"
+                      },
+                      "type": "wikibase-entityid"
+                    },
+                    "datatype": "wikibase-item"
+                  }
+                ]
+              },
+              "snaks-order": [
+                "P143"
+              ]
+            }
+          ]
+        }
+      ],
+      "P30": [
+        {
+          "mainsnak": {
+            "snaktype": "value",
+            "property": "P30",
+            "hash": "19a1327487d5b9576f36ab9e95214ac7aa1091ba",
+            "datavalue": {
+              "value": {
+                "entity-type": "item",
+                "numeric-id": 46,
+                "id": "Q46"
+              },
+              "type": "wikibase-entityid"
+            },
+            "datatype": "wikibase-item"
+          },
+          "type": "statement",
+          "id": "Q3364499$bbc10611-4ae3-edd4-ee3e-6adb025b23a4",
+          "rank": "normal"
+        }
+      ],
+      "P571": [
+        {
+          "mainsnak": {
+            "snaktype": "value",
+            "property": "P571",
+            "hash": "3140138510c682f7c99a9b6d9f54fee03fd5096e",
+            "datavalue": {
+              "value": {
+                "time": "+2019-11-06T00:00:00Z",
+                "timezone": 0,
+                "before": 0,
+                "after": 0,
+                "precision": 11,
+                "calendarmodel": "http://www.wikidata.org/entity/Q1985727"
+              },
+              "type": "time"
+            },
+            "datatype": "time"
+          },
+          "type": "statement",
+          "id": "Q3364499$6cb95788-49cb-9fe3-df5a-9ebc1bfb5530",
+          "rank": "preferred",
+          "references": [
+            {
+              "hash": "7b60ead87712e86026e15e418fe98b34dff13acc",
+              "snaks": {
+                "P854": [
+                  {
+                    "snaktype": "value",
+                    "property": "P854",
+                    "hash": "93a93c12e3ecaf253234b90d67f2ddd3aaf27ba1",
+                    "datavalue": {
+                      "value": "https://www.legifrance.gouv.fr/affichTexte.do;jsessionid=09CEECC1F0C9C667F881F73AEA2EBBBD.tplgfr30s_2?cidTexte=JORFTEXT000039333912&dateTexte=&oldAction=rechJO&categorieLien=id&idJO=JORFCONT000039333869",
+                      "type": "string"
+                    },
+                    "datatype": "url"
+                  }
+                ],
+                "P577": [
+                  {
+                    "snaktype": "value",
+                    "property": "P577",
+                    "hash": "d46023cbaf3ed58e92686a013bf3977072d660d9",
+                    "datavalue": {
+                      "value": {
+                        "time": "+2019-11-07T00:00:00Z",
+                        "timezone": 0,
+                        "before": 0,
+                        "after": 0,
+                        "precision": 11,
+                        "calendarmodel": "http://www.wikidata.org/entity/Q1985727"
+                      },
+                      "type": "time"
+                    },
+                    "datatype": "time"
+                  }
+                ]
+              },
+              "snaks-order": [
+                "P854",
+                "P577"
+              ]
+            }
+          ]
+        },
+        {
+          "mainsnak": {
+            "snaktype": "value",
+            "property": "P571",
+            "hash": "4714252315dea8155ebe4935cf1e49f2c66d70be",
+            "datavalue": {
+              "value": {
+                "time": "+2019-01-01T00:00:00Z",
+                "timezone": 0,
+                "before": 0,
+                "after": 0,
+                "precision": 9,
+                "calendarmodel": "http://www.wikidata.org/entity/Q1985727"
+              },
+              "type": "time"
+            },
+            "datatype": "time"
+          },
+          "type": "statement",
+          "id": "Q3364499$ECEB7831-4575-455D-8FDA-FBC0412C30BE",
+          "rank": "normal",
+          "references": [
+            {
+              "hash": "2b0b0a0a111fb94791a26090a9935424c25bab3a",
+              "snaks": {
+                "P248": [
+                  {
+                    "snaktype": "value",
+                    "property": "P248",
+                    "hash": "1863be7c0d56a0480f21de1660c0b453fea62a6a",
+                    "datavalue": {
+                      "value": {
+                        "entity-type": "item",
+                        "numeric-id": 1116062,
+                        "id": "Q1116062"
+                      },
+                      "type": "wikibase-entityid"
+                    },
+                    "datatype": "wikibase-item"
+                  }
+                ],
+                "P813": [
+                  {
+                    "snaktype": "value",
+                    "property": "P813",
+                    "hash": "b65d2831818e0f4932b60acb70401e6921da7467",
+                    "datavalue": {
+                      "value": {
+                        "time": "+2021-06-26T00:00:00Z",
+                        "timezone": 0,
+                        "before": 0,
+                        "after": 0,
+                        "precision": 11,
+                        "calendarmodel": "http://www.wikidata.org/entity/Q1985727"
+                      },
+                      "type": "time"
+                    },
+                    "datatype": "time"
+                  }
+                ]
+              },
+              "snaks-order": [
+                "P248",
+                "P813"
+              ]
+            }
+          ]
+        }
+      ],
+      "P2013": [
+        {
+          "mainsnak": {
+            "snaktype": "value",
+            "property": "P2013",
+            "hash": "ba1805a843f274d46a43f0b1595fba3a979186cd",
+            "datavalue": {
+              "value": "parcnationaldeforets",
+              "type": "string"
+            },
+            "datatype": "external-id"
+          },
+          "type": "statement",
+          "id": "Q3364499$7e60912a-40f7-6f08-4c22-a632cd6e1f34",
+          "rank": "normal"
+        }
+      ],
+      "P2002": [
+        {
+          "mainsnak": {
+            "snaktype": "value",
+            "property": "P2002",
+            "hash": "3e04905802adada643e48b51c3c0b0d1e5a637a3",
+            "datavalue": {
+              "value": "parcnationalFCB",
+              "type": "string"
+            },
+            "datatype": "external-id"
+          },
+          "type": "statement",
+          "qualifiers": {
+            "P585": [
+              {
+                "snaktype": "value",
+                "property": "P585",
+                "hash": "56cc037272f9f69be746b8e68d238413c936dea5",
+                "datavalue": {
+                  "value": {
+                    "time": "+2020-04-22T00:00:00Z",
+                    "timezone": 0,
+                    "before": 0,
+                    "after": 0,
+                    "precision": 11,
+                    "calendarmodel": "http://www.wikidata.org/entity/Q1985727"
+                  },
+                  "type": "time"
+                },
+                "datatype": "time"
+              }
+            ],
+            "P6552": [
+              {
+                "snaktype": "value",
+                "property": "P6552",
+                "hash": "5f55500b2ad28a4d1332de6511061dc7b70632ce",
+                "datavalue": {
+                  "value": "2816529636",
+                  "type": "string"
+                },
+                "datatype": "external-id"
+              }
+            ],
+            "P3744": [
+              {
+                "snaktype": "value",
+                "property": "P3744",
+                "hash": "671d4cb53edb2ddfcfcf642aaf164289b2742749",
+                "datavalue": {
+                  "value": {
+                    "amount": "+1387",
+                    "unit": "1"
+                  },
+                  "type": "quantity"
+                },
+                "datatype": "quantity"
+              }
+            ],
+            "P580": [
+              {
+                "snaktype": "value",
+                "property": "P580",
+                "hash": "854ad1801c8bb4435ac1dd08b773652bc308ebbc",
+                "datavalue": {
+                  "value": {
+                    "time": "+2014-09-18T00:00:00Z",
+                    "timezone": 0,
+                    "before": 0,
+                    "after": 0,
+                    "precision": 11,
+                    "calendarmodel": "http://www.wikidata.org/entity/Q1985727"
+                  },
+                  "type": "time"
+                },
+                "datatype": "time"
+              }
+            ]
+          },
+          "qualifiers-order": [
+            "P585",
+            "P6552",
+            "P3744",
+            "P580"
+          ],
+          "id": "Q3364499$eab57ab3-413b-0a01-6809-261e18c05398",
+          "rank": "normal"
+        }
+      ],
+      "P1705": [
+        {
+          "mainsnak": {
+            "snaktype": "value",
+            "property": "P1705",
+            "hash": "fc4f34a4714a485dbc1c6dc9eb6c13c05fdf1bf3",
+            "datavalue": {
+              "value": {
+                "text": "Parc national de forêts",
+                "language": "fr"
+              },
+              "type": "monolingualtext"
+            },
+            "datatype": "monolingualtext"
+          },
+          "type": "statement",
+          "id": "Q3364499$5add3562-4686-a0ee-95dd-cc525e33227b",
+          "rank": "normal"
+        }
+      ],
+      "P2046": [
+        {
+          "mainsnak": {
+            "snaktype": "value",
+            "property": "P2046",
+            "hash": "4bf9630d911e548569fb5460388922df45f0ad80",
+            "datavalue": {
+              "value": {
+                "amount": "+56612.914",
+                "unit": "http://www.wikidata.org/entity/Q35852"
+              },
+              "type": "quantity"
+            },
+            "datatype": "quantity"
+          },
+          "type": "statement",
+          "id": "Q3364499$0f24f56a-49ba-9422-1176-81816352798a",
+          "rank": "normal",
+          "references": [
+            {
+              "hash": "5b111e6fb156bcaeefc60a12b08e5a5066266517",
+              "snaks": {
+                "P248": [
+                  {
+                    "snaktype": "value",
+                    "property": "P248",
+                    "hash": "30e7b06a6361410dc4da9c1875df3f459fade78c",
+                    "datavalue": {
+                      "value": {
+                        "entity-type": "item",
+                        "numeric-id": 3153864,
+                        "id": "Q3153864"
+                      },
+                      "type": "wikibase-entityid"
+                    },
+                    "datatype": "wikibase-item"
+                  }
+                ],
+                "P1848": [
+                  {
+                    "snaktype": "value",
+                    "property": "P1848",
+                    "hash": "c221dcf71f992ce3f5e859a318ca8a5048f076cb",
+                    "datavalue": {
+                      "value": "FR3300011",
+                      "type": "string"
+                    },
+                    "datatype": "external-id"
+                  }
+                ],
+                "P813": [
+                  {
+                    "snaktype": "value",
+                    "property": "P813",
+                    "hash": "ae90b1d079437a9edb042df425fde37e3f367152",
+                    "datavalue": {
+                      "value": {
+                        "time": "+2020-06-13T00:00:00Z",
+                        "timezone": 0,
+                        "before": 0,
+                        "after": 0,
+                        "precision": 11,
+                        "calendarmodel": "http://www.wikidata.org/entity/Q1985727"
+                      },
+                      "type": "time"
+                    },
+                    "datatype": "time"
+                  }
+                ]
+              },
+              "snaks-order": [
+                "P248",
+                "P1848",
+                "P813"
+              ]
+            }
+          ]
+        },
+        {
+          "mainsnak": {
+            "snaktype": "value",
+            "property": "P2046",
+            "hash": "e534ad9dfdcd01cc0605a86e6962889249cb3b32",
+            "datavalue": {
+              "value": {
+                "amount": "+56612.9124",
+                "unit": "http://www.wikidata.org/entity/Q35852"
+              },
+              "type": "quantity"
+            },
+            "datatype": "quantity"
+          },
+          "type": "statement",
+          "id": "Q3364499$4764CE64-A1AB-4D8E-AC5A-12D4BD38606B",
+          "rank": "normal",
+          "references": [
+            {
+              "hash": "2b0b0a0a111fb94791a26090a9935424c25bab3a",
+              "snaks": {
+                "P248": [
+                  {
+                    "snaktype": "value",
+                    "property": "P248",
+                    "hash": "1863be7c0d56a0480f21de1660c0b453fea62a6a",
+                    "datavalue": {
+                      "value": {
+                        "entity-type": "item",
+                        "numeric-id": 1116062,
+                        "id": "Q1116062"
+                      },
+                      "type": "wikibase-entityid"
+                    },
+                    "datatype": "wikibase-item"
+                  }
+                ],
+                "P813": [
+                  {
+                    "snaktype": "value",
+                    "property": "P813",
+                    "hash": "b65d2831818e0f4932b60acb70401e6921da7467",
+                    "datavalue": {
+                      "value": {
+                        "time": "+2021-06-26T00:00:00Z",
+                        "timezone": 0,
+                        "before": 0,
+                        "after": 0,
+                        "precision": 11,
+                        "calendarmodel": "http://www.wikidata.org/entity/Q1985727"
+                      },
+                      "type": "time"
+                    },
+                    "datatype": "time"
+                  }
+                ]
+              },
+              "snaks-order": [
+                "P248",
+                "P813"
+              ]
+            }
+          ]
+        }
+      ],
+      "P910": [
+        {
+          "mainsnak": {
+            "snaktype": "value",
+            "property": "P910",
+            "hash": "ad7aa29f88e211779cc3a90423cf6ac4edfa3884",
+            "datavalue": {
+              "value": {
+                "entity-type": "item",
+                "numeric-id": 74095471,
+                "id": "Q74095471"
+              },
+              "type": "wikibase-entityid"
+            },
+            "datatype": "wikibase-item"
+          },
+          "type": "statement",
+          "id": "Q3364499$9e320523-488c-0543-dfe1-bb0ed9283e93",
+          "rank": "normal"
+        }
+      ],
+      "P373": [
+        {
+          "mainsnak": {
+            "snaktype": "value",
+            "property": "P373",
+            "hash": "4f98dc8944da4d4c2ed224c05e4ba0560ff6d9cb",
+            "datavalue": {
+              "value": "Parc national de forêts",
+              "type": "string"
+            },
+            "datatype": "string"
+          },
+          "type": "statement",
+          "id": "Q3364499$ad897994-4aee-dcde-8264-78b54bec9f03",
+          "rank": "normal"
+        }
+      ],
+      "P814": [
+        {
+          "mainsnak": {
+            "snaktype": "value",
+            "property": "P814",
+            "hash": "20dfc7f4c52c2ad082d5eb39a3b9fd438436fd9c",
+            "datavalue": {
+              "value": {
+                "entity-type": "item",
+                "numeric-id": 14545628,
+                "id": "Q14545628"
+              },
+              "type": "wikibase-entityid"
+            },
+            "datatype": "wikibase-item"
+          },
+          "type": "statement",
+          "id": "Q3364499$cea3de08-4bed-6526-e24c-6da420be42e0",
+          "rank": "normal",
+          "references": [
+            {
+              "hash": "5b111e6fb156bcaeefc60a12b08e5a5066266517",
+              "snaks": {
+                "P248": [
+                  {
+                    "snaktype": "value",
+                    "property": "P248",
+                    "hash": "30e7b06a6361410dc4da9c1875df3f459fade78c",
+                    "datavalue": {
+                      "value": {
+                        "entity-type": "item",
+                        "numeric-id": 3153864,
+                        "id": "Q3153864"
+                      },
+                      "type": "wikibase-entityid"
+                    },
+                    "datatype": "wikibase-item"
+                  }
+                ],
+                "P1848": [
+                  {
+                    "snaktype": "value",
+                    "property": "P1848",
+                    "hash": "c221dcf71f992ce3f5e859a318ca8a5048f076cb",
+                    "datavalue": {
+                      "value": "FR3300011",
+                      "type": "string"
+                    },
+                    "datatype": "external-id"
+                  }
+                ],
+                "P813": [
+                  {
+                    "snaktype": "value",
+                    "property": "P813",
+                    "hash": "ae90b1d079437a9edb042df425fde37e3f367152",
+                    "datavalue": {
+                      "value": {
+                        "time": "+2020-06-13T00:00:00Z",
+                        "timezone": 0,
+                        "before": 0,
+                        "after": 0,
+                        "precision": 11,
+                        "calendarmodel": "http://www.wikidata.org/entity/Q1985727"
+                      },
+                      "type": "time"
+                    },
+                    "datatype": "time"
+                  }
+                ]
+              },
+              "snaks-order": [
+                "P248",
+                "P1848",
+                "P813"
+              ]
+            },
+            {
+              "hash": "2b0b0a0a111fb94791a26090a9935424c25bab3a",
+              "snaks": {
+                "P248": [
+                  {
+                    "snaktype": "value",
+                    "property": "P248",
+                    "hash": "1863be7c0d56a0480f21de1660c0b453fea62a6a",
+                    "datavalue": {
+                      "value": {
+                        "entity-type": "item",
+                        "numeric-id": 1116062,
+                        "id": "Q1116062"
+                      },
+                      "type": "wikibase-entityid"
+                    },
+                    "datatype": "wikibase-item"
+                  }
+                ],
+                "P813": [
+                  {
+                    "snaktype": "value",
+                    "property": "P813",
+                    "hash": "b65d2831818e0f4932b60acb70401e6921da7467",
+                    "datavalue": {
+                      "value": {
+                        "time": "+2021-06-26T00:00:00Z",
+                        "timezone": 0,
+                        "before": 0,
+                        "after": 0,
+                        "precision": 11,
+                        "calendarmodel": "http://www.wikidata.org/entity/Q1985727"
+                      },
+                      "type": "time"
+                    },
+                    "datatype": "time"
+                  }
+                ]
+              },
+              "snaks-order": [
+                "P248",
+                "P813"
+              ]
+            }
+          ]
+        }
+      ],
+      "P402": [
+        {
+          "mainsnak": {
+            "snaktype": "value",
+            "property": "P402",
+            "hash": "0ba6ec53a673251c37955145ccc4b172e0e14620",
+            "datavalue": {
+              "value": "10304087",
+              "type": "string"
+            },
+            "datatype": "external-id"
+          },
+          "type": "statement",
+          "id": "Q3364499$b063d2fb-4fa2-d7d3-4653-c0e30bfdefee",
+          "rank": "normal"
+        }
+      ],
+      "P610": [
+        {
+          "mainsnak": {
+            "snaktype": "value",
+            "property": "P610",
+            "hash": "79cb91a86a96c1af7b6963bd5135a1164f27f0c9",
+            "datavalue": {
+              "value": {
+                "entity-type": "item",
+                "numeric-id": 96244144,
+                "id": "Q96244144"
+              },
+              "type": "wikibase-entityid"
+            },
+            "datatype": "wikibase-item"
+          },
+          "type": "statement",
+          "id": "Q3364499$180a8a3c-4741-aa2b-4575-6ad38e046436",
+          "rank": "normal"
+        }
+      ],
+      "P1848": [
+        {
+          "mainsnak": {
+            "snaktype": "value",
+            "property": "P1848",
+            "hash": "c221dcf71f992ce3f5e859a318ca8a5048f076cb",
+            "datavalue": {
+              "value": "FR3300011",
+              "type": "string"
+            },
+            "datatype": "external-id"
+          },
+          "type": "statement",
+          "id": "Q3364499$467f725c-4fae-9c84-2bc5-9e1fbf4bee31",
+          "rank": "normal"
+        }
+      ],
+      "P8687": [
+        {
+          "mainsnak": {
+            "snaktype": "value",
+            "property": "P8687",
+            "hash": "8224966cbb967fbfd4a5711f77796451376b0632",
+            "datavalue": {
+              "value": {
+                "amount": "+1328",
+                "unit": "1"
+              },
+              "type": "quantity"
+            },
+            "datatype": "quantity"
+          },
+          "type": "statement",
+          "qualifiers": {
+            "P6552": [
+              {
+                "snaktype": "value",
+                "property": "P6552",
+                "hash": "5f55500b2ad28a4d1332de6511061dc7b70632ce",
+                "datavalue": {
+                  "value": "2816529636",
+                  "type": "string"
+                },
+                "datatype": "external-id"
+              }
+            ],
+            "P585": [
+              {
+                "snaktype": "value",
+                "property": "P585",
+                "hash": "b229e273d630d08a16bd314fb56b3ddc967668fc",
+                "datavalue": {
+                  "value": {
+                    "time": "+2021-01-07T00:00:00Z",
+                    "timezone": 0,
+                    "before": 0,
+                    "after": 0,
+                    "precision": 11,
+                    "calendarmodel": "http://www.wikidata.org/entity/Q1985727"
+                  },
+                  "type": "time"
+                },
+                "datatype": "time"
+              }
+            ]
+          },
+          "qualifiers-order": [
+            "P6552",
+            "P585"
+          ],
+          "id": "Q3364499$b35c63ca-2963-4d81-8b4f-9342f7cb9a83",
+          "rank": "preferred"
+        },
+        {
+          "mainsnak": {
+            "snaktype": "value",
+            "property": "P8687",
+            "hash": "134da9961a850824e1bcb52bceb1d41f0c716383",
+            "datavalue": {
+              "value": {
+                "amount": "+1147",
+                "unit": "1"
+              },
+              "type": "quantity"
+            },
+            "datatype": "quantity"
+          },
+          "type": "statement",
+          "qualifiers": {
+            "P6552": [
+              {
+                "snaktype": "value",
+                "property": "P6552",
+                "hash": "5f55500b2ad28a4d1332de6511061dc7b70632ce",
+                "datavalue": {
+                  "value": "2816529636",
+                  "type": "string"
+                },
+                "datatype": "external-id"
+              }
+            ],
+            "P585": [
+              {
+                "snaktype": "value",
+                "property": "P585",
+                "hash": "56cc037272f9f69be746b8e68d238413c936dea5",
+                "datavalue": {
+                  "value": {
+                    "time": "+2020-04-22T00:00:00Z",
+                    "timezone": 0,
+                    "before": 0,
+                    "after": 0,
+                    "precision": 11,
+                    "calendarmodel": "http://www.wikidata.org/entity/Q1985727"
+                  },
+                  "type": "time"
+                },
+                "datatype": "time"
+              }
+            ]
+          },
+          "qualifiers-order": [
+            "P6552",
+            "P585"
+          ],
+          "id": "Q3364499$7cf935af-5897-41b5-b3cd-f5e887a5b2c2",
+          "rank": "normal"
+        }
+      ],
+      "P2671": [
+        {
+          "mainsnak": {
+            "snaktype": "value",
+            "property": "P2671",
+            "hash": "0a588160ab034ff557078c792057ac012cac2ab6",
+            "datavalue": {
+              "value": "/g/15dqhtsg",
+              "type": "string"
+            },
+            "datatype": "external-id"
+          },
+          "type": "statement",
+          "id": "Q3364499$D7708090-B55E-47CC-B486-A81EF9294D7A",
+          "rank": "normal"
+        }
+      ],
+      "P809": [
+        {
+          "mainsnak": {
+            "snaktype": "value",
+            "property": "P809",
+            "hash": "3cd7fdef3838e2a25495ecda0d5fe1498838e72c",
+            "datavalue": {
+              "value": "555597356",
+              "type": "string"
+            },
+            "datatype": "external-id"
+          },
+          "type": "statement",
+          "id": "Q3364499$c0ca6309-4f36-bb26-6e49-146b6e59747a",
+          "rank": "normal",
+          "references": [
+            {
+              "hash": "2b0b0a0a111fb94791a26090a9935424c25bab3a",
+              "snaks": {
+                "P248": [
+                  {
+                    "snaktype": "value",
+                    "property": "P248",
+                    "hash": "1863be7c0d56a0480f21de1660c0b453fea62a6a",
+                    "datavalue": {
+                      "value": {
+                        "entity-type": "item",
+                        "numeric-id": 1116062,
+                        "id": "Q1116062"
+                      },
+                      "type": "wikibase-entityid"
+                    },
+                    "datatype": "wikibase-item"
+                  }
+                ],
+                "P813": [
+                  {
+                    "snaktype": "value",
+                    "property": "P813",
+                    "hash": "b65d2831818e0f4932b60acb70401e6921da7467",
+                    "datavalue": {
+                      "value": {
+                        "time": "+2021-06-26T00:00:00Z",
+                        "timezone": 0,
+                        "before": 0,
+                        "after": 0,
+                        "precision": 11,
+                        "calendarmodel": "http://www.wikidata.org/entity/Q1985727"
+                      },
+                      "type": "time"
+                    },
+                    "datatype": "time"
+                  }
+                ]
+              },
+              "snaks-order": [
+                "P248",
+                "P813"
+              ]
+            }
+          ]
+        }
+      ],
+      "P948": [
+        {
+          "mainsnak": {
+            "snaktype": "value",
+            "property": "P948",
+            "hash": "5f8b94e142bd8c1e6d30be957bf044db6ce11521",
+            "datavalue": {
+              "value": "Parc national de forêts.jpg",
+              "type": "string"
+            },
+            "datatype": "commonsMedia"
+          },
+          "type": "statement",
+          "id": "Q3364499$4b38ce24-4918-4c5d-026f-300984c93fe4",
+          "rank": "normal"
+        }
+      ],
+      "P4762": [
+        {
+          "mainsnak": {
+            "snaktype": "value",
+            "property": "P4762",
+            "hash": "d044f85eb6f8e9d215c724050cf339bff7b70470",
+            "datavalue": {
+              "value": "555597356",
+              "type": "string"
+            },
+            "datatype": "external-id"
+          },
+          "type": "statement",
+          "id": "Q3364499$AF1FC8D2-473B-49A3-934E-E4BCA2147BFC",
+          "rank": "normal",
+          "references": [
+            {
+              "hash": "2b0b0a0a111fb94791a26090a9935424c25bab3a",
+              "snaks": {
+                "P248": [
+                  {
+                    "snaktype": "value",
+                    "property": "P248",
+                    "hash": "1863be7c0d56a0480f21de1660c0b453fea62a6a",
+                    "datavalue": {
+                      "value": {
+                        "entity-type": "item",
+                        "numeric-id": 1116062,
+                        "id": "Q1116062"
+                      },
+                      "type": "wikibase-entityid"
+                    },
+                    "datatype": "wikibase-item"
+                  }
+                ],
+                "P813": [
+                  {
+                    "snaktype": "value",
+                    "property": "P813",
+                    "hash": "b65d2831818e0f4932b60acb70401e6921da7467",
+                    "datavalue": {
+                      "value": {
+                        "time": "+2021-06-26T00:00:00Z",
+                        "timezone": 0,
+                        "before": 0,
+                        "after": 0,
+                        "precision": 11,
+                        "calendarmodel": "http://www.wikidata.org/entity/Q1985727"
+                      },
+                      "type": "time"
+                    },
+                    "datatype": "time"
+                  }
+                ]
+              },
+              "snaks-order": [
+                "P248",
+                "P813"
+              ]
+            }
+          ]
+        }
+      ],
+      "P1448": [
+        {
+          "mainsnak": {
+            "snaktype": "value",
+            "property": "P1448",
+            "hash": "9ecac5da5d54bd1158801d4dd323fad6229ebfb2",
+            "datavalue": {
+              "value": {
+                "text": "Forêts",
+                "language": "fr"
+              },
+              "type": "monolingualtext"
+            },
+            "datatype": "monolingualtext"
+          },
+          "type": "statement",
+          "id": "Q3364499$9AB5FDE8-92B6-4EED-B4C2-5184E24F604E",
+          "rank": "normal",
+          "references": [
+            {
+              "hash": "2b0b0a0a111fb94791a26090a9935424c25bab3a",
+              "snaks": {
+                "P248": [
+                  {
+                    "snaktype": "value",
+                    "property": "P248",
+                    "hash": "1863be7c0d56a0480f21de1660c0b453fea62a6a",
+                    "datavalue": {
+                      "value": {
+                        "entity-type": "item",
+                        "numeric-id": 1116062,
+                        "id": "Q1116062"
+                      },
+                      "type": "wikibase-entityid"
+                    },
+                    "datatype": "wikibase-item"
+                  }
+                ],
+                "P813": [
+                  {
+                    "snaktype": "value",
+                    "property": "P813",
+                    "hash": "b65d2831818e0f4932b60acb70401e6921da7467",
+                    "datavalue": {
+                      "value": {
+                        "time": "+2021-06-26T00:00:00Z",
+                        "timezone": 0,
+                        "before": 0,
+                        "after": 0,
+                        "precision": 11,
+                        "calendarmodel": "http://www.wikidata.org/entity/Q1985727"
+                      },
+                      "type": "time"
+                    },
+                    "datatype": "time"
+                  }
+                ]
+              },
+              "snaks-order": [
+                "P248",
+                "P813"
+              ]
+            }
+          ]
+        }
+      ],
+      "P1889": [
+        {
+          "mainsnak": {
+            "snaktype": "value",
+            "property": "P1889",
+            "hash": "48a6ecc5edb82ef3a6094ecce697024ecdf3b259",
+            "datavalue": {
+              "value": {
+                "entity-type": "item",
+                "numeric-id": 1380450,
+                "id": "Q1380450"
+              },
+              "type": "wikibase-entityid"
+            },
+            "datatype": "wikibase-item"
+          },
+          "type": "statement",
+          "id": "Q3364499$2c15be6a-43da-49e6-9006-00d3636aa280",
+          "rank": "normal"
+        }
+      ]
+    },
+    "sitelinks": {
+      "banwiki": {
+        "site": "banwiki",
+        "title": "Taman Nasional Forêts",
+        "badges": [],
+        "url": "https://ban.wikipedia.org/wiki/Taman_Nasional_For%C3%AAts"
+      },
+      "dewiki": {
+        "site": "dewiki",
+        "title": "Nationalpark Forêts",
+        "badges": [],
+        "url": "https://de.wikipedia.org/wiki/Nationalpark_For%C3%AAts"
+      },
+      "enwiki": {
+        "site": "enwiki",
+        "title": "Forêts National Park",
+        "badges": [],
+        "url": "https://en.wikipedia.org/wiki/For%C3%AAts_National_Park"
+      },
+      "enwikivoyage": {
+        "site": "enwikivoyage",
+        "title": "Forêts National Park",
+        "badges": [],
+        "url": "https://en.wikivoyage.org/wiki/For%C3%AAts_National_Park"
+      },
+      "eswiki": {
+        "site": "eswiki",
+        "title": "Parque nacional de forêts",
+        "badges": [],
+        "url": "https://es.wikipedia.org/wiki/Parque_nacional_de_for%C3%AAts"
+      },
+      "frwiki": {
+        "site": "frwiki",
+        "title": "Parc national de forêts",
+        "badges": [],
+        "url": "https://fr.wikipedia.org/wiki/Parc_national_de_for%C3%AAts"
+      },
+      "frwikivoyage": {
+        "site": "frwikivoyage",
+        "title": "Parc national de forêts",
+        "badges": [],
+        "url": "https://fr.wikivoyage.org/wiki/Parc_national_de_for%C3%AAts"
+      },
+      "itwiki": {
+        "site": "itwiki",
+        "title": "Parco nazionale delle Forêts",
+        "badges": [],
+        "url": "https://it.wikipedia.org/wiki/Parco_nazionale_delle_For%C3%AAts"
+      },
+      "nlwiki": {
+        "site": "nlwiki",
+        "title": "Nationaal park Forêts",
+        "badges": [],
+        "url": "https://nl.wikipedia.org/wiki/Nationaal_park_For%C3%AAts"
+      },
+      "ptwiki": {
+        "site": "ptwiki",
+        "title": "Parque Nacional de Forêts",
+        "badges": [],
+        "url": "https://pt.wikipedia.org/wiki/Parque_Nacional_de_For%C3%AAts"
+      },
+      "zhwiki": {
+        "site": "zhwiki",
+        "title": "森林國家公園",
+        "badges": [],
+        "url": "https://zh.wikipedia.org/wiki/%E6%A3%AE%E6%9E%97%E5%9C%8B%E5%AE%B6%E5%85%AC%E5%9C%92"
+      }
+    }
+  }
+}

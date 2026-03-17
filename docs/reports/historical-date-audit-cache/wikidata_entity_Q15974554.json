@@ -1,0 +1,321 @@
+{
+  "saved_at": "2026-03-07T15:09:51.360Z",
+  "value": {
+    "pageid": 17596734,
+    "ns": 0,
+    "title": "Q15974554",
+    "lastrevid": 2460720463,
+    "modified": "2026-02-04T21:05:34Z",
+    "type": "item",
+    "id": "Q15974554",
+    "labels": {
+      "fr": {
+        "language": "fr",
+        "value": "1901 en Italie"
+      },
+      "en": {
+        "language": "en",
+        "value": "1901 in Italy"
+      },
+      "ja": {
+        "language": "ja",
+        "value": "1901年のイタリア"
+      },
+      "ar": {
+        "language": "ar",
+        "value": "1901 في إيطاليا"
+      },
+      "sv": {
+        "language": "sv",
+        "value": "1901 i Italien"
+      },
+      "de": {
+        "language": "de",
+        "value": "1901 in Italien"
+      },
+      "bn": {
+        "language": "bn",
+        "value": "১৯০১-এ ইতালি"
+      },
+      "es": {
+        "language": "es",
+        "value": "Anexo:Italia en 1901"
+      },
+      "azb": {
+        "language": "azb",
+        "value": "۱۹۰۱-جی ایلده ایتالیا"
+      },
+      "ml": {
+        "language": "ml",
+        "value": "1901 ഇറ്റലിയിൽ"
+      },
+      "pt": {
+        "language": "pt",
+        "value": "1901 na Itália"
+      },
+      "uk": {
+        "language": "uk",
+        "value": "1901 в Італії"
+      },
+      "eo": {
+        "language": "eo",
+        "value": "1901 en Italio"
+      },
+      "cs": {
+        "language": "cs",
+        "value": "Itálie v roce 1901"
+      },
+      "tr": {
+        "language": "tr",
+        "value": "1901'de İtalya"
+      },
+      "zh": {
+        "language": "zh",
+        "value": "1901年意大利"
+      }
+    },
+    "descriptions": {
+      "sv": {
+        "language": "sv",
+        "value": "översikt över Italienrelaterade händelser under år 1901"
+      },
+      "en": {
+        "language": "en",
+        "value": "overview of Italy-related events during the year of 1901"
+      },
+      "de": {
+        "language": "de",
+        "value": "Ereignisse des Jahres 1901 in Italien"
+      }
+    },
+    "aliases": {
+      "ar": [
+        {
+          "language": "ar",
+          "value": "١٩٠١ في إيطاليا"
+        }
+      ]
+    },
+    "claims": {
+      "P910": [
+        {
+          "mainsnak": {
+            "snaktype": "value",
+            "property": "P910",
+            "hash": "a85064d6dc227a79166a88cedec1226da422e73b",
+            "datavalue": {
+              "value": {
+                "entity-type": "item",
+                "numeric-id": 8123928,
+                "id": "Q8123928"
+              },
+              "type": "wikibase-entityid"
+            },
+            "datatype": "wikibase-item"
+          },
+          "type": "statement",
+          "id": "Q15974554$D0344530-7FE8-4BE9-A567-8200E97781B3",
+          "rank": "normal",
+          "references": [
+            {
+              "hash": "d4bd87b862b12d99d26e86472d44f26858dee639",
+              "snaks": {
+                "P143": [
+                  {
+                    "snaktype": "value",
+                    "property": "P143",
+                    "hash": "f30cbd35620c4ea6d0633aaf0210a8916130469b",
+                    "datavalue": {
+                      "value": {
+                        "entity-type": "item",
+                        "numeric-id": 8447,
+                        "id": "Q8447"
+                      },
+                      "type": "wikibase-entityid"
+                    },
+                    "datatype": "wikibase-item"
+                  }
+                ]
+              },
+              "snaks-order": [
+                "P143"
+              ]
+            }
+          ]
+        }
+      ],
+      "P373": [
+        {
+          "mainsnak": {
+            "snaktype": "value",
+            "property": "P373",
+            "hash": "7a41223b2ade8716ddbdf81bb0fb584666772ff2",
+            "datavalue": {
+              "value": "1901 in Italy",
+              "type": "string"
+            },
+            "datatype": "string"
+          },
+          "type": "statement",
+          "id": "Q15974554$2559E767-D86C-4AC7-85CF-CE2E30CA05A2",
+          "rank": "normal"
+        }
+      ],
+      "P1269": [
+        {
+          "mainsnak": {
+            "snaktype": "value",
+            "property": "P1269",
+            "hash": "6ce9e4605997b34821471cfaec668e9230304721",
+            "datavalue": {
+              "value": {
+                "entity-type": "item",
+                "numeric-id": 38,
+                "id": "Q38"
+              },
+              "type": "wikibase-entityid"
+            },
+            "datatype": "wikibase-item"
+          },
+          "type": "statement",
+          "id": "Q15974554$D0CE3C57-FCB5-40D8-8D89-DE9A19808F00",
+          "rank": "normal"
+        }
+      ],
+      "P31": [
+        {
+          "mainsnak": {
+            "snaktype": "value",
+            "property": "P31",
+            "hash": "b9953cd69a9e5fc8f8fe263b847673b0013cf93f",
+            "datavalue": {
+              "value": {
+                "entity-type": "item",
+                "numeric-id": 18340514,
+                "id": "Q18340514"
+              },
+              "type": "wikibase-entityid"
+            },
+            "datatype": "wikibase-item"
+          },
+          "type": "statement",
+          "id": "Q15974554$3F197C11-16F7-4B16-8058-DA3FE0A0832F",
+          "rank": "normal"
+        }
+      ],
+      "P585": [
+        {
+          "mainsnak": {
+            "snaktype": "value",
+            "property": "P585",
+            "hash": "42b2d22e7600058da936e1d3331f37727ab81aa0",
+            "datavalue": {
+              "value": {
+                "time": "+1901-01-01T00:00:00Z",
+                "timezone": 0,
+                "before": 0,
+                "after": 0,
+                "precision": 9,
+                "calendarmodel": "http://www.wikidata.org/entity/Q1985727"
+              },
+              "type": "time"
+            },
+            "datatype": "time"
+          },
+          "type": "statement",
+          "id": "Q15974554$CE8F65A2-1474-4900-9A3C-A7F6DB1D721E",
+          "rank": "normal"
+        }
+      ],
+      "P155": [
+        {
+          "mainsnak": {
+            "snaktype": "value",
+            "property": "P155",
+            "hash": "c0ccb362d1fb17f2475c7b61747c60a19fd88391",
+            "datavalue": {
+              "value": {
+                "entity-type": "item",
+                "numeric-id": 15974553,
+                "id": "Q15974553"
+              },
+              "type": "wikibase-entityid"
+            },
+            "datatype": "wikibase-item"
+          },
+          "type": "statement",
+          "id": "Q15974554$103B328F-3A03-4D22-A75D-EEFBA569EE59",
+          "rank": "normal"
+        }
+      ],
+      "P156": [
+        {
+          "mainsnak": {
+            "snaktype": "value",
+            "property": "P156",
+            "hash": "c133a24ca2b9dfa478e006ff5f07131e04143005",
+            "datavalue": {
+              "value": {
+                "entity-type": "item",
+                "numeric-id": 15974555,
+                "id": "Q15974555"
+              },
+              "type": "wikibase-entityid"
+            },
+            "datatype": "wikibase-item"
+          },
+          "type": "statement",
+          "id": "Q15974554$FE7C358C-33A8-4009-AD94-CACD3FA0F27A",
+          "rank": "normal"
+        }
+      ],
+      "P17": [
+        {
+          "mainsnak": {
+            "snaktype": "value",
+            "property": "P17",
+            "hash": "b48529e9f7e0898ab1ddaefe8547cdb863e0167c",
+            "datavalue": {
+              "value": {
+                "entity-type": "item",
+                "numeric-id": 38,
+                "id": "Q38"
+              },
+              "type": "wikibase-entityid"
+            },
+            "datatype": "wikibase-item"
+          },
+          "type": "statement",
+          "id": "Q15974554$E6FC73F9-5730-490B-B4E2-7C8F6653AC48",
+          "rank": "normal"
+        }
+      ]
+    },
+    "sitelinks": {
+      "arwiki": {
+        "site": "arwiki",
+        "title": "1901 في إيطاليا",
+        "badges": [],
+        "url": "https://ar.wikipedia.org/wiki/1901_%D9%81%D9%8A_%D8%A5%D9%8A%D8%B7%D8%A7%D9%84%D9%8A%D8%A7"
+      },
+      "azbwiki": {
+        "site": "azbwiki",
+        "title": "۱۹۰۱-جی ایلده ایتالیا",
+        "badges": [],
+        "url": "https://azb.wikipedia.org/wiki/%DB%B1%DB%B9%DB%B0%DB%B1-%D8%AC%DB%8C_%D8%A7%DB%8C%D9%84%D8%AF%D9%87_%D8%A7%DB%8C%D8%AA%D8%A7%D9%84%DB%8C%D8%A7"
+      },
+      "enwiki": {
+        "site": "enwiki",
+        "title": "1901 in Italy",
+        "badges": [],
+        "url": "https://en.wikipedia.org/wiki/1901_in_Italy"
+      },
+      "frwiki": {
+        "site": "frwiki",
+        "title": "1901 en Italie",
+        "badges": [],
+        "url": "https://fr.wikipedia.org/wiki/1901_en_Italie"
+      }
+    }
+  }
+}

@@ -1,0 +1,136 @@
+{
+  "saved_at": "2026-03-07T13:13:03.604Z",
+  "value": {
+    "pageid": 77411292,
+    "ns": 0,
+    "title": "Q77952810",
+    "lastrevid": 1827077974,
+    "modified": "2023-02-05T17:36:25Z",
+    "type": "item",
+    "id": "Q77952810",
+    "labels": {
+      "fr": {
+        "language": "fr",
+        "value": "histoire des mines d'argent"
+      },
+      "en": {
+        "language": "en",
+        "value": "history of silver mining"
+      },
+      "es": {
+        "language": "es",
+        "value": "historia de la minería de plata"
+      }
+    },
+    "descriptions": {
+      "fr": {
+        "language": "fr",
+        "value": "description historique"
+      }
+    },
+    "aliases": {
+      "en": [
+        {
+          "language": "en",
+          "value": "silver mining history"
+        }
+      ],
+      "es": [
+        {
+          "language": "es",
+          "value": "historia de las minas de plata"
+        }
+      ]
+    },
+    "claims": {
+      "P279": [
+        {
+          "mainsnak": {
+            "snaktype": "value",
+            "property": "P279",
+            "hash": "394c19c604ca29eec16346822da709cbe23b24af",
+            "datavalue": {
+              "value": {
+                "entity-type": "item",
+                "numeric-id": 12075242,
+                "id": "Q12075242"
+              },
+              "type": "wikibase-entityid"
+            },
+            "datatype": "wikibase-item"
+          },
+          "type": "statement",
+          "id": "Q77952810$7920d21a-4e20-6916-9fee-9eabed34406c",
+          "rank": "normal"
+        }
+      ],
+      "P1269": [
+        {
+          "mainsnak": {
+            "snaktype": "value",
+            "property": "P1269",
+            "hash": "816fc2f804ae6616191ad31c07f4ff28bf1aa7ae",
+            "datavalue": {
+              "value": {
+                "entity-type": "item",
+                "numeric-id": 1048939,
+                "id": "Q1048939"
+              },
+              "type": "wikibase-entityid"
+            },
+            "datatype": "wikibase-item"
+          },
+          "type": "statement",
+          "id": "Q77952810$6c51cd50-4735-e7c0-dc91-46bb5eb1de38",
+          "rank": "normal"
+        }
+      ],
+      "P31": [
+        {
+          "mainsnak": {
+            "snaktype": "value",
+            "property": "P31",
+            "hash": "7ad5c7929af39fc2ff8afed55f1192f80e71d936",
+            "datavalue": {
+              "value": {
+                "entity-type": "item",
+                "numeric-id": 17524420,
+                "id": "Q17524420"
+              },
+              "type": "wikibase-entityid"
+            },
+            "datatype": "wikibase-item"
+          },
+          "type": "statement",
+          "id": "Q77952810$76ad7f13-4d4d-9bee-138d-ba9fe713ecb9",
+          "rank": "normal"
+        }
+      ],
+      "P2671": [
+        {
+          "mainsnak": {
+            "snaktype": "value",
+            "property": "P2671",
+            "hash": "f1970e865e12d50814f41fa3fd9dec53e78b4807",
+            "datavalue": {
+              "value": "/g/120z1g5f",
+              "type": "string"
+            },
+            "datatype": "external-id"
+          },
+          "type": "statement",
+          "id": "Q77952810$FDF1D116-A40A-41ED-9715-FD80B28F34E6",
+          "rank": "normal"
+        }
+      ]
+    },
+    "sitelinks": {
+      "frwiki": {
+        "site": "frwiki",
+        "title": "Histoire des mines d'argent",
+        "badges": [],
+        "url": "https://fr.wikipedia.org/wiki/Histoire_des_mines_d%27argent"
+      }
+    }
+  }
+}

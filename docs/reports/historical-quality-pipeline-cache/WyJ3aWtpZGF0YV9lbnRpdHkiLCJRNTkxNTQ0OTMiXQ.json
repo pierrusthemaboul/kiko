@@ -1,0 +1,720 @@
+{
+  "pageid": 59061354,
+  "ns": 0,
+  "title": "Q59154493",
+  "lastrevid": 2371096702,
+  "modified": "2025-07-01T01:55:39Z",
+  "type": "item",
+  "id": "Q59154493",
+  "labels": {
+    "fr": {
+      "language": "fr",
+      "value": "Le Soir"
+    },
+    "en": {
+      "language": "en",
+      "value": "Le Soir"
+    },
+    "nl": {
+      "language": "nl",
+      "value": "Le Soir"
+    }
+  },
+  "descriptions": {
+    "fr": {
+      "language": "fr",
+      "value": "quotidien français (Paris, 1867-1932)"
+    },
+    "en": {
+      "language": "en",
+      "value": "French newspaper"
+    },
+    "de": {
+      "language": "de",
+      "value": "französische Zeitung"
+    },
+    "nl": {
+      "language": "nl",
+      "value": "krant uit Frankrijk"
+    }
+  },
+  "aliases": {},
+  "claims": {
+    "P31": [
+      {
+        "mainsnak": {
+          "snaktype": "value",
+          "property": "P31",
+          "hash": "3019c5266316b68849d36b14dc2d48a88bec07fd",
+          "datavalue": {
+            "value": {
+              "entity-type": "item",
+              "numeric-id": 11032,
+              "id": "Q11032"
+            },
+            "type": "wikibase-entityid"
+          },
+          "datatype": "wikibase-item"
+        },
+        "type": "statement",
+        "id": "Q59154493$ae4ba0d2-4c17-9e11-ee98-84df3d28f39e",
+        "rank": "normal"
+      }
+    ],
+    "P495": [
+      {
+        "mainsnak": {
+          "snaktype": "value",
+          "property": "P495",
+          "hash": "f707ab9792279b2ccec78f8736a8e5d28c8b7fc7",
+          "datavalue": {
+            "value": {
+              "entity-type": "item",
+              "numeric-id": 142,
+              "id": "Q142"
+            },
+            "type": "wikibase-entityid"
+          },
+          "datatype": "wikibase-item"
+        },
+        "type": "statement",
+        "id": "Q59154493$be0e7da2-4552-b4c6-fc40-68d2b454c9a1",
+        "rank": "normal",
+        "references": [
+          {
+            "hash": "b0618b36dd94d045b711e64757f4af6eb9e1d3a8",
+            "snaks": {
+              "P248": [
+                {
+                  "snaktype": "value",
+                  "property": "P248",
+                  "hash": "eb6cb701bdaaae80dfa220d3b09a959c96736325",
+                  "datavalue": {
+                    "value": {
+                      "entity-type": "item",
+                      "numeric-id": 70460099,
+                      "id": "Q70460099"
+                    },
+                    "type": "wikibase-entityid"
+                  },
+                  "datatype": "wikibase-item"
+                }
+              ],
+              "P236": [
+                {
+                  "snaktype": "value",
+                  "property": "P236",
+                  "hash": "55423c78e81c8cdc530023be4ca5a3ea0588c2c4",
+                  "datavalue": {
+                    "value": "1257-595X",
+                    "type": "string"
+                  },
+                  "datatype": "external-id"
+                }
+              ]
+            },
+            "snaks-order": [
+              "P248",
+              "P236"
+            ]
+          }
+        ]
+      }
+    ],
+    "P1476": [
+      {
+        "mainsnak": {
+          "snaktype": "value",
+          "property": "P1476",
+          "hash": "df3f35044c311a3514aabb8356ded880cf2be0d8",
+          "datavalue": {
+            "value": {
+              "text": "Le Soir",
+              "language": "fr"
+            },
+            "type": "monolingualtext"
+          },
+          "datatype": "monolingualtext"
+        },
+        "type": "statement",
+        "id": "Q59154493$2fd6a8c0-4b3e-7623-8762-3951d9968d49",
+        "rank": "normal",
+        "references": [
+          {
+            "hash": "b0618b36dd94d045b711e64757f4af6eb9e1d3a8",
+            "snaks": {
+              "P248": [
+                {
+                  "snaktype": "value",
+                  "property": "P248",
+                  "hash": "eb6cb701bdaaae80dfa220d3b09a959c96736325",
+                  "datavalue": {
+                    "value": {
+                      "entity-type": "item",
+                      "numeric-id": 70460099,
+                      "id": "Q70460099"
+                    },
+                    "type": "wikibase-entityid"
+                  },
+                  "datatype": "wikibase-item"
+                }
+              ],
+              "P236": [
+                {
+                  "snaktype": "value",
+                  "property": "P236",
+                  "hash": "55423c78e81c8cdc530023be4ca5a3ea0588c2c4",
+                  "datavalue": {
+                    "value": "1257-595X",
+                    "type": "string"
+                  },
+                  "datatype": "external-id"
+                }
+              ]
+            },
+            "snaks-order": [
+              "P248",
+              "P236"
+            ]
+          }
+        ]
+      }
+    ],
+    "P17": [
+      {
+        "mainsnak": {
+          "snaktype": "value",
+          "property": "P17",
+          "hash": "c05db5d169c2560b9799d567a803d20a392f53e4",
+          "datavalue": {
+            "value": {
+              "entity-type": "item",
+              "numeric-id": 142,
+              "id": "Q142"
+            },
+            "type": "wikibase-entityid"
+          },
+          "datatype": "wikibase-item"
+        },
+        "type": "statement",
+        "id": "Q59154493$c03be2c7-4ec6-c70a-08e4-a1bfead61f02",
+        "rank": "normal"
+      }
+    ],
+    "P571": [
+      {
+        "mainsnak": {
+          "snaktype": "value",
+          "property": "P571",
+          "hash": "ee19b12de4fef8cd0e39d31bea3310e83360c140",
+          "datavalue": {
+            "value": {
+              "time": "+1867-00-00T00:00:00Z",
+              "timezone": 0,
+              "before": 0,
+              "after": 0,
+              "precision": 9,
+              "calendarmodel": "http://www.wikidata.org/entity/Q1985727"
+            },
+            "type": "time"
+          },
+          "datatype": "time"
+        },
+        "type": "statement",
+        "id": "Q59154493$b1f947b0-4d15-9426-aa25-f19b85b4994c",
+        "rank": "normal"
+      }
+    ],
+    "P291": [
+      {
+        "mainsnak": {
+          "snaktype": "value",
+          "property": "P291",
+          "hash": "285aaa49f464b87cab8adee6e339c5719ad59146",
+          "datavalue": {
+            "value": {
+              "entity-type": "item",
+              "numeric-id": 90,
+              "id": "Q90"
+            },
+            "type": "wikibase-entityid"
+          },
+          "datatype": "wikibase-item"
+        },
+        "type": "statement",
+        "id": "Q59154493$94704223-40dd-02c3-6b80-ff0c653a79fb",
+        "rank": "normal"
+      }
+    ],
+    "P407": [
+      {
+        "mainsnak": {
+          "snaktype": "value",
+          "property": "P407",
+          "hash": "d197d0a5efa4b4c23a302a829dd3ef43684fe002",
+          "datavalue": {
+            "value": {
+              "entity-type": "item",
+              "numeric-id": 150,
+              "id": "Q150"
+            },
+            "type": "wikibase-entityid"
+          },
+          "datatype": "wikibase-item"
+        },
+        "type": "statement",
+        "id": "Q59154493$8e6ce3c2-4c84-4764-796f-e9642d5b30da",
+        "rank": "normal",
+        "references": [
+          {
+            "hash": "b0618b36dd94d045b711e64757f4af6eb9e1d3a8",
+            "snaks": {
+              "P248": [
+                {
+                  "snaktype": "value",
+                  "property": "P248",
+                  "hash": "eb6cb701bdaaae80dfa220d3b09a959c96736325",
+                  "datavalue": {
+                    "value": {
+                      "entity-type": "item",
+                      "numeric-id": 70460099,
+                      "id": "Q70460099"
+                    },
+                    "type": "wikibase-entityid"
+                  },
+                  "datatype": "wikibase-item"
+                }
+              ],
+              "P236": [
+                {
+                  "snaktype": "value",
+                  "property": "P236",
+                  "hash": "55423c78e81c8cdc530023be4ca5a3ea0588c2c4",
+                  "datavalue": {
+                    "value": "1257-595X",
+                    "type": "string"
+                  },
+                  "datatype": "external-id"
+                }
+              ]
+            },
+            "snaks-order": [
+              "P248",
+              "P236"
+            ]
+          }
+        ]
+      }
+    ],
+    "P236": [
+      {
+        "mainsnak": {
+          "snaktype": "value",
+          "property": "P236",
+          "hash": "98ff07d4640cceabd00d878dcfa7a453d80661ee",
+          "datavalue": {
+            "value": "2711-6662",
+            "type": "string"
+          },
+          "datatype": "external-id"
+        },
+        "type": "statement",
+        "qualifiers": {
+          "P1810": [
+            {
+              "snaktype": "value",
+              "property": "P1810",
+              "hash": "a09b9c83031760193ced0f45fda70465aef86090",
+              "datavalue": {
+                "value": "Le Soir (Paris. 1869. Reproduction numérique)",
+                "type": "string"
+              },
+              "datatype": "string"
+            }
+          ],
+          "P437": [
+            {
+              "snaktype": "value",
+              "property": "P437",
+              "hash": "8ed89d7950d3d2aef771ec9b4aa756407efb8f1d",
+              "datavalue": {
+                "value": {
+                  "entity-type": "item",
+                  "numeric-id": 1714118,
+                  "id": "Q1714118"
+                },
+                "type": "wikibase-entityid"
+              },
+              "datatype": "wikibase-item"
+            }
+          ]
+        },
+        "qualifiers-order": [
+          "P1810",
+          "P437"
+        ],
+        "id": "Q59154493$7263F649-7C16-4AAE-A408-00DEC79A0FCD",
+        "rank": "normal"
+      },
+      {
+        "mainsnak": {
+          "snaktype": "value",
+          "property": "P236",
+          "hash": "55423c78e81c8cdc530023be4ca5a3ea0588c2c4",
+          "datavalue": {
+            "value": "1257-595X",
+            "type": "string"
+          },
+          "datatype": "external-id"
+        },
+        "type": "statement",
+        "qualifiers": {
+          "P1810": [
+            {
+              "snaktype": "value",
+              "property": "P1810",
+              "hash": "3243bd6f0468fff8ea7c0bd263deebdb64897c4f",
+              "datavalue": {
+                "value": "Le Soir (Paris. 1869)",
+                "type": "string"
+              },
+              "datatype": "string"
+            }
+          ],
+          "P437": [
+            {
+              "snaktype": "value",
+              "property": "P437",
+              "hash": "740efe54118a78473c6a596896830ec77b53c578",
+              "datavalue": {
+                "value": {
+                  "entity-type": "item",
+                  "numeric-id": 1261026,
+                  "id": "Q1261026"
+                },
+                "type": "wikibase-entityid"
+              },
+              "datatype": "wikibase-item"
+            }
+          ]
+        },
+        "qualifiers-order": [
+          "P1810",
+          "P437"
+        ],
+        "id": "Q59154493$3A3E800A-987D-49A5-AC46-06FE22C95231",
+        "rank": "normal"
+      }
+    ],
+    "P268": [
+      {
+        "mainsnak": {
+          "snaktype": "value",
+          "property": "P268",
+          "hash": "e037ceb904444e4343c95e16ea4ff7b99f3214d6",
+          "datavalue": {
+            "value": "328705910",
+            "type": "string"
+          },
+          "datatype": "external-id"
+        },
+        "type": "statement",
+        "id": "Q59154493$edc9bd30-4ffa-8a1c-aeba-588109b60c39",
+        "rank": "normal"
+      }
+    ],
+    "P112": [
+      {
+        "mainsnak": {
+          "snaktype": "value",
+          "property": "P112",
+          "hash": "91ce9d39cc1eb5e8ba65404ac629d41bbf8b76df",
+          "datavalue": {
+            "value": {
+              "entity-type": "item",
+              "numeric-id": 59154554,
+              "id": "Q59154554"
+            },
+            "type": "wikibase-entityid"
+          },
+          "datatype": "wikibase-item"
+        },
+        "type": "statement",
+        "id": "Q59154493$35fe7c5f-45c0-f14d-8ad5-919239b2c097",
+        "rank": "normal"
+      }
+    ],
+    "P373": [
+      {
+        "mainsnak": {
+          "snaktype": "value",
+          "property": "P373",
+          "hash": "e5f1633045f9b3769892f75bb8655d5bf4535401",
+          "datavalue": {
+            "value": "Le Soir (Paris)",
+            "type": "string"
+          },
+          "datatype": "string"
+        },
+        "type": "statement",
+        "id": "Q59154493$eb22cdad-430f-e577-ba65-42c9ac0d7980",
+        "rank": "normal"
+      }
+    ],
+    "P7363": [
+      {
+        "mainsnak": {
+          "snaktype": "value",
+          "property": "P7363",
+          "hash": "fe6176b680402473396a14e889722324c81c1e28",
+          "datavalue": {
+            "value": "1257-595X",
+            "type": "string"
+          },
+          "datatype": "external-id"
+        },
+        "type": "statement",
+        "qualifiers": {
+          "P437": [
+            {
+              "snaktype": "value",
+              "property": "P437",
+              "hash": "8ed89d7950d3d2aef771ec9b4aa756407efb8f1d",
+              "datavalue": {
+                "value": {
+                  "entity-type": "item",
+                  "numeric-id": 1714118,
+                  "id": "Q1714118"
+                },
+                "type": "wikibase-entityid"
+              },
+              "datatype": "wikibase-item"
+            }
+          ]
+        },
+        "qualifiers-order": [
+          "P437"
+        ],
+        "id": "Q59154493$661334F6-FC82-4DE0-B0C4-376C905339F4",
+        "rank": "normal"
+      }
+    ],
+    "P856": [
+      {
+        "mainsnak": {
+          "snaktype": "value",
+          "property": "P856",
+          "hash": "09c9270ea00e58f345bc048aa0ec77904fd46852",
+          "datavalue": {
+            "value": "https://gallica.bnf.fr/ark:/12148/cb328705910/date",
+            "type": "string"
+          },
+          "datatype": "url"
+        },
+        "type": "statement",
+        "qualifiers": {
+          "P407": [
+            {
+              "snaktype": "value",
+              "property": "P407",
+              "hash": "d197d0a5efa4b4c23a302a829dd3ef43684fe002",
+              "datavalue": {
+                "value": {
+                  "entity-type": "item",
+                  "numeric-id": 150,
+                  "id": "Q150"
+                },
+                "type": "wikibase-entityid"
+              },
+              "datatype": "wikibase-item"
+            }
+          ]
+        },
+        "qualifiers-order": [
+          "P407"
+        ],
+        "id": "Q59154493$B5C8ACAB-8841-4328-A9BF-062C1A204365",
+        "rank": "normal",
+        "references": [
+          {
+            "hash": "17487ab9468f250ac4c59506b7f25cc991b7c6c4",
+            "snaks": {
+              "P248": [
+                {
+                  "snaktype": "value",
+                  "property": "P248",
+                  "hash": "eb6cb701bdaaae80dfa220d3b09a959c96736325",
+                  "datavalue": {
+                    "value": {
+                      "entity-type": "item",
+                      "numeric-id": 70460099,
+                      "id": "Q70460099"
+                    },
+                    "type": "wikibase-entityid"
+                  },
+                  "datatype": "wikibase-item"
+                }
+              ],
+              "P236": [
+                {
+                  "snaktype": "value",
+                  "property": "P236",
+                  "hash": "98ff07d4640cceabd00d878dcfa7a453d80661ee",
+                  "datavalue": {
+                    "value": "2711-6662",
+                    "type": "string"
+                  },
+                  "datatype": "external-id"
+                }
+              ]
+            },
+            "snaks-order": [
+              "P248",
+              "P236"
+            ]
+          }
+        ]
+      },
+      {
+        "mainsnak": {
+          "snaktype": "value",
+          "property": "P856",
+          "hash": "f46ba91ac62bc76c703aa2ad7918fcfa5832ab7c",
+          "datavalue": {
+            "value": "https://www.retronews.fr/ark:/12148/cb328705910/notice",
+            "type": "string"
+          },
+          "datatype": "url"
+        },
+        "type": "statement",
+        "qualifiers": {
+          "P407": [
+            {
+              "snaktype": "value",
+              "property": "P407",
+              "hash": "d197d0a5efa4b4c23a302a829dd3ef43684fe002",
+              "datavalue": {
+                "value": {
+                  "entity-type": "item",
+                  "numeric-id": 150,
+                  "id": "Q150"
+                },
+                "type": "wikibase-entityid"
+              },
+              "datatype": "wikibase-item"
+            }
+          ]
+        },
+        "qualifiers-order": [
+          "P407"
+        ],
+        "id": "Q59154493$6E9980A9-9DFF-42BE-8C0E-E4590CD900B6",
+        "rank": "normal",
+        "references": [
+          {
+            "hash": "17487ab9468f250ac4c59506b7f25cc991b7c6c4",
+            "snaks": {
+              "P248": [
+                {
+                  "snaktype": "value",
+                  "property": "P248",
+                  "hash": "eb6cb701bdaaae80dfa220d3b09a959c96736325",
+                  "datavalue": {
+                    "value": {
+                      "entity-type": "item",
+                      "numeric-id": 70460099,
+                      "id": "Q70460099"
+                    },
+                    "type": "wikibase-entityid"
+                  },
+                  "datatype": "wikibase-item"
+                }
+              ],
+              "P236": [
+                {
+                  "snaktype": "value",
+                  "property": "P236",
+                  "hash": "98ff07d4640cceabd00d878dcfa7a453d80661ee",
+                  "datavalue": {
+                    "value": "2711-6662",
+                    "type": "string"
+                  },
+                  "datatype": "external-id"
+                }
+              ]
+            },
+            "snaks-order": [
+              "P248",
+              "P236"
+            ]
+          }
+        ]
+      }
+    ],
+    "P2671": [
+      {
+        "mainsnak": {
+          "snaktype": "value",
+          "property": "P2671",
+          "hash": "41884e2005fe8c787d456aab9dde8a94ef787167",
+          "datavalue": {
+            "value": "/g/11fmhx1g6b",
+            "type": "string"
+          },
+          "datatype": "external-id"
+        },
+        "type": "statement",
+        "id": "Q59154493$9C9B03D9-391B-478D-BF49-0CE499B80C55",
+        "rank": "normal"
+      }
+    ],
+    "P154": [
+      {
+        "mainsnak": {
+          "snaktype": "value",
+          "property": "P154",
+          "hash": "0b6cde7fa1d654a70f97a917b870151fef7debce",
+          "datavalue": {
+            "value": "Soir (Le), 1895-01-25 (bandeau).jpg",
+            "type": "string"
+          },
+          "datatype": "commonsMedia"
+        },
+        "type": "statement",
+        "id": "Q59154493$EBC1B2B4-4134-420F-BED0-04589FBD98B7",
+        "rank": "normal"
+      }
+    ],
+    "P18": [
+      {
+        "mainsnak": {
+          "snaktype": "value",
+          "property": "P18",
+          "hash": "7f317ba4b6abd212e0b594b8267a750caa740e52",
+          "datavalue": {
+            "value": "Le Soir (affiche 1890).jpeg",
+            "type": "string"
+          },
+          "datatype": "commonsMedia"
+        },
+        "type": "statement",
+        "id": "Q59154493$08DB98FB-FB40-48D5-9296-6D65A197B22A",
+        "rank": "normal"
+      }
+    ]
+  },
+  "sitelinks": {
+    "commonswiki": {
+      "site": "commonswiki",
+      "title": "Category:Le Soir (Paris)",
+      "badges": [],
+      "url": "https://commons.wikimedia.org/wiki/Category:Le_Soir_(Paris)"
+    },
+    "frwiki": {
+      "site": "frwiki",
+      "title": "Le Soir (quotidien français)",
+      "badges": [],
+      "url": "https://fr.wikipedia.org/wiki/Le_Soir_(quotidien_fran%C3%A7ais)"
+    }
+  }
+}

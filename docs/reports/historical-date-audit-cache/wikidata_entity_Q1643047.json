@@ -1,0 +1,522 @@
+{
+  "saved_at": "2026-03-07T14:17:39.881Z",
+  "value": {
+    "pageid": 1577116,
+    "ns": 0,
+    "title": "Q1643047",
+    "lastrevid": 2242210329,
+    "modified": "2024-09-02T15:58:00Z",
+    "type": "item",
+    "id": "Q1643047",
+    "labels": {
+      "fr": {
+        "language": "fr",
+        "value": "hôpital général de Paris"
+      },
+      "de": {
+        "language": "de",
+        "value": "Hôpital général"
+      },
+      "en": {
+        "language": "en",
+        "value": "Hôpital général de Paris"
+      },
+      "nl": {
+        "language": "nl",
+        "value": "Hôpital général de Paris"
+      },
+      "pt": {
+        "language": "pt",
+        "value": "Hôpital général de Paris"
+      }
+    },
+    "descriptions": {
+      "nl": {
+        "language": "nl",
+        "value": "ziekenhuis in Frankrijk"
+      },
+      "he": {
+        "language": "he",
+        "value": "בית חולים בצרפת"
+      },
+      "id": {
+        "language": "id",
+        "value": "rumah sakit di Prancis"
+      },
+      "de": {
+        "language": "de",
+        "value": "Krankenhaus"
+      },
+      "ar": {
+        "language": "ar",
+        "value": "مستشفى"
+      },
+      "ko": {
+        "language": "ko",
+        "value": "병원"
+      },
+      "fr": {
+        "language": "fr",
+        "value": "hôpital"
+      },
+      "en": {
+        "language": "en",
+        "value": "former hospital in France"
+      },
+      "ast": {
+        "language": "ast",
+        "value": "hospital de Francia"
+      },
+      "ace": {
+        "language": "ace",
+        "value": "rumoh sakét"
+      },
+      "jv": {
+        "language": "jv",
+        "value": "griya sakit"
+      },
+      "min": {
+        "language": "min",
+        "value": "rumah sakik"
+      }
+    },
+    "aliases": {
+      "fr": [
+        {
+          "language": "fr",
+          "value": "Hôpital Général"
+        },
+        {
+          "language": "fr",
+          "value": "Hopital general"
+        },
+        {
+          "language": "fr",
+          "value": "Hôpital général"
+        }
+      ],
+      "en": [
+        {
+          "language": "en",
+          "value": "General Hospital of Paris"
+        },
+        {
+          "language": "en",
+          "value": "Hopital general de Paris"
+        }
+      ]
+    },
+    "claims": {
+      "P17": [
+        {
+          "mainsnak": {
+            "snaktype": "value",
+            "property": "P17",
+            "hash": "c05db5d169c2560b9799d567a803d20a392f53e4",
+            "datavalue": {
+              "value": {
+                "entity-type": "item",
+                "numeric-id": 142,
+                "id": "Q142"
+              },
+              "type": "wikibase-entityid"
+            },
+            "datatype": "wikibase-item"
+          },
+          "type": "statement",
+          "id": "Q1643047$96DDF432-5745-4453-B580-58E3AD7D9D55",
+          "rank": "normal"
+        }
+      ],
+      "P31": [
+        {
+          "mainsnak": {
+            "snaktype": "value",
+            "property": "P31",
+            "hash": "2be06461a4b9778fb10baf466d3453acb9314bd4",
+            "datavalue": {
+              "value": {
+                "entity-type": "item",
+                "numeric-id": 16917,
+                "id": "Q16917"
+              },
+              "type": "wikibase-entityid"
+            },
+            "datatype": "wikibase-item"
+          },
+          "type": "statement",
+          "id": "Q1643047$87130628-F4D5-4028-B0A7-2D4829EEC80A",
+          "rank": "normal"
+        },
+        {
+          "mainsnak": {
+            "snaktype": "value",
+            "property": "P31",
+            "hash": "0a7a1fd883088765ed1722cc0a935dbe4100c4c5",
+            "datavalue": {
+              "value": {
+                "entity-type": "item",
+                "numeric-id": 64578911,
+                "id": "Q64578911"
+              },
+              "type": "wikibase-entityid"
+            },
+            "datatype": "wikibase-item"
+          },
+          "type": "statement",
+          "id": "Q1643047$C1E5E9C8-6083-497B-AD5B-3022B1752778",
+          "rank": "normal",
+          "references": [
+            {
+              "hash": "6abcb8f8c949b36da5eaef1fa92f3a5a1adc929c",
+              "snaks": {
+                "P143": [
+                  {
+                    "snaktype": "value",
+                    "property": "P143",
+                    "hash": "f30cbd35620c4ea6d0633aaf0210a8916130469b",
+                    "datavalue": {
+                      "value": {
+                        "entity-type": "item",
+                        "numeric-id": 8447,
+                        "id": "Q8447"
+                      },
+                      "type": "wikibase-entityid"
+                    },
+                    "datatype": "wikibase-item"
+                  }
+                ],
+                "P3452": [
+                  {
+                    "snaktype": "value",
+                    "property": "P3452",
+                    "hash": "f634bf865e1c9075c4dbc7c349e05e8e7a2d8de3",
+                    "datavalue": {
+                      "value": {
+                        "entity-type": "item",
+                        "numeric-id": 24716571,
+                        "id": "Q24716571"
+                      },
+                      "type": "wikibase-entityid"
+                    },
+                    "datatype": "wikibase-item"
+                  }
+                ]
+              },
+              "snaks-order": [
+                "P143",
+                "P3452"
+              ]
+            }
+          ]
+        }
+      ],
+      "P213": [
+        {
+          "mainsnak": {
+            "snaktype": "value",
+            "property": "P213",
+            "hash": "da075fa96f132af4a02f3b58b99653f469f4e15b",
+            "datavalue": {
+              "value": "0000000122914602",
+              "type": "string"
+            },
+            "datatype": "external-id"
+          },
+          "type": "statement",
+          "id": "Q1643047$57CCC25A-067B-497A-BACE-1150BFC69743",
+          "rank": "normal"
+        }
+      ],
+      "P244": [
+        {
+          "mainsnak": {
+            "snaktype": "value",
+            "property": "P244",
+            "hash": "7595f48ab47de0d94f358199ee6d616deea30e3c",
+            "datavalue": {
+              "value": "n84102146",
+              "type": "string"
+            },
+            "datatype": "external-id"
+          },
+          "type": "statement",
+          "id": "Q1643047$5BDC1250-52A3-4F9F-9691-DCC20B766601",
+          "rank": "normal",
+          "references": [
+            {
+              "hash": "14fa5898ac764e0660517aa07ea0bbba505f262b",
+              "snaks": {
+                "P248": [
+                  {
+                    "snaktype": "value",
+                    "property": "P248",
+                    "hash": "6b7d4330c4aac4caec4ede9de0311ce273f88ecd",
+                    "datavalue": {
+                      "value": {
+                        "entity-type": "item",
+                        "numeric-id": 54919,
+                        "id": "Q54919"
+                      },
+                      "type": "wikibase-entityid"
+                    },
+                    "datatype": "wikibase-item"
+                  }
+                ],
+                "P813": [
+                  {
+                    "snaktype": "value",
+                    "property": "P813",
+                    "hash": "e0d08f96012770600b942d5e8563b2a3499cba8e",
+                    "datavalue": {
+                      "value": {
+                        "time": "+2019-03-06T00:00:00Z",
+                        "timezone": 0,
+                        "before": 0,
+                        "after": 0,
+                        "precision": 11,
+                        "calendarmodel": "http://www.wikidata.org/entity/Q1985727"
+                      },
+                      "type": "time"
+                    },
+                    "datatype": "time"
+                  }
+                ]
+              },
+              "snaks-order": [
+                "P248",
+                "P813"
+              ]
+            }
+          ]
+        }
+      ],
+      "P131": [
+        {
+          "mainsnak": {
+            "snaktype": "value",
+            "property": "P131",
+            "hash": "22ac05a1462e2cb078c3eaf435f5ec86f5ab9b19",
+            "datavalue": {
+              "value": {
+                "entity-type": "item",
+                "numeric-id": 90,
+                "id": "Q90"
+              },
+              "type": "wikibase-entityid"
+            },
+            "datatype": "wikibase-item"
+          },
+          "type": "statement",
+          "id": "Q1643047$218ad80a-0d5f-4cb3-8f08-8a7b53ff5d27",
+          "rank": "normal",
+          "references": [
+            {
+              "hash": "fa278ebfc458360e5aed63d5058cca83c46134f1",
+              "snaks": {
+                "P143": [
+                  {
+                    "snaktype": "value",
+                    "property": "P143",
+                    "hash": "e4f6d9441d0600513c4533c672b5ab472dc73694",
+                    "datavalue": {
+                      "value": {
+                        "entity-type": "item",
+                        "numeric-id": 328,
+                        "id": "Q328"
+                      },
+                      "type": "wikibase-entityid"
+                    },
+                    "datatype": "wikibase-item"
+                  }
+                ]
+              },
+              "snaks-order": [
+                "P143"
+              ]
+            }
+          ]
+        }
+      ],
+      "P214": [
+        {
+          "mainsnak": {
+            "snaktype": "value",
+            "property": "P214",
+            "hash": "41ec2fb13b042401be0cf46e14881f473337811c",
+            "datavalue": {
+              "value": "139605027",
+              "type": "string"
+            },
+            "datatype": "external-id"
+          },
+          "type": "statement",
+          "id": "Q1643047$D0B6E5A4-2CF7-400C-B67C-1A187FECC65B",
+          "rank": "normal"
+        }
+      ],
+      "P646": [
+        {
+          "mainsnak": {
+            "snaktype": "value",
+            "property": "P646",
+            "hash": "2e4fd318908739230d66a9037996c08f73eceaff",
+            "datavalue": {
+              "value": "/m/0vpqpj4",
+              "type": "string"
+            },
+            "datatype": "external-id"
+          },
+          "type": "statement",
+          "id": "Q1643047$C96FA98A-ECB6-45F3-B4BE-05FA13E61B34",
+          "rank": "normal"
+        }
+      ],
+      "P8189": [
+        {
+          "mainsnak": {
+            "snaktype": "value",
+            "property": "P8189",
+            "hash": "48a5e17a52046ea73cc494f794ba8e674641eff6",
+            "datavalue": {
+              "value": "987007428015405171",
+              "type": "string"
+            },
+            "datatype": "external-id"
+          },
+          "type": "statement",
+          "id": "Q1643047$094240C9-CCF3-4B47-A905-BA071DEA3EC0",
+          "rank": "normal",
+          "references": [
+            {
+              "hash": "ecb7a39cf436eb1fba419853af168ef9f2ba1dab",
+              "snaks": {
+                "P248": [
+                  {
+                    "snaktype": "value",
+                    "property": "P248",
+                    "hash": "a03bb6ffe37be9554492f4eea5bd18afcb57df19",
+                    "datavalue": {
+                      "value": {
+                        "entity-type": "item",
+                        "numeric-id": 106509962,
+                        "id": "Q106509962"
+                      },
+                      "type": "wikibase-entityid"
+                    },
+                    "datatype": "wikibase-item"
+                  }
+                ]
+              },
+              "snaks-order": [
+                "P248"
+              ]
+            }
+          ]
+        }
+      ],
+      "P269": [
+        {
+          "mainsnak": {
+            "snaktype": "value",
+            "property": "P269",
+            "hash": "b45e083dde30f8ab5295a7f1da3529cde72cd7a7",
+            "datavalue": {
+              "value": "027584658",
+              "type": "string"
+            },
+            "datatype": "external-id"
+          },
+          "type": "statement",
+          "id": "Q1643047$EF7CA6CC-AF6B-470C-94CB-34322EBF9B8B",
+          "rank": "normal",
+          "references": [
+            {
+              "hash": "fbdd4d0b4001241757722fbce40337bd947aa78d",
+              "snaks": {
+                "P248": [
+                  {
+                    "snaktype": "value",
+                    "property": "P248",
+                    "hash": "6b7d4330c4aac4caec4ede9de0311ce273f88ecd",
+                    "datavalue": {
+                      "value": {
+                        "entity-type": "item",
+                        "numeric-id": 54919,
+                        "id": "Q54919"
+                      },
+                      "type": "wikibase-entityid"
+                    },
+                    "datatype": "wikibase-item"
+                  }
+                ],
+                "P813": [
+                  {
+                    "snaktype": "value",
+                    "property": "P813",
+                    "hash": "9c07da73b84889803ebd6601ba04b4579c39577d",
+                    "datavalue": {
+                      "value": {
+                        "time": "+2022-07-06T00:00:00Z",
+                        "timezone": 0,
+                        "before": 0,
+                        "after": 0,
+                        "precision": 11,
+                        "calendarmodel": "http://www.wikidata.org/entity/Q1985727"
+                      },
+                      "type": "time"
+                    },
+                    "datatype": "time"
+                  }
+                ],
+                "P214": [
+                  {
+                    "snaktype": "value",
+                    "property": "P214",
+                    "hash": "41ec2fb13b042401be0cf46e14881f473337811c",
+                    "datavalue": {
+                      "value": "139605027",
+                      "type": "string"
+                    },
+                    "datatype": "external-id"
+                  }
+                ]
+              },
+              "snaks-order": [
+                "P248",
+                "P813",
+                "P214"
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    "sitelinks": {
+      "dewiki": {
+        "site": "dewiki",
+        "title": "Hôpital général",
+        "badges": [],
+        "url": "https://de.wikipedia.org/wiki/H%C3%B4pital_g%C3%A9n%C3%A9ral"
+      },
+      "enwiki": {
+        "site": "enwiki",
+        "title": "General Hospital of Paris",
+        "badges": [],
+        "url": "https://en.wikipedia.org/wiki/General_Hospital_of_Paris"
+      },
+      "frwiki": {
+        "site": "frwiki",
+        "title": "Hôpital général de Paris",
+        "badges": [],
+        "url": "https://fr.wikipedia.org/wiki/H%C3%B4pital_g%C3%A9n%C3%A9ral_de_Paris"
+      },
+      "ptwiki": {
+        "site": "ptwiki",
+        "title": "Hôpital général de Paris",
+        "badges": [],
+        "url": "https://pt.wikipedia.org/wiki/H%C3%B4pital_g%C3%A9n%C3%A9ral_de_Paris"
+      }
+    }
+  }
+}

@@ -1,0 +1,75 @@
+{
+  "saved_at": "2026-03-07T13:35:40.412Z",
+  "value": {
+    "pageid": 2996774,
+    "ns": 0,
+    "title": "Q3136700",
+    "lastrevid": 1911395050,
+    "modified": "2023-06-09T11:20:58Z",
+    "type": "item",
+    "id": "Q3136700",
+    "labels": {
+      "fr": {
+        "language": "fr",
+        "value": "histoire de France sous la Cinquième République"
+      }
+    },
+    "descriptions": {},
+    "aliases": {
+      "fr": [
+        {
+          "language": "fr",
+          "value": "La France depuis 1958"
+        }
+      ]
+    },
+    "claims": {
+      "P31": [
+        {
+          "mainsnak": {
+            "snaktype": "value",
+            "property": "P31",
+            "hash": "7ad5c7929af39fc2ff8afed55f1192f80e71d936",
+            "datavalue": {
+              "value": {
+                "entity-type": "item",
+                "numeric-id": 17524420,
+                "id": "Q17524420"
+              },
+              "type": "wikibase-entityid"
+            },
+            "datatype": "wikibase-item"
+          },
+          "type": "statement",
+          "id": "Q3136700$14C36942-0B32-465F-A4FF-2E95A6AB3482",
+          "rank": "normal"
+        }
+      ],
+      "P2671": [
+        {
+          "mainsnak": {
+            "snaktype": "value",
+            "property": "P2671",
+            "hash": "fb6c7ea7c2e28d7a653e2ef46a19952d29b6d1cc",
+            "datavalue": {
+              "value": "/g/12233ckx",
+              "type": "string"
+            },
+            "datatype": "external-id"
+          },
+          "type": "statement",
+          "id": "Q3136700$F144EAB9-6590-43F8-BD0A-62A3D584E5AC",
+          "rank": "normal"
+        }
+      ]
+    },
+    "sitelinks": {
+      "frwiki": {
+        "site": "frwiki",
+        "title": "Histoire de la France sous la Cinquième République",
+        "badges": [],
+        "url": "https://fr.wikipedia.org/wiki/Histoire_de_la_France_sous_la_Cinqui%C3%A8me_R%C3%A9publique"
+      }
+    }
+  }
+}

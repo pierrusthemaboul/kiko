@@ -1,0 +1,523 @@
+{
+  "saved_at": "2026-03-07T13:39:50.067Z",
+  "value": {
+    "pageid": 1749726,
+    "ns": 0,
+    "title": "Q1818854",
+    "lastrevid": 2430593530,
+    "modified": "2025-11-17T06:55:58Z",
+    "type": "item",
+    "id": "Q1818854",
+    "labels": {
+      "pt": {
+        "language": "pt",
+        "value": "Batalha de Monte Castello"
+      },
+      "de": {
+        "language": "de",
+        "value": "Schlacht von Monte Castello"
+      },
+      "en": {
+        "language": "en",
+        "value": "Battle of Monte Castello"
+      },
+      "es": {
+        "language": "es",
+        "value": "Batalla de Monte Castello"
+      },
+      "an": {
+        "language": "an",
+        "value": "Batalla de Monte Castello"
+      },
+      "da": {
+        "language": "da",
+        "value": "Slaget om Monte Castello"
+      },
+      "ja": {
+        "language": "ja",
+        "value": "モンテ・カステッロの戦い"
+      },
+      "he": {
+        "language": "he",
+        "value": "קרב מונטה קסטלו"
+      },
+      "it": {
+        "language": "it",
+        "value": "battaglia di Monte Castello"
+      },
+      "pt-br": {
+        "language": "pt-br",
+        "value": "Batalha de Monte Castello"
+      },
+      "yo": {
+        "language": "yo",
+        "value": "ogun Monte Castello"
+      },
+      "fr": {
+        "language": "fr",
+        "value": "bataille de Monte Castello"
+      },
+      "ru": {
+        "language": "ru",
+        "value": "Бои за Монте-Кастелло"
+      }
+    },
+    "descriptions": {
+      "de": {
+        "language": "de",
+        "value": "Schlacht des Zweiten Weltkriegs"
+      },
+      "it": {
+        "language": "it",
+        "value": "battaglia della seconda guerra mondiale"
+      },
+      "nl": {
+        "language": "nl",
+        "value": "veldslag in Italië"
+      },
+      "pt-br": {
+        "language": "pt-br",
+        "value": "Batalha da Segunda Guerra Mundial na Italia"
+      },
+      "pt": {
+        "language": "pt",
+        "value": "conflito armado travado no final da Segunda Guerra Mundial"
+      },
+      "en": {
+        "language": "en",
+        "value": "1944 battle of the World War II"
+      },
+      "yo": {
+        "language": "yo",
+        "value": "ogun"
+      },
+      "es": {
+        "language": "es",
+        "value": "batalla de la Segunda Guerra Mundial"
+      }
+    },
+    "aliases": {
+      "pt": [
+        {
+          "language": "pt",
+          "value": "Batalha de Monte Castelo"
+        },
+        {
+          "language": "pt",
+          "value": "Conquista de Monte Castelo"
+        },
+        {
+          "language": "pt",
+          "value": "Montecastelo"
+        },
+        {
+          "language": "pt",
+          "value": "Monte Castello"
+        }
+      ]
+    },
+    "claims": {
+      "P646": [
+        {
+          "mainsnak": {
+            "snaktype": "value",
+            "property": "P646",
+            "hash": "a75eb256271b66b488f4d8ae997bc6efb240d2e6",
+            "datavalue": {
+              "value": "/m/09bs8x",
+              "type": "string"
+            },
+            "datatype": "external-id"
+          },
+          "type": "statement",
+          "id": "Q1818854$6B57E2FB-F026-45BD-9A22-B027DF1B7983",
+          "rank": "normal",
+          "references": [
+            {
+              "hash": "2b00cb481cddcac7623114367489b5c194901c4a",
+              "snaks": {
+                "P248": [
+                  {
+                    "snaktype": "value",
+                    "property": "P248",
+                    "hash": "a94b740202b097dd33355e0e6c00e54b9395e5e0",
+                    "datavalue": {
+                      "value": {
+                        "entity-type": "item",
+                        "numeric-id": 15241312,
+                        "id": "Q15241312"
+                      },
+                      "type": "wikibase-entityid"
+                    },
+                    "datatype": "wikibase-item"
+                  }
+                ],
+                "P577": [
+                  {
+                    "snaktype": "value",
+                    "property": "P577",
+                    "hash": "fde79ecb015112d2f29229ccc1ec514ed3e71fa2",
+                    "datavalue": {
+                      "value": {
+                        "time": "+2013-10-28T00:00:00Z",
+                        "timezone": 0,
+                        "before": 0,
+                        "after": 0,
+                        "precision": 11,
+                        "calendarmodel": "http://www.wikidata.org/entity/Q1985727"
+                      },
+                      "type": "time"
+                    },
+                    "datatype": "time"
+                  }
+                ]
+              },
+              "snaks-order": [
+                "P248",
+                "P577"
+              ]
+            }
+          ]
+        }
+      ],
+      "P625": [
+        {
+          "mainsnak": {
+            "snaktype": "value",
+            "property": "P625",
+            "hash": "859210be0d8c2ce71559cf6a37c9861980d1c4db",
+            "datavalue": {
+              "value": {
+                "latitude": 44.2218,
+                "longitude": 10.9542,
+                "altitude": null,
+                "precision": 0.062675028197017,
+                "globe": "http://www.wikidata.org/entity/Q2"
+              },
+              "type": "globecoordinate"
+            },
+            "datatype": "globe-coordinate"
+          },
+          "type": "statement",
+          "id": "Q1818854$D79B25ED-88B5-4281-9806-C0FA7FC4B0E4",
+          "rank": "normal",
+          "references": [
+            {
+              "hash": "fa278ebfc458360e5aed63d5058cca83c46134f1",
+              "snaks": {
+                "P143": [
+                  {
+                    "snaktype": "value",
+                    "property": "P143",
+                    "hash": "e4f6d9441d0600513c4533c672b5ab472dc73694",
+                    "datavalue": {
+                      "value": {
+                        "entity-type": "item",
+                        "numeric-id": 328,
+                        "id": "Q328"
+                      },
+                      "type": "wikibase-entityid"
+                    },
+                    "datatype": "wikibase-item"
+                  }
+                ]
+              },
+              "snaks-order": [
+                "P143"
+              ]
+            }
+          ]
+        }
+      ],
+      "P31": [
+        {
+          "mainsnak": {
+            "snaktype": "value",
+            "property": "P31",
+            "hash": "baa1df9dcd37b9f3a062e7a14a8bef0c37078d32",
+            "datavalue": {
+              "value": {
+                "entity-type": "item",
+                "numeric-id": 178561,
+                "id": "Q178561"
+              },
+              "type": "wikibase-entityid"
+            },
+            "datatype": "wikibase-item"
+          },
+          "type": "statement",
+          "id": "Q1818854$8B4D7E96-AA4E-454F-AAF8-9A538D63C22C",
+          "rank": "normal"
+        }
+      ],
+      "P361": [
+        {
+          "mainsnak": {
+            "snaktype": "value",
+            "property": "P361",
+            "hash": "3a5d04cc3bdb5812f722dfb54d4e65fa4c92250c",
+            "datavalue": {
+              "value": {
+                "entity-type": "item",
+                "numeric-id": 162333,
+                "id": "Q162333"
+              },
+              "type": "wikibase-entityid"
+            },
+            "datatype": "wikibase-item"
+          },
+          "type": "statement",
+          "id": "Q1818854$EC34A488-7F1A-4481-A6A1-DDF717F2C0DE",
+          "rank": "normal"
+        }
+      ],
+      "P580": [
+        {
+          "mainsnak": {
+            "snaktype": "value",
+            "property": "P580",
+            "hash": "4ac703934fd77254b2b32f492511cdfc0885cea0",
+            "datavalue": {
+              "value": {
+                "time": "+1944-11-25T00:00:00Z",
+                "timezone": 0,
+                "before": 0,
+                "after": 0,
+                "precision": 11,
+                "calendarmodel": "http://www.wikidata.org/entity/Q1985727"
+              },
+              "type": "time"
+            },
+            "datatype": "time"
+          },
+          "type": "statement",
+          "id": "Q1818854$49d877ba-4893-7189-e7d1-8ebe6ef42949",
+          "rank": "normal"
+        }
+      ],
+      "P582": [
+        {
+          "mainsnak": {
+            "snaktype": "value",
+            "property": "P582",
+            "hash": "c7a0b09473d7f0edbaf6b302ff9cd181d2711f5f",
+            "datavalue": {
+              "value": {
+                "time": "+1945-02-21T00:00:00Z",
+                "timezone": 0,
+                "before": 0,
+                "after": 0,
+                "precision": 11,
+                "calendarmodel": "http://www.wikidata.org/entity/Q1985727"
+              },
+              "type": "time"
+            },
+            "datatype": "time"
+          },
+          "type": "statement",
+          "id": "Q1818854$b0231ce5-418b-f466-ceb8-50cecd26abed",
+          "rank": "normal"
+        }
+      ],
+      "P17": [
+        {
+          "mainsnak": {
+            "snaktype": "value",
+            "property": "P17",
+            "hash": "b48529e9f7e0898ab1ddaefe8547cdb863e0167c",
+            "datavalue": {
+              "value": {
+                "entity-type": "item",
+                "numeric-id": 38,
+                "id": "Q38"
+              },
+              "type": "wikibase-entityid"
+            },
+            "datatype": "wikibase-item"
+          },
+          "type": "statement",
+          "id": "Q1818854$c6676735-4360-2c14-cf9c-e66f99e4a877",
+          "rank": "normal"
+        }
+      ],
+      "P373": [
+        {
+          "mainsnak": {
+            "snaktype": "value",
+            "property": "P373",
+            "hash": "91203146e1d10fb9977bffbc56d6956033993e2a",
+            "datavalue": {
+              "value": "Battle of Monte Castello",
+              "type": "string"
+            },
+            "datatype": "string"
+          },
+          "type": "statement",
+          "id": "Q1818854$99711d44-4944-6a17-26e1-b993aaee38ac",
+          "rank": "normal"
+        }
+      ],
+      "P18": [
+        {
+          "mainsnak": {
+            "snaktype": "value",
+            "property": "P18",
+            "hash": "138f9476e15ab44e2b2810a5a2e22e18efc78a3a",
+            "datavalue": {
+              "value": "Soldados da FEB no segundo asalto da batalha de Monte Castelo.jpg",
+              "type": "string"
+            },
+            "datatype": "commonsMedia"
+          },
+          "type": "statement",
+          "id": "Q1818854$E1A15A2A-9909-43E7-A1EA-B940E6FB5744",
+          "rank": "normal"
+        }
+      ],
+      "P710": [
+        {
+          "mainsnak": {
+            "snaktype": "value",
+            "property": "P710",
+            "hash": "8ad24ad41368371663e38d220d870a824382aa4d",
+            "datavalue": {
+              "value": {
+                "entity-type": "item",
+                "numeric-id": 2291067,
+                "id": "Q2291067"
+              },
+              "type": "wikibase-entityid"
+            },
+            "datatype": "wikibase-item"
+          },
+          "type": "statement",
+          "id": "Q1818854$5e7815df-4294-187d-4725-15b950b79394",
+          "rank": "normal"
+        },
+        {
+          "mainsnak": {
+            "snaktype": "value",
+            "property": "P710",
+            "hash": "a8eb1741eadba0cd829970f77242fd0fb9296eeb",
+            "datavalue": {
+              "value": {
+                "entity-type": "item",
+                "numeric-id": 1779157,
+                "id": "Q1779157"
+              },
+              "type": "wikibase-entityid"
+            },
+            "datatype": "wikibase-item"
+          },
+          "type": "statement",
+          "id": "Q1818854$e56eefa2-4a8b-38b2-40d3-7e5dd4167496",
+          "rank": "normal"
+        }
+      ],
+      "P4552": [
+        {
+          "mainsnak": {
+            "snaktype": "value",
+            "property": "P4552",
+            "hash": "9eb160dc7b4e24a9e0f2df69eed4355a17968bb9",
+            "datavalue": {
+              "value": {
+                "entity-type": "item",
+                "numeric-id": 29862522,
+                "id": "Q29862522"
+              },
+              "type": "wikibase-entityid"
+            },
+            "datatype": "wikibase-item"
+          },
+          "type": "statement",
+          "id": "Q1818854$834A3567-7FEC-4E26-9C3E-C9377CEA5C26",
+          "rank": "normal"
+        }
+      ],
+      "P276": [
+        {
+          "mainsnak": {
+            "snaktype": "value",
+            "property": "P276",
+            "hash": "7e6a9705080a0bcf96ae7dfc622e9db76165082f",
+            "datavalue": {
+              "value": {
+                "entity-type": "item",
+                "numeric-id": 94876,
+                "id": "Q94876"
+              },
+              "type": "wikibase-entityid"
+            },
+            "datatype": "wikibase-item"
+          },
+          "type": "statement",
+          "id": "Q1818854$539CFCFA-0675-4D8B-8C78-895AC1A17CFE",
+          "rank": "normal"
+        }
+      ]
+    },
+    "sitelinks": {
+      "anwiki": {
+        "site": "anwiki",
+        "title": "Batalla de Monte Castello",
+        "badges": [],
+        "url": "https://an.wikipedia.org/wiki/Batalla_de_Monte_Castello"
+      },
+      "commonswiki": {
+        "site": "commonswiki",
+        "title": "Category:Battle of Monte Castello",
+        "badges": [],
+        "url": "https://commons.wikimedia.org/wiki/Category:Battle_of_Monte_Castello"
+      },
+      "dawiki": {
+        "site": "dawiki",
+        "title": "Slaget om Monte Castello",
+        "badges": [],
+        "url": "https://da.wikipedia.org/wiki/Slaget_om_Monte_Castello"
+      },
+      "dewiki": {
+        "site": "dewiki",
+        "title": "Schlacht von Monte Castello",
+        "badges": [],
+        "url": "https://de.wikipedia.org/wiki/Schlacht_von_Monte_Castello"
+      },
+      "enwiki": {
+        "site": "enwiki",
+        "title": "Battle of Monte Castello",
+        "badges": [],
+        "url": "https://en.wikipedia.org/wiki/Battle_of_Monte_Castello"
+      },
+      "eswiki": {
+        "site": "eswiki",
+        "title": "Batalla de Monte Castello",
+        "badges": [],
+        "url": "https://es.wikipedia.org/wiki/Batalla_de_Monte_Castello"
+      },
+      "frwiki": {
+        "site": "frwiki",
+        "title": "Bataille de Monte Castello",
+        "badges": [],
+        "url": "https://fr.wikipedia.org/wiki/Bataille_de_Monte_Castello"
+      },
+      "itwiki": {
+        "site": "itwiki",
+        "title": "Battaglia del Monte Castello",
+        "badges": [],
+        "url": "https://it.wikipedia.org/wiki/Battaglia_del_Monte_Castello"
+      },
+      "ptwiki": {
+        "site": "ptwiki",
+        "title": "Batalha de Monte Castello",
+        "badges": [],
+        "url": "https://pt.wikipedia.org/wiki/Batalha_de_Monte_Castello"
+      },
+      "ruwiki": {
+        "site": "ruwiki",
+        "title": "Бои за Монте-Кастелло",
+        "badges": [],
+        "url": "https://ru.wikipedia.org/wiki/%D0%91%D0%BE%D0%B8_%D0%B7%D0%B0_%D0%9C%D0%BE%D0%BD%D1%82%D0%B5-%D0%9A%D0%B0%D1%81%D1%82%D0%B5%D0%BB%D0%BB%D0%BE"
+      }
+    }
+  }
+}

@@ -1,0 +1,2911 @@
+{
+  "generated_at": "2026-03-07T11:09:33.458Z",
+  "sample_size": 50,
+  "model": "gemini-2.0-flash",
+  "selection": "random_time_stratified",
+  "run_stamp": "2026-03-07T11-05-37-485Z",
+  "summary_by_bucket": {
+    "probable_mais_a_confirmer": 10,
+    "annee_exacte_introuvable": 6,
+    "retrieval_insuffisant": 2,
+    "absence_de_singularite": 5,
+    "confirme": 21,
+    "preuve_externe_faible": 5,
+    "date_disputee": 1
+  },
+  "results": [
+    {
+      "id": "b5dfd71f-299a-4bad-95bd-89c5774708aa",
+      "titre": "Découverte de Petra par Johann Burckhardt",
+      "date_in_db": "1812-08-22",
+      "year_in_db": "1812",
+      "date_candidate": "1812-01-01",
+      "year_candidate": "1812",
+      "precision": "year",
+      "status": "LIKELY_CORRECT",
+      "result_bucket": "probable_mais_a_confirmer",
+      "confidence": 0.8,
+      "needs_human_review": false,
+      "recommendation": "Confirmer la date de 1812.",
+      "matched_article_fr": "https://fr.wikipedia.org/wiki/Jean_Louis_Burckhardt",
+      "matched_article_en": null,
+      "wikidata_id": "Q39691",
+      "event_identity": "Découverte de Petra par Johann Burckhardt",
+      "is_disputed": false,
+      "ambiguous_identity": false,
+      "title_self_sufficient": true,
+      "title_not_self_sufficient": false,
+      "is_not_singular_event": false,
+      "is_time_span": false,
+      "is_period_based": false,
+      "exact_year_supported": true,
+      "reasoning_short": "Le titre est clair et l'événement est datable à une année unique. La découverte de Petra par Johann Burckhardt est communément datée de 1812.",
+      "evidence_used": [
+        "wikipedia_fr_article"
+      ],
+      "sources_checked": [
+        {
+          "source_id": "wikipedia_fr_article",
+          "source_type": "wikipedia_fr",
+          "title": "Jean Louis Burckhardt",
+          "url": "https://fr.wikipedia.org/wiki/Jean_Louis_Burckhardt",
+          "date_iso": null,
+          "precision": null
+        },
+        {
+          "source_id": "wikidata_1",
+          "source_type": "wikidata",
+          "title": "Q39691",
+          "url": "https://www.wikidata.org/wiki/Q39691",
+          "date_iso": "1784-11-24",
+          "precision": "day"
+        },
+        {
+          "source_id": "wikidata_2",
+          "source_type": "wikidata",
+          "title": "Q39691",
+          "url": "https://www.wikidata.org/wiki/Q39691",
+          "date_iso": "1817-10-15",
+          "precision": "day"
+        }
+      ],
+      "source_quotes": [
+        {
+          "source_id": "wikipedia_fr_article",
+          "quote": "Jean Louis Burckhardt (25 novembre 1784, Lausanne - 15 octobre 1817) est un explorateur et orientaliste suisse. Il est aussi nommé Johann Ludwig Burckhardt ou John Lewis Burckhardt. Dans ses lettres, Burckhardt utilisait le français et signait Louis."
+        },
+        {
+          "source_id": "wikidata_1",
+          "quote": "date of birth: 1784-11-24"
+        },
+        {
+          "source_id": "wikidata_2",
+          "quote": "date of death: 1817-10-15"
+        }
+      ],
+      "conflicts": []
+    },
+    {
+      "id": "9dbcda6b-867f-4ce5-8a92-741c6d7fd42a",
+      "titre": "Début de la construction de Sainte-Sophie",
+      "date_in_db": "0532-01-01",
+      "year_in_db": "0532",
+      "date_candidate": "0532-01-01",
+      "year_candidate": "0532",
+      "precision": "year",
+      "status": "LIKELY_CORRECT",
+      "result_bucket": "probable_mais_a_confirmer",
+      "confidence": 0.8,
+      "needs_human_review": false,
+      "recommendation": "Aucune modification nécessaire.",
+      "matched_article_fr": "https://fr.wikipedia.org/wiki/Sainte-Sophie_(Constantinople)",
+      "matched_article_en": null,
+      "wikidata_id": "Q12506",
+      "event_identity": "Début de la construction de Sainte-Sophie ordonné par Justinien Ier après les émeutes de Nika.",
+      "is_disputed": false,
+      "ambiguous_identity": false,
+      "title_self_sufficient": true,
+      "title_not_self_sufficient": false,
+      "is_not_singular_event": false,
+      "is_time_span": false,
+      "is_period_based": false,
+      "exact_year_supported": true,
+      "reasoning_short": "L'événement est clair et le titre est précis. La description détaille le contexte des émeutes de Nika en janvier 532, qui ont conduit Justinien Ier à ordonner la construction de Sainte-Sophie la même année.",
+      "evidence_used": [],
+      "sources_checked": [
+        {
+          "source_id": "wikipedia_fr_article",
+          "source_type": "wikipedia_fr",
+          "title": "Sainte-Sophie (Constantinople)",
+          "url": "https://fr.wikipedia.org/wiki/Sainte-Sophie_(Constantinople)",
+          "date_iso": null,
+          "precision": null
+        },
+        {
+          "source_id": "wikidata_1",
+          "source_type": "wikidata",
+          "title": "Q12506",
+          "url": "https://www.wikidata.org/wiki/Q12506",
+          "date_iso": "0537-12-27",
+          "precision": "day"
+        },
+        {
+          "source_id": "wikidata_2",
+          "source_type": "wikidata",
+          "title": "Q12506",
+          "url": "https://www.wikidata.org/wiki/Q12506",
+          "date_iso": "0360-02-15",
+          "precision": "day"
+        }
+      ],
+      "source_quotes": [
+        {
+          "source_id": "wikipedia_fr_article",
+          "quote": "Sainte-Sophie (du grec Ἁγία Σοφία, Hagía Sophía, litt. « sagesse de Dieu », « sagesse divine », nom repris en turc sous la forme Ayasofya) est une ancienne basilique byzantine devenue mosquée, située à Istanbul, dans l'ancienne Constantinople, sur le côté ouest du Bosphore. À l'origine basilique chrétienne, elle est construite au IVe siècle, puis reconstruite bien plus grande au VIe siècle sous l'empereur byzantin Justinien, où elle acquiert sa forme actuelle. Souvent surnommée « la Grande Église », elle est le plus important monument de l'architecture byzantine et demeure l'une des plus prestigieuses églises de la chrétienté jusqu'au XVe siècle. Après la prise de Constantinople par les armées ottomanes en 1453, elle est convertie en mosquée sous le sultan Mehmet II, statut qu'elle conserve jusqu'à la fin de l'Empire ottoman. En 1934, elle perd son statut de lieu de culte pour devenir u…"
+        },
+        {
+          "source_id": "wikidata_1",
+          "quote": "inception: 0537-12-27"
+        },
+        {
+          "source_id": "wikidata_2",
+          "quote": "inception: 0360-02-15"
+        }
+      ],
+      "conflicts": []
+    },
+    {
+      "id": "f906c637-8fe8-4534-a95e-d6dedbf020f2",
+      "titre": "Mission de saint Augustin en Angleterre",
+      "date_in_db": "0597-01-01",
+      "year_in_db": "0597",
+      "date_candidate": "0597-01-01",
+      "year_candidate": "0597",
+      "precision": "year",
+      "status": "LIKELY_CORRECT",
+      "result_bucket": "probable_mais_a_confirmer",
+      "confidence": 0.7,
+      "needs_human_review": false,
+      "recommendation": "No change needed.",
+      "matched_article_fr": "wikipedia_fr_article",
+      "matched_article_en": null,
+      "wikidata_id": "Q7592555",
+      "event_identity": "Mission de saint Augustin en Angleterre",
+      "is_disputed": false,
+      "ambiguous_identity": false,
+      "title_self_sufficient": true,
+      "title_not_self_sufficient": false,
+      "is_not_singular_event": false,
+      "is_time_span": false,
+      "is_period_based": false,
+      "exact_year_supported": true,
+      "reasoning_short": "The event is the 'Mission de saint Augustin en Angleterre'. The french wikipedia article about the 'Évangéliaire de saint Augustin' mentions that Augustin de Cantorbéry brought it to England with the Gregorian mission. The event description states that Augustin landed in England in 597. Therefore, …",
+      "evidence_used": [
+        "wikipedia_fr_article"
+      ],
+      "sources_checked": [
+        {
+          "source_id": "wikipedia_fr_article",
+          "source_type": "wikipedia_fr",
+          "title": "Évangéliaire de saint Augustin",
+          "url": "https://fr.wikipedia.org/wiki/%C3%89vang%C3%A9liaire_de_saint_Augustin",
+          "date_iso": null,
+          "precision": null
+        },
+        {
+          "source_id": "wikipedia_en_article",
+          "source_type": "wikipedia_en",
+          "title": "Basilica of Saint-Denis",
+          "url": "https://en.wikipedia.org/wiki/Basilica_of_Saint-Denis",
+          "date_iso": null,
+          "precision": null
+        },
+        {
+          "source_id": "wikidata_1",
+          "source_type": "wikidata",
+          "title": "Q7592555",
+          "url": "https://www.wikidata.org/wiki/Q7592555",
+          "date_iso": "0600-01-01",
+          "precision": "year"
+        }
+      ],
+      "source_quotes": [
+        {
+          "source_id": "wikipedia_fr_article",
+          "quote": "L'Évangéliaire dit de saint Augustin est un manuscrit enluminé contenant les évangiles sans doute produit à la fin du VIe siècle en Italie. La tradition rapporte qu'il a été apporté en Angleterre avec la Mission grégorienne et Augustin de Cantorbéry. Il est actuellement conservé à la bibliothèque du Corpus Christi College de Cambridge."
+        },
+        {
+          "source_id": "wikipedia_en_article",
+          "quote": "The Basilica of Saint-Denis (French: basilique royale Saint-Denis; now formally known as the basilique cathédrale Saint-Denis) is a Roman Catholic cathedral that originated as a medieval abbey church. It is located in the commune of Saint-Denis, a northern suburb of Paris, France. The building is of singular importance historically and architecturally because its choir, completed in 1144, is widely considered the first structure to employ all of the elements of Gothic architecture. The basilica became a place of pilgrimage and a necropolis containing the tombs of the kings of France, including nearly every king from the 10th century to Louis XVIII in the 19th century. Henry IV of France came to Saint-Denis to renounce his Protestant faith formally and become a Catholic. The queens of France were crowned at Saint-Denis, and the regalia, including the sword used for crowning the kings and…"
+        },
+        {
+          "source_id": "wikidata_1",
+          "quote": "inception: 0600-01-01"
+        }
+      ],
+      "conflicts": []
+    },
+    {
+      "id": "17a0aedf-3b23-4cfa-928c-bc95c55395fb",
+      "titre": "Deuxième exposition universelle de Paris",
+      "date_in_db": "1878-01-01",
+      "year_in_db": "1878",
+      "date_candidate": null,
+      "year_candidate": null,
+      "precision": null,
+      "status": "INSUFFICIENT_EVIDENCE",
+      "result_bucket": "annee_exacte_introuvable",
+      "confidence": 0,
+      "needs_human_review": true,
+      "recommendation": "Provide external sources to confirm the year of the event.",
+      "matched_article_fr": null,
+      "matched_article_en": null,
+      "wikidata_id": null,
+      "event_identity": "Deuxième exposition universelle de Paris",
+      "is_disputed": false,
+      "ambiguous_identity": false,
+      "title_self_sufficient": true,
+      "title_not_self_sufficient": false,
+      "is_not_singular_event": false,
+      "is_time_span": false,
+      "is_period_based": false,
+      "exact_year_supported": false,
+      "reasoning_short": "The provided title and description refer to an event that should have a specific year. However, without external sources, it's impossible to confirm the exact year of the 'Deuxième exposition universelle de Paris'.",
+      "evidence_used": [],
+      "sources_checked": [],
+      "source_quotes": [],
+      "conflicts": []
+    },
+    {
+      "id": "78394762-584d-4141-bdf5-43dd3e4cd1a8",
+      "titre": "Première émission régulière de Radio Paris",
+      "date_in_db": "1923-01-01",
+      "year_in_db": "1923",
+      "date_candidate": null,
+      "year_candidate": null,
+      "precision": null,
+      "status": "INSUFFICIENT_EVIDENCE",
+      "result_bucket": "annee_exacte_introuvable",
+      "confidence": 0.2,
+      "needs_human_review": true,
+      "recommendation": "Further research is needed to confirm the exact year of the first regular broadcast of Radio Paris.",
+      "matched_article_fr": "Histoire de la radio à Paris",
+      "matched_article_en": null,
+      "wikidata_id": "Q3416969",
+      "event_identity": "Première émission régulière de Radio Paris",
+      "is_disputed": false,
+      "ambiguous_identity": false,
+      "title_self_sufficient": true,
+      "title_not_self_sufficient": false,
+      "is_not_singular_event": false,
+      "is_time_span": false,
+      "is_period_based": false,
+      "exact_year_supported": false,
+      "reasoning_short": "The provided source discusses the history of radio in Paris starting in 1921, but does not confirm the exact year of the first regular broadcast of Radio Paris. Therefore, I cannot confirm the year.",
+      "evidence_used": [
+        "wikipedia_fr_article"
+      ],
+      "sources_checked": [
+        {
+          "source_id": "wikipedia_fr_article",
+          "source_type": "wikipedia_fr",
+          "title": "Histoire de la radio à Paris",
+          "url": "https://fr.wikipedia.org/wiki/Histoire_de_la_radio_%C3%A0_Paris",
+          "date_iso": null,
+          "precision": null
+        }
+      ],
+      "source_quotes": [
+        {
+          "source_id": "wikipedia_fr_article",
+          "quote": "L'histoire de la radio à Paris débute en 1921, quand des émissions commencent à être diffusées sur la ville de Paris. Aujourd'hui, au niveau de la capitale de la France, les auditeurs peuvent recevoir, sur leur récepteur radio, les programmes diffusés par des dizaines de stations de radio différentes."
+        }
+      ],
+      "conflicts": []
+    },
+    {
+      "id": "8ddd5937-de6f-42fe-870e-a365ce593a25",
+      "titre": "Création du premier rein artificiel implantable",
+      "date_in_db": "2018-01-01",
+      "year_in_db": "2018",
+      "date_candidate": null,
+      "year_candidate": null,
+      "precision": null,
+      "status": "INSUFFICIENT_EVIDENCE",
+      "result_bucket": "retrieval_insuffisant",
+      "confidence": 0,
+      "needs_human_review": true,
+      "recommendation": "Fournir des sources externes fiables pour valider l'année de la création du premier rein artificiel implantable.",
+      "matched_article_fr": null,
+      "matched_article_en": null,
+      "wikidata_id": null,
+      "event_identity": "Création du premier rein artificiel implantable",
+      "is_disputed": false,
+      "ambiguous_identity": false,
+      "title_self_sufficient": true,
+      "title_not_self_sufficient": false,
+      "is_not_singular_event": false,
+      "is_time_span": false,
+      "is_period_based": false,
+      "exact_year_supported": true,
+      "reasoning_short": "Aucune source externe n'est fournie pour valider l'année de la création du premier rein artificiel implantable. Sans sources, il est impossible de confirmer l'année.",
+      "evidence_used": [],
+      "sources_checked": [],
+      "source_quotes": [],
+      "conflicts": []
+    },
+    {
+      "id": "66bad4cd-00a2-41e5-b907-7e8f1ad81fb4",
+      "titre": "Deuxième conférence de La Haye",
+      "date_in_db": "1930-01-01",
+      "year_in_db": "1930",
+      "date_candidate": null,
+      "year_candidate": null,
+      "precision": null,
+      "status": "INSUFFICIENT_EVIDENCE",
+      "result_bucket": "absence_de_singularite",
+      "confidence": 0,
+      "needs_human_review": false,
+      "recommendation": "Reject due to ambiguity and lack of supporting evidence for a specific year.",
+      "matched_article_fr": null,
+      "matched_article_en": null,
+      "wikidata_id": "Q36600",
+      "event_identity": "Deuxième conférence de La Haye",
+      "is_disputed": false,
+      "ambiguous_identity": false,
+      "title_self_sufficient": true,
+      "title_not_self_sufficient": false,
+      "is_not_singular_event": true,
+      "is_time_span": false,
+      "is_period_based": false,
+      "exact_year_supported": false,
+      "reasoning_short": "The title refers to a conference, but the description mentions the conference of 1930. The title is ambiguous and does not provide a unique year. No source confirms the year.",
+      "evidence_used": [],
+      "sources_checked": [
+        {
+          "source_id": "wikipedia_fr_article",
+          "source_type": "wikipedia_fr",
+          "title": "La Haye",
+          "url": "https://fr.wikipedia.org/wiki/La_Haye",
+          "date_iso": null,
+          "precision": null
+        },
+        {
+          "source_id": "wikidata_1",
+          "source_type": "wikidata",
+          "title": "Q36600",
+          "url": "https://www.wikidata.org/wiki/Q36600",
+          "date_iso": "1201-01-01",
+          "precision": "year"
+        }
+      ],
+      "source_quotes": [
+        {
+          "source_id": "wikipedia_fr_article",
+          "quote": "La Haye (prononcé : [la ɛ] ; en néerlandais : Den Haag, [dɛn ˈɦaːx], diminutif de 's-Gravenhage, [ˌsxraːvə(n)ˈɦaːɣə] — littéralement « Haie du Comte ») est une commune et ville néerlandaise, siège du gouvernement des Pays-Bas et chef-lieu de la province de Hollande-Méridionale. Elle n'est cependant pas la capitale du pays, qui est Amsterdam. En 2024, la population de La Haye s'élève à 568 945 habitants, ce qui en fait la troisième ville des Pays-Bas après Amsterdam et Rotterdam. Elle fait partie de la conurbation de la Randstad — comprenant Amsterdam, Haarlem, Leyde, Rotterdam et Utrecht — comptant environ 7 100 000 habitants. Outre les États généraux, la Cour suprême et le Conseil d'État, La Haye accueille les résidences officielles du roi (Huis ten Bosch) et du Premier ministre des Pays-Bas (Catshuis), ainsi que les ambassades. Plusieurs institutions internationales ont leur siège à L…"
+        },
+        {
+          "source_id": "wikidata_1",
+          "quote": "inception: 1201-01-01"
+        }
+      ],
+      "conflicts": []
+    },
+    {
+      "id": "cbeb6771-80f6-49e4-b496-d7f7cd72f89a",
+      "titre": "Création du royaume d'Arles",
+      "date_in_db": "0934-01-01",
+      "year_in_db": "0934",
+      "date_candidate": "0934-01-01",
+      "year_candidate": "0934",
+      "precision": "year",
+      "status": "CONFIRMED",
+      "result_bucket": "confirme",
+      "confidence": 0.9,
+      "needs_human_review": false,
+      "recommendation": "Aucune modification nécessaire.",
+      "matched_article_fr": null,
+      "matched_article_en": null,
+      "wikidata_id": "Q48292",
+      "event_identity": "Création du royaume d'Arles en 934.",
+      "is_disputed": false,
+      "ambiguous_identity": false,
+      "title_self_sufficient": true,
+      "title_not_self_sufficient": false,
+      "is_not_singular_event": false,
+      "is_time_span": false,
+      "is_period_based": false,
+      "exact_year_supported": true,
+      "reasoning_short": "L'événement décrit la création du royaume d'Arles en 934, ce qui correspond à une année unique. La description détaillée confirme cette date.",
+      "evidence_used": [],
+      "sources_checked": [
+        {
+          "source_id": "wikipedia_fr_article",
+          "source_type": "wikipedia_fr",
+          "title": "Arles",
+          "url": "https://fr.wikipedia.org/wiki/Arles",
+          "date_iso": null,
+          "precision": null
+        }
+      ],
+      "source_quotes": [
+        {
+          "source_id": "wikipedia_fr_article",
+          "quote": "Arles est une commune française, sous-préfecture du département des Bouches-du-Rhône, en région Provence-Alpes-Côte d'Azur en France. La ville, chef-lieu de l'arrondissement d'Arles, est la commune de France métropolitaine la plus étendue avec quelque 75 893 hectares (malgré plusieurs déductions successives), et la plus peuplée de la Camargue. La ville est traversée par le Rhône. Cette ville, dont les habitants sont appelés Arlésiens, a plus de 2 500 ans. Ville emblématique de la Gaule chrétienne, elle fut l'évêché d'Hilaire d'Arles et de Césaire d'Arles. Des monuments remarquables ont été construits pendant l’Antiquité à l’époque romaine, comme le théâtre antique, les arènes, les Alyscamps, les thermes de Constantin ou encore le cirque romain. En 2004, un bateau antique, le chaland Arles-Rhône 3 datant de la Rome antique est découvert dans le Rhône entre les deux ponts de la ville. Il …"
+        }
+      ],
+      "conflicts": []
+    },
+    {
+      "id": "0d47f90e-02dd-461d-ad0c-cc48c711362d",
+      "titre": "Crise des dettes souveraines en Europe",
+      "date_in_db": "2010-01-01",
+      "year_in_db": "2010",
+      "date_candidate": null,
+      "year_candidate": null,
+      "precision": null,
+      "status": "INSUFFICIENT_EVIDENCE",
+      "result_bucket": "absence_de_singularite",
+      "confidence": 0,
+      "needs_human_review": false,
+      "recommendation": "Reject the event as it describes a period and not a singular event.",
+      "matched_article_fr": null,
+      "matched_article_en": null,
+      "wikidata_id": "Q3344452",
+      "event_identity": "Crise des dettes souveraines en Europe",
+      "is_disputed": false,
+      "ambiguous_identity": false,
+      "title_self_sufficient": true,
+      "title_not_self_sufficient": false,
+      "is_not_singular_event": true,
+      "is_time_span": true,
+      "is_period_based": true,
+      "exact_year_supported": false,
+      "reasoning_short": "The title describes a crisis, which is a period of time, not a single event that can be pinned to a single year. The provided source does not help to identify a specific year.",
+      "evidence_used": [],
+      "sources_checked": [
+        {
+          "source_id": "wikipedia_fr_article",
+          "source_type": "wikipedia_fr",
+          "title": "Notation des dettes souveraines des États membres de la zone euro",
+          "url": "https://fr.wikipedia.org/wiki/Notation_des_dettes_souveraines_des_%C3%89tats_membres_de_la_zone_euro",
+          "date_iso": null,
+          "precision": null
+        }
+      ],
+      "source_quotes": [
+        {
+          "source_id": "wikipedia_fr_article",
+          "quote": "La notation des dettes souveraines des États membres de la zone euro est l'évaluation de la solvabilité de chacun de ces pays par les agences de notation. Cette évaluation se traduit par l'attribution de notes à la dette publique de chaque pays : une note sur la dette à long terme et une note sur la dette à court terme. Ces notes conditionnent les capacités d'emprunt des États, car elles sont d'une part prises en compte par les investisseurs et les gérants de fonds qui doivent souvent respecter des règles précises et rigoureuses sur la qualité de leurs placements obligataires, et d'autre part elles déterminent dans une certaine mesure les taux d'intérêt proposés par les investisseurs sur le marché obligataire et influent indirectement sur la liquidité de ce marché pour tel ou tel pays. Nous étudions ici l'évolution de la notation sur la dette à long terme ; c'est celle qui est la plus s…"
+        }
+      ],
+      "conflicts": []
+    },
+    {
+      "id": "07a6be06-aeab-4971-a206-c9c4b10a960a",
+      "titre": "Election de Raymond Poincaré à la présidence du Conseil",
+      "date_in_db": "1912-01-01",
+      "year_in_db": "1912",
+      "date_candidate": "1912-01-01",
+      "year_candidate": "1912",
+      "precision": "year",
+      "status": "LIKELY_CORRECT",
+      "result_bucket": "probable_mais_a_confirmer",
+      "confidence": 0.8,
+      "needs_human_review": false,
+      "recommendation": "Confirm the date as 1912.",
+      "matched_article_fr": "https://fr.wikipedia.org/wiki/Raymond_Poincar%C3%A9",
+      "matched_article_en": null,
+      "wikidata_id": "Q191974",
+      "event_identity": "Election de Raymond Poincaré à la présidence du Conseil en 1912.",
+      "is_disputed": false,
+      "ambiguous_identity": false,
+      "title_self_sufficient": true,
+      "title_not_self_sufficient": false,
+      "is_not_singular_event": false,
+      "is_time_span": false,
+      "is_period_based": false,
+      "exact_year_supported": true,
+      "reasoning_short": "The event is the election of Raymond Poincaré as President of the Council. The provided description confirms the year as 1912. The Wikipedia article on Raymond Poincaré provides context and confirms his political career.",
+      "evidence_used": [
+        "wikipedia_fr_article"
+      ],
+      "sources_checked": [
+        {
+          "source_id": "wikipedia_fr_article",
+          "source_type": "wikipedia_fr",
+          "title": "Raymond Poincaré",
+          "url": "https://fr.wikipedia.org/wiki/Raymond_Poincar%C3%A9",
+          "date_iso": null,
+          "precision": null
+        },
+        {
+          "source_id": "wikidata_1",
+          "source_type": "wikidata",
+          "title": "Q191974",
+          "url": "https://www.wikidata.org/wiki/Q191974",
+          "date_iso": "1860-08-20",
+          "precision": "day"
+        },
+        {
+          "source_id": "wikidata_2",
+          "source_type": "wikidata",
+          "title": "Q191974",
+          "url": "https://www.wikidata.org/wiki/Q191974",
+          "date_iso": "1934-10-15",
+          "precision": "day"
+        }
+      ],
+      "source_quotes": [
+        {
+          "source_id": "wikipedia_fr_article",
+          "quote": "Raymond Poincaré, né le 20 août 1860 à Bar-le-Duc (Meuse) et mort le 15 octobre 1934 à Paris, est un avocat et homme d'État français. Il est le président de la République française du 18 février 1913 au 18 février 1920. Ministre à plusieurs reprises, président du Conseil puis président de la République de 1913 à 1920, Raymond Poincaré fut l'une des plus grandes figures politiques de la IIIe République. Il fut également, en tant que président de la République, l'un des personnages centraux de la Première Guerre mondiale, conflit durant lequel il appela Georges Clemenceau à la présidence du Conseil, en 1917. Après son mandat présidentiel, il est à nouveau président du Conseil de 1922 à 1924 et de 1926 à 1929."
+        },
+        {
+          "source_id": "wikidata_1",
+          "quote": "date of birth: 1860-08-20"
+        },
+        {
+          "source_id": "wikidata_2",
+          "quote": "date of death: 1934-10-15"
+        }
+      ],
+      "conflicts": []
+    },
+    {
+      "id": "cd73e5b9-3fea-427c-8057-de346ad48bb3",
+      "titre": "Saint-Pierre-du-Vauvray rail accident",
+      "date_in_db": "1985-01-01",
+      "year_in_db": "1985",
+      "date_candidate": "1985-01-01",
+      "year_candidate": "1985",
+      "precision": "year",
+      "status": "LIKELY_CORRECT",
+      "result_bucket": "probable_mais_a_confirmer",
+      "confidence": 0.8,
+      "needs_human_review": false,
+      "recommendation": "Verify the year of the accident with additional sources.",
+      "matched_article_fr": null,
+      "matched_article_en": null,
+      "wikidata_id": "Q2371169",
+      "event_identity": "Saint-Pierre-du-Vauvray rail accident in 1985.",
+      "is_disputed": false,
+      "ambiguous_identity": false,
+      "title_self_sufficient": true,
+      "title_not_self_sufficient": false,
+      "is_not_singular_event": false,
+      "is_time_span": false,
+      "is_period_based": false,
+      "exact_year_supported": true,
+      "reasoning_short": "The title and description detail point to a rail accident in Saint-Pierre-du-Vauvray in 1985. While no external source confirms the year of the accident, the description explicitly mentions 1985.",
+      "evidence_used": [],
+      "sources_checked": [
+        {
+          "source_id": "wikipedia_fr_article",
+          "source_type": "wikipedia_fr",
+          "title": "Gare de Saint-Pierre-du-Vauvray",
+          "url": "https://fr.wikipedia.org/wiki/Gare_de_Saint-Pierre-du-Vauvray",
+          "date_iso": null,
+          "precision": null
+        }
+      ],
+      "source_quotes": [
+        {
+          "source_id": "wikipedia_fr_article",
+          "quote": "La gare de Saint-Pierre-du-Vauvray est une gare ferroviaire française fermée de la ligne de Paris-Saint-Lazare au Havre, située sur le territoire de la commune de Saint-Pierre-du-Vauvray dans le département de l'Eure, en région Normandie. Elle est mise en service en 1843 par la Compagnie du chemin de fer de Paris à Rouen et fermée en 2019 par la Société nationale des chemins de fer français (SNCF). Jusqu'à sa fermeture, c'était une halte voyageurs de la SNCF du réseau TER Normandie desservie par des trains express régionaux."
+        }
+      ],
+      "conflicts": []
+    },
+    {
+      "id": "18b394bd-70f8-44bd-8a94-defb2486a189",
+      "titre": "Prix Goncourt 1926 : Henri Deberly",
+      "date_in_db": "1926-01-01",
+      "year_in_db": "1926",
+      "date_candidate": "1926-01-01",
+      "year_candidate": "1926",
+      "precision": "year",
+      "status": "CONFIRMED",
+      "result_bucket": "confirme",
+      "confidence": 1,
+      "needs_human_review": false,
+      "recommendation": "No change needed.",
+      "matched_article_fr": "wikipedia_fr_article",
+      "matched_article_en": "wikipedia_en_article",
+      "wikidata_id": "Q3130923",
+      "event_identity": "Prix Goncourt attribué à Henri Deberly en 1926.",
+      "is_disputed": false,
+      "ambiguous_identity": false,
+      "title_self_sufficient": true,
+      "title_not_self_sufficient": false,
+      "is_not_singular_event": false,
+      "is_time_span": false,
+      "is_period_based": false,
+      "exact_year_supported": true,
+      "reasoning_short": "Les articles Wikipédia en français et en anglais confirment qu'Henri Deberly a remporté le Prix Goncourt en 1926.",
+      "evidence_used": [
+        "wikipedia_fr_article",
+        "wikipedia_en_article"
+      ],
+      "sources_checked": [
+        {
+          "source_id": "wikipedia_fr_article",
+          "source_type": "wikipedia_fr",
+          "title": "Henri Deberly",
+          "url": "https://fr.wikipedia.org/wiki/Henri_Deberly",
+          "date_iso": null,
+          "precision": null
+        },
+        {
+          "source_id": "wikipedia_en_article",
+          "source_type": "wikipedia_en",
+          "title": "Henri Deberly",
+          "url": "https://en.wikipedia.org/wiki/Henri_Deberly",
+          "date_iso": null,
+          "precision": null
+        },
+        {
+          "source_id": "wikidata_1",
+          "source_type": "wikidata",
+          "title": "Q3130923",
+          "url": "https://www.wikidata.org/wiki/Q3130923",
+          "date_iso": "1882-05-28",
+          "precision": "day"
+        },
+        {
+          "source_id": "wikidata_2",
+          "source_type": "wikidata",
+          "title": "Q3130923",
+          "url": "https://www.wikidata.org/wiki/Q3130923",
+          "date_iso": "1947-08-23",
+          "precision": "day"
+        }
+      ],
+      "source_quotes": [
+        {
+          "source_id": "wikipedia_fr_article",
+          "quote": "Henri Deberly, né le 28 mai 1882 à Amiens et mort le 23 août 1947 à Viroflay, est un écrivain français, lauréat du prix Goncourt en 1926."
+        },
+        {
+          "source_id": "wikipedia_en_article",
+          "quote": "Henri Deberly, born in 1882 in Amiens (France) and died in 1947, was a French writer, winner of the Prix Goncourt in 1926. His avant-garde tomb in Viroflay is by the artist René Iché."
+        },
+        {
+          "source_id": "wikidata_1",
+          "quote": "date of birth: 1882-05-28"
+        },
+        {
+          "source_id": "wikidata_2",
+          "quote": "date of death: 1947-08-23"
+        }
+      ],
+      "conflicts": []
+    },
+    {
+      "id": "67906504-b989-430c-bd11-fdd68d6370b5",
+      "titre": "L'Année de l'Afrique",
+      "date_in_db": "1960-01-01",
+      "year_in_db": "1960",
+      "date_candidate": "1960-01-01",
+      "year_candidate": "1960",
+      "precision": "year",
+      "status": "CONFIRMED",
+      "result_bucket": "confirme",
+      "confidence": 0.9,
+      "needs_human_review": false,
+      "recommendation": "Confirmer la date de 1960.",
+      "matched_article_fr": null,
+      "matched_article_en": null,
+      "wikidata_id": "Q3037005",
+      "event_identity": "L'Année de l'Afrique fait référence à l'année 1960, marquée par l'indépendance de nombreux pays africains.",
+      "is_disputed": false,
+      "ambiguous_identity": false,
+      "title_self_sufficient": true,
+      "title_not_self_sufficient": false,
+      "is_not_singular_event": false,
+      "is_time_span": false,
+      "is_period_based": false,
+      "exact_year_supported": true,
+      "reasoning_short": "Le titre et la description indiquent clairement que l'événement fait référence à l'année 1960, année de nombreuses indépendances africaines. Aucune source n'est nécessaire pour confirmer cela, car la base de données elle-même fournit le contexte.",
+      "evidence_used": [],
+      "sources_checked": [
+        {
+          "source_id": "wikipedia_fr_article",
+          "source_type": "wikipedia_fr",
+          "title": "Démographie de l'Afrique",
+          "url": "https://fr.wikipedia.org/wiki/D%C3%A9mographie_de_l%27Afrique",
+          "date_iso": null,
+          "precision": null
+        }
+      ],
+      "source_quotes": [
+        {
+          "source_id": "wikipedia_fr_article",
+          "quote": "La démographie de l'Afrique est l'ensemble des données et des études concernant la population de l'Afrique à toutes les époques. De 100 millions d’habitants en 1900, la population de l'Afrique est passée à environ 275 millions dans les années 1950-1960, puis à 640 millions en 1990 et à 1,4 milliard en 2022 soit 18 % de la population mondiale. Depuis 1950, les projections de l'ONU à 30 ou 50 ans se sont révélées relativement correctes. La population de l'Afrique subsaharienne uniquement pourrait tripler entre 2020 et la fin du siècle, passant de 1 à 3 milliards d'habitants. Selon la projection démographique intermédiaire de l'ONU tenant compte des scénarios moyens d'évolution prévue, principalement de la mortalité, de la fécondité et de la structure par âge, dans les années 2050 la population de l'Afrique se situerait aux environs de 2,5 milliards puis, projection beaucoup plus incertain…"
+        }
+      ],
+      "conflicts": []
+    },
+    {
+      "id": "bbcf101d-a796-4d5e-80e0-b042d0fc4def",
+      "titre": "Bataille du périmètre de Busan",
+      "date_in_db": "1950-01-01",
+      "year_in_db": "1950",
+      "date_candidate": "1950-01-01",
+      "year_candidate": "1950",
+      "precision": "year",
+      "status": "CONFIRMED",
+      "result_bucket": "confirme",
+      "confidence": 0.9,
+      "needs_human_review": false,
+      "recommendation": "Confirmer la date de 1950.",
+      "matched_article_fr": "https://fr.wikipedia.org/wiki/Bataille_du_p%C3%A9rim%C3%A8tre_de_Busan",
+      "matched_article_en": null,
+      "wikidata_id": "Q482979",
+      "event_identity": "Bataille du périmètre de Busan",
+      "is_disputed": false,
+      "ambiguous_identity": false,
+      "title_self_sufficient": true,
+      "title_not_self_sufficient": false,
+      "is_not_singular_event": false,
+      "is_time_span": false,
+      "is_period_based": false,
+      "exact_year_supported": true,
+      "reasoning_short": "La bataille du périmètre de Busan s'est déroulée en 1950 selon Wikipedia et Wikidata.",
+      "evidence_used": [
+        "wikipedia_fr_article",
+        "wikidata_1"
+      ],
+      "sources_checked": [
+        {
+          "source_id": "wikipedia_fr_article",
+          "source_type": "wikipedia_fr",
+          "title": "Bataille du périmètre de Busan",
+          "url": "https://fr.wikipedia.org/wiki/Bataille_du_p%C3%A9rim%C3%A8tre_de_Busan",
+          "date_iso": null,
+          "precision": null
+        },
+        {
+          "source_id": "wikidata_1",
+          "source_type": "wikidata",
+          "title": "Q482979",
+          "url": "https://www.wikidata.org/wiki/Q482979",
+          "date_iso": "1950-08-04",
+          "precision": "day"
+        }
+      ],
+      "source_quotes": [
+        {
+          "source_id": "wikipedia_fr_article",
+          "quote": "La bataille du périmètre de Busan (ou « poche de Pusan » ou « réduit de Pusan ») oppose les forces armées de l'ONU à celles de la Corée du Nord. Elle se déroule du 4 août au 18 septembre 1950 et marque l'un des premiers grands engagements de la guerre de Corée. L'armée de l'ONU, au bord de l'effondrement, rassemble 140 000 soldats dans un périmètre restreint autour de Busan afin de résister et de contrer l'invasion de l'armée nord-coréenne, forte de 98 000 hommes. Les forces de l'ONU, après avoir été défaites à plusieurs reprises lors de l'avancée des Nord-Coréens, sont acculées dans le périmètre de Busan, une ligne défensive de 230 km autour d'une zone à la pointe sud de la péninsule coréenne comprenant le port de Busan. Les troupes de l'ONU, composées principalement de forces sud-coréennes, américaines et britanniques, montent une dernière ligne de défense autour du périmètre. La lutt…"
+        },
+        {
+          "source_id": "wikidata_1",
+          "quote": "start time: 1950-08-04"
+        }
+      ],
+      "conflicts": []
+    },
+    {
+      "id": "f3a5df36-b396-4f3b-a3b4-3c31a6150d69",
+      "titre": "Conférence de Bandung",
+      "date_in_db": "1955-01-01",
+      "year_in_db": "1955",
+      "date_candidate": "1955-01-01",
+      "year_candidate": "1955",
+      "precision": "year",
+      "status": "CONFIRMED",
+      "result_bucket": "confirme",
+      "confidence": 0.9,
+      "needs_human_review": false,
+      "recommendation": "Confirmation de la date de 1955 pour la Conférence de Bandung.",
+      "matched_article_fr": "wikipedia_fr_article",
+      "matched_article_en": null,
+      "wikidata_id": "Q208191",
+      "event_identity": "Conférence de Bandung",
+      "is_disputed": false,
+      "ambiguous_identity": false,
+      "title_self_sufficient": true,
+      "title_not_self_sufficient": false,
+      "is_not_singular_event": false,
+      "is_time_span": false,
+      "is_period_based": false,
+      "exact_year_supported": true,
+      "reasoning_short": "La Conférence de Bandung s'est tenue en 1955 selon l'article Wikipédia en français.",
+      "evidence_used": [
+        "wikipedia_fr_article"
+      ],
+      "sources_checked": [
+        {
+          "source_id": "wikipedia_fr_article",
+          "source_type": "wikipedia_fr",
+          "title": "Conférence de Bandung",
+          "url": "https://fr.wikipedia.org/wiki/Conf%C3%A9rence_de_Bandung",
+          "date_iso": null,
+          "precision": null
+        },
+        {
+          "source_id": "wikipedia_en_article",
+          "source_type": "wikipedia_en",
+          "title": "Bandung",
+          "url": "https://en.wikipedia.org/wiki/Bandung",
+          "date_iso": null,
+          "precision": null
+        },
+        {
+          "source_id": "wikidata_1",
+          "source_type": "wikidata",
+          "title": "Q208191",
+          "url": "https://www.wikidata.org/wiki/Q208191",
+          "date_iso": "1955-04-18",
+          "precision": "day"
+        }
+      ],
+      "source_quotes": [
+        {
+          "source_id": "wikipedia_fr_article",
+          "quote": "La conférence de Bandung s'est tenue du 18 au 24 avril 1955 à Bandung, en Indonésie, réunissant pour la première fois les représentants de vingt-neuf pays africains et asiatiques dont Gamal Abdel Nasser (Égypte), Jawaharlal Nehru (Inde), Soekarno (Indonésie) et Zhou Enlai (Chine). Cette conférence marqua l'entrée sur la scène internationale des pays décolonisés du « tiers monde ». Ceux-ci ne souhaitant pas intégrer les deux blocs qui se font face, menés par les États-Unis et l'URSS, choisissent le non-alignement."
+        },
+        {
+          "source_id": "wikipedia_en_article",
+          "quote": "Bandung is the capital city of the West Java province of Indonesia. Located on the western highland of Java island, it has one of the coolest climates compared to other provincial capitals in Indonesia, situated 708 meters (2,323 feet) above sea level (the highest point being at an altitude of 892 meters (2,927 feet) in the north, and the lowest at 666 meters (2,185 feet) in the south), approximately 135 kilometres (84 miles) southeast of Jakarta. Bandung lies in a river basin surrounded by volcanic mountains that provide a natural defense system, which was the primary reason for the Dutch East Indies government's plan to move the capital from Batavia (modern-day Jakarta) to Bandung. The Dutch first established tea plantations around the mountains in the 18th century, and a road was constructed to connect the plantation area to the colonial capital Batavia (180 kilometres (112 miles) to…"
+        },
+        {
+          "source_id": "wikidata_1",
+          "quote": "start time: 1955-04-18"
+        }
+      ],
+      "conflicts": []
+    },
+    {
+      "id": "c95d9378-23c7-4c00-9517-4409c4ac9175",
+      "titre": "Bataille de Fornoue",
+      "date_in_db": "1495-01-01",
+      "year_in_db": "1495",
+      "date_candidate": "1495-01-01",
+      "year_candidate": "1495",
+      "precision": "year",
+      "status": "CONFIRMED",
+      "result_bucket": "confirme",
+      "confidence": 1,
+      "needs_human_review": false,
+      "recommendation": "Confirmer la date de 1495.",
+      "matched_article_fr": "https://fr.wikipedia.org/wiki/Bataille_de_Fornoue",
+      "matched_article_en": null,
+      "wikidata_id": "Q764793",
+      "event_identity": "Bataille de Fornoue",
+      "is_disputed": false,
+      "ambiguous_identity": false,
+      "title_self_sufficient": true,
+      "title_not_self_sufficient": false,
+      "is_not_singular_event": false,
+      "is_time_span": false,
+      "is_period_based": false,
+      "exact_year_supported": true,
+      "reasoning_short": "La bataille de Fornoue a eu lieu en 1495 selon Wikipedia et Wikidata.",
+      "evidence_used": [
+        "wikipedia_fr_article",
+        "wikidata_1"
+      ],
+      "sources_checked": [
+        {
+          "source_id": "wikipedia_fr_article",
+          "source_type": "wikipedia_fr",
+          "title": "Bataille de Fornoue",
+          "url": "https://fr.wikipedia.org/wiki/Bataille_de_Fornoue",
+          "date_iso": null,
+          "precision": null
+        },
+        {
+          "source_id": "wikidata_1",
+          "source_type": "wikidata",
+          "title": "Q764793",
+          "url": "https://www.wikidata.org/wiki/Q764793",
+          "date_iso": "1495-07-06",
+          "precision": "day"
+        }
+      ],
+      "source_quotes": [
+        {
+          "source_id": "wikipedia_fr_article",
+          "quote": "La bataille de Fornoue est un affrontement de la première guerre d'Italie qui eut lieu le 6 juillet 1495 à Fornoue, à 20 km au sud-ouest de Parme. Bien que Charles VIII ait réussi à s'emparer du royaume de Naples sans rencontrer beaucoup de résistance, l'hostilité grandissante des États italiens face à l'occupation et surtout la formation de la ligue de Venise contre les Français, l'obligent à écourter son séjour à Naples, où demeure Gilbert de Montpensier, et à faire retraite vers la France afin de ne pas se trouver pris au piège. Ses ennemis lui bloquent le passage à Fornoue, l'obligeant à livrer bataille. Les deux camps se proclament vainqueurs : Charles VIII peut reprendre sa route vers la France, les Italiens emmènent un important butin mais ont subi des pertes très supérieures à celles de leurs adversaires."
+        },
+        {
+          "source_id": "wikidata_1",
+          "quote": "point in time: 1495-07-06"
+        }
+      ],
+      "conflicts": []
+    },
+    {
+      "id": "c5f70b7a-61c9-43ae-9ac1-223d7a5475b6",
+      "titre": "Droit de vote des femmes en Nouvelle-Zélande",
+      "date_in_db": "1893-01-01",
+      "year_in_db": "1893",
+      "date_candidate": "1893-01-01",
+      "year_candidate": "1893",
+      "precision": "year",
+      "status": "CONFIRMED",
+      "result_bucket": "confirme",
+      "confidence": 1,
+      "needs_human_review": false,
+      "recommendation": "Aucune modification nécessaire.",
+      "matched_article_fr": "wikipedia_fr_article",
+      "matched_article_en": null,
+      "wikidata_id": "Q3447247",
+      "event_identity": "Droit de vote des femmes en Nouvelle-Zélande.",
+      "is_disputed": false,
+      "ambiguous_identity": false,
+      "title_self_sufficient": true,
+      "title_not_self_sufficient": false,
+      "is_not_singular_event": false,
+      "is_time_span": false,
+      "is_period_based": false,
+      "exact_year_supported": true,
+      "reasoning_short": "La source Wikipedia confirme que le droit de vote des femmes en Nouvelle-Zélande a été accordé en 1893.",
+      "evidence_used": [
+        "wikipedia_fr_article"
+      ],
+      "sources_checked": [
+        {
+          "source_id": "wikipedia_fr_article",
+          "source_type": "wikipedia_fr",
+          "title": "Droit de vote des femmes en Nouvelle-Zélande",
+          "url": "https://fr.wikipedia.org/wiki/Droit_de_vote_des_femmes_en_Nouvelle-Z%C3%A9lande",
+          "date_iso": null,
+          "precision": null
+        }
+      ],
+      "source_quotes": [
+        {
+          "source_id": "wikipedia_fr_article",
+          "quote": "Le droit de vote des femmes est une question politique importante à partir de la fin du XIXe siècle en Nouvelle-Zélande. Sous la colonisation britannique, comme dans les sociétés européennes, les femmes sont exclues de toute participation politique. L'opinion publique commence à changer dans la seconde moitié du XIXe siècle et après plusieurs années d'actions effectuées par les militantes pour le droit de vote, dirigées par Kate Sheppard, la Nouvelle-Zélande devient la première nation au monde accordant le droit de vote à toutes lors des élections parlementaires. Le projet de loi électorale accordant le droit de vote aux femmes reçoit la sanction royale du gouverneur David Boyle le 19 septembre 1893. Les femmes votent pour la première fois lors des élections du législatives du 28 novembre 1893, le 20 décembre pour les électorats maoris. Toujours en 1893, Elizabeth Yates devient maire de…"
+        }
+      ],
+      "conflicts": []
+    },
+    {
+      "id": "658be692-c637-4807-a70c-729b720b94c3",
+      "titre": "Ouverture du métro de Paris",
+      "date_in_db": "1900-01-01",
+      "year_in_db": "1900",
+      "date_candidate": null,
+      "year_candidate": null,
+      "precision": null,
+      "status": "INSUFFICIENT_EVIDENCE",
+      "result_bucket": "annee_exacte_introuvable",
+      "confidence": 0,
+      "needs_human_review": true,
+      "recommendation": "Rechercher des sources mentionnant explicitement l'année d'ouverture du métro de Paris.",
+      "matched_article_fr": null,
+      "matched_article_en": null,
+      "wikidata_id": "Q1344536",
+      "event_identity": "Ouverture du métro de Paris",
+      "is_disputed": false,
+      "ambiguous_identity": false,
+      "title_self_sufficient": true,
+      "title_not_self_sufficient": false,
+      "is_not_singular_event": false,
+      "is_time_span": false,
+      "is_period_based": false,
+      "exact_year_supported": false,
+      "reasoning_short": "Aucune des sources fournies ne mentionne l'année d'ouverture du métro de Paris. Il est donc impossible de confirmer l'année exacte.",
+      "evidence_used": [],
+      "sources_checked": [
+        {
+          "source_id": "wikipedia_fr_article",
+          "source_type": "wikipedia_fr",
+          "title": "Porte Maillot (métro de Paris)",
+          "url": "https://fr.wikipedia.org/wiki/Porte_Maillot_(m%C3%A9tro_de_Paris)",
+          "date_iso": null,
+          "precision": null
+        },
+        {
+          "source_id": "wikipedia_en_article",
+          "source_type": "wikipedia_en",
+          "title": "Paris Métro Line 18",
+          "url": "https://en.wikipedia.org/wiki/Paris_M%C3%A9tro_Line_18",
+          "date_iso": null,
+          "precision": null
+        }
+      ],
+      "source_quotes": [
+        {
+          "source_id": "wikipedia_fr_article",
+          "quote": "Porte Maillot est une station de la ligne 1 du métro de Paris ; elle est située à la limite des 16e et 17e arrondissements de Paris, à proximité de la porte Maillot. Les issues ouest de la station de métro desservent également Neuilly-sur-Seine."
+        },
+        {
+          "source_id": "wikipedia_en_article",
+          "quote": "Paris Métro Line 18 is one of four new lines of Grand Paris Express, a major expansion project of the Paris Métro. Currently under construction, it will link Orly Airport to Versailles via Massy-Palaiseau, the Saclay Plateau, and Saint-Quentin-en-Yvelines. The line will be 35 kilometers (22 mi) long and will be fully automated (along with all Grand Paris Express lines). Subsequently, it is planned to be extended by about 15 kilometers (9.3 mi) from Versailles to Nanterre via Rueil-Malmaison. It is expected to be completed after 2030. Its first section, from Orly Airport to the Saclay plateau (Christ de Saclay), is scheduled to open in 2026 between the stations of Massy-Palaiseau and Christ de Saclay, in 2027 between Massy-Palaiseau and Orly Airport, and in 2030 between Christ de Saclay and Versailles Chantiers. One of the line's aims is to serve the technological and scientific developm…"
+        }
+      ],
+      "conflicts": []
+    },
+    {
+      "id": "2362cacb-a1f9-4a52-85c2-982c9810e2c9",
+      "titre": "Passage du Rhin par les Vandales",
+      "date_in_db": "0406-01-01",
+      "year_in_db": "0406",
+      "date_candidate": null,
+      "year_candidate": null,
+      "precision": null,
+      "status": "INSUFFICIENT_EVIDENCE",
+      "result_bucket": "absence_de_singularite",
+      "confidence": 0,
+      "needs_human_review": true,
+      "recommendation": "Further research is needed to confirm the year of the Vandals' crossing of the Rhine. The Wikipedia article is about multiple events.",
+      "matched_article_fr": "https://fr.wikipedia.org/wiki/Passage_du_Rhin",
+      "matched_article_en": null,
+      "wikidata_id": "Q124808695",
+      "event_identity": "Passage du Rhin par les Vandales en 406.",
+      "is_disputed": false,
+      "ambiguous_identity": false,
+      "title_self_sufficient": true,
+      "title_not_self_sufficient": false,
+      "is_not_singular_event": true,
+      "is_time_span": false,
+      "is_period_based": false,
+      "exact_year_supported": false,
+      "reasoning_short": "The title refers to a specific event, but the provided Wikipedia article discusses multiple crossings of the Rhine throughout history. Therefore, it's not possible to confirm the year 406 based on this source alone. The title is self-sufficient, but the event is not singular.",
+      "evidence_used": [
+        "wikipedia_fr_article"
+      ],
+      "sources_checked": [
+        {
+          "source_id": "wikipedia_fr_article",
+          "source_type": "wikipedia_fr",
+          "title": "Passage du Rhin",
+          "url": "https://fr.wikipedia.org/wiki/Passage_du_Rhin",
+          "date_iso": null,
+          "precision": null
+        }
+      ],
+      "source_quotes": [
+        {
+          "source_id": "wikipedia_fr_article",
+          "quote": "Le passage du Rhin correspond à plusieurs opérations militaires tout au long de l'histoire. Le Rhin a longtemps été une barrière naturelle et son passage revêtait une importance stratégique."
+        }
+      ],
+      "conflicts": []
+    },
+    {
+      "id": "ae9a89c5-2dbe-42f3-af18-8c56c0f78928",
+      "titre": "Première classification des espèces animales",
+      "date_in_db": "1735-01-01",
+      "year_in_db": "1735",
+      "date_candidate": "1735-01-01",
+      "year_candidate": "1735",
+      "precision": "year",
+      "status": "LIKELY_CORRECT",
+      "result_bucket": "probable_mais_a_confirmer",
+      "confidence": 0.7,
+      "needs_human_review": false,
+      "recommendation": "Confirmer avec d'autres sources l'année de publication de Systema Naturae et son rôle dans la première classification des espèces animales.",
+      "matched_article_fr": "Classification scientifique des espèces",
+      "matched_article_en": null,
+      "wikidata_id": "Q11398",
+      "event_identity": "Première classification des espèces animales par Carl von Linné dans son \"Systema Naturae\".",
+      "is_disputed": false,
+      "ambiguous_identity": false,
+      "title_self_sufficient": true,
+      "title_not_self_sufficient": false,
+      "is_not_singular_event": false,
+      "is_time_span": false,
+      "is_period_based": false,
+      "exact_year_supported": true,
+      "reasoning_short": "L'événement décrit la publication de \"Systema Naturae\" par Carl von Linné en 1735, qui établit la première classification systématique des espèces animales. Bien que la source Wikipedia parle de classification scientifique des espèces, elle ne confirme pas directement l'année de la première classif…",
+      "evidence_used": [
+        "wikipedia_fr_article"
+      ],
+      "sources_checked": [
+        {
+          "source_id": "wikipedia_fr_article",
+          "source_type": "wikipedia_fr",
+          "title": "Classification scientifique des espèces",
+          "url": "https://fr.wikipedia.org/wiki/Classification_scientifique_des_esp%C3%A8ces",
+          "date_iso": null,
+          "precision": null
+        }
+      ],
+      "source_quotes": [
+        {
+          "source_id": "wikipedia_fr_article",
+          "quote": "Dans les sciences du vivant, la classification scientifique des espèces (également nommée « classification biologique ») correspond à l'association de la systématique, qui est la méthode ou ensemble de méthodes permettant de classer le vivant, et de la taxonomie, qui est le résultat de la méthode de classification. La classification classique a prévalu jusqu'au troisième quart du XXe siècle, marqué par l'apparition en 1950 de la classification phylogénétique ou cladistique, aujourd'hui dominante. Les termes concernés par les différentes classifications ne bénéficient pourtant pas d'une définition unanimement admise, chaque ouvrage scientifique, chaque dictionnaire et, pour ainsi dire, chaque auteur ayant la sienne. Comme l'a écrit le chercheur Ernest Small en 1989 : « L'ironie est de constater que les spécialistes en classification biologique n'ont pas réussi à se doter d'une nomenclatu…"
+        }
+      ],
+      "conflicts": []
+    },
+    {
+      "id": "4e2b89b5-5d3f-411d-9d3a-f683cd7c2c4f",
+      "titre": "Premières inoculations contre la variole en Chine",
+      "date_in_db": "1670-01-01",
+      "year_in_db": "1670",
+      "date_candidate": null,
+      "year_candidate": null,
+      "precision": null,
+      "status": "INSUFFICIENT_EVIDENCE",
+      "result_bucket": "absence_de_singularite",
+      "confidence": 0,
+      "needs_human_review": false,
+      "recommendation": "Rejeter car il s'agit d'une période et non d'une année précise.",
+      "matched_article_fr": null,
+      "matched_article_en": null,
+      "wikidata_id": "Q12214",
+      "event_identity": "Premières inoculations contre la variole en Chine sous le règne de l'empereur Kangxi.",
+      "is_disputed": false,
+      "ambiguous_identity": false,
+      "title_self_sufficient": true,
+      "title_not_self_sufficient": false,
+      "is_not_singular_event": true,
+      "is_time_span": true,
+      "is_period_based": true,
+      "exact_year_supported": false,
+      "reasoning_short": "L'événement décrit une pratique qui s'est déroulée sur plusieurs années, et non un événement unique survenu une année précise. Aucune source ne permet de déterminer une année exacte.",
+      "evidence_used": [],
+      "sources_checked": [
+        {
+          "source_id": "wikipedia_fr_article",
+          "source_type": "wikipedia_fr",
+          "title": "Variole",
+          "url": "https://fr.wikipedia.org/wiki/Variole",
+          "date_iso": null,
+          "precision": null
+        }
+      ],
+      "source_quotes": [
+        {
+          "source_id": "wikipedia_fr_article",
+          "quote": "La variole ou petite vérole est une maladie infectieuse d'origine virale, très contagieuse et épidémique, due à un poxvirus. Le mot « variole » vient du latin variola, -ae (« petite pustule »). En effet, la variole se caractérise en quelque sorte par un « mouchetage de pustules ». La variole est responsable jusqu'au XVIIIe siècle de dizaines de milliers de morts par an rien qu'en Europe. La variole est déclarée éradiquée en 1980, grâce à une campagne de l'Organisation mondiale de la santé (OMS) combinant des campagnes de vaccination massive, dès 1958, avec une « stratégie de surveillance et d'endiguement », mise en œuvre à partir de 1967. Au XXIe siècle, seuls des échantillons de ce virus sont conservés à des fins de recherche par des laboratoires habilités par l'OMS. La variole est surnommée « petite vérole », et c'est en référence à cette maladie que la syphilis a été surnommée « gran…"
+        }
+      ],
+      "conflicts": []
+    },
+    {
+      "id": "4dc8a768-1cec-4a7f-b2b2-1c1618c7e0b4",
+      "titre": "Désillusion du XV de France, éliminé à domicile lors de sa Coupe du monde.",
+      "date_in_db": "2023-01-01",
+      "year_in_db": "2023",
+      "date_candidate": "2023-01-01",
+      "year_candidate": "2023",
+      "precision": "year",
+      "status": "CONFIRMED",
+      "result_bucket": "confirme",
+      "confidence": 0.9,
+      "needs_human_review": false,
+      "recommendation": "Aucune modification nécessaire.",
+      "matched_article_fr": null,
+      "matched_article_en": null,
+      "wikidata_id": "Q518116",
+      "event_identity": "Coupe du Monde de Rugby 2023 en France, élimination du XV de France en quart de finale.",
+      "is_disputed": false,
+      "ambiguous_identity": false,
+      "title_self_sufficient": true,
+      "title_not_self_sufficient": false,
+      "is_not_singular_event": false,
+      "is_time_span": false,
+      "is_period_based": false,
+      "exact_year_supported": true,
+      "reasoning_short": "Le titre et la description font référence à la Coupe du Monde de Rugby 2023 en France, où l'équipe de France a été éliminée. L'année est donc 2023.",
+      "evidence_used": [],
+      "sources_checked": [
+        {
+          "source_id": "wikipedia_fr_article",
+          "source_type": "wikipedia_fr",
+          "title": "Équipe de France de rugby à XV",
+          "url": "https://fr.wikipedia.org/wiki/%C3%89quipe_de_France_de_rugby_%C3%A0_XV",
+          "date_iso": null,
+          "precision": null
+        },
+        {
+          "source_id": "wikidata_1",
+          "source_type": "wikidata",
+          "title": "Q518116",
+          "url": "https://www.wikidata.org/wiki/Q518116",
+          "date_iso": "1906-01-01",
+          "precision": "day"
+        }
+      ],
+      "source_quotes": [
+        {
+          "source_id": "wikipedia_fr_article",
+          "quote": "L'équipe de France de rugby à XV, aussi connue sous les noms de XV de France, des Bleus ou encore des Tricolores, est l'équipe qui représente la France dans les compétitions majeures de rugby à XV. Elle rassemble les meilleurs joueurs de France sous le patronage de l'USFSA (1906-1919), puis de la Fédération française de rugby (FFR) depuis 1919. Une sélection de joueurs parisiens, précurseur de l'équipe de France, gagne le titre aux Jeux olympiques de Paris en 1900, puis l'équipe nationale remporte deux médailles d'argent en 1920 et en 1924. En 1910, la France est admise à participer à la compétition opposant l'Irlande, l'Angleterre, l'Écosse, et le pays de Galles, qui prend à cette occasion le nom de Tournoi des Cinq Nations (appelé Tournoi dans la suite de l'article) et fait ainsi son apprentissage du rugby international en se mesurant à ces équipes. Elle atteint leur niveau au milieu …"
+        },
+        {
+          "source_id": "wikidata_1",
+          "quote": "inception: 1906-01-01"
+        }
+      ],
+      "conflicts": []
+    },
+    {
+      "id": "34d924a4-468c-49fc-b3c4-6d5a9512ab33",
+      "titre": "Traité de Vienne mettant fin à la guerre de Succession de Pologne",
+      "date_in_db": "1738-01-01",
+      "year_in_db": "1738",
+      "date_candidate": "1738-01-01",
+      "year_candidate": "1738",
+      "precision": "year",
+      "status": "CONFIRMED",
+      "result_bucket": "confirme",
+      "confidence": 1,
+      "needs_human_review": false,
+      "recommendation": "Aucune modification nécessaire.",
+      "matched_article_fr": null,
+      "matched_article_en": null,
+      "wikidata_id": "Q32929",
+      "event_identity": "Traité de Vienne mettant fin à la guerre de Succession de Pologne",
+      "is_disputed": false,
+      "ambiguous_identity": false,
+      "title_self_sufficient": true,
+      "title_not_self_sufficient": false,
+      "is_not_singular_event": false,
+      "is_time_span": false,
+      "is_period_based": false,
+      "exact_year_supported": true,
+      "reasoning_short": "Le titre de l'événement est clair et fait référence à une année unique. La description détaillée confirme l'année 1738 comme date de signature du traité.",
+      "evidence_used": [],
+      "sources_checked": [
+        {
+          "source_id": "wikipedia_fr_article",
+          "source_type": "wikipedia_fr",
+          "title": "Guerre de Succession d'Autriche",
+          "url": "https://fr.wikipedia.org/wiki/Guerre_de_Succession_d%27Autriche",
+          "date_iso": null,
+          "precision": null
+        },
+        {
+          "source_id": "wikidata_1",
+          "source_type": "wikidata",
+          "title": "Q32929",
+          "url": "https://www.wikidata.org/wiki/Q32929",
+          "date_iso": "1740-12-16",
+          "precision": "day"
+        },
+        {
+          "source_id": "wikidata_2",
+          "source_type": "wikidata",
+          "title": "Q32929",
+          "url": "https://www.wikidata.org/wiki/Q32929",
+          "date_iso": "1740-01-01",
+          "precision": "year"
+        }
+      ],
+      "source_quotes": [
+        {
+          "source_id": "wikipedia_fr_article",
+          "quote": "La guerre de Succession d'Autriche est un conflit européen né de la contestation, par des États qui y avaient souscrit, de la Pragmatique Sanction par laquelle l'empereur Charles VI du Saint-Empire léguait à sa fille Marie-Thérèse d'Autriche les États héréditaires de la maison de Habsbourg. Cette guerre oppose deux coalitions dont les principaux protagonistes sont : la Prusse, la Bavière et la France, d'une part ; l'Autriche, la Grande-Bretagne, les Provinces-Unies et la Russie, d'autre part. La guerre se déroule sur plusieurs théâtres d'opération successifs : en Silésie, la Prusse s'impose facilement et signe avec l'Autriche une paix séparée dès 1742 ; en Bohême, les Bavarois et leurs alliés français s'emparent de Prague, puis sont obligés de battre en retraite à la fin de 1742 ; en 1743, ils subissent des revers en Allemagne durant leur retraite ; la France porte alors son effort vers…"
+        },
+        {
+          "source_id": "wikidata_1",
+          "quote": "start time: 1740-12-16"
+        },
+        {
+          "source_id": "wikidata_2",
+          "quote": "start time: 1740-01-01"
+        }
+      ],
+      "conflicts": []
+    },
+    {
+      "id": "5f81d46c-8577-457b-a258-c28429ac896c",
+      "titre": "Mort d'Al-Mansur Ibn Abi Aamir",
+      "date_in_db": "1002-01-01",
+      "year_in_db": "1002",
+      "date_candidate": null,
+      "year_candidate": null,
+      "precision": null,
+      "status": "INSUFFICIENT_EVIDENCE",
+      "result_bucket": "retrieval_insuffisant",
+      "confidence": 0.2,
+      "needs_human_review": true,
+      "recommendation": "Chercher des sources plus précises sur la mort d'Al-Mansur Ibn Abi Aamir.",
+      "matched_article_fr": "https://fr.wikipedia.org/wiki/Al-Mansur",
+      "matched_article_en": null,
+      "wikidata_id": "Q287192",
+      "event_identity": "Mort d'Al-Mansur Ibn Abi Aamir",
+      "is_disputed": false,
+      "ambiguous_identity": false,
+      "title_self_sufficient": true,
+      "title_not_self_sufficient": false,
+      "is_not_singular_event": false,
+      "is_time_span": false,
+      "is_period_based": false,
+      "exact_year_supported": true,
+      "reasoning_short": "La source Wikipedia parle d'un surnom honorifique donné à plusieurs souverains. Elle ne permet pas de confirmer l'année de la mort d'Al-Mansur Ibn Abi Aamir.",
+      "evidence_used": [
+        "wikipedia_fr_article"
+      ],
+      "sources_checked": [
+        {
+          "source_id": "wikipedia_fr_article",
+          "source_type": "wikipedia_fr",
+          "title": "Al-Mansur",
+          "url": "https://fr.wikipedia.org/wiki/Al-Mansur",
+          "date_iso": null,
+          "precision": null
+        }
+      ],
+      "source_quotes": [
+        {
+          "source_id": "wikipedia_fr_article",
+          "quote": "Al-Mansour (Al-Mansur, Al-Mansûr ou Al-Manzor) (en arabe : manṣūr, منصور « vainqueur »), est un surnom honorifique (laqab) donné à plusieurs souverains de dynasties musulmanes."
+        }
+      ],
+      "conflicts": []
+    },
+    {
+      "id": "a34d21c1-768d-4310-ae0d-43538730a513",
+      "titre": "Loi d'amnistie de 1981",
+      "date_in_db": "1981-01-01",
+      "year_in_db": "1981",
+      "date_candidate": "1981-01-01",
+      "year_candidate": "1981",
+      "precision": "year",
+      "status": "CONFIRMED",
+      "result_bucket": "confirme",
+      "confidence": 1,
+      "needs_human_review": false,
+      "recommendation": "Aucune action nécessaire.",
+      "matched_article_fr": "Loi du 4 août 1981 portant amnistie",
+      "matched_article_en": null,
+      "wikidata_id": "Q125575726",
+      "event_identity": "Loi d'amnistie de 1981",
+      "is_disputed": false,
+      "ambiguous_identity": false,
+      "title_self_sufficient": true,
+      "title_not_self_sufficient": false,
+      "is_not_singular_event": false,
+      "is_time_span": false,
+      "is_period_based": false,
+      "exact_year_supported": true,
+      "reasoning_short": "La source Wikipedia confirme que la loi d'amnistie a été promulguée en 1981.",
+      "evidence_used": [
+        "wikipedia_fr_article"
+      ],
+      "sources_checked": [
+        {
+          "source_id": "wikipedia_fr_article",
+          "source_type": "wikipedia_fr",
+          "title": "Loi du 4 août 1981 portant amnistie",
+          "url": "https://fr.wikipedia.org/wiki/Loi_du_4_ao%C3%BBt_1981_portant_amnistie",
+          "date_iso": null,
+          "precision": null
+        }
+      ],
+      "source_quotes": [
+        {
+          "source_id": "wikipedia_fr_article",
+          "quote": "La loi no 81-736 du 4 août 1981 portant amnistie est un texte législatif français de 32 articles portant amnistie de certaines infractions. Elle est la première loi votée et promulguée du premier septennat de François Mitterrand, publiée le 4 août, date anniversaire de la Nuit du 4 août 1789 et des symboles politiques qui y sont attachés. Elle est aussi le premier texte législatif appelé « loi Badinter »."
+        }
+      ],
+      "conflicts": []
+    },
+    {
+      "id": "9e5a9667-e045-421f-be6e-8c6d50d23450",
+      "titre": "Fondation de l'Empire ottoman",
+      "date_in_db": "1299-10-01",
+      "year_in_db": "1299",
+      "date_candidate": "1299-01-01",
+      "year_candidate": "1299",
+      "precision": "year",
+      "status": "LIKELY_CORRECT",
+      "result_bucket": "probable_mais_a_confirmer",
+      "confidence": 0.7,
+      "needs_human_review": false,
+      "recommendation": "Confirm the date as 1299 based on Wikidata and the article description.",
+      "matched_article_fr": "wikipedia_fr_article",
+      "matched_article_en": null,
+      "wikidata_id": "Q12560",
+      "event_identity": "Fondation de l'Empire ottoman",
+      "is_disputed": false,
+      "ambiguous_identity": false,
+      "title_self_sufficient": true,
+      "title_not_self_sufficient": false,
+      "is_not_singular_event": false,
+      "is_time_span": false,
+      "is_period_based": false,
+      "exact_year_supported": true,
+      "reasoning_short": "Wikidata provides two dates for the inception of the Ottoman Empire: 1299-07-29 and 1302-07-27. The 1299 date is also mentioned in the detailed description. The Wikipedia article mentions the late 13th century as the founding period. Therefore, 1299 is the most likely year.",
+      "evidence_used": [
+        "wikidata_2",
+        "wikipedia_fr_article"
+      ],
+      "sources_checked": [
+        {
+          "source_id": "wikipedia_fr_article",
+          "source_type": "wikipedia_fr",
+          "title": "Empire ottoman",
+          "url": "https://fr.wikipedia.org/wiki/Empire_ottoman",
+          "date_iso": null,
+          "precision": null
+        },
+        {
+          "source_id": "wikipedia_en_article",
+          "source_type": "wikipedia_en",
+          "title": "Ottoman Bank",
+          "url": "https://en.wikipedia.org/wiki/Ottoman_Bank",
+          "date_iso": null,
+          "precision": null
+        },
+        {
+          "source_id": "wikidata_1",
+          "source_type": "wikidata",
+          "title": "Q12560",
+          "url": "https://www.wikidata.org/wiki/Q12560",
+          "date_iso": "1302-07-27",
+          "precision": "day"
+        },
+        {
+          "source_id": "wikidata_2",
+          "source_type": "wikidata",
+          "title": "Q12560",
+          "url": "https://www.wikidata.org/wiki/Q12560",
+          "date_iso": "1299-07-29",
+          "precision": "day"
+        }
+      ],
+      "source_quotes": [
+        {
+          "source_id": "wikipedia_fr_article",
+          "quote": "L'Empire ottoman (en turc ottoman : دولت عليه عثمانیه / devlet-i ʿaliyye-i ʿos̲mâniyye, littéralement « l'État ottoman exalté » ; en turc : Osmanlı İmparatorluğu ou Osmanlı Devleti), connu historiquement en Europe de l'Ouest comme l'Empire turc, la Turquie, ou bien la Turquie ottomane, est un empire fondé à la fin du XIIIe siècle au nord-ouest de l'Anatolie, dans la commune de Söğüt (actuelle province de Bilecik), par le chef tribal oghouze Osman Ier, fondateur de la dynastie ottomane (ottoman vient de l'arabe ʿuṯmānī عُثْمَانِي, dérivé de ʿuṯmān عُثْمَان, nom arabisé d'Osman et vient également de Ataman, nom turcisé d’Osman). Après 1354, les Ottomans entrèrent en Europe, et, avec la conquête des Balkans, le Beylik ottoman se transforma en un empire transcontinental. Après avoir encerclé puis réduit sa capitale en lambeaux, les Ottomans mirent fin à l'Empire byzantin en 1453 par la conq…"
+        },
+        {
+          "source_id": "wikipedia_en_article",
+          "quote": "The Ottoman Bank (Turkish: Osmanlı Bankası), known from 1863 to 1925 as the Imperial Ottoman Bank (French: Banque Impériale Ottomane, Ottoman Turkish: بانق عثمانی شاهانه) and correspondingly referred to by its French acronym BIO, was a bank that played a major role in the financial history of the Ottoman Empire. By the early 20th century, it was the dominant bank in the Ottoman Empire, and one of the largest in the world. It was founded in 1856 as a British institution chartered in London, and reorganized in 1863 as a French–British venture with head office in Constantinople, on a principle of strict equality between British and French stakeholders. It soon became dominated by French interests, however, primarily because of the greater success of its offerings among French savers than British ones. In its early years, the BIO was principally a lender to the Ottoman government with a mon…"
+        },
+        {
+          "source_id": "wikidata_1",
+          "quote": "inception: 1302-07-27"
+        },
+        {
+          "source_id": "wikidata_2",
+          "quote": "inception: 1299-07-29"
+        }
+      ],
+      "conflicts": []
+    },
+    {
+      "id": "8255b0b0-c70b-4244-ad95-a51a152a9e6a",
+      "titre": "Célébration annuelle de la musique française",
+      "date_in_db": "1982-01-01",
+      "year_in_db": "1982",
+      "date_candidate": "1982-01-01",
+      "year_candidate": "1982",
+      "precision": "year",
+      "status": "CONFIRMED",
+      "result_bucket": "confirme",
+      "confidence": 1,
+      "needs_human_review": false,
+      "recommendation": "Confirmer la date de 1982 comme année de la première Fête de la Musique.",
+      "matched_article_fr": null,
+      "matched_article_en": null,
+      "wikidata_id": "Q191954",
+      "event_identity": "Première Fête de la Musique en France.",
+      "is_disputed": false,
+      "ambiguous_identity": false,
+      "title_self_sufficient": true,
+      "title_not_self_sufficient": false,
+      "is_not_singular_event": false,
+      "is_time_span": false,
+      "is_period_based": false,
+      "exact_year_supported": true,
+      "reasoning_short": "La description indique clairement que la première Fête de la Musique a eu lieu en 1982.",
+      "evidence_used": [],
+      "sources_checked": [
+        {
+          "source_id": "wikipedia_fr_article",
+          "source_type": "wikipedia_fr",
+          "title": "Président de la République française",
+          "url": "https://fr.wikipedia.org/wiki/Pr%C3%A9sident_de_la_R%C3%A9publique_fran%C3%A7aise",
+          "date_iso": null,
+          "precision": null
+        }
+      ],
+      "source_quotes": [
+        {
+          "source_id": "wikipedia_fr_article",
+          "quote": "Le président de la République française est le chef de l'État en France. Il exerce les plus hautes fonctions du pouvoir exécutif de la République française avec le gouvernement. Officiellement, sous la Ve République, le président partage le pouvoir exécutif avec le Premier ministre : on parle de régime semi-présidentiel. En pratique, lorsque la majorité parlementaire lui est acquise, le président concentre l'intégralité du pouvoir exécutif, même si le Premier ministre reste chef du gouvernement et responsable de sa politique devant l'Assemblée nationale. La République française s'est dotée d'un président pendant la IIe République, entre 1848 et 1852, puis sous la IIIe République de 1871 à 1940, et enfin depuis 1947 pendant les IVe et Ve Républiques. Cette fonction a été assumée par vingt-cinq personnes, l'intérim assuré à deux reprises par Alain Poher n'étant pas pris en compte. Tous le…"
+        }
+      ],
+      "conflicts": []
+    },
+    {
+      "id": "8a40907f-aeeb-403a-a29a-066ccda0cef9",
+      "titre": "Première invasion de l'Italie par les Wisigoths",
+      "date_in_db": "0402-01-01",
+      "year_in_db": "0402",
+      "date_candidate": "0402-01-01",
+      "year_candidate": "0402",
+      "precision": "year",
+      "status": "LIKELY_CORRECT",
+      "result_bucket": "preuve_externe_faible",
+      "confidence": 0.5,
+      "needs_human_review": false,
+      "recommendation": "Ajouter des sources externes fiables pour confirmer l'année de l'invasion.",
+      "matched_article_fr": null,
+      "matched_article_en": null,
+      "wikidata_id": null,
+      "event_identity": "Première invasion de l'Italie par les Wisigoths menée par Alaric.",
+      "is_disputed": false,
+      "ambiguous_identity": false,
+      "title_self_sufficient": true,
+      "title_not_self_sufficient": false,
+      "is_not_singular_event": false,
+      "is_time_span": false,
+      "is_period_based": false,
+      "exact_year_supported": true,
+      "reasoning_short": "Aucune source externe n'est fournie pour confirmer l'année 402. L'information dans la base de données n'est pas une preuve.",
+      "evidence_used": [],
+      "sources_checked": [],
+      "source_quotes": [],
+      "conflicts": []
+    },
+    {
+      "id": "28747aff-aaaf-42e9-98bd-10e35c0dad5c",
+      "titre": "Collision ferroviaire sur la ligne Boulogne-Abbeville, près d'Étaples au passage à niveau",
+      "date_in_db": "1941-01-01",
+      "year_in_db": "1941",
+      "date_candidate": "1941-01-01",
+      "year_candidate": "1941",
+      "precision": "year",
+      "status": "LIKELY_CORRECT",
+      "result_bucket": "preuve_externe_faible",
+      "confidence": 0.5,
+      "needs_human_review": false,
+      "recommendation": "Rechercher des sources externes confirmant la date de l'accident ferroviaire.",
+      "matched_article_fr": null,
+      "matched_article_en": null,
+      "wikidata_id": null,
+      "event_identity": "Collision ferroviaire sur la ligne Boulogne-Abbeville près d'Étaples en octobre 1941.",
+      "is_disputed": false,
+      "ambiguous_identity": false,
+      "title_self_sufficient": true,
+      "title_not_self_sufficient": false,
+      "is_not_singular_event": false,
+      "is_time_span": false,
+      "is_period_based": false,
+      "exact_year_supported": true,
+      "reasoning_short": "Bien que le titre et la description indiquent clairement l'année 1941, aucune source externe n'est fournie pour confirmer cette date. La date de la base de données ne peut pas être utilisée comme preuve.",
+      "evidence_used": [],
+      "sources_checked": [],
+      "source_quotes": [],
+      "conflicts": []
+    },
+    {
+      "id": "e7e58434-0cf8-4f6d-8eaf-9576bbd8423e",
+      "titre": "Découverte d'Homo floresiensis",
+      "date_in_db": "2003-01-01",
+      "year_in_db": "2003",
+      "date_candidate": null,
+      "year_candidate": null,
+      "precision": null,
+      "status": "INSUFFICIENT_EVIDENCE",
+      "result_bucket": "annee_exacte_introuvable",
+      "confidence": 0,
+      "needs_human_review": true,
+      "recommendation": "Ajouter une source externe mentionnant l'année de la découverte.",
+      "matched_article_fr": null,
+      "matched_article_en": null,
+      "wikidata_id": "Q171283",
+      "event_identity": "Découverte d'Homo floresiensis",
+      "is_disputed": false,
+      "ambiguous_identity": false,
+      "title_self_sufficient": true,
+      "title_not_self_sufficient": false,
+      "is_not_singular_event": false,
+      "is_time_span": false,
+      "is_period_based": false,
+      "exact_year_supported": false,
+      "reasoning_short": "Aucune source externe ne confirme l'année exacte de la découverte d'Homo floresiensis. L'article Wikipedia parle de l'espèce mais pas de sa découverte.",
+      "evidence_used": [],
+      "sources_checked": [
+        {
+          "source_id": "wikipedia_fr_article",
+          "source_type": "wikipedia_fr",
+          "title": "Homo",
+          "url": "https://fr.wikipedia.org/wiki/Homo",
+          "date_iso": null,
+          "precision": null
+        }
+      ],
+      "source_quotes": [
+        {
+          "source_id": "wikipedia_fr_article",
+          "quote": "Homo est le genre qui réunit Homo sapiens et les espèces apparentées. Il semble apparaitre dès la fin du Pliocène, d'après l'attribution des plus anciens fossiles connus faite par les paléoanthropologues. Depuis quelque 2,8 millions d'années, le genre Homo a produit un buissonnement d'espèces, en raison de sa dispersion géographique précoce dans tout l'Ancien Monde et de son développement dans des niches écologiques variées. Toutes les espèces du genre Homo sont aujourd'hui éteintes, sauf Homo sapiens. Les dernières espèces apparentées, Homo floresiensis, Homo luzonensis, Homme de Denisova et Homo neanderthalensis, ont disparu il y a entre 50 000 et 30 000 ans."
+        }
+      ],
+      "conflicts": []
+    },
+    {
+      "id": "979c9402-6e79-4036-8566-8970b04d046f",
+      "titre": "Mort de Charles VII, Roi de France",
+      "date_in_db": "1461-01-01",
+      "year_in_db": "1461",
+      "date_candidate": "1461-01-01",
+      "year_candidate": "1461",
+      "precision": "year",
+      "status": "CONFIRMED",
+      "result_bucket": "confirme",
+      "confidence": 0.9,
+      "needs_human_review": false,
+      "recommendation": "None",
+      "matched_article_fr": "wikipedia_fr_article",
+      "matched_article_en": null,
+      "wikidata_id": "Q133372",
+      "event_identity": "Mort de Charles VII, roi de France.",
+      "is_disputed": false,
+      "ambiguous_identity": false,
+      "title_self_sufficient": true,
+      "title_not_self_sufficient": false,
+      "is_not_singular_event": false,
+      "is_time_span": false,
+      "is_period_based": false,
+      "exact_year_supported": true,
+      "reasoning_short": "L'article Wikipédia en français sur Charles VII mentionne sa mort en 1461. Wikidata confirme également cette date.",
+      "evidence_used": [
+        "wikipedia_fr_article",
+        "wikidata_2"
+      ],
+      "sources_checked": [
+        {
+          "source_id": "wikipedia_fr_article",
+          "source_type": "wikipedia_fr",
+          "title": "Charles VII (roi de France)",
+          "url": "https://fr.wikipedia.org/wiki/Charles_VII_(roi_de_France)",
+          "date_iso": null,
+          "precision": null
+        },
+        {
+          "source_id": "wikipedia_en_article",
+          "source_type": "wikipedia_en",
+          "title": "Charles V of France",
+          "url": "https://en.wikipedia.org/wiki/Charles_V_of_France",
+          "date_iso": null,
+          "precision": null
+        },
+        {
+          "source_id": "wikidata_1",
+          "source_type": "wikidata",
+          "title": "Q133372",
+          "url": "https://www.wikidata.org/wiki/Q133372",
+          "date_iso": "1403-02-22",
+          "precision": "day"
+        },
+        {
+          "source_id": "wikidata_2",
+          "source_type": "wikidata",
+          "title": "Q133372",
+          "url": "https://www.wikidata.org/wiki/Q133372",
+          "date_iso": "1461-07-22",
+          "precision": "day"
+        }
+      ],
+      "source_quotes": [
+        {
+          "source_id": "wikipedia_fr_article",
+          "quote": "Charles VII, dit « le Victorieux », « le Très Victorieux » ou « le Bien Servi », né à l'hôtel Saint-Pol à Paris le 22 février 1403 et mort au château de Mehun-sur-Yèvre le 22 juillet 1461, est roi de France de 1422 à 1461. Il est le cinquième roi de la branche dite de Valois de la dynastie capétienne. Charles VII est le fils de Charles VI et d'Isabeau de Bavière. Roi indissociable de l'épopée de Jeanne d'Arc, il réussit, au cours d'un long règne de près de quarante ans, presque aussi long que celui de son père et prédécesseur sur le trône (1380–1422), à renverser une situation compromise et finalement gagner la guerre de Cent Ans. La faiblesse psychologique de son père, le roi Charles VI, le conduit à être placé sous tutelle depuis 1392, et les luttes pour le contrôle de la régence et du royaume dégénèrent en une véritable guerre civile à partir de 1407. Henri V d'Angleterre en profite …"
+        },
+        {
+          "source_id": "wikipedia_en_article",
+          "quote": "Charles V (21 January 1338 – 16 September 1380), called the Wise (French: le Sage; Latin: Sapiens), was King of France from 1364 to his death in 1380. His reign marked an early high point for France during the Hundred Years' War as his armies recovered much of the territory held by the English and successfully reversed the military losses of his predecessors. Charles became regent of France when his father John II was captured by the English at the Battle of Poitiers in 1356. To pay for the defense of the kingdom, Charles raised taxes. As a result, he faced hostility from the nobility, led by Charles the Bad, King of Navarre; the opposition of the French bourgeoisie, which was channeled through the Estates-General led by Étienne Marcel; and with a peasant revolt known as the Jacquerie. Charles overcame all of these rebellions, but in order to liberate his father, he had to conclude the …"
+        },
+        {
+          "source_id": "wikidata_1",
+          "quote": "date of birth: 1403-02-22"
+        },
+        {
+          "source_id": "wikidata_2",
+          "quote": "date of death: 1461-07-22"
+        }
+      ],
+      "conflicts": []
+    },
+    {
+      "id": "08a2458c-208d-4acd-b2ce-1c10105328e6",
+      "titre": "Expédition d'Ursúa à la recherche d'Eldorado",
+      "date_in_db": "1560-01-01",
+      "year_in_db": "1560",
+      "date_candidate": "1560-01-01",
+      "year_candidate": "1560",
+      "precision": "year",
+      "status": "LIKELY_CORRECT",
+      "result_bucket": "preuve_externe_faible",
+      "confidence": 0.5,
+      "needs_human_review": false,
+      "recommendation": "Ajouter des sources externes confirmant l'année de l'expédition d'Ursúa.",
+      "matched_article_fr": null,
+      "matched_article_en": null,
+      "wikidata_id": null,
+      "event_identity": "Expédition d'Ursúa à la recherche d'Eldorado en Amazonie.",
+      "is_disputed": false,
+      "ambiguous_identity": false,
+      "title_self_sufficient": true,
+      "title_not_self_sufficient": false,
+      "is_not_singular_event": false,
+      "is_time_span": false,
+      "is_period_based": false,
+      "exact_year_supported": true,
+      "reasoning_short": "Bien que le titre soit clair et que la description mentionne 1560, aucune source externe n'est fournie pour confirmer cette date. La date est donc potentiellement correcte, mais sans preuve externe, le statut est INSUFFICIENT_EVIDENCE.",
+      "evidence_used": [],
+      "sources_checked": [],
+      "source_quotes": [],
+      "conflicts": []
+    },
+    {
+      "id": "86066506-ec28-463a-8184-b96052db4fc6",
+      "titre": "Première école pour filles en Nouvelle-France",
+      "date_in_db": "1684-01-01",
+      "year_in_db": "1684",
+      "date_candidate": null,
+      "year_candidate": null,
+      "precision": null,
+      "status": "INSUFFICIENT_EVIDENCE",
+      "result_bucket": "annee_exacte_introuvable",
+      "confidence": 0,
+      "needs_human_review": true,
+      "recommendation": "Provide a reliable source confirming the year of the event.",
+      "matched_article_fr": null,
+      "matched_article_en": null,
+      "wikidata_id": "Q481762",
+      "event_identity": "Establishment of the first school for girls in New France.",
+      "is_disputed": false,
+      "ambiguous_identity": false,
+      "title_self_sufficient": true,
+      "title_not_self_sufficient": false,
+      "is_not_singular_event": false,
+      "is_time_span": false,
+      "is_period_based": false,
+      "exact_year_supported": false,
+      "reasoning_short": "No external source confirms the year 1684 for the establishment of the first school for girls in New France. The provided sources are irrelevant.",
+      "evidence_used": [],
+      "sources_checked": [
+        {
+          "source_id": "wikipedia_fr_article",
+          "source_type": "wikipedia_fr",
+          "title": "École normale supérieure de jeunes filles",
+          "url": "https://fr.wikipedia.org/wiki/%C3%89cole_normale_sup%C3%A9rieure_de_jeunes_filles",
+          "date_iso": null,
+          "precision": null
+        },
+        {
+          "source_id": "wikidata_1",
+          "source_type": "wikidata",
+          "title": "Q481762",
+          "url": "https://www.wikidata.org/wiki/Q481762",
+          "date_iso": "1881-01-01",
+          "precision": "year"
+        }
+      ],
+      "source_quotes": [
+        {
+          "source_id": "wikipedia_fr_article",
+          "quote": "L'École normale supérieure de jeunes filles (ENSJF), dite parfois Sèvres par métonymie, est un ancien établissement d'enseignement supérieur français. Elle fonctionne de 1881 à 1985, date à laquelle elle fusionne avec l'École normale supérieure de la rue d'Ulm."
+        },
+        {
+          "source_id": "wikidata_1",
+          "quote": "inception: 1881-01-01"
+        }
+      ],
+      "conflicts": []
+    },
+    {
+      "id": "61f1a892-68fc-4a6c-9a40-3e2dac625f45",
+      "titre": "Début de la construction du canal de Suez",
+      "date_in_db": "1859-01-01",
+      "year_in_db": "1859",
+      "date_candidate": "1859-01-01",
+      "year_candidate": "1859",
+      "precision": "year",
+      "status": "CONFIRMED",
+      "result_bucket": "confirme",
+      "confidence": 1,
+      "needs_human_review": false,
+      "recommendation": "Aucune.",
+      "matched_article_fr": "Canal de Suez",
+      "matched_article_en": "Suez Canal",
+      "wikidata_id": "Q899",
+      "event_identity": "Début de la construction du canal de Suez",
+      "is_disputed": false,
+      "ambiguous_identity": false,
+      "title_self_sufficient": true,
+      "title_not_self_sufficient": false,
+      "is_not_singular_event": false,
+      "is_time_span": false,
+      "is_period_based": false,
+      "exact_year_supported": true,
+      "reasoning_short": "Les articles Wikipédia en français et en anglais confirment que la construction du canal de Suez a débuté en 1859.",
+      "evidence_used": [
+        "wikipedia_fr_article",
+        "wikipedia_en_article"
+      ],
+      "sources_checked": [
+        {
+          "source_id": "wikipedia_fr_article",
+          "source_type": "wikipedia_fr",
+          "title": "Canal de Suez",
+          "url": "https://fr.wikipedia.org/wiki/Canal_de_Suez",
+          "date_iso": null,
+          "precision": null
+        },
+        {
+          "source_id": "wikipedia_en_article",
+          "source_type": "wikipedia_en",
+          "title": "Suez Canal",
+          "url": "https://en.wikipedia.org/wiki/Suez_Canal",
+          "date_iso": null,
+          "precision": null
+        }
+      ],
+      "source_quotes": [
+        {
+          "source_id": "wikipedia_fr_article",
+          "quote": "Le canal de Suez (en arabe : قناة السويس, qanāt as-suwēs) est un canal navigable situé en Égypte. Long de 193,3 km, large de 280 à 345 m et profond de 22,5 m, il relie, via trois lacs naturels, la ville portuaire de Port-Saïd en mer Méditerranée à la ville de Suez dans le golfe de Suez, partie septentrionale de la mer Rouge. Percé entre 1859 et 1869, grâce à une levée de fonds géante à la Bourse de Paris, sous la direction du diplomate retraité français Ferdinand de Lesseps, il permet aux navires d'aller d'Europe en Asie sans devoir contourner l'Afrique par le cap de Bonne-Espérance et sans rupture de charge par voie terrestre entre la Méditerranée et la mer Rouge. Le canal de Suez ainsi établi reprend la vieille idée de relation par voie d'eau entre les deux mers, déjà mise en œuvre dans l'Antiquité par les pharaons égyptiens : le canal des pharaons antique relie le Nil à la mer Rouge.…"
+        },
+        {
+          "source_id": "wikipedia_en_article",
+          "quote": "The Suez Canal (; Arabic: قناة السويس, Qanāt as-Suwais) is an artificial sea-level waterway in Egypt, connecting the Mediterranean Sea to the Red Sea through the Isthmus of Suez and dividing Africa and Asia (and by extension, the Sinai Peninsula from the rest of Egypt). It is the border between Africa and Asia. The 193.30-kilometre-long (120.11 mi) canal is a key trade route between Europe and Asia. In 1858, French diplomat Ferdinand de Lesseps formed the Compagnie de Suez for the express purpose of building the canal. Construction of the canal lasted from 1859 to 1869. The canal officially opened on 17 November 1869. It offers vessels a direct route between the North Atlantic and northern Indian oceans via the Mediterranean Sea and the Red Sea, avoiding the South Atlantic and southern Indian oceans and reducing the journey distance from the Arabian Sea to London by approximately 8,900 …"
+        }
+      ],
+      "conflicts": []
+    },
+    {
+      "id": "1229ea85-d0e5-4eb6-9ebd-eae9455c0aba",
+      "titre": "Manifeste futuriste",
+      "date_in_db": "1909-01-01",
+      "year_in_db": "1909",
+      "date_candidate": "1909-01-01",
+      "year_candidate": "1909",
+      "precision": "year",
+      "status": "CONFIRMED",
+      "result_bucket": "confirme",
+      "confidence": 1,
+      "needs_human_review": false,
+      "recommendation": "Confirmer la date de 1909 comme année de publication du Manifeste futuriste.",
+      "matched_article_fr": "https://fr.wikipedia.org/wiki/Manifeste_du_futurisme",
+      "matched_article_en": null,
+      "wikidata_id": "Q1983009",
+      "event_identity": "Manifeste futuriste",
+      "is_disputed": false,
+      "ambiguous_identity": false,
+      "title_self_sufficient": true,
+      "title_not_self_sufficient": false,
+      "is_not_singular_event": false,
+      "is_time_span": false,
+      "is_period_based": false,
+      "exact_year_supported": true,
+      "reasoning_short": "Wikidata confirme la date de publication du Manifeste futuriste au 20 février 1909. Wikipedia confirme l'existence du manifeste.",
+      "evidence_used": [
+        "wikidata_1",
+        "wikipedia_fr_article"
+      ],
+      "sources_checked": [
+        {
+          "source_id": "wikipedia_fr_article",
+          "source_type": "wikipedia_fr",
+          "title": "Manifeste du futurisme",
+          "url": "https://fr.wikipedia.org/wiki/Manifeste_du_futurisme",
+          "date_iso": null,
+          "precision": null
+        },
+        {
+          "source_id": "wikidata_1",
+          "source_type": "wikidata",
+          "title": "Q1983009",
+          "url": "https://www.wikidata.org/wiki/Q1983009",
+          "date_iso": "1909-02-20",
+          "precision": "day"
+        }
+      ],
+      "source_quotes": [
+        {
+          "source_id": "wikipedia_fr_article",
+          "quote": "Le Manifesto del futurismo (Manifeste du futurisme, en français) est un texte rédigé, en 1908, par Filippo Tommaso Marinetti, l'un des acteurs les plus importants du courant futuriste."
+        },
+        {
+          "source_id": "wikidata_1",
+          "quote": "publication date: 1909-02-20"
+        }
+      ],
+      "conflicts": []
+    },
+    {
+      "id": "29906039-ec29-4a91-9296-6124e8450ec6",
+      "titre": "Fondation de l'Université de Padoue en Italie",
+      "date_in_db": "1222-01-01",
+      "year_in_db": "1222",
+      "date_candidate": "1222-01-01",
+      "year_candidate": "1222",
+      "precision": "year",
+      "status": "CONFIRMED",
+      "result_bucket": "confirme",
+      "confidence": 1,
+      "needs_human_review": false,
+      "recommendation": "No changes needed.",
+      "matched_article_fr": "Université de Padoue",
+      "matched_article_en": null,
+      "wikidata_id": "Q193510",
+      "event_identity": "Fondation de l'Université de Padoue",
+      "is_disputed": false,
+      "ambiguous_identity": false,
+      "title_self_sufficient": true,
+      "title_not_self_sufficient": false,
+      "is_not_singular_event": false,
+      "is_time_span": false,
+      "is_period_based": false,
+      "exact_year_supported": true,
+      "reasoning_short": "Wikidata confirme la date de fondation en 1222. Wikipedia FR mentionne l'université de Padoue.",
+      "evidence_used": [
+        "wikidata_1",
+        "wikipedia_fr_article"
+      ],
+      "sources_checked": [
+        {
+          "source_id": "wikipedia_fr_article",
+          "source_type": "wikipedia_fr",
+          "title": "Université de Padoue",
+          "url": "https://fr.wikipedia.org/wiki/Universit%C3%A9_de_Padoue",
+          "date_iso": null,
+          "precision": null
+        },
+        {
+          "source_id": "wikidata_1",
+          "source_type": "wikidata",
+          "title": "Q193510",
+          "url": "https://www.wikidata.org/wiki/Q193510",
+          "date_iso": "1222-09-01",
+          "precision": "month"
+        }
+      ],
+      "source_quotes": [
+        {
+          "source_id": "wikipedia_fr_article",
+          "quote": "L'université de Padoue (en italien, Università degli studi di Padova) est une université italienne dont le siège est à Padoue. Sa devise, adoptée dès sa création, est la suivante : « Universa Universis Patavina Libertas »."
+        },
+        {
+          "source_id": "wikidata_1",
+          "quote": "inception: 1222-09-01"
+        }
+      ],
+      "conflicts": []
+    },
+    {
+      "id": "013d28c8-5b5d-4b0d-ae8c-7fd639ce7a0f",
+      "titre": "Transfert du cœur de Léon Gambetta au Panthéon",
+      "date_in_db": "1920-01-01",
+      "year_in_db": "1920",
+      "date_candidate": "1920-01-01",
+      "year_candidate": "1920",
+      "precision": "year",
+      "status": "LIKELY_CORRECT",
+      "result_bucket": "probable_mais_a_confirmer",
+      "confidence": 0.8,
+      "needs_human_review": false,
+      "recommendation": "No changes needed.",
+      "matched_article_fr": "Léon Gambetta",
+      "matched_article_en": null,
+      "wikidata_id": "Q295090",
+      "event_identity": "Transfer of Léon Gambetta's heart to the Panthéon in Paris.",
+      "is_disputed": false,
+      "ambiguous_identity": false,
+      "title_self_sufficient": true,
+      "title_not_self_sufficient": false,
+      "is_not_singular_event": false,
+      "is_time_span": false,
+      "is_period_based": false,
+      "exact_year_supported": true,
+      "reasoning_short": "The event is the transfer of Léon Gambetta's heart to the Panthéon. The provided description detaillee confirms the year 1920.",
+      "evidence_used": [],
+      "sources_checked": [
+        {
+          "source_id": "wikipedia_fr_article",
+          "source_type": "wikipedia_fr",
+          "title": "Léon Gambetta",
+          "url": "https://fr.wikipedia.org/wiki/L%C3%A9on_Gambetta",
+          "date_iso": null,
+          "precision": null
+        },
+        {
+          "source_id": "wikidata_1",
+          "source_type": "wikidata",
+          "title": "Q295090",
+          "url": "https://www.wikidata.org/wiki/Q295090",
+          "date_iso": "1838-04-02",
+          "precision": "day"
+        },
+        {
+          "source_id": "wikidata_2",
+          "source_type": "wikidata",
+          "title": "Q295090",
+          "url": "https://www.wikidata.org/wiki/Q295090",
+          "date_iso": "1838-04-03",
+          "precision": "day"
+        },
+        {
+          "source_id": "wikidata_3",
+          "source_type": "wikidata",
+          "title": "Q295090",
+          "url": "https://www.wikidata.org/wiki/Q295090",
+          "date_iso": "1882-12-31",
+          "precision": "day"
+        },
+        {
+          "source_id": "wikidata_4",
+          "source_type": "wikidata",
+          "title": "Q295090",
+          "url": "https://www.wikidata.org/wiki/Q295090",
+          "date_iso": "1882-01-01",
+          "precision": "year"
+        }
+      ],
+      "source_quotes": [
+        {
+          "source_id": "wikipedia_fr_article",
+          "quote": "Léon Gambetta, né le 2 avril 1838 à Cahors (Lot) et mort le 31 décembre 1882 à Sèvres (Seine-et-Oise), est un homme d'État français. Grande figure de l'enracinement de la Troisième République, il est président du Conseil du 14 novembre 1881 au 30 janvier 1882. Issu d'un milieu provincial modeste, il obtient une licence de droit à l'université de Paris, puis s'établit comme avocat. Opposant au Second Empire, il est révélé au grand public par « l'affaire Baudin » en novembre 1868. Il est élu député en 1869 en défendant le « programme de Belleville » qui soutient des propositions radicales derrière lesquelles se rangent les républicains comme l'extension des libertés publiques, la séparation des Églises et de l'État, le vote de l'impôt sur le revenu, l'élection des fonctionnaires ou la suppression des armées permanentes. Le 4 septembre 1870, à la suite du désastre de Sedan face à l'armée p…"
+        },
+        {
+          "source_id": "wikidata_1",
+          "quote": "date of birth: 1838-04-02"
+        },
+        {
+          "source_id": "wikidata_2",
+          "quote": "date of birth: 1838-04-03"
+        },
+        {
+          "source_id": "wikidata_3",
+          "quote": "date of death: 1882-12-31"
+        },
+        {
+          "source_id": "wikidata_4",
+          "quote": "date of death: 1882-01-01"
+        }
+      ],
+      "conflicts": []
+    },
+    {
+      "id": "787cf23d-edd8-4c43-8622-700a0d6fa5f3",
+      "titre": "Condamnation de Priscillien",
+      "date_in_db": "0385-01-01",
+      "year_in_db": "0385",
+      "date_candidate": "0385-01-01",
+      "year_candidate": "0385",
+      "precision": "year",
+      "status": "CONFIRMED",
+      "result_bucket": "confirme",
+      "confidence": 1,
+      "needs_human_review": false,
+      "recommendation": "No changes needed.",
+      "matched_article_fr": "https://fr.wikipedia.org/wiki/Priscillien",
+      "matched_article_en": null,
+      "wikidata_id": "Q347010",
+      "event_identity": "Condamnation de Priscillien",
+      "is_disputed": false,
+      "ambiguous_identity": false,
+      "title_self_sufficient": true,
+      "title_not_self_sufficient": false,
+      "is_not_singular_event": false,
+      "is_time_span": false,
+      "is_period_based": false,
+      "exact_year_supported": true,
+      "reasoning_short": "Wikipedia confirme que Priscillien a été exécuté en 385. Wikidata confirme la date de sa mort en 385.",
+      "evidence_used": [
+        "wikipedia_fr_article",
+        "wikidata_2"
+      ],
+      "sources_checked": [
+        {
+          "source_id": "wikipedia_fr_article",
+          "source_type": "wikipedia_fr",
+          "title": "Priscillien",
+          "url": "https://fr.wikipedia.org/wiki/Priscillien",
+          "date_iso": null,
+          "precision": null
+        },
+        {
+          "source_id": "wikidata_1",
+          "source_type": "wikidata",
+          "title": "Q347010",
+          "url": "https://www.wikidata.org/wiki/Q347010",
+          "date_iso": "0340-01-01",
+          "precision": "year"
+        },
+        {
+          "source_id": "wikidata_2",
+          "source_type": "wikidata",
+          "title": "Q347010",
+          "url": "https://www.wikidata.org/wiki/Q347010",
+          "date_iso": "0385-01-01",
+          "precision": "year"
+        }
+      ],
+      "source_quotes": [
+        {
+          "source_id": "wikipedia_fr_article",
+          "quote": "Priscillien, évêque d'Ávila, est le premier chrétien condamné à mort et exécuté par une autorité civile chrétienne pour hérésie à Trèves en 385. Sa doctrine, le priscillianisme, qui relie le polythéisme celtique au christianisme, est qualifiée d'hérésie et condamnée par l'Église officielle primitive et littéralement effacée. Certains la rapprochent de celle des pauliciens."
+        },
+        {
+          "source_id": "wikidata_1",
+          "quote": "date of birth: 0340-01-01"
+        },
+        {
+          "source_id": "wikidata_2",
+          "quote": "date of death: 0385-01-01"
+        }
+      ],
+      "conflicts": []
+    },
+    {
+      "id": "40687364-ad16-4553-b4fd-a247d209af5d",
+      "titre": "Mort de Hugues le Grand",
+      "date_in_db": "0956-01-01",
+      "year_in_db": "0956",
+      "date_candidate": "0956-01-01",
+      "year_candidate": "0956",
+      "precision": "year",
+      "status": "CONFIRMED",
+      "result_bucket": "confirme",
+      "confidence": 0.9,
+      "needs_human_review": false,
+      "recommendation": "Aucune action nécessaire.",
+      "matched_article_fr": "https://fr.wikipedia.org/wiki/Hugues_le_Grand",
+      "matched_article_en": null,
+      "wikidata_id": "Q1305568",
+      "event_identity": "Mort de Hugues le Grand, duc des Francs et comte de Paris.",
+      "is_disputed": false,
+      "ambiguous_identity": false,
+      "title_self_sufficient": true,
+      "title_not_self_sufficient": false,
+      "is_not_singular_event": false,
+      "is_time_span": false,
+      "is_period_based": false,
+      "exact_year_supported": true,
+      "reasoning_short": "L'article Wikipédia en français sur Hugues le Grand (Q1305568) confirme qu'il est décédé en 956.",
+      "evidence_used": [
+        "wikipedia_fr_article"
+      ],
+      "sources_checked": [
+        {
+          "source_id": "wikipedia_fr_article",
+          "source_type": "wikipedia_fr",
+          "title": "Hugues le Grand",
+          "url": "https://fr.wikipedia.org/wiki/Hugues_le_Grand",
+          "date_iso": null,
+          "precision": null
+        },
+        {
+          "source_id": "wikipedia_en_article",
+          "source_type": "wikipedia_en",
+          "title": "Hugues",
+          "url": "https://en.wikipedia.org/wiki/Hugues",
+          "date_iso": null,
+          "precision": null
+        }
+      ],
+      "source_quotes": [
+        {
+          "source_id": "wikipedia_fr_article",
+          "quote": "Il existe plusieurs Capétiens nommés Hugues et surnommés le Grand : Hugues le Grand (897 – 956), duc des Francs et père d’Hugues Capet ; Hugues de Salins, archevêque de Besançon (1031-1066) ; Hugues le Grand (1057 – 1102), alias de Hugues Ier de Vermandois, fils d’Henri Ier de France et comte de Vermandois. Hugues le Grand est également le surnom de saint Hugues (1024 – 1109), sixième abbé de Cluny."
+        },
+        {
+          "source_id": "wikipedia_en_article",
+          "quote": "Hugues is a masculine given name most often found in Francophone countries, a variant of the originally Germanic name \"Hugo\" or \" Hugh\". The final 's' marks the nominative case in Old French, but is not retained by modern pronunciation (such as in English: Charles, Giles, James, etc.). The old oblique case Hugon (Huon, Yon) disappeared. Notable people bearing this name include: Crusader kings of Cyprus: Hugues I de Lusignan (1194/1195–1218) Hugues II de Lusignan (1252/1253–1267) Hugues, Bishop of Dié, (c. 1040–1106) Hugues Absil (born 1961), French painter Hugues Aubriot (13??-1382/1391), French administrator and heretic Hugues Aufray (born 1929), French singer Hugues Le Bars (1950–2014), French film music composer Hugues IV de Berzé (1150/1155–1220), French knight, crusader and poet Hugues Bousiges (born 1948), French civil servant Hugues Briatte (born 1990), French rugby union player …"
+        }
+      ],
+      "conflicts": []
+    },
+    {
+      "id": "711af4b9-7c8f-41ea-875c-a829b410df37",
+      "titre": "Utilisation documentée de la poudre à canon en Chine",
+      "date_in_db": "1232-01-01",
+      "year_in_db": "1232",
+      "date_candidate": null,
+      "year_candidate": null,
+      "precision": null,
+      "status": "INSUFFICIENT_EVIDENCE",
+      "result_bucket": "annee_exacte_introuvable",
+      "confidence": 0,
+      "needs_human_review": true,
+      "recommendation": "Rechercher des sources externes qui confirment l'année exacte de la première utilisation militaire documentée de la poudre à canon en Chine.",
+      "matched_article_fr": null,
+      "matched_article_en": null,
+      "wikidata_id": "Q747986",
+      "event_identity": "Première utilisation militaire documentée de la poudre à canon en Chine.",
+      "is_disputed": false,
+      "ambiguous_identity": false,
+      "title_self_sufficient": true,
+      "title_not_self_sufficient": false,
+      "is_not_singular_event": false,
+      "is_time_span": false,
+      "is_period_based": false,
+      "exact_year_supported": false,
+      "reasoning_short": "Aucune source externe ne confirme l'année exacte de l'utilisation documentée de la poudre à canon en Chine. L'article Wikipédia fourni est trop général sur l'histoire des sciences et techniques en Chine et ne mentionne pas l'année 1232.",
+      "evidence_used": [],
+      "sources_checked": [
+        {
+          "source_id": "wikipedia_fr_article",
+          "source_type": "wikipedia_fr",
+          "title": "Histoire des sciences et techniques en Chine",
+          "url": "https://fr.wikipedia.org/wiki/Histoire_des_sciences_et_techniques_en_Chine",
+          "date_iso": null,
+          "precision": null
+        }
+      ],
+      "source_quotes": [
+        {
+          "source_id": "wikipedia_fr_article",
+          "quote": "L'histoire des sciences et des techniques en Chine est l'occasion de découvrir les contributions d'une civilisation non occidentale à un développement précoce des savoirs. Contributions qui, depuis Marco Polo notamment, ont été reconnues en Occident jusqu'à inspirer une véritable fascination européenne pour la civilisation Chinoise. Le mythe d'un « retard chinois » entre le XVe et le XXe siècle reste un sujet de discussion historique. Durant l'Antiquité, indépendamment des philosophes grecs, les penseurs et les techniciens chinois ont contribué à des progrès significatifs de l'humanité dans de nombreux domaines. Le premier exemple d’outil de calcul complexe est l’abaque, qui connut diverses formes, jusqu’au boulier toujours utilisé en Chine. L'astronomie chinoise s'est développée sur plusieurs siècles et s'est longtemps montrée en avance sur celle du monde occidental. Elle a toutefois é…"
+        }
+      ],
+      "conflicts": []
+    },
+    {
+      "id": "543e1a73-a9b4-49c6-90d5-f9c01cb6c655",
+      "titre": "Congrès d'Aix-la-Chapelle",
+      "date_in_db": "1818-01-01",
+      "year_in_db": "1818",
+      "date_candidate": "1818-01-01",
+      "year_candidate": "1818",
+      "precision": "year",
+      "status": "CONFIRMED",
+      "result_bucket": "confirme",
+      "confidence": 0.9,
+      "needs_human_review": false,
+      "recommendation": "No change needed.",
+      "matched_article_fr": "https://fr.wikipedia.org/wiki/Congr%C3%A8s_d%27Aix-la-Chapelle_(1818)",
+      "matched_article_en": null,
+      "wikidata_id": "Q300738",
+      "event_identity": "Congrès d'Aix-la-Chapelle",
+      "is_disputed": false,
+      "ambiguous_identity": false,
+      "title_self_sufficient": true,
+      "title_not_self_sufficient": false,
+      "is_not_singular_event": false,
+      "is_time_span": false,
+      "is_period_based": false,
+      "exact_year_supported": true,
+      "reasoning_short": "Le congrès d'Aix-la-Chapelle s'est tenu en 1818, selon Wikipedia et Wikidata.",
+      "evidence_used": [
+        "wikipedia_fr_article",
+        "wikidata_1"
+      ],
+      "sources_checked": [
+        {
+          "source_id": "wikipedia_fr_article",
+          "source_type": "wikipedia_fr",
+          "title": "Congrès d'Aix-la-Chapelle (1818)",
+          "url": "https://fr.wikipedia.org/wiki/Congr%C3%A8s_d%27Aix-la-Chapelle_(1818)",
+          "date_iso": null,
+          "precision": null
+        },
+        {
+          "source_id": "wikidata_1",
+          "source_type": "wikidata",
+          "title": "Q300738",
+          "url": "https://www.wikidata.org/wiki/Q300738",
+          "date_iso": "1818-01-01",
+          "precision": "year"
+        },
+        {
+          "source_id": "wikidata_2",
+          "source_type": "wikidata",
+          "title": "Q300738",
+          "url": "https://www.wikidata.org/wiki/Q300738",
+          "date_iso": "1818-09-29",
+          "precision": "day"
+        },
+        {
+          "source_id": "wikidata_3",
+          "source_type": "wikidata",
+          "title": "Q300738",
+          "url": "https://www.wikidata.org/wiki/Q300738",
+          "date_iso": "1818-09-30",
+          "precision": "day"
+        }
+      ],
+      "source_quotes": [
+        {
+          "source_id": "wikipedia_fr_article",
+          "quote": "Le congrès d'Aix-la-Chapelle s'est tenu du 29 septembre au 21 novembre 1818 entre la France et les principales puissances occupantes (Prusse, Autriche, Angleterre, Russie), le but étant de réviser et de solder le traité de Paris (1815) dans le cadre du Concert européen."
+        },
+        {
+          "source_id": "wikidata_1",
+          "quote": "point in time: 1818-01-01"
+        },
+        {
+          "source_id": "wikidata_2",
+          "quote": "start time: 1818-09-29"
+        },
+        {
+          "source_id": "wikidata_3",
+          "quote": "start time: 1818-09-30"
+        }
+      ],
+      "conflicts": []
+    },
+    {
+      "id": "7537fe57-b4da-42a2-8248-acd8873dc2c1",
+      "titre": "Début du système de ségrégation Aborigènes (Nouvelle-Galles du Sud, Australie)",
+      "date_in_db": "1788-01-01",
+      "year_in_db": "1788",
+      "date_candidate": "1788-01-01",
+      "year_candidate": "1788",
+      "precision": "year",
+      "status": "LIKELY_CORRECT",
+      "result_bucket": "probable_mais_a_confirmer",
+      "confidence": 0.8,
+      "needs_human_review": false,
+      "recommendation": "Confirmer la date de 1788 comme le début de la ségrégation des Aborigènes en Nouvelle-Galles du Sud.",
+      "matched_article_fr": "Aborigènes d'Australie",
+      "matched_article_en": null,
+      "wikidata_id": "Q12060728",
+      "event_identity": "Début de la ségrégation des Aborigènes en Nouvelle-Galles du Sud, Australie, suite à l'arrivée des colons.",
+      "is_disputed": false,
+      "ambiguous_identity": false,
+      "title_self_sufficient": true,
+      "title_not_self_sufficient": false,
+      "is_not_singular_event": false,
+      "is_time_span": false,
+      "is_period_based": false,
+      "exact_year_supported": true,
+      "reasoning_short": "L'arrivée des Européens en Australie en 1788 marque le début des conséquences négatives pour les Aborigènes, incluant la ségrégation.",
+      "evidence_used": [
+        "wikipedia_fr_article"
+      ],
+      "sources_checked": [
+        {
+          "source_id": "wikipedia_fr_article",
+          "source_type": "wikipedia_fr",
+          "title": "Aborigènes d'Australie",
+          "url": "https://fr.wikipedia.org/wiki/Aborig%C3%A8nes_d%27Australie",
+          "date_iso": null,
+          "precision": null
+        }
+      ],
+      "source_quotes": [
+        {
+          "source_id": "wikipedia_fr_article",
+          "quote": "Les Aborigènes d’Australie (en anglais : Aboriginal Australians) sont les premiers humains connus à s'être établis sur le territoire de l’Australie et sont reconnus comme l’un des deux peuples autochtones d’Australie avec les Insulaires du détroit de Torrès. Leur culture vieille de plusieurs dizaines de millénaires est parmi les plus anciennes au monde. L'arrivée des Européens sur l'île continent en 1788 provoque d'importantes conséquences sur les Aborigènes : leur nombre diminue drastiquement à la suite des conflits, massacres et maladies inconnues apportées du continent européen par les colons britanniques. Ceci entraîna alors le déclin de leur situation démographique, sociale et économique. Depuis les années 1960, la communauté Aborigène se voit accorder progressivement le droit de vote, la citoyenneté australienne puis le droit de se présenter aux parlements locaux et certains homel…"
+        }
+      ],
+      "conflicts": []
+    },
+    {
+      "id": "05d60929-83f7-4a70-a769-e482ab3a01ab",
+      "titre": "Invasion et pillage de Gainsborough par Sven Forkbeard",
+      "date_in_db": "1013-01-01",
+      "year_in_db": "1013",
+      "date_candidate": "1013-01-01",
+      "year_candidate": "1013",
+      "precision": "year",
+      "status": "LIKELY_CORRECT",
+      "result_bucket": "preuve_externe_faible",
+      "confidence": 0.8,
+      "needs_human_review": false,
+      "recommendation": "Rechercher des sources externes pour confirmer l'année 1013.",
+      "matched_article_fr": null,
+      "matched_article_en": null,
+      "wikidata_id": null,
+      "event_identity": "Invasion et pillage de Gainsborough par Sven Forkbeard en 1013.",
+      "is_disputed": false,
+      "ambiguous_identity": false,
+      "title_self_sufficient": true,
+      "title_not_self_sufficient": false,
+      "is_not_singular_event": false,
+      "is_time_span": false,
+      "is_period_based": false,
+      "exact_year_supported": true,
+      "reasoning_short": "L'événement décrit correspond à une action militaire spécifique en une année donnée. Bien qu'aucune source externe n'ait été fournie, le titre et la description détaillée pointent vers l'année 1013 comme l'année de l'invasion et du pillage de Gainsborough par Sven Forkbeard.",
+      "evidence_used": [],
+      "sources_checked": [],
+      "source_quotes": [],
+      "conflicts": []
+    },
+    {
+      "id": "26e820e1-8044-4c2e-91d5-4b9e5592fbbb",
+      "titre": "Construction du château de Douvres commencée",
+      "date_in_db": "1180-01-01",
+      "year_in_db": "1180",
+      "date_candidate": null,
+      "year_candidate": null,
+      "precision": null,
+      "status": "INSUFFICIENT_EVIDENCE",
+      "result_bucket": "absence_de_singularite",
+      "confidence": 0,
+      "needs_human_review": true,
+      "recommendation": "Reject. The event describes a construction, which is a time span, not a singular event in a single year.",
+      "matched_article_fr": null,
+      "matched_article_en": null,
+      "wikidata_id": "Q7509935",
+      "event_identity": "Construction du château de Douvres",
+      "is_disputed": false,
+      "ambiguous_identity": false,
+      "title_self_sufficient": true,
+      "title_not_self_sufficient": false,
+      "is_not_singular_event": false,
+      "is_time_span": true,
+      "is_period_based": false,
+      "exact_year_supported": false,
+      "reasoning_short": "The title describes a construction, which is a time span, not a singular event in a single year. No source confirms the exact starting year.",
+      "evidence_used": [],
+      "sources_checked": [
+        {
+          "source_id": "wikipedia_fr_article",
+          "source_type": "wikipedia_fr",
+          "title": "Siège de Château-Gaillard",
+          "url": "https://fr.wikipedia.org/wiki/Si%C3%A8ge_de_Ch%C3%A2teau-Gaillard",
+          "date_iso": null,
+          "precision": null
+        },
+        {
+          "source_id": "wikidata_1",
+          "source_type": "wikidata",
+          "title": "Q7509935",
+          "url": "https://www.wikidata.org/wiki/Q7509935",
+          "date_iso": "1203-08-01",
+          "precision": "month"
+        }
+      ],
+      "source_quotes": [
+        {
+          "source_id": "wikipedia_fr_article",
+          "quote": "Le siège de Château-Gaillard est un épisode de la campagne menée par le roi de France Philippe Auguste afin de conquérir les possessions continentales du roi d'Angleterre Jean sans Terre. Au cours de celle-ci, Philippe Auguste met le siège devant Château-Gaillard, une forteresse qui défend la vallée de la Seine. La forteresse tombe au bout de six mois, le 6 mars 1204, ce qui permet au roi de France d'achever la conquête du duché de Normandie trois mois après."
+        },
+        {
+          "source_id": "wikidata_1",
+          "quote": "start time: 1203-08-01"
+        }
+      ],
+      "conflicts": []
+    },
+    {
+      "id": "c8c10d0b-8b18-43b8-8dda-ef7e80e662e3",
+      "titre": "Décès de William Shakespeare",
+      "date_in_db": "1616-01-01",
+      "year_in_db": "1616",
+      "date_candidate": "1616-01-01",
+      "year_candidate": "1616",
+      "precision": "year",
+      "status": "DISPUTED_DATE",
+      "result_bucket": "date_disputee",
+      "confidence": 0.9,
+      "needs_human_review": false,
+      "recommendation": "Vérifier les sources primaires pour déterminer la date exacte du décès de William Shakespeare.",
+      "matched_article_fr": "William Shakespeare",
+      "matched_article_en": null,
+      "wikidata_id": "Q692",
+      "event_identity": "Décès de William Shakespeare",
+      "is_disputed": true,
+      "ambiguous_identity": false,
+      "title_self_sufficient": true,
+      "title_not_self_sufficient": false,
+      "is_not_singular_event": false,
+      "is_time_span": false,
+      "is_period_based": false,
+      "exact_year_supported": true,
+      "reasoning_short": "Wikidata fournit plusieurs dates de décès en 1616. Wikipedia confirme l'année du décès. Puisqu'il y a désaccord sur la date exacte, je marque l'événement comme 'disputed'.",
+      "evidence_used": [
+        "wikipedia_fr_article",
+        "wikidata_3",
+        "wikidata_4"
+      ],
+      "sources_checked": [
+        {
+          "source_id": "wikipedia_fr_article",
+          "source_type": "wikipedia_fr",
+          "title": "William Shakespeare",
+          "url": "https://fr.wikipedia.org/wiki/William_Shakespeare",
+          "date_iso": null,
+          "precision": null
+        },
+        {
+          "source_id": "wikidata_1",
+          "source_type": "wikidata",
+          "title": "Q692",
+          "url": "https://www.wikidata.org/wiki/Q692",
+          "date_iso": "1564-04-01",
+          "precision": "month"
+        },
+        {
+          "source_id": "wikidata_2",
+          "source_type": "wikidata",
+          "title": "Q692",
+          "url": "https://www.wikidata.org/wiki/Q692",
+          "date_iso": "1564-04-23",
+          "precision": "day"
+        },
+        {
+          "source_id": "wikidata_3",
+          "source_type": "wikidata",
+          "title": "Q692",
+          "url": "https://www.wikidata.org/wiki/Q692",
+          "date_iso": "1616-04-23",
+          "precision": "day"
+        },
+        {
+          "source_id": "wikidata_4",
+          "source_type": "wikidata",
+          "title": "Q692",
+          "url": "https://www.wikidata.org/wiki/Q692",
+          "date_iso": "1616-05-03",
+          "precision": "day"
+        }
+      ],
+      "source_quotes": [
+        {
+          "source_id": "wikipedia_fr_article",
+          "quote": "William Shakespeare est un dramaturge, poète et acteur anglais baptisé/né le 26 avril 1564 à Stratford-upon-Avon et mort le 23 avril 1616 dans la même ville. Surnommé « le Barde d'Avon », « le Barde immortel » ou simplement « le Barde », il est considéré comme l'un des plus grands poètes et dramaturges de langue anglaise. Son œuvre, traduite dans de nombreuses langues, se compose de 39 pièces, 154 sonnets et quelques poèmes supplémentaires, dont certains ne lui sont pas attribués de manière certaine. Après des études à Stratford-upon-Avon, dans le Warwickshire, Shakespeare se marie à 18 ans avec Anne Hathaway, avec qui il a trois enfants. À une date inconnue entre 1585 et 1592, il entame sa carrière d'acteur et auteur à succès à Londres au sein des Lord Chamberlain's Men, une troupe dont il est actionnaire. Il semble s'être retiré à Stratford vers 1613 pour y mourir trois ans plus tard.…"
+        },
+        {
+          "source_id": "wikidata_1",
+          "quote": "date of birth: 1564-04-01"
+        },
+        {
+          "source_id": "wikidata_2",
+          "quote": "date of birth: 1564-04-23"
+        },
+        {
+          "source_id": "wikidata_3",
+          "quote": "date of death: 1616-04-23"
+        },
+        {
+          "source_id": "wikidata_4",
+          "quote": "date of death: 1616-05-03"
+        }
+      ],
+      "conflicts": [
+        {
+          "source_id": "wikidata_1",
+          "date_iso": "1564-04-01",
+          "precision": "month"
+        },
+        {
+          "source_id": "wikidata_2",
+          "date_iso": "1564-04-23",
+          "precision": "day"
+        },
+        {
+          "source_id": "wikidata_3",
+          "date_iso": "1616-04-23",
+          "precision": "day"
+        },
+        {
+          "source_id": "wikidata_4",
+          "date_iso": "1616-05-03",
+          "precision": "day"
+        }
+      ]
+    },
+    {
+      "id": "bf4610d1-ffc3-4d8b-9256-362f8a2ede52",
+      "titre": "Début de la construction de la sculpture Cloud Gate",
+      "date_in_db": "2004-01-01",
+      "year_in_db": "2004",
+      "date_candidate": "2004-01-01",
+      "year_candidate": "2004",
+      "precision": "year",
+      "status": "CONFIRMED",
+      "result_bucket": "confirme",
+      "confidence": 1,
+      "needs_human_review": false,
+      "recommendation": "Confirmer la date de début de construction de Cloud Gate.",
+      "matched_article_fr": "wikipedia_fr_article",
+      "matched_article_en": null,
+      "wikidata_id": "Q589099",
+      "event_identity": "Début de la construction de la sculpture Cloud Gate",
+      "is_disputed": false,
+      "ambiguous_identity": false,
+      "title_self_sufficient": true,
+      "title_not_self_sufficient": false,
+      "is_not_singular_event": false,
+      "is_time_span": false,
+      "is_period_based": false,
+      "exact_year_supported": true,
+      "reasoning_short": "Wikidata confirme le début de la construction en 2004.",
+      "evidence_used": [
+        "wikidata_1",
+        "wikipedia_fr_article"
+      ],
+      "sources_checked": [
+        {
+          "source_id": "wikipedia_fr_article",
+          "source_type": "wikipedia_fr",
+          "title": "Cloud Gate",
+          "url": "https://fr.wikipedia.org/wiki/Cloud_Gate",
+          "date_iso": null,
+          "precision": null
+        },
+        {
+          "source_id": "wikidata_1",
+          "source_type": "wikidata",
+          "title": "Q589099",
+          "url": "https://www.wikidata.org/wiki/Q589099",
+          "date_iso": "2004-01-01",
+          "precision": "year"
+        }
+      ],
+      "source_quotes": [
+        {
+          "source_id": "wikipedia_fr_article",
+          "quote": "La Cloud Gate (littéralement « Porte des nuages ») est une sculpture urbaine de l'artiste britannique Anish Kapoor située dans le Millennium Park, dans le secteur communautaire du Loop à Chicago (Illinois, États-Unis). Pièce centrale de l'AT&T Plaza, elle est entourée au nord par le Grill Park et le Wrigley Square, à l'est par la Chase Promenade, à l'ouest par le McCormick Tribune Plaza, et au sud par la Crown Fountain. Elle fut construite entre 2004 et 2006 avec un dévoilement temporaire lors de l'été 2004. Surnommée « Le Haricot » (The Bean) en raison de sa forme, sa surface extérieure est constituée de 168 plaques d'acier inoxydable polies et soudées entre elles. Elle mesure dix mètres de haut et sa base fait vingt mètres par treize, le tout pour un poids de près de cent tonnes (99,8 t.). Son aspect s'inspire du mercure liquide. L'extérieur poli de la sculpture reflète et déforme le …"
+        },
+        {
+          "source_id": "wikidata_1",
+          "quote": "inception: 2004-01-01"
+        }
+      ],
+      "conflicts": []
+    },
+    {
+      "id": "729d2689-f1d2-40c7-a123-eb57f7797ae8",
+      "titre": "Publication du Liber Abaci introduisant les chiffres arabes en Europe",
+      "date_in_db": "1202-01-01",
+      "year_in_db": "1202",
+      "date_candidate": "1202-01-01",
+      "year_candidate": "1202",
+      "precision": "year",
+      "status": "CONFIRMED",
+      "result_bucket": "confirme",
+      "confidence": 1,
+      "needs_human_review": false,
+      "recommendation": "No change needed.",
+      "matched_article_fr": "Liber abaci",
+      "matched_article_en": null,
+      "wikidata_id": "Q2044496",
+      "event_identity": "Publication du Liber Abaci",
+      "is_disputed": false,
+      "ambiguous_identity": false,
+      "title_self_sufficient": true,
+      "title_not_self_sufficient": false,
+      "is_not_singular_event": false,
+      "is_time_span": false,
+      "is_period_based": false,
+      "exact_year_supported": true,
+      "reasoning_short": "Le Liber Abaci a été publié en 1202 selon Wikipedia et Wikidata.",
+      "evidence_used": [
+        "wikipedia_fr_article",
+        "wikidata_1"
+      ],
+      "sources_checked": [
+        {
+          "source_id": "wikipedia_fr_article",
+          "source_type": "wikipedia_fr",
+          "title": "Liber abaci",
+          "url": "https://fr.wikipedia.org/wiki/Liber_abaci",
+          "date_iso": null,
+          "precision": null
+        },
+        {
+          "source_id": "wikidata_1",
+          "source_type": "wikidata",
+          "title": "Q2044496",
+          "url": "https://www.wikidata.org/wiki/Q2044496",
+          "date_iso": "1202-01-01",
+          "precision": "year"
+        }
+      ],
+      "source_quotes": [
+        {
+          "source_id": "wikipedia_fr_article",
+          "quote": "Le Liber abaci — aussi écrit Liber abbaci, que l'on peut traduire en Livre du calcul ou Livre de l'abaque — est un ouvrage de Leonardo Fibonacci écrit en 1202."
+        },
+        {
+          "source_id": "wikidata_1",
+          "quote": "publication date: 1202-01-01"
+        }
+      ],
+      "conflicts": []
+    },
+    {
+      "id": "9122973f-897a-4ef4-bd01-0400a884cb9a",
+      "titre": "Révolte des fils de Louis le Pieux",
+      "date_in_db": "0830-01-01",
+      "year_in_db": "0830",
+      "date_candidate": "0830-01-01",
+      "year_candidate": "0830",
+      "precision": "year",
+      "status": "LIKELY_CORRECT",
+      "result_bucket": "probable_mais_a_confirmer",
+      "confidence": 0.8,
+      "needs_human_review": false,
+      "recommendation": "None",
+      "matched_article_fr": "Louis le Pieux",
+      "matched_article_en": null,
+      "wikidata_id": "Q43974",
+      "event_identity": "Révolte des fils de Louis le Pieux en 830",
+      "is_disputed": false,
+      "ambiguous_identity": false,
+      "title_self_sufficient": true,
+      "title_not_self_sufficient": false,
+      "is_not_singular_event": false,
+      "is_time_span": false,
+      "is_period_based": false,
+      "exact_year_supported": true,
+      "reasoning_short": "La description de l'événement correspond à la révolte des fils de Louis le Pieux mentionnée dans l'article Wikipédia sur Louis le Pieux. L'année 830 est mentionnée dans la description détaillée de l'événement.",
+      "evidence_used": [
+        "wikipedia_fr_article"
+      ],
+      "sources_checked": [
+        {
+          "source_id": "wikipedia_fr_article",
+          "source_type": "wikipedia_fr",
+          "title": "Louis le Pieux",
+          "url": "https://fr.wikipedia.org/wiki/Louis_le_Pieux",
+          "date_iso": null,
+          "precision": null
+        },
+        {
+          "source_id": "wikidata_1",
+          "source_type": "wikidata",
+          "title": "Q43974",
+          "url": "https://www.wikidata.org/wiki/Q43974",
+          "date_iso": "0778-04-16",
+          "precision": "day"
+        },
+        {
+          "source_id": "wikidata_2",
+          "source_type": "wikidata",
+          "title": "Q43974",
+          "url": "https://www.wikidata.org/wiki/Q43974",
+          "date_iso": "0778-04-20",
+          "precision": "day"
+        },
+        {
+          "source_id": "wikidata_3",
+          "source_type": "wikidata",
+          "title": "Q43974",
+          "url": "https://www.wikidata.org/wiki/Q43974",
+          "date_iso": "0840-06-20",
+          "precision": "day"
+        },
+        {
+          "source_id": "wikidata_4",
+          "source_type": "wikidata",
+          "title": "Q43974",
+          "url": "https://www.wikidata.org/wiki/Q43974",
+          "date_iso": "0840-06-24",
+          "precision": "day"
+        }
+      ],
+      "source_quotes": [
+        {
+          "source_id": "wikipedia_fr_article",
+          "quote": "Louis Ier dit « le Pieux » ou « le Débonnaire », fils de Charlemagne et de Hildegarde de Vintzgau, né en 778 à Cassinogilum (localisation incertaine, soit Casseuil près de Bordeaux, Chasseneuil-du-Poitou dans la Vienne ou encore Casseneuil en Lot-et-Garonne) et mort le 20 juin 840 à Ingelheim, près de Mayence, est roi d'Aquitaine jusqu'en 814, puis empereur d'Occident de 813 à 833 (en association avec son père de 813 à 814, puis seul à partir de cette dernière date) et de nouveau de 835 à sa mort. Son règne est marqué par de nombreuses menaces sur l'unité de l'Empire carolingien : non seulement il dut faire face aux raids des Vikings, mais ses fils se révoltèrent contre lui en plusieurs occasions. Les ambitions des grandes familles aristocratiques se sont alors affirmées de plus en plus, menaçant le pouvoir impérial. Après sa mort en 840, l'Empire carolingien est partagé entre les royau…"
+        },
+        {
+          "source_id": "wikidata_1",
+          "quote": "date of birth: 0778-04-16"
+        },
+        {
+          "source_id": "wikidata_2",
+          "quote": "date of birth: 0778-04-20"
+        },
+        {
+          "source_id": "wikidata_3",
+          "quote": "date of death: 0840-06-20"
+        },
+        {
+          "source_id": "wikidata_4",
+          "quote": "date of death: 0840-06-24"
+        }
+      ],
+      "conflicts": []
+    },
+    {
+      "id": "1c33eef3-2514-41dc-8d6c-e5e2cf04f0ca",
+      "titre": "Promulgation de la Bulle d'Or",
+      "date_in_db": "1356-01-10",
+      "year_in_db": "1356",
+      "date_candidate": "1356-01-01",
+      "year_candidate": "1356",
+      "precision": "year",
+      "status": "LIKELY_CORRECT",
+      "result_bucket": "preuve_externe_faible",
+      "confidence": 0,
+      "needs_human_review": false,
+      "recommendation": "Rechercher des sources externes fiables (articles historiques, publications académiques) qui confirment l'année de promulgation de la Bulle d'Or.",
+      "matched_article_fr": null,
+      "matched_article_en": null,
+      "wikidata_id": "Q189867",
+      "event_identity": "Promulgation de la Bulle d'Or par Charles IV.",
+      "is_disputed": false,
+      "ambiguous_identity": false,
+      "title_self_sufficient": true,
+      "title_not_self_sufficient": false,
+      "is_not_singular_event": false,
+      "is_time_span": false,
+      "is_period_based": false,
+      "exact_year_supported": true,
+      "reasoning_short": "Aucune source externe ne confirme l'année exacte de la promulgation de la Bulle d'Or. La source Wikipedia parle des bulles pontificales en général, mais ne mentionne pas la Bulle d'Or ni sa date de promulgation.",
+      "evidence_used": [],
+      "sources_checked": [
+        {
+          "source_id": "wikipedia_fr_article",
+          "source_type": "wikipedia_fr",
+          "title": "Bulle pontificale",
+          "url": "https://fr.wikipedia.org/wiki/Bulle_pontificale",
+          "date_iso": null,
+          "precision": null
+        }
+      ],
+      "source_quotes": [
+        {
+          "source_id": "wikipedia_fr_article",
+          "quote": "Une bulle pontificale (ou « bulle papale » ou « bulle apostolique ») est un document scellé (du latin bulla, « sceau ») par lequel le pape pose un acte juridique important tel que l'indiction d'une année sainte, une nomination épiscopale, une définition dogmatique, la convocation d'un concile ou une canonisation. Le document relève habituellement du gouvernement pastoral de l'Église catholique, et s'adresse à l'ensemble des fidèles ou parfois aux païens. Il est ordinairement désigné par son incipit. Sa promulgation s'appelle une « fulmination ». Par son universalité, la bulle se distingue de la décrétale qui concerne en général l'administration ecclésiale et s'adresse surtout au clergé, une décrétale pouvant devenir une bulle lorsque son sujet prend de l'importance."
+        }
+      ],
+      "conflicts": []
+    },
+    {
+      "id": "6461651f-3ea0-49aa-a5c2-0c093a22fc04",
+      "titre": "Guerre du cochon (Canada)",
+      "date_in_db": "1859-01-01",
+      "year_in_db": "1859",
+      "date_candidate": "1859-01-01",
+      "year_candidate": "1859",
+      "precision": "year",
+      "status": "CONFIRMED",
+      "result_bucket": "confirme",
+      "confidence": 0.9,
+      "needs_human_review": false,
+      "recommendation": "Confirmer la date de 1859.",
+      "matched_article_fr": "https://fr.wikipedia.org/wiki/Guerre_du_cochon",
+      "matched_article_en": null,
+      "wikidata_id": "Q1064335",
+      "event_identity": "Guerre du Cochon",
+      "is_disputed": false,
+      "ambiguous_identity": false,
+      "title_self_sufficient": true,
+      "title_not_self_sufficient": false,
+      "is_not_singular_event": false,
+      "is_time_span": false,
+      "is_period_based": false,
+      "exact_year_supported": true,
+      "reasoning_short": "La Guerre du Cochon a eu lieu en 1859, selon Wikipedia et Wikidata.",
+      "evidence_used": [
+        "wikipedia_fr_article",
+        "wikidata_1",
+        "wikidata_2"
+      ],
+      "sources_checked": [
+        {
+          "source_id": "wikipedia_fr_article",
+          "source_type": "wikipedia_fr",
+          "title": "Guerre du cochon",
+          "url": "https://fr.wikipedia.org/wiki/Guerre_du_cochon",
+          "date_iso": null,
+          "precision": null
+        },
+        {
+          "source_id": "wikidata_1",
+          "source_type": "wikidata",
+          "title": "Q1064335",
+          "url": "https://www.wikidata.org/wiki/Q1064335",
+          "date_iso": "1859-01-01",
+          "precision": "year"
+        },
+        {
+          "source_id": "wikidata_2",
+          "source_type": "wikidata",
+          "title": "Q1064335",
+          "url": "https://www.wikidata.org/wiki/Q1064335",
+          "date_iso": "1859-06-15",
+          "precision": "day"
+        }
+      ],
+      "source_quotes": [
+        {
+          "source_id": "wikipedia_fr_article",
+          "quote": "La guerre du cochon (en anglais : Pig War) est un affrontement (escalade militaire) qui a lieu entre le 15 juin et octobre 1859, entre les États-Unis et l'Empire britannique sur la frontière entre ces deux entités en Amérique du Nord britannique, dans l'actuelle zone des îles San Juan. Le territoire en litige était cet archipel qui se situe entre l'île de Vancouver et le continent nord-américain. Finalement, un compromis est trouvé sur la base du souhait américain. La guerre du cochon est ainsi appelée parce qu'elle a été déclenchée par un coup de feu sur un cochon qui fut la seule victime de la « guerre »."
+        },
+        {
+          "source_id": "wikidata_1",
+          "quote": "point in time: 1859-01-01"
+        },
+        {
+          "source_id": "wikidata_2",
+          "quote": "start time: 1859-06-15"
+        }
+      ],
+      "conflicts": []
+    }
+  ]
+}

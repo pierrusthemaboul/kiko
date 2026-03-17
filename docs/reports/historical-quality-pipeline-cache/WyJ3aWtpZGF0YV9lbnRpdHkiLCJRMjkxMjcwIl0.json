@@ -1,0 +1,247 @@
+{
+  "pageid": 281581,
+  "ns": 0,
+  "title": "Q291270",
+  "lastrevid": 2260552137,
+  "modified": "2024-10-14T12:55:20Z",
+  "type": "item",
+  "id": "Q291270",
+  "labels": {
+    "en": {
+      "language": "en",
+      "value": "Symphonie"
+    },
+    "de": {
+      "language": "de",
+      "value": "Symphonie"
+    },
+    "fi": {
+      "language": "fi",
+      "value": "Symphonie"
+    },
+    "fr": {
+      "language": "fr",
+      "value": "Symphonie"
+    },
+    "nl": {
+      "language": "nl",
+      "value": "Symphonie"
+    },
+    "pt": {
+      "language": "pt",
+      "value": "Symphonie"
+    },
+    "ja": {
+      "language": "ja",
+      "value": "シンフォニー (人工衛星)"
+    },
+    "gl": {
+      "language": "gl",
+      "value": "Symphonie"
+    },
+    "zh": {
+      "language": "zh",
+      "value": "“交响乐”号卫星"
+    },
+    "zh-cn": {
+      "language": "zh-cn",
+      "value": "“交响乐”号卫星"
+    }
+  },
+  "descriptions": {
+    "en": {
+      "language": "en",
+      "value": "first communications satellites built by France and Germany"
+    },
+    "de": {
+      "language": "de",
+      "value": "Kommunikationssatellit"
+    },
+    "fr": {
+      "language": "fr",
+      "value": "satellite de télécommunication"
+    }
+  },
+  "aliases": {},
+  "claims": {
+    "P646": [
+      {
+        "mainsnak": {
+          "snaktype": "value",
+          "property": "P646",
+          "hash": "2155c862b2051219e8824bf179a42ee1a33da6ab",
+          "datavalue": {
+            "value": "/m/02rvgmb",
+            "type": "string"
+          },
+          "datatype": "external-id"
+        },
+        "type": "statement",
+        "id": "Q291270$B1D52759-8BA5-457A-888C-8BE0DE3C1B9B",
+        "rank": "normal",
+        "references": [
+          {
+            "hash": "2b00cb481cddcac7623114367489b5c194901c4a",
+            "snaks": {
+              "P248": [
+                {
+                  "snaktype": "value",
+                  "property": "P248",
+                  "hash": "a94b740202b097dd33355e0e6c00e54b9395e5e0",
+                  "datavalue": {
+                    "value": {
+                      "entity-type": "item",
+                      "numeric-id": 15241312,
+                      "id": "Q15241312"
+                    },
+                    "type": "wikibase-entityid"
+                  },
+                  "datatype": "wikibase-item"
+                }
+              ],
+              "P577": [
+                {
+                  "snaktype": "value",
+                  "property": "P577",
+                  "hash": "fde79ecb015112d2f29229ccc1ec514ed3e71fa2",
+                  "datavalue": {
+                    "value": {
+                      "time": "+2013-10-28T00:00:00Z",
+                      "timezone": 0,
+                      "before": 0,
+                      "after": 0,
+                      "precision": 11,
+                      "calendarmodel": "http://www.wikidata.org/entity/Q1985727"
+                    },
+                    "type": "time"
+                  },
+                  "datatype": "time"
+                }
+              ]
+            },
+            "snaks-order": [
+              "P248",
+              "P577"
+            ]
+          }
+        ]
+      }
+    ],
+    "P373": [
+      {
+        "mainsnak": {
+          "snaktype": "value",
+          "property": "P373",
+          "hash": "e189c41324db069d6f04a622fb29a79c82fa9dc7",
+          "datavalue": {
+            "value": "Symphonie (satellite)",
+            "type": "string"
+          },
+          "datatype": "string"
+        },
+        "type": "statement",
+        "id": "Q291270$4e4f7d23-41ac-932c-97a6-85d213b9671b",
+        "rank": "normal"
+      }
+    ],
+    "P18": [
+      {
+        "mainsnak": {
+          "snaktype": "value",
+          "property": "P18",
+          "hash": "80334c59a626df32822ff0d1f929ea67f2d6f40a",
+          "datavalue": {
+            "value": "Symphonie2.jpg",
+            "type": "string"
+          },
+          "datatype": "commonsMedia"
+        },
+        "type": "statement",
+        "id": "Q291270$97b56a61-4a7a-a6c2-2e8e-c2ad4cfccee8",
+        "rank": "normal"
+      }
+    ],
+    "P279": [
+      {
+        "mainsnak": {
+          "snaktype": "value",
+          "property": "P279",
+          "hash": "adee97c6ec5474929c5babf3d3a4620143025bb0",
+          "datavalue": {
+            "value": {
+              "entity-type": "item",
+              "numeric-id": 149918,
+              "id": "Q149918"
+            },
+            "type": "wikibase-entityid"
+          },
+          "datatype": "wikibase-item"
+        },
+        "type": "statement",
+        "id": "Q291270$1bbef934-4918-9d84-9cfe-639d95af6157",
+        "rank": "normal"
+      }
+    ],
+    "P10565": [
+      {
+        "mainsnak": {
+          "snaktype": "value",
+          "property": "P10565",
+          "hash": "ab781007f807ecf7bc45867301fc6c05e9e940a9",
+          "datavalue": {
+            "value": "402344",
+            "type": "string"
+          },
+          "datatype": "external-id"
+        },
+        "type": "statement",
+        "id": "Q291270$41FE7E05-6DC5-471B-9891-079D8B8E131D",
+        "rank": "normal"
+      }
+    ]
+  },
+  "sitelinks": {
+    "commonswiki": {
+      "site": "commonswiki",
+      "title": "Category:Symphonie (satellite)",
+      "badges": [],
+      "url": "https://commons.wikimedia.org/wiki/Category:Symphonie_(satellite)"
+    },
+    "dewiki": {
+      "site": "dewiki",
+      "title": "Symphonie (Satellit)",
+      "badges": [],
+      "url": "https://de.wikipedia.org/wiki/Symphonie_(Satellit)"
+    },
+    "enwiki": {
+      "site": "enwiki",
+      "title": "Symphonie",
+      "badges": [],
+      "url": "https://en.wikipedia.org/wiki/Symphonie"
+    },
+    "fiwiki": {
+      "site": "fiwiki",
+      "title": "Symphonie",
+      "badges": [],
+      "url": "https://fi.wikipedia.org/wiki/Symphonie"
+    },
+    "frwiki": {
+      "site": "frwiki",
+      "title": "Symphonie (satellite)",
+      "badges": [],
+      "url": "https://fr.wikipedia.org/wiki/Symphonie_(satellite)"
+    },
+    "glwiki": {
+      "site": "glwiki",
+      "title": "Symphonie",
+      "badges": [],
+      "url": "https://gl.wikipedia.org/wiki/Symphonie"
+    },
+    "ptwiki": {
+      "site": "ptwiki",
+      "title": "Symphonie",
+      "badges": [],
+      "url": "https://pt.wikipedia.org/wiki/Symphonie"
+    }
+  }
+}

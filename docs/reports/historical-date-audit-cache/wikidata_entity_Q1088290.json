@@ -1,0 +1,370 @@
+{
+  "saved_at": "2026-03-07T15:12:49.502Z",
+  "value": {
+    "pageid": 1036202,
+    "ns": 0,
+    "title": "Q1088290",
+    "lastrevid": 1987885547,
+    "modified": "2023-10-07T12:42:51Z",
+    "type": "item",
+    "id": "Q1088290",
+    "labels": {
+      "fr": {
+        "language": "fr",
+        "value": "Loi-cadre Defferre"
+      },
+      "en": {
+        "language": "en",
+        "value": "Loi Cadre"
+      },
+      "ca": {
+        "language": "ca",
+        "value": "Llei-marc Defferre"
+      },
+      "it": {
+        "language": "it",
+        "value": "Legge quadro Defferre"
+      },
+      "de": {
+        "language": "de",
+        "value": "Loi-cadre Defferre"
+      },
+      "nl": {
+        "language": "nl",
+        "value": "Loi Cadre"
+      },
+      "zh-hant": {
+        "language": "zh-hant",
+        "value": "海外領地根本法"
+      },
+      "zh-cn": {
+        "language": "zh-cn",
+        "value": "海外领地根本法"
+      },
+      "he": {
+        "language": "he",
+        "value": "לואי קרדה"
+      },
+      "pt": {
+        "language": "pt",
+        "value": "Lei-cadre Defferre"
+      },
+      "zh-hans": {
+        "language": "zh-hans",
+        "value": "海外领地根本法"
+      },
+      "zh": {
+        "language": "zh",
+        "value": "海外领地根本法"
+      },
+      "ar": {
+        "language": "ar",
+        "value": "قانون ديفير الإطاري"
+      },
+      "mg": {
+        "language": "mg",
+        "value": "Loi Cadre"
+      }
+    },
+    "descriptions": {
+      "en": {
+        "language": "en",
+        "value": "1956 French legal reform of its colonies' governments"
+      },
+      "ast": {
+        "language": "ast",
+        "value": "llei francesa"
+      },
+      "fr": {
+        "language": "fr",
+        "value": "Loi de 1956 portant réforme de l'administration coloniale en France"
+      }
+    },
+    "aliases": {
+      "fr": [
+        {
+          "language": "fr",
+          "value": "Loi-cadre Deferre"
+        },
+        {
+          "language": "fr",
+          "value": "Loi cadre Defferre"
+        }
+      ]
+    },
+    "claims": {
+      "P646": [
+        {
+          "mainsnak": {
+            "snaktype": "value",
+            "property": "P646",
+            "hash": "63e976cef2b3d58c9819bfda88f50339acd453aa",
+            "datavalue": {
+              "value": "/m/02rg83y",
+              "type": "string"
+            },
+            "datatype": "external-id"
+          },
+          "type": "statement",
+          "id": "Q1088290$7160B71D-D79A-49AF-8F02-EC22B9E0664F",
+          "rank": "normal",
+          "references": [
+            {
+              "hash": "2b00cb481cddcac7623114367489b5c194901c4a",
+              "snaks": {
+                "P248": [
+                  {
+                    "snaktype": "value",
+                    "property": "P248",
+                    "hash": "a94b740202b097dd33355e0e6c00e54b9395e5e0",
+                    "datavalue": {
+                      "value": {
+                        "entity-type": "item",
+                        "numeric-id": 15241312,
+                        "id": "Q15241312"
+                      },
+                      "type": "wikibase-entityid"
+                    },
+                    "datatype": "wikibase-item"
+                  }
+                ],
+                "P577": [
+                  {
+                    "snaktype": "value",
+                    "property": "P577",
+                    "hash": "fde79ecb015112d2f29229ccc1ec514ed3e71fa2",
+                    "datavalue": {
+                      "value": {
+                        "time": "+2013-10-28T00:00:00Z",
+                        "timezone": 0,
+                        "before": 0,
+                        "after": 0,
+                        "precision": 11,
+                        "calendarmodel": "http://www.wikidata.org/entity/Q1985727"
+                      },
+                      "type": "time"
+                    },
+                    "datatype": "time"
+                  }
+                ]
+              },
+              "snaks-order": [
+                "P248",
+                "P577"
+              ]
+            }
+          ]
+        }
+      ],
+      "P31": [
+        {
+          "mainsnak": {
+            "snaktype": "value",
+            "property": "P31",
+            "hash": "26feacaf586ee8762b1a5523fb6432ebd6ffe651",
+            "datavalue": {
+              "value": {
+                "entity-type": "item",
+                "numeric-id": 13408009,
+                "id": "Q13408009"
+              },
+              "type": "wikibase-entityid"
+            },
+            "datatype": "wikibase-item"
+          },
+          "type": "statement",
+          "id": "Q1088290$1B6967BB-0F6D-481F-9214-C37203B6E063",
+          "rank": "normal"
+        }
+      ],
+      "P953": [
+        {
+          "mainsnak": {
+            "snaktype": "value",
+            "property": "P953",
+            "hash": "a07fb51d451e94e4d186b797f5403f13e7a82a8e",
+            "datavalue": {
+              "value": "http://www.legifrance.gouv.fr/affichTexte.do?cidTexte=JORFTEXT000000692222",
+              "type": "string"
+            },
+            "datatype": "url"
+          },
+          "type": "statement",
+          "id": "Q1088290$CFC34055-4476-40A6-BB7E-5399ABA014F0",
+          "rank": "normal",
+          "references": [
+            {
+              "hash": "d4bd87b862b12d99d26e86472d44f26858dee639",
+              "snaks": {
+                "P143": [
+                  {
+                    "snaktype": "value",
+                    "property": "P143",
+                    "hash": "f30cbd35620c4ea6d0633aaf0210a8916130469b",
+                    "datavalue": {
+                      "value": {
+                        "entity-type": "item",
+                        "numeric-id": 8447,
+                        "id": "Q8447"
+                      },
+                      "type": "wikibase-entityid"
+                    },
+                    "datatype": "wikibase-item"
+                  }
+                ]
+              },
+              "snaks-order": [
+                "P143"
+              ]
+            }
+          ]
+        }
+      ],
+      "P1417": [
+        {
+          "mainsnak": {
+            "snaktype": "value",
+            "property": "P1417",
+            "hash": "85039f0508d4ab5379386333ee1c3abc50f83145",
+            "datavalue": {
+              "value": "topic/loi-cadre",
+              "type": "string"
+            },
+            "datatype": "external-id"
+          },
+          "type": "statement",
+          "qualifiers": {
+            "P1810": [
+              {
+                "snaktype": "value",
+                "property": "P1810",
+                "hash": "5237b40907f69ce23eed639c31443699c047ecdf",
+                "datavalue": {
+                  "value": "loi cadre",
+                  "type": "string"
+                },
+                "datatype": "string"
+              }
+            ]
+          },
+          "qualifiers-order": [
+            "P1810"
+          ],
+          "id": "Q1088290$7493BCF5-C588-4728-BF4C-19BCD11A7C8F",
+          "rank": "normal"
+        }
+      ],
+      "P138": [
+        {
+          "mainsnak": {
+            "snaktype": "value",
+            "property": "P138",
+            "hash": "eb4d8a46f86a6ac2b477989074be4aea301d0c32",
+            "datavalue": {
+              "value": {
+                "entity-type": "item",
+                "numeric-id": 608815,
+                "id": "Q608815"
+              },
+              "type": "wikibase-entityid"
+            },
+            "datatype": "wikibase-item"
+          },
+          "type": "statement",
+          "id": "Q1088290$96073b39-42b7-8788-6163-bee715df937a",
+          "rank": "normal"
+        }
+      ],
+      "P921": [
+        {
+          "mainsnak": {
+            "snaktype": "value",
+            "property": "P921",
+            "hash": "5d4a109f20af76f39522ee63544ba1e15ce3dd22",
+            "datavalue": {
+              "value": {
+                "entity-type": "item",
+                "numeric-id": 179023,
+                "id": "Q179023"
+              },
+              "type": "wikibase-entityid"
+            },
+            "datatype": "wikibase-item"
+          },
+          "type": "statement",
+          "id": "Q1088290$a9b0e886-48c5-d6bd-6c3b-4eb28804f072",
+          "rank": "normal"
+        },
+        {
+          "mainsnak": {
+            "snaktype": "value",
+            "property": "P921",
+            "hash": "d1a731908dfe410bedaf847726e1f97b0696cbe2",
+            "datavalue": {
+              "value": {
+                "entity-type": "item",
+                "numeric-id": 6501447,
+                "id": "Q6501447"
+              },
+              "type": "wikibase-entityid"
+            },
+            "datatype": "wikibase-item"
+          },
+          "type": "statement",
+          "id": "Q1088290$62d129bb-496a-cb13-4f5f-fa23e426d780",
+          "rank": "normal"
+        }
+      ]
+    },
+    "sitelinks": {
+      "arwiki": {
+        "site": "arwiki",
+        "title": "قانون ديفير الإطاري",
+        "badges": [],
+        "url": "https://ar.wikipedia.org/wiki/%D9%82%D8%A7%D9%86%D9%88%D9%86_%D8%AF%D9%8A%D9%81%D9%8A%D8%B1_%D8%A7%D9%84%D8%A5%D8%B7%D8%A7%D8%B1%D9%8A"
+      },
+      "cawiki": {
+        "site": "cawiki",
+        "title": "Llei-marc Defferre",
+        "badges": [],
+        "url": "https://ca.wikipedia.org/wiki/Llei-marc_Defferre"
+      },
+      "dewiki": {
+        "site": "dewiki",
+        "title": "Loi-cadre Defferre",
+        "badges": [],
+        "url": "https://de.wikipedia.org/wiki/Loi-cadre_Defferre"
+      },
+      "enwiki": {
+        "site": "enwiki",
+        "title": "Loi-cadre Defferre",
+        "badges": [],
+        "url": "https://en.wikipedia.org/wiki/Loi-cadre_Defferre"
+      },
+      "frwiki": {
+        "site": "frwiki",
+        "title": "Loi-cadre Defferre",
+        "badges": [],
+        "url": "https://fr.wikipedia.org/wiki/Loi-cadre_Defferre"
+      },
+      "itwiki": {
+        "site": "itwiki",
+        "title": "Legge quadro Defferre",
+        "badges": [],
+        "url": "https://it.wikipedia.org/wiki/Legge_quadro_Defferre"
+      },
+      "mgwiki": {
+        "site": "mgwiki",
+        "title": "Loi-cadre Defferre",
+        "badges": [],
+        "url": "https://mg.wikipedia.org/wiki/Loi-cadre_Defferre"
+      },
+      "zhwiki": {
+        "site": "zhwiki",
+        "title": "海外領地根本法",
+        "badges": [],
+        "url": "https://zh.wikipedia.org/wiki/%E6%B5%B7%E5%A4%96%E9%A0%98%E5%9C%B0%E6%A0%B9%E6%9C%AC%E6%B3%95"
+      }
+    }
+  }
+}

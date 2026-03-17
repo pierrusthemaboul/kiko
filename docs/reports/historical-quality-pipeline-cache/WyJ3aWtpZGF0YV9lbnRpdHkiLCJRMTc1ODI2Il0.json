@@ -1,0 +1,345 @@
+{
+  "pageid": 175588,
+  "ns": 0,
+  "title": "Q175826",
+  "lastrevid": 2346324963,
+  "modified": "2025-05-09T02:40:38Z",
+  "type": "item",
+  "id": "Q175826",
+  "labels": {
+    "de": {
+      "language": "de",
+      "value": "Geschichte des Tabakkonsums"
+    },
+    "en": {
+      "language": "en",
+      "value": "history of tobacco"
+    },
+    "fr": {
+      "language": "fr",
+      "value": "histoire du tabac"
+    },
+    "hi": {
+      "language": "hi",
+      "value": "tambacco"
+    },
+    "uk": {
+      "language": "uk",
+      "value": "історія тютюну"
+    },
+    "es": {
+      "language": "es",
+      "value": "historia del tabaco"
+    },
+    "it": {
+      "language": "it",
+      "value": "storia del tabacco"
+    },
+    "ta": {
+      "language": "ta",
+      "value": "புகையிலையின் வரலாறு"
+    },
+    "ar": {
+      "language": "ar",
+      "value": "تاريخ زراعة التبغ"
+    },
+    "eo": {
+      "language": "eo",
+      "value": "historio de tabako"
+    },
+    "fi": {
+      "language": "fi",
+      "value": "Tupakan historia"
+    },
+    "tr": {
+      "language": "tr",
+      "value": "tütüncülük tarihi"
+    }
+  },
+  "descriptions": {
+    "de": {
+      "language": "de",
+      "value": "Wikimedia-Geschichts-Artikel"
+    },
+    "en": {
+      "language": "en",
+      "value": "aspect of history"
+    },
+    "bn": {
+      "language": "bn",
+      "value": "ইতিহাসের বিভিন্ন দিক"
+    },
+    "uk": {
+      "language": "uk",
+      "value": "аспект історії"
+    },
+    "fr": {
+      "language": "fr",
+      "value": "aspect de l'histoire relatant la culture du tabac"
+    }
+  },
+  "aliases": {
+    "fr": [
+      {
+        "language": "fr",
+        "value": "Histoire de la culture du tabac"
+      }
+    ],
+    "en": [
+      {
+        "language": "en",
+        "value": "tobacco history"
+      }
+    ]
+  },
+  "claims": {
+    "P910": [
+      {
+        "mainsnak": {
+          "snaktype": "value",
+          "property": "P910",
+          "hash": "c5c1fc5ca6d9bb661bfcf4cfc8737c9b8e2afcbd",
+          "datavalue": {
+            "value": {
+              "entity-type": "item",
+              "numeric-id": 8520312,
+              "id": "Q8520312"
+            },
+            "type": "wikibase-entityid"
+          },
+          "datatype": "wikibase-item"
+        },
+        "type": "statement",
+        "id": "Q175826$FF529F69-B118-4F95-86F3-80AD372D5B54",
+        "rank": "normal"
+      }
+    ],
+    "P31": [
+      {
+        "mainsnak": {
+          "snaktype": "value",
+          "property": "P31",
+          "hash": "7ad5c7929af39fc2ff8afed55f1192f80e71d936",
+          "datavalue": {
+            "value": {
+              "entity-type": "item",
+              "numeric-id": 17524420,
+              "id": "Q17524420"
+            },
+            "type": "wikibase-entityid"
+          },
+          "datatype": "wikibase-item"
+        },
+        "type": "statement",
+        "id": "Q175826$56492ACA-0D46-45DB-96D6-58BA2557CA8E",
+        "rank": "normal"
+      }
+    ],
+    "P373": [
+      {
+        "mainsnak": {
+          "snaktype": "value",
+          "property": "P373",
+          "hash": "f0011aa81af5f2bc99318825ecc5c5fe7c00fab9",
+          "datavalue": {
+            "value": "History of tobacco",
+            "type": "string"
+          },
+          "datatype": "string"
+        },
+        "type": "statement",
+        "id": "Q175826$F14D72F4-B12D-4286-A365-CF9B654E940F",
+        "rank": "normal",
+        "references": [
+          {
+            "hash": "fa278ebfc458360e5aed63d5058cca83c46134f1",
+            "snaks": {
+              "P143": [
+                {
+                  "snaktype": "value",
+                  "property": "P143",
+                  "hash": "e4f6d9441d0600513c4533c672b5ab472dc73694",
+                  "datavalue": {
+                    "value": {
+                      "entity-type": "item",
+                      "numeric-id": 328,
+                      "id": "Q328"
+                    },
+                    "type": "wikibase-entityid"
+                  },
+                  "datatype": "wikibase-item"
+                }
+              ]
+            },
+            "snaks-order": [
+              "P143"
+            ]
+          }
+        ]
+      }
+    ],
+    "P3417": [
+      {
+        "mainsnak": {
+          "snaktype": "value",
+          "property": "P3417",
+          "hash": "53f31945e6e69cbe5e4028cb0d4c5f4f21c51239",
+          "datavalue": {
+            "value": "History-of-Tobacco",
+            "type": "string"
+          },
+          "datatype": "external-id"
+        },
+        "type": "statement",
+        "id": "Q175826$01685600-0B6A-4FDB-BE81-0C06533F163D",
+        "rank": "normal",
+        "references": [
+          {
+            "hash": "3b0a5bb3c1f955edce73740124f7d935698092ad",
+            "snaks": {
+              "P248": [
+                {
+                  "snaktype": "value",
+                  "property": "P248",
+                  "hash": "3ac9682e789a3a3791d4fd088b265ea03abef101",
+                  "datavalue": {
+                    "value": {
+                      "entity-type": "item",
+                      "numeric-id": 51711,
+                      "id": "Q51711"
+                    },
+                    "type": "wikibase-entityid"
+                  },
+                  "datatype": "wikibase-item"
+                }
+              ]
+            },
+            "snaks-order": [
+              "P248"
+            ]
+          }
+        ]
+      }
+    ],
+    "P4644": [
+      {
+        "mainsnak": {
+          "snaktype": "value",
+          "property": "P4644",
+          "hash": "8fae585cb60aa762b8fc39cac9e2e9133407c183",
+          "datavalue": {
+            "value": "038a6d0f-787f-4f71-aac6-bd54e16c57cf",
+            "type": "string"
+          },
+          "datatype": "external-id"
+        },
+        "type": "statement",
+        "id": "Q175826$BDF23735-1E23-424A-AE5B-898011F87AC6",
+        "rank": "normal"
+      }
+    ],
+    "P279": [
+      {
+        "mainsnak": {
+          "snaktype": "value",
+          "property": "P279",
+          "hash": "f5f2a88a7bf39829cf74699ceeb0006b42f10317",
+          "datavalue": {
+            "value": {
+              "entity-type": "item",
+              "numeric-id": 952080,
+              "id": "Q952080"
+            },
+            "type": "wikibase-entityid"
+          },
+          "datatype": "wikibase-item"
+        },
+        "type": "statement",
+        "id": "Q175826$38d3cba7-4806-4894-7a20-6c32d3eb186d",
+        "rank": "normal"
+      }
+    ],
+    "P1269": [
+      {
+        "mainsnak": {
+          "snaktype": "value",
+          "property": "P1269",
+          "hash": "61f4cfa44eb3ad54d9659e1a3f372f36d9a2045e",
+          "datavalue": {
+            "value": {
+              "entity-type": "item",
+              "numeric-id": 1566,
+              "id": "Q1566"
+            },
+            "type": "wikibase-entityid"
+          },
+          "datatype": "wikibase-item"
+        },
+        "type": "statement",
+        "id": "Q175826$78a88a6f-4a76-9eb3-2fad-dca882530230",
+        "rank": "normal"
+      }
+    ],
+    "P11143": [
+      {
+        "mainsnak": {
+          "snaktype": "value",
+          "property": "P11143",
+          "hash": "95b80e4a22c466c3ceae05334a999c21caa4877a",
+          "datavalue": {
+            "value": "History of tobacco",
+            "type": "string"
+          },
+          "datatype": "external-id"
+        },
+        "type": "statement",
+        "id": "Q175826$48B54D72-51CF-426C-AF83-50B7AD59A9B3",
+        "rank": "normal"
+      }
+    ]
+  },
+  "sitelinks": {
+    "dewiki": {
+      "site": "dewiki",
+      "title": "Geschichte des Tabakkonsums",
+      "badges": [],
+      "url": "https://de.wikipedia.org/wiki/Geschichte_des_Tabakkonsums"
+    },
+    "enwiki": {
+      "site": "enwiki",
+      "title": "History of tobacco",
+      "badges": [],
+      "url": "https://en.wikipedia.org/wiki/History_of_tobacco"
+    },
+    "eswiki": {
+      "site": "eswiki",
+      "title": "Historia del tabaco",
+      "badges": [],
+      "url": "https://es.wikipedia.org/wiki/Historia_del_tabaco"
+    },
+    "fiwiki": {
+      "site": "fiwiki",
+      "title": "Tupakan historia",
+      "badges": [],
+      "url": "https://fi.wikipedia.org/wiki/Tupakan_historia"
+    },
+    "frwiki": {
+      "site": "frwiki",
+      "title": "Histoire de la culture du tabac",
+      "badges": [],
+      "url": "https://fr.wikipedia.org/wiki/Histoire_de_la_culture_du_tabac"
+    },
+    "itwiki": {
+      "site": "itwiki",
+      "title": "Storia del tabacco",
+      "badges": [],
+      "url": "https://it.wikipedia.org/wiki/Storia_del_tabacco"
+    },
+    "ukwiki": {
+      "site": "ukwiki",
+      "title": "Історія тютюну",
+      "badges": [],
+      "url": "https://uk.wikipedia.org/wiki/%D0%86%D1%81%D1%82%D0%BE%D1%80%D1%96%D1%8F_%D1%82%D1%8E%D1%82%D1%8E%D0%BD%D1%83"
+    }
+  }
+}

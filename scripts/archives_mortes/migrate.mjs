@@ -297,3 +297,4 @@ main().catch(error => {
     console.error("\n\n💥 Erreur critique:", error);
     rl.close();
 });
+

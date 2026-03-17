@@ -1,0 +1,365 @@
+{
+  "pageid": 21776204,
+  "ns": 0,
+  "title": "Q20104492",
+  "lastrevid": 2462900380,
+  "modified": "2026-02-12T17:57:40Z",
+  "type": "item",
+  "id": "Q20104492",
+  "labels": {
+    "ca": {
+      "language": "ca",
+      "value": "Orde de Fontevrault"
+    },
+    "fr": {
+      "language": "fr",
+      "value": "ordre de Fontevraud"
+    },
+    "es": {
+      "language": "es",
+      "value": "Orden de Fontevrault"
+    },
+    "en": {
+      "language": "en",
+      "value": "Order of Fontevrault"
+    },
+    "la": {
+      "language": "la",
+      "value": "Ordo Fontis Ebraldi"
+    }
+  },
+  "descriptions": {
+    "fr": {
+      "language": "fr",
+      "value": "ordre religieux"
+    },
+    "en": {
+      "language": "en",
+      "value": "religious order"
+    }
+  },
+  "aliases": {
+    "la": [
+      {
+        "language": "la",
+        "value": "OFE"
+      }
+    ],
+    "en": [
+      {
+        "language": "en",
+        "value": "Order of Fontevraud"
+      },
+      {
+        "language": "en",
+        "value": "OFE"
+      }
+    ],
+    "fr": [
+      {
+        "language": "fr",
+        "value": "ordre de Fontevrault"
+      }
+    ]
+  },
+  "claims": {
+    "P31": [
+      {
+        "mainsnak": {
+          "snaktype": "value",
+          "property": "P31",
+          "hash": "d6f8e6e5568b66d1d3fdacc1df59b7899c22681d",
+          "datavalue": {
+            "value": {
+              "entity-type": "item",
+              "numeric-id": 2061186,
+              "id": "Q2061186"
+            },
+            "type": "wikibase-entityid"
+          },
+          "datatype": "wikibase-item"
+        },
+        "type": "statement",
+        "id": "Q20104492$ad4b3ff6-4b72-aa19-3339-5dfb1adc0fc8",
+        "rank": "normal"
+      }
+    ],
+    "P214": [
+      {
+        "mainsnak": {
+          "snaktype": "value",
+          "property": "P214",
+          "hash": "271a4cb11826c308cdb9869ff390323adc3352d9",
+          "datavalue": {
+            "value": "138457799",
+            "type": "string"
+          },
+          "datatype": "external-id"
+        },
+        "type": "statement",
+        "id": "Q20104492$3247D98E-5534-4CB9-91B7-666330B7463D",
+        "rank": "normal"
+      }
+    ],
+    "P268": [
+      {
+        "mainsnak": {
+          "snaktype": "value",
+          "property": "P268",
+          "hash": "05dabee3ff24c5af21bfb4ff890aae39b9bcaf41",
+          "datavalue": {
+            "value": "13573818w",
+            "type": "string"
+          },
+          "datatype": "external-id"
+        },
+        "type": "statement",
+        "id": "Q20104492$334ce800-48dc-c269-b6de-108d6f4008c7",
+        "rank": "normal"
+      }
+    ],
+    "P2671": [
+      {
+        "mainsnak": {
+          "snaktype": "value",
+          "property": "P2671",
+          "hash": "017c25af682f58eae6a9f38e8010f739dacf524b",
+          "datavalue": {
+            "value": "/g/122t108p",
+            "type": "string"
+          },
+          "datatype": "external-id"
+        },
+        "type": "statement",
+        "id": "Q20104492$715B2974-2E67-4B50-9855-73A728383E98",
+        "rank": "normal"
+      }
+    ],
+    "P10864": [
+      {
+        "mainsnak": {
+          "snaktype": "value",
+          "property": "P10864",
+          "hash": "87ca6ff8bb7b7baad65cc54db6c528eab91a7b24",
+          "datavalue": {
+            "value": "38076",
+            "type": "string"
+          },
+          "datatype": "external-id"
+        },
+        "type": "statement",
+        "id": "Q20104492$CB469F4B-38B1-4487-8284-B8C412A5F2C1",
+        "rank": "normal"
+      }
+    ],
+    "P269": [
+      {
+        "mainsnak": {
+          "snaktype": "value",
+          "property": "P269",
+          "hash": "15eb8d25463790fe7a8d88021b6c8f52d2db4647",
+          "datavalue": {
+            "value": "052671844",
+            "type": "string"
+          },
+          "datatype": "external-id"
+        },
+        "type": "statement",
+        "id": "Q20104492$0E7A9CBC-5425-4089-AF95-087D2B6EED34",
+        "rank": "normal",
+        "references": [
+          {
+            "hash": "1947a6a51ffda6d4c39190b3645bac8a5bd97004",
+            "snaks": {
+              "P248": [
+                {
+                  "snaktype": "value",
+                  "property": "P248",
+                  "hash": "6b7d4330c4aac4caec4ede9de0311ce273f88ecd",
+                  "datavalue": {
+                    "value": {
+                      "entity-type": "item",
+                      "numeric-id": 54919,
+                      "id": "Q54919"
+                    },
+                    "type": "wikibase-entityid"
+                  },
+                  "datatype": "wikibase-item"
+                }
+              ],
+              "P813": [
+                {
+                  "snaktype": "value",
+                  "property": "P813",
+                  "hash": "9c07da73b84889803ebd6601ba04b4579c39577d",
+                  "datavalue": {
+                    "value": {
+                      "time": "+2022-07-06T00:00:00Z",
+                      "timezone": 0,
+                      "before": 0,
+                      "after": 0,
+                      "precision": 11,
+                      "calendarmodel": "http://www.wikidata.org/entity/Q1985727"
+                    },
+                    "type": "time"
+                  },
+                  "datatype": "time"
+                }
+              ],
+              "P214": [
+                {
+                  "snaktype": "value",
+                  "property": "P214",
+                  "hash": "271a4cb11826c308cdb9869ff390323adc3352d9",
+                  "datavalue": {
+                    "value": "138457799",
+                    "type": "string"
+                  },
+                  "datatype": "external-id"
+                }
+              ]
+            },
+            "snaks-order": [
+              "P248",
+              "P813",
+              "P214"
+            ]
+          }
+        ]
+      }
+    ],
+    "P9943": [
+      {
+        "mainsnak": {
+          "snaktype": "value",
+          "property": "P9943",
+          "hash": "85012e3bd33b7a1b85bb31e6a6d60104dfd03230",
+          "datavalue": {
+            "value": "organization/288759677231",
+            "type": "string"
+          },
+          "datatype": "external-id"
+        },
+        "type": "statement",
+        "id": "Q20104492$6B5970DE-B5B2-4137-ACDE-17E970E0800F",
+        "rank": "normal",
+        "references": [
+          {
+            "hash": "bcd583d9eb8a31aca77df9be9b452c3eadddb3de",
+            "snaks": {
+              "P248": [
+                {
+                  "snaktype": "value",
+                  "property": "P248",
+                  "hash": "f98f2377ab32ebb5ee142ac24dbf49427ad1bee9",
+                  "datavalue": {
+                    "value": {
+                      "entity-type": "item",
+                      "numeric-id": 108895273,
+                      "id": "Q108895273"
+                    },
+                    "type": "wikibase-entityid"
+                  },
+                  "datatype": "wikibase-item"
+                }
+              ]
+            },
+            "snaks-order": [
+              "P248"
+            ]
+          }
+        ]
+      }
+    ],
+    "P8189": [
+      {
+        "mainsnak": {
+          "snaktype": "value",
+          "property": "P8189",
+          "hash": "7b27c9f5bfe15fcbf58bf40772fa1a438871a60f",
+          "datavalue": {
+            "value": "987007604739905171",
+            "type": "string"
+          },
+          "datatype": "external-id"
+        },
+        "type": "statement",
+        "id": "Q20104492$AADDA2E8-99E4-4BAB-8EE5-1E0F71EA05B9",
+        "rank": "normal",
+        "references": [
+          {
+            "hash": "ecb7a39cf436eb1fba419853af168ef9f2ba1dab",
+            "snaks": {
+              "P248": [
+                {
+                  "snaktype": "value",
+                  "property": "P248",
+                  "hash": "a03bb6ffe37be9554492f4eea5bd18afcb57df19",
+                  "datavalue": {
+                    "value": {
+                      "entity-type": "item",
+                      "numeric-id": 106509962,
+                      "id": "Q106509962"
+                    },
+                    "type": "wikibase-entityid"
+                  },
+                  "datatype": "wikibase-item"
+                }
+              ]
+            },
+            "snaks-order": [
+              "P248"
+            ]
+          }
+        ]
+      }
+    ],
+    "P112": [
+      {
+        "mainsnak": {
+          "snaktype": "value",
+          "property": "P112",
+          "hash": "5f87eacbaec78ebe3ec07b1b990f610bf7a304ac",
+          "datavalue": {
+            "value": {
+              "entity-type": "item",
+              "numeric-id": 1346861,
+              "id": "Q1346861"
+            },
+            "type": "wikibase-entityid"
+          },
+          "datatype": "wikibase-item"
+        },
+        "type": "statement",
+        "id": "Q20104492$B5CE44FB-E181-4AAC-A474-AF704E0877AF",
+        "rank": "normal"
+      }
+    ]
+  },
+  "sitelinks": {
+    "cawiki": {
+      "site": "cawiki",
+      "title": "Orde de Fontevrault",
+      "badges": [],
+      "url": "https://ca.wikipedia.org/wiki/Orde_de_Fontevrault"
+    },
+    "enwiki": {
+      "site": "enwiki",
+      "title": "Order of Fontevraud",
+      "badges": [],
+      "url": "https://en.wikipedia.org/wiki/Order_of_Fontevraud"
+    },
+    "eswiki": {
+      "site": "eswiki",
+      "title": "Orden de Fontevrault",
+      "badges": [],
+      "url": "https://es.wikipedia.org/wiki/Orden_de_Fontevrault"
+    },
+    "frwiki": {
+      "site": "frwiki",
+      "title": "Ordre de Fontevraud",
+      "badges": [],
+      "url": "https://fr.wikipedia.org/wiki/Ordre_de_Fontevraud"
+    }
+  }
+}

@@ -1,0 +1,1415 @@
+{
+  "saved_at": "2026-03-07T16:28:09.376Z",
+  "value": {
+    "pageid": 3004660,
+    "ns": 0,
+    "title": "Q3145134",
+    "lastrevid": 2420093034,
+    "modified": "2025-10-21T18:30:44Z",
+    "type": "item",
+    "id": "Q3145134",
+    "labels": {
+      "fr": {
+        "language": "fr",
+        "value": "hôpital Avicenne"
+      },
+      "en": {
+        "language": "en",
+        "value": "Avicenne Hospital"
+      },
+      "fa": {
+        "language": "fa",
+        "value": "بیمارستان ابن سینا بوبینی"
+      },
+      "ar": {
+        "language": "ar",
+        "value": "مستشفى ابن سينا"
+      },
+      "eu": {
+        "language": "eu",
+        "value": "Aviccene Ospitalea"
+      },
+      "nb": {
+        "language": "nb",
+        "value": "Hôpital Avicenne"
+      },
+      "zh": {
+        "language": "zh",
+        "value": "阿维塞讷医院"
+      },
+      "de": {
+        "language": "de",
+        "value": "Hôpital Avicenne"
+      },
+      "es": {
+        "language": "es",
+        "value": "hôpital Avicenne"
+      }
+    },
+    "descriptions": {
+      "fr": {
+        "language": "fr",
+        "value": "hôpital à Bobigny (Seine-Saint-Denis)"
+      },
+      "nl": {
+        "language": "nl",
+        "value": "stadspaleis in Bobigny, Frankrijk"
+      },
+      "id": {
+        "language": "id",
+        "value": "rumah sakit di Prancis"
+      },
+      "ko": {
+        "language": "ko",
+        "value": "등재된 사적"
+      },
+      "ar": {
+        "language": "ar",
+        "value": "مستشفى"
+      },
+      "en": {
+        "language": "en",
+        "value": "hospital in France"
+      },
+      "ast": {
+        "language": "ast",
+        "value": "hospital de Francia"
+      },
+      "ace": {
+        "language": "ace",
+        "value": "rumoh sakét"
+      },
+      "jv": {
+        "language": "jv",
+        "value": "griya sakit"
+      },
+      "min": {
+        "language": "min",
+        "value": "rumah sakik"
+      },
+      "eu": {
+        "language": "eu",
+        "value": "ospitalea Frantzian"
+      },
+      "es": {
+        "language": "es",
+        "value": "hospital en bobigny"
+      },
+      "de": {
+        "language": "de",
+        "value": "Krankenhaus in Bobigny"
+      },
+      "cy": {
+        "language": "cy",
+        "value": "ysbyty yn Ffrainc"
+      }
+    },
+    "aliases": {
+      "fr": [
+        {
+          "language": "fr",
+          "value": "hopital Avicenne"
+        },
+        {
+          "language": "fr",
+          "value": "hôpital franco-musulman"
+        }
+      ]
+    },
+    "claims": {
+      "P17": [
+        {
+          "mainsnak": {
+            "snaktype": "value",
+            "property": "P17",
+            "hash": "c05db5d169c2560b9799d567a803d20a392f53e4",
+            "datavalue": {
+              "value": {
+                "entity-type": "item",
+                "numeric-id": 142,
+                "id": "Q142"
+              },
+              "type": "wikibase-entityid"
+            },
+            "datatype": "wikibase-item"
+          },
+          "type": "statement",
+          "id": "q3145134$4E5A9FA5-02B1-4962-BD48-E5199FE8DEA0",
+          "rank": "normal",
+          "references": [
+            {
+              "hash": "d709174cc609072fbf310bb52ddfb7aa2332b473",
+              "snaks": {
+                "P248": [
+                  {
+                    "snaktype": "value",
+                    "property": "P248",
+                    "hash": "fc376b4e25f8c58fa7210b660e00a66558a3332b",
+                    "datavalue": {
+                      "value": {
+                        "entity-type": "item",
+                        "numeric-id": 809830,
+                        "id": "Q809830"
+                      },
+                      "type": "wikibase-entityid"
+                    },
+                    "datatype": "wikibase-item"
+                  }
+                ]
+              },
+              "snaks-order": [
+                "P248"
+              ]
+            }
+          ]
+        }
+      ],
+      "P131": [
+        {
+          "mainsnak": {
+            "snaktype": "value",
+            "property": "P131",
+            "hash": "b800d0af6687f06cc95818a59225dd1a99001242",
+            "datavalue": {
+              "value": {
+                "entity-type": "item",
+                "numeric-id": 154724,
+                "id": "Q154724"
+              },
+              "type": "wikibase-entityid"
+            },
+            "datatype": "wikibase-item"
+          },
+          "type": "statement",
+          "id": "Q3145134$D31EDCC3-5953-4D52-B4E4-14E5E26069DE",
+          "rank": "normal",
+          "references": [
+            {
+              "hash": "d709174cc609072fbf310bb52ddfb7aa2332b473",
+              "snaks": {
+                "P248": [
+                  {
+                    "snaktype": "value",
+                    "property": "P248",
+                    "hash": "fc376b4e25f8c58fa7210b660e00a66558a3332b",
+                    "datavalue": {
+                      "value": {
+                        "entity-type": "item",
+                        "numeric-id": 809830,
+                        "id": "Q809830"
+                      },
+                      "type": "wikibase-entityid"
+                    },
+                    "datatype": "wikibase-item"
+                  }
+                ]
+              },
+              "snaks-order": [
+                "P248"
+              ]
+            },
+            {
+              "hash": "4a2a49fd335e10f5143b5c83c2368ef3e2d51d21",
+              "snaks": {
+                "P248": [
+                  {
+                    "snaktype": "value",
+                    "property": "P248",
+                    "hash": "3d2886d7ab7d01bd2d93111ed2a3044f7af60834",
+                    "datavalue": {
+                      "value": {
+                        "entity-type": "item",
+                        "numeric-id": 104866215,
+                        "id": "Q104866215"
+                      },
+                      "type": "wikibase-entityid"
+                    },
+                    "datatype": "wikibase-item"
+                  }
+                ],
+                "P585": [
+                  {
+                    "snaktype": "value",
+                    "property": "P585",
+                    "hash": "05c79a8ab7e400b4aeb883ac2b4da069b83d7396",
+                    "datavalue": {
+                      "value": {
+                        "time": "+2021-01-16T00:00:00Z",
+                        "timezone": 0,
+                        "before": 0,
+                        "after": 0,
+                        "precision": 11,
+                        "calendarmodel": "http://www.wikidata.org/entity/Q1985727"
+                      },
+                      "type": "time"
+                    },
+                    "datatype": "time"
+                  }
+                ]
+              },
+              "snaks-order": [
+                "P248",
+                "P585"
+              ]
+            }
+          ]
+        }
+      ],
+      "P380": [
+        {
+          "mainsnak": {
+            "snaktype": "value",
+            "property": "P380",
+            "hash": "59fd4ef9b6099e2d02ae2711e413b081dcf45355",
+            "datavalue": {
+              "value": "PA93000021",
+              "type": "string"
+            },
+            "datatype": "external-id"
+          },
+          "type": "statement",
+          "id": "Q3145134$3416A368-CDAC-4666-AF55-64C33BB7F94B",
+          "rank": "normal",
+          "references": [
+            {
+              "hash": "d709174cc609072fbf310bb52ddfb7aa2332b473",
+              "snaks": {
+                "P248": [
+                  {
+                    "snaktype": "value",
+                    "property": "P248",
+                    "hash": "fc376b4e25f8c58fa7210b660e00a66558a3332b",
+                    "datavalue": {
+                      "value": {
+                        "entity-type": "item",
+                        "numeric-id": 809830,
+                        "id": "Q809830"
+                      },
+                      "type": "wikibase-entityid"
+                    },
+                    "datatype": "wikibase-item"
+                  }
+                ]
+              },
+              "snaks-order": [
+                "P248"
+              ]
+            }
+          ]
+        }
+      ],
+      "P373": [
+        {
+          "mainsnak": {
+            "snaktype": "value",
+            "property": "P373",
+            "hash": "a969bae2b8b09430596fb733786bda038f17b842",
+            "datavalue": {
+              "value": "Hôpital Avicenne",
+              "type": "string"
+            },
+            "datatype": "string"
+          },
+          "type": "statement",
+          "id": "Q3145134$3BA43BB7-7130-44A3-BF4D-272C607AABEB",
+          "rank": "normal"
+        }
+      ],
+      "P1435": [
+        {
+          "mainsnak": {
+            "snaktype": "value",
+            "property": "P1435",
+            "hash": "2a0d37ac7e76d305563257e91e85bb3847f90355",
+            "datavalue": {
+              "value": {
+                "entity-type": "item",
+                "numeric-id": 10387575,
+                "id": "Q10387575"
+              },
+              "type": "wikibase-entityid"
+            },
+            "datatype": "wikibase-item"
+          },
+          "type": "statement",
+          "qualifiers": {
+            "P580": [
+              {
+                "snaktype": "value",
+                "property": "P580",
+                "hash": "f9c71e5be1588d96be9ce6c33f3c6b37036fdabc",
+                "datavalue": {
+                  "value": {
+                    "time": "+2006-01-25T00:00:00Z",
+                    "timezone": 0,
+                    "before": 0,
+                    "after": 0,
+                    "precision": 11,
+                    "calendarmodel": "http://www.wikidata.org/entity/Q1985727"
+                  },
+                  "type": "time"
+                },
+                "datatype": "time"
+              }
+            ]
+          },
+          "qualifiers-order": [
+            "P580"
+          ],
+          "id": "Q3145134$F8C03D8C-2A6D-4CC3-BE40-47EBE4B1D0C0",
+          "rank": "normal",
+          "references": [
+            {
+              "hash": "d709174cc609072fbf310bb52ddfb7aa2332b473",
+              "snaks": {
+                "P248": [
+                  {
+                    "snaktype": "value",
+                    "property": "P248",
+                    "hash": "fc376b4e25f8c58fa7210b660e00a66558a3332b",
+                    "datavalue": {
+                      "value": {
+                        "entity-type": "item",
+                        "numeric-id": 809830,
+                        "id": "Q809830"
+                      },
+                      "type": "wikibase-entityid"
+                    },
+                    "datatype": "wikibase-item"
+                  }
+                ]
+              },
+              "snaks-order": [
+                "P248"
+              ]
+            }
+          ]
+        }
+      ],
+      "P31": [
+        {
+          "mainsnak": {
+            "snaktype": "value",
+            "property": "P31",
+            "hash": "ce8c44822271f2d43517d75f28093f5b48c4dfea",
+            "datavalue": {
+              "value": {
+                "entity-type": "item",
+                "numeric-id": 13226383,
+                "id": "Q13226383"
+              },
+              "type": "wikibase-entityid"
+            },
+            "datatype": "wikibase-item"
+          },
+          "type": "statement",
+          "id": "Q3145134$52A4BEB7-11C4-45B0-B64D-40FB3C8C3A43",
+          "rank": "normal",
+          "references": [
+            {
+              "hash": "4a2a49fd335e10f5143b5c83c2368ef3e2d51d21",
+              "snaks": {
+                "P248": [
+                  {
+                    "snaktype": "value",
+                    "property": "P248",
+                    "hash": "3d2886d7ab7d01bd2d93111ed2a3044f7af60834",
+                    "datavalue": {
+                      "value": {
+                        "entity-type": "item",
+                        "numeric-id": 104866215,
+                        "id": "Q104866215"
+                      },
+                      "type": "wikibase-entityid"
+                    },
+                    "datatype": "wikibase-item"
+                  }
+                ],
+                "P585": [
+                  {
+                    "snaktype": "value",
+                    "property": "P585",
+                    "hash": "05c79a8ab7e400b4aeb883ac2b4da069b83d7396",
+                    "datavalue": {
+                      "value": {
+                        "time": "+2021-01-16T00:00:00Z",
+                        "timezone": 0,
+                        "before": 0,
+                        "after": 0,
+                        "precision": 11,
+                        "calendarmodel": "http://www.wikidata.org/entity/Q1985727"
+                      },
+                      "type": "time"
+                    },
+                    "datatype": "time"
+                  }
+                ]
+              },
+              "snaks-order": [
+                "P248",
+                "P585"
+              ]
+            }
+          ]
+        },
+        {
+          "mainsnak": {
+            "snaktype": "value",
+            "property": "P31",
+            "hash": "2be06461a4b9778fb10baf466d3453acb9314bd4",
+            "datavalue": {
+              "value": {
+                "entity-type": "item",
+                "numeric-id": 16917,
+                "id": "Q16917"
+              },
+              "type": "wikibase-entityid"
+            },
+            "datatype": "wikibase-item"
+          },
+          "type": "statement",
+          "id": "Q3145134$d3d2b188-4d4a-b1cd-1e9a-cadb7aeacca7",
+          "rank": "normal"
+        }
+      ],
+      "P625": [
+        {
+          "mainsnak": {
+            "snaktype": "value",
+            "property": "P625",
+            "hash": "f6cfd9ad4b2479d96fe932e22b43edc218bea9c2",
+            "datavalue": {
+              "value": {
+                "latitude": 48.914691,
+                "longitude": 2.423923,
+                "altitude": null,
+                "precision": 0.000002777777777777778,
+                "globe": "http://www.wikidata.org/entity/Q2"
+              },
+              "type": "globecoordinate"
+            },
+            "datatype": "globe-coordinate"
+          },
+          "type": "statement",
+          "id": "Q3145134$69711CC8-39F9-4681-A1C1-3BDB4C074CFE",
+          "rank": "normal"
+        }
+      ],
+      "P2427": [
+        {
+          "mainsnak": {
+            "snaktype": "value",
+            "property": "P2427",
+            "hash": "f2f686ea8f446aace52f67835e72bda52c64d6da",
+            "datavalue": {
+              "value": "grid.413780.9",
+              "type": "string"
+            },
+            "datatype": "external-id"
+          },
+          "type": "statement",
+          "id": "Q3145134$4CCBB1E4-71A7-4690-BB85-8755CE588530",
+          "rank": "normal"
+        }
+      ],
+      "P213": [
+        {
+          "mainsnak": {
+            "snaktype": "value",
+            "property": "P213",
+            "hash": "fbe0fb80dbf59b92feafb629d3d075f8235baa92",
+            "datavalue": {
+              "value": "0000000087152621",
+              "type": "string"
+            },
+            "datatype": "external-id"
+          },
+          "type": "statement",
+          "id": "Q3145134$8EACBEF8-A52D-4E6B-A825-3CFB4C8D8A65",
+          "rank": "normal",
+          "references": [
+            {
+              "hash": "5a761c7a986f4a5cf8cefbfc18e5a5ae5133d44b",
+              "snaks": {
+                "P248": [
+                  {
+                    "snaktype": "value",
+                    "property": "P248",
+                    "hash": "2e92dfb9200a54eef9b44e474b97c4dd6dd90461",
+                    "datavalue": {
+                      "value": {
+                        "entity-type": "item",
+                        "numeric-id": 53705033,
+                        "id": "Q53705033"
+                      },
+                      "type": "wikibase-entityid"
+                    },
+                    "datatype": "wikibase-item"
+                  }
+                ]
+              },
+              "snaks-order": [
+                "P248"
+              ]
+            }
+          ]
+        }
+      ],
+      "P361": [
+        {
+          "mainsnak": {
+            "snaktype": "value",
+            "property": "P361",
+            "hash": "5004927749b8d3055ffee93826ee2ae853a1c506",
+            "datavalue": {
+              "value": {
+                "entity-type": "item",
+                "numeric-id": 2867205,
+                "id": "Q2867205"
+              },
+              "type": "wikibase-entityid"
+            },
+            "datatype": "wikibase-item"
+          },
+          "type": "statement",
+          "id": "Q3145134$2fc3a47e-4eda-8434-f085-64ab42eb6212",
+          "rank": "normal"
+        },
+        {
+          "mainsnak": {
+            "snaktype": "value",
+            "property": "P361",
+            "hash": "55e5e76832c5c2d82aa3a2946ea7d3ba05b680a5",
+            "datavalue": {
+              "value": {
+                "entity-type": "item",
+                "numeric-id": 24931383,
+                "id": "Q24931383"
+              },
+              "type": "wikibase-entityid"
+            },
+            "datatype": "wikibase-item"
+          },
+          "type": "statement",
+          "id": "Q3145134$0A270A0C-BCCA-4632-8B26-E0D1558EC1E6",
+          "rank": "normal"
+        }
+      ],
+      "P749": [
+        {
+          "mainsnak": {
+            "snaktype": "value",
+            "property": "P749",
+            "hash": "5f4124f1b9d25d7128d0ee73975c4cefada2aafb",
+            "datavalue": {
+              "value": {
+                "entity-type": "item",
+                "numeric-id": 2867205,
+                "id": "Q2867205"
+              },
+              "type": "wikibase-entityid"
+            },
+            "datatype": "wikibase-item"
+          },
+          "type": "statement",
+          "id": "Q3145134$D351CE66-6ACD-49C7-883D-F6A817893E7C",
+          "rank": "normal",
+          "references": [
+            {
+              "hash": "955310a7d51b09f69b4f253ccccca77c7efd0f5e",
+              "snaks": {
+                "P2427": [
+                  {
+                    "snaktype": "value",
+                    "property": "P2427",
+                    "hash": "f2f686ea8f446aace52f67835e72bda52c64d6da",
+                    "datavalue": {
+                      "value": "grid.413780.9",
+                      "type": "string"
+                    },
+                    "datatype": "external-id"
+                  }
+                ]
+              },
+              "snaks-order": [
+                "P2427"
+              ]
+            }
+          ]
+        }
+      ],
+      "P856": [
+        {
+          "mainsnak": {
+            "snaktype": "value",
+            "property": "P856",
+            "hash": "588eb38f9fd02b850f8356754f168e3535f47d8a",
+            "datavalue": {
+              "value": "https://chu93.aphp.fr",
+              "type": "string"
+            },
+            "datatype": "url"
+          },
+          "type": "statement",
+          "id": "Q3145134$DE339CB7-6A0F-4445-8E41-73B972EBD2DA",
+          "rank": "normal",
+          "references": [
+            {
+              "hash": "955310a7d51b09f69b4f253ccccca77c7efd0f5e",
+              "snaks": {
+                "P2427": [
+                  {
+                    "snaktype": "value",
+                    "property": "P2427",
+                    "hash": "f2f686ea8f446aace52f67835e72bda52c64d6da",
+                    "datavalue": {
+                      "value": "grid.413780.9",
+                      "type": "string"
+                    },
+                    "datatype": "external-id"
+                  }
+                ]
+              },
+              "snaks-order": [
+                "P2427"
+              ]
+            }
+          ]
+        }
+      ],
+      "P6782": [
+        {
+          "mainsnak": {
+            "snaktype": "value",
+            "property": "P6782",
+            "hash": "d72e278ce517f370deb3b256a7785c0907b29ffc",
+            "datavalue": {
+              "value": "03n6vs369",
+              "type": "string"
+            },
+            "datatype": "external-id"
+          },
+          "type": "statement",
+          "id": "Q3145134$65564777-F302-4490-99AE-6407BA44FAC4",
+          "rank": "normal"
+        }
+      ],
+      "P214": [
+        {
+          "mainsnak": {
+            "snaktype": "value",
+            "property": "P214",
+            "hash": "07dfbdb5002787403b55bfff2dbbd27e7496c9d5",
+            "datavalue": {
+              "value": "211780788",
+              "type": "string"
+            },
+            "datatype": "external-id"
+          },
+          "type": "statement",
+          "id": "Q3145134$E5609456-99F3-4DEB-939B-576B13C1DA4A",
+          "rank": "normal"
+        }
+      ],
+      "P4058": [
+        {
+          "mainsnak": {
+            "snaktype": "value",
+            "property": "P4058",
+            "hash": "a3e5668195af5939faf87f6dc2027147cf7de059",
+            "datavalue": {
+              "value": "930100037",
+              "type": "string"
+            },
+            "datatype": "external-id"
+          },
+          "type": "statement",
+          "id": "Q3145134$aa01a893-40e7-eade-5814-0f2a1f8a2d15",
+          "rank": "normal"
+        }
+      ],
+      "P269": [
+        {
+          "mainsnak": {
+            "snaktype": "value",
+            "property": "P269",
+            "hash": "02e386ecc027f0ec7cb9015cc709cf7d648e82a6",
+            "datavalue": {
+              "value": "030351189",
+              "type": "string"
+            },
+            "datatype": "external-id"
+          },
+          "type": "statement",
+          "id": "Q3145134$027e4388-42fb-7368-87a2-5f636872f209",
+          "rank": "normal"
+        }
+      ],
+      "P268": [
+        {
+          "mainsnak": {
+            "snaktype": "value",
+            "property": "P268",
+            "hash": "6f3b373eb092745a9e3a90c2a2cefacf6a541f7a",
+            "datavalue": {
+              "value": "12178426s",
+              "type": "string"
+            },
+            "datatype": "external-id"
+          },
+          "type": "statement",
+          "id": "Q3145134$21502dd5-4d79-1fd9-eeb2-17e6f1671ef6",
+          "rank": "normal"
+        }
+      ],
+      "P366": [
+        {
+          "mainsnak": {
+            "snaktype": "value",
+            "property": "P366",
+            "hash": "b2ba0e1a446fd828239254e6389ae075ee1f3066",
+            "datavalue": {
+              "value": {
+                "entity-type": "item",
+                "numeric-id": 39364723,
+                "id": "Q39364723"
+              },
+              "type": "wikibase-entityid"
+            },
+            "datatype": "wikibase-item"
+          },
+          "type": "statement",
+          "id": "Q3145134$66CD43DC-0F2C-4C7E-A647-B27294AE4D5F",
+          "rank": "normal"
+        },
+        {
+          "mainsnak": {
+            "snaktype": "value",
+            "property": "P366",
+            "hash": "eb795343db26efa54543af9e00c3c03641b702c3",
+            "datavalue": {
+              "value": {
+                "entity-type": "item",
+                "numeric-id": 104865988,
+                "id": "Q104865988"
+              },
+              "type": "wikibase-entityid"
+            },
+            "datatype": "wikibase-item"
+          },
+          "type": "statement",
+          "qualifiers": {
+            "P1545": [
+              {
+                "snaktype": "value",
+                "property": "P1545",
+                "hash": "f017d76249f46b3f13b16a9790554ef6b27798c6",
+                "datavalue": {
+                  "value": "303",
+                  "type": "string"
+                },
+                "datatype": "string"
+              }
+            ],
+            "P1810": [
+              {
+                "snaktype": "value",
+                "property": "P1810",
+                "hash": "ed1431d6f76f610bb120bea471586409907a0351",
+                "datavalue": {
+                  "value": "AVICENNE",
+                  "type": "string"
+                },
+                "datatype": "string"
+              }
+            ],
+            "P580": [
+              {
+                "snaktype": "value",
+                "property": "P580",
+                "hash": "a47eb75ffae3f8d5a85002a0ce795c56495e154b",
+                "datavalue": {
+                  "value": {
+                    "time": "+2021-01-07T00:00:00Z",
+                    "timezone": 0,
+                    "before": 0,
+                    "after": 0,
+                    "precision": 11,
+                    "calendarmodel": "http://www.wikidata.org/entity/Q1985727"
+                  },
+                  "type": "time"
+                },
+                "datatype": "time"
+              }
+            ]
+          },
+          "qualifiers-order": [
+            "P1545",
+            "P1810",
+            "P580"
+          ],
+          "id": "Q3145134$245DB3D7-2E73-4BCC-9AF7-8B14946C307F",
+          "rank": "normal",
+          "references": [
+            {
+              "hash": "4a2a49fd335e10f5143b5c83c2368ef3e2d51d21",
+              "snaks": {
+                "P248": [
+                  {
+                    "snaktype": "value",
+                    "property": "P248",
+                    "hash": "3d2886d7ab7d01bd2d93111ed2a3044f7af60834",
+                    "datavalue": {
+                      "value": {
+                        "entity-type": "item",
+                        "numeric-id": 104866215,
+                        "id": "Q104866215"
+                      },
+                      "type": "wikibase-entityid"
+                    },
+                    "datatype": "wikibase-item"
+                  }
+                ],
+                "P585": [
+                  {
+                    "snaktype": "value",
+                    "property": "P585",
+                    "hash": "05c79a8ab7e400b4aeb883ac2b4da069b83d7396",
+                    "datavalue": {
+                      "value": {
+                        "time": "+2021-01-16T00:00:00Z",
+                        "timezone": 0,
+                        "before": 0,
+                        "after": 0,
+                        "precision": 11,
+                        "calendarmodel": "http://www.wikidata.org/entity/Q1985727"
+                      },
+                      "type": "time"
+                    },
+                    "datatype": "time"
+                  }
+                ]
+              },
+              "snaks-order": [
+                "P248",
+                "P585"
+              ]
+            }
+          ]
+        }
+      ],
+      "P2671": [
+        {
+          "mainsnak": {
+            "snaktype": "value",
+            "property": "P2671",
+            "hash": "20906dbbb70c425a2592b583e5ad8d2532349e49",
+            "datavalue": {
+              "value": "/g/120x6w3_",
+              "type": "string"
+            },
+            "datatype": "external-id"
+          },
+          "type": "statement",
+          "id": "Q3145134$CC56FCBC-3078-4CB7-8C43-A5D7E5FAF66D",
+          "rank": "normal"
+        }
+      ],
+      "P669": [
+        {
+          "mainsnak": {
+            "snaktype": "value",
+            "property": "P669",
+            "hash": "19c3ea6115bae07cd4d28e4674fcdd07f8369b6c",
+            "datavalue": {
+              "value": {
+                "entity-type": "item",
+                "numeric-id": 85836987,
+                "id": "Q85836987"
+              },
+              "type": "wikibase-entityid"
+            },
+            "datatype": "wikibase-item"
+          },
+          "type": "statement",
+          "qualifiers": {
+            "P670": [
+              {
+                "snaktype": "value",
+                "property": "P670",
+                "hash": "c9dcb99d9986b096e833f10dfc81437571294bde",
+                "datavalue": {
+                  "value": "125",
+                  "type": "string"
+                },
+                "datatype": "string"
+              }
+            ]
+          },
+          "qualifiers-order": [
+            "P670"
+          ],
+          "id": "Q3145134$fbace7aa-4d2f-0a35-1817-cab2ef3e599a",
+          "rank": "normal"
+        }
+      ],
+      "P3500": [
+        {
+          "mainsnak": {
+            "snaktype": "value",
+            "property": "P3500",
+            "hash": "d691f27f24d0a72ab6c397d68aabb02f50202099",
+            "datavalue": {
+              "value": "55069",
+              "type": "string"
+            },
+            "datatype": "external-id"
+          },
+          "type": "statement",
+          "qualifiers": {
+            "P1810": [
+              {
+                "snaktype": "value",
+                "property": "P1810",
+                "hash": "8656e8b7d1c88126268ebabee4eebca79492aecb",
+                "datavalue": {
+                  "value": "Hôpital Avicenne",
+                  "type": "string"
+                },
+                "datatype": "string"
+              }
+            ]
+          },
+          "qualifiers-order": [
+            "P1810"
+          ],
+          "id": "Q3145134$A879DB4A-D7CC-4871-A75D-C8775B0F901B",
+          "rank": "normal"
+        }
+      ],
+      "P1416": [
+        {
+          "mainsnak": {
+            "snaktype": "value",
+            "property": "P1416",
+            "hash": "0baaa0a1bc9857019c1e8420855ee09d6def7e8a",
+            "datavalue": {
+              "value": {
+                "entity-type": "item",
+                "numeric-id": 1780212,
+                "id": "Q1780212"
+              },
+              "type": "wikibase-entityid"
+            },
+            "datatype": "wikibase-item"
+          },
+          "type": "statement",
+          "id": "Q3145134$65ee44a4-4537-ebc4-cefe-a5349726c53b",
+          "rank": "normal"
+        }
+      ],
+      "P2397": [
+        {
+          "mainsnak": {
+            "snaktype": "value",
+            "property": "P2397",
+            "hash": "d2fb86c65b93e8c31bf1c56022b5d854b017bfd4",
+            "datavalue": {
+              "value": "UCkHqlf2wNDyaNvKZaMsh2HQ",
+              "type": "string"
+            },
+            "datatype": "external-id"
+          },
+          "type": "statement",
+          "qualifiers": {
+            "P1810": [
+              {
+                "snaktype": "value",
+                "property": "P1810",
+                "hash": "51b156b45306fdc47b089455e793825f56ba55ee",
+                "datavalue": {
+                  "value": "Hôpitaux Universitaires Paris Seine-Saint-Denis",
+                  "type": "string"
+                },
+                "datatype": "string"
+              }
+            ],
+            "P3744": [
+              {
+                "snaktype": "value",
+                "property": "P3744",
+                "hash": "e8da4cfcf4db390d5cce59dab3eeb94156778d81",
+                "datavalue": {
+                  "value": {
+                    "amount": "+603",
+                    "unit": "1"
+                  },
+                  "type": "quantity"
+                },
+                "datatype": "quantity"
+              }
+            ],
+            "P3740": [
+              {
+                "snaktype": "value",
+                "property": "P3740",
+                "hash": "0f0207055e326857d4fce5a23bc763a33e12ee62",
+                "datavalue": {
+                  "value": {
+                    "amount": "+29",
+                    "unit": "1"
+                  },
+                  "type": "quantity"
+                },
+                "datatype": "quantity"
+              }
+            ],
+            "P5436": [
+              {
+                "snaktype": "value",
+                "property": "P5436",
+                "hash": "3ca74521919c686f59da9d565a602e75a864345f",
+                "datavalue": {
+                  "value": {
+                    "amount": "+108433",
+                    "unit": "1"
+                  },
+                  "type": "quantity"
+                },
+                "datatype": "quantity"
+              }
+            ],
+            "P580": [
+              {
+                "snaktype": "value",
+                "property": "P580",
+                "hash": "a7680f4d09de18dd64622e04755761d0f380c327",
+                "datavalue": {
+                  "value": {
+                    "time": "+2015-02-06T00:00:00Z",
+                    "timezone": 0,
+                    "before": 0,
+                    "after": 0,
+                    "precision": 11,
+                    "calendarmodel": "http://www.wikidata.org/entity/Q1985727"
+                  },
+                  "type": "time"
+                },
+                "datatype": "time"
+              }
+            ],
+            "P585": [
+              {
+                "snaktype": "value",
+                "property": "P585",
+                "hash": "02586769207f7a96d34cb7c69d6227778e95ccef",
+                "datavalue": {
+                  "value": {
+                    "time": "+2023-03-26T00:00:00Z",
+                    "timezone": 0,
+                    "before": 0,
+                    "after": 0,
+                    "precision": 11,
+                    "calendarmodel": "http://www.wikidata.org/entity/Q1985727"
+                  },
+                  "type": "time"
+                },
+                "datatype": "time"
+              }
+            ]
+          },
+          "qualifiers-order": [
+            "P1810",
+            "P3744",
+            "P3740",
+            "P5436",
+            "P580",
+            "P585"
+          ],
+          "id": "Q3145134$28fa68fa-47ff-b935-bbb9-26af287f6306",
+          "rank": "normal"
+        }
+      ],
+      "P571": [
+        {
+          "mainsnak": {
+            "snaktype": "value",
+            "property": "P571",
+            "hash": "181c41404f380020318f611aaa8e3225cddc722f",
+            "datavalue": {
+              "value": {
+                "time": "+1935-03-22T00:00:00Z",
+                "timezone": 0,
+                "before": 0,
+                "after": 0,
+                "precision": 11,
+                "calendarmodel": "http://www.wikidata.org/entity/Q1985727"
+              },
+              "type": "time"
+            },
+            "datatype": "time"
+          },
+          "type": "statement",
+          "id": "Q3145134$12da1b4a-4aa9-a2aa-09d3-94d1d09a88a9",
+          "rank": "normal"
+        }
+      ],
+      "P18": [
+        {
+          "mainsnak": {
+            "snaktype": "value",
+            "property": "P18",
+            "hash": "412563056c5c5c0d3b1c79ac0167b0b9d264f02d",
+            "datavalue": {
+              "value": "Hôpital Avicenne - Bobigny (FR93) - 2022-08-01 - 1.jpg",
+              "type": "string"
+            },
+            "datatype": "commonsMedia"
+          },
+          "type": "statement",
+          "qualifiers": {
+            "P585": [
+              {
+                "snaktype": "value",
+                "property": "P585",
+                "hash": "04e4b5aa200ad660a2198edb83fefa3517394ac6",
+                "datavalue": {
+                  "value": {
+                    "time": "+2022-08-01T00:00:00Z",
+                    "timezone": 0,
+                    "before": 0,
+                    "after": 0,
+                    "precision": 11,
+                    "calendarmodel": "http://www.wikidata.org/entity/Q1985727"
+                  },
+                  "type": "time"
+                },
+                "datatype": "time"
+              }
+            ]
+          },
+          "qualifiers-order": [
+            "P585"
+          ],
+          "id": "Q3145134$84714405-4eba-0054-9ac4-48b5de694ae4",
+          "rank": "normal"
+        }
+      ],
+      "P6375": [
+        {
+          "mainsnak": {
+            "snaktype": "value",
+            "property": "P6375",
+            "hash": "e01431c12fb0837ff589a33d8989d8d72f5925dc",
+            "datavalue": {
+              "value": {
+                "text": "125 Rue de Stalingrad",
+                "language": "fr"
+              },
+              "type": "monolingualtext"
+            },
+            "datatype": "monolingualtext"
+          },
+          "type": "statement",
+          "id": "Q3145134$8103b317-47a4-61aa-5130-bb05c0495710",
+          "rank": "normal"
+        }
+      ],
+      "P12749": [
+        {
+          "mainsnak": {
+            "snaktype": "value",
+            "property": "P12749",
+            "hash": "210a37557ecf9ad28f11c5bdfb4474e9d0bc37d9",
+            "datavalue": {
+              "value": "Q76727",
+              "type": "string"
+            },
+            "datatype": "external-id"
+          },
+          "type": "statement",
+          "id": "Q3145134$405626F3-4943-4FEE-B0FE-73390489AD5E",
+          "rank": "normal"
+        }
+      ],
+      "P1838": [
+        {
+          "mainsnak": {
+            "snaktype": "value",
+            "property": "P1838",
+            "hash": "b462687e1ea1cbc6d087b4efca8114936152d0d5",
+            "datavalue": {
+              "value": "FR-93008-27449",
+              "type": "string"
+            },
+            "datatype": "external-id"
+          },
+          "type": "statement",
+          "id": "Q3145134$62F9DCDA-BEDD-4E50-9ABF-62D4543C575C",
+          "rank": "normal"
+        }
+      ],
+      "P13591": [
+        {
+          "mainsnak": {
+            "snaktype": "value",
+            "property": "P13591",
+            "hash": "4f81b1d2aa1d234067e55c2b4dfbd32bcbfcbb76",
+            "datavalue": {
+              "value": "place/9292914f-2e7e-448b-be11-ec8b48e5221e",
+              "type": "string"
+            },
+            "datatype": "external-id"
+          },
+          "type": "statement",
+          "id": "Q3145134$C36C218F-34EF-4132-A621-F86F9F9BBDBD",
+          "rank": "normal"
+        }
+      ],
+      "P11245": [
+        {
+          "mainsnak": {
+            "snaktype": "value",
+            "property": "P11245",
+            "hash": "25932788dc546ec7ad9ddc2786c09bb01ada35ee",
+            "datavalue": {
+              "value": "hopitauxuniversitairespari7058",
+              "type": "string"
+            },
+            "datatype": "external-id"
+          },
+          "type": "statement",
+          "qualifiers": {
+            "P2397": [
+              {
+                "snaktype": "value",
+                "property": "P2397",
+                "hash": "d2fb86c65b93e8c31bf1c56022b5d854b017bfd4",
+                "datavalue": {
+                  "value": "UCkHqlf2wNDyaNvKZaMsh2HQ",
+                  "type": "string"
+                },
+                "datatype": "external-id"
+              }
+            ],
+            "P585": [
+              {
+                "snaktype": "value",
+                "property": "P585",
+                "hash": "2f758429988ac3dcd18fc001c902e331eecb6081",
+                "datavalue": {
+                  "value": {
+                    "time": "+2025-10-20T00:00:00Z",
+                    "timezone": 0,
+                    "before": 0,
+                    "after": 0,
+                    "precision": 11,
+                    "calendarmodel": "http://www.wikidata.org/entity/Q1985727"
+                  },
+                  "type": "time"
+                },
+                "datatype": "time"
+              }
+            ]
+          },
+          "qualifiers-order": [
+            "P2397",
+            "P585"
+          ],
+          "id": "Q3145134$9b6938d1-0d90-4c02-9052-8f191c8b7ceb",
+          "rank": "normal",
+          "references": [
+            {
+              "hash": "8a95c9f2161210d4218cbb2c35c247d1f3c9a32c",
+              "snaks": {
+                "P813": [
+                  {
+                    "snaktype": "value",
+                    "property": "P813",
+                    "hash": "2edc918b012f00c1e8f5ab41c3bcabb32052ab48",
+                    "datavalue": {
+                      "value": {
+                        "time": "+2025-10-20T00:00:00Z",
+                        "timezone": 0,
+                        "before": 0,
+                        "after": 0,
+                        "precision": 11,
+                        "calendarmodel": "http://www.wikidata.org/entity/Q1985727"
+                      },
+                      "type": "time"
+                    },
+                    "datatype": "time"
+                  }
+                ],
+                "P248": [
+                  {
+                    "snaktype": "value",
+                    "property": "P248",
+                    "hash": "e6e6374525f7d680f01ff599745f367fb1369b87",
+                    "datavalue": {
+                      "value": {
+                        "entity-type": "item",
+                        "numeric-id": 8056784,
+                        "id": "Q8056784"
+                      },
+                      "type": "wikibase-entityid"
+                    },
+                    "datatype": "wikibase-item"
+                  }
+                ]
+              },
+              "snaks-order": [
+                "P813",
+                "P248"
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    "sitelinks": {
+      "arwiki": {
+        "site": "arwiki",
+        "title": "مستشفى ابن سينا (فرنسا)",
+        "badges": [],
+        "url": "https://ar.wikipedia.org/wiki/%D9%85%D8%B3%D8%AA%D8%B4%D9%81%D9%89_%D8%A7%D8%A8%D9%86_%D8%B3%D9%8A%D9%86%D8%A7_(%D9%81%D8%B1%D9%86%D8%B3%D8%A7)"
+      },
+      "commonswiki": {
+        "site": "commonswiki",
+        "title": "Category:Hôpital Avicenne",
+        "badges": [],
+        "url": "https://commons.wikimedia.org/wiki/Category:H%C3%B4pital_Avicenne"
+      },
+      "dewiki": {
+        "site": "dewiki",
+        "title": "Hôpital Avicenne",
+        "badges": [],
+        "url": "https://de.wikipedia.org/wiki/H%C3%B4pital_Avicenne"
+      },
+      "enwiki": {
+        "site": "enwiki",
+        "title": "Avicenne Hospital",
+        "badges": [],
+        "url": "https://en.wikipedia.org/wiki/Avicenne_Hospital"
+      },
+      "fawiki": {
+        "site": "fawiki",
+        "title": "بیمارستان ابن سینا بوبینی",
+        "badges": [],
+        "url": "https://fa.wikipedia.org/wiki/%D8%A8%DB%8C%D9%85%D8%A7%D8%B1%D8%B3%D8%AA%D8%A7%D9%86_%D8%A7%D8%A8%D9%86_%D8%B3%DB%8C%D9%86%D8%A7_%D8%A8%D9%88%D8%A8%DB%8C%D9%86%DB%8C"
+      },
+      "frwiki": {
+        "site": "frwiki",
+        "title": "Hôpital Avicenne",
+        "badges": [],
+        "url": "https://fr.wikipedia.org/wiki/H%C3%B4pital_Avicenne"
+      },
+      "nowiki": {
+        "site": "nowiki",
+        "title": "Hôpital Avicenne",
+        "badges": [],
+        "url": "https://no.wikipedia.org/wiki/H%C3%B4pital_Avicenne"
+      }
+    }
+  }
+}

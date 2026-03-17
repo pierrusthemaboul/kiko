@@ -1,0 +1,177 @@
+{
+  "pageid": 2863591,
+  "ns": 0,
+  "title": "Q2994775",
+  "lastrevid": 2390854928,
+  "modified": "2025-08-11T22:14:22Z",
+  "type": "item",
+  "id": "Q2994775",
+  "labels": {
+    "fr": {
+      "language": "fr",
+      "value": "Conspiration de Cinq-Mars"
+    },
+    "it": {
+      "language": "it",
+      "value": "Cospirazione di Cinq-Mars"
+    },
+    "eo": {
+      "language": "eo",
+      "value": "Konspiro de Cinq-Mars"
+    },
+    "en": {
+      "language": "en",
+      "value": "Conspiracy of Cinq-Mars"
+    },
+    "de": {
+      "language": "de",
+      "value": "Cinq-Mars-Verschwörung"
+    }
+  },
+  "descriptions": {
+    "fr": {
+      "language": "fr",
+      "value": "conspiration en France au XVIIe siècle, visant le cardinal de Richelieu"
+    },
+    "de": {
+      "language": "de",
+      "value": "Verschwörung in Frankreich während des Jahres 1642 gegen Kardinal Richelieu, den ersten Minister Ludwigs XIII"
+    }
+  },
+  "aliases": {
+    "fr": [
+      {
+        "language": "fr",
+        "value": "Conjuration de Cinq-Mars"
+      }
+    ]
+  },
+  "claims": {
+    "P31": [
+      {
+        "mainsnak": {
+          "snaktype": "value",
+          "property": "P31",
+          "hash": "d7057c0173b91e15d30756331ef13a9b46065451",
+          "datavalue": {
+            "value": {
+              "entity-type": "item",
+              "numeric-id": 930164,
+              "id": "Q930164"
+            },
+            "type": "wikibase-entityid"
+          },
+          "datatype": "wikibase-item"
+        },
+        "type": "statement",
+        "id": "Q2994775$53f8425d-4dcc-9b82-6042-5e1c70e85093",
+        "rank": "normal"
+      }
+    ],
+    "P17": [
+      {
+        "mainsnak": {
+          "snaktype": "value",
+          "property": "P17",
+          "hash": "2b7d86f7555d9e77641e33f3f283b88021a5e49a",
+          "datavalue": {
+            "value": {
+              "entity-type": "item",
+              "numeric-id": 70972,
+              "id": "Q70972"
+            },
+            "type": "wikibase-entityid"
+          },
+          "datatype": "wikibase-item"
+        },
+        "type": "statement",
+        "id": "Q2994775$f2181aa3-4343-3589-0afb-1a5809942f89",
+        "rank": "normal"
+      }
+    ],
+    "P585": [
+      {
+        "mainsnak": {
+          "snaktype": "value",
+          "property": "P585",
+          "hash": "e7813a2f9c989a7c32d059de56dd3e9c6a888c69",
+          "datavalue": {
+            "value": {
+              "time": "+1642-00-00T00:00:00Z",
+              "timezone": 0,
+              "before": 0,
+              "after": 0,
+              "precision": 9,
+              "calendarmodel": "http://www.wikidata.org/entity/Q1985727"
+            },
+            "type": "time"
+          },
+          "datatype": "time"
+        },
+        "type": "statement",
+        "id": "Q2994775$a26fa991-4417-fad2-cf4f-82f09fe921a8",
+        "rank": "normal"
+      }
+    ],
+    "P2671": [
+      {
+        "mainsnak": {
+          "snaktype": "value",
+          "property": "P2671",
+          "hash": "7dbb219a6d168764e1df90a71eac508f067fc880",
+          "datavalue": {
+            "value": "/g/11_p514f3",
+            "type": "string"
+          },
+          "datatype": "external-id"
+        },
+        "type": "statement",
+        "id": "Q2994775$6AEECCC4-EDBC-4782-ADF8-179BB96E42E1",
+        "rank": "normal"
+      }
+    ],
+    "P373": [
+      {
+        "mainsnak": {
+          "snaktype": "value",
+          "property": "P373",
+          "hash": "3338da81d093e61a6a4841462ace2e70139bf196",
+          "datavalue": {
+            "value": "Conspiracy of Cinq-Mars",
+            "type": "string"
+          },
+          "datatype": "string"
+        },
+        "type": "statement",
+        "id": "Q2994775$eecfd9a9-7176-4e5b-83f3-c1a30e3a38d9",
+        "rank": "normal"
+      }
+    ]
+  },
+  "sitelinks": {
+    "commonswiki": {
+      "site": "commonswiki",
+      "title": "Category:Conspiracy of Cinq-Mars",
+      "badges": [],
+      "url": "https://commons.wikimedia.org/wiki/Category:Conspiracy_of_Cinq-Mars"
+    },
+    "dewiki": {
+      "site": "dewiki",
+      "title": "Cinq-Mars-Verschwörung",
+      "badges": [],
+      "url": "https://de.wikipedia.org/wiki/Cinq-Mars-Verschw%C3%B6rung"
+    },
+    "frwiki": {
+      "site": "frwiki",
+      "title": "Conspiration de Cinq-Mars",
+      "badges": [],
+      "url": "https://fr.wikipedia.org/wiki/Conspiration_de_Cinq-Mars"
+    },
+    "itwiki": {
+      "site": "itwiki",
+      "title": "Cospirazione di Cinq-Mars",
+      "badges": [],
+      "url": "https://it.wikipedia.org/wiki/Cospirazione_di_Cinq-Mars"
+    }
+  }
+}

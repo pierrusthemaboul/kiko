@@ -1,0 +1,216 @@
+{
+  "pageid": 18165040,
+  "ns": 0,
+  "title": "Q16543650",
+  "lastrevid": 1367416097,
+  "modified": "2021-02-22T12:08:19Z",
+  "type": "item",
+  "id": "Q16543650",
+  "labels": {
+    "it": {
+      "language": "it",
+      "value": "Condizione femminile"
+    },
+    "fr": {
+      "language": "fr",
+      "value": "condition féminine"
+    },
+    "es": {
+      "language": "es",
+      "value": "Condición femenina"
+    },
+    "ru": {
+      "language": "ru",
+      "value": "Положение женщины"
+    }
+  },
+  "descriptions": {
+    "es": {
+      "language": "es",
+      "value": "posición de la mujer en la organización social (hogar y familia, trabajo, política, instituciones sociales), y diferencias de tratamiento y de participación entre hombres y mujeres"
+    },
+    "it": {
+      "language": "it",
+      "value": "complesso di norme, costumi e visioni del mondo che riguardano il ruolo della donna nella società"
+    },
+    "fr": {
+      "language": "fr",
+      "value": "position des femmes dans l'organisation sociale"
+    }
+  },
+  "aliases": {
+    "es": [
+      {
+        "language": "es",
+        "value": "Condicion femenina"
+      }
+    ]
+  },
+  "claims": {
+    "P910": [
+      {
+        "mainsnak": {
+          "snaktype": "value",
+          "property": "P910",
+          "hash": "8b97f9675d06e136ef28e4b5a1159d2377d013ef",
+          "datavalue": {
+            "value": {
+              "entity-type": "item",
+              "numeric-id": 9636411,
+              "id": "Q9636411"
+            },
+            "type": "wikibase-entityid"
+          },
+          "datatype": "wikibase-item"
+        },
+        "type": "statement",
+        "id": "Q16543650$95CBA940-8BF0-4611-9595-40D672BB251A",
+        "rank": "normal",
+        "references": [
+          {
+            "hash": "d4bd87b862b12d99d26e86472d44f26858dee639",
+            "snaks": {
+              "P143": [
+                {
+                  "snaktype": "value",
+                  "property": "P143",
+                  "hash": "f30cbd35620c4ea6d0633aaf0210a8916130469b",
+                  "datavalue": {
+                    "value": {
+                      "entity-type": "item",
+                      "numeric-id": 8447,
+                      "id": "Q8447"
+                    },
+                    "type": "wikibase-entityid"
+                  },
+                  "datatype": "wikibase-item"
+                }
+              ]
+            },
+            "snaks-order": [
+              "P143"
+            ]
+          }
+        ]
+      }
+    ],
+    "P268": [
+      {
+        "mainsnak": {
+          "snaktype": "value",
+          "property": "P268",
+          "hash": "f352cc8131a75573f466caf6c382766af02cb0dc",
+          "datavalue": {
+            "value": "119314971",
+            "type": "string"
+          },
+          "datatype": "external-id"
+        },
+        "type": "statement",
+        "id": "Q16543650$5951CB6E-5E2A-4A1E-AADE-F0785FEC062D",
+        "rank": "normal",
+        "references": [
+          {
+            "hash": "d4bd87b862b12d99d26e86472d44f26858dee639",
+            "snaks": {
+              "P143": [
+                {
+                  "snaktype": "value",
+                  "property": "P143",
+                  "hash": "f30cbd35620c4ea6d0633aaf0210a8916130469b",
+                  "datavalue": {
+                    "value": {
+                      "entity-type": "item",
+                      "numeric-id": 8447,
+                      "id": "Q8447"
+                    },
+                    "type": "wikibase-entityid"
+                  },
+                  "datatype": "wikibase-item"
+                }
+              ]
+            },
+            "snaks-order": [
+              "P143"
+            ]
+          }
+        ]
+      }
+    ],
+    "P4212": [
+      {
+        "mainsnak": {
+          "snaktype": "value",
+          "property": "P4212",
+          "hash": "c44e5252b57e9f7bee046acc05765c33c363d019",
+          "datavalue": {
+            "value": "pcrtn1unDDEVbk",
+            "type": "string"
+          },
+          "datatype": "external-id"
+        },
+        "type": "statement",
+        "id": "Q16543650$FBED1A26-5368-4B55-BF10-8E93583D9909",
+        "rank": "normal"
+      }
+    ],
+    "P31": [
+      {
+        "mainsnak": {
+          "snaktype": "value",
+          "property": "P31",
+          "hash": "ee055aa2179587ef51ff47bd160f3992916c07f7",
+          "datavalue": {
+            "value": {
+              "entity-type": "item",
+              "numeric-id": 1662673,
+              "id": "Q1662673"
+            },
+            "type": "wikibase-entityid"
+          },
+          "datatype": "wikibase-item"
+        },
+        "type": "statement",
+        "id": "Q16543650$af770729-469e-3eb1-dabe-7bb98639961a",
+        "rank": "normal"
+      }
+    ],
+    "P2671": [
+      {
+        "mainsnak": {
+          "snaktype": "value",
+          "property": "P2671",
+          "hash": "f3e5f97cbf73f4ed9bbb57fc8b91f5fbc2560ac9",
+          "datavalue": {
+            "value": "/g/11b6b8dd5z",
+            "type": "string"
+          },
+          "datatype": "external-id"
+        },
+        "type": "statement",
+        "id": "Q16543650$785C862F-6F43-4E3B-826F-94B391D3293A",
+        "rank": "normal"
+      }
+    ]
+  },
+  "sitelinks": {
+    "eswiki": {
+      "site": "eswiki",
+      "title": "Condición femenina",
+      "badges": [],
+      "url": "https://es.wikipedia.org/wiki/Condici%C3%B3n_femenina"
+    },
+    "frwiki": {
+      "site": "frwiki",
+      "title": "Condition féminine",
+      "badges": [],
+      "url": "https://fr.wikipedia.org/wiki/Condition_f%C3%A9minine"
+    },
+    "itwiki": {
+      "site": "itwiki",
+      "title": "Condizione femminile",
+      "badges": [],
+      "url": "https://it.wikipedia.org/wiki/Condizione_femminile"
+    }
+  }
+}

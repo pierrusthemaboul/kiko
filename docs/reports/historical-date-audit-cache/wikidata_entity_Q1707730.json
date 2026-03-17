@@ -1,0 +1,512 @@
+{
+  "saved_at": "2026-03-07T14:54:07.749Z",
+  "value": {
+    "pageid": 1640980,
+    "ns": 0,
+    "title": "Q1707730",
+    "lastrevid": 2463237906,
+    "modified": "2026-02-13T19:57:43Z",
+    "type": "item",
+    "id": "Q1707730",
+    "labels": {
+      "de": {
+        "language": "de",
+        "value": "Nsibidi-Schrift"
+      },
+      "ca": {
+        "language": "ca",
+        "value": "Nsibidi"
+      },
+      "en": {
+        "language": "en",
+        "value": "Nsibidi"
+      },
+      "es": {
+        "language": "es",
+        "value": "Símbolos Nsibidi"
+      },
+      "fi": {
+        "language": "fi",
+        "value": "Nsibidi"
+      },
+      "lt": {
+        "language": "lt",
+        "value": "Nsibidi"
+      },
+      "pl": {
+        "language": "pl",
+        "value": "Nsibidi"
+      },
+      "pt": {
+        "language": "pt",
+        "value": "Nsibidi"
+      },
+      "ru": {
+        "language": "ru",
+        "value": "Нсибиди"
+      },
+      "sv": {
+        "language": "sv",
+        "value": "Nsibidi"
+      },
+      "ig": {
+        "language": "ig",
+        "value": "Nsibiri"
+      },
+      "uk": {
+        "language": "uk",
+        "value": "Нсібіді"
+      },
+      "fr": {
+        "language": "fr",
+        "value": "Nsibidi"
+      },
+      "ja": {
+        "language": "ja",
+        "value": "ンシビディ文字"
+      },
+      "nl": {
+        "language": "nl",
+        "value": "Nsibidi-schrift"
+      },
+      "zh": {
+        "language": "zh",
+        "value": "恩西比迪"
+      },
+      "cs": {
+        "language": "cs",
+        "value": "Nsibidi"
+      },
+      "hu": {
+        "language": "hu",
+        "value": "nsibid"
+      }
+    },
+    "descriptions": {
+      "en": {
+        "language": "en",
+        "value": "ancient writing system"
+      },
+      "nl": {
+        "language": "nl",
+        "value": "oud schrift"
+      },
+      "de": {
+        "language": "de",
+        "value": "Bilderschrift einer Geheimgesellschaft aus Nigeria"
+      },
+      "sv": {
+        "language": "sv",
+        "value": "ideografiskt skriftspråk"
+      },
+      "cs": {
+        "language": "cs",
+        "value": "starodávné piktografické písmo"
+      }
+    },
+    "aliases": {
+      "es": [
+        {
+          "language": "es",
+          "value": "Simbolos Nsibidi"
+        }
+      ]
+    },
+    "claims": {
+      "P373": [
+        {
+          "mainsnak": {
+            "snaktype": "value",
+            "property": "P373",
+            "hash": "b088556099373e49b8a04d449765383d548ef84b",
+            "datavalue": {
+              "value": "Nsibidi",
+              "type": "string"
+            },
+            "datatype": "string"
+          },
+          "type": "statement",
+          "id": "q1707730$00AA0DBE-6833-44B1-9C30-88DABACDD992",
+          "rank": "normal",
+          "references": [
+            {
+              "hash": "c456dc5cd2117249948c288206ff3f8b1bf574f0",
+              "snaks": {
+                "P143": [
+                  {
+                    "snaktype": "value",
+                    "property": "P143",
+                    "hash": "e17507043402fe54ae6c4d65cc51f46cec987de9",
+                    "datavalue": {
+                      "value": {
+                        "entity-type": "item",
+                        "numeric-id": 8449,
+                        "id": "Q8449"
+                      },
+                      "type": "wikibase-entityid"
+                    },
+                    "datatype": "wikibase-item"
+                  }
+                ]
+              },
+              "snaks-order": [
+                "P143"
+              ]
+            }
+          ]
+        }
+      ],
+      "P646": [
+        {
+          "mainsnak": {
+            "snaktype": "value",
+            "property": "P646",
+            "hash": "95895de24b2931ba4311d6f7285a6fc1e75ba1c2",
+            "datavalue": {
+              "value": "/m/0grz8x",
+              "type": "string"
+            },
+            "datatype": "external-id"
+          },
+          "type": "statement",
+          "id": "Q1707730$E89060F3-6184-4942-9F28-416C48E86A22",
+          "rank": "normal",
+          "references": [
+            {
+              "hash": "2b00cb481cddcac7623114367489b5c194901c4a",
+              "snaks": {
+                "P248": [
+                  {
+                    "snaktype": "value",
+                    "property": "P248",
+                    "hash": "a94b740202b097dd33355e0e6c00e54b9395e5e0",
+                    "datavalue": {
+                      "value": {
+                        "entity-type": "item",
+                        "numeric-id": 15241312,
+                        "id": "Q15241312"
+                      },
+                      "type": "wikibase-entityid"
+                    },
+                    "datatype": "wikibase-item"
+                  }
+                ],
+                "P577": [
+                  {
+                    "snaktype": "value",
+                    "property": "P577",
+                    "hash": "fde79ecb015112d2f29229ccc1ec514ed3e71fa2",
+                    "datavalue": {
+                      "value": {
+                        "time": "+2013-10-28T00:00:00Z",
+                        "timezone": 0,
+                        "before": 0,
+                        "after": 0,
+                        "precision": 11,
+                        "calendarmodel": "http://www.wikidata.org/entity/Q1985727"
+                      },
+                      "type": "time"
+                    },
+                    "datatype": "time"
+                  }
+                ]
+              },
+              "snaks-order": [
+                "P248",
+                "P577"
+              ]
+            }
+          ]
+        }
+      ],
+      "P17": [
+        {
+          "mainsnak": {
+            "snaktype": "value",
+            "property": "P17",
+            "hash": "8116beb62ea32777b0b68313efb65d9b2713adc7",
+            "datavalue": {
+              "value": {
+                "entity-type": "item",
+                "numeric-id": 1033,
+                "id": "Q1033"
+              },
+              "type": "wikibase-entityid"
+            },
+            "datatype": "wikibase-item"
+          },
+          "type": "statement",
+          "id": "Q1707730$f80eccca-41d3-09e9-5360-ff697e6a5db3",
+          "rank": "normal",
+          "references": [
+            {
+              "hash": "446591d1c50b11107ed9e34753ee69d069c191f5",
+              "snaks": {
+                "P248": [
+                  {
+                    "snaktype": "value",
+                    "property": "P248",
+                    "hash": "27277517fb72db4624952a9d77b56d6caabfde55",
+                    "datavalue": {
+                      "value": {
+                        "entity-type": "item",
+                        "numeric-id": 23306977,
+                        "id": "Q23306977"
+                      },
+                      "type": "wikibase-entityid"
+                    },
+                    "datatype": "wikibase-item"
+                  }
+                ],
+                "P304": [
+                  {
+                    "snaktype": "value",
+                    "property": "P304",
+                    "hash": "5f3c736f36d0cd19eafe41bba10689c56c7c7521",
+                    "datavalue": {
+                      "value": "198",
+                      "type": "string"
+                    },
+                    "datatype": "string"
+                  }
+                ]
+              },
+              "snaks-order": [
+                "P248",
+                "P304"
+              ]
+            }
+          ]
+        }
+      ],
+      "P575": [
+        {
+          "mainsnak": {
+            "snaktype": "value",
+            "property": "P575",
+            "hash": "2cdec942eb598fe8aa7c090603464ed4c16ae9fc",
+            "datavalue": {
+              "value": {
+                "time": "+1904-00-00T00:00:00Z",
+                "timezone": 0,
+                "before": 0,
+                "after": 0,
+                "precision": 9,
+                "calendarmodel": "http://www.wikidata.org/entity/Q1985727"
+              },
+              "type": "time"
+            },
+            "datatype": "time"
+          },
+          "type": "statement",
+          "id": "Q1707730$5c459356-43bf-3cb6-43e8-c1e9f35211d8",
+          "rank": "normal",
+          "references": [
+            {
+              "hash": "446591d1c50b11107ed9e34753ee69d069c191f5",
+              "snaks": {
+                "P248": [
+                  {
+                    "snaktype": "value",
+                    "property": "P248",
+                    "hash": "27277517fb72db4624952a9d77b56d6caabfde55",
+                    "datavalue": {
+                      "value": {
+                        "entity-type": "item",
+                        "numeric-id": 23306977,
+                        "id": "Q23306977"
+                      },
+                      "type": "wikibase-entityid"
+                    },
+                    "datatype": "wikibase-item"
+                  }
+                ],
+                "P304": [
+                  {
+                    "snaktype": "value",
+                    "property": "P304",
+                    "hash": "5f3c736f36d0cd19eafe41bba10689c56c7c7521",
+                    "datavalue": {
+                      "value": "198",
+                      "type": "string"
+                    },
+                    "datatype": "string"
+                  }
+                ]
+              },
+              "snaks-order": [
+                "P248",
+                "P304"
+              ]
+            }
+          ]
+        }
+      ],
+      "P31": [
+        {
+          "mainsnak": {
+            "snaktype": "value",
+            "property": "P31",
+            "hash": "44c838e0ef3e89b45ae211612f87ef0983667f64",
+            "datavalue": {
+              "value": {
+                "entity-type": "item",
+                "numeric-id": 29517555,
+                "id": "Q29517555"
+              },
+              "type": "wikibase-entityid"
+            },
+            "datatype": "wikibase-item"
+          },
+          "type": "statement",
+          "id": "Q1707730$4CC18866-4049-4B16-982E-FAA7761E2C57",
+          "rank": "normal"
+        }
+      ],
+      "P1014": [
+        {
+          "mainsnak": {
+            "snaktype": "value",
+            "property": "P1014",
+            "hash": "527d66206500e028d5b22388e6e9b457f203ecd7",
+            "datavalue": {
+              "value": "300263242",
+              "type": "string"
+            },
+            "datatype": "external-id"
+          },
+          "type": "statement",
+          "id": "Q1707730$F11CCCD0-D0C4-456C-9F4A-433F3B8EED3C",
+          "rank": "normal"
+        }
+      ],
+      "P9100": [
+        {
+          "mainsnak": {
+            "snaktype": "value",
+            "property": "P9100",
+            "hash": "6cce7529aaf983b51fba70e10bc8af21d3204b54",
+            "datavalue": {
+              "value": "nsibidi",
+              "type": "string"
+            },
+            "datatype": "external-id"
+          },
+          "type": "statement",
+          "id": "Q1707730$1a353517-4041-802e-6009-4437820d0980",
+          "rank": "normal"
+        }
+      ]
+    },
+    "sitelinks": {
+      "cawiki": {
+        "site": "cawiki",
+        "title": "Nsibidi",
+        "badges": [],
+        "url": "https://ca.wikipedia.org/wiki/Nsibidi"
+      },
+      "commonswiki": {
+        "site": "commonswiki",
+        "title": "Category:Nsibidi",
+        "badges": [],
+        "url": "https://commons.wikimedia.org/wiki/Category:Nsibidi"
+      },
+      "cswiki": {
+        "site": "cswiki",
+        "title": "Nsibidi",
+        "badges": [],
+        "url": "https://cs.wikipedia.org/wiki/Nsibidi"
+      },
+      "dewiki": {
+        "site": "dewiki",
+        "title": "Nsibidi-Schrift",
+        "badges": [],
+        "url": "https://de.wikipedia.org/wiki/Nsibidi-Schrift"
+      },
+      "enwiki": {
+        "site": "enwiki",
+        "title": "Nsibidi",
+        "badges": [],
+        "url": "https://en.wikipedia.org/wiki/Nsibidi"
+      },
+      "eswiki": {
+        "site": "eswiki",
+        "title": "Símbolos nsibidi",
+        "badges": [],
+        "url": "https://es.wikipedia.org/wiki/S%C3%ADmbolos_nsibidi"
+      },
+      "fiwiki": {
+        "site": "fiwiki",
+        "title": "Nsibidi",
+        "badges": [],
+        "url": "https://fi.wikipedia.org/wiki/Nsibidi"
+      },
+      "frwiki": {
+        "site": "frwiki",
+        "title": "Nsibidi",
+        "badges": [],
+        "url": "https://fr.wikipedia.org/wiki/Nsibidi"
+      },
+      "huwiki": {
+        "site": "huwiki",
+        "title": "Nsibidi",
+        "badges": [],
+        "url": "https://hu.wikipedia.org/wiki/Nsibidi"
+      },
+      "igwiki": {
+        "site": "igwiki",
+        "title": "Nsibiri",
+        "badges": [],
+        "url": "https://ig.wikipedia.org/wiki/Nsibiri"
+      },
+      "jawiki": {
+        "site": "jawiki",
+        "title": "ンシビディ文字",
+        "badges": [],
+        "url": "https://ja.wikipedia.org/wiki/%E3%83%B3%E3%82%B7%E3%83%93%E3%83%87%E3%82%A3%E6%96%87%E5%AD%97"
+      },
+      "ltwiki": {
+        "site": "ltwiki",
+        "title": "Nsibidi",
+        "badges": [],
+        "url": "https://lt.wikipedia.org/wiki/Nsibidi"
+      },
+      "plwiki": {
+        "site": "plwiki",
+        "title": "Nsibidi",
+        "badges": [],
+        "url": "https://pl.wikipedia.org/wiki/Nsibidi"
+      },
+      "ptwiki": {
+        "site": "ptwiki",
+        "title": "Nsibidi",
+        "badges": [],
+        "url": "https://pt.wikipedia.org/wiki/Nsibidi"
+      },
+      "ruwiki": {
+        "site": "ruwiki",
+        "title": "Нсибиди",
+        "badges": [],
+        "url": "https://ru.wikipedia.org/wiki/%D0%9D%D1%81%D0%B8%D0%B1%D0%B8%D0%B4%D0%B8"
+      },
+      "svwiki": {
+        "site": "svwiki",
+        "title": "Nsibidi",
+        "badges": [],
+        "url": "https://sv.wikipedia.org/wiki/Nsibidi"
+      },
+      "ukwiki": {
+        "site": "ukwiki",
+        "title": "Нсібіді",
+        "badges": [],
+        "url": "https://uk.wikipedia.org/wiki/%D0%9D%D1%81%D1%96%D0%B1%D1%96%D0%B4%D1%96"
+      },
+      "zhwiki": {
+        "site": "zhwiki",
+        "title": "恩西比底文字",
+        "badges": [],
+        "url": "https://zh.wikipedia.org/wiki/%E6%81%A9%E8%A5%BF%E6%AF%94%E5%BA%95%E6%96%87%E5%AD%97"
+      }
+    }
+  }
+}

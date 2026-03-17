@@ -1,0 +1,410 @@
+{
+  "pageid": 2766719,
+  "ns": 0,
+  "title": "Q2890177",
+  "lastrevid": 2411444547,
+  "modified": "2025-10-01T13:40:58Z",
+  "type": "item",
+  "id": "Q2890177",
+  "labels": {
+    "fr": {
+      "language": "fr",
+      "value": "bataille de Thessalonique"
+    },
+    "en": {
+      "language": "en",
+      "value": "Battle of Thessalonica"
+    },
+    "es": {
+      "language": "es",
+      "value": "Batalla de Salónica"
+    },
+    "bg": {
+      "language": "bg",
+      "value": "Битка при Солун (996)"
+    },
+    "pt": {
+      "language": "pt",
+      "value": "Batalha de Tessalônica (996)"
+    },
+    "sr": {
+      "language": "sr",
+      "value": "Битка код Солуна"
+    },
+    "el": {
+      "language": "el",
+      "value": "Μάχη της Θεσσαλονίκης"
+    },
+    "tr": {
+      "language": "tr",
+      "value": "Selanik Muharebesi (995)"
+    },
+    "yo": {
+      "language": "yo",
+      "value": "ogun Thessalonica"
+    },
+    "ru": {
+      "language": "ru",
+      "value": "Битва при Фессалониках (995)"
+    },
+    "it": {
+      "language": "it",
+      "value": "Battaglia di Tessalonica (995)"
+    },
+    "ga": {
+      "language": "ga",
+      "value": "Cath Theasaloinicé"
+    }
+  },
+  "descriptions": {
+    "en": {
+      "language": "en",
+      "value": "1000 circa 995 battle"
+    },
+    "tr": {
+      "language": "tr",
+      "value": "yaklaşık 995 yılında Selanik yakınlarında gerçekleşmiş muharebe"
+    }
+  },
+  "aliases": {
+    "es": [
+      {
+        "language": "es",
+        "value": "Batalla de Salonica"
+      }
+    ],
+    "en": [
+      {
+        "language": "en",
+        "value": "Battle of Thessaloniki"
+      }
+    ]
+  },
+  "claims": {
+    "P585": [
+      {
+        "mainsnak": {
+          "snaktype": "value",
+          "property": "P585",
+          "hash": "df1d7b71bd0433fbc5a67403e03a3646904aaa84",
+          "datavalue": {
+            "value": {
+              "time": "+1000-01-01T00:00:00Z",
+              "timezone": 0,
+              "before": 0,
+              "after": 0,
+              "precision": 7,
+              "calendarmodel": "http://www.wikidata.org/entity/Q1985727"
+            },
+            "type": "time"
+          },
+          "datatype": "time"
+        },
+        "type": "statement",
+        "qualifiers": {
+          "P31": [
+            {
+              "snaktype": "value",
+              "property": "P31",
+              "hash": "d5ac6d02e7a8948b72184d9e39cf10acbc5e61ed",
+              "datavalue": {
+                "value": {
+                  "entity-type": "item",
+                  "numeric-id": 26961029,
+                  "id": "Q26961029"
+                },
+                "type": "wikibase-entityid"
+              },
+              "datatype": "wikibase-item"
+            }
+          ]
+        },
+        "qualifiers-order": [
+          "P31"
+        ],
+        "id": "Q2890177$37b05a96-4498-0162-2df5-26feb4eeba5d",
+        "rank": "normal"
+      }
+    ],
+    "P646": [
+      {
+        "mainsnak": {
+          "snaktype": "value",
+          "property": "P646",
+          "hash": "8fc88974048f168e67fa52ca20e8a7c20d7fccd3",
+          "datavalue": {
+            "value": "/m/0280x7j",
+            "type": "string"
+          },
+          "datatype": "external-id"
+        },
+        "type": "statement",
+        "id": "Q2890177$4E9DA4C9-EB40-43A1-A7B9-6CAE7D634E17",
+        "rank": "normal",
+        "references": [
+          {
+            "hash": "2b00cb481cddcac7623114367489b5c194901c4a",
+            "snaks": {
+              "P248": [
+                {
+                  "snaktype": "value",
+                  "property": "P248",
+                  "hash": "a94b740202b097dd33355e0e6c00e54b9395e5e0",
+                  "datavalue": {
+                    "value": {
+                      "entity-type": "item",
+                      "numeric-id": 15241312,
+                      "id": "Q15241312"
+                    },
+                    "type": "wikibase-entityid"
+                  },
+                  "datatype": "wikibase-item"
+                }
+              ],
+              "P577": [
+                {
+                  "snaktype": "value",
+                  "property": "P577",
+                  "hash": "fde79ecb015112d2f29229ccc1ec514ed3e71fa2",
+                  "datavalue": {
+                    "value": {
+                      "time": "+2013-10-28T00:00:00Z",
+                      "timezone": 0,
+                      "before": 0,
+                      "after": 0,
+                      "precision": 11,
+                      "calendarmodel": "http://www.wikidata.org/entity/Q1985727"
+                    },
+                    "type": "time"
+                  },
+                  "datatype": "time"
+                }
+              ]
+            },
+            "snaks-order": [
+              "P248",
+              "P577"
+            ]
+          }
+        ]
+      }
+    ],
+    "P31": [
+      {
+        "mainsnak": {
+          "snaktype": "value",
+          "property": "P31",
+          "hash": "baa1df9dcd37b9f3a062e7a14a8bef0c37078d32",
+          "datavalue": {
+            "value": {
+              "entity-type": "item",
+              "numeric-id": 178561,
+              "id": "Q178561"
+            },
+            "type": "wikibase-entityid"
+          },
+          "datatype": "wikibase-item"
+        },
+        "type": "statement",
+        "id": "Q2890177$79A061D6-6F50-4D64-A918-5AB83173BDC3",
+        "rank": "normal"
+      }
+    ],
+    "P625": [
+      {
+        "mainsnak": {
+          "snaktype": "value",
+          "property": "P625",
+          "hash": "5e5ea93c506bcadb2d26a3f354c1c02e2c7c49d8",
+          "datavalue": {
+            "value": {
+              "latitude": 40.65,
+              "longitude": 22.9,
+              "altitude": null,
+              "precision": 0.01184014236266,
+              "globe": "http://www.wikidata.org/entity/Q2"
+            },
+            "type": "globecoordinate"
+          },
+          "datatype": "globe-coordinate"
+        },
+        "type": "statement",
+        "id": "Q2890177$A2E3C7D9-48D4-45FC-9838-E152B544E6C2",
+        "rank": "normal",
+        "references": [
+          {
+            "hash": "fa278ebfc458360e5aed63d5058cca83c46134f1",
+            "snaks": {
+              "P143": [
+                {
+                  "snaktype": "value",
+                  "property": "P143",
+                  "hash": "e4f6d9441d0600513c4533c672b5ab472dc73694",
+                  "datavalue": {
+                    "value": {
+                      "entity-type": "item",
+                      "numeric-id": 328,
+                      "id": "Q328"
+                    },
+                    "type": "wikibase-entityid"
+                  },
+                  "datatype": "wikibase-item"
+                }
+              ]
+            },
+            "snaks-order": [
+              "P143"
+            ]
+          }
+        ]
+      }
+    ],
+    "P276": [
+      {
+        "mainsnak": {
+          "snaktype": "value",
+          "property": "P276",
+          "hash": "5cf0ac819b0cab9c6cf8bc161af52411f4f0f1d6",
+          "datavalue": {
+            "value": {
+              "entity-type": "item",
+              "numeric-id": 17151,
+              "id": "Q17151"
+            },
+            "type": "wikibase-entityid"
+          },
+          "datatype": "wikibase-item"
+        },
+        "type": "statement",
+        "id": "Q2890177$47554B39-7258-42D2-9D69-F7A6F428E9A7",
+        "rank": "normal"
+      }
+    ],
+    "P361": [
+      {
+        "mainsnak": {
+          "snaktype": "value",
+          "property": "P361",
+          "hash": "0f567c51698d9afeded14e1c1b401cdf5c2d0134",
+          "datavalue": {
+            "value": {
+              "entity-type": "item",
+              "numeric-id": 2817295,
+              "id": "Q2817295"
+            },
+            "type": "wikibase-entityid"
+          },
+          "datatype": "wikibase-item"
+        },
+        "type": "statement",
+        "id": "Q2890177$13ff7b18-479d-593d-27b9-c00b91a77497",
+        "rank": "normal"
+      }
+    ],
+    "P18": [
+      {
+        "mainsnak": {
+          "snaktype": "value",
+          "property": "P18",
+          "hash": "1a97b41ee884cc07ad9284a8f84382202bf08b3a",
+          "datavalue": {
+            "value": "Ambush and death of Gregorios Taronites by the Bulgarians.jpg",
+            "type": "string"
+          },
+          "datatype": "commonsMedia"
+        },
+        "type": "statement",
+        "id": "Q2890177$1A705750-B2A7-48AF-A157-258E5CBCCB28",
+        "rank": "normal",
+        "references": [
+          {
+            "hash": "fa278ebfc458360e5aed63d5058cca83c46134f1",
+            "snaks": {
+              "P143": [
+                {
+                  "snaktype": "value",
+                  "property": "P143",
+                  "hash": "e4f6d9441d0600513c4533c672b5ab472dc73694",
+                  "datavalue": {
+                    "value": {
+                      "entity-type": "item",
+                      "numeric-id": 328,
+                      "id": "Q328"
+                    },
+                    "type": "wikibase-entityid"
+                  },
+                  "datatype": "wikibase-item"
+                }
+              ]
+            },
+            "snaks-order": [
+              "P143"
+            ]
+          }
+        ]
+      }
+    ]
+  },
+  "sitelinks": {
+    "bgwiki": {
+      "site": "bgwiki",
+      "title": "Битка при Солун (995)",
+      "badges": [],
+      "url": "https://bg.wikipedia.org/wiki/%D0%91%D0%B8%D1%82%D0%BA%D0%B0_%D0%BF%D1%80%D0%B8_%D0%A1%D0%BE%D0%BB%D1%83%D0%BD_(995)"
+    },
+    "elwiki": {
+      "site": "elwiki",
+      "title": "Μάχη της Θεσσαλονίκης (995)",
+      "badges": [],
+      "url": "https://el.wikipedia.org/wiki/%CE%9C%CE%AC%CF%87%CE%B7_%CF%84%CE%B7%CF%82_%CE%98%CE%B5%CF%83%CF%83%CE%B1%CE%BB%CE%BF%CE%BD%CE%AF%CE%BA%CE%B7%CF%82_(995)"
+    },
+    "enwiki": {
+      "site": "enwiki",
+      "title": "Battle of Thessalonica (995)",
+      "badges": [],
+      "url": "https://en.wikipedia.org/wiki/Battle_of_Thessalonica_(995)"
+    },
+    "eswiki": {
+      "site": "eswiki",
+      "title": "Batalla de Tesalónica",
+      "badges": [],
+      "url": "https://es.wikipedia.org/wiki/Batalla_de_Tesal%C3%B3nica"
+    },
+    "frwiki": {
+      "site": "frwiki",
+      "title": "Bataille de Thessalonique (995)",
+      "badges": [],
+      "url": "https://fr.wikipedia.org/wiki/Bataille_de_Thessalonique_(995)"
+    },
+    "itwiki": {
+      "site": "itwiki",
+      "title": "Battaglia di Tessalonica (995)",
+      "badges": [],
+      "url": "https://it.wikipedia.org/wiki/Battaglia_di_Tessalonica_(995)"
+    },
+    "ptwiki": {
+      "site": "ptwiki",
+      "title": "Batalha de Tessalônica (995)",
+      "badges": [],
+      "url": "https://pt.wikipedia.org/wiki/Batalha_de_Tessal%C3%B4nica_(995)"
+    },
+    "ruwiki": {
+      "site": "ruwiki",
+      "title": "Битва при Фессалониках (995)",
+      "badges": [],
+      "url": "https://ru.wikipedia.org/wiki/%D0%91%D0%B8%D1%82%D0%B2%D0%B0_%D0%BF%D1%80%D0%B8_%D0%A4%D0%B5%D1%81%D1%81%D0%B0%D0%BB%D0%BE%D0%BD%D0%B8%D0%BA%D0%B0%D1%85_(995)"
+    },
+    "srwiki": {
+      "site": "srwiki",
+      "title": "Битка код Солуна (995)",
+      "badges": [],
+      "url": "https://sr.wikipedia.org/wiki/%D0%91%D0%B8%D1%82%D0%BA%D0%B0_%D0%BA%D0%BE%D0%B4_%D0%A1%D0%BE%D0%BB%D1%83%D0%BD%D0%B0_(995)"
+    },
+    "trwiki": {
+      "site": "trwiki",
+      "title": "Selanik Muharebesi (995)",
+      "badges": [],
+      "url": "https://tr.wikipedia.org/wiki/Selanik_Muharebesi_(995)"
+    }
+  }
+}

@@ -1,0 +1,316 @@
+{
+  "saved_at": "2026-03-07T13:30:13.009Z",
+  "value": {
+    "pageid": 2728416,
+    "ns": 0,
+    "title": "Q2848904",
+    "lastrevid": 2172385230,
+    "modified": "2024-06-04T17:30:05Z",
+    "type": "item",
+    "id": "Q2848904",
+    "labels": {
+      "fr": {
+        "language": "fr",
+        "value": "André the Giant Has a Posse"
+      },
+      "en": {
+        "language": "en",
+        "value": "Andre the Giant Has a Posse"
+      },
+      "sv": {
+        "language": "sv",
+        "value": "OBEY"
+      },
+      "pl": {
+        "language": "pl",
+        "value": "OBEY"
+      },
+      "it": {
+        "language": "it",
+        "value": "Andre the Giant Has a Posse"
+      },
+      "zh": {
+        "language": "zh",
+        "value": "巨人安德魯擁有一支民兵隊"
+      },
+      "ca": {
+        "language": "ca",
+        "value": "Andre the Giant Has a Posse"
+      }
+    },
+    "descriptions": {
+      "en": {
+        "language": "en",
+        "value": "Street art campaign by Shepard Fairey"
+      },
+      "fr": {
+        "language": "fr",
+        "value": "campagne de street art de Shepard Fairey"
+      }
+    },
+    "aliases": {
+      "fr": [
+        {
+          "language": "fr",
+          "value": "Obey Giant"
+        },
+        {
+          "language": "fr",
+          "value": "André the giant has a posse"
+        },
+        {
+          "language": "fr",
+          "value": "André The Giant Has A Posse"
+        },
+        {
+          "language": "fr",
+          "value": "Andre the Giant Has a Posse"
+        },
+        {
+          "language": "fr",
+          "value": "OBEY"
+        }
+      ],
+      "en": [
+        {
+          "language": "en",
+          "value": "OBEY"
+        }
+      ]
+    },
+    "claims": {
+      "P170": [
+        {
+          "mainsnak": {
+            "snaktype": "value",
+            "property": "P170",
+            "hash": "f0d893206099a1c4226a2d53c45b46477da8c131",
+            "datavalue": {
+              "value": {
+                "entity-type": "item",
+                "numeric-id": 1332698,
+                "id": "Q1332698"
+              },
+              "type": "wikibase-entityid"
+            },
+            "datatype": "wikibase-item"
+          },
+          "type": "statement",
+          "id": "Q2848904$0B21A80D-B254-4383-809D-04C11BAFA3CE",
+          "rank": "normal"
+        }
+      ],
+      "P856": [
+        {
+          "mainsnak": {
+            "snaktype": "value",
+            "property": "P856",
+            "hash": "4f41887f807c568ed145474fc4a9a1394a03e393",
+            "datavalue": {
+              "value": "http://www.obeygiant.com/",
+              "type": "string"
+            },
+            "datatype": "url"
+          },
+          "type": "statement",
+          "qualifiers": {
+            "P407": [
+              {
+                "snaktype": "value",
+                "property": "P407",
+                "hash": "daf1c4fcb58181b02dff9cc89deb084004ddae4b",
+                "datavalue": {
+                  "value": {
+                    "entity-type": "item",
+                    "numeric-id": 1860,
+                    "id": "Q1860"
+                  },
+                  "type": "wikibase-entityid"
+                },
+                "datatype": "wikibase-item"
+              }
+            ]
+          },
+          "qualifiers-order": [
+            "P407"
+          ],
+          "id": "Q2848904$8167f611-4e83-f440-c50e-39602b294771",
+          "rank": "normal"
+        }
+      ],
+      "P571": [
+        {
+          "mainsnak": {
+            "snaktype": "value",
+            "property": "P571",
+            "hash": "551a6d572e2d55fa1aefb8d5f9e7464617fa78f5",
+            "datavalue": {
+              "value": {
+                "time": "+1989-00-00T00:00:00Z",
+                "timezone": 0,
+                "before": 0,
+                "after": 0,
+                "precision": 9,
+                "calendarmodel": "http://www.wikidata.org/entity/Q1985727"
+              },
+              "type": "time"
+            },
+            "datatype": "time"
+          },
+          "type": "statement",
+          "id": "Q2848904$5269b293-4202-0e9f-8b31-c2db4d883bf2",
+          "rank": "normal"
+        }
+      ],
+      "P18": [
+        {
+          "mainsnak": {
+            "snaktype": "value",
+            "property": "P18",
+            "hash": "d005e4a046417d5c697083be9fba02d0e6c736e7",
+            "datavalue": {
+              "value": "OBEY war hier - panoramio.jpg",
+              "type": "string"
+            },
+            "datatype": "commonsMedia"
+          },
+          "type": "statement",
+          "qualifiers": {
+            "P2096": [
+              {
+                "snaktype": "value",
+                "property": "P2096",
+                "hash": "edf2ab1f5b57e568705885126a1ca0fe8470a229",
+                "datavalue": {
+                  "value": {
+                    "text": "Graffiti d'Obey Giant.",
+                    "language": "fr"
+                  },
+                  "type": "monolingualtext"
+                },
+                "datatype": "monolingualtext"
+              }
+            ]
+          },
+          "qualifiers-order": [
+            "P2096"
+          ],
+          "id": "Q2848904$5396cd03-4834-a0dc-efda-6832800c600d",
+          "rank": "normal"
+        }
+      ],
+      "P17": [
+        {
+          "mainsnak": {
+            "snaktype": "value",
+            "property": "P17",
+            "hash": "be4c6eafa2984964f04be85667263f5642ba1a72",
+            "datavalue": {
+              "value": {
+                "entity-type": "item",
+                "numeric-id": 30,
+                "id": "Q30"
+              },
+              "type": "wikibase-entityid"
+            },
+            "datatype": "wikibase-item"
+          },
+          "type": "statement",
+          "id": "Q2848904$cee27e8b-4507-56d8-c446-c09bcb2a4806",
+          "rank": "normal"
+        }
+      ],
+      "P646": [
+        {
+          "mainsnak": {
+            "snaktype": "value",
+            "property": "P646",
+            "hash": "ab58a2313bf68a9c783a576ddfe484246eae5dd7",
+            "datavalue": {
+              "value": "/m/03n1c8",
+              "type": "string"
+            },
+            "datatype": "external-id"
+          },
+          "type": "statement",
+          "id": "Q2848904$3E69A81D-B9B3-4FBA-B5CC-1E98957D9751",
+          "rank": "normal"
+        }
+      ],
+      "P31": [
+        {
+          "mainsnak": {
+            "snaktype": "value",
+            "property": "P31",
+            "hash": "09ad954c4f8eec6e29e22b7e98fa8e3db7bf3ef5",
+            "datavalue": {
+              "value": {
+                "entity-type": "item",
+                "numeric-id": 838948,
+                "id": "Q838948"
+              },
+              "type": "wikibase-entityid"
+            },
+            "datatype": "wikibase-item"
+          },
+          "type": "statement",
+          "id": "Q2848904$ABE28329-9AF7-4172-9096-0008E5992CDB",
+          "rank": "normal"
+        }
+      ],
+      "P136": [
+        {
+          "mainsnak": {
+            "snaktype": "value",
+            "property": "P136",
+            "hash": "d73ee1785a871f5fd777a3a20bd6e043e8072d53",
+            "datavalue": {
+              "value": {
+                "entity-type": "item",
+                "numeric-id": 17516,
+                "id": "Q17516"
+              },
+              "type": "wikibase-entityid"
+            },
+            "datatype": "wikibase-item"
+          },
+          "type": "statement",
+          "id": "Q2848904$D09F150B-49B2-4228-86D4-434492205995",
+          "rank": "normal"
+        }
+      ]
+    },
+    "sitelinks": {
+      "enwiki": {
+        "site": "enwiki",
+        "title": "Andre the Giant Has a Posse",
+        "badges": [],
+        "url": "https://en.wikipedia.org/wiki/Andre_the_Giant_Has_a_Posse"
+      },
+      "frwiki": {
+        "site": "frwiki",
+        "title": "André the Giant Has a Posse",
+        "badges": [],
+        "url": "https://fr.wikipedia.org/wiki/Andr%C3%A9_the_Giant_Has_a_Posse"
+      },
+      "itwiki": {
+        "site": "itwiki",
+        "title": "Andre the Giant Has a Posse",
+        "badges": [],
+        "url": "https://it.wikipedia.org/wiki/Andre_the_Giant_Has_a_Posse"
+      },
+      "plwiki": {
+        "site": "plwiki",
+        "title": "OBEY",
+        "badges": [],
+        "url": "https://pl.wikipedia.org/wiki/OBEY"
+      },
+      "svwiki": {
+        "site": "svwiki",
+        "title": "OBEY",
+        "badges": [],
+        "url": "https://sv.wikipedia.org/wiki/OBEY"
+      }
+    }
+  }
+}

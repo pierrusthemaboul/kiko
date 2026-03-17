@@ -1,0 +1,201 @@
+{
+  "saved_at": "2026-03-07T15:12:30.261Z",
+  "value": {
+    "pageid": 17627608,
+    "ns": 0,
+    "title": "Q16010103",
+    "lastrevid": 1826270666,
+    "modified": "2023-02-04T20:36:32Z",
+    "type": "item",
+    "id": "Q16010103",
+    "labels": {
+      "fr": {
+        "language": "fr",
+        "value": "affaire Cahuzac"
+      },
+      "en": {
+        "language": "en",
+        "value": "Cahuzac scandal"
+      },
+      "ca": {
+        "language": "ca",
+        "value": "escàndol Cahuzac"
+      }
+    },
+    "descriptions": {
+      "en": {
+        "language": "en",
+        "value": "French political and financial scandal"
+      },
+      "fr": {
+        "language": "fr",
+        "value": "scandale politique et financier français"
+      },
+      "ca": {
+        "language": "ca",
+        "value": "escàndol polític i financer francès"
+      }
+    },
+    "aliases": {},
+    "claims": {
+      "P31": [
+        {
+          "mainsnak": {
+            "snaktype": "value",
+            "property": "P31",
+            "hash": "e57613c58b05de28ebd154e4292eb0e9147c387e",
+            "datavalue": {
+              "value": {
+                "entity-type": "item",
+                "numeric-id": 934744,
+                "id": "Q934744"
+              },
+              "type": "wikibase-entityid"
+            },
+            "datatype": "wikibase-item"
+          },
+          "type": "statement",
+          "id": "Q16010103$E61306BC-E4D6-4DB7-B28E-7A4B551281FA",
+          "rank": "normal"
+        },
+        {
+          "mainsnak": {
+            "snaktype": "value",
+            "property": "P31",
+            "hash": "302d9504b890f8cc577235300f191fe347c92f9a",
+            "datavalue": {
+              "value": {
+                "entity-type": "item",
+                "numeric-id": 151900,
+                "id": "Q151900"
+              },
+              "type": "wikibase-entityid"
+            },
+            "datatype": "wikibase-item"
+          },
+          "type": "statement",
+          "id": "Q16010103$678082c4-4e4b-ce07-afec-58160ddaa7e8",
+          "rank": "normal"
+        }
+      ],
+      "P710": [
+        {
+          "mainsnak": {
+            "snaktype": "value",
+            "property": "P710",
+            "hash": "570f230c5b745703626d2a35afad220c66b6e758",
+            "datavalue": {
+              "value": {
+                "entity-type": "item",
+                "numeric-id": 57751,
+                "id": "Q57751"
+              },
+              "type": "wikibase-entityid"
+            },
+            "datatype": "wikibase-item"
+          },
+          "type": "statement",
+          "id": "Q16010103$adb5438c-47df-5c91-8ef4-3e4f87465538",
+          "rank": "normal"
+        }
+      ],
+      "P580": [
+        {
+          "mainsnak": {
+            "snaktype": "value",
+            "property": "P580",
+            "hash": "8bd65d34e27387e5eef12d361e7c7d7c57da5b9e",
+            "datavalue": {
+              "value": {
+                "time": "+2012-12-00T00:00:00Z",
+                "timezone": 0,
+                "before": 0,
+                "after": 0,
+                "precision": 10,
+                "calendarmodel": "http://www.wikidata.org/entity/Q1985727"
+              },
+              "type": "time"
+            },
+            "datatype": "time"
+          },
+          "type": "statement",
+          "id": "Q16010103$9989901c-4be4-c74b-5892-3190c43e5446",
+          "rank": "normal"
+        }
+      ],
+      "P61": [
+        {
+          "mainsnak": {
+            "snaktype": "value",
+            "property": "P61",
+            "hash": "ca438676776e9d52ed6832e1d8340a687cda5672",
+            "datavalue": {
+              "value": {
+                "entity-type": "item",
+                "numeric-id": 619342,
+                "id": "Q619342"
+              },
+              "type": "wikibase-entityid"
+            },
+            "datatype": "wikibase-item"
+          },
+          "type": "statement",
+          "id": "Q16010103$b6757655-448b-af9e-bde5-66b61a72a53e",
+          "rank": "normal"
+        }
+      ],
+      "P495": [
+        {
+          "mainsnak": {
+            "snaktype": "value",
+            "property": "P495",
+            "hash": "f707ab9792279b2ccec78f8736a8e5d28c8b7fc7",
+            "datavalue": {
+              "value": {
+                "entity-type": "item",
+                "numeric-id": 142,
+                "id": "Q142"
+              },
+              "type": "wikibase-entityid"
+            },
+            "datatype": "wikibase-item"
+          },
+          "type": "statement",
+          "id": "Q16010103$7864440b-45fd-97f6-aa12-298ac41650e1",
+          "rank": "normal"
+        }
+      ],
+      "P2671": [
+        {
+          "mainsnak": {
+            "snaktype": "value",
+            "property": "P2671",
+            "hash": "e961253dd0043a04234ca054a98a2e2699e77a26",
+            "datavalue": {
+              "value": "/g/124xvxwpv",
+              "type": "string"
+            },
+            "datatype": "external-id"
+          },
+          "type": "statement",
+          "id": "Q16010103$93C31CC0-83E9-4B16-8597-5F9084DECD01",
+          "rank": "normal"
+        }
+      ]
+    },
+    "sitelinks": {
+      "enwiki": {
+        "site": "enwiki",
+        "title": "Cahuzac affair",
+        "badges": [],
+        "url": "https://en.wikipedia.org/wiki/Cahuzac_affair"
+      },
+      "frwiki": {
+        "site": "frwiki",
+        "title": "Affaire Cahuzac",
+        "badges": [],
+        "url": "https://fr.wikipedia.org/wiki/Affaire_Cahuzac"
+      }
+    }
+  }
+}

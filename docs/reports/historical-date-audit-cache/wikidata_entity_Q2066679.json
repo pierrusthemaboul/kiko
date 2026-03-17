@@ -1,0 +1,184 @@
+{
+  "saved_at": "2026-03-07T15:20:56.477Z",
+  "value": {
+    "pageid": 1993939,
+    "ns": 0,
+    "title": "Q2066679",
+    "lastrevid": 2204419927,
+    "modified": "2024-07-14T20:31:15Z",
+    "type": "item",
+    "id": "Q2066679",
+    "labels": {
+      "fr": {
+        "language": "fr",
+        "value": "Grande ordonnance de 1357"
+      },
+      "en": {
+        "language": "en",
+        "value": "Great Ordinance of 1357"
+      },
+      "uk": {
+        "language": "uk",
+        "value": "Великий березневий ордонанс"
+      },
+      "it": {
+        "language": "it",
+        "value": "Grande Ordinanza del 1357"
+      },
+      "ru": {
+        "language": "ru",
+        "value": "Великий мартовский ордонанс"
+      },
+      "zh": {
+        "language": "zh",
+        "value": "1357年大法令"
+      },
+      "ja": {
+        "language": "ja",
+        "value": "1357年の大王令"
+      },
+      "es": {
+        "language": "es",
+        "value": "Gran Ordenanza de 1357"
+      }
+    },
+    "descriptions": {
+      "fr": {
+        "language": "fr",
+        "value": "Ordonnance royale"
+      }
+    },
+    "aliases": {
+      "fr": [
+        {
+          "language": "fr",
+          "value": "Grande ordonnance"
+        }
+      ]
+    },
+    "claims": {
+      "P646": [
+        {
+          "mainsnak": {
+            "snaktype": "value",
+            "property": "P646",
+            "hash": "6cb80eba94959b994889295d3f743cbe957e338b",
+            "datavalue": {
+              "value": "/m/03cr41w",
+              "type": "string"
+            },
+            "datatype": "external-id"
+          },
+          "type": "statement",
+          "id": "Q2066679$CC92BE74-EDEB-4B36-8DBD-2545EEBD9EB9",
+          "rank": "normal",
+          "references": [
+            {
+              "hash": "2b00cb481cddcac7623114367489b5c194901c4a",
+              "snaks": {
+                "P248": [
+                  {
+                    "snaktype": "value",
+                    "property": "P248",
+                    "hash": "a94b740202b097dd33355e0e6c00e54b9395e5e0",
+                    "datavalue": {
+                      "value": {
+                        "entity-type": "item",
+                        "numeric-id": 15241312,
+                        "id": "Q15241312"
+                      },
+                      "type": "wikibase-entityid"
+                    },
+                    "datatype": "wikibase-item"
+                  }
+                ],
+                "P577": [
+                  {
+                    "snaktype": "value",
+                    "property": "P577",
+                    "hash": "fde79ecb015112d2f29229ccc1ec514ed3e71fa2",
+                    "datavalue": {
+                      "value": {
+                        "time": "+2013-10-28T00:00:00Z",
+                        "timezone": 0,
+                        "before": 0,
+                        "after": 0,
+                        "precision": 11,
+                        "calendarmodel": "http://www.wikidata.org/entity/Q1985727"
+                      },
+                      "type": "time"
+                    },
+                    "datatype": "time"
+                  }
+                ]
+              },
+              "snaks-order": [
+                "P248",
+                "P577"
+              ]
+            }
+          ]
+        }
+      ],
+      "P31": [
+        {
+          "mainsnak": {
+            "snaktype": "value",
+            "property": "P31",
+            "hash": "8155c411ade51b420073ab5a88bc7f92524bfaec",
+            "datavalue": {
+              "value": {
+                "entity-type": "item",
+                "numeric-id": 49371,
+                "id": "Q49371"
+              },
+              "type": "wikibase-entityid"
+            },
+            "datatype": "wikibase-item"
+          },
+          "type": "statement",
+          "id": "Q2066679$39072853-486a-1981-880c-9fa3a4cdfe78",
+          "rank": "normal"
+        }
+      ]
+    },
+    "sitelinks": {
+      "enwiki": {
+        "site": "enwiki",
+        "title": "Great Ordinance of 1357",
+        "badges": [],
+        "url": "https://en.wikipedia.org/wiki/Great_Ordinance_of_1357"
+      },
+      "eswiki": {
+        "site": "eswiki",
+        "title": "Gran Ordenanza de 1357",
+        "badges": [],
+        "url": "https://es.wikipedia.org/wiki/Gran_Ordenanza_de_1357"
+      },
+      "frwiki": {
+        "site": "frwiki",
+        "title": "Grande ordonnance de 1357",
+        "badges": [],
+        "url": "https://fr.wikipedia.org/wiki/Grande_ordonnance_de_1357"
+      },
+      "itwiki": {
+        "site": "itwiki",
+        "title": "Grande Ordinanza del 1357",
+        "badges": [],
+        "url": "https://it.wikipedia.org/wiki/Grande_Ordinanza_del_1357"
+      },
+      "ruwiki": {
+        "site": "ruwiki",
+        "title": "Великий мартовский ордонанс",
+        "badges": [],
+        "url": "https://ru.wikipedia.org/wiki/%D0%92%D0%B5%D0%BB%D0%B8%D0%BA%D0%B8%D0%B9_%D0%BC%D0%B0%D1%80%D1%82%D0%BE%D0%B2%D1%81%D0%BA%D0%B8%D0%B9_%D0%BE%D1%80%D0%B4%D0%BE%D0%BD%D0%B0%D0%BD%D1%81"
+      },
+      "ukwiki": {
+        "site": "ukwiki",
+        "title": "Великий березневий ордонанс",
+        "badges": [],
+        "url": "https://uk.wikipedia.org/wiki/%D0%92%D0%B5%D0%BB%D0%B8%D0%BA%D0%B8%D0%B9_%D0%B1%D0%B5%D1%80%D0%B5%D0%B7%D0%BD%D0%B5%D0%B2%D0%B8%D0%B9_%D0%BE%D1%80%D0%B4%D0%BE%D0%BD%D0%B0%D0%BD%D1%81"
+      }
+    }
+  }
+}

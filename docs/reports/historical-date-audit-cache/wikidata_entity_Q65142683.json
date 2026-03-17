@@ -1,0 +1,251 @@
+{
+  "saved_at": "2026-03-07T14:03:03.686Z",
+  "value": {
+    "pageid": 64782859,
+    "ns": 0,
+    "title": "Q65142683",
+    "lastrevid": 2440265206,
+    "modified": "2025-12-09T22:54:58Z",
+    "type": "item",
+    "id": "Q65142683",
+    "labels": {
+      "fr": {
+        "language": "fr",
+        "value": "attentats de 1986 en France"
+      },
+      "en": {
+        "language": "en",
+        "value": "1985–86 Paris attacks"
+      },
+      "ca": {
+        "language": "ca",
+        "value": "atemptats de París de 1985-1986"
+      }
+    },
+    "descriptions": {
+      "fr": {
+        "language": "fr",
+        "value": "série d'attentats en France"
+      },
+      "en": {
+        "language": "en",
+        "value": "Series of terrorist attacks in Paris, France"
+      },
+      "ca": {
+        "language": "ca",
+        "value": "sèrie d'atemptats bomba a París durant el 1985 i 1986"
+      }
+    },
+    "aliases": {},
+    "claims": {
+      "P17": [
+        {
+          "mainsnak": {
+            "snaktype": "value",
+            "property": "P17",
+            "hash": "c05db5d169c2560b9799d567a803d20a392f53e4",
+            "datavalue": {
+              "value": {
+                "entity-type": "item",
+                "numeric-id": 142,
+                "id": "Q142"
+              },
+              "type": "wikibase-entityid"
+            },
+            "datatype": "wikibase-item"
+          },
+          "type": "statement",
+          "id": "Q65142683$E68A0F5C-C2D7-4F2F-90C1-0B69B8D8EC8E",
+          "rank": "normal"
+        }
+      ],
+      "P31": [
+        {
+          "mainsnak": {
+            "snaktype": "value",
+            "property": "P31",
+            "hash": "b2208324295a2e915be8da8e013c22ce4d4afbf1",
+            "datavalue": {
+              "value": {
+                "entity-type": "item",
+                "numeric-id": 2223653,
+                "id": "Q2223653"
+              },
+              "type": "wikibase-entityid"
+            },
+            "datatype": "wikibase-item"
+          },
+          "type": "statement",
+          "id": "Q65142683$52ACCE5B-1504-4B88-B2A2-5F8CF16A03ED",
+          "rank": "normal"
+        }
+      ],
+      "P580": [
+        {
+          "mainsnak": {
+            "snaktype": "value",
+            "property": "P580",
+            "hash": "a1a35c4e2ee1e36dfc53fde44c1f0784cba31b40",
+            "datavalue": {
+              "value": {
+                "time": "+1985-12-07T00:00:00Z",
+                "timezone": 0,
+                "before": 0,
+                "after": 0,
+                "precision": 11,
+                "calendarmodel": "http://www.wikidata.org/entity/Q1985727"
+              },
+              "type": "time"
+            },
+            "datatype": "time"
+          },
+          "type": "statement",
+          "id": "Q65142683$d4d4c8bf-45e0-255c-314a-4ced20c0bc8d",
+          "rank": "normal"
+        }
+      ],
+      "P582": [
+        {
+          "mainsnak": {
+            "snaktype": "value",
+            "property": "P582",
+            "hash": "4460fca0391f85ecfff0b7d63ed8520117c3dc69",
+            "datavalue": {
+              "value": {
+                "time": "+1986-09-17T00:00:00Z",
+                "timezone": 0,
+                "before": 0,
+                "after": 0,
+                "precision": 11,
+                "calendarmodel": "http://www.wikidata.org/entity/Q1985727"
+              },
+              "type": "time"
+            },
+            "datatype": "time"
+          },
+          "type": "statement",
+          "id": "Q65142683$c20f8c29-43a8-9275-9acf-7430117d8a4d",
+          "rank": "normal"
+        }
+      ],
+      "P361": [
+        {
+          "mainsnak": {
+            "snaktype": "value",
+            "property": "P361",
+            "hash": "cd14df20146927f7db694e014b15befb469e70fa",
+            "datavalue": {
+              "value": {
+                "entity-type": "item",
+                "numeric-id": 21024818,
+                "id": "Q21024818"
+              },
+              "type": "wikibase-entityid"
+            },
+            "datatype": "wikibase-item"
+          },
+          "type": "statement",
+          "id": "Q65142683$dfb38d45-4d38-d0e8-0a7b-f7442ce116d3",
+          "rank": "normal"
+        }
+      ],
+      "P276": [
+        {
+          "mainsnak": {
+            "snaktype": "value",
+            "property": "P276",
+            "hash": "65737aff6befb67b52f4956ed02d8655213307f0",
+            "datavalue": {
+              "value": {
+                "entity-type": "item",
+                "numeric-id": 90,
+                "id": "Q90"
+              },
+              "type": "wikibase-entityid"
+            },
+            "datatype": "wikibase-item"
+          },
+          "type": "statement",
+          "id": "Q65142683$3AF6C65D-E7BA-4AFC-86B3-68CF64A43C97",
+          "rank": "normal",
+          "references": [
+            {
+              "hash": "d1855b01ce6691ffb1f7f357ba50ad68049795ea",
+              "snaks": {
+                "P143": [
+                  {
+                    "snaktype": "value",
+                    "property": "P143",
+                    "hash": "e4f6d9441d0600513c4533c672b5ab472dc73694",
+                    "datavalue": {
+                      "value": {
+                        "entity-type": "item",
+                        "numeric-id": 328,
+                        "id": "Q328"
+                      },
+                      "type": "wikibase-entityid"
+                    },
+                    "datatype": "wikibase-item"
+                  }
+                ],
+                "P4656": [
+                  {
+                    "snaktype": "value",
+                    "property": "P4656",
+                    "hash": "372cc04efe732dffd443d39f072006659789ead7",
+                    "datavalue": {
+                      "value": "https://en.wikipedia.org/w/index.php?title=1985–86_Paris_attacks&oldid=861206327",
+                      "type": "string"
+                    },
+                    "datatype": "url"
+                  }
+                ]
+              },
+              "snaks-order": [
+                "P143",
+                "P4656"
+              ]
+            }
+          ]
+        }
+      ],
+      "P2671": [
+        {
+          "mainsnak": {
+            "snaktype": "value",
+            "property": "P2671",
+            "hash": "4e448abe652e28da3d5f0282d89a1f6b9ac9d575",
+            "datavalue": {
+              "value": "/g/11gb40vygn",
+              "type": "string"
+            },
+            "datatype": "external-id"
+          },
+          "type": "statement",
+          "id": "Q65142683$08F75365-75B6-46EB-ABEC-0CAD99F30C3D",
+          "rank": "normal"
+        }
+      ]
+    },
+    "sitelinks": {
+      "cawiki": {
+        "site": "cawiki",
+        "title": "Atemptats de París de 1985–1986",
+        "badges": [],
+        "url": "https://ca.wikipedia.org/wiki/Atemptats_de_Par%C3%ADs_de_1985%E2%80%931986"
+      },
+      "enwiki": {
+        "site": "enwiki",
+        "title": "1985–86 Paris attacks",
+        "badges": [],
+        "url": "https://en.wikipedia.org/wiki/1985%E2%80%9386_Paris_attacks"
+      },
+      "frwiki": {
+        "site": "frwiki",
+        "title": "Attentats de 1985-1986 en France",
+        "badges": [],
+        "url": "https://fr.wikipedia.org/wiki/Attentats_de_1985-1986_en_France"
+      }
+    }
+  }
+}

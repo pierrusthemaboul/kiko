@@ -1,0 +1,351 @@
+{
+  "saved_at": "2026-03-07T11:29:07.773Z",
+  "value": {
+    "pageid": 4935285,
+    "ns": 0,
+    "title": "Q5163814",
+    "lastrevid": 2344848014,
+    "modified": "2025-05-05T05:31:14Z",
+    "type": "item",
+    "id": "Q5163814",
+    "labels": {
+      "en": {
+        "language": "en",
+        "value": "religious policies of Constantine the Great"
+      },
+      "ro": {
+        "language": "ro",
+        "value": "Politici religioase în timpul lui Constantin cel Mare"
+      },
+      "ru": {
+        "language": "ru",
+        "value": "религиозная политика Константина I"
+      },
+      "fa": {
+        "language": "fa",
+        "value": "سیاست‌های مذهبی کنستانتین بزرگ"
+      },
+      "ar": {
+        "language": "ar",
+        "value": "السياسات الدينية لقسطنطين العظيم"
+      },
+      "sl": {
+        "language": "sl",
+        "value": "verska politika Konstantina I. Velikega"
+      },
+      "fr": {
+        "language": "fr",
+        "value": "Politique religieuse de Constantin le Grand"
+      },
+      "io": {
+        "language": "io",
+        "value": "Religiala politiko di Konstantinus la 1ma"
+      },
+      "id": {
+        "language": "id",
+        "value": "Kebijakan agama Konstantinus Agung"
+      }
+    },
+    "descriptions": {
+      "en": {
+        "language": "en",
+        "value": "Roman religious policy under Constantine I (312-337 CE)"
+      }
+    },
+    "aliases": {
+      "en": [
+        {
+          "language": "en",
+          "value": "Constantine I's turn against Paganism"
+        },
+        {
+          "language": "en",
+          "value": "Religious policies of Constantine I"
+        },
+        {
+          "language": "en",
+          "value": "religious policy of Constantine the Great"
+        }
+      ]
+    },
+    "claims": {
+      "P1269": [
+        {
+          "mainsnak": {
+            "snaktype": "value",
+            "property": "P1269",
+            "hash": "81c3c1574b7b963847a1951d88617a827a9c65d1",
+            "datavalue": {
+              "value": {
+                "entity-type": "item",
+                "numeric-id": 1568524,
+                "id": "Q1568524"
+              },
+              "type": "wikibase-entityid"
+            },
+            "datatype": "wikibase-item"
+          },
+          "type": "statement",
+          "id": "Q5163814$f28ef442-4d33-4f43-e370-72b5f1407e52",
+          "rank": "normal"
+        }
+      ],
+      "P646": [
+        {
+          "mainsnak": {
+            "snaktype": "value",
+            "property": "P646",
+            "hash": "bc0fedb546119a24c5c2a99cde98dd9a3da72366",
+            "datavalue": {
+              "value": "/m/0glp9qs",
+              "type": "string"
+            },
+            "datatype": "external-id"
+          },
+          "type": "statement",
+          "id": "Q5163814$E2D15F87-3E27-4D67-83A5-8698F75B43A9",
+          "rank": "normal"
+        }
+      ],
+      "P361": [
+        {
+          "mainsnak": {
+            "snaktype": "value",
+            "property": "P361",
+            "hash": "a1fb6c0e4ff4095928eb2ad807324157800e9481",
+            "datavalue": {
+              "value": {
+                "entity-type": "item",
+                "numeric-id": 107013169,
+                "id": "Q107013169"
+              },
+              "type": "wikibase-entityid"
+            },
+            "datatype": "wikibase-item"
+          },
+          "type": "statement",
+          "id": "Q5163814$1c152c53-4500-8d93-a879-4109e6ff6375",
+          "rank": "normal"
+        }
+      ],
+      "P279": [
+        {
+          "mainsnak": {
+            "snaktype": "value",
+            "property": "P279",
+            "hash": "40a9baf7b349ceb247ae591e421c95bdde04145e",
+            "datavalue": {
+              "value": {
+                "entity-type": "item",
+                "numeric-id": 107013262,
+                "id": "Q107013262"
+              },
+              "type": "wikibase-entityid"
+            },
+            "datatype": "wikibase-item"
+          },
+          "type": "statement",
+          "id": "Q5163814$7ea64b38-4257-131a-b4af-fc673d813154",
+          "rank": "normal"
+        }
+      ],
+      "P1542": [
+        {
+          "mainsnak": {
+            "snaktype": "value",
+            "property": "P1542",
+            "hash": "3d4ab70102c6534e5935f8ae9c1ef3ed7ba5b1de",
+            "datavalue": {
+              "value": {
+                "entity-type": "item",
+                "numeric-id": 311388,
+                "id": "Q311388"
+              },
+              "type": "wikibase-entityid"
+            },
+            "datatype": "wikibase-item"
+          },
+          "type": "statement",
+          "id": "Q5163814$5bfab3b2-4ca9-8493-9780-b220cebf4970",
+          "rank": "normal"
+        }
+      ],
+      "P580": [
+        {
+          "mainsnak": {
+            "snaktype": "value",
+            "property": "P580",
+            "hash": "21b0b7f021ca8bbf84c7f715e7041954bb53481a",
+            "datavalue": {
+              "value": {
+                "time": "+0312-00-00T00:00:00Z",
+                "timezone": 0,
+                "before": 0,
+                "after": 0,
+                "precision": 9,
+                "calendarmodel": "http://www.wikidata.org/entity/Q1985786"
+              },
+              "type": "time"
+            },
+            "datatype": "time"
+          },
+          "type": "statement",
+          "id": "Q5163814$62d93a97-445c-e20b-437b-f306f60e263b",
+          "rank": "normal",
+          "references": [
+            {
+              "hash": "6c0ccbad8cb97ef09fdaae843483c50baa50389a",
+              "snaks": {
+                "P4656": [
+                  {
+                    "snaktype": "value",
+                    "property": "P4656",
+                    "hash": "c8089c28708571080a3ae2c181f53e8e5e282f1c",
+                    "datavalue": {
+                      "value": "https://en.wikipedia.org/w/index.php?title=Religious_policies_of_Constantine_the_Great&oldid=1172410783",
+                      "type": "string"
+                    },
+                    "datatype": "url"
+                  }
+                ],
+                "P813": [
+                  {
+                    "snaktype": "value",
+                    "property": "P813",
+                    "hash": "c27936ff0f4e950547d9a368f30bd0bdea1c5f38",
+                    "datavalue": {
+                      "value": {
+                        "time": "+2024-03-02T00:00:00Z",
+                        "timezone": 0,
+                        "before": 0,
+                        "after": 0,
+                        "precision": 11,
+                        "calendarmodel": "http://www.wikidata.org/entity/Q1985727"
+                      },
+                      "type": "time"
+                    },
+                    "datatype": "time"
+                  }
+                ]
+              },
+              "snaks-order": [
+                "P4656",
+                "P813"
+              ]
+            }
+          ]
+        }
+      ],
+      "P582": [
+        {
+          "mainsnak": {
+            "snaktype": "value",
+            "property": "P582",
+            "hash": "933a12f28479781266b0199539226e715ad04cff",
+            "datavalue": {
+              "value": {
+                "time": "+0337-00-00T00:00:00Z",
+                "timezone": 0,
+                "before": 0,
+                "after": 0,
+                "precision": 9,
+                "calendarmodel": "http://www.wikidata.org/entity/Q1985786"
+              },
+              "type": "time"
+            },
+            "datatype": "time"
+          },
+          "type": "statement",
+          "id": "Q5163814$e6d4e92c-4ee6-b0ba-dd3e-365ae5b6136b",
+          "rank": "normal",
+          "references": [
+            {
+              "hash": "6c0ccbad8cb97ef09fdaae843483c50baa50389a",
+              "snaks": {
+                "P4656": [
+                  {
+                    "snaktype": "value",
+                    "property": "P4656",
+                    "hash": "c8089c28708571080a3ae2c181f53e8e5e282f1c",
+                    "datavalue": {
+                      "value": "https://en.wikipedia.org/w/index.php?title=Religious_policies_of_Constantine_the_Great&oldid=1172410783",
+                      "type": "string"
+                    },
+                    "datatype": "url"
+                  }
+                ],
+                "P813": [
+                  {
+                    "snaktype": "value",
+                    "property": "P813",
+                    "hash": "c27936ff0f4e950547d9a368f30bd0bdea1c5f38",
+                    "datavalue": {
+                      "value": {
+                        "time": "+2024-03-02T00:00:00Z",
+                        "timezone": 0,
+                        "before": 0,
+                        "after": 0,
+                        "precision": 11,
+                        "calendarmodel": "http://www.wikidata.org/entity/Q1985727"
+                      },
+                      "type": "time"
+                    },
+                    "datatype": "time"
+                  }
+                ]
+              },
+              "snaks-order": [
+                "P4656",
+                "P813"
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    "sitelinks": {
+      "arwiki": {
+        "site": "arwiki",
+        "title": "السياسات الدينية لقسطنطين العظيم",
+        "badges": [],
+        "url": "https://ar.wikipedia.org/wiki/%D8%A7%D9%84%D8%B3%D9%8A%D8%A7%D8%B3%D8%A7%D8%AA_%D8%A7%D9%84%D8%AF%D9%8A%D9%86%D9%8A%D8%A9_%D9%84%D9%82%D8%B3%D8%B7%D9%86%D8%B7%D9%8A%D9%86_%D8%A7%D9%84%D8%B9%D8%B8%D9%8A%D9%85"
+      },
+      "enwiki": {
+        "site": "enwiki",
+        "title": "Religious policies of Constantine the Great",
+        "badges": [],
+        "url": "https://en.wikipedia.org/wiki/Religious_policies_of_Constantine_the_Great"
+      },
+      "fawiki": {
+        "site": "fawiki",
+        "title": "سیاست‌های مذهبی کنستانتین بزرگ",
+        "badges": [],
+        "url": "https://fa.wikipedia.org/wiki/%D8%B3%DB%8C%D8%A7%D8%B3%D8%AA%E2%80%8C%D9%87%D8%A7%DB%8C_%D9%85%D8%B0%D9%87%D8%A8%DB%8C_%DA%A9%D9%86%D8%B3%D8%AA%D8%A7%D9%86%D8%AA%DB%8C%D9%86_%D8%A8%D8%B2%D8%B1%DA%AF"
+      },
+      "frwiki": {
+        "site": "frwiki",
+        "title": "Politique religieuse de Constantin le Grand",
+        "badges": [],
+        "url": "https://fr.wikipedia.org/wiki/Politique_religieuse_de_Constantin_le_Grand"
+      },
+      "idwiki": {
+        "site": "idwiki",
+        "title": "Kebijakan agama Konstantinus Agung",
+        "badges": [],
+        "url": "https://id.wikipedia.org/wiki/Kebijakan_agama_Konstantinus_Agung"
+      },
+      "iowiki": {
+        "site": "iowiki",
+        "title": "Religiala politiko di Konstantinus la 1ma",
+        "badges": [],
+        "url": "https://io.wikipedia.org/wiki/Religiala_politiko_di_Konstantinus_la_1ma"
+      },
+      "rowiki": {
+        "site": "rowiki",
+        "title": "Politici religioase în timpul lui Constantin cel Mare",
+        "badges": [],
+        "url": "https://ro.wikipedia.org/wiki/Politici_religioase_%C3%AEn_timpul_lui_Constantin_cel_Mare"
+      }
+    }
+  }
+}

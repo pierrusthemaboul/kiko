@@ -1,0 +1,83 @@
+{
+  "saved_at": "2026-03-07T16:44:10.922Z",
+  "value": {
+    "pageid": 56257459,
+    "ns": 0,
+    "title": "Q56318877",
+    "lastrevid": 2460424870,
+    "modified": "2026-02-03T19:31:09Z",
+    "type": "item",
+    "id": "Q56318877",
+    "labels": {
+      "fr": {
+        "language": "fr",
+        "value": "Horloge Qarawiyyin de Fès"
+      },
+      "he": {
+        "language": "he",
+        "value": "שעון המים במסגד אל קרוויין"
+      },
+      "en": {
+        "language": "en",
+        "value": "Astrolabic clock of Fez"
+      }
+    },
+    "descriptions": {
+      "fr": {
+        "language": "fr",
+        "value": "Horloge au Maroc"
+      }
+    },
+    "aliases": {},
+    "claims": {
+      "P2671": [
+        {
+          "mainsnak": {
+            "snaktype": "value",
+            "property": "P2671",
+            "hash": "dff1d2881eff4c8f9115da022583f27a796dfcf3",
+            "datavalue": {
+              "value": "/g/11f5bxy9gz",
+              "type": "string"
+            },
+            "datatype": "external-id"
+          },
+          "type": "statement",
+          "id": "Q56318877$429E865B-EA5B-4DAA-A1EA-65A14E1D0801",
+          "rank": "normal"
+        }
+      ],
+      "P373": [
+        {
+          "mainsnak": {
+            "snaktype": "value",
+            "property": "P373",
+            "hash": "3f7bfe502ab89cf1f70be798c24dd5ce1a3b8cf2",
+            "datavalue": {
+              "value": "Water clock of the Qarawiyyin Mosque",
+              "type": "string"
+            },
+            "datatype": "string"
+          },
+          "type": "statement",
+          "id": "Q56318877$a98805e8-2d90-498a-83b8-576172df6629",
+          "rank": "normal"
+        }
+      ]
+    },
+    "sitelinks": {
+      "commonswiki": {
+        "site": "commonswiki",
+        "title": "Category:Water clock of the Qarawiyyin Mosque",
+        "badges": [],
+        "url": "https://commons.wikimedia.org/wiki/Category:Water_clock_of_the_Qarawiyyin_Mosque"
+      },
+      "frwiki": {
+        "site": "frwiki",
+        "title": "Horloge Qarawiyyin de Fès",
+        "badges": [],
+        "url": "https://fr.wikipedia.org/wiki/Horloge_Qarawiyyin_de_F%C3%A8s"
+      }
+    }
+  }
+}

@@ -1,0 +1,1532 @@
+{
+  "saved_at": "2026-03-07T13:07:13.509Z",
+  "value": {
+    "pageid": 1248115,
+    "ns": 0,
+    "title": "Q1308189",
+    "lastrevid": 1565691243,
+    "modified": "2022-01-21T08:41:03Z",
+    "type": "item",
+    "id": "Q1308189",
+    "labels": {
+      "fr": {
+        "language": "fr",
+        "value": "Impôt sur le revenu"
+      },
+      "de": {
+        "language": "de",
+        "value": "Einkommensteuer (Frankreich)"
+      },
+      "en": {
+        "language": "en",
+        "value": "Impôt sur le revenu en France"
+      }
+    },
+    "descriptions": {
+      "de": {
+        "language": "de",
+        "value": "Steuer in Frankreich"
+      },
+      "fr": {
+        "language": "fr",
+        "value": "impôt français"
+      }
+    },
+    "aliases": {
+      "fr": [
+        {
+          "language": "fr",
+          "value": "Impôt sur le revenu des personnes physique"
+        },
+        {
+          "language": "fr",
+          "value": "IR"
+        },
+        {
+          "language": "fr",
+          "value": "Impôt sur le revenu des personnes physiques (france)"
+        },
+        {
+          "language": "fr",
+          "value": "Impot sur le revenu des personnes physiques (France)"
+        },
+        {
+          "language": "fr",
+          "value": "Bénéfices non commerciaux"
+        },
+        {
+          "language": "fr",
+          "value": "Impôt sur le revenu des personnes physiques (France)"
+        },
+        {
+          "language": "fr",
+          "value": "Déclaration de revenus"
+        },
+        {
+          "language": "fr",
+          "value": "Déclaration d'impôt sur le revenu (France)"
+        },
+        {
+          "language": "fr",
+          "value": "Revenu imposable"
+        },
+        {
+          "language": "fr",
+          "value": "Déclaration des revenus"
+        },
+        {
+          "language": "fr",
+          "value": "Impôt sur le revenu en France"
+        }
+      ]
+    },
+    "claims": {
+      "P1001": [
+        {
+          "mainsnak": {
+            "snaktype": "value",
+            "property": "P1001",
+            "hash": "efe2878aed693a79dce942b2f853910a78c4e2a8",
+            "datavalue": {
+              "value": {
+                "entity-type": "item",
+                "numeric-id": 142,
+                "id": "Q142"
+              },
+              "type": "wikibase-entityid"
+            },
+            "datatype": "wikibase-item"
+          },
+          "type": "statement",
+          "id": "Q1308189$E033C0FF-F065-4B0D-BD8A-B398E5C7E7FD",
+          "rank": "normal"
+        }
+      ],
+      "P31": [
+        {
+          "mainsnak": {
+            "snaktype": "value",
+            "property": "P31",
+            "hash": "fdd103a13c65214669bd6b36c8c53595379f02aa",
+            "datavalue": {
+              "value": {
+                "entity-type": "item",
+                "numeric-id": 179222,
+                "id": "Q179222"
+              },
+              "type": "wikibase-entityid"
+            },
+            "datatype": "wikibase-item"
+          },
+          "type": "statement",
+          "id": "Q1308189$d5f14140-40b1-2b9d-e204-b7de605e964f",
+          "rank": "normal"
+        },
+        {
+          "mainsnak": {
+            "snaktype": "value",
+            "property": "P31",
+            "hash": "3a867ea75147f7b8e42592f1fe2f30127d189d36",
+            "datavalue": {
+              "value": {
+                "entity-type": "item",
+                "numeric-id": 926871,
+                "id": "Q926871"
+              },
+              "type": "wikibase-entityid"
+            },
+            "datatype": "wikibase-item"
+          },
+          "type": "statement",
+          "id": "Q1308189$D1244461-73A1-4DA3-8DA3-E7F2A03DA1DF",
+          "rank": "normal"
+        }
+      ],
+      "P373": [
+        {
+          "mainsnak": {
+            "snaktype": "value",
+            "property": "P373",
+            "hash": "b8a505e9114ddaf84531c8f2dba0dc452482d2c5",
+            "datavalue": {
+              "value": "Impôt sur le revenu en France",
+              "type": "string"
+            },
+            "datatype": "string"
+          },
+          "type": "statement",
+          "id": "Q1308189$1fc3fb77-4d28-969b-8378-baf44cea5ccf",
+          "rank": "normal"
+        }
+      ],
+      "P18": [
+        {
+          "mainsnak": {
+            "snaktype": "value",
+            "property": "P18",
+            "hash": "09963c0b0867c34baf7b3b2c7f33226ea7934906",
+            "datavalue": {
+              "value": "1A1182101XXXIX003 (15368854766).jpg",
+              "type": "string"
+            },
+            "datatype": "commonsMedia"
+          },
+          "type": "statement",
+          "qualifiers": {
+            "P31": [
+              {
+                "snaktype": "value",
+                "property": "P31",
+                "hash": "3f9a1f07a77ece1f95a9af0a0fbb5553170fc4ad",
+                "datavalue": {
+                  "value": {
+                    "entity-type": "item",
+                    "numeric-id": 482919,
+                    "id": "Q482919"
+                  },
+                  "type": "wikibase-entityid"
+                },
+                "datatype": "wikibase-item"
+              }
+            ]
+          },
+          "qualifiers-order": [
+            "P31"
+          ],
+          "id": "Q1308189$3a1a5a75-4f59-7afc-9801-b789de9e1b17",
+          "rank": "normal"
+        }
+      ],
+      "P3219": [
+        {
+          "mainsnak": {
+            "snaktype": "value",
+            "property": "P3219",
+            "hash": "8d3e33c0fe5287c39a43ae1adea2d88845ad29fc",
+            "datavalue": {
+              "value": "impot-sur-le-revenu",
+              "type": "string"
+            },
+            "datatype": "external-id"
+          },
+          "type": "statement",
+          "id": "Q1308189$12769AE5-39D8-4008-B122-50A4D0C9C859",
+          "rank": "normal"
+        }
+      ],
+      "P17": [
+        {
+          "mainsnak": {
+            "snaktype": "value",
+            "property": "P17",
+            "hash": "c05db5d169c2560b9799d567a803d20a392f53e4",
+            "datavalue": {
+              "value": {
+                "entity-type": "item",
+                "numeric-id": 142,
+                "id": "Q142"
+              },
+              "type": "wikibase-entityid"
+            },
+            "datatype": "wikibase-item"
+          },
+          "type": "statement",
+          "id": "Q1308189$7f1bcc2b-4a90-0732-29ef-d972d8105fc3",
+          "rank": "normal"
+        }
+      ],
+      "P1813": [
+        {
+          "mainsnak": {
+            "snaktype": "value",
+            "property": "P1813",
+            "hash": "2756698c9e90c16e0e46f4d5102c016d7557aa5f",
+            "datavalue": {
+              "value": {
+                "text": "IRPP",
+                "language": "fr"
+              },
+              "type": "monolingualtext"
+            },
+            "datatype": "monolingualtext"
+          },
+          "type": "statement",
+          "id": "Q1308189$5b541b55-4c63-d0a6-807a-056fc094abb2",
+          "rank": "normal"
+        }
+      ],
+      "P571": [
+        {
+          "mainsnak": {
+            "snaktype": "value",
+            "property": "P571",
+            "hash": "09af3c0494fe6c88d2a341479cc6565fd386bbfc",
+            "datavalue": {
+              "value": {
+                "time": "+1916-00-00T00:00:00Z",
+                "timezone": 0,
+                "before": 0,
+                "after": 0,
+                "precision": 9,
+                "calendarmodel": "http://www.wikidata.org/entity/Q1985727"
+              },
+              "type": "time"
+            },
+            "datatype": "time"
+          },
+          "type": "statement",
+          "qualifiers": {
+            "P518": [
+              {
+                "snaktype": "value",
+                "property": "P518",
+                "hash": "1fb03a71ff9738c42f8127b5da3aa6b25d8d7ec3",
+                "datavalue": {
+                  "value": {
+                    "entity-type": "item",
+                    "numeric-id": 50384031,
+                    "id": "Q50384031"
+                  },
+                  "type": "wikibase-entityid"
+                },
+                "datatype": "wikibase-item"
+              }
+            ]
+          },
+          "qualifiers-order": [
+            "P518"
+          ],
+          "id": "Q1308189$3f647c7c-45a2-01bc-dc07-6a8bb203f4ae",
+          "rank": "normal"
+        }
+      ],
+      "P793": [
+        {
+          "mainsnak": {
+            "snaktype": "value",
+            "property": "P793",
+            "hash": "6859878417ed7f9219c1b9d51ff4ac659b0600d8",
+            "datavalue": {
+              "value": {
+                "entity-type": "item",
+                "numeric-id": 2424916,
+                "id": "Q2424916"
+              },
+              "type": "wikibase-entityid"
+            },
+            "datatype": "wikibase-item"
+          },
+          "type": "statement",
+          "qualifiers": {
+            "P585": [
+              {
+                "snaktype": "value",
+                "property": "P585",
+                "hash": "5f1c09c0f6f270e1d3021bcee84ce2b2c136ab3f",
+                "datavalue": {
+                  "value": {
+                    "time": "+1914-07-15T00:00:00Z",
+                    "timezone": 0,
+                    "before": 0,
+                    "after": 0,
+                    "precision": 11,
+                    "calendarmodel": "http://www.wikidata.org/entity/Q1985727"
+                  },
+                  "type": "time"
+                },
+                "datatype": "time"
+              }
+            ]
+          },
+          "qualifiers-order": [
+            "P585"
+          ],
+          "id": "Q1308189$d198d953-4ac6-f0e3-2612-4cfd33fcafac",
+          "rank": "normal"
+        }
+      ],
+      "P92": [
+        {
+          "mainsnak": {
+            "snaktype": "value",
+            "property": "P92",
+            "hash": "61122fa830a89b82ad6a6709963168e65c01821b",
+            "datavalue": {
+              "value": {
+                "entity-type": "item",
+                "numeric-id": 263814,
+                "id": "Q263814"
+              },
+              "type": "wikibase-entityid"
+            },
+            "datatype": "wikibase-item"
+          },
+          "type": "statement",
+          "qualifiers": {
+            "P958": [
+              {
+                "snaktype": "value",
+                "property": "P958",
+                "hash": "381d0c5d0315d44108171043453e0feef6284684",
+                "datavalue": {
+                  "value": "1 A",
+                  "type": "string"
+                },
+                "datatype": "string"
+              }
+            ],
+            "P580": [
+              {
+                "snaktype": "value",
+                "property": "P580",
+                "hash": "eec6da7d8d23d9b00969c1284a4136b0c3ae401e",
+                "datavalue": {
+                  "value": {
+                    "time": "+2005-12-31T00:00:00Z",
+                    "timezone": 0,
+                    "before": 0,
+                    "after": 0,
+                    "precision": 11,
+                    "calendarmodel": "http://www.wikidata.org/entity/Q1985727"
+                  },
+                  "type": "time"
+                },
+                "datatype": "time"
+              }
+            ]
+          },
+          "qualifiers-order": [
+            "P958",
+            "P580"
+          ],
+          "id": "Q1308189$4ec4c735-4baa-250e-f80c-4b3c79ba2553",
+          "rank": "normal"
+        }
+      ],
+      "P2139": [
+        {
+          "mainsnak": {
+            "snaktype": "value",
+            "property": "P2139",
+            "hash": "ce0e2ce1054f6082af9854b22684770c4cc42bee",
+            "datavalue": {
+              "value": {
+                "amount": "+59500000000",
+                "unit": "http://www.wikidata.org/entity/Q4916"
+              },
+              "type": "quantity"
+            },
+            "datatype": "quantity"
+          },
+          "type": "statement",
+          "qualifiers": {
+            "P585": [
+              {
+                "snaktype": "value",
+                "property": "P585",
+                "hash": "8f3565657428592dc1dd7f92da0f734724d987d7",
+                "datavalue": {
+                  "value": {
+                    "time": "+2012-00-00T00:00:00Z",
+                    "timezone": 0,
+                    "before": 0,
+                    "after": 0,
+                    "precision": 9,
+                    "calendarmodel": "http://www.wikidata.org/entity/Q1985727"
+                  },
+                  "type": "time"
+                },
+                "datatype": "time"
+              }
+            ]
+          },
+          "qualifiers-order": [
+            "P585"
+          ],
+          "id": "Q1308189$995c7a64-48fe-6478-5f12-ef1caaece29a",
+          "rank": "normal",
+          "references": [
+            {
+              "hash": "ceb65d7460a670bb6d1a59a61b8f5f4a9171c4b7",
+              "snaks": {
+                "P854": [
+                  {
+                    "snaktype": "value",
+                    "property": "P854",
+                    "hash": "9d5a3d824074f4315cbac3fd88cda98e9fa45b6c",
+                    "datavalue": {
+                      "value": "https://www-cairn-info.wikipedialibrary.idm.oclc.org/feuilleter.php?ID_ARTICLE=DUNOD_HUART_2016_01_0103",
+                      "type": "string"
+                    },
+                    "datatype": "url"
+                  }
+                ]
+              },
+              "snaks-order": [
+                "P854"
+              ]
+            }
+          ]
+        },
+        {
+          "mainsnak": {
+            "snaktype": "value",
+            "property": "P2139",
+            "hash": "8ec115f3b23d0f4d6829fe81cfe8d0c418e6dd32",
+            "datavalue": {
+              "value": {
+                "amount": "+77622000000",
+                "unit": "http://www.wikidata.org/entity/Q4916"
+              },
+              "type": "quantity"
+            },
+            "datatype": "quantity"
+          },
+          "type": "statement",
+          "qualifiers": {
+            "P585": [
+              {
+                "snaktype": "value",
+                "property": "P585",
+                "hash": "c34a8cfb745b0cda47dffa6967839b8f92bcb653",
+                "datavalue": {
+                  "value": {
+                    "time": "+2017-00-00T00:00:00Z",
+                    "timezone": 0,
+                    "before": 0,
+                    "after": 0,
+                    "precision": 9,
+                    "calendarmodel": "http://www.wikidata.org/entity/Q1985727"
+                  },
+                  "type": "time"
+                },
+                "datatype": "time"
+              }
+            ]
+          },
+          "qualifiers-order": [
+            "P585"
+          ],
+          "id": "Q1308189$c7d84f0f-42f1-64af-c798-c05d7525157a",
+          "rank": "normal",
+          "references": [
+            {
+              "hash": "9a0a57be40b10c1cf1179b4bf0d55cca72fe358c",
+              "snaks": {
+                "P248": [
+                  {
+                    "snaktype": "value",
+                    "property": "P248",
+                    "hash": "95ce84205b221d78b8aa97d3e8b97d732858be10",
+                    "datavalue": {
+                      "value": {
+                        "entity-type": "item",
+                        "numeric-id": 105605242,
+                        "id": "Q105605242"
+                      },
+                      "type": "wikibase-entityid"
+                    },
+                    "datatype": "wikibase-item"
+                  }
+                ],
+                "P304": [
+                  {
+                    "snaktype": "value",
+                    "property": "P304",
+                    "hash": "b98b12defd9a140ba781f93440038631bbe8d7b3",
+                    "datavalue": {
+                      "value": "50",
+                      "type": "string"
+                    },
+                    "datatype": "string"
+                  }
+                ]
+              },
+              "snaks-order": [
+                "P248",
+                "P304"
+              ]
+            }
+          ]
+        },
+        {
+          "mainsnak": {
+            "snaktype": "value",
+            "property": "P2139",
+            "hash": "35951df237e65fcf5c3b29b0cad7170edd91ad85",
+            "datavalue": {
+              "value": {
+                "amount": "+79215000000",
+                "unit": "http://www.wikidata.org/entity/Q4916"
+              },
+              "type": "quantity"
+            },
+            "datatype": "quantity"
+          },
+          "type": "statement",
+          "qualifiers": {
+            "P585": [
+              {
+                "snaktype": "value",
+                "property": "P585",
+                "hash": "6174553681261aeec411766adf691fdeec1dee47",
+                "datavalue": {
+                  "value": {
+                    "time": "+2018-00-00T00:00:00Z",
+                    "timezone": 0,
+                    "before": 0,
+                    "after": 0,
+                    "precision": 9,
+                    "calendarmodel": "http://www.wikidata.org/entity/Q1985727"
+                  },
+                  "type": "time"
+                },
+                "datatype": "time"
+              }
+            ]
+          },
+          "qualifiers-order": [
+            "P585"
+          ],
+          "id": "Q1308189$58475b45-467f-d47b-7247-86165f4a4bd6",
+          "rank": "normal",
+          "references": [
+            {
+              "hash": "9a0a57be40b10c1cf1179b4bf0d55cca72fe358c",
+              "snaks": {
+                "P248": [
+                  {
+                    "snaktype": "value",
+                    "property": "P248",
+                    "hash": "95ce84205b221d78b8aa97d3e8b97d732858be10",
+                    "datavalue": {
+                      "value": {
+                        "entity-type": "item",
+                        "numeric-id": 105605242,
+                        "id": "Q105605242"
+                      },
+                      "type": "wikibase-entityid"
+                    },
+                    "datatype": "wikibase-item"
+                  }
+                ],
+                "P304": [
+                  {
+                    "snaktype": "value",
+                    "property": "P304",
+                    "hash": "b98b12defd9a140ba781f93440038631bbe8d7b3",
+                    "datavalue": {
+                      "value": "50",
+                      "type": "string"
+                    },
+                    "datatype": "string"
+                  }
+                ]
+              },
+              "snaks-order": [
+                "P248",
+                "P304"
+              ]
+            }
+          ]
+        },
+        {
+          "mainsnak": {
+            "snaktype": "value",
+            "property": "P2139",
+            "hash": "efb0ef255e2d5ae99700d28c8f40df707939e97e",
+            "datavalue": {
+              "value": {
+                "amount": "+87954000000",
+                "unit": "http://www.wikidata.org/entity/Q4916"
+              },
+              "type": "quantity"
+            },
+            "datatype": "quantity"
+          },
+          "type": "statement",
+          "qualifiers": {
+            "P585": [
+              {
+                "snaktype": "value",
+                "property": "P585",
+                "hash": "77f348fcb49110a0de3c2faf4865527dc30dcbc9",
+                "datavalue": {
+                  "value": {
+                    "time": "+2019-00-00T00:00:00Z",
+                    "timezone": 0,
+                    "before": 0,
+                    "after": 0,
+                    "precision": 9,
+                    "calendarmodel": "http://www.wikidata.org/entity/Q1985727"
+                  },
+                  "type": "time"
+                },
+                "datatype": "time"
+              }
+            ]
+          },
+          "qualifiers-order": [
+            "P585"
+          ],
+          "id": "Q1308189$4f27f27b-43a5-be53-8a52-02548518e6fe",
+          "rank": "normal",
+          "references": [
+            {
+              "hash": "9a0a57be40b10c1cf1179b4bf0d55cca72fe358c",
+              "snaks": {
+                "P248": [
+                  {
+                    "snaktype": "value",
+                    "property": "P248",
+                    "hash": "95ce84205b221d78b8aa97d3e8b97d732858be10",
+                    "datavalue": {
+                      "value": {
+                        "entity-type": "item",
+                        "numeric-id": 105605242,
+                        "id": "Q105605242"
+                      },
+                      "type": "wikibase-entityid"
+                    },
+                    "datatype": "wikibase-item"
+                  }
+                ],
+                "P304": [
+                  {
+                    "snaktype": "value",
+                    "property": "P304",
+                    "hash": "b98b12defd9a140ba781f93440038631bbe8d7b3",
+                    "datavalue": {
+                      "value": "50",
+                      "type": "string"
+                    },
+                    "datatype": "string"
+                  }
+                ]
+              },
+              "snaks-order": [
+                "P248",
+                "P304"
+              ]
+            }
+          ]
+        },
+        {
+          "mainsnak": {
+            "snaktype": "value",
+            "property": "P2139",
+            "hash": "8f623e5b14171422506b4ae20b1951d6940b6a7a",
+            "datavalue": {
+              "value": {
+                "amount": "+97777000000",
+                "unit": "http://www.wikidata.org/entity/Q4916"
+              },
+              "type": "quantity"
+            },
+            "datatype": "quantity"
+          },
+          "type": "statement",
+          "qualifiers": {
+            "P585": [
+              {
+                "snaktype": "value",
+                "property": "P585",
+                "hash": "09f85c089438e099c1cd33998f5c59a57729afd2",
+                "datavalue": {
+                  "value": {
+                    "time": "+2020-00-00T00:00:00Z",
+                    "timezone": 0,
+                    "before": 0,
+                    "after": 0,
+                    "precision": 9,
+                    "calendarmodel": "http://www.wikidata.org/entity/Q1985727"
+                  },
+                  "type": "time"
+                },
+                "datatype": "time"
+              }
+            ]
+          },
+          "qualifiers-order": [
+            "P585"
+          ],
+          "id": "Q1308189$99008d57-4911-5bd4-bcff-2885e1a493f9",
+          "rank": "normal",
+          "references": [
+            {
+              "hash": "5f5e10e90b4c98898907fdec0d3fbaba23ff1ea0",
+              "snaks": {
+                "P854": [
+                  {
+                    "snaktype": "value",
+                    "property": "P854",
+                    "hash": "5dc991a0029667bf8bac0cdb3e091e53278a7300",
+                    "datavalue": {
+                      "value": "https://www.economie.gouv.fr/dgfip/rapports-dactivite-dgfip",
+                      "type": "string"
+                    },
+                    "datatype": "url"
+                  }
+                ]
+              },
+              "snaks-order": [
+                "P854"
+              ]
+            }
+          ]
+        }
+      ],
+      "P1365": [
+        {
+          "mainsnak": {
+            "snaktype": "value",
+            "property": "P1365",
+            "hash": "e18513c4ead03832e76201f1f9bf7bf7b68ef300",
+            "datavalue": {
+              "value": {
+                "entity-type": "item",
+                "numeric-id": 98812068,
+                "id": "Q98812068"
+              },
+              "type": "wikibase-entityid"
+            },
+            "datatype": "wikibase-item"
+          },
+          "type": "statement",
+          "id": "Q1308189$9518bccb-4d11-0020-5a46-ef6dfb11a192",
+          "rank": "normal"
+        }
+      ],
+      "P2671": [
+        {
+          "mainsnak": {
+            "snaktype": "value",
+            "property": "P2671",
+            "hash": "19d8d9e9988a1a877fb23a747e08af97fd81beee",
+            "datavalue": {
+              "value": "/g/121dv76_",
+              "type": "string"
+            },
+            "datatype": "external-id"
+          },
+          "type": "statement",
+          "id": "Q1308189$E7CA0380-8B5E-4FE0-92AB-B56FA664F58A",
+          "rank": "normal"
+        }
+      ],
+      "P8876": [
+        {
+          "mainsnak": {
+            "snaktype": "value",
+            "property": "P8876",
+            "hash": "0337f1baff66ceaa8e68d719027e5fdef715025b",
+            "datavalue": {
+              "value": {
+                "amount": "+37889181",
+                "unit": "1"
+              },
+              "type": "quantity"
+            },
+            "datatype": "quantity"
+          },
+          "type": "statement",
+          "qualifiers": {
+            "P585": [
+              {
+                "snaktype": "value",
+                "property": "P585",
+                "hash": "c34a8cfb745b0cda47dffa6967839b8f92bcb653",
+                "datavalue": {
+                  "value": {
+                    "time": "+2017-00-00T00:00:00Z",
+                    "timezone": 0,
+                    "before": 0,
+                    "after": 0,
+                    "precision": 9,
+                    "calendarmodel": "http://www.wikidata.org/entity/Q1985727"
+                  },
+                  "type": "time"
+                },
+                "datatype": "time"
+              }
+            ]
+          },
+          "qualifiers-order": [
+            "P585"
+          ],
+          "id": "Q1308189$70cda0e2-44e7-9d5e-adf6-dc784d863876",
+          "rank": "normal",
+          "references": [
+            {
+              "hash": "9a0a57be40b10c1cf1179b4bf0d55cca72fe358c",
+              "snaks": {
+                "P248": [
+                  {
+                    "snaktype": "value",
+                    "property": "P248",
+                    "hash": "95ce84205b221d78b8aa97d3e8b97d732858be10",
+                    "datavalue": {
+                      "value": {
+                        "entity-type": "item",
+                        "numeric-id": 105605242,
+                        "id": "Q105605242"
+                      },
+                      "type": "wikibase-entityid"
+                    },
+                    "datatype": "wikibase-item"
+                  }
+                ],
+                "P304": [
+                  {
+                    "snaktype": "value",
+                    "property": "P304",
+                    "hash": "b98b12defd9a140ba781f93440038631bbe8d7b3",
+                    "datavalue": {
+                      "value": "50",
+                      "type": "string"
+                    },
+                    "datatype": "string"
+                  }
+                ]
+              },
+              "snaks-order": [
+                "P248",
+                "P304"
+              ]
+            }
+          ]
+        },
+        {
+          "mainsnak": {
+            "snaktype": "value",
+            "property": "P8876",
+            "hash": "438d90af0a41b5571675983522915f14e1208b21",
+            "datavalue": {
+              "value": {
+                "amount": "+38332982",
+                "unit": "1"
+              },
+              "type": "quantity"
+            },
+            "datatype": "quantity"
+          },
+          "type": "statement",
+          "qualifiers": {
+            "P585": [
+              {
+                "snaktype": "value",
+                "property": "P585",
+                "hash": "6174553681261aeec411766adf691fdeec1dee47",
+                "datavalue": {
+                  "value": {
+                    "time": "+2018-00-00T00:00:00Z",
+                    "timezone": 0,
+                    "before": 0,
+                    "after": 0,
+                    "precision": 9,
+                    "calendarmodel": "http://www.wikidata.org/entity/Q1985727"
+                  },
+                  "type": "time"
+                },
+                "datatype": "time"
+              }
+            ]
+          },
+          "qualifiers-order": [
+            "P585"
+          ],
+          "id": "Q1308189$20ca5b13-48c8-a6b0-da27-2047b29def03",
+          "rank": "normal",
+          "references": [
+            {
+              "hash": "9a0a57be40b10c1cf1179b4bf0d55cca72fe358c",
+              "snaks": {
+                "P248": [
+                  {
+                    "snaktype": "value",
+                    "property": "P248",
+                    "hash": "95ce84205b221d78b8aa97d3e8b97d732858be10",
+                    "datavalue": {
+                      "value": {
+                        "entity-type": "item",
+                        "numeric-id": 105605242,
+                        "id": "Q105605242"
+                      },
+                      "type": "wikibase-entityid"
+                    },
+                    "datatype": "wikibase-item"
+                  }
+                ],
+                "P304": [
+                  {
+                    "snaktype": "value",
+                    "property": "P304",
+                    "hash": "b98b12defd9a140ba781f93440038631bbe8d7b3",
+                    "datavalue": {
+                      "value": "50",
+                      "type": "string"
+                    },
+                    "datatype": "string"
+                  }
+                ]
+              },
+              "snaks-order": [
+                "P248",
+                "P304"
+              ]
+            }
+          ]
+        },
+        {
+          "mainsnak": {
+            "snaktype": "value",
+            "property": "P8876",
+            "hash": "3b749fbfe008bcef18c4b184616e272e6ed052d0",
+            "datavalue": {
+              "value": {
+                "amount": "+38575314",
+                "unit": "1"
+              },
+              "type": "quantity"
+            },
+            "datatype": "quantity"
+          },
+          "type": "statement",
+          "qualifiers": {
+            "P585": [
+              {
+                "snaktype": "value",
+                "property": "P585",
+                "hash": "77f348fcb49110a0de3c2faf4865527dc30dcbc9",
+                "datavalue": {
+                  "value": {
+                    "time": "+2019-00-00T00:00:00Z",
+                    "timezone": 0,
+                    "before": 0,
+                    "after": 0,
+                    "precision": 9,
+                    "calendarmodel": "http://www.wikidata.org/entity/Q1985727"
+                  },
+                  "type": "time"
+                },
+                "datatype": "time"
+              }
+            ]
+          },
+          "qualifiers-order": [
+            "P585"
+          ],
+          "id": "Q1308189$1673f260-4b14-50dd-9e60-4e6a78ae9043",
+          "rank": "normal",
+          "references": [
+            {
+              "hash": "9a0a57be40b10c1cf1179b4bf0d55cca72fe358c",
+              "snaks": {
+                "P248": [
+                  {
+                    "snaktype": "value",
+                    "property": "P248",
+                    "hash": "95ce84205b221d78b8aa97d3e8b97d732858be10",
+                    "datavalue": {
+                      "value": {
+                        "entity-type": "item",
+                        "numeric-id": 105605242,
+                        "id": "Q105605242"
+                      },
+                      "type": "wikibase-entityid"
+                    },
+                    "datatype": "wikibase-item"
+                  }
+                ],
+                "P304": [
+                  {
+                    "snaktype": "value",
+                    "property": "P304",
+                    "hash": "b98b12defd9a140ba781f93440038631bbe8d7b3",
+                    "datavalue": {
+                      "value": "50",
+                      "type": "string"
+                    },
+                    "datatype": "string"
+                  }
+                ]
+              },
+              "snaks-order": [
+                "P248",
+                "P304"
+              ]
+            }
+          ]
+        },
+        {
+          "mainsnak": {
+            "snaktype": "value",
+            "property": "P8876",
+            "hash": "24e674f1525367f53f55e0061c05fdb705e0b261",
+            "datavalue": {
+              "value": {
+                "amount": "+36600000",
+                "unit": "1"
+              },
+              "type": "quantity"
+            },
+            "datatype": "quantity"
+          },
+          "type": "statement",
+          "qualifiers": {
+            "P585": [
+              {
+                "snaktype": "value",
+                "property": "P585",
+                "hash": "3c2d510317e0fcbe8582afb1d706a4b6eb08d233",
+                "datavalue": {
+                  "value": {
+                    "time": "+2010-00-00T00:00:00Z",
+                    "timezone": 0,
+                    "before": 0,
+                    "after": 0,
+                    "precision": 9,
+                    "calendarmodel": "http://www.wikidata.org/entity/Q1985727"
+                  },
+                  "type": "time"
+                },
+                "datatype": "time"
+              }
+            ]
+          },
+          "qualifiers-order": [
+            "P585"
+          ],
+          "id": "Q1308189$c9ea0f7b-479a-6827-e3d0-2a052b1aa24b",
+          "rank": "normal",
+          "references": [
+            {
+              "hash": "c2e12506e8cb40457ac8e390ead93ef75a5bcac0",
+              "snaks": {
+                "P854": [
+                  {
+                    "snaktype": "value",
+                    "property": "P854",
+                    "hash": "88a592182f229e90f50eb033fa011e251f05ed7e",
+                    "datavalue": {
+                      "value": "https://fr.statista.com/statistiques/477113/nombre-contribuables-impots-sur-revenu-france/",
+                      "type": "string"
+                    },
+                    "datatype": "url"
+                  }
+                ]
+              },
+              "snaks-order": [
+                "P854"
+              ]
+            }
+          ]
+        },
+        {
+          "mainsnak": {
+            "snaktype": "value",
+            "property": "P8876",
+            "hash": "f14873cd8c85031c377e0c9e6481ffb61f506eab",
+            "datavalue": {
+              "value": {
+                "amount": "+36960000",
+                "unit": "1"
+              },
+              "type": "quantity"
+            },
+            "datatype": "quantity"
+          },
+          "type": "statement",
+          "qualifiers": {
+            "P585": [
+              {
+                "snaktype": "value",
+                "property": "P585",
+                "hash": "1277780215cd5ca03e85ca9c50830783b4fedfe1",
+                "datavalue": {
+                  "value": {
+                    "time": "+2011-00-00T00:00:00Z",
+                    "timezone": 0,
+                    "before": 0,
+                    "after": 0,
+                    "precision": 9,
+                    "calendarmodel": "http://www.wikidata.org/entity/Q1985727"
+                  },
+                  "type": "time"
+                },
+                "datatype": "time"
+              }
+            ]
+          },
+          "qualifiers-order": [
+            "P585"
+          ],
+          "id": "Q1308189$51bf1ed3-4057-54ce-2306-b0e31afd6c58",
+          "rank": "normal",
+          "references": [
+            {
+              "hash": "c2e12506e8cb40457ac8e390ead93ef75a5bcac0",
+              "snaks": {
+                "P854": [
+                  {
+                    "snaktype": "value",
+                    "property": "P854",
+                    "hash": "88a592182f229e90f50eb033fa011e251f05ed7e",
+                    "datavalue": {
+                      "value": "https://fr.statista.com/statistiques/477113/nombre-contribuables-impots-sur-revenu-france/",
+                      "type": "string"
+                    },
+                    "datatype": "url"
+                  }
+                ]
+              },
+              "snaks-order": [
+                "P854"
+              ]
+            }
+          ]
+        },
+        {
+          "mainsnak": {
+            "snaktype": "value",
+            "property": "P8876",
+            "hash": "f2565d29d004512ae5a5ef5ac14b3945719197fc",
+            "datavalue": {
+              "value": {
+                "amount": "+36390000",
+                "unit": "1"
+              },
+              "type": "quantity"
+            },
+            "datatype": "quantity"
+          },
+          "type": "statement",
+          "qualifiers": {
+            "P585": [
+              {
+                "snaktype": "value",
+                "property": "P585",
+                "hash": "8f3565657428592dc1dd7f92da0f734724d987d7",
+                "datavalue": {
+                  "value": {
+                    "time": "+2012-00-00T00:00:00Z",
+                    "timezone": 0,
+                    "before": 0,
+                    "after": 0,
+                    "precision": 9,
+                    "calendarmodel": "http://www.wikidata.org/entity/Q1985727"
+                  },
+                  "type": "time"
+                },
+                "datatype": "time"
+              }
+            ]
+          },
+          "qualifiers-order": [
+            "P585"
+          ],
+          "id": "Q1308189$9dee7457-47a8-ce63-f515-d0e52b34a55f",
+          "rank": "normal",
+          "references": [
+            {
+              "hash": "c2e12506e8cb40457ac8e390ead93ef75a5bcac0",
+              "snaks": {
+                "P854": [
+                  {
+                    "snaktype": "value",
+                    "property": "P854",
+                    "hash": "88a592182f229e90f50eb033fa011e251f05ed7e",
+                    "datavalue": {
+                      "value": "https://fr.statista.com/statistiques/477113/nombre-contribuables-impots-sur-revenu-france/",
+                      "type": "string"
+                    },
+                    "datatype": "url"
+                  }
+                ]
+              },
+              "snaks-order": [
+                "P854"
+              ]
+            }
+          ]
+        },
+        {
+          "mainsnak": {
+            "snaktype": "value",
+            "property": "P8876",
+            "hash": "f7d1f85eb5028bd91dc053b5481eebe87b5a2841",
+            "datavalue": {
+              "value": {
+                "amount": "+36720000",
+                "unit": "1"
+              },
+              "type": "quantity"
+            },
+            "datatype": "quantity"
+          },
+          "type": "statement",
+          "qualifiers": {
+            "P585": [
+              {
+                "snaktype": "value",
+                "property": "P585",
+                "hash": "1e2a78761fecc9e5ba1ba772d86ba7dbf29fe467",
+                "datavalue": {
+                  "value": {
+                    "time": "+2013-00-00T00:00:00Z",
+                    "timezone": 0,
+                    "before": 0,
+                    "after": 0,
+                    "precision": 9,
+                    "calendarmodel": "http://www.wikidata.org/entity/Q1985727"
+                  },
+                  "type": "time"
+                },
+                "datatype": "time"
+              }
+            ]
+          },
+          "qualifiers-order": [
+            "P585"
+          ],
+          "id": "Q1308189$a33ed13c-4414-196a-f06e-842227256e63",
+          "rank": "normal",
+          "references": [
+            {
+              "hash": "c2e12506e8cb40457ac8e390ead93ef75a5bcac0",
+              "snaks": {
+                "P854": [
+                  {
+                    "snaktype": "value",
+                    "property": "P854",
+                    "hash": "88a592182f229e90f50eb033fa011e251f05ed7e",
+                    "datavalue": {
+                      "value": "https://fr.statista.com/statistiques/477113/nombre-contribuables-impots-sur-revenu-france/",
+                      "type": "string"
+                    },
+                    "datatype": "url"
+                  }
+                ]
+              },
+              "snaks-order": [
+                "P854"
+              ]
+            }
+          ]
+        },
+        {
+          "mainsnak": {
+            "snaktype": "value",
+            "property": "P8876",
+            "hash": "d33ba7327d19e51e1558576a1172e21237c82924",
+            "datavalue": {
+              "value": {
+                "amount": "+37120000",
+                "unit": "1"
+              },
+              "type": "quantity"
+            },
+            "datatype": "quantity"
+          },
+          "type": "statement",
+          "qualifiers": {
+            "P585": [
+              {
+                "snaktype": "value",
+                "property": "P585",
+                "hash": "049bd876bdfea826eaceb6f6056701b74c6d3f08",
+                "datavalue": {
+                  "value": {
+                    "time": "+2014-00-00T00:00:00Z",
+                    "timezone": 0,
+                    "before": 0,
+                    "after": 0,
+                    "precision": 9,
+                    "calendarmodel": "http://www.wikidata.org/entity/Q1985727"
+                  },
+                  "type": "time"
+                },
+                "datatype": "time"
+              }
+            ]
+          },
+          "qualifiers-order": [
+            "P585"
+          ],
+          "id": "Q1308189$399e4aa7-41a3-6e8f-dff5-72fa2e0cda53",
+          "rank": "normal",
+          "references": [
+            {
+              "hash": "c2e12506e8cb40457ac8e390ead93ef75a5bcac0",
+              "snaks": {
+                "P854": [
+                  {
+                    "snaktype": "value",
+                    "property": "P854",
+                    "hash": "88a592182f229e90f50eb033fa011e251f05ed7e",
+                    "datavalue": {
+                      "value": "https://fr.statista.com/statistiques/477113/nombre-contribuables-impots-sur-revenu-france/",
+                      "type": "string"
+                    },
+                    "datatype": "url"
+                  }
+                ]
+              },
+              "snaks-order": [
+                "P854"
+              ]
+            }
+          ]
+        },
+        {
+          "mainsnak": {
+            "snaktype": "value",
+            "property": "P8876",
+            "hash": "979b42c0a827b5cda538d8c3ef173ec2f9797507",
+            "datavalue": {
+              "value": {
+                "amount": "+37430000",
+                "unit": "1"
+              },
+              "type": "quantity"
+            },
+            "datatype": "quantity"
+          },
+          "type": "statement",
+          "qualifiers": {
+            "P585": [
+              {
+                "snaktype": "value",
+                "property": "P585",
+                "hash": "b6849eb7f635c6ee36b75d8adf7e3f89c6624101",
+                "datavalue": {
+                  "value": {
+                    "time": "+2015-00-00T00:00:00Z",
+                    "timezone": 0,
+                    "before": 0,
+                    "after": 0,
+                    "precision": 9,
+                    "calendarmodel": "http://www.wikidata.org/entity/Q1985727"
+                  },
+                  "type": "time"
+                },
+                "datatype": "time"
+              }
+            ]
+          },
+          "qualifiers-order": [
+            "P585"
+          ],
+          "id": "Q1308189$54705ab0-455d-b7f0-1db2-79222ffd3c59",
+          "rank": "normal",
+          "references": [
+            {
+              "hash": "c2e12506e8cb40457ac8e390ead93ef75a5bcac0",
+              "snaks": {
+                "P854": [
+                  {
+                    "snaktype": "value",
+                    "property": "P854",
+                    "hash": "88a592182f229e90f50eb033fa011e251f05ed7e",
+                    "datavalue": {
+                      "value": "https://fr.statista.com/statistiques/477113/nombre-contribuables-impots-sur-revenu-france/",
+                      "type": "string"
+                    },
+                    "datatype": "url"
+                  }
+                ]
+              },
+              "snaks-order": [
+                "P854"
+              ]
+            }
+          ]
+        },
+        {
+          "mainsnak": {
+            "snaktype": "value",
+            "property": "P8876",
+            "hash": "543aae30693cd5a02c9c970670a55cce96893b33",
+            "datavalue": {
+              "value": {
+                "amount": "+37680000",
+                "unit": "1"
+              },
+              "type": "quantity"
+            },
+            "datatype": "quantity"
+          },
+          "type": "statement",
+          "qualifiers": {
+            "P585": [
+              {
+                "snaktype": "value",
+                "property": "P585",
+                "hash": "f4e1bbc6e9b3a72c2e1fd3e6061f4c7e7f5acad9",
+                "datavalue": {
+                  "value": {
+                    "time": "+2016-00-00T00:00:00Z",
+                    "timezone": 0,
+                    "before": 0,
+                    "after": 0,
+                    "precision": 9,
+                    "calendarmodel": "http://www.wikidata.org/entity/Q1985727"
+                  },
+                  "type": "time"
+                },
+                "datatype": "time"
+              }
+            ]
+          },
+          "qualifiers-order": [
+            "P585"
+          ],
+          "id": "Q1308189$18a7a767-4b7f-4fb5-de50-59375ccdb425",
+          "rank": "normal",
+          "references": [
+            {
+              "hash": "c2e12506e8cb40457ac8e390ead93ef75a5bcac0",
+              "snaks": {
+                "P854": [
+                  {
+                    "snaktype": "value",
+                    "property": "P854",
+                    "hash": "88a592182f229e90f50eb033fa011e251f05ed7e",
+                    "datavalue": {
+                      "value": "https://fr.statista.com/statistiques/477113/nombre-contribuables-impots-sur-revenu-france/",
+                      "type": "string"
+                    },
+                    "datatype": "url"
+                  }
+                ]
+              },
+              "snaks-order": [
+                "P854"
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    "sitelinks": {
+      "commonswiki": {
+        "site": "commonswiki",
+        "title": "Category:Impôt sur le revenu en France",
+        "badges": [],
+        "url": "https://commons.wikimedia.org/wiki/Category:Imp%C3%B4t_sur_le_revenu_en_France"
+      },
+      "dewiki": {
+        "site": "dewiki",
+        "title": "Einkommensteuer (Frankreich)",
+        "badges": [],
+        "url": "https://de.wikipedia.org/wiki/Einkommensteuer_(Frankreich)"
+      },
+      "frwiki": {
+        "site": "frwiki",
+        "title": "Impôt sur le revenu (France)",
+        "badges": [],
+        "url": "https://fr.wikipedia.org/wiki/Imp%C3%B4t_sur_le_revenu_(France)"
+      }
+    }
+  }
+}

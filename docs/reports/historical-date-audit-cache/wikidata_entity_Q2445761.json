@@ -1,0 +1,418 @@
+{
+  "saved_at": "2026-03-07T15:25:20.495Z",
+  "value": {
+    "pageid": 2362329,
+    "ns": 0,
+    "title": "Q2445761",
+    "lastrevid": 2407059965,
+    "modified": "2025-09-18T20:13:18Z",
+    "type": "item",
+    "id": "Q2445761",
+    "labels": {
+      "nl": {
+        "language": "nl",
+        "value": "Slag bij Saucourt-en-Vimeu"
+      },
+      "en": {
+        "language": "en",
+        "value": "Battle of Saucourt-en-Vimeu"
+      },
+      "fr": {
+        "language": "fr",
+        "value": "bataille de Saucourt-en-Vimeu"
+      },
+      "oc": {
+        "language": "oc",
+        "value": "Batalha de Saucourt-en-Vimeu"
+      },
+      "pcd": {
+        "language": "pcd",
+        "value": "Seucourt"
+      },
+      "pl": {
+        "language": "pl",
+        "value": "Bitwa pod Saucourt-en-Vimeu"
+      },
+      "sh": {
+        "language": "sh",
+        "value": "Bitka kod Saucourt-en-Vimeua"
+      },
+      "de": {
+        "language": "de",
+        "value": "Schlacht bei Saucourt"
+      },
+      "it": {
+        "language": "it",
+        "value": "battaglia di Saucourt-en-Vimeu"
+      },
+      "ja": {
+        "language": "ja",
+        "value": "ソクール＝アン＝ヴィムーの戦い"
+      },
+      "es": {
+        "language": "es",
+        "value": "Batalla de Saucourt-en-Vimeu"
+      },
+      "yo": {
+        "language": "yo",
+        "value": "ogun Saucourt-en-Vimeu"
+      },
+      "zh": {
+        "language": "zh",
+        "value": "索庫爾安維穆戰役"
+      },
+      "pt": {
+        "language": "pt",
+        "value": "Batalha de Saucourt-en-Vimeu"
+      },
+      "ga": {
+        "language": "ga",
+        "value": "Cath Saucourt-en-Vimeu"
+      }
+    },
+    "descriptions": {
+      "de": {
+        "language": "de",
+        "value": "kriegerische Auseinandersetzung zwischen dänisch-normannischen Truppen und dem Heer des Karolingerreichs"
+      },
+      "en": {
+        "language": "en",
+        "value": "881 battle during the Viking invasions of West Francia"
+      },
+      "yo": {
+        "language": "yo",
+        "value": "ogun"
+      }
+    },
+    "aliases": {},
+    "claims": {
+      "P31": [
+        {
+          "mainsnak": {
+            "snaktype": "value",
+            "property": "P31",
+            "hash": "baa1df9dcd37b9f3a062e7a14a8bef0c37078d32",
+            "datavalue": {
+              "value": {
+                "entity-type": "item",
+                "numeric-id": 178561,
+                "id": "Q178561"
+              },
+              "type": "wikibase-entityid"
+            },
+            "datatype": "wikibase-item"
+          },
+          "type": "statement",
+          "id": "q2445761$f1d98a04-4167-5312-7afa-6bbd6dc09b4b",
+          "rank": "normal"
+        }
+      ],
+      "P646": [
+        {
+          "mainsnak": {
+            "snaktype": "value",
+            "property": "P646",
+            "hash": "68ad6abda8c94a3f92cb34c9910198f2b48d4fa7",
+            "datavalue": {
+              "value": "/m/0c01xv",
+              "type": "string"
+            },
+            "datatype": "external-id"
+          },
+          "type": "statement",
+          "id": "Q2445761$2E6DB89F-5EED-480A-99A1-7C0FC4052D1D",
+          "rank": "normal",
+          "references": [
+            {
+              "hash": "2b00cb481cddcac7623114367489b5c194901c4a",
+              "snaks": {
+                "P248": [
+                  {
+                    "snaktype": "value",
+                    "property": "P248",
+                    "hash": "a94b740202b097dd33355e0e6c00e54b9395e5e0",
+                    "datavalue": {
+                      "value": {
+                        "entity-type": "item",
+                        "numeric-id": 15241312,
+                        "id": "Q15241312"
+                      },
+                      "type": "wikibase-entityid"
+                    },
+                    "datatype": "wikibase-item"
+                  }
+                ],
+                "P577": [
+                  {
+                    "snaktype": "value",
+                    "property": "P577",
+                    "hash": "fde79ecb015112d2f29229ccc1ec514ed3e71fa2",
+                    "datavalue": {
+                      "value": {
+                        "time": "+2013-10-28T00:00:00Z",
+                        "timezone": 0,
+                        "before": 0,
+                        "after": 0,
+                        "precision": 11,
+                        "calendarmodel": "http://www.wikidata.org/entity/Q1985727"
+                      },
+                      "type": "time"
+                    },
+                    "datatype": "time"
+                  }
+                ]
+              },
+              "snaks-order": [
+                "P248",
+                "P577"
+              ]
+            }
+          ]
+        }
+      ],
+      "P18": [
+        {
+          "mainsnak": {
+            "snaktype": "value",
+            "property": "P18",
+            "hash": "5bb49bf63013df444ebd34b0cab9d99deed86295",
+            "datavalue": {
+              "value": "Dassy-Invasions normandes.jpg",
+              "type": "string"
+            },
+            "datatype": "commonsMedia"
+          },
+          "type": "statement",
+          "id": "Q2445761$BE0ABC5D-4805-4B8A-8325-22989DFA3933",
+          "rank": "normal"
+        }
+      ],
+      "P276": [
+        {
+          "mainsnak": {
+            "snaktype": "value",
+            "property": "P276",
+            "hash": "89428b9b5dc14e4559c80b653139eb0062c7631e",
+            "datavalue": {
+              "value": {
+                "entity-type": "item",
+                "numeric-id": 28520,
+                "id": "Q28520"
+              },
+              "type": "wikibase-entityid"
+            },
+            "datatype": "wikibase-item"
+          },
+          "type": "statement",
+          "id": "Q2445761$313E17E5-194B-4D7E-B3C0-D21C660B2640",
+          "rank": "normal",
+          "references": [
+            {
+              "hash": "d4bd87b862b12d99d26e86472d44f26858dee639",
+              "snaks": {
+                "P143": [
+                  {
+                    "snaktype": "value",
+                    "property": "P143",
+                    "hash": "f30cbd35620c4ea6d0633aaf0210a8916130469b",
+                    "datavalue": {
+                      "value": {
+                        "entity-type": "item",
+                        "numeric-id": 8447,
+                        "id": "Q8447"
+                      },
+                      "type": "wikibase-entityid"
+                    },
+                    "datatype": "wikibase-item"
+                  }
+                ]
+              },
+              "snaks-order": [
+                "P143"
+              ]
+            }
+          ]
+        }
+      ],
+      "P585": [
+        {
+          "mainsnak": {
+            "snaktype": "value",
+            "property": "P585",
+            "hash": "0a35212722cea3f3610b6ee63e1b5d3912481c30",
+            "datavalue": {
+              "value": {
+                "time": "+0881-08-03T00:00:00Z",
+                "timezone": 0,
+                "before": 0,
+                "after": 0,
+                "precision": 11,
+                "calendarmodel": "http://www.wikidata.org/entity/Q1985727"
+              },
+              "type": "time"
+            },
+            "datatype": "time"
+          },
+          "type": "statement",
+          "id": "Q2445761$9E46FEC9-B56F-4D73-8751-5A714724E202",
+          "rank": "normal",
+          "references": [
+            {
+              "hash": "d4bd87b862b12d99d26e86472d44f26858dee639",
+              "snaks": {
+                "P143": [
+                  {
+                    "snaktype": "value",
+                    "property": "P143",
+                    "hash": "f30cbd35620c4ea6d0633aaf0210a8916130469b",
+                    "datavalue": {
+                      "value": {
+                        "entity-type": "item",
+                        "numeric-id": 8447,
+                        "id": "Q8447"
+                      },
+                      "type": "wikibase-entityid"
+                    },
+                    "datatype": "wikibase-item"
+                  }
+                ]
+              },
+              "snaks-order": [
+                "P143"
+              ]
+            }
+          ]
+        }
+      ],
+      "P625": [
+        {
+          "mainsnak": {
+            "snaktype": "value",
+            "property": "P625",
+            "hash": "fff65ea55ceade5047921200c75ff23acbf4b186",
+            "datavalue": {
+              "value": {
+                "latitude": 50.081764,
+                "longitude": 1.599351,
+                "altitude": null,
+                "precision": 0.000001,
+                "globe": "http://www.wikidata.org/entity/Q2"
+              },
+              "type": "globecoordinate"
+            },
+            "datatype": "globe-coordinate"
+          },
+          "type": "statement",
+          "id": "Q2445761$BB61441B-82D8-4787-BC94-2D306C0A68B1",
+          "rank": "normal"
+        }
+      ],
+      "P17": [
+        {
+          "mainsnak": {
+            "snaktype": "value",
+            "property": "P17",
+            "hash": "c05db5d169c2560b9799d567a803d20a392f53e4",
+            "datavalue": {
+              "value": {
+                "entity-type": "item",
+                "numeric-id": 142,
+                "id": "Q142"
+              },
+              "type": "wikibase-entityid"
+            },
+            "datatype": "wikibase-item"
+          },
+          "type": "statement",
+          "id": "Q2445761$C91A7DEE-0ECC-4D4C-8F66-2C95ECEBFD81",
+          "rank": "normal"
+        }
+      ],
+      "P373": [
+        {
+          "mainsnak": {
+            "snaktype": "value",
+            "property": "P373",
+            "hash": "97c5f9514185792233184d224f10b7a1fd64ab40",
+            "datavalue": {
+              "value": "Battle of Saucourt-en-Vimeu",
+              "type": "string"
+            },
+            "datatype": "string"
+          },
+          "type": "statement",
+          "id": "Q2445761$d893316c-af84-4d2a-844f-1a1b07f3f9df",
+          "rank": "normal"
+        }
+      ]
+    },
+    "sitelinks": {
+      "commonswiki": {
+        "site": "commonswiki",
+        "title": "Category:Battle of Saucourt-en-Vimeu",
+        "badges": [],
+        "url": "https://commons.wikimedia.org/wiki/Category:Battle_of_Saucourt-en-Vimeu"
+      },
+      "dewiki": {
+        "site": "dewiki",
+        "title": "Schlacht bei Saucourt",
+        "badges": [],
+        "url": "https://de.wikipedia.org/wiki/Schlacht_bei_Saucourt"
+      },
+      "enwiki": {
+        "site": "enwiki",
+        "title": "Battle of Saucourt-en-Vimeu",
+        "badges": [],
+        "url": "https://en.wikipedia.org/wiki/Battle_of_Saucourt-en-Vimeu"
+      },
+      "frwiki": {
+        "site": "frwiki",
+        "title": "Bataille de Saucourt-en-Vimeu",
+        "badges": [],
+        "url": "https://fr.wikipedia.org/wiki/Bataille_de_Saucourt-en-Vimeu"
+      },
+      "itwiki": {
+        "site": "itwiki",
+        "title": "Battaglia di Saucourt-en-Vimeu",
+        "badges": [],
+        "url": "https://it.wikipedia.org/wiki/Battaglia_di_Saucourt-en-Vimeu"
+      },
+      "nlwiki": {
+        "site": "nlwiki",
+        "title": "Slag bij Saucourt-en-Vimeu",
+        "badges": [],
+        "url": "https://nl.wikipedia.org/wiki/Slag_bij_Saucourt-en-Vimeu"
+      },
+      "ocwiki": {
+        "site": "ocwiki",
+        "title": "Batalha de Saucourt-en-Vimeu",
+        "badges": [],
+        "url": "https://oc.wikipedia.org/wiki/Batalha_de_Saucourt-en-Vimeu"
+      },
+      "pcdwiki": {
+        "site": "pcdwiki",
+        "title": "Batale d'Seucourt-in-Vimeu",
+        "badges": [],
+        "url": "https://pcd.wikipedia.org/wiki/Batale_d%27Seucourt-in-Vimeu"
+      },
+      "plwiki": {
+        "site": "plwiki",
+        "title": "Bitwa pod Saucourt-en-Vimeu",
+        "badges": [],
+        "url": "https://pl.wikipedia.org/wiki/Bitwa_pod_Saucourt-en-Vimeu"
+      },
+      "ptwiki": {
+        "site": "ptwiki",
+        "title": "Batalha de Saucourt-en-Vimeu",
+        "badges": [],
+        "url": "https://pt.wikipedia.org/wiki/Batalha_de_Saucourt-en-Vimeu"
+      },
+      "shwiki": {
+        "site": "shwiki",
+        "title": "Bitka kod Saucourt-en-Vimeua",
+        "badges": [],
+        "url": "https://sh.wikipedia.org/wiki/Bitka_kod_Saucourt-en-Vimeua"
+      }
+    }
+  }
+}

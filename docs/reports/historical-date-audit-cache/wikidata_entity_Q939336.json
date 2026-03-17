@@ -1,0 +1,2109 @@
+{
+  "saved_at": "2026-03-07T16:51:14.830Z",
+  "value": {
+    "pageid": 889527,
+    "ns": 0,
+    "title": "Q939336",
+    "lastrevid": 2449624076,
+    "modified": "2025-12-31T11:58:08Z",
+    "type": "item",
+    "id": "Q939336",
+    "labels": {
+      "pl": {
+        "language": "pl",
+        "value": "Orkan Kyrill"
+      },
+      "cs": {
+        "language": "cs",
+        "value": "Kyrill"
+      },
+      "de": {
+        "language": "de",
+        "value": "Orkan Kyrill"
+      },
+      "en": {
+        "language": "en",
+        "value": "Cyclone Kyrill"
+      },
+      "fr": {
+        "language": "fr",
+        "value": "tempête Kyrill"
+      },
+      "it": {
+        "language": "it",
+        "value": "Tempesta Kyrill"
+      },
+      "nl": {
+        "language": "nl",
+        "value": "Kyrill"
+      },
+      "ru": {
+        "language": "ru",
+        "value": "Кирилл"
+      },
+      "sl": {
+        "language": "sl",
+        "value": "Kyrill"
+      },
+      "sv": {
+        "language": "sv",
+        "value": "Orkanen Kyrill"
+      },
+      "tr": {
+        "language": "tr",
+        "value": "Kyrill"
+      },
+      "zh": {
+        "language": "zh",
+        "value": "風暴基里爾"
+      },
+      "ja": {
+        "language": "ja",
+        "value": "キリル"
+      },
+      "vi": {
+        "language": "vi",
+        "value": "Bão Kyrill"
+      },
+      "ar": {
+        "language": "ar",
+        "value": "إعصار كيريل"
+      }
+    },
+    "descriptions": {
+      "nl": {
+        "language": "nl",
+        "value": "storm"
+      },
+      "de": {
+        "language": "de",
+        "value": "Orkan, der am 18. und 19. Januar 2007 in Teilen Europas erhebliche Schäden verursachte"
+      },
+      "en": {
+        "language": "en",
+        "value": "2007 European windstorm"
+      },
+      "cs": {
+        "language": "cs",
+        "value": "hluboká tlaková níže charakterizující povětrnostní situaci druhé dekády ledna 2007 v oblasti severního Atlantiku a Evropy"
+      },
+      "pl": {
+        "language": "pl",
+        "value": "orkan przechodzący nad Europą w styczniu 2007 roku"
+      }
+    },
+    "aliases": {
+      "nl": [
+        {
+          "language": "nl",
+          "value": "Kyrill (storm)"
+        }
+      ],
+      "cs": [
+        {
+          "language": "cs",
+          "value": "orkán Kyrill"
+        },
+        {
+          "language": "cs",
+          "value": "Kirill"
+        }
+      ],
+      "pl": [
+        {
+          "language": "pl",
+          "value": "Huragan Kyrill"
+        },
+        {
+          "language": "pl",
+          "value": "Kirył"
+        },
+        {
+          "language": "pl",
+          "value": "Cyryl"
+        },
+        {
+          "language": "pl",
+          "value": "Orkan Cyryl"
+        },
+        {
+          "language": "pl",
+          "value": "Orkan Kirył"
+        },
+        {
+          "language": "pl",
+          "value": "Huragan Cyryl"
+        },
+        {
+          "language": "pl",
+          "value": "Huragan Kirył"
+        }
+      ]
+    },
+    "claims": {
+      "P373": [
+        {
+          "mainsnak": {
+            "snaktype": "value",
+            "property": "P373",
+            "hash": "e7b079218eee23c237b488f0176468d772d2b2ec",
+            "datavalue": {
+              "value": "Kyrill (storm)",
+              "type": "string"
+            },
+            "datatype": "string"
+          },
+          "type": "statement",
+          "id": "q939336$6B48C31C-01B0-4DB7-88C9-CFBC803DAF80",
+          "rank": "normal"
+        }
+      ],
+      "P227": [
+        {
+          "mainsnak": {
+            "snaktype": "value",
+            "property": "P227",
+            "hash": "68f0f7695aeeaaec1077dace10dc4d517609fcab",
+            "datavalue": {
+              "value": "7664707-9",
+              "type": "string"
+            },
+            "datatype": "external-id"
+          },
+          "type": "statement",
+          "id": "Q939336$CE85888E-C2B9-420E-8D72-4AD6FDEA5DAE",
+          "rank": "normal",
+          "references": [
+            {
+              "hash": "9a24f7c0208b05d6be97077d855671d1dfdbc0dd",
+              "snaks": {
+                "P143": [
+                  {
+                    "snaktype": "value",
+                    "property": "P143",
+                    "hash": "d38375ffe6fe142663ff55cd783aa4df4301d83d",
+                    "datavalue": {
+                      "value": {
+                        "entity-type": "item",
+                        "numeric-id": 48183,
+                        "id": "Q48183"
+                      },
+                      "type": "wikibase-entityid"
+                    },
+                    "datatype": "wikibase-item"
+                  }
+                ]
+              },
+              "snaks-order": [
+                "P143"
+              ]
+            }
+          ]
+        }
+      ],
+      "P18": [
+        {
+          "mainsnak": {
+            "snaktype": "value",
+            "property": "P18",
+            "hash": "083135f8b2c5c41c2eec223a3be937f5225f4cd5",
+            "datavalue": {
+              "value": "Windstorm Thomas.jpg",
+              "type": "string"
+            },
+            "datatype": "commonsMedia"
+          },
+          "type": "statement",
+          "id": "Q939336$1C8FF064-03C8-45D5-989A-540A7E0B02ED",
+          "rank": "normal"
+        },
+        {
+          "mainsnak": {
+            "snaktype": "value",
+            "property": "P18",
+            "hash": "59288a5ebcf8cf712a0e313445004720d91f1a6a",
+            "datavalue": {
+              "value": "STMeurope018 MO.jpg",
+              "type": "string"
+            },
+            "datatype": "commonsMedia"
+          },
+          "type": "statement",
+          "id": "Q939336$23b622ce-410b-736a-644c-c446a55a3e3a",
+          "rank": "preferred"
+        }
+      ],
+      "P31": [
+        {
+          "mainsnak": {
+            "snaktype": "value",
+            "property": "P31",
+            "hash": "430e6e9af16d92df1a954f32ab6a7507188346fe",
+            "datavalue": {
+              "value": {
+                "entity-type": "item",
+                "numeric-id": 148942,
+                "id": "Q148942"
+              },
+              "type": "wikibase-entityid"
+            },
+            "datatype": "wikibase-item"
+          },
+          "type": "statement",
+          "id": "Q939336$213fa7a1-42c6-4140-e2a9-43794c4e9d48",
+          "rank": "normal"
+        }
+      ],
+      "P646": [
+        {
+          "mainsnak": {
+            "snaktype": "value",
+            "property": "P646",
+            "hash": "b2775671c3fd727457532d49cd00ec0ad07c4f5c",
+            "datavalue": {
+              "value": "/m/027s132",
+              "type": "string"
+            },
+            "datatype": "external-id"
+          },
+          "type": "statement",
+          "id": "Q939336$D056CFA5-4613-4BBC-9818-7BCABBB8D06D",
+          "rank": "normal"
+        }
+      ],
+      "P585": [
+        {
+          "mainsnak": {
+            "snaktype": "value",
+            "property": "P585",
+            "hash": "9e0ee623655f523eb9025dfec79b34f6a9d03da4",
+            "datavalue": {
+              "value": {
+                "time": "+2007-01-00T00:00:00Z",
+                "timezone": 0,
+                "before": 0,
+                "after": 0,
+                "precision": 10,
+                "calendarmodel": "http://www.wikidata.org/entity/Q1985727"
+              },
+              "type": "time"
+            },
+            "datatype": "time"
+          },
+          "type": "statement",
+          "id": "Q939336$5e4bb1a3-4bc6-2415-566e-ed8920d86646",
+          "rank": "normal"
+        }
+      ],
+      "P30": [
+        {
+          "mainsnak": {
+            "snaktype": "value",
+            "property": "P30",
+            "hash": "19a1327487d5b9576f36ab9e95214ac7aa1091ba",
+            "datavalue": {
+              "value": {
+                "entity-type": "item",
+                "numeric-id": 46,
+                "id": "Q46"
+              },
+              "type": "wikibase-entityid"
+            },
+            "datatype": "wikibase-item"
+          },
+          "type": "statement",
+          "id": "Q939336$c4416e34-4250-664c-3859-eb264c714e1c",
+          "rank": "normal"
+        }
+      ],
+      "P580": [
+        {
+          "mainsnak": {
+            "snaktype": "value",
+            "property": "P580",
+            "hash": "7bec705f9c263d5c6191846cfd861f4701c0ac9e",
+            "datavalue": {
+              "value": {
+                "time": "+2007-01-16T00:00:00Z",
+                "timezone": 0,
+                "before": 0,
+                "after": 0,
+                "precision": 11,
+                "calendarmodel": "http://www.wikidata.org/entity/Q1985727"
+              },
+              "type": "time"
+            },
+            "datatype": "time"
+          },
+          "type": "statement",
+          "id": "Q939336$483f8dee-467e-ee77-123c-3b7d1f9396a5",
+          "rank": "normal",
+          "references": [
+            {
+              "hash": "ec6f88ab72a4db0eace8d64e9aa9071e630ee3fe",
+              "snaks": {
+                "P143": [
+                  {
+                    "snaktype": "value",
+                    "property": "P143",
+                    "hash": "39224a9c2e8ce5424defbd16603d25771956c7fc",
+                    "datavalue": {
+                      "value": {
+                        "entity-type": "item",
+                        "numeric-id": 1551807,
+                        "id": "Q1551807"
+                      },
+                      "type": "wikibase-entityid"
+                    },
+                    "datatype": "wikibase-item"
+                  }
+                ],
+                "P4656": [
+                  {
+                    "snaktype": "value",
+                    "property": "P4656",
+                    "hash": "a070681ec4077e91521c610af1d115c0d4db7151",
+                    "datavalue": {
+                      "value": "https://pl.wikipedia.org/w/index.php?title=Orkan_Kyrill&oldid=69075337",
+                      "type": "string"
+                    },
+                    "datatype": "url"
+                  }
+                ]
+              },
+              "snaks-order": [
+                "P143",
+                "P4656"
+              ]
+            }
+          ]
+        }
+      ],
+      "P582": [
+        {
+          "mainsnak": {
+            "snaktype": "value",
+            "property": "P582",
+            "hash": "a644d65b3e9ce4e205aadd2477709ab7c0e1ce55",
+            "datavalue": {
+              "value": {
+                "time": "+2007-01-19T00:00:00Z",
+                "timezone": 0,
+                "before": 0,
+                "after": 0,
+                "precision": 11,
+                "calendarmodel": "http://www.wikidata.org/entity/Q1985727"
+              },
+              "type": "time"
+            },
+            "datatype": "time"
+          },
+          "type": "statement",
+          "id": "Q939336$2009d950-4a65-2561-2b3d-88adb79442ca",
+          "rank": "normal",
+          "references": [
+            {
+              "hash": "ec6f88ab72a4db0eace8d64e9aa9071e630ee3fe",
+              "snaks": {
+                "P143": [
+                  {
+                    "snaktype": "value",
+                    "property": "P143",
+                    "hash": "39224a9c2e8ce5424defbd16603d25771956c7fc",
+                    "datavalue": {
+                      "value": {
+                        "entity-type": "item",
+                        "numeric-id": 1551807,
+                        "id": "Q1551807"
+                      },
+                      "type": "wikibase-entityid"
+                    },
+                    "datatype": "wikibase-item"
+                  }
+                ],
+                "P4656": [
+                  {
+                    "snaktype": "value",
+                    "property": "P4656",
+                    "hash": "a070681ec4077e91521c610af1d115c0d4db7151",
+                    "datavalue": {
+                      "value": "https://pl.wikipedia.org/w/index.php?title=Orkan_Kyrill&oldid=69075337",
+                      "type": "string"
+                    },
+                    "datatype": "url"
+                  }
+                ]
+              },
+              "snaks-order": [
+                "P143",
+                "P4656"
+              ]
+            }
+          ]
+        }
+      ],
+      "P1120": [
+        {
+          "mainsnak": {
+            "snaktype": "value",
+            "property": "P1120",
+            "hash": "31907cdc285c139b52c055fe8b440bdbce13df3f",
+            "datavalue": {
+              "value": {
+                "amount": "+47",
+                "unit": "1"
+              },
+              "type": "quantity"
+            },
+            "datatype": "quantity"
+          },
+          "type": "statement",
+          "qualifiers": {
+            "P1480": [
+              {
+                "snaktype": "value",
+                "property": "P1480",
+                "hash": "cb40f2027a88b8d23735681aaccba1069a574f54",
+                "datavalue": {
+                  "value": {
+                    "entity-type": "item",
+                    "numeric-id": 5727902,
+                    "id": "Q5727902"
+                  },
+                  "type": "wikibase-entityid"
+                },
+                "datatype": "wikibase-item"
+              }
+            ]
+          },
+          "qualifiers-order": [
+            "P1480"
+          ],
+          "id": "Q939336$b3823399-4b6a-85a6-643f-0bb80221a29f",
+          "rank": "normal",
+          "references": [
+            {
+              "hash": "ec6f88ab72a4db0eace8d64e9aa9071e630ee3fe",
+              "snaks": {
+                "P143": [
+                  {
+                    "snaktype": "value",
+                    "property": "P143",
+                    "hash": "39224a9c2e8ce5424defbd16603d25771956c7fc",
+                    "datavalue": {
+                      "value": {
+                        "entity-type": "item",
+                        "numeric-id": 1551807,
+                        "id": "Q1551807"
+                      },
+                      "type": "wikibase-entityid"
+                    },
+                    "datatype": "wikibase-item"
+                  }
+                ],
+                "P4656": [
+                  {
+                    "snaktype": "value",
+                    "property": "P4656",
+                    "hash": "a070681ec4077e91521c610af1d115c0d4db7151",
+                    "datavalue": {
+                      "value": "https://pl.wikipedia.org/w/index.php?title=Orkan_Kyrill&oldid=69075337",
+                      "type": "string"
+                    },
+                    "datatype": "url"
+                  }
+                ]
+              },
+              "snaks-order": [
+                "P143",
+                "P4656"
+              ]
+            }
+          ]
+        }
+      ],
+      "P17": [
+        {
+          "mainsnak": {
+            "snaktype": "value",
+            "property": "P17",
+            "hash": "ef7247b704f4ec0a7df39e83306bb388fea17d5f",
+            "datavalue": {
+              "value": {
+                "entity-type": "item",
+                "numeric-id": 183,
+                "id": "Q183"
+              },
+              "type": "wikibase-entityid"
+            },
+            "datatype": "wikibase-item"
+          },
+          "type": "statement",
+          "id": "Q939336$234ef31d-4d85-0fd3-b3f5-ed28881459f9",
+          "rank": "normal",
+          "references": [
+            {
+              "hash": "ec6f88ab72a4db0eace8d64e9aa9071e630ee3fe",
+              "snaks": {
+                "P143": [
+                  {
+                    "snaktype": "value",
+                    "property": "P143",
+                    "hash": "39224a9c2e8ce5424defbd16603d25771956c7fc",
+                    "datavalue": {
+                      "value": {
+                        "entity-type": "item",
+                        "numeric-id": 1551807,
+                        "id": "Q1551807"
+                      },
+                      "type": "wikibase-entityid"
+                    },
+                    "datatype": "wikibase-item"
+                  }
+                ],
+                "P4656": [
+                  {
+                    "snaktype": "value",
+                    "property": "P4656",
+                    "hash": "a070681ec4077e91521c610af1d115c0d4db7151",
+                    "datavalue": {
+                      "value": "https://pl.wikipedia.org/w/index.php?title=Orkan_Kyrill&oldid=69075337",
+                      "type": "string"
+                    },
+                    "datatype": "url"
+                  }
+                ]
+              },
+              "snaks-order": [
+                "P143",
+                "P4656"
+              ]
+            }
+          ]
+        },
+        {
+          "mainsnak": {
+            "snaktype": "value",
+            "property": "P17",
+            "hash": "88bdf0debebfba0d0f20c85ee32a18fb3e6c71a6",
+            "datavalue": {
+              "value": {
+                "entity-type": "item",
+                "numeric-id": 36,
+                "id": "Q36"
+              },
+              "type": "wikibase-entityid"
+            },
+            "datatype": "wikibase-item"
+          },
+          "type": "statement",
+          "id": "Q939336$e2248088-45d5-dbc1-ff1c-9de15905b9cd",
+          "rank": "normal",
+          "references": [
+            {
+              "hash": "ec6f88ab72a4db0eace8d64e9aa9071e630ee3fe",
+              "snaks": {
+                "P143": [
+                  {
+                    "snaktype": "value",
+                    "property": "P143",
+                    "hash": "39224a9c2e8ce5424defbd16603d25771956c7fc",
+                    "datavalue": {
+                      "value": {
+                        "entity-type": "item",
+                        "numeric-id": 1551807,
+                        "id": "Q1551807"
+                      },
+                      "type": "wikibase-entityid"
+                    },
+                    "datatype": "wikibase-item"
+                  }
+                ],
+                "P4656": [
+                  {
+                    "snaktype": "value",
+                    "property": "P4656",
+                    "hash": "a070681ec4077e91521c610af1d115c0d4db7151",
+                    "datavalue": {
+                      "value": "https://pl.wikipedia.org/w/index.php?title=Orkan_Kyrill&oldid=69075337",
+                      "type": "string"
+                    },
+                    "datatype": "url"
+                  }
+                ]
+              },
+              "snaks-order": [
+                "P143",
+                "P4656"
+              ]
+            }
+          ]
+        },
+        {
+          "mainsnak": {
+            "snaktype": "value",
+            "property": "P17",
+            "hash": "a44880420787fb348836dc51d3babc5227c4ef7e",
+            "datavalue": {
+              "value": {
+                "entity-type": "item",
+                "numeric-id": 145,
+                "id": "Q145"
+              },
+              "type": "wikibase-entityid"
+            },
+            "datatype": "wikibase-item"
+          },
+          "type": "statement",
+          "id": "Q939336$1c15386e-43fc-75c1-fa17-4001767db6d8",
+          "rank": "normal",
+          "references": [
+            {
+              "hash": "ec6f88ab72a4db0eace8d64e9aa9071e630ee3fe",
+              "snaks": {
+                "P143": [
+                  {
+                    "snaktype": "value",
+                    "property": "P143",
+                    "hash": "39224a9c2e8ce5424defbd16603d25771956c7fc",
+                    "datavalue": {
+                      "value": {
+                        "entity-type": "item",
+                        "numeric-id": 1551807,
+                        "id": "Q1551807"
+                      },
+                      "type": "wikibase-entityid"
+                    },
+                    "datatype": "wikibase-item"
+                  }
+                ],
+                "P4656": [
+                  {
+                    "snaktype": "value",
+                    "property": "P4656",
+                    "hash": "a070681ec4077e91521c610af1d115c0d4db7151",
+                    "datavalue": {
+                      "value": "https://pl.wikipedia.org/w/index.php?title=Orkan_Kyrill&oldid=69075337",
+                      "type": "string"
+                    },
+                    "datatype": "url"
+                  }
+                ]
+              },
+              "snaks-order": [
+                "P143",
+                "P4656"
+              ]
+            }
+          ]
+        },
+        {
+          "mainsnak": {
+            "snaktype": "value",
+            "property": "P17",
+            "hash": "f4ccb05f7faebc2073ed81093902b84d250e6695",
+            "datavalue": {
+              "value": {
+                "entity-type": "item",
+                "numeric-id": 27,
+                "id": "Q27"
+              },
+              "type": "wikibase-entityid"
+            },
+            "datatype": "wikibase-item"
+          },
+          "type": "statement",
+          "id": "Q939336$a0ec2fdb-45fe-2af1-cf8c-ea26d0ae46ed",
+          "rank": "normal",
+          "references": [
+            {
+              "hash": "ec6f88ab72a4db0eace8d64e9aa9071e630ee3fe",
+              "snaks": {
+                "P143": [
+                  {
+                    "snaktype": "value",
+                    "property": "P143",
+                    "hash": "39224a9c2e8ce5424defbd16603d25771956c7fc",
+                    "datavalue": {
+                      "value": {
+                        "entity-type": "item",
+                        "numeric-id": 1551807,
+                        "id": "Q1551807"
+                      },
+                      "type": "wikibase-entityid"
+                    },
+                    "datatype": "wikibase-item"
+                  }
+                ],
+                "P4656": [
+                  {
+                    "snaktype": "value",
+                    "property": "P4656",
+                    "hash": "a070681ec4077e91521c610af1d115c0d4db7151",
+                    "datavalue": {
+                      "value": "https://pl.wikipedia.org/w/index.php?title=Orkan_Kyrill&oldid=69075337",
+                      "type": "string"
+                    },
+                    "datatype": "url"
+                  }
+                ]
+              },
+              "snaks-order": [
+                "P143",
+                "P4656"
+              ]
+            }
+          ]
+        },
+        {
+          "mainsnak": {
+            "snaktype": "value",
+            "property": "P17",
+            "hash": "c83b0e7fbdd58e611aa93b9d84b6194c20051c09",
+            "datavalue": {
+              "value": {
+                "entity-type": "item",
+                "numeric-id": 34,
+                "id": "Q34"
+              },
+              "type": "wikibase-entityid"
+            },
+            "datatype": "wikibase-item"
+          },
+          "type": "statement",
+          "id": "Q939336$ecdd835d-40d8-e65a-a2ab-dbee705fa542",
+          "rank": "normal",
+          "references": [
+            {
+              "hash": "ec6f88ab72a4db0eace8d64e9aa9071e630ee3fe",
+              "snaks": {
+                "P143": [
+                  {
+                    "snaktype": "value",
+                    "property": "P143",
+                    "hash": "39224a9c2e8ce5424defbd16603d25771956c7fc",
+                    "datavalue": {
+                      "value": {
+                        "entity-type": "item",
+                        "numeric-id": 1551807,
+                        "id": "Q1551807"
+                      },
+                      "type": "wikibase-entityid"
+                    },
+                    "datatype": "wikibase-item"
+                  }
+                ],
+                "P4656": [
+                  {
+                    "snaktype": "value",
+                    "property": "P4656",
+                    "hash": "a070681ec4077e91521c610af1d115c0d4db7151",
+                    "datavalue": {
+                      "value": "https://pl.wikipedia.org/w/index.php?title=Orkan_Kyrill&oldid=69075337",
+                      "type": "string"
+                    },
+                    "datatype": "url"
+                  }
+                ]
+              },
+              "snaks-order": [
+                "P143",
+                "P4656"
+              ]
+            }
+          ]
+        },
+        {
+          "mainsnak": {
+            "snaktype": "value",
+            "property": "P17",
+            "hash": "b44e5082894722a7575db454e833f93682439849",
+            "datavalue": {
+              "value": {
+                "entity-type": "item",
+                "numeric-id": 35,
+                "id": "Q35"
+              },
+              "type": "wikibase-entityid"
+            },
+            "datatype": "wikibase-item"
+          },
+          "type": "statement",
+          "id": "Q939336$8ab43b0e-4025-9257-a321-255cd3d5ac62",
+          "rank": "normal",
+          "references": [
+            {
+              "hash": "ec6f88ab72a4db0eace8d64e9aa9071e630ee3fe",
+              "snaks": {
+                "P143": [
+                  {
+                    "snaktype": "value",
+                    "property": "P143",
+                    "hash": "39224a9c2e8ce5424defbd16603d25771956c7fc",
+                    "datavalue": {
+                      "value": {
+                        "entity-type": "item",
+                        "numeric-id": 1551807,
+                        "id": "Q1551807"
+                      },
+                      "type": "wikibase-entityid"
+                    },
+                    "datatype": "wikibase-item"
+                  }
+                ],
+                "P4656": [
+                  {
+                    "snaktype": "value",
+                    "property": "P4656",
+                    "hash": "a070681ec4077e91521c610af1d115c0d4db7151",
+                    "datavalue": {
+                      "value": "https://pl.wikipedia.org/w/index.php?title=Orkan_Kyrill&oldid=69075337",
+                      "type": "string"
+                    },
+                    "datatype": "url"
+                  }
+                ]
+              },
+              "snaks-order": [
+                "P143",
+                "P4656"
+              ]
+            }
+          ]
+        },
+        {
+          "mainsnak": {
+            "snaktype": "value",
+            "property": "P17",
+            "hash": "6b641ae447361ea7b9069dd798128243a1cdca37",
+            "datavalue": {
+              "value": {
+                "entity-type": "item",
+                "numeric-id": 20,
+                "id": "Q20"
+              },
+              "type": "wikibase-entityid"
+            },
+            "datatype": "wikibase-item"
+          },
+          "type": "statement",
+          "id": "Q939336$c89d9e12-44e6-9e52-b726-d1b47007a5aa",
+          "rank": "normal",
+          "references": [
+            {
+              "hash": "ec6f88ab72a4db0eace8d64e9aa9071e630ee3fe",
+              "snaks": {
+                "P143": [
+                  {
+                    "snaktype": "value",
+                    "property": "P143",
+                    "hash": "39224a9c2e8ce5424defbd16603d25771956c7fc",
+                    "datavalue": {
+                      "value": {
+                        "entity-type": "item",
+                        "numeric-id": 1551807,
+                        "id": "Q1551807"
+                      },
+                      "type": "wikibase-entityid"
+                    },
+                    "datatype": "wikibase-item"
+                  }
+                ],
+                "P4656": [
+                  {
+                    "snaktype": "value",
+                    "property": "P4656",
+                    "hash": "a070681ec4077e91521c610af1d115c0d4db7151",
+                    "datavalue": {
+                      "value": "https://pl.wikipedia.org/w/index.php?title=Orkan_Kyrill&oldid=69075337",
+                      "type": "string"
+                    },
+                    "datatype": "url"
+                  }
+                ]
+              },
+              "snaks-order": [
+                "P143",
+                "P4656"
+              ]
+            }
+          ]
+        },
+        {
+          "mainsnak": {
+            "snaktype": "value",
+            "property": "P17",
+            "hash": "c05db5d169c2560b9799d567a803d20a392f53e4",
+            "datavalue": {
+              "value": {
+                "entity-type": "item",
+                "numeric-id": 142,
+                "id": "Q142"
+              },
+              "type": "wikibase-entityid"
+            },
+            "datatype": "wikibase-item"
+          },
+          "type": "statement",
+          "id": "Q939336$c1bcdc1f-4407-a437-f9a9-f41dc19a9f06",
+          "rank": "normal",
+          "references": [
+            {
+              "hash": "ec6f88ab72a4db0eace8d64e9aa9071e630ee3fe",
+              "snaks": {
+                "P143": [
+                  {
+                    "snaktype": "value",
+                    "property": "P143",
+                    "hash": "39224a9c2e8ce5424defbd16603d25771956c7fc",
+                    "datavalue": {
+                      "value": {
+                        "entity-type": "item",
+                        "numeric-id": 1551807,
+                        "id": "Q1551807"
+                      },
+                      "type": "wikibase-entityid"
+                    },
+                    "datatype": "wikibase-item"
+                  }
+                ],
+                "P4656": [
+                  {
+                    "snaktype": "value",
+                    "property": "P4656",
+                    "hash": "a070681ec4077e91521c610af1d115c0d4db7151",
+                    "datavalue": {
+                      "value": "https://pl.wikipedia.org/w/index.php?title=Orkan_Kyrill&oldid=69075337",
+                      "type": "string"
+                    },
+                    "datatype": "url"
+                  }
+                ]
+              },
+              "snaks-order": [
+                "P143",
+                "P4656"
+              ]
+            }
+          ]
+        },
+        {
+          "mainsnak": {
+            "snaktype": "value",
+            "property": "P17",
+            "hash": "3255495294545a1c2713e0724b0d3ba98a5f16db",
+            "datavalue": {
+              "value": {
+                "entity-type": "item",
+                "numeric-id": 55,
+                "id": "Q55"
+              },
+              "type": "wikibase-entityid"
+            },
+            "datatype": "wikibase-item"
+          },
+          "type": "statement",
+          "id": "Q939336$77c48418-499e-e603-c964-072e471ea4ad",
+          "rank": "normal",
+          "references": [
+            {
+              "hash": "ec6f88ab72a4db0eace8d64e9aa9071e630ee3fe",
+              "snaks": {
+                "P143": [
+                  {
+                    "snaktype": "value",
+                    "property": "P143",
+                    "hash": "39224a9c2e8ce5424defbd16603d25771956c7fc",
+                    "datavalue": {
+                      "value": {
+                        "entity-type": "item",
+                        "numeric-id": 1551807,
+                        "id": "Q1551807"
+                      },
+                      "type": "wikibase-entityid"
+                    },
+                    "datatype": "wikibase-item"
+                  }
+                ],
+                "P4656": [
+                  {
+                    "snaktype": "value",
+                    "property": "P4656",
+                    "hash": "a070681ec4077e91521c610af1d115c0d4db7151",
+                    "datavalue": {
+                      "value": "https://pl.wikipedia.org/w/index.php?title=Orkan_Kyrill&oldid=69075337",
+                      "type": "string"
+                    },
+                    "datatype": "url"
+                  }
+                ]
+              },
+              "snaks-order": [
+                "P143",
+                "P4656"
+              ]
+            }
+          ]
+        },
+        {
+          "mainsnak": {
+            "snaktype": "value",
+            "property": "P17",
+            "hash": "c2859f311753176d6bdfa7da54ceeeac7acb52c8",
+            "datavalue": {
+              "value": {
+                "entity-type": "item",
+                "numeric-id": 31,
+                "id": "Q31"
+              },
+              "type": "wikibase-entityid"
+            },
+            "datatype": "wikibase-item"
+          },
+          "type": "statement",
+          "id": "Q939336$0a7664a3-4143-7bbc-2759-dba39016d5ca",
+          "rank": "normal",
+          "references": [
+            {
+              "hash": "ec6f88ab72a4db0eace8d64e9aa9071e630ee3fe",
+              "snaks": {
+                "P143": [
+                  {
+                    "snaktype": "value",
+                    "property": "P143",
+                    "hash": "39224a9c2e8ce5424defbd16603d25771956c7fc",
+                    "datavalue": {
+                      "value": {
+                        "entity-type": "item",
+                        "numeric-id": 1551807,
+                        "id": "Q1551807"
+                      },
+                      "type": "wikibase-entityid"
+                    },
+                    "datatype": "wikibase-item"
+                  }
+                ],
+                "P4656": [
+                  {
+                    "snaktype": "value",
+                    "property": "P4656",
+                    "hash": "a070681ec4077e91521c610af1d115c0d4db7151",
+                    "datavalue": {
+                      "value": "https://pl.wikipedia.org/w/index.php?title=Orkan_Kyrill&oldid=69075337",
+                      "type": "string"
+                    },
+                    "datatype": "url"
+                  }
+                ]
+              },
+              "snaks-order": [
+                "P143",
+                "P4656"
+              ]
+            }
+          ]
+        },
+        {
+          "mainsnak": {
+            "snaktype": "value",
+            "property": "P17",
+            "hash": "291b10e8046c4951933718cade0398bbd5c9866d",
+            "datavalue": {
+              "value": {
+                "entity-type": "item",
+                "numeric-id": 32,
+                "id": "Q32"
+              },
+              "type": "wikibase-entityid"
+            },
+            "datatype": "wikibase-item"
+          },
+          "type": "statement",
+          "id": "Q939336$7b3f0b35-4aa9-de91-2dbe-70bb4b420fc5",
+          "rank": "normal",
+          "references": [
+            {
+              "hash": "ec6f88ab72a4db0eace8d64e9aa9071e630ee3fe",
+              "snaks": {
+                "P143": [
+                  {
+                    "snaktype": "value",
+                    "property": "P143",
+                    "hash": "39224a9c2e8ce5424defbd16603d25771956c7fc",
+                    "datavalue": {
+                      "value": {
+                        "entity-type": "item",
+                        "numeric-id": 1551807,
+                        "id": "Q1551807"
+                      },
+                      "type": "wikibase-entityid"
+                    },
+                    "datatype": "wikibase-item"
+                  }
+                ],
+                "P4656": [
+                  {
+                    "snaktype": "value",
+                    "property": "P4656",
+                    "hash": "a070681ec4077e91521c610af1d115c0d4db7151",
+                    "datavalue": {
+                      "value": "https://pl.wikipedia.org/w/index.php?title=Orkan_Kyrill&oldid=69075337",
+                      "type": "string"
+                    },
+                    "datatype": "url"
+                  }
+                ]
+              },
+              "snaks-order": [
+                "P143",
+                "P4656"
+              ]
+            }
+          ]
+        },
+        {
+          "mainsnak": {
+            "snaktype": "value",
+            "property": "P17",
+            "hash": "535305d6abccf7a97ea501f68a448836f3fffccf",
+            "datavalue": {
+              "value": {
+                "entity-type": "item",
+                "numeric-id": 213,
+                "id": "Q213"
+              },
+              "type": "wikibase-entityid"
+            },
+            "datatype": "wikibase-item"
+          },
+          "type": "statement",
+          "id": "Q939336$6d933df6-4fa8-8328-caa6-219e7b5ac9b5",
+          "rank": "normal",
+          "references": [
+            {
+              "hash": "ec6f88ab72a4db0eace8d64e9aa9071e630ee3fe",
+              "snaks": {
+                "P143": [
+                  {
+                    "snaktype": "value",
+                    "property": "P143",
+                    "hash": "39224a9c2e8ce5424defbd16603d25771956c7fc",
+                    "datavalue": {
+                      "value": {
+                        "entity-type": "item",
+                        "numeric-id": 1551807,
+                        "id": "Q1551807"
+                      },
+                      "type": "wikibase-entityid"
+                    },
+                    "datatype": "wikibase-item"
+                  }
+                ],
+                "P4656": [
+                  {
+                    "snaktype": "value",
+                    "property": "P4656",
+                    "hash": "a070681ec4077e91521c610af1d115c0d4db7151",
+                    "datavalue": {
+                      "value": "https://pl.wikipedia.org/w/index.php?title=Orkan_Kyrill&oldid=69075337",
+                      "type": "string"
+                    },
+                    "datatype": "url"
+                  }
+                ]
+              },
+              "snaks-order": [
+                "P143",
+                "P4656"
+              ]
+            }
+          ]
+        },
+        {
+          "mainsnak": {
+            "snaktype": "value",
+            "property": "P17",
+            "hash": "4c2904f7df1bf50bec10f7fa958b11e2664d9578",
+            "datavalue": {
+              "value": {
+                "entity-type": "item",
+                "numeric-id": 214,
+                "id": "Q214"
+              },
+              "type": "wikibase-entityid"
+            },
+            "datatype": "wikibase-item"
+          },
+          "type": "statement",
+          "id": "Q939336$ae68219c-42fc-240d-7941-f564ae311c82",
+          "rank": "normal",
+          "references": [
+            {
+              "hash": "ec6f88ab72a4db0eace8d64e9aa9071e630ee3fe",
+              "snaks": {
+                "P143": [
+                  {
+                    "snaktype": "value",
+                    "property": "P143",
+                    "hash": "39224a9c2e8ce5424defbd16603d25771956c7fc",
+                    "datavalue": {
+                      "value": {
+                        "entity-type": "item",
+                        "numeric-id": 1551807,
+                        "id": "Q1551807"
+                      },
+                      "type": "wikibase-entityid"
+                    },
+                    "datatype": "wikibase-item"
+                  }
+                ],
+                "P4656": [
+                  {
+                    "snaktype": "value",
+                    "property": "P4656",
+                    "hash": "a070681ec4077e91521c610af1d115c0d4db7151",
+                    "datavalue": {
+                      "value": "https://pl.wikipedia.org/w/index.php?title=Orkan_Kyrill&oldid=69075337",
+                      "type": "string"
+                    },
+                    "datatype": "url"
+                  }
+                ]
+              },
+              "snaks-order": [
+                "P143",
+                "P4656"
+              ]
+            }
+          ]
+        },
+        {
+          "mainsnak": {
+            "snaktype": "value",
+            "property": "P17",
+            "hash": "ccf8f871ebe392004c66ed37b78dd30d341cc949",
+            "datavalue": {
+              "value": {
+                "entity-type": "item",
+                "numeric-id": 40,
+                "id": "Q40"
+              },
+              "type": "wikibase-entityid"
+            },
+            "datatype": "wikibase-item"
+          },
+          "type": "statement",
+          "id": "Q939336$1887c24a-496c-23df-f7c1-c037740d1976",
+          "rank": "normal",
+          "references": [
+            {
+              "hash": "ec6f88ab72a4db0eace8d64e9aa9071e630ee3fe",
+              "snaks": {
+                "P143": [
+                  {
+                    "snaktype": "value",
+                    "property": "P143",
+                    "hash": "39224a9c2e8ce5424defbd16603d25771956c7fc",
+                    "datavalue": {
+                      "value": {
+                        "entity-type": "item",
+                        "numeric-id": 1551807,
+                        "id": "Q1551807"
+                      },
+                      "type": "wikibase-entityid"
+                    },
+                    "datatype": "wikibase-item"
+                  }
+                ],
+                "P4656": [
+                  {
+                    "snaktype": "value",
+                    "property": "P4656",
+                    "hash": "a070681ec4077e91521c610af1d115c0d4db7151",
+                    "datavalue": {
+                      "value": "https://pl.wikipedia.org/w/index.php?title=Orkan_Kyrill&oldid=69075337",
+                      "type": "string"
+                    },
+                    "datatype": "url"
+                  }
+                ]
+              },
+              "snaks-order": [
+                "P143",
+                "P4656"
+              ]
+            }
+          ]
+        },
+        {
+          "mainsnak": {
+            "snaktype": "value",
+            "property": "P17",
+            "hash": "21b21489a3206bbdd928f9257d8fcd1327b83486",
+            "datavalue": {
+              "value": {
+                "entity-type": "item",
+                "numeric-id": 191,
+                "id": "Q191"
+              },
+              "type": "wikibase-entityid"
+            },
+            "datatype": "wikibase-item"
+          },
+          "type": "statement",
+          "id": "Q939336$e878ec6b-4835-8192-ff5d-b1e06199419a",
+          "rank": "normal",
+          "references": [
+            {
+              "hash": "ec6f88ab72a4db0eace8d64e9aa9071e630ee3fe",
+              "snaks": {
+                "P143": [
+                  {
+                    "snaktype": "value",
+                    "property": "P143",
+                    "hash": "39224a9c2e8ce5424defbd16603d25771956c7fc",
+                    "datavalue": {
+                      "value": {
+                        "entity-type": "item",
+                        "numeric-id": 1551807,
+                        "id": "Q1551807"
+                      },
+                      "type": "wikibase-entityid"
+                    },
+                    "datatype": "wikibase-item"
+                  }
+                ],
+                "P4656": [
+                  {
+                    "snaktype": "value",
+                    "property": "P4656",
+                    "hash": "a070681ec4077e91521c610af1d115c0d4db7151",
+                    "datavalue": {
+                      "value": "https://pl.wikipedia.org/w/index.php?title=Orkan_Kyrill&oldid=69075337",
+                      "type": "string"
+                    },
+                    "datatype": "url"
+                  }
+                ]
+              },
+              "snaks-order": [
+                "P143",
+                "P4656"
+              ]
+            }
+          ]
+        },
+        {
+          "mainsnak": {
+            "snaktype": "value",
+            "property": "P17",
+            "hash": "5ea0ab4c22b0bc3568dce0d8643634ac7f0c79e4",
+            "datavalue": {
+              "value": {
+                "entity-type": "item",
+                "numeric-id": 211,
+                "id": "Q211"
+              },
+              "type": "wikibase-entityid"
+            },
+            "datatype": "wikibase-item"
+          },
+          "type": "statement",
+          "id": "Q939336$e8c9d2d2-4416-6373-ae96-08cc57092ad6",
+          "rank": "normal",
+          "references": [
+            {
+              "hash": "ec6f88ab72a4db0eace8d64e9aa9071e630ee3fe",
+              "snaks": {
+                "P143": [
+                  {
+                    "snaktype": "value",
+                    "property": "P143",
+                    "hash": "39224a9c2e8ce5424defbd16603d25771956c7fc",
+                    "datavalue": {
+                      "value": {
+                        "entity-type": "item",
+                        "numeric-id": 1551807,
+                        "id": "Q1551807"
+                      },
+                      "type": "wikibase-entityid"
+                    },
+                    "datatype": "wikibase-item"
+                  }
+                ],
+                "P4656": [
+                  {
+                    "snaktype": "value",
+                    "property": "P4656",
+                    "hash": "a070681ec4077e91521c610af1d115c0d4db7151",
+                    "datavalue": {
+                      "value": "https://pl.wikipedia.org/w/index.php?title=Orkan_Kyrill&oldid=69075337",
+                      "type": "string"
+                    },
+                    "datatype": "url"
+                  }
+                ]
+              },
+              "snaks-order": [
+                "P143",
+                "P4656"
+              ]
+            }
+          ]
+        },
+        {
+          "mainsnak": {
+            "snaktype": "value",
+            "property": "P17",
+            "hash": "9b3096a32e443424bb93e71228347a7d94e86460",
+            "datavalue": {
+              "value": {
+                "entity-type": "item",
+                "numeric-id": 37,
+                "id": "Q37"
+              },
+              "type": "wikibase-entityid"
+            },
+            "datatype": "wikibase-item"
+          },
+          "type": "statement",
+          "id": "Q939336$623f59be-40c8-dfc2-9fb2-eb77ac5c7865",
+          "rank": "normal",
+          "references": [
+            {
+              "hash": "ec6f88ab72a4db0eace8d64e9aa9071e630ee3fe",
+              "snaks": {
+                "P143": [
+                  {
+                    "snaktype": "value",
+                    "property": "P143",
+                    "hash": "39224a9c2e8ce5424defbd16603d25771956c7fc",
+                    "datavalue": {
+                      "value": {
+                        "entity-type": "item",
+                        "numeric-id": 1551807,
+                        "id": "Q1551807"
+                      },
+                      "type": "wikibase-entityid"
+                    },
+                    "datatype": "wikibase-item"
+                  }
+                ],
+                "P4656": [
+                  {
+                    "snaktype": "value",
+                    "property": "P4656",
+                    "hash": "a070681ec4077e91521c610af1d115c0d4db7151",
+                    "datavalue": {
+                      "value": "https://pl.wikipedia.org/w/index.php?title=Orkan_Kyrill&oldid=69075337",
+                      "type": "string"
+                    },
+                    "datatype": "url"
+                  }
+                ]
+              },
+              "snaks-order": [
+                "P143",
+                "P4656"
+              ]
+            }
+          ]
+        },
+        {
+          "mainsnak": {
+            "snaktype": "value",
+            "property": "P17",
+            "hash": "9d197f7c931799051031d0385221dede0a5955cd",
+            "datavalue": {
+              "value": {
+                "entity-type": "item",
+                "numeric-id": 347,
+                "id": "Q347"
+              },
+              "type": "wikibase-entityid"
+            },
+            "datatype": "wikibase-item"
+          },
+          "type": "statement",
+          "id": "Q939336$1d7cfd47-45e2-240a-ad75-98dfda83a102",
+          "rank": "normal",
+          "references": [
+            {
+              "hash": "ec6f88ab72a4db0eace8d64e9aa9071e630ee3fe",
+              "snaks": {
+                "P143": [
+                  {
+                    "snaktype": "value",
+                    "property": "P143",
+                    "hash": "39224a9c2e8ce5424defbd16603d25771956c7fc",
+                    "datavalue": {
+                      "value": {
+                        "entity-type": "item",
+                        "numeric-id": 1551807,
+                        "id": "Q1551807"
+                      },
+                      "type": "wikibase-entityid"
+                    },
+                    "datatype": "wikibase-item"
+                  }
+                ],
+                "P4656": [
+                  {
+                    "snaktype": "value",
+                    "property": "P4656",
+                    "hash": "a070681ec4077e91521c610af1d115c0d4db7151",
+                    "datavalue": {
+                      "value": "https://pl.wikipedia.org/w/index.php?title=Orkan_Kyrill&oldid=69075337",
+                      "type": "string"
+                    },
+                    "datatype": "url"
+                  }
+                ]
+              },
+              "snaks-order": [
+                "P143",
+                "P4656"
+              ]
+            }
+          ]
+        },
+        {
+          "mainsnak": {
+            "snaktype": "value",
+            "property": "P17",
+            "hash": "72649de3bac2e56da4b2eca1af96de4a619af9bc",
+            "datavalue": {
+              "value": {
+                "entity-type": "item",
+                "numeric-id": 39,
+                "id": "Q39"
+              },
+              "type": "wikibase-entityid"
+            },
+            "datatype": "wikibase-item"
+          },
+          "type": "statement",
+          "id": "Q939336$deb7a74a-4850-bbe9-dc1b-1fc05ca06013",
+          "rank": "normal",
+          "references": [
+            {
+              "hash": "ec6f88ab72a4db0eace8d64e9aa9071e630ee3fe",
+              "snaks": {
+                "P143": [
+                  {
+                    "snaktype": "value",
+                    "property": "P143",
+                    "hash": "39224a9c2e8ce5424defbd16603d25771956c7fc",
+                    "datavalue": {
+                      "value": {
+                        "entity-type": "item",
+                        "numeric-id": 1551807,
+                        "id": "Q1551807"
+                      },
+                      "type": "wikibase-entityid"
+                    },
+                    "datatype": "wikibase-item"
+                  }
+                ],
+                "P4656": [
+                  {
+                    "snaktype": "value",
+                    "property": "P4656",
+                    "hash": "a070681ec4077e91521c610af1d115c0d4db7151",
+                    "datavalue": {
+                      "value": "https://pl.wikipedia.org/w/index.php?title=Orkan_Kyrill&oldid=69075337",
+                      "type": "string"
+                    },
+                    "datatype": "url"
+                  }
+                ]
+              },
+              "snaks-order": [
+                "P143",
+                "P4656"
+              ]
+            }
+          ]
+        },
+        {
+          "mainsnak": {
+            "snaktype": "value",
+            "property": "P17",
+            "hash": "5705435a66751f26a989f0bbd80533799f57397b",
+            "datavalue": {
+              "value": {
+                "entity-type": "item",
+                "numeric-id": 28,
+                "id": "Q28"
+              },
+              "type": "wikibase-entityid"
+            },
+            "datatype": "wikibase-item"
+          },
+          "type": "statement",
+          "id": "Q939336$912ce5c9-4913-6996-2777-6e7be5ea23e2",
+          "rank": "normal",
+          "references": [
+            {
+              "hash": "ec6f88ab72a4db0eace8d64e9aa9071e630ee3fe",
+              "snaks": {
+                "P143": [
+                  {
+                    "snaktype": "value",
+                    "property": "P143",
+                    "hash": "39224a9c2e8ce5424defbd16603d25771956c7fc",
+                    "datavalue": {
+                      "value": {
+                        "entity-type": "item",
+                        "numeric-id": 1551807,
+                        "id": "Q1551807"
+                      },
+                      "type": "wikibase-entityid"
+                    },
+                    "datatype": "wikibase-item"
+                  }
+                ],
+                "P4656": [
+                  {
+                    "snaktype": "value",
+                    "property": "P4656",
+                    "hash": "a070681ec4077e91521c610af1d115c0d4db7151",
+                    "datavalue": {
+                      "value": "https://pl.wikipedia.org/w/index.php?title=Orkan_Kyrill&oldid=69075337",
+                      "type": "string"
+                    },
+                    "datatype": "url"
+                  }
+                ]
+              },
+              "snaks-order": [
+                "P143",
+                "P4656"
+              ]
+            }
+          ]
+        },
+        {
+          "mainsnak": {
+            "snaktype": "value",
+            "property": "P17",
+            "hash": "dcf4cdb3d37de1bca13429dfa8676fb84c0dced6",
+            "datavalue": {
+              "value": {
+                "entity-type": "item",
+                "numeric-id": 212,
+                "id": "Q212"
+              },
+              "type": "wikibase-entityid"
+            },
+            "datatype": "wikibase-item"
+          },
+          "type": "statement",
+          "id": "Q939336$1aa9bec1-4a96-871b-b1d9-827d77dc998d",
+          "rank": "normal",
+          "references": [
+            {
+              "hash": "ec6f88ab72a4db0eace8d64e9aa9071e630ee3fe",
+              "snaks": {
+                "P143": [
+                  {
+                    "snaktype": "value",
+                    "property": "P143",
+                    "hash": "39224a9c2e8ce5424defbd16603d25771956c7fc",
+                    "datavalue": {
+                      "value": {
+                        "entity-type": "item",
+                        "numeric-id": 1551807,
+                        "id": "Q1551807"
+                      },
+                      "type": "wikibase-entityid"
+                    },
+                    "datatype": "wikibase-item"
+                  }
+                ],
+                "P4656": [
+                  {
+                    "snaktype": "value",
+                    "property": "P4656",
+                    "hash": "a070681ec4077e91521c610af1d115c0d4db7151",
+                    "datavalue": {
+                      "value": "https://pl.wikipedia.org/w/index.php?title=Orkan_Kyrill&oldid=69075337",
+                      "type": "string"
+                    },
+                    "datatype": "url"
+                  }
+                ]
+              },
+              "snaks-order": [
+                "P143",
+                "P4656"
+              ]
+            }
+          ]
+        },
+        {
+          "mainsnak": {
+            "snaktype": "value",
+            "property": "P17",
+            "hash": "8ef322efb0810d012f9b4799c2413f3721f6387a",
+            "datavalue": {
+              "value": {
+                "entity-type": "item",
+                "numeric-id": 218,
+                "id": "Q218"
+              },
+              "type": "wikibase-entityid"
+            },
+            "datatype": "wikibase-item"
+          },
+          "type": "statement",
+          "id": "Q939336$baff85ff-4d78-7074-a5e6-12f1193ba5a1",
+          "rank": "normal",
+          "references": [
+            {
+              "hash": "ec6f88ab72a4db0eace8d64e9aa9071e630ee3fe",
+              "snaks": {
+                "P143": [
+                  {
+                    "snaktype": "value",
+                    "property": "P143",
+                    "hash": "39224a9c2e8ce5424defbd16603d25771956c7fc",
+                    "datavalue": {
+                      "value": {
+                        "entity-type": "item",
+                        "numeric-id": 1551807,
+                        "id": "Q1551807"
+                      },
+                      "type": "wikibase-entityid"
+                    },
+                    "datatype": "wikibase-item"
+                  }
+                ],
+                "P4656": [
+                  {
+                    "snaktype": "value",
+                    "property": "P4656",
+                    "hash": "a070681ec4077e91521c610af1d115c0d4db7151",
+                    "datavalue": {
+                      "value": "https://pl.wikipedia.org/w/index.php?title=Orkan_Kyrill&oldid=69075337",
+                      "type": "string"
+                    },
+                    "datatype": "url"
+                  }
+                ]
+              },
+              "snaks-order": [
+                "P143",
+                "P4656"
+              ]
+            }
+          ]
+        },
+        {
+          "mainsnak": {
+            "snaktype": "value",
+            "property": "P17",
+            "hash": "db933f2eba35c858c60bb4a25364dc343aa5b44c",
+            "datavalue": {
+              "value": {
+                "entity-type": "item",
+                "numeric-id": 215,
+                "id": "Q215"
+              },
+              "type": "wikibase-entityid"
+            },
+            "datatype": "wikibase-item"
+          },
+          "type": "statement",
+          "id": "Q939336$41f348d9-4ed2-0e51-b8db-84cc42e639d1",
+          "rank": "normal",
+          "references": [
+            {
+              "hash": "ec6f88ab72a4db0eace8d64e9aa9071e630ee3fe",
+              "snaks": {
+                "P143": [
+                  {
+                    "snaktype": "value",
+                    "property": "P143",
+                    "hash": "39224a9c2e8ce5424defbd16603d25771956c7fc",
+                    "datavalue": {
+                      "value": {
+                        "entity-type": "item",
+                        "numeric-id": 1551807,
+                        "id": "Q1551807"
+                      },
+                      "type": "wikibase-entityid"
+                    },
+                    "datatype": "wikibase-item"
+                  }
+                ],
+                "P4656": [
+                  {
+                    "snaktype": "value",
+                    "property": "P4656",
+                    "hash": "a070681ec4077e91521c610af1d115c0d4db7151",
+                    "datavalue": {
+                      "value": "https://pl.wikipedia.org/w/index.php?title=Orkan_Kyrill&oldid=69075337",
+                      "type": "string"
+                    },
+                    "datatype": "url"
+                  }
+                ]
+              },
+              "snaks-order": [
+                "P143",
+                "P4656"
+              ]
+            }
+          ]
+        }
+      ],
+      "P2895": [
+        {
+          "mainsnak": {
+            "snaktype": "value",
+            "property": "P2895",
+            "hash": "db89e00efc454c42392bbb66ca3bfad307454fd1",
+            "datavalue": {
+              "value": {
+                "amount": "+250",
+                "unit": "http://www.wikidata.org/entity/Q180154"
+              },
+              "type": "quantity"
+            },
+            "datatype": "quantity"
+          },
+          "type": "statement",
+          "qualifiers": {
+            "P1480": [
+              {
+                "snaktype": "value",
+                "property": "P1480",
+                "hash": "f4ff3fa3cd7bc19b8b1160e720e8c5cbe159266f",
+                "datavalue": {
+                  "value": {
+                    "entity-type": "item",
+                    "numeric-id": 55935291,
+                    "id": "Q55935291"
+                  },
+                  "type": "wikibase-entityid"
+                },
+                "datatype": "wikibase-item"
+              }
+            ]
+          },
+          "qualifiers-order": [
+            "P1480"
+          ],
+          "id": "Q939336$8f1775cf-402c-ce98-f02b-28cf9fa85026",
+          "rank": "normal",
+          "references": [
+            {
+              "hash": "ec6f88ab72a4db0eace8d64e9aa9071e630ee3fe",
+              "snaks": {
+                "P143": [
+                  {
+                    "snaktype": "value",
+                    "property": "P143",
+                    "hash": "39224a9c2e8ce5424defbd16603d25771956c7fc",
+                    "datavalue": {
+                      "value": {
+                        "entity-type": "item",
+                        "numeric-id": 1551807,
+                        "id": "Q1551807"
+                      },
+                      "type": "wikibase-entityid"
+                    },
+                    "datatype": "wikibase-item"
+                  }
+                ],
+                "P4656": [
+                  {
+                    "snaktype": "value",
+                    "property": "P4656",
+                    "hash": "a070681ec4077e91521c610af1d115c0d4db7151",
+                    "datavalue": {
+                      "value": "https://pl.wikipedia.org/w/index.php?title=Orkan_Kyrill&oldid=69075337",
+                      "type": "string"
+                    },
+                    "datatype": "url"
+                  }
+                ]
+              },
+              "snaks-order": [
+                "P143",
+                "P4656"
+              ]
+            }
+          ]
+        }
+      ],
+      "P2532": [
+        {
+          "mainsnak": {
+            "snaktype": "value",
+            "property": "P2532",
+            "hash": "1299547ee9a213cfe78d59cc28562953f7b11342",
+            "datavalue": {
+              "value": {
+                "amount": "+960",
+                "unit": "http://www.wikidata.org/entity/Q5139563"
+              },
+              "type": "quantity"
+            },
+            "datatype": "quantity"
+          },
+          "type": "statement",
+          "qualifiers": {
+            "P1480": [
+              {
+                "snaktype": "value",
+                "property": "P1480",
+                "hash": "107171a350d681d75587856615bb07efdf84d08b",
+                "datavalue": {
+                  "value": {
+                    "entity-type": "item",
+                    "numeric-id": 55935272,
+                    "id": "Q55935272"
+                  },
+                  "type": "wikibase-entityid"
+                },
+                "datatype": "wikibase-item"
+              }
+            ]
+          },
+          "qualifiers-order": [
+            "P1480"
+          ],
+          "id": "Q939336$dccff6b0-4cd2-2d8f-9085-abf262c32e98",
+          "rank": "normal",
+          "references": [
+            {
+              "hash": "ec6f88ab72a4db0eace8d64e9aa9071e630ee3fe",
+              "snaks": {
+                "P143": [
+                  {
+                    "snaktype": "value",
+                    "property": "P143",
+                    "hash": "39224a9c2e8ce5424defbd16603d25771956c7fc",
+                    "datavalue": {
+                      "value": {
+                        "entity-type": "item",
+                        "numeric-id": 1551807,
+                        "id": "Q1551807"
+                      },
+                      "type": "wikibase-entityid"
+                    },
+                    "datatype": "wikibase-item"
+                  }
+                ],
+                "P4656": [
+                  {
+                    "snaktype": "value",
+                    "property": "P4656",
+                    "hash": "a070681ec4077e91521c610af1d115c0d4db7151",
+                    "datavalue": {
+                      "value": "https://pl.wikipedia.org/w/index.php?title=Orkan_Kyrill&oldid=69075337",
+                      "type": "string"
+                    },
+                    "datatype": "url"
+                  }
+                ]
+              },
+              "snaks-order": [
+                "P143",
+                "P4656"
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    "sitelinks": {
+      "arwiki": {
+        "site": "arwiki",
+        "title": "إعصار كيريل",
+        "badges": [],
+        "url": "https://ar.wikipedia.org/wiki/%D8%A5%D8%B9%D8%B5%D8%A7%D8%B1_%D9%83%D9%8A%D8%B1%D9%8A%D9%84"
+      },
+      "commonswiki": {
+        "site": "commonswiki",
+        "title": "Category:Kyrill (storm)",
+        "badges": [],
+        "url": "https://commons.wikimedia.org/wiki/Category:Kyrill_(storm)"
+      },
+      "cswiki": {
+        "site": "cswiki",
+        "title": "Bouře Kyrill",
+        "badges": [],
+        "url": "https://cs.wikipedia.org/wiki/Bou%C5%99e_Kyrill"
+      },
+      "dewiki": {
+        "site": "dewiki",
+        "title": "Orkan Kyrill",
+        "badges": [],
+        "url": "https://de.wikipedia.org/wiki/Orkan_Kyrill"
+      },
+      "enwiki": {
+        "site": "enwiki",
+        "title": "Cyclone Kyrill",
+        "badges": [],
+        "url": "https://en.wikipedia.org/wiki/Cyclone_Kyrill"
+      },
+      "frwiki": {
+        "site": "frwiki",
+        "title": "Tempête Kyrill",
+        "badges": [],
+        "url": "https://fr.wikipedia.org/wiki/Temp%C3%AAte_Kyrill"
+      },
+      "itwiki": {
+        "site": "itwiki",
+        "title": "Tempesta Kyrill",
+        "badges": [],
+        "url": "https://it.wikipedia.org/wiki/Tempesta_Kyrill"
+      },
+      "nlwiki": {
+        "site": "nlwiki",
+        "title": "Kyrill (storm)",
+        "badges": [],
+        "url": "https://nl.wikipedia.org/wiki/Kyrill_(storm)"
+      },
+      "plwiki": {
+        "site": "plwiki",
+        "title": "Orkan Kyrill",
+        "badges": [],
+        "url": "https://pl.wikipedia.org/wiki/Orkan_Kyrill"
+      },
+      "ruwiki": {
+        "site": "ruwiki",
+        "title": "Кирилл (ураган)",
+        "badges": [],
+        "url": "https://ru.wikipedia.org/wiki/%D0%9A%D0%B8%D1%80%D0%B8%D0%BB%D0%BB_(%D1%83%D1%80%D0%B0%D0%B3%D0%B0%D0%BD)"
+      },
+      "slwiki": {
+        "site": "slwiki",
+        "title": "Kyrill",
+        "badges": [],
+        "url": "https://sl.wikipedia.org/wiki/Kyrill"
+      },
+      "svwiki": {
+        "site": "svwiki",
+        "title": "Orkanen Kyrill",
+        "badges": [],
+        "url": "https://sv.wikipedia.org/wiki/Orkanen_Kyrill"
+      },
+      "trwiki": {
+        "site": "trwiki",
+        "title": "Kyrill",
+        "badges": [],
+        "url": "https://tr.wikipedia.org/wiki/Kyrill"
+      },
+      "zhwiki": {
+        "site": "zhwiki",
+        "title": "風暴基里爾",
+        "badges": [],
+        "url": "https://zh.wikipedia.org/wiki/%E9%A2%A8%E6%9A%B4%E5%9F%BA%E9%87%8C%E7%88%BE"
+      }
+    }
+  }
+}

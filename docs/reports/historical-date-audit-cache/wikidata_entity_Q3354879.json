@@ -1,0 +1,141 @@
+{
+  "saved_at": "2026-03-07T16:57:04.609Z",
+  "value": {
+    "pageid": 3197757,
+    "ns": 0,
+    "title": "Q3354879",
+    "lastrevid": 2464655999,
+    "modified": "2026-02-19T09:06:23Z",
+    "type": "item",
+    "id": "Q3354879",
+    "labels": {
+      "fr": {
+        "language": "fr",
+        "value": "Opération Trident"
+      },
+      "en": {
+        "language": "en",
+        "value": "trident Operation"
+      }
+    },
+    "descriptions": {
+      "en": {
+        "language": "en",
+        "value": "France's intervention and military presence in Kosovo from 1999 to 2014."
+      },
+      "fr": {
+        "language": "fr",
+        "value": "intervention et la présence militaire de la France au Kosovo qui s'étend de 1999 à 2014"
+      }
+    },
+    "aliases": {},
+    "claims": {
+      "P1889": [
+        {
+          "mainsnak": {
+            "snaktype": "value",
+            "property": "P1889",
+            "hash": "784df2768bc5d09cdfa6c985deeb4d183faf7577",
+            "datavalue": {
+              "value": {
+                "entity-type": "item",
+                "numeric-id": 2623909,
+                "id": "Q2623909"
+              },
+              "type": "wikibase-entityid"
+            },
+            "datatype": "wikibase-item"
+          },
+          "type": "statement",
+          "id": "Q3354879$10B4BFF4-8AE6-4837-B69F-567D004B733F",
+          "rank": "normal",
+          "references": [
+            {
+              "hash": "0b12033274371dfca1e4c049b3bc6a8aaa504ddd",
+              "snaks": {
+                "P143": [
+                  {
+                    "snaktype": "value",
+                    "property": "P143",
+                    "hash": "f30cbd35620c4ea6d0633aaf0210a8916130469b",
+                    "datavalue": {
+                      "value": {
+                        "entity-type": "item",
+                        "numeric-id": 8447,
+                        "id": "Q8447"
+                      },
+                      "type": "wikibase-entityid"
+                    },
+                    "datatype": "wikibase-item"
+                  }
+                ],
+                "P4656": [
+                  {
+                    "snaktype": "value",
+                    "property": "P4656",
+                    "hash": "5fc3abe62a2cb98d80b6f64cb51838e86717880e",
+                    "datavalue": {
+                      "value": "https://fr.wikipedia.org/w/index.php?title=Opération_Trident&oldid=168577763",
+                      "type": "string"
+                    },
+                    "datatype": "url"
+                  }
+                ]
+              },
+              "snaks-order": [
+                "P143",
+                "P4656"
+              ]
+            }
+          ]
+        }
+      ],
+      "P2671": [
+        {
+          "mainsnak": {
+            "snaktype": "value",
+            "property": "P2671",
+            "hash": "51d4f9fd5b1977bd96a32620a174f8a895ca0bec",
+            "datavalue": {
+              "value": "/g/120n2w4s",
+              "type": "string"
+            },
+            "datatype": "external-id"
+          },
+          "type": "statement",
+          "id": "Q3354879$2770F0B7-DC40-49A9-AF18-1D15CAEF4E9B",
+          "rank": "normal"
+        }
+      ],
+      "P31": [
+        {
+          "mainsnak": {
+            "snaktype": "value",
+            "property": "P31",
+            "hash": "ee34286f7ad412babf825549da7967a387339300",
+            "datavalue": {
+              "value": {
+                "entity-type": "item",
+                "numeric-id": 645883,
+                "id": "Q645883"
+              },
+              "type": "wikibase-entityid"
+            },
+            "datatype": "wikibase-item"
+          },
+          "type": "statement",
+          "id": "Q3354879$3f3cbb18-4628-f098-9685-34a43c970202",
+          "rank": "normal"
+        }
+      ]
+    },
+    "sitelinks": {
+      "frwiki": {
+        "site": "frwiki",
+        "title": "Opération Trident",
+        "badges": [],
+        "url": "https://fr.wikipedia.org/wiki/Op%C3%A9ration_Trident"
+      }
+    }
+  }
+}

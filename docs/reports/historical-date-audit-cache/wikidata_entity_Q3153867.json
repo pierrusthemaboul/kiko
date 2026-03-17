@@ -1,0 +1,255 @@
+{
+  "saved_at": "2026-03-07T13:33:33.994Z",
+  "value": {
+    "pageid": 3012798,
+    "ns": 0,
+    "title": "Q3153867",
+    "lastrevid": 2091320399,
+    "modified": "2024-03-01T20:39:26Z",
+    "type": "item",
+    "id": "Q3153867",
+    "labels": {
+      "fr": {
+        "language": "fr",
+        "value": "inventaire supplémentaire des monuments historiques"
+      },
+      "el": {
+        "language": "el",
+        "value": "Πρόσθετος κατάλογος ιστορικών μνημείων"
+      },
+      "ru": {
+        "language": "ru",
+        "value": "Дополнительная инвентаризация исторических памятников"
+      },
+      "es": {
+        "language": "es",
+        "value": "Inventario suplementario de monumentos históricos"
+      },
+      "lb": {
+        "language": "lb",
+        "value": "Zousazinventaire (F) vun de klasséierte Monumenter"
+      },
+      "en": {
+        "language": "en",
+        "value": "Inventaire supplémentaire des monuments historiques"
+      }
+    },
+    "descriptions": {
+      "fr": {
+        "language": "fr",
+        "value": "appellation de l’inscription au titre des monuments historiques en France utilisée de 1927 à 2005"
+      },
+      "lb": {
+        "language": "lb",
+        "value": "Zousazinventaire vun de klasséierte Monumenter a Frankräich"
+      }
+    },
+    "aliases": {
+      "fr": [
+        {
+          "language": "fr",
+          "value": "inventaire supplémentaire"
+        }
+      ],
+      "lb": [
+        {
+          "language": "lb",
+          "value": "inventaire supplémentaire des monuments historiques"
+        }
+      ]
+    },
+    "claims": {
+      "P279": [
+        {
+          "mainsnak": {
+            "snaktype": "value",
+            "property": "P279",
+            "hash": "5fb016a8b6c046197c412578fa972513e3f771ac",
+            "datavalue": {
+              "value": {
+                "entity-type": "item",
+                "numeric-id": 916475,
+                "id": "Q916475"
+              },
+              "type": "wikibase-entityid"
+            },
+            "datatype": "wikibase-item"
+          },
+          "type": "statement",
+          "id": "Q3153867$f5170fc4-4435-9b20-8c13-4a9ee134a646",
+          "rank": "normal"
+        }
+      ],
+      "P17": [
+        {
+          "mainsnak": {
+            "snaktype": "value",
+            "property": "P17",
+            "hash": "c05db5d169c2560b9799d567a803d20a392f53e4",
+            "datavalue": {
+              "value": {
+                "entity-type": "item",
+                "numeric-id": 142,
+                "id": "Q142"
+              },
+              "type": "wikibase-entityid"
+            },
+            "datatype": "wikibase-item"
+          },
+          "type": "statement",
+          "id": "Q3153867$09eff667-4dee-f44c-e13a-540b8b82631d",
+          "rank": "normal"
+        }
+      ],
+      "P31": [
+        {
+          "mainsnak": {
+            "snaktype": "value",
+            "property": "P31",
+            "hash": "c420289626d9be5b2f111103cfdc7e94dddc4843",
+            "datavalue": {
+              "value": {
+                "entity-type": "item",
+                "numeric-id": 19386377,
+                "id": "Q19386377"
+              },
+              "type": "wikibase-entityid"
+            },
+            "datatype": "wikibase-item"
+          },
+          "type": "statement",
+          "id": "Q3153867$f71b9d17-4bb7-10ec-648f-c1a0fc3c5361",
+          "rank": "normal"
+        }
+      ],
+      "P1889": [
+        {
+          "mainsnak": {
+            "snaktype": "value",
+            "property": "P1889",
+            "hash": "f0a2e9b5487414f0edd2c21486a8e003d20965d0",
+            "datavalue": {
+              "value": {
+                "entity-type": "item",
+                "numeric-id": 3153865,
+                "id": "Q3153865"
+              },
+              "type": "wikibase-entityid"
+            },
+            "datatype": "wikibase-item"
+          },
+          "type": "statement",
+          "id": "Q3153867$2634c627-4a0d-6ecc-6eba-c81a53610de4",
+          "rank": "normal"
+        }
+      ],
+      "P2671": [
+        {
+          "mainsnak": {
+            "snaktype": "value",
+            "property": "P2671",
+            "hash": "133d9214ba09152e6361a18d027077ec8aa82486",
+            "datavalue": {
+              "value": "/g/120r4tpv",
+              "type": "string"
+            },
+            "datatype": "external-id"
+          },
+          "type": "statement",
+          "id": "Q3153867$24F38F59-A92C-4594-8078-DB5F5FA54A31",
+          "rank": "normal"
+        }
+      ],
+      "P571": [
+        {
+          "mainsnak": {
+            "snaktype": "value",
+            "property": "P571",
+            "hash": "c751f701ae013d2b24a51b07c216912580403ce6",
+            "datavalue": {
+              "value": {
+                "time": "+1927-07-23T00:00:00Z",
+                "timezone": 0,
+                "before": 0,
+                "after": 0,
+                "precision": 11,
+                "calendarmodel": "http://www.wikidata.org/entity/Q1985727"
+              },
+              "type": "time"
+            },
+            "datatype": "time"
+          },
+          "type": "statement",
+          "id": "Q3153867$ad668684-4218-ed71-7942-895ddcbee45a",
+          "rank": "normal"
+        }
+      ],
+      "P576": [
+        {
+          "mainsnak": {
+            "snaktype": "value",
+            "property": "P576",
+            "hash": "b1754882b37286868db1cf56c541e79b2f5af896",
+            "datavalue": {
+              "value": {
+                "time": "+2005-09-08T00:00:00Z",
+                "timezone": 0,
+                "before": 0,
+                "after": 0,
+                "precision": 11,
+                "calendarmodel": "http://www.wikidata.org/entity/Q1985727"
+              },
+              "type": "time"
+            },
+            "datatype": "time"
+          },
+          "type": "statement",
+          "id": "Q3153867$aec17f15-4f12-85bc-e678-f55c7c5c4f9b",
+          "rank": "normal"
+        }
+      ],
+      "P1813": [
+        {
+          "mainsnak": {
+            "snaktype": "value",
+            "property": "P1813",
+            "hash": "97549715ab511580ec8eea644112a0fb5b923aaf",
+            "datavalue": {
+              "value": {
+                "text": "ISMH",
+                "language": "fr"
+              },
+              "type": "monolingualtext"
+            },
+            "datatype": "monolingualtext"
+          },
+          "type": "statement",
+          "id": "Q3153867$bc5db9cd-4723-22ff-0960-0c44287de3f7",
+          "rank": "normal"
+        }
+      ]
+    },
+    "sitelinks": {
+      "enwiki": {
+        "site": "enwiki",
+        "title": "Inventaire supplémentaire des monuments historiques",
+        "badges": [
+          "Q70893996"
+        ],
+        "url": "https://en.wikipedia.org/wiki/Inventaire_suppl%C3%A9mentaire_des_monuments_historiques"
+      },
+      "eswiki": {
+        "site": "eswiki",
+        "title": "Inventario suplementario de monumentos históricos",
+        "badges": [],
+        "url": "https://es.wikipedia.org/wiki/Inventario_suplementario_de_monumentos_hist%C3%B3ricos"
+      },
+      "frwiki": {
+        "site": "frwiki",
+        "title": "Inventaire supplémentaire des monuments historiques",
+        "badges": [],
+        "url": "https://fr.wikipedia.org/wiki/Inventaire_suppl%C3%A9mentaire_des_monuments_historiques"
+      }
+    }
+  }
+}

@@ -1,0 +1,73 @@
+{
+  "saved_at": "2026-03-07T13:32:49.975Z",
+  "value": {
+    "pageid": 2850967,
+    "ns": 0,
+    "title": "Q2981431",
+    "lastrevid": 1840533812,
+    "modified": "2023-02-24T12:31:59Z",
+    "type": "item",
+    "id": "Q2981431",
+    "labels": {
+      "fr": {
+        "language": "fr",
+        "value": "Code Michau"
+      }
+    },
+    "descriptions": {
+      "fr": {
+        "language": "fr",
+        "value": "Ordonnance du roi Louis XIII réformant, en 1629, un grand nombre d'institutions politiques et sociales en France"
+      }
+    },
+    "aliases": {},
+    "claims": {
+      "P31": [
+        {
+          "mainsnak": {
+            "snaktype": "value",
+            "property": "P31",
+            "hash": "e813d6818afa9a7215e2de34000f67743912662a",
+            "datavalue": {
+              "value": {
+                "entity-type": "item",
+                "numeric-id": 922203,
+                "id": "Q922203"
+              },
+              "type": "wikibase-entityid"
+            },
+            "datatype": "wikibase-item"
+          },
+          "type": "statement",
+          "id": "Q2981431$12C75AB3-B105-442E-B96C-1B769E0E2E65",
+          "rank": "normal"
+        }
+      ],
+      "P2671": [
+        {
+          "mainsnak": {
+            "snaktype": "value",
+            "property": "P2671",
+            "hash": "58cc2c2a87a2bf7a3b3397935349b816958474dd",
+            "datavalue": {
+              "value": "/g/12372h9f",
+              "type": "string"
+            },
+            "datatype": "external-id"
+          },
+          "type": "statement",
+          "id": "Q2981431$BB8F7CB2-45C4-4395-9738-FA9A4C878DC8",
+          "rank": "normal"
+        }
+      ]
+    },
+    "sitelinks": {
+      "frwiki": {
+        "site": "frwiki",
+        "title": "Code Michau",
+        "badges": [],
+        "url": "https://fr.wikipedia.org/wiki/Code_Michau"
+      }
+    }
+  }
+}

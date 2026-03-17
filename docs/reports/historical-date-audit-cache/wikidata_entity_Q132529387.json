@@ -1,0 +1,104 @@
+{
+  "saved_at": "2026-03-07T16:37:25.217Z",
+  "value": {
+    "pageid": 126389207,
+    "ns": 0,
+    "title": "Q132529387",
+    "lastrevid": 2443006860,
+    "modified": "2025-12-16T13:46:59Z",
+    "type": "item",
+    "id": "Q132529387",
+    "labels": {
+      "en": {
+        "language": "en",
+        "value": "Police nationale"
+      },
+      "fr": {
+        "language": "fr",
+        "value": "Police nationale"
+      }
+    },
+    "descriptions": {
+      "en": {
+        "language": "en",
+        "value": "madagascar's National Police"
+      },
+      "fr": {
+        "language": "fr",
+        "value": "police de Madagascar"
+      }
+    },
+    "aliases": {
+      "fr": [
+        {
+          "language": "fr",
+          "value": "Police nationale (Madagascar)"
+        }
+      ],
+      "en": [
+        {
+          "language": "en",
+          "value": "Malagasy National Police"
+        }
+      ]
+    },
+    "claims": {
+      "P31": [
+        {
+          "mainsnak": {
+            "snaktype": "value",
+            "property": "P31",
+            "hash": "8a41bb3640cf81b29944644f4faed795dc7cc40d",
+            "datavalue": {
+              "value": {
+                "entity-type": "item",
+                "numeric-id": 7410456,
+                "id": "Q7410456"
+              },
+              "type": "wikibase-entityid"
+            },
+            "datatype": "wikibase-item"
+          },
+          "type": "statement",
+          "id": "Q132529387$F2CFB1A6-456F-4CE2-B554-57C29FF8C169",
+          "rank": "normal"
+        }
+      ],
+      "P17": [
+        {
+          "mainsnak": {
+            "snaktype": "value",
+            "property": "P17",
+            "hash": "d1d4f2b9970e0dac6bd5b2183864608596eabcf0",
+            "datavalue": {
+              "value": {
+                "entity-type": "item",
+                "numeric-id": 1019,
+                "id": "Q1019"
+              },
+              "type": "wikibase-entityid"
+            },
+            "datatype": "wikibase-item"
+          },
+          "type": "statement",
+          "id": "Q132529387$72614331-9A86-4F9A-9B71-69DD46F31D19",
+          "rank": "normal"
+        }
+      ]
+    },
+    "sitelinks": {
+      "enwiki": {
+        "site": "enwiki",
+        "title": "Malagasy National Police",
+        "badges": [],
+        "url": "https://en.wikipedia.org/wiki/Malagasy_National_Police"
+      },
+      "frwiki": {
+        "site": "frwiki",
+        "title": "Police nationale (Madagascar)",
+        "badges": [],
+        "url": "https://fr.wikipedia.org/wiki/Police_nationale_(Madagascar)"
+      }
+    }
+  }
+}

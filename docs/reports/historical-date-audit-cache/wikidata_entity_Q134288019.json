@@ -1,0 +1,207 @@
+{
+  "saved_at": "2026-03-07T15:23:55.480Z",
+  "value": {
+    "pageid": 128138921,
+    "ns": 0,
+    "title": "Q134288019",
+    "lastrevid": 2393498413,
+    "modified": "2025-08-17T21:39:22Z",
+    "type": "item",
+    "id": "Q134288019",
+    "labels": {
+      "en": {
+        "language": "en",
+        "value": "1853 in Japan"
+      },
+      "fr": {
+        "language": "fr",
+        "value": "1853 au Japon"
+      },
+      "sv": {
+        "language": "sv",
+        "value": "1853 i Japan"
+      },
+      "de": {
+        "language": "de",
+        "value": "1853 in Japan"
+      }
+    },
+    "descriptions": {
+      "en": {
+        "language": "en",
+        "value": "overview of Japan-related events during the year of 1853"
+      },
+      "fr": {
+        "language": "fr",
+        "value": "chronologie du Japon"
+      },
+      "sv": {
+        "language": "sv",
+        "value": "översikt över Japanrelaterade händelser under år 1853"
+      },
+      "de": {
+        "language": "de",
+        "value": "Ereignisse des Jahres 1853 in Japan"
+      }
+    },
+    "aliases": {},
+    "claims": {
+      "P31": [
+        {
+          "mainsnak": {
+            "snaktype": "value",
+            "property": "P31",
+            "hash": "b9953cd69a9e5fc8f8fe263b847673b0013cf93f",
+            "datavalue": {
+              "value": {
+                "entity-type": "item",
+                "numeric-id": 18340514,
+                "id": "Q18340514"
+              },
+              "type": "wikibase-entityid"
+            },
+            "datatype": "wikibase-item"
+          },
+          "type": "statement",
+          "id": "Q134288019$031e996f-4746-2077-bb1b-a9151f50e0cc",
+          "rank": "normal"
+        }
+      ],
+      "P1269": [
+        {
+          "mainsnak": {
+            "snaktype": "value",
+            "property": "P1269",
+            "hash": "f775069a0ae42eed34f0f406be87be24f3809d21",
+            "datavalue": {
+              "value": {
+                "entity-type": "item",
+                "numeric-id": 7666,
+                "id": "Q7666"
+              },
+              "type": "wikibase-entityid"
+            },
+            "datatype": "wikibase-item"
+          },
+          "type": "statement",
+          "id": "Q134288019$5ebab380-4aac-7983-f7a1-5fb3325f038f",
+          "rank": "normal"
+        },
+        {
+          "mainsnak": {
+            "snaktype": "value",
+            "property": "P1269",
+            "hash": "d205e4421ee032208286c94dbe6a1e81c3059b6a",
+            "datavalue": {
+              "value": {
+                "entity-type": "item",
+                "numeric-id": 17,
+                "id": "Q17"
+              },
+              "type": "wikibase-entityid"
+            },
+            "datatype": "wikibase-item"
+          },
+          "type": "statement",
+          "id": "Q134288019$a5ad2326-410f-660e-b2ec-98bdeb51984c",
+          "rank": "normal"
+        }
+      ],
+      "P17": [
+        {
+          "mainsnak": {
+            "snaktype": "value",
+            "property": "P17",
+            "hash": "55178c20e031f1579d34d802f16f6b9951b631e1",
+            "datavalue": {
+              "value": {
+                "entity-type": "item",
+                "numeric-id": 17,
+                "id": "Q17"
+              },
+              "type": "wikibase-entityid"
+            },
+            "datatype": "wikibase-item"
+          },
+          "type": "statement",
+          "id": "Q134288019$52d900aa-4635-9987-6e85-f914209868a9",
+          "rank": "normal"
+        }
+      ],
+      "P155": [
+        {
+          "mainsnak": {
+            "snaktype": "value",
+            "property": "P155",
+            "hash": "1afecbc8411bc258aba814bc1cec2f6fa27e49b2",
+            "datavalue": {
+              "value": {
+                "entity-type": "item",
+                "numeric-id": 48843014,
+                "id": "Q48843014"
+              },
+              "type": "wikibase-entityid"
+            },
+            "datatype": "wikibase-item"
+          },
+          "type": "statement",
+          "id": "Q134288019$e82062d6-4f22-d629-335a-fdd91005d7ac",
+          "rank": "normal"
+        }
+      ],
+      "P910": [
+        {
+          "mainsnak": {
+            "snaktype": "value",
+            "property": "P910",
+            "hash": "c6d34badc505737fade56f3c22f609fccb711f1f",
+            "datavalue": {
+              "value": {
+                "entity-type": "item",
+                "numeric-id": 6790203,
+                "id": "Q6790203"
+              },
+              "type": "wikibase-entityid"
+            },
+            "datatype": "wikibase-item"
+          },
+          "type": "statement",
+          "id": "Q134288019$c99d3884-4c73-689f-9712-0f37b867356f",
+          "rank": "normal"
+        }
+      ],
+      "P585": [
+        {
+          "mainsnak": {
+            "snaktype": "value",
+            "property": "P585",
+            "hash": "db370907fc90481b2fcd3147e5dab711c9ab7d34",
+            "datavalue": {
+              "value": {
+                "time": "+1853-00-00T00:00:00Z",
+                "timezone": 0,
+                "before": 0,
+                "after": 0,
+                "precision": 9,
+                "calendarmodel": "http://www.wikidata.org/entity/Q1985727"
+              },
+              "type": "time"
+            },
+            "datatype": "time"
+          },
+          "type": "statement",
+          "id": "Q134288019$E1DBBD0E-F9BF-4170-A06A-4B8F47BBEC64",
+          "rank": "normal"
+        }
+      ]
+    },
+    "sitelinks": {
+      "frwiki": {
+        "site": "frwiki",
+        "title": "1853 au Japon",
+        "badges": [],
+        "url": "https://fr.wikipedia.org/wiki/1853_au_Japon"
+      }
+    }
+  }
+}

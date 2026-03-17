@@ -1,0 +1,455 @@
+{
+  "saved_at": "2026-03-07T16:09:36.714Z",
+  "value": {
+    "pageid": 71085,
+    "ns": 0,
+    "title": "Q68371",
+    "lastrevid": 2410938558,
+    "modified": "2025-09-30T05:01:33Z",
+    "type": "item",
+    "id": "Q68371",
+    "labels": {
+      "de": {
+        "language": "de",
+        "value": "Schlacht von Mortemer"
+      },
+      "fr": {
+        "language": "fr",
+        "value": "bataille de Mortemer"
+      },
+      "sh": {
+        "language": "sh",
+        "value": "Bitka kod Mortemera"
+      },
+      "en": {
+        "language": "en",
+        "value": "Battle of Mortemer"
+      },
+      "pt": {
+        "language": "pt",
+        "value": "Batalha de Mortemer"
+      },
+      "es": {
+        "language": "es",
+        "value": "Batalla de Mortemer"
+      },
+      "yo": {
+        "language": "yo",
+        "value": "ogun Mortemer"
+      },
+      "nl": {
+        "language": "nl",
+        "value": "Slag bij Mortemer"
+      },
+      "ru": {
+        "language": "ru",
+        "value": "Битва при Мортемере"
+      },
+      "ga": {
+        "language": "ga",
+        "value": "Cath Mortemer"
+      },
+      "it": {
+        "language": "it",
+        "value": "Battaglia di Mortemer"
+      },
+      "he": {
+        "language": "he",
+        "value": "קרב מורטמר"
+      }
+    },
+    "descriptions": {
+      "en": {
+        "language": "en",
+        "value": "1054 battle"
+      },
+      "nl": {
+        "language": "nl",
+        "value": "veldslag in Frankrijk"
+      },
+      "yo": {
+        "language": "yo",
+        "value": "ogun"
+      },
+      "ru": {
+        "language": "ru",
+        "value": "сражение 1054 года во время войны между Францией и Нормандии"
+      }
+    },
+    "aliases": {},
+    "claims": {
+      "P625": [
+        {
+          "mainsnak": {
+            "snaktype": "value",
+            "property": "P625",
+            "hash": "528743ebe237cc6dece56cdc3107065f0d71ead1",
+            "datavalue": {
+              "value": {
+                "latitude": 49.751666666667,
+                "longitude": 1.5511111111111,
+                "altitude": null,
+                "precision": 0.00027777777777778,
+                "globe": "http://www.wikidata.org/entity/Q2"
+              },
+              "type": "globecoordinate"
+            },
+            "datatype": "globe-coordinate"
+          },
+          "type": "statement",
+          "id": "Q68371$98975E14-7513-499F-96CD-45A284FE78A4",
+          "rank": "normal",
+          "references": [
+            {
+              "hash": "d4bd87b862b12d99d26e86472d44f26858dee639",
+              "snaks": {
+                "P143": [
+                  {
+                    "snaktype": "value",
+                    "property": "P143",
+                    "hash": "f30cbd35620c4ea6d0633aaf0210a8916130469b",
+                    "datavalue": {
+                      "value": {
+                        "entity-type": "item",
+                        "numeric-id": 8447,
+                        "id": "Q8447"
+                      },
+                      "type": "wikibase-entityid"
+                    },
+                    "datatype": "wikibase-item"
+                  }
+                ]
+              },
+              "snaks-order": [
+                "P143"
+              ]
+            }
+          ]
+        }
+      ],
+      "P31": [
+        {
+          "mainsnak": {
+            "snaktype": "value",
+            "property": "P31",
+            "hash": "baa1df9dcd37b9f3a062e7a14a8bef0c37078d32",
+            "datavalue": {
+              "value": {
+                "entity-type": "item",
+                "numeric-id": 178561,
+                "id": "Q178561"
+              },
+              "type": "wikibase-entityid"
+            },
+            "datatype": "wikibase-item"
+          },
+          "type": "statement",
+          "id": "Q68371$BCB9EB0F-84E2-4813-AA39-98EC2E53BE9A",
+          "rank": "normal",
+          "references": [
+            {
+              "hash": "d4bd87b862b12d99d26e86472d44f26858dee639",
+              "snaks": {
+                "P143": [
+                  {
+                    "snaktype": "value",
+                    "property": "P143",
+                    "hash": "f30cbd35620c4ea6d0633aaf0210a8916130469b",
+                    "datavalue": {
+                      "value": {
+                        "entity-type": "item",
+                        "numeric-id": 8447,
+                        "id": "Q8447"
+                      },
+                      "type": "wikibase-entityid"
+                    },
+                    "datatype": "wikibase-item"
+                  }
+                ]
+              },
+              "snaks-order": [
+                "P143"
+              ]
+            }
+          ]
+        }
+      ],
+      "P276": [
+        {
+          "mainsnak": {
+            "snaktype": "value",
+            "property": "P276",
+            "hash": "4b82f4c904f93fccbda0c1fa3c5651825a405cd4",
+            "datavalue": {
+              "value": {
+                "entity-type": "item",
+                "numeric-id": 750727,
+                "id": "Q750727"
+              },
+              "type": "wikibase-entityid"
+            },
+            "datatype": "wikibase-item"
+          },
+          "type": "statement",
+          "id": "Q68371$36A8A3A8-28AC-41F7-AFF8-E8EA4FA18A81",
+          "rank": "normal",
+          "references": [
+            {
+              "hash": "d4bd87b862b12d99d26e86472d44f26858dee639",
+              "snaks": {
+                "P143": [
+                  {
+                    "snaktype": "value",
+                    "property": "P143",
+                    "hash": "f30cbd35620c4ea6d0633aaf0210a8916130469b",
+                    "datavalue": {
+                      "value": {
+                        "entity-type": "item",
+                        "numeric-id": 8447,
+                        "id": "Q8447"
+                      },
+                      "type": "wikibase-entityid"
+                    },
+                    "datatype": "wikibase-item"
+                  }
+                ]
+              },
+              "snaks-order": [
+                "P143"
+              ]
+            }
+          ]
+        }
+      ],
+      "P585": [
+        {
+          "mainsnak": {
+            "snaktype": "value",
+            "property": "P585",
+            "hash": "956253215988b944c2064580bda058716da386a9",
+            "datavalue": {
+              "value": {
+                "time": "+1054-00-00T00:00:00Z",
+                "timezone": 0,
+                "before": 0,
+                "after": 0,
+                "precision": 9,
+                "calendarmodel": "http://www.wikidata.org/entity/Q1985786"
+              },
+              "type": "time"
+            },
+            "datatype": "time"
+          },
+          "type": "statement",
+          "id": "Q68371$378ad824-4c6b-db88-bb1d-90db53948972",
+          "rank": "normal"
+        }
+      ],
+      "P17": [
+        {
+          "mainsnak": {
+            "snaktype": "value",
+            "property": "P17",
+            "hash": "2b7d86f7555d9e77641e33f3f283b88021a5e49a",
+            "datavalue": {
+              "value": {
+                "entity-type": "item",
+                "numeric-id": 70972,
+                "id": "Q70972"
+              },
+              "type": "wikibase-entityid"
+            },
+            "datatype": "wikibase-item"
+          },
+          "type": "statement",
+          "id": "Q68371$0682FF61-C1D0-47E6-BE46-AF3EF6B73F91",
+          "rank": "normal"
+        },
+        {
+          "mainsnak": {
+            "snaktype": "value",
+            "property": "P17",
+            "hash": "24f8332a3cf8d3cd1f61efedbe2409efba3596c3",
+            "datavalue": {
+              "value": {
+                "entity-type": "item",
+                "numeric-id": 842091,
+                "id": "Q842091"
+              },
+              "type": "wikibase-entityid"
+            },
+            "datatype": "wikibase-item"
+          },
+          "type": "statement",
+          "id": "Q68371$2e16b861-46b9-19b7-cd9a-041057b182d2",
+          "rank": "normal"
+        }
+      ],
+      "P18": [
+        {
+          "mainsnak": {
+            "snaktype": "value",
+            "property": "P18",
+            "hash": "d8f95298bc4e6508596531df500a8945cf91ff8d",
+            "datavalue": {
+              "value": "William+Henry 2.jpg",
+              "type": "string"
+            },
+            "datatype": "commonsMedia"
+          },
+          "type": "statement",
+          "id": "Q68371$7BEF88D4-CE63-4C3E-819D-854FD30B2F0E",
+          "rank": "normal",
+          "references": [
+            {
+              "hash": "9424852ca7d9d48269148c57acbefacca1899882",
+              "snaks": {
+                "P143": [
+                  {
+                    "snaktype": "value",
+                    "property": "P143",
+                    "hash": "b7f8bea3bb10c237323eb448dc4798948923bd5c",
+                    "datavalue": {
+                      "value": {
+                        "entity-type": "item",
+                        "numeric-id": 11921,
+                        "id": "Q11921"
+                      },
+                      "type": "wikibase-entityid"
+                    },
+                    "datatype": "wikibase-item"
+                  }
+                ]
+              },
+              "snaks-order": [
+                "P143"
+              ]
+            }
+          ]
+        }
+      ],
+      "P710": [
+        {
+          "mainsnak": {
+            "snaktype": "value",
+            "property": "P710",
+            "hash": "8a9ea07e5e69e9e51e5c91cad488fa1c0428f5bc",
+            "datavalue": {
+              "value": {
+                "entity-type": "item",
+                "numeric-id": 70972,
+                "id": "Q70972"
+              },
+              "type": "wikibase-entityid"
+            },
+            "datatype": "wikibase-item"
+          },
+          "type": "statement",
+          "id": "Q68371$942C3FBC-41ED-4B24-864F-C2EB59DBCE39",
+          "rank": "normal",
+          "references": [
+            {
+              "hash": "fa278ebfc458360e5aed63d5058cca83c46134f1",
+              "snaks": {
+                "P143": [
+                  {
+                    "snaktype": "value",
+                    "property": "P143",
+                    "hash": "e4f6d9441d0600513c4533c672b5ab472dc73694",
+                    "datavalue": {
+                      "value": {
+                        "entity-type": "item",
+                        "numeric-id": 328,
+                        "id": "Q328"
+                      },
+                      "type": "wikibase-entityid"
+                    },
+                    "datatype": "wikibase-item"
+                  }
+                ]
+              },
+              "snaks-order": [
+                "P143"
+              ]
+            }
+          ]
+        }
+      ],
+      "P646": [
+        {
+          "mainsnak": {
+            "snaktype": "value",
+            "property": "P646",
+            "hash": "59ef781137cf34ccbc4dbb5d4b3fae5691644c64",
+            "datavalue": {
+              "value": "/m/0463t3f",
+              "type": "string"
+            },
+            "datatype": "external-id"
+          },
+          "type": "statement",
+          "id": "Q68371$358BFD26-CCA9-4AC4-9C73-59A1299596A7",
+          "rank": "normal"
+        }
+      ]
+    },
+    "sitelinks": {
+      "dewiki": {
+        "site": "dewiki",
+        "title": "Schlacht von Mortemer",
+        "badges": [],
+        "url": "https://de.wikipedia.org/wiki/Schlacht_von_Mortemer"
+      },
+      "enwiki": {
+        "site": "enwiki",
+        "title": "Battle of Mortemer",
+        "badges": [],
+        "url": "https://en.wikipedia.org/wiki/Battle_of_Mortemer"
+      },
+      "eswiki": {
+        "site": "eswiki",
+        "title": "Batalla de Mortemer",
+        "badges": [],
+        "url": "https://es.wikipedia.org/wiki/Batalla_de_Mortemer"
+      },
+      "frwiki": {
+        "site": "frwiki",
+        "title": "Bataille de Mortemer",
+        "badges": [],
+        "url": "https://fr.wikipedia.org/wiki/Bataille_de_Mortemer"
+      },
+      "itwiki": {
+        "site": "itwiki",
+        "title": "Battaglia di Mortemer",
+        "badges": [],
+        "url": "https://it.wikipedia.org/wiki/Battaglia_di_Mortemer"
+      },
+      "nlwiki": {
+        "site": "nlwiki",
+        "title": "Slag bij Mortemer",
+        "badges": [],
+        "url": "https://nl.wikipedia.org/wiki/Slag_bij_Mortemer"
+      },
+      "ptwiki": {
+        "site": "ptwiki",
+        "title": "Batalha de Mortemer",
+        "badges": [],
+        "url": "https://pt.wikipedia.org/wiki/Batalha_de_Mortemer"
+      },
+      "ruwiki": {
+        "site": "ruwiki",
+        "title": "Битва при Мортемере",
+        "badges": [
+          "Q17437798"
+        ],
+        "url": "https://ru.wikipedia.org/wiki/%D0%91%D0%B8%D1%82%D0%B2%D0%B0_%D0%BF%D1%80%D0%B8_%D0%9C%D0%BE%D1%80%D1%82%D0%B5%D0%BC%D0%B5%D1%80%D0%B5"
+      },
+      "shwiki": {
+        "site": "shwiki",
+        "title": "Bitka kod Mortemera",
+        "badges": [],
+        "url": "https://sh.wikipedia.org/wiki/Bitka_kod_Mortemera"
+      }
+    }
+  }
+}

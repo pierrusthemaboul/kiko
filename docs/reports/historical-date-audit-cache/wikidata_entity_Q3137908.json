@@ -1,0 +1,222 @@
+{
+  "saved_at": "2026-03-07T11:56:16.819Z",
+  "value": {
+    "pageid": 2997925,
+    "ns": 0,
+    "title": "Q3137908",
+    "lastrevid": 2347723716,
+    "modified": "2025-05-12T10:58:58Z",
+    "type": "item",
+    "id": "Q3137908",
+    "labels": {
+      "fr": {
+        "language": "fr",
+        "value": "histoire du programme nucléaire civil de la France"
+      },
+      "ru": {
+        "language": "ru",
+        "value": "история мирной ядерной программы Франции"
+      },
+      "en": {
+        "language": "en",
+        "value": "History of France's civil nuclear program"
+      },
+      "sl": {
+        "language": "sl",
+        "value": "zgodovina civilnega jedrskega programa Francije"
+      }
+    },
+    "descriptions": {},
+    "aliases": {
+      "fr": [
+        {
+          "language": "fr",
+          "value": "Histoire du programme nucléaire de la France"
+        }
+      ],
+      "ru": [
+        {
+          "language": "ru",
+          "value": "история атомной энергетики Франции"
+        }
+      ]
+    },
+    "claims": {
+      "P31": [
+        {
+          "mainsnak": {
+            "snaktype": "value",
+            "property": "P31",
+            "hash": "7ad5c7929af39fc2ff8afed55f1192f80e71d936",
+            "datavalue": {
+              "value": {
+                "entity-type": "item",
+                "numeric-id": 17524420,
+                "id": "Q17524420"
+              },
+              "type": "wikibase-entityid"
+            },
+            "datatype": "wikibase-item"
+          },
+          "type": "statement",
+          "id": "Q3137908$92FF26AE-9B7B-4CD2-B30E-3860C6D1C400",
+          "rank": "normal"
+        }
+      ],
+      "P1889": [
+        {
+          "mainsnak": {
+            "snaktype": "value",
+            "property": "P1889",
+            "hash": "e444b548dfd62bcd5e001fc2d6c47a53e8514aa9",
+            "datavalue": {
+              "value": {
+                "entity-type": "item",
+                "numeric-id": 3137915,
+                "id": "Q3137915"
+              },
+              "type": "wikibase-entityid"
+            },
+            "datatype": "wikibase-item"
+          },
+          "type": "statement",
+          "id": "Q3137908$CEBB6840-AE9A-4347-BA86-DF6D48663214",
+          "rank": "normal",
+          "references": [
+            {
+              "hash": "00dab2596cb96709d441164f78f9f556ecb7d499",
+              "snaks": {
+                "P143": [
+                  {
+                    "snaktype": "value",
+                    "property": "P143",
+                    "hash": "f30cbd35620c4ea6d0633aaf0210a8916130469b",
+                    "datavalue": {
+                      "value": {
+                        "entity-type": "item",
+                        "numeric-id": 8447,
+                        "id": "Q8447"
+                      },
+                      "type": "wikibase-entityid"
+                    },
+                    "datatype": "wikibase-item"
+                  }
+                ],
+                "P4656": [
+                  {
+                    "snaktype": "value",
+                    "property": "P4656",
+                    "hash": "8d23d0a4897405e46bf023913f0bb48903c40365",
+                    "datavalue": {
+                      "value": "https://fr.wikipedia.org/w/index.php?title=Histoire_du_programme_nucléaire_civil_de_la_France&oldid=169114241",
+                      "type": "string"
+                    },
+                    "datatype": "url"
+                  }
+                ]
+              },
+              "snaks-order": [
+                "P143",
+                "P4656"
+              ]
+            }
+          ]
+        }
+      ],
+      "P17": [
+        {
+          "mainsnak": {
+            "snaktype": "value",
+            "property": "P17",
+            "hash": "c05db5d169c2560b9799d567a803d20a392f53e4",
+            "datavalue": {
+              "value": {
+                "entity-type": "item",
+                "numeric-id": 142,
+                "id": "Q142"
+              },
+              "type": "wikibase-entityid"
+            },
+            "datatype": "wikibase-item"
+          },
+          "type": "statement",
+          "id": "Q3137908$788fb84d-486e-e660-457a-49b453e23f57",
+          "rank": "normal"
+        }
+      ],
+      "P1269": [
+        {
+          "mainsnak": {
+            "snaktype": "value",
+            "property": "P1269",
+            "hash": "d34d64041ed4ad34bd8e15b53778b7cf95e7aa87",
+            "datavalue": {
+              "value": {
+                "entity-type": "item",
+                "numeric-id": 65515809,
+                "id": "Q65515809"
+              },
+              "type": "wikibase-entityid"
+            },
+            "datatype": "wikibase-item"
+          },
+          "type": "statement",
+          "id": "Q3137908$47cdc228-46e0-b8fe-25bf-2e509d7046ef",
+          "rank": "normal"
+        },
+        {
+          "mainsnak": {
+            "snaktype": "value",
+            "property": "P1269",
+            "hash": "50e95ed8846f26542ea1cc3c76384b2adc540b79",
+            "datavalue": {
+              "value": {
+                "entity-type": "item",
+                "numeric-id": 377791,
+                "id": "Q377791"
+              },
+              "type": "wikibase-entityid"
+            },
+            "datatype": "wikibase-item"
+          },
+          "type": "statement",
+          "id": "Q3137908$39f91834-45ad-52a4-56c6-01bb0ac62900",
+          "rank": "normal"
+        }
+      ],
+      "P2671": [
+        {
+          "mainsnak": {
+            "snaktype": "value",
+            "property": "P2671",
+            "hash": "fc167a43516d8c4a9ed0a365b19e91ca76b9a787",
+            "datavalue": {
+              "value": "/g/121xcxw4",
+              "type": "string"
+            },
+            "datatype": "external-id"
+          },
+          "type": "statement",
+          "id": "Q3137908$866D9932-210A-4502-9AC4-1E904772B9D9",
+          "rank": "normal"
+        }
+      ]
+    },
+    "sitelinks": {
+      "enwiki": {
+        "site": "enwiki",
+        "title": "History of France's civil nuclear program",
+        "badges": [],
+        "url": "https://en.wikipedia.org/wiki/History_of_France%27s_civil_nuclear_program"
+      },
+      "frwiki": {
+        "site": "frwiki",
+        "title": "Histoire du programme nucléaire civil de la France",
+        "badges": [
+          "Q17437798"
+        ],
+        "url": "https://fr.wikipedia.org/wiki/Histoire_du_programme_nucl%C3%A9aire_civil_de_la_France"
+      }
+    }
+  }
+}

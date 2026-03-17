@@ -1,0 +1,476 @@
+{
+  "saved_at": "2026-03-07T16:00:55.033Z",
+  "value": {
+    "pageid": 1963140,
+    "ns": 0,
+    "title": "Q2035345",
+    "lastrevid": 2463569990,
+    "modified": "2026-02-15T06:16:58Z",
+    "type": "item",
+    "id": "Q2035345",
+    "labels": {
+      "ru": {
+        "language": "ru",
+        "value": "Сюрприз в Мо"
+      },
+      "fr": {
+        "language": "fr",
+        "value": "surprise de Meaux"
+      },
+      "en": {
+        "language": "en",
+        "value": "Surprise of Meaux"
+      },
+      "nl": {
+        "language": "nl",
+        "value": "Verrassing van Meaux"
+      },
+      "ar": {
+        "language": "ar",
+        "value": "مفاجأة مو"
+      },
+      "it": {
+        "language": "it",
+        "value": "Sorpresa di Meaux"
+      },
+      "ja": {
+        "language": "ja",
+        "value": "モーの奇襲"
+      },
+      "de": {
+        "language": "de",
+        "value": "Surprise de Meaux"
+      },
+      "hu": {
+        "language": "hu",
+        "value": "meaux-i meglepetés"
+      },
+      "hy": {
+        "language": "hy",
+        "value": "Մոյի Անակնկալ"
+      },
+      "es": {
+        "language": "es",
+        "value": "sorpresa de Meaux"
+      }
+    },
+    "descriptions": {
+      "de": {
+        "language": "de",
+        "value": "Verschwörung zur Entführung des Königs Karl IX. und seiner Familie"
+      },
+      "en": {
+        "language": "en",
+        "value": "failed French coup by aristocratic Huguenots"
+      },
+      "fr": {
+        "language": "fr",
+        "value": "conspiration organisée en 1567 par Louis Ier de Bourbon-Condé"
+      },
+      "hy": {
+        "language": "hy",
+        "value": "ֆրանսիական արքայական ընտանիքին դեմ մղված չստացված հեղաշրջում փորձ"
+      },
+      "hu": {
+        "language": "hu",
+        "value": "a második vallásháború kirobbantója"
+      },
+      "es": {
+        "language": "es",
+        "value": "golpe de Estado fallido de los hugonotes contra el rey Carlos IX de Francia"
+      }
+    },
+    "aliases": {
+      "fr": [
+        {
+          "language": "fr",
+          "value": "bataille de Meaux"
+        }
+      ],
+      "hu": [
+        {
+          "language": "hu",
+          "value": "meaux-i csata"
+        }
+      ]
+    },
+    "claims": {
+      "P646": [
+        {
+          "mainsnak": {
+            "snaktype": "value",
+            "property": "P646",
+            "hash": "02c0f00326e2f01ada952bba7c16b812edfcc702",
+            "datavalue": {
+              "value": "/m/040985r",
+              "type": "string"
+            },
+            "datatype": "external-id"
+          },
+          "type": "statement",
+          "id": "Q2035345$E27B5121-2EC9-47B3-93E0-11C621CB46C5",
+          "rank": "normal",
+          "references": [
+            {
+              "hash": "2b00cb481cddcac7623114367489b5c194901c4a",
+              "snaks": {
+                "P248": [
+                  {
+                    "snaktype": "value",
+                    "property": "P248",
+                    "hash": "a94b740202b097dd33355e0e6c00e54b9395e5e0",
+                    "datavalue": {
+                      "value": {
+                        "entity-type": "item",
+                        "numeric-id": 15241312,
+                        "id": "Q15241312"
+                      },
+                      "type": "wikibase-entityid"
+                    },
+                    "datatype": "wikibase-item"
+                  }
+                ],
+                "P577": [
+                  {
+                    "snaktype": "value",
+                    "property": "P577",
+                    "hash": "fde79ecb015112d2f29229ccc1ec514ed3e71fa2",
+                    "datavalue": {
+                      "value": {
+                        "time": "+2013-10-28T00:00:00Z",
+                        "timezone": 0,
+                        "before": 0,
+                        "after": 0,
+                        "precision": 11,
+                        "calendarmodel": "http://www.wikidata.org/entity/Q1985727"
+                      },
+                      "type": "time"
+                    },
+                    "datatype": "time"
+                  }
+                ]
+              },
+              "snaks-order": [
+                "P248",
+                "P577"
+              ]
+            }
+          ]
+        }
+      ],
+      "P31": [
+        {
+          "mainsnak": {
+            "snaktype": "value",
+            "property": "P31",
+            "hash": "38541dfa8b7c39b4208a7154871cff88ca76c289",
+            "datavalue": {
+              "value": {
+                "entity-type": "item",
+                "numeric-id": 25906438,
+                "id": "Q25906438"
+              },
+              "type": "wikibase-entityid"
+            },
+            "datatype": "wikibase-item"
+          },
+          "type": "statement",
+          "id": "Q2035345$22cccf90-4843-06b0-910b-9d70281fe654",
+          "rank": "normal"
+        }
+      ],
+      "P585": [
+        {
+          "mainsnak": {
+            "snaktype": "value",
+            "property": "P585",
+            "hash": "cf852c5cceae0702a052c13a3179216798597e55",
+            "datavalue": {
+              "value": {
+                "time": "+1567-09-28T00:00:00Z",
+                "timezone": 0,
+                "before": 0,
+                "after": 0,
+                "precision": 11,
+                "calendarmodel": "http://www.wikidata.org/entity/Q1985786"
+              },
+              "type": "time"
+            },
+            "datatype": "time"
+          },
+          "type": "statement",
+          "id": "Q2035345$2bce183c-4b5e-94c0-9da3-7c8975b9acf1",
+          "rank": "normal"
+        }
+      ],
+      "P17": [
+        {
+          "mainsnak": {
+            "snaktype": "value",
+            "property": "P17",
+            "hash": "2b7d86f7555d9e77641e33f3f283b88021a5e49a",
+            "datavalue": {
+              "value": {
+                "entity-type": "item",
+                "numeric-id": 70972,
+                "id": "Q70972"
+              },
+              "type": "wikibase-entityid"
+            },
+            "datatype": "wikibase-item"
+          },
+          "type": "statement",
+          "id": "Q2035345$2d8ca819-4998-2ca3-fd56-3f5625cc42dc",
+          "rank": "normal"
+        }
+      ],
+      "P1542": [
+        {
+          "mainsnak": {
+            "snaktype": "value",
+            "property": "P1542",
+            "hash": "9c68fb52593051234806cfc815fdd3922a5c0c9c",
+            "datavalue": {
+              "value": {
+                "entity-type": "item",
+                "numeric-id": 233542,
+                "id": "Q233542"
+              },
+              "type": "wikibase-entityid"
+            },
+            "datatype": "wikibase-item"
+          },
+          "type": "statement",
+          "id": "Q2035345$901d3b43-47d4-9b70-7e8c-158d1d352ca4",
+          "rank": "normal"
+        }
+      ],
+      "P361": [
+        {
+          "mainsnak": {
+            "snaktype": "value",
+            "property": "P361",
+            "hash": "635bafe4d6e9c0e0d95b249f69da09e27f70263b",
+            "datavalue": {
+              "value": {
+                "entity-type": "item",
+                "numeric-id": 673175,
+                "id": "Q673175"
+              },
+              "type": "wikibase-entityid"
+            },
+            "datatype": "wikibase-item"
+          },
+          "type": "statement",
+          "id": "Q2035345$bdcc9989-497c-2ca9-3c79-6bed77802856",
+          "rank": "normal"
+        }
+      ],
+      "P373": [
+        {
+          "mainsnak": {
+            "snaktype": "value",
+            "property": "P373",
+            "hash": "b9f8c9960fb93476d3b7eddab7c62c7787a11aa2",
+            "datavalue": {
+              "value": "Surprise of Meaux",
+              "type": "string"
+            },
+            "datatype": "string"
+          },
+          "type": "statement",
+          "id": "Q2035345$4f34a096-be57-4ff1-80cc-52925abe5f4a",
+          "rank": "normal"
+        }
+      ],
+      "P18": [
+        {
+          "mainsnak": {
+            "snaktype": "value",
+            "property": "P18",
+            "hash": "c1b8cc768d93ae10414abb435e0a907cd54640a6",
+            "datavalue": {
+              "value": "Charles IX attaqué par les calvinistes à Meaux.jpg",
+              "type": "string"
+            },
+            "datatype": "commonsMedia"
+          },
+          "type": "statement",
+          "id": "Q2035345$016a7763-41aa-b0b5-84f5-62f7cb8b23b9",
+          "rank": "normal"
+        }
+      ],
+      "P276": [
+        {
+          "mainsnak": {
+            "snaktype": "value",
+            "property": "P276",
+            "hash": "a2c4daf90b14a5e89516ca643d96c8f042488ac5",
+            "datavalue": {
+              "value": {
+                "entity-type": "item",
+                "numeric-id": 207620,
+                "id": "Q207620"
+              },
+              "type": "wikibase-entityid"
+            },
+            "datatype": "wikibase-item"
+          },
+          "type": "statement",
+          "id": "Q2035345$486b070b-4986-9222-ee1b-64f6383be22f",
+          "rank": "normal"
+        }
+      ],
+      "P710": [
+        {
+          "mainsnak": {
+            "snaktype": "value",
+            "property": "P710",
+            "hash": "8a9ea07e5e69e9e51e5c91cad488fa1c0428f5bc",
+            "datavalue": {
+              "value": {
+                "entity-type": "item",
+                "numeric-id": 70972,
+                "id": "Q70972"
+              },
+              "type": "wikibase-entityid"
+            },
+            "datatype": "wikibase-item"
+          },
+          "type": "statement",
+          "qualifiers": {
+            "P4791": [
+              {
+                "snaktype": "value",
+                "property": "P4791",
+                "hash": "88c3f29dbc7a6a95c626021a2611ce2bca1f70cd",
+                "datavalue": {
+                  "value": {
+                    "entity-type": "item",
+                    "numeric-id": 1414020,
+                    "id": "Q1414020"
+                  },
+                  "type": "wikibase-entityid"
+                },
+                "datatype": "wikibase-item"
+              }
+            ]
+          },
+          "qualifiers-order": [
+            "P4791"
+          ],
+          "id": "Q2035345$9b2cdc9c-4fb1-0efe-6908-2116e8257212",
+          "rank": "normal"
+        },
+        {
+          "mainsnak": {
+            "snaktype": "value",
+            "property": "P710",
+            "hash": "d56ebdb084c5acbc765d0f3fb9b7099d8cb918f2",
+            "datavalue": {
+              "value": {
+                "entity-type": "item",
+                "numeric-id": 101935,
+                "id": "Q101935"
+              },
+              "type": "wikibase-entityid"
+            },
+            "datatype": "wikibase-item"
+          },
+          "type": "statement",
+          "qualifiers": {
+            "P4791": [
+              {
+                "snaktype": "value",
+                "property": "P4791",
+                "hash": "3529bc6d0c5ae7d30f81dfd6d4c688978c05d5aa",
+                "datavalue": {
+                  "value": {
+                    "entity-type": "item",
+                    "numeric-id": 316913,
+                    "id": "Q316913"
+                  },
+                  "type": "wikibase-entityid"
+                },
+                "datatype": "wikibase-item"
+              }
+            ]
+          },
+          "qualifiers-order": [
+            "P4791"
+          ],
+          "id": "Q2035345$5625df48-4ff4-10a1-269d-25438a0aa7a4",
+          "rank": "normal"
+        }
+      ]
+    },
+    "sitelinks": {
+      "arwiki": {
+        "site": "arwiki",
+        "title": "مفاجأة مو",
+        "badges": [],
+        "url": "https://ar.wikipedia.org/wiki/%D9%85%D9%81%D8%A7%D8%AC%D8%A3%D8%A9_%D9%85%D9%88"
+      },
+      "commonswiki": {
+        "site": "commonswiki",
+        "title": "Category:Surprise of Meaux",
+        "badges": [],
+        "url": "https://commons.wikimedia.org/wiki/Category:Surprise_of_Meaux"
+      },
+      "dewiki": {
+        "site": "dewiki",
+        "title": "Surprise de Meaux",
+        "badges": [],
+        "url": "https://de.wikipedia.org/wiki/Surprise_de_Meaux"
+      },
+      "enwiki": {
+        "site": "enwiki",
+        "title": "Surprise of Meaux",
+        "badges": [],
+        "url": "https://en.wikipedia.org/wiki/Surprise_of_Meaux"
+      },
+      "eswiki": {
+        "site": "eswiki",
+        "title": "Sorpresa de Meaux",
+        "badges": [],
+        "url": "https://es.wikipedia.org/wiki/Sorpresa_de_Meaux"
+      },
+      "frwiki": {
+        "site": "frwiki",
+        "title": "Surprise de Meaux",
+        "badges": [],
+        "url": "https://fr.wikipedia.org/wiki/Surprise_de_Meaux"
+      },
+      "huwiki": {
+        "site": "huwiki",
+        "title": "Meaux-i meglepetés",
+        "badges": [],
+        "url": "https://hu.wikipedia.org/wiki/Meaux-i_meglepet%C3%A9s"
+      },
+      "hywiki": {
+        "site": "hywiki",
+        "title": "Մոյի անակնկալ",
+        "badges": [],
+        "url": "https://hy.wikipedia.org/wiki/%D5%84%D5%B8%D5%B5%D5%AB_%D5%A1%D5%B6%D5%A1%D5%AF%D5%B6%D5%AF%D5%A1%D5%AC"
+      },
+      "itwiki": {
+        "site": "itwiki",
+        "title": "Sorpresa di Meaux",
+        "badges": [],
+        "url": "https://it.wikipedia.org/wiki/Sorpresa_di_Meaux"
+      },
+      "nlwiki": {
+        "site": "nlwiki",
+        "title": "Verrassing van Meaux",
+        "badges": [],
+        "url": "https://nl.wikipedia.org/wiki/Verrassing_van_Meaux"
+      },
+      "ruwiki": {
+        "site": "ruwiki",
+        "title": "Сюрприз в Мо",
+        "badges": [],
+        "url": "https://ru.wikipedia.org/wiki/%D0%A1%D1%8E%D1%80%D0%BF%D1%80%D0%B8%D0%B7_%D0%B2_%D0%9C%D0%BE"
+      }
+    }
+  }
+}

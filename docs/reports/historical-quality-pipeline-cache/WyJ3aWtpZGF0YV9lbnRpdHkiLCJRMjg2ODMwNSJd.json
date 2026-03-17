@@ -1,0 +1,223 @@
+{
+  "pageid": 2746199,
+  "ns": 0,
+  "title": "Q2868305",
+  "lastrevid": 2285733353,
+  "modified": "2024-12-10T17:49:54Z",
+  "type": "item",
+  "id": "Q2868305",
+  "labels": {
+    "fr": {
+      "language": "fr",
+      "value": "Assurance chômage en France"
+    },
+    "en": {
+      "language": "en",
+      "value": "Unemployment benefits in France"
+    },
+    "it": {
+      "language": "it",
+      "value": "indennità di disoccupazione in Francia"
+    }
+  },
+  "descriptions": {
+    "fr": {
+      "language": "fr",
+      "value": "situation de l'assurance chômage en France"
+    },
+    "en": {
+      "language": "en",
+      "value": "overview of unemployment benefits in France"
+    }
+  },
+  "aliases": {
+    "fr": [
+      {
+        "language": "fr",
+        "value": "Assurance chômage (France)"
+      },
+      {
+        "language": "fr",
+        "value": "Assurance chômage en france"
+      },
+      {
+        "language": "fr",
+        "value": "Assurance Chômage En France"
+      },
+      {
+        "language": "fr",
+        "value": "Assurance chomage en France"
+      },
+      {
+        "language": "fr",
+        "value": "Allocations chômages (France)"
+      },
+      {
+        "language": "fr",
+        "value": "Allocation d'Aide au Retour à l'Emploi"
+      }
+    ]
+  },
+  "claims": {
+    "P17": [
+      {
+        "mainsnak": {
+          "snaktype": "value",
+          "property": "P17",
+          "hash": "c05db5d169c2560b9799d567a803d20a392f53e4",
+          "datavalue": {
+            "value": {
+              "entity-type": "item",
+              "numeric-id": 142,
+              "id": "Q142"
+            },
+            "type": "wikibase-entityid"
+          },
+          "datatype": "wikibase-item"
+        },
+        "type": "statement",
+        "id": "Q2868305$31C616E0-7B49-4A22-A1C3-95339817011C",
+        "rank": "normal"
+      }
+    ],
+    "P571": [
+      {
+        "mainsnak": {
+          "snaktype": "value",
+          "property": "P571",
+          "hash": "ccd2f9a4b275393c1d1450bb9852e473c76014a3",
+          "datavalue": {
+            "value": {
+              "time": "+1958-01-01T00:00:00Z",
+              "timezone": 0,
+              "before": 0,
+              "after": 0,
+              "precision": 9,
+              "calendarmodel": "http://www.wikidata.org/entity/Q1985727"
+            },
+            "type": "time"
+          },
+          "datatype": "time"
+        },
+        "type": "statement",
+        "id": "Q2868305$D43C042A-5C9A-4041-8ED7-345EB13A9F1E",
+        "rank": "normal",
+        "references": [
+          {
+            "hash": "c404ecb1b99293e73c8a0e5c10b8fd5483452ed7",
+            "snaks": {
+              "P813": [
+                {
+                  "snaktype": "value",
+                  "property": "P813",
+                  "hash": "195108957eff26a4c4350918e0cbf092092eae69",
+                  "datavalue": {
+                    "value": {
+                      "time": "+2019-07-01T00:00:00Z",
+                      "timezone": 0,
+                      "before": 0,
+                      "after": 0,
+                      "precision": 11,
+                      "calendarmodel": "http://www.wikidata.org/entity/Q1985727"
+                    },
+                    "type": "time"
+                  },
+                  "datatype": "time"
+                }
+              ],
+              "P3452": [
+                {
+                  "snaktype": "value",
+                  "property": "P3452",
+                  "hash": "925ee7f94aa5f1783436d48ed051d8b80fa7c05b",
+                  "datavalue": {
+                    "value": {
+                      "entity-type": "item",
+                      "numeric-id": 8148929,
+                      "id": "Q8148929"
+                    },
+                    "type": "wikibase-entityid"
+                  },
+                  "datatype": "wikibase-item"
+                }
+              ],
+              "P143": [
+                {
+                  "snaktype": "value",
+                  "property": "P143",
+                  "hash": "e4f6d9441d0600513c4533c672b5ab472dc73694",
+                  "datavalue": {
+                    "value": {
+                      "entity-type": "item",
+                      "numeric-id": 328,
+                      "id": "Q328"
+                    },
+                    "type": "wikibase-entityid"
+                  },
+                  "datatype": "wikibase-item"
+                }
+              ]
+            },
+            "snaks-order": [
+              "P813",
+              "P3452",
+              "P143"
+            ]
+          }
+        ]
+      }
+    ],
+    "P279": [
+      {
+        "mainsnak": {
+          "snaktype": "value",
+          "property": "P279",
+          "hash": "e58581cc9c183fe06b2b344749a2b2d6df17d6f0",
+          "datavalue": {
+            "value": {
+              "entity-type": "item",
+              "numeric-id": 311255,
+              "id": "Q311255"
+            },
+            "type": "wikibase-entityid"
+          },
+          "datatype": "wikibase-item"
+        },
+        "type": "statement",
+        "id": "Q2868305$d4d10abd-4323-4d78-27b2-27ff14158ed8",
+        "rank": "normal"
+      }
+    ],
+    "P646": [
+      {
+        "mainsnak": {
+          "snaktype": "value",
+          "property": "P646",
+          "hash": "5bd4e0f1cd09ca5a4c0905cb1d2598aaf8bcf6a6",
+          "datavalue": {
+            "value": "/m/0jt7xwz",
+            "type": "string"
+          },
+          "datatype": "external-id"
+        },
+        "type": "statement",
+        "id": "Q2868305$F32F4F64-676B-4E62-BD25-39CDFD38B68D",
+        "rank": "normal"
+      }
+    ]
+  },
+  "sitelinks": {
+    "enwiki": {
+      "site": "enwiki",
+      "title": "Unemployment benefits in France",
+      "badges": [],
+      "url": "https://en.wikipedia.org/wiki/Unemployment_benefits_in_France"
+    },
+    "frwiki": {
+      "site": "frwiki",
+      "title": "Assurance chômage en France",
+      "badges": [],
+      "url": "https://fr.wikipedia.org/wiki/Assurance_ch%C3%B4mage_en_France"
+    }
+  }
+}

@@ -1,0 +1,734 @@
+{
+  "saved_at": "2026-03-07T14:42:25.628Z",
+  "value": {
+    "pageid": 291308,
+    "ns": 0,
+    "title": "Q302373",
+    "lastrevid": 2469872356,
+    "modified": "2026-03-06T15:32:16Z",
+    "type": "item",
+    "id": "Q302373",
+    "labels": {
+      "de": {
+        "language": "de",
+        "value": "Fédération abolitionniste internationale"
+      },
+      "fr": {
+        "language": "fr",
+        "value": "Fédération abolitionniste internationale"
+      },
+      "en": {
+        "language": "en",
+        "value": "International Abolitionist Federation"
+      },
+      "es": {
+        "language": "es",
+        "value": "Federación Abolicionista Internacional"
+      },
+      "sv": {
+        "language": "sv",
+        "value": "International Abolitionist Federation"
+      },
+      "ar": {
+        "language": "ar",
+        "value": "الاتحاد الدولي لإلغاء الرق"
+      }
+    },
+    "descriptions": {
+      "en": {
+        "language": "en",
+        "value": "organisation to abolish regulated prostitution and trafficking of women"
+      },
+      "fi": {
+        "language": "fi",
+        "value": "organisaatio"
+      },
+      "sq": {
+        "language": "sq",
+        "value": "organizatë"
+      },
+      "de": {
+        "language": "de",
+        "value": "Organisation zur Abschaffung der regulierteren Prostitution und des Frauenhandels."
+      },
+      "ar": {
+        "language": "ar",
+        "value": "منظمة"
+      },
+      "fr": {
+        "language": "fr",
+        "value": "organisation pour l'abolitionnisme en matière de prostitution"
+      }
+    },
+    "aliases": {},
+    "claims": {
+      "P373": [
+        {
+          "mainsnak": {
+            "snaktype": "value",
+            "property": "P373",
+            "hash": "2e858ad69ee5d16cc9fe6722ae4cd0f275e8796c",
+            "datavalue": {
+              "value": "International Abolitionist Federation",
+              "type": "string"
+            },
+            "datatype": "string"
+          },
+          "type": "statement",
+          "id": "Q302373$4840C4BF-5F90-449C-A7B6-215A68E7694E",
+          "rank": "normal"
+        }
+      ],
+      "P214": [
+        {
+          "mainsnak": {
+            "snaktype": "value",
+            "property": "P214",
+            "hash": "ea446c4d42c40d3cf667a531d962b3a3961b2f90",
+            "datavalue": {
+              "value": "157731507",
+              "type": "string"
+            },
+            "datatype": "external-id"
+          },
+          "type": "statement",
+          "id": "Q302373$E4747A32-BE62-46C8-ACE2-A05BC8BC58A6",
+          "rank": "normal",
+          "references": [
+            {
+              "hash": "fa278ebfc458360e5aed63d5058cca83c46134f1",
+              "snaks": {
+                "P143": [
+                  {
+                    "snaktype": "value",
+                    "property": "P143",
+                    "hash": "e4f6d9441d0600513c4533c672b5ab472dc73694",
+                    "datavalue": {
+                      "value": {
+                        "entity-type": "item",
+                        "numeric-id": 328,
+                        "id": "Q328"
+                      },
+                      "type": "wikibase-entityid"
+                    },
+                    "datatype": "wikibase-item"
+                  }
+                ]
+              },
+              "snaks-order": [
+                "P143"
+              ]
+            }
+          ]
+        }
+      ],
+      "P268": [
+        {
+          "mainsnak": {
+            "snaktype": "value",
+            "property": "P268",
+            "hash": "4f26b521132e73c4c9d3c31d28cdcbd874e1b078",
+            "datavalue": {
+              "value": "121211267",
+              "type": "string"
+            },
+            "datatype": "external-id"
+          },
+          "type": "statement",
+          "id": "Q302373$FFD54A9B-ECB5-4017-AAE6-DEECBE06823A",
+          "rank": "normal",
+          "references": [
+            {
+              "hash": "4533e325b4161189dcba02b6a92f6c4533327637",
+              "snaks": {
+                "P248": [
+                  {
+                    "snaktype": "value",
+                    "property": "P248",
+                    "hash": "6b7d4330c4aac4caec4ede9de0311ce273f88ecd",
+                    "datavalue": {
+                      "value": {
+                        "entity-type": "item",
+                        "numeric-id": 54919,
+                        "id": "Q54919"
+                      },
+                      "type": "wikibase-entityid"
+                    },
+                    "datatype": "wikibase-item"
+                  }
+                ],
+                "P813": [
+                  {
+                    "snaktype": "value",
+                    "property": "P813",
+                    "hash": "a5fb6c3872e96e7c068b0826ff7393eaba0e8fc3",
+                    "datavalue": {
+                      "value": {
+                        "time": "+2015-10-06T00:00:00Z",
+                        "timezone": 0,
+                        "before": 0,
+                        "after": 0,
+                        "precision": 11,
+                        "calendarmodel": "http://www.wikidata.org/entity/Q1985727"
+                      },
+                      "type": "time"
+                    },
+                    "datatype": "time"
+                  }
+                ]
+              },
+              "snaks-order": [
+                "P248",
+                "P813"
+              ]
+            }
+          ]
+        }
+      ],
+      "P269": [
+        {
+          "mainsnak": {
+            "snaktype": "value",
+            "property": "P269",
+            "hash": "3bac831de6a9c7056d84417a531356ae6ea987fc",
+            "datavalue": {
+              "value": "02962522X",
+              "type": "string"
+            },
+            "datatype": "external-id"
+          },
+          "type": "statement",
+          "id": "Q302373$8CC04E4A-D58A-495A-9C99-1FCCCE9EDAEA",
+          "rank": "normal",
+          "references": [
+            {
+              "hash": "4533e325b4161189dcba02b6a92f6c4533327637",
+              "snaks": {
+                "P248": [
+                  {
+                    "snaktype": "value",
+                    "property": "P248",
+                    "hash": "6b7d4330c4aac4caec4ede9de0311ce273f88ecd",
+                    "datavalue": {
+                      "value": {
+                        "entity-type": "item",
+                        "numeric-id": 54919,
+                        "id": "Q54919"
+                      },
+                      "type": "wikibase-entityid"
+                    },
+                    "datatype": "wikibase-item"
+                  }
+                ],
+                "P813": [
+                  {
+                    "snaktype": "value",
+                    "property": "P813",
+                    "hash": "a5fb6c3872e96e7c068b0826ff7393eaba0e8fc3",
+                    "datavalue": {
+                      "value": {
+                        "time": "+2015-10-06T00:00:00Z",
+                        "timezone": 0,
+                        "before": 0,
+                        "after": 0,
+                        "precision": 11,
+                        "calendarmodel": "http://www.wikidata.org/entity/Q1985727"
+                      },
+                      "type": "time"
+                    },
+                    "datatype": "time"
+                  }
+                ]
+              },
+              "snaks-order": [
+                "P248",
+                "P813"
+              ]
+            }
+          ]
+        }
+      ],
+      "P571": [
+        {
+          "mainsnak": {
+            "snaktype": "value",
+            "property": "P571",
+            "hash": "c0d61aa396d4229d9fdfc1f40dec2db743d8e5f0",
+            "datavalue": {
+              "value": {
+                "time": "+1877-00-00T00:00:00Z",
+                "timezone": 0,
+                "before": 0,
+                "after": 0,
+                "precision": 9,
+                "calendarmodel": "http://www.wikidata.org/entity/Q1985727"
+              },
+              "type": "time"
+            },
+            "datatype": "time"
+          },
+          "type": "statement",
+          "id": "Q302373$CA6439A7-6410-417B-9161-865A2944835A",
+          "rank": "normal",
+          "references": [
+            {
+              "hash": "9a24f7c0208b05d6be97077d855671d1dfdbc0dd",
+              "snaks": {
+                "P143": [
+                  {
+                    "snaktype": "value",
+                    "property": "P143",
+                    "hash": "d38375ffe6fe142663ff55cd783aa4df4301d83d",
+                    "datavalue": {
+                      "value": {
+                        "entity-type": "item",
+                        "numeric-id": 48183,
+                        "id": "Q48183"
+                      },
+                      "type": "wikibase-entityid"
+                    },
+                    "datatype": "wikibase-item"
+                  }
+                ]
+              },
+              "snaks-order": [
+                "P143"
+              ]
+            }
+          ]
+        }
+      ],
+      "P31": [
+        {
+          "mainsnak": {
+            "snaktype": "value",
+            "property": "P31",
+            "hash": "20b3c9267c82af90c6e03e3b112a810207b32cc0",
+            "datavalue": {
+              "value": {
+                "entity-type": "item",
+                "numeric-id": 43229,
+                "id": "Q43229"
+              },
+              "type": "wikibase-entityid"
+            },
+            "datatype": "wikibase-item"
+          },
+          "type": "statement",
+          "id": "Q302373$49301CAB-4F9E-4C32-B79A-83667A56A8B3",
+          "rank": "normal",
+          "references": [
+            {
+              "hash": "bebe2527dd0e18cb4c91cd8e48071bed84ef909c",
+              "snaks": {
+                "P248": [
+                  {
+                    "snaktype": "value",
+                    "property": "P248",
+                    "hash": "e34b8b8b5653644b73f39ea7f8e550a584b91f6a",
+                    "datavalue": {
+                      "value": {
+                        "entity-type": "item",
+                        "numeric-id": 86999151,
+                        "id": "Q86999151"
+                      },
+                      "type": "wikibase-entityid"
+                    },
+                    "datatype": "wikibase-item"
+                  }
+                ],
+                "P854": [
+                  {
+                    "snaktype": "value",
+                    "property": "P854",
+                    "hash": "6700432b5f03a707a52a80b4623c8549c69564d6",
+                    "datavalue": {
+                      "value": "https://www.wechanged.ugent.be/wechanged-database/",
+                      "type": "string"
+                    },
+                    "datatype": "url"
+                  }
+                ]
+              },
+              "snaks-order": [
+                "P248",
+                "P854"
+              ]
+            }
+          ]
+        }
+      ],
+      "P112": [
+        {
+          "mainsnak": {
+            "snaktype": "value",
+            "property": "P112",
+            "hash": "d3ed612f85046dc3f525c6c0066980e71cdf372c",
+            "datavalue": {
+              "value": {
+                "entity-type": "item",
+                "numeric-id": 225863,
+                "id": "Q225863"
+              },
+              "type": "wikibase-entityid"
+            },
+            "datatype": "wikibase-item"
+          },
+          "type": "statement",
+          "id": "Q302373$E7D8D8B0-C248-47AC-8924-7B42F860D94E",
+          "rank": "normal",
+          "references": [
+            {
+              "hash": "fa278ebfc458360e5aed63d5058cca83c46134f1",
+              "snaks": {
+                "P143": [
+                  {
+                    "snaktype": "value",
+                    "property": "P143",
+                    "hash": "e4f6d9441d0600513c4533c672b5ab472dc73694",
+                    "datavalue": {
+                      "value": {
+                        "entity-type": "item",
+                        "numeric-id": 328,
+                        "id": "Q328"
+                      },
+                      "type": "wikibase-entityid"
+                    },
+                    "datatype": "wikibase-item"
+                  }
+                ]
+              },
+              "snaks-order": [
+                "P143"
+              ]
+            }
+          ]
+        }
+      ],
+      "P213": [
+        {
+          "mainsnak": {
+            "snaktype": "value",
+            "property": "P213",
+            "hash": "da426b9c520c8acef2af39e2ed95bb54b81c3c47",
+            "datavalue": {
+              "value": "0000000109402952",
+              "type": "string"
+            },
+            "datatype": "external-id"
+          },
+          "type": "statement",
+          "id": "Q302373$CBC534B6-998E-4E81-932C-573986426428",
+          "rank": "normal"
+        }
+      ],
+      "P18": [
+        {
+          "mainsnak": {
+            "snaktype": "value",
+            "property": "P18",
+            "hash": "25c91da06d2fba653e7859267b273f253ce78b44",
+            "datavalue": {
+              "value": "International Abolitionist Federation Conference in Geneva, Switzerland.jpg",
+              "type": "string"
+            },
+            "datatype": "commonsMedia"
+          },
+          "type": "statement",
+          "qualifiers": {
+            "P2096": [
+              {
+                "snaktype": "value",
+                "property": "P2096",
+                "hash": "af47180f1511e37b6df2f173528a88f17c33f253",
+                "datavalue": {
+                  "value": {
+                    "text": "Conférence de la Fédération abolitionniste internationale à  Genève vers 1900.",
+                    "language": "fr"
+                  },
+                  "type": "monolingualtext"
+                },
+                "datatype": "monolingualtext"
+              }
+            ]
+          },
+          "qualifiers-order": [
+            "P2096"
+          ],
+          "id": "Q302373$0A3DA559-0B3F-4348-AB7E-99E98F76035F",
+          "rank": "normal",
+          "references": [
+            {
+              "hash": "eba0cf2c5fe4f03cfadefa574dca428a041ce82c",
+              "snaks": {
+                "P143": [
+                  {
+                    "snaktype": "value",
+                    "property": "P143",
+                    "hash": "e4f6d9441d0600513c4533c672b5ab472dc73694",
+                    "datavalue": {
+                      "value": {
+                        "entity-type": "item",
+                        "numeric-id": 328,
+                        "id": "Q328"
+                      },
+                      "type": "wikibase-entityid"
+                    },
+                    "datatype": "wikibase-item"
+                  }
+                ],
+                "P4656": [
+                  {
+                    "snaktype": "value",
+                    "property": "P4656",
+                    "hash": "64820194788ad1b87e133941860e9fe29ea9186b",
+                    "datavalue": {
+                      "value": "https://en.wikipedia.org/w/index.php?title=International_Abolitionist_Federation&oldid=812767804",
+                      "type": "string"
+                    },
+                    "datatype": "url"
+                  }
+                ]
+              },
+              "snaks-order": [
+                "P143",
+                "P4656"
+              ]
+            }
+          ]
+        }
+      ],
+      "P244": [
+        {
+          "mainsnak": {
+            "snaktype": "value",
+            "property": "P244",
+            "hash": "dd2c9374793dc6ee12d28d64e48476cfffcec579",
+            "datavalue": {
+              "value": "n50055002",
+              "type": "string"
+            },
+            "datatype": "external-id"
+          },
+          "type": "statement",
+          "id": "Q302373$874062E3-2C73-4A1E-9004-3E27574FBB80",
+          "rank": "normal"
+        }
+      ],
+      "P7947": [
+        {
+          "mainsnak": {
+            "snaktype": "value",
+            "property": "P7947",
+            "hash": "5319a8d81914de7a30bb9d6927c3ba6e40ac9ee7",
+            "datavalue": {
+              "value": "wcd_00008_oid",
+              "type": "string"
+            },
+            "datatype": "external-id"
+          },
+          "type": "statement",
+          "id": "Q302373$1A70C4B2-4FC3-4687-BCD7-B574E22BE485",
+          "rank": "normal"
+        }
+      ],
+      "P646": [
+        {
+          "mainsnak": {
+            "snaktype": "value",
+            "property": "P646",
+            "hash": "87c9dafdf81ee4b6ee0cfb4cec9ec62dfa6ff1af",
+            "datavalue": {
+              "value": "/m/011x3rh0",
+              "type": "string"
+            },
+            "datatype": "external-id"
+          },
+          "type": "statement",
+          "id": "Q302373$7FA77FF1-BF26-4FA9-82F1-867A4AD52E70",
+          "rank": "normal"
+        }
+      ],
+      "P17": [
+        {
+          "mainsnak": {
+            "snaktype": "value",
+            "property": "P17",
+            "hash": "14fbb83ed35733cd34c05643b1977964c5e35fa7",
+            "datavalue": {
+              "value": {
+                "entity-type": "item",
+                "numeric-id": 13780930,
+                "id": "Q13780930"
+              },
+              "type": "wikibase-entityid"
+            },
+            "datatype": "wikibase-item"
+          },
+          "type": "statement",
+          "id": "Q302373$17c7f960-4adc-4af9-0213-9cf932102f38",
+          "rank": "normal"
+        }
+      ],
+      "P1142": [
+        {
+          "mainsnak": {
+            "snaktype": "value",
+            "property": "P1142",
+            "hash": "c200f26d5e77dcc9e78e82a84ae59d024456b95a",
+            "datavalue": {
+              "value": {
+                "entity-type": "item",
+                "numeric-id": 2933837,
+                "id": "Q2933837"
+              },
+              "type": "wikibase-entityid"
+            },
+            "datatype": "wikibase-item"
+          },
+          "type": "statement",
+          "id": "Q302373$10ab7aef-405e-99d4-a116-ce6b6d3b8a11",
+          "rank": "normal"
+        },
+        {
+          "mainsnak": {
+            "snaktype": "value",
+            "property": "P1142",
+            "hash": "cf2cc5fe7ed5360080f76642c673e15486e69d56",
+            "datavalue": {
+              "value": {
+                "entity-type": "item",
+                "numeric-id": 7252,
+                "id": "Q7252"
+              },
+              "type": "wikibase-entityid"
+            },
+            "datatype": "wikibase-item"
+          },
+          "type": "statement",
+          "id": "Q302373$038eca32-466e-0d62-217b-7ada4f3ff2fb",
+          "rank": "normal"
+        }
+      ],
+      "P8189": [
+        {
+          "mainsnak": {
+            "snaktype": "value",
+            "property": "P8189",
+            "hash": "107035fdd2ccabbf288c15c3f529bacb09e1ba50",
+            "datavalue": {
+              "value": "987007587878805171",
+              "type": "string"
+            },
+            "datatype": "external-id"
+          },
+          "type": "statement",
+          "id": "Q302373$1C5960A8-CED3-47F5-B398-8B75EBA24D9B",
+          "rank": "normal",
+          "references": [
+            {
+              "hash": "ecb7a39cf436eb1fba419853af168ef9f2ba1dab",
+              "snaks": {
+                "P248": [
+                  {
+                    "snaktype": "value",
+                    "property": "P248",
+                    "hash": "a03bb6ffe37be9554492f4eea5bd18afcb57df19",
+                    "datavalue": {
+                      "value": {
+                        "entity-type": "item",
+                        "numeric-id": 106509962,
+                        "id": "Q106509962"
+                      },
+                      "type": "wikibase-entityid"
+                    },
+                    "datatype": "wikibase-item"
+                  }
+                ]
+              },
+              "snaks-order": [
+                "P248"
+              ]
+            }
+          ]
+        }
+      ],
+      "P2541": [
+        {
+          "mainsnak": {
+            "snaktype": "value",
+            "property": "P2541",
+            "hash": "193cfd916704aed5e0ffe4d20d74cb2ef4bee494",
+            "datavalue": {
+              "value": {
+                "entity-type": "item",
+                "numeric-id": 13780930,
+                "id": "Q13780930"
+              },
+              "type": "wikibase-entityid"
+            },
+            "datatype": "wikibase-item"
+          },
+          "type": "statement",
+          "id": "q302373$a7bb6717-4095-333e-9e1a-248d7d373571",
+          "rank": "normal"
+        }
+      ],
+      "P13591": [
+        {
+          "mainsnak": {
+            "snaktype": "value",
+            "property": "P13591",
+            "hash": "233b8735ff9d5e3824ddefa750b5cd380b68ce61",
+            "datavalue": {
+              "value": "group/92075dab-9dba-4ff1-b488-0bad2b8b70c8",
+              "type": "string"
+            },
+            "datatype": "external-id"
+          },
+          "type": "statement",
+          "id": "Q302373$59E63F2A-4B3C-43CF-9371-FC5409D5102F",
+          "rank": "normal"
+        }
+      ]
+    },
+    "sitelinks": {
+      "commonswiki": {
+        "site": "commonswiki",
+        "title": "Category:International Abolitionist Federation",
+        "badges": [],
+        "url": "https://commons.wikimedia.org/wiki/Category:International_Abolitionist_Federation"
+      },
+      "dewiki": {
+        "site": "dewiki",
+        "title": "Fédération abolitionniste internationale",
+        "badges": [],
+        "url": "https://de.wikipedia.org/wiki/F%C3%A9d%C3%A9ration_abolitionniste_internationale"
+      },
+      "enwiki": {
+        "site": "enwiki",
+        "title": "International Abolitionist Federation",
+        "badges": [],
+        "url": "https://en.wikipedia.org/wiki/International_Abolitionist_Federation"
+      },
+      "eswiki": {
+        "site": "eswiki",
+        "title": "Federación Abolicionista Internacional",
+        "badges": [],
+        "url": "https://es.wikipedia.org/wiki/Federaci%C3%B3n_Abolicionista_Internacional"
+      },
+      "frwiki": {
+        "site": "frwiki",
+        "title": "Fédération abolitionniste internationale",
+        "badges": [],
+        "url": "https://fr.wikipedia.org/wiki/F%C3%A9d%C3%A9ration_abolitionniste_internationale"
+      },
+      "svwiki": {
+        "site": "svwiki",
+        "title": "International Abolitionist Federation",
+        "badges": [],
+        "url": "https://sv.wikipedia.org/wiki/International_Abolitionist_Federation"
+      }
+    }
+  }
+}

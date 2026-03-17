@@ -1,0 +1,163 @@
+{
+  "saved_at": "2026-03-07T15:59:35.479Z",
+  "value": {
+    "pageid": 3349511,
+    "ns": 0,
+    "title": "Q3517845",
+    "lastrevid": 2344742661,
+    "modified": "2025-05-04T23:39:23Z",
+    "type": "item",
+    "id": "Q3517845",
+    "labels": {
+      "fr": {
+        "language": "fr",
+        "value": "tempête Martin"
+      },
+      "en": {
+        "language": "en",
+        "value": "Cyclone Martin"
+      },
+      "it": {
+        "language": "it",
+        "value": "Tempesta Martin"
+      },
+      "de": {
+        "language": "de",
+        "value": "Sturmtief Martin"
+      },
+      "eu": {
+        "language": "eu",
+        "value": "Martin ekaitza"
+      },
+      "ja": {
+        "language": "ja",
+        "value": "マルタン嵐"
+      }
+    },
+    "descriptions": {
+      "de": {
+        "language": "de",
+        "value": "Sturmtief in Europa Ende Dezember 1999"
+      },
+      "en": {
+        "language": "en",
+        "value": "Storm in Europe December 1999"
+      },
+      "fr": {
+        "language": "fr",
+        "value": "tempête ayant affecté l’Europe fin décembre 1999"
+      },
+      "it": {
+        "language": "it",
+        "value": "tempesta del 1999"
+      }
+    },
+    "aliases": {},
+    "claims": {
+      "P31": [
+        {
+          "mainsnak": {
+            "snaktype": "value",
+            "property": "P31",
+            "hash": "430e6e9af16d92df1a954f32ab6a7507188346fe",
+            "datavalue": {
+              "value": {
+                "entity-type": "item",
+                "numeric-id": 148942,
+                "id": "Q148942"
+              },
+              "type": "wikibase-entityid"
+            },
+            "datatype": "wikibase-item"
+          },
+          "type": "statement",
+          "id": "q3517845$36e7116e-42da-3aff-770b-e14ad7b207cf",
+          "rank": "normal"
+        }
+      ],
+      "P646": [
+        {
+          "mainsnak": {
+            "snaktype": "value",
+            "property": "P646",
+            "hash": "ec2550e2737028b59e26d17a7cb69ac8a2338a50",
+            "datavalue": {
+              "value": "/m/0bbvx5w",
+              "type": "string"
+            },
+            "datatype": "external-id"
+          },
+          "type": "statement",
+          "id": "Q3517845$AD47E2C3-D2FF-48FA-A10A-922B40180C8E",
+          "rank": "normal"
+        }
+      ],
+      "P2671": [
+        {
+          "mainsnak": {
+            "snaktype": "value",
+            "property": "P2671",
+            "hash": "a03a9091c1d785d19c223d884425ea16d71eedaf",
+            "datavalue": {
+              "value": "/g/11qlx3x506",
+              "type": "string"
+            },
+            "datatype": "external-id"
+          },
+          "type": "statement",
+          "id": "Q3517845$6928A1F9-EC34-4998-9B7E-2631AEC6F0AF",
+          "rank": "normal"
+        }
+      ],
+      "P373": [
+        {
+          "mainsnak": {
+            "snaktype": "value",
+            "property": "P373",
+            "hash": "c6f0bcf70509818277afd3f42739ed7edbb6c52b",
+            "datavalue": {
+              "value": "Martin (storm)",
+              "type": "string"
+            },
+            "datatype": "string"
+          },
+          "type": "statement",
+          "id": "Q3517845$223e334b-47bd-48ba-84a3-ed0366435fb5",
+          "rank": "normal"
+        }
+      ]
+    },
+    "sitelinks": {
+      "commonswiki": {
+        "site": "commonswiki",
+        "title": "Category:Martin (storm)",
+        "badges": [],
+        "url": "https://commons.wikimedia.org/wiki/Category:Martin_(storm)"
+      },
+      "enwiki": {
+        "site": "enwiki",
+        "title": "Cyclone Martin (1999)",
+        "badges": [],
+        "url": "https://en.wikipedia.org/wiki/Cyclone_Martin_(1999)"
+      },
+      "euwiki": {
+        "site": "euwiki",
+        "title": "Martin ekaitza",
+        "badges": [],
+        "url": "https://eu.wikipedia.org/wiki/Martin_ekaitza"
+      },
+      "frwiki": {
+        "site": "frwiki",
+        "title": "Tempête Martin",
+        "badges": [],
+        "url": "https://fr.wikipedia.org/wiki/Temp%C3%AAte_Martin"
+      },
+      "itwiki": {
+        "site": "itwiki",
+        "title": "Tempesta Martin",
+        "badges": [],
+        "url": "https://it.wikipedia.org/wiki/Tempesta_Martin"
+      }
+    }
+  }
+}

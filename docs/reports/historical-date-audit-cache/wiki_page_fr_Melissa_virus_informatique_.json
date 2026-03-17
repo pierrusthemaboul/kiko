@@ -1,0 +1,9 @@
+{
+  "saved_at": "2026-03-07T15:23:47.272Z",
+  "value": {
+    "title": "Melissa (virus informatique)",
+    "extract": "Melissa est un virus informatique qui a sévi à partir du 26 mars 1999. Cette infection avait deux conséquences : Saturation des systèmes de messagerie Tous les documents infectés d'une entreprise ou d'un particulier étaient envoyés à de multiples adresses, qu'ils soient confidentiels ou non. Le montant estimé des dégâts est de 385 millions de dollars (source : International Computer Security Association). Symantec indique que ce virus ne contenait pas de fonctions destructrices, mais que dès juin 1999, un nouveau virus, ExploreZip apparaissait qui lui avait des fonctions destructrices. L'auteur du virus (l'américain David L. Smith) a été identifié grâce au champ GUID dans les documents infectés. Avec les versions de Windows de l'époque, lorsqu'il était généré, ce champ contenait l'adresse MAC de l'ordinateur ayant servi à la création du document. Au cours de la propagation du virus, le champ était recopié par le logiciel Word ou par le virus lui-même. Dans les versions suivantes de Windows, l'algorithme qui génère le GUID a été modifié pour respecter la vie privée des utilisateurs, les 48 bits de l'adresse MAC ont été retirés.",
+    "url": "https://fr.wikipedia.org/wiki/Melissa_(virus_informatique)",
+    "wikidataId": "Q590243"
+  }
+}

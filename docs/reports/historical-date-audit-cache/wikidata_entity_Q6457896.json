@@ -1,0 +1,411 @@
+{
+  "saved_at": "2026-03-07T16:01:44.420Z",
+  "value": {
+    "pageid": 6274664,
+    "ns": 0,
+    "title": "Q6457896",
+    "lastrevid": 2469746124,
+    "modified": "2026-03-06T06:12:38Z",
+    "type": "item",
+    "id": "Q6457896",
+    "labels": {
+      "en": {
+        "language": "en",
+        "value": "LGBTQ history in the United States"
+      },
+      "it": {
+        "language": "it",
+        "value": "storia LGBT negli Stati Uniti d'America"
+      },
+      "nl": {
+        "language": "nl",
+        "value": "LGBT-geschiedenis in de Verenigde Staten"
+      },
+      "fr": {
+        "language": "fr",
+        "value": "histoire LGBT aux États-Unis"
+      },
+      "ar": {
+        "language": "ar",
+        "value": "تاريخ المثلية في الولايات المتحدة"
+      },
+      "es": {
+        "language": "es",
+        "value": "historia LGBT de Estados Unidos"
+      },
+      "de": {
+        "language": "de",
+        "value": "Geschichte der Homosexualität in den Vereinigten Staaten"
+      },
+      "tr": {
+        "language": "tr",
+        "value": "Amerika Birleşik Devletleri'nde LGBT tarihi"
+      },
+      "ru": {
+        "language": "ru",
+        "value": "история ЛГБТ-движения в США"
+      },
+      "hy": {
+        "language": "hy",
+        "value": "ԼԳԲՏ շարժման պատմությունը ԱՄՆ-ում"
+      },
+      "zh": {
+        "language": "zh",
+        "value": "美國LGBT歷史"
+      },
+      "sl": {
+        "language": "sl",
+        "value": "zgodovina LGBT v Združenih državah Amerike"
+      },
+      "pt": {
+        "language": "pt",
+        "value": "história LGBT nos Estados Unidos"
+      },
+      "ca": {
+        "language": "ca",
+        "value": "història LGBT dels Estats Units"
+      },
+      "ko": {
+        "language": "ko",
+        "value": "미국의 성소수자 역사"
+      }
+    },
+    "descriptions": {
+      "en": {
+        "language": "en",
+        "value": "aspect of history"
+      },
+      "it": {
+        "language": "it",
+        "value": "storia dei diritti della comunità LGBT statunitense"
+      },
+      "fr": {
+        "language": "fr",
+        "value": "aspects historiques"
+      },
+      "bn": {
+        "language": "bn",
+        "value": "ইতিহাসের বিভিন্ন দিক"
+      },
+      "uk": {
+        "language": "uk",
+        "value": "аспект історії"
+      }
+    },
+    "aliases": {
+      "sl": [
+        {
+          "language": "sl",
+          "value": "zgodovina homoseksualnosti v Združenih državah Amerike"
+        }
+      ]
+    },
+    "claims": {
+      "P910": [
+        {
+          "mainsnak": {
+            "snaktype": "value",
+            "property": "P910",
+            "hash": "2f57dfd94f81cf2b874131901a810f0a93a569b4",
+            "datavalue": {
+              "value": {
+                "entity-type": "item",
+                "numeric-id": 7778018,
+                "id": "Q7778018"
+              },
+              "type": "wikibase-entityid"
+            },
+            "datatype": "wikibase-item"
+          },
+          "type": "statement",
+          "id": "Q6457896$0F4CDD5E-CF8B-4E97-9B07-CC8CA2446F40",
+          "rank": "normal"
+        }
+      ],
+      "P373": [
+        {
+          "mainsnak": {
+            "snaktype": "value",
+            "property": "P373",
+            "hash": "4331134fa4563e13472f6cf8c1da764155b1e944",
+            "datavalue": {
+              "value": "LGBT history in the United States",
+              "type": "string"
+            },
+            "datatype": "string"
+          },
+          "type": "statement",
+          "id": "Q6457896$66A6538D-DB5F-4BBA-BD70-4CF7A62DA4A4",
+          "rank": "normal",
+          "references": [
+            {
+              "hash": "fa278ebfc458360e5aed63d5058cca83c46134f1",
+              "snaks": {
+                "P143": [
+                  {
+                    "snaktype": "value",
+                    "property": "P143",
+                    "hash": "e4f6d9441d0600513c4533c672b5ab472dc73694",
+                    "datavalue": {
+                      "value": {
+                        "entity-type": "item",
+                        "numeric-id": 328,
+                        "id": "Q328"
+                      },
+                      "type": "wikibase-entityid"
+                    },
+                    "datatype": "wikibase-item"
+                  }
+                ]
+              },
+              "snaks-order": [
+                "P143"
+              ]
+            }
+          ]
+        }
+      ],
+      "P31": [
+        {
+          "mainsnak": {
+            "snaktype": "value",
+            "property": "P31",
+            "hash": "bb7c1546ed6212634ffb6c5b84ccb51edc13518a",
+            "datavalue": {
+              "value": {
+                "entity-type": "item",
+                "numeric-id": 130262508,
+                "id": "Q130262508"
+              },
+              "type": "wikibase-entityid"
+            },
+            "datatype": "wikibase-item"
+          },
+          "type": "statement",
+          "id": "Q6457896$642ef6f4-42f5-732d-046d-4dd6ce0b8a91",
+          "rank": "normal"
+        }
+      ],
+      "P17": [
+        {
+          "mainsnak": {
+            "snaktype": "value",
+            "property": "P17",
+            "hash": "be4c6eafa2984964f04be85667263f5642ba1a72",
+            "datavalue": {
+              "value": {
+                "entity-type": "item",
+                "numeric-id": 30,
+                "id": "Q30"
+              },
+              "type": "wikibase-entityid"
+            },
+            "datatype": "wikibase-item"
+          },
+          "type": "statement",
+          "id": "Q6457896$b9fb9613-4e88-02fe-490b-338d0b040a66",
+          "rank": "normal"
+        }
+      ],
+      "P1269": [
+        {
+          "mainsnak": {
+            "snaktype": "value",
+            "property": "P1269",
+            "hash": "91bfd608434b98bdc7af17c9fc8a006fad9c6537",
+            "datavalue": {
+              "value": {
+                "entity-type": "item",
+                "numeric-id": 16251185,
+                "id": "Q16251185"
+              },
+              "type": "wikibase-entityid"
+            },
+            "datatype": "wikibase-item"
+          },
+          "type": "statement",
+          "id": "Q6457896$3a614f30-4995-00e4-99da-be3ab0e01172",
+          "rank": "normal"
+        },
+        {
+          "mainsnak": {
+            "snaktype": "value",
+            "property": "P1269",
+            "hash": "3dcbabd7352cb20423309f8abb723f3c2f50a355",
+            "datavalue": {
+              "value": {
+                "entity-type": "item",
+                "numeric-id": 17897,
+                "id": "Q17897"
+              },
+              "type": "wikibase-entityid"
+            },
+            "datatype": "wikibase-item"
+          },
+          "type": "statement",
+          "id": "Q6457896$dd972aa3-401a-76d2-d74d-a6142766e1a4",
+          "rank": "normal"
+        },
+        {
+          "mainsnak": {
+            "snaktype": "value",
+            "property": "P1269",
+            "hash": "550d96345a3d5c7cb7dedd5a1e440b7fe90cca98",
+            "datavalue": {
+              "value": {
+                "entity-type": "item",
+                "numeric-id": 6457905,
+                "id": "Q6457905"
+              },
+              "type": "wikibase-entityid"
+            },
+            "datatype": "wikibase-item"
+          },
+          "type": "statement",
+          "id": "Q6457896$861b9da6-4582-64c7-f4a5-777f1354ca34",
+          "rank": "normal"
+        },
+        {
+          "mainsnak": {
+            "snaktype": "value",
+            "property": "P1269",
+            "hash": "176f909fdb630891696ca5f38f1d81d3cf756ad1",
+            "datavalue": {
+              "value": {
+                "entity-type": "item",
+                "numeric-id": 21169374,
+                "id": "Q21169374"
+              },
+              "type": "wikibase-entityid"
+            },
+            "datatype": "wikibase-item"
+          },
+          "type": "statement",
+          "id": "Q6457896$6fd3c7fd-455e-f6f4-9c07-4b4b0aec250c",
+          "rank": "normal"
+        }
+      ],
+      "P18": [
+        {
+          "mainsnak": {
+            "snaktype": "value",
+            "property": "P18",
+            "hash": "2178c92a97a9ae384726a8e0826d4daeb72bb4d2",
+            "datavalue": {
+              "value": "USA Lesbian Gay Bisexual Transgender flag.svg",
+              "type": "string"
+            },
+            "datatype": "commonsMedia"
+          },
+          "type": "statement",
+          "id": "Q6457896$16c6ea2d-47e2-0036-6402-d1383db0298d",
+          "rank": "normal"
+        }
+      ],
+      "P2671": [
+        {
+          "mainsnak": {
+            "snaktype": "value",
+            "property": "P2671",
+            "hash": "ad96beefc31b008b37a013403ca4acb944df7ab5",
+            "datavalue": {
+              "value": "/g/11bc6tj378",
+              "type": "string"
+            },
+            "datatype": "external-id"
+          },
+          "type": "statement",
+          "id": "Q6457896$E64D0438-6E33-4F34-AF63-D15EBE033B96",
+          "rank": "normal"
+        }
+      ],
+      "P279": [
+        {
+          "mainsnak": {
+            "snaktype": "value",
+            "property": "P279",
+            "hash": "c762035b9c33779c8f7da43df1d4adbcb0e45206",
+            "datavalue": {
+              "value": {
+                "entity-type": "item",
+                "numeric-id": 131110,
+                "id": "Q131110"
+              },
+              "type": "wikibase-entityid"
+            },
+            "datatype": "wikibase-item"
+          },
+          "type": "statement",
+          "id": "Q6457896$d845461d-4f28-9bfc-c3f8-7826d78afc71",
+          "rank": "normal"
+        }
+      ]
+    },
+    "sitelinks": {
+      "arwiki": {
+        "site": "arwiki",
+        "title": "تاريخ مجتمع الميم في الولايات المتحدة",
+        "badges": [],
+        "url": "https://ar.wikipedia.org/wiki/%D8%AA%D8%A7%D8%B1%D9%8A%D8%AE_%D9%85%D8%AC%D8%AA%D9%85%D8%B9_%D8%A7%D9%84%D9%85%D9%8A%D9%85_%D9%81%D9%8A_%D8%A7%D9%84%D9%88%D9%84%D8%A7%D9%8A%D8%A7%D8%AA_%D8%A7%D9%84%D9%85%D8%AA%D8%AD%D8%AF%D8%A9"
+      },
+      "dewiki": {
+        "site": "dewiki",
+        "title": "Geschichte der Homosexualität in den Vereinigten Staaten",
+        "badges": [
+          "Q17437796"
+        ],
+        "url": "https://de.wikipedia.org/wiki/Geschichte_der_Homosexualit%C3%A4t_in_den_Vereinigten_Staaten"
+      },
+      "enwiki": {
+        "site": "enwiki",
+        "title": "LGBTQ history in the United States",
+        "badges": [],
+        "url": "https://en.wikipedia.org/wiki/LGBTQ_history_in_the_United_States"
+      },
+      "frwiki": {
+        "site": "frwiki",
+        "title": "Histoire LGBT aux États-Unis",
+        "badges": [],
+        "url": "https://fr.wikipedia.org/wiki/Histoire_LGBT_aux_%C3%89tats-Unis"
+      },
+      "hywiki": {
+        "site": "hywiki",
+        "title": "ԼԳԲՏ շարժման պատմությունը ԱՄՆ-ում",
+        "badges": [],
+        "url": "https://hy.wikipedia.org/wiki/%D4%BC%D4%B3%D4%B2%D5%8F_%D5%B7%D5%A1%D6%80%D5%AA%D5%B4%D5%A1%D5%B6_%D5%BA%D5%A1%D5%BF%D5%B4%D5%B8%D6%82%D5%A9%D5%B5%D5%B8%D6%82%D5%B6%D5%A8_%D4%B1%D5%84%D5%86-%D5%B8%D6%82%D5%B4"
+      },
+      "itwiki": {
+        "site": "itwiki",
+        "title": "Storia LGBT negli Stati Uniti d'America",
+        "badges": [],
+        "url": "https://it.wikipedia.org/wiki/Storia_LGBT_negli_Stati_Uniti_d%27America"
+      },
+      "kowiki": {
+        "site": "kowiki",
+        "title": "미국의 성소수자 역사",
+        "badges": [],
+        "url": "https://ko.wikipedia.org/wiki/%EB%AF%B8%EA%B5%AD%EC%9D%98_%EC%84%B1%EC%86%8C%EC%88%98%EC%9E%90_%EC%97%AD%EC%82%AC"
+      },
+      "ruwiki": {
+        "site": "ruwiki",
+        "title": "История ЛГБТ-движения в США",
+        "badges": [],
+        "url": "https://ru.wikipedia.org/wiki/%D0%98%D1%81%D1%82%D0%BE%D1%80%D0%B8%D1%8F_%D0%9B%D0%93%D0%91%D0%A2-%D0%B4%D0%B2%D0%B8%D0%B6%D0%B5%D0%BD%D0%B8%D1%8F_%D0%B2_%D0%A1%D0%A8%D0%90"
+      },
+      "trwiki": {
+        "site": "trwiki",
+        "title": "Amerika Birleşik Devletleri'nde LGBT tarihi",
+        "badges": [],
+        "url": "https://tr.wikipedia.org/wiki/Amerika_Birle%C5%9Fik_Devletleri%27nde_LGBT_tarihi"
+      },
+      "zhwiki": {
+        "site": "zhwiki",
+        "title": "美國LGBT歷史",
+        "badges": [
+          "Q70893996"
+        ],
+        "url": "https://zh.wikipedia.org/wiki/%E7%BE%8E%E5%9C%8BLGBT%E6%AD%B7%E5%8F%B2"
+      }
+    }
+  }
+}

@@ -203,3 +203,4 @@ function printFinalReport(allEvents, stats) {
 }
 
 runHighFidelitySimulation();
+

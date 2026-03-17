@@ -12,3 +12,4 @@ async function check() {
     console.log(data);
 }
 check();
+

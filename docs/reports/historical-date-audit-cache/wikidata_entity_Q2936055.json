@@ -1,0 +1,1059 @@
+{
+  "saved_at": "2026-03-07T15:50:27.641Z",
+  "value": {
+    "pageid": 2808488,
+    "ns": 0,
+    "title": "Q2936055",
+    "lastrevid": 2460263335,
+    "modified": "2026-02-03T07:50:04Z",
+    "type": "item",
+    "id": "Q2936055",
+    "labels": {
+      "fr": {
+        "language": "fr",
+        "value": "canal de l'Eure"
+      },
+      "en": {
+        "language": "en",
+        "value": "Canal de l'Eure"
+      },
+      "it": {
+        "language": "it",
+        "value": "Canal de l'Eure"
+      },
+      "nl": {
+        "language": "nl",
+        "value": "Canal de l'Eure"
+      },
+      "de": {
+        "language": "de",
+        "value": "Eure-Kanal"
+      },
+      "arz": {
+        "language": "arz",
+        "value": "قناة ايجا"
+      }
+    },
+    "descriptions": {
+      "fr": {
+        "language": "fr",
+        "value": "aqueduc inachevé de Pontgouin à Versailles"
+      },
+      "nl": {
+        "language": "nl",
+        "value": "kanaal in Berchères-Saint-Germain, Frankrijk"
+      },
+      "de": {
+        "language": "de",
+        "value": "Kanal in Frankreich"
+      },
+      "id": {
+        "language": "id",
+        "value": "kanal di Perancis"
+      },
+      "ar": {
+        "language": "ar",
+        "value": "قناة في فرنسا"
+      },
+      "arz": {
+        "language": "arz",
+        "value": "قناه فى اتانج د لا تور"
+      },
+      "en": {
+        "language": "en",
+        "value": "canal in France"
+      }
+    },
+    "aliases": {
+      "fr": [
+        {
+          "language": "fr",
+          "value": "Canal Louis XIV"
+        },
+        {
+          "language": "fr",
+          "value": "Canal de l'eure"
+        },
+        {
+          "language": "fr",
+          "value": "Canal De L'Eure"
+        },
+        {
+          "language": "fr",
+          "value": "aqueduc de Pontgouin à Versailles"
+        }
+      ],
+      "de": [
+        {
+          "language": "de",
+          "value": "Canal de l'Eure"
+        },
+        {
+          "language": "de",
+          "value": "Canal Louis XIV"
+        }
+      ],
+      "en": [
+        {
+          "language": "en",
+          "value": "Canal Louis XIV"
+        }
+      ]
+    },
+    "claims": {
+      "P31": [
+        {
+          "mainsnak": {
+            "snaktype": "value",
+            "property": "P31",
+            "hash": "2980f85a6e3e17e793554d41aba136dfe15b9bd8",
+            "datavalue": {
+              "value": {
+                "entity-type": "item",
+                "numeric-id": 12284,
+                "id": "Q12284"
+              },
+              "type": "wikibase-entityid"
+            },
+            "datatype": "wikibase-item"
+          },
+          "type": "statement",
+          "id": "Q2936055$9bff1471-4799-7ca1-a8e3-cbfaae835868",
+          "rank": "normal"
+        }
+      ],
+      "P646": [
+        {
+          "mainsnak": {
+            "snaktype": "value",
+            "property": "P646",
+            "hash": "66d16b78e56a167c2d1ca8e3f902fcf472fed085",
+            "datavalue": {
+              "value": "/m/080mtj1",
+              "type": "string"
+            },
+            "datatype": "external-id"
+          },
+          "type": "statement",
+          "id": "Q2936055$1B410D4A-0EC0-4882-A635-1BFD57EE688F",
+          "rank": "normal",
+          "references": [
+            {
+              "hash": "2b00cb481cddcac7623114367489b5c194901c4a",
+              "snaks": {
+                "P248": [
+                  {
+                    "snaktype": "value",
+                    "property": "P248",
+                    "hash": "a94b740202b097dd33355e0e6c00e54b9395e5e0",
+                    "datavalue": {
+                      "value": {
+                        "entity-type": "item",
+                        "numeric-id": 15241312,
+                        "id": "Q15241312"
+                      },
+                      "type": "wikibase-entityid"
+                    },
+                    "datatype": "wikibase-item"
+                  }
+                ],
+                "P577": [
+                  {
+                    "snaktype": "value",
+                    "property": "P577",
+                    "hash": "fde79ecb015112d2f29229ccc1ec514ed3e71fa2",
+                    "datavalue": {
+                      "value": {
+                        "time": "+2013-10-28T00:00:00Z",
+                        "timezone": 0,
+                        "before": 0,
+                        "after": 0,
+                        "precision": 11,
+                        "calendarmodel": "http://www.wikidata.org/entity/Q1985727"
+                      },
+                      "type": "time"
+                    },
+                    "datatype": "time"
+                  }
+                ]
+              },
+              "snaks-order": [
+                "P248",
+                "P577"
+              ]
+            }
+          ]
+        }
+      ],
+      "P17": [
+        {
+          "mainsnak": {
+            "snaktype": "value",
+            "property": "P17",
+            "hash": "c05db5d169c2560b9799d567a803d20a392f53e4",
+            "datavalue": {
+              "value": {
+                "entity-type": "item",
+                "numeric-id": 142,
+                "id": "Q142"
+              },
+              "type": "wikibase-entityid"
+            },
+            "datatype": "wikibase-item"
+          },
+          "type": "statement",
+          "id": "Q2936055$3CD1DD3F-9D75-4CA8-A1DB-32BCBE99EA26",
+          "rank": "normal"
+        }
+      ],
+      "P131": [
+        {
+          "mainsnak": {
+            "snaktype": "value",
+            "property": "P131",
+            "hash": "f1f86fa7c25e61ea3ad99ece8a24746e131fa287",
+            "datavalue": {
+              "value": {
+                "entity-type": "item",
+                "numeric-id": 1061003,
+                "id": "Q1061003"
+              },
+              "type": "wikibase-entityid"
+            },
+            "datatype": "wikibase-item"
+          },
+          "type": "statement",
+          "id": "Q2936055$5336d9a2-40ee-3521-56a9-b6db6e000356",
+          "rank": "normal"
+        },
+        {
+          "mainsnak": {
+            "snaktype": "value",
+            "property": "P131",
+            "hash": "1864a2f2071bebebff9641477c697af5a7445909",
+            "datavalue": {
+              "value": {
+                "entity-type": "item",
+                "numeric-id": 1139444,
+                "id": "Q1139444"
+              },
+              "type": "wikibase-entityid"
+            },
+            "datatype": "wikibase-item"
+          },
+          "type": "statement",
+          "id": "Q2936055$95c5fd0d-4b7d-8bfd-2a19-468d440ee2b9",
+          "rank": "normal"
+        },
+        {
+          "mainsnak": {
+            "snaktype": "value",
+            "property": "P131",
+            "hash": "b428aad90484512bf8f6137f24b8c2db5fa60904",
+            "datavalue": {
+              "value": {
+                "entity-type": "item",
+                "numeric-id": 653559,
+                "id": "Q653559"
+              },
+              "type": "wikibase-entityid"
+            },
+            "datatype": "wikibase-item"
+          },
+          "type": "statement",
+          "id": "Q2936055$33652c34-4b7b-f4db-db1b-75eb7e7ade00",
+          "rank": "normal"
+        },
+        {
+          "mainsnak": {
+            "snaktype": "value",
+            "property": "P131",
+            "hash": "d6ed17b7375d6a5c732d6f76867bfed8942dc587",
+            "datavalue": {
+              "value": {
+                "entity-type": "item",
+                "numeric-id": 3591738,
+                "id": "Q3591738"
+              },
+              "type": "wikibase-entityid"
+            },
+            "datatype": "wikibase-item"
+          },
+          "type": "statement",
+          "id": "Q2936055$aec7d7da-4350-3a6a-53df-bc5b9100bfed",
+          "rank": "normal"
+        },
+        {
+          "mainsnak": {
+            "snaktype": "value",
+            "property": "P131",
+            "hash": "d73e9c47da4a152b9e7f525f4cc92ccf2fd80786",
+            "datavalue": {
+              "value": {
+                "entity-type": "item",
+                "numeric-id": 1141762,
+                "id": "Q1141762"
+              },
+              "type": "wikibase-entityid"
+            },
+            "datatype": "wikibase-item"
+          },
+          "type": "statement",
+          "id": "Q2936055$3b5a72d5-4aaf-d623-a846-ddda760b275b",
+          "rank": "normal"
+        },
+        {
+          "mainsnak": {
+            "snaktype": "value",
+            "property": "P131",
+            "hash": "649094d7a39c2658045f913275589da51a8741c9",
+            "datavalue": {
+              "value": {
+                "entity-type": "item",
+                "numeric-id": 1141995,
+                "id": "Q1141995"
+              },
+              "type": "wikibase-entityid"
+            },
+            "datatype": "wikibase-item"
+          },
+          "type": "statement",
+          "id": "Q2936055$b768d405-464c-4806-9fe3-4ff6d5809ab5",
+          "rank": "normal"
+        },
+        {
+          "mainsnak": {
+            "snaktype": "value",
+            "property": "P131",
+            "hash": "0e0009e37413df03de599b89625392aa997dd88c",
+            "datavalue": {
+              "value": {
+                "entity-type": "item",
+                "numeric-id": 1060953,
+                "id": "Q1060953"
+              },
+              "type": "wikibase-entityid"
+            },
+            "datatype": "wikibase-item"
+          },
+          "type": "statement",
+          "id": "Q2936055$e7a6639b-43fc-15ba-c30f-384ab9a979fd",
+          "rank": "normal"
+        },
+        {
+          "mainsnak": {
+            "snaktype": "value",
+            "property": "P131",
+            "hash": "1f03076e997ddffdf874d6720e78ad830d623d00",
+            "datavalue": {
+              "value": {
+                "entity-type": "item",
+                "numeric-id": 1073279,
+                "id": "Q1073279"
+              },
+              "type": "wikibase-entityid"
+            },
+            "datatype": "wikibase-item"
+          },
+          "type": "statement",
+          "id": "Q2936055$362bb530-4be9-9c03-a740-078021798cdf",
+          "rank": "normal"
+        }
+      ],
+      "P18": [
+        {
+          "mainsnak": {
+            "snaktype": "value",
+            "property": "P18",
+            "hash": "63eff9129b900f2e5910f3c9793d42d280b7d1ab",
+            "datavalue": {
+              "value": "Écluses de Boizard 1.JPG",
+              "type": "string"
+            },
+            "datatype": "commonsMedia"
+          },
+          "type": "statement",
+          "qualifiers": {
+            "P180": [
+              {
+                "snaktype": "value",
+                "property": "P180",
+                "hash": "1478a14d949679af393aba044305864337b9a804",
+                "datavalue": {
+                  "value": {
+                    "entity-type": "item",
+                    "numeric-id": 22940859,
+                    "id": "Q22940859"
+                  },
+                  "type": "wikibase-entityid"
+                },
+                "datatype": "wikibase-item"
+              }
+            ],
+            "P2096": [
+              {
+                "snaktype": "value",
+                "property": "P2096",
+                "hash": "c10e19d7cefe2242c4979af47ca790e7873b88b7",
+                "datavalue": {
+                  "value": {
+                    "text": "Les escaliers d'accès aux vannes de la grande écluse de Boizard à Pontgouin.",
+                    "language": "fr"
+                  },
+                  "type": "monolingualtext"
+                },
+                "datatype": "monolingualtext"
+              }
+            ],
+            "P585": [
+              {
+                "snaktype": "value",
+                "property": "P585",
+                "hash": "e885ef47004db27e0832fb2cecf1e201a86b548c",
+                "datavalue": {
+                  "value": {
+                    "time": "+2012-09-07T00:00:00Z",
+                    "timezone": 0,
+                    "before": 0,
+                    "after": 0,
+                    "precision": 11,
+                    "calendarmodel": "http://www.wikidata.org/entity/Q1985727"
+                  },
+                  "type": "time"
+                },
+                "datatype": "time"
+              }
+            ]
+          },
+          "qualifiers-order": [
+            "P180",
+            "P2096",
+            "P585"
+          ],
+          "id": "Q2936055$f33715f3-4add-2be5-6f1f-8ef8d7da5d28",
+          "rank": "preferred"
+        },
+        {
+          "mainsnak": {
+            "snaktype": "value",
+            "property": "P18",
+            "hash": "f96e6b5fb516f9b24ffe779fc2cd19aa8d317993",
+            "datavalue": {
+              "value": "Canal de l'Eure Dallonville Bailleau-l'évêque Eure-et-Loir France.JPG",
+              "type": "string"
+            },
+            "datatype": "commonsMedia"
+          },
+          "type": "statement",
+          "qualifiers": {
+            "P585": [
+              {
+                "snaktype": "value",
+                "property": "P585",
+                "hash": "ad47946536320c51291296d3beb4bdfe87ee2fac",
+                "datavalue": {
+                  "value": {
+                    "time": "+2015-08-26T00:00:00Z",
+                    "timezone": 0,
+                    "before": 0,
+                    "after": 0,
+                    "precision": 11,
+                    "calendarmodel": "http://www.wikidata.org/entity/Q1985727"
+                  },
+                  "type": "time"
+                },
+                "datatype": "time"
+              }
+            ]
+          },
+          "qualifiers-order": [
+            "P585"
+          ],
+          "id": "Q2936055$551e456e-4fe8-2339-7be7-4c0dbf67ee0a",
+          "rank": "normal"
+        }
+      ],
+      "P373": [
+        {
+          "mainsnak": {
+            "snaktype": "value",
+            "property": "P373",
+            "hash": "5d4e21c9f0ce15c2d8c7cd1969767d08d1e75800",
+            "datavalue": {
+              "value": "Canal de l'Eure",
+              "type": "string"
+            },
+            "datatype": "string"
+          },
+          "type": "statement",
+          "id": "Q2936055$08A5DABD-B8ED-4D81-83FE-F8CECD3C4A87",
+          "rank": "normal"
+        }
+      ],
+      "P527": [
+        {
+          "mainsnak": {
+            "snaktype": "value",
+            "property": "P527",
+            "hash": "deaffb9bad311468fde4167fe98deec814d4df35",
+            "datavalue": {
+              "value": {
+                "entity-type": "item",
+                "numeric-id": 2859218,
+                "id": "Q2859218"
+              },
+              "type": "wikibase-entityid"
+            },
+            "datatype": "wikibase-item"
+          },
+          "type": "statement",
+          "qualifiers": {
+            "P3831": [
+              {
+                "snaktype": "value",
+                "property": "P3831",
+                "hash": "1fd45b50589ea195351015d12880fab5559acdb7",
+                "datavalue": {
+                  "value": {
+                    "entity-type": "item",
+                    "numeric-id": 474,
+                    "id": "Q474"
+                  },
+                  "type": "wikibase-entityid"
+                },
+                "datatype": "wikibase-item"
+              }
+            ]
+          },
+          "qualifiers-order": [
+            "P3831"
+          ],
+          "id": "Q2936055$0b65ebf1-4c80-8a6e-787c-18f90f281aa3",
+          "rank": "normal"
+        },
+        {
+          "mainsnak": {
+            "snaktype": "value",
+            "property": "P527",
+            "hash": "4da9b6f4db82abb234d60c1cf5ad131ee36d96a3",
+            "datavalue": {
+              "value": {
+                "entity-type": "item",
+                "numeric-id": 22940859,
+                "id": "Q22940859"
+              },
+              "type": "wikibase-entityid"
+            },
+            "datatype": "wikibase-item"
+          },
+          "type": "statement",
+          "qualifiers": {
+            "P3831": [
+              {
+                "snaktype": "value",
+                "property": "P3831",
+                "hash": "cd18e16dcb38ede66d3e130cb323a0a9a480f559",
+                "datavalue": {
+                  "value": {
+                    "entity-type": "item",
+                    "numeric-id": 105731,
+                    "id": "Q105731"
+                  },
+                  "type": "wikibase-entityid"
+                },
+                "datatype": "wikibase-item"
+              }
+            ]
+          },
+          "qualifiers-order": [
+            "P3831"
+          ],
+          "id": "Q2936055$e207b715-4df8-b882-31a1-fc002c044e3a",
+          "rank": "normal"
+        },
+        {
+          "mainsnak": {
+            "snaktype": "value",
+            "property": "P527",
+            "hash": "e944144b37e43a299e5a2388fb8b660858bb85a1",
+            "datavalue": {
+              "value": {
+                "entity-type": "item",
+                "numeric-id": 22940707,
+                "id": "Q22940707"
+              },
+              "type": "wikibase-entityid"
+            },
+            "datatype": "wikibase-item"
+          },
+          "type": "statement",
+          "qualifiers": {
+            "P3831": [
+              {
+                "snaktype": "value",
+                "property": "P3831",
+                "hash": "25ab84a3251a31511c9a1f12853ab2c9382bcf61",
+                "datavalue": {
+                  "value": {
+                    "entity-type": "item",
+                    "numeric-id": 44377,
+                    "id": "Q44377"
+                  },
+                  "type": "wikibase-entityid"
+                },
+                "datatype": "wikibase-item"
+              }
+            ]
+          },
+          "qualifiers-order": [
+            "P3831"
+          ],
+          "id": "Q2936055$4ae696e3-4c70-c21f-b273-6c949a11eea2",
+          "rank": "normal"
+        },
+        {
+          "mainsnak": {
+            "snaktype": "value",
+            "property": "P527",
+            "hash": "52a1619b06c0d13728d13069c3e6fdaeac2a5d7a",
+            "datavalue": {
+              "value": {
+                "entity-type": "item",
+                "numeric-id": 22940688,
+                "id": "Q22940688"
+              },
+              "type": "wikibase-entityid"
+            },
+            "datatype": "wikibase-item"
+          },
+          "type": "statement",
+          "qualifiers": {
+            "P3831": [
+              {
+                "snaktype": "value",
+                "property": "P3831",
+                "hash": "25ab84a3251a31511c9a1f12853ab2c9382bcf61",
+                "datavalue": {
+                  "value": {
+                    "entity-type": "item",
+                    "numeric-id": 44377,
+                    "id": "Q44377"
+                  },
+                  "type": "wikibase-entityid"
+                },
+                "datatype": "wikibase-item"
+              }
+            ]
+          },
+          "qualifiers-order": [
+            "P3831"
+          ],
+          "id": "Q2936055$b457207d-4073-7965-0564-a32be111657d",
+          "rank": "normal"
+        }
+      ],
+      "P935": [
+        {
+          "mainsnak": {
+            "snaktype": "value",
+            "property": "P935",
+            "hash": "16d43674f06cc20aa11d4c5735ddb3f434facb88",
+            "datavalue": {
+              "value": "Canal de l'Eure",
+              "type": "string"
+            },
+            "datatype": "string"
+          },
+          "type": "statement",
+          "id": "Q2936055$F3C71A28-DEB5-4279-9561-0DF8DC6E07EA",
+          "rank": "normal"
+        }
+      ],
+      "P910": [
+        {
+          "mainsnak": {
+            "snaktype": "value",
+            "property": "P910",
+            "hash": "ed6a508d836a72d6a4dedaa5afd4128d93cc8b70",
+            "datavalue": {
+              "value": {
+                "entity-type": "item",
+                "numeric-id": 55293373,
+                "id": "Q55293373"
+              },
+              "type": "wikibase-entityid"
+            },
+            "datatype": "wikibase-item"
+          },
+          "type": "statement",
+          "id": "Q2936055$F5D765D4-D2BD-42EC-9D0E-8EEC4404EFFA",
+          "rank": "normal"
+        }
+      ],
+      "P625": [
+        {
+          "mainsnak": {
+            "snaktype": "value",
+            "property": "P625",
+            "hash": "df44cd354e1756f70b0d2f47ba39bfd9f38b90b8",
+            "datavalue": {
+              "value": {
+                "latitude": 48.4877,
+                "longitude": 1.1331,
+                "altitude": null,
+                "precision": 0.0000027777777777778,
+                "globe": "http://www.wikidata.org/entity/Q2"
+              },
+              "type": "globecoordinate"
+            },
+            "datatype": "globe-coordinate"
+          },
+          "type": "statement",
+          "qualifiers": {
+            "P609": [
+              {
+                "snaktype": "value",
+                "property": "P609",
+                "hash": "dbbb25c46bdebbd82c957d42a81847af4396e81e",
+                "datavalue": {
+                  "value": {
+                    "entity-type": "item",
+                    "numeric-id": 1139444,
+                    "id": "Q1139444"
+                  },
+                  "type": "wikibase-entityid"
+                },
+                "datatype": "wikibase-item"
+              }
+            ]
+          },
+          "qualifiers-order": [
+            "P609"
+          ],
+          "id": "Q2936055$873cdb01-4ede-ab1a-794b-45731f0e6e80",
+          "rank": "normal"
+        },
+        {
+          "mainsnak": {
+            "snaktype": "value",
+            "property": "P625",
+            "hash": "b309928e15f13c568f14757c8b45ed4868281ad3",
+            "datavalue": {
+              "value": {
+                "latitude": 48.658333333333,
+                "longitude": 1.8827777777778,
+                "altitude": null,
+                "precision": 0.00027777777777778,
+                "globe": "http://www.wikidata.org/entity/Q2"
+              },
+              "type": "globecoordinate"
+            },
+            "datatype": "globe-coordinate"
+          },
+          "type": "statement",
+          "qualifiers": {
+            "P609": [
+              {
+                "snaktype": "value",
+                "property": "P609",
+                "hash": "d47c86fbc94d2859f34c848f62b163edb96029b7",
+                "datavalue": {
+                  "value": {
+                    "entity-type": "item",
+                    "numeric-id": 3591738,
+                    "id": "Q3591738"
+                  },
+                  "type": "wikibase-entityid"
+                },
+                "datatype": "wikibase-item"
+              }
+            ]
+          },
+          "qualifiers-order": [
+            "P609"
+          ],
+          "id": "Q2936055$d1daa42f-4dd3-d431-bc3f-e9e90ed99fbe",
+          "rank": "normal"
+        },
+        {
+          "mainsnak": {
+            "snaktype": "value",
+            "property": "P625",
+            "hash": "4f3ed0aa7aa7c3e59dc68e3e438840e398be5bd1",
+            "datavalue": {
+              "value": {
+                "latitude": 48.583038888889,
+                "longitude": 1.5862166666667,
+                "altitude": null,
+                "precision": 0.0000027777777777778,
+                "globe": "http://www.wikidata.org/entity/Q2"
+              },
+              "type": "globecoordinate"
+            },
+            "datatype": "globe-coordinate"
+          },
+          "type": "statement",
+          "qualifiers": {
+            "P518": [
+              {
+                "snaktype": "value",
+                "property": "P518",
+                "hash": "3e65c37a8ca009ecdb7d85d68260f88615eef6dd",
+                "datavalue": {
+                  "value": {
+                    "entity-type": "item",
+                    "numeric-id": 2859218,
+                    "id": "Q2859218"
+                  },
+                  "type": "wikibase-entityid"
+                },
+                "datatype": "wikibase-item"
+              }
+            ]
+          },
+          "qualifiers-order": [
+            "P518"
+          ],
+          "id": "Q2936055$a65ca9e6-4e87-1677-a73f-2365e840729a",
+          "rank": "normal"
+        }
+      ],
+      "P2043": [
+        {
+          "mainsnak": {
+            "snaktype": "value",
+            "property": "P2043",
+            "hash": "2c43ab221c007ef63ae79a6fe52b5234ada09e32",
+            "datavalue": {
+              "value": {
+                "amount": "+80",
+                "unit": "http://www.wikidata.org/entity/Q828224"
+              },
+              "type": "quantity"
+            },
+            "datatype": "quantity"
+          },
+          "type": "statement",
+          "id": "Q2936055$1d7155cf-43d9-f360-95ce-94e256f3f170",
+          "rank": "normal"
+        }
+      ],
+      "P5816": [
+        {
+          "mainsnak": {
+            "snaktype": "value",
+            "property": "P5816",
+            "hash": "36f5fb7a19d72021f218e796b092b00f5c167e47",
+            "datavalue": {
+              "value": {
+                "entity-type": "item",
+                "numeric-id": 56557159,
+                "id": "Q56557159"
+              },
+              "type": "wikibase-entityid"
+            },
+            "datatype": "wikibase-item"
+          },
+          "type": "statement",
+          "id": "Q2936055$5d592ca2-43f4-7940-19c6-0819e8ec5336",
+          "rank": "normal"
+        }
+      ],
+      "P88": [
+        {
+          "mainsnak": {
+            "snaktype": "value",
+            "property": "P88",
+            "hash": "0db52d7d0a4b62f3cfa9a2cd6de13fe9a1d165b6",
+            "datavalue": {
+              "value": {
+                "entity-type": "item",
+                "numeric-id": 441378,
+                "id": "Q441378"
+              },
+              "type": "wikibase-entityid"
+            },
+            "datatype": "wikibase-item"
+          },
+          "type": "statement",
+          "id": "Q2936055$c13a5be9-4e35-2c00-147e-bfcf9f29ff2c",
+          "rank": "normal"
+        }
+      ],
+      "P287": [
+        {
+          "mainsnak": {
+            "snaktype": "value",
+            "property": "P287",
+            "hash": "0403494e225f20daf62cdc52cc16822235f3ade1",
+            "datavalue": {
+              "value": {
+                "entity-type": "item",
+                "numeric-id": 192839,
+                "id": "Q192839"
+              },
+              "type": "wikibase-entityid"
+            },
+            "datatype": "wikibase-item"
+          },
+          "type": "statement",
+          "id": "Q2936055$da74d530-43ea-b66d-3309-3735b3e3bf08",
+          "rank": "normal"
+        }
+      ],
+      "P571": [
+        {
+          "mainsnak": {
+            "snaktype": "value",
+            "property": "P571",
+            "hash": "f908c6c5f93568b9c90b5fdff32991fee298d02b",
+            "datavalue": {
+              "value": {
+                "time": "+1685-00-00T00:00:00Z",
+                "timezone": 0,
+                "before": 0,
+                "after": 0,
+                "precision": 9,
+                "calendarmodel": "http://www.wikidata.org/entity/Q1985727"
+              },
+              "type": "time"
+            },
+            "datatype": "time"
+          },
+          "type": "statement",
+          "id": "Q2936055$9601f09c-4133-1713-bce8-85e775bda17e",
+          "rank": "normal"
+        }
+      ],
+      "P214": [
+        {
+          "mainsnak": {
+            "snaktype": "value",
+            "property": "P214",
+            "hash": "89e9c084a47a38c0dc8ff91b6bfe3466a2c68e09",
+            "datavalue": {
+              "value": "6713152563119815560005",
+              "type": "string"
+            },
+            "datatype": "external-id"
+          },
+          "type": "statement",
+          "id": "Q2936055$A68BE66F-F608-47A6-8E93-450A3D245B69",
+          "rank": "normal"
+        }
+      ],
+      "P269": [
+        {
+          "mainsnak": {
+            "snaktype": "value",
+            "property": "P269",
+            "hash": "08f2465750d783079d95315a93da3dccb9bf7d3b",
+            "datavalue": {
+              "value": "226539342",
+              "type": "string"
+            },
+            "datatype": "external-id"
+          },
+          "type": "statement",
+          "qualifiers": {
+            "P1810": [
+              {
+                "snaktype": "value",
+                "property": "P1810",
+                "hash": "d811276af9b40e02bbf8ae9e4d0c8408d06feeaa",
+                "datavalue": {
+                  "value": "Manosque, Canal de (Alpes-de-Haute-Provence)",
+                  "type": "string"
+                },
+                "datatype": "string"
+              }
+            ],
+            "P3831": [
+              {
+                "snaktype": "value",
+                "property": "P3831",
+                "hash": "174b9c1ffb90fb55e6eaf2b653d414fa571dbaa9",
+                "datavalue": {
+                  "value": {
+                    "entity-type": "item",
+                    "numeric-id": 136204045,
+                    "id": "Q136204045"
+                  },
+                  "type": "wikibase-entityid"
+                },
+                "datatype": "wikibase-item"
+              }
+            ]
+          },
+          "qualifiers-order": [
+            "P1810",
+            "P3831"
+          ],
+          "id": "Q2936055$3c4563cf-4a00-2ec7-3692-b0337c636220",
+          "rank": "normal"
+        }
+      ],
+      "P268": [
+        {
+          "mainsnak": {
+            "snaktype": "value",
+            "property": "P268",
+            "hash": "2aaed1a461f546a1e09c7032f2170a4f90ff9c06",
+            "datavalue": {
+              "value": "15790901r",
+              "type": "string"
+            },
+            "datatype": "external-id"
+          },
+          "type": "statement",
+          "id": "Q2936055$96a08a25-4b09-04d3-30ec-7cd399a9bb3e",
+          "rank": "normal"
+        }
+      ]
+    },
+    "sitelinks": {
+      "arzwiki": {
+        "site": "arzwiki",
+        "title": "قناة ايجا",
+        "badges": [],
+        "url": "https://arz.wikipedia.org/wiki/%D9%82%D9%86%D8%A7%D8%A9_%D8%A7%D9%8A%D8%AC%D8%A7"
+      },
+      "commonswiki": {
+        "site": "commonswiki",
+        "title": "Canal de l'Eure",
+        "badges": [],
+        "url": "https://commons.wikimedia.org/wiki/Canal_de_l%27Eure"
+      },
+      "dewiki": {
+        "site": "dewiki",
+        "title": "Eure-Kanal",
+        "badges": [],
+        "url": "https://de.wikipedia.org/wiki/Eure-Kanal"
+      },
+      "enwiki": {
+        "site": "enwiki",
+        "title": "Eure Canal",
+        "badges": [],
+        "url": "https://en.wikipedia.org/wiki/Eure_Canal"
+      },
+      "frwiki": {
+        "site": "frwiki",
+        "title": "Canal de l'Eure",
+        "badges": [],
+        "url": "https://fr.wikipedia.org/wiki/Canal_de_l%27Eure"
+      },
+      "itwiki": {
+        "site": "itwiki",
+        "title": "Canal de l'Eure",
+        "badges": [],
+        "url": "https://it.wikipedia.org/wiki/Canal_de_l%27Eure"
+      },
+      "nlwiki": {
+        "site": "nlwiki",
+        "title": "Canal de l'Eure",
+        "badges": [],
+        "url": "https://nl.wikipedia.org/wiki/Canal_de_l%27Eure"
+      }
+    }
+  }
+}

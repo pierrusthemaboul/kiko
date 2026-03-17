@@ -1,0 +1,871 @@
+{
+  "saved_at": "2026-03-07T13:14:27.521Z",
+  "value": {
+    "pageid": 718504,
+    "ns": 0,
+    "title": "Q764793",
+    "lastrevid": 2459525568,
+    "modified": "2026-01-31T13:48:05Z",
+    "type": "item",
+    "id": "Q764793",
+    "labels": {
+      "fr": {
+        "language": "fr",
+        "value": "bataille de Fornoue"
+      },
+      "ar": {
+        "language": "ar",
+        "value": "معركة فورنوفو"
+      },
+      "ca": {
+        "language": "ca",
+        "value": "batalla de Fornovo"
+      },
+      "de": {
+        "language": "de",
+        "value": "Schlacht bei Fornovo"
+      },
+      "en": {
+        "language": "en",
+        "value": "Battle of Fornovo"
+      },
+      "es": {
+        "language": "es",
+        "value": "Batalla de Fornovo"
+      },
+      "et": {
+        "language": "et",
+        "value": "Fornovo lahing"
+      },
+      "it": {
+        "language": "it",
+        "value": "battaglia di Fornovo"
+      },
+      "nl": {
+        "language": "nl",
+        "value": "Slag bij Fornovo"
+      },
+      "pl": {
+        "language": "pl",
+        "value": "Bitwa pod Fornovo"
+      },
+      "ru": {
+        "language": "ru",
+        "value": "Битва при Форново"
+      },
+      "zh": {
+        "language": "zh",
+        "value": "福尔诺沃战役"
+      },
+      "vi": {
+        "language": "vi",
+        "value": "Trận Fornovo"
+      },
+      "tr": {
+        "language": "tr",
+        "value": "Fornovo Muharebesi"
+      },
+      "br": {
+        "language": "br",
+        "value": "emgann Fornovo"
+      },
+      "ja": {
+        "language": "ja",
+        "value": "フォルノーヴォの戦い"
+      },
+      "cs": {
+        "language": "cs",
+        "value": "bitva u Fornova"
+      },
+      "bg": {
+        "language": "bg",
+        "value": "Битка при Форново"
+      },
+      "id": {
+        "language": "id",
+        "value": "Pertempuran Fornovo"
+      },
+      "yo": {
+        "language": "yo",
+        "value": "ogun Fornovo"
+      },
+      "ga": {
+        "language": "ga",
+        "value": "Cath Fornovo"
+      },
+      "hu": {
+        "language": "hu",
+        "value": "fornovói csata"
+      }
+    },
+    "descriptions": {
+      "de": {
+        "language": "de",
+        "value": "Schlacht der Italienischen Kriege"
+      },
+      "en": {
+        "language": "en",
+        "value": "1495 battle"
+      },
+      "cs": {
+        "language": "cs",
+        "value": "bitva italských válek z roku 1495"
+      },
+      "it": {
+        "language": "it",
+        "value": "evento bellico del 1495"
+      },
+      "pl": {
+        "language": "pl",
+        "value": "bitwa"
+      },
+      "yo": {
+        "language": "yo",
+        "value": "ogun"
+      },
+      "fr": {
+        "language": "fr",
+        "value": "affrontement de la première guerre d'Italie, 6 juillet 1495"
+      },
+      "es": {
+        "language": "es",
+        "value": "batalla de las guerras italianas"
+      }
+    },
+    "aliases": {},
+    "claims": {
+      "P625": [
+        {
+          "mainsnak": {
+            "snaktype": "value",
+            "property": "P625",
+            "hash": "2e4bae174a36644d6ee004b2432a68a4b10b85a0",
+            "datavalue": {
+              "value": {
+                "latitude": 44.68333333,
+                "longitude": 10.1,
+                "altitude": null,
+                "precision": 0.016666666666667,
+                "globe": "http://www.wikidata.org/entity/Q2"
+              },
+              "type": "globecoordinate"
+            },
+            "datatype": "globe-coordinate"
+          },
+          "type": "statement",
+          "id": "Q764793$1054036D-9BA3-444C-A930-E41EA74BB7E9",
+          "rank": "normal",
+          "references": [
+            {
+              "hash": "d4bd87b862b12d99d26e86472d44f26858dee639",
+              "snaks": {
+                "P143": [
+                  {
+                    "snaktype": "value",
+                    "property": "P143",
+                    "hash": "f30cbd35620c4ea6d0633aaf0210a8916130469b",
+                    "datavalue": {
+                      "value": {
+                        "entity-type": "item",
+                        "numeric-id": 8447,
+                        "id": "Q8447"
+                      },
+                      "type": "wikibase-entityid"
+                    },
+                    "datatype": "wikibase-item"
+                  }
+                ]
+              },
+              "snaks-order": [
+                "P143"
+              ]
+            }
+          ]
+        }
+      ],
+      "P646": [
+        {
+          "mainsnak": {
+            "snaktype": "value",
+            "property": "P646",
+            "hash": "c5b958d4b15ac17963edb85939b2db90ced58c4f",
+            "datavalue": {
+              "value": "/m/01jtd1",
+              "type": "string"
+            },
+            "datatype": "external-id"
+          },
+          "type": "statement",
+          "id": "Q764793$01140D24-D5D5-4514-93F6-DACEC727EE73",
+          "rank": "normal",
+          "references": [
+            {
+              "hash": "2b00cb481cddcac7623114367489b5c194901c4a",
+              "snaks": {
+                "P248": [
+                  {
+                    "snaktype": "value",
+                    "property": "P248",
+                    "hash": "a94b740202b097dd33355e0e6c00e54b9395e5e0",
+                    "datavalue": {
+                      "value": {
+                        "entity-type": "item",
+                        "numeric-id": 15241312,
+                        "id": "Q15241312"
+                      },
+                      "type": "wikibase-entityid"
+                    },
+                    "datatype": "wikibase-item"
+                  }
+                ],
+                "P577": [
+                  {
+                    "snaktype": "value",
+                    "property": "P577",
+                    "hash": "fde79ecb015112d2f29229ccc1ec514ed3e71fa2",
+                    "datavalue": {
+                      "value": {
+                        "time": "+2013-10-28T00:00:00Z",
+                        "timezone": 0,
+                        "before": 0,
+                        "after": 0,
+                        "precision": 11,
+                        "calendarmodel": "http://www.wikidata.org/entity/Q1985727"
+                      },
+                      "type": "time"
+                    },
+                    "datatype": "time"
+                  }
+                ]
+              },
+              "snaks-order": [
+                "P248",
+                "P577"
+              ]
+            }
+          ]
+        }
+      ],
+      "P31": [
+        {
+          "mainsnak": {
+            "snaktype": "value",
+            "property": "P31",
+            "hash": "baa1df9dcd37b9f3a062e7a14a8bef0c37078d32",
+            "datavalue": {
+              "value": {
+                "entity-type": "item",
+                "numeric-id": 178561,
+                "id": "Q178561"
+              },
+              "type": "wikibase-entityid"
+            },
+            "datatype": "wikibase-item"
+          },
+          "type": "statement",
+          "id": "Q764793$BEE4FBE6-3929-428C-9E94-5894BA2C1FA2",
+          "rank": "normal",
+          "references": [
+            {
+              "hash": "d4bd87b862b12d99d26e86472d44f26858dee639",
+              "snaks": {
+                "P143": [
+                  {
+                    "snaktype": "value",
+                    "property": "P143",
+                    "hash": "f30cbd35620c4ea6d0633aaf0210a8916130469b",
+                    "datavalue": {
+                      "value": {
+                        "entity-type": "item",
+                        "numeric-id": 8447,
+                        "id": "Q8447"
+                      },
+                      "type": "wikibase-entityid"
+                    },
+                    "datatype": "wikibase-item"
+                  }
+                ]
+              },
+              "snaks-order": [
+                "P143"
+              ]
+            }
+          ]
+        }
+      ],
+      "P361": [
+        {
+          "mainsnak": {
+            "snaktype": "value",
+            "property": "P361",
+            "hash": "e1aec989e773611a5f06ad73694029a78718201a",
+            "datavalue": {
+              "value": {
+                "entity-type": "item",
+                "numeric-id": 1355145,
+                "id": "Q1355145"
+              },
+              "type": "wikibase-entityid"
+            },
+            "datatype": "wikibase-item"
+          },
+          "type": "statement",
+          "id": "Q764793$B8D55EA9-DC03-4FB2-8B7E-A61FD02ED68E",
+          "rank": "normal",
+          "references": [
+            {
+              "hash": "d4bd87b862b12d99d26e86472d44f26858dee639",
+              "snaks": {
+                "P143": [
+                  {
+                    "snaktype": "value",
+                    "property": "P143",
+                    "hash": "f30cbd35620c4ea6d0633aaf0210a8916130469b",
+                    "datavalue": {
+                      "value": {
+                        "entity-type": "item",
+                        "numeric-id": 8447,
+                        "id": "Q8447"
+                      },
+                      "type": "wikibase-entityid"
+                    },
+                    "datatype": "wikibase-item"
+                  }
+                ]
+              },
+              "snaks-order": [
+                "P143"
+              ]
+            }
+          ]
+        }
+      ],
+      "P18": [
+        {
+          "mainsnak": {
+            "snaktype": "value",
+            "property": "P18",
+            "hash": "98f12cdf17344949f040a517605dc0a522b95926",
+            "datavalue": {
+              "value": "Fornovo-battle-Vaticano.jpg",
+              "type": "string"
+            },
+            "datatype": "commonsMedia"
+          },
+          "type": "statement",
+          "id": "Q764793$EE469FE2-C64A-4BF9-A229-ACDBD1FD8D15",
+          "rank": "normal"
+        },
+        {
+          "mainsnak": {
+            "snaktype": "value",
+            "property": "P18",
+            "hash": "151025c8ab8cb8ce20bb99e8316c05315383a54f",
+            "datavalue": {
+              "value": "Battle of Fornoue 6 July 1495.jpg",
+              "type": "string"
+            },
+            "datatype": "commonsMedia"
+          },
+          "type": "statement",
+          "id": "Q764793$3DE2F232-2656-444C-B92C-10458601770F",
+          "rank": "normal"
+        },
+        {
+          "mainsnak": {
+            "snaktype": "value",
+            "property": "P18",
+            "hash": "d8131da5a52ee49d7662424bc4bcaf9254e8ee7c",
+            "datavalue": {
+              "value": "Battle of Fornovo.jpg",
+              "type": "string"
+            },
+            "datatype": "commonsMedia"
+          },
+          "type": "statement",
+          "id": "Q764793$3005B8F9-E6FB-4F99-811C-115664215D64",
+          "rank": "normal"
+        },
+        {
+          "mainsnak": {
+            "snaktype": "value",
+            "property": "P18",
+            "hash": "d884147f5f4619ffdb3dff5840d4ccbe61849f9d",
+            "datavalue": {
+              "value": "Jacopo Tintoretto 014.jpg",
+              "type": "string"
+            },
+            "datatype": "commonsMedia"
+          },
+          "type": "statement",
+          "id": "Q764793$DC09666F-6059-4397-B27F-109F765FE096",
+          "rank": "normal"
+        }
+      ],
+      "P276": [
+        {
+          "mainsnak": {
+            "snaktype": "value",
+            "property": "P276",
+            "hash": "76adef837bcd6ac9fc7f235b4b4494aaa114fb97",
+            "datavalue": {
+              "value": {
+                "entity-type": "item",
+                "numeric-id": 100826,
+                "id": "Q100826"
+              },
+              "type": "wikibase-entityid"
+            },
+            "datatype": "wikibase-item"
+          },
+          "type": "statement",
+          "id": "Q764793$5EB7FD0E-1C92-4E55-83A4-709ADC6A9F77",
+          "rank": "normal",
+          "references": [
+            {
+              "hash": "d4bd87b862b12d99d26e86472d44f26858dee639",
+              "snaks": {
+                "P143": [
+                  {
+                    "snaktype": "value",
+                    "property": "P143",
+                    "hash": "f30cbd35620c4ea6d0633aaf0210a8916130469b",
+                    "datavalue": {
+                      "value": {
+                        "entity-type": "item",
+                        "numeric-id": 8447,
+                        "id": "Q8447"
+                      },
+                      "type": "wikibase-entityid"
+                    },
+                    "datatype": "wikibase-item"
+                  }
+                ]
+              },
+              "snaks-order": [
+                "P143"
+              ]
+            }
+          ]
+        }
+      ],
+      "P373": [
+        {
+          "mainsnak": {
+            "snaktype": "value",
+            "property": "P373",
+            "hash": "35900ed6e7a6f6603531eaf191205add24361abe",
+            "datavalue": {
+              "value": "Battle of Fornovo",
+              "type": "string"
+            },
+            "datatype": "string"
+          },
+          "type": "statement",
+          "id": "Q764793$BC29CF87-96EE-4488-BA7B-9083A28407F4",
+          "rank": "normal",
+          "references": [
+            {
+              "hash": "9a24f7c0208b05d6be97077d855671d1dfdbc0dd",
+              "snaks": {
+                "P143": [
+                  {
+                    "snaktype": "value",
+                    "property": "P143",
+                    "hash": "d38375ffe6fe142663ff55cd783aa4df4301d83d",
+                    "datavalue": {
+                      "value": {
+                        "entity-type": "item",
+                        "numeric-id": 48183,
+                        "id": "Q48183"
+                      },
+                      "type": "wikibase-entityid"
+                    },
+                    "datatype": "wikibase-item"
+                  }
+                ]
+              },
+              "snaks-order": [
+                "P143"
+              ]
+            }
+          ]
+        }
+      ],
+      "P585": [
+        {
+          "mainsnak": {
+            "snaktype": "value",
+            "property": "P585",
+            "hash": "d3a98eb38bee027ed77f95ab299338a37bcec466",
+            "datavalue": {
+              "value": {
+                "time": "+1495-07-06T00:00:00Z",
+                "timezone": 0,
+                "before": 0,
+                "after": 0,
+                "precision": 11,
+                "calendarmodel": "http://www.wikidata.org/entity/Q1985727"
+              },
+              "type": "time"
+            },
+            "datatype": "time"
+          },
+          "type": "statement",
+          "id": "Q764793$F5428025-8D31-4E13-9105-ACD3E4D6CA72",
+          "rank": "normal",
+          "references": [
+            {
+              "hash": "d4bd87b862b12d99d26e86472d44f26858dee639",
+              "snaks": {
+                "P143": [
+                  {
+                    "snaktype": "value",
+                    "property": "P143",
+                    "hash": "f30cbd35620c4ea6d0633aaf0210a8916130469b",
+                    "datavalue": {
+                      "value": {
+                        "entity-type": "item",
+                        "numeric-id": 8447,
+                        "id": "Q8447"
+                      },
+                      "type": "wikibase-entityid"
+                    },
+                    "datatype": "wikibase-item"
+                  }
+                ]
+              },
+              "snaks-order": [
+                "P143"
+              ]
+            }
+          ]
+        }
+      ],
+      "P1417": [
+        {
+          "mainsnak": {
+            "snaktype": "value",
+            "property": "P1417",
+            "hash": "6632b97e18c0f0b70cd850f8663d693676e85456",
+            "datavalue": {
+              "value": "topic/Battle-of-Fornovo",
+              "type": "string"
+            },
+            "datatype": "external-id"
+          },
+          "type": "statement",
+          "qualifiers": {
+            "P1810": [
+              {
+                "snaktype": "value",
+                "property": "P1810",
+                "hash": "ff1b34fc80fce52f5a67c880cc15019db0237edf",
+                "datavalue": {
+                  "value": "Battle of Fornovo",
+                  "type": "string"
+                },
+                "datatype": "string"
+              }
+            ]
+          },
+          "qualifiers-order": [
+            "P1810"
+          ],
+          "id": "Q764793$EFEC5B8E-7D40-44D4-9CAF-71E06663B5CF",
+          "rank": "normal"
+        }
+      ],
+      "P244": [
+        {
+          "mainsnak": {
+            "snaktype": "value",
+            "property": "P244",
+            "hash": "4471cd8d921646910621b2d7a793a5b092245cce",
+            "datavalue": {
+              "value": "sh85050848",
+              "type": "string"
+            },
+            "datatype": "external-id"
+          },
+          "type": "statement",
+          "id": "Q764793$E23F88B1-369E-438F-A986-3087F12640FE",
+          "rank": "normal",
+          "references": [
+            {
+              "hash": "ac5d47e9fbcc281bc0d27a205ae02e22ad24ce31",
+              "snaks": {
+                "P854": [
+                  {
+                    "snaktype": "value",
+                    "property": "P854",
+                    "hash": "b560dc6b281a39d061e189d2eb299a426a06f1a2",
+                    "datavalue": {
+                      "value": "https://github.com/JohnMarkOckerbloom/ftl/blob/master/data/wikimap",
+                      "type": "string"
+                    },
+                    "datatype": "url"
+                  }
+                ],
+                "P813": [
+                  {
+                    "snaktype": "value",
+                    "property": "P813",
+                    "hash": "0dcf4f64e93fdcc654e2c7534285881fe48b9f3d",
+                    "datavalue": {
+                      "value": {
+                        "time": "+2019-04-03T00:00:00Z",
+                        "timezone": 0,
+                        "before": 0,
+                        "after": 0,
+                        "precision": 11,
+                        "calendarmodel": "http://www.wikidata.org/entity/Q1985727"
+                      },
+                      "type": "time"
+                    },
+                    "datatype": "time"
+                  }
+                ]
+              },
+              "snaks-order": [
+                "P854",
+                "P813"
+              ]
+            }
+          ]
+        }
+      ],
+      "P8189": [
+        {
+          "mainsnak": {
+            "snaktype": "value",
+            "property": "P8189",
+            "hash": "4725ff5c1d17d26bd95bb9b6f4313a81e9d1af89",
+            "datavalue": {
+              "value": "987007545852705171",
+              "type": "string"
+            },
+            "datatype": "external-id"
+          },
+          "type": "statement",
+          "id": "Q764793$108AB95C-DEC1-4F8A-9418-822002022CC4",
+          "rank": "normal",
+          "references": [
+            {
+              "hash": "ecb7a39cf436eb1fba419853af168ef9f2ba1dab",
+              "snaks": {
+                "P248": [
+                  {
+                    "snaktype": "value",
+                    "property": "P248",
+                    "hash": "a03bb6ffe37be9554492f4eea5bd18afcb57df19",
+                    "datavalue": {
+                      "value": {
+                        "entity-type": "item",
+                        "numeric-id": 106509962,
+                        "id": "Q106509962"
+                      },
+                      "type": "wikibase-entityid"
+                    },
+                    "datatype": "wikibase-item"
+                  }
+                ]
+              },
+              "snaks-order": [
+                "P248"
+              ]
+            }
+          ]
+        }
+      ],
+      "P17": [
+        {
+          "mainsnak": {
+            "snaktype": "value",
+            "property": "P17",
+            "hash": "b48529e9f7e0898ab1ddaefe8547cdb863e0167c",
+            "datavalue": {
+              "value": {
+                "entity-type": "item",
+                "numeric-id": 38,
+                "id": "Q38"
+              },
+              "type": "wikibase-entityid"
+            },
+            "datatype": "wikibase-item"
+          },
+          "type": "statement",
+          "id": "Q764793$B87FC63D-4596-44C9-8B30-A1C5CB59EAE1",
+          "rank": "normal"
+        }
+      ],
+      "P13591": [
+        {
+          "mainsnak": {
+            "snaktype": "value",
+            "property": "P13591",
+            "hash": "59dbd4b6b49c89cc6d3013d6ad78f25ee3ea90c9",
+            "datavalue": {
+              "value": "concept/f6e5e1ba-bdb0-4e20-9b89-5badb45d29e3",
+              "type": "string"
+            },
+            "datatype": "external-id"
+          },
+          "type": "statement",
+          "id": "Q764793$E0CE0301-F08F-490F-9FC3-01F486099EED",
+          "rank": "normal"
+        }
+      ],
+      "P508": [
+        {
+          "mainsnak": {
+            "snaktype": "value",
+            "property": "P508",
+            "hash": "a9d2188eed4fa81c855947b5234cce7c379ba884",
+            "datavalue": {
+              "value": "79376",
+              "type": "string"
+            },
+            "datatype": "external-id"
+          },
+          "type": "statement",
+          "qualifiers": {
+            "P1810": [
+              {
+                "snaktype": "value",
+                "property": "P1810",
+                "hash": "5d7a92b3d81179f8d1536447b776c8ec44e9e399",
+                "datavalue": {
+                  "value": "Battaglia di Fornovo <1495>",
+                  "type": "string"
+                },
+                "datatype": "string"
+              }
+            ]
+          },
+          "qualifiers-order": [
+            "P1810"
+          ],
+          "id": "Q764793$8e2ab049-4fee-c40b-1e90-b7996f8de8f2",
+          "rank": "normal"
+        }
+      ]
+    },
+    "sitelinks": {
+      "arwiki": {
+        "site": "arwiki",
+        "title": "معركة فورنوفو",
+        "badges": [],
+        "url": "https://ar.wikipedia.org/wiki/%D9%85%D8%B9%D8%B1%D9%83%D8%A9_%D9%81%D9%88%D8%B1%D9%86%D9%88%D9%81%D9%88"
+      },
+      "bgwiki": {
+        "site": "bgwiki",
+        "title": "Битка при Форново",
+        "badges": [],
+        "url": "https://bg.wikipedia.org/wiki/%D0%91%D0%B8%D1%82%D0%BA%D0%B0_%D0%BF%D1%80%D0%B8_%D0%A4%D0%BE%D1%80%D0%BD%D0%BE%D0%B2%D0%BE"
+      },
+      "brwiki": {
+        "site": "brwiki",
+        "title": "Emgann Fornovo",
+        "badges": [],
+        "url": "https://br.wikipedia.org/wiki/Emgann_Fornovo"
+      },
+      "cawiki": {
+        "site": "cawiki",
+        "title": "Batalla de Fornovo",
+        "badges": [],
+        "url": "https://ca.wikipedia.org/wiki/Batalla_de_Fornovo"
+      },
+      "commonswiki": {
+        "site": "commonswiki",
+        "title": "Category:Battle of Fornovo",
+        "badges": [],
+        "url": "https://commons.wikimedia.org/wiki/Category:Battle_of_Fornovo"
+      },
+      "dewiki": {
+        "site": "dewiki",
+        "title": "Schlacht bei Fornovo",
+        "badges": [],
+        "url": "https://de.wikipedia.org/wiki/Schlacht_bei_Fornovo"
+      },
+      "elwiki": {
+        "site": "elwiki",
+        "title": "Μάχη του Φορνόβο",
+        "badges": [],
+        "url": "https://el.wikipedia.org/wiki/%CE%9C%CE%AC%CF%87%CE%B7_%CF%84%CE%BF%CF%85_%CE%A6%CE%BF%CF%81%CE%BD%CF%8C%CE%B2%CE%BF"
+      },
+      "enwiki": {
+        "site": "enwiki",
+        "title": "Battle of Fornovo",
+        "badges": [],
+        "url": "https://en.wikipedia.org/wiki/Battle_of_Fornovo"
+      },
+      "eswiki": {
+        "site": "eswiki",
+        "title": "Batalla de Fornovo",
+        "badges": [],
+        "url": "https://es.wikipedia.org/wiki/Batalla_de_Fornovo"
+      },
+      "etwiki": {
+        "site": "etwiki",
+        "title": "Fornovo lahing",
+        "badges": [],
+        "url": "https://et.wikipedia.org/wiki/Fornovo_lahing"
+      },
+      "frwiki": {
+        "site": "frwiki",
+        "title": "Bataille de Fornoue",
+        "badges": [],
+        "url": "https://fr.wikipedia.org/wiki/Bataille_de_Fornoue"
+      },
+      "idwiki": {
+        "site": "idwiki",
+        "title": "Pertempuran Fornovo",
+        "badges": [],
+        "url": "https://id.wikipedia.org/wiki/Pertempuran_Fornovo"
+      },
+      "itwiki": {
+        "site": "itwiki",
+        "title": "Battaglia di Fornovo",
+        "badges": [],
+        "url": "https://it.wikipedia.org/wiki/Battaglia_di_Fornovo"
+      },
+      "nlwiki": {
+        "site": "nlwiki",
+        "title": "Slag bij Fornovo",
+        "badges": [],
+        "url": "https://nl.wikipedia.org/wiki/Slag_bij_Fornovo"
+      },
+      "plwiki": {
+        "site": "plwiki",
+        "title": "Bitwa pod Fornovo",
+        "badges": [],
+        "url": "https://pl.wikipedia.org/wiki/Bitwa_pod_Fornovo"
+      },
+      "ruwiki": {
+        "site": "ruwiki",
+        "title": "Битва при Форново",
+        "badges": [],
+        "url": "https://ru.wikipedia.org/wiki/%D0%91%D0%B8%D1%82%D0%B2%D0%B0_%D0%BF%D1%80%D0%B8_%D0%A4%D0%BE%D1%80%D0%BD%D0%BE%D0%B2%D0%BE"
+      },
+      "trwiki": {
+        "site": "trwiki",
+        "title": "Fornovo Muharebesi",
+        "badges": [],
+        "url": "https://tr.wikipedia.org/wiki/Fornovo_Muharebesi"
+      },
+      "viwiki": {
+        "site": "viwiki",
+        "title": "Trận Fornovo",
+        "badges": [],
+        "url": "https://vi.wikipedia.org/wiki/Tr%E1%BA%ADn_Fornovo"
+      },
+      "zhwiki": {
+        "site": "zhwiki",
+        "title": "福爾諾沃之戰",
+        "badges": [],
+        "url": "https://zh.wikipedia.org/wiki/%E7%A6%8F%E7%88%BE%E8%AB%BE%E6%B2%83%E4%B9%8B%E6%88%B0"
+      }
+    }
+  }
+}

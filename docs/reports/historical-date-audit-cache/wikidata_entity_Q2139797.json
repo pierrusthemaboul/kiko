@@ -1,0 +1,289 @@
+{
+  "saved_at": "2026-03-07T16:31:20.320Z",
+  "value": {
+    "pageid": 2065698,
+    "ns": 0,
+    "title": "Q2139797",
+    "lastrevid": 2436807287,
+    "modified": "2025-12-01T21:02:30Z",
+    "type": "item",
+    "id": "Q2139797",
+    "labels": {
+      "de": {
+        "language": "de",
+        "value": "Reichsteilung von 395"
+      },
+      "gsw": {
+        "language": "gsw",
+        "value": "Die römischi Riichsdäilig vo 395"
+      },
+      "ru": {
+        "language": "ru",
+        "value": "Раздел Римской империи"
+      },
+      "uk": {
+        "language": "uk",
+        "value": "Поділ Римської імперії (395)"
+      },
+      "en": {
+        "language": "en",
+        "value": "395 Division of the Roman Empire"
+      },
+      "fr": {
+        "language": "fr",
+        "value": "division de l'Empire romain à partir de 395"
+      },
+      "el": {
+        "language": "el",
+        "value": "Διαίρεση της Ρωμαϊκής Αυτοκρατορίας"
+      },
+      "sr": {
+        "language": "sr",
+        "value": "Подела Римског царства"
+      }
+    },
+    "descriptions": {
+      "de": {
+        "language": "de",
+        "value": "Herrschaftsteilung im Imperium Romanum nach dem Tod Theodosius’ I. in West- und Ostrom"
+      },
+      "en": {
+        "language": "en",
+        "value": "inheritance of the Roman Empire after the death of Theodosius I."
+      },
+      "fr": {
+        "language": "fr",
+        "value": "Héritage de l'Empire romain après la mort de Théodose Ier."
+      },
+      "ru": {
+        "language": "ru",
+        "value": "разделение Римской Империи на Западную и Восточную"
+      },
+      "uk": {
+        "language": "uk",
+        "value": "Розпад Римської імперії на Східну та Західну у 395 році після Феодосія І"
+      }
+    },
+    "aliases": {
+      "de": [
+        {
+          "language": "de",
+          "value": "Teilung des Römischen Reiches"
+        }
+      ],
+      "fr": [
+        {
+          "language": "fr",
+          "value": "division de l'Empire romain"
+        },
+        {
+          "language": "fr",
+          "value": "divisions de l'Empire romain au IVe siècle"
+        },
+        {
+          "language": "fr",
+          "value": "provinces de l'Empire romain au IVe siècle"
+        }
+      ]
+    },
+    "claims": {
+      "P17": [
+        {
+          "mainsnak": {
+            "snaktype": "value",
+            "property": "P17",
+            "hash": "c696cf65a8e343107d5999b5fc4ff751a4048fd4",
+            "datavalue": {
+              "value": {
+                "entity-type": "item",
+                "numeric-id": 42834,
+                "id": "Q42834"
+              },
+              "type": "wikibase-entityid"
+            },
+            "datatype": "wikibase-item"
+          },
+          "type": "statement",
+          "id": "Q2139797$0f0fd1ed-4dbd-e8a0-d393-ad4808f83759",
+          "rank": "normal"
+        },
+        {
+          "mainsnak": {
+            "snaktype": "value",
+            "property": "P17",
+            "hash": "4e7e5ae19bafc069c8f235793766fce4aacb0669",
+            "datavalue": {
+              "value": {
+                "entity-type": "item",
+                "numeric-id": 12544,
+                "id": "Q12544"
+              },
+              "type": "wikibase-entityid"
+            },
+            "datatype": "wikibase-item"
+          },
+          "type": "statement",
+          "id": "Q2139797$c1756fbb-48a1-0bf7-1735-8e374175b7f7",
+          "rank": "normal"
+        }
+      ],
+      "P585": [
+        {
+          "mainsnak": {
+            "snaktype": "value",
+            "property": "P585",
+            "hash": "3e547caf137a00264bacf0d15b27f7ee2fab7801",
+            "datavalue": {
+              "value": {
+                "time": "+0395-01-17T00:00:00Z",
+                "timezone": 0,
+                "before": 0,
+                "after": 0,
+                "precision": 11,
+                "calendarmodel": "http://www.wikidata.org/entity/Q1985786"
+              },
+              "type": "time"
+            },
+            "datatype": "time"
+          },
+          "type": "statement",
+          "id": "Q2139797$0544fe15-4675-b4b4-6622-a024005308ac",
+          "rank": "normal"
+        }
+      ],
+      "P5555": [
+        {
+          "mainsnak": {
+            "snaktype": "value",
+            "property": "P5555",
+            "hash": "0b1c9d4974710b29b22b816f5f84fadfac2aed50",
+            "datavalue": {
+              "value": "Roman Empire with dioceses in 400 AD.png",
+              "type": "string"
+            },
+            "datatype": "commonsMedia"
+          },
+          "type": "statement",
+          "id": "Q2139797$ba88cff6-408c-88a5-6184-8d249b177d8d",
+          "rank": "normal"
+        }
+      ],
+      "P3219": [
+        {
+          "mainsnak": {
+            "snaktype": "value",
+            "property": "P3219",
+            "hash": "81610bdeb2f7d5ecc976f09557446144e9113c1f",
+            "datavalue": {
+              "value": "partage-de-l-empire-romain",
+              "type": "string"
+            },
+            "datatype": "external-id"
+          },
+          "type": "statement",
+          "id": "Q2139797$C0120F34-06D0-4572-969F-D1593685934D",
+          "rank": "normal"
+        }
+      ],
+      "P2348": [
+        {
+          "mainsnak": {
+            "snaktype": "value",
+            "property": "P2348",
+            "hash": "c6cc8a75c0a99802e2e83120cf341368f23f4dd1",
+            "datavalue": {
+              "value": {
+                "entity-type": "item",
+                "numeric-id": 217050,
+                "id": "Q217050"
+              },
+              "type": "wikibase-entityid"
+            },
+            "datatype": "wikibase-item"
+          },
+          "type": "statement",
+          "id": "Q2139797$AB572B37-DFF3-4235-960F-77D69227D20A",
+          "rank": "normal"
+        }
+      ],
+      "P2671": [
+        {
+          "mainsnak": {
+            "snaktype": "value",
+            "property": "P2671",
+            "hash": "0d41c75654b2052c57ded03aa0d498fb1a699f98",
+            "datavalue": {
+              "value": "/g/1236gr5n",
+              "type": "string"
+            },
+            "datatype": "external-id"
+          },
+          "type": "statement",
+          "id": "Q2139797$D5ADB6C5-6582-4DEF-A3F6-FAAD4FA467C5",
+          "rank": "normal"
+        }
+      ],
+      "P373": [
+        {
+          "mainsnak": {
+            "snaktype": "value",
+            "property": "P373",
+            "hash": "fb2cbf98e0ef0ea2cf21a01ac4f7bc7dd9ab20f8",
+            "datavalue": {
+              "value": "Partition of the Roman Empire",
+              "type": "string"
+            },
+            "datatype": "string"
+          },
+          "type": "statement",
+          "id": "Q2139797$0b4daa02-4a49-4c62-8907-875f74c5098f",
+          "rank": "normal"
+        }
+      ]
+    },
+    "sitelinks": {
+      "alswiki": {
+        "site": "alswiki",
+        "title": "Reichsteilung von 395",
+        "badges": [],
+        "url": "https://als.wikipedia.org/wiki/Reichsteilung_von_395"
+      },
+      "commonswiki": {
+        "site": "commonswiki",
+        "title": "Category:Partition of the Roman Empire",
+        "badges": [],
+        "url": "https://commons.wikimedia.org/wiki/Category:Partition_of_the_Roman_Empire"
+      },
+      "dewiki": {
+        "site": "dewiki",
+        "title": "Reichsteilung von 395",
+        "badges": [],
+        "url": "https://de.wikipedia.org/wiki/Reichsteilung_von_395"
+      },
+      "frwiki": {
+        "site": "frwiki",
+        "title": "Division de l'Empire romain",
+        "badges": [],
+        "url": "https://fr.wikipedia.org/wiki/Division_de_l%27Empire_romain"
+      },
+      "ruwiki": {
+        "site": "ruwiki",
+        "title": "Раздел Римской империи",
+        "badges": [],
+        "url": "https://ru.wikipedia.org/wiki/%D0%A0%D0%B0%D0%B7%D0%B4%D0%B5%D0%BB_%D0%A0%D0%B8%D0%BC%D1%81%D0%BA%D0%BE%D0%B9_%D0%B8%D0%BC%D0%BF%D0%B5%D1%80%D0%B8%D0%B8"
+      },
+      "srwiki": {
+        "site": "srwiki",
+        "title": "Подела Римског царства",
+        "badges": [],
+        "url": "https://sr.wikipedia.org/wiki/%D0%9F%D0%BE%D0%B4%D0%B5%D0%BB%D0%B0_%D0%A0%D0%B8%D0%BC%D1%81%D0%BA%D0%BE%D0%B3_%D1%86%D0%B0%D1%80%D1%81%D1%82%D0%B2%D0%B0"
+      },
+      "ukwiki": {
+        "site": "ukwiki",
+        "title": "Поділ Римської імперії (395)",
+        "badges": [],
+        "url": "https://uk.wikipedia.org/wiki/%D0%9F%D0%BE%D0%B4%D1%96%D0%BB_%D0%A0%D0%B8%D0%BC%D1%81%D1%8C%D0%BA%D0%BE%D1%97_%D1%96%D0%BC%D0%BF%D0%B5%D1%80%D1%96%D1%97_(395)"
+      }
+    }
+  }
+}

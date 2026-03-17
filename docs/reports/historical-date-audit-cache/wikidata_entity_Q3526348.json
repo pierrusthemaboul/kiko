@@ -1,0 +1,184 @@
+{
+  "saved_at": "2026-03-07T15:15:51.560Z",
+  "value": {
+    "pageid": 3357400,
+    "ns": 0,
+    "title": "Q3526348",
+    "lastrevid": 2469528488,
+    "modified": "2026-03-05T06:50:38Z",
+    "type": "item",
+    "id": "Q3526348",
+    "labels": {
+      "fr": {
+        "language": "fr",
+        "value": "Théocratie à Florence"
+      }
+    },
+    "descriptions": {
+      "fr": {
+        "language": "fr",
+        "value": "régime politique"
+      }
+    },
+    "aliases": {},
+    "claims": {
+      "P2671": [
+        {
+          "mainsnak": {
+            "snaktype": "value",
+            "property": "P2671",
+            "hash": "3dd9f6e5d777540979fcab06211538ca4418bac7",
+            "datavalue": {
+              "value": "/g/121xk36z",
+              "type": "string"
+            },
+            "datatype": "external-id"
+          },
+          "type": "statement",
+          "id": "Q3526348$BB7BF952-956F-4333-9F87-206EC34CBDCE",
+          "rank": "normal"
+        }
+      ],
+      "P31": [
+        {
+          "mainsnak": {
+            "snaktype": "value",
+            "property": "P31",
+            "hash": "9ee21bad41d258e52c0b2078c9904db9b147b78f",
+            "datavalue": {
+              "value": {
+                "entity-type": "item",
+                "numeric-id": 5589178,
+                "id": "Q5589178"
+              },
+              "type": "wikibase-entityid"
+            },
+            "datatype": "wikibase-item"
+          },
+          "type": "statement",
+          "id": "Q3526348$7725f535-446f-bea8-2c58-f2253da66e15",
+          "rank": "normal"
+        }
+      ],
+      "P279": [
+        {
+          "mainsnak": {
+            "snaktype": "value",
+            "property": "P279",
+            "hash": "4508e6da7088f182496713110fc0638f9229b290",
+            "datavalue": {
+              "value": {
+                "entity-type": "item",
+                "numeric-id": 4592997,
+                "id": "Q4592997"
+              },
+              "type": "wikibase-entityid"
+            },
+            "datatype": "wikibase-item"
+          },
+          "type": "statement",
+          "id": "Q3526348$18918604-4984-c590-e65b-5a8dbd077135",
+          "rank": "normal"
+        }
+      ],
+      "P571": [
+        {
+          "mainsnak": {
+            "snaktype": "value",
+            "property": "P571",
+            "hash": "843ce133552895278d385635a06a56bb98945859",
+            "datavalue": {
+              "value": {
+                "time": "+1494-00-00T00:00:00Z",
+                "timezone": 0,
+                "before": 0,
+                "after": 0,
+                "precision": 9,
+                "calendarmodel": "http://www.wikidata.org/entity/Q1985786"
+              },
+              "type": "time"
+            },
+            "datatype": "time"
+          },
+          "type": "statement",
+          "id": "Q3526348$e8329b7e-4cd3-d654-3d01-ce1a05901051",
+          "rank": "normal"
+        }
+      ],
+      "P576": [
+        {
+          "mainsnak": {
+            "snaktype": "value",
+            "property": "P576",
+            "hash": "dd687da0754f245337d89347f7cae5dab7f81bd7",
+            "datavalue": {
+              "value": {
+                "time": "+1498-00-00T00:00:00Z",
+                "timezone": 0,
+                "before": 0,
+                "after": 0,
+                "precision": 9,
+                "calendarmodel": "http://www.wikidata.org/entity/Q1985786"
+              },
+              "type": "time"
+            },
+            "datatype": "time"
+          },
+          "type": "statement",
+          "id": "Q3526348$ab419577-4b7b-4910-5604-572baaf3619d",
+          "rank": "normal"
+        }
+      ],
+      "P17": [
+        {
+          "mainsnak": {
+            "snaktype": "value",
+            "property": "P17",
+            "hash": "4efd78df9be7ed7040f562455c2a4832ed6ff6a4",
+            "datavalue": {
+              "value": {
+                "entity-type": "item",
+                "numeric-id": 148540,
+                "id": "Q148540"
+              },
+              "type": "wikibase-entityid"
+            },
+            "datatype": "wikibase-item"
+          },
+          "type": "statement",
+          "id": "Q3526348$c2412665-411c-ba2a-5445-0183a79dcbc7",
+          "rank": "normal"
+        }
+      ],
+      "P35": [
+        {
+          "mainsnak": {
+            "snaktype": "value",
+            "property": "P35",
+            "hash": "187c0e3e354f1d9d9d3904a4424f831e745ff957",
+            "datavalue": {
+              "value": {
+                "entity-type": "item",
+                "numeric-id": 164823,
+                "id": "Q164823"
+              },
+              "type": "wikibase-entityid"
+            },
+            "datatype": "wikibase-item"
+          },
+          "type": "statement",
+          "id": "Q3526348$82dbc0f9-4a0c-01ea-8d08-b6afc25714be",
+          "rank": "normal"
+        }
+      ]
+    },
+    "sitelinks": {
+      "frwiki": {
+        "site": "frwiki",
+        "title": "Théocratie à Florence",
+        "badges": [],
+        "url": "https://fr.wikipedia.org/wiki/Th%C3%A9ocratie_%C3%A0_Florence"
+      }
+    }
+  }
+}

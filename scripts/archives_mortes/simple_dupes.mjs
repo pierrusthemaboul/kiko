@@ -18,3 +18,4 @@ async function findDuplicates() {
     dupes.forEach(([k, v]) => console.log(`- ${k} (${v} fois)`));
 }
 findDuplicates();
+

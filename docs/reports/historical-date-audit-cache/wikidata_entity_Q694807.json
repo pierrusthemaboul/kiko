@@ -1,0 +1,397 @@
+{
+  "saved_at": "2026-03-07T16:55:33.077Z",
+  "value": {
+    "pageid": 654473,
+    "ns": 0,
+    "title": "Q694807",
+    "lastrevid": 2470187063,
+    "modified": "2026-03-07T14:05:59Z",
+    "type": "item",
+    "id": "Q694807",
+    "labels": {
+      "de": {
+        "language": "de",
+        "value": "Schatz von Nagyszentmiklós"
+      },
+      "bg": {
+        "language": "bg",
+        "value": "Златно съкровище от Над Сент Миклош"
+      },
+      "es": {
+        "language": "es",
+        "value": "Tesoro de Nagyszentmiklós"
+      },
+      "en": {
+        "language": "en",
+        "value": "Treasure of Nagyszentmiklós"
+      },
+      "ro": {
+        "language": "ro",
+        "value": "Tezaurul de la Sânnicolau Mare"
+      },
+      "hu": {
+        "language": "hu",
+        "value": "Nagyszentmiklósi kincs"
+      },
+      "pt": {
+        "language": "pt",
+        "value": "Tesouro de Nagyszentmiklós"
+      },
+      "fr": {
+        "language": "fr",
+        "value": "trésor de Nagyszentmiklós"
+      },
+      "ru": {
+        "language": "ru",
+        "value": "Надь-Сент-Миклошский клад"
+      },
+      "id": {
+        "language": "id",
+        "value": "Harta karun Nagyszentmiklós"
+      },
+      "be": {
+        "language": "be",
+        "value": "Надзьсентміклашскі скарб"
+      },
+      "ja": {
+        "language": "ja",
+        "value": "ナジセントミクローシュの遺宝"
+      },
+      "ca": {
+        "language": "ca",
+        "value": "Tresor de Nagyszentmiklós"
+      },
+      "tr": {
+        "language": "tr",
+        "value": "Nagyszentmiklós Hazinesi"
+      },
+      "hy": {
+        "language": "hy",
+        "value": "Նագսենտմիկլոշի գանձ"
+      },
+      "sr": {
+        "language": "sr",
+        "value": "Благо из Нађсентмиклоша"
+      }
+    },
+    "descriptions": {
+      "en": {
+        "language": "en",
+        "value": "twenty-three early medieval gold vessels found in what is now Romania"
+      },
+      "hu": {
+        "language": "hu",
+        "value": "Aranykincslelet"
+      },
+      "tr": {
+        "language": "tr",
+        "value": "Hazinenin, Peçenekler'e ait olduğu düşünülmektedir"
+      },
+      "es": {
+        "language": "es",
+        "value": "veintitrés vasos de oro altomedievales hallados en la actual Rumanía"
+      },
+      "ro": {
+        "language": "ro",
+        "value": "douăzeci și trei de vase de aur din Evul Mediu timpuriu descoperite în ceea ce este acum România"
+      }
+    },
+    "aliases": {
+      "de": [
+        {
+          "language": "de",
+          "value": "Schatz von Großsanktnikolaus"
+        }
+      ],
+      "bg": [
+        {
+          "language": "bg",
+          "value": "Нагисентмиклошко съкровище"
+        },
+        {
+          "language": "bg",
+          "value": "Наг Сент Миклошко златно съкровище"
+        },
+        {
+          "language": "bg",
+          "value": "Златно съкровище от Наг Сент Миклош"
+        }
+      ],
+      "es": [
+        {
+          "language": "es",
+          "value": "Tesoro de Nagyszentmiklos"
+        }
+      ],
+      "ro": [
+        {
+          "language": "ro",
+          "value": "Tezaurul Banatului"
+        }
+      ],
+      "en": [
+        {
+          "language": "en",
+          "value": "Treasure of Nagyszentmiklos"
+        }
+      ]
+    },
+    "claims": {
+      "P373": [
+        {
+          "mainsnak": {
+            "snaktype": "value",
+            "property": "P373",
+            "hash": "9671d0f920fc2f2bbbf6712fbd121420a48f9b94",
+            "datavalue": {
+              "value": "Treasure of Nagyszentmiklós",
+              "type": "string"
+            },
+            "datatype": "string"
+          },
+          "type": "statement",
+          "id": "q694807$327E9F85-B065-439D-A88E-50C7AD38EC64",
+          "rank": "normal",
+          "references": [
+            {
+              "hash": "fa278ebfc458360e5aed63d5058cca83c46134f1",
+              "snaks": {
+                "P143": [
+                  {
+                    "snaktype": "value",
+                    "property": "P143",
+                    "hash": "e4f6d9441d0600513c4533c672b5ab472dc73694",
+                    "datavalue": {
+                      "value": {
+                        "entity-type": "item",
+                        "numeric-id": 328,
+                        "id": "Q328"
+                      },
+                      "type": "wikibase-entityid"
+                    },
+                    "datatype": "wikibase-item"
+                  }
+                ]
+              },
+              "snaks-order": [
+                "P143"
+              ]
+            }
+          ]
+        }
+      ],
+      "P646": [
+        {
+          "mainsnak": {
+            "snaktype": "value",
+            "property": "P646",
+            "hash": "ed1d09cc389d0bd0b2806b6462a6527c16d60066",
+            "datavalue": {
+              "value": "/m/02q9rd4",
+              "type": "string"
+            },
+            "datatype": "external-id"
+          },
+          "type": "statement",
+          "id": "Q694807$5D91847D-5820-4533-9D80-1274D8300163",
+          "rank": "normal",
+          "references": [
+            {
+              "hash": "2b00cb481cddcac7623114367489b5c194901c4a",
+              "snaks": {
+                "P248": [
+                  {
+                    "snaktype": "value",
+                    "property": "P248",
+                    "hash": "a94b740202b097dd33355e0e6c00e54b9395e5e0",
+                    "datavalue": {
+                      "value": {
+                        "entity-type": "item",
+                        "numeric-id": 15241312,
+                        "id": "Q15241312"
+                      },
+                      "type": "wikibase-entityid"
+                    },
+                    "datatype": "wikibase-item"
+                  }
+                ],
+                "P577": [
+                  {
+                    "snaktype": "value",
+                    "property": "P577",
+                    "hash": "fde79ecb015112d2f29229ccc1ec514ed3e71fa2",
+                    "datavalue": {
+                      "value": {
+                        "time": "+2013-10-28T00:00:00Z",
+                        "timezone": 0,
+                        "before": 0,
+                        "after": 0,
+                        "precision": 11,
+                        "calendarmodel": "http://www.wikidata.org/entity/Q1985727"
+                      },
+                      "type": "time"
+                    },
+                    "datatype": "time"
+                  }
+                ]
+              },
+              "snaks-order": [
+                "P248",
+                "P577"
+              ]
+            }
+          ]
+        }
+      ],
+      "P2924": [
+        {
+          "mainsnak": {
+            "snaktype": "value",
+            "property": "P2924",
+            "hash": "5e27d4218da475bbaab9a8fabc38b613de6c5099",
+            "datavalue": {
+              "value": "2244689",
+              "type": "string"
+            },
+            "datatype": "external-id"
+          },
+          "type": "statement",
+          "qualifiers": {
+            "P1810": [
+              {
+                "snaktype": "value",
+                "property": "P1810",
+                "hash": "1bbabb6bde4c27eb9d7385a52495cfbd74062c2a",
+                "datavalue": {
+                  "value": "НАДЬ-СЕНТ-МИКЛОШ",
+                  "type": "string"
+                },
+                "datatype": "string"
+              }
+            ]
+          },
+          "qualifiers-order": [
+            "P1810"
+          ],
+          "id": "Q694807$6e1be972-4a2b-cf69-5489-948b41a0cff2",
+          "rank": "normal"
+        }
+      ],
+      "P8406": [
+        {
+          "mainsnak": {
+            "snaktype": "value",
+            "property": "P8406",
+            "hash": "3a65afb59bcbfe7c33225df794c7bc20e123c3a8",
+            "datavalue": {
+              "value": "T060770",
+              "type": "string"
+            },
+            "datatype": "external-id"
+          },
+          "type": "statement",
+          "id": "Q694807$EF760AE2-F47A-49B2-A80C-868D72C2BDB7",
+          "rank": "normal"
+        }
+      ]
+    },
+    "sitelinks": {
+      "bewiki": {
+        "site": "bewiki",
+        "title": "Надзьсентміклашскі скарб",
+        "badges": [],
+        "url": "https://be.wikipedia.org/wiki/%D0%9D%D0%B0%D0%B4%D0%B7%D1%8C%D1%81%D0%B5%D0%BD%D1%82%D0%BC%D1%96%D0%BA%D0%BB%D0%B0%D1%88%D1%81%D0%BA%D1%96_%D1%81%D0%BA%D0%B0%D1%80%D0%B1"
+      },
+      "bgwiki": {
+        "site": "bgwiki",
+        "title": "Златно съкровище от Над Сент Миклош",
+        "badges": [],
+        "url": "https://bg.wikipedia.org/wiki/%D0%97%D0%BB%D0%B0%D1%82%D0%BD%D0%BE_%D1%81%D1%8A%D0%BA%D1%80%D0%BE%D0%B2%D0%B8%D1%89%D0%B5_%D0%BE%D1%82_%D0%9D%D0%B0%D0%B4_%D0%A1%D0%B5%D0%BD%D1%82_%D0%9C%D0%B8%D0%BA%D0%BB%D0%BE%D1%88"
+      },
+      "cawiki": {
+        "site": "cawiki",
+        "title": "Tresor de Nagyszentmiklós",
+        "badges": [],
+        "url": "https://ca.wikipedia.org/wiki/Tresor_de_Nagyszentmikl%C3%B3s"
+      },
+      "commonswiki": {
+        "site": "commonswiki",
+        "title": "Category:Treasure of Nagyszentmiklós",
+        "badges": [],
+        "url": "https://commons.wikimedia.org/wiki/Category:Treasure_of_Nagyszentmikl%C3%B3s"
+      },
+      "dewiki": {
+        "site": "dewiki",
+        "title": "Schatz von Nagyszentmiklós",
+        "badges": [],
+        "url": "https://de.wikipedia.org/wiki/Schatz_von_Nagyszentmikl%C3%B3s"
+      },
+      "enwiki": {
+        "site": "enwiki",
+        "title": "Treasure of Nagyszentmiklós",
+        "badges": [],
+        "url": "https://en.wikipedia.org/wiki/Treasure_of_Nagyszentmikl%C3%B3s"
+      },
+      "eswiki": {
+        "site": "eswiki",
+        "title": "Tesoro de Nagyszentmiklós",
+        "badges": [],
+        "url": "https://es.wikipedia.org/wiki/Tesoro_de_Nagyszentmikl%C3%B3s"
+      },
+      "frwiki": {
+        "site": "frwiki",
+        "title": "Trésor de Nagyszentmiklós",
+        "badges": [],
+        "url": "https://fr.wikipedia.org/wiki/Tr%C3%A9sor_de_Nagyszentmikl%C3%B3s"
+      },
+      "huwiki": {
+        "site": "huwiki",
+        "title": "Nagyszentmiklósi kincs",
+        "badges": [],
+        "url": "https://hu.wikipedia.org/wiki/Nagyszentmikl%C3%B3si_kincs"
+      },
+      "hywiki": {
+        "site": "hywiki",
+        "title": "Նագսենտմիկլոշի գանձ",
+        "badges": [],
+        "url": "https://hy.wikipedia.org/wiki/%D5%86%D5%A1%D5%A3%D5%BD%D5%A5%D5%B6%D5%BF%D5%B4%D5%AB%D5%AF%D5%AC%D5%B8%D5%B7%D5%AB_%D5%A3%D5%A1%D5%B6%D5%B1"
+      },
+      "idwiki": {
+        "site": "idwiki",
+        "title": "Harta karun Nagyszentmiklós",
+        "badges": [],
+        "url": "https://id.wikipedia.org/wiki/Harta_karun_Nagyszentmikl%C3%B3s"
+      },
+      "ptwiki": {
+        "site": "ptwiki",
+        "title": "Tesouro de Nagyszentmiklós",
+        "badges": [],
+        "url": "https://pt.wikipedia.org/wiki/Tesouro_de_Nagyszentmikl%C3%B3s"
+      },
+      "rowiki": {
+        "site": "rowiki",
+        "title": "Tezaurul de la Sânnicolau Mare",
+        "badges": [],
+        "url": "https://ro.wikipedia.org/wiki/Tezaurul_de_la_S%C3%A2nnicolau_Mare"
+      },
+      "ruwiki": {
+        "site": "ruwiki",
+        "title": "Надьсентмиклошский клад",
+        "badges": [],
+        "url": "https://ru.wikipedia.org/wiki/%D0%9D%D0%B0%D0%B4%D1%8C%D1%81%D0%B5%D0%BD%D1%82%D0%BC%D0%B8%D0%BA%D0%BB%D0%BE%D1%88%D1%81%D0%BA%D0%B8%D0%B9_%D0%BA%D0%BB%D0%B0%D0%B4"
+      },
+      "srwiki": {
+        "site": "srwiki",
+        "title": "Благо из Нађсентмиклоша",
+        "badges": [],
+        "url": "https://sr.wikipedia.org/wiki/%D0%91%D0%BB%D0%B0%D0%B3%D0%BE_%D0%B8%D0%B7_%D0%9D%D0%B0%D1%92%D1%81%D0%B5%D0%BD%D1%82%D0%BC%D0%B8%D0%BA%D0%BB%D0%BE%D1%88%D0%B0"
+      },
+      "trwiki": {
+        "site": "trwiki",
+        "title": "Nagyszentmiklós Hazinesi",
+        "badges": [],
+        "url": "https://tr.wikipedia.org/wiki/Nagyszentmikl%C3%B3s_Hazinesi"
+      }
+    }
+  }
+}

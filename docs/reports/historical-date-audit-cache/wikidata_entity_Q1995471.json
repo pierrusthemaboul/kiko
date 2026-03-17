@@ -1,0 +1,308 @@
+{
+  "saved_at": "2026-03-07T15:52:42.952Z",
+  "value": {
+    "pageid": 1924035,
+    "ns": 0,
+    "title": "Q1995471",
+    "lastrevid": 2235850687,
+    "modified": "2024-08-25T17:53:33Z",
+    "type": "item",
+    "id": "Q1995471",
+    "labels": {
+      "fr": {
+        "language": "fr",
+        "value": "traité de Worms"
+      },
+      "es": {
+        "language": "es",
+        "value": "Tratado de Worms"
+      },
+      "en": {
+        "language": "en",
+        "value": "Treaty of Worms"
+      },
+      "it": {
+        "language": "it",
+        "value": "trattato di Worms"
+      },
+      "sl": {
+        "language": "sl",
+        "value": "Wormška pogodba"
+      },
+      "zh-hant": {
+        "language": "zh-hant",
+        "value": "沃姆斯條約"
+      },
+      "zh-cn": {
+        "language": "zh-cn",
+        "value": "沃姆斯条约"
+      },
+      "zh-hans": {
+        "language": "zh-hans",
+        "value": "沃姆斯条约"
+      },
+      "ja": {
+        "language": "ja",
+        "value": "ヴォルムス条約"
+      },
+      "nl": {
+        "language": "nl",
+        "value": "Verdrag van Worms"
+      },
+      "pt": {
+        "language": "pt",
+        "value": "Tratado de Worms (1743)"
+      }
+    },
+    "descriptions": {
+      "it": {
+        "language": "it",
+        "value": "Alleanza politica tra Gran Bretagna, Austria e Regno di Sardegna"
+      },
+      "fr": {
+        "language": "fr",
+        "value": "traité d'alliance tripartite autrichien"
+      },
+      "en": {
+        "language": "en",
+        "value": "1743 alliance between Great Britain, Austria, and Sardinia"
+      },
+      "pt": {
+        "language": "pt",
+        "value": "Aliança entre a Grã-Bretanha, Áustria e Sarsinia"
+      }
+    },
+    "aliases": {},
+    "claims": {
+      "P646": [
+        {
+          "mainsnak": {
+            "snaktype": "value",
+            "property": "P646",
+            "hash": "d9a2c6ec9148268b51cee24e20e2dd862d160bc4",
+            "datavalue": {
+              "value": "/m/04glcv",
+              "type": "string"
+            },
+            "datatype": "external-id"
+          },
+          "type": "statement",
+          "id": "Q1995471$0940F662-F8DC-4740-80A6-D08B10D799EF",
+          "rank": "normal",
+          "references": [
+            {
+              "hash": "2b00cb481cddcac7623114367489b5c194901c4a",
+              "snaks": {
+                "P248": [
+                  {
+                    "snaktype": "value",
+                    "property": "P248",
+                    "hash": "a94b740202b097dd33355e0e6c00e54b9395e5e0",
+                    "datavalue": {
+                      "value": {
+                        "entity-type": "item",
+                        "numeric-id": 15241312,
+                        "id": "Q15241312"
+                      },
+                      "type": "wikibase-entityid"
+                    },
+                    "datatype": "wikibase-item"
+                  }
+                ],
+                "P577": [
+                  {
+                    "snaktype": "value",
+                    "property": "P577",
+                    "hash": "fde79ecb015112d2f29229ccc1ec514ed3e71fa2",
+                    "datavalue": {
+                      "value": {
+                        "time": "+2013-10-28T00:00:00Z",
+                        "timezone": 0,
+                        "before": 0,
+                        "after": 0,
+                        "precision": 11,
+                        "calendarmodel": "http://www.wikidata.org/entity/Q1985727"
+                      },
+                      "type": "time"
+                    },
+                    "datatype": "time"
+                  }
+                ]
+              },
+              "snaks-order": [
+                "P248",
+                "P577"
+              ]
+            }
+          ]
+        }
+      ],
+      "P31": [
+        {
+          "mainsnak": {
+            "snaktype": "value",
+            "property": "P31",
+            "hash": "b0e8db723228922bff4fcc3427ebd4e3289412c9",
+            "datavalue": {
+              "value": {
+                "entity-type": "item",
+                "numeric-id": 131569,
+                "id": "Q131569"
+              },
+              "type": "wikibase-entityid"
+            },
+            "datatype": "wikibase-item"
+          },
+          "type": "statement",
+          "id": "Q1995471$1DD22933-946A-400A-91A8-CA086536AE5B",
+          "rank": "normal",
+          "references": [
+            {
+              "hash": "d4bd87b862b12d99d26e86472d44f26858dee639",
+              "snaks": {
+                "P143": [
+                  {
+                    "snaktype": "value",
+                    "property": "P143",
+                    "hash": "f30cbd35620c4ea6d0633aaf0210a8916130469b",
+                    "datavalue": {
+                      "value": {
+                        "entity-type": "item",
+                        "numeric-id": 8447,
+                        "id": "Q8447"
+                      },
+                      "type": "wikibase-entityid"
+                    },
+                    "datatype": "wikibase-item"
+                  }
+                ]
+              },
+              "snaks-order": [
+                "P143"
+              ]
+            }
+          ]
+        }
+      ],
+      "P585": [
+        {
+          "mainsnak": {
+            "snaktype": "value",
+            "property": "P585",
+            "hash": "9ec0718a968caf58cc220e7407ffa058da21b156",
+            "datavalue": {
+              "value": {
+                "time": "+1743-00-00T00:00:00Z",
+                "timezone": 0,
+                "before": 0,
+                "after": 0,
+                "precision": 9,
+                "calendarmodel": "http://www.wikidata.org/entity/Q1985727"
+              },
+              "type": "time"
+            },
+            "datatype": "time"
+          },
+          "type": "statement",
+          "id": "Q1995471$EBD72E48-EF14-43E8-A664-2157409BCD97",
+          "rank": "normal"
+        }
+      ],
+      "P214": [
+        {
+          "mainsnak": {
+            "snaktype": "value",
+            "property": "P214",
+            "hash": "baa124b23f26852eb4cb51711f51b39f617a4dd3",
+            "datavalue": {
+              "value": "176397587",
+              "type": "string"
+            },
+            "datatype": "external-id"
+          },
+          "type": "statement",
+          "id": "Q1995471$6d26933f-42f6-22d7-04c1-0a500668b357",
+          "rank": "normal"
+        }
+      ],
+      "P244": [
+        {
+          "mainsnak": {
+            "snaktype": "value",
+            "property": "P244",
+            "hash": "343576f48b96002187405cac61de896baed165f6",
+            "datavalue": {
+              "value": "no91006189",
+              "type": "string"
+            },
+            "datatype": "external-id"
+          },
+          "type": "statement",
+          "id": "Q1995471$a29ae3bb-4a21-411a-0efb-b954a3238d84",
+          "rank": "normal"
+        }
+      ],
+      "P2163": [
+        {
+          "mainsnak": {
+            "snaktype": "value",
+            "property": "P2163",
+            "hash": "12a45472c90e1e0fe4da8f9f2e2e3832f0eda20b",
+            "datavalue": {
+              "value": "1917512",
+              "type": "string"
+            },
+            "datatype": "external-id"
+          },
+          "type": "statement",
+          "id": "Q1995471$82dff072-46be-b495-bbc9-1529bbd386d3",
+          "rank": "normal"
+        }
+      ]
+    },
+    "sitelinks": {
+      "enwiki": {
+        "site": "enwiki",
+        "title": "Treaty of Worms (1743)",
+        "badges": [],
+        "url": "https://en.wikipedia.org/wiki/Treaty_of_Worms_(1743)"
+      },
+      "eswiki": {
+        "site": "eswiki",
+        "title": "Tratado de Worms (1743)",
+        "badges": [],
+        "url": "https://es.wikipedia.org/wiki/Tratado_de_Worms_(1743)"
+      },
+      "frwiki": {
+        "site": "frwiki",
+        "title": "Traité de Worms (1743)",
+        "badges": [],
+        "url": "https://fr.wikipedia.org/wiki/Trait%C3%A9_de_Worms_(1743)"
+      },
+      "itwiki": {
+        "site": "itwiki",
+        "title": "Trattato di Worms (1743)",
+        "badges": [],
+        "url": "https://it.wikipedia.org/wiki/Trattato_di_Worms_(1743)"
+      },
+      "nlwiki": {
+        "site": "nlwiki",
+        "title": "Verdrag van Worms",
+        "badges": [],
+        "url": "https://nl.wikipedia.org/wiki/Verdrag_van_Worms"
+      },
+      "ptwiki": {
+        "site": "ptwiki",
+        "title": "Tratado de Worms (1743)",
+        "badges": [],
+        "url": "https://pt.wikipedia.org/wiki/Tratado_de_Worms_(1743)"
+      },
+      "slwiki": {
+        "site": "slwiki",
+        "title": "Wormska pogodba (1743)",
+        "badges": [],
+        "url": "https://sl.wikipedia.org/wiki/Wormska_pogodba_(1743)"
+      }
+    }
+  }
+}

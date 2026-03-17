@@ -1,0 +1,651 @@
+{
+  "saved_at": "2026-03-07T14:23:52.208Z",
+  "value": {
+    "pageid": 1414106,
+    "ns": 0,
+    "title": "Q1476140",
+    "lastrevid": 2433654821,
+    "modified": "2025-11-25T05:20:09Z",
+    "type": "item",
+    "id": "Q1476140",
+    "labels": {
+      "de": {
+        "language": "de",
+        "value": "Gymnote"
+      },
+      "ja": {
+        "language": "ja",
+        "value": "ジムノート"
+      },
+      "pl": {
+        "language": "pl",
+        "value": "Gymnôte"
+      },
+      "fr": {
+        "language": "fr",
+        "value": "Gymnote"
+      },
+      "en": {
+        "language": "en",
+        "value": "French submarine Gymnote"
+      },
+      "fa": {
+        "language": "fa",
+        "value": "زیردریایی ژیمنوت"
+      },
+      "it": {
+        "language": "it",
+        "value": "Gymnote"
+      },
+      "nl": {
+        "language": "nl",
+        "value": "French submarine Gymnote"
+      },
+      "es": {
+        "language": "es",
+        "value": "Gymnote (Q1)"
+      },
+      "cs": {
+        "language": "cs",
+        "value": "Gymnote"
+      },
+      "zh": {
+        "language": "zh",
+        "value": "電鰻號潛艇 (1888年)"
+      },
+      "fi": {
+        "language": "fi",
+        "value": "Gymnote (Q1)"
+      }
+    },
+    "descriptions": {
+      "fr": {
+        "language": "fr",
+        "value": "sous-marin français"
+      },
+      "en": {
+        "language": "en",
+        "value": "world's first all-electric submarine"
+      },
+      "de": {
+        "language": "de",
+        "value": "U-Boot der französischen Marine"
+      },
+      "cs": {
+        "language": "cs",
+        "value": "francouzská experimentální ponorka"
+      },
+      "pl": {
+        "language": "pl",
+        "value": "francuski okręt podwodny"
+      }
+    },
+    "aliases": {
+      "de": [
+        {
+          "language": "de",
+          "value": "Q 1 Gymnote"
+        },
+        {
+          "language": "de",
+          "value": "Gymnote (Q 1)"
+        }
+      ],
+      "fr": [
+        {
+          "language": "fr",
+          "value": "Gymnote (1888)"
+        }
+      ],
+      "en": [
+        {
+          "language": "en",
+          "value": "Gymnote"
+        },
+        {
+          "language": "en",
+          "value": "Q 1"
+        }
+      ]
+    },
+    "claims": {
+      "P31": [
+        {
+          "mainsnak": {
+            "snaktype": "value",
+            "property": "P31",
+            "hash": "2446285bd7595302dcf6945a2771855d1359827f",
+            "datavalue": {
+              "value": {
+                "entity-type": "item",
+                "numeric-id": 2811,
+                "id": "Q2811"
+              },
+              "type": "wikibase-entityid"
+            },
+            "datatype": "wikibase-item"
+          },
+          "type": "statement",
+          "id": "q1476140$9A45D7A2-A6AB-4C81-AB58-880EEF5978B1",
+          "rank": "normal",
+          "references": [
+            {
+              "hash": "fa278ebfc458360e5aed63d5058cca83c46134f1",
+              "snaks": {
+                "P143": [
+                  {
+                    "snaktype": "value",
+                    "property": "P143",
+                    "hash": "e4f6d9441d0600513c4533c672b5ab472dc73694",
+                    "datavalue": {
+                      "value": {
+                        "entity-type": "item",
+                        "numeric-id": 328,
+                        "id": "Q328"
+                      },
+                      "type": "wikibase-entityid"
+                    },
+                    "datatype": "wikibase-item"
+                  }
+                ]
+              },
+              "snaks-order": [
+                "P143"
+              ]
+            }
+          ]
+        }
+      ],
+      "P646": [
+        {
+          "mainsnak": {
+            "snaktype": "value",
+            "property": "P646",
+            "hash": "29e2bd9f63be22e50bddc2490b9173b3e90e176b",
+            "datavalue": {
+              "value": "/m/026m7xs",
+              "type": "string"
+            },
+            "datatype": "external-id"
+          },
+          "type": "statement",
+          "id": "Q1476140$8FA49EF0-226E-4B91-A439-57D8D5D9DE73",
+          "rank": "normal",
+          "references": [
+            {
+              "hash": "2b00cb481cddcac7623114367489b5c194901c4a",
+              "snaks": {
+                "P248": [
+                  {
+                    "snaktype": "value",
+                    "property": "P248",
+                    "hash": "a94b740202b097dd33355e0e6c00e54b9395e5e0",
+                    "datavalue": {
+                      "value": {
+                        "entity-type": "item",
+                        "numeric-id": 15241312,
+                        "id": "Q15241312"
+                      },
+                      "type": "wikibase-entityid"
+                    },
+                    "datatype": "wikibase-item"
+                  }
+                ],
+                "P577": [
+                  {
+                    "snaktype": "value",
+                    "property": "P577",
+                    "hash": "fde79ecb015112d2f29229ccc1ec514ed3e71fa2",
+                    "datavalue": {
+                      "value": {
+                        "time": "+2013-10-28T00:00:00Z",
+                        "timezone": 0,
+                        "before": 0,
+                        "after": 0,
+                        "precision": 11,
+                        "calendarmodel": "http://www.wikidata.org/entity/Q1985727"
+                      },
+                      "type": "time"
+                    },
+                    "datatype": "time"
+                  }
+                ]
+              },
+              "snaks-order": [
+                "P248",
+                "P577"
+              ]
+            }
+          ]
+        }
+      ],
+      "P18": [
+        {
+          "mainsnak": {
+            "snaktype": "value",
+            "property": "P18",
+            "hash": "444424a4ccfd226913b814c91e66331040f465cd",
+            "datavalue": {
+              "value": "Submarine Gymnote with crew - Page's Magazine 1902.png",
+              "type": "string"
+            },
+            "datatype": "commonsMedia"
+          },
+          "type": "statement",
+          "id": "Q1476140$C6DAB4EF-8179-4AB4-A4F1-2BDF6E3B1AD1",
+          "rank": "normal"
+        }
+      ],
+      "P729": [
+        {
+          "mainsnak": {
+            "snaktype": "value",
+            "property": "P729",
+            "hash": "07bc39ee10482166c2dbcb84f9cc616daf515b9a",
+            "datavalue": {
+              "value": {
+                "time": "+1888-09-24T00:00:00Z",
+                "timezone": 0,
+                "before": 0,
+                "after": 0,
+                "precision": 11,
+                "calendarmodel": "http://www.wikidata.org/entity/Q1985727"
+              },
+              "type": "time"
+            },
+            "datatype": "time"
+          },
+          "type": "statement",
+          "id": "Q1476140$d413fcaf-435b-d234-2057-b92daef3d9eb",
+          "rank": "normal"
+        }
+      ],
+      "P495": [
+        {
+          "mainsnak": {
+            "snaktype": "value",
+            "property": "P495",
+            "hash": "f707ab9792279b2ccec78f8736a8e5d28c8b7fc7",
+            "datavalue": {
+              "value": {
+                "entity-type": "item",
+                "numeric-id": 142,
+                "id": "Q142"
+              },
+              "type": "wikibase-entityid"
+            },
+            "datatype": "wikibase-item"
+          },
+          "type": "statement",
+          "id": "Q1476140$3A3DFC1D-4991-4CAC-82E7-E6058ECEE25B",
+          "rank": "normal"
+        }
+      ],
+      "P373": [
+        {
+          "mainsnak": {
+            "snaktype": "value",
+            "property": "P373",
+            "hash": "b6c7c21748cf6a01b5060a9441e83477b4143cce",
+            "datavalue": {
+              "value": "Gymnote (submarine, 1888)",
+              "type": "string"
+            },
+            "datatype": "string"
+          },
+          "type": "statement",
+          "id": "Q1476140$B0753DDC-7FCF-45FE-8C2E-8F8E04DB5D33",
+          "rank": "normal",
+          "references": [
+            {
+              "hash": "fa278ebfc458360e5aed63d5058cca83c46134f1",
+              "snaks": {
+                "P143": [
+                  {
+                    "snaktype": "value",
+                    "property": "P143",
+                    "hash": "e4f6d9441d0600513c4533c672b5ab472dc73694",
+                    "datavalue": {
+                      "value": {
+                        "entity-type": "item",
+                        "numeric-id": 328,
+                        "id": "Q328"
+                      },
+                      "type": "wikibase-entityid"
+                    },
+                    "datatype": "wikibase-item"
+                  }
+                ]
+              },
+              "snaks-order": [
+                "P143"
+              ]
+            }
+          ]
+        }
+      ],
+      "P17": [
+        {
+          "mainsnak": {
+            "snaktype": "value",
+            "property": "P17",
+            "hash": "c05db5d169c2560b9799d567a803d20a392f53e4",
+            "datavalue": {
+              "value": {
+                "entity-type": "item",
+                "numeric-id": 142,
+                "id": "Q142"
+              },
+              "type": "wikibase-entityid"
+            },
+            "datatype": "wikibase-item"
+          },
+          "type": "statement",
+          "id": "Q1476140$42CA400D-F503-438D-A622-15C6B91047D5",
+          "rank": "normal",
+          "references": [
+            {
+              "hash": "5a50b59da4342cad31368a28c8d1df5ab5bf2699",
+              "snaks": {
+                "P143": [
+                  {
+                    "snaktype": "value",
+                    "property": "P143",
+                    "hash": "e4f6d9441d0600513c4533c672b5ab472dc73694",
+                    "datavalue": {
+                      "value": {
+                        "entity-type": "item",
+                        "numeric-id": 328,
+                        "id": "Q328"
+                      },
+                      "type": "wikibase-entityid"
+                    },
+                    "datatype": "wikibase-item"
+                  }
+                ],
+                "P4656": [
+                  {
+                    "snaktype": "value",
+                    "property": "P4656",
+                    "hash": "c897392c00e33907a90cbb97ac357b1341971032",
+                    "datavalue": {
+                      "value": "https://en.wikipedia.org/w/index.php?title=French_submarine_Gymnote_(Q1)&oldid=840036732",
+                      "type": "string"
+                    },
+                    "datatype": "url"
+                  }
+                ]
+              },
+              "snaks-order": [
+                "P143",
+                "P4656"
+              ]
+            }
+          ]
+        }
+      ],
+      "P1417": [
+        {
+          "mainsnak": {
+            "snaktype": "value",
+            "property": "P1417",
+            "hash": "e62d0e3c16d6867e06ec059541b077e8c0b2dfcb",
+            "datavalue": {
+              "value": "topic/Gymnote",
+              "type": "string"
+            },
+            "datatype": "external-id"
+          },
+          "type": "statement",
+          "qualifiers": {
+            "P1810": [
+              {
+                "snaktype": "value",
+                "property": "P1810",
+                "hash": "59a1359f950bb8d681ff4157f71c946cd93afa4d",
+                "datavalue": {
+                  "value": "Gymnote",
+                  "type": "string"
+                },
+                "datatype": "string"
+              }
+            ]
+          },
+          "qualifiers-order": [
+            "P1810"
+          ],
+          "id": "Q1476140$89C85D9D-9BF0-4825-9D6D-B1885635C43E",
+          "rank": "normal"
+        }
+      ],
+      "P910": [
+        {
+          "mainsnak": {
+            "snaktype": "value",
+            "property": "P910",
+            "hash": "8ddd16f9b4ac257cd68093b7553281b038c7e74d",
+            "datavalue": {
+              "value": {
+                "entity-type": "item",
+                "numeric-id": 117811003,
+                "id": "Q117811003"
+              },
+              "type": "wikibase-entityid"
+            },
+            "datatype": "wikibase-item"
+          },
+          "type": "statement",
+          "id": "Q1476140$d717fe5e-4516-f6c0-64f8-796b239b7959",
+          "rank": "normal"
+        }
+      ],
+      "P1448": [
+        {
+          "mainsnak": {
+            "snaktype": "value",
+            "property": "P1448",
+            "hash": "3ce0d97cc12afe28a4d58eeea66295bfdf43042e",
+            "datavalue": {
+              "value": {
+                "text": "Gymnote",
+                "language": "mul"
+              },
+              "type": "monolingualtext"
+            },
+            "datatype": "monolingualtext"
+          },
+          "type": "statement",
+          "id": "Q1476140$8AEA1C09-26BB-46DF-801A-177EC0C2376D",
+          "rank": "normal"
+        }
+      ],
+      "P2052": [
+        {
+          "mainsnak": {
+            "snaktype": "value",
+            "property": "P2052",
+            "hash": "0a2ec0e37e76a74ed6385aaef21898f9076a1046",
+            "datavalue": {
+              "value": {
+                "amount": "+7.3",
+                "unit": "http://www.wikidata.org/entity/Q128822"
+              },
+              "type": "quantity"
+            },
+            "datatype": "quantity"
+          },
+          "type": "statement",
+          "id": "Q1476140$8A7D56E6-0ABD-4380-A5A7-F6E701479A15",
+          "rank": "normal",
+          "references": [
+            {
+              "hash": "eb2d6664b673d7073f1d61f61bda1a60b2ec647b",
+              "snaks": {
+                "P143": [
+                  {
+                    "snaktype": "value",
+                    "property": "P143",
+                    "hash": "d38375ffe6fe142663ff55cd783aa4df4301d83d",
+                    "datavalue": {
+                      "value": {
+                        "entity-type": "item",
+                        "numeric-id": 48183,
+                        "id": "Q48183"
+                      },
+                      "type": "wikibase-entityid"
+                    },
+                    "datatype": "wikibase-item"
+                  }
+                ],
+                "P4656": [
+                  {
+                    "snaktype": "value",
+                    "property": "P4656",
+                    "hash": "96935b874267f24fa2b321bbcd3758514b565b8a",
+                    "datavalue": {
+                      "value": "https://de.wikipedia.org/w/index.php?title=Gymnote_(U-Boot,_1888)&oldid=236806635",
+                      "type": "string"
+                    },
+                    "datatype": "url"
+                  }
+                ]
+              },
+              "snaks-order": [
+                "P143",
+                "P4656"
+              ]
+            }
+          ]
+        }
+      ],
+      "P176": [
+        {
+          "mainsnak": {
+            "snaktype": "value",
+            "property": "P176",
+            "hash": "bfc0c1167ee2a446c2ee77721002d69053fd884d",
+            "datavalue": {
+              "value": {
+                "entity-type": "item",
+                "numeric-id": 1564994,
+                "id": "Q1564994"
+              },
+              "type": "wikibase-entityid"
+            },
+            "datatype": "wikibase-item"
+          },
+          "type": "statement",
+          "id": "Q1476140$1A9E3099-80A7-4014-91AE-6D65262D0D05",
+          "rank": "normal",
+          "references": [
+            {
+              "hash": "eb2d6664b673d7073f1d61f61bda1a60b2ec647b",
+              "snaks": {
+                "P143": [
+                  {
+                    "snaktype": "value",
+                    "property": "P143",
+                    "hash": "d38375ffe6fe142663ff55cd783aa4df4301d83d",
+                    "datavalue": {
+                      "value": {
+                        "entity-type": "item",
+                        "numeric-id": 48183,
+                        "id": "Q48183"
+                      },
+                      "type": "wikibase-entityid"
+                    },
+                    "datatype": "wikibase-item"
+                  }
+                ],
+                "P4656": [
+                  {
+                    "snaktype": "value",
+                    "property": "P4656",
+                    "hash": "96935b874267f24fa2b321bbcd3758514b565b8a",
+                    "datavalue": {
+                      "value": "https://de.wikipedia.org/w/index.php?title=Gymnote_(U-Boot,_1888)&oldid=236806635",
+                      "type": "string"
+                    },
+                    "datatype": "url"
+                  }
+                ]
+              },
+              "snaks-order": [
+                "P143",
+                "P4656"
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    "sitelinks": {
+      "cswiki": {
+        "site": "cswiki",
+        "title": "Gymnote (Q1)",
+        "badges": [],
+        "url": "https://cs.wikipedia.org/wiki/Gymnote_(Q1)"
+      },
+      "dewiki": {
+        "site": "dewiki",
+        "title": "Gymnote (U-Boot, 1888)",
+        "badges": [],
+        "url": "https://de.wikipedia.org/wiki/Gymnote_(U-Boot,_1888)"
+      },
+      "enwiki": {
+        "site": "enwiki",
+        "title": "French submarine Gymnote (Q1)",
+        "badges": [],
+        "url": "https://en.wikipedia.org/wiki/French_submarine_Gymnote_(Q1)"
+      },
+      "eswiki": {
+        "site": "eswiki",
+        "title": "Gymnote (Q1)",
+        "badges": [],
+        "url": "https://es.wikipedia.org/wiki/Gymnote_(Q1)"
+      },
+      "fawiki": {
+        "site": "fawiki",
+        "title": "زیردریایی ژیمنوت (کیو۱)",
+        "badges": [],
+        "url": "https://fa.wikipedia.org/wiki/%D8%B2%DB%8C%D8%B1%D8%AF%D8%B1%DB%8C%D8%A7%DB%8C%DB%8C_%DA%98%DB%8C%D9%85%D9%86%D9%88%D8%AA_(%DA%A9%DB%8C%D9%88%DB%B1)"
+      },
+      "fiwiki": {
+        "site": "fiwiki",
+        "title": "Gymnote (Q1)",
+        "badges": [],
+        "url": "https://fi.wikipedia.org/wiki/Gymnote_(Q1)"
+      },
+      "frwiki": {
+        "site": "frwiki",
+        "title": "Gymnote (1888)",
+        "badges": [],
+        "url": "https://fr.wikipedia.org/wiki/Gymnote_(1888)"
+      },
+      "itwiki": {
+        "site": "itwiki",
+        "title": "Gymnote (1888)",
+        "badges": [],
+        "url": "https://it.wikipedia.org/wiki/Gymnote_(1888)"
+      },
+      "jawiki": {
+        "site": "jawiki",
+        "title": "ジムノート (潜水艦)",
+        "badges": [],
+        "url": "https://ja.wikipedia.org/wiki/%E3%82%B8%E3%83%A0%E3%83%8E%E3%83%BC%E3%83%88_(%E6%BD%9C%E6%B0%B4%E8%89%A6)"
+      },
+      "plwiki": {
+        "site": "plwiki",
+        "title": "Gymnôte (1888)",
+        "badges": [],
+        "url": "https://pl.wikipedia.org/wiki/Gymn%C3%B4te_(1888)"
+      },
+      "zhwiki": {
+        "site": "zhwiki",
+        "title": "電鰻號潛艇 (1888年)",
+        "badges": [],
+        "url": "https://zh.wikipedia.org/wiki/%E9%9B%BB%E9%B0%BB%E8%99%9F%E6%BD%9B%E8%89%87_(1888%E5%B9%B4)"
+      }
+    }
+  }
+}

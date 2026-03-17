@@ -1,0 +1,194 @@
+{
+  "saved_at": "2026-03-07T13:37:28.378Z",
+  "value": {
+    "pageid": 2896932,
+    "ns": 0,
+    "title": "Q3030239",
+    "lastrevid": 2350910130,
+    "modified": "2025-05-21T16:02:28Z",
+    "type": "item",
+    "id": "Q3030239",
+    "labels": {
+      "fr": {
+        "language": "fr",
+        "value": "discrimination des femmes en France"
+      },
+      "en": {
+        "language": "en",
+        "value": "gender inequality in France"
+      },
+      "sl": {
+        "language": "sl",
+        "value": "neenakost spolov v Franciji"
+      }
+    },
+    "descriptions": {},
+    "aliases": {
+      "fr": [
+        {
+          "language": "fr",
+          "value": "droit des femmes en France"
+        },
+        {
+          "language": "fr",
+          "value": "droits des femmes en France"
+        }
+      ]
+    },
+    "claims": {
+      "P1001": [
+        {
+          "mainsnak": {
+            "snaktype": "value",
+            "property": "P1001",
+            "hash": "efe2878aed693a79dce942b2f853910a78c4e2a8",
+            "datavalue": {
+              "value": {
+                "entity-type": "item",
+                "numeric-id": 142,
+                "id": "Q142"
+              },
+              "type": "wikibase-entityid"
+            },
+            "datatype": "wikibase-item"
+          },
+          "type": "statement",
+          "id": "Q3030239$186D8BC5-CBBF-40C8-B300-51E2E3AF5C1D",
+          "rank": "normal"
+        }
+      ],
+      "P3219": [
+        {
+          "mainsnak": {
+            "snaktype": "value",
+            "property": "P3219",
+            "hash": "e6cf5199c59ab14ae5ff1329fd9c249774c7ab9e",
+            "datavalue": {
+              "value": "inegalites-hommes-femmes-france",
+              "type": "string"
+            },
+            "datatype": "external-id"
+          },
+          "type": "statement",
+          "id": "Q3030239$766FEFDD-CA1D-4AC4-B7DB-6D9C1DF75E78",
+          "rank": "normal"
+        }
+      ],
+      "P279": [
+        {
+          "mainsnak": {
+            "snaktype": "value",
+            "property": "P279",
+            "hash": "a21c9931fd2f2720172955d10bde0eb8b0c435d2",
+            "datavalue": {
+              "value": {
+                "entity-type": "item",
+                "numeric-id": 11446451,
+                "id": "Q11446451"
+              },
+              "type": "wikibase-entityid"
+            },
+            "datatype": "wikibase-item"
+          },
+          "type": "statement",
+          "id": "Q3030239$f621832d-4a0f-1f38-973b-8b64e849a330",
+          "rank": "normal"
+        }
+      ],
+      "P2671": [
+        {
+          "mainsnak": {
+            "snaktype": "value",
+            "property": "P2671",
+            "hash": "5b4147f64336f213463900399fd2667da20237f1",
+            "datavalue": {
+              "value": "/g/121g6qtd",
+              "type": "string"
+            },
+            "datatype": "external-id"
+          },
+          "type": "statement",
+          "id": "Q3030239$2672C873-A0D0-4922-8448-C1E182D99505",
+          "rank": "normal"
+        }
+      ],
+      "P31": [
+        {
+          "mainsnak": {
+            "snaktype": "value",
+            "property": "P31",
+            "hash": "c6a5021f8d2b73a08f3bd36e9df12cbd0eca2448",
+            "datavalue": {
+              "value": {
+                "entity-type": "item",
+                "numeric-id": 74817647,
+                "id": "Q74817647"
+              },
+              "type": "wikibase-entityid"
+            },
+            "datatype": "wikibase-item"
+          },
+          "type": "statement",
+          "id": "Q3030239$598E058B-7316-411C-A3C3-448867174ACE",
+          "rank": "normal"
+        }
+      ],
+      "P17": [
+        {
+          "mainsnak": {
+            "snaktype": "value",
+            "property": "P17",
+            "hash": "c05db5d169c2560b9799d567a803d20a392f53e4",
+            "datavalue": {
+              "value": {
+                "entity-type": "item",
+                "numeric-id": 142,
+                "id": "Q142"
+              },
+              "type": "wikibase-entityid"
+            },
+            "datatype": "wikibase-item"
+          },
+          "type": "statement",
+          "id": "Q3030239$A04EE960-9E51-41A0-9349-F4F084BDEC01",
+          "rank": "normal"
+        }
+      ],
+      "P276": [
+        {
+          "mainsnak": {
+            "snaktype": "value",
+            "property": "P276",
+            "hash": "8b0ec779b065477650db33917ff99d018700f11d",
+            "datavalue": {
+              "value": {
+                "entity-type": "item",
+                "numeric-id": 142,
+                "id": "Q142"
+              },
+              "type": "wikibase-entityid"
+            },
+            "datatype": "wikibase-item"
+          },
+          "type": "statement",
+          "id": "Q3030239$8E2A1905-D9D6-40E6-A2A6-8F197EAA2BDF",
+          "rank": "normal"
+        }
+      ]
+    },
+    "sitelinks": {
+      "enwiki": {
+        "site": "enwiki",
+        "title": "Gender inequality in France",
+        "badges": [],
+        "url": "https://en.wikipedia.org/wiki/Gender_inequality_in_France"
+      },
+      "frwiki": {
+        "site": "frwiki",
+        "title": "Inégalités femmes-hommes en France",
+        "badges": [],
+        "url": "https://fr.wikipedia.org/wiki/In%C3%A9galit%C3%A9s_femmes-hommes_en_France"
+      }
+    }
+  }
+}

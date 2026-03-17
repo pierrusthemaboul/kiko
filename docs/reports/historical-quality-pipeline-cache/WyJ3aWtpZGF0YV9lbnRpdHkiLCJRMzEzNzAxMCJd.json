@@ -1,0 +1,151 @@
+{
+  "pageid": 2997073,
+  "ns": 0,
+  "title": "Q3137010",
+  "lastrevid": 1956895204,
+  "modified": "2023-08-20T01:53:08Z",
+  "type": "item",
+  "id": "Q3137010",
+  "labels": {
+    "fr": {
+      "language": "fr",
+      "value": "histoire de l'obstétrique"
+    },
+    "en": {
+      "language": "en",
+      "value": "history of midwifery"
+    },
+    "it": {
+      "language": "it",
+      "value": "Storia dell'ostetricia"
+    },
+    "sl": {
+      "language": "sl",
+      "value": "zgodovina babištva"
+    }
+  },
+  "descriptions": {},
+  "aliases": {
+    "fr": [
+      {
+        "language": "fr",
+        "value": "Histoire De L'obstétrique"
+      },
+      {
+        "language": "fr",
+        "value": "Histoire de l'obstetrique"
+      },
+      {
+        "language": "fr",
+        "value": "Histoire de la profession de sage-femme"
+      }
+    ],
+    "en": [
+      {
+        "language": "en",
+        "value": "midwifery history"
+      }
+    ]
+  },
+  "claims": {
+    "P31": [
+      {
+        "mainsnak": {
+          "snaktype": "value",
+          "property": "P31",
+          "hash": "7ad5c7929af39fc2ff8afed55f1192f80e71d936",
+          "datavalue": {
+            "value": {
+              "entity-type": "item",
+              "numeric-id": 17524420,
+              "id": "Q17524420"
+            },
+            "type": "wikibase-entityid"
+          },
+          "datatype": "wikibase-item"
+        },
+        "type": "statement",
+        "id": "Q3137010$1af35622-48f6-3e98-8dd9-8b7b761370dd",
+        "rank": "normal"
+      }
+    ],
+    "P910": [
+      {
+        "mainsnak": {
+          "snaktype": "value",
+          "property": "P910",
+          "hash": "87dad1096671abde8b29bcd5aa4d3dba8c8709d7",
+          "datavalue": {
+            "value": {
+              "entity-type": "item",
+              "numeric-id": 27670386,
+              "id": "Q27670386"
+            },
+            "type": "wikibase-entityid"
+          },
+          "datatype": "wikibase-item"
+        },
+        "type": "statement",
+        "id": "Q3137010$37D86869-3F6A-4954-8444-C15669F17A11",
+        "rank": "normal",
+        "references": [
+          {
+            "hash": "d4bd87b862b12d99d26e86472d44f26858dee639",
+            "snaks": {
+              "P143": [
+                {
+                  "snaktype": "value",
+                  "property": "P143",
+                  "hash": "f30cbd35620c4ea6d0633aaf0210a8916130469b",
+                  "datavalue": {
+                    "value": {
+                      "entity-type": "item",
+                      "numeric-id": 8447,
+                      "id": "Q8447"
+                    },
+                    "type": "wikibase-entityid"
+                  },
+                  "datatype": "wikibase-item"
+                }
+              ]
+            },
+            "snaks-order": [
+              "P143"
+            ]
+          }
+        ]
+      }
+    ],
+    "P2671": [
+      {
+        "mainsnak": {
+          "snaktype": "value",
+          "property": "P2671",
+          "hash": "586d0840bb298e1bb80e8832feb9947ee39999fe",
+          "datavalue": {
+            "value": "/g/121lsxng",
+            "type": "string"
+          },
+          "datatype": "external-id"
+        },
+        "type": "statement",
+        "id": "Q3137010$03113C6C-08DF-423B-BB9B-F9AF819FE0F9",
+        "rank": "normal"
+      }
+    ]
+  },
+  "sitelinks": {
+    "frwiki": {
+      "site": "frwiki",
+      "title": "Histoire de l'obstétrique",
+      "badges": [],
+      "url": "https://fr.wikipedia.org/wiki/Histoire_de_l%27obst%C3%A9trique"
+    },
+    "itwiki": {
+      "site": "itwiki",
+      "title": "Storia dell'ostetricia",
+      "badges": [],
+      "url": "https://it.wikipedia.org/wiki/Storia_dell%27ostetricia"
+    }
+  }
+}

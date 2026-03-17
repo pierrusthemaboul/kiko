@@ -1,0 +1,476 @@
+{
+  "saved_at": "2026-03-07T16:19:16.056Z",
+  "value": {
+    "pageid": 2908821,
+    "ns": 0,
+    "title": "Q3042917",
+    "lastrevid": 2449338291,
+    "modified": "2025-12-30T22:03:01Z",
+    "type": "item",
+    "id": "Q3042917",
+    "labels": {
+      "fr": {
+        "language": "fr",
+        "value": "découverte du Brésil"
+      },
+      "ca": {
+        "language": "ca",
+        "value": "descobriment del Brasil"
+      },
+      "es": {
+        "language": "es",
+        "value": "Descubrimiento de Brasil"
+      },
+      "pt": {
+        "language": "pt",
+        "value": "descoberta do Brasil"
+      },
+      "sv": {
+        "language": "sv",
+        "value": "Portugisiska koloniseringen av Amerika"
+      },
+      "pt-br": {
+        "language": "pt-br",
+        "value": "descoberta do Brasil"
+      },
+      "eo": {
+        "language": "eo",
+        "value": "Malkovro de Brazilo"
+      },
+      "en": {
+        "language": "en",
+        "value": "discovery of Brazil"
+      },
+      "ro": {
+        "language": "ro",
+        "value": "descoperirea Braziliei"
+      },
+      "fa": {
+        "language": "fa",
+        "value": "کشف برزیل"
+      },
+      "ja": {
+        "language": "ja",
+        "value": "ブラジルの発見"
+      },
+      "tr": {
+        "language": "tr",
+        "value": "Brezilya'nın keşfi"
+      },
+      "ko": {
+        "language": "ko",
+        "value": "브라질 발견"
+      },
+      "sl": {
+        "language": "sl",
+        "value": "odkritje Brazilije"
+      },
+      "he": {
+        "language": "he",
+        "value": "גילוי ברזיל"
+      },
+      "hi": {
+        "language": "hi",
+        "value": "ब्राज़ील की खोज"
+      },
+      "ar": {
+        "language": "ar",
+        "value": "اكتشاف البرازيل"
+      }
+    },
+    "descriptions": {
+      "pt": {
+        "language": "pt",
+        "value": "evento da história do Brasil"
+      },
+      "pt-br": {
+        "language": "pt-br",
+        "value": "evento da história do Brasil"
+      },
+      "sl": {
+        "language": "sl",
+        "value": "prvi prihod evropskih raziskovalcev na ozemlje današnje Brazilije 22. aprila 1500"
+      },
+      "en": {
+        "language": "en",
+        "value": "Portuguese discovery in 1500"
+      },
+      "ro": {
+        "language": "ro",
+        "value": "descoperirea portugheză în 1500"
+      },
+      "he": {
+        "language": "he",
+        "value": "הגעה הראשונה של חוקרים אירופאים לשטחי ברזיל המודרנית"
+      }
+    },
+    "aliases": {
+      "fr": [
+        {
+          "language": "fr",
+          "value": "Découverte du brésil"
+        },
+        {
+          "language": "fr",
+          "value": "Découverte Du Brésil"
+        },
+        {
+          "language": "fr",
+          "value": "Decouverte du Bresil"
+        }
+      ],
+      "pt": [
+        {
+          "language": "pt",
+          "value": "descobrimento do Brasil"
+        }
+      ],
+      "pt-br": [
+        {
+          "language": "pt-br",
+          "value": "descobrimento do Brasil"
+        }
+      ],
+      "ro": [
+        {
+          "language": "ro",
+          "value": "explorarea Braziliei"
+        }
+      ]
+    },
+    "claims": {
+      "P373": [
+        {
+          "mainsnak": {
+            "snaktype": "value",
+            "property": "P373",
+            "hash": "9989e7779deeb58fa74da3dc87172ce9823ac95c",
+            "datavalue": {
+              "value": "Discovery of Brazil",
+              "type": "string"
+            },
+            "datatype": "string"
+          },
+          "type": "statement",
+          "id": "q3042917$77FBDAAD-D1B3-426A-B254-7045E5D123D6",
+          "rank": "normal"
+        }
+      ],
+      "P910": [
+        {
+          "mainsnak": {
+            "snaktype": "value",
+            "property": "P910",
+            "hash": "4c70be939528433b088410f4054552a88ae0f025",
+            "datavalue": {
+              "value": {
+                "entity-type": "item",
+                "numeric-id": 9676351,
+                "id": "Q9676351"
+              },
+              "type": "wikibase-entityid"
+            },
+            "datatype": "wikibase-item"
+          },
+          "type": "statement",
+          "id": "Q3042917$D125E7A5-5AC7-43B3-AFFC-5F835CFE14FD",
+          "rank": "normal",
+          "references": [
+            {
+              "hash": "d4bd87b862b12d99d26e86472d44f26858dee639",
+              "snaks": {
+                "P143": [
+                  {
+                    "snaktype": "value",
+                    "property": "P143",
+                    "hash": "f30cbd35620c4ea6d0633aaf0210a8916130469b",
+                    "datavalue": {
+                      "value": {
+                        "entity-type": "item",
+                        "numeric-id": 8447,
+                        "id": "Q8447"
+                      },
+                      "type": "wikibase-entityid"
+                    },
+                    "datatype": "wikibase-item"
+                  }
+                ]
+              },
+              "snaks-order": [
+                "P143"
+              ]
+            }
+          ]
+        }
+      ],
+      "P31": [
+        {
+          "mainsnak": {
+            "snaktype": "value",
+            "property": "P31",
+            "hash": "0af758afcb05f24cb71e6b55e63964f687b42e0d",
+            "datavalue": {
+              "value": {
+                "entity-type": "item",
+                "numeric-id": 12772819,
+                "id": "Q12772819"
+              },
+              "type": "wikibase-entityid"
+            },
+            "datatype": "wikibase-item"
+          },
+          "type": "statement",
+          "qualifiers": {
+            "P12912": [
+              {
+                "snaktype": "value",
+                "property": "P12912",
+                "hash": "b8b9ef5fe88bff01ecb24186899c2e217dee0871",
+                "datavalue": {
+                  "value": {
+                    "entity-type": "item",
+                    "numeric-id": 155,
+                    "id": "Q155"
+                  },
+                  "type": "wikibase-entityid"
+                },
+                "datatype": "wikibase-item"
+              }
+            ]
+          },
+          "qualifiers-order": [
+            "P12912"
+          ],
+          "id": "Q3042917$77408db0-40b0-077f-f053-a6f093b3eb80",
+          "rank": "normal"
+        },
+        {
+          "mainsnak": {
+            "snaktype": "value",
+            "property": "P31",
+            "hash": "594cfdfbf98f2188c5eef35e07826a417d930f93",
+            "datavalue": {
+              "value": {
+                "entity-type": "item",
+                "numeric-id": 1190554,
+                "id": "Q1190554"
+              },
+              "type": "wikibase-entityid"
+            },
+            "datatype": "wikibase-item"
+          },
+          "type": "statement",
+          "id": "Q3042917$f69a605a-41d9-41d0-0c91-5b0dac88addf",
+          "rank": "normal"
+        }
+      ],
+      "P17": [
+        {
+          "mainsnak": {
+            "snaktype": "value",
+            "property": "P17",
+            "hash": "c05db5d169c2560b9799d567a803d20a392f53e4",
+            "datavalue": {
+              "value": {
+                "entity-type": "item",
+                "numeric-id": 142,
+                "id": "Q142"
+              },
+              "type": "wikibase-entityid"
+            },
+            "datatype": "wikibase-item"
+          },
+          "type": "statement",
+          "id": "Q3042917$9f668612-4e86-eb40-f994-e55b9c2b14fe",
+          "rank": "normal"
+        }
+      ],
+      "P585": [
+        {
+          "mainsnak": {
+            "snaktype": "value",
+            "property": "P585",
+            "hash": "54a0676c5409d947420f021dec8e60ce95dc6a5e",
+            "datavalue": {
+              "value": {
+                "time": "+1500-04-22T00:00:00Z",
+                "timezone": 0,
+                "before": 0,
+                "after": 0,
+                "precision": 11,
+                "calendarmodel": "http://www.wikidata.org/entity/Q1985786"
+              },
+              "type": "time"
+            },
+            "datatype": "time"
+          },
+          "type": "statement",
+          "id": "Q3042917$4afdc70a-4931-a368-2f58-84ae301d3273",
+          "rank": "normal"
+        }
+      ],
+      "P1269": [
+        {
+          "mainsnak": {
+            "snaktype": "value",
+            "property": "P1269",
+            "hash": "f99c5f3b9394a90ecd801b75bafa94a5efa8a365",
+            "datavalue": {
+              "value": {
+                "entity-type": "item",
+                "numeric-id": 1570124,
+                "id": "Q1570124"
+              },
+              "type": "wikibase-entityid"
+            },
+            "datatype": "wikibase-item"
+          },
+          "type": "statement",
+          "id": "Q3042917$f3933af0-4a92-1273-fd24-737dde949dbe",
+          "rank": "normal"
+        }
+      ],
+      "P575": [
+        {
+          "mainsnak": {
+            "snaktype": "value",
+            "property": "P575",
+            "hash": "7bfe913082f4eb14e61039b038cfb4fcc4694a90",
+            "datavalue": {
+              "value": {
+                "time": "+1992-10-26T00:00:00Z",
+                "timezone": 0,
+                "before": 0,
+                "after": 0,
+                "precision": 11,
+                "calendarmodel": "http://www.wikidata.org/entity/Q1985727"
+              },
+              "type": "time"
+            },
+            "datatype": "time"
+          },
+          "type": "statement",
+          "id": "Q3042917$5d6862b2-40c5-a639-7406-7a510ba7a023",
+          "rank": "normal"
+        }
+      ],
+      "P2671": [
+        {
+          "mainsnak": {
+            "snaktype": "value",
+            "property": "P2671",
+            "hash": "b88978074ca45d527636aaf25967b790425de750",
+            "datavalue": {
+              "value": "/g/1226sjhs",
+              "type": "string"
+            },
+            "datatype": "external-id"
+          },
+          "type": "statement",
+          "id": "Q3042917$A662F84E-F4B9-4407-8156-E7D835721C79",
+          "rank": "normal"
+        }
+      ],
+      "P18": [
+        {
+          "mainsnak": {
+            "snaktype": "value",
+            "property": "P18",
+            "hash": "06ffa88be17f3665478a3e55a429508eec158b26",
+            "datavalue": {
+              "value": "Desembarque de Pedro Álvares Cabral em Porto Seguro em 1500 by Oscar Pereira da Silva (1865–1939).jpg",
+              "type": "string"
+            },
+            "datatype": "commonsMedia"
+          },
+          "type": "statement",
+          "id": "Q3042917$0a6d5ccb-439a-5614-15e8-d89f20df5f32",
+          "rank": "normal"
+        },
+        {
+          "mainsnak": {
+            "snaktype": "value",
+            "property": "P18",
+            "hash": "5d4213ac68c3b2c1db9c6049fd4c3dc3bd6f9516",
+            "datavalue": {
+              "value": "Museu do Forte de Copacabana - Rio de Janeiro (36406560346).jpg",
+              "type": "string"
+            },
+            "datatype": "commonsMedia"
+          },
+          "type": "statement",
+          "id": "Q3042917$30c1c94d-4033-520e-10e2-acc99f02c88f",
+          "rank": "normal"
+        }
+      ]
+    },
+    "sitelinks": {
+      "arwiki": {
+        "site": "arwiki",
+        "title": "اكتشاف البرازيل",
+        "badges": [],
+        "url": "https://ar.wikipedia.org/wiki/%D8%A7%D9%83%D8%AA%D8%B4%D8%A7%D9%81_%D8%A7%D9%84%D8%A8%D8%B1%D8%A7%D8%B2%D9%8A%D9%84"
+      },
+      "cawiki": {
+        "site": "cawiki",
+        "title": "Descobriment del Brasil",
+        "badges": [],
+        "url": "https://ca.wikipedia.org/wiki/Descobriment_del_Brasil"
+      },
+      "enwiki": {
+        "site": "enwiki",
+        "title": "Discovery of Brazil",
+        "badges": [],
+        "url": "https://en.wikipedia.org/wiki/Discovery_of_Brazil"
+      },
+      "eowiki": {
+        "site": "eowiki",
+        "title": "Malkovro de Brazilo",
+        "badges": [],
+        "url": "https://eo.wikipedia.org/wiki/Malkovro_de_Brazilo"
+      },
+      "eswiki": {
+        "site": "eswiki",
+        "title": "Descubrimiento de Brasil",
+        "badges": [],
+        "url": "https://es.wikipedia.org/wiki/Descubrimiento_de_Brasil"
+      },
+      "frwiki": {
+        "site": "frwiki",
+        "title": "Découverte du Brésil",
+        "badges": [],
+        "url": "https://fr.wikipedia.org/wiki/D%C3%A9couverte_du_Br%C3%A9sil"
+      },
+      "hewiki": {
+        "site": "hewiki",
+        "title": "גילוי ברזיל",
+        "badges": [],
+        "url": "https://he.wikipedia.org/wiki/%D7%92%D7%99%D7%9C%D7%95%D7%99_%D7%91%D7%A8%D7%96%D7%99%D7%9C"
+      },
+      "hiwiki": {
+        "site": "hiwiki",
+        "title": "ब्राज़ील की खोज",
+        "badges": [],
+        "url": "https://hi.wikipedia.org/wiki/%E0%A4%AC%E0%A5%8D%E0%A4%B0%E0%A4%BE%E0%A4%9C%E0%A4%BC%E0%A5%80%E0%A4%B2_%E0%A4%95%E0%A5%80_%E0%A4%96%E0%A5%8B%E0%A4%9C"
+      },
+      "ptwiki": {
+        "site": "ptwiki",
+        "title": "Descoberta do Brasil",
+        "badges": [],
+        "url": "https://pt.wikipedia.org/wiki/Descoberta_do_Brasil"
+      },
+      "rowiki": {
+        "site": "rowiki",
+        "title": "Descoperirea Braziliei",
+        "badges": [],
+        "url": "https://ro.wikipedia.org/wiki/Descoperirea_Braziliei"
+      },
+      "slwiki": {
+        "site": "slwiki",
+        "title": "Odkritje Brazilije",
+        "badges": [],
+        "url": "https://sl.wikipedia.org/wiki/Odkritje_Brazilije"
+      }
+    }
+  }
+}

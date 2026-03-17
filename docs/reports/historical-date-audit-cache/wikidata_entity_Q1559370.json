@@ -1,0 +1,462 @@
+{
+  "saved_at": "2026-03-07T15:53:08.593Z",
+  "value": {
+    "pageid": 1495550,
+    "ns": 0,
+    "title": "Q1559370",
+    "lastrevid": 2468675822,
+    "modified": "2026-03-02T09:14:47Z",
+    "type": "item",
+    "id": "Q1559370",
+    "labels": {
+      "fr": {
+        "language": "fr",
+        "value": "Édit de Pîtres"
+      },
+      "sh": {
+        "language": "sh",
+        "value": "Edikt iz Pistresa"
+      },
+      "es": {
+        "language": "es",
+        "value": "Edicto de Pistres"
+      },
+      "en": {
+        "language": "en",
+        "value": "Edict of Pîtres"
+      },
+      "hr": {
+        "language": "hr",
+        "value": "Pistreski edikt"
+      },
+      "it": {
+        "language": "it",
+        "value": "Editto di Pistres"
+      },
+      "nl": {
+        "language": "nl",
+        "value": "Edict van Pîtres"
+      },
+      "ja": {
+        "language": "ja",
+        "value": "ピトル勅令"
+      },
+      "pt": {
+        "language": "pt",
+        "value": "Édito de Pistres"
+      },
+      "cs": {
+        "language": "cs",
+        "value": "Pîtreský edikt"
+      }
+    },
+    "descriptions": {
+      "en": {
+        "language": "en",
+        "value": "capitulary"
+      },
+      "fr": {
+        "language": "fr",
+        "value": "capitulaire"
+      },
+      "it": {
+        "language": "it",
+        "value": "editto dell'864"
+      }
+    },
+    "aliases": {
+      "fr": [
+        {
+          "language": "fr",
+          "value": "Edit de Pitres"
+        }
+      ],
+      "nl": [
+        {
+          "language": "nl",
+          "value": "Edict van Pitres"
+        }
+      ],
+      "en": [
+        {
+          "language": "en",
+          "value": "Edict of Pistres"
+        },
+        {
+          "language": "en",
+          "value": "Edictum Pistense"
+        }
+      ],
+      "ja": [
+        {
+          "language": "ja",
+          "value": "ピトレ勅令"
+        }
+      ]
+    },
+    "claims": {
+      "P646": [
+        {
+          "mainsnak": {
+            "snaktype": "value",
+            "property": "P646",
+            "hash": "1600c5c4ba3e51b16d8b9a3efca685c191954a33",
+            "datavalue": {
+              "value": "/m/0ctm1l",
+              "type": "string"
+            },
+            "datatype": "external-id"
+          },
+          "type": "statement",
+          "id": "Q1559370$7C704EB0-4755-4FE0-9835-7BE08A9AF38B",
+          "rank": "normal",
+          "references": [
+            {
+              "hash": "2b00cb481cddcac7623114367489b5c194901c4a",
+              "snaks": {
+                "P248": [
+                  {
+                    "snaktype": "value",
+                    "property": "P248",
+                    "hash": "a94b740202b097dd33355e0e6c00e54b9395e5e0",
+                    "datavalue": {
+                      "value": {
+                        "entity-type": "item",
+                        "numeric-id": 15241312,
+                        "id": "Q15241312"
+                      },
+                      "type": "wikibase-entityid"
+                    },
+                    "datatype": "wikibase-item"
+                  }
+                ],
+                "P577": [
+                  {
+                    "snaktype": "value",
+                    "property": "P577",
+                    "hash": "fde79ecb015112d2f29229ccc1ec514ed3e71fa2",
+                    "datavalue": {
+                      "value": {
+                        "time": "+2013-10-28T00:00:00Z",
+                        "timezone": 0,
+                        "before": 0,
+                        "after": 0,
+                        "precision": 11,
+                        "calendarmodel": "http://www.wikidata.org/entity/Q1985727"
+                      },
+                      "type": "time"
+                    },
+                    "datatype": "time"
+                  }
+                ]
+              },
+              "snaks-order": [
+                "P248",
+                "P577"
+              ]
+            }
+          ]
+        }
+      ],
+      "P31": [
+        {
+          "mainsnak": {
+            "snaktype": "value",
+            "property": "P31",
+            "hash": "99d334103d9509f0efde0b97322b32bfd5f9d13e",
+            "datavalue": {
+              "value": {
+                "entity-type": "item",
+                "numeric-id": 699907,
+                "id": "Q699907"
+              },
+              "type": "wikibase-entityid"
+            },
+            "datatype": "wikibase-item"
+          },
+          "type": "statement",
+          "id": "Q1559370$3697415a-4382-45a1-e2e2-3a16aad451ed",
+          "rank": "normal",
+          "references": [
+            {
+              "hash": "d4bd87b862b12d99d26e86472d44f26858dee639",
+              "snaks": {
+                "P143": [
+                  {
+                    "snaktype": "value",
+                    "property": "P143",
+                    "hash": "f30cbd35620c4ea6d0633aaf0210a8916130469b",
+                    "datavalue": {
+                      "value": {
+                        "entity-type": "item",
+                        "numeric-id": 8447,
+                        "id": "Q8447"
+                      },
+                      "type": "wikibase-entityid"
+                    },
+                    "datatype": "wikibase-item"
+                  }
+                ]
+              },
+              "snaks-order": [
+                "P143"
+              ]
+            }
+          ]
+        }
+      ],
+      "P585": [
+        {
+          "mainsnak": {
+            "snaktype": "value",
+            "property": "P585",
+            "hash": "f83842ec8828057b84fb461a12f822be6c9c5c46",
+            "datavalue": {
+              "value": {
+                "time": "+0864-06-25T00:00:00Z",
+                "timezone": 0,
+                "before": 0,
+                "after": 0,
+                "precision": 11,
+                "calendarmodel": "http://www.wikidata.org/entity/Q1985786"
+              },
+              "type": "time"
+            },
+            "datatype": "time"
+          },
+          "type": "statement",
+          "id": "Q1559370$c1094bfb-43e3-91b5-4d35-fff7345afb37",
+          "rank": "normal",
+          "references": [
+            {
+              "hash": "d4bd87b862b12d99d26e86472d44f26858dee639",
+              "snaks": {
+                "P143": [
+                  {
+                    "snaktype": "value",
+                    "property": "P143",
+                    "hash": "f30cbd35620c4ea6d0633aaf0210a8916130469b",
+                    "datavalue": {
+                      "value": {
+                        "entity-type": "item",
+                        "numeric-id": 8447,
+                        "id": "Q8447"
+                      },
+                      "type": "wikibase-entityid"
+                    },
+                    "datatype": "wikibase-item"
+                  }
+                ]
+              },
+              "snaks-order": [
+                "P143"
+              ]
+            }
+          ]
+        }
+      ],
+      "P18": [
+        {
+          "mainsnak": {
+            "snaktype": "value",
+            "property": "P18",
+            "hash": "80090ea8012b68d16211ee4415d56bc169326efc",
+            "datavalue": {
+              "value": "Charles le chauve Tours.jpg",
+              "type": "string"
+            },
+            "datatype": "commonsMedia"
+          },
+          "type": "statement",
+          "qualifiers": {
+            "P2096": [
+              {
+                "snaktype": "value",
+                "property": "P2096",
+                "hash": "87fe5dd1a7095a0ca9183fb789706000e92445a0",
+                "datavalue": {
+                  "value": {
+                    "text": "Denier (monnaie) de Charles le Chauve frappé à[Tours (843-864)",
+                    "language": "fr"
+                  },
+                  "type": "monolingualtext"
+                },
+                "datatype": "monolingualtext"
+              }
+            ]
+          },
+          "qualifiers-order": [
+            "P2096"
+          ],
+          "id": "Q1559370$a080a414-4268-347b-cc9f-bf83339ff267",
+          "rank": "normal",
+          "references": [
+            {
+              "hash": "d4bd87b862b12d99d26e86472d44f26858dee639",
+              "snaks": {
+                "P143": [
+                  {
+                    "snaktype": "value",
+                    "property": "P143",
+                    "hash": "f30cbd35620c4ea6d0633aaf0210a8916130469b",
+                    "datavalue": {
+                      "value": {
+                        "entity-type": "item",
+                        "numeric-id": 8447,
+                        "id": "Q8447"
+                      },
+                      "type": "wikibase-entityid"
+                    },
+                    "datatype": "wikibase-item"
+                  }
+                ]
+              },
+              "snaks-order": [
+                "P143"
+              ]
+            }
+          ]
+        }
+      ],
+      "P747": [
+        {
+          "mainsnak": {
+            "snaktype": "value",
+            "property": "P747",
+            "hash": "1476a139f0bbad427fd62d18d252fa86bf154709",
+            "datavalue": {
+              "value": {
+                "entity-type": "item",
+                "numeric-id": 126050242,
+                "id": "Q126050242"
+              },
+              "type": "wikibase-entityid"
+            },
+            "datatype": "wikibase-item"
+          },
+          "type": "statement",
+          "qualifiers": {
+            "P407": [
+              {
+                "snaktype": "value",
+                "property": "P407",
+                "hash": "daf1c4fcb58181b02dff9cc89deb084004ddae4b",
+                "datavalue": {
+                  "value": {
+                    "entity-type": "item",
+                    "numeric-id": 1860,
+                    "id": "Q1860"
+                  },
+                  "type": "wikibase-entityid"
+                },
+                "datatype": "wikibase-item"
+              }
+            ],
+            "P577": [
+              {
+                "snaktype": "value",
+                "property": "P577",
+                "hash": "de9973bce69e1e4c53708afb409e15dec518b326",
+                "datavalue": {
+                  "value": {
+                    "time": "+2013-00-00T00:00:00Z",
+                    "timezone": 0,
+                    "before": 0,
+                    "after": 0,
+                    "precision": 9,
+                    "calendarmodel": "http://www.wikidata.org/entity/Q1985727"
+                  },
+                  "type": "time"
+                },
+                "datatype": "time"
+              }
+            ]
+          },
+          "qualifiers-order": [
+            "P407",
+            "P577"
+          ],
+          "id": "Q1559370$f073b917-45f1-6b39-f14b-7d2533c4c7da",
+          "rank": "normal"
+        }
+      ],
+      "P138": [
+        {
+          "mainsnak": {
+            "snaktype": "value",
+            "property": "P138",
+            "hash": "b77c5cb1071c023b30ea08f2433cde1a6bf0ff51",
+            "datavalue": {
+              "value": {
+                "entity-type": "item",
+                "numeric-id": 1072945,
+                "id": "Q1072945"
+              },
+              "type": "wikibase-entityid"
+            },
+            "datatype": "wikibase-item"
+          },
+          "type": "statement",
+          "id": "Q1559370$40f6aaca-48a8-2a5e-11ba-7e52a28dbe58",
+          "rank": "normal"
+        }
+      ]
+    },
+    "sitelinks": {
+      "enwiki": {
+        "site": "enwiki",
+        "title": "Edict of Pîtres",
+        "badges": [],
+        "url": "https://en.wikipedia.org/wiki/Edict_of_P%C3%AEtres"
+      },
+      "eswiki": {
+        "site": "eswiki",
+        "title": "Edicto de Pistres",
+        "badges": [],
+        "url": "https://es.wikipedia.org/wiki/Edicto_de_Pistres"
+      },
+      "frwiki": {
+        "site": "frwiki",
+        "title": "Édit de Pîtres",
+        "badges": [],
+        "url": "https://fr.wikipedia.org/wiki/%C3%89dit_de_P%C3%AEtres"
+      },
+      "hrwiki": {
+        "site": "hrwiki",
+        "title": "Pistreski edikt",
+        "badges": [],
+        "url": "https://hr.wikipedia.org/wiki/Pistreski_edikt"
+      },
+      "itwiki": {
+        "site": "itwiki",
+        "title": "Editto di Pistres",
+        "badges": [],
+        "url": "https://it.wikipedia.org/wiki/Editto_di_Pistres"
+      },
+      "jawiki": {
+        "site": "jawiki",
+        "title": "ピトレ勅令",
+        "badges": [],
+        "url": "https://ja.wikipedia.org/wiki/%E3%83%94%E3%83%88%E3%83%AC%E5%8B%85%E4%BB%A4"
+      },
+      "nlwiki": {
+        "site": "nlwiki",
+        "title": "Edict van Pîtres",
+        "badges": [],
+        "url": "https://nl.wikipedia.org/wiki/Edict_van_P%C3%AEtres"
+      },
+      "ptwiki": {
+        "site": "ptwiki",
+        "title": "Édito de Pistres",
+        "badges": [],
+        "url": "https://pt.wikipedia.org/wiki/%C3%89dito_de_Pistres"
+      },
+      "shwiki": {
+        "site": "shwiki",
+        "title": "Edikt iz Pistresa",
+        "badges": [],
+        "url": "https://sh.wikipedia.org/wiki/Edikt_iz_Pistresa"
+      }
+    }
+  }
+}

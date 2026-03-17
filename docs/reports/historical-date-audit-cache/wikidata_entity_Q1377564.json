@@ -1,0 +1,1223 @@
+{
+  "saved_at": "2026-03-07T12:52:50.336Z",
+  "value": {
+    "pageid": 1316774,
+    "ns": 0,
+    "title": "Q1377564",
+    "lastrevid": 2453908644,
+    "modified": "2026-01-11T11:29:51Z",
+    "type": "item",
+    "id": "Q1377564",
+    "labels": {
+      "sq": {
+        "language": "sq",
+        "value": "Universiteti Europian i Tiranës"
+      },
+      "en": {
+        "language": "en",
+        "value": "European University of Tirana"
+      },
+      "de": {
+        "language": "de",
+        "value": "Europäische Universität von Tirana"
+      },
+      "fr": {
+        "language": "fr",
+        "value": "Université Européenne de Tirana"
+      },
+      "arz": {
+        "language": "arz",
+        "value": "الجامعة الاوروبيه فى تيرانا"
+      },
+      "fa": {
+        "language": "fa",
+        "value": "دانشگاه اروپایی تیرانا"
+      },
+      "ka": {
+        "language": "ka",
+        "value": "ევროპის უნივერსიტეტი (ტირანა)"
+      },
+      "eo": {
+        "language": "eo",
+        "value": "Universitato Eŭropa de Tirana"
+      },
+      "ja": {
+        "language": "ja",
+        "value": "ティラナ・ヨーロッパ大学"
+      }
+    },
+    "descriptions": {
+      "de": {
+        "language": "de",
+        "value": "Universität in Albanien"
+      },
+      "en": {
+        "language": "en",
+        "value": "private university in Tirana, Albania"
+      },
+      "nl": {
+        "language": "nl",
+        "value": "universiteit in Albanië"
+      },
+      "he": {
+        "language": "he",
+        "value": "אוניברסיטה באלבניה"
+      },
+      "id": {
+        "language": "id",
+        "value": "universitas di Albania"
+      },
+      "ar": {
+        "language": "ar",
+        "value": "جامعة في تيرانا، ألبانيا"
+      },
+      "fr": {
+        "language": "fr",
+        "value": "université privée située à Tirana, capitale de l'Albanie"
+      },
+      "eo": {
+        "language": "eo",
+        "value": "universitato en Tirano, Albanio"
+      },
+      "ja": {
+        "language": "ja",
+        "value": "アルバニア・ティラナにある私立大学"
+      }
+    },
+    "aliases": {
+      "sq": [
+        {
+          "language": "sq",
+          "value": "Universiteti Evropian i Tiranës"
+        },
+        {
+          "language": "sq",
+          "value": "Universiteti Europian i Tiranes"
+        },
+        {
+          "language": "sq",
+          "value": "UET"
+        }
+      ],
+      "en": [
+        {
+          "language": "en",
+          "value": "Universiteti Europian i Tiranës"
+        }
+      ],
+      "eo": [
+        {
+          "language": "eo",
+          "value": "EUT"
+        }
+      ]
+    },
+    "claims": {
+      "P625": [
+        {
+          "mainsnak": {
+            "snaktype": "value",
+            "property": "P625",
+            "hash": "7a7aba6a05594d7ff30b408da8e17b175340c1d6",
+            "datavalue": {
+              "value": {
+                "latitude": 41.32166667,
+                "longitude": 19.8025,
+                "altitude": null,
+                "precision": 0.00027777777777778,
+                "globe": "http://www.wikidata.org/entity/Q2"
+              },
+              "type": "globecoordinate"
+            },
+            "datatype": "globe-coordinate"
+          },
+          "type": "statement",
+          "id": "Q1377564$641CE073-E0A6-4DF8-9426-B07BF86ACC71",
+          "rank": "normal",
+          "references": [
+            {
+              "hash": "fa278ebfc458360e5aed63d5058cca83c46134f1",
+              "snaks": {
+                "P143": [
+                  {
+                    "snaktype": "value",
+                    "property": "P143",
+                    "hash": "e4f6d9441d0600513c4533c672b5ab472dc73694",
+                    "datavalue": {
+                      "value": {
+                        "entity-type": "item",
+                        "numeric-id": 328,
+                        "id": "Q328"
+                      },
+                      "type": "wikibase-entityid"
+                    },
+                    "datatype": "wikibase-item"
+                  }
+                ]
+              },
+              "snaks-order": [
+                "P143"
+              ]
+            }
+          ]
+        }
+      ],
+      "P646": [
+        {
+          "mainsnak": {
+            "snaktype": "value",
+            "property": "P646",
+            "hash": "12cf5d7e9d99e7019e7547ce30dcd2fd652d86db",
+            "datavalue": {
+              "value": "/m/0bbvwfc",
+              "type": "string"
+            },
+            "datatype": "external-id"
+          },
+          "type": "statement",
+          "id": "Q1377564$4282F136-42A4-4621-9F9E-41374F6C4584",
+          "rank": "normal",
+          "references": [
+            {
+              "hash": "2b00cb481cddcac7623114367489b5c194901c4a",
+              "snaks": {
+                "P248": [
+                  {
+                    "snaktype": "value",
+                    "property": "P248",
+                    "hash": "a94b740202b097dd33355e0e6c00e54b9395e5e0",
+                    "datavalue": {
+                      "value": {
+                        "entity-type": "item",
+                        "numeric-id": 15241312,
+                        "id": "Q15241312"
+                      },
+                      "type": "wikibase-entityid"
+                    },
+                    "datatype": "wikibase-item"
+                  }
+                ],
+                "P577": [
+                  {
+                    "snaktype": "value",
+                    "property": "P577",
+                    "hash": "fde79ecb015112d2f29229ccc1ec514ed3e71fa2",
+                    "datavalue": {
+                      "value": {
+                        "time": "+2013-10-28T00:00:00Z",
+                        "timezone": 0,
+                        "before": 0,
+                        "after": 0,
+                        "precision": 11,
+                        "calendarmodel": "http://www.wikidata.org/entity/Q1985727"
+                      },
+                      "type": "time"
+                    },
+                    "datatype": "time"
+                  }
+                ]
+              },
+              "snaks-order": [
+                "P248",
+                "P577"
+              ]
+            }
+          ]
+        }
+      ],
+      "P31": [
+        {
+          "mainsnak": {
+            "snaktype": "value",
+            "property": "P31",
+            "hash": "15220bcc8d0dd4cf8cd1a8ed4a98ae2db3578133",
+            "datavalue": {
+              "value": {
+                "entity-type": "item",
+                "numeric-id": 902104,
+                "id": "Q902104"
+              },
+              "type": "wikibase-entityid"
+            },
+            "datatype": "wikibase-item"
+          },
+          "type": "statement",
+          "id": "Q1377564$BC06AFB5-01B0-4E77-B4E3-ED1EDEFE98B7",
+          "rank": "normal",
+          "references": [
+            {
+              "hash": "d4bd87b862b12d99d26e86472d44f26858dee639",
+              "snaks": {
+                "P143": [
+                  {
+                    "snaktype": "value",
+                    "property": "P143",
+                    "hash": "f30cbd35620c4ea6d0633aaf0210a8916130469b",
+                    "datavalue": {
+                      "value": {
+                        "entity-type": "item",
+                        "numeric-id": 8447,
+                        "id": "Q8447"
+                      },
+                      "type": "wikibase-entityid"
+                    },
+                    "datatype": "wikibase-item"
+                  }
+                ]
+              },
+              "snaks-order": [
+                "P143"
+              ]
+            }
+          ]
+        }
+      ],
+      "P17": [
+        {
+          "mainsnak": {
+            "snaktype": "value",
+            "property": "P17",
+            "hash": "e7fb1f4a734d5a9b077d7634fa690de97913c47f",
+            "datavalue": {
+              "value": {
+                "entity-type": "item",
+                "numeric-id": 222,
+                "id": "Q222"
+              },
+              "type": "wikibase-entityid"
+            },
+            "datatype": "wikibase-item"
+          },
+          "type": "statement",
+          "id": "Q1377564$ED3CD9A7-9404-45CB-83D7-E3E11A3D6BD9",
+          "rank": "normal"
+        }
+      ],
+      "P227": [
+        {
+          "mainsnak": {
+            "snaktype": "value",
+            "property": "P227",
+            "hash": "0433d2217920f05d96d0e9d4797324a2f639c2ab",
+            "datavalue": {
+              "value": "16018020-X",
+              "type": "string"
+            },
+            "datatype": "external-id"
+          },
+          "type": "statement",
+          "id": "Q1377564$7110F2A9-393D-4826-9CFA-77CA1392ABAA",
+          "rank": "normal",
+          "references": [
+            {
+              "hash": "9a24f7c0208b05d6be97077d855671d1dfdbc0dd",
+              "snaks": {
+                "P143": [
+                  {
+                    "snaktype": "value",
+                    "property": "P143",
+                    "hash": "d38375ffe6fe142663ff55cd783aa4df4301d83d",
+                    "datavalue": {
+                      "value": {
+                        "entity-type": "item",
+                        "numeric-id": 48183,
+                        "id": "Q48183"
+                      },
+                      "type": "wikibase-entityid"
+                    },
+                    "datatype": "wikibase-item"
+                  }
+                ]
+              },
+              "snaks-order": [
+                "P143"
+              ]
+            }
+          ]
+        }
+      ],
+      "P571": [
+        {
+          "mainsnak": {
+            "snaktype": "value",
+            "property": "P571",
+            "hash": "47fd3e17c5b9f429115086f36ea29f748c63550e",
+            "datavalue": {
+              "value": {
+                "time": "+2006-00-00T00:00:00Z",
+                "timezone": 0,
+                "before": 0,
+                "after": 0,
+                "precision": 9,
+                "calendarmodel": "http://www.wikidata.org/entity/Q1985727"
+              },
+              "type": "time"
+            },
+            "datatype": "time"
+          },
+          "type": "statement",
+          "id": "Q1377564$31495BD5-0549-40E0-AB57-0BA473CD0222",
+          "rank": "normal"
+        }
+      ],
+      "P856": [
+        {
+          "mainsnak": {
+            "snaktype": "value",
+            "property": "P856",
+            "hash": "3bef4431971eefd6c6b7260c8cb96a5f0cdae660",
+            "datavalue": {
+              "value": "http://www.uet.edu.al/",
+              "type": "string"
+            },
+            "datatype": "url"
+          },
+          "type": "statement",
+          "qualifiers": {
+            "P407": [
+              {
+                "snaktype": "value",
+                "property": "P407",
+                "hash": "ced33cefc8037feb9f272202d14d9f4bea385ed4",
+                "datavalue": {
+                  "value": {
+                    "entity-type": "item",
+                    "numeric-id": 8748,
+                    "id": "Q8748"
+                  },
+                  "type": "wikibase-entityid"
+                },
+                "datatype": "wikibase-item"
+              }
+            ]
+          },
+          "qualifiers-order": [
+            "P407"
+          ],
+          "id": "Q1377564$F91F0E34-F48F-438E-85DF-EEEDB61DBD9B",
+          "rank": "normal",
+          "references": [
+            {
+              "hash": "fa278ebfc458360e5aed63d5058cca83c46134f1",
+              "snaks": {
+                "P143": [
+                  {
+                    "snaktype": "value",
+                    "property": "P143",
+                    "hash": "e4f6d9441d0600513c4533c672b5ab472dc73694",
+                    "datavalue": {
+                      "value": {
+                        "entity-type": "item",
+                        "numeric-id": 328,
+                        "id": "Q328"
+                      },
+                      "type": "wikibase-entityid"
+                    },
+                    "datatype": "wikibase-item"
+                  }
+                ]
+              },
+              "snaks-order": [
+                "P143"
+              ]
+            }
+          ]
+        }
+      ],
+      "P131": [
+        {
+          "mainsnak": {
+            "snaktype": "value",
+            "property": "P131",
+            "hash": "0b2a923f04c5bcfad62ccd7f9453545f83c0ab32",
+            "datavalue": {
+              "value": {
+                "entity-type": "item",
+                "numeric-id": 19689,
+                "id": "Q19689"
+              },
+              "type": "wikibase-entityid"
+            },
+            "datatype": "wikibase-item"
+          },
+          "type": "statement",
+          "id": "Q1377564$EA874B08-CAE9-48F0-A5B1-10C6C940186F",
+          "rank": "normal",
+          "references": [
+            {
+              "hash": "d4bd87b862b12d99d26e86472d44f26858dee639",
+              "snaks": {
+                "P143": [
+                  {
+                    "snaktype": "value",
+                    "property": "P143",
+                    "hash": "f30cbd35620c4ea6d0633aaf0210a8916130469b",
+                    "datavalue": {
+                      "value": {
+                        "entity-type": "item",
+                        "numeric-id": 8447,
+                        "id": "Q8447"
+                      },
+                      "type": "wikibase-entityid"
+                    },
+                    "datatype": "wikibase-item"
+                  }
+                ]
+              },
+              "snaks-order": [
+                "P143"
+              ]
+            }
+          ]
+        }
+      ],
+      "P213": [
+        {
+          "mainsnak": {
+            "snaktype": "value",
+            "property": "P213",
+            "hash": "29514daf096eb551916a78fe2fec99eba5096a27",
+            "datavalue": {
+              "value": "0000000102812385",
+              "type": "string"
+            },
+            "datatype": "external-id"
+          },
+          "type": "statement",
+          "id": "Q1377564$B8F2296F-D1C1-4E2A-B084-1EF72BE3EC5A",
+          "rank": "normal",
+          "references": [
+            {
+              "hash": "5a761c7a986f4a5cf8cefbfc18e5a5ae5133d44b",
+              "snaks": {
+                "P248": [
+                  {
+                    "snaktype": "value",
+                    "property": "P248",
+                    "hash": "2e92dfb9200a54eef9b44e474b97c4dd6dd90461",
+                    "datavalue": {
+                      "value": {
+                        "entity-type": "item",
+                        "numeric-id": 53705033,
+                        "id": "Q53705033"
+                      },
+                      "type": "wikibase-entityid"
+                    },
+                    "datatype": "wikibase-item"
+                  }
+                ]
+              },
+              "snaks-order": [
+                "P248"
+              ]
+            }
+          ]
+        }
+      ],
+      "P3500": [
+        {
+          "mainsnak": {
+            "snaktype": "value",
+            "property": "P3500",
+            "hash": "076b8f20e92ed36f2ad0e48a488608b218d9f122",
+            "datavalue": {
+              "value": "341331",
+              "type": "string"
+            },
+            "datatype": "external-id"
+          },
+          "type": "statement",
+          "id": "Q1377564$1C7D77A9-7CBE-4DCC-88F6-FC7F2B3CC7EE",
+          "rank": "normal",
+          "references": [
+            {
+              "hash": "2834ac5da275724a6354a73d2d2a89ae956042a9",
+              "snaks": {
+                "P248": [
+                  {
+                    "snaktype": "value",
+                    "property": "P248",
+                    "hash": "654ac97d41e766b6860b1b7acd87f11a6b00c4f9",
+                    "datavalue": {
+                      "value": {
+                        "entity-type": "item",
+                        "numeric-id": 64159407,
+                        "id": "Q64159407"
+                      },
+                      "type": "wikibase-entityid"
+                    },
+                    "datatype": "wikibase-item"
+                  }
+                ]
+              },
+              "snaks-order": [
+                "P248"
+              ]
+            }
+          ]
+        }
+      ],
+      "P2427": [
+        {
+          "mainsnak": {
+            "snaktype": "value",
+            "property": "P2427",
+            "hash": "e1318ad53009677ca93378aa6a2215b245cfa88b",
+            "datavalue": {
+              "value": "grid.460641.1",
+              "type": "string"
+            },
+            "datatype": "external-id"
+          },
+          "type": "statement",
+          "id": "Q1377564$05F7EC68-2198-44F3-9C42-EE2461DF6831",
+          "rank": "normal",
+          "references": [
+            {
+              "hash": "9e0f71f0abd6e9692cbd2fec4b44e5abc3ce6f0c",
+              "snaks": {
+                "P248": [
+                  {
+                    "snaktype": "value",
+                    "property": "P248",
+                    "hash": "853b3c0b94612443127e3158e7a97662ae38d740",
+                    "datavalue": {
+                      "value": {
+                        "entity-type": "item",
+                        "numeric-id": 53705075,
+                        "id": "Q53705075"
+                      },
+                      "type": "wikibase-entityid"
+                    },
+                    "datatype": "wikibase-item"
+                  }
+                ]
+              },
+              "snaks-order": [
+                "P248"
+              ]
+            },
+            {
+              "hash": "a1914c8952a5bc482eafeb26be4fda504fe701f9",
+              "snaks": {
+                "P248": [
+                  {
+                    "snaktype": "value",
+                    "property": "P248",
+                    "hash": "31f77799b27e462a188007d80e9cae011a037bca",
+                    "datavalue": {
+                      "value": {
+                        "entity-type": "item",
+                        "numeric-id": 53705036,
+                        "id": "Q53705036"
+                      },
+                      "type": "wikibase-entityid"
+                    },
+                    "datatype": "wikibase-item"
+                  }
+                ]
+              },
+              "snaks-order": [
+                "P248"
+              ]
+            }
+          ]
+        }
+      ],
+      "P6366": [
+        {
+          "mainsnak": {
+            "snaktype": "value",
+            "property": "P6366",
+            "hash": "0d3b6d9640f12fd152c8fe0b547e272082a7451f",
+            "datavalue": {
+              "value": "109705148",
+              "type": "string"
+            },
+            "datatype": "external-id"
+          },
+          "type": "statement",
+          "id": "Q1377564$5E5F939D-EF71-4B44-8691-90B0EF5CA4E2",
+          "rank": "normal",
+          "references": [
+            {
+              "hash": "715857b56e977fb003c3df217e12148d01a3a99f",
+              "snaks": {
+                "P248": [
+                  {
+                    "snaktype": "value",
+                    "property": "P248",
+                    "hash": "2995ad06d424d751f036cb92149fada89fe252d9",
+                    "datavalue": {
+                      "value": {
+                        "entity-type": "item",
+                        "numeric-id": 60683589,
+                        "id": "Q60683589"
+                      },
+                      "type": "wikibase-entityid"
+                    },
+                    "datatype": "wikibase-item"
+                  }
+                ],
+                "P2427": [
+                  {
+                    "snaktype": "value",
+                    "property": "P2427",
+                    "hash": "e1318ad53009677ca93378aa6a2215b245cfa88b",
+                    "datavalue": {
+                      "value": "grid.460641.1",
+                      "type": "string"
+                    },
+                    "datatype": "external-id"
+                  }
+                ],
+                "P813": [
+                  {
+                    "snaktype": "value",
+                    "property": "P813",
+                    "hash": "74c664545729bbe3e2b6db4bfa3d58ebdeb8e9f0",
+                    "datavalue": {
+                      "value": {
+                        "time": "+2019-01-19T00:00:00Z",
+                        "timezone": 0,
+                        "before": 0,
+                        "after": 0,
+                        "precision": 11,
+                        "calendarmodel": "http://www.wikidata.org/entity/Q1985727"
+                      },
+                      "type": "time"
+                    },
+                    "datatype": "time"
+                  }
+                ]
+              },
+              "snaks-order": [
+                "P248",
+                "P2427",
+                "P813"
+              ]
+            }
+          ]
+        }
+      ],
+      "P2196": [
+        {
+          "mainsnak": {
+            "snaktype": "value",
+            "property": "P2196",
+            "hash": "0d37de123c582a71b59a995d088d22f7d183874f",
+            "datavalue": {
+              "value": {
+                "amount": "+2952",
+                "unit": "1"
+              },
+              "type": "quantity"
+            },
+            "datatype": "quantity"
+          },
+          "type": "statement",
+          "id": "Q1377564$860146E8-A067-4D96-AD6C-211441B85BAF",
+          "rank": "normal",
+          "references": [
+            {
+              "hash": "d3d007fe59d6c88f584ad7cacc27a304763dfbf3",
+              "snaks": {
+                "P143": [
+                  {
+                    "snaktype": "value",
+                    "property": "P143",
+                    "hash": "d38375ffe6fe142663ff55cd783aa4df4301d83d",
+                    "datavalue": {
+                      "value": {
+                        "entity-type": "item",
+                        "numeric-id": 48183,
+                        "id": "Q48183"
+                      },
+                      "type": "wikibase-entityid"
+                    },
+                    "datatype": "wikibase-item"
+                  }
+                ],
+                "P4656": [
+                  {
+                    "snaktype": "value",
+                    "property": "P4656",
+                    "hash": "313b13a908e0dcf0a746b4dce85577b826ae807a",
+                    "datavalue": {
+                      "value": "https://de.wikipedia.org/w/index.php?title=Europäische_Universität_von_Tirana&oldid=142581301",
+                      "type": "string"
+                    },
+                    "datatype": "url"
+                  }
+                ]
+              },
+              "snaks-order": [
+                "P143",
+                "P4656"
+              ]
+            }
+          ]
+        }
+      ],
+      "P244": [
+        {
+          "mainsnak": {
+            "snaktype": "value",
+            "property": "P244",
+            "hash": "6046f14f1eb1ba1a9e511841595abe07b02c4e1d",
+            "datavalue": {
+              "value": "no2014069742",
+              "type": "string"
+            },
+            "datatype": "external-id"
+          },
+          "type": "statement",
+          "id": "Q1377564$061E10E4-A17D-4BFC-B8CB-909914304D54",
+          "rank": "normal",
+          "references": [
+            {
+              "hash": "14fa5898ac764e0660517aa07ea0bbba505f262b",
+              "snaks": {
+                "P248": [
+                  {
+                    "snaktype": "value",
+                    "property": "P248",
+                    "hash": "6b7d4330c4aac4caec4ede9de0311ce273f88ecd",
+                    "datavalue": {
+                      "value": {
+                        "entity-type": "item",
+                        "numeric-id": 54919,
+                        "id": "Q54919"
+                      },
+                      "type": "wikibase-entityid"
+                    },
+                    "datatype": "wikibase-item"
+                  }
+                ],
+                "P813": [
+                  {
+                    "snaktype": "value",
+                    "property": "P813",
+                    "hash": "e0d08f96012770600b942d5e8563b2a3499cba8e",
+                    "datavalue": {
+                      "value": {
+                        "time": "+2019-03-06T00:00:00Z",
+                        "timezone": 0,
+                        "before": 0,
+                        "after": 0,
+                        "precision": 11,
+                        "calendarmodel": "http://www.wikidata.org/entity/Q1985727"
+                      },
+                      "type": "time"
+                    },
+                    "datatype": "time"
+                  }
+                ]
+              },
+              "snaks-order": [
+                "P248",
+                "P813"
+              ]
+            }
+          ]
+        }
+      ],
+      "P2013": [
+        {
+          "mainsnak": {
+            "snaktype": "value",
+            "property": "P2013",
+            "hash": "ca8a5971375d3202658388f533efa39c0f642f34",
+            "datavalue": {
+              "value": "UniversitetiEuropianiTiranes",
+              "type": "string"
+            },
+            "datatype": "external-id"
+          },
+          "type": "statement",
+          "id": "Q1377564$27E16B6B-2453-4078-969E-4594FD74ABD3",
+          "rank": "normal",
+          "references": [
+            {
+              "hash": "2180c4b4fd82a62548bced89f6871531e81f6e17",
+              "snaks": {
+                "P854": [
+                  {
+                    "snaktype": "value",
+                    "property": "P854",
+                    "hash": "9afde4243391578ae2a08a110355ffc45d7afa63",
+                    "datavalue": {
+                      "value": "http://www.uet.edu.al/",
+                      "type": "string"
+                    },
+                    "datatype": "url"
+                  }
+                ],
+                "P813": [
+                  {
+                    "snaktype": "value",
+                    "property": "P813",
+                    "hash": "b878c506460bfde5171b53b8dabada6fbe4301af",
+                    "datavalue": {
+                      "value": {
+                        "time": "+2019-05-22T00:00:00Z",
+                        "timezone": 0,
+                        "before": 0,
+                        "after": 0,
+                        "precision": 11,
+                        "calendarmodel": "http://www.wikidata.org/entity/Q1985727"
+                      },
+                      "type": "time"
+                    },
+                    "datatype": "time"
+                  }
+                ],
+                "P1065": [
+                  {
+                    "snaktype": "value",
+                    "property": "P1065",
+                    "hash": "e515e4a250eb1c5f0b02696bc6aa66a5d5d73100",
+                    "datavalue": {
+                      "value": "https://web.archive.org/web/20141218190926/http://uet.edu.al/",
+                      "type": "string"
+                    },
+                    "datatype": "url"
+                  }
+                ],
+                "P2960": [
+                  {
+                    "snaktype": "value",
+                    "property": "P2960",
+                    "hash": "9f8b7d44114ec116abd37fb1c5ed8feb904b7b84",
+                    "datavalue": {
+                      "value": {
+                        "time": "+2014-12-18T00:00:00Z",
+                        "timezone": 0,
+                        "before": 0,
+                        "after": 0,
+                        "precision": 11,
+                        "calendarmodel": "http://www.wikidata.org/entity/Q1985727"
+                      },
+                      "type": "time"
+                    },
+                    "datatype": "time"
+                  }
+                ]
+              },
+              "snaks-order": [
+                "P854",
+                "P813",
+                "P1065",
+                "P2960"
+              ]
+            }
+          ]
+        }
+      ],
+      "P2003": [
+        {
+          "mainsnak": {
+            "snaktype": "value",
+            "property": "P2003",
+            "hash": "308142cd78191baf612307817db271dc4b5f6f9b",
+            "datavalue": {
+              "value": "universitetieuropianitiranes",
+              "type": "string"
+            },
+            "datatype": "external-id"
+          },
+          "type": "statement",
+          "id": "Q1377564$4E344DB0-9446-469D-A96C-46813327E39C",
+          "rank": "normal",
+          "references": [
+            {
+              "hash": "2180c4b4fd82a62548bced89f6871531e81f6e17",
+              "snaks": {
+                "P854": [
+                  {
+                    "snaktype": "value",
+                    "property": "P854",
+                    "hash": "9afde4243391578ae2a08a110355ffc45d7afa63",
+                    "datavalue": {
+                      "value": "http://www.uet.edu.al/",
+                      "type": "string"
+                    },
+                    "datatype": "url"
+                  }
+                ],
+                "P813": [
+                  {
+                    "snaktype": "value",
+                    "property": "P813",
+                    "hash": "b878c506460bfde5171b53b8dabada6fbe4301af",
+                    "datavalue": {
+                      "value": {
+                        "time": "+2019-05-22T00:00:00Z",
+                        "timezone": 0,
+                        "before": 0,
+                        "after": 0,
+                        "precision": 11,
+                        "calendarmodel": "http://www.wikidata.org/entity/Q1985727"
+                      },
+                      "type": "time"
+                    },
+                    "datatype": "time"
+                  }
+                ],
+                "P1065": [
+                  {
+                    "snaktype": "value",
+                    "property": "P1065",
+                    "hash": "e515e4a250eb1c5f0b02696bc6aa66a5d5d73100",
+                    "datavalue": {
+                      "value": "https://web.archive.org/web/20141218190926/http://uet.edu.al/",
+                      "type": "string"
+                    },
+                    "datatype": "url"
+                  }
+                ],
+                "P2960": [
+                  {
+                    "snaktype": "value",
+                    "property": "P2960",
+                    "hash": "9f8b7d44114ec116abd37fb1c5ed8feb904b7b84",
+                    "datavalue": {
+                      "value": {
+                        "time": "+2014-12-18T00:00:00Z",
+                        "timezone": 0,
+                        "before": 0,
+                        "after": 0,
+                        "precision": 11,
+                        "calendarmodel": "http://www.wikidata.org/entity/Q1985727"
+                      },
+                      "type": "time"
+                    },
+                    "datatype": "time"
+                  }
+                ]
+              },
+              "snaks-order": [
+                "P854",
+                "P813",
+                "P1065",
+                "P2960"
+              ]
+            }
+          ]
+        }
+      ],
+      "P6782": [
+        {
+          "mainsnak": {
+            "snaktype": "value",
+            "property": "P6782",
+            "hash": "97830a1f65e415c7ba07ad1bc16bf674998fb40c",
+            "datavalue": {
+              "value": "05r7c5x85",
+              "type": "string"
+            },
+            "datatype": "external-id"
+          },
+          "type": "statement",
+          "id": "Q1377564$F20B901C-B17A-4CCA-8940-C016465E01A0",
+          "rank": "normal"
+        }
+      ],
+      "P214": [
+        {
+          "mainsnak": {
+            "snaktype": "value",
+            "property": "P214",
+            "hash": "a0555835d7036424e850ff9b60f8da71c160a79e",
+            "datavalue": {
+              "value": "153487369",
+              "type": "string"
+            },
+            "datatype": "external-id"
+          },
+          "type": "statement",
+          "id": "Q1377564$83395E58-E6B1-4F38-BE0A-E9CF1261FC48",
+          "rank": "normal"
+        }
+      ],
+      "P1813": [
+        {
+          "mainsnak": {
+            "snaktype": "value",
+            "property": "P1813",
+            "hash": "c9ece5b175c5d1fba6df7fa345f4f29b6a3f51e0",
+            "datavalue": {
+              "value": {
+                "text": "UET",
+                "language": "sq"
+              },
+              "type": "monolingualtext"
+            },
+            "datatype": "monolingualtext"
+          },
+          "type": "statement",
+          "id": "Q1377564$2760e452-4101-a889-39f0-917c322e8686",
+          "rank": "normal"
+        }
+      ],
+      "P1889": [
+        {
+          "mainsnak": {
+            "snaktype": "value",
+            "property": "P1889",
+            "hash": "bc987f5beccec296d9788c00c0b8e68eafe85d63",
+            "datavalue": {
+              "value": {
+                "entity-type": "item",
+                "numeric-id": 117260442,
+                "id": "Q117260442"
+              },
+              "type": "wikibase-entityid"
+            },
+            "datatype": "wikibase-item"
+          },
+          "type": "statement",
+          "id": "Q1377564$9466b4d7-4922-a604-7816-1ffc098f4318",
+          "rank": "normal"
+        }
+      ],
+      "P13092": [
+        {
+          "mainsnak": {
+            "snaktype": "value",
+            "property": "P13092",
+            "hash": "254aaeb4f40d1078c1695ab7593269ec97a0be26",
+            "datavalue": {
+              "value": "K000195328",
+              "type": "string"
+            },
+            "datatype": "external-id"
+          },
+          "type": "statement",
+          "id": "Q1377564$F7776BE4-28AD-4E54-8141-96B11FE14C7D",
+          "rank": "normal"
+        }
+      ],
+      "P910": [
+        {
+          "mainsnak": {
+            "snaktype": "value",
+            "property": "P910",
+            "hash": "2f575713a684eb2bc206f0a1be177d5cf963bb40",
+            "datavalue": {
+              "value": {
+                "entity-type": "item",
+                "numeric-id": 110801026,
+                "id": "Q110801026"
+              },
+              "type": "wikibase-entityid"
+            },
+            "datatype": "wikibase-item"
+          },
+          "type": "statement",
+          "id": "Q1377564$8d66601d-444d-1878-f4bb-b10f22abcdcc",
+          "rank": "normal"
+        }
+      ],
+      "P4195": [
+        {
+          "mainsnak": {
+            "snaktype": "value",
+            "property": "P4195",
+            "hash": "e2c4a279466c4294f4c973c48d6bd2f8ae9cd36e",
+            "datavalue": {
+              "value": {
+                "entity-type": "item",
+                "numeric-id": 110788435,
+                "id": "Q110788435"
+              },
+              "type": "wikibase-entityid"
+            },
+            "datatype": "wikibase-item"
+          },
+          "type": "statement",
+          "id": "Q1377564$a3c910cd-4b13-a364-9a29-7ce7a2a89df6",
+          "rank": "normal"
+        }
+      ],
+      "P13591": [
+        {
+          "mainsnak": {
+            "snaktype": "value",
+            "property": "P13591",
+            "hash": "31ff1d39bb9925af2a13cfed141a96e04bb68467",
+            "datavalue": {
+              "value": "group/1066199b-5f61-4bdd-bd61-4639a7990640",
+              "type": "string"
+            },
+            "datatype": "external-id"
+          },
+          "type": "statement",
+          "id": "Q1377564$6C3656EA-114B-450D-AB17-A3927E41DA54",
+          "rank": "normal"
+        }
+      ],
+      "P11892": [
+        {
+          "mainsnak": {
+            "snaktype": "value",
+            "property": "P11892",
+            "hash": "ede5116cd224599d6fb9ce53229683dc7f591389",
+            "datavalue": {
+              "value": "universitetieuropianitiranes",
+              "type": "string"
+            },
+            "datatype": "external-id"
+          },
+          "type": "statement",
+          "id": "Q1377564$25F5A1E0-C11F-444F-A14D-AD86673828F5",
+          "rank": "normal"
+        }
+      ]
+    },
+    "sitelinks": {
+      "arzwiki": {
+        "site": "arzwiki",
+        "title": "الجامعة الاوروبيه فى تيرانا",
+        "badges": [],
+        "url": "https://arz.wikipedia.org/wiki/%D8%A7%D9%84%D8%AC%D8%A7%D9%85%D8%B9%D8%A9_%D8%A7%D9%84%D8%A7%D9%88%D8%B1%D9%88%D8%A8%D9%8A%D9%87_%D9%81%D9%89_%D8%AA%D9%8A%D8%B1%D8%A7%D9%86%D8%A7"
+      },
+      "dewiki": {
+        "site": "dewiki",
+        "title": "Europäische Universität von Tirana",
+        "badges": [],
+        "url": "https://de.wikipedia.org/wiki/Europ%C3%A4ische_Universit%C3%A4t_von_Tirana"
+      },
+      "enwiki": {
+        "site": "enwiki",
+        "title": "European University of Tirana",
+        "badges": [],
+        "url": "https://en.wikipedia.org/wiki/European_University_of_Tirana"
+      },
+      "fawiki": {
+        "site": "fawiki",
+        "title": "دانشگاه اروپایی تیرانا",
+        "badges": [],
+        "url": "https://fa.wikipedia.org/wiki/%D8%AF%D8%A7%D9%86%D8%B4%DA%AF%D8%A7%D9%87_%D8%A7%D8%B1%D9%88%D9%BE%D8%A7%DB%8C%DB%8C_%D8%AA%DB%8C%D8%B1%D8%A7%D9%86%D8%A7"
+      },
+      "frwiki": {
+        "site": "frwiki",
+        "title": "Université européenne de Tirana",
+        "badges": [],
+        "url": "https://fr.wikipedia.org/wiki/Universit%C3%A9_europ%C3%A9enne_de_Tirana"
+      },
+      "kawiki": {
+        "site": "kawiki",
+        "title": "ევროპის უნივერსიტეტი (ტირანა)",
+        "badges": [],
+        "url": "https://ka.wikipedia.org/wiki/%E1%83%94%E1%83%95%E1%83%A0%E1%83%9D%E1%83%9E%E1%83%98%E1%83%A1_%E1%83%A3%E1%83%9C%E1%83%98%E1%83%95%E1%83%94%E1%83%A0%E1%83%A1%E1%83%98%E1%83%A2%E1%83%94%E1%83%A2%E1%83%98_(%E1%83%A2%E1%83%98%E1%83%A0%E1%83%90%E1%83%9C%E1%83%90)"
+      },
+      "sqwiki": {
+        "site": "sqwiki",
+        "title": "Universiteti Europian i Tiranës",
+        "badges": [],
+        "url": "https://sq.wikipedia.org/wiki/Universiteti_Europian_i_Tiran%C3%ABs"
+      }
+    }
+  }
+}

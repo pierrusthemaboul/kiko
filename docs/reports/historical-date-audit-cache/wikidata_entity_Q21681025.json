@@ -1,0 +1,861 @@
+{
+  "saved_at": "2026-03-07T12:56:15.266Z",
+  "value": {
+    "pageid": 23719866,
+    "ns": 0,
+    "title": "Q21681025",
+    "lastrevid": 2454543905,
+    "modified": "2026-01-13T13:51:10Z",
+    "type": "item",
+    "id": "Q21681025",
+    "labels": {
+      "en": {
+        "language": "en",
+        "value": "Gare de Port-d'Atelier-Amance"
+      },
+      "eo": {
+        "language": "eo",
+        "value": "Port-d'Atelier-Amance"
+      },
+      "vec": {
+        "language": "vec",
+        "value": "stasion de Port-d'Atelier-Amance"
+      },
+      "fr": {
+        "language": "fr",
+        "value": "Port-d'Atelier-Amance"
+      }
+    },
+    "descriptions": {
+      "nl": {
+        "language": "nl",
+        "value": "spoorwegstation in Amance (Haute-Saône), Frankrijk"
+      },
+      "id": {
+        "language": "id",
+        "value": "stasiun kereta api di Perancis"
+      },
+      "ar": {
+        "language": "ar",
+        "value": "محطة قطار في فرنسا"
+      },
+      "en": {
+        "language": "en",
+        "value": "railway station in Amance, France"
+      },
+      "de": {
+        "language": "de",
+        "value": "Bahnhof in Frankreich"
+      },
+      "ro": {
+        "language": "ro",
+        "value": "gară din Franța"
+      },
+      "pl": {
+        "language": "pl",
+        "value": "stacja kolejowa we Francji"
+      },
+      "eo": {
+        "language": "eo",
+        "value": "fervoja stacidomo en Francio"
+      },
+      "fr": {
+        "language": "fr",
+        "value": "gare ferroviaire française"
+      },
+      "ca": {
+        "language": "ca",
+        "value": "estació de tren a França"
+      },
+      "lt": {
+        "language": "lt",
+        "value": "traukinių stotis Prancūzijoje"
+      },
+      "it": {
+        "language": "it",
+        "value": "stazione ferroviaria francese"
+      },
+      "es": {
+        "language": "es",
+        "value": "estación de tren en Francia"
+      },
+      "uk": {
+        "language": "uk",
+        "value": "залізнична станція у Франції"
+      },
+      "el": {
+        "language": "el",
+        "value": "σιδηροδρομικός σταθμός στη Γαλλία"
+      }
+    },
+    "aliases": {
+      "fr": [
+        {
+          "language": "fr",
+          "value": "gare de Port-d'Atelier-Amance"
+        }
+      ]
+    },
+    "claims": {
+      "P31": [
+        {
+          "mainsnak": {
+            "snaktype": "value",
+            "property": "P31",
+            "hash": "12a4103fbfd98ec75d5d9269014f78fb822e8d00",
+            "datavalue": {
+              "value": {
+                "entity-type": "item",
+                "numeric-id": 55488,
+                "id": "Q55488"
+              },
+              "type": "wikibase-entityid"
+            },
+            "datatype": "wikibase-item"
+          },
+          "type": "statement",
+          "id": "Q21681025$A2F05CE3-5C74-4BF3-A751-659F2638E8F6",
+          "rank": "normal"
+        }
+      ],
+      "P131": [
+        {
+          "mainsnak": {
+            "snaktype": "value",
+            "property": "P131",
+            "hash": "b311098365a040756137fb2c42f1fadaacb42e67",
+            "datavalue": {
+              "value": {
+                "entity-type": "item",
+                "numeric-id": 453606,
+                "id": "Q453606"
+              },
+              "type": "wikibase-entityid"
+            },
+            "datatype": "wikibase-item"
+          },
+          "type": "statement",
+          "id": "Q21681025$BCFD4724-CF70-4535-B179-09A26478656E",
+          "rank": "normal",
+          "references": [
+            {
+              "hash": "d4bd87b862b12d99d26e86472d44f26858dee639",
+              "snaks": {
+                "P143": [
+                  {
+                    "snaktype": "value",
+                    "property": "P143",
+                    "hash": "f30cbd35620c4ea6d0633aaf0210a8916130469b",
+                    "datavalue": {
+                      "value": {
+                        "entity-type": "item",
+                        "numeric-id": 8447,
+                        "id": "Q8447"
+                      },
+                      "type": "wikibase-entityid"
+                    },
+                    "datatype": "wikibase-item"
+                  }
+                ]
+              },
+              "snaks-order": [
+                "P143"
+              ]
+            }
+          ]
+        }
+      ],
+      "P17": [
+        {
+          "mainsnak": {
+            "snaktype": "value",
+            "property": "P17",
+            "hash": "c05db5d169c2560b9799d567a803d20a392f53e4",
+            "datavalue": {
+              "value": {
+                "entity-type": "item",
+                "numeric-id": 142,
+                "id": "Q142"
+              },
+              "type": "wikibase-entityid"
+            },
+            "datatype": "wikibase-item"
+          },
+          "type": "statement",
+          "id": "Q21681025$35D0602E-7E42-4E7D-9ED4-0B164DB6D31A",
+          "rank": "normal"
+        }
+      ],
+      "P373": [
+        {
+          "mainsnak": {
+            "snaktype": "value",
+            "property": "P373",
+            "hash": "f4cb8f55e9af84502540c859d26b07f1606c1b12",
+            "datavalue": {
+              "value": "Gare de Port-d'Atelier-Amance",
+              "type": "string"
+            },
+            "datatype": "string"
+          },
+          "type": "statement",
+          "id": "Q21681025$B62213E9-BECE-433C-BF2C-8C7E8217FAD2",
+          "rank": "normal"
+        }
+      ],
+      "P625": [
+        {
+          "mainsnak": {
+            "snaktype": "value",
+            "property": "P625",
+            "hash": "15114a720e7f8235a85609e0d7b3ee1d7085ab6e",
+            "datavalue": {
+              "value": {
+                "latitude": 47.762543,
+                "longitude": 6.040072,
+                "altitude": null,
+                "precision": 0.000001,
+                "globe": "http://www.wikidata.org/entity/Q2"
+              },
+              "type": "globecoordinate"
+            },
+            "datatype": "globe-coordinate"
+          },
+          "type": "statement",
+          "id": "Q21681025$C8CB6A7A-CF0C-4507-8058-2D3DC505715D",
+          "rank": "normal",
+          "references": [
+            {
+              "hash": "d4bd87b862b12d99d26e86472d44f26858dee639",
+              "snaks": {
+                "P143": [
+                  {
+                    "snaktype": "value",
+                    "property": "P143",
+                    "hash": "f30cbd35620c4ea6d0633aaf0210a8916130469b",
+                    "datavalue": {
+                      "value": {
+                        "entity-type": "item",
+                        "numeric-id": 8447,
+                        "id": "Q8447"
+                      },
+                      "type": "wikibase-entityid"
+                    },
+                    "datatype": "wikibase-item"
+                  }
+                ]
+              },
+              "snaks-order": [
+                "P143"
+              ]
+            }
+          ]
+        }
+      ],
+      "P81": [
+        {
+          "mainsnak": {
+            "snaktype": "value",
+            "property": "P81",
+            "hash": "fccdfd38925adf800f57b748135e09fbdcb73178",
+            "datavalue": {
+              "value": {
+                "entity-type": "item",
+                "numeric-id": 779381,
+                "id": "Q779381"
+              },
+              "type": "wikibase-entityid"
+            },
+            "datatype": "wikibase-item"
+          },
+          "type": "statement",
+          "id": "Q21681025$1EFE7E11-B007-40AC-8FDC-57A8FF43360F",
+          "rank": "normal",
+          "references": [
+            {
+              "hash": "d4bd87b862b12d99d26e86472d44f26858dee639",
+              "snaks": {
+                "P143": [
+                  {
+                    "snaktype": "value",
+                    "property": "P143",
+                    "hash": "f30cbd35620c4ea6d0633aaf0210a8916130469b",
+                    "datavalue": {
+                      "value": {
+                        "entity-type": "item",
+                        "numeric-id": 8447,
+                        "id": "Q8447"
+                      },
+                      "type": "wikibase-entityid"
+                    },
+                    "datatype": "wikibase-item"
+                  }
+                ]
+              },
+              "snaks-order": [
+                "P143"
+              ]
+            }
+          ]
+        }
+      ],
+      "P18": [
+        {
+          "mainsnak": {
+            "snaktype": "value",
+            "property": "P18",
+            "hash": "d9bea43ed8077a969655713911394793a7ce40d4",
+            "datavalue": {
+              "value": "Port-d'Atelier-Amance- La gare.JPG",
+              "type": "string"
+            },
+            "datatype": "commonsMedia"
+          },
+          "type": "statement",
+          "id": "Q21681025$AA7C97B3-D5FC-404A-802D-BC9E1B584D68",
+          "rank": "normal",
+          "references": [
+            {
+              "hash": "d4bd87b862b12d99d26e86472d44f26858dee639",
+              "snaks": {
+                "P143": [
+                  {
+                    "snaktype": "value",
+                    "property": "P143",
+                    "hash": "f30cbd35620c4ea6d0633aaf0210a8916130469b",
+                    "datavalue": {
+                      "value": {
+                        "entity-type": "item",
+                        "numeric-id": 8447,
+                        "id": "Q8447"
+                      },
+                      "type": "wikibase-entityid"
+                    },
+                    "datatype": "wikibase-item"
+                  }
+                ]
+              },
+              "snaks-order": [
+                "P143"
+              ]
+            }
+          ]
+        }
+      ],
+      "P1619": [
+        {
+          "mainsnak": {
+            "snaktype": "value",
+            "property": "P1619",
+            "hash": "9312edbcd8ba9824d6a846f0e5bc5f9e413ad230",
+            "datavalue": {
+              "value": {
+                "time": "+1858-02-22T00:00:00Z",
+                "timezone": 0,
+                "before": 0,
+                "after": 0,
+                "precision": 11,
+                "calendarmodel": "http://www.wikidata.org/entity/Q1985727"
+              },
+              "type": "time"
+            },
+            "datatype": "time"
+          },
+          "type": "statement",
+          "id": "Q21681025$6560DADA-433F-4A7A-A672-3B5023FF2C49",
+          "rank": "normal",
+          "references": [
+            {
+              "hash": "d4bd87b862b12d99d26e86472d44f26858dee639",
+              "snaks": {
+                "P143": [
+                  {
+                    "snaktype": "value",
+                    "property": "P143",
+                    "hash": "f30cbd35620c4ea6d0633aaf0210a8916130469b",
+                    "datavalue": {
+                      "value": {
+                        "entity-type": "item",
+                        "numeric-id": 8447,
+                        "id": "Q8447"
+                      },
+                      "type": "wikibase-entityid"
+                    },
+                    "datatype": "wikibase-item"
+                  }
+                ]
+              },
+              "snaks-order": [
+                "P143"
+              ]
+            }
+          ]
+        }
+      ],
+      "P127": [
+        {
+          "mainsnak": {
+            "snaktype": "value",
+            "property": "P127",
+            "hash": "cb6a3713e7cda0c6e5c3fc55479393d90b930a0e",
+            "datavalue": {
+              "value": {
+                "entity-type": "item",
+                "numeric-id": 13646,
+                "id": "Q13646"
+              },
+              "type": "wikibase-entityid"
+            },
+            "datatype": "wikibase-item"
+          },
+          "type": "statement",
+          "id": "Q21681025$7B5CAC84-F100-44EB-AB44-9956228EAA7F",
+          "rank": "normal",
+          "references": [
+            {
+              "hash": "d4bd87b862b12d99d26e86472d44f26858dee639",
+              "snaks": {
+                "P143": [
+                  {
+                    "snaktype": "value",
+                    "property": "P143",
+                    "hash": "f30cbd35620c4ea6d0633aaf0210a8916130469b",
+                    "datavalue": {
+                      "value": {
+                        "entity-type": "item",
+                        "numeric-id": 8447,
+                        "id": "Q8447"
+                      },
+                      "type": "wikibase-entityid"
+                    },
+                    "datatype": "wikibase-item"
+                  }
+                ]
+              },
+              "snaks-order": [
+                "P143"
+              ]
+            }
+          ]
+        }
+      ],
+      "P137": [
+        {
+          "mainsnak": {
+            "snaktype": "value",
+            "property": "P137",
+            "hash": "ac17695d1271c41426b449e93a4d27e57aa2fda6",
+            "datavalue": {
+              "value": {
+                "entity-type": "item",
+                "numeric-id": 13646,
+                "id": "Q13646"
+              },
+              "type": "wikibase-entityid"
+            },
+            "datatype": "wikibase-item"
+          },
+          "type": "statement",
+          "id": "Q21681025$748F2BEA-8566-4F48-B55B-AD8BDA566F71",
+          "rank": "normal",
+          "references": [
+            {
+              "hash": "f342e7605dae275edacb7e3e4d12385df9f6c0d1",
+              "snaks": {
+                "P143": [
+                  {
+                    "snaktype": "value",
+                    "property": "P143",
+                    "hash": "f30cbd35620c4ea6d0633aaf0210a8916130469b",
+                    "datavalue": {
+                      "value": {
+                        "entity-type": "item",
+                        "numeric-id": 8447,
+                        "id": "Q8447"
+                      },
+                      "type": "wikibase-entityid"
+                    },
+                    "datatype": "wikibase-item"
+                  }
+                ],
+                "P4656": [
+                  {
+                    "snaktype": "value",
+                    "property": "P4656",
+                    "hash": "be296ff722638ef219e61d5938e8852abd6bb8de",
+                    "datavalue": {
+                      "value": "https://fr.wikipedia.org/w/index.php?title=Gare_de_Port-d'Atelier-Amance&oldid=150578470",
+                      "type": "string"
+                    },
+                    "datatype": "url"
+                  }
+                ]
+              },
+              "snaks-order": [
+                "P143",
+                "P4656"
+              ]
+            }
+          ]
+        }
+      ],
+      "P3999": [
+        {
+          "mainsnak": {
+            "snaktype": "value",
+            "property": "P3999",
+            "hash": "9e49c360510573848e799e0cbb91e5feb8b25e76",
+            "datavalue": {
+              "value": {
+                "time": "+2010-00-00T00:00:00Z",
+                "timezone": 0,
+                "before": 0,
+                "after": 0,
+                "precision": 9,
+                "calendarmodel": "http://www.wikidata.org/entity/Q1985727"
+              },
+              "type": "time"
+            },
+            "datatype": "time"
+          },
+          "type": "statement",
+          "id": "Q21681025$B8D98D01-3399-4991-A634-C5BB6BA1F71A",
+          "rank": "normal",
+          "references": [
+            {
+              "hash": "f342e7605dae275edacb7e3e4d12385df9f6c0d1",
+              "snaks": {
+                "P143": [
+                  {
+                    "snaktype": "value",
+                    "property": "P143",
+                    "hash": "f30cbd35620c4ea6d0633aaf0210a8916130469b",
+                    "datavalue": {
+                      "value": {
+                        "entity-type": "item",
+                        "numeric-id": 8447,
+                        "id": "Q8447"
+                      },
+                      "type": "wikibase-entityid"
+                    },
+                    "datatype": "wikibase-item"
+                  }
+                ],
+                "P4656": [
+                  {
+                    "snaktype": "value",
+                    "property": "P4656",
+                    "hash": "be296ff722638ef219e61d5938e8852abd6bb8de",
+                    "datavalue": {
+                      "value": "https://fr.wikipedia.org/w/index.php?title=Gare_de_Port-d'Atelier-Amance&oldid=150578470",
+                      "type": "string"
+                    },
+                    "datatype": "url"
+                  }
+                ]
+              },
+              "snaks-order": [
+                "P143",
+                "P4656"
+              ]
+            }
+          ]
+        }
+      ],
+      "P6724": [
+        {
+          "mainsnak": {
+            "snaktype": "value",
+            "property": "P6724",
+            "hash": "ddc11fe963c3450e137a61c855e97f8a7d033e0e",
+            "datavalue": {
+              "value": "4914",
+              "type": "string"
+            },
+            "datatype": "external-id"
+          },
+          "type": "statement",
+          "id": "Q21681025$8B4EFBA3-EEBC-4DD1-982F-C067B615365F",
+          "rank": "normal",
+          "references": [
+            {
+              "hash": "01cbea4535f61018bad932bf19b3be1516c72349",
+              "snaks": {
+                "P248": [
+                  {
+                    "snaktype": "value",
+                    "property": "P248",
+                    "hash": "6c373b7c047133fc6710df19c3dd551eb6820d79",
+                    "datavalue": {
+                      "value": {
+                        "entity-type": "item",
+                        "numeric-id": 63450820,
+                        "id": "Q63450820"
+                      },
+                      "type": "wikibase-entityid"
+                    },
+                    "datatype": "wikibase-item"
+                  }
+                ],
+                "P813": [
+                  {
+                    "snaktype": "value",
+                    "property": "P813",
+                    "hash": "65084454d7770a856294f7c9539c913901fe583b",
+                    "datavalue": {
+                      "value": {
+                        "time": "+2019-05-04T00:00:00Z",
+                        "timezone": 0,
+                        "before": 0,
+                        "after": 0,
+                        "precision": 11,
+                        "calendarmodel": "http://www.wikidata.org/entity/Q1985727"
+                      },
+                      "type": "time"
+                    },
+                    "datatype": "time"
+                  }
+                ]
+              },
+              "snaks-order": [
+                "P248",
+                "P813"
+              ]
+            }
+          ]
+        }
+      ],
+      "P2671": [
+        {
+          "mainsnak": {
+            "snaktype": "value",
+            "property": "P2671",
+            "hash": "76608e8c2dd4315dfdc70a8bc186b8e24c92c6eb",
+            "datavalue": {
+              "value": "/g/11bx561smm",
+              "type": "string"
+            },
+            "datatype": "external-id"
+          },
+          "type": "statement",
+          "id": "Q21681025$E2B0CAB4-0EFD-4C23-8EEA-7E19F00DB8BA",
+          "rank": "normal"
+        }
+      ],
+      "P281": [
+        {
+          "mainsnak": {
+            "snaktype": "value",
+            "property": "P281",
+            "hash": "d008b942e8ee38319aa14815bc7411e353752fb4",
+            "datavalue": {
+              "value": "70160",
+              "type": "string"
+            },
+            "datatype": "string"
+          },
+          "type": "statement",
+          "id": "Q21681025$318dce05-4479-1dc3-37f8-0911354ba8aa",
+          "rank": "normal"
+        }
+      ],
+      "P722": [
+        {
+          "mainsnak": {
+            "snaktype": "value",
+            "property": "P722",
+            "hash": "ed7a2ecfe3be9d96006ed9e9055aef495d7d4483",
+            "datavalue": {
+              "value": "8718510",
+              "type": "string"
+            },
+            "datatype": "external-id"
+          },
+          "type": "statement",
+          "id": "Q21681025$ee107a1e-486d-2767-ac76-de459285f303",
+          "rank": "normal"
+        }
+      ],
+      "P2044": [
+        {
+          "mainsnak": {
+            "snaktype": "value",
+            "property": "P2044",
+            "hash": "ed572ff54884e43980ff6b6f39eef86f15a2949e",
+            "datavalue": {
+              "value": {
+                "amount": "+218",
+                "unit": "http://www.wikidata.org/entity/Q11573"
+              },
+              "type": "quantity"
+            },
+            "datatype": "quantity"
+          },
+          "type": "statement",
+          "id": "Q21681025$2B725D5F-B692-46D7-93F8-1BC72C1B911F",
+          "rank": "normal",
+          "references": [
+            {
+              "hash": "a5d5f8b0bab0fa9fa88eafca4c532fd60f4cc998",
+              "snaks": {
+                "P143": [
+                  {
+                    "snaktype": "value",
+                    "property": "P143",
+                    "hash": "f30cbd35620c4ea6d0633aaf0210a8916130469b",
+                    "datavalue": {
+                      "value": {
+                        "entity-type": "item",
+                        "numeric-id": 8447,
+                        "id": "Q8447"
+                      },
+                      "type": "wikibase-entityid"
+                    },
+                    "datatype": "wikibase-item"
+                  }
+                ],
+                "P4656": [
+                  {
+                    "snaktype": "value",
+                    "property": "P4656",
+                    "hash": "82f2728900fc1920f2977fb2bc28b0002f82343e",
+                    "datavalue": {
+                      "value": "https://fr.wikipedia.org/w/index.php?title=Gare_de_Port-d'Atelier-Amance&oldid=182661626",
+                      "type": "string"
+                    },
+                    "datatype": "url"
+                  }
+                ]
+              },
+              "snaks-order": [
+                "P143",
+                "P4656"
+              ]
+            }
+          ]
+        }
+      ],
+      "P421": [
+        {
+          "mainsnak": {
+            "snaktype": "value",
+            "property": "P421",
+            "hash": "fbcae84c0c94805db595b9884f0131450964c182",
+            "datavalue": {
+              "value": {
+                "entity-type": "item",
+                "numeric-id": 25989,
+                "id": "Q25989"
+              },
+              "type": "wikibase-entityid"
+            },
+            "datatype": "wikibase-item"
+          },
+          "type": "statement",
+          "id": "Q21681025$21AC22FE-00B6-4186-95BE-0AAF7654AEB7",
+          "rank": "normal"
+        }
+      ],
+      "P5817": [
+        {
+          "mainsnak": {
+            "snaktype": "value",
+            "property": "P5817",
+            "hash": "bf41c80ae512fd5a17ab377274c6b26ce451ed4b",
+            "datavalue": {
+              "value": {
+                "entity-type": "item",
+                "numeric-id": 11639308,
+                "id": "Q11639308"
+              },
+              "type": "wikibase-entityid"
+            },
+            "datatype": "wikibase-item"
+          },
+          "type": "statement",
+          "id": "Q21681025$CCE60202-5702-4B65-87F7-A131DB610F7D",
+          "rank": "normal"
+        }
+      ],
+      "P12783": [
+        {
+          "mainsnak": {
+            "snaktype": "value",
+            "property": "P12783",
+            "hash": "8a2d3e81525b7526238594102473118c83d64bf7",
+            "datavalue": {
+              "value": "FR01025",
+              "type": "string"
+            },
+            "datatype": "external-id"
+          },
+          "type": "statement",
+          "id": "Q21681025$1AD3C57B-0F6A-47B4-B24F-D6625242721D",
+          "rank": "normal",
+          "references": [
+            {
+              "hash": "4f55ed8e6799e68ac9329e4963ee8e9ec9e3dc78",
+              "snaks": {
+                "P854": [
+                  {
+                    "snaktype": "value",
+                    "property": "P854",
+                    "hash": "0ca0ef58a78fe1774b0eb16cc777dbbd2032ae1b",
+                    "datavalue": {
+                      "value": "http://data.europa.eu/949/functionalInfrastructure/operationalPoints/FR9900001660",
+                      "type": "string"
+                    },
+                    "datatype": "url"
+                  }
+                ],
+                "P813": [
+                  {
+                    "snaktype": "value",
+                    "property": "P813",
+                    "hash": "d624c0fc88fc4f377d7daf4c5ea88694480e5b12",
+                    "datavalue": {
+                      "value": {
+                        "time": "+2024-06-11T00:00:00Z",
+                        "timezone": 0,
+                        "before": 0,
+                        "after": 0,
+                        "precision": 11,
+                        "calendarmodel": "http://www.wikidata.org/entity/Q1985727"
+                      },
+                      "type": "time"
+                    },
+                    "datatype": "time"
+                  }
+                ]
+              },
+              "snaks-order": [
+                "P854",
+                "P813"
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    "sitelinks": {
+      "commonswiki": {
+        "site": "commonswiki",
+        "title": "Category:Gare de Port-d'Atelier-Amance",
+        "badges": [],
+        "url": "https://commons.wikimedia.org/wiki/Category:Gare_de_Port-d%27Atelier-Amance"
+      },
+      "eowiki": {
+        "site": "eowiki",
+        "title": "Port-d'Atelier-Amance (stacidomo)",
+        "badges": [],
+        "url": "https://eo.wikipedia.org/wiki/Port-d%27Atelier-Amance_(stacidomo)"
+      },
+      "frwiki": {
+        "site": "frwiki",
+        "title": "Gare de Port-d'Atelier-Amance",
+        "badges": [],
+        "url": "https://fr.wikipedia.org/wiki/Gare_de_Port-d%27Atelier-Amance"
+      }
+    }
+  }
+}

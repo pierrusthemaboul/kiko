@@ -1,0 +1,843 @@
+{
+  "saved_at": "2026-03-07T13:44:04.515Z",
+  "value": {
+    "pageid": 2953181,
+    "ns": 0,
+    "title": "Q3090028",
+    "lastrevid": 2469768482,
+    "modified": "2026-03-06T08:27:26Z",
+    "type": "item",
+    "id": "Q3090028",
+    "labels": {
+      "pl": {
+        "language": "pl",
+        "value": "Konstytucja III Republiki"
+      },
+      "fr": {
+        "language": "fr",
+        "value": "Lois constitutionnelles de 1875"
+      },
+      "es": {
+        "language": "es",
+        "value": "Leyes constitucionales francesas de 1875"
+      },
+      "en": {
+        "language": "en",
+        "value": "French Constitutional Laws of 1875"
+      },
+      "lt": {
+        "language": "lt",
+        "value": "Prancūzijos Trečiosios Respublikos konstituciniai įstatymai"
+      },
+      "ca": {
+        "language": "ca",
+        "value": "Lleis constitucionals franceses de 1875"
+      },
+      "sh": {
+        "language": "sh",
+        "value": "Francuski ustavni zakoni"
+      },
+      "ja": {
+        "language": "ja",
+        "value": "1875年の憲法的法律"
+      },
+      "zh-hant": {
+        "language": "zh-hant",
+        "value": "法國1875年憲法"
+      },
+      "zh-cn": {
+        "language": "zh-cn",
+        "value": "法国1875年宪法"
+      },
+      "zh": {
+        "language": "zh",
+        "value": "法国1875年宪法"
+      },
+      "pt": {
+        "language": "pt",
+        "value": "Constituição Francesa de 1875"
+      },
+      "he": {
+        "language": "he",
+        "value": "חוקת צרפת 1875"
+      },
+      "de": {
+        "language": "de",
+        "value": "Verfassungsgesetze von 1875 (Frankreich)"
+      },
+      "it": {
+        "language": "it",
+        "value": "Costituzione francese del 1875"
+      },
+      "ru": {
+        "language": "ru",
+        "value": "Конституционные законы Франции (1875)"
+      },
+      "ga": {
+        "language": "ga",
+        "value": "Bunreacht na Fraince, 1875"
+      },
+      "sl": {
+        "language": "sl",
+        "value": "Ustavni zakoni iz leta 1875 (Francija)"
+      },
+      "br": {
+        "language": "br",
+        "value": "Lezennou bonreizhel 1875"
+      }
+    },
+    "descriptions": {
+      "fr": {
+        "language": "fr",
+        "value": "loi fondamentale de la IIIème République française"
+      },
+      "zh": {
+        "language": "zh",
+        "value": "法蘭西第三共和國憲法"
+      },
+      "it": {
+        "language": "it",
+        "value": "costituzione della Francia (1875-1940)"
+      },
+      "sl": {
+        "language": "sl",
+        "value": "temeljni zakon Tretje francoske republike"
+      },
+      "br": {
+        "language": "br",
+        "value": "lezennoù diazez an Trede Republik c'hall"
+      }
+    },
+    "aliases": {
+      "fr": [
+        {
+          "language": "fr",
+          "value": "Loi constitutionnelle du 25 février 1875"
+        },
+        {
+          "language": "fr",
+          "value": "Lois constitutionnelles de la Troisième République"
+        }
+      ],
+      "lt": [
+        {
+          "language": "lt",
+          "value": "Trečiosios Respublikos Konstitucija"
+        }
+      ]
+    },
+    "claims": {
+      "P31": [
+        {
+          "mainsnak": {
+            "snaktype": "value",
+            "property": "P31",
+            "hash": "7c046af1e89e567aa38e1ddce209ef187887055c",
+            "datavalue": {
+              "value": {
+                "entity-type": "item",
+                "numeric-id": 7755,
+                "id": "Q7755"
+              },
+              "type": "wikibase-entityid"
+            },
+            "datatype": "wikibase-item"
+          },
+          "type": "statement",
+          "id": "Q3090028$5ca82d8d-4115-1d50-99e5-79d2236f841c",
+          "rank": "normal"
+        }
+      ],
+      "P646": [
+        {
+          "mainsnak": {
+            "snaktype": "value",
+            "property": "P646",
+            "hash": "c42530567e5db5caea52ebab4d498ddb99a06911",
+            "datavalue": {
+              "value": "/m/03yjp5k",
+              "type": "string"
+            },
+            "datatype": "external-id"
+          },
+          "type": "statement",
+          "id": "Q3090028$A29BEB70-55DC-4C2D-AA94-31D1F7CC7292",
+          "rank": "normal",
+          "references": [
+            {
+              "hash": "2b00cb481cddcac7623114367489b5c194901c4a",
+              "snaks": {
+                "P248": [
+                  {
+                    "snaktype": "value",
+                    "property": "P248",
+                    "hash": "a94b740202b097dd33355e0e6c00e54b9395e5e0",
+                    "datavalue": {
+                      "value": {
+                        "entity-type": "item",
+                        "numeric-id": 15241312,
+                        "id": "Q15241312"
+                      },
+                      "type": "wikibase-entityid"
+                    },
+                    "datatype": "wikibase-item"
+                  }
+                ],
+                "P577": [
+                  {
+                    "snaktype": "value",
+                    "property": "P577",
+                    "hash": "fde79ecb015112d2f29229ccc1ec514ed3e71fa2",
+                    "datavalue": {
+                      "value": {
+                        "time": "+2013-10-28T00:00:00Z",
+                        "timezone": 0,
+                        "before": 0,
+                        "after": 0,
+                        "precision": 11,
+                        "calendarmodel": "http://www.wikidata.org/entity/Q1985727"
+                      },
+                      "type": "time"
+                    },
+                    "datatype": "time"
+                  }
+                ]
+              },
+              "snaks-order": [
+                "P248",
+                "P577"
+              ]
+            }
+          ]
+        }
+      ],
+      "P17": [
+        {
+          "mainsnak": {
+            "snaktype": "value",
+            "property": "P17",
+            "hash": "c05db5d169c2560b9799d567a803d20a392f53e4",
+            "datavalue": {
+              "value": {
+                "entity-type": "item",
+                "numeric-id": 142,
+                "id": "Q142"
+              },
+              "type": "wikibase-entityid"
+            },
+            "datatype": "wikibase-item"
+          },
+          "type": "statement",
+          "id": "Q3090028$0f909d1b-45a1-64c0-3927-cd83a0e31a5d",
+          "rank": "normal"
+        }
+      ],
+      "P1417": [
+        {
+          "mainsnak": {
+            "snaktype": "value",
+            "property": "P1417",
+            "hash": "fff032f1dea0c26bea48d493341df8739a155aa3",
+            "datavalue": {
+              "value": "topic/Constitutional-Laws-of-1875",
+              "type": "string"
+            },
+            "datatype": "external-id"
+          },
+          "type": "statement",
+          "qualifiers": {
+            "P1810": [
+              {
+                "snaktype": "value",
+                "property": "P1810",
+                "hash": "b396054fc4f666b134380a799f96ce27cb18ca70",
+                "datavalue": {
+                  "value": "Constitutional Laws of 1875",
+                  "type": "string"
+                },
+                "datatype": "string"
+              }
+            ]
+          },
+          "qualifiers-order": [
+            "P1810"
+          ],
+          "id": "Q3090028$48DB7C5D-0CA5-4AFE-9177-3D0BE7CD0E22",
+          "rank": "normal"
+        }
+      ],
+      "P18": [
+        {
+          "mainsnak": {
+            "snaktype": "value",
+            "property": "P18",
+            "hash": "fc522ed8fc5dd164c59ec1622c6b9a522fb90a64",
+            "datavalue": {
+              "value": "Constitution de 1875 1 sur 5 - Archives Nationales - AE-I-29 n°15.jpg",
+              "type": "string"
+            },
+            "datatype": "commonsMedia"
+          },
+          "type": "statement",
+          "id": "Q3090028$BF793C58-92B3-4191-BD2C-E15414176C21",
+          "rank": "normal",
+          "references": [
+            {
+              "hash": "821b4c1bbdb1fb48befb97c8ebf2529a5c604d5e",
+              "snaks": {
+                "P143": [
+                  {
+                    "snaktype": "value",
+                    "property": "P143",
+                    "hash": "e4f6d9441d0600513c4533c672b5ab472dc73694",
+                    "datavalue": {
+                      "value": {
+                        "entity-type": "item",
+                        "numeric-id": 328,
+                        "id": "Q328"
+                      },
+                      "type": "wikibase-entityid"
+                    },
+                    "datatype": "wikibase-item"
+                  }
+                ],
+                "P4656": [
+                  {
+                    "snaktype": "value",
+                    "property": "P4656",
+                    "hash": "e356eca993ef2b22f7e37bb6af4cf976c9c4bae6",
+                    "datavalue": {
+                      "value": "https://en.wikipedia.org/w/index.php?title=French_Constitutional_Laws_of_1875&oldid=889942135",
+                      "type": "string"
+                    },
+                    "datatype": "url"
+                  }
+                ]
+              },
+              "snaks-order": [
+                "P143",
+                "P4656"
+              ]
+            }
+          ]
+        }
+      ],
+      "P1365": [
+        {
+          "mainsnak": {
+            "snaktype": "value",
+            "property": "P1365",
+            "hash": "f9e4b730d7f0d949b92a5dbd73040d155207f2da",
+            "datavalue": {
+              "value": {
+                "entity-type": "item",
+                "numeric-id": 2382204,
+                "id": "Q2382204"
+              },
+              "type": "wikibase-entityid"
+            },
+            "datatype": "wikibase-item"
+          },
+          "type": "statement",
+          "id": "Q3090028$498eb677-4938-ab66-4918-f6f6091dce98",
+          "rank": "normal"
+        }
+      ],
+      "P585": [
+        {
+          "mainsnak": {
+            "snaktype": "value",
+            "property": "P585",
+            "hash": "6284fcbea6cfb3237932600784e47e5d55259d57",
+            "datavalue": {
+              "value": {
+                "time": "+1875-00-00T00:00:00Z",
+                "timezone": 0,
+                "before": 0,
+                "after": 0,
+                "precision": 9,
+                "calendarmodel": "http://www.wikidata.org/entity/Q1985727"
+              },
+              "type": "time"
+            },
+            "datatype": "time"
+          },
+          "type": "statement",
+          "id": "Q3090028$1d75b581-44b8-5474-ccf0-4d889056c639",
+          "rank": "normal"
+        }
+      ],
+      "P1366": [
+        {
+          "mainsnak": {
+            "snaktype": "value",
+            "property": "P1366",
+            "hash": "a4a67c9ccdb426000c8faf62eeaaf3ba92fd1f1e",
+            "datavalue": {
+              "value": {
+                "entity-type": "item",
+                "numeric-id": 1450680,
+                "id": "Q1450680"
+              },
+              "type": "wikibase-entityid"
+            },
+            "datatype": "wikibase-item"
+          },
+          "type": "statement",
+          "id": "Q3090028$790d44d4-40dc-1a0f-fa77-4d7ba5137d06",
+          "rank": "normal"
+        }
+      ],
+      "P910": [
+        {
+          "mainsnak": {
+            "snaktype": "value",
+            "property": "P910",
+            "hash": "e7f2b86c9f367802eb931cc94c88d5bcd3108694",
+            "datavalue": {
+              "value": {
+                "entity-type": "item",
+                "numeric-id": 9639336,
+                "id": "Q9639336"
+              },
+              "type": "wikibase-entityid"
+            },
+            "datatype": "wikibase-item"
+          },
+          "type": "statement",
+          "id": "Q3090028$f646930a-2f45-467c-af17-ff1b054c73bb",
+          "rank": "normal"
+        }
+      ],
+      "P527": [
+        {
+          "mainsnak": {
+            "snaktype": "value",
+            "property": "P527",
+            "hash": "25577bfda2f6a3bb3e097bea078f44af7883a3c9",
+            "datavalue": {
+              "value": {
+                "entity-type": "item",
+                "numeric-id": 111993871,
+                "id": "Q111993871"
+              },
+              "type": "wikibase-entityid"
+            },
+            "datatype": "wikibase-item"
+          },
+          "type": "statement",
+          "id": "Q3090028$7e0e5e49-43fe-da0b-dc70-cbc807e464b0",
+          "rank": "normal"
+        },
+        {
+          "mainsnak": {
+            "snaktype": "value",
+            "property": "P527",
+            "hash": "f064037c3254b2cb49c1115a7e4beafd45bdc384",
+            "datavalue": {
+              "value": {
+                "entity-type": "item",
+                "numeric-id": 111993898,
+                "id": "Q111993898"
+              },
+              "type": "wikibase-entityid"
+            },
+            "datatype": "wikibase-item"
+          },
+          "type": "statement",
+          "id": "Q3090028$5d20f8ea-40e3-22ee-1113-4b381584ef08",
+          "rank": "normal"
+        },
+        {
+          "mainsnak": {
+            "snaktype": "value",
+            "property": "P527",
+            "hash": "97a0d1ad8a9b1f6892cd4eefeace06ca813977d5",
+            "datavalue": {
+              "value": {
+                "entity-type": "item",
+                "numeric-id": 111993917,
+                "id": "Q111993917"
+              },
+              "type": "wikibase-entityid"
+            },
+            "datatype": "wikibase-item"
+          },
+          "type": "statement",
+          "id": "Q3090028$c1f3d306-475c-1d5e-1654-26554abe5ebd",
+          "rank": "normal"
+        }
+      ],
+      "P2567": [
+        {
+          "mainsnak": {
+            "snaktype": "value",
+            "property": "P2567",
+            "hash": "8d6e3867eefe6924190792e685f33f23b2e10a88",
+            "datavalue": {
+              "value": {
+                "entity-type": "item",
+                "numeric-id": 111994375,
+                "id": "Q111994375"
+              },
+              "type": "wikibase-entityid"
+            },
+            "datatype": "wikibase-item"
+          },
+          "type": "statement",
+          "qualifiers": {
+            "P585": [
+              {
+                "snaktype": "value",
+                "property": "P585",
+                "hash": "77c5b2959bfa2f28a6065111f5ef18d0f85596d6",
+                "datavalue": {
+                  "value": {
+                    "time": "+1879-06-21T00:00:00Z",
+                    "timezone": 0,
+                    "before": 0,
+                    "after": 0,
+                    "precision": 11,
+                    "calendarmodel": "http://www.wikidata.org/entity/Q1985727"
+                  },
+                  "type": "time"
+                },
+                "datatype": "time"
+              }
+            ]
+          },
+          "qualifiers-order": [
+            "P585"
+          ],
+          "id": "Q3090028$1e07722f-472f-6dca-65ae-839d61856fff",
+          "rank": "normal"
+        },
+        {
+          "mainsnak": {
+            "snaktype": "value",
+            "property": "P2567",
+            "hash": "cd11538ac4e2ca18022e90f5203d40d538b4f213",
+            "datavalue": {
+              "value": {
+                "entity-type": "item",
+                "numeric-id": 111994379,
+                "id": "Q111994379"
+              },
+              "type": "wikibase-entityid"
+            },
+            "datatype": "wikibase-item"
+          },
+          "type": "statement",
+          "qualifiers": {
+            "P585": [
+              {
+                "snaktype": "value",
+                "property": "P585",
+                "hash": "2ec9684d81572bf97dc0d8ebf40e6daf2e83ddff",
+                "datavalue": {
+                  "value": {
+                    "time": "+1884-08-14T00:00:00Z",
+                    "timezone": 0,
+                    "before": 0,
+                    "after": 0,
+                    "precision": 11,
+                    "calendarmodel": "http://www.wikidata.org/entity/Q1985727"
+                  },
+                  "type": "time"
+                },
+                "datatype": "time"
+              }
+            ]
+          },
+          "qualifiers-order": [
+            "P585"
+          ],
+          "id": "Q3090028$cfb49ddb-46bd-9ae0-e515-536a17f251c5",
+          "rank": "normal"
+        },
+        {
+          "mainsnak": {
+            "snaktype": "value",
+            "property": "P2567",
+            "hash": "eec8189745a23249078658ff1bb190d298057636",
+            "datavalue": {
+              "value": {
+                "entity-type": "item",
+                "numeric-id": 111994381,
+                "id": "Q111994381"
+              },
+              "type": "wikibase-entityid"
+            },
+            "datatype": "wikibase-item"
+          },
+          "type": "statement",
+          "qualifiers": {
+            "P585": [
+              {
+                "snaktype": "value",
+                "property": "P585",
+                "hash": "ba29f142168014c1b0ee6324a062735fdbdcebf9",
+                "datavalue": {
+                  "value": {
+                    "time": "+1926-08-10T00:00:00Z",
+                    "timezone": 0,
+                    "before": 0,
+                    "after": 0,
+                    "precision": 11,
+                    "calendarmodel": "http://www.wikidata.org/entity/Q1985727"
+                  },
+                  "type": "time"
+                },
+                "datatype": "time"
+              }
+            ]
+          },
+          "qualifiers-order": [
+            "P585"
+          ],
+          "id": "Q3090028$776990d0-44b2-17aa-6184-91cece09bb9b",
+          "rank": "normal"
+        }
+      ],
+      "P1705": [
+        {
+          "mainsnak": {
+            "snaktype": "value",
+            "property": "P1705",
+            "hash": "29e3eb7e9e4d4ab7e7e879e0f4ef14651758727e",
+            "datavalue": {
+              "value": {
+                "text": "Lois constitutionnelles de 1875",
+                "language": "fr"
+              },
+              "type": "monolingualtext"
+            },
+            "datatype": "monolingualtext"
+          },
+          "type": "statement",
+          "id": "Q3090028$dc45e56e-4796-328d-a8c6-0726b7f704a5",
+          "rank": "normal",
+          "references": [
+            {
+              "hash": "261131c8960f32a8503321b7b689772073db8f75",
+              "snaks": {
+                "P143": [
+                  {
+                    "snaktype": "value",
+                    "property": "P143",
+                    "hash": "6a164248fc96bfa583bbb495cb63ae6401ec203c",
+                    "datavalue": {
+                      "value": {
+                        "entity-type": "item",
+                        "numeric-id": 206855,
+                        "id": "Q206855"
+                      },
+                      "type": "wikibase-entityid"
+                    },
+                    "datatype": "wikibase-item"
+                  }
+                ],
+                "P4656": [
+                  {
+                    "snaktype": "value",
+                    "property": "P4656",
+                    "hash": "e350e6d936b2b8a5eafc4a4cbe2f41b4cb5b6b22",
+                    "datavalue": {
+                      "value": "https://ru.wikipedia.org/?oldid=137947898",
+                      "type": "string"
+                    },
+                    "datatype": "url"
+                  }
+                ]
+              },
+              "snaks-order": [
+                "P143",
+                "P4656"
+              ]
+            }
+          ]
+        }
+      ],
+      "P582": [
+        {
+          "mainsnak": {
+            "snaktype": "value",
+            "property": "P582",
+            "hash": "b8f5d93e97bae3a7f80651ad308f17a2c9dab90d",
+            "datavalue": {
+              "value": {
+                "time": "+1940-07-10T00:00:00Z",
+                "timezone": 0,
+                "before": 0,
+                "after": 0,
+                "precision": 11,
+                "calendarmodel": "http://www.wikidata.org/entity/Q1985727"
+              },
+              "type": "time"
+            },
+            "datatype": "time"
+          },
+          "type": "statement",
+          "id": "Q3090028$1133adbe-41a9-7b09-b431-9f60732e46b5",
+          "rank": "normal",
+          "references": [
+            {
+              "hash": "261131c8960f32a8503321b7b689772073db8f75",
+              "snaks": {
+                "P143": [
+                  {
+                    "snaktype": "value",
+                    "property": "P143",
+                    "hash": "6a164248fc96bfa583bbb495cb63ae6401ec203c",
+                    "datavalue": {
+                      "value": {
+                        "entity-type": "item",
+                        "numeric-id": 206855,
+                        "id": "Q206855"
+                      },
+                      "type": "wikibase-entityid"
+                    },
+                    "datatype": "wikibase-item"
+                  }
+                ],
+                "P4656": [
+                  {
+                    "snaktype": "value",
+                    "property": "P4656",
+                    "hash": "e350e6d936b2b8a5eafc4a4cbe2f41b4cb5b6b22",
+                    "datavalue": {
+                      "value": "https://ru.wikipedia.org/?oldid=137947898",
+                      "type": "string"
+                    },
+                    "datatype": "url"
+                  }
+                ]
+              },
+              "snaks-order": [
+                "P143",
+                "P4656"
+              ]
+            }
+          ]
+        }
+      ],
+      "P268": [
+        {
+          "mainsnak": {
+            "snaktype": "value",
+            "property": "P268",
+            "hash": "4180bff93178df44e429011be9ab774d4cefa5da",
+            "datavalue": {
+              "value": "170034975",
+              "type": "string"
+            },
+            "datatype": "external-id"
+          },
+          "type": "statement",
+          "id": "Q3090028$1ddad38b-4196-43d8-7dfa-8f8970208173",
+          "rank": "normal"
+        }
+      ]
+    },
+    "sitelinks": {
+      "cawiki": {
+        "site": "cawiki",
+        "title": "Lleis constitucionals franceses de 1875",
+        "badges": [],
+        "url": "https://ca.wikipedia.org/wiki/Lleis_constitucionals_franceses_de_1875"
+      },
+      "dewiki": {
+        "site": "dewiki",
+        "title": "Verfassungsgesetze von 1875 (Frankreich)",
+        "badges": [],
+        "url": "https://de.wikipedia.org/wiki/Verfassungsgesetze_von_1875_(Frankreich)"
+      },
+      "enwiki": {
+        "site": "enwiki",
+        "title": "French constitutional laws of 1875",
+        "badges": [],
+        "url": "https://en.wikipedia.org/wiki/French_constitutional_laws_of_1875"
+      },
+      "enwikisource": {
+        "site": "enwikisource",
+        "title": "French Constitutional Laws of 1875",
+        "badges": [],
+        "url": "https://en.wikisource.org/wiki/French_Constitutional_Laws_of_1875"
+      },
+      "eswiki": {
+        "site": "eswiki",
+        "title": "Leyes constitucionales francesas de 1875",
+        "badges": [],
+        "url": "https://es.wikipedia.org/wiki/Leyes_constitucionales_francesas_de_1875"
+      },
+      "frwiki": {
+        "site": "frwiki",
+        "title": "Lois constitutionnelles de 1875",
+        "badges": [
+          "Q17437796"
+        ],
+        "url": "https://fr.wikipedia.org/wiki/Lois_constitutionnelles_de_1875"
+      },
+      "frwikisource": {
+        "site": "frwikisource",
+        "title": "Lois constitutionnelles de 1875",
+        "badges": [],
+        "url": "https://fr.wikisource.org/wiki/Lois_constitutionnelles_de_1875"
+      },
+      "hewiki": {
+        "site": "hewiki",
+        "title": "חוקת צרפת 1875",
+        "badges": [],
+        "url": "https://he.wikipedia.org/wiki/%D7%97%D7%95%D7%A7%D7%AA_%D7%A6%D7%A8%D7%A4%D7%AA_1875"
+      },
+      "jawiki": {
+        "site": "jawiki",
+        "title": "1875年の憲法的法律",
+        "badges": [],
+        "url": "https://ja.wikipedia.org/wiki/1875%E5%B9%B4%E3%81%AE%E6%86%B2%E6%B3%95%E7%9A%84%E6%B3%95%E5%BE%8B"
+      },
+      "ltwiki": {
+        "site": "ltwiki",
+        "title": "Prancūzijos Trečiosios Respublikos konstituciniai įstatymai",
+        "badges": [],
+        "url": "https://lt.wikipedia.org/wiki/Pranc%C5%ABzijos_Tre%C4%8Diosios_Respublikos_konstituciniai_%C4%AFstatymai"
+      },
+      "plwiki": {
+        "site": "plwiki",
+        "title": "Konstytucja III Republiki",
+        "badges": [],
+        "url": "https://pl.wikipedia.org/wiki/Konstytucja_III_Republiki"
+      },
+      "ptwiki": {
+        "site": "ptwiki",
+        "title": "Constituição Francesa de 1875",
+        "badges": [],
+        "url": "https://pt.wikipedia.org/wiki/Constitui%C3%A7%C3%A3o_Francesa_de_1875"
+      },
+      "ruwiki": {
+        "site": "ruwiki",
+        "title": "Конституционные законы Франции (1875)",
+        "badges": [],
+        "url": "https://ru.wikipedia.org/wiki/%D0%9A%D0%BE%D0%BD%D1%81%D1%82%D0%B8%D1%82%D1%83%D1%86%D0%B8%D0%BE%D0%BD%D0%BD%D1%8B%D0%B5_%D0%B7%D0%B0%D0%BA%D0%BE%D0%BD%D1%8B_%D0%A4%D1%80%D0%B0%D0%BD%D1%86%D0%B8%D0%B8_(1875)"
+      },
+      "shwiki": {
+        "site": "shwiki",
+        "title": "Francuski ustavni zakoni (1875)",
+        "badges": [],
+        "url": "https://sh.wikipedia.org/wiki/Francuski_ustavni_zakoni_(1875)"
+      },
+      "zhwiki": {
+        "site": "zhwiki",
+        "title": "法国1875年宪法",
+        "badges": [],
+        "url": "https://zh.wikipedia.org/wiki/%E6%B3%95%E5%9B%BD1875%E5%B9%B4%E5%AE%AA%E6%B3%95"
+      },
+      "zhwikisource": {
+        "site": "zhwikisource",
+        "title": "1875年法国宪法 (国民政府立法院编译处)",
+        "badges": [],
+        "url": "https://zh.wikisource.org/wiki/1875%E5%B9%B4%E6%B3%95%E5%9B%BD%E5%AE%AA%E6%B3%95_(%E5%9B%BD%E6%B0%91%E6%94%BF%E5%BA%9C%E7%AB%8B%E6%B3%95%E9%99%A2%E7%BC%96%E8%AF%91%E5%A4%84)"
+      }
+    }
+  }
+}

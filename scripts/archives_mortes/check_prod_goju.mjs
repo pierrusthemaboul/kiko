@@ -9,3 +9,4 @@ async function checkGoju2() {
     else console.log(`Goju2 in prod: ${count} rows`);
 }
 checkGoju2();
+

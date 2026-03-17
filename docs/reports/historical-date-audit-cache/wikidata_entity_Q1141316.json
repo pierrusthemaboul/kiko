@@ -1,0 +1,1960 @@
+{
+  "saved_at": "2026-03-07T14:01:10.466Z",
+  "value": {
+    "pageid": 1088004,
+    "ns": 0,
+    "title": "Q1141316",
+    "lastrevid": 2469899992,
+    "modified": "2026-03-06T16:55:18Z",
+    "type": "item",
+    "id": "Q1141316",
+    "labels": {
+      "de": {
+        "language": "de",
+        "value": "Palais de la Porte Dorée"
+      },
+      "ru": {
+        "language": "ru",
+        "value": "Дворец Порт-Доре"
+      },
+      "fr": {
+        "language": "fr",
+        "value": "palais de la Porte Dorée"
+      },
+      "en": {
+        "language": "en",
+        "value": "Palais de la Porte Dorée"
+      },
+      "nl": {
+        "language": "nl",
+        "value": "Palais de la Porte Dorée"
+      },
+      "cs": {
+        "language": "cs",
+        "value": "Palais de la Porte Dorée"
+      },
+      "zh": {
+        "language": "zh",
+        "value": "鍍金門宮"
+      },
+      "it": {
+        "language": "it",
+        "value": "Palais de la Porte Dorée"
+      },
+      "es": {
+        "language": "es",
+        "value": "Palacio de la Porte Dorée"
+      },
+      "ja": {
+        "language": "ja",
+        "value": "ポルト・ドレ宮"
+      },
+      "sl": {
+        "language": "sl",
+        "value": "Palais de la Porte Dorée"
+      },
+      "ast": {
+        "language": "ast",
+        "value": "Palais de la Porte Dorée"
+      }
+    },
+    "descriptions": {
+      "cs": {
+        "language": "cs",
+        "value": "muzeum v Paříži"
+      },
+      "fr": {
+        "language": "fr",
+        "value": "musée à Paris, en France"
+      },
+      "nl": {
+        "language": "nl",
+        "value": "museum in Frankrijk"
+      },
+      "he": {
+        "language": "he",
+        "value": "מוזיאון בצרפת"
+      },
+      "en": {
+        "language": "en",
+        "value": "French museum"
+      },
+      "ko": {
+        "language": "ko",
+        "value": "등재된 사적"
+      },
+      "de": {
+        "language": "de",
+        "value": "Ausstellungsgebäude in Paris"
+      },
+      "sl": {
+        "language": "sl",
+        "value": "muzejska stavba v Parizu (Francija)"
+      }
+    },
+    "aliases": {
+      "fr": [
+        {
+          "language": "fr",
+          "value": "Musée des arts africains et océaniens"
+        },
+        {
+          "language": "fr",
+          "value": "Musée national des Arts d'Afrique et d'Océanie"
+        },
+        {
+          "language": "fr",
+          "value": "Musée des colonies"
+        }
+      ],
+      "en": [
+        {
+          "language": "en",
+          "value": "Palais de la Porte Doree"
+        }
+      ]
+    },
+    "claims": {
+      "P373": [
+        {
+          "mainsnak": {
+            "snaktype": "value",
+            "property": "P373",
+            "hash": "66b58d73f3ddde5b9f25a623aff7f38f5bd81aa5",
+            "datavalue": {
+              "value": "Palais de la Porte Dorée",
+              "type": "string"
+            },
+            "datatype": "string"
+          },
+          "type": "statement",
+          "id": "q1141316$C3A5EB71-E2B4-4016-8FCC-61BF661CEAC1",
+          "rank": "normal",
+          "references": [
+            {
+              "hash": "fa278ebfc458360e5aed63d5058cca83c46134f1",
+              "snaks": {
+                "P143": [
+                  {
+                    "snaktype": "value",
+                    "property": "P143",
+                    "hash": "e4f6d9441d0600513c4533c672b5ab472dc73694",
+                    "datavalue": {
+                      "value": {
+                        "entity-type": "item",
+                        "numeric-id": 328,
+                        "id": "Q328"
+                      },
+                      "type": "wikibase-entityid"
+                    },
+                    "datatype": "wikibase-item"
+                  }
+                ]
+              },
+              "snaks-order": [
+                "P143"
+              ]
+            }
+          ]
+        }
+      ],
+      "P31": [
+        {
+          "mainsnak": {
+            "snaktype": "value",
+            "property": "P31",
+            "hash": "26649b92d6c661851f2cb4def40d14ea9177ce68",
+            "datavalue": {
+              "value": {
+                "entity-type": "item",
+                "numeric-id": 41176,
+                "id": "Q41176"
+              },
+              "type": "wikibase-entityid"
+            },
+            "datatype": "wikibase-item"
+          },
+          "type": "statement",
+          "id": "Q1141316$0E9BD860-B917-4DEB-B587-35BD7CCFC21C",
+          "rank": "normal"
+        }
+      ],
+      "P17": [
+        {
+          "mainsnak": {
+            "snaktype": "value",
+            "property": "P17",
+            "hash": "c05db5d169c2560b9799d567a803d20a392f53e4",
+            "datavalue": {
+              "value": {
+                "entity-type": "item",
+                "numeric-id": 142,
+                "id": "Q142"
+              },
+              "type": "wikibase-entityid"
+            },
+            "datatype": "wikibase-item"
+          },
+          "type": "statement",
+          "id": "q1141316$F5A91834-5627-4032-8B82-17137DCBB305",
+          "rank": "normal",
+          "references": [
+            {
+              "hash": "d709174cc609072fbf310bb52ddfb7aa2332b473",
+              "snaks": {
+                "P248": [
+                  {
+                    "snaktype": "value",
+                    "property": "P248",
+                    "hash": "fc376b4e25f8c58fa7210b660e00a66558a3332b",
+                    "datavalue": {
+                      "value": {
+                        "entity-type": "item",
+                        "numeric-id": 809830,
+                        "id": "Q809830"
+                      },
+                      "type": "wikibase-entityid"
+                    },
+                    "datatype": "wikibase-item"
+                  }
+                ]
+              },
+              "snaks-order": [
+                "P248"
+              ]
+            }
+          ]
+        }
+      ],
+      "P625": [
+        {
+          "mainsnak": {
+            "snaktype": "value",
+            "property": "P625",
+            "hash": "01d5e37b1a8290c12d7c46b563f0891ff62dfe80",
+            "datavalue": {
+              "value": {
+                "latitude": 48.835277777778,
+                "longitude": 2.4094444444444,
+                "altitude": null,
+                "precision": 0.00027777777777778,
+                "globe": "http://www.wikidata.org/entity/Q2"
+              },
+              "type": "globecoordinate"
+            },
+            "datatype": "globe-coordinate"
+          },
+          "type": "statement",
+          "id": "q1141316$906D2F9E-0A1D-4234-8BE7-3DF77A1892CC",
+          "rank": "normal",
+          "references": [
+            {
+              "hash": "fa278ebfc458360e5aed63d5058cca83c46134f1",
+              "snaks": {
+                "P143": [
+                  {
+                    "snaktype": "value",
+                    "property": "P143",
+                    "hash": "e4f6d9441d0600513c4533c672b5ab472dc73694",
+                    "datavalue": {
+                      "value": {
+                        "entity-type": "item",
+                        "numeric-id": 328,
+                        "id": "Q328"
+                      },
+                      "type": "wikibase-entityid"
+                    },
+                    "datatype": "wikibase-item"
+                  }
+                ]
+              },
+              "snaks-order": [
+                "P143"
+              ]
+            }
+          ]
+        }
+      ],
+      "P131": [
+        {
+          "mainsnak": {
+            "snaktype": "value",
+            "property": "P131",
+            "hash": "8d22833c160cfcd02ab852221c3aba299ed7d10e",
+            "datavalue": {
+              "value": {
+                "entity-type": "item",
+                "numeric-id": 171689,
+                "id": "Q171689"
+              },
+              "type": "wikibase-entityid"
+            },
+            "datatype": "wikibase-item"
+          },
+          "type": "statement",
+          "id": "Q1141316$F36ADDD0-5A99-432C-BFD6-728D3BD7280E",
+          "rank": "normal",
+          "references": [
+            {
+              "hash": "d709174cc609072fbf310bb52ddfb7aa2332b473",
+              "snaks": {
+                "P248": [
+                  {
+                    "snaktype": "value",
+                    "property": "P248",
+                    "hash": "fc376b4e25f8c58fa7210b660e00a66558a3332b",
+                    "datavalue": {
+                      "value": {
+                        "entity-type": "item",
+                        "numeric-id": 809830,
+                        "id": "Q809830"
+                      },
+                      "type": "wikibase-entityid"
+                    },
+                    "datatype": "wikibase-item"
+                  }
+                ]
+              },
+              "snaks-order": [
+                "P248"
+              ]
+            }
+          ]
+        }
+      ],
+      "P380": [
+        {
+          "mainsnak": {
+            "snaktype": "value",
+            "property": "P380",
+            "hash": "7d7e5781811581671b083dda720c657f91418bfe",
+            "datavalue": {
+              "value": "PA00086583",
+              "type": "string"
+            },
+            "datatype": "external-id"
+          },
+          "type": "statement",
+          "id": "Q1141316$052C7EE1-EE75-4520-B1CC-094737FDFFA9",
+          "rank": "normal",
+          "references": [
+            {
+              "hash": "d709174cc609072fbf310bb52ddfb7aa2332b473",
+              "snaks": {
+                "P248": [
+                  {
+                    "snaktype": "value",
+                    "property": "P248",
+                    "hash": "fc376b4e25f8c58fa7210b660e00a66558a3332b",
+                    "datavalue": {
+                      "value": {
+                        "entity-type": "item",
+                        "numeric-id": 809830,
+                        "id": "Q809830"
+                      },
+                      "type": "wikibase-entityid"
+                    },
+                    "datatype": "wikibase-item"
+                  }
+                ]
+              },
+              "snaks-order": [
+                "P248"
+              ]
+            }
+          ]
+        }
+      ],
+      "P669": [
+        {
+          "mainsnak": {
+            "snaktype": "value",
+            "property": "P669",
+            "hash": "399720f9433ab9473978f3671312fe03c9977a89",
+            "datavalue": {
+              "value": {
+                "entity-type": "item",
+                "numeric-id": 2873598,
+                "id": "Q2873598"
+              },
+              "type": "wikibase-entityid"
+            },
+            "datatype": "wikibase-item"
+          },
+          "type": "statement",
+          "qualifiers": {
+            "P670": [
+              {
+                "snaktype": "value",
+                "property": "P670",
+                "hash": "9d1b8ea3d15136d6426c3b303fffc10c69a96015",
+                "datavalue": {
+                  "value": "293",
+                  "type": "string"
+                },
+                "datatype": "string"
+              }
+            ]
+          },
+          "qualifiers-order": [
+            "P670"
+          ],
+          "id": "Q1141316$57B6A876-8B6A-4FB2-B1FB-0D8B58242085",
+          "rank": "normal"
+        }
+      ],
+      "P646": [
+        {
+          "mainsnak": {
+            "snaktype": "value",
+            "property": "P646",
+            "hash": "c4868976f5f53b6965722fbfcb6de370feafee6c",
+            "datavalue": {
+              "value": "/m/04g1kj6",
+              "type": "string"
+            },
+            "datatype": "external-id"
+          },
+          "type": "statement",
+          "id": "Q1141316$1F080649-DE61-442A-9EFA-54CF5B816A43",
+          "rank": "normal",
+          "references": [
+            {
+              "hash": "2b00cb481cddcac7623114367489b5c194901c4a",
+              "snaks": {
+                "P248": [
+                  {
+                    "snaktype": "value",
+                    "property": "P248",
+                    "hash": "a94b740202b097dd33355e0e6c00e54b9395e5e0",
+                    "datavalue": {
+                      "value": {
+                        "entity-type": "item",
+                        "numeric-id": 15241312,
+                        "id": "Q15241312"
+                      },
+                      "type": "wikibase-entityid"
+                    },
+                    "datatype": "wikibase-item"
+                  }
+                ],
+                "P577": [
+                  {
+                    "snaktype": "value",
+                    "property": "P577",
+                    "hash": "fde79ecb015112d2f29229ccc1ec514ed3e71fa2",
+                    "datavalue": {
+                      "value": {
+                        "time": "+2013-10-28T00:00:00Z",
+                        "timezone": 0,
+                        "before": 0,
+                        "after": 0,
+                        "precision": 11,
+                        "calendarmodel": "http://www.wikidata.org/entity/Q1985727"
+                      },
+                      "type": "time"
+                    },
+                    "datatype": "time"
+                  }
+                ]
+              },
+              "snaks-order": [
+                "P248",
+                "P577"
+              ]
+            }
+          ]
+        }
+      ],
+      "P137": [
+        {
+          "mainsnak": {
+            "snaktype": "value",
+            "property": "P137",
+            "hash": "beb42533192474244eb87c4b9c43144c9ea55e91",
+            "datavalue": {
+              "value": {
+                "entity-type": "item",
+                "numeric-id": 92763642,
+                "id": "Q92763642"
+              },
+              "type": "wikibase-entityid"
+            },
+            "datatype": "wikibase-item"
+          },
+          "type": "statement",
+          "id": "Q1141316$122A1339-A6D5-4D19-A838-B480901DF099",
+          "rank": "normal"
+        }
+      ],
+      "P1435": [
+        {
+          "mainsnak": {
+            "snaktype": "value",
+            "property": "P1435",
+            "hash": "2a0d37ac7e76d305563257e91e85bb3847f90355",
+            "datavalue": {
+              "value": {
+                "entity-type": "item",
+                "numeric-id": 10387575,
+                "id": "Q10387575"
+              },
+              "type": "wikibase-entityid"
+            },
+            "datatype": "wikibase-item"
+          },
+          "type": "statement",
+          "qualifiers": {
+            "P580": [
+              {
+                "snaktype": "value",
+                "property": "P580",
+                "hash": "091fb7ba259fc2817ab28cc807b62a26532cbdc1",
+                "datavalue": {
+                  "value": {
+                    "time": "+1987-12-30T00:00:00Z",
+                    "timezone": 0,
+                    "before": 0,
+                    "after": 0,
+                    "precision": 11,
+                    "calendarmodel": "http://www.wikidata.org/entity/Q1985727"
+                  },
+                  "type": "time"
+                },
+                "datatype": "time"
+              }
+            ]
+          },
+          "qualifiers-order": [
+            "P580"
+          ],
+          "id": "Q1141316$50695040-34F4-4660-A61D-CC1F7DE24689",
+          "rank": "normal",
+          "references": [
+            {
+              "hash": "d709174cc609072fbf310bb52ddfb7aa2332b473",
+              "snaks": {
+                "P248": [
+                  {
+                    "snaktype": "value",
+                    "property": "P248",
+                    "hash": "fc376b4e25f8c58fa7210b660e00a66558a3332b",
+                    "datavalue": {
+                      "value": {
+                        "entity-type": "item",
+                        "numeric-id": 809830,
+                        "id": "Q809830"
+                      },
+                      "type": "wikibase-entityid"
+                    },
+                    "datatype": "wikibase-item"
+                  }
+                ]
+              },
+              "snaks-order": [
+                "P248"
+              ]
+            }
+          ]
+        },
+        {
+          "mainsnak": {
+            "snaktype": "value",
+            "property": "P1435",
+            "hash": "47d4f633ccb039ebb1a08af61dffb908b5e07611",
+            "datavalue": {
+              "value": {
+                "entity-type": "item",
+                "numeric-id": 10387684,
+                "id": "Q10387684"
+              },
+              "type": "wikibase-entityid"
+            },
+            "datatype": "wikibase-item"
+          },
+          "type": "statement",
+          "qualifiers": {
+            "P580": [
+              {
+                "snaktype": "value",
+                "property": "P580",
+                "hash": "091fb7ba259fc2817ab28cc807b62a26532cbdc1",
+                "datavalue": {
+                  "value": {
+                    "time": "+1987-12-30T00:00:00Z",
+                    "timezone": 0,
+                    "before": 0,
+                    "after": 0,
+                    "precision": 11,
+                    "calendarmodel": "http://www.wikidata.org/entity/Q1985727"
+                  },
+                  "type": "time"
+                },
+                "datatype": "time"
+              }
+            ]
+          },
+          "qualifiers-order": [
+            "P580"
+          ],
+          "id": "Q1141316$40942DFB-7C92-4313-A530-22DDBB197DBD",
+          "rank": "normal",
+          "references": [
+            {
+              "hash": "d709174cc609072fbf310bb52ddfb7aa2332b473",
+              "snaks": {
+                "P248": [
+                  {
+                    "snaktype": "value",
+                    "property": "P248",
+                    "hash": "fc376b4e25f8c58fa7210b660e00a66558a3332b",
+                    "datavalue": {
+                      "value": {
+                        "entity-type": "item",
+                        "numeric-id": 809830,
+                        "id": "Q809830"
+                      },
+                      "type": "wikibase-entityid"
+                    },
+                    "datatype": "wikibase-item"
+                  }
+                ]
+              },
+              "snaks-order": [
+                "P248"
+              ]
+            }
+          ]
+        }
+      ],
+      "P527": [
+        {
+          "mainsnak": {
+            "snaktype": "value",
+            "property": "P527",
+            "hash": "19399e1175c8ff7a1fccaf4a59083f8da115c2c7",
+            "datavalue": {
+              "value": {
+                "entity-type": "item",
+                "numeric-id": 3067736,
+                "id": "Q3067736"
+              },
+              "type": "wikibase-entityid"
+            },
+            "datatype": "wikibase-item"
+          },
+          "type": "statement",
+          "id": "Q1141316$791d660e-4a37-9527-42ba-c0c7e8760a3f",
+          "rank": "deprecated"
+        }
+      ],
+      "P84": [
+        {
+          "mainsnak": {
+            "snaktype": "value",
+            "property": "P84",
+            "hash": "9c024a92d771e7e931ecabf29f56f61510a1ec1e",
+            "datavalue": {
+              "value": {
+                "entity-type": "item",
+                "numeric-id": 2831314,
+                "id": "Q2831314"
+              },
+              "type": "wikibase-entityid"
+            },
+            "datatype": "wikibase-item"
+          },
+          "type": "statement",
+          "id": "Q1141316$FF5F401C-108F-407B-A080-ABCAFE533D08",
+          "rank": "normal",
+          "references": [
+            {
+              "hash": "d4bd87b862b12d99d26e86472d44f26858dee639",
+              "snaks": {
+                "P143": [
+                  {
+                    "snaktype": "value",
+                    "property": "P143",
+                    "hash": "f30cbd35620c4ea6d0633aaf0210a8916130469b",
+                    "datavalue": {
+                      "value": {
+                        "entity-type": "item",
+                        "numeric-id": 8447,
+                        "id": "Q8447"
+                      },
+                      "type": "wikibase-entityid"
+                    },
+                    "datatype": "wikibase-item"
+                  }
+                ]
+              },
+              "snaks-order": [
+                "P143"
+              ]
+            }
+          ]
+        }
+      ],
+      "P214": [
+        {
+          "mainsnak": {
+            "snaktype": "value",
+            "property": "P214",
+            "hash": "d148a6a188d9dd14ab381635f014863306fdb758",
+            "datavalue": {
+              "value": "137511876",
+              "type": "string"
+            },
+            "datatype": "external-id"
+          },
+          "type": "statement",
+          "id": "Q1141316$7A59BF80-AD13-4449-9484-EE0A4E62C167",
+          "rank": "normal",
+          "references": [
+            {
+              "hash": "88af4068842f2fd68c876695aac8d4b2571244f4",
+              "snaks": {
+                "P248": [
+                  {
+                    "snaktype": "value",
+                    "property": "P248",
+                    "hash": "6b7d4330c4aac4caec4ede9de0311ce273f88ecd",
+                    "datavalue": {
+                      "value": {
+                        "entity-type": "item",
+                        "numeric-id": 54919,
+                        "id": "Q54919"
+                      },
+                      "type": "wikibase-entityid"
+                    },
+                    "datatype": "wikibase-item"
+                  }
+                ],
+                "P813": [
+                  {
+                    "snaktype": "value",
+                    "property": "P813",
+                    "hash": "d64b24f409602606d039c86f2fb54ff48f8a90d9",
+                    "datavalue": {
+                      "value": {
+                        "time": "+2015-08-08T00:00:00Z",
+                        "timezone": 0,
+                        "before": 0,
+                        "after": 0,
+                        "precision": 11,
+                        "calendarmodel": "http://www.wikidata.org/entity/Q1985727"
+                      },
+                      "type": "time"
+                    },
+                    "datatype": "time"
+                  }
+                ]
+              },
+              "snaks-order": [
+                "P248",
+                "P813"
+              ]
+            }
+          ]
+        }
+      ],
+      "P454": [
+        {
+          "mainsnak": {
+            "snaktype": "value",
+            "property": "P454",
+            "hash": "524e4d4473ddcb99eb5cd4770c3c361748a0ebb9",
+            "datavalue": {
+              "value": "20016666",
+              "type": "string"
+            },
+            "datatype": "external-id"
+          },
+          "type": "statement",
+          "id": "Q1141316$4DCF0093-24A4-4464-A32E-DAB150D7EF11",
+          "rank": "normal"
+        }
+      ],
+      "P1619": [
+        {
+          "mainsnak": {
+            "snaktype": "value",
+            "property": "P1619",
+            "hash": "c9cfa5cf5c9aab48e4782696e374d33bdd4cea49",
+            "datavalue": {
+              "value": {
+                "time": "+2007-00-00T00:00:00Z",
+                "timezone": 0,
+                "before": 0,
+                "after": 0,
+                "precision": 9,
+                "calendarmodel": "http://www.wikidata.org/entity/Q1985727"
+              },
+              "type": "time"
+            },
+            "datatype": "time"
+          },
+          "type": "statement",
+          "id": "Q1141316$CA6C31A0-EAEE-49FA-A578-D132C90E0293",
+          "rank": "normal",
+          "references": [
+            {
+              "hash": "852de278490be437ebaf6eb5bdf64e1979a2cdaf",
+              "snaks": {
+                "P143": [
+                  {
+                    "snaktype": "value",
+                    "property": "P143",
+                    "hash": "5a343e7e758a4282a01316d3e959b6e653b767fc",
+                    "datavalue": {
+                      "value": {
+                        "entity-type": "item",
+                        "numeric-id": 11920,
+                        "id": "Q11920"
+                      },
+                      "type": "wikibase-entityid"
+                    },
+                    "datatype": "wikibase-item"
+                  }
+                ],
+                "P4656": [
+                  {
+                    "snaktype": "value",
+                    "property": "P4656",
+                    "hash": "8bb6936c3c2623a04e27c01aacbe6d19ff0a3203",
+                    "datavalue": {
+                      "value": "https://it.wikipedia.org/w/index.php?title=Palais_de_la_Porte_Dorée&oldid=98482978",
+                      "type": "string"
+                    },
+                    "datatype": "url"
+                  }
+                ]
+              },
+              "snaks-order": [
+                "P143",
+                "P4656"
+              ]
+            }
+          ]
+        }
+      ],
+      "P268": [
+        {
+          "mainsnak": {
+            "snaktype": "value",
+            "property": "P268",
+            "hash": "68fe25a379c1c61614de9a8c32507a23362f8cca",
+            "datavalue": {
+              "value": "14597134q",
+              "type": "string"
+            },
+            "datatype": "external-id"
+          },
+          "type": "statement",
+          "id": "Q1141316$456C4A6A-2C79-4BD0-B128-C9F8689FB542",
+          "rank": "normal",
+          "references": [
+            {
+              "hash": "5a858a70d6ac562123c1debf25a5aed93a5c4939",
+              "snaks": {
+                "P248": [
+                  {
+                    "snaktype": "value",
+                    "property": "P248",
+                    "hash": "def9f19d84b65167a2a17ce38364d264c16127fc",
+                    "datavalue": {
+                      "value": {
+                        "entity-type": "item",
+                        "numeric-id": 19938912,
+                        "id": "Q19938912"
+                      },
+                      "type": "wikibase-entityid"
+                    },
+                    "datatype": "wikibase-item"
+                  }
+                ],
+                "P813": [
+                  {
+                    "snaktype": "value",
+                    "property": "P813",
+                    "hash": "97aefaac0484eca89d5fee539362dc40c533824e",
+                    "datavalue": {
+                      "value": {
+                        "time": "+2015-08-26T00:00:00Z",
+                        "timezone": 0,
+                        "before": 0,
+                        "after": 0,
+                        "precision": 11,
+                        "calendarmodel": "http://www.wikidata.org/entity/Q1985727"
+                      },
+                      "type": "time"
+                    },
+                    "datatype": "time"
+                  }
+                ]
+              },
+              "snaks-order": [
+                "P248",
+                "P813"
+              ]
+            }
+          ]
+        }
+      ],
+      "P269": [
+        {
+          "mainsnak": {
+            "snaktype": "value",
+            "property": "P269",
+            "hash": "7ffeab1638cfaf70cc1cc49fdb9d30f67eaa778c",
+            "datavalue": {
+              "value": "086297996",
+              "type": "string"
+            },
+            "datatype": "external-id"
+          },
+          "type": "statement",
+          "id": "Q1141316$7987F7FC-9E57-4695-9051-22574D15F3EA",
+          "rank": "normal",
+          "references": [
+            {
+              "hash": "5a858a70d6ac562123c1debf25a5aed93a5c4939",
+              "snaks": {
+                "P248": [
+                  {
+                    "snaktype": "value",
+                    "property": "P248",
+                    "hash": "def9f19d84b65167a2a17ce38364d264c16127fc",
+                    "datavalue": {
+                      "value": {
+                        "entity-type": "item",
+                        "numeric-id": 19938912,
+                        "id": "Q19938912"
+                      },
+                      "type": "wikibase-entityid"
+                    },
+                    "datatype": "wikibase-item"
+                  }
+                ],
+                "P813": [
+                  {
+                    "snaktype": "value",
+                    "property": "P813",
+                    "hash": "97aefaac0484eca89d5fee539362dc40c533824e",
+                    "datavalue": {
+                      "value": {
+                        "time": "+2015-08-26T00:00:00Z",
+                        "timezone": 0,
+                        "before": 0,
+                        "after": 0,
+                        "precision": 11,
+                        "calendarmodel": "http://www.wikidata.org/entity/Q1985727"
+                      },
+                      "type": "time"
+                    },
+                    "datatype": "time"
+                  }
+                ]
+              },
+              "snaks-order": [
+                "P248",
+                "P813"
+              ]
+            }
+          ]
+        }
+      ],
+      "P213": [
+        {
+          "mainsnak": {
+            "snaktype": "value",
+            "property": "P213",
+            "hash": "c76ef9afc4ab0785c9c8fd71960253ceff1ebbad",
+            "datavalue": {
+              "value": "0000000093584762",
+              "type": "string"
+            },
+            "datatype": "external-id"
+          },
+          "type": "statement",
+          "id": "Q1141316$1B2C68A1-FCE1-4E7C-A2DD-4250591BC857",
+          "rank": "normal",
+          "references": [
+            {
+              "hash": "4b793fd9fb5191b9e0d52eb73ed763d322e00257",
+              "snaks": {
+                "P248": [
+                  {
+                    "snaktype": "value",
+                    "property": "P248",
+                    "hash": "6b7d4330c4aac4caec4ede9de0311ce273f88ecd",
+                    "datavalue": {
+                      "value": {
+                        "entity-type": "item",
+                        "numeric-id": 54919,
+                        "id": "Q54919"
+                      },
+                      "type": "wikibase-entityid"
+                    },
+                    "datatype": "wikibase-item"
+                  }
+                ],
+                "P214": [
+                  {
+                    "snaktype": "value",
+                    "property": "P214",
+                    "hash": "d148a6a188d9dd14ab381635f014863306fdb758",
+                    "datavalue": {
+                      "value": "137511876",
+                      "type": "string"
+                    },
+                    "datatype": "external-id"
+                  }
+                ],
+                "P813": [
+                  {
+                    "snaktype": "value",
+                    "property": "P813",
+                    "hash": "a1b98b5c8bb6eca02829acaf6200c3e4a45b4dd0",
+                    "datavalue": {
+                      "value": {
+                        "time": "+2018-10-07T00:00:00Z",
+                        "timezone": 0,
+                        "before": 0,
+                        "after": 0,
+                        "precision": 11,
+                        "calendarmodel": "http://www.wikidata.org/entity/Q1985727"
+                      },
+                      "type": "time"
+                    },
+                    "datatype": "time"
+                  }
+                ]
+              },
+              "snaks-order": [
+                "P248",
+                "P214",
+                "P813"
+              ]
+            }
+          ]
+        }
+      ],
+      "P571": [
+        {
+          "mainsnak": {
+            "snaktype": "value",
+            "property": "P571",
+            "hash": "fb110c90e2e8d1c766618533ca43a97328c95f43",
+            "datavalue": {
+              "value": {
+                "time": "+1931-00-00T00:00:00Z",
+                "timezone": 0,
+                "before": 0,
+                "after": 0,
+                "precision": 9,
+                "calendarmodel": "http://www.wikidata.org/entity/Q1985727"
+              },
+              "type": "time"
+            },
+            "datatype": "time"
+          },
+          "type": "statement",
+          "id": "Q1141316$E3D01CC1-D5FA-4DBC-921C-60284FF8AD1A",
+          "rank": "normal",
+          "references": [
+            {
+              "hash": "ab3d7f7fcda46d9be5cfa57bde2c889be46b4c5f",
+              "snaks": {
+                "P143": [
+                  {
+                    "snaktype": "value",
+                    "property": "P143",
+                    "hash": "6a164248fc96bfa583bbb495cb63ae6401ec203c",
+                    "datavalue": {
+                      "value": {
+                        "entity-type": "item",
+                        "numeric-id": 206855,
+                        "id": "Q206855"
+                      },
+                      "type": "wikibase-entityid"
+                    },
+                    "datatype": "wikibase-item"
+                  }
+                ],
+                "P4656": [
+                  {
+                    "snaktype": "value",
+                    "property": "P4656",
+                    "hash": "a30d4efec829ca0dac23c7b551428700b136b140",
+                    "datavalue": {
+                      "value": "https://ru.wikipedia.org/w/index.php?title=Дворец_Порт-Доре&oldid=93998840",
+                      "type": "string"
+                    },
+                    "datatype": "url"
+                  }
+                ]
+              },
+              "snaks-order": [
+                "P143",
+                "P4656"
+              ]
+            }
+          ]
+        }
+      ],
+      "P244": [
+        {
+          "mainsnak": {
+            "snaktype": "value",
+            "property": "P244",
+            "hash": "781a0de4e785736b4c42a9e51078d2436e88d267",
+            "datavalue": {
+              "value": "n2005016514",
+              "type": "string"
+            },
+            "datatype": "external-id"
+          },
+          "type": "statement",
+          "id": "Q1141316$EF4CFDC4-3B0B-445F-845B-5851402BA27B",
+          "rank": "normal",
+          "references": [
+            {
+              "hash": "14fa5898ac764e0660517aa07ea0bbba505f262b",
+              "snaks": {
+                "P248": [
+                  {
+                    "snaktype": "value",
+                    "property": "P248",
+                    "hash": "6b7d4330c4aac4caec4ede9de0311ce273f88ecd",
+                    "datavalue": {
+                      "value": {
+                        "entity-type": "item",
+                        "numeric-id": 54919,
+                        "id": "Q54919"
+                      },
+                      "type": "wikibase-entityid"
+                    },
+                    "datatype": "wikibase-item"
+                  }
+                ],
+                "P813": [
+                  {
+                    "snaktype": "value",
+                    "property": "P813",
+                    "hash": "e0d08f96012770600b942d5e8563b2a3499cba8e",
+                    "datavalue": {
+                      "value": {
+                        "time": "+2019-03-06T00:00:00Z",
+                        "timezone": 0,
+                        "before": 0,
+                        "after": 0,
+                        "precision": 11,
+                        "calendarmodel": "http://www.wikidata.org/entity/Q1985727"
+                      },
+                      "type": "time"
+                    },
+                    "datatype": "time"
+                  }
+                ]
+              },
+              "snaks-order": [
+                "P248",
+                "P813"
+              ]
+            }
+          ]
+        }
+      ],
+      "P227": [
+        {
+          "mainsnak": {
+            "snaktype": "value",
+            "property": "P227",
+            "hash": "2eea31325b5e2af3cf34be03e448d7cfe29f89e6",
+            "datavalue": {
+              "value": "7601618-3",
+              "type": "string"
+            },
+            "datatype": "external-id"
+          },
+          "type": "statement",
+          "id": "Q1141316$446C1F96-F56B-4578-ACB0-FAE438A01594",
+          "rank": "normal",
+          "references": [
+            {
+              "hash": "6cd0ac7f44d23bf78542a540b0718d6bc69f0400",
+              "snaks": {
+                "P143": [
+                  {
+                    "snaktype": "value",
+                    "property": "P143",
+                    "hash": "d38375ffe6fe142663ff55cd783aa4df4301d83d",
+                    "datavalue": {
+                      "value": {
+                        "entity-type": "item",
+                        "numeric-id": 48183,
+                        "id": "Q48183"
+                      },
+                      "type": "wikibase-entityid"
+                    },
+                    "datatype": "wikibase-item"
+                  }
+                ],
+                "P4656": [
+                  {
+                    "snaktype": "value",
+                    "property": "P4656",
+                    "hash": "900619c01d721825cdc8af2998768ce434196ba4",
+                    "datavalue": {
+                      "value": "https://de.wikipedia.org/w/index.php?title=Palais_de_la_Porte_Dorée&oldid=187729116",
+                      "type": "string"
+                    },
+                    "datatype": "url"
+                  }
+                ]
+              },
+              "snaks-order": [
+                "P143",
+                "P4656"
+              ]
+            }
+          ]
+        }
+      ],
+      "P149": [
+        {
+          "mainsnak": {
+            "snaktype": "value",
+            "property": "P149",
+            "hash": "978501fb3765073f505f38386678d3d5ae4b16d5",
+            "datavalue": {
+              "value": {
+                "entity-type": "item",
+                "numeric-id": 173782,
+                "id": "Q173782"
+              },
+              "type": "wikibase-entityid"
+            },
+            "datatype": "wikibase-item"
+          },
+          "type": "statement",
+          "id": "Q1141316$4146A020-7688-4906-A7D6-ABACCECDC398",
+          "rank": "normal",
+          "references": [
+            {
+              "hash": "b70445d6ad8cc1ae56f745d4212a342b98f21fa7",
+              "snaks": {
+                "P143": [
+                  {
+                    "snaktype": "value",
+                    "property": "P143",
+                    "hash": "e17507043402fe54ae6c4d65cc51f46cec987de9",
+                    "datavalue": {
+                      "value": {
+                        "entity-type": "item",
+                        "numeric-id": 8449,
+                        "id": "Q8449"
+                      },
+                      "type": "wikibase-entityid"
+                    },
+                    "datatype": "wikibase-item"
+                  }
+                ],
+                "P4656": [
+                  {
+                    "snaktype": "value",
+                    "property": "P4656",
+                    "hash": "69b56878c72af7d9c0e2908945126ec12ee5c16d",
+                    "datavalue": {
+                      "value": "https://es.wikipedia.org/w/index.php?title=Palacio_de_la_Porte_Dorée&oldid=108471715",
+                      "type": "string"
+                    },
+                    "datatype": "url"
+                  }
+                ]
+              },
+              "snaks-order": [
+                "P143",
+                "P4656"
+              ]
+            }
+          ]
+        }
+      ],
+      "P281": [
+        {
+          "mainsnak": {
+            "snaktype": "value",
+            "property": "P281",
+            "hash": "ab40ee9986829883547eb510e2a592982c8eb686",
+            "datavalue": {
+              "value": "75012",
+              "type": "string"
+            },
+            "datatype": "string"
+          },
+          "type": "statement",
+          "id": "Q1141316$1dd32313-4a10-6983-ba64-49a83b509558",
+          "rank": "normal"
+        }
+      ],
+      "P127": [
+        {
+          "mainsnak": {
+            "snaktype": "value",
+            "property": "P127",
+            "hash": "1460ddd759d52ea725ae1f0412bcbc2382acd8ba",
+            "datavalue": {
+              "value": {
+                "entity-type": "item",
+                "numeric-id": 3278478,
+                "id": "Q3278478"
+              },
+              "type": "wikibase-entityid"
+            },
+            "datatype": "wikibase-item"
+          },
+          "type": "statement",
+          "id": "Q1141316$0EABC677-A2E3-41E6-BE8B-FE2B0BD5F0D1",
+          "rank": "normal",
+          "references": [
+            {
+              "hash": "b70445d6ad8cc1ae56f745d4212a342b98f21fa7",
+              "snaks": {
+                "P143": [
+                  {
+                    "snaktype": "value",
+                    "property": "P143",
+                    "hash": "e17507043402fe54ae6c4d65cc51f46cec987de9",
+                    "datavalue": {
+                      "value": {
+                        "entity-type": "item",
+                        "numeric-id": 8449,
+                        "id": "Q8449"
+                      },
+                      "type": "wikibase-entityid"
+                    },
+                    "datatype": "wikibase-item"
+                  }
+                ],
+                "P4656": [
+                  {
+                    "snaktype": "value",
+                    "property": "P4656",
+                    "hash": "69b56878c72af7d9c0e2908945126ec12ee5c16d",
+                    "datavalue": {
+                      "value": "https://es.wikipedia.org/w/index.php?title=Palacio_de_la_Porte_Dorée&oldid=108471715",
+                      "type": "string"
+                    },
+                    "datatype": "url"
+                  }
+                ]
+              },
+              "snaks-order": [
+                "P143",
+                "P4656"
+              ]
+            }
+          ]
+        }
+      ],
+      "P6216": [
+        {
+          "mainsnak": {
+            "snaktype": "value",
+            "property": "P6216",
+            "hash": "5570347fdc76d2a80732f51ea10ee4b144a084e0",
+            "datavalue": {
+              "value": {
+                "entity-type": "item",
+                "numeric-id": 50423863,
+                "id": "Q50423863"
+              },
+              "type": "wikibase-entityid"
+            },
+            "datatype": "wikibase-item"
+          },
+          "type": "statement",
+          "qualifiers": {
+            "P1001": [
+              {
+                "snaktype": "value",
+                "property": "P1001",
+                "hash": "150a1cb6fbace9068c45a349bc8e4f744e512b25",
+                "datavalue": {
+                  "value": {
+                    "entity-type": "item",
+                    "numeric-id": 59542795,
+                    "id": "Q59542795"
+                  },
+                  "type": "wikibase-entityid"
+                },
+                "datatype": "wikibase-item"
+              }
+            ],
+            "P459": [
+              {
+                "snaktype": "value",
+                "property": "P459",
+                "hash": "327050eb235f08bbd27dd414244f003fac41a09c",
+                "datavalue": {
+                  "value": {
+                    "entity-type": "item",
+                    "numeric-id": 29870196,
+                    "id": "Q29870196"
+                  },
+                  "type": "wikibase-entityid"
+                },
+                "datatype": "wikibase-item"
+              }
+            ]
+          },
+          "qualifiers-order": [
+            "P1001",
+            "P459"
+          ],
+          "id": "Q1141316$b2bec87f-47fc-e660-cb20-6db7b9769a33",
+          "rank": "normal"
+        }
+      ],
+      "P366": [
+        {
+          "mainsnak": {
+            "snaktype": "value",
+            "property": "P366",
+            "hash": "862e4ef60bb0b3997db034c97430af5f3bdaea5e",
+            "datavalue": {
+              "value": {
+                "entity-type": "item",
+                "numeric-id": 24699794,
+                "id": "Q24699794"
+              },
+              "type": "wikibase-entityid"
+            },
+            "datatype": "wikibase-item"
+          },
+          "type": "statement",
+          "id": "Q1141316$8c4021db-4322-0b5d-0a90-355ee508f225",
+          "rank": "normal"
+        }
+      ],
+      "P8189": [
+        {
+          "mainsnak": {
+            "snaktype": "value",
+            "property": "P8189",
+            "hash": "aab5dcdf6f03223510df2588551b25bca7c8a180",
+            "datavalue": {
+              "value": "987007513139205171",
+              "type": "string"
+            },
+            "datatype": "external-id"
+          },
+          "type": "statement",
+          "id": "Q1141316$9F6D9081-A822-412F-A84B-B6106D6DDF0B",
+          "rank": "normal",
+          "references": [
+            {
+              "hash": "ecb7a39cf436eb1fba419853af168ef9f2ba1dab",
+              "snaks": {
+                "P248": [
+                  {
+                    "snaktype": "value",
+                    "property": "P248",
+                    "hash": "a03bb6ffe37be9554492f4eea5bd18afcb57df19",
+                    "datavalue": {
+                      "value": {
+                        "entity-type": "item",
+                        "numeric-id": 106509962,
+                        "id": "Q106509962"
+                      },
+                      "type": "wikibase-entityid"
+                    },
+                    "datatype": "wikibase-item"
+                  }
+                ]
+              },
+              "snaks-order": [
+                "P248"
+              ]
+            }
+          ]
+        }
+      ],
+      "P2013": [
+        {
+          "mainsnak": {
+            "snaktype": "value",
+            "property": "P2013",
+            "hash": "dcb9286fcd554e70779395a5a0ca63a4bdde4865",
+            "datavalue": {
+              "value": "PalaisdelaPorteDoree",
+              "type": "string"
+            },
+            "datatype": "external-id"
+          },
+          "type": "statement",
+          "id": "Q1141316$4c7d5408-4123-cbc0-4b58-9b79989df02d",
+          "rank": "normal"
+        }
+      ],
+      "P138": [
+        {
+          "mainsnak": {
+            "snaktype": "value",
+            "property": "P138",
+            "hash": "e93d2c272f6c3d4f185297a5e668d4c9fbb4b9e0",
+            "datavalue": {
+              "value": {
+                "entity-type": "item",
+                "numeric-id": 2081081,
+                "id": "Q2081081"
+              },
+              "type": "wikibase-entityid"
+            },
+            "datatype": "wikibase-item"
+          },
+          "type": "statement",
+          "id": "Q1141316$c3dd0b89-47de-05e5-2e30-6109ab0b614d",
+          "rank": "normal"
+        }
+      ],
+      "P466": [
+        {
+          "mainsnak": {
+            "snaktype": "value",
+            "property": "P466",
+            "hash": "4e36630dc55941e9da1ba72775da65c974e53417",
+            "datavalue": {
+              "value": {
+                "entity-type": "item",
+                "numeric-id": 1094332,
+                "id": "Q1094332"
+              },
+              "type": "wikibase-entityid"
+            },
+            "datatype": "wikibase-item"
+          },
+          "type": "statement",
+          "id": "Q1141316$4fc825c7-4da2-72bd-e758-07950bad9e03",
+          "rank": "normal"
+        },
+        {
+          "mainsnak": {
+            "snaktype": "value",
+            "property": "P466",
+            "hash": "e54e9257b8bafcf52785e92eb96ced10ac6dd522",
+            "datavalue": {
+              "value": {
+                "entity-type": "item",
+                "numeric-id": 2859191,
+                "id": "Q2859191"
+              },
+              "type": "wikibase-entityid"
+            },
+            "datatype": "wikibase-item"
+          },
+          "type": "statement",
+          "id": "Q1141316$7423542b-4eda-fa17-7cfa-e3f65b0924fc",
+          "rank": "normal"
+        }
+      ],
+      "P793": [
+        {
+          "mainsnak": {
+            "snaktype": "value",
+            "property": "P793",
+            "hash": "23db98c2dae78eaf160e2008602eed7c73f16ef8",
+            "datavalue": {
+              "value": {
+                "entity-type": "item",
+                "numeric-id": 385378,
+                "id": "Q385378"
+              },
+              "type": "wikibase-entityid"
+            },
+            "datatype": "wikibase-item"
+          },
+          "type": "statement",
+          "qualifiers": {
+            "P580": [
+              {
+                "snaktype": "value",
+                "property": "P580",
+                "hash": "d6fa4e011ba04b6987a44f3fd109e958ecda6442",
+                "datavalue": {
+                  "value": {
+                    "time": "+1928-00-00T00:00:00Z",
+                    "timezone": 0,
+                    "before": 0,
+                    "after": 0,
+                    "precision": 9,
+                    "calendarmodel": "http://www.wikidata.org/entity/Q1985727"
+                  },
+                  "type": "time"
+                },
+                "datatype": "time"
+              }
+            ],
+            "P582": [
+              {
+                "snaktype": "value",
+                "property": "P582",
+                "hash": "2b58ba616a97ca49dbccc9a969fa178597c1073a",
+                "datavalue": {
+                  "value": {
+                    "time": "+1931-00-00T00:00:00Z",
+                    "timezone": 0,
+                    "before": 0,
+                    "after": 0,
+                    "precision": 9,
+                    "calendarmodel": "http://www.wikidata.org/entity/Q1985727"
+                  },
+                  "type": "time"
+                },
+                "datatype": "time"
+              }
+            ]
+          },
+          "qualifiers-order": [
+            "P580",
+            "P582"
+          ],
+          "id": "Q1141316$ae5bb6bd-45a0-7f61-0e20-03fe20299841",
+          "rank": "normal"
+        }
+      ],
+      "P1801": [
+        {
+          "mainsnak": {
+            "snaktype": "value",
+            "property": "P1801",
+            "hash": "d518ad180a8b226c7e473bba27171b86e326e8a1",
+            "datavalue": {
+              "value": "Palais Porte Dorée Plaque inauguration.jpg",
+              "type": "string"
+            },
+            "datatype": "commonsMedia"
+          },
+          "type": "statement",
+          "id": "Q1141316$1b6aa17f-4a62-8ec7-cd20-73476cb558e0",
+          "rank": "normal"
+        }
+      ],
+      "P1838": [
+        {
+          "mainsnak": {
+            "snaktype": "value",
+            "property": "P1838",
+            "hash": "6c9770699232da198320c995ae6b0b5c5071e8f7",
+            "datavalue": {
+              "value": "FR-75056-534",
+              "type": "string"
+            },
+            "datatype": "external-id"
+          },
+          "type": "statement",
+          "id": "Q1141316$a4e620c8-4a47-b632-2889-c437495413bc",
+          "rank": "normal"
+        }
+      ],
+      "P170": [
+        {
+          "mainsnak": {
+            "snaktype": "value",
+            "property": "P170",
+            "hash": "971c3c119488f1e9fab6c833240b4335096d94a2",
+            "datavalue": {
+              "value": {
+                "entity-type": "item",
+                "numeric-id": 381924,
+                "id": "Q381924"
+              },
+              "type": "wikibase-entityid"
+            },
+            "datatype": "wikibase-item"
+          },
+          "type": "statement",
+          "qualifiers": {
+            "P518": [
+              {
+                "snaktype": "value",
+                "property": "P518",
+                "hash": "61ee61a2bd2c3f449241bc543423150ed3f4bfad",
+                "datavalue": {
+                  "value": {
+                    "entity-type": "item",
+                    "numeric-id": 1562096,
+                    "id": "Q1562096"
+                  },
+                  "type": "wikibase-entityid"
+                },
+                "datatype": "wikibase-item"
+              }
+            ]
+          },
+          "qualifiers-order": [
+            "P518"
+          ],
+          "id": "Q1141316$cb071b96-4e69-e304-7990-b0e828c9d4d9",
+          "rank": "normal",
+          "references": [
+            {
+              "hash": "e557c217cdc34e33060761ca8502b26a160732c0",
+              "snaks": {
+                "P854": [
+                  {
+                    "snaktype": "value",
+                    "property": "P854",
+                    "hash": "7b18de9667359c42e6b448bc6e967a410c402356",
+                    "datavalue": {
+                      "value": "https://monument.palais-portedoree.fr/les-decors/un-palais-art-deco/les-ferronneries",
+                      "type": "string"
+                    },
+                    "datatype": "url"
+                  }
+                ]
+              },
+              "snaks-order": [
+                "P854"
+              ]
+            }
+          ]
+        },
+        {
+          "mainsnak": {
+            "snaktype": "value",
+            "property": "P170",
+            "hash": "b67a87d0138ec7452ff7dc74ea39b964be6bfcb5",
+            "datavalue": {
+              "value": {
+                "entity-type": "item",
+                "numeric-id": 3047441,
+                "id": "Q3047441"
+              },
+              "type": "wikibase-entityid"
+            },
+            "datatype": "wikibase-item"
+          },
+          "type": "statement",
+          "qualifiers": {
+            "P518": [
+              {
+                "snaktype": "value",
+                "property": "P518",
+                "hash": "61ee61a2bd2c3f449241bc543423150ed3f4bfad",
+                "datavalue": {
+                  "value": {
+                    "entity-type": "item",
+                    "numeric-id": 1562096,
+                    "id": "Q1562096"
+                  },
+                  "type": "wikibase-entityid"
+                },
+                "datatype": "wikibase-item"
+              }
+            ]
+          },
+          "qualifiers-order": [
+            "P518"
+          ],
+          "id": "Q1141316$722cae70-4a1f-3128-feac-9eddecbd9f3c",
+          "rank": "normal"
+        },
+        {
+          "mainsnak": {
+            "snaktype": "value",
+            "property": "P170",
+            "hash": "64e135fae06f1f96540b2f5249b2156ee4338e5a",
+            "datavalue": {
+              "value": {
+                "entity-type": "item",
+                "numeric-id": 3421157,
+                "id": "Q3421157"
+              },
+              "type": "wikibase-entityid"
+            },
+            "datatype": "wikibase-item"
+          },
+          "type": "statement",
+          "qualifiers": {
+            "P518": [
+              {
+                "snaktype": "value",
+                "property": "P518",
+                "hash": "61ee61a2bd2c3f449241bc543423150ed3f4bfad",
+                "datavalue": {
+                  "value": {
+                    "entity-type": "item",
+                    "numeric-id": 1562096,
+                    "id": "Q1562096"
+                  },
+                  "type": "wikibase-entityid"
+                },
+                "datatype": "wikibase-item"
+              }
+            ]
+          },
+          "qualifiers-order": [
+            "P518"
+          ],
+          "id": "Q1141316$3f64fb6c-43cc-8587-e11b-45a031e3ecbf",
+          "rank": "normal"
+        }
+      ],
+      "P5008": [
+        {
+          "mainsnak": {
+            "snaktype": "value",
+            "property": "P5008",
+            "hash": "db4de88e10e72af509c0bb398ecb29c67ab1bfcc",
+            "datavalue": {
+              "value": {
+                "entity-type": "item",
+                "numeric-id": 134412769,
+                "id": "Q134412769"
+              },
+              "type": "wikibase-entityid"
+            },
+            "datatype": "wikibase-item"
+          },
+          "type": "statement",
+          "id": "Q1141316$21524C48-DC36-48E2-BF1F-5288D0B7C58A",
+          "rank": "normal"
+        }
+      ],
+      "P13591": [
+        {
+          "mainsnak": {
+            "snaktype": "value",
+            "property": "P13591",
+            "hash": "5741cd0723a59052370fd54a7115043dc1af2187",
+            "datavalue": {
+              "value": "group/dc6bae7a-5f0b-413f-b0ed-da99c3e4b30f",
+              "type": "string"
+            },
+            "datatype": "external-id"
+          },
+          "type": "statement",
+          "id": "Q1141316$A62C549D-7A03-4C9B-8B33-945D5CA9A7DF",
+          "rank": "normal"
+        }
+      ],
+      "P18": [
+        {
+          "mainsnak": {
+            "snaktype": "value",
+            "property": "P18",
+            "hash": "74ab8142986b3ebd1f2744b31e85a4732ff2329d",
+            "datavalue": {
+              "value": "Palasi Porte Doree Entree.jpg",
+              "type": "string"
+            },
+            "datatype": "commonsMedia"
+          },
+          "type": "statement",
+          "qualifiers": {
+            "P585": [
+              {
+                "snaktype": "value",
+                "property": "P585",
+                "hash": "05c8ed2e5ba2481619129830a6838b6ce6a1f03c",
+                "datavalue": {
+                  "value": {
+                    "time": "+2019-08-20T00:00:00Z",
+                    "timezone": 0,
+                    "before": 0,
+                    "after": 0,
+                    "precision": 11,
+                    "calendarmodel": "http://www.wikidata.org/entity/Q1985727"
+                  },
+                  "type": "time"
+                },
+                "datatype": "time"
+              }
+            ]
+          },
+          "qualifiers-order": [
+            "P585"
+          ],
+          "id": "Q1141316$AC352413-8722-4E13-95D1-93C86DB8B4C2",
+          "rank": "normal"
+        }
+      ],
+      "P6413": [
+        {
+          "mainsnak": {
+            "snaktype": "value",
+            "property": "P6413",
+            "hash": "e92493409b329dc8b8b9a5b8c64918f59eabe5a3",
+            "datavalue": {
+              "value": "Q1141316",
+              "type": "string"
+            },
+            "datatype": "external-id"
+          },
+          "type": "statement",
+          "id": "Q1141316$70FEA4D4-CD59-4645-8D5B-270710BB9B10",
+          "rank": "normal"
+        }
+      ]
+    },
+    "sitelinks": {
+      "commonswiki": {
+        "site": "commonswiki",
+        "title": "Category:Palais de la Porte Dorée",
+        "badges": [],
+        "url": "https://commons.wikimedia.org/wiki/Category:Palais_de_la_Porte_Dor%C3%A9e"
+      },
+      "cswiki": {
+        "site": "cswiki",
+        "title": "Palais de la Porte Dorée",
+        "badges": [],
+        "url": "https://cs.wikipedia.org/wiki/Palais_de_la_Porte_Dor%C3%A9e"
+      },
+      "dewiki": {
+        "site": "dewiki",
+        "title": "Palais de la Porte Dorée",
+        "badges": [],
+        "url": "https://de.wikipedia.org/wiki/Palais_de_la_Porte_Dor%C3%A9e"
+      },
+      "enwiki": {
+        "site": "enwiki",
+        "title": "Palais de la Porte Dorée",
+        "badges": [],
+        "url": "https://en.wikipedia.org/wiki/Palais_de_la_Porte_Dor%C3%A9e"
+      },
+      "eswiki": {
+        "site": "eswiki",
+        "title": "Palacio de la Porte Dorée",
+        "badges": [],
+        "url": "https://es.wikipedia.org/wiki/Palacio_de_la_Porte_Dor%C3%A9e"
+      },
+      "frwiki": {
+        "site": "frwiki",
+        "title": "Palais de la Porte-Dorée",
+        "badges": [],
+        "url": "https://fr.wikipedia.org/wiki/Palais_de_la_Porte-Dor%C3%A9e"
+      },
+      "itwiki": {
+        "site": "itwiki",
+        "title": "Palais de la Porte Dorée",
+        "badges": [],
+        "url": "https://it.wikipedia.org/wiki/Palais_de_la_Porte_Dor%C3%A9e"
+      },
+      "ruwiki": {
+        "site": "ruwiki",
+        "title": "Дворец Порт-Доре",
+        "badges": [],
+        "url": "https://ru.wikipedia.org/wiki/%D0%94%D0%B2%D0%BE%D1%80%D0%B5%D1%86_%D0%9F%D0%BE%D1%80%D1%82-%D0%94%D0%BE%D1%80%D0%B5"
+      },
+      "zhwiki": {
+        "site": "zhwiki",
+        "title": "鍍金門宮",
+        "badges": [],
+        "url": "https://zh.wikipedia.org/wiki/%E9%8D%8D%E9%87%91%E9%96%80%E5%AE%AE"
+      }
+    }
+  }
+}

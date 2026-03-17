@@ -1,0 +1,337 @@
+{
+  "saved_at": "2026-03-07T13:50:50.299Z",
+  "value": {
+    "pageid": 2226936,
+    "ns": 0,
+    "title": "Q2305320",
+    "lastrevid": 2458111079,
+    "modified": "2026-01-27T01:12:33Z",
+    "type": "item",
+    "id": "Q2305320",
+    "labels": {
+      "fr": {
+        "language": "fr",
+        "value": "traité de Blois"
+      },
+      "es": {
+        "language": "es",
+        "value": "Tratado de Blois"
+      },
+      "ca": {
+        "language": "ca",
+        "value": "Tractat de Blois"
+      },
+      "nl": {
+        "language": "nl",
+        "value": "Verdrag van Blois"
+      },
+      "it": {
+        "language": "it",
+        "value": "trattato di Blois"
+      },
+      "en": {
+        "language": "en",
+        "value": "Treaty of Blois (1504)"
+      },
+      "ja": {
+        "language": "ja",
+        "value": "ブロア条約 (1504年)"
+      },
+      "zh": {
+        "language": "zh",
+        "value": "布盧瓦條約"
+      },
+      "de": {
+        "language": "de",
+        "value": "Vertrag von Blois (1504)"
+      },
+      "ko": {
+        "language": "ko",
+        "value": "블루아 조약"
+      }
+    },
+    "descriptions": {
+      "nl": {
+        "language": "nl",
+        "value": "1504"
+      },
+      "en": {
+        "language": "en",
+        "value": "1504 treaty between Louis XII of France and the Holy Roman Emperor Maximillian I"
+      }
+    },
+    "aliases": {
+      "fr": [
+        {
+          "language": "fr",
+          "value": "Traite de Blois"
+        }
+      ],
+      "ca": [
+        {
+          "language": "ca",
+          "value": "Tractat de Blois de 1504"
+        },
+        {
+          "language": "ca",
+          "value": "Primer Tractat de Blois"
+        }
+      ]
+    },
+    "claims": {
+      "P646": [
+        {
+          "mainsnak": {
+            "snaktype": "value",
+            "property": "P646",
+            "hash": "7c8f863237a21161892711cdfbb69953799e1c58",
+            "datavalue": {
+              "value": "/m/0gjb607",
+              "type": "string"
+            },
+            "datatype": "external-id"
+          },
+          "type": "statement",
+          "id": "Q2305320$9408F9EE-C3C7-4C2A-B160-8D877EC2BF7E",
+          "rank": "normal",
+          "references": [
+            {
+              "hash": "2b00cb481cddcac7623114367489b5c194901c4a",
+              "snaks": {
+                "P248": [
+                  {
+                    "snaktype": "value",
+                    "property": "P248",
+                    "hash": "a94b740202b097dd33355e0e6c00e54b9395e5e0",
+                    "datavalue": {
+                      "value": {
+                        "entity-type": "item",
+                        "numeric-id": 15241312,
+                        "id": "Q15241312"
+                      },
+                      "type": "wikibase-entityid"
+                    },
+                    "datatype": "wikibase-item"
+                  }
+                ],
+                "P577": [
+                  {
+                    "snaktype": "value",
+                    "property": "P577",
+                    "hash": "fde79ecb015112d2f29229ccc1ec514ed3e71fa2",
+                    "datavalue": {
+                      "value": {
+                        "time": "+2013-10-28T00:00:00Z",
+                        "timezone": 0,
+                        "before": 0,
+                        "after": 0,
+                        "precision": 11,
+                        "calendarmodel": "http://www.wikidata.org/entity/Q1985727"
+                      },
+                      "type": "time"
+                    },
+                    "datatype": "time"
+                  }
+                ]
+              },
+              "snaks-order": [
+                "P248",
+                "P577"
+              ]
+            }
+          ]
+        }
+      ],
+      "P31": [
+        {
+          "mainsnak": {
+            "snaktype": "value",
+            "property": "P31",
+            "hash": "b0e8db723228922bff4fcc3427ebd4e3289412c9",
+            "datavalue": {
+              "value": {
+                "entity-type": "item",
+                "numeric-id": 131569,
+                "id": "Q131569"
+              },
+              "type": "wikibase-entityid"
+            },
+            "datatype": "wikibase-item"
+          },
+          "type": "statement",
+          "id": "Q2305320$F5613753-7544-4561-A9DF-FB32A5FF6E58",
+          "rank": "normal",
+          "references": [
+            {
+              "hash": "d4bd87b862b12d99d26e86472d44f26858dee639",
+              "snaks": {
+                "P143": [
+                  {
+                    "snaktype": "value",
+                    "property": "P143",
+                    "hash": "f30cbd35620c4ea6d0633aaf0210a8916130469b",
+                    "datavalue": {
+                      "value": {
+                        "entity-type": "item",
+                        "numeric-id": 8447,
+                        "id": "Q8447"
+                      },
+                      "type": "wikibase-entityid"
+                    },
+                    "datatype": "wikibase-item"
+                  }
+                ]
+              },
+              "snaks-order": [
+                "P143"
+              ]
+            }
+          ]
+        }
+      ],
+      "P131": [
+        {
+          "mainsnak": {
+            "snaktype": "value",
+            "property": "P131",
+            "hash": "8c54ec45e509fd3b8a6dc6e7f2686e3d9345a7b8",
+            "datavalue": {
+              "value": {
+                "entity-type": "item",
+                "numeric-id": 160927,
+                "id": "Q160927"
+              },
+              "type": "wikibase-entityid"
+            },
+            "datatype": "wikibase-item"
+          },
+          "type": "statement",
+          "qualifiers": {
+            "P131": [
+              {
+                "snaktype": "value",
+                "property": "P131",
+                "hash": "ad5a1c7f04b9f95eb3fe4576e75860cf91a4ad57",
+                "datavalue": {
+                  "value": {
+                    "entity-type": "item",
+                    "numeric-id": 70972,
+                    "id": "Q70972"
+                  },
+                  "type": "wikibase-entityid"
+                },
+                "datatype": "wikibase-item"
+              }
+            ]
+          },
+          "qualifiers-order": [
+            "P131"
+          ],
+          "id": "Q2305320$3b57edd1-4353-d4ea-1f92-d4e451fcc223",
+          "rank": "normal"
+        }
+      ],
+      "P585": [
+        {
+          "mainsnak": {
+            "snaktype": "value",
+            "property": "P585",
+            "hash": "66b9286c84c1fa8d97a23639defdac78f98d6a8d",
+            "datavalue": {
+              "value": {
+                "time": "+1504-09-22T00:00:00Z",
+                "timezone": 0,
+                "before": 0,
+                "after": 0,
+                "precision": 11,
+                "calendarmodel": "http://www.wikidata.org/entity/Q1985786"
+              },
+              "type": "time"
+            },
+            "datatype": "time"
+          },
+          "type": "statement",
+          "id": "Q2305320$1a48bf4d-4269-8d8f-fe1e-f1a9be370813",
+          "rank": "normal"
+        }
+      ],
+      "P17": [
+        {
+          "mainsnak": {
+            "snaktype": "value",
+            "property": "P17",
+            "hash": "c05db5d169c2560b9799d567a803d20a392f53e4",
+            "datavalue": {
+              "value": {
+                "entity-type": "item",
+                "numeric-id": 142,
+                "id": "Q142"
+              },
+              "type": "wikibase-entityid"
+            },
+            "datatype": "wikibase-item"
+          },
+          "type": "statement",
+          "id": "Q2305320$64A34178-D676-43F3-B684-F66B98F8E2A3",
+          "rank": "normal"
+        }
+      ]
+    },
+    "sitelinks": {
+      "cawiki": {
+        "site": "cawiki",
+        "title": "Tractat de Blois (1504)",
+        "badges": [],
+        "url": "https://ca.wikipedia.org/wiki/Tractat_de_Blois_(1504)"
+      },
+      "dewiki": {
+        "site": "dewiki",
+        "title": "Vertrag von Blois (1504)",
+        "badges": [],
+        "url": "https://de.wikipedia.org/wiki/Vertrag_von_Blois_(1504)"
+      },
+      "enwiki": {
+        "site": "enwiki",
+        "title": "Treaty of Blois (1504)",
+        "badges": [],
+        "url": "https://en.wikipedia.org/wiki/Treaty_of_Blois_(1504)"
+      },
+      "eswiki": {
+        "site": "eswiki",
+        "title": "Tratado de Blois (1504)",
+        "badges": [],
+        "url": "https://es.wikipedia.org/wiki/Tratado_de_Blois_(1504)"
+      },
+      "frwiki": {
+        "site": "frwiki",
+        "title": "Traité de Blois (1504)",
+        "badges": [],
+        "url": "https://fr.wikipedia.org/wiki/Trait%C3%A9_de_Blois_(1504)"
+      },
+      "itwiki": {
+        "site": "itwiki",
+        "title": "Trattato di Blois (1504)",
+        "badges": [],
+        "url": "https://it.wikipedia.org/wiki/Trattato_di_Blois_(1504)"
+      },
+      "jawiki": {
+        "site": "jawiki",
+        "title": "ブロワ条約 (1504年)",
+        "badges": [],
+        "url": "https://ja.wikipedia.org/wiki/%E3%83%96%E3%83%AD%E3%83%AF%E6%9D%A1%E7%B4%84_(1504%E5%B9%B4)"
+      },
+      "kowiki": {
+        "site": "kowiki",
+        "title": "블루아 조약 (1504년)",
+        "badges": [],
+        "url": "https://ko.wikipedia.org/wiki/%EB%B8%94%EB%A3%A8%EC%95%84_%EC%A1%B0%EC%95%BD_(1504%EB%85%84)"
+      },
+      "nlwiki": {
+        "site": "nlwiki",
+        "title": "Verdrag van Blois (1504)",
+        "badges": [],
+        "url": "https://nl.wikipedia.org/wiki/Verdrag_van_Blois_(1504)"
+      }
+    }
+  }
+}

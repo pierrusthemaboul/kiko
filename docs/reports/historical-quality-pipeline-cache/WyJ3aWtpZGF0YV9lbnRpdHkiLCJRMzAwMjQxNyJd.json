@@ -1,0 +1,179 @@
+{
+  "pageid": 2870596,
+  "ns": 0,
+  "title": "Q3002417",
+  "lastrevid": 1988471351,
+  "modified": "2023-10-08T09:13:38Z",
+  "type": "item",
+  "id": "Q3002417",
+  "labels": {
+    "fr": {
+      "language": "fr",
+      "value": "Credit Mobilier of America"
+    },
+    "es": {
+      "language": "es",
+      "value": "Crédito Mobiliario de América"
+    },
+    "en": {
+      "language": "en",
+      "value": "Credit Mobilier of America"
+    }
+  },
+  "descriptions": {
+    "en": {
+      "language": "en",
+      "value": "financial company in charge of financing the construction of the first transcontinental railroad in the United States"
+    },
+    "ar": {
+      "language": "ar",
+      "value": "شركة"
+    }
+  },
+  "aliases": {
+    "es": [
+      {
+        "language": "es",
+        "value": "Credito Mobiliario de America"
+      }
+    ]
+  },
+  "claims": {
+    "P571": [
+      {
+        "mainsnak": {
+          "snaktype": "value",
+          "property": "P571",
+          "hash": "afea9b3bb2afd79c0db11e3e5522cb3fa3166038",
+          "datavalue": {
+            "value": {
+              "time": "+1864-01-01T00:00:00Z",
+              "timezone": 0,
+              "before": 0,
+              "after": 0,
+              "precision": 9,
+              "calendarmodel": "http://www.wikidata.org/entity/Q1985727"
+            },
+            "type": "time"
+          },
+          "datatype": "time"
+        },
+        "type": "statement",
+        "id": "Q3002417$AF590AD0-F5CB-42E4-96A6-880A73A04243",
+        "rank": "normal",
+        "references": [
+          {
+            "hash": "d4bd87b862b12d99d26e86472d44f26858dee639",
+            "snaks": {
+              "P143": [
+                {
+                  "snaktype": "value",
+                  "property": "P143",
+                  "hash": "f30cbd35620c4ea6d0633aaf0210a8916130469b",
+                  "datavalue": {
+                    "value": {
+                      "entity-type": "item",
+                      "numeric-id": 8447,
+                      "id": "Q8447"
+                    },
+                    "type": "wikibase-entityid"
+                  },
+                  "datatype": "wikibase-item"
+                }
+              ]
+            },
+            "snaks-order": [
+              "P143"
+            ]
+          }
+        ]
+      }
+    ],
+    "P31": [
+      {
+        "mainsnak": {
+          "snaktype": "value",
+          "property": "P31",
+          "hash": "326e3d41d1e9c34715e880be6e1c6a1e822e4317",
+          "datavalue": {
+            "value": {
+              "entity-type": "item",
+              "numeric-id": 4830453,
+              "id": "Q4830453"
+            },
+            "type": "wikibase-entityid"
+          },
+          "datatype": "wikibase-item"
+        },
+        "type": "statement",
+        "id": "Q3002417$0076D619-4648-444B-8CF2-C5976F753C81",
+        "rank": "normal"
+      }
+    ],
+    "P1417": [
+      {
+        "mainsnak": {
+          "snaktype": "value",
+          "property": "P1417",
+          "hash": "362f961ac703e4a1f5fb3b47684566899355ad0f",
+          "datavalue": {
+            "value": "topic/Credit-Mobilier-of-America",
+            "type": "string"
+          },
+          "datatype": "external-id"
+        },
+        "type": "statement",
+        "qualifiers": {
+          "P1810": [
+            {
+              "snaktype": "value",
+              "property": "P1810",
+              "hash": "e8b78c5f418dc3326a6c4244e4a58341bf80e739",
+              "datavalue": {
+                "value": "Crédit Mobilier of America",
+                "type": "string"
+              },
+              "datatype": "string"
+            }
+          ]
+        },
+        "qualifiers-order": [
+          "P1810"
+        ],
+        "id": "Q3002417$70AA5F76-5E30-41A0-AEB7-69A7821D3A38",
+        "rank": "normal"
+      }
+    ],
+    "P2671": [
+      {
+        "mainsnak": {
+          "snaktype": "value",
+          "property": "P2671",
+          "hash": "80d900d2b28eb76d1f313769bea7424ed5403eb7",
+          "datavalue": {
+            "value": "/g/155qbqg5",
+            "type": "string"
+          },
+          "datatype": "external-id"
+        },
+        "type": "statement",
+        "id": "Q3002417$BC75EF5C-905F-4C44-AF24-36CBE19CF976",
+        "rank": "normal"
+      }
+    ]
+  },
+  "sitelinks": {
+    "eswiki": {
+      "site": "eswiki",
+      "title": "Crédito Mobiliario de América",
+      "badges": [],
+      "url": "https://es.wikipedia.org/wiki/Cr%C3%A9dito_Mobiliario_de_Am%C3%A9rica"
+    },
+    "frwiki": {
+      "site": "frwiki",
+      "title": "Credit Mobilier of America",
+      "badges": [],
+      "url": "https://fr.wikipedia.org/wiki/Credit_Mobilier_of_America"
+    }
+  }
+}

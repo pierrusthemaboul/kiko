@@ -1,0 +1,318 @@
+{
+  "pageid": 2523440,
+  "ns": 0,
+  "title": "Q2616437",
+  "lastrevid": 2428915297,
+  "modified": "2025-11-13T03:35:51Z",
+  "type": "item",
+  "id": "Q2616437",
+  "labels": {
+    "ja": {
+      "language": "ja",
+      "value": "ベンゾジアゼピンの長期的影響"
+    },
+    "ru": {
+      "language": "ru",
+      "value": "долгосрочные эффекты бензодиазепинов"
+    },
+    "en": {
+      "language": "en",
+      "value": "long-term effects of benzodiazepines"
+    },
+    "es": {
+      "language": "es",
+      "value": "Efectos a largo plazo de las benzodiazepinas"
+    },
+    "sv": {
+      "language": "sv",
+      "value": "långsiktiga effekter av bruk av bensodiazepiner"
+    },
+    "el": {
+      "language": "el",
+      "value": "Επιδράσεις από τη μακροχρόνια χρήση βενζοδιαζεπινών"
+    },
+    "en-ca": {
+      "language": "en-ca",
+      "value": "Effects of long-term benzodiazepine use"
+    },
+    "en-gb": {
+      "language": "en-gb",
+      "value": "Effects of long-term benzodiazepine use"
+    },
+    "fr": {
+      "language": "fr",
+      "value": "risques à long terme des benzodiazépines"
+    },
+    "zh-hant": {
+      "language": "zh-hant",
+      "value": "苯二氮䓬類藥物長期使用效應"
+    },
+    "zh-cn": {
+      "language": "zh-cn",
+      "value": "苯二氮䓬类药物長期使用效應"
+    },
+    "ar": {
+      "language": "ar",
+      "value": "آثار استخدام البنزوديازيبين على المدى الطويل"
+    },
+    "zh-hans": {
+      "language": "zh-hans",
+      "value": "苯二氮䓬类药物長期使用效應"
+    },
+    "zh": {
+      "language": "zh",
+      "value": "苯二氮䓬类药物長期使用效應"
+    },
+    "uk": {
+      "language": "uk",
+      "value": "віддалені ефекти бензодіазепінів"
+    }
+  },
+  "descriptions": {
+    "ja": {
+      "language": "ja",
+      "value": "ベンゾジアゼピン系の薬物依存症や、認知機能、身体的健康、精神的健康における薬物有害反応"
+    }
+  },
+  "aliases": {
+    "sv": [
+      {
+        "language": "sv",
+        "value": "Långsiktiga effekter av bruk av benzodiazepiner"
+      }
+    ]
+  },
+  "claims": {
+    "P494": [
+      {
+        "mainsnak": {
+          "snaktype": "value",
+          "property": "P494",
+          "hash": "4b107127fe53b561b74b83b7f6551004dd93129b",
+          "datavalue": {
+            "value": "F13",
+            "type": "string"
+          },
+          "datatype": "external-id"
+        },
+        "type": "statement",
+        "id": "q2616437$FBE01EAD-7A59-4D8C-B2A2-62285E01A789",
+        "rank": "normal",
+        "references": [
+          {
+            "hash": "fa278ebfc458360e5aed63d5058cca83c46134f1",
+            "snaks": {
+              "P143": [
+                {
+                  "snaktype": "value",
+                  "property": "P143",
+                  "hash": "e4f6d9441d0600513c4533c672b5ab472dc73694",
+                  "datavalue": {
+                    "value": {
+                      "entity-type": "item",
+                      "numeric-id": 328,
+                      "id": "Q328"
+                    },
+                    "type": "wikibase-entityid"
+                  },
+                  "datatype": "wikibase-item"
+                }
+              ]
+            },
+            "snaks-order": [
+              "P143"
+            ]
+          }
+        ]
+      }
+    ],
+    "P1995": [
+      {
+        "mainsnak": {
+          "snaktype": "value",
+          "property": "P1995",
+          "hash": "ff8fb295b33ab23b2d60f35a4eb36e9e3868f19d",
+          "datavalue": {
+            "value": {
+              "entity-type": "item",
+              "numeric-id": 7867,
+              "id": "Q7867"
+            },
+            "type": "wikibase-entityid"
+          },
+          "datatype": "wikibase-item"
+        },
+        "type": "statement",
+        "id": "Q2616437$8FCA09BD-EF51-4655-B0B5-97CE73C8DA69",
+        "rank": "normal"
+      }
+    ],
+    "P31": [
+      {
+        "mainsnak": {
+          "snaktype": "value",
+          "property": "P31",
+          "hash": "1d9f884557e842fbc801e3e2473124b145628389",
+          "datavalue": {
+            "value": {
+              "entity-type": "item",
+              "numeric-id": 3269441,
+              "id": "Q3269441"
+            },
+            "type": "wikibase-entityid"
+          },
+          "datatype": "wikibase-item"
+        },
+        "type": "statement",
+        "id": "Q2616437$ffce82e7-4afa-e79f-30a3-b7c3552b8d08",
+        "rank": "normal"
+      }
+    ],
+    "P18": [
+      {
+        "mainsnak": {
+          "snaktype": "value",
+          "property": "P18",
+          "hash": "8ce0f4d4529c94304952c35844f84d2e49b86873",
+          "datavalue": {
+            "value": "Benzodiazepine.svg",
+            "type": "string"
+          },
+          "datatype": "commonsMedia"
+        },
+        "type": "statement",
+        "id": "Q2616437$FB8B5A3D-89B2-4C14-9617-0510D632A90A",
+        "rank": "normal",
+        "references": [
+          {
+            "hash": "03a89a2c1dc0b45d69afca947fa30c6f9f822237",
+            "snaks": {
+              "P143": [
+                {
+                  "snaktype": "value",
+                  "property": "P143",
+                  "hash": "e17507043402fe54ae6c4d65cc51f46cec987de9",
+                  "datavalue": {
+                    "value": {
+                      "entity-type": "item",
+                      "numeric-id": 8449,
+                      "id": "Q8449"
+                    },
+                    "type": "wikibase-entityid"
+                  },
+                  "datatype": "wikibase-item"
+                }
+              ],
+              "P4656": [
+                {
+                  "snaktype": "value",
+                  "property": "P4656",
+                  "hash": "f0979a08ba508cec3495525c04195f21eed4c03b",
+                  "datavalue": {
+                    "value": "https://es.wikipedia.org/w/index.php?title=Efectos_a_largo_plazo_de_las_benzodiacepinas&oldid=120506019",
+                    "type": "string"
+                  },
+                  "datatype": "url"
+                }
+              ]
+            },
+            "snaks-order": [
+              "P143",
+              "P4656"
+            ]
+          }
+        ]
+      }
+    ],
+    "P6366": [
+      {
+        "mainsnak": {
+          "snaktype": "value",
+          "property": "P6366",
+          "hash": "091164acf1d5cb7dccefcde386be5c5387530048",
+          "datavalue": {
+            "value": "2779749435",
+            "type": "string"
+          },
+          "datatype": "external-id"
+        },
+        "type": "statement",
+        "id": "Q2616437$58B8B4BF-41D1-41CF-B613-87EA53E9F740",
+        "rank": "normal"
+      }
+    ],
+    "P828": [
+      {
+        "mainsnak": {
+          "snaktype": "value",
+          "property": "P828",
+          "hash": "2def7aa456151aabbc1b11ae681974c8c89b27fb",
+          "datavalue": {
+            "value": {
+              "entity-type": "item",
+              "numeric-id": 83871,
+              "id": "Q83871"
+            },
+            "type": "wikibase-entityid"
+          },
+          "datatype": "wikibase-item"
+        },
+        "type": "statement",
+        "id": "Q2616437$9533C485-260D-4A68-B7F0-D76E410FD777",
+        "rank": "normal"
+      }
+    ]
+  },
+  "sitelinks": {
+    "arwiki": {
+      "site": "arwiki",
+      "title": "آثار استخدام البنزوديازيبين على المدى الطويل",
+      "badges": [],
+      "url": "https://ar.wikipedia.org/wiki/%D8%A2%D8%AB%D8%A7%D8%B1_%D8%A7%D8%B3%D8%AA%D8%AE%D8%AF%D8%A7%D9%85_%D8%A7%D9%84%D8%A8%D9%86%D8%B2%D9%88%D8%AF%D9%8A%D8%A7%D8%B2%D9%8A%D8%A8%D9%8A%D9%86_%D8%B9%D9%84%D9%89_%D8%A7%D9%84%D9%85%D8%AF%D9%89_%D8%A7%D9%84%D8%B7%D9%88%D9%8A%D9%84"
+    },
+    "elwiki": {
+      "site": "elwiki",
+      "title": "Επιδράσεις από τη μακροχρόνια χρήση βενζοδιαζεπινών",
+      "badges": [],
+      "url": "https://el.wikipedia.org/wiki/%CE%95%CF%80%CE%B9%CE%B4%CF%81%CE%AC%CF%83%CE%B5%CE%B9%CF%82_%CE%B1%CF%80%CF%8C_%CF%84%CE%B7_%CE%BC%CE%B1%CE%BA%CF%81%CE%BF%CF%87%CF%81%CF%8C%CE%BD%CE%B9%CE%B1_%CF%87%CF%81%CE%AE%CF%83%CE%B7_%CE%B2%CE%B5%CE%BD%CE%B6%CE%BF%CE%B4%CE%B9%CE%B1%CE%B6%CE%B5%CF%80%CE%B9%CE%BD%CF%8E%CE%BD"
+    },
+    "enwiki": {
+      "site": "enwiki",
+      "title": "Effects of long-term benzodiazepine use",
+      "badges": [],
+      "url": "https://en.wikipedia.org/wiki/Effects_of_long-term_benzodiazepine_use"
+    },
+    "eswiki": {
+      "site": "eswiki",
+      "title": "Efectos a largo plazo de las benzodiacepinas",
+      "badges": [],
+      "url": "https://es.wikipedia.org/wiki/Efectos_a_largo_plazo_de_las_benzodiacepinas"
+    },
+    "frwiki": {
+      "site": "frwiki",
+      "title": "Effets à long terme des benzodiazépines",
+      "badges": [],
+      "url": "https://fr.wikipedia.org/wiki/Effets_%C3%A0_long_terme_des_benzodiaz%C3%A9pines"
+    },
+    "jawiki": {
+      "site": "jawiki",
+      "title": "ベンゾジアゼピンの長期的影響",
+      "badges": [],
+      "url": "https://ja.wikipedia.org/wiki/%E3%83%99%E3%83%B3%E3%82%BE%E3%82%B8%E3%82%A2%E3%82%BC%E3%83%94%E3%83%B3%E3%81%AE%E9%95%B7%E6%9C%9F%E7%9A%84%E5%BD%B1%E9%9F%BF"
+    },
+    "ruwiki": {
+      "site": "ruwiki",
+      "title": "Долгосрочные эффекты бензодиазепинов",
+      "badges": [],
+      "url": "https://ru.wikipedia.org/wiki/%D0%94%D0%BE%D0%BB%D0%B3%D0%BE%D1%81%D1%80%D0%BE%D1%87%D0%BD%D1%8B%D0%B5_%D1%8D%D1%84%D1%84%D0%B5%D0%BA%D1%82%D1%8B_%D0%B1%D0%B5%D0%BD%D0%B7%D0%BE%D0%B4%D0%B8%D0%B0%D0%B7%D0%B5%D0%BF%D0%B8%D0%BD%D0%BE%D0%B2"
+    },
+    "svwiki": {
+      "site": "svwiki",
+      "title": "Långsiktiga effekter av bruk av benzodiazepiner",
+      "badges": [
+        "Q70894304"
+      ],
+      "url": "https://sv.wikipedia.org/wiki/L%C3%A5ngsiktiga_effekter_av_bruk_av_benzodiazepiner"
+    }
+  }
+}

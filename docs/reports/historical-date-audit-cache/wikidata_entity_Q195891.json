@@ -1,0 +1,465 @@
+{
+  "saved_at": "2026-03-07T13:34:34.112Z",
+  "value": {
+    "pageid": 193724,
+    "ns": 0,
+    "title": "Q195891",
+    "lastrevid": 2442382951,
+    "modified": "2025-12-14T19:33:23Z",
+    "type": "item",
+    "id": "Q195891",
+    "labels": {
+      "lb": {
+        "language": "lb",
+        "value": "Cosmographiae Introductio"
+      },
+      "pt": {
+        "language": "pt",
+        "value": "Cosmographiae Introductio"
+      },
+      "eo": {
+        "language": "eo",
+        "value": "Cosmographiae Introductio"
+      },
+      "cs": {
+        "language": "cs",
+        "value": "Cosmographiae Introductio"
+      },
+      "en": {
+        "language": "en",
+        "value": "Cosmographiae Introductio"
+      },
+      "ca": {
+        "language": "ca",
+        "value": "Cosmographiae introductio"
+      },
+      "hu": {
+        "language": "hu",
+        "value": "Cosmographiae Introductio"
+      },
+      "nl": {
+        "language": "nl",
+        "value": "Cosmographiae introductio"
+      },
+      "zh": {
+        "language": "zh",
+        "value": "宇宙学入门"
+      },
+      "uk": {
+        "language": "uk",
+        "value": "Cosmographiae Introductio"
+      },
+      "fr": {
+        "language": "fr",
+        "value": "Cosmographiae introductio"
+      },
+      "es": {
+        "language": "es",
+        "value": "Cosmographiae introductio"
+      },
+      "it": {
+        "language": "it",
+        "value": "Cosmographiae Introductio"
+      },
+      "de": {
+        "language": "de",
+        "value": "Cosmographiae Introductio"
+      }
+    },
+    "descriptions": {
+      "en": {
+        "language": "en",
+        "value": "book"
+      },
+      "nl": {
+        "language": "nl",
+        "value": "boek"
+      },
+      "he": {
+        "language": "he",
+        "value": "ספר"
+      },
+      "fi": {
+        "language": "fi",
+        "value": "kirja"
+      },
+      "sq": {
+        "language": "sq",
+        "value": "libër"
+      },
+      "fr": {
+        "language": "fr",
+        "value": "livre publié en 1507"
+      },
+      "zh": {
+        "language": "zh",
+        "value": "1507年的一部出版物"
+      },
+      "bn": {
+        "language": "bn",
+        "value": "বই"
+      },
+      "es": {
+        "language": "es",
+        "value": "libro publicado en 1507"
+      },
+      "ar": {
+        "language": "ar",
+        "value": "عمل مكتوب"
+      },
+      "uk": {
+        "language": "uk",
+        "value": "книга"
+      },
+      "hy": {
+        "language": "hy",
+        "value": "գիրք"
+      },
+      "it": {
+        "language": "it",
+        "value": "trattato di cosmografia del 1507"
+      },
+      "hu": {
+        "language": "hu",
+        "value": "valószínűleg 1507-ben megjelent könyv; rövid kozmográfiai bevezetés"
+      }
+    },
+    "aliases": {},
+    "claims": {
+      "P646": [
+        {
+          "mainsnak": {
+            "snaktype": "value",
+            "property": "P646",
+            "hash": "72aa656e839a6cc175c95daca9d7e3c0e86709e5",
+            "datavalue": {
+              "value": "/m/05nt5g",
+              "type": "string"
+            },
+            "datatype": "external-id"
+          },
+          "type": "statement",
+          "id": "Q195891$E70D11B5-10B6-4C8E-B03E-186F35BA418F",
+          "rank": "normal",
+          "references": [
+            {
+              "hash": "2b00cb481cddcac7623114367489b5c194901c4a",
+              "snaks": {
+                "P248": [
+                  {
+                    "snaktype": "value",
+                    "property": "P248",
+                    "hash": "a94b740202b097dd33355e0e6c00e54b9395e5e0",
+                    "datavalue": {
+                      "value": {
+                        "entity-type": "item",
+                        "numeric-id": 15241312,
+                        "id": "Q15241312"
+                      },
+                      "type": "wikibase-entityid"
+                    },
+                    "datatype": "wikibase-item"
+                  }
+                ],
+                "P577": [
+                  {
+                    "snaktype": "value",
+                    "property": "P577",
+                    "hash": "fde79ecb015112d2f29229ccc1ec514ed3e71fa2",
+                    "datavalue": {
+                      "value": {
+                        "time": "+2013-10-28T00:00:00Z",
+                        "timezone": 0,
+                        "before": 0,
+                        "after": 0,
+                        "precision": 11,
+                        "calendarmodel": "http://www.wikidata.org/entity/Q1985727"
+                      },
+                      "type": "time"
+                    },
+                    "datatype": "time"
+                  }
+                ]
+              },
+              "snaks-order": [
+                "P248",
+                "P577"
+              ]
+            }
+          ]
+        }
+      ],
+      "P31": [
+        {
+          "mainsnak": {
+            "snaktype": "value",
+            "property": "P31",
+            "hash": "56d2ce980dfb7e5844c4c8777065c37181767334",
+            "datavalue": {
+              "value": {
+                "entity-type": "item",
+                "numeric-id": 47461344,
+                "id": "Q47461344"
+              },
+              "type": "wikibase-entityid"
+            },
+            "datatype": "wikibase-item"
+          },
+          "type": "statement",
+          "id": "Q195891$B27F83C8-D248-4949-BB13-63AE1B8B6C2B",
+          "rank": "normal"
+        }
+      ],
+      "P18": [
+        {
+          "mainsnak": {
+            "snaktype": "value",
+            "property": "P18",
+            "hash": "c2d310d857df399b9e57addf62617e28f8faa29a",
+            "datavalue": {
+              "value": "CosmographiaeIntroductio1.jpg",
+              "type": "string"
+            },
+            "datatype": "commonsMedia"
+          },
+          "type": "statement",
+          "id": "Q195891$774A3C3A-C92A-4918-BA1E-CA72F1C23AA5",
+          "rank": "normal"
+        }
+      ],
+      "P50": [
+        {
+          "mainsnak": {
+            "snaktype": "value",
+            "property": "P50",
+            "hash": "29968e52babfbe1cacc26a343b2d903bd495076e",
+            "datavalue": {
+              "value": {
+                "entity-type": "item",
+                "numeric-id": 66192,
+                "id": "Q66192"
+              },
+              "type": "wikibase-entityid"
+            },
+            "datatype": "wikibase-item"
+          },
+          "type": "statement",
+          "id": "Q195891$640E7726-8623-4DB0-837E-8EAEEAE85B51",
+          "rank": "normal"
+        },
+        {
+          "mainsnak": {
+            "snaktype": "value",
+            "property": "P50",
+            "hash": "848b3b60118d3d0f581dfeeee64dc6d503818132",
+            "datavalue": {
+              "value": {
+                "entity-type": "item",
+                "numeric-id": 57197,
+                "id": "Q57197"
+              },
+              "type": "wikibase-entityid"
+            },
+            "datatype": "wikibase-item"
+          },
+          "type": "statement",
+          "id": "Q195891$507854d9-460e-13cd-d8e5-2d09bce99373",
+          "rank": "deprecated"
+        }
+      ],
+      "P571": [
+        {
+          "mainsnak": {
+            "snaktype": "value",
+            "property": "P571",
+            "hash": "5f1439100cb583ef26b3db6f219bdf74d8d70d67",
+            "datavalue": {
+              "value": {
+                "time": "+1507-00-00T00:00:00Z",
+                "timezone": 0,
+                "before": 0,
+                "after": 0,
+                "precision": 9,
+                "calendarmodel": "http://www.wikidata.org/entity/Q1985727"
+              },
+              "type": "time"
+            },
+            "datatype": "time"
+          },
+          "type": "statement",
+          "id": "Q195891$FDB37855-2103-4731-B58E-BE41A3A6E9A0",
+          "rank": "normal",
+          "references": [
+            {
+              "hash": "9b21ab47695fa894f61d2101d4c4919ee003ec05",
+              "snaks": {
+                "P143": [
+                  {
+                    "snaktype": "value",
+                    "property": "P143",
+                    "hash": "390e3b73e7cd926978cab220968d0e3451cfb814",
+                    "datavalue": {
+                      "value": {
+                        "entity-type": "item",
+                        "numeric-id": 199698,
+                        "id": "Q199698"
+                      },
+                      "type": "wikibase-entityid"
+                    },
+                    "datatype": "wikibase-item"
+                  }
+                ],
+                "P4656": [
+                  {
+                    "snaktype": "value",
+                    "property": "P4656",
+                    "hash": "eadc78640c719e112982164cb0a14b44060ebbfb",
+                    "datavalue": {
+                      "value": "https://uk.wikipedia.org/w/index.php?title=Cosmographiae_Introductio&oldid=22392846",
+                      "type": "string"
+                    },
+                    "datatype": "url"
+                  }
+                ]
+              },
+              "snaks-order": [
+                "P143",
+                "P4656"
+              ]
+            }
+          ]
+        }
+      ],
+      "P373": [
+        {
+          "mainsnak": {
+            "snaktype": "value",
+            "property": "P373",
+            "hash": "98162a6822c1b9d2a249bebf581fc4d28cc88d50",
+            "datavalue": {
+              "value": "Cosmographiae Introductio",
+              "type": "string"
+            },
+            "datatype": "string"
+          },
+          "type": "statement",
+          "id": "Q195891$F52ABFC4-D653-4C71-9042-D8C564B403F9",
+          "rank": "normal"
+        }
+      ],
+      "P407": [
+        {
+          "mainsnak": {
+            "snaktype": "value",
+            "property": "P407",
+            "hash": "a793ff44bd72361987bc339912d379e650462d64",
+            "datavalue": {
+              "value": {
+                "entity-type": "item",
+                "numeric-id": 397,
+                "id": "Q397"
+              },
+              "type": "wikibase-entityid"
+            },
+            "datatype": "wikibase-item"
+          },
+          "type": "statement",
+          "id": "Q195891$85E40464-CB6A-4960-B4FE-D62EFE1A0BB1",
+          "rank": "normal"
+        }
+      ]
+    },
+    "sitelinks": {
+      "cawiki": {
+        "site": "cawiki",
+        "title": "Cosmographiae introductio",
+        "badges": [],
+        "url": "https://ca.wikipedia.org/wiki/Cosmographiae_introductio"
+      },
+      "commonswiki": {
+        "site": "commonswiki",
+        "title": "Category:Cosmographiae Introductio",
+        "badges": [],
+        "url": "https://commons.wikimedia.org/wiki/Category:Cosmographiae_Introductio"
+      },
+      "cswiki": {
+        "site": "cswiki",
+        "title": "Cosmographiae Introductio",
+        "badges": [],
+        "url": "https://cs.wikipedia.org/wiki/Cosmographiae_Introductio"
+      },
+      "dewiki": {
+        "site": "dewiki",
+        "title": "Cosmographiae Introductio",
+        "badges": [],
+        "url": "https://de.wikipedia.org/wiki/Cosmographiae_Introductio"
+      },
+      "enwiki": {
+        "site": "enwiki",
+        "title": "Cosmographiae Introductio",
+        "badges": [],
+        "url": "https://en.wikipedia.org/wiki/Cosmographiae_Introductio"
+      },
+      "eowiki": {
+        "site": "eowiki",
+        "title": "Cosmographiae Introductio",
+        "badges": [],
+        "url": "https://eo.wikipedia.org/wiki/Cosmographiae_Introductio"
+      },
+      "eswiki": {
+        "site": "eswiki",
+        "title": "Cosmographiae introductio",
+        "badges": [],
+        "url": "https://es.wikipedia.org/wiki/Cosmographiae_introductio"
+      },
+      "frwiki": {
+        "site": "frwiki",
+        "title": "Cosmographiae introductio",
+        "badges": [],
+        "url": "https://fr.wikipedia.org/wiki/Cosmographiae_introductio"
+      },
+      "huwiki": {
+        "site": "huwiki",
+        "title": "Cosmographiae Introductio",
+        "badges": [],
+        "url": "https://hu.wikipedia.org/wiki/Cosmographiae_Introductio"
+      },
+      "itwiki": {
+        "site": "itwiki",
+        "title": "Cosmographiae Introductio",
+        "badges": [],
+        "url": "https://it.wikipedia.org/wiki/Cosmographiae_Introductio"
+      },
+      "lbwiki": {
+        "site": "lbwiki",
+        "title": "Cosmographiae Introductio",
+        "badges": [],
+        "url": "https://lb.wikipedia.org/wiki/Cosmographiae_Introductio"
+      },
+      "nlwiki": {
+        "site": "nlwiki",
+        "title": "Cosmographiae introductio",
+        "badges": [],
+        "url": "https://nl.wikipedia.org/wiki/Cosmographiae_introductio"
+      },
+      "ptwiki": {
+        "site": "ptwiki",
+        "title": "Cosmographiae Introductio",
+        "badges": [],
+        "url": "https://pt.wikipedia.org/wiki/Cosmographiae_Introductio"
+      },
+      "ukwiki": {
+        "site": "ukwiki",
+        "title": "Cosmographiae Introductio",
+        "badges": [],
+        "url": "https://uk.wikipedia.org/wiki/Cosmographiae_Introductio"
+      },
+      "zhwiki": {
+        "site": "zhwiki",
+        "title": "宇宙学入门",
+        "badges": [],
+        "url": "https://zh.wikipedia.org/wiki/%E5%AE%87%E5%AE%99%E5%AD%A6%E5%85%A5%E9%97%A8"
+      }
+    }
+  }
+}

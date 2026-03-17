@@ -1,0 +1,400 @@
+{
+  "saved_at": "2026-03-07T14:05:25.920Z",
+  "value": {
+    "pageid": 101132299,
+    "ns": 0,
+    "title": "Q105773285",
+    "lastrevid": 1993340755,
+    "modified": "2023-10-19T02:07:45Z",
+    "type": "item",
+    "id": "Q105773285",
+    "labels": {
+      "en": {
+        "language": "en",
+        "value": "Borgo Santo Spirito"
+      },
+      "it": {
+        "language": "it",
+        "value": "Borgo Santo Spirito"
+      },
+      "fr": {
+        "language": "fr",
+        "value": "Borgo Santo Spirito"
+      },
+      "el": {
+        "language": "el",
+        "value": "Μπόργκο Σάντο Σπίριτο"
+      },
+      "tr": {
+        "language": "tr",
+        "value": "Borgo Santo Spirito"
+      }
+    },
+    "descriptions": {
+      "en": {
+        "language": "en",
+        "value": "road in Rome"
+      },
+      "it": {
+        "language": "it",
+        "value": "strada del Rione Borgo, Roma"
+      },
+      "tr": {
+        "language": "tr",
+        "value": "Roma'da sokak"
+      }
+    },
+    "aliases": {
+      "en": [
+        {
+          "language": "en",
+          "value": "Burgus Saxonum"
+        },
+        {
+          "language": "en",
+          "value": "Burgus Frisonum"
+        }
+      ],
+      "it": [
+        {
+          "language": "it",
+          "value": "Burgus Saxonum"
+        },
+        {
+          "language": "it",
+          "value": "Burgus Frisonum"
+        },
+        {
+          "language": "it",
+          "value": "Borgo San Michele"
+        },
+        {
+          "language": "it",
+          "value": "Borgo San Martino"
+        }
+      ],
+      "tr": [
+        {
+          "language": "tr",
+          "value": "Borgo Santo Spirito"
+        }
+      ]
+    },
+    "claims": {
+      "P31": [
+        {
+          "mainsnak": {
+            "snaktype": "value",
+            "property": "P31",
+            "hash": "a62a3dffd69584dca3c3c41ade84d25680db6047",
+            "datavalue": {
+              "value": {
+                "entity-type": "item",
+                "numeric-id": 83620,
+                "id": "Q83620"
+              },
+              "type": "wikibase-entityid"
+            },
+            "datatype": "wikibase-item"
+          },
+          "type": "statement",
+          "id": "Q105773285$7ea612cf-465c-8f19-5e9b-21d65d90ae35",
+          "rank": "normal",
+          "references": [
+            {
+              "hash": "d5847b9b6032aa8b13dae3c2dfd9ed5d114d21b3",
+              "snaks": {
+                "P143": [
+                  {
+                    "snaktype": "value",
+                    "property": "P143",
+                    "hash": "5a343e7e758a4282a01316d3e959b6e653b767fc",
+                    "datavalue": {
+                      "value": {
+                        "entity-type": "item",
+                        "numeric-id": 11920,
+                        "id": "Q11920"
+                      },
+                      "type": "wikibase-entityid"
+                    },
+                    "datatype": "wikibase-item"
+                  }
+                ]
+              },
+              "snaks-order": [
+                "P143"
+              ]
+            }
+          ]
+        }
+      ],
+      "P17": [
+        {
+          "mainsnak": {
+            "snaktype": "value",
+            "property": "P17",
+            "hash": "b48529e9f7e0898ab1ddaefe8547cdb863e0167c",
+            "datavalue": {
+              "value": {
+                "entity-type": "item",
+                "numeric-id": 38,
+                "id": "Q38"
+              },
+              "type": "wikibase-entityid"
+            },
+            "datatype": "wikibase-item"
+          },
+          "type": "statement",
+          "id": "Q105773285$9889d707-4c22-8efe-fc02-753640c99a3a",
+          "rank": "normal",
+          "references": [
+            {
+              "hash": "d5847b9b6032aa8b13dae3c2dfd9ed5d114d21b3",
+              "snaks": {
+                "P143": [
+                  {
+                    "snaktype": "value",
+                    "property": "P143",
+                    "hash": "5a343e7e758a4282a01316d3e959b6e653b767fc",
+                    "datavalue": {
+                      "value": {
+                        "entity-type": "item",
+                        "numeric-id": 11920,
+                        "id": "Q11920"
+                      },
+                      "type": "wikibase-entityid"
+                    },
+                    "datatype": "wikibase-item"
+                  }
+                ]
+              },
+              "snaks-order": [
+                "P143"
+              ]
+            }
+          ]
+        }
+      ],
+      "P131": [
+        {
+          "mainsnak": {
+            "snaktype": "value",
+            "property": "P131",
+            "hash": "029394c33739815a17b5d0460f66a2bdb3437d58",
+            "datavalue": {
+              "value": {
+                "entity-type": "item",
+                "numeric-id": 220,
+                "id": "Q220"
+              },
+              "type": "wikibase-entityid"
+            },
+            "datatype": "wikibase-item"
+          },
+          "type": "statement",
+          "id": "Q105773285$8e967ac2-46ef-440d-95ca-26c6a5316f30",
+          "rank": "normal",
+          "references": [
+            {
+              "hash": "d5847b9b6032aa8b13dae3c2dfd9ed5d114d21b3",
+              "snaks": {
+                "P143": [
+                  {
+                    "snaktype": "value",
+                    "property": "P143",
+                    "hash": "5a343e7e758a4282a01316d3e959b6e653b767fc",
+                    "datavalue": {
+                      "value": {
+                        "entity-type": "item",
+                        "numeric-id": 11920,
+                        "id": "Q11920"
+                      },
+                      "type": "wikibase-entityid"
+                    },
+                    "datatype": "wikibase-item"
+                  }
+                ]
+              },
+              "snaks-order": [
+                "P143"
+              ]
+            }
+          ]
+        }
+      ],
+      "P276": [
+        {
+          "mainsnak": {
+            "snaktype": "value",
+            "property": "P276",
+            "hash": "01d640734e9259d430f13eee814bbfbf16177db2",
+            "datavalue": {
+              "value": {
+                "entity-type": "item",
+                "numeric-id": 893556,
+                "id": "Q893556"
+              },
+              "type": "wikibase-entityid"
+            },
+            "datatype": "wikibase-item"
+          },
+          "type": "statement",
+          "id": "Q105773285$a8ceec5c-47ab-7420-b337-a8d5c5001ef9",
+          "rank": "normal",
+          "references": [
+            {
+              "hash": "d5847b9b6032aa8b13dae3c2dfd9ed5d114d21b3",
+              "snaks": {
+                "P143": [
+                  {
+                    "snaktype": "value",
+                    "property": "P143",
+                    "hash": "5a343e7e758a4282a01316d3e959b6e653b767fc",
+                    "datavalue": {
+                      "value": {
+                        "entity-type": "item",
+                        "numeric-id": 11920,
+                        "id": "Q11920"
+                      },
+                      "type": "wikibase-entityid"
+                    },
+                    "datatype": "wikibase-item"
+                  }
+                ]
+              },
+              "snaks-order": [
+                "P143"
+              ]
+            }
+          ]
+        }
+      ],
+      "P625": [
+        {
+          "mainsnak": {
+            "snaktype": "value",
+            "property": "P625",
+            "hash": "c762a0f5804c6968d7edc13196fa4ee3fb070d5d",
+            "datavalue": {
+              "value": {
+                "latitude": 41.901666666666664,
+                "longitude": 12.4625,
+                "altitude": null,
+                "precision": 0.0002777777777777778,
+                "globe": "http://www.wikidata.org/entity/Q2"
+              },
+              "type": "globecoordinate"
+            },
+            "datatype": "globe-coordinate"
+          },
+          "type": "statement",
+          "id": "Q105773285$dcb706c4-4914-6aff-55b4-225c2a9dcae4",
+          "rank": "normal"
+        }
+      ],
+      "P373": [
+        {
+          "mainsnak": {
+            "snaktype": "value",
+            "property": "P373",
+            "hash": "1c710d27e449107624dc42bd1ede6e1614f7b311",
+            "datavalue": {
+              "value": "Borgo Santo Spirito (Rome)",
+              "type": "string"
+            },
+            "datatype": "string"
+          },
+          "type": "statement",
+          "id": "Q105773285$5201e89f-4bcf-fffa-7929-54e00c2d2398",
+          "rank": "normal"
+        }
+      ],
+      "P18": [
+        {
+          "mainsnak": {
+            "snaktype": "value",
+            "property": "P18",
+            "hash": "b3e61679e2ad3efff559258c6430568fbeca2d87",
+            "datavalue": {
+              "value": "OspedaleDiSanCarloARoma.jpg",
+              "type": "string"
+            },
+            "datatype": "commonsMedia"
+          },
+          "type": "statement",
+          "id": "Q105773285$76c8da1c-4d34-2bbd-b93b-9e730e408ca6",
+          "rank": "normal",
+          "references": [
+            {
+              "hash": "d5847b9b6032aa8b13dae3c2dfd9ed5d114d21b3",
+              "snaks": {
+                "P143": [
+                  {
+                    "snaktype": "value",
+                    "property": "P143",
+                    "hash": "5a343e7e758a4282a01316d3e959b6e653b767fc",
+                    "datavalue": {
+                      "value": {
+                        "entity-type": "item",
+                        "numeric-id": 11920,
+                        "id": "Q11920"
+                      },
+                      "type": "wikibase-entityid"
+                    },
+                    "datatype": "wikibase-item"
+                  }
+                ]
+              },
+              "snaks-order": [
+                "P143"
+              ]
+            }
+          ]
+        }
+      ],
+      "P2671": [
+        {
+          "mainsnak": {
+            "snaktype": "value",
+            "property": "P2671",
+            "hash": "11cacbc8a87871cfb6a33471f1a4c627b39eee73",
+            "datavalue": {
+              "value": "/g/11p4_st_2p",
+              "type": "string"
+            },
+            "datatype": "external-id"
+          },
+          "type": "statement",
+          "id": "Q105773285$81A60214-A25F-4D78-88AE-40CF9A681363",
+          "rank": "normal"
+        }
+      ]
+    },
+    "sitelinks": {
+      "commonswiki": {
+        "site": "commonswiki",
+        "title": "Category:Borgo Santo Spirito (Rome)",
+        "badges": [],
+        "url": "https://commons.wikimedia.org/wiki/Category:Borgo_Santo_Spirito_(Rome)"
+      },
+      "enwiki": {
+        "site": "enwiki",
+        "title": "Borgo Santo Spirito",
+        "badges": [],
+        "url": "https://en.wikipedia.org/wiki/Borgo_Santo_Spirito"
+      },
+      "frwiki": {
+        "site": "frwiki",
+        "title": "Borgo Santo Spirito",
+        "badges": [],
+        "url": "https://fr.wikipedia.org/wiki/Borgo_Santo_Spirito"
+      },
+      "itwiki": {
+        "site": "itwiki",
+        "title": "Borgo Santo Spirito",
+        "badges": [],
+        "url": "https://it.wikipedia.org/wiki/Borgo_Santo_Spirito"
+      }
+    }
+  }
+}

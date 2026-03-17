@@ -15,3 +15,4 @@ async function listAll() {
     console.log("Relationship check:", error ? error.message : "OK");
 }
 listAll();
+

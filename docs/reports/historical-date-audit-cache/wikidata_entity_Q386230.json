@@ -1,0 +1,545 @@
+{
+  "saved_at": "2026-03-07T14:28:21.158Z",
+  "value": {
+    "pageid": 367514,
+    "ns": 0,
+    "title": "Q386230",
+    "lastrevid": 2347489760,
+    "modified": "2025-05-11T16:19:53Z",
+    "type": "item",
+    "id": "Q386230",
+    "labels": {
+      "fr": {
+        "language": "fr",
+        "value": "éruption de la montagne Pelée en 1902"
+      },
+      "es": {
+        "language": "es",
+        "value": "Erupción del Monte Pelée de 1902"
+      },
+      "fi": {
+        "language": "fi",
+        "value": "Mont Peléen tulivuorenpurkaus 1902"
+      },
+      "pl": {
+        "language": "pl",
+        "value": "Okres aktywności wulkanu Montagne Pelée 1902-1905"
+      },
+      "en": {
+        "language": "en",
+        "value": "1902 eruption of Mount Pelée"
+      },
+      "eu": {
+        "language": "eu",
+        "value": "1902ko Pelée mendiaren erupzioa"
+      },
+      "de": {
+        "language": "de",
+        "value": "Vulkanausbruch des Mount Pelée 1902"
+      },
+      "eo": {
+        "language": "eo",
+        "value": "erukcio de Monto Peleo en 1902"
+      },
+      "vi": {
+        "language": "vi",
+        "value": "Sự kiện phun trào núi lửa Pelée"
+      },
+      "ja": {
+        "language": "ja",
+        "value": "1902年のプレー山噴火"
+      },
+      "ca": {
+        "language": "ca",
+        "value": "erupció del Mont Pelée de 1902"
+      },
+      "gl": {
+        "language": "gl",
+        "value": "erupción do Monte Pelée de 1902"
+      }
+    },
+    "descriptions": {
+      "en": {
+        "language": "en",
+        "value": "1902 volcanic eruption of Mount Pelée that destroyed the town of Saint Pierre"
+      },
+      "fi": {
+        "language": "fi",
+        "value": "tulivuorenpurkaus Martiniquen saarella"
+      },
+      "fr": {
+        "language": "fr",
+        "value": "éruption volcanique en 1902 qui détruisit la ville de Saint Pierre, Martinique"
+      },
+      "es": {
+        "language": "es",
+        "value": "erupción volcánica en Martinica"
+      },
+      "ca": {
+        "language": "ca",
+        "value": "erupció volcànica a Martinica"
+      }
+    },
+    "aliases": {},
+    "claims": {
+      "P625": [
+        {
+          "mainsnak": {
+            "snaktype": "value",
+            "property": "P625",
+            "hash": "5d9594d7411ed6699aa68f4851d48d09d74d8d5d",
+            "datavalue": {
+              "value": {
+                "latitude": 14.8075,
+                "longitude": -61.1675,
+                "altitude": null,
+                "precision": 0.0002777777777777778,
+                "globe": "http://www.wikidata.org/entity/Q2"
+              },
+              "type": "globecoordinate"
+            },
+            "datatype": "globe-coordinate"
+          },
+          "type": "statement",
+          "id": "Q386230$D91499D0-1631-4052-A0C4-E55D0EE3069A",
+          "rank": "normal",
+          "references": [
+            {
+              "hash": "fa278ebfc458360e5aed63d5058cca83c46134f1",
+              "snaks": {
+                "P143": [
+                  {
+                    "snaktype": "value",
+                    "property": "P143",
+                    "hash": "e4f6d9441d0600513c4533c672b5ab472dc73694",
+                    "datavalue": {
+                      "value": {
+                        "entity-type": "item",
+                        "numeric-id": 328,
+                        "id": "Q328"
+                      },
+                      "type": "wikibase-entityid"
+                    },
+                    "datatype": "wikibase-item"
+                  }
+                ]
+              },
+              "snaks-order": [
+                "P143"
+              ]
+            }
+          ]
+        }
+      ],
+      "P17": [
+        {
+          "mainsnak": {
+            "snaktype": "value",
+            "property": "P17",
+            "hash": "c05db5d169c2560b9799d567a803d20a392f53e4",
+            "datavalue": {
+              "value": {
+                "entity-type": "item",
+                "numeric-id": 142,
+                "id": "Q142"
+              },
+              "type": "wikibase-entityid"
+            },
+            "datatype": "wikibase-item"
+          },
+          "type": "statement",
+          "id": "Q386230$A3BB46E9-AFE8-40BA-9B8D-B81A318BB312",
+          "rank": "normal"
+        }
+      ],
+      "P276": [
+        {
+          "mainsnak": {
+            "snaktype": "value",
+            "property": "P276",
+            "hash": "21df68e3ac2adafa205e85c1a1a00c3a8c4a17b8",
+            "datavalue": {
+              "value": {
+                "entity-type": "item",
+                "numeric-id": 76309,
+                "id": "Q76309"
+              },
+              "type": "wikibase-entityid"
+            },
+            "datatype": "wikibase-item"
+          },
+          "type": "statement",
+          "id": "Q386230$04a69cb0-42df-ad1b-474d-9559710bfdd0",
+          "rank": "normal"
+        }
+      ],
+      "P373": [
+        {
+          "mainsnak": {
+            "snaktype": "value",
+            "property": "P373",
+            "hash": "d48d3c2535826ef7b62ee6453cfa85f0e79fd057",
+            "datavalue": {
+              "value": "1902 eruption of Mount Pelée",
+              "type": "string"
+            },
+            "datatype": "string"
+          },
+          "type": "statement",
+          "id": "Q386230$54AAED9A-61C1-4203-AE11-071A9E5DB2E5",
+          "rank": "normal"
+        }
+      ],
+      "P31": [
+        {
+          "mainsnak": {
+            "snaktype": "value",
+            "property": "P31",
+            "hash": "0aa752994aed985dbbd6b6a6cf5fd7d42bedf8f3",
+            "datavalue": {
+              "value": {
+                "entity-type": "item",
+                "numeric-id": 7692360,
+                "id": "Q7692360"
+              },
+              "type": "wikibase-entityid"
+            },
+            "datatype": "wikibase-item"
+          },
+          "type": "statement",
+          "id": "Q386230$9D46DF03-07EE-47FD-B34F-C5D177C0E4C1",
+          "rank": "normal"
+        },
+        {
+          "mainsnak": {
+            "snaktype": "value",
+            "property": "P31",
+            "hash": "e48a94a695fae704caea15e6f929b4384cd1231c",
+            "datavalue": {
+              "value": {
+                "entity-type": "item",
+                "numeric-id": 1067217,
+                "id": "Q1067217"
+              },
+              "type": "wikibase-entityid"
+            },
+            "datatype": "wikibase-item"
+          },
+          "type": "statement",
+          "id": "Q386230$1f28e642-4464-5a87-605b-a9b435847dfd",
+          "rank": "normal"
+        },
+        {
+          "mainsnak": {
+            "snaktype": "value",
+            "property": "P31",
+            "hash": "0e14f012068bbca0931fa35be2342470c713400d",
+            "datavalue": {
+              "value": {
+                "entity-type": "item",
+                "numeric-id": 2703194,
+                "id": "Q2703194"
+              },
+              "type": "wikibase-entityid"
+            },
+            "datatype": "wikibase-item"
+          },
+          "type": "statement",
+          "id": "Q386230$8c265bca-41fc-eba2-93d7-82713b9f3c57",
+          "rank": "normal"
+        }
+      ],
+      "P580": [
+        {
+          "mainsnak": {
+            "snaktype": "value",
+            "property": "P580",
+            "hash": "73a75265c01e251301bacedce98a2497b40aafa7",
+            "datavalue": {
+              "value": {
+                "time": "+1902-04-23T00:00:00Z",
+                "timezone": 0,
+                "before": 0,
+                "after": 0,
+                "precision": 11,
+                "calendarmodel": "http://www.wikidata.org/entity/Q1985727"
+              },
+              "type": "time"
+            },
+            "datatype": "time"
+          },
+          "type": "statement",
+          "id": "Q386230$1538c3ed-4733-6d3b-41c1-ba3b467b5d7f",
+          "rank": "normal"
+        }
+      ],
+      "P582": [
+        {
+          "mainsnak": {
+            "snaktype": "value",
+            "property": "P582",
+            "hash": "c521e3283b1251f033905383bad5abf44259d95f",
+            "datavalue": {
+              "value": {
+                "time": "+1905-10-05T00:00:00Z",
+                "timezone": 0,
+                "before": 0,
+                "after": 0,
+                "precision": 11,
+                "calendarmodel": "http://www.wikidata.org/entity/Q1985727"
+              },
+              "type": "time"
+            },
+            "datatype": "time"
+          },
+          "type": "statement",
+          "id": "Q386230$bc0aab62-4a09-583f-c472-821224fe5d49",
+          "rank": "normal"
+        }
+      ],
+      "P1903": [
+        {
+          "mainsnak": {
+            "snaktype": "value",
+            "property": "P1903",
+            "hash": "1611a729f86b7a96bd3fb3f869dc3bfa91428b50",
+            "datavalue": {
+              "value": {
+                "entity-type": "item",
+                "numeric-id": 19986423,
+                "id": "Q19986423"
+              },
+              "type": "wikibase-entityid"
+            },
+            "datatype": "wikibase-item"
+          },
+          "type": "statement",
+          "id": "Q386230$84f8b877-4ff8-fae8-fdd3-9f08350abba7",
+          "rank": "normal"
+        }
+      ],
+      "P3082": [
+        {
+          "mainsnak": {
+            "snaktype": "value",
+            "property": "P3082",
+            "hash": "a0f095690eda53107c7c3205c3ebfb50f81ae0fa",
+            "datavalue": {
+              "value": {
+                "entity-type": "item",
+                "numeric-id": 589980,
+                "id": "Q589980"
+              },
+              "type": "wikibase-entityid"
+            },
+            "datatype": "wikibase-item"
+          },
+          "type": "statement",
+          "id": "Q386230$1c9c7ccd-48ef-d9c3-d292-f4a40800cdcb",
+          "rank": "normal"
+        }
+      ],
+      "P793": [
+        {
+          "mainsnak": {
+            "snaktype": "value",
+            "property": "P793",
+            "hash": "ec6c2d0c0b083c455ed93552886c09a0c1628c75",
+            "datavalue": {
+              "value": {
+                "entity-type": "item",
+                "numeric-id": 221616,
+                "id": "Q221616"
+              },
+              "type": "wikibase-entityid"
+            },
+            "datatype": "wikibase-item"
+          },
+          "type": "statement",
+          "id": "Q386230$c9d536f0-4940-7932-2edc-2383f3df32d3",
+          "rank": "normal",
+          "references": [
+            {
+              "hash": "507e6fc409f80a6fc42f329af2a52160d69b120d",
+              "snaks": {
+                "P585": [
+                  {
+                    "snaktype": "value",
+                    "property": "P585",
+                    "hash": "c4b3988c8725d12e6c276174a6aa4093954bb287",
+                    "datavalue": {
+                      "value": {
+                        "time": "+1902-05-08T00:00:00Z",
+                        "timezone": 0,
+                        "before": 0,
+                        "after": 0,
+                        "precision": 11,
+                        "calendarmodel": "http://www.wikidata.org/entity/Q1985727"
+                      },
+                      "type": "time"
+                    },
+                    "datatype": "time"
+                  }
+                ]
+              },
+              "snaks-order": [
+                "P585"
+              ]
+            }
+          ]
+        }
+      ],
+      "P1120": [
+        {
+          "mainsnak": {
+            "snaktype": "value",
+            "property": "P1120",
+            "hash": "e56fe98b21ee81c604acd8b4e5f1fb2f7ad2a648",
+            "datavalue": {
+              "value": {
+                "amount": "+30000",
+                "unit": "1"
+              },
+              "type": "quantity"
+            },
+            "datatype": "quantity"
+          },
+          "type": "statement",
+          "id": "Q386230$a1056ee0-4d08-28ac-08f0-5e0b86949730",
+          "rank": "normal"
+        }
+      ],
+      "P2671": [
+        {
+          "mainsnak": {
+            "snaktype": "value",
+            "property": "P2671",
+            "hash": "e03f0e724828c74bc35f16f7ac4e2df5d59b2de7",
+            "datavalue": {
+              "value": "/g/122kzhph",
+              "type": "string"
+            },
+            "datatype": "external-id"
+          },
+          "type": "statement",
+          "id": "Q386230$749714E8-795E-4491-85E1-0EA16D8F68F2",
+          "rank": "normal"
+        }
+      ],
+      "P18": [
+        {
+          "mainsnak": {
+            "snaktype": "value",
+            "property": "P18",
+            "hash": "a9ee2d05b350628b68eec32d0ec756c329d2ae1a",
+            "datavalue": {
+              "value": "The National geographic magazine (1902) (14595295848).jpg",
+              "type": "string"
+            },
+            "datatype": "commonsMedia"
+          },
+          "type": "statement",
+          "id": "Q386230$D14F0FCE-42BE-463F-B45C-F771FFFEAC53",
+          "rank": "normal",
+          "references": [
+            {
+              "hash": "c60f3c50f8e87851e8bf861eaf22589b7c488415",
+              "snaks": {
+                "P143": [
+                  {
+                    "snaktype": "value",
+                    "property": "P143",
+                    "hash": "e4f6d9441d0600513c4533c672b5ab472dc73694",
+                    "datavalue": {
+                      "value": {
+                        "entity-type": "item",
+                        "numeric-id": 328,
+                        "id": "Q328"
+                      },
+                      "type": "wikibase-entityid"
+                    },
+                    "datatype": "wikibase-item"
+                  }
+                ],
+                "P4656": [
+                  {
+                    "snaktype": "value",
+                    "property": "P4656",
+                    "hash": "395d21d40022fd913a268698a9ba91bbd830eb18",
+                    "datavalue": {
+                      "value": "https://en.wikipedia.org/w/index.php?title=1902_eruption_of_Mount_Pelée&oldid=1017301602",
+                      "type": "string"
+                    },
+                    "datatype": "url"
+                  }
+                ]
+              },
+              "snaks-order": [
+                "P143",
+                "P4656"
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    "sitelinks": {
+      "commonswiki": {
+        "site": "commonswiki",
+        "title": "Category:1902 eruption of Mount Pelée",
+        "badges": [],
+        "url": "https://commons.wikimedia.org/wiki/Category:1902_eruption_of_Mount_Pel%C3%A9e"
+      },
+      "dewiki": {
+        "site": "dewiki",
+        "title": "Aktivitätsphase des Mont Pelé von 1902 bis 1905",
+        "badges": [
+          "Q70894304"
+        ],
+        "url": "https://de.wikipedia.org/wiki/Aktivit%C3%A4tsphase_des_Mont_Pel%C3%A9_von_1902_bis_1905"
+      },
+      "enwiki": {
+        "site": "enwiki",
+        "title": "1902 eruption of Mount Pelée",
+        "badges": [],
+        "url": "https://en.wikipedia.org/wiki/1902_eruption_of_Mount_Pel%C3%A9e"
+      },
+      "eswiki": {
+        "site": "eswiki",
+        "title": "Erupción del monte Pelée de 1902",
+        "badges": [],
+        "url": "https://es.wikipedia.org/wiki/Erupci%C3%B3n_del_monte_Pel%C3%A9e_de_1902"
+      },
+      "euwiki": {
+        "site": "euwiki",
+        "title": "1902ko Pelée mendiaren erupzioa",
+        "badges": [],
+        "url": "https://eu.wikipedia.org/wiki/1902ko_Pel%C3%A9e_mendiaren_erupzioa"
+      },
+      "fiwiki": {
+        "site": "fiwiki",
+        "title": "Mont Peléen tulivuorenpurkaus 1902",
+        "badges": [],
+        "url": "https://fi.wikipedia.org/wiki/Mont_Pel%C3%A9en_tulivuorenpurkaus_1902"
+      },
+      "frwiki": {
+        "site": "frwiki",
+        "title": "Éruption de la montagne Pelée en 1902",
+        "badges": [],
+        "url": "https://fr.wikipedia.org/wiki/%C3%89ruption_de_la_montagne_Pel%C3%A9e_en_1902"
+      },
+      "plwiki": {
+        "site": "plwiki",
+        "title": "Okres aktywności wulkanu Montagne Pelée 1902–1905",
+        "badges": [],
+        "url": "https://pl.wikipedia.org/wiki/Okres_aktywno%C5%9Bci_wulkanu_Montagne_Pel%C3%A9e_1902%E2%80%931905"
+      },
+      "viwiki": {
+        "site": "viwiki",
+        "title": "Sự kiện phun trào núi lửa Pelée",
+        "badges": [],
+        "url": "https://vi.wikipedia.org/wiki/S%E1%BB%B1_ki%E1%BB%87n_phun_tr%C3%A0o_n%C3%BAi_l%E1%BB%ADa_Pel%C3%A9e"
+      }
+    }
+  }
+}

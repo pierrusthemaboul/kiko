@@ -1,0 +1,223 @@
+{
+  "saved_at": "2026-03-07T16:35:32.318Z",
+  "value": {
+    "pageid": 97185870,
+    "ns": 0,
+    "title": "Q99186881",
+    "lastrevid": 2302110831,
+    "modified": "2025-01-25T00:06:30Z",
+    "type": "item",
+    "id": "Q99186881",
+    "labels": {
+      "en": {
+        "language": "en",
+        "value": "Coronation of Henri IV"
+      },
+      "fr": {
+        "language": "fr",
+        "value": "Sacre d'Henri IV"
+      }
+    },
+    "descriptions": {
+      "fr": {
+        "language": "fr",
+        "value": "Cérémonie dans la cathédrale Notre-Dame de Chartres"
+      }
+    },
+    "aliases": {
+      "fr": [
+        {
+          "language": "fr",
+          "value": "Couronnement d'Henri IV"
+        }
+      ]
+    },
+    "claims": {
+      "P18": [
+        {
+          "mainsnak": {
+            "snaktype": "value",
+            "property": "P18",
+            "hash": "79a6538f101892e0173801c40a782db35bd3aef0",
+            "datavalue": {
+              "value": "Sacre Henri4 France 01.jpg",
+              "type": "string"
+            },
+            "datatype": "commonsMedia"
+          },
+          "type": "statement",
+          "qualifiers": {
+            "P2096": [
+              {
+                "snaktype": "value",
+                "property": "P2096",
+                "hash": "d151cc659c4eed9915f8211db9468f4d589d4d8e",
+                "datavalue": {
+                  "value": {
+                    "text": "Henri IV se faisant oindre par l'évêque Nicolas de Thou.",
+                    "language": "fr"
+                  },
+                  "type": "monolingualtext"
+                },
+                "datatype": "monolingualtext"
+              },
+              {
+                "snaktype": "value",
+                "property": "P2096",
+                "hash": "7e847192f36b71011e40cefa5d88306f6d2f1e68",
+                "datavalue": {
+                  "value": {
+                    "text": "Coronation of Henri IV in Chartres cathedral",
+                    "language": "en"
+                  },
+                  "type": "monolingualtext"
+                },
+                "datatype": "monolingualtext"
+              }
+            ]
+          },
+          "qualifiers-order": [
+            "P2096"
+          ],
+          "id": "Q99186881$318379b2-4d9d-a9bc-aadc-3ed4c8220950",
+          "rank": "normal"
+        }
+      ],
+      "P585": [
+        {
+          "mainsnak": {
+            "snaktype": "value",
+            "property": "P585",
+            "hash": "bd55d4260e05e75369f0f73f397c869c600c28bc",
+            "datavalue": {
+              "value": {
+                "time": "+1594-02-27T00:00:00Z",
+                "timezone": 0,
+                "before": 0,
+                "after": 0,
+                "precision": 11,
+                "calendarmodel": "http://www.wikidata.org/entity/Q1985727"
+              },
+              "type": "time"
+            },
+            "datatype": "time"
+          },
+          "type": "statement",
+          "id": "Q99186881$668bb686-4b11-b5b3-c517-8962e1af59d0",
+          "rank": "normal"
+        }
+      ],
+      "P276": [
+        {
+          "mainsnak": {
+            "snaktype": "value",
+            "property": "P276",
+            "hash": "ead4c48c3fd474b1e2ba9dbe0b3e279749c59881",
+            "datavalue": {
+              "value": {
+                "entity-type": "item",
+                "numeric-id": 180274,
+                "id": "Q180274"
+              },
+              "type": "wikibase-entityid"
+            },
+            "datatype": "wikibase-item"
+          },
+          "type": "statement",
+          "id": "Q99186881$7eb08d36-466a-ee75-637c-f628cb536947",
+          "rank": "normal"
+        }
+      ],
+      "P373": [
+        {
+          "mainsnak": {
+            "snaktype": "value",
+            "property": "P373",
+            "hash": "f10b566810bd9669fde863b2b0001a6e8cdac802",
+            "datavalue": {
+              "value": "Coronation of Henri IV",
+              "type": "string"
+            },
+            "datatype": "string"
+          },
+          "type": "statement",
+          "id": "Q99186881$a61f6ee6-420c-5ccf-ad4a-ad6a6be472a7",
+          "rank": "normal"
+        }
+      ],
+      "P2671": [
+        {
+          "mainsnak": {
+            "snaktype": "value",
+            "property": "P2671",
+            "hash": "702ba6b165df8ec303590ced28f7963ffce6150b",
+            "datavalue": {
+              "value": "/g/11hm68wllj",
+              "type": "string"
+            },
+            "datatype": "external-id"
+          },
+          "type": "statement",
+          "id": "Q99186881$066E7E3B-65F4-4113-8257-64ACEAE4015B",
+          "rank": "normal"
+        }
+      ],
+      "P17": [
+        {
+          "mainsnak": {
+            "snaktype": "value",
+            "property": "P17",
+            "hash": "c05db5d169c2560b9799d567a803d20a392f53e4",
+            "datavalue": {
+              "value": {
+                "entity-type": "item",
+                "numeric-id": 142,
+                "id": "Q142"
+              },
+              "type": "wikibase-entityid"
+            },
+            "datatype": "wikibase-item"
+          },
+          "type": "statement",
+          "id": "Q99186881$A8C3F237-F783-4489-8694-3B124F16E47E",
+          "rank": "normal"
+        }
+      ],
+      "P31": [
+        {
+          "mainsnak": {
+            "snaktype": "value",
+            "property": "P31",
+            "hash": "e29b460b4e8f2800d81adda70f3ee374551bd96a",
+            "datavalue": {
+              "value": {
+                "entity-type": "item",
+                "numeric-id": 13537604,
+                "id": "Q13537604"
+              },
+              "type": "wikibase-entityid"
+            },
+            "datatype": "wikibase-item"
+          },
+          "type": "statement",
+          "id": "Q99186881$e86e84e2-42ab-36f7-23fb-bfb1f5660952",
+          "rank": "normal"
+        }
+      ]
+    },
+    "sitelinks": {
+      "commonswiki": {
+        "site": "commonswiki",
+        "title": "Category:Coronation of Henri IV",
+        "badges": [],
+        "url": "https://commons.wikimedia.org/wiki/Category:Coronation_of_Henri_IV"
+      },
+      "frwiki": {
+        "site": "frwiki",
+        "title": "Sacre d'Henri IV",
+        "badges": [],
+        "url": "https://fr.wikipedia.org/wiki/Sacre_d%27Henri_IV"
+      }
+    }
+  }
+}

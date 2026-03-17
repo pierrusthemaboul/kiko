@@ -1,0 +1,114 @@
+{
+  "saved_at": "2026-03-07T15:06:13.392Z",
+  "value": {
+    "pageid": 108579234,
+    "ns": 0,
+    "title": "Q113834900",
+    "lastrevid": 2458786272,
+    "modified": "2026-01-28T20:20:12Z",
+    "type": "item",
+    "id": "Q113834900",
+    "labels": {
+      "fr": {
+        "language": "fr",
+        "value": "Contraception en France"
+      }
+    },
+    "descriptions": {},
+    "aliases": {},
+    "claims": {
+      "P17": [
+        {
+          "mainsnak": {
+            "snaktype": "value",
+            "property": "P17",
+            "hash": "c05db5d169c2560b9799d567a803d20a392f53e4",
+            "datavalue": {
+              "value": {
+                "entity-type": "item",
+                "numeric-id": 142,
+                "id": "Q142"
+              },
+              "type": "wikibase-entityid"
+            },
+            "datatype": "wikibase-item"
+          },
+          "type": "statement",
+          "id": "Q113834900$df07492d-754b-4727-aadb-b9c783f6b768",
+          "rank": "normal"
+        }
+      ],
+      "P1269": [
+        {
+          "mainsnak": {
+            "snaktype": "value",
+            "property": "P1269",
+            "hash": "63563d058a0a107cbad2c2d438f11385e7d2ca50",
+            "datavalue": {
+              "value": {
+                "entity-type": "item",
+                "numeric-id": 122224,
+                "id": "Q122224"
+              },
+              "type": "wikibase-entityid"
+            },
+            "datatype": "wikibase-item"
+          },
+          "type": "statement",
+          "id": "Q113834900$3fb0322a-40d4-c121-99d1-de5d932fb131",
+          "rank": "normal"
+        }
+      ],
+      "P910": [
+        {
+          "mainsnak": {
+            "snaktype": "value",
+            "property": "P910",
+            "hash": "39dc18196591ed2d8c504a6543c3d5fbeaf69ae3",
+            "datavalue": {
+              "value": {
+                "entity-type": "item",
+                "numeric-id": 24894378,
+                "id": "Q24894378"
+              },
+              "type": "wikibase-entityid"
+            },
+            "datatype": "wikibase-item"
+          },
+          "type": "statement",
+          "id": "Q113834900$d7b2857e-4268-5705-11dc-99c0777e9e8e",
+          "rank": "normal"
+        }
+      ],
+      "P31": [
+        {
+          "mainsnak": {
+            "snaktype": "value",
+            "property": "P31",
+            "hash": "c6a5021f8d2b73a08f3bd36e9df12cbd0eca2448",
+            "datavalue": {
+              "value": {
+                "entity-type": "item",
+                "numeric-id": 74817647,
+                "id": "Q74817647"
+              },
+              "type": "wikibase-entityid"
+            },
+            "datatype": "wikibase-item"
+          },
+          "type": "statement",
+          "id": "Q113834900$9355c5a1-4330-17fe-4580-39e39d33da1b",
+          "rank": "normal"
+        }
+      ]
+    },
+    "sitelinks": {
+      "frwiki": {
+        "site": "frwiki",
+        "title": "Contraception en France",
+        "badges": [],
+        "url": "https://fr.wikipedia.org/wiki/Contraception_en_France"
+      }
+    }
+  }
+}

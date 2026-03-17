@@ -1,0 +1,125 @@
+{
+  "saved_at": "2026-03-07T13:18:40.802Z",
+  "value": {
+    "pageid": 104258682,
+    "ns": 0,
+    "title": "Q109044147",
+    "lastrevid": 2345112924,
+    "modified": "2025-05-05T19:22:59Z",
+    "type": "item",
+    "id": "Q109044147",
+    "labels": {
+      "fr": {
+        "language": "fr",
+        "value": "Maladie et mort de Georges Pompidou"
+      },
+      "en": {
+        "language": "en",
+        "value": "Illness and death of Georges Pompidou"
+      }
+    },
+    "descriptions": {
+      "fr": {
+        "language": "fr",
+        "value": "décès du deuxième président de la Cinquième République française, dont celui-ci a causé un intérim"
+      },
+      "en": {
+        "language": "en",
+        "value": "Illness and death of the President of France in 1974"
+      }
+    },
+    "aliases": {
+      "en": [
+        {
+          "language": "en",
+          "value": "Death and state funeral of Georges Pompidou"
+        }
+      ],
+      "fr": [
+        {
+          "language": "fr",
+          "value": "Mort et obsèques de Georges Pompidou"
+        }
+      ]
+    },
+    "claims": {
+      "P1269": [
+        {
+          "mainsnak": {
+            "snaktype": "value",
+            "property": "P1269",
+            "hash": "dde1a6b01402d1d26c7cd99abf8c06c886366799",
+            "datavalue": {
+              "value": {
+                "entity-type": "item",
+                "numeric-id": 2185,
+                "id": "Q2185"
+              },
+              "type": "wikibase-entityid"
+            },
+            "datatype": "wikibase-item"
+          },
+          "type": "statement",
+          "id": "Q109044147$73924728-4265-bfac-0adf-01a8409d2ff6",
+          "rank": "normal"
+        }
+      ],
+      "P31": [
+        {
+          "mainsnak": {
+            "snaktype": "value",
+            "property": "P31",
+            "hash": "440e12b97105146939e3e8bee5b185433bc581ac",
+            "datavalue": {
+              "value": {
+                "entity-type": "item",
+                "numeric-id": 4,
+                "id": "Q4"
+              },
+              "type": "wikibase-entityid"
+            },
+            "datatype": "wikibase-item"
+          },
+          "type": "statement",
+          "id": "Q109044147$b008cd30-4613-703a-8644-39ce828965ce",
+          "rank": "normal"
+        }
+      ],
+      "P12912": [
+        {
+          "mainsnak": {
+            "snaktype": "value",
+            "property": "P12912",
+            "hash": "00c7b1eff382a7206ec336ae112455c830ad2f9d",
+            "datavalue": {
+              "value": {
+                "entity-type": "item",
+                "numeric-id": 2185,
+                "id": "Q2185"
+              },
+              "type": "wikibase-entityid"
+            },
+            "datatype": "wikibase-item"
+          },
+          "type": "statement",
+          "id": "Q109044147$B63EC1BC-63D9-4C40-9108-3297296396EF",
+          "rank": "normal"
+        }
+      ]
+    },
+    "sitelinks": {
+      "enwiki": {
+        "site": "enwiki",
+        "title": "Illness and death of Georges Pompidou",
+        "badges": [],
+        "url": "https://en.wikipedia.org/wiki/Illness_and_death_of_Georges_Pompidou"
+      },
+      "frwiki": {
+        "site": "frwiki",
+        "title": "Maladie et mort de Georges Pompidou",
+        "badges": [],
+        "url": "https://fr.wikipedia.org/wiki/Maladie_et_mort_de_Georges_Pompidou"
+      }
+    }
+  }
+}

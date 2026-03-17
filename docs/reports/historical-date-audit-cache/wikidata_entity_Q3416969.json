@@ -1,0 +1,210 @@
+{
+  "saved_at": "2026-03-07T14:20:09.093Z",
+  "value": {
+    "pageid": 3255632,
+    "ns": 0,
+    "title": "Q3416969",
+    "lastrevid": 1736098329,
+    "modified": "2022-09-25T06:23:58Z",
+    "type": "item",
+    "id": "Q3416969",
+    "labels": {
+      "fr": {
+        "language": "fr",
+        "value": "radio à Paris"
+      },
+      "en": {
+        "language": "en",
+        "value": "Radio in Paris"
+      }
+    },
+    "descriptions": {
+      "id": {
+        "language": "id",
+        "value": "stasiun radio"
+      },
+      "en": {
+        "language": "en",
+        "value": "overview of radio in Paris"
+      }
+    },
+    "aliases": {
+      "fr": [
+        {
+          "language": "fr",
+          "value": "Bande FM Paris"
+        },
+        {
+          "language": "fr",
+          "value": "Radio à paris"
+        },
+        {
+          "language": "fr",
+          "value": "Radio À Paris"
+        },
+        {
+          "language": "fr",
+          "value": "Radio a Paris"
+        }
+      ]
+    },
+    "claims": {
+      "P910": [
+        {
+          "mainsnak": {
+            "snaktype": "value",
+            "property": "P910",
+            "hash": "0a1f6e7c9ff8e84afa5632314f9243871fa96378",
+            "datavalue": {
+              "value": {
+                "entity-type": "item",
+                "numeric-id": 8619046,
+                "id": "Q8619046"
+              },
+              "type": "wikibase-entityid"
+            },
+            "datatype": "wikibase-item"
+          },
+          "type": "statement",
+          "id": "Q3416969$6B0D7525-D6D6-45D4-8477-17738801087E",
+          "rank": "normal"
+        }
+      ],
+      "P31": [
+        {
+          "mainsnak": {
+            "snaktype": "value",
+            "property": "P31",
+            "hash": "4dc7b059a3e9d916865953081bb2e71eff9fe6d2",
+            "datavalue": {
+              "value": {
+                "entity-type": "item",
+                "numeric-id": 20136634,
+                "id": "Q20136634"
+              },
+              "type": "wikibase-entityid"
+            },
+            "datatype": "wikibase-item"
+          },
+          "type": "statement",
+          "id": "Q3416969$A1C0355E-8DA6-43AE-861F-DF0996C7B795",
+          "rank": "normal"
+        }
+      ],
+      "P373": [
+        {
+          "mainsnak": {
+            "snaktype": "value",
+            "property": "P373",
+            "hash": "859bc30c74bfd169fd5dfb4bf8fced9541dd5608",
+            "datavalue": {
+              "value": "Radio in Paris",
+              "type": "string"
+            },
+            "datatype": "string"
+          },
+          "type": "statement",
+          "id": "Q3416969$90AE7DCE-B215-44ED-B225-793B150E2BE5",
+          "rank": "normal",
+          "references": [
+            {
+              "hash": "fa278ebfc458360e5aed63d5058cca83c46134f1",
+              "snaks": {
+                "P143": [
+                  {
+                    "snaktype": "value",
+                    "property": "P143",
+                    "hash": "e4f6d9441d0600513c4533c672b5ab472dc73694",
+                    "datavalue": {
+                      "value": {
+                        "entity-type": "item",
+                        "numeric-id": 328,
+                        "id": "Q328"
+                      },
+                      "type": "wikibase-entityid"
+                    },
+                    "datatype": "wikibase-item"
+                  }
+                ]
+              },
+              "snaks-order": [
+                "P143"
+              ]
+            }
+          ]
+        }
+      ],
+      "P646": [
+        {
+          "mainsnak": {
+            "snaktype": "value",
+            "property": "P646",
+            "hash": "295f11679afca924bd04dcf05c199a1f184c8b9d",
+            "datavalue": {
+              "value": "/m/0117p4s0",
+              "type": "string"
+            },
+            "datatype": "external-id"
+          },
+          "type": "statement",
+          "id": "Q3416969$80F8995D-F5B6-4B78-BBD8-0362842F651E",
+          "rank": "normal"
+        }
+      ],
+      "P921": [
+        {
+          "mainsnak": {
+            "snaktype": "value",
+            "property": "P921",
+            "hash": "8632042b0da09e5c74090a0f1b29dd5e7ef83e89",
+            "datavalue": {
+              "value": {
+                "entity-type": "item",
+                "numeric-id": 14350,
+                "id": "Q14350"
+              },
+              "type": "wikibase-entityid"
+            },
+            "datatype": "wikibase-item"
+          },
+          "type": "statement",
+          "id": "Q3416969$c643f6da-4567-d369-37e1-a47c95de2965",
+          "rank": "normal"
+        },
+        {
+          "mainsnak": {
+            "snaktype": "value",
+            "property": "P921",
+            "hash": "ba4b980bdf17b66eaa0d135e20e25a5346935808",
+            "datavalue": {
+              "value": {
+                "entity-type": "item",
+                "numeric-id": 90,
+                "id": "Q90"
+              },
+              "type": "wikibase-entityid"
+            },
+            "datatype": "wikibase-item"
+          },
+          "type": "statement",
+          "id": "Q3416969$622e9f5b-44e0-9815-488e-4d299828d0a8",
+          "rank": "normal"
+        }
+      ]
+    },
+    "sitelinks": {
+      "enwiki": {
+        "site": "enwiki",
+        "title": "Radio in Paris",
+        "badges": [],
+        "url": "https://en.wikipedia.org/wiki/Radio_in_Paris"
+      },
+      "frwiki": {
+        "site": "frwiki",
+        "title": "Histoire de la radio à Paris",
+        "badges": [],
+        "url": "https://fr.wikipedia.org/wiki/Histoire_de_la_radio_%C3%A0_Paris"
+      }
+    }
+  }
+}

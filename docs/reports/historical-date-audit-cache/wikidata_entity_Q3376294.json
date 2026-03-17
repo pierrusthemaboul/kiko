@@ -1,0 +1,482 @@
+{
+  "saved_at": "2026-03-07T12:50:57.250Z",
+  "value": {
+    "pageid": 3217655,
+    "ns": 0,
+    "title": "Q3376294",
+    "lastrevid": 2463425974,
+    "modified": "2026-02-14T15:13:35Z",
+    "type": "item",
+    "id": "Q3376294",
+    "labels": {
+      "fr": {
+        "language": "fr",
+        "value": "Peste et Choléra"
+      },
+      "ro": {
+        "language": "ro",
+        "value": "peste"
+      },
+      "cs": {
+        "language": "cs",
+        "value": "Mor a cholera"
+      },
+      "en": {
+        "language": "en",
+        "value": "Plague and Cholera"
+      },
+      "es": {
+        "language": "es",
+        "value": "Peste & cólera"
+      }
+    },
+    "descriptions": {
+      "nl": {
+        "language": "nl",
+        "value": "roman van Patrick Deville"
+      },
+      "he": {
+        "language": "he",
+        "value": "ספר"
+      },
+      "ar": {
+        "language": "ar",
+        "value": "كتاب من تأليف باتريك ديفيل"
+      },
+      "fr": {
+        "language": "fr",
+        "value": "roman de Patrick Deville"
+      },
+      "br": {
+        "language": "br",
+        "value": "romant"
+      },
+      "en": {
+        "language": "en",
+        "value": "2012 novel by Patrick Deville"
+      },
+      "es": {
+        "language": "es",
+        "value": "novela de Patrick Deville"
+      }
+    },
+    "aliases": {
+      "fr": [
+        {
+          "language": "fr",
+          "value": "Peste et choléra"
+        },
+        {
+          "language": "fr",
+          "value": "Peste & Choléra"
+        }
+      ]
+    },
+    "claims": {
+      "P50": [
+        {
+          "mainsnak": {
+            "snaktype": "value",
+            "property": "P50",
+            "hash": "19c208cfb283d169b85396d11a4ddb750eaa58f5",
+            "datavalue": {
+              "value": {
+                "entity-type": "item",
+                "numeric-id": 2411481,
+                "id": "Q2411481"
+              },
+              "type": "wikibase-entityid"
+            },
+            "datatype": "wikibase-item"
+          },
+          "type": "statement",
+          "id": "Q3376294$BBCC5E1E-A90F-4C1E-AEF4-807FBFEB3700",
+          "rank": "normal",
+          "references": [
+            {
+              "hash": "d4bd87b862b12d99d26e86472d44f26858dee639",
+              "snaks": {
+                "P143": [
+                  {
+                    "snaktype": "value",
+                    "property": "P143",
+                    "hash": "f30cbd35620c4ea6d0633aaf0210a8916130469b",
+                    "datavalue": {
+                      "value": {
+                        "entity-type": "item",
+                        "numeric-id": 8447,
+                        "id": "Q8447"
+                      },
+                      "type": "wikibase-entityid"
+                    },
+                    "datatype": "wikibase-item"
+                  }
+                ]
+              },
+              "snaks-order": [
+                "P143"
+              ]
+            }
+          ]
+        }
+      ],
+      "P31": [
+        {
+          "mainsnak": {
+            "snaktype": "value",
+            "property": "P31",
+            "hash": "5963e3cad5eee4ae1cffbefbac15327800b9a7e6",
+            "datavalue": {
+              "value": {
+                "entity-type": "item",
+                "numeric-id": 7725634,
+                "id": "Q7725634"
+              },
+              "type": "wikibase-entityid"
+            },
+            "datatype": "wikibase-item"
+          },
+          "type": "statement",
+          "id": "Q3376294$410B9ACD-760A-4233-9D3F-BEBD9EA3F50D",
+          "rank": "normal"
+        }
+      ],
+      "P495": [
+        {
+          "mainsnak": {
+            "snaktype": "value",
+            "property": "P495",
+            "hash": "f707ab9792279b2ccec78f8736a8e5d28c8b7fc7",
+            "datavalue": {
+              "value": {
+                "entity-type": "item",
+                "numeric-id": 142,
+                "id": "Q142"
+              },
+              "type": "wikibase-entityid"
+            },
+            "datatype": "wikibase-item"
+          },
+          "type": "statement",
+          "id": "Q3376294$AC108A17-69DC-42D1-B76B-B222739253FF",
+          "rank": "normal"
+        }
+      ],
+      "P166": [
+        {
+          "mainsnak": {
+            "snaktype": "value",
+            "property": "P166",
+            "hash": "e7054f335e9da28739601dc4850fbcd263fafddb",
+            "datavalue": {
+              "value": {
+                "entity-type": "item",
+                "numeric-id": 18945,
+                "id": "Q18945"
+              },
+              "type": "wikibase-entityid"
+            },
+            "datatype": "wikibase-item"
+          },
+          "type": "statement",
+          "qualifiers": {
+            "P585": [
+              {
+                "snaktype": "value",
+                "property": "P585",
+                "hash": "dc8690c920c0b9fca2701bffbeae7924037e1933",
+                "datavalue": {
+                  "value": {
+                    "time": "+2012-01-01T00:00:00Z",
+                    "timezone": 0,
+                    "before": 0,
+                    "after": 0,
+                    "precision": 9,
+                    "calendarmodel": "http://www.wikidata.org/entity/Q1985727"
+                  },
+                  "type": "time"
+                },
+                "datatype": "time"
+              }
+            ]
+          },
+          "qualifiers-order": [
+            "P585"
+          ],
+          "id": "Q3376294$DF00A7BE-379A-4C02-9D36-E840DCE40288",
+          "rank": "normal",
+          "references": [
+            {
+              "hash": "d4bd87b862b12d99d26e86472d44f26858dee639",
+              "snaks": {
+                "P143": [
+                  {
+                    "snaktype": "value",
+                    "property": "P143",
+                    "hash": "f30cbd35620c4ea6d0633aaf0210a8916130469b",
+                    "datavalue": {
+                      "value": {
+                        "entity-type": "item",
+                        "numeric-id": 8447,
+                        "id": "Q8447"
+                      },
+                      "type": "wikibase-entityid"
+                    },
+                    "datatype": "wikibase-item"
+                  }
+                ]
+              },
+              "snaks-order": [
+                "P143"
+              ]
+            }
+          ]
+        }
+      ],
+      "P577": [
+        {
+          "mainsnak": {
+            "snaktype": "value",
+            "property": "P577",
+            "hash": "8ef08298a5a901bb782da018cbf5ed7e307eb37a",
+            "datavalue": {
+              "value": {
+                "time": "+2012-08-23T00:00:00Z",
+                "timezone": 0,
+                "before": 0,
+                "after": 0,
+                "precision": 11,
+                "calendarmodel": "http://www.wikidata.org/entity/Q1985727"
+              },
+              "type": "time"
+            },
+            "datatype": "time"
+          },
+          "type": "statement",
+          "id": "Q3376294$7F35FA86-F460-4945-B3F6-D82AA6E27D2D",
+          "rank": "normal",
+          "references": [
+            {
+              "hash": "d4bd87b862b12d99d26e86472d44f26858dee639",
+              "snaks": {
+                "P143": [
+                  {
+                    "snaktype": "value",
+                    "property": "P143",
+                    "hash": "f30cbd35620c4ea6d0633aaf0210a8916130469b",
+                    "datavalue": {
+                      "value": {
+                        "entity-type": "item",
+                        "numeric-id": 8447,
+                        "id": "Q8447"
+                      },
+                      "type": "wikibase-entityid"
+                    },
+                    "datatype": "wikibase-item"
+                  }
+                ]
+              },
+              "snaks-order": [
+                "P143"
+              ]
+            }
+          ]
+        }
+      ],
+      "P407": [
+        {
+          "mainsnak": {
+            "snaktype": "value",
+            "property": "P407",
+            "hash": "d197d0a5efa4b4c23a302a829dd3ef43684fe002",
+            "datavalue": {
+              "value": {
+                "entity-type": "item",
+                "numeric-id": 150,
+                "id": "Q150"
+              },
+              "type": "wikibase-entityid"
+            },
+            "datatype": "wikibase-item"
+          },
+          "type": "statement",
+          "id": "Q3376294$4407ADD8-EDD6-4CB8-9CDC-A40FA592710F",
+          "rank": "normal"
+        }
+      ],
+      "P1476": [
+        {
+          "mainsnak": {
+            "snaktype": "value",
+            "property": "P1476",
+            "hash": "6fb6e6e4563fc2eaf8b8e827ffc8b45301ed63bc",
+            "datavalue": {
+              "value": {
+                "text": "Peste et Choléra",
+                "language": "fr"
+              },
+              "type": "monolingualtext"
+            },
+            "datatype": "monolingualtext"
+          },
+          "type": "statement",
+          "id": "Q3376294$60376EC7-6DF6-4232-B511-5082B1C7B61D",
+          "rank": "normal"
+        }
+      ],
+      "P8383": [
+        {
+          "mainsnak": {
+            "snaktype": "value",
+            "property": "P8383",
+            "hash": "a7b29fca2e236b209f2b3ce34bd0701163cd9165",
+            "datavalue": {
+              "value": "21625483",
+              "type": "string"
+            },
+            "datatype": "external-id"
+          },
+          "type": "statement",
+          "id": "Q3376294$77dd0012-8bb1-4353-895d-7059b5893008",
+          "rank": "normal",
+          "references": [
+            {
+              "hash": "36075272ced28058a75c66a6dbeb59a51936a036",
+              "snaks": {
+                "P813": [
+                  {
+                    "snaktype": "value",
+                    "property": "P813",
+                    "hash": "84a438a3591c716c0ec6d266437102b07f83ec82",
+                    "datavalue": {
+                      "value": {
+                        "time": "+2020-09-20T00:00:00Z",
+                        "timezone": 0,
+                        "before": 0,
+                        "after": 0,
+                        "precision": 11,
+                        "calendarmodel": "http://www.wikidata.org/entity/Q1985727"
+                      },
+                      "type": "time"
+                    },
+                    "datatype": "time"
+                  }
+                ],
+                "P248": [
+                  {
+                    "snaktype": "value",
+                    "property": "P248",
+                    "hash": "a0e84923b8d99fc8a5013954ac16befd8e4f4696",
+                    "datavalue": {
+                      "value": {
+                        "entity-type": "item",
+                        "numeric-id": 2359213,
+                        "id": "Q2359213"
+                      },
+                      "type": "wikibase-entityid"
+                    },
+                    "datatype": "wikibase-item"
+                  }
+                ]
+              },
+              "snaks-order": [
+                "P813",
+                "P248"
+              ]
+            }
+          ]
+        }
+      ],
+      "P2671": [
+        {
+          "mainsnak": {
+            "snaktype": "value",
+            "property": "P2671",
+            "hash": "f075bb298362cf009adb1860d7d16ec316f6a59e",
+            "datavalue": {
+              "value": "/g/11dyktdw9",
+              "type": "string"
+            },
+            "datatype": "external-id"
+          },
+          "type": "statement",
+          "id": "Q3376294$39522A71-9887-4895-8AC0-6B2C1C6C3421",
+          "rank": "normal"
+        }
+      ],
+      "P7937": [
+        {
+          "mainsnak": {
+            "snaktype": "value",
+            "property": "P7937",
+            "hash": "1f3796a438db67e51d8cac2bad920878e37e51c9",
+            "datavalue": {
+              "value": {
+                "entity-type": "item",
+                "numeric-id": 8261,
+                "id": "Q8261"
+              },
+              "type": "wikibase-entityid"
+            },
+            "datatype": "wikibase-item"
+          },
+          "type": "statement",
+          "id": "Q3376294$39797B4A-9002-489D-9CCF-D189DC10B04F",
+          "rank": "normal"
+        }
+      ],
+      "P747": [
+        {
+          "mainsnak": {
+            "snaktype": "value",
+            "property": "P747",
+            "hash": "02c8d79adf642e551d4d651dd89053d31194b2f8",
+            "datavalue": {
+              "value": {
+                "entity-type": "item",
+                "numeric-id": 136116263,
+                "id": "Q136116263"
+              },
+              "type": "wikibase-entityid"
+            },
+            "datatype": "wikibase-item"
+          },
+          "type": "statement",
+          "id": "Q3376294$50f5fbe5-4e29-56af-2eb3-ffeeafbcb5d6",
+          "rank": "normal"
+        }
+      ],
+      "P648": [
+        {
+          "mainsnak": {
+            "snaktype": "value",
+            "property": "P648",
+            "hash": "f19f3bb39b1a2c3bebabe56755f6759a7ec2c023",
+            "datavalue": {
+              "value": "OL16815459W",
+              "type": "string"
+            },
+            "datatype": "external-id"
+          },
+          "type": "statement",
+          "id": "Q3376294$daa185dd-4113-aab7-b0c8-f160b7b3ac6e",
+          "rank": "normal"
+        }
+      ]
+    },
+    "sitelinks": {
+      "eswiki": {
+        "site": "eswiki",
+        "title": "Peste & Cólera",
+        "badges": [],
+        "url": "https://es.wikipedia.org/wiki/Peste_%26_C%C3%B3lera"
+      },
+      "frwiki": {
+        "site": "frwiki",
+        "title": "Peste et Choléra",
+        "badges": [],
+        "url": "https://fr.wikipedia.org/wiki/Peste_et_Chol%C3%A9ra"
+      }
+    }
+  }
+}

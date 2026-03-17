@@ -1,0 +1,424 @@
+{
+  "saved_at": "2026-03-07T15:40:39.988Z",
+  "value": {
+    "pageid": 2311274,
+    "ns": 0,
+    "title": "Q2392466",
+    "lastrevid": 2442988687,
+    "modified": "2025-12-16T12:25:33Z",
+    "type": "item",
+    "id": "Q2392466",
+    "labels": {
+      "ru": {
+        "language": "ru",
+        "value": "Парламентские выборы во Франции 1902 года"
+      },
+      "fr": {
+        "language": "fr",
+        "value": "élections législatives françaises de 1902"
+      },
+      "en": {
+        "language": "en",
+        "value": "1902 French legislative election"
+      },
+      "es": {
+        "language": "es",
+        "value": "Elección legislativa de Francia de 1902"
+      },
+      "nl": {
+        "language": "nl",
+        "value": "Franse parlementsverkiezingen 1902"
+      },
+      "ko": {
+        "language": "ko",
+        "value": "1902년 프랑스 총선"
+      },
+      "ja": {
+        "language": "ja",
+        "value": "フランス議会選挙 (1902年)"
+      },
+      "pl": {
+        "language": "pl",
+        "value": "Wybory parlamentarne we Francji w 1902 roku"
+      },
+      "ar": {
+        "language": "ar",
+        "value": "الانتخابات التشريعية الفرنسية 1902"
+      },
+      "it": {
+        "language": "it",
+        "value": "Elezioni legislative in Francia del 1902"
+      },
+      "vec": {
+        "language": "vec",
+        "value": "ełesion lejislative in Fransa del 1902"
+      },
+      "sl": {
+        "language": "sl",
+        "value": "zakonodajne volitve v Franciji leta 1902"
+      },
+      "ca": {
+        "language": "ca",
+        "value": "eleccions legislatives franceses de 1902"
+      }
+    },
+    "descriptions": {
+      "fr": {
+        "language": "fr",
+        "value": "élection de la VIIIe législature de la IIIe République"
+      }
+    },
+    "aliases": {
+      "es": [
+        {
+          "language": "es",
+          "value": "Elección legislativa de Francia"
+        },
+        {
+          "language": "es",
+          "value": "Eleccion legislativa de Francia"
+        }
+      ],
+      "nl": [
+        {
+          "language": "nl",
+          "value": "Franse parlementsverkiezingen"
+        }
+      ],
+      "en": [
+        {
+          "language": "en",
+          "value": "French legislative election of 1902"
+        }
+      ],
+      "ja": [
+        {
+          "language": "ja",
+          "value": "1902年フランス議会選挙"
+        }
+      ]
+    },
+    "claims": {
+      "P646": [
+        {
+          "mainsnak": {
+            "snaktype": "value",
+            "property": "P646",
+            "hash": "3eae0307a8e99b7e9dae5fcbcdedef03d0dc6fca",
+            "datavalue": {
+              "value": "/m/02vmnc_",
+              "type": "string"
+            },
+            "datatype": "external-id"
+          },
+          "type": "statement",
+          "id": "Q2392466$FF71BC0B-C80E-4C13-8725-C35306D9316E",
+          "rank": "normal",
+          "references": [
+            {
+              "hash": "2b00cb481cddcac7623114367489b5c194901c4a",
+              "snaks": {
+                "P248": [
+                  {
+                    "snaktype": "value",
+                    "property": "P248",
+                    "hash": "a94b740202b097dd33355e0e6c00e54b9395e5e0",
+                    "datavalue": {
+                      "value": {
+                        "entity-type": "item",
+                        "numeric-id": 15241312,
+                        "id": "Q15241312"
+                      },
+                      "type": "wikibase-entityid"
+                    },
+                    "datatype": "wikibase-item"
+                  }
+                ],
+                "P577": [
+                  {
+                    "snaktype": "value",
+                    "property": "P577",
+                    "hash": "fde79ecb015112d2f29229ccc1ec514ed3e71fa2",
+                    "datavalue": {
+                      "value": {
+                        "time": "+2013-10-28T00:00:00Z",
+                        "timezone": 0,
+                        "before": 0,
+                        "after": 0,
+                        "precision": 11,
+                        "calendarmodel": "http://www.wikidata.org/entity/Q1985727"
+                      },
+                      "type": "time"
+                    },
+                    "datatype": "time"
+                  }
+                ]
+              },
+              "snaks-order": [
+                "P248",
+                "P577"
+              ]
+            }
+          ]
+        }
+      ],
+      "P17": [
+        {
+          "mainsnak": {
+            "snaktype": "value",
+            "property": "P17",
+            "hash": "c05db5d169c2560b9799d567a803d20a392f53e4",
+            "datavalue": {
+              "value": {
+                "entity-type": "item",
+                "numeric-id": 142,
+                "id": "Q142"
+              },
+              "type": "wikibase-entityid"
+            },
+            "datatype": "wikibase-item"
+          },
+          "type": "statement",
+          "id": "Q2392466$27319F48-55DF-4413-A59D-E4CDDB563690",
+          "rank": "normal",
+          "references": [
+            {
+              "hash": "c456dc5cd2117249948c288206ff3f8b1bf574f0",
+              "snaks": {
+                "P143": [
+                  {
+                    "snaktype": "value",
+                    "property": "P143",
+                    "hash": "e17507043402fe54ae6c4d65cc51f46cec987de9",
+                    "datavalue": {
+                      "value": {
+                        "entity-type": "item",
+                        "numeric-id": 8449,
+                        "id": "Q8449"
+                      },
+                      "type": "wikibase-entityid"
+                    },
+                    "datatype": "wikibase-item"
+                  }
+                ]
+              },
+              "snaks-order": [
+                "P143"
+              ]
+            }
+          ]
+        }
+      ],
+      "P31": [
+        {
+          "mainsnak": {
+            "snaktype": "value",
+            "property": "P31",
+            "hash": "6da9b17a2079f99e6148723944af4d4b1db30942",
+            "datavalue": {
+              "value": {
+                "entity-type": "item",
+                "numeric-id": 3587148,
+                "id": "Q3587148"
+              },
+              "type": "wikibase-entityid"
+            },
+            "datatype": "wikibase-item"
+          },
+          "type": "statement",
+          "id": "Q2392466$48c28044-4c93-0311-2eab-d052fc12750b",
+          "rank": "normal"
+        }
+      ],
+      "P585": [
+        {
+          "mainsnak": {
+            "snaktype": "value",
+            "property": "P585",
+            "hash": "52dc95f897623731b4330c2a7ad0a61aeaa7beac",
+            "datavalue": {
+              "value": {
+                "time": "+1902-00-00T00:00:00Z",
+                "timezone": 0,
+                "before": 0,
+                "after": 0,
+                "precision": 9,
+                "calendarmodel": "http://www.wikidata.org/entity/Q1985727"
+              },
+              "type": "time"
+            },
+            "datatype": "time"
+          },
+          "type": "statement",
+          "id": "Q2392466$5dbe5bdf-4d8c-a222-9214-fa9f1bf51e83",
+          "rank": "normal"
+        }
+      ],
+      "P155": [
+        {
+          "mainsnak": {
+            "snaktype": "value",
+            "property": "P155",
+            "hash": "18ca5761dc00b046f0cb7e573c2f89cb43533ff2",
+            "datavalue": {
+              "value": {
+                "entity-type": "item",
+                "numeric-id": 942812,
+                "id": "Q942812"
+              },
+              "type": "wikibase-entityid"
+            },
+            "datatype": "wikibase-item"
+          },
+          "type": "statement",
+          "id": "Q2392466$8681D171-F28D-48CF-86DB-0AEF578B1035",
+          "rank": "normal",
+          "references": [
+            {
+              "hash": "d4bd87b862b12d99d26e86472d44f26858dee639",
+              "snaks": {
+                "P143": [
+                  {
+                    "snaktype": "value",
+                    "property": "P143",
+                    "hash": "f30cbd35620c4ea6d0633aaf0210a8916130469b",
+                    "datavalue": {
+                      "value": {
+                        "entity-type": "item",
+                        "numeric-id": 8447,
+                        "id": "Q8447"
+                      },
+                      "type": "wikibase-entityid"
+                    },
+                    "datatype": "wikibase-item"
+                  }
+                ]
+              },
+              "snaks-order": [
+                "P143"
+              ]
+            }
+          ]
+        }
+      ],
+      "P156": [
+        {
+          "mainsnak": {
+            "snaktype": "value",
+            "property": "P156",
+            "hash": "7eaef343d6cfcaad11b30ae662e94766ef49fa34",
+            "datavalue": {
+              "value": {
+                "entity-type": "item",
+                "numeric-id": 2392456,
+                "id": "Q2392456"
+              },
+              "type": "wikibase-entityid"
+            },
+            "datatype": "wikibase-item"
+          },
+          "type": "statement",
+          "id": "Q2392466$80D3BBE7-2C89-4EA2-A5B3-A4E313393969",
+          "rank": "normal",
+          "references": [
+            {
+              "hash": "d4bd87b862b12d99d26e86472d44f26858dee639",
+              "snaks": {
+                "P143": [
+                  {
+                    "snaktype": "value",
+                    "property": "P143",
+                    "hash": "f30cbd35620c4ea6d0633aaf0210a8916130469b",
+                    "datavalue": {
+                      "value": {
+                        "entity-type": "item",
+                        "numeric-id": 8447,
+                        "id": "Q8447"
+                      },
+                      "type": "wikibase-entityid"
+                    },
+                    "datatype": "wikibase-item"
+                  }
+                ]
+              },
+              "snaks-order": [
+                "P143"
+              ]
+            }
+          ]
+        }
+      ],
+      "P541": [
+        {
+          "mainsnak": {
+            "snaktype": "value",
+            "property": "P541",
+            "hash": "034dafadba0a3853acedc14af2b9d34819942cb2",
+            "datavalue": {
+              "value": {
+                "entity-type": "item",
+                "numeric-id": 3044918,
+                "id": "Q3044918"
+              },
+              "type": "wikibase-entityid"
+            },
+            "datatype": "wikibase-item"
+          },
+          "type": "statement",
+          "id": "Q2392466$7F2D02C9-1383-4272-968D-4F9B4074C45C",
+          "rank": "normal"
+        }
+      ]
+    },
+    "sitelinks": {
+      "enwiki": {
+        "site": "enwiki",
+        "title": "1902 French legislative election",
+        "badges": [],
+        "url": "https://en.wikipedia.org/wiki/1902_French_legislative_election"
+      },
+      "eswiki": {
+        "site": "eswiki",
+        "title": "Elección legislativa de Francia de 1902",
+        "badges": [],
+        "url": "https://es.wikipedia.org/wiki/Elecci%C3%B3n_legislativa_de_Francia_de_1902"
+      },
+      "frwiki": {
+        "site": "frwiki",
+        "title": "Élections législatives françaises de 1902",
+        "badges": [],
+        "url": "https://fr.wikipedia.org/wiki/%C3%89lections_l%C3%A9gislatives_fran%C3%A7aises_de_1902"
+      },
+      "itwiki": {
+        "site": "itwiki",
+        "title": "Elezioni legislative in Francia del 1902",
+        "badges": [],
+        "url": "https://it.wikipedia.org/wiki/Elezioni_legislative_in_Francia_del_1902"
+      },
+      "kowiki": {
+        "site": "kowiki",
+        "title": "1902년 프랑스 총선",
+        "badges": [],
+        "url": "https://ko.wikipedia.org/wiki/1902%EB%85%84_%ED%94%84%EB%9E%91%EC%8A%A4_%EC%B4%9D%EC%84%A0"
+      },
+      "nlwiki": {
+        "site": "nlwiki",
+        "title": "Franse parlementsverkiezingen 1902",
+        "badges": [],
+        "url": "https://nl.wikipedia.org/wiki/Franse_parlementsverkiezingen_1902"
+      },
+      "plwiki": {
+        "site": "plwiki",
+        "title": "Wybory parlamentarne we Francji w 1902 roku",
+        "badges": [],
+        "url": "https://pl.wikipedia.org/wiki/Wybory_parlamentarne_we_Francji_w_1902_roku"
+      },
+      "ruwiki": {
+        "site": "ruwiki",
+        "title": "Парламентские выборы во Франции (1902)",
+        "badges": [],
+        "url": "https://ru.wikipedia.org/wiki/%D0%9F%D0%B0%D1%80%D0%BB%D0%B0%D0%BC%D0%B5%D0%BD%D1%82%D1%81%D0%BA%D0%B8%D0%B5_%D0%B2%D1%8B%D0%B1%D0%BE%D1%80%D1%8B_%D0%B2%D0%BE_%D0%A4%D1%80%D0%B0%D0%BD%D1%86%D0%B8%D0%B8_(1902)"
+      }
+    }
+  }
+}

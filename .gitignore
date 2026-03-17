@@ -1,98 +1,50 @@
-# Learn more https://docs.github.com/en/get-started/getting-started-with-git/ignoring-files
-
-# dependencies
-node_modules/
-yarn-error.log
-npm-debug.log*
-yarn-debug.log*
-
-# Expo
+# === PROJECT STRUCTURE ===
+credentials/
+data/
+scripts/sandbox/
+tmp/
+logs/
 .expo/
-dist/
-web-build/
-expo-env.d.ts
 
-# Metro
-.metro-health-check*
+# === MOBILE APP (Expo/React Native) ===
+mobile_app/.expo/
+mobile_app/dist/
+mobile_app/web-build/
+mobile_app/node_modules/
+mobile_app/android/app/build/
+mobile_app/android/.gradle/
+mobile_app/ios/build/
+mobile_app/ios/Pods/
+mobile_app/*.apk
+mobile_app/*.aab
+mobile_app/.env*
+mobile_app/*.jks
+mobile_app/*.p8
+mobile_app/*.p12
+mobile_app/*.key
+mobile_app/*.mobileprovision
+mobile_app/*.pem
 
-# Build & Cache artifacts
-*.js.map
-*.tsbuildinfo
-# Add any other specific build outputs if needed
-
-# Native - Sensitive Credentials & Build Files
-# IMPORTANT: Keystores, keys, provisioning profiles are handled by EAS Credentials. DO NOT commit these.
-*.jks
-*.p8
-*.p12
-*.key
-*.mobileprovision
-*.pem
-# Android build outputs (usually large and regenerated)
-android/app/build/
-android/.gradle/
-# iOS build outputs (usually large and regenerated)
-ios/build/
-ios/Pods/ # Usually large and managed by pod install
-# APK files (build outputs, can be large)
-*.apk
-*.aab
-
-# Backup & Temp files
-*.orig
-
-# macOS
-.DS_Store
-
-# Local environment variables (Contains secrets!)
+# === SHARED & INFRA ===
+node_modules/
 .env*
 *.env
-.env*.local
-# If you have specific non-local .env files you NEED to commit (e.g., .env.example),
-# use negation patterns like:
-# !.env.example
-
-# Firebase / Google Services
-# NOTE: google-services.json (Android) and GoogleService-Info.plist (iOS)
-# are REQUIRED by EAS build if using Firebase. They should NOT be ignored.
-# android/app/google-services.json # <-- Ensure this is NOT ignored if file is here
-# ios/[YourApp]/GoogleService-Info.plist # <-- Ensure this is NOT ignored if file is here
-# google-services.json # <-- Ensure this is NOT ignored if file is at the root
-
-# Google Play Console API credentials (SENSITIVE - DO NOT COMMIT)
-kiko-chrono-*.json
-credentials.json
-tiktok-credentials.json
-
-# Local fix scripts
-fix_rls.ts
-
-# Twitter API credentials (SENSITIVE - DO NOT COMMIT)
-twitter-credentials.json
-
-# Discord webhook (SENSITIVE - DO NOT COMMIT)
-discord-webhook.json
-
-# IDE configuration files
-.idea/
-*.iml
-.vscode/ # If using VS Code
-
-# Log files
 *.log
-
-# Example dir/file (if applicable)
-# app-example
-# Local Netlify folder
-.netlify
-
-# --- MACHINE A EVENEMENTS & AGENTS ---
-# Logs IA et fichiers de travail (Très lourds, risques secrets)
-machine_a_evenements/AGENTS/**/STORAGE/LOGS/*.json
-machine_a_evenements/temp_images/
-
-# Rapports jetables et dumps de base de données
-*report.txt
+*.zip
 *.pdf
+*report.txt
 dump_*.json
 sayon_session_*.json
+
+# === TOOLS & PIPELINES ===
+tools/**/node_modules/
+tools/**/STORAGE/LOGS/
+tools/**/temp_images/
+
+# === IDE & SYSTEM ===
+.idea/
+*.iml
+.vscode/
+.DS_Store
+*.js.map
+*.tsbuildinfo

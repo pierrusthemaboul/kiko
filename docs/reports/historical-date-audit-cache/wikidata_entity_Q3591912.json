@@ -1,0 +1,83 @@
+{
+  "saved_at": "2026-03-07T16:33:43.006Z",
+  "value": {
+    "pageid": 3420319,
+    "ns": 0,
+    "title": "Q3591912",
+    "lastrevid": 2325518236,
+    "modified": "2025-03-16T07:38:36Z",
+    "type": "item",
+    "id": "Q3591912",
+    "labels": {
+      "fr": {
+        "language": "fr",
+        "value": "États généraux de 1484"
+      },
+      "ja": {
+        "language": "ja",
+        "value": "1484年全国三部会"
+      },
+      "zh": {
+        "language": "zh",
+        "value": "1484年法国三级会议"
+      }
+    },
+    "descriptions": {},
+    "aliases": {
+      "fr": [
+        {
+          "language": "fr",
+          "value": "Etats generaux de 1484"
+        }
+      ]
+    },
+    "claims": {
+      "P31": [
+        {
+          "mainsnak": {
+            "snaktype": "value",
+            "property": "P31",
+            "hash": "26d1323543c7eb0589a5897d22a77c8a4a5b8688",
+            "datavalue": {
+              "value": {
+                "entity-type": "item",
+                "numeric-id": 207304,
+                "id": "Q207304"
+              },
+              "type": "wikibase-entityid"
+            },
+            "datatype": "wikibase-item"
+          },
+          "type": "statement",
+          "id": "Q3591912$CDDA78BB-6735-46A9-93A5-84F3FE6A75BF",
+          "rank": "normal"
+        }
+      ],
+      "P2671": [
+        {
+          "mainsnak": {
+            "snaktype": "value",
+            "property": "P2671",
+            "hash": "c0ca8dcb7442d21dc53949d0a100612c6e840ae7",
+            "datavalue": {
+              "value": "/g/121l0szj",
+              "type": "string"
+            },
+            "datatype": "external-id"
+          },
+          "type": "statement",
+          "id": "Q3591912$CA3D15E9-8014-4212-91B3-FDD50D19F076",
+          "rank": "normal"
+        }
+      ]
+    },
+    "sitelinks": {
+      "frwiki": {
+        "site": "frwiki",
+        "title": "États généraux de 1484",
+        "badges": [],
+        "url": "https://fr.wikipedia.org/wiki/%C3%89tats_g%C3%A9n%C3%A9raux_de_1484"
+      }
+    }
+  }
+}

@@ -1,0 +1,1110 @@
+{
+  "saved_at": "2026-03-07T16:18:38.055Z",
+  "value": {
+    "pageid": 7125113,
+    "ns": 0,
+    "title": "Q7222682",
+    "lastrevid": 2448223146,
+    "modified": "2025-12-28T15:45:47Z",
+    "type": "item",
+    "id": "Q7222682",
+    "labels": {
+      "fr": {
+        "language": "fr",
+        "value": "siège de Vienne"
+      },
+      "cs": {
+        "language": "cs",
+        "value": "Druhé obléhání Vídně"
+      },
+      "de": {
+        "language": "de",
+        "value": "Zweite Wiener Türkenbelagerung"
+      },
+      "da": {
+        "language": "da",
+        "value": "Anden tyrkiske belejring af Wien"
+      },
+      "la": {
+        "language": "la",
+        "value": "Secunda obsidio Vienennsis"
+      },
+      "hu": {
+        "language": "hu",
+        "value": "Bécs ostroma (1683)"
+      },
+      "en": {
+        "language": "en",
+        "value": "Second Turkish Siege of Vienna"
+      },
+      "es": {
+        "language": "es",
+        "value": "sitio de Viena (1683)"
+      },
+      "de-at": {
+        "language": "de-at",
+        "value": "Zweite Wiener Türkenbelagerung"
+      },
+      "it": {
+        "language": "it",
+        "value": "assedio di Vienna"
+      },
+      "vec": {
+        "language": "vec",
+        "value": "Asèdio de Vienna"
+      },
+      "ga": {
+        "language": "ga",
+        "value": "Léigear Vín (1683)"
+      },
+      "pl": {
+        "language": "pl",
+        "value": "oblężenie Wiednia w 1683"
+      },
+      "ro": {
+        "language": "ro",
+        "value": "Asediul Vienei"
+      },
+      "tr": {
+        "language": "tr",
+        "value": "Kahlenberg Muharebesi"
+      }
+    },
+    "descriptions": {
+      "fr": {
+        "language": "fr",
+        "value": "siège de Vienne par l'Empire ottoman (1683)"
+      },
+      "de": {
+        "language": "de",
+        "value": "Schlacht der Türkenkriege"
+      },
+      "hu": {
+        "language": "hu",
+        "value": "Bécs második török ostroma (1683)"
+      },
+      "en": {
+        "language": "en",
+        "value": "1683 siege in the Great Turkish War"
+      },
+      "de-at": {
+        "language": "de-at",
+        "value": "Schlacht der Türkenkriege"
+      },
+      "ro": {
+        "language": "ro",
+        "value": "1683"
+      }
+    },
+    "aliases": {
+      "hu": [
+        {
+          "language": "hu",
+          "value": "Bécs török ostroma (1683)"
+        }
+      ],
+      "de": [
+        {
+          "language": "de",
+          "value": "Zweite Türkenbelagerung Wiens"
+        }
+      ],
+      "en": [
+        {
+          "language": "en",
+          "value": "Second Siege of Vienna"
+        }
+      ]
+    },
+    "claims": {
+      "P580": [
+        {
+          "mainsnak": {
+            "snaktype": "value",
+            "property": "P580",
+            "hash": "ef2d776a989660348f6ce1d723580065ea1babef",
+            "datavalue": {
+              "value": {
+                "time": "+1683-07-14T00:00:00Z",
+                "timezone": 0,
+                "before": 0,
+                "after": 0,
+                "precision": 11,
+                "calendarmodel": "http://www.wikidata.org/entity/Q1985727"
+              },
+              "type": "time"
+            },
+            "datatype": "time"
+          },
+          "type": "statement",
+          "id": "Q7222682$378cbfb1-4a78-75c5-384e-53c52a4aac11",
+          "rank": "normal"
+        }
+      ],
+      "P373": [
+        {
+          "mainsnak": {
+            "snaktype": "value",
+            "property": "P373",
+            "hash": "6b2efd4156c896407636eb232c972b18a54a4baf",
+            "datavalue": {
+              "value": "Battle of Vienna",
+              "type": "string"
+            },
+            "datatype": "string"
+          },
+          "type": "statement",
+          "id": "q7222682$F6B1BD9F-1634-446F-800C-58BC51E860CF",
+          "rank": "normal"
+        }
+      ],
+      "P227": [
+        {
+          "mainsnak": {
+            "snaktype": "value",
+            "property": "P227",
+            "hash": "3e3df4b87e5e1f3e0bc7acb1135ae93c1d178776",
+            "datavalue": {
+              "value": "4108145-6",
+              "type": "string"
+            },
+            "datatype": "external-id"
+          },
+          "type": "statement",
+          "qualifiers": {
+            "P1810": [
+              {
+                "snaktype": "value",
+                "property": "P1810",
+                "hash": "dab6d2fb232f118d5bc97f7a0694515b996b703c",
+                "datavalue": {
+                  "value": "Zweite Wiener Türkenbelagerung",
+                  "type": "string"
+                },
+                "datatype": "string"
+              }
+            ]
+          },
+          "qualifiers-order": [
+            "P1810"
+          ],
+          "id": "Q7222682$9B872CF6-5A55-4B98-A7C7-C575E8CA0CD6",
+          "rank": "normal",
+          "references": [
+            {
+              "hash": "9a24f7c0208b05d6be97077d855671d1dfdbc0dd",
+              "snaks": {
+                "P143": [
+                  {
+                    "snaktype": "value",
+                    "property": "P143",
+                    "hash": "d38375ffe6fe142663ff55cd783aa4df4301d83d",
+                    "datavalue": {
+                      "value": {
+                        "entity-type": "item",
+                        "numeric-id": 48183,
+                        "id": "Q48183"
+                      },
+                      "type": "wikibase-entityid"
+                    },
+                    "datatype": "wikibase-item"
+                  }
+                ]
+              },
+              "snaks-order": [
+                "P143"
+              ]
+            }
+          ]
+        }
+      ],
+      "P361": [
+        {
+          "mainsnak": {
+            "snaktype": "value",
+            "property": "P361",
+            "hash": "2ced1cc4f2733aa30fed8c7a90cf5b3cfb4cb8fa",
+            "datavalue": {
+              "value": {
+                "entity-type": "item",
+                "numeric-id": 74623,
+                "id": "Q74623"
+              },
+              "type": "wikibase-entityid"
+            },
+            "datatype": "wikibase-item"
+          },
+          "type": "statement",
+          "id": "Q7222682$D77069FC-D12D-451E-A8CB-9B48944D9531",
+          "rank": "normal"
+        }
+      ],
+      "P582": [
+        {
+          "mainsnak": {
+            "snaktype": "value",
+            "property": "P582",
+            "hash": "456fda54d58755fb1f9f8ceabf3759eb71ecbbf4",
+            "datavalue": {
+              "value": {
+                "time": "+1683-09-12T00:00:00Z",
+                "timezone": 0,
+                "before": 0,
+                "after": 0,
+                "precision": 11,
+                "calendarmodel": "http://www.wikidata.org/entity/Q1985727"
+              },
+              "type": "time"
+            },
+            "datatype": "time"
+          },
+          "type": "statement",
+          "id": "Q7222682$42280ea1-433f-61a7-c964-d45d4682f2f6",
+          "rank": "normal"
+        }
+      ],
+      "P18": [
+        {
+          "mainsnak": {
+            "snaktype": "value",
+            "property": "P18",
+            "hash": "bcc06b95898e8390706078f883cc10bd2cff58df",
+            "datavalue": {
+              "value": "Vienna Battle 1683.jpg",
+              "type": "string"
+            },
+            "datatype": "commonsMedia"
+          },
+          "type": "statement",
+          "id": "Q7222682$5C1FAE56-E4BD-4CC2-81BA-8917D598408F",
+          "rank": "normal"
+        },
+        {
+          "mainsnak": {
+            "snaktype": "value",
+            "property": "P18",
+            "hash": "9d54eb3f96daeeb09f875a0ad54b6bba3d4b0653",
+            "datavalue": {
+              "value": "Wien, Sterngasse, Türkische Kanonenkugel -- 2018 -- 3105.jpg",
+              "type": "string"
+            },
+            "datatype": "commonsMedia"
+          },
+          "type": "statement",
+          "id": "Q7222682$cb366cc3-4a44-da2b-f355-17c02bd8575b",
+          "rank": "normal"
+        }
+      ],
+      "P276": [
+        {
+          "mainsnak": {
+            "snaktype": "value",
+            "property": "P276",
+            "hash": "a46995c4fd7a79625660f79c1b0f1ef97673efa8",
+            "datavalue": {
+              "value": {
+                "entity-type": "item",
+                "numeric-id": 1741,
+                "id": "Q1741"
+              },
+              "type": "wikibase-entityid"
+            },
+            "datatype": "wikibase-item"
+          },
+          "type": "statement",
+          "id": "Q7222682$468E4631-5E0D-48B3-AE41-306B0617C6DD",
+          "rank": "normal"
+        }
+      ],
+      "P17": [
+        {
+          "mainsnak": {
+            "snaktype": "value",
+            "property": "P17",
+            "hash": "1a3215f93c2ae7d06f17c76aa960547bbd849ffb",
+            "datavalue": {
+              "value": {
+                "entity-type": "item",
+                "numeric-id": 12548,
+                "id": "Q12548"
+              },
+              "type": "wikibase-entityid"
+            },
+            "datatype": "wikibase-item"
+          },
+          "type": "statement",
+          "id": "Q7222682$A0648B7A-6E6B-4099-AC24-71EC3DD61D74",
+          "rank": "normal"
+        }
+      ],
+      "P31": [
+        {
+          "mainsnak": {
+            "snaktype": "value",
+            "property": "P31",
+            "hash": "4fa1783d4cfdddbd24616e28fab46d9c00a29a54",
+            "datavalue": {
+              "value": {
+                "entity-type": "item",
+                "numeric-id": 188055,
+                "id": "Q188055"
+              },
+              "type": "wikibase-entityid"
+            },
+            "datatype": "wikibase-item"
+          },
+          "type": "statement",
+          "id": "Q7222682$B1F520D9-2D25-45FF-9A97-D2A803A9AA01",
+          "rank": "normal"
+        }
+      ],
+      "P1417": [
+        {
+          "mainsnak": {
+            "snaktype": "value",
+            "property": "P1417",
+            "hash": "8cd5232f7bfebf378ea2ee90e71aa9d7c0de4a0f",
+            "datavalue": {
+              "value": "event/Siege-of-Vienna-1683",
+              "type": "string"
+            },
+            "datatype": "external-id"
+          },
+          "type": "statement",
+          "qualifiers": {
+            "P1810": [
+              {
+                "snaktype": "value",
+                "property": "P1810",
+                "hash": "7f9fae546cdea47eefac197b7c0f7ab3811f706d",
+                "datavalue": {
+                  "value": "Siege of Vienna",
+                  "type": "string"
+                },
+                "datatype": "string"
+              }
+            ]
+          },
+          "qualifiers-order": [
+            "P1810"
+          ],
+          "id": "Q7222682$79022C9C-444C-48E5-B0DD-847E600ED971",
+          "rank": "normal"
+        }
+      ],
+      "P625": [
+        {
+          "mainsnak": {
+            "snaktype": "value",
+            "property": "P625",
+            "hash": "60a179718385e4456604806a8dd8af7d178b5e5b",
+            "datavalue": {
+              "value": {
+                "latitude": 48.20833,
+                "longitude": 16.373064,
+                "altitude": null,
+                "precision": 0.00001,
+                "globe": "http://www.wikidata.org/entity/Q2"
+              },
+              "type": "globecoordinate"
+            },
+            "datatype": "globe-coordinate"
+          },
+          "type": "statement",
+          "id": "Q7222682$D480CE4F-5368-4165-8453-BDCEF6D1F60E",
+          "rank": "normal"
+        }
+      ],
+      "P1889": [
+        {
+          "mainsnak": {
+            "snaktype": "value",
+            "property": "P1889",
+            "hash": "e176cf3c9167fbd172559a5efd7004d78e1eecb9",
+            "datavalue": {
+              "value": {
+                "entity-type": "item",
+                "numeric-id": 200855,
+                "id": "Q200855"
+              },
+              "type": "wikibase-entityid"
+            },
+            "datatype": "wikibase-item"
+          },
+          "type": "statement",
+          "id": "Q7222682$E2CB0DD8-08DC-494E-9A9C-3FB561A9E1D1",
+          "rank": "normal",
+          "references": [
+            {
+              "hash": "5f25e309b1fc72dc5700dbd92b15d1661c03d3ad",
+              "snaks": {
+                "P143": [
+                  {
+                    "snaktype": "value",
+                    "property": "P143",
+                    "hash": "f30cbd35620c4ea6d0633aaf0210a8916130469b",
+                    "datavalue": {
+                      "value": {
+                        "entity-type": "item",
+                        "numeric-id": 8447,
+                        "id": "Q8447"
+                      },
+                      "type": "wikibase-entityid"
+                    },
+                    "datatype": "wikibase-item"
+                  }
+                ],
+                "P4656": [
+                  {
+                    "snaktype": "value",
+                    "property": "P4656",
+                    "hash": "36061188802ebd125de6b3f6ea8acbc8e25209be",
+                    "datavalue": {
+                      "value": "https://fr.wikipedia.org/w/index.php?title=Siège_de_Vienne_(1683)&oldid=169110413",
+                      "type": "string"
+                    },
+                    "datatype": "url"
+                  }
+                ]
+              },
+              "snaks-order": [
+                "P143",
+                "P4656"
+              ]
+            }
+          ]
+        },
+        {
+          "mainsnak": {
+            "snaktype": "value",
+            "property": "P1889",
+            "hash": "a2541d50f24787a6a3cd12392fe717c479634516",
+            "datavalue": {
+              "value": {
+                "entity-type": "item",
+                "numeric-id": 207576,
+                "id": "Q207576"
+              },
+              "type": "wikibase-entityid"
+            },
+            "datatype": "wikibase-item"
+          },
+          "type": "statement",
+          "id": "Q7222682$56a36d01-4e7b-303f-489a-7b75250815f0",
+          "rank": "normal"
+        },
+        {
+          "mainsnak": {
+            "snaktype": "value",
+            "property": "P1889",
+            "hash": "434083169c4288a97fa924f0a45f03c6381c0eb0",
+            "datavalue": {
+              "value": {
+                "entity-type": "item",
+                "numeric-id": 7510505,
+                "id": "Q7510505"
+              },
+              "type": "wikibase-entityid"
+            },
+            "datatype": "wikibase-item"
+          },
+          "type": "statement",
+          "id": "Q7222682$21b2c8e7-4d92-766d-5891-e7f2b3737ec2",
+          "rank": "normal"
+        },
+        {
+          "mainsnak": {
+            "snaktype": "value",
+            "property": "P1889",
+            "hash": "e93d067ffd0c814a334bb5ba1fac9ecff80c2394",
+            "datavalue": {
+              "value": {
+                "entity-type": "item",
+                "numeric-id": 60674936,
+                "id": "Q60674936"
+              },
+              "type": "wikibase-entityid"
+            },
+            "datatype": "wikibase-item"
+          },
+          "type": "statement",
+          "id": "Q7222682$706c2433-46a3-0f21-173e-bb9be491fe8f",
+          "rank": "normal"
+        },
+        {
+          "mainsnak": {
+            "snaktype": "value",
+            "property": "P1889",
+            "hash": "bb00c532b8e4e24571e29a7ac3afa3fbb2d8c750",
+            "datavalue": {
+              "value": {
+                "entity-type": "item",
+                "numeric-id": 130803598,
+                "id": "Q130803598"
+              },
+              "type": "wikibase-entityid"
+            },
+            "datatype": "wikibase-item"
+          },
+          "type": "statement",
+          "id": "Q7222682$3DE73D97-C77C-43EF-A213-4D27A3E417C2",
+          "rank": "normal"
+        }
+      ],
+      "P2671": [
+        {
+          "mainsnak": {
+            "snaktype": "value",
+            "property": "P2671",
+            "hash": "56bd82747bf120aa75a3692a529b66986f022a80",
+            "datavalue": {
+              "value": "/g/120_4pxs",
+              "type": "string"
+            },
+            "datatype": "external-id"
+          },
+          "type": "statement",
+          "id": "Q7222682$5D77DC9B-F9ED-4362-B26C-E548EC2AA18A",
+          "rank": "normal"
+        },
+        {
+          "mainsnak": {
+            "snaktype": "value",
+            "property": "P2671",
+            "hash": "2ab5a0b1ca91d5f72b66f4b73682e0d2f94d7de6",
+            "datavalue": {
+              "value": "/g/11g698f2ch",
+              "type": "string"
+            },
+            "datatype": "external-id"
+          },
+          "type": "statement",
+          "id": "Q7222682$41F4B2D1-A5B9-4800-BFE8-32494677A8BE",
+          "rank": "normal"
+        }
+      ],
+      "P268": [
+        {
+          "mainsnak": {
+            "snaktype": "value",
+            "property": "P268",
+            "hash": "3ebed717c7b30cf5fbb12c77b8bcf0133a3f6c1d",
+            "datavalue": {
+              "value": "119595113",
+              "type": "string"
+            },
+            "datatype": "external-id"
+          },
+          "type": "statement",
+          "qualifiers": {
+            "P1810": [
+              {
+                "snaktype": "value",
+                "property": "P1810",
+                "hash": "d5f5b4b11cd4e9b5b2c22dbfff644f35e37f77bb",
+                "datavalue": {
+                  "value": "Vienne (Autriche) -- 1683 (Siège)",
+                  "type": "string"
+                },
+                "datatype": "string"
+              }
+            ],
+            "P4970": [
+              {
+                "snaktype": "value",
+                "property": "P4970",
+                "hash": "f9caaeb2d763ccd216b52c8b0010401b0fd4064a",
+                "datavalue": {
+                  "value": "Kahlenberg, Bataille du (1683)",
+                  "type": "string"
+                },
+                "datatype": "string"
+              }
+            ]
+          },
+          "qualifiers-order": [
+            "P1810",
+            "P4970"
+          ],
+          "id": "Q7222682$FB8D8326-41F0-4079-9C65-1B5802C5558E",
+          "rank": "normal"
+        }
+      ],
+      "P244": [
+        {
+          "mainsnak": {
+            "snaktype": "value",
+            "property": "P244",
+            "hash": "0b7cdd771cb5066b53025edd6b49bd6e821fb8ab",
+            "datavalue": {
+              "value": "sh95002551",
+              "type": "string"
+            },
+            "datatype": "external-id"
+          },
+          "type": "statement",
+          "qualifiers": {
+            "P1810": [
+              {
+                "snaktype": "value",
+                "property": "P1810",
+                "hash": "1cfb85d48a92a9a03a2c807efee3c1b5e29a9d47",
+                "datavalue": {
+                  "value": "Vienna (Austria)--History--Siege, 1683",
+                  "type": "string"
+                },
+                "datatype": "string"
+              }
+            ]
+          },
+          "qualifiers-order": [
+            "P1810"
+          ],
+          "id": "Q7222682$C851ABA7-AD97-49CD-A4B9-C4F43DA91FA9",
+          "rank": "normal",
+          "references": [
+            {
+              "hash": "ac5d47e9fbcc281bc0d27a205ae02e22ad24ce31",
+              "snaks": {
+                "P854": [
+                  {
+                    "snaktype": "value",
+                    "property": "P854",
+                    "hash": "b560dc6b281a39d061e189d2eb299a426a06f1a2",
+                    "datavalue": {
+                      "value": "https://github.com/JohnMarkOckerbloom/ftl/blob/master/data/wikimap",
+                      "type": "string"
+                    },
+                    "datatype": "url"
+                  }
+                ],
+                "P813": [
+                  {
+                    "snaktype": "value",
+                    "property": "P813",
+                    "hash": "0dcf4f64e93fdcc654e2c7534285881fe48b9f3d",
+                    "datavalue": {
+                      "value": {
+                        "time": "+2019-04-03T00:00:00Z",
+                        "timezone": 0,
+                        "before": 0,
+                        "after": 0,
+                        "precision": 11,
+                        "calendarmodel": "http://www.wikidata.org/entity/Q1985727"
+                      },
+                      "type": "time"
+                    },
+                    "datatype": "time"
+                  }
+                ]
+              },
+              "snaks-order": [
+                "P854",
+                "P813"
+              ]
+            }
+          ]
+        }
+      ],
+      "P2163": [
+        {
+          "mainsnak": {
+            "snaktype": "value",
+            "property": "P2163",
+            "hash": "71b66e14e6cbc5268c5964b50ce88f7a018196ce",
+            "datavalue": {
+              "value": "1354959",
+              "type": "string"
+            },
+            "datatype": "external-id"
+          },
+          "type": "statement",
+          "qualifiers": {
+            "P1810": [
+              {
+                "snaktype": "value",
+                "property": "P1810",
+                "hash": "e34e3727497de975d4093c8287d000a90cf89e63",
+                "datavalue": {
+                  "value": "Siege of Vienna (Vienna, Austria : 1683)",
+                  "type": "string"
+                },
+                "datatype": "string"
+              }
+            ]
+          },
+          "qualifiers-order": [
+            "P1810"
+          ],
+          "id": "Q7222682$54AED37D-6CC3-4B8F-94C4-7C0750BD777E",
+          "rank": "normal"
+        }
+      ],
+      "P269": [
+        {
+          "mainsnak": {
+            "snaktype": "value",
+            "property": "P269",
+            "hash": "7528f3de28daacc47b284aeb4a795f40f32cde9b",
+            "datavalue": {
+              "value": "027587061",
+              "type": "string"
+            },
+            "datatype": "external-id"
+          },
+          "type": "statement",
+          "qualifiers": {
+            "P1810": [
+              {
+                "snaktype": "value",
+                "property": "P1810",
+                "hash": "d5f5b4b11cd4e9b5b2c22dbfff644f35e37f77bb",
+                "datavalue": {
+                  "value": "Vienne (Autriche) -- 1683 (Siège)",
+                  "type": "string"
+                },
+                "datatype": "string"
+              }
+            ]
+          },
+          "qualifiers-order": [
+            "P1810"
+          ],
+          "id": "Q7222682$EE760AFB-6210-4B1C-B3FE-70C12F7070BE",
+          "rank": "normal"
+        }
+      ],
+      "P508": [
+        {
+          "mainsnak": {
+            "snaktype": "value",
+            "property": "P508",
+            "hash": "eec52324274bcb240d9d401b08343e164ad92ab0",
+            "datavalue": {
+              "value": "35567",
+              "type": "string"
+            },
+            "datatype": "external-id"
+          },
+          "type": "statement",
+          "qualifiers": {
+            "P1810": [
+              {
+                "snaktype": "value",
+                "property": "P1810",
+                "hash": "7947edd5e03d2245ecc49636b3539ffcef7c197c",
+                "datavalue": {
+                  "value": "Assedio di Vienna <1683>",
+                  "type": "string"
+                },
+                "datatype": "string"
+              }
+            ]
+          },
+          "qualifiers-order": [
+            "P1810"
+          ],
+          "id": "Q7222682$ABC14D0F-8203-4031-A1E2-0757F64F5358",
+          "rank": "normal",
+          "references": [
+            {
+              "hash": "ff65511d37e885bcf005b99c2241192548c3f03a",
+              "snaks": {
+                "P248": [
+                  {
+                    "snaktype": "value",
+                    "property": "P248",
+                    "hash": "3b090a7bae73c288393b2c8b9846cc7ed9a58f91",
+                    "datavalue": {
+                      "value": {
+                        "entity-type": "item",
+                        "numeric-id": 16583225,
+                        "id": "Q16583225"
+                      },
+                      "type": "wikibase-entityid"
+                    },
+                    "datatype": "wikibase-item"
+                  }
+                ]
+              },
+              "snaks-order": [
+                "P248"
+              ]
+            }
+          ]
+        }
+      ],
+      "P8189": [
+        {
+          "mainsnak": {
+            "snaktype": "value",
+            "property": "P8189",
+            "hash": "0b64634b3980ddca56e3724439b09e38c6880928",
+            "datavalue": {
+              "value": "987007541935305171",
+              "type": "string"
+            },
+            "datatype": "external-id"
+          },
+          "type": "statement",
+          "id": "Q7222682$BC5B217F-1948-4A67-BE86-70B176DBD15B",
+          "rank": "normal",
+          "references": [
+            {
+              "hash": "ecb7a39cf436eb1fba419853af168ef9f2ba1dab",
+              "snaks": {
+                "P248": [
+                  {
+                    "snaktype": "value",
+                    "property": "P248",
+                    "hash": "a03bb6ffe37be9554492f4eea5bd18afcb57df19",
+                    "datavalue": {
+                      "value": {
+                        "entity-type": "item",
+                        "numeric-id": 106509962,
+                        "id": "Q106509962"
+                      },
+                      "type": "wikibase-entityid"
+                    },
+                    "datatype": "wikibase-item"
+                  }
+                ]
+              },
+              "snaks-order": [
+                "P248"
+              ]
+            }
+          ]
+        }
+      ],
+      "P1343": [
+        {
+          "mainsnak": {
+            "snaktype": "value",
+            "property": "P1343",
+            "hash": "120a6a7625efa4f7d7c1c1b20c3a9169e89bc855",
+            "datavalue": {
+              "value": {
+                "entity-type": "item",
+                "numeric-id": 110942521,
+                "id": "Q110942521"
+              },
+              "type": "wikibase-entityid"
+            },
+            "datatype": "wikibase-item"
+          },
+          "type": "statement",
+          "qualifiers": {
+            "P1433": [
+              {
+                "snaktype": "value",
+                "property": "P1433",
+                "hash": "5b6211c15b8683ece995d60580a37fbbf6ceb615",
+                "datavalue": {
+                  "value": {
+                    "entity-type": "item",
+                    "numeric-id": 655617,
+                    "id": "Q655617"
+                  },
+                  "type": "wikibase-entityid"
+                },
+                "datatype": "wikibase-item"
+              }
+            ],
+            "P577": [
+              {
+                "snaktype": "value",
+                "property": "P577",
+                "hash": "a59cafefee07dc98aedc7e9c03ee7363993a1e87",
+                "datavalue": {
+                  "value": {
+                    "time": "+1883-00-00T00:00:00Z",
+                    "timezone": 0,
+                    "before": 0,
+                    "after": 0,
+                    "precision": 9,
+                    "calendarmodel": "http://www.wikidata.org/entity/Q1985727"
+                  },
+                  "type": "time"
+                },
+                "datatype": "time"
+              }
+            ]
+          },
+          "qualifiers-order": [
+            "P1433",
+            "P577"
+          ],
+          "id": "Q7222682$d558ed4a-4b82-5c2b-5073-02c5343c87d7",
+          "rank": "normal"
+        }
+      ],
+      "P13591": [
+        {
+          "mainsnak": {
+            "snaktype": "value",
+            "property": "P13591",
+            "hash": "0490319c7fe0947d6c56bab4ce39cbf855f6dec8",
+            "datavalue": {
+              "value": "concept/2f9fa3af-ed8b-457d-a13f-520e9b9f1dd9",
+              "type": "string"
+            },
+            "datatype": "external-id"
+          },
+          "type": "statement",
+          "id": "Q7222682$17740087-7FEE-4785-B517-D93A87618120",
+          "rank": "normal"
+        }
+      ],
+      "P1036": [
+        {
+          "mainsnak": {
+            "snaktype": "value",
+            "property": "P1036",
+            "hash": "cb6aaeb5f2d47f4550412fa648c0e78a38f8b31d",
+            "datavalue": {
+              "value": "943.603 1",
+              "type": "string"
+            },
+            "datatype": "external-id"
+          },
+          "type": "statement",
+          "id": "Q7222682$6C872F6C-C892-4FAE-A7E1-EDC153946262",
+          "rank": "normal",
+          "references": [
+            {
+              "hash": "1e6653fb64adf8f54a080cf646370c9b8b498adb",
+              "snaks": {
+                "P248": [
+                  {
+                    "snaktype": "value",
+                    "property": "P248",
+                    "hash": "3b090a7bae73c288393b2c8b9846cc7ed9a58f91",
+                    "datavalue": {
+                      "value": {
+                        "entity-type": "item",
+                        "numeric-id": 16583225,
+                        "id": "Q16583225"
+                      },
+                      "type": "wikibase-entityid"
+                    },
+                    "datatype": "wikibase-item"
+                  }
+                ],
+                "P508": [
+                  {
+                    "snaktype": "value",
+                    "property": "P508",
+                    "hash": "eec52324274bcb240d9d401b08343e164ad92ab0",
+                    "datavalue": {
+                      "value": "35567",
+                      "type": "string"
+                    },
+                    "datatype": "external-id"
+                  }
+                ],
+                "P813": [
+                  {
+                    "snaktype": "value",
+                    "property": "P813",
+                    "hash": "6d4c9e5b0416a20f72876d06319d4d54168395a8",
+                    "datavalue": {
+                      "value": {
+                        "time": "+2025-11-21T00:00:00Z",
+                        "timezone": 0,
+                        "before": 0,
+                        "after": 0,
+                        "precision": 11,
+                        "calendarmodel": "http://www.wikidata.org/entity/Q1985727"
+                      },
+                      "type": "time"
+                    },
+                    "datatype": "time"
+                  }
+                ]
+              },
+              "snaks-order": [
+                "P248",
+                "P508",
+                "P813"
+              ]
+            }
+          ]
+        }
+      ],
+      "P156": [
+        {
+          "mainsnak": {
+            "snaktype": "value",
+            "property": "P156",
+            "hash": "8b8658ecb98c22a9bf4ed5d689a2d6f79e8e6e6a",
+            "datavalue": {
+              "value": {
+                "entity-type": "item",
+                "numeric-id": 200855,
+                "id": "Q200855"
+              },
+              "type": "wikibase-entityid"
+            },
+            "datatype": "wikibase-item"
+          },
+          "type": "statement",
+          "id": "Q7222682$b8222ac8-4b14-7b99-8d94-4d6dfd50b787",
+          "rank": "normal"
+        }
+      ]
+    },
+    "sitelinks": {
+      "cswiki": {
+        "site": "cswiki",
+        "title": "Druhé obléhání Vídně",
+        "badges": [],
+        "url": "https://cs.wikipedia.org/wiki/Druh%C3%A9_obl%C3%A9h%C3%A1n%C3%AD_V%C3%ADdn%C4%9B"
+      },
+      "dawiki": {
+        "site": "dawiki",
+        "title": "Anden tyrkiske belejring af Wien",
+        "badges": [],
+        "url": "https://da.wikipedia.org/wiki/Anden_tyrkiske_belejring_af_Wien"
+      },
+      "dewiki": {
+        "site": "dewiki",
+        "title": "Zweite Wiener Türkenbelagerung",
+        "badges": [],
+        "url": "https://de.wikipedia.org/wiki/Zweite_Wiener_T%C3%BCrkenbelagerung"
+      },
+      "enwiki": {
+        "site": "enwiki",
+        "title": "Second Turkish Siege of Vienna",
+        "badges": [
+          "Q70894304"
+        ],
+        "url": "https://en.wikipedia.org/wiki/Second_Turkish_Siege_of_Vienna"
+      },
+      "frwiki": {
+        "site": "frwiki",
+        "title": "Siège de Vienne (1683)",
+        "badges": [],
+        "url": "https://fr.wikipedia.org/wiki/Si%C3%A8ge_de_Vienne_(1683)"
+      },
+      "huwiki": {
+        "site": "huwiki",
+        "title": "Bécs ostroma (1683)",
+        "badges": [],
+        "url": "https://hu.wikipedia.org/wiki/B%C3%A9cs_ostroma_(1683)"
+      },
+      "lawiki": {
+        "site": "lawiki",
+        "title": "Secunda obsidio Viennensis (1683)",
+        "badges": [],
+        "url": "https://la.wikipedia.org/wiki/Secunda_obsidio_Viennensis_(1683)"
+      },
+      "trwiki": {
+        "site": "trwiki",
+        "title": "Kahlenberg Muharebesi",
+        "badges": [],
+        "url": "https://tr.wikipedia.org/wiki/Kahlenberg_Muharebesi"
+      }
+    }
+  }
+}

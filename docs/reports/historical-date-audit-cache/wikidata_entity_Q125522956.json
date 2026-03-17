@@ -1,0 +1,201 @@
+{
+  "saved_at": "2026-03-07T14:42:46.324Z",
+  "value": {
+    "pageid": 119645278,
+    "ns": 0,
+    "title": "Q125522956",
+    "lastrevid": 2433982648,
+    "modified": "2025-11-25T21:09:32Z",
+    "type": "item",
+    "id": "Q125522956",
+    "labels": {
+      "en": {
+        "language": "en",
+        "value": "Coronation of Louis XVI"
+      },
+      "it": {
+        "language": "it",
+        "value": "Incoronazione di Luigi XVI"
+      },
+      "fr": {
+        "language": "fr",
+        "value": "sacre de Louis XVI"
+      }
+    },
+    "descriptions": {
+      "en": {
+        "language": "en",
+        "value": "1774coronation in France"
+      }
+    },
+    "aliases": {},
+    "claims": {
+      "P31": [
+        {
+          "mainsnak": {
+            "snaktype": "value",
+            "property": "P31",
+            "hash": "a4577a80255142c375caf61c2567bdf38d0e7b67",
+            "datavalue": {
+              "value": {
+                "entity-type": "item",
+                "numeric-id": 13418847,
+                "id": "Q13418847"
+              },
+              "type": "wikibase-entityid"
+            },
+            "datatype": "wikibase-item"
+          },
+          "type": "statement",
+          "id": "Q125522956$e7acb749-0054-497d-80aa-99bfa6f2795c",
+          "rank": "normal"
+        },
+        {
+          "mainsnak": {
+            "snaktype": "value",
+            "property": "P31",
+            "hash": "36f0c20e48c89fd6afb3f09742c8377c24fb9d5d",
+            "datavalue": {
+              "value": {
+                "entity-type": "item",
+                "numeric-id": 2615857,
+                "id": "Q2615857"
+              },
+              "type": "wikibase-entityid"
+            },
+            "datatype": "wikibase-item"
+          },
+          "type": "statement",
+          "id": "Q125522956$243e22fb-49a5-c22d-2904-b070b3dab1a2",
+          "rank": "normal"
+        }
+      ],
+      "P710": [
+        {
+          "mainsnak": {
+            "snaktype": "value",
+            "property": "P710",
+            "hash": "587cdd1afd0ffc459e07e72510df1f5a343c11d7",
+            "datavalue": {
+              "value": {
+                "entity-type": "item",
+                "numeric-id": 7732,
+                "id": "Q7732"
+              },
+              "type": "wikibase-entityid"
+            },
+            "datatype": "wikibase-item"
+          },
+          "type": "statement",
+          "id": "Q125522956$6aae0f93-4a2c-98e7-6e1b-8baba8c81d4d",
+          "rank": "normal"
+        }
+      ],
+      "P585": [
+        {
+          "mainsnak": {
+            "snaktype": "value",
+            "property": "P585",
+            "hash": "7540395f63a194759caac16b09bde219a35637b8",
+            "datavalue": {
+              "value": {
+                "time": "+1775-06-11T00:00:00Z",
+                "timezone": 0,
+                "before": 0,
+                "after": 0,
+                "precision": 11,
+                "calendarmodel": "http://www.wikidata.org/entity/Q1985727"
+              },
+              "type": "time"
+            },
+            "datatype": "time"
+          },
+          "type": "statement",
+          "id": "Q125522956$2ea5237a-4526-63b0-085c-b09fa8592866",
+          "rank": "normal"
+        }
+      ],
+      "P276": [
+        {
+          "mainsnak": {
+            "snaktype": "value",
+            "property": "P276",
+            "hash": "641bfc94b0ed7df701537f0e1e8e4d8ec60d1921",
+            "datavalue": {
+              "value": {
+                "entity-type": "item",
+                "numeric-id": 206823,
+                "id": "Q206823"
+              },
+              "type": "wikibase-entityid"
+            },
+            "datatype": "wikibase-item"
+          },
+          "type": "statement",
+          "id": "Q125522956$dc45b241-454c-60fd-4981-e88bb0bef5f0",
+          "rank": "normal"
+        }
+      ],
+      "P6802": [
+        {
+          "mainsnak": {
+            "snaktype": "value",
+            "property": "P6802",
+            "hash": "495b61dd1ed5acff52b5090d9ddd630d778d7e5d",
+            "datavalue": {
+              "value": "Sacre à Reims de Louis XVI.jpg",
+              "type": "string"
+            },
+            "datatype": "commonsMedia"
+          },
+          "type": "statement",
+          "id": "Q125522956$a6697e33-412e-f5d7-f88c-dc4d48d77a9b",
+          "rank": "normal"
+        }
+      ],
+      "P373": [
+        {
+          "mainsnak": {
+            "snaktype": "value",
+            "property": "P373",
+            "hash": "36d2e26858995fa26a28748e14acbe753ca14f1e",
+            "datavalue": {
+              "value": "Coronation of Louis XVI of France",
+              "type": "string"
+            },
+            "datatype": "string"
+          },
+          "type": "statement",
+          "id": "Q125522956$58e80e01-4e46-6b6c-4169-140c9150b770",
+          "rank": "normal"
+        }
+      ]
+    },
+    "sitelinks": {
+      "commonswiki": {
+        "site": "commonswiki",
+        "title": "Category:Coronation of Louis XVI of France",
+        "badges": [],
+        "url": "https://commons.wikimedia.org/wiki/Category:Coronation_of_Louis_XVI_of_France"
+      },
+      "enwiki": {
+        "site": "enwiki",
+        "title": "Coronation of Louis XVI",
+        "badges": [],
+        "url": "https://en.wikipedia.org/wiki/Coronation_of_Louis_XVI"
+      },
+      "frwiki": {
+        "site": "frwiki",
+        "title": "Sacre de Louis XVI",
+        "badges": [],
+        "url": "https://fr.wikipedia.org/wiki/Sacre_de_Louis_XVI"
+      },
+      "itwiki": {
+        "site": "itwiki",
+        "title": "Incoronazione di Luigi XVI",
+        "badges": [],
+        "url": "https://it.wikipedia.org/wiki/Incoronazione_di_Luigi_XVI"
+      }
+    }
+  }
+}

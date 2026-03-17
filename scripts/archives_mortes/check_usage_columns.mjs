@@ -31,3 +31,4 @@ async function checkSchema() {
     console.log("Test insertion avec app_version error:", insertError?.message);
 }
 checkSchema();
+

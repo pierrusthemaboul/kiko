@@ -1,0 +1,1015 @@
+{
+  "saved_at": "2026-03-07T15:43:02.331Z",
+  "value": {
+    "pageid": 2795988,
+    "ns": 0,
+    "title": "Q2922453",
+    "lastrevid": 2379141779,
+    "modified": "2025-07-13T16:16:51Z",
+    "type": "item",
+    "id": "Q2922453",
+    "labels": {
+      "fr": {
+        "language": "fr",
+        "value": "bourse du travail de Lyon"
+      },
+      "en": {
+        "language": "en",
+        "value": "Bourse du Travail (Lyon)"
+      }
+    },
+    "descriptions": {
+      "fr": {
+        "language": "fr",
+        "value": "salle de spectacle dans le 3e arrondissement de Lyon (Rhône)"
+      },
+      "nl": {
+        "language": "nl",
+        "value": "gebouw in IIIe arrondissement van Lyon, Frankrijk"
+      },
+      "en": {
+        "language": "en",
+        "value": "theatre and trade unions' community centre in Lyon, France"
+      },
+      "ko": {
+        "language": "ko",
+        "value": "등재된 사적"
+      }
+    },
+    "aliases": {
+      "fr": [
+        {
+          "language": "fr",
+          "value": "Bourse du Travail"
+        }
+      ]
+    },
+    "claims": {
+      "P17": [
+        {
+          "mainsnak": {
+            "snaktype": "value",
+            "property": "P17",
+            "hash": "c05db5d169c2560b9799d567a803d20a392f53e4",
+            "datavalue": {
+              "value": {
+                "entity-type": "item",
+                "numeric-id": 142,
+                "id": "Q142"
+              },
+              "type": "wikibase-entityid"
+            },
+            "datatype": "wikibase-item"
+          },
+          "type": "statement",
+          "id": "q2922453$6005DA60-8819-44C2-9781-4B1F2C55D0CD",
+          "rank": "normal",
+          "references": [
+            {
+              "hash": "d709174cc609072fbf310bb52ddfb7aa2332b473",
+              "snaks": {
+                "P248": [
+                  {
+                    "snaktype": "value",
+                    "property": "P248",
+                    "hash": "fc376b4e25f8c58fa7210b660e00a66558a3332b",
+                    "datavalue": {
+                      "value": {
+                        "entity-type": "item",
+                        "numeric-id": 809830,
+                        "id": "Q809830"
+                      },
+                      "type": "wikibase-entityid"
+                    },
+                    "datatype": "wikibase-item"
+                  }
+                ]
+              },
+              "snaks-order": [
+                "P248"
+              ]
+            }
+          ]
+        }
+      ],
+      "P131": [
+        {
+          "mainsnak": {
+            "snaktype": "value",
+            "property": "P131",
+            "hash": "9ccf03af2c52c801fe941f8a903859fedecb4c73",
+            "datavalue": {
+              "value": {
+                "entity-type": "item",
+                "numeric-id": 3348,
+                "id": "Q3348"
+              },
+              "type": "wikibase-entityid"
+            },
+            "datatype": "wikibase-item"
+          },
+          "type": "statement",
+          "id": "Q2922453$FDE326A1-35AB-44F5-8977-A12B93D2AE4D",
+          "rank": "normal",
+          "references": [
+            {
+              "hash": "d709174cc609072fbf310bb52ddfb7aa2332b473",
+              "snaks": {
+                "P248": [
+                  {
+                    "snaktype": "value",
+                    "property": "P248",
+                    "hash": "fc376b4e25f8c58fa7210b660e00a66558a3332b",
+                    "datavalue": {
+                      "value": {
+                        "entity-type": "item",
+                        "numeric-id": 809830,
+                        "id": "Q809830"
+                      },
+                      "type": "wikibase-entityid"
+                    },
+                    "datatype": "wikibase-item"
+                  }
+                ]
+              },
+              "snaks-order": [
+                "P248"
+              ]
+            }
+          ]
+        }
+      ],
+      "P625": [
+        {
+          "mainsnak": {
+            "snaktype": "value",
+            "property": "P625",
+            "hash": "c09571e4b8ee551e61a2e63c3b447914f0d0d214",
+            "datavalue": {
+              "value": {
+                "latitude": 45.7592898,
+                "longitude": 4.8482323,
+                "altitude": null,
+                "precision": 0.00000277777777778,
+                "globe": "http://www.wikidata.org/entity/Q2"
+              },
+              "type": "globecoordinate"
+            },
+            "datatype": "globe-coordinate"
+          },
+          "type": "statement",
+          "id": "Q2922453$0F6DB163-1AF4-4537-82DE-7EF7548D6FA4",
+          "rank": "normal",
+          "references": [
+            {
+              "hash": "d4bd87b862b12d99d26e86472d44f26858dee639",
+              "snaks": {
+                "P143": [
+                  {
+                    "snaktype": "value",
+                    "property": "P143",
+                    "hash": "f30cbd35620c4ea6d0633aaf0210a8916130469b",
+                    "datavalue": {
+                      "value": {
+                        "entity-type": "item",
+                        "numeric-id": 8447,
+                        "id": "Q8447"
+                      },
+                      "type": "wikibase-entityid"
+                    },
+                    "datatype": "wikibase-item"
+                  }
+                ]
+              },
+              "snaks-order": [
+                "P143"
+              ]
+            }
+          ]
+        }
+      ],
+      "P380": [
+        {
+          "mainsnak": {
+            "snaktype": "value",
+            "property": "P380",
+            "hash": "a38609deb88bdd27fa228ebd3d20706a9afe9d79",
+            "datavalue": {
+              "value": "PA00118106",
+              "type": "string"
+            },
+            "datatype": "external-id"
+          },
+          "type": "statement",
+          "id": "Q2922453$D2156062-C15C-46D3-9EE9-8FC5824ABEC6",
+          "rank": "normal",
+          "references": [
+            {
+              "hash": "d709174cc609072fbf310bb52ddfb7aa2332b473",
+              "snaks": {
+                "P248": [
+                  {
+                    "snaktype": "value",
+                    "property": "P248",
+                    "hash": "fc376b4e25f8c58fa7210b660e00a66558a3332b",
+                    "datavalue": {
+                      "value": {
+                        "entity-type": "item",
+                        "numeric-id": 809830,
+                        "id": "Q809830"
+                      },
+                      "type": "wikibase-entityid"
+                    },
+                    "datatype": "wikibase-item"
+                  }
+                ]
+              },
+              "snaks-order": [
+                "P248"
+              ]
+            }
+          ]
+        }
+      ],
+      "P1004": [
+        {
+          "mainsnak": {
+            "snaktype": "value",
+            "property": "P1004",
+            "hash": "28f1d094a4fe0de628a6453a798bc03b293121e2",
+            "datavalue": {
+              "value": "dcd10ef4-1d49-4c25-937f-81582aafe2c7",
+              "type": "string"
+            },
+            "datatype": "external-id"
+          },
+          "type": "statement",
+          "id": "Q2922453$085C9AFF-D94F-4945-8B5C-2F11645687D6",
+          "rank": "normal",
+          "references": [
+            {
+              "hash": "706208b3024200fd0a39ad499808dd0d98d74065",
+              "snaks": {
+                "P248": [
+                  {
+                    "snaktype": "value",
+                    "property": "P248",
+                    "hash": "623cc8f0e2f65afe4d66b91962d354a2f3aa9a27",
+                    "datavalue": {
+                      "value": {
+                        "entity-type": "item",
+                        "numeric-id": 14005,
+                        "id": "Q14005"
+                      },
+                      "type": "wikibase-entityid"
+                    },
+                    "datatype": "wikibase-item"
+                  }
+                ]
+              },
+              "snaks-order": [
+                "P248"
+              ]
+            }
+          ]
+        }
+      ],
+      "P1435": [
+        {
+          "mainsnak": {
+            "snaktype": "value",
+            "property": "P1435",
+            "hash": "2a0d37ac7e76d305563257e91e85bb3847f90355",
+            "datavalue": {
+              "value": {
+                "entity-type": "item",
+                "numeric-id": 10387575,
+                "id": "Q10387575"
+              },
+              "type": "wikibase-entityid"
+            },
+            "datatype": "wikibase-item"
+          },
+          "type": "statement",
+          "qualifiers": {
+            "P580": [
+              {
+                "snaktype": "value",
+                "property": "P580",
+                "hash": "1fa11e647aaddbcec8a513ee920a855e6394f39f",
+                "datavalue": {
+                  "value": {
+                    "time": "+1989-11-02T00:00:00Z",
+                    "timezone": 0,
+                    "before": 0,
+                    "after": 0,
+                    "precision": 11,
+                    "calendarmodel": "http://www.wikidata.org/entity/Q1985727"
+                  },
+                  "type": "time"
+                },
+                "datatype": "time"
+              }
+            ]
+          },
+          "qualifiers-order": [
+            "P580"
+          ],
+          "id": "Q2922453$2FDFCBA2-E189-4BAB-AA23-6EA425A4197B",
+          "rank": "normal",
+          "references": [
+            {
+              "hash": "d709174cc609072fbf310bb52ddfb7aa2332b473",
+              "snaks": {
+                "P248": [
+                  {
+                    "snaktype": "value",
+                    "property": "P248",
+                    "hash": "fc376b4e25f8c58fa7210b660e00a66558a3332b",
+                    "datavalue": {
+                      "value": {
+                        "entity-type": "item",
+                        "numeric-id": 809830,
+                        "id": "Q809830"
+                      },
+                      "type": "wikibase-entityid"
+                    },
+                    "datatype": "wikibase-item"
+                  }
+                ]
+              },
+              "snaks-order": [
+                "P248"
+              ]
+            }
+          ]
+        },
+        {
+          "mainsnak": {
+            "snaktype": "value",
+            "property": "P1435",
+            "hash": "e40467dd8967a52c62a37d2406aec129cf94f113",
+            "datavalue": {
+              "value": {
+                "entity-type": "item",
+                "numeric-id": 3214312,
+                "id": "Q3214312"
+              },
+              "type": "wikibase-entityid"
+            },
+            "datatype": "wikibase-item"
+          },
+          "type": "statement",
+          "qualifiers": {
+            "P582": [
+              {
+                "snaktype": "value",
+                "property": "P582",
+                "hash": "50c160b6f7bf1edc8d684027db05a863bb844172",
+                "datavalue": {
+                  "value": {
+                    "time": "+2017-03-30T00:00:00Z",
+                    "timezone": 0,
+                    "before": 0,
+                    "after": 0,
+                    "precision": 11,
+                    "calendarmodel": "http://www.wikidata.org/entity/Q1985727"
+                  },
+                  "type": "time"
+                },
+                "datatype": "time"
+              }
+            ]
+          },
+          "qualifiers-order": [
+            "P582"
+          ],
+          "id": "Q2922453$0D5BF030-64D0-4C79-AE80-7DD0EA324131",
+          "rank": "normal",
+          "references": [
+            {
+              "hash": "b4766a138a9f5ce7bf203ab643a7da94774c8477",
+              "snaks": {
+                "P248": [
+                  {
+                    "snaktype": "value",
+                    "property": "P248",
+                    "hash": "30fc6b4a633331d9f3121dc0d6554a3f346580aa",
+                    "datavalue": {
+                      "value": {
+                        "entity-type": "item",
+                        "numeric-id": 1815103,
+                        "id": "Q1815103"
+                      },
+                      "type": "wikibase-entityid"
+                    },
+                    "datatype": "wikibase-item"
+                  }
+                ],
+                "P464": [
+                  {
+                    "snaktype": "value",
+                    "property": "P464",
+                    "hash": "4a76cd3a791770f93157640c5ce2af44b02c8fdd",
+                    "datavalue": {
+                      "value": "MCCB1633582D",
+                      "type": "string"
+                    },
+                    "datatype": "external-id"
+                  }
+                ],
+                "P10551": [
+                  {
+                    "snaktype": "value",
+                    "property": "P10551",
+                    "hash": "2854c70a21fdea11a497ac9cc0ef1ea7f92ce7d9",
+                    "datavalue": {
+                      "value": {
+                        "entity-type": "property",
+                        "numeric-id": 582,
+                        "id": "P582"
+                      },
+                      "type": "wikibase-entityid"
+                    },
+                    "datatype": "wikibase-property"
+                  }
+                ]
+              },
+              "snaks-order": [
+                "P248",
+                "P464",
+                "P10551"
+              ]
+            }
+          ]
+        }
+      ],
+      "P18": [
+        {
+          "mainsnak": {
+            "snaktype": "value",
+            "property": "P18",
+            "hash": "edde3004df79f452a13e276879748566804f5e77",
+            "datavalue": {
+              "value": "Bourse du travail de Lyon (5).jpg",
+              "type": "string"
+            },
+            "datatype": "commonsMedia"
+          },
+          "type": "statement",
+          "qualifiers": {
+            "P585": [
+              {
+                "snaktype": "value",
+                "property": "P585",
+                "hash": "5ef6ea6742e01fbdd18ccd8771621d3fb336de9d",
+                "datavalue": {
+                  "value": {
+                    "time": "+2011-09-09T00:00:00Z",
+                    "timezone": 0,
+                    "before": 0,
+                    "after": 0,
+                    "precision": 11,
+                    "calendarmodel": "http://www.wikidata.org/entity/Q1985727"
+                  },
+                  "type": "time"
+                },
+                "datatype": "time"
+              }
+            ]
+          },
+          "qualifiers-order": [
+            "P585"
+          ],
+          "id": "Q2922453$3C51F04D-FFAC-4B62-B212-162AA912F539",
+          "rank": "normal"
+        }
+      ],
+      "P31": [
+        {
+          "mainsnak": {
+            "snaktype": "value",
+            "property": "P31",
+            "hash": "c29a856eff678d6757543d3a0a1670dfe0ba4a0e",
+            "datavalue": {
+              "value": {
+                "entity-type": "item",
+                "numeric-id": 18674739,
+                "id": "Q18674739"
+              },
+              "type": "wikibase-entityid"
+            },
+            "datatype": "wikibase-item"
+          },
+          "type": "statement",
+          "id": "Q2922453$8bd9f577-4642-0d50-dc5a-16da8b20e91b",
+          "rank": "normal"
+        },
+        {
+          "mainsnak": {
+            "snaktype": "value",
+            "property": "P31",
+            "hash": "c57dbccde68b50cb19bd939cacee7acb2bd257fa",
+            "datavalue": {
+              "value": {
+                "entity-type": "item",
+                "numeric-id": 24354,
+                "id": "Q24354"
+              },
+              "type": "wikibase-entityid"
+            },
+            "datatype": "wikibase-item"
+          },
+          "type": "statement",
+          "id": "Q2922453$fc56b37a-414c-a87e-7102-19e584250271",
+          "rank": "normal"
+        },
+        {
+          "mainsnak": {
+            "snaktype": "value",
+            "property": "P31",
+            "hash": "f9e551b20d0ea0eed4a04783be86ee2ad6a136b1",
+            "datavalue": {
+              "value": {
+                "entity-type": "item",
+                "numeric-id": 1060829,
+                "id": "Q1060829"
+              },
+              "type": "wikibase-entityid"
+            },
+            "datatype": "wikibase-item"
+          },
+          "type": "statement",
+          "id": "Q2922453$ea2252ba-4b25-b900-6742-f2b6bdb23601",
+          "rank": "normal"
+        },
+        {
+          "mainsnak": {
+            "snaktype": "value",
+            "property": "P31",
+            "hash": "751bdb65484fa4d40b538683ca21dd2f1d03418e",
+            "datavalue": {
+              "value": {
+                "entity-type": "item",
+                "numeric-id": 2447721,
+                "id": "Q2447721"
+              },
+              "type": "wikibase-entityid"
+            },
+            "datatype": "wikibase-item"
+          },
+          "type": "statement",
+          "id": "Q2922453$2e1a3b5b-4ec2-a00e-b124-10d26c1c1238",
+          "rank": "normal"
+        }
+      ],
+      "P135": [
+        {
+          "mainsnak": {
+            "snaktype": "value",
+            "property": "P135",
+            "hash": "7241b1b53d06fad3ca804079ec34823fe75401f0",
+            "datavalue": {
+              "value": {
+                "entity-type": "item",
+                "numeric-id": 173782,
+                "id": "Q173782"
+              },
+              "type": "wikibase-entityid"
+            },
+            "datatype": "wikibase-item"
+          },
+          "type": "statement",
+          "id": "Q2922453$1EEDF42C-A918-4A3B-B456-446F0FBAE42F",
+          "rank": "normal"
+        }
+      ],
+      "P373": [
+        {
+          "mainsnak": {
+            "snaktype": "value",
+            "property": "P373",
+            "hash": "a154d042e002fe2735da47b73cd21c05b856691e",
+            "datavalue": {
+              "value": "Bourse du travail de Lyon",
+              "type": "string"
+            },
+            "datatype": "string"
+          },
+          "type": "statement",
+          "id": "Q2922453$7f383231-2b5e-4a86-b51c-8692b90a5092",
+          "rank": "normal"
+        }
+      ],
+      "P84": [
+        {
+          "mainsnak": {
+            "snaktype": "value",
+            "property": "P84",
+            "hash": "ebf159dc8e339a680e232e2e9747044f774ea149",
+            "datavalue": {
+              "value": {
+                "entity-type": "item",
+                "numeric-id": 17372794,
+                "id": "Q17372794"
+              },
+              "type": "wikibase-entityid"
+            },
+            "datatype": "wikibase-item"
+          },
+          "type": "statement",
+          "id": "Q2922453$B521073D-717A-4BA1-AAED-9B083DE3AF68",
+          "rank": "normal",
+          "references": [
+            {
+              "hash": "d4bd87b862b12d99d26e86472d44f26858dee639",
+              "snaks": {
+                "P143": [
+                  {
+                    "snaktype": "value",
+                    "property": "P143",
+                    "hash": "f30cbd35620c4ea6d0633aaf0210a8916130469b",
+                    "datavalue": {
+                      "value": {
+                        "entity-type": "item",
+                        "numeric-id": 8447,
+                        "id": "Q8447"
+                      },
+                      "type": "wikibase-entityid"
+                    },
+                    "datatype": "wikibase-item"
+                  }
+                ]
+              },
+              "snaks-order": [
+                "P143"
+              ]
+            }
+          ]
+        }
+      ],
+      "P669": [
+        {
+          "mainsnak": {
+            "snaktype": "value",
+            "property": "P669",
+            "hash": "f9817398e069e98a851f24aeb63de58251fbb0e1",
+            "datavalue": {
+              "value": {
+                "entity-type": "item",
+                "numeric-id": 3348,
+                "id": "Q3348"
+              },
+              "type": "wikibase-entityid"
+            },
+            "datatype": "wikibase-item"
+          },
+          "type": "statement",
+          "id": "Q2922453$67e61f28-b92e-4ffc-a89a-c1c3c7639673",
+          "rank": "normal"
+        }
+      ],
+      "P213": [
+        {
+          "mainsnak": {
+            "snaktype": "value",
+            "property": "P213",
+            "hash": "5cf269ed3b5e3f069ecbc70594b3eed93c58f812",
+            "datavalue": {
+              "value": "0000000105439053",
+              "type": "string"
+            },
+            "datatype": "external-id"
+          },
+          "type": "statement",
+          "id": "Q2922453$B5D4EA40-F6EB-40E9-803C-68701D21B98F",
+          "rank": "normal"
+        }
+      ],
+      "P443": [
+        {
+          "mainsnak": {
+            "snaktype": "value",
+            "property": "P443",
+            "hash": "e3fae30e959bc4d6ccdac209eda58edc87720559",
+            "datavalue": {
+              "value": "LL-Q150 (fra)-Benoît Prieur-bourse du travail de Lyon.wav",
+              "type": "string"
+            },
+            "datatype": "commonsMedia"
+          },
+          "type": "statement",
+          "qualifiers": {
+            "P407": [
+              {
+                "snaktype": "value",
+                "property": "P407",
+                "hash": "d197d0a5efa4b4c23a302a829dd3ef43684fe002",
+                "datavalue": {
+                  "value": {
+                    "entity-type": "item",
+                    "numeric-id": 150,
+                    "id": "Q150"
+                  },
+                  "type": "wikibase-entityid"
+                },
+                "datatype": "wikibase-item"
+              }
+            ]
+          },
+          "qualifiers-order": [
+            "P407"
+          ],
+          "id": "Q2922453$4c5e835a-02d7-489c-af19-a0b47ad4cb69",
+          "rank": "normal",
+          "references": [
+            {
+              "hash": "b2a388c66988b2b9d4a499e061bae5c3c461f570",
+              "snaks": {
+                "P854": [
+                  {
+                    "snaktype": "value",
+                    "property": "P854",
+                    "hash": "e7a6ca9d27b78c3eab29cd68352d60599730510b",
+                    "datavalue": {
+                      "value": "https://lingualibre.fr/wiki/Q55264",
+                      "type": "string"
+                    },
+                    "datatype": "url"
+                  }
+                ]
+              },
+              "snaks-order": [
+                "P854"
+              ]
+            }
+          ]
+        }
+      ],
+      "P244": [
+        {
+          "mainsnak": {
+            "snaktype": "value",
+            "property": "P244",
+            "hash": "e45c9eac93eb21e84397938799c060c8dcafdbb0",
+            "datavalue": {
+              "value": "n2006082801",
+              "type": "string"
+            },
+            "datatype": "external-id"
+          },
+          "type": "statement",
+          "id": "Q2922453$D5943232-87F2-44F4-BFBE-2ACB1835D6A3",
+          "rank": "normal",
+          "references": [
+            {
+              "hash": "14fa5898ac764e0660517aa07ea0bbba505f262b",
+              "snaks": {
+                "P248": [
+                  {
+                    "snaktype": "value",
+                    "property": "P248",
+                    "hash": "6b7d4330c4aac4caec4ede9de0311ce273f88ecd",
+                    "datavalue": {
+                      "value": {
+                        "entity-type": "item",
+                        "numeric-id": 54919,
+                        "id": "Q54919"
+                      },
+                      "type": "wikibase-entityid"
+                    },
+                    "datatype": "wikibase-item"
+                  }
+                ],
+                "P813": [
+                  {
+                    "snaktype": "value",
+                    "property": "P813",
+                    "hash": "e0d08f96012770600b942d5e8563b2a3499cba8e",
+                    "datavalue": {
+                      "value": {
+                        "time": "+2019-03-06T00:00:00Z",
+                        "timezone": 0,
+                        "before": 0,
+                        "after": 0,
+                        "precision": 11,
+                        "calendarmodel": "http://www.wikidata.org/entity/Q1985727"
+                      },
+                      "type": "time"
+                    },
+                    "datatype": "time"
+                  }
+                ]
+              },
+              "snaks-order": [
+                "P248",
+                "P813"
+              ]
+            }
+          ]
+        }
+      ],
+      "P149": [
+        {
+          "mainsnak": {
+            "snaktype": "value",
+            "property": "P149",
+            "hash": "978501fb3765073f505f38386678d3d5ae4b16d5",
+            "datavalue": {
+              "value": {
+                "entity-type": "item",
+                "numeric-id": 173782,
+                "id": "Q173782"
+              },
+              "type": "wikibase-entityid"
+            },
+            "datatype": "wikibase-item"
+          },
+          "type": "statement",
+          "id": "Q2922453$B6789E6E-94E8-4842-9CFD-4D4469DD7FFD",
+          "rank": "normal",
+          "references": [
+            {
+              "hash": "f50681d84f6a56dbbeb9b169eb83acec196cfc38",
+              "snaks": {
+                "P143": [
+                  {
+                    "snaktype": "value",
+                    "property": "P143",
+                    "hash": "f30cbd35620c4ea6d0633aaf0210a8916130469b",
+                    "datavalue": {
+                      "value": {
+                        "entity-type": "item",
+                        "numeric-id": 8447,
+                        "id": "Q8447"
+                      },
+                      "type": "wikibase-entityid"
+                    },
+                    "datatype": "wikibase-item"
+                  }
+                ],
+                "P4656": [
+                  {
+                    "snaktype": "value",
+                    "property": "P4656",
+                    "hash": "9cb1f956841dd4e7b918a06303c9cf5833fc36d4",
+                    "datavalue": {
+                      "value": "https://fr.wikipedia.org/w/index.php?title=Bourse_du_travail_de_Lyon&oldid=158540541",
+                      "type": "string"
+                    },
+                    "datatype": "url"
+                  }
+                ]
+              },
+              "snaks-order": [
+                "P143",
+                "P4656"
+              ]
+            }
+          ]
+        }
+      ],
+      "P214": [
+        {
+          "mainsnak": {
+            "snaktype": "value",
+            "property": "P214",
+            "hash": "d922e7cb5e39ab9c484ecde0c2ea938ffe80e887",
+            "datavalue": {
+              "value": "157988587",
+              "type": "string"
+            },
+            "datatype": "external-id"
+          },
+          "type": "statement",
+          "id": "Q2922453$4415338B-49A1-4520-81A8-CB3D859F715F",
+          "rank": "normal"
+        },
+        {
+          "mainsnak": {
+            "snaktype": "value",
+            "property": "P214",
+            "hash": "d6fab39000815c64b9217f522cd206487038eea5",
+            "datavalue": {
+              "value": "168053559",
+              "type": "string"
+            },
+            "datatype": "external-id"
+          },
+          "type": "statement",
+          "id": "Q2922453$ED76A788-EF16-4479-AA8C-C4BA752F2D63",
+          "rank": "normal"
+        }
+      ],
+      "P5652": [
+        {
+          "mainsnak": {
+            "snaktype": "value",
+            "property": "P5652",
+            "hash": "aa584244582937b148aa45ac3d89344a609a5cc8",
+            "datavalue": {
+              "value": "6588",
+              "type": "string"
+            },
+            "datatype": "external-id"
+          },
+          "type": "statement",
+          "id": "Q2922453$773084f5-4b21-151b-b6b4-3815500a3f78",
+          "rank": "normal"
+        }
+      ],
+      "P268": [
+        {
+          "mainsnak": {
+            "snaktype": "value",
+            "property": "P268",
+            "hash": "fb37aa7ed102cc94718dd273562edb5565fb3777",
+            "datavalue": {
+              "value": "113841163",
+              "type": "string"
+            },
+            "datatype": "external-id"
+          },
+          "type": "statement",
+          "id": "Q2922453$190433AA-31D1-4538-8202-CFCC36C96D83",
+          "rank": "normal"
+        }
+      ],
+      "P2671": [
+        {
+          "mainsnak": {
+            "snaktype": "value",
+            "property": "P2671",
+            "hash": "60fa7bf441ca6ccf83b9e627a2f41a87394b1914",
+            "datavalue": {
+              "value": "/g/122x8dxp",
+              "type": "string"
+            },
+            "datatype": "external-id"
+          },
+          "type": "statement",
+          "id": "Q2922453$D2529A8E-F4D0-439E-B31C-47C7E827D325",
+          "rank": "normal"
+        }
+      ],
+      "P5008": [
+        {
+          "mainsnak": {
+            "snaktype": "value",
+            "property": "P5008",
+            "hash": "db4de88e10e72af509c0bb398ecb29c67ab1bfcc",
+            "datavalue": {
+              "value": {
+                "entity-type": "item",
+                "numeric-id": 134412769,
+                "id": "Q134412769"
+              },
+              "type": "wikibase-entityid"
+            },
+            "datatype": "wikibase-item"
+          },
+          "type": "statement",
+          "id": "Q2922453$2465EA62-0EC9-448D-BE7D-A51E6CF96FC5",
+          "rank": "normal"
+        }
+      ],
+      "P13591": [
+        {
+          "mainsnak": {
+            "snaktype": "value",
+            "property": "P13591",
+            "hash": "ae4e9133aa7005f9b5b8f874a419b0bade793750",
+            "datavalue": {
+              "value": "group/8edef7c6-fa47-47db-abed-c4155215a2c9",
+              "type": "string"
+            },
+            "datatype": "external-id"
+          },
+          "type": "statement",
+          "id": "Q2922453$D4E14A26-D1AC-410E-BE2F-BC3ABBCEF6B0",
+          "rank": "normal"
+        }
+      ]
+    },
+    "sitelinks": {
+      "commonswiki": {
+        "site": "commonswiki",
+        "title": "Category:Bourse du travail de Lyon",
+        "badges": [],
+        "url": "https://commons.wikimedia.org/wiki/Category:Bourse_du_travail_de_Lyon"
+      },
+      "enwiki": {
+        "site": "enwiki",
+        "title": "Bourse du Travail (Lyon)",
+        "badges": [],
+        "url": "https://en.wikipedia.org/wiki/Bourse_du_Travail_(Lyon)"
+      },
+      "frwiki": {
+        "site": "frwiki",
+        "title": "Bourse du travail de Lyon",
+        "badges": [],
+        "url": "https://fr.wikipedia.org/wiki/Bourse_du_travail_de_Lyon"
+      }
+    }
+  }
+}

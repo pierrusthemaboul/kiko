@@ -1,0 +1,213 @@
+{
+  "saved_at": "2026-03-07T13:18:44.398Z",
+  "value": {
+    "pageid": 1135943,
+    "ns": 0,
+    "title": "Q1191696",
+    "lastrevid": 1970942146,
+    "modified": "2023-09-09T10:34:39Z",
+    "type": "item",
+    "id": "Q1191696",
+    "labels": {
+      "ja": {
+        "language": "ja",
+        "value": "エヴァン法"
+      },
+      "fr": {
+        "language": "fr",
+        "value": "loi Évin"
+      },
+      "en": {
+        "language": "en",
+        "value": "Loi Evin"
+      },
+      "eo": {
+        "language": "eo",
+        "value": "leĝo de Évin"
+      }
+    },
+    "descriptions": {
+      "ast": {
+        "language": "ast",
+        "value": "llei francesa"
+      },
+      "en": {
+        "language": "en",
+        "value": "1991 French alcohol and tobacco policy law, named after Claude Évin"
+      },
+      "fr": {
+        "language": "fr",
+        "value": "loi française qui vise à lutter contre le tabagisme et l'alcoolisme"
+      }
+    },
+    "aliases": {
+      "ja": [
+        {
+          "language": "ja",
+          "value": "ロワ・エヴァン"
+        }
+      ],
+      "fr": [
+        {
+          "language": "fr",
+          "value": "Loi antitabac du 10 janvier 1991"
+        },
+        {
+          "language": "fr",
+          "value": "Loi Evin"
+        },
+        {
+          "language": "fr",
+          "value": "Loi Évin"
+        },
+        {
+          "language": "fr",
+          "value": "loi no 91-32 du 10 janvier 1991 relative à la lutte contre le tabagisme et l'alcoolisme"
+        },
+        {
+          "language": "fr",
+          "value": "loi n° 91-32 du 10 janvier 1991 relative à la lutte contre le tabagisme et l'alcoolisme"
+        }
+      ]
+    },
+    "claims": {
+      "P31": [
+        {
+          "mainsnak": {
+            "snaktype": "value",
+            "property": "P31",
+            "hash": "26feacaf586ee8762b1a5523fb6432ebd6ffe651",
+            "datavalue": {
+              "value": {
+                "entity-type": "item",
+                "numeric-id": 13408009,
+                "id": "Q13408009"
+              },
+              "type": "wikibase-entityid"
+            },
+            "datatype": "wikibase-item"
+          },
+          "type": "statement",
+          "id": "Q1191696$0C65F033-EABD-43BB-8F64-716876C93E25",
+          "rank": "normal"
+        }
+      ],
+      "P17": [
+        {
+          "mainsnak": {
+            "snaktype": "value",
+            "property": "P17",
+            "hash": "c05db5d169c2560b9799d567a803d20a392f53e4",
+            "datavalue": {
+              "value": {
+                "entity-type": "item",
+                "numeric-id": 142,
+                "id": "Q142"
+              },
+              "type": "wikibase-entityid"
+            },
+            "datatype": "wikibase-item"
+          },
+          "type": "statement",
+          "id": "Q1191696$EC1C921B-E415-42BC-8147-26AFD5794CFF",
+          "rank": "normal"
+        }
+      ],
+      "P1001": [
+        {
+          "mainsnak": {
+            "snaktype": "value",
+            "property": "P1001",
+            "hash": "efe2878aed693a79dce942b2f853910a78c4e2a8",
+            "datavalue": {
+              "value": {
+                "entity-type": "item",
+                "numeric-id": 142,
+                "id": "Q142"
+              },
+              "type": "wikibase-entityid"
+            },
+            "datatype": "wikibase-item"
+          },
+          "type": "statement",
+          "id": "Q1191696$0d3b4d0c-465d-7d27-3ecf-b50f550aaeb4",
+          "rank": "normal"
+        }
+      ],
+      "P1476": [
+        {
+          "mainsnak": {
+            "snaktype": "value",
+            "property": "P1476",
+            "hash": "00530fd3ca2779c85ef8d1da8bee59721f221ef7",
+            "datavalue": {
+              "value": {
+                "text": "loi no 91-32 du 10 janvier 1991 relative à la lutte contre le tabagisme et l'alcoolisme",
+                "language": "fr"
+              },
+              "type": "monolingualtext"
+            },
+            "datatype": "monolingualtext"
+          },
+          "type": "statement",
+          "id": "Q1191696$29b305da-4f2d-2604-7666-cf9ce8b30b28",
+          "rank": "normal"
+        }
+      ],
+      "P464": [
+        {
+          "mainsnak": {
+            "snaktype": "value",
+            "property": "P464",
+            "hash": "c111c661543f343094aa9fbe4d9f81cd20f618f6",
+            "datavalue": {
+              "value": "SPSX9000097L",
+              "type": "string"
+            },
+            "datatype": "external-id"
+          },
+          "type": "statement",
+          "id": "Q1191696$98f4e36c-4dcc-d8cc-78a6-896550a9daba",
+          "rank": "normal"
+        }
+      ],
+      "P646": [
+        {
+          "mainsnak": {
+            "snaktype": "value",
+            "property": "P646",
+            "hash": "cf9b8d9d26c941895b36ec1dda8540ce48380067",
+            "datavalue": {
+              "value": "/m/026jqt5",
+              "type": "string"
+            },
+            "datatype": "external-id"
+          },
+          "type": "statement",
+          "id": "Q1191696$7BF850C5-9A89-4929-81F4-BCE688A899C8",
+          "rank": "normal"
+        }
+      ]
+    },
+    "sitelinks": {
+      "enwiki": {
+        "site": "enwiki",
+        "title": "Loi Évin",
+        "badges": [],
+        "url": "https://en.wikipedia.org/wiki/Loi_%C3%89vin"
+      },
+      "frwiki": {
+        "site": "frwiki",
+        "title": "Loi Évin",
+        "badges": [],
+        "url": "https://fr.wikipedia.org/wiki/Loi_%C3%89vin"
+      },
+      "jawiki": {
+        "site": "jawiki",
+        "title": "エヴァン法",
+        "badges": [],
+        "url": "https://ja.wikipedia.org/wiki/%E3%82%A8%E3%83%B4%E3%82%A1%E3%83%B3%E6%B3%95"
+      }
+    }
+  }
+}

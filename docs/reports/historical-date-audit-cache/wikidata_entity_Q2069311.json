@@ -1,0 +1,381 @@
+{
+  "saved_at": "2026-03-07T14:59:39.793Z",
+  "value": {
+    "pageid": 1996505,
+    "ns": 0,
+    "title": "Q2069311",
+    "lastrevid": 2296715580,
+    "modified": "2025-01-10T15:27:12Z",
+    "type": "item",
+    "id": "Q2069311",
+    "labels": {
+      "fr": {
+        "language": "fr",
+        "value": "Ragenold de Nantes"
+      },
+      "ru": {
+        "language": "ru",
+        "value": "Рогнвальд"
+      },
+      "es": {
+        "language": "es",
+        "value": "Ragenold de Nantes"
+      },
+      "ca": {
+        "language": "ca",
+        "value": "Ragenold de Nantes"
+      },
+      "en": {
+        "language": "en",
+        "value": "Ragenold de Nantes"
+      },
+      "it": {
+        "language": "it",
+        "value": "Ragenold"
+      },
+      "de": {
+        "language": "de",
+        "value": "Ragenold de Nantes"
+      },
+      "nl": {
+        "language": "nl",
+        "value": "Ragenold de Nantes"
+      },
+      "uk": {
+        "language": "uk",
+        "value": "Рагенольд"
+      }
+    },
+    "descriptions": {
+      "es": {
+        "language": "es",
+        "value": "Señor de la guerra vikingo en Francia"
+      },
+      "en": {
+        "language": "en",
+        "value": "Viking warlord in France"
+      }
+    },
+    "aliases": {
+      "ru": [
+        {
+          "language": "ru",
+          "value": "Рагенольд"
+        },
+        {
+          "language": "ru",
+          "value": "Рагнальд Нантский"
+        },
+        {
+          "language": "ru",
+          "value": "Рагнальд"
+        },
+        {
+          "language": "ru",
+          "value": "Рагенольд Нантский"
+        },
+        {
+          "language": "ru",
+          "value": "Рогнвальд Нантский"
+        }
+      ]
+    },
+    "claims": {
+      "P31": [
+        {
+          "mainsnak": {
+            "snaktype": "value",
+            "property": "P31",
+            "hash": "ad7d38a03cdd40cdc373de0dc4e7b7fcbccb31d9",
+            "datavalue": {
+              "value": {
+                "entity-type": "item",
+                "numeric-id": 5,
+                "id": "Q5"
+              },
+              "type": "wikibase-entityid"
+            },
+            "datatype": "wikibase-item"
+          },
+          "type": "statement",
+          "id": "Q2069311$F648F7EA-2811-48B4-8106-7D944F79C82C",
+          "rank": "normal",
+          "references": [
+            {
+              "hash": "288ab581e7d2d02995a26dfa8b091d96e78457fc",
+              "snaks": {
+                "P143": [
+                  {
+                    "snaktype": "value",
+                    "property": "P143",
+                    "hash": "6a164248fc96bfa583bbb495cb63ae6401ec203c",
+                    "datavalue": {
+                      "value": {
+                        "entity-type": "item",
+                        "numeric-id": 206855,
+                        "id": "Q206855"
+                      },
+                      "type": "wikibase-entityid"
+                    },
+                    "datatype": "wikibase-item"
+                  }
+                ]
+              },
+              "snaks-order": [
+                "P143"
+              ]
+            }
+          ]
+        }
+      ],
+      "P21": [
+        {
+          "mainsnak": {
+            "snaktype": "value",
+            "property": "P21",
+            "hash": "85ad4b1c7348f7a5aac521135040d74e91fb5939",
+            "datavalue": {
+              "value": {
+                "entity-type": "item",
+                "numeric-id": 6581097,
+                "id": "Q6581097"
+              },
+              "type": "wikibase-entityid"
+            },
+            "datatype": "wikibase-item"
+          },
+          "type": "statement",
+          "id": "Q2069311$432282EB-6496-4516-87D3-2877B64F610B",
+          "rank": "normal"
+        }
+      ],
+      "P570": [
+        {
+          "mainsnak": {
+            "snaktype": "value",
+            "property": "P570",
+            "hash": "c6706f6826e01cd575ac752a59369364b10c651b",
+            "datavalue": {
+              "value": {
+                "time": "+0930-00-00T00:00:00Z",
+                "timezone": 0,
+                "before": 0,
+                "after": 0,
+                "precision": 9,
+                "calendarmodel": "http://www.wikidata.org/entity/Q1985727"
+              },
+              "type": "time"
+            },
+            "datatype": "time"
+          },
+          "type": "statement",
+          "qualifiers": {
+            "P1480": [
+              {
+                "snaktype": "value",
+                "property": "P1480",
+                "hash": "cb40f2027a88b8d23735681aaccba1069a574f54",
+                "datavalue": {
+                  "value": {
+                    "entity-type": "item",
+                    "numeric-id": 5727902,
+                    "id": "Q5727902"
+                  },
+                  "type": "wikibase-entityid"
+                },
+                "datatype": "wikibase-item"
+              }
+            ],
+            "P31": [
+              {
+                "snaktype": "value",
+                "property": "P31",
+                "hash": "d5ac6d02e7a8948b72184d9e39cf10acbc5e61ed",
+                "datavalue": {
+                  "value": {
+                    "entity-type": "item",
+                    "numeric-id": 26961029,
+                    "id": "Q26961029"
+                  },
+                  "type": "wikibase-entityid"
+                },
+                "datatype": "wikibase-item"
+              }
+            ]
+          },
+          "qualifiers-order": [
+            "P1480",
+            "P31"
+          ],
+          "id": "Q2069311$62776122-4D82-4524-9A28-0FD177824593",
+          "rank": "normal"
+        }
+      ],
+      "P20": [
+        {
+          "mainsnak": {
+            "snaktype": "value",
+            "property": "P20",
+            "hash": "3feddca340eafd3a887374d993f0a628578b63b4",
+            "datavalue": {
+              "value": {
+                "entity-type": "item",
+                "numeric-id": 12191,
+                "id": "Q12191"
+              },
+              "type": "wikibase-entityid"
+            },
+            "datatype": "wikibase-item"
+          },
+          "type": "statement",
+          "id": "Q2069311$52a98b96-4e1a-3fca-6fe2-ff9b7b72de4f",
+          "rank": "normal"
+        }
+      ],
+      "P97": [
+        {
+          "mainsnak": {
+            "snaktype": "value",
+            "property": "P97",
+            "hash": "cfa598b9854db2fb0af35b713f62a01fa924c36e",
+            "datavalue": {
+              "value": {
+                "entity-type": "item",
+                "numeric-id": 166886,
+                "id": "Q166886"
+              },
+              "type": "wikibase-entityid"
+            },
+            "datatype": "wikibase-item"
+          },
+          "type": "statement",
+          "id": "Q2069311$f75afa10-8ffc-4e1f-b738-b84d492fc7b0",
+          "rank": "normal",
+          "references": [
+            {
+              "hash": "d5847b9b6032aa8b13dae3c2dfd9ed5d114d21b3",
+              "snaks": {
+                "P143": [
+                  {
+                    "snaktype": "value",
+                    "property": "P143",
+                    "hash": "5a343e7e758a4282a01316d3e959b6e653b767fc",
+                    "datavalue": {
+                      "value": {
+                        "entity-type": "item",
+                        "numeric-id": 11920,
+                        "id": "Q11920"
+                      },
+                      "type": "wikibase-entityid"
+                    },
+                    "datatype": "wikibase-item"
+                  }
+                ]
+              },
+              "snaks-order": [
+                "P143"
+              ]
+            }
+          ]
+        }
+      ],
+      "P106": [
+        {
+          "mainsnak": {
+            "snaktype": "value",
+            "property": "P106",
+            "hash": "1ced9563b01a4db65fefbd7df132f1df2ef50a82",
+            "datavalue": {
+              "value": {
+                "entity-type": "item",
+                "numeric-id": 1409420,
+                "id": "Q1409420"
+              },
+              "type": "wikibase-entityid"
+            },
+            "datatype": "wikibase-item"
+          },
+          "type": "statement",
+          "id": "Q2069311$5299285A-BD4B-4E16-841C-EB05EEFE4742",
+          "rank": "normal"
+        }
+      ],
+      "P2671": [
+        {
+          "mainsnak": {
+            "snaktype": "value",
+            "property": "P2671",
+            "hash": "c83bd84c1257018f2450b7dd2b75a8833e8d86a3",
+            "datavalue": {
+              "value": "/g/121b749p",
+              "type": "string"
+            },
+            "datatype": "external-id"
+          },
+          "type": "statement",
+          "id": "Q2069311$ABBCEEA4-B69A-4379-BC96-0F234B6AC864",
+          "rank": "normal"
+        }
+      ],
+      "P1366": [
+        {
+          "mainsnak": {
+            "snaktype": "value",
+            "property": "P1366",
+            "hash": "b493d4b02ab8725d2cc2ef9cbd16dfbabe728074",
+            "datavalue": {
+              "value": {
+                "entity-type": "item",
+                "numeric-id": 2376164,
+                "id": "Q2376164"
+              },
+              "type": "wikibase-entityid"
+            },
+            "datatype": "wikibase-item"
+          },
+          "type": "statement",
+          "id": "Q2069311$9f34d9ef-412b-39f2-46c3-21ea6f054a47",
+          "rank": "normal"
+        }
+      ]
+    },
+    "sitelinks": {
+      "cawiki": {
+        "site": "cawiki",
+        "title": "Ragenold de Nantes",
+        "badges": [],
+        "url": "https://ca.wikipedia.org/wiki/Ragenold_de_Nantes"
+      },
+      "eswiki": {
+        "site": "eswiki",
+        "title": "Ragenold de Nantes",
+        "badges": [],
+        "url": "https://es.wikipedia.org/wiki/Ragenold_de_Nantes"
+      },
+      "frwiki": {
+        "site": "frwiki",
+        "title": "Ragenold de Nantes",
+        "badges": [],
+        "url": "https://fr.wikipedia.org/wiki/Ragenold_de_Nantes"
+      },
+      "itwiki": {
+        "site": "itwiki",
+        "title": "Ragenold",
+        "badges": [],
+        "url": "https://it.wikipedia.org/wiki/Ragenold"
+      },
+      "ruwiki": {
+        "site": "ruwiki",
+        "title": "Рогнвальд (граф Нанта)",
+        "badges": [],
+        "url": "https://ru.wikipedia.org/wiki/%D0%A0%D0%BE%D0%B3%D0%BD%D0%B2%D0%B0%D0%BB%D1%8C%D0%B4_(%D0%B3%D1%80%D0%B0%D1%84_%D0%9D%D0%B0%D0%BD%D1%82%D0%B0)"
+      },
+      "ukwiki": {
+        "site": "ukwiki",
+        "title": "Рагенольд",
+        "badges": [],
+        "url": "https://uk.wikipedia.org/wiki/%D0%A0%D0%B0%D0%B3%D0%B5%D0%BD%D0%BE%D0%BB%D1%8C%D0%B4"
+      }
+    }
+  }
+}

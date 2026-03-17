@@ -1,0 +1,155 @@
+{
+  "saved_at": "2026-03-07T16:09:58.728Z",
+  "value": {
+    "pageid": 3368381,
+    "ns": 0,
+    "title": "Q3538146",
+    "lastrevid": 2274332174,
+    "modified": "2024-11-13T22:02:28Z",
+    "type": "item",
+    "id": "Q3538146",
+    "labels": {
+      "fr": {
+        "language": "fr",
+        "value": "travail à la chaîne"
+      },
+      "en": {
+        "language": "en",
+        "value": "assembly line work"
+      },
+      "nb": {
+        "language": "nb",
+        "value": "samlebåndsarbeid"
+      }
+    },
+    "descriptions": {
+      "en": {
+        "language": "en",
+        "value": "type of work"
+      }
+    },
+    "aliases": {
+      "hu": [
+        {
+          "language": "hu",
+          "value": "futószalag mellett végzett munka"
+        },
+        {
+          "language": "hu",
+          "value": "futószalag melletti munka"
+        },
+        {
+          "language": "hu",
+          "value": "szerelőmunka"
+        },
+        {
+          "language": "hu",
+          "value": "összeszerelő munka"
+        }
+      ]
+    },
+    "claims": {
+      "P279": [
+        {
+          "mainsnak": {
+            "snaktype": "value",
+            "property": "P279",
+            "hash": "1011e9516480f79544b64c8f0259ff47a6b72368",
+            "datavalue": {
+              "value": {
+                "entity-type": "item",
+                "numeric-id": 268378,
+                "id": "Q268378"
+              },
+              "type": "wikibase-entityid"
+            },
+            "datatype": "wikibase-item"
+          },
+          "type": "statement",
+          "id": "Q3538146$00328e81-4fb1-3208-c146-2ed40873400f",
+          "rank": "normal"
+        }
+      ],
+      "P3095": [
+        {
+          "mainsnak": {
+            "snaktype": "value",
+            "property": "P3095",
+            "hash": "73208e5b552150d5d4fe09ef73a30eb495425748",
+            "datavalue": {
+              "value": {
+                "entity-type": "item",
+                "numeric-id": 11010088,
+                "id": "Q11010088"
+              },
+              "type": "wikibase-entityid"
+            },
+            "datatype": "wikibase-item"
+          },
+          "type": "statement",
+          "id": "Q3538146$0a62fd74-4f0c-cacd-8fec-1b9c50ade7d0",
+          "rank": "normal"
+        }
+      ],
+      "P2671": [
+        {
+          "mainsnak": {
+            "snaktype": "value",
+            "property": "P2671",
+            "hash": "45602fc902546281408e981e7a5be6ba7278c6ce",
+            "datavalue": {
+              "value": "/g/121bkk90",
+              "type": "string"
+            },
+            "datatype": "external-id"
+          },
+          "type": "statement",
+          "id": "Q3538146$0004DD05-8886-4875-A88C-5A69BD8D22C6",
+          "rank": "normal"
+        }
+      ],
+      "P12800": [
+        {
+          "mainsnak": {
+            "snaktype": "value",
+            "property": "P12800",
+            "hash": "a3b43af3dd880675f42fb714388941945506e81d",
+            "datavalue": {
+              "value": "fr:Travail_à_la_chaîne",
+              "type": "string"
+            },
+            "datatype": "external-id"
+          },
+          "type": "statement",
+          "id": "Q3538146$EDBFD5D0-8473-4997-BDC3-2DE1955C4083",
+          "rank": "normal"
+        }
+      ],
+      "P5437": [
+        {
+          "mainsnak": {
+            "snaktype": "value",
+            "property": "P5437",
+            "hash": "165f0c68923138a877edcd3cbb8904cb911f2846",
+            "datavalue": {
+              "value": "4546",
+              "type": "string"
+            },
+            "datatype": "external-id"
+          },
+          "type": "statement",
+          "id": "Q3538146$0B05A6C9-F94F-4CA3-9194-68A02F81375F",
+          "rank": "normal"
+        }
+      ]
+    },
+    "sitelinks": {
+      "frwiki": {
+        "site": "frwiki",
+        "title": "Travail à la chaîne",
+        "badges": [],
+        "url": "https://fr.wikipedia.org/wiki/Travail_%C3%A0_la_cha%C3%AEne"
+      }
+    }
+  }
+}

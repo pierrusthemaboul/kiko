@@ -1,0 +1,420 @@
+{
+  "saved_at": "2026-03-07T11:56:07.456Z",
+  "value": {
+    "pageid": 1854821,
+    "ns": 0,
+    "title": "Q1925090",
+    "lastrevid": 2427073774,
+    "modified": "2025-11-08T03:01:47Z",
+    "type": "item",
+    "id": "Q1925090",
+    "labels": {
+      "nl": {
+        "language": "nl",
+        "value": "Académie royale de danse"
+      },
+      "ca": {
+        "language": "ca",
+        "value": "Acadèmia Reial de Dansa francesa"
+      },
+      "en": {
+        "language": "en",
+        "value": "Royal Academy of Dance"
+      },
+      "es": {
+        "language": "es",
+        "value": "Academia Real de Danza"
+      },
+      "fr": {
+        "language": "fr",
+        "value": "Académie royale de danse"
+      },
+      "it": {
+        "language": "it",
+        "value": "Académie royale de danse"
+      },
+      "pt": {
+        "language": "pt",
+        "value": "Academia Real de Dança"
+      },
+      "sk": {
+        "language": "sk",
+        "value": "Académie royale de danse"
+      },
+      "uk": {
+        "language": "uk",
+        "value": "Королівська Академія танцю"
+      },
+      "ja": {
+        "language": "ja",
+        "value": "王立舞踏アカデミー"
+      },
+      "ru": {
+        "language": "ru",
+        "value": "Королевская Академия танца"
+      },
+      "yue": {
+        "language": "yue",
+        "value": "皇家舞蹈學院"
+      }
+    },
+    "descriptions": {
+      "fr": {
+        "language": "fr",
+        "value": "académie royale française"
+      },
+      "en": {
+        "language": "en",
+        "value": "former French dance institution"
+      }
+    },
+    "aliases": {
+      "en": [
+        {
+          "language": "en",
+          "value": "Académie royale de danse"
+        }
+      ],
+      "ja": [
+        {
+          "language": "ja",
+          "value": "王立舞踊アカデミー"
+        }
+      ],
+      "nl": [
+        {
+          "language": "nl",
+          "value": "Academie royale de danse"
+        }
+      ]
+    },
+    "claims": {
+      "P646": [
+        {
+          "mainsnak": {
+            "snaktype": "value",
+            "property": "P646",
+            "hash": "ba89cc35ad3143e938f980f8c2dbd23a54cf2c92",
+            "datavalue": {
+              "value": "/m/03qhy2r",
+              "type": "string"
+            },
+            "datatype": "external-id"
+          },
+          "type": "statement",
+          "id": "Q1925090$56F42BBD-13D1-411B-AE13-18AAC58C9994",
+          "rank": "normal",
+          "references": [
+            {
+              "hash": "2b00cb481cddcac7623114367489b5c194901c4a",
+              "snaks": {
+                "P248": [
+                  {
+                    "snaktype": "value",
+                    "property": "P248",
+                    "hash": "a94b740202b097dd33355e0e6c00e54b9395e5e0",
+                    "datavalue": {
+                      "value": {
+                        "entity-type": "item",
+                        "numeric-id": 15241312,
+                        "id": "Q15241312"
+                      },
+                      "type": "wikibase-entityid"
+                    },
+                    "datatype": "wikibase-item"
+                  }
+                ],
+                "P577": [
+                  {
+                    "snaktype": "value",
+                    "property": "P577",
+                    "hash": "fde79ecb015112d2f29229ccc1ec514ed3e71fa2",
+                    "datavalue": {
+                      "value": {
+                        "time": "+2013-10-28T00:00:00Z",
+                        "timezone": 0,
+                        "before": 0,
+                        "after": 0,
+                        "precision": 11,
+                        "calendarmodel": "http://www.wikidata.org/entity/Q1985727"
+                      },
+                      "type": "time"
+                    },
+                    "datatype": "time"
+                  }
+                ]
+              },
+              "snaks-order": [
+                "P248",
+                "P577"
+              ]
+            }
+          ]
+        }
+      ],
+      "P373": [
+        {
+          "mainsnak": {
+            "snaktype": "value",
+            "property": "P373",
+            "hash": "4ab4f03cd34a83e11def933fc85d828693128513",
+            "datavalue": {
+              "value": "Académie Royale de Danse",
+              "type": "string"
+            },
+            "datatype": "string"
+          },
+          "type": "statement",
+          "id": "Q1925090$BDA401CB-B386-4368-ADF5-E7888ACF527A",
+          "rank": "normal"
+        }
+      ],
+      "P112": [
+        {
+          "mainsnak": {
+            "snaktype": "value",
+            "property": "P112",
+            "hash": "5542f1e8eb7b29358cc1274ffc303a1b593d3c8d",
+            "datavalue": {
+              "value": {
+                "entity-type": "item",
+                "numeric-id": 7742,
+                "id": "Q7742"
+              },
+              "type": "wikibase-entityid"
+            },
+            "datatype": "wikibase-item"
+          },
+          "type": "statement",
+          "id": "Q1925090$dba8eea7-467c-fcf9-badd-139b8bab7b1d",
+          "rank": "normal"
+        }
+      ],
+      "P571": [
+        {
+          "mainsnak": {
+            "snaktype": "value",
+            "property": "P571",
+            "hash": "03f8d7a54d65195646195afdfa65aabf561b3e84",
+            "datavalue": {
+              "value": {
+                "time": "+1661-00-00T00:00:00Z",
+                "timezone": 0,
+                "before": 0,
+                "after": 0,
+                "precision": 9,
+                "calendarmodel": "http://www.wikidata.org/entity/Q1985727"
+              },
+              "type": "time"
+            },
+            "datatype": "time"
+          },
+          "type": "statement",
+          "id": "Q1925090$cb60b0cc-4ecc-ee03-5b6b-7ad1e9cc6de8",
+          "rank": "normal"
+        }
+      ],
+      "P31": [
+        {
+          "mainsnak": {
+            "snaktype": "value",
+            "property": "P31",
+            "hash": "cb7091f22165d60c4bab3c43d7ff852726f3b5b8",
+            "datavalue": {
+              "value": {
+                "entity-type": "item",
+                "numeric-id": 1561361,
+                "id": "Q1561361"
+              },
+              "type": "wikibase-entityid"
+            },
+            "datatype": "wikibase-item"
+          },
+          "type": "statement",
+          "id": "Q1925090$4b40abe1-490f-cd4c-274c-8261e2c483dd",
+          "rank": "normal"
+        }
+      ],
+      "P6706": [
+        {
+          "mainsnak": {
+            "snaktype": "value",
+            "property": "P6706",
+            "hash": "6af13713d8185ca73d864e3afc3a5e70efe85cf5",
+            "datavalue": {
+              "value": "Académie+Royale+de+Danse",
+              "type": "string"
+            },
+            "datatype": "external-id"
+          },
+          "type": "statement",
+          "qualifiers": {
+            "P1810": [
+              {
+                "snaktype": "value",
+                "property": "P1810",
+                "hash": "e89625c65041d879626214841e67b59e8698674f",
+                "datavalue": {
+                  "value": "Académie Royale de Danse",
+                  "type": "string"
+                },
+                "datatype": "string"
+              }
+            ]
+          },
+          "qualifiers-order": [
+            "P1810"
+          ],
+          "id": "Q1925090$BEE812B6-6046-4443-8662-B61B0EA915F9",
+          "rank": "normal"
+        }
+      ],
+      "P910": [
+        {
+          "mainsnak": {
+            "snaktype": "value",
+            "property": "P910",
+            "hash": "9ea9db7a0a5a93adea1ec1722a691c80a1641147",
+            "datavalue": {
+              "value": {
+                "entity-type": "item",
+                "numeric-id": 32396941,
+                "id": "Q32396941"
+              },
+              "type": "wikibase-entityid"
+            },
+            "datatype": "wikibase-item"
+          },
+          "type": "statement",
+          "id": "Q1925090$be74a69a-4aa5-b162-7e14-8a421806891e",
+          "rank": "normal"
+        }
+      ],
+      "P214": [
+        {
+          "mainsnak": {
+            "snaktype": "value",
+            "property": "P214",
+            "hash": "0bca5a9095f3f14fcfe2e1f6d2bcab662e16ae4d",
+            "datavalue": {
+              "value": "154060594",
+              "type": "string"
+            },
+            "datatype": "external-id"
+          },
+          "type": "statement",
+          "id": "Q1925090$F77287F9-BB59-41D9-A641-80C80E110EB8",
+          "rank": "normal"
+        }
+      ],
+      "P244": [
+        {
+          "mainsnak": {
+            "snaktype": "value",
+            "property": "P244",
+            "hash": "faf38b5835720cb864fec96f0d75f945688b7f83",
+            "datavalue": {
+              "value": "nr97035350",
+              "type": "string"
+            },
+            "datatype": "external-id"
+          },
+          "type": "statement",
+          "id": "Q1925090$2DEEF3CC-871A-4CF5-A57D-2F5CF87564D9",
+          "rank": "normal"
+        }
+      ],
+      "P13912": [
+        {
+          "mainsnak": {
+            "snaktype": "value",
+            "property": "P13912",
+            "hash": "bc3c0cdd2a9620c814c8cf1f3d86f2b7f16bad9a",
+            "datavalue": {
+              "value": "6",
+              "type": "string"
+            },
+            "datatype": "external-id"
+          },
+          "type": "statement",
+          "id": "Q1925090$2816f7a4-42d5-75c0-52c1-7d419d011e13",
+          "rank": "normal"
+        }
+      ]
+    },
+    "sitelinks": {
+      "cawiki": {
+        "site": "cawiki",
+        "title": "Acadèmia Reial de Dansa francesa",
+        "badges": [],
+        "url": "https://ca.wikipedia.org/wiki/Acad%C3%A8mia_Reial_de_Dansa_francesa"
+      },
+      "commonswiki": {
+        "site": "commonswiki",
+        "title": "Category:Académie Royale de Danse",
+        "badges": [],
+        "url": "https://commons.wikimedia.org/wiki/Category:Acad%C3%A9mie_Royale_de_Danse"
+      },
+      "enwiki": {
+        "site": "enwiki",
+        "title": "Académie Royale de Danse",
+        "badges": [],
+        "url": "https://en.wikipedia.org/wiki/Acad%C3%A9mie_Royale_de_Danse"
+      },
+      "eswiki": {
+        "site": "eswiki",
+        "title": "Academia real de Danza",
+        "badges": [],
+        "url": "https://es.wikipedia.org/wiki/Academia_real_de_Danza"
+      },
+      "frwiki": {
+        "site": "frwiki",
+        "title": "Académie royale de danse",
+        "badges": [],
+        "url": "https://fr.wikipedia.org/wiki/Acad%C3%A9mie_royale_de_danse"
+      },
+      "itwiki": {
+        "site": "itwiki",
+        "title": "Académie royale de danse",
+        "badges": [],
+        "url": "https://it.wikipedia.org/wiki/Acad%C3%A9mie_royale_de_danse"
+      },
+      "nlwiki": {
+        "site": "nlwiki",
+        "title": "Académie royale de danse",
+        "badges": [],
+        "url": "https://nl.wikipedia.org/wiki/Acad%C3%A9mie_royale_de_danse"
+      },
+      "ptwiki": {
+        "site": "ptwiki",
+        "title": "Academia Real de Dança",
+        "badges": [],
+        "url": "https://pt.wikipedia.org/wiki/Academia_Real_de_Dan%C3%A7a"
+      },
+      "ruwiki": {
+        "site": "ruwiki",
+        "title": "Королевская Академия танца",
+        "badges": [],
+        "url": "https://ru.wikipedia.org/wiki/%D0%9A%D0%BE%D1%80%D0%BE%D0%BB%D0%B5%D0%B2%D1%81%D0%BA%D0%B0%D1%8F_%D0%90%D0%BA%D0%B0%D0%B4%D0%B5%D0%BC%D0%B8%D1%8F_%D1%82%D0%B0%D0%BD%D1%86%D0%B0"
+      },
+      "skwiki": {
+        "site": "skwiki",
+        "title": "Académie royale de danse",
+        "badges": [],
+        "url": "https://sk.wikipedia.org/wiki/Acad%C3%A9mie_royale_de_danse"
+      },
+      "ukwiki": {
+        "site": "ukwiki",
+        "title": "Королівська Академія танцю",
+        "badges": [],
+        "url": "https://uk.wikipedia.org/wiki/%D0%9A%D0%BE%D1%80%D0%BE%D0%BB%D1%96%D0%B2%D1%81%D1%8C%D0%BA%D0%B0_%D0%90%D0%BA%D0%B0%D0%B4%D0%B5%D0%BC%D1%96%D1%8F_%D1%82%D0%B0%D0%BD%D1%86%D1%8E"
+      },
+      "zh_yuewiki": {
+        "site": "zh_yuewiki",
+        "title": "皇家舞蹈學院",
+        "badges": [],
+        "url": "https://zh-yue.wikipedia.org/wiki/%E7%9A%87%E5%AE%B6%E8%88%9E%E8%B9%88%E5%AD%B8%E9%99%A2"
+      }
+    }
+  }
+}

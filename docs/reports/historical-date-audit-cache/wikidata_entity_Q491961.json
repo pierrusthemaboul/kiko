@@ -1,0 +1,688 @@
+{
+  "saved_at": "2026-03-07T11:30:06.616Z",
+  "value": {
+    "pageid": 463022,
+    "ns": 0,
+    "title": "Q491961",
+    "lastrevid": 2377474831,
+    "modified": "2025-07-10T16:28:51Z",
+    "type": "item",
+    "id": "Q491961",
+    "labels": {
+      "de": {
+        "language": "de",
+        "value": "Central America"
+      },
+      "ru": {
+        "language": "ru",
+        "value": "SS Central America"
+      },
+      "fr": {
+        "language": "fr",
+        "value": "SS Central America"
+      },
+      "en": {
+        "language": "en",
+        "value": "SS Central America"
+      },
+      "nl": {
+        "language": "nl",
+        "value": "SS Central America"
+      },
+      "he": {
+        "language": "he",
+        "value": "סנטרל אמריקה"
+      },
+      "ja": {
+        "language": "ja",
+        "value": "セントラル・アメリカ"
+      },
+      "zh-tw": {
+        "language": "zh-tw",
+        "value": "中美洲號"
+      },
+      "es": {
+        "language": "es",
+        "value": "SS Central America"
+      },
+      "it": {
+        "language": "it",
+        "value": "SS Central America"
+      },
+      "ga": {
+        "language": "ga",
+        "value": "SS Central America"
+      },
+      "ko": {
+        "language": "ko",
+        "value": "SS 센트럴 아메리카"
+      },
+      "fa": {
+        "language": "fa",
+        "value": "اس‌اس سنترال آمریکا"
+      },
+      "zh": {
+        "language": "zh",
+        "value": "中美洲號"
+      },
+      "zh-hant": {
+        "language": "zh-hant",
+        "value": "中美洲號"
+      }
+    },
+    "descriptions": {
+      "en": {
+        "language": "en",
+        "value": "sidewheel steamer ship"
+      },
+      "de": {
+        "language": "de",
+        "value": "Raddampfer"
+      },
+      "ru": {
+        "language": "ru",
+        "value": "Колёсный пароход"
+      },
+      "es": {
+        "language": "es",
+        "value": "barco de vapor estadounidense"
+      },
+      "ko": {
+        "language": "ko",
+        "value": "미국의 사이드휠 기선"
+      }
+    },
+    "aliases": {
+      "de": [
+        {
+          "language": "de",
+          "value": "SS Central America"
+        }
+      ],
+      "fr": [
+        {
+          "language": "fr",
+          "value": "Central America"
+        },
+        {
+          "language": "fr",
+          "value": "S.S. Central America"
+        }
+      ],
+      "en": [
+        {
+          "language": "en",
+          "value": "SS George Law"
+        },
+        {
+          "language": "en",
+          "value": "S.S. Central America"
+        }
+      ],
+      "ja": [
+        {
+          "language": "ja",
+          "value": "SSセントラル・アメリカ"
+        }
+      ],
+      "zh-tw": [
+        {
+          "language": "zh-tw",
+          "value": "黃金之船"
+        }
+      ]
+    },
+    "claims": {
+      "P31": [
+        {
+          "mainsnak": {
+            "snaktype": "value",
+            "property": "P31",
+            "hash": "5075dfeec37b75ce11b909769a94cf65d66009a6",
+            "datavalue": {
+              "value": {
+                "entity-type": "item",
+                "numeric-id": 1121471,
+                "id": "Q1121471"
+              },
+              "type": "wikibase-entityid"
+            },
+            "datatype": "wikibase-item"
+          },
+          "type": "statement",
+          "id": "q491961$8055F1AC-00BE-4416-8646-45467092AE34",
+          "rank": "normal",
+          "references": [
+            {
+              "hash": "fa278ebfc458360e5aed63d5058cca83c46134f1",
+              "snaks": {
+                "P143": [
+                  {
+                    "snaktype": "value",
+                    "property": "P143",
+                    "hash": "e4f6d9441d0600513c4533c672b5ab472dc73694",
+                    "datavalue": {
+                      "value": {
+                        "entity-type": "item",
+                        "numeric-id": 328,
+                        "id": "Q328"
+                      },
+                      "type": "wikibase-entityid"
+                    },
+                    "datatype": "wikibase-item"
+                  }
+                ]
+              },
+              "snaks-order": [
+                "P143"
+              ]
+            }
+          ]
+        }
+      ],
+      "P214": [
+        {
+          "mainsnak": {
+            "snaktype": "value",
+            "property": "P214",
+            "hash": "414a8630a19d95073fd4c254ab54b6af1f474c15",
+            "datavalue": {
+              "value": "124285881",
+              "type": "string"
+            },
+            "datatype": "external-id"
+          },
+          "type": "statement",
+          "id": "q491961$17A9315F-5EFE-458D-A4BC-61E05A07F04F",
+          "rank": "normal",
+          "references": [
+            {
+              "hash": "d4bd87b862b12d99d26e86472d44f26858dee639",
+              "snaks": {
+                "P143": [
+                  {
+                    "snaktype": "value",
+                    "property": "P143",
+                    "hash": "f30cbd35620c4ea6d0633aaf0210a8916130469b",
+                    "datavalue": {
+                      "value": {
+                        "entity-type": "item",
+                        "numeric-id": 8447,
+                        "id": "Q8447"
+                      },
+                      "type": "wikibase-entityid"
+                    },
+                    "datatype": "wikibase-item"
+                  }
+                ]
+              },
+              "snaks-order": [
+                "P143"
+              ]
+            }
+          ]
+        }
+      ],
+      "P227": [
+        {
+          "mainsnak": {
+            "snaktype": "value",
+            "property": "P227",
+            "hash": "79f2677436acc7798cd6f88d3bff6b55cbdb1833",
+            "datavalue": {
+              "value": "4439517-6",
+              "type": "string"
+            },
+            "datatype": "external-id"
+          },
+          "type": "statement",
+          "id": "q491961$6B6B6D4F-F5A3-46F9-9493-8BC4BB6588FD",
+          "rank": "normal",
+          "references": [
+            {
+              "hash": "d4bd87b862b12d99d26e86472d44f26858dee639",
+              "snaks": {
+                "P143": [
+                  {
+                    "snaktype": "value",
+                    "property": "P143",
+                    "hash": "f30cbd35620c4ea6d0633aaf0210a8916130469b",
+                    "datavalue": {
+                      "value": {
+                        "entity-type": "item",
+                        "numeric-id": 8447,
+                        "id": "Q8447"
+                      },
+                      "type": "wikibase-entityid"
+                    },
+                    "datatype": "wikibase-item"
+                  }
+                ]
+              },
+              "snaks-order": [
+                "P143"
+              ]
+            }
+          ]
+        }
+      ],
+      "P625": [
+        {
+          "mainsnak": {
+            "snaktype": "value",
+            "property": "P625",
+            "hash": "5176fef5516f52f7a5fbc50344d78b2bb112dd52",
+            "datavalue": {
+              "value": {
+                "latitude": 31.583333333333,
+                "longitude": -77.033333333333,
+                "altitude": null,
+                "precision": 0.00027777777777778,
+                "globe": "http://www.wikidata.org/entity/Q2"
+              },
+              "type": "globecoordinate"
+            },
+            "datatype": "globe-coordinate"
+          },
+          "type": "statement",
+          "id": "q491961$B7BE0005-9232-4A5B-A080-C16FCEDC04F2",
+          "rank": "normal",
+          "references": [
+            {
+              "hash": "fa278ebfc458360e5aed63d5058cca83c46134f1",
+              "snaks": {
+                "P143": [
+                  {
+                    "snaktype": "value",
+                    "property": "P143",
+                    "hash": "e4f6d9441d0600513c4533c672b5ab472dc73694",
+                    "datavalue": {
+                      "value": {
+                        "entity-type": "item",
+                        "numeric-id": 328,
+                        "id": "Q328"
+                      },
+                      "type": "wikibase-entityid"
+                    },
+                    "datatype": "wikibase-item"
+                  }
+                ]
+              },
+              "snaks-order": [
+                "P143"
+              ]
+            }
+          ]
+        }
+      ],
+      "P244": [
+        {
+          "mainsnak": {
+            "snaktype": "value",
+            "property": "P244",
+            "hash": "348d81216e7a858324c76e249fc2ca0f438a4a44",
+            "datavalue": {
+              "value": "n88010240",
+              "type": "string"
+            },
+            "datatype": "external-id"
+          },
+          "type": "statement",
+          "id": "Q491961$3ACE23D8-2F79-486E-876E-CEE3E66C143F",
+          "rank": "normal",
+          "references": [
+            {
+              "hash": "9a24f7c0208b05d6be97077d855671d1dfdbc0dd",
+              "snaks": {
+                "P143": [
+                  {
+                    "snaktype": "value",
+                    "property": "P143",
+                    "hash": "d38375ffe6fe142663ff55cd783aa4df4301d83d",
+                    "datavalue": {
+                      "value": {
+                        "entity-type": "item",
+                        "numeric-id": 48183,
+                        "id": "Q48183"
+                      },
+                      "type": "wikibase-entityid"
+                    },
+                    "datatype": "wikibase-item"
+                  }
+                ]
+              },
+              "snaks-order": [
+                "P143"
+              ]
+            }
+          ]
+        }
+      ],
+      "P646": [
+        {
+          "mainsnak": {
+            "snaktype": "value",
+            "property": "P646",
+            "hash": "160f22da7b0929c388041e213bf7a23d10987dca",
+            "datavalue": {
+              "value": "/m/01rqhv",
+              "type": "string"
+            },
+            "datatype": "external-id"
+          },
+          "type": "statement",
+          "id": "Q491961$8FAE15D9-5BEB-45B1-9068-2C77EED2B5F7",
+          "rank": "normal",
+          "references": [
+            {
+              "hash": "2b00cb481cddcac7623114367489b5c194901c4a",
+              "snaks": {
+                "P248": [
+                  {
+                    "snaktype": "value",
+                    "property": "P248",
+                    "hash": "a94b740202b097dd33355e0e6c00e54b9395e5e0",
+                    "datavalue": {
+                      "value": {
+                        "entity-type": "item",
+                        "numeric-id": 15241312,
+                        "id": "Q15241312"
+                      },
+                      "type": "wikibase-entityid"
+                    },
+                    "datatype": "wikibase-item"
+                  }
+                ],
+                "P577": [
+                  {
+                    "snaktype": "value",
+                    "property": "P577",
+                    "hash": "fde79ecb015112d2f29229ccc1ec514ed3e71fa2",
+                    "datavalue": {
+                      "value": {
+                        "time": "+2013-10-28T00:00:00Z",
+                        "timezone": 0,
+                        "before": 0,
+                        "after": 0,
+                        "precision": 11,
+                        "calendarmodel": "http://www.wikidata.org/entity/Q1985727"
+                      },
+                      "type": "time"
+                    },
+                    "datatype": "time"
+                  }
+                ]
+              },
+              "snaks-order": [
+                "P248",
+                "P577"
+              ]
+            }
+          ]
+        }
+      ],
+      "P18": [
+        {
+          "mainsnak": {
+            "snaktype": "value",
+            "property": "P18",
+            "hash": "00fa950ae38f56c79a927cb0343b16dfe3e3fd63",
+            "datavalue": {
+              "value": "SSCentralAmerica.jpg",
+              "type": "string"
+            },
+            "datatype": "commonsMedia"
+          },
+          "type": "statement",
+          "id": "Q491961$5942AA67-2E37-4159-8261-80084371A53E",
+          "rank": "normal",
+          "references": [
+            {
+              "hash": "fa278ebfc458360e5aed63d5058cca83c46134f1",
+              "snaks": {
+                "P143": [
+                  {
+                    "snaktype": "value",
+                    "property": "P143",
+                    "hash": "e4f6d9441d0600513c4533c672b5ab472dc73694",
+                    "datavalue": {
+                      "value": {
+                        "entity-type": "item",
+                        "numeric-id": 328,
+                        "id": "Q328"
+                      },
+                      "type": "wikibase-entityid"
+                    },
+                    "datatype": "wikibase-item"
+                  }
+                ]
+              },
+              "snaks-order": [
+                "P143"
+              ]
+            }
+          ]
+        }
+      ],
+      "P373": [
+        {
+          "mainsnak": {
+            "snaktype": "value",
+            "property": "P373",
+            "hash": "0f8534a8c21d65ab442cc65f1ec159393ce31adb",
+            "datavalue": {
+              "value": "Central America (ship, 1852)",
+              "type": "string"
+            },
+            "datatype": "string"
+          },
+          "type": "statement",
+          "id": "Q491961$92B59FB3-EF71-4226-802A-85417760AC2E",
+          "rank": "normal"
+        }
+      ],
+      "P2043": [
+        {
+          "mainsnak": {
+            "snaktype": "value",
+            "property": "P2043",
+            "hash": "181cb599f646b9c15f23df31c426a445ee626150",
+            "datavalue": {
+              "value": {
+                "amount": "+90",
+                "unit": "http://www.wikidata.org/entity/Q11573"
+              },
+              "type": "quantity"
+            },
+            "datatype": "quantity"
+          },
+          "type": "statement",
+          "id": "Q491961$274EEC81-B1E2-4FAD-B2DE-36B64C823DED",
+          "rank": "normal",
+          "references": [
+            {
+              "hash": "9a24f7c0208b05d6be97077d855671d1dfdbc0dd",
+              "snaks": {
+                "P143": [
+                  {
+                    "snaktype": "value",
+                    "property": "P143",
+                    "hash": "d38375ffe6fe142663ff55cd783aa4df4301d83d",
+                    "datavalue": {
+                      "value": {
+                        "entity-type": "item",
+                        "numeric-id": 48183,
+                        "id": "Q48183"
+                      },
+                      "type": "wikibase-entityid"
+                    },
+                    "datatype": "wikibase-item"
+                  }
+                ]
+              },
+              "snaks-order": [
+                "P143"
+              ]
+            }
+          ]
+        }
+      ],
+      "P617": [
+        {
+          "mainsnak": {
+            "snaktype": "value",
+            "property": "P617",
+            "hash": "505aafce6395804650a599da7a3e4e4971ca6fb1",
+            "datavalue": {
+              "value": "71",
+              "type": "string"
+            },
+            "datatype": "string"
+          },
+          "type": "statement",
+          "id": "Q491961$04D69067-402A-4156-9FE6-89F739E1B6B8",
+          "rank": "normal",
+          "references": [
+            {
+              "hash": "ddb8b8d0c9ea031f6113a08f62aafd29af6613f1",
+              "snaks": {
+                "P143": [
+                  {
+                    "snaktype": "value",
+                    "property": "P143",
+                    "hash": "d38375ffe6fe142663ff55cd783aa4df4301d83d",
+                    "datavalue": {
+                      "value": {
+                        "entity-type": "item",
+                        "numeric-id": 48183,
+                        "id": "Q48183"
+                      },
+                      "type": "wikibase-entityid"
+                    },
+                    "datatype": "wikibase-item"
+                  }
+                ],
+                "P4656": [
+                  {
+                    "snaktype": "value",
+                    "property": "P4656",
+                    "hash": "06ab8b9388d947d2b8ddd4ffe50c5beb5c03917c",
+                    "datavalue": {
+                      "value": "https://de.wikipedia.org/w/index.php?title=Central_America&oldid=193964109",
+                      "type": "string"
+                    },
+                    "datatype": "url"
+                  }
+                ]
+              },
+              "snaks-order": [
+                "P143",
+                "P4656"
+              ]
+            }
+          ]
+        }
+      ],
+      "P8047": [
+        {
+          "mainsnak": {
+            "snaktype": "value",
+            "property": "P8047",
+            "hash": "84fa94448bbf34f070068298a120824cc7bde545",
+            "datavalue": {
+              "value": {
+                "entity-type": "item",
+                "numeric-id": 30,
+                "id": "Q30"
+              },
+              "type": "wikibase-entityid"
+            },
+            "datatype": "wikibase-item"
+          },
+          "type": "statement",
+          "id": "Q491961$4FDAA00A-FEC7-4FB5-84D8-F225BF183D1A",
+          "rank": "normal"
+        }
+      ],
+      "P13591": [
+        {
+          "mainsnak": {
+            "snaktype": "value",
+            "property": "P13591",
+            "hash": "c3e8eae8e68c664f2332ddfba1fb5f63243cc10e",
+            "datavalue": {
+              "value": "group/24017bed-3e9b-4181-a494-7bb97cbd9576",
+              "type": "string"
+            },
+            "datatype": "external-id"
+          },
+          "type": "statement",
+          "id": "Q491961$E0999AF2-6D60-4E66-9FC4-D990DE157C62",
+          "rank": "normal"
+        }
+      ]
+    },
+    "sitelinks": {
+      "commonswiki": {
+        "site": "commonswiki",
+        "title": "Category:Central America (ship, 1852)",
+        "badges": [],
+        "url": "https://commons.wikimedia.org/wiki/Category:Central_America_(ship,_1852)"
+      },
+      "dewiki": {
+        "site": "dewiki",
+        "title": "Central America",
+        "badges": [],
+        "url": "https://de.wikipedia.org/wiki/Central_America"
+      },
+      "enwiki": {
+        "site": "enwiki",
+        "title": "SS Central America",
+        "badges": [],
+        "url": "https://en.wikipedia.org/wiki/SS_Central_America"
+      },
+      "eswiki": {
+        "site": "eswiki",
+        "title": "SS Central America",
+        "badges": [],
+        "url": "https://es.wikipedia.org/wiki/SS_Central_America"
+      },
+      "fawiki": {
+        "site": "fawiki",
+        "title": "اس‌اس سنترال آمریکا",
+        "badges": [],
+        "url": "https://fa.wikipedia.org/wiki/%D8%A7%D8%B3%E2%80%8C%D8%A7%D8%B3_%D8%B3%D9%86%D8%AA%D8%B1%D8%A7%D9%84_%D8%A2%D9%85%D8%B1%DB%8C%DA%A9%D8%A7"
+      },
+      "frwiki": {
+        "site": "frwiki",
+        "title": "SS Central America",
+        "badges": [],
+        "url": "https://fr.wikipedia.org/wiki/SS_Central_America"
+      },
+      "hewiki": {
+        "site": "hewiki",
+        "title": "סנטרל אמריקה (ספינה)",
+        "badges": [],
+        "url": "https://he.wikipedia.org/wiki/%D7%A1%D7%A0%D7%98%D7%A8%D7%9C_%D7%90%D7%9E%D7%A8%D7%99%D7%A7%D7%94_(%D7%A1%D7%A4%D7%99%D7%A0%D7%94)"
+      },
+      "itwiki": {
+        "site": "itwiki",
+        "title": "SS Central America",
+        "badges": [],
+        "url": "https://it.wikipedia.org/wiki/SS_Central_America"
+      },
+      "kowiki": {
+        "site": "kowiki",
+        "title": "SS 센트럴 아메리카",
+        "badges": [],
+        "url": "https://ko.wikipedia.org/wiki/SS_%EC%84%BC%ED%8A%B8%EB%9F%B4_%EC%95%84%EB%A9%94%EB%A6%AC%EC%B9%B4"
+      },
+      "ruwiki": {
+        "site": "ruwiki",
+        "title": "SS Central America",
+        "badges": [],
+        "url": "https://ru.wikipedia.org/wiki/SS_Central_America"
+      }
+    }
+  }
+}

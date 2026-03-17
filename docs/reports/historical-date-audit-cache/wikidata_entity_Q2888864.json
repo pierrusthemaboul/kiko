@@ -1,0 +1,452 @@
+{
+  "saved_at": "2026-03-07T13:37:48.205Z",
+  "value": {
+    "pageid": 2765477,
+    "ns": 0,
+    "title": "Q2888864",
+    "lastrevid": 2057454016,
+    "modified": "2024-01-19T13:37:13Z",
+    "type": "item",
+    "id": "Q2888864",
+    "labels": {
+      "fr": {
+        "language": "fr",
+        "value": "bataille de Jengland"
+      },
+      "sh": {
+        "language": "sh",
+        "value": "Bitka kod Jenglanda"
+      },
+      "en": {
+        "language": "en",
+        "value": "Battle of Jengland"
+      },
+      "ga": {
+        "language": "ga",
+        "value": "Cath Jengland"
+      },
+      "it": {
+        "language": "it",
+        "value": "battaglia di Jengland"
+      },
+      "ja": {
+        "language": "ja",
+        "value": "ジャングランの戦い"
+      },
+      "ru": {
+        "language": "ru",
+        "value": "Сражение при Женглане"
+      },
+      "br": {
+        "language": "br",
+        "value": "Emgann Jengland"
+      },
+      "es": {
+        "language": "es",
+        "value": "Batalla de Jengland"
+      },
+      "zh": {
+        "language": "zh",
+        "value": "真格兰战役"
+      },
+      "zh-hant": {
+        "language": "zh-hant",
+        "value": "讓格朗戰役"
+      },
+      "zh-cn": {
+        "language": "zh-cn",
+        "value": "真格兰战役"
+      },
+      "yo": {
+        "language": "yo",
+        "value": "ogun Jengland"
+      },
+      "ca": {
+        "language": "ca",
+        "value": "Batalla de Jengland"
+      }
+    },
+    "descriptions": {
+      "it": {
+        "language": "it",
+        "value": "battaglia"
+      },
+      "nl": {
+        "language": "nl",
+        "value": "veldslag in Frankrijk"
+      },
+      "en": {
+        "language": "en",
+        "value": "851 battle between the Duchy of Brittany and West Francia"
+      },
+      "yo": {
+        "language": "yo",
+        "value": "ogun"
+      },
+      "fr": {
+        "language": "fr",
+        "value": "bataille entre les Bretons et les Francs"
+      }
+    },
+    "aliases": {
+      "fr": [
+        {
+          "language": "fr",
+          "value": "Jengland"
+        },
+        {
+          "language": "fr",
+          "value": "Jengland-Beslé"
+        },
+        {
+          "language": "fr",
+          "value": "Traité d'Angers"
+        },
+        {
+          "language": "fr",
+          "value": "Bataille de jengland"
+        },
+        {
+          "language": "fr",
+          "value": "Bataille De Jengland"
+        }
+      ],
+      "zh": [
+        {
+          "language": "zh",
+          "value": "让格朗战役"
+        }
+      ]
+    },
+    "claims": {
+      "P625": [
+        {
+          "mainsnak": {
+            "snaktype": "value",
+            "property": "P625",
+            "hash": "1fb1bdd55bc1aef28fa528e827baaa03f3fa58bd",
+            "datavalue": {
+              "value": {
+                "latitude": 47.72388889,
+                "longitude": -1.73194444,
+                "altitude": null,
+                "precision": 0.00027777777777778,
+                "globe": "http://www.wikidata.org/entity/Q2"
+              },
+              "type": "globecoordinate"
+            },
+            "datatype": "globe-coordinate"
+          },
+          "type": "statement",
+          "id": "Q2888864$7AFF866E-301F-434B-9EA9-3B41245553E3",
+          "rank": "normal",
+          "references": [
+            {
+              "hash": "d4bd87b862b12d99d26e86472d44f26858dee639",
+              "snaks": {
+                "P143": [
+                  {
+                    "snaktype": "value",
+                    "property": "P143",
+                    "hash": "f30cbd35620c4ea6d0633aaf0210a8916130469b",
+                    "datavalue": {
+                      "value": {
+                        "entity-type": "item",
+                        "numeric-id": 8447,
+                        "id": "Q8447"
+                      },
+                      "type": "wikibase-entityid"
+                    },
+                    "datatype": "wikibase-item"
+                  }
+                ]
+              },
+              "snaks-order": [
+                "P143"
+              ]
+            }
+          ]
+        }
+      ],
+      "P31": [
+        {
+          "mainsnak": {
+            "snaktype": "value",
+            "property": "P31",
+            "hash": "baa1df9dcd37b9f3a062e7a14a8bef0c37078d32",
+            "datavalue": {
+              "value": {
+                "entity-type": "item",
+                "numeric-id": 178561,
+                "id": "Q178561"
+              },
+              "type": "wikibase-entityid"
+            },
+            "datatype": "wikibase-item"
+          },
+          "type": "statement",
+          "id": "Q2888864$496CEB10-3DFF-4EDD-8D19-59548D87427E",
+          "rank": "normal",
+          "references": [
+            {
+              "hash": "d4bd87b862b12d99d26e86472d44f26858dee639",
+              "snaks": {
+                "P143": [
+                  {
+                    "snaktype": "value",
+                    "property": "P143",
+                    "hash": "f30cbd35620c4ea6d0633aaf0210a8916130469b",
+                    "datavalue": {
+                      "value": {
+                        "entity-type": "item",
+                        "numeric-id": 8447,
+                        "id": "Q8447"
+                      },
+                      "type": "wikibase-entityid"
+                    },
+                    "datatype": "wikibase-item"
+                  }
+                ]
+              },
+              "snaks-order": [
+                "P143"
+              ]
+            }
+          ]
+        }
+      ],
+      "P276": [
+        {
+          "mainsnak": {
+            "snaktype": "value",
+            "property": "P276",
+            "hash": "280cc1956238b10584d13d5b6a1ab8bde2b3e22f",
+            "datavalue": {
+              "value": {
+                "entity-type": "item",
+                "numeric-id": 381743,
+                "id": "Q381743"
+              },
+              "type": "wikibase-entityid"
+            },
+            "datatype": "wikibase-item"
+          },
+          "type": "statement",
+          "id": "Q2888864$B5979C9C-C39E-4B3D-948E-728F838612E8",
+          "rank": "normal",
+          "references": [
+            {
+              "hash": "d4bd87b862b12d99d26e86472d44f26858dee639",
+              "snaks": {
+                "P143": [
+                  {
+                    "snaktype": "value",
+                    "property": "P143",
+                    "hash": "f30cbd35620c4ea6d0633aaf0210a8916130469b",
+                    "datavalue": {
+                      "value": {
+                        "entity-type": "item",
+                        "numeric-id": 8447,
+                        "id": "Q8447"
+                      },
+                      "type": "wikibase-entityid"
+                    },
+                    "datatype": "wikibase-item"
+                  }
+                ]
+              },
+              "snaks-order": [
+                "P143"
+              ]
+            }
+          ]
+        }
+      ],
+      "P17": [
+        {
+          "mainsnak": {
+            "snaktype": "value",
+            "property": "P17",
+            "hash": "c05db5d169c2560b9799d567a803d20a392f53e4",
+            "datavalue": {
+              "value": {
+                "entity-type": "item",
+                "numeric-id": 142,
+                "id": "Q142"
+              },
+              "type": "wikibase-entityid"
+            },
+            "datatype": "wikibase-item"
+          },
+          "type": "statement",
+          "id": "Q2888864$DAA0713C-23F8-4A7E-B993-71C703704A3B",
+          "rank": "normal"
+        }
+      ],
+      "P585": [
+        {
+          "mainsnak": {
+            "snaktype": "value",
+            "property": "P585",
+            "hash": "d582e2d6127143a3c1939238fd62c87dc58b5485",
+            "datavalue": {
+              "value": {
+                "time": "+0851-08-22T00:00:00Z",
+                "timezone": 0,
+                "before": 0,
+                "after": 0,
+                "precision": 11,
+                "calendarmodel": "http://www.wikidata.org/entity/Q1985727"
+              },
+              "type": "time"
+            },
+            "datatype": "time"
+          },
+          "type": "statement",
+          "id": "Q2888864$6982082B-18F3-4F4E-B0CF-B395C038B072",
+          "rank": "normal",
+          "references": [
+            {
+              "hash": "d4bd87b862b12d99d26e86472d44f26858dee639",
+              "snaks": {
+                "P143": [
+                  {
+                    "snaktype": "value",
+                    "property": "P143",
+                    "hash": "f30cbd35620c4ea6d0633aaf0210a8916130469b",
+                    "datavalue": {
+                      "value": {
+                        "entity-type": "item",
+                        "numeric-id": 8447,
+                        "id": "Q8447"
+                      },
+                      "type": "wikibase-entityid"
+                    },
+                    "datatype": "wikibase-item"
+                  }
+                ]
+              },
+              "snaks-order": [
+                "P143"
+              ]
+            }
+          ]
+        }
+      ],
+      "P710": [
+        {
+          "mainsnak": {
+            "snaktype": "value",
+            "property": "P710",
+            "hash": "9a7409a9b4076f100e00debba639e2e17837e862",
+            "datavalue": {
+              "value": {
+                "entity-type": "item",
+                "numeric-id": 71747,
+                "id": "Q71747"
+              },
+              "type": "wikibase-entityid"
+            },
+            "datatype": "wikibase-item"
+          },
+          "type": "statement",
+          "id": "Q2888864$38371AF3-A247-490E-B700-1992C0D4CA11",
+          "rank": "normal",
+          "references": [
+            {
+              "hash": "fa278ebfc458360e5aed63d5058cca83c46134f1",
+              "snaks": {
+                "P143": [
+                  {
+                    "snaktype": "value",
+                    "property": "P143",
+                    "hash": "e4f6d9441d0600513c4533c672b5ab472dc73694",
+                    "datavalue": {
+                      "value": {
+                        "entity-type": "item",
+                        "numeric-id": 328,
+                        "id": "Q328"
+                      },
+                      "type": "wikibase-entityid"
+                    },
+                    "datatype": "wikibase-item"
+                  }
+                ]
+              },
+              "snaks-order": [
+                "P143"
+              ]
+            }
+          ]
+        }
+      ],
+      "P646": [
+        {
+          "mainsnak": {
+            "snaktype": "value",
+            "property": "P646",
+            "hash": "6f5f16f4dec89a3b10ad392248f70fa0a03c997e",
+            "datavalue": {
+              "value": "/m/04cxt9j",
+              "type": "string"
+            },
+            "datatype": "external-id"
+          },
+          "type": "statement",
+          "id": "Q2888864$11329A12-9CD5-41F4-98F3-50CA502F7E58",
+          "rank": "normal"
+        }
+      ]
+    },
+    "sitelinks": {
+      "brwiki": {
+        "site": "brwiki",
+        "title": "Emgann Jengland",
+        "badges": [],
+        "url": "https://br.wikipedia.org/wiki/Emgann_Jengland"
+      },
+      "enwiki": {
+        "site": "enwiki",
+        "title": "Battle of Jengland",
+        "badges": [],
+        "url": "https://en.wikipedia.org/wiki/Battle_of_Jengland"
+      },
+      "eswiki": {
+        "site": "eswiki",
+        "title": "Batalla de Jengland",
+        "badges": [],
+        "url": "https://es.wikipedia.org/wiki/Batalla_de_Jengland"
+      },
+      "frwiki": {
+        "site": "frwiki",
+        "title": "Bataille de Jengland",
+        "badges": [],
+        "url": "https://fr.wikipedia.org/wiki/Bataille_de_Jengland"
+      },
+      "gawiki": {
+        "site": "gawiki",
+        "title": "Cath Jengland",
+        "badges": [],
+        "url": "https://ga.wikipedia.org/wiki/Cath_Jengland"
+      },
+      "itwiki": {
+        "site": "itwiki",
+        "title": "Battaglia di Jengland",
+        "badges": [],
+        "url": "https://it.wikipedia.org/wiki/Battaglia_di_Jengland"
+      },
+      "ruwiki": {
+        "site": "ruwiki",
+        "title": "Сражение при Женглане",
+        "badges": [],
+        "url": "https://ru.wikipedia.org/wiki/%D0%A1%D1%80%D0%B0%D0%B6%D0%B5%D0%BD%D0%B8%D0%B5_%D0%BF%D1%80%D0%B8_%D0%96%D0%B5%D0%BD%D0%B3%D0%BB%D0%B0%D0%BD%D0%B5"
+      },
+      "shwiki": {
+        "site": "shwiki",
+        "title": "Bitka kod Jenglanda",
+        "badges": [],
+        "url": "https://sh.wikipedia.org/wiki/Bitka_kod_Jenglanda"
+      }
+    }
+  }
+}

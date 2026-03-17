@@ -1,0 +1,545 @@
+{
+  "saved_at": "2026-03-07T14:03:30.632Z",
+  "value": {
+    "pageid": 1719051,
+    "ns": 0,
+    "title": "Q1787471",
+    "lastrevid": 2434434181,
+    "modified": "2025-11-26T19:56:40Z",
+    "type": "item",
+    "id": "Q1787471",
+    "labels": {
+      "de": {
+        "language": "de",
+        "value": "Schatz von Mildenhall"
+      },
+      "fr": {
+        "language": "fr",
+        "value": "Trésor de Mildenhall"
+      },
+      "he": {
+        "language": "he",
+        "value": "אוצר מילדנהול"
+      },
+      "en": {
+        "language": "en",
+        "value": "Mildenhall Treasure"
+      },
+      "th": {
+        "language": "th",
+        "value": "กรุสมบัติมิลเดนฮอลล์"
+      },
+      "it": {
+        "language": "it",
+        "value": "Tesoro di Mildenhall"
+      },
+      "zh-hant": {
+        "language": "zh-hant",
+        "value": "米爾登霍爾寶藏"
+      },
+      "zh-cn": {
+        "language": "zh-cn",
+        "value": "米尔登霍尔宝藏"
+      },
+      "zh-hans": {
+        "language": "zh-hans",
+        "value": "米尔登霍尔宝藏"
+      },
+      "sl": {
+        "language": "sl",
+        "value": "Mildenhalldski zaklad"
+      },
+      "da": {
+        "language": "da",
+        "value": "Mildenhall-skatten"
+      },
+      "zh": {
+        "language": "zh",
+        "value": "米尔登霍尔宝藏"
+      }
+    },
+    "descriptions": {
+      "de": {
+        "language": "de",
+        "value": "antiker römischer Silberschatz"
+      },
+      "en": {
+        "language": "en",
+        "value": "Roman silver tableware hoard"
+      }
+    },
+    "aliases": {
+      "th": [
+        {
+          "language": "th",
+          "value": "Mildenhall Treasure"
+        }
+      ]
+    },
+    "claims": {
+      "P276": [
+        {
+          "mainsnak": {
+            "snaktype": "value",
+            "property": "P276",
+            "hash": "aa05ad37825ce03118958fe12a5bdc0e49911090",
+            "datavalue": {
+              "value": {
+                "entity-type": "item",
+                "numeric-id": 6373,
+                "id": "Q6373"
+              },
+              "type": "wikibase-entityid"
+            },
+            "datatype": "wikibase-item"
+          },
+          "type": "statement",
+          "id": "q1787471$f925d5c9-401f-fb23-a448-da7144255da1",
+          "rank": "normal"
+        }
+      ],
+      "P189": [
+        {
+          "mainsnak": {
+            "snaktype": "value",
+            "property": "P189",
+            "hash": "9e479883ed487e73955f42385cd003487b801279",
+            "datavalue": {
+              "value": {
+                "entity-type": "item",
+                "numeric-id": 1016878,
+                "id": "Q1016878"
+              },
+              "type": "wikibase-entityid"
+            },
+            "datatype": "wikibase-item"
+          },
+          "type": "statement",
+          "id": "q1787471$d1df4cfd-4f88-5f8a-fae3-2f7eda37362c",
+          "rank": "normal"
+        }
+      ],
+      "P17": [
+        {
+          "mainsnak": {
+            "snaktype": "value",
+            "property": "P17",
+            "hash": "a44880420787fb348836dc51d3babc5227c4ef7e",
+            "datavalue": {
+              "value": {
+                "entity-type": "item",
+                "numeric-id": 145,
+                "id": "Q145"
+              },
+              "type": "wikibase-entityid"
+            },
+            "datatype": "wikibase-item"
+          },
+          "type": "statement",
+          "id": "Q1787471$AB4D9BDA-9B1C-4BD9-9C9B-C867659F4E52",
+          "rank": "normal",
+          "references": [
+            {
+              "hash": "fa278ebfc458360e5aed63d5058cca83c46134f1",
+              "snaks": {
+                "P143": [
+                  {
+                    "snaktype": "value",
+                    "property": "P143",
+                    "hash": "e4f6d9441d0600513c4533c672b5ab472dc73694",
+                    "datavalue": {
+                      "value": {
+                        "entity-type": "item",
+                        "numeric-id": 328,
+                        "id": "Q328"
+                      },
+                      "type": "wikibase-entityid"
+                    },
+                    "datatype": "wikibase-item"
+                  }
+                ]
+              },
+              "snaks-order": [
+                "P143"
+              ]
+            }
+          ]
+        }
+      ],
+      "P646": [
+        {
+          "mainsnak": {
+            "snaktype": "value",
+            "property": "P646",
+            "hash": "5c385f8dc67b3bc5da8a99afaabb4d6b2bc45616",
+            "datavalue": {
+              "value": "/m/02y7y6",
+              "type": "string"
+            },
+            "datatype": "external-id"
+          },
+          "type": "statement",
+          "id": "Q1787471$3DE243DC-3A03-4774-89D7-D03139C60184",
+          "rank": "normal",
+          "references": [
+            {
+              "hash": "2b00cb481cddcac7623114367489b5c194901c4a",
+              "snaks": {
+                "P248": [
+                  {
+                    "snaktype": "value",
+                    "property": "P248",
+                    "hash": "a94b740202b097dd33355e0e6c00e54b9395e5e0",
+                    "datavalue": {
+                      "value": {
+                        "entity-type": "item",
+                        "numeric-id": 15241312,
+                        "id": "Q15241312"
+                      },
+                      "type": "wikibase-entityid"
+                    },
+                    "datatype": "wikibase-item"
+                  }
+                ],
+                "P577": [
+                  {
+                    "snaktype": "value",
+                    "property": "P577",
+                    "hash": "fde79ecb015112d2f29229ccc1ec514ed3e71fa2",
+                    "datavalue": {
+                      "value": {
+                        "time": "+2013-10-28T00:00:00Z",
+                        "timezone": 0,
+                        "before": 0,
+                        "after": 0,
+                        "precision": 11,
+                        "calendarmodel": "http://www.wikidata.org/entity/Q1985727"
+                      },
+                      "type": "time"
+                    },
+                    "datatype": "time"
+                  }
+                ]
+              },
+              "snaks-order": [
+                "P248",
+                "P577"
+              ]
+            }
+          ]
+        }
+      ],
+      "P373": [
+        {
+          "mainsnak": {
+            "snaktype": "value",
+            "property": "P373",
+            "hash": "f71896234df825d72863525dee2ad8213ed3578d",
+            "datavalue": {
+              "value": "Mildenhall Treasure",
+              "type": "string"
+            },
+            "datatype": "string"
+          },
+          "type": "statement",
+          "id": "Q1787471$C79038CD-6365-4961-BF56-3426D3F06C80",
+          "rank": "normal",
+          "references": [
+            {
+              "hash": "fa278ebfc458360e5aed63d5058cca83c46134f1",
+              "snaks": {
+                "P143": [
+                  {
+                    "snaktype": "value",
+                    "property": "P143",
+                    "hash": "e4f6d9441d0600513c4533c672b5ab472dc73694",
+                    "datavalue": {
+                      "value": {
+                        "entity-type": "item",
+                        "numeric-id": 328,
+                        "id": "Q328"
+                      },
+                      "type": "wikibase-entityid"
+                    },
+                    "datatype": "wikibase-item"
+                  }
+                ]
+              },
+              "snaks-order": [
+                "P143"
+              ]
+            }
+          ]
+        }
+      ],
+      "P1417": [
+        {
+          "mainsnak": {
+            "snaktype": "value",
+            "property": "P1417",
+            "hash": "120218c9050efe622a09bc35a46f7f7f179507d8",
+            "datavalue": {
+              "value": "topic/Mildenhall-Treasure",
+              "type": "string"
+            },
+            "datatype": "external-id"
+          },
+          "type": "statement",
+          "qualifiers": {
+            "P1810": [
+              {
+                "snaktype": "value",
+                "property": "P1810",
+                "hash": "0e7779b1b09ed191fb2137b000f4c6751837edcd",
+                "datavalue": {
+                  "value": "Mildenhall Treasure",
+                  "type": "string"
+                },
+                "datatype": "string"
+              }
+            ]
+          },
+          "qualifiers-order": [
+            "P1810"
+          ],
+          "id": "Q1787471$185CA952-3CB2-417E-A33C-7A876A9429C1",
+          "rank": "normal"
+        }
+      ],
+      "P31": [
+        {
+          "mainsnak": {
+            "snaktype": "value",
+            "property": "P31",
+            "hash": "47ff114193a57d7b49d85ed65e5a808162a8bb9d",
+            "datavalue": {
+              "value": {
+                "entity-type": "item",
+                "numeric-id": 164099,
+                "id": "Q164099"
+              },
+              "type": "wikibase-entityid"
+            },
+            "datatype": "wikibase-item"
+          },
+          "type": "statement",
+          "id": "Q1787471$d18d8fdf-475a-e9ab-4a8c-2457460787ce",
+          "rank": "normal"
+        }
+      ],
+      "P18": [
+        {
+          "mainsnak": {
+            "snaktype": "value",
+            "property": "P18",
+            "hash": "8888f7710593269295e2c0cc0d0eeab15fcc007e",
+            "datavalue": {
+              "value": "Mildenhall treasure.JPG",
+              "type": "string"
+            },
+            "datatype": "commonsMedia"
+          },
+          "type": "statement",
+          "id": "Q1787471$20DA1D8A-8ED6-467E-99B1-2618916A5EC0",
+          "rank": "normal",
+          "references": [
+            {
+              "hash": "10efeadbe34350c588f299e83d3959fad8f9d11c",
+              "snaks": {
+                "P143": [
+                  {
+                    "snaktype": "value",
+                    "property": "P143",
+                    "hash": "e4f6d9441d0600513c4533c672b5ab472dc73694",
+                    "datavalue": {
+                      "value": {
+                        "entity-type": "item",
+                        "numeric-id": 328,
+                        "id": "Q328"
+                      },
+                      "type": "wikibase-entityid"
+                    },
+                    "datatype": "wikibase-item"
+                  }
+                ],
+                "P4656": [
+                  {
+                    "snaktype": "value",
+                    "property": "P4656",
+                    "hash": "d74c1cea24e04bbf3f8a32a7e732f7a76b3b546b",
+                    "datavalue": {
+                      "value": "https://en.wikipedia.org/w/index.php?title=Mildenhall_Treasure&oldid=892387975",
+                      "type": "string"
+                    },
+                    "datatype": "url"
+                  }
+                ]
+              },
+              "snaks-order": [
+                "P143",
+                "P4656"
+              ]
+            }
+          ]
+        }
+      ],
+      "P575": [
+        {
+          "mainsnak": {
+            "snaktype": "value",
+            "property": "P575",
+            "hash": "8e127230ca475bac374750000756c758adb517b8",
+            "datavalue": {
+              "value": {
+                "time": "+1942-00-00T00:00:00Z",
+                "timezone": 0,
+                "before": 0,
+                "after": 0,
+                "precision": 9,
+                "calendarmodel": "http://www.wikidata.org/entity/Q1985727"
+              },
+              "type": "time"
+            },
+            "datatype": "time"
+          },
+          "type": "statement",
+          "id": "Q1787471$c85747e3-46e2-e417-de98-121aa6a5c374",
+          "rank": "normal"
+        }
+      ],
+      "P8406": [
+        {
+          "mainsnak": {
+            "snaktype": "value",
+            "property": "P8406",
+            "hash": "3712dbc9bc1fe2f5f35a68312d5e4c59f80bfdf2",
+            "datavalue": {
+              "value": "T058022",
+              "type": "string"
+            },
+            "datatype": "external-id"
+          },
+          "type": "statement",
+          "id": "Q1787471$80810C82-0593-4350-80AA-D14591935C22",
+          "rank": "normal"
+        }
+      ],
+      "P1617": [
+        {
+          "mainsnak": {
+            "snaktype": "value",
+            "property": "P1617",
+            "hash": "0a57300b868f3b2af64a5a97258d77536340ee29",
+            "datavalue": {
+              "value": "0005dc74-e484-4f25-bbea-fdc79b5600a3",
+              "type": "string"
+            },
+            "datatype": "external-id"
+          },
+          "type": "statement",
+          "id": "Q1787471$821530FD-3516-487E-8B61-AFE137692E9B",
+          "rank": "normal",
+          "references": [
+            {
+              "hash": "8582d8416671f1f2567247201bac753552435ca5",
+              "snaks": {
+                "P248": [
+                  {
+                    "snaktype": "value",
+                    "property": "P248",
+                    "hash": "ea55dc6ac5c3ab77c77d4ae7979e3276d0d4cd20",
+                    "datavalue": {
+                      "value": {
+                        "entity-type": "item",
+                        "numeric-id": 18336371,
+                        "id": "Q18336371"
+                      },
+                      "type": "wikibase-entityid"
+                    },
+                    "datatype": "wikibase-item"
+                  }
+                ]
+              },
+              "snaks-order": [
+                "P248"
+              ]
+            }
+          ]
+        }
+      ],
+      "P12582": [
+        {
+          "mainsnak": {
+            "snaktype": "value",
+            "property": "P12582",
+            "hash": "5bcf5c4ed3867b9f6aa12d0b6e6c9d8340741687",
+            "datavalue": {
+              "value": "20110810105412366",
+              "type": "string"
+            },
+            "datatype": "external-id"
+          },
+          "type": "statement",
+          "id": "Q1787471$569F364F-67EF-496A-9B7B-E4D175916929",
+          "rank": "normal"
+        }
+      ]
+    },
+    "sitelinks": {
+      "commonswiki": {
+        "site": "commonswiki",
+        "title": "Category:Mildenhall Treasure",
+        "badges": [],
+        "url": "https://commons.wikimedia.org/wiki/Category:Mildenhall_Treasure"
+      },
+      "dawiki": {
+        "site": "dawiki",
+        "title": "Mildenhall-skatten",
+        "badges": [],
+        "url": "https://da.wikipedia.org/wiki/Mildenhall-skatten"
+      },
+      "dewiki": {
+        "site": "dewiki",
+        "title": "Schatz von Mildenhall",
+        "badges": [],
+        "url": "https://de.wikipedia.org/wiki/Schatz_von_Mildenhall"
+      },
+      "enwiki": {
+        "site": "enwiki",
+        "title": "Mildenhall Treasure",
+        "badges": [],
+        "url": "https://en.wikipedia.org/wiki/Mildenhall_Treasure"
+      },
+      "frwiki": {
+        "site": "frwiki",
+        "title": "Trésor de Mildenhall",
+        "badges": [],
+        "url": "https://fr.wikipedia.org/wiki/Tr%C3%A9sor_de_Mildenhall"
+      },
+      "hewiki": {
+        "site": "hewiki",
+        "title": "אוצר מילדנהול",
+        "badges": [],
+        "url": "https://he.wikipedia.org/wiki/%D7%90%D7%95%D7%A6%D7%A8_%D7%9E%D7%99%D7%9C%D7%93%D7%A0%D7%94%D7%95%D7%9C"
+      },
+      "itwiki": {
+        "site": "itwiki",
+        "title": "Tesoro di Mildenhall",
+        "badges": [],
+        "url": "https://it.wikipedia.org/wiki/Tesoro_di_Mildenhall"
+      },
+      "slwiki": {
+        "site": "slwiki",
+        "title": "Mildenhalldski zaklad",
+        "badges": [],
+        "url": "https://sl.wikipedia.org/wiki/Mildenhalldski_zaklad"
+      },
+      "thwiki": {
+        "site": "thwiki",
+        "title": "กรุสมบัติมิลเดนฮอลล์",
+        "badges": [],
+        "url": "https://th.wikipedia.org/wiki/%E0%B8%81%E0%B8%A3%E0%B8%B8%E0%B8%AA%E0%B8%A1%E0%B8%9A%E0%B8%B1%E0%B8%95%E0%B8%B4%E0%B8%A1%E0%B8%B4%E0%B8%A5%E0%B9%80%E0%B8%94%E0%B8%99%E0%B8%AE%E0%B8%AD%E0%B8%A5%E0%B8%A5%E0%B9%8C"
+      }
+    }
+  }
+}

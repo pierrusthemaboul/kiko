@@ -1,0 +1,297 @@
+{
+  "saved_at": "2026-03-07T14:58:31.121Z",
+  "value": {
+    "pageid": 12841674,
+    "ns": 0,
+    "title": "Q11705002",
+    "lastrevid": 2459636433,
+    "modified": "2026-02-01T00:40:28Z",
+    "type": "item",
+    "id": "Q11705002",
+    "labels": {
+      "eu": {
+        "language": "eu",
+        "value": "Baskonia"
+      },
+      "es": {
+        "language": "es",
+        "value": "Vasconia"
+      },
+      "el": {
+        "language": "el",
+        "value": "Βασκονία"
+      },
+      "fr": {
+        "language": "fr",
+        "value": "Vasconie"
+      },
+      "cy": {
+        "language": "cy",
+        "value": "Baskonia"
+      },
+      "en": {
+        "language": "en",
+        "value": "Baskonia"
+      },
+      "zh": {
+        "language": "zh",
+        "value": "瓦斯科涅"
+      },
+      "ca": {
+        "language": "ca",
+        "value": "Baskonia"
+      },
+      "de": {
+        "language": "de",
+        "value": "Vasconia"
+      },
+      "ja": {
+        "language": "ja",
+        "value": "バスコニア"
+      },
+      "sl": {
+        "language": "sl",
+        "value": "Baskonija"
+      },
+      "be-tarask": {
+        "language": "be-tarask",
+        "value": "Басконія"
+      }
+    },
+    "descriptions": {
+      "es": {
+        "language": "es",
+        "value": "región cultural, política y antropológica de los vascos"
+      },
+      "en": {
+        "language": "en",
+        "value": "cultural, political and anthropological region of the Basques"
+      },
+      "be-tarask": {
+        "language": "be-tarask",
+        "value": "культурны, палітычны і антрапалягічны рэгіён баскаў"
+      },
+      "fr": {
+        "language": "fr",
+        "value": "territoire des Vascons"
+      }
+    },
+    "aliases": {
+      "zh": [
+        {
+          "language": "zh",
+          "value": "瓦斯科尼"
+        }
+      ]
+    },
+    "claims": {
+      "P910": [
+        {
+          "mainsnak": {
+            "snaktype": "value",
+            "property": "P910",
+            "hash": "f843ccc82b06d71ad5a5eff91a037b1d61335489",
+            "datavalue": {
+              "value": {
+                "entity-type": "item",
+                "numeric-id": 24271857,
+                "id": "Q24271857"
+              },
+              "type": "wikibase-entityid"
+            },
+            "datatype": "wikibase-item"
+          },
+          "type": "statement",
+          "id": "Q11705002$C448D13C-4ECB-4B7F-87AB-69825088FB3F",
+          "rank": "normal",
+          "references": [
+            {
+              "hash": "c456dc5cd2117249948c288206ff3f8b1bf574f0",
+              "snaks": {
+                "P143": [
+                  {
+                    "snaktype": "value",
+                    "property": "P143",
+                    "hash": "e17507043402fe54ae6c4d65cc51f46cec987de9",
+                    "datavalue": {
+                      "value": {
+                        "entity-type": "item",
+                        "numeric-id": 8449,
+                        "id": "Q8449"
+                      },
+                      "type": "wikibase-entityid"
+                    },
+                    "datatype": "wikibase-item"
+                  }
+                ]
+              },
+              "snaks-order": [
+                "P143"
+              ]
+            }
+          ]
+        }
+      ],
+      "P17": [
+        {
+          "mainsnak": {
+            "snaktype": "value",
+            "property": "P17",
+            "hash": "69df494d7fa0613c7bd8f047afc1e87bdc03a0f2",
+            "datavalue": {
+              "value": {
+                "entity-type": "item",
+                "numeric-id": 29,
+                "id": "Q29"
+              },
+              "type": "wikibase-entityid"
+            },
+            "datatype": "wikibase-item"
+          },
+          "type": "statement",
+          "id": "Q11705002$c36e2870-4d0a-1fea-1ef2-7650ec03fd44",
+          "rank": "normal"
+        },
+        {
+          "mainsnak": {
+            "snaktype": "value",
+            "property": "P17",
+            "hash": "c05db5d169c2560b9799d567a803d20a392f53e4",
+            "datavalue": {
+              "value": {
+                "entity-type": "item",
+                "numeric-id": 142,
+                "id": "Q142"
+              },
+              "type": "wikibase-entityid"
+            },
+            "datatype": "wikibase-item"
+          },
+          "type": "statement",
+          "id": "Q11705002$83ebf985-4696-2481-6093-94405f0cf03c",
+          "rank": "normal"
+        }
+      ],
+      "P31": [
+        {
+          "mainsnak": {
+            "snaktype": "value",
+            "property": "P31",
+            "hash": "44dff1175f5ff88be87b8c018ccd630fe6d8402c",
+            "datavalue": {
+              "value": {
+                "entity-type": "item",
+                "numeric-id": 3502482,
+                "id": "Q3502482"
+              },
+              "type": "wikibase-entityid"
+            },
+            "datatype": "wikibase-item"
+          },
+          "type": "statement",
+          "id": "Q11705002$d0dd242e-411d-6a0d-8a6d-5b5b33e175b5",
+          "rank": "normal"
+        }
+      ],
+      "P460": [
+        {
+          "mainsnak": {
+            "snaktype": "value",
+            "property": "P460",
+            "hash": "b728c795e18f83134b86ebc6776e543a7d2ff856",
+            "datavalue": {
+              "value": {
+                "entity-type": "item",
+                "numeric-id": 47588,
+                "id": "Q47588"
+              },
+              "type": "wikibase-entityid"
+            },
+            "datatype": "wikibase-item"
+          },
+          "type": "statement",
+          "id": "Q11705002$78d9b63f-4fc5-3771-e3b7-b4c2df3a273d",
+          "rank": "normal"
+        }
+      ],
+      "P2671": [
+        {
+          "mainsnak": {
+            "snaktype": "value",
+            "property": "P2671",
+            "hash": "9d76bf18307c247a6cf9a9318dada658a56c790f",
+            "datavalue": {
+              "value": "/g/122z_pnm",
+              "type": "string"
+            },
+            "datatype": "external-id"
+          },
+          "type": "statement",
+          "id": "Q11705002$27A8E663-ED78-41B4-8086-BF778E416977",
+          "rank": "normal"
+        }
+      ],
+      "P30": [
+        {
+          "mainsnak": {
+            "snaktype": "value",
+            "property": "P30",
+            "hash": "19a1327487d5b9576f36ab9e95214ac7aa1091ba",
+            "datavalue": {
+              "value": {
+                "entity-type": "item",
+                "numeric-id": 46,
+                "id": "Q46"
+              },
+              "type": "wikibase-entityid"
+            },
+            "datatype": "wikibase-item"
+          },
+          "type": "statement",
+          "id": "Q11705002$F5CE3B4B-0A5C-4F96-8A84-CD356293F450",
+          "rank": "normal"
+        }
+      ]
+    },
+    "sitelinks": {
+      "dewiki": {
+        "site": "dewiki",
+        "title": "Vasconia",
+        "badges": [
+          "Q70894304"
+        ],
+        "url": "https://de.wikipedia.org/wiki/Vasconia"
+      },
+      "elwiki": {
+        "site": "elwiki",
+        "title": "Βασκονία",
+        "badges": [],
+        "url": "https://el.wikipedia.org/wiki/%CE%92%CE%B1%CF%83%CE%BA%CE%BF%CE%BD%CE%AF%CE%B1"
+      },
+      "enwiki": {
+        "site": "enwiki",
+        "title": "Vasconia",
+        "badges": [],
+        "url": "https://en.wikipedia.org/wiki/Vasconia"
+      },
+      "eswiki": {
+        "site": "eswiki",
+        "title": "Vasconia",
+        "badges": [],
+        "url": "https://es.wikipedia.org/wiki/Vasconia"
+      },
+      "euwiki": {
+        "site": "euwiki",
+        "title": "Baskonia",
+        "badges": [],
+        "url": "https://eu.wikipedia.org/wiki/Baskonia"
+      },
+      "frwiki": {
+        "site": "frwiki",
+        "title": "Vasconie",
+        "badges": [],
+        "url": "https://fr.wikipedia.org/wiki/Vasconie"
+      }
+    }
+  }
+}

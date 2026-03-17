@@ -1,0 +1,292 @@
+{
+  "saved_at": "2026-03-07T13:49:45.666Z",
+  "value": {
+    "pageid": 18620473,
+    "ns": 0,
+    "title": "Q17015384",
+    "lastrevid": 1883035701,
+    "modified": "2023-04-26T15:27:06Z",
+    "type": "item",
+    "id": "Q17015384",
+    "labels": {
+      "en": {
+        "language": "en",
+        "value": "revenu minimum d'insertion"
+      },
+      "fr": {
+        "language": "fr",
+        "value": "Revenu minimum d'insertion"
+      },
+      "ja": {
+        "language": "ja",
+        "value": "社会参入最低所得"
+      },
+      "ca": {
+        "language": "ca",
+        "value": "renda mínima d'inserció"
+      },
+      "es": {
+        "language": "es",
+        "value": "renta mínima de inserción"
+      },
+      "nb": {
+        "language": "nb",
+        "value": "Revenu minimum d'insertion"
+      },
+      "zh": {
+        "language": "zh",
+        "value": "社会最低收入"
+      }
+    },
+    "descriptions": {
+      "en": {
+        "language": "en",
+        "value": "form of welfare introduced in France in 1988"
+      },
+      "zh": {
+        "language": "zh",
+        "value": "法国自1988年起实行的的社会福利"
+      }
+    },
+    "aliases": {
+      "en": [
+        {
+          "language": "en",
+          "value": "minimum insertion income"
+        },
+        {
+          "language": "en",
+          "value": "RMI"
+        }
+      ],
+      "zh": [
+        {
+          "language": "zh",
+          "value": "最低生活保障津贴"
+        }
+      ],
+      "fr": [
+        {
+          "language": "fr",
+          "value": "RMI"
+        }
+      ]
+    },
+    "claims": {
+      "P31": [
+        {
+          "mainsnak": {
+            "snaktype": "value",
+            "property": "P31",
+            "hash": "af0ffd04f8e00aa91d0ac51afcaa2bfa1977fbcb",
+            "datavalue": {
+              "value": {
+                "entity-type": "item",
+                "numeric-id": 1411457,
+                "id": "Q1411457"
+              },
+              "type": "wikibase-entityid"
+            },
+            "datatype": "wikibase-item"
+          },
+          "type": "statement",
+          "id": "Q17015384$3940342b-490f-33ef-780e-6cf9382d5e93",
+          "rank": "normal"
+        },
+        {
+          "mainsnak": {
+            "snaktype": "value",
+            "property": "P31",
+            "hash": "af7c92522a1306ed3b26ee64e640eaa061ed6995",
+            "datavalue": {
+              "value": {
+                "entity-type": "item",
+                "numeric-id": 2334593,
+                "id": "Q2334593"
+              },
+              "type": "wikibase-entityid"
+            },
+            "datatype": "wikibase-item"
+          },
+          "type": "statement",
+          "id": "Q17015384$39ecfd15-4d04-74c7-669b-ba513ede6a75",
+          "rank": "normal"
+        }
+      ],
+      "P17": [
+        {
+          "mainsnak": {
+            "snaktype": "value",
+            "property": "P17",
+            "hash": "c05db5d169c2560b9799d567a803d20a392f53e4",
+            "datavalue": {
+              "value": {
+                "entity-type": "item",
+                "numeric-id": 142,
+                "id": "Q142"
+              },
+              "type": "wikibase-entityid"
+            },
+            "datatype": "wikibase-item"
+          },
+          "type": "statement",
+          "id": "Q17015384$e64a0ce1-493c-a7dc-3459-d9474737caec",
+          "rank": "normal"
+        }
+      ],
+      "P1001": [
+        {
+          "mainsnak": {
+            "snaktype": "value",
+            "property": "P1001",
+            "hash": "efe2878aed693a79dce942b2f853910a78c4e2a8",
+            "datavalue": {
+              "value": {
+                "entity-type": "item",
+                "numeric-id": 142,
+                "id": "Q142"
+              },
+              "type": "wikibase-entityid"
+            },
+            "datatype": "wikibase-item"
+          },
+          "type": "statement",
+          "id": "Q17015384$ba2c3268-4e35-b57f-9e51-3995b981a8e3",
+          "rank": "normal"
+        }
+      ],
+      "P1813": [
+        {
+          "mainsnak": {
+            "snaktype": "value",
+            "property": "P1813",
+            "hash": "d3858a3e62f04e1e927a46a612ae6f68c74ecaa6",
+            "datavalue": {
+              "value": {
+                "text": "RMI",
+                "language": "fr"
+              },
+              "type": "monolingualtext"
+            },
+            "datatype": "monolingualtext"
+          },
+          "type": "statement",
+          "id": "Q17015384$8409333c-42b0-da40-3b4a-50addaa44d39",
+          "rank": "normal"
+        }
+      ],
+      "P2671": [
+        {
+          "mainsnak": {
+            "snaktype": "value",
+            "property": "P2671",
+            "hash": "9fbb9a2766a798e7b4990d30a74d235dac055c45",
+            "datavalue": {
+              "value": "/g/11b636rkxf",
+              "type": "string"
+            },
+            "datatype": "external-id"
+          },
+          "type": "statement",
+          "id": "Q17015384$7555E919-C2E9-440F-A406-D407A527CFF4",
+          "rank": "normal"
+        }
+      ],
+      "P1366": [
+        {
+          "mainsnak": {
+            "snaktype": "value",
+            "property": "P1366",
+            "hash": "494b678b6bd13eb80b29de90f4973a18eee546e9",
+            "datavalue": {
+              "value": {
+                "entity-type": "item",
+                "numeric-id": 1132096,
+                "id": "Q1132096"
+              },
+              "type": "wikibase-entityid"
+            },
+            "datatype": "wikibase-item"
+          },
+          "type": "statement",
+          "id": "Q17015384$b9e9da7f-4f50-39e6-37c0-8d08f040f436",
+          "rank": "normal"
+        }
+      ],
+      "P571": [
+        {
+          "mainsnak": {
+            "snaktype": "value",
+            "property": "P571",
+            "hash": "0e54cc302f3280585cfa07bef5c7babf53e6a5c6",
+            "datavalue": {
+              "value": {
+                "time": "+1988-12-01T00:00:00Z",
+                "timezone": 0,
+                "before": 0,
+                "after": 0,
+                "precision": 11,
+                "calendarmodel": "http://www.wikidata.org/entity/Q1985727"
+              },
+              "type": "time"
+            },
+            "datatype": "time"
+          },
+          "type": "statement",
+          "id": "Q17015384$c24c0607-44e6-ed7c-106f-514feec2a059",
+          "rank": "normal"
+        }
+      ],
+      "P576": [
+        {
+          "mainsnak": {
+            "snaktype": "value",
+            "property": "P576",
+            "hash": "d539d5b13ea9682610f996c843b6b5fe2ae3fac9",
+            "datavalue": {
+              "value": {
+                "time": "+2009-05-31T00:00:00Z",
+                "timezone": 0,
+                "before": 0,
+                "after": 0,
+                "precision": 11,
+                "calendarmodel": "http://www.wikidata.org/entity/Q1985727"
+              },
+              "type": "time"
+            },
+            "datatype": "time"
+          },
+          "type": "statement",
+          "id": "Q17015384$535684ab-4526-10c9-a0fd-cb2e5a7d9724",
+          "rank": "normal"
+        }
+      ]
+    },
+    "sitelinks": {
+      "cawiki": {
+        "site": "cawiki",
+        "title": "Salari social",
+        "badges": [],
+        "url": "https://ca.wikipedia.org/wiki/Salari_social"
+      },
+      "enwiki": {
+        "site": "enwiki",
+        "title": "Revenu minimum d'insertion",
+        "badges": [],
+        "url": "https://en.wikipedia.org/wiki/Revenu_minimum_d%27insertion"
+      },
+      "frwiki": {
+        "site": "frwiki",
+        "title": "Revenu minimum d'insertion",
+        "badges": [],
+        "url": "https://fr.wikipedia.org/wiki/Revenu_minimum_d%27insertion"
+      },
+      "nowiki": {
+        "site": "nowiki",
+        "title": "Revenu minimum d’insertion",
+        "badges": [],
+        "url": "https://no.wikipedia.org/wiki/Revenu_minimum_d%E2%80%99insertion"
+      }
+    }
+  }
+}

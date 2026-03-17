@@ -1,0 +1,95 @@
+{
+  "pageid": 3367202,
+  "ns": 0,
+  "title": "Q3536828",
+  "lastrevid": 2062305398,
+  "modified": "2024-01-26T11:06:11Z",
+  "type": "item",
+  "id": "Q3536828",
+  "labels": {
+    "fr": {
+      "language": "fr",
+      "value": "traité de Loudun"
+    },
+    "zh": {
+      "language": "zh",
+      "value": "卢丹条约"
+    }
+  },
+  "descriptions": {},
+  "aliases": {},
+  "claims": {
+    "P31": [
+      {
+        "mainsnak": {
+          "snaktype": "value",
+          "property": "P31",
+          "hash": "b0e8db723228922bff4fcc3427ebd4e3289412c9",
+          "datavalue": {
+            "value": {
+              "entity-type": "item",
+              "numeric-id": 131569,
+              "id": "Q131569"
+            },
+            "type": "wikibase-entityid"
+          },
+          "datatype": "wikibase-item"
+        },
+        "type": "statement",
+        "id": "Q3536828$AEE938C9-0CCC-4996-B1E4-0FF75906939F",
+        "rank": "normal",
+        "references": [
+          {
+            "hash": "d4bd87b862b12d99d26e86472d44f26858dee639",
+            "snaks": {
+              "P143": [
+                {
+                  "snaktype": "value",
+                  "property": "P143",
+                  "hash": "f30cbd35620c4ea6d0633aaf0210a8916130469b",
+                  "datavalue": {
+                    "value": {
+                      "entity-type": "item",
+                      "numeric-id": 8447,
+                      "id": "Q8447"
+                    },
+                    "type": "wikibase-entityid"
+                  },
+                  "datatype": "wikibase-item"
+                }
+              ]
+            },
+            "snaks-order": [
+              "P143"
+            ]
+          }
+        ]
+      }
+    ],
+    "P2671": [
+      {
+        "mainsnak": {
+          "snaktype": "value",
+          "property": "P2671",
+          "hash": "f0e520f3fa39f836e2a51c17ef22874bb2d66058",
+          "datavalue": {
+            "value": "/g/121g1w08",
+            "type": "string"
+          },
+          "datatype": "external-id"
+        },
+        "type": "statement",
+        "id": "Q3536828$7EC06A02-6350-4A51-AE1D-1FD2D64CDAF2",
+        "rank": "normal"
+      }
+    ]
+  },
+  "sitelinks": {
+    "frwiki": {
+      "site": "frwiki",
+      "title": "Traité de Loudun",
+      "badges": [],
+      "url": "https://fr.wikipedia.org/wiki/Trait%C3%A9_de_Loudun"
+    }
+  }
+}

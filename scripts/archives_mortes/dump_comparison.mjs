@@ -16,3 +16,4 @@ async function dump() {
     fs.writeFileSync('comparison_dump.json', JSON.stringify(output, null, 2));
 }
 dump();
+

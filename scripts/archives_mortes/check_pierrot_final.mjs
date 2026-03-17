@@ -26,3 +26,4 @@ async function check() {
     runs?.slice(0, 5).forEach(r => console.log(`- [${r.created_at}] Mode: ${r.mode} | Points: ${r.points}`));
 }
 check();
+

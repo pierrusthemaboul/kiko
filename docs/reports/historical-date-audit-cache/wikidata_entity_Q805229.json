@@ -1,0 +1,585 @@
+{
+  "saved_at": "2026-03-07T14:15:31.684Z",
+  "value": {
+    "pageid": 758136,
+    "ns": 0,
+    "title": "Q805229",
+    "lastrevid": 2146584165,
+    "modified": "2024-05-06T10:33:02Z",
+    "type": "item",
+    "id": "Q805229",
+    "labels": {
+      "fr": {
+        "language": "fr",
+        "value": "Ballet comique de la reine"
+      },
+      "en": {
+        "language": "en",
+        "value": "Ballet Comique de la Reine"
+      },
+      "de": {
+        "language": "de",
+        "value": "Ballet comique de la reine"
+      },
+      "it": {
+        "language": "it",
+        "value": "Ballet Comique de la Reine"
+      },
+      "pl": {
+        "language": "pl",
+        "value": "Ballet comique de la Reyne"
+      },
+      "nl": {
+        "language": "nl",
+        "value": "Ballet Comique de la Reine"
+      },
+      "pt": {
+        "language": "pt",
+        "value": "Ballet Comique de la Reine"
+      },
+      "fi": {
+        "language": "fi",
+        "value": "Ballet comique de la reine"
+      },
+      "es": {
+        "language": "es",
+        "value": "Ballet cómico de la reina"
+      },
+      "la": {
+        "language": "la",
+        "value": "Ballet comique de la Reine"
+      },
+      "ja": {
+        "language": "ja",
+        "value": "王妃のバレエ・コミック"
+      },
+      "zh": {
+        "language": "zh",
+        "value": "王后的喜芭蕾"
+      },
+      "ru": {
+        "language": "ru",
+        "value": "Комедийный балет королевы"
+      }
+    },
+    "descriptions": {
+      "en": {
+        "language": "en",
+        "value": "ballet written by Balthasar de Beaujoyeulx"
+      },
+      "fr": {
+        "language": "fr",
+        "value": "ballet de Balthasar de Beaujoyeulx"
+      }
+    },
+    "aliases": {
+      "es": [
+        {
+          "language": "es",
+          "value": "Ballet comico de la reina"
+        }
+      ]
+    },
+    "claims": {
+      "P50": [
+        {
+          "mainsnak": {
+            "snaktype": "value",
+            "property": "P50",
+            "hash": "a7ea09dee927ccce1a450aa30888ed2edccfdbe7",
+            "datavalue": {
+              "value": {
+                "entity-type": "item",
+                "numeric-id": 2881626,
+                "id": "Q2881626"
+              },
+              "type": "wikibase-entityid"
+            },
+            "datatype": "wikibase-item"
+          },
+          "type": "statement",
+          "id": "Q805229$23C77E1B-EBA6-44E8-8F6E-041461D3A16E",
+          "rank": "normal",
+          "references": [
+            {
+              "hash": "d4bd87b862b12d99d26e86472d44f26858dee639",
+              "snaks": {
+                "P143": [
+                  {
+                    "snaktype": "value",
+                    "property": "P143",
+                    "hash": "f30cbd35620c4ea6d0633aaf0210a8916130469b",
+                    "datavalue": {
+                      "value": {
+                        "entity-type": "item",
+                        "numeric-id": 8447,
+                        "id": "Q8447"
+                      },
+                      "type": "wikibase-entityid"
+                    },
+                    "datatype": "wikibase-item"
+                  }
+                ]
+              },
+              "snaks-order": [
+                "P143"
+              ]
+            }
+          ]
+        }
+      ],
+      "P646": [
+        {
+          "mainsnak": {
+            "snaktype": "value",
+            "property": "P646",
+            "hash": "bc59ea50021034b74ddc7abe8fc12219b657d88a",
+            "datavalue": {
+              "value": "/m/0c8yzb",
+              "type": "string"
+            },
+            "datatype": "external-id"
+          },
+          "type": "statement",
+          "id": "Q805229$2533DF6C-617A-4F0C-B0F7-343779CCB328",
+          "rank": "normal",
+          "references": [
+            {
+              "hash": "2b00cb481cddcac7623114367489b5c194901c4a",
+              "snaks": {
+                "P248": [
+                  {
+                    "snaktype": "value",
+                    "property": "P248",
+                    "hash": "a94b740202b097dd33355e0e6c00e54b9395e5e0",
+                    "datavalue": {
+                      "value": {
+                        "entity-type": "item",
+                        "numeric-id": 15241312,
+                        "id": "Q15241312"
+                      },
+                      "type": "wikibase-entityid"
+                    },
+                    "datatype": "wikibase-item"
+                  }
+                ],
+                "P577": [
+                  {
+                    "snaktype": "value",
+                    "property": "P577",
+                    "hash": "fde79ecb015112d2f29229ccc1ec514ed3e71fa2",
+                    "datavalue": {
+                      "value": {
+                        "time": "+2013-10-28T00:00:00Z",
+                        "timezone": 0,
+                        "before": 0,
+                        "after": 0,
+                        "precision": 11,
+                        "calendarmodel": "http://www.wikidata.org/entity/Q1985727"
+                      },
+                      "type": "time"
+                    },
+                    "datatype": "time"
+                  }
+                ]
+              },
+              "snaks-order": [
+                "P248",
+                "P577"
+              ]
+            }
+          ]
+        }
+      ],
+      "P31": [
+        {
+          "mainsnak": {
+            "snaktype": "value",
+            "property": "P31",
+            "hash": "126363198d5e9635575f28b97c13772d6b9324df",
+            "datavalue": {
+              "value": {
+                "entity-type": "item",
+                "numeric-id": 15079786,
+                "id": "Q15079786"
+              },
+              "type": "wikibase-entityid"
+            },
+            "datatype": "wikibase-item"
+          },
+          "type": "statement",
+          "id": "Q805229$0969C1A0-697A-45B3-A0C0-2D9694D31834",
+          "rank": "normal"
+        }
+      ],
+      "P1191": [
+        {
+          "mainsnak": {
+            "snaktype": "value",
+            "property": "P1191",
+            "hash": "1d87e70e8d4085a147a86ce066ed55a889f7d80d",
+            "datavalue": {
+              "value": {
+                "time": "+1581-10-15T00:00:00Z",
+                "timezone": 0,
+                "before": 0,
+                "after": 0,
+                "precision": 11,
+                "calendarmodel": "http://www.wikidata.org/entity/Q1985786"
+              },
+              "type": "time"
+            },
+            "datatype": "time"
+          },
+          "type": "statement",
+          "qualifiers": {
+            "P276": [
+              {
+                "snaktype": "value",
+                "property": "P276",
+                "hash": "126fcf30d730ee8f1f7c4eeb1e4c1943a165770d",
+                "datavalue": {
+                  "value": {
+                    "entity-type": "item",
+                    "numeric-id": 1075988,
+                    "id": "Q1075988"
+                  },
+                  "type": "wikibase-entityid"
+                },
+                "datatype": "wikibase-item"
+              }
+            ]
+          },
+          "qualifiers-order": [
+            "P276"
+          ],
+          "id": "Q805229$8d3a654e-4c62-be4f-a9ae-83418f473d60",
+          "rank": "normal"
+        }
+      ],
+      "P935": [
+        {
+          "mainsnak": {
+            "snaktype": "value",
+            "property": "P935",
+            "hash": "20d74c1d3ca1f272aaac8b1a2857c0271d19e6ab",
+            "datavalue": {
+              "value": "Ballet comique de la reine",
+              "type": "string"
+            },
+            "datatype": "string"
+          },
+          "type": "statement",
+          "id": "Q805229$749A878C-74F5-4FC2-B186-F98DACA89F48",
+          "rank": "normal"
+        }
+      ],
+      "P373": [
+        {
+          "mainsnak": {
+            "snaktype": "value",
+            "property": "P373",
+            "hash": "5ebb0179aa7c39dc046bc2446ca9a5b02dc05287",
+            "datavalue": {
+              "value": "Ballet comique de la reine",
+              "type": "string"
+            },
+            "datatype": "string"
+          },
+          "type": "statement",
+          "id": "Q805229$B7F596E9-0E58-4A0F-96A5-67003644B2B2",
+          "rank": "normal",
+          "references": [
+            {
+              "hash": "fa278ebfc458360e5aed63d5058cca83c46134f1",
+              "snaks": {
+                "P143": [
+                  {
+                    "snaktype": "value",
+                    "property": "P143",
+                    "hash": "e4f6d9441d0600513c4533c672b5ab472dc73694",
+                    "datavalue": {
+                      "value": {
+                        "entity-type": "item",
+                        "numeric-id": 328,
+                        "id": "Q328"
+                      },
+                      "type": "wikibase-entityid"
+                    },
+                    "datatype": "wikibase-item"
+                  }
+                ]
+              },
+              "snaks-order": [
+                "P143"
+              ]
+            }
+          ]
+        }
+      ],
+      "P136": [
+        {
+          "mainsnak": {
+            "snaktype": "value",
+            "property": "P136",
+            "hash": "974fc97f52803a6512dc7ec7be2679b4a9040535",
+            "datavalue": {
+              "value": {
+                "entity-type": "item",
+                "numeric-id": 1123381,
+                "id": "Q1123381"
+              },
+              "type": "wikibase-entityid"
+            },
+            "datatype": "wikibase-item"
+          },
+          "type": "statement",
+          "id": "Q805229$7519BDF4-CB3F-447E-8C4A-F63DF62CB377",
+          "rank": "normal"
+        }
+      ],
+      "P495": [
+        {
+          "mainsnak": {
+            "snaktype": "value",
+            "property": "P495",
+            "hash": "f707ab9792279b2ccec78f8736a8e5d28c8b7fc7",
+            "datavalue": {
+              "value": {
+                "entity-type": "item",
+                "numeric-id": 142,
+                "id": "Q142"
+              },
+              "type": "wikibase-entityid"
+            },
+            "datatype": "wikibase-item"
+          },
+          "type": "statement",
+          "id": "Q805229$68AD93CE-3AEF-48CA-BCED-64B60216FE42",
+          "rank": "normal",
+          "references": [
+            {
+              "hash": "d4bd87b862b12d99d26e86472d44f26858dee639",
+              "snaks": {
+                "P143": [
+                  {
+                    "snaktype": "value",
+                    "property": "P143",
+                    "hash": "f30cbd35620c4ea6d0633aaf0210a8916130469b",
+                    "datavalue": {
+                      "value": {
+                        "entity-type": "item",
+                        "numeric-id": 8447,
+                        "id": "Q8447"
+                      },
+                      "type": "wikibase-entityid"
+                    },
+                    "datatype": "wikibase-item"
+                  }
+                ]
+              },
+              "snaks-order": [
+                "P143"
+              ]
+            }
+          ]
+        }
+      ],
+      "P1417": [
+        {
+          "mainsnak": {
+            "snaktype": "value",
+            "property": "P1417",
+            "hash": "abbe4ad76ceb0d96afa48537f08e8a580d8b3c40",
+            "datavalue": {
+              "value": "topic/Ballet-comique-de-la-reine",
+              "type": "string"
+            },
+            "datatype": "external-id"
+          },
+          "type": "statement",
+          "qualifiers": {
+            "P1810": [
+              {
+                "snaktype": "value",
+                "property": "P1810",
+                "hash": "f19ae442919884c6f9b6d22813c2de6c90648d9e",
+                "datavalue": {
+                  "value": "Ballet comique de la reine",
+                  "type": "string"
+                },
+                "datatype": "string"
+              }
+            ]
+          },
+          "qualifiers-order": [
+            "P1810"
+          ],
+          "id": "Q805229$75AC643E-F2C4-40E1-8BED-F66E10CFB22A",
+          "rank": "normal"
+        }
+      ],
+      "P18": [
+        {
+          "mainsnak": {
+            "snaktype": "value",
+            "property": "P18",
+            "hash": "6d88a20893cca75df8e89e7e54e018058198bada",
+            "datavalue": {
+              "value": "Fountain chariot from the Ballet Comique de la Reine, 1581.jpg",
+              "type": "string"
+            },
+            "datatype": "commonsMedia"
+          },
+          "type": "statement",
+          "id": "Q805229$C99D6FB7-69E1-4F00-BECB-9F00961406BF",
+          "rank": "normal",
+          "references": [
+            {
+              "hash": "d4bd87b862b12d99d26e86472d44f26858dee639",
+              "snaks": {
+                "P143": [
+                  {
+                    "snaktype": "value",
+                    "property": "P143",
+                    "hash": "f30cbd35620c4ea6d0633aaf0210a8916130469b",
+                    "datavalue": {
+                      "value": {
+                        "entity-type": "item",
+                        "numeric-id": 8447,
+                        "id": "Q8447"
+                      },
+                      "type": "wikibase-entityid"
+                    },
+                    "datatype": "wikibase-item"
+                  }
+                ]
+              },
+              "snaks-order": [
+                "P143"
+              ]
+            }
+          ]
+        }
+      ],
+      "P910": [
+        {
+          "mainsnak": {
+            "snaktype": "value",
+            "property": "P910",
+            "hash": "0735a96b97f4853b737c17df132cf35acb7a1442",
+            "datavalue": {
+              "value": {
+                "entity-type": "item",
+                "numeric-id": 55325354,
+                "id": "Q55325354"
+              },
+              "type": "wikibase-entityid"
+            },
+            "datatype": "wikibase-item"
+          },
+          "type": "statement",
+          "id": "Q805229$34DA866D-EDE2-4A3E-8C92-B0B9C1A2E3AF",
+          "rank": "normal"
+        }
+      ],
+      "P4342": [
+        {
+          "mainsnak": {
+            "snaktype": "value",
+            "property": "P4342",
+            "hash": "c909a4256ad6b7dd57f69f49eb8f89deaa3c85f1",
+            "datavalue": {
+              "value": "Ballet_Comique_de_la_Reine",
+              "type": "string"
+            },
+            "datatype": "external-id"
+          },
+          "type": "statement",
+          "id": "Q805229$9119A21B-C4A3-4E90-BB0E-F48D2CA4EF69",
+          "rank": "normal"
+        }
+      ]
+    },
+    "sitelinks": {
+      "commonswiki": {
+        "site": "commonswiki",
+        "title": "Ballet comique de la reine",
+        "badges": [],
+        "url": "https://commons.wikimedia.org/wiki/Ballet_comique_de_la_reine"
+      },
+      "dewiki": {
+        "site": "dewiki",
+        "title": "Ballet comique de la reine",
+        "badges": [],
+        "url": "https://de.wikipedia.org/wiki/Ballet_comique_de_la_reine"
+      },
+      "enwiki": {
+        "site": "enwiki",
+        "title": "Ballet Comique de la Reine",
+        "badges": [],
+        "url": "https://en.wikipedia.org/wiki/Ballet_Comique_de_la_Reine"
+      },
+      "eswiki": {
+        "site": "eswiki",
+        "title": "Ballet cómico de la reina",
+        "badges": [],
+        "url": "https://es.wikipedia.org/wiki/Ballet_c%C3%B3mico_de_la_reina"
+      },
+      "fiwiki": {
+        "site": "fiwiki",
+        "title": "Ballet comique de la reine",
+        "badges": [],
+        "url": "https://fi.wikipedia.org/wiki/Ballet_comique_de_la_reine"
+      },
+      "frwiki": {
+        "site": "frwiki",
+        "title": "Ballet comique de la reine",
+        "badges": [],
+        "url": "https://fr.wikipedia.org/wiki/Ballet_comique_de_la_reine"
+      },
+      "itwiki": {
+        "site": "itwiki",
+        "title": "Ballet Comique de la Reine",
+        "badges": [],
+        "url": "https://it.wikipedia.org/wiki/Ballet_Comique_de_la_Reine"
+      },
+      "lawiki": {
+        "site": "lawiki",
+        "title": "Ballet comique de la Reine",
+        "badges": [],
+        "url": "https://la.wikipedia.org/wiki/Ballet_comique_de_la_Reine"
+      },
+      "nlwiki": {
+        "site": "nlwiki",
+        "title": "Ballet comique de la reine",
+        "badges": [],
+        "url": "https://nl.wikipedia.org/wiki/Ballet_comique_de_la_reine"
+      },
+      "plwiki": {
+        "site": "plwiki",
+        "title": "Ballet comique de la Reyne",
+        "badges": [],
+        "url": "https://pl.wikipedia.org/wiki/Ballet_comique_de_la_Reyne"
+      },
+      "ptwiki": {
+        "site": "ptwiki",
+        "title": "Ballet Comique de la Reine",
+        "badges": [],
+        "url": "https://pt.wikipedia.org/wiki/Ballet_Comique_de_la_Reine"
+      },
+      "ruwiki": {
+        "site": "ruwiki",
+        "title": "Комедийный балет королевы",
+        "badges": [],
+        "url": "https://ru.wikipedia.org/wiki/%D0%9A%D0%BE%D0%BC%D0%B5%D0%B4%D0%B8%D0%B9%D0%BD%D1%8B%D0%B9_%D0%B1%D0%B0%D0%BB%D0%B5%D1%82_%D0%BA%D0%BE%D1%80%D0%BE%D0%BB%D0%B5%D0%B2%D1%8B"
+      },
+      "zhwiki": {
+        "site": "zhwiki",
+        "title": "王后的喜芭蕾",
+        "badges": [],
+        "url": "https://zh.wikipedia.org/wiki/%E7%8E%8B%E5%90%8E%E7%9A%84%E5%96%9C%E8%8A%AD%E8%95%BE"
+      }
+    }
+  }
+}

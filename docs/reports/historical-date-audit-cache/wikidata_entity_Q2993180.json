@@ -1,0 +1,131 @@
+{
+  "saved_at": "2026-03-07T16:22:07.809Z",
+  "value": {
+    "pageid": 2862105,
+    "ns": 0,
+    "title": "Q2993180",
+    "lastrevid": 1577323423,
+    "modified": "2022-02-14T14:53:49Z",
+    "type": "item",
+    "id": "Q2993180",
+    "labels": {
+      "fr": {
+        "language": "fr",
+        "value": "Congrès socialiste"
+      },
+      "en": {
+        "language": "en",
+        "value": "French Socialist Party congress"
+      }
+    },
+    "descriptions": {},
+    "aliases": {
+      "fr": [
+        {
+          "language": "fr",
+          "value": "Congrès du PS"
+        },
+        {
+          "language": "fr",
+          "value": "Congrès du Parti socialiste"
+        }
+      ],
+      "en": [
+        {
+          "language": "en",
+          "value": "PS congress"
+        }
+      ]
+    },
+    "claims": {
+      "P279": [
+        {
+          "mainsnak": {
+            "snaktype": "value",
+            "property": "P279",
+            "hash": "1c6781bf968d1fdf3181dcc952086e3216101f97",
+            "datavalue": {
+              "value": {
+                "entity-type": "item",
+                "numeric-id": 2288051,
+                "id": "Q2288051"
+              },
+              "type": "wikibase-entityid"
+            },
+            "datatype": "wikibase-item"
+          },
+          "type": "statement",
+          "id": "Q2993180$1f55a549-4de8-78f8-71c4-c48bc9aec5ee",
+          "rank": "normal"
+        }
+      ],
+      "P910": [
+        {
+          "mainsnak": {
+            "snaktype": "value",
+            "property": "P910",
+            "hash": "56fe72d9be71b191f8db2e0af64bc738160bfafd",
+            "datavalue": {
+              "value": {
+                "entity-type": "item",
+                "numeric-id": 8413797,
+                "id": "Q8413797"
+              },
+              "type": "wikibase-entityid"
+            },
+            "datatype": "wikibase-item"
+          },
+          "type": "statement",
+          "id": "Q2993180$44d33200-c540-4b29-9f8a-0f882e071b91",
+          "rank": "normal"
+        }
+      ],
+      "P2671": [
+        {
+          "mainsnak": {
+            "snaktype": "value",
+            "property": "P2671",
+            "hash": "c90fee59e376613e311e866425011ac45c83013f",
+            "datavalue": {
+              "value": "/g/11h1swwbj",
+              "type": "string"
+            },
+            "datatype": "external-id"
+          },
+          "type": "statement",
+          "id": "Q2993180$7ACC041A-E34A-4665-857B-7C77E6C61FBC",
+          "rank": "normal"
+        }
+      ],
+      "P664": [
+        {
+          "mainsnak": {
+            "snaktype": "value",
+            "property": "P664",
+            "hash": "18b3ed0de14f96394a901d9176eca3bac4b63537",
+            "datavalue": {
+              "value": {
+                "entity-type": "item",
+                "numeric-id": 170972,
+                "id": "Q170972"
+              },
+              "type": "wikibase-entityid"
+            },
+            "datatype": "wikibase-item"
+          },
+          "type": "statement",
+          "id": "Q2993180$9236f469-4031-4f5f-3378-a3960a4f9727",
+          "rank": "normal"
+        }
+      ]
+    },
+    "sitelinks": {
+      "frwiki": {
+        "site": "frwiki",
+        "title": "Congrès socialiste (France)",
+        "badges": [],
+        "url": "https://fr.wikipedia.org/wiki/Congr%C3%A8s_socialiste_(France)"
+      }
+    }
+  }
+}

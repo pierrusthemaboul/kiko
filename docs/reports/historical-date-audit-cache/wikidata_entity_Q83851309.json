@@ -1,0 +1,208 @@
+{
+  "saved_at": "2026-03-07T13:58:05.792Z",
+  "value": {
+    "pageid": 83160018,
+    "ns": 0,
+    "title": "Q83851309",
+    "lastrevid": 2338173311,
+    "modified": "2025-04-15T13:48:37Z",
+    "type": "item",
+    "id": "Q83851309",
+    "labels": {
+      "es": {
+        "language": "es",
+        "value": "abjuración de Enrique IV"
+      },
+      "fr": {
+        "language": "fr",
+        "value": "Abjuration de Henri IV"
+      },
+      "zh": {
+        "language": "zh",
+        "value": "亨利四世皈依天主教"
+      }
+    },
+    "descriptions": {
+      "fr": {
+        "language": "fr",
+        "value": "Conversion de Henri IV au catholicisme"
+      }
+    },
+    "aliases": {},
+    "claims": {
+      "P2671": [
+        {
+          "mainsnak": {
+            "snaktype": "value",
+            "property": "P2671",
+            "hash": "650e071f82be99ee631971d1be00568a251d4128",
+            "datavalue": {
+              "value": "/g/11h9bnwmbb",
+              "type": "string"
+            },
+            "datatype": "external-id"
+          },
+          "type": "statement",
+          "id": "Q83851309$9070670A-F268-48E4-AAF9-AA030B38A720",
+          "rank": "normal"
+        }
+      ],
+      "P373": [
+        {
+          "mainsnak": {
+            "snaktype": "value",
+            "property": "P373",
+            "hash": "e851a6a3fa1abeef416e2bd83c5ad8a127f46d05",
+            "datavalue": {
+              "value": "Abjuration de Henri IV à Saint-Denis",
+              "type": "string"
+            },
+            "datatype": "string"
+          },
+          "type": "statement",
+          "id": "Q83851309$355194e0-dd85-4a48-b505-af8a4b76c8da",
+          "rank": "normal"
+        }
+      ],
+      "P31": [
+        {
+          "mainsnak": {
+            "snaktype": "value",
+            "property": "P31",
+            "hash": "1b46baeb02b85ebfc6bdfeca16200c7fcfa7a17c",
+            "datavalue": {
+              "value": {
+                "entity-type": "item",
+                "numeric-id": 814997,
+                "id": "Q814997"
+              },
+              "type": "wikibase-entityid"
+            },
+            "datatype": "wikibase-item"
+          },
+          "type": "statement",
+          "id": "Q83851309$9347b617-47b5-4bdc-4334-69a7dac38ddb",
+          "rank": "normal"
+        }
+      ],
+      "P17": [
+        {
+          "mainsnak": {
+            "snaktype": "value",
+            "property": "P17",
+            "hash": "2b7d86f7555d9e77641e33f3f283b88021a5e49a",
+            "datavalue": {
+              "value": {
+                "entity-type": "item",
+                "numeric-id": 70972,
+                "id": "Q70972"
+              },
+              "type": "wikibase-entityid"
+            },
+            "datatype": "wikibase-item"
+          },
+          "type": "statement",
+          "id": "Q83851309$51b7af64-4950-63fb-5043-cc2e0fce1e7d",
+          "rank": "normal"
+        }
+      ],
+      "P585": [
+        {
+          "mainsnak": {
+            "snaktype": "value",
+            "property": "P585",
+            "hash": "9e6f9e37b21a64e988fc51ba574d86b3e2682d7c",
+            "datavalue": {
+              "value": {
+                "time": "+1593-07-25T00:00:00Z",
+                "timezone": 0,
+                "before": 0,
+                "after": 0,
+                "precision": 11,
+                "calendarmodel": "http://www.wikidata.org/entity/Q1985727"
+              },
+              "type": "time"
+            },
+            "datatype": "time"
+          },
+          "type": "statement",
+          "id": "Q83851309$06c699ef-4ed1-b026-5793-da0569fa3937",
+          "rank": "normal"
+        }
+      ],
+      "P276": [
+        {
+          "mainsnak": {
+            "snaktype": "value",
+            "property": "P276",
+            "hash": "fa74c9a5154e6aae1e6120a45f8f327512c0aa4e",
+            "datavalue": {
+              "value": {
+                "entity-type": "item",
+                "numeric-id": 184407,
+                "id": "Q184407"
+              },
+              "type": "wikibase-entityid"
+            },
+            "datatype": "wikibase-item"
+          },
+          "type": "statement",
+          "id": "Q83851309$db103ee2-4b73-d337-0c96-03a4ae2b88c8",
+          "rank": "normal"
+        }
+      ],
+      "P18": [
+        {
+          "mainsnak": {
+            "snaktype": "value",
+            "property": "P18",
+            "hash": "7cf523bb4762d9b67122f0ef1ae53f368a29b0c7",
+            "datavalue": {
+              "value": "Nicolas Baullery Abjuration Henri IV musée d'art et d'histoire de meudon.jpg",
+              "type": "string"
+            },
+            "datatype": "commonsMedia"
+          },
+          "type": "statement",
+          "id": "Q83851309$a71d4eac-4fa4-0bb0-6cdc-389d01e0a7bc",
+          "rank": "normal"
+        }
+      ],
+      "P1269": [
+        {
+          "mainsnak": {
+            "snaktype": "value",
+            "property": "P1269",
+            "hash": "44d24094601331d6d9f200305210db3f40fe7576",
+            "datavalue": {
+              "value": {
+                "entity-type": "item",
+                "numeric-id": 936976,
+                "id": "Q936976"
+              },
+              "type": "wikibase-entityid"
+            },
+            "datatype": "wikibase-item"
+          },
+          "type": "statement",
+          "id": "Q83851309$e74c61b6-4efa-3a01-72c4-2e28c9c184af",
+          "rank": "normal"
+        }
+      ]
+    },
+    "sitelinks": {
+      "commonswiki": {
+        "site": "commonswiki",
+        "title": "Category:Abjuration de Henri IV à Saint-Denis",
+        "badges": [],
+        "url": "https://commons.wikimedia.org/wiki/Category:Abjuration_de_Henri_IV_%C3%A0_Saint-Denis"
+      },
+      "frwiki": {
+        "site": "frwiki",
+        "title": "Abjuration d'Henri IV",
+        "badges": [],
+        "url": "https://fr.wikipedia.org/wiki/Abjuration_d%27Henri_IV"
+      }
+    }
+  }
+}

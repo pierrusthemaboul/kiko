@@ -34,3 +34,4 @@ async function checkYourSpecificActivity() {
     runs?.forEach(r => console.log(`[${r.created_at}] Mode: ${r.mode}`));
 }
 checkYourSpecificActivity();
+

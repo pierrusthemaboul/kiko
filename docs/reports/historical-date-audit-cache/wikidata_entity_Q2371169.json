@@ -1,0 +1,918 @@
+{
+  "saved_at": "2026-03-07T12:53:52.180Z",
+  "value": {
+    "pageid": 2290797,
+    "ns": 0,
+    "title": "Q2371169",
+    "lastrevid": 2454544379,
+    "modified": "2026-01-13T13:53:02Z",
+    "type": "item",
+    "id": "Q2371169",
+    "labels": {
+      "fr": {
+        "language": "fr",
+        "value": "Saint-Pierre-du-Vauvray"
+      },
+      "nl": {
+        "language": "nl",
+        "value": "station Saint-Pierre-du-Vauvray"
+      },
+      "en": {
+        "language": "en",
+        "value": "Saint-Pierre-du-Vauvray"
+      },
+      "hu": {
+        "language": "hu",
+        "value": "Gare de Saint-Pierre-du-Vauvray"
+      },
+      "eo": {
+        "language": "eo",
+        "value": "Saint-Pierre-du-Vauvray"
+      }
+    },
+    "descriptions": {
+      "fr": {
+        "language": "fr",
+        "value": "gare ferroviaire française"
+      },
+      "nl": {
+        "language": "nl",
+        "value": "spoorwegstation in Frankrijk"
+      },
+      "hu": {
+        "language": "hu",
+        "value": "vasútállomás Franciaországban"
+      },
+      "id": {
+        "language": "id",
+        "value": "stasiun kereta api di Perancis"
+      },
+      "ar": {
+        "language": "ar",
+        "value": "محطة قطار في فرنسا"
+      },
+      "en": {
+        "language": "en",
+        "value": "railway station in Saint-Pierre-du-Vauvray, France"
+      },
+      "de": {
+        "language": "de",
+        "value": "Bahnhof in Frankreich"
+      },
+      "ro": {
+        "language": "ro",
+        "value": "gară din Franța"
+      },
+      "pl": {
+        "language": "pl",
+        "value": "stacja kolejowa we Francji"
+      },
+      "eo": {
+        "language": "eo",
+        "value": "fervoja stacidomo en Francio"
+      },
+      "ca": {
+        "language": "ca",
+        "value": "estació de tren a França"
+      },
+      "lt": {
+        "language": "lt",
+        "value": "traukinių stotis Prancūzijoje"
+      },
+      "it": {
+        "language": "it",
+        "value": "stazione ferroviaria francese"
+      },
+      "es": {
+        "language": "es",
+        "value": "estación de tren en Francia"
+      },
+      "uk": {
+        "language": "uk",
+        "value": "залізнична станція у Франції"
+      },
+      "el": {
+        "language": "el",
+        "value": "σιδηροδρομικός σταθμός στη Γαλλία"
+      }
+    },
+    "aliases": {
+      "fr": [
+        {
+          "language": "fr",
+          "value": "gare de Saint-Pierre-du-Vauvray"
+        }
+      ]
+    },
+    "claims": {
+      "P197": [
+        {
+          "mainsnak": {
+            "snaktype": "value",
+            "property": "P197",
+            "hash": "6d906f48ce99914c142dd456abf19adf6e710f3f",
+            "datavalue": {
+              "value": {
+                "entity-type": "item",
+                "numeric-id": 321927,
+                "id": "Q321927"
+              },
+              "type": "wikibase-entityid"
+            },
+            "datatype": "wikibase-item"
+          },
+          "type": "statement",
+          "id": "Q2371169$0d651932-4fb2-20cf-2db2-a8d53d92e083",
+          "rank": "normal"
+        },
+        {
+          "mainsnak": {
+            "snaktype": "value",
+            "property": "P197",
+            "hash": "6008a11c940c1547537a365340c1959860c5cafb",
+            "datavalue": {
+              "value": {
+                "entity-type": "item",
+                "numeric-id": 2267232,
+                "id": "Q2267232"
+              },
+              "type": "wikibase-entityid"
+            },
+            "datatype": "wikibase-item"
+          },
+          "type": "statement",
+          "id": "Q2371169$80df91dc-4d25-44bd-69fe-9e14d1df20db",
+          "rank": "normal"
+        }
+      ],
+      "P17": [
+        {
+          "mainsnak": {
+            "snaktype": "value",
+            "property": "P17",
+            "hash": "c05db5d169c2560b9799d567a803d20a392f53e4",
+            "datavalue": {
+              "value": {
+                "entity-type": "item",
+                "numeric-id": 142,
+                "id": "Q142"
+              },
+              "type": "wikibase-entityid"
+            },
+            "datatype": "wikibase-item"
+          },
+          "type": "statement",
+          "id": "q2371169$09B4D5D7-45BD-4708-B177-C16D6B864287",
+          "rank": "normal",
+          "references": [
+            {
+              "hash": "732ec1c90a6f0694c7db9a71bf09fe7f2b674172",
+              "snaks": {
+                "P143": [
+                  {
+                    "snaktype": "value",
+                    "property": "P143",
+                    "hash": "9123b0de1cc9c3954366ba797d598e4e1ea4146f",
+                    "datavalue": {
+                      "value": {
+                        "entity-type": "item",
+                        "numeric-id": 10000,
+                        "id": "Q10000"
+                      },
+                      "type": "wikibase-entityid"
+                    },
+                    "datatype": "wikibase-item"
+                  }
+                ]
+              },
+              "snaks-order": [
+                "P143"
+              ]
+            }
+          ]
+        }
+      ],
+      "P131": [
+        {
+          "mainsnak": {
+            "snaktype": "value",
+            "property": "P131",
+            "hash": "9dbd4b9e5e82614fbfd64d13d656ac1ad03243fe",
+            "datavalue": {
+              "value": {
+                "entity-type": "item",
+                "numeric-id": 1072173,
+                "id": "Q1072173"
+              },
+              "type": "wikibase-entityid"
+            },
+            "datatype": "wikibase-item"
+          },
+          "type": "statement",
+          "id": "q2371169$5997000E-675D-4799-9548-035A5D0AAD33",
+          "rank": "normal",
+          "references": [
+            {
+              "hash": "732ec1c90a6f0694c7db9a71bf09fe7f2b674172",
+              "snaks": {
+                "P143": [
+                  {
+                    "snaktype": "value",
+                    "property": "P143",
+                    "hash": "9123b0de1cc9c3954366ba797d598e4e1ea4146f",
+                    "datavalue": {
+                      "value": {
+                        "entity-type": "item",
+                        "numeric-id": 10000,
+                        "id": "Q10000"
+                      },
+                      "type": "wikibase-entityid"
+                    },
+                    "datatype": "wikibase-item"
+                  }
+                ]
+              },
+              "snaks-order": [
+                "P143"
+              ]
+            }
+          ]
+        }
+      ],
+      "P31": [
+        {
+          "mainsnak": {
+            "snaktype": "value",
+            "property": "P31",
+            "hash": "12a4103fbfd98ec75d5d9269014f78fb822e8d00",
+            "datavalue": {
+              "value": {
+                "entity-type": "item",
+                "numeric-id": 55488,
+                "id": "Q55488"
+              },
+              "type": "wikibase-entityid"
+            },
+            "datatype": "wikibase-item"
+          },
+          "type": "statement",
+          "id": "Q2371169$8928B671-2A2F-4C10-9E7F-018ADB33A215",
+          "rank": "normal"
+        }
+      ],
+      "P625": [
+        {
+          "mainsnak": {
+            "snaktype": "value",
+            "property": "P625",
+            "hash": "e8ec596b06f0600227bde3bae1f931640be9de7b",
+            "datavalue": {
+              "value": {
+                "latitude": 49.233885,
+                "longitude": 1.224712,
+                "altitude": null,
+                "precision": 0.00001,
+                "globe": "http://www.wikidata.org/entity/Q2"
+              },
+              "type": "globecoordinate"
+            },
+            "datatype": "globe-coordinate"
+          },
+          "type": "statement",
+          "id": "Q2371169$028E00C5-059E-4035-A3A1-AE9B65A0B6F2",
+          "rank": "normal",
+          "references": [
+            {
+              "hash": "d4bd87b862b12d99d26e86472d44f26858dee639",
+              "snaks": {
+                "P143": [
+                  {
+                    "snaktype": "value",
+                    "property": "P143",
+                    "hash": "f30cbd35620c4ea6d0633aaf0210a8916130469b",
+                    "datavalue": {
+                      "value": {
+                        "entity-type": "item",
+                        "numeric-id": 8447,
+                        "id": "Q8447"
+                      },
+                      "type": "wikibase-entityid"
+                    },
+                    "datatype": "wikibase-item"
+                  }
+                ]
+              },
+              "snaks-order": [
+                "P143"
+              ]
+            }
+          ]
+        }
+      ],
+      "P722": [
+        {
+          "mainsnak": {
+            "snaktype": "value",
+            "property": "P722",
+            "hash": "2d09c3a1a75fa488d5d9db6b026226f870c2d545",
+            "datavalue": {
+              "value": "8741564",
+              "type": "string"
+            },
+            "datatype": "external-id"
+          },
+          "type": "statement",
+          "id": "Q2371169$84CEEB58-7D73-49F4-B5D7-F769C05394BE",
+          "rank": "normal",
+          "references": [
+            {
+              "hash": "713644db530f9743ec2b3e9d7dc269de121abd59",
+              "snaks": {
+                "P248": [
+                  {
+                    "snaktype": "value",
+                    "property": "P248",
+                    "hash": "da1ae71ed26fcbbcb290d5239123a4c19dc20a8d",
+                    "datavalue": {
+                      "value": {
+                        "entity-type": "item",
+                        "numeric-id": 14915744,
+                        "id": "Q14915744"
+                      },
+                      "type": "wikibase-entityid"
+                    },
+                    "datatype": "wikibase-item"
+                  }
+                ]
+              },
+              "snaks-order": [
+                "P248"
+              ]
+            }
+          ]
+        }
+      ],
+      "P18": [
+        {
+          "mainsnak": {
+            "snaktype": "value",
+            "property": "P18",
+            "hash": "99c81cb8cb27231ba7884806ec7bdcb19d38f81e",
+            "datavalue": {
+              "value": "Gare de St Pierre du Vauvray.JPG",
+              "type": "string"
+            },
+            "datatype": "commonsMedia"
+          },
+          "type": "statement",
+          "id": "Q2371169$820B62F0-5B25-4BB5-8213-E0F28299FF2C",
+          "rank": "normal"
+        }
+      ],
+      "P421": [
+        {
+          "mainsnak": {
+            "snaktype": "value",
+            "property": "P421",
+            "hash": "fbcae84c0c94805db595b9884f0131450964c182",
+            "datavalue": {
+              "value": {
+                "entity-type": "item",
+                "numeric-id": 25989,
+                "id": "Q25989"
+              },
+              "type": "wikibase-entityid"
+            },
+            "datatype": "wikibase-item"
+          },
+          "type": "statement",
+          "id": "Q2371169$553147E6-AC61-48B6-929D-DCFFAB5184B8",
+          "rank": "normal"
+        }
+      ],
+      "P81": [
+        {
+          "mainsnak": {
+            "snaktype": "value",
+            "property": "P81",
+            "hash": "09ede8b109af6437f8f4aada50eea56fbb9ca091",
+            "datavalue": {
+              "value": {
+                "entity-type": "item",
+                "numeric-id": 3239775,
+                "id": "Q3239775"
+              },
+              "type": "wikibase-entityid"
+            },
+            "datatype": "wikibase-item"
+          },
+          "type": "statement",
+          "id": "Q2371169$2028397D-13AF-42E9-80F8-E6CB19F668D5",
+          "rank": "normal",
+          "references": [
+            {
+              "hash": "d4bd87b862b12d99d26e86472d44f26858dee639",
+              "snaks": {
+                "P143": [
+                  {
+                    "snaktype": "value",
+                    "property": "P143",
+                    "hash": "f30cbd35620c4ea6d0633aaf0210a8916130469b",
+                    "datavalue": {
+                      "value": {
+                        "entity-type": "item",
+                        "numeric-id": 8447,
+                        "id": "Q8447"
+                      },
+                      "type": "wikibase-entityid"
+                    },
+                    "datatype": "wikibase-item"
+                  }
+                ]
+              },
+              "snaks-order": [
+                "P143"
+              ]
+            }
+          ]
+        },
+        {
+          "mainsnak": {
+            "snaktype": "value",
+            "property": "P81",
+            "hash": "2f32fd84bec8bf837b3e1c9b17a12e63a1958f7f",
+            "datavalue": {
+              "value": {
+                "entity-type": "item",
+                "numeric-id": 17633408,
+                "id": "Q17633408"
+              },
+              "type": "wikibase-entityid"
+            },
+            "datatype": "wikibase-item"
+          },
+          "type": "statement",
+          "id": "Q2371169$505DFF86-31FD-4DF1-8A0D-B889FD259FE9",
+          "rank": "normal"
+        },
+        {
+          "mainsnak": {
+            "snaktype": "value",
+            "property": "P81",
+            "hash": "cdba14865442ca2b24848ce4cc21805355484130",
+            "datavalue": {
+              "value": {
+                "entity-type": "item",
+                "numeric-id": 17633404,
+                "id": "Q17633404"
+              },
+              "type": "wikibase-entityid"
+            },
+            "datatype": "wikibase-item"
+          },
+          "type": "statement",
+          "id": "Q2371169$5E149809-3EA8-4E0F-A47F-0CF7E09BAE16",
+          "rank": "normal"
+        }
+      ],
+      "P373": [
+        {
+          "mainsnak": {
+            "snaktype": "value",
+            "property": "P373",
+            "hash": "400480e69e6a9ee04f143e440c5945c88261dc67",
+            "datavalue": {
+              "value": "Gare de Saint-Pierre-du-Vauvray",
+              "type": "string"
+            },
+            "datatype": "string"
+          },
+          "type": "statement",
+          "id": "Q2371169$33C8E1A2-3676-41B4-B068-934244614F86",
+          "rank": "normal"
+        }
+      ],
+      "P1619": [
+        {
+          "mainsnak": {
+            "snaktype": "value",
+            "property": "P1619",
+            "hash": "61c7a1461e4c37817d4fe8913154741d3487ce5b",
+            "datavalue": {
+              "value": {
+                "time": "+1843-00-00T00:00:00Z",
+                "timezone": 0,
+                "before": 0,
+                "after": 0,
+                "precision": 9,
+                "calendarmodel": "http://www.wikidata.org/entity/Q1985727"
+              },
+              "type": "time"
+            },
+            "datatype": "time"
+          },
+          "type": "statement",
+          "id": "Q2371169$D719971C-3C9A-4718-8A41-EC057AB3337F",
+          "rank": "normal",
+          "references": [
+            {
+              "hash": "d4bd87b862b12d99d26e86472d44f26858dee639",
+              "snaks": {
+                "P143": [
+                  {
+                    "snaktype": "value",
+                    "property": "P143",
+                    "hash": "f30cbd35620c4ea6d0633aaf0210a8916130469b",
+                    "datavalue": {
+                      "value": {
+                        "entity-type": "item",
+                        "numeric-id": 8447,
+                        "id": "Q8447"
+                      },
+                      "type": "wikibase-entityid"
+                    },
+                    "datatype": "wikibase-item"
+                  }
+                ]
+              },
+              "snaks-order": [
+                "P143"
+              ]
+            }
+          ]
+        }
+      ],
+      "P127": [
+        {
+          "mainsnak": {
+            "snaktype": "value",
+            "property": "P127",
+            "hash": "cb6a3713e7cda0c6e5c3fc55479393d90b930a0e",
+            "datavalue": {
+              "value": {
+                "entity-type": "item",
+                "numeric-id": 13646,
+                "id": "Q13646"
+              },
+              "type": "wikibase-entityid"
+            },
+            "datatype": "wikibase-item"
+          },
+          "type": "statement",
+          "id": "Q2371169$C1C87B0D-B032-427F-BC5E-ADE4141E98C5",
+          "rank": "normal",
+          "references": [
+            {
+              "hash": "d4bd87b862b12d99d26e86472d44f26858dee639",
+              "snaks": {
+                "P143": [
+                  {
+                    "snaktype": "value",
+                    "property": "P143",
+                    "hash": "f30cbd35620c4ea6d0633aaf0210a8916130469b",
+                    "datavalue": {
+                      "value": {
+                        "entity-type": "item",
+                        "numeric-id": 8447,
+                        "id": "Q8447"
+                      },
+                      "type": "wikibase-entityid"
+                    },
+                    "datatype": "wikibase-item"
+                  }
+                ]
+              },
+              "snaks-order": [
+                "P143"
+              ]
+            }
+          ]
+        }
+      ],
+      "P137": [
+        {
+          "mainsnak": {
+            "snaktype": "value",
+            "property": "P137",
+            "hash": "ac17695d1271c41426b449e93a4d27e57aa2fda6",
+            "datavalue": {
+              "value": {
+                "entity-type": "item",
+                "numeric-id": 13646,
+                "id": "Q13646"
+              },
+              "type": "wikibase-entityid"
+            },
+            "datatype": "wikibase-item"
+          },
+          "type": "statement",
+          "id": "Q2371169$D55A3722-8840-4A7B-B099-35D49C68D914",
+          "rank": "normal",
+          "references": [
+            {
+              "hash": "55489cc83084c4d7639ac96e20949cef1049188b",
+              "snaks": {
+                "P143": [
+                  {
+                    "snaktype": "value",
+                    "property": "P143",
+                    "hash": "f30cbd35620c4ea6d0633aaf0210a8916130469b",
+                    "datavalue": {
+                      "value": {
+                        "entity-type": "item",
+                        "numeric-id": 8447,
+                        "id": "Q8447"
+                      },
+                      "type": "wikibase-entityid"
+                    },
+                    "datatype": "wikibase-item"
+                  }
+                ],
+                "P4656": [
+                  {
+                    "snaktype": "value",
+                    "property": "P4656",
+                    "hash": "cdc0dbf3a6a96a84093d037894443aed40e3dfcb",
+                    "datavalue": {
+                      "value": "https://fr.wikipedia.org/w/index.php?title=Gare_de_Saint-Pierre-du-Vauvray&oldid=149850787",
+                      "type": "string"
+                    },
+                    "datatype": "url"
+                  }
+                ]
+              },
+              "snaks-order": [
+                "P143",
+                "P4656"
+              ]
+            }
+          ]
+        }
+      ],
+      "P6724": [
+        {
+          "mainsnak": {
+            "snaktype": "value",
+            "property": "P6724",
+            "hash": "ccfacda966f942a762506d897f454797b0f4d20f",
+            "datavalue": {
+              "value": "1945",
+              "type": "string"
+            },
+            "datatype": "external-id"
+          },
+          "type": "statement",
+          "id": "Q2371169$A4D3EE0C-207F-4162-BBDC-1028C66F3DF6",
+          "rank": "normal",
+          "references": [
+            {
+              "hash": "01cbea4535f61018bad932bf19b3be1516c72349",
+              "snaks": {
+                "P248": [
+                  {
+                    "snaktype": "value",
+                    "property": "P248",
+                    "hash": "6c373b7c047133fc6710df19c3dd551eb6820d79",
+                    "datavalue": {
+                      "value": {
+                        "entity-type": "item",
+                        "numeric-id": 63450820,
+                        "id": "Q63450820"
+                      },
+                      "type": "wikibase-entityid"
+                    },
+                    "datatype": "wikibase-item"
+                  }
+                ],
+                "P813": [
+                  {
+                    "snaktype": "value",
+                    "property": "P813",
+                    "hash": "65084454d7770a856294f7c9539c913901fe583b",
+                    "datavalue": {
+                      "value": {
+                        "time": "+2019-05-04T00:00:00Z",
+                        "timezone": 0,
+                        "before": 0,
+                        "after": 0,
+                        "precision": 11,
+                        "calendarmodel": "http://www.wikidata.org/entity/Q1985727"
+                      },
+                      "type": "time"
+                    },
+                    "datatype": "time"
+                  }
+                ]
+              },
+              "snaks-order": [
+                "P248",
+                "P813"
+              ]
+            }
+          ]
+        }
+      ],
+      "P8181": [
+        {
+          "mainsnak": {
+            "snaktype": "value",
+            "property": "P8181",
+            "hash": "5c5d9badd15dadca6975ba11732d515ffb33a8f7",
+            "datavalue": {
+              "value": "FRDQG",
+              "type": "string"
+            },
+            "datatype": "external-id"
+          },
+          "type": "statement",
+          "id": "Q2371169$932EAD86-4247-4D3F-A95F-BA2678DFFD2E",
+          "rank": "normal"
+        }
+      ],
+      "P8448": [
+        {
+          "mainsnak": {
+            "snaktype": "value",
+            "property": "P8448",
+            "hash": "2279e06398be2ed221f772341da780baf3d86246",
+            "datavalue": {
+              "value": "FRDQG",
+              "type": "string"
+            },
+            "datatype": "external-id"
+          },
+          "type": "statement",
+          "id": "Q2371169$E4E5FC0F-3FA6-4C8D-9D23-C0E4F776919E",
+          "rank": "normal"
+        }
+      ],
+      "P2671": [
+        {
+          "mainsnak": {
+            "snaktype": "value",
+            "property": "P2671",
+            "hash": "960d5b61990f57fefdb7fecb184bdeb7b678b678",
+            "datavalue": {
+              "value": "/g/121tbwfh",
+              "type": "string"
+            },
+            "datatype": "external-id"
+          },
+          "type": "statement",
+          "id": "Q2371169$16A7421D-6109-4C97-A351-3653ADA743A7",
+          "rank": "normal"
+        }
+      ],
+      "P2044": [
+        {
+          "mainsnak": {
+            "snaktype": "value",
+            "property": "P2044",
+            "hash": "aae58768f213e8d5bb71b6296764c884773e401b",
+            "datavalue": {
+              "value": {
+                "amount": "+13",
+                "unit": "http://www.wikidata.org/entity/Q11573"
+              },
+              "type": "quantity"
+            },
+            "datatype": "quantity"
+          },
+          "type": "statement",
+          "id": "Q2371169$33329149-7C2F-493D-ACF2-9B2AD00E4997",
+          "rank": "normal",
+          "references": [
+            {
+              "hash": "eccc35d355c4355d3cf0b561f628a6688a04cab5",
+              "snaks": {
+                "P143": [
+                  {
+                    "snaktype": "value",
+                    "property": "P143",
+                    "hash": "f30cbd35620c4ea6d0633aaf0210a8916130469b",
+                    "datavalue": {
+                      "value": {
+                        "entity-type": "item",
+                        "numeric-id": 8447,
+                        "id": "Q8447"
+                      },
+                      "type": "wikibase-entityid"
+                    },
+                    "datatype": "wikibase-item"
+                  }
+                ],
+                "P4656": [
+                  {
+                    "snaktype": "value",
+                    "property": "P4656",
+                    "hash": "735fbc7c23b443415c03eb9ad71aac65be2fe2b1",
+                    "datavalue": {
+                      "value": "https://fr.wikipedia.org/w/index.php?title=Gare_de_Saint-Pierre-du-Vauvray&oldid=175470876",
+                      "type": "string"
+                    },
+                    "datatype": "url"
+                  }
+                ]
+              },
+              "snaks-order": [
+                "P143",
+                "P4656"
+              ]
+            }
+          ]
+        }
+      ],
+      "P5817": [
+        {
+          "mainsnak": {
+            "snaktype": "value",
+            "property": "P5817",
+            "hash": "bf41c80ae512fd5a17ab377274c6b26ce451ed4b",
+            "datavalue": {
+              "value": {
+                "entity-type": "item",
+                "numeric-id": 11639308,
+                "id": "Q11639308"
+              },
+              "type": "wikibase-entityid"
+            },
+            "datatype": "wikibase-item"
+          },
+          "type": "statement",
+          "id": "Q2371169$8043DECE-34F0-4334-9615-581FF8B72B5A",
+          "rank": "normal"
+        }
+      ],
+      "P3104": [
+        {
+          "mainsnak": {
+            "snaktype": "value",
+            "property": "P3104",
+            "hash": "e2445596f96f0d8e5ed69af1b8111d486a7f483e",
+            "datavalue": {
+              "value": "frdqg",
+              "type": "string"
+            },
+            "datatype": "external-id"
+          },
+          "type": "statement",
+          "id": "Q2371169$f035c160-4e49-feac-aa63-7e5352b79d0a",
+          "rank": "normal"
+        }
+      ],
+      "P16": [
+        {
+          "mainsnak": {
+            "snaktype": "value",
+            "property": "P16",
+            "hash": "878c2cfac739e8b6c0fca1ee6f28994cf1bd9f53",
+            "datavalue": {
+              "value": {
+                "entity-type": "item",
+                "numeric-id": 204971,
+                "id": "Q204971"
+              },
+              "type": "wikibase-entityid"
+            },
+            "datatype": "wikibase-item"
+          },
+          "type": "statement",
+          "id": "Q2371169$BE3E2101-9759-47F4-9B0C-5EDBF0B2B7E3",
+          "rank": "normal"
+        }
+      ]
+    },
+    "sitelinks": {
+      "commonswiki": {
+        "site": "commonswiki",
+        "title": "Category:Gare de Saint-Pierre-du-Vauvray",
+        "badges": [],
+        "url": "https://commons.wikimedia.org/wiki/Category:Gare_de_Saint-Pierre-du-Vauvray"
+      },
+      "eowiki": {
+        "site": "eowiki",
+        "title": "Saint-Pierre-du-Vauvray (stacidomo)",
+        "badges": [],
+        "url": "https://eo.wikipedia.org/wiki/Saint-Pierre-du-Vauvray_(stacidomo)"
+      },
+      "frwiki": {
+        "site": "frwiki",
+        "title": "Gare de Saint-Pierre-du-Vauvray",
+        "badges": [],
+        "url": "https://fr.wikipedia.org/wiki/Gare_de_Saint-Pierre-du-Vauvray"
+      },
+      "huwiki": {
+        "site": "huwiki",
+        "title": "Gare de Saint-Pierre-du-Vauvray",
+        "badges": [],
+        "url": "https://hu.wikipedia.org/wiki/Gare_de_Saint-Pierre-du-Vauvray"
+      },
+      "nlwiki": {
+        "site": "nlwiki",
+        "title": "Station Saint-Pierre-du-Vauvray",
+        "badges": [],
+        "url": "https://nl.wikipedia.org/wiki/Station_Saint-Pierre-du-Vauvray"
+      }
+    }
+  }
+}

@@ -1,0 +1,171 @@
+{
+  "saved_at": "2026-03-07T14:19:26.697Z",
+  "value": {
+    "pageid": 4345217,
+    "ns": 0,
+    "title": "Q4553389",
+    "lastrevid": 2408251546,
+    "modified": "2025-09-22T07:46:16Z",
+    "type": "item",
+    "id": "Q4553389",
+    "labels": {
+      "en": {
+        "language": "en",
+        "value": "1792 half disme"
+      },
+      "zh": {
+        "language": "zh",
+        "value": "1792年5美分硬币"
+      },
+      "ar": {
+        "language": "ar",
+        "value": "نصف ديم إصدار 1792"
+      },
+      "fr": {
+        "language": "fr",
+        "value": "Pièce d'un demi-disme de dollar américain de 1792"
+      }
+    },
+    "descriptions": {
+      "en": {
+        "language": "en",
+        "value": "American silver coin"
+      },
+      "ar": {
+        "language": "ar",
+        "value": "عملة فضية أمريكية"
+      }
+    },
+    "aliases": {
+      "ar": [
+        {
+          "language": "ar",
+          "value": "1792 نصف ديسيم"
+        },
+        {
+          "language": "ar",
+          "value": "نصف ديسيم إصدار 1792"
+        }
+      ]
+    },
+    "claims": {
+      "P279": [
+        {
+          "mainsnak": {
+            "snaktype": "value",
+            "property": "P279",
+            "hash": "d289c99577d1fb052b7db58e559dd3f0ead6e066",
+            "datavalue": {
+              "value": {
+                "entity-type": "item",
+                "numeric-id": 5641799,
+                "id": "Q5641799"
+              },
+              "type": "wikibase-entityid"
+            },
+            "datatype": "wikibase-item"
+          },
+          "type": "statement",
+          "id": "Q4553389$85f916dd-4fec-9c6e-564d-da22bacfad0f",
+          "rank": "normal"
+        }
+      ],
+      "P18": [
+        {
+          "mainsnak": {
+            "snaktype": "value",
+            "property": "P18",
+            "hash": "2500674bb355b165a29a95a3b64b75af851c3943",
+            "datavalue": {
+              "value": "1792 half disme obv.jpg",
+              "type": "string"
+            },
+            "datatype": "commonsMedia"
+          },
+          "type": "statement",
+          "qualifiers": {
+            "P518": [
+              {
+                "snaktype": "value",
+                "property": "P518",
+                "hash": "7808ad7dd4ecd9dd7b6e8639df2a0d70483615da",
+                "datavalue": {
+                  "value": {
+                    "entity-type": "item",
+                    "numeric-id": 257418,
+                    "id": "Q257418"
+                  },
+                  "type": "wikibase-entityid"
+                },
+                "datatype": "wikibase-item"
+              }
+            ]
+          },
+          "qualifiers-order": [
+            "P518"
+          ],
+          "id": "Q4553389$7e77c583-4185-a423-e297-9644a80a92e6",
+          "rank": "normal"
+        }
+      ],
+      "P646": [
+        {
+          "mainsnak": {
+            "snaktype": "value",
+            "property": "P646",
+            "hash": "c3ed6aa74b6b006604d4c98e9e392191d75d9d1f",
+            "datavalue": {
+              "value": "/m/0bl0k4",
+              "type": "string"
+            },
+            "datatype": "external-id"
+          },
+          "type": "statement",
+          "id": "Q4553389$8B14332C-23C2-49AC-BF14-27856BDF5A19",
+          "rank": "normal"
+        }
+      ],
+      "P31": [
+        {
+          "mainsnak": {
+            "snaktype": "value",
+            "property": "P31",
+            "hash": "5efa18f35e87444f7a28bd8d1c41ef12f3598431",
+            "datavalue": {
+              "value": {
+                "entity-type": "item",
+                "numeric-id": 113813711,
+                "id": "Q113813711"
+              },
+              "type": "wikibase-entityid"
+            },
+            "datatype": "wikibase-item"
+          },
+          "type": "statement",
+          "id": "Q4553389$FB8C3FD5-241A-4775-A3E5-6582732E1D1E",
+          "rank": "normal"
+        }
+      ]
+    },
+    "sitelinks": {
+      "arwiki": {
+        "site": "arwiki",
+        "title": "نصف ديم إصدار 1792",
+        "badges": [],
+        "url": "https://ar.wikipedia.org/wiki/%D9%86%D8%B5%D9%81_%D8%AF%D9%8A%D9%85_%D8%A5%D8%B5%D8%AF%D8%A7%D8%B1_1792"
+      },
+      "enwiki": {
+        "site": "enwiki",
+        "title": "1792 half disme",
+        "badges": [],
+        "url": "https://en.wikipedia.org/wiki/1792_half_disme"
+      },
+      "frwiki": {
+        "site": "frwiki",
+        "title": "Pièce d'un demi-disme de dollar américain de 1792",
+        "badges": [],
+        "url": "https://fr.wikipedia.org/wiki/Pi%C3%A8ce_d%27un_demi-disme_de_dollar_am%C3%A9ricain_de_1792"
+      }
+    }
+  }
+}

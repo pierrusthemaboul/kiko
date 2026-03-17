@@ -1,0 +1,1125 @@
+{
+  "saved_at": "2026-03-07T15:45:12.449Z",
+  "value": {
+    "pageid": 635593,
+    "ns": 0,
+    "title": "Q674784",
+    "lastrevid": 2444994338,
+    "modified": "2025-12-21T15:22:11Z",
+    "type": "item",
+    "id": "Q674784",
+    "labels": {
+      "fr": {
+        "language": "fr",
+        "value": "LGV Sud Europe Atlantique"
+      },
+      "de": {
+        "language": "de",
+        "value": "LGV Sud Europe Atlantique"
+      },
+      "en": {
+        "language": "en",
+        "value": "LGV Sud Europe Atlantique"
+      },
+      "hu": {
+        "language": "hu",
+        "value": "LGV Sud Europe Atlantique"
+      },
+      "ja": {
+        "language": "ja",
+        "value": "LGV南ヨーロッパ大西洋線"
+      },
+      "nl": {
+        "language": "nl",
+        "value": "LGV Sud Europe Atlantique"
+      },
+      "es": {
+        "language": "es",
+        "value": "Línea de alta velocidad Sud Europa Atlántico"
+      },
+      "uk": {
+        "language": "uk",
+        "value": "LGV Sud Europe Atlantique"
+      },
+      "zh": {
+        "language": "zh",
+        "value": "南部-大西洋欧洲高速铁路"
+      },
+      "zh-cn": {
+        "language": "zh-cn",
+        "value": "南部-大西洋欧洲高速铁路"
+      }
+    },
+    "descriptions": {
+      "fr": {
+        "language": "fr",
+        "value": "ligne de chemin de fer française"
+      },
+      "hu": {
+        "language": "hu",
+        "value": "vasútvonal"
+      },
+      "en": {
+        "language": "en",
+        "value": "railway line"
+      },
+      "nl": {
+        "language": "nl",
+        "value": "spoorlijn in Frankrijk"
+      },
+      "pl": {
+        "language": "pl",
+        "value": "linia kolejowa we Francji"
+      },
+      "uk": {
+        "language": "uk",
+        "value": "залізниця"
+      },
+      "ar": {
+        "language": "ar",
+        "value": "خط سكة حديد في فرنسا"
+      },
+      "de": {
+        "language": "de",
+        "value": "Eisenbahn-Schnellfahrstrecke in Frankreich"
+      }
+    },
+    "aliases": {
+      "es": [
+        {
+          "language": "es",
+          "value": "Linea de alta velocidad Sud Europa Atlantico"
+        }
+      ],
+      "nl": [
+        {
+          "language": "nl",
+          "value": "hogesnelheidslijn Sud Europe Atlantique"
+        }
+      ]
+    },
+    "claims": {
+      "P373": [
+        {
+          "mainsnak": {
+            "snaktype": "value",
+            "property": "P373",
+            "hash": "d8bafb8a0fe22e62a080463b5c6953e84cc4e902",
+            "datavalue": {
+              "value": "LGV Sud Europe Atlantique",
+              "type": "string"
+            },
+            "datatype": "string"
+          },
+          "type": "statement",
+          "id": "q674784$88143A20-3F4A-4809-B15E-D99C6D8B87DB",
+          "rank": "normal"
+        }
+      ],
+      "P31": [
+        {
+          "mainsnak": {
+            "snaktype": "value",
+            "property": "P31",
+            "hash": "ab703732c33dd85122b21164230613cc28a066aa",
+            "datavalue": {
+              "value": {
+                "entity-type": "item",
+                "numeric-id": 858485,
+                "id": "Q858485"
+              },
+              "type": "wikibase-entityid"
+            },
+            "datatype": "wikibase-item"
+          },
+          "type": "statement",
+          "id": "Q674784$25105424-4a82-80cc-a6b5-0925d8dffbc5",
+          "rank": "normal"
+        }
+      ],
+      "P17": [
+        {
+          "mainsnak": {
+            "snaktype": "value",
+            "property": "P17",
+            "hash": "c05db5d169c2560b9799d567a803d20a392f53e4",
+            "datavalue": {
+              "value": {
+                "entity-type": "item",
+                "numeric-id": 142,
+                "id": "Q142"
+              },
+              "type": "wikibase-entityid"
+            },
+            "datatype": "wikibase-item"
+          },
+          "type": "statement",
+          "id": "q674784$05D15B5C-5AF2-4D6F-AEF0-62FCD83FF644",
+          "rank": "normal"
+        }
+      ],
+      "P242": [
+        {
+          "mainsnak": {
+            "snaktype": "value",
+            "property": "P242",
+            "hash": "b99b5a464a0ae6d5af7216eb510c15f75899403c",
+            "datavalue": {
+              "value": "Carte-reseau-France.jpg",
+              "type": "string"
+            },
+            "datatype": "commonsMedia"
+          },
+          "type": "statement",
+          "id": "Q674784$DED87EE4-44A4-4BE9-8E65-0C9699FD2E4A",
+          "rank": "normal"
+        }
+      ],
+      "P646": [
+        {
+          "mainsnak": {
+            "snaktype": "value",
+            "property": "P646",
+            "hash": "c5df4d373c6084869672dcaffc34f2c7febd2107",
+            "datavalue": {
+              "value": "/m/09rrp3",
+              "type": "string"
+            },
+            "datatype": "external-id"
+          },
+          "type": "statement",
+          "id": "Q674784$F5FC34AB-6C72-4E98-8C64-0BE2632490A7",
+          "rank": "normal",
+          "references": [
+            {
+              "hash": "2b00cb481cddcac7623114367489b5c194901c4a",
+              "snaks": {
+                "P248": [
+                  {
+                    "snaktype": "value",
+                    "property": "P248",
+                    "hash": "a94b740202b097dd33355e0e6c00e54b9395e5e0",
+                    "datavalue": {
+                      "value": {
+                        "entity-type": "item",
+                        "numeric-id": 15241312,
+                        "id": "Q15241312"
+                      },
+                      "type": "wikibase-entityid"
+                    },
+                    "datatype": "wikibase-item"
+                  }
+                ],
+                "P577": [
+                  {
+                    "snaktype": "value",
+                    "property": "P577",
+                    "hash": "fde79ecb015112d2f29229ccc1ec514ed3e71fa2",
+                    "datavalue": {
+                      "value": {
+                        "time": "+2013-10-28T00:00:00Z",
+                        "timezone": 0,
+                        "before": 0,
+                        "after": 0,
+                        "precision": 11,
+                        "calendarmodel": "http://www.wikidata.org/entity/Q1985727"
+                      },
+                      "type": "time"
+                    },
+                    "datatype": "time"
+                  }
+                ]
+              },
+              "snaks-order": [
+                "P248",
+                "P577"
+              ]
+            }
+          ]
+        }
+      ],
+      "P1064": [
+        {
+          "mainsnak": {
+            "snaktype": "value",
+            "property": "P1064",
+            "hash": "14c5a6efb96b32dede4d21cf8b63352e45d3c92d",
+            "datavalue": {
+              "value": {
+                "entity-type": "item",
+                "numeric-id": 1999572,
+                "id": "Q1999572"
+              },
+              "type": "wikibase-entityid"
+            },
+            "datatype": "wikibase-item"
+          },
+          "type": "statement",
+          "id": "Q674784$04567795-C623-4226-A6F3-740C9AA27AF7",
+          "rank": "normal"
+        }
+      ],
+      "P930": [
+        {
+          "mainsnak": {
+            "snaktype": "value",
+            "property": "P930",
+            "hash": "b38373516d7ffc579caa8d0b36f1d26aa54a2871",
+            "datavalue": {
+              "value": {
+                "entity-type": "item",
+                "numeric-id": 106530439,
+                "id": "Q106530439"
+              },
+              "type": "wikibase-entityid"
+            },
+            "datatype": "wikibase-item"
+          },
+          "type": "statement",
+          "id": "Q674784$d7e9a6f0-4968-7f81-38d7-5976c4573ffe",
+          "rank": "normal"
+        }
+      ],
+      "P15": [
+        {
+          "mainsnak": {
+            "snaktype": "value",
+            "property": "P15",
+            "hash": "6ef93df71716447c167935263329e11a818e6e5d",
+            "datavalue": {
+              "value": "LGV SEA.png",
+              "type": "string"
+            },
+            "datatype": "commonsMedia"
+          },
+          "type": "statement",
+          "id": "Q674784$72F3085F-A86D-46F9-A5EA-4995225E68CA",
+          "rank": "normal"
+        }
+      ],
+      "P2572": [
+        {
+          "mainsnak": {
+            "snaktype": "value",
+            "property": "P2572",
+            "hash": "877bd9a7902435c924537ecd984f56da301d25d6",
+            "datavalue": {
+              "value": "LGVSEA",
+              "type": "string"
+            },
+            "datatype": "string"
+          },
+          "type": "statement",
+          "id": "Q674784$8f3573ed-46e4-5f03-5228-c49a283d31ff",
+          "rank": "normal"
+        },
+        {
+          "mainsnak": {
+            "snaktype": "value",
+            "property": "P2572",
+            "hash": "4fc09436916d49b11b657a479542b1677c44f39a",
+            "datavalue": {
+              "value": "TGVLoceane",
+              "type": "string"
+            },
+            "datatype": "string"
+          },
+          "type": "statement",
+          "id": "Q674784$557e934e-437b-d42a-4c44-949833744ad7",
+          "rank": "normal"
+        }
+      ],
+      "P18": [
+        {
+          "mainsnak": {
+            "snaktype": "value",
+            "property": "P18",
+            "hash": "ca284b31049445eb3e6b135ac88040fb343a16c5",
+            "datavalue": {
+              "value": "FR 79 Pliboux - LGV SEA 02.jpg",
+              "type": "string"
+            },
+            "datatype": "commonsMedia"
+          },
+          "type": "statement",
+          "id": "Q674784$3F41AFD0-BA12-4B93-9306-99423257E9F2",
+          "rank": "normal"
+        }
+      ],
+      "P137": [
+        {
+          "mainsnak": {
+            "snaktype": "value",
+            "property": "P137",
+            "hash": "8865ee715a13ec2c5e023937dc24bf6480fa436e",
+            "datavalue": {
+              "value": {
+                "entity-type": "item",
+                "numeric-id": 55597561,
+                "id": "Q55597561"
+              },
+              "type": "wikibase-entityid"
+            },
+            "datatype": "wikibase-item"
+          },
+          "type": "statement",
+          "id": "Q674784$C0F87165-2924-4A57-83C7-CED478AD19ED",
+          "rank": "normal"
+        }
+      ],
+      "P1619": [
+        {
+          "mainsnak": {
+            "snaktype": "value",
+            "property": "P1619",
+            "hash": "8ee40c1e6ba585ed7cb76c4460b8b2d942e1078e",
+            "datavalue": {
+              "value": {
+                "time": "+2017-07-01T00:00:00Z",
+                "timezone": 0,
+                "before": 0,
+                "after": 0,
+                "precision": 11,
+                "calendarmodel": "http://www.wikidata.org/entity/Q1985727"
+              },
+              "type": "time"
+            },
+            "datatype": "time"
+          },
+          "type": "statement",
+          "id": "Q674784$27d18618-4f62-eea1-4138-70cba6b6e6f3",
+          "rank": "normal"
+        }
+      ],
+      "P3086": [
+        {
+          "mainsnak": {
+            "snaktype": "value",
+            "property": "P3086",
+            "hash": "3c65eb90efeb891b81bbc35d878bc5a34cb5f980",
+            "datavalue": {
+              "value": {
+                "amount": "+350",
+                "unit": "http://www.wikidata.org/entity/Q180154"
+              },
+              "type": "quantity"
+            },
+            "datatype": "quantity"
+          },
+          "type": "statement",
+          "id": "Q674784$ade28c89-4962-e3e6-fd14-360e1112771b",
+          "rank": "normal"
+        }
+      ],
+      "P2043": [
+        {
+          "mainsnak": {
+            "snaktype": "value",
+            "property": "P2043",
+            "hash": "be7ba2e5e8f5d9fc5415e57570ce32cb6449d87b",
+            "datavalue": {
+              "value": {
+                "amount": "+300",
+                "unit": "http://www.wikidata.org/entity/Q828224"
+              },
+              "type": "quantity"
+            },
+            "datatype": "quantity"
+          },
+          "type": "statement",
+          "id": "Q674784$e48762c0-49e4-565e-e2d2-2d6f13951a04",
+          "rank": "normal"
+        }
+      ],
+      "P127": [
+        {
+          "mainsnak": {
+            "snaktype": "value",
+            "property": "P127",
+            "hash": "9d3a34a8104c009e1690b1068bf26692042d0e13",
+            "datavalue": {
+              "value": {
+                "entity-type": "item",
+                "numeric-id": 21605526,
+                "id": "Q21605526"
+              },
+              "type": "wikibase-entityid"
+            },
+            "datatype": "wikibase-item"
+          },
+          "type": "statement",
+          "id": "Q674784$30E29BDA-2E0A-466D-A559-A114ECECF786",
+          "rank": "normal"
+        }
+      ],
+      "P2002": [
+        {
+          "mainsnak": {
+            "snaktype": "value",
+            "property": "P2002",
+            "hash": "43910cc3c52f9cfc12ad7e56dea3f8a7b45ebb5f",
+            "datavalue": {
+              "value": "LGVSEA_LISEA",
+              "type": "string"
+            },
+            "datatype": "external-id"
+          },
+          "type": "statement",
+          "qualifiers": {
+            "P6552": [
+              {
+                "snaktype": "value",
+                "property": "P6552",
+                "hash": "ccd9d577b9792416f2c2e07c12b5e8f650c03099",
+                "datavalue": {
+                  "value": "1356601261",
+                  "type": "string"
+                },
+                "datatype": "external-id"
+              }
+            ],
+            "P585": [
+              {
+                "snaktype": "value",
+                "property": "P585",
+                "hash": "0aef3dc9cc507a6fab98e61dad0c51a20070be86",
+                "datavalue": {
+                  "value": {
+                    "time": "+2020-03-23T00:00:00Z",
+                    "timezone": 0,
+                    "before": 0,
+                    "after": 0,
+                    "precision": 11,
+                    "calendarmodel": "http://www.wikidata.org/entity/Q1985727"
+                  },
+                  "type": "time"
+                },
+                "datatype": "time"
+              }
+            ],
+            "P580": [
+              {
+                "snaktype": "value",
+                "property": "P580",
+                "hash": "e762b61ab99cc202b2b18a3756a6389988f49aa2",
+                "datavalue": {
+                  "value": {
+                    "time": "+2013-04-16T00:00:00Z",
+                    "timezone": 0,
+                    "before": 0,
+                    "after": 0,
+                    "precision": 11,
+                    "calendarmodel": "http://www.wikidata.org/entity/Q1985727"
+                  },
+                  "type": "time"
+                },
+                "datatype": "time"
+              }
+            ]
+          },
+          "qualifiers-order": [
+            "P6552",
+            "P585",
+            "P580"
+          ],
+          "id": "Q674784$D9D6ADD0-1D19-446B-A2B2-7691AD55DD31",
+          "rank": "normal",
+          "references": [
+            {
+              "hash": "a29a646602abf65105ed0f39a44231c962ece9ee",
+              "snaks": {
+                "P143": [
+                  {
+                    "snaktype": "value",
+                    "property": "P143",
+                    "hash": "c6f1777471211df31724ac60175786f3872c83e9",
+                    "datavalue": {
+                      "value": {
+                        "entity-type": "item",
+                        "numeric-id": 177837,
+                        "id": "Q177837"
+                      },
+                      "type": "wikibase-entityid"
+                    },
+                    "datatype": "wikibase-item"
+                  }
+                ]
+              },
+              "snaks-order": [
+                "P143"
+              ]
+            }
+          ]
+        }
+      ],
+      "P3858": [
+        {
+          "mainsnak": {
+            "snaktype": "value",
+            "property": "P3858",
+            "hash": "87b887c9efe091c679abf9c261b668fb356d754b",
+            "datavalue": {
+              "value": {
+                "entity-type": "item",
+                "numeric-id": 17639175,
+                "id": "Q17639175"
+              },
+              "type": "wikibase-entityid"
+            },
+            "datatype": "wikibase-item"
+          },
+          "type": "statement",
+          "id": "Q674784$4a9c3a3a-4146-ace3-7d93-68d4473214b3",
+          "rank": "normal"
+        }
+      ],
+      "P131": [
+        {
+          "mainsnak": {
+            "snaktype": "value",
+            "property": "P131",
+            "hash": "fa07ac2d60b34670681b680514c830209d49786d",
+            "datavalue": {
+              "value": {
+                "entity-type": "item",
+                "numeric-id": 12556,
+                "id": "Q12556"
+              },
+              "type": "wikibase-entityid"
+            },
+            "datatype": "wikibase-item"
+          },
+          "type": "statement",
+          "id": "Q674784$42ab552f-4ecf-1fe7-bada-35154d8a3533",
+          "rank": "normal"
+        },
+        {
+          "mainsnak": {
+            "snaktype": "value",
+            "property": "P131",
+            "hash": "edaced094055c7ee9980893ab3433b8b7289fe8b",
+            "datavalue": {
+              "value": {
+                "entity-type": "item",
+                "numeric-id": 12804,
+                "id": "Q12804"
+              },
+              "type": "wikibase-entityid"
+            },
+            "datatype": "wikibase-item"
+          },
+          "type": "statement",
+          "id": "Q674784$44893bf4-4d0c-82d1-aac3-e9c57db33ebe",
+          "rank": "normal"
+        },
+        {
+          "mainsnak": {
+            "snaktype": "value",
+            "property": "P131",
+            "hash": "c3d49da84acbd89f502837534b81c21af53af6cc",
+            "datavalue": {
+              "value": {
+                "entity-type": "item",
+                "numeric-id": 12765,
+                "id": "Q12765"
+              },
+              "type": "wikibase-entityid"
+            },
+            "datatype": "wikibase-item"
+          },
+          "type": "statement",
+          "id": "Q674784$e0fceb3d-477d-33a8-123e-1935704311e6",
+          "rank": "normal"
+        },
+        {
+          "mainsnak": {
+            "snaktype": "value",
+            "property": "P131",
+            "hash": "df90b1e12a24d4b14dd9c0e7f1e8b7faa3a5264a",
+            "datavalue": {
+              "value": {
+                "entity-type": "item",
+                "numeric-id": 3266,
+                "id": "Q3266"
+              },
+              "type": "wikibase-entityid"
+            },
+            "datatype": "wikibase-item"
+          },
+          "type": "statement",
+          "id": "Q674784$83845648-4d50-49b8-a4f3-34ce5ba0c967",
+          "rank": "normal"
+        },
+        {
+          "mainsnak": {
+            "snaktype": "value",
+            "property": "P131",
+            "hash": "6455f2cdf736fa42e5fdc640e15a0ef270f02a00",
+            "datavalue": {
+              "value": {
+                "entity-type": "item",
+                "numeric-id": 3278,
+                "id": "Q3278"
+              },
+              "type": "wikibase-entityid"
+            },
+            "datatype": "wikibase-item"
+          },
+          "type": "statement",
+          "id": "Q674784$113a3cec-488a-f464-59f5-44d3f08e8918",
+          "rank": "normal"
+        },
+        {
+          "mainsnak": {
+            "snaktype": "value",
+            "property": "P131",
+            "hash": "9ec4ffbe0121be51b15b3c22d86158d72b4bfdd3",
+            "datavalue": {
+              "value": {
+                "entity-type": "item",
+                "numeric-id": 12526,
+                "id": "Q12526"
+              },
+              "type": "wikibase-entityid"
+            },
+            "datatype": "wikibase-item"
+          },
+          "type": "statement",
+          "id": "Q674784$98d619f2-46c2-9af1-304e-f10e430dc2a4",
+          "rank": "normal"
+        }
+      ],
+      "P6262": [
+        {
+          "mainsnak": {
+            "snaktype": "value",
+            "property": "P6262",
+            "hash": "d62d0459e71d5ef7563d3e14fe93fe5554da08da",
+            "datavalue": {
+              "value": "routes:LGV_Sud-Europe-Atlantique",
+              "type": "string"
+            },
+            "datatype": "external-id"
+          },
+          "type": "statement",
+          "qualifiers": {
+            "P1476": [
+              {
+                "snaktype": "value",
+                "property": "P1476",
+                "hash": "b6b07e5e8b1386a7d851c044996a16d3aaf524d6",
+                "datavalue": {
+                  "value": {
+                    "text": "LGV Sud-Europe-Atlantique",
+                    "language": "fr"
+                  },
+                  "type": "monolingualtext"
+                },
+                "datatype": "monolingualtext"
+              }
+            ],
+            "P407": [
+              {
+                "snaktype": "value",
+                "property": "P407",
+                "hash": "d197d0a5efa4b4c23a302a829dd3ef43684fe002",
+                "datavalue": {
+                  "value": {
+                    "entity-type": "item",
+                    "numeric-id": 150,
+                    "id": "Q150"
+                  },
+                  "type": "wikibase-entityid"
+                },
+                "datatype": "wikibase-item"
+              }
+            ],
+            "P1810": [
+              {
+                "snaktype": "value",
+                "property": "P1810",
+                "hash": "b835c9c1376902389d72492e5612a3f1b37e8bdc",
+                "datavalue": {
+                  "value": "LGV Sud-Europe-Atlantique",
+                  "type": "string"
+                },
+                "datatype": "string"
+              }
+            ],
+            "P9675": [
+              {
+                "snaktype": "value",
+                "property": "P9675",
+                "hash": "23672e470159baf5b30d3e0ce2f26f4be518e58c",
+                "datavalue": {
+                  "value": "2150",
+                  "type": "string"
+                },
+                "datatype": "string"
+              }
+            ]
+          },
+          "qualifiers-order": [
+            "P1476",
+            "P407",
+            "P1810",
+            "P9675"
+          ],
+          "id": "Q674784$5e4ee894-4b96-e8b5-21ff-e6316fb818d0",
+          "rank": "normal"
+        }
+      ],
+      "P361": [
+        {
+          "mainsnak": {
+            "snaktype": "value",
+            "property": "P361",
+            "hash": "2eefe9e8e8f663877f870ac1f389fd82e2deb53c",
+            "datavalue": {
+              "value": {
+                "entity-type": "item",
+                "numeric-id": 13646,
+                "id": "Q13646"
+              },
+              "type": "wikibase-entityid"
+            },
+            "datatype": "wikibase-item"
+          },
+          "type": "statement",
+          "id": "Q674784$2E1B9DDF-ABF5-4A12-9C34-D540B2C242C8",
+          "rank": "normal",
+          "references": [
+            {
+              "hash": "22ae34fb9207548faa7e6899187632462402ba41",
+              "snaks": {
+                "P143": [
+                  {
+                    "snaktype": "value",
+                    "property": "P143",
+                    "hash": "e4f6d9441d0600513c4533c672b5ab472dc73694",
+                    "datavalue": {
+                      "value": {
+                        "entity-type": "item",
+                        "numeric-id": 328,
+                        "id": "Q328"
+                      },
+                      "type": "wikibase-entityid"
+                    },
+                    "datatype": "wikibase-item"
+                  }
+                ],
+                "P4656": [
+                  {
+                    "snaktype": "value",
+                    "property": "P4656",
+                    "hash": "c44c0962dbcb1d00849f2eddb5ae796ac10301a4",
+                    "datavalue": {
+                      "value": "https://en.wikipedia.org/w/index.php?title=LGV_Sud_Europe_Atlantique&oldid=951769426",
+                      "type": "string"
+                    },
+                    "datatype": "url"
+                  }
+                ]
+              },
+              "snaks-order": [
+                "P143",
+                "P4656"
+              ]
+            }
+          ]
+        },
+        {
+          "mainsnak": {
+            "snaktype": "value",
+            "property": "P361",
+            "hash": "00655237995c006fed8711242b22772e42edb6e6",
+            "datavalue": {
+              "value": {
+                "entity-type": "item",
+                "numeric-id": 3115141,
+                "id": "Q3115141"
+              },
+              "type": "wikibase-entityid"
+            },
+            "datatype": "wikibase-item"
+          },
+          "type": "statement",
+          "id": "Q674784$843A5D68-7FA0-4E03-8EE1-6E8A706C8CC0",
+          "rank": "normal"
+        }
+      ],
+      "P1671": [
+        {
+          "mainsnak": {
+            "snaktype": "value",
+            "property": "P1671",
+            "hash": "d3d5b68cb31fc83882a7dca6bb2b7b10d20795e5",
+            "datavalue": {
+              "value": "566000",
+              "type": "string"
+            },
+            "datatype": "string"
+          },
+          "type": "statement",
+          "id": "Q674784$93D11F9A-2535-4795-8A53-0A553C222FC0",
+          "rank": "normal",
+          "references": [
+            {
+              "hash": "8192e3c58d64837c736c18a9f42fc07847cc2122",
+              "snaks": {
+                "P143": [
+                  {
+                    "snaktype": "value",
+                    "property": "P143",
+                    "hash": "f30cbd35620c4ea6d0633aaf0210a8916130469b",
+                    "datavalue": {
+                      "value": {
+                        "entity-type": "item",
+                        "numeric-id": 8447,
+                        "id": "Q8447"
+                      },
+                      "type": "wikibase-entityid"
+                    },
+                    "datatype": "wikibase-item"
+                  }
+                ],
+                "P4656": [
+                  {
+                    "snaktype": "value",
+                    "property": "P4656",
+                    "hash": "6207e5aa5a17dd10cbf1fe023867e22cb64679a1",
+                    "datavalue": {
+                      "value": "https://fr.wikipedia.org/w/index.php?title=LGV_Sud_Europe_Atlantique&oldid=170125323",
+                      "type": "string"
+                    },
+                    "datatype": "url"
+                  }
+                ]
+              },
+              "snaks-order": [
+                "P143",
+                "P4656"
+              ]
+            }
+          ]
+        }
+      ],
+      "P402": [
+        {
+          "mainsnak": {
+            "snaktype": "value",
+            "property": "P402",
+            "hash": "e0a9caca7e7ec6317c40d09a0043832b37f429d0",
+            "datavalue": {
+              "value": "547038",
+              "type": "string"
+            },
+            "datatype": "external-id"
+          },
+          "type": "statement",
+          "id": "Q674784$e69e817d-4143-7d65-8b6c-8b49028dd733",
+          "rank": "normal"
+        }
+      ],
+      "P8687": [
+        {
+          "mainsnak": {
+            "snaktype": "value",
+            "property": "P8687",
+            "hash": "97e28ac7b04723b1651773ec1a46e516385c2feb",
+            "datavalue": {
+              "value": {
+                "amount": "+1375",
+                "unit": "1"
+              },
+              "type": "quantity"
+            },
+            "datatype": "quantity"
+          },
+          "type": "statement",
+          "qualifiers": {
+            "P6552": [
+              {
+                "snaktype": "value",
+                "property": "P6552",
+                "hash": "ccd9d577b9792416f2c2e07c12b5e8f650c03099",
+                "datavalue": {
+                  "value": "1356601261",
+                  "type": "string"
+                },
+                "datatype": "external-id"
+              }
+            ],
+            "P585": [
+              {
+                "snaktype": "value",
+                "property": "P585",
+                "hash": "be7f48baca5302460015b531e2ad9fbe847b6214",
+                "datavalue": {
+                  "value": {
+                    "time": "+2021-01-08T00:00:00Z",
+                    "timezone": 0,
+                    "before": 0,
+                    "after": 0,
+                    "precision": 11,
+                    "calendarmodel": "http://www.wikidata.org/entity/Q1985727"
+                  },
+                  "type": "time"
+                },
+                "datatype": "time"
+              }
+            ]
+          },
+          "qualifiers-order": [
+            "P6552",
+            "P585"
+          ],
+          "id": "Q674784$e07e0748-c654-4ad4-8b6d-4e51ce510a84",
+          "rank": "normal"
+        }
+      ],
+      "P625": [
+        {
+          "mainsnak": {
+            "snaktype": "value",
+            "property": "P625",
+            "hash": "80e9fa7ce2868ab76b739756325989d2e6f0d885",
+            "datavalue": {
+              "value": {
+                "latitude": 46.0896,
+                "longitude": 0.125,
+                "altitude": null,
+                "precision": 0.0001,
+                "globe": "http://www.wikidata.org/entity/Q2"
+              },
+              "type": "globecoordinate"
+            },
+            "datatype": "globe-coordinate"
+          },
+          "type": "statement",
+          "id": "Q674784$8f5fd7c0-66ec-49ba-aebe-615d9cc6eccf",
+          "rank": "normal"
+        }
+      ],
+      "P454": [
+        {
+          "mainsnak": {
+            "snaktype": "value",
+            "property": "P454",
+            "hash": "a0e6ee4fb069d47dd2b18b72efc26a2f752b9e0a",
+            "datavalue": {
+              "value": "10000874",
+              "type": "string"
+            },
+            "datatype": "external-id"
+          },
+          "type": "statement",
+          "id": "Q674784$a7d209f5-4e72-4e3c-2e1c-66f53544e50d",
+          "rank": "normal"
+        }
+      ],
+      "P2789": [
+        {
+          "mainsnak": {
+            "snaktype": "value",
+            "property": "P2789",
+            "hash": "b0e009e2428c264db118bf670ff8573c007bffa9",
+            "datavalue": {
+              "value": {
+                "entity-type": "item",
+                "numeric-id": 802972,
+                "id": "Q802972"
+              },
+              "type": "wikibase-entityid"
+            },
+            "datatype": "wikibase-item"
+          },
+          "type": "statement",
+          "id": "Q674784$83070670-4045-553b-14c3-45dc865bdabf",
+          "rank": "normal"
+        },
+        {
+          "mainsnak": {
+            "snaktype": "value",
+            "property": "P2789",
+            "hash": "5260ff595826ce75d046d813e5a3e4df5b83e966",
+            "datavalue": {
+              "value": {
+                "entity-type": "item",
+                "numeric-id": 751425,
+                "id": "Q751425"
+              },
+              "type": "wikibase-entityid"
+            },
+            "datatype": "wikibase-item"
+          },
+          "type": "statement",
+          "id": "Q674784$0f06d3dd-4501-d1b9-adfb-e0cf4c20fb97",
+          "rank": "normal"
+        }
+      ]
+    },
+    "sitelinks": {
+      "commonswiki": {
+        "site": "commonswiki",
+        "title": "Category:LGV Sud Europe Atlantique",
+        "badges": [],
+        "url": "https://commons.wikimedia.org/wiki/Category:LGV_Sud_Europe_Atlantique"
+      },
+      "dewiki": {
+        "site": "dewiki",
+        "title": "LGV Sud Europe Atlantique",
+        "badges": [],
+        "url": "https://de.wikipedia.org/wiki/LGV_Sud_Europe_Atlantique"
+      },
+      "enwiki": {
+        "site": "enwiki",
+        "title": "LGV Sud Europe Atlantique",
+        "badges": [],
+        "url": "https://en.wikipedia.org/wiki/LGV_Sud_Europe_Atlantique"
+      },
+      "eswiki": {
+        "site": "eswiki",
+        "title": "Línea de alta velocidad Sud Europa Atlántico",
+        "badges": [],
+        "url": "https://es.wikipedia.org/wiki/L%C3%ADnea_de_alta_velocidad_Sud_Europa_Atl%C3%A1ntico"
+      },
+      "frwiki": {
+        "site": "frwiki",
+        "title": "LGV Sud Europe Atlantique",
+        "badges": [],
+        "url": "https://fr.wikipedia.org/wiki/LGV_Sud_Europe_Atlantique"
+      },
+      "huwiki": {
+        "site": "huwiki",
+        "title": "LGV Sud Europe Atlantique",
+        "badges": [],
+        "url": "https://hu.wikipedia.org/wiki/LGV_Sud_Europe_Atlantique"
+      },
+      "jawiki": {
+        "site": "jawiki",
+        "title": "LGV南ヨーロッパ大西洋線",
+        "badges": [],
+        "url": "https://ja.wikipedia.org/wiki/LGV%E5%8D%97%E3%83%A8%E3%83%BC%E3%83%AD%E3%83%83%E3%83%91%E5%A4%A7%E8%A5%BF%E6%B4%8B%E7%B7%9A"
+      },
+      "nlwiki": {
+        "site": "nlwiki",
+        "title": "Hogesnelheidslijn Sud Europe Atlantique",
+        "badges": [],
+        "url": "https://nl.wikipedia.org/wiki/Hogesnelheidslijn_Sud_Europe_Atlantique"
+      },
+      "ukwiki": {
+        "site": "ukwiki",
+        "title": "LGV Sud Europe Atlantique",
+        "badges": [],
+        "url": "https://uk.wikipedia.org/wiki/LGV_Sud_Europe_Atlantique"
+      },
+      "zhwiki": {
+        "site": "zhwiki",
+        "title": "南部-大西洋欧洲高速铁路",
+        "badges": [],
+        "url": "https://zh.wikipedia.org/wiki/%E5%8D%97%E9%83%A8-%E5%A4%A7%E8%A5%BF%E6%B4%8B%E6%AC%A7%E6%B4%B2%E9%AB%98%E9%80%9F%E9%93%81%E8%B7%AF"
+      }
+    }
+  }
+}

@@ -1,0 +1,3187 @@
+{
+  "generated_at": "2026-03-07T11:30:09.830Z",
+  "sample_size": 50,
+  "model": "gemini-2.0-flash",
+  "selection": "random_time_stratified",
+  "run_stamp": "2026-03-07T11-26-14-731Z",
+  "runtime_options": {
+    "sampleSize": 50,
+    "periodBuckets": 5,
+    "maxBatchSize": 10,
+    "batchPauseMs": 1500,
+    "eventPauseMs": 0,
+    "checkpointEvery": 5,
+    "geminiRetries": 4,
+    "geminiRetryBaseMs": 2500,
+    "wikiSearchLimit": 5,
+    "resume": false
+  },
+  "sample_event_ids": [
+    "aca0b012-3c0a-4310-b28e-647c44d6fa85",
+    "aad35619-0528-45ff-b9e2-a500daf5c350",
+    "2c9529d0-2493-4540-87c3-89a8e8e060f1",
+    "d3dc2583-71e5-4c47-9832-97e567dfa3b4",
+    "236eb089-1086-44df-a370-fc272144c85e",
+    "83e39e33-2d02-4791-b525-0e0b90534b8b",
+    "2bcbc926-5670-4fae-8d13-0277a3fe39ce",
+    "3314be63-5780-4056-b2ab-d91e5dbbd43f",
+    "5acedf56-2102-4606-bfae-b1473290cb2c",
+    "a31b0c33-83d6-44ae-9186-b0e37a305e40",
+    "f97fa483-9bd9-4dba-9433-754df7017709",
+    "c8e705b1-2227-4088-8fc6-061d59d63f6e",
+    "929b4535-9d2d-4274-9c55-97d8b04a5742",
+    "5f000f64-3a7c-40de-8d04-2e9417b8eeae",
+    "fc448778-6e5b-4ca1-9e0b-70103e527d0a",
+    "711af4b9-7c8f-41ea-875c-a829b410df37",
+    "d5317bde-a7e3-420a-bae9-d8c673dc76a2",
+    "b8974aef-1c63-4f53-b40d-fc58e57ee02a",
+    "51b8ca4a-d8e1-4e4e-b2a9-3d715a861e44",
+    "820250cc-9ecb-4a29-b405-f9c205c37187",
+    "2161167d-05e3-4a79-a55a-1d88d40bf625",
+    "e4525593-739b-46df-baf4-6e44a74eb70f",
+    "1fa94f5d-0294-41c9-949c-c80fdd4cb62b",
+    "4d322669-0e1f-4dc9-888b-96bc489e3489",
+    "a335b8d3-cf88-405e-b010-a3e0c4a8d173",
+    "c7bfd033-aacb-4856-9c1a-833c2215c139",
+    "331bfb0f-0cd0-4505-8b2a-2e79d5db556b",
+    "0bef960a-2acd-45fb-baac-fa919b87b5f8",
+    "c423003d-3d17-4b0e-a075-25958ce529fc",
+    "01bde4a3-d93b-4964-9941-4781afc96d56",
+    "2a58ec12-1ee2-49df-92f1-9a609fe6ea70",
+    "2b686470-4573-43ab-a7de-f02a025f3a2b",
+    "c44e4789-7533-4d51-81dd-1be5de54aa6c",
+    "8f62896b-0c84-422d-9ddc-fc2857c5bb2d",
+    "a9b481b6-549d-469a-a879-a5b02030dad6",
+    "68a367c5-7393-47bc-b240-459793a2a759",
+    "ffc4bfc5-f15a-4c8f-b259-0eee7a1b2cdb",
+    "a7cfca15-5da4-4d09-b7ab-9a115b059368",
+    "9901e6d9-c93c-4bfb-b3c4-75022fe7aab4",
+    "277433f9-2c8e-4fdd-b79d-f2019aa9ae7a",
+    "63a6af14-5ed7-4bbe-849d-3faa9b218a8a",
+    "0740005e-002a-4bb9-94bc-16654dfc020e",
+    "f3a5df36-b396-4f3b-a3b4-3c31a6150d69",
+    "d7055542-0611-4bca-9eb5-ad0e1d2e3205",
+    "1cbdeec4-3813-4f37-b34a-ef3a4d43d685",
+    "57bba2ab-a878-4379-a197-32663935ebd5",
+    "acd81cc5-1678-4382-8d25-df84070d55fa",
+    "77c19596-8efa-492a-81d3-3bfaa54706a8",
+    "ed63e84a-fa3c-4fea-b65c-6720fc9e2503",
+    "325ba4af-c87c-4320-afc4-c2dbbfd5ab33"
+  ],
+  "summary_by_status": {
+    "CONFIRMED": 28,
+    "INSUFFICIENT_EVIDENCE": 10,
+    "LIKELY_CORRECT": 11,
+    "DISPUTED_DATE": 1
+  },
+  "summary_by_bucket": {
+    "confirme": 28,
+    "annee_exacte_introuvable": 6,
+    "preuve_externe_faible": 5,
+    "absence_de_singularite": 4,
+    "probable_mais_a_confirmer": 6,
+    "date_disputee": 1
+  },
+  "checkpoint": false,
+  "completed": true,
+  "resumed_count": 0,
+  "results": [
+    {
+      "id": "aca0b012-3c0a-4310-b28e-647c44d6fa85",
+      "titre": "Classifications scientifiques des espèces",
+      "date_in_db": "1758-01-01",
+      "year_in_db": "1758",
+      "date_candidate": "1758-01-01",
+      "year_candidate": "1758",
+      "precision": "year",
+      "status": "CONFIRMED",
+      "result_bucket": "confirme",
+      "confidence": 0.9,
+      "needs_human_review": false,
+      "recommendation": "None",
+      "matched_article_fr": "https://fr.wikipedia.org/wiki/Classification_scientifique_des_esp%C3%A8ces",
+      "matched_article_en": null,
+      "wikidata_id": "Q11398",
+      "event_identity": "Publication de la 10e édition de *Systema Naturae* par Carl von Linné, introduisant une classification scientifique standardisée des animaux.",
+      "is_disputed": false,
+      "ambiguous_identity": false,
+      "title_self_sufficient": true,
+      "title_not_self_sufficient": false,
+      "is_not_singular_event": false,
+      "is_time_span": false,
+      "is_period_based": false,
+      "exact_year_supported": true,
+      "reasoning_short": "La description détaillée de l'événement mentionne explicitement l'année 1758 comme étant celle de la publication de la 10e édition de *Systema Naturae* par Carl von Linné, ce qui est confirmé par le contexte du titre.",
+      "evidence_used": [
+        "wikipedia_fr_article"
+      ],
+      "sources_checked": [
+        {
+          "source_id": "wikipedia_fr_article",
+          "source_type": "wikipedia_fr",
+          "title": "Classification scientifique des espèces",
+          "url": "https://fr.wikipedia.org/wiki/Classification_scientifique_des_esp%C3%A8ces",
+          "date_iso": null,
+          "precision": null
+        }
+      ],
+      "source_quotes": [
+        {
+          "source_id": "wikipedia_fr_article",
+          "quote": "Dans les sciences du vivant, la classification scientifique des espèces (également nommée « classification biologique ») correspond à l'association de la systématique, qui est la méthode ou ensemble de méthodes permettant de classer le vivant, et de la taxonomie, qui est le résultat de la méthode de classification. La classification classique a prévalu jusqu'au troisième quart du XXe siècle, marqué par l'apparition en 1950 de la classification phylogénétique ou cladistique, aujourd'hui dominante. Les termes concernés par les différentes classifications ne bénéficient pourtant pas d'une définition unanimement admise, chaque ouvrage scientifique, chaque dictionnaire et, pour ainsi dire, chaque auteur ayant la sienne. Comme l'a écrit le chercheur Ernest Small en 1989 : « L'ironie est de constater que les spécialistes en classification biologique n'ont pas réussi à se doter d'une nomenclatu…"
+        }
+      ],
+      "conflicts": []
+    },
+    {
+      "id": "aad35619-0528-45ff-b9e2-a500daf5c350",
+      "titre": "Inauguration de la Jeddah Tower",
+      "date_in_db": "2024-01-01",
+      "year_in_db": "2024",
+      "date_candidate": null,
+      "year_candidate": null,
+      "precision": null,
+      "status": "INSUFFICIENT_EVIDENCE",
+      "result_bucket": "annee_exacte_introuvable",
+      "confidence": 0,
+      "needs_human_review": true,
+      "recommendation": "Nécessite une vérification humaine pour trouver des sources fiables confirmant l'année exacte de l'inauguration.",
+      "matched_article_fr": null,
+      "matched_article_en": null,
+      "wikidata_id": "Q374365",
+      "event_identity": "Inauguration de la Jeddah Tower",
+      "is_disputed": false,
+      "ambiguous_identity": false,
+      "title_self_sufficient": true,
+      "title_not_self_sufficient": false,
+      "is_not_singular_event": false,
+      "is_time_span": false,
+      "is_period_based": false,
+      "exact_year_supported": false,
+      "reasoning_short": "Aucune source ne confirme l'année exacte de l'inauguration de la Jeddah Tower. Le projet a connu des retards, et la date d'inauguration reste incertaine.",
+      "evidence_used": [],
+      "sources_checked": [
+        {
+          "source_id": "wikipedia_en_article",
+          "source_type": "wikipedia_en",
+          "title": "Jeddah",
+          "url": "https://en.wikipedia.org/wiki/Jeddah",
+          "date_iso": null,
+          "precision": null
+        }
+      ],
+      "source_quotes": [
+        {
+          "source_id": "wikipedia_en_article",
+          "quote": "Jeddah lies on the Red Sea coast in the Hijaz region of Saudi Arabia. It serves as a governorate, is the largest city in Mecca Province, and, after the capital, Riyadh, ranks as the country's second-largest city. Jeddah is the commercial center of the country. It is not known when Jeddah was founded, but Jeddah's prominence grew in 647 when the Caliph Uthman made it a travel hub serving Muslim travelers going to the holy city of Mecca for Islamic pilgrimage. Since those times, Jeddah has served as a gateway for millions of pilgrims who have arrived in Saudi Arabia. With a population of about 3,751,722 people as of 2022, Jeddah is the largest city in Hejaz, and the ninth-largest in the Middle East. It also serves as the administrative centre of the OIC. Jeddah Islamic Port, on the Red Sea, is the thirty-sixth largest seaport in the world and the second-largest and second-busiest seaport …"
+        }
+      ],
+      "conflicts": []
+    },
+    {
+      "id": "2c9529d0-2493-4540-87c3-89a8e8e060f1",
+      "titre": "Concile Quinisexte à Constantinople",
+      "date_in_db": "0692-01-01",
+      "year_in_db": "0692",
+      "date_candidate": null,
+      "year_candidate": null,
+      "precision": null,
+      "status": "INSUFFICIENT_EVIDENCE",
+      "result_bucket": "annee_exacte_introuvable",
+      "confidence": 0,
+      "needs_human_review": true,
+      "recommendation": "Ajouter des sources externes mentionnant explicitement l'année 692 pour le Concile Quinisexte à Constantinople.",
+      "matched_article_fr": null,
+      "matched_article_en": null,
+      "wikidata_id": "Q10551516",
+      "event_identity": "Concile Quinisexte à Constantinople",
+      "is_disputed": false,
+      "ambiguous_identity": false,
+      "title_self_sufficient": true,
+      "title_not_self_sufficient": false,
+      "is_not_singular_event": false,
+      "is_time_span": false,
+      "is_period_based": false,
+      "exact_year_supported": false,
+      "reasoning_short": "Aucune source externe ne permet de confirmer l'année exacte du Concile Quinisexte à Constantinople. L'année 692 est donc invérifiable avec les sources fournies.",
+      "evidence_used": [],
+      "sources_checked": [
+        {
+          "source_id": "wikipedia_fr_article",
+          "source_type": "wikipedia_fr",
+          "title": "Concile",
+          "url": "https://fr.wikipedia.org/wiki/Concile",
+          "date_iso": null,
+          "precision": null
+        }
+      ],
+      "source_quotes": [
+        {
+          "source_id": "wikipedia_fr_article",
+          "quote": "Un concile (du latin concilium, « assemblée »), ou synode (du grec ancien sun-odos « chemin commun » ), est une assemblée d'évêques de l'Église catholique (latine ou non) ou orthodoxe. Il manifeste une dimension essentielle de toute Église chrétienne : la synodalité ou organisation hiérarchique du corps en vertu de laquelle les prélats chargés du gouvernement de chaque portion de l'Église (évêques) sont susceptibles de se réunir pour prendre l'ensemble des décisions qui engagent la foi et la discipline de tous sous l'autorité d'un primat."
+        }
+      ],
+      "conflicts": []
+    },
+    {
+      "id": "d3dc2583-71e5-4c47-9832-97e567dfa3b4",
+      "titre": "Première de L'Enlèvement au sérail de Wolfgang Amadeus Mozart",
+      "date_in_db": "1782-07-16",
+      "year_in_db": "1782",
+      "date_candidate": "1782-01-01",
+      "year_candidate": "1782",
+      "precision": "year",
+      "status": "CONFIRMED",
+      "result_bucket": "confirme",
+      "confidence": 0.9,
+      "needs_human_review": false,
+      "recommendation": "No change needed.",
+      "matched_article_fr": null,
+      "matched_article_en": null,
+      "wikidata_id": "Q254",
+      "event_identity": "Première de L'Enlèvement au sérail de Wolfgang Amadeus Mozart",
+      "is_disputed": false,
+      "ambiguous_identity": false,
+      "title_self_sufficient": true,
+      "title_not_self_sufficient": false,
+      "is_not_singular_event": false,
+      "is_time_span": false,
+      "is_period_based": false,
+      "exact_year_supported": true,
+      "reasoning_short": "L'événement est la première de l'opéra de Mozart, et l'année 1782 est confirmée par la description détaillée de l'événement.",
+      "evidence_used": [],
+      "sources_checked": [
+        {
+          "source_id": "wikipedia_fr_article",
+          "source_type": "wikipedia_fr",
+          "title": "Wolfgang Amadeus Mozart",
+          "url": "https://fr.wikipedia.org/wiki/Wolfgang_Amadeus_Mozart",
+          "date_iso": null,
+          "precision": null
+        },
+        {
+          "source_id": "wikidata_1",
+          "source_type": "wikidata",
+          "title": "Q254",
+          "url": "https://www.wikidata.org/wiki/Q254",
+          "date_iso": "1756-01-27",
+          "precision": "day"
+        },
+        {
+          "source_id": "wikidata_2",
+          "source_type": "wikidata",
+          "title": "Q254",
+          "url": "https://www.wikidata.org/wiki/Q254",
+          "date_iso": "1756-01-27",
+          "precision": "day"
+        },
+        {
+          "source_id": "wikidata_3",
+          "source_type": "wikidata",
+          "title": "Q254",
+          "url": "https://www.wikidata.org/wiki/Q254",
+          "date_iso": "1791-12-05",
+          "precision": "day"
+        }
+      ],
+      "source_quotes": [
+        {
+          "source_id": "wikipedia_fr_article",
+          "quote": "Wolfgang Amadeus Mozart ou Johannes Chrysostomus Wolfgangus Theophilus Mozart, né le 27 janvier 1756 à Salzbourg (principauté archiépiscopale de Salzbourg) et mort le 5 décembre 1791 à Vienne, est un compositeur germano-autrichien de la période classique. Il est considéré comme l'un des plus grands compositeurs de l'histoire. Avec Joseph Haydn et Ludwig van Beethoven, il porte à son apogée l'école classique viennoise. Enfant prodige et compositeur précoce, il est produit en public dès l'âge de sept ans à travers l'Europe, où il subjugue les assistances avec sa sœur Maria Anna. Mort à trente-cinq ans, il laisse une œuvre considérable : 893 œuvres sont répertoriées dans le catalogue Köchel. Selon le témoignage de ses contemporains, il est, au piano comme au violon, un virtuose. Il écrit dans tous les genres musicaux de son époque, et excelle dans chacun d'eux. Il est reconnu qu'il porte à…"
+        },
+        {
+          "source_id": "wikidata_1",
+          "quote": "date of birth: 1756-01-27"
+        },
+        {
+          "source_id": "wikidata_2",
+          "quote": "date of birth: 1756-01-27"
+        },
+        {
+          "source_id": "wikidata_3",
+          "quote": "date of death: 1791-12-05"
+        }
+      ],
+      "conflicts": []
+    },
+    {
+      "id": "236eb089-1086-44df-a370-fc272144c85e",
+      "titre": "Crise agricole française de 2024",
+      "date_in_db": "2024-01-01",
+      "year_in_db": "2024",
+      "date_candidate": "2024-01-01",
+      "year_candidate": "2024",
+      "precision": "year",
+      "status": "CONFIRMED",
+      "result_bucket": "confirme",
+      "confidence": 1,
+      "needs_human_review": false,
+      "recommendation": "No change needed.",
+      "matched_article_fr": "https://fr.wikipedia.org/wiki/Crise_agricole_fran%C3%A7aise_depuis_2024",
+      "matched_article_en": null,
+      "wikidata_id": "Q124356591",
+      "event_identity": "Crise agricole française de 2024",
+      "is_disputed": false,
+      "ambiguous_identity": false,
+      "title_self_sufficient": true,
+      "title_not_self_sufficient": false,
+      "is_not_singular_event": false,
+      "is_time_span": false,
+      "is_period_based": false,
+      "exact_year_supported": true,
+      "reasoning_short": "Les sources externes (Wikipédia et Wikidata) confirment que la crise agricole française a débuté en 2024.",
+      "evidence_used": [
+        "wikipedia_fr_article",
+        "wikidata_1"
+      ],
+      "sources_checked": [
+        {
+          "source_id": "wikipedia_fr_article",
+          "source_type": "wikipedia_fr",
+          "title": "Crise agricole française depuis 2024",
+          "url": "https://fr.wikipedia.org/wiki/Crise_agricole_fran%C3%A7aise_depuis_2024",
+          "date_iso": null,
+          "precision": null
+        },
+        {
+          "source_id": "wikidata_1",
+          "source_type": "wikidata",
+          "title": "Q124356591",
+          "url": "https://www.wikidata.org/wiki/Q124356591",
+          "date_iso": "2024-01-01",
+          "precision": "month"
+        }
+      ],
+      "source_quotes": [
+        {
+          "source_id": "wikipedia_fr_article",
+          "quote": "Le crise agricole française depuis 2024, aussi appelée mouvement des agriculteurs ou colère des agriculteurs, est une crise agricole qui consiste principalement en une série de manifestations et de blocages routiers organisés dans la métropole par les syndicats agricoles français (FNSEA, Jeunes agriculteurs, Coordination rurale, Confédération paysanne, MODEF) ainsi que des agriculteurs français non syndiqués à partir du 16 janvier 2024. Les agriculteurs expriment leur colère et leurs revendications face à la baisse de leurs revenus, à la hausse des charges, à la concurrence déloyale permise par les accords de libre-échange, à l'empilement des normes lié à une réglementation trop complexe, à la fiscalité, à certains aspects de la réglementation européenne en matière d'agriculture et aux contrôles de l'administration française. Ils demandent au gouvernement des mesures concrètes et rapide…"
+        },
+        {
+          "source_id": "wikidata_1",
+          "quote": "point in time: 2024-01-01"
+        }
+      ],
+      "conflicts": []
+    },
+    {
+      "id": "83e39e33-2d02-4791-b525-0e0b90534b8b",
+      "titre": "Coupe du Monde 1950 : Le 'Maracanazo'",
+      "date_in_db": "1950-01-01",
+      "year_in_db": "1950",
+      "date_candidate": "1950-01-01",
+      "year_candidate": "1950",
+      "precision": "year",
+      "status": "CONFIRMED",
+      "result_bucket": "confirme",
+      "confidence": 1,
+      "needs_human_review": false,
+      "recommendation": "No change needed.",
+      "matched_article_fr": "Coupe du monde de football 1950",
+      "matched_article_en": null,
+      "wikidata_id": "Q132515",
+      "event_identity": "Coupe du Monde 1950, finale et victoire de l'Uruguay contre le Brésil (Maracanazo)",
+      "is_disputed": false,
+      "ambiguous_identity": false,
+      "title_self_sufficient": true,
+      "title_not_self_sufficient": false,
+      "is_not_singular_event": false,
+      "is_time_span": false,
+      "is_period_based": false,
+      "exact_year_supported": true,
+      "reasoning_short": "La Coupe du Monde de football 1950 est confirmée par Wikipédia et Wikidata comme ayant eu lieu en 1950.",
+      "evidence_used": [
+        "wikipedia_fr_article",
+        "wikidata_1"
+      ],
+      "sources_checked": [
+        {
+          "source_id": "wikipedia_fr_article",
+          "source_type": "wikipedia_fr",
+          "title": "Coupe du monde de football 1950",
+          "url": "https://fr.wikipedia.org/wiki/Coupe_du_monde_de_football_1950",
+          "date_iso": null,
+          "precision": null
+        },
+        {
+          "source_id": "wikidata_1",
+          "source_type": "wikidata",
+          "title": "Q132515",
+          "url": "https://www.wikidata.org/wiki/Q132515",
+          "date_iso": "1950-01-01",
+          "precision": "year"
+        },
+        {
+          "source_id": "wikidata_2",
+          "source_type": "wikidata",
+          "title": "Q132515",
+          "url": "https://www.wikidata.org/wiki/Q132515",
+          "date_iso": "1950-06-24",
+          "precision": "day"
+        }
+      ],
+      "source_quotes": [
+        {
+          "source_id": "wikipedia_fr_article",
+          "quote": "La quatrième Coupe du monde de football se tient au Brésil du 24 juin au 16 juillet 1950 et est remportée par l'Uruguay. Cette édition, qui voit la première participation de l'équipe d'Angleterre, reste célèbre pour la défaite du Brésil dans son nouvel antre du Maracanã construit pour l'occasion et pouvant accueillir 200 000 spectateurs, dans le match décisif pour le titre face à l'Uruguay, qui remporte sa deuxième victoire en Coupe du monde, et plonge tout un peuple dans le désarroi."
+        },
+        {
+          "source_id": "wikidata_1",
+          "quote": "point in time: 1950-01-01"
+        },
+        {
+          "source_id": "wikidata_2",
+          "quote": "start time: 1950-06-24"
+        }
+      ],
+      "conflicts": []
+    },
+    {
+      "id": "2bcbc926-5670-4fae-8d13-0277a3fe39ce",
+      "titre": "Mort de Louis XIV",
+      "date_in_db": "1715-09-01",
+      "year_in_db": "1715",
+      "date_candidate": "1715-01-01",
+      "year_candidate": "1715",
+      "precision": "year",
+      "status": "CONFIRMED",
+      "result_bucket": "confirme",
+      "confidence": 1,
+      "needs_human_review": false,
+      "recommendation": "Aucune révision nécessaire.",
+      "matched_article_fr": "wikipedia_fr_article",
+      "matched_article_en": "wikipedia_en_article",
+      "wikidata_id": "Q3324481",
+      "event_identity": "Mort de Louis XIV",
+      "is_disputed": false,
+      "ambiguous_identity": false,
+      "title_self_sufficient": true,
+      "title_not_self_sufficient": false,
+      "is_not_singular_event": false,
+      "is_time_span": false,
+      "is_period_based": false,
+      "exact_year_supported": true,
+      "reasoning_short": "La mort de Louis XIV est confirmée en 1715 par l'article Wikipédia en français et en anglais.",
+      "evidence_used": [
+        "wikipedia_fr_article",
+        "wikipedia_en_article"
+      ],
+      "sources_checked": [
+        {
+          "source_id": "wikipedia_fr_article",
+          "source_type": "wikipedia_fr",
+          "title": "Mort de Louis XIV",
+          "url": "https://fr.wikipedia.org/wiki/Mort_de_Louis_XIV",
+          "date_iso": null,
+          "precision": null
+        },
+        {
+          "source_id": "wikipedia_en_article",
+          "source_type": "wikipedia_en",
+          "title": "Louis XIV",
+          "url": "https://en.wikipedia.org/wiki/Louis_XIV",
+          "date_iso": null,
+          "precision": null
+        },
+        {
+          "source_id": "wikidata_1",
+          "source_type": "wikidata",
+          "title": "Q3324481",
+          "url": "https://www.wikidata.org/wiki/Q3324481",
+          "date_iso": "1715-09-01",
+          "precision": "day"
+        }
+      ],
+      "source_quotes": [
+        {
+          "source_id": "wikipedia_fr_article",
+          "quote": "La mort de Louis XIV a lieu le 1er septembre 1715 aux alentours de 8 h 15. Elle entraîne non seulement la fin du règne personnel de 54 ans du roi Louis XIV, mais aussi un changement de main, avec la lutte de succession qui s'ensuit au Parlement de Paris, au profit de son neveu Philippe d'Orléans nommé régent du royaume. Le système de polysynodie émerge de l'alliance entre Philippe d'Orléans et les parlementaires."
+        },
+        {
+          "source_id": "wikipedia_en_article",
+          "quote": "Louis XIV (Louis-Dieudonné; 5 September 1638 – 1 September 1715), also known as Louis the Great (Louis le Grand [lwi lə ɡʁɑ̃]) or the Sun King (le Roi Soleil [lə ʁwa sɔlɛj]), was King of France from 1643 until his death in 1715. His reign lasted 72 years and 110 days, which is the longest of any monarch in history. An emblem of the age of absolutism in Europe, Louis XIV's legacy includes French colonial expansion, the conclusion of the Thirty Years' War involving the Habsburgs, and a controlling influence on the style of fine arts and architecture in France, including the transformation of the Palace of Versailles into a center of royal power and politics. Louis XIV's pageantry and opulence helped define the French Baroque style of art and architecture and promoted his image as supreme leader of France in the early modern period. Louis XIV began his personal rule of France in 1661 after…"
+        },
+        {
+          "source_id": "wikidata_1",
+          "quote": "point in time: 1715-09-01"
+        }
+      ],
+      "conflicts": []
+    },
+    {
+      "id": "3314be63-5780-4056-b2ab-d91e5dbbd43f",
+      "titre": "Reconnaissance officielle de l'École de médecine de Montpellier",
+      "date_in_db": "1220-01-01",
+      "year_in_db": "1220",
+      "date_candidate": "1220-01-01",
+      "year_candidate": "1220",
+      "precision": "year",
+      "status": "LIKELY_CORRECT",
+      "result_bucket": "preuve_externe_faible",
+      "confidence": 0,
+      "needs_human_review": false,
+      "recommendation": "Rechercher des sources externes confirmant l'année 1220 pour la reconnaissance officielle de l'École de médecine de Montpellier.",
+      "matched_article_fr": null,
+      "matched_article_en": null,
+      "wikidata_id": "Q3592600",
+      "event_identity": "Reconnaissance officielle de l'École de médecine de Montpellier en 1220.",
+      "is_disputed": false,
+      "ambiguous_identity": false,
+      "title_self_sufficient": true,
+      "title_not_self_sufficient": false,
+      "is_not_singular_event": false,
+      "is_time_span": false,
+      "is_period_based": false,
+      "exact_year_supported": true,
+      "reasoning_short": "Aucune source externe ne confirme l'année 1220 pour la reconnaissance officielle de l'École de médecine de Montpellier. La source Wikipedia fournie parle des études de médecine en France de manière générale.",
+      "evidence_used": [],
+      "sources_checked": [
+        {
+          "source_id": "wikipedia_fr_article",
+          "source_type": "wikipedia_fr",
+          "title": "Études de médecine en France",
+          "url": "https://fr.wikipedia.org/wiki/%C3%89tudes_de_m%C3%A9decine_en_France",
+          "date_iso": null,
+          "precision": null
+        }
+      ],
+      "source_quotes": [
+        {
+          "source_id": "wikipedia_fr_article",
+          "quote": "En France, les études de médecine se réalisent dans des unités de formation et de recherche (UFR) de médecine, au sein d'universités. La formation, d'une durée minimale de dix ans après le baccalauréat, s'achève par la soutenance d'une thèse d'exercice, aboutissant à la délivrance du diplôme d'État de docteur en médecine ; et d'un mémoire, donnant droit à un diplôme d'études spécialisées (DES). Dans certains cas, la formation peut être complétée par un diplôme universitaire (DU/DIU), ou encore une formation spécialisée transversale (FST), afin de se spécialiser davantage. Familièrement, l'étudiant en médecine est appelé « carabin »."
+        }
+      ],
+      "conflicts": []
+    },
+    {
+      "id": "5acedf56-2102-4606-bfae-b1473290cb2c",
+      "titre": "Exécution du roi Charles Ier d'Angleterre",
+      "date_in_db": "1649-01-01",
+      "year_in_db": "1649",
+      "date_candidate": "1649-01-01",
+      "year_candidate": "1649",
+      "precision": "year",
+      "status": "CONFIRMED",
+      "result_bucket": "confirme",
+      "confidence": 1,
+      "needs_human_review": false,
+      "recommendation": "No change needed.",
+      "matched_article_fr": "Charles Ier (roi d'Angleterre)",
+      "matched_article_en": null,
+      "wikidata_id": "Q81506",
+      "event_identity": "Exécution du roi Charles Ier d'Angleterre",
+      "is_disputed": false,
+      "ambiguous_identity": false,
+      "title_self_sufficient": true,
+      "title_not_self_sufficient": false,
+      "is_not_singular_event": false,
+      "is_time_span": false,
+      "is_period_based": false,
+      "exact_year_supported": true,
+      "reasoning_short": "L'exécution de Charles Ier est datée de 1649 par Wikipedia et Wikidata.",
+      "evidence_used": [
+        "wikipedia_fr_article",
+        "wikidata_2"
+      ],
+      "sources_checked": [
+        {
+          "source_id": "wikipedia_fr_article",
+          "source_type": "wikipedia_fr",
+          "title": "Charles Ier (roi d'Angleterre)",
+          "url": "https://fr.wikipedia.org/wiki/Charles_Ier_(roi_d%27Angleterre)",
+          "date_iso": null,
+          "precision": null
+        },
+        {
+          "source_id": "wikidata_1",
+          "source_type": "wikidata",
+          "title": "Q81506",
+          "url": "https://www.wikidata.org/wiki/Q81506",
+          "date_iso": "1600-11-19",
+          "precision": "day"
+        },
+        {
+          "source_id": "wikidata_2",
+          "source_type": "wikidata",
+          "title": "Q81506",
+          "url": "https://www.wikidata.org/wiki/Q81506",
+          "date_iso": "1649-01-30",
+          "precision": "day"
+        }
+      ],
+      "source_quotes": [
+        {
+          "source_id": "wikipedia_fr_article",
+          "quote": "Charles Ier, né le 19 novembre 1600 à Dunfermline et mort le 30 janvier 1649 à Londres, est roi d'Angleterre, d'Écosse et d'Irlande de 1625 à son exécution en 1649. Petit-fils de la reine Marie Stuart et fils du roi Jacques Stuart, il succède à ce dernier à sa mort, le 27 mars 1625. Dès le début de son règne, Charles Ier affronta le Parlement d'Angleterre pour accroître ses revenus, alors que ce dernier cherchait à limiter les prérogatives royales, que le roi considérait être de droit divin. Ses interférences dans les affaires religieuses des Églises d'Angleterre et d'Écosse, et ses hausses d’impôts sans l'accord du Parlement furent très mal acceptées par certains prédicateurs protestants, qui le considéraient comme un monarque absolu et un tyran. Son refus de soutenir durablement les forces protestantes durant la guerre de Trente Ans, associé à son mariage avec une princesse catholique…"
+        },
+        {
+          "source_id": "wikidata_1",
+          "quote": "date of birth: 1600-11-19"
+        },
+        {
+          "source_id": "wikidata_2",
+          "quote": "date of death: 1649-01-30"
+        }
+      ],
+      "conflicts": []
+    },
+    {
+      "id": "a31b0c33-83d6-44ae-9186-b0e37a305e40",
+      "titre": "Le traité de Loudun met fin à la révolte des princes",
+      "date_in_db": "1616-01-01",
+      "year_in_db": "1616",
+      "date_candidate": null,
+      "year_candidate": null,
+      "precision": null,
+      "status": "INSUFFICIENT_EVIDENCE",
+      "result_bucket": "annee_exacte_introuvable",
+      "confidence": 0,
+      "needs_human_review": true,
+      "recommendation": "Rechercher des sources fiables confirmant l'année exacte du Traité de Loudun mettant fin à la révolte des princes.",
+      "matched_article_fr": "Traité de Loudun",
+      "matched_article_en": null,
+      "wikidata_id": "Q3536828",
+      "event_identity": "Le traité de Loudun met fin à la révolte des princes.",
+      "is_disputed": false,
+      "ambiguous_identity": false,
+      "title_self_sufficient": true,
+      "title_not_self_sufficient": false,
+      "is_not_singular_event": false,
+      "is_time_span": false,
+      "is_period_based": false,
+      "exact_year_supported": false,
+      "reasoning_short": "La source Wikipedia trouvée parle d'un traité de Loudun en 1372, ce qui contredit l'année 1616. Aucune source ne confirme l'année 1616 pour le traité mentionné dans le titre.",
+      "evidence_used": [],
+      "sources_checked": [
+        {
+          "source_id": "wikipedia_fr_article",
+          "source_type": "wikipedia_fr",
+          "title": "Traité de Loudun",
+          "url": "https://fr.wikipedia.org/wiki/Trait%C3%A9_de_Loudun",
+          "date_iso": null,
+          "precision": null
+        }
+      ],
+      "source_quotes": [
+        {
+          "source_id": "wikipedia_fr_article",
+          "quote": "Le traité de Loudun, signé le 1er décembre 1372, met fin à la campagne de reconquête du Poitou par les troupes du roi de France Charles V. Ces terres avaient été concédées au roi d'Angleterre avec le tiers du territoire du royaume de France au traité de Brétigny, qui avait consacré la victoire anglaise dans la première phase de la guerre de Cent Ans."
+        }
+      ],
+      "conflicts": []
+    },
+    {
+      "id": "f97fa483-9bd9-4dba-9433-754df7017709",
+      "titre": "Assassinat de Caligula",
+      "date_in_db": "0041-01-24",
+      "year_in_db": "0041",
+      "date_candidate": "0041-01-01",
+      "year_candidate": "0041",
+      "precision": "year",
+      "status": "CONFIRMED",
+      "result_bucket": "confirme",
+      "confidence": 1,
+      "needs_human_review": false,
+      "recommendation": "Confirmer la date de l'assassinat de Caligula comme étant en 41.",
+      "matched_article_fr": "https://fr.wikipedia.org/wiki/Caligula",
+      "matched_article_en": null,
+      "wikidata_id": "Q1409",
+      "event_identity": "Assassinat de Caligula",
+      "is_disputed": false,
+      "ambiguous_identity": false,
+      "title_self_sufficient": true,
+      "title_not_self_sufficient": false,
+      "is_not_singular_event": false,
+      "is_time_span": false,
+      "is_period_based": false,
+      "exact_year_supported": true,
+      "reasoning_short": "L'assassinat de Caligula est daté au 24 janvier 41 par Wikipedia et Wikidata.",
+      "evidence_used": [
+        "wikipedia_fr_article",
+        "wikidata_2"
+      ],
+      "sources_checked": [
+        {
+          "source_id": "wikipedia_fr_article",
+          "source_type": "wikipedia_fr",
+          "title": "Caligula",
+          "url": "https://fr.wikipedia.org/wiki/Caligula",
+          "date_iso": null,
+          "precision": null
+        },
+        {
+          "source_id": "wikidata_1",
+          "source_type": "wikidata",
+          "title": "Q1409",
+          "url": "https://www.wikidata.org/wiki/Q1409",
+          "date_iso": "0012-08-31",
+          "precision": "day"
+        },
+        {
+          "source_id": "wikidata_2",
+          "source_type": "wikidata",
+          "title": "Q1409",
+          "url": "https://www.wikidata.org/wiki/Q1409",
+          "date_iso": "0041-01-24",
+          "precision": "day"
+        }
+      ],
+      "source_quotes": [
+        {
+          "source_id": "wikipedia_fr_article",
+          "quote": "Caligula, de son nom complet Caius Julius Caesar Augustus Germanicus, né le 31 août 12 à Antium et mort assassiné le 24 janvier 41 à Rome, est le troisième empereur romain. Il règne de 37 à 41, succédant à son grand-oncle Tibère. Bien qu'il ait été nommé en référence à Jules César, les soldats de son père le surnomment Caligula (« petite caliga, sandalette ») à partir de sa campagne en Germanie. Selon les sources concernant son principat — essentiellement les récits de Suétone et Dion Cassius —, il connaît tout d'abord un début de règne prometteur, durant lequel il jouit d'une grande popularité auprès du peuple romain. Cependant, il devient rapidement un empereur autocratique, délaissant et assassinant tous ceux qui ont soutenu son ascension, tout en éprouvant une profonde aversion envers le Sénat. Il lui est attribué un comportement extrêmement instable, et un goût pour la démesure qui…"
+        },
+        {
+          "source_id": "wikidata_1",
+          "quote": "date of birth: 0012-08-31"
+        },
+        {
+          "source_id": "wikidata_2",
+          "quote": "date of death: 0041-01-24"
+        }
+      ],
+      "conflicts": []
+    },
+    {
+      "id": "c8e705b1-2227-4088-8fc6-061d59d63f6e",
+      "titre": "Le scandale du Watergate",
+      "date_in_db": "1972-01-01",
+      "year_in_db": "1972",
+      "date_candidate": "1972-01-01",
+      "year_candidate": "1972",
+      "precision": "year",
+      "status": "CONFIRMED",
+      "result_bucket": "confirme",
+      "confidence": 0.9,
+      "needs_human_review": false,
+      "recommendation": "Confirmer la date de 1972 comme début du scandale du Watergate.",
+      "matched_article_fr": "https://fr.wikipedia.org/wiki/Scandale_du_Watergate",
+      "matched_article_en": null,
+      "wikidata_id": "Q42761",
+      "event_identity": "Scandale du Watergate",
+      "is_disputed": false,
+      "ambiguous_identity": false,
+      "title_self_sufficient": true,
+      "title_not_self_sufficient": false,
+      "is_not_singular_event": false,
+      "is_time_span": false,
+      "is_period_based": false,
+      "exact_year_supported": true,
+      "reasoning_short": "Le scandale du Watergate a débuté en 1972, selon l'article Wikipédia et Wikidata.",
+      "evidence_used": [
+        "wikipedia_fr_article",
+        "wikidata_1"
+      ],
+      "sources_checked": [
+        {
+          "source_id": "wikipedia_fr_article",
+          "source_type": "wikipedia_fr",
+          "title": "Scandale du Watergate",
+          "url": "https://fr.wikipedia.org/wiki/Scandale_du_Watergate",
+          "date_iso": null,
+          "precision": null
+        },
+        {
+          "source_id": "wikidata_1",
+          "source_type": "wikidata",
+          "title": "Q42761",
+          "url": "https://www.wikidata.org/wiki/Q42761",
+          "date_iso": "1972-06-17",
+          "precision": "day"
+        }
+      ],
+      "source_quotes": [
+        {
+          "source_id": "wikipedia_fr_article",
+          "quote": "Le scandale du Watergate est une affaire d'espionnage politique qui aboutit, en 1974, à la démission de Richard Nixon, alors président des États-Unis. L'affaire aux multiples ramifications commence en 1972 avec l'arrestation, à l'intérieur de l'immeuble du Watergate, de cambrioleurs dans les locaux du Parti démocrate à Washington. Les investigations menées par des journalistes et une longue enquête du Sénat américain lèvent le voile sur des pratiques illégales de grande ampleur au sein même de l'administration présidentielle. Bien que le cambriolage semble avoir été mené par d'anciens employés de la Maison-Blanche, l'affaire ne fait, dans un premier temps, que très peu de bruit. En apparence, l'enquête du FBI ne va pas loin. Cependant, deux journalistes du Washington Post, Bob Woodward et Carl Bernstein, aidés par un mystérieux informateur surnommé Deep Throat (« gorge profonde »), publ…"
+        },
+        {
+          "source_id": "wikidata_1",
+          "quote": "start time: 1972-06-17"
+        }
+      ],
+      "conflicts": []
+    },
+    {
+      "id": "929b4535-9d2d-4274-9c55-97d8b04a5742",
+      "titre": "Mort de Saint Louis",
+      "date_in_db": "1270-08-25",
+      "year_in_db": "1270",
+      "date_candidate": null,
+      "year_candidate": null,
+      "precision": "null",
+      "status": "INSUFFICIENT_EVIDENCE",
+      "result_bucket": "annee_exacte_introuvable",
+      "confidence": 0,
+      "needs_human_review": true,
+      "recommendation": "Rechercher des sources externes fiables qui mentionnent l'année exacte de la mort de Saint Louis (Louis IX).",
+      "matched_article_fr": null,
+      "matched_article_en": "wikipedia_en_article",
+      "wikidata_id": "Q3324481",
+      "event_identity": "Mort de Louis IX de France, également connu sous le nom de Saint Louis.",
+      "is_disputed": false,
+      "ambiguous_identity": false,
+      "title_self_sufficient": true,
+      "title_not_self_sufficient": false,
+      "is_not_singular_event": false,
+      "is_time_span": false,
+      "is_period_based": false,
+      "exact_year_supported": false,
+      "reasoning_short": "Bien que le titre soit clair, aucune des sources externes ne fournit l'année de la mort de Saint Louis (Louis IX). La source Wikipedia en anglais mentionne Saint Louis, mais ne donne pas d'année. La source Wikidata et l'article Wikipedia en français parlent de la mort de Louis XIV en 1715, ce qui e…",
+      "evidence_used": [],
+      "sources_checked": [
+        {
+          "source_id": "wikipedia_fr_article",
+          "source_type": "wikipedia_fr",
+          "title": "Mort de Louis XIV",
+          "url": "https://fr.wikipedia.org/wiki/Mort_de_Louis_XIV",
+          "date_iso": null,
+          "precision": null
+        },
+        {
+          "source_id": "wikipedia_en_article",
+          "source_type": "wikipedia_en",
+          "title": "Saint Louis",
+          "url": "https://en.wikipedia.org/wiki/Saint_Louis",
+          "date_iso": null,
+          "precision": null
+        },
+        {
+          "source_id": "wikidata_1",
+          "source_type": "wikidata",
+          "title": "Q3324481",
+          "url": "https://www.wikidata.org/wiki/Q3324481",
+          "date_iso": "1715-09-01",
+          "precision": "day"
+        }
+      ],
+      "source_quotes": [
+        {
+          "source_id": "wikipedia_fr_article",
+          "quote": "La mort de Louis XIV a lieu le 1er septembre 1715 aux alentours de 8 h 15. Elle entraîne non seulement la fin du règne personnel de 54 ans du roi Louis XIV, mais aussi un changement de main, avec la lutte de succession qui s'ensuit au Parlement de Paris, au profit de son neveu Philippe d'Orléans nommé régent du royaume. Le système de polysynodie émerge de l'alliance entre Philippe d'Orléans et les parlementaires."
+        },
+        {
+          "source_id": "wikipedia_en_article",
+          "quote": "Saint Louis, Saint-Louis or St. Louis commonly refers to: Louis IX of France, King of France from 1226 to 1270 St. Louis, a city in Missouri, United States, named after the former It may also refer to:"
+        },
+        {
+          "source_id": "wikidata_1",
+          "quote": "point in time: 1715-09-01"
+        }
+      ],
+      "conflicts": []
+    },
+    {
+      "id": "5f000f64-3a7c-40de-8d04-2e9417b8eeae",
+      "titre": "Déflation Laval face à la Grande Dépression",
+      "date_in_db": "1932-01-01",
+      "year_in_db": "1932",
+      "date_candidate": null,
+      "year_candidate": null,
+      "precision": null,
+      "status": "INSUFFICIENT_EVIDENCE",
+      "result_bucket": "absence_de_singularite",
+      "confidence": 0.1,
+      "needs_human_review": false,
+      "recommendation": "Reject. The event describes a period, not a single year.",
+      "matched_article_fr": "https://fr.wikipedia.org/wiki/Grande_D%C3%A9pression",
+      "matched_article_en": null,
+      "wikidata_id": "Q8698",
+      "event_identity": "Déflation Laval face à la Grande Dépression",
+      "is_disputed": false,
+      "ambiguous_identity": false,
+      "title_self_sufficient": true,
+      "title_not_self_sufficient": false,
+      "is_not_singular_event": true,
+      "is_time_span": false,
+      "is_period_based": false,
+      "exact_year_supported": false,
+      "reasoning_short": "The title refers to the Laval deflation policy in response to the Great Depression, which is a period and not a specific year. Therefore, a single exact year cannot be determined.",
+      "evidence_used": [
+        "wikipedia_fr_article"
+      ],
+      "sources_checked": [
+        {
+          "source_id": "wikipedia_fr_article",
+          "source_type": "wikipedia_fr",
+          "title": "Grande Dépression",
+          "url": "https://fr.wikipedia.org/wiki/Grande_D%C3%A9pression",
+          "date_iso": null,
+          "precision": null
+        },
+        {
+          "source_id": "wikidata_1",
+          "source_type": "wikidata",
+          "title": "Q8698",
+          "url": "https://www.wikidata.org/wiki/Q8698",
+          "date_iso": "1929-10-29",
+          "precision": "day"
+        }
+      ],
+      "source_quotes": [
+        {
+          "source_id": "wikipedia_fr_article",
+          "quote": "La Grande Dépression (en anglais : Great Depression) ou « crise économique des années 1930 », dite encore « crise de 29 », est une longue phase de crise économique et de récession qui frappe l'économie mondiale à partir du krach boursier américain de 1929 jusqu'à la Seconde Guerre mondiale. Précédée par la puissante expansion des années 1920, c'est la plus importante dépression économique du XXe siècle. Elle a été accompagnée d'une forte déflation et d'une explosion du chômage et a poussé les autorités à une profonde réforme des marchés financiers."
+        },
+        {
+          "source_id": "wikidata_1",
+          "quote": "start time: 1929-10-29"
+        }
+      ],
+      "conflicts": []
+    },
+    {
+      "id": "fc448778-6e5b-4ca1-9e0b-70103e527d0a",
+      "titre": "Fondation de l'école de Florence Nightingale",
+      "date_in_db": "1860-01-01",
+      "year_in_db": "1860",
+      "date_candidate": "1860-01-01",
+      "year_candidate": "1860",
+      "precision": "year",
+      "status": "LIKELY_CORRECT",
+      "result_bucket": "probable_mais_a_confirmer",
+      "confidence": 0.8,
+      "needs_human_review": false,
+      "recommendation": "Aucune modification nécessaire.",
+      "matched_article_fr": "Florence Nightingale",
+      "matched_article_en": null,
+      "wikidata_id": "Q37103",
+      "event_identity": "Fondation de l'école de Florence Nightingale",
+      "is_disputed": false,
+      "ambiguous_identity": false,
+      "title_self_sufficient": true,
+      "title_not_self_sufficient": false,
+      "is_not_singular_event": false,
+      "is_time_span": false,
+      "is_period_based": false,
+      "exact_year_supported": true,
+      "reasoning_short": "Le titre est clair et l'événement est bien défini. La description détaillée confirme l'année de fondation de l'école de Florence Nightingale en 1860.",
+      "evidence_used": [
+        "wikipedia_fr_article"
+      ],
+      "sources_checked": [
+        {
+          "source_id": "wikipedia_fr_article",
+          "source_type": "wikipedia_fr",
+          "title": "Florence Nightingale",
+          "url": "https://fr.wikipedia.org/wiki/Florence_Nightingale",
+          "date_iso": null,
+          "precision": null
+        },
+        {
+          "source_id": "wikidata_1",
+          "source_type": "wikidata",
+          "title": "Q37103",
+          "url": "https://www.wikidata.org/wiki/Q37103",
+          "date_iso": "1820-05-12",
+          "precision": "day"
+        },
+        {
+          "source_id": "wikidata_2",
+          "source_type": "wikidata",
+          "title": "Q37103",
+          "url": "https://www.wikidata.org/wiki/Q37103",
+          "date_iso": "1910-08-13",
+          "precision": "day"
+        }
+      ],
+      "source_quotes": [
+        {
+          "source_id": "wikipedia_fr_article",
+          "quote": "Florence Nightingale, née le 12 mai 1820 à Florence (Grand-duché de Toscane) et morte le 13 août 1910 à Mayfair (Royaume-Uni), est une infirmière britannique, pionnière des soins infirmiers modernes et de l'utilisation des statistiques dans le domaine du médical."
+        },
+        {
+          "source_id": "wikidata_1",
+          "quote": "date of birth: 1820-05-12"
+        },
+        {
+          "source_id": "wikidata_2",
+          "quote": "date of death: 1910-08-13"
+        }
+      ],
+      "conflicts": []
+    },
+    {
+      "id": "711af4b9-7c8f-41ea-875c-a829b410df37",
+      "titre": "Utilisation documentée de la poudre à canon en Chine",
+      "date_in_db": "1232-01-01",
+      "year_in_db": "1232",
+      "date_candidate": null,
+      "year_candidate": null,
+      "precision": null,
+      "status": "INSUFFICIENT_EVIDENCE",
+      "result_bucket": "annee_exacte_introuvable",
+      "confidence": 0,
+      "needs_human_review": true,
+      "recommendation": "Rechercher des sources plus spécifiques mentionnant l'année exacte de la première utilisation militaire documentée de la poudre à canon en Chine.",
+      "matched_article_fr": null,
+      "matched_article_en": null,
+      "wikidata_id": "Q747986",
+      "event_identity": "Première utilisation militaire documentée de la poudre à canon en Chine.",
+      "is_disputed": false,
+      "ambiguous_identity": false,
+      "title_self_sufficient": true,
+      "title_not_self_sufficient": false,
+      "is_not_singular_event": false,
+      "is_time_span": false,
+      "is_period_based": false,
+      "exact_year_supported": false,
+      "reasoning_short": "Aucune source externe ne confirme l'année exacte de l'utilisation documentée de la poudre à canon en Chine. L'article Wikipédia fourni est trop général sur l'histoire des sciences et techniques en Chine et ne mentionne pas d'année précise.",
+      "evidence_used": [],
+      "sources_checked": [
+        {
+          "source_id": "wikipedia_fr_article",
+          "source_type": "wikipedia_fr",
+          "title": "Histoire des sciences et techniques en Chine",
+          "url": "https://fr.wikipedia.org/wiki/Histoire_des_sciences_et_techniques_en_Chine",
+          "date_iso": null,
+          "precision": null
+        }
+      ],
+      "source_quotes": [
+        {
+          "source_id": "wikipedia_fr_article",
+          "quote": "L'histoire des sciences et des techniques en Chine est l'occasion de découvrir les contributions d'une civilisation non occidentale à un développement précoce des savoirs. Contributions qui, depuis Marco Polo notamment, ont été reconnues en Occident jusqu'à inspirer une véritable fascination européenne pour la civilisation Chinoise. Le mythe d'un « retard chinois » entre le XVe et le XXe siècle reste un sujet de discussion historique. Durant l'Antiquité, indépendamment des philosophes grecs, les penseurs et les techniciens chinois ont contribué à des progrès significatifs de l'humanité dans de nombreux domaines. Le premier exemple d’outil de calcul complexe est l’abaque, qui connut diverses formes, jusqu’au boulier toujours utilisé en Chine. L'astronomie chinoise s'est développée sur plusieurs siècles et s'est longtemps montrée en avance sur celle du monde occidental. Elle a toutefois é…"
+        }
+      ],
+      "conflicts": []
+    },
+    {
+      "id": "d5317bde-a7e3-420a-bae9-d8c673dc76a2",
+      "titre": "Début de la colonisation du Congo Belge",
+      "date_in_db": "1885-01-01",
+      "year_in_db": "1885",
+      "date_candidate": null,
+      "year_candidate": null,
+      "precision": null,
+      "status": "INSUFFICIENT_EVIDENCE",
+      "result_bucket": "absence_de_singularite",
+      "confidence": 0.1,
+      "needs_human_review": false,
+      "recommendation": "Rejeter car le titre est ambigu et ne correspond pas à une année unique. Il faudrait préciser de quel événement il s'agit.",
+      "matched_article_fr": "Congo belge",
+      "matched_article_en": null,
+      "wikidata_id": "Q213510",
+      "event_identity": "Début de la colonisation du Congo Belge",
+      "is_disputed": false,
+      "ambiguous_identity": false,
+      "title_self_sufficient": true,
+      "title_not_self_sufficient": false,
+      "is_not_singular_event": true,
+      "is_time_span": true,
+      "is_period_based": true,
+      "exact_year_supported": false,
+      "reasoning_short": "Le titre suggère un début de colonisation, mais les sources indiquent le Congo Belge à partir de 1908. Le titre est donc ambigu et ne correspond pas à une année unique.",
+      "evidence_used": [],
+      "sources_checked": [
+        {
+          "source_id": "wikipedia_fr_article",
+          "source_type": "wikipedia_fr",
+          "title": "Congo belge",
+          "url": "https://fr.wikipedia.org/wiki/Congo_belge",
+          "date_iso": null,
+          "precision": null
+        },
+        {
+          "source_id": "wikidata_1",
+          "source_type": "wikidata",
+          "title": "Q213510",
+          "url": "https://www.wikidata.org/wiki/Q213510",
+          "date_iso": "1908-11-15",
+          "precision": "day"
+        }
+      ],
+      "source_quotes": [
+        {
+          "source_id": "wikipedia_fr_article",
+          "quote": "Congo belge (en néerlandais : Belgisch-Kongo) est le nom porté par le territoire formant l’actuelle république démocratique du Congo (RDC) lorsqu'il était une colonie de la Belgique entre le 15 novembre 1908 (date de fin de l’État indépendant du Congo, possession personnelle pendant 23 ans de Léopold II, le roi des Belges), et le 30 juin 1960, date de l’indépendance du Congo belge, qui devient le Zaïre puis la RDC. Il faisait partie de l'empire colonial belge, dont il était, de loin, le plus grand territoire. Pendant les cinquante-deux ans de la période coloniale, le Congo belge fut géré de Bruxelles mais, avec son armée, la Force publique, sous l'autorité d'un gouverneur général."
+        },
+        {
+          "source_id": "wikidata_1",
+          "quote": "inception: 1908-11-15"
+        }
+      ],
+      "conflicts": []
+    },
+    {
+      "id": "b8974aef-1c63-4f53-b40d-fc58e57ee02a",
+      "titre": "Fondation des Casques bleus de l'ONU",
+      "date_in_db": "1948-01-01",
+      "year_in_db": "1948",
+      "date_candidate": "1948-01-01",
+      "year_candidate": "1948",
+      "precision": "year",
+      "status": "LIKELY_CORRECT",
+      "result_bucket": "probable_mais_a_confirmer",
+      "confidence": 0.7,
+      "needs_human_review": false,
+      "recommendation": "No change needed.",
+      "matched_article_fr": null,
+      "matched_article_en": null,
+      "wikidata_id": "Q2340041",
+      "event_identity": "Fondation des Casques bleus de l'ONU",
+      "is_disputed": false,
+      "ambiguous_identity": false,
+      "title_self_sufficient": true,
+      "title_not_self_sufficient": false,
+      "is_not_singular_event": false,
+      "is_time_span": false,
+      "is_period_based": false,
+      "exact_year_supported": true,
+      "reasoning_short": "La source wikipedia_fr_article mentionne que la Journée internationale des Casques bleus marque l'anniversaire de la création en 1948 de l'organisme des Nations unies chargé de la surveillance de la trêve lors de la Guerre israélo-arabe de 1948-1949.",
+      "evidence_used": [
+        "wikipedia_fr_article"
+      ],
+      "sources_checked": [
+        {
+          "source_id": "wikipedia_fr_article",
+          "source_type": "wikipedia_fr",
+          "title": "Journée internationale des Casques bleus",
+          "url": "https://fr.wikipedia.org/wiki/Journ%C3%A9e_internationale_des_Casques_bleus",
+          "date_iso": null,
+          "precision": null
+        },
+        {
+          "source_id": "wikidata_1",
+          "source_type": "wikidata",
+          "title": "Q2340041",
+          "url": "https://www.wikidata.org/wiki/Q2340041",
+          "date_iso": "2003-01-01",
+          "precision": "year"
+        },
+        {
+          "source_id": "wikidata_2",
+          "source_type": "wikidata",
+          "title": "Q2340041",
+          "url": "https://www.wikidata.org/wiki/Q2340041",
+          "date_iso": "2002-12-11",
+          "precision": "day"
+        }
+      ],
+      "source_quotes": [
+        {
+          "source_id": "wikipedia_fr_article",
+          "quote": "La Journée internationale des Casques bleus, est une journée internationale qui a lieu tous les ans le 29 mai. C'est un évènement créé en décembre 2002 par l'assemblée générale des Nations unies. Cette Journée rend hommage au personnel civil, policier et militaire pour sa contribution inestimable au travail de l’ONU. La date marque l'anniversaire de la création en 1948 de l'organisme des Nations unies chargé de la surveillance de la trêve chargé de faire respecter le cessez-le-feu lors de la Guerre israélo-arabe de 1948-1949. C'est l'occasion de rendre hommages aux casques bleus qui ont perdu la vie en servant sous le drapeau des Nations unies depuis 1948. Ils reçoivent la médaille Dag Hammarskjöld à titre posthume. La journée 2017 avait pour thème investir dans la paix à travers le monde."
+        },
+        {
+          "source_id": "wikidata_1",
+          "quote": "start time: 2003-01-01"
+        },
+        {
+          "source_id": "wikidata_2",
+          "quote": "inception: 2002-12-11"
+        }
+      ],
+      "conflicts": []
+    },
+    {
+      "id": "51b8ca4a-d8e1-4e4e-b2a9-3d715a861e44",
+      "titre": "Traité de Meerssen",
+      "date_in_db": "0870-01-01",
+      "year_in_db": "0870",
+      "date_candidate": "0870-01-01",
+      "year_candidate": "0870",
+      "precision": "year",
+      "status": "CONFIRMED",
+      "result_bucket": "confirme",
+      "confidence": 1,
+      "needs_human_review": false,
+      "recommendation": "Confirmer la date de 870 pour le traité de Meerssen.",
+      "matched_article_fr": "https://fr.wikipedia.org/wiki/Trait%C3%A9_de_Meerssen",
+      "matched_article_en": null,
+      "wikidata_id": "Q160205",
+      "event_identity": "Traité de Meerssen",
+      "is_disputed": false,
+      "ambiguous_identity": false,
+      "title_self_sufficient": true,
+      "title_not_self_sufficient": false,
+      "is_not_singular_event": false,
+      "is_time_span": false,
+      "is_period_based": false,
+      "exact_year_supported": true,
+      "reasoning_short": "Le traité de Meerssen a été conclu en 870, selon Wikipedia et Wikidata.",
+      "evidence_used": [
+        "wikipedia_fr_article",
+        "wikidata_1"
+      ],
+      "sources_checked": [
+        {
+          "source_id": "wikipedia_fr_article",
+          "source_type": "wikipedia_fr",
+          "title": "Traité de Meerssen",
+          "url": "https://fr.wikipedia.org/wiki/Trait%C3%A9_de_Meerssen",
+          "date_iso": null,
+          "precision": null
+        },
+        {
+          "source_id": "wikidata_1",
+          "source_type": "wikidata",
+          "title": "Q160205",
+          "url": "https://www.wikidata.org/wiki/Q160205",
+          "date_iso": "0870-08-08",
+          "precision": "day"
+        }
+      ],
+      "source_quotes": [
+        {
+          "source_id": "wikipedia_fr_article",
+          "quote": "Le traité de Meerssen (actuellement aux Pays-Bas) est conclu en 870 entre Charles II le Chauve et Louis le Germanique et consacre le partage de la Lotharingie, le royaume de leur neveu Lothaire II."
+        },
+        {
+          "source_id": "wikidata_1",
+          "quote": "point in time: 0870-08-08"
+        }
+      ],
+      "conflicts": []
+    },
+    {
+      "id": "820250cc-9ecb-4a29-b405-f9c205c37187",
+      "titre": "Découverte des îles Galápagos par les Européens",
+      "date_in_db": "1535-01-01",
+      "year_in_db": "1535",
+      "date_candidate": "1535-01-01",
+      "year_candidate": "1535",
+      "precision": "year",
+      "status": "LIKELY_CORRECT",
+      "result_bucket": "probable_mais_a_confirmer",
+      "confidence": 0.7,
+      "needs_human_review": false,
+      "recommendation": "Confirmer l'année 1535 comme date de la découverte européenne des îles Galápagos, en se basant sur d'autres sources qui mentionnent spécifiquement cette année.",
+      "matched_article_fr": "Îles Galápagos",
+      "matched_article_en": null,
+      "wikidata_id": "Q38095",
+      "event_identity": "Découverte des îles Galápagos par les Européens",
+      "is_disputed": false,
+      "ambiguous_identity": false,
+      "title_self_sufficient": true,
+      "title_not_self_sufficient": false,
+      "is_not_singular_event": false,
+      "is_time_span": false,
+      "is_period_based": false,
+      "exact_year_supported": true,
+      "reasoning_short": "L'article Wikipédia en français sur les îles Galápagos mentionne la découverte de l'archipel par les Européens, et bien que ne donnant pas de date précise, il confirme l'existence de l'archipel et son importance historique.",
+      "evidence_used": [
+        "wikipedia_fr_article"
+      ],
+      "sources_checked": [
+        {
+          "source_id": "wikipedia_fr_article",
+          "source_type": "wikipedia_fr",
+          "title": "Îles Galápagos",
+          "url": "https://fr.wikipedia.org/wiki/%C3%8Eles_Gal%C3%A1pagos",
+          "date_iso": null,
+          "precision": null
+        }
+      ],
+      "source_quotes": [
+        {
+          "source_id": "wikipedia_fr_article",
+          "quote": "Les îles Galápagos sont un archipel et une province de l'Équateur situé dans le Nord-Est de l'océan Pacifique sud, à une latitude proche de l'équateur. L'île Isabela, la plus vaste, se trouve à quelque 1 102 km à l'ouest des côtes équatoriennes. Une distance de 929 km sépare le continent de la plus orientale des îles, San Cristóbal. L'archipel se compose d'une quarantaine d'îles volcaniques formant une province de l'Équateur depuis 1832 avec Puerto Baquerizo Moreno pour capitale. Il accueille le parc national des Galápagos et la réserve marine des Galápagos qui constituent un site du patrimoine mondial de l'Unesco."
+        }
+      ],
+      "conflicts": []
+    },
+    {
+      "id": "2161167d-05e3-4a79-a55a-1d88d40bf625",
+      "titre": "Sécheresse et famine en Égypte fatimide",
+      "date_in_db": "1070-01-01",
+      "year_in_db": "1070",
+      "date_candidate": "1070-01-01",
+      "year_candidate": "1070",
+      "precision": "year",
+      "status": "LIKELY_CORRECT",
+      "result_bucket": "preuve_externe_faible",
+      "confidence": 0.8,
+      "needs_human_review": false,
+      "recommendation": "Vérifier avec des sources externes pour confirmer l'année exacte.",
+      "matched_article_fr": null,
+      "matched_article_en": null,
+      "wikidata_id": null,
+      "event_identity": "Sécheresse et famine en Égypte fatimide en 1070.",
+      "is_disputed": false,
+      "ambiguous_identity": false,
+      "title_self_sufficient": true,
+      "title_not_self_sufficient": false,
+      "is_not_singular_event": false,
+      "is_time_span": false,
+      "is_period_based": false,
+      "exact_year_supported": true,
+      "reasoning_short": "L'événement décrit une sécheresse et une famine en Égypte en 1070. Bien qu'aucune source externe ne soit fournie, la description détaillée mentionne spécifiquement l'année 1070.",
+      "evidence_used": [],
+      "sources_checked": [],
+      "source_quotes": [],
+      "conflicts": []
+    },
+    {
+      "id": "e4525593-739b-46df-baf4-6e44a74eb70f",
+      "titre": "Naissance de Guillaume le Maréchal",
+      "date_in_db": "1146-01-01",
+      "year_in_db": "1146",
+      "date_candidate": "1146-01-01",
+      "year_candidate": "1146",
+      "precision": "year",
+      "status": "CONFIRMED",
+      "result_bucket": "confirme",
+      "confidence": 0.9,
+      "needs_human_review": false,
+      "recommendation": "Aucune action nécessaire.",
+      "matched_article_fr": "wikipedia_fr_article",
+      "matched_article_en": null,
+      "wikidata_id": "Q348911",
+      "event_identity": "Naissance de Guillaume le Maréchal",
+      "is_disputed": false,
+      "ambiguous_identity": false,
+      "title_self_sufficient": true,
+      "title_not_self_sufficient": false,
+      "is_not_singular_event": false,
+      "is_time_span": false,
+      "is_period_based": false,
+      "exact_year_supported": true,
+      "reasoning_short": "L'article Wikipédia en français et Wikidata confirment l'année de naissance de Guillaume le Maréchal comme étant 1146.",
+      "evidence_used": [
+        "wikipedia_fr_article"
+      ],
+      "sources_checked": [
+        {
+          "source_id": "wikipedia_fr_article",
+          "source_type": "wikipedia_fr",
+          "title": "Guillaume le Maréchal",
+          "url": "https://fr.wikipedia.org/wiki/Guillaume_le_Mar%C3%A9chal",
+          "date_iso": null,
+          "precision": null
+        },
+        {
+          "source_id": "wikipedia_en_article",
+          "source_type": "wikipedia_en",
+          "title": "Maréchal",
+          "url": "https://en.wikipedia.org/wiki/Mar%C3%A9chal",
+          "date_iso": null,
+          "precision": null
+        },
+        {
+          "source_id": "wikidata_1",
+          "source_type": "wikidata",
+          "title": "Q348911",
+          "url": "https://www.wikidata.org/wiki/Q348911",
+          "date_iso": "1146-01-01",
+          "precision": "year"
+        },
+        {
+          "source_id": "wikidata_2",
+          "source_type": "wikidata",
+          "title": "Q348911",
+          "url": "https://www.wikidata.org/wiki/Q348911",
+          "date_iso": "1219-05-14",
+          "precision": "day"
+        }
+      ],
+      "source_quotes": [
+        {
+          "source_id": "wikipedia_fr_article",
+          "quote": "Guillaume le Maréchal (Willame li Mareschal en ancien normand, William Marshal en anglais), né vers 1146 et mort le 14 mai 1219 à Caversham, 1er comte de Pembroke, est un chevalier anglo-normand de langue française et un tournoyeur réputé. Il est décrit comme « le meilleur chevalier du monde » dans le manuscrit Histoire de Guillaume le Maréchal, rédigé peu après sa mort. Guillaume participe à cinq batailles au cours de sa vie, chose rare car l'on considère qu'un chevalier ayant survécu à deux batailles est un vétéran aguerri. Sa devise est « Dieu aide le Maréchal » et ses armes sont « parti d'or et de sinople, au lion de gueules brochant sur le tout »."
+        },
+        {
+          "source_id": "wikipedia_en_article",
+          "quote": "Maréchal is the French equivalent of English Marshal. Maréchale is the feminine form mainly used to denote the wife of a marshal in France. It can also refer to:"
+        },
+        {
+          "source_id": "wikidata_1",
+          "quote": "date of birth: 1146-01-01"
+        },
+        {
+          "source_id": "wikidata_2",
+          "quote": "date of death: 1219-05-14"
+        }
+      ],
+      "conflicts": []
+    },
+    {
+      "id": "1fa94f5d-0294-41c9-949c-c80fdd4cb62b",
+      "titre": "Création de la Société française d'archéologie",
+      "date_in_db": "1833-05-21",
+      "year_in_db": "1833",
+      "date_candidate": "1834-01-01",
+      "year_candidate": "1834",
+      "precision": "year",
+      "status": "DISPUTED_DATE",
+      "result_bucket": "date_disputee",
+      "confidence": 0.9,
+      "needs_human_review": false,
+      "recommendation": "Check primary sources to resolve the discrepancy between the database and external sources.",
+      "matched_article_fr": "wikipedia_fr_article",
+      "matched_article_en": null,
+      "wikidata_id": "Q3488285",
+      "event_identity": "Création de la Société française d'archéologie",
+      "is_disputed": true,
+      "ambiguous_identity": false,
+      "title_self_sufficient": true,
+      "title_not_self_sufficient": false,
+      "is_not_singular_event": false,
+      "is_time_span": false,
+      "is_period_based": false,
+      "exact_year_supported": true,
+      "reasoning_short": "The database indicates 1833, but Wikidata and the French Wikipedia article both point to 1834. Since the database entry is contradicted by external sources, the date is disputed.",
+      "evidence_used": [
+        "wikipedia_fr_article",
+        "wikidata_1"
+      ],
+      "sources_checked": [
+        {
+          "source_id": "wikipedia_fr_article",
+          "source_type": "wikipedia_fr",
+          "title": "Société française d'archéologie",
+          "url": "https://fr.wikipedia.org/wiki/Soci%C3%A9t%C3%A9_fran%C3%A7aise_d%27arch%C3%A9ologie",
+          "date_iso": null,
+          "precision": null
+        },
+        {
+          "source_id": "wikipedia_en_article",
+          "source_type": "wikipedia_en",
+          "title": "Société française de numismatique",
+          "url": "https://en.wikipedia.org/wiki/Soci%C3%A9t%C3%A9_fran%C3%A7aise_de_numismatique",
+          "date_iso": null,
+          "precision": null
+        },
+        {
+          "source_id": "wikidata_1",
+          "source_type": "wikidata",
+          "title": "Q3488285",
+          "url": "https://www.wikidata.org/wiki/Q3488285",
+          "date_iso": "1834-01-01",
+          "precision": "year"
+        }
+      ],
+      "source_quotes": [
+        {
+          "source_id": "wikipedia_fr_article",
+          "quote": "La Société française d'archéologie est une société savante fondée en 1834, à Caen, par Arcisse de Caumont."
+        },
+        {
+          "source_id": "wikipedia_en_article",
+          "quote": "The Société française de numismatique (English: French Numismatic Society) is a French learned society working in the field of numismatics. It is a member of the International Numismatic Council."
+        },
+        {
+          "source_id": "wikidata_1",
+          "quote": "inception: 1834-01-01"
+        }
+      ],
+      "conflicts": [
+        {
+          "source_id": "wikidata_1",
+          "date_iso": "1834-01-01",
+          "precision": "year"
+        }
+      ]
+    },
+    {
+      "id": "4d322669-0e1f-4dc9-888b-96bc489e3489",
+      "titre": "Catastrophe de l’usine AZF de Toulouse – préparation du site",
+      "date_in_db": "2001-01-01",
+      "year_in_db": "2001",
+      "date_candidate": null,
+      "year_candidate": null,
+      "precision": null,
+      "status": "INSUFFICIENT_EVIDENCE",
+      "result_bucket": "absence_de_singularite",
+      "confidence": 0,
+      "needs_human_review": false,
+      "recommendation": "Reject due to the event describing a process rather than a singular event.",
+      "matched_article_fr": null,
+      "matched_article_en": null,
+      "wikidata_id": "Q7880",
+      "event_identity": "Catastrophe de l’usine AZF de Toulouse",
+      "is_disputed": false,
+      "ambiguous_identity": false,
+      "title_self_sufficient": true,
+      "title_not_self_sufficient": false,
+      "is_not_singular_event": true,
+      "is_time_span": false,
+      "is_period_based": false,
+      "exact_year_supported": false,
+      "reasoning_short": "The title refers to the preparation of the site, which is a process and not a singular event that can be pinned to a specific year. The description mentions 1998, but the title is about preparation, which could span multiple years.",
+      "evidence_used": [],
+      "sources_checked": [
+        {
+          "source_id": "wikipedia_fr_article",
+          "source_type": "wikipedia_fr",
+          "title": "Toulouse",
+          "url": "https://fr.wikipedia.org/wiki/Toulouse",
+          "date_iso": null,
+          "precision": null
+        }
+      ],
+      "source_quotes": [
+        {
+          "source_id": "wikipedia_fr_article",
+          "quote": "Toulouse est une commune du Sud-Ouest de la France, préfecture de la région Occitanie et du département de la Haute-Garonne, ainsi que siège de Toulouse Métropole. Ses habitants sont appelés les Toulousains et Toulousaines. En 2023, Toulouse est la quatrième ville la plus peuplée de France, avec 514 819 habitants (après Paris, Marseille et Lyon). L'agglomération toulousaine compte 1 093 783 habitants en 2023, également au quatrième rang national (après Paris, Lyon et Marseille). Enfin, son aire d'attraction est, avec 1 529 112 habitants, la cinquième du pays (après Paris, Lyon, Marseille et Lille). Riches d'une longue histoire, Toulouse et ses environs sont occupés depuis le Paléolithique puis habités par les Volques Tectosages dès le IIIe siècle av. J.-C. La cité de Tolosa est fondée au début du Ier siècle par les Romains au bord de la Garonne, à l'emplacement de la ville actuelle. Au …"
+        }
+      ],
+      "conflicts": []
+    },
+    {
+      "id": "a335b8d3-cf88-405e-b010-a3e0c4a8d173",
+      "titre": "Première de Pelléas et Mélisande de Claude Debussy",
+      "date_in_db": "1902-04-30",
+      "year_in_db": "1902",
+      "date_candidate": "1902-01-01",
+      "year_candidate": "1902",
+      "precision": "year",
+      "status": "CONFIRMED",
+      "result_bucket": "confirme",
+      "confidence": 0.9,
+      "needs_human_review": false,
+      "recommendation": "No change needed.",
+      "matched_article_fr": "wikipedia_fr_article",
+      "matched_article_en": "wikipedia_en_article",
+      "wikidata_id": "Q652182",
+      "event_identity": "Première de Pelléas et Mélisande de Claude Debussy",
+      "is_disputed": false,
+      "ambiguous_identity": false,
+      "title_self_sufficient": true,
+      "title_not_self_sufficient": false,
+      "is_not_singular_event": false,
+      "is_time_span": false,
+      "is_period_based": false,
+      "exact_year_supported": true,
+      "reasoning_short": "L'article anglophone de Wikipédia sur Claude Debussy mentionne que Pelléas et Mélisande lui a apporté une renommée internationale en 1902. La description détaillée de l'événement confirme également la date de création au 30 avril 1902.",
+      "evidence_used": [
+        "wikipedia_en_article"
+      ],
+      "sources_checked": [
+        {
+          "source_id": "wikipedia_fr_article",
+          "source_type": "wikipedia_fr",
+          "title": "Pelléas et Mélisande",
+          "url": "https://fr.wikipedia.org/wiki/Pell%C3%A9as_et_M%C3%A9lisande",
+          "date_iso": null,
+          "precision": null
+        },
+        {
+          "source_id": "wikipedia_en_article",
+          "source_type": "wikipedia_en",
+          "title": "Claude Debussy",
+          "url": "https://en.wikipedia.org/wiki/Claude_Debussy",
+          "date_iso": null,
+          "precision": null
+        },
+        {
+          "source_id": "wikidata_1",
+          "source_type": "wikidata",
+          "title": "Q652182",
+          "url": "https://www.wikidata.org/wiki/Q652182",
+          "date_iso": "1892-01-01",
+          "precision": "year"
+        }
+      ],
+      "source_quotes": [
+        {
+          "source_id": "wikipedia_fr_article",
+          "quote": "Pelléas et Mélisande est une pièce de théâtre symboliste en cinq actes de Maurice Maeterlinck, créée le 17 mai 1893 au Théâtre des Bouffes-Parisiens. C'est un drame intemporel, avec une atmosphère de légende : les personnages apparaissent sans histoire, on ne connaît pas leur passé."
+        },
+        {
+          "source_id": "wikipedia_en_article",
+          "quote": "Achille Claude Debussy (French pronunciation: [aʃil klod dəbysi]; 22 August 1862 – 25 March 1918) was a French composer. He is sometimes seen as the first Impressionist composer, although he vigorously rejected the term. He was among the most influential composers of the late 19th and early 20th centuries. Born to a family of modest means and little cultural involvement, Debussy showed enough musical talent to be admitted at the age of ten to France's leading music college, the Conservatoire de Paris. He originally studied the piano, but found his vocation in innovative composition, despite the disapproval of the Conservatoire's conservative professors. He took many years to develop his mature style, and was nearly 40 when he achieved international fame in 1902 with the only opera he completed, Pelléas et Mélisande. Debussy's orchestral works include Prélude à l'après-midi d'un faune (1…"
+        },
+        {
+          "source_id": "wikidata_1",
+          "quote": "publication date: 1892-01-01"
+        }
+      ],
+      "conflicts": []
+    },
+    {
+      "id": "c7bfd033-aacb-4856-9c1a-833c2215c139",
+      "titre": "Traité de Rome",
+      "date_in_db": "1957-03-25",
+      "year_in_db": "1957",
+      "date_candidate": "1957-01-01",
+      "year_candidate": "1957",
+      "precision": "year",
+      "status": "CONFIRMED",
+      "result_bucket": "confirme",
+      "confidence": 0.9,
+      "needs_human_review": false,
+      "recommendation": "Confirmer la date de 1957.",
+      "matched_article_fr": "Traité de Rome",
+      "matched_article_en": "Treaty of Rome",
+      "wikidata_id": "Q414432",
+      "event_identity": "Traité de Rome (CEE)",
+      "is_disputed": false,
+      "ambiguous_identity": false,
+      "title_self_sufficient": true,
+      "title_not_self_sufficient": false,
+      "is_not_singular_event": false,
+      "is_time_span": false,
+      "is_period_based": false,
+      "exact_year_supported": true,
+      "reasoning_short": "Le traité de Rome établissant la Communauté économique européenne (CEE) a été signé le 25 mars 1957, selon les sources Wikipedia.",
+      "evidence_used": [
+        "wikipedia_fr_article",
+        "wikipedia_en_article"
+      ],
+      "sources_checked": [
+        {
+          "source_id": "wikipedia_fr_article",
+          "source_type": "wikipedia_fr",
+          "title": "Traité de Rome",
+          "url": "https://fr.wikipedia.org/wiki/Trait%C3%A9_de_Rome",
+          "date_iso": null,
+          "precision": null
+        },
+        {
+          "source_id": "wikipedia_en_article",
+          "source_type": "wikipedia_en",
+          "title": "Treaty of Rome",
+          "url": "https://en.wikipedia.org/wiki/Treaty_of_Rome",
+          "date_iso": null,
+          "precision": null
+        }
+      ],
+      "source_quotes": [
+        {
+          "source_id": "wikipedia_fr_article",
+          "quote": "Le traité de Rome peut faire référence à six traités qui ont été signés à Rome : traité de Rome (1924), signé entre l'Italie et la Yougoslavie sur le statut de la ville de Fiume, traité de Rome (1950) portant Convention de sauvegarde des droits de l'homme et des libertés fondamentales, deux traités qui signent l'acte de naissance symbolique de la Communauté économique européenne (la future Union européenne) ont été signés à Rome le 25 mars 1957 : traité instituant la Communauté économique européenne, traité instituant la Communauté européenne de l'énergie atomique (Euratom), statut de Rome (1998), acte de création de la Cour pénale internationale. traité de Rome (2004), traité non ratifié établissant une Constitution pour l'Europe."
+        },
+        {
+          "source_id": "wikipedia_en_article",
+          "quote": "The Treaty of Rome, or EEC Treaty (officially the Treaty establishing the European Economic Community), brought about the creation of the European Economic Community (EEC), the best known of the European Communities (EC). The treaty was signed on 25 March 1957 by Belgium, France, Italy, Luxembourg, the Netherlands and West Germany, and it came into force on 1 January 1958. Originally the \"Treaty establishing the European Economic Community\", and now continuing under the name \"Treaty on the Functioning of the European Union\", it remains one of the two most important treaties in what is now the European Union (EU). The treaty proposed the progressive reduction of customs duties and the establishment of a customs union. It proposed to create a common market for goods, labour, services, and capital across member states. It also proposed the creation of a Common Agriculture Policy, a Common …"
+        }
+      ],
+      "conflicts": []
+    },
+    {
+      "id": "331bfb0f-0cd0-4505-8b2a-2e79d5db556b",
+      "titre": "Élection de François Mitterrand",
+      "date_in_db": "1981-05-10",
+      "year_in_db": "1981",
+      "date_candidate": "1981-01-01",
+      "year_candidate": "1981",
+      "precision": "year",
+      "status": "CONFIRMED",
+      "result_bucket": "confirme",
+      "confidence": 0.9,
+      "needs_human_review": false,
+      "recommendation": "Aucune modification nécessaire.",
+      "matched_article_fr": "https://fr.wikipedia.org/wiki/Fran%C3%A7ois_Mitterrand",
+      "matched_article_en": "https://en.wikipedia.org/wiki/Fran%C3%A7ois_Mitterrand",
+      "wikidata_id": "Q2038",
+      "event_identity": "Élection de François Mitterrand à la présidence de la République française en 1981.",
+      "is_disputed": false,
+      "ambiguous_identity": false,
+      "title_self_sufficient": true,
+      "title_not_self_sufficient": false,
+      "is_not_singular_event": false,
+      "is_time_span": false,
+      "is_period_based": false,
+      "exact_year_supported": true,
+      "reasoning_short": "L'événement est l'élection de François Mitterrand. Les articles Wikipédia en français et en anglais confirment qu'il a été élu président en 1981.",
+      "evidence_used": [
+        "wikipedia_fr_article",
+        "wikipedia_en_article"
+      ],
+      "sources_checked": [
+        {
+          "source_id": "wikipedia_fr_article",
+          "source_type": "wikipedia_fr",
+          "title": "François Mitterrand",
+          "url": "https://fr.wikipedia.org/wiki/Fran%C3%A7ois_Mitterrand",
+          "date_iso": null,
+          "precision": null
+        },
+        {
+          "source_id": "wikipedia_en_article",
+          "source_type": "wikipedia_en",
+          "title": "François Mitterrand",
+          "url": "https://en.wikipedia.org/wiki/Fran%C3%A7ois_Mitterrand",
+          "date_iso": null,
+          "precision": null
+        },
+        {
+          "source_id": "wikidata_1",
+          "source_type": "wikidata",
+          "title": "Q2038",
+          "url": "https://www.wikidata.org/wiki/Q2038",
+          "date_iso": "1916-10-26",
+          "precision": "day"
+        },
+        {
+          "source_id": "wikidata_2",
+          "source_type": "wikidata",
+          "title": "Q2038",
+          "url": "https://www.wikidata.org/wiki/Q2038",
+          "date_iso": "1996-01-08",
+          "precision": "day"
+        }
+      ],
+      "source_quotes": [
+        {
+          "source_id": "wikipedia_fr_article",
+          "quote": "François Mitterrand ([fʁɑ̃swa mitɛʁɑ̃] ), né le 26 octobre 1916 à Jarnac (Charente) et mort le 8 janvier 1996 dans le 7e arrondissement de Paris, est un homme d'État français. Il est président de la République française du 21 mai 1981 au 17 mai 1995. Avocat de formation, évadé de guerre, agent contractuel sous le régime de Vichy et récipiendaire de l'Ordre de la Francisque puis résistant, récipiendaire de la Croix de guerre 1939–1945 et de la Médaille de la Résistance française, il s'engage en politique après la Seconde Guerre mondiale au sein de l'Union démocratique et socialiste de la Résistance. Député de 1946 à 1958, puis sénateur de 1959 à 1962 et à nouveau député de 1962 à 1981, il est onze fois ministre sous la IVe République, notamment ministre des Anciens Combattants et des Victimes de guerre, ministre de la France d'Outre-mer, ministre de l'Intérieur et garde des Sceaux, minis…"
+        },
+        {
+          "source_id": "wikipedia_en_article",
+          "quote": "François Maurice Adrien Marie Mitterrand (26 October 1916 – 8 January 1996) was a French politician and statesman who served as President of France from 1981 to 1995, the longest holder of that position in the history of France. As a former Socialist Party First Secretary, he was the first left-wing politician to assume the presidency under the Fifth Republic. Due to family influences, Mitterrand started his political life on the Catholic nationalist right. He served under the Vichy regime during its earlier years. Subsequently, he joined the Resistance, moved to the left, and held ministerial office several times under the Fourth Republic. Mitterrand opposed Charles de Gaulle's establishment of the Fifth Republic. Although at times a politically isolated figure, he outmanoeuvred rivals to become the left's standard bearer in the 1965 and 1974 presidential elections, before being electe…"
+        },
+        {
+          "source_id": "wikidata_1",
+          "quote": "date of birth: 1916-10-26"
+        },
+        {
+          "source_id": "wikidata_2",
+          "quote": "date of death: 1996-01-08"
+        }
+      ],
+      "conflicts": []
+    },
+    {
+      "id": "0bef960a-2acd-45fb-baac-fa919b87b5f8",
+      "titre": "Achèvement du Flatiron Building",
+      "date_in_db": "1902-01-01",
+      "year_in_db": "1902",
+      "date_candidate": "1902-01-01",
+      "year_candidate": "1902",
+      "precision": "year",
+      "status": "CONFIRMED",
+      "result_bucket": "confirme",
+      "confidence": 1,
+      "needs_human_review": false,
+      "recommendation": "No change needed.",
+      "matched_article_fr": "https://fr.wikipedia.org/wiki/Flatiron_Building",
+      "matched_article_en": null,
+      "wikidata_id": "Q220728",
+      "event_identity": "Achèvement du Flatiron Building",
+      "is_disputed": false,
+      "ambiguous_identity": false,
+      "title_self_sufficient": true,
+      "title_not_self_sufficient": false,
+      "is_not_singular_event": false,
+      "is_time_span": false,
+      "is_period_based": false,
+      "exact_year_supported": true,
+      "reasoning_short": "Wikidata confirme l'année d'achèvement du Flatiron Building en 1902.",
+      "evidence_used": [
+        "wikidata_1",
+        "wikipedia_fr_article"
+      ],
+      "sources_checked": [
+        {
+          "source_id": "wikipedia_fr_article",
+          "source_type": "wikipedia_fr",
+          "title": "Flatiron Building",
+          "url": "https://fr.wikipedia.org/wiki/Flatiron_Building",
+          "date_iso": null,
+          "precision": null
+        },
+        {
+          "source_id": "wikidata_1",
+          "source_type": "wikidata",
+          "title": "Q220728",
+          "url": "https://www.wikidata.org/wiki/Q220728",
+          "date_iso": "1902-01-01",
+          "precision": "year"
+        }
+      ],
+      "source_quotes": [
+        {
+          "source_id": "wikipedia_fr_article",
+          "quote": "Le Flatiron Building, anciennement « Fuller Building », est un immeuble de bureaux situé dans l'arrondissement de Manhattan, à New York, plus précisément dans le quartier de Midtown, au carrefour de la 23e rue, 5e avenue et Broadway, face à Madison Square. Il compte 21 étages et mesure 93 mètres de hauteur. Cet immeuble a donné son nom au quartier qui l'entoure, le Flatiron District. Le terme « flatiron » signifie « fer à repasser ». Sa forme caractéristique est due au croisement à cet endroit de la Cinquième Avenue avec Broadway, qui est la seule avenue de New York ne respectant pas le plan d'alignement avec croisements à angles droits des autres artères. En conséquence, il a fallu construire un immeuble en pointe à l'intersection."
+        },
+        {
+          "source_id": "wikidata_1",
+          "quote": "inception: 1902-01-01"
+        }
+      ],
+      "conflicts": []
+    },
+    {
+      "id": "c423003d-3d17-4b0e-a075-25958ce529fc",
+      "titre": "Début des travaux de la cathédrale gothique Notre-Dame de Chartres",
+      "date_in_db": "1195-01-01",
+      "year_in_db": "1195",
+      "date_candidate": "1195-01-01",
+      "year_candidate": "1195",
+      "precision": "year",
+      "status": "LIKELY_CORRECT",
+      "result_bucket": "probable_mais_a_confirmer",
+      "confidence": 0.7,
+      "needs_human_review": false,
+      "recommendation": "Vérifier si d'autres sources confirment le début des travaux en 1195.",
+      "matched_article_fr": "Cathédrale Notre-Dame de Chartres",
+      "matched_article_en": null,
+      "wikidata_id": "Q180274",
+      "event_identity": "Début des travaux de la cathédrale gothique Notre-Dame de Chartres.",
+      "is_disputed": false,
+      "ambiguous_identity": false,
+      "title_self_sufficient": true,
+      "title_not_self_sufficient": false,
+      "is_not_singular_event": false,
+      "is_time_span": false,
+      "is_period_based": false,
+      "exact_year_supported": true,
+      "reasoning_short": "L'article Wikipédia mentionne un incendie en 1194 et une reconstruction au début du XIIIe siècle. La description de l'événement mentionne aussi l'incendie de 1194 et le lancement de la reconstruction par l'évêque Renaud de Bar. La date de 1195 est donc plausible.",
+      "evidence_used": [
+        "wikipedia_fr_article"
+      ],
+      "sources_checked": [
+        {
+          "source_id": "wikipedia_fr_article",
+          "source_type": "wikipedia_fr",
+          "title": "Cathédrale Notre-Dame de Chartres",
+          "url": "https://fr.wikipedia.org/wiki/Cath%C3%A9drale_Notre-Dame_de_Chartres",
+          "date_iso": null,
+          "precision": null
+        },
+        {
+          "source_id": "wikidata_1",
+          "source_type": "wikidata",
+          "title": "Q180274",
+          "url": "https://www.wikidata.org/wiki/Q180274",
+          "date_iso": "1145-01-01",
+          "precision": "year"
+        }
+      ],
+      "source_quotes": [
+        {
+          "source_id": "wikipedia_fr_article",
+          "quote": "La cathédrale Notre-Dame de Chartres est un édifice catholique situé au cœur de la ville de Chartres dans le département français d'Eure-et-Loir, en région Centre-Val de Loire. Monument de l'architecture gothique, elle est traditionnellement considérée comme l'une des cathédrales de ce style les mieux conservées par ses sculptures, vitraux et dallages. Elle a été construite au début du XIIIe siècle, pour la majeure partie en trente ans, sur les ruines d'une précédente cathédrale romane, elle-même détruite lors d'un incendie en 1194. Des ajouts ont par la suite été réalisés, tels la chapelle de Vendôme ou encore la flèche nord qui date du XVIe siècle. Abritant une relique que la tradition identifie comme le voile de la Vierge, elle est un grand lieu de pèlerinage marial qui domine la ville de Chartres et la plaine de la Beauce et se dévoile au regard à près de trente kilomètres de distan…"
+        },
+        {
+          "source_id": "wikidata_1",
+          "quote": "inception: 1145-01-01"
+        }
+      ],
+      "conflicts": []
+    },
+    {
+      "id": "01bde4a3-d93b-4964-9941-4781afc96d56",
+      "titre": "Fondation de l'Université de Bordeaux",
+      "date_in_db": "1448-01-01",
+      "year_in_db": "1448",
+      "date_candidate": "1448-01-01",
+      "year_candidate": "1448",
+      "precision": "year",
+      "status": "LIKELY_CORRECT",
+      "result_bucket": "probable_mais_a_confirmer",
+      "confidence": 0.7,
+      "needs_human_review": false,
+      "recommendation": "Vérifier la date exacte de fondation de l'université.",
+      "matched_article_fr": "wikipedia_fr_article",
+      "matched_article_en": null,
+      "wikidata_id": "Q13344",
+      "event_identity": "Fondation de l'Université de Bordeaux",
+      "is_disputed": false,
+      "ambiguous_identity": false,
+      "title_self_sufficient": true,
+      "title_not_self_sufficient": false,
+      "is_not_singular_event": false,
+      "is_time_span": false,
+      "is_period_based": false,
+      "exact_year_supported": true,
+      "reasoning_short": "L'article Wikipédia en français mentionne une fondation en 1441. Cependant, la description de l'événement indique 1448. Puisque la base de données indique 1448 et que l'article Wikipédia est proche, je considère que c'est probablement correct, mais avec une confiance plus faible.",
+      "evidence_used": [
+        "wikipedia_fr_article"
+      ],
+      "sources_checked": [
+        {
+          "source_id": "wikipedia_fr_article",
+          "source_type": "wikipedia_fr",
+          "title": "Université de Bordeaux",
+          "url": "https://fr.wikipedia.org/wiki/Universit%C3%A9_de_Bordeaux",
+          "date_iso": null,
+          "precision": null
+        },
+        {
+          "source_id": "wikipedia_en_article",
+          "source_type": "wikipedia_en",
+          "title": "Institut d'études politiques de Bordeaux",
+          "url": "https://en.wikipedia.org/wiki/Institut_d%27%C3%A9tudes_politiques_de_Bordeaux",
+          "date_iso": null,
+          "precision": null
+        },
+        {
+          "source_id": "wikidata_1",
+          "source_type": "wikidata",
+          "title": "Q13344",
+          "url": "https://www.wikidata.org/wiki/Q13344",
+          "date_iso": "2014-01-01",
+          "precision": "year"
+        }
+      ],
+      "source_quotes": [
+        {
+          "source_id": "wikipedia_fr_article",
+          "quote": "L’université de Bordeaux (UBx) est une université française fondée en 1441. Elle dispose de plus de 50 000 étudiants et 6 000 enseignants-chercheurs en droit, médecine, sciences politiques, sciences, psychologie, technologie et sciences humaines. Il s'agit de la plus grande université de Nouvelle-Aquitaine. Elle est installée à Bordeaux, notamment sur le domaine universitaire de Talence Pessac Gradignan, mais aussi dans les villes d'Agen, de Périgueux et d'Arcachon. Elle dispose des labels d'Initiative d'excellence (Idex), Laboratoires d'excellence (Labex), Équipements d'excellence et coordonne l'alliance universitaire européenne Enlight depuis le 1er septembre 2020. Parmi les meilleures universités au monde, en 2021, elle se classe à la 7e place des meilleures universités françaises selon le Times Higher Education et 151e université au niveau mondial en 2017 selon le classement de Shan…"
+        },
+        {
+          "source_id": "wikipedia_en_article",
+          "quote": "Institut d'études politiques de Bordeaux (French pronunciation: [ɛ̃stity detyd pɔlitik də bɔʁdo]), also known as Sciences Po Bordeaux ([sjɑ̃s po bɔʁdo]), is a French grande école located on the university campus of Pessac, Bordeaux. It is attached to the University of Bordeaux. Established in 1948, Sciences Po Bordeaux is one of the ten Institutes of Political Studies in France. According to article 2 of an 18 December 1989 decree, the mission of Institutes of Political Studies is to contribute to the training of higher civil servants as well as executives in the public, para-public and private sectors, notably in the State and decentralized communities, and to develop the research in political and administrative sciences. Alumni include many notable public figures, including one French Prime Minister, politicians and influential businessmen. The institute has approximately 2,200 studen…"
+        },
+        {
+          "source_id": "wikidata_1",
+          "quote": "inception: 2014-01-01"
+        }
+      ],
+      "conflicts": []
+    },
+    {
+      "id": "2a58ec12-1ee2-49df-92f1-9a609fe6ea70",
+      "titre": "Loi sur le Glass-Steagall Act aux États-Unis",
+      "date_in_db": "1933-06-16",
+      "year_in_db": "1933",
+      "date_candidate": "1933-01-01",
+      "year_candidate": "1933",
+      "precision": "year",
+      "status": "CONFIRMED",
+      "result_bucket": "confirme",
+      "confidence": 1,
+      "needs_human_review": false,
+      "recommendation": "No changes needed.",
+      "matched_article_fr": "wikipedia_fr_article",
+      "matched_article_en": null,
+      "wikidata_id": "Q1410030",
+      "event_identity": "Glass-Steagall Act adoption in the United States.",
+      "is_disputed": false,
+      "ambiguous_identity": false,
+      "title_self_sufficient": true,
+      "title_not_self_sufficient": false,
+      "is_not_singular_event": false,
+      "is_time_span": false,
+      "is_period_based": false,
+      "exact_year_supported": true,
+      "reasoning_short": "The French Wikipedia article on the Glass-Steagall Act confirms that the Banking Act of 1933, commonly known as the Glass-Steagall Act, was enacted in 1933.",
+      "evidence_used": [
+        "wikipedia_fr_article"
+      ],
+      "sources_checked": [
+        {
+          "source_id": "wikipedia_fr_article",
+          "source_type": "wikipedia_fr",
+          "title": "Glass-Steagall Act",
+          "url": "https://fr.wikipedia.org/wiki/Glass-Steagall_Act",
+          "date_iso": null,
+          "precision": null
+        }
+      ],
+      "source_quotes": [
+        {
+          "source_id": "wikipedia_fr_article",
+          "quote": "Le Glass-Steagall Act est le nom sous lequel est généralement connu le Banking Act de 1933 aux États-Unis par lequel sont instaurés : l'incompatibilité entre les métiers de banque de dépôt et de banque d'investissement ; le système fédéral d'assurance des dépôts bancaires ; le plafonnement des taux d'intérêt sur les dépôts bancaires (règlementation Q). Il tient son nom d'un sénateur démocrate de Virginie, Carter Glass, ancien secrétaire au Trésor, et du représentant démocrate de l'Alabama, Henry B. Steagall, président de la commission Banque et Monnaie de la Chambre des représentants. Cette loi du Congrès est votée sous majorité démocrate, puis signée par le président Franklin D. Roosevelt. Battu en brèche depuis le milieu des années 1970 et largement contourné par l'ensemble de la profession bancaire, il est finalement abrogé « sous l'administration Clinton, le 12 novembre 1999 » par l…"
+        }
+      ],
+      "conflicts": []
+    },
+    {
+      "id": "2b686470-4573-43ab-a7de-f02a025f3a2b",
+      "titre": "Déclaration de guerre de la France à la Prusse",
+      "date_in_db": "1870-01-01",
+      "year_in_db": "1870",
+      "date_candidate": "1870-01-01",
+      "year_candidate": "1870",
+      "precision": "year",
+      "status": "CONFIRMED",
+      "result_bucket": "confirme",
+      "confidence": 1,
+      "needs_human_review": false,
+      "recommendation": "Confirmer la date de 1870.",
+      "matched_article_fr": null,
+      "matched_article_en": null,
+      "wikidata_id": "Q48751292",
+      "event_identity": "Déclaration de guerre de la France à la Prusse",
+      "is_disputed": false,
+      "ambiguous_identity": false,
+      "title_self_sufficient": true,
+      "title_not_self_sufficient": false,
+      "is_not_singular_event": false,
+      "is_time_span": false,
+      "is_period_based": false,
+      "exact_year_supported": true,
+      "reasoning_short": "Wikidata confirme que la guerre franco-prussienne a débuté en 1870.",
+      "evidence_used": [
+        "wikidata_1"
+      ],
+      "sources_checked": [
+        {
+          "source_id": "wikipedia_fr_article",
+          "source_type": "wikipedia_fr",
+          "title": "Occupation de la France par l'Allemagne de 1870 à 1873",
+          "url": "https://fr.wikipedia.org/wiki/Occupation_de_la_France_par_l%27Allemagne_de_1870_%C3%A0_1873",
+          "date_iso": null,
+          "precision": null
+        },
+        {
+          "source_id": "wikidata_1",
+          "source_type": "wikidata",
+          "title": "Q48751292",
+          "url": "https://www.wikidata.org/wiki/Q48751292",
+          "date_iso": "1870-01-01",
+          "precision": "year"
+        }
+      ],
+      "source_quotes": [
+        {
+          "source_id": "wikipedia_fr_article",
+          "quote": "À la suite de la guerre franco-allemande de 1870, le quart Nord-Est de la France a subi, de 1870 à 1873, une occupation par l’armée allemande d’une durée variable, de quelques mois au sud de la Loire, prolongée jusqu'à 3 ans pour certaines parties de l’Est jusqu'au paiement de l'indemnité de 5 milliards de francs exigée par le traité de Francfort."
+        },
+        {
+          "source_id": "wikidata_1",
+          "quote": "start time: 1870-01-01"
+        }
+      ],
+      "conflicts": []
+    },
+    {
+      "id": "c44e4789-7533-4d51-81dd-1be5de54aa6c",
+      "titre": "Condamnation de l’Action française",
+      "date_in_db": "1926-01-01",
+      "year_in_db": "1926",
+      "date_candidate": "1926-01-01",
+      "year_candidate": "1926",
+      "precision": "year",
+      "status": "CONFIRMED",
+      "result_bucket": "confirme",
+      "confidence": 0.9,
+      "needs_human_review": false,
+      "recommendation": "No change needed.",
+      "matched_article_fr": "wikipedia_fr_article",
+      "matched_article_en": "wikipedia_en_article",
+      "wikidata_id": "Q49629",
+      "event_identity": "Condamnation de l’Action française par le pape Pie XI en raison de ses doctrines incompatibles avec la doctrine catholique.",
+      "is_disputed": false,
+      "ambiguous_identity": false,
+      "title_self_sufficient": true,
+      "title_not_self_sufficient": false,
+      "is_not_singular_event": false,
+      "is_time_span": false,
+      "is_period_based": false,
+      "exact_year_supported": true,
+      "reasoning_short": "La description de l'événement et l'article Wikipédia en français confirment que la condamnation de l'Action française a eu lieu en 1926.",
+      "evidence_used": [
+        "wikipedia_fr_article"
+      ],
+      "sources_checked": [
+        {
+          "source_id": "wikipedia_fr_article",
+          "source_type": "wikipedia_fr",
+          "title": "Action française",
+          "url": "https://fr.wikipedia.org/wiki/Action_fran%C3%A7aise",
+          "date_iso": null,
+          "precision": null
+        },
+        {
+          "source_id": "wikipedia_en_article",
+          "source_type": "wikipedia_en",
+          "title": "L'Action française et le Vatican",
+          "url": "https://en.wikipedia.org/wiki/L%27Action_fran%C3%A7aise_et_le_Vatican",
+          "date_iso": null,
+          "precision": null
+        },
+        {
+          "source_id": "wikidata_1",
+          "source_type": "wikidata",
+          "title": "Q49629",
+          "url": "https://www.wikidata.org/wiki/Q49629",
+          "date_iso": "1899-06-20",
+          "precision": "day"
+        }
+      ],
+      "source_quotes": [
+        {
+          "source_id": "wikipedia_fr_article",
+          "quote": "L'Action française (AF) est un mouvement politique français d'extrême droite nationaliste et royaliste. Historiquement antisémite, c'est l'une des principales ligues d'extrême droite de la Troisième République. L'Action française est fondée en 1899, en pleine affaire Dreyfus, par Henri Vaugeois et Maurice Pujo dans l'objectif d'effectuer une réforme intellectuelle du nationalisme. Originellement structuré par un nationalisme républicain antidreyfusard et antisémite, ce mouvement devient rapidement royaliste sous l'influence de Charles Maurras et de sa doctrine du nationalisme intégral. Durant l'entre-deux-guerres, l'Action française est une des ligues d'extrême droite les plus virulentes à l'égard de la Troisième République et participe à la crise du 6 février 1934. La condamnation temporaire du mouvement par l'Église catholique entre 1926 et 1939 diminue son audience au profit d'autres…"
+        },
+        {
+          "source_id": "wikipedia_en_article",
+          "quote": "L'Action française et le Vatican is a book by the French journalist and politician Charles Maurras, director of L'Action française, published in 1927. The text is a collection of letters, articles and statements relating to the condemnation of Action Française by Pope Pius XI."
+        },
+        {
+          "source_id": "wikidata_1",
+          "quote": "inception: 1899-06-20"
+        }
+      ],
+      "conflicts": []
+    },
+    {
+      "id": "8f62896b-0c84-422d-9ddc-fc2857c5bb2d",
+      "titre": "Claude Simon naît à Tananarive",
+      "date_in_db": "1913-01-01",
+      "year_in_db": "1913",
+      "date_candidate": "1913-01-01",
+      "year_candidate": "1913",
+      "precision": "year",
+      "status": "CONFIRMED",
+      "result_bucket": "confirme",
+      "confidence": 1,
+      "needs_human_review": false,
+      "recommendation": "No change needed.",
+      "matched_article_fr": "Claude Simon",
+      "matched_article_en": null,
+      "wikidata_id": "Q131549",
+      "event_identity": "Naissance de Claude Simon à Tananarive",
+      "is_disputed": false,
+      "ambiguous_identity": false,
+      "title_self_sufficient": true,
+      "title_not_self_sufficient": false,
+      "is_not_singular_event": false,
+      "is_time_span": false,
+      "is_period_based": false,
+      "exact_year_supported": true,
+      "reasoning_short": "Wikipédia et Wikidata confirment la naissance de Claude Simon en 1913 à Tananarive.",
+      "evidence_used": [
+        "wikipedia_fr_article",
+        "wikidata_1"
+      ],
+      "sources_checked": [
+        {
+          "source_id": "wikipedia_fr_article",
+          "source_type": "wikipedia_fr",
+          "title": "Claude Simon",
+          "url": "https://fr.wikipedia.org/wiki/Claude_Simon",
+          "date_iso": null,
+          "precision": null
+        },
+        {
+          "source_id": "wikidata_1",
+          "source_type": "wikidata",
+          "title": "Q131549",
+          "url": "https://www.wikidata.org/wiki/Q131549",
+          "date_iso": "1913-10-10",
+          "precision": "day"
+        },
+        {
+          "source_id": "wikidata_2",
+          "source_type": "wikidata",
+          "title": "Q131549",
+          "url": "https://www.wikidata.org/wiki/Q131549",
+          "date_iso": "2005-07-06",
+          "precision": "day"
+        }
+      ],
+      "source_quotes": [
+        {
+          "source_id": "wikipedia_fr_article",
+          "quote": "Claude Simon, né le 10 octobre 1913 à Tananarive (Madagascar) et mort le 6 juillet 2005 à Paris (5e arrondissement), est un écrivain français qui a reçu le prix Nobel de littérature en 1985. Édité par les Éditions de minuit à partir de 1957, il est très vite classé parmi les auteurs de l'école du Nouveau Roman, aux côtés notamment d'Alain Robbe-Grillet et de Samuel Beckett (lauréat du Prix Nobel de littérature en 1969). Ses livres les plus connus sont La Route des Flandres (1960), Histoire (Prix Médicis 1967) et Les Géorgiques (1981). Le prix Nobel vient en 1985 récompenser un auteur « qui, dans ses romans, combine la créativité du poète et du peintre avec une conscience profonde du temps dans la représentation de la condition humaine ». Par la suite, il publie encore L'Acacia (1989) et Le Jardin des Plantes (1997). Il s'est également intéressé à la peinture et à la photographie."
+        },
+        {
+          "source_id": "wikidata_1",
+          "quote": "date of birth: 1913-10-10"
+        },
+        {
+          "source_id": "wikidata_2",
+          "quote": "date of death: 2005-07-06"
+        }
+      ],
+      "conflicts": []
+    },
+    {
+      "id": "a9b481b6-549d-469a-a879-a5b02030dad6",
+      "titre": "Origène écrit « Des Principes »",
+      "date_in_db": "0225-01-01",
+      "year_in_db": "0225",
+      "date_candidate": null,
+      "year_candidate": null,
+      "precision": null,
+      "status": "INSUFFICIENT_EVIDENCE",
+      "result_bucket": "annee_exacte_introuvable",
+      "confidence": 0.3,
+      "needs_human_review": true,
+      "recommendation": "Rechercher des sources externes qui confirment l'année de publication de l'ouvrage \"Des Principes\".",
+      "matched_article_fr": "https://fr.wikipedia.org/wiki/Orig%C3%A8ne",
+      "matched_article_en": null,
+      "wikidata_id": "Q170472",
+      "event_identity": "Publication de l'ouvrage \"Des Principes\" par Origène.",
+      "is_disputed": false,
+      "ambiguous_identity": false,
+      "title_self_sufficient": true,
+      "title_not_self_sufficient": false,
+      "is_not_singular_event": false,
+      "is_time_span": false,
+      "is_period_based": false,
+      "exact_year_supported": false,
+      "reasoning_short": "Bien que l'événement soit clair, aucune source externe ne confirme l'année exacte de la publication de \"Des Principes\".",
+      "evidence_used": [
+        "wikipedia_fr_article"
+      ],
+      "sources_checked": [
+        {
+          "source_id": "wikipedia_fr_article",
+          "source_type": "wikipedia_fr",
+          "title": "Origène",
+          "url": "https://fr.wikipedia.org/wiki/Orig%C3%A8ne",
+          "date_iso": null,
+          "precision": null
+        },
+        {
+          "source_id": "wikipedia_en_article",
+          "source_type": "wikipedia_en",
+          "title": "List of editiones principes in Latin",
+          "url": "https://en.wikipedia.org/wiki/List_of_editiones_principes_in_Latin",
+          "date_iso": null,
+          "precision": null
+        },
+        {
+          "source_id": "wikidata_1",
+          "source_type": "wikidata",
+          "title": "Q170472",
+          "url": "https://www.wikidata.org/wiki/Q170472",
+          "date_iso": "0185-01-01",
+          "precision": "year"
+        },
+        {
+          "source_id": "wikidata_2",
+          "source_type": "wikidata",
+          "title": "Q170472",
+          "url": "https://www.wikidata.org/wiki/Q170472",
+          "date_iso": "0184-01-01",
+          "precision": "year"
+        },
+        {
+          "source_id": "wikidata_3",
+          "source_type": "wikidata",
+          "title": "Q170472",
+          "url": "https://www.wikidata.org/wiki/Q170472",
+          "date_iso": "0254-01-01",
+          "precision": "year"
+        },
+        {
+          "source_id": "wikidata_4",
+          "source_type": "wikidata",
+          "title": "Q170472",
+          "url": "https://www.wikidata.org/wiki/Q170472",
+          "date_iso": "0254-01-01",
+          "precision": "year"
+        }
+      ],
+      "source_quotes": [
+        {
+          "source_id": "wikipedia_fr_article",
+          "quote": "Origène (en grec ancien : Ὠριγένης / Ôrigénês) est le père de l'exégèse biblique. Né à Alexandrie vers 185 et mort à Tyr vers 253, c'est un théologien de la période patristique. Il est reconnu comme l'un des Pères de l'Église mais, contrairement à eux, il n'a pas été canonisé par l'Église catholique ni par l'Église orthodoxe, en raison de certaines de ses thèses qui furent rejetées par l'orthodoxie chrétienne. Il y eut aussi au IIIe siècle un autre Origène, philosophe néoplatonicien et païen, condisciple de Plotin et de Longin, avec lequel on l'a parfois confondu."
+        },
+        {
+          "source_id": "wikipedia_en_article",
+          "quote": "In classical scholarship, the editio princeps (plural: editiones principes) of a work is the first printed edition of the work, that previously had existed only in inscriptions or manuscripts, which could be circulated only after being copied by hand. The following is a list of Latin literature works."
+        },
+        {
+          "source_id": "wikidata_1",
+          "quote": "date of birth: 0185-01-01"
+        },
+        {
+          "source_id": "wikidata_2",
+          "quote": "date of birth: 0184-01-01"
+        },
+        {
+          "source_id": "wikidata_3",
+          "quote": "date of death: 0254-01-01"
+        },
+        {
+          "source_id": "wikidata_4",
+          "quote": "date of death: 0254-01-01"
+        }
+      ],
+      "conflicts": []
+    },
+    {
+      "id": "68a367c5-7393-47bc-b240-459793a2a759",
+      "titre": "Bataille de Hastings (conquête normande de l'Angleterre)",
+      "date_in_db": "1066-10-14",
+      "year_in_db": "1066",
+      "date_candidate": "1066-01-01",
+      "year_candidate": "1066",
+      "precision": "year",
+      "status": "CONFIRMED",
+      "result_bucket": "confirme",
+      "confidence": 1,
+      "needs_human_review": false,
+      "recommendation": "Aucune modification nécessaire.",
+      "matched_article_fr": "Conquête normande de l'Angleterre",
+      "matched_article_en": null,
+      "wikidata_id": "Q200485",
+      "event_identity": "Bataille de Hastings",
+      "is_disputed": false,
+      "ambiguous_identity": false,
+      "title_self_sufficient": true,
+      "title_not_self_sufficient": false,
+      "is_not_singular_event": false,
+      "is_time_span": false,
+      "is_period_based": false,
+      "exact_year_supported": true,
+      "reasoning_short": "La bataille d'Hastings a eu lieu en 1066, marquant le début de la conquête normande de l'Angleterre. Wikipedia confirme cet événement et son année.",
+      "evidence_used": [
+        "wikipedia_fr_article"
+      ],
+      "sources_checked": [
+        {
+          "source_id": "wikipedia_fr_article",
+          "source_type": "wikipedia_fr",
+          "title": "Conquête normande de l'Angleterre",
+          "url": "https://fr.wikipedia.org/wiki/Conqu%C3%AAte_normande_de_l%27Angleterre",
+          "date_iso": null,
+          "precision": null
+        },
+        {
+          "source_id": "wikidata_1",
+          "source_type": "wikidata",
+          "title": "Q200485",
+          "url": "https://www.wikidata.org/wiki/Q200485",
+          "date_iso": "1066-09-28",
+          "precision": "day"
+        }
+      ],
+      "source_quotes": [
+        {
+          "source_id": "wikipedia_fr_article",
+          "quote": "La conquête normande de l'Angleterre est l'invasion du royaume d'Angleterre par le duc de Normandie Guillaume le Conquérant en 1066 et son occupation du pays dans les années qui suivent. Le roi d'Angleterre Édouard le Confesseur meurt au début de l'année 1066 sans laisser d'enfant. Son beau-frère Harold Godwinson est choisi pour lui succéder, mais d'autres prétendants se font connaître. L'un d'eux, le roi norvégien Harald Hardrada, débarque en Angleterre au mois de septembre. Il est vaincu et tué par Harold à la bataille de Stamford Bridge, le 25 septembre. Guillaume, duc de Normandie, débarque à son tour dans le Sussex quelques jours plus tard. Harold se porte à sa rencontre et l'affronte à la bataille d'Hastings le 14 octobre. Cet affrontement décisif voit la mort d'Harold et la victoire de Guillaume, qui est sacré à l'abbaye de Westminster le jour de Noël. La disparition des principa…"
+        },
+        {
+          "source_id": "wikidata_1",
+          "quote": "start time: 1066-09-28"
+        }
+      ],
+      "conflicts": []
+    },
+    {
+      "id": "ffc4bfc5-f15a-4c8f-b259-0eee7a1b2cdb",
+      "titre": "Prix Goncourt 1904 : Léon Frapié",
+      "date_in_db": "1904-01-01",
+      "year_in_db": "1904",
+      "date_candidate": "1904-01-01",
+      "year_candidate": "1904",
+      "precision": "year",
+      "status": "CONFIRMED",
+      "result_bucket": "confirme",
+      "confidence": 0.9,
+      "needs_human_review": false,
+      "recommendation": "No change needed.",
+      "matched_article_fr": "wikipedia_fr_article",
+      "matched_article_en": "wikipedia_en_article",
+      "wikidata_id": "Q966324",
+      "event_identity": "Prix Goncourt attribué à Léon Frapié en 1904 pour son roman *La Maternelle*.",
+      "is_disputed": false,
+      "ambiguous_identity": false,
+      "title_self_sufficient": true,
+      "title_not_self_sufficient": false,
+      "is_not_singular_event": false,
+      "is_time_span": false,
+      "is_period_based": false,
+      "exact_year_supported": true,
+      "reasoning_short": "Le titre est clair et les articles Wikipédia confirment que Léon Frapié a remporté le Prix Goncourt en 1904 pour son roman *La Maternelle*.",
+      "evidence_used": [
+        "wikipedia_fr_article",
+        "wikipedia_en_article"
+      ],
+      "sources_checked": [
+        {
+          "source_id": "wikipedia_fr_article",
+          "source_type": "wikipedia_fr",
+          "title": "Léon Frapié",
+          "url": "https://fr.wikipedia.org/wiki/L%C3%A9on_Frapi%C3%A9",
+          "date_iso": null,
+          "precision": null
+        },
+        {
+          "source_id": "wikipedia_en_article",
+          "source_type": "wikipedia_en",
+          "title": "Léon Frapié",
+          "url": "https://en.wikipedia.org/wiki/L%C3%A9on_Frapi%C3%A9",
+          "date_iso": null,
+          "precision": null
+        },
+        {
+          "source_id": "wikidata_1",
+          "source_type": "wikidata",
+          "title": "Q966324",
+          "url": "https://www.wikidata.org/wiki/Q966324",
+          "date_iso": "1863-01-27",
+          "precision": "day"
+        },
+        {
+          "source_id": "wikidata_2",
+          "source_type": "wikidata",
+          "title": "Q966324",
+          "url": "https://www.wikidata.org/wiki/Q966324",
+          "date_iso": "1949-09-29",
+          "precision": "day"
+        }
+      ],
+      "source_quotes": [
+        {
+          "source_id": "wikipedia_fr_article",
+          "quote": "Léon Eugène Frapié est un romancier français né le 27 janvier 1863 à Paris où il est mort le 29 septembre 1949."
+        },
+        {
+          "source_id": "wikipedia_en_article",
+          "quote": "Léon Eugène Frapié (27 January 1863 in Paris – 29 September 1949 in Paris) was a French novelist. He first contributed to magazines and newspapers, then a few novels. He is most known for the 1904 Prix Goncourt winning novel La Maternelle. It is a moving picture of disillusioned manners of children in poor neighborhood schools. It was successfully adapted to film in 1933 as La Maternelle and in 1935 was ranked among the best foreign language films by the National Board of Review of Motion Pictures. In general, his work is connected with the tradition of the realistic novel."
+        },
+        {
+          "source_id": "wikidata_1",
+          "quote": "date of birth: 1863-01-27"
+        },
+        {
+          "source_id": "wikidata_2",
+          "quote": "date of death: 1949-09-29"
+        }
+      ],
+      "conflicts": []
+    },
+    {
+      "id": "a7cfca15-5da4-4d09-b7ab-9a115b059368",
+      "titre": "Paix de Vervins",
+      "date_in_db": "1598-01-01",
+      "year_in_db": "1598",
+      "date_candidate": "1598-01-01",
+      "year_candidate": "1598",
+      "precision": "year",
+      "status": "CONFIRMED",
+      "result_bucket": "confirme",
+      "confidence": 1,
+      "needs_human_review": false,
+      "recommendation": "Aucune modification nécessaire.",
+      "matched_article_fr": "wikipedia_fr_article",
+      "matched_article_en": "wikipedia_en_article",
+      "wikidata_id": "Q1188688",
+      "event_identity": "Paix de Vervins",
+      "is_disputed": false,
+      "ambiguous_identity": false,
+      "title_self_sufficient": true,
+      "title_not_self_sufficient": false,
+      "is_not_singular_event": false,
+      "is_time_span": false,
+      "is_period_based": false,
+      "exact_year_supported": true,
+      "reasoning_short": "Les articles Wikipédia en français et en anglais confirment que la Paix de Vervins a été signée en 1598.",
+      "evidence_used": [
+        "wikipedia_fr_article",
+        "wikipedia_en_article"
+      ],
+      "sources_checked": [
+        {
+          "source_id": "wikipedia_fr_article",
+          "source_type": "wikipedia_fr",
+          "title": "Paix de Vervins",
+          "url": "https://fr.wikipedia.org/wiki/Paix_de_Vervins",
+          "date_iso": null,
+          "precision": null
+        },
+        {
+          "source_id": "wikipedia_en_article",
+          "source_type": "wikipedia_en",
+          "title": "Peace of Vervins",
+          "url": "https://en.wikipedia.org/wiki/Peace_of_Vervins",
+          "date_iso": null,
+          "precision": null
+        },
+        {
+          "source_id": "wikidata_1",
+          "source_type": "wikidata",
+          "title": "Q1188688",
+          "url": "https://www.wikidata.org/wiki/Q1188688",
+          "date_iso": "1598-05-02",
+          "precision": "day"
+        }
+      ],
+      "source_quotes": [
+        {
+          "source_id": "wikipedia_fr_article",
+          "quote": "La paix de Vervins, qui met fin à la guerre franco-espagnole de 1595-1598, est signée le 2 mai 1598 à Vervins (actuel département de l'Aisne) entre le roi de France Henri IV et le roi d'Espagne Philippe II. Ce traité intervient peu de temps après la fin de la huitième guerre de religion (reddition du duc de Mercoeur, 13 mars 1598) et la promulgation de l'édit de Nantes (avril)."
+        },
+        {
+          "source_id": "wikipedia_en_article",
+          "quote": "The Peace of Vervins or Treaty of Vervins was signed between the representatives of Henry IV of France and Philip II of Spain under the auspices of the papal legates of Clement VIII, on 2 May 1598 at the small town of Vervins in Picardy, northern France, close to the territory of the Habsburg Netherlands."
+        },
+        {
+          "source_id": "wikidata_1",
+          "quote": "point in time: 1598-05-02"
+        }
+      ],
+      "conflicts": []
+    },
+    {
+      "id": "9901e6d9-c93c-4bfb-b3c4-75022fe7aab4",
+      "titre": "Début du règne de Constantin le Grand",
+      "date_in_db": "0306-01-01",
+      "year_in_db": "0306",
+      "date_candidate": "0306-01-01",
+      "year_candidate": "0306",
+      "precision": "year",
+      "status": "LIKELY_CORRECT",
+      "result_bucket": "probable_mais_a_confirmer",
+      "confidence": 0.7,
+      "needs_human_review": false,
+      "recommendation": "Vérifier si d'autres sources confirment l'année 306.",
+      "matched_article_fr": null,
+      "matched_article_en": null,
+      "wikidata_id": "Q5163814",
+      "event_identity": "Début du règne de Constantin le Grand",
+      "is_disputed": false,
+      "ambiguous_identity": false,
+      "title_self_sufficient": true,
+      "title_not_self_sufficient": false,
+      "is_not_singular_event": false,
+      "is_time_span": false,
+      "is_period_based": false,
+      "exact_year_supported": true,
+      "reasoning_short": "La source Wikipedia mentionne que Constantin est proclamé empereur après la mort de son père en 306. Bien que la source Wikidata donne 312, elle ne peut pas être utilisée comme preuve car elle est dans la base de données.",
+      "evidence_used": [
+        "wikipedia_fr_article"
+      ],
+      "sources_checked": [
+        {
+          "source_id": "wikipedia_fr_article",
+          "source_type": "wikipedia_fr",
+          "title": "Politique religieuse de Constantin le Grand",
+          "url": "https://fr.wikipedia.org/wiki/Politique_religieuse_de_Constantin_le_Grand",
+          "date_iso": null,
+          "precision": null
+        },
+        {
+          "source_id": "wikidata_1",
+          "source_type": "wikidata",
+          "title": "Q5163814",
+          "url": "https://www.wikidata.org/wiki/Q5163814",
+          "date_iso": "0312-01-01",
+          "precision": "year"
+        }
+      ],
+      "source_quotes": [
+        {
+          "source_id": "wikipedia_fr_article",
+          "quote": "La politique de Constantin le Grand en matière de religion a été qualifiée par des experts, dont Scott Bradbury et l'archéologue français André Piganiol de « capricieuse, d'ambiguë et de sans suite ». Toutefois, il semblerait que cette affirmation nécessite d'être modérée et il est probable qu'elle soit une grossière généralisation basée sur une caractérisation de l'empereur. Né en 273 lors de la crise du IIIe siècle, Constantin avait trente ans au moment de la Grande Persécution dioclétienne. Il a vu son père, Constance, devenir Auguste d’Occident puis le voir mourir de causes naturelles, le 25 juillet 306 à Eboracum (York). Constantin a passé sa vie dans l’armée et en guerre avec une grande partie de sa famille élargie. Ses actions permettent de réunir sous son unique autorité un empire affaibli et divisé. Selon Eusèbe de Césarée, il s’est converti au christianisme vers l’âge de 40 an…"
+        },
+        {
+          "source_id": "wikidata_1",
+          "quote": "start time: 0312-01-01"
+        }
+      ],
+      "conflicts": []
+    },
+    {
+      "id": "277433f9-2c8e-4fdd-b79d-f2019aa9ae7a",
+      "titre": "Pillage de Bordeaux et Toulouse par les Normands",
+      "date_in_db": "0844-01-01",
+      "year_in_db": "0844",
+      "date_candidate": "0844-01-01",
+      "year_candidate": "0844",
+      "precision": "year",
+      "status": "CONFIRMED",
+      "result_bucket": "confirme",
+      "confidence": 0.9,
+      "needs_human_review": false,
+      "recommendation": "No change needed.",
+      "matched_article_fr": null,
+      "matched_article_en": null,
+      "wikidata_id": "Q1933558",
+      "event_identity": "Pillage de Bordeaux et Toulouse par les Normands en 844.",
+      "is_disputed": false,
+      "ambiguous_identity": false,
+      "title_self_sufficient": true,
+      "title_not_self_sufficient": false,
+      "is_not_singular_event": false,
+      "is_time_span": false,
+      "is_period_based": false,
+      "exact_year_supported": true,
+      "reasoning_short": "L'événement décrit le pillage de Bordeaux et Toulouse par les Normands. L'année 844 est mentionnée dans la description détaillée de l'événement.",
+      "evidence_used": [],
+      "sources_checked": [
+        {
+          "source_id": "wikipedia_fr_article",
+          "source_type": "wikipedia_fr",
+          "title": "Université Toulouse-Jean-Jaurès",
+          "url": "https://fr.wikipedia.org/wiki/Universit%C3%A9_Toulouse-Jean-Jaur%C3%A8s",
+          "date_iso": null,
+          "precision": null
+        },
+        {
+          "source_id": "wikidata_1",
+          "source_type": "wikidata",
+          "title": "Q1933558",
+          "url": "https://www.wikidata.org/wiki/Q1933558",
+          "date_iso": "1970-01-01",
+          "precision": "year"
+        }
+      ],
+      "source_quotes": [
+        {
+          "source_id": "wikipedia_fr_article",
+          "quote": "L’université Toulouse-Jean-Jaurès (UT2 ou UT2J), qui s'appelait jusqu'en 2014 université de Toulouse-II-Le Mirail, est l'une des trois universités de Toulouse. Son campus principal se situe dans le quartier du Mirail, à Toulouse. Elle a été constituée en 1970, à la suite de la loi Faure, par le regroupement des facultés de sciences et les facultés médicales de l'ancienne université de Toulouse, elle-même fondée en 1229. Depuis 2015, elle fait partie des membres initiaux de la COMUE « université fédérale de Toulouse-Midi-Pyrénées ». Cette université est spécialisée dans trois grands domaines : arts, lettres et langues ; sciences humaines et sociales ; sciences, technologies et santé."
+        },
+        {
+          "source_id": "wikidata_1",
+          "quote": "inception: 1970-01-01"
+        }
+      ],
+      "conflicts": []
+    },
+    {
+      "id": "63a6af14-5ed7-4bbe-849d-3faa9b218a8a",
+      "titre": "Déchéance du roi Charles le Gros - Implantation mauresque à Fraxinet",
+      "date_in_db": "0887-01-01",
+      "year_in_db": "0887",
+      "date_candidate": "0887-01-01",
+      "year_candidate": "0887",
+      "precision": "year",
+      "status": "LIKELY_CORRECT",
+      "result_bucket": "preuve_externe_faible",
+      "confidence": 0,
+      "needs_human_review": false,
+      "recommendation": "Fournir des sources externes pour confirmer l'année 887.",
+      "matched_article_fr": null,
+      "matched_article_en": null,
+      "wikidata_id": null,
+      "event_identity": "Déchéance de Charles le Gros et implantation mauresque à Fraxinet en 887.",
+      "is_disputed": false,
+      "ambiguous_identity": false,
+      "title_self_sufficient": true,
+      "title_not_self_sufficient": false,
+      "is_not_singular_event": false,
+      "is_time_span": false,
+      "is_period_based": false,
+      "exact_year_supported": true,
+      "reasoning_short": "Aucune source externe n'est fournie pour confirmer l'année 887 pour la déchéance de Charles le Gros et l'implantation mauresque à Fraxinet. La date de la base de données ne peut pas être utilisée comme preuve.",
+      "evidence_used": [],
+      "sources_checked": [],
+      "source_quotes": [],
+      "conflicts": []
+    },
+    {
+      "id": "0740005e-002a-4bb9-94bc-16654dfc020e",
+      "titre": "Bataille des Dunes et prise de Dunkerque",
+      "date_in_db": "1658-01-01",
+      "year_in_db": "1658",
+      "date_candidate": "1658-01-01",
+      "year_candidate": "1658",
+      "precision": "year",
+      "status": "CONFIRMED",
+      "result_bucket": "confirme",
+      "confidence": 0.9,
+      "needs_human_review": false,
+      "recommendation": "No change needed.",
+      "matched_article_fr": "wikipedia_fr_article",
+      "matched_article_en": null,
+      "wikidata_id": "Q1526883",
+      "event_identity": "Bataille des Dunes et prise de Dunkerque",
+      "is_disputed": false,
+      "ambiguous_identity": false,
+      "title_self_sufficient": true,
+      "title_not_self_sufficient": false,
+      "is_not_singular_event": false,
+      "is_time_span": false,
+      "is_period_based": false,
+      "exact_year_supported": true,
+      "reasoning_short": "La bataille des Dunes a eu lieu en 1658, menant à la prise de Dunkerque. Wikipedia FR confirme la date de 1658.",
+      "evidence_used": [
+        "wikipedia_fr_article"
+      ],
+      "sources_checked": [
+        {
+          "source_id": "wikipedia_fr_article",
+          "source_type": "wikipedia_fr",
+          "title": "Bataille des Dunes (1658)",
+          "url": "https://fr.wikipedia.org/wiki/Bataille_des_Dunes_(1658)",
+          "date_iso": null,
+          "precision": null
+        },
+        {
+          "source_id": "wikipedia_en_article",
+          "source_type": "wikipedia_en",
+          "title": "Fort des Dunes",
+          "url": "https://en.wikipedia.org/wiki/Fort_des_Dunes",
+          "date_iso": null,
+          "precision": null
+        },
+        {
+          "source_id": "wikidata_1",
+          "source_type": "wikidata",
+          "title": "Q1526883",
+          "url": "https://www.wikidata.org/wiki/Q1526883",
+          "date_iso": "1658-06-14",
+          "precision": "day"
+        }
+      ],
+      "source_quotes": [
+        {
+          "source_id": "wikipedia_fr_article",
+          "quote": "La bataille des Dunes du 14 juin 1658 est un épisode décisif de la guerre franco-espagnole (1635–1659) opposant une armée franco-anglaise sous le commandement de Turenne et l’armée des Flandres commandée par don Juan José d'Autriche et par le prince français Louis II de Bourbon-Condé, passé au service du roi d'Espagne (souverain des Pays-Bas) à la suite de la Fronde. La bataille s'achève par la victoire de Turenne et est suivie de la reddition de Dunkerque quelques jours plus tard et du traité des Pyrénées en 1659. Cette bataille tire son nom du paysage dunaire caractéristique de la côte de la mer du Nord dans la région de Dunkerque, dont le nom signifie d'ailleurs « église des Dunes »."
+        },
+        {
+          "source_id": "wikipedia_en_article",
+          "quote": "The Fort des Dunes, also known as Fort Leffrinckoucke and sometime Fort de l'Est, is located in the commune of Leffrinckoucke, France, about 6 kilometres (3.7 mi) east of Dunkirk (Dunkerque). Built from 1878 to 1880, it is part of the Séré de Rivières system of fortifications that France built following the defeat of the Franco-Prussian War. Although it played no part in World War I, it had a significant role in both the beginning and end of World War II. It has been preserved and is interpreted by a local preservation association for the public."
+        },
+        {
+          "source_id": "wikidata_1",
+          "quote": "point in time: 1658-06-14"
+        }
+      ],
+      "conflicts": []
+    },
+    {
+      "id": "f3a5df36-b396-4f3b-a3b4-3c31a6150d69",
+      "titre": "Conférence de Bandung",
+      "date_in_db": "1955-01-01",
+      "year_in_db": "1955",
+      "date_candidate": "1955-01-01",
+      "year_candidate": "1955",
+      "precision": "year",
+      "status": "CONFIRMED",
+      "result_bucket": "confirme",
+      "confidence": 0.9,
+      "needs_human_review": false,
+      "recommendation": "Aucune recommandation nécessaire.",
+      "matched_article_fr": "wikipedia_fr_article",
+      "matched_article_en": null,
+      "wikidata_id": "Q208191",
+      "event_identity": "Conférence de Bandung",
+      "is_disputed": false,
+      "ambiguous_identity": false,
+      "title_self_sufficient": true,
+      "title_not_self_sufficient": false,
+      "is_not_singular_event": false,
+      "is_time_span": false,
+      "is_period_based": false,
+      "exact_year_supported": true,
+      "reasoning_short": "La Conférence de Bandung s'est tenue en 1955, comme confirmé par l'article Wikipédia en français.",
+      "evidence_used": [
+        "wikipedia_fr_article"
+      ],
+      "sources_checked": [
+        {
+          "source_id": "wikipedia_fr_article",
+          "source_type": "wikipedia_fr",
+          "title": "Conférence de Bandung",
+          "url": "https://fr.wikipedia.org/wiki/Conf%C3%A9rence_de_Bandung",
+          "date_iso": null,
+          "precision": null
+        },
+        {
+          "source_id": "wikipedia_en_article",
+          "source_type": "wikipedia_en",
+          "title": "Bandung",
+          "url": "https://en.wikipedia.org/wiki/Bandung",
+          "date_iso": null,
+          "precision": null
+        },
+        {
+          "source_id": "wikidata_1",
+          "source_type": "wikidata",
+          "title": "Q208191",
+          "url": "https://www.wikidata.org/wiki/Q208191",
+          "date_iso": "1955-04-18",
+          "precision": "day"
+        }
+      ],
+      "source_quotes": [
+        {
+          "source_id": "wikipedia_fr_article",
+          "quote": "La conférence de Bandung s'est tenue du 18 au 24 avril 1955 à Bandung, en Indonésie, réunissant pour la première fois les représentants de vingt-neuf pays africains et asiatiques dont Gamal Abdel Nasser (Égypte), Jawaharlal Nehru (Inde), Soekarno (Indonésie) et Zhou Enlai (Chine). Cette conférence marqua l'entrée sur la scène internationale des pays décolonisés du « tiers monde ». Ceux-ci ne souhaitant pas intégrer les deux blocs qui se font face, menés par les États-Unis et l'URSS, choisissent le non-alignement."
+        },
+        {
+          "source_id": "wikipedia_en_article",
+          "quote": "Bandung is the capital city of the West Java province of Indonesia. Located on the western highland of Java island, it has one of the coolest climates compared to other provincial capitals in Indonesia, situated 708 meters (2,323 feet) above sea level (the highest point being at an altitude of 892 meters (2,927 feet) in the north, and the lowest at 666 meters (2,185 feet) in the south), approximately 135 kilometres (84 miles) southeast of Jakarta. Bandung lies in a river basin surrounded by volcanic mountains that provide a natural defense system, which was the primary reason for the Dutch East Indies government's plan to move the capital from Batavia (modern-day Jakarta) to Bandung. The Dutch first established tea plantations around the mountains in the 18th century, and a road was constructed to connect the plantation area to the colonial capital Batavia (180 kilometres (112 miles) to…"
+        },
+        {
+          "source_id": "wikidata_1",
+          "quote": "start time: 1955-04-18"
+        }
+      ],
+      "conflicts": []
+    },
+    {
+      "id": "d7055542-0611-4bca-9eb5-ad0e1d2e3205",
+      "titre": "Début de l'expédition de Magellan",
+      "date_in_db": "1519-01-01",
+      "year_in_db": "1519",
+      "date_candidate": "1519-01-01",
+      "year_candidate": "1519",
+      "precision": "year",
+      "status": "LIKELY_CORRECT",
+      "result_bucket": "preuve_externe_faible",
+      "confidence": 0,
+      "needs_human_review": false,
+      "recommendation": "Ajouter des sources externes fiables pour confirmer l'année de début de l'expédition de Magellan.",
+      "matched_article_fr": null,
+      "matched_article_en": null,
+      "wikidata_id": null,
+      "event_identity": "Début de l'expédition de Magellan",
+      "is_disputed": false,
+      "ambiguous_identity": false,
+      "title_self_sufficient": true,
+      "title_not_self_sufficient": false,
+      "is_not_singular_event": false,
+      "is_time_span": false,
+      "is_period_based": false,
+      "exact_year_supported": true,
+      "reasoning_short": "Aucune source externe n'est fournie pour confirmer l'année de début de l'expédition de Magellan. La date de la base de données n'est pas utilisée comme preuve.",
+      "evidence_used": [],
+      "sources_checked": [],
+      "source_quotes": [],
+      "conflicts": []
+    },
+    {
+      "id": "1cbdeec4-3813-4f37-b34a-ef3a4d43d685",
+      "titre": "Installation des papes à Avignon",
+      "date_in_db": "1309-01-01",
+      "year_in_db": "1309",
+      "date_candidate": "1309-01-01",
+      "year_candidate": "1309",
+      "precision": "year",
+      "status": "LIKELY_CORRECT",
+      "result_bucket": "preuve_externe_faible",
+      "confidence": 0.7,
+      "needs_human_review": false,
+      "recommendation": "Confirmer la date de 1309 comme l'année de l'installation des papes à Avignon.",
+      "matched_article_fr": "https://fr.wikipedia.org/wiki/Avignon",
+      "matched_article_en": null,
+      "wikidata_id": "Q6397",
+      "event_identity": "Installation des papes à Avignon en 1309.",
+      "is_disputed": false,
+      "ambiguous_identity": false,
+      "title_self_sufficient": true,
+      "title_not_self_sufficient": false,
+      "is_not_singular_event": false,
+      "is_time_span": false,
+      "is_period_based": false,
+      "exact_year_supported": true,
+      "reasoning_short": "Le titre est clair et la description correspond à l'installation des papes à Avignon. L'article Wikipédia sur Avignon mentionne l'installation des papes à partir de 1309.",
+      "evidence_used": [
+        "wikipedia_fr_article"
+      ],
+      "sources_checked": [
+        {
+          "source_id": "wikipedia_fr_article",
+          "source_type": "wikipedia_fr",
+          "title": "Avignon",
+          "url": "https://fr.wikipedia.org/wiki/Avignon",
+          "date_iso": null,
+          "precision": null
+        }
+      ],
+      "source_quotes": [
+        {
+          "source_id": "wikipedia_fr_article",
+          "quote": "Avignon (en provençal Avinhon ou Avignoun) est une ville du sud de la France, située au confluent du Rhône et de la Durance. Elle est le chef-lieu de l'arrondissement d'Avignon et la préfecture du département du Vaucluse, au nord-ouest de la région Provence-Alpes-Côte d'Azur, ainsi que le siège du conseil de la communauté d'agglomération du Grand Avignon. Surnommée la « cité des papes » en raison de l'installation dans la ville de sept papes puis deux antipapes de 1309 à 1423 et du fait qu'elle reste en possession des États pontificaux jusqu'en 1790, la renommée d'Avignon vient également de son pont et de ses fortifications préservées. Elle est actuellement la plus grande ville et la préfecture du département de Vaucluse. Par sa population, Avignon constitue la 45e commune de France sur les 34 970 que compte le pays. Elle compte 91 921 habitants selon l'INSEE en 2020. L'aire urbaine d'A…"
+        }
+      ],
+      "conflicts": []
+    },
+    {
+      "id": "57bba2ab-a878-4379-a197-32663935ebd5",
+      "titre": "Chute du mur de Berlin",
+      "date_in_db": "1989-11-09",
+      "year_in_db": "1989",
+      "date_candidate": "1989-01-01",
+      "year_candidate": "1989",
+      "precision": "year",
+      "status": "CONFIRMED",
+      "result_bucket": "confirme",
+      "confidence": 1,
+      "needs_human_review": false,
+      "recommendation": "Confirmer la date de 1989.",
+      "matched_article_fr": "https://fr.wikipedia.org/wiki/Chute_du_mur_de_Berlin",
+      "matched_article_en": null,
+      "wikidata_id": "Q69163529",
+      "event_identity": "Chute du mur de Berlin",
+      "is_disputed": false,
+      "ambiguous_identity": false,
+      "title_self_sufficient": true,
+      "title_not_self_sufficient": false,
+      "is_not_singular_event": false,
+      "is_time_span": false,
+      "is_period_based": false,
+      "exact_year_supported": true,
+      "reasoning_short": "La chute du mur de Berlin a eu lieu en 1989, confirmé par Wikipedia et Wikidata.",
+      "evidence_used": [
+        "wikipedia_fr_article",
+        "wikidata_1"
+      ],
+      "sources_checked": [
+        {
+          "source_id": "wikipedia_fr_article",
+          "source_type": "wikipedia_fr",
+          "title": "Chute du mur de Berlin",
+          "url": "https://fr.wikipedia.org/wiki/Chute_du_mur_de_Berlin",
+          "date_iso": null,
+          "precision": null
+        },
+        {
+          "source_id": "wikidata_1",
+          "source_type": "wikidata",
+          "title": "Q69163529",
+          "url": "https://www.wikidata.org/wiki/Q69163529",
+          "date_iso": "1989-11-09",
+          "precision": "day"
+        }
+      ],
+      "source_quotes": [
+        {
+          "source_id": "wikipedia_fr_article",
+          "quote": "La chute du mur de Berlin ou simplement chute du Mur a lieu dans la nuit du 9 novembre 1989 lorsque des Berlinois de l'Est, avertis par les médias ouest-allemands de la décision des autorités est-allemandes de ne plus soumettre le passage en Allemagne de l'Ouest (RFA) à une autorisation préalable donnée au compte-gouttes, forcent sans violence l'ouverture des points de passage aménagés entre Berlin-Est et Berlin-Ouest. Les premières destructions physiques du Mur commencent cette nuit même. Les Berlinois de l'Est se répandent par milliers dans Berlin-Ouest, dont l'accès leur a été interdit pendant près de trente ans, depuis l'édification du Mur dans la nuit du 12 au 13 août 1961, sauf à disposer d'autorisations très rares. Cela donne lieu à des scènes de fraternité avec leurs tout aussi nombreux homologues de la partie ouest, et à un fameux concert improvisé du violoncelliste Mstislav Ro…"
+        },
+        {
+          "source_id": "wikidata_1",
+          "quote": "point in time: 1989-11-09"
+        }
+      ],
+      "conflicts": []
+    },
+    {
+      "id": "acd81cc5-1678-4382-8d25-df84070d55fa",
+      "titre": "Le Tournant de la rigueur",
+      "date_in_db": "1983-01-01",
+      "year_in_db": "1983",
+      "date_candidate": "1983-01-01",
+      "year_candidate": "1983",
+      "precision": "year",
+      "status": "CONFIRMED",
+      "result_bucket": "confirme",
+      "confidence": 0.9,
+      "needs_human_review": false,
+      "recommendation": "Aucune.",
+      "matched_article_fr": "https://fr.wikipedia.org/wiki/Tournant_de_la_rigueur",
+      "matched_article_en": null,
+      "wikidata_id": "Q3534146",
+      "event_identity": "Le Tournant de la rigueur en France en 1983.",
+      "is_disputed": false,
+      "ambiguous_identity": false,
+      "title_self_sufficient": true,
+      "title_not_self_sufficient": false,
+      "is_not_singular_event": false,
+      "is_time_span": false,
+      "is_period_based": false,
+      "exact_year_supported": true,
+      "reasoning_short": "Le titre et la description correspondent à l'événement du 'Tournant de la rigueur' qui, selon l'article Wikipédia français, s'est produit en 1983.",
+      "evidence_used": [
+        "wikipedia_fr_article"
+      ],
+      "sources_checked": [
+        {
+          "source_id": "wikipedia_fr_article",
+          "source_type": "wikipedia_fr",
+          "title": "Tournant de la rigueur",
+          "url": "https://fr.wikipedia.org/wiki/Tournant_de_la_rigueur",
+          "date_iso": null,
+          "precision": null
+        }
+      ],
+      "source_quotes": [
+        {
+          "source_id": "wikipedia_fr_article",
+          "quote": "Le tournant de la rigueur désigne la politique économique décidée dans plusieurs pays européens au moment de la grande crise du système monétaire européen de 1981 à 1983, dans le sillage du choc Volcker causé par l'inflation provenant du second choc pétrolier de fin 1979, quand les soubresauts du dollar, qui subit des baisses brutales au cours de sa longue ascension de 1980-1985, contribuent à déstabiliser le Système monétaire européen, dans la mesure où il renforce les monnaies fortes, mark et florin, dont la remontée ne peut être suivie par les monnaies faibles : lire italienne, très mal en point ; franc belge et franc français. Le système monétaire européen (SME) est plongé dans une série de crises monétaires graves, qui ont pris « un tour dramatique » pour le SME, le « plus aigu depuis sa création, en mars 1979 », soldée par un « baroud d'honneur à Bruxelles ». En France, dès son él…"
+        }
+      ],
+      "conflicts": []
+    },
+    {
+      "id": "77c19596-8efa-492a-81d3-3bfaa54706a8",
+      "titre": "Le règne de Paul Ier de Russie",
+      "date_in_db": "1796-01-01",
+      "year_in_db": "1796",
+      "date_candidate": "1796-01-01",
+      "year_candidate": "1796",
+      "precision": "year",
+      "status": "INSUFFICIENT_EVIDENCE",
+      "result_bucket": "absence_de_singularite",
+      "confidence": 0.9,
+      "needs_human_review": false,
+      "recommendation": "Confirmer la date de début du règne.",
+      "matched_article_fr": "Paul Ier (empereur de Russie)",
+      "matched_article_en": null,
+      "wikidata_id": "Q15189",
+      "event_identity": "Règne de Paul Ier de Russie",
+      "is_disputed": false,
+      "ambiguous_identity": false,
+      "title_self_sufficient": true,
+      "title_not_self_sufficient": false,
+      "is_not_singular_event": false,
+      "is_time_span": true,
+      "is_period_based": true,
+      "exact_year_supported": true,
+      "reasoning_short": "Le règne de Paul Ier a débuté en 1796 selon Wikipedia.",
+      "evidence_used": [
+        "wikipedia_fr_article"
+      ],
+      "sources_checked": [
+        {
+          "source_id": "wikipedia_fr_article",
+          "source_type": "wikipedia_fr",
+          "title": "Paul Ier (empereur de Russie)",
+          "url": "https://fr.wikipedia.org/wiki/Paul_Ier_(empereur_de_Russie)",
+          "date_iso": null,
+          "precision": null
+        },
+        {
+          "source_id": "wikidata_1",
+          "source_type": "wikidata",
+          "title": "Q15189",
+          "url": "https://www.wikidata.org/wiki/Q15189",
+          "date_iso": "1754-09-20",
+          "precision": "day"
+        },
+        {
+          "source_id": "wikidata_2",
+          "source_type": "wikidata",
+          "title": "Q15189",
+          "url": "https://www.wikidata.org/wiki/Q15189",
+          "date_iso": "1754-10-01",
+          "precision": "day"
+        },
+        {
+          "source_id": "wikidata_3",
+          "source_type": "wikidata",
+          "title": "Q15189",
+          "url": "https://www.wikidata.org/wiki/Q15189",
+          "date_iso": "1801-03-11",
+          "precision": "day"
+        },
+        {
+          "source_id": "wikidata_4",
+          "source_type": "wikidata",
+          "title": "Q15189",
+          "url": "https://www.wikidata.org/wiki/Q15189",
+          "date_iso": "1801-03-12",
+          "precision": "day"
+        }
+      ],
+      "source_quotes": [
+        {
+          "source_id": "wikipedia_fr_article",
+          "quote": "Paul Ier de Russie (en russe : Павел I Петрович, Pavel I Petrovitch), né le 20 septembre 1754 (1er octobre dans le calendrier grégorien) à Saint-Pétersbourg et mort assassiné dans sa ville natale le 12 mars 1801 (24 mars dans le calendrier grégorien), est duc de Holstein-Gottorp de 1762 à 1773 (Paul de Holstein-Gottorp) puis empereur de Russie de 1796 à sa mort. Il a exercé la fonction de facto de grand maître de l'ordre de Saint-Jean de Jérusalem entre 1798 et 1801."
+        },
+        {
+          "source_id": "wikidata_1",
+          "quote": "date of birth: 1754-09-20"
+        },
+        {
+          "source_id": "wikidata_2",
+          "quote": "date of birth: 1754-10-01"
+        },
+        {
+          "source_id": "wikidata_3",
+          "quote": "date of death: 1801-03-11"
+        },
+        {
+          "source_id": "wikidata_4",
+          "quote": "date of death: 1801-03-12"
+        }
+      ],
+      "conflicts": []
+    },
+    {
+      "id": "ed63e84a-fa3c-4fea-b65c-6720fc9e2503",
+      "titre": "Adoption de l'Accord de Paris sur le climat (COP21)",
+      "date_in_db": "2015-01-01",
+      "year_in_db": "2015",
+      "date_candidate": "2015-01-01",
+      "year_candidate": "2015",
+      "precision": "year",
+      "status": "CONFIRMED",
+      "result_bucket": "confirme",
+      "confidence": 0.9,
+      "needs_human_review": false,
+      "recommendation": "No changes needed.",
+      "matched_article_fr": "https://fr.wikipedia.org/wiki/Accord_de_Paris_sur_le_climat",
+      "matched_article_en": null,
+      "wikidata_id": "Q21707860",
+      "event_identity": "Adoption de l'Accord de Paris sur le climat (COP21)",
+      "is_disputed": false,
+      "ambiguous_identity": false,
+      "title_self_sufficient": true,
+      "title_not_self_sufficient": false,
+      "is_not_singular_event": false,
+      "is_time_span": false,
+      "is_period_based": false,
+      "exact_year_supported": true,
+      "reasoning_short": "L'Accord de Paris a été adopté en 2015 lors de la COP21. Wikipedia confirme que l'accord a été adopté en 2015. Wikidata confirme la date du 12 décembre 2015.",
+      "evidence_used": [
+        "wikipedia_fr_article",
+        "wikidata_1",
+        "wikidata_2"
+      ],
+      "sources_checked": [
+        {
+          "source_id": "wikipedia_fr_article",
+          "source_type": "wikipedia_fr",
+          "title": "Accord de Paris sur le climat",
+          "url": "https://fr.wikipedia.org/wiki/Accord_de_Paris_sur_le_climat",
+          "date_iso": null,
+          "precision": null
+        },
+        {
+          "source_id": "wikidata_1",
+          "source_type": "wikidata",
+          "title": "Q21707860",
+          "url": "https://www.wikidata.org/wiki/Q21707860",
+          "date_iso": "2015-12-12",
+          "precision": "day"
+        },
+        {
+          "source_id": "wikidata_2",
+          "source_type": "wikidata",
+          "title": "Q21707860",
+          "url": "https://www.wikidata.org/wiki/Q21707860",
+          "date_iso": "2015-12-12",
+          "precision": "day"
+        }
+      ],
+      "source_quotes": [
+        {
+          "source_id": "wikipedia_fr_article",
+          "quote": "L'accord de Paris, ou accord de Paris sur le climat, est un traité international sur l'atténuation et l'adaptation au changement climatique, ainsi que sur leur financement suffisant. Cet accord est négocié par 196 parties lors de la conférence de Paris de 2015 sur les changements climatiques, en France, adopté en 2015, puis ouvert à la signature le 22 avril 2016 — le Jour de la Terre — lors d'une cérémonie à New York. Après la ratification de l'Union européenne, le nombre de pays ayant ratifié l'accord est suffisant pour qu'il entre en vigueur le 4 novembre 2016. En novembre 2021, 193 membres de la convention-cadre des Nations unies sur les changements climatiques (CCNUCC) sont parties à l'accord. Les États-Unis se sont retirés de l'accord en 2020, mais l'ont réintégré en 2021 avant de s'en retirer de nouveau en 2025, à la suite de l'investiture de Donald Trump. Son objectif à long term…"
+        },
+        {
+          "source_id": "wikidata_1",
+          "quote": "point in time: 2015-12-12"
+        },
+        {
+          "source_id": "wikidata_2",
+          "quote": "publication date: 2015-12-12"
+        }
+      ],
+      "conflicts": []
+    },
+    {
+      "id": "325ba4af-c87c-4320-afc4-c2dbbfd5ab33",
+      "titre": "Naufrage du SS Central America",
+      "date_in_db": "1857-01-01",
+      "year_in_db": "1857",
+      "date_candidate": "1857-01-01",
+      "year_candidate": "1857",
+      "precision": "year",
+      "status": "CONFIRMED",
+      "result_bucket": "confirme",
+      "confidence": 1,
+      "needs_human_review": false,
+      "recommendation": "Aucune.",
+      "matched_article_fr": "https://fr.wikipedia.org/wiki/SS_Central_America",
+      "matched_article_en": null,
+      "wikidata_id": "Q491961",
+      "event_identity": "Naufrage du SS Central America",
+      "is_disputed": false,
+      "ambiguous_identity": false,
+      "title_self_sufficient": true,
+      "title_not_self_sufficient": false,
+      "is_not_singular_event": false,
+      "is_time_span": false,
+      "is_period_based": false,
+      "exact_year_supported": true,
+      "reasoning_short": "L'article Wikipédia en français confirme que le naufrage a eu lieu le 12 septembre 1857.",
+      "evidence_used": [
+        "wikipedia_fr_article"
+      ],
+      "sources_checked": [
+        {
+          "source_id": "wikipedia_fr_article",
+          "source_type": "wikipedia_fr",
+          "title": "SS Central America",
+          "url": "https://fr.wikipedia.org/wiki/SS_Central_America",
+          "date_iso": null,
+          "precision": null
+        }
+      ],
+      "source_quotes": [
+        {
+          "source_id": "wikipedia_fr_article",
+          "quote": "Le SS Central America, d'abord baptisé SS George Law et parfois surnommé le Ship of Gold (le navire de l'or), était un bateau à vapeur à roues à aubes en métal mesurant 85 mètres de long qui naviguait entre Panama et la côte est des États-Unis depuis 1853. Le 12 septembre 1857, le navire sombra par 2 300 mètres de fond lors d'un ouragan avec 425 personnes sur 578 passagers en tout, et 11,2 tonnes d'or provenant de fondeurs essayeurs privés et de la Monnaie de San Francisco, qui lui valurent son surnom, sa célébrité, et contribua à la panique de 1857. Le 11 septembre 1988, après des années de recherches infructueuses, un ingénieur de l'Ohio localise l'épave. Bénéficiant d'importants moyens financiers et technologiques, Tom Thompson et son équipe ont mis au point un robot sous-marin baptisé Nemo dont la pince géante peut puiser dans le trésor estimé à plusieurs centaines de millions d'eur…"
+        }
+      ],
+      "conflicts": []
+    }
+  ]
+}

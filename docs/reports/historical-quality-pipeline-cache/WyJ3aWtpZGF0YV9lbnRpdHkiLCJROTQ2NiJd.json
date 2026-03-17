@@ -1,0 +1,674 @@
+{
+  "pageid": 10840,
+  "ns": 0,
+  "title": "Q9466",
+  "lastrevid": 2424872577,
+  "modified": "2025-11-03T05:58:14Z",
+  "type": "item",
+  "id": "Q9466",
+  "labels": {
+    "fr": {
+      "language": "fr",
+      "value": "Grande mosquée de Lyon"
+    },
+    "en": {
+      "language": "en",
+      "value": "Grande mosquée de Lyon"
+    },
+    "de": {
+      "language": "de",
+      "value": "Grande mosquée de Lyon"
+    },
+    "es": {
+      "language": "es",
+      "value": "Gran Mezquita de Lyon"
+    },
+    "it": {
+      "language": "it",
+      "value": "Grande moschea di Lione"
+    },
+    "nl": {
+      "language": "nl",
+      "value": "Grande mosquée de Lyon"
+    },
+    "cs": {
+      "language": "cs",
+      "value": "Velká mešita"
+    },
+    "ca": {
+      "language": "ca",
+      "value": "Grande mosquée de Lyon"
+    },
+    "oc": {
+      "language": "oc",
+      "value": "Grande mosquée de Lyon"
+    },
+    "bn": {
+      "language": "bn",
+      "value": "লিওঁর বড় মসজিদ"
+    },
+    "ar": {
+      "language": "ar",
+      "value": "مسجد ليون الكبير"
+    },
+    "ms": {
+      "language": "ms",
+      "value": "Grande mosquée de Lyon"
+    },
+    "zh": {
+      "language": "zh",
+      "value": "里昂大清真寺"
+    },
+    "ur": {
+      "language": "ur",
+      "value": "مسجد لیون الکبیر"
+    }
+  },
+  "descriptions": {
+    "de": {
+      "language": "de",
+      "value": "Moschee in Lyon"
+    },
+    "en": {
+      "language": "en",
+      "value": "mosque in France"
+    },
+    "es": {
+      "language": "es",
+      "value": "templo musulmán de Lyon, Francia"
+    },
+    "fr": {
+      "language": "fr",
+      "value": "mosquée située dans le Rhône, en France"
+    },
+    "it": {
+      "language": "it",
+      "value": "moschea francese"
+    },
+    "nl": {
+      "language": "nl",
+      "value": "moskee in Frankrijk"
+    },
+    "id": {
+      "language": "id",
+      "value": "masjid di Perancis"
+    },
+    "bn": {
+      "language": "bn",
+      "value": "ফ্রান্সের মসজিদ"
+    },
+    "tw": {
+      "language": "tw",
+      "value": "nkramodan"
+    },
+    "sq": {
+      "language": "sq",
+      "value": "xhami"
+    },
+    "hy": {
+      "language": "hy",
+      "value": "մզկիթ"
+    },
+    "sv": {
+      "language": "sv",
+      "value": "moské"
+    }
+  },
+  "aliases": {
+    "en": [
+      {
+        "language": "en",
+        "value": "Grande mosquee de Lyon"
+      }
+    ]
+  },
+  "claims": {
+    "P131": [
+      {
+        "mainsnak": {
+          "snaktype": "value",
+          "property": "P131",
+          "hash": "4dff08899ccce595541885b5eff93bc6126cf175",
+          "datavalue": {
+            "value": {
+              "entity-type": "item",
+              "numeric-id": 456,
+              "id": "Q456"
+            },
+            "type": "wikibase-entityid"
+          },
+          "datatype": "wikibase-item"
+        },
+        "type": "statement",
+        "id": "Q9466$4BB99F73-10DF-4C53-A976-F45EA637462C",
+        "rank": "normal",
+        "references": [
+          {
+            "hash": "d4bd87b862b12d99d26e86472d44f26858dee639",
+            "snaks": {
+              "P143": [
+                {
+                  "snaktype": "value",
+                  "property": "P143",
+                  "hash": "f30cbd35620c4ea6d0633aaf0210a8916130469b",
+                  "datavalue": {
+                    "value": {
+                      "entity-type": "item",
+                      "numeric-id": 8447,
+                      "id": "Q8447"
+                    },
+                    "type": "wikibase-entityid"
+                  },
+                  "datatype": "wikibase-item"
+                }
+              ]
+            },
+            "snaks-order": [
+              "P143"
+            ]
+          }
+        ]
+      },
+      {
+        "mainsnak": {
+          "snaktype": "value",
+          "property": "P131",
+          "hash": "49063b828d1597341823bf07c146932c27df33db",
+          "datavalue": {
+            "value": {
+              "entity-type": "item",
+              "numeric-id": 3363,
+              "id": "Q3363"
+            },
+            "type": "wikibase-entityid"
+          },
+          "datatype": "wikibase-item"
+        },
+        "type": "statement",
+        "id": "Q9466$FB0DA056-9EE4-4B94-AC08-7981A695DE6B",
+        "rank": "normal"
+      }
+    ],
+    "P625": [
+      {
+        "mainsnak": {
+          "snaktype": "value",
+          "property": "P625",
+          "hash": "ab16bc6cca58ce9c2b68a2f8c49b8c4033a297c5",
+          "datavalue": {
+            "value": {
+              "latitude": 45.736788,
+              "longitude": 4.890241,
+              "altitude": null,
+              "precision": 0.00000277777777778,
+              "globe": "http://www.wikidata.org/entity/Q2"
+            },
+            "type": "globecoordinate"
+          },
+          "datatype": "globe-coordinate"
+        },
+        "type": "statement",
+        "id": "Q9466$9339E42C-CF0E-478B-B9C5-D8E467F89A81",
+        "rank": "normal",
+        "references": [
+          {
+            "hash": "fa278ebfc458360e5aed63d5058cca83c46134f1",
+            "snaks": {
+              "P143": [
+                {
+                  "snaktype": "value",
+                  "property": "P143",
+                  "hash": "e4f6d9441d0600513c4533c672b5ab472dc73694",
+                  "datavalue": {
+                    "value": {
+                      "entity-type": "item",
+                      "numeric-id": 328,
+                      "id": "Q328"
+                    },
+                    "type": "wikibase-entityid"
+                  },
+                  "datatype": "wikibase-item"
+                }
+              ]
+            },
+            "snaks-order": [
+              "P143"
+            ]
+          }
+        ]
+      }
+    ],
+    "P646": [
+      {
+        "mainsnak": {
+          "snaktype": "value",
+          "property": "P646",
+          "hash": "087eb02470a3d15cf606a8c385db2ad41ab53ead",
+          "datavalue": {
+            "value": "/m/07k53jk",
+            "type": "string"
+          },
+          "datatype": "external-id"
+        },
+        "type": "statement",
+        "id": "Q9466$A4FD275C-FF40-4FCD-AC46-B9E5909C146C",
+        "rank": "normal",
+        "references": [
+          {
+            "hash": "2b00cb481cddcac7623114367489b5c194901c4a",
+            "snaks": {
+              "P248": [
+                {
+                  "snaktype": "value",
+                  "property": "P248",
+                  "hash": "a94b740202b097dd33355e0e6c00e54b9395e5e0",
+                  "datavalue": {
+                    "value": {
+                      "entity-type": "item",
+                      "numeric-id": 15241312,
+                      "id": "Q15241312"
+                    },
+                    "type": "wikibase-entityid"
+                  },
+                  "datatype": "wikibase-item"
+                }
+              ],
+              "P577": [
+                {
+                  "snaktype": "value",
+                  "property": "P577",
+                  "hash": "fde79ecb015112d2f29229ccc1ec514ed3e71fa2",
+                  "datavalue": {
+                    "value": {
+                      "time": "+2013-10-28T00:00:00Z",
+                      "timezone": 0,
+                      "before": 0,
+                      "after": 0,
+                      "precision": 11,
+                      "calendarmodel": "http://www.wikidata.org/entity/Q1985727"
+                    },
+                    "type": "time"
+                  },
+                  "datatype": "time"
+                }
+              ]
+            },
+            "snaks-order": [
+              "P248",
+              "P577"
+            ]
+          }
+        ]
+      }
+    ],
+    "P17": [
+      {
+        "mainsnak": {
+          "snaktype": "value",
+          "property": "P17",
+          "hash": "c05db5d169c2560b9799d567a803d20a392f53e4",
+          "datavalue": {
+            "value": {
+              "entity-type": "item",
+              "numeric-id": 142,
+              "id": "Q142"
+            },
+            "type": "wikibase-entityid"
+          },
+          "datatype": "wikibase-item"
+        },
+        "type": "statement",
+        "id": "Q9466$D2491F1D-DBDB-4293-8427-05F3C19B5B24",
+        "rank": "normal"
+      }
+    ],
+    "P31": [
+      {
+        "mainsnak": {
+          "snaktype": "value",
+          "property": "P31",
+          "hash": "c78c35476d385e4e84d852b18a8ea630fc2738fd",
+          "datavalue": {
+            "value": {
+              "entity-type": "item",
+              "numeric-id": 32815,
+              "id": "Q32815"
+            },
+            "type": "wikibase-entityid"
+          },
+          "datatype": "wikibase-item"
+        },
+        "type": "statement",
+        "id": "Q9466$7FCFED18-8BA2-45A5-9EAB-08E5FA1EC51E",
+        "rank": "normal",
+        "references": [
+          {
+            "hash": "d4bd87b862b12d99d26e86472d44f26858dee639",
+            "snaks": {
+              "P143": [
+                {
+                  "snaktype": "value",
+                  "property": "P143",
+                  "hash": "f30cbd35620c4ea6d0633aaf0210a8916130469b",
+                  "datavalue": {
+                    "value": {
+                      "entity-type": "item",
+                      "numeric-id": 8447,
+                      "id": "Q8447"
+                    },
+                    "type": "wikibase-entityid"
+                  },
+                  "datatype": "wikibase-item"
+                }
+              ]
+            },
+            "snaks-order": [
+              "P143"
+            ]
+          }
+        ]
+      }
+    ],
+    "P856": [
+      {
+        "mainsnak": {
+          "snaktype": "value",
+          "property": "P856",
+          "hash": "f3458115b7147569de799717e4362ac34f1447ee",
+          "datavalue": {
+            "value": "http://www.mosquee-lyon.org/",
+            "type": "string"
+          },
+          "datatype": "url"
+        },
+        "type": "statement",
+        "id": "Q9466$B44F98E3-92CC-4227-8056-CBEBDF3A7A5E",
+        "rank": "normal",
+        "references": [
+          {
+            "hash": "d4bd87b862b12d99d26e86472d44f26858dee639",
+            "snaks": {
+              "P143": [
+                {
+                  "snaktype": "value",
+                  "property": "P143",
+                  "hash": "f30cbd35620c4ea6d0633aaf0210a8916130469b",
+                  "datavalue": {
+                    "value": {
+                      "entity-type": "item",
+                      "numeric-id": 8447,
+                      "id": "Q8447"
+                    },
+                    "type": "wikibase-entityid"
+                  },
+                  "datatype": "wikibase-item"
+                }
+              ]
+            },
+            "snaks-order": [
+              "P143"
+            ]
+          }
+        ]
+      }
+    ],
+    "P373": [
+      {
+        "mainsnak": {
+          "snaktype": "value",
+          "property": "P373",
+          "hash": "cbcc9c7e79a1d35e522331bf6c47693ba0241bcb",
+          "datavalue": {
+            "value": "Grande mosquée de Lyon",
+            "type": "string"
+          },
+          "datatype": "string"
+        },
+        "type": "statement",
+        "id": "Q9466$62681EAA-6B69-41DE-B5A1-0C375E2283A1",
+        "rank": "normal"
+      }
+    ],
+    "P140": [
+      {
+        "mainsnak": {
+          "snaktype": "value",
+          "property": "P140",
+          "hash": "94aa66334a34fffdf55fa12f0e281eba5427e453",
+          "datavalue": {
+            "value": {
+              "entity-type": "item",
+              "numeric-id": 432,
+              "id": "Q432"
+            },
+            "type": "wikibase-entityid"
+          },
+          "datatype": "wikibase-item"
+        },
+        "type": "statement",
+        "id": "Q9466$8A4E9FA2-CB8D-4314-B9F4-7D677444F3B9",
+        "rank": "normal",
+        "references": [
+          {
+            "hash": "d4bd87b862b12d99d26e86472d44f26858dee639",
+            "snaks": {
+              "P143": [
+                {
+                  "snaktype": "value",
+                  "property": "P143",
+                  "hash": "f30cbd35620c4ea6d0633aaf0210a8916130469b",
+                  "datavalue": {
+                    "value": {
+                      "entity-type": "item",
+                      "numeric-id": 8447,
+                      "id": "Q8447"
+                    },
+                    "type": "wikibase-entityid"
+                  },
+                  "datatype": "wikibase-item"
+                }
+              ]
+            },
+            "snaks-order": [
+              "P143"
+            ]
+          }
+        ]
+      }
+    ],
+    "P669": [
+      {
+        "mainsnak": {
+          "snaktype": "value",
+          "property": "P669",
+          "hash": "ca1784e674bcd02ddab876d6a4848801b206e230",
+          "datavalue": {
+            "value": {
+              "entity-type": "item",
+              "numeric-id": 62026519,
+              "id": "Q62026519"
+            },
+            "type": "wikibase-entityid"
+          },
+          "datatype": "wikibase-item"
+        },
+        "type": "statement",
+        "id": "Q9466$14b5395f-41ad-dfa9-7af9-04d868c2f454",
+        "rank": "normal"
+      }
+    ],
+    "P571": [
+      {
+        "mainsnak": {
+          "snaktype": "value",
+          "property": "P571",
+          "hash": "7e44dac4732fc9967ad9a5c86aba5a44fa719093",
+          "datavalue": {
+            "value": {
+              "time": "+1994-00-00T00:00:00Z",
+              "timezone": 0,
+              "before": 0,
+              "after": 0,
+              "precision": 9,
+              "calendarmodel": "http://www.wikidata.org/entity/Q1985727"
+            },
+            "type": "time"
+          },
+          "datatype": "time"
+        },
+        "type": "statement",
+        "id": "Q9466$6E823DF2-25FF-41D1-A0C5-22FF131A37CC",
+        "rank": "normal",
+        "references": [
+          {
+            "hash": "42098ef3c853ff246b6b34c70f7f5b4b69c0b939",
+            "snaks": {
+              "P143": [
+                {
+                  "snaktype": "value",
+                  "property": "P143",
+                  "hash": "f30cbd35620c4ea6d0633aaf0210a8916130469b",
+                  "datavalue": {
+                    "value": {
+                      "entity-type": "item",
+                      "numeric-id": 8447,
+                      "id": "Q8447"
+                    },
+                    "type": "wikibase-entityid"
+                  },
+                  "datatype": "wikibase-item"
+                }
+              ],
+              "P4656": [
+                {
+                  "snaktype": "value",
+                  "property": "P4656",
+                  "hash": "53a18364520bd242a807b4ef7bf831d86995e5b7",
+                  "datavalue": {
+                    "value": "https://fr.wikipedia.org/w/index.php?title=Grande_mosquée_de_Lyon&oldid=164837324",
+                    "type": "string"
+                  },
+                  "datatype": "url"
+                }
+              ]
+            },
+            "snaks-order": [
+              "P143",
+              "P4656"
+            ]
+          }
+        ]
+      }
+    ],
+    "P18": [
+      {
+        "mainsnak": {
+          "snaktype": "value",
+          "property": "P18",
+          "hash": "4baeecd0fde72eb9e7ee4afc392e1dfa429c9f2a",
+          "datavalue": {
+            "value": "Le T6 passe devant la grande mosquée de Lyon.jpg",
+            "type": "string"
+          },
+          "datatype": "commonsMedia"
+        },
+        "type": "statement",
+        "id": "Q9466$3f780646-4e13-b23b-be85-e003db7489b0",
+        "rank": "normal"
+      }
+    ],
+    "P6375": [
+      {
+        "mainsnak": {
+          "snaktype": "value",
+          "property": "P6375",
+          "hash": "f5001184da34b278d654cf5ca81c60d662bc7119",
+          "datavalue": {
+            "value": {
+              "text": "146 Boulevard Pinel",
+              "language": "fr"
+            },
+            "type": "monolingualtext"
+          },
+          "datatype": "monolingualtext"
+        },
+        "type": "statement",
+        "id": "Q9466$f9493d67-4a60-571e-b38e-958545ee23d0",
+        "rank": "normal"
+      }
+    ],
+    "P5775": [
+      {
+        "mainsnak": {
+          "snaktype": "value",
+          "property": "P5775",
+          "hash": "2f8baa7c4025365010fb7d954a65f9646bc5fb1a",
+          "datavalue": {
+            "value": "Lyon 8e - Grande mosquée de Lyon - Atrium.jpg",
+            "type": "string"
+          },
+          "datatype": "commonsMedia"
+        },
+        "type": "statement",
+        "id": "Q9466$ab0dcc93-4ac1-8fb2-fa71-aed29e1322da",
+        "rank": "normal"
+      }
+    ]
+  },
+  "sitelinks": {
+    "arwiki": {
+      "site": "arwiki",
+      "title": "مسجد ليون الكبير",
+      "badges": [],
+      "url": "https://ar.wikipedia.org/wiki/%D9%85%D8%B3%D8%AC%D8%AF_%D9%84%D9%8A%D9%88%D9%86_%D8%A7%D9%84%D9%83%D8%A8%D9%8A%D8%B1"
+    },
+    "bnwiki": {
+      "site": "bnwiki",
+      "title": "লিওঁর বড় মসজিদ",
+      "badges": [],
+      "url": "https://bn.wikipedia.org/wiki/%E0%A6%B2%E0%A6%BF%E0%A6%93%E0%A6%81%E0%A6%B0_%E0%A6%AC%E0%A6%A1%E0%A6%BC_%E0%A6%AE%E0%A6%B8%E0%A6%9C%E0%A6%BF%E0%A6%A6"
+    },
+    "cawiki": {
+      "site": "cawiki",
+      "title": "Gran mesquita de Lió",
+      "badges": [],
+      "url": "https://ca.wikipedia.org/wiki/Gran_mesquita_de_Li%C3%B3"
+    },
+    "commonswiki": {
+      "site": "commonswiki",
+      "title": "Category:Grande mosquée de Lyon",
+      "badges": [],
+      "url": "https://commons.wikimedia.org/wiki/Category:Grande_mosqu%C3%A9e_de_Lyon"
+    },
+    "cswiki": {
+      "site": "cswiki",
+      "title": "Velká mešita (Lyon)",
+      "badges": [],
+      "url": "https://cs.wikipedia.org/wiki/Velk%C3%A1_me%C5%A1ita_(Lyon)"
+    },
+    "enwiki": {
+      "site": "enwiki",
+      "title": "Grande mosquée de Lyon",
+      "badges": [],
+      "url": "https://en.wikipedia.org/wiki/Grande_mosqu%C3%A9e_de_Lyon"
+    },
+    "frwiki": {
+      "site": "frwiki",
+      "title": "Grande mosquée de Lyon",
+      "badges": [],
+      "url": "https://fr.wikipedia.org/wiki/Grande_mosqu%C3%A9e_de_Lyon"
+    },
+    "mswiki": {
+      "site": "mswiki",
+      "title": "Masjid Besar Lyon",
+      "badges": [],
+      "url": "https://ms.wikipedia.org/wiki/Masjid_Besar_Lyon"
+    },
+    "urwiki": {
+      "site": "urwiki",
+      "title": "مسجد لیون الکبیر",
+      "badges": [],
+      "url": "https://ur.wikipedia.org/wiki/%D9%85%D8%B3%D8%AC%D8%AF_%D9%84%DB%8C%D9%88%D9%86_%D8%A7%D9%84%DA%A9%D8%A8%DB%8C%D8%B1"
+    }
+  }
+}

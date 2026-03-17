@@ -1,0 +1,88 @@
+{
+  "saved_at": "2026-03-07T13:21:42.227Z",
+  "value": {
+    "pageid": 119035047,
+    "ns": 0,
+    "title": "Q124850224",
+    "lastrevid": 2102154518,
+    "modified": "2024-03-14T21:18:15Z",
+    "type": "item",
+    "id": "Q124850224",
+    "labels": {
+      "fr": {
+        "language": "fr",
+        "value": "Première Conférence mondiale sur le climat"
+      }
+    },
+    "descriptions": {
+      "fr": {
+        "language": "fr",
+        "value": "conférence scientifique internationale sur le climat"
+      }
+    },
+    "aliases": {
+      "fr": [
+        {
+          "language": "fr",
+          "value": "First World climate conference"
+        },
+        {
+          "language": "fr",
+          "value": "FWCC"
+        }
+      ]
+    },
+    "claims": {
+      "P31": [
+        {
+          "mainsnak": {
+            "snaktype": "value",
+            "property": "P31",
+            "hash": "3f7217c945ed2a32556e10e701c8cae58218febe",
+            "datavalue": {
+              "value": {
+                "entity-type": "item",
+                "numeric-id": 114834437,
+                "id": "Q114834437"
+              },
+              "type": "wikibase-entityid"
+            },
+            "datatype": "wikibase-item"
+          },
+          "type": "statement",
+          "id": "Q124850224$d5d94901-4a99-b528-057f-695099d81a36",
+          "rank": "normal"
+        }
+      ],
+      "P361": [
+        {
+          "mainsnak": {
+            "snaktype": "value",
+            "property": "P361",
+            "hash": "18f5756b7be8f5588a112d86df3b54691baf5fc1",
+            "datavalue": {
+              "value": {
+                "entity-type": "item",
+                "numeric-id": 8035537,
+                "id": "Q8035537"
+              },
+              "type": "wikibase-entityid"
+            },
+            "datatype": "wikibase-item"
+          },
+          "type": "statement",
+          "id": "Q124850224$f1fe91c7-456d-c646-0f76-552814d3a5aa",
+          "rank": "normal"
+        }
+      ]
+    },
+    "sitelinks": {
+      "frwiki": {
+        "site": "frwiki",
+        "title": "Première Conférence mondiale sur le climat",
+        "badges": [],
+        "url": "https://fr.wikipedia.org/wiki/Premi%C3%A8re_Conf%C3%A9rence_mondiale_sur_le_climat"
+      }
+    }
+  }
+}

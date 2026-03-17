@@ -1,0 +1,184 @@
+{
+  "saved_at": "2026-03-07T16:54:09.316Z",
+  "value": {
+    "pageid": 125262471,
+    "ns": 0,
+    "title": "Q131368075",
+    "lastrevid": 2292840015,
+    "modified": "2024-12-30T07:09:44Z",
+    "type": "item",
+    "id": "Q131368075",
+    "labels": {
+      "en": {
+        "language": "en",
+        "value": "Death and funeral of Louis XVIII"
+      },
+      "fr": {
+        "language": "fr",
+        "value": "mort et funérailles de Louis XVIII"
+      }
+    },
+    "descriptions": {},
+    "aliases": {},
+    "claims": {
+      "P31": [
+        {
+          "mainsnak": {
+            "snaktype": "value",
+            "property": "P31",
+            "hash": "59eb0d09fc342b03ace0dac059b6216b93dce5b8",
+            "datavalue": {
+              "value": {
+                "entity-type": "item",
+                "numeric-id": 201676,
+                "id": "Q201676"
+              },
+              "type": "wikibase-entityid"
+            },
+            "datatype": "wikibase-item"
+          },
+          "type": "statement",
+          "id": "Q131368075$f60e0f59-4ad8-d666-0949-7fd25052f7f4",
+          "rank": "normal"
+        }
+      ],
+      "P1269": [
+        {
+          "mainsnak": {
+            "snaktype": "value",
+            "property": "P1269",
+            "hash": "9a2fdb83da8f01582a93815a154cb368bdc89dba",
+            "datavalue": {
+              "value": {
+                "entity-type": "item",
+                "numeric-id": 7750,
+                "id": "Q7750"
+              },
+              "type": "wikibase-entityid"
+            },
+            "datatype": "wikibase-item"
+          },
+          "type": "statement",
+          "id": "Q131368075$957f4a1a-46b7-4667-d4b3-2a1d4ab50fef",
+          "rank": "normal"
+        }
+      ],
+      "P17": [
+        {
+          "mainsnak": {
+            "snaktype": "value",
+            "property": "P17",
+            "hash": "2b7d86f7555d9e77641e33f3f283b88021a5e49a",
+            "datavalue": {
+              "value": {
+                "entity-type": "item",
+                "numeric-id": 70972,
+                "id": "Q70972"
+              },
+              "type": "wikibase-entityid"
+            },
+            "datatype": "wikibase-item"
+          },
+          "type": "statement",
+          "id": "Q131368075$01e2519f-421e-70c2-0473-0486788bf5f4",
+          "rank": "normal"
+        }
+      ],
+      "P276": [
+        {
+          "mainsnak": {
+            "snaktype": "value",
+            "property": "P276",
+            "hash": "e2fb861319b4bc8943d20ba65d8d6305e57f9ae2",
+            "datavalue": {
+              "value": {
+                "entity-type": "item",
+                "numeric-id": 234364,
+                "id": "Q234364"
+              },
+              "type": "wikibase-entityid"
+            },
+            "datatype": "wikibase-item"
+          },
+          "type": "statement",
+          "id": "Q131368075$f5748719-4bb1-b611-ffc9-db9f6f14225e",
+          "rank": "normal"
+        },
+        {
+          "mainsnak": {
+            "snaktype": "value",
+            "property": "P276",
+            "hash": "fa74c9a5154e6aae1e6120a45f8f327512c0aa4e",
+            "datavalue": {
+              "value": {
+                "entity-type": "item",
+                "numeric-id": 184407,
+                "id": "Q184407"
+              },
+              "type": "wikibase-entityid"
+            },
+            "datatype": "wikibase-item"
+          },
+          "type": "statement",
+          "id": "Q131368075$dd8c3bf0-47bd-d0d8-1096-1042b56380c9",
+          "rank": "normal"
+        }
+      ],
+      "P585": [
+        {
+          "mainsnak": {
+            "snaktype": "value",
+            "property": "P585",
+            "hash": "75a094f96e9ca629925be0e177ded8e63ab29931",
+            "datavalue": {
+              "value": {
+                "time": "+1824-09-23T00:00:00Z",
+                "timezone": 0,
+                "before": 0,
+                "after": 0,
+                "precision": 11,
+                "calendarmodel": "http://www.wikidata.org/entity/Q1985727"
+              },
+              "type": "time"
+            },
+            "datatype": "time"
+          },
+          "type": "statement",
+          "id": "Q131368075$5eb65bec-4b86-4e82-b7d4-dc4a73b8f0c9",
+          "rank": "normal"
+        }
+      ],
+      "P373": [
+        {
+          "mainsnak": {
+            "snaktype": "value",
+            "property": "P373",
+            "hash": "dfb943007bbe6e9058de0831160796256d2317a8",
+            "datavalue": {
+              "value": "Funeral of Louis XVIII",
+              "type": "string"
+            },
+            "datatype": "string"
+          },
+          "type": "statement",
+          "id": "Q131368075$6193282e-4620-253a-40f6-74f00386b541",
+          "rank": "normal"
+        }
+      ]
+    },
+    "sitelinks": {
+      "commonswiki": {
+        "site": "commonswiki",
+        "title": "Category:Funeral of Louis XVIII",
+        "badges": [],
+        "url": "https://commons.wikimedia.org/wiki/Category:Funeral_of_Louis_XVIII"
+      },
+      "frwiki": {
+        "site": "frwiki",
+        "title": "Mort et funérailles de Louis XVIII",
+        "badges": [],
+        "url": "https://fr.wikipedia.org/wiki/Mort_et_fun%C3%A9railles_de_Louis_XVIII"
+      }
+    }
+  }
+}

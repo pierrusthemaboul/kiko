@@ -1,0 +1,3 @@
+CREATE TABLE sas2 (
+  LIKE sas INCLUDING ALL
+);

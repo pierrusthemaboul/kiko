@@ -1,0 +1,411 @@
+{
+  "pageid": 1079036,
+  "ns": 0,
+  "title": "Q1132096",
+  "lastrevid": 2324580041,
+  "modified": "2025-03-14T14:18:16Z",
+  "type": "item",
+  "id": "Q1132096",
+  "labels": {
+    "de": {
+      "language": "de",
+      "value": "Revenu de solidarité active"
+    },
+    "fr": {
+      "language": "fr",
+      "value": "revenu de solidarité active"
+    },
+    "en": {
+      "language": "en",
+      "value": "revenu de solidarité active"
+    },
+    "oc": {
+      "language": "oc",
+      "value": "Revienut de solidaritat activa"
+    },
+    "nl": {
+      "language": "nl",
+      "value": "revenu de solidarité active"
+    },
+    "ja": {
+      "language": "ja",
+      "value": "積極的連帯手当"
+    },
+    "ar": {
+      "language": "ar",
+      "value": "دخل التضامن الاجتماعي (فرنسا)"
+    }
+  },
+  "descriptions": {
+    "fr": {
+      "language": "fr",
+      "value": "prestation sociale en France"
+    },
+    "en": {
+      "language": "en",
+      "value": "French social welfare benefit"
+    },
+    "de": {
+      "language": "de",
+      "value": "Transferleistung"
+    }
+  },
+  "aliases": {
+    "fr": [
+      {
+        "language": "fr",
+        "value": "RSA socle"
+      },
+      {
+        "language": "fr",
+        "value": "revenu de solidarite active"
+      },
+      {
+        "language": "fr",
+        "value": "RSA"
+      }
+    ],
+    "oc": [
+      {
+        "language": "oc",
+        "value": "RSA"
+      },
+      {
+        "language": "oc",
+        "value": "Reviengut de solidaritat activa"
+      },
+      {
+        "language": "oc",
+        "value": "Revengut de solidaritat activa"
+      }
+    ],
+    "ja": [
+      {
+        "language": "ja",
+        "value": "積極的連帯所得"
+      }
+    ],
+    "en": [
+      {
+        "language": "en",
+        "value": "revenu de solidarite active"
+      },
+      {
+        "language": "en",
+        "value": "RSA"
+      }
+    ],
+    "de": [
+      {
+        "language": "de",
+        "value": "RSA"
+      }
+    ],
+    "nl": [
+      {
+        "language": "nl",
+        "value": "RSA"
+      }
+    ]
+  },
+  "claims": {
+    "P373": [
+      {
+        "mainsnak": {
+          "snaktype": "value",
+          "property": "P373",
+          "hash": "c2080528a71ab193a40902061662d2a409a21e9d",
+          "datavalue": {
+            "value": "Revenu de solidarité active",
+            "type": "string"
+          },
+          "datatype": "string"
+        },
+        "type": "statement",
+        "id": "Q1132096$FB383925-1320-45AE-9468-B2B40CADA51B",
+        "rank": "normal"
+      }
+    ],
+    "P31": [
+      {
+        "mainsnak": {
+          "snaktype": "value",
+          "property": "P31",
+          "hash": "af0ffd04f8e00aa91d0ac51afcaa2bfa1977fbcb",
+          "datavalue": {
+            "value": {
+              "entity-type": "item",
+              "numeric-id": 1411457,
+              "id": "Q1411457"
+            },
+            "type": "wikibase-entityid"
+          },
+          "datatype": "wikibase-item"
+        },
+        "type": "statement",
+        "id": "Q1132096$15a55b2b-45dd-6ec5-5cf7-33f8e94bdccb",
+        "rank": "normal"
+      }
+    ],
+    "P17": [
+      {
+        "mainsnak": {
+          "snaktype": "value",
+          "property": "P17",
+          "hash": "c05db5d169c2560b9799d567a803d20a392f53e4",
+          "datavalue": {
+            "value": {
+              "entity-type": "item",
+              "numeric-id": 142,
+              "id": "Q142"
+            },
+            "type": "wikibase-entityid"
+          },
+          "datatype": "wikibase-item"
+        },
+        "type": "statement",
+        "id": "Q1132096$188aa51b-440a-c989-494e-300d1cbafe78",
+        "rank": "normal"
+      }
+    ],
+    "P1813": [
+      {
+        "mainsnak": {
+          "snaktype": "value",
+          "property": "P1813",
+          "hash": "4ce45ef82b6dc96a5650f8a8554efc408d5b80bc",
+          "datavalue": {
+            "value": {
+              "text": "RSA",
+              "language": "fr"
+            },
+            "type": "monolingualtext"
+          },
+          "datatype": "monolingualtext"
+        },
+        "type": "statement",
+        "id": "Q1132096$05c0183f-4609-ee8d-f2d5-8d5ab643167f",
+        "rank": "normal",
+        "references": [
+          {
+            "hash": "6a17f1a6499636107c4538e4a9980f144c8e018f",
+            "snaks": {
+              "P248": [
+                {
+                  "snaktype": "value",
+                  "property": "P248",
+                  "hash": "30fc6b4a633331d9f3121dc0d6554a3f346580aa",
+                  "datavalue": {
+                    "value": {
+                      "entity-type": "item",
+                      "numeric-id": 1815103,
+                      "id": "Q1815103"
+                    },
+                    "type": "wikibase-entityid"
+                  },
+                  "datatype": "wikibase-item"
+                }
+              ],
+              "P854": [
+                {
+                  "snaktype": "value",
+                  "property": "P854",
+                  "hash": "1c5a040014c306e2c691e01cc8856b0964135257",
+                  "datavalue": {
+                    "value": "https://beta.legifrance.gouv.fr/jorf/id/JORFTEXT000041835196",
+                    "type": "string"
+                  },
+                  "datatype": "url"
+                }
+              ]
+            },
+            "snaks-order": [
+              "P248",
+              "P854"
+            ]
+          }
+        ]
+      }
+    ],
+    "P1001": [
+      {
+        "mainsnak": {
+          "snaktype": "value",
+          "property": "P1001",
+          "hash": "efe2878aed693a79dce942b2f853910a78c4e2a8",
+          "datavalue": {
+            "value": {
+              "entity-type": "item",
+              "numeric-id": 142,
+              "id": "Q142"
+            },
+            "type": "wikibase-entityid"
+          },
+          "datatype": "wikibase-item"
+        },
+        "type": "statement",
+        "id": "Q1132096$6dcc4c90-47f1-3e63-1857-a13c9d6c66d5",
+        "rank": "normal"
+      }
+    ],
+    "P1448": [
+      {
+        "mainsnak": {
+          "snaktype": "value",
+          "property": "P1448",
+          "hash": "b4851d02957a41427347e0d524200b64dc3d9bac",
+          "datavalue": {
+            "value": {
+              "text": "revenu de solidarité active",
+              "language": "fr"
+            },
+            "type": "monolingualtext"
+          },
+          "datatype": "monolingualtext"
+        },
+        "type": "statement",
+        "id": "Q1132096$e9f57c77-4be5-1d23-36d8-6ab9867be40a",
+        "rank": "normal",
+        "references": [
+          {
+            "hash": "6a17f1a6499636107c4538e4a9980f144c8e018f",
+            "snaks": {
+              "P854": [
+                {
+                  "snaktype": "value",
+                  "property": "P854",
+                  "hash": "1c5a040014c306e2c691e01cc8856b0964135257",
+                  "datavalue": {
+                    "value": "https://beta.legifrance.gouv.fr/jorf/id/JORFTEXT000041835196",
+                    "type": "string"
+                  },
+                  "datatype": "url"
+                }
+              ],
+              "P248": [
+                {
+                  "snaktype": "value",
+                  "property": "P248",
+                  "hash": "30fc6b4a633331d9f3121dc0d6554a3f346580aa",
+                  "datavalue": {
+                    "value": {
+                      "entity-type": "item",
+                      "numeric-id": 1815103,
+                      "id": "Q1815103"
+                    },
+                    "type": "wikibase-entityid"
+                  },
+                  "datatype": "wikibase-item"
+                }
+              ]
+            },
+            "snaks-order": [
+              "P854",
+              "P248"
+            ]
+          }
+        ]
+      }
+    ],
+    "P646": [
+      {
+        "mainsnak": {
+          "snaktype": "value",
+          "property": "P646",
+          "hash": "a62f46e489421cd8473e114d1c01f445a1bd66d4",
+          "datavalue": {
+            "value": "/m/04lg66m",
+            "type": "string"
+          },
+          "datatype": "external-id"
+        },
+        "type": "statement",
+        "id": "Q1132096$66D52FC7-1CED-4AB0-A6A4-EC3D64DCEAAC",
+        "rank": "normal"
+      }
+    ],
+    "P580": [
+      {
+        "mainsnak": {
+          "snaktype": "value",
+          "property": "P580",
+          "hash": "f014a24baea687836ee172e296dba208052f1f6b",
+          "datavalue": {
+            "value": {
+              "time": "+2007-08-01T00:00:00Z",
+              "timezone": 0,
+              "before": 0,
+              "after": 0,
+              "precision": 11,
+              "calendarmodel": "http://www.wikidata.org/entity/Q1985727"
+            },
+            "type": "time"
+          },
+          "datatype": "time"
+        },
+        "type": "statement",
+        "id": "Q1132096$b908a419-43f8-1c35-8e04-dc638c851c1d",
+        "rank": "normal"
+      }
+    ],
+    "P1365": [
+      {
+        "mainsnak": {
+          "snaktype": "value",
+          "property": "P1365",
+          "hash": "33b5f056cc63c11cbb2507c2e09a7bab00615f1f",
+          "datavalue": {
+            "value": {
+              "entity-type": "item",
+              "numeric-id": 17015384,
+              "id": "Q17015384"
+            },
+            "type": "wikibase-entityid"
+          },
+          "datatype": "wikibase-item"
+        },
+        "type": "statement",
+        "id": "Q1132096$9a4848d4-4978-ba8f-d5c8-4c1473130fe8",
+        "rank": "normal"
+      }
+    ]
+  },
+  "sitelinks": {
+    "arwiki": {
+      "site": "arwiki",
+      "title": "دخل التضامن الاجتماعي (فرنسا)",
+      "badges": [],
+      "url": "https://ar.wikipedia.org/wiki/%D8%AF%D8%AE%D9%84_%D8%A7%D9%84%D8%AA%D8%B6%D8%A7%D9%85%D9%86_%D8%A7%D9%84%D8%A7%D8%AC%D8%AA%D9%85%D8%A7%D8%B9%D9%8A_(%D9%81%D8%B1%D9%86%D8%B3%D8%A7)"
+    },
+    "commonswiki": {
+      "site": "commonswiki",
+      "title": "Category:Revenu de solidarité active",
+      "badges": [],
+      "url": "https://commons.wikimedia.org/wiki/Category:Revenu_de_solidarit%C3%A9_active"
+    },
+    "dewiki": {
+      "site": "dewiki",
+      "title": "Revenu de solidarité active",
+      "badges": [],
+      "url": "https://de.wikipedia.org/wiki/Revenu_de_solidarit%C3%A9_active"
+    },
+    "enwiki": {
+      "site": "enwiki",
+      "title": "Revenu de solidarité active",
+      "badges": [],
+      "url": "https://en.wikipedia.org/wiki/Revenu_de_solidarit%C3%A9_active"
+    },
+    "frwiki": {
+      "site": "frwiki",
+      "title": "Revenu de solidarité active",
+      "badges": [],
+      "url": "https://fr.wikipedia.org/wiki/Revenu_de_solidarit%C3%A9_active"
+    },
+    "ocwiki": {
+      "site": "ocwiki",
+      "title": "Revienut de solidaritat activa",
+      "badges": [],
+      "url": "https://oc.wikipedia.org/wiki/Revienut_de_solidaritat_activa"
+    }
+  }
+}

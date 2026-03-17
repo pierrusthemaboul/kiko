@@ -1,0 +1,132 @@
+create extension if not exists vector;
+
+create sequence if not exists "public"."ratoire_id_seq";
+
+create table if not exists "public"."ratoire" (
+  "id"               bigint not null default nextval('public.ratoire_id_seq'::regclass),
+  "titre"            text not null,
+  "year"             integer,
+  "is_universal"     boolean default false,
+  "notoriete"        integer,
+  "description"      text,
+  "type"             text,
+  "region"           text,
+  "status"           text default 'pending'::text,
+  "image_prompt"     text,
+  "created_at"       timestamp with time zone default now(),
+  "processed_at"     timestamp with time zone,
+  "error_log"        text,
+  "validation_notes" jsonb
+);
+
+alter sequence "public"."ratoire_id_seq" owned by "public"."ratoire"."id";
+
+create unique index if not exists ratoire_pkey on public.ratoire using btree (id);
+
+alter table "public"."ratoire" add constraint "ratoire_pkey" primary key using index "ratoire_pkey";
+
+grant delete, insert, references, select, trigger, truncate, update on table "public"."ratoire" to "anon";
+grant delete, insert, references, select, trigger, truncate, update on table "public"."ratoire" to "authenticated";
+grant delete, insert, references, select, trigger, truncate, update on table "public"."ratoire" to "service_role";
+
+create table if not exists public.evenements_embeddings (
+  id uuid not null,
+  titre_vector vector(1536),
+  metadata jsonb,
+  created_at timestamp with time zone default now(),
+  updated_at timestamp with time zone default now(),
+  constraint evenements_embeddings_pkey primary key (id),
+  constraint evenements_embeddings_id_fkey
+    foreign key (id) references public.evenements(id) on delete cascade
+);
+
+create table if not exists public.labo_embeddings (
+  id bigint not null,
+  titre_vector vector(1536),
+  metadata jsonb,
+  created_at timestamp with time zone default now(),
+  updated_at timestamp with time zone default now(),
+  constraint labo_embeddings_pkey primary key (id),
+  constraint labo_embeddings_id_fkey
+    foreign key (id) references public.labo(id) on delete cascade
+);
+
+create table if not exists public.ratoire_embeddings (
+  id bigint not null,
+  titre_vector vector(1536),
+  metadata jsonb,
+  created_at timestamp with time zone default now(),
+  updated_at timestamp with time zone default now(),
+  constraint ratoire_embeddings_pkey primary key (id),
+  constraint ratoire_embeddings_id_fkey
+    foreign key (id) references public.ratoire(id) on delete cascade
+);
+
+create index if not exists idx_evenements_embeddings_vector
+  on public.evenements_embeddings using ivfflat (titre_vector vector_cosine_ops) with (lists = 100);
+
+create index if not exists idx_labo_embeddings_vector
+  on public.labo_embeddings using ivfflat (titre_vector vector_cosine_ops) with (lists = 100);
+
+create index if not exists idx_ratoire_embeddings_vector
+  on public.ratoire_embeddings using ivfflat (titre_vector vector_cosine_ops) with (lists = 100);
+
+create or replace function public.match_evenements_embeddings(
+  query_embedding vector(1536),
+  match_count int default 1
+)
+returns table (
+  id uuid,
+  similarity double precision
+)
+language sql
+stable
+as $$
+  select
+    ee.id,
+    (1 - (ee.titre_vector <=> query_embedding)) as similarity
+  from public.evenements_embeddings ee
+  where ee.titre_vector is not null
+  order by ee.titre_vector <=> query_embedding
+  limit match_count;
+$$;
+
+create or replace function public.match_labo_embeddings(
+  query_embedding vector(1536),
+  match_count int default 1
+)
+returns table (
+  id bigint,
+  similarity double precision
+)
+language sql
+stable
+as $$
+  select
+    le.id,
+    (1 - (le.titre_vector <=> query_embedding)) as similarity
+  from public.labo_embeddings le
+  where le.titre_vector is not null
+  order by le.titre_vector <=> query_embedding
+  limit match_count;
+$$;
+
+create or replace function public.match_ratoire_embeddings(
+  query_embedding vector(1536),
+  match_count int default 1
+)
+returns table (
+  id bigint,
+  similarity double precision
+)
+language sql
+stable
+as $$
+  select
+    re.id,
+    (1 - (re.titre_vector <=> query_embedding)) as similarity
+  from public.ratoire_embeddings re
+  where re.titre_vector is not null
+  order by re.titre_vector <=> query_embedding
+  limit match_count;
+$$;

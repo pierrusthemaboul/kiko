@@ -1,0 +1,543 @@
+{
+  "saved_at": "2026-03-07T13:25:44.773Z",
+  "value": {
+    "pageid": 2936704,
+    "ns": 0,
+    "title": "Q3072570",
+    "lastrevid": 2445417434,
+    "modified": "2025-12-22T08:33:49Z",
+    "type": "item",
+    "id": "Q3072570",
+    "labels": {
+      "fr": {
+        "language": "fr",
+        "value": "siège de Montauban"
+      },
+      "en": {
+        "language": "en",
+        "value": "Siege of Montauban"
+      },
+      "it": {
+        "language": "it",
+        "value": "assedio di Montauban"
+      },
+      "pl": {
+        "language": "pl",
+        "value": "Oblężenie Montauban"
+      },
+      "de": {
+        "language": "de",
+        "value": "Belagerung von Montauban"
+      },
+      "es": {
+        "language": "es",
+        "value": "Sitio de Montauban"
+      },
+      "nl": {
+        "language": "nl",
+        "value": "Siege of Montauban"
+      },
+      "ja": {
+        "language": "ja",
+        "value": "モントーバン攻囲戦"
+      },
+      "ru": {
+        "language": "ru",
+        "value": "Осада Монтобана"
+      },
+      "he": {
+        "language": "he",
+        "value": "המצור על מונטובן"
+      },
+      "vec": {
+        "language": "vec",
+        "value": "Asèdio de Montauban"
+      },
+      "ga": {
+        "language": "ga",
+        "value": "Léigear Montauban"
+      },
+      "ca": {
+        "language": "ca",
+        "value": "Setge de Montauban"
+      },
+      "tr": {
+        "language": "tr",
+        "value": "Montauban Kuşatması"
+      }
+    },
+    "descriptions": {
+      "en": {
+        "language": "en",
+        "value": "1621 siege during the Huguenot rebellions"
+      },
+      "fr": {
+        "language": "fr",
+        "value": "août à novembre 1621"
+      },
+      "ca": {
+        "language": "ca",
+        "value": "setge durant les rebel·lions hugonotes de 1621"
+      }
+    },
+    "aliases": {
+      "fr": [
+        {
+          "language": "fr",
+          "value": "Siege de Montauban"
+        }
+      ]
+    },
+    "claims": {
+      "P31": [
+        {
+          "mainsnak": {
+            "snaktype": "value",
+            "property": "P31",
+            "hash": "4fa1783d4cfdddbd24616e28fab46d9c00a29a54",
+            "datavalue": {
+              "value": {
+                "entity-type": "item",
+                "numeric-id": 188055,
+                "id": "Q188055"
+              },
+              "type": "wikibase-entityid"
+            },
+            "datatype": "wikibase-item"
+          },
+          "type": "statement",
+          "id": "Q3072570$FC20C7BA-A43B-4A2E-A6A3-C28E284BB7FD",
+          "rank": "normal"
+        }
+      ],
+      "P18": [
+        {
+          "mainsnak": {
+            "snaktype": "value",
+            "property": "P18",
+            "hash": "da105b06093351f5862b40308a6ccfafcb6af027",
+            "datavalue": {
+              "value": "Siege of Montauban 1621 Merian 1646.jpg",
+              "type": "string"
+            },
+            "datatype": "commonsMedia"
+          },
+          "type": "statement",
+          "id": "Q3072570$B4D937C7-D622-4A85-BD58-D9F4347F4A5A",
+          "rank": "normal",
+          "references": [
+            {
+              "hash": "fa278ebfc458360e5aed63d5058cca83c46134f1",
+              "snaks": {
+                "P143": [
+                  {
+                    "snaktype": "value",
+                    "property": "P143",
+                    "hash": "e4f6d9441d0600513c4533c672b5ab472dc73694",
+                    "datavalue": {
+                      "value": {
+                        "entity-type": "item",
+                        "numeric-id": 328,
+                        "id": "Q328"
+                      },
+                      "type": "wikibase-entityid"
+                    },
+                    "datatype": "wikibase-item"
+                  }
+                ]
+              },
+              "snaks-order": [
+                "P143"
+              ]
+            }
+          ]
+        }
+      ],
+      "P361": [
+        {
+          "mainsnak": {
+            "snaktype": "value",
+            "property": "P361",
+            "hash": "635bafe4d6e9c0e0d95b249f69da09e27f70263b",
+            "datavalue": {
+              "value": {
+                "entity-type": "item",
+                "numeric-id": 673175,
+                "id": "Q673175"
+              },
+              "type": "wikibase-entityid"
+            },
+            "datatype": "wikibase-item"
+          },
+          "type": "statement",
+          "id": "Q3072570$90E3E409-6B43-476E-9D38-CEE88117CC58",
+          "rank": "normal",
+          "references": [
+            {
+              "hash": "9a24f7c0208b05d6be97077d855671d1dfdbc0dd",
+              "snaks": {
+                "P143": [
+                  {
+                    "snaktype": "value",
+                    "property": "P143",
+                    "hash": "d38375ffe6fe142663ff55cd783aa4df4301d83d",
+                    "datavalue": {
+                      "value": {
+                        "entity-type": "item",
+                        "numeric-id": 48183,
+                        "id": "Q48183"
+                      },
+                      "type": "wikibase-entityid"
+                    },
+                    "datatype": "wikibase-item"
+                  }
+                ]
+              },
+              "snaks-order": [
+                "P143"
+              ]
+            }
+          ]
+        }
+      ],
+      "P2581": [
+        {
+          "mainsnak": {
+            "snaktype": "value",
+            "property": "P2581",
+            "hash": "cbc6907d298f9f6b25c7776c1e26449978d43000",
+            "datavalue": {
+              "value": "01622744n",
+              "type": "string"
+            },
+            "datatype": "external-id"
+          },
+          "type": "statement",
+          "id": "Q3072570$3F987A4B-86CB-4FA6-B79C-37A064014738",
+          "rank": "normal",
+          "references": [
+            {
+              "hash": "248ac337a217a5f5eed7139a82a4e60931611af0",
+              "snaks": {
+                "P248": [
+                  {
+                    "snaktype": "value",
+                    "property": "P248",
+                    "hash": "25b816aab41db18565946259c950aed6de05dd1e",
+                    "datavalue": {
+                      "value": {
+                        "entity-type": "item",
+                        "numeric-id": 4837690,
+                        "id": "Q4837690"
+                      },
+                      "type": "wikibase-entityid"
+                    },
+                    "datatype": "wikibase-item"
+                  }
+                ]
+              },
+              "snaks-order": [
+                "P248"
+              ]
+            }
+          ]
+        }
+      ],
+      "P585": [
+        {
+          "mainsnak": {
+            "snaktype": "value",
+            "property": "P585",
+            "hash": "1b2cc1296685fae89db430267f265dfd409d8058",
+            "datavalue": {
+              "value": {
+                "time": "+1621-00-00T00:00:00Z",
+                "timezone": 0,
+                "before": 0,
+                "after": 0,
+                "precision": 9,
+                "calendarmodel": "http://www.wikidata.org/entity/Q1985727"
+              },
+              "type": "time"
+            },
+            "datatype": "time"
+          },
+          "type": "statement",
+          "id": "Q3072570$B20F11F3-5339-4CD1-AE36-B49E127D5B89",
+          "rank": "normal",
+          "references": [
+            {
+              "hash": "2dd6e365d8c85cc87447775f5f0ccbd2647567e5",
+              "snaks": {
+                "P143": [
+                  {
+                    "snaktype": "value",
+                    "property": "P143",
+                    "hash": "e4f6d9441d0600513c4533c672b5ab472dc73694",
+                    "datavalue": {
+                      "value": {
+                        "entity-type": "item",
+                        "numeric-id": 328,
+                        "id": "Q328"
+                      },
+                      "type": "wikibase-entityid"
+                    },
+                    "datatype": "wikibase-item"
+                  }
+                ],
+                "P813": [
+                  {
+                    "snaktype": "value",
+                    "property": "P813",
+                    "hash": "107d76411f9aa4e5b9d0a5d58dd995b70a8ab64b",
+                    "datavalue": {
+                      "value": {
+                        "time": "+2018-03-23T00:00:00Z",
+                        "timezone": 0,
+                        "before": 0,
+                        "after": 0,
+                        "precision": 11,
+                        "calendarmodel": "http://www.wikidata.org/entity/Q1985727"
+                      },
+                      "type": "time"
+                    },
+                    "datatype": "time"
+                  }
+                ]
+              },
+              "snaks-order": [
+                "P143",
+                "P813"
+              ]
+            }
+          ]
+        }
+      ],
+      "P276": [
+        {
+          "mainsnak": {
+            "snaktype": "value",
+            "property": "P276",
+            "hash": "3b9cc3fa718314aba98fb263b58424b3f3db3654",
+            "datavalue": {
+              "value": {
+                "entity-type": "item",
+                "numeric-id": 172593,
+                "id": "Q172593"
+              },
+              "type": "wikibase-entityid"
+            },
+            "datatype": "wikibase-item"
+          },
+          "type": "statement",
+          "id": "Q3072570$BE24F70F-D9D3-43A2-AFC9-1203615DB3E9",
+          "rank": "normal",
+          "references": [
+            {
+              "hash": "a77e0e8e0cc12eca654c00f3b5ba5a70faf72b87",
+              "snaks": {
+                "P143": [
+                  {
+                    "snaktype": "value",
+                    "property": "P143",
+                    "hash": "e4f6d9441d0600513c4533c672b5ab472dc73694",
+                    "datavalue": {
+                      "value": {
+                        "entity-type": "item",
+                        "numeric-id": 328,
+                        "id": "Q328"
+                      },
+                      "type": "wikibase-entityid"
+                    },
+                    "datatype": "wikibase-item"
+                  }
+                ],
+                "P4656": [
+                  {
+                    "snaktype": "value",
+                    "property": "P4656",
+                    "hash": "59b814ea278e25650669ef7b2b0cd189ecf26de0",
+                    "datavalue": {
+                      "value": "https://en.wikipedia.org/w/index.php?title=Siege_of_Montauban&oldid=846903777",
+                      "type": "string"
+                    },
+                    "datatype": "url"
+                  }
+                ]
+              },
+              "snaks-order": [
+                "P143",
+                "P4656"
+              ]
+            }
+          ]
+        }
+      ],
+      "P580": [
+        {
+          "mainsnak": {
+            "snaktype": "value",
+            "property": "P580",
+            "hash": "ec0dc92c886b0efe98c80bf9d177973c10ef5321",
+            "datavalue": {
+              "value": {
+                "time": "+1621-08-00T00:00:00Z",
+                "timezone": 0,
+                "before": 0,
+                "after": 0,
+                "precision": 10,
+                "calendarmodel": "http://www.wikidata.org/entity/Q1985727"
+              },
+              "type": "time"
+            },
+            "datatype": "time"
+          },
+          "type": "statement",
+          "id": "Q3072570$f9bb4064-4954-e244-d861-ce4a75189c0b",
+          "rank": "normal"
+        }
+      ],
+      "P582": [
+        {
+          "mainsnak": {
+            "snaktype": "value",
+            "property": "P582",
+            "hash": "678cc8cc709c39add76768390e5dd7d59e68d60c",
+            "datavalue": {
+              "value": {
+                "time": "+1621-11-00T00:00:00Z",
+                "timezone": 0,
+                "before": 0,
+                "after": 0,
+                "precision": 10,
+                "calendarmodel": "http://www.wikidata.org/entity/Q1985727"
+              },
+              "type": "time"
+            },
+            "datatype": "time"
+          },
+          "type": "statement",
+          "id": "Q3072570$9579e84f-43da-616a-2eaf-7d9a73af0502",
+          "rank": "normal"
+        }
+      ],
+      "P625": [
+        {
+          "mainsnak": {
+            "snaktype": "value",
+            "property": "P625",
+            "hash": "2cbd311767b8a46603eefb1a2ce8f428f73df5af",
+            "datavalue": {
+              "value": {
+                "latitude": 44.017222222222,
+                "longitude": 1.355,
+                "altitude": null,
+                "precision": 0.00001,
+                "globe": "http://www.wikidata.org/entity/Q2"
+              },
+              "type": "globecoordinate"
+            },
+            "datatype": "globe-coordinate"
+          },
+          "type": "statement",
+          "id": "Q3072570$854DB135-4999-49E0-AABA-FAFE722306A8",
+          "rank": "normal"
+        }
+      ],
+      "P646": [
+        {
+          "mainsnak": {
+            "snaktype": "value",
+            "property": "P646",
+            "hash": "185aeac45114b9054f7a33614ca866bb6815b465",
+            "datavalue": {
+              "value": "/m/064l41x",
+              "type": "string"
+            },
+            "datatype": "external-id"
+          },
+          "type": "statement",
+          "id": "Q3072570$804CB025-F600-4244-A538-3A2BE85F8BF3",
+          "rank": "normal"
+        }
+      ],
+      "P17": [
+        {
+          "mainsnak": {
+            "snaktype": "value",
+            "property": "P17",
+            "hash": "c05db5d169c2560b9799d567a803d20a392f53e4",
+            "datavalue": {
+              "value": {
+                "entity-type": "item",
+                "numeric-id": 142,
+                "id": "Q142"
+              },
+              "type": "wikibase-entityid"
+            },
+            "datatype": "wikibase-item"
+          },
+          "type": "statement",
+          "id": "Q3072570$67F188D4-B62D-4D4F-8995-9330B4FCCEDA",
+          "rank": "normal"
+        }
+      ]
+    },
+    "sitelinks": {
+      "cawiki": {
+        "site": "cawiki",
+        "title": "Setge de Montauban",
+        "badges": [],
+        "url": "https://ca.wikipedia.org/wiki/Setge_de_Montauban"
+      },
+      "dewiki": {
+        "site": "dewiki",
+        "title": "Belagerung von Montauban",
+        "badges": [],
+        "url": "https://de.wikipedia.org/wiki/Belagerung_von_Montauban"
+      },
+      "enwiki": {
+        "site": "enwiki",
+        "title": "Siege of Montauban",
+        "badges": [],
+        "url": "https://en.wikipedia.org/wiki/Siege_of_Montauban"
+      },
+      "frwiki": {
+        "site": "frwiki",
+        "title": "Siège de Montauban",
+        "badges": [],
+        "url": "https://fr.wikipedia.org/wiki/Si%C3%A8ge_de_Montauban"
+      },
+      "itwiki": {
+        "site": "itwiki",
+        "title": "Assedio di Montauban",
+        "badges": [],
+        "url": "https://it.wikipedia.org/wiki/Assedio_di_Montauban"
+      },
+      "nlwiki": {
+        "site": "nlwiki",
+        "title": "Beleg van Montauban",
+        "badges": [],
+        "url": "https://nl.wikipedia.org/wiki/Beleg_van_Montauban"
+      },
+      "plwiki": {
+        "site": "plwiki",
+        "title": "Oblężenie Montauban",
+        "badges": [],
+        "url": "https://pl.wikipedia.org/wiki/Obl%C4%99%C5%BCenie_Montauban"
+      },
+      "ruwiki": {
+        "site": "ruwiki",
+        "title": "Осада Монтобана",
+        "badges": [],
+        "url": "https://ru.wikipedia.org/wiki/%D0%9E%D1%81%D0%B0%D0%B4%D0%B0_%D0%9C%D0%BE%D0%BD%D1%82%D0%BE%D0%B1%D0%B0%D0%BD%D0%B0"
+      },
+      "trwiki": {
+        "site": "trwiki",
+        "title": "Montauban Kuşatması",
+        "badges": [],
+        "url": "https://tr.wikipedia.org/wiki/Montauban_Ku%C5%9Fatmas%C4%B1"
+      }
+    }
+  }
+}
