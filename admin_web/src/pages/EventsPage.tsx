@@ -359,7 +359,7 @@ const EventsPage: React.FC = () => {
         <div className="header-top">
           <div className="app-logo">
             <span className="gradient-text">K</span>
-            <h1>Events <small style={{fontSize: '11px', color: '#ff4444', fontWeight: 'bold'}}>[V2.1]</small></h1>
+            <h1>Events <small style={{fontSize: '11px', color: '#ff4444', fontWeight: 'bold'}}>[V2.2]</small></h1>
           </div>
           <button onClick={handleLogout} className="icon-button logout-btn">
             <LogOut size={20} />
