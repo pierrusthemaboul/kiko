@@ -1,0 +1,75 @@
+import React, { useEffect, useState } from 'react';
+import { BrowserRouter, Routes, Route, Navigate } from 'react-router-dom';
+import { supabase } from './lib/supabase';
+import LoginPage from './pages/LoginPage';
+import EventsPage from './pages/EventsPage';
+import SasPage from './pages/Sas/SasPage';
+import AntichambrePage from './pages/Antichambre/AntichambrePage';
+import AdminOptionsPage from './pages/AdminOptions/AdminOptionsPage';
+import RetoucheImagePage from './pages/RetoucheImage/RetoucheImagePage';
+import ModerationPage from './pages/ModerationPage';
+import OneByOnePage from './pages/OneByOne/OneByOnePage';
+import MainLayout from './components/MainLayout/MainLayout';
+import type { Session } from '@supabase/supabase-js';
+import { Loader2 } from 'lucide-react';
+
+const App: React.FC = () => {
+  const [session, setSession] = useState<Session | null>(null);
+  const [loading, setLoading] = useState(true);
+
+  useEffect(() => {
+    // Check current session
+    supabase.auth.getSession().then(({ data: { session } }) => {
+      setSession(session);
+      setLoading(false);
+    });
+
+    // Listen for auth changes
+    const { data: { subscription } } = supabase.auth.onAuthStateChange((_event, session) => {
+      setSession(session);
+    });
+
+    return () => subscription.unsubscribe();
+  }, []);
+
+  if (loading) {
+    return (
+      <div style={{ 
+        height: '100vh', 
+        display: 'flex', 
+        alignItems: 'center', 
+        justifyContent: 'center',
+        background: '#0f1117'
+      }}>
+        <Loader2 className="spin" color="#6366f1" size={40} />
+      </div>
+    );
+  }
+
+  return (
+    <BrowserRouter>
+      <Routes>
+        <Route 
+          path="/login" 
+          element={!session ? <LoginPage /> : <Navigate to="/" />} 
+        />
+        
+        {/* Routes nécessitant d'être connecté et wrappées par MainLayout */}
+        <Route path="/" element={session ? <MainLayout /> : <Navigate to="/login" />}>
+          <Route index element={<EventsPage />} />
+          <Route path="sas" element={<SasPage />} />
+          <Route path="antichambre" element={<AntichambrePage />} />
+          <Route path="retouche-image" element={<RetoucheImagePage />} />
+          <Route path="admin-option" element={<AdminOptionsPage />} />
+          <Route path="moderation" element={<ModerationPage />} />
+          <Route path="one-by-one" element={<OneByOnePage />} />
+          {/* L'ancienne page labo si besoin, pour l'instant on garde ça vide ou pointera vers un autre composant */}
+        </Route>
+
+        <Route path="*" element={<Navigate to="/" />} />
+      </Routes>
+    </BrowserRouter>
+  );
+};
+
+export default App;

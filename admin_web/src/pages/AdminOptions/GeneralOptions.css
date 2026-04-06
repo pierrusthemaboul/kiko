@@ -1,0 +1,221 @@
+.admin-option-page {
+  padding: 2rem;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.page-header {
+  margin-bottom: 2rem;
+}
+
+.page-header h1 {
+  color: #ffffff;
+  font-size: 2.5rem;
+  font-weight: 700;
+  margin-bottom: 0.5rem;
+}
+
+.page-header p {
+  color: #9ca3af;
+  font-size: 1.1rem;
+}
+
+.option-content {
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+}
+
+.option-card,
+.config-card,
+.settings-card {
+  background: #1f2937;
+  border: 1px solid #374151;
+  border-radius: 12px;
+  padding: 1.5rem;
+}
+
+.option-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 1rem;
+}
+
+.option-header h2 {
+  color: #ffffff;
+  font-size: 1.5rem;
+  font-weight: 600;
+  margin: 0;
+}
+
+.toggle-switch {
+  position: relative;
+  display: inline-block;
+  width: 60px;
+  height: 34px;
+}
+
+.toggle-switch input {
+  opacity: 0;
+  width: 0;
+  height: 0;
+}
+
+.slider {
+  position: absolute;
+  cursor: pointer;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: #374151;
+  transition: .4s;
+  border-radius: 34px;
+}
+
+.slider:before {
+  position: absolute;
+  content: "";
+  height: 26px;
+  width: 26px;
+  left: 4px;
+  bottom: 4px;
+  background-color: white;
+  transition: .4s;
+  border-radius: 50%;
+}
+
+input:checked + .slider {
+  background-color: #6366f1;
+}
+
+input:checked + .slider:before {
+  transform: translateX(26px);
+}
+
+.option-details p {
+  color: #9ca3af;
+  margin: 0;
+}
+
+.config-card h3,
+.settings-card h3 {
+  color: #ffffff;
+  font-size: 1.25rem;
+  font-weight: 600;
+  margin-bottom: 1.5rem;
+}
+
+.form-group {
+  margin-bottom: 1.5rem;
+}
+
+.form-group label {
+  display: block;
+  color: #e5e7eb;
+  font-weight: 500;
+  margin-bottom: 0.5rem;
+}
+
+.form-group input[type="text"],
+.form-group textarea {
+  width: 100%;
+  padding: 0.75rem;
+  background: #374151;
+  border: 1px solid #4b5563;
+  border-radius: 8px;
+  color: #ffffff;
+  font-size: 1rem;
+  transition: border-color 0.2s;
+}
+
+.form-group input[type="text"]:focus,
+.form-group textarea:focus {
+  outline: none;
+  border-color: #6366f1;
+}
+
+.form-group textarea {
+  resize: vertical;
+  min-height: 100px;
+}
+
+.setting-item {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0.75rem 0;
+  border-bottom: 1px solid #374151;
+}
+
+.setting-item:last-child {
+  border-bottom: none;
+}
+
+.setting-item label {
+  color: #e5e7eb;
+  font-weight: 500;
+}
+
+.setting-item input[type="checkbox"] {
+  width: 20px;
+  height: 20px;
+  accent-color: #6366f1;
+}
+
+.actions {
+  display: flex;
+  gap: 1rem;
+  margin-top: 2rem;
+}
+
+.save-btn,
+.cancel-btn {
+  padding: 0.75rem 1.5rem;
+  border: none;
+  border-radius: 8px;
+  font-size: 1rem;
+  font-weight: 500;
+  cursor: pointer;
+  transition: all 0.2s;
+}
+
+.save-btn {
+  background: #6366f1;
+  color: white;
+}
+
+.save-btn:hover {
+  background: #5558e3;
+}
+
+.cancel-btn {
+  background: #374151;
+  color: #e5e7eb;
+}
+
+.cancel-btn:hover {
+  background: #4b5563;
+}
+
+@media (max-width: 768px) {
+  .admin-option-page {
+    padding: 1rem;
+  }
+  
+  .option-header {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 1rem;
+  }
+  
+  .actions {
+    flex-direction: column;
+  }
+  
+  .save-btn,
+  .cancel-btn {
+    width: 100%;
+  }
+}
