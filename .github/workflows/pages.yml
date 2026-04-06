@@ -20,13 +20,28 @@ jobs:
       - name: Checkout
         uses: actions/checkout@v4
 
+      - name: Setup Node
+        uses: actions/setup-node@v4
+        with:
+          node-version: '20'
+          cache: 'npm'
+          cache-dependency-path: './admin_web/package.json'
+
+      - name: Install dependencies
+        run: npm install
+        working-directory: ./admin_web
+
+      - name: Build
+        run: npm run build
+        working-directory: ./admin_web
+
       - name: Setup Pages
         uses: actions/configure-pages@v4
 
       - name: Upload artifact
         uses: actions/upload-pages-artifact@v3
         with:
-          path: './public'
+          path: './admin_web/dist'
 
       - name: Deploy to GitHub Pages
         id: deployment
