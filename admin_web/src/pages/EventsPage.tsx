@@ -251,8 +251,16 @@ const EventsPage: React.FC = () => {
 
     if (data) {
       console.log(`[DEBUG] Received ${data.length} events (Total count: ${count})`);
-      if (isReset) setEvents(data);
-      else setEvents(prev => [...prev, ...data]);
+      if (isReset) {
+        setEvents(data);
+        sessionStorage.setItem('currentEventsIdsList', JSON.stringify(data.map(e => e.id)));
+      } else {
+        setEvents(prev => {
+          const newEvents = [...prev, ...data];
+          sessionStorage.setItem('currentEventsIdsList', JSON.stringify(newEvents.map(e => e.id)));
+          return newEvents;
+        });
+      }
     }
     
     setLoading(false);
