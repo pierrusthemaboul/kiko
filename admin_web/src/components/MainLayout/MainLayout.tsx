@@ -77,7 +77,7 @@ const MainLayout: React.FC = () => {
           zIndex: 9999,
           pointerEvents: 'none'
         }}>
-          BUILD: V2.3.0 - Stripe Light
+          BUILD: V2.3.1 - Alpha Fix
         </div>
     </div>
   );
