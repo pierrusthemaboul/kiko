@@ -3,35 +3,35 @@
 :root {
   --font-family: 'Outfit', sans-serif;
   
-  /* Modern Dark Palette */
-  --bg-primary: #0f1117;
-  --bg-secondary: #1a1d27;
-  --bg-tertiary: #232734;
+  /* Ultra Premium Minimal Dark Palette (Linear-esque) */
+  --bg-primary: #040404;     /* Deepest black/grey */
+  --bg-secondary: #0a0b0e;   /* Slightly elevated */
+  --bg-tertiary: #13151a;    /* Third level */
   
   --text-primary: #ffffff;
-  --text-secondary: #94a3b8;
-  --text-tertiary: #64748b;
+  --text-secondary: #8a8f98;
+  --text-tertiary: #5e626b;
   
-  --accent-primary: #6366f1; /* Indigo */
-  --accent-secondary: #8b5cf6; /* Violet */
-  --accent-gradient: linear-gradient(135deg, #6366f1 0%, #8b5cf6 100%);
+  --accent-primary: #22d3ee; /* Electric Cyan */
+  --accent-secondary: #38bdf8;
+  --accent-gradient: linear-gradient(135deg, #22d3ee 0%, #3b82f6 100%);
   
   --success: #10b981;
   --warning: #f59e0b;
   --error: #ef4444;
   --info: #3b82f6;
   
-  --glass-bg: rgba(26, 29, 39, 0.7);
-  --glass-border: rgba(255, 255, 255, 0.08);
-  --glass-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.4);
+  --glass-bg: rgba(10, 11, 14, 0.7);
+  --glass-border: rgba(255, 255, 255, 0.05); /* Extremely subtle border */
+  --glass-shadow: 0 4px 24px -4px rgba(0, 0, 0, 0.5);
   
-  --radius-sm: 8px;
-  --radius-md: 12px;
-  --radius-lg: 20px;
-  --radius-xl: 30px;
+  --radius-sm: 6px;
+  --radius-md: 10px;
+  --radius-lg: 16px;
+  --radius-xl: 24px;
   
-  --transition-fast: 0.2s cubic-bezier(0.4, 0, 0.2, 1);
-  --transition-normal: 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  --transition-fast: 0.15s cubic-bezier(0.2, 0.8, 0.2, 1);
+  --transition-normal: 0.3s cubic-bezier(0.2, 0.8, 0.2, 1);
 }
 
 * {

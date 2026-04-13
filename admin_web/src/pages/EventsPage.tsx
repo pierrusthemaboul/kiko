@@ -302,6 +302,27 @@ const EventsPage: React.FC = () => {
     setIsEditing(false);
     setIsRegenPanelOpen(false);
   };
+
+  const handleChangeInspectionStatus = async (eventId: string, newStatus: Event['inspection_one_by_one_status'], e: React.MouseEvent | React.ChangeEvent) => {
+    e.stopPropagation();
+    const updateSource = aiEvents ? 'evenements' : source;
+    
+    // Opt-in UI update for immediate feedback
+    setEvents(prev => prev.map(ev => ev.id === eventId ? { ...ev, inspection_one_by_one_status: newStatus } : ev));
+    if (aiEvents) {
+      setAiEvents(prev => prev ? prev.map(ev => ev.id === eventId ? { ...ev, inspection_one_by_one_status: newStatus } : ev) : null);
+    }
+    
+    // DB Update
+    const { error } = await supabase
+      .from(updateSource)
+      .update({ inspection_one_by_one_status: newStatus })
+      .eq('id', eventId);
+      
+    if (error) {
+      alert("Erreur: " + error.message);
+    }
+  };
   
   const handlePromote = async () => {
     if (!selectedEvent || source !== 'antichambre') return;
@@ -359,7 +380,7 @@ const EventsPage: React.FC = () => {
         <div className="header-top">
           <div className="app-logo">
             <span className="gradient-text">K</span>
-            <h1>Events <small style={{fontSize: '11px', color: '#4ade80', fontWeight: 'bold'}}>[V2.2.1.b - 13/04 09:00]</small></h1>
+            <h1>Events <small style={{fontSize: '11px', color: '#4ade80', fontWeight: 'bold'}}>[V2.2.1.c - 13/04 09:15]</small></h1>
           </div>
           <button onClick={handleLogout} className="icon-button logout-btn">
             <LogOut size={20} />
@@ -553,12 +574,19 @@ const EventsPage: React.FC = () => {
                        <span className="diff-text">Niv.{event.niveau_difficulte || 1}</span>
                     </div>
 
-                    <div className="event-footer">
+                     <div className="event-footer">
                        <div className="badges-stack">
-                          <span className={`status-pill ${event.donnee_corrigee ? 'corrigé' : 'à-corriger'}`}>
-                            {event.donnee_corrigee ? 'Vérifié' : 'À corriger'}
-                          </span>
-                          {event.universel && <span className="status-pill universe">🌍</span>}
+                          <select 
+                            className={`inline-status-select ${event.inspection_one_by_one_status ? event.inspection_one_by_one_status : 'PENDING'}`}
+                            value={event.inspection_one_by_one_status || ''}
+                            onClick={(e) => e.stopPropagation()}
+                            onChange={(e) => void handleChangeInspectionStatus(event.id, (e.target.value as Event['inspection_one_by_one_status']) || null, e)}
+                          >
+                            <option value="">Status: À évaluer</option>
+                            <option value="VALIDATED">✅ Validé</option>
+                            <option value="TITLE_REVIEW">📝 Titre à revoir</option>
+                            <option value="IMAGE_REVIEW">🖼️ Image à revoir</option>
+                          </select>
                        </div>
                        <ChevronRight size={16} className="arrow" />
                     </div>
