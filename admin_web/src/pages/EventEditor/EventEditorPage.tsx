@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import { useParams, useNavigate, useSearchParams } from 'react-router-dom';
 import { supabase } from '../../lib/supabase';
-import { Save, Wand2, ArrowLeft, ArrowRight, Image as ImageIcon, Calendar, FileText, UploadCloud } from 'lucide-react';
+import { Save, Wand2, ArrowLeft, ArrowRight, Image as ImageIcon, Calendar, FileText, UploadCloud, Trash2 } from 'lucide-react';
 import ImageRegenPanel from '../Sas/CreativeLab/ImageRegenPanel';
 import './EventEditorPage.css';
 
@@ -16,6 +16,7 @@ interface EventData {
   epoque?: string;
   notoriete?: number;
   niveau_difficulte?: number;
+  inspection_one_by_one_status?: 'VALIDATED' | 'TITLE_REVIEW' | 'IMAGE_REVIEW' | null;
 }
 
 const EventEditorPage: React.FC = () => {
@@ -88,7 +89,8 @@ const EventEditorPage: React.FC = () => {
         titre: eventData.titre,
         date: eventData.date,
         description_detaillee: eventData.description_detaillee,
-        illustration_url: eventData.illustration_url
+        illustration_url: eventData.illustration_url,
+        inspection_one_by_one_status: eventData.inspection_one_by_one_status
       })
       .eq('id', eventData.id);
       
@@ -98,6 +100,19 @@ const EventEditorPage: React.FC = () => {
       alert("Erreur: " + error.message);
     }
     setSaving(false);
+  };
+
+  const handleDelete = async () => {
+    if (!eventData) return;
+    if (!window.confirm("Êtes-vous sûr de vouloir supprimer cet événement ?")) return;
+    setSaving(true);
+    const { error } = await supabase.from(source).delete().eq('id', eventData.id);
+    if (!error) {
+      navigate(-1);
+    } else {
+      alert("Erreur: " + error.message);
+      setSaving(false);
+    }
   };
 
   const goToRetoucheImage = () => {
@@ -171,6 +186,14 @@ const EventEditorPage: React.FC = () => {
               <ArrowRight size={16} />
             </button>
           )}
+          <button 
+            className="btn-secondary" 
+            onClick={handleDelete} 
+            disabled={saving} 
+            style={{marginLeft: '12px', color: '#ef4444', borderColor: '#fca5a5', background: 'transparent'}}
+            title="Supprimer l'événement">
+            <Trash2 size={18} />
+          </button>
           <button className="btn-primary" onClick={handleSave} disabled={saving} style={{marginLeft: '12px'}}>
             <Save size={18} /> {saving ? 'Sauvegarde...' : 'Enregistrer'}
           </button>
@@ -218,6 +241,19 @@ const EventEditorPage: React.FC = () => {
         <div className="editor-right-column">
           <div className="glass panel meta-panel">
             <h3>Meta Données</h3>
+            <div className="form-group">
+              <label>Statut de Validation (1 par 1)</label>
+              <select 
+                value={eventData.inspection_one_by_one_status || ''} 
+                onChange={e => setEventData({...eventData, inspection_one_by_one_status: (e.target.value as any) || null})}
+                style={{ width: '100%', padding: '8px', borderRadius: '4px', border: '1px solid var(--glass-border)', background: 'var(--bg-tertiary)', color: 'var(--text-primary)' }}
+              >
+                <option value="">À évaluer</option>
+                <option value="VALIDATED">✅ Validé</option>
+                <option value="TITLE_REVIEW">📝 Titre à revoir</option>
+                <option value="IMAGE_REVIEW">🖼️ Image à revoir</option>
+              </select>
+            </div>
             <div className="form-group">
               <label><FileText size={16}/> Titre</label>
               <input type="text" value={eventData.titre} onChange={e => setEventData({...eventData, titre: e.target.value})} />
