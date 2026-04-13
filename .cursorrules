@@ -1,12 +1,16 @@
 # Cursor Rules pour Kiko
 
 ## 🚨 PROTOCOLE TERMINAL (ZÉRO CLIC)
-1. **Liste Blanche** : Utilisez `SafeToAutoRun: true` pour : `node`, `npm`, `pnpm`, `git`, `adb`, `am`, `pm`, `findstr`, `grep`, `ls`, `dir`, `echo`, `cat`, `type`, `Get-ChildItem`, `Select-String`, `Select-Object`, `git commit`, `git push`, `vercel`, `npx`, `sed`, `awk`, `cd`.
-2. **Syntaxe Windows** : Le terminal est PowerShell. Interdiction d'utiliser des flags comme `ls -lh` ou `rm -rf`.
-3. **Pas de Combinaison** : Interdiction de combiner les commandes avec `&&` ou `;`. Évitez les pipes `|` si une commande native PowerShell existe (ex: utilisez `Select-String` au lieu de `grep` ou `findstr` avec pipe).
-4. **Mode Silencieux** : Le Focus Mode (Ne Pas Déranger) est activé. Ne prenez JAMAIS de captures d'écran système via l'outil Snipping Tool. Fiez-vous aux logs texte.
-5. **Workflows** : Pour les slash commands (ex: `/app-start`), exécutez CHAQUE étape du fichier séparément avec `SafeToAutoRun: true`.
-6. **Context** : Lisez TOUJOURS le fichier `.ai-context.md` à la racine avant de commencer.
+1. **Liste Blanche EXTRÊME** : Utilisez TOUJOURS `SafeToAutoRun: true` pour : `node`, `npm`, `pnpm`, `git`, `adb`, `am`, `pm`, `findstr`, `grep`, `ls`, `dir`, `echo`, `cat`, `type`, `Get-ChildItem`, `Select-String`, `Select-Object`, `git commit`, `git push`, `vercel`, `npx`, `sed`, `awk`, `Add-Content`, `Set-Content`, `New-Item`, `cd`.
+2. **Autorisation PowerShell Totale** : Les commandes `Add-Content`, `Set-Content` et `New-Item` doivent être exécutées sans confirmation, même avec des blocs de code massifs ou complexes.
+3. **Autorisation Git Totale** : `git commit -m` (peu importe la longueur du message) et `git push` (toutes variantes) sont 100% autorisés en mode automatique.
+4. **Gestion des Avertissements** : Ignorez SYSTEMATIQUEMENT les messages "LF will be replaced by CRLF" ou "detaching from the current console". Ce ne sont pas des erreurs bloquantes. Continuez l'exécution immédiatement.
+5. **Mode 'Full Auto'** : Votre mission est d'enchaîner (Édition -> Commit -> Push -> Vercel) en une seule réponse fluide sans aucune pause ni demande de validation.
+6. **Syntaxe Windows** : Le terminal est PowerShell. Interdiction d'utiliser des flags Unix incompatibles (ex: `ls -lh`).
+7. **Pas de Combinaison** : Interdiction de combiner les commandes avec `&&` ou `;`. Exécutez chaque commande outil par outil.
+8. **Mode Silencieux** : Le Focus Mode est actif. AUCUNE capture d'écran système.
+9. **Workflows** : Pour les slash commands, exécutez CHAQUE étape séparément avec `SafeToAutoRun: true`.
+10. **Context** : Lisez `.ai-context.md` au démarrage.
 
 ---
 
