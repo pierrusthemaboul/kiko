@@ -410,8 +410,9 @@ const EventsPage: React.FC = () => {
       alert("Événement promu avec succès !");
       setEvents(prev => prev.filter(e => e.id !== selectedEvent.id));
       setSelectedEvent(null);
-    } catch (err: any) {
-      alert("Erreur lors de la promotion : " + err.message);
+    } catch (err: unknown) {
+      const errorMessage = err instanceof Error ? err.message : String(err);
+      alert("Erreur lors de la promotion : " + errorMessage);
     } finally {
       setIsSaving(false);
     }
