@@ -10,7 +10,7 @@ const MainLayout: React.FC = () => {
       <aside className="main-sidebar">
         <div className="sidebar-brand">
           <Rocket size={24} className="brand-logo" />
-          <h1>KIKO ADMIN</h1>
+          <h1>k Events [V2.2]</h1>
         </div>
         
         <nav className="sidebar-nav">
@@ -56,7 +56,7 @@ const MainLayout: React.FC = () => {
         </nav>
       </aside>
 
-      <main className="main-content">
+      <main className="main-content" style={{ backgroundColor: '#00ff00' }}>
         <Outlet />
       </main>
       <div style={{
