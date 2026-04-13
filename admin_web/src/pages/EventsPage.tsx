@@ -12,7 +12,8 @@ import {
   LogOut,
   RefreshCcw,
   Plus,
-  Filter,
+  ListFilter,
+  Grid,
   Zap,
   Trash2,
   Bot,
@@ -460,11 +461,16 @@ const EventsPage: React.FC = () => {
               onKeyDown={(e) => e.key === 'Enter' && resetAndFetch()}
             />
           </div>
+          <button onClick={() => setShowFilters(!showFilters)} className={`icon-button ${showFilters ? 'active' : ''}`}>
+            <ListFilter size={20} />
+          </button>
+          
           <button 
-            className={`icon-button filter-toggle ${showFilters ? 'active' : ''}`}
-            onClick={() => setShowFilters(!showFilters)}
+             onClick={() => setViewMode(viewMode === 'list' ? 'grid' : 'list')} 
+             className="icon-button"
+             title="Changer l'affichage"
           >
-            <Filter size={20} />
+             {viewMode === 'list' ? <LayoutGrid size={20} /> : <Grid size={20} />}
           </button>
           <button 
             className={`icon-button random-toggle ${isRandomMode ? 'active' : ''}`}
@@ -603,14 +609,26 @@ const EventsPage: React.FC = () => {
                   </div>
                   
                   <div className="event-info">
-                    <div className="event-main-details">
-                      <h3>{event.titre}</h3>
-                      <div className="event-meta">
-                        <span className="event-meta-item"><Calendar size={12}/> {event.date}</span>
-                        <span className="event-meta-item"><Tag size={12}/> {event.categorie}</span>
-                        <span className="event-meta-item">Niv. {event.niveau_difficulte || 1}</span>
-                      </div>
-                    </div>
+                    {viewMode === 'list' ? (
+                       <div className="event-main-details">
+                         <h3>{event.titre}</h3>
+                         <div className="event-meta">
+                           <span className="event-meta-item"><Calendar size={12}/> {event.date}</span>
+                           <span className="event-meta-item"><Tag size={12}/> {event.categorie}</span>
+                           <span className="event-meta-item">Niv. {event.niveau_difficulte || 1}</span>
+                         </div>
+                       </div>
+                    ) : (
+                       <div className="event-main-details">
+                         <div className="event-meta" style={{ marginBottom: '4px' }}>
+                           <span className="event-meta-item"><Calendar size={12}/> {event.date}</span>
+                         </div>
+                         <h3 style={{ whiteSpace: 'normal', display: '-webkit-box', WebkitLineClamp: 2, WebkitBoxOrient: 'vertical', overflow: 'hidden' }}>{event.titre}</h3>
+                         <div className="event-meta" style={{ marginTop: '8px' }}>
+                           <span className="event-meta-item">Niv. {event.niveau_difficulte || 1}</span>
+                         </div>
+                       </div>
+                    )}
 
                      <div className="event-footer">
                        <span className={`status-pill ${event.donnee_corrigee ? 'corrigé' : 'à-corriger'}`}>

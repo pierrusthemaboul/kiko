@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import { useParams, useNavigate, useSearchParams } from 'react-router-dom';
 import { supabase } from '../../lib/supabase';
-import { Save, Wand2, ArrowLeft, ArrowRight, Image as ImageIcon, Calendar, FileText } from 'lucide-react';
+import { Save, Wand2, ArrowLeft, ArrowRight, Image as ImageIcon, Calendar, FileText, UploadCloud } from 'lucide-react';
 import ImageRegenPanel from '../Sas/CreativeLab/ImageRegenPanel';
 import './EventEditorPage.css';
 
@@ -107,13 +107,55 @@ const EventEditorPage: React.FC = () => {
     });
   };
 
+  const handleManualUpload = async (e: React.ChangeEvent<HTMLInputElement>) => {
+    const file = e.target.files?.[0];
+    if (!file || !eventData) return;
+    
+    setSaving(true);
+    try {
+      const fileExt = file.name.split('.').pop();
+      const fileName = `${eventData.id}_manual_${Date.now()}.${fileExt}`;
+      
+      const { error: uploadError } = await supabase.storage
+        .from('evenements_kiko_images')
+        .upload(fileName, file, { 
+          cacheControl: '31536000',
+          upsert: true
+        });
+
+      if (uploadError) throw uploadError;
+
+      const { data: publicUrlData } = supabase.storage
+        .from('evenements_kiko_images')
+        .getPublicUrl(fileName);
+
+      const publicUrl = publicUrlData.publicUrl;
+
+      // Immediately save it
+      const { error: dbError } = await supabase
+        .from(source)
+        .update({ illustration_url: publicUrl })
+        .eq('id', eventData.id);
+
+      if (dbError) throw dbError;
+
+      setEventData({...eventData, illustration_url: publicUrl});
+      alert('Image uploadée avec succès !');
+    } catch (err: any) {
+      alert(`Erreur lors de l'upload: ${err.message}`);
+    }
+    setSaving(false);
+  };
+
   if (loading) return <div className="editor-loading">Chargement...</div>;
   if (!eventData) return <div className="editor-loading">Événement introuvable.</div>;
 
   return (
     <div className="event-editor-fullpage">
       <header className="editor-header glass">
-        <button className="back-btn" onClick={() => navigate(-1)}><ArrowLeft size={20} /> Retour</button>
+        <button className="back-btn" onClick={() => navigate(-1)} style={{ color: 'var(--text-primary)', borderColor: 'var(--glass-border)', background: 'var(--bg-secondary)' }}>
+          <ArrowLeft size={20} /> Retour
+        </button>
         <div className="header-info">
           <h2>Édition : {eventData.titre}</h2>
           <span className="source-badge">{source.toUpperCase()}</span>
@@ -121,12 +163,12 @@ const EventEditorPage: React.FC = () => {
         <div className="header-actions">
           {currentIndex !== null && currentIndex > 0 && (
             <button className="btn-secondary" onClick={goPrev} disabled={saving} style={{display: 'flex', alignItems: 'center', gap: '6px', background: 'var(--bg-tertiary)', padding: '6px 12px', borderRadius: 'var(--radius-sm)', border: '1px solid var(--glass-border)'}}>
-              <ArrowLeft size={16} /> Précédent
+              <ArrowLeft size={16} />
             </button>
           )}
           {currentIndex !== null && currentIndex < cachedIds.length - 1 && (
             <button className="btn-secondary" onClick={goNext} disabled={saving} style={{display: 'flex', alignItems: 'center', gap: '6px', background: 'var(--bg-tertiary)', padding: '6px 12px', borderRadius: 'var(--radius-sm)', border: '1px solid var(--glass-border)'}}>
-              Suivant <ArrowRight size={16} />
+              <ArrowRight size={16} />
             </button>
           )}
           <button className="btn-primary" onClick={handleSave} disabled={saving} style={{marginLeft: '12px'}}>
@@ -151,6 +193,15 @@ const EventEditorPage: React.FC = () => {
               <button className="btn-retouche" onClick={goToRetoucheImage}>
                 <ImageIcon size={18} /> Lab V2 (Retouche Image Avancée)
               </button>
+              <label className="btn-retouche" style={{ cursor: 'pointer', textAlign: 'center', display: 'flex', alignItems: 'center', justifyContent: 'center', gap: '6px' }}>
+                <UploadCloud size={18} /> Upload Manuel
+                <input 
+                  type="file" 
+                  accept="image/*" 
+                  style={{ display: 'none' }} 
+                  onChange={handleManualUpload} 
+                />
+              </label>
             </div>
             
             <div className="form-group">

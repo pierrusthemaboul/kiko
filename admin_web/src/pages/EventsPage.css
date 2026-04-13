@@ -176,14 +176,69 @@
   white-space: nowrap;
 }
 
-/* Data Row Layout (Unified) */
-.events-grid, .events-list {
+/* Split Grid and List Layouts */
+.events-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 16px;
+  padding: 0;
+}
+
+@media (min-width: 769px) {
+  .events-grid { grid-template-columns: repeat(auto-fill, minmax(250px, 1fr)); }
+}
+
+.events-list {
   display: flex;
   flex-direction: column;
-  gap: 8px; /* Stripe style spacing between cards */
+  gap: 8px; /* Stripe style spacing between rows */
 }
 
 .event-card {
+  transition: all var(--transition-fast);
+  cursor: pointer;
+  position: relative;
+  overflow: hidden;
+}
+
+/* Grid Specific Styles (Pastel) */
+.event-card.grid {
+  display: flex;
+  flex-direction: column;
+  background: #f8fafc; /* Pastel/Slate Light Base */
+  border: 1px solid var(--glass-border);
+  border-radius: var(--radius-lg);
+  box-shadow: var(--shadow-sm);
+  height: 100%;
+}
+
+.event-card.grid:hover {
+  background: white;
+  box-shadow: var(--shadow-md);
+  transform: translateY(-2px);
+  border-color: #cbd5e1;
+}
+
+.event-card.grid .event-image {
+  width: 100%;
+  height: 140px;
+  border-radius: 0;
+}
+
+.event-card.grid .event-info {
+  flex-direction: column;
+  align-items: stretch;
+  padding: 16px;
+  gap: 12px;
+}
+
+.event-card.grid .event-footer {
+  margin-top: auto;
+  justify-content: space-between;
+}
+
+/* List Specific Styles (Sleek Rows) */
+.event-card.list {
   display: flex;
   align-items: center;
   gap: 1rem;
@@ -192,29 +247,17 @@
   border: 1px solid var(--glass-border);
   border-radius: var(--radius-md);
   box-shadow: var(--shadow-sm);
-  transition: all var(--transition-fast);
-  cursor: pointer;
-  position: relative;
 }
 
-.event-card:hover {
+.event-card.list:hover {
   box-shadow: var(--shadow-md);
   border-color: var(--text-tertiary);
 }
 
-.event-card:active {
-  transform: none; /* remove scaling */
-  background: rgba(255, 255, 255, 0.05);
-}
-
-.event-image {
+.event-card.list .event-image {
   width: 48px;
   height: 48px;
-  flex-shrink: 0;
   border-radius: 4px;
-  overflow: hidden;
-  background: var(--bg-tertiary);
-  position: relative;
 }
 
 .event-image img {
