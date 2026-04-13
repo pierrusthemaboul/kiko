@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect, useCallback } from 'react';
 import { 
   Users, 
   Search, 
@@ -27,26 +27,37 @@ interface UserProfile {
   games_played: number;
   created_at: string;
   high_score: number;
+  total_count: number;
 }
+
+const ITEMS_PER_PAGE = 100;
 
 const UsersPage: React.FC = () => {
   const [searchTerm, setSearchTerm] = useState('');
   const [users, setUsers] = useState<UserProfile[]>([]);
   const [loading, setLoading] = useState(false);
+  const [page, setPage] = useState(0);
+  const [totalCount, setTotalCount] = useState(0);
   const [updatingId, setUpdatingId] = useState<string | null>(null);
   const [message, setMessage] = useState<{ text: string, type: 'success' | 'error' } | null>(null);
 
-  const fetchUsers = async () => {
-    if (!searchTerm.trim()) return;
-    setLoading(true);
+  const fetchUsers = useCallback(async (pageToFetch = 0, isInitial = false) => {
+    if (isInitial) setLoading(true);
     setMessage(null);
     try {
       const { data, error } = await supabase.rpc('search_users_admin', { 
-        search_term: searchTerm 
+        p_search_term: searchTerm || '',
+        p_offset: pageToFetch * ITEMS_PER_PAGE,
+        p_limit: ITEMS_PER_PAGE
       });
 
       if (error) throw error;
       setUsers(data || []);
+      if (data && data.length > 0) {
+        setTotalCount(Number(data[0].total_count));
+      } else {
+        setTotalCount(0);
+      }
     } catch (err: unknown) {
       console.error('Search error:', err);
       const errorMessage = err instanceof Error ? err.message : String(err);
@@ -54,6 +65,20 @@ const UsersPage: React.FC = () => {
     } finally {
       setLoading(false);
     }
+  }, [searchTerm]);
+
+  useEffect(() => {
+    fetchUsers(0, true);
+  }, [fetchUsers]);
+
+  const handleSearch = () => {
+    setPage(0);
+    fetchUsers(0, true);
+  };
+
+  const handlePageChange = (newPage: number) => {
+    setPage(newPage);
+    fetchUsers(newPage);
   };
 
   const handleUpdateUser = async (user: UserProfile, updates: Partial<UserProfile>) => {
@@ -109,12 +134,12 @@ const UsersPage: React.FC = () => {
             placeholder="Rechercher par email ou nom..." 
             value={searchTerm}
             onChange={(e) => setSearchTerm(e.target.value)}
-            onKeyDown={(e) => e.key === 'Enter' && fetchUsers()}
+            onKeyDown={(e) => e.key === 'Enter' && handleSearch()}
           />
           <button 
             className="search-btn"
-            onClick={fetchUsers}
-            disabled={loading || !searchTerm.trim()}
+            onClick={handleSearch}
+            disabled={loading}
           >
             {loading ? <RefreshCcw size={18} className="spin" /> : 'Rechercher'}
           </button>
@@ -122,6 +147,26 @@ const UsersPage: React.FC = () => {
       </header>
 
       <main className="users-content">
+        <div className="content-meta">
+          <p>{totalCount} utilisateur(s) trouvé(s)</p>
+          {totalCount > ITEMS_PER_PAGE && (
+            <div className="pagination glass">
+              <button 
+                onClick={() => handlePageChange(page - 1)}
+                disabled={page === 0 || loading}
+              >
+                Précédent
+              </button>
+              <span>Page {page + 1} / {Math.ceil(totalCount / ITEMS_PER_PAGE)}</span>
+              <button 
+                onClick={() => handlePageChange(page + 1)}
+                disabled={(page + 1) * ITEMS_PER_PAGE >= totalCount || loading}
+              >
+                Suivant
+              </button>
+            </div>
+          )}
+        </div>
         <AnimatePresence>
           {message && (
             <motion.div 
