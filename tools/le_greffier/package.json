@@ -1,0 +1,12 @@
+{
+  "name": "le_greffier",
+  "version": "1.0.0",
+  "description": "Agent Greffier - Prépare et enrichit les événements du SAS pour l'Antichambre",
+  "main": "agent.mjs",
+  "type": "module",
+  "dependencies": {
+    "@google/generative-ai": "^0.21.0",
+    "@supabase/supabase-js": "^2.39.7",
+    "dotenv": "^16.4.5"
+  }
+}

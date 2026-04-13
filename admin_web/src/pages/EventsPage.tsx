@@ -25,6 +25,7 @@ import {
 import { motion, AnimatePresence } from 'framer-motion';
 import ChatPanel from '../components/ChatPanel';
 import ImageRegenPanel from '../components/ImageRegenPanel/ImageRegenPanel';
+import { VERSION } from '../version';
 import './EventsPage.css';
 
 interface Event {
@@ -436,7 +437,7 @@ const EventsPage: React.FC = () => {
         <div className="header-top">
           <div className="app-logo">
             <span className="gradient-text">K</span>
-            <h1>Events <small style={{fontSize: '11px', color: '#4f46e5', fontWeight: 'bold'}}>[V2.3.0 - Stripe SaaS]</small></h1>
+            <h1>Events <small style={{fontSize: '11px', color: '#4f46e5', fontWeight: 'bold'}}>[{VERSION}]</small></h1>
           </div>
           <button onClick={handleLogout} className="icon-button logout-btn">
             <LogOut size={20} />

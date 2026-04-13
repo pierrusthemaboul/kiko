@@ -1,0 +1,16 @@
+{
+  "name": "videur-evenements",
+  "version": "1.0.0",
+  "description": "Agent Videur pour la validation finale des événements avant insertion dans la table principale.",
+  "main": "agent.mjs",
+  "type": "module",
+  "scripts": {
+    "start": "node agent.mjs",
+    "check": "node agent.mjs --dry-run"
+  },
+  "dependencies": {
+    "@supabase/supabase-js": "^2.39.0",
+    "dotenv": "^16.3.1",
+    "@google/generative-ai": "^0.2.1"
+  }
+}

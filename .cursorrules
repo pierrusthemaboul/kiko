@@ -16,4 +16,9 @@
 7. **MODE SILENCIEUX** : Ne prenez JAMAIS de captures d'écran système (Snipping Tool). Fiez-vous aux logs texte.
 
 ---
+## 🏷️ SYSTÈME DE VERSIONNAGE (ADMIN WEB)
+1. **Mise à jour automatique** : À chaque modification de code impactant `admin_web`, mettez à jour la version dans `admin_web/src/version.ts`.
+2. **Format** : `Event V.X.Y.Z - DD/MM/YYYY HH:mm` (Heure locale Paris).
+3. **Incrémentation** : Incrémentez Z pour les petits correctifs, Y pour les nouvelles fonctionnalités, X pour les refontes majeures.
+
 Lisez `.ai-context.md` au démarrage. Tout le reste est secondaire par rapport à l'exécution sans clic.

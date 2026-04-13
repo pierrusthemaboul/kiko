@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import { NavLink, Outlet } from 'react-router-dom';
-import { LayoutGrid, Database, Image as ImageIcon, Palette, Rocket, Sparkles, Shield, ListChecks, Menu, ChevronLeft } from 'lucide-react';
+import { LayoutGrid, Database, Image as ImageIcon, Palette, Rocket, Sparkles, Shield, ListChecks, Menu, ChevronLeft, Users } from 'lucide-react';
+import { VERSION } from '../../version';
 import './MainLayout.css';
 
 const MainLayout: React.FC = () => {
@@ -59,6 +60,11 @@ const MainLayout: React.FC = () => {
              <ListChecks size={20} className="nav-icon" />
              {isSidebarOpen && <span>1 par 1</span>}
           </NavLink>
+
+          <NavLink to="/users" className={({ isActive }) => `nav-item ${isActive ? 'active' : ''}`} title="Utilisateurs">
+             <Users size={20} className="nav-icon" />
+             {isSidebarOpen && <span>Utilisateurs</span>}
+          </NavLink>
         </nav>
       </aside>
 
@@ -77,7 +83,7 @@ const MainLayout: React.FC = () => {
           zIndex: 9999,
           pointerEvents: 'none'
         }}>
-          BUILD: V2.3.1 - Alpha Fix
+          BUILD: {VERSION}
         </div>
     </div>
   );
