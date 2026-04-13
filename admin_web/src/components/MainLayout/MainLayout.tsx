@@ -1,57 +1,63 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { NavLink, Outlet } from 'react-router-dom';
-import { LayoutGrid, Database, Image as ImageIcon, Palette, Rocket, Sparkles, Shield, ListChecks } from 'lucide-react';
+import { LayoutGrid, Database, Image as ImageIcon, Palette, Rocket, Sparkles, Shield, ListChecks, Menu, ChevronLeft } from 'lucide-react';
 import './MainLayout.css';
 
 const MainLayout: React.FC = () => {
+  const [isSidebarOpen, setIsSidebarOpen] = useState(true);
+
   return (
-    <div className="main-layout">
-      {/* Sidebar de Navigation Globale */}
+    <div className={`main-layout ${isSidebarOpen ? 'sidebar-open' : 'sidebar-closed'}`}>
       <aside className="main-sidebar">
         <div className="sidebar-brand">
-          <Rocket size={24} className="brand-logo" />
-          <h1>k Events <span style={{fontSize: '10px'}}>[V2.2.1.b - 13/04 09:00]</span></h1>
+          <div className="brand-logo-container">
+            <Rocket size={24} className="brand-logo" />
+            {isSidebarOpen && <h1>k Events</h1>}
+          </div>
+          <button className="toggle-sidebar" onClick={() => setIsSidebarOpen(!isSidebarOpen)}>
+            {isSidebarOpen ? <ChevronLeft size={20} /> : <Menu size={20} />}
+          </button>
         </div>
         
         <nav className="sidebar-nav">
-          <NavLink to="/" className={({ isActive }) => `nav-item ${isActive ? 'active' : ''}`}>
-            <LayoutGrid size={20} />
-            <span>Événements Officiels</span>
+          <NavLink to="/" className={({ isActive }) => `nav-item ${isActive ? 'active' : ''}`} title="Événements Officiels">
+            <LayoutGrid size={20} className="nav-icon" />
+            {isSidebarOpen && <span>Événements Officiels</span>}
           </NavLink>
           
-          <NavLink to="/sas" className={({ isActive }) => `nav-item ${isActive ? 'active' : ''}`}>
-            <Database size={20} />
-            <span>Table SAS</span>
+          <NavLink to="/sas" className={({ isActive }) => `nav-item ${isActive ? 'active' : ''}`} title="Table SAS">
+            <Database size={20} className="nav-icon" />
+            {isSidebarOpen && <span>Table SAS</span>}
           </NavLink>
 
-          <NavLink to="/antichambre" className={({ isActive }) => `nav-item ${isActive ? 'active' : ''}`}>
-            <Sparkles size={20} />
-            <span>Antichambre</span>
+          <NavLink to="/antichambre" className={({ isActive }) => `nav-item ${isActive ? 'active' : ''}`} title="Antichambre">
+            <Sparkles size={20} className="nav-icon" />
+            {isSidebarOpen && <span>Antichambre</span>}
           </NavLink>
 
-          <NavLink to="/retouche-image" className={({ isActive }) => `nav-item ${isActive ? 'active' : ''}`}>
-            <ImageIcon size={20} />
-            <span>Retouche Image</span>
+          <NavLink to="/retouche-image" className={({ isActive }) => `nav-item ${isActive ? 'active' : ''}`} title="Retouche Image">
+            <ImageIcon size={20} className="nav-icon" />
+            {isSidebarOpen && <span>Retouche Image</span>}
           </NavLink>
           
-          <NavLink to="/admin-option" className={({ isActive }) => `nav-item ${isActive ? 'active' : ''}`}>
-            <Sparkles size={20} />
-            <span>Curateur IA</span>
+          <NavLink to="/admin-option" className={({ isActive }) => `nav-item ${isActive ? 'active' : ''}`} title="Curateur IA">
+            <Sparkles size={20} className="nav-icon" />
+            {isSidebarOpen && <span>Curateur IA</span>}
           </NavLink>
 
-          <NavLink to="/moderation" className={({ isActive }) => `nav-item ${isActive ? 'active' : ''}`}>
-             <Shield size={20} />
-             <span>Modération</span>
+          <NavLink to="/moderation" className={({ isActive }) => `nav-item ${isActive ? 'active' : ''}`} title="Modération">
+             <Shield size={20} className="nav-icon" />
+             {isSidebarOpen && <span>Modération</span>}
           </NavLink>
           
-          <NavLink to="/lab" className={({ isActive }) => `nav-item ${isActive ? 'active' : ''}`}>
-             <Palette size={20} />
-             <span>Laboratoire</span>
+          <NavLink to="/lab" className={({ isActive }) => `nav-item ${isActive ? 'active' : ''}`} title="Laboratoire">
+             <Palette size={20} className="nav-icon" />
+             {isSidebarOpen && <span>Laboratoire</span>}
           </NavLink>
 
-          <NavLink to="/one-by-one" className={({ isActive }) => `nav-item ${isActive ? 'active' : ''}`}>
-             <ListChecks size={20} />
-             <span>1 par 1</span>
+          <NavLink to="/one-by-one" className={({ isActive }) => `nav-item ${isActive ? 'active' : ''}`} title="1 par 1">
+             <ListChecks size={20} className="nav-icon" />
+             {isSidebarOpen && <span>1 par 1</span>}
           </NavLink>
         </nav>
       </aside>
@@ -71,7 +77,7 @@ const MainLayout: React.FC = () => {
           zIndex: 9999,
           pointerEvents: 'none'
         }}>
-          BUILD: V2.2.1.b - 13/04/2026 09:00
+          BUILD: V2.3.0 - Stripe Light
         </div>
     </div>
   );

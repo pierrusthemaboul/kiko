@@ -180,11 +180,7 @@
 .events-grid, .events-list {
   display: flex;
   flex-direction: column;
-  gap: 1px; /* 1px gap gives the impression of 1px borders between rows */
-  background: var(--glass-border);
-  border: 1px solid var(--glass-border);
-  border-radius: var(--radius-sm);
-  overflow: hidden;
+  gap: 8px; /* Stripe style spacing between cards */
 }
 
 .event-card {
@@ -193,15 +189,17 @@
   gap: 1rem;
   padding: 12px 16px;
   background: var(--bg-secondary);
-  border-radius: 0;
-  border: none;
+  border: 1px solid var(--glass-border);
+  border-radius: var(--radius-md);
+  box-shadow: var(--shadow-sm);
   transition: all var(--transition-fast);
   cursor: pointer;
   position: relative;
 }
 
 .event-card:hover {
-  background: var(--bg-tertiary);
+  box-shadow: var(--shadow-md);
+  border-color: var(--text-tertiary);
 }
 
 .event-card:active {

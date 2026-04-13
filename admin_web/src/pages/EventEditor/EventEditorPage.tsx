@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import { useParams, useNavigate, useSearchParams } from 'react-router-dom';
 import { supabase } from '../../lib/supabase';
-import { Save, Wand2, ArrowLeft, Image as ImageIcon, Calendar, FileText } from 'lucide-react';
+import { Save, Wand2, ArrowLeft, ArrowRight, Image as ImageIcon, Calendar, FileText } from 'lucide-react';
 import ImageRegenPanel from '../Sas/CreativeLab/ImageRegenPanel';
 import './EventEditorPage.css';
 
@@ -28,6 +28,38 @@ const EventEditorPage: React.FC = () => {
   const [loading, setLoading] = useState(true);
   const [saving, setSaving] = useState(false);
   const [isRegenPanelOpen, setIsRegenPanelOpen] = useState(false);
+  
+  const [currentIndex, setCurrentIndex] = useState<number | null>(null);
+  const [cachedIds, setCachedIds] = useState<string[]>([]);
+
+  useEffect(() => {
+    const list = sessionStorage.getItem('currentEventsIdsList');
+    if (list) {
+      try {
+        const ids = JSON.parse(list) as string[];
+        setCachedIds(ids);
+      } catch(e) {}
+    }
+  }, []);
+
+  useEffect(() => {
+    if (id && cachedIds.length > 0) {
+      const idx = cachedIds.indexOf(id);
+      setCurrentIndex(idx !== -1 ? idx : null);
+    }
+  }, [id, cachedIds]);
+
+  const goNext = () => {
+    if (currentIndex !== null && currentIndex < cachedIds.length - 1) {
+      navigate(`/edit-event/${cachedIds[currentIndex + 1]}?source=${source}`, { replace: true });
+    }
+  };
+
+  const goPrev = () => {
+    if (currentIndex !== null && currentIndex > 0) {
+      navigate(`/edit-event/${cachedIds[currentIndex - 1]}?source=${source}`, { replace: true });
+    }
+  };
 
   useEffect(() => {
     if (!id) return;
@@ -87,7 +119,17 @@ const EventEditorPage: React.FC = () => {
           <span className="source-badge">{source.toUpperCase()}</span>
         </div>
         <div className="header-actions">
-          <button className="btn-primary" onClick={handleSave} disabled={saving}>
+          {currentIndex !== null && currentIndex > 0 && (
+            <button className="btn-secondary" onClick={goPrev} disabled={saving} style={{display: 'flex', alignItems: 'center', gap: '6px', background: 'var(--bg-tertiary)', padding: '6px 12px', borderRadius: 'var(--radius-sm)', border: '1px solid var(--glass-border)'}}>
+              <ArrowLeft size={16} /> Précédent
+            </button>
+          )}
+          {currentIndex !== null && currentIndex < cachedIds.length - 1 && (
+            <button className="btn-secondary" onClick={goNext} disabled={saving} style={{display: 'flex', alignItems: 'center', gap: '6px', background: 'var(--bg-tertiary)', padding: '6px 12px', borderRadius: 'var(--radius-sm)', border: '1px solid var(--glass-border)'}}>
+              Suivant <ArrowRight size={16} />
+            </button>
+          )}
+          <button className="btn-primary" onClick={handleSave} disabled={saving} style={{marginLeft: '12px'}}>
             <Save size={18} /> {saving ? 'Sauvegarde...' : 'Enregistrer'}
           </button>
         </div>

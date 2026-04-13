@@ -80,10 +80,24 @@ const EventsPage: React.FC = () => {
         if (state.isCorrigé !== undefined) setIsCorrigé(state.isCorrigé);
         if (state.hasImage !== undefined) setHasImage(state.hasImage);
         if (state.isRandomMode !== undefined) setIsRandomMode(state.isRandomMode);
+        if (state.isRandomMode !== undefined) setIsRandomMode(state.isRandomMode);
       } catch (err) {
         console.error('Failed to parse session state', err);
       }
     }
+
+    // Restore scroll position securely after a short delay
+    const scrollPos = sessionStorage.getItem('eventsScrollPos');
+    if (scrollPos) {
+      setTimeout(() => window.scrollTo(0, parseInt(scrollPos, 10)), 100);
+    }
+
+    // Setup scroll listener
+    const handleScroll = () => {
+      sessionStorage.setItem('eventsScrollPos', window.scrollY.toString());
+    };
+    window.addEventListener('scroll', handleScroll, { passive: true });
+    return () => window.removeEventListener('scroll', handleScroll);
   }, []);
 
   // Save state to sessionStorage
@@ -191,9 +205,17 @@ const EventsPage: React.FC = () => {
     const currentOffset = overrideOffset !== undefined ? overrideOffset : randomOffset;
     console.log('[DEBUG] fetchEvents called', { source, pageIdx, debouncedSearch, isRandomMode, offset: currentOffset });
     
-    let query = supabase
-      .from(source)
-      .select('*', { count: 'exact' });
+    let query = supabase.from(aiEvents ? 'evenements_ai' : 'evenements').select('*', { count: 'exact' });
+      
+    // Store current navigation context for EventEditorPage Next/Prev features
+    sessionStorage.setItem('currentEventsListContext', JSON.stringify({
+       page: currentPage,
+       totalItems: totalCount,
+       filters: { searchTerm, categoryFilter, regionFilter, epoqueFilter, isUniversel, isCorrigé, hasImage }
+    }));
+    
+    // Also grab all IDs for immediate adjacent navigation locally
+    // Note: This requires the query to have been executed to get the data
     
     if (!debouncedSearch) {
       query = query.order('date', { ascending: false });
@@ -405,7 +427,7 @@ const EventsPage: React.FC = () => {
         <div className="header-top">
           <div className="app-logo">
             <span className="gradient-text">K</span>
-            <h1>Events <small style={{fontSize: '11px', color: '#4ade80', fontWeight: 'bold'}}>[V2.2.1.d - 13/04 09:30]</small></h1>
+            <h1>Events <small style={{fontSize: '11px', color: '#4f46e5', fontWeight: 'bold'}}>[V2.3.0 - Stripe SaaS]</small></h1>
           </div>
           <button onClick={handleLogout} className="icon-button logout-btn">
             <LogOut size={20} />
