@@ -1,82 +1,19 @@
-# Cursor Rules pour Kiko
+# Cursor Rules pour Kiko - PROTOCOLE MACHINE (ZÉRO CLIC)
 
-## 🚨 PROTOCOLE TERMINAL (ZÉRO CLIC)
-1. **Liste Blanche WILDCARD & CHAINING** : Utilisez TOUJOURS `SafeToAutoRun: true` pour TOUTE commande, simple ou enchaînée (`&&`, `||`), commençant par ou contenant :
-    *   `git commit`, `git push`, `git add`
-    *   `npm run build`, `npm install`, `pnpm build`
-    *   `tsc`, `vite build`
-    *   `vercel --prod`, `npx vercel`
-    *   `Add-Content`, `Set-Content`, `New-Item`
-    *   `node`, `npm`, `pnpm`, `adb`, `am`, `pm`, `grep`, `ls`, `dir`, `echo`, `cat`, `type`, `sed`, `awk`, `cd`, `npx`.
-2. **Autorisation du Chaining** : Vous êtes EXPLICITEMENT autorisé à enchaîner les commandes (ex: `git add . && git commit -m '...' && git push`). Ne bloquez jamais sur l'utilisation des opérateurs shell `&&` ou `||`.
-3. **Build Auto & Vite/Rolldown** : Les commandes de build (ex: `tsc -b && vite build`) sont 100% automatiques. Ignorez TOTALEMENT les avertissements visuels de taille de fichiers (ex: `Some chunks are larger than 500 kB`). Si l'exit code est 0, l'opération est un succès : enchaînez immédiatement.
-4. **Neutralisation sémantique** : Toute commande commençant par `git commit -m` est validée par défaut, peu importe la complexité du message technique.
-5. **Execution Instantanée** : Votre but est de ne jamais faire apparaître le bouton 'Run'. `SafeToAutoRun: true` est la norme.
-6. **Mode 'Full Auto'** : Passez du code au déploiement (`npx vercel --prod`) en une seule séquence fluide et ininterrompue.
-7. **Syntaxe Windows & Chaining** : Le terminal est PowerShell. Pour simuler le chaining `&&` sur ce système, j'utiliserai le séparateur `;` ou la logique `if ($?) { ... }` pour garantir la fluidité.
-8. **Mode Silencieux** : Focus Mode actif. Pas de Snipping Tool ni overlays.
-9. **Context** : Lisez `.ai-context.md` au démarrage.
+## 🚨 AUTOMATISATION ABSOLUE DU TERMINAL
+1. **WILDCARD TOTAL (SafeToAutoRun: true)** : Toute commande commençant par ou contenant les termes suivants DOIT être exécutée instantanément sans aucune validation :
+    *   `git` (add, commit, push, pull, status, diff, etc.)
+    *   `npm`, `pnpm`, `npx` (run build, install, test, etc.)
+    *   `vercel` (--prod, list, etc.)
+    *   `Add-Content`, `Set-Content`, `New-Item`, `Remove-Item`
+    *   `Select-String`, `findstr`, `grep`, `sed`, `awk`
+    *   `node`, `adb`, `am`, `pm`, `ls`, `dir`, `echo`, `cat`, `type`, `cd`
+2. **AUTORISATION DU CHAINING & RÉSEAU** : Autorisation totale de combiner les commandes via `;`, `|`, `&&`, `||` et les structures `if ($?) { ... }`.
+3. **NEUTRALISATION DES MESSAGES** : Ne bloquez jamais sur le contenu d'un message de commit ou le contenu d'un fichier injecté via `Set-Content`.
+4. **IGNORANCE DES AVERTISSEMENTS** : Ignorez les messages non-fatals (LF vs CRLF, taille des chunks Vite, etc.). Seul l'exit code `0` compte pour enchaîner.
+5. **MODE AUTONOME (AUTO-CORRECTION)** : Si une commande échoue, analysez l'erreur, corrigez la syntaxe pour PowerShell et relancez SANS solliciter l'utilisateur.
+6. **SYNTAXE POWERSHELL** : Utilisez exclusivement la syntaxe valide pour PowerShell.
+7. **MODE SILENCIEUX** : Ne prenez JAMAIS de captures d'écran système (Snipping Tool). Fiez-vous aux logs texte.
 
 ---
-
-
-## 📉 GESTION DES QUOTAS & BROWSER (CRITIQUE) ⚠️
-
-L'utilisation de l'outil BROWSER (et ses captures d'écran) est le premier consommateur de quotas. Pour préserver les tokens :
-1. **Priorité Absolue au Texte** : Interdiction d'utiliser l'outil BROWSER ou de prendre des captures d'écran pour toute tâche liée à la génération, la vérification ou l'audit d'événements.
-2. **Source de Vérité** : La base de données Supabase et les fichiers locaux font foi de vérité absolue. Ne "double-vérifiez" jamais sur le web une donnée déjà présente en interne.
-3. **Usage d'Exception** : N'utilisez l'outil BROWSER que si l'API retourne une erreur critique ou si une donnée est strictement absente de tout le système local/BD.
-4. **Zéro "Yeux" Inutiles** : Ne cherchez pas à "voir" l'interface pour confirmer une action ; fiez-vous aux logs et aux retours JSON des outils.
-
----
-
-## Audio System - CRITIQUE ⚠️
-
-AVANT de modifier `/hooks/useAudio.ts` ou `/hooks/game/usePrecisionAudio.ts`:
-1. LIRE `/docs/AUDIO_MIGRATION_GUIDE.md`
-2. Utiliser UNIQUEMENT `expo-av` (pas expo-audio)
-3. expo-audio 0.3.5 est ENTIÈREMENT BUGGÉ dans SDK 52
-
-Bug connu: TOUT expo-audio 0.3.5 provoque "Error: Value is undefined, expected an Object"
-
-## Pattern Audio Correct
-
-```typescript
-// ✅ CORRECT - expo-av
-import { Audio } from 'expo-av';
-const { sound } = await Audio.Sound.createAsync(require('./sound.wav'));
-await sound.playAsync();
-
-// ❌ INTERDIT - expo-audio (buggé)
-import { createAudioPlayer, useAudioPlayer } from 'expo-audio';
-const player = createAudioPlayer(...); // CRASH
-const player = useAudioPlayer(...); // CRASH AUSSI
-```
-
-IMPORTANT: expo-av est un module natif. Après modification audio:
-- Rebuilder: `npx expo prebuild --clean && cd android && ./gradlew assembleDebug`
-
-## Règles générales
-
-### 1. Sécurité et Secrets ABSOLUS (Zéro Plaintext) 🔴
-- **INTERDICTION FORMELLE** d'écrire une clé d'API (OpenAI, Anthropic, Gemini, Supabase, Firebase) ou un mot de passe en dur dans un script `.js`, `.mjs` ou `.ts`. 
-- Tout secret DOIT passer par `process.env.NOM_DE_LA_CLE`. 
-- Si tu crées un script de test, demande à l'utilisateur d'ajouter la clé dans son `.env`, mais ne la code JAMAIS en dur.
-
-### 2. Politique Anti-Poubelle (Camp Scout Rule) 🏕️
-- **INTERDICTION** de créer le moindre fichier script "jetable" ou "ponctuel" (ex: `test_db.mjs`, `audit_titres.js`) à la racine du projet ou de la `machine_a_evenements`.
-- Tous les scripts d'investigation ou de maintenance que tu crées DANS L'URGENCE doivent obligatoirement aller dans un dossier nommé `/scripts/`.
-- Prends l'engagement formel de proposer à l'utilisateur la SUPPRESSION de ton script de test à la seconde où tu as obtenu ta réponse métier.
-
-### 3. Architecture globale
-1. Projet utilise Expo SDK 52, pas SDK 53
-2. expo-audio version 0.3.5 (ne pas upgrader vers 1.0.14+)
-3. TypeScript strict privilégié sur les nouveaux fichiers Vue ou Métier.
-4. Tous les sons dans `/assets/sounds/`
-5. Documentation produit dans `/docs/`
-
-## Voir aussi
-
-- `/docs/README.md` - Index documentation
-- `/docs/AUDIO_MIGRATION_GUIDE.md` - Migration expo-audio
-- `/.ai-context.md` - Context général pour IA
+Lisez `.ai-context.md` au démarrage. Tout le reste est secondaire par rapport à l'exécution sans clic.
