@@ -122,6 +122,8 @@ const AnimatedEventCardA: React.FC<AnimatedEventCardAProps> = ({
     }
   };
 
+  // ----------------------------------------
+
 
   // 1.E.2. Effet pour l'animation de la date
   useEffect(() => {
@@ -357,13 +359,20 @@ const AnimatedEventCardA: React.FC<AnimatedEventCardAProps> = ({
 
           {/* Bouton Admin Régénération */}
           {isAdmin && position === 'bottom' && (
-            <TouchableOpacity
-              style={styles.adminRegenerateButton}
-              onPress={handleRegenerate}
-              disabled={isRegenerating}
-            >
-              <Ionicons name="refresh-circle" size={32} color={isRegenerating ? '#ccc' : '#FFD700'} />
-            </TouchableOpacity>
+            <View style={styles.actionButtonsContainer}>
+                <TouchableOpacity
+                  style={styles.actionButton}
+                  onPress={handleRegenerate}
+                  disabled={isRegenerating}
+                  activeOpacity={0.7}
+                >
+                  <Ionicons 
+                    name="refresh-circle-outline" 
+                    size={28} 
+                    color={isRegenerating ? '#666' : '#FFD700'} 
+                  />
+                </TouchableOpacity>
+            </View>
           )}
         </View>
       </View>
@@ -530,15 +539,24 @@ const styles = StyleSheet.create({
     marginBottom: 10
   },
 
-  // Style bouton admin
-  adminRegenerateButton: {
+  // Styles boutons d'action (Signalement & Admin)
+  actionButtonsContainer: {
     position: 'absolute',
     top: 15,
     right: 15,
     zIndex: 999,
-    backgroundColor: 'rgba(0,0,0,0.5)',
+    flexDirection: 'row',
+    alignItems: 'center',
+  },
+  actionButton: {
+    backgroundColor: 'rgba(0,0,0,0.4)',
     borderRadius: 20,
-    padding: 2,
+    width: 40,
+    height: 40,
+    justifyContent: 'center',
+    alignItems: 'center',
+    borderWidth: 1,
+    borderColor: 'rgba(255, 255, 255, 0.1)',
   }
 });
 

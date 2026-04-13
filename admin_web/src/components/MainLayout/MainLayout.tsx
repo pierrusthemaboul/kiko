@@ -56,10 +56,23 @@ const MainLayout: React.FC = () => {
         </nav>
       </aside>
 
-      {/* Contenu de la Page Active */}
       <main className="main-content">
         <Outlet />
       </main>
+      <div style={{
+          position: 'fixed',
+          bottom: '10px',
+          right: '10px',
+          background: 'rgba(0,0,0,0.5)',
+          color: 'white',
+          padding: '2px 8px',
+          borderRadius: '10px',
+          fontSize: '10px',
+          zIndex: 9999,
+          pointerEvents: 'none'
+        }}>
+          BUILD: V2.2.1-FIX
+        </div>
     </div>
   );
 };

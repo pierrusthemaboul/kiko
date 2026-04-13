@@ -14,6 +14,7 @@ import {
 import { Ionicons } from '@expo/vector-icons';
 import { LinearGradient } from 'expo-linear-gradient';
 import { colors } from '../../constants/Colors';
+import { supabase } from '@/lib/supabase/supabaseClients';
 import type { LevelEventSummary } from '@/hooks/types';
 import { ShareScoreButton } from '../ShareScoreButton';
 import { ShareData } from '../../types/sharing';
@@ -35,6 +36,7 @@ interface ScoreboardModalProps {
     bestScore: number;
     averageScore: number;
   };
+  onShareReward?: () => void;
 }
 
 const ScoreboardModal: React.FC<ScoreboardModalProps> = ({
@@ -50,6 +52,7 @@ const ScoreboardModal: React.FC<ScoreboardModalProps> = ({
   levelsHistory = [],
   gameMode = 'classic',
   userStats,
+  onShareReward,
 }) => {
   // État pour l’onglet des scores (jour, mois, total)
   const [activeTab, setActiveTab] = useState<'daily' | 'monthly' | 'allTime'>('daily');
@@ -59,6 +62,47 @@ const ScoreboardModal: React.FC<ScoreboardModalProps> = ({
   const [selectedLevel, setSelectedLevel] = useState<number | null>(null);
   // État pour l’événement sélectionné (sous-modal de détails)
   const [selectedEvent, setSelectedEvent] = useState<LevelEventSummary | null>(null);
+  const [isReporting, setIsReporting] = useState(false);
+
+  // --- Logique de signalement ---
+  const handleReport = (event: LevelEventSummary) => {
+    if (!event || !event.id) return;
+
+    Alert.alert(
+      "Historien, une erreur ?",
+      `Voulez-vous signaler un problème sur "${event.titre}" ?`,
+      [
+        { text: "📅 Date fausse", onPress: () => sendReport(event.id, "DATE_FAUSSE") },
+        { text: "✍️ Titre / Texte", onPress: () => sendReport(event.id, "DESCRIPTION_FAUSSE") },
+        { text: "🖼️ Image", onPress: () => sendReport(event.id, "IMAGE_INCOHERENTE") },
+        { text: "❌ Autre / Doublon", onPress: () => sendReport(event.id, "AUTRE") },
+        { text: "Annuler", style: "cancel" }
+      ]
+    );
+  };
+
+  const sendReport = async (eventId: string, type: string) => {
+    setIsReporting(true);
+    try {
+      const { data: { user } } = await supabase.auth.getUser();
+      const { error } = await (supabase.from('evenements_signalements') as any).insert({
+        evenement_id: eventId,
+        user_id: user?.id || null,
+        type_erreur: type,
+        status: 'PENDING'
+      });
+      
+      if (error) throw error;
+      Alert.alert("Merci !", "Signalement reçu. Nos historiens vont vérifier !");
+      setSelectedEvent(null);
+    } catch (err: any) {
+      console.error('[SCOREBOARD REPORT ERROR]', err);
+      Alert.alert("Erreur", "Impossible d'envoyer le signalement.");
+    } finally {
+      setIsReporting(false);
+    }
+  };
+  // -----------------------------
 
   // Animation d’apparition du modal principal
   const scaleAnim = useRef(new Animated.Value(0)).current;
@@ -253,12 +297,23 @@ const ScoreboardModal: React.FC<ScoreboardModalProps> = ({
               </Text>
             </ScrollView>
 
-            <TouchableOpacity
-              style={styles.closeButton}
-              onPress={() => setSelectedEvent(null)}
-            >
-              <Text style={styles.closeButtonText}>Fermer</Text>
-            </TouchableOpacity>
+            <View style={styles.eventDetailsFooter}>
+              <TouchableOpacity
+                style={styles.closeButton}
+                onPress={() => setSelectedEvent(null)}
+              >
+                <Text style={styles.closeButtonText}>Fermer</Text>
+              </TouchableOpacity>
+
+              <TouchableOpacity
+                style={styles.reportSmallButton}
+                onPress={() => handleReport(selectedEvent)}
+                disabled={isReporting}
+              >
+                <Ionicons name="flag-outline" size={18} color="#999" />
+                <Text style={styles.reportSmallText}>Signaler une erreur</Text>
+              </TouchableOpacity>
+            </View>
           </View>
         </View>
       </Modal>
@@ -421,8 +476,16 @@ const ScoreboardModal: React.FC<ScoreboardModalProps> = ({
                       mode: gameMode,
                       score: currentScore,
                     });
+                    if (success && onShareReward) {
+                        onShareReward();
+                    }
                   }}
                 />
+              </View>
+
+              <View style={styles.shareRewardTip}>
+                <Ionicons name="gift" size={16} color={colors.accent} />
+                <Text style={styles.shareRewardText}>Partage pour gagner +1 partie !</Text>
               </View>
 
               <View style={styles.buttonContainer}>
@@ -792,10 +855,42 @@ const styles = StyleSheet.create({
     fontWeight: 'bold',
     fontSize: 16,
   },
-  // Styles pour le conteneur du bouton de partage
+  /* Styles partage */
   shareButtonContainer: {
-    marginVertical: 16,
+    marginVertical: 10,
     paddingHorizontal: 20,
+    width: '100%',
+  },
+  shareRewardTip: {
+    flexDirection: 'row',
+    alignItems: 'center',
+    marginBottom: 10,
+    gap: 6,
+  },
+  shareRewardText: {
+    fontSize: 12,
+    color: colors.accent,
+    fontWeight: '600',
+  },
+  
+  /* Footer détails événement avec bouton de report discret */
+  eventDetailsFooter: {
+    paddingHorizontal: 20,
+    paddingBottom: 20,
+    alignItems: 'center',
+    gap: 12,
+  },
+  reportSmallButton: {
+    flexDirection: 'row',
+    alignItems: 'center',
+    padding: 8,
+    opacity: 0.6,
+    gap: 6,
+  },
+  reportSmallText: {
+    fontSize: 12,
+    color: '#666',
+    textDecorationLine: 'underline',
   },
 });
 

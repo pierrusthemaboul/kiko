@@ -5,7 +5,7 @@ import 'dotenv/config';
 import readline from 'readline/promises';
 import { stdin as input, stdout as output } from 'process';
 
-const supabase = createClient(process.env.EXPO_PUBLIC_SUPABASE_URL, process.env.SUPABASE_PROD_SERVICE_ROLE_KEY);
+const supabase = createClient(process.env.EXPO_PUBLIC_SUPABASE_URL, process.env.EXPO_PUBLIC_SUPABASE_ANON_KEY);
 const genAI = new GoogleGenerativeAI(process.env.GEMINI_API_KEY);
 const rl = readline.createInterface({ input, output });
 

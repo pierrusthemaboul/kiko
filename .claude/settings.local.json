@@ -75,7 +75,11 @@
       "Bash(done)",
       "Bash(do cp \"c:\\\\Users\\\\Pierre\\\\kiko\\\\assets\\\\images\\\\splash-abbey.png\" \"$dir/splashscreen_logo.png\")",
       "Bash(npx supabase db diff --local)",
-      "Bash(npx supabase db reset --local)"
+      "Bash(npx supabase db reset --local)",
+      "Bash(npx supabase start)",
+      "Bash(npx supabase stop)",
+      "Bash(npx supabase status)",
+      "Bash(node c:\\Users\\Pierre\\kiko\\mcp-supabase-server.mjs)"
     ]
   }
 }

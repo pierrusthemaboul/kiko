@@ -100,6 +100,7 @@ interface GameContentAProps {
   // handleRestartOrClose: () => void; // SUPPRIMÉ
   onActualRestart: () => void;     // NOUVELLE prop pour REJOUER
   onActualMenu: () => void;        // NOUVELLE prop pour MENU
+  onShareReward: () => void;
   // ----------------------------------------------------
   isAdLoaded: (adType: 'rewarded' | 'interstitial' | 'levelUp' | 'gameOver') => boolean;
   gameMode: GameModeConfig;
@@ -144,6 +145,7 @@ function GameContentA({
   // --- MODIFICATION : Récupérer les nouvelles props ---
   onActualRestart,
   onActualMenu,
+  onShareReward,
   // handleRestartOrClose, // Ne plus récupérer
   // ----------------------------------------------------
   isAdLoaded,
@@ -431,6 +433,7 @@ function GameContentA({
           // isLoadingScores={!leaderboardsReady && isGameOver} // Prop originale
           onRestart={handleModalRestart} // Utilise le nouveau handler pour REJOUER
           onMenuPress={handleModalMenu}  // Utilise le nouveau handler pour MENU
+          onShareReward={onShareReward}  // <-- Nouvelle prop propager
           playerName={user?.name ?? 'Joueur'} // Sécurité
           levelsHistory={levelsHistory}
           dailyScores={leaderboards?.daily || []}

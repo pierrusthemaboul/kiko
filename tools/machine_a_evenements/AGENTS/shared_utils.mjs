@@ -5,7 +5,7 @@ import { createClient } from '@supabase/supabase-js';
 import dotenv from 'dotenv';
 import { fileURLToPath } from 'url';
 const __dirname_shared = path.dirname(fileURLToPath(import.meta.url));
-dotenv.config({ path: path.join(__dirname_shared, '../../.env') });
+dotenv.config({ path: path.join(__dirname_shared, '../../../.env') });
 
 import sharp from 'sharp';
 

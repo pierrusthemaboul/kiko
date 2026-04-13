@@ -86,9 +86,9 @@ export function getEnabledPlatforms(): PlatformConfig[] {
  */
 export const SHARE_MESSAGES = {
   classique: (streak: number) =>
-    `🎯 J'ai atteint un streak de ${streak} sur Timalaus (Mode Classique) ! 🚀\n\nPeux-tu faire mieux ? Télécharge l'app et défie-moi ! 📱`,
+    `Streak de ${streak} sur TIMALAUS 🔥 Tu peux vraiment battre ça… ou pas ? 👀 #TimalausChallenge`,
   precision: (score: number) =>
-    `⚡ J'ai marqué ${score} points sur Timalaus (Mode Précision) ! 🏆\n\nPenses-tu pouvoir me battre ? Télécharge l'app maintenant ! 📱`,
+    `Streak de ${score} sur TIMALAUS 🔥 Tu peux vraiment battre ça… ou pas ? 👀 #TimalausChallenge`,
 };
 
 /**

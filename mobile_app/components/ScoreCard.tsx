@@ -1,8 +1,9 @@
 import React from 'react';
 import { View, Text, Image, StyleSheet } from 'react-native';
 import { ShareData } from '../types/sharing';
-import { colors } from '../constants/Colors';
+import { colors, steampunkTheme } from '../constants/Colors';
 import { getModeDisplayName, formatScore } from '../utils/generateScoreImage';
+import { LinearGradient } from 'expo-linear-gradient';
 
 interface ScoreCardProps {
   data: ShareData;
@@ -19,8 +20,11 @@ export const ScoreCard = React.forwardRef<View, ScoreCardProps>(({ data }, ref) 
 
   return (
     <View ref={ref} style={styles.container}>
-      {/* Background gradient effect */}
-      <View style={styles.backgroundGradient} />
+      {/* Premium Gradient Background */}
+      <LinearGradient
+        colors={[steampunkTheme.mainBg, '#1a181e', steampunkTheme.mainBg]}
+        style={styles.backgroundGradient}
+      />
 
       {/* Logo */}
       <View style={styles.logoContainer}>
@@ -34,19 +38,26 @@ export const ScoreCard = React.forwardRef<View, ScoreCardProps>(({ data }, ref) 
       {/* Main content */}
       <View style={styles.content}>
         {/* Game mode badge */}
-        <View style={styles.modeBadge}>
+        <LinearGradient
+          colors={['#FFD700', '#B8860B']}
+          start={{ x: 0, y: 0 }}
+          end={{ x: 1, y: 0 }}
+          style={styles.modeBadge}
+        >
           <Text style={styles.modeText}>{getModeDisplayName(data.mode)}</Text>
-        </View>
+        </LinearGradient>
 
-        {/* Score/Streak display */}
+        {/* Score/Streak display with Glow */}
         <View style={styles.scoreContainer}>
           <Text style={styles.scoreLabel}>{mainLabel}</Text>
-          <Text style={styles.scoreValue}>{formatScore(mainValue)}</Text>
+          <View style={styles.valueWrapper}>
+             <Text style={styles.scoreValue}>{formatScore(mainValue)}</Text>
+          </View>
         </View>
 
-        {/* Additional stats */}
+        {/* Additional stats in a Glass Panel */}
         {data.userStats && (
-          <View style={styles.statsContainer}>
+          <View style={styles.glassPanel}>
             <View style={styles.statItem}>
               <Text style={styles.statValue}>{data.userStats.totalGames}</Text>
               <Text style={styles.statLabel}>Parties</Text>
@@ -61,8 +72,13 @@ export const ScoreCard = React.forwardRef<View, ScoreCardProps>(({ data }, ref) 
 
         {/* Call to action */}
         <View style={styles.ctaContainer}>
-          <Text style={styles.ctaText}>Peux-tu faire mieux ?</Text>
-          <Text style={styles.appName}>TIMALAUS</Text>
+          <Text style={styles.ctaText}>PEUX-TU FAIRE MIEUX ?</Text>
+          <View style={styles.footerBranding}>
+             <Text style={styles.appName}>TIMALAUS</Text>
+             <View style={styles.urlBadge}>
+                <Text style={styles.urlText}>DISPO SUR IOS / ANDROID</Text>
+             </View>
+          </View>
         </View>
       </View>
 
@@ -77,7 +93,7 @@ const styles = StyleSheet.create({
   container: {
     width: 1080,
     height: 1920,
-    backgroundColor: colors.background.dark,
+    backgroundColor: steampunkTheme.mainBg,
     position: 'relative',
     overflow: 'hidden',
   },
@@ -87,127 +103,157 @@ const styles = StyleSheet.create({
     left: 0,
     right: 0,
     bottom: 0,
-    backgroundColor: colors.background.dark,
-    opacity: 0.95,
   },
   logoContainer: {
-    marginTop: 120,
+    marginTop: 150,
     alignItems: 'center',
     zIndex: 10,
   },
   logo: {
-    width: 180,
-    height: 180,
+    width: 280,
+    height: 280,
+    shadowColor: steampunkTheme.goldGlow,
+    shadowOffset: { width: 0, height: 10 },
+    shadowOpacity: 0.5,
+    shadowRadius: 20,
   },
   content: {
     flex: 1,
     paddingHorizontal: 80,
     justifyContent: 'center',
     zIndex: 10,
+    marginTop: -100,
   },
   modeBadge: {
     alignSelf: 'center',
-    backgroundColor: colors.primary,
-    paddingHorizontal: 32,
-    paddingVertical: 12,
-    borderRadius: 24,
-    marginBottom: 60,
+    paddingHorizontal: 48,
+    paddingVertical: 16,
+    borderRadius: 40,
+    marginBottom: 80,
+    borderWidth: 2,
+    borderColor: 'rgba(255, 215, 0, 0.4)',
+    elevation: 10,
   },
   modeText: {
-    color: colors.white,
-    fontSize: 24,
-    fontWeight: '700',
-    letterSpacing: 1,
+    color: '#000',
+    fontSize: 28,
+    fontWeight: '900',
+    letterSpacing: 2,
+    textTransform: 'uppercase',
   },
   scoreContainer: {
     alignItems: 'center',
-    marginBottom: 80,
+    marginBottom: 100,
   },
   scoreLabel: {
-    color: colors.accent,
-    fontSize: 32,
+    color: steampunkTheme.goldAccent,
+    fontSize: 36,
     fontWeight: '700',
-    letterSpacing: 3,
-    marginBottom: 16,
+    letterSpacing: 8,
+    marginBottom: 20,
+    textTransform: 'uppercase',
+  },
+  valueWrapper: {
+    padding: 20,
   },
   scoreValue: {
-    color: colors.white,
-    fontSize: 140,
+    color: steampunkTheme.primaryText,
+    fontSize: 240,
     fontWeight: '900',
-    textShadowColor: colors.primary,
-    textShadowOffset: { width: 0, height: 4 },
-    textShadowRadius: 20,
+    textAlign: 'center',
+    textShadowColor: steampunkTheme.goldGlow,
+    textShadowOffset: { width: 0, height: 0 },
+    textShadowRadius: 40,
   },
-  statsContainer: {
+  glassPanel: {
     flexDirection: 'row',
-    justifyContent: 'center',
-    alignItems: 'center',
-    marginBottom: 100,
-    paddingVertical: 40,
-    borderTopWidth: 2,
-    borderBottomWidth: 2,
-    borderColor: colors.transparencies.light,
+    backgroundColor: 'rgba(255, 255, 255, 0.05)',
+    borderRadius: 32,
+    paddingVertical: 50,
+    borderWidth: 1,
+    borderColor: 'rgba(200, 160, 74, 0.2)',
+    marginBottom: 120,
+    marginHorizontal: 20,
   },
   statItem: {
     alignItems: 'center',
     flex: 1,
   },
   statValue: {
-    color: colors.white,
-    fontSize: 48,
-    fontWeight: '800',
-    marginBottom: 8,
+    color: steampunkTheme.goldAccent,
+    fontSize: 64,
+    fontWeight: '900',
+    marginBottom: 4,
   },
   statLabel: {
-    color: colors.lightText,
-    fontSize: 20,
+    color: steampunkTheme.secondaryText,
+    fontSize: 22,
     fontWeight: '600',
     textTransform: 'uppercase',
-    letterSpacing: 1,
+    letterSpacing: 2,
   },
   statDivider: {
     width: 2,
-    height: 60,
-    backgroundColor: colors.transparencies.light,
+    height: 80,
+    backgroundColor: 'rgba(200, 160, 74, 0.3)',
   },
   ctaContainer: {
     alignItems: 'center',
-    marginBottom: 80,
   },
   ctaText: {
-    color: colors.white,
-    fontSize: 32,
-    fontWeight: '600',
-    marginBottom: 24,
+    color: steampunkTheme.secondaryText,
+    fontSize: 34,
+    fontWeight: '800',
+    marginBottom: 40,
     textAlign: 'center',
+    letterSpacing: 2,
+  },
+  footerBranding: {
+    alignItems: 'center',
+    width: '100%',
   },
   appName: {
-    color: colors.accent,
-    fontSize: 48,
+    color: steampunkTheme.goldAccent,
+    fontSize: 72,
     fontWeight: '900',
-    letterSpacing: 4,
-    textShadowColor: colors.primary,
-    textShadowOffset: { width: 0, height: 2 },
+    letterSpacing: 12,
+    marginBottom: 20,
+    textShadowColor: '#000',
+    textShadowOffset: { width: 0, height: 4 },
     textShadowRadius: 10,
+  },
+  urlBadge: {
+    backgroundColor: 'rgba(224, 180, 87, 0.15)',
+    paddingHorizontal: 30,
+    paddingVertical: 10,
+    borderRadius: 8,
+    borderWidth: 1,
+    borderColor: steampunkTheme.goldBorderTransparent,
+  },
+  urlText: {
+    color: steampunkTheme.goldAccent,
+    fontSize: 18,
+    fontWeight: '700',
+    letterSpacing: 1,
   },
   decorativeCircle1: {
     position: 'absolute',
-    top: -200,
-    right: -200,
-    width: 600,
-    height: 600,
-    borderRadius: 300,
-    backgroundColor: colors.primary,
-    opacity: 0.1,
+    top: -300,
+    right: -250,
+    width: 800,
+    height: 800,
+    borderRadius: 400,
+    backgroundColor: steampunkTheme.goldAccent,
+    opacity: 0.03,
   },
   decorativeCircle2: {
     position: 'absolute',
-    bottom: -250,
-    left: -250,
-    width: 700,
-    height: 700,
-    borderRadius: 350,
-    backgroundColor: colors.accent,
-    opacity: 0.08,
+    bottom: -350,
+    left: -300,
+    width: 900,
+    height: 900,
+    borderRadius: 450,
+    backgroundColor: steampunkTheme.goldAccent,
+    opacity: 0.05,
   },
 });

@@ -1,14 +1,14 @@
 {
-  "timestamp": "2026-02-23T22:22:06.824Z",
+  "timestamp": "2026-03-28T15:47:16.765Z",
   "session": {
-    "totalGenerated": 12,
-    "totalAccepted": 9,
-    "totalRejected": 3,
-    "acceptanceRate": "75.0%",
-    "rejectionRate": "25.0%"
+    "totalGenerated": 24,
+    "totalAccepted": 17,
+    "totalRejected": 7,
+    "acceptanceRate": "70.8%",
+    "rejectionRate": "29.2%"
   },
   "rejectionBreakdown": {
-    "preFilter": 0,
+    "preFilter": 4,
     "aiDecision": 3
   },
   "detectionStrategies": {
@@ -20,71 +20,135 @@
   },
   "acceptedEvents": [
     {
-      "titre": "Mathilde de Toscane hérite des terres de sa mère",
-      "year": 1076
+      "titre": "Murasaki Shikibu écrit le Dit du Genji",
+      "year": 1008
     },
     {
-      "titre": "Mariage de Mélisende avec Foulques V d'Anjou",
-      "year": 1129
-    },
-    {
-      "titre": "Éléonore de Provence devient reine d'Angleterre",
+      "titre": "Raziya Sultana, sultane de Delhi",
       "year": 1236
     },
     {
-      "titre": "Isabelle de Portugal épouse Philippe le Bon",
-      "year": 1430
+      "titre": "Nwanyeruwa proteste contre le colonialisme britannique",
+      "year": 1929
     },
     {
-      "titre": "Éléonore d'Aragon devient reine de Portugal",
-      "year": 1433
+      "titre": "Sirimavo Bandaranaike, première ministre",
+      "year": 1960
     },
     {
-      "titre": "Élisabeth de Habsbourg épouse Casimir IV de Pologne",
-      "year": 1454
+      "titre": "Fondation du royaume Kongo",
+      "year": 1390
     },
     {
-      "titre": "Catarina Cornaro cède Chypre à Venise",
-      "year": 1489
+      "titre": "Construction de la Grande Mosquée de Kilwa",
+      "year": 1100
     },
     {
-      "titre": "Élisabeth d'York épouse Henri VII",
-      "year": 1486
+      "titre": "Expansion du royaume d'Aksum",
+      "year": 350
     },
     {
-      "titre": "Anne de Beaujeu devient duchesse de Bourbon",
-      "year": 1488
+      "titre": "Apogée de la culture Tierradentro",
+      "year": 600
+    },
+    {
+      "titre": "Développement de la culture Quimbaya",
+      "year": 500
+    },
+    {
+      "titre": "Essor de la confédération Muisca",
+      "year": 1400
+    },
+    {
+      "titre": "Règne du Zipa Meicuchuca",
+      "year": 1450
+    },
+    {
+      "titre": "Apogée de la culture Tairona",
+      "year": 1100
+    },
+    {
+      "titre": "Le Zij-i Ilkhani",
+      "year": 1272
+    },
+    {
+      "titre": "Développement du zéro en Inde",
+      "year": 458
+    },
+    {
+      "titre": "L'invention de la poudre à canon",
+      "year": 850
+    },
+    {
+      "titre": "Le Traité de pharmacopée de Shen Nong",
+      "year": 100
+    },
+    {
+      "titre": "Synthèse de l'éthanol par Al-Razi",
+      "year": 900
     }
   ],
   "rejectedEvents": [
     {
-      "titre": "Bataille de Stamford Bridge",
-      "year": 1066,
-      "reason": "La \"Bataille de Stamford Bridge\" s'est déroulée la même année (1066) que la \"Bataille de Hastings (conquête normande de l'Angleterre)\". Bien que ce soient des batailles distinctes, elles font partie de la même série d'événements liés à la conquête normande de l'Angleterre.",
+      "titre": "Wu Zetian, impératrice de Chine",
+      "year": 690,
+      "reason": "L'événement proposé est quasi-identique à \"L’impératrice chinoise Wu Zetian proclame la dynastie Zhou\" (690). Les deux événements concernent la même personne et la même année.",
       "rejectionType": "AI_DECISION",
       "strategy": "AI",
-      "matchedWith": "Bataille de Hastings (conquête normande de l'Angleterre)"
+      "matchedWith": "L’impératrice chinoise Wu Zetian proclame la dynastie Zhou"
     },
     {
-      "titre": "Marguerite 1re devient reine du Danemark et de Norvège",
-      "year": 1387,
-      "reason": "L'événement proposé est un doublon de \"Marguerite Ire unit le Danemark et la Norvège\" qui se réfère au même fait historique et se déroule la même année.",
+      "titre": "Isabelle Ière de Castille finance Christophe Colomb",
+      "year": 1492,
+      "reason": "L'événement est lié à la découverte de l'Amérique par Christophe Colomb, financée par Isabelle de Castille. Plusieurs événements dans la liste y font référence (Découverte de l'Amérique, Naufrage de la Santa Maria, Retour de Christophe Colomb de son premier voyage en Amérique).",
       "rejectionType": "AI_DECISION",
       "strategy": "AI",
-      "matchedWith": "Marguerite Ire unit le Danemark et la Norvège"
+      "matchedWith": "Découverte de l'Amérique"
     },
     {
-      "titre": "Jeanne d'Arc rencontre Charles VII à Chinon",
-      "year": 1429,
-      "reason": "Jeanne d'Arc rencontre Charles VII à Chinon est un événement constitutif de la préparation du Sacre de Charles VII à Reims et de la Victoire de Jeanne d'Arc au siège d'Orléans. Il ne s'agit pas d'un événement totalement distinct.",
+      "titre": "Règne de Yaa Asantewaa",
+      "year": 1900,
+      "reason": "Titre de type \"durée/plage\" détecté (\"Règne de Yaa Asantewaa\"). Un événement doit être un point précis dans le temps (ex: \"Sacre de...\", \"Mort de...\", \"Bataille de...\").",
+      "rejectionType": "PRE_FILTER",
+      "strategy": "RANGE_TITLE",
+      "matchedWith": null
+    },
+    {
+      "titre": "Essor de la culture Nok",
+      "year": -900,
+      "reason": "Année -900 trop ancienne (probablement avant J.-C.). Dans ce jeu, seuls les événements après l'an 0 sont acceptés.",
+      "rejectionType": "PRE_FILTER",
+      "strategy": "BEFORE_CHRIST",
+      "matchedWith": null
+    },
+    {
+      "titre": "Dynastie des Zaghés en Éthiopie",
+      "year": 1137,
+      "reason": "Titre de type \"durée/plage\" détecté (\"Dynastie des Zaghés en Éthiopie\"). Un événement doit être un point précis dans le temps (ex: \"Sacre de...\", \"Mort de...\", \"Bataille de...\").",
+      "rejectionType": "PRE_FILTER",
+      "strategy": "RANGE_TITLE",
+      "matchedWith": null
+    },
+    {
+      "titre": "Début de la culture San Agustín",
+      "year": -800,
+      "reason": "Année -800 trop ancienne (probablement avant J.-C.). Dans ce jeu, seuls les événements après l'an 0 sont acceptés.",
+      "rejectionType": "PRE_FILTER",
+      "strategy": "BEFORE_CHRIST",
+      "matchedWith": null
+    },
+    {
+      "titre": "Première description de la variole",
+      "year": 910,
+      "reason": "L'événement proposé est un doublon de l'événement existant \"Description de la variole par Rhazès\" (900), car il s'agit de la même description de la variole à une date proche. La description de la variole par Rhazès est considérée comme la première description.",
       "rejectionType": "AI_DECISION",
       "strategy": "AI",
-      "matchedWith": "Sacre de Charles VII à Reims"
+      "matchedWith": "Description de la variole par Rhazès"
     }
   ],
   "performance": {
-    "preFilterEfficiency": "0.0% des rejets sans appel IA",
-    "aiCalls": 12,
-    "estimatedCostSaved": "~0 appels IA évités"
+    "preFilterEfficiency": "57.1% des rejets sans appel IA",
+    "aiCalls": 20,
+    "estimatedCostSaved": "~4 appels IA évités"
   }
 }

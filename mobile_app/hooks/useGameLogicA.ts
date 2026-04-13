@@ -1775,7 +1775,9 @@ export function useGameLogicA(initialEvent?: string, modeId?: string) {
       canStart: canStartGuestPlay,
       isLoading: isGuestPlaysLoading,
       grantExtraPlay: grantGuestExtraPlay,
+      refresh: refreshGuestPlays,
     },
+    refreshPlaysInfo,
   };
 }
 

@@ -424,7 +424,8 @@ export function useEventSelector({
     else if (rand < probs.t1 + probs.t2) targetTier = 2;
 
     const afterPoolFilter = filtered.filter(e => {
-      const rawNotoriety = (e as any).notoriete ?? 0;
+      // NOUVEAU: Utilisation exclusive de la notoriété objective francophone
+      const rawNotoriety = (e as any).notoriete_fr ?? 0;
       const { year } = getCachedDateInfo(e.date);
       const adjustedNotoriety = getAdjustedNotoriety(rawNotoriety, year);
 
@@ -566,7 +567,7 @@ export function useEventSelector({
     }
 
     // Pondération par notoriété pour contrôler la difficulté
-    const notorieteValue = Math.max(0, Math.min(100, Number((evt as any).notoriete ?? 60)));
+    const notorieteValue = Math.max(0, Math.min(100, Number((evt as any).notoriete_fr ?? 60)));
     const notorieteNormalized = notorieteValue / 100;
     const { target, tolerance } = notorieteProfileForLevel(userLevel);
     const notorieteDistance = Math.abs(notorieteNormalized - target);

@@ -1,70 +1,26 @@
 const { getDefaultConfig } = require('expo/metro-config');
 const path = require('path');
 
-const config = getDefaultConfig(__dirname);
+// Dossier de l'app et dossier racine du projet
+const projectRoot = __dirname;
+const workspaceRoot = path.resolve(projectRoot, '..');
 
-config.resolver.blockList = [
-  /android\/.*/,
-  /ios\/.*/,
+const config = getDefaultConfig(projectRoot);
+
+// 1. On surveille TOUTE la racine (pour trouver les node_modules communs)
+config.watchFolders = [workspaceRoot];
+
+// 2. On indique explicitement où chercher les modules
+config.resolver.nodeModulesPaths = [
+  path.resolve(projectRoot, 'node_modules'),
+  path.resolve(workspaceRoot, 'node_modules'),
 ];
 
-// Performance optimizations
-config.resolver.maxWorkers = 4;
-config.transformer.minifierConfig = {
-  keep_fnames: true,
-  mangle: false,
-};
-/*
-config.server = {
-  ...config.server,
-  enhanceMiddleware: (middleware) => {
-    return (req, res, next) => {
-      // Enable compression for better performance
-      res.setHeader('Content-Encoding', 'gzip');
-      middleware(req, res, next);
-    };
-  },
-};
-*/
-
-// Enable symlinks for pnpm support
+// 3. Support des symlinks (indispensable pour pnpm)
 config.resolver.unstable_enableSymlinks = true;
-// Enable package exports for modern library support
 config.resolver.unstable_enablePackageExports = true;
 
-// Fix for pnpm on Windows: normalize all paths to prevent double drive letters
-if (process.platform === 'win32') {
-  // Normalize project root
-  config.projectRoot = path.normalize(__dirname);
-
-  // Normalize watch folders and include node_modules and its pnpm store if needed
-  const projectRoot = config.projectRoot;
-  config.watchFolders = [
-    projectRoot,
-    path.join(projectRoot, 'node_modules'),
-  ];
-
-  // Optional: Add a custom resolver to handle potential double drive letters
-  const originalResolveRequest = config.resolver.resolveRequest;
-  config.resolver.resolveRequest = (context, moduleName, platform) => {
-    // Block native-only imports on web
-    if (platform === 'web' && moduleName.includes('codegenNativeCommands')) {
-      return {
-        type: 'empty',
-      };
-    }
-
-    try {
-      if (originalResolveRequest) {
-        return originalResolveRequest(context, moduleName, platform);
-      }
-      return context.resolveRequest(context, moduleName, platform);
-    } catch (error) {
-      // Logic to handle specific resolution errors could go here if needed
-      throw error;
-    }
-  };
-}
+// 4. On s'assure que le dossier racine est bien scruté
+// (Pas de forçage manuel de config.projectRoot pour éviter les bugs de double lettre de lecteur sur Windows)
 
 module.exports = config;
-

@@ -32,6 +32,7 @@ import { Logger } from '@/utils/logger';
 // Libs
 import { FirebaseAnalytics } from '@/lib/firebase'; // Chemin OK
 import * as NavigationBar from 'expo-navigation-bar';
+import { supabase } from '@/lib/supabase/supabaseClients';
 
 // Utils
 import { getBackgroundForLevel } from '@/utils/backgroundProgression';
@@ -232,7 +233,6 @@ function ClassicGameScreen({ requestedMode }: { requestedMode?: string }) {
     playsInfo,
     fadeAnim,
   ]);
-
   const handleActualMenu = useCallback(() => {
     if (gameLogic.resetAdsState) {
       gameLogic.resetAdsState();
@@ -243,6 +243,36 @@ function ClassicGameScreen({ requestedMode }: { requestedMode?: string }) {
     } catch (e) {
     }
   }, [router, gameLogic.resetAdsState]);
+
+  // --- NOUVEAU : Gérer la récompense de partage ---
+  const handleShareReward = useCallback(async () => {
+    Logger.info('GameLogic', '[GameScreen] handleShareReward triggered');
+    try {
+      const { data: { session } } = await supabase.auth.getSession();
+      if (!session) {
+          // Si invité, on pourrait aussi donner une récompense locale
+          if (gameLogic?.guestPlaysInfo?.grantExtraPlay) {
+              await gameLogic.guestPlaysInfo.grantExtraPlay();
+              await gameLogic.guestPlaysInfo.refresh?.();
+              Alert.alert("Bravo !", "Vous avez gagné 1 partie supplémentaire (Invité) !");
+          }
+          return;
+      }
+
+      const { data, error } = await (supabase as any).rpc('grant_extra_play', { p_increment: 1 });
+      if (error) throw error;
+      
+      Alert.alert("Bravo !", "Vous avez gagné 1 partie supplémentaire pour avoir partagé votre score !");
+      
+      // Rafraîchir les infos de parties
+      if (gameLogic.refreshPlaysInfo) {
+          await gameLogic.refreshPlaysInfo();
+      }
+    } catch (err) {
+      Logger.error('GameLogic', 'Error granting share reward', err);
+    }
+  }, [gameLogic.refreshPlaysInfo, gameLogic.guestPlaysInfo]);
+  // -----------------------------------------------
 
   // Animation d'entrée initiale et lors du changement de clé (redémarrage)
   useEffect(() => {
@@ -314,6 +344,7 @@ function ClassicGameScreen({ requestedMode }: { requestedMode?: string }) {
             handleLevelUp={gameLogic.handleLevelUp}
             onActualRestart={handleActualRestart} // <- Fonction Rejouer corrigée
             onActualMenu={handleActualMenu}       // <- Fonction Menu
+            onShareReward={handleShareReward}     // <- Nouvelle prop Récompense Partage
             showRewardedAd={gameLogic.showRewardedAd}
             resetAdsState={gameLogic.resetAdsState} // Fonction reset pubs
             isAdLoaded={gameLogic.isAdLoaded} // Vérification native de chargement des pubs

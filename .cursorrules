@@ -1,5 +1,25 @@
 # Cursor Rules pour Kiko
 
+## 🚨 PROTOCOLE TERMINAL (ZÉRO CLIC)
+1. **Liste Blanche** : Utilisez `SafeToAutoRun: true` pour : `node`, `npm`, `pnpm`, `git`, `adb`, `am`, `pm`, `findstr`, `grep`, `ls`, `dir`, `echo`, `cat`, `type`, `Get-ChildItem`, `Select-String`, `Select-Object`.
+2. **Syntaxe Windows** : Le terminal est PowerShell. Interdiction d'utiliser des flags comme `ls -lh` ou `rm -rf`.
+3. **Pas de Combinaison** : Interdiction de combiner les commandes avec `&&` ou `;`. Évitez les pipes `|` si une commande native PowerShell existe (ex: utilisez `Select-String` au lieu de `grep` ou `findstr` avec pipe).
+4. **Workflows** : Pour les slash commands (ex: `/app-start`), exécutez CHAQUE étape du fichier séparément avec `SafeToAutoRun: true`.
+5. **Context** : Lisez TOUJOURS le fichier `.ai-context.md` à la racine avant de commencer.
+
+---
+
+
+## 📉 GESTION DES QUOTAS & BROWSER (CRITIQUE) ⚠️
+
+L'utilisation de l'outil BROWSER (et ses captures d'écran) est le premier consommateur de quotas. Pour préserver les tokens :
+1. **Priorité Absolue au Texte** : Interdiction d'utiliser l'outil BROWSER ou de prendre des captures d'écran pour toute tâche liée à la génération, la vérification ou l'audit d'événements.
+2. **Source de Vérité** : La base de données Supabase et les fichiers locaux font foi de vérité absolue. Ne "double-vérifiez" jamais sur le web une donnée déjà présente en interne.
+3. **Usage d'Exception** : N'utilisez l'outil BROWSER que si l'API retourne une erreur critique ou si une donnée est strictement absente de tout le système local/BD.
+4. **Zéro "Yeux" Inutiles** : Ne cherchez pas à "voir" l'interface pour confirmer une action ; fiez-vous aux logs et aux retours JSON des outils.
+
+---
+
 ## Audio System - CRITIQUE ⚠️
 
 AVANT de modifier `/hooks/useAudio.ts` ou `/hooks/game/usePrecisionAudio.ts`:
