@@ -44,11 +44,6 @@ interface Event {
   inspection_one_by_one_status?: 'VALIDATED' | 'TITLE_REVIEW' | 'IMAGE_REVIEW' | null;
 }
 
-const inspectionBannerConfig: Record<'VALIDATED' | 'TITLE_REVIEW' | 'IMAGE_REVIEW', { label: string; className: string }> = {
-  VALIDATED: { label: 'Validé (1 par 1)', className: 'inspection-banner validated' },
-  TITLE_REVIEW: { label: 'Titre à revoir', className: 'inspection-banner title' },
-  IMAGE_REVIEW: { label: 'Image à revoir', className: 'inspection-banner image' }
-};
 
 const PAGE_SIZE = 50;
 
@@ -67,8 +62,38 @@ const EventsPage: React.FC = () => {
   const [hasImage, setHasImage] = useState<boolean | null>(null);
   const [isRandomMode, setIsRandomMode] = useState(false);
   const [debouncedSearch, setDebouncedSearch] = useState('');
-  const [totalCount, setTotalCount] = useState(2500); // Default estimate
+  const [totalCount, setTotalCount] = useState(2500);
   const [randomOffset, setRandomOffset] = useState(0);
+
+  // Restore state from sessionStorage
+  useEffect(() => {
+    const saved = sessionStorage.getItem('eventsPageState');
+    if (saved) {
+      try {
+        const state = JSON.parse(saved);
+        if (state.currentPage) setCurrentPage(state.currentPage);
+        if (state.searchTerm !== undefined) setSearchTerm(state.searchTerm);
+        if (state.categoryFilter) setCategoryFilter(state.categoryFilter);
+        if (state.regionFilter) setRegionFilter(state.regionFilter);
+        if (state.epoqueFilter) setEpoqueFilter(state.epoqueFilter);
+        if (state.isUniversel !== undefined) setIsUniversel(state.isUniversel);
+        if (state.isCorrigé !== undefined) setIsCorrigé(state.isCorrigé);
+        if (state.hasImage !== undefined) setHasImage(state.hasImage);
+        if (state.isRandomMode !== undefined) setIsRandomMode(state.isRandomMode);
+      } catch (err) {
+        console.error('Failed to parse session state', err);
+      }
+    }
+  }, []);
+
+  // Save state to sessionStorage
+  useEffect(() => {
+    sessionStorage.setItem('eventsPageState', JSON.stringify({
+      currentPage, searchTerm, categoryFilter, regionFilter, epoqueFilter, 
+      isUniversel, isCorrigé, hasImage, isRandomMode
+    }));
+  }, [currentPage, searchTerm, categoryFilter, regionFilter, epoqueFilter, isUniversel, isCorrigé, hasImage, isRandomMode]);
+
   
   const [categories, setCategories] = useState<string[]>([]);
   const [regions, setRegions] = useState<string[]>([]);
@@ -380,7 +405,7 @@ const EventsPage: React.FC = () => {
         <div className="header-top">
           <div className="app-logo">
             <span className="gradient-text">K</span>
-            <h1>Events <small style={{fontSize: '11px', color: '#4ade80', fontWeight: 'bold'}}>[V2.2.1.c - 13/04 09:15]</small></h1>
+            <h1>Events <small style={{fontSize: '11px', color: '#4ade80', fontWeight: 'bold'}}>[V2.2.1.d - 13/04 09:30]</small></h1>
           </div>
           <button onClick={handleLogout} className="icon-button logout-btn">
             <LogOut size={20} />
@@ -541,14 +566,9 @@ const EventsPage: React.FC = () => {
                   initial={{ opacity: 0, scale: 0.95 }}
                   animate={{ opacity: 1, scale: 1 }}
                   transition={{ delay: index * 0.05 }}
-                  className={`event-card glass ${viewMode} ${event.inspection_one_by_one_status ? 'has-inspection-banner' : ''}`}
+                  className={`event-card glass ${viewMode}`}
                   onClick={() => navigate(`/edit-event/${event.id}?source=${aiEvents ? 'evenements' : source}`)}
                 >
-                  {event.inspection_one_by_one_status && inspectionBannerConfig[event.inspection_one_by_one_status] && (
-                    <div className={inspectionBannerConfig[event.inspection_one_by_one_status].className}>
-                      {inspectionBannerConfig[event.inspection_one_by_one_status].label}
-                    </div>
-                  )}
                   <div className="event-image">
                     {event.illustration_url ? (
                       <img src={event.illustration_url} alt={event.titre} loading="lazy" />
@@ -561,21 +581,19 @@ const EventsPage: React.FC = () => {
                   </div>
                   
                   <div className="event-info">
-                    <div className="event-date">
-                      <Calendar size={12} />
-                      <span>{event.date}</span>
-                    </div>
-                    <h3>{event.titre}</h3>
-                    
-                    <div className="event-stats-preview">
-                       <div className="notoriete-tiny-bar" title={`Notoriété: ${event.notoriete || 0}%`}>
-                          <div className="bar-fill" style={{ width: `${event.notoriete || 0}%` }} />
-                       </div>
-                       <span className="diff-text">Niv.{event.niveau_difficulte || 1}</span>
+                    <div className="event-main-details">
+                      <h3>{event.titre}</h3>
+                      <div className="event-meta">
+                        <span className="event-meta-item"><Calendar size={12}/> {event.date}</span>
+                        <span className="event-meta-item"><Tag size={12}/> {event.categorie}</span>
+                        <span className="event-meta-item">Niv. {event.niveau_difficulte || 1}</span>
+                      </div>
                     </div>
 
                      <div className="event-footer">
-                       <div className="badges-stack">
+                       <span className={`status-pill ${event.donnee_corrigee ? 'corrigé' : 'à-corriger'}`}>
+                         {event.donnee_corrigee ? 'Vérifié' : 'À corriger'}
+                       </span>
                           <select 
                             className={`inline-status-select ${event.inspection_one_by_one_status ? event.inspection_one_by_one_status : 'PENDING'}`}
                             value={event.inspection_one_by_one_status || ''}
@@ -587,7 +605,6 @@ const EventsPage: React.FC = () => {
                             <option value="TITLE_REVIEW">📝 Titre à revoir</option>
                             <option value="IMAGE_REVIEW">🖼️ Image à revoir</option>
                           </select>
-                       </div>
                        <ChevronRight size={16} className="arrow" />
                     </div>
                   </div>
