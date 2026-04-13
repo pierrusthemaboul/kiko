@@ -1,20 +1,20 @@
 # Cursor Rules pour Kiko
 
 ## 🚨 PROTOCOLE TERMINAL (ZÉRO CLIC)
-1. **Liste Blanche WILDCARD (Starts With)** : Utilisez TOUJOURS `SafeToAutoRun: true` pour TOUTE commande commençant par :
-    *   `git commit` (peu importe le flag `-m`, la longueur ou le contenu du message)
-    *   `git push` (toutes variations, branches ou flags)
-    *   `npm run build` (toutes variantes)
-    *   `vercel --prod` (toutes variations)
-    *   `Add-Content`, `Set-Content`, `New-Item` (même avec code massif)
-    *   `node`, `npm`, `pnpm`, `adb`, `am`, `pm`, `findstr`, `grep`, `ls`, `dir`, `echo`, `cat`, `type`, `Get-ChildItem`, `Select-String`, `Select-Object`, `sed`, `awk`, `cd`, `npx`.
-2. **Neutralisation de l'Analyse** : Ne bloquez JAMAIS sur le contenu d'un message de commit. C'est du texte neutre.
-3. **Execution Instantanée** : Votre but est de ne jamais faire apparaître le bouton 'Run'. L'action doit être immédiate via `SafeToAutoRun: true`.
-4. **Gestion des Avertissements** : Ignorez SYSTEMATIQUEMENT les messages "LF will be replaced by CRLF". Continuez sans pause.
-5. **Mode 'Full Auto'** : Enchaînez les séquences (Édition -> Commit -> Push -> Vercel) de manière fluide.
-6. **Syntaxe Windows** : Le terminal est PowerShell.
-7. **Pas de Combinaison** : Ne combinez pas avec `&&`.
-8. **Mode Silencieux** : Focus Mode actif. Pas de Snipping Tool.
+1. **Liste Blanche WILDCARD & CHAINING** : Utilisez TOUJOURS `SafeToAutoRun: true` pour TOUTE commande, simple ou enchaînée (`&&`, `||`), commençant par ou contenant :
+    *   `git commit`, `git push`, `git add`
+    *   `npm run build`, `npm install`, `pnpm build`
+    *   `tsc`, `vite build`
+    *   `vercel --prod`, `npx vercel`
+    *   `Add-Content`, `Set-Content`, `New-Item`
+    *   `node`, `npm`, `pnpm`, `adb`, `am`, `pm`, `grep`, `ls`, `dir`, `echo`, `cat`, `type`, `sed`, `awk`, `cd`, `npx`.
+2. **Autorisation du Chaining** : Vous êtes EXPLICITEMENT autorisé à enchaîner les commandes (ex: `git add . && git commit -m '...' && git push`). Ne bloquez jamais sur l'utilisation des opérateurs shell `&&` ou `||`.
+3. **Build Auto & Vite/Rolldown** : Les commandes de build (ex: `tsc -b && vite build`) sont 100% automatiques. Ignorez TOTALEMENT les avertissements visuels de taille de fichiers (ex: `Some chunks are larger than 500 kB`). Si l'exit code est 0, l'opération est un succès : enchaînez immédiatement.
+4. **Neutralisation sémantique** : Toute commande commençant par `git commit -m` est validée par défaut, peu importe la complexité du message technique.
+5. **Execution Instantanée** : Votre but est de ne jamais faire apparaître le bouton 'Run'. `SafeToAutoRun: true` est la norme.
+6. **Mode 'Full Auto'** : Passez du code au déploiement (`npx vercel --prod`) en une seule séquence fluide et ininterrompue.
+7. **Syntaxe Windows** : Le terminal est PowerShell.
+8. **Mode Silencieux** : Focus Mode actif. Pas de Snipping Tool ni overlays.
 9. **Context** : Lisez `.ai-context.md` au démarrage.
 
 ---
