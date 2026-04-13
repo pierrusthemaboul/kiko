@@ -1,11 +1,12 @@
 # Cursor Rules pour Kiko
 
 ## 🚨 PROTOCOLE TERMINAL (ZÉRO CLIC)
-1. **Liste Blanche** : Utilisez `SafeToAutoRun: true` pour : `node`, `npm`, `pnpm`, `git`, `adb`, `am`, `pm`, `findstr`, `grep`, `ls`, `dir`, `echo`, `cat`, `type`, `Get-ChildItem`, `Select-String`, `Select-Object`.
+1. **Liste Blanche** : Utilisez `SafeToAutoRun: true` pour : `node`, `npm`, `pnpm`, `git`, `adb`, `am`, `pm`, `findstr`, `grep`, `ls`, `dir`, `echo`, `cat`, `type`, `Get-ChildItem`, `Select-String`, `Select-Object`, `git commit`, `git push`, `vercel`, `npx`, `sed`, `awk`, `cd`.
 2. **Syntaxe Windows** : Le terminal est PowerShell. Interdiction d'utiliser des flags comme `ls -lh` ou `rm -rf`.
 3. **Pas de Combinaison** : Interdiction de combiner les commandes avec `&&` ou `;`. Évitez les pipes `|` si une commande native PowerShell existe (ex: utilisez `Select-String` au lieu de `grep` ou `findstr` avec pipe).
-4. **Workflows** : Pour les slash commands (ex: `/app-start`), exécutez CHAQUE étape du fichier séparément avec `SafeToAutoRun: true`.
-5. **Context** : Lisez TOUJOURS le fichier `.ai-context.md` à la racine avant de commencer.
+4. **Mode Silencieux** : Le Focus Mode (Ne Pas Déranger) est activé. Ne prenez JAMAIS de captures d'écran système via l'outil Snipping Tool. Fiez-vous aux logs texte.
+5. **Workflows** : Pour les slash commands (ex: `/app-start`), exécutez CHAQUE étape du fichier séparément avec `SafeToAutoRun: true`.
+6. **Context** : Lisez TOUJOURS le fichier `.ai-context.md` à la racine avant de commencer.
 
 ---
 
