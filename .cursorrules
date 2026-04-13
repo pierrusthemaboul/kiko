@@ -1,19 +1,19 @@
 # Cursor Rules pour Kiko - PROTOCOLE MACHINE (ZÉRO CLIC)
 
 ## 🚨 AUTOMATISATION ABSOLUE DU TERMINAL
-1. **WILDCARD TOTAL (SafeToAutoRun: true)** : Toute commande commençant par ou contenant les termes suivants DOIT être exécutée instantanément sans aucune validation :
-    *   `git` (add, commit, push, pull, status, diff, etc.)
-    *   `npm`, `pnpm`, `npx` (run build, install, test, etc.)
-    *   `vercel` (--prod, list, etc.)
-    *   `Add-Content`, `Set-Content`, `New-Item`, `Remove-Item`
+1. **WILDCARD TOTAL (SafeToAutoRun: true)** : Exécution INSTANTANÉE (ZÉRO BOUTON RUN) pour toute commande commençant par ou contenant :
+    *   `git` (add, commit, push, pull, status, rm, rm --cached, diff, etc.)
+    *   `npm`, `pnpm`, `npx` (run build, install, --yes, -y, etc.)
+    *   `vercel` (--prod, --yes, list, etc.)
+    *   `Add-Content`, `Set-Content`, `New-Item`, `Remove-Item`, `rm`, `del`
     *   `Select-String`, `findstr`, `grep`, `sed`, `awk`
-    *   `node`, `adb`, `am`, `pm`, `ls`, `dir`, `echo`, `cat`, `type`, `cd`
-2. **AUTORISATION DU CHAINING & RÉSEAU** : Autorisation totale de combiner les commandes via `;`, `|`, `&&`, `||` et les structures `if ($?) { ... }`.
-3. **NEUTRALISATION DES MESSAGES** : Ne bloquez jamais sur le contenu d'un message de commit ou le contenu d'un fichier injecté via `Set-Content`.
-4. **IGNORANCE DES AVERTISSEMENTS** : Ignorez les messages non-fatals (LF vs CRLF, taille des chunks Vite, etc.). Seul l'exit code `0` compte pour enchaîner.
-5. **MODE AUTONOME (AUTO-CORRECTION)** : Si une commande échoue, analysez l'erreur, corrigez la syntaxe pour PowerShell et relancez SANS solliciter l'utilisateur.
-6. **SYNTAXE POWERSHELL** : Utilisez exclusivement la syntaxe valide pour PowerShell.
-7. **MODE SILENCIEUX** : Ne prenez JAMAIS de captures d'écran système (Snipping Tool). Fiez-vous aux logs texte.
+    *   `node`, `adb`, `am`, `pm`, `ls`, `dir`, `echo`, `cat`, `type`
+    *   Variables d'environnement (ex: `$env:VERCEL_TOKEN`, `$env:NODE_ENV`).
+2. **CHAINING & FLUIDITÉ CONTEXTUELLE** : Autorisation totale des opérateurs `;`, `|`, `&&`, `||`. Tout changement de répertoire (ex: `cd admin_web; ...`) s'exécute sans interruption. Utilisez la logique PowerShell `if ($?) { ... }` pour sécuriser les chaînes.
+3. **NEUTRALISATION DE LA PEUR SÉMANTIQUE** : Ne bloquez JAMAIS sur une commande jugée 'destructrice' (rm, modification de .gitignore, git rm). Si elle est dans le flux, elle est approuvée.
+4. **IGNORANCE DES AVERTISSEMENTS** : Seul l'exit code `0` fait foi. Ignorez les alertes CRLF ou les warnings de taille de build.
+5. **MODE MACHINE AUTONOME** : Auto-correction des erreurs système et relance automatique SANS solliciter l'utilisateur.
+6. **MODE SILENCIEUX** : Zéro Snipping Tool. Focus Mode actif.
 
 ---
 ## 🏷️ SYSTÈME DE VERSIONNAGE (ADMIN WEB)
