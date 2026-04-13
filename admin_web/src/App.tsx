@@ -10,6 +10,7 @@ import RetoucheImagePage from './pages/RetoucheImage/RetoucheImagePage';
 import ModerationPage from './pages/ModerationPage';
 import OneByOnePage from './pages/OneByOne/OneByOnePage';
 import MainLayout from './components/MainLayout/MainLayout';
+import EventEditorPage from './pages/EventEditor/EventEditorPage';
 import type { Session } from '@supabase/supabase-js';
 import { Loader2 } from 'lucide-react';
 
@@ -63,6 +64,7 @@ const App: React.FC = () => {
           <Route path="admin-option" element={<AdminOptionsPage />} />
           <Route path="moderation" element={<ModerationPage />} />
           <Route path="one-by-one" element={<OneByOnePage />} />
+          <Route path="edit-event/:id" element={<EventEditorPage />} />
           {/* L'ancienne page labo si besoin, pour l'instant on garde ça vide ou pointera vers un autre composant */}
         </Route>
 

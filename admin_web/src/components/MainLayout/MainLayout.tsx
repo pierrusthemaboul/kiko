@@ -56,7 +56,7 @@ const MainLayout: React.FC = () => {
         </nav>
       </aside>
 
-      <main className="main-content" style={{ backgroundColor: '#00ff00' }}>
+      <main className="main-content">
         <Outlet />
       </main>
       <div style={{

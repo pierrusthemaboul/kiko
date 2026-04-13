@@ -521,7 +521,7 @@ const EventsPage: React.FC = () => {
                   animate={{ opacity: 1, scale: 1 }}
                   transition={{ delay: index * 0.05 }}
                   className={`event-card glass ${viewMode} ${event.inspection_one_by_one_status ? 'has-inspection-banner' : ''}`}
-                  onClick={() => setSelectedEvent(event)}
+                  onClick={() => navigate(`/edit-event/${event.id}?source=${aiEvents ? 'evenements' : source}`)}
                 >
                   {event.inspection_one_by_one_status && inspectionBannerConfig[event.inspection_one_by_one_status] && (
                     <div className={inspectionBannerConfig[event.inspection_one_by_one_status].className}>
