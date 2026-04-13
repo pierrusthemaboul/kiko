@@ -41,21 +41,22 @@ export function usePlays() {
 
       const { data: profile } = await (supabase
         .from('profiles')
-        .select('parties_per_day, is_admin, xp_total')
+        .select('parties_per_day, parties_restantes, is_admin, xp_total')
         .eq('id', authUser.id)
         .single() as any);
 
       const baseFromRank = partiesPerDayFromXP(profile?.xp_total ?? 0);
       const storedQuota = profile?.parties_per_day ?? 3;
+      const extraPlays = profile?.parties_restantes ?? 0;
 
       Logger.debug('Plays', 'Quota breakdown', {
         xp: profile?.xp_total,
         baseFromRank,
-        storedQuota
+        storedQuota,
+        extraPlays
       });
 
       // Si le grade donne plus que ce qui est en base, on devrait idéalement mettre à jour la base
-      // Mais pour l'instant, on va juste utiliser le maximum pour le calcul local
       let allowed = Math.max(baseFromRank, storedQuota);
 
       // Si le grade a augmenté au-delà de la base, on synchronise silencieusement la DB
@@ -91,14 +92,19 @@ export function usePlays() {
       if (countError) throw countError;
 
       const used = runsToday ?? 0;
-      const remaining = Math.max(0, allowed - used);
+      // Nouveau calcul : Quota journalier restants + Parties en réserve
+      const dailyRemaining = Math.max(0, allowed - used);
+      const remaining = dailyRemaining + extraPlays;
+      
       const canStart = isAdmin || remaining > 0;
       const info = { allowed, used, remaining };
 
-      Logger.debug('Plays', 'Calculated plays info', {
+      Logger.info('Plays', 'Calculated plays info', {
         allowed,
         used,
-        remaining,
+        dailyRemaining,
+        extraPlays,
+        totalRemaining: remaining,
         isAdmin,
         userId: authUser.id
       });

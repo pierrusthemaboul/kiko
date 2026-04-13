@@ -87,6 +87,7 @@ export function useGameLogicA(initialEvent?: string, modeId?: string) {
     xp_total: number;
     title_key?: string | null;
     parties_per_day: number;
+    parties_restantes: number;
     high_score?: number | null;
     last_reroll_date?: string | null;
     reroll_count?: number;
@@ -257,7 +258,7 @@ export function useGameLogicA(initialEvent?: string, modeId?: string) {
 
       const { data, error } = await supabase
         .from('profiles')
-        .select('id, display_name, xp_total, title_key, parties_per_day, high_score')
+        .select('id, display_name, xp_total, title_key, parties_per_day, parties_restantes, high_score')
         .eq('id', userId)
         .maybeSingle() as any;
 
@@ -275,6 +276,7 @@ export function useGameLogicA(initialEvent?: string, modeId?: string) {
         xp_total: data.xp_total ?? 0,
         title_key: data.title_key ?? 'page',
         parties_per_day: data.parties_per_day ?? 3,
+        parties_restantes: data.parties_restantes ?? 0,
         high_score: data.high_score ?? 0,
       });
     } catch (err) {
