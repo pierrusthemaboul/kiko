@@ -10,7 +10,7 @@ const MainLayout: React.FC = () => {
       <aside className="main-sidebar">
         <div className="sidebar-brand">
           <Rocket size={24} className="brand-logo" />
-          <h1>k Events [V2.2]</h1>
+          <h1>k Events <span style={{fontSize: '10px'}}>[V2.2.1.b - 13/04 09:00]</span></h1>
         </div>
         
         <nav className="sidebar-nav">
@@ -71,7 +71,7 @@ const MainLayout: React.FC = () => {
           zIndex: 9999,
           pointerEvents: 'none'
         }}>
-          BUILD: V2.2.1-FIX
+          BUILD: V2.2.1.b - 13/04/2026 09:00
         </div>
     </div>
   );
