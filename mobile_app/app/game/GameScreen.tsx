@@ -33,6 +33,7 @@ import { Logger } from '@/utils/logger';
 import { FirebaseAnalytics } from '@/lib/firebase'; // Chemin OK
 import * as NavigationBar from 'expo-navigation-bar';
 import { supabase } from '@/lib/supabase/supabaseClients';
+import * as Crypto from 'expo-crypto';
 
 // Utils
 import { getBackgroundForLevel } from '@/utils/backgroundProgression';
@@ -259,7 +260,11 @@ function ClassicGameScreen({ requestedMode }: { requestedMode?: string }) {
           return;
       }
 
-      const { data, error } = await (supabase as any).rpc('grant_extra_play', { p_increment: 1 });
+      const transactionId = Crypto.randomUUID();
+      const { data, error } = await (supabase as any).rpc('grant_extra_play', {
+        p_increment: 1,
+        p_transaction_id: transactionId,
+      });
       if (error) throw error;
       
       Alert.alert("Bravo !", "Vous avez gagné 1 partie supplémentaire pour avoir partagé votre score !");

@@ -3,6 +3,7 @@
 
 if (__DEV__) {
   require('../ReactotronConfig');
+  require('../dev/registerAdsDebugCommands');
 }
 
 import React, { useEffect, useState } from 'react';
@@ -19,6 +20,7 @@ import * as NavigationBar from 'expo-navigation-bar';
 import { FirebaseAnalytics } from '../lib/firebase';
 import { supabase } from '../lib/supabase/supabaseClients';
 import { useAdConsent } from '../hooks/useAdConsent';
+import { usePendingRewardSync } from '../hooks/usePendingRewardSync';
 import { AudioProvider } from '../contexts/AudioContext';
 import { AdService } from '@/src/features/ads/AdService';
 
@@ -39,6 +41,7 @@ export default function RootLayout() {
   const segments = useSegments(); // Donne les parties de l'URL actuelle
 
   const { canShowPersonalizedAds, isLoading: consentLoading } = useAdConsent();
+  usePendingRewardSync();
 
   const [fontsLoaded, fontError] = useFonts({
     'Montserrat-Regular': require('../assets/fonts/Montserrat-Regular.ttf'),

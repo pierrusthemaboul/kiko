@@ -4,38 +4,22 @@ import MobileAds, { type RequestConfiguration } from 'react-native-google-mobile
 
 import { FirebaseAnalytics } from '@/lib/firebase';
 import { getAdRequestOptions, getAdUnitId } from '@/lib/config/adConfig';
-import { supabase } from '@/lib/supabase/supabaseClients';
-import type { Database } from '@/lib/supabase/database.types';
-import { Logger } from '@/utils/logger';
-import { RemoteLogger } from '@/lib/remoteLogger';
+import { AdTicketManager } from '@/src/features/ads/AdTicketManager';
+import {
+  AD_UNIT_IDS,
+  type AdInitResult,
+  type AdLoadError,
+  type BannerPlacement,
+  type ConsentResetFn,
+  type ConsentResetResult,
+} from '@/src/features/ads/AdConstants';
 
 export type AdUnitKey = Parameters<typeof getAdUnitId>[0];
-
-export type BannerPlacement = 'HOME';
 
 export type BannerConfig = {
   unitId: string;
   requestOptions: RequestOptions;
 };
-
-export type AdLoadError = {
-  code: string;
-  message: string;
-};
-
-export type ConsentResetFn = () => Promise<void>;
-
-export type ConsentResetResult =
-  | { ok: true }
-  | { ok: false; message: string };
-
-export type AdInitResult =
-  | { ok: true; configuredTestDevices: boolean }
-  | { ok: false; message: string };
-
-export type GrantExtraPlayResult =
-  | { ok: true; userType: 'registered' | 'guest' }
-  | { ok: false; message: string };
 
 function toErrorMessage(err: unknown): string {
   if (err instanceof Error) return err.message;
@@ -55,42 +39,6 @@ async function delay(ms: number): Promise<void> {
   await new Promise<void>(resolve => setTimeout(resolve, ms));
 }
 
-type ProfilesSelectRow = Pick<Database['public']['Tables']['profiles']['Row'], 'parties_per_day'>;
-type ProfilesUpdateRow = Database['public']['Tables']['profiles']['Update'];
-
-type SupabasePostgrestError = { message: string };
-
-type ProfilesSelectResult = {
-  data: ProfilesSelectRow | null;
-  error: SupabasePostgrestError | null;
-};
-
-type ProfilesUpdateResult = {
-  error: SupabasePostgrestError | null;
-};
-
-function profilesRepo() {
-  // Adaptation strict-typing: certains fichiers du repo déclenchent un `never` sur `.from('profiles')`
-  // On garde un contrat minimal, sans `any`, et on limite le cast à cette frontière.
-  const table = supabase.from('profiles') as unknown;
-
-  return {
-    async selectPartiesPerDayByUserId(userId: string): Promise<ProfilesSelectResult> {
-      const builder = table as {
-        select: (columns: string) => { eq: (col: string, value: string) => { single: () => Promise<ProfilesSelectResult> } };
-      };
-      return builder.select('parties_per_day').eq('id', userId).single();
-    },
-
-    async updatePartiesPerDayByUserId(userId: string, payload: ProfilesUpdateRow): Promise<ProfilesUpdateResult> {
-      const builder = table as {
-        update: (values: ProfilesUpdateRow) => { eq: (col: string, value: string) => Promise<ProfilesUpdateResult> };
-      };
-      return builder.update(payload).eq('id', userId);
-    },
-  };
-}
-
 export const AdService = {
   async initializeMobileAds(): Promise<AdInitResult> {
     if (mobileAdsInitPromise) return mobileAdsInitPromise;
@@ -98,8 +46,6 @@ export const AdService = {
     mobileAdsInitPromise = (async () => {
       try {
         await MobileAds().initialize();
-
-        // Petit délai pour laisser le SDK se stabiliser (évite certains comportements non déterministes au cold start)
         await delay(500);
 
         if (__DEV__) {
@@ -135,13 +81,13 @@ export const AdService = {
   getBannerConfig(placement: BannerPlacement): BannerConfig {
     if (placement === 'HOME') {
       return {
-        unitId: getAdUnitId('BANNER_HOME'),
+        unitId: getAdUnitId(AD_UNIT_IDS.bannerHome),
         requestOptions: buildRequestOptions(),
       };
     }
 
     return {
-      unitId: getAdUnitId('BANNER_HOME'),
+      unitId: getAdUnitId(AD_UNIT_IDS.bannerHome),
       requestOptions: buildRequestOptions(),
     };
   },
@@ -174,8 +120,7 @@ export const AdService = {
       await params.resetConsent();
       return { ok: true };
     } catch (err) {
-      const message = toErrorMessage(err);
-      return { ok: false, message };
+      return { ok: false, message: toErrorMessage(err) };
     }
   },
 
@@ -186,98 +131,29 @@ export const AdService = {
     );
   },
 
-  async grantExtraPlayFromRewardedAd(params: {
-    guestGrantExtraPlay: () => Promise<void>;
-    refreshPlaysInfo: () => Promise<void>;
-  }): Promise<GrantExtraPlayResult> {
-    try {
-      const {
-        data: { user: authUser },
-      } = await supabase.auth.getUser();
+  async registerRewardAdOpened(): Promise<void> {
+    await AdTicketManager.create({ status: 'watching' });
+  },
 
-      if (!authUser) {
-        await params.guestGrantExtraPlay();
-        await params.refreshPlaysInfo();
-        RemoteLogger.info('Ads', '✅ Guest extra play granted via rewarded ad');
-        return { ok: true, userType: 'guest' };
-      }
+  async registerRewardEarned(reason: 'earned' | 'fallback'): Promise<void> {
+    const pending = await AdTicketManager.getPending();
+    await AdTicketManager.create({
+      status: 'earned_pending_sync',
+      transactionId: pending?.id,
+      reason,
+    });
+  },
 
-      let success = false;
-      let lastErrorMessage = 'Unknown error';
-      let lastOldAllowed: number | null = null;
-      let lastNewAllowed: number | null = null;
+  async registerRewardClosedWithoutReward(): Promise<void> {
+    const pending = await AdTicketManager.getPending();
+    if (!pending) return;
 
-      for (let attempt = 1; attempt <= 3 && !success; attempt++) {
-        try {
-          RemoteLogger.info('Ads', `🔄 Granting extra play for user ${authUser.id} via RPC (attempt ${attempt})`);
-
-          const { data, error } = await (supabase as any).rpc('grant_extra_play', { p_increment: 1 });
-
-          if (error) {
-            lastErrorMessage = error.message;
-            RemoteLogger.error('Ads', `Attempt ${attempt}: RPC grant_extra_play failed: ${error.message}`);
-            FirebaseAnalytics.trackError('extra_play_rpc_error', {
-              message: error.message,
-              screen: 'AdService.grantExtraPlayFromRewardedAd',
-              context: `attempt=${attempt}`,
-              severity: 'error',
-            });
-            if (attempt < 3) {
-              await delay(1000 * attempt);
-              continue;
-            }
-            break;
-          }
-
-          const row: any = Array.isArray(data) ? data[0] : data;
-          const oldAllowed = typeof row?.old_allowed === 'number' ? row.old_allowed : null;
-          const newAllowed = typeof row?.new_allowed === 'number' ? row.new_allowed : null;
-          lastOldAllowed = oldAllowed;
-          lastNewAllowed = newAllowed;
-
-          success = true;
-          RemoteLogger.info('Ads', `✅ Extra play granted via RPC: ${oldAllowed ?? 'unknown'} → ${newAllowed ?? 'unknown'}`);
-          FirebaseAnalytics.trackEvent('extra_play_granted', {
-            source: 'rewarded_ad',
-            user_id: authUser.id,
-            old_allowed: oldAllowed ?? -1,
-            new_allowed: newAllowed ?? -1,
-            attempt,
-          });
-        } catch (attemptErr) {
-          lastErrorMessage = toErrorMessage(attemptErr);
-          RemoteLogger.error('Ads', `Attempt ${attempt} error: ${lastErrorMessage}`);
-          FirebaseAnalytics.trackError('extra_play_rpc_exception', {
-            message: lastErrorMessage,
-            screen: 'AdService.grantExtraPlayFromRewardedAd',
-            context: `attempt=${attempt}`,
-            severity: 'error',
-          });
-          if (attempt < 3) {
-            await delay(1000 * attempt);
-          }
-        }
-      }
-
-      if (!success) {
-        RemoteLogger.error('Ads', '❌ All 3 attempts to grant extra play via RPC failed', {
-          lastOldAllowed,
-          lastNewAllowed,
-        });
-        FirebaseAnalytics.trackEvent('extra_play_grant_failed', {
-          user_id: authUser.id,
-          reason: 'rpc_all_attempts_failed',
-        });
-        return { ok: false, message: lastErrorMessage };
-      }
-
-      await params.refreshPlaysInfo();
-      return { ok: true, userType: 'registered' };
-    } catch (err) {
-      const message = toErrorMessage(err);
-      Logger.error('Ads', 'Error in grantExtraPlayFromRewardedAd', err);
-      RemoteLogger.error('Ads', `❌ grantExtraPlayFromRewardedAd error: ${message}`);
-      return { ok: false, message };
-    }
+    await AdTicketManager.updateStatus({
+      status: 'aborted',
+      transactionId: pending.id,
+      reason: 'closed_without_reward',
+      lastError: 'closed_without_reward',
+    });
+    await AdTicketManager.clear(pending.id);
   },
 };

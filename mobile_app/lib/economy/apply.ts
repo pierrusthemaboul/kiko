@@ -206,7 +206,9 @@ type ProfilesUpdatePayload = Partial<Pick<
   | 'last_reroll_date'
   | 'reroll_count'
   | 'updated_at'
->>;
+>> & {
+  parties_restantes?: number;
+};
 
 function questProgressRepo() {
   const table = supabase.from('quest_progress') as unknown;
@@ -314,15 +316,15 @@ function profilesRepo() {
 
       return { data: res.data ?? null, error: res.error ?? null };
     },
-    async selectXpAndPartiesById(userId: string): Promise<{ data: Pick<ProfileRow, 'xp_total' | 'parties_per_day'> | null; error: unknown | null }> {
+    async selectXpAndPartiesById(userId: string): Promise<{ data: { xp_total: number | null; parties_restantes: number | null } | null; error: unknown | null }> {
       const res = await (table as {
-        select: (cols: 'xp_total, parties_per_day') => {
+        select: (cols: 'xp_total, parties_restantes') => {
           eq: (col: 'id', value: string) => {
-            single: () => Promise<{ data: Pick<ProfileRow, 'xp_total' | 'parties_per_day'> | null; error: unknown | null }>;
+            single: () => Promise<{ data: { xp_total: number | null; parties_restantes: number | null } | null; error: unknown | null }>;
           };
         };
       })
-        .select('xp_total, parties_per_day')
+        .select('xp_total, parties_restantes')
         .eq('id', userId)
         .single();
 
@@ -428,7 +430,6 @@ function buildRunPayload(params: {
     new_xp: newXp,
     rank_key: rank.key,
     rank_label: rank.label,
-    parties_per_day: rank.partiesPerDay,
     leveled_up: leveledUp,
     economy_applied_at: timestamp,
   };
@@ -520,7 +521,6 @@ export async function applyEndOfRunEconomy({ runId, userId, mode, points, gameSt
   const updatePayload = {
     xp_total: newXp,
     title_key: rank.key,
-    parties_per_day: newPartiesPerDay,
     current_streak: newStreak,
     best_streak: newBestStreak,
     last_play_date: todayDate,
@@ -1065,11 +1065,11 @@ export async function claimQuestReward(userId: string, questKey: string): Promis
     if (!profile) throw new Error('Profil introuvable');
 
     const newXP = (profile.xp_total || 0) + xpAmount;
-    const newParties = (profile.parties_per_day || 0) + partsAmount;
+    const newParties = (profile.parties_restantes || 0) + partsAmount;
 
     const { error: profileUpdateError } = await profilesRepo().updateById(userId, {
       xp_total: newXP,
-      parties_per_day: newParties,
+      parties_restantes: newParties,
       updated_at: new Date().toISOString(),
     });
 

@@ -5,6 +5,20 @@ import { todayWindow } from '@/utils/time';
 import { Logger } from '@/utils/logger';
 import { partiesPerDayFromXP } from '@/lib/economy/ranks';
 
+type PlaysRefreshListener = () => void;
+const playsRefreshListeners = new Set<PlaysRefreshListener>();
+
+export function notifyPlaysRefreshRequested(source: string = 'unknown'): void {
+  Logger.info('Plays', `Global plays refresh requested (source=${source})`);
+  playsRefreshListeners.forEach(listener => {
+    try {
+      listener();
+    } catch (err) {
+      Logger.error('Plays', 'Global refresh listener failed', err);
+    }
+  });
+}
+
 export interface PlaysInfo {
   allowed: number;
   used: number;
@@ -17,19 +31,6 @@ export function usePlays() {
   const [loading, setLoading] = useState<boolean>(true);
 
   const fetchPlaysInfo = useCallback(async (): Promise<PlaysInfo | null> => {
-    // 🔍 Logger - DÉBUT FETCH
-    Logger.debug('Plays', 'Fetching plays info from Supabase');
-
-    // 🔍 REACTOTRON LOG - DÉBUT FETCH
-    if (__DEV__ && (console as any).tron) {
-      (console as any).tron.display({
-        name: '🔄 FETCH PLAYS INFO',
-        preview: 'Récupération des parties restantes',
-        value: { timestamp: new Date().toISOString() },
-        important: false
-      });
-    }
-
     setLoading(true);
     try {
       const { data: { user: authUser } } = await supabase.auth.getUser();
@@ -49,23 +50,8 @@ export function usePlays() {
       const storedQuota = profile?.parties_per_day ?? 3;
       const extraPlays = profile?.parties_restantes ?? 0;
 
-      Logger.debug('Plays', 'Quota breakdown', {
-        xp: profile?.xp_total,
-        baseFromRank,
-        storedQuota,
-        extraPlays
-      });
-
-      // Si le grade donne plus que ce qui est en base, on devrait idéalement mettre à jour la base
-      let allowed = Math.max(baseFromRank, storedQuota);
-
-      // Si le grade a augmenté au-delà de la base, on synchronise silencieusement la DB
-      if (baseFromRank > storedQuota) {
-        Logger.info('Plays', `Rank upgrade detected! Syncing DB quota: ${storedQuota} -> ${baseFromRank}`);
-        await (supabase.from('profiles') as any)
-          .update({ parties_per_day: baseFromRank })
-          .eq('id', authUser.id);
-      }
+      // Seuil minimal: le grade définit un minimum, la base peut forcer plus haut.
+      const allowed = Math.max(baseFromRank, storedQuota);
 
       let isAdmin = profile?.is_admin === true;
 
@@ -75,10 +61,6 @@ export function usePlays() {
         if (simulated === 'true') {
           isAdmin = false;
         }
-      }
-
-      if (isAdmin) {
-        allowed = 999;
       }
       const window = todayWindow();
 
@@ -99,29 +81,16 @@ export function usePlays() {
       const canStart = isAdmin || remaining > 0;
       const info = { allowed, used, remaining };
 
-      Logger.info('Plays', 'Calculated plays info', {
+      Logger.info('Plays', 'quota_snapshot', {
         allowed,
         used,
         dailyRemaining,
         extraPlays,
-        totalRemaining: remaining,
+        remaining,
         isAdmin,
-        userId: authUser.id
+        storedQuota,
+        baseFromRank,
       });
-
-      if (__DEV__ && (console as any).tron) {
-        (console as any).tron.display({
-          name: '📊 PLAYS INFO',
-          preview: `Remaining: ${remaining} (${used}/${allowed})`,
-          value: {
-            allowed, used, remaining, isAdmin,
-            isSimulated: (await AsyncStorage.getItem('@debug_simulated_plays')) === 'true',
-            windowStart: window.startISO,
-            userId: authUser.id
-          },
-          important: true
-        });
-      }
 
       setPlaysInfo(info);
       setCanStartRun(canStart);
@@ -138,6 +107,16 @@ export function usePlays() {
 
   useEffect(() => {
     fetchPlaysInfo();
+  }, [fetchPlaysInfo]);
+
+  useEffect(() => {
+    const listener = () => {
+      void fetchPlaysInfo();
+    };
+    playsRefreshListeners.add(listener);
+    return () => {
+      playsRefreshListeners.delete(listener);
+    };
   }, [fetchPlaysInfo]);
 
   return {
