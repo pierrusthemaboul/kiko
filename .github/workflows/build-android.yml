@@ -47,17 +47,18 @@ jobs:
         run: echo '${{ secrets.PLAY_STORE_CONFIG_JSON }}' > kiko-chrono-e34241a84e41.json
 
       - name: 🚀 Build AAB (Local)
+        working-directory: mobile_app
         run: |
           npx expo prebuild --platform android --clean
-          node scripts/fix-manifest.js
-          node scripts/fix-kotlin-version.js
+          node ../scripts/mobile_app/fix-manifest.js
+          node ../scripts/mobile_app/fix-kotlin-version.js
           EAS_SKIP_AUTO_FINGERPRINT=1 eas build --platform android --profile production --local --non-interactive
 
       - name: 📤 Upload Artifact
         uses: actions/upload-artifact@v4
         with:
           name: android-build
-          path: build-*.aab
+          path: mobile_app/build-*.aab
 
       - name: 🚀 Submit to Play Store
         if: github.event_name == 'workflow_dispatch'
