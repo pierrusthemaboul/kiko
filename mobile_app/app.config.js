@@ -5,7 +5,7 @@ module.exports = ({ config }) => {
     ...config,
     name: IS_DEV ? "Timalaus DEV" : "Timalaus",
     slug: "kiko",
-    version: "1.7.1",
+    version: "1.7.2",
     orientation: "portrait",
     icon: "./assets/images/oklogo.png",
     scheme: "juno2",
@@ -41,7 +41,7 @@ module.exports = ({ config }) => {
         "com.google.android.gms.permission.AD_ID",
         "android.permission.ACCESS_ADSERVICES_AD_ID"
       ],
-      versionCode: 10128,
+      versionCode: 10129,
       googleServicesFile: process.env.GOOGLE_SERVICES_JSON || "./google-services.json",
       userInterfaceStyle: "dark"
     },
@@ -158,7 +158,7 @@ module.exports = ({ config }) => {
       fallbackToCacheTimeout: 30000,
       url: "https://u.expo.dev/3cbda57c-1ec1-4949-af06-9e933dbc0050"
     },
-    runtimeVersion: "1.7.1",
+    runtimeVersion: "1.7.2",
     extra: {
       ...(config.extra || {}),
       eas: {

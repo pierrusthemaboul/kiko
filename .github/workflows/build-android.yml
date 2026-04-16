@@ -62,4 +62,5 @@ jobs:
 
       - name: 🚀 Submit to Play Store
         if: github.event_name == 'workflow_dispatch'
+        working-directory: mobile_app
         run: eas submit --platform android --profile production --path build-*.aab --non-interactive
