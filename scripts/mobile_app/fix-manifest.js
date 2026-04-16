@@ -2,7 +2,7 @@ const fs = require('fs');
 const path = require('path');
 
 // Chemin vers le manifeste Android
-const manifestPath = path.join(__dirname, '..', 'android', 'app', 'src', 'main', 'AndroidManifest.xml');
+const manifestPath = path.join(process.cwd(), 'android', 'app', 'src', 'main', 'AndroidManifest.xml');
 
 // Vérifier que le fichier existe
 if (!fs.existsSync(manifestPath)) {
@@ -55,8 +55,8 @@ console.log('  - Permission AD_ID ajoutée');
 console.log('  - Permission ACCESS_ADSERVICES_AD_ID ajoutée');
 
 // COPIER LES ASSETS SPLASH MANQUANTS
-const assetsDir = path.join(__dirname, '..', 'assets', 'images');
-const drawableDir = path.join(__dirname, '..', 'android', 'app', 'src', 'main', 'res', 'drawable');
+const assetsDir = path.join(process.cwd(), 'assets', 'images');
+const drawableDir = path.join(process.cwd(), 'android', 'app', 'src', 'main', 'res', 'drawable');
 
 // Créer le dossier drawable s'il n'existe pas
 if (!fs.existsSync(drawableDir)) {

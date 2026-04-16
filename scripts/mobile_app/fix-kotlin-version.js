@@ -2,7 +2,7 @@ const fs = require('fs');
 const path = require('path');
 
 // Chemin vers le fichier gradle.properties
-const gradlePropertiesPath = path.join(__dirname, '..', 'android', 'gradle.properties');
+const gradlePropertiesPath = path.join(process.cwd(), 'android', 'gradle.properties');
 
 // Vérifier que le fichier existe
 if (!fs.existsSync(gradlePropertiesPath)) {
