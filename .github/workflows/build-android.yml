@@ -44,7 +44,7 @@ jobs:
         run: pnpm install
 
       - name: 🔑 Prepare Play Store Key
-        run: echo '${{ secrets.PLAY_STORE_CONFIG_JSON }}' > kiko-chrono-e34241a84e41.json
+        run: echo '${{ secrets.PLAY_STORE_CONFIG_JSON }}' > mobile_app/kiko-chrono-e34241a84e41.json
 
       - name: 🚀 Build AAB (Local)
         working-directory: mobile_app
