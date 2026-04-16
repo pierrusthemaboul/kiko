@@ -26,7 +26,9 @@ import EventLayoutA from './EventLayoutA'; // Assurez-vous que ce chemin est cor
 import LevelUpModalBis from '../modals/LevelUpModalBis';
 import ScoreboardModal from '../modals/ScoreboardModal';
 import RewardAnimation from './RewardAnimation';
+import TutorialGhostHand from './TutorialGhostHand';
 import { Logger } from '@/utils/logger';
+import { getTutorialEnabled, disableTutorial } from '@/src/features/tutorial/tutorialStorage';
 
 // Types & Constants
 import { colors } from '@/constants/Colors';
@@ -38,6 +40,10 @@ import type {
   LevelEventSummary,
 } from '@/hooks/types'; // Assurez-vous que ce chemin est correct
 import { RewardType } from '@/hooks/types';
+
+const { height: SCREEN_HEIGHT } = Dimensions.get('window');
+const TUTO_OFFSET_X = 0;
+const TUTO_OFFSET_Y = 0;
 
 // Interface pour l'historique des niveaux (si non définie ailleurs)
 interface LevelHistory {
@@ -161,6 +167,17 @@ function GameContentA({
   const [showWatchAdOffer, setShowWatchAdOffer] = useState(false);
   const [showScoreboard, setShowScoreboard] = useState(false);
   const [isLoadingAd, setIsLoadingAd] = useState(false);
+  const [tutorialEnabled, setTutorialEnabled] = useState(false);
+  const [showTutorialGhost, setShowTutorialGhost] = useState(false);
+  const hasHandledTutorialChoiceRef = useRef(false);
+  const ghostHandLeftOpacity = useRef(new Animated.Value(0)).current;
+  const ghostHandRightOpacity = useRef(new Animated.Value(0)).current;
+  const ghostHandScale = useRef(new Animated.Value(1)).current;
+  const tutorialMaskOpacity = useRef(new Animated.Value(0)).current;
+  const tutorialCenterTextOpacity = useRef(new Animated.Value(0)).current;
+  const tutorialLeftHaloOpacity = useRef(new Animated.Value(0)).current;
+  const tutorialRightHaloOpacity = useRef(new Animated.Value(0)).current;
+  const ghostHandLoopRef = useRef<Animated.CompositeAnimation | null>(null);
 
   const isInitialRenderRef = useRef(true); // Pour l'animation d'EventLayoutA
 
@@ -330,6 +347,198 @@ function GameContentA({
     }
   }, [previousEvent, displayedEvent, error, user]);
 
+  useEffect(() => {
+    let mounted = true;
+
+    const loadTutorialState = async () => {
+      const enabled = await getTutorialEnabled();
+      if (!mounted) return;
+      setTutorialEnabled(enabled);
+      setShowTutorialGhost(enabled);
+      hasHandledTutorialChoiceRef.current = false;
+    };
+
+    loadTutorialState();
+
+    return () => {
+      mounted = false;
+    };
+  }, []);
+
+  const stopGhostHandAnimation = useCallback(() => {
+    ghostHandLoopRef.current?.stop();
+    ghostHandLoopRef.current = null;
+    ghostHandLeftOpacity.stopAnimation();
+    ghostHandRightOpacity.stopAnimation();
+    ghostHandScale.stopAnimation();
+    tutorialMaskOpacity.stopAnimation();
+    tutorialCenterTextOpacity.stopAnimation();
+    tutorialLeftHaloOpacity.stopAnimation();
+    tutorialRightHaloOpacity.stopAnimation();
+    ghostHandLeftOpacity.setValue(0);
+    ghostHandRightOpacity.setValue(0);
+    ghostHandScale.setValue(1);
+    tutorialMaskOpacity.setValue(0);
+    tutorialCenterTextOpacity.setValue(0);
+    tutorialLeftHaloOpacity.setValue(0);
+    tutorialRightHaloOpacity.setValue(0);
+  }, [
+    ghostHandLeftOpacity,
+    ghostHandRightOpacity,
+    ghostHandScale,
+    tutorialMaskOpacity,
+    tutorialCenterTextOpacity,
+    tutorialLeftHaloOpacity,
+    tutorialRightHaloOpacity,
+  ]);
+
+  useEffect(() => {
+    const shouldRunGhost =
+      tutorialEnabled &&
+      showTutorialGhost &&
+      !isGameOver &&
+      !showLevelModal &&
+      !!previousEvent &&
+      !!displayedEvent &&
+      isImageLoaded &&
+      !showDates;
+
+    if (!shouldRunGhost) {
+      stopGhostHandAnimation();
+      return;
+    }
+
+    stopGhostHandAnimation();
+
+    tutorialMaskOpacity.setValue(0);
+    tutorialCenterTextOpacity.setValue(0);
+    Animated.parallel([
+      Animated.timing(tutorialMaskOpacity, {
+        toValue: 0.56,
+        duration: 260,
+        useNativeDriver: true,
+      }),
+      Animated.timing(tutorialCenterTextOpacity, {
+        toValue: 1,
+        duration: 280,
+        useNativeDriver: true,
+      }),
+    ]).start();
+
+    ghostHandLeftOpacity.setValue(1);
+    ghostHandRightOpacity.setValue(0);
+    tutorialLeftHaloOpacity.setValue(1);
+    tutorialRightHaloOpacity.setValue(0);
+
+    const tapAnim = Animated.sequence([
+      Animated.timing(ghostHandScale, {
+        toValue: 0.82,
+        duration: 110,
+        useNativeDriver: true,
+      }),
+      Animated.timing(ghostHandScale, {
+        toValue: 1,
+        duration: 150,
+        useNativeDriver: true,
+      }),
+    ]);
+
+    const loop = Animated.loop(
+      Animated.sequence([
+        Animated.timing(ghostHandLeftOpacity, {
+          toValue: 1,
+          duration: 120,
+          useNativeDriver: true,
+        }),
+        Animated.timing(ghostHandRightOpacity, {
+          toValue: 0,
+          duration: 80,
+          useNativeDriver: true,
+        }),
+        Animated.timing(tutorialLeftHaloOpacity, {
+          toValue: 1,
+          duration: 160,
+          useNativeDriver: true,
+        }),
+        Animated.timing(tutorialRightHaloOpacity, {
+          toValue: 0,
+          duration: 80,
+          useNativeDriver: true,
+        }),
+        tapAnim,
+        Animated.delay(180),
+        Animated.timing(ghostHandLeftOpacity, {
+          toValue: 0,
+          duration: 120,
+          useNativeDriver: true,
+        }),
+        Animated.delay(40),
+        Animated.timing(tutorialLeftHaloOpacity, {
+          toValue: 0,
+          duration: 100,
+          useNativeDriver: true,
+        }),
+        Animated.timing(tutorialRightHaloOpacity, {
+          toValue: 1,
+          duration: 160,
+          useNativeDriver: true,
+        }),
+        Animated.timing(ghostHandRightOpacity, {
+          toValue: 1,
+          duration: 120,
+          useNativeDriver: true,
+        }),
+        tapAnim,
+        Animated.delay(180),
+        Animated.timing(ghostHandRightOpacity, {
+          toValue: 0,
+          duration: 120,
+          useNativeDriver: true,
+        }),
+        Animated.delay(200),
+      ])
+    );
+
+    ghostHandLoopRef.current = loop;
+    loop.start();
+
+    return () => {
+      stopGhostHandAnimation();
+    };
+  }, [
+    tutorialEnabled,
+    showTutorialGhost,
+    isGameOver,
+    showLevelModal,
+    previousEvent,
+    displayedEvent,
+    isImageLoaded,
+    showDates,
+    ghostHandLeftOpacity,
+    ghostHandRightOpacity,
+    ghostHandScale,
+    tutorialMaskOpacity,
+    tutorialCenterTextOpacity,
+    tutorialLeftHaloOpacity,
+    tutorialRightHaloOpacity,
+    stopGhostHandAnimation,
+  ]);
+
+  const handleChoiceWithTutorial = useCallback(
+    (choice: 'avant' | 'après') => {
+      if (tutorialEnabled && !hasHandledTutorialChoiceRef.current) {
+        hasHandledTutorialChoiceRef.current = true;
+        setShowTutorialGhost(false);
+        setTutorialEnabled(false);
+        stopGhostHandAnimation();
+        disableTutorial().catch(() => undefined);
+      }
+
+      handleChoice(choice);
+    },
+    [handleChoice, tutorialEnabled, stopGhostHandAnimation]
+  );
+
   // --- Fonctions pour gérer l'interaction avec l'offre de publicité ---
   // (Logique inchangée)
   const handleWatchAd = () => {
@@ -369,6 +578,16 @@ function GameContentA({
 
   // --- Rendu Principal du Contenu ---
   const renderContent = () => {
+    const shouldShowTutorialHint =
+      tutorialEnabled &&
+      showTutorialGhost &&
+      !isGameOver &&
+      !showLevelModal &&
+      !!previousEvent &&
+      !!displayedEvent &&
+      isImageLoaded &&
+      !showDates;
+
     if (error) {
       return (
         <View style={styles.errorContainer}>
@@ -395,7 +614,7 @@ function GameContentA({
           previousEvent={previousEvent}
           newEvent={displayedEvent}
           onImageLoad={handleImageLoad}
-          onChoice={handleChoice}
+          onChoice={handleChoiceWithTutorial}
           showDate={showDates}
           isCorrect={isCorrect}
           isImageLoaded={isImageLoaded}
@@ -406,6 +625,66 @@ function GameContentA({
           isInitialRender={isInitialRenderRef.current}
           isLastEventOfLevel={isLastEventOfLevel}
         />
+
+        {shouldShowTutorialHint && (
+          <View pointerEvents="none" style={styles.ghostTutorialOverlay}>
+            <Animated.View style={[styles.ghostTutorialMask, { opacity: tutorialMaskOpacity }]} />
+
+            <View style={styles.cardsFocusCutout} />
+
+            <Animated.View
+              style={[styles.compareTextContainer, { opacity: tutorialCenterTextOpacity }]}
+            >
+              <Text style={styles.compareText}>Comparez ces deux événements</Text>
+            </Animated.View>
+
+            <View style={styles.tutorialButtonsAnchor}>
+              <View
+                style={[
+                  styles.tutorialButtonsMirrorRow,
+                  {
+                    transform: [
+                      { translateX: TUTO_OFFSET_X },
+                      { translateY: TUTO_OFFSET_Y },
+                    ],
+                  },
+                ]}
+              >
+                <View style={styles.tutorialButtonSlot}>
+                  <Animated.View
+                    style={[styles.slotHalo, { opacity: tutorialLeftHaloOpacity }]}
+                  />
+                  <TutorialGhostHand
+                    label="C'était avant ?"
+                    style={[
+                      styles.slotHand,
+                      {
+                        opacity: ghostHandLeftOpacity,
+                        transform: [{ scale: ghostHandScale }],
+                      },
+                    ]}
+                  />
+                </View>
+
+                <View style={styles.tutorialButtonSlot}>
+                  <Animated.View
+                    style={[styles.slotHalo, { opacity: tutorialRightHaloOpacity }]}
+                  />
+                  <TutorialGhostHand
+                    label="Ou après ?"
+                    style={[
+                      styles.slotHand,
+                      {
+                        opacity: ghostHandRightOpacity,
+                        transform: [{ scale: ghostHandScale }],
+                      },
+                    ]}
+                  />
+                </View>
+              </View>
+            </View>
+          </View>
+        )}
 
 
 
@@ -787,6 +1066,78 @@ const styles = StyleSheet.create({
   },
   watchAdButtonIcon: {
     marginRight: 8,
+  },
+  ghostTutorialOverlay: {
+    ...StyleSheet.absoluteFillObject,
+    zIndex: 1700,
+  },
+  ghostTutorialMask: {
+    ...StyleSheet.absoluteFillObject,
+    backgroundColor: 'rgba(4, 8, 15, 0.72)',
+  },
+  cardsFocusCutout: {
+    position: 'absolute',
+    left: 8,
+    right: 8,
+    top: 12,
+    height: Math.round(SCREEN_HEIGHT * 0.78),
+    borderRadius: 20,
+    borderWidth: 1,
+    borderColor: 'rgba(255,255,255,0.22)',
+    backgroundColor: 'rgba(255,255,255,0.02)',
+  },
+  compareTextContainer: {
+    position: 'absolute',
+    left: 22,
+    right: 22,
+    top: '53%',
+    marginTop: -22,
+    alignItems: 'center',
+  },
+  compareText: {
+    color: '#FFFFFF',
+    fontSize: 18,
+    fontWeight: '700',
+    textAlign: 'center',
+    textShadowColor: 'rgba(0,0,0,0.75)',
+    textShadowOffset: { width: 0, height: 1 },
+    textShadowRadius: 4,
+  },
+  tutorialButtonsAnchor: {
+    position: 'absolute',
+    left: 0,
+    right: 0,
+    bottom: 50,
+    paddingHorizontal: 20,
+  },
+  tutorialButtonsMirrorRow: {
+    flexDirection: 'row',
+    justifyContent: 'space-around',
+    alignItems: 'center',
+    marginVertical: 10,
+    width: '100%',
+    paddingHorizontal: 10,
+  },
+  tutorialButtonSlot: {
+    width: '42%',
+    marginHorizontal: 8,
+    alignItems: 'center',
+    justifyContent: 'center',
+    position: 'relative',
+    minHeight: 84,
+  },
+  slotHalo: {
+    position: 'absolute',
+    width: '100%',
+    height: 58,
+    borderRadius: 29,
+    borderWidth: 2,
+    borderColor: '#F4D068',
+    backgroundColor: 'rgba(244, 208, 104, 0.16)',
+  },
+  slotHand: {
+    position: 'absolute',
+    bottom: 4,
   },
 });
 

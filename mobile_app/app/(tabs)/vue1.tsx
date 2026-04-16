@@ -1,9 +1,10 @@
 import React, { useState, useCallback, useEffect } from 'react';
-import { View, StyleSheet, Alert, StatusBar } from 'react-native';
+import { View, StyleSheet, Alert, StatusBar, Text, Switch } from 'react-native';
 import { useRouter } from 'expo-router';
 import { supabase } from '@/lib/supabase/supabaseClients';
 import AsyncStorage from '@react-native-async-storage/async-storage';
 import { FirebaseAnalytics } from '@/lib/firebase';
+import { getTutorialEnabled, setTutorialEnabled } from '@/src/features/tutorial/tutorialStorage';
 
 // Components
 import AIConsentModal from '@/components/modals/AIConsentModal';
@@ -27,7 +28,9 @@ export default function Vue1() {
   const { adLoaded, adSuccessLoading, showAd } = useHomeAdsFlow(
     homeData.profile,
     homeData.guestPlaysInfo,
-    homeData.refreshPlaysInfo
+    async () => {
+      await homeData.refreshPlaysInfo();
+    }
   );
   const { aiConsentGiven, acceptConsent } = useAIConsent();
 
@@ -35,10 +38,47 @@ export default function Vue1() {
   const [showAIInfo, setShowAIInfo] = useState(false);
   const [settingsVisible, setSettingsVisible] = useState(false);
   const [rewardModalDismissed, setRewardModalDismissed] = useState(false);
+  const [tutorialEnabled, setTutorialEnabledState] = useState(true);
+  const [tutorialLoading, setTutorialLoading] = useState(true);
 
   useEffect(() => {
     FirebaseAnalytics.screen('HomeClean', 'Vue1');
   }, []);
+
+  useEffect(() => {
+    let mounted = true;
+
+    const loadTutorialState = async () => {
+      try {
+        const enabled = await getTutorialEnabled();
+        if (mounted) {
+          setTutorialEnabledState(enabled);
+        }
+      } finally {
+        if (mounted) {
+          setTutorialLoading(false);
+        }
+      }
+    };
+
+    loadTutorialState();
+
+    return () => {
+      mounted = false;
+    };
+  }, []);
+
+  const handleToggleTutorial = useCallback(async (nextValue: boolean) => {
+    const previousValue = tutorialEnabled;
+    setTutorialEnabledState(nextValue);
+
+    try {
+      await setTutorialEnabled(nextValue);
+    } catch {
+      setTutorialEnabledState(previousValue);
+      Alert.alert('Erreur', "Impossible de sauvegarder l'état du tutoriel.");
+    }
+  }, [tutorialEnabled]);
 
   const handleStartClassic = useCallback(() => {
     if (!homeData.canPlay && !homeData.loadingPlays && !homeData.guestPlaysInfo.isLoading) {
@@ -64,6 +104,19 @@ export default function Vue1() {
       <OdysseyHero 
         canPlay={homeData.canPlay} 
         onStart={handleStartClassic} 
+        tutorialControl={(
+          <View style={styles.tutorialToggleContainer}>
+            <Text style={styles.tutorialToggleLabel}>Tutoriel</Text>
+            <Switch
+              value={tutorialEnabled}
+              onValueChange={handleToggleTutorial}
+              disabled={tutorialLoading}
+              trackColor={{ false: 'rgba(255,255,255,0.25)', true: 'rgba(244, 208, 104, 0.5)' }}
+              thumbColor={tutorialEnabled ? '#F4D068' : '#f4f3f4'}
+              ios_backgroundColor="rgba(255,255,255,0.25)"
+            />
+          </View>
+        )}
       />
 
       {/* Layer Overlay Haut : Header de status */}
@@ -124,5 +177,18 @@ const styles = StyleSheet.create({
   container: {
     flex: 1,
     backgroundColor: '#000', // Fond sombre pour l'immersion
+  },
+  tutorialToggleContainer: {
+    flexDirection: 'row',
+    alignItems: 'center',
+    justifyContent: 'center',
+    gap: 8,
+    paddingVertical: 2,
+  },
+  tutorialToggleLabel: {
+    color: 'rgba(255,255,255,0.9)',
+    fontSize: 13,
+    fontWeight: '600',
+    letterSpacing: 0.4,
   },
 });

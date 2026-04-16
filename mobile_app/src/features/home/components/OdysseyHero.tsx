@@ -17,9 +17,10 @@ const { width, height } = Dimensions.get('window');
 interface Props {
   canPlay: boolean;
   onStart: () => void;
+  tutorialControl?: React.ReactNode;
 }
 
-export function OdysseyHero({ canPlay, onStart }: Props) {
+export function OdysseyHero({ canPlay, onStart, tutorialControl }: Props) {
   // Animations pour le bouton Play et l'arrivée du contenu
   const scale = useSharedValue(1);
   const opacity = useSharedValue(0);
@@ -92,6 +93,12 @@ export function OdysseyHero({ canPlay, onStart }: Props) {
               Explorez les époques et replacez l'histoire dans sa véritable chronologie.
             </Text>
           </BlurView>
+
+          {tutorialControl ? (
+            <View style={styles.tutorialControlWrapper}>
+              {tutorialControl}
+            </View>
+          ) : null}
 
           {/* Bouton de Play Magnétique/Scalable */}
           <TouchableWithoutFeedback
@@ -211,6 +218,11 @@ const styles = StyleSheet.create({
     shadowRadius: 20,
     shadowOffset: { width: 0, height: 10 },
     elevation: 15,
+  },
+  tutorialControlWrapper: {
+    alignItems: 'center',
+    justifyContent: 'center',
+    marginBottom: 12,
   },
   playButtonDisabled: {
     opacity: 0.9,

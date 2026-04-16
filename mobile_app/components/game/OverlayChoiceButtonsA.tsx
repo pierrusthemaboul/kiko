@@ -30,7 +30,7 @@ const OverlayChoiceButtonsA: React.FC<OverlayChoiceButtonsAProps> = ({
   onChoice,
   isLevelPaused,
   isWaitingForCountdown = false,
-  transitioning = false
+  transitioning = false,
 }) => {
   // États simples
   const [pressedButton, setPressedButton] = useState<'avant' | 'après' | null>(null);
@@ -138,9 +138,9 @@ const OverlayChoiceButtonsA: React.FC<OverlayChoiceButtonsAProps> = ({
             transform: [
               { scale: leftButtonScale },
               { rotate: leftRotate },
-              { scale: pulseAnim }
+              { scale: pulseAnim },
             ]
-          }
+          },
         ]}
       >
         <TouchableOpacity
@@ -175,9 +175,9 @@ const OverlayChoiceButtonsA: React.FC<OverlayChoiceButtonsAProps> = ({
             transform: [
               { scale: rightButtonScale },
               { rotate: rightRotate },
-              { scale: pulseAnim }
+              { scale: pulseAnim },
             ]
-          }
+          },
         ]}
       >
         <TouchableOpacity

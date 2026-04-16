@@ -819,7 +819,7 @@ export function useGameLogicA(initialEvent?: string, modeId?: string) {
       1,
       0,
       gameMode.initialLives,
-      Constants.expoConfig?.version ?? '1.7.0'
+      Constants.expoConfig?.version ?? '1.7.1'
     );
     console.log('[useGameLogicA] 🎬 Gestionnaire de métadonnées initialisé');
   }, [baseInitGameWrapper, resetAntiFrustration, resetEventCount, gameMode.label, gameMode.initialLives, startRun]);
