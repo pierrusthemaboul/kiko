@@ -1,8 +1,11 @@
 -- Fonction de recherche vectorielle optimisée pour les événements
 -- À exécuter dans l'éditeur SQL Supabase
 
+-- OBSOLÈTE : remplacé par match_evenements_by_titre (voir migrations)
+-- Cette fonction est conservée pour référence uniquement.
+-- Utiliser : SELECT * FROM match_evenements_by_titre(query_embedding, match_count, match_threshold);
 CREATE OR REPLACE FUNCTION search_similar_events(
-  query_vector vector(1536),  -- 1536 dimensions pour ada-002
+  query_vector vector(1536),
   match_threshold float DEFAULT 0.85,
   match_count int DEFAULT 5
 )
@@ -21,12 +24,9 @@ BEGIN
     e.id,
     e.titre,
     e.date,
-    1 - (e.embedding_vocal <=> query_vector) as similarity
-  FROM evenements e
-  WHERE e.embedding_vocal IS NOT NULL
-    AND (1 - (e.embedding_vocal <=> query_vector)) > match_threshold
-  ORDER BY e.embedding_vocal <=> query_vector
-  LIMIT match_count;
+    res.similarity::float
+  FROM match_evenements_by_titre(query_vector, match_count, match_threshold) res
+  JOIN evenements e ON e.id = res.id;
 END;
 $$;
 

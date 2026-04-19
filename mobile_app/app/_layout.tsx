@@ -22,6 +22,7 @@ import { supabase } from '../lib/supabase/supabaseClients';
 import { useAdConsent } from '../hooks/useAdConsent';
 import { usePendingRewardSync } from '../hooks/usePendingRewardSync';
 import { AudioProvider } from '../contexts/AudioContext';
+import { MusicProvider } from '../contexts/MusicContext';
 import { AdService } from '@/src/features/ads/AdService';
 
 const CURRENT_APP_VERSION = Application.nativeApplicationVersion || '1.0.0';
@@ -313,14 +314,16 @@ export default function RootLayout() {
   // Le Stack Navigator principal
   return (
     <AudioProvider>
-      <View style={{ flex: 1 }}>
-        <Stack screenOptions={{ headerShown: false }}>
-          <Stack.Screen name="(tabs)" />
-          <Stack.Screen name="auth" />
-          <Stack.Screen name="game" />
-          <Stack.Screen name="+not-found" />
-        </Stack>
-      </View>
+      <MusicProvider>
+        <View style={{ flex: 1 }}>
+          <Stack screenOptions={{ headerShown: false }}>
+            <Stack.Screen name="(tabs)" />
+            <Stack.Screen name="auth" />
+            <Stack.Screen name="game" />
+            <Stack.Screen name="+not-found" />
+          </Stack>
+        </View>
+      </MusicProvider>
     </AudioProvider>
   );
 }

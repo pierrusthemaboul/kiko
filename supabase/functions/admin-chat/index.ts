@@ -56,10 +56,23 @@ serve(async (req) => {
               body: JSON.stringify({ model: "text-embedding-3-small", input: title }),
             });
             const { data: [{ embedding }] } = await embRes.json();
-            const { data: matches } = await supabase.rpc("match_evenements_embeddings", {
+
+            // Priorité : titre_description (plus précis, moins de faux positifs)
+            // Fallback : titre seul si titre_description non encore généré pour cet événement
+            let matches: any[] | null = null;
+            const { data: matchesTD } = await supabase.rpc("match_evenements_by_titre_description", {
               query_embedding: embedding,
               match_count: 1,
             });
+            if (matchesTD && matchesTD.length > 0) {
+              matches = matchesTD;
+            } else {
+              const { data: matchesT } = await supabase.rpc("match_evenements_by_titre", {
+                query_embedding: embedding,
+                match_count: 1,
+              });
+              matches = matchesT;
+            }
             if (matches?.[0]?.similarity > 0.88) similarityMatch = matches[0];
           } catch (e) { console.error(e); }
         }

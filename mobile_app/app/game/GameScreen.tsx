@@ -315,7 +315,7 @@ function ClassicGameScreen({ requestedMode }: { requestedMode?: string }) {
       <View style={styles.contentContainer}>
         <StatusBar translucent backgroundColor="transparent" barStyle="light-content" />
         {/* SafeAreaView pour gérer les encoches et barres système */}
-        <SafeAreaView style={styles.container} edges={['top', 'bottom']}>
+        <SafeAreaView style={styles.container} edges={['bottom']}>
           {/* Composant qui contient l'UI et la logique d'affichage du jeu */}
           <GameContentA
             key={gameKey} // La clé change pour forcer le re-montage/re-rendu au redémarrage

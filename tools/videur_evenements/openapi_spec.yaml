@@ -1,0 +1,55 @@
+openapi: 3.0.0
+info:
+  title: Supabase Audit Bridge
+  version: 1.0.0
+  description: Bridge to fetch pending events from Supabase and submit copyright audit results.
+servers:
+  - url: https://ppxmtnuewcixbbmhnzzc.supabase.co/functions/v1/vertex-audit-bridge
+paths:
+  /pending:
+    get:
+      summary: Get pending events for audit
+      operationId: getPendingEvents
+      responses:
+        '200':
+          description: A list of events
+          content:
+            application/json:
+              schema:
+                type: array
+                items:
+                  type: object
+                  properties:
+                    id:
+                      type: string
+                    titre:
+                      type: string
+                    illustration_url:
+                      type: string
+  /audit:
+    post:
+      summary: Submit audit result
+      operationId: submitAuditResult
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                id:
+                  type: string
+                score:
+                  type: integer
+                details:
+                  type: string
+      responses:
+        '200':
+          description: Audit submitted successfully
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  success:
+                    type: boolean

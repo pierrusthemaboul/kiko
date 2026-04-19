@@ -7,7 +7,7 @@ SELECT
     e.id,
     e.titre,
     e.date,
-    ee.titre_vector as embedding,
+    ee.embedding_1536 as embedding,
     
     -- Notoriété normalisée (échelle 1-5)
     CASE 
@@ -35,8 +35,8 @@ SELECT
     'production' as source_table
     
 FROM evenements e
-INNER JOIN evenements_embeddings ee ON e.id = ee.id
-WHERE ee.titre_vector IS NOT NULL;
+INNER JOIN evenements_embeddings ee ON e.id = ee.id AND ee.source_type = 'titre'
+WHERE ee.embedding_1536 IS NOT NULL;
 
 -- Test de la vue
 SELECT COUNT(*) as total_events_unified FROM v_events_unified;

@@ -28,11 +28,15 @@
       "distribution": "internal",
       "autoIncrement": false,
       "credentialsSource": "remote",
+      "node": "20.19.4",
       "env": {
         "EXPO_PUBLIC_APP_VARIANT": "internalTesting"
       },
       "android": {
         "buildType": "app-bundle"
+      },
+      "ios": {
+        "simulator": true
       }
     },
     "apk": {
@@ -50,11 +54,15 @@
       "distribution": "store",
       "autoIncrement": false,
       "credentialsSource": "remote",
+      "node": "20.19.4",
       "env": {
         "EXPO_PUBLIC_APP_VARIANT": "production"
       },
       "android": {
         "buildType": "app-bundle"
+      },
+      "ios": {
+        "enterpriseProvisioning": "adhoc"
       },
       "channel": "production"
     }

@@ -11,10 +11,9 @@ import {
   Platform,
   StatusBar,
   SafeAreaView, // Bien que non utilisé directement ici, on garde l'import au cas où
-  TouchableOpacity,
-  Alert,
   Dimensions
 } from 'react-native';
+import { useSafeAreaInsets } from 'react-native-safe-area-context';
 import { useRouter } from 'expo-router'; // Gardé si jamais utilisé ailleurs, sinon peut être enlevé
 import { Ionicons } from '@expo/vector-icons';
 import { LinearGradient } from 'expo-linear-gradient';
@@ -159,6 +158,7 @@ function GameContentA({
   timeLimit,
 }: GameContentAProps) {
   const router = useRouter(); // Gardé, même si non utilisé directement ici
+  const insets = useSafeAreaInsets();
   const userInfoRef = useRef<UserInfoHandle>(null);
   const contentOpacity = useRef(new Animated.Value(1)).current;
   const [isRewardPositionSet, setIsRewardPositionSet] = useState(false);
@@ -799,7 +799,10 @@ function GameContentA({
           {/* Ligne dorée décorative en bas */}
           <View style={styles.decorativeLineBottom} />
 
-          <View style={styles.headerContent}>
+          <View style={[
+            styles.headerContent, 
+            { paddingTop: Math.max(insets.top, Platform.OS === 'ios' ? 10 : 0) }
+          ]}>
             {user && (
               <UserInfo
                 ref={userInfoRef}
@@ -864,8 +867,8 @@ const styles = StyleSheet.create({
     justifyContent: 'space-between',
     alignItems: 'center',
     paddingHorizontal: 15,
-    paddingVertical: Platform.OS === 'android' ? 12 : 14,
-    minHeight: 70,
+    paddingBottom: 14,
+    minHeight: 80,
     overflow: 'hidden',
     borderBottomWidth: 1,
     borderBottomColor: 'rgba(212, 175, 55, 0.3)',

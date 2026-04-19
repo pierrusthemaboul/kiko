@@ -91,7 +91,7 @@ async function startFluxQpucSingleBatch({ targetCount = 5, mode = 'qpuc', theme 
            notoriete_fr: scoreNotoriete
         };
 
-       const { error } = await supabase.from('sas_test').insert([eventData]);
+       const { error } = await supabase.from('sas').insert([eventData]);
 
        if (error) {
           log(`   ❌ Erreur Supabase: ${error.message}`);

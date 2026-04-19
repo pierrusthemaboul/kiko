@@ -1,22 +1,19 @@
-import {
-  getAnalytics,
-  logAppOpen,
-  logEvent,
-  setUserId,
-  setUserProperties,
-  setUserProperty,
-} from '@react-native-firebase/analytics';
 import Constants from 'expo-constants';
 import { Platform } from 'react-native';
+import analytics from '@react-native-firebase/analytics';
 import { recordNonFatal, setUserId as setCrashlyticsUserId } from './crash';
 import { logToReactotron } from '../ReactotronConfig';
 
-const analyticsInstance = getAnalytics();
+// Firebase Analytics instance
+const analyticsInstance = analytics();
+const _logEvent = analyticsInstance.logEvent.bind(analyticsInstance);
+const _setUserId = analyticsInstance.setUserId.bind(analyticsInstance);
+const _setUserProperties = analyticsInstance.setUserProperties.bind(analyticsInstance);
 
 type KnownAnalyticsEvents = {
   login_failed: {
     reason: string;
-    method?: 'password' | 'google';
+    method?: 'password' | 'google' | 'apple';
     screen?: string;
     context?: string;
     message?: string;
@@ -24,7 +21,7 @@ type KnownAnalyticsEvents = {
   };
   signup_failed: {
     reason: string;
-    method?: 'password' | 'google';
+    method?: 'password' | 'google' | 'apple';
     screen?: string;
     context?: string;
     message?: string;
@@ -182,14 +179,13 @@ function sanitizeUserProps(props: AnalyticsUserProperties) {
 export async function initializeAnalytics(userId?: string, isGuest = false) {
   try {
     if (userId) {
-      await setUserId(analyticsInstance, userId);
+      await _setUserId(userId);
       await setCrashlyticsUserId(userId);
     } else {
-      await setUserId(analyticsInstance, null);
+      await _setUserId(null);
       await setCrashlyticsUserId(null);
     }
-    await setUserProperties(
-      analyticsInstance,
+    await _setUserProperties(
       sanitizeUserProps({
         membership_status: isGuest ? 'guest' : 'registered',
         app_version: Constants.expoConfig?.version ?? 'unknown',
@@ -205,7 +201,7 @@ export async function trackScreen(screenName: string, screenClass?: string) {
   try {
     const name = screenName || 'unknown';
     // Utiliser logEvent au lieu de logScreenView (deprecated)
-    await logEvent(analyticsInstance, 'screen_view' as any, {
+    await _logEvent('screen_view', {
       screen_name: name,
       screen_class: screenClass || name,
     });
@@ -217,7 +213,7 @@ export async function trackScreen(screenName: string, screenClass?: string) {
 export async function trackAppOpen() {
   try {
     // logAppOpen est obsolète, on utilise logEvent('app_open')
-    await logEvent(analyticsInstance, 'app_open' as any);
+    await _logEvent('app_open');
   } catch (error) {
     console.error('trackAppOpen failed', error);
   }
@@ -229,7 +225,7 @@ export async function trackAppState(
 ) {
   const name = state === 'background' ? 'app_backgrounded' : 'app_foregrounded';
   try {
-    await logEvent(analyticsInstance, name, sanitizeParams(extras));
+    await _logEvent(name, sanitizeParams(extras));
   } catch (error) {
     console.error('trackAppState failed', error);
   }
@@ -243,7 +239,7 @@ export async function trackEvent<N extends AnalyticsEventName>(
     if (__DEV__) {
       logToReactotron(name as string, params);
     }
-    await logEvent(analyticsInstance, name as any, sanitizeParams(params));
+    await _logEvent(name as string, sanitizeParams(params));
   } catch (error) {
     console.error(`trackEvent failed for ${name}`, error);
   }
@@ -263,7 +259,7 @@ export async function trackAd(
 
 export async function setUserProps(props: AnalyticsUserProperties) {
   try {
-    await setUserProperties(analyticsInstance, sanitizeUserProps(props));
+    await _setUserProperties(sanitizeUserProps(props));
   } catch (error) {
     console.error('setUserProps failed', error);
   }

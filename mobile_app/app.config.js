@@ -20,7 +20,13 @@ module.exports = ({ config }) => {
       ...config.ios,
       supportsTablet: true,
       bundleIdentifier: IS_DEV ? "com.pierretulle.juno2.dev" : "com.pierretulle.juno2",
-      buildNumber: "5"
+      buildNumber: "5",
+      infoPlist: {
+        ITSAppUsesNonExemptEncryption: false
+      },
+      entitlements: {
+        "com.apple.developer.applesignin": ["Default"]
+      }
     },
     android: {
       ...config.android,

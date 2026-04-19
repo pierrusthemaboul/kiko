@@ -42,8 +42,8 @@ async function tool_search_semantic({ query, limit = 20 }) {
     });
     const vector = res.data[0].embedding;
 
-    // 2. Recherche par similarité cosinus via RPC Supabase
-    const { data: matches, error } = await supabase.rpc('match_evenements_embeddings', {
+    // 2. Recherche par similarité cosinus via RPC Supabase (table sidecar evenements_embeddings, source_type='titre')
+    const { data: matches, error } = await supabase.rpc('match_evenements_by_titre', {
         query_embedding: vector,
         match_count: limit,
     });

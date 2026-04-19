@@ -25,6 +25,7 @@ import {
   useEventSelector,
   usePlays, // Importer le nouveau hook
 } from './game';
+import { useBackgroundMusic } from './useBackgroundMusic';
 import { Logger } from '@/utils/logger';
 import { useAppStateDetection } from './game/useAppStateDetection';
 import { getGameModeConfig, GameModeConfig } from '../constants/gameModes';
@@ -338,6 +339,21 @@ export function useGameLogicA(initialEvent?: string, modeId?: string) {
     playCountdownSound,
     playGameOverSound,
   } = useAudio();
+
+  // 🎵 Musique de fond
+  const {
+    isReady: isMusicReady,
+    start: startMusic,
+    stop: stopMusic,
+  } = useBackgroundMusic({
+    volume: 0.3,
+    onTrackChange: (trackName) => {
+      console.log(`[useGameLogicA] Now playing: ${trackName}`);
+    },
+    onError: (error) => {
+      console.error('[useGameLogicA] Music error:', error);
+    },
+  });
 
   const {
     trackGameStarted,
@@ -822,7 +838,12 @@ export function useGameLogicA(initialEvent?: string, modeId?: string) {
       Constants.expoConfig?.version ?? '1.7.1'
     );
     console.log('[useGameLogicA] 🎬 Gestionnaire de métadonnées initialisé');
-  }, [baseInitGameWrapper, resetAntiFrustration, resetEventCount, gameMode.label, gameMode.initialLives, startRun]);
+
+    // 🎵 Démarrer la musique de fond
+    if (isMusicReady) {
+      await startMusic();
+    }
+  }, [baseInitGameWrapper, resetAntiFrustration, resetEventCount, gameMode.label, gameMode.initialLives, startRun, isMusicReady, startMusic]);
 
   const applyReward = useCallback(
     (reward: { type: RewardType; amount: number }) => {
@@ -1210,6 +1231,10 @@ export function useGameLogicA(initialEvent?: string, modeId?: string) {
     setIsCountdownActive(false);
     setIsLevelPaused(true); // Pause the game logic
     playGameOverSound();
+
+    // 🎵 Arrêter la musique de fond
+    stopMusic();
+
     setLeaderboardsReady(false);
 
     // 🎬 Terminer la session et exporter les métadonnées
@@ -1466,6 +1491,7 @@ export function useGameLogicA(initialEvent?: string, modeId?: string) {
     setEndSummaryError,
     pendingAdDisplay,
     profile?.id,
+    stopMusic,
   ]);
 
 

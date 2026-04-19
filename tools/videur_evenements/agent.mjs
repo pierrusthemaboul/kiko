@@ -230,67 +230,17 @@ Réponds UNIQUEMENT par OUI ou NON.`;
     }
 }
 
-async function validateYearWithPerplexity(event, candidateYear) {
-    if (!perplexity) return null;
-
-    const prompt = `Question factuelle historique.
-Événement : "${event.titre}"
-Année candidate : ${candidateYear}
-
-Cette année correspond-elle bien à l'année de début/survenue de cet événement précis ?
-Important : ne pas confondre avec un événement connexe ou le sujet général.
-
-Réponds UNIQUEMENT par OUI, NON, ou INCONNU.`;
-
-    try {
-        if (verboseAiLogs) {
-            console.log(`\n[AI-LOG][validateYearWithPerplexity] Candidate year = ${candidateYear}`);
-            console.log(`[AI-LOG][validateYearWithPerplexity][Perplexity] PROMPT >>>`);
-            console.log(prompt);
-        }
-
-        const response = await perplexity.chat.completions.create({
-            model: "sonar",
-            temperature: 0,
-            max_tokens: 12,
-            messages: [{ role: "user", content: prompt }]
-        });
-
-        const text = response.choices[0].message.content?.trim() || '';
-        logAiExchange('validateYearWithPerplexity', 'Perplexity', prompt, text);
-        if (/^INCONNU\b/i.test(text)) return null;
-        return parseYesNoAnswer(text);
-    } catch {
-        return null;
-    }
-}
-
 // === Agent Chronos (Vérification de Date) ===
 async function checkDate(event) {
     const year = event.date ? event.date.split('-')[0] : event.date;
     if (!/^\d{4}$/.test(String(year || ''))) return false;
 
-    const perplexityVote = await validateYearWithPerplexity(event, year);
-    if (perplexityVote === true) return true;
-
-    const judgesVote = await validateYearWithJudges(event, year);
-    if (perplexityVote === false) return judgesVote;
-    return judgesVote;
+    // Double vérification Gemini + OpenAI
+    return await validateYearWithJudges(event, year);
 }
 
-// === API Perplexity (Compatible avec le SDK OpenAI) ===
-const perplexityApiKey = process.env.PERPLEXITY_API_KEY || process.env.PERPLEXITY_API_TOKEN;
-const perplexity = perplexityApiKey ? new OpenAI({ 
-    apiKey: perplexityApiKey,
-    baseURL: 'https://api.perplexity.ai'
-}) : null;
-
-// === Agent Réparateur (Correction de Date : Perplexity + Gemini) ===
+// === Agent Réparateur (Correction de Date : Gemini + OpenAI) ===
 async function fixDate(event) {
-    if (!perplexity) {
-        console.log(`    ⚠️  Clé API Perplexity manquante. Impossible de faire la double-correction.`);
-        return null;
-    }
 
     const prompt = `Tu es un vérificateur de dates historiques.
 Événement : "${event.titre}".
@@ -306,17 +256,17 @@ Règles strictes :
         if (verboseAiLogs) {
             console.log(`\n[AI-LOG][fixDate][Gemini] PROMPT >>>`);
             console.log(prompt);
-            console.log(`[AI-LOG][fixDate][Perplexity] PROMPT >>>`);
+            console.log(`[AI-LOG][fixDate][OpenAI] PROMPT >>>`);
             console.log(prompt);
         }
 
-        const [geminiRes, perpRes] = await Promise.all([
+        const [geminiRes, openaiRes] = await Promise.all([
             geminiModel.generateContent({
                 contents: [{ role: 'user', parts: [{ text: prompt }] }],
                 generationConfig: geminiGenerationConfig
             }),
-            perplexity.chat.completions.create({
-                model: "sonar", // Modèle natif de Perplexity avec recherche web
+            openai.chat.completions.create({
+                model: "gpt-4o-mini",
                 temperature: 0,
                 max_tokens: 20,
                 messages: [{ role: "user", content: prompt }]
@@ -324,26 +274,23 @@ Règles strictes :
         ]);
 
         const textG = geminiRes.response.text().trim();
-        const textP = perpRes.choices[0].message.content.trim();
+        const textO = openaiRes.choices[0].message.content.trim();
         logAiExchange('fixDate', 'Gemini', prompt, textG);
-        logAiExchange('fixDate', 'Perplexity', prompt, textP);
+        logAiExchange('fixDate', 'OpenAI', prompt, textO);
 
         const yearG = extractYearFromAnswer(textG);
-        const yearP = extractYearFromAnswer(textP);
-        console.log(`    🛠️  Correction proposée -> Gemini: ${yearG || 'INCONNU'} | Perplexity: ${yearP || 'INCONNU'}`);
+        const yearO = extractYearFromAnswer(textO);
+        console.log(`    🛠️  Correction proposée -> Gemini: ${yearG || 'INCONNU'} | OpenAI: ${yearO || 'INCONNU'}`);
 
-        if (yearG && yearP && yearG === yearP) {
+        if (yearG && yearO && yearG === yearO) {
             return yearG;
         }
 
-        if (yearP) {
-            const perplexityConfirmsPerplexityYear = await validateYearWithPerplexity(event, yearP);
-            if (perplexityConfirmsPerplexityYear === true) {
-                return yearP;
-            }
-        }
+        // Si désaccord, on prend Gemini si OpenAI dit INCONNU, ou vice-versa
+        if (yearG && !yearO) return yearG;
+        if (yearO && !yearG) return yearO;
 
-        const candidates = [...new Set([yearG, yearP].filter(Boolean))];
+        const candidates = [...new Set([yearG, yearO].filter(Boolean))];
         if (candidates.length === 0) return null;
 
         const validations = await Promise.all(
@@ -365,45 +312,69 @@ Règles strictes :
     }
 }
 
-// === Agent Juge (Notoriété Double IA : Gemini + GPT-4o-Mini) ===
+// === Agent Juge V2 - Double Check (Gemini + GPT-4o-mini) ===
+
+// Prompt "Concepteur de jeu Timeline" : orienté "Français moyen" plutôt que "Historien"
+const NOTORIETE_PROMPT = (titre) => `Tu es concepteur du jeu de culture générale "Timalaus" (jeu de chronologie à la française).
+Ta mission : évaluer si CET ÉVÉNEMENT SPÉCIFIQUE sera reconnu par un Français moyen de 25-55 ans.
+
+Événement : "${titre}"
+
+Critères (cumul) :
+- Est-ce qu'un élève de collège/lycée français l'a vu en cours ? (+30 pts)
+- Est-ce qu'un film, une série ou un documentaire grand public en parle ? (+25 pts)
+- Est-ce que ça a une place dans l'imaginaire collectif français (expression, date symbolique, monument) ? (+25 pts)
+- Est-ce un événement mondial incontournable même hors France ? (+20 pts)
+
+Exemples calibrés :
+100 = Prise de la Bastille, Armistice 1918, Alunissage Apollo 11
+85 = Sacre de Napoléon, Coupe du Monde 1998, Chute du Mur de Berlin
+65 = Édit de Nantes, Assassinat de JFK, Traité de Versailles
+45 = Bataille de Lépante, Invention de l'imprimerie, Première traversée de l'Atlantique
+25 = Décret de Villers-Cotterêts, Fondation de l'Académie française
+10 = Détail technique, événement local obscur
+
+Note finale de 1 à 100 ? Réponds UNIQUEMENT par le nombre entier (ex: 67).`;
+
+async function getGeminiScore(prompt, label = 'Gemini') {
+    const res = await geminiModel.generateContent({
+        contents: [{ role: 'user', parts: [{ text: prompt }] }],
+        generationConfig: geminiGenerationConfig
+    });
+    const text = res.response.text().trim() || '';
+    logAiExchange(`checkNotoriety-${label}`, 'Gemini', prompt, text);
+    const match = text.match(/\d+/);
+    return match ? Math.max(0, Math.min(100, parseInt(match[0], 10))) : 50;
+}
+
+async function getGptScore(prompt, label = 'G4o') {
+    const res = await openai.chat.completions.create({
+        model: 'gpt-4o-mini',
+        temperature: 0,
+        max_tokens: 10,
+        messages: [{ role: 'user', content: prompt }]
+    });
+    const text = res.choices[0].message.content?.trim() || '';
+    logAiExchange(`checkNotoriety-${label}`, 'OpenAI', prompt, text);
+    const match = text.match(/\d+/);
+    return match ? Math.max(0, Math.min(100, parseInt(match[0], 10))) : 50;
+}
+
 async function checkNotoriety(event) {
-    const prompt = `Agis comme un historien expert de la culture générale francophone.
-Évalue l'importance culturelle, historique ou mémorable de CET ÉVÉNEMENT SPÉCIFIQUE (pas du sujet général) du point de vue d'un citoyen européen francophone.
-Titre : "${event.titre}"
-Échelle :
-100 = Événement mondial incontournable (ex: Fin WW2, 1er pas sur la lune, Armistice)
-80 = Grand événement très connu (ex: Sortie de GTA 5, Coupe du monde 98)
-50 = Fait marquant connu des amateurs du domaine ou fait divers historique franco-européen célèbre
-30 = Anecdote intéressante mais de niche
-10 = Détail infime
-
-Note de 1 à 100 ? Réponds UNIQUEMENT par le nombre (ex: 45).`;
-
     try {
-        // Lancer les deux appels en parallèle
-        const [geminiRes, openaiRes] = await Promise.all([
-            geminiModel.generateContent(prompt),
-            openai.chat.completions.create({
-                model: "gpt-4o-mini",
-                messages: [{ role: "user", content: prompt }]
-            })
+        // Lancer GPT-4o-mini et Gemini en parallèle pour le consensus de notoriété
+        const [scoreGpt, scoreGemini] = await Promise.all([
+            getGptScore(NOTORIETE_PROMPT(event.titre)),
+            getGeminiScore(NOTORIETE_PROMPT(event.titre))
         ]);
 
-        const geminiText = geminiRes.response.text().trim();
-        const openaiText = openaiRes.choices[0].message.content.trim();
+        // Moyenne 50/50 entre les deux modèles
+        const finalScore = Math.round((scoreGpt + scoreGemini) / 2);
+        console.log(`    🤖 [G4o:${scoreGpt} | Gemini:${scoreGemini}] -> Final (Avg): ${finalScore}`);
 
-        const matchG = geminiText.match(/\d+/);
-        const matchO = openaiText.match(/\d+/);
-        
-        const scoreG = matchG ? parseInt(matchG[0], 10) : 50;
-        const scoreO = matchO ? parseInt(matchO[0], 10) : 50;
-        
-        console.log(`    🤖 Gemini: ${scoreG}/100 | GPT-4o-Mini: ${scoreO}/100`);
-
-        // Moyenne des deux juges aveugles
-        return Math.round((scoreG + scoreO) / 2);
+        return Math.max(1, Math.min(100, finalScore));
     } catch (err) {
-        console.error("Erreur durant la double vérification :", err);
+        console.error("Erreur durant le Double Check de notoriété :", err);
         return 50; // Fallback
     }
 }
@@ -483,9 +454,22 @@ export async function runVideur(eventIds = []) {
 
             // 4. (Supprimé à ta demande : On ne bloque plus les événements sous 35. On les envoie en Prod avec leur faible score).
 
-            // 5. Transfert en Prod
-            const { id, statut_validation, motif_refus, ...eventData } = event;
+            // 5. Transfert en Prod (Filtrage des colonnes spécifiques à l'antichambre ou absentes en Prod)
+            const { 
+                id, 
+                statut_validation, 
+                motif_refus, 
+                copyright_score, 
+                copyright_details,
+                embedding_vocal,
+                embedding_image,
+                ...eventData 
+            } = event;
+            
             eventData.notoriete_fr = baseScore;
+            eventData.notoriete_prev = event.notoriete_fr ?? null;
+            eventData.notoriete_source = 'VIDEUR_V2_DOUBLE_CHECK_PERPLEXITY_GPT4O_MINI';
+            eventData.notoriete_updated_at = new Date().toISOString();
             eventData.donnee_corrigee = true;
 
             const { error: insertErr } = await supabase.from('evenements').insert([eventData]);
@@ -501,13 +485,31 @@ export async function runVideur(eventIds = []) {
 }
 
 // Détection propre si c'est le script principal (compatible Windows/Mac)
-if (process.argv[1] && import.meta.url === pathToFileURL(process.argv[1]).href) {
-    const ids = process.argv.slice(2);
-    runVideur(ids);
-} else if (process.argv[1] && process.argv[1].endsWith('agent.mjs') || process.argv[1].endsWith('agent')) {
-    // Fallback de sécurité brut
-    const ids = process.argv.slice(2);
-    runVideur(ids);
+if (process.argv[1] && (import.meta.url === pathToFileURL(process.argv[1]).href || process.argv[1].endsWith('agent.mjs'))) {
+    const args = process.argv.slice(2);
+    
+    if (args[0] === 'all') {
+        console.log("📥 [VIDEUR] Recherche de TOUS les événements en attente...");
+        const { data, error } = await supabase
+            .from('antichambre')
+            .select('id')
+            .eq('statut_validation', 'EN_ATTENTE_VIDEUR');
+            
+        if (error) {
+            console.error("❌ [VIDEUR] Erreur lors de la récupération :", error.message);
+            process.exit(1);
+        }
+        
+        if (!data || data.length === 0) {
+            console.log("✅ [VIDEUR] Aucun événement en attente. Travail terminé !");
+            process.exit(0);
+        }
+        
+        const ids = data.map(d => d.id);
+        runVideur(ids);
+    } else {
+        runVideur(args);
+    }
 }
 
 

@@ -1,7 +1,8 @@
 'use client';
 
 import React, { useEffect, useMemo, useState } from 'react';
-import { Alert, Image, Pressable, ScrollView, Text, TextInput, View } from 'react-native';
+import { Alert, Image, Pressable, ScrollView, Text, TextInput, View, ActivityIndicator } from 'react-native';
+import { SafeAreaView } from 'react-native-safe-area-context';
 import { Ionicons, MaterialCommunityIcons, MaterialIcons } from '@expo/vector-icons';
 import { router, useLocalSearchParams } from 'expo-router';
 
@@ -60,12 +61,19 @@ function gojuRepo() {
   const table = supabase.from('goju') as unknown;
 
   return {
+    async selectPaginated(page: number, pageSize: number): Promise<{ data: ValidationEvent[] | null; count: number | null; error: unknown | null }> {
+      const from = page * pageSize;
+      const to = from + pageSize - 1;
+
+      const res = await (table as any)
+        .select('*', { count: 'exact' })
+        .order('date', { ascending: true })
+        .range(from, to);
+
+      return { data: res.data ?? null, count: res.count ?? null, error: res.error ?? null };
+    },
     async selectAllOrderedByDate(): Promise<{ data: ValidationEvent[] | null; error: unknown | null }> {
-      const res = await (table as {
-        select: (cols: '*') => {
-          order: (col: 'date', opts: { ascending: boolean }) => Promise<{ data: ValidationEvent[] | null; error: unknown | null }>;
-        };
-      })
+      const res = await (table as any)
         .select('*')
         .order('date', { ascending: true });
 
@@ -468,8 +476,11 @@ export default function VueValid() {
     rejected: 0
   });
 
-  // Constantes utilisateur
-  const AUTHORIZED_EMAIL = "pierrecousin2@proton.me";
+  // Pagination
+  const [page, setPage] = useState(0);
+  const [pageSize] = useState(50);
+  const [totalCount, setTotalCount] = useState(0);
+  const [isMoreLoading, setIsMoreLoading] = useState(false);
 
   // Charger le profil utilisateur
   useEffect(() => {
@@ -513,34 +524,49 @@ export default function VueValid() {
     loadUserProfile();
   }, []);
 
-  // Charger tous les événements et aller au premier non traité
-  const loadEvents = async () => {
+  // Charger les événements avec pagination
+  const loadEvents = async (pageToLoad = 0, append = false) => {
     try {
-      setLoading(true);
-      const { data, error } = await gojuRepo().selectAllOrderedByDate();
+      if (append) setIsMoreLoading(true);
+      else setLoading(true);
+
+      const { data, count, error } = await gojuRepo().selectPaginated(pageToLoad, pageSize);
 
       if (error) throw error;
 
-      setEvents(data || []);
-      calculateStats(data || []);
-
-      // Trouver le premier événement non traité
-      const firstPendingIndex = (data || []).findIndex((event) =>
-        !event.validation_status || event.validation_status === 'pending'
-      );
-      
-      if (firstPendingIndex !== -1) {
-        setCurrentIndex(firstPendingIndex);
+      if (append) {
+        setEvents(prev => [...prev, ...(data || [])]);
       } else {
-        // Si tous sont traités, aller au premier
-        setCurrentIndex(0);
+        setEvents(data || []);
+        if (count !== null) setTotalCount(count);
+        
+        // Trouver le premier événement non traité dans le premier lot
+        const firstPendingIndex = (data || []).findIndex((event) =>
+          !event.validation_status || event.validation_status === 'pending'
+        );
+        
+        if (firstPendingIndex !== -1) {
+          setCurrentIndex(firstPendingIndex);
+        } else {
+          setCurrentIndex(0);
+        }
       }
 
+      calculateStats(data || []); // Note: calcul sur le lot actuel pour simplifier
     } catch (error) {
       console.error('Erreur chargement événements:', error);
       Alert.alert('Erreur', 'Impossible de charger les événements');
     } finally {
       setLoading(false);
+      setIsMoreLoading(false);
+    }
+  };
+
+  const loadMore = () => {
+    if (events.length < totalCount && !isMoreLoading) {
+      const nextPage = page + 1;
+      setPage(nextPage);
+      loadEvents(nextPage, true);
     }
   };
 
@@ -734,7 +760,8 @@ export default function VueValid() {
   const currentEvent = events[currentIndex];
 
   return (
-    <ScrollView style={{ flex: 1, backgroundColor: '#f8fafc' }}>
+    <SafeAreaView style={{ flex: 1, backgroundColor: '#f8fafc' }} edges={['top']}>
+      <ScrollView style={{ flex: 1, backgroundColor: '#f8fafc' }}>
       {/* Header avec stats */}
       <View style={{ backgroundColor: 'white', borderBottomWidth: 1, borderBottomColor: '#e2e8f0' }}>
         <View style={{ paddingHorizontal: 16, paddingVertical: 16 }}>
@@ -1112,6 +1139,7 @@ export default function VueValid() {
           </View>
         </View>
       </View>
-    </ScrollView>
+      </ScrollView>
+    </SafeAreaView>
   );
 }

@@ -1,0 +1,24 @@
+# Large directories not needed by EAS Build
+node_modules/
+ios/
+android/
+.expo/
+.expo-shared/
+dist/
+docs/
+scripts/
+tools/
+data/
+imagesint/
+tmp/
+tmp_*/
+.git/
+.github/
+.idea/
+.vscode/
+.cursorrules
+*.log
+*.lock
+pnpm-lock.yaml
+package-lock.json
+yarn.lock

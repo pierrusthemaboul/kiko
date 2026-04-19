@@ -75,27 +75,28 @@ const AdminOptionsPage: React.FC = () => {
 
   useEffect(() => {
     if (showLogs) logEndRef.current?.scrollIntoView({ behavior: 'smooth' });
-  }, [logs]);
+  }, [logs, showLogs]);
 
   const addLog = (message: string, type: 'info' | 'error' | 'success' | 'ai' = 'info') => {
     setLogs(prev => [...prev, {
-      id: Math.random().toString(36).substr(2, 9),
+      id: crypto.randomUUID(),
       timestamp: new Date().toLocaleTimeString(),
       type,
       message
     }]);
   };
 
-  const loadStats = async () => {
-    const { data: stats, error } = await supabase.rpc('get_event_stats_by_century');
-    if (!error && stats) {
-      setCenturyStats(stats);
-      setTotalEvents(stats.reduce((acc: number, curr: any) => acc + Number(curr.event_count), 0));
-    }
-  };
-
   useEffect(() => {
+    let isMounted = true;
+    const loadStats = async () => {
+      const { data: stats, error } = await supabase.rpc('get_event_stats_by_century');
+      if (isMounted && !error && stats) {
+        setCenturyStats(stats);
+        setTotalEvents(stats.reduce((acc: number, curr: any) => acc + Number(curr.event_count), 0));
+      }
+    };
     loadStats();
+    return () => { isMounted = false };
   }, []);
 
   const handleImport = async (theme: QpucTheme) => {
@@ -126,14 +127,29 @@ const AdminOptionsPage: React.FC = () => {
     const themeLabel = config.modeQpucLive ? "QPUC LIVE (Archives)" : (chatInput || "Thème Aléatoire");
     
     addLog(`🚀 [UI] Déclenchement de la rafale...`, "ai");
-    setMessages(prev => [...prev, { id: Date.now().toString(), role: 'user', content: themeLabel }]);
+    setMessages(prev => [...prev, { id: crypto.randomUUID(), role: 'user', content: themeLabel }]);
 
-    const currentThemeId = Date.now().toString();
+    const currentThemeId = crypto.randomUUID();
     setQpucThemes(prev => [{
       id: currentThemeId,
       label: themeLabel,
       events: []
     }, ...prev]);
+
+    const eventBuffer: EventSuggestion[] = [];
+    let flushTimer: ReturnType<typeof setTimeout> | null = null;
+
+    const flushBuffer = () => {
+      if (eventBuffer.length > 0) {
+        const batch = [...eventBuffer];
+        eventBuffer.length = 0;
+        setQpucThemes(prev => prev.map(t => 
+          t.id === currentThemeId 
+            ? { ...t, events: [...t.events, ...batch] }
+            : t
+        ));
+      }
+    };
 
     try {
       addLog("📡 Appel du cerveau local (localhost:3010)...", "info");
@@ -174,11 +190,13 @@ const AdminOptionsPage: React.FC = () => {
               if (data.status === 'log') {
                 addLog(data.message, "info");
               } else if (data.status === 'info' && data.event) {
-                setQpucThemes(prev => prev.map(t => 
-                  t.id === currentThemeId 
-                    ? { ...t, events: [...t.events, { ...data.event, id: Math.random().toString() }] }
-                    : t
-                ));
+                eventBuffer.push({ ...data.event, id: crypto.randomUUID() });
+                if (!flushTimer) {
+                  flushTimer = setTimeout(() => {
+                    flushBuffer();
+                    flushTimer = null;
+                  }, 200);
+                }
               } else if (data.status === 'done') {
                 addLog(data.message, "success");
               }
@@ -188,10 +206,12 @@ const AdminOptionsPage: React.FC = () => {
           }
         });
       }
+      flushBuffer();
     } catch (err: any) {
        addLog(`❌ ERREUR DE CONNEXION : ${err.message}`, "error");
        console.error(err);
     } finally {
+      if (flushTimer) clearTimeout(flushTimer);
       setIsGenerating(false);
       setChatInput('');
     }

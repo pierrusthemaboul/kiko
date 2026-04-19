@@ -21,6 +21,8 @@ import AsyncStorage from '@react-native-async-storage/async-storage';
 import { supabase } from '../../lib/supabase/supabaseClients';
 import { router, useFocusEffect, useNavigation, usePathname, useSegments } from 'expo-router';
 import { FirebaseAnalytics } from '../../lib/firebase';
+import { AppleAuthButton } from '../../src/components/AppleAuthButton';
+import { useAppleAuth } from '../../src/hooks/useAppleAuth';
 
 // --- NOUVEAU THÈME CLAIR (Basé sur logo Timalaus) ---
 const THEME = {
@@ -63,6 +65,7 @@ export default function Login() {
   const [stayConnected, setStayConnected] = useState(false);
   const [isLoggingIn, setIsLoggingIn] = useState(false);
   const [isGoogleLoggingIn, setIsGoogleLoggingIn] = useState(false);
+  const { isLoading: isAppleLoading, signIn: signInWithApple, isAvailable: isAppleAvailable } = useAppleAuth();
 
   useFocusEffect(
     useCallback(() => {
@@ -349,10 +352,29 @@ export default function Login() {
       <View style={styles.container}>
         <Text style={styles.title}>Connexion</Text>
 
+        {/* Apple Sign In - iOS only */}
+        {isAppleAvailable && (
+          <>
+            <AppleAuthButton
+              onPress={signInWithApple}
+              disabled={isLoggingIn || isGoogleLoggingIn || isAppleLoading}
+              style={styles.appleButton}
+              buttonType={1} // SIGN_IN
+              buttonStyle={0} // BLACK
+            />
+
+            <View style={styles.divider}>
+              <View style={styles.dividerLine} />
+              <Text style={styles.dividerText}>ou</Text>
+              <View style={styles.dividerLine} />
+            </View>
+          </>
+        )}
+
         <TouchableOpacity
-          style={[styles.googleButton, (isLoggingIn || isGoogleLoggingIn) && styles.buttonDisabled]}
+          style={[styles.googleButton, (isLoggingIn || isGoogleLoggingIn || isAppleLoading) && styles.buttonDisabled]}
           onPress={handleGoogleLogin}
-          disabled={isLoggingIn || isGoogleLoggingIn}
+          disabled={isLoggingIn || isGoogleLoggingIn || isAppleLoading}
         >
           {isGoogleLoggingIn ? (
             <ActivityIndicator color={THEME.text} />
@@ -570,5 +592,25 @@ const styles = StyleSheet.create({
   guestModeText: {
     color: THEME.textSecondary, // Texte gris
     fontSize: 16,
+  },
+  appleButton: {
+    marginBottom: 15,
+    width: '100%',
+  },
+  divider: {
+    flexDirection: 'row',
+    alignItems: 'center',
+    marginVertical: 15,
+    width: '100%',
+  },
+  dividerLine: {
+    flex: 1,
+    height: 1,
+    backgroundColor: THEME.border,
+  },
+  dividerText: {
+    marginHorizontal: 15,
+    color: THEME.textSecondary,
+    fontSize: 14,
   },
 });

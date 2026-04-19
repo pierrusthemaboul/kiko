@@ -18,6 +18,7 @@ import {
   Pressable,
   AppState,
 } from 'react-native';
+import { SafeAreaView } from 'react-native-safe-area-context';
 import type { StyleProp, ViewStyle } from 'react-native';
 import { useRouter } from 'expo-router';
 import { supabase } from '../../lib/supabase/supabaseClients'; // Chemin relatif vers supabase
@@ -661,7 +662,7 @@ export default function HomeScreen() {
         <AnimatedSplashScreen onAnimationEnd={handleSplashAnimationEnd} />
       ) : (
         // Conteneur principal qui apparaît après le splash
-        <View style={styles.mainContainer}>
+        <SafeAreaView style={styles.mainContainer} edges={['top', 'bottom']}>
           <Animated.View style={[
             styles.contentContainer,
             {
@@ -772,7 +773,7 @@ export default function HomeScreen() {
               />
             </View>
           </Animated.View>
-        </View>
+        </SafeAreaView>
       )}
       <Modal
         transparent

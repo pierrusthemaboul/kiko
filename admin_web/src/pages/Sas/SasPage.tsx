@@ -144,6 +144,41 @@ const SasPage: React.FC = () => {
 
   const allFilteredSelected = filteredRecords.length > 0 && filteredRecords.every(r => selectedEventIds.includes(r.id));
 
+  const handleBulkTransfer = async () => {
+    const selectedRecords = records.filter(r => selectedEventIds.includes(r.id) && r.illustration_url);
+    if (selectedRecords.length === 0) {
+      alert("Aucun des événements sélectionnés n'a d'illustration.");
+      return;
+    }
+
+    if (!window.confirm(`Transférer ${selectedRecords.length} événements vers l'Antichambre ?`)) return;
+
+    const toInsert = selectedRecords.map(r => ({
+      titre: r.titre,
+      date: r.date,
+      illustration_url: r.illustration_url,
+      types_evenement: r.theme ? [r.theme] : [],
+      notoriete_fr: r.notoriete_fr || r.notoriete || 50,
+      statut_validation: 'EN_ATTENTE_VIDEUR'
+    }));
+
+    const { error: insErr } = await supabase.from('antichambre').insert(toInsert);
+
+    if (!insErr) {
+      await supabase
+        .from('sas')
+        .update({ statut: 'ENVOYE_ANTICHAMBRE' })
+        .in('id', selectedRecords.map(r => r.id));
+      
+      const transferredIds = selectedRecords.map(r => r.id);
+      setRecords(prev => prev.filter(r => !transferredIds.includes(r.id)));
+      setSelectedEventIds([]);
+      alert(`${selectedRecords.length} événements transférés avec succès !`);
+    } else {
+      alert("Erreur lors du transfert : " + insErr.message);
+    }
+  };
+
   const goToRetoucheImage = useCallback(() => {
     if (!selectedRecord) return;
     navigate(`/retouche-image?eventId=${selectedRecord.id}&source=sas`, {
@@ -435,10 +470,17 @@ const SasPage: React.FC = () => {
       {selectedEventIds.length > 1 && !isRegenPanelOpen && (
          <div className="bulk-actions-bar glass">
             <span>{selectedEventIds.length} événements sélectionnés</span>
-            <button className="btn-bulk-regen" onClick={() => setIsRegenPanelOpen(true)}>
-               <Wand2 size={16} /> Génération assistée par lot
-            </button>
-            <button className="btn-bulk-clear" onClick={() => setSelectedEventIds([])}>Annuler</button>
+             <button className="btn-bulk-regen" onClick={() => setIsRegenPanelOpen(true)}>
+                <Wand2 size={16} /> Génération assistée par lot
+             </button>
+             <button 
+               className="btn-bulk-regen" 
+               style={{ background: '#059669', borderColor: '#059669' }}
+               onClick={handleBulkTransfer}
+             >
+                <Save size={16} /> Transférer vers l'Antichambre
+             </button>
+             <button className="btn-bulk-clear" onClick={() => setSelectedEventIds([])}>Annuler</button>
          </div>
       )}
     </div>
