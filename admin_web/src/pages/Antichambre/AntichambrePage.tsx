@@ -41,7 +41,7 @@ const AntichambrePage: React.FC = () => {
     setLoading(true);
     const { data, error } = await supabase
       .from('antichambre')
-      .select('id, titre, date, types_evenement, created_at, illustration_url, notoriete_fr, statut_validation, motif_refus, description')
+      .select('id, titre, date, types_evenement, created_at, illustration_url, notoriete_fr, statut_validation, motif_refus')
       .order('created_at', { ascending: false });
       
     if (error) {

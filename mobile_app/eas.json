@@ -62,7 +62,7 @@
         "buildType": "app-bundle"
       },
       "ios": {
-        "enterpriseProvisioning": "adhoc"
+        "distribution": "store"
       },
       "channel": "production"
     }
