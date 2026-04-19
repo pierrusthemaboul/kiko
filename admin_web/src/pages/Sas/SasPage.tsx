@@ -160,14 +160,22 @@ const SasPage: React.FC = () => {
 
     if (!window.confirm(`Transférer ${selectedRecords.length} événements vers l'Antichambre ?`)) return;
 
-    const toInsert = selectedRecords.map(r => ({
-      titre: r.titre,
-      date: r.date,
-      illustration_url: r.illustration_url,
-      types_evenement: r.theme ? [r.theme] : [],
-      notoriete_fr: r.notoriete_fr || r.notoriete || 50,
-      statut_validation: 'EN_ATTENTE_VIDEUR'
-    }));
+    const toInsert = selectedRecords.map(r => {
+      // Normalisation de la date : si c'est juste une année (4 chiffres), on ajoute -01-01
+      let normalizedDate = r.date;
+      if (r.date && /^\d{4}$/.test(r.date)) {
+        normalizedDate = `${r.date}-01-01`;
+      }
+
+      return {
+        titre: r.titre,
+        date: normalizedDate,
+        illustration_url: r.illustration_url,
+        types_evenement: r.theme ? [r.theme] : [],
+        notoriete_fr: r.notoriete_fr || r.notoriete || 50,
+        statut_validation: 'EN_ATTENTE_VIDEUR'
+      };
+    });
 
     const { error: insErr } = await supabase.from('antichambre').insert(toInsert);
 
