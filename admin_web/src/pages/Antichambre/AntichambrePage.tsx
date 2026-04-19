@@ -138,6 +138,14 @@ const AntichambrePage: React.FC = () => {
       setLastSelected(id);
   };
 
+  const selectAll = () => {
+      if (selectedCards.size === filteredRecords.length && filteredRecords.length > 0) {
+          setSelectedCards(new Set());
+      } else {
+          setSelectedCards(new Set(filteredRecords.map(r => r.id)));
+      }
+  };
+
   const handleLancerVideur = () => {
       if (selectedCards.size === 0) {
           alert('Veuillez sélectionner au moins un événement à faire passer par le Videur.');
@@ -191,6 +199,10 @@ const AntichambrePage: React.FC = () => {
             <option value="REFUSE">Refusés</option>
             <option value="CORRIGE">Corrigés</option>
           </select>
+
+          <button className="btn-select-all-antichambre" onClick={selectAll}>
+            {selectedCards.size === filteredRecords.length && filteredRecords.length > 0 ? "Désélectionner" : "Tout sélectionner"}
+          </button>
 
           <button className="btn-run-videur" onClick={handleLancerVideur} disabled={selectedCards.size === 0}>
              <ShieldCheck size={18} /> Lancer le Videur IA {selectedCards.size > 0 && `(${selectedCards.size})`}
