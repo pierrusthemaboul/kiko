@@ -493,7 +493,7 @@ if (process.argv[1] && (import.meta.url === pathToFileURL(process.argv[1]).href 
         const { data, error } = await supabase
             .from('antichambre')
             .select('id')
-            .eq('statut_validation', 'EN_ATTENTE_VIDEUR');
+            .in('statut_validation', ['EN_ATTENTE_VIDEUR', 'CORRIGE']);
             
         if (error) {
             console.error("❌ [VIDEUR] Erreur lors de la récupération :", error.message);

@@ -2,7 +2,7 @@ import React, { useState, useEffect, useMemo } from 'react';
 import { supabase } from '../../lib/supabase';
 import { 
   Image as ImageIcon, Search, Trash2, Wand2, 
-  ShieldAlert, ShieldCheck, UserCheck, ChevronLeft, ChevronRight
+  ShieldAlert, ShieldCheck, UserCheck, ChevronLeft, ChevronRight, X, Edit3
 } from 'lucide-react';
 import ImageRegenPanel from '../../components/ImageRegenPanel/ImageRegenPanel';
 import './AntichambrePage.css';
@@ -17,6 +17,7 @@ interface AntichambreRecord {
   notoriete_fr?: number;
   statut_validation?: string;
   motif_refus?: string;
+  description?: string;
 }
 
 const ITEMS_PER_PAGE = 30;
@@ -34,12 +35,13 @@ const AntichambrePage: React.FC = () => {
   // Regen Panel
   const [isRegenPanelOpen, setIsRegenPanelOpen] = useState(false);
   const [selectedEventIds, setSelectedEventIds] = useState<string[]>([]);
+  const [inspectedEvent, setInspectedEvent] = useState<AntichambreRecord | null>(null);
 
   const fetchRecords = async () => {
     setLoading(true);
     const { data, error } = await supabase
       .from('antichambre')
-      .select('id, titre, date, types_evenement, created_at, illustration_url, notoriete_fr, statut_validation, motif_refus')
+      .select('id, titre, date, types_evenement, created_at, illustration_url, notoriete_fr, statut_validation, motif_refus, description')
       .order('created_at', { ascending: false });
       
     if (error) {
@@ -136,6 +138,10 @@ const AntichambrePage: React.FC = () => {
 
       setSelectedCards(newSelection);
       setLastSelected(id);
+      
+      // Ouvrir le panneau de détails pour l'événement cliqué
+      const clickedRecord = records.find(r => r.id === id);
+      if (clickedRecord) setInspectedEvent(clickedRecord);
   };
 
   const selectAll = () => {
@@ -308,6 +314,82 @@ const AntichambrePage: React.FC = () => {
            onUpdateImage={(newUrl) => handleUpdateImage(selectedEventIds[0], newUrl)}
            source="antichambre"
          />
+      )}
+
+      {/* Panneau de détails (Inspecteur) */}
+      {inspectedEvent && (
+        <div className="event-details-drawer glass">
+            <div className="drawer-header">
+                <h3>Détails de l'événement</h3>
+                <button className="btn-close-drawer" onClick={() => setInspectedEvent(null)}>
+                    <X size={24} />
+                </button>
+            </div>
+            
+            <div className="drawer-content">
+                {inspectedEvent.illustration_url && (
+                    <img src={inspectedEvent.illustration_url} alt="" className="drawer-image" />
+                )}
+                
+                <div className="drawer-section">
+                    <h4>Titre</h4>
+                    <p style={{ fontSize: '1.2rem', fontWeight: 600 }}>{inspectedEvent.titre}</p>
+                </div>
+
+                <div className="drawer-section">
+                    <h4>Date</h4>
+                    <p>{inspectedEvent.date}</p>
+                </div>
+
+                {inspectedEvent.statut_validation === 'REFUSE' && (
+                    <div className="drawer-section">
+                        <h4>⚠️ Motif du refus</h4>
+                        <div className="drawer-refusal">
+                            {inspectedEvent.motif_refus}
+                        </div>
+                    </div>
+                )}
+
+                <div className="drawer-section">
+                    <h4>Description</h4>
+                    <div className="drawer-description">
+                        {inspectedEvent.description || "Aucune description disponible."}
+                    </div>
+                </div>
+
+                <div className="drawer-section">
+                    <h4>Thèmes</h4>
+                    <div className="theme-chips">
+                        {inspectedEvent.types_evenement?.map(t => (
+                            <span key={t} className="status-badge" style={{ marginRight: '5px' }}>{t}</span>
+                        ))}
+                    </div>
+                </div>
+            </div>
+
+            <div className="drawer-footer">
+                <button 
+                  className="btn-run-videur" 
+                  style={{ flex: 1 }}
+                  onClick={() => {
+                      setSelectedEventIds([inspectedEvent.id]);
+                      setIsRegenPanelOpen(true);
+                  }}
+                >
+                    <Edit3 size={18} /> Modifier l'image
+                </button>
+                <button 
+                   className="btn-icon-danger" 
+                   style={{ padding: '0.75rem', opacity: 1 }}
+                   onClick={(e) => {
+                       handleDelete(e, inspectedEvent.id);
+                       setInspectedEvent(null);
+                   }}
+                >
+                    <Trash2 size={20} />
+                </button>
+            </div>
+        </div>
       )}
     </div>
   );
