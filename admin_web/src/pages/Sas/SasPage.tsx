@@ -161,10 +161,13 @@ const SasPage: React.FC = () => {
     if (!window.confirm(`Transférer ${selectedRecords.length} événements vers l'Antichambre ?`)) return;
 
     const toInsert = selectedRecords.map(r => {
-      // Normalisation de la date : si c'est juste une année (4 chiffres), on ajoute -01-01
+      // Normalisation de la date : on s'assure d'avoir YYYY-MM-DD
       let normalizedDate = r.date;
-      if (r.date && /^\d{4}$/.test(r.date)) {
-        normalizedDate = `${r.date}-01-01`;
+      
+      if (r.date && /^\d{1,4}$/.test(r.date)) {
+        // Si c'est juste un nombre (1 à 4 chiffres), on complète à 4 chiffres et on ajoute -01-01
+        const year = r.date.padStart(4, '0');
+        normalizedDate = `${year}-01-01`;
       }
 
       return {
