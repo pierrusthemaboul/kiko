@@ -142,6 +142,13 @@ const SasPage: React.FC = () => {
     }
   };
 
+  const selectIllustrated = () => {
+    const illustratedIds = filteredRecords
+      .filter(r => r.illustration_url)
+      .map(r => r.id);
+    setSelectedEventIds(prev => Array.from(new Set([...prev, ...illustratedIds])));
+  };
+
   const allFilteredSelected = filteredRecords.length > 0 && filteredRecords.every(r => selectedEventIds.includes(r.id));
 
   const handleBulkTransfer = async () => {
@@ -238,6 +245,7 @@ const SasPage: React.FC = () => {
                 ))}
              </select>
              <button className="btn-select-all" onClick={selectAllFiltered}>Tout</button>
+             <button className="btn-select-all" style={{ background: '#059669', borderColor: '#059669', marginLeft: '0.5rem' }} onClick={selectIllustrated}>Illustrés</button>
            </div>
         </div>
         
