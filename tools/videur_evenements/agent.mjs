@@ -418,26 +418,25 @@ export async function runVideur(eventIds = []) {
             // 1. Date Check
             const isDateValid = await checkDate(event);
             if (!isDateValid) {
-                console.log(`  ❌ [REFUS] Date ${event.date} contestée par IA.`);
-                
                 // Tentative de réparation
                 const correctedYear = await fixDate(event);
                 if (correctedYear) {
-                    const newDate = `${correctedYear}-01-01`; // Format par défaut Kiko
+                    const newDate = `${correctedYear}-01-01`;
                     await supabase.from('antichambre').update({ 
                         date: newDate,
                         statut_validation: 'CORRIGE', 
-                        motif_refus: `Date corrigée par l'IA (${event.date} -> ${correctedYear}). En attente de revalidation.`
+                        motif_refus: `Date corrigée par l'IA (${event.date} -> ${correctedYear}).`,
+                        description: `[IA-LOG] Date initiale ${event.date} contestée. Consensus trouvé pour ${correctedYear}. À revalider.`
                     }).eq('id', event.id);
-                    console.log(`  ✨ [CORRIGE] Date modifiée en ${correctedYear} ! L'événement reste en Antichambre pour revalidation.`);
+                    console.log(`  ✨ [CORRIGE] Date modifiée en ${correctedYear} !`);
                 } else {
                     await supabase.from('antichambre').update({ 
                         statut_validation: 'REFUSE', 
-                        motif_refus: 'L\'IA conteste la date et n\'a pas pu trouver de consensus pour la corriger.' 
+                        motif_refus: 'Contestation date / Échec consensus réparation.',
+                        description: `[IA-LOG] Les IA ne sont pas d'accord sur la date (${event.date}) et n'ont pas pu trouver d'alternative fiable.`
                     }).eq('id', event.id);
+                    console.log(`  ❌ [REFUS] Date contestée et irréparable.`);
                 }
-                
-                // Quoi qu'il arrive (Refusé ou Corrigé), on ne l'envoie pas en PROD ce coup-ci.
                 continue;
             }
 
