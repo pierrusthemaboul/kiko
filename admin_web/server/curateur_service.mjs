@@ -3,6 +3,10 @@ import express from 'express';
 import cors from 'cors';
 import { startFluxQpucSingleBatch } from '../../tools/flux_qpuc/orchestrator_qpuc.mjs';
 
+console.log("\n🧪 [DIAGNOSTIC ENV] Liste des variables détectées (noms uniquement) :");
+console.log(Object.keys(process.env).sort().join(', '));
+console.log("--------------------------------------------------\n");
+
 const app = express();
 
 // Configuration CORS complète pour éviter le NetworkError

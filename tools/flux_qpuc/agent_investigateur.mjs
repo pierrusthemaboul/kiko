@@ -12,12 +12,14 @@ const __dirname = path.dirname(__filename);
 dotenv.config({ path: path.join(__dirname, '..', '..', '.env') });
 
 const supabaseUrl = process.env.EXPO_PUBLIC_SUPABASE_URL || process.env.SUPABASE_URL || process.env.VITE_SUPABASE_URL;
-const supabaseKey = process.env.EXPO_PUBLIC_SUPABASE_ANON_KEY || process.env.SUPABASE_ANON_KEY || process.env.VITE_SUPABASE_ANON_KEY;
+const supabaseKey = process.env.EXPO_PUBLIC_SUPABASE_ANON_KEY || process.env.SUPABASE_ANON_KEY || process.env.VITE_SUPABASE_ANON_KEY || process.env.SUPABASE_SERVICE_ROLE_KEY || process.env.SUPABASE_PROD_SERVICE_ROLE_KEY;
 
 if (!supabaseUrl) {
-  console.error("❌ [CRITIQUE] supabaseUrl est requis ! Vérifiez vos variables d'environnement (SUPABASE_URL, VITE_SUPABASE_URL ou EXPO_PUBLIC_SUPABASE_URL)");
+  console.error("❌ [CRITIQUE] supabaseUrl est requis !");
+} else if (!supabaseKey) {
+  console.error("❌ [CRITIQUE] supabaseKey est manquante !");
 } else {
-  console.log(`🔗 [INIT] Connexion Supabase à : ${supabaseUrl.substring(0, 25)}...`);
+  console.log(`🔗 [INIT] Connexion Supabase (URL: ${supabaseUrl.substring(0, 20)}..., Key: ${supabaseKey.substring(0, 10)}...)`);
 }
 
 const supabase = createClient(supabaseUrl, supabaseKey);
