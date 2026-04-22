@@ -65,6 +65,8 @@ async function startFluxQpucSingleBatch({ targetCount = 5, mode = 'qpuc', theme 
         return;
     }
 
+    const currentTheme = qpucThemes[Math.floor(Math.random() * qpucThemes.length)];
+
     // Protection contre les boucles infinies sur des thèmes épuisés
     if (consecutiveEmptyCycles >= 5) {
         if (mode === 'manual') {
@@ -78,7 +80,6 @@ async function startFluxQpucSingleBatch({ targetCount = 5, mode = 'qpuc', theme 
         }
     }
 
-    const currentTheme = qpucThemes[Math.floor(Math.random() * qpucThemes.length)];
     log(`\n🎫 THÈME DU CYCLE : "${currentTheme}"`);
 
     if (abortSignal?.aborted) return;
