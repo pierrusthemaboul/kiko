@@ -10,8 +10,10 @@ import {
   StyleSheet,
   Platform,
   StatusBar,
-  SafeAreaView, // Bien que non utilisé directement ici, on garde l'import au cas où
-  Dimensions
+  SafeAreaView,
+  Dimensions,
+  TouchableOpacity,
+  Alert
 } from 'react-native';
 import { useSafeAreaInsets } from 'react-native-safe-area-context';
 import { useRouter } from 'expo-router'; // Gardé si jamais utilisé ailleurs, sinon peut être enlevé

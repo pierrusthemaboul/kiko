@@ -151,6 +151,29 @@
 .btn-rafale:hover { transform: translateY(-3px) scale(1.02); filter: brightness(1.1); }
 .btn-rafale:disabled { opacity: 0.5; transform: none; }
 
+.action-buttons {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+}
+
+.btn-stop {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 0.8rem 1.5rem;
+  background: #ef4444;
+  border: none;
+  border-radius: 14px;
+  color: white;
+  font-weight: 900;
+  cursor: pointer;
+  transition: all 0.2s;
+  box-shadow: 0 10px 20px rgba(239, 68, 68, 0.2);
+}
+
+.btn-stop:hover { transform: translateY(-2px); filter: brightness(1.2); }
+
 .split-view {
   display: flex;
   flex: 1;

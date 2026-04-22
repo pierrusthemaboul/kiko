@@ -1,4 +1,4 @@
-import React, { createContext, useContext, useRef, useState, ReactNode, useCallback } from 'react';
+import React, { createContext, useContext, useRef, useState, ReactNode, useCallback, useEffect } from 'react';
 import MusicWebView, { MusicWebViewRef } from '../components/MusicWebView';
 import MusicManager from '../services/MusicManager';
 
@@ -29,6 +29,16 @@ interface Props {
 export const MusicProvider = ({ children }: Props) => {
   const musicRef = useRef<MusicWebViewRef>(null);
   const [isReady, setIsReady] = useState(false);
+
+  // Connecter MusicManager à la WebView quand elle est prête
+  useEffect(() => {
+    if (isReady && musicRef.current) {
+      MusicManager.setSendCommandCallback((command) => {
+        musicRef.current?.sendCommand(command);
+      });
+      console.log('[MusicProvider] MusicManager connected to WebView');
+    }
+  }, [isReady]);
 
   const handleReady = useCallback(() => {
     setIsReady(true);

@@ -1,5 +1,5 @@
 module.exports = ({ config }) => {
-  const IS_DEV = process.env.EXPO_PUBLIC_APP_VARIANT === 'development';
+  const IS_DEV = (process.env.EXPO_PUBLIC_APP_VARIANT || '').trim() === 'development';
 
   return {
     ...config,
@@ -21,6 +21,7 @@ module.exports = ({ config }) => {
       supportsTablet: true,
       bundleIdentifier: IS_DEV ? "com.pierretulle.juno2.dev" : "com.pierretulle.juno2",
       buildNumber: "5",
+      googleServicesFile: require('fs').existsSync('./GoogleService-Info.plist') ? "./GoogleService-Info.plist" : undefined,
       infoPlist: {
         ITSAppUsesNonExemptEncryption: false
       },
@@ -97,9 +98,10 @@ module.exports = ({ config }) => {
         "react-native-google-mobile-ads",
         {
           androidAppId: "ca-app-pub-7809209690404525~1711130974",
-          iosAppId: "ca-app-pub-7809209690404525~1711130974"
+          iosAppId: "ca-app-pub-7809209690404525~9290410116"
         }
       ],
+      // TODO: Réactiver quand GoogleService-Info.plist est disponible (compte Apple Developer activé)
       "@react-native-firebase/app",
       [
         function withForceAdIdPermission(config) {

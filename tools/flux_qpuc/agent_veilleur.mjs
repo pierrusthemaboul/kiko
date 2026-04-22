@@ -55,9 +55,9 @@ async function checkDuplicates(titre, description, date) {
     }
 
     try {
-        // 2. Recherche vectorielle dans PRODUCTION (via match_events)
+        // 2. Recherche vectorielle dans PRODUCTION (via match_evenements_by_titre)
         const { data: similarProd, error: prodError } = await supabase
-            .rpc('match_events', {
+            .rpc('match_evenements_by_titre', {
                 query_embedding: embedding,
                 match_threshold: 0.85,
                 match_count: 3
@@ -65,10 +65,17 @@ async function checkDuplicates(titre, description, date) {
         
         if (prodError) {
             console.error(`❌ Erreur Veilleur (Production Search): ${prodError.message}`);
-            // On continue si possible
         } else if (similarProd && similarProd.length > 0) {
             const bestMatch = similarProd[0];
-            console.log(`🚩 [DOUBLON PRODUCTION] "${titre}" ressemble à "${bestMatch.titre}" (Score: ${(bestMatch.similarity || 0).toFixed(3)})`);
+            // On récupère le titre pour le log (puisque match_evenements_by_titre ne renvoie que l'ID et similarity)
+            const { data: eventData } = await supabase
+                .from('evenements')
+                .select('titre')
+                .eq('id', bestMatch.id)
+                .single();
+
+            const matchTitre = eventData ? eventData.titre : bestMatch.id;
+            console.log(`🚩 [DOUBLON PRODUCTION] "${titre}" ressemble à "${matchTitre}" (Score: ${(bestMatch.similarity || 0).toFixed(3)})`);
             return true;
         }
 

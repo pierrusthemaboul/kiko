@@ -32,13 +32,19 @@ app.use(cors({
 
 app.use(express.json());
 
-const PORT = process.env.PORT || 3010; // On change car 3005 a peut-être un conflit.
+let globalActiveController = null;
 
 app.post('/api/curateur/rafale', async (req, res) => {
   const { quantity = 10, mode = 'qpuc', theme } = req.body;
   
   console.log(`\n🚀 [API CURATEUR] Nouvelle Rafale : ${quantity} événements (Mode: ${mode}, Thème: ${theme || 'auto'})`);
   
+  // Si une rafale est déjà en cours, on l'arrête (ou on peut choisir de refuser)
+  if (globalActiveController) {
+    globalActiveController.abort();
+  }
+  globalActiveController = new AbortController();
+
   // Envoi immédiat des headers SSE
   res.writeHead(200, {
     'Content-Type': 'text/event-stream',
@@ -59,22 +65,38 @@ app.post('/api/curateur/rafale', async (req, res) => {
       targetCount: quantity,
       mode: mode,
       theme: theme,
+      abortSignal: globalActiveController.signal,
       onEventFound: (event) => {
          sendUpdate('info', `✨ NOUVEL ÉVÉNEMENT VALIDÉ : ${event.titre}`, event);
       },
       onProgress: (msg) => {
-         // C'est ici qu'on envoie tous les logs des agents en direct vers ton UI
          sendUpdate('log', msg);
       }
     });
 
-    sendUpdate('done', '🏁 Rafale terminée avec succès.');
+    if (globalActiveController.signal.aborted) {
+        sendUpdate('error', '🛑 Rafale interrompue par le centre de contrôle.');
+    } else {
+        sendUpdate('done', '🏁 Rafale terminée avec succès.');
+    }
     res.end();
   } catch (error) {
      console.error("❌ Erreur Fatigue de la Rafale:", error.message);
      sendUpdate('error', `🔥 ERREUR : ${error.message}`);
      res.end();
+  } finally {
+    globalActiveController = null;
   }
+});
+
+app.post('/api/curateur/stop', (req, res) => {
+    if (globalActiveController) {
+        console.log("🛑 [API CURATEUR] Signal d'arrêt reçu.");
+        globalActiveController.abort();
+        res.json({ message: "Signal d'arrêt envoyé au cerveau." });
+    } else {
+        res.json({ message: "Aucun processus actif à arrêter." });
+    }
 });
 
 app.listen(PORT, () => {

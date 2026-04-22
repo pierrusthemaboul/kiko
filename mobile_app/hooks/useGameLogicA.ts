@@ -37,7 +37,7 @@ import { registerDebugCommand } from '../ReactotronConfig';
 const screenWidth = Dimensions.get('window').width;
 
 export function useGameLogicA(initialEvent?: string, modeId?: string) {
-  if (__DEV__) console.log('[useGameLogicA] Hook executed for mode:', modeId || 'default');
+  // if (__DEV__) console.log('[useGameLogicA] Hook executed for mode:', modeId || 'default');
   const gameMode = useMemo<GameModeConfig>(() => getGameModeConfig(modeId), [modeId]);
   const timeLimit = Math.max(1, gameMode.timeLimit);
   const [streak, setStreak] = useState(0);
@@ -140,11 +140,21 @@ export function useGameLogicA(initialEvent?: string, modeId?: string) {
     setLevelsHistory,
     setDisplayedEvent,
     setError,
-    setLoading,
+    loading: initLoading,
     markEventUsageLocal,
     initGame: baseInitGame,
   } = useInitGame();
 
+  // 🎵 Lancer la musique automatiquement dès que le chargement initial est fini
+  useEffect(() => {
+    console.log(`[useGameLogicA] Music check: initLoading=${initLoading}, isMusicReady=${isMusicReady}`);
+    if (!initLoading && isMusicReady) {
+      console.log('[useGameLogicA] 🎵 Auto-triggering music after loading finished');
+      startMusic();
+    }
+  }, [initLoading, isMusicReady, startMusic]);
+
+  // --- Fonctions utilitaires ---
   const {
     timeLeft,
     isCountdownActive,
@@ -341,19 +351,21 @@ export function useGameLogicA(initialEvent?: string, modeId?: string) {
   } = useAudio();
 
   // 🎵 Musique de fond
+  const musicOptions = useMemo(() => ({
+    volume: 0.3,
+    onTrackChange: (trackName: string) => {
+      console.log(`[useGameLogicA] Now playing: ${trackName}`);
+    },
+    onError: (error: Error) => {
+      console.error('[useGameLogicA] Music error:', error);
+    },
+  }), []);
+
   const {
     isReady: isMusicReady,
     start: startMusic,
     stop: stopMusic,
-  } = useBackgroundMusic({
-    volume: 0.3,
-    onTrackChange: (trackName) => {
-      console.log(`[useGameLogicA] Now playing: ${trackName}`);
-    },
-    onError: (error) => {
-      console.error('[useGameLogicA] Music error:', error);
-    },
-  });
+  } = useBackgroundMusic(musicOptions);
 
   const {
     trackGameStarted,
@@ -840,9 +852,8 @@ export function useGameLogicA(initialEvent?: string, modeId?: string) {
     console.log('[useGameLogicA] 🎬 Gestionnaire de métadonnées initialisé');
 
     // 🎵 Démarrer la musique de fond
-    if (isMusicReady) {
-      await startMusic();
-    }
+    console.log('[useGameLogicA] Triggering background music...');
+    await startMusic();
   }, [baseInitGameWrapper, resetAntiFrustration, resetEventCount, gameMode.label, gameMode.initialLives, startRun, isMusicReady, startMusic]);
 
   const applyReward = useCallback(
@@ -1232,8 +1243,8 @@ export function useGameLogicA(initialEvent?: string, modeId?: string) {
     setIsLevelPaused(true); // Pause the game logic
     playGameOverSound();
 
-    // 🎵 Arrêter la musique de fond
-    stopMusic();
+    // 🎵 Ne plus arrêter la musique automatiquement pour garder l'ambiance
+    // stopMusic();
 
     setLeaderboardsReady(false);
 
@@ -1643,7 +1654,7 @@ export function useGameLogicA(initialEvent?: string, modeId?: string) {
   const hasRegisteredDebugRef = useRef(false);
   useEffect(() => {
     if (__DEV__ && !hasRegisteredDebugRef.current) {
-      console.log('[DEBUG] Registering hook-based Reactotron commands...');
+      // console.log('[DEBUG] Registering hook-based Reactotron commands...');
 
       registerDebugCommand({
         command: 'addLife',

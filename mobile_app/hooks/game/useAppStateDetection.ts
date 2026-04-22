@@ -67,7 +67,7 @@ export function useAppStateDetection({
         wasActiveRef.current // Vérifier qu'on était en partie active
       ) {
         // L'utilisateur a quitté l'application pendant une partie active
-        console.log('[AppStateDetection] User left app during active game');
+        // console.log('[AppStateDetection] User left app during active game');
 
         // Logger l'événement
         const now = Date.now();

@@ -26,7 +26,11 @@ export type MusicCommand =
 class MusicManager {
   private static instance: MusicManager;
   private tracks: MusicAssets = {};
-  private trackNames: string[] = ['bg_track_1', 'bg_track_2', 'bg_track_3'];
+  private trackNames: string[] = [
+    'The_Shepherd_s_Rest',
+    'Prayer_in_the_Courtyard',
+    'Vespers_for_a_Fallen_Realm'
+  ];
   private lastPlayedTrack: string | null = null;
   private isPlaying = false;
   private isPaused = false;
@@ -57,9 +61,9 @@ class MusicManager {
    */
   async loadMusicAssets(): Promise<MusicAssets> {
     const assets = {
-      bg_track_1: require('../assets/music/bg_track_1.mp3'),
-      bg_track_2: require('../assets/music/bg_track_2.mp3'),
-      bg_track_3: require('../assets/music/bg_track_3.mp3'),
+      The_Shepherd_s_Rest: require('../assets/music/The_Shepherd_s_Rest.mp3'),
+      Prayer_in_the_Courtyard: require('../assets/music/Prayer_in_the_Courtyard.mp3'),
+      Vespers_for_a_Fallen_Realm: require('../assets/music/Vespers_for_a_Fallen_Realm.mp3'),
     };
 
     const musicData: MusicAssets = {};
@@ -79,6 +83,7 @@ class MusicManager {
         });
 
         musicData[key] = `data:audio/mpeg;base64,${base64}`;
+        // console.log(`[MusicManager] Successfully loaded: ${key}.mp3`);
       } catch (error) {
         console.error(`[MusicManager] Error loading ${key}:`, error);
         if (this.onError) {
@@ -90,13 +95,17 @@ class MusicManager {
     return musicData;
   }
 
+  private startPending = false;
+
   /**
    * Initialise le MusicManager avec les assets chargés
    */
   async initialize(assets: MusicAssets): Promise<void> {
+    // console.log('[MusicManager] initialize() called');
+    
+    // On autorise la ré-initialisation pour mettre à jour les pistes si nécessaire
     if (this.isInitialized) {
-      console.log('[MusicManager] Already initialized');
-      return;
+      // console.log('[MusicManager] Already initialized, updating tracks and re-notifying WebView...');
     }
 
     try {
@@ -108,8 +117,7 @@ class MusicManager {
         throw new Error('No music tracks loaded');
       }
 
-      this.isInitialized = true;
-      console.log(`[MusicManager] Initialized with ${Object.keys(assets).length} tracks`);
+      // console.log(`[MusicManager] Assets sent to WebView, waiting for decoding confirmation...`);
 
       // Envoyer la commande d'init à la WebView
       this.sendCommand({
@@ -130,13 +138,17 @@ class MusicManager {
    * Démarre la lecture de la musique
    */
   async start(): Promise<void> {
+    // console.log(`[MusicManager] start() called. isInitialized=${this.isInitialized}, isPlaying=${this.isPlaying}`);
+    
     if (!this.isInitialized) {
-      console.warn('[MusicManager] Not initialized, cannot start');
+      // console.log('[MusicManager] Not initialized yet, queuing start request');
+      this.startPending = true;
       return;
     }
 
     if (this.isPlaying) {
-      console.log('[MusicManager] Already playing');
+      // console.log('[MusicManager] Already playing, sending START command to WebView as fallback');
+      this.sendCommand({ type: 'START' });
       return;
     }
 
@@ -147,14 +159,14 @@ class MusicManager {
     const trackName = this.selectRandomTrack();
     this.lastPlayedTrack = trackName;
 
+    // console.log(`[MusicManager] Sending START command for track: ${trackName}`);
+
     // Envoyer la commande de démarrage à la WebView
     this.sendCommand({ type: 'START' });
 
     if (this.onTrackChange) {
       this.onTrackChange(trackName);
     }
-
-    console.log(`[MusicManager] Started with track: ${trackName}`);
   }
 
   /**
@@ -167,7 +179,7 @@ class MusicManager {
 
     this.isPaused = true;
     this.sendCommand({ type: 'PAUSE' });
-    console.log('[MusicManager] Paused');
+    // console.log('[MusicManager] Paused');
   }
 
   /**
@@ -180,7 +192,7 @@ class MusicManager {
 
     this.isPaused = false;
     this.sendCommand({ type: 'RESUME' });
-    console.log('[MusicManager] Resumed');
+    // console.log('[MusicManager] Resumed');
   }
 
   /**
@@ -192,7 +204,7 @@ class MusicManager {
     this.lastPlayedTrack = null;
 
     this.sendCommand({ type: 'STOP' });
-    console.log('[MusicManager] Stopped');
+    // console.log('[MusicManager] Stopped');
   }
 
   /**
@@ -246,6 +258,19 @@ class MusicManager {
   }
 
   /**
+   * Notifie que l'initialisation (décodage) est terminée (appelé par la WebView)
+   */
+  notifyInitDone(): void {
+    // console.log('[MusicManager] Received INIT_DONE from WebView');
+    this.isInitialized = true;
+    if (this.startPending) {
+      // console.log('[MusicManager] Triggering pending start after INIT_DONE');
+      this.startPending = false;
+      this.start();
+    }
+  }
+
+  /**
    * Notifie que la piste a changé (appelé par la WebView)
    */
   notifyTrackChanged(trackName: string): void {
@@ -253,7 +278,7 @@ class MusicManager {
     if (this.onTrackChange) {
       this.onTrackChange(trackName);
     }
-    console.log(`[MusicManager] Track changed: ${trackName}`);
+    // console.log(`[MusicManager] Track changed: ${trackName}`);
   }
 
   /**
@@ -262,16 +287,18 @@ class MusicManager {
   notifyStopped(): void {
     this.isPlaying = false;
     this.isPaused = false;
-    console.log('[MusicManager] Playback stopped by WebView');
+    // console.log('[MusicManager] Playback stopped by WebView');
   }
 
   // ============ Méthodes privées ============
 
   private sendCommand(command: MusicCommand): void {
     if (this.sendCommandCallback) {
+      // console.log(`[MusicManager] Sending command to WebView: ${command.type}`,
+      //   command.type === 'INIT' ? `(${Object.keys(command.tracks).length} tracks)` : '');
       this.sendCommandCallback(command);
     } else {
-      console.warn('[MusicManager] No sendCommandCallback set');
+      // console.warn('[MusicManager] No sendCommandCallback set');
     }
   }
 

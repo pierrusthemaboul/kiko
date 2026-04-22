@@ -120,6 +120,17 @@ const AdminOptionsPage: React.FC = () => {
     }
   };
 
+  const handleStop = async () => {
+    try {
+      const envUrl = import.meta.env.VITE_CURATEUR_URL;
+      const baseUrl = envUrl ? envUrl.replace(/\/$/, '') : 'http://localhost:3010';
+      addLog("🛑 Envoi du signal d'arrêt...", "info");
+      await fetch(`${baseUrl}/api/curateur/stop`, { method: 'POST' });
+    } catch (err: any) {
+      addLog("Erreur lors de l'arrêt : " + err.message, "error");
+    }
+  };
+
   const handleGenerate = async () => {
     // 1. FORCE FEEDBACK IMMEDIAT
     console.log("🖱️ CLIC DÉTECTÉ SUR RAFALE");
@@ -202,6 +213,8 @@ const AdminOptionsPage: React.FC = () => {
                 }
               } else if (data.status === 'done') {
                 addLog(data.message, "success");
+              } else if (data.status === 'error') {
+                addLog(data.message, "error");
               }
             } catch {
               // chunk partiel, on ignore
@@ -245,10 +258,18 @@ const AdminOptionsPage: React.FC = () => {
               <input type="number" className="count-input" value={suggestionCount} onChange={(e) => setSuggestionCount(Number(e.target.value))} min="1" max="200" />
            </div>
 
-           <button className="btn-rafale" onClick={handleGenerate} disabled={isGenerating}>
-             {isGenerating ? <RefreshCw className="spin" /> : <Zap />}
-             {isGenerating ? "PROTOCOLE EN COURS..." : "LANCER LA RAFALE"}
-           </button>
+           <div className="action-buttons">
+              <button className="btn-rafale" onClick={handleGenerate} disabled={isGenerating}>
+                {isGenerating ? <RefreshCw className="spin" /> : <Zap />}
+                {isGenerating ? "PROTOCOLE EN COURS..." : "LANCER LA RAFALE"}
+              </button>
+              
+              {isGenerating && (
+                <button className="btn-stop" onClick={handleStop}>
+                  <AlertTriangle size={18} /> STOP
+                </button>
+              )}
+           </div>
         </div>
       </header>
 

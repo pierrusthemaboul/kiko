@@ -28,7 +28,7 @@ const adLog = (level: 'log' | 'warn' | 'error', message: string, ...args: unknow
     console.warn(`[useAds] ${message}`, ...args);
     return;
   }
-  console.log(`[useAds] ${message}`, ...args);
+  // console.log(`[useAds] ${message}`, ...args);
 };
 
 // ✅ SUPPRIMÉ : const USE_TEST_IDS = __DEV__;

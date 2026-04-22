@@ -23,6 +23,7 @@ import { useAdConsent } from '../hooks/useAdConsent';
 import { usePendingRewardSync } from '../hooks/usePendingRewardSync';
 import { AudioProvider } from '../contexts/AudioContext';
 import { MusicProvider } from '../contexts/MusicContext';
+import { useBackgroundMusic } from '../hooks/useBackgroundMusic';
 import { AdService } from '@/src/features/ads/AdService';
 
 const CURRENT_APP_VERSION = Application.nativeApplicationVersion || '1.0.0';
@@ -31,6 +32,11 @@ const APP_VERSION_STORAGE_KEY = '@app_version';
 SplashScreen.preventAutoHideAsync();
 
 const GUEST_MODE_KEY = '@timalaus_guest_mode';
+
+function MusicInitializer() {
+  useBackgroundMusic({ volume: 0.3, autoStart: false });
+  return null;
+}
 
 export default function RootLayout() {
   const [appReady, setAppReady] = useState(false);
@@ -85,7 +91,7 @@ export default function RootLayout() {
   // --- Initialisation (Firebase, Version Check) ---
   useEffect(() => {
     const initializeApp = async () => {
-      console.log('[RootLayout] Initializing App Setup (Firebase, Version)...');
+      // console.log('[RootLayout] Initializing App Setup (Firebase, Version)...');
       try {
         // Réinitialiser le flag splash à chaque démarrage
         await AsyncStorage.removeItem('@splash_shown_session');
@@ -113,7 +119,7 @@ export default function RootLayout() {
           screen: 'RootLayout',
         });
       } finally {
-        console.log('[RootLayout] Initial App Setup Done.');
+        // console.log('[RootLayout] Initial App Setup Done.');
         setInitialSetupDone(true);
       }
     };
@@ -143,7 +149,7 @@ export default function RootLayout() {
         // Si le token de rafraîchissement est invalide ou manquant, on force la déconnexion
         // pour nettoyer le stockage local corrompu.
         if (error.message?.includes('Refresh Token') || error.status === 400 || error.code === 'refresh_token_not_found') {
-          console.log('[Auth Listener] Invalid session detected, clearing storage...');
+          // console.log('[Auth Listener] Invalid session detected, clearing storage...');
           try {
             await supabase.auth.signOut();
           } catch (signOutError) {
@@ -234,15 +240,28 @@ export default function RootLayout() {
 
   // --- Décision App Prête ---
   useEffect(() => {
+    // console.log(`[DIAGNOSTIC] RootLayout State: fontsLoaded=${fontsLoaded}, fontError=${!!fontError}, initialSetupDone=${initialSetupDone}`);
     if ((fontsLoaded || fontError) && initialSetupDone) {
       setAppReady(true);
-      console.log('[RootLayout] App is marked as ready.');
+      // console.log('[RootLayout] ✅ App is marked as ready.');
     }
   }, [fontsLoaded, fontError, initialSetupDone]);
+
+  // 🛡️ SÉCURITÉ : Forcer l'affichage après 5 secondes si blocage
+  useEffect(() => {
+    const timer = setTimeout(() => {
+      if (!appReady) {
+        // console.warn('[DIAGNOSTIC] ⚠️ Safety timeout triggered! Forcing appReady=true');
+        setAppReady(true);
+      }
+    }, 5000);
+    return () => clearTimeout(timer);
+  }, [appReady]);
 
 
   // --- CORRECTION DE LA LOGIQUE DE REDIRECTION (Auth Guard) ---
   useEffect(() => {
+    // console.log(`[DIAGNOSTIC] Auth Guard Triggered: appReady=${appReady}, session=${!!session}, guestMode=${guestMode}`);
     // Ne rien faire tant que l'app n'est pas prête ou que les infos de route ne sont pas dispo
     if (!appReady || !router || !segments || (segments as string[]).length === 0) {
       return;
@@ -256,7 +275,7 @@ export default function RootLayout() {
     // Vérifier si on essaie d'accéder à l'écran d'accueil (index) dans (tabs)
     const isTryingTabsIndex = (segments as string[])[0] === '(tabs)' && ((segments as string[]).length === 1 || (segments as string[])[1] === 'index');
 
-    console.log(`[Auth Guard] Checking: Session=${session ? 'Yes' : 'No'}, GuestMode=${guestMode}, Segments=${segments.join('/')}, InAuth=${inAuthGroup}, IsTryingProtected=${isTryingProtectedGroup}, IsTryingTabsIndex=${isTryingTabsIndex}`);
+    // console.log(`[Auth Guard] Checking: Session=${session ? 'Yes' : 'No'}, GuestMode=${guestMode}, Segments=${segments.join('/')}, InAuth=${inAuthGroup}, IsTryingProtected=${isTryingProtectedGroup}, IsTryingTabsIndex=${isTryingTabsIndex}`);
 
     // Si connecté et sur index, attendre que le splash soit montré puis rediriger vers vue1
     if (session && isTryingTabsIndex && splashShown) {
@@ -315,6 +334,7 @@ export default function RootLayout() {
   return (
     <AudioProvider>
       <MusicProvider>
+        <MusicInitializer />
         <View style={{ flex: 1 }}>
           <Stack screenOptions={{ headerShown: false }}>
             <Stack.Screen name="(tabs)" />

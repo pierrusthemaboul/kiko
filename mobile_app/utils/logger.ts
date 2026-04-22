@@ -1,7 +1,10 @@
 import { Platform, NativeModules } from 'react-native';
 
 type LogLevel = 'info' | 'warn' | 'error' | 'debug';
-type LogCategory = 'Ads' | 'GameLogic' | 'Quests' | 'Navigation' | 'System' | 'Plays';
+type LogCategory = 'Ads' | 'GameLogic' | 'Quests' | 'Navigation' | 'System' | 'Plays' | 'Music';
+
+// Categories to show in development (filter out noise)
+const ALLOWED_CATEGORIES: LogCategory[] = ['Music'];
 
 // Récupération de l'IP du serveur pour l'OBSERVER (comme Reactotron)
 let agentHost = 'localhost';
@@ -50,6 +53,11 @@ class LoggerService {
   }
 
   log(level: LogLevel, category: LogCategory, message: string, data?: any) {
+    // Filter: only log allowed categories (or all errors)
+    if (__DEV__ && !ALLOWED_CATEGORIES.includes(category) && level !== 'error') {
+      return;
+    }
+
     const logEntry = {
       level,
       category,

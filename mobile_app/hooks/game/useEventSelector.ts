@@ -48,9 +48,13 @@ const KEY_PERIODS = [
  * Retourne les chances (0-1) de piocher dans chaque Tier
  */
 const getTierProbabilities = (level: number) => {
-  if (level <= 2) return { t1: 0.75, t2: 0.20, t3: 0.05 };    // Mixité dès le début (Stars majoritaires)
-  if (level <= 5) return { t1: 0.60, t2: 0.30, t3: 0.10 };    // Introduction plus rapide du Tier 2
-  if (level <= 10) return { t1: 0.45, t2: 0.40, t3: 0.15 };   // Équilibre atteint plus tôt
+  // NOUVEAU: Progression stricte - pas de Tier 3 avant niveau 5
+  if (level === 1) return { t1: 1.00, t2: 0.00, t3: 0.00 };  // ÉVIDENCES UNIQUEMENT (100% Tier 1)
+  if (level === 2) return { t1: 0.90, t2: 0.10, t3: 0.00 };   // Presque que des stars
+  if (level === 3) return { t1: 0.80, t2: 0.20, t3: 0.00 };   // Majoritairement stars
+  if (level === 4) return { t1: 0.70, t2: 0.30, t3: 0.00 };   // Introduction classiques
+  if (level === 5) return { t1: 0.60, t2: 0.35, t3: 0.05 };   // Début difficulté
+  if (level <= 10) return { t1: 0.45, t2: 0.40, t3: 0.15 };  // Équilibre
   if (level <= 20) return { t1: 0.30, t2: 0.45, t3: 0.25 };   // Plus de variété
   return { t1: 0.20, t2: 0.40, t3: 0.40 };                    // Mode expert (équilibré)
 };
@@ -58,12 +62,15 @@ const getTierProbabilities = (level: number) => {
 /**
  * Ajustement de la notoriété selon l'époque
  * L'Antiquité/Moyen-Âge étant plus durs, on booste leur score perçu
+ * NOUVEAU: Pas d'ajustement aux niveaux 1-2 pour garantir des évidences réelles
  */
-const getAdjustedNotoriety = (notoriety: number, year: number): number => {
+const getAdjustedNotoriety = (notoriety: number, year: number, level?: number): number => {
+  // Niveaux 1-2: pas d'ajustement, on veut des notoriétés réelles ≥80
+  if (level && level <= 2) return notoriety;
+
   if (year < 500) return Math.min(100, notoriety + 15);      // Antiquité : +15
   if (year < 1500) return Math.min(100, notoriety + 10);     // Moyen-Âge : +10
-  if (year < 1800) return Math.min(100, notoriety + 5);      // Renaissance : +5
-  return notoriety;                                          // Moderne : +0
+  return notoriety;
 };
 
 /**
@@ -257,7 +264,7 @@ export function useEventSelector({
           if (error) {
             console.warn('[GameLogic] ❌ Erreur Synchro Supabase:', error.message);
           } else {
-            console.log(`[GameLogic] ✅ Synchro OK: ${eventId} (v${updatedTimesSeen})`);
+            // console.log(`[GameLogic] ✅ Synchro OK: ${eventId} (v${updatedTimesSeen})`);
           }
         }
       } catch (err) {
@@ -399,6 +406,11 @@ export function useEventSelector({
     const totalCandidates = events.length;
     const usedCount = usedEvents.size;
 
+    // Log début prefilter
+    if (__DEV__) {
+      console.log(`\n   🔍 [preFilter] Début: ${events.length} events, refYear=${refYear}, canAddAntiques=${canAddMoreAntiques}`);
+    }
+
     let filtered = events.filter(e => {
       if (usedEvents.has(e.id) || !e.date || e.id === referenceEvent.id) return false;
       const info = getCachedDateInfo(e.date);
@@ -414,6 +426,7 @@ export function useEventSelector({
       return true;
     });
     const afterBasicFilter = filtered.length;
+    if (__DEV__) console.log(`      → Filtre basique (used/sameYear): ${afterBasicFilter}`);
 
     // 2. Filtrage par TIER PROBABILISTE
     // On détermine quel Tier on vise pour cet événement spécifique
@@ -427,7 +440,7 @@ export function useEventSelector({
       // NOUVEAU: Utilisation exclusive de la notoriété objective francophone
       const rawNotoriety = (e as any).notoriete_fr ?? 0;
       const { year } = getCachedDateInfo(e.date);
-      const adjustedNotoriety = getAdjustedNotoriety(rawNotoriety, year);
+      const adjustedNotoriety = getAdjustedNotoriety(rawNotoriety, year, userLevel);
 
       // Vérification du Tier
       if (targetTier === 1) return adjustedNotoriety >= TIER_THRESHOLDS.TIER_1_STAR;
@@ -437,6 +450,7 @@ export function useEventSelector({
 
     filtered = afterPoolFilter;
     const afterTierFilter = filtered.length;
+    if (__DEV__) console.log(`      → Filtre Tier ${targetTier} (p=${rand.toFixed(2)}): ${afterTierFilter}`);
 
     // 3. Filtrage temporel préliminaire (large)
     const timeGapBase = config.timeGap?.base || 100;
@@ -448,13 +462,15 @@ export function useEventSelector({
 
     filtered = afterTime;
     const afterTimeFilter = filtered.length;
+    if (__DEV__) console.log(`      → Filtre time (limite=${preTimeLimit.toFixed(0)}ans): ${afterTimeFilter}`);
 
     // 4. Filtrage antique
+    const beforeAntique = filtered.length;
     if (!canAddMoreAntiques) {
       const afterAntique = filtered.filter(e => !isAntiqueEvent(e));
-
       filtered = afterAntique;
     }
+    if (__DEV__) console.log(`      → Filtre antique (canAdd=${canAddMoreAntiques}): ${filtered.length}`);
 
     // 4.5 Filtrage diversité d'époque (consecutive)
     // À bas niveau, on évite de rester trop longtemps dans la même époque
@@ -464,6 +480,7 @@ export function useEventSelector({
       // Ne pas vider le pool si trop restrictif
       if (afterDiversity.length >= 10) {
         filtered = afterDiversity;
+        if (__DEV__) console.log(`      → Filtre diversité époque (${currentEra}): ${filtered.length}`);
       }
     }
 
@@ -664,9 +681,15 @@ export function useEventSelector({
     usedEvents: Set<string>,
     currentStreak: number = 0
   ): Promise<Event | null> => {
-    const explainOn = false;
+    const explainOn = __DEV__; // Activer les logs en dev
     const explainStartTs = Date.now();
     const exclusionAcc = { logExclusion: (..._args: any[]) => { }, flush: () => ({ truncated: 0 }), size: () => 0 };
+
+    // ===== LOG SELECTION START =====
+    console.log(`\n🎲 [selectNewEvent] === NOUVELLE SELECTION ===`);
+    console.log(`   Niveau: ${userLevel} | Events vus: ${usedEvents.size} | Streak: ${currentStreak}`);
+    console.log(`   Event référence: ${referenceEvent?.titre} (${referenceEvent?.date})`);
+    console.log(`   Compteur saut forcé: ${eventCountRef.current}/${forcedJumpEventCount}`);
 
     // Debouncing pour éviter les appels multiples rapprochés
     const now = Date.now();
@@ -692,16 +715,16 @@ export function useEventSelector({
     }
 
     // Incrémenter le compteur d'événements pour les sauts temporels
-    // Utiliser une ref pour un accès synchrone à la valeur
     eventCountRef.current = eventCountRef.current + 1;
     setEventCount(eventCountRef.current);
     const localEventCount = eventCountRef.current;
+    console.log(`   Event count incrémenté: ${localEventCount}`);
 
     // --- SYSTÈME D'ÉVÉNEMENTS BONUS ---
     const isBonusEventTriggered = localEventCount % bonusEventCountdown === 0;
+    console.log(`   Bonus check: ${localEventCount} % ${bonusEventCountdown} = ${isBonusEventTriggered ? 'BONUS!' : 'non'}`);
     if (isBonusEventTriggered) {
       setShouldForceBonusEvent(true);
-      // Réinitialiser le countdown pour le prochain bonus
       setBonusEventCountdown(Math.floor(Math.random() * (10 - 8 + 1)) + 8);
 
     }
@@ -731,6 +754,7 @@ export function useEventSelector({
 
     // --- LOGIQUE DE SAUT TEMPOREL FORCÉ ---
     const isForcedJumpTriggered = localEventCount === forcedJumpEventCount || forceReturnToPresent;
+    console.log(`   Forced jump check: count=${localEventCount}, target=${forcedJumpEventCount}, forceReturn=${forceReturnToPresent} → ${isForcedJumpTriggered ? 'SAUT FORCÉ!' : 'non'}`);
 
 
 
@@ -746,43 +770,40 @@ export function useEventSelector({
       // SAUF si on force le retour au présent
       const eraMultiplier = getEraMultiplier(refYear, userLevel);
 
-      // DÉTECTION DE TUNNEL ANCIEN : Si on est coincé dans le passé depuis trop longtemps
-      // Niveaux 1-10 : Protection stricte (2 événements)
-      // Niveaux 11-15 : Protection moyenne (3 événements)
-      // Niveaux 16-19 : Protection légère (4 événements)
+      // DÉTECTION DE TUNNEL
       let tunnelThreshold = 2;
       if (userLevel > 15) tunnelThreshold = 4;
       else if (userLevel > 10) tunnelThreshold = 3;
+      console.log(`   Tunnel detection: threshold=${tunnelThreshold}, recentEras=[${recentEras.slice(-5).join(',')}]`);
 
       const isStuckInPast = userLevel <= 19 &&
         recentEras.length >= tunnelThreshold &&
         recentEras.slice(-tunnelThreshold).every(era => era === HistoricalPeriod.ANTIQUITY || era === HistoricalPeriod.MIDDLE_AGES);
+      console.log(`   Tunnel passé: ${isStuckInPast ? 'OUI (saut vers présent)' : 'non'}`);
 
-      // DÉTECTION DE TUNNEL MODERNE : Si on est coincé dans le récent depuis trop longtemps
       const isStuckInModern = recentEras.length >= 3 &&
         recentEras.every(era =>
           era === HistoricalPeriod.NINETEENTH ||
           era === HistoricalPeriod.TWENTIETH ||
           era === HistoricalPeriod.TWENTYFIRST
         );
+      console.log(`   Tunnel moderne: ${isStuckInModern ? 'OUI (saut vers passé)' : 'non'}`);
 
       if (forceReturnToPresent || isStuckInPast) {
-        // Retour forcé vers le présent/moderne (1800-2024) pour faire respirer le joueur
-        // On élargit un peu la plage (1800 au lieu de 1950) pour varier
         const targetYear = Math.floor(Math.random() * (2024 - 1800 + 1)) + 1800;
         jumpDistance = Math.abs(refYear - targetYear);
-        jumpForward = true; // Toujours vers le futur
+        jumpForward = true;
+        console.log(`   🚀 SAUT VERS PRÉSENT: cible=${targetYear}, distance=${jumpDistance}ans`);
 
       } else if (isStuckInModern) {
-        // Retour forcé vers le passé (avant 1800) pour varier
-        // On cible Antiquité, Moyen-Âge ou Renaissance
         const targetYear = Math.floor(Math.random() * (1700 - (-500) + 1)) - 500;
         jumpDistance = Math.abs(refYear - targetYear);
-        jumpForward = false; // Toujours vers le passé
+        jumpForward = false;
+        console.log(`   🚀 SAUT VERS PASSÉ: cible=${targetYear}, distance=${jumpDistance}ans`);
 
       } else if (refYear > 1700) {
-        // 80% de chance d'aller dans le passé lointain
         const goToAncientTimes = Math.random() < 0.8;
+        console.log(`   Mode moderne (>1700): goToAncientTimes=${goToAncientTimes} (80% proba)`);
 
         if (goToAncientTimes) {
           // Saut MASSIF vers Antiquité (-500 à 500) ou Moyen-Âge (500-1500)
@@ -868,7 +889,7 @@ export function useEventSelector({
           const notoriete = (e as any).notoriete ?? 0;
 
           // Respecter la notoriété minimale pour les bas niveaux via le système de Tier simplifié pour les sauts
-          const adjustedNotoriety = getAdjustedNotoriety(notoriete, eventYear);
+          const adjustedNotoriety = getAdjustedNotoriety(notoriete, eventYear, userLevel);
           if (userLevel <= 2 && adjustedNotoriety < TIER_THRESHOLDS.TIER_1_STAR) return false;
           if (userLevel <= 5 && adjustedNotoriety < TIER_THRESHOLDS.TIER_2_CLASSIC) return false;
 
@@ -941,7 +962,7 @@ export function useEventSelector({
           target_epoque: targetEpoque
         });
 
-        console.log('[TEMPORAL_JUMP] 🚀 VOYAGE DANS LE TEMPS !', {
+        /* console.log('[TEMPORAL_JUMP] 🚀 VOYAGE DANS LE TEMPS !', {
           id: jumpEvent.id,
           titre: jumpEvent.titre,
           from: refYear,
@@ -949,7 +970,7 @@ export function useEventSelector({
           epoque: targetEpoque,
           direction: jumpForward ? 'forward' : 'backward',
           distance: jumpDistance
-        });
+        }); */
 
         return markedJumpEvent;
       } else {
@@ -961,9 +982,11 @@ export function useEventSelector({
 
     // 🚀 PRÉ-FILTRAGE INTELLIGENT (réduit de 896 à ~150 événements max)
     let preFilteredEvents = preFilterEvents(events, usedEvents, userLevel, referenceEvent, explainOn ? { logExclusion: exclusionAcc.logExclusion } : undefined);
+    console.log(`\n📊 [preFilter] Pool réduit: ${events.length} → ${preFilteredEvents.length} candidats`);
 
     // Si le pré-filtrage ne retourne rien, utiliser TOUS les événements non utilisés
     if (preFilteredEvents.length === 0) {
+      console.warn(`   ⚠️ Prefiltrage vide! Fallback sur tous les events non utilisés`);
 
       preFilteredEvents = events.filter(e => {
         if (usedEvents.has(e.id) || !e.date || e.id === referenceEvent.id) return false;
@@ -1030,18 +1053,23 @@ export function useEventSelector({
         streakAdjustment = 5; // Augmente de 5 points la notoriété minimale = plus facile
       }
 
-      // Logique normale (ancienne) + ajustement streak
+      // Logique normale + ajustement streak
+      // NOUVEAU: Seuils stricts pour garantir des évidences aux premiers niveaux
       let baseMin = 0;
-      if (level <= 1) baseMin = 45;
-      else if (level === 2) baseMin = 50;
-      else if (level === 3) baseMin = 55;
-      else if (level <= 5) baseMin = 40;
+      if (level === 1) baseMin = 80;        // Évidences uniquement (≥80)
+      else if (level === 2) baseMin = 75;   // Stars + bons classiques
+      else if (level === 3) baseMin = 70;   // Classiques majoritaires
+      else if (level <= 5) baseMin = 60;    // Introduction difficulté
+      else if (level <= 8) baseMin = 50;    // Progression normale
+      else if (level <= 12) baseMin = 40;   // Difficulté croissante
+      else baseMin = 30;                    // Expert (niveaux 13+)
 
       return Math.max(0, baseMin + streakAdjustment);
     };
 
     const minNotoriete = computeMinNotoriete(userLevel, shouldForceEasyEvent, shouldForceBonusEvent, currentStreak, 30);
     let notorieteConstrainedPool = preFilteredEvents;
+    console.log(`   Notoriété min requise: ${minNotoriete} (forceEasy=${shouldForceEasyEvent}, forceBonus=${shouldForceBonusEvent})`);
 
     if (minNotoriete > 0) {
       const filteredByNotoriete = preFilteredEvents.filter(
@@ -1052,6 +1080,7 @@ export function useEventSelector({
       notorieteConstrainedPool = filteredByNotoriete.length >= 25
         ? filteredByNotoriete
         : preFilteredEvents;
+      console.log(`   Après filtre notoriété: ${filteredByNotoriete.length} (fallback: ${filteredByNotoriete.length < 25})`);
     }
 
 
@@ -1075,7 +1104,8 @@ export function useEventSelector({
     });
 
     const scoringPool = diversityFilteredPool.slice(0, MAX_SCORING_POOL);
-
+    console.log(`\n🎯 [Scoring] Pool: ${scoringPool.length} événements à scorer`);
+    console.log(`   TimeGap adaptatif: base=${timeGap.base.toFixed(0)}, min=${timeGap.min.toFixed(0)}, max=${timeGap.max.toFixed(0)}`);
 
     const scoredEvents = scoringPool
       .map(evt => ({
@@ -1090,6 +1120,14 @@ export function useEventSelector({
         timeDiff <= timeGap.max
       )
       .sort((a, b) => b.score - a.score);
+
+    // Log top 5 avec détails
+    console.log(`   Résultats scoring (${scoredEvents.length} valides):`);
+    scoredEvents.slice(0, 5).forEach((s, i) => {
+      const parts = (s.event as any)._scoreParts;
+      const noto = (s.event as any).notoriete_fr ?? (s.event as any).notoriete ?? 'N/A';
+      console.log(`   ${i+1}. "${s.event.titre?.substring(0, 25)}..." ${s.score.toFixed(1)}pts gap:${parts?.timeGap?.toFixed(0)||'N/A'} not:${parts?.notorieteBonus?.toFixed(0)||'N/A'} ctx:${parts?.context||'N/A'} perso:${personalHistory.get(s.event.id)?.times_seen||0}x`);
+    });
 
 
 
@@ -1267,7 +1305,6 @@ export function useEventSelector({
 
 
     // Sélection finale : mélange chemin normal + chemin diversité
-    // 3-4 événements du chemin normal + 1-2 du chemin diversité
     const normalTop = finalEvents.slice(0, Math.min(4, finalEvents.length));
     const normalIds = new Set(normalTop.map(x => x.event.id));
     const diversityCandidates = diversityEvents.filter(x => !normalIds.has(x.event.id));
@@ -1276,10 +1313,13 @@ export function useEventSelector({
     if (diversityPicks.length > 0 && normalTop.length > 0 && diversityPicks[0].score > 0) {
       selectionPath = 'diversity';
     }
-    const topK = topEvents.map(x => x.event);
+
+    console.log(`\n📋 [Fallback path] Chemin utilisé: ${selectionPath} (${finalEvents.length} candidats finals)`);
+    console.log(`   Top ${topEvents.length} mélangés: ${topEvents.map((e,i) => `${i+1}.${e.event.titre?.substring(0,15)}..`).join(', ')}`);
 
     let pickedIndex = Math.floor(Math.random() * topEvents.length);
     const selectedEvent = topEvents[pickedIndex].event;
+    console.log(`   🎯 Index tiré: ${pickedIndex}/${topEvents.length}`);
 
 
     // NOTE: eventCount a déjà été incrémenté au début de la fonction (ligne 370)
@@ -1301,19 +1341,20 @@ export function useEventSelector({
 
     // NOTE: La mise à jour de l'état est DÉLÉGUÉE au caller
     // pour permettre l'affichage des animations de validation
-    // await updateStateCallback(selected);
 
-    console.log('[SELECT_NEW_EVENT] ✅ Événement sélectionné:', {
-      level: userLevel, // AJOUTÉ : Pour savoir à quel niveau on est
-      id: (selected as any)?.id,
-      titre: (selected as any)?.titre,
-      notoriete: (selected as any)?.notoriete ?? null,
-      isBonus: wasBonusEvent,
-      isTemporalJump: (selected as any)?._isTemporalJump ?? false,
-      path: selectionPath,
-      eventCount: localEventCount,
-      nextJumpAt: forcedJumpEventCount,
-    });
+    // ===== LOG SÉLECTION FINALE =====
+    const selYear = getCachedDateInfo((selected as any)?.date).year;
+    const refYearLog = referenceEvent ? getCachedDateInfo(referenceEvent.date).year : selYear;
+    const actualGap = Math.abs(selYear - refYearLog);
+    console.log(`\n✅ [SÉLECTION FINALE] === ÉVÉNEMENT CHOISI ===`);
+    console.log(`   Titre: "${(selected as any)?.titre}"`);
+    console.log(`   Année: ${selYear} | Écart temps: ${actualGap}ans (réf: ${refYearLog})`);
+    console.log(`   Notoriété: ${(selected as any)?.notoriete_fr ?? (selected as any)?.notoriete ?? 'N/A'}`);
+    console.log(`   Période: ${getPeriod((selected as any)?.date)} | Chemin: ${selectionPath}`);
+    console.log(`   Bonus: ${wasBonusEvent ? 'OUI' : 'non'} | Saut temporel: ${(selected as any)?._isTemporalJump ? 'OUI' : 'non'}`);
+    console.log(`   Déjà vu: ${personalHistory.get((selected as any)?.id)?.times_seen || 0}x`);
+    console.log(`   Prochain saut forcé: ${forcedJumpEventCount} (actuel: ${localEventCount})`);
+    console.log(`   Durée totale: ${Date.now() - explainStartTs}ms\n`);
 
 
 

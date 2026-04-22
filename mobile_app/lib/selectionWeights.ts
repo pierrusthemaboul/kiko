@@ -9,9 +9,9 @@ export type Weights = {
 export function getWeightsForLevel(level: number): Weights {
   if (level <= 3) {
     return {
-      alphaProximity: 1.2,      // Très forte priorité à la proximité temporelle (évite les pièges)
+      alphaProximity: 0.5,      // Priorité réduite à la date
       betaDifficulty: 1.0,
-      gammaNotoriete: 0.6,      // Forte importance de la notoriété (avoir des événements connus)
+      gammaNotoriete: 3.5,      // POIDS MASSIF : Force la sélection des événements à forte notoriété
       thetaFrequencyMalus: 25,
       thetaFrequencyCap: 500,
     };

@@ -33,11 +33,13 @@ if (!supabaseUrl) {
 const supabase = createClient(supabaseUrl, supabaseKey);
 const genAI = new GoogleGenerativeAI(process.env.GEMINI_API_KEY);
 
-async function startFluxQpucSingleBatch({ targetCount = 5, mode = 'qpuc', theme = null, onEventFound, onProgress }) {
+async function startFluxQpucSingleBatch({ targetCount = 5, mode = 'qpuc', theme = null, onEventFound, onProgress, abortSignal }) {
   const log = (msg) => { console.log(msg); if (onProgress) onProgress(msg); };
   
   log(`\n🚀 LANCEMENT DU FLUX QPUC (RAG + ARCHIVES)`);
   
+  if (abortSignal?.aborted) return;
+
   // 1. Sync Archive
   await syncArchiveWithGemini();
 
@@ -56,6 +58,11 @@ async function startFluxQpucSingleBatch({ targetCount = 5, mode = 'qpuc', theme 
 
   let addedCount = 0;
   while (addedCount < targetCount) {
+    if (abortSignal?.aborted) {
+        log("🛑 Processus interrompu par l'utilisateur.");
+        return;
+    }
+
     const currentTheme = qpucThemes[Math.floor(Math.random() * qpucThemes.length)];
     log(`\n🎫 THÈME DU CYCLE : "${currentTheme}"`);
 
@@ -64,6 +71,11 @@ async function startFluxQpucSingleBatch({ targetCount = 5, mode = 'qpuc', theme 
     const candidates = await findEventsForTheme(currentTheme, 8);
     
     for (const cand of candidates) {
+        if (abortSignal?.aborted) {
+            log("🛑 Processus interrompu par l'utilisateur.");
+            return;
+        }
+
        if (addedCount >= targetCount) break;
 
         log(`🔍 Analyse de "${cand.titre}" (${cand.year})...`);

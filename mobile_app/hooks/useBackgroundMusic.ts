@@ -45,9 +45,12 @@ interface UseBackgroundMusicReturn {
  *   }
  * }, [gameOver, stop]);
  */
-export function useBackgroundMusic(options: UseBackgroundMusicOptions = {}): UseBackgroundMusicReturn {
-  const { autoStart = false, volume = 0.3, onTrackChange, onError } = options;
-
+export function useBackgroundMusic({
+  autoStart = false,
+  volume = 0.3,
+  onTrackChange,
+  onError
+}: UseBackgroundMusicOptions = {}): UseBackgroundMusicReturn {
   // Utiliser le contexte pour savoir si la WebView est prête
   const musicContext = useMusicContext();
   const isReady = musicContext?.isReady ?? false;
@@ -56,9 +59,30 @@ export function useBackgroundMusic(options: UseBackgroundMusicOptions = {}): Use
   const [currentTrack, setCurrentTrack] = useState<string | null>(null);
   const isInitializedRef = useRef(false);
 
+  // Utiliser des refs pour les callbacks afin d'éviter de redéclencher l'effet d'initialisation
+  const onTrackChangeRef = useRef(onTrackChange);
+  const onErrorRef = useRef(onError);
+
+  useEffect(() => {
+    onTrackChangeRef.current = onTrackChange;
+    onErrorRef.current = onError;
+  }, [onTrackChange, onError]);
+
+  // Réinitialiser le flag quand isReady repasse à false
+  useEffect(() => {
+    if (!isReady && isInitializedRef.current) {
+      // console.log('[useBackgroundMusic] WebView not ready anymore, resetting init flag');
+      isInitializedRef.current = false;
+    }
+  }, [isReady]);
+
   // Initialiser le MusicManager quand la WebView est prête
   useEffect(() => {
-    if (!isReady || isInitializedRef.current) return;
+    if (!isReady || isInitializedRef.current) {
+      return;
+    }
+
+    // console.log(`[useBackgroundMusic] Initializing music system (autoStart: ${autoStart}, vol: ${volume})...`);
     isInitializedRef.current = true;
 
     const initMusic = async () => {
@@ -67,16 +91,18 @@ export function useBackgroundMusic(options: UseBackgroundMusicOptions = {}): Use
 
         // Configurer les callbacks
         manager.setOnTrackChange((trackName) => {
+          // console.log('[useBackgroundMusic] Callback onTrackChange:', trackName);
           setCurrentTrack(trackName);
-          onTrackChange?.(trackName);
+          onTrackChangeRef.current?.(trackName);
         });
 
         manager.setOnError((error) => {
-          console.error('[useBackgroundMusic] Music error:', error);
-          onError?.(error);
+          console.error('[useBackgroundMusic] Music error callback:', error);
+          onErrorRef.current?.(error);
         });
 
         // Charger les assets
+        // console.log('[useBackgroundMusic] Loading music assets...');
         const assets = await manager.loadMusicAssets();
 
         // Vérifier qu'on a des assets
@@ -86,42 +112,38 @@ export function useBackgroundMusic(options: UseBackgroundMusicOptions = {}): Use
           return;
         }
 
+        // console.log(`[useBackgroundMusic] ${Object.keys(assets).length} assets loaded, initializing manager...`);
+
         // Initialiser (envoie les assets à la WebView)
         await manager.initialize(assets);
 
         // Définir le volume initial
         manager.setVolume(volume);
 
-        console.log('[useBackgroundMusic] Music system initialized');
+        // console.log('[useBackgroundMusic] Music system initialization command sent');
 
         // Auto-start si demandé
         if (autoStart) {
+          // console.log('[useBackgroundMusic] Auto-starting music...');
           await manager.start();
           setIsPlaying(true);
         }
       } catch (error) {
         console.error('[useBackgroundMusic] Initialization error:', error);
-        onError?.(error instanceof Error ? error : new Error(String(error)));
+        isInitializedRef.current = false; // Permettre une nouvelle tentative
+        onErrorRef.current?.(error instanceof Error ? error : new Error(String(error)));
       }
     };
 
     initMusic();
-
-    // Cleanup
-    return () => {
-      // Note: On ne fait pas stop() ici car le hook peut être démonté/rémonté
-      // L'arrêt doit être explicite via la fonction stop()
-    };
-  }, [isReady, autoStart, volume, onTrackChange, onError]);
+  }, [isReady, autoStart, volume]); // Primitives uniquement
 
   // Démarrer la musique
   const start = useCallback(async () => {
-    if (!isReady) {
-      console.warn('[useBackgroundMusic] Cannot start: not ready');
-      return;
-    }
+    // console.log(`[useBackgroundMusic] start() called. isReady: ${isReady}`);
 
     try {
+      // console.log('[useBackgroundMusic] 🚀 [FORCE_START] Requesting MusicManager to start playback');
       await MusicManager.start();
       setIsPlaying(true);
     } catch (error) {

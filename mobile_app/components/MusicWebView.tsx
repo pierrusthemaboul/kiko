@@ -27,30 +27,13 @@ interface Props {
 const MusicWebView = forwardRef<MusicWebViewRef, Props>(({ onReady, onTrackChange, onStopped }, ref) => {
   const webViewRef = useRef<WebView>(null);
   const [isReady, setIsReady] = useState(false);
-  const [musicAssets, setMusicAssets] = useState<MusicAssets | null>(null);
 
-  // Charger les assets au montage
+  // Notifier le parent quand la WebView est prête (après INIT réussi)
   React.useEffect(() => {
-    const loadAssets = async () => {
-      const assets = await MusicManager.loadMusicAssets();
-      setMusicAssets(assets);
-    };
-    loadAssets();
-  }, []);
-
-  // Configurer le callback du MusicManager
-  React.useEffect(() => {
-    if (isReady) {
-      MusicManager.setSendCommandCallback((command) => {
-        sendCommandToWebView(command);
-      });
-
-      // Initialiser si les assets sont déjà chargés
-      if (musicAssets) {
-        MusicManager.initialize(musicAssets).catch(() => {});
-      }
+    if (isReady && onReady) {
+      onReady();
     }
-  }, [isReady, musicAssets]);
+  }, [isReady, onReady]);
 
   const sendCommandToWebView = useCallback((command: MusicCommand) => {
     if (webViewRef.current && isReady) {
@@ -70,18 +53,20 @@ const MusicWebView = forwardRef<MusicWebViewRef, Props>(({ onReady, onTrackChang
       switch (data.type) {
         case 'ready':
           setIsReady(true);
-          onReady?.();
           break;
         case 'trackChanged':
           MusicManager.notifyTrackChanged(data.trackName);
           onTrackChange?.(data.trackName);
+          break;
+        case 'initDone':
+          MusicManager.notifyInitDone();
           break;
         case 'stopped':
           MusicManager.notifyStopped();
           onStopped?.();
           break;
         case 'log':
-          console.log('[MusicWebView]', data.message);
+          // console.log('[MusicWebView]', data.message);
           break;
         case 'error':
           console.error('[MusicWebView]', data.message);
@@ -92,9 +77,7 @@ const MusicWebView = forwardRef<MusicWebViewRef, Props>(({ onReady, onTrackChang
     }
   }, [onReady, onTrackChange, onStopped]);
 
-  if (!musicAssets) return null;
-
-  const htmlContent = `
+  const htmlContent = React.useMemo(() => `
     <!DOCTYPE html>
     <html>
     <head>
@@ -118,7 +101,7 @@ const MusicWebView = forwardRef<MusicWebViewRef, Props>(({ onReady, onTrackChang
           let crossfadeDuration = 2; // secondes
           let trackEndTimeout = null;
 
-          const TRACK_NAMES = ['bg_track_1', 'bg_track_2', 'bg_track_3'];
+          const TRACK_NAMES = ['The_Shepherd_s_Rest', 'Prayer_in_the_Courtyard', 'Vespers_for_a_Fallen_Realm'];
 
           // Initialiser les pistes
           async function init(audioAssets, volume) {
@@ -141,7 +124,8 @@ const MusicWebView = forwardRef<MusicWebViewRef, Props>(({ onReady, onTrackChang
                 }
               }
 
-              log('Initialized with ' + Object.keys(tracks).length + ' tracks');
+              // log('Initialized with ' + Object.keys(tracks).length + ' tracks');
+              window.ReactNativeWebView?.postMessage(JSON.stringify({ type: 'initDone' }));
               return true;
             } catch (e) {
               error('Init failed: ' + e.message);
@@ -160,97 +144,119 @@ const MusicWebView = forwardRef<MusicWebViewRef, Props>(({ onReady, onTrackChang
             return pool[Math.floor(Math.random() * pool.length)];
           }
 
-          async function start() {
-            if (!audioContext || isPlaying) return;
-
-            // Reprendre le contexte si suspendu
-            if (audioContext.state === 'suspended') {
-              await audioContext.resume();
+          async function unlockAudioContext() {
+            if (!audioContext) return;
+            // log('Unlocking AudioContext. Current state: ' + audioContext.state);
+            
+            if (audioContext.state === 'suspended' || audioContext.state === 'interrupted') {
+              try {
+                await audioContext.resume();
+                // Créer un buffer silencieux pour forcer le hardware à s'activer sur certains mobiles
+                const buffer = audioContext.createBuffer(1, 1, 22050);
+                const source = audioContext.createBufferSource();
+                source.buffer = buffer;
+                source.connect(audioContext.destination);
+                source.start(0);
+                // log('Unlock successful, new state: ' + audioContext.state);
+              } catch (e) {
+                error('Unlock failed: ' + e.message);
+              }
             }
+          }
+
+          async function start() {
+            // log('Starting playback engine...');
+            if (!audioContext) {
+              error('Cannot start: audioContext is null');
+              return;
+            }
+            
+            if (isPlaying) {
+              // log('Playback already in progress, skipping start');
+              return;
+            }
+
+            // "Brute Force" Resume pour Android
+            await unlockAudioContext();
 
             isPlaying = true;
             const trackName = selectRandomTrack();
             if (trackName) {
+              // log('Selected initial track: ' + trackName);
               lastPlayedTrack = trackName;
               playTrack(trackName);
               notifyTrackChanged(trackName);
+            } else {
+              error('No tracks available to play');
+              isPlaying = false;
             }
           }
 
           function playTrack(trackName, crossfade = false) {
+            // log('playTrack called for: ' + trackName + ' (crossfade: ' + crossfade + ')');
             const buffer = tracks[trackName];
-            if (!buffer || !audioContext) return;
-
-            const duration = buffer.duration;
-
-            if (crossfade && currentSource && currentGain) {
-              // Crossfade
-              const fadeTime = Math.min(crossfadeDuration, duration * 0.5);
-              const currentTime = audioContext.currentTime;
-
-              // Créer la nouvelle source
-              const newSource = audioContext.createBufferSource();
-              newSource.buffer = buffer;
-              newSource.loop = false;
-
-              const newGain = audioContext.createGain();
-              newGain.gain.setValueAtTime(0, currentTime);
-              newGain.gain.linearRampToValueAtTime(currentVolume, currentTime + fadeTime);
-
-              newSource.connect(newGain);
-              newGain.connect(audioContext.destination);
-
-              // Fade out de l'ancienne
-              currentGain.gain.cancelScheduledValues(currentTime);
-              currentGain.gain.setValueAtTime(currentGain.gain.value, currentTime);
-              currentGain.gain.linearRampToValueAtTime(0, currentTime + fadeTime);
-
-              // Arrêter l'ancienne source après le fade
-              setTimeout(() => {
-                if (currentSource) {
-                  try { currentSource.stop(); } catch {}
-                }
-              }, fadeTime * 1000);
-
-              // Mettre à jour les références
-              currentSource = newSource;
-              currentGain = newGain;
-            } else {
-              // Première lecture ou pas de crossfade
-              stopCurrentSource();
-
-              currentSource = audioContext.createBufferSource();
-              currentSource.buffer = buffer;
-              currentSource.loop = false;
-
-              currentGain = audioContext.createGain();
-              currentGain.gain.value = currentVolume;
-
-              currentSource.connect(currentGain);
-              currentGain.connect(audioContext.destination);
-
-              currentSource.start(0);
+            if (!buffer) {
+              error('Buffer not found for track: ' + trackName);
+              return;
+            }
+            if (!audioContext) {
+              error('audioContext is null in playTrack');
+              return;
             }
 
-            // Configurer le prochain morceau
-            if (trackEndTimeout) clearTimeout(trackEndTimeout);
-            trackEndTimeout = setTimeout(() => {
-              if (isPlaying) {
-                const nextTrack = selectRandomTrack();
-                if (nextTrack) {
-                  lastPlayedTrack = nextTrack;
-                  playTrack(nextTrack, true);
-                  notifyTrackChanged(nextTrack);
-                }
-              }
-            }, (duration - crossfadeDuration) * 1000);
+            const duration = buffer.duration;
+            // log('Track duration: ' + duration + 's | Vol: ' + currentVolume);
 
-            log('Playing: ' + trackName);
+            // STOP AND START DIRECTLY (Ultra stable)
+            stopCurrentSource();
+
+            currentSource = audioContext.createBufferSource();
+            currentSource.buffer = buffer;
+            currentSource.loop = false;
+
+            currentGain = audioContext.createGain();
+            currentGain.gain.value = currentVolume;
+
+            currentSource.connect(currentGain);
+            currentGain.connect(audioContext.destination);
+
+            currentSource.start(0);
+            // log('Direct source started for: ' + trackName);
+
+            // 🏁 Événement natif de fin de morceau : LE SEUL FIABLE SUR ANDROID
+            currentSource.onended = () => {
+              const nextTrack = selectRandomTrack();
+              // log('🏁 Track finished: ' + trackName + '. Next candidate: ' + nextTrack);
+              if (isPlaying) {
+                // log('⏭️ Automatically starting next track...');
+                audioContext.resume().then(() => {
+                  setTimeout(() => {
+                    if (isPlaying && nextTrack) {
+                      lastPlayedTrack = nextTrack;
+                      playTrack(nextTrack, true);
+                      notifyTrackChanged(nextTrack);
+                    }
+                  }, 100);
+                });
+              }
+            };
+
+            // On retire le setTimeout fragile
+            if (trackEndTimeout) {
+              clearTimeout(trackEndTimeout);
+              trackEndTimeout = null;
+            }
+
+            // log('Playing: ' + trackName);
           }
 
           function stopCurrentSource() {
             if (currentSource) {
-              try { currentSource.stop(); } catch {}
+              try { 
+                // IMPORTANT : On retire le callback avant de stopper pour éviter la boucle infinie
+                currentSource.onended = null;
+                currentSource.stop(); 
+              } catch {}
               try { currentSource.disconnect(); } catch {}
               currentSource = null;
             }
@@ -273,20 +279,19 @@ const MusicWebView = forwardRef<MusicWebViewRef, Props>(({ onReady, onTrackChang
               audioContext = null;
             }
             notifyStopped();
-            log('Stopped');
+            // log('Stopped');
           }
 
           function pause() {
             if (audioContext && audioContext.state === 'running') {
               audioContext.suspend();
-              log('Paused');
+              // log('Paused');
             }
           }
 
           function resume() {
-            if (audioContext && audioContext.state === 'suspended') {
-              audioContext.resume();
-              log('Resumed');
+            if (audioContext) {
+              unlockAudioContext();
             }
           }
 
@@ -295,7 +300,7 @@ const MusicWebView = forwardRef<MusicWebViewRef, Props>(({ onReady, onTrackChang
             if (currentGain) {
               currentGain.gain.setValueAtTime(currentVolume, audioContext?.currentTime || 0);
             }
-            log('Volume set to: ' + currentVolume);
+            // log('Volume set to: ' + currentVolume);
           }
 
           function log(msg) {
@@ -316,13 +321,25 @@ const MusicWebView = forwardRef<MusicWebViewRef, Props>(({ onReady, onTrackChang
 
           // Exposer la fonction de commande
           window.handleMusicCommand = function(command) {
+            // log('Received command: ' + command.type);
             switch (command.type) {
               case 'INIT':
-                init(command.tracks, command.volume).then(() => {
-                  window.ReactNativeWebView?.postMessage(JSON.stringify({ type: 'ready' }));
+                init(command.tracks, command.volume).then((success) => {
+                  if (success) {
+                    // log('INIT Success - Initialized with ' + Object.keys(tracks).length + ' tracks');
+                  } else {
+                    error('INIT Failed');
+                  }
                 });
                 break;
               case 'START':
+                // log('START command - Current state: isPlaying=' + isPlaying + ', context=' + (audioContext ? audioContext.state : 'null'));
+                // Si on force un start alors qu'on pense déjà jouer, on arrête d'abord
+                if (isPlaying) {
+                  // log('Already playing, stopping first to restart');
+                  stopCurrentSource();
+                  isPlaying = false;
+                }
                 start();
                 break;
               case 'STOP':
@@ -340,19 +357,22 @@ const MusicWebView = forwardRef<MusicWebViewRef, Props>(({ onReady, onTrackChang
             }
           };
 
-          // Notifier que le script est chargé
-          log('Music WebView script loaded');
+          // Notifier que le script est chargé et prêt à recevoir des commandes
+          // log('Music WebView script loaded');
+          window.ReactNativeWebView?.postMessage(JSON.stringify({ type: 'ready' }));
         })();
       </script>
     </body>
     </html>
-  `;
+  `, []);
+
+  const webViewSource = React.useMemo(() => ({ html: htmlContent }), [htmlContent]);
 
   return (
     <View style={styles.container}>
       <WebView
         ref={webViewRef}
-        source={{ html: htmlContent }}
+        source={webViewSource}
         style={styles.hidden}
         pointerEvents="none"
         onMessage={handleMessage}

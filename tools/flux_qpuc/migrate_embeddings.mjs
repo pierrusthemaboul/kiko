@@ -33,7 +33,9 @@ async function migrateAll() {
   try {
     // 1. PRODUCTION
     console.log('📡 Lecture de la table production (evenements)...');
-    const events = await fetchAll('evenements', 'id, titre', 'embedding_vocal');
+    // On récupère tous les événements pour s'assurer qu'ils ont un embedding dans le sidecar
+    const { data: events, error: fetchErr } = await supabase.from('evenements').select('id, titre');
+    if (fetchErr) throw fetchErr;
     console.log(`📊 ${events.length} événements de production trouvés.`);
 
     for (let i = 0; i < events.length; i += 20) {
@@ -42,7 +44,12 @@ async function migrateAll() {
        try {
          await Promise.all(batch.map(async (ev) => {
             const res = await openai.embeddings.create({ model: "text-embedding-3-small", input: ev.titre });
-            const { error: updErr } = await supabase.from('evenements').update({ embedding_vocal: res.data[0].embedding }).eq('id', ev.id);
+            const { error: updErr } = await supabase.from('evenements_embeddings').upsert({ 
+                id: ev.id, 
+                embedding_1536: res.data[0].embedding,
+                source_type: 'titre',
+                model_name: 'text-embedding-3-small'
+            }, { onConflict: 'id, source_type' });
             if (updErr) throw updErr;
          }));
        } catch (e) {
