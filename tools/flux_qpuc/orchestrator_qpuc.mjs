@@ -66,10 +66,16 @@ async function startFluxQpucSingleBatch({ targetCount = 5, mode = 'qpuc', theme 
     }
 
     // Protection contre les boucles infinies sur des thèmes épuisés
-    if (consecutiveEmptyCycles > 10) {
-        log("⚠️ Thème épuisé ou trop de doublons. Changement de stratégie...");
-        consecutiveEmptyCycles = 0;
-        await new Promise(resolve => setTimeout(resolve, 2000));
+    if (consecutiveEmptyCycles >= 5) {
+        if (mode === 'manual') {
+            log(`\n🚨 [ÉPUISÉ] J'ai fouillé tous les recoins de Wikipédia pour "${currentTheme}" et je ne trouve plus d'événements originaux validés.`);
+            log(`🏁 Arrêt prématuré pour éviter de consommer tes crédits inutilement.`);
+            return;
+        } else {
+            log(`\n🔄 Thème "${currentTheme}" semble épuisé. Je change de sujet...`);
+            consecutiveEmptyCycles = 0;
+            await new Promise(resolve => setTimeout(resolve, 1500));
+        }
     }
 
     const currentTheme = qpucThemes[Math.floor(Math.random() * qpucThemes.length)];
@@ -92,6 +98,7 @@ async function startFluxQpucSingleBatch({ targetCount = 5, mode = 'qpuc', theme 
     } catch (e) { console.error("Erreur lecture archive locale:", e.message); }
 
     const archivedTitles = new Set(localArchive.map(a => (a.titre || "").toLowerCase().trim()));
+    let addedInThisCycle = 0;
 
     for (const cand of candidates) {
         if (abortSignal?.aborted) return;
@@ -146,6 +153,7 @@ async function startFluxQpucSingleBatch({ targetCount = 5, mode = 'qpuc', theme 
           log(`   ❌ Erreur Supabase: ${error.message}`);
        } else {
           addedCount++;
+          addedInThisCycle++;
           consecutiveEmptyCycles = 0;
           if (onEventFound) onEventFound(eventData);
           log(`   ✨ (${addedCount}/${targetCount}) OK.`);
@@ -163,6 +171,10 @@ async function startFluxQpucSingleBatch({ targetCount = 5, mode = 'qpuc', theme 
              console.error("⚠️ Erreur archivage:", archErr.message);
           }
        }
+    }
+
+    if (addedInThisCycle === 0) {
+        consecutiveEmptyCycles++;
     }
 
     // Petite pause pour laisser l'event loop respirer et traiter les requêtes de STOP
