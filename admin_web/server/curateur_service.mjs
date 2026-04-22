@@ -6,15 +6,29 @@ import 'dotenv/config';
 const app = express();
 
 // Configuration CORS complète pour éviter le NetworkError
+const allowedOrigins = [
+  'http://localhost:5173',
+  'http://localhost:4173',
+  'https://adminweb-ruddy.vercel.app'
+];
+
 app.use(cors({
-  origin: '*', // Accepter tout en local
+  origin: (origin, callback) => {
+    // Autoriser les requêtes sans origine (comme les outils locaux ou curl)
+    if (!origin) return callback(null, true);
+    if (allowedOrigins.indexOf(origin) !== -1 || origin.endsWith('.vercel.app')) {
+      callback(null, true);
+    } else {
+      callback(new Error('Non autorisé par CORS'));
+    }
+  },
   methods: ['GET', 'POST'],
   allowedHeaders: ['Content-Type']
 }));
 
 app.use(express.json());
 
-const PORT = 3010; // On change car 3005 a peut-être un conflit.
+const PORT = process.env.PORT || 3010; // On change car 3005 a peut-être un conflit.
 
 app.post('/api/curateur/rafale', async (req, res) => {
   const { quantity = 10, mode = 'qpuc', theme } = req.body;

@@ -152,9 +152,12 @@ const AdminOptionsPage: React.FC = () => {
     };
 
     try {
-      addLog("📡 Appel du cerveau local (localhost:3010)...", "info");
+      const envUrl = import.meta.env.VITE_CURATEUR_URL;
+      const baseUrl = envUrl ? envUrl.replace(/\/$/, '') : 'http://localhost:3010';
       
-      const response = await fetch('http://localhost:3010/api/curateur/rafale', {
+      addLog(`📡 Appel du cerveau (${baseUrl})...`, "info");
+      
+      const response = await fetch(`${baseUrl}/api/curateur/rafale`, {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify({ 

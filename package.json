@@ -36,6 +36,7 @@
     "remote": "node scripts/maintenance/remote_listener.mjs",
     "ai-bridge": "node scripts/maintenance/ai_bridge.mjs",
     "admin-api": "node api/admin-backend.js",
+    "curateur-api": "node admin_web/server/curateur_service.mjs",
     "start:usb": "adb reverse tcp:8081 tcp:8081 && npm run start:usb --prefix mobile_app"
   },
   "dependencies": {

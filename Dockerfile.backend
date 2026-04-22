@@ -1,0 +1,23 @@
+FROM node:20-slim
+
+WORKDIR /app
+
+# Copy package files from root and admin_web
+COPY package*.json ./
+COPY admin_web/package*.json ./admin_web/
+
+# Install dependencies (from root and admin_web)
+RUN npm install
+RUN cd admin_web && npm install
+
+# Copy necessary directories
+COPY tools ./tools
+COPY data ./data
+COPY admin_web/server ./admin_web/server
+COPY .env ./
+
+# Expose the port used by curateur_service.mjs
+EXPOSE 3010
+
+# Command to start the server
+CMD ["node", "admin_web/server/curateur_service.mjs"]
