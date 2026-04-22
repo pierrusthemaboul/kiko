@@ -11,7 +11,16 @@ const __filename = fileURLToPath(import.meta.url);
 const __dirname = path.dirname(__filename);
 dotenv.config({ path: path.join(__dirname, '..', '..', '.env') });
 
-const supabase = createClient(process.env.EXPO_PUBLIC_SUPABASE_URL, process.env.EXPO_PUBLIC_SUPABASE_ANON_KEY);
+const supabaseUrl = process.env.EXPO_PUBLIC_SUPABASE_URL || process.env.SUPABASE_URL || process.env.VITE_SUPABASE_URL;
+const supabaseKey = process.env.EXPO_PUBLIC_SUPABASE_ANON_KEY || process.env.SUPABASE_ANON_KEY || process.env.VITE_SUPABASE_ANON_KEY;
+
+if (!supabaseUrl) {
+  console.error("❌ [CRITIQUE] supabaseUrl est requis ! Vérifiez vos variables d'environnement (SUPABASE_URL, VITE_SUPABASE_URL ou EXPO_PUBLIC_SUPABASE_URL)");
+} else {
+  console.log(`🔗 [INIT] Connexion Supabase à : ${supabaseUrl.substring(0, 25)}...`);
+}
+
+const supabase = createClient(supabaseUrl, supabaseKey);
 const genAI = new GoogleGenerativeAI(process.env.GEMINI_API_KEY);
 
 const SYSTEM_PROMPT = `

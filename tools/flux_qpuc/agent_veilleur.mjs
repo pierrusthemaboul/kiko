@@ -17,7 +17,16 @@ dotenv.config({ path: path.join(__dirname, '..', '..', '.env') });
 const openai = new OpenAI({
   apiKey: process.env.OPENAI_API_KEY,
 });
-const supabase = createClient(process.env.EXPO_PUBLIC_SUPABASE_URL, process.env.EXPO_PUBLIC_SUPABASE_ANON_KEY);
+const supabaseUrl = process.env.EXPO_PUBLIC_SUPABASE_URL || process.env.SUPABASE_URL || process.env.VITE_SUPABASE_URL;
+const supabaseKey = process.env.EXPO_PUBLIC_SUPABASE_ANON_KEY || process.env.SUPABASE_ANON_KEY || process.env.VITE_SUPABASE_ANON_KEY;
+
+if (!supabaseUrl) {
+  console.error("❌ [CRITIQUE] supabaseUrl est requis ! (Agent Veilleur)");
+} else {
+  console.log(`🔗 [VEILLEUR] Connexion Supabase à : ${supabaseUrl.substring(0, 25)}...`);
+}
+
+const supabase = createClient(supabaseUrl, supabaseKey);
 
 async function generateEmbedding(text) {
   try {
