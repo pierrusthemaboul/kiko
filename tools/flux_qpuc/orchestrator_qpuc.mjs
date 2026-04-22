@@ -70,6 +70,16 @@ async function startFluxQpucSingleBatch({ targetCount = 5, mode = 'qpuc', theme 
 
     const candidates = await findEventsForTheme(currentTheme, 8);
     
+    // Chargement de la mémoire locale pour éviter de recalculer ce qu'on a déjà traité/tenté
+    let localArchive = [];
+    try {
+        if (fs.existsSync(ARCHIVE_PATH)) {
+            localArchive = JSON.parse(fs.readFileSync(ARCHIVE_PATH, 'utf8'));
+        }
+    } catch (e) { console.error("Erreur lecture archive locale:", e.message); }
+
+    const archivedTitles = new Set(localArchive.map(a => a.titre.toLowerCase().trim()));
+
     for (const cand of candidates) {
         if (abortSignal?.aborted) {
             log("🛑 Processus interrompu par l'utilisateur.");
@@ -77,6 +87,12 @@ async function startFluxQpucSingleBatch({ targetCount = 5, mode = 'qpuc', theme 
         }
 
        if (addedCount >= targetCount) break;
+
+       // 0. MÉMOIRE LOCALE : Skip immédiat si déjà dans l'archive JSON
+       if (archivedTitles.has(cand.titre.toLowerCase().trim())) {
+           log(`   ⏭️  MÉMOIRE : "${cand.titre}" déjà traité par le passé. Skip.`);
+           continue;
+       }
 
         log(`🔍 Analyse de "${cand.titre}" (${cand.year})...`);
         const { consensus, status, finalYear } = await tripleVerification(cand.titre, cand.year);
