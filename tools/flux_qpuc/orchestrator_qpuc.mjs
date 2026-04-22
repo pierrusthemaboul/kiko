@@ -57,20 +57,33 @@ async function startFluxQpucSingleBatch({ targetCount = 5, mode = 'qpuc', theme 
   }
 
   let addedCount = 0;
+  let consecutiveEmptyCycles = 0;
+
   while (addedCount < targetCount) {
     if (abortSignal?.aborted) {
-        log("🛑 Processus interrompu par l'utilisateur.");
+        log("🛑 [STOP] Interruption détectée. Arrêt immédiat de l'orchestrateur.");
         return;
+    }
+
+    // Protection contre les boucles infinies sur des thèmes épuisés
+    if (consecutiveEmptyCycles > 10) {
+        log("⚠️ Thème épuisé ou trop de doublons. Changement de stratégie...");
+        consecutiveEmptyCycles = 0;
+        await new Promise(resolve => setTimeout(resolve, 2000));
     }
 
     const currentTheme = qpucThemes[Math.floor(Math.random() * qpucThemes.length)];
     log(`\n🎫 THÈME DU CYCLE : "${currentTheme}"`);
 
-    await new Promise(resolve => setTimeout(resolve, 1000));
-
+    if (abortSignal?.aborted) return;
     const candidates = await findEventsForTheme(currentTheme, 8);
     
-    // Chargement de la mémoire locale pour éviter de recalculer ce qu'on a déjà traité/tenté
+    if (!candidates || candidates.length === 0) {
+        consecutiveEmptyCycles++;
+        continue;
+    }
+
+    // Chargement de la mémoire locale
     let localArchive = [];
     try {
         if (fs.existsSync(ARCHIVE_PATH)) {
@@ -78,30 +91,28 @@ async function startFluxQpucSingleBatch({ targetCount = 5, mode = 'qpuc', theme 
         }
     } catch (e) { console.error("Erreur lecture archive locale:", e.message); }
 
-    const archivedTitles = new Set(localArchive.map(a => a.titre.toLowerCase().trim()));
+    const archivedTitles = new Set(localArchive.map(a => (a.titre || "").toLowerCase().trim()));
 
     for (const cand of candidates) {
-        if (abortSignal?.aborted) {
-            log("🛑 Processus interrompu par l'utilisateur.");
-            return;
-        }
+        if (abortSignal?.aborted) return;
+        if (addedCount >= targetCount) break;
 
-       if (addedCount >= targetCount) break;
-
-       // 0. MÉMOIRE LOCALE : Skip immédiat si déjà dans l'archive JSON
+       // 0. MÉMOIRE LOCALE
        if (archivedTitles.has(cand.titre.toLowerCase().trim())) {
-           log(`   ⏭️  MÉMOIRE : "${cand.titre}" déjà traité par le passé. Skip.`);
+           log(`   ⏭️  MÉMOIRE : "${cand.titre}" déjà traité. Skip.`);
            continue;
        }
 
+        if (abortSignal?.aborted) return;
         log(`🔍 Analyse de "${cand.titre}" (${cand.year})...`);
         const { consensus, status, finalYear } = await tripleVerification(cand.titre, cand.year);
 
         if (!consensus || !finalYear || finalYear < 1) {
-           log(`   ❌ SKIP : Non confirmé par l'audit aveugle.`);
+           log(`   ❌ SKIP : Non confirmé par l'audit.`);
            continue;
         }
 
+       if (abortSignal?.aborted) return;
        const isoDate = `${finalYear.toString().padStart(4, '0')}-01-01`;
        const isDuplicate = await checkDuplicates(cand.titre, cand.description, isoDate);
 
@@ -110,12 +121,11 @@ async function startFluxQpucSingleBatch({ targetCount = 5, mode = 'qpuc', theme 
           continue;
        }
 
+       if (abortSignal?.aborted) return;
        const embedding = await generateEmbedding(cand.titre);
-
-       log(`   ⚖️ Évaluation de la notoriété FR...`);
        const scoreNotoriete = await calculateNotorietyFR(cand.titre);
 
-       log(`   💾 INSERTION SAS : "${cand.titre}" (${finalYear}) | Score: ${scoreNotoriete}`);
+       log(`   💾 INSERTION SAS : "${cand.titre}" (${finalYear})`);
        
        const cleanWikidataId = (cand.wikidata_id && cand.wikidata_id !== "N/A" && cand.wikidata_id !== "") ? cand.wikidata_id : null;
        
@@ -136,10 +146,10 @@ async function startFluxQpucSingleBatch({ targetCount = 5, mode = 'qpuc', theme 
           log(`   ❌ Erreur Supabase: ${error.message}`);
        } else {
           addedCount++;
+          consecutiveEmptyCycles = 0;
           if (onEventFound) onEventFound(eventData);
           log(`   ✨ (${addedCount}/${targetCount}) OK.`);
           
-          // Archivage Local
           try {
              const archive = fs.existsSync(ARCHIVE_PATH) ? JSON.parse(fs.readFileSync(ARCHIVE_PATH, 'utf8')) : [];
              archive.push({
@@ -154,6 +164,9 @@ async function startFluxQpucSingleBatch({ targetCount = 5, mode = 'qpuc', theme 
           }
        }
     }
+
+    // Petite pause pour laisser l'event loop respirer et traiter les requêtes de STOP
+    await new Promise(resolve => setTimeout(resolve, 1000));
   }
 
   log(`🏁 FLUX TERMINÉ : ${addedCount} nouveaux événements.`);
