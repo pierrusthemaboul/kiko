@@ -8,6 +8,7 @@ console.log(Object.keys(process.env).sort().join(', '));
 console.log("--------------------------------------------------\n");
 
 const app = express();
+const PORT = process.env.PORT || 3010;
 
 // Configuration CORS complète pour éviter le NetworkError
 const allowedOrigins = [
