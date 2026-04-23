@@ -122,7 +122,9 @@ async function startFluxQpucSingleBatch({ targetCount = 5, mode = 'qpuc', theme 
 
        if (abortSignal?.aborted) return;
        const isoDate = `${finalYear.toString().padStart(4, '0')}-01-01`;
-       const isDuplicate = await checkDuplicates(cand.titre, cand.description, isoDate);
+       
+       // Le veilleur génère maintenant l'embedding et nous le renvoie pour économiser un appel API
+       const { isDuplicate, embedding } = await checkDuplicates(cand.titre, cand.description, isoDate);
 
        if (isDuplicate) {
           log(`   ⏭️  PASSAGE : Doublon détecté.`);
@@ -130,7 +132,6 @@ async function startFluxQpucSingleBatch({ targetCount = 5, mode = 'qpuc', theme 
        }
 
        if (abortSignal?.aborted) return;
-       const embedding = await generateEmbedding(cand.titre);
        const scoreNotoriete = await calculateNotorietyFR(cand.titre);
 
        log(`   💾 INSERTION SAS : "${cand.titre}" (${finalYear})`);
@@ -144,7 +145,7 @@ async function startFluxQpucSingleBatch({ targetCount = 5, mode = 'qpuc', theme 
            wikidata_id: cleanWikidataId,
            theme: currentTheme,
            statut: 'A_HABILLER',
-           embedding: embedding,
+           embedding: embedding, // Réutilisation de l'embedding déjà calculé
            notoriete_fr: scoreNotoriete
         };
 

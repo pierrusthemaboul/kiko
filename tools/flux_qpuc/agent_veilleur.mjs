@@ -47,76 +47,70 @@ async function generateEmbedding(text) {
 async function checkDuplicates(titre, description, date) {
     console.log(`🕶️ [VEILLEUR] Recherche sémantique pour "${titre}"...`);
     
-    // 1. Génération de l'embedding pour le nouvel événement (TITRE UNIQUEMENT pour la robustesse)
-    const embedding = await generateEmbedding(titre);
-    if (!embedding) {
-        console.log("⚠️ [VEILLEUR] Impossible de générer l'embedding, passage au doublon sémantique désactivé.");
-        return false;
-    }
-
     try {
-        // 2. Recherche vectorielle dans PRODUCTION (via match_evenements_by_titre)
-        const { data: similarProd, error: prodError } = await supabase
-            .rpc('match_evenements_by_titre', {
-                query_embedding: embedding,
-                match_threshold: 0.85,
-                match_count: 3
-            });
-        
-        if (prodError) {
-            console.error(`❌ Erreur Veilleur (Production Search): ${prodError.message}`);
-        } else if (similarProd && similarProd.length > 0) {
-            const bestMatch = similarProd[0];
-            // On récupère le titre pour le log (puisque match_evenements_by_titre ne renvoie que l'ID et similarity)
-            const { data: eventData } = await supabase
-                .from('evenements')
-                .select('titre')
-                .eq('id', bestMatch.id)
-                .single();
+        // 1. Génération des embeddings
+        const embeddingTitle = await generateEmbedding(titre);
+        const combinedText = `${titre}: ${description}`;
+        const embeddingCombined = await generateEmbedding(combinedText);
 
-            const matchTitre = eventData ? eventData.titre : bestMatch.id;
-            console.log(`🚩 [DOUBLON PRODUCTION] "${titre}" ressemble à "${matchTitre}" (Score: ${(bestMatch.similarity || 0).toFixed(3)})`);
-            return true;
+        if (!embeddingTitle || !embeddingCombined) {
+            console.log("⚠️ [VEILLEUR] Impossible de générer les embeddings, passage au doublon sémantique désactivé.");
+            return { isDuplicate: false, embedding: null };
         }
 
-        // 3. Recherche vectorielle dans SAS (via match_sas)
+        // --- CHECK 1: PRODUCTION (Sidecar) ---
+        
+        // A. Par Titre
+        const { data: similarProdTitre, error: prodTitreError } = await supabase
+            .rpc('match_evenements_by_titre', {
+                query_embedding: embeddingTitle,
+                match_threshold: 0.70,
+                match_count: 1
+            });
+
+        if (similarProdTitre?.length > 0) {
+            const match = similarProdTitre[0];
+            const { data: event } = await supabase.from('evenements').select('titre').eq('id', match.id).single();
+            console.log(`🚩 [DOUBLON PRODUCTION TITRE] "${titre}" ressemble à "${event?.titre || match.id}" (Score: ${match.similarity.toFixed(3)})`);
+            return { isDuplicate: true, embedding: embeddingTitle };
+        }
+
+        // B. Par Titre + Description (Plus précis pour les synonymes comme Mort/Exécution)
+        const { data: similarProdCombined, error: prodCombinedError } = await supabase
+            .rpc('match_evenements_by_titre_description', {
+                query_embedding: embeddingCombined,
+                match_threshold: 0.75,
+                match_count: 1
+            });
+
+        if (similarProdCombined?.length > 0) {
+            const match = similarProdCombined[0];
+            const { data: event } = await supabase.from('evenements').select('titre').eq('id', match.id).single();
+            console.log(`🚩 [DOUBLON PRODUCTION CONTEXTE] "${titre}" match avec "${event?.titre || match.id}" via description (Score: ${match.similarity.toFixed(3)})`);
+            return { isDuplicate: true, embedding: embeddingTitle };
+        }
+
+        // --- CHECK 2: SAS (Staging) ---
+        
         const { data: similarSas, error: sasError } = await supabase
             .rpc('match_sas', {
-                query_embedding: embedding,
-                match_threshold: 0.85,
-                match_count: 3
+                query_embedding: embeddingTitle,
+                match_threshold: 0.70,
+                match_count: 1
             });
 
-        if (sasError) {
-            console.error(`❌ Erreur Veilleur (SAS Search): ${sasError.message}`);
-        } else if (similarSas && similarSas.length > 0) {
-            const bestMatch = similarSas[0];
-            console.log(`🚩 [DOUBLON SAS] "${titre}" ressemble à "${bestMatch.titre}" (Score: ${(bestMatch.similarity || 0).toFixed(3)})`);
-            return true;
+        if (similarSas?.length > 0) {
+            console.log(`🚩 [DOUBLON SAS] "${titre}" déjà présent dans le SAS (Score: ${similarSas[0].similarity.toFixed(3)})`);
+            return { isDuplicate: true, embedding: embeddingTitle };
         }
 
-        // 4. Recherche vectorielle dans SAS_TEST (via match_sas_test)
-        const { data: similarSasTest, error: sasTestError } = await supabase
-            .rpc('match_sas_test', {
-                query_embedding: embedding,
-                match_threshold: 0.85,
-                match_count: 3
-            });
-
-        if (sasTestError) {
-            console.error(`❌ Erreur Veilleur (SAS_TEST Search): ${sasTestError.message}`);
-        } else if (similarSasTest && similarSasTest.length > 0) {
-            const bestMatch = similarSasTest[0];
-            console.log(`🚩 [DOUBLON SAS_TEST] "${titre}" ressemble à "${bestMatch.titre}" (Score: ${(bestMatch.similarity || 0).toFixed(3)})`);
-            return true;
-        }
-
-        console.log(`✅ [VEILLEUR] Aucun doublon critique trouvé.`);
-        return false;
-    } catch (err) {
-        console.error("❌ Erreur Critique Veilleur:", err.message);
-        throw err;
+        console.log(`✅ [VEILLEUR] Aucun doublon critique trouvé pour "${titre}".`);
+        return { isDuplicate: false, embedding: embeddingTitle };
+    } catch (error) {
+        console.error("❌ [VEILLEUR] Erreur lors de la vérification des doublons:", error);
+        return { isDuplicate: false, embedding: null };
     }
+
 }
 
 // Fonction pour calculer la similarité cosine

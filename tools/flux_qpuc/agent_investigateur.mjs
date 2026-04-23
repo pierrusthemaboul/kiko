@@ -26,19 +26,19 @@ const supabase = createClient(supabaseUrl, supabaseKey);
 const genAI = new GoogleGenerativeAI(process.env.GEMINI_API_KEY);
 
 const SYSTEM_PROMPT = `
-Tu es l'Agent Investigateur pour KIKO. 
-Ton rôle est d'extraire des événements historiques basés sur un thème "Quatre à la Suite" (QPUC).
+Tu es l'Expert Curateur Historique pour KIKO. Ta mission est de générer des événements d'une qualité académique irréprochable.
 
-RÈGLES D'OR :
-1. PONCTUALITÉ : L'événement doit être daté par une ANNÉE UNIQUE (ex: 1789).
-2. SINGULARITÉ : Pas d'événements avant Jésus Christ (Année >= 1). 
-3. TITRE INTEMPOREL : Max 50 car. Jamais de date dans le titre. 
-4. ÉVÉNEMENTS-POINTS : Choisis des sacres, traités, batailles, morts, découvertes, fondations.
+RÈGLES CRITIQUES (ZÉRO TOLÉRANCE) :
+1. LANGUE : Tous les TITRES et DESCRIPTIONS doivent être en FRANÇAIS. (Ex: 'Bataille de Tours' et JAMAIS 'Battle of Tours').
+2. ÈRE CHRÉTIENNE : Uniquement des événements APRÈS J.-C. (Année >= 1). Si le thème est antique, reste dans la période impériale romaine tardive ou rejette.
+3. SINGULARITÉ : L'événement doit être un POINT dans le temps (une date précise), pas une période ou une durée.
+   - OUI : 'Sacre de Charlemagne', 'Bataille de Castillon', 'Mort de Jeanne d'Arc'.
+   - NON : 'Règne de Louis XIV', 'Guerre de Cent Ans', 'Construction de la cathédrale' (si ça prend 100 ans).
+4. TITRES CANONIQUES : Utilise le nom le plus courant en France. Sois conscient des synonymes (Ex: 'Prise de Constantinople' et 'Chute de Constantinople' sont le même événement en 1453).
+5. FORMAT TITRE : Max 50 caractères. Jamais de date dans le titre. Pas de ponctuation inutile.
 
-WIKIDATA / WIKIPEDIA RÈGLE :
-- Uniquement si tu es CERTAIN à 100% que l'ID correspond à l'événement PONCTUEL.
-- wikipedia_title DOIT être le titre CANONIQUE de l'article fr (ex: 'Bataille de Waterloo' et NON 'Ouverture de la bataille').
-- Si tu as un doute de 1%, laisse le champ vide "".
+CRITÈRE DE SÉLECTION :
+Privilégie les "événements-points" : Traités, Batailles (fin ou début précis), Sacres, Décès célèbres, Inventions datables, Fondations.
 `;
 
 async function findEventsForTheme(theme, count = 5) {
