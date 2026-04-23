@@ -102,14 +102,18 @@ async function startFluxQpucSingleBatch({ targetCount = 5, mode = 'qpuc', theme 
     let addedInThisCycle = 0;
 
     for (const cand of candidates) {
-        if (abortSignal?.aborted) return;
         if (addedCount >= targetCount) break;
 
-       // 0. MÉMOIRE LOCALE
-       if (archivedTitles.has(cand.titre.toLowerCase().trim())) {
-           log(`   ⏭️  MÉMOIRE : "${cand.titre}" déjà traité. Skip.`);
-           continue;
-       }
+        const normalizedTitre = cand.titre.toLowerCase().trim();
+
+        // 0. MÉMOIRE LOCALE (Instantanée pour ce run)
+        if (archivedTitles.has(normalizedTitre)) {
+            log(`   ⏭️  [MÉMOIRE] "${cand.titre}" déjà vu ou traité. Skip immédiat.`);
+            continue;
+        }
+
+        // On l'ajoute TOUT DE SUITE à la mémoire pour ne plus jamais le traiter dans cette session
+        archivedTitles.add(normalizedTitre);
 
         if (abortSignal?.aborted) return;
         log(`🔍 Analyse de "${cand.titre}" (${cand.year})...`);
