@@ -74,21 +74,33 @@ async function startFluxQpucSingleBatch({ targetCount = 5, mode = 'qpuc', theme 
       }
   } catch (e) { log(`⚠️ Erreur archive locale: ${e.message}`); }
 
-  // 2. Charger les titres de PRODUCTION (Supabase)
+  // 2. Charger les titres de PRODUCTION (Supabase) - Avec Pagination
   log(`🔗 [MÉMOIRE] Synchronisation avec la base de Production...`);
-  const { data: prodData, error: prodErr } = await supabase.from('evenements').select('titre').range(0, 9999);
-  if (!prodErr && prodData) {
-      prodData.forEach(e => archivedTitles.add(e.titre.toLowerCase().trim()));
-      log(`✅ [MÉMOIRE] ${prodData.length} titres de production synchronisés.`);
+  let fromProd = 0;
+  let totalProd = 0;
+  while (true) {
+      const { data, error } = await supabase.from('evenements').select('titre').range(fromProd, fromProd + 999);
+      if (error || !data || data.length === 0) break;
+      data.forEach(e => archivedTitles.add(e.titre.toLowerCase().trim()));
+      totalProd += data.length;
+      if (data.length < 1000) break;
+      fromProd += 1000;
   }
+  log(`✅ [MÉMOIRE] ${totalProd} titres de production synchronisés.`);
 
-  // 3. Charger les titres du SAS (Supabase)
+  // 3. Charger les titres du SAS (Supabase) - Avec Pagination
   log(`🔗 [MÉMOIRE] Synchronisation avec le SAS...`);
-  const { data: sasData, error: sasErr } = await supabase.from('sas').select('titre').range(0, 9999);
-  if (!sasErr && sasData) {
-      sasData.forEach(e => archivedTitles.add(e.titre.toLowerCase().trim()));
-      log(`✅ [MÉMOIRE] ${sasData.length} titres du SAS synchronisés.`);
+  let fromSas = 0;
+  let totalSas = 0;
+  while (true) {
+      const { data, error } = await supabase.from('sas').select('titre').range(fromSas, fromSas + 999);
+      if (error || !data || data.length === 0) break;
+      data.forEach(e => archivedTitles.add(e.titre.toLowerCase().trim()));
+      totalSas += data.length;
+      if (data.length < 1000) break;
+      fromSas += 1000;
   }
+  log(`✅ [MÉMOIRE] ${totalSas} titres du SAS synchronisés.`);
 
   log(`🚀 [MÉMOIRE PRÊTE] Total : ${archivedTitles.size} événements exclus.`);
 
