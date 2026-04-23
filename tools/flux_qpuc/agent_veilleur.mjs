@@ -64,7 +64,7 @@ async function checkDuplicates(titre, description, date) {
         const { data: similarProdTitre, error: prodTitreError } = await supabase
             .rpc('match_evenements_by_titre', {
                 query_embedding: embeddingTitle,
-                match_threshold: 0.70,
+                match_threshold: 0.65, // Plus sévère (était 0.70)
                 match_count: 1
             });
 
@@ -79,7 +79,7 @@ async function checkDuplicates(titre, description, date) {
         const { data: similarProdCombined, error: prodCombinedError } = await supabase
             .rpc('match_evenements_by_titre_description', {
                 query_embedding: embeddingCombined,
-                match_threshold: 0.75,
+                match_threshold: 0.70, // Plus sévère (était 0.75)
                 match_count: 1
             });
 
@@ -95,7 +95,7 @@ async function checkDuplicates(titre, description, date) {
         const { data: similarSas, error: sasError } = await supabase
             .rpc('match_sas', {
                 query_embedding: embeddingTitle,
-                match_threshold: 0.70,
+                match_threshold: 0.65, // Plus sévère (était 0.70)
                 match_count: 1
             });
 

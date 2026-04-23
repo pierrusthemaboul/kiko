@@ -148,6 +148,22 @@ async function startFluxQpucSingleBatch({ targetCount = 5, mode = 'qpuc', theme 
             continue;
         }
 
+        // 0bis. VÉRIFICATION D'INCLUSION (Pour éviter "Grande Peste" vs "Début de la Grande Peste...")
+        let foundPartial = false;
+        if (normalizedTitre.length > 8) {
+            for (let arch of archivedTitles) {
+                if (arch.includes(normalizedTitre)) {
+                    log(`   ⏭️  [INCLUSION] "${cand.titre}" est déjà couvert par "${arch}". Skip.`);
+                    foundPartial = true;
+                    break;
+                }
+            }
+        }
+        if (foundPartial) {
+            archivedTitles.add(normalizedTitre);
+            continue;
+        }
+
         // On l'ajoute TOUT DE SUITE à la mémoire pour ne plus jamais le traiter dans cette session
         archivedTitles.add(normalizedTitre);
 
