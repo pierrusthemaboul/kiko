@@ -59,6 +59,39 @@ async function startFluxQpucSingleBatch({ targetCount = 5, mode = 'qpuc', theme 
   let addedCount = 0;
   let consecutiveEmptyCycles = 0;
 
+  // --- INITIALISATION DE LA MÉMOIRE (SUPER-SYCHRO) ---
+  const archivedTitles = new Set();
+
+  // 1. Charger l'archive locale JSON (si elle existe)
+  try {
+      if (fs.existsSync(ARCHIVE_PATH)) {
+          const localData = JSON.parse(fs.readFileSync(ARCHIVE_PATH, 'utf8'));
+          localData.forEach(t => {
+            const titre = typeof t === 'string' ? t : (t.titre || "");
+            if (titre) archivedTitles.add(titre.toLowerCase().trim());
+          });
+          log(`📁 [MÉMOIRE] ${archivedTitles.size} titres chargés depuis l'archive locale.`);
+      }
+  } catch (e) { log(`⚠️ Erreur archive locale: ${e.message}`); }
+
+  // 2. Charger les titres de PRODUCTION (Supabase)
+  log(`🔗 [MÉMOIRE] Synchronisation avec la base de Production...`);
+  const { data: prodData, error: prodErr } = await supabase.from('evenements').select('titre');
+  if (!prodErr && prodData) {
+      prodData.forEach(e => archivedTitles.add(e.titre.toLowerCase().trim()));
+      log(`✅ [MÉMOIRE] ${prodData.length} titres de production synchronisés.`);
+  }
+
+  // 3. Charger les titres du SAS (Supabase)
+  log(`🔗 [MÉMOIRE] Synchronisation avec le SAS...`);
+  const { data: sasData, error: sasErr } = await supabase.from('sas').select('titre');
+  if (!sasErr && sasData) {
+      sasData.forEach(e => archivedTitles.add(e.titre.toLowerCase().trim()));
+      log(`✅ [MÉMOIRE] ${sasData.length} titres du SAS synchronisés.`);
+  }
+
+  log(`🚀 [MÉMOIRE PRÊTE] Total : ${archivedTitles.size} événements exclus.`);
+
   while (addedCount < targetCount) {
     if (abortSignal?.aborted) {
         log("🛑 [STOP] Interruption détectée. Arrêt immédiat de l'orchestrateur.");
@@ -90,15 +123,6 @@ async function startFluxQpucSingleBatch({ targetCount = 5, mode = 'qpuc', theme 
         continue;
     }
 
-    // Chargement de la mémoire locale
-    let localArchive = [];
-    try {
-        if (fs.existsSync(ARCHIVE_PATH)) {
-            localArchive = JSON.parse(fs.readFileSync(ARCHIVE_PATH, 'utf8'));
-        }
-    } catch (e) { console.error("Erreur lecture archive locale:", e.message); }
-
-    const archivedTitles = new Set(localArchive.map(a => (a.titre || "").toLowerCase().trim()));
     let addedInThisCycle = 0;
 
     for (const cand of candidates) {
