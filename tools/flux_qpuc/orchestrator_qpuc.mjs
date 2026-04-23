@@ -76,7 +76,7 @@ async function startFluxQpucSingleBatch({ targetCount = 5, mode = 'qpuc', theme 
 
   // 2. Charger les titres de PRODUCTION (Supabase)
   log(`🔗 [MÉMOIRE] Synchronisation avec la base de Production...`);
-  const { data: prodData, error: prodErr } = await supabase.from('evenements').select('titre');
+  const { data: prodData, error: prodErr } = await supabase.from('evenements').select('titre').range(0, 9999);
   if (!prodErr && prodData) {
       prodData.forEach(e => archivedTitles.add(e.titre.toLowerCase().trim()));
       log(`✅ [MÉMOIRE] ${prodData.length} titres de production synchronisés.`);
@@ -84,7 +84,7 @@ async function startFluxQpucSingleBatch({ targetCount = 5, mode = 'qpuc', theme 
 
   // 3. Charger les titres du SAS (Supabase)
   log(`🔗 [MÉMOIRE] Synchronisation avec le SAS...`);
-  const { data: sasData, error: sasErr } = await supabase.from('sas').select('titre');
+  const { data: sasData, error: sasErr } = await supabase.from('sas').select('titre').range(0, 9999);
   if (!sasErr && sasData) {
       sasData.forEach(e => archivedTitles.add(e.titre.toLowerCase().trim()));
       log(`✅ [MÉMOIRE] ${sasData.length} titres du SAS synchronisés.`);
