@@ -81,7 +81,9 @@ async function startFluxQpucSingleBatch({ targetCount = 5, mode = 'qpuc', theme 
   while (true) {
       const { data, error } = await supabase.from('evenements').select('titre').range(fromProd, fromProd + 999);
       if (error || !data || data.length === 0) break;
-      data.forEach(e => archivedTitles.add(e.titre.toLowerCase().trim()));
+      data.forEach(e => {
+          if (e.titre) archivedTitles.add(e.titre.toLowerCase().trim());
+      });
       totalProd += data.length;
       if (data.length < 1000) break;
       fromProd += 1000;
@@ -95,7 +97,9 @@ async function startFluxQpucSingleBatch({ targetCount = 5, mode = 'qpuc', theme 
   while (true) {
       const { data, error } = await supabase.from('sas').select('titre').range(fromSas, fromSas + 999);
       if (error || !data || data.length === 0) break;
-      data.forEach(e => archivedTitles.add(e.titre.toLowerCase().trim()));
+      data.forEach(e => {
+          if (e.titre) archivedTitles.add(e.titre.toLowerCase().trim());
+      });
       totalSas += data.length;
       if (data.length < 1000) break;
       fromSas += 1000;
@@ -140,6 +144,10 @@ async function startFluxQpucSingleBatch({ targetCount = 5, mode = 'qpuc', theme 
     for (const cand of candidates) {
         if (addedCount >= targetCount) break;
 
+        if (!cand || !cand.titre) {
+            log(`⚠️ Candidat mal formé détecté, skip.`);
+            continue;
+        }
         const normalizedTitre = cand.titre.toLowerCase().trim();
 
         // 0. MÉMOIRE LOCALE (Instantanée pour ce run)
