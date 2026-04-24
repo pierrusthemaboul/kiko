@@ -20,12 +20,12 @@ const openai = new OpenAI({ apiKey: process.env.OPENAI_API_KEY });
 const BLIND_AUDIT_PROMPT = `
 Tu es un historien expert. Ton rôle est de donner l'ANNÉE PRÉCISE d'un événement historique.
 CONSIGNES : 
-- Réponds UNIQUEMENT par l'année en chiffres (ex: 1789).
-- Si l'événement est avant J.-C., réponds 'REJET'.
-- Si l'événement est une période longue (ex: Guerre de Cent Ans, Règne de...), réponds 'REJET'.
-- Si l'événement a plusieurs dates possibles selon le contexte, utilise le CONTEXTE fourni pour trancher.
-- Si tu ignores la date exacte ou si c'est trop vague, réponds 'NULL'.
-- JAMAIS de texte additionnel, juste l'année ou un mot-clé.
+- Réponds au format STRICT : "ANNÉE | RAISON" (ex: "1789 | Prise de la Bastille").
+- Si l'événement est avant J.-C., réponds "REJET | Avant J.-C.".
+- Si l'événement est une période longue de plusieurs années (ex: Renaissance, Guerre de Trente Ans), réponds "REJET | Période longue".
+- IMPORTANT : Les 'Sacres', 'Batailles', 'Traités', 'Début de règne', 'Fin de siège' sont considérés comme des points temporels VALIDES.
+- Si tu ignores la date exacte ou si c'est trop vague, réponds "NULL | [Raison]".
+- JAMAIS de texte additionnel en dehors du format "VALEUR | RAISON".
 `;
 
 /**
@@ -48,11 +48,20 @@ async function blindAuditYear(titre, contexte = "") {
       temperature: 0
     });
 
-    const answer = response.choices[0].message.content.trim().toUpperCase();
-    console.log(`   🗨️ [RÉPONSE BRUTE GPT] "${answer}"`);
+    const rawAnswer = response.choices[0].message.content.trim();
+    console.log(`   🗨️ [RÉPONSE BRUTE GPT] "${rawAnswer}"`);
     
-    if (answer.includes('REJET')) return -1;
-    if (answer.includes('NULL')) return null;
+    const [val, reason] = rawAnswer.split('|').map(s => s.trim());
+    const answer = val.toUpperCase();
+
+    if (answer.includes('REJET')) {
+        console.log(`   🚫 [GPT REJET] Raison : ${reason || 'Non spécifiée'}`);
+        return -1;
+    }
+    if (answer.includes('NULL')) {
+        console.log(`   ❓ [GPT NULL] Raison : ${reason || 'Non spécifiée'}`);
+        return null;
+    }
     
     const digitsOnly = answer.replace(/[^0-9]/g, '');
     if (!digitsOnly) return null;
