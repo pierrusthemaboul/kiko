@@ -123,7 +123,7 @@ const AdminOptionsPage: React.FC = () => {
   const handleStop = async () => {
     try {
       const envUrl = import.meta.env.VITE_CURATEUR_URL;
-      const baseUrl = "https://vast-flies-visit.loca.lt";
+      const baseUrl = "https://45a89a08ce5632.lhr.life";
       addLog("🛑 Envoi du signal d'arrêt...", "info");
       await fetch(`${baseUrl}/api/curateur/stop`, { method: 'POST' });
     } catch (err: any) {
@@ -164,7 +164,7 @@ const AdminOptionsPage: React.FC = () => {
 
     try {
       const envUrl = import.meta.env.VITE_CURATEUR_URL;
-      const baseUrl = "https://vast-flies-visit.loca.lt";
+      const baseUrl = "https://45a89a08ce5632.lhr.life";
       
       addLog(`📡 Appel du cerveau (${baseUrl})...`, "info");
       
