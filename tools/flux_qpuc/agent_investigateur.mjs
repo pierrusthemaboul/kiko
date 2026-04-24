@@ -72,8 +72,14 @@ async function findEventsForTheme(theme, count = 5) {
         parts.unshift({ fileData: { mimeType: "text/plain", fileUri: archive.fileUri } });
     }
 
+    console.log(`   💬 [PROMPT GEMINI] "${prompt.substring(0, 100)}..."`);
+    
     const result = await model.generateContent(parts);
-    const match = result.response.text().match(/\{[\s\S]*\}/);
+    const rawText = result.response.text();
+    
+    console.log(`   🗨️ [RÉPONSE BRUTE GEMINI] ${rawText.substring(0, 200)}...`);
+
+    const match = rawText.match(/\{[\s\S]*\}/);
     if (!match) throw new Error("Format JSON introuvable");
     
     const data = JSON.parse(match[0]);

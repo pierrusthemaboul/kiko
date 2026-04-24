@@ -37,6 +37,8 @@ async function blindAuditYear(titre, contexte = "") {
       ? `Événement : "${titre}"\nContexte thématique : "${contexte}"`
       : `Événement : "${titre}"`;
 
+    console.log(`   💬 [PROMPT GPT] "${userContent.replace(/\n/g, ' | ')}"`);
+
     const response = await openai.chat.completions.create({
       model: "gpt-4o-mini",
       messages: [
@@ -47,6 +49,7 @@ async function blindAuditYear(titre, contexte = "") {
     });
 
     const answer = response.choices[0].message.content.trim().toUpperCase();
+    console.log(`   🗨️ [RÉPONSE BRUTE GPT] "${answer}"`);
     
     if (answer.includes('REJET')) return -1;
     if (answer.includes('NULL')) return null;
