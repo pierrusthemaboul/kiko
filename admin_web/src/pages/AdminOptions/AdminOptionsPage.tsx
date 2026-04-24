@@ -123,7 +123,7 @@ const AdminOptionsPage: React.FC = () => {
   const handleStop = async () => {
     try {
       const envUrl = import.meta.env.VITE_CURATEUR_URL;
-      const baseUrl = envUrl ? envUrl.replace(/\/$/, '') : 'http://localhost:3010';
+      const baseUrl = "https://sixty-buttons-peel.loca.lt";
       addLog("🛑 Envoi du signal d'arrêt...", "info");
       await fetch(`${baseUrl}/api/curateur/stop`, { method: 'POST' });
     } catch (err: any) {
@@ -164,7 +164,7 @@ const AdminOptionsPage: React.FC = () => {
 
     try {
       const envUrl = import.meta.env.VITE_CURATEUR_URL;
-      const baseUrl = envUrl ? envUrl.replace(/\/$/, '') : 'http://localhost:3010';
+      const baseUrl = "https://sixty-buttons-peel.loca.lt";
       
       addLog(`📡 Appel du cerveau (${baseUrl})...`, "info");
       
