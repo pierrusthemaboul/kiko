@@ -19,33 +19,42 @@ const openai = new OpenAI({ apiKey: process.env.OPENAI_API_KEY });
 
 const BLIND_AUDIT_PROMPT = `
 Tu es un historien expert. Ton rôle est de donner l'ANNÉE PRÉCISE d'un événement historique.
-RÈGLES : 
+CONSIGNES : 
 - Réponds UNIQUEMENT par l'année en chiffres (ex: 1789).
-- Pas de texte avant ou après.
-- Si l'événement est avant J.-C., répond 'REJET'.
-- Si l'événement est une période (ex: Guerre de Cent Ans), répond 'REJET'.
-- Si tu ignores la date exacte, répond 'NULL'.
+- Si l'événement est avant J.-C., réponds 'REJET'.
+- Si l'événement est une période longue (ex: Guerre de Cent Ans, Règne de...), réponds 'REJET'.
+- Si l'événement a plusieurs dates possibles selon le contexte, utilise le CONTEXTE fourni pour trancher.
+- Si tu ignores la date exacte ou si c'est trop vague, réponds 'NULL'.
+- JAMAIS de texte additionnel, juste l'année ou un mot-clé.
 `;
 
 /**
  * 🕵️‍♂️ AUDIT À L'AVEUGLE (GPT-4o-mini)
  */
-async function blindAuditYear(titre) {
+async function blindAuditYear(titre, contexte = "") {
   try {
+    const userContent = contexte 
+      ? `Événement : "${titre}"\nContexte thématique : "${contexte}"`
+      : `Événement : "${titre}"`;
+
     const response = await openai.chat.completions.create({
       model: "gpt-4o-mini",
       messages: [
         { role: "system", content: BLIND_AUDIT_PROMPT },
-        { role: "user", content: `Événement : "${titre}"` }
+        { role: "user", content: userContent }
       ],
       temperature: 0
     });
 
-    const answer = response.choices[0].message.content.trim();
-    if (answer === 'REJET') return -1;
-    if (answer === 'NULL') return null;
+    const answer = response.choices[0].message.content.trim().toUpperCase();
     
-    const year = parseInt(answer.replace(/[^0-9]/g, ''));
+    if (answer.includes('REJET')) return -1;
+    if (answer.includes('NULL')) return null;
+    
+    const digitsOnly = answer.replace(/[^0-9]/g, '');
+    if (!digitsOnly) return null;
+
+    const year = parseInt(digitsOnly);
     return (year >= 1) ? year : null;
   } catch (err) {
     console.error("   ⚠️ [GPT-4o-mini] Erreur :", err.message);
@@ -56,19 +65,19 @@ async function blindAuditYear(titre) {
 /**
  * 🚀 VÉRIFICATION DOUBLE (Gemini vs GPT-4o-mini)
  */
-async function tripleVerification(titre, suggestedYear) {
+async function tripleVerification(titre, suggestedYear, contexte = "") {
   console.log(`⚖️ [GREFFIER] Audit à l'aveugle (GPT-4o-mini) : "${titre}"...`);
   
-  const blindYear = await blindAuditYear(titre);
+  const blindYear = await blindAuditYear(titre, contexte);
   
   console.log(`   📊 [RÉSULTAT] GPT: ${blindYear || '??'}, Suggéré: ${suggestedYear}`);
   
   if (blindYear === -1) {
-    console.log(`   ❌ [REJET] Événement J.-C. ou Non-ponctuel.`);
+    console.log(`   ❌ [REJET] Événement J.-C., Non-ponctuel ou Hors-contexte.`);
     return { consensus: false, status: 'REJET', finalYear: null };
   }
 
-  // MATCH PARFAIT EXIGÉ
+  // MATCH PARFAIT EXIGÉ (On tolère +/- 1 an pour les sources divergentes si nécessaire, mais restons strict pour l'instant)
   if (blindYear === suggestedYear) {
      console.log(`   ✅ [VALIDE] Les deux modèles sont d'accord sur ${suggestedYear}.`);
      return { consensus: true, status: 'VALIDE', finalYear: suggestedYear };

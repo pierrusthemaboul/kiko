@@ -177,7 +177,7 @@ async function startFluxQpucSingleBatch({ targetCount = 5, mode = 'qpuc', theme 
 
         if (abortSignal?.aborted) return;
         log(`🔍 Analyse de "${cand.titre}" (${cand.year})...`);
-        const { consensus, status, finalYear } = await tripleVerification(cand.titre, cand.year);
+        const { consensus, status, finalYear } = await tripleVerification(cand.titre, cand.year, currentTheme);
 
         if (!consensus || !finalYear || finalYear < 1) {
            log(`   ❌ SKIP : Non confirmé par l'audit.`);
