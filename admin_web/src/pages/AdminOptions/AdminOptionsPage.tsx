@@ -123,7 +123,7 @@ const AdminOptionsPage: React.FC = () => {
   const handleStop = async () => {
     try {
       const envUrl = import.meta.env.VITE_CURATEUR_URL;
-      const baseUrl = "https://45a89a08ce5632.lhr.life";
+      const baseUrl = 'http://localhost:3010';
       addLog("🛑 Envoi du signal d'arrêt...", "info");
       await fetch(`${baseUrl}/api/curateur/stop`, { method: 'POST' });
     } catch (err: any) {
@@ -164,15 +164,14 @@ const AdminOptionsPage: React.FC = () => {
 
     try {
       const envUrl = import.meta.env.VITE_CURATEUR_URL;
-      const baseUrl = "https://45a89a08ce5632.lhr.life";
+      const baseUrl = 'http://localhost:3010';
       
       addLog(`📡 Appel du cerveau (${baseUrl})...`, "info");
       
       const response = await fetch(`${baseUrl}/api/curateur/rafale`, {
         method: 'POST',
         headers: { 
-          'Content-Type': 'application/json',
-          'Bypass-Tunnel-Reminder': 'true' // 🚇 Bypass localtunnel landing page
+          'Content-Type': 'application/json'
         },
         body: JSON.stringify({ 
           quantity: suggestionCount, 
