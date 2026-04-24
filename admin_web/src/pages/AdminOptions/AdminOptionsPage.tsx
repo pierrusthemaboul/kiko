@@ -170,7 +170,10 @@ const AdminOptionsPage: React.FC = () => {
       
       const response = await fetch(`${baseUrl}/api/curateur/rafale`, {
         method: 'POST',
-        headers: { 'Content-Type': 'application/json' },
+        headers: { 
+          'Content-Type': 'application/json',
+          'Bypass-Tunnel-Reminder': 'true' // 🚇 Bypass localtunnel landing page
+        },
         body: JSON.stringify({ 
           quantity: suggestionCount, 
           mode: config.modeQpucLive ? 'qpuc' : 'manual',
