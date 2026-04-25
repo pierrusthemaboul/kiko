@@ -34,8 +34,10 @@ async function exportData() {
         embedding_1536,
         metadata->>text,
         evenements (
+          id,
           region,
-          epoque
+          epoque,
+          date
         )
       `)
       .eq('source_type', 'titre')
@@ -59,10 +61,12 @@ async function exportData() {
   console.log(`📦 ${allData.length} entrées totales récupérées. Formatage en cours...`);
 
   const formattedData = allData.map(item => ({
+    id: item.evenements?.id,
     label: item.text,
     vector: item.embedding_1536,
     region: item.evenements?.region || "Inconnue",
-    epoque: item.evenements?.epoque || "Inconnue"
+    epoque: item.evenements?.epoque || "Inconnue",
+    date: item.evenements?.date
   }));
 
   const outputPath = path.join(process.cwd(), 'data_for_viz.json');

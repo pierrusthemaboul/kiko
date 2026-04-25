@@ -1,1 +1,1 @@
-export const VERSION = "Event V.3.0.0 - 25/04/2026 18:21";
+export const VERSION = "Event V.3.1.0 - 25/04/2026 19:18";
