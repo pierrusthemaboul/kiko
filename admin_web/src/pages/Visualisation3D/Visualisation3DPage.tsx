@@ -281,6 +281,7 @@ const Visualisation3DPage: React.FC = () => {
         </div>
 
         <div className="viz-bottom">
+           <SyncButton />
            <button 
             onClick={() => setIsHeatmap(!isHeatmap)}
             className={`viz-btn viz-btn-heatmap ${isHeatmap ? 'active' : ''}`}
@@ -416,6 +417,60 @@ const CollapsibleList: React.FC<{ title: string, icon: any, items: string[], sel
               </label>
             ))}
           </div>
+        </div>
+      )}
+    </div>
+  );
+};
+
+const SyncButton: React.FC = () => {
+  const [syncing, setSyncing] = useState(false);
+  const [msg, setMsg] = useState<{ text: string, type: 'success' | 'error' } | null>(null);
+
+  const handleSync = async () => {
+    setSyncing(true);
+    setMsg(null);
+    try {
+      const res = await fetch('/api/sync', { method: 'POST' });
+      const data = await res.json();
+      if (res.ok) {
+        setMsg({ text: '✅ Sync lancée (attendre ~2min)', type: 'success' });
+      } else {
+        setMsg({ text: `❌ ${data.error || 'Erreur'}`, type: 'error' });
+      }
+    } catch (err) {
+      setMsg({ text: '❌ Erreur de connexion', type: 'error' });
+    } finally {
+      setSyncing(false);
+      setTimeout(() => setMsg(null), 5000);
+    }
+  };
+
+  return (
+    <div style={{ marginBottom: '0.75rem' }}>
+      <button 
+        onClick={handleSync} 
+        disabled={syncing}
+        className={`viz-btn ${syncing ? 'opacity-50 cursor-not-allowed' : ''}`}
+        style={{ 
+          width: '100%',
+          background: 'linear-gradient(135deg, #6366f1, #a855f7)',
+          color: 'white',
+          border: 'none'
+        }}
+      >
+        {syncing ? <Loader2 size={16} className="animate-spin" /> : <RotateCcw size={16} />}
+        <span>{syncing ? 'Synchronisation...' : 'Synchroniser la carte'}</span>
+      </button>
+      {msg && (
+        <div style={{ 
+          fontSize: '0.65rem', 
+          marginTop: '0.5rem', 
+          textAlign: 'center',
+          color: msg.type === 'success' ? '#10b981' : '#ef4444',
+          fontWeight: 600
+        }}>
+          {msg.text}
         </div>
       )}
     </div>
