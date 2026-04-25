@@ -64,30 +64,47 @@ async function checkDuplicates(titre, description, date) {
         const { data: similarProdTitre, error: prodTitreError } = await supabase
             .rpc('match_evenements_by_titre', {
                 query_embedding: embeddingTitle,
-                match_threshold: 0.65, // Plus sévère (était 0.70)
-                match_count: 1
+                match_threshold: 0.85, // On remonte le seuil (plus strict)
+                match_count: 5 // On en prend plusieurs pour filtrer par date
             });
 
         if (similarProdTitre?.length > 0) {
-            const match = similarProdTitre[0];
-            const { data: event } = await supabase.from('evenements').select('titre').eq('id', match.id).single();
-            console.log(`🚩 [DOUBLON PRODUCTION TITRE] "${titre}" ressemble à "${event?.titre || match.id}" (Score: ${match.similarity.toFixed(3)})`);
-            return { isDuplicate: true, embedding: embeddingTitle };
+            for (const match of similarProdTitre) {
+                const { data: event } = await supabase.from('evenements').select('titre, date').eq('id', match.id).single();
+                if (event) {
+                    const eventYear = new Date(event.date).getUTCFullYear();
+                    const targetYear = new Date(date).getUTCFullYear();
+                    // On ne rejette QUE si c'est le même titre ET la même année (+/- 1 an)
+                    if (Math.abs(eventYear - targetYear) <= 1) {
+                        const matchTitle = event.titre;
+                        console.log(`🚩 [DOUBLON PRODUCTION TITRE] "${titre}" match avec "${matchTitle}" (${eventYear})`);
+                        return { isDuplicate: true, embedding: embeddingTitle, matchTitle };
+                    }
+                }
+            }
         }
 
-        // B. Par Titre + Description (Plus précis pour les synonymes comme Mort/Exécution)
+        // B. Par Titre + Description
         const { data: similarProdCombined, error: prodCombinedError } = await supabase
             .rpc('match_evenements_by_titre_description', {
                 query_embedding: embeddingCombined,
-                match_threshold: 0.70, // Plus sévère (était 0.75)
-                match_count: 1
+                match_threshold: 0.88, // Très strict pour le contexte
+                match_count: 5
             });
 
         if (similarProdCombined?.length > 0) {
-            const match = similarProdCombined[0];
-            const { data: event } = await supabase.from('evenements').select('titre').eq('id', match.id).single();
-            console.log(`🚩 [DOUBLON PRODUCTION CONTEXTE] "${titre}" match avec "${event?.titre || match.id}" via description (Score: ${match.similarity.toFixed(3)})`);
-            return { isDuplicate: true, embedding: embeddingTitle };
+            for (const match of similarProdCombined) {
+                const { data: event } = await supabase.from('evenements').select('titre, date').eq('id', match.id).single();
+                if (event) {
+                    const eventYear = new Date(event.date).getUTCFullYear();
+                    const targetYear = new Date(date).getUTCFullYear();
+                    if (Math.abs(eventYear - targetYear) <= 1) {
+                        const matchTitle = event.titre;
+                        console.log(`🚩 [DOUBLON PRODUCTION CONTEXTE] "${titre}" match avec "${matchTitle}" (${eventYear})`);
+                        return { isDuplicate: true, embedding: embeddingTitle, matchTitle };
+                    }
+                }
+            }
         }
 
         // --- CHECK 2: SAS (Staging) ---
@@ -95,16 +112,23 @@ async function checkDuplicates(titre, description, date) {
         const { data: similarSas, error: sasError } = await supabase
             .rpc('match_sas', {
                 query_embedding: embeddingTitle,
-                match_threshold: 0.65, // Plus sévère (était 0.70)
-                match_count: 1
+                match_threshold: 0.85,
+                match_count: 5
             });
 
         if (similarSas?.length > 0) {
-            console.log(`🚩 [DOUBLON SAS] "${titre}" déjà présent dans le SAS (Score: ${similarSas[0].similarity.toFixed(3)})`);
-            return { isDuplicate: true, embedding: embeddingTitle };
+            for (const match of similarSas) {
+                const eventYear = new Date(match.date).getUTCFullYear();
+                const targetYear = new Date(date).getUTCFullYear();
+                if (Math.abs(eventYear - targetYear) <= 1) {
+                    const matchTitle = match.titre || "Élément du SAS";
+                    console.log(`🚩 [DOUBLON SAS] "${titre}" déjà présent dans le SAS (${eventYear})`);
+                    return { isDuplicate: true, embedding: embeddingTitle, matchTitle };
+                }
+            }
         }
 
-        console.log(`✅ [VEILLEUR] Aucun doublon critique trouvé pour "${titre}".`);
+        console.log(`✅ [VEILLEUR] Aucun doublon trouvé pour "${titre}" en ${new Date(date).getUTCFullYear()}.`);
         return { isDuplicate: false, embedding: embeddingTitle };
     } catch (error) {
         console.error("❌ [VEILLEUR] Erreur lors de la vérification des doublons:", error);

@@ -14,6 +14,7 @@ import EventEditorPage from './pages/EventEditor/EventEditorPage';
 import UsersPage from './pages/UsersPage/UsersPage';
 import UserProfilePage from './pages/UsersPage/UserProfilePage';
 import AnalyticsPage from './pages/Analytics/AnalyticsPage';
+import Visualisation3DPage from './pages/Visualisation3D/Visualisation3DPage';
 import type { Session } from '@supabase/supabase-js';
 import { Loader2 } from 'lucide-react';
 
@@ -74,6 +75,7 @@ const App: React.FC = () => {
           <Route path="users/:userId" element={<UserProfilePage />} />
           
           <Route path="analytics" element={<AnalyticsPage />} />
+          <Route path="viz-3d" element={<Visualisation3DPage />} />
         </Route>
 
         <Route path="*" element={<Navigate to="/" />} />

@@ -241,7 +241,7 @@ const AdminOptionsPage: React.FC = () => {
         <div className="header-title">
           <Zap className="zap-icon pulse-blue" />
           <div>
-            <h1>CURATEUR IA <span className="version">v2.2</span></h1>
+            <h1>CURATEUR IA <span className="version">v2.12</span></h1>
             <p>Expertise Historique & Inspiration QPUC</p>
           </div>
         </div>

@@ -26,36 +26,36 @@ const supabase = createClient(supabaseUrl, supabaseKey);
 const genAI = new GoogleGenerativeAI(process.env.GEMINI_API_KEY);
 
 const SYSTEM_PROMPT = `
-Tu es l'Expert Curateur Historique pour KIKO. Ta mission est de générer des événements d'une qualité académique irréprochable.
+Agis comme un ingénieur de données et historien expert. Ton rôle est de générer une liste de titres d'événements historiques servant de clés d'indexation.
 
-RÈGLES CRITIQUES (ZÉRO TOLÉRANCE) :
-1. LANGUE : Tous les TITRES et DESCRIPTIONS doivent être en FRANÇAIS. (Ex: 'Bataille de Tours' et JAMAIS 'Battle of Tours').
-2. ÈRE CHRÉTIENNE : Uniquement des événements APRÈS J.-C. (Année >= 1). Si le thème est antique, reste dans la période impériale romaine tardive ou rejette.
-3. SINGULARITÉ : L'événement doit être un POINT dans le temps (une date précise), pas une période ou une durée.
-   - OUI : 'Sacre de Charlemagne', 'Bataille de Castillon', 'Mort de Jeanne d'Arc'.
-   - NON : 'Règne de Louis XIV', 'Guerre de Cent Ans', 'Construction de la cathédrale' (si ça prend 100 ans).
-4. TITRES CANONIQUES : Utilise le nom le plus courant en France. Sois conscient des synonymes (Ex: 'Prise de Constantinople' et 'Chute de Constantinople' sont le même événement en 1453).
-5. FORMAT TITRE : Max 50 caractères. Jamais de date dans le titre. Pas de ponctuation inutile.
+RÈGLES DE DIVERSITÉ (ANTY-BOUCLE) :
+1. Si le thème est très connu (ex: Révolution Française, Paris), évite les 'évidences' que tout le monde connaît déjà.
+2. Va chercher la 'seconde couche' de l'histoire : événements parlementaires, décrets précis, batailles secondaires, innovations techniques.
+3. Ne propose JAMAIS deux fois le même événement dans une réponse.
 
-CRITÈRE DE SÉLECTION :
-Privilégie les "événements-points" : Traités, Batailles (fin ou début précis), Sacres, Décès célèbres, Inventions datables, Fondations.
+Spécifications techniques :
+1. CHRONOLOGIE : Strictement après l'an 1.
+2. TITRE : Précis + Année à la fin. Format : [Titre de l'événement précis] [Année]
+3. PRÉCISION : Utilise uniquement des verbes d'action déclencheurs (Inauguration, Signature, Décret, Sacre, Décès).
+4. UNICITÉ : Sujet/Acteur obligatoire (ex: 'Exécution de Louis XVI' et non 'Exécution').
 `;
 
 async function findEventsForTheme(theme, count = 5) {
-  console.log(`🔍 [INVESTIGATEUR] Recherche thématique : "${theme}"...`);
-  
   const archive = await getLatestArchiveContext();
   const model = genAI.getGenerativeModel({ model: "gemini-2.0-flash", systemInstruction: SYSTEM_PROMPT });
 
-  const prompt = `Génère ${count} événements historiques PONCTUELS liés au thème : "${theme}".
+  const prompt = `Génère ${count} événements historiques précis liés au thème : "${theme}".
   
-  RÈGLE NOUVEAUTÉ (RAG) : Utilise le fichier d'archives joint pour éviter les doublons.
+  CONSIGNES :
+  - Chaque titre doit inclure l'année (ex: "Prise de la Bastille 1789").
+  - Sois extrêmement spécifique (Inauguration, Signature, Pose de pierre...).
+  - Utilise le fichier d'archives pour éviter les doublons.
   
   Format attendu (JSON STRICT) :
   {
     "events": [
       {
-        "titre": "...", 
+        "titre": "[Titre de l'événement précis] [Année]", 
         "year": 1789, 
         "description": "...", 
         "wikidata_id": "Q...", 
@@ -64,30 +64,27 @@ async function findEventsForTheme(theme, count = 5) {
     ]
   }`;
 
-  try {
-    console.log(`🤖 [IA] Génération pour "${theme}" avec RAG...`);
-    
-    let parts = [{ text: prompt }];
-    if (archive && archive.fileUri) {
-        parts.unshift({ fileData: { mimeType: "text/plain", fileUri: archive.fileUri } });
-    }
+  let parts = [{ text: prompt }];
+  if (archive && archive.fileUri) {
+      parts.unshift({ fileData: { mimeType: "text/plain", fileUri: archive.fileUri } });
+  }
 
-    console.log(`   💬 [PROMPT GEMINI] "${prompt.substring(0, 100)}..."`);
-    
+  try {
     const result = await model.generateContent(parts);
     const rawText = result.response.text();
     
-    console.log(`   🗨️ [RÉPONSE BRUTE GEMINI] ${rawText.substring(0, 200)}...`);
-
     const match = rawText.match(/\{[\s\S]*\}/);
     if (!match) throw new Error("Format JSON introuvable");
     
     const data = JSON.parse(match[0]);
-    console.log(`✅ [INVESTIGATEUR] ${data.events?.length || 0} candidats trouvés.`);
-    return data.events || [];
+    return {
+        events: data.events || [],
+        prompt: prompt,
+        response: rawText
+    };
   } catch (err) {
     console.error("❌ [INVESTIGATEUR] Erreur :", err.message);
-    return [];
+    return { events: [], prompt: prompt, response: "ERREUR API: " + err.message };
   }
 }
 
