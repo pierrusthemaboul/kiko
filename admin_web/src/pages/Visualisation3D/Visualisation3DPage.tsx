@@ -1,8 +1,13 @@
+
 import React, { useEffect, useState, useRef, useMemo, useCallback } from 'react';
 import ForceGraph3D from 'react-force-graph-3d';
 import { useNavigate } from 'react-router-dom';
-import { Loader2, ArrowLeft, Search, Filter, Calendar, Info, Target } from 'lucide-react';
-import * as THREE from 'three';
+import { 
+  Loader2, ArrowLeft, Search, Filter, Calendar, Info, 
+  Target, RotateCcw, Flame, Layers, Map,
+  ChevronRight, ChevronDown, Check, X, MousePointer2
+} from 'lucide-react';
+import './Visualisation3DPage.css';
 
 interface VizPoint {
   id: string;
@@ -10,9 +15,11 @@ interface VizPoint {
   region: string;
   epoque: string;
   date: string;
+  status: 'official' | 'sas' | 'antichambre';
   x: number;
   y: number;
   z: number;
+  density: number;
 }
 
 const Visualisation3DPage: React.FC = () => {
@@ -21,9 +28,12 @@ const Visualisation3DPage: React.FC = () => {
   const [searchQuery, setSearchQuery] = useState('');
   const [selectedRegions, setSelectedRegions] = useState<Set<string>>(new Set());
   const [selectedEpoques, setSelectedEpoques] = useState<Set<string>>(new Set());
-  const [yearRange, setYearRange] = useState<[number, number]>([-2000, 2025]);
+  const [selectedStatuses, setSelectedStatuses] = useState<Set<string>>(new Set(['official', 'sas', 'antichambre']));
+  const [yearRange, setYearRange] = useState<[number, number]>([-3000, 2025]);
   const [clickedNode, setClickedNode] = useState<VizPoint | null>(null);
   const [neighbors, setNeighbors] = useState<Set<string>>(new Set());
+  const [isHeatmap, setIsHeatmap] = useState(false);
+  const [isSidebarOpen, setIsSidebarOpen] = useState(true);
   
   const navigate = useNavigate();
   const fgRef = useRef<any>();
@@ -33,27 +43,19 @@ const Visualisation3DPage: React.FC = () => {
       .then(res => res.json())
       .then(json => {
         setData(json);
-        // Initialiser les filtres avec toutes les valeurs
         const regions = new Set(json.map((d: any) => d.region));
         const epoques = new Set(json.map((d: any) => d.epoque));
         setSelectedRegions(regions);
         setSelectedEpoques(epoques);
         
-        // Calculer les années min/max
-        const years = json.map((d: any) => {
-          if (!d.date) return 2025;
-          const parts = d.date.split('-');
-          return d.date.startsWith('-') ? -parseInt(parts[1]) : parseInt(parts[0]);
-        }).filter((y: number) => !isNaN(y));
-        
+        const years = json.map((d: any) => getYear(d.date)).filter((y: number) => !isNaN(y));
         if (years.length > 0) {
           setYearRange([Math.min(...years), Math.max(...years)]);
         }
-
         setLoading(false);
       })
       .catch(err => {
-        console.error("Erreur lors du chargement des données :", err);
+        console.error("Erreur chargement données :", err);
         setLoading(false);
       });
   }, []);
@@ -61,7 +63,8 @@ const Visualisation3DPage: React.FC = () => {
   const getYear = (dateStr: string) => {
     if (!dateStr) return 0;
     const parts = dateStr.split('-');
-    return dateStr.startsWith('-') ? -parseInt(parts[1]) : parseInt(parts[0]);
+    if (dateStr.startsWith('-')) return -parseInt(parts[1]);
+    return parseInt(parts[0]);
   };
 
   const filteredData = useMemo(() => {
@@ -70,42 +73,48 @@ const Visualisation3DPage: React.FC = () => {
       const matchesSearch = d.label.toLowerCase().includes(searchQuery.toLowerCase());
       const matchesRegion = selectedRegions.has(d.region);
       const matchesEpoque = selectedEpoques.has(d.epoque);
+      const matchesStatus = selectedStatuses.has(d.status);
       const matchesYear = year >= yearRange[0] && year <= yearRange[1];
-      return matchesSearch && matchesRegion && matchesEpoque && matchesYear;
+      return matchesSearch && matchesRegion && matchesEpoque && matchesStatus && matchesYear;
     });
-  }, [data, searchQuery, selectedRegions, selectedEpoques, yearRange]);
+  }, [data, searchQuery, selectedRegions, selectedEpoques, selectedStatuses, yearRange]);
 
   const graphData = useMemo(() => {
+    const scale = 300;
     return {
       nodes: filteredData.map(d => ({
         ...d,
-        fx: d.x * 200, 
-        fy: d.y * 200,
-        fz: d.z * 200,
-        val: clickedNode?.id === d.id ? 8 : (neighbors.has(d.id) ? 5 : 2)
+        fx: d.x * scale, 
+        fy: d.y * scale,
+        fz: d.z * scale,
       })),
       links: []
     };
-  }, [filteredData, clickedNode, neighbors]);
+  }, [filteredData]);
 
-  const handleSearch = (e: React.FormEvent) => {
-    e.preventDefault();
-    const found = data.find(d => d.label.toLowerCase().includes(searchQuery.toLowerCase()));
-    if (found && fgRef.current) {
-      const distance = 400;
-      const distRatio = 1 + distance / Math.hypot(found.x * 200, found.y * 200, found.z * 200);
+  const resetCamera = () => {
+    if (fgRef.current) {
+      fgRef.current.cameraPosition({ x: 0, y: 0, z: 800 }, { x: 0, y: 0, z: 0 }, 1000);
+    }
+  };
+
+  const focusOnNode = (node: VizPoint) => {
+    if (fgRef.current) {
+      const scale = 300;
+      const distance = 150;
+      const distRatio = 1 + distance / Math.hypot(node.x * scale, node.y * scale, node.z * scale);
+      
       fgRef.current.cameraPosition(
-        { x: found.x * 200 * distRatio, y: found.y * 200 * distRatio, z: found.z * 200 * distRatio },
-        { x: found.x * 200, y: found.y * 200, z: found.z * 200 },
-        2000
+        { x: node.x * scale * distRatio, y: node.y * scale * distRatio, z: node.z * scale * distRatio },
+        { x: node.x * scale, y: node.y * scale, z: node.z * scale },
+        1500
       );
-      setClickedNode(found);
-      findNeighbors(found);
+      setClickedNode(node);
+      findNeighbors(node);
     }
   };
 
   const findNeighbors = useCallback((node: VizPoint) => {
-    // On cherche les 10 points les plus proches en distance Euclidienne (proxy de similarité)
     const sorted = [...data]
       .filter(d => d.id !== node.id)
       .map(d => ({
@@ -118,40 +127,40 @@ const Visualisation3DPage: React.FC = () => {
     setNeighbors(new Set(sorted.map(s => s.id)));
   }, [data]);
 
-  const toggleRegion = (region: string) => {
-    const next = new Set(selectedRegions);
-    if (next.has(region)) next.delete(region);
-    else next.add(region);
-    setSelectedRegions(next);
+  const getStatusColor = (status: string) => {
+    switch (status) {
+      case 'official': return '#6366f1';
+      case 'sas': return '#f43f5e';
+      case 'antichambre': return '#10b981';
+      default: return '#ffffff';
+    }
   };
 
-  const toggleEpoque = (epoque: string) => {
-    const next = new Set(selectedEpoques);
-    if (next.has(epoque)) next.delete(epoque);
-    else next.add(epoque);
-    setSelectedEpoques(next);
-  };
-
-  const getEpoqueColor = (epoque: string, node: any) => {
+  const getNodeColor = (node: any) => {
     if (clickedNode && node.id === clickedNode.id) return '#ffffff';
-    if (neighbors.has(node.id)) return '#fbbf24'; // Jaune pour les voisins
+    if (neighbors.has(node.id)) return '#fbbf24';
+    
+    if (isHeatmap) {
+      const maxDensity = 20; 
+      const intensity = Math.min(node.density / maxDensity, 1);
+      return `rgb(${Math.floor(255 * intensity)}, ${Math.floor(255 * (1 - intensity))}, 255)`;
+    }
 
-    const colors: Record<string, string> = {
-      'Antiquité': '#f87171',
-      'Moyen Âge': '#fbbf24',
-      'Renaissance': '#34d399',
-      'Époque moderne': '#60a5fa',
-      'Époque contemporaine': '#a78bfa',
-      'Préhistoire': '#9ca3af'
-    };
-    return colors[epoque] || '#ffffff';
+    return getStatusColor(node.status);
+  };
+
+  const getNodeSize = (node: any) => {
+    if (clickedNode && node.id === clickedNode.id) return 6;
+    if (neighbors.has(node.id)) return 4;
+    if (isHeatmap) return 2 + (node.density / 5);
+    return 2.5;
   };
 
   if (loading) {
     return (
       <div className="flex flex-col items-center justify-center h-screen bg-[#0f1117] text-white">
         <Loader2 className="animate-spin mb-4" size={48} color="#6366f1" />
-        <p className="text-xl font-medium">Chargement de la carte sémantique...</p>
+        <p className="text-xl font-medium">Initialisation de la Galaxie Kiko...</p>
       </div>
     );
   }
@@ -160,140 +169,254 @@ const Visualisation3DPage: React.FC = () => {
   const allEpoques = Array.from(new Set(data.map(d => d.epoque))).sort();
 
   return (
-    <div className="relative h-screen w-full bg-black overflow-hidden flex">
-      {/* Sidebar de Filtres */}
-      <div className="w-80 h-full bg-[#11131a] border-r border-white/10 z-20 flex flex-col p-6 overflow-y-auto">
-        <div className="flex items-center gap-3 mb-8">
-           <div className="w-10 h-10 bg-indigo-600 rounded-xl flex items-center justify-center shadow-lg shadow-indigo-500/20">
-             <Target className="text-white" size={20} />
+    <div className="viz-container">
+      {/* Sidebar */}
+      <aside className={`viz-sidebar ${!isSidebarOpen ? 'closed' : ''}`}>
+        <div className="viz-sidebar-header">
+           <div className="viz-brand">
+              <div className="viz-logo">
+                <Map className="text-white" size={20} />
+              </div>
+              <h2 className="viz-title">K-Viz 3D</h2>
            </div>
-           <h2 className="text-xl font-bold text-white tracking-tight">K-Viz 3D</h2>
+           <button onClick={() => setIsSidebarOpen(false)} className="viz-control-btn" style={{ background: 'none', border: 'none' }}>
+             <ChevronDown className="rotate-90" size={20} />
+           </button>
         </div>
 
-        <form onSubmit={handleSearch} className="relative mb-8">
-          <Search className="absolute left-3 top-1/2 -translate-y-1/2 text-gray-500" size={18} />
+        <div className="viz-search-container">
+          <Search className="viz-search-icon" size={18} />
           <input 
             type="text" 
-            placeholder="Rechercher un événement..."
+            placeholder="Rechercher..."
             value={searchQuery}
             onChange={(e) => setSearchQuery(e.target.value)}
-            className="w-full bg-white/5 border border-white/10 rounded-xl py-2.5 pl-10 pr-4 text-white placeholder-gray-500 focus:outline-none focus:ring-2 focus:ring-indigo-500 transition-all"
+            className="viz-search-input"
           />
-        </form>
+        </div>
 
-        <div className="space-y-8">
-          {/* Section Époques */}
-          <div>
-            <div className="flex items-center gap-2 text-indigo-400 mb-4 text-xs font-bold uppercase tracking-wider">
-              <Filter size={14} /> Époques
+        <div style={{ flex: 1, overflowY: 'auto', paddingRight: '4px' }}>
+          {/* Sources */}
+          <div className="viz-section">
+            <div className="viz-section-label">
+              <Layers size={14} /> Sources
             </div>
-            <div className="space-y-2">
-              {allEpoques.map(ep => (
-                <label key={ep} className="flex items-center gap-3 cursor-pointer group">
-                  <input 
-                    type="checkbox" 
-                    checked={selectedEpoques.has(ep)}
-                    onChange={() => toggleEpoque(ep)}
-                    className="w-4 h-4 rounded border-white/20 bg-white/5 text-indigo-600 focus:ring-indigo-500"
-                  />
-                  <span className="text-sm text-gray-400 group-hover:text-white transition-colors">{ep}</span>
-                </label>
+            <div className="viz-status-grid">
+              {[
+                { id: 'official', label: 'Officiels', color: '#6366f1' },
+                { id: 'sas', label: 'Table SAS', color: '#f43f5e' },
+                { id: 'antichambre', label: 'Antichambre', color: '#10b981' }
+              ].map(s => (
+                <div 
+                  key={s.id}
+                  onClick={() => {
+                    const next = new Set(selectedStatuses);
+                    if (next.has(s.id)) next.delete(s.id); else next.add(s.id);
+                    setSelectedStatuses(next);
+                  }}
+                  className={`viz-status-card ${selectedStatuses.has(s.id) ? 'active' : ''}`}
+                >
+                  <div className="viz-status-info">
+                    <div className="viz-status-dot" style={{ backgroundColor: s.color }} />
+                    <span className="viz-status-text">{s.label}</span>
+                  </div>
+                  {selectedStatuses.has(s.id) && <Check size={16} className="text-indigo-400" />}
+                </div>
               ))}
             </div>
           </div>
 
-          {/* Section Régions */}
-          <div>
-            <div className="flex items-center gap-2 text-indigo-400 mb-4 text-xs font-bold uppercase tracking-wider">
-              <Info size={14} /> Régions
-            </div>
-            <div className="space-y-2">
-              {allRegions.map(reg => (
-                <label key={reg} className="flex items-center gap-3 cursor-pointer group">
-                  <input 
-                    type="checkbox" 
-                    checked={selectedRegions.has(reg)}
-                    onChange={() => toggleRegion(reg)}
-                    className="w-4 h-4 rounded border-white/20 bg-white/5 text-indigo-600 focus:ring-indigo-500"
-                  />
-                  <span className="text-sm text-gray-400 group-hover:text-white transition-colors">{reg}</span>
-                </label>
-              ))}
-            </div>
-          </div>
-
-          {/* Slider Temporel */}
-          <div>
-            <div className="flex items-center gap-2 text-indigo-400 mb-4 text-xs font-bold uppercase tracking-wider">
+          {/* Période */}
+          <div className="viz-section">
+            <div className="viz-section-label">
               <Calendar size={14} /> Période : {yearRange[0]} à {yearRange[1]}
             </div>
+            <div className="viz-year-inputs">
+              <input 
+                type="number" 
+                value={yearRange[0]} 
+                onChange={e => setYearRange([parseInt(e.target.value) || -3000, yearRange[1]])}
+                className="viz-year-input"
+              />
+              <span style={{ color: '#475569' }}>→</span>
+              <input 
+                type="number" 
+                value={yearRange[1]} 
+                onChange={e => setYearRange([yearRange[0], parseInt(e.target.value) || 2025])}
+                className="viz-year-input"
+              />
+            </div>
             <input 
-              type="range" 
-              min="-3000" 
-              max="2025" 
-              value={yearRange[1]}
+              type="range" min="-3000" max="2025" value={yearRange[1]}
               onChange={(e) => setYearRange([yearRange[0], parseInt(e.target.value)])}
-              className="w-full accent-indigo-500"
+              className="viz-range-slider"
             />
+          </div>
+
+          {/* Filters */}
+          <div className="viz-section">
+             <CollapsibleList 
+               title="Époques" 
+               icon={<Filter size={14} />} 
+               items={allEpoques} 
+               selected={selectedEpoques} 
+               onToggle={ep => {
+                 const next = new Set(selectedEpoques);
+                 if (next.has(ep)) next.delete(ep); else next.add(ep);
+                 setSelectedEpoques(next);
+               }}
+             />
+             <CollapsibleList 
+               title="Régions" 
+               icon={<Info size={14} />} 
+               items={allRegions} 
+               selected={selectedRegions} 
+               onToggle={reg => {
+                 const next = new Set(selectedRegions);
+                 if (next.has(reg)) next.delete(reg); else next.add(reg);
+                 setSelectedRegions(next);
+               }}
+             />
           </div>
         </div>
 
-        <div className="mt-auto pt-8 border-t border-white/10">
+        <div className="viz-bottom">
+           <button 
+            onClick={() => setIsHeatmap(!isHeatmap)}
+            className={`viz-btn viz-btn-heatmap ${isHeatmap ? 'active' : ''}`}
+          >
+            <Flame size={16} /> Mode Heatmap {isHeatmap ? 'ON' : 'OFF'}
+          </button>
           <button 
             onClick={() => navigate('/admin-option')}
-            className="flex items-center justify-center gap-2 w-full bg-white/5 hover:bg-white/10 text-gray-400 hover:text-white py-3 rounded-xl transition-all border border-white/10"
+            className="viz-btn viz-btn-outline"
           >
             <ArrowLeft size={16} /> Retour Admin
           </button>
         </div>
-      </div>
+      </aside>
 
-      {/* Zone Graph 3D */}
-      <div className="flex-1 relative">
-        <div className="absolute top-6 left-6 z-10 pointer-events-none">
-          {clickedNode && (
-            <div className="bg-indigo-600/90 backdrop-blur-md p-4 rounded-2xl shadow-2xl border border-indigo-400/30 animate-in fade-in slide-in-from-left-4 duration-300 pointer-events-auto">
-              <div className="text-[10px] font-bold text-indigo-100 uppercase mb-1">Sélection actuelle</div>
-              <div className="text-lg font-bold text-white leading-tight mb-2">{clickedNode.label}</div>
-              <div className="flex gap-2">
-                <span className="bg-black/20 text-white text-[10px] px-2 py-1 rounded-md">{clickedNode.region}</span>
-                <span className="bg-black/20 text-white text-[10px] px-2 py-1 rounded-md">{clickedNode.epoque}</span>
+      {!isSidebarOpen && (
+        <button 
+          onClick={() => setIsSidebarOpen(true)}
+          className="viz-floating-toggle"
+        >
+          <Filter size={20} />
+        </button>
+      )}
+
+      {/* Graph Area */}
+      <div style={{ flex: 1, position: 'relative' }}>
+        <div className="viz-controls">
+          <button onClick={resetCamera} title="Réinitialiser la caméra" className="viz-control-btn">
+            <RotateCcw size={18} />
+          </button>
+          <button title="Mode Sélection (Bientôt)" className="viz-control-btn" style={{ opacity: 0.3, cursor: 'not-allowed' }}>
+            <MousePointer2 size={18} />
+          </button>
+        </div>
+
+        <div style={{ position: 'absolute', top: '1.5rem', left: '1.5rem', zIndex: 30, pointerEvents: 'none' }}>
+          {!isSidebarOpen && clickedNode && (
+            <div className="viz-info-panel">
+              <div className="viz-info-header">
+                <span className="viz-info-tag">Focus</span>
+                <button onClick={() => setClickedNode(null)} style={{ pointerEvents: 'auto' }}>
+                  <X size={14} color="#fff" />
+                </button>
               </div>
-              <div className="mt-4 pt-3 border-t border-white/10 text-[10px] text-white/80">
-                1 clic pour voir les voisins • Double clic pour éditer
+              <div className="viz-info-title">{clickedNode.label}</div>
+              <div className="viz-badge-container">
+                <span className="viz-badge">{clickedNode.region}</span>
+                <span className="viz-badge">{clickedNode.epoque}</span>
+                <span className="viz-badge">{clickedNode.date}</span>
               </div>
+              <button 
+                onClick={() => navigate(`/edit-event/${clickedNode.id}`)}
+                className="viz-edit-btn"
+                style={{ pointerEvents: 'auto' }}
+              >
+                Ouvrir l'éditeur
+              </button>
             </div>
           )}
+        </div>
+
+        <div className="viz-legend">
+           <div className="viz-legend-item"><div className="viz-legend-dot" style={{ background: '#6366f1' }} /> Officiels</div>
+           <div className="viz-legend-item"><div className="viz-legend-dot" style={{ background: '#f43f5e' }} /> Table SAS</div>
+           <div className="viz-legend-item"><div className="viz-legend-dot" style={{ background: '#10b981' }} /> Antichambre</div>
+           <div className="viz-legend-item"><div className="viz-legend-dot" style={{ background: '#fbbf24' }} /> Similaires</div>
+           <div style={{ marginTop: '0.5rem', fontSize: '8px', opacity: 0.5 }}>UMAP 3D Semantic Projection</div>
         </div>
 
         <ForceGraph3D
           ref={fgRef}
           graphData={graphData}
-          nodeColor={node => getEpoqueColor((node as VizPoint).epoque, node)}
+          nodeColor={getNodeColor}
+          nodeRelSize={2.5}
+          nodeVal={getNodeSize}
           nodeLabel={node => `
-            <div style="background: rgba(0,0,0,0.9); padding: 10px; border-radius: 12px; border: 1px solid rgba(255,255,255,0.2); backdrop-filter: blur(8px); box-shadow: 0 10px 15px -3px rgba(0,0,0,0.5);">
-              <div style="font-weight: 800; color: white; font-size: 14px; margin-bottom: 4px;">${(node as VizPoint).label}</div>
-              <div style="font-size: 11px; color: #818cf8; font-weight: 600;">${(node as VizPoint).region} • ${(node as VizPoint).epoque}</div>
-              <div style="font-size: 10px; color: #94a3b8; margin-top: 4px;">Date: ${(node as VizPoint).date || 'Inconnue'}</div>
+            <div style="background: rgba(13, 15, 20, 0.95); padding: 12px; border-radius: 14px; border: 1px solid rgba(255,255,255,0.1); backdrop-filter: blur(12px); box-shadow: 0 20px 25px -5px rgba(0,0,0,0.5); font-family: 'Outfit', sans-serif; color: #fff;">
+              <div style="font-weight: 800; font-size: 15px; margin-bottom: 6px;">${(node as VizPoint).label}</div>
+              <div style="font-size: 10px; color: #818cf8; font-weight: 600;">${(node as VizPoint).region} • ${(node as VizPoint).epoque}</div>
+              <div style="font-size: 10px; color: #64748b; margin-top: 4px;">📅 ${(node as VizPoint).date || 'Inconnue'}</div>
+              ${isHeatmap ? `<div style="margin-top: 8px; font-size: 9px; color: #fb923c;">🔥 Densité: ${(node as VizPoint).density}</div>` : ''}
             </div>
           `}
           onNodeClick={(node: any) => {
             setClickedNode(node);
             findNeighbors(node);
           }}
-          onNodeDoubleClick={(node: any) => {
-            if (node.id) {
-              navigate(`/edit-event/${node.id}`);
-            }
-          }}
+          onNodeDoubleClick={(node: any) => focusOnNode(node)}
           backgroundColor="#000000"
           showNavInfo={false}
           enableNodeDrag={false}
-          nodeRelSize={2}
           nodeOpacity={0.9}
           linkOpacity={0}
         />
       </div>
+    </div>
+  );
+};
+
+const CollapsibleList: React.FC<{ title: string, icon: any, items: string[], selected: Set<string>, onToggle: (item: string) => void }> = ({ title, icon, items, selected, onToggle }) => {
+  const [isOpen, setIsOpen] = useState(false);
+  const [search, setSearch] = useState('');
+  
+  const filteredItems = items.filter(i => i.toLowerCase().includes(search.toLowerCase()));
+
+  return (
+    <div className="collapsible-container">
+      <button onClick={() => setIsOpen(!isOpen)} className="collapsible-trigger">
+        <div style={{ display: 'flex', alignItems: 'center', gap: '0.5rem' }}>
+          {icon} <span>{title}</span>
+        </div>
+        {isOpen ? <ChevronDown size={14} /> : <ChevronRight size={14} />}
+      </button>
+      
+      {isOpen && (
+        <div className="collapsible-content">
+          <div className="collapsible-search">
+             <Search size={12} style={{ position: 'absolute', left: '8px', top: '50%', transform: 'translateY(-50%)', color: '#64748b' }} />
+             <input 
+               type="text" 
+               placeholder="Filtrer..." 
+               value={search}
+               onChange={e => setSearch(e.target.value)}
+               className="collapsible-search-input"
+             />
+          </div>
+          <div className="collapsible-list-items">
+            {filteredItems.map(item => (
+              <label key={item} className="collapsible-item">
+                <input type="checkbox" checked={selected.has(item)} onChange={() => onToggle(item)} />
+                <span>{item}</span>
+              </label>
+            ))}
+          </div>
+        </div>
+      )}
     </div>
   );
 };
