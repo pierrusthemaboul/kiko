@@ -288,6 +288,7 @@ const Visualisation3DPage: React.FC = () => {
           }}
           backgroundColor="#000000"
           showNavInfo={false}
+          enableNodeDrag={false}
           nodeRelSize={2}
           nodeOpacity={0.9}
           linkOpacity={0}
