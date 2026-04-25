@@ -1,0 +1,40 @@
+name: Sync 3D Visualization Data
+
+on:
+  repository_dispatch:
+    types: [sync_3d_data]
+  workflow_dispatch:
+
+jobs:
+  sync:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      - name: Setup Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: '20'
+
+      - name: Install dependencies
+        run: |
+          cd admin_web
+          npm install
+
+      - name: Run sync script
+        run: |
+          cd admin_web
+          node scripts/prepare_full_viz_data.mjs
+        env:
+          EXPO_PUBLIC_SUPABASE_URL: ${{ secrets.EXPO_PUBLIC_SUPABASE_URL }}
+          EXPO_PUBLIC_SUPABASE_ANON_KEY: ${{ secrets.EXPO_PUBLIC_SUPABASE_ANON_KEY }}
+          OPENAI_API_KEY: ${{ secrets.OPENAI_API_KEY }}
+
+      - name: Commit and push changes
+        run: |
+          git config --global user.name "GitHub Action"
+          git config --global user.email "action@github.com"
+          git add admin_web/public/data_for_viz.json
+          git commit -m "data: auto-sync 3D map [skip ci]" || echo "No changes to commit"
+          git push
