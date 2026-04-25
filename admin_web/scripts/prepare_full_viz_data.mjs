@@ -80,11 +80,24 @@ async function run() {
   console.log(`✅ Loaded ${points.length} official events.`);
 
   // 2. Get SAS Events
-  const { data: sasEvents, error: sasError } = await supabase
-    .from('sas')
-    .select('id, titre, date, theme, embedding');
+  console.log("  - Fetching SAS events in batches...");
+  let sasEvents = [];
+  let sasFrom = 0;
+  let sasStep = 500;
+  let sasHasMore = true;
 
-  if (sasError) throw sasError;
+  while (sasHasMore) {
+    const { data, error } = await supabase
+      .from('sas')
+      .select('id, titre, date, theme, embedding')
+      .range(sasFrom, sasFrom + sasStep - 1);
+    
+    if (error) throw error;
+    sasEvents = [...sasEvents, ...data];
+    if (data.length < sasStep) sasHasMore = false;
+    else sasFrom += sasStep;
+    console.log(`    - Loaded ${sasEvents.length} SAS events...`);
+  }
 
   for (const s of sasEvents) {
     let vector = s.embedding;
@@ -112,11 +125,24 @@ async function run() {
   console.log(`✅ Added ${sasEvents.length} SAS events.`);
 
   // 3. Get Antichambre Events
-  const { data: antiEvents, error: antiError } = await supabase
-    .from('antichambre')
-    .select('id, titre, date, region, epoque, embedding_1536');
+  console.log("  - Fetching Antichambre events in batches...");
+  let antiEvents = [];
+  let antiFrom = 0;
+  let antiStep = 500;
+  let antiHasMore = true;
 
-  if (antiError) throw antiError;
+  while (antiHasMore) {
+    const { data, error } = await supabase
+      .from('antichambre')
+      .select('id, titre, date, region, epoque, embedding_1536')
+      .range(antiFrom, antiFrom + antiStep - 1);
+    
+    if (error) throw error;
+    antiEvents = [...antiEvents, ...data];
+    if (data.length < antiStep) antiHasMore = false;
+    else antiFrom += antiStep;
+    console.log(`    - Loaded ${antiEvents.length} Antichambre events...`);
+  }
 
   for (const a of antiEvents) {
      let vector = a.embedding_1536;
