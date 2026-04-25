@@ -180,7 +180,7 @@ const Visualisation3DPage: React.FC = () => {
               <h2 className="viz-title">K-Viz 3D</h2>
            </div>
            <button onClick={() => setIsSidebarOpen(false)} className="viz-control-btn" style={{ background: 'none', border: 'none' }}>
-             <ChevronDown className="rotate-90" size={20} />
+             <ChevronRight size={20} />
            </button>
         </div>
 
@@ -293,6 +293,14 @@ const Visualisation3DPage: React.FC = () => {
           >
             <ArrowLeft size={16} /> Retour Admin
           </button>
+
+          <div className="viz-legend">
+             <div className="viz-legend-item"><div className="viz-legend-dot" style={{ background: '#6366f1' }} /> Officiels</div>
+             <div className="viz-legend-item"><div className="viz-legend-dot" style={{ background: '#f43f5e' }} /> Table SAS</div>
+             <div className="viz-legend-item"><div className="viz-legend-dot" style={{ background: '#10b981' }} /> Antichambre</div>
+             <div className="viz-legend-item"><div className="viz-legend-dot" style={{ background: '#fbbf24' }} /> Similaires</div>
+             <div style={{ marginTop: '0.5rem', fontSize: '8px', opacity: 0.5 }}>UMAP 3D Semantic Projection</div>
+          </div>
         </div>
       </aside>
 
@@ -342,13 +350,6 @@ const Visualisation3DPage: React.FC = () => {
           )}
         </div>
 
-        <div className="viz-legend">
-           <div className="viz-legend-item"><div className="viz-legend-dot" style={{ background: '#6366f1' }} /> Officiels</div>
-           <div className="viz-legend-item"><div className="viz-legend-dot" style={{ background: '#f43f5e' }} /> Table SAS</div>
-           <div className="viz-legend-item"><div className="viz-legend-dot" style={{ background: '#10b981' }} /> Antichambre</div>
-           <div className="viz-legend-item"><div className="viz-legend-dot" style={{ background: '#fbbf24' }} /> Similaires</div>
-           <div style={{ marginTop: '0.5rem', fontSize: '8px', opacity: 0.5 }}>UMAP 3D Semantic Projection</div>
-        </div>
 
         <ForceGraph3D
           ref={fgRef}
