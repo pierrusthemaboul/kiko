@@ -12,7 +12,7 @@ import { LEVEL_CONFIGS } from '../levelConfigs'; // Ajuste le chemin si nécessa
 import { useEventSelector, getCachedDateInfo } from './useEventSelector'; // Ajuste le chemin si nécessaire
 
 const EVENTS_CACHE_KEY = 'events_cache_v1';
-const EVENTS_CACHE_VERSION = 12;
+const EVENTS_CACHE_VERSION = 13;
 const EVENTS_CACHE_TTL_MS = 24 * 60 * 60 * 1000; // 24h
 
 interface InitGameOptions {
@@ -185,7 +185,11 @@ export function useInitGame() {
         // console.log(`[InitGame - Instance ${currentInstanceId}] Cache miss/expired. Fetching events from Supabase...`);
         const { data, error: eventsError } = await supabase
           .from('evenements')
-          .select('id, titre, date, date_formatee, types_evenement, illustration_url, frequency_score, notoriete, notoriete_fr, description_detaillee, last_used');
+          .select('id, titre, date, date_formatee, types_evenement, illustration_url, frequency_score, notoriete, notoriete_fr, description_detaillee, last_used')
+          .gte('notoriete_fr', 80) // Zone A : On descend à 80 pour être sûr d'avoir assez d'événements
+          .gte('date', '0001-01-01') // Exclure strictement les années BC
+          .order('notoriete_fr', { ascending: false })
+          .limit(300);
         if (eventsError) throw eventsError;
         // Utiliser notoriete_fr (notoriété française révisée) à la place de notoriete
         allEventsData = (data || []).map((e: any) => ({

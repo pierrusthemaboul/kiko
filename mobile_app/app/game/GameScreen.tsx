@@ -285,15 +285,33 @@ function ClassicGameScreen({ requestedMode }: { requestedMode?: string }) {
     Animated.timing(fadeAnim, { toValue: 1, duration: 500, useNativeDriver: true }).start();
   }, [gameKey, fadeAnim]); // Se déclenche au montage et quand gameKey change
 
-  // Détermine quand afficher l'indicateur de chargement principal
-  const showLoadingIndicator = runState === 'pending' || (gameKey === 0 && gameLogic.loading) || isRestarting;
+  const [countdown, setCountdown] = useState<number | null>(null);
 
-  // Affiche l'indicateur de chargement si le jeu s'initialise, redémarre, ou si des données essentielles manquent
-  if (showLoadingIndicator || runState !== 'ready' || !gameLogic || !gameLogic.user || !gameLogic.currentLevelConfig || !gameLogic.adState) {
+  // Détermine si toutes les données sont prêtes
+  const isDataLoaded = !(runState === 'pending' || (gameKey === 0 && gameLogic.loading) || isRestarting || runState !== 'ready' || !gameLogic || !gameLogic.user || !gameLogic.currentLevelConfig || !gameLogic.adState);
+
+  useEffect(() => {
+    if (isDataLoaded && countdown === null) {
+      setCountdown(3);
+    } else if (!isDataLoaded && countdown !== null) {
+      setCountdown(null);
+    }
+  }, [isDataLoaded, countdown]);
+
+  useEffect(() => {
+    if (countdown !== null && countdown > 0) {
+      const timer = setTimeout(() => setCountdown(c => c !== null ? c - 1 : null), 600);
+      return () => clearTimeout(timer);
+    }
+  }, [countdown]);
+
+  if (!isDataLoaded || (countdown !== null && countdown > 0)) {
     return (
       <View style={[styles.fullScreenContainer, styles.loadingContainer]}>
         <StatusBar translucent backgroundColor="black" barStyle="light-content" />
-        <ActivityIndicator size="large" color="#FFFFFF" />
+        <Animated.Text style={{ fontSize: 72, color: 'white', fontWeight: 'bold' }}>
+          {countdown !== null && countdown > 0 ? countdown : '...'}
+        </Animated.Text>
       </View>
     );
   }

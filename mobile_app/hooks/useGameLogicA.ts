@@ -147,9 +147,9 @@ export function useGameLogicA(initialEvent?: string, modeId?: string) {
 
   // 🎵 Lancer la musique automatiquement dès que le chargement initial est fini
   useEffect(() => {
-    console.log(`[useGameLogicA] Music check: initLoading=${initLoading}, isMusicReady=${isMusicReady}`);
+    // console.log(`[useGameLogicA] Music check: initLoading=${initLoading}, isMusicReady=${isMusicReady}`);
     if (!initLoading && isMusicReady) {
-      console.log('[useGameLogicA] 🎵 Auto-triggering music after loading finished');
+      // console.log('[useGameLogicA] 🎵 Auto-triggering music after loading finished');
       startMusic();
     }
   }, [initLoading, isMusicReady, startMusic]);
@@ -354,7 +354,7 @@ export function useGameLogicA(initialEvent?: string, modeId?: string) {
   const musicOptions = useMemo(() => ({
     volume: 0.3,
     onTrackChange: (trackName: string) => {
-      console.log(`[useGameLogicA] Now playing: ${trackName}`);
+      // console.log(`[useGameLogicA] Now playing: ${trackName}`);
     },
     onError: (error: Error) => {
       console.error('[useGameLogicA] Music error:', error);

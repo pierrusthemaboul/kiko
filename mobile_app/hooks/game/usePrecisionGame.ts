@@ -106,10 +106,13 @@ function evenementsRepo() {
     async selectForPrecisionMode(): Promise<{ data: EvenementRow[] | null; error: unknown | null }> {
       const res = await (table as {
         select: (cols: string) => {
-          order: (col: 'notoriete', opts: { ascending: boolean }) => Promise<{ data: EvenementRow[] | null; error: unknown | null }>;
+          gte: (col: 'date', value: string) => {
+            order: (col: 'notoriete', opts: { ascending: boolean }) => Promise<{ data: EvenementRow[] | null; error: unknown | null }>;
+          };
         };
       })
         .select('id, titre, date, date_formatee, types_evenement, illustration_url, notoriete, description_detaillee, niveau_difficulte')
+        .gte('date', '0001-01-01')
         .order('notoriete', { ascending: false });
 
       return { data: res.data ?? null, error: res.error ?? null };

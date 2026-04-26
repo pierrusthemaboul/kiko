@@ -168,6 +168,8 @@ export function useEventSelector({
 
   // --- NOUVEAU : HISTORIQUE PERSONNEL DU JOUEUR ---
   const [personalHistory, setPersonalHistory] = useState<Map<string, { times_seen: number }>>(new Map());
+  const [zoneBBuffer, setZoneBBuffer] = useState<Event[]>([]);
+  const isFetchingZoneBRef = useRef(false);
 
   // Clé pour le stockage local (AsyncStorage)
   const LOCAL_HISTORY_KEY = 'user_event_usage_local';
@@ -407,9 +409,7 @@ export function useEventSelector({
     const usedCount = usedEvents.size;
 
     // Log début prefilter
-    if (__DEV__) {
-      console.log(`\n   🔍 [preFilter] Début: ${events.length} events, refYear=${refYear}, canAddAntiques=${canAddMoreAntiques}`);
-    }
+
 
     let filtered = events.filter(e => {
       if (usedEvents.has(e.id) || !e.date || e.id === referenceEvent.id) return false;
@@ -426,7 +426,6 @@ export function useEventSelector({
       return true;
     });
     const afterBasicFilter = filtered.length;
-    if (__DEV__) console.log(`      → Filtre basique (used/sameYear): ${afterBasicFilter}`);
 
     // 2. Filtrage par TIER PROBABILISTE
     // On détermine quel Tier on vise pour cet événement spécifique
@@ -450,7 +449,6 @@ export function useEventSelector({
 
     filtered = afterPoolFilter;
     const afterTierFilter = filtered.length;
-    if (__DEV__) console.log(`      → Filtre Tier ${targetTier} (p=${rand.toFixed(2)}): ${afterTierFilter}`);
 
     // 3. Filtrage temporel préliminaire (large)
     const timeGapBase = config.timeGap?.base || 100;
@@ -462,7 +460,6 @@ export function useEventSelector({
 
     filtered = afterTime;
     const afterTimeFilter = filtered.length;
-    if (__DEV__) console.log(`      → Filtre time (limite=${preTimeLimit.toFixed(0)}ans): ${afterTimeFilter}`);
 
     // 4. Filtrage antique
     const beforeAntique = filtered.length;
@@ -470,7 +467,6 @@ export function useEventSelector({
       const afterAntique = filtered.filter(e => !isAntiqueEvent(e));
       filtered = afterAntique;
     }
-    if (__DEV__) console.log(`      → Filtre antique (canAdd=${canAddMoreAntiques}): ${filtered.length}`);
 
     // 4.5 Filtrage diversité d'époque (consecutive)
     // À bas niveau, on évite de rester trop longtemps dans la même époque
@@ -480,7 +476,6 @@ export function useEventSelector({
       // Ne pas vider le pool si trop restrictif
       if (afterDiversity.length >= 10) {
         filtered = afterDiversity;
-        if (__DEV__) console.log(`      → Filtre diversité époque (${currentEra}): ${filtered.length}`);
       }
     }
 
@@ -681,15 +676,52 @@ export function useEventSelector({
     usedEvents: Set<string>,
     currentStreak: number = 0
   ): Promise<Event | null> => {
-    const explainOn = __DEV__; // Activer les logs en dev
+    const explainOn = false; // Activer les logs en dev
     const explainStartTs = Date.now();
     const exclusionAcc = { logExclusion: (..._args: any[]) => { }, flush: () => ({ truncated: 0 }), size: () => 0 };
 
-    // ===== LOG SELECTION START =====
-    console.log(`\n🎲 [selectNewEvent] === NOUVELLE SELECTION ===`);
-    console.log(`   Niveau: ${userLevel} | Events vus: ${usedEvents.size} | Streak: ${currentStreak}`);
-    console.log(`   Event référence: ${referenceEvent?.titre} (${referenceEvent?.date})`);
-    console.log(`   Compteur saut forcé: ${eventCountRef.current}/${forcedJumpEventCount}`);
+    // --- RECHARGE DU BUFFER ZONE B (Lazy Loading) ---
+    if (zoneBBuffer.length < 5 && !isFetchingZoneBRef.current && referenceEvent) {
+      isFetchingZoneBRef.current = true;
+      
+      const usedIds = Array.from(usedEvents);
+      if (!usedIds.includes(referenceEvent.id)) {
+        usedIds.push(referenceEvent.id);
+      }
+
+      supabase.rpc('fetch_intelligent_events', {
+        p_ref_event_id: referenceEvent.id,
+        p_exclude_ids: usedIds,
+        p_limit: 20,
+        p_difficulty_level: userLevel
+      }).then(({ data, error }) => {
+        isFetchingZoneBRef.current = false;
+        if (!error && data && data.length > 0) {
+           const formattedData = (data as any[]).map(e => ({
+             ...e,
+             notoriete: e.notoriete_fr ?? e.notoriete
+           }));
+           setZoneBBuffer(prev => {
+             const newEvents = formattedData.filter(newEv => !prev.some(p => p.id === newEv.id) && !usedEvents.has(newEv.id));
+             return [...prev, ...newEvents];
+           });
+        }
+      }).catch(err => {
+        isFetchingZoneBRef.current = false;
+      });
+    }
+
+    // --- FUSION ZONE A + ZONE B ---
+    const combinedEventsMap = new Map();
+    [...events, ...zoneBBuffer].forEach(e => combinedEventsMap.set(e.id, e));
+    events = Array.from(combinedEventsMap.values());
+
+    if (explainOn) {
+      console.log(`\n🎲 [selectNewEvent] === NOUVELLE SELECTION ===`);
+      console.log(`   Niveau: ${userLevel} | Events vus: ${usedEvents.size} | Streak: ${currentStreak}`);
+      console.log(`   Event référence: ${referenceEvent?.titre} (${referenceEvent?.date})`);
+      console.log(`   Compteur saut forcé: ${eventCountRef.current}/${forcedJumpEventCount}`);
+    }
 
     // Debouncing pour éviter les appels multiples rapprochés
     const now = Date.now();
@@ -718,15 +750,14 @@ export function useEventSelector({
     eventCountRef.current = eventCountRef.current + 1;
     setEventCount(eventCountRef.current);
     const localEventCount = eventCountRef.current;
-    console.log(`   Event count incrémenté: ${localEventCount}`);
+    if (explainOn) console.log(`   Event count incrémenté: ${localEventCount}`);
 
     // --- SYSTÈME D'ÉVÉNEMENTS BONUS ---
     const isBonusEventTriggered = localEventCount % bonusEventCountdown === 0;
-    console.log(`   Bonus check: ${localEventCount} % ${bonusEventCountdown} = ${isBonusEventTriggered ? 'BONUS!' : 'non'}`);
+    if (explainOn) console.log(`   Bonus check: ${localEventCount} % ${bonusEventCountdown} = ${isBonusEventTriggered ? 'BONUS!' : 'non'}`);
     if (isBonusEventTriggered) {
       setShouldForceBonusEvent(true);
       setBonusEventCountdown(Math.floor(Math.random() * (10 - 8 + 1)) + 8);
-
     }
 
     // --- LOGIQUE DE BALANCE TEMPORELLE (Anti-Tunnel Historique) ---
@@ -748,15 +779,12 @@ export function useEventSelector({
       const returnProbability = userLevel <= 2 ? 0.4 : 0.2;
       if (Math.random() < returnProbability) {
         forceReturnToPresent = true;
-        forceReturnToPresent = true;
       }
     }
 
     // --- LOGIQUE DE SAUT TEMPOREL FORCÉ ---
     const isForcedJumpTriggered = localEventCount === forcedJumpEventCount || forceReturnToPresent;
-    console.log(`   Forced jump check: count=${localEventCount}, target=${forcedJumpEventCount}, forceReturn=${forceReturnToPresent} → ${isForcedJumpTriggered ? 'SAUT FORCÉ!' : 'non'}`);
-
-
+    if (explainOn) console.log(`   Forced jump check: count=${localEventCount}, target=${forcedJumpEventCount}, forceReturn=${forceReturnToPresent} → ${isForcedJumpTriggered ? 'SAUT FORCÉ!' : 'non'}`);
 
     if (isForcedJumpTriggered) {
 
@@ -774,12 +802,12 @@ export function useEventSelector({
       let tunnelThreshold = 2;
       if (userLevel > 15) tunnelThreshold = 4;
       else if (userLevel > 10) tunnelThreshold = 3;
-      console.log(`   Tunnel detection: threshold=${tunnelThreshold}, recentEras=[${recentEras.slice(-5).join(',')}]`);
+      if (explainOn) console.log(`   Tunnel detection: threshold=${tunnelThreshold}, recentEras=[${recentEras.slice(-5).join(',')}]`);
 
       const isStuckInPast = userLevel <= 19 &&
         recentEras.length >= tunnelThreshold &&
         recentEras.slice(-tunnelThreshold).every(era => era === HistoricalPeriod.ANTIQUITY || era === HistoricalPeriod.MIDDLE_AGES);
-      console.log(`   Tunnel passé: ${isStuckInPast ? 'OUI (saut vers présent)' : 'non'}`);
+      if (explainOn) console.log(`   Tunnel passé: ${isStuckInPast ? 'OUI (saut vers présent)' : 'non'}`);
 
       const isStuckInModern = recentEras.length >= 3 &&
         recentEras.every(era =>
@@ -787,23 +815,23 @@ export function useEventSelector({
           era === HistoricalPeriod.TWENTIETH ||
           era === HistoricalPeriod.TWENTYFIRST
         );
-      console.log(`   Tunnel moderne: ${isStuckInModern ? 'OUI (saut vers passé)' : 'non'}`);
+      if (explainOn) console.log(`   Tunnel moderne: ${isStuckInModern ? 'OUI (saut vers passé)' : 'non'}`);
 
       if (forceReturnToPresent || isStuckInPast) {
         const targetYear = Math.floor(Math.random() * (2024 - 1800 + 1)) + 1800;
         jumpDistance = Math.abs(refYear - targetYear);
         jumpForward = true;
-        console.log(`   🚀 SAUT VERS PRÉSENT: cible=${targetYear}, distance=${jumpDistance}ans`);
+        if (explainOn) console.log(`   🚀 SAUT VERS PRÉSENT: cible=${targetYear}, distance=${jumpDistance}ans`);
 
       } else if (isStuckInModern) {
         const targetYear = Math.floor(Math.random() * (1700 - (-500) + 1)) - 500;
         jumpDistance = Math.abs(refYear - targetYear);
         jumpForward = false;
-        console.log(`   🚀 SAUT VERS PASSÉ: cible=${targetYear}, distance=${jumpDistance}ans`);
+        if (explainOn) console.log(`   🚀 SAUT VERS PASSÉ: cible=${targetYear}, distance=${jumpDistance}ans`);
 
       } else if (refYear > 1700) {
         const goToAncientTimes = Math.random() < 0.8;
-        console.log(`   Mode moderne (>1700): goToAncientTimes=${goToAncientTimes} (80% proba)`);
+        if (explainOn) console.log(`   Mode moderne (>1700): goToAncientTimes=${goToAncientTimes} (80% proba)`);
 
         if (goToAncientTimes) {
           // Saut MASSIF vers Antiquité (-500 à 500) ou Moyen-Âge (500-1500)
@@ -1104,8 +1132,10 @@ export function useEventSelector({
     });
 
     const scoringPool = diversityFilteredPool.slice(0, MAX_SCORING_POOL);
-    console.log(`\n🎯 [Scoring] Pool: ${scoringPool.length} événements à scorer`);
-    console.log(`   TimeGap adaptatif: base=${timeGap.base.toFixed(0)}, min=${timeGap.min.toFixed(0)}, max=${timeGap.max.toFixed(0)}`);
+    if (explainOn) {
+      console.log(`\n🎯 [Scoring] Pool: ${scoringPool.length} événements à scorer`);
+      console.log(`   TimeGap adaptatif: base=${timeGap.base.toFixed(0)}, min=${timeGap.min.toFixed(0)}, max=${timeGap.max.toFixed(0)}`);
+    }
 
     const scoredEvents = scoringPool
       .map(evt => ({
@@ -1122,12 +1152,14 @@ export function useEventSelector({
       .sort((a, b) => b.score - a.score);
 
     // Log top 5 avec détails
-    console.log(`   Résultats scoring (${scoredEvents.length} valides):`);
-    scoredEvents.slice(0, 5).forEach((s, i) => {
-      const parts = (s.event as any)._scoreParts;
-      const noto = (s.event as any).notoriete_fr ?? (s.event as any).notoriete ?? 'N/A';
-      console.log(`   ${i+1}. "${s.event.titre?.substring(0, 25)}..." ${s.score.toFixed(1)}pts gap:${parts?.timeGap?.toFixed(0)||'N/A'} not:${parts?.notorieteBonus?.toFixed(0)||'N/A'} ctx:${parts?.context||'N/A'} perso:${personalHistory.get(s.event.id)?.times_seen||0}x`);
-    });
+    if (explainOn) {
+      console.log(`   Résultats scoring (${scoredEvents.length} valides):`);
+      scoredEvents.slice(0, 5).forEach((s, i) => {
+        const parts = (s.event as any)._scoreParts;
+        const noto = (s.event as any).notoriete_fr ?? (s.event as any).notoriete ?? 'N/A';
+        console.log(`   ${i+1}. "${s.event.titre?.substring(0, 25)}..." ${s.score.toFixed(1)}pts gap:${parts?.timeGap?.toFixed(0)||'N/A'} not:${parts?.notorieteBonus?.toFixed(0)||'N/A'} ctx:${parts?.context||'N/A'} perso:${personalHistory.get(s.event.id)?.times_seen||0}x`);
+      });
+    }
 
 
 
@@ -1346,15 +1378,19 @@ export function useEventSelector({
     const selYear = getCachedDateInfo((selected as any)?.date).year;
     const refYearLog = referenceEvent ? getCachedDateInfo(referenceEvent.date).year : selYear;
     const actualGap = Math.abs(selYear - refYearLog);
-    console.log(`\n✅ [SÉLECTION FINALE] === ÉVÉNEMENT CHOISI ===`);
-    console.log(`   Titre: "${(selected as any)?.titre}"`);
-    console.log(`   Année: ${selYear} | Écart temps: ${actualGap}ans (réf: ${refYearLog})`);
-    console.log(`   Notoriété: ${(selected as any)?.notoriete_fr ?? (selected as any)?.notoriete ?? 'N/A'}`);
-    console.log(`   Période: ${getPeriod((selected as any)?.date)} | Chemin: ${selectionPath}`);
-    console.log(`   Bonus: ${wasBonusEvent ? 'OUI' : 'non'} | Saut temporel: ${(selected as any)?._isTemporalJump ? 'OUI' : 'non'}`);
-    console.log(`   Déjà vu: ${personalHistory.get((selected as any)?.id)?.times_seen || 0}x`);
-    console.log(`   Prochain saut forcé: ${forcedJumpEventCount} (actuel: ${localEventCount})`);
-    console.log(`   Durée totale: ${Date.now() - explainStartTs}ms\n`);
+    if (explainOn) {
+      console.log(`\n✅ [SÉLECTION FINALE] === ÉVÉNEMENT CHOISI ===`);
+      console.log(`   Titre: "${(selected as any)?.titre}"`);
+      console.log(`   Année: ${selYear} | Écart temps: ${actualGap}ans (réf: ${refYearLog})`);
+      console.log(`   Notoriété: ${(selected as any)?.notoriete_fr ?? (selected as any)?.notoriete ?? 'N/A'}`);
+      console.log(`   Période: ${getPeriod((selected as any)?.date)} | Chemin: ${selectionPath}`);
+      console.log(`   Bonus: ${wasBonusEvent ? 'OUI' : 'non'} | Saut temporel: ${(selected as any)?._isTemporalJump ? 'OUI' : 'non'}`);
+      console.log(`   Déjà vu: ${personalHistory.get((selected as any)?.id)?.times_seen || 0}x`);
+      console.log(`   Prochain saut forcé: ${forcedJumpEventCount} (actuel: ${localEventCount})`);
+      console.log(`   Durée totale: ${Date.now() - explainStartTs}ms\n`);
+    } else {
+      console.log(`✅ [Sélection] "${(selected as any)?.titre}" (${selYear}) - Période: ${getPeriod((selected as any)?.date)} | Notoriété: ${(selected as any)?.notoriete_fr ?? (selected as any)?.notoriete ?? 'N/A'}`);
+    }
 
 
 
@@ -1408,7 +1444,8 @@ export function useEventSelector({
   }, [
     setError, setIsGameOver, updateStateCallback, lastSelectionTime,
     preFilterEvents, scoreEventOptimized, getTimeDifference, shouldForceEasyEvent,
-    recentEras, consecutiveEraCount, getPeriod, forcedJumpEventCount, bonusEventCountdown
+    recentEras, consecutiveEraCount, getPeriod, forcedJumpEventCount, bonusEventCountdown,
+    zoneBBuffer
   ]);
 
   /**
