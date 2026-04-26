@@ -134,7 +134,7 @@ const EventEditorPage: React.FC = () => {
       const fileName = `${eventData.id}_manual_${Date.now()}.${fileExt}`;
       
       const { error: uploadError } = await supabase.storage
-        .from('evenements_kiko_images')
+        .from('evenements-image')
         .upload(fileName, file, { 
           cacheControl: '31536000',
           upsert: true
@@ -143,7 +143,7 @@ const EventEditorPage: React.FC = () => {
       if (uploadError) throw uploadError;
 
       const { data: publicUrlData } = supabase.storage
-        .from('evenements_kiko_images')
+        .from('evenements-image')
         .getPublicUrl(fileName);
 
       const publicUrl = publicUrlData.publicUrl;
