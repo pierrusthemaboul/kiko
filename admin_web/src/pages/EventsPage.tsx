@@ -40,6 +40,7 @@ interface Event {
   region: string;
   epoque: string;
   notoriete: number;
+  notoriete_fr?: number;
   niveau_difficulte: number;
   description_detaillee: string;
   created_at: string;
@@ -66,6 +67,8 @@ const EventsPage: React.FC = () => {
   const [debouncedSearch, setDebouncedSearch] = useState('');
   const [totalCount, setTotalCount] = useState(2500);
   const [randomOffset, setRandomOffset] = useState(0);
+  const [sortField, setSortField] = useState<'date' | 'notoriete_fr'>('date');
+  const [sortOrder, setSortOrder] = useState<'asc' | 'desc'>('desc');
 
   // Restore state from sessionStorage
   useEffect(() => {
@@ -82,7 +85,8 @@ const EventsPage: React.FC = () => {
         if (state.isCorrigé !== undefined) setIsCorrigé(state.isCorrigé);
         if (state.hasImage !== undefined) setHasImage(state.hasImage);
         if (state.isRandomMode !== undefined) setIsRandomMode(state.isRandomMode);
-        if (state.isRandomMode !== undefined) setIsRandomMode(state.isRandomMode);
+        if (state.sortField) setSortField(state.sortField);
+        if (state.sortOrder) setSortOrder(state.sortOrder);
       } catch (err) {
         console.error('Failed to parse session state', err);
       }
@@ -106,9 +110,9 @@ const EventsPage: React.FC = () => {
   useEffect(() => {
     sessionStorage.setItem('eventsPageState', JSON.stringify({
       currentPage, searchTerm, categoryFilter, regionFilter, epoqueFilter, 
-      isUniversel, isCorrigé, hasImage, isRandomMode
+      isUniversel, isCorrigé, hasImage, isRandomMode, sortField, sortOrder
     }));
-  }, [currentPage, searchTerm, categoryFilter, regionFilter, epoqueFilter, isUniversel, isCorrigé, hasImage, isRandomMode]);
+  }, [currentPage, searchTerm, categoryFilter, regionFilter, epoqueFilter, isUniversel, isCorrigé, hasImage, isRandomMode, sortField, sortOrder]);
 
   
   const [categories, setCategories] = useState<string[]>([]);
@@ -159,7 +163,7 @@ const EventsPage: React.FC = () => {
   useEffect(() => {
     resetAndFetch();
     // eslint-disable-next-line react-hooks/exhaustive-deps
-  }, [source, categoryFilter, regionFilter, epoqueFilter, isUniversel, isCorrigé, hasImage, debouncedSearch, isRandomMode]);
+  }, [source, categoryFilter, regionFilter, epoqueFilter, isUniversel, isCorrigé, hasImage, debouncedSearch, isRandomMode, sortField, sortOrder]);
 
   const fetchMetadata = async () => {
     // Get unique values for filters using a better sample or dedicated query if possible
@@ -220,7 +224,7 @@ const EventsPage: React.FC = () => {
     // Note: This requires the query to have been executed to get the data
     
     if (!debouncedSearch) {
-      query = query.order('date', { ascending: false });
+      query = query.order(sortField, { ascending: sortOrder === 'asc' });
     }
 
     const start = (pageIdx * PAGE_SIZE) + currentOffset;
@@ -489,6 +493,29 @@ const EventsPage: React.FC = () => {
           >
              <Dices size={20} className={isRandomMode ? 'spin' : ''} />
           </button>
+          
+          <div className="sort-selector glass">
+            <button 
+              className={sortField === 'date' ? 'active' : ''} 
+              onClick={() => {
+                if (sortField === 'date') setSortOrder(sortOrder === 'asc' ? 'desc' : 'asc');
+                else { setSortField('date'); setSortOrder('desc'); }
+              }}
+              title="Trier par Date"
+            >
+              📅 {sortField === 'date' ? (sortOrder === 'asc' ? '↑' : '↓') : ''}
+            </button>
+            <button 
+              className={sortField === 'notoriete_fr' ? 'active' : ''} 
+              onClick={() => {
+                if (sortField === 'notoriete_fr') setSortOrder(sortOrder === 'asc' ? 'desc' : 'asc');
+                else { setSortField('notoriete_fr'); setSortOrder('desc'); }
+              }}
+              title="Trier par Notoriété FR"
+            >
+              ⭐ {sortField === 'notoriete_fr' ? (sortOrder === 'asc' ? '↑' : '↓') : ''}
+            </button>
+          </div>
         </div>
 
         <AnimatePresence>
@@ -626,6 +653,9 @@ const EventsPage: React.FC = () => {
                            <span className="event-meta-item"><Calendar size={12}/> {event.date}</span>
                            <span className="event-meta-item"><Tag size={12}/> {event.categorie}</span>
                            <span className="event-meta-item">Niv. {event.niveau_difficulte || 1}</span>
+                           {event.notoriete_fr !== undefined && (
+                             <span className="event-meta-item" title="Notoriété FR">⭐ {event.notoriete_fr}</span>
+                           )}
                          </div>
                        </div>
                     ) : (
@@ -636,6 +666,9 @@ const EventsPage: React.FC = () => {
                          <h3 style={{ whiteSpace: 'normal', display: '-webkit-box', WebkitLineClamp: 2, WebkitBoxOrient: 'vertical', overflow: 'hidden' }}>{event.titre}</h3>
                          <div className="event-meta" style={{ marginTop: '8px' }}>
                            <span className="event-meta-item">Niv. {event.niveau_difficulte || 1}</span>
+                           {event.notoriete_fr !== undefined && (
+                             <span className="event-meta-item" title="Notoriété FR">⭐ {event.notoriete_fr}</span>
+                           )}
                          </div>
                        </div>
                     )}
@@ -773,6 +806,15 @@ const EventsPage: React.FC = () => {
                         onChange={(e) => setEditData({...editData, description_detaillee: e.target.value})}
                       />
                     </div>
+
+                    <div className="edit-field">
+                      <label>Notoriété FR (0-100)</label>
+                      <input 
+                        type="number" 
+                        value={editData.notoriete_fr ?? ''} 
+                        onChange={(e) => setEditData({...editData, notoriete_fr: parseInt(e.target.value) || 0})}
+                      />
+                    </div>
                   </div>
                 ) : (
                   <>
@@ -789,11 +831,14 @@ const EventsPage: React.FC = () => {
                     <h2 className="detail-title">{selectedEvent.titre}</h2>
                     
                     <div className="detail-section">
-                      <h3>Catégories</h3>
+                      <h3>Catégories & Notoriété</h3>
                       <div className="detail-tags">
                         {((selectedEvent as unknown) as { types_evenement: string[] }).types_evenement?.map((t: string) => (
                           <span key={t} className="category-tag">{t}</span>
                         )) || <span className="category-tag">{selectedEvent.categorie}</span>}
+                        {selectedEvent.notoriete_fr !== undefined && (
+                          <span className="category-tag highlight">⭐ {selectedEvent.notoriete_fr}</span>
+                        )}
                       </div>
                     </div>
 

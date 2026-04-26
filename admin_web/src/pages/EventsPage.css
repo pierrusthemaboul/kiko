@@ -638,3 +638,39 @@
   border-color: rgba(94, 98, 107, 0.3);
   color: #8a8f98;
 }
+
+/* Sort Selector */
+.sort-selector {
+  display: flex;
+  padding: 4px;
+  background: rgba(255, 255, 255, 0.03);
+  border-radius: var(--radius-md);
+  gap: 4px;
+}
+
+.sort-selector button {
+  padding: 8px 12px;
+  border-radius: calc(var(--radius-md) - 2px);
+  font-size: 0.8rem;
+  font-weight: 600;
+  color: var(--text-tertiary);
+  transition: var(--transition-fast);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 6px;
+  background: transparent;
+  border: 1px solid transparent;
+}
+
+.sort-selector button.active {
+  background: var(--bg-tertiary);
+  color: var(--text-primary);
+  border-color: var(--glass-border);
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.2);
+}
+
+.sort-selector button:hover:not(.active) {
+  background: rgba(255, 255, 255, 0.05);
+  color: var(--text-secondary);
+}

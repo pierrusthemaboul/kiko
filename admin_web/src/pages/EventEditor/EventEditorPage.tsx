@@ -15,6 +15,7 @@ interface EventData {
   region?: string;
   epoque?: string;
   notoriete?: number;
+  notoriete_fr?: number;
   niveau_difficulte?: number;
   inspection_one_by_one_status?: 'VALIDATED' | 'TITLE_REVIEW' | 'IMAGE_REVIEW' | null;
 }
@@ -90,7 +91,8 @@ const EventEditorPage: React.FC = () => {
         date: eventData.date,
         description_detaillee: eventData.description_detaillee,
         illustration_url: eventData.illustration_url,
-        inspection_one_by_one_status: eventData.inspection_one_by_one_status
+        inspection_one_by_one_status: eventData.inspection_one_by_one_status,
+        notoriete_fr: eventData.notoriete_fr
       })
       .eq('id', eventData.id);
       
@@ -261,6 +263,14 @@ const EventEditorPage: React.FC = () => {
             <div className="form-group">
               <label><Calendar size={16}/> Date (Brute)</label>
               <input type="text" value={eventData.date} onChange={e => setEventData({...eventData, date: e.target.value})} />
+            </div>
+            <div className="form-group">
+              <label>⭐ Notoriété FR (0-100)</label>
+              <input 
+                type="number" 
+                value={eventData.notoriete_fr ?? ''} 
+                onChange={e => setEventData({...eventData, notoriete_fr: parseInt(e.target.value) || 0})} 
+              />
             </div>
             <div className="form-group">
               <label>Description Détaillée</label>
