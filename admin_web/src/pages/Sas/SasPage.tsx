@@ -212,6 +212,33 @@ const SasPage: React.FC = () => {
     });
   }, [navigate, selectedRecord]);
 
+  const handleDelete = async () => {
+    if (!selectedRecord) return;
+    if (!window.confirm(`Supprimer définitivement "${selectedRecord.titre}" du SAS ?`)) return;
+
+    const { error } = await supabase
+      .from('sas')
+      .delete()
+      .eq('id', selectedRecord.id);
+
+    if (!error) {
+      const deletedId = selectedRecord.id;
+      setRecords(prev => prev.filter(r => r.id !== deletedId));
+      setSelectedEventIds(prev => prev.filter(id => id !== deletedId));
+      
+      // Select the next record if available
+      const currentIndex = filteredRecords.findIndex(r => r.id === deletedId);
+      if (filteredRecords.length > 1) {
+        const nextIdx = currentIndex < filteredRecords.length - 1 ? currentIndex + 1 : currentIndex - 1;
+        setSelectedRecordId(filteredRecords[nextIdx].id);
+      } else {
+        setSelectedRecordId(null);
+      }
+    } else {
+      alert("Erreur lors de la suppression : " + error.message);
+    }
+  };
+
   return (
     <div className="sas-page-container">
       {/* Colonne de Gauche : Liste des sas */}
@@ -321,7 +348,7 @@ const SasPage: React.FC = () => {
                      <Wand2 size={18} /> Retouche Image
                    </button>
                    <button className="btn-save"><Save size={18} /> Enregistrer</button>
-                   <button className="btn-delete-plain"><Trash2 size={18} /></button>
+                   <button className="btn-delete-plain" onClick={handleDelete} title="Supprimer définitivement"><Trash2 size={18} /></button>
                  </div>
                </header>
 

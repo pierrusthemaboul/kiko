@@ -546,6 +546,10 @@
   border: 1px solid var(--glass-border);
 }
 
+.pagination-container.top {
+  margin: 10px auto 20px auto;
+}
+
 .pagination-btn {
   width: 40px;
   height: 40px;

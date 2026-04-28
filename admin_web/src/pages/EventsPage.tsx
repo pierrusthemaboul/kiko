@@ -211,7 +211,7 @@ const EventsPage: React.FC = () => {
     const currentOffset = overrideOffset !== undefined ? overrideOffset : randomOffset;
     console.log('[DEBUG] fetchEvents called', { source, pageIdx, debouncedSearch, isRandomMode, offset: currentOffset });
     
-    let query = supabase.from(aiEvents ? 'evenements_ai' : 'evenements').select('*', { count: 'exact' });
+    let query = supabase.from(aiEvents ? 'evenements_ai' : source).select('*', { count: 'exact' });
       
     // Store current navigation context for EventEditorPage Next/Prev features
     sessionStorage.setItem('currentEventsListContext', JSON.stringify({
@@ -435,6 +435,52 @@ const EventsPage: React.FC = () => {
     });
   };
 
+  const renderPagination = (extraClass: string = "") => (
+    totalPages > 1 && !loading && !aiEvents && (
+      <div className={`pagination-container glass ${extraClass}`}>
+        <button 
+          className="pagination-btn" 
+          onClick={() => handlePageChange(currentPage - 1)}
+          disabled={currentPage === 1}
+        >
+          <ChevronLeft size={18} />
+        </button>
+        
+        {getPageNumbers()[0] > 1 && (
+          <>
+            <button className={`pagination-btn ${currentPage === 1 ? 'active' : ''}`} onClick={() => handlePageChange(1)}>1</button>
+            {getPageNumbers()[0] > 2 && <span className="pagination-ellipsis">...</span>}
+          </>
+        )}
+
+        {getPageNumbers().map(p => (
+          <button 
+            key={p} 
+            className={`pagination-btn ${currentPage === p ? 'active' : ''}`}
+            onClick={() => handlePageChange(p)}
+          >
+            {p}
+          </button>
+        ))}
+
+        {getPageNumbers()[getPageNumbers().length - 1] < totalPages && (
+          <>
+            {getPageNumbers()[getPageNumbers().length - 1] < totalPages - 1 && <span className="pagination-ellipsis">...</span>}
+            <button className={`pagination-btn ${currentPage === totalPages ? 'active' : ''}`} onClick={() => handlePageChange(totalPages)}>{totalPages}</button>
+          </>
+        )}
+
+        <button 
+          className="pagination-btn" 
+          onClick={() => handlePageChange(currentPage + 1)}
+          disabled={currentPage === totalPages}
+        >
+          <ChevronRight size={18} />
+        </button>
+      </div>
+    )
+  );
+
   return (
     <div className="events-container">
       {/* Header */}
@@ -613,6 +659,8 @@ const EventsPage: React.FC = () => {
           </div>
         </div>
 
+        {renderPagination("top")}
+
         {loading && !aiEvents ? (
           <div className="loading-state">
             <RefreshCcw className="spin" size={40} />
@@ -697,49 +745,7 @@ const EventsPage: React.FC = () => {
           </div>
         )}
 
-        {totalPages > 1 && !loading && !aiEvents && (
-          <div className="pagination-container glass">
-            <button 
-              className="pagination-btn" 
-              onClick={() => handlePageChange(currentPage - 1)}
-              disabled={currentPage === 1}
-            >
-              <ChevronLeft size={18} />
-            </button>
-            
-            {getPageNumbers()[0] > 1 && (
-              <>
-                <button className={`pagination-btn ${currentPage === 1 ? 'active' : ''}`} onClick={() => handlePageChange(1)}>1</button>
-                {getPageNumbers()[0] > 2 && <span className="pagination-ellipsis">...</span>}
-              </>
-            )}
-
-            {getPageNumbers().map(p => (
-              <button 
-                key={p} 
-                className={`pagination-btn ${currentPage === p ? 'active' : ''}`}
-                onClick={() => handlePageChange(p)}
-              >
-                {p}
-              </button>
-            ))}
-
-            {getPageNumbers()[getPageNumbers().length - 1] < totalPages && (
-              <>
-                {getPageNumbers()[getPageNumbers().length - 1] < totalPages - 1 && <span className="pagination-ellipsis">...</span>}
-                <button className={`pagination-btn ${currentPage === totalPages ? 'active' : ''}`} onClick={() => handlePageChange(totalPages)}>{totalPages}</button>
-              </>
-            )}
-
-            <button 
-              className="pagination-btn" 
-              onClick={() => handlePageChange(currentPage + 1)}
-              disabled={currentPage === totalPages}
-            >
-              <ChevronRight size={18} />
-            </button>
-          </div>
-        )}
+        {renderPagination()}
       </main>
 
       {/* FAB (Floating Action Button) */}

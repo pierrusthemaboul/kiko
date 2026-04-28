@@ -691,9 +691,10 @@ export function useEventSelector({
 
       supabase.rpc('fetch_intelligent_events', {
         p_ref_event_id: referenceEvent.id,
-        p_exclude_ids: usedIds,
-        p_limit: 20,
-        p_difficulty_level: userLevel
+        p_last_event_ids: usedIds,
+        p_limit: 40, // On demande un pool large pour laisser le scoring JS faire son travail
+        p_notoriete_min: userLevel <= 3 ? 60 : (userLevel <= 10 ? 40 : 20),
+        p_min_year: userLevel <= 2 ? 1800 : 1
       }).then(({ data, error }) => {
         isFetchingZoneBRef.current = false;
         if (!error && data && data.length > 0) {
@@ -1108,7 +1109,7 @@ export function useEventSelector({
       notorieteConstrainedPool = filteredByNotoriete.length >= 25
         ? filteredByNotoriete
         : preFilteredEvents;
-      console.log(`   Après filtre notoriété: ${filteredByNotoriete.length} (fallback: ${filteredByNotoriete.length < 25})`);
+      if (explainOn) console.log(`   Après filtre notoriété: ${filteredByNotoriete.length} (fallback: ${filteredByNotoriete.length < 25})`);
     }
 
 
@@ -1346,12 +1347,14 @@ export function useEventSelector({
       selectionPath = 'diversity';
     }
 
-    console.log(`\n📋 [Fallback path] Chemin utilisé: ${selectionPath} (${finalEvents.length} candidats finals)`);
-    console.log(`   Top ${topEvents.length} mélangés: ${topEvents.map((e,i) => `${i+1}.${e.event.titre?.substring(0,15)}..`).join(', ')}`);
+    if (explainOn) {
+      console.log(`\n📋 [Fallback path] Chemin utilisé: ${selectionPath} (${finalEvents.length} candidats finals)`);
+      console.log(`   Top ${topEvents.length} mélangés: ${topEvents.map((e,i) => `${i+1}.${e.event.titre?.substring(0,15)}..`).join(', ')}`);
+    }
 
     let pickedIndex = Math.floor(Math.random() * topEvents.length);
     const selectedEvent = topEvents[pickedIndex].event;
-    console.log(`   🎯 Index tiré: ${pickedIndex}/${topEvents.length}`);
+    if (explainOn) console.log(`   🎯 Index tiré: ${pickedIndex}/${topEvents.length}`);
 
 
     // NOTE: eventCount a déjà été incrémenté au début de la fonction (ligne 370)
