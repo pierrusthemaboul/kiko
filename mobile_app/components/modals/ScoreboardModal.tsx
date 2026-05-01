@@ -64,6 +64,9 @@ const ScoreboardModal: React.FC<ScoreboardModalProps> = ({
   const [selectedEvent, setSelectedEvent] = useState<LevelEventSummary | null>(null);
   const [isReporting, setIsReporting] = useState(false);
 
+  const isValidUuid = (value: string) =>
+    /^[0-9a-f]{8}-[0-9a-f]{4}-[1-5][0-9a-f]{3}-[89ab][0-9a-f]{3}-[0-9a-f]{12}$/i.test(value);
+
   // --- Logique de signalement ---
   const handleReport = (event: LevelEventSummary) => {
     if (!event || !event.id) return;
@@ -72,29 +75,75 @@ const ScoreboardModal: React.FC<ScoreboardModalProps> = ({
       "Historien, une erreur ?",
       `Voulez-vous signaler un problème sur "${event.titre}" ?`,
       [
-        { text: "📅 Date fausse", onPress: () => sendReport(event.id, "DATE_FAUSSE") },
-        { text: "✍️ Titre / Texte", onPress: () => sendReport(event.id, "DESCRIPTION_FAUSSE") },
-        { text: "🖼️ Image", onPress: () => sendReport(event.id, "IMAGE_INCOHERENTE") },
-        { text: "❌ Autre / Doublon", onPress: () => sendReport(event.id, "AUTRE") },
+        { text: "📅 Date fausse", onPress: () => sendReport(event, "DATE_FAUSSE") },
+        { text: "✍️ Titre / Texte", onPress: () => sendReport(event, "DESCRIPTION_FAUSSE") },
+        { text: "🖼️ Image", onPress: () => sendReport(event, "IMAGE_INCOHERENTE") },
+        { text: "❌ Autre / Doublon", onPress: () => sendReport(event, "AUTRE") },
         { text: "Annuler", style: "cancel" }
       ]
     );
   };
 
-  const sendReport = async (eventId: string, type: string) => {
+  const sendReport = async (event: LevelEventSummary, type: string) => {
+    const eventId = event.id;
+
+    if (!isValidUuid(eventId)) {
+      Alert.alert("Signalement impossible", "Identifiant d'événement invalide.");
+      return;
+    }
+
     setIsReporting(true);
     try {
-      const { data: { user } } = await supabase.auth.getUser();
-      const { error } = await (supabase.from('evenements_signalements') as any).insert({
+      const {
+        data: { user },
+      } = await supabase.auth.getUser();
+
+      const reportPayload = {
         evenement_id: eventId,
         user_id: user?.id || null,
         type_erreur: type,
-        status: 'PENDING'
-      });
-      
-      if (error) throw error;
-      Alert.alert("Merci !", "Signalement reçu. Nos historiens vont vérifier !");
-      setSelectedEvent(null);
+      };
+
+      const { error } = await (supabase.from('evenements_signalements') as any).insert(reportPayload);
+
+      if (!error) {
+        Alert.alert("Merci !", "Signalement reçu. Nos historiens vont vérifier !");
+        setSelectedEvent(null);
+        return;
+      }
+
+      const isMissingTable = error?.code === 'PGRST205';
+      if (isMissingTable) {
+        const fallbackPayload = {
+          user_id: user?.id || null,
+          level: 'warn',
+          category: 'event_report',
+          message: `Report ${type} on ${eventId}`,
+          data: {
+            event_id: eventId,
+            title: event.titre,
+            reported_issue: type,
+            event_year: getEventYear(event),
+            source: 'scoreboard_modal',
+          },
+          platform: 'mobile',
+        };
+
+        const { error: fallbackError } = await (supabase.from('remote_debug_logs') as any).insert(
+          fallbackPayload
+        );
+
+        if (!fallbackError) {
+          Alert.alert(
+            'Merci !',
+            'Signalement reçu. Il a été enregistré temporairement côté maintenance.'
+          );
+          setSelectedEvent(null);
+          return;
+        }
+      }
+
+      throw error;
     } catch (err: any) {
       console.error('[SCOREBOARD REPORT ERROR]', err);
       Alert.alert("Erreur", "Impossible d'envoyer le signalement.");
@@ -117,6 +166,12 @@ const ScoreboardModal: React.FC<ScoreboardModalProps> = ({
   function getEventYear(event: LevelEventSummary): string {
     const rawDate = (event.date_formatee || event.date) ?? '';
     if (!rawDate) return '';
+
+    // Cas DD/MM/YYYY ou formats textuels contenant une année explicite
+    const anyYearMatch = rawDate.match(/-?\d{4,6}/);
+    if (anyYearMatch) {
+      return parseInt(anyYearMatch[0], 10).toString();
+    }
 
     // Extraction propre de l'année pour les formats YYYY-MM-DD (même négatifs)
     const match = rawDate.match(/^(-?\d+)-/);
@@ -284,12 +339,30 @@ const ScoreboardModal: React.FC<ScoreboardModalProps> = ({
       >
         <View style={styles.modalOverlay}>
           <View style={styles.eventDetailsModal}>
-            <View style={styles.eventDetailsHeader}>
-              <Text style={styles.eventDetailsTitle}>{selectedEvent.titre}</Text>
-              <Text style={styles.eventDetailsDate}>{getEventYear(selectedEvent)}</Text>
+            <View style={styles.eventDetailsImageContainer}>
+              {selectedEvent.illustration_url ? (
+                <Image
+                  source={{ uri: selectedEvent.illustration_url }}
+                  style={styles.eventDetailsImage}
+                  resizeMode="cover"
+                />
+              ) : (
+                <View style={[styles.eventDetailsImage, styles.eventDetailsImageFallback]}>
+                  <Ionicons name="image-outline" size={32} color="#6b7280" />
+                  <Text style={styles.eventDetailsImageFallbackText}>Illustration indisponible</Text>
+                </View>
+              )}
+
+              <LinearGradient
+                colors={['transparent', 'rgba(0,0,0,0.8)']}
+                style={styles.eventDetailsImageGradient}
+              >
+                <Text style={styles.eventDetailsDate}>{getEventYear(selectedEvent)}</Text>
+                <Text style={styles.eventDetailsTitle}>{selectedEvent.titre}</Text>
+              </LinearGradient>
             </View>
 
-            <ScrollView style={styles.eventDetailsContent}>
+            <ScrollView style={styles.eventDetailsContent} contentContainerStyle={styles.eventDetailsContentInner}>
               <Text style={styles.eventDetailsDescription}>
                 {selectedEvent.description_detaillee
                   ? selectedEvent.description_detaillee
@@ -306,12 +379,14 @@ const ScoreboardModal: React.FC<ScoreboardModalProps> = ({
               </TouchableOpacity>
 
               <TouchableOpacity
-                style={styles.reportSmallButton}
+                style={[styles.reportSmallButton, isReporting && styles.reportSmallButtonDisabled]}
                 onPress={() => handleReport(selectedEvent)}
                 disabled={isReporting}
               >
-                <Ionicons name="flag-outline" size={18} color="#999" />
-                <Text style={styles.reportSmallText}>Signaler une erreur</Text>
+                <Ionicons name="flag-outline" size={16} color="#b91c1c" />
+                <Text style={styles.reportSmallText}>
+                  {isReporting ? 'Envoi...' : 'Signaler une erreur'}
+                </Text>
               </TouchableOpacity>
             </View>
           </View>
@@ -797,10 +872,10 @@ const styles = StyleSheet.create({
     alignItems: 'center',
   },
   eventDetailsModal: {
-    backgroundColor: 'white',
-    borderRadius: 15,
+    backgroundColor: '#ffffff',
+    borderRadius: 18,
     width: '85%',
-    maxWidth: 400,
+    maxWidth: 430,
     maxHeight: '75%',
     overflow: 'hidden',
     elevation: 6,
@@ -809,41 +884,69 @@ const styles = StyleSheet.create({
     shadowOpacity: 0.3,
     shadowRadius: 5,
   },
-  eventDetailsHeader: {
-    padding: 20,
-    paddingBottom: 15,
-    borderBottomWidth: 1,
-    borderBottomColor: '#eee',
-    backgroundColor: '#f9f9f9',
+  eventDetailsImageContainer: {
+    width: '100%',
+    height: 210,
+    backgroundColor: '#e5e7eb',
+  },
+  eventDetailsImage: {
+    width: '100%',
+    height: '100%',
+  },
+  eventDetailsImageFallback: {
+    alignItems: 'center',
+    justifyContent: 'center',
+    gap: 8,
+  },
+  eventDetailsImageFallbackText: {
+    fontSize: 13,
+    color: '#4b5563',
+    fontWeight: '600',
+  },
+  eventDetailsImageGradient: {
+    position: 'absolute',
+    left: 0,
+    right: 0,
+    bottom: 0,
+    paddingHorizontal: 16,
+    paddingVertical: 12,
+  },
+  eventDetailsDate: {
+    fontSize: 14,
+    fontWeight: 'bold',
+    color: '#fbbf24',
+    marginBottom: 4,
   },
   eventDetailsTitle: {
     fontSize: 18,
-    fontWeight: 'bold',
-    marginBottom: 5,
-    color: '#333',
-  },
-  eventDetailsDate: {
-    fontSize: 16,
-    fontWeight: 'bold',
-    color: '#ff5e62',
+    fontWeight: '800',
+    color: '#ffffff',
+    textShadowColor: 'rgba(0, 0, 0, 0.65)',
+    textShadowOffset: { width: 0, height: 1 },
+    textShadowRadius: 3,
   },
   eventDetailsContent: {
-    padding: 20,
+    paddingHorizontal: 16,
+    paddingTop: 14,
     maxHeight: '60%',
+  },
+  eventDetailsContentInner: {
+    paddingBottom: 6,
   },
   eventDetailsDescription: {
     fontSize: 15,
-    lineHeight: 22,
+    lineHeight: 23,
     color: '#444',
+    backgroundColor: '#f8fafc',
+    borderRadius: 12,
+    padding: 14,
   },
   closeButton: {
-    backgroundColor: '#ff5e62',
-    padding: 12,
+    backgroundColor: colors.primary,
+    paddingVertical: 11,
+    paddingHorizontal: 18,
     alignItems: 'center',
-    marginTop: 5,
-    marginHorizontal: 20,
-    marginBottom: 20,
-    borderRadius: 10,
+    borderRadius: 999,
     elevation: 2,
     shadowColor: '#000',
     shadowOffset: { width: 0, height: 1 },
@@ -875,22 +978,31 @@ const styles = StyleSheet.create({
   
   /* Footer détails événement avec bouton de report discret */
   eventDetailsFooter: {
-    paddingHorizontal: 20,
-    paddingBottom: 20,
-    alignItems: 'center',
+    paddingHorizontal: 16,
+    paddingVertical: 14,
+    alignItems: 'stretch',
     gap: 12,
+    borderTopWidth: 1,
+    borderTopColor: '#f1f5f9',
   },
   reportSmallButton: {
     flexDirection: 'row',
     alignItems: 'center',
-    padding: 8,
-    opacity: 0.6,
+    justifyContent: 'center',
+    paddingVertical: 10,
+    borderRadius: 999,
+    backgroundColor: '#fff1f2',
+    borderWidth: 1,
+    borderColor: '#fecdd3',
     gap: 6,
   },
+  reportSmallButtonDisabled: {
+    opacity: 0.6,
+  },
   reportSmallText: {
-    fontSize: 12,
-    color: '#666',
-    textDecorationLine: 'underline',
+    fontSize: 13,
+    color: '#9f1239',
+    fontWeight: '700',
   },
 });
 

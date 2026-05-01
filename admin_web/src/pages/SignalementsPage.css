@@ -1,0 +1,286 @@
+.signalements-page {
+  min-height: 100vh;
+  background: #0a0b10;
+  color: #fff;
+  padding: 12px;
+}
+
+@media (min-width: 769px) {
+  .signalements-page {
+    padding: 20px;
+  }
+}
+
+.glass {
+  background: rgba(255, 255, 255, 0.03);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  backdrop-filter: blur(10px);
+}
+
+.signalements-header {
+  border-radius: 16px;
+  padding: 14px;
+  margin-bottom: 14px;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+@media (min-width: 980px) {
+  .signalements-header {
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+  }
+}
+
+.title-block {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.title-block h1 {
+  margin: 0;
+  font-size: 20px;
+}
+
+.title-block p {
+  margin: 2px 0 0;
+  color: #94a3b8;
+  font-size: 13px;
+}
+
+.top-actions {
+  display: flex;
+  gap: 10px;
+  align-items: center;
+}
+
+.tab-switch {
+  display: flex;
+  border-radius: 10px;
+  overflow: hidden;
+}
+
+.tab-switch button,
+.status-tabs button,
+.refresh-btn,
+.action-btn {
+  border: none;
+  cursor: pointer;
+  font-weight: 600;
+}
+
+.tab-switch button {
+  background: transparent;
+  color: #94a3b8;
+  padding: 8px 12px;
+}
+
+.tab-switch button.active {
+  background: #6366f1;
+  color: #fff;
+}
+
+.refresh-btn {
+  display: inline-flex;
+  gap: 6px;
+  align-items: center;
+  background: rgba(255, 255, 255, 0.08);
+  color: #dbeafe;
+  border-radius: 10px;
+  padding: 8px 10px;
+}
+
+.reports-toolbar {
+  border-radius: 12px;
+  padding: 10px;
+  margin-bottom: 12px;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+@media (min-width: 900px) {
+  .reports-toolbar {
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+  }
+}
+
+.status-tabs {
+  display: flex;
+  gap: 8px;
+}
+
+.status-tabs button {
+  padding: 7px 11px;
+  border-radius: 8px;
+  background: rgba(255, 255, 255, 0.04);
+  color: #94a3b8;
+}
+
+.status-tabs button.active {
+  background: #4f46e5;
+  color: #fff;
+}
+
+.source-label {
+  color: #cbd5e1;
+  font-size: 12px;
+}
+
+.cards-grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 12px;
+}
+
+@media (min-width: 980px) {
+  .cards-grid {
+    grid-template-columns: repeat(auto-fill, minmax(360px, 1fr));
+    gap: 16px;
+  }
+}
+
+.report-card {
+  border-radius: 14px;
+  padding: 12px;
+}
+
+.report-meta {
+  display: flex;
+  justify-content: space-between;
+  gap: 8px;
+  margin-bottom: 10px;
+}
+
+.type-chip,
+.date-chip {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  border-radius: 999px;
+  padding: 4px 10px;
+  font-size: 12px;
+}
+
+.type-chip {
+  background: rgba(99, 102, 241, 0.18);
+  color: #c7d2fe;
+}
+
+.date-chip {
+  background: rgba(148, 163, 184, 0.14);
+  color: #cbd5e1;
+}
+
+.event-preview {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  padding: 8px;
+  border-radius: 10px;
+}
+
+.event-preview img,
+.image-fallback {
+  width: 58px;
+  height: 58px;
+  border-radius: 8px;
+  object-fit: cover;
+  background: rgba(148, 163, 184, 0.2);
+}
+
+.event-info h4 {
+  margin: 0;
+  font-size: 15px;
+}
+
+.event-info span {
+  color: #94a3b8;
+  font-size: 13px;
+}
+
+.report-message {
+  margin: 10px 0;
+  color: #e2e8f0;
+  line-height: 1.45;
+  white-space: pre-wrap;
+}
+
+.report-actions {
+  display: flex;
+  gap: 8px;
+}
+
+.action-btn {
+  flex: 1;
+  border-radius: 10px;
+  padding: 8px;
+  color: #fff;
+  display: inline-flex;
+  justify-content: center;
+  align-items: center;
+  gap: 6px;
+}
+
+.action-btn.resolve {
+  background: #16a34a;
+}
+
+.action-btn.ignore {
+  background: #dc2626;
+}
+
+.readonly-note {
+  font-size: 12px;
+  color: #93c5fd;
+}
+
+.loading-box,
+.empty-box {
+  border-radius: 14px;
+  padding: 26px;
+  text-align: center;
+  color: #cbd5e1;
+}
+
+.empty-box h3 {
+  margin: 8px 0;
+}
+
+.mail-extra {
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+  font-size: 12px;
+  color: #94a3b8;
+}
+
+.mail-data {
+  margin-top: 10px;
+  max-height: 200px;
+  overflow: auto;
+  background: rgba(15, 23, 42, 0.6);
+  border: 1px solid rgba(148, 163, 184, 0.25);
+  border-radius: 10px;
+  padding: 8px;
+  color: #cbd5e1;
+  font-size: 12px;
+}
+
+.spin {
+  animation: spin 1s linear infinite;
+}
+
+@keyframes spin {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}

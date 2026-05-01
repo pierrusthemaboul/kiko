@@ -1,6 +1,14 @@
 import { useCallback, useEffect, useRef, useState } from 'react';
 import MusicManager from '../services/MusicManager';
 import { useMusicContext } from '../contexts/MusicContext';
+import {
+  DEFAULT_MUSIC_ENABLED,
+  DEFAULT_MUSIC_VOLUME,
+  getMusicEnabledPreference,
+  getMusicVolumePreference,
+  setMusicEnabledPreference,
+  setMusicVolumePreference,
+} from '../services/musicPreferences';
 
 interface UseBackgroundMusicOptions {
   autoStart?: boolean;
@@ -15,11 +23,13 @@ interface UseBackgroundMusicReturn {
   isPaused: boolean;
   currentTrack: string | null;
   volume: number;
+  isEnabled: boolean;
   start: () => Promise<void>;
   stop: () => void;
   pause: () => Promise<void>;
   resume: () => Promise<void>;
   setVolume: (volume: number) => void;
+  setEnabled: (enabled: boolean) => Promise<void>;
 }
 
 /**
@@ -47,7 +57,7 @@ interface UseBackgroundMusicReturn {
  */
 export function useBackgroundMusic({
   autoStart = false,
-  volume = 0.3,
+  volume = DEFAULT_MUSIC_VOLUME,
   onTrackChange,
   onError
 }: UseBackgroundMusicOptions = {}): UseBackgroundMusicReturn {
@@ -57,6 +67,8 @@ export function useBackgroundMusic({
 
   const [isPlaying, setIsPlaying] = useState(false);
   const [currentTrack, setCurrentTrack] = useState<string | null>(null);
+  const [volumeState, setVolumeState] = useState(DEFAULT_MUSIC_VOLUME);
+  const [isEnabled, setIsEnabled] = useState(DEFAULT_MUSIC_ENABLED);
   const isInitializedRef = useRef(false);
 
   // Utiliser des refs pour les callbacks afin d'éviter de redéclencher l'effet d'initialisation
@@ -88,6 +100,14 @@ export function useBackgroundMusic({
     const initMusic = async () => {
       try {
         const manager = MusicManager;
+        const [savedVolume, savedEnabled] = await Promise.all([
+          getMusicVolumePreference().catch(() => volume),
+          getMusicEnabledPreference().catch(() => DEFAULT_MUSIC_ENABLED),
+        ]);
+
+        const initialVolume = Math.max(0, Math.min(1, savedVolume));
+        setVolumeState(initialVolume);
+        setIsEnabled(savedEnabled);
 
         // Configurer les callbacks
         manager.setOnTrackChange((trackName) => {
@@ -118,12 +138,12 @@ export function useBackgroundMusic({
         await manager.initialize(assets);
 
         // Définir le volume initial
-        manager.setVolume(volume);
+        manager.setVolume(initialVolume);
 
         // console.log('[useBackgroundMusic] Music system initialization command sent');
 
         // Auto-start si demandé
-        if (autoStart) {
+        if (autoStart && savedEnabled) {
           // console.log('[useBackgroundMusic] Auto-starting music...');
           await manager.start();
           setIsPlaying(true);
@@ -142,6 +162,10 @@ export function useBackgroundMusic({
   const start = useCallback(async () => {
     // console.log(`[useBackgroundMusic] start() called. isReady: ${isReady}`);
 
+    if (!isEnabled) {
+      return;
+    }
+
     try {
       // console.log('[useBackgroundMusic] 🚀 [FORCE_START] Requesting MusicManager to start playback');
       await MusicManager.start();
@@ -150,7 +174,7 @@ export function useBackgroundMusic({
       console.error('[useBackgroundMusic] Start error:', error);
       onError?.(error instanceof Error ? error : new Error(String(error)));
     }
-  }, [isReady, onError]);
+  }, [isReady, onError, isEnabled]);
 
   // Arrêter la musique
   const stop = useCallback(() => {
@@ -168,26 +192,52 @@ export function useBackgroundMusic({
 
   // Reprendre
   const resume = useCallback(async () => {
+    if (!isEnabled) {
+      return;
+    }
+
     await MusicManager.resume();
     setIsPlaying(true);
-  }, []);
+  }, [isEnabled]);
 
   // Définir le volume
   const setVolume = useCallback((newVolume: number) => {
-    MusicManager.setVolume(newVolume);
+    const safeVolume = Math.max(0, Math.min(1, newVolume));
+    setVolumeState(safeVolume);
+    MusicManager.setVolume(safeVolume);
+    setMusicVolumePreference(safeVolume).catch(() => undefined);
   }, []);
+
+  const setEnabled = useCallback(async (enabled: boolean) => {
+    setIsEnabled(enabled);
+    await setMusicEnabledPreference(enabled);
+
+    if (!enabled) {
+      MusicManager.stop();
+      setIsPlaying(false);
+      setCurrentTrack(null);
+      return;
+    }
+
+    if (autoStart && isReady) {
+      await MusicManager.start();
+      setIsPlaying(true);
+    }
+  }, [autoStart, isReady]);
 
   return {
     isReady,
     isPlaying,
     isPaused: isReady && !isPlaying && !!currentTrack,
     currentTrack,
-    volume: MusicManager.getVolume(),
+    volume: volumeState,
+    isEnabled,
     start,
     stop,
     pause,
     resume,
     setVolume,
+    setEnabled,
   };
 }
 

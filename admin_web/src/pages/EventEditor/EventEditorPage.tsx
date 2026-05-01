@@ -130,12 +130,15 @@ const EventEditorPage: React.FC = () => {
     
     setSaving(true);
     try {
-      const fileExt = file.name.split('.').pop();
-      const fileName = `${eventData.id}_manual_${Date.now()}.${fileExt}`;
+      // Optimisation locale (WebP + Resize)
+      const { compressImage } = await import('../../lib/imageUtils');
+      const compressedBlob = await compressImage(file, 1200, 0.8);
+      const fileName = `${eventData.id}_manual_${Date.now()}.webp`;
       
       const { error: uploadError } = await supabase.storage
         .from('evenements-image')
-        .upload(fileName, file, { 
+        .upload(fileName, compressedBlob, { 
+          contentType: 'image/webp',
           cacheControl: '31536000',
           upsert: true
         });

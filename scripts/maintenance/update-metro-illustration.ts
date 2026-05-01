@@ -1,6 +1,6 @@
 import { createClient } from '@supabase/supabase-js';
 import * as fs from 'fs';
-import * as path from 'path';
+import sharp from 'sharp';
 
 const supabase = createClient(
   'https://ppxmtnuewcixbbmhnzzc.supabase.co',
@@ -8,6 +8,13 @@ const supabase = createClient(
 );
 
 const EVENT_ID = '2c9c5a68-4913-4859-b313-565d220217a1';
+
+async function toWebp(buffer: Buffer) {
+  return sharp(buffer)
+    .resize(1024, 576, { fit: 'cover' })
+    .webp({ quality: 85 })
+    .toBuffer();
+}
 
 async function updateMetroIllustration() {
   console.log('\n🔍 Recherche d\'une illustration pour le métro de Paris...\n');
@@ -19,12 +26,13 @@ async function updateMetroIllustration() {
     console.log('📁 Image locale trouvée, upload en cours...\n');
 
     const imageBuffer = fs.readFileSync(localImagePath);
+    const processedBuffer = await toWebp(imageBuffer);
     const timestamp = Date.now();
     const fileName = `metro_paris_1900_${timestamp}.webp`;
 
     const { data: uploadData, error: uploadError } = await supabase.storage
       .from('evenements-image')
-      .upload(fileName, imageBuffer, {
+      .upload(fileName, processedBuffer, {
         contentType: 'image/webp',
         cacheControl: '3600',
         upsert: false
@@ -63,15 +71,16 @@ async function updateMetroIllustration() {
     }
 
     const imageBuffer = Buffer.from(await response.arrayBuffer());
+    const processedBuffer = await toWebp(imageBuffer);
     const timestamp = Date.now();
-    const fileName = `metro_paris_1900_${timestamp}.jpg`;
+    const fileName = `metro_paris_1900_${timestamp}.webp`;
 
     console.log('☁️  Upload vers Supabase Storage...\n');
 
     const { data: uploadData, error: uploadError } = await supabase.storage
       .from('evenements-image')
-      .upload(fileName, imageBuffer, {
-        contentType: 'image/jpeg',
+      .upload(fileName, processedBuffer, {
+        contentType: 'image/webp',
         cacheControl: '3600',
         upsert: false
       });

@@ -6,10 +6,12 @@ import { colors } from '@/constants/Colors';
 interface CountdownProps {
   timeLeft: number;
   isActive?: boolean;
+  isTutorial?: boolean;
 }
 
-const Countdown: React.FC<CountdownProps> = ({ timeLeft, isActive = true }) => {
+const Countdown: React.FC<CountdownProps> = ({ timeLeft, isActive = true, isTutorial = false }) => {
   const scaleAnim = useRef(new Animated.Value(1)).current;
+  const tutorialPulseAnim = useRef(new Animated.Value(1)).current;
 
   useEffect(() => {
     if (isActive) {
@@ -31,24 +33,53 @@ const Countdown: React.FC<CountdownProps> = ({ timeLeft, isActive = true }) => {
     }
   }, [timeLeft, isActive]);
 
+  // Animation de pulse continue pendant le tutoriel
+  useEffect(() => {
+    if (isTutorial) {
+      Animated.loop(
+        Animated.sequence([
+          Animated.timing(tutorialPulseAnim, {
+            toValue: 1.15,
+            duration: 800,
+            useNativeDriver: true,
+          }),
+          Animated.timing(tutorialPulseAnim, {
+            toValue: 1,
+            duration: 800,
+            useNativeDriver: true,
+          }),
+        ])
+      ).start();
+    } else {
+      tutorialPulseAnim.setValue(1);
+    }
+  }, [isTutorial]);
+
   const getBackgroundColor = () => {
+    if (isTutorial) return 'transparent'; // Pas de fond coloré pendant le tutoriel
     if (!isActive) return colors.lightText;
     if (timeLeft > 14) return colors.timerNormal;
     if (timeLeft > 7) return colors.warningYellow;
     return colors.incorrectRed;
   };
 
+  const getTextColor = () => {
+    if (isTutorial) return '#333333'; // Texte foncé pour le tutoriel
+    return colors.white;
+  };
+
   return (
     <Animated.View
       style={[
         styles.container,
+        isTutorial && styles.tutorialContainer,
         { 
           backgroundColor: getBackgroundColor(),
-          transform: [{ scale: scaleAnim }]
+          transform: [{ scale: isTutorial ? tutorialPulseAnim : scaleAnim }]
         },
       ]}
     >
-      <Text style={styles.text}>{timeLeft}</Text>
+      <Text style={[styles.text, { color: getTextColor() }]}>{timeLeft}</Text>
     </Animated.View>
   );
 };
@@ -68,6 +99,23 @@ const styles = StyleSheet.create({
     },
     shadowOpacity: 0.23,
     shadowRadius: 2.62,
+  },
+  tutorialContainer: {
+    // Style spécial pour le tutoriel - plus visible avec un cadre
+    width: 50,
+    height: 50,
+    borderRadius: 25,
+    borderWidth: 3,
+    borderColor: '#FFD700', // Bordure dorée
+    backgroundColor: 'rgba(255, 255, 255, 0.95)', // Fond blanc semi-transparent
+    elevation: 8,
+    shadowColor: '#FFD700',
+    shadowOffset: {
+      width: 0,
+      height: 4,
+    },
+    shadowOpacity: 0.5,
+    shadowRadius: 8,
   },
   text: {
     color: colors.white,

@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import { NavLink, Outlet } from 'react-router-dom';
-import { LayoutGrid, Database, Image as ImageIcon, Palette, Rocket, Sparkles, Shield, ListChecks, Menu, ChevronLeft, Users, BarChart, Orbit } from 'lucide-react';
+import { LayoutGrid, Database, Image as ImageIcon, Palette, Rocket, Sparkles, Shield, ListChecks, Menu, ChevronLeft, Users, BarChart, Orbit, MailWarning } from 'lucide-react';
 import { VERSION } from '../../version';
 import './MainLayout.css';
 
@@ -49,6 +49,11 @@ const MainLayout: React.FC = () => {
           <NavLink to="/moderation" className={({ isActive }) => `nav-item ${isActive ? 'active' : ''}`} title="Modération">
              <Shield size={20} className="nav-icon" />
              {isSidebarOpen && <span>Modération</span>}
+          </NavLink>
+
+          <NavLink to="/signalements" className={({ isActive }) => `nav-item ${isActive ? 'active' : ''}`} title="Signalements">
+             <MailWarning size={20} className="nav-icon" />
+             {isSidebarOpen && <span>Signalements</span>}
           </NavLink>
           
           <NavLink to="/lab" className={({ isActive }) => `nav-item ${isActive ? 'active' : ''}`} title="Laboratoire">

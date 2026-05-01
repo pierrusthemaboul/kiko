@@ -302,8 +302,10 @@ function ClassicGameScreen({ requestedMode }: { requestedMode?: string }) {
     if (countdown !== null && countdown > 0) {
       const timer = setTimeout(() => setCountdown(c => c !== null ? c - 1 : null), 600);
       return () => clearTimeout(timer);
+    } else if (countdown === 0 && gameLogic.startMusic) {
+      gameLogic.startMusic();
     }
-  }, [countdown]);
+  }, [countdown, gameLogic.startMusic]);
 
   if (!isDataLoaded || (countdown !== null && countdown > 0)) {
     return (
@@ -317,6 +319,16 @@ function ClassicGameScreen({ requestedMode }: { requestedMode?: string }) {
   }
 
   // Rendu principal de l'écran de jeu
+  // Afficher un écran de chargement si gameLogic n'est pas encore prêt
+  if (!gameLogic || !gameLogic.user || !gameLogic.currentLevelConfig) {
+    return (
+      <View style={[styles.fullScreenContainer, styles.loadingContainer]}>
+        <StatusBar translucent backgroundColor="black" barStyle="light-content" />
+        <ActivityIndicator size="large" color="#FFFFFF" />
+      </View>
+    );
+  }
+
   return (
     <View style={styles.fullScreenContainer}>
       <Animated.View style={[styles.fullScreenContainer, { opacity: bgFadeAnim }]}>
@@ -338,46 +350,52 @@ function ClassicGameScreen({ requestedMode }: { requestedMode?: string }) {
           <GameContentA
             key={gameKey} // La clé change pour forcer le re-montage/re-rendu au redémarrage
             // Props d'état du jeu
-            user={gameLogic.user}
-            previousEvent={gameLogic.previousEvent}
-            displayedEvent={gameLogic.displayedEvent}
-            timeLeft={gameLogic.timeLeft}
-            error={gameLogic.error}
-            isGameOver={gameLogic.isGameOver}
-            leaderboardsReady={gameLogic.leaderboardsReady}
-            showDates={gameLogic.showDates}
-            isCorrect={gameLogic.isCorrect}
-            isImageLoaded={gameLogic.isImageLoaded}
-            streak={gameLogic.streak}
-            highScore={gameLogic.highScore}
-            level={gameLogic.user.level}
-            isLevelPaused={gameLogic.isLevelPaused}
-            triggerLevelEndAnim={gameLogic.triggerLevelEndAnim}
-            showLevelTransition={gameLogic.showLevelTransition}
-            isLastEventOfLevel={gameLogic.isLastEventOfLevel}
-            currentLevelConfig={gameLogic.currentLevelConfig}
-            leaderboards={gameLogic.leaderboards}
-            levelCompletedEvents={gameLogic.levelCompletedEvents}
-            levelsHistory={gameLogic.levelsHistory}
-            currentReward={gameLogic.currentReward}
-            adState={gameLogic.adState} // État des pubs
+            user={gameLogic?.user}
+            previousEvent={gameLogic?.previousEvent}
+            displayedEvent={gameLogic?.displayedEvent}
+            timeLeft={gameLogic?.timeLeft}
+            error={gameLogic?.error}
+            isGameOver={gameLogic?.isGameOver}
+            leaderboardsReady={gameLogic?.leaderboardsReady}
+            showDates={gameLogic?.showDates}
+            isCorrect={gameLogic?.isCorrect}
+            isImageLoaded={gameLogic?.isImageLoaded}
+            streak={gameLogic?.streak}
+            highScore={gameLogic?.highScore}
+            level={gameLogic?.user?.level}
+            isLevelPaused={gameLogic?.isLevelPaused}
+            triggerLevelEndAnim={gameLogic?.triggerLevelEndAnim}
+            showLevelTransition={gameLogic?.showLevelTransition}
+            isLastEventOfLevel={gameLogic?.isLastEventOfLevel}
+            currentLevelConfig={gameLogic?.currentLevelConfig}
+            leaderboards={gameLogic?.leaderboards}
+            levelCompletedEvents={gameLogic?.levelCompletedEvents}
+            levelsHistory={gameLogic?.levelsHistory}
+            currentReward={gameLogic?.currentReward}
+            adState={gameLogic?.adState} // État des pubs
             // Props de callbacks (actions)
-            handleChoice={gameLogic.handleChoice}
-            handleImageLoad={gameLogic.onImageLoad} // Fonction du useTimer
-            handleLevelUp={gameLogic.handleLevelUp}
+            handleChoice={gameLogic?.handleChoice}
+            handleImageLoad={gameLogic?.onImageLoad} // Fonction du useTimer
+            handleLevelUp={gameLogic?.handleLevelUp}
             onActualRestart={handleActualRestart} // <- Fonction Rejouer corrigée
             onActualMenu={handleActualMenu}       // <- Fonction Menu
             onShareReward={handleShareReward}     // <- Nouvelle prop Récompense Partage
-            showRewardedAd={gameLogic.showRewardedAd}
-            resetAdsState={gameLogic.resetAdsState} // Fonction reset pubs
-            isAdLoaded={gameLogic.isAdLoaded} // Vérification native de chargement des pubs
-            completeRewardAnimation={gameLogic.completeRewardAnimation}
-            updateRewardPosition={gameLogic.updateRewardPosition}
+            showRewardedAd={gameLogic?.showRewardedAd}
+            resetAdsState={gameLogic?.resetAdsState} // Fonction reset pubs
+            isAdLoaded={gameLogic?.isAdLoaded} // Vérification native de chargement des pubs
+            completeRewardAnimation={gameLogic?.completeRewardAnimation}
+            updateRewardPosition={gameLogic?.updateRewardPosition}
             // Props d'animation/modales
             fadeAnim={fadeAnim}
-            showLevelModal={gameLogic.showLevelModal}
-            gameMode={gameLogic.gameMode}
-            timeLimit={gameLogic.timeLimit}
+            showLevelModal={gameLogic?.showLevelModal}
+            gameMode={gameLogic?.gameMode}
+            timeLimit={gameLogic?.timeLimit}
+            toggleTimer={gameLogic?.toggleTimer}
+            setTutorialMechanicsLocked={gameLogic?.setTutorialMechanicsLocked}
+            musicEnabled={gameLogic?.isMusicEnabled}
+            onToggleMusic={() => {
+              gameLogic?.toggleMusicEnabled?.().catch(() => undefined);
+            }}
           />
 
         </SafeAreaView>
@@ -574,7 +592,7 @@ const styles = StyleSheet.create({
   },
   container: {
     flex: 1,
-    backgroundColor: '#000', // Important pour voir l'image de fond
+    backgroundColor: 'transparent',
   },
   flexFill: {
     flex: 1,

@@ -1,0 +1,14 @@
+# Root .easignore
+.git/
+**/.git/
+node_modules/
+**/node_modules/
+mobile_app/android/
+mobile_app/ios/
+admin_web/
+admin_option_workspace/
+data/
+docs/
+*.log
+*.tar.gz
+*.sql

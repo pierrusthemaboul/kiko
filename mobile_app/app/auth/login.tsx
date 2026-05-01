@@ -223,7 +223,7 @@ export default function Login() {
         const authCode = Array.isArray(qp.code) ? qp.code[0] : qp.code;
 
         if (authCode) {
-          const { error: exchangeError } = await supabase.auth.exchangeCodeForSession(authCode);
+          const { data: exchangeData, error: exchangeError } = await supabase.auth.exchangeCodeForSession(authCode);
 
           if (exchangeError) {
             console.error('Exchange failed:', exchangeError);
@@ -235,6 +235,27 @@ export default function Login() {
               message: exchangeError.message.substring(0, 100),
             });
             return;
+          }
+
+          const user = exchangeData?.user;
+          if (user) {
+            // Vérifier si le profil existe déjà
+            const { data: profile, error: checkError } = await supabase
+              .from('profiles')
+              .select('id')
+              .eq('id', user.id)
+              .single();
+
+            if (!profile) {
+              console.log('📝 Creating profile for Google user:', user.id);
+              const profilesTable = supabase.from('profiles') as unknown;
+              await (profilesTable as {
+                insert: (values: { id: string; display_name: string }) => Promise<{ error: { message: string } | null }>;
+              }).insert({
+                id: user.id,
+                display_name: user.user_metadata.full_name || user.email?.split('@')[0] || 'Joueur',
+              });
+            }
           }
 
           FirebaseAnalytics.trackEvent('login', { method: 'google', screen: 'login' });
@@ -550,7 +571,7 @@ const styles = StyleSheet.create({
     marginLeft: 12,
   },
   buttonText: {
-    color: '#0A173D', // Texte Blanc
+    color: '#FFFFFF', // Texte Blanc
     fontSize: 17, // Police légèrement plus grande
     fontWeight: 'bold'
   },

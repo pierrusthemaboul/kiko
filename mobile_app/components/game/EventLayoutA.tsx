@@ -7,10 +7,11 @@ import { Event } from '@/hooks/types'; // Assure-toi que le chemin et le type Ev
 const { height } = Dimensions.get('window');
 const ANIMATION_DURATION = 600; // Durée normale
 const ANIMATION_DURATION_LEVEL_END = 600; // Durée spéciale pour la fin de niveau (ajusté à 600ms)
-const CARD_HEIGHT_PERCENT = 0.42;
+const TOP_CARD_HEIGHT_PERCENT = 0.38;
+const BOTTOM_CARD_HEIGHT_PERCENT = 0.42;
 const TOP_CARD_INITIAL_Y = 10;
-const BOTTOM_CARD_INITIAL_Y = height * 0.45;
-const MOVE_DISTANCE = -(height * CARD_HEIGHT_PERCENT);
+const BOTTOM_CARD_INITIAL_Y = height * 0.41;
+const MOVE_DISTANCE = -(height * 0.40);
 
 interface EventLayoutAProps {
   previousEvent: Event | null;
@@ -26,6 +27,7 @@ interface EventLayoutAProps {
   isInitialRender: boolean;
   isLastEventOfLevel?: boolean; // Nouvelle prop pour identifier le dernier événement
   triggerLevelEndAnim?: boolean; // Nouvelle prop pour déclencher l'animation de fin
+  isTutorialActive?: boolean; // Nouvelle prop pour bloquer les interactions pendant le tutoriel
 }
 
 const EventLayoutA: React.FC<EventLayoutAProps> = ({
@@ -42,6 +44,7 @@ const EventLayoutA: React.FC<EventLayoutAProps> = ({
   isInitialRender,
   isLastEventOfLevel = false,
   triggerLevelEndAnim = false,
+  isTutorialActive = false,
 }) => {
   const [transitioning, setTransitioning] = useState(false);
   const [currentTop, setCurrentTop] = useState(previousEvent);
@@ -187,7 +190,7 @@ const EventLayoutA: React.FC<EventLayoutAProps> = ({
     onChoice(choice);
   };
 
-  const shouldRenderButtons = isImageLoaded && !showDate && !isLevelPaused && !transitioning;
+  const shouldRenderButtons = isImageLoaded && !showDate && !isLevelPaused && !transitioning && !isTutorialActive;
 
   // --- GÉNÉRER LES CLÉS UNIQUES ---
   // Utilise l'ID de l'événement si disponible, sinon une chaîne statique mais différente
@@ -278,14 +281,15 @@ const styles = StyleSheet.create({
     position: 'absolute',
     left: 10,
     right: 10,
-    height: height * CARD_HEIGHT_PERCENT,
   },
   topCard: {
     top: TOP_CARD_INITIAL_Y,
+    height: height * TOP_CARD_HEIGHT_PERCENT,
     zIndex: 1,
   },
   bottomCard: {
     top: BOTTOM_CARD_INITIAL_Y,
+    height: height * BOTTOM_CARD_HEIGHT_PERCENT,
     zIndex: 2,
   },
   bottomCardContent: {

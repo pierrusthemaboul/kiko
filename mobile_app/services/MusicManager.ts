@@ -21,7 +21,7 @@ export type MusicCommand =
  * - S'intègre avec AudioWebView pour la lecture via Web Audio API
  * - Gestion automatique des pistes (lecture aléatoire sans répétition immédiate)
  * - Crossfade de 2 secondes entre les pistes
- * - Volume configurable (défaut: 0.3)
+ * - Volume configurable (défaut: 0.075)
  */
 class MusicManager {
   private static instance: MusicManager;
@@ -34,7 +34,7 @@ class MusicManager {
   private lastPlayedTrack: string | null = null;
   private isPlaying = false;
   private isPaused = false;
-  private currentVolume = 0.3;
+  private currentVolume = 0.075;
   private isInitialized = false;
   private onTrackChange: ((trackName: string) => void) | null = null;
   private onError: ((error: Error) => void) | null = null;

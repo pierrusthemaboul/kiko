@@ -2,7 +2,6 @@
   "name": "timalaus",
   "main": "expo-router/entry",
   "version": "1.7.1",
-  "_comment": "📚 Documentation importante : Avant de modifier l'audio, lisez /docs/AUDIO_MIGRATION_GUIDE.md",
   "scripts": {
     "dev": "npm run dev --prefix mobile_app",
     "dev:fast": "npm run dev:fast --prefix mobile_app",
@@ -29,6 +28,7 @@
     "sevent": "node tools/machine_a_evenements/sevent3.mjs",
     "audit:dates": "node tools/machine_a_evenements/audit_evenements_dates.mjs",
     "quality:historical": "node tools/machine_a_evenements/quality_pipeline_historical_dates.mjs",
+    "audit:illustrations": "node scripts/maintenance/audit-evenements-illustrations.mjs",
     "test:audit-dates": "node --test __tests__/audit_evenements_dates.test.mjs",
     "test:quality-historical": "node --test __tests__/quality_pipeline_historical_dates.test.mjs",
     "migrer": "node tools/machine_a_evenements/migration_goju_prod.mjs",
@@ -134,5 +134,21 @@
       "@expo/config-plugins": "9.0.14"
     }
   },
-  "private": true
+  "private": true,
+  "description": "This is an [Expo](https://expo.dev) project created with [`create-expo-app`](https://www.npmjs.com/package/create-expo-app).",
+  "directories": {
+    "doc": "docs"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/pierrusthemaboul/kiko.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "type": "commonjs",
+  "bugs": {
+    "url": "https://github.com/pierrusthemaboul/kiko/issues"
+  },
+  "homepage": "https://github.com/pierrusthemaboul/kiko#readme"
 }

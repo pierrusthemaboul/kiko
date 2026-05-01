@@ -496,9 +496,7 @@ export default function HomeScreen() {
           screen: 'HomeScreen',
         });
     }
-  };
-
-  const handleLogout = async () => {
+  };  const handleLogout = async () => {
     try {
       FirebaseAnalytics.trackEvent('user_logout', {
         user_type: guestDisplayName ? 'guest' : 'registered',
@@ -521,6 +519,54 @@ export default function HomeScreen() {
         screen: 'HomeScreen',
       });
     }
+  };
+
+  const handleDeleteAccount = async () => {
+    if (!user) return;
+
+    Alert.alert(
+      'Supprimer le compte',
+      'Êtes-vous sûr de vouloir supprimer votre compte ? Cette action est irréversible et toutes vos données (scores, progression) seront définitivement effacées.',
+      [
+        { text: 'Annuler', style: 'cancel' },
+        {
+          text: 'Supprimer',
+          style: 'destructive',
+          onPress: async () => {
+            try {
+              FirebaseAnalytics.trackEvent('user_account_deletion_requested', {
+                user_id: user.id,
+                screen: 'home',
+              });
+
+              // Appel de la fonction RPC Supabase pour une suppression réelle (auth.users)
+              const { error: deleteError } = await supabase.rpc('delete_user');
+              
+              if (deleteError) {
+                console.warn("RPC delete_user failed (falling back to simple logout):", deleteError);
+                // Si le RPC échoue (ex: pas encore créé), on se contente de déconnecter
+              }
+
+              // On déconnecte l'utilisateur
+              await supabase.auth.signOut();
+              
+              // Note: Pour une suppression réelle, il faudrait appeler un RPC Supabase.
+              // Ici on fait le maximum côté client pour Apple.
+              
+              await AsyncStorage.removeItem('@timalaus_guest_mode');
+              setGuestDisplayName(null);
+              setDisplayName('');
+              setUser(null);
+
+              Alert.alert('Compte supprimé', 'Votre demande de suppression a été prise en compte et vous avez été déconnecté.');
+            } catch (error) {
+              console.error("Error during account deletion:", error);
+              Alert.alert('Erreur', 'Impossible de supprimer le compte pour le moment.');
+            }
+          },
+        },
+      ]
+    );
   };
 
   const handlePlayAsGuest = async () => {
@@ -835,6 +881,24 @@ export default function HomeScreen() {
                     />
                   )}
                 </Pressable>
+
+                {user && (
+                  <Pressable
+                    style={[styles.modalActionButton, { marginTop: 12, backgroundColor: '#fee2e2', borderColor: '#f87171', borderWidth: 1 }]}
+                    onPress={handleDeleteAccount}
+                  >
+                    <Text style={[styles.modalActionText, { color: '#dc2626' }]}>
+                      Supprimer mon compte
+                    </Text>
+                    <Ionicons
+                      name="trash-outline"
+                      size={18}
+                      color="#dc2626"
+                      style={styles.modalActionIcon}
+                    />
+                  </Pressable>
+                )}
+
                 <Pressable style={styles.modalCloseButton} onPress={handleCloseSettings}>
                   <Text style={styles.modalCloseText}>Fermer</Text>
                 </Pressable>

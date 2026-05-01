@@ -20,10 +20,13 @@ module.exports = ({ config }) => {
       ...config.ios,
       supportsTablet: true,
       bundleIdentifier: IS_DEV ? "com.pierretulle.juno2.dev" : "com.pierretulle.juno2",
-      buildNumber: "5",
+      buildNumber: "7",
       googleServicesFile: require('fs').existsSync('./GoogleService-Info.plist') ? "./GoogleService-Info.plist" : undefined,
       infoPlist: {
-        ITSAppUsesNonExemptEncryption: false
+        ITSAppUsesNonExemptEncryption: false,
+        NSUserTrackingUsageDescription: "Cette application utilise des identifiants pour diffuser des publicités personnalisées et analyser l'audience afin d'améliorer votre expérience.",
+        NSPhotoLibraryUsageDescription: "Cette application n'accède pas à vos photos, mais cette autorisation est requise par certains modules tiers.",
+        NSCameraUsageDescription: "Cette application n'utilise pas l'appareil photo, mais cette autorisation peut être requise par certains modules tiers."
       },
       entitlements: {
         "com.apple.developer.applesignin": ["Default"]
@@ -73,12 +76,16 @@ module.exports = ({ config }) => {
                 useLegacyPackaging: false
               }
             }
+          },
+          ios: {
+            useFrameworks: "static"
           }
         }
       ],
       "expo-asset",
       "expo-router",
       "expo-navigation-bar",
+      "expo-tracking-transparency",
       [
         "expo-system-ui",
         {
@@ -101,7 +108,6 @@ module.exports = ({ config }) => {
           iosAppId: "ca-app-pub-7809209690404525~9290410116"
         }
       ],
-      // TODO: Réactiver quand GoogleService-Info.plist est disponible (compte Apple Developer activé)
       "@react-native-firebase/app",
       [
         function withForceAdIdPermission(config) {

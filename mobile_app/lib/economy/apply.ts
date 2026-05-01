@@ -1,11 +1,11 @@
-import { supabase } from 'lib/supabase/supabaseClients';
-import type { Database } from 'lib/supabase/database.types';
-import { pointsToXP } from 'lib/economy/convert';
-import { partiesPerDayFromXP, rankFromXP } from 'lib/economy/ranks';
+import { supabase } from '@/lib/supabase/supabaseClients';
+import type { Database } from '@/lib/supabase/database.types';
+import { pointsToXP } from '@/lib/economy/convert';
+import { partiesPerDayFromXP, rankFromXP } from '@/lib/economy/ranks';
 import { calculateNewStreak, getTodayDateString } from '@/utils/questHelpers';
 import { shouldUnlockAchievement, ACHIEVEMENTS } from './quests';
 import Constants from 'expo-constants';
-import { FirebaseAnalytics } from 'lib/firebase';
+import { FirebaseAnalytics } from '@/lib/firebase';
 
 const ECONOMY_LOG_ENABLED = (() => {
   try {

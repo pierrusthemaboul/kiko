@@ -10,7 +10,8 @@ import {
   Text,
   StyleSheet,
   Animated,
-  Dimensions
+  Dimensions,
+  Pressable
 } from 'react-native';
 import { Ionicons } from '@expo/vector-icons';
 import { colors } from '../../constants/Colors';
@@ -32,6 +33,8 @@ interface UserInfoProps {
   eventsCompletedInLevel?: number;
   eventsNeededForLevel?: number;
   maxLives?: number;
+  musicEnabled?: boolean;
+  onToggleMusic?: () => void;
 }
 
 export interface UserInfoHandle {
@@ -52,7 +55,9 @@ const UserInfo = forwardRef<UserInfoHandle, UserInfoProps>(
       totalQuestions,
       eventsCompletedInLevel = 0,  // Valeur par défaut
       eventsNeededForLevel = 5,    // Valeur par défaut
-      maxLives = 3
+      maxLives = 3,
+      musicEnabled = true,
+      onToggleMusic,
     },
     ref
   ) => {
@@ -330,12 +335,29 @@ const UserInfo = forwardRef<UserInfoHandle, UserInfoProps>(
           <View style={styles.statsContainer}>
             {renderLives()}
             <View style={styles.levelBadgeContainer}>
-              <View style={[styles.levelBadge, { backgroundColor: getLevelColor(level) }]}>
+              <View style={[styles.levelBadge, { backgroundColor: getLevelColor(level) }]}> 
                 <Text style={styles.levelText}>{level}</Text>
               </View>
               {/* Affichage du compteur de progression x/y sans le texte "niveau" */}
               <Text style={styles.levelProgress}>{eventsCompletedInLevel}/{eventsNeededForLevel}</Text>
             </View>
+            {!!onToggleMusic && (
+              <View style={styles.musicToggleContainer}>
+                <Pressable
+                  onPress={onToggleMusic}
+                  hitSlop={{ top: 10, bottom: 10, left: 10, right: 10 }}
+                  style={styles.musicToggleButton}
+                  accessibilityRole="button"
+                  accessibilityLabel={musicEnabled ? 'Couper le son' : 'Activer le son'}
+                >
+                  <Ionicons
+                    name={musicEnabled ? 'volume-high' : 'volume-mute'}
+                    size={18}
+                    color={musicEnabled ? colors.white : colors.lightText}
+                  />
+                </Pressable>
+              </View>
+            )}
             {renderStreak()}
             {renderBonusIndicators()}
           </View>
@@ -431,11 +453,22 @@ const styles = StyleSheet.create({
     textAlign: 'center',
     marginTop: 1,
   },
+  musicToggleContainer: {
+    minWidth: 28,
+    alignItems: 'center',
+    justifyContent: 'center',
+    paddingHorizontal: 2,
+  },
+  musicToggleButton: {
+    alignItems: 'center',
+    justifyContent: 'center',
+  },
   streakContainer: {
     minWidth: 30, // Réduit de 60 à 30 pour économiser l'espace
     alignItems: 'center',
     justifyContent: 'center',
     paddingHorizontal: 2, // Réduit de 4 à 2
+    marginLeft: -3,
   },
   streakWrapper: {
     flexDirection: 'row',

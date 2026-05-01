@@ -60,9 +60,10 @@ export function useAppleAuth(): UseAppleAuthReturn {
       }
 
       if (data?.user) {
-        // Store user's name if available (only on first sign in)
+        // 1. Store user's name in auth metadata if available (only on first sign in)
+        let displayName = '';
         if (credential.fullName && (credential.fullName.givenName || credential.fullName.familyName)) {
-          const displayName = [
+          displayName = [
             credential.fullName.givenName,
             credential.fullName.familyName,
           ]
@@ -74,6 +75,28 @@ export function useAppleAuth(): UseAppleAuthReturn {
             await supabase.auth.updateUser({
               data: { display_name: displayName },
             });
+          }
+        }
+
+        // 2. Ensure profile exists in the 'profiles' table
+        const { data: profile } = await supabase
+          .from('profiles')
+          .select('id')
+          .eq('id', data.user.id)
+          .single();
+
+        if (!profile) {
+          console.log('📝 Creating profile for Apple user:', data.user.id);
+          const finalDisplayName = displayName || data.user.user_metadata.full_name || data.user.email?.split('@')[0] || 'Joueur';
+          
+          // Use a safer way to insert into profiles if there are type issues
+          const { error: insertError } = await (supabase.from('profiles') as any).insert({
+            id: data.user.id,
+            display_name: finalDisplayName,
+          });
+
+          if (insertError) {
+            console.error('❌ Failed to create profile for Apple user:', insertError.message);
           }
         }
 

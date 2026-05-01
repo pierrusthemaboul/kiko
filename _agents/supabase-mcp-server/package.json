@@ -1,0 +1,16 @@
+{
+  "name": "supabase-mcp-server",
+  "version": "1.0.0",
+  "description": "Supabase MCP Server (Fixed)",
+  "main": "index.mjs",
+  "type": "module",
+  "scripts": {
+    "start": "node index.mjs"
+  },
+  "dependencies": {
+    "@modelcontextprotocol/sdk": "^1.6.0",
+    "@supabase/supabase-js": "^2.45.0",
+    "dotenv": "^16.4.5",
+    "zod": "^3.23.8"
+  }
+}

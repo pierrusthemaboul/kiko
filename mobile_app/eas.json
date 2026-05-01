@@ -62,7 +62,8 @@
         "buildType": "app-bundle"
       },
       "ios": {
-        "distribution": "store"
+        "distribution": "store",
+        "image": "latest"
       },
       "channel": "production"
     }
@@ -73,6 +74,11 @@
         "track": "production",
         "releaseStatus": "completed",
         "serviceAccountKeyPath": "./kiko-chrono-e34241a84e41.json"
+      },
+      "ios": {
+        "appleId": "pierre.cousin7@gmail.com",
+        "ascAppId": "6762569723",
+        "appleTeamId": "RBH23M8YUV"
       }
     }
   }

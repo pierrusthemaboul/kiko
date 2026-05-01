@@ -1,6 +1,7 @@
 import React, { useState, useCallback, useEffect } from 'react';
 import { View, StyleSheet, Alert, StatusBar, Text, Switch } from 'react-native';
 import { useRouter } from 'expo-router';
+import { useSafeAreaInsets } from 'react-native-safe-area-context';
 import { supabase } from '@/lib/supabase/supabaseClients';
 import AsyncStorage from '@react-native-async-storage/async-storage';
 import { FirebaseAnalytics } from '@/lib/firebase';
@@ -14,6 +15,7 @@ import { HomeHeader } from '@/src/features/home/components/HomeHeader';
 import { PlaysPill } from '@/src/features/home/components/PlaysPill';
 import { ProgressionDrawer } from '@/src/features/home/components/ProgressionDrawer';
 import { HomeSettingsModal } from '@/src/features/home/components/HomeSettingsModal';
+import { useBackgroundMusic } from '@/hooks/useBackgroundMusic';
 
 // Hooks
 import { useHomeData } from '@/src/features/home/hooks/useHomeData';
@@ -22,6 +24,8 @@ import { useAIConsent } from '@/src/features/home/hooks/useAIConsent';
 
 export default function Vue1() {
   const router = useRouter();
+  const insets = useSafeAreaInsets();
+  const playsPillTopOffset = insets.top + 82;
 
   // Custom Hooks qui encapsulent les logiques complexes
   const homeData = useHomeData();
@@ -40,6 +44,13 @@ export default function Vue1() {
   const [rewardModalDismissed, setRewardModalDismissed] = useState(false);
   const [tutorialEnabled, setTutorialEnabledState] = useState(true);
   const [tutorialLoading, setTutorialLoading] = useState(true);
+
+  const {
+    volume: musicVolume,
+    setVolume: setMusicVolume,
+    isEnabled: musicEnabled,
+    setEnabled: setMusicEnabled,
+  } = useBackgroundMusic({ autoStart: false });
 
   useEffect(() => {
     FirebaseAnalytics.screen('HomeClean', 'Vue1');
@@ -132,6 +143,7 @@ export default function Vue1() {
         adLoaded={adLoaded}
         adSuccessLoading={adSuccessLoading}
         onShowAd={showAd}
+        topOffset={playsPillTopOffset}
       />
 
       {/* Layer Action Coulissant (Bottom Sheet Custom) */}
@@ -152,6 +164,14 @@ export default function Vue1() {
         onClose={() => setSettingsVisible(false)}
         onOpenAIInfo={() => setShowAIInfo(true)}
         onLogout={handleLogout}
+        musicVolume={musicVolume}
+        onMusicVolumeChange={setMusicVolume}
+        musicEnabled={musicEnabled}
+        onMusicEnabledChange={(next) => {
+          setMusicEnabled(next).catch(() => {
+            Alert.alert('Erreur', "Impossible de mettre à jour la musique.");
+          });
+        }}
       />
 
       <LeaderboardRewardModal

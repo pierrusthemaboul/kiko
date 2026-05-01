@@ -29,10 +29,11 @@ import { useBackgroundMusic } from './useBackgroundMusic';
 import { Logger } from '@/utils/logger';
 import { useAppStateDetection } from './game/useAppStateDetection';
 import { getGameModeConfig, GameModeConfig } from '../constants/gameModes';
-import { applyEndOfRunEconomy } from 'lib/economy/apply';
+import { applyEndOfRunEconomy } from '@/lib/economy/apply';
 import { useGuestPlays } from './useGuestPlays';
 import { GameSessionMetadataManager } from '../services/GameSessionMetadata';
 import { registerDebugCommand } from '../ReactotronConfig';
+import { getTutorialEnabled } from '@/src/features/tutorial/tutorialStorage';
 
 const screenWidth = Dimensions.get('window').width;
 
@@ -43,6 +44,7 @@ export function useGameLogicA(initialEvent?: string, modeId?: string) {
   const [streak, setStreak] = useState(0);
   const [isGameOver, setIsGameOver] = useState(false);
   const [showDates, setShowDates] = useState(!!gameMode.showDatesByDefault);
+  const [isTutorialMechanicsLocked, setTutorialMechanicsLocked] = useState(true);
   const [isCorrect, setIsCorrect] = useState<boolean | undefined>(undefined);
   const [isWaitingForCountdown, setIsWaitingForCountdown] = useState(false);
   const [showLevelModal, setShowLevelModal] = useState(false);
@@ -122,6 +124,22 @@ export function useGameLogicA(initialEvent?: string, modeId?: string) {
     setShowDates(!!gameMode.showDatesByDefault);
   }, [gameMode.showDatesByDefault]);
 
+  useEffect(() => {
+    let mounted = true;
+
+    const loadTutorialLock = async () => {
+      const tutorialEnabled = await getTutorialEnabled();
+      if (!mounted) return;
+      setTutorialMechanicsLocked(tutorialEnabled);
+    };
+
+    loadTutorialLock();
+
+    return () => {
+      mounted = false;
+    };
+  }, []);
+
   const {
     loading,
     error,
@@ -145,14 +163,7 @@ export function useGameLogicA(initialEvent?: string, modeId?: string) {
     initGame: baseInitGame,
   } = useInitGame();
 
-  // 🎵 Lancer la musique automatiquement dès que le chargement initial est fini
-  useEffect(() => {
-    // console.log(`[useGameLogicA] Music check: initLoading=${initLoading}, isMusicReady=${isMusicReady}`);
-    if (!initLoading && isMusicReady) {
-      // console.log('[useGameLogicA] 🎵 Auto-triggering music after loading finished');
-      startMusic();
-    }
-  }, [initLoading, isMusicReady, startMusic]);
+  // 🎵 La musique sera déclenchée par l'écran principal (ex: après le compte à rebours)
 
   // --- Fonctions utilitaires ---
   const {
@@ -164,6 +175,7 @@ export function useGameLogicA(initialEvent?: string, modeId?: string) {
     handleImageLoad,
     isImageLoaded,
     setIsImageLoaded,
+    toggleTimer,
   } = useTimer({
     user,
     isLevelPaused,
@@ -352,7 +364,7 @@ export function useGameLogicA(initialEvent?: string, modeId?: string) {
 
   // 🎵 Musique de fond
   const musicOptions = useMemo(() => ({
-    volume: 0.3,
+    volume: 0.075,
     onTrackChange: (trackName: string) => {
       // console.log(`[useGameLogicA] Now playing: ${trackName}`);
     },
@@ -365,7 +377,29 @@ export function useGameLogicA(initialEvent?: string, modeId?: string) {
     isReady: isMusicReady,
     start: startMusic,
     stop: stopMusic,
+    volume: musicVolume,
+    isEnabled: isMusicEnabled,
+    setVolume: setBackgroundMusicVolume,
+    setEnabled: setMusicEnabled,
   } = useBackgroundMusic(musicOptions);
+
+  const setMusicVolume = useCallback((nextVolume: number) => {
+    setBackgroundMusicVolume(nextVolume);
+  }, [setBackgroundMusicVolume]);
+
+  const toggleMusicEnabled = useCallback(async () => {
+    const next = !isMusicEnabled;
+    await setMusicEnabled(next);
+    if (next) {
+      await startMusic();
+    }
+  }, [isMusicEnabled, setMusicEnabled, startMusic]);
+
+  useEffect(() => {
+    return () => {
+      stopMusic();
+    };
+  }, [stopMusic]);
 
   const {
     trackGameStarted,
@@ -386,7 +420,7 @@ export function useGameLogicA(initialEvent?: string, modeId?: string) {
   }, []);
 
   const handleTimeout = useCallback(() => {
-    if (isLevelPaused || isGameOver) {
+    if (isTutorialMechanicsLocked || isLevelPaused || isGameOver) {
       return;
     }
     setIsWaitingForCountdown(false);
@@ -445,6 +479,7 @@ export function useGameLogicA(initialEvent?: string, modeId?: string) {
       });
     }
   }, [
+    isTutorialMechanicsLocked,
     isLevelPaused,
     isGameOver,
     user.level,
@@ -462,7 +497,7 @@ export function useGameLogicA(initialEvent?: string, modeId?: string) {
 
   // Callback pour gérer la sortie de l'application (même comportement qu'un timeout)
   const handleAppBackgrounded = useCallback(() => {
-    if (isLevelPaused || isGameOver || isWaitingForCountdown) {
+    if (isTutorialMechanicsLocked || isLevelPaused || isGameOver || isWaitingForCountdown) {
       return;
     }
 
@@ -924,10 +959,10 @@ export function useGameLogicA(initialEvent?: string, modeId?: string) {
   ]);
 
   useEffect(() => {
-    if (isImageLoaded && !isLevelPaused && !isGameOver && !isCountdownActive) {
+    if (isImageLoaded && !isTutorialMechanicsLocked && !isLevelPaused && !isGameOver && !isCountdownActive) {
       setIsCountdownActive(true);
     }
-  }, [isImageLoaded, isLevelPaused, isGameOver, isCountdownActive, setIsCountdownActive]);
+  }, [isImageLoaded, isTutorialMechanicsLocked, isLevelPaused, isGameOver, isCountdownActive, setIsCountdownActive]);
 
   const finalizeCurrentLevelHistory = useCallback(
     (eventsToFinalize: LevelEventSummary[]) => {
@@ -957,7 +992,7 @@ export function useGameLogicA(initialEvent?: string, modeId?: string) {
 
   const handleChoice = useCallback(
     (choice: 'avant' | 'après') => {
-      if (!previousEvent || !newEvent || isLevelPaused || isGameOver || isWaitingForCountdown) {
+      if (isTutorialMechanicsLocked || !previousEvent || !newEvent || isLevelPaused || isGameOver || isWaitingForCountdown) {
         return;
       }
 
@@ -1204,6 +1239,7 @@ export function useGameLogicA(initialEvent?: string, modeId?: string) {
       }
     },
     [
+      isTutorialMechanicsLocked,
       previousEvent, newEvent, isLevelPaused, isGameOver, isWaitingForCountdown, timeLeft, streak, user, allEvents, progressAnim, levelCompletedEvents, getPeriod, calculatePoints, checkRewards, finalizeCurrentLevelHistory, playCorrectSound, playIncorrectSound, playLevelUpSound, updatePerformanceStats, trackQuestion, trackStreak, trackReward, trackLevelCompleted, addEventToLevel, resetCurrentLevelEvents, resetAntiqueCount, setPreviousEvent, setError, setIsCorrect, setShowDates, setIsWaitingForCountdown, setIsCountdownActive, setStreak, setUser, setLevelsHistory, setCurrentLevelConfig, setShowLevelModal, setIsLevelPaused, setPendingAdDisplay, gameMode.scoreMultiplier, timeLimit
     ]
   );
@@ -1817,6 +1853,14 @@ export function useGameLogicA(initialEvent?: string, modeId?: string) {
       refresh: refreshGuestPlays,
     },
     refreshPlaysInfo,
+    startMusic,
+    musicVolume,
+    isMusicEnabled,
+    setMusicVolume,
+    setMusicEnabled,
+    toggleMusicEnabled,
+    toggleTimer,
+    setTutorialMechanicsLocked,
   };
 }
 

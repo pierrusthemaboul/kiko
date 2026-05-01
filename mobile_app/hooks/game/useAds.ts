@@ -150,6 +150,7 @@ export function useAds({
   const processingRewardRef = useRef(false);
   // Référence pour suivre quand la pub a été fermée
   const adClosedTimeRef = useRef(0);
+  const rewardEarnedRef = useRef(false);
 
   const initCheckPendingAds = useCallback(() => {
     return () => {
@@ -510,6 +511,7 @@ export function useAds({
       adLog('log', "Rewarded ad opened");
       // Réinitialiser le flag rewardEarned au moment où la pub s'ouvre
       setAdState(prev => ({ ...prev, rewardEarned: false }));
+      rewardEarnedRef.current = false;
       setIsLevelPausedRef.current(true);
       FirebaseAnalytics.ad('rewarded', 'opened', 'extra_life', getCurrentLevelForLog());
     });
@@ -521,66 +523,60 @@ export function useAds({
       // Enregistrer le timestamp de fermeture
       adClosedTimeRef.current = Date.now();
 
-      // Mettre à jour l'état de l'ad
-      setAdState(prev => {
-        // Vérifier si la récompense a été gagnée
-        if (prev.rewardEarned) {
-          adLog('log', "Closed after reward earned, setting hasWatchedRewardedAd to true");
-          return {
-            ...prev,
-            rewardedLoaded: false,
-            isShowingAd: false,
-            hasWatchedRewardedAd: true // Marquer comme récompense vue
-          };
-        } else {
-          adLog('log', "Rewarded ad closed WITHOUT earning reward.");
-          FirebaseAnalytics.ad('rewarded', 'closed_without_reward', 'extra_life', getCurrentLevelForLog());
-
-          // Pas de récompense gagnée, réinitialiser l'état de jeu
-          setIsLevelPausedRef.current(false);
-          resetTimerRef.current(20); // eslint-disable-line @typescript-eslint/no-floating-promises
-          rewardedAd.load();
-
-          if (setPendingAdDisplay) {
-            setPendingAdDisplay(null);
-          }
-
-          return {
-            ...prev,
-            rewardedLoaded: false,
-            isShowingAd: false,
-            // Ne pas mettre hasWatchedRewardedAd à true si pas de récompense
-          };
-        }
-      });
-
-      // Laisser un peu de temps pour que l'événement EARNED_REWARD puisse arriver après CLOSED
-      // (certaines implémentations SDK peuvent envoyer les événements dans cet ordre)
+      // On retarde le traitement pour laisser le temps à EARNED_REWARD d'arriver (comportement fréquent sur Android)
       setTimeout(() => {
-        setAdState(prev => {
-          // Si la récompense a été gagnée entre-temps (par l'événement EARNED_REWARD après CLOSED)
-          if (prev.rewardEarned && !processingRewardRef.current) {
-            adLog('log', "Applying reward after delayed check (reward earned after close)"); // eslint-disable-line @typescript-eslint/no-floating-promises
-            applyRewardAndContinue();
+        void (async () => {
+          if (rewardEarnedRef.current && !processingRewardRef.current) {
+            adLog('log', "Closed after reward earned, setting hasWatchedRewardedAd to true");
+            setAdState(prev => ({
+              ...prev,
+              rewardedLoaded: false,
+              isShowingAd: false,
+              hasWatchedRewardedAd: true
+            }));
+            await applyRewardAndContinue();
+          } else if (!rewardEarnedRef.current) {
+            adLog('log', "Rewarded ad closed WITHOUT earning reward.");
+            FirebaseAnalytics.ad('rewarded', 'closed_without_reward', 'extra_life', getCurrentLevelForLog());
+
+            // Pas de récompense gagnée, réinitialiser l'état de jeu
+            setIsLevelPausedRef.current(false);
+            resetTimerRef.current(20);
+            rewardedAd.load();
+
+            if (setPendingAdDisplay) {
+              setPendingAdDisplay(null);
+            }
+
+            setAdState(prev => ({
+              ...prev,
+              rewardedLoaded: false,
+              isShowingAd: false,
+            }));
           }
-          return prev;
-        });
-      }, 200);
+        })();
+      }, 450);
     });
 
     // CORRECTION: Modification du handler de récompense gagnée
     const unsubRewardedEarned = rewardedAd.addAdEventListener(RewardedAdEventType.EARNED_REWARD, reward => {
+      if (processingRewardRef.current) {
+        adLog('warn', 'Reward already being processed, ignoring duplicate event');
+        return;
+      }
+      
       adLog('log', "User earned reward:", reward);
       const currentLevel = getCurrentLevelForLog();
       const currentPoints = user?.points || 0;
 
       // Marquer la récompense comme gagnée
+      rewardEarnedRef.current = true;
       setAdState(prev => ({
         ...prev,
         rewardEarned: true
       }));
 
-      FirebaseAnalytics.ad('rewarded', 'earned_reward', 'extra_life', currentLevel); // eslint-disable-line @typescript-eslint/no-floating-promises
+      FirebaseAnalytics.ad('rewarded', 'earned_reward', 'extra_life', currentLevel);
       const rewardType = reward?.type || 'unknown_reward_type';
       const rewardAmount = reward?.amount || 0;
 
@@ -590,26 +586,8 @@ export function useAds({
         FirebaseAnalytics.reward(rewardType, rewardAmount, 'ad_reward_unexpected', 'completed', currentLevel, currentPoints);
         adLog('warn', `Unexpected reward type or amount: ${rewardType}, ${rewardAmount}`);
       }
-
-      // Vérifier si l'événement de fermeture s'est déjà produit
-      const timeSinceClosed = Date.now() - adClosedTimeRef.current;
-
-      if (adClosedTimeRef.current > 0 && timeSinceClosed < 1000) {
-        // Le CLOSED a déjà été déclenché juste avant, appliquer la récompense maintenant
-        adLog('log', `Ad already closed ${timeSinceClosed}ms ago, applying reward now`);
-
-        // Mettre à jour hasWatchedRewardedAd avant d'appliquer la récompense
-        setAdState(prev => ({
-          ...prev,
-          hasWatchedRewardedAd: true
-        }));
-        // eslint-disable-next-line @typescript-eslint/no-floating-promises
-        applyRewardAndContinue();
-      } else {
-        // Le CLOSED n'a pas encore été appelé ou a été appelé il y a longtemps
-        // La logique sera gérée dans le handler CLOSED ou dans le setTimeout après CLOSED
-        adLog('log', "Reward earned but waiting for close event before processing");
-      }
+      
+      // Tout le traitement d'application de la récompense se fera dans le callback de fermeture (CLOSED) garanti de se lancer.
     });
 
     adLog('log', "Initializing ad listeners and loading ads if needed...");
@@ -966,6 +944,7 @@ export function useAds({
     // Réinitialiser les références importantes
     adClosedTimeRef.current = 0;
     processingRewardRef.current = false;
+    rewardEarnedRef.current = false;
 
     try {
       adLog('log', "Forcing reload of all ad instances after reset...");

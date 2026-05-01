@@ -8,6 +8,7 @@ import {
 import { FirebaseAnalytics } from '../lib/firebase';
 import { setAdPersonalization } from '../lib/config/adConfig';
 import Constants from 'expo-constants';
+import { Platform } from 'react-native';
 
 const AD_CONSENT_LOG_ENABLED = (() => {
   try {
@@ -56,6 +57,26 @@ const fromStorageValue = (value: string | null): AdsConsentStatus | null => {
   const enumValues = Object.values(AdsConsentStatus as unknown as Record<string, unknown>);
   if (enumValues.includes(parsed as unknown)) return parsed as unknown as AdsConsentStatus;
   return null;
+};
+
+const requestTrackingPermissionsSafely = async (): Promise<string> => {
+  if (Platform.OS !== 'ios') return 'not_applicable';
+
+  try {
+    const trackingTransparency = require('expo-tracking-transparency') as {
+      requestTrackingPermissionsAsync?: () => Promise<{ status?: string }>;
+    };
+
+    if (typeof trackingTransparency.requestTrackingPermissionsAsync !== 'function') {
+      return 'unavailable';
+    }
+
+    const result = await trackingTransparency.requestTrackingPermissionsAsync();
+    return result?.status ?? 'unavailable';
+  } catch (attModuleError) {
+    consentLog('warn', 'ExpoTrackingTransparency unavailable on this build', attModuleError);
+    return 'unavailable';
+  }
 };
 
 export function useAdConsent() {
@@ -124,6 +145,17 @@ export function useAdConsent() {
           debugGeography: __DEV__ ? AdsConsentDebugGeography.EEA : AdsConsentDebugGeography.DISABLED,
           testDeviceIdentifiers: __DEV__ ? ['TEST_DEVICE_ID'] : [],
         });
+
+        // NOUVEAU: Prompt ATT pour iOS (Requis par Apple pour AdMob)
+        if (Platform.OS === 'ios') {
+          try {
+            const attStatus = await requestTrackingPermissionsSafely();
+            consentLog('log', 'ATT status', attStatus);
+            FirebaseAnalytics.trackEvent('att_prompt_result', { status: attStatus });
+          } catch (attError) {
+            consentLog('warn', 'Failed to request ATT permission', attError);
+          }
+        }
 
         consentLog('log', 'Consent info', consentInfo);
 

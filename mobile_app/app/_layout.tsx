@@ -34,7 +34,7 @@ SplashScreen.preventAutoHideAsync();
 const GUEST_MODE_KEY = '@timalaus_guest_mode';
 
 function MusicInitializer() {
-  useBackgroundMusic({ volume: 0.3, autoStart: false });
+  useBackgroundMusic({ volume: 0.075, autoStart: false });
   return null;
 }
 

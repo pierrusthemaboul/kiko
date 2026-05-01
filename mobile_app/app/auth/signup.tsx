@@ -18,6 +18,8 @@ import { FontAwesome } from '@expo/vector-icons';
 import { supabase } from '../../lib/supabase/supabaseClients';
 import { router, useFocusEffect, useNavigation } from 'expo-router';
 import { FirebaseAnalytics } from '../../lib/firebase';
+import { AppleAuthButton } from '../../src/components/AppleAuthButton';
+import { useAppleAuth } from '../../src/hooks/useAppleAuth';
 
 WebBrowser.maybeCompleteAuthSession();
 
@@ -58,6 +60,7 @@ export default function SignUp() {
   const [successMessage, setSuccessMessage] = useState('');
   const [isSigningUp, setIsSigningUp] = useState(false);
   const [isGoogleSigningUp, setIsGoogleSigningUp] = useState(false);
+  const { isLoading: isAppleLoading, signIn: signInWithApple, isAvailable: isAppleAvailable } = useAppleAuth();
 
   useFocusEffect(
     useCallback(() => {
@@ -281,7 +284,7 @@ export default function SignUp() {
         const authCode = Array.isArray(qp.code) ? qp.code[0] : qp.code;
 
         if (authCode) {
-          const { error: exchangeError } = await supabase.auth.exchangeCodeForSession(authCode);
+          const { data: exchangeData, error: exchangeError } = await supabase.auth.exchangeCodeForSession(authCode);
 
           if (exchangeError) {
             console.error('Exchange failed:', exchangeError);
@@ -293,6 +296,27 @@ export default function SignUp() {
               message: exchangeError.message.substring(0, 100),
             });
             return;
+          }
+
+          const user = exchangeData?.user;
+          if (user) {
+            // Vérifier si le profil existe déjà
+            const { data: profile, error: checkError } = await supabase
+              .from('profiles')
+              .select('id')
+              .eq('id', user.id)
+              .single();
+
+            if (!profile) {
+              console.log('📝 Creating profile for Google user:', user.id);
+              const profilesTable = supabase.from('profiles') as unknown;
+              await (profilesTable as {
+                insert: (values: { id: string; display_name: string }) => Promise<{ error: { message: string } | null }>;
+              }).insert({
+                id: user.id,
+                display_name: user.user_metadata.full_name || user.email?.split('@')[0] || 'Joueur',
+              });
+            }
           }
 
           FirebaseAnalytics.trackEvent('sign_up', { method: 'google', screen: 'signup' });
@@ -346,6 +370,25 @@ export default function SignUp() {
       >
         <Text style={styles.title}>Inscription</Text>
 
+        {/* Apple Sign In - iOS only */}
+        {isAppleAvailable && (
+          <>
+            <AppleAuthButton
+              onPress={signInWithApple}
+              disabled={isSigningUp || isGoogleSigningUp || isAppleLoading}
+              style={styles.appleButton}
+              buttonType={1} // SIGN_IN (En fait SIGN_UP n'existe pas en enum standard Expo 1 pour Apple but SIGN_IN is used for both)
+              buttonStyle={0} // BLACK
+            />
+
+            <View style={styles.divider}>
+              <View style={styles.dividerLine} />
+              <Text style={styles.dividerText}>ou</Text>
+              <View style={styles.dividerLine} />
+            </View>
+          </>
+        )}
+
         <TouchableOpacity
           style={[styles.googleButton, (isSigningUp || isGoogleSigningUp) && styles.buttonDisabled]}
           onPress={handleGoogleSignUp}
@@ -356,7 +399,7 @@ export default function SignUp() {
           ) : (
             <View style={styles.googleButtonContent}>
               <FontAwesome name="google" size={20} color={THEME.text} />
-              <Text style={styles.googleButtonText}>S'inscrire avec Google</Text>
+              <Text style={styles.googleButtonText}>Continuer avec Google</Text>
             </View>
           )}
         </TouchableOpacity>
@@ -495,7 +538,7 @@ const styles = StyleSheet.create({
     marginLeft: 12,
   },
   buttonText: {
-    color:'#0A173D', // Texte Blanc
+    color: '#FFFFFF', // Texte Blanc
     fontSize: 17, // Police légèrement plus grande
     fontWeight: 'bold'
   },
@@ -524,5 +567,25 @@ const styles = StyleSheet.create({
     color: THEME.button.secondary.text, // Texte Orange
     fontSize: 16,
     textDecorationLine: 'underline'
+  },
+  appleButton: {
+    marginBottom: 15,
+    width: '100%',
+  },
+  divider: {
+    flexDirection: 'row',
+    alignItems: 'center',
+    marginVertical: 15,
+    width: '100%',
+  },
+  dividerLine: {
+    flex: 1,
+    height: 1,
+    backgroundColor: THEME.border,
+  },
+  dividerText: {
+    marginHorizontal: 15,
+    color: THEME.textSecondary,
+    fontSize: 14,
   },
 });

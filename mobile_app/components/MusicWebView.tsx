@@ -274,9 +274,8 @@ const MusicWebView = forwardRef<MusicWebViewRef, Props>(({ onReady, onTrackChang
             isPlaying = false;
             stopCurrentSource();
             lastPlayedTrack = null;
-            if (audioContext && audioContext.state !== 'closed') {
-              audioContext.close().catch(() => {});
-              audioContext = null;
+            if (audioContext && audioContext.state === 'running') {
+              audioContext.suspend().catch(() => {});
             }
             notifyStopped();
             // log('Stopped');

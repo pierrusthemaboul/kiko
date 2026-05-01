@@ -8,6 +8,7 @@ import AntichambrePage from './pages/Antichambre/AntichambrePage';
 import AdminOptionsPage from './pages/AdminOptions/AdminOptionsPage';
 import RetoucheImagePage from './pages/RetoucheImage/RetoucheImagePage';
 import ModerationPage from './pages/ModerationPage';
+import SignalementsPage from './pages/SignalementsPage';
 import OneByOnePage from './pages/OneByOne/OneByOnePage';
 import MainLayout from './components/MainLayout/MainLayout';
 import EventEditorPage from './pages/EventEditor/EventEditorPage';
@@ -67,6 +68,7 @@ const App: React.FC = () => {
           <Route path="retouche-image" element={<RetoucheImagePage />} />
           <Route path="admin-option" element={<AdminOptionsPage />} />
           <Route path="moderation" element={<ModerationPage />} />
+          <Route path="signalements" element={<SignalementsPage />} />
           <Route path="one-by-one" element={<OneByOnePage />} />
           <Route path="edit-event/:id" element={<EventEditorPage />} />
           

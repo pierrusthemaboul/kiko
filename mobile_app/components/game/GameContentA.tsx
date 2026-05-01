@@ -27,7 +27,6 @@ import EventLayoutA from './EventLayoutA'; // Assurez-vous que ce chemin est cor
 import LevelUpModalBis from '../modals/LevelUpModalBis';
 import ScoreboardModal from '../modals/ScoreboardModal';
 import RewardAnimation from './RewardAnimation';
-import TutorialGhostHand from './TutorialGhostHand';
 import { Logger } from '@/utils/logger';
 import { getTutorialEnabled, disableTutorial } from '@/src/features/tutorial/tutorialStorage';
 
@@ -43,8 +42,6 @@ import type {
 import { RewardType } from '@/hooks/types';
 
 const { height: SCREEN_HEIGHT } = Dimensions.get('window');
-const TUTO_OFFSET_X = 0;
-const TUTO_OFFSET_Y = 0;
 
 // Interface pour l'historique des niveaux (si non définie ailleurs)
 interface LevelHistory {
@@ -112,6 +109,10 @@ interface GameContentAProps {
   isAdLoaded: (adType: 'rewarded' | 'interstitial' | 'levelUp' | 'gameOver') => boolean;
   gameMode: GameModeConfig;
   timeLimit: number;
+  toggleTimer?: (active: boolean) => void;
+  setTutorialMechanicsLocked?: (locked: boolean) => void;
+  musicEnabled?: boolean;
+  onToggleMusic?: () => void;
 }
 
 function GameContentA({
@@ -158,6 +159,10 @@ function GameContentA({
   isAdLoaded,
   gameMode,
   timeLimit,
+  toggleTimer,
+  setTutorialMechanicsLocked,
+  musicEnabled,
+  onToggleMusic,
 }: GameContentAProps) {
   const router = useRouter(); // Gardé, même si non utilisé directement ici
   const insets = useSafeAreaInsets();
@@ -171,15 +176,7 @@ function GameContentA({
   const [isLoadingAd, setIsLoadingAd] = useState(false);
   const [tutorialEnabled, setTutorialEnabled] = useState(false);
   const [showTutorialGhost, setShowTutorialGhost] = useState(false);
-  const hasHandledTutorialChoiceRef = useRef(false);
-  const ghostHandLeftOpacity = useRef(new Animated.Value(0)).current;
-  const ghostHandRightOpacity = useRef(new Animated.Value(0)).current;
-  const ghostHandScale = useRef(new Animated.Value(1)).current;
-  const tutorialMaskOpacity = useRef(new Animated.Value(0)).current;
-  const tutorialCenterTextOpacity = useRef(new Animated.Value(0)).current;
-  const tutorialLeftHaloOpacity = useRef(new Animated.Value(0)).current;
-  const tutorialRightHaloOpacity = useRef(new Animated.Value(0)).current;
-  const ghostHandLoopRef = useRef<Animated.CompositeAnimation | null>(null);
+  const [tutorialStep, setTutorialStep] = useState(0);
 
   const isInitialRenderRef = useRef(true); // Pour l'animation d'EventLayoutA
 
@@ -287,6 +284,13 @@ function GameContentA({
     };
   }, [currentReward, updateRewardPosition, user, isRewardPositionSet]); // Dépendances inchangées
 
+  const handleImageLoadLocal = useCallback(() => {
+    handleImageLoad?.();
+    if (tutorialEnabled && toggleTimer) {
+      toggleTimer(false);
+    }
+  }, [handleImageLoad, tutorialEnabled, toggleTimer]);
+
   // --- Animation d'opacité pour le modal de niveau ---
   // (Logique inchangée)
   useEffect(() => {
@@ -357,7 +361,7 @@ function GameContentA({
       if (!mounted) return;
       setTutorialEnabled(enabled);
       setShowTutorialGhost(enabled);
-      hasHandledTutorialChoiceRef.current = false;
+      setTutorialStep(0);
     };
 
     loadTutorialState();
@@ -367,178 +371,35 @@ function GameContentA({
     };
   }, []);
 
-  const stopGhostHandAnimation = useCallback(() => {
-    ghostHandLoopRef.current?.stop();
-    ghostHandLoopRef.current = null;
-    ghostHandLeftOpacity.stopAnimation();
-    ghostHandRightOpacity.stopAnimation();
-    ghostHandScale.stopAnimation();
-    tutorialMaskOpacity.stopAnimation();
-    tutorialCenterTextOpacity.stopAnimation();
-    tutorialLeftHaloOpacity.stopAnimation();
-    tutorialRightHaloOpacity.stopAnimation();
-    ghostHandLeftOpacity.setValue(0);
-    ghostHandRightOpacity.setValue(0);
-    ghostHandScale.setValue(1);
-    tutorialMaskOpacity.setValue(0);
-    tutorialCenterTextOpacity.setValue(0);
-    tutorialLeftHaloOpacity.setValue(0);
-    tutorialRightHaloOpacity.setValue(0);
-  }, [
-    ghostHandLeftOpacity,
-    ghostHandRightOpacity,
-    ghostHandScale,
-    tutorialMaskOpacity,
-    tutorialCenterTextOpacity,
-    tutorialLeftHaloOpacity,
-    tutorialRightHaloOpacity,
-  ]);
-
   useEffect(() => {
-    const shouldRunGhost =
-      tutorialEnabled &&
-      showTutorialGhost &&
-      !isGameOver &&
-      !showLevelModal &&
-      !!previousEvent &&
-      !!displayedEvent &&
-      isImageLoaded &&
-      !showDates;
-
-    if (!shouldRunGhost) {
-      stopGhostHandAnimation();
-      return;
+    if (tutorialEnabled) {
+      setTutorialMechanicsLocked?.(true);
+      toggleTimer?.(false);
     }
+  }, [tutorialEnabled, setTutorialMechanicsLocked, toggleTimer]);
 
-    stopGhostHandAnimation();
+  const goToNextTutorialStep = useCallback(() => {
+    setTutorialStep((prev) => Math.min(prev + 1, 4));
+  }, []);
 
-    tutorialMaskOpacity.setValue(0);
-    tutorialCenterTextOpacity.setValue(0);
-    Animated.parallel([
-      Animated.timing(tutorialMaskOpacity, {
-        toValue: 0.56,
-        duration: 260,
-        useNativeDriver: true,
-      }),
-      Animated.timing(tutorialCenterTextOpacity, {
-        toValue: 1,
-        duration: 280,
-        useNativeDriver: true,
-      }),
-    ]).start();
-
-    ghostHandLeftOpacity.setValue(1);
-    ghostHandRightOpacity.setValue(0);
-    tutorialLeftHaloOpacity.setValue(1);
-    tutorialRightHaloOpacity.setValue(0);
-
-    const tapAnim = Animated.sequence([
-      Animated.timing(ghostHandScale, {
-        toValue: 0.82,
-        duration: 110,
-        useNativeDriver: true,
-      }),
-      Animated.timing(ghostHandScale, {
-        toValue: 1,
-        duration: 150,
-        useNativeDriver: true,
-      }),
-    ]);
-
-    const loop = Animated.loop(
-      Animated.sequence([
-        Animated.timing(ghostHandLeftOpacity, {
-          toValue: 1,
-          duration: 120,
-          useNativeDriver: true,
-        }),
-        Animated.timing(ghostHandRightOpacity, {
-          toValue: 0,
-          duration: 80,
-          useNativeDriver: true,
-        }),
-        Animated.timing(tutorialLeftHaloOpacity, {
-          toValue: 1,
-          duration: 160,
-          useNativeDriver: true,
-        }),
-        Animated.timing(tutorialRightHaloOpacity, {
-          toValue: 0,
-          duration: 80,
-          useNativeDriver: true,
-        }),
-        tapAnim,
-        Animated.delay(180),
-        Animated.timing(ghostHandLeftOpacity, {
-          toValue: 0,
-          duration: 120,
-          useNativeDriver: true,
-        }),
-        Animated.delay(40),
-        Animated.timing(tutorialLeftHaloOpacity, {
-          toValue: 0,
-          duration: 100,
-          useNativeDriver: true,
-        }),
-        Animated.timing(tutorialRightHaloOpacity, {
-          toValue: 1,
-          duration: 160,
-          useNativeDriver: true,
-        }),
-        Animated.timing(ghostHandRightOpacity, {
-          toValue: 1,
-          duration: 120,
-          useNativeDriver: true,
-        }),
-        tapAnim,
-        Animated.delay(180),
-        Animated.timing(ghostHandRightOpacity, {
-          toValue: 0,
-          duration: 120,
-          useNativeDriver: true,
-        }),
-        Animated.delay(200),
-      ])
-    );
-
-    ghostHandLoopRef.current = loop;
-    loop.start();
-
-    return () => {
-      stopGhostHandAnimation();
-    };
-  }, [
-    tutorialEnabled,
-    showTutorialGhost,
-    isGameOver,
-    showLevelModal,
-    previousEvent,
-    displayedEvent,
-    isImageLoaded,
-    showDates,
-    ghostHandLeftOpacity,
-    ghostHandRightOpacity,
-    ghostHandScale,
-    tutorialMaskOpacity,
-    tutorialCenterTextOpacity,
-    tutorialLeftHaloOpacity,
-    tutorialRightHaloOpacity,
-    stopGhostHandAnimation,
-  ]);
+  const completeTutorialFlow = useCallback(() => {
+    setShowTutorialGhost(false);
+    setTutorialEnabled(false);
+    setTutorialStep(0);
+    setTutorialMechanicsLocked?.(false);
+    toggleTimer?.(false);
+    disableTutorial().catch(() => undefined);
+  }, [setTutorialMechanicsLocked, toggleTimer]);
 
   const handleChoiceWithTutorial = useCallback(
     (choice: 'avant' | 'après') => {
-      if (tutorialEnabled && !hasHandledTutorialChoiceRef.current) {
-        hasHandledTutorialChoiceRef.current = true;
-        setShowTutorialGhost(false);
-        setTutorialEnabled(false);
-        stopGhostHandAnimation();
-        disableTutorial().catch(() => undefined);
+      if (tutorialEnabled) {
+        return;
       }
 
       handleChoice(choice);
     },
-    [handleChoice, tutorialEnabled, stopGhostHandAnimation]
+    [handleChoice, tutorialEnabled]
   );
 
   // --- Fonctions pour gérer l'interaction avec l'offre de publicité ---
@@ -590,6 +451,14 @@ function GameContentA({
       isImageLoaded &&
       !showDates;
 
+    const tutorialStepText = [
+      "L'événement du haut est l'événement de référence.",
+      "Il faut situer l'événement du bas par rapport à celui du haut.",
+      "Appuyez sur AVANT si l'événement a eu lieu avant.",
+      "Appuyez sur APRÈS si l'événement a eu lieu après.",
+      'Prêt ?'
+    ][tutorialStep] ?? '';
+
     if (error) {
       return (
         <View style={styles.errorContainer}>
@@ -615,7 +484,7 @@ function GameContentA({
         <EventLayoutA
           previousEvent={previousEvent}
           newEvent={displayedEvent}
-          onImageLoad={handleImageLoad}
+          onImageLoad={handleImageLoadLocal}
           onChoice={handleChoiceWithTutorial}
           showDate={showDates}
           isCorrect={isCorrect}
@@ -626,65 +495,60 @@ function GameContentA({
           triggerLevelEndAnim={triggerLevelEndAnim}
           isInitialRender={isInitialRenderRef.current}
           isLastEventOfLevel={isLastEventOfLevel}
+          isTutorialActive={tutorialEnabled && showTutorialGhost}
         />
 
         {shouldShowTutorialHint && (
-          <View pointerEvents="none" style={styles.ghostTutorialOverlay}>
-            <Animated.View style={[styles.ghostTutorialMask, { opacity: tutorialMaskOpacity }]} />
+          <View style={styles.ghostTutorialOverlay}>
+            <View style={styles.ghostTutorialMask} />
 
-            <View style={styles.cardsFocusCutout} />
+            {tutorialStep === 0 && <View style={styles.topCardFocusCutout} />}
+            {tutorialStep === 1 && <View style={styles.bottomCardFocusCutout} />}
 
-            <Animated.View
-              style={[styles.compareTextContainer, { opacity: tutorialCenterTextOpacity }]}
-            >
-              <Text style={styles.compareText}>Comparez ces deux événements</Text>
-            </Animated.View>
-
-            <View style={styles.tutorialButtonsAnchor}>
-              <View
-                style={[
-                  styles.tutorialButtonsMirrorRow,
-                  {
-                    transform: [
-                      { translateX: TUTO_OFFSET_X },
-                      { translateY: TUTO_OFFSET_Y },
-                    ],
-                  },
-                ]}
-              >
-                <View style={styles.tutorialButtonSlot}>
-                  <Animated.View
-                    style={[styles.slotHalo, { opacity: tutorialLeftHaloOpacity }]}
-                  />
-                  <TutorialGhostHand
-                    label="C'était avant ?"
-                    style={[
-                      styles.slotHand,
-                      {
-                        opacity: ghostHandLeftOpacity,
-                        transform: [{ scale: ghostHandScale }],
-                      },
-                    ]}
-                  />
-                </View>
-
-                <View style={styles.tutorialButtonSlot}>
-                  <Animated.View
-                    style={[styles.slotHalo, { opacity: tutorialRightHaloOpacity }]}
-                  />
-                  <TutorialGhostHand
-                    label="Ou après ?"
-                    style={[
-                      styles.slotHand,
-                      {
-                        opacity: ghostHandRightOpacity,
-                        transform: [{ scale: ghostHandScale }],
-                      },
-                    ]}
-                  />
+            {(tutorialStep === 2 || tutorialStep === 3) && (
+              <View style={styles.tutorialButtonsAnchor}>
+                <View style={styles.tutorialButtonsMirrorRow}>
+                  <View style={styles.tutorialButtonSlot}>
+                    <View
+                      style={[
+                        styles.slotHalo,
+                        tutorialStep === 2 ? styles.activeSlotHalo : styles.inactiveSlotHalo,
+                      ]}
+                    />
+                  </View>
+                  <View style={styles.tutorialButtonSlot}>
+                    <View
+                      style={[
+                        styles.slotHalo,
+                        tutorialStep === 3 ? styles.activeSlotHalo : styles.inactiveSlotHalo,
+                      ]}
+                    />
+                  </View>
                 </View>
               </View>
-            </View>
+            )}
+
+            {tutorialStep < 4 ? (
+              <TouchableOpacity
+                activeOpacity={1}
+                style={styles.tutorialTapLayer}
+                onPress={goToNextTutorialStep}
+              >
+                <View style={styles.compareTextContainer}>
+                  <Text style={styles.compareText}>{tutorialStepText}</Text>
+                  <Text style={styles.compareHint}>Appuyez pour continuer</Text>
+                </View>
+              </TouchableOpacity>
+            ) : (
+              <View style={styles.tutorialFinalContainer}>
+                <View style={styles.compareTextContainer}>
+                  <Text style={styles.compareText}>{tutorialStepText}</Text>
+                  <TouchableOpacity style={styles.tutorialStartButton} onPress={completeTutorialFlow}>
+                    <Text style={styles.tutorialStartButtonText}>C'est parti !</Text>
+                  </TouchableOpacity>
+                </View>
+              </View>
+            )}
           </View>
         )}
 
@@ -816,12 +680,15 @@ function GameContentA({
                 eventsCompletedInLevel={user.eventsCompletedInLevel}
                 eventsNeededForLevel={currentLevelConfig.eventsNeeded}
                 maxLives={gameMode.maxLives}
+                musicEnabled={musicEnabled}
+                onToggleMusic={onToggleMusic}
               />
             )}
             <View style={styles.countdownContainer}>
               <Countdown
                 timeLeft={timeLeft}
-                isActive={!isLevelPaused && isImageLoaded && !!user && !!previousEvent && !!displayedEvent && !isGameOver && !showLevelModal}
+                isActive={!tutorialEnabled && !isLevelPaused && isImageLoaded && !!user && !!previousEvent && !!displayedEvent && !isGameOver && !showLevelModal}
+                isTutorial={tutorialEnabled && showTutorialGhost}
               />
             </View>
           </View>
@@ -1080,6 +947,28 @@ const styles = StyleSheet.create({
     ...StyleSheet.absoluteFillObject,
     backgroundColor: 'rgba(4, 8, 15, 0.72)',
   },
+  topCardFocusCutout: {
+    position: 'absolute',
+    left: 8,
+    right: 8,
+    top: 12,
+    height: Math.round(SCREEN_HEIGHT * 0.42),
+    borderRadius: 20,
+    borderWidth: 2,
+    borderColor: '#F4D068',
+    backgroundColor: 'rgba(244, 208, 104, 0.14)',
+  },
+  bottomCardFocusCutout: {
+    position: 'absolute',
+    left: 8,
+    right: 8,
+    top: Math.round(SCREEN_HEIGHT * 0.45),
+    height: Math.round(SCREEN_HEIGHT * 0.42),
+    borderRadius: 20,
+    borderWidth: 2,
+    borderColor: '#F4D068',
+    backgroundColor: 'rgba(244, 208, 104, 0.14)',
+  },
   cardsFocusCutout: {
     position: 'absolute',
     left: 8,
@@ -1093,20 +982,64 @@ const styles = StyleSheet.create({
   },
   compareTextContainer: {
     position: 'absolute',
-    left: 22,
-    right: 22,
-    top: '53%',
-    marginTop: -22,
+    left: 30,
+    right: 30,
+    top: '48%',
     alignItems: 'center',
+    justifyContent: 'center',
+    backgroundColor: '#FFFFFF',
+    paddingVertical: 20,
+    paddingHorizontal: 24,
+    borderRadius: 20,
+    borderWidth: 2,
+    borderColor: '#E0E0E0',
+    // Effet d'ombre 3D
+    shadowColor: '#000',
+    shadowOffset: { width: 0, height: 8 },
+    shadowOpacity: 0.25,
+    shadowRadius: 12,
+    elevation: 12,
+    // Effet 3D avec plusieurs ombres (simulé avec une bordure intérieure)
+    borderBottomWidth: 4,
+    borderBottomColor: '#D0D0D0',
   },
   compareText: {
-    color: '#FFFFFF',
+    color: '#1A1A1A', // Noir profond
     fontSize: 18,
-    fontWeight: '700',
+    fontWeight: '800', // Plus gras
     textAlign: 'center',
-    textShadowColor: 'rgba(0,0,0,0.75)',
+    lineHeight: 26,
+    letterSpacing: 0.3,
+    // Légère ombre portée sur le texte pour l'effet 3D
+    textShadowColor: 'rgba(0, 0, 0, 0.08)',
     textShadowOffset: { width: 0, height: 1 },
-    textShadowRadius: 4,
+    textShadowRadius: 2,
+  },
+  compareHint: {
+    marginTop: 10,
+    color: '#2F2F2F',
+    fontSize: 14,
+    fontWeight: '600',
+  },
+  tutorialTapLayer: {
+    ...StyleSheet.absoluteFillObject,
+    justifyContent: 'center',
+  },
+  tutorialFinalContainer: {
+    ...StyleSheet.absoluteFillObject,
+    justifyContent: 'center',
+  },
+  tutorialStartButton: {
+    marginTop: 16,
+    backgroundColor: '#111111',
+    paddingHorizontal: 20,
+    paddingVertical: 12,
+    borderRadius: 12,
+  },
+  tutorialStartButtonText: {
+    color: '#FFFFFF',
+    fontSize: 15,
+    fontWeight: '800',
   },
   tutorialButtonsAnchor: {
     position: 'absolute',
@@ -1139,6 +1072,15 @@ const styles = StyleSheet.create({
     borderWidth: 2,
     borderColor: '#F4D068',
     backgroundColor: 'rgba(244, 208, 104, 0.16)',
+  },
+  activeSlotHalo: {
+    borderColor: '#F4D068',
+    backgroundColor: 'rgba(244, 208, 104, 0.24)',
+    borderWidth: 3,
+  },
+  inactiveSlotHalo: {
+    borderColor: 'rgba(244, 208, 104, 0.35)',
+    backgroundColor: 'rgba(244, 208, 104, 0.08)',
   },
   slotHand: {
     position: 'absolute',

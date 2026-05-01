@@ -1,10 +1,6 @@
 import { createClient } from '@supabase/supabase-js';
 import * as fs from 'fs';
-import * as path from 'path';
-import { exec } from 'child_process';
-import { promisify } from 'util';
-
-const execAsync = promisify(exec);
+import sharp from 'sharp';
 
 const supabase = createClient(
   'https://ppxmtnuewcixbbmhnzzc.supabase.co',
@@ -14,6 +10,13 @@ const supabase = createClient(
 const EVENT_ID = '2c9c5a68-4913-4859-b313-565d220217a1';
 const EVENT_TITLE = 'Inauguration de la première ligne du métro de Paris';
 const EVENT_DATE = '1900-07-19';
+
+async function toWebp(buffer: Buffer) {
+  return sharp(buffer)
+    .resize(1024, 576, { fit: 'cover' })
+    .webp({ quality: 85 })
+    .toBuffer();
+}
 
 async function generateAndUploadIllustration() {
   console.log('\n🎨 Génération de l\'illustration pour le métro de Paris...\n');
@@ -59,6 +62,7 @@ Style: vintage photograph with sepia tones, historical documentary feel, early 1
     // Télécharger l'image
     const imageResponse = await fetch(imageUrl);
     const imageBuffer = Buffer.from(await imageResponse.arrayBuffer());
+    const processedBuffer = await toWebp(imageBuffer);
 
     // Créer un nom de fichier unique
     const timestamp = Date.now();
@@ -66,19 +70,18 @@ Style: vintage photograph with sepia tones, historical documentary feel, early 1
     const tempPath = `/tmp/${fileName}`;
 
     // Sauvegarder temporairement
-    fs.writeFileSync(tempPath, imageBuffer);
+    fs.writeFileSync(tempPath, processedBuffer);
 
     console.log('💾 Image téléchargée, conversion en WebP...\n');
 
-    // Convertir en WebP si nécessaire (l'image est déjà téléchargée)
-    // Pour l'instant, on garde le format tel quel
+    // Image convertie en WebP optimisé
 
     // Upload vers Supabase Storage
     console.log('☁️  Upload vers Supabase Storage...\n');
 
     const { data: uploadData, error: uploadError } = await supabase.storage
       .from('evenements-image')
-      .upload(fileName, imageBuffer, {
+      .upload(fileName, processedBuffer, {
         contentType: 'image/webp',
         cacheControl: '3600',
         upsert: false

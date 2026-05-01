@@ -128,6 +128,9 @@ importers:
       expo-system-ui:
         specifier: ~4.0.9
         version: 4.0.9(expo@52.0.49(@babel/core@7.28.5)(@babel/preset-env@7.28.5(@babel/core@7.28.5))(@expo/metro-runtime@4.0.1(react-native@0.76.9(@babel/core@7.28.5)(@babel/preset-env@7.28.5(@babel/core@7.28.5))(@react-native-community/cli@20.0.2(typescript@5.9.3))(@types/react@18.3.26)(react@18.3.1)))(graphql@16.8.1)(react-native-webview@13.12.5(react-native@0.76.9(@babel/core@7.28.5)(@babel/preset-env@7.28.5(@babel/core@7.28.5))(@react-native-community/cli@20.0.2(typescript@5.9.3))(@types/react@18.3.26)(react@18.3.1))(react@18.3.1))(react-native@0.76.9(@babel/core@7.28.5)(@babel/preset-env@7.28.5(@babel/core@7.28.5))(@react-native-community/cli@20.0.2(typescript@5.9.3))(@types/react@18.3.26)(react@18.3.1))(react@18.3.1))(react-native-web@0.19.13(react-dom@18.3.1(react@18.3.1))(react@18.3.1))(react-native@0.76.9(@babel/core@7.28.5)(@babel/preset-env@7.28.5(@babel/core@7.28.5))(@react-native-community/cli@20.0.2(typescript@5.9.3))(@types/react@18.3.26)(react@18.3.1))
+      expo-tracking-transparency:
+        specifier: ~5.1.1
+        version: 5.1.1(expo@52.0.49(@babel/core@7.28.5)(@babel/preset-env@7.28.5(@babel/core@7.28.5))(@expo/metro-runtime@4.0.1(react-native@0.76.9(@babel/core@7.28.5)(@babel/preset-env@7.28.5(@babel/core@7.28.5))(@react-native-community/cli@20.0.2(typescript@5.9.3))(@types/react@18.3.26)(react@18.3.1)))(graphql@16.8.1)(react-native-webview@13.12.5(react-native@0.76.9(@babel/core@7.28.5)(@babel/preset-env@7.28.5(@babel/core@7.28.5))(@react-native-community/cli@20.0.2(typescript@5.9.3))(@types/react@18.3.26)(react@18.3.1))(react@18.3.1))(react-native@0.76.9(@babel/core@7.28.5)(@babel/preset-env@7.28.5(@babel/core@7.28.5))(@react-native-community/cli@20.0.2(typescript@5.9.3))(@types/react@18.3.26)(react@18.3.1))(react@18.3.1))(react-native@0.76.9(@babel/core@7.28.5)(@babel/preset-env@7.28.5(@babel/core@7.28.5))(@react-native-community/cli@20.0.2(typescript@5.9.3))(@types/react@18.3.26)(react@18.3.1))
       expo-updates:
         specifier: ~0.27.5
         version: 0.27.5(expo@52.0.49(@babel/core@7.28.5)(@babel/preset-env@7.28.5(@babel/core@7.28.5))(@expo/metro-runtime@4.0.1(react-native@0.76.9(@babel/core@7.28.5)(@babel/preset-env@7.28.5(@babel/core@7.28.5))(@react-native-community/cli@20.0.2(typescript@5.9.3))(@types/react@18.3.26)(react@18.3.1)))(graphql@16.8.1)(react-native-webview@13.12.5(react-native@0.76.9(@babel/core@7.28.5)(@babel/preset-env@7.28.5(@babel/core@7.28.5))(@react-native-community/cli@20.0.2(typescript@5.9.3))(@types/react@18.3.26)(react@18.3.1))(react@18.3.1))(react-native@0.76.9(@babel/core@7.28.5)(@babel/preset-env@7.28.5(@babel/core@7.28.5))(@react-native-community/cli@20.0.2(typescript@5.9.3))(@types/react@18.3.26)(react@18.3.1))(react@18.3.1))(react@18.3.1)
@@ -3454,6 +3457,12 @@ packages:
     peerDependenciesMeta:
       react-native-web:
         optional: true
+
+  expo-tracking-transparency@5.1.1:
+    resolution: {integrity: sha512-fiT079Wf5YOPIqc2osTuPrQsOn4+5kXMRQmjUqe3z5PdeCF8nqJg5qrOLP1vaG5Cq8J8ws3Q2Sc7q4kR2G0yTw==}
+    peerDependencies:
+      expo: '*'
+      react-native: '*'
 
   expo-updates-interface@1.0.0:
     resolution: {integrity: sha512-93oWtvULJOj+Pp+N/lpTcFfuREX1wNeHtp7Lwn8EbzYYmdn37MvZU3TPW2tYYCZuhzmKEXnUblYcruYoDu7IrQ==}
@@ -10478,6 +10487,11 @@ snapshots:
       react-native-web: 0.19.13(react-dom@18.3.1(react@18.3.1))(react@18.3.1)
     transitivePeerDependencies:
       - supports-color
+
+  expo-tracking-transparency@5.1.1(expo@52.0.49(@babel/core@7.28.5)(@babel/preset-env@7.28.5(@babel/core@7.28.5))(@expo/metro-runtime@4.0.1(react-native@0.76.9(@babel/core@7.28.5)(@babel/preset-env@7.28.5(@babel/core@7.28.5))(@react-native-community/cli@20.0.2(typescript@5.9.3))(@types/react@18.3.26)(react@18.3.1)))(graphql@16.8.1)(react-native-webview@13.12.5(react-native@0.76.9(@babel/core@7.28.5)(@babel/preset-env@7.28.5(@babel/core@7.28.5))(@react-native-community/cli@20.0.2(typescript@5.9.3))(@types/react@18.3.26)(react@18.3.1))(react@18.3.1))(react-native@0.76.9(@babel/core@7.28.5)(@babel/preset-env@7.28.5(@babel/core@7.28.5))(@react-native-community/cli@20.0.2(typescript@5.9.3))(@types/react@18.3.26)(react@18.3.1))(react@18.3.1))(react-native@0.76.9(@babel/core@7.28.5)(@babel/preset-env@7.28.5(@babel/core@7.28.5))(@react-native-community/cli@20.0.2(typescript@5.9.3))(@types/react@18.3.26)(react@18.3.1)):
+    dependencies:
+      expo: 52.0.49(@babel/core@7.28.5)(@babel/preset-env@7.28.5(@babel/core@7.28.5))(@expo/metro-runtime@4.0.1(react-native@0.76.9(@babel/core@7.28.5)(@babel/preset-env@7.28.5(@babel/core@7.28.5))(@react-native-community/cli@20.0.2(typescript@5.9.3))(@types/react@18.3.26)(react@18.3.1)))(graphql@16.8.1)(react-native-webview@13.12.5(react-native@0.76.9(@babel/core@7.28.5)(@babel/preset-env@7.28.5(@babel/core@7.28.5))(@react-native-community/cli@20.0.2(typescript@5.9.3))(@types/react@18.3.26)(react@18.3.1))(react@18.3.1))(react-native@0.76.9(@babel/core@7.28.5)(@babel/preset-env@7.28.5(@babel/core@7.28.5))(@react-native-community/cli@20.0.2(typescript@5.9.3))(@types/react@18.3.26)(react@18.3.1))(react@18.3.1)
+      react-native: 0.76.9(@babel/core@7.28.5)(@babel/preset-env@7.28.5(@babel/core@7.28.5))(@react-native-community/cli@20.0.2(typescript@5.9.3))(@types/react@18.3.26)(react@18.3.1)
 
   expo-updates-interface@1.0.0(expo@52.0.49(@babel/core@7.28.5)(@babel/preset-env@7.28.5(@babel/core@7.28.5))(@expo/metro-runtime@4.0.1(react-native@0.76.9(@babel/core@7.28.5)(@babel/preset-env@7.28.5(@babel/core@7.28.5))(@react-native-community/cli@20.0.2(typescript@5.9.3))(@types/react@18.3.26)(react@18.3.1)))(graphql@16.8.1)(react-native-webview@13.12.5(react-native@0.76.9(@babel/core@7.28.5)(@babel/preset-env@7.28.5(@babel/core@7.28.5))(@react-native-community/cli@20.0.2(typescript@5.9.3))(@types/react@18.3.26)(react@18.3.1))(react@18.3.1))(react-native@0.76.9(@babel/core@7.28.5)(@babel/preset-env@7.28.5(@babel/core@7.28.5))(@react-native-community/cli@20.0.2(typescript@5.9.3))(@types/react@18.3.26)(react@18.3.1))(react@18.3.1)):
     dependencies:

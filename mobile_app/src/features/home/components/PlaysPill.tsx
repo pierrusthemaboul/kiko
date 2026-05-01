@@ -8,11 +8,12 @@ interface Props {
   adLoaded: boolean;
   adSuccessLoading: boolean;
   onShowAd: () => void;
+  topOffset?: number;
 }
 
-export function PlaysPill({ headerPlays, adLoaded, adSuccessLoading, onShowAd }: Props) {
+export function PlaysPill({ headerPlays, adLoaded, adSuccessLoading, onShowAd, topOffset = 118 }: Props) {
   return (
-    <View style={styles.playsStatusContainer}>
+    <View style={[styles.playsStatusContainer, { top: topOffset }]}>
       <View style={styles.playsPill}>
         <Ionicons name="time-outline" size={16} color={COLORS.primary} />
         <Text style={styles.playsPillText}>{headerPlays}</Text>
@@ -32,7 +33,6 @@ export function PlaysPill({ headerPlays, adLoaded, adSuccessLoading, onShowAd }:
 const styles = StyleSheet.create({
   playsStatusContainer: {
     position: 'absolute',
-    top: 100, // Ajuster par rapport au header
     left: 24,
     right: 24,
     flexDirection: 'row',
