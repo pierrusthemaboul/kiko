@@ -23,7 +23,7 @@
   margin-bottom: 14px;
   display: flex;
   flex-direction: column;
-  gap: 12px;
+  gap: 16px;
 }
 
 @media (min-width: 980px) {
@@ -34,34 +34,40 @@
   }
 }
 
-.title-block {
-  display: flex;
-  align-items: center;
-  gap: 10px;
-}
-
-.title-block h1 {
-  margin: 0;
-  font-size: 20px;
-}
-
-.title-block p {
-  margin: 2px 0 0;
-  color: #94a3b8;
-  font-size: 13px;
-}
-
 .top-actions {
   display: flex;
   gap: 10px;
   align-items: center;
+  flex-wrap: wrap; /* Allow wrapping on small screens */
+}
+
+@media (max-width: 480px) {
+  .top-actions {
+    width: 100%;
+  }
+  
+  .tab-switch {
+    width: 100%;
+  }
+  
+  .tab-switch button {
+    flex: 1;
+  }
+  
+  .refresh-btn {
+    width: 100%;
+    justify-content: center;
+  }
 }
 
 .tab-switch {
   display: flex;
+  background: rgba(0, 0, 0, 0.2);
   border-radius: 10px;
   overflow: hidden;
+  padding: 2px;
 }
+
 
 .tab-switch button,
 .status-tabs button,
@@ -252,24 +258,68 @@
   margin: 8px 0;
 }
 
-.mail-extra {
+.email-card {
+  transition: all 0.2s ease;
   display: flex;
   flex-direction: column;
-  gap: 2px;
+}
+
+.email-card.unread {
+  border-left: 4px solid #6366f1;
+  background: rgba(99, 102, 241, 0.05);
+}
+
+.mail-header {
+  margin-bottom: 12px;
+}
+
+.mail-header h3 {
+  margin: 0 0 4px 0;
+  font-size: 16px;
+  color: #fff;
+}
+
+.sender-tag {
   font-size: 12px;
   color: #94a3b8;
 }
 
-.mail-data {
-  margin-top: 10px;
-  max-height: 200px;
-  overflow: auto;
-  background: rgba(15, 23, 42, 0.6);
-  border: 1px solid rgba(148, 163, 184, 0.25);
-  border-radius: 10px;
-  padding: 8px;
+.mail-body-container {
+  flex: 1;
+  background: rgba(255, 255, 255, 0.03);
+  border-radius: 8px;
+  padding: 10px;
+  margin-bottom: 12px;
+  font-size: 14px;
+}
+
+.source-google {
+  background: rgba(234, 67, 53, 0.15) !important;
+  color: #fca5a5 !important;
+}
+
+.source-apple {
+  background: rgba(255, 255, 255, 0.1) !important;
+  color: #fff !important;
+}
+
+.source-firebase {
+  background: rgba(255, 202, 40, 0.15) !important;
+  color: #fde047 !important;
+}
+
+.source-support {
+  background: rgba(99, 102, 241, 0.15) !important;
+  color: #c7d2fe !important;
+}
+
+.action-btn.glass {
+  background: rgba(255, 255, 255, 0.08);
   color: #cbd5e1;
-  font-size: 12px;
+}
+
+.action-btn.glass:hover {
+  background: rgba(255, 255, 255, 0.15);
 }
 
 .spin {

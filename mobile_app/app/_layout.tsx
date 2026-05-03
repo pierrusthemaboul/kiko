@@ -1,10 +1,6 @@
+import 'react-native-url-polyfill/auto';
 // /home/pierre/sword/kiko/app/_layout.tsx
 // ----- FICHIER CORRIGÉ AVEC LOGIQUE DE REDIRECTION AJUSTÉE + NAVBAR -----
-
-if (__DEV__) {
-  require('../ReactotronConfig');
-  require('../dev/registerAdsDebugCommands');
-}
 
 import React, { useEffect, useState } from 'react';
 import { useRouter, useSegments } from 'expo-router';
@@ -15,7 +11,7 @@ import * as Application from 'expo-application';
 import AsyncStorage from '@react-native-async-storage/async-storage';
 import { AppState, Platform, View, Text } from 'react-native';
 import * as SystemUI from 'expo-system-ui';
-import * as NavigationBar from 'expo-navigation-bar';
+// const NavigationBar = Platform.OS === 'android' ? require('expo-navigation-bar') : null;
 
 import { FirebaseAnalytics } from '../lib/firebase';
 import { supabase } from '../lib/supabase/supabaseClients';
@@ -25,6 +21,11 @@ import { AudioProvider } from '../contexts/AudioContext';
 import { MusicProvider } from '../contexts/MusicContext';
 import { useBackgroundMusic } from '../hooks/useBackgroundMusic';
 import { AdService } from '@/src/features/ads/AdService';
+
+if (__DEV__ && Platform.OS !== 'web') {
+  require('../ReactotronConfig');
+  require('../dev/registerAdsDebugCommands');
+}
 
 const CURRENT_APP_VERSION = Application.nativeApplicationVersion || '1.0.0';
 const APP_VERSION_STORAGE_KEY = '@app_version';
@@ -47,7 +48,9 @@ export default function RootLayout() {
   const router = useRouter();
   const segments = useSegments(); // Donne les parties de l'URL actuelle
 
-  const { canShowPersonalizedAds, isLoading: consentLoading } = useAdConsent();
+  const { canShowPersonalizedAds, isLoading: consentLoading } = Platform.OS === 'web' 
+    ? { canShowPersonalizedAds: false, isLoading: false } 
+    : useAdConsent();
   usePendingRewardSync();
 
   const [fontsLoaded, fontError] = useFonts({
@@ -63,10 +66,13 @@ export default function RootLayout() {
         try {
           // Configuration de la status bar
           await SystemUI.setBackgroundColorAsync('#020817');
-          await NavigationBar.setVisibilityAsync('hidden');
-          await NavigationBar.setBehaviorAsync('overlay-swipe');
-          await NavigationBar.setBackgroundColorAsync('#020817');
-          await NavigationBar.setPositionAsync('absolute');
+          if (Platform.OS === 'android') {
+            const NavigationBar = require('expo-navigation-bar');
+            await NavigationBar.setVisibilityAsync('hidden');
+            await NavigationBar.setBehaviorAsync('overlay-swipe');
+            await NavigationBar.setBackgroundColorAsync('#020817');
+            await NavigationBar.setPositionAsync('absolute');
+          }
         } catch (error) {
           console.error('[IMMERSIVE MODE] CRITICAL ERROR:', error);
         }
@@ -128,9 +134,11 @@ export default function RootLayout() {
 
   // --- Configuration AdMob ---
   useEffect(() => {
-    AdService.initializeMobileAds().catch(err => {
-      console.warn('[RootLayout] AdMob init error (non-blocking):', err);
-    });
+    if (Platform.OS !== 'web') {
+      AdService.initializeMobileAds().catch(err => {
+        console.warn('[RootLayout] AdMob init error (non-blocking):', err);
+      });
+    }
   }, []);
 
   // --- Appliquer le consentement RGPD ---

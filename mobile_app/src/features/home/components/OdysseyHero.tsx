@@ -1,5 +1,5 @@
 import React, { useEffect } from 'react';
-import { View, Text, StyleSheet, ImageBackground, TouchableWithoutFeedback, Dimensions } from 'react-native';
+import { View, Text, StyleSheet, ImageBackground, TouchableOpacity, useWindowDimensions } from 'react-native';
 import { Ionicons } from '@expo/vector-icons';
 import { LinearGradient } from 'expo-linear-gradient';
 import { BlurView } from 'expo-blur';
@@ -11,8 +11,19 @@ import Animated, {
   Easing 
 } from 'react-native-reanimated';
 import { COLORS } from '../constants';
+import { Platform } from 'react-native';
 
-const { width, height } = Dimensions.get('window');
+const SafeBlurView = ({ children, style, intensity, tint }: any) => {
+  if (Platform.OS === 'web') {
+    // On Web, use a very subtle background to keep content visible
+    return (
+      <View style={[style, { backgroundColor: tint === 'dark' ? 'rgba(255,255,255,0.1)' : 'rgba(255,255,255,0.2)', borderColor: 'rgba(255,255,255,0.2)', borderWidth: 1 }]}>
+        {children}
+      </View>
+    );
+  }
+  return <BlurView intensity={intensity} tint={tint} style={style}>{children}</BlurView>;
+};
 
 interface Props {
   canPlay: boolean;
@@ -21,6 +32,10 @@ interface Props {
 }
 
 export function OdysseyHero({ canPlay, onStart, tutorialControl }: Props) {
+  const { height, width } = useWindowDimensions();
+  const contentBottomPadding = Math.min(Math.max(Math.round(height * 0.16), 100), 150);
+  const compactTitle = width < 375 || height < 700;
+
   // Animations pour le bouton Play et l'arrivée du contenu
   const scale = useSharedValue(1);
   const opacity = useSharedValue(0);
@@ -80,19 +95,26 @@ export function OdysseyHero({ canPlay, onStart, tutorialControl }: Props) {
           </View>
         )}
 
-        <Animated.View style={[styles.heroContentWrapper, animatedContentStyle]}>
+        <Animated.View style={[styles.heroContentWrapper, { paddingBottom: contentBottomPadding }, animatedContentStyle]}>
           
           {/* Bloc de texte avec effet Glassmorphism */}
-          <BlurView intensity={35} tint="dark" style={styles.glassCard}>
+          <SafeBlurView intensity={35} tint="dark" style={styles.glassCard}>
             <View style={styles.headerGlass}>
               <Ionicons name="compass" size={16} color={COLORS.accent} style={styles.iconSpaced} />
               <Text style={styles.heroLabel}>MODE PRINCIPAL</Text>
             </View>
-            <Text style={styles.heroTitle}>L'Odyssée{"\n"}Temporelle</Text>
+            <Text
+              style={[
+                styles.heroTitle,
+                compactTitle ? styles.heroTitleCompact : null,
+              ]}
+            >
+              L'Odyssée{"\n"}Temporelle
+            </Text>
             <Text style={styles.heroDesc}>
               Explorez les époques et replacez l'histoire dans sa véritable chronologie.
             </Text>
-          </BlurView>
+          </SafeBlurView>
 
           {tutorialControl ? (
             <View style={styles.tutorialControlWrapper}>
@@ -101,14 +123,19 @@ export function OdysseyHero({ canPlay, onStart, tutorialControl }: Props) {
           ) : null}
 
           {/* Bouton de Play Magnétique/Scalable */}
-          <TouchableWithoutFeedback
+          <TouchableOpacity
+            activeOpacity={0.8}
             onPressIn={handlePressIn}
             onPressOut={handlePressOut}
-            onPress={onStart}
+            onPress={() => {
+              console.log('[OdysseyHero] Play button pressed');
+              onStart();
+            }}
             disabled={!canPlay}
+            style={[styles.touchableArea, { zIndex: 100 }]}
           >
             <Animated.View style={[styles.playButtonWrapper, animatedButtonStyle, !canPlay && styles.playButtonDisabled]}>
-              <BlurView intensity={canPlay ? 50 : 80} tint="light" style={styles.playButtonGlass}>
+              <SafeBlurView intensity={canPlay ? 50 : 80} tint="light" style={styles.playButtonGlass}>
                 {canPlay ? (
                   <LinearGradient
                     colors={[COLORS.gold, COLORS.accent]}
@@ -123,9 +150,9 @@ export function OdysseyHero({ canPlay, onStart, tutorialControl }: Props) {
                     <Ionicons name="lock-closed" size={30} color="#FFF" />
                   </View>
                 )}
-              </BlurView>
+              </SafeBlurView>
             </Animated.View>
-          </TouchableWithoutFeedback>
+          </TouchableOpacity>
 
         </Animated.View>
       </ImageBackground>
@@ -140,8 +167,8 @@ const styles = StyleSheet.create({
   },
   heroImage: {
     flex: 1,
-    width: width,
-    height: height,
+    width: '100%',
+    height: '100%',
   },
   gradientOverlay: {
     ...StyleSheet.absoluteFillObject,
@@ -155,7 +182,6 @@ const styles = StyleSheet.create({
     flexDirection: 'column',
     alignItems: 'center',
     justifyContent: 'flex-end',
-    paddingBottom: 150, // Fixé pour laisser la place au Progression Drawer
     paddingHorizontal: 24,
   },
   glassCard: {
@@ -202,6 +228,10 @@ const styles = StyleSheet.create({
     textShadowOffset: { width: 0, height: 4 },
     textShadowRadius: 10,
   },
+  heroTitleCompact: {
+    fontSize: 36,
+    lineHeight: 44,
+  },
   heroDesc: {
     color: 'rgba(255,255,255,0.85)',
     fontSize: 16,
@@ -239,5 +269,8 @@ const styles = StyleSheet.create({
     borderRadius: 38,
     justifyContent: 'center',
     alignItems: 'center',
+  },
+  touchableArea: {
+    padding: 10,
   },
 });

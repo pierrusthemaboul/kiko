@@ -234,20 +234,40 @@
   backdrop-filter: blur(12px);
   padding: 1rem;
   display: flex;
-  flex-wrap: wrap;
-  align-items: center;
+  flex-direction: column; /* Stack on mobile */
+  align-items: stretch;
   gap: 1rem;
   border-bottom: 1px solid #27272a;
 }
 
 @media (min-width: 769px) {
-  .editor-sticky-header { padding: 1.5rem 2rem; gap: 2rem; }
+  .editor-sticky-header { 
+    flex-direction: row;
+    padding: 1.5rem 2rem; 
+    gap: 2rem; 
+    align-items: center;
+  }
 }
 
 .record-navigation {
   display: flex;
   gap: 0.5rem;
+  justify-content: center;
 }
+
+@media (max-width: 768px) {
+  .editor-actions {
+    margin-left: 0;
+    width: 100%;
+    justify-content: space-between;
+  }
+  
+  .editor-actions button {
+    flex: 1;
+    justify-content: center;
+  }
+}
+
 
 .nav-btn {
   background: #1c1c21;

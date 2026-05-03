@@ -8,8 +8,9 @@ import {
   StyleSheet,
   Platform,
   SafeAreaView,
+  KeyboardAvoidingView,
+  ScrollView,
   StatusBar,
-  Dimensions,
   ActivityIndicator,
   Alert
 } from 'react-native';
@@ -57,7 +58,6 @@ export default function Login() {
   const navigation = useNavigation();
   const pathname = usePathname();
   const segments = useSegments();
-  const window = Dimensions.get('window');
 
   const [email, setEmail] = useState(__DEV__ ? 'pierre.cousin7@gmail.com' : '');
   const [password, setPassword] = useState('');
@@ -370,8 +370,18 @@ export default function Login() {
 
   return (
     <SafeAreaView style={styles.safeArea}>
-      <View style={styles.container}>
-        <Text style={styles.title}>Connexion</Text>
+      <KeyboardAvoidingView
+        style={styles.keyboardAvoidingContainer}
+        behavior={Platform.OS === 'ios' ? 'padding' : 'height'}
+        keyboardVerticalOffset={Platform.OS === 'ios' ? 12 : 0}
+      >
+        <ScrollView
+          style={styles.container}
+          contentContainerStyle={styles.scrollContent}
+          keyboardShouldPersistTaps="handled"
+          showsVerticalScrollIndicator={false}
+        >
+          <Text style={styles.title}>Connexion</Text>
 
         {/* Apple Sign In - iOS only */}
         {isAppleAvailable && (
@@ -472,14 +482,15 @@ export default function Login() {
           <Text style={styles.createAccountText}>Créer un compte</Text>
         </TouchableOpacity>
 
-        <TouchableOpacity
-          style={[styles.guestModeButton, isLoggingIn && styles.buttonDisabled]}
-          onPress={handlePlayAsGuest}
-          disabled={isLoggingIn}
-        >
-          <Text style={styles.guestModeText}>Jouer en mode Exploration</Text>
-        </TouchableOpacity>
-      </View>
+          <TouchableOpacity
+            style={[styles.guestModeButton, isLoggingIn && styles.buttonDisabled]}
+            onPress={handlePlayAsGuest}
+            disabled={isLoggingIn}
+          >
+            <Text style={styles.guestModeText}>Jouer en mode Exploration</Text>
+          </TouchableOpacity>
+        </ScrollView>
+      </KeyboardAvoidingView>
     </SafeAreaView>
   );
 }
@@ -489,9 +500,15 @@ const styles = StyleSheet.create({
     flex: 1,
     backgroundColor: THEME.background.main // Fond blanc
   },
+  keyboardAvoidingContainer: {
+    flex: 1,
+  },
   container: {
     flex: 1,
     backgroundColor: THEME.background.main, // Fond blanc
+  },
+  scrollContent: {
+    flexGrow: 1,
     padding: 20,
     justifyContent: 'center'
   },

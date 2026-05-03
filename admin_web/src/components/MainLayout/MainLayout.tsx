@@ -6,86 +6,73 @@ import './MainLayout.css';
 
 const MainLayout: React.FC = () => {
   const [isSidebarOpen, setIsSidebarOpen] = useState(true);
+  const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
+
+  const toggleSidebar = () => setIsSidebarOpen(!isSidebarOpen);
+  const toggleMobileMenu = () => setIsMobileMenuOpen(!isMobileMenuOpen);
+  const closeMobileMenu = () => setIsMobileMenuOpen(false);
+
+  const navItems = [
+    { to: "/", icon: <LayoutGrid size={20} />, label: "Événements Officiels" },
+    { to: "/sas", icon: <Database size={20} />, label: "Table SAS" },
+    { to: "/antichambre", icon: <Sparkles size={20} />, label: "Antichambre" },
+    { to: "/retouche-image", icon: <ImageIcon size={20} />, label: "Retouche Image" },
+    { to: "/admin-option", icon: <Sparkles size={20} />, label: "Curateur IA" },
+    { to: "/moderation", icon: <Shield size={20} />, label: "Modération" },
+    { to: "/signalements", icon: <MailWarning size={20} />, label: "Signalements" },
+    { to: "/one-by-one", icon: <ListChecks size={20} />, label: "1 par 1" },
+    { to: "/users", icon: <Users size={20} />, label: "Utilisateurs" },
+    { to: "/analytics", icon: <BarChart size={20} />, label: "Diagnostic" },
+    { to: "/viz-3d", icon: <Orbit size={20} />, label: "Explorateur 3D" },
+  ];
 
   return (
-    <div className={`main-layout ${isSidebarOpen ? 'sidebar-open' : 'sidebar-closed'}`}>
-      <aside className="main-sidebar">
+    <div className={`main-layout ${isSidebarOpen ? 'sidebar-open' : 'sidebar-closed'} ${isMobileMenuOpen ? 'mobile-menu-open' : ''}`}>
+      {/* Mobile Top Bar */}
+      <header className="mobile-header">
+        <div className="mobile-brand">
+          <Rocket size={24} className="brand-logo" />
+          <h1>k Events</h1>
+        </div>
+        <button className="mobile-menu-toggle" onClick={toggleMobileMenu}>
+          {isMobileMenuOpen ? <ChevronLeft size={24} /> : <Menu size={24} />}
+        </button>
+      </header>
+
+      {/* Mobile Drawer Overlay */}
+      {isMobileMenuOpen && <div className="mobile-drawer-overlay" onClick={closeMobileMenu} />}
+
+      <aside className={`main-sidebar ${isMobileMenuOpen ? 'mobile-visible' : ''}`}>
         <div className="sidebar-brand">
           <div className="brand-logo-container">
             <Rocket size={24} className="brand-logo" />
             {isSidebarOpen && <h1>k Events</h1>}
           </div>
-          <button className="toggle-sidebar" onClick={() => setIsSidebarOpen(!isSidebarOpen)}>
+          <button className="toggle-sidebar" onClick={toggleSidebar}>
             {isSidebarOpen ? <ChevronLeft size={20} /> : <Menu size={20} />}
           </button>
         </div>
         
         <nav className="sidebar-nav">
-          <NavLink to="/" className={({ isActive }) => `nav-item ${isActive ? 'active' : ''}`} title="Événements Officiels">
-            <LayoutGrid size={20} className="nav-icon" />
-            {isSidebarOpen && <span>Événements Officiels</span>}
-          </NavLink>
-          
-          <NavLink to="/sas" className={({ isActive }) => `nav-item ${isActive ? 'active' : ''}`} title="Table SAS">
-            <Database size={20} className="nav-icon" />
-            {isSidebarOpen && <span>Table SAS</span>}
-          </NavLink>
-
-          <NavLink to="/antichambre" className={({ isActive }) => `nav-item ${isActive ? 'active' : ''}`} title="Antichambre">
-            <Sparkles size={20} className="nav-icon" />
-            {isSidebarOpen && <span>Antichambre</span>}
-          </NavLink>
-
-          <NavLink to="/retouche-image" className={({ isActive }) => `nav-item ${isActive ? 'active' : ''}`} title="Retouche Image">
-            <ImageIcon size={20} className="nav-icon" />
-            {isSidebarOpen && <span>Retouche Image</span>}
-          </NavLink>
-          
-          <NavLink to="/admin-option" className={({ isActive }) => `nav-item ${isActive ? 'active' : ''}`} title="Curateur IA">
-            <Sparkles size={20} className="nav-icon" />
-            {isSidebarOpen && <span>Curateur IA</span>}
-          </NavLink>
-
-          <NavLink to="/moderation" className={({ isActive }) => `nav-item ${isActive ? 'active' : ''}`} title="Modération">
-             <Shield size={20} className="nav-icon" />
-             {isSidebarOpen && <span>Modération</span>}
-          </NavLink>
-
-          <NavLink to="/signalements" className={({ isActive }) => `nav-item ${isActive ? 'active' : ''}`} title="Signalements">
-             <MailWarning size={20} className="nav-icon" />
-             {isSidebarOpen && <span>Signalements</span>}
-          </NavLink>
-          
-          <NavLink to="/lab" className={({ isActive }) => `nav-item ${isActive ? 'active' : ''}`} title="Laboratoire">
-             <Palette size={20} className="nav-icon" />
-             {isSidebarOpen && <span>Laboratoire</span>}
-          </NavLink>
-
-          <NavLink to="/one-by-one" className={({ isActive }) => `nav-item ${isActive ? 'active' : ''}`} title="1 par 1">
-             <ListChecks size={20} className="nav-icon" />
-             {isSidebarOpen && <span>1 par 1</span>}
-          </NavLink>
-
-          <NavLink to="/users" className={({ isActive }) => `nav-item ${isActive ? 'active' : ''}`} title="Utilisateurs">
-             <Users size={20} className="nav-icon" />
-             {isSidebarOpen && <span>Utilisateurs</span>}
-          </NavLink>
-
-          <NavLink to="/analytics" className={({ isActive }) => `nav-item ${isActive ? 'active' : ''}`} title="Diagnostic">
-             <BarChart size={20} className="nav-icon" />
-             {isSidebarOpen && <span>Diagnostic</span>}
-          </NavLink>
-
-          <NavLink to="/viz-3d" className={({ isActive }) => `nav-item ${isActive ? 'active' : ''}`} title="Explorateur 3D">
-             <Orbit size={20} className="nav-icon" />
-             {isSidebarOpen && <span>Explorateur 3D</span>}
-          </NavLink>
+          {navItems.map((item) => (
+            <NavLink 
+              key={item.to}
+              to={item.to} 
+              className={({ isActive }) => `nav-item ${isActive ? 'active' : ''}`} 
+              title={item.label}
+              onClick={closeMobileMenu}
+            >
+              <span className="nav-icon">{item.icon}</span>
+              {(isSidebarOpen || isMobileMenuOpen) && <span>{item.label}</span>}
+            </NavLink>
+          ))}
         </nav>
       </aside>
 
       <main className="main-content">
         <Outlet />
       </main>
+
       <div style={{
           position: 'fixed',
           bottom: '10px',

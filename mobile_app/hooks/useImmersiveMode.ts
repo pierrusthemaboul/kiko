@@ -1,7 +1,15 @@
 import { useEffect, useRef } from 'react';
 import { Platform, AppState, AppStateStatus } from 'react-native';
-import * as NavigationBar from 'expo-navigation-bar';
 import * as SystemUI from 'expo-system-ui';
+
+function getNavigationBarModule() {
+  if (Platform.OS !== 'android') return null;
+  try {
+    return require('expo-navigation-bar');
+  } catch {
+    return null;
+  }
+}
 
 /**
  * Hook pour activer le mode immersif (plein écran) sur Android
@@ -19,6 +27,11 @@ export function useImmersiveMode(enabled: boolean = true) {
 
     const applyImmersiveMode = async () => {
       try {
+        const NavigationBar = getNavigationBarModule();
+        if (!NavigationBar) {
+          return;
+        }
+
         // console.log('[useImmersiveMode] 🔄 Application du mode immersif...');
 
         // Configuration de la status bar (transparente et translucide)

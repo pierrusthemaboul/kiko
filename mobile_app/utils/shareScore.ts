@@ -77,7 +77,7 @@ async function shareToTikTok(
       title: 'Timalaus - Mon Score',
       message,
       url: imageUri,
-      failOnCancel: false,
+      failOnCancel: true,
     };
 
     const result = await Share.open(shareOptions);
@@ -117,7 +117,7 @@ async function shareToInstagram(
       title: 'Timalaus - Mon Score',
       social: Share.Social.INSTAGRAM_STORIES as any,
       url: imageUri,
-      failOnCancel: false,
+      failOnCancel: true,
       backgroundImage: imageUri,
       // Instagram Stories specific options
       appId: '123456789', // Replace with actual Facebook App ID if needed
@@ -186,7 +186,7 @@ async function shareToFacebook(
       message,
       url: imageUri,
       social: Share.Social.FACEBOOK as any,
-      failOnCancel: false,
+      failOnCancel: true,
     };
 
     await Share.shareSingle(shareOptions);
@@ -214,7 +214,7 @@ async function shareToFacebook(
 }
 
 /**
- * Share to Twitter/X using web intent
+ * Share to Twitter/X
  */
 async function shareToTwitter(
   data: ShareData,
@@ -227,18 +227,15 @@ async function shareToTwitter(
       data.mode === 'classique' ? data.streak || 0 : data.score
     );
 
-    // Twitter web intent URL
-    const tweetText = encodeURIComponent(message);
-    const twitterUrl = `https://twitter.com/intent/tweet?text=${tweetText}`;
+    const shareOptions = {
+      title: 'Timalaus - Mon Score',
+      message,
+      url: imageUri,
+      social: Share.Social.TWITTER as any,
+      failOnCancel: true,
+    };
 
-    // Try to use native Twitter app first
-    const canOpenTwitter = await Linking.canOpenURL('twitter://');
-
-    if (canOpenTwitter) {
-      await Linking.openURL(`twitter://post?message=${tweetText}`);
-    } else {
-      await Linking.openURL(twitterUrl);
-    }
+    await Share.shareSingle(shareOptions);
 
     console.log('[SHARE] Share successful', { platform: 'twitter' });
 
@@ -248,7 +245,18 @@ async function shareToTwitter(
       timestamp,
     };
   } catch (error) {
-    throw error;
+    if (error instanceof Error && error.message.includes('User did not share')) {
+      console.log('[SHARE] Share cancelled by user', { platform: 'twitter' });
+      return {
+        success: false,
+        platform: 'twitter',
+        cancelled: true,
+        timestamp,
+      };
+    }
+
+    // Fallback to generic share if Twitter is not installed or shareSingle fails
+    return await shareGeneric(data, imageUri, timestamp);
   }
 }
 
@@ -271,7 +279,7 @@ async function shareToWhatsApp(
       message,
       url: imageUri,
       social: Share.Social.WHATSAPP as any,
-      failOnCancel: false,
+      failOnCancel: true,
     };
 
     await Share.shareSingle(shareOptions);
@@ -336,7 +344,7 @@ async function shareGeneric(
       title: 'Timalaus - Mon Score',
       message,
       url: imageUri,
-      failOnCancel: false,
+      failOnCancel: true,
     };
 
     const result = await Share.open(shareOptions);

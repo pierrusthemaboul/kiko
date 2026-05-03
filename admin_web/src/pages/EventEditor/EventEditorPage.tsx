@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import { useParams, useNavigate, useSearchParams } from 'react-router-dom';
 import { supabase } from '../../lib/supabase';
-import { Save, Wand2, ArrowLeft, ArrowRight, Image as ImageIcon, Calendar, FileText, UploadCloud, Trash2 } from 'lucide-react';
+import { Save, Wand2, ArrowLeft, ArrowRight, Image as ImageIcon, Calendar, FileText, UploadCloud, Trash2, Copy } from 'lucide-react';
 import ImageRegenPanel from '../Sas/CreativeLab/ImageRegenPanel';
 import './EventEditorPage.css';
 
@@ -124,6 +124,28 @@ const EventEditorPage: React.FC = () => {
     });
   };
 
+  const handleCopyTitle = async () => {
+    if (!eventData?.titre) return;
+
+    try {
+      if (navigator?.clipboard?.writeText) {
+        await navigator.clipboard.writeText(eventData.titre);
+      } else {
+        const textarea = document.createElement('textarea');
+        textarea.value = eventData.titre;
+        textarea.style.position = 'fixed';
+        textarea.style.opacity = '0';
+        document.body.appendChild(textarea);
+        textarea.select();
+        document.execCommand('copy');
+        document.body.removeChild(textarea);
+      }
+      alert('Titre copié dans le presse-papiers');
+    } catch {
+      alert('Copie impossible sur ce navigateur.');
+    }
+  };
+
   const handleManualUpload = async (e: React.ChangeEvent<HTMLInputElement>) => {
     const file = e.target.files?.[0];
     if (!file || !eventData) return;
@@ -181,25 +203,34 @@ const EventEditorPage: React.FC = () => {
           <span className="source-badge">{source.toUpperCase()}</span>
         </div>
         <div className="header-actions">
+          <button
+            className="btn-secondary btn-copy-title"
+            onClick={handleCopyTitle}
+            disabled={saving}
+            title="Copier le titre"
+          >
+            <Copy size={16} />
+            <span>Copier titre</span>
+          </button>
           {currentIndex !== null && currentIndex > 0 && (
-            <button className="btn-secondary" onClick={goPrev} disabled={saving} style={{display: 'flex', alignItems: 'center', gap: '6px', background: 'var(--bg-tertiary)', padding: '6px 12px', borderRadius: 'var(--radius-sm)', border: '1px solid var(--glass-border)'}}>
+            <button className="btn-secondary btn-nav" onClick={goPrev} disabled={saving} style={{display: 'flex', alignItems: 'center', gap: '6px', background: 'var(--bg-tertiary)', padding: '6px 12px', borderRadius: 'var(--radius-sm)', border: '1px solid var(--glass-border)'}}>
               <ArrowLeft size={16} />
             </button>
           )}
           {currentIndex !== null && currentIndex < cachedIds.length - 1 && (
-            <button className="btn-secondary" onClick={goNext} disabled={saving} style={{display: 'flex', alignItems: 'center', gap: '6px', background: 'var(--bg-tertiary)', padding: '6px 12px', borderRadius: 'var(--radius-sm)', border: '1px solid var(--glass-border)'}}>
+            <button className="btn-secondary btn-nav" onClick={goNext} disabled={saving} style={{display: 'flex', alignItems: 'center', gap: '6px', background: 'var(--bg-tertiary)', padding: '6px 12px', borderRadius: 'var(--radius-sm)', border: '1px solid var(--glass-border)'}}>
               <ArrowRight size={16} />
             </button>
           )}
           <button 
-            className="btn-secondary" 
+            className="btn-secondary btn-delete-event" 
             onClick={handleDelete} 
             disabled={saving} 
             style={{marginLeft: '12px', color: '#ef4444', borderColor: '#fca5a5', background: 'transparent'}}
             title="Supprimer l'événement">
             <Trash2 size={18} />
           </button>
-          <button className="btn-primary" onClick={handleSave} disabled={saving} style={{marginLeft: '12px'}}>
+          <button className="btn-primary btn-save-event" onClick={handleSave} disabled={saving} style={{marginLeft: '12px'}}>
             <Save size={18} /> {saving ? 'Sauvegarde...' : 'Enregistrer'}
           </button>
         </div>
@@ -260,7 +291,19 @@ const EventEditorPage: React.FC = () => {
               </select>
             </div>
             <div className="form-group">
-              <label><FileText size={16}/> Titre</label>
+              <div className="title-row">
+                <label><FileText size={16}/> Titre</label>
+                <button
+                  type="button"
+                  className="btn-secondary btn-copy-inline"
+                  onClick={handleCopyTitle}
+                  disabled={saving}
+                  title="Copier le titre"
+                >
+                  <Copy size={14} />
+                  <span>Copier le titre</span>
+                </button>
+              </div>
               <input type="text" value={eventData.titre} onChange={e => setEventData({...eventData, titre: e.target.value})} />
             </div>
             <div className="form-group">

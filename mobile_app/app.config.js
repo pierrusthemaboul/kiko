@@ -3,7 +3,7 @@ module.exports = ({ config }) => {
 
   return {
     ...config,
-    name: IS_DEV ? "Timalaus DEV" : "Timalaus",
+    name: IS_DEV ? "Timalaus DEV" : "Timalaus : Quiz Histoire",
     slug: "kiko",
     version: "1.7.2",
     orientation: "portrait",
@@ -162,6 +162,38 @@ module.exports = ({ config }) => {
           });
         },
         'kotlin-version-fix'
+      ],
+      [
+        function withAndroidQueries(config) {
+          const { withAndroidManifest } = require('@expo/config-plugins');
+          return withAndroidManifest(config, config => {
+            const androidManifest = config.modResults;
+            const manifest = androidManifest.manifest;
+
+            if (!manifest.queries) {
+              manifest.queries = [
+                {
+                  package: [
+                    { $: { 'android:name': 'com.instagram.android' } },
+                    { $: { 'android:name': 'com.facebook.katana' } },
+                    { $: { 'android:name': 'com.twitter.android' } },
+                    { $: { 'android:name': 'com.whatsapp' } },
+                    { $: { 'android:name': 'com.zhiliaoapp.musically' } }, // TikTok
+                  ],
+                  intent: [
+                    {
+                      action: [{ $: { 'android:name': 'android.intent.action.SEND' } }],
+                      data: [{ $: { 'android:mimeType': 'image/*' } }],
+                    },
+                  ],
+                },
+              ];
+            }
+
+            return config;
+          });
+        },
+        'android-queries'
       ]
     ],
     experiments: {

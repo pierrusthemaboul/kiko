@@ -1,4 +1,4 @@
-import { useState, useCallback } from 'react';
+import { useState, useCallback, useRef } from 'react';
 import { LEVEL_CONFIGS } from '../levelConfigs';
 import { 
   HistoricalPeriod, 
@@ -25,7 +25,8 @@ export function usePerformance() {
     overallAccuracy: 0
   });
 
-  // Suivi des événements de niveau
+  // Suivi des événements de niveau avec une ref pour accès synchrone
+  const levelEventsRef = useRef<LevelEventSummary[]>([]);
   const [currentLevelEvents, setCurrentLevelEvents] = useState<LevelEventSummary[]>([]);
   const [levelCompletedEvents, setLevelCompletedEvents] = useState<LevelEventSummary[]>([]);
 
@@ -107,22 +108,21 @@ export function usePerformance() {
    * Enregistre un événement de niveau complété
    */
   const addEventToLevel = useCallback((eventSummary: LevelEventSummary) => {
-    setCurrentLevelEvents(prev => [...prev, eventSummary]);
-    setLevelCompletedEvents(prev => [...prev, eventSummary]);
+    console.log(`[PERFORMANCE] Adding event: ${eventSummary.titre}`);
+    const updated = [...levelEventsRef.current, eventSummary];
+    levelEventsRef.current = updated;
+    setCurrentLevelEvents(updated);
+    setLevelCompletedEvents(updated);
   }, []);
 
   /**
-   * Réinitialise les événements de niveau complétés
+   * Réinitialise les événements de niveau
    */
-  const resetLevelCompletedEvents = useCallback(() => {
-    setLevelCompletedEvents([]);
-  }, []);
-
-  /**
-   * Réinitialise les événements de niveau courant
-   */
-  const resetCurrentLevelEvents = useCallback(() => {
+  const resetLevelEvents = useCallback(() => {
+    console.log(`[PERFORMANCE] Resetting level events`);
+    levelEventsRef.current = [];
     setCurrentLevelEvents([]);
+    setLevelCompletedEvents([]);
   }, []);
 
   return {
@@ -133,13 +133,14 @@ export function usePerformance() {
     performanceStats,
     currentLevelEvents,
     levelCompletedEvents,
+    latestLevelEvents: levelEventsRef, // Accès synchrone
 
     // Fonctions
     updatePerformanceStats,
     calculatePoints,
     addEventToLevel,
-    resetLevelCompletedEvents,
-    resetCurrentLevelEvents,
+    resetLevelCompletedEvents: resetLevelEvents,
+    resetCurrentLevelEvents: resetLevelEvents,
     
     // Setters
     setPeriodStats,

@@ -39,6 +39,17 @@
         "simulator": true
       }
     },
+    "simulator": {
+      "distribution": "internal",
+      "autoIncrement": false,
+      "credentialsSource": "remote",
+      "env": {
+        "EXPO_PUBLIC_APP_VARIANT": "production"
+      },
+      "ios": {
+        "simulator": true
+      }
+    },
     "apk": {
       "distribution": "internal",
       "autoIncrement": false,

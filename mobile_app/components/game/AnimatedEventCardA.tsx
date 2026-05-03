@@ -18,10 +18,13 @@
 
 // 1.C. Imports
 import React, { useEffect, useRef, useState } from 'react';
-import { View, Image, Text, StyleSheet, Dimensions, Animated, TouchableOpacity, Alert } from 'react-native';
+import { View, Image, Text, StyleSheet, Dimensions, Animated, TouchableOpacity, Alert, Linking } from 'react-native';
 import { LinearGradient } from 'expo-linear-gradient';
 import { Ionicons } from '@expo/vector-icons';
 import { supabase } from '@/lib/supabase/supabaseClients';
+
+const ADMIN_EMAIL = 'pierre.cousin7@gmail.com';
+const ADMIN_EVENT_EDIT_BASE_URL = 'https://adminweb-ruddy.vercel.app/edit-event';
 
 // Obtenir les dimensions de l'écran pour les calculs de style adaptatif
 const { width: SCREEN_WIDTH, height: SCREEN_HEIGHT } = Dimensions.get('window');
@@ -62,15 +65,15 @@ const AnimatedEventCardA: React.FC<AnimatedEventCardAProps> = ({
   // Animation pour la couleur du titre
   const titleColorAnim = useRef(new Animated.Value(0)).current;
 
-  // État administrateur pour le bouton de régénération
+  // État administrateur pour le bouton d'accès rapide admin
   const [isAdmin, setIsAdmin] = useState(false);
-  const [isRegenerating, setIsRegenerating] = useState(false);
+  const [isOpeningAdmin, setIsOpeningAdmin] = useState(false);
 
   // Vérification de l'administrateur
   useEffect(() => {
     const checkAdmin = async () => {
       const { data: { session } } = await supabase.auth.getSession();
-      if (session?.user?.email === 'pierre.cousin7@gmail.com') {
+      if (session?.user?.email?.toLowerCase() === ADMIN_EMAIL) {
         setIsAdmin(true);
       }
     };
@@ -102,23 +105,24 @@ const AnimatedEventCardA: React.FC<AnimatedEventCardAProps> = ({
     }
   };
 
-  // Fonction de régénération
-  const handleRegenerate = async () => {
-    if (!event || !event.id) return;
-    setIsRegenerating(true);
+  const handleOpenAdminEvent = async () => {
+    if (!event?.id) return;
+    setIsOpeningAdmin(true);
+
+    const editUrl = `${ADMIN_EVENT_EDIT_BASE_URL}/${event.id}?source=evenements`;
+
     try {
-      const { error } = await (supabase.from('aregenerer') as any).insert({
-        evenement_id: event.id,
-        titre: event.titre,
-        year: parseInt(getYearFromDate(event.date), 10) || 0,
-        status: 'pending',
-      });
-      if (error) throw error;
-      Alert.alert('Succès', 'Événement envoyé en régénération dans la Chambre Noire.');
+      const canOpen = await Linking.canOpenURL(editUrl);
+      if (!canOpen) {
+        throw new Error('Lien admin indisponible');
+      }
+
+      await Linking.openURL(editUrl);
+      Alert.alert('Admin', 'Page admin ouverte. Tu peux copier le titre depuis le bouton dédié sur la page.');
     } catch (err: any) {
-      Alert.alert('Erreur', 'Impossible de demander la régénération : ' + err.message);
+      Alert.alert('Erreur', `Impossible d'ouvrir la page admin : ${err?.message || 'erreur inconnue'}`);
     } finally {
-      setIsRegenerating(false);
+      setIsOpeningAdmin(false);
     }
   };
 
@@ -357,19 +361,19 @@ const AnimatedEventCardA: React.FC<AnimatedEventCardAProps> = ({
           {/* Overlay de date */}
           {renderDate()}
 
-          {/* Bouton Admin Régénération */}
+          {/* Bouton Admin : ouvrir l'événement sur admin web + copier le titre */}
           {isAdmin && position === 'bottom' && (
             <View style={styles.actionButtonsContainer}>
                 <TouchableOpacity
                   style={styles.actionButton}
-                  onPress={handleRegenerate}
-                  disabled={isRegenerating}
+                  onPress={handleOpenAdminEvent}
+                  disabled={isOpeningAdmin}
                   activeOpacity={0.7}
                 >
                   <Ionicons 
-                    name="refresh-circle-outline" 
+                    name="open-outline" 
                     size={28} 
-                    color={isRegenerating ? '#666' : '#FFD700'} 
+                    color={isOpeningAdmin ? '#666' : '#FFD700'} 
                   />
                 </TouchableOpacity>
             </View>

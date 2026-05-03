@@ -387,19 +387,19 @@ const styles = StyleSheet.create({
     marginRight: 8,
   },
   userName: {
-    fontSize: 14,
+    fontSize: 16, // Augmenté de 14
     fontWeight: 'bold',
     color: colors.darkText,
-    marginRight: 6,
+    marginRight: 8,
   },
   scoreContainer: {
     paddingHorizontal: 6,
     paddingVertical: 3,
   },
   score: {
-    fontSize: 15,
+    fontSize: 18, // Augmenté de 15
     color: colors.primary,
-    fontWeight: '600',
+    fontWeight: 'bold',
   },
   questionIndicator: {
     paddingHorizontal: 6,
@@ -444,7 +444,7 @@ const styles = StyleSheet.create({
   },
   levelText: {
     color: 'white',
-    fontSize: 12,
+    fontSize: 14, // Augmenté de 12
     fontWeight: 'bold',
   },
   levelProgress: {

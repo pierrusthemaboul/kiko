@@ -9,16 +9,17 @@ import {
   Animated,
   StyleSheet,
   Platform,
-  StatusBar,
-  SafeAreaView,
-  Dimensions,
+  useWindowDimensions,
   TouchableOpacity,
-  Alert
+  Alert,
+  Image,
+  Modal
 } from 'react-native';
 import { useSafeAreaInsets } from 'react-native-safe-area-context';
 import { useRouter } from 'expo-router'; // Gardé si jamais utilisé ailleurs, sinon peut être enlevé
 import { Ionicons } from '@expo/vector-icons';
 import { LinearGradient } from 'expo-linear-gradient';
+import * as Application from 'expo-application';
 
 // Components
 import UserInfo, { UserInfoHandle } from './UserInfo';
@@ -40,8 +41,6 @@ import type {
   LevelEventSummary,
 } from '@/hooks/types'; // Assurez-vous que ce chemin est correct
 import { RewardType } from '@/hooks/types';
-
-const { height: SCREEN_HEIGHT } = Dimensions.get('window');
 
 // Interface pour l'historique des niveaux (si non définie ailleurs)
 interface LevelHistory {
@@ -166,6 +165,7 @@ function GameContentA({
 }: GameContentAProps) {
   const router = useRouter(); // Gardé, même si non utilisé directement ici
   const insets = useSafeAreaInsets();
+  const { height: windowHeight, width: windowWidth } = useWindowDimensions();
   const userInfoRef = useRef<UserInfoHandle>(null);
   const contentOpacity = useRef(new Animated.Value(1)).current;
   const [isRewardPositionSet, setIsRewardPositionSet] = useState(false);
@@ -179,6 +179,24 @@ function GameContentA({
   const [tutorialStep, setTutorialStep] = useState(0);
 
   const isInitialRenderRef = useRef(true); // Pour l'animation d'EventLayoutA
+
+  // --- Calculs de layout synchronisés avec EventLayoutA ---
+  const headerHeight = insets.top + (Platform.OS === 'android' ? 60 : 50);
+  const topCardHeight = Math.min(Math.max(Math.round(windowHeight * 0.34), 220), 360);
+  const topCardTop = headerHeight + 10;
+  const cardSpacing = Math.max(Math.round(windowHeight * 0.025), 14);
+  const bottomCardTop = topCardTop + topCardHeight + cardSpacing;
+  
+  // Cutouts pour le tutoriel
+  const tutorialTopCutoutHeight = topCardHeight + 20; // Un peu plus large pour le padding
+  const tutorialBottomCutoutTop = bottomCardTop - 10;
+  const tutorialBottomCutoutHeight = topCardHeight + 20;
+  const tutorialCompareTop = bottomCardTop + (topCardHeight / 2) - 40; // Centré sur la carte du bas
+  const tutorialButtonsBottom = Math.max(insets.bottom + 16, 28);
+
+  useEffect(() => {
+    Logger.info('System', `[GameContentA] Initialized. Screen: ${windowWidth}x${windowHeight}, Insets: ${JSON.stringify(insets)}, Version: ${Application.nativeApplicationVersion}`);
+  }, []);
 
   // --- MODIFICATION : Supprimer l'ancien handleRestart wrapper ---
   // const handleRestart = useCallback(() => { ... }); // SUPPRIMÉ
@@ -245,8 +263,8 @@ function GameContentA({
           } else {
             // console.log("[GameContentA] Using fallback position after failed attempts");
             const fallbackPosition = currentReward.type === RewardType.EXTRA_LIFE
-              ? { x: Dimensions.get('window').width * 0.80, y: 50 }
-              : { x: Dimensions.get('window').width * 0.20, y: 50 };
+              ? { x: windowWidth * 0.80, y: 50 }
+              : { x: windowWidth * 0.20, y: 50 };
             updateRewardPosition(fallbackPosition);
             setIsRewardPositionSet(true);
           }
@@ -258,8 +276,8 @@ function GameContentA({
         } else {
           // console.log("[GameContentA] Using fallback position after error");
           const fallbackPosition = currentReward.type === RewardType.EXTRA_LIFE
-            ? { x: Dimensions.get('window').width * 0.80, y: 50 }
-            : { x: Dimensions.get('window').width * 0.20, y: 50 };
+            ? { x: windowWidth * 0.80, y: 50 }
+            : { x: windowWidth * 0.20, y: 50 };
           updateRewardPosition(fallbackPosition);
           setIsRewardPositionSet(true);
         }
@@ -282,7 +300,7 @@ function GameContentA({
       mounted = false;
       timers.forEach(timer => clearTimeout(timer));
     };
-  }, [currentReward, updateRewardPosition, user, isRewardPositionSet]); // Dépendances inchangées
+  }, [currentReward, updateRewardPosition, user, isRewardPositionSet, windowWidth]);
 
   const handleImageLoadLocal = useCallback(() => {
     handleImageLoad?.();
@@ -502,11 +520,24 @@ function GameContentA({
           <View style={styles.ghostTutorialOverlay}>
             <View style={styles.ghostTutorialMask} />
 
-            {tutorialStep === 0 && <View style={styles.topCardFocusCutout} />}
-            {tutorialStep === 1 && <View style={styles.bottomCardFocusCutout} />}
+            {tutorialStep === 0 && (
+              <View style={[styles.topCardFocusCutout, { top: topCardTop - 10, height: tutorialTopCutoutHeight }]} />
+            )}
+            {tutorialStep === 1 && (
+              <View
+                style={[
+                  styles.bottomCardFocusCutout,
+                  {
+                    top: tutorialBottomCutoutTop,
+                    height: tutorialBottomCutoutHeight,
+                  },
+                ]}
+              />
+            )}
 
             {(tutorialStep === 2 || tutorialStep === 3) && (
-              <View style={styles.tutorialButtonsAnchor}>
+              <View style={[styles.tutorialButtonsAnchor, { bottom: tutorialButtonsBottom }]}>
+
                 <View style={styles.tutorialButtonsMirrorRow}>
                   <View style={styles.tutorialButtonSlot}>
                     <View
@@ -534,14 +565,14 @@ function GameContentA({
                 style={styles.tutorialTapLayer}
                 onPress={goToNextTutorialStep}
               >
-                <View style={styles.compareTextContainer}>
+                <View style={[styles.compareTextContainer, { top: tutorialCompareTop }]}>
                   <Text style={styles.compareText}>{tutorialStepText}</Text>
                   <Text style={styles.compareHint}>Appuyez pour continuer</Text>
                 </View>
               </TouchableOpacity>
             ) : (
               <View style={styles.tutorialFinalContainer}>
-                <View style={styles.compareTextContainer}>
+                <View style={[styles.compareTextContainer, { top: tutorialCompareTop }]}>
                   <Text style={styles.compareText}>{tutorialStepText}</Text>
                   <TouchableOpacity style={styles.tutorialStartButton} onPress={completeTutorialFlow}>
                     <Text style={styles.tutorialStartButtonText}>C'est parti !</Text>
@@ -951,8 +982,6 @@ const styles = StyleSheet.create({
     position: 'absolute',
     left: 8,
     right: 8,
-    top: 12,
-    height: Math.round(SCREEN_HEIGHT * 0.42),
     borderRadius: 20,
     borderWidth: 2,
     borderColor: '#F4D068',
@@ -962,8 +991,6 @@ const styles = StyleSheet.create({
     position: 'absolute',
     left: 8,
     right: 8,
-    top: Math.round(SCREEN_HEIGHT * 0.45),
-    height: Math.round(SCREEN_HEIGHT * 0.42),
     borderRadius: 20,
     borderWidth: 2,
     borderColor: '#F4D068',
@@ -974,7 +1001,6 @@ const styles = StyleSheet.create({
     left: 8,
     right: 8,
     top: 12,
-    height: Math.round(SCREEN_HEIGHT * 0.78),
     borderRadius: 20,
     borderWidth: 1,
     borderColor: 'rgba(255,255,255,0.22)',
@@ -984,7 +1010,6 @@ const styles = StyleSheet.create({
     position: 'absolute',
     left: 30,
     right: 30,
-    top: '48%',
     alignItems: 'center',
     justifyContent: 'center',
     backgroundColor: '#FFFFFF',
@@ -1045,7 +1070,6 @@ const styles = StyleSheet.create({
     position: 'absolute',
     left: 0,
     right: 0,
-    bottom: 50,
     paddingHorizontal: 20,
   },
   tutorialButtonsMirrorRow: {

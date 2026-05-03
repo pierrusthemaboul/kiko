@@ -52,12 +52,11 @@ interface FallbackLogReport {
 interface SupportEmailLog {
   id: string;
   created_at: string;
-  category: string | null;
-  message: string;
-  data: Record<string, unknown> | null;
-  user_id: string | null;
-  app_version: string | null;
-  platform: string | null;
+  sender: string;
+  subject: string | null;
+  body: string;
+  source: 'apple' | 'google' | 'firebase' | 'support' | 'unknown';
+  status: 'read' | 'unread';
 }
 
 interface UnifiedReport {
@@ -149,6 +148,19 @@ const SignalementsPage: React.FC = () => {
   const fetchEmails = async () => {
     setLoadingEmails(true);
 
+    // Try new dedicated table first
+    const { data: dedicatedData, error: dedicatedError } = await supabase
+      .from('support_emails')
+      .select('*')
+      .order('created_at', { ascending: false });
+
+    if (!dedicatedError && dedicatedData) {
+      setEmails(dedicatedData as unknown as SupportEmailLog[]);
+      setLoadingEmails(false);
+      return;
+    }
+
+    // Fallback to remote_debug_logs if table doesn't exist or error
     const { data, error } = await supabase
       .from('remote_debug_logs')
       .select('id, created_at, category, message, data, user_id, app_version, platform')
@@ -157,7 +169,17 @@ const SignalementsPage: React.FC = () => {
       .limit(100);
 
     if (!error && data) {
-      setEmails(data as unknown as SupportEmailLog[]);
+      // Map logs to email format for display
+      const mapped = data.map(log => ({
+        id: log.id,
+        created_at: log.created_at,
+        sender: log.user_id || 'Client Mobile',
+        subject: log.category || 'Feedback App',
+        body: log.message,
+        source: 'support' as const,
+        status: 'read' as const,
+      }));
+      setEmails(mapped);
     } else {
       setEmails([]);
     }
@@ -205,18 +227,37 @@ const SignalementsPage: React.FC = () => {
     }
   };
 
+  const getSourceIcon = (source: string) => {
+    switch (source.toLowerCase()) {
+      case 'apple':
+        return <ImageIcon size={16} />; // Use Apple icon if available, or generic
+      case 'google':
+        return <Mail size={16} />;
+      case 'firebase':
+        return <ShieldAlert size={16} />;
+      default:
+        return <Mail size={16} />;
+    }
+  };
+
   const getTypeLabel = (type: string) => {
     switch (type) {
-      case 'DATE_FAUSSE':
-        return 'Date incorrecte';
-      case 'DESCRIPTION_FAUSSE':
-        return 'Titre / texte erroné';
-      case 'IMAGE_INCOHERENTE':
-        return 'Image incohérente';
-      case 'TYPO':
-        return 'Coquille / typo';
-      default:
-        return 'Autre';
+      case 'DATE_FAUSSE': return 'Date incorrecte';
+      case 'DESCRIPTION_FAUSSE': return 'Texte erroné';
+      case 'IMAGE_INCOHERENTE': return 'Image HS';
+      case 'TYPO': return 'Coquille / Typo';
+      default: return 'Autre';
+    }
+  };
+
+  const markEmailAsRead = async (id: string) => {
+    const { error } = await supabase
+      .from('support_emails')
+      .update({ status: 'read' })
+      .eq('id', id);
+
+    if (!error) {
+      setEmails(prev => prev.map(m => m.id === id ? { ...m, status: 'read' } : m));
     }
   };
 
@@ -350,24 +391,37 @@ const SignalementsPage: React.FC = () => {
         </div>
       ) : (
         <div className="cards-grid">
-          {emails.map((mailLog) => (
-            <article key={mailLog.id} className="report-card glass">
+          {emails.map((mail) => (
+            <article key={mail.id} className={`report-card email-card glass ${mail.status === 'unread' ? 'unread' : ''}`}>
               <div className="report-meta">
-                <span className="type-chip">
-                  <Mail size={16} />
-                  {mailLog.category || 'email'}
+                <span className={`type-chip source-${mail.source}`}>
+                  {getSourceIcon(mail.source)}
+                  {mail.source.toUpperCase()}
                 </span>
-                <span className="date-chip">{new Date(mailLog.created_at).toLocaleString()}</span>
+                <span className="date-chip">{new Date(mail.created_at).toLocaleString()}</span>
               </div>
-              <p className="report-message">{mailLog.message}</p>
-              <div className="mail-extra">
-                <span>Utilisateur: {mailLog.user_id || 'anonyme'}</span>
-                <span>Plateforme: {mailLog.platform || '-'}</span>
-                <span>Version: {mailLog.app_version || '-'}</span>
+              
+              <div className="mail-header">
+                <h3>{mail.subject || '(Sans objet)'}</h3>
+                <span className="sender-tag">De: {mail.sender}</span>
               </div>
-              {mailLog.data ? (
-                <pre className="mail-data">{JSON.stringify(mailLog.data, null, 2)}</pre>
-              ) : null}
+
+              <div className="mail-body-container">
+                <p className="report-message">{mail.body}</p>
+              </div>
+
+              <div className="report-actions">
+                {mail.status === 'unread' && (
+                  <button className="action-btn resolve" onClick={() => markEmailAsRead(mail.id)}>
+                    <CheckCircle2 size={14} />
+                    Marquer lu
+                  </button>
+                )}
+                <button className="action-btn glass" onClick={() => window.open(`mailto:${mail.sender}?subject=Re: ${mail.subject}`)}>
+                  <Mail size={14} />
+                  Répondre
+                </button>
+              </div>
             </article>
           ))}
         </div>

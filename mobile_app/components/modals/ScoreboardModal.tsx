@@ -63,6 +63,7 @@ const ScoreboardModal: React.FC<ScoreboardModalProps> = ({
   // État pour l’événement sélectionné (sous-modal de détails)
   const [selectedEvent, setSelectedEvent] = useState<LevelEventSummary | null>(null);
   const [isReporting, setIsReporting] = useState(false);
+  const [rewardClaimed, setRewardClaimed] = useState(false);
 
   const isValidUuid = (value: string) =>
     /^[0-9a-f]{8}-[0-9a-f]{4}-[1-5][0-9a-f]{3}-[89ab][0-9a-f]{3}-[0-9a-f]{12}$/i.test(value);
@@ -551,7 +552,8 @@ const ScoreboardModal: React.FC<ScoreboardModalProps> = ({
                       mode: gameMode,
                       score: currentScore,
                     });
-                    if (success && onShareReward) {
+                    if (success && onShareReward && !rewardClaimed) {
+                        setRewardClaimed(true);
                         onShareReward();
                     }
                   }}

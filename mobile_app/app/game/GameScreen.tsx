@@ -31,12 +31,20 @@ import { Logger } from '@/utils/logger';
 
 // Libs
 import { FirebaseAnalytics } from '@/lib/firebase'; // Chemin OK
-import * as NavigationBar from 'expo-navigation-bar';
 import { supabase } from '@/lib/supabase/supabaseClients';
 import * as Crypto from 'expo-crypto';
 
 // Utils
 import { getBackgroundForLevel } from '@/utils/backgroundProgression';
+
+function getNavigationBarModule() {
+  if (Platform.OS !== 'android') return null;
+  try {
+    return require('expo-navigation-bar');
+  } catch {
+    return null;
+  }
+}
 
 function ClassicGameScreen({ requestedMode }: { requestedMode?: string }) {
   const router = useRouter();
@@ -136,7 +144,8 @@ function ClassicGameScreen({ requestedMode }: { requestedMode?: string }) {
     useCallback(() => {
       try {
         FirebaseAnalytics.screen('GameScreen', 'GameScreenPage');
-        NavigationBar.setVisibilityAsync('hidden').catch(() => undefined);
+        const NavigationBar = getNavigationBarModule();
+        NavigationBar?.setVisibilityAsync?.('hidden').catch(() => undefined);
       } catch (error) {
       }
       return () => { };
@@ -452,7 +461,8 @@ function PrecisionGameScreen() {
     useCallback(() => {
       try {
         FirebaseAnalytics.screen('PrecisionGameScreen', 'PrecisionGameScreen');
-        NavigationBar.setVisibilityAsync('hidden').catch(() => undefined);
+        const NavigationBar = getNavigationBarModule();
+        NavigationBar?.setVisibilityAsync?.('hidden').catch(() => undefined);
       } catch (error) {
       }
       return () => { };

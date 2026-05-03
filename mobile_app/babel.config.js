@@ -6,17 +6,12 @@ module.exports = function (api) {
       [
         'module-resolver',
         {
-          root: ['.'],
           alias: {
             '@': '.',
           },
         },
       ],
+      'react-native-reanimated/plugin',
     ],
-    env: {
-      production: {
-        plugins: ['transform-remove-console'],
-      },
-    },
   };
 };

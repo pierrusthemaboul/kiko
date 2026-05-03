@@ -347,6 +347,7 @@ export function useGameLogicA(initialEvent?: string, modeId?: string) {
     performanceStats,
     currentLevelEvents,
     levelCompletedEvents,
+    latestLevelEvents,
     updatePerformanceStats,
     calculatePoints,
     addEventToLevel,
@@ -873,7 +874,23 @@ export function useGameLogicA(initialEvent?: string, modeId?: string) {
       console.log('[useGameLogicA] 🚀 Run démarré avec succès:', runResult.runId);
     }
 
-    await baseInitGame();
+    console.log('[useGameLogicA] Calling baseInitGame...');
+    const initResult = await baseInitGame();
+    const firstEvent = initResult?.firstEvent;
+    console.log('[useGameLogicA] baseInitGame returned firstEvent:', firstEvent?.titre);
+    
+    if (firstEvent) {
+      addEventToLevel({
+        id: firstEvent.id,
+        titre: firstEvent.titre,
+        date: firstEvent.date,
+        date_formatee: firstEvent.date_formatee || new Date(firstEvent.date).toLocaleDateString('fr-FR'),
+        illustration_url: firstEvent.illustration_url,
+        wasCorrect: true,
+        responseTime: 0,
+        description_detaillee: firstEvent.description_detaillee,
+      });
+    }
     // 🎬 Initialiser les métadonnées (utilise les valeurs courantes via closure)
     currentTourRef.current = 0;
     metadataManagerRef.current = new GameSessionMetadataManager(
@@ -966,7 +983,13 @@ export function useGameLogicA(initialEvent?: string, modeId?: string) {
 
   const finalizeCurrentLevelHistory = useCallback(
     (eventsToFinalize: LevelEventSummary[]) => {
+      console.log(`[HISTORY] Finalizing history for Level ${user.level} with ${eventsToFinalize?.length || 0} events`);
+      if (__DEV__ && (console as any).tron) {
+        (console as any).tron.log(`[HISTORY] Finalizing Level ${user.level}`, eventsToFinalize);
+      }
+
       if (!eventsToFinalize || eventsToFinalize.length === 0) {
+        console.warn(`[HISTORY] No events to finalize for Level ${user.level}`);
         return;
       }
 
@@ -1075,118 +1098,80 @@ export function useGameLogicA(initialEvent?: string, modeId?: string) {
         const safeNormalizedTime = Math.max(0, Math.min(20, normalizedTimeLeft));
         const basePoints = calculatePoints(
           safeNormalizedTime,
-          1,
+          newEvent.niveau_difficulte,
           newStreak,
           user.level
         );
-
-        // Vérifier si c'est un événement bonus
         const isBonusEvent = (newEvent as any)?._isBonusEvent === true;
         const bonusMultiplier = isBonusEvent ? 1.5 : 1.0;
 
         const pointsEarned = Math.max(10, Math.round(basePoints * gameMode.scoreMultiplier * bonusMultiplier));
 
-        if (isBonusEvent) {
+        console.log(`[GAME] Answer Correct! Points: ${pointsEarned}, Streak: ${newStreak}`);
+        addEventToLevel(eventSummaryItem);
 
+        const currentLvlConfig = LEVEL_CONFIGS[user.level];
+        const nextEventsDone = user.eventsCompletedInLevel + 1;
+        const isLevelUp = currentLvlConfig && nextEventsDone >= currentLvlConfig.eventsNeeded;
+
+        if (isLevelUp) {
+          console.log(`[LEVEL_UP] Level ${user.level} completed! Finalizing history.`);
+          trackLevelCompleted(user.level, currentLvlConfig.name || `Niveau ${user.level}`, nextEventsDone, user.points + pointsEarned);
+          finalizeCurrentLevelHistory(latestLevelEvents.current);
+          
+          // Side effects that don't depend on state update settling
+          const nextLevel = user.level + 1;
+          setCurrentLevelConfig({ ...LEVEL_CONFIGS[nextLevel], eventsSummary: [] });
+          // resetLevelCompletedEvents(); // RÉINITIALISÉ UNIQUEMENT DANS handleLevelUp !
+          resetAntiqueCount();
+          setTriggerLevelEndAnim(true);
+
+          const completedLevel = user.level;
+          const isDevAndLevel1 = __DEV__ && completedLevel === 1;
+          const shouldShowAd = (completedLevel === 1 || completedLevel % 5 === 0) && !isDevAndLevel1;
+
+          setTimeout(() => {
+            setIsLevelPaused(true);
+            setShowLevelModal(true);
+            playLevelUpSound();
+            if (shouldShowAd) {
+              setPendingAdDisplay('levelUp');
+              FirebaseAnalytics.ad('interstitial', 'triggered', 'level_up', nextLevel);
+            }
+          }, 1500);
+        } else {
+          // Normal next event
+          const nextEventPromise = selectNewEventRef.current(allEvents, newEvent);
+          nextEventPromise.then((evt: Event | null) => {
+            if (evt?.illustration_url) Image.prefetch(evt.illustration_url).catch(() => { });
+          });
+          setTimeout(() => {
+            setIsWaitingForCountdown(false);
+            if (!isGameOver && !showLevelModal) {
+              nextEventPromise.then((evt: Event | null) => {
+                if (evt) updateGameState(evt);
+              });
+            }
+          }, 750);
         }
 
-        trackReward(
-          'POINTS',
-          pointsEarned,
-          'correct_answer',
-          'correct_answer',
-          user.level,
-          user.points + pointsEarned
-        );
-
+        trackReward('POINTS', pointsEarned, 'correct_answer', 'correct_answer', user.level, user.points + pointsEarned);
         checkRewards({ type: 'streak', value: newStreak }, user);
-        addEventToLevel(eventSummaryItem);
 
         setUser((prev) => {
           const updatedPoints = prev.points + pointsEarned;
-          const eventsDone = prev.eventsCompletedInLevel + 1;
+          const eventsDone = isLevelUp ? 0 : prev.eventsCompletedInLevel + 1;
+          const newLevel = isLevelUp ? prev.level + 1 : prev.level;
 
-          let updated = {
+          return {
             ...prev,
+            level: newLevel,
             points: updatedPoints,
             streak: newStreak,
             maxStreak: Math.max(prev.maxStreak, newStreak),
             eventsCompletedInLevel: eventsDone,
             totalEventsCompleted: prev.totalEventsCompleted + 1,
           };
-
-          const config = LEVEL_CONFIGS[prev.level];
-
-          if (config && eventsDone >= config.eventsNeeded) {
-            if (__DEV__ && (console as any).tron) {
-              (console as any).tron.display({
-                name: '🏆 LEVEL COMPLETED',
-                preview: `Level ${prev.level} -> ${prev.level + 1}`,
-                value: { eventsDone, points: updatedPoints },
-                important: true
-              });
-            }
-            trackLevelCompleted(prev.level, config.name || `Niveau ${prev.level}`, eventsDone, updatedPoints);
-            finalizeCurrentLevelHistory(levelCompletedEvents);
-
-            updated.level += 1;
-            updated.eventsCompletedInLevel = 0;
-
-            setCurrentLevelConfig({ ...LEVEL_CONFIGS[updated.level], eventsSummary: [] });
-            resetCurrentLevelEvents();
-            resetAntiqueCount();
-
-            const completedLevel = prev.level;
-            const newLevel = updated.level;
-            const isDevAndLevel1 = __DEV__ && completedLevel === 1;
-            const shouldShowAd = (completedLevel === 1 || completedLevel % 5 === 0) && !isDevAndLevel1;
-
-            // Séquence de timing pour la fin de niveau:
-            // 0s: Animation de validation (triggerLevelEndAnim)
-            // 800ms: Modal/Pub apparaît
-
-            // --- AJOUT : Récompense de fin de niveau ---
-            checkRewards({ type: 'level', value: newLevel }, updated);
-
-            if (__DEV__ && (console as any).tron) {
-              (console as any).tron.log("🎬 DÉCLENCHEMENT triggerLevelEndAnim");
-            }
-            setTriggerLevelEndAnim(true);
-
-            // 2. Attendre 1500ms (temps de l'animation de validation allongée)
-            setTimeout(() => {
-              if (__DEV__ && (console as any).tron) {
-                (console as any).tron.log("🕒 TIMEOUT LEVEL UP (1500ms) - Affichage Modal");
-              }
-              // Maintenant on peut pauser
-              setIsLevelPaused(true);
-
-              setShowLevelModal(true);
-              playLevelUpSound();
-
-              // DÉCLENCHEMENT DE LA PUB ICI, après l'animation
-              if (shouldShowAd) {
-                setPendingAdDisplay('levelUp');
-                FirebaseAnalytics.ad('interstitial', 'triggered', 'level_up', newLevel);
-              }
-            }, 1500);
-          } else {
-            // Sélection anticipée + prefetch image pendant le délai de feedback (750ms)
-            const nextEventPromise = selectNewEventRef.current(allEvents, newEvent);
-            nextEventPromise.then((evt: Event | null) => {
-              if (evt?.illustration_url) Image.prefetch(evt.illustration_url).catch(() => { });
-            });
-            setTimeout(() => {
-              setIsWaitingForCountdown(false);
-              if (!isGameOver && !showLevelModal) {
-                nextEventPromise.then((evt: Event | null) => {
-                  if (evt) updateGameState(evt);
-                });
-              }
-            }, 750);
-          }
-
-          return updated;
         });
       } else { // Incorrect Answer
         playIncorrectSound();
@@ -1312,7 +1297,8 @@ export function useGameLogicA(initialEvent?: string, modeId?: string) {
       user.points > highScore
     );
 
-    finalizeCurrentLevelHistory(currentLevelEvents); // Finalize history with events from the last, incomplete level
+    finalizeCurrentLevelHistory(latestLevelEvents.current); // Finalize history with events from the last, incomplete level
+    console.log(`[GAME_OVER] Finalizing history for level ${user.level} with ${latestLevelEvents.current.length} events`);
 
     setTimeout(() => {
       if (canShowAd('gameOver')) {
@@ -1631,9 +1617,22 @@ export function useGameLogicA(initialEvent?: string, modeId?: string) {
     console.log('[LEVEL_START] Référence sélectionnée:', firstEvent.id);
 
     // Marquer comme utilisé et définir comme previousEvent ET afficher immédiatement
+    console.log(`[handleLevelUp] Starting Level ${user.level + 1}. Resetting events before adding new reference.`);
+    resetLevelCompletedEvents(); // On réinitialise maintenant que l'utilisateur a vu le résumé
+    
     setUsedEvents(prev => new Set([...prev, firstEvent.id]));
 
     setPreviousEvent(firstEvent);
+    addEventToLevel({
+      id: firstEvent.id,
+      titre: firstEvent.titre,
+      date: firstEvent.date,
+      date_formatee: firstEvent.date_formatee || new Date(firstEvent.date).toLocaleDateString('fr-FR'),
+      illustration_url: firstEvent.illustration_url,
+      wasCorrect: true,
+      responseTime: 0,
+      description_detaillee: firstEvent.description_detaillee,
+    });
     setNewEvent(null); // Ne pas mettre le même événement que firstEvent
     setDisplayedEvent(null); // Masquer temporairement pour éviter le doublon visuel
 

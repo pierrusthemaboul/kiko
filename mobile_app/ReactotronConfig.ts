@@ -12,7 +12,12 @@ if (__DEV__) {
         }
     }
 
-    Reactotron.setAsyncStorageHandler!(AsyncStorage)
+    const hasAsyncStorage = !!AsyncStorage && typeof (AsyncStorage as any).getItem === 'function';
+    const baseTron = hasAsyncStorage && Reactotron.setAsyncStorageHandler
+        ? Reactotron.setAsyncStorageHandler(AsyncStorage)
+        : Reactotron;
+
+    baseTron
         .configure({
             name: 'Kiko Mobile App',
             host: host,
@@ -20,6 +25,10 @@ if (__DEV__) {
         })
         .useReactNative()
         .connect();
+
+    if (!hasAsyncStorage) {
+        console.warn('[Reactotron] AsyncStorage unavailable in this runtime, storage handler disabled.');
+    }
 
     Reactotron.clear!();
     (console as any).tron = Reactotron;

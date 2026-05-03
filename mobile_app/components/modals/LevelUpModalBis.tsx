@@ -22,6 +22,7 @@ import { LinearGradient } from 'expo-linear-gradient';
 import { colors } from '../../constants/Colors';
 import type { LevelEventSummary, SpecialRules } from '@/hooks/types';
 import { useImmersiveMode } from '@/hooks/useImmersiveMode';
+import { supabase } from '@/lib/supabase/supabaseClients';
 
 const { width } = Dimensions.get('window');
 
@@ -50,6 +51,11 @@ function getEventYear(event: LevelEventSummary): string {
   // On priorise la date formattée, sinon la date brute
   const rawDate = event.date_formatee || event.date;
   if (!rawDate) return '';
+
+  const anyYearMatch = rawDate.match(/-?\d{4,6}/);
+  if (anyYearMatch) {
+    return parseInt(anyYearMatch[0], 10).toString();
+  }
 
   // Extraction propre de l'année pour les formats YYYY-MM-DD (même négatifs)
   const match = rawDate.match(/^(-?\d+)-/);
@@ -101,9 +107,97 @@ const LevelUpModalBis: React.FC<LevelUpModalBisProps> = ({
 
   // State pour le popup d'un événement en particulier
   const [selectedEvent, setSelectedEvent] = useState<LevelEventSummary | null>(null);
+  const [isReporting, setIsReporting] = useState(false);
 
   // State pour stocker uniquement les événements du niveau actuel/précédent
   const [filteredEvents, setFilteredEvents] = useState<LevelEventSummary[]>([]);
+
+  const isValidUuid = (value: string) =>
+    /^[0-9a-f]{8}-[0-9a-f]{4}-[1-5][0-9a-f]{3}-[89ab][0-9a-f]{3}-[0-9a-f]{12}$/i.test(value);
+
+  const sendReport = async (event: LevelEventSummary, type: string) => {
+    const eventId = event.id;
+
+    if (!isValidUuid(eventId)) {
+      Alert.alert('Signalement impossible', "Identifiant d'événement invalide.");
+      return;
+    }
+
+    setIsReporting(true);
+    try {
+      const {
+        data: { user },
+      } = await supabase.auth.getUser();
+
+      const reportPayload = {
+        evenement_id: eventId,
+        user_id: user?.id || null,
+        type_erreur: type,
+      };
+
+      const { error } = await (supabase.from('evenements_signalements') as any).insert(reportPayload);
+
+      if (!error) {
+        Alert.alert('Merci !', 'Signalement reçu. Nos historiens vont vérifier !');
+        setSelectedEvent(null);
+        return;
+      }
+
+      const isMissingTable = error?.code === 'PGRST205';
+      if (isMissingTable) {
+        const fallbackPayload = {
+          user_id: user?.id || null,
+          level: 'warn',
+          category: 'event_report',
+          message: `Report ${type} on ${eventId}`,
+          data: {
+            event_id: eventId,
+            title: event.titre,
+            reported_issue: type,
+            event_year: getEventYear(event),
+            source: 'levelup_modal',
+          },
+          platform: 'mobile',
+        };
+
+        const { error: fallbackError } = await (supabase.from('remote_debug_logs') as any).insert(
+          fallbackPayload
+        );
+
+        if (!fallbackError) {
+          Alert.alert(
+            'Merci !',
+            'Signalement reçu. Il a été enregistré temporairement côté maintenance.'
+          );
+          setSelectedEvent(null);
+          return;
+        }
+      }
+
+      throw error;
+    } catch (err: any) {
+      console.error('[LEVELUP REPORT ERROR]', err);
+      Alert.alert('Erreur', "Impossible d'envoyer le signalement.");
+    } finally {
+      setIsReporting(false);
+    }
+  };
+
+  const handleReport = (event: LevelEventSummary) => {
+    if (!event || !event.id) return;
+
+    Alert.alert(
+      'Historien, une erreur ?',
+      `Voulez-vous signaler un problème sur "${event.titre}" ?`,
+      [
+        { text: '📅 Date fausse', onPress: () => sendReport(event, 'DATE_FAUSSE') },
+        { text: '✍️ Titre / Texte', onPress: () => sendReport(event, 'DESCRIPTION_FAUSSE') },
+        { text: '🖼️ Image', onPress: () => sendReport(event, 'IMAGE_INCOHERENTE') },
+        { text: '❌ Autre / Doublon', onPress: () => sendReport(event, 'AUTRE') },
+        { text: 'Annuler', style: 'cancel' },
+      ]
+    );
+  };
 
   // Fonction pour gérer le retour au menu avec confirmation
   const handleReturnToMenu = () => {
@@ -295,12 +389,17 @@ const LevelUpModalBis: React.FC<LevelUpModalBisProps> = ({
                 style={styles.eventCardTouchable}
               >
                 <View style={styles.eventCard}>
-                  <Image
-                    source={{ uri: event.illustration_url }}
-                    style={styles.eventImage}
-                    resizeMode="cover"
-                  // Fallback pour les images qui ne se chargent pas
-                  />
+                  {event.illustration_url ? (
+                    <Image
+                      source={{ uri: event.illustration_url }}
+                      style={styles.eventImage}
+                      resizeMode="cover"
+                    />
+                  ) : (
+                    <View style={[styles.eventImage, styles.eventImageFallback]}>
+                      <Ionicons name="image-outline" size={24} color="#6b7280" />
+                    </View>
+                  )}
                   <LinearGradient
                     colors={['transparent', 'rgba(0,0,0,0.8)']}
                     style={styles.eventGradient}
@@ -348,13 +447,27 @@ const LevelUpModalBis: React.FC<LevelUpModalBisProps> = ({
       >
         <View style={styles.modalOverlay}>
           <View style={styles.eventDetailsModal}>
-            <View style={styles.eventDetailsHeader}>
-              <Text style={styles.eventDetailsTitle}>
-                {selectedEvent.titre}
-              </Text>
-              <Text style={styles.eventDetailsDate}>
-                {getEventYear(selectedEvent)}
-              </Text>
+            <View style={styles.eventDetailsImageContainer}>
+              {selectedEvent.illustration_url ? (
+                <Image
+                  source={{ uri: selectedEvent.illustration_url }}
+                  style={styles.eventDetailsImage}
+                  resizeMode="cover"
+                />
+              ) : (
+                <View style={[styles.eventDetailsImage, styles.eventDetailsImageFallback]}>
+                  <Ionicons name="image-outline" size={32} color="#6b7280" />
+                  <Text style={styles.eventDetailsImageFallbackText}>Illustration indisponible</Text>
+                </View>
+              )}
+
+              <LinearGradient
+                colors={['transparent', 'rgba(0,0,0,0.8)']}
+                style={styles.eventDetailsImageGradient}
+              >
+                <Text style={styles.eventDetailsDate}>{getEventYear(selectedEvent)}</Text>
+                <Text style={styles.eventDetailsTitle}>{selectedEvent.titre}</Text>
+              </LinearGradient>
             </View>
 
             <ScrollView style={styles.eventDetailsContent}>
@@ -365,12 +478,25 @@ const LevelUpModalBis: React.FC<LevelUpModalBisProps> = ({
               </Text>
             </ScrollView>
 
-            <TouchableOpacity
-              style={styles.closeButton}
-              onPress={() => setSelectedEvent(null)}
-            >
-              <Text style={styles.closeButtonText}>Fermer</Text>
-            </TouchableOpacity>
+            <View style={styles.eventDetailsFooter}>
+              <TouchableOpacity
+                style={styles.closeButton}
+                onPress={() => setSelectedEvent(null)}
+              >
+                <Text style={styles.closeButtonText}>Fermer</Text>
+              </TouchableOpacity>
+
+              <TouchableOpacity
+                style={[styles.reportSmallButton, isReporting && styles.reportSmallButtonDisabled]}
+                onPress={() => handleReport(selectedEvent)}
+                disabled={isReporting}
+              >
+                <Ionicons name="flag-outline" size={16} color="#b91c1c" />
+                <Text style={styles.reportSmallText}>
+                  {isReporting ? 'Envoi...' : 'Signaler une erreur'}
+                </Text>
+              </TouchableOpacity>
+            </View>
           </View>
         </View>
       </Modal>
@@ -560,6 +686,11 @@ const styles = StyleSheet.create({
     width: '100%',
     height: '100%',
   },
+  eventImageFallback: {
+    alignItems: 'center',
+    justifyContent: 'center',
+    backgroundColor: '#e5e7eb',
+  },
   eventGradient: {
     position: 'absolute',
     bottom: 0,
@@ -635,52 +766,86 @@ const styles = StyleSheet.create({
     textShadowRadius: 1,
   },
   eventDetailsModal: {
-    backgroundColor: 'white',
-    borderRadius: 15,
+    backgroundColor: '#ffffff',
+    borderRadius: 18,
     width: '85%',
-    maxWidth: 400,
+    maxWidth: 430,
     maxHeight: '75%',
+    overflow: 'hidden',
     elevation: 6,
     shadowColor: '#000',
     shadowOffset: { width: 0, height: 3 },
     shadowOpacity: 0.3,
     shadowRadius: 5,
   },
-  eventDetailsHeader: {
-    padding: 20,
-    paddingBottom: 15,
-    borderBottomWidth: 1,
-    borderBottomColor: '#eee',
-    backgroundColor: '#f9f9f9',
+  eventDetailsImageContainer: {
+    width: '100%',
+    height: 210,
+    backgroundColor: '#e5e7eb',
+  },
+  eventDetailsImage: {
+    width: '100%',
+    height: '100%',
+  },
+  eventDetailsImageFallback: {
+    alignItems: 'center',
+    justifyContent: 'center',
+    gap: 8,
+  },
+  eventDetailsImageFallbackText: {
+    fontSize: 13,
+    color: '#4b5563',
+    fontWeight: '600',
+  },
+  eventDetailsImageGradient: {
+    position: 'absolute',
+    left: 0,
+    right: 0,
+    bottom: 0,
+    paddingHorizontal: 16,
+    paddingVertical: 12,
   },
   eventDetailsTitle: {
     fontSize: 18,
-    fontWeight: 'bold',
-    marginBottom: 5,
-    color: '#333',
+    fontWeight: '800',
+    color: '#ffffff',
+    textShadowColor: 'rgba(0, 0, 0, 0.65)',
+    textShadowOffset: { width: 0, height: 1 },
+    textShadowRadius: 3,
   },
   eventDetailsDate: {
-    fontSize: 16,
+    fontSize: 14,
     fontWeight: 'bold',
-    color: '#ff5e62',
+    color: '#fbbf24',
+    marginBottom: 4,
   },
   eventDetailsContent: {
-    padding: 20,
+    paddingHorizontal: 16,
+    paddingTop: 14,
     flexShrink: 1,
   },
   eventDetailsDescription: {
     fontSize: 15,
-    lineHeight: 22,
+    lineHeight: 23,
     color: '#444',
+    backgroundColor: '#f8fafc',
+    borderRadius: 12,
+    padding: 14,
+  },
+  eventDetailsFooter: {
+    paddingHorizontal: 16,
+    paddingVertical: 14,
+    alignItems: 'stretch',
+    gap: 12,
+    borderTopWidth: 1,
+    borderTopColor: '#f1f5f9',
   },
   closeButton: {
-    backgroundColor: '#ff5e62',
-    padding: 12,
+    backgroundColor: colors.primary,
+    paddingVertical: 11,
+    paddingHorizontal: 18,
     alignItems: 'center',
-    marginTop: 5,
-    marginHorizontal: 20,
-    marginBottom: 20,
-    borderRadius: 10,
+    borderRadius: 999,
     elevation: 2,
     shadowColor: '#000',
     shadowOffset: { width: 0, height: 1 },
@@ -691,6 +856,25 @@ const styles = StyleSheet.create({
     color: 'white',
     fontWeight: 'bold',
     fontSize: 16,
+  },
+  reportSmallButton: {
+    flexDirection: 'row',
+    alignItems: 'center',
+    justifyContent: 'center',
+    paddingVertical: 10,
+    borderRadius: 999,
+    backgroundColor: '#fff1f2',
+    borderWidth: 1,
+    borderColor: '#fecdd3',
+    gap: 6,
+  },
+  reportSmallButtonDisabled: {
+    opacity: 0.6,
+  },
+  reportSmallText: {
+    fontSize: 13,
+    color: '#9f1239',
+    fontWeight: '700',
   },
   // Style pour le message quand il n'y a pas d'événements
   noEventsText: {

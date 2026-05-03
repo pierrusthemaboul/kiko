@@ -49,6 +49,34 @@
   font-weight: 700;
 }
 
+.header-actions {
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  gap: 8px;
+  flex-wrap: wrap;
+}
+
+.btn-copy-title {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+}
+
+.title-row {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 10px;
+}
+
+.btn-copy-inline {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  white-space: nowrap;
+}
+
 .editor-grid {
   display: grid;
   grid-template-columns: 1fr 2fr;
@@ -150,4 +178,93 @@
   outline: none;
   border-color: #3b82f6;
   background: rgba(0, 0, 0, 0.4);
+}
+
+@media (max-width: 1024px) {
+  .event-editor-fullpage {
+    padding: 1rem;
+    gap: 1rem;
+  }
+
+  .editor-header {
+    padding: 1rem;
+    flex-direction: column;
+    align-items: stretch;
+    gap: 0.75rem;
+  }
+
+  .header-info h2 {
+    font-size: 1.1rem;
+    line-height: 1.35;
+    overflow-wrap: anywhere;
+  }
+
+  .header-actions {
+    justify-content: flex-start;
+    width: 100%;
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 8px;
+  }
+
+  .header-actions > button {
+    width: 100%;
+    margin-left: 0 !important;
+    justify-content: center;
+  }
+
+  .header-actions .btn-nav,
+  .header-actions .btn-delete-event {
+    min-height: 42px;
+  }
+
+  .header-actions .btn-save-event,
+  .header-actions .btn-copy-title {
+    grid-column: span 2;
+  }
+
+  .editor-grid {
+    grid-template-columns: 1fr;
+    gap: 1rem;
+  }
+
+  .panel {
+    padding: 1rem;
+  }
+}
+
+@media (max-width: 640px) {
+  .editor-header {
+    padding: 0.75rem;
+  }
+
+  .back-btn {
+    width: 100%;
+    justify-content: center;
+  }
+
+  .header-actions {
+    grid-template-columns: 1fr;
+  }
+
+  .header-actions .btn-save-event,
+  .header-actions .btn-copy-title {
+    grid-column: auto;
+  }
+
+  .btn-copy-title {
+    width: 100%;
+    justify-content: center;
+  }
+
+  .title-row {
+    flex-direction: column;
+    align-items: stretch;
+    gap: 8px;
+  }
+
+  .btn-copy-inline {
+    width: 100%;
+    justify-content: center;
+  }
 }

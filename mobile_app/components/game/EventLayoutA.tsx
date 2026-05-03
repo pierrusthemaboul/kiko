@@ -1,17 +1,12 @@
 import React, { useState, useEffect, useRef } from 'react';
-import { View, StyleSheet, Dimensions, Animated } from 'react-native';
+import { View, StyleSheet, Animated, useWindowDimensions } from 'react-native';
 import AnimatedEventCardA from './AnimatedEventCardA'; // Assure-toi que le chemin est correct
 import OverlayChoiceButtonsA from './OverlayChoiceButtonsA'; // Assure-toi que le chemin est correct
 import { Event } from '@/hooks/types'; // Assure-toi que le chemin et le type Event sont corrects
+import { useSafeAreaInsets } from 'react-native-safe-area-context';
 
-const { height } = Dimensions.get('window');
 const ANIMATION_DURATION = 600; // Durée normale
 const ANIMATION_DURATION_LEVEL_END = 600; // Durée spéciale pour la fin de niveau (ajusté à 600ms)
-const TOP_CARD_HEIGHT_PERCENT = 0.38;
-const BOTTOM_CARD_HEIGHT_PERCENT = 0.42;
-const TOP_CARD_INITIAL_Y = 10;
-const BOTTOM_CARD_INITIAL_Y = height * 0.41;
-const MOVE_DISTANCE = -(height * 0.40);
 
 interface EventLayoutAProps {
   previousEvent: Event | null;
@@ -46,6 +41,19 @@ const EventLayoutA: React.FC<EventLayoutAProps> = ({
   triggerLevelEndAnim = false,
   isTutorialActive = false,
 }) => {
+  const { height } = useWindowDimensions();
+  const insets = useSafeAreaInsets();
+
+  const topCardInitialY = 10;
+  const topCardHeight = Math.min(Math.max(Math.round(height * 0.34), 220), 360);
+  const bottomCardTop = topCardInitialY + topCardHeight + Math.max(Math.round(height * 0.025), 14);
+  const bottomCardHeight = Math.min(
+    Math.max(height - bottomCardTop - (insets.bottom + 88), 230),
+    420
+  );
+  const moveDistance = -(bottomCardTop - topCardInitialY);
+  const buttonsBottomOffset = Math.max(insets.bottom + 16, 28);
+
   const [transitioning, setTransitioning] = useState(false);
   const [currentTop, setCurrentTop] = useState(previousEvent);
   const [currentBottom, setCurrentBottom] = useState(newEvent);
@@ -145,7 +153,7 @@ const EventLayoutA: React.FC<EventLayoutAProps> = ({
 
     Animated.parallel([
       Animated.timing(topCardTranslateY, {
-        toValue: MOVE_DISTANCE,
+        toValue: moveDistance,
         duration,
         useNativeDriver: true,
       }),
@@ -155,7 +163,7 @@ const EventLayoutA: React.FC<EventLayoutAProps> = ({
         useNativeDriver: true,
       }),
       Animated.timing(bottomCardTranslateY, {
-        toValue: MOVE_DISTANCE,
+        toValue: moveDistance,
         duration,
         useNativeDriver: true,
       }),
@@ -208,6 +216,7 @@ const EventLayoutA: React.FC<EventLayoutAProps> = ({
         style={[
           styles.cardContainer,
           styles.topCard,
+          { top: topCardInitialY, height: topCardHeight },
           {
             transform: [
               { translateY: topCardTranslateY },
@@ -234,6 +243,7 @@ const EventLayoutA: React.FC<EventLayoutAProps> = ({
         style={[
           styles.cardContainer,
           styles.bottomCard,
+          { top: bottomCardTop, height: bottomCardHeight },
           {
             transform: [
               { translateY: bottomCardTranslateY },
@@ -253,7 +263,7 @@ const EventLayoutA: React.FC<EventLayoutAProps> = ({
             streak={streak}
             level={level}
           />
-          <View style={styles.buttonsContainer}>
+          <View style={[styles.buttonsContainer, { bottom: buttonsBottomOffset }]}>
             {shouldRenderButtons && (
               <OverlayChoiceButtonsA
                 // La clé ici était probablement OK, mais on s'assure qu'elle est unique
@@ -283,13 +293,9 @@ const styles = StyleSheet.create({
     right: 10,
   },
   topCard: {
-    top: TOP_CARD_INITIAL_Y,
-    height: height * TOP_CARD_HEIGHT_PERCENT,
     zIndex: 1,
   },
   bottomCard: {
-    top: BOTTOM_CARD_INITIAL_Y,
-    height: height * BOTTOM_CARD_HEIGHT_PERCENT,
     zIndex: 2,
   },
   bottomCardContent: {
@@ -300,7 +306,6 @@ const styles = StyleSheet.create({
     position: 'absolute',
     left: 0,
     right: 0,
-    bottom: 50,
     paddingHorizontal: 20,
     zIndex: 3,
     alignItems: 'center',

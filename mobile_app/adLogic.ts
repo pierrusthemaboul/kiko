@@ -12,13 +12,42 @@
 import { useState, useEffect, useCallback } from 'react'; // Nécessaire pour l'état et les effets
 import { getAdRequestOptions, getAdUnitId } from '../kiko/lib/config/adConfig';
 import { FirebaseAnalytics } from '../kiko/lib/firebase'; // <-- Assurez-vous que ce chemin est correct
-import {
-  InterstitialAd,
-  RewardedAd,
-  AdEventType,
-  RewardedAdEventType,
-  TestIds // Peut être retiré si non utilisé directement ici
-} from 'react-native-google-mobile-ads';
+// import {
+//   InterstitialAd,
+//   RewardedAd,
+//   AdEventType,
+//   RewardedAdEventType,
+//   TestIds
+// } from 'react-native-google-mobile-ads';
+
+const InterstitialAd = {
+  createForAdRequest: () => ({
+    addAdEventListener: () => () => {},
+    load: () => {},
+    show: () => {},
+    loaded: false,
+  }),
+};
+const RewardedAd = {
+  createForAdRequest: () => ({
+    addAdEventListener: () => () => {},
+    load: () => {},
+    show: () => {},
+    loaded: false,
+  }),
+};
+enum AdEventType {
+  LOADED = 'loaded',
+  ERROR = 'error',
+  OPENED = 'opened',
+  CLOSED = 'closed',
+}
+enum RewardedAdEventType {
+  LOADED = 'loaded',
+  EARNED_REWARD = 'earned_reward',
+}
+const TestIds = {};
+
 import { MAX_LIVES } from '../kiko/hooks/types/index'; // Importé car utilisé dans le callback EARNED_REWARD
 
 /* Création d'instances de publicités */

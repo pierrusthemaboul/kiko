@@ -7,6 +7,7 @@ export async function getTutorialEnabled(): Promise<boolean> {
     const raw = await AsyncStorage.getItem(TUTORIAL_ENABLED_KEY);
 
     if (raw === null) {
+      // First time: enable tutorial
       return true;
     }
 
@@ -18,9 +19,12 @@ export async function getTutorialEnabled(): Promise<boolean> {
       return false;
     }
 
-    return true;
-  } catch {
-    return true;
+    // Default for corrupted data
+    return false;
+  } catch (e) {
+    console.warn('[TutorialStorage] Error reading tutorial state:', e);
+    // On error, better to not block the user with a recurring tutorial
+    return false;
   }
 }
 

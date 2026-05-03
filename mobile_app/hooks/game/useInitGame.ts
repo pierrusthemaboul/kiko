@@ -365,13 +365,14 @@ export function useInitGame() {
 
       // console.log(`[InitGame - Instance ${currentInstanceId}] Initialization complete.`);
       hasInitializedSuccessfullyRef.current = true;
-
+      console.log(`[InitGame] SUCCESS - Returning firstEvent: ${firstEvent?.titre}`);
+      return { firstEvent, secondEvent };
     } catch (err) {
       const errorMsg = err instanceof Error ? err.message : "Erreur inconnue lors de l'initialisation";
-      // console.error(`[InitGame - Instance ${currentInstanceId}] Initialization FAILED:`, errorMsg, err);
       setError(errorMsg);
       FirebaseAnalytics.error('game_initialization', errorMsg, 'initGame');
       hasInitializedSuccessfullyRef.current = false;
+      return { firstEvent: null, secondEvent: null };
     } finally {
       // console.log(`[InitGame - Instance ${currentInstanceId}] FINALLY block: Setting initializingRef=false, loading=false`);
       isInitializingRef.current = false;

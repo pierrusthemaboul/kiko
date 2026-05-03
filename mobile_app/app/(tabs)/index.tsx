@@ -25,7 +25,10 @@ import { supabase } from '../../lib/supabase/supabaseClients'; // Chemin relatif
 import { User } from '@supabase/supabase-js';
 import { useAudioContext } from '../../contexts/AudioContext';
 import { Ionicons } from '@expo/vector-icons';
-import { BannerAd, BannerAdSize } from 'react-native-google-mobile-ads';
+// import { BannerAd, BannerAdSize } from 'react-native-google-mobile-ads';
+const BannerAd = () => null;
+const BannerAdSize = { ANCHORED_ADAPTIVE_BANNER: 'ANCHORED_ADAPTIVE_BANNER' };
+
 import { useFonts } from '../../hooks/useFonts'; // Chemin relatif vers useFonts
 import { useAdConsent } from '../../hooks/useAdConsent';
 import { FirebaseAnalytics } from '../../lib/firebase'; // Chemin relatif vers firebase
@@ -108,7 +111,10 @@ const AnimatedSplashScreen = ({ onAnimationEnd }: AnimatedSplashScreenProps) => 
     // console.log('[Splash] ========================================');
 
     // Demander le son immédiatement - il sera mis en file d'attente si l'audio n'est pas prêt
-    playSound('splash');
+    // Demander le son immédiatement - il sera mis en file d'attente si l'audio n'est pas prêt
+    if (Platform.OS !== 'web') {
+      playSound('splash');
+    }
 
     // Animation du fond
     Animated.parallel([
@@ -513,7 +519,11 @@ export default function HomeScreen() {
       setUser(null);
       await FirebaseAnalytics.initialize(undefined, true);
     } catch (error) {
-      Alert.alert('Erreur', 'Impossible de se déconnecter');
+      if (Platform.OS === 'web') {
+        console.warn('Erreur de déconnexion', error);
+      } else {
+        Alert.alert('Erreur', 'Impossible de se déconnecter');
+      }
       FirebaseAnalytics.trackError('logout_error', {
         message: error instanceof Error ? error.message : 'Unknown error',
         screen: 'HomeScreen',
@@ -590,33 +600,37 @@ export default function HomeScreen() {
     });
     FirebaseAnalytics.initialize(undefined, true); // Assure le mode anonyme pour Firebase
 
-    Alert.alert(
-      'Mode Exploration',
-      `Bienvenue, ${name.split('-')[0]} ! En mode exploration, votre progression ne sera pas sauvegardée. Créez un compte pour accéder aux classements et enregistrer vos scores !`,
-      [
-        {
-          text: "Continuer l'exploration",
-          onPress: () => {
-            FirebaseAnalytics.trackEvent('guest_mode_confirmed', {
-              guest_name: name,
-              screen: 'home',
-            });
-            router.push('/(tabs)/vue1'); // Navigue vers la vue du jeu
-          }
-        },
-        {
-          text: "Créer un compte",
-          onPress: () => {
-            FirebaseAnalytics.trackEvent('guest_to_signup', {
-              from_screen: 'home',
-              guest_name: name,
-            });
-            router.push('/auth/signup'); // Navigue vers l'inscription
+    if (Platform.OS === 'web') {
+      console.log('[Guest Mode] Welcome Explorateur');
+      router.push('/(tabs)/vue1');
+    } else {
+      Alert.alert(
+        'Mode Exploration',
+        `Bienvenue, ${name.split('-')[0]} ! En mode exploration, votre progression ne sera pas sauvegardée. Créez un compte pour accéder aux classements et enregistrer vos scores !`,
+        [
+          {
+            text: "Continuer l'exploration",
+            onPress: () => {
+              FirebaseAnalytics.trackEvent('guest_mode_confirmed', {
+                guest_name: name,
+                screen: 'home',
+              });
+              router.push('/(tabs)/vue1'); // Navigue vers la vue du jeu
+            }
           },
-          style: "default"
-        }
-      ]
-    );
+          {
+            text: "Créer un compte",
+            onPress: () => {
+              FirebaseAnalytics.trackEvent('guest_to_signup', {
+                from_screen: 'home',
+                guest_name: name,
+              });
+              router.push('/auth/signup'); // Navigue vers l'inscription
+            }
+          }
+        ]
+      );
+    }
   };
   // ------------------------------------
 
