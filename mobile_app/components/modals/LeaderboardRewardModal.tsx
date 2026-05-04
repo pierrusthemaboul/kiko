@@ -7,6 +7,7 @@ import {
   StyleSheet,
   Animated,
   ActivityIndicator,
+  useWindowDimensions,
 } from 'react-native';
 import { Ionicons } from '@expo/vector-icons';
 import { PendingReward } from '@/hooks/useLeaderboardRewards';
@@ -54,6 +55,8 @@ export default function LeaderboardRewardModal({
   claiming,
   onClose,
 }: LeaderboardRewardModalProps) {
+  const { height, width } = useWindowDimensions();
+  const isSmallScreen = width < 375 || height < 700;
   const scaleAnim = useRef(new Animated.Value(0.85)).current;
   const opacityAnim = useRef(new Animated.Value(0)).current;
 
@@ -88,6 +91,7 @@ export default function LeaderboardRewardModal({
         <Animated.View
           style={[
             styles.card,
+            isSmallScreen && styles.cardSmall,
             { transform: [{ scale: scaleAnim }], opacity: opacityAnim },
           ]}
         >
@@ -177,6 +181,10 @@ const styles = StyleSheet.create({
     shadowRadius: 20,
     shadowOffset: { width: 0, height: 10 },
     elevation: 10,
+  },
+  cardSmall: {
+    padding: 20,
+    maxWidth: 350,
   },
   iconContainer: {
     alignItems: 'center',

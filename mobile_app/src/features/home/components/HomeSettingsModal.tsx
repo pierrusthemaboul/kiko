@@ -1,5 +1,5 @@
 import React from 'react';
-import { View, Text, StyleSheet, Modal, TouchableOpacity, Switch } from 'react-native';
+import { View, Text, StyleSheet, Modal, TouchableOpacity, Switch, useWindowDimensions } from 'react-native';
 import { Ionicons } from '@expo/vector-icons';
 import { COLORS } from '../constants';
 import * as WebBrowser from 'expo-web-browser';
@@ -25,6 +25,8 @@ export function HomeSettingsModal({
   musicEnabled,
   onMusicEnabledChange,
 }: Props) {
+  const { height, width } = useWindowDimensions();
+  const isSmallScreen = width < 375 || height < 700;
   const volumePercent = Math.round(musicVolume * 100);
   const activeSegments = Math.round(musicVolume * 10);
   const volumePresets = [0, 0.25, 0.5, 0.75, 1];
@@ -49,7 +51,7 @@ export function HomeSettingsModal({
       onRequestClose={onClose}
     >
       <View style={styles.modalOverlay}>
-        <View style={styles.modalContainer}>
+        <View style={[styles.modalContainer, isSmallScreen && styles.modalContainerSmall]}>
           <View style={styles.modalHeader}>
             <Text style={styles.modalTitle}>Paramètres</Text>
             <TouchableOpacity onPress={onClose}>
@@ -188,11 +190,18 @@ const styles = StyleSheet.create({
     justifyContent: 'flex-end',
   },
   modalContainer: {
-    backgroundColor: COLORS.background,
-    borderTopLeftRadius: 32,
-    borderTopRightRadius: 32,
-    padding: 24,
-    paddingBottom: 40,
+    backgroundColor: COLORS.surface,
+    borderTopLeftRadius: 24,
+    borderTopRightRadius: 24,
+    paddingTop: 24,
+    paddingHorizontal: 24,
+    paddingBottom: 32,
+    maxHeight: '80%',
+  },
+  modalContainerSmall: {
+    paddingTop: 20,
+    paddingHorizontal: 20,
+    paddingBottom: 24,
   },
   modalHeader: {
     flexDirection: 'row',

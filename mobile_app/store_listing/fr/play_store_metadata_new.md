@@ -1,4 +1,9 @@
-Plongez au cœur de l'histoire avec Timalaus : Quiz Histoire Chronologie et de culture générale ! 🌍⌛
+### Play Store Listing - Timalaus
+
+**Titre (Title):** Timalaus : Quiz Histoire Chrono
+**Description courte (Short Description):** Le quiz d'histoire chronologique ultime. Défiez le temps et vos amis !
+**Description complète (Full Description):**
+Plongez au cœur de l'histoire avec Timalaus, le défi ultime de chronologie et de culture générale ! 🌍⌛
 
 Sauriez-vous placer la Révolution française avant ou après l'indépendance américaine ? Testez vos connaissances, stimulez votre mémoire et défiez vos amis dans ce jeu de quiz addictif qui transforme l'apprentissage en une véritable aventure temporelle.
 
@@ -15,4 +20,3 @@ Le principe de Timalaus est simple : vous recevez des cartes illustrées représ
 Que vous soyez étudiant (Bac, Brevet) ou simplement curieux, Timalaus est l'allié parfait pour mémoriser les dates clés tout en s'amusant.
 
 Rejoignez la communauté Timalaus dès aujourd'hui et devenez le véritable Maître de la Chronologie !
-

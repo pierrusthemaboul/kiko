@@ -1,5 +1,5 @@
 import React from 'react';
-import { View, Text, StyleSheet, TouchableOpacity } from 'react-native';
+import { View, Text, StyleSheet, TouchableOpacity, useWindowDimensions } from 'react-native';
 import { Ionicons } from '@expo/vector-icons';
 import { COLORS } from '../constants';
 
@@ -12,8 +12,11 @@ interface Props {
 }
 
 export function PlaysPill({ headerPlays, adLoaded, adSuccessLoading, onShowAd, topOffset = 118 }: Props) {
+  const { height, width } = useWindowDimensions();
+  const isSmallScreen = width < 375 || height < 700;
+  const adjustedTopOffset = isSmallScreen ? topOffset + 40 : topOffset;
   return (
-    <View style={[styles.playsStatusContainer, { top: topOffset }]}>
+    <View style={[styles.playsStatusContainer, { top: adjustedTopOffset }]}>
       <View style={styles.playsPill}>
         <Ionicons name="time-outline" size={16} color={COLORS.primary} />
         <Text style={styles.playsPillText}>{headerPlays}</Text>

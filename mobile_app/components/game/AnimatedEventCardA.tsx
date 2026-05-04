@@ -28,6 +28,7 @@ const ADMIN_EVENT_EDIT_BASE_URL = 'https://adminweb-ruddy.vercel.app/edit-event'
 
 // Obtenir les dimensions de l'écran pour les calculs de style adaptatif
 const { width: SCREEN_WIDTH, height: SCREEN_HEIGHT } = Dimensions.get('window');
+const isVerySmallScreen = SCREEN_WIDTH < 360 || SCREEN_HEIGHT < 640;
 
 /************************************************************************************
  * 1.D. Interface des Props
@@ -206,26 +207,29 @@ const AnimatedEventCardA: React.FC<AnimatedEventCardAProps> = ({
       setIsTitleLong(titleLength > 40 || wordCount > 4);
 
       // Ajuster la taille de police en fonction de la longueur et position
+      // Pour les très petits écrans, réduire la taille de police davantage
+      const scaleFactor = isVerySmallScreen ? 0.75 : 1;
+
       if (position === 'top') {
         if (titleLength > 70 || wordCount > 8) {
-          setTitleFontSize(18);
+          setTitleFontSize(Math.round(18 * scaleFactor));
         } else if (titleLength > 50 || wordCount > 6) {
-          setTitleFontSize(20);
+          setTitleFontSize(Math.round(20 * scaleFactor));
         } else if (titleLength > 30 || wordCount > 4) {
-          setTitleFontSize(22);
+          setTitleFontSize(Math.round(22 * scaleFactor));
         } else {
-          setTitleFontSize(24);
+          setTitleFontSize(Math.round(24 * scaleFactor));
         }
       } else {
         // Pour la carte du bas
         if (titleLength > 70 || wordCount > 8) {
-          setTitleFontSize(16);
+          setTitleFontSize(Math.round(16 * scaleFactor));
         } else if (titleLength > 50 || wordCount > 6) {
-          setTitleFontSize(18);
+          setTitleFontSize(Math.round(18 * scaleFactor));
         } else if (titleLength > 30 || wordCount > 4) {
-          setTitleFontSize(20);
+          setTitleFontSize(Math.round(20 * scaleFactor));
         } else {
-          setTitleFontSize(22);
+          setTitleFontSize(Math.round(22 * scaleFactor));
         }
       }
     }
@@ -467,13 +471,13 @@ const styles = StyleSheet.create({
     // Le style de base inclut déjà textShadowColor qui est animé
 
     // On ajoute un effet supplémentaire avec backgroundColor
-    backgroundColor: 'rgba(0, 0, 0, 0.25)',
-    paddingHorizontal: 8,
-    paddingVertical: 3,
+    backgroundColor: isVerySmallScreen ? 'rgba(0, 0, 0, 0.4)' : 'rgba(0, 0, 0, 0.25)',
+    paddingHorizontal: isVerySmallScreen ? 6 : 8,
+    paddingVertical: isVerySmallScreen ? 2 : 3,
     borderRadius: 8,
     overflow: 'hidden',
     borderWidth: 1,
-    borderColor: 'rgba(255, 255, 255, 0.3)',
+    borderColor: isVerySmallScreen ? 'rgba(255, 255, 255, 0.5)' : 'rgba(255, 255, 255, 0.3)',
   },
 
   // Styles pour le wrapper du titre du bas

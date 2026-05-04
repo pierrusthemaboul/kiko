@@ -16,6 +16,7 @@ import {
   TouchableOpacity,
   Dimensions,
   Alert,
+  useWindowDimensions,
 } from 'react-native';
 import { Ionicons } from '@expo/vector-icons';
 import { LinearGradient } from 'expo-linear-gradient';
@@ -81,7 +82,7 @@ function getEventYear(event: LevelEventSummary): string {
   return rawDate;
 }
 
-const LevelUpModalBis: React.FC<LevelUpModalBisProps> = ({
+export default function LevelUpModalBis({
   visible,
   level,
   onStart,
@@ -92,8 +93,12 @@ const LevelUpModalBis: React.FC<LevelUpModalBisProps> = ({
   specialRules,
   previousLevel,
   isNewLevel,
-  eventsSummary
-}) => {
+  eventsSummary,
+}: LevelUpModalBisProps) {
+  const { height, width } = useWindowDimensions();
+  const isSmallScreen = width < 375 || height < 700;
+  const { width: screenWidth } = Dimensions.get('window');
+
   // Activer le mode immersif quand la modale est visible
   useImmersiveMode(visible);
 
@@ -447,6 +452,15 @@ const LevelUpModalBis: React.FC<LevelUpModalBisProps> = ({
       >
         <View style={styles.modalOverlay}>
           <View style={styles.eventDetailsModal}>
+            {/* Bouton croix en haut à droite */}
+            <TouchableOpacity
+              style={styles.closeButtonX}
+              onPress={() => setSelectedEvent(null)}
+              hitSlop={{ top: 10, bottom: 10, left: 10, right: 10 }}
+            >
+              <Ionicons name="close" size={24} color="#ffffff" />
+            </TouchableOpacity>
+
             <View style={styles.eventDetailsImageContainer}>
               {selectedEvent.illustration_url ? (
                 <Image
@@ -516,6 +530,7 @@ const LevelUpModalBis: React.FC<LevelUpModalBisProps> = ({
         <Animated.View
           style={[
             styles.modalContent,
+            isSmallScreen && styles.modalContentSmall,
             {
               opacity: opacityAnim,
               transform: [{ scale: scaleAnim }, { translateY: contentTranslateY }],
@@ -584,18 +599,23 @@ const styles = StyleSheet.create({
     alignItems: 'center',
   },
   modalContent: {
-    width: width * 0.85,
+    width: '90%',
     maxHeight: '85%',
-    backgroundColor: 'white',
-    borderRadius: 20,
-    paddingVertical: 20,
-    elevation: 5,
+    backgroundColor: '#fff',
+    borderRadius: 24,
+    padding: 24,
     shadowColor: '#000',
-    shadowOffset: { width: 0, height: 2 },
+    shadowOffset: { width: 0, height: 10 },
     shadowOpacity: 0.25,
-    shadowRadius: 3.84,
+    shadowRadius: 20,
+    elevation: 10,
     borderWidth: 1,
-    borderColor: '#ff5e62',
+    borderColor: '#f1f5f9',
+  },
+  modalContentSmall: {
+    width: '95%',
+    padding: 16,
+    maxHeight: '90%',
   },
   scrollView: {
     paddingHorizontal: 20,
@@ -778,6 +798,18 @@ const styles = StyleSheet.create({
     shadowOpacity: 0.3,
     shadowRadius: 5,
   },
+  closeButtonX: {
+    position: 'absolute',
+    top: 10,
+    right: 10,
+    width: 36,
+    height: 36,
+    borderRadius: 18,
+    backgroundColor: 'rgba(0, 0, 0, 0.5)',
+    justifyContent: 'center',
+    alignItems: 'center',
+    zIndex: 10,
+  },
   eventDetailsImageContainer: {
     width: '100%',
     height: 210,
@@ -906,4 +938,3 @@ const styles = StyleSheet.create({
   },
 });
 
-export default LevelUpModalBis;

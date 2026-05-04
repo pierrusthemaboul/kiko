@@ -14,6 +14,7 @@ import { supabase } from '../../lib/supabase/supabaseClients';
 import { router, useFocusEffect, useNavigation } from 'expo-router';
 import { FirebaseAnalytics } from '../../lib/firebase';
 import { FontAwesome } from '@expo/vector-icons';
+import * as AuthSession from 'expo-auth-session';
 
 // Même thème que la page de login
 const THEME = {
@@ -71,8 +72,16 @@ export default function ForgotPassword() {
     setErrorMessage('');
 
     try {
-      // Tentative sans redirectTo pour utiliser l'URL par défaut du template
-      const { error } = await supabase.auth.resetPasswordForEmail(email.trim());
+      const redirectTo = AuthSession.makeRedirectUri({
+        scheme: 'juno2',
+        path: 'auth/reset-password',
+      });
+
+      console.log('🔗 Reset password redirectTo:', redirectTo);
+
+      const { error } = await supabase.auth.resetPasswordForEmail(email.trim(), {
+        redirectTo,
+      });
 
       if (error) {
         console.error('❌ Reset password error:', error.message);

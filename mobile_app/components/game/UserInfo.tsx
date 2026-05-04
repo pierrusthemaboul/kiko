@@ -11,7 +11,8 @@ import {
   StyleSheet,
   Animated,
   Dimensions,
-  Pressable
+  Pressable,
+  useWindowDimensions
 } from 'react-native';
 import { Ionicons } from '@expo/vector-icons';
 import { colors } from '../../constants/Colors';
@@ -51,16 +52,21 @@ const UserInfo = forwardRef<UserInfoHandle, UserInfoProps>(
       level,
       streak,
       activeBonus = [],
-      currentQuestion,
-      totalQuestions,
-      eventsCompletedInLevel = 0,  // Valeur par défaut
-      eventsNeededForLevel = 5,    // Valeur par défaut
+      currentQuestion = 0,
+      totalQuestions = 5,
+      // Ajout des propriétés pour tracking des événements du niveau
+      eventsCompletedInLevel = 0,
+      eventsNeededForLevel = 5,
       maxLives = 3,
       musicEnabled = true,
-      onToggleMusic,
+      onToggleMusic
     },
     ref
   ) => {
+    const { height, width } = useWindowDimensions();
+    const isSmallScreen = width < 375 || height < 700;
+    const isVerySmallScreen = width < 320 || height < 650;
+    
     // Références sur le conteneur des points
     const pointsRef = useRef<View>(null);
     // Référence pour le conteneur des vies
@@ -233,7 +239,7 @@ const UserInfo = forwardRef<UserInfoHandle, UserInfoProps>(
 
     const renderBonusIndicators = () => {
       const currentTime = Date.now();
-      const activeMultipliers = activeBonus.filter(
+      const activeMultipliers = (activeBonus || []).filter(
         (bonus) => bonus.expiresAt > currentTime
       );
       if (activeMultipliers.length === 0) return null;
@@ -295,7 +301,7 @@ const UserInfo = forwardRef<UserInfoHandle, UserInfoProps>(
       <View style={styles.streakContainer}>
         {streak > 0 && (
           <View style={styles.streakWrapper}>
-            <Ionicons name="flame" size={14} color={colors.warningYellow} style={styles.streakIcon} />
+            <Ionicons name="flame" size={12} color={colors.warningYellow} style={styles.streakIcon} />
             <Text style={styles.streakText}>{streak}</Text>
           </View>
         )}
@@ -323,19 +329,23 @@ const UserInfo = forwardRef<UserInfoHandle, UserInfoProps>(
               <Text style={styles.score}>{points}</Text>
             </View>
           </View>
-          {/* Indicateur de progression (questions) */}
-          {typeof currentQuestion === 'number' && typeof totalQuestions === 'number' && (
-            <View style={styles.questionIndicator}>
-              <Text style={styles.questionText}>
-                {currentQuestion}/{totalQuestions}
-              </Text>
-            </View>
-          )}
           {/* Vies, niveau, streak et bonus */}
           <View style={styles.statsContainer}>
-            {renderLives()}
+            {isVerySmallScreen ? (
+              <View style={styles.livesAndStreakContainer}>
+                <View style={styles.livesContainer}>
+                  {renderLives()}
+                </View>
+                {renderStreak()}
+              </View>
+            ) : (
+              <>
+                {renderLives()}
+                {renderStreak()}
+              </>
+            )}
             <View style={styles.levelBadgeContainer}>
-              <View style={[styles.levelBadge, { backgroundColor: getLevelColor(level) }]}> 
+              <View style={[styles.levelBadge, { backgroundColor: getLevelColor(level) }]}>
                 <Text style={styles.levelText}>{level}</Text>
               </View>
               {/* Affichage du compteur de progression x/y sans le texte "niveau" */}
@@ -358,7 +368,6 @@ const UserInfo = forwardRef<UserInfoHandle, UserInfoProps>(
                 </Pressable>
               </View>
             )}
-            {renderStreak()}
             {renderBonusIndicators()}
           </View>
         </View>
@@ -423,6 +432,10 @@ const styles = StyleSheet.create({
     flexDirection: 'row',
     alignItems: 'center',
   },
+  livesAndStreakContainer: {
+    flexDirection: 'column',
+    alignItems: 'center',
+  },
   heartContainer: {
     marginHorizontal: 1,
     padding: 2,
@@ -468,7 +481,7 @@ const styles = StyleSheet.create({
     alignItems: 'center',
     justifyContent: 'center',
     paddingHorizontal: 2, // Réduit de 4 à 2
-    marginLeft: -3,
+    marginLeft: 0, // Supprimé le marginLeft négatif pour éviter le chevauchement
   },
   streakWrapper: {
     flexDirection: 'row',

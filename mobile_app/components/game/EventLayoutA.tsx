@@ -41,18 +41,21 @@ const EventLayoutA: React.FC<EventLayoutAProps> = ({
   triggerLevelEndAnim = false,
   isTutorialActive = false,
 }) => {
-  const { height } = useWindowDimensions();
+  const { height, width } = useWindowDimensions();
   const insets = useSafeAreaInsets();
+  const isSmallScreen = width < 375 || height < 700;
+  const isVerySmallScreen = width < 320 || height < 650;
 
   const topCardInitialY = 10;
-  const topCardHeight = Math.min(Math.max(Math.round(height * 0.34), 220), 360);
-  const bottomCardTop = topCardInitialY + topCardHeight + Math.max(Math.round(height * 0.025), 14);
-  const bottomCardHeight = Math.min(
-    Math.max(height - bottomCardTop - (insets.bottom + 88), 230),
-    420
-  );
+  // Cartes plus grandes qui prennent presque tout l'espace disponible
+  const cardHeight = isVerySmallScreen
+    ? Math.min(Math.max(Math.round(height * 0.42), 220), 340)
+    : Math.min(Math.max(Math.round(height * 0.42), 260), 400);
+  const topCardHeight = cardHeight;
+  const bottomCardTop = topCardInitialY + topCardHeight + Math.max(Math.round(height * 0.02), isVerySmallScreen ? 8 : 12);
+  const bottomCardHeight = cardHeight; // Même hauteur que la carte du haut
   const moveDistance = -(bottomCardTop - topCardInitialY);
-  const buttonsBottomOffset = Math.max(insets.bottom + 16, 28);
+  const buttonsBottomOffset = Math.max(insets.bottom + (isVerySmallScreen ? 8 : 16), isVerySmallScreen ? 20 : 28);
 
   const [transitioning, setTransitioning] = useState(false);
   const [currentTop, setCurrentTop] = useState(previousEvent);
@@ -198,7 +201,7 @@ const EventLayoutA: React.FC<EventLayoutAProps> = ({
     onChoice(choice);
   };
 
-  const shouldRenderButtons = isImageLoaded && !showDate && !isLevelPaused && !transitioning && !isTutorialActive;
+  const shouldRenderButtons = isImageLoaded && !showDate && !isLevelPaused && !transitioning;
 
   // --- GÉNÉRER LES CLÉS UNIQUES ---
   // Utilise l'ID de l'événement si disponible, sinon une chaîne statique mais différente

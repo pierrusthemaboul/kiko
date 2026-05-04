@@ -7,6 +7,7 @@ import {
   StyleSheet,
   Animated,
   ScrollView,
+  useWindowDimensions,
 } from 'react-native';
 import { Ionicons } from '@expo/vector-icons';
 
@@ -27,6 +28,8 @@ interface AIConsentModalProps {
 }
 
 export default function AIConsentModal({ visible, onAccept, infoOnly = false }: AIConsentModalProps) {
+  const { height, width } = useWindowDimensions();
+  const isSmallScreen = width < 375 || height < 700;
   const scaleAnim = useRef(new Animated.Value(0.85)).current;
   const opacityAnim = useRef(new Animated.Value(0)).current;
 
@@ -57,6 +60,7 @@ export default function AIConsentModal({ visible, onAccept, infoOnly = false }: 
         <Animated.View
           style={[
             styles.card,
+            isSmallScreen && styles.cardSmall,
             { transform: [{ scale: scaleAnim }], opacity: opacityAnim },
           ]}
         >
@@ -118,6 +122,10 @@ const styles = StyleSheet.create({
     shadowRadius: 20,
     shadowOffset: { width: 0, height: 10 },
     elevation: 10,
+  },
+  cardSmall: {
+    padding: 20,
+    maxWidth: 350,
   },
   iconContainer: {
     alignItems: 'center',

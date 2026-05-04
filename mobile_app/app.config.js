@@ -5,7 +5,7 @@ module.exports = ({ config }) => {
     ...config,
     name: IS_DEV ? "Timalaus DEV" : "Timalaus : Quiz Histoire",
     slug: "kiko",
-    version: "1.7.2",
+    version: "1.7.3",
     orientation: "portrait",
     icon: "./assets/images/oklogo.png",
     scheme: "juno2",
@@ -20,7 +20,7 @@ module.exports = ({ config }) => {
       ...config.ios,
       supportsTablet: true,
       bundleIdentifier: IS_DEV ? "com.pierretulle.juno2.dev" : "com.pierretulle.juno2",
-      buildNumber: "7",
+      buildNumber: "8",
       googleServicesFile: require('fs').existsSync('./GoogleService-Info.plist') ? "./GoogleService-Info.plist" : undefined,
       infoPlist: {
         ITSAppUsesNonExemptEncryption: false,
@@ -51,7 +51,7 @@ module.exports = ({ config }) => {
         "com.google.android.gms.permission.AD_ID",
         "android.permission.ACCESS_ADSERVICES_AD_ID"
       ],
-      versionCode: 10129,
+      versionCode: 10130,
       googleServicesFile: process.env.GOOGLE_SERVICES_JSON || "./google-services.json",
       userInterfaceStyle: "dark"
     },
@@ -204,7 +204,7 @@ module.exports = ({ config }) => {
       fallbackToCacheTimeout: 30000,
       url: "https://u.expo.dev/3cbda57c-1ec1-4949-af06-9e933dbc0050"
     },
-    runtimeVersion: "1.7.2",
+    runtimeVersion: "1.7.3",
     extra: {
       ...(config.extra || {}),
       eas: {

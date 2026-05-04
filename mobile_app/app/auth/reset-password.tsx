@@ -1,4 +1,4 @@
-import React, { useState, useLayoutEffect, useCallback } from 'react';
+import React, { useState, useLayoutEffect, useCallback, useEffect } from 'react';
 import {
   View,
   Text,
@@ -11,7 +11,7 @@ import {
   ActivityIndicator
 } from 'react-native';
 import { supabase } from '../../lib/supabase/supabaseClients';
-import { router, useFocusEffect, useNavigation } from 'expo-router';
+import { router, useFocusEffect, useNavigation, useLocalSearchParams } from 'expo-router';
 import { FirebaseAnalytics } from '../../lib/firebase';
 import { FontAwesome } from '@expo/vector-icons';
 
@@ -41,11 +41,38 @@ const THEME = {
 export default function ResetPassword() {
   const navigation = useNavigation();
 
+  const { code } = useLocalSearchParams<{ code?: string }>();
   const [newPassword, setNewPassword] = useState('');
   const [confirmPassword, setConfirmPassword] = useState('');
   const [isLoading, setIsLoading] = useState(false);
   const [passwordReset, setPasswordReset] = useState(false);
   const [errorMessage, setErrorMessage] = useState('');
+
+  useEffect(() => {
+    if (code) {
+      handleCodeExchange();
+    }
+  }, [code]);
+
+  const handleCodeExchange = async () => {
+    setIsLoading(true);
+    setErrorMessage('');
+    try {
+      console.log('🔄 Exchanging recovery code for session...');
+      const { error } = await supabase.auth.exchangeCodeForSession(code!);
+      if (error) {
+        console.error('❌ Code exchange error:', error.message);
+        setErrorMessage('Le lien de réinitialisation est invalide ou a expiré.');
+      } else {
+        console.log('✅ Code exchange successful');
+      }
+    } catch (err) {
+      console.error('❌ Unexpected exchange error:', err);
+      setErrorMessage('Une erreur est survenue lors de la validation du lien.');
+    } finally {
+      setIsLoading(false);
+    }
+  };
 
   useFocusEffect(
     useCallback(() => {

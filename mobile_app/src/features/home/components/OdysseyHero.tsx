@@ -35,6 +35,7 @@ export function OdysseyHero({ canPlay, onStart, tutorialControl }: Props) {
   const { height, width } = useWindowDimensions();
   const contentBottomPadding = Math.min(Math.max(Math.round(height * 0.16), 100), 150);
   const compactTitle = width < 375 || height < 700;
+  const verySmallScreen = width < 320 || height < 650;
 
   // Animations pour le bouton Play et l'arrivée du contenu
   const scale = useSharedValue(1);
@@ -98,22 +99,36 @@ export function OdysseyHero({ canPlay, onStart, tutorialControl }: Props) {
         <Animated.View style={[styles.heroContentWrapper, { paddingBottom: contentBottomPadding }, animatedContentStyle]}>
           
           {/* Bloc de texte avec effet Glassmorphism */}
-          <SafeBlurView intensity={35} tint="dark" style={styles.glassCard}>
-            <View style={styles.headerGlass}>
-              <Ionicons name="compass" size={16} color={COLORS.accent} style={styles.iconSpaced} />
-              <Text style={styles.heroLabel}>MODE PRINCIPAL</Text>
-            </View>
+          <SafeBlurView 
+            intensity={35} 
+            tint="dark" 
+            style={[
+              styles.glassCard,
+              verySmallScreen && styles.glassCardSmall
+            ]}
+          >
+            {/* MODE PRINCIPAL - masqué sur petits écrans */}
+            {!verySmallScreen && (
+              <View style={styles.headerGlass}>
+                <Ionicons name="compass" size={16} color={COLORS.accent} style={styles.iconSpaced} />
+                <Text style={styles.heroLabel}>MODE PRINCIPAL</Text>
+              </View>
+            )}
             <Text
               style={[
                 styles.heroTitle,
                 compactTitle ? styles.heroTitleCompact : null,
+                verySmallScreen ? styles.heroTitleVerySmall : null,
               ]}
             >
               L'Odyssée{"\n"}Temporelle
             </Text>
-            <Text style={styles.heroDesc}>
-              Explorez les époques et replacez l'histoire dans sa véritable chronologie.
-            </Text>
+            {/* Description - masquée sur petits écrans */}
+            {!verySmallScreen && (
+              <Text style={styles.heroDesc}>
+                Explorez les époques et replacez l'histoire dans sa véritable chronologie.
+              </Text>
+            )}
           </SafeBlurView>
 
           {tutorialControl ? (
@@ -195,6 +210,11 @@ const styles = StyleSheet.create({
     width: '100%',
     marginBottom: 40,
   },
+  glassCardSmall: {
+    paddingVertical: 20,
+    paddingHorizontal: 20,
+    marginBottom: 20,
+  },
   headerGlass: {
     flexDirection: 'row',
     alignItems: 'center',
@@ -231,6 +251,10 @@ const styles = StyleSheet.create({
   heroTitleCompact: {
     fontSize: 36,
     lineHeight: 44,
+  },
+  heroTitleVerySmall: {
+    fontSize: 28,
+    lineHeight: 36,
   },
   heroDesc: {
     color: 'rgba(255,255,255,0.85)',

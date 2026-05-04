@@ -166,6 +166,7 @@ function GameContentA({
   const router = useRouter(); // Gardé, même si non utilisé directement ici
   const insets = useSafeAreaInsets();
   const { height: windowHeight, width: windowWidth } = useWindowDimensions();
+  const isVerySmallScreen = windowWidth < 320 || windowHeight < 650;
   const userInfoRef = useRef<UserInfoHandle>(null);
   const contentOpacity = useRef(new Animated.Value(1)).current;
   const [isRewardPositionSet, setIsRewardPositionSet] = useState(false);
@@ -535,7 +536,7 @@ function GameContentA({
               />
             )}
 
-            {(tutorialStep === 2 || tutorialStep === 3) && (
+            {(tutorialStep === 2 || tutorialStep === 3) && !isVerySmallScreen && (
               <View style={[styles.tutorialButtonsAnchor, { bottom: tutorialButtonsBottom }]}>
 
                 <View style={styles.tutorialButtonsMirrorRow}>
@@ -565,14 +566,14 @@ function GameContentA({
                 style={styles.tutorialTapLayer}
                 onPress={goToNextTutorialStep}
               >
-                <View style={[styles.compareTextContainer, { top: tutorialCompareTop }]}>
+                <View style={styles.compareTextContainer}>
                   <Text style={styles.compareText}>{tutorialStepText}</Text>
                   <Text style={styles.compareHint}>Appuyez pour continuer</Text>
                 </View>
               </TouchableOpacity>
             ) : (
               <View style={styles.tutorialFinalContainer}>
-                <View style={[styles.compareTextContainer, { top: tutorialCompareTop }]}>
+                <View style={styles.compareTextContainer}>
                   <Text style={styles.compareText}>{tutorialStepText}</Text>
                   <TouchableOpacity style={styles.tutorialStartButton} onPress={completeTutorialFlow}>
                     <Text style={styles.tutorialStartButtonText}>C'est parti !</Text>
@@ -715,7 +716,7 @@ function GameContentA({
                 onToggleMusic={onToggleMusic}
               />
             )}
-            <View style={styles.countdownContainer}>
+            <View style={[styles.countdownContainer, isVerySmallScreen && { marginLeft: 8 }]}>
               <Countdown
                 timeLeft={timeLeft}
                 isActive={!tutorialEnabled && !isLevelPaused && isImageLoaded && !!user && !!previousEvent && !!displayedEvent && !isGameOver && !showLevelModal}
@@ -983,18 +984,16 @@ const styles = StyleSheet.create({
     left: 8,
     right: 8,
     borderRadius: 20,
-    borderWidth: 2,
-    borderColor: '#F4D068',
-    backgroundColor: 'rgba(244, 208, 104, 0.14)',
+    borderWidth: 0, // Suppression du cadre jaune
+    backgroundColor: 'transparent', // Suppression du fond
   },
   bottomCardFocusCutout: {
     position: 'absolute',
     left: 8,
     right: 8,
     borderRadius: 20,
-    borderWidth: 2,
-    borderColor: '#F4D068',
-    backgroundColor: 'rgba(244, 208, 104, 0.14)',
+    borderWidth: 0, // Suppression du cadre jaune
+    backgroundColor: 'transparent', // Suppression du fond
   },
   cardsFocusCutout: {
     position: 'absolute',
@@ -1008,14 +1007,15 @@ const styles = StyleSheet.create({
   },
   compareTextContainer: {
     position: 'absolute',
+    top: '50%', // Centré verticalement
     left: 30,
     right: 30,
     alignItems: 'center',
     justifyContent: 'center',
     backgroundColor: '#FFFFFF',
-    paddingVertical: 20,
-    paddingHorizontal: 24,
-    borderRadius: 20,
+    paddingVertical: 12,
+    paddingHorizontal: 16,
+    borderRadius: 16,
     borderWidth: 2,
     borderColor: '#E0E0E0',
     // Effet d'ombre 3D
@@ -1027,15 +1027,14 @@ const styles = StyleSheet.create({
     // Effet 3D avec plusieurs ombres (simulé avec une bordure intérieure)
     borderBottomWidth: 4,
     borderBottomColor: '#D0D0D0',
+    transform: [{ translateY: -50 }],
   },
   compareText: {
-    color: '#1A1A1A', // Noir profond
-    fontSize: 18,
-    fontWeight: '800', // Plus gras
+    color: '#1A1A1A',
+    fontSize: 14,
+    lineHeight: 20,
     textAlign: 'center',
-    lineHeight: 26,
     letterSpacing: 0.3,
-    // Légère ombre portée sur le texte pour l'effet 3D
     textShadowColor: 'rgba(0, 0, 0, 0.08)',
     textShadowOffset: { width: 0, height: 1 },
     textShadowRadius: 2,

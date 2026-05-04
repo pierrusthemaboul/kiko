@@ -13,7 +13,8 @@ import { LinearGradient } from 'expo-linear-gradient';
 import { Ionicons } from '@expo/vector-icons';
 import { colors } from '../../constants/Colors';
 
-const { width } = Dimensions.get('window');
+const { width, height } = Dimensions.get('window');
+const isVerySmallScreen = width < 360 || height < 640;
 
 interface OverlayChoiceButtonsAProps {
   onChoice: (choice: 'avant' | 'après') => void;
@@ -156,10 +157,10 @@ const OverlayChoiceButtonsA: React.FC<OverlayChoiceButtonsAProps> = ({
             end={{ x: 1, y: 1 }}
             style={styles.buttonGradient}
           >
-            <Ionicons 
-              name="arrow-back" 
-              size={18} 
-              color={colors.white} 
+            <Ionicons
+              name="arrow-back"
+              size={isVerySmallScreen ? 14 : 18}
+              color={colors.white}
               style={styles.buttonIcon}
             />
             <Text style={styles.buttonText}>AVANT</Text>
@@ -194,10 +195,10 @@ const OverlayChoiceButtonsA: React.FC<OverlayChoiceButtonsAProps> = ({
             style={styles.buttonGradient}
           >
             <Text style={styles.buttonText}>APRÈS</Text>
-            <Ionicons 
-              name="arrow-forward" 
-              size={18} 
-              color={colors.white} 
+            <Ionicons
+              name="arrow-forward"
+              size={isVerySmallScreen ? 14 : 18}
+              color={colors.white}
               style={styles.buttonIcon}
             />
           </LinearGradient>
@@ -238,7 +239,7 @@ const styles = StyleSheet.create({
     }),
   },
   buttonGradient: {
-    padding: 15,
+    padding: isVerySmallScreen ? 10 : 15,
     flexDirection: 'row',
     alignItems: 'center',
     justifyContent: 'center',
@@ -246,17 +247,17 @@ const styles = StyleSheet.create({
   },
   buttonText: {
     color: colors.white,
-    fontSize: 16,
+    fontSize: isVerySmallScreen ? 12 : 16,
     fontWeight: '700',
     textAlign: 'center',
     textTransform: 'uppercase',
-    letterSpacing: 1,
+    letterSpacing: isVerySmallScreen ? 0.5 : 1,
     textShadowColor: 'rgba(0, 0, 0, 0.5)',
     textShadowOffset: { width: 0, height: 1 },
     textShadowRadius: 3,
   },
   buttonIcon: {
-    marginHorizontal: 6,
+    marginHorizontal: isVerySmallScreen ? 4 : 6,
   },
   buttonShadow: {
     position: 'absolute',
