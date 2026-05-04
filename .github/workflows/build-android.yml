@@ -49,9 +49,14 @@ jobs:
       - name: 🚀 Build AAB (Local)
         working-directory: mobile_app
         run: |
+          echo "Checking dependencies..."
+          pnpm list react-native-url-polyfill
+          echo "Checking index.js content..."
+          cat index.js
           npx expo prebuild --platform android --clean
           node ../scripts/mobile_app/fix-manifest.js
           node ../scripts/mobile_app/fix-kotlin-version.js
+          echo "Starting EAS Build..."
           EAS_SKIP_AUTO_FINGERPRINT=1 eas build --platform android --profile production --local --non-interactive
 
       - name: 📤 Upload Artifact
