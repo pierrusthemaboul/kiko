@@ -21,7 +21,12 @@ config.resolver.nodeModulesPaths = [
   path.resolve(workspaceRoot, 'node_modules'),
 ];
 
-// 3. Support des symlinks (indispensable pour pnpm)
+// 3. Aide à la résolution pour pnpm et les modules problématiques
+config.resolver.extraNodeModules = {
+  'react-native-url-polyfill': path.resolve(workspaceRoot, 'node_modules', 'react-native-url-polyfill'),
+};
+
+// 4. Support des symlinks (indispensable pour pnpm)
 config.resolver.unstable_enableSymlinks = true;
 config.resolver.unstable_enablePackageExports = true;
 config.resolver.sourceExts = ['ts', 'tsx', 'js', 'jsx', 'json', 'cjs', 'mjs', 'web.ts', 'web.tsx', 'web.js', 'web.jsx'];
