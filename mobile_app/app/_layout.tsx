@@ -1,4 +1,4 @@
-import 'react-native-url-polyfill/auto';
+// import 'react-native-url-polyfill/auto'; (Retiré car natif en SDK 52)
 // /home/pierre/sword/kiko/app/_layout.tsx
 // ----- FICHIER CORRIGÉ AVEC LOGIQUE DE REDIRECTION AJUSTÉE + NAVBAR -----
 

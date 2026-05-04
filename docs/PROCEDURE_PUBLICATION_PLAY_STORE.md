@@ -40,8 +40,18 @@ Le déploiement est piloté par GitHub Actions et s'exécute dans l'environnemen
 2.  **Build Local** : Gradle compile l'AAB dans le runner GitHub (plus rapide et évite les quotas EAS Cloud).
 3.  **Soumission Automatique** : EAS Submit envoie l'AAB directement sur la console Google Play.
 
-### ⌨️ Commande de lancement :
-Exécutez cette commande depuis la racine du projet pour déclencher la production :
+### 🛠️ Étape 2 : Vérification du Bundle Local (CRITIQUE)
+Avant de lancer le build sur GitHub, vérifiez que Metro parvient à générer le bundle sans erreur. Cela permet de détecter les problèmes de modules manquants instantanément.
+
+```powershell
+cd mobile_app
+# Simulation du bundle de production
+npx expo export:embed --platform android --dev false --entry-file index.js --bundle-output dist/index.android.bundle --assets-dest dist/res
+```
+*Si cette commande échoue, le build sur les serveurs échouera aussi.*
+
+### ⌨️ Commande de lancement (GitHub Actions) :
+Une fois le bundle local validé, poussez vos modifications et lancez le build :
 ```bash
 gh workflow run build-android.yml --ref main
 ```
