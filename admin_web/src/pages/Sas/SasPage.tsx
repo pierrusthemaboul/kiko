@@ -60,11 +60,25 @@ const SasPage: React.FC = () => {
     let isMounted = true;
     const fetchSasRecords = async () => {
       setLoading(true);
+      console.log('[SAS] Début fetchSasRecords');
+      
+      // Test 1: Requête simple sans filtre
+      const { data: allData, error: allError } = await supabase
+        .from('sas')
+        .select('*')
+        .order('created_at', { ascending: false })
+        .limit(5);
+      
+      console.log('[SAS] Test requête simple:', { allData: allData?.length, allError });
+      
+      // Test 2: Requête avec filtre not()
       const { data, error } = await supabase
         .from('sas')
         .select('*')
         .not('statut', 'eq', 'ENVOYE_ANTICHAMBRE')
         .order('created_at', { ascending: false });
+        
+      console.log('[SAS] Test requête avec filtre:', { data: data?.length, error });
         
       if (error) {
          console.error("Erreur de récupération sas : ", error);
@@ -584,8 +598,8 @@ const SasPage: React.FC = () => {
              <button className="btn-bulk-regen" onClick={() => setIsRegenPanelOpen(true)}>
                 <Wand2 size={16} /> Génération assistée par lot
              </button>
-             <button 
-               className="btn-bulk-regen" 
+             <button
+               className="btn-bulk-regen"
                style={{ background: '#059669', borderColor: '#059669' }}
                onClick={handleBulkTransfer}
              >
@@ -594,6 +608,22 @@ const SasPage: React.FC = () => {
              <button className="btn-bulk-clear" onClick={() => setSelectedEventIds([])}>Annuler</button>
          </div>
       )}
+
+      {/* Version badge */}
+      <div style={{
+        position: 'fixed',
+        bottom: '10px',
+        right: '10px',
+        background: 'rgba(0, 0, 0, 0.7)',
+        color: '#fff',
+        padding: '4px 8px',
+        borderRadius: '4px',
+        fontSize: '11px',
+        fontFamily: 'monospace',
+        zIndex: 9999
+      }}>
+        v2026-05-09-22:17
+      </div>
     </div>
   );
 };
