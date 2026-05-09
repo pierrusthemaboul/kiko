@@ -7,6 +7,41 @@ import { shouldUnlockAchievement, ACHIEVEMENTS } from './quests';
 import Constants from 'expo-constants';
 import { FirebaseAnalytics } from '@/lib/firebase';
 
+/**
+ * Appelle l'Edge Function complete-level pour valider et récompenser la completion d'un niveau
+ * Cette fonction remplace la mise à jour directe du profil côté client pour la sécurité
+ */
+export async function completeLevelReward({
+  userId,
+  levelCompleted,
+  xpReward,
+  heartsReward = 0,
+}: {
+  userId: string;
+  levelCompleted: number;
+  xpReward: number;
+  heartsReward?: number;
+}) {
+  const { data, error } = await supabase.functions.invoke('complete-level', {
+    body: {
+      userId,
+      levelCompleted,
+      xpReward,
+      heartsReward,
+    },
+  });
+
+  if (error) {
+    throw new Error(`Edge Function error: ${error.message}`);
+  }
+
+  if (!data.success) {
+    throw new Error(data.error || 'Failed to complete level');
+  }
+
+  return data;
+}
+
 const ECONOMY_LOG_ENABLED = (() => {
   try {
     const flag = Constants.expoConfig?.extra?.EXPO_PUBLIC_ECONOMY_LOGS;
@@ -517,10 +552,37 @@ export async function applyEndOfRunEconomy({ runId, userId, mode, points, gameSt
   const newBestStreak = Math.max(newStreak, bestStreak);
   const todayDate = getTodayDateString();
 
-  // Mettre à jour le profil avec XP, rang, et streak
+  // 🔒 SÉCURITÉ : Utiliser l'Edge Function pour la mise à jour XP/rang
+  // Cela valide côté serveur que le joueur a bien l'XP requis pour le niveau
+  economyLog('[ECONOMY] 🔒 Appel Edge Function complete-level pour validation serveur');
+  
+  // Déterminer le niveau actuel basé sur le rang
+  const levelMapping: Record<string, number> = {
+    'page': 1,
+    'écuyer': 2,
+    'chevalier': 3,
+    'seigneur': 4,
+    'baron': 5,
+    'vicomte': 6,
+    'comte': 7,
+    'marquis': 8,
+    'duc': 9,
+    'prince': 10,
+  };
+  
+  const currentLevel = levelMapping[previousRank.key] || 1;
+  const newLevel = levelMapping[rank.key] || 1;
+  
+  // On utilise le nouveau niveau car c'est celui qui vient d'être atteint
+  await completeLevelReward({
+    userId,
+    levelCompleted: newLevel,
+    xpReward: xpEarned,
+    heartsReward: 0, // Pas de récompense de cœurs pour l'instant
+  });
+
+  // Mettre à jour uniquement les champs non liés à XP/rang (streak, games_played, etc.)
   const updatePayload = {
-    xp_total: newXp,
-    title_key: rank.key,
     current_streak: newStreak,
     best_streak: newBestStreak,
     last_play_date: todayDate,
@@ -529,8 +591,7 @@ export async function applyEndOfRunEconomy({ runId, userId, mode, points, gameSt
     updated_at: timestamp,
   };
 
-  economyLog('[ECONOMY] 📝 UPDATE payload:', JSON.stringify(updatePayload, null, 2));
-  economyLog('[ECONOMY] 📝 newXp value:', newXp, 'type:', typeof newXp, 'isNaN:', Number.isNaN(newXp));
+  economyLog('[ECONOMY] 📝 UPDATE payload (sans XP/rang):', JSON.stringify(updatePayload, null, 2));
 
   const { error: profileUpdateError } = await profilesRepo().updateById(userId, updatePayload);
 

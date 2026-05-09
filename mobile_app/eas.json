@@ -30,7 +30,8 @@
       "credentialsSource": "remote",
       "node": "20.19.4",
       "env": {
-        "EXPO_PUBLIC_APP_VARIANT": "internalTesting"
+        "EXPO_PUBLIC_APP_VARIANT": "internalTesting",
+        "EXPO_SKIP_DOCTOR": "1"
       },
       "android": {
         "buildType": "app-bundle"
@@ -44,7 +45,8 @@
       "autoIncrement": false,
       "credentialsSource": "remote",
       "env": {
-        "EXPO_PUBLIC_APP_VARIANT": "production"
+        "EXPO_PUBLIC_APP_VARIANT": "production",
+        "EXPO_SKIP_DOCTOR": "1"
       },
       "ios": {
         "simulator": true
@@ -55,7 +57,8 @@
       "autoIncrement": false,
       "credentialsSource": "remote",
       "env": {
-        "EXPO_PUBLIC_APP_VARIANT": "apkTesting"
+        "EXPO_PUBLIC_APP_VARIANT": "apkTesting",
+        "EXPO_SKIP_DOCTOR": "1"
       },
       "android": {
         "buildType": "apk"
@@ -67,7 +70,8 @@
       "credentialsSource": "remote",
       "node": "20.19.4",
       "env": {
-        "EXPO_PUBLIC_APP_VARIANT": "production"
+        "EXPO_PUBLIC_APP_VARIANT": "production",
+        "EXPO_SKIP_DOCTOR": "1"
       },
       "android": {
         "buildType": "app-bundle"

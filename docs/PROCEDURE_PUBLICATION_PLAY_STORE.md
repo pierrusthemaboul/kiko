@@ -40,18 +40,8 @@ Le déploiement est piloté par GitHub Actions et s'exécute dans l'environnemen
 2.  **Build Local** : Gradle compile l'AAB dans le runner GitHub (plus rapide et évite les quotas EAS Cloud).
 3.  **Soumission Automatique** : EAS Submit envoie l'AAB directement sur la console Google Play.
 
-### 🛠️ Étape 2 : Vérification du Bundle Local (CRITIQUE)
-Avant de lancer le build sur GitHub, vérifiez que Metro parvient à générer le bundle sans erreur. Cela permet de détecter les problèmes de modules manquants instantanément.
-
-```powershell
-cd mobile_app
-# Simulation du bundle de production
-npx expo export:embed --platform android --dev false --entry-file index.js --bundle-output dist/index.android.bundle --assets-dest dist/res
-```
-*Si cette commande échoue, le build sur les serveurs échouera aussi.*
-
 ### ⌨️ Commande de lancement (GitHub Actions) :
-Une fois le bundle local validé, poussez vos modifications et lancez le build :
+Poussez vos modifications et lancez le build :
 ```bash
 gh workflow run build-android.yml --ref main
 ```
@@ -92,11 +82,12 @@ Le workflow applique automatiquement deux scripts de correction post-prebuild :
 
 | Version | Version Code | Date | Cache | Notes |
 |---------|--------------|------|-------|-------|
-| 1.7.2   | 10129        | 16/04/2026 | V12 | Release stabilisée (Fix submission path) |
-| 1.7.1   | 10128        | 16/04/2026 | V11 | Tentative initiale via Action |
+| 1.7.3   | 10130        | 05/05/2026 | V12 | Build stabilisé (Fix EAS doctor) |
+| 1.7.2   | 10129        | 16/04/2026 | V11 | Release stabilisée (Fix submission path) |
+| 1.7.1   | 10128        | 16/04/2026 | V10 | Tentative initiale via Action |
 
 ---
 
-**Dernière mise à jour** : 16/04/2026 (Stabilisation pipeline automatisé)
+**Dernière mise à jour** : 05/05/2026 (Mise à jour version 1.7.3)
 **Version du document** : 2.0
 **Mainteneur** : Pierre / Antigravity

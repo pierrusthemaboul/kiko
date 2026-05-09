@@ -20,7 +20,7 @@ module.exports = ({ config }) => {
       ...config.ios,
       supportsTablet: true,
       bundleIdentifier: IS_DEV ? "com.pierretulle.juno2.dev" : "com.pierretulle.juno2",
-      buildNumber: "8",
+      buildNumber: "9",
       googleServicesFile: require('fs').existsSync('./GoogleService-Info.plist') ? "./GoogleService-Info.plist" : undefined,
       infoPlist: {
         ITSAppUsesNonExemptEncryption: false,

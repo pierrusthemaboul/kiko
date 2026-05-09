@@ -717,6 +717,75 @@ export function useEventSelector({
     [...events, ...zoneBBuffer].forEach(e => combinedEventsMap.set(e.id, e));
     events = Array.from(combinedEventsMap.values());
 
+    // --- FILTRAGE SÉMANTIQUE (Éviter les répétitions visuelles) ---
+    if (referenceEvent && events.length > 10) {
+      try {
+        const candidateIds = events.slice(0, 50).map(e => e.id); // Tester les 50 premiers candidats
+        const { data: semanticData, error: semanticError } = await supabase.functions.invoke('semantic-filter', {
+          body: {
+            refEventId: referenceEvent.id,
+            candidateIds,
+            similarityThreshold: 0.75 // Seuil de similarité pour considérer comme "trop proche"
+          }
+        });
+
+        if (!semanticError && semanticData?.results) {
+          // Filtrer pour ne garder que les événements visuellement divers
+          const diverseIds = new Set(
+            semanticData.results
+              .filter((r: any) => r.isDiverse)
+              .map((r: any) => r.eventId)
+          );
+          
+          const originalLength = events.length;
+          events = events.filter(e => diverseIds.has(e.id));
+          
+          if (events.length < originalLength) {
+            Logger.debug('GameLogic', `Semantic filtering removed ${originalLength - events.length} visually similar events`);
+          }
+        }
+      } catch (err) {
+        Logger.warn('GameLogic', 'Semantic filtering failed, continuing without it', err);
+      }
+    }
+
+    // --- CLUSTERING THÉMATIQUE (Équilibrer les types d'événements) ---
+    if (events.length > 20) {
+      try {
+        const candidateIds = events.slice(0, 100).map(e => e.id);
+        const { data: clusterData, error: clusterError } = await supabase.functions.invoke('thematic-clusters', {
+          body: {
+            eventIds: candidateIds,
+            numClusters: 5 // 5 clusters thématiques (guerre, politique, culture, science, divers)
+          }
+        });
+
+        if (!clusterError && clusterData?.clusters) {
+          // Sélectionner un événement de chaque cluster pour garantir la diversité
+          const diverseEventIds = new Set<string>();
+          
+          // Prendre 2-3 événements de chaque cluster
+          clusterData.clusters.forEach((cluster: any) => {
+            const clusterEvents = cluster.eventIds.slice(0, 3);
+            clusterEvents.forEach((id: string) => {
+              if (diverseEventIds.size < 30) { // Limiter à 30 événements max
+                diverseEventIds.add(id);
+              }
+            });
+          });
+
+          const originalLength = events.length;
+          events = events.filter(e => diverseEventIds.has(e.id));
+          
+          if (events.length < originalLength) {
+            Logger.debug('GameLogic', `Thematic clustering reduced pool from ${originalLength} to ${events.length} events`);
+          }
+        }
+      } catch (err) {
+        Logger.warn('GameLogic', 'Thematic clustering failed, continuing without it', err);
+      }
+    }
+
     if (explainOn) {
       console.log(`\n🎲 [selectNewEvent] === NOUVELLE SELECTION ===`);
       console.log(`   Niveau: ${userLevel} | Events vus: ${usedEvents.size} | Streak: ${currentStreak}`);

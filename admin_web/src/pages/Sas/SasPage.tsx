@@ -54,6 +54,7 @@ const SasPage: React.FC = () => {
   const [searchTerm, setSearchTerm] = useState('');
   const [selectedTheme, setSelectedTheme] = useState<string>('');
   const [isRegenPanelOpen, setIsRegenPanelOpen] = useState(false);
+  const [sortConfig, setSortConfig] = useState<{ key: 'date' | 'notoriete_fr', direction: 'asc' | 'desc' }>({ key: 'notoriete_fr', direction: 'desc' });
 
   useEffect(() => {
     let isMounted = true;
@@ -75,10 +76,11 @@ const SasPage: React.FC = () => {
     };
     fetchSasRecords();
     return () => { isMounted = false; };
-  }, []);  const themes = useMemo(() => {
+  }, []);
+
+  const themes = useMemo(() => {
     const t = new Set(records.map(r => r.theme).filter(Boolean));
     return Array.from(t).sort((a, b) => {
-       // Risk first, then alphabetical
        if (a.includes('🛑')) return -1;
        if (b.includes('🛑')) return 1;
        return a.localeCompare(b);
@@ -86,14 +88,42 @@ const SasPage: React.FC = () => {
   }, [records]);
 
   const filteredRecords = useMemo(() => {
-    return records.filter(r => {
+    let result = records.filter(r => {
       const matchSearch = r.titre.toLowerCase().includes(searchTerm.toLowerCase());
       const matchTheme = selectedTheme ? r.theme === selectedTheme : true;
       return matchSearch && matchTheme;
     });
-  }, [records, searchTerm, selectedTheme]);
+
+    // Sort logic
+    result.sort((a, b) => {
+      let valA: any = a[sortConfig.key];
+      let valB: any = b[sortConfig.key];
+
+      if (sortConfig.key === 'date') {
+        // Simple string comparison for dates
+        valA = valA || '';
+        valB = valB || '';
+      } else {
+        valA = valA || 0;
+        valB = valB || 0;
+      }
+
+      if (valA < valB) return sortConfig.direction === 'asc' ? -1 : 1;
+      if (valA > valB) return sortConfig.direction === 'asc' ? 1 : -1;
+      return 0;
+    });
+
+    return result;
+  }, [records, searchTerm, selectedTheme, sortConfig]);
 
   const selectedRecord = records.find(r => r.id === selectedRecordId);
+
+  const toggleSort = (key: 'date' | 'notoriete_fr') => {
+    setSortConfig(prev => ({
+      key,
+      direction: prev.key === key && prev.direction === 'desc' ? 'asc' : 'desc'
+    }));
+  };
 
   const navigateRecord = useCallback((direction: 'next' | 'prev') => {
     if (!selectedRecordId) return;
@@ -124,7 +154,6 @@ const SasPage: React.FC = () => {
 
   const handleUpdateImage = (eventId: string, newUrl: string) => {
     setRecords(prev => prev.map(r => r.id === eventId ? { ...r, illustration_url: newUrl } : r));
-    // update the local state for now
   };
 
   const toggleEventSelection = (e: React.MouseEvent, id: string) => {
@@ -161,7 +190,6 @@ const SasPage: React.FC = () => {
     if (!window.confirm(`Transférer ${selectedRecords.length} événements vers l'Antichambre ?`)) return;
 
     const toInsert = selectedRecords.map(r => {
-      // Normalisation robuste : conversion en string et padding
       let normalizedDate = r.date;
       if (r.date !== null && r.date !== undefined) {
         const dateStr = String(r.date).trim();
@@ -226,7 +254,6 @@ const SasPage: React.FC = () => {
       setRecords(prev => prev.filter(r => r.id !== deletedId));
       setSelectedEventIds(prev => prev.filter(id => id !== deletedId));
       
-      // Select the next record if available
       const currentIndex = filteredRecords.findIndex(r => r.id === deletedId);
       if (filteredRecords.length > 1) {
         const nextIdx = currentIndex < filteredRecords.length - 1 ? currentIndex + 1 : currentIndex - 1;
@@ -282,8 +309,21 @@ const SasPage: React.FC = () => {
                    <option key={t} value={t}>{t}</option>
                 ))}
              </select>
-             <button className="btn-select-all" onClick={selectAllFiltered}>Tout</button>
-             <button className="btn-select-all" style={{ background: '#059669', borderColor: '#059669', marginLeft: '0.5rem' }} onClick={selectIllustrated}>Illustrés</button>
+           </div>
+
+           <div className="sort-bar">
+              <button 
+                className={`sort-btn ${sortConfig.key === 'date' ? 'active' : ''}`}
+                onClick={() => toggleSort('date')}
+              >
+                <Calendar size={14} /> Date {sortConfig.key === 'date' && (sortConfig.direction === 'desc' ? '↓' : '↑')}
+              </button>
+              <button 
+                className={`sort-btn ${sortConfig.key === 'notoriete_fr' ? 'active' : ''}`}
+                onClick={() => toggleSort('notoriete_fr')}
+              >
+                <Activity size={14} /> Notoriété {sortConfig.key === 'notoriete_fr' && (sortConfig.direction === 'desc' ? '↓' : '↑')}
+              </button>
            </div>
         </div>
         
@@ -297,22 +337,39 @@ const SasPage: React.FC = () => {
                  className={`sas-list-item ${selectedRecordId === r.id ? 'active' : ''} ${selectedEventIds.includes(r.id) ? 'checked' : ''}`}
                  onClick={() => setSelectedRecordId(r.id)}
                >
-                 <div className="selection-area" onClick={(e) => toggleEventSelection(e, r.id)}>
+                 <div className="item-visual">
+                    {r.illustration_url ? (
+                      <img src={r.illustration_url} alt="" />
+                    ) : (
+                      <ImageIcon size={20} color="#3f3f46" />
+                    )}
+                    <div className={`img-status-indicator ${r.illustration_url ? 'ok' : 'missing'}`} />
+                 </div>
+
+                 <div className="item-main">
+                   <div className="item-header">
+                     <span className="sas-item-title">{r.titre}</span>
+                     <span className={`noto-badge ${r.notoriete_fr && r.notoriete_fr > 60 ? 'high' : ''}`}>
+                        {r.notoriete_fr || r.notoriete || 0}
+                     </span>
+                   </div>
+                   <div className="item-footer">
+                     <span className="sas-item-date">{r.date || 'Sans date'}</span>
+                     {r.notoriete_fr && r.notoriete_fr > 80 && (
+                        <div className="gem-indicator" title="Pépite potentielle">
+                           <Globe size={12} />
+                        </div>
+                     )}
+                   </div>
+                 </div>
+
+                 <div className="selection-area" onClick={(e) => toggleEventSelection(e, r.id)} style={{ position: 'absolute', top: '8px', left: '8px', zIndex: 5 }}>
                    <input 
                       type="checkbox" 
                       checked={selectedEventIds.includes(r.id)} 
                       readOnly 
+                      style={{ opacity: selectedEventIds.includes(r.id) ? 1 : 0, transition: 'opacity 0.2s' }}
                    />
-                 </div>
-                 <div className="item-main">
-                   <div className="item-header">
-                     <span className="sas-item-title">{r.titre}</span>
-                   </div>
-                   <div className="item-footer">
-                     <span className="sas-item-date">{r.date || 'Sans date'}</span>
-                     {r.theme && <span className="sas-item-theme">{r.theme}</span>}
-                     {r.illustration_url && <ImageIcon size={14} className="has-image-icon" />}
-                   </div>
                  </div>
                </div>
              ))
@@ -396,9 +453,10 @@ const SasPage: React.FC = () => {
                         {selectedRecord.illustration_url ? (
                            <img src={selectedRecord.illustration_url} alt="Illustration" />
                         ) : (
-                           <div className="image-placeholder-v3">
+                           <div className="image-placeholder-v3 alarm">
                               <ImageIcon size={48} />
-                              <p>SANS ILLUSTRATION</p>
+                              <p>ILLUSTRATION MANQUANTE</p>
+                              <span>Générez une image pour valider cet événement</span>
                            </div>
                         )}
                         <button className="btn-float-regen" onClick={() => {
@@ -441,7 +499,14 @@ const SasPage: React.FC = () => {
                   {/* RIGHT: Biography & Scores */}
                   <div className="editor-main-box">
                      <div className="field-group-box full glass">
-                        <h3><FileText size={16} /> Description & Narration</h3>
+                        <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', marginBottom: '1.25rem' }}>
+                           <h3 style={{ margin: 0 }}><FileText size={16} /> Description & Narration</h3>
+                           {(selectedRecord.notoriete_fr || selectedRecord.notoriete || 0) > 80 && (
+                              <span className="badge status ready" style={{ display: 'flex', alignItems: 'center', gap: '0.4rem', background: 'rgba(234, 179, 8, 0.2)', color: '#facc15', border: '1px solid rgba(234, 179, 8, 0.3)' }}>
+                                 💎 Pépite Historique
+                              </span>
+                           )}
+                        </div>
                         <textarea 
                            className="description-editor" 
                            defaultValue={selectedRecord.description || ''} 

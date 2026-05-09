@@ -13,9 +13,16 @@ Cette procédure détaille les étapes pour compiler et soumettre l'application 
 
 ---
 
-## 🥇 Phase 1 : Conformité iOS (Check-list Critique)
+## 🥇 Phase 1 : Préparation (Check-list Critique)
 
-Avant tout build de production, ces points **doivent** être validés sous peine de rejet immédiat.
+Avant de lancer un build, il est impératif de synchroniser les versions dans les fichiers suivants pour garantir la cohérence du déploiement et de l'OTA.
+
+### 📋 Synchronisation des 5 emplacements clés :
+1.  **`mobile_app/app.config.js`** : Mettre à jour `version` (ex: "1.7.3") et `runtimeVersion` (alignée sur la version).
+2.  **`mobile_app/package.json`** : Mettre à jour le champ `"version"`.
+3.  **`package.json` (Racine)** : Mettre à jour la version globale du projet.
+4.  **`mobile_app/hooks/game/useInitGame.ts`** : **CRITIQUE** - Incrémenter `EVENTS_CACHE_VERSION` (ex: 11 → 12) pour forcer le rafraîchissement des données chez les joueurs.
+5.  **`mobile_app/app.config.js` (`ios.buildNumber`)** : Incrémenter manuellement le `buildNumber` (ex: 8 → 9).
 
 ### 1.1 Confidentialité & Tracking (AdMob)
 *   **App Tracking Transparency** : 
@@ -28,24 +35,24 @@ Avant tout build de production, ces points **doivent** être validés sous peine
 *   **Icônes sans Transparence** : L'image `./assets/images/oklogo.png` ne doit avoir **aucun canal alpha**.
 *   **Audit SafeArea** : Vérifier que les écrans (Index, VueValid, Admin) utilisent `SafeAreaView` ou `useSafeAreaInsets` pour éviter l'encoche (Notch).
 
-### 1.3 Versioning
-*   **`buildNumber`** : Doit être incrémenté dans `app.config.js` -> `ios.buildNumber`.
+### 1.4 Versioning & Bundle
+*   **`buildNumber`** : Déjà incrémenté dans la section de synchronisation ci-dessus.
 *   **`bundleIdentifier`** : Doit correspondre exactement à celui du portail Apple (`com.pierretulle.juno2`).
 
 ---
 
-## 🚀 Phase 2 : Build & Soumission (EAS)
+## Phase 2 : Build & Soumission (EAS)
 
 La compilation iOS nécessite un certificat de distribution géré via EAS.
 
-### 🛠️ Étape 1 : Gestion des Certificats
+### Étape 1 : Gestion des Certificats
 Si c'est la première fois ou en cas d'expiration :
 ```bash
 eas credentials
 ```
 *(Choisir iOS -> Production -> Suivre les instructions pour laisser Expo gérer les certificats).*
 
-### 📦 Étape 2 : Lancement du Build
+### Étape 2 : Lancement du Build
 Nous utilisons le build Cloud pour éviter d'avoir besoin d'un Mac localement :
 ```bash
 eas build --platform ios --profile production
@@ -93,5 +100,5 @@ identify -format "%[channels]" assets/images/oklogo.png
 
 ---
 
-**Dernière mise à jour** : 17/04/2026
+**Dernière mise à jour** : 05/05/2026 (Mise à jour version 1.7.3)
 **Mainteneur** : Pierre / Antigravity

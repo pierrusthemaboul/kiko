@@ -31,6 +31,7 @@ const BannerAdSize = { ANCHORED_ADAPTIVE_BANNER: 'ANCHORED_ADAPTIVE_BANNER' };
 
 import { useFonts } from '../../hooks/useFonts'; // Chemin relatif vers useFonts
 import { useAdConsent } from '../../hooks/useAdConsent';
+import { useUserProfile } from '../../hooks/useUserProfile'; // Hook React Query pour profil
 import { FirebaseAnalytics } from '../../lib/firebase'; // Chemin relatif vers firebase
 import { AdService } from '@/src/features/ads/AdService';
 import { LinearGradient } from 'expo-linear-gradient';
@@ -389,6 +390,9 @@ export default function HomeScreen() {
     consentStatusLabel,
   } = useAdConsent();
 
+  // Hook React Query pour le profil utilisateur avec cache
+  const { data: userProfile, isLoading: profileLoading } = useUserProfile(user?.id || null);
+
   const homeBannerConfig = useMemo(() => AdService.getBannerConfig('HOME'), []);
   const [settingsVisible, setSettingsVisible] = useState(false);
   const [settingsSection, setSettingsSection] = useState<'root' | 'privacy'>('root');
@@ -418,6 +422,16 @@ export default function HomeScreen() {
   const initializeApp = async () => {
     await checkUser();
   };
+
+  // Synchroniser displayName avec les données du profil React Query
+  useEffect(() => {
+    if (userProfile && !profileLoading) {
+      setDisplayName(userProfile.display_name ?? '');
+      if (userProfile.display_name) {
+        FirebaseAnalytics.setUserProps({ display_name: userProfile.display_name });
+      }
+    }
+  }, [userProfile, profileLoading]);
 
   // Callback pour masquer le splash et animer le contenu principal
   const handleSplashAnimationEnd = async () => {
@@ -459,7 +473,7 @@ export default function HomeScreen() {
       const { data: { session } } = await supabase.auth.getSession();
       if (session?.user) {
         setUser(session.user);
-        await fetchUserProfile(session.user.id);
+        // React Query gère automatiquement le fetch du profil via useUserProfile
         FirebaseAnalytics.trackEvent('user_login', {
           method: 'auto',
           is_returning_user: true,
@@ -479,30 +493,7 @@ export default function HomeScreen() {
     }
   };
 
-  const fetchUserProfile = async (userId: string) => {
-    try {
-        type ProfileRow = { display_name: string | null };
-        const { data, error } = await supabase
-          .from('profiles')
-          .select('display_name')
-          .eq('id', userId)
-          .single<ProfileRow>();
-        if (error) throw error;
-        if (data) {
-          const safeName = data.display_name ?? '';
-          setDisplayName(safeName);
-          if (safeName) {
-            FirebaseAnalytics.setUserProps({ display_name: safeName });
-          }
-        }
-    } catch (error) {
-        console.error("Error fetching user profile:", error);
-        FirebaseAnalytics.trackError('profile_fetch_error', {
-          message: error instanceof Error ? error.message : 'Unknown error',
-          screen: 'HomeScreen',
-        });
-    }
-  };  const handleLogout = async () => {
+  const handleLogout = async () => {
     try {
       FirebaseAnalytics.trackEvent('user_logout', {
         user_type: guestDisplayName ? 'guest' : 'registered',

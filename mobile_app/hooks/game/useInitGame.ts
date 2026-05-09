@@ -186,10 +186,10 @@ export function useInitGame() {
         const { data, error: eventsError } = await supabase
           .from('evenements')
           .select('id, titre, date, date_formatee, types_evenement, illustration_url, frequency_score, notoriete, notoriete_fr, description_detaillee, last_used')
-          .gte('notoriete_fr', 80) // Zone A : On descend à 80 pour être sûr d'avoir assez d'événements
+          .gte('notoriete_fr', 70) // Zone A : Charge les événements les plus connus (664 événements)
           .gte('date', '0001-01-01') // Exclure strictement les années BC
           .order('notoriete_fr', { ascending: false })
-          .limit(300);
+          .limit(800);
         if (eventsError) throw eventsError;
         // Utiliser notoriete_fr (notoriété française révisée) à la place de notoriete
         allEventsData = (data || []).map((e: any) => ({

@@ -11,6 +11,7 @@ import * as Application from 'expo-application';
 import AsyncStorage from '@react-native-async-storage/async-storage';
 import { AppState, Platform, View, Text } from 'react-native';
 import * as SystemUI from 'expo-system-ui';
+import { QueryClient, QueryClientProvider } from '@tanstack/react-query';
 // const NavigationBar = Platform.OS === 'android' ? require('expo-navigation-bar') : null;
 
 import { FirebaseAnalytics } from '../lib/firebase';
@@ -29,6 +30,19 @@ if (__DEV__ && Platform.OS !== 'web') {
 
 const CURRENT_APP_VERSION = Application.nativeApplicationVersion || '1.0.0';
 const APP_VERSION_STORAGE_KEY = '@app_version';
+
+// Configuration React Query avec cache intelligent
+const queryClient = new QueryClient({
+  defaultOptions: {
+    queries: {
+      staleTime: 5 * 60 * 1000, // 5 minutes - données considérées fraîches
+      gcTime: 10 * 60 * 1000, // 10 minutes - garbage collection
+      retry: 1, // 1 retry en cas d'erreur
+      refetchOnWindowFocus: false, // Pas de refetch au focus (évite requêtes inutiles)
+      refetchOnMount: false, // Pas de refetch au remount (évite requêtes inutiles)
+    },
+  },
+});
 
 SplashScreen.preventAutoHideAsync();
 
@@ -340,18 +354,20 @@ export default function RootLayout() {
   // console.log('[RootLayout] Rendering Stack Navigator');
   // Le Stack Navigator principal
   return (
-    <AudioProvider>
-      <MusicProvider>
-        <MusicInitializer />
-        <View style={{ flex: 1 }}>
-          <Stack screenOptions={{ headerShown: false }}>
-            <Stack.Screen name="(tabs)" />
-            <Stack.Screen name="auth" />
-            <Stack.Screen name="game" />
-            <Stack.Screen name="+not-found" />
-          </Stack>
-        </View>
-      </MusicProvider>
-    </AudioProvider>
+    <QueryClientProvider client={queryClient}>
+      <AudioProvider>
+        <MusicProvider>
+          <MusicInitializer />
+          <View style={{ flex: 1 }}>
+            <Stack screenOptions={{ headerShown: false }}>
+              <Stack.Screen name="(tabs)" />
+              <Stack.Screen name="auth" />
+              <Stack.Screen name="game" />
+              <Stack.Screen name="+not-found" />
+            </Stack>
+          </View>
+        </MusicProvider>
+      </AudioProvider>
+    </QueryClientProvider>
   );
 }

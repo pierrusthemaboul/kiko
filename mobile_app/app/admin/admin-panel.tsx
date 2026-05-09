@@ -3,7 +3,6 @@ import {
   View,
   Text,
   StyleSheet,
-  FlatList,
   TouchableOpacity,
   TextInput,
   Alert,
@@ -13,6 +12,7 @@ import {
   ScrollView,
   Dimensions,
 } from 'react-native';
+import { FlashList } from '@shopify/flash-list';
 import { supabase } from '../../lib/supabase/supabaseClients';
 import { Ionicons } from '@expo/vector-icons';
 import { LinearGradient } from 'expo-linear-gradient';
@@ -67,7 +67,7 @@ export default function AdminPanel() {
 
       if (error) throw error;
       
-      const eventsWithStatus = data.map(event => ({
+      const eventsWithStatus = (data || []).map((event: any) => ({
         ...event,
         statut: event.statut || 'actif'
       }));
@@ -214,7 +214,7 @@ export default function AdminPanel() {
   // Obtenir les catégories uniques
   const categories = ['toutes', ...Array.from(new Set(evenements.map(e => e.categorie).filter(Boolean)))];
 
-  const renderEventItem = ({ item }: { item: Evenement }) => (
+  const renderEventItem = useCallback(({ item }: { item: Evenement }) => (
     <TouchableOpacity 
       style={styles.eventCard}
       onPress={() => {
@@ -267,7 +267,7 @@ export default function AdminPanel() {
         </TouchableOpacity>
       </View>
     </TouchableOpacity>
-  );
+  ), []); // useCallback pour éviter les re-rendus inutiles
 
   if (!user) {
     return (
@@ -321,7 +321,7 @@ export default function AdminPanel() {
       {loading ? (
         <ActivityIndicator size="large" color="#00305A" style={styles.loader} />
       ) : (
-        <FlatList
+        <FlashList
           data={filteredEvents}
           renderItem={renderEventItem}
           keyExtractor={item => item.id}
@@ -330,6 +330,8 @@ export default function AdminPanel() {
           }
           contentContainerStyle={styles.listContainer}
           showsVerticalScrollIndicator={false}
+          estimatedItemSize={200} // Hauteur estimée d'une carte d'événement
+          extraData={selectedCategory} // Re-render quand le filtre change
         />
       )}
 

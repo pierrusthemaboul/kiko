@@ -3,6 +3,7 @@ import { useState, useCallback, useEffect, useMemo, useRef } from 'react';
 import { Animated, Dimensions, Image } from 'react-native';
 import Constants from 'expo-constants';
 import { supabase } from '@/lib/supabase/supabaseClients';
+import { useQueryClient } from '@tanstack/react-query';
 import { FirebaseAnalytics } from '../lib/firebase';
 import { todayWindow } from '../utils/time';
 import {
@@ -34,6 +35,7 @@ import { useGuestPlays } from './useGuestPlays';
 import { GameSessionMetadataManager } from '../services/GameSessionMetadata';
 import { registerDebugCommand } from '../ReactotronConfig';
 import { getTutorialEnabled } from '@/src/features/tutorial/tutorialStorage';
+import { RemoteLogger } from '@/lib/remoteLogger';
 
 const screenWidth = Dimensions.get('window').width;
 
@@ -41,6 +43,7 @@ export function useGameLogicA(initialEvent?: string, modeId?: string) {
   // if (__DEV__) console.log('[useGameLogicA] Hook executed for mode:', modeId || 'default');
   const gameMode = useMemo<GameModeConfig>(() => getGameModeConfig(modeId), [modeId]);
   const timeLimit = Math.max(1, gameMode.timeLimit);
+  const queryClient = useQueryClient(); // Accès au cache React Query
   const [streak, setStreak] = useState(0);
   const [isGameOver, setIsGameOver] = useState(false);
   const [showDates, setShowDates] = useState(!!gameMode.showDatesByDefault);
@@ -279,33 +282,37 @@ export function useGameLogicA(initialEvent?: string, modeId?: string) {
         return;
       }
 
-      const { data, error } = await supabase
-        .from('profiles')
-        .select('id, display_name, xp_total, title_key, parties_per_day, parties_restantes, high_score')
-        .eq('id', userId)
-        .maybeSingle() as any;
+      // Utiliser le cache React Query au lieu d'une requête directe
+      const cachedProfile = queryClient.getQueryData(['userProfile', userId]) as any;
+      
+      if (cachedProfile) {
+        setProfile(cachedProfile);
+      } else {
+        // Fallback si pas de cache (rare après init)
+        const { data, error } = await supabase
+          .from('profiles')
+          .select('id, display_name, xp_total, title_key, parties_per_day, parties_restantes, high_score')
+          .eq('id', userId)
+          .maybeSingle() as any;
 
-      if (error) {
-        setProfile(null);
-        return;
+        if (error || !data) {
+          setProfile(null);
+          return;
+        }
+        setProfile({
+          id: data.id,
+          display_name: data.display_name ?? null,
+          xp_total: data.xp_total ?? 0,
+          title_key: data.title_key ?? 'page',
+          parties_per_day: data.parties_per_day ?? 3,
+          parties_restantes: data.parties_restantes ?? 0,
+          high_score: data.high_score ?? 0,
+        });
       }
-      if (!data) {
-        setProfile(null);
-        return;
-      }
-      setProfile({
-        id: data.id,
-        display_name: data.display_name ?? null,
-        xp_total: data.xp_total ?? 0,
-        title_key: data.title_key ?? 'page',
-        parties_per_day: data.parties_per_day ?? 3,
-        parties_restantes: data.parties_restantes ?? 0,
-        high_score: data.high_score ?? 0,
-      });
     } catch (err) {
       setProfile(null);
     }
-  }, []);
+  }, [queryClient]);
 
   // Charger au montage et sur changement d'auth
   useEffect(() => {
@@ -717,6 +724,10 @@ export function useGameLogicA(initialEvent?: string, modeId?: string) {
           // Incrémenter le compteur
           const incremented = await incrementGuestPlays();
           if (!incremented) {
+            RemoteLogger.error('GameLogic', 'Impossible de démarrer la partie - guest plays increment failed', {
+              guestPlaysLimit,
+              guestPlaysUsed,
+            });
             return {
               ok: false,
               reason: 'NO_PLAYS_LEFT',
@@ -1534,7 +1545,10 @@ export function useGameLogicA(initialEvent?: string, modeId?: string) {
     const referenceEvent = previousEvent;
 
     if (!referenceEvent) {
-
+      RemoteLogger.error('GameLogic', 'Erreur interne critique: impossible de démarrer le niveau suivant (référence manquante)', {
+        currentLevel: currentLevelState,
+        userLevel: user.level,
+      });
       setError('Erreur interne critique: impossible de démarrer le niveau suivant (référence manquante).');
       FirebaseAnalytics.trackError('levelup_null_prev_event', {
         message: 'previousEvent was null when handleLevelUp called',
@@ -1584,10 +1598,26 @@ export function useGameLogicA(initialEvent?: string, modeId?: string) {
     // Sélectionner un événement aléatoire comme référence (previousEvent)
     const availableForReference = allEvents.filter(e => !usedEvents.has(e.id));
     if (availableForReference.length === 0) {
+      // Logger l'erreur avec contexte détaillé
+      RemoteLogger.error('GameLogic', 'Impossible de démarrer le niveau - tous les événements utilisés', {
+        totalEvents: allEvents.length,
+        usedEventsCount: usedEvents.size,
+        currentLevel: user.level,
+        usedEventsIds: Array.from(usedEvents),
+      });
 
-      setError('Impossible de démarrer le niveau.');
-      setIsGameOver(true);
-      return;
+      // Réinitialiser les événements utilisés pour permettre de continuer
+      console.warn('[handleLevelUp] Tous les événements utilisés, réinitialisation...');
+      resetLevelCompletedEvents();
+
+      // Réessayer avec les événements réinitialisés
+      const availableAfterReset = allEvents.filter(e => !usedEvents.has(e.id));
+      if (availableAfterReset.length === 0) {
+        // Si même après réinitialisation il n'y a pas d'événements (cas anormal)
+        setError('Impossible de démarrer le niveau.');
+        setIsGameOver(true);
+        return;
+      }
     }
 
     // SÉLECTION INTELLIGENTE DU DÉBUT DE NIVEAU
@@ -1649,7 +1679,11 @@ export function useGameLogicA(initialEvent?: string, modeId?: string) {
           setIsLevelPaused(false);
         } else if (!isGameOver) {
           // If no event could be selected, it's a critical error for continuing play
-
+          RemoteLogger.error('GameLogic', 'Impossible de trouver un événement valide pour continuer le jeu après la montée de niveau', {
+            currentLevel: currentLevelState,
+            userLevel: user.level,
+            totalEvents: allEvents.length,
+          });
           setError('Impossible de trouver un événement valide pour continuer le jeu après la montée de niveau.');
           setIsGameOver(true); // End the game
           FirebaseAnalytics.trackError('select_event_null_levelup', {
@@ -1659,7 +1693,11 @@ export function useGameLogicA(initialEvent?: string, modeId?: string) {
         }
       })
       .catch((err: any) => {
-
+        RemoteLogger.error('GameLogic', 'Erreur critique lors du chargement du niveau suivant', {
+          error: err instanceof Error ? err.message : String(err),
+          currentLevel: currentLevelState,
+          userLevel: user.level,
+        });
         setError(`Erreur critique lors du chargement du niveau suivant: ${err.message}`);
         FirebaseAnalytics.trackError('select_event_error_levelup', {
           message: err instanceof Error ? err.message : 'Unknown',
