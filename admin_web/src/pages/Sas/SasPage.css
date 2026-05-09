@@ -162,9 +162,24 @@
   flex: 1;
   overflow-y: auto;
   padding: 0.75rem;
+}
+
+.sas-list-content.sas-list {
   display: flex;
   flex-direction: column;
   gap: 0.6rem;
+}
+
+.sas-list-content.sas-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 16px;
+}
+
+@media (min-width: 769px) {
+  .sas-list-content.sas-grid {
+    grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+  }
 }
 
 .sas-list-item {
@@ -177,6 +192,61 @@
   background: #16161a;
   border: 1px solid transparent;
   position: relative;
+}
+
+/* Grid specific styles */
+.sas-list-item.grid {
+  flex-direction: column;
+  background: #f8fafc;
+  border: 1px solid #27272a;
+  border-radius: 12px;
+  height: 100%;
+}
+
+.sas-list-item.grid:hover {
+  background: white;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+  transform: translateY(-2px);
+  border-color: #cbd5e1;
+}
+
+.sas-list-item.grid .item-visual {
+  width: 100%;
+  height: 140px;
+  border-radius: 0;
+}
+
+.sas-list-item.grid .item-main {
+  padding: 16px;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.sas-list-item.grid .item-header {
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 8px;
+}
+
+.sas-list-item.grid .sas-item-title {
+  white-space: normal;
+  display: -webkit-box;
+  -webkit-line-clamp: 2;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+  font-size: 0.95rem;
+}
+
+/* List specific styles */
+.sas-list-item.list {
+  flex-direction: row;
+  align-items: center;
+}
+
+.sas-list-item.list .item-visual {
+  width: 48px;
+  height: 48px;
+  border-radius: 4px;
 }
 
 .sas-list-item:hover {

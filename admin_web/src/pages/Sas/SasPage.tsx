@@ -13,7 +13,9 @@ import {
   Calendar, 
   Activity, 
   FileText,
-  Info
+  Info,
+  LayoutGrid,
+  List as ListIcon
 } from 'lucide-react';
 import ImageRegenPanel from './CreativeLab/ImageRegenPanel';
 import './SasPage.css';
@@ -55,6 +57,7 @@ const SasPage: React.FC = () => {
   const [selectedTheme, setSelectedTheme] = useState<string>('');
   const [isRegenPanelOpen, setIsRegenPanelOpen] = useState(false);
   const [sortConfig, setSortConfig] = useState<{ key: 'date' | 'notoriete_fr', direction: 'asc' | 'desc' }>({ key: 'notoriete_fr', direction: 'desc' });
+  const [viewMode, setViewMode] = useState<'grid' | 'list'>('grid');
 
   useEffect(() => {
     let isMounted = true;
@@ -338,17 +341,24 @@ const SasPage: React.FC = () => {
               >
                 <Activity size={14} /> Notoriété {sortConfig.key === 'notoriete_fr' && (sortConfig.direction === 'desc' ? '↓' : '↑')}
               </button>
+              <button 
+                className="sort-btn"
+                onClick={() => setViewMode(viewMode === 'grid' ? 'list' : 'grid')}
+                title="Changer l'affichage"
+              >
+                {viewMode === 'grid' ? <ListIcon size={14} /> : <LayoutGrid size={14} />}
+              </button>
            </div>
         </div>
         
-        <div className="sas-list-content">
+        <div className={`sas-list-content sas-${viewMode}`}>
           {loading ? (
              <div className="loading-overlay">Chargement...</div>
           ) : (
             filteredRecords.map(r => (
                <div 
                  key={r.id}
-                 className={`sas-list-item ${selectedRecordId === r.id ? 'active' : ''} ${selectedEventIds.includes(r.id) ? 'checked' : ''}`}
+                 className={`sas-list-item ${viewMode} ${selectedRecordId === r.id ? 'active' : ''} ${selectedEventIds.includes(r.id) ? 'checked' : ''}`}
                  onClick={() => setSelectedRecordId(r.id)}
                >
                  <div className="item-visual">
