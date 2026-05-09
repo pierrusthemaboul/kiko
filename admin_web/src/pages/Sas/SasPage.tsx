@@ -63,7 +63,7 @@ const SasPage: React.FC = () => {
       const { data, error } = await supabase
         .from('sas')
         .select('*')
-        .or('statut.is.null,statut.neq.ENVOYE_ANTICHAMBRE')
+        .not('statut', 'eq', 'ENVOYE_ANTICHAMBRE')
         .order('created_at', { ascending: false });
         
       if (error) {
