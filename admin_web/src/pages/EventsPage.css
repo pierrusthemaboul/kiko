@@ -180,6 +180,51 @@
   gap: 8px;
 }
 
+.filter-group label {
+  font-size: 0.8rem;
+  font-weight: 600;
+  color: var(--text-secondary);
+}
+
+.filter-group select,
+.filter-group input {
+  padding: 10px 12px;
+  border-radius: var(--radius-md);
+  font-size: 0.9rem;
+  background: var(--bg-tertiary);
+  border: 1px solid var(--glass-border);
+  color: var(--text-primary);
+  transition: var(--transition-fast);
+}
+
+.filter-group select:hover,
+.filter-group input:hover {
+  border-color: var(--text-tertiary);
+}
+
+.filter-group select:focus,
+.filter-group input:focus {
+  outline: none;
+  border-color: var(--accent-color);
+}
+
+.notoriete-inputs {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.notoriete-inputs input {
+  width: 80px;
+  padding: 8px;
+  text-align: center;
+}
+
+.notoriete-inputs span {
+  color: var(--text-tertiary);
+  font-weight: 600;
+}
+
 .filter-switches {
   display: flex;
   flex-wrap: wrap;

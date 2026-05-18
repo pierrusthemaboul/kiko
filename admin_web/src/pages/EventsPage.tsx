@@ -63,6 +63,8 @@ const EventsPage: React.FC = () => {
   const [isUniversel, setIsUniversel] = useState<boolean | null>(null);
   const [isCorrigé, setIsCorrigé] = useState<boolean | null>(null);
   const [hasImage, setHasImage] = useState<boolean | null>(null);
+  const [notorieteMin, setNotorieteMin] = useState<number | null>(null);
+  const [notorieteMax, setNotorieteMax] = useState<number | null>(null);
   const [isRandomMode, setIsRandomMode] = useState(false);
   const [debouncedSearch, setDebouncedSearch] = useState('');
   const [totalCount, setTotalCount] = useState(2500);
@@ -84,6 +86,8 @@ const EventsPage: React.FC = () => {
         if (state.isUniversel !== undefined) setIsUniversel(state.isUniversel);
         if (state.isCorrigé !== undefined) setIsCorrigé(state.isCorrigé);
         if (state.hasImage !== undefined) setHasImage(state.hasImage);
+        if (state.notorieteMin !== undefined) setNotorieteMin(state.notorieteMin);
+        if (state.notorieteMax !== undefined) setNotorieteMax(state.notorieteMax);
         if (state.isRandomMode !== undefined) setIsRandomMode(state.isRandomMode);
         if (state.sortField) setSortField(state.sortField);
         if (state.sortOrder) setSortOrder(state.sortOrder);
@@ -110,9 +114,9 @@ const EventsPage: React.FC = () => {
   useEffect(() => {
     sessionStorage.setItem('eventsPageState', JSON.stringify({
       currentPage, searchTerm, categoryFilter, regionFilter, epoqueFilter, 
-      isUniversel, isCorrigé, hasImage, isRandomMode, sortField, sortOrder
+      isUniversel, isCorrigé, hasImage, notorieteMin, notorieteMax, isRandomMode, sortField, sortOrder
     }));
-  }, [currentPage, searchTerm, categoryFilter, regionFilter, epoqueFilter, isUniversel, isCorrigé, hasImage, isRandomMode, sortField, sortOrder]);
+  }, [currentPage, searchTerm, categoryFilter, regionFilter, epoqueFilter, isUniversel, isCorrigé, hasImage, notorieteMin, notorieteMax, isRandomMode, sortField, sortOrder]);
 
   
   const [categories, setCategories] = useState<string[]>([]);
@@ -163,7 +167,7 @@ const EventsPage: React.FC = () => {
   useEffect(() => {
     resetAndFetch();
     // eslint-disable-next-line react-hooks/exhaustive-deps
-  }, [source, categoryFilter, regionFilter, epoqueFilter, isUniversel, isCorrigé, hasImage, debouncedSearch, isRandomMode, sortField, sortOrder]);
+  }, [source, categoryFilter, regionFilter, epoqueFilter, isUniversel, isCorrigé, hasImage, notorieteMin, notorieteMax, debouncedSearch, isRandomMode, sortField, sortOrder]);
 
   const fetchMetadata = async () => {
     // Get unique values for filters using a better sample or dedicated query if possible
@@ -235,7 +239,10 @@ const EventsPage: React.FC = () => {
     if (epoqueFilter !== 'all') query = query.eq('epoque', epoqueFilter);
     if (isUniversel !== null) query = query.eq('universel', isUniversel);
     if (isCorrigé !== null) query = query.eq('donnee_corrigee', isCorrigé);
-    
+
+    if (notorieteMin !== null) query = query.gte('notoriete_fr', notorieteMin);
+    if (notorieteMax !== null) query = query.lte('notoriete_fr', notorieteMax);
+
     if (hasImage === true) query = query.not('illustration_url', 'is', null);
     if (hasImage === false) query = query.is('illustration_url', null);
 
@@ -597,24 +604,47 @@ const EventsPage: React.FC = () => {
               </div>
 
               <div className="filter-switches">
-                <button 
+                <button
                   className={`switch-btn ${isUniversel === true ? 'active' : ''}`}
                   onClick={() => setIsUniversel(isUniversel === true ? null : true)}
                 >
                   🌍 Universel
                 </button>
-                <button 
+                <button
                   className={`switch-btn ${isCorrigé === true ? 'active' : ''}`}
                   onClick={() => setIsCorrigé(isCorrigé === true ? null : true)}
                 >
                   ✅ Corrigé
                 </button>
-                <button 
+                <button
                   className={`switch-btn ${hasImage === false ? 'active' : ''}`}
                   onClick={() => setHasImage(hasImage === false ? null : false)}
                 >
                   🖼️ Sans image
                 </button>
+              </div>
+
+              <div className="filter-group">
+                <label>Notoriété FR (min-max)</label>
+                <div className="notoriete-inputs">
+                  <input
+                    type="number"
+                    placeholder="Min"
+                    min="0"
+                    max="100"
+                    value={notorieteMin ?? ''}
+                    onChange={(e) => setNotorieteMin(e.target.value ? parseInt(e.target.value) : null)}
+                  />
+                  <span>-</span>
+                  <input
+                    type="number"
+                    placeholder="Max"
+                    min="0"
+                    max="100"
+                    value={notorieteMax ?? ''}
+                    onChange={(e) => setNotorieteMax(e.target.value ? parseInt(e.target.value) : null)}
+                  />
+                </div>
               </div>
             </motion.div>
           )}
