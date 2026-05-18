@@ -95,9 +95,9 @@ const EventEditorPage: React.FC = () => {
         notoriete_fr: eventData.notoriete_fr
       })
       .eq('id', eventData.id);
-      
+
     if (!error) {
-      navigate(-1);
+      // Stay on the same page after save
     } else {
       alert("Erreur: " + error.message);
     }
@@ -140,9 +140,8 @@ const EventEditorPage: React.FC = () => {
         document.execCommand('copy');
         document.body.removeChild(textarea);
       }
-      alert('Titre copié dans le presse-papiers');
     } catch {
-      alert('Copie impossible sur ce navigateur.');
+      // Silent fail
     }
   };
 
@@ -195,7 +194,7 @@ const EventEditorPage: React.FC = () => {
   return (
     <div className="event-editor-fullpage">
       <header className="editor-header glass">
-        <button className="back-btn" onClick={() => navigate(-1)} style={{ color: 'var(--text-primary)', borderColor: 'var(--glass-border)', background: 'var(--bg-secondary)' }}>
+        <button className="back-btn" onClick={() => navigate('/events')} style={{ color: 'var(--text-primary)', borderColor: 'var(--glass-border)', background: 'var(--bg-secondary)' }}>
           <ArrowLeft size={20} /> Retour
         </button>
         <div className="header-info">
@@ -213,12 +212,12 @@ const EventEditorPage: React.FC = () => {
             <span>Copier titre</span>
           </button>
           {currentIndex !== null && currentIndex > 0 && (
-            <button className="btn-secondary btn-nav" onClick={goPrev} disabled={saving} style={{display: 'flex', alignItems: 'center', gap: '6px', background: 'var(--bg-tertiary)', padding: '6px 12px', borderRadius: 'var(--radius-sm)', border: '1px solid var(--glass-border)'}}>
+            <button className="btn-secondary btn-nav" onClick={goPrev} disabled={saving} style={{display: 'flex', alignItems: 'center', gap: '6px', background: '#6366f1', padding: '6px 12px', borderRadius: 'var(--radius-sm)', border: '1px solid #4f46e5', color: 'white'}}>
               <ArrowLeft size={16} />
             </button>
           )}
           {currentIndex !== null && currentIndex < cachedIds.length - 1 && (
-            <button className="btn-secondary btn-nav" onClick={goNext} disabled={saving} style={{display: 'flex', alignItems: 'center', gap: '6px', background: 'var(--bg-tertiary)', padding: '6px 12px', borderRadius: 'var(--radius-sm)', border: '1px solid var(--glass-border)'}}>
+            <button className="btn-secondary btn-nav" onClick={goNext} disabled={saving} style={{display: 'flex', alignItems: 'center', gap: '6px', background: '#6366f1', padding: '6px 12px', borderRadius: 'var(--radius-sm)', border: '1px solid #4f46e5', color: 'white'}}>
               <ArrowRight size={16} />
             </button>
           )}
