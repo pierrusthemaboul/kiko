@@ -214,19 +214,43 @@ const EventsPage: React.FC = () => {
 
     const currentOffset = overrideOffset !== undefined ? overrideOffset : randomOffset;
     console.log('[DEBUG] fetchEvents called', { source, pageIdx, debouncedSearch, isRandomMode, offset: currentOffset });
-    
-    let query = supabase.from(aiEvents ? 'evenements_ai' : source).select('*', { count: 'exact' });
-      
+
+    // Build count query with filters (without range)
+    let countQuery = supabase.from(aiEvents ? 'evenements_ai' : source).select('*', { count: 'exact', head: true });
+
+    if (categoryFilter !== 'all') countQuery = countQuery.contains('types_evenement', [categoryFilter]);
+    if (regionFilter !== 'all') countQuery = countQuery.eq('region', regionFilter);
+    if (epoqueFilter !== 'all') countQuery = countQuery.eq('epoque', epoqueFilter);
+    if (isUniversel !== null) countQuery = countQuery.eq('universel', isUniversel);
+    if (isCorrigé !== null) countQuery = countQuery.eq('donnee_corrigee', isCorrigé);
+    if (notorieteMin !== null) countQuery = countQuery.gte('notoriete_fr', notorieteMin);
+    if (notorieteMax !== null) countQuery = countQuery.lte('notoriete_fr', notorieteMax);
+    if (hasImage === true) countQuery = countQuery.not('illustration_url', 'is', null);
+    if (hasImage === false) countQuery = countQuery.is('illustration_url', null);
+
+    if (debouncedSearch) {
+      const term = `%${debouncedSearch}%`;
+      countQuery = countQuery.or(`titre.ilike.${term},date_formatee.ilike.${term}`);
+    }
+
+    // Fetch filtered count
+    const { count: filteredCount, error: countError } = await countQuery;
+    if (countError) {
+      console.error('[DEBUG] Count Error:', countError);
+    } else if (filteredCount !== null) {
+      setTotalCount(filteredCount);
+    }
+
+    // Build data query with filters
+    let query = supabase.from(aiEvents ? 'evenements_ai' : source).select('*');
+
     // Store current navigation context for EventEditorPage Next/Prev features
     sessionStorage.setItem('currentEventsListContext', JSON.stringify({
        page: currentPage,
-       totalItems: totalCount,
-       filters: { searchTerm, categoryFilter, regionFilter, epoqueFilter, isUniversel, isCorrigé, hasImage }
+       totalItems: filteredCount || totalCount,
+       filters: { searchTerm, categoryFilter, regionFilter, epoqueFilter, isUniversel, isCorrigé, hasImage, notorieteMin, notorieteMax }
     }));
-    
-    // Also grab all IDs for immediate adjacent navigation locally
-    // Note: This requires the query to have been executed to get the data
-    
+
     if (!debouncedSearch) {
       query = query.order(sortField, { ascending: sortOrder === 'asc' });
     }
@@ -239,21 +263,18 @@ const EventsPage: React.FC = () => {
     if (epoqueFilter !== 'all') query = query.eq('epoque', epoqueFilter);
     if (isUniversel !== null) query = query.eq('universel', isUniversel);
     if (isCorrigé !== null) query = query.eq('donnee_corrigee', isCorrigé);
-
     if (notorieteMin !== null) query = query.gte('notoriete_fr', notorieteMin);
     if (notorieteMax !== null) query = query.lte('notoriete_fr', notorieteMax);
-
     if (hasImage === true) query = query.not('illustration_url', 'is', null);
     if (hasImage === false) query = query.is('illustration_url', null);
 
     if (debouncedSearch) {
       console.log('[DEBUG] Searching for:', debouncedSearch);
-      // On cherche uniquement dans titre et date_formatee pour éviter l'erreur SQL sur le type Date
       const term = `%${debouncedSearch}%`;
       query = query.or(`titre.ilike.${term},date_formatee.ilike.${term}`);
     }
 
-    const { data, error, count } = await query;
+    const { data, error } = await query;
 
     if (error) {
       console.error('[DEBUG] Supabase Fetch Error:', error);
@@ -262,7 +283,7 @@ const EventsPage: React.FC = () => {
     }
 
     if (data) {
-      console.log(`[DEBUG] Received ${data.length} events (Total count: ${count})`);
+      console.log(`[DEBUG] Received ${data.length} events (Filtered count: ${filteredCount})`);
       if (isReset) {
         setEvents(data);
         sessionStorage.setItem('currentEventsIdsList', JSON.stringify(data.map(e => e.id)));
@@ -274,7 +295,7 @@ const EventsPage: React.FC = () => {
         });
       }
     }
-    
+
     setLoading(false);
   };
 
@@ -672,7 +693,7 @@ const EventsPage: React.FC = () => {
         )}
 
         <div className="content-header">
-          <p className="stats">{displayedEvents.length} événements trouvés</p>
+          <p className="stats">{totalCount} événements trouvés</p>
           <div className="view-toggle">
             <button 
               className={viewMode === 'grid' ? 'active' : ''} 
