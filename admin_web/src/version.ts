@@ -1,1 +1,1 @@
-export const VERSION = "K-Viz V.4.0.0 - 18/05/2026 17:24";
+export const VERSION = "K-Viz V.4.1.0 - 23/05/2026 16:04";

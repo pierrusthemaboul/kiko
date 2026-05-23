@@ -38,7 +38,7 @@ async function logDebug(msg) {
 }
 
 // Chemin vers les credentials partagés du projet
-dotenv.config({ path: path.join(__dirname, '..', '..', 'credentials', '.env') });
+dotenv.config({ path: path.join(__dirname, '..', '..', '.env') });
 
 // --- Clients ---
 const genAI = new GoogleGenerativeAI(process.env.GEMINI_API_KEY);

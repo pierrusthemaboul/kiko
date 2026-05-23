@@ -12,6 +12,7 @@ import cors from 'cors';
 import { randomUUID } from 'crypto';
 import { regenerateImage } from './regen_service.mjs';
 import { chat } from './chat_service.mjs';
+import { generateSocialContent, generateMultiPlatformContent } from './social_media_service.mjs';
 
 const app = express();
 const PORT = 3001;
@@ -155,8 +156,65 @@ app.get('/api/health', (_, res) => {
     res.json({ status: 'ok', time: new Date().toISOString() });
 });
 
+/**
+ * POST /api/social-media/generate
+ * Body : { platform, topic, eventType, eventDate, eventDescription }
+ * Génère du contenu pour une plateforme spécifique
+ */
+app.post('/api/social-media/generate', async (req, res) => {
+    const { platform, topic, eventType, eventDate, eventDescription } = req.body;
+
+    if (!platform || !topic) {
+        return res.status(400).json({ error: 'platform et topic sont requis.' });
+    }
+
+    const validPlatforms = ['tiktok', 'instagram', 'twitter', 'facebook', 'youtube'];
+    if (!validPlatforms.includes(platform)) {
+        return res.status(400).json({ error: `Plateforme invalide. Options: ${validPlatforms.join(', ')}` });
+    }
+
+    try {
+        console.log(`\n📱 [Social Media] Génération pour ${platform}: "${topic}"`);
+        const result = await generateSocialContent(platform, topic, { eventType, eventDate, eventDescription });
+        res.json(result);
+    } catch (err) {
+        console.error('❌ Erreur génération social media:', err.message);
+        res.status(500).json({ error: err.message });
+    }
+});
+
+/**
+ * POST /api/social-media/generate-multi
+ * Body : { topic, platforms, eventType, eventDate, eventDescription }
+ * Génère du contenu pour plusieurs plateformes en parallèle
+ */
+app.post('/api/social-media/generate-multi', async (req, res) => {
+    const { topic, platforms, eventType, eventDate, eventDescription } = req.body;
+
+    if (!topic || !platforms || !Array.isArray(platforms)) {
+        return res.status(400).json({ error: 'topic et platforms (array) sont requis.' });
+    }
+
+    const validPlatforms = ['tiktok', 'instagram', 'twitter', 'facebook', 'youtube'];
+    const invalidPlatforms = platforms.filter(p => !validPlatforms.includes(p));
+    if (invalidPlatforms.length > 0) {
+        return res.status(400).json({ error: `Plateformes invalides: ${invalidPlatforms.join(', ')}` });
+    }
+
+    try {
+        console.log(`\n📱 [Social Media] Génération multi-plateforme: "${topic}" pour ${platforms.join(', ')}`);
+        const results = await generateMultiPlatformContent(topic, platforms, { eventType, eventDate, eventDescription });
+        res.json({ results });
+    } catch (err) {
+        console.error('❌ Erreur génération multi-plateforme:', err.message);
+        res.status(500).json({ error: err.message });
+    }
+});
+
 app.listen(PORT, () => {
     console.log(`\n🚀 Serveur Timalaus Admin démarré sur http://localhost:${PORT}`);
     console.log(`   → POST /api/regen/start`);
-    console.log(`   → GET  /api/regen/stream/:jobId\n`);
+    console.log(`   → GET  /api/regen/stream/:jobId`);
+    console.log(`   → POST /api/social-media/generate`);
+    console.log(`   → POST /api/social-media/generate-multi\n`);
 });
